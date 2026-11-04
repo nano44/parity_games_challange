@@ -7,6 +7,7 @@ Lemma XIFLIP: moves(z) <= 1 + XF_z (XF_z = #t with sign(face(1) - face(0)) diffe
 Counts multi-steps by type: a step t >= 2 with >= 2 movers of which >= 1 is W-triggered only (WREL), or all Xi-triggered (XIBR).
 ALL=1: all starts. Usage: trig.py genome.json ..."""
 import sys, os, json, itertools
+import os as _os, sys as _sys; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
 from val import ns
 Gen = ns["Gen"]; tot = dict(runs=0, moves=0, NEITHER=0, WNOLOW=0, XNODESC=0, XiT=0, WT=0, BOTH=0, multi=0, WREL=0, XIBR=0, XIFLIP=0)
 def keysof(g, st): return g.keys(st)

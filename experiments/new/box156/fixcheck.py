@@ -2,6 +2,7 @@
 """box 156: cross-check the z3 step encoding of zmax.py against the box 150 simulator on random deg <= 2 genomes with xorder = identity
 (relabelled), M = 2N ranks/gates. Prints the number of mismatching runs (must be 0)."""
 import sys, json, random, subprocess, os
+import os as _os, sys as _sys; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
 from val import ns
 import tempfile; FX = tempfile.mktemp(suffix=".json")
 rng = random.Random(int(sys.argv[1])); cnt = int(sys.argv[2]); bad = 0

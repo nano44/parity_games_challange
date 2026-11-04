@@ -4,6 +4,7 @@ together, objective T of the run from the genome start (box 150 simulator). Seed
 are kept, with 2 new movers added on top (level d-1). Any xorder (Xi-targets: X or a later mover in xorder).
 Usage: ladclimb.py d SEED ITERS [seedfile] -> writes wit/lad_d<d>_s<SEED>.json at every improvement"""
 import sys, json, random, math, copy
+import os as _os, sys as _sys; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
 from val import ns
 Gen = ns["Gen"]
 d, seed, iters = int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]); N = 2 * d; M = 2 * N; rng = random.Random(seed)

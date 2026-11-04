@@ -2,6 +2,7 @@
 """box 156: per-step trigger detail (deg <= 2): for each mover z of step t: lev, pi, and X (Xi-triggered: Xi comparison flipped
 between s_(t-2), s_(t-1); its movers at t-1 on z's chains) / W (key order flipped between keys of s_(t-1), s_t; lower movers at t)."""
 import sys, json
+import os as _os, sys as _sys; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
 from val import ns
 Gen = ns["Gen"]
 G = json.load(open(sys.argv[1])); g = Gen(G); N = g.N; S, _ = g.run(G["start"]); T = len(S) - 1; K = [g.keys(s) for s in S]

@@ -7,6 +7,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   a 6-frame (exact iff T >= 7 UNSAT: RUNNING pid 1726); N 6: T >= 8 (x3_L8), T >= 9 / M2 >= 5 RUNNING (pids 1823, 13185).
 - DEAD «M2 <= N-2» (dd_d5_F14 M2 11, N 10). CONJECTURE LIN-156: T <= floor(3N/2), M2 <= N + 1 (corpus all-start max T/N 1.5).
 - PROVED (lane): two-way reduction (T <= N(1+M2), M2 <= T-1), Lemma TRIGGER, Lemma XIFLIP (moves <= 1 + XF); trig.py 0 viol.
+### P-IDEAL-M2 FROZEN (Lead GO 07:00Z): docs/new/P-IDEAL-M2.md (171 lines, sha1 bc47b06c) + line L-1 (0160d1e3); MULTI-CHARGE both
+  directions / M2-EQ / SINGLE-SHORT (any degree), TRIGGER, XIFLIP, MIN-FLIP (deg <= 2), DEAD LIN-156 (max_d4_L13). check.sh block
+  «P-IDEAL-M2» (w105 + pin105). Fix round -> docs/new/P-IDEAL-M2-fixes.md (append-only). LIN-156 DEAD 06:2xZ; d 5 ladder exact routed
+  by the Lead to L-RED 49.
 ### Things only I know (successor 51): z3 Int encoding beats the BV one (N4 UNSAT 20 s vs > 10 min); LEVS split ~250 s / level
   vector at N 5 (541 vectors: too slow). Logs of running jobs are in box156/log/ (commit after they finish). Never pkill -f.
 ### Successor 51 handover check (STEP 0; written 2026-11-04 04:2xZ by date -u)

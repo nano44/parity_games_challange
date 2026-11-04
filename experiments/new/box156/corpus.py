@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """box 156: T, M2 (steps 1..T-1 with >= 2 movers), U, N, max degree for corpus genomes (genome start). Usage: corpus.py files..."""
 import sys, json
+import os as _os, sys as _sys; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
 from val import stats
 rows = []
 for f in sys.argv[1:]:

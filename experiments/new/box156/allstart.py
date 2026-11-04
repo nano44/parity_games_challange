@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """box 156: max over ALL starts of T and of M2 (steps 1..T-1 with >= 2 movers) for deg <= 2 genomes with N <= NMAX (default 12)."""
 import sys, json, itertools, os
+import os as _os, sys as _sys; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
 from val import ns
 Gen = ns["Gen"]; NMAX = int(os.environ.get("NMAX", "12"))
 for f in sys.argv[1:]:

@@ -3,6 +3,7 @@
 OBJ = T (default) or M2 over ALL starts. Genome as in zmax.py (xorder = identity, ranks / gates over 2N options).
 Usage: climb.py N SEED ITERS [OBJ] -> prints best and writes best_<OBJ>_N<N>_s<SEED>.json"""
 import sys, json, random, itertools, copy
+import os as _os, sys as _sys; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
 from val import ns
 Gen = ns["Gen"]
 N, seed, iters = int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]); OBJ = sys.argv[4] if len(sys.argv) > 4 else "T"
