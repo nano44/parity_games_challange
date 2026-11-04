@@ -1,0 +1,3 @@
+seed 1 mut 0 {'runs': 3000, 'steps': 3118, 'once': 0, 'count': 0, 'prod': 0, 'maxT': 4}
+seed 2 mut 0 {'runs': 3000, 'steps': 3121, 'once': 0, 'count': 0, 'prod': 0, 'maxT': 3}
+seed 3 mut 1 {'runs': 3000, 'steps': 3116, 'once': 1, 'count': 0, 'prod': 0, 'maxT': 4}

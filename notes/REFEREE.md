@@ -26,6 +26,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - M2 §C (l-new 4d244698, L-2 c890f268): entry 1 closes M2-G1; 15 hunks = entry 2; L-2 MATCHES; all 7 SIGNED.
 - MY MISS (R105-E1): I MATCHED P-IDEAL-RED L-2 although its CHAINED definition lacks «as a mover other than h_t» (packet §4).
   Lesson: match every DEFINITION of a line against the packet's §0, not only the claims. Also R105-E2: TOP-MONO «above y_t» unanchored (π).
+- P-IDEAL-SEG (l-new 8291ecf7, 7fa84784/152): R-P-IDEAL-SEG.md. SEG, SEG-ONCE, LEVEL-PRODUCT, DEAD REPLAY all SIGN; max_d5_L15 T 15
+  recomputed, states equal; L-1 MATCHES (definition diff done); optional SEG-L1 (l ≥ −1). Tool seg_probe.py (weak: T ≤ 4).
+- P-IDEAL-SLOT (l-new e46e98a4, 62901b5f/192): R-P-IDEAL-SLOT.md. All 7 SIGN (SEG copy verbatim). L-1 NOT YET: SLOT-L1 (SHIFT
+  «removing one level»), SLOT-L2 (LIFT construction missing; mixed W-targets A/B would break keys). Tool slot_probe.py (MUT bites 1,007).
+- SLOT §C (l-new 6eb389a6, L-2 55e74726): 21 hunks = entry 1; SLOT-L1/L2/L3 met; L-2 MATCHES. SEG fixes entry 1 (F-1, F-2) correct.
 - Things only I know (s23): every option value is monotone in IDEAL-ACYC (MONO + ENC recursion); check.py tests current values only.
   check.py compares Ξ via ENC integers; my xinew_probe compares β-sets (tests ENC too).
 - D19 and L47 not yet in docs/DECISIONS.md at trunk 6a6bd43a (told the Lead).

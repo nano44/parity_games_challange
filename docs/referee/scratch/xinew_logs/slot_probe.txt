@@ -1,0 +1,3 @@
+seed 1 mut 0 {'shift_runs': 2647, 'shift_bad': 0, 'lift_runs': 3000, 'lift_bad': 0, 'steps': 4125}
+seed 2 mut 0 {'shift_runs': 2643, 'shift_bad': 0, 'lift_runs': 3000, 'lift_bad': 0, 'steps': 4052}
+seed 3 mut 1 {'shift_runs': 2670, 'shift_bad': 1007, 'lift_runs': 3000, 'lift_bad': 0, 'steps': 4115}
