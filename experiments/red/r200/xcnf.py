@@ -178,6 +178,13 @@ def build(T, E, fixall=False, lem=True):
                 for c2 in ts[i + 1:]:
                     for (p, q) in ((a, c2), (c2, a)):
                         C.add([neg(C.EQ(cvar[(a, x)], neg(cvar[(c2, x)])))] + [C.AND([dif[(p, x)][y], neg(C.EQ(st[(p, y)], st[(q, y)]))]) for y in range(N) if y != x])
+    if os.environ.get("HINT"):   # SAT-finding only (an UNSAT answer with a hint is NOT exact): fix extra movers' states at t <= HINTT and gate bits from a genome
+        import ideal
+        Gh = json.load(open(os.environ["HINT"])); Sh, _ = ideal.traj(Gh); HT = int(os.environ.get("HINTT", "0"))
+        for t in range(min(HT, len(Sh) - 1) + 1):
+            for v in range(N0, N): C.add([st[(t, v)] if Sh[t][v] else neg(st[(t, v)])])
+        if os.environ.get("HINTG", "1") == "1":
+            for (l, k), var in Gb.items(): C.add([var if Gh["gate"][2 * l][k] < Gh["gate"][2 * l + 1][k] else -var])
     info = dict(N=N, N0=N0, L=L, lev=lev, WT=WT, gate0=gate0, S0=S0, m0=m0, dtop=dtop, faces=faces, b=b, lt=lt, par=par, st=st, Gb=Gb, req=req, fi=fi)
     return C, info
 

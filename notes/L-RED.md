@@ -79,6 +79,11 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - 02:01Z CONTAINER RESTART killed the three monolithic d 6 runs (92 min each, no answer) and the cube run (cube 0 > 35 min). Lost.
 - 02:0xZ relaunched as RESUMABLE cubes (4 parts, per-cube UNSAT lines survive restarts): bash runcubes.sh out/ag/k3p2/ag_0.json k3p2_0
   (relaunch after a restart = the same command; it appends old logs to out/cube_<tag>_p<i>.hist and skips their UNSAT cubes).
+- 02:23Z second restart (cube runs lost, no cube finished in 20 min; G/S0 cubes do not split the hardness). Memory is not the cause
+  (~500 MB per solver). 02:53Z push b36d9bd1. Prefix runs (out/pre/, python one-liner truncating states): k3p2_0 first 10 steps SAT
+  262 s, first 14 steps SAT 623 s (EXACT, replay matches). Hinted extension of the t14 solution UNSAT 42 s (inexact).
+- 03:1xZ (cwd r200) for T0 in 10 14; do nohup timeout 36000 python3 pcegar.py out/ag/k3p2/ag_0.json 2 $T0 out/pc_k3p2_0_T$T0 >
+  out/pc_k3p2_0_T$T0.log 2>&1 & done   (resumable: no-goods in out/pc_*_nogoods.json; relaunch = same command)
 - Cross-checks: bf.py (brute force N 4 + GREEDY) 85/85 agree with xcnf (LEM on/off), 8 UNSAT; agree.py vs xisat 30/30 + 29/30 + 29/30,
   the two non-agreements are xisat UNKNOWN (z3 timeout 600-900 s, FD too) vs xcnf UNSAT on N 8 L 3 instances (s5_15: noLEM UNSAT too).
 
