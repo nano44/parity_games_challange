@@ -218,9 +218,13 @@ if __name__ == "__main__":
             if kind == "G": cv += [I["Gb"][k] for k in sorted(I["Gb"])]
             if kind == "S0": cv += [I["st"][(0, v)] for v in range(I["N0"], I["N"])]
         part, P = map(int, os.environ.get("CUBEPART", "0/1").split("/")); r = False; model = None
+        done = set()   # resume: skip cubes already reported UNSAT in the logs named by CUBEDONE (comma list)
+        for lf in [x for x in os.environ.get("CUBEDONE", "").split(",") if x and os.path.exists(x)]:
+            for line in open(lf):
+                if line.startswith("CUBE ") and " UNSAT " in line: done.add(int(line.split()[1]))
         with Solver(name=os.environ.get("SOLVER", "cadical195"), bootstrap_with=C.cl) as SS:
             for ci in range(2 ** len(cv)):
-                if ci % P != part: continue
+                if ci % P != part or ci in done: continue
                 asm = [v if (ci >> j) & 1 else -v for j, v in enumerate(cv)]; t1 = time.time(); rr = SS.solve(assumptions=asm)
                 print(f"CUBE {ci} {'SAT' if rr else 'UNSAT'} {time.time() - t1:.1f} s", flush=True)
                 if rr: r = True; model = SS.get_model(); break
