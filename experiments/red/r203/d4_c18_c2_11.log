@@ -1,0 +1,4 @@
+XMAX d 4 t 13 N 8 vars 124850 clauses 429931 build 0.6 s
+XMAX d 4 T >= 13: SAT 4689.7 s
+replay L 11 stuck (needs >= 13): OK -> out/c/d4_c18_c2_11.json
+replayed C_l (steps moving a mover of level <= l): [2, 8, 11, 11]
