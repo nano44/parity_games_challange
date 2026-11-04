@@ -199,7 +199,23 @@ if __name__ == "__main__":
     if os.environ.get("DIMACS"):
         with open(os.environ["DIMACS"], "w") as fh:
             fh.write(f"p cnf {C.n} {len(C.cl)}\n"); fh.writelines(" ".join(map(str, c)) + " 0\n" for c in C.cl)
-    t1 = time.time(); r, model = solve(C)
+    if os.environ.get("CUBEVARS"):   # cube-and-conquer: assumptions over extra-level gate bits (G) and/or extra-mover start bits (S0)
+        from pysat.solvers import Solver
+        cv = []
+        for kind in os.environ["CUBEVARS"].split(","):
+            if kind == "G": cv += [I["Gb"][k] for k in sorted(I["Gb"])]
+            if kind == "S0": cv += [I["st"][(0, v)] for v in range(I["N0"], I["N"])]
+        part, P = map(int, os.environ.get("CUBEPART", "0/1").split("/")); r = False; model = None
+        with Solver(name=os.environ.get("SOLVER", "cadical195"), bootstrap_with=C.cl) as SS:
+            for ci in range(2 ** len(cv)):
+                if ci % P != part: continue
+                asm = [v if (ci >> j) & 1 else -v for j, v in enumerate(cv)]; t1 = time.time(); rr = SS.solve(assumptions=asm)
+                print(f"CUBE {ci} {'SAT' if rr else 'UNSAT'} {time.time() - t1:.1f} s", flush=True)
+                if rr: r = True; model = SS.get_model(); break
+        print(f"XCNF CUBES part {part}/{P} -> {'SAT' if r else 'UNSAT (all cubes of this part)'}", flush=True)
+        t1 = time.time()
+    else:
+        t1 = time.time(); r, model = solve(C)
     print(f"XCNF -> {'SAT' if r else 'UNSAT'} {time.time() - t1:.1f} s solver {os.environ.get('SOLVER', 'cadical195')}", flush=True)
     if r:
         G = decode(model, I); json.dump(G, open(out, "w")); S2, why = ideal.traj(G); L, N0, S0 = I["L"], I["N0"], I["S0"]
