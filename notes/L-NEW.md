@@ -10,8 +10,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 3. GAPS: G-N5-TIME major open (owner L-NEW); G-N1-LB minor open (optional, not routed).
 4. D18 (active): "Focus on N5 and work toward proving it. Explore novel approaches ... Clearly distinguish proven results from
    conjectures and open problems." D14 (active): "D" + "the (c) lane may test untested approaches, its own included".
-   D19 (owner 2026-11-03, quoted from the Lead brief; NOT in DECISIONS-INDEX on trunk at my fetch): "we have 9% usage left until
-   tomorrow night, make use of it".
+   D19 (owner 2026-11-03): "we have 9% usage left until tomorrow night, make use of it". CORRECTION (Lead 04:26Z, re-checked):
+   D19 IS on trunk (DECISIONS.md «## D19», INDEX row «| D19 |», since 8c37ab0b); my index grep missed it. Trunk head bed56cba.
 5. Trap: stale clone (8591166d again); check = ls-remote + fetch + ff-only + HEAD vs ls-remote. Also pkill -f on my own pattern
    kills my shell: kill by pid.
 
