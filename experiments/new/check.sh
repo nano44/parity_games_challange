@@ -851,9 +851,9 @@ else
   echo "box 154 LADDER check: FAILED"; echo "$w103"; exit 1
 fi
 # frozen-file pins (CHECKER C116 G-3): P-IDEAL-CUBE packet and line L-1 (d97555d4)
-pin104=$(cd ../.. && sha1sum docs/new/P-IDEAL-CUBE.md docs/new/P-IDEAL-CUBE-line-L1.txt)
-if grep -q "^366afedcf7cd04a31302e25cec47c7fb3df455bb  docs/new/P-IDEAL-CUBE.md$" <<<"$pin104" && grep -q "^99ae8face50615b4ce1ce5cd5e69f223f17208e1  docs/new/P-IDEAL-CUBE-line-L1.txt$" <<<"$pin104"; then
-  echo "P-IDEAL-CUBE pins (packet 366afedc, line L-1 99ae8fac): PASS"
+pin104=$(cd ../.. && sha1sum docs/new/P-IDEAL-CUBE.md docs/new/P-IDEAL-CUBE-line-L1.txt docs/new/P-IDEAL-CUBE-line-L2.txt docs/new/P-IDEAL-CUBE-fixes.md)
+if grep -q "^366afedcf7cd04a31302e25cec47c7fb3df455bb  docs/new/P-IDEAL-CUBE.md$" <<<"$pin104" && grep -q "^99ae8face50615b4ce1ce5cd5e69f223f17208e1  docs/new/P-IDEAL-CUBE-line-L1.txt$" <<<"$pin104" && grep -q "^449421e4cfaedbef577f68720fab4924111cd170  docs/new/P-IDEAL-CUBE-line-L2.txt$" <<<"$pin104" && grep -q "^006274ec3f0aa82ceac8fa9b8f294f1f8d2e138e  docs/new/P-IDEAL-CUBE-fixes.md$" <<<"$pin104"; then
+  echo "P-IDEAL-CUBE pins (packet 366afedc, line L-1 99ae8fac, line L-2 449421e4, fixes 006274ec): PASS"
 else
   echo "P-IDEAL-CUBE pin check: FAILED"; echo "$pin104"; exit 1
 fi
