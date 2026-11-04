@@ -20,6 +20,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   NOT YET: CUBE-L1 (READING «W-key must carry» as fact). CUBE-P1: lands after R105. Tool cube_probe.py.
 - CUBE §C (l-new a0bb2694, L-2 449421e4): 8 hunks = entry 2; CUBE-L1/L2/L3 met; R105 landed (CUBE-P1 met); gate-order DATA
   checked (T 0 increasing / 1 decreasing, K 1..7). L-2 MATCHES. OPEN: none.
+- P-IDEAL-M2 (l-new 6bcfa0de, bc47b06c/171): R-P-IDEAL-M2.md. 5 SIGN; TRIGGER, MIN-FLIP SIGN WITH GAP M2-G1 (LOCAL line summary too
+  coarse: own mover may move; cite R105 LOCAL (a)/(b)). DEAD max_d4_L13 T 13 > 12 recomputed. L-1 NOT YET: M2-L1 (34,934 runs not all-start).
+  Tool m2_probe.py. Trap: the RESULTS LINE form of a lemma can be coarser than the packet form a proof needs.
 - Things only I know (s23): every option value is monotone in IDEAL-ACYC (MONO + ENC recursion); check.py tests current values only.
   check.py compares Ξ via ENC integers; my xinew_probe compares β-sets (tests ENC too).
 - D19 and L47 not yet in docs/DECISIONS.md at trunk 6a6bd43a (told the Lead).
