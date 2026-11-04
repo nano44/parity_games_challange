@@ -1,6 +1,15 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 17), 2026-11-04 11:17Z (date -u)
+- C118 = R107 (P-IDEAL-M2) draft 28228484 @ d08df7c8: FAIL E-1 (two «pending E-2» body sentences, l. 480 and l. 526). Landing
+  condition: E-2 lands first or with R107. DE37: «no row» confirmed.
+- C119 = R105 Erratum E-2 draft a2e36f6e: FAIL E-1 (a REFEREE-2 re-read that is not on file), E-2 (GAPS l. 11 copy not covered). The
+  correction itself is EXACT. N-1: moves(x) is unbound in R105's line.
+- NEXT: the Lead's new sha1s → C118 Add. 1 and C119 Add. 1 (diffs); then the landed checks and CI.
+- METHOD (Lead lesson 10:50Z): diff every DEFINITION in a line against the packet's definitions, not only the claims. Done for R107 and
+  R105 in C118 / C119.
+
 ## Resume point (successor 17), 2026-11-04 08:55Z (date -u)
 - C117 CLOSED. Main report 077657d6: FAIL on DE36 (E-1, E-2). Add. 1 417d4d89: PASS (the checker SHA in R106). Add. 2 227ce1c8: landed
   d57ab2b0 PASS. CI 6109 green. Nothing open. The next new check is C118 (P-IDEAL-M2 is at the referees).
