@@ -13,6 +13,7 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 5. Trap: premise routes taken from docs/lit instead of RESULTS (C115 E-1). Check: every premise quote grepped verbatim in docs/RESULTS.md.
 
 ## Resume point 5 (successor 27; 2026-11-04 14:38Z by date -u)
+- L-3 (b261c3f9, 0c51ce6d) MATCHES (byte test True). SLOT closed on my side.
 - SLOT report cdf8e962 pushed. L-2 (l-new 6eb389a6, 55e74726) crossed: SL-L1 MET, SL-L2 NOT MET (insert «over 𝓛_d»): R2-P-IDEAL-SLOT-L2.md.
   SEG fixes entry 1 (2e3dd532): F-1, F-2 CORRECT.
 

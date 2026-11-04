@@ -38,3 +38,11 @@ Verdict on L-2: NOT YET. One word change (SL-L2) gives L-3; with it, MATCHES.
   so «at most one» is exact on that set. ✓
 - F-2: new quote «after a level-0 reset, the next segment is a sub-run of a segment already seen» = docs/new/N5-SEG-box157.md l. 24
   verbatim (8291ecf7); «no new states above» is now labelled as the lane's paraphrase. The killed statement is unchanged. ✓
+
+## Addendum 1: line L-3 (claude/l-new b261c3f9), 2026-11-04 15:56Z (date -u)
+- Hashes: docs/new/P-IDEAL-SLOT-line-L3.txt 0c51ce6da0a655c31112515c78cb0b5d22690168, 1 line, 0 «|»; P-IDEAL-SLOT-fixes.md cae85ce1…,
+  43 lines (entry 2 appended); L-2 55e74726 and packet 62901b5f unchanged.
+- Byte test: L-2 with its single occurrence of «any bound on that number in terms of d» replaced by «any bound on that number over 𝓛_d
+  in terms of d» equals L-3 exactly (True). Token diff: one insertion «over 𝓛_d». SL-L2 MET.
+- Optional only: the provenance tail still names «fixes entry 1»; entry 2 holds this change.
+- Verdict: L-3 MATCHES. All my items on P-IDEAL-SLOT are closed.
