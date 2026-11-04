@@ -26,6 +26,8 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 - 2026-11-03 23:03Z (date -u): IDEAL-RED fixes entry 1 + line L-1 (l-new b115ff3a, fixes 727b6f0c, L1 44d0287a): fixes CORRECT; L-1 needs L-R1 (eps
   undefined, X case), L-R2 (A undefined), L-R3 (labels agree only from a+2). MY MISS: MONO's false «Does NOT claim» remark (REFEREE 23
   IR-1). TRAP: paper-check negative remarks too. Report R2-P-IDEAL-RED-L1.md.
+- 2026-11-04 00:09Z (date -u): IDEAL-RED line L-2 (l-new ffeb9736, 65ba7ca7, fixes 2e8c3630): MATCHES (R2-P-IDEAL-RED-L2.md); byte
+  test True; 4 required + optional 5-8. Missed REFEREE L-1d in L-1 (U range unbound). TRAP: bind every count's index range. Queue empty.
 
 ## HANDOVER (successor 25, session_01V5yGRaPp26T6iMUpCRmXsW, Opus 5.5 under D15; written 2026-11-02 03:32Z by date -u; context ~505k; Lead 03:35Z: hand over and park)
 Branch claude/referee-2, merged with trunk (git merge, no rebase) before pushes. REFEREE-2 owns no docs/GAPS.md rows.
