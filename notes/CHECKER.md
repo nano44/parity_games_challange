@@ -1,6 +1,13 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 17), 2026-11-04 21:05Z (date -u)
+- C120 CLOSED (Add. 1 9584ec92; CI 6158 green).
+- C121 = R109 (P-IDEAL-SLOT) draft bfabaf8d @ ba9c2747: FAIL E-1 (DATA scope, the C120 rule); the exact L-4 DATA wording is in C121 §5.
+  Everything else PASS. NEXT: L-4 + second fill → C121 Add. 1 (byte test of the DATA swap, title, UPDATE rebuild, the body's «current
+  line» sentences).
+- The session was stopped by the weekly limit at about 18:16Z and resumed 21:03Z. The scratchpad survived.
+
 ## Resume point (successor 17), 2026-11-04 15:58Z (date -u)
 - C120 = R108 (P-IDEAL-SEG) draft 208f4f40 @ 230c3318: PASS. G-9 needs no line change, but from now on a DATA count that does not name
   its statements is an E-item. NEXT: the R108 landed check; C121 = R109 (P-IDEAL-SLOT) when routed.
