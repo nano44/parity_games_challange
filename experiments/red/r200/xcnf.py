@@ -122,7 +122,7 @@ def build(T, E, fixall=False, lem=True):
                 if e is False: C.add([-v])
                 elif e is True: C.add([v])
                 else: C.add([-v, e]); C.add([v, -e])
-    cvar = {}
+    cvar = {}; dif = {}
     def better1(t, x):
         if (t, x) in cvar: return cvar[(t, x)]
         def inopt(k, f):
@@ -138,7 +138,9 @@ def build(T, E, fixall=False, lem=True):
             for g in faces:
                 if fb[g] is False: continue
                 C.add([-pos, neg(fb[g])] + [C.AND([fa[f], lt(fi[g], fi[f])]) for f in faces if f != g])
-        cvar[(t, x)] = c; return c
+        cvar[(t, x)] = c
+        dif[(t, x)] = {y: C.OR([C.EQ(i1[(y, k)], neg(i0[(y, k)])) for k in (0, 1)]) for y in range(N) if y != x}   # y on exactly one chain
+        return c
     mv = {(t, v): neg(C.EQ(st[(t, v)], st[(t - 1, v)])) for t in range(1, L + 1) for v in range(N)}
     if lem:
         reach = {}
@@ -166,6 +168,16 @@ def build(T, E, fixall=False, lem=True):
         for t in range(1, L + 1):
             c = better1(t - 1, a); kp = KPb(t, a)
             C.add([C.EQ(st[(t, a)], C.ITE(C.EQ(c, kp), kp, st[(t - 1, a)]))])
+    if os.environ.get("PMD") == "1":   # Corollary PMDIFF (L-NEW box 152; also immediate from R104: the symmetric difference of x's two chains
+        # is x's faces + the current faces of the movers on exactly one chain, so C changes only if one of those movers changes option)
+        byx = {}
+        for (t, x) in cvar: byx.setdefault(x, []).append(t)
+        for x, ts in byx.items():
+            ts.sort()
+            for i, a in enumerate(ts):
+                for c2 in ts[i + 1:]:
+                    for (p, q) in ((a, c2), (c2, a)):
+                        C.add([neg(C.EQ(cvar[(a, x)], neg(cvar[(c2, x)])))] + [C.AND([dif[(p, x)][y], neg(C.EQ(st[(p, y)], st[(q, y)]))]) for y in range(N) if y != x])
     info = dict(N=N, N0=N0, L=L, lev=lev, WT=WT, gate0=gate0, S0=S0, m0=m0, dtop=dtop, faces=faces, b=b, lt=lt, par=par, st=st, Gb=Gb, req=req, fi=fi)
     return C, info
 
