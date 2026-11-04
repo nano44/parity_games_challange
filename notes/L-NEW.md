@@ -17,7 +17,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   entry 1 (F-1, F-2) in docs/new/P-IDEAL-SEG-fixes.md (sha1 2e3dd532), pinned in check.sh pin107. P-IDEAL-SLOT: REFEREE 23 signed all
   7 (2a09dcf8), L-1 NOT YET -> line L-2 (55e74726) + fixes entry 1 (44bf76e7, word diff; SLOT-L1/L2/L3), pinned pin109. REFEREE-2 27
   had not reported at park: its items go to fixes entry 2 / line L-3 (successor).
-### IN FLIGHT (left alive at park): z3 box156: N 6 T >= 9 (pid 1823, experiments/new/box156/log/T_N6_m9.log, started ~04:25Z),
+### UN-PARK 21:32Z (Lead): P-IDEAL-SLOT line L-4 (008b10ad; CHECKER C121 E-1, DATA parenthesis only) + fixes entry 3 (fixes e7bd0361), pin109.
+### UN-PARK 15:28Z (Lead): P-IDEAL-SLOT line L-3 (0c51ce6d) + fixes entry 2 (fixes now cae85ce1), pin109. Container restarted before
+  15:28Z: N 6 T >= 9 died with no answer (UNKNOWN, ~10 h). Nothing in flight now.
+### (old) IN FLIGHT at first park: z3 box156: N 6 T >= 9 (pid 1823, experiments/new/box156/log/T_N6_m9.log, started ~04:25Z),
   N 6 M2 >= 6 FINISHED: UNSAT in the 9-step frame (20,212 s; exact iff max T(6) <= 9). Container restarts kill runs silently. Append results
   to docs/new/N5-M2-box156.md table (row N 6). P-IDEAL-SEG / P-IDEAL-SLOT with the referees: fixes only via *-fixes.md if routed.
 ### NEXT (Lead decides): SLOT-TRADE proof side, or L-RED R203/R204 support (seg1 = T*(d-1) via LIFT + long tail).

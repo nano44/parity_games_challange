@@ -158,3 +158,45 @@ REFEREE successor 23 (Opus 5.5, D15), 2026-11-04T13:15Z by date -u. Independent:
 - F-2 is CORRECT. docs/new/N5-SEG-box157.md l. 24 reads «after a level-0 reset, the next segment is a sub-run of a segment already
   seen». The new quote is verbatim, and «no new states above» is labelled a paraphrase.
 - Neither fix touches a signed statement or line L-1. P-IDEAL-SEG L-1 stays MATCHED.
+
+## §C addendum 1 (2026-11-04T15:56Z by date -u, successor 23; Opus 5.5, D15): line L-3
+- Object: claude/l-new b261c3f9, an ancestor of origin/claude/l-new. I re-measured every file:
+  - docs/new/P-IDEAL-SLOT-line-L3.txt: sha1 0c51ce6d…, 1 line, no «|»;
+  - docs/new/P-IDEAL-SLOT-fixes.md: sha1 cae85ce1…, 43 lines. Its first 36 lines have sha1 44bf76e7, the same as entry 1 at 6eb389a6,
+    so entry 1 is unchanged and entry 2 is appended;
+  - L-2 55e74726 and the packet 62901b5f / 192: unchanged.
+- My word diff L-2 → L-3: exactly one hunk, the insertion «over 𝓛_d» after «any bound on that number». This equals entry 2.
+- Content: the DEAD clause now reads «by SANDWICH any bound on that number over 𝓛_d in terms of d is a bound on T*(d − 1)».
+  - That is exactly what SANDWICH gives: sup seg1 over 𝓛_d = T*(d − 1).
+  - A bound on the narrower class of SEG1-2D (2-wide ladders without degree-1 movers) does not by itself bound T*(d − 1), which is
+    defined over all of 𝓛_d. So REFEREE-2's SL-L2 is right, and L-2's wording overstated it. (My report §2 already stated the
+    implication over 𝓛_d.)
+- No definition changes. Every other clause is L-2, which I matched in §C.
+- VERDICT: line L-3 MATCHES. All 7 statements stay SIGNED.
+
+## §C addendum 2 (2026-11-04T21:58Z by date -u, successor 23; Opus 5.5, D15): line L-4 (byte test)
+- Stale-clone check: HEAD = ls-remote = 241a8c14 before this addendum, and ff-only reported nothing to merge.
+- Object: claude/l-new d488d06d, an ancestor of origin/claude/l-new. I re-measured every file:
+  - docs/new/P-IDEAL-SLOT-line-L4.txt: sha1 008b10ad…, 1 line, 3,474 bytes, 0 «|»;
+  - P-IDEAL-SLOT-fixes.md: e7bd0361, 56 lines. Its first 43 lines have sha1 cae85ce1, the same as entries 1-2, so entry 3 is appended;
+  - L-3 0c51ce6d and the packet 62901b5f / 192: unchanged.
+- Byte test.
+  - I took the new DATA text from CHECKER C121 §5 E-1 myself (claude/checker f5338080, docs/checker/C121.md l. 79-83, wrapped lines
+    joined by single spaces, outer «» removed).
+  - I took the old DATA text from C121 §5 l. 67-68, which quotes L-3's parenthesis.
+  - Results:
+    - the old text occurs in L-3 exactly once;
+    - the new text contains no «|»;
+    - L-3 with that one substitution EQUALS L-4 byte for byte (Python bytes comparison: True).
+  - So nothing else changed. Entry 3's word diff is the same substitution, split into difflib hunks.
+- Content of the new DATA.
+  - The scope is now per statement:
+    - LIFT: lift.py ×3 plus three.py ×3;
+    - SEG: segcheck.py on the maximal intervals of 59 + 34,934 runs;
+    - SEG-ONCE: 55 + 1,936 degree-≤-2 runs;
+    - SHIFT, SEG-CAP and SANDWICH: «no lane DATA».
+  - That is right: their evidence is the proofs (and my own probe, which is not lane DATA).
+  - Counts re-measured by me on the w106 file set at 8291ecf7: 59 corpus runs, 55 with degree ≤ 2; 34,934 random runs (every start for
+    N ≤ 8, the genome start otherwise), 1,936 with degree ≤ 2. All EQUAL.
+  - LIFT's three «SAME True» and three.py «cuts []» lines were re-run by me in §4 (w108).
+- VERDICT: line L-4 MATCHES. All 7 statements stay SIGNED.
