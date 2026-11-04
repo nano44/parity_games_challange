@@ -18,3 +18,6 @@ if r:
     print(f"replay L {len(S) - 1} {why} (needs >= {t}): {'OK' if len(S) - 1 >= t or os.environ.get('TMIN') == '0' else 'MISMATCH'} -> {out}", flush=True)
     lev = G["lev"]; Cl = [sum(1 for u in range(1, len(S)) if any(S[u][v] != S[u - 1][v] for v in range(G["N"]) if lev[v] <= l)) for l in range(max(lev) + 1)]
     print(f"replayed C_l (steps moving a mover of level <= l): {Cl}", flush=True)
+    z = [u for u in range(1, len(S)) if any(S[u][v] != S[u - 1][v] for v in range(G["N"]) if lev[v] == 0)]
+    cuts = [0] + z + [len(S)]; segs = [cuts[i + 1] - cuts[i] - 1 for i in range(len(cuts) - 1)]
+    print(f"replayed level-0 steps {z}; segments (seg1, mid, tail) {segs}", flush=True)

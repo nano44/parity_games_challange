@@ -219,6 +219,23 @@ def build(T, E, fixall=False, lem=True):
                 enc = CardEnc.atleast(lits=lits, bound=bnd - nt, top_id=C.n, encoding=EncType.seqcounter)
                 C.n = max(C.n, enc.nv); [C.add(list(c)) for c in enc.clauses]
         info_ml = ml
+    if os.environ.get("SEG"):   # R204: segments cut at the level-0 steps; SEG "1t:s,1:m,t:m,m:m" -> seg1+tail >= s, seg1 >= m, tail >= m, mid >= m
+        from pysat.card import CardEnc, EncType
+        z = {t: C.OR([mv[(t, v)] for v in range(N) if lev[v] == 0]) for t in range(1, L + 1)}
+        ne = {t: C.OR([mv[(t, v)] for v in range(N)]) for t in range(1, L + 1)}
+        a1 = {0: False}; a2 = {0: False}
+        for t in range(1, L + 1): a1[t] = C.OR([a1[t - 1], z[t]]); a2[t] = C.OR([a2[t - 1], C.AND([a1[t - 1], z[t]])])
+        sg = {"1": {t: C.AND([neg(a1[t]), ne[t]]) for t in range(1, L + 1)},
+              "t": {t: C.AND([a2[t - 1], neg(z[t]), ne[t]]) for t in range(1, L + 1)},
+              "m": {t: C.AND([a1[t - 1], neg(a2[t - 1]), neg(z[t]), ne[t]]) for t in range(1, L + 1)}}
+        for item in [x for x in os.environ["SEG"].split(",") if x]:
+            which, bnd = item.split(":"); bnd = int(bnd)
+            lits = [sg[w][t] for w in which for t in range(1, L + 1)]
+            lits = [x for x in lits if x is not False]; nt = sum(1 for x in lits if x is True); lits = [x for x in lits if x is not True]
+            if bnd - nt > len(lits): C.add([])
+            elif bnd - nt > 0:
+                enc = CardEnc.atleast(lits=lits, bound=bnd - nt, top_id=C.n, encoding=EncType.seqcounter)
+                C.n = max(C.n, enc.nv); [C.add(list(c)) for c in enc.clauses]
     if os.environ.get("TMIN") == "1":   # R202: the run has at least L steps (deterministic run: step L nonempty => all earlier steps nonempty)
         C.add([mv[(L, v)] for v in range(N)])
     info = dict(g0=g0, N=N, N0=N0, L=L, lev=lev, WT=WT, gate0=gate0, S0=S0, m0=m0, dtop=dtop, faces=faces, b=b, lt=lt, par=par, st=st, Gb=Gb, req=req, fi=fi)

@@ -97,6 +97,12 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - 11:5xZ R203 (Lead 11:49Z): CMIN="l:b" in xcnf (C_l = #steps moving a level-<=l mover, seqcounter). d 4 horizon 13 = exact max T, so exact.
   Running: for b in 4 6; do TMIN=0 CMIN=0:2,1:$b SYMB=1 nohup timeout 14400 python3 xmax.py 4 13 out/c/d4_c1_$b.json > out/c/d4_c1_$b.log 2>&1 & done
   Stopped: d4 T>=14 SYMB (R197 has it; 3 h no answer); pcegar k3p2/ag_0 paused at 44 no-goods (resume = same line).
+- 12:3xZ R203 d 4: C_0 2 + C_1 >= 4/6/7/8 all SAT (19/20/61/134 s); C_1 = 8 = LEVEL-PRODUCT ceiling, witness r203/d4_C1_8 (L 10, C [2,8,10,10],
+  lemck 0 after gate renumbering; my 12:35Z message claimed lemck before running it: corrected 12:38Z). C_2 >= 11 | C_1 = 8 running
+  (out/c/d4_c18_c2_11.log); >= 12 stopped 12:5xZ for R204.
+- 12:5xZ R204 (Lead 12:46Z, L-NEW box 158 SLOT-TRADE): SEG "1t:s,1:m,t:m,m:m" in xcnf (segments = nonempty steps before / between / after
+  the level-0 steps). d 4 seg1+tail >= 10 SAT 91.5 s (split [5,0,5]). Running: SEG=1t:11, 1t:12, 1:6,t:6 (TMIN=0 SYMB=1 CMIN=0:2 xmax.py
+  4 13 out/seg/d4_<tag>.json > .log). pcegar k3/ag_0 paused at 38 no-goods (resume = its line above).
 - Cross-checks: bf.py (brute force N 4 + GREEDY) 85/85 agree with xcnf (LEM on/off), 8 UNSAT; agree.py vs xisat 30/30 + 29/30 + 29/30,
   the two non-agreements are xisat UNKNOWN (z3 timeout 600-900 s, FD too) vs xcnf UNSAT on N 8 L 3 instances (s5_15: noLEM UNSAT too).
 
