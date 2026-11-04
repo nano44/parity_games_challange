@@ -1,6 +1,68 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Successor 50 handover check (STEP 0, Opus 5.5; written 2026-11-03 19:18Z by date -u)
+1. claude/l-new: ls-remote 2715601a; fetched; ff-only (local was 535 behind = stale clone again) -> HEAD 2715601a = ls-remote.
+   Vs trunk claude/vibrant-johnson-nxvvxo: 0 ahead / 170 behind, merge-base 2715601a (trunk has merged l-new). Lane files only.
+2. Open: BOX 150 freeze P-IDEAL-RED (scope N5-IDEAL-STATE §6; CHAIN-BACK needs R178 XI-NEW carried in full or dropped);
+   then BOX 151 (DBL/ZERO nesting lemma from l-red R199).
+3. GAPS: G-N5-TIME major open (owner L-NEW); G-N1-LB minor open (optional, not routed); G-N5-TERM closed.
+4. D18 (active): "Focus on N5 and work toward proving it. ... Clearly distinguish proven results from conjectures and open problems."
+   D14 (active): "D" / "You know it can also test prveiously not tested approaches, it can come up with it own as well".
+   D1 (active, launch brief). D19 (owner 2026-11-03, quoted from the Lead brief; NOT yet in DECISIONS.md/INDEX on trunk at fetch):
+   "we have 9% usage left until tomorrow night, make use of it".
+5. Trap: stale clone (535 behind here); check = ls-remote + fetch + ff-only + HEAD vs ls-remote. push.sh ~20-40 min: background,
+   timeout 7200000, output to file + echo exit $?.
+
+### Box 150 P-IDEAL-RED FREEZE (Lead brief 2026-11-03; docs/new/P-IDEAL-RED.md; experiments/new/box150/)
+- Packet: ENC, LOCAL, MONO, XI-NEW + RISE (re-proved in full; R178 text not a premise), CHAIN-BACK + U-EQ, KEYFLIP + KF-EQ (deg <= 2),
+  DECREMENT + EXACT-ENERGY (any degree), TOP-MONO + RANK-BOUND, INTERVAL-RESTRICT, INTERVAL-CHARGE, RECURSION (deg <= 2).
+  Premise: RESULTS R104's model DEFINITION only. Excluded: R178 real-N5 XI-NEW, ladder identity KF_x = F_(l-1), box 148 opening
+  dichotomy, box 147 degree-D TOP forms, all conjectures.
+- FINDINGS while re-proving: (1) XI-NEW (ii)'s «Xi is monotone» needs Lemma MONO (current value of every mover never falls); proved by
+  induction in reverse pi with the integer encoding ENC (sum of +-2^rank). (2) Box 148 recursion «U*(n) <= sum_(p<n)(U*(p)+1)» omits
+  the boundary steps; packet proves U*(n) <= n + sum_(p<n)(U*(p)+1); the box 148 form unviolated on data (REC148 0), not claimed.
+  (3) Box 147 / 148 «any degree» for TOP-MONO / INTERVAL-RESTRICT is wrong as stated (an unstable mover may stay unstable after a
+  move at degree >= 3); packet restricts them to degree <= 2. DECREMENT / EXACT-ENERGY hold at any degree.
+- Check: box150/check.py (own simulator, XSIM vs box139/paths.py): 0 violations, 46 corpus genomes (386 steps) + 75,518 all-start runs
+  of 200 random genomes (rand.py seed 150, 107 with degree 3-4). Negative controls NEG=1/2/3 fire (NEG=3 old-state keys: XINEW 6).
+  Wired into check.sh as w99 (full check.sh PASS locally).
+### Box 153 N5-CUBE (Lead GO 00:47Z; docs/new/N5-CUBE-box153.md; experiments/new/box153/)
+- Step 1 PASSED: DECOMP (improvement orientation = decomposable AUSO, combing order decreasing pi), MULTI->SINGLE (T <= LP(start)).
+  decomp.py 0 violations (119 genomes, 603,741 faces). DEAD: Xi-side-only route (2-wide Xi-ladder LP 8/22/52/114, K = 2..5).
+- Sources opened (box 153):
+  - [WW22] Weber, Widmer, arXiv:2207.05985 (ar5iv HTML): Def. 4 (USO), §2.2 (combed / decomposable, after Obs. 7), Thm 18 + remark
+    (JumpAntipodal n evaluations on all decomposable USOs; exponential on some acyclic USOs, citing Schurr's thesis).
+  - [MC94] Melekopoglou, Condon, ORSA J. Comput. 6(2) 188-192 (1994), DOI 10.1287/ijoc.6.2.188 (author PDF cs.ubc.ca/~condon,
+    text-extracted): §2 select rules, «if the graph is acyclic the [topological] algorithm makes at most linear number of switches»;
+    Thm 2.8, Cor. 2.9, 2.10 (exponential, stochastic average vertices). Hypotheses do NOT match IDEAL; nothing imported.
+  - Klee-Minty 1972, Schurr thesis: NOT opened, not used.
+
+### Box 152 N5-VAL CLOSED (Lead 00:09Z; docs/new/N5-VAL-box152.md; experiments/new/box152/)
+- PROVED (lane): PREMERGE (C_s(x) = sign of the pre-merge segment difference), PMDIFF (C differs at two states => a pre-merge
+  mover differs), STABLE-PATH; lemcheck 0 violations (92,308 + 20,804 state pairs). k3 E2 UNKNOWN (5400 s) under PMDIFF+STABPATH;
+  12-step prefix SAT. E_min (value semantics, lower bounds) 2 / >=2 / >=2 / >=3 for k = 2..5: no super-linear trend visible.
+- P-IDEAL-RED: signed by both referees (16 statements); fixes entry 1 (b115ff3a), line L-1, line L-2 + entry 2 (ffeb9736).
+### Things only I know (successor 50, box 152): valcheck free-Xi-target REL checks time out at k3 (use FIXXT); cegar.py lincheck is
+  the fast path (strict LP over reals). Kill solvers by pid from `ps -eo pid,args | grep "^ *[0-9]* python3 -I cegar.py"` (pkill -f
+  and pgrep -f patterns that appear in my own command line kill my shell).
+
+### Box 150 push 0ebddcf5 (VERIFY PASS; Lean / Oink smoke NOT RUN: no lakefile, Oink not built); reported to the Lead 20:06Z.
+### Box 151 N5-NEST (Lead brief; docs/new/N5-NEST-box151.md; experiments/new/box151/)
+- FINDING: l-red r199/xwake.py «reaches» relation admits 2-cycles (DEG=1 recursion leaves re(x,x) unconnected; DEG=0 transitivity
+  only for 3 distinct movers). + antisymmetry: wake-order relaxation reproduces every exact R197/R199 nested result (k3 UNSAT d4/d5,
+  k2 UNSAT d4, SAT d5); R199's «value semantics needed» reading is an artefact of that.
+- PROVED (lane): NEST-BARE (every k >= 2, any gates: p_k -> q_(k-1) -> q_k -> p_k cycle at steps 2-5), F2 LAG, F3 RE-REVERSAL.
+- EXACT (sound relaxation): gate-free E_min(k) = 1, 2, 2, 3 for k = 2..5 (= ceil(k/2)); gate-fixed 2, 2, 3, >= 3.
+- READING: «nesting <= c * levels above» is NOT enough for poly (k = 2d/3 stacked under d/3); «DBL - ZERO <= f(above)» needs f
+  exponential-cost stacks, i.e. value semantics; WO witnesses k3 E2 / k4 E2 (hints/) are the L-RED realisation targets.
+### Things only I know (successor 50, box 151): pip install z3-solver (not preinstalled). genk.py k 6 takes ~70 s (build), k 6 xwake
+  encodings are slow; DEG=0 is much faster than DEG=1 and sound for UNSAT. pkill -f <pattern> killed my shell again: kill by pid.
+  Scratch: /tmp/claude-0/r199 (copies + xwake_opt.py OPT=1 per-option wake, OPT=2 exact increment propagation: both SAT at k3 E2).
+
+### Things only I know (successor 50): check.py ALL=1 ALLN=10 takes ~18 s on the rand corpus; restrict() maps kept movers to a single
+  option index 0, compare states via S[a] at kept movers.
+
 ## Resume point (successor 49, Opus 5.5, session_01V5yGRVusQANCQiXcbrWdJg; FINAL, PARKED 2026-11-02 ~14:1xZ by date -u)
 ### FINAL summary (successor 49): boxes 147-149, every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
 - 147 COARSE (60286d8c): every coarse Xi-statistic DEAD (B and MRG constant across realised lag1's unchained step; all-start quotient

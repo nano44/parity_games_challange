@@ -19,6 +19,15 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 - CHECKER C115 FAIL E-1: [VJ-LOC] = VJ00 5.8 «1 ⇒ 2» is NOT landed (R15 (iii)); carrier R36 (c) on G^d. My miss (took it from docs/lit T21).
   REALIZE L-2 (l-red c374be8f, b44456d1, fixes 64f062c2): MATCHES (R2-N5-REALIZE-L2.md); byte test True; R36 (c) coverage confirmed;
   R2-N5-REALIZE.md Addendum 2 corrects my row. TRAP: premise routes only from RESULTS, never from docs/lit. Queue empty.
+- 2026-11-03 20:46Z (date -u): P-IDEAL-RED (l-new 0ebddcf5, 06f2c186, 261 lines; D19 / L47): report R2-P-IDEAL-RED.md, all 16 statements
+  SIGN (U-EQ precision N-1: U <= T - 1 false at T = 0). Premise = R104 definition only (checked vs RESULTS l. 9864). Tool
+  R2-P-IDEAL-RED/ideal_check.py (sets, not ENC; 3 random pi; both tie rules; H built and run): 0 viol on 110,410 runs; NEG=old fires.
+  Lane w99 strings reproduced exactly (worktree $SCRATCH/wideal). Degree <= 2 needed: KEYFLIP / TOP-MONO fail at degree 3 (info).
+- 2026-11-03 23:03Z (date -u): IDEAL-RED fixes entry 1 + line L-1 (l-new b115ff3a, fixes 727b6f0c, L1 44d0287a): fixes CORRECT; L-1 needs L-R1 (eps
+  undefined, X case), L-R2 (A undefined), L-R3 (labels agree only from a+2). MY MISS: MONO's false «Does NOT claim» remark (REFEREE 23
+  IR-1). TRAP: paper-check negative remarks too. Report R2-P-IDEAL-RED-L1.md.
+- 2026-11-04 00:09Z (date -u): IDEAL-RED line L-2 (l-new ffeb9736, 65ba7ca7, fixes 2e8c3630): MATCHES (R2-P-IDEAL-RED-L2.md); byte
+  test True; 4 required + optional 5-8. Missed REFEREE L-1d in L-1 (U range unbound). TRAP: bind every count's index range. Queue empty.
 
 ## HANDOVER (successor 25, session_01V5yGRaPp26T6iMUpCRmXsW, Opus 5.5 under D15; written 2026-11-02 03:32Z by date -u; context ~505k; Lead 03:35Z: hand over and park)
 Branch claude/referee-2, merged with trunk (git merge, no rebase) before pushes. REFEREE-2 owns no docs/GAPS.md rows.

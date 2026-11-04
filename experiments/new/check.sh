@@ -811,4 +811,37 @@ if grep -qxF "KEYFLIP x3_L8.json N 6 STEPS 8 MOVES 13 KFLIPS 10 VIOL 0" <<<"$w98
 else
   echo "box 149 KEYFLIP check: FAILED"; exit 1
 fi
+w99=$(cd .. && python3 -I new/box150/check.py new/box14*/out/*.json new/box14*/inst/*.json new/box142/*.json new/box146/*.json | tail -1; ALL=1 python3 -I new/box150/check.py new/box150/out/rand/*.json | tail -1; NEG=3 python3 -I new/box150/check.py new/box150/out/rand/*.json | tail -1)
+if grep -qxF "TOTAL genomes 46 runs 46 steps 386 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYFLIP 0 DECR 0 TOPMONO 0 RBOUND 0 RESTR 0 ICHARGE 0 REC 0 VIOL 0 (info REC148 0)" <<<"$w99" && grep -qxF "TOTAL genomes 200 runs 75518 steps 93963 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYFLIP 0 DECR 0 TOPMONO 0 RBOUND 0 RESTR 0 ICHARGE 0 REC 0 VIOL 0 (info REC148 0)" <<<"$w99" && grep -q "^TOTAL genomes 200 runs 200 .* XINEW [1-9]" <<<"$w99"; then
+  echo "box 150 P-IDEAL-RED: every packet inequality, 0 violations on 46 corpus genomes and 75,518 all-start runs of 200 random genomes; negative control fires: PASS"
+else
+  echo "box 150 P-IDEAL-RED check: FAILED"; exit 1
+fi
+if python3 -c "import z3" 2> /dev/null; then
+  w100=$(bash box151/run.sh check 2>&1)
+  exp100="NEST k 3 E 0 DEG 1 ANTI 0 FREEKP 0 xwake -> sat
+NEST k 3 E 0 DEG 0 ANTI 1 FREEKP 0 xwake_anti -> unsat
+NEST k 3 E 1 DEG 0 ANTI 1 FREEKP 0 xwake_anti -> unsat
+NEST k 2 E 2 DEG 0 ANTI 1 FREEKP 0 xwake_anti -> sat
+NEST k 4 E 2 DEG 0 ANTI 1 FREEKP 0 xwake_anti -> unsat
+NEST k 3 E 1 DEG 0 ANTI 1 FREEKP 1 xwake_anti -> unsat
+NEST k 4 E 2 DEG 0 ANTI 1 FREEKP 1 xwake_anti -> sat"
+  if [ "$w100" == "$exp100" ]; then
+    echo "box 151 NEST: xwake.py without antisymmetry SAT on bare k 3; with it UNSAT k 3 E 0/1, k 4 E 2, SAT k 2 E 2; gate-free UNSAT k 3 E 1, SAT k 4 E 2: PASS"
+  else
+    echo "box 151 NEST check: FAILED"; echo "$w100"; exit 1
+  fi
+else echo "box 151 NEST checks skipped (no z3)"; fi
+w101=$(cd .. && python3 -I new/box152/lemcheck.py new/box14*/out/*.json new/box14*/inst/*.json new/box142/*.json new/box146/*.json new/box152/*_d5_*.json)
+if grep -qxF "LEMCHECK runs 50 pairs 92308 PMDIFF 0 SPATH 0 pm_prem 32586 sp_prem 37303" <<<"$w101"; then
+  echo "box 152 PMDIFF / STABLE-PATH: 0 violations on 92,308 state pairs of 50 runs (incl. R198/R199 d 5 pins): PASS"
+else
+  echo "box 152 lemcheck: FAILED"; echo "$w101"; exit 1
+fi
+w102=$(cd .. && NMAX=10 python3 -I new/box153/decomp.py new/box14*/out/*.json new/box14*/inst/*.json new/box152/*_d5_*.json; python3 -I new/box153/longpath.py new/box153/ladlp_5.json)
+if grep -qxF "DECOMP genomes 25 faces 478953 USO 0 COMB 0 ORDER 0 ACYC 0 JUMP 0 maxjump 7" <<<"$w102" && grep -qxF "LONGPATH ladlp_5.json n2 10 longest 114 ideal_T 1" <<<"$w102"; then
+  echo "box 153 DECOMP: improvement orientation is a decomposable AUSO (0 violations); Xi-ladder K 5 longest improving path 114: PASS"
+else
+  echo "box 153 check: FAILED"; echo "$w102"; exit 1
+fi
 rm -rf "$tmp"
