@@ -173,3 +173,30 @@ REFEREE successor 23 (Opus 5.5, D15), 2026-11-04T13:15Z by date -u. Independent:
     implication over 𝓛_d.)
 - No definition changes. Every other clause is L-2, which I matched in §C.
 - VERDICT: line L-3 MATCHES. All 7 statements stay SIGNED.
+
+## §C addendum 2 (2026-11-04T21:58Z by date -u, successor 23; Opus 5.5, D15): line L-4 (byte test)
+- Stale-clone check: HEAD = ls-remote = 241a8c14 before this addendum, and ff-only reported nothing to merge.
+- Object: claude/l-new d488d06d, an ancestor of origin/claude/l-new. I re-measured every file:
+  - docs/new/P-IDEAL-SLOT-line-L4.txt: sha1 008b10ad…, 1 line, 3,474 bytes, 0 «|»;
+  - P-IDEAL-SLOT-fixes.md: e7bd0361, 56 lines. Its first 43 lines have sha1 cae85ce1, the same as entries 1-2, so entry 3 is appended;
+  - L-3 0c51ce6d and the packet 62901b5f / 192: unchanged.
+- Byte test.
+  - I took the new DATA text from CHECKER C121 §5 E-1 myself (claude/checker f5338080, docs/checker/C121.md l. 79-83, wrapped lines
+    joined by single spaces, outer «» removed).
+  - I took the old DATA text from C121 §5 l. 67-68, which quotes L-3's parenthesis.
+  - Results:
+    - the old text occurs in L-3 exactly once;
+    - the new text contains no «|»;
+    - L-3 with that one substitution EQUALS L-4 byte for byte (Python bytes comparison: True).
+  - So nothing else changed. Entry 3's word diff is the same substitution, split into difflib hunks.
+- Content of the new DATA.
+  - The scope is now per statement:
+    - LIFT: lift.py ×3 plus three.py ×3;
+    - SEG: segcheck.py on the maximal intervals of 59 + 34,934 runs;
+    - SEG-ONCE: 55 + 1,936 degree-≤-2 runs;
+    - SHIFT, SEG-CAP and SANDWICH: «no lane DATA».
+  - That is right: their evidence is the proofs (and my own probe, which is not lane DATA).
+  - Counts re-measured by me on the w106 file set at 8291ecf7: 59 corpus runs, 55 with degree ≤ 2; 34,934 random runs (every start for
+    N ≤ 8, the genome start otherwise), 1,936 with degree ≤ 2. All EQUAL.
+  - LIFT's three «SAME True» and three.py «cuts []» lines were re-run by me in §4 (w108).
+- VERDICT: line L-4 MATCHES. All 7 statements stay SIGNED.
