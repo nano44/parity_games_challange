@@ -28,6 +28,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   Lesson: match every DEFINITION of a line against the packet's §0, not only the claims. Also R105-E2: TOP-MONO «above y_t» unanchored (π).
 - P-IDEAL-SEG (l-new 8291ecf7, 7fa84784/152): R-P-IDEAL-SEG.md. SEG, SEG-ONCE, LEVEL-PRODUCT, DEAD REPLAY all SIGN; max_d5_L15 T 15
   recomputed, states equal; L-1 MATCHES (definition diff done); optional SEG-L1 (l ≥ −1). Tool seg_probe.py (weak: T ≤ 4).
+- P-IDEAL-SLOT (l-new e46e98a4, 62901b5f/192): R-P-IDEAL-SLOT.md. All 7 SIGN (SEG copy verbatim). L-1 NOT YET: SLOT-L1 (SHIFT
+  «removing one level»), SLOT-L2 (LIFT construction missing; mixed W-targets A/B would break keys). Tool slot_probe.py (MUT bites 1,007).
 - Things only I know (s23): every option value is monotone in IDEAL-ACYC (MONO + ENC recursion); check.py tests current values only.
   check.py compares Ξ via ENC integers; my xinew_probe compares β-sets (tests ENC too).
 - D19 and L47 not yet in docs/DECISIONS.md at trunk 6a6bd43a (told the Lead).
