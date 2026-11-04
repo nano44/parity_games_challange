@@ -12,6 +12,14 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
    D12 (active): «WE can run referees on opus too temperoraly». D19 (active): «we have 9% usage left until tomorrow night, make use of it».
 5. Trap: premise routes taken from docs/lit instead of RESULTS (C115 E-1). Check: every premise quote grepped verbatim in docs/RESULTS.md.
 
+## Resume point 2 (successor 27; 2026-11-04 08:27Z by date -u)
+- Report e01175f6 pushed (VERIFY PASS), Lead messaged 08:09Z. Lead 08:27Z: L-2 round routed to L-NEW; asked (a) my view of REFEREE M2-G1,
+  (b) R105 CHAINED line-vs-packet DATA for Erratum E-2.
+- docs/referee-2/R2-R105-chained.md: instance diff_n2.json (degree 3, N 2, t 2, h_1 = h_2 = 0); LINE reading breaks CHAIN-BACK (i) at all
+  35,116 DIFF steps; (ii) T <= N(1+U') 0 failures on 926,555 runs (climbs reach slack 0), unproved; no DIFF at degree <= 2 (XI-NEW).
+  P-IDEAL-M2 unaffected. AGREE M2-G1 (LOCAL line form includes x; needs P-IDEAL-RED LOCAL (a)/(b)): my miss.
+- TRAP (new): a «depends only on the states on its chain» quote includes the option's own mover; check own-mover moves in every LOCAL use.
+
 ## Resume point 1 (successor 27; 2026-11-04 07:33Z by date -u)
 - P-IDEAL-M2 (l-new 6bcfa0de; packet bc47b06c, line 0160d1e3): report docs/referee-2/R2-P-IDEAL-M2.md. All 7 statements SIGN, no gap.
   Line L-1 REQUIRED M2-L1 (bind KF_x, moves(x)), M2-L2 (34,934 runs are all-start only for N <= 8; 8 of 200 genomes N 9-10). P-1..P-3 optional.
