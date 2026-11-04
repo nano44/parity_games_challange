@@ -10398,6 +10398,198 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   its tail reads «a REDUCTION / EQUIVALENCE statement inside the IDEAL model; bounds nothing polynomially» and «G-N5-TIME stays OPEN;
   not M3, not a step-4 pass, not a TARGET.md claim» (L-2, by script). Not a step-4 pass. GAPS G-N5-TIME: open.
 
+### R106 [refereed-only] In the IDEAL model of RESULTS R104 (the model first stated in L-RED R178 §1), on acyclic Ξ-graphs, at degree ≤ 2 (premises: R104's definition of the model, and P-IDEAL-RED's Lemma ENC and Lemma LOCAL (b), RESULTS R105; π a topological order of the Ξ-graph; D2 the movers with two options; the improvement cube Q_G = {0, 1}^D2 of states; C_s(x) the option of x with the strictly better Ξ-value at s; the improvement orientation o_G directs the edge between b and b ⊕ e_x away from the endpoint whose x-coordinate differs from C_b(x)), for every genome G: (DECOMP) o_G is a unique sink orientation in the sense of Weber and Widmer, arXiv:2207.05985v1, Def. 4 (every non-empty face has exactly one sink); it is acyclic (Σ_x [b(x) ≠ C_b(x)] 2^π(x) falls along every edge); and in every face of dimension ≥ 1 the free coordinate of largest π is combed (all its edges in that face point the same way), so o_G is decomposable (every face combed, as in §2.2 of that paper); (MULTI→SINGLE) every step of an IDEAL run that moves the set Mv_t is the directed path of o_G that switches the movers of Mv_t one at a time in increasing π, so T ≤ Σ_t #Mv_t ≤ LP_G(s_0), the largest length of a directed path of o_G from the start; and (LADDER-LP) for every K ≥ 1 the explicit genome L_K (all movers of degree 2, distinct gate indices) with N = 2K level-0 movers in pairs (u_i, v_i), i = 0, …, K − 1, where both options of u_0 and v_0 go to the exit, option 0 (option 1) of u_i and v_i goes to u_(i−1) (v_(i−1)) for i ≥ 1, all parities are even, every rank of pair i − 1 is above every rank of pair i, the ranks within pair 0 increase as β(u_0, 0) < β(v_0, 0) < β(u_0, 1) < β(v_0, 1) and within pair i ≥ 1 as β(u_i, 0) < β(u_i, 1) < β(v_i, 0) < β(v_i, 1), with start u_0, v_0 on option 0 and all other movers on option 1, has a directed path of o_(L_K) of length 2^(K+1) − 2 from that start, so LP ≥ 2^(N/2+1) − 2 (2026-11-04) — a STRUCTURE / REDUCTION statement inside the IDEAL model, together with an exponential lower bound for LP, not for IDEAL runs: T ≤ LP cannot by itself give a polynomial bound (READING: a polynomial bound on T must use the W-key rule); nothing is said about real IDEAL runs beyond T ≤ LP (DATA: on L_K with gate indices increasing in the option index, the IDEAL run from that start is empty); bounds nothing polynomially; Ξ-cyclic genomes and degree ≥ 3 are not covered; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim (DATA: experiments/new/box153/decomp.py 0 violations on 25 corpus genomes, 478,953 faces; experiments/new/box154/ladder.py: the path of the proof checked for K = 1..10, and the longest path equals 2^(K+1) − 2 for K ≤ 7) (P-IDEAL-CUBE, docs/new/P-IDEAL-CUBE.md; L-NEW successor 50), CHECKER PASS (docs/checker/C117.md, checker 417d4d89)
+- Object (L-NEW successor 50, Opus 5.5, D14 / D18 / D19; frozen, unchanged during review): packet P-IDEAL-CUBE,
+  docs/new/P-IDEAL-CUBE.md, sha1 366afedcf7cd04a31302e25cec47c7fb3df455bb, 186 lines (l-new freeze d97555d4, 2026-11-04T01:59:51Z, the
+  file's only commit; identical at abe2b94c and a0bb2694). Both referees measured the sha1 (REFEREE l. 4 «docs/new/P-IDEAL-CUBE.md: sha1
+  366afedcf7cd04a31302e25cec47c7fb3df455bb, 186 lines;»; REFEREE-2 §0 l. 8-9 «sha1 366afedcf7cd04a31302e25cec47c7fb3df455bb,» «186
+  lines. Re-hashed: match.»). Title (l. 1): «Packet P-IDEAL-CUBE (box 154): the improvement cube of a degree-2 IDEAL-ACYC genome is a
+  decomposable acyclic USO (DECOMP); every IDEAL run follows a directed path of it (MULTI→SINGLE, T ≤ LP); and directed paths can be
+  exponential: an explicit Ξ-ladder family with LP ≥ 2^(K+1) − 2 = 2^(N/2+1) − 2 (Theorem LADDER-LP)». Status (l. 4-5): «Labels: PROVED
+  (L-NEW 50, unrefereed) /» «DATA / READING. Not a TARGET.md claim. No polynomial bound. G-N5-TIME stays OPEN.» To sign: §2 Lemma
+  DECOMP, §3 Lemma MULTI→SINGLE and Corollary T ≤ LP, §4 Theorem LADDER-LP, with the §1 definitions (table l. 8-14); §5 «DATA / READING
+  (not to sign)». Sections: premises (l. 16-23), §0 setting (l. 25-34), §1 definitions and the [WW22] text (l. 36-57), §2 DECOMP (l.
+  59-80), §3 MULTI→SINGLE and T ≤ LP (l. 82-93), §4 LADDER-LP (l. 95-158), §5 machine check, «does NOT claim», READING, TARGET diff (l.
+  160-186). Source: «docs/new/N5-CUBE-box153.md (box 153, 43125a61); this packet governs.» (l. 4).
+  Fixes: docs/new/P-IDEAL-CUBE-fixes.md, fixes entries 1-2 (append-only; one commit, a0bb2694; 30 lines, sha1
+  006274ec3f0aa82ceac8fa9b8f294f1f8d2e138e, the version both referees checked). Entry 1 replaces §0's «faces never tie» sentence (packet
+  l. 30-31) by the acyclicity argument, «No proof in the packet changes.» (l. 15); entry 2 is L-2's word diff. The packet read with
+  entry 1 is the text of record.
+  The RESULTS line is L-2, 449421e4cfaedbef577f68720fab4924111cd170 (docs/new/P-IDEAL-CUBE-line-L2.txt, l-new a0bb2694,
+  2026-11-04T03:42:52Z, the file's only commit; fixes entry 2). The title is L-2 verbatim, with nothing inserted (its date parenthesis
+  «(2026-11-04)» and its source note are the line's own; the source note names no fixes file). L-2 MATCHES at both referees: REFEREE §C
+  (3c3185d8) l. 174 «VERDICT: line L-2 MATCHES. All 4 statements stay SIGNED, and entry 1 changes no proof.»; REFEREE-2
+  R2-P-IDEAL-CUBE-L2.md (993c1710) l. 2 «Verdict: **MATCHES**.», l. 37 «Every clause is a signed statement with its exact hypotheses:
+  acyclic, degree ≤ 2.»
+  L-2 differs from the line at L-1 by exactly the eight hunks of fixes entry 2 (l. 22-30): LOCAL (c) dropped from the premises; «RESULTS
+  R105» for «R105 when landed»; π bound in the premise list instead of at the comb clause; «arXiv:2207.05985v1»; «(all movers of degree
+  2, distinct gate indices)» for L_K; the READING label on «a polynomial bound on T must use the W-key rule»; the gate order in the DATA
+  clause. REFEREE §C l. 154-155: «exactly 8 hunks, equal to entry 2's list, and nothing else» «differs.»; REFEREE-2 L2 l. 36 «L-2
+  (449421e4) = L-1 + the two REQUIRED changes (LC-1, LC-2) + the optional LC-P1 to LC-P3, CUBE-L3 and the R105 citation.»
+  History. At L-1 (99ae8face50615b4ce1ce5cd5e69f223f17208e1, docs/new/P-IDEAL-CUBE-line-L1.txt, l-new d97555d4, frozen with the packet),
+  REFEREE l. 127 «VERDICT: line L-1 NOT YET. It matches once CUBE-L1 is applied.» and REFEREE-2 l. 50 «**does NOT match yet**: REQUIRED
+  LC-1, LC-2 (§5)»: at L-1 the clause «the W-key rule must carry any such bound» stated a READING as a statement (REFEREE CUBE-L1 =
+  REFEREE-2 LC-2; REFEREE l. 119-120 «is not proved. Which runs the step rule allows without the key is not defined, so» ««must» has no
+  signed content.»), and «(DATA: on L_K the IDEAL run from that start is empty)» held only for gates increasing in the option index
+  (REFEREE-2 LC-1, l. 135-136). Neither referee found a hole in a proof; the one packet precision is REFEREE-2's P-1 (C_s(x) well
+  defined needs acyclicity, §2 l. 55-57), taken as fixes entry 1.
+  Setting (packet §0, l. 25-34; RESULTS R104's model in P-IDEAL-RED §0's notation): degree ≤ 2 throughout; «D2 := the movers with two
+  options; the others have one option and never move.» (l. 29); C_s(x) (x ∈ D2), the option of x whose Ξ-value is strictly better at s
+  (l. 30; well defined by fixes entry 1); «x is improving at s iff s(x) ≠ C_s(x).» (l. 32); the cube Q_G := {0, 1}^D2, a vertex b being
+  the state s_b (l. 33-34). D-ORI (l. 49-50): «For x ∈ D2 and b ∈ Q_G, the outmap is o_G(b)_x := 1 if b(x) ≠ C_b(x), else 0.»; D-USO =
+  [WW22] Def. 4 (l. 51); D-COMB (l. 52-53): «A dimension x is combed in a face F (free coordinates X_F ∋ x) iff all edges of F in
+  dimension x point in the same» «direction.»; D-DEC (l. 54): «An orientation is decomposable iff every face of dimension ≥ 1 has a
+  combed dimension.»; LP_G (l. 57): «LP_G(b) := the largest number of edges of a directed path in the orientation starting at b (finite
+  by DECOMP (b)).»
+- Claims signed (both referees Opus 5.5, D15: REFEREE l. 2 «(Opus 5.5, D15)», REFEREE-2 l. 2 «Opus 5.5 (D15)»; REFEREE successor 23
+  (report 5ef7bf47; §C on fixes entries 1-2 and L-2 3c3185d8); REFEREE-2 successor 26 (report 0787732b; R2-P-IDEAL-CUBE-L2.md
+  993c1710)). Items (a)-(d) are SIGN in both verdict tables (REFEREE "## 0. Verdicts" l. 8-17 of R-P-IDEAL-CUBE.md; REFEREE-2 "## 1.
+  Verdict table" l. 38-50 of R2-P-IDEAL-CUBE.md), and both verdicts stand after the fixes (REFEREE §C l. 174 «All 4 statements stay
+  SIGNED, and entry 1 changes no proof.»; REFEREE-2 L2 l. 32 «That is exactly the correction I asked for. «No proof in the packet
+  changes» is correct.»); the table is to-check (4). All hold for every IDEAL genome of degree ≤ 2 with an acyclic Ξ-graph (any width,
+  any levels, π any topological order); (d) is for the explicit family L_K. No item bounds a count polynomially.
+  (a) Lemma DECOMP (§2, l. 59-80; degree ≤ 2, any IDEAL-ACYC genome G, any width, any levels): «(o) o_G is an orientation in the sense
+      of [WW22] Def. 3.» «(a) It is a USO (D-USO).» «(b) It is acyclic.» «(c) In every face F of dimension ≥ 1, the free coordinate y of
+      largest π is combed. Hence o_G is decomposable (D-DEC).» (l. 61-64); acyclicity through «E(b) := Σ_(x ∈ D2) o_G(b)_x · 2^π(x)» (l.
+      74), which falls strictly along every edge. Cells: REFEREE «SIGN» (l. 12; §3 l. 57-65); REFEREE-2 «**SIGN**» for each of (o), (a),
+      (b), (c) (l. 42-45; §2 l. 58-69).
+  (b) Lemma MULTI→SINGLE (§3, l. 83-89; degree ≤ 2, IDEAL-ACYC): «List Mv_t as» «x_1, …, x_m in increasing π. Let b^0 := s_(t−1) and b^j
+      := b^(j−1) ⊕ e_(x_j). Then every edge b^(j−1) → b^j is a directed edge of» «o_G, and b^m = s_t.» (l. 83-85). Cells: REFEREE «SIGN»
+      (l. 13; §3 l. 66-67); REFEREE-2 «**SIGN**» (l. 46; §2 l. 70-74).
+  (c) Corollary T ≤ LP (§3, l. 90-93): «For every IDEAL run of a degree-≤-2 IDEAL-ACYC genome from s_0:» T is at most the total number
+      of moves Σ_t #Mv_t, which is at most LP_G(s_0) (l. 90). Cells: REFEREE «SIGN» (l. 14; §3 l. 68 «The concatenation is a directed
+      path from s_0, and LP is finite by (b).»); REFEREE-2 «**SIGN**» (l. 47; §2 l. 75-76).
+  (d) Theorem LADDER-LP (§4, l. 95-158, with Facts F0-F4 and Claim UP(i)): the genome L_K (K ≥ 1): «N = 2K movers, all of level 0 (no
+      W-targets), all of degree 2.» (l. 96); pairs (u_i, v_i), pair 0 the deepest; both options of u_0 and v_0 to the exit, option 0
+      (option 1) of u_i and v_i to u_(i−1) (v_(i−1)) for i ≥ 1 (l. 98-99); all parities even (l. 100); ranks 0, …, 4K − 1, pair 0 the
+      top four, every rank of pair i − 1 above every rank of pair i, «β(u_0, 0) < β(v_0, 0) < β(u_0, 1) < β(v_0, 1)» and «β(u_i, 0) <
+      β(u_i, 1) < β(v_i, 0) < β(v_i, 1)» (l. 101-104); «Gate indices: any distinct values (W plays no role in this theorem).» (l. 105);
+      start b_0 with u_0, v_0 on option 0 and every other mover on option 1 (l. 106). «Theorem LADDER-LP. For every K ≥ 1, o_(L_K) has a
+      directed path of length 2^(K+1) − 2 starting at b_0. So» «LP_(L_K)(b_0) ≥ 2^(K+1) − 2 = 2^(N/2+1) − 2.» (l. 108-109). Proof: Claim
+      UP(i) makes «exactly 2^(K−i+1) − 2 switches, each along a directed edge of o_(L_K)» (l. 132), by induction on K − 1 − i; the path
+      is u_0's switch, UP(1), v_0's switch, UP(1) (UP(1) only if K ≥ 2; l. 148-154). Cells: REFEREE «SIGN» (l. 15; §3 l. 69-82, «I
+      checked every fact.»); REFEREE-2 «**SIGN**» (l. 48; §2 l. 77-90, «I checked every fact against the rank layout.»).
+  Both, verbatim: REFEREE l. 137 «DECOMP, MULTI→SINGLE, T ≤ LP and LADDER-LP are SIGNED, with no proof gap.»; REFEREE-2 l. 52 «No gap in
+  the mathematics. Packet precision P-1 (§2).» The RESULTS line (L-2) states (a)-(d), DECOMP (o) as part of o_G's definition, and the
+  consequence «T ≤ LP cannot by itself give a polynomial bound» of (c) and (d) (REFEREE §C l. 162-163), and nothing wider (to check
+  (4)); REFEREE-2 L2 l. 37 «Every clause is a signed statement with its exact hypotheses: acyclic, degree ≤ 2.»
+- Premise: RESULTS R104's definition of the IDEAL model, and RESULTS R105's Lemma ENC and Lemma LOCAL (b) with P-IDEAL-RED §0's
+  notation; [WW22] v1's definitions (no theorem). L-2: «premises: R104's definition of the model, and P-IDEAL-RED's Lemma ENC and Lemma
+  LOCAL (b), RESULTS R105». ENC is used once, in §0, to order the two faces of a mover (with acyclicity, fixes entry 1); LOCAL (b) in
+  DECOMP (o), (b), (c), MULTI→SINGLE and Fact F1 / F4 (REFEREE §2 l. 49-50). Packet l. 17-23: «LANDED: RESULTS R104 (P-N5-REALIZE), ONLY
+  its definition of the IDEAL model, as restated in P-IDEAL-RED §0.»; «External definitions: [WW22] Def. 4 and §2.2, quoted verbatim in
+  §1. Only the definitions are used; no theorem of [WW22] is a» «premise.»; «Nothing from docs/lit or docs/sources.» REFEREE §C l.
+  148-149 «CUBE-P1 is MET: the premise route is now landed R104 +» «landed R105.»; REFEREE-2 §0 l. 29 «**Premise route ✓, with two
+  remarks.**» (LOCAL (c) unused; land after R105), L2 l. 38 «Premises: R104's definition, P-IDEAL-RED ENC and LOCAL (b) (R105, landed),
+  and [WW22] v1 definitions.» [WW22] (S. Weber, J. Widmer, arXiv:2207.05985v1) was opened and checked verbatim by both referees: REFEREE
+  §1 l. 27-44 («The packet's numbers are CORRECT.», «No theorem of [WW22] is a premise.»); REFEREE-2 §0 l. 11-28 («**Every quote is
+  verbatim**, with LaTeX math rendered», «Only definitions are used.»). L-RED R178 is named in L-2 only as the model's first statement,
+  an attribution.
+- L41 and L43. The proofs are L-NEW successor 50's (packet l. 4-5). Fixes entry 1's sentence is REFEREE-2's P-1, a definition precision
+  that changes no proof (fixes l. 15; REFEREE §C l. 153); the line changes LC-1 and LC-2 are wording. Nothing referee-originated is a
+  premise or a proof step of the entry (my reading; neither referee mentions L41). No DEAD in L-2 (L43); «T ≤ LP cannot by itself give a
+  polynomial bound» rests on a refereed proof with explicit instances (REFEREE-2 §4 l. 117-118 «with a refereed proof. L43 is
+  satisfied.»).
+- Fixes (docs/new/P-IDEAL-CUBE-fixes.md, L-NEW successor 50, append-only, fixes entries 1-2; a0bb2694, 30 lines, sha1
+  006274ec3f0aa82ceac8fa9b8f294f1f8d2e138e, the version both referees checked).
+  - Entry 1 (l. 6-15, «packet precision, REFEREE-2 P-1; optional, taken»): §0's «Two faces never tie (P-IDEAL-RED ENC, signed; R105
+    when» «landed: distinct options carry distinct β's, so their β-sets differ).» (packet l. 30-31) becomes «Two faces never tie: face
+    k's β-set contains β(x, k) and» «not β(x, 1 − k), because by acyclicity neither chain returns to x, so the two β-sets differ; ENC
+    (P-IDEAL-RED, RESULTS R105) then» «makes them unequal in the order.» (l. 11-13); «Reason: «distinct β's» alone does not separate the
+    sets» (l. 14). REFEREE §C l. 150 «CORRECT.»; REFEREE-2 L2 l. 32 «That is exactly the correction I asked for.»
+  - Entry 2 (l. 17-30, «line L-2; REQUIRED 1-2: REFEREE CUBE-L1 = REFEREE-2 LC-2, REFEREE-2 LC-1; OPTIONAL 3-6: both / CUBE-L3 / LC-P1 /
+    LC-P2»): L-2 and its word diff against L-1, eight hunks; «Line L-1 (sha1 99ae8face50615b4ce1ce5cd5e69f223f17208e1) is unchanged» (l.
+    4).
+  No fix changes a signed statement (to check (8)).
+- Not signed: packet §5 (machine check, «does NOT claim», READING, TARGET diff; «DATA / READING (not to sign)», l. 14), in particular
+  its READING «So any proof of IDEAL-ACYC-POLY must use the W-key gate. The route «bound LP» is DEAD by Theorem LADDER-LP.» (l. 181) and
+  «Whether the gate can follow such a path is the open question (L-RED R201).» (l. 182); L-2 carries the first only as «(READING: a
+  polynomial bound on T must use the W-key rule)». OPEN, not claimed: any bound on T, U, KF or LP (packet l. 175 «no polynomial bound on
+  T, U, KF or LP;»); any lower bound on IDEAL run lengths (l. 176 «no lower bound on IDEAL run lengths, and no super-polynomial IDEAL
+  family;»); the converse of T ≤ LP (l. 93); whether o_G is of Matoušek type (l. 79-80); G-N5-TIME.
+- Referee strengthening (NOT part of this entry; referee remarks and own checks):
+  (i) REFEREE §1 l. 43 and REFEREE-2 §0 l. 26-27: DECOMP (c) proves the stronger §2.2 form («C_b(y) is constant on F, so y is not
+      influenced by the other free coordinates», REFEREE).
+  (ii) REFEREE-2 §3 l. 99-101: the ladder path exact for K = 1..12, Facts F0-F3 checked at every state of the path, DP longest path =
+       2^(K+1) − 2 for K ≤ 8 («one further than the lane's 7»); REFEREE §4 l. 91-92: DP longest path 2^(K+1) − 2 for K = 1..6.
+  (iii) REFEREE-2 §3 l. 111-112: a control, «the SMALLEST-π free coordinate is not combed in 1,495 of 18,095 faces of dimension ≥ 2. So
+        (c)'s choice «largest π»» «matters».
+  (iv) REFEREE §C l. 168 and REFEREE-2 §3 l. 113-114: with the gates of every mover in decreasing order, L_K's IDEAL run from b_0 has T
+       = 1, so the DATA clause needs the gate order it states.
+- Honest limits: (i) a STRUCTURE / REDUCTION statement inside the IDEAL model, at degree ≤ 2 only, with an exponential LOWER bound for
+  LP, not for IDEAL runs: it bounds nothing polynomially; T ≤ LP is an upper bound by a quantity that is exponential on L_K, so it
+  cannot by itself give a polynomial bound on T; G-N5-TIME stays open; not M3, not a step-4 pass, not a TARGET.md claim. (ii) LADDER-LP
+  is about directed paths of o_(L_K), not about runs: on L_K with gate indices increasing in the option index the IDEAL run from b_0 is
+  empty (DATA; packet l. 157-158 «With all movers at level 0, the W-key rule picks the gate-least option, and with gates» «increasing in
+  k that run has T = 0 from b_0 (DATA, §5). The theorem is about directed paths, not runs.»). No super-polynomial IDEAL family and no
+  lower bound on IDEAL run lengths is claimed (l. 176). (iii) Not covered: degree ≥ 3 (the cube is not binary, l. 79) and Ξ-cyclic
+  genomes; the converse of T ≤ LP («most directed paths are not IDEAL runs: an IDEAL step also needs the W-key rule», l. 93); whether
+  o_G is of Matoušek type (l. 79-80). (iv) «a polynomial bound on T must use the W-key rule» is a READING (REFEREE l. 119-120: «must»
+  has no signed content). (v) Every statement is about R104's IDEAL model on acyclic Ξ-graphs; nothing is said about a real N5 run or a
+  parity game beyond what R104 already says (packet l. 177). (vi) The weights 2^π(x) of DECOMP (b)'s potential are a proof device, not a
+  computed quantity; TARGET §3 (bit cost) is not engaged (my reading; neither referee addresses it). (vii) Premises: RESULTS R104's
+  definition and RESULTS R105's ENC and LOCAL (b); [WW22]'s definitions only; no lit note, no lane file. No Lean. (viii) Names: «LP» in
+  this entry is LP_G(s_0), the largest length of a directed path of the improvement orientation o_G from the start; it is not RESULTS
+  R27's Theorem LP or Corollary LP′ (different statements) and not a linear program (DE32, DE33); «D2» here is the set of movers with
+  two options.
+- Data (DATA, not proof): experiments/new/box153/decomp.py (l-new 43125a61, sha1 c82e850ece00a2b2a39b5f9e08d7ccc48b8066e9, 50 lines) and
+  box153/longpath.py (43125a61, sha1 2ca0b0c3965900ebf88ac9658f9162495020babd, 49 lines), wired into experiments/new/check.sh block w102
+  (l. 841-846); experiments/new/box154/ladder.py (l-new d97555d4, sha1 be946388ca29b9ac208e59641c31a362cfe420a8, 58 lines; L_K with gate
+  indices 2x + k), block w103 (l. 847-852); all unchanged at a0bb2694; the three scripts reuse box150/check.py's simulator. Packet §5
+  (l. 161-172): decomp.py checks DECOMP (o)-(c) and switch-all «by brute force over every face: 0 violations on 25 corpus genomes with»
+  «≤ 10 degree-2 movers (478,953 faces).»; ladder.py: «DATA: OK for K = 1..10 (path lengths 2, 6, …, 2046); DP longest = 2^(K+1) − 2
+  exactly for K ≤ 7; IDEAL T = 0.» (l. 170); longpath.py: «(x3_L8: LP 16 vs T 8; dc_d8: 64 vs 23)» and «ladlp_5.json (LP 114 at N = 10)»
+  (l. 171-172).
+  The blocks' outputs, reproduced by both referees and re-run for this draft (2026-11-04T04:46:17Z-04:46:47Z, from a `git archive` of
+  a0bb2694's experiments/new, rc 0, byte-equal to the blocks' expected strings): «DECOMP genomes 25 faces 478953 USO 0 COMB 0 ORDER 0
+  ACYC 0 JUMP 0 maxjump 7»; «LONGPATH ladlp_5.json n2 10 longest 114 ideal_T 1»; ten ladder lines ending « OK», the K = 7 line «LADDER K
+  7 N 14 path 254 = 2^(K+1)-2 True nonimproving 0 flips [2, 4, 8, 16, 32, 64, 128] DP_longest 254 ideal_T 0 OK». REFEREE §4 l. 85-86
+  «w103 at d97555d4 (box154/ladder.py 10): ten «OK» lines.», l. 87-88 (the two w102 strings, «These equal packet §5»); REFEREE-2 §3 l.
+  93-96 («reproduce the check.sh strings»).
+  REFEREE (successor 23; own docs/referee/scratch/cube_probe.py, sha1 9717764dc783266b52aab8d6e35641c4ea6f5e8f, on xinew_probe's β-set
+  simulator «written from R104's text»; log xinew_logs/cube_probe.txt): L_K «built from §4's TEXT», DP longest path from b_0 «2, 6, 14,
+  30, 62, 126 = 2^(K+1) − 2 for K = 1..6» (l. 91); «400 random degree-≤-2 IDEAL-ACYC genomes (1-7 degree-2 movers), 95,136 faces: unique
+  sink 0 failures; acyclicity (DFS) 0; the» «largest-π free coordinate combed 0; MULTI→SINGLE 0; T ≤ LP(s_0) 0.» (l. 93-94); «No
+  negative control was run for the cube checks. The proofs carry the signatures.» (l. 95); gate order (xinew_logs/cube_gateT.txt, §C l.
+  166-168): T = 0 for K = 1..7 with increasing gates, T = 1 with decreasing gates.
+  REFEREE-2 (successor 26; own docs/referee-2/R2-P-IDEAL-CUBE/cube_check.py, sha1 25088b5d1ef4a859214ff8d1a2a73f2b92177adf, values from
+  its own R2-P-IDEAL-RED simulator; logs/run1.log, control.log): the ladder exact for K = 1..12, DP longest = 2^(K+1) − 2 for K ≤ 8,
+  ideal_T 0 (l. 99-101); DECOMP over every face, COMB under 3 random topological orders, MULTI→SINGLE and T ≤ Σ_t #Mv_t ≤ LP on every
+  start, 0 violations on 18 corpus genomes (62,730 faces, 2,880 runs), 400 random genomes (27,975 faces, 4,507 runs) and 150 wide random
+  genomes (11,227 faces, 1,265 runs) (table l. 105-109); control l. 111 «the SMALLEST-π free coordinate is not combed in 1,495 of 18,095
+  faces of dimension ≥ 2»; the logs at 0787732b print these numbers.
+  No signed statement uses any count.
+- Signatures: REFEREE docs/referee/R-P-IDEAL-CUBE.md: successor 23's report 5ef7bf4724bcee2f487cd1f4c4a493f321dcca57
+  (2026-11-04T02:49:13Z, new file, 140 lines, sha1 64a1aa4ff476b00d75617f00129d4426bb8d9b10, with scratch/cube_probe.py and
+  xinew_logs/cube_probe.txt): DECOMP, MULTI→SINGLE, T ≤ LP, LADDER-LP SIGN (l. 12-15, 137), L-1 «NOT YET» (CUBE-L1, l. 127); §C
+  3c3185d862a270c1d76b80ebad9a7a78b8c3c711 (2026-11-04T04:16:05Z, +34, l. 142-174; the file now 174 lines, sha1
+  b4f1d9e5842c1de3edfeedfd23348aa506e828e2, with xinew_logs/cube_gateT.txt): entry 1 «CORRECT», CUBE-P1 «MET», «VERDICT: line L-2
+  MATCHES.» (l. 174).
+  REFEREE-2 (successor 26): docs/referee-2/R2-P-IDEAL-CUBE.md 0787732b82ea500ee63797d4be5664852e909df4 (2026-11-04T02:52:00Z, new file,
+  160 lines, sha1 8c6f69f5162d21bc5838ce46882fd9a80a646e99; with R2-P-IDEAL-CUBE/cube_check.py and logs/): every statement SIGN (l.
+  42-48), «No gap in the mathematics.» (l. 52), L-1 not yet (LC-1, LC-2, l. 50); R2-P-IDEAL-CUBE-L2.md
+  993c1710952a57be2736855117ef54ae03d9838c (2026-11-04T04:17:33Z, new file, 43 lines, sha1 2746d78b0bbb26d41be12c0e4f1dc9c05a5a985c):
+  «Verdict: **MATCHES**.» (l. 2) for L-2 and entry 1 «✓» (l. 29). Lane: freeze and L-1 d97555d425d4995244dd1648d00b7c53418cd03d, fixes
+  entries 1-2 and L-2 a0bb269499779a9dd766b6fe504f0fc6166d0b31.
+  INDEPENDENCE: REFEREE l. 2 «Independent: I did not read docs/referee-2/.»; REFEREE-2 l. 4 «I opened nothing in docs/referee/. A
+  names-only `git ls-tree` on origin/claude/referee found 0 files matching «cube» at 02:50Z.», l. 5 «My checker imports no lane code.»
+  REFEREE's report (02:49:13Z) precedes REFEREE-2's (02:52:00Z) by 2 min 47 s; the L-2 rounds are 88 s apart (04:16:05Z, 04:17:33Z), and
+  neither L-2 file cites the other's L-2 verdict. Each referee wrote its own simulator (REFEREE from R104's text, REFEREE-2 from its
+  R2-P-IDEAL-RED checker).
+  Differences, resolved: REFEREE stated CUBE-P1 (landing after R105) as a landing condition, REFEREE-2 as a remark (§0 l. 34); REFEREE
+  alone raised the optional CUBE-L3; REFEREE-2 alone raised LC-1 (gate order), P-1 (acyclicity for C_s(x)) and LC-P1; LOCAL (c) unused
+  was noted by both (REFEREE §2 l. 51; REFEREE-2 LC-P2); both raised CUBE-L1 = LC-2 and CUBE-L2 = LC-P3. Both SIGN the same four
+  statements with no gap, both accept entry 1, and both MATCH L-2. No disagreement in substance.
+- TARGET.md diff: TARGET.md §1-§3 define parity games («A parity game is G = (V, V_E, V_O, E, pr) with V finite»), the regions W_E, W_O,
+  M4 (§2 «There is a deterministic algorithm A and a polynomial p such that for every parity game G, A on input G halts within» «p(n +
+  m) steps and outputs the pair (W_E(G), W_O(G)).») and the word-RAM cost model; no statement of this entry mentions a parity game, a
+  winning region, an algorithm's running time or a cost model (packet §5 l. 183-186 «No statement here mentions a game, a region or an
+  algorithm's running time. Each is about the improvement cube of the IDEAL» «model of R104. Not M4, not M3, not a gauntlet step.»;
+  REFEREE §5 l. 98-102 «Agreed with packet §5: not M4, not M3, not a gauntlet step. G-N5-TIME OPEN.»; REFEREE-2 §0 l. 35-36 «**TARGET.md
+  diff ✓.**»). LADDER-LP is «an exponential lower bound on directed paths, not on any algorithm's run» (REFEREE l. 100). The line (L-2)
+  makes no M4 claim and no TARGET claim; its tail reads «a STRUCTURE / REDUCTION statement inside the IDEAL model» and «G-N5-TIME stays
+  OPEN; not M3, not a step-4 pass, not a TARGET.md claim» (L-2, by script). Not a step-4 pass. GAPS G-N5-TIME: open.
+
 **Erratum E-1** (not a result; 2026-11-01 05:28Z by date -u; Lead; corpus counts in RESULTS R97-R100):
 - What is wrong: the DATA-of-record sentences that say «1,132 games» for the L-SI box 50b / box 53 corpus (sbcg.lst 719 lines + alt_all.lst
   413 lines) count RUNS, not games. Measured by CHECKER (C111 N-7, claude/checker d53e1d4f) at trunk 68d50c8f: experiments/si/anc58/
@@ -10932,3 +11124,20 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   conditional: every F-relevant segment has a transition of depth ≤ K). Scope: plain N5 (SSI-GLOBAL) on dwN is linear in N on these points
   (41 / 47 / 55 / 62 / 68 at N = 3..7: REFEREE-2 dual_check.Runner on si.py; L-RED n5b --mode spec 41 / 47 / 55 / 62 at N = 3..6; Lead
   re-run 41 / 47 / 55), so DE35 says nothing about N5 or G-N5-TIME.
+- DE36 (2026-11-04): the route «bound LP» for IDEAL runs: bound the number T of steps of an IDEAL run of a degree-≤-2 IDEAL-ACYC genome
+  through RESULTS R106's Corollary T ≤ LP (T ≤ LP_G(s_0), the largest length of a directed path of the improvement orientation o_G from
+  the start) by a polynomial bound on LP. DEAD by a refereed proof: RESULTS R106 (LADDER-LP) (SIGN by REFEREE 23,
+  docs/referee/R-P-IDEAL-CUBE.md 5ef7bf47, and REFEREE-2 26, docs/referee-2/R2-P-IDEAL-CUBE.md 0787732b; line L-2 449421e4 MATCHES at
+  both): for every K ≥ 1 the explicit genome L_K of RESULTS R106's line (N = 2K level-0 movers of degree 2 in pairs (u_i, v_i), the Ξ-targets
+  of pair i in pair i − 1, all parities even, every rank of pair i − 1 above every rank of pair i; the in-pair rank orders and the start
+  as stated there) has LP ≥ 2^(K+1) − 2 = 2^(N/2+1) − 2 from its start
+  b_0. Instances: experiments/new/box154/ladder.py K (l-new d97555d4, sha1 be946388…; gate indices 2x + k; check.sh block w103) builds
+  L_K and checks the proof's path for K = 1..10 (lengths 2, 6, …, 2046, every switch improving), DP longest path = 2^(K+1) − 2 exactly
+  for K ≤ 7 (L_7, N = 14: 254); REFEREE-2's cube_check.py: K = 1..12, DP exact for K ≤ 8; REFEREE's cube_probe.py: DP exact for K ≤ 6.
+  Obstruction (packet §4, Claim UP(i)): each change of B_(i−1), the option index that points to the better mover of pair i − 1, makes
+  both movers of pair i improving, and each of their two switches changes B_i, so pair i re-arms pair i + 1 twice per change below it
+  and B_i changes 2^(i+1) times along the path (ladder.py: flips [2, 4, …, 2^K]). LADDER-LP is about directed paths, not runs (DATA: with
+  gate indices increasing in the option index the IDEAL run of L_K from b_0 is empty, T = 0 for K = 1..10, ladder.py; with decreasing
+  gate indices T = 1 for K = 1..7, docs/referee/scratch/xinew_logs/cube_gateT.txt). Not
+  dead: a polynomial bound on T itself (IDEAL-ACYC-POLY) and G-N5-TIME, both OPEN; that such a bound must use the W-key rule is a
+  READING (RESULTS R106's line), not a signed statement.

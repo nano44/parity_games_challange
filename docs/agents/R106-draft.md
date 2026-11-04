@@ -1,4 +1,4 @@
-# Draft RESULTS R106 (Lead; first fill 2026-11-04T05:01:27Z by date -u (subagent); on P-IDEAL-CUBE line L-2, docs/new/P-IDEAL-CUBE-line-L2.txt, l-new a0bb2694, sha1 449421e4cfaedbef577f68720fab4924111cd170) — to CHECKER C117
+# Draft RESULTS R106 (Lead; first fill 2026-11-04T05:01:27Z by date -u (subagent); on P-IDEAL-CUBE line L-2, docs/new/P-IDEAL-CUBE-line-L2.txt, l-new a0bb2694, sha1 449421e4cfaedbef577f68720fab4924111cd170) — to CHECKER C117 — LANDED in RESULTS 2026-11-04 07:54Z (CHECKER C117 417d4d89 PASS), after R105, before Erratum E-1; DE36 appended to Dead ends
 FIRST FILL. Read at the origin heads fetched at the start of the fill (git fetch, then git ls-remote, 2026-11-04T04:43:31Z: l-new
 a0bb2694, l-red 39588215, referee 3c3185d8, referee-2 993c1710, checker 49f85ffc; origin trunk 8b31b166; local trunk 58198d07 = the
 merge 3f4ea5aa of those five heads plus one Lead commit, neither pushed; 58198d07 changes only docs/NOW.md and three docs/agents/ files,
