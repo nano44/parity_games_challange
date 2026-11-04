@@ -3,11 +3,12 @@
  XiT(z,t): sign of face(o') - face(o) differs between s_(t-2) and s_(t-1);  WT(z,t): order of key(o'), key(o) differs between the
  keys of s_(t-1) and of s_t (keys of options read from the lower-level movers' states). Claim: every z in Mv_t (t >= 2) has XiT or WT.
 Also: every WT(z,t) has a lower-level mover in Mv_t; every XiT(z,t) has a Xi-descendant (on z's chains under s_(t-2)) in Mv_(t-1).
+Lemma XIFLIP: moves(z) <= 1 + XF_z (XF_z = #t with sign(face(1) - face(0)) different at s_(t-1), s_t); violations XIFLIP.
 Counts multi-steps by type: a step t >= 2 with >= 2 movers of which >= 1 is W-triggered only (WREL), or all Xi-triggered (XIBR).
 ALL=1: all starts. Usage: trig.py genome.json ..."""
 import sys, os, json, itertools
 from val import ns
-Gen = ns["Gen"]; tot = dict(runs=0, moves=0, NEITHER=0, WNOLOW=0, XNODESC=0, XiT=0, WT=0, BOTH=0, multi=0, WREL=0, XIBR=0)
+Gen = ns["Gen"]; tot = dict(runs=0, moves=0, NEITHER=0, WNOLOW=0, XNODESC=0, XiT=0, WT=0, BOTH=0, multi=0, WREL=0, XIBR=0, XIFLIP=0)
 def keysof(g, st): return g.keys(st)
 for f in sys.argv[1:]:
     G = json.load(open(f)); g = Gen(G); N = g.N
@@ -17,6 +18,11 @@ for f in sys.argv[1:]:
     for st0 in starts:
         S, _ = g.run(st0); T = len(S) - 1; tot["runs"] += 1
         K = [keysof(g, s) for s in S]
+        for z in range(N):
+            if len(g.opts[z]) < 2: continue
+            sgn = [g.face(S[t], z, 1) > g.face(S[t], z, 0) for t in range(T + 1)]
+            XF = sum(1 for t in range(1, T + 1) if sgn[t] != sgn[t - 1]); moves = sum(1 for t in range(1, T + 1) if S[t][z] != S[t - 1][z])
+            if moves > 1 + XF: tot["XIFLIP"] += 1
         for t in range(2, T + 1):
             mv = [v for v in range(N) if S[t][v] != S[t - 1][v]]; typ = []
             for z in mv:

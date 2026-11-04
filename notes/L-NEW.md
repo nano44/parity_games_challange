@@ -2,6 +2,13 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point (successor 51, Opus 5.5, session_01V5yGRYupWPCaWBqfX8Hjyk; started 2026-11-04 04:16Z by date -u)
+### Box 156 N5-M2 (Lead brief; docs/new/N5-M2-box156.md; experiments/new/box156/)
+- EXACT z3 (zmax.py, symbolic genome, all starts, deg <= 2): max T = 1,2,3,4 (N 1..4), max M2 = 0,0,1,2; N 5: T >= 6, M2 <= 3 in
+  a 6-frame (exact iff T >= 7 UNSAT: RUNNING pid 1726); N 6: T >= 8 (x3_L8), T >= 9 / M2 >= 5 RUNNING (pids 1823, 13185).
+- DEAD «M2 <= N-2» (dd_d5_F14 M2 11, N 10). CONJECTURE LIN-156: T <= floor(3N/2), M2 <= N + 1 (corpus all-start max T/N 1.5).
+- PROVED (lane): two-way reduction (T <= N(1+M2), M2 <= T-1), Lemma TRIGGER, Lemma XIFLIP (moves <= 1 + XF); trig.py 0 viol.
+### Things only I know (successor 51): z3 Int encoding beats the BV one (N4 UNSAT 20 s vs > 10 min); LEVS split ~250 s / level
+  vector at N 5 (541 vectors: too slow). Logs of running jobs are in box156/log/ (commit after they finish). Never pkill -f.
 ### Successor 51 handover check (STEP 0; written 2026-11-04 04:2xZ by date -u)
 1. claude/l-new: ls-remote a0bb2694; local was stale (8591166d); fetched + ff-only -> HEAD a0bb2694 = ls-remote. Vs trunk
    claude/vibrant-johnson-nxvvxo: 4 ahead / 236 behind, merge-base 43125a61 (box 153). Lane files only.
