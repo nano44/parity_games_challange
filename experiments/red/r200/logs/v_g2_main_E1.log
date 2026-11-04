@@ -1,0 +1,2 @@
+XCNF target ../r199/targets/g2_main.json E 1 N 8 L 12 requirements 44 vars 79299 clauses 269653 build 0.3 s
+XCNF -> UNSAT 3.2 s solver cadical195

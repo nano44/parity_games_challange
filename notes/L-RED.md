@@ -1,4 +1,5 @@
 # L-RED notebook (independent adversary lane)
+Successor 49 (Opus 5.5, D1/D18/D19) started 2026-11-04 00:18Z (date -u); STEP 0 check below; BOX R200 (exact engine, k 3 d 6).
 Successor 48 (Opus 5.5, D1/D18) started 2026-11-03 07:20Z (date -u); STEP 0 message 07:20Z; R199 nested doubling: k 2 SAT d 5 (pin nd2_d5_F12_n96), k 3 UNSAT d <= 5, UNKNOWN d 6-7; PARKED FINAL 23:4xZ, see «Successor 48 PARK».
 Successor 47 (Opus 5.5, D1/D18) started 2026-11-02 20:58Z (date -u); STEP 0 message 20:58Z; R197: fork ladders exact 3 / 5 (d 2 / 3); carry maxima 2, 6, 10 EXACT (d 4); max run d 4 = 13 EXACT (R193 item closed); pins dbl_d3_F6_n60, dbl_d4_F10_n78, max_d4_L13_n78; Lemmas DOWN / LEVEL-RISE / WAKE-CHAIN; PARKED, see «Successor 47 PARK».
 Successor 46 (Opus 5.5, D1/D18) started 2026-11-02 11:52Z (date -u); STEP 0 message 11:52Z; R191 (degree-3 rotation): ROT-CAP / KEY-ALT / NEST-PI / MERGE-1 / NEST-DEAD-3 PROVED (lane), U linear d 3-8; R192 (RANK) linear; R193 d 4 undecided; R194 (a′) → U; R195 NEST-DEAD-ALL; R196 SAME-WAKER; PARKED ~20:5xZ, see "Successor 46 PARK".
@@ -46,6 +47,34 @@ Successor 15 PARKED ~09:40Z 2026-10-25 after box 38; RESUME POINT for successor 
 context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older notebook: `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
+
+## Successor 49 handover check (2026-11-04 00:2xZ, date -u)
+1. Branch claude/l-red, head 32f6e040 (= ls-remote at 00:18Z; clone was current, ff-only no-op). vs trunk claude/vibrant-johnson-nxvvxo:
+   36 ahead / 36 behind, merge-base bb828553.
+2. Open work: BOX R200 = exact realisation test of NEST(3) at d 6 (k 3, 2 levels above). Next: build a faster exact engine (per-mover
+   Ξ decomposition / no-goods / ENC integer form), validate on k 2 d 4 UNSAT, k 2 d 5 SAT, k 3 d 5 UNSAT + 10 random xisat agreements,
+   then run k 3 d 6 over all W-feasible gate choices (allgates.py). Successor 48's d 6 HUNT runs died at the 23:39Z container restart
+   (438 proposals blocked, inexact; r199/hunt/); nothing running.
+3. GAPS rows: L-RED appears as attacker on GAP-A, GAP-C, G-STR (closed) and owner of G-NEST (open, "L-RED (attacks + proof attempts)");
+   G-N5-TIME (open) is L-NEW's; L-RED works against it under D18. No other rows.
+4. Rulings (verbatim, status from trunk docs/DECISIONS-INDEX.md): D1 «A claimed polynomial algorithm is far more likely to be wrong than
+   right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.» (active); D18 «Focus on N5 and
+   work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are
+   not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions.
+   Clearly distinguish proven results from conjectures and open problems.» (active); D19 «we have 9% usage left until tomorrow night, make
+   use of it» (active; L47 Lead reading: work to the 2026-11-04 21:00Z reset, stop on paid overage).
+5. Trap: container restarts kill nohup solver runs (23:3xZ, 438-proposal hunt lost mid-run). Check now: every long run writes its
+   state to disk incrementally and its exact relaunch line goes into this notebook before launch; results that matter are committed.
+   (Also: «pkill -f <pattern>» kills own shell: kill by PID only.)
+
+## Successor 49 RUN LOG (container-local; cwd experiments/red/r200; relaunch verbatim if lost)
+- Setup: pip install z3-solver python-sat (pysat 1.9.dev15: cadical195, kissat404). Targets: python3 ../r199/allgates.py 3 3 out/ag/k3;
+  python3 ../r199/allgates.py 3 2 out/ag/k3p2 (full-F choices: k3/ag_0 = r199 targets/ag_k3_0, k3p2/ag_0, k3p2/ag_4 = the r199 ones).
+- 00:2xZ xcnf.py (CNF + CaDiCaL, same model as xbmc) validation: g2_main E1 UNSAT 3.2 s; g2_main E2 SAT 78 s, replay L 12 opt, main
+  prefix matches; g3k_main E1 UNSAT 13.2 s; g3p2_main E1 UNSAT 17.2 s (z3: 4.9 / 4194 / 246 / 69 s). Bug fixed before: decode read
+  negative literals as false (replay mismatches on the first runs; xcnf results unaffected, only decoding).
+- 00:29Z launched: for t in k3/ag_0 k3p2/ag_0 k3p2/ag_4; do n=$(echo $t | tr / _); nohup timeout 21600 python3 xcnf.py out/ag/$t.json 2
+  out/d6_${n}.json > out/d6_${n}.log 2>&1 & done
 
 ## Successor 48 PARK (FINAL 2026-11-03 23:4xZ, date -u; context ~510k; Lead 23:40Z: park, successor 49 gets the new exact engine)
 - DONE (claude/l-red, push.sh VERIFY PASS each): 220cc5439 (tools) … 990122a1b (final status §3b), and the park push (this section +
