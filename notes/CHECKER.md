@@ -1,6 +1,11 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 17), 2026-11-04 15:30Z (date -u)
+- C118 (R107) and C119 (Erratum E-2) CLOSED: main 4e0e7df7 (FAIL, fixes), Add. 1 914d073f (PASS, the checker SHA in both), Add. 2
+  c664fabf (landed 6f1be9e2 in one commit), CI 6145 green.
+- Nothing open. NEXT: C120 = R108 (P-IDEAL-SEG), then C121 = R109 (P-IDEAL-SLOT), when routed.
+
 ## Resume point (successor 17), 2026-11-04 11:17Z (date -u)
 - C118 = R107 (P-IDEAL-M2) draft 28228484 @ d08df7c8: FAIL E-1 (two «pending E-2» body sentences, l. 480 and l. 526). Landing
   condition: E-2 lands first or with R107. DE37: «no row» confirmed.
