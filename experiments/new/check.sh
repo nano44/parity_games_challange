@@ -892,4 +892,12 @@ if [ "$(grep -c ' SAME True$' <<<"$w108")" = 3 ] && grep -qxF "lift_max_d4_L13.j
 else
   echo "box 158 LIFT check: FAILED"; echo "$w108"; exit 1
 fi
+# P-IDEAL-SLOT (box 158; L-NEW 51): instance lift_max_d4_L13 (box 150 checker), frozen-file pins; LIFT runs are block w108
+w109=$(cd .. && python3 -I new/box150/check.py new/box158/lift_max_d4_L13.json | tail -1; python3 -I new/box158/three.py new/box158/lift_max_d4_L13.json)
+pin109=$(cd ../.. && sha1sum docs/new/P-IDEAL-SLOT.md docs/new/P-IDEAL-SLOT-line-L1.txt experiments/new/box158/lift_max_d4_L13.json)
+if grep -qxF "TOTAL genomes 1 runs 1 steps 13 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYFLIP 0 DECR 0 TOPMONO 0 RBOUND 0 RESTR 0 ICHARGE 0 REC 0 VIOL 0 (info REC148 0)" <<<"$w109" && grep -qxF "lift_max_d4_L13.json d 5 T 13 cuts [] seg1 13" <<<"$w109" && grep -q "^62901b5f951598fb44426942b0fb1d999325625a  docs/new/P-IDEAL-SLOT.md$" <<<"$pin109" && grep -q "^17236fb18d70c1e2968689108a74a1acac938bd5  docs/new/P-IDEAL-SLOT-line-L1.txt$" <<<"$pin109" && grep -q "^33fec48f1a8f1c57891b7574d87cc6bbe5e3bd38  experiments/new/box158/lift_max_d4_L13.json$" <<<"$pin109"; then
+  echo "P-IDEAL-SLOT: instance lift_max_d4_L13 (d 5, T 13, seg1 13, 0 violations); pins packet 62901b5f, line L-1 17236fb1, instance 33fec48f: PASS"
+else
+  echo "P-IDEAL-SLOT check: FAILED"; echo "$w109"; echo "$pin109"; exit 1
+fi
 rm -rf "$tmp"
