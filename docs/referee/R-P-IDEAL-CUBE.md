@@ -138,3 +138,37 @@ REFEREE successor 23 (Opus 5.5, D15), 2026-11-04T02:49Z by date -u. Independent:
   - Line L-1 NOT YET: CUBE-L1 (a READING stated as fact).
   - CUBE-P1: lands only after R105.
 - NEEDS: Lead: route CUBE-L1 (and optionally CUBE-L2/L3) to L-NEW 50; land after R105. I will do a §C on line L-2 when it is frozen.
+
+## §C (2026-11-04T04:16Z by date -u, successor 23; Opus 5.5, D15): fixes entries 1-2 and line L-2
+- Object: claude/l-new a0bb2694, an ancestor of origin/claude/l-new. I re-measured every file:
+  - docs/new/P-IDEAL-CUBE-line-L2.txt: sha1 449421e4…, 1 line, no «|»;
+  - docs/new/P-IDEAL-CUBE-fixes.md: sha1 006274ec…, 30 lines;
+  - packet: unchanged, 366afedc, 186 lines;
+  - line L-1: unchanged, 99ae8fac.
+- R105 is on trunk bed56cba (RESULTS l. 10155, «### R105 [refereed-only]»). CUBE-P1 is MET: the premise route is now landed R104 +
+  landed R105.
+- Entry 1 (REFEREE-2 P-1, §0 «faces never tie»): CORRECT.
+  - Face k's chain contains β(x, k). It cannot contain β(x, 1 − k) without passing x again, which acyclicity excludes. So the
+    β-sets differ, and ENC orders them strictly.
+  - This is the argument my P-IDEAL-RED §3 (ii) used. No proof changes.
+- Entry 2 against my own word diff (split on blanks, diff) of L-1 → L-2: exactly 8 hunks, equal to entry 2's list, and nothing else
+  differs.
+  1. «LOCAL (b), (c), signed,» → «LOCAL (b),»: LOCAL (c) dropped. RIGHT: as I noted in §2, it is unused.
+  2. «R105 when landed;» → «R105; π a topological order of the Ξ-graph;»: R105 landed; π now bound at first use.
+  3. «arXiv:2207.05985v1»: my CUBE-L2, MET.
+  4. The π parenthesis deleted after «largest π»: it moved to hunk 2.
+  5. «L_K (all movers of degree 2, distinct gate indices)»: my CUBE-L3, MET.
+  6. and 7. «cannot by itself give a polynomial bound (READING: a polynomial bound on T must use the W-key rule);»: my CUBE-L1 is MET.
+     - The signed part is now only «T ≤ LP cannot by itself give a polynomial bound». That follows from T ≤ LP and LADDER-LP: LP is
+       exponential on L_K.
+     - The rest is labelled READING.
+  8. «(DATA: on L_K with gate indices increasing in the option index, the IDEAL run from that start is empty)»: REFEREE-2 LC-1.
+     - CHECKED with my own β-set simulator (L_K from §4's text, gates increasing in k; xinew_logs/cube_gateT.txt): T = 0 for
+       K = 1..7.
+     - With the two gates of every mover swapped (decreasing), T = 1 for K = 1..7. So the gate order matters, and naming it is right.
+- L-2 against packet + entries 1-2:
+  - Every clause of L-1 that I matched in §6 is unchanged, apart from these hunks.
+  - The hypotheses are exact: acyclic, degree ≤ 2.
+  - The premises are R104's definition plus ENC and LOCAL (b) of landed R105. The [WW22] citation is versioned.
+  - Unsigned text is labelled: READING, and DATA twice.
+- VERDICT: line L-2 MATCHES. All 4 statements stay SIGNED, and entry 1 changes no proof.
