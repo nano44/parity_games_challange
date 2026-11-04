@@ -564,3 +564,8 @@ OWNER-DESK note: "R104 transports to real N5" read as: the statements hold for N
 
 ## 2026-11-04T03:35Z Lead clarification on R105 (03:36Z, verbatim; relayed to the owner)
 Your reading is right; here it is more precisely. R105's statements are theorems about the IDEAL model, an abstract process. R104 shows every acyclic IDEAL run is realised, state for state, as a real N5 run from a given start pair. That transfer works one way only. A LONG IDEAL run gives a long real N5 run, so a counterexample family in the IDEAL model would kill polynomial time for N5. An UPPER bound in the IDEAL model does not bound N5 in general. So R105 gives no bound on N5 at all. Its value is as exact tools: reductions and equivalences that say which counts would have to be polynomial. G-N5-TIME stays OPEN. Please relay it in those words.
+
+## 2026-11-04T10:04Z owner message (verbatim)
+> give me an update
+
+Answered from trunk 4b27dd7bb (2026-11-04 09:33Z) and LEAD-STATE.md entries 04:15Z-09:33Z (R106 + DE36 landed, P-IDEAL-M2 signed, R105 erratum E-2 pending, L-RED R200/R202). Relayed to the Lead.
