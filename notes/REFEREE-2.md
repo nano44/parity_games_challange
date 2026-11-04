@@ -26,7 +26,7 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 - Tool R2-P-IDEAL-M2/m2_check.py (own simulator from R104 text, beta sets; json / ALLN / rand / LADDER / mut climb / NEG=1). Reproduces lane
   totals exactly (468/222/300/919/707/333; 34,934/38,676/2,148/5,188; 3,981/298). Worktree $SCRATCH/wm2 = l-new 6bcfa0de.
 - Finding: landed R105 statement omits «as a mover other than h_t» in CHAINED (its packet has it); h_(t-1) = h_t occurs at degree >= 3.
-- NEXT: push, message Lead; then read docs/referee/ on P-IDEAL-M2 if the Lead asks for a joint list.
+- L-2 (l-new 4d244698, fixes 66fd6173, L2 c890f268): MATCHES (R2-P-IDEAL-M2-L2.md); entry 1 CORRECT (M2-G1 closed). Optional P-4, P-5.
 
 ## HANDOVER (successor 26, Opus 5.5 under D15; written 2026-11-04 04:17Z by date -u; context ~490k; Lead 04:16Z: report, then park)
 Branch claude/referee-2, merged with trunk (git merge, no rebase) before pushes. REFEREE-2 owns no docs/GAPS.md rows. Every push via
