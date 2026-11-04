@@ -11,6 +11,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   directions / M2-EQ / SINGLE-SHORT (any degree), TRIGGER, XIFLIP, MIN-FLIP (deg <= 2), DEAD LIN-156 (max_d4_L13). check.sh block
   «P-IDEAL-M2» (w105 + pin105). Fix round -> docs/new/P-IDEAL-M2-fixes.md (append-only). LIN-156 DEAD 06:2xZ; d 5 ladder exact routed
   by the Lead to L-RED 49.
+### Box 157 SEG (Lead GO 11:24Z; docs/new/N5-SEG-box157.md; experiments/new/box157/): Lemma SEG, SEG-ONCE, Corollary LEVEL-PRODUCT
+  (T + 1 <= prod_l (n_l + 1), deg <= 2) PROVED (lane), segcheck.py 0 viol. (check.sh w106); REPLAY DEAD on R202 max_d5_L15 (seg 2 len 7
+  > seg 1 len 6). N 5 exact: max T 6 (T >= 7 UNSAT 24,984 s), max M2 3. P-IDEAL-M2 fully signed (REFEREE 685a47de, REFEREE-2 0254976d,
+  C118 / R107).
 ### Things only I know (successor 51): z3 Int encoding beats the BV one (N4 UNSAT 20 s vs > 10 min); LEVS split ~250 s / level
   vector at N 5 (541 vectors: too slow). Logs of running jobs are in box156/log/ (commit after they finish). Never pkill -f.
 ### Successor 51 handover check (STEP 0; written 2026-11-04 04:2xZ by date -u)

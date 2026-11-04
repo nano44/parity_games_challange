@@ -870,4 +870,11 @@ if grep -q "^bc47b06c4b8d90ceb28939c966083e0c057a442b  docs/new/P-IDEAL-M2.md$" 
 else
   echo "P-IDEAL-M2 pin check: FAILED"; echo "$pin105"; exit 1
 fi
+# box 157 (L-NEW 51): Lemma SEG, SEG-ONCE, Corollary LEVEL-PRODUCT (segcheck.py; BADLEV=2 negative control)
+w106=$(cd .. && python3 -I new/box157/segcheck.py new/box14*/out/*.json new/box14*/inst/*.json new/box142/*.json new/box146/*.json new/box152/*.json new/box153/*.json new/box156/ext/*.json new/box157/max_d5_L15.json new/box139/genomes/*.json; ALL=1 ALLN=8 python3 -I new/box157/segcheck.py new/box150/out/rand/*.json; BADLEV=2 python3 -I new/box157/segcheck.py new/box14*/out/*.json new/box14*/inst/*.json new/box142/*.json new/box146/*.json new/box152/*.json new/box153/*.json new/box156/ext/*.json new/box157/max_d5_L15.json new/box139/genomes/*.json)
+if grep -qxF "SEGCHECK runs 59 steps 650 intervals 652 SEG 0 ONCE 0 COUNT 0 PROD 0 maxratio 0.3333" <<<"$w106" && grep -qxF "SEGCHECK runs 34934 steps 38676 intervals 57755 SEG 0 ONCE 0 COUNT 0 PROD 0 maxratio 1.0" <<<"$w106" && grep -qxF "SEGCHECK runs 59 steps 650 intervals 652 SEG 0 ONCE 112 COUNT 0 PROD 0 maxratio 0.3333" <<<"$w106" && [ "$(sha1sum box157/max_d5_L15.json | cut -d' ' -f1)" = ba963aceabeb35d95f9c47d80d1d0e87b87baf21 ]; then
+  echo "box 157 SEG / SEG-ONCE / LEVEL-PRODUCT: 0 violations (59 + 34,934 runs; BADLEV=2 control fires): PASS"
+else
+  echo "box 157 segcheck: FAILED"; echo "$w106"; exit 1
+fi
 rm -rf "$tmp"
