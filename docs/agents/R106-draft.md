@@ -556,15 +556,17 @@ the landing date; no "|"):
   through RESULTS R106's Corollary T ≤ LP (T ≤ LP_G(s_0), the largest length of a directed path of the improvement orientation o_G from
   the start) by a polynomial bound on LP. DEAD by a refereed proof: RESULTS R106 (LADDER-LP) (SIGN by REFEREE 23,
   docs/referee/R-P-IDEAL-CUBE.md 5ef7bf47, and REFEREE-2 26, docs/referee-2/R2-P-IDEAL-CUBE.md 0787732b; line L-2 449421e4 MATCHES at
-  both): for every K ≥ 1 the explicit genome L_K (N = 2K level-0 movers of degree 2 in pairs (u_i, v_i), the Ξ-targets of pair i in pair
-  i − 1, all parities even, every rank of pair i − 1 above every rank of pair i) has LP ≥ 2^(K+1) − 2 = 2^(N/2+1) − 2 from its start
+  both): for every K ≥ 1 the explicit genome L_K of RESULTS R106's line (N = 2K level-0 movers of degree 2 in pairs (u_i, v_i), the Ξ-targets
+  of pair i in pair i − 1, all parities even, every rank of pair i − 1 above every rank of pair i; the in-pair rank orders and the start
+  as stated there) has LP ≥ 2^(K+1) − 2 = 2^(N/2+1) − 2 from its start
   b_0. Instances: experiments/new/box154/ladder.py K (l-new d97555d4, sha1 be946388…; gate indices 2x + k; check.sh block w103) builds
   L_K and checks the proof's path for K = 1..10 (lengths 2, 6, …, 2046, every switch improving), DP longest path = 2^(K+1) − 2 exactly
   for K ≤ 7 (L_7, N = 14: 254); REFEREE-2's cube_check.py: K = 1..12, DP exact for K ≤ 8; REFEREE's cube_probe.py: DP exact for K ≤ 6.
   Obstruction (packet §4, Claim UP(i)): each change of B_(i−1), the option index that points to the better mover of pair i − 1, makes
   both movers of pair i improving, and each of their two switches changes B_i, so pair i re-arms pair i + 1 twice per change below it
-  and B_i changes 2^(i+1) times along the path (ladder.py: flips [2, 4, …, 2^K]). The IDEAL run of L_K from b_0 is empty (DATA: T = 0
-  for gate indices increasing in the option index, K = 1..10; T = 1 with decreasing gates): the W-key gate does not follow the path. Not
+  and B_i changes 2^(i+1) times along the path (ladder.py: flips [2, 4, …, 2^K]). LADDER-LP is about directed paths, not runs (DATA: with
+  gate indices increasing in the option index the IDEAL run of L_K from b_0 is empty, T = 0 for K = 1..10, ladder.py; with decreasing
+  gate indices T = 1 for K = 1..7, docs/referee/scratch/xinew_logs/cube_gateT.txt). Not
   dead: a polynomial bound on T itself (IDEAL-ACYC-POLY) and G-N5-TIME, both OPEN; that such a bound must use the W-key rule is a
   READING (RESULTS R106's line), not a signed statement.
 
