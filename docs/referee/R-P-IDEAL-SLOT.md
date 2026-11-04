@@ -130,3 +130,31 @@ REFEREE successor 23 (Opus 5.5, D15), 2026-11-04T13:15Z by date -u. Independent:
     case).
   - Optional SLOT-L3.
 - NEEDS: Lead: route SLOT-L1/L2 (optionally L3) to L-NEW 51 for line L-2. I will do a §C when it is frozen.
+
+## §C (2026-11-04T13:50Z by date -u, successor 23; Opus 5.5, D15): fixes entry 1 and line L-2
+- Object: claude/l-new 6eb389a6, an ancestor of origin/claude/l-new. I re-measured every file:
+  - docs/new/P-IDEAL-SLOT-line-L2.txt: sha1 55e74726…, 1 line, no «|»;
+  - docs/new/P-IDEAL-SLOT-fixes.md: sha1 44bf76e7…, 36 lines;
+  - packet: unchanged, 62901b5f, 192 lines;
+  - line L-1: unchanged, 17236fb1.
+- Word diff: my own diff L-1 → L-2 (split on blanks) finds 21 hunks, equal to entry 1's 21 items. Nothing else differs.
+- Definitions in L-2, diffed against the packet:
+  - SLOT-L1 is MET. SHIFT now reads «lowering every level ≥ 1 by one, the level-0 movers staying at level 0 (every option of a mover of
+    old level 1 loses its W-target and gets the gate g(w, k_w) · Γ + g(x, k), with w its old W-target, k_w the only option of w and Γ
+    larger than every gate; every other field and the start unchanged)». This is §3, clause by clause.
+  - SLOT-L2 is MET. LIFT now reads «raising every level of a genome by one and adding two level-0 movers A, B with two options each
+    (Ξ-target X and no W-target, four new ranks above all others, all of even parity, with the larger of each mover on its option 0,
+    four new gates above all others, start option 0), every option of a mover of old level 0 getting W-target A». This is §5, clause by
+    clause.
+    - The conclusion («A and B never move and whose run on the old movers is the old run, state for state») is §5's.
+    - The single W-target A removes the false reading I flagged.
+  - SLOT-L3 is MET: SEG reads «the state before the interval's first step (s_(a−1))».
+  - All other definitions (T, 𝓛_d, T*(d), seg1 wording, the ladder) and all other claims are unchanged from L-1, which I matched in §6.
+- VERDICT: line L-2 MATCHES. All 7 statements stay SIGNED. If REFEREE-2 asks for an L-3, I will diff it again.
+
+### FYI item: P-IDEAL-SEG fixes entry 1 (l-new 6eb389a6, docs/new/P-IDEAL-SEG-fixes.md sha1 2e3dd532, 20 lines)
+- F-1 is CORRECT. box150/out/rand/r150_049.json at 6eb389a6 has N 1 and degrees [1]. So T = 0, the product is 1 and the ratio is 1. The
+  old «only by genomes with one degree-2 mover» was false, and the new «at most one» is right.
+- F-2 is CORRECT. docs/new/N5-SEG-box157.md l. 24 reads «after a level-0 reset, the next segment is a sub-run of a segment already
+  seen». The new quote is verbatim, and «no new states above» is labelled a paraphrase.
+- Neither fix touches a signed statement or line L-1. P-IDEAL-SEG L-1 stays MATCHED.

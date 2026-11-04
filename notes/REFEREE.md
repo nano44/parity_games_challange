@@ -30,6 +30,7 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   recomputed, states equal; L-1 MATCHES (definition diff done); optional SEG-L1 (l ≥ −1). Tool seg_probe.py (weak: T ≤ 4).
 - P-IDEAL-SLOT (l-new e46e98a4, 62901b5f/192): R-P-IDEAL-SLOT.md. All 7 SIGN (SEG copy verbatim). L-1 NOT YET: SLOT-L1 (SHIFT
   «removing one level»), SLOT-L2 (LIFT construction missing; mixed W-targets A/B would break keys). Tool slot_probe.py (MUT bites 1,007).
+- SLOT §C (l-new 6eb389a6, L-2 55e74726): 21 hunks = entry 1; SLOT-L1/L2/L3 met; L-2 MATCHES. SEG fixes entry 1 (F-1, F-2) correct.
 - Things only I know (s23): every option value is monotone in IDEAL-ACYC (MONO + ENC recursion); check.py tests current values only.
   check.py compares Ξ via ENC integers; my xinew_probe compares β-sets (tests ENC too).
 - D19 and L47 not yet in docs/DECISIONS.md at trunk 6a6bd43a (told the Lead).
