@@ -122,7 +122,7 @@ def build(T, E, fixall=False, lem=True):
                 if e is False: C.add([-v])
                 elif e is True: C.add([v])
                 else: C.add([-v, e]); C.add([v, -e])
-    cvar = {}
+    cvar = {}; dif = {}
     def better1(t, x):
         if (t, x) in cvar: return cvar[(t, x)]
         def inopt(k, f):
@@ -138,7 +138,9 @@ def build(T, E, fixall=False, lem=True):
             for g in faces:
                 if fb[g] is False: continue
                 C.add([-pos, neg(fb[g])] + [C.AND([fa[f], lt(fi[g], fi[f])]) for f in faces if f != g])
-        cvar[(t, x)] = c; return c
+        cvar[(t, x)] = c
+        dif[(t, x)] = {y: C.OR([C.EQ(i1[(y, k)], neg(i0[(y, k)])) for k in (0, 1)]) for y in range(N) if y != x}   # y on exactly one chain
+        return c
     mv = {(t, v): neg(C.EQ(st[(t, v)], st[(t - 1, v)])) for t in range(1, L + 1) for v in range(N)}
     if lem:
         reach = {}
@@ -166,6 +168,23 @@ def build(T, E, fixall=False, lem=True):
         for t in range(1, L + 1):
             c = better1(t - 1, a); kp = KPb(t, a)
             C.add([C.EQ(st[(t, a)], C.ITE(C.EQ(c, kp), kp, st[(t - 1, a)]))])
+    if os.environ.get("PMD") == "1":   # Corollary PMDIFF (L-NEW box 152; also immediate from R104: the symmetric difference of x's two chains
+        # is x's faces + the current faces of the movers on exactly one chain, so C changes only if one of those movers changes option)
+        byx = {}
+        for (t, x) in cvar: byx.setdefault(x, []).append(t)
+        for x, ts in byx.items():
+            ts.sort()
+            for i, a in enumerate(ts):
+                for c2 in ts[i + 1:]:
+                    for (p, q) in ((a, c2), (c2, a)):
+                        C.add([neg(C.EQ(cvar[(a, x)], neg(cvar[(c2, x)])))] + [C.AND([dif[(p, x)][y], neg(C.EQ(st[(p, y)], st[(q, y)]))]) for y in range(N) if y != x])
+    if os.environ.get("HINT"):   # SAT-finding only (an UNSAT answer with a hint is NOT exact): fix extra movers' states at t <= HINTT and gate bits from a genome
+        import ideal
+        Gh = json.load(open(os.environ["HINT"])); Sh, _ = ideal.traj(Gh); HT = int(os.environ.get("HINTT", "0"))
+        for t in range(min(HT, len(Sh) - 1) + 1):
+            for v in range(N0, N): C.add([st[(t, v)] if Sh[t][v] else neg(st[(t, v)])])
+        if os.environ.get("HINTG", "1") == "1":
+            for (l, k), var in Gb.items(): C.add([var if Gh["gate"][2 * l][k] < Gh["gate"][2 * l + 1][k] else -var])
     info = dict(N=N, N0=N0, L=L, lev=lev, WT=WT, gate0=gate0, S0=S0, m0=m0, dtop=dtop, faces=faces, b=b, lt=lt, par=par, st=st, Gb=Gb, req=req, fi=fi)
     return C, info
 
@@ -206,9 +225,13 @@ if __name__ == "__main__":
             if kind == "G": cv += [I["Gb"][k] for k in sorted(I["Gb"])]
             if kind == "S0": cv += [I["st"][(0, v)] for v in range(I["N0"], I["N"])]
         part, P = map(int, os.environ.get("CUBEPART", "0/1").split("/")); r = False; model = None
+        done = set()   # resume: skip cubes already reported UNSAT in the logs named by CUBEDONE (comma list)
+        for lf in [x for x in os.environ.get("CUBEDONE", "").split(",") if x and os.path.exists(x)]:
+            for line in open(lf):
+                if line.startswith("CUBE ") and " UNSAT " in line: done.add(int(line.split()[1]))
         with Solver(name=os.environ.get("SOLVER", "cadical195"), bootstrap_with=C.cl) as SS:
             for ci in range(2 ** len(cv)):
-                if ci % P != part: continue
+                if ci % P != part or ci in done: continue
                 asm = [v if (ci >> j) & 1 else -v for j, v in enumerate(cv)]; t1 = time.time(); rr = SS.solve(assumptions=asm)
                 print(f"CUBE {ci} {'SAT' if rr else 'UNSAT'} {time.time() - t1:.1f} s", flush=True)
                 if rr: r = True; model = SS.get_model(); break

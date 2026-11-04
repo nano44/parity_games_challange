@@ -1,6 +1,30 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## HANDOVER (successor 26, Opus 5.5 under D15; written 2026-11-04 04:17Z by date -u; context ~490k; Lead 04:16Z: report, then park)
+Branch claude/referee-2, merged with trunk (git merge, no rebase) before pushes. REFEREE-2 owns no docs/GAPS.md rows. Every push via
+scripts/push.sh in the background (redirect, echo exit; verify takes ~20-25 min), VERIFY PASS each time.
+### Reports of record (all «(Opus 5.5, D15)»)
+| packet | object | report | lines | outcome |
+| --- | --- | --- | --- | --- |
+| P-N5-REALIZE (R104 LANDED) | l-red e609c5d2, 067f06b6 | R2-N5-REALIZE.md (+ Add. 1 joint list, Add. 2 VJ-LOC correction) | L-1 MATCHES (R2-N5-REALIZE-L1.md), L-2 MATCHES (R2-N5-REALIZE-L2.md) | all SIGNED; G-REAL-1 closed; own tool R2-N5-REALIZE/realize_check.py |
+| P-IDEAL-RED (R105 LANDED 02:59Z) | l-new 0ebddcf5, 06f2c186 | R2-P-IDEAL-RED.md | fixes+L-1 REQUIRED (R2-P-IDEAL-RED-L1.md), L-2 MATCHES (R2-P-IDEAL-RED-L2.md) | 16 SIGN; tool R2-P-IDEAL-RED/ideal_check.py |
+| P-IDEAL-CUBE | l-new d97555d4, 366afedc | R2-P-IDEAL-CUBE.md | L-1 REQUIRED LC-1/LC-2, L-2 MATCHES (R2-P-IDEAL-CUBE-L2.md, l-new a0bb2694, 449421e4) | 4 SIGN; [WW22] v1 verbatim; tool R2-P-IDEAL-CUBE/cube_check.py |
+### OPEN: none. CHECKER may land P-IDEAL-CUBE (after R105, which has landed). A successor takes the next packet.
+### Tools (own code; lane code never imported)
+- R2-P-IDEAL-RED/ideal_check.py: IDEAL model simulator (sets, top-rank; keys under new state), every P-IDEAL-RED statement, several pi,
+  both tie rules, INTERVAL-RESTRICT builds and runs H; NEG=old control; random genome generator rand_genome(rng, Nmax, dmax, degmax).
+- R2-P-IDEAL-CUBE/cube_check.py: imports ideal_check; cube orientation, every face (USO/COMB/ORI/ACYC), MULTI->SINGLE, ladder L_K + DP LP.
+- R2-N5-REALIZE/realize_check.py: Gamma(G) builder (byte-identical to pins), SPEC N5 loop recording sigma_new before S4c, BF / MUT controls.
+- [WW22] e-print v1 in $SCRATCH/ww22 (container-local; sha256 88e1f1b7…); re-fetch https://arxiv.org/e-print/2207.05985 if needed.
+### Traps (mine this session; each was caught by CHECKER or REFEREE first)
+- Premise routes only from RESULTS, never docs/lit (C115 E-1: VJ00 5.8 «1 => 2» is NOT landed; R36 (c) is the one-player carrier).
+- Paper-check «Does NOT claim» / negative remarks too (IR-1: MONO's remark was false).
+- Bind every count's index range in a line (REFEREE L-1d: U over t in [2, T]).
+- Binder pass on lines: undefined symbols (eps, A) and DATA clauses that depend on unstated parameters (gate order in L_K).
+- Background waiters: copy the task id from the tool result exactly (I twice waited on a wrong id); never pkill -f a pattern in my own command.
+- Always run date -u alone and copy it into stamps (one message went out «approx.»).
+
 ## Resume point 1 (successor 26, Opus 5.5 under D15; 2026-11-02 04:19Z by date -u)
 - Start: ls-remote first; local container stale at cf5157fe, ff to 770a9a9c (succ. 25 handover); trunk 803e0545 merged (git merge).
   STEP 0 answers messaged to the Lead 04:03Z (handover-checks file is a Lead path: not written by me).
@@ -28,6 +52,9 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
   IR-1). TRAP: paper-check negative remarks too. Report R2-P-IDEAL-RED-L1.md.
 - 2026-11-04 00:09Z (date -u): IDEAL-RED line L-2 (l-new ffeb9736, 65ba7ca7, fixes 2e8c3630): MATCHES (R2-P-IDEAL-RED-L2.md); byte
   test True; 4 required + optional 5-8. Missed REFEREE L-1d in L-1 (U range unbound). TRAP: bind every count's index range. Queue empty.
+- 2026-11-04 02:50Z (date -u): P-IDEAL-CUBE (l-new d97555d4, 366afedc; line 99ae8fac): all SIGN (DECOMP o-c, MULTI->SINGLE, T<=LP,
+  LADDER-LP). [WW22] v1 e-print opened (sha256 88e1f1b7), Def. 3/4, §2.2, Thm 18 quotes verbatim. Line REQUIRED LC-1 (IDEAL-run-empty
+  DATA needs gates increasing in k; decreasing gives T 1), LC-2 (W-key «must carry» = READING). Tool R2-P-IDEAL-CUBE/cube_check.py.
 
 ## HANDOVER (successor 25, session_01V5yGRaPp26T6iMUpCRmXsW, Opus 5.5 under D15; written 2026-11-02 03:32Z by date -u; context ~505k; Lead 03:35Z: hand over and park)
 Branch claude/referee-2, merged with trunk (git merge, no rebase) before pushes. REFEREE-2 owns no docs/GAPS.md rows.

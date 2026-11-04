@@ -15,6 +15,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   F-4 deg>=3 DATA reproduced (deg3_probe.py: KEYFLIP 343, TOP-MONO 8,105 fails / 2,950 runs). Line L-1 NOT YET: REQUIRED
   L-1a (ENC: ε undefined, X case), L-1b (A undefined), L-1d (U over t in [2,T]), L-1e (labels agree from a+2); optional L-1c, f-h.
 - §C add. 1 on line L-2 (l-new ffeb9736, sha1 65ba7ca7): 10 hunks = entry 2 = L-1a,b,d,e + optional c,f,g,h; MATCHES. OPEN: none.
+- P-IDEAL-CUBE (l-new d97555d4, sha1 366afedc, 186 l.): R-P-IDEAL-CUBE.md. DECOMP, MULTI→SINGLE, T ≤ LP, LADDER-LP SIGN; [WW22]
+  = arXiv:2207.05985 v1 only (13 Jul 2022), single shared counter: Def 3/4, Thm 18 correct (two restatable thms in intro). Line L-1
+  NOT YET: CUBE-L1 (READING «W-key must carry» as fact). CUBE-P1: lands after R105. Tool cube_probe.py.
+- CUBE §C (l-new a0bb2694, L-2 449421e4): 8 hunks = entry 2; CUBE-L1/L2/L3 met; R105 landed (CUBE-P1 met); gate-order DATA
+  checked (T 0 increasing / 1 decreasing, K 1..7). L-2 MATCHES. OPEN: none.
 - Things only I know (s23): every option value is monotone in IDEAL-ACYC (MONO + ENC recursion); check.py tests current values only.
   check.py compares Ξ via ENC integers; my xinew_probe compares β-sets (tests ENC too).
 - D19 and L47 not yet in docs/DECISIONS.md at trunk 6a6bd43a (told the Lead).
