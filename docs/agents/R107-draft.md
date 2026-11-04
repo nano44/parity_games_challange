@@ -477,7 +477,7 @@ it is still the last row).
   half (LOCAL (c)) in (d) (c) and (f), LOCAL (b) in (f); KEYFLIP in (f). Packet l. 22: «Not used: RESULTS R106 (P-IDEAL-CUBE), docs/lit,
   docs/sources, any other lane file. No outside source is cited.» CHAIN-BACK is used with U as signed in P-IDEAL-RED §4, chained meaning
   «as a mover other than h_t»; R107's line states that definition, while the landed R105 line and body item (f) omit the phrase, the
-  subject of a separate, pending Lead Erratum E-2 to R105 (REFEREE-2 R2-R105-chained.md l. 58: «T ≤ N (1 + M₂) uses CHAIN-BACK (ii) with
+  subject of RESULTS Erratum E-2 to R105 (REFEREE-2 R2-R105-chained.md l. 58: «T ≤ N (1 + M₂) uses CHAIN-BACK (ii) with
   the PACKET U, which P-IDEAL-M2 §0 defines («(as a mover other than h_t)»), plus U ≤ M₂.»). The DEAD instance is a data file,
   recomputed by both referees with their own simulators (REFEREE from R104's text, scratch/xinew_probe.py; REFEREE-2 m2_check.py
   «written from R104's text with β-SETS (no ENC)», l. 77).
@@ -523,7 +523,7 @@ it is still the last row).
   exercised only by the corpus (WT 333) and the referees' runs. (vi) Every statement is about R104's IDEAL model on acyclic Ξ-graphs;
   nothing is said about a real N5 run or a parity game beyond what R104 already says (packet l. 163-166). (vii) Premises: RESULTS R104's
   definition and RESULTS R105's six named items; CHAIN-BACK is cited with U as signed (chained «as a mover other than h_t», stated in
-  this entry's line), while R105's landed wording omits that phrase (Lead Erratum E-2 to R105, pending at this entry's draft); at degree
+  this entry's line), while R105's landed wording omits that phrase (corrected by RESULTS Erratum E-2 to R105); at degree
   ≤ 2 the two readings agree. No lit note, no lane file, no outside source. No Lean. (viii) The DEAD instance is L-RED's witness, used
   here only as a counterexample; its T is R104's number of steps («So L-RED's «run» is my T: there is no unit difference.»,
   docs/new/N5-M2-box156.md l. 45 at 4d244698). (ix) Names: «M₂» (subscript two) is this entry's count of multi-mover steps; it is not
