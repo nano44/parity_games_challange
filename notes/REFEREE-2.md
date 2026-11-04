@@ -28,6 +28,9 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
   IR-1). TRAP: paper-check negative remarks too. Report R2-P-IDEAL-RED-L1.md.
 - 2026-11-04 00:09Z (date -u): IDEAL-RED line L-2 (l-new ffeb9736, 65ba7ca7, fixes 2e8c3630): MATCHES (R2-P-IDEAL-RED-L2.md); byte
   test True; 4 required + optional 5-8. Missed REFEREE L-1d in L-1 (U range unbound). TRAP: bind every count's index range. Queue empty.
+- 2026-11-04 02:50Z (date -u): P-IDEAL-CUBE (l-new d97555d4, 366afedc; line 99ae8fac): all SIGN (DECOMP o-c, MULTI->SINGLE, T<=LP,
+  LADDER-LP). [WW22] v1 e-print opened (sha256 88e1f1b7), Def. 3/4, §2.2, Thm 18 quotes verbatim. Line REQUIRED LC-1 (IDEAL-run-empty
+  DATA needs gates increasing in k; decreasing gives T 1), LC-2 (W-key «must carry» = READING). Tool R2-P-IDEAL-CUBE/cube_check.py.
 
 ## HANDOVER (successor 25, session_01V5yGRaPp26T6iMUpCRmXsW, Opus 5.5 under D15; written 2026-11-02 03:32Z by date -u; context ~505k; Lead 03:35Z: hand over and park)
 Branch claude/referee-2, merged with trunk (git merge, no rebase) before pushes. REFEREE-2 owns no docs/GAPS.md rows.
