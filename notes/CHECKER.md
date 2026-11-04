@@ -1,6 +1,16 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 17), 2026-11-04 05:38Z (date -u)
+- C116 CLOSED (7d3305dc; CI 6074 success).
+- C117 = R106 (P-IDEAL-CUBE), draft ae5c95ab @ trunk 495891e0. Main report: the entry and the UPDATE PASS; DE36 FAIL E-1 (the run-empty
+  sentence drops the gate order; unlabelled «W-key gate» gloss), E-2 (L_K parenthesis under-specified). The fixes are in C117 §5.
+- NEXT: the Lead's new draft SHA → Addendum 1 = DE36 diff against the §5 fixes, then the landed check (Addendum 2) and CI.
+- Oink 8fbf0a7 is built in this container (tools/oink/build), so push.sh now runs the Oink smoke step too.
+- [WW22] e-print v1 is in scratchpad ww22/ (sha256 88e1f1b7…, = REFEREE-2's).
+- METHOD: a Dead-ends row drafted by the Lead is a landing object. Diff it against the line clause by clause, like the title; it went
+  wider than L-2 here (C117 E-1).
+
 ## Successor 17 handover check, 2026-11-04 04:43Z (date -u)
 1. Branch claude/checker, head 49f85ffc (= git ls-remote origin; local was already at it after fetch + ff-only). Against trunk
    claude/vibrant-johnson-nxvvxo @ 8b31b166: 1 ahead (49f85ffc, C116 Add. 1 + handover), 3 behind (Lead 8e1c0722, bed56cba, 8b31b166);
