@@ -46,3 +46,14 @@ Verdict on L-2: NOT YET. One word change (SL-L2) gives L-3; with it, MATCHES.
   in terms of d» equals L-3 exactly (True). Token diff: one insertion «over 𝓛_d». SL-L2 MET.
 - Optional only: the provenance tail still names «fixes entry 1»; entry 2 holds this change.
 - Verdict: L-3 MATCHES. All my items on P-IDEAL-SLOT are closed.
+
+## Addendum 2: line L-4 (claude/l-new d488d06d), 2026-11-04 21:58Z (date -u)
+- Stale-clone check: ls-remote claude/referee-2 = local HEAD = a6713a1a (no container restart).
+- Hashes: docs/new/P-IDEAL-SLOT-line-L4.txt 008b10ad8ee340793c5167fe5f990b7b71020630, 1 line, 0 «|»; P-IDEAL-SLOT-fixes.md e7bd0361…,
+  56 lines (entry 3 appended); L-3 0c51ce6d unchanged.
+- Byte test: the old DATA parenthesis and the new text, both extracted from CHECKER C121 §5 (claude/checker f5338080, line wraps joined),
+  each occur exactly once (old in L-3, new in L-4), and L-3 with old → new equals L-4 exactly (True). Nothing else changed.
+- Figures in the new parenthesis against my own runs: SEG-ONCE 55 corpus runs and 1,936 random runs with degree ≤ 2 (my seg_check.py
+  d2runs 55 / 1,936, R2-P-IDEAL-SEG.md); SEG 59 / 34,934 runs on maximal intervals (same); LIFT SAME True ×3 and three.py «cuts []» ×3
+  (my w108 re-run, R2-P-IDEAL-SLOT.md); «SHIFT, SEG-CAP and SANDWICH: no lane DATA» is correct (my own checks of those are referee data).
+- Verdict: L-4 MATCHES.
