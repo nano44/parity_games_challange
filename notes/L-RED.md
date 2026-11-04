@@ -92,6 +92,11 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   nohup timeout 7200 python3 xmax.py 4 14 out/max/d4_t14.json; SYMB=1 nohup timeout 14400 python3 xmax.py 4 14 out/max/d4_t14S.json;
   SYMB=1 nohup timeout 14400 python3 xmax.py 5 15 out/max/d5_t15S.json (logs: same name .log). d4 t13 (no SYMB) stopped at 75 min.
   pcegar k3p2/ag_4 paused at 08:2xZ (2 no-goods; one F check > 1 h); relaunch line above resumes it.
+- 09:0xZ R202 d 5 T>=15 SAT 2092 s -> r202/max_d5_L15 (pin n 96, PIN OK; check.sh R202). Running (r200): SYMB=1 xmax.py 5 16 / 5 17
+  (timeout 21600, out/max/d5_t16S.log, d5_t17S.log). 10:4xZ XTHINT (L15 Xi-graph fixed) T>=16 UNSAT 18 s (inexact).
+- 11:5xZ R203 (Lead 11:49Z): CMIN="l:b" in xcnf (C_l = #steps moving a level-<=l mover, seqcounter). d 4 horizon 13 = exact max T, so exact.
+  Running: for b in 4 6; do TMIN=0 CMIN=0:2,1:$b SYMB=1 nohup timeout 14400 python3 xmax.py 4 13 out/c/d4_c1_$b.json > out/c/d4_c1_$b.log 2>&1 & done
+  Stopped: d4 T>=14 SYMB (R197 has it; 3 h no answer); pcegar k3p2/ag_0 paused at 44 no-goods (resume = same line).
 - Cross-checks: bf.py (brute force N 4 + GREEDY) 85/85 agree with xcnf (LEM on/off), 8 UNSAT; agree.py vs xisat 30/30 + 29/30 + 29/30,
   the two non-agreements are xisat UNKNOWN (z3 timeout 600-900 s, FD too) vs xcnf UNSAT on N 8 L 3 instances (s5_15: noLEM UNSAT too).
 

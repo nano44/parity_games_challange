@@ -206,6 +206,19 @@ def build(T, E, fixall=False, lem=True):
         # relabels the options of level l+1 (states flip, gates / faces move along); the sigma_l commute and sigma_l touches only levels
         # l, l+1, so fixing levels bottom-up puts one member of every orbit into: s_0(u_l) >= s_0(v_l) for every level l
         for l in range(dtop): C.add([st[(0, 2 * l)], neg(st[(0, 2 * l + 1)])])
+    if os.environ.get("CMIN") or os.environ.get("CMAXV"):   # R203: C_l = #steps moving some mover of level <= l; CMIN "l:b,..." -> C_l >= b
+        from pysat.card import CardEnc, EncType
+        ml = {}
+        for l in range(dtop):
+            for t in range(1, L + 1): ml[(l, t)] = C.OR([mv[(t, v)] for v in range(N) if lev[v] <= l])
+        for item in [x for x in os.environ.get("CMIN", "").split(",") if x]:
+            l, bnd = map(int, item.split(":")); lits = [ml[(l, t)] for t in range(1, L + 1)]
+            lits = [x for x in lits if x is not False]; nt = sum(1 for x in lits if x is True); lits = [x for x in lits if x is not True]
+            if bnd - nt > len(lits): C.add([])
+            elif bnd - nt > 0:
+                enc = CardEnc.atleast(lits=lits, bound=bnd - nt, top_id=C.n, encoding=EncType.seqcounter)
+                C.n = max(C.n, enc.nv); [C.add(list(c)) for c in enc.clauses]
+        info_ml = ml
     if os.environ.get("TMIN") == "1":   # R202: the run has at least L steps (deterministic run: step L nonempty => all earlier steps nonempty)
         C.add([mv[(L, v)] for v in range(N)])
     info = dict(g0=g0, N=N, N0=N0, L=L, lev=lev, WT=WT, gate0=gate0, S0=S0, m0=m0, dtop=dtop, faces=faces, b=b, lt=lt, par=par, st=st, Gb=Gb, req=req, fi=fi)
