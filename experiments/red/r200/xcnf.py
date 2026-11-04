@@ -191,6 +191,10 @@ def build(T, E, fixall=False, lem=True):
                 for c2 in ts[i + 1:]:
                     for (p, q) in ((a, c2), (c2, a)):
                         C.add([neg(C.EQ(cvar[(a, x)], neg(cvar[(c2, x)])))] + [C.AND([dif[(p, x)][y], neg(C.EQ(st[(p, y)], st[(q, y)]))]) for y in range(N) if y != x])
+    if os.environ.get("XTHINT"):   # SAT-finding only: fix every face's Xi-target to that of a given genome (UNSAT with it is NOT exact)
+        Gx = json.load(open(os.environ["XTHINT"]))
+        for v in range(N):
+            for k in (0, 1): C.add([b[((v, k), Gx["opts"][v][k][1])]])
     if os.environ.get("HINT"):   # SAT-finding only (an UNSAT answer with a hint is NOT exact): fix extra movers' states at t <= HINTT and gate bits from a genome
         import ideal
         Gh = json.load(open(os.environ["HINT"])); Sh, _ = ideal.traj(Gh); HT = int(os.environ.get("HINTT", "0"))
