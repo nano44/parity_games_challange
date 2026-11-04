@@ -1,4 +1,4 @@
-# Draft RESULTS R108 (Lead; first fill 2026-11-04T15:16:49Z by date -u (subagent); on P-IDEAL-SEG line L-1, docs/new/P-IDEAL-SEG-line-L1.txt, l-new 8291ecf7, sha1 a18f6f0c61d6d5f33adc61519d94252dd5ba9721) — to CHECKER C120
+# Draft RESULTS R108 (Lead; first fill 2026-11-04T15:16:49Z by date -u (subagent); on P-IDEAL-SEG line L-1, docs/new/P-IDEAL-SEG-line-L1.txt, l-new 8291ecf7, sha1 a18f6f0c61d6d5f33adc61519d94252dd5ba9721) — to CHECKER C120 — LANDED in RESULTS 2026-11-04 16:53Z (CHECKER C120 7982d57a PASS), after R107, before Erratum E-1
 FIRST FILL. Read at the origin heads fetched at the start of the fill (git fetch, then git ls-remote, 2026-11-04T14:57:49Z: l-new
 16297185, l-red 0f7508cf, referee 3b8a9c77, referee-2 cdf8e962, checker 914d073f; origin trunk 6f1be9e2; local trunk dee561d2 = the
 merge (--no-ff) of the l-new, referee and referee-2 heads into 6f1be9e2, not pushed (the checker head 914d073f is already an ancestor of

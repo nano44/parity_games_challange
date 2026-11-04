@@ -10809,6 +10809,224 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   (L-2) makes no M4 claim and no TARGET claim; its tail reads «a REDUCTION / EQUIVALENCE statement inside the IDEAL model» and
   «G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim» (L-2, by script). Not a step-4 pass. GAPS G-N5-TIME: open.
 
+### R108 [refereed-only] In the IDEAL model of RESULTS R104 (premise: R104's definition of the model only, no theorem of R104 used; and RESULTS R105's LOCAL, key half only), on acyclic Ξ-graphs, any number of movers per level, with N movers, T the number of steps of a run from a given start, Mv_t the movers of step t, C_l the number of steps whose movers include one of level at most l (C_(−1) := 0) and n_l the number of movers of level l with two options: (SEG) at any degree, if no step of an interval [a, b] of steps moves a mover of level at most l, then the genome in which every mover of level at most l keeps only its option at s_(a−1) runs from s_(a−1) through exactly the states s_(a−1), …, s_b first; and at degree ≤ 2 only: (SEG-ONCE) on such an interval every mover of level l + 1 moves at most once, so every level-0 mover moves at most once in a whole run; (LEVEL-PRODUCT) C_(l+1) + 1 ≤ (C_l + 1)(n_(l+1) + 1) for every l ≥ −1, hence T + 1 ≤ the product over all levels l of (n_l + 1), and T ≤ 3^d − 1 on a d-level ladder with two movers of degree 2 per level; and DEAD: the lane conjecture REPLAY («in every degree-≤-2 IDEAL-ACYC run, every state inside a maximal interval of steps without a level-0 move that follows a level-0 move agrees on all movers of level ≥ 1 with some state before that interval») is false, by L-RED R202's 5-level 2-wide ladder max_d5_L15 from its stored start (N 10, T 15; level-0 moves only at steps 7 and 8; s_9 is new above level 0; sha1 ba963ace…) (2026-11-04) — an EXPONENTIAL count bound and a restriction lemma inside the IDEAL model; bounds nothing polynomially; degree ≥ 3 is not covered by SEG-ONCE or LEVEL-PRODUCT; Ξ-cyclic genomes are not covered; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim (DATA: 0 violations on 59 corpus runs with 652 intervals and on 34,934 random runs (every start for N ≤ 8, the genome start otherwise) with 57,755 intervals, experiments/new/box157/segcheck.py) (P-IDEAL-SEG, docs/new/P-IDEAL-SEG.md; L-NEW successor 51), CHECKER PASS (docs/checker/C120.md, checker 7982d57a)
+- Object (L-NEW successor 51, Opus 5.5, D14 / D18; frozen, unchanged during review): packet P-IDEAL-SEG, docs/new/P-IDEAL-SEG.md, sha1
+  7fa847843cb950e87dac38bf3d612effd5a9834e, 152 lines (l-new freeze 8291ecf7, 2026-11-04T11:48:36Z, the file's only commit; identical at
+  16297185). Both referees measured the sha1 (REFEREE l. 4 «docs/new/P-IDEAL-SEG.md: sha1 7fa847843cb950e87dac38bf3d612effd5a9834e, 152
+  lines;»; REFEREE-2 l. 5 «docs/new/P-IDEAL-SEG.md sha1 7fa847843cb950e87dac38bf3d612effd5a9834e, 152 lines»). Title (l. 1): «Packet
+  P-IDEAL-SEG (box 157): stretches without low-level moves (SEG, SEG-ONCE) and the level-product bound T + 1 ≤ Π_l (n_l + 1) at degree ≤
+  2 (LEVEL-PRODUCT); DEAD: REPLAY». Status (l. 5-7): «Not a TARGET.md claim.» «Every statement is about the IDEAL-ACYC model only. No
+  polynomial bound is claimed anywhere: LEVEL-PRODUCT is an EXPONENTIAL bound.» «G-N5-TIME stays OPEN.» To sign: §1 Lemma SEG, §2 Lemma
+  SEG-ONCE, §3 Corollary LEVEL-PRODUCT, §4 the DEAD of REPLAY (table l. 9-16); §5 «DATA / READING (not to sign)». Sections: premises (l.
+  18-23), §0 the model (l. 25-43), §1 (l. 45-68), §2 (l. 70-82), §3 (l. 84-102), §4 (l. 104-124), §5 machine check, EXCLUDED, TARGET
+  diff, READING (l. 126-152). Source: «Source: docs/new/N5-SEG-box157.md §1 (box 157). This packet governs: every proof below is written
+  out in full here and is» «checked against this text only.» (l. 4-5).
+  Fixes: docs/new/P-IDEAL-SEG-fixes.md, fixes entry 1 (append-only; one commit, 6eb389a6; 20 lines, sha1
+  2e3dd53211b44ca752611aadf4f30e5a0e7c165f). Entry 1 makes two text corrections outside the signed statements (REFEREE-2 F-1: the §5
+  DATA remark; F-2: the §4 quote of the lane proposal): «Line L-1 is unchanged. No statement or DATA count changes.» (l. 20). The packet
+  read with entry 1 is the text of record.
+  The RESULTS line is L-1, a18f6f0c61d6d5f33adc61519d94252dd5ba9721 (docs/new/P-IDEAL-SEG-line-L1.txt, l-new 8291ecf7, frozen with the
+  packet, the file's only commit). The title is L-1 verbatim, with nothing inserted (its date parenthesis «(2026-11-04)» and its source
+  note are the line's own). L-1 MATCHES at both referees: REFEREE (19e0742f) l. 110 «VERDICT: line L-1 MATCHES.», and after fixes entry
+  1 «Neither fix touches a signed statement or line L-1. P-IDEAL-SEG L-1 stays MATCHED.» (docs/referee/R-P-IDEAL-SLOT.md l. 160,
+  3b8a9c77); REFEREE-2 (9a746361) l. 119 «Gaps: none. Line L-1: MATCHES.». Both diffed every definition in L-1 against the packet
+  (REFEREE §5 l. 88 «with the new rule: every DEFINITION diffed against the packet»; REFEREE-2 l. 91 «clause by clause, every definition
+  against the packet»). Optional line items not taken: REFEREE SEG-L1 and REFEREE-2 P-2 (bind «l ≥ −1» in SEG), REFEREE-2 P-1 (ladder
+  wording), P-3 (REPLAY's guillemets), P-4 (DATA degree note).
+  Setting (packet §0, l. 25-43; RESULTS R104's model in R105's notation): a genome G has N ≥ 1 movers x with levels lev(x) and deg(x) ≥
+  1 options (x, k), M := Σ deg(x), each option with a W-target one level down (none at level 0), a Ξ-target (a mover or the exit X), a β
+  with a distinct rank and a parity, and a distinct gate index; a start s_0 (l. 26-29); the Ξ-graph and IDEAL-ACYC (l. 30); chains,
+  Ξ-values and the comparison (l. 31-33); A_s(x) (l. 34); keys (l. 35); the step under the NEW state's keys, level by level, and «T :=
+  the number of steps.» (l. 36-38); Mv_t, the movers of step t (nonempty for t ∈ [1, T]), and «A mover of degree 1 has A_s(x) = {s(x)}
+  always and never moves.» (l. 39); at degree ≤ 2, KP_s(x) := the option of x with the smaller key under s, and «If x ∈ Mv_t, both
+  options lie in A_(s_(t−1))(x), and the step rule gives s_t(x) = KP_(s_t)(x).» (l. 40-41); «d-level 2-wide ladder: a genome with levels
+  0, …, d − 1, exactly two movers per level, all of degree 2 (N = 2d).» (l. 42); «No width hypothesis is made in §1-§3: every level may
+  hold any number of movers.» (l. 43). Notation of the line: s_t is the state after step t (s_0 the start); C_l and n_l are defined in
+  §3 (Claims (c)).
+- Claims signed (REFEREE successor 23 «(Opus 5.5, D15)», report 19e0742f; REFEREE-2 successor 27 «(Opus 5.5, D12/D19)», report
+  9a746361). Items (a)-(d) are SIGN in both verdict tables (REFEREE "## 0. Verdicts" l. 9-17 of R-P-IDEAL-SEG.md; REFEREE-2 "##
+  Verdicts" l. 10-18 of R2-P-IDEAL-SEG.md), with no gap in either report (REFEREE l. 119 «SEG, SEG-ONCE, LEVEL-PRODUCT and DEAD REPLAY:
+  all SIGN, no gap.»; REFEREE-2 l. 18 «Gaps: none.»); the table is to-check (4). (a) holds for every IDEAL genome with an acyclic
+  Ξ-graph at ANY degree, (b) and (c) at degree ≤ 2 only, all at any width; (d) is one explicit instance. No item bounds a count
+  polynomially; (c) is an exponential bound.
+  (a) Lemma SEG (§1, l. 45-68; IDEAL-ACYC, any degree, any width): «Let l ≥ −1, and let [a, b] ⊆ [1, T] be an interval of steps such
+      that Mv_t contains no mover of level ≤ l for every t ∈ [a, b].»; «Let H be the genome G in which every mover x of level ≤ l keeps
+      only the option s_(a−1)(x), with the same W-target, Ξ-target, β» «and gate.»; «Then the run of H from s_(a−1) has s_(a−1), s_a, …,
+      s_b as its first b − a + 2 states (so H takes at least b − a + 1 steps).» (l. 47-50). Proof (l. 51-67): H is an IDEAL-ACYC genome
+      (its options are options of G, its Ξ-graph a subgraph); by induction on t ∈ [a, b], (i) the chain of every option of a non-frozen
+      mover is the same option sequence in H and G, so the Ξ-values and A_s agree; (ii) a frozen mover has a single available option;
+      (iii) level by level the keys under the two new states are equal by RESULTS R105 (LOCAL), «a key only on the states below its
+      level», so H's new state is s_t; (iv) H passes both stop tests. «Does NOT claim: anything about H's run after state s_b; any count
+      bound.» (l. 68). Cells: REFEREE «SIGN» (l. 12; §2 l. 36-44, «Correct.»); REFEREE-2 «**SIGN** (Opus 5.5, D12)» (l. 13; l. 30-41).
+  (b) Lemma SEG-ONCE (§2, l. 70-82; degree ≤ 2, any width): «With l and [a, b] as in SEG: every mover x of level l + 1» moves at most
+      once in [a, b] (the number of t ∈ [a, b] with x ∈ Mv_t is at most 1, l. 71-72); «In particular (l = −1, [a, b] = [1, T]) every
+      level-0 mover moves at most once in the whole run.» (l. 72). Proof (l. 73-80): two consecutive moves of x in [a, b] go b′ → a′ →
+      b′; a′ = KP_(s_(t1))(x) and b′ = KP_(s_(t2))(x); KP_s(x) reads only movers of level < lev(x) = l + 1 (RESULTS R105 (LOCAL), «a key
+      only on the states below its level»), which do not move in [a, b]; so a′ = b′, a contradiction. «Does NOT claim: anything at
+      degree ≥ 3 (the proof uses that a mover with two options must return to the option it left); any bound» «on moves at levels ≥ l +
+      2 inside [a, b].» (l. 81-82). Cells: REFEREE «SIGN» (l. 13; §2 l. 45-49); REFEREE-2 «**SIGN** (Opus 5.5, D12)» (l. 14; l. 42-46).
+  (c) Corollary LEVEL-PRODUCT (§3, l. 84-102; degree ≤ 2, any width): «C_(−1) := 0»; for l ≥ 0, C_l := the number of steps t ∈ [1, T]
+      whose Mv_t contains a mover of level ≤ l; «n_l := the number of degree-2» «movers of level l.» (l. 86-87). «Then C_(l+1) + 1 ≤
+      (C_l + 1)(n_(l+1) + 1) for every l ≥ −1. Hence T + 1 ≤ Π_(l = 0..top) (n_l + 1), with top the largest level.» (l. 88); «On a
+      d-level 2-wide ladder: T ≤ 3^d − 1.» (l. 89). Proof (l. 90-98): the C_l steps cut [1, T] into at most C_l + 1 maximal intervals; a
+      step counted by C_(l+1) and not by C_l moves a degree-2 mover of level l + 1, at most once per interval for each of the n_(l+1)
+      such movers (SEG-ONCE); «Every step moves some mover, so T = C_top.»; induction from C_(−1) + 1 = 1. «Does NOT claim: any
+      polynomial bound (the bound is exponential in the number of levels holding a degree-2 mover); tightness; anything» «at degree ≥
+      3.» (l. 101-102). The line's ladder clause («on a d-level ladder with two movers of degree 2 per level») also admits extra
+      degree-1 movers; the bound holds for them by the product form (n_l = 2): REFEREE l. 95-96, REFEREE-2 l. 112-113 (P-1). Cells:
+      REFEREE «SIGN» (l. 14; §2 l. 50-55); REFEREE-2 «**SIGN** (Opus 5.5, D12)» (l. 15; l. 47-51).
+  (d) DEAD: CONJECTURE REPLAY (lane), in the packet's precise form (§4, l. 104-124). The killed statement (l. 107-109): «For every
+      degree-≤-2 IDEAL-ACYC run and every maximal interval [a, b] of steps none of which moves a level-0 mover, with a ≥ 2» «(so step a
+      − 1 moves a level-0 mover):» «every state s_t with t ∈ [a, b] agrees, on every mover of level ≥ 1, with some state s_j with j <
+      a.». It is the precise form of the lane's box 157 proposal (fixes entry 1, F-2: «(docs/new/N5-SEG-box157.md l. 24: «after a
+      level-0 reset, the next segment is a sub-run of a segment already seen»; the reading «no new states above» is my paraphrase)»),
+      which implies it when states are compared above level 0 (REFEREE l. 57-60; REFEREE-2 l. 53-55). The instance max_d5_L15, in full:
+      L-RED R202's witness, experiments/red/r202/max_d5_L15.json (claude/l-red 05c48415, the file's only commit, unchanged at 0f7508cf;
+      L-RED pin max_d5_L15_n96), copied byte for byte to experiments/new/box157/max_d5_L15.json (claude/l-new 6273270f), sha1
+      ba963aceabeb35d95f9c47d80d1d0e87b87baf21, 657 bytes, no trailing newline; box 139-150 JSON format (as for max_d4_L13 in RESULTS
+      R107, Claims (g): option = [W-target, Ξ-target (−1 = X), β index]; br / bp: rank / parity of β index; gate per option); the file's
+      fields, verbatim: «"N": 10, "lev": [0, 0, 1, 1, 2, 2, 3, 3, 4, 4], "deg": 2»; «"opts": [[[-1, 1, 0], [-1, 4, 1]], [[-1, -1, 2],
+      [-1, 2, 3]], [[0, -1, 4], [1, -1, 5]], [[0, -1, 6], [1, 5, 7]], [[2, 1, 8], [3, 9, 9]], [[2, 8, 10], [3, -1, 11]], [[4, 4, 12],
+      [5, 7, 13]], [[4, 4, 14], [5, 9, 15]], [[6, -1, 16], [7, 2, 17]], [[6, 8, 18], [7, 3, 19]]]»; «"gate": [[3, 1], [2, 0], [4, 7],
+      [5, 6], [9, 11], [8, 10], [13, 14], [12, 15], [17, 18], [16, 19]]»; «"br": [9, 10, 2, 0, 19, 18, 17, 1, 11, 4, 6, 7, 13, 15, 14,
+      16, 5, 8, 3, 12], "bp": [1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1]»; «"start": [0, 0, 1, 1, 0, 0, 0, 0, 1, 0],
+      "xorder": [6, 7, 0, 4, 9, 3, 5, 8, 1, 2]». Packet l. 111-112: «It is a 5-level 2-wide ladder (N 10,» «degree 2). Run from its
+      stored start [0, 0, 1, 1, 0, 0, 0, 0, 1, 0] with the box 150 simulator: T = 15.». The run (l. 113-117; option per mover 0..9,
+      levels [0, 0, 1, 1, 2, 2, 3, 3, 4, 4]): «s_0 (0 0 1 1 0 0 0 0 1 0), s_1 (0 0 1 1 0 1 0 0 1 0), s_2 (0 0 1 1 0 1 0 0 1 1), s_3 (0 0
+      1 1 0 1 0 1 1 1);» «s_4 (0 0 1 1 0 1 1 1 0 1), s_5 (0 0 1 1 0 1 1 1 0 0), s_6 (0 0 1 1 1 1 1 1 0 0), s_7 (1 0 0 0 1 1 1 1 0 0);»
+      «s_8 (1 1 0 0 1 1 1 1 0 0), s_9 (1 1 0 0 0 1 1 1 0 0), s_10 (1 1 0 0 0 1 0 0 1 1), s_11 (1 1 0 0 0 0 0 0 1 1);» «s_12 (1 1 0 1 0 0
+      0 0 1 1), s_13 (1 1 0 1 0 0 0 1 1 1), s_14 (1 1 0 1 0 0 1 1 1 0), s_15 (1 1 0 1 1 0 1 1 1 0).». «The level-0 movers 0 and 1 move
+      only at steps 7 and 8. So [9, 15] is a maximal interval with no level-0 move, and a = 9 ≥ 2.» (l. 118); «s_9 restricted to movers
+      2..9 is (0 0 0 1 1 1 0 0). No s_j with j ≤ 8 has it: s_0 … s_6 have (1 1 …) on movers 2, 3; s_7 and s_8» «have (0 0 1 1 1 1 0 0).
+      So REPLAY fails at t = 9.» (l. 119-120); «So REPLAY is DEAD.» (l. 122). «Does NOT claim: anything about other «replay» readings
+      (e.g. repetition of mover sets, which does occur in max_d4_L13).» (l. 124). Cells: REFEREE «SIGN (recomputed independently)» (l.
+      15; §2 l. 56-68: «T = 15. The states s_0 … s_15 EQUAL the packet's §4 list, state for state.», «All seven states s_9 … s_15 are
+      new above level 0 (none equals any s_j, j ≤ 8, on movers 2..9). REPLAY fails at t = 9.»); REFEREE-2 «**SIGN** (Opus 5.5, D12):
+      recomputed with my own simulator» (l. 16; l. 52-62: «T 15 and states s_0 … s_15» «IDENTICAL to packet §4 (all 16 compared)»,
+      «REPLAY FAILS at t = 9. ✓»).
+  The RESULTS line (L-1) states (a)-(d) with their exact hypotheses, and nothing wider (to check (4), G-2).
+- Premise: RESULTS R104's definition of the IDEAL model and of the Ξ-graph (no R104 theorem), and RESULTS R105's LOCAL, key half only:
+  «a key only on the states below its level» (R105's title line; body item (b) in the form «(c) key_s(x, k) = key_(s′)(x, k) whenever s
+  and s′ agree on every mover of level < lev(x).»), quoted verbatim by the packet where it is used (REFEREE l. 26-27, REFEREE-2 l. 24,
+  each «1 hit»). L-1: «premise: R104's definition of the model only, no theorem of R104 used; and RESULTS R105's LOCAL, key half only».
+  Uses: SEG (iii) and SEG-ONCE, and LEVEL-PRODUCT through SEG-ONCE (REFEREE l. 28); SEG (i) argues directly and uses no value half of
+  LOCAL (REFEREE l. 29-30). KP_s(x) is defined in packet §0 (l. 40-41), not cited from R105. Packet l. 20-22: «No other R105 item» «is
+  used.»; «U, CHAIN-BACK and the CHAINED binder» … «are not used.»; «Not used: RESULTS R106, R107, docs/lit, docs/sources, any other
+  lane file. No outside source is cited.»; both referees confirmed it by reading every proof step (REFEREE l. 31, 33; REFEREE-2 l.
+  26-27). So RESULTS Erratum E-2 to R105, which corrects R105's CHAINED binder, TOP-MONO's RANK_t and KEYFLIP's moves(x), does not bear
+  on this entry. The DEAD instance is a data file, recomputed by both referees with their own simulators (REFEREE
+  scratch/xinew_probe.py, «my β-set simulator written from R104's text»; REFEREE-2 «My simulator (written from R104's text, β-SETS)»).
+- L41 and L43. The proofs are L-NEW successor 51's (packet l. 5). Fixes entry 1 corrects two text items outside the signed statements,
+  raised by REFEREE-2 (F-1, F-2); no line change was made; the instance is L-RED's. Nothing referee-originated is a premise or a proof
+  step of the entry (my reading; neither referee mentions L41). The DEAD (d) refutes a universal statement with no constant by one
+  explicit instance, recomputed and SIGNED by both referees: REFEREE-2 l. 108 «L43: universal finite statement killed by an explicit
+  instance with its numbers. ✓».
+- Fixes (docs/new/P-IDEAL-SEG-fixes.md, L-NEW successor 51, append-only, fixes entry 1; 6eb389a6, 20 lines, sha1
+  2e3dd53211b44ca752611aadf4f30e5a0e7c165f).
+  - Entry 1 (l. 5-20, «REFEREE-2 F-1, F-2»): «two text corrections outside the signed statements» (l. 5). F-1 (packet §5, l. 140): «The
+    parenthesis is false. box150/out/rand/r150_049.json has degree ≤ 2 and NO degree-2 mover» «(N 1, one option). There T = 0 and Π (n_l
+    + 1) = 1, so the ratio is 1 as well.» (l. 6-7); new text «Largest (T + 1) / Π (n_l + 1): 1/3 on the corpus, 1 on the random runs
+    (reached only by genomes with at most one degree-2» «mover, e.g. r150_049.json with none: T 0, product 1).» (l. 9-10); «No DATA
+    count changes.» (l. 12). F-2 (packet §4, l. 105-106): the quote of the box 157 proposal is made verbatim to
+    docs/new/N5-SEG-box157.md l. 24 and the added words are labelled a paraphrase (l. 13-18); «The killed statement itself (the two
+    bullets of §4 «For every degree-≤-2 …» and «every state s_t …») is unchanged.» (l. 19). «Line L-1 is unchanged. No statement or DATA
+    count changes.» (l. 20). REFEREE (docs/referee/R-P-IDEAL-SLOT.md §C, «### FYI item: P-IDEAL-SEG fixes entry 1», 3b8a9c77, l.
+    155-160): «F-1 is CORRECT. box150/out/rand/r150_049.json at 6eb389a6 has N 1 and degrees [1].», «F-2 is CORRECT.», «Neither fix
+    touches a signed statement or line L-1.» REFEREE-2 raised both (R2-P-IDEAL-SEG.md l. 77-84: «A fixes-file correction suffices.»;
+    «The killed statement is the explicit precise form, so nothing changes.»).
+  No fix changes a signed statement (to check (8)).
+- Not signed: packet §5 (machine check, EXCLUDED, TARGET diff, READING; «DATA / READING (not to sign)», l. 16), in particular its
+  READING «LEVEL-PRODUCT locates all super-linear room of degree-2 runs in the «reset slots» C_(l+1) − C_l ≤ (C_l + 1) n_(l+1).» «A
+  polynomial bound needs most slots to stay empty; an exponential family must fill them level after level. Neither is claimed.» (l.
+  151-152); the §3 Remark «Π_l (n_l + 1) ≤ 2^(Σ_l n_l), with equality iff every n_l ≤ 1» (l. 99, «not to sign»); the segment-length
+  comparison on max_d5_L15 (l. 123). OPEN, not claimed: any polynomial bound on T at degree ≤ 2; tightness of LEVEL-PRODUCT (l. 101);
+  SEG-ONCE and LEVEL-PRODUCT at degree ≥ 3 (l. 81, 102); Ξ-cyclic genomes; other «replay» readings (l. 124); G-N5-TIME.
+- Referee strengthening (NOT part of this entry; referee remarks and own checks):
+  (i) REFEREE-2 l. 41: «Holds for ANY interval satisfying the hypothesis (not only maximal ones): my tool checks every sub-interval.»
+      (SEG as stated already allows any interval; the lane tool checks maximal ones only.)
+  (ii) REFEREE-2 l. 38-40 spells out SEG's stop-test step (iv), starting from «Mv_t ≠ ∅ contains no frozen mover».
+  (iii) REFEREE-2 l. 45-46: at l = −1, «level-0 keys are single gates, constant: each level-0 mover moves at» «most once.»
+  (iv) REFEREE l. 99: «A stricter reading of «before» (j < a − 1) gives a STRONGER conjecture, which the same instance also kills.»
+  (v) Negative controls: the lane's BADLEV=2 (ONCE tested at level l + 2) gives «ONCE 112» on the corpus (packet l. 139; REFEREE-2 l. 72
+      «= lane»); REFEREE's control (seed 3) gives 1 violation (l. 80).
+- Honest limits: (i) An EXPONENTIAL count bound and a restriction lemma inside the IDEAL model: LEVEL-PRODUCT bounds T + 1 by Π_l (n_l +
+  1), which is 3^d on a d-level 2-wide ladder; it bounds nothing polynomially; G-N5-TIME stays open; not M3, not a step-4 pass, not a
+  TARGET.md claim. (ii) SEG holds at any degree; SEG-ONCE and LEVEL-PRODUCT need degree ≤ 2 (a moving mover with two options must return
+  to the option it left); Ξ-cyclic genomes are not covered. (iii) The DEAD kills the packet's precise form of REPLAY (states compared on
+  the movers of level ≥ 1, earlier states j < a), by one explicit instance (N = 10, T = 15, failure at t = 9); the lane's proposal
+  «after a level-0 reset, the next segment is a sub-run of a segment already seen» is killed in that reading (REFEREE l. 57-60;
+  REFEREE-2 l. 54-55 «in that reading»); other «replay» readings, such as repetition of mover sets, are not claimed (packet l. 124).
+  (iv) SEG says nothing about H's run after s_b and gives no count (packet l. 68). (v) The DATA (0 violations) is per statement:
+  segcheck.py checks SEG on all 59 corpus and 34,934 random runs (maximal intervals only), but SEG-ONCE and LEVEL-PRODUCT only on the
+  runs of genomes of largest degree ≤ 2: 55 of the 59 corpus runs and 1,936 of the 34,934 random runs; REFEREE-2's own tool adds SEG on
+  every sub-interval and further degree-2 and degree-3 sets (Data). (vi) Every statement is about R104's IDEAL model on acyclic
+  Ξ-graphs; nothing is said about a real N5 run or a parity game beyond what R104 already says (packet l. 147-150). (vii) Premises:
+  RESULTS R104's definition and RESULTS R105's LOCAL, key half only; no other R105 item, so RESULTS Erratum E-2 to R105 does not bear on
+  it. No lit note, no lane file, no outside source. No Lean. (viii) Names: «SEG» here is a lemma label; it is not R83's segment count
+  SEG(S) nor CONJECTURE SEG-RUN (GAPS l. 11), which this entry neither uses nor settles; the 2-wide ladder is packet §0's family (R105's
+  «2-wide-ladder identity KF_x = F_(lev(x)−1)» is not used); SEG is not R105's INTERVAL-RESTRICT, which freezes movers by π at degree ≤
+  2. (ix) The DEAD instance is L-RED's witness, used here only as a counterexample; its T is R104's number of steps.
+- Data (DATA, not proof): experiments/new/box157/segcheck.py (l-new 6273270f, sha1 1989263bd2b4961b5a12803a2e769b7f63fab92a, 50 lines;
+  for every level l ∈ {−1, …, top − 1} and every maximal interval of steps without a level-≤-l move: SEG at any degree, and ONCE, COUNT
+  and PROD at largest degree ≤ 2) and experiments/new/box157/seg.py (l-new e132d498, sha1 12782e78b2bc07a3b40269872ede1bbdafc56662, 32
+  lines; the segment data of §4), both on the box 150 simulator experiments/new/box150/check.py (l-new 0ebddcf5, sha1
+  019de0f7b36dcbd47743b3d27b4a1a93549d574b, 214 lines; H built by its restrict()), wired into experiments/new/check.sh blocks w106 (l.
+  873-879) and w107 / pin107 (l. 880-887 at 6eb389a6) with sha1 pins of the packet, L-1, the fixes and the instance; all three tools
+  unchanged at 6eb389a6 and 16297185. Genome sets: the corpus, 59 genomes, one run each from its stored start: 55 of largest degree 2
+  with N = 4..24 (boxes 140-153, box156/ext max_d4_L13, dbl_d3_F6, dbl_d4_F10, and box157/max_d5_L15) and the 4 degree-3 genomes of
+  box139/genomes with N = 9..24 (SEG only); experiments/new/box150/out/rand, 200 random genomes with N = 1..10, every start of those
+  with N ≤ 8 and the genome start of the others (34,934 runs, ALL=1 ALLN=8): 1,936 runs of its 93 genomes of largest degree ≤ 2 (N =
+  1..10; all four checks) and 32,998 runs of its 107 genomes of largest degree 3 or 4 (N = 1..9; SEG only). Packet §5 (l. 135-141, with
+  fixes entry 1 for l. 140): «DATA: 0 violations on 59 corpus runs (652 intervals).»; «DATA: 0 violations on 34,934 random runs:
+  box150/out/rand, every start for N ≤ 8, the genome start otherwise; 57,755 intervals.»; «Negative control BADLEV=2 (ONCE tested at
+  level l + 2): ONCE 112 on the corpus.»; «Largest (T + 1) / Π (n_l + 1): 1/3 on the corpus, 1 on the random runs (reached only by
+  genomes with at most one degree-2» «mover, e.g. r150_049.json with none: T 0, product 1).»
+  The blocks' outputs, reproduced by both referees and re-run for this draft (2026-11-04T14:59:57Z-15:00:13Z, from a `git archive` of
+  6eb389a6's experiments, rc 0, byte-equal to the blocks' expected strings): «SEGCHECK runs 59 steps 650 intervals 652 SEG 0 ONCE 0
+  COUNT 0 PROD 0 maxratio 0.3333»; «SEGCHECK runs 34934 steps 38676 intervals 57755 SEG 0 ONCE 0 COUNT 0 PROD 0 maxratio 1.0»; BADLEV=2
+  «SEGCHECK runs 59 steps 650 intervals 652 SEG 0 ONCE 112 COUNT 0 PROD 0 maxratio 0.3333»; «max_d5_L15.json N 10 T 15 L 0 cuts [7, 8]»,
+  «seg t1-6 len 6 NEWSTATES 6 REPLAY False», «seg t9-15 len 7 NEWSTATES 7 REPLAY False». REFEREE §3 l. 70-77 («The output equals
+  check.sh's three expected strings verbatim:», «These are the expected strings.», «pin107: packet 7fa84784, L-1 a18f6f0c and instance
+  ba963ace all EQUAL.»); REFEREE-2 l. 65-68 («both PASS, exit 0.»).
+  REFEREE (successor 23; own docs/referee/scratch/seg_probe.py, sha1 8492ee53c71c9b224c8aed3ca2b5c5fc8853af78, on its β-set simulator;
+  log xinew_logs/seg_probe.txt): «6,000 random degree-≤-2 runs (seeds 1, 2): SEG-ONCE per maximal interval and every level 0,
+  LEVEL-PRODUCT per level 0, PROD 0.», control «Control (ONCE tested at level l + 2), seed 3: 1 violation.», and «My random runs are
+  short (T ≤ 4), so this DATA is weak.» (l. 79-81); the instance recomputed, T = 15, states equal (l. 61-68).
+  REFEREE-2 (successor 27; own docs/referee-2/R2-P-IDEAL-SEG/seg_check.py, sha1 2a5915be3a6fe14da92223f162e0022e86a4e224, «lane
+  restrict()/segcheck not imported», no committed log): SEG on every sub-interval, ONCE, COUNT, PROD, the ladder bound, T = C_top and
+  the interval count; the corpus «runs 59, steps 650, intervals 652 (= lane), 12,175 sub-intervals; 0 violations»; box150/out/rand «runs
+  34,934, steps 38,676, intervals 57,755 (= lane); 0 violations»; beyond the lane, «18,584 runs, 694 2-wide ladders» of random degree-2
+  ladder genomes, degree 3 (SEG only) «55,964 runs, 91,682 sub-intervals», «climbs on 60 degree-3/4 genomes: 18,060 runs», and climbs of
+  T on the corpus «33,220 runs, 240,850 intervals, max T 27, ladder ratio (T + 1) / 3^d at most 0.4545. All 0 violations.» (l. 69-76);
+  the instance recomputed (l. 56-60).
+  No signed statement uses any count.
+- Signatures: REFEREE docs/referee/R-P-IDEAL-SEG.md: successor 23's report 19e0742fd7cc475249fe245fcce5ff2b413e56d4
+  (2026-11-04T12:17:57Z, new file, 122 lines, sha1 8f7815d658dca305d7dd88af5b39dfeb2c7b9f95, with scratch/seg_probe.py and
+  xinew_logs/seg_probe.txt): SEG, SEG-ONCE, LEVEL-PRODUCT and DEAD REPLAY SIGN (l. 12-15, 119), «VERDICT: line L-1 MATCHES.» (l. 110);
+  its FYI item on fixes entry 1 in docs/referee/R-P-IDEAL-SLOT.md §C, 3b8a9c777480d78867efd69e7f88f2d981898610 (2026-11-04T13:50:44Z, l.
+  155-160): F-1 and F-2 «CORRECT», L-1 «stays MATCHED».
+  REFEREE-2 (successor 27): docs/referee-2/R2-P-IDEAL-SEG.md 9a746361a58dad52af68eb02f55d1f87a7c0e9ce (2026-11-04T12:31:18Z, new file,
+  119 lines, sha1 296015a81b765530a0259702cb93b12b0178b986; with R2-P-IDEAL-SEG/seg_check.py): every statement SIGN (l. 13-16, 119),
+  «Gaps: none.» (l. 18), «Line L-1: MATCHES.» (l. 119), findings F-1 and F-2 (l. 77-84). Lane: freeze and L-1
+  8291ecf7d41bdc6fa31070c92f291d488d308519, fixes entry 1 6eb389a61e679ce6859d3af9ee9b4f4467cafa80.
+  INDEPENDENCE: REFEREE l. 2 «Independent: I did not read docs/referee-2/.»; REFEREE-2 l. 2 «Independent: docs/referee/ not read before
+  this push.». REFEREE's report (12:17:57Z) precedes REFEREE-2's (12:31:18Z) by 13 min; neither cites the other's. Each referee
+  recomputed the instance with its own simulator written from R104's text.
+  Differences, resolved: REFEREE alone raised SEG-L1 (= REFEREE-2 P-2); REFEREE-2 alone raised P-1, P-3, P-4 and the findings F-1, F-2
+  (answered by fixes entry 1, which REFEREE checked as CORRECT). Both SIGN the same four statements with no gap and both MATCH L-1. No
+  disagreement in substance.
+- TARGET.md diff: TARGET.md §1-§3 define parity games («A parity game is G = (V, V_E, V_O, E, pr) with V finite»), the regions W_E, W_O,
+  M4 (§2 «There is a deterministic algorithm A and a polynomial p such that for every parity game G, A on input G halts within» «p(n +
+  m) steps and outputs the pair (W_E(G), W_O(G)).») and the word-RAM cost model; no statement of this entry mentions a parity game, a
+  winning region, an algorithm's running time or a cost model (packet §5 l. 147-150 «No statement mentions a parity game, a winning
+  region, an algorithm's running time or a complexity class. Each is about the step» «sequence of the IDEAL model of RESULTS R104's
+  definition.», «None is an M4 or M3 claim, none bounds anything polynomially, and none is a gauntlet step.»; REFEREE §4 l. 84-86
+  «Agreed with §5: not M4, not M3, not a gauntlet step. G-N5-TIME OPEN.»; REFEREE-2 l. 87-89 «The packet's §5 diff is correct.»).
+  LEVEL-PRODUCT is an exponential bound inside the model, «not a» «claim about any algorithm» (REFEREE-2 l. 88-89); the DEAD «refutes a
+  lane conjecture about the model» (REFEREE l. 85). The line (L-1) makes no M4 claim and no TARGET claim; its tail reads «an EXPONENTIAL
+  count bound and a restriction lemma inside the IDEAL model» and «G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md
+  claim» (L-1, by script). Not a step-4 pass. GAPS G-N5-TIME: open.
+
 **Erratum E-1** (not a result; 2026-11-01 05:28Z by date -u; Lead; corpus counts in RESULTS R97-R100):
 - What is wrong: the DATA-of-record sentences that say «1,132 games» for the L-SI box 50b / box 53 corpus (sbcg.lst 719 lines + alt_all.lst
   413 lines) count RUNS, not games. Measured by CHECKER (C111 N-7, claude/checker d53e1d4f) at trunk 68d50c8f: experiments/si/anc58/
