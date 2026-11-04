@@ -70,7 +70,8 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     made before running it; corrected 12:38Z).
   - At d 4 every segment / C query is capped by T*(4) = 13 (R197); only d >= 5 queries are informative.
   - R201: only heuristic groundwork (r201/wclimb.py); nothing exact.
-- NEEDS: Lead: which of R200 / R202 (T>=16) / R203 / R204 d 5 to resume after the reset, and with how many cores.
+- NEEDS: (answered by the Lead 21:04Z: relaunch R202 T>=16 and R204 d 5.) Relaunched 21:05Z (cwd r200, timeout 43200):
+  SYMB=1 xmax.py 5 16 out/max/d5_t16R.json; TMIN=0 SYMB=1 SEG=1t:14 CMIN=0:2 xmax.py 5 20 out/seg/d5_1t14_H20R.json; pcegar k3/ag_0 (58).
 
 ## Successor 49 handover check (2026-11-04 00:2xZ, date -u)
 1. Branch claude/l-red, head 32f6e040 (= ls-remote at 00:18Z; clone was current, ff-only no-op). vs trunk claude/vibrant-johnson-nxvvxo:
