@@ -838,4 +838,10 @@ if grep -qxF "LEMCHECK runs 50 pairs 92308 PMDIFF 0 SPATH 0 pm_prem 32586 sp_pre
 else
   echo "box 152 lemcheck: FAILED"; echo "$w101"; exit 1
 fi
+w102=$(cd .. && NMAX=10 python3 -I new/box153/decomp.py new/box14*/out/*.json new/box14*/inst/*.json new/box152/*_d5_*.json; python3 -I new/box153/longpath.py new/box153/ladlp_5.json)
+if grep -qxF "DECOMP genomes 25 faces 478953 USO 0 COMB 0 ORDER 0 ACYC 0 JUMP 0 maxjump 7" <<<"$w102" && grep -qxF "LONGPATH ladlp_5.json n2 10 longest 114 ideal_T 1" <<<"$w102"; then
+  echo "box 153 DECOMP: improvement orientation is a decomposable AUSO (0 violations); Xi-ladder K 5 longest improving path 114: PASS"
+else
+  echo "box 153 check: FAILED"; echo "$w102"; exit 1
+fi
 rm -rf "$tmp"

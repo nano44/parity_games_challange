@@ -27,6 +27,17 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - Check: box150/check.py (own simulator, XSIM vs box139/paths.py): 0 violations, 46 corpus genomes (386 steps) + 75,518 all-start runs
   of 200 random genomes (rand.py seed 150, 107 with degree 3-4). Negative controls NEG=1/2/3 fire (NEG=3 old-state keys: XINEW 6).
   Wired into check.sh as w99 (full check.sh PASS locally).
+### Box 153 N5-CUBE (Lead GO 00:47Z; docs/new/N5-CUBE-box153.md; experiments/new/box153/)
+- Step 1 PASSED: DECOMP (improvement orientation = decomposable AUSO, combing order decreasing pi), MULTI->SINGLE (T <= LP(start)).
+  decomp.py 0 violations (119 genomes, 603,741 faces). DEAD: Xi-side-only route (2-wide Xi-ladder LP 8/22/52/114, K = 2..5).
+- Sources opened (box 153):
+  - [WW22] Weber, Widmer, arXiv:2207.05985 (ar5iv HTML): Def. 4 (USO), §2.2 (combed / decomposable, after Obs. 7), Thm 18 + remark
+    (JumpAntipodal n evaluations on all decomposable USOs; exponential on some acyclic USOs, citing Schurr's thesis).
+  - [MC94] Melekopoglou, Condon, ORSA J. Comput. 6(2) 188-192 (1994), DOI 10.1287/ijoc.6.2.188 (author PDF cs.ubc.ca/~condon,
+    text-extracted): §2 select rules, «if the graph is acyclic the [topological] algorithm makes at most linear number of switches»;
+    Thm 2.8, Cor. 2.9, 2.10 (exponential, stochastic average vertices). Hypotheses do NOT match IDEAL; nothing imported.
+  - Klee-Minty 1972, Schurr thesis: NOT opened, not used.
+
 ### Box 152 N5-VAL CLOSED (Lead 00:09Z; docs/new/N5-VAL-box152.md; experiments/new/box152/)
 - PROVED (lane): PREMERGE (C_s(x) = sign of the pre-merge segment difference), PMDIFF (C differs at two states => a pre-merge
   mover differs), STABLE-PATH; lemcheck 0 violations (92,308 + 20,804 state pairs). k3 E2 UNKNOWN (5400 s) under PMDIFF+STABPATH;
