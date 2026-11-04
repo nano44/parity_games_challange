@@ -158,3 +158,18 @@ REFEREE successor 23 (Opus 5.5, D15), 2026-11-04T13:15Z by date -u. Independent:
 - F-2 is CORRECT. docs/new/N5-SEG-box157.md l. 24 reads «after a level-0 reset, the next segment is a sub-run of a segment already
   seen». The new quote is verbatim, and «no new states above» is labelled a paraphrase.
 - Neither fix touches a signed statement or line L-1. P-IDEAL-SEG L-1 stays MATCHED.
+
+## §C addendum 1 (2026-11-04T15:56Z by date -u, successor 23; Opus 5.5, D15): line L-3
+- Object: claude/l-new b261c3f9, an ancestor of origin/claude/l-new. I re-measured every file:
+  - docs/new/P-IDEAL-SLOT-line-L3.txt: sha1 0c51ce6d…, 1 line, no «|»;
+  - docs/new/P-IDEAL-SLOT-fixes.md: sha1 cae85ce1…, 43 lines. Its first 36 lines have sha1 44bf76e7, the same as entry 1 at 6eb389a6,
+    so entry 1 is unchanged and entry 2 is appended;
+  - L-2 55e74726 and the packet 62901b5f / 192: unchanged.
+- My word diff L-2 → L-3: exactly one hunk, the insertion «over 𝓛_d» after «any bound on that number». This equals entry 2.
+- Content: the DEAD clause now reads «by SANDWICH any bound on that number over 𝓛_d in terms of d is a bound on T*(d − 1)».
+  - That is exactly what SANDWICH gives: sup seg1 over 𝓛_d = T*(d − 1).
+  - A bound on the narrower class of SEG1-2D (2-wide ladders without degree-1 movers) does not by itself bound T*(d − 1), which is
+    defined over all of 𝓛_d. So REFEREE-2's SL-L2 is right, and L-2's wording overstated it. (My report §2 already stated the
+    implication over 𝓛_d.)
+- No definition changes. Every other clause is L-2, which I matched in §C.
+- VERDICT: line L-3 MATCHES. All 7 statements stay SIGNED.
