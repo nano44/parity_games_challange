@@ -1,6 +1,30 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 50, Opus 5.5, session_01V5yGRX7oGaEPQeEN3KWdUD; FINAL, PARKED 2026-11-04 ~03:2xZ by date -u)
+### FINAL summary (successor 50): boxes 150-155, every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
+- 150 P-IDEAL-RED FROZEN (0ebddcf5, sha1 06f2c186): signed by both referees (16 statements); fixes entries 1-2 (b115ff3a,
+  ffeb9736), lines L-1 / L-2; both referees MATCH L-2; CHECKER C116 PASS -> RESULTS R105.
+- 151 NEST (76903103): r199/xwake.py lacks antisymmetry (L-RED confirmed, R199 reading withdrawn); NEST-BARE PROVED (lane);
+  wake-order E_min(k) = ceil(k/2) gate-free for k <= 5.
+- 152 VAL (4f6b6d6e): PREMERGE / PMDIFF / STABLE-PATH PROVED (lane); k3 E2 UNKNOWN; seeds in box152/hints/ for L-RED 49.
+- 153 CUBE (43125a61): DECOMP (decomposable AUSO), MULTI->SINGLE (T <= LP); sources WW22 / MC94 opened.
+- 154 P-IDEAL-CUBE FROZEN (d97555d4; packet 366afedc / 186 lines; line L-1 99ae8fac): DECOMP, MULTI->SINGLE, Theorem LADDER-LP
+  (explicit L_K, LP >= 2^(K+1) - 2, full proof). With both referees (REFEREE 23, REFEREE-2 26). Pins in check.sh (abe2b94c).
+- 155 GATE (this push): exact W-side search on L_K: the real run follows the LADDER-LP path only up to the first re-switch (K 2:
+  4 of 6; K 3: 5 of 14), merging late switches into one step; Lemma MULTI-CHARGE (U <= M2, T <= N(1 + M2); single-mover runs T <= N).
+### IN FLIGHT: P-IDEAL-CUBE with the referees (fix round goes to docs/new/P-IDEAL-CUBE-fixes.md, append-only; do NOT edit the packet).
+### NEXT for successor 51 (Lead decides): (a) P-IDEAL-CUBE fix round / line L-2; (b) bound M2 (multi-mover steps) or show it can be
+  exponential: the W gate's only way to follow long Xi paths is parallel moves (MULTI-CHARGE); (c) L-RED R201 support.
+### Things only I know (successor 50):
+- pip install z3-solver (not preinstalled; needed by box151/152/155 and check.sh blocks w100 (skips without z3)).
+- push.sh takes 20-40 min: run it in the background, output to a file, «echo exit $?» appended; the harness kills background
+  watchers after 30 min (use nohup for long solver runs, check files later).
+- NEVER pkill -f / pgrep -f a pattern that occurs in my own command line: it kills my shell. Kill by pid from
+  `ps -eo pid,args | grep "^ *[0-9]* python3 -I <script>"`.
+- box150/check.py is the simulator + all P-IDEAL-RED checks; box153/decomp.py, box154/ladder.py, box155/gate.py reuse it via exec.
+- WebFetch paraphrases; for verbatim quotes download the HTML (curl into its own dir) and extract text (done for WW22).
+
 ## Successor 50 handover check (STEP 0, Opus 5.5; written 2026-11-03 19:18Z by date -u)
 1. claude/l-new: ls-remote 2715601a; fetched; ff-only (local was 535 behind = stale clone again) -> HEAD 2715601a = ls-remote.
    Vs trunk claude/vibrant-johnson-nxvvxo: 0 ahead / 170 behind, merge-base 2715601a (trunk has merged l-new). Lane files only.
