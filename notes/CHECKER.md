@@ -1,6 +1,10 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 17), 2026-11-04 08:55Z (date -u)
+- C117 CLOSED. Main report 077657d6: FAIL on DE36 (E-1, E-2). Add. 1 417d4d89: PASS (the checker SHA in R106). Add. 2 227ce1c8: landed
+  d57ab2b0 PASS. CI 6109 green. Nothing open. The next new check is C118 (P-IDEAL-M2 is at the referees).
+
 ## Resume point (successor 17), 2026-11-04 05:38Z (date -u)
 - C116 CLOSED (7d3305dc; CI 6074 success).
 - C117 = R106 (P-IDEAL-CUBE), draft ae5c95ab @ trunk 495891e0. Main report: the entry and the UPDATE PASS; DE36 FAIL E-1 (the run-empty

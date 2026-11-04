@@ -1,6 +1,33 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Successor 27 handover check (Opus 5.5 under D12/D19; 2026-11-04 07:27Z by date -u)
+1. Branch claude/referee-2: ls-remote and local both 993c1710 (no stale clone this time); trunk claude/vibrant-johnson-nxvvxo e951db48
+   merged by fast-forward (993c1710 was its ancestor: 0 ahead / 20 behind before, 0 / 0 after).
+2. Open work: P-IDEAL-M2 (l-new 6bcfa0de) -> report docs/referee-2/R2-P-IDEAL-M2.md; next step: re-hash, paper check, own simulator.
+   Nothing else open (succ. 26 queue empty).
+3. GAPS rows owned by REFEREE-2: none (REFEREE-2 appears only in closed rows' notes).
+4. D1 (active, DECISIONS.md l. 7-8): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim,
+   including the fleet's own, as wrong until it passes the gauntlet below.» «Never downgrade the referee to save money.»
+   D12 (active): «WE can run referees on opus too temperoraly». D19 (active): «we have 9% usage left until tomorrow night, make use of it».
+5. Trap: premise routes taken from docs/lit instead of RESULTS (C115 E-1). Check: every premise quote grepped verbatim in docs/RESULTS.md.
+
+## Resume point 2 (successor 27; 2026-11-04 08:27Z by date -u)
+- Report e01175f6 pushed (VERIFY PASS), Lead messaged 08:09Z. Lead 08:27Z: L-2 round routed to L-NEW; asked (a) my view of REFEREE M2-G1,
+  (b) R105 CHAINED line-vs-packet DATA for Erratum E-2.
+- docs/referee-2/R2-R105-chained.md: instance diff_n2.json (degree 3, N 2, t 2, h_1 = h_2 = 0); LINE reading breaks CHAIN-BACK (i) at all
+  35,116 DIFF steps; (ii) T <= N(1+U') 0 failures on 926,555 runs (climbs reach slack 0), unproved; no DIFF at degree <= 2 (XI-NEW).
+  P-IDEAL-M2 unaffected. AGREE M2-G1 (LOCAL line form includes x; needs P-IDEAL-RED LOCAL (a)/(b)): my miss.
+- TRAP (new): a «depends only on the states on its chain» quote includes the option's own mover; check own-mover moves in every LOCAL use.
+
+## Resume point 1 (successor 27; 2026-11-04 07:33Z by date -u)
+- P-IDEAL-M2 (l-new 6bcfa0de; packet bc47b06c, line 0160d1e3): report docs/referee-2/R2-P-IDEAL-M2.md. All 7 statements SIGN, no gap.
+  Line L-1 REQUIRED M2-L1 (bind KF_x, moves(x)), M2-L2 (34,934 runs are all-start only for N <= 8; 8 of 200 genomes N 9-10). P-1..P-3 optional.
+- Tool R2-P-IDEAL-M2/m2_check.py (own simulator from R104 text, beta sets; json / ALLN / rand / LADDER / mut climb / NEG=1). Reproduces lane
+  totals exactly (468/222/300/919/707/333; 34,934/38,676/2,148/5,188; 3,981/298). Worktree $SCRATCH/wm2 = l-new 6bcfa0de.
+- Finding: landed R105 statement omits «as a mover other than h_t» in CHAINED (its packet has it); h_(t-1) = h_t occurs at degree >= 3.
+- L-2 (l-new 4d244698, fixes 66fd6173, L2 c890f268): MATCHES (R2-P-IDEAL-M2-L2.md); entry 1 CORRECT (M2-G1 closed). Optional P-4, P-5.
+
 ## HANDOVER (successor 26, Opus 5.5 under D15; written 2026-11-04 04:17Z by date -u; context ~490k; Lead 04:16Z: report, then park)
 Branch claude/referee-2, merged with trunk (git merge, no rebase) before pushes. REFEREE-2 owns no docs/GAPS.md rows. Every push via
 scripts/push.sh in the background (redirect, echo exit; verify takes ~20-25 min), VERIFY PASS each time.

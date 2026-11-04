@@ -1,0 +1,3 @@
+seed 1 mut 0 {'runs': 2000, 'steps': 2070, 'unch': 245, 'mc': 0, 'neither': 0, 'wnolow': 0, 'wt': 66, 'xiflip': 0, 'multi': 367}
+seed 2 mut 0 {'runs': 2000, 'steps': 2106, 'unch': 285, 'mc': 0, 'neither': 0, 'wnolow': 0, 'wt': 69, 'xiflip': 0, 'multi': 384}
+seed 3 mut 1 {'runs': 2000, 'steps': 2393, 'unch': 507, 'mc': 39, 'neither': 425, 'wnolow': 0, 'wt': 51, 'xiflip': 0, 'multi': 604}

@@ -1,6 +1,31 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 51, Opus 5.5, session_01V5yGRYupWPCaWBqfX8Hjyk; started 2026-11-04 04:16Z by date -u)
+### Box 156 N5-M2 (Lead brief; docs/new/N5-M2-box156.md; experiments/new/box156/)
+- EXACT z3 (zmax.py, symbolic genome, all starts, deg <= 2): max T = 1,2,3,4 (N 1..4), max M2 = 0,0,1,2; N 5: T >= 6, M2 <= 3 in
+  a 6-frame (exact iff T >= 7 UNSAT: RUNNING pid 1726); N 6: T >= 8 (x3_L8), T >= 9 / M2 >= 5 RUNNING (pids 1823, 13185).
+- DEAD «M2 <= N-2» (dd_d5_F14 M2 11, N 10). CONJECTURE LIN-156: T <= floor(3N/2), M2 <= N + 1 (corpus all-start max T/N 1.5).
+- PROVED (lane): two-way reduction (T <= N(1+M2), M2 <= T-1), Lemma TRIGGER, Lemma XIFLIP (moves <= 1 + XF); trig.py 0 viol.
+### P-IDEAL-M2 FROZEN (Lead GO 07:00Z): docs/new/P-IDEAL-M2.md (171 lines, sha1 bc47b06c) + line L-1 (0160d1e3); MULTI-CHARGE both
+  directions / M2-EQ / SINGLE-SHORT (any degree), TRIGGER, XIFLIP, MIN-FLIP (deg <= 2), DEAD LIN-156 (max_d4_L13). check.sh block
+  «P-IDEAL-M2» (w105 + pin105). Fix round -> docs/new/P-IDEAL-M2-fixes.md (append-only). LIN-156 DEAD 06:2xZ; d 5 ladder exact routed
+  by the Lead to L-RED 49.
+### Things only I know (successor 51): z3 Int encoding beats the BV one (N4 UNSAT 20 s vs > 10 min); LEVS split ~250 s / level
+  vector at N 5 (541 vectors: too slow). Logs of running jobs are in box156/log/ (commit after they finish). Never pkill -f.
+### Successor 51 handover check (STEP 0; written 2026-11-04 04:2xZ by date -u)
+1. claude/l-new: ls-remote a0bb2694; local was stale (8591166d); fetched + ff-only -> HEAD a0bb2694 = ls-remote. Vs trunk
+   claude/vibrant-johnson-nxvvxo: 4 ahead / 236 behind, merge-base 43125a61 (box 153). Lane files only.
+2. Open: BOX 156 (M2 := #steps moving >= 2 movers; (a) exact small-N max M2 / T, (b) charging lemma for multi-steps, (c) growing-M2
+   family -> L-RED). P-IDEAL-CUBE with the referees (fix round only if the Lead routes it; packet files frozen).
+3. GAPS: G-N5-TIME major open (owner L-NEW); G-N1-LB minor open (optional, not routed).
+4. D18 (active): "Focus on N5 and work toward proving it. Explore novel approaches ... Clearly distinguish proven results from
+   conjectures and open problems." D14 (active): "D" + "the (c) lane may test untested approaches, its own included".
+   D19 (owner 2026-11-03): "we have 9% usage left until tomorrow night, make use of it". CORRECTION (Lead 04:26Z, re-checked):
+   D19 IS on trunk (DECISIONS.md «## D19», INDEX row «| D19 |», since 8c37ab0b); my index grep missed it. Trunk head bed56cba.
+5. Trap: stale clone (8591166d again); check = ls-remote + fetch + ff-only + HEAD vs ls-remote. Also pkill -f on my own pattern
+   kills my shell: kill by pid.
+
 ## Resume point (successor 50, Opus 5.5, session_01V5yGRX7oGaEPQeEN3KWdUD; FINAL, PARKED 2026-11-04 ~03:2xZ by date -u)
 ### FINAL summary (successor 50): boxes 150-155, every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
 - 150 P-IDEAL-RED FROZEN (0ebddcf5, sha1 06f2c186): signed by both referees (16 statements); fixes entries 1-2 (b115ff3a,

@@ -857,4 +857,17 @@ if grep -q "^366afedcf7cd04a31302e25cec47c7fb3df455bb  docs/new/P-IDEAL-CUBE.md$
 else
   echo "P-IDEAL-CUBE pin check: FAILED"; echo "$pin104"; exit 1
 fi
+# P-IDEAL-M2 (box 156; L-NEW 51): MULTI-CHARGE (mcharge.py), TRIGGER / XIFLIP (trig.py, with NEG=3 control), LIN-156 DEAD instance, pins
+w105=$(cd .. && python3 -I new/box155/mcharge.py new/box14*/out/*.json new/box14*/inst/*.json new/box142/*.json new/box146/*.json new/box152/*.json new/box153/*.json new/box156/ext/*.json; ALL=1 ALLN=8 python3 -I new/box155/mcharge.py new/box150/out/rand/*.json; python3 -I new/box156/trig.py new/box14*/out/*.json new/box14*/inst/*.json new/box142/*.json new/box146/*.json new/box152/*.json new/box153/*.json new/box156/ext/*.json; ALL=1 python3 -I new/box156/trig.py new/box150/out/rand/*.json; NEG=3 python3 -I new/box156/trig.py new/box14*/out/*.json new/box14*/inst/*.json new/box142/*.json new/box146/*.json new/box152/*.json new/box153/*.json new/box156/ext/*.json; python3 -I new/box156/val.py new/box156/ext/max_d4_L13.json)
+if grep -qxF "MCHARGE runs 54 steps 468 unch 222 M2 300 VIOL 0 BOUND 0 single_runs 0 single_maxT_over_N 0.0" <<<"$w105" && grep -qxF "MCHARGE runs 34934 steps 38676 unch 2148 M2 5188 VIOL 0 BOUND 0 single_runs 6114 single_maxT_over_N 1.0" <<<"$w105" && grep -qxF "TRIG runs 54 moves 919 NEITHER 0 WNOLOW 0 XNODESC 0 XiT 707 WT 333 BOTH 121 multi 270 WREL 162 XIBR 108 XIFLIP 0" <<<"$w105" && grep -qxF "TRIG runs 3981 moves 298 NEITHER 0 WNOLOW 0 XNODESC 0 XiT 298 WT 0 BOTH 0 multi 12 WREL 0 XIBR 12 XIFLIP 0" <<<"$w105" && grep -q "^TRIG runs 54 moves 488 NEITHER 141 " <<<"$w105" && grep -qxF "new/box156/ext/max_d4_L13.json N 8 T 13 M2 5 U 4 mv [1, 1, 2, 1, 1, 2, 3, 2, 1, 1, 2, 1, 1]" <<<"$w105" && [ "$(sha1sum box156/ext/max_d4_L13.json | cut -d' ' -f1)" = f0735b61312bdbfe1bb553496d7e9ee38681dcee ]; then
+  echo "P-IDEAL-M2: MULTI-CHARGE 0 viol. (54 + 34,934 runs), TRIGGER / XIFLIP 0 viol. (54 + 3,981 runs; NEG=3 fires), max_d4_L13 T 13 > 12: PASS"
+else
+  echo "P-IDEAL-M2 check: FAILED"; echo "$w105"; exit 1
+fi
+pin105=$(cd ../.. && sha1sum docs/new/P-IDEAL-M2.md docs/new/P-IDEAL-M2-line-L1.txt docs/new/P-IDEAL-M2-line-L2.txt docs/new/P-IDEAL-M2-fixes.md)
+if grep -q "^bc47b06c4b8d90ceb28939c966083e0c057a442b  docs/new/P-IDEAL-M2.md$" <<<"$pin105" && grep -q "^0160d1e3ffa832536454a74c559b20280b87f53e  docs/new/P-IDEAL-M2-line-L1.txt$" <<<"$pin105" && grep -q "^c890f2685edf3725a5fccb12cf93e9d3dd7d44ff  docs/new/P-IDEAL-M2-line-L2.txt$" <<<"$pin105" && grep -q "^66fd61731df0667e380e8ac231ee27062ee6b8a8  docs/new/P-IDEAL-M2-fixes.md$" <<<"$pin105"; then
+  echo "P-IDEAL-M2 pins (packet bc47b06c, line L-1 0160d1e3, line L-2 c890f268, fixes 66fd6173): PASS"
+else
+  echo "P-IDEAL-M2 pin check: FAILED"; echo "$pin105"; exit 1
+fi
 rm -rf "$tmp"
