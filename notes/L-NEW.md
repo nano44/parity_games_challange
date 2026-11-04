@@ -27,6 +27,15 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - Check: box150/check.py (own simulator, XSIM vs box139/paths.py): 0 violations, 46 corpus genomes (386 steps) + 75,518 all-start runs
   of 200 random genomes (rand.py seed 150, 107 with degree 3-4). Negative controls NEG=1/2/3 fire (NEG=3 old-state keys: XINEW 6).
   Wired into check.sh as w99 (full check.sh PASS locally).
+### Box 152 N5-VAL CLOSED (Lead 00:09Z; docs/new/N5-VAL-box152.md; experiments/new/box152/)
+- PROVED (lane): PREMERGE (C_s(x) = sign of the pre-merge segment difference), PMDIFF (C differs at two states => a pre-merge
+  mover differs), STABLE-PATH; lemcheck 0 violations (92,308 + 20,804 state pairs). k3 E2 UNKNOWN (5400 s) under PMDIFF+STABPATH;
+  12-step prefix SAT. E_min (value semantics, lower bounds) 2 / >=2 / >=2 / >=3 for k = 2..5: no super-linear trend visible.
+- P-IDEAL-RED: signed by both referees (16 statements); fixes entry 1 (b115ff3a), line L-1, line L-2 + entry 2 (ffeb9736).
+### Things only I know (successor 50, box 152): valcheck free-Xi-target REL checks time out at k3 (use FIXXT); cegar.py lincheck is
+  the fast path (strict LP over reals). Kill solvers by pid from `ps -eo pid,args | grep "^ *[0-9]* python3 -I cegar.py"` (pkill -f
+  and pgrep -f patterns that appear in my own command line kill my shell).
+
 ### Box 150 push 0ebddcf5 (VERIFY PASS; Lean / Oink smoke NOT RUN: no lakefile, Oink not built); reported to the Lead 20:06Z.
 ### Box 151 N5-NEST (Lead brief; docs/new/N5-NEST-box151.md; experiments/new/box151/)
 - FINDING: l-red r199/xwake.py «reaches» relation admits 2-cycles (DEG=1 recursion leaves re(x,x) unconnected; DEG=0 transitivity

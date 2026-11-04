@@ -832,4 +832,10 @@ NEST k 4 E 2 DEG 0 ANTI 1 FREEKP 1 xwake_anti -> sat"
     echo "box 151 NEST check: FAILED"; echo "$w100"; exit 1
   fi
 else echo "box 151 NEST checks skipped (no z3)"; fi
+w101=$(cd .. && python3 -I new/box152/lemcheck.py new/box14*/out/*.json new/box14*/inst/*.json new/box142/*.json new/box146/*.json new/box152/*_d5_*.json)
+if grep -qxF "LEMCHECK runs 50 pairs 92308 PMDIFF 0 SPATH 0 pm_prem 32586 sp_prem 37303" <<<"$w101"; then
+  echo "box 152 PMDIFF / STABLE-PATH: 0 violations on 92,308 state pairs of 50 runs (incl. R198/R199 d 5 pins): PASS"
+else
+  echo "box 152 lemcheck: FAILED"; echo "$w101"; exit 1
+fi
 rm -rf "$tmp"
