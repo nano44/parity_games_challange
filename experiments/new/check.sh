@@ -864,9 +864,9 @@ if grep -qxF "MCHARGE runs 54 steps 468 unch 222 M2 300 VIOL 0 BOUND 0 single_ru
 else
   echo "P-IDEAL-M2 check: FAILED"; echo "$w105"; exit 1
 fi
-pin105=$(cd ../.. && sha1sum docs/new/P-IDEAL-M2.md docs/new/P-IDEAL-M2-line-L1.txt)
-if grep -q "^bc47b06c4b8d90ceb28939c966083e0c057a442b  docs/new/P-IDEAL-M2.md$" <<<"$pin105" && grep -q "^0160d1e3ffa832536454a74c559b20280b87f53e  docs/new/P-IDEAL-M2-line-L1.txt$" <<<"$pin105"; then
-  echo "P-IDEAL-M2 pins (packet bc47b06c, line L-1 0160d1e3): PASS"
+pin105=$(cd ../.. && sha1sum docs/new/P-IDEAL-M2.md docs/new/P-IDEAL-M2-line-L1.txt docs/new/P-IDEAL-M2-line-L2.txt docs/new/P-IDEAL-M2-fixes.md)
+if grep -q "^bc47b06c4b8d90ceb28939c966083e0c057a442b  docs/new/P-IDEAL-M2.md$" <<<"$pin105" && grep -q "^0160d1e3ffa832536454a74c559b20280b87f53e  docs/new/P-IDEAL-M2-line-L1.txt$" <<<"$pin105" && grep -q "^c890f2685edf3725a5fccb12cf93e9d3dd7d44ff  docs/new/P-IDEAL-M2-line-L2.txt$" <<<"$pin105" && grep -q "^66fd61731df0667e380e8ac231ee27062ee6b8a8  docs/new/P-IDEAL-M2-fixes.md$" <<<"$pin105"; then
+  echo "P-IDEAL-M2 pins (packet bc47b06c, line L-1 0160d1e3, line L-2 c890f268, fixes 66fd6173): PASS"
 else
   echo "P-IDEAL-M2 pin check: FAILED"; echo "$pin105"; exit 1
 fi
