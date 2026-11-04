@@ -12,6 +12,12 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
    D12 (active): «WE can run referees on opus too temperoraly». D19 (active): «we have 9% usage left until tomorrow night, make use of it».
 5. Trap: premise routes taken from docs/lit instead of RESULTS (C115 E-1). Check: every premise quote grepped verbatim in docs/RESULTS.md.
 
+## Resume point 3 (successor 27; 2026-11-04 12:31Z by date -u)
+- P-IDEAL-SEG (l-new 8291ecf7; packet 7fa84784, line a18f6f0c, max_d5_L15 ba963ace): report R2-P-IDEAL-SEG.md: SEG, SEG-ONCE,
+  LEVEL-PRODUCT, DEAD REPLAY all SIGN, no gap; L-1 MATCHES (P-1..P-4 optional). F-1 §5 maxratio remark («only one degree-2 mover») false:
+  r150_049 has none. F-2 §4 proposal quote not verbatim to N5-SEG-box157.md l. 24. Tool R2-P-IDEAL-SEG/seg_check.py (all sub-intervals).
+  Worktree $SCRATCH/wseg. NEXT: push, report; then docs/referee/ may be read.
+
 ## Resume point 2 (successor 27; 2026-11-04 08:27Z by date -u)
 - Report e01175f6 pushed (VERIFY PASS), Lead messaged 08:09Z. Lead 08:27Z: L-2 round routed to L-NEW; asked (a) my view of REFEREE M2-G1,
   (b) R105 CHAINED line-vs-packet DATA for Erratum E-2.
