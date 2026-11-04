@@ -15,6 +15,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   (T + 1 <= prod_l (n_l + 1), deg <= 2) PROVED (lane), segcheck.py 0 viol. (check.sh w106); REPLAY DEAD on R202 max_d5_L15 (seg 2 len 7
   > seg 1 len 6). N 5 exact: max T 6 (T >= 7 UNSAT 24,984 s), max M2 3. P-IDEAL-M2 fully signed (REFEREE 685a47de, REFEREE-2 0254976d,
   C118 / R107).
+### P-IDEAL-SEG FROZEN 8291ecf7 (packet 7fa84784, 152 lines; L-1 a18f6f0c), with REFEREE 23 / REFEREE-2 27; fixes -> P-IDEAL-SEG-fixes.md.
+### Box 158 SLOT (Lead 12:23Z; docs/new/N5-SLOT-box158.md; box158/): SHIFT, SEG-CAP, LIFT PROVED (lane); T*(d-1) <= T*(d) <= 3T*(d-1)+2;
+  route «linear first segments» DEAD (circular: max seg1 = T*(d-1); lift_max_d4_L13 d 5 seg1 13); CONJECTURE SLOT-TRADE. check.sh w108.
 ### Things only I know (successor 51): z3 Int encoding beats the BV one (N4 UNSAT 20 s vs > 10 min); LEVS split ~250 s / level
   vector at N 5 (541 vectors: too slow). Logs of running jobs are in box156/log/ (commit after they finish). Never pkill -f.
 ### Successor 51 handover check (STEP 0; written 2026-11-04 04:2xZ by date -u)

@@ -885,4 +885,11 @@ if grep -qxF "max_d5_L15.json N 10 T 15 L 0 cuts [7, 8]" <<<"$w107" && grep -qF 
 else
   echo "P-IDEAL-SEG check: FAILED"; echo "$w107"; echo "$pin107"; exit 1
 fi
+# box 158 (L-NEW 51): Lemma LIFT on three champions (same run one level up, no level-0 move) and their segment data
+w108=$(cd .. && for f in new/box156/ext/max_d4_L13.json new/box157/max_d5_L15.json new/box152/dd_d5_F14.json; do python3 -I new/box158/lift.py $f "$tmp/lift_$(basename $f)"; done; python3 -I new/box158/three.py "$tmp"/lift_*.json)
+if [ "$(grep -c ' SAME True$' <<<"$w108")" = 3 ] && grep -qxF "lift_max_d4_L13.json d 5 T 13 cuts [] seg1 13" <<<"$w108" && grep -qxF "lift_max_d5_L15.json d 6 T 15 cuts [] seg1 15" <<<"$w108"; then
+  echo "box 158 LIFT: max_d4_L13 / max_d5_L15 / dd_d5_F14 lift one level up with the same run and seg1 = T: PASS"
+else
+  echo "box 158 LIFT check: FAILED"; echo "$w108"; exit 1
+fi
 rm -rf "$tmp"
