@@ -10590,6 +10590,225 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   makes no M4 claim and no TARGET claim; its tail reads «a STRUCTURE / REDUCTION statement inside the IDEAL model» and «G-N5-TIME stays
   OPEN; not M3, not a step-4 pass, not a TARGET.md claim» (L-2, by script). Not a step-4 pass. GAPS G-N5-TIME: open.
 
+### R107 [refereed-only] In the IDEAL model of RESULTS R104 (premise: R104's definition of the model only, no theorem of R104 used; and RESULTS R105's ENC, LOCAL, XI-NEW, RISE, CHAIN-BACK and KEYFLIP), on acyclic Ξ-graphs, any number of movers per level, with N movers, M options, T the number of steps of a run, Mv_t the movers of step t, U the number of unchained steps of R105 (step t ≥ 2 is chained iff h_(t−1) lies on the chain under s_(t−2) of the option h_t takes, as a mover other than h_t) and M₂ the number of steps t ∈ [1, T − 1] with at least 2 movers: at any degree, (MULTI-CHARGE) for every unchained step t ≥ 2 step t − 1 has at least 2 movers, so U ≤ M₂ and T ≤ N (1 + M₂); (M2-EQ) M₂ ≤ max(T − 1, 0), so on any family of runs T is bounded by a polynomial in N + M iff M₂ is; (SINGLE-SHORT) a run whose steps 1, …, T − 1 each move one mover has T ≤ N; and at degree ≤ 2 only, with o = s_(t−1)(z) and o′ the other option of a mover z of step t ≥ 2: (TRIGGER) the Ξ-order of (z, o′) and (z, o) differs at s_(t−2) and s_(t−1), and then some strict Ξ-descendant of z on one of their chains under s_(t−2) moves at step t − 1, or their key order differs under the keys of s_(t−1) and of s_t, and then some mover of lower level moves at step t; (XIFLIP) moves(x) ≤ 1 + XF_x with XF_x the number of steps at which the Ξ-order of x's two options changes; (MIN-FLIP) moves(x) ≤ 1 + min(KF_x, XF_x), with moves(x) the number of steps moving x, KF_x R105's number of steps at which KP(x) changes (KEYFLIP), XF_x at most the number of steps moving a strict Ξ-descendant of x and KF_x at most the number of steps moving a mover of level below lev(x); and DEAD: the lane conjecture «T ≤ ⌊3N/2⌋ on degree-≤-2 IDEAL-ACYC» is false, by L-RED R197's genome max_d4_L13 (N 8, degree 2, from its stored start T 13 > ⌊3·8/2⌋ = 12, recomputed by the box 150 simulator, sha1 f0735b61…) (2026-11-04) — a REDUCTION / EQUIVALENCE statement inside the IDEAL model; bounds nothing polynomially (no bound on M₂, U, KF or XF is claimed); CONJECTURE LIN-2 (T ≤ 2N) is not claimed; Ξ-cyclic genomes and degree ≥ 3 for TRIGGER / XIFLIP are not covered; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim (DATA: 0 violations on 54 corpus runs, on 34,934 random runs (every start for N ≤ 8, the genome start otherwise; experiments/new/box155/mcharge.py) and on 3,981 all-start degree-≤-2 random runs (experiments/new/box156/trig.py)) (P-IDEAL-M2, docs/new/P-IDEAL-M2.md with its fixes entry 1, docs/new/P-IDEAL-M2-fixes.md; L-NEW successor 51), CHECKER PASS (docs/checker/C118.md, checker 914d073f)
+- Object (L-NEW successor 51, Opus 5.5, D14 / D18 / D19; frozen, unchanged during review): packet P-IDEAL-M2, docs/new/P-IDEAL-M2.md,
+  sha1 bc47b06c4b8d90ceb28939c966083e0c057a442b, 171 lines (l-new freeze 6bcfa0de, 2026-11-04T07:01:33Z, the file's only commit;
+  identical at 4d244698). Both referees measured the sha1 (REFEREE l. 4 «docs/new/P-IDEAL-M2.md: sha1
+  bc47b06c4b8d90ceb28939c966083e0c057a442b, 171 lines;»; REFEREE-2 l. 5 «docs/new/P-IDEAL-M2.md sha1
+  bc47b06c4b8d90ceb28939c966083e0c057a442b, 171 lines (re-hashed: match).»). Title (l. 1): «Packet P-IDEAL-M2 (box 156): multi-mover
+  steps measure IDEAL-ACYC run length (MULTI-CHARGE both directions, SINGLE-SHORT, TRIGGER, XIFLIP, MIN-FLIP); DEAD: LIN-156». Status
+  (l. 6-7): «Not a TARGET.md claim. Every statement is» «about the IDEAL-ACYC model only. No polynomial bound is claimed anywhere.
+  G-N5-TIME stays OPEN.» To sign: §1 Lemma MULTI-CHARGE, Corollaries M2-EQ and SINGLE-SHORT; §2 Lemma TRIGGER; §3 Lemma XIFLIP and
+  Corollary MIN-FLIP; §4 the DEAD of LIN-156 (table l. 10-16); §5 «DATA / READING (not to sign)». Sections: premises (l. 18-23), §0 the
+  model (l. 25-47), §1 (l. 49-68), §2 (l. 70-98), §3 (l. 100-118), §4 (l. 120-139), §5 machine check, EXCLUDED, TARGET diff, READING (l.
+  141-171). Sources: «docs/new/N5-GATE-box155.md §1 (MULTI-CHARGE, box 155) and docs/new/N5-M2-box156.md» «§1 (box 156). This packet
+  governs:» (l. 4-5).
+  Fixes: docs/new/P-IDEAL-M2-fixes.md, fixes entries 1-2 (append-only; one commit, 4d244698; 50 lines, sha1
+  66fd61731df0667e380e8ac231ee27062ee6b8a8, the version both referees checked). Entry 1 re-cites LOCAL in the forms (a) and (b) of
+  RESULTS R105's body for TRIGGER (b) and MIN-FLIP's XF bound, «No statement changes. No DATA changes.» (l. 27); entry 2 is L-2's word
+  diff. The packet read with entry 1 is the text of record.
+  The RESULTS line is L-2, c890f2685edf3725a5fccb12cf93e9d3dd7d44ff (docs/new/P-IDEAL-M2-line-L2.txt, l-new 4d244698,
+  2026-11-04T08:25:06Z, the file's only commit; fixes entry 2). The title is L-2 verbatim, with nothing inserted (its date parenthesis
+  «(2026-11-04)» and its source note, which names fixes entry 1, are the line's own). L-2 MATCHES at both referees: REFEREE §C
+  (685a47de) l. 167 «VERDICT: line L-2 MATCHES. All 7 statements SIGNED with entry 1.»; REFEREE-2 R2-P-IDEAL-M2-L2.md (0254976d) l. 40
+  «Verdict: L-2 MATCHES. All seven statements stay SIGN (Opus 5.5, D12); with entry 1, TRIGGER and MIN-FLIP cite LOCAL (a), (b).»
+  L-2 differs from the line at L-1 by exactly the 15 items of fixes entry 2 (l. 35-49): N and M named; U's chained definition with «as a
+  mover other than h_t»; TRIGGER's two disjuncts as existence statements («and then some …»), the chains anchored under s_(t−2);
+  moves(x) and KF_x bound in MIN-FLIP; the DEAD with «from its stored start» and «13 > ⌊3·8/2⌋ = 12»; the DATA parenthesis with the
+  start regime; the source note naming fixes entry 1. REFEREE §C l. 158 «15 hunks, equal to entry 2's 15 items, and nothing else
+  differs.»; REFEREE-2 L2 l. 18 «equals the 15 changes listed in fixes entry 2».
+  History. At L-1 (0160d1e3ffa832536454a74c559b20280b87f53e, docs/new/P-IDEAL-M2-line-L1.txt, l-new 6bcfa0de, frozen with the packet),
+  REFEREE l. 125 «VERDICT: line L-1 NOT YET. It matches once M2-L1 is applied.» and REFEREE-2 l. 20 «**REQUIRED** M2-L1, M2-L2 (exact
+  word changes below); optional P-1 to P-3»: at L-1 the DATA clause «on 34,934 / 3,981 all-start random runs» called the 34,934
+  MULTI-CHARGE runs all-start, which they are not (REFEREE M2-L1 = REFEREE-2 M2-L2; REFEREE l. 115-116), and MIN-FLIP used moves(x) and
+  KF_x unbound (REFEREE-2 M2-L1, l. 111). REFEREE found one citation gap in two proofs (M2-G1: TRIGGER (b) and MIN-FLIP's XF bound cited
+  LOCAL's line summary, while z, resp. x, may itself move; REFEREE l. 37-47), closed by fixes entry 1; neither referee found a hole in
+  the mathematics («The mathematics is unaffected», REFEREE l. 46; REFEREE-2 l. 21 «No gap in any proof.»).
+  Setting (packet §0, l. 25-47; RESULTS R104's model in R105's notation): a genome G has N ≥ 1 movers x with levels lev(x) and deg(x) ≥
+  1 options (x, k), M options in all, each with a W-target one level down (none at level 0), a Ξ-target (a mover or the exit X), a β
+  with a distinct rank and a parity, and a distinct gate index; a start s_0; the Ξ-graph and IDEAL-ACYC (acyclic), π a topological order
+  (l. 26-31); chains, Ξ-values and the comparison (l. 32-34); A_s(x), and x is unstable at s iff A_s(x) has at least two elements (l.
+  35); keys (l. 36); the step under the NEW state's keys and «T := the number of steps.» (l. 37-39); «Mv_t := {x : s_t(x) ≠ s_(t−1)(x)}
+  (nonempty for t ∈ [1, T]);», moves(x) the number of t with x ∈ Mv_t, «h_t := a least-level mover of Mv_t» «(smallest index on a tie).»
+  (l. 40-41); «Step t ∈ [2, T] is CHAINED iff h_(t−1) lies on the chain of (h_t, s_t(h_t)) under s_(t−2) (as a mover» «other than h_t),
+  and UNCHAINED otherwise; U := the number of unchained steps (RESULTS R105).» (l. 41-42); M₂ := the number of t ∈ [1, T − 1] whose Mv_t
+  has at least two elements, «(the number of multi-mover steps, the last step excluded).» (l. 43); degree 2 (l. 44-46): x ∈ Mv_t iff its
+  other option is Ξ-better at s_(t−1) and key-smaller under the keys of s_t; «No width hypothesis is made anywhere: every level may hold
+  any number of movers.» (l. 47).
+- Claims signed (REFEREE successor 23 «(Opus 5.5, D15)», report e4ce4f6f, §C on fixes entries 1-2 and L-2 685a47de; REFEREE-2 successor
+  27 «(Opus 5.5, D12/D19)», report e01175f6, R2-P-IDEAL-M2-L2.md 0254976d). Items (a)-(g) are SIGN in both verdict tables (REFEREE "##
+  0. Verdicts" l. 7-18 of R-P-IDEAL-M2.md; REFEREE-2 "## Verdicts" l. 10-21 of R2-P-IDEAL-M2.md), REFEREE's (d) and (f) «SIGN WITH GAP
+  M2-G1» and SIGNED without gap after fixes entry 1 (REFEREE §C l. 157 «TRIGGER and MIN-FLIP are now SIGNED, without gap. All 7
+  statements are SIGNED.»; REFEREE-2 L2 l. 15 «M2-G1 CLOSED on my side.»); the table is to-check (4). (a)-(c) hold for every IDEAL
+  genome with an acyclic Ξ-graph at ANY degree, (d)-(f) at degree ≤ 2 only, all at any width; (g) is one explicit instance. No item
+  bounds a count polynomially.
+  (a) Lemma MULTI-CHARGE (§1, l. 50-60; IDEAL-ACYC, any degree, any width): «Every unchained step t ∈ [2, T] has» an Mv_(t−1) with at
+      least two elements; «Hence U ≤ M₂ and» «T ≤ N (1 + M₂).» (l. 50-51). Proof: XI-NEW + RISE give a mover z ≠ h_t on the chain of
+      (h_t, w) under s_(t−2) with z ∈ Mv_(t−1); if Mv_(t−1) = {h_(t−1)}, then z = h_(t−1) and step t is chained (l. 53-58); t ↦ t − 1 is
+      injective into [1, T − 1] (l. 59); CHAIN-BACK gives T ≤ N (1 + U) (l. 60). Cells: REFEREE «SIGN» (l. 10; §2 l. 50-53); REFEREE-2
+      «**SIGN** (Opus 5.5, D12)» (l. 13; l. 48-52).
+  (b) Corollary M2-EQ (§1, l. 61-65; any degree): «M₂ ≤ max(T − 1, 0) (M₂ counts steps of [1, T − 1]) and T ≤ N (1 + M₂).» (l. 62); «So
+      for any family 𝓕 of IDEAL-ACYC runs (genome and start): T is bounded on 𝓕 by a polynomial in N + M iff M₂ is.» (l. 63). Cells:
+      REFEREE «SIGN» (l. 11; §2 l. 54); REFEREE-2 «**SIGN** (Opus 5.5, D12)» (l. 14; l. 53-54).
+  (c) Corollary SINGLE-SHORT (§1, l. 66; any degree): if every step t ∈ [1, T − 1] moves exactly one mover, «then T ≤ N. (M₂ = 0.)».
+      Cells: REFEREE «SIGN» (l. 12; §2 l. 55); REFEREE-2 «**SIGN** (Opus 5.5, D12)» (l. 15; l. 55).
+  (d) Lemma TRIGGER (§2, l. 71-96, with fixes entry 1; degree ≤ 2, any width): for t ∈ [2, T], z ∈ Mv_t, o := s_(t−1)(z) and o′ the
+      other option of z, XiT(z, t) and WT(z, t) are defined at l. 72-73; «(a) XiT(z, t) or WT(z, t);» «(b) XiT(z, t) implies that some
+      mover y ≠ z on the chain of (z, o) or of (z, o′) under s_(t−2) is in Mv_(t−1), and every such y» «is a strict Ξ-descendant of z;»
+      «(c) WT(z, t) implies that some mover of level < lev(z) is in Mv_t.» (l. 75-78). Fixes entry 1 (l. 16-21) proves (b)'s first part
+      by RESULTS R105 LOCAL (a) with s := s_(t−2), s′ := s_(t−1), x := z, k ∈ {o, o′}: «So Ξ_(s_(t−2))(z, k) = Ξ_(s_(t−1))(z, k) for k ∈
+      {o, o′}, whether or not z itself moved at t − 1. So XiT(z, t) fails.» Cells: REFEREE «SIGN WITH GAP M2-G1» (l. 13; §2 l. 56-63),
+      §C l. 153-154 «Correct.»; REFEREE-2 «**SIGN** (Opus 5.5, D12)» (l. 16; l. 56-66), L2 l. 13-14 «Correct, whether or not z moved.»
+  (e) Lemma XIFLIP (§3, l. 101-111; degree ≤ 2, any width): σ_s(x) := [Ξ_s(x, 1) ▷ Ξ_s(x, 0)] and XF_x the number of j ∈ [1, T] at which
+      σ(x) changes (l. 101-102); «moves(x) ≤ 1 + XF_x for every mover x.» (l. 104). Cells: REFEREE «SIGN» (l. 14; §2 l. 64-66);
+      REFEREE-2 «**SIGN** (Opus 5.5, D12)» (l. 17; l. 68-69).
+  (f) Corollary MIN-FLIP (§3, l. 112-117, with fixes entry 1; degree ≤ 2): «moves(x) ≤ 1 + min(KF_x, XF_x).» (l. 113; XIFLIP and RESULTS
+      R105 KEYFLIP, KF_x R105's number of steps at which KP(x) changes, l. 102-103); XF_x is at most the number of steps j with «some
+      strict Ξ-descendant of x is in Mv_j» (l. 115; proved by RESULTS R105 LOCAL (b) with s := s_(j−1), s′ := s_j, fixes l. 22-24); KF_x
+      is at most the number of steps j with «some mover of level < lev(x) is in Mv_j» (l. 117). Cells: REFEREE «SIGN WITH GAP M2-G1» (l.
+      15; §2 l. 67-70), §C l. 155 «MIN-FLIP XF replacement: LOCAL (b) is applied with s = s_(j−1), s′ = s_j. Correct.»; REFEREE-2
+      «**SIGN** (Opus 5.5, D12)» (l. 18; l. 70-71), L2 l. 15.
+  (g) DEAD: CONJECTURE LIN-156, its T part (§4, l. 120-139). The killed statement (L-NEW's, docs/new/N5-M2-box156.md l. 34-35 at l-new
+      4047aacf; packet l. 121-122): «for every IDEAL-ACYC genome of degree ≤ 2 with N movers and every start, T ≤ ⌊3N/2⌋ and M₂ ≤ N +
+      1»; «Its T part is FALSE.» (l. 122). The instance max_d4_L13, in full (packet l. 123-131): L-RED R197's witness,
+      experiments/red/r197/lag/max_d4_L13.json (claude/l-red c711987b, unchanged at 46588929; L-RED pin max_d4_L13_n78), copied byte for
+      byte to experiments/new/box156/ext/max_d4_L13.json (claude/l-new 6e24a889), sha1 f0735b61312bdbfe1bb553496d7e9ee38681dcee; box
+      139-150 JSON format, «option = [W-target, Ξ-target (−1 = X), β index]; br / bp: rank / parity of β index; gate per option» (l.
+      125); «N 8; lev [0, 0, 1, 1, 2, 2, 3, 3]; every mover has degree 2.» (l. 126); «opts: 0: [[−1, 2, 0], [−1, 3, 1]]; 1: [[−1, 5, 2],
+      [−1, −1, 3]]; 2: [[0, 3, 4], [1, 4, 5]]; 3: [[0, 7, 6], [1, 1, 7]];» «4: [[2, 7, 8], [3, 6, 9]]; 5: [[2, −1, 10], [3, −1, 11]]; 6:
+      [[4, 7, 12], [5, 3, 13]]; 7: [[4, 1, 14], [5, 5, 15]].» (l. 127-128); «gate: [[13, 15], [4, 14], [0, 9], [6, 1], [10, 11], [7,
+      12], [3, 8], [5, 2]].» (l. 129); «br: [9, 2, 11, 12, 5, 8, 0, 10, 1, 6, 14, 15, 4, 7, 3, 13]; bp: [1, 0, 1, 1, 0, 1, 0, 1, 1, 1,
+      0, 1, 0, 1, 0, 1].» (l. 130); «start [1, 1, 0, 0, 0, 1, 0, 1]; topological order (xorder) [0, 2, 4, 6, 3, 7, 1, 5].» (l. 131).
+      From that start: «T = 13 > ⌊3·8/2⌋ = 12; M₂ = 5, U = 4.» (l. 134); the numbers of movers of steps t = 1..13 are «1, 1, 2, 1, 1, 2,
+      3, 2, 1, 1, 2, 1, 1.» (l. 135). «So LIN-156 is DEAD. The M₂ part (M₂ ≤ N + 1) is not killed by this instance (M₂ = 5).» (l. 138).
+      Cells: REFEREE «SIGN», «recomputed with my own simulator: T 13 > 12» (l. 16; §2 l. 71-80: the conjecture «EQUALS the packet's
+      quote.», the instance «equals L-RED's» «experiments/red/r197/lag/max_d4_L13.json (same sha1) and the packet's inline copy, field
+      by field.»); REFEREE-2 «**SIGN** (Opus 5.5, D12): recomputed T 13 > ⌊3·8/2⌋ = 12 with my own simulator» (l. 19; l. 72-80: ««N 8 T
+      13 M2 5 U 4 Mv [1, 1, 2, 1, 1, 2, 3, 2, 1, 1, 2, 1, 1]» = packet §4 exactly.»).
+  The RESULTS line (L-2) states (a)-(g) with their exact hypotheses, and nothing wider (to check (4)); REFEREE-2 L2 l. 33-34: «Binder
+  pass: T, Mv_t, U (with h_t, s_t of R105 / R104), M₂, N, M, o, o′, z, XF_x, KF_x, moves(x), KP(x) (R105) all bound.»
+- Premise: RESULTS R104's definition of the IDEAL model and of the Ξ-graph (no R104 theorem), and RESULTS R105's ENC, LOCAL (the line
+  form, and the body forms (a)-(c) of item «(b) Lemma LOCAL (§1, l. 75-85)»), XI-NEW, RISE, CHAIN-BACK and KEYFLIP, each quoted verbatim
+  from the landed R105 (REFEREE l. 26 «ALL FOUND verbatim»; REFEREE-2 l. 30 «each quote grepped verbatim in the landed statement»). L-2:
+  «premise: R104's definition of the model only, no theorem of R104 used; and RESULTS R105's ENC, LOCAL, XI-NEW, RISE, CHAIN-BACK and
+  KEYFLIP». Uses: XI-NEW + RISE + CHAIN-BACK in (a); ENC (strictness of the Ξ-order) in (d) (a) and (e); LOCAL (a) in (d) (b), the key
+  half (LOCAL (c)) in (d) (c) and (f), LOCAL (b) in (f); KEYFLIP in (f). Packet l. 22: «Not used: RESULTS R106 (P-IDEAL-CUBE), docs/lit,
+  docs/sources, any other lane file. No outside source is cited.» CHAIN-BACK is used with U as signed in P-IDEAL-RED §4, chained meaning
+  «as a mover other than h_t»; R107's line states that definition, while the landed R105 line and body item (f) omit the phrase, the
+  subject of RESULTS Erratum E-2 to R105 (REFEREE-2 R2-R105-chained.md l. 58: «T ≤ N (1 + M₂) uses CHAIN-BACK (ii) with
+  the PACKET U, which P-IDEAL-M2 §0 defines («(as a mover other than h_t)»), plus U ≤ M₂.»). The DEAD instance is a data file,
+  recomputed by both referees with their own simulators (REFEREE from R104's text, scratch/xinew_probe.py; REFEREE-2 m2_check.py
+  «written from R104's text with β-SETS (no ENC)», l. 77).
+- L41 and L43. The proofs are L-NEW successor 51's (packet l. 6). Fixes entry 1 answers REFEREE's M2-G1 by citing landed R105 text
+  («Route: CITE, no proof carried.», fixes l. 10); the line changes are wording and DATA scoping; the instance is L-RED's. Nothing
+  referee-originated is a premise or a proof step of the entry (my reading; neither referee mentions L41). The DEAD (g) meets L43 by one
+  instance exceeding an explicit bound (13 > 12): REFEREE l. 21 «13 exceeds the explicit bound 12, so L43 is met.»; REFEREE-2 l. 106
+  «L43: the killed statement is universal and finite (not asymptotic)».
+- Fixes (docs/new/P-IDEAL-M2-fixes.md, L-NEW successor 51, append-only, fixes entries 1-2; 4d244698, 50 lines, sha1
+  66fd61731df0667e380e8ac231ee27062ee6b8a8, the version both referees checked).
+  - Entry 1 (l. 6-27, «M2-G1, REFEREE»): «The proofs need LOCAL in the forms that exclude the option's own mover.» (l. 9); «Route: CITE,
+    no proof carried. Both forms are in the text of the landed entry RESULTS R105, body item (b)» (l. 10); TRIGGER (b)'s first bullet
+    re-proved by LOCAL (a) (l. 16-21), MIN-FLIP's XF bound by LOCAL (b) (l. 22-24); the key half unchanged (l. 25-26); «No statement
+    changes. No DATA changes.» (l. 27). REFEREE §C l. 148 «Entry 1 (M2-G1): CLOSED.»; REFEREE-2 L2 l. 8 «## Fixes entry 1 (M2-G1):
+    CORRECT».
+  - Entry 2 (l. 29-50): L-2 and its word diff against L-1, 15 items; «Every statement in L-2 is a signed statement of the packet
+    (§1-§4), with entry 1's citation route.» (l. 50).
+  No fix changes a signed statement (to check (8)).
+- Not signed: packet §5 (machine check, EXCLUDED, TARGET diff, READING; «DATA / READING (not to sign)», l. 16), in particular its
+  READING «M₂ joins T, U and KF as a fourth equivalent growth measure of IDEAL-ACYC runs, and the one easiest to observe.» (l. 168) and
+  «A polynomial bound would follow from a polynomial bound on M₂, or on» «Σ_x min(KF_x, XF_x). Neither is claimed.» (l. 170-171). OPEN,
+  not claimed: any bound on M₂, U, KF, XF or T (packet l. 67, 118); CONJECTURE LIN-2 (T ≤ 2N) and the M₂ part of LIN-156 (M₂ ≤ N + 1)
+  (l. 139, 157); TRIGGER, XIFLIP and MIN-FLIP at degree ≥ 3 (l. 98); Ξ-cyclic genomes (l. 67); G-N5-TIME.
+- Referee strengthening (NOT part of this entry; referee remarks and own checks):
+  (i) REFEREE-2 l. 57-58: «Keys of the two options of z are distinct (own gate distinct, same» «length), so «<» is a strict total order
+      on them.»; l. 62-63: (b) holds for chains under either state («The» «first changed mover on an s_(t−2) chain is also on the
+      s_(t−1) chain (identical prefix)»).
+  (ii) REFEREE-2 l. 35-36: of ENC «Only asymmetry of ▷ is used; that also» «follows from the definition directly.»
+  (iii) REFEREE-2 l. 43-44 and R2-R105-chained.md l. 53-57: MULTI-CHARGE's per-step claim holds under either reading of chained («U′ ≤ U
+        ≤ M₂»); only T ≤ N (1 + M₂) needs the signed U (G-5).
+  (iv) REFEREE-2 l. 80 and REFEREE l. 98: negative controls with the keys of the OLD state break the statements («T 7, Mv [3, 3, 1, 1,
+       1, 1, 1], VIOL_MULTI 1, VIOL_TRIG_a 1»; «MULTI-CHARGE 39, TRIGGER (a) 425. The checks bite.»); the lane's NEG=3 gives «NEITHER
+       141» (packet l. 152).
+- Honest limits: (i) a REDUCTION / EQUIVALENCE statement inside the IDEAL model: T and M₂ bound each other up to the factor N (M2-EQ),
+  and per-mover moves are bounded by flips (XIFLIP, MIN-FLIP); it bounds nothing polynomially (no bound on M₂, U, KF, XF or T);
+  G-N5-TIME stays open; not M3, not a step-4 pass, not a TARGET.md claim. (ii) TRIGGER, XIFLIP and MIN-FLIP need degree ≤ 2 (two options
+  per moving mover); MULTI-CHARGE, M2-EQ and SINGLE-SHORT hold at any degree; Ξ-cyclic genomes are not covered. (iii) The DEAD kills
+  only the T part of LIN-156 (T ≤ ⌊3N/2⌋), by one explicit instance (N = 8, T = 13 > 12); the M₂ part (M₂ ≤ N + 1) survives on this
+  instance (M₂ = 5) and is not claimed; CONJECTURE LIN-2 (T ≤ 2N) is not claimed; no growth rate of T is claimed (packet l. 139 «any
+  growth rate.»). (iv) MIN-FLIP's two right-hand sides «can be large; no polynomial bound follows.» (packet l. 118). (v) The DATA (0
+  violations) is per tool: MULTI-CHARGE (per step and T ≤ N (1 + M₂)) by mcharge.py; TRIGGER (a)-(c) and XIFLIP by trig.py; MIN-FLIP's
+  two bounds only by REFEREE-2's m2_check.py; trig.py's 3,981 random runs contain no W-triggered move (WT 0), so TRIGGER (c) is
+  exercised only by the corpus (WT 333) and the referees' runs. (vi) Every statement is about R104's IDEAL model on acyclic Ξ-graphs;
+  nothing is said about a real N5 run or a parity game beyond what R104 already says (packet l. 163-166). (vii) Premises: RESULTS R104's
+  definition and RESULTS R105's six named items; CHAIN-BACK is cited with U as signed (chained «as a mover other than h_t», stated in
+  this entry's line), while R105's landed wording omits that phrase (corrected by RESULTS Erratum E-2 to R105); at degree
+  ≤ 2 the two readings agree. No lit note, no lane file, no outside source. No Lean. (viii) The DEAD instance is L-RED's witness, used
+  here only as a counterexample; its T is R104's number of steps («So L-RED's «run» is my T: there is no unit difference.»,
+  docs/new/N5-M2-box156.md l. 45 at 4d244698). (ix) Names: «M₂» (subscript two) is this entry's count of multi-mover steps; it is not
+  the fleet milestone M2 (NOW, «M2 Audit arXiv 2511.03752»), and not the labels (M2′), (M2κ), (M2) of other entries; «U», «KF»,
+  «chained» are R105's.
+- Data (DATA, not proof): experiments/new/box155/mcharge.py (l-new abe2b94c, sha1 64c8b16c51162e4c3d0ddbf03899afe4fa957746, 22 lines;
+  MULTI-CHARGE per step (VIOL) and T ≤ N (1 + M₂) (BOUND), any degree), experiments/new/box156/trig.py (l-new 6bcfa0de, sha1
+  b257db69359e1aa0d34d6080e2f1ecf57b89183f, 45 lines; TRIGGER (a)-(c) and XIFLIP, degree ≤ 2) and experiments/new/box156/val.py (l-new
+  6f8c8262, sha1 8a3382eb5ec97be53a8e10384630770f235c3d95, 13 lines), all on the box 150 simulator experiments/new/box150/check.py
+  (l-new 0ebddcf5, sha1 019de0f7b36dcbd47743b3d27b4a1a93549d574b, 214 lines), wired into experiments/new/check.sh block «P-IDEAL-M2» (l.
+  860-872 at 4d244698) with sha1 pins of the packet, L-1, L-2, the fixes and the instance; all unchanged at 4d244698. Genome sets: the
+  corpus, 54 genomes of degree 2 with N = 4..24 (boxes 140-153 and box156/ext), one run each from its stored start;
+  experiments/new/box150/out/rand, 200 random genomes with N = 1..10, every start of the 192 with N ≤ 8 and the genome start of the
+  other 8 (34,934 runs, mcharge.py with ALL=1 ALLN=8), and every start of its 93 degree-≤-2 genomes, all with N ≤ 10 (3,981 runs,
+  trig.py with ALL=1). Packet §5 (l. 142-153): «DATA: VIOL 0, BOUND 0 on 54 corpus runs (boxes 140-153 and box156/ext: 468 steps, M₂
+  total 300).»; «DATA: VIOL 0, BOUND 0 on 34,934 runs of the 200 random genomes of box150/out/rand (every start of each genome with N ≤
+  8, the» «genome start of the others; ALL=1 ALLN=8).»; «DATA: NEITHER 0 (a), XNODESC 0 (b), WNOLOW 0 (c), XIFLIP 0, on the same 54
+  corpus runs (919 moves; XiT 707, WT 333, both 121;» «multi-mover steps 270, of which 162 contain a W-triggered-only mover).»;
+  «Negative control NEG=3 (keys of the OLD state) on the corpus: NEITHER 141.»
+  The block's outputs, reproduced by both referees and re-run for this draft (2026-11-04T10:18:16Z-10:18:21Z, from a `git archive` of
+  4d244698's experiments/new, rc 0, byte-equal to the block's expected strings): «MCHARGE runs 54 steps 468 unch 222 M2 300 VIOL 0 BOUND
+  0 single_runs 0 single_maxT_over_N 0.0»; «MCHARGE runs 34934 steps 38676 unch 2148 M2 5188 VIOL 0 BOUND 0 single_runs 6114
+  single_maxT_over_N 1.0»; «TRIG runs 54 moves 919 NEITHER 0 WNOLOW 0 XNODESC 0 XiT 707 WT 333 BOTH 121 multi 270 WREL 162 XIBR 108
+  XIFLIP 0»; «TRIG runs 3981 moves 298 NEITHER 0 WNOLOW 0 XNODESC 0 XiT 298 WT 0 BOTH 0 multi 12 WREL 0 XIBR 12 XIFLIP 0»; NEG=3
+  «NEITHER 141»; «new/box156/ext/max_d4_L13.json N 8 T 13 M2 5 U 4 mv [1, 1, 2, 1, 1, 2, 3, 2, 1, 1, 2, 1, 1]». REFEREE §3 l. 83-91
+  («Every output line equals check.sh's expected» «string:», «MATCHES.»); REFEREE-2 l. 83 «both lines PASS, exit 0.»
+  REFEREE (successor 23; own docs/referee/scratch/m2_probe.py, sha1 f205022613b9a369c6b55e2524d652d56278d2ed, on its β-set simulator
+  «written from R104's text»; log xinew_logs/m2_probe.txt): random degree-≤-2 genomes, «4,000 runs (seeds 1, 2), 4,176 steps, 530
+  unchained steps, 751 multi-mover steps, 135 W-triggered moves.», «MULTI-CHARGE 0, TRIGGER (a) 0, (c) 0, XIFLIP 0 violations.», control
+  «MULTI-CHARGE 39, TRIGGER (a) 425. The checks bite.» (l. 96-98); the instance recomputed, T = 13 (l. 78).
+  REFEREE-2 (successor 27; own docs/referee-2/R2-P-IDEAL-M2/m2_check.py, sha1 27f4464c812a7f38a2ee6f8c7f2842cfdcb5d7f3, «lane code not
+  imported», no committed log): the lane's totals reproduced exactly on the 54 corpus runs, the 34,934 and the 3,981 random runs (l.
+  84-87); beyond the lane, «32,400 runs (max T 26), WT 130,319» «events» from hill-climbs on the corpus, «72,000 runs» from degree-3-4
+  ladder genomes and «102,770 runs» on random genomes, with counters for every statement including MIN-FLIP's two bounds and KEYFLIP,
+  «All 0 violations.» (l. 88-92); the instance recomputed (l. 77-78).
+  No signed statement uses any count.
+- Signatures: REFEREE docs/referee/R-P-IDEAL-M2.md: successor 23's report e4ce4f6f40491c90f01c595001ffe42e2eb83a26
+  (2026-11-04T07:29:39Z, new file, 140 lines, sha1 6536e879c19198b18a35fc88d0f84411f9e995d4, with scratch/m2_probe.py and
+  xinew_logs/m2_probe.txt): MULTI-CHARGE, M2-EQ, SINGLE-SHORT, XIFLIP, DEAD LIN-156 SIGN, TRIGGER and MIN-FLIP SIGN WITH GAP M2-G1 (l.
+  10-16, 136-137), L-1 «NOT YET» (M2-L1, l. 125); §C 685a47ded0b270f05d68192728690d8d4c78f9be (2026-11-04T08:52:37Z, +47, l. 142-187;
+  the file now 187 lines, sha1 4c7fb6f540d2c61a16f2d3449756c4d312fffa80): entry 1 «CLOSED», all 7 SIGNED, «VERDICT: line L-2 MATCHES.»
+  (l. 167).
+  REFEREE-2 (successor 27): docs/referee-2/R2-P-IDEAL-M2.md e01175f6c09a34a2d3a30c6edc9975c676414817 (2026-11-04T07:33:39Z, new file,
+  125 lines, sha1 f53f1856f5110451420f0bb669ebcb7070b609bf; with R2-P-IDEAL-M2/m2_check.py): every statement SIGN (l. 13-19, 125), «No
+  gap in any proof.» (l. 21), L-1 REQUIRED M2-L1, M2-L2 (l. 20); R2-P-IDEAL-M2-L2.md 0254976d0197c8485b50a829ffc70a3a128ea35e
+  (2026-11-04T08:52:30Z, new file, 40 lines, sha1 4721edb0d6f69a12795b1c472c03cf9d41d701b1): fixes entry 1 «CORRECT» (l. 8), «Verdict:
+  L-2 MATCHES.» (l. 40). Lane: freeze and L-1 6bcfa0def42c7d82d4ccd253cfbd251d589e7a9b, fixes entries 1-2 and L-2
+  4d244698ff9aa920ebf11cb9d39dc75dfff44a9c.
+  INDEPENDENCE: REFEREE l. 2 «Independent: I did not read docs/referee-2/.»; REFEREE-2 l. 2 «Independent: docs/referee/ not read before
+  this push.», and R2-R105-chained.md l. 66 reads REFEREE's M2-G1 «after my report e01175f6 was pushed». REFEREE's report (07:29:39Z)
+  precedes REFEREE-2's (07:33:39Z) by 4 min; the L-2 rounds are 7 s apart (08:52:30Z, 08:52:37Z), and neither L-2 verdict cites the
+  other's. Each referee wrote its own simulator from R104's text (REFEREE xinew_probe.py; REFEREE-2 m2_check.py).
+  Differences, resolved: REFEREE alone raised M2-G1 (agreed by REFEREE-2 afterwards, G-12), M2-L3 and M2-L4; REFEREE-2 alone raised the
+  MIN-FLIP binders (its REQUIRED M2-L1) and P-1 (U «as a mover other than h_t»); both raised the DATA overclaim (REFEREE M2-L1 =
+  REFEREE-2 M2-L2) and the TRIGGER wording (REFEREE M2-L2 = REFEREE-2 P-2, P-3). Both SIGN the same seven statements, both accept entry
+  1, and both MATCH L-2. No disagreement in substance.
+- TARGET.md diff: TARGET.md §1-§3 define parity games («A parity game is G = (V, V_E, V_O, E, pr) with V finite»), the regions W_E, W_O,
+  M4 (§2 «There is a deterministic algorithm A and a polynomial p such that for every parity game G, A on input G halts within» «p(n +
+  m) steps and outputs the pair (W_E(G), W_O(G)).») and the word-RAM cost model; no statement of this entry mentions a parity game, a
+  winning region, an algorithm's running time or a cost model (packet §5 l. 163-165 «No statement of this packet mentions a parity game,
+  a winning region, an algorithm's running time, or a complexity class. Each is» «about the step sequence of the IDEAL model of RESULTS
+  R104's definition.», «None is an M4 or M3 claim, none bounds anything polynomially, and none is a gauntlet step for any algorithm.»;
+  REFEREE §4 l. 101-104 «Agreed with packet §5: not M4, not M3, not a gauntlet step. G-N5-TIME OPEN.»; REFEREE-2 l. 97-99 «The packet's
+  §5 diff is correct. G-N5-TIME stays OPEN.»). The DEAD «refutes a lane conjecture about that model only» (REFEREE l. 103). The line
+  (L-2) makes no M4 claim and no TARGET claim; its tail reads «a REDUCTION / EQUIVALENCE statement inside the IDEAL model» and
+  «G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim» (L-2, by script). Not a step-4 pass. GAPS G-N5-TIME: open.
+
 **Erratum E-1** (not a result; 2026-11-01 05:28Z by date -u; Lead; corpus counts in RESULTS R97-R100):
 - What is wrong: the DATA-of-record sentences that say «1,132 games» for the L-SI box 50b / box 53 corpus (sbcg.lst 719 lines + alt_all.lst
   413 lines) count RUNS, not games. Measured by CHECKER (C111 N-7, claude/checker d53e1d4f) at trunk 68d50c8f: experiments/si/anc58/
@@ -10602,6 +10821,34 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   quoted with it (W-runs, Ξ-changes, transitions, descents, source events) sum over runs and so count the 319 repeats twice.
 - Effect: every violation count in those sentences is 0, and a repeated run cannot add a violation; no signed statement of R97-R100 uses
   a count. No claim, title or GAPS line changes. Later lines state de-duplicated counts (P-N5-S4B line L-1: 813 distinct game/start lines).
+
+**Erratum E-2** (not a result; 2026-11-04 13:41Z by date -u; Lead; three definitions in RESULTS R105's title line):
+- What is wrong: RESULTS R105's title line (l. 10155) states three definitions more loosely than the signed packet P-IDEAL-RED
+  (claude/l-new 0ebddcf5, sha1 06f2c186…), whose statements both referees signed. (E2a) CHAIN-BACK's parenthesis «(h_(t−1) lies on
+  the chain under s_(t−2) of the option h_t takes)» omits the packet's «(as a mover other than h_t)» (§4 l. 118-119); R105's body item (f) (l. 10229-10230: «a step t ∈ [2, T] is
+  CHAINED iff h_(t−1) lies on the chain of (h_t, s_t(h_t)) under» «s_(t−2)») omits it too. (E2b) TOP-MONO's
+  «RANK_t := 1 + #(unstable movers above y_t before the step)» leaves «above» unanchored; the packet counts unstable x with
+  π(x) > π(y_t) (§7 l. 161). (E2c) KEYFLIP's «moves(x)» is used without its binder; the packet defines moves(x) as the number of steps t
+  with x ∈ Mv_t (§0 l. 59).
+- Found by: REFEREE-2 successor 27 (claude/referee-2 e01175f6, R2-P-IDEAL-M2.md findings) and confirmed by REFEREE successor 23
+  (claude/referee 685a47de, R-P-IDEAL-M2.md l. 172-181, R105-E1 and R105-E2), who had MATCHED the line; CHECKER C116 did not catch it.
+- Effect of (E2a), measured (REFEREE-2 27, claude/referee-2 0254976d, R2-R105-chained.md; DATA, not a signature): under the line's
+  reading a step with h_(t−1) = h_t counts as chained, and CHAIN-BACK (i) «π(h_t) < π(h_(t−1))» is false at every such step (35,116
+  steps; first instance diff_n2: degree 3, N 2, T 2, step t = 2). No such step exists at degree ≤ 2 (REFEREE-2's argument by XI-NEW, checked by CHECKER C119; 0 in the data). The
+  bound T ≤ N (1 + U′) with U′ counted under the line's reading had 0 failures on 926,555 runs (equality reached, never exceeded), but
+  it is NOT PROVED under that reading, and neither are U-EQ's (⇐) direction, RANK-BOUND, INTERVAL-RESTRICT and RECURSION as functions
+  of U′: their signed proofs use the packet's U.
+- Correction: read R105's CHAIN-BACK parenthesis (title line) and body item (f) with the packet's binder: the parenthesis as «(h_(t−1) lies on the chain under s_(t−2) of the option h_t takes, as a mover
+  other than h_t)», and U, U-EQ, RANK-BOUND, INTERVAL-* and RECURSION with that U. Read KEYFLIP's moves(x) as the number of steps that move x. Read TOP-MONO's RANK_t in the title line as «1 + #(unstable movers
+  with π above π(y_t) before the step)» (body item (l), l. 10248, already anchors it: «above π(y_t)»). These are the packet's definitions; the signatures (REFEREE 23 a71540d5 / d8f25ef2 /
+  0d2fef9f; REFEREE-2 26 2f9b6f5c / ca757330 / f81c6e57) are on the packet's statements, so every signed statement of R105 stands
+  as read with the correction.
+- Unaffected: R105's other definitions (REFEREE re-read them: 685a47de l. 186-187; CHECKER C119 §3 diffed them against P-IDEAL-RED); RESULTS R106
+  (its premises are R105's ENC and LOCAL (b) only); P-IDEAL-M2, whose line states U with the phrase. No title, GAPS line or
+  Dead-ends row changes. R105's heading text and its UPDATE on GAPS l. 11 (which repeats both clauses) stay as landed (the heading equals the
+  MATCHED line L-2); this erratum governs their reading.
+- Lesson (Lead): a line MATCH checks every definition in the line against the packet's definitions, not only the claims; added to the
+  referee and CHECKER briefs from now on.
 
 ## Dead ends (kept; each with the exact obstruction or counterexample and the instance that killed it)
 - DE1 (2026-10-14): arXiv 2511.03752 v1 (van der Heijden), claimed O(n²(n+m)) algorithm. BROKEN: wrong regions on 4-vertex games

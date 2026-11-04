@@ -1,4 +1,4 @@
-# Draft RESULTS Erratum E-2 (Lead; first fill 2026-11-04T10:15:43Z by date -u; to CHECKER) — three definition binders (rev. 1 for C119 Add. 1) in RESULTS R105's title line
+# Draft RESULTS Erratum E-2 (Lead; first fill 2026-11-04T10:15:43Z by date -u; to CHECKER) — three definition binders (rev. 1 for C119 Add. 1) in RESULTS R105's title line — LANDED in RESULTS 2026-11-04 13:41Z (CHECKER C119 914d073f PASS), after Erratum E-1, before Dead ends
 
 Placement: directly after «**Erratum E-1**»'s block and before «## Dead ends» in docs/RESULTS.md. Erratum block = the lines between the
 two markers below (not landed: this header and the markers).

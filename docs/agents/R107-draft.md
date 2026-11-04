@@ -1,4 +1,4 @@
-# Draft RESULTS R107 (Lead; first fill 2026-11-04T10:33:43Z by date -u (subagent); on P-IDEAL-M2 line L-2, docs/new/P-IDEAL-M2-line-L2.txt, l-new 4d244698, sha1 c890f2685edf3725a5fccb12cf93e9d3dd7d44ff) — to CHECKER C118
+# Draft RESULTS R107 (Lead; first fill 2026-11-04T10:33:43Z by date -u (subagent); on P-IDEAL-M2 line L-2, docs/new/P-IDEAL-M2-line-L2.txt, l-new 4d244698, sha1 c890f2685edf3725a5fccb12cf93e9d3dd7d44ff) — to CHECKER C118 — LANDED in RESULTS 2026-11-04 13:41Z (CHECKER C118 914d073f PASS), after R106, before Erratum E-1; with Erratum E-2
 FIRST FILL. Read at the origin heads fetched at the start of the fill (git fetch, then git ls-remote, 2026-11-04T10:15:52Z: l-new
 4d244698, l-red 05c48415, referee 685a47de, referee-2 0254976d, checker 025ba1f1; origin trunk 4b27dd7b; local trunk d9f2b19b = the
 merge (--no-ff) of the l-new, referee, referee-2 and checker heads into 4b27dd7b, not pushed; the merge changes no Lead file, so RESULTS
