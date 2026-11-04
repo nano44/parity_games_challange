@@ -1,0 +1,24 @@
+== ladder K 1..12 (DP for K <= 8)
+LADDER K 1 N 2 path 2 target 2 DP_LP 2 ideal_T 0
+LADDER K 2 N 4 path 6 target 6 DP_LP 6 ideal_T 0
+LADDER K 3 N 6 path 14 target 14 DP_LP 14 ideal_T 0
+LADDER K 4 N 8 path 30 target 30 DP_LP 30 ideal_T 0
+LADDER K 5 N 10 path 62 target 62 DP_LP 62 ideal_T 0
+LADDER K 6 N 12 path 126 target 126 DP_LP 126 ideal_T 0
+LADDER K 7 N 14 path 254 target 254 DP_LP 254 ideal_T 0
+LADDER K 8 N 16 path 510 target 510 DP_LP 510 ideal_T 0
+LADDER K 9 N 18 path 1022 target 1022 DP_LP None ideal_T 0
+LADDER K 10 N 20 path 2046 target 2046 DP_LP None ideal_T 0
+LADDER K 11 N 22 path 4094 target 4094 DP_LP None ideal_T 0
+LADDER K 12 N 24 path 8190 target 8190 DP_LP None ideal_T 0
+CUBE-CHECK ladders 12
+VIOLATIONS 0 
+== corpus (box14x out/inst, box152 d5; degree <= 2, |D2| <= 9; all starts for N <= 9)
+CUBE-CHECK LP_sum 28894 faces 62730 faces0 2880 genomes 18 runs 2880 skipped_files 30 steps 5906 vertices 2880
+VIOLATIONS 0 
+== own random degree <= 2, 400 genomes N <= 8 d <= 4
+CUBE-CHECK LP_sum 11262 faces 27975 faces0 4507 genomes 400 runs 4507 steps 3293 vertices 4507
+VIOLATIONS 0 
+== own random degree <= 2, 150 genomes N <= 9 d <= 2 (wide)
+CUBE-CHECK LP_sum 2858 faces 11227 faces0 1785 genomes 150 runs 1265 steps 779 vertices 1785
+VIOLATIONS 0 

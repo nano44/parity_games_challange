@@ -1,0 +1,7 @@
+LADDER K 1 LP(b0) 2 2^(K+1)-2 2
+LADDER K 2 LP(b0) 6 2^(K+1)-2 6
+LADDER K 3 LP(b0) 14 2^(K+1)-2 14
+LADDER K 4 LP(b0) 30 2^(K+1)-2 30
+LADDER K 5 LP(b0) 62 2^(K+1)-2 62
+LADDER K 6 LP(b0) 126 2^(K+1)-2 126
+RANDOM deg<=2 genomes 400 faces 95136 violations {'uso': 0, 'acyc': 0, 'comb': 0, 'multi': 0, 'tlp': 0}
