@@ -1,0 +1,2 @@
+XMAX d 2 t 5 N 4 vars 6244 clauses 20377 build 0.1 s
+XMAX d 2 T >= 5: UNSAT 0.1 s

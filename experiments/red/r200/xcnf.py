@@ -52,9 +52,9 @@ def neg(l): return (not l) if isinstance(l, bool) else -l
 def build(T, E, fixall=False, lem=True):
     lev0 = [m[0] for m in T["movers"]]; WT0 = [m[1] for m in T["movers"]]; gate0 = T["gate"]; S0 = [tuple(s) for s in T["states"]]
     N0 = len(lev0); L = len(S0) - 1
-    lev = list(lev0); WT = [list(w) for w in WT0]; m0 = max(lev0) + 1
+    lev = list(lev0); WT = [list(w) for w in WT0]; m0 = max(lev0) + 1 if lev0 else 0   # no prescribed movers: the whole ladder is free (R202)
     for j in range(E):
-        l = m0 + j; lev += [l, l]; WT += [[2 * (l - 1), 2 * (l - 1) + 1]] * 2
+        l = m0 + j; lev += [l, l]; WT += [[2 * (l - 1), 2 * (l - 1) + 1] if l > 0 else [-1, -1]] * 2
     if E: assert N0 == 2 * m0 and not fixall
     N = len(lev); dtop = m0 + E
     bad, req = RQ.requirements(lev0, WT0, gate0, S0)
@@ -89,17 +89,30 @@ def build(T, E, fixall=False, lem=True):
     st = {}
     for t in range(L + 1):
         for v in range(N): st[(t, v)] = bool(S0[t][v]) if v < N0 else C.new()
-    Gb = {(l, k): C.new() for l in range(m0, dtop) for k in (0, 1)}
+    Gb = {(l, k): C.new() for l in range(max(m0, 1), dtop) for k in (0, 1)}
+    g0 = {}   # free level 0 (R202): a total order on the four level-0 gates, slots (v, k), v in {0, 1}
+    if m0 == 0 and E > 0:
+        sl = [(0, 0), (0, 1), (1, 0), (1, 1)]
+        for i in range(4):
+            for j in range(i + 1, 4): g0[(sl[i], sl[j])] = C.new()
+        glt0 = lambda a, b: g0[(a, b)] if (a, b) in g0 else -g0[(b, a)]
+        for p1 in sl:
+            for p2 in sl:
+                for p3 in sl:
+                    if len({p1, p2, p3}) == 3: C.add([-glt0(p1, p2), -glt0(p2, p3), glt0(p1, p3)])
     Rk = {}
     for t in range(L + 1):
         key = RQ.keys(lev0, WT0, gate0, S0[t])
         for l in range(m0): Rk[(t, l)] = key[2 * l] < key[2 * l + 1]
         for l in range(m0, dtop):
             a, c = st[(t, 2 * l)], st[(t, 2 * l + 1)]
+            if l == 0:
+                Rk[(t, 0)] = C.OR([C.AND([a if ka else neg(a), c if kc else neg(c), glt0((0, ka), (1, kc))]) for ka in (0, 1) for kc in (0, 1)]); continue
             Rk[(t, l)] = C.ITE(C.EQ(a, c), C.ITE(a, Gb[(l, 1)], Gb[(l, 0)]), C.ITE(neg(a), Rk[(t, l - 1)], neg(Rk[(t, l - 1)])))
     def KPb(t, a):
         if a < N0:
             key = RQ.keys(lev0, WT0, gate0, S0[t]); return RQ.kp(lev0, WT0, gate0, key, a) == 1
+        if lev[a] == 0: return glt0((a, 1), (a, 0))
         x, y = WT[a]; l = lev[a] - 1
         rx = Rk[(t, l)] if x == 2 * l else neg(Rk[(t, l)])
         return neg(rx)
@@ -185,7 +198,9 @@ def build(T, E, fixall=False, lem=True):
             for v in range(N0, N): C.add([st[(t, v)] if Sh[t][v] else neg(st[(t, v)])])
         if os.environ.get("HINTG", "1") == "1":
             for (l, k), var in Gb.items(): C.add([var if Gh["gate"][2 * l][k] < Gh["gate"][2 * l + 1][k] else -var])
-    info = dict(N=N, N0=N0, L=L, lev=lev, WT=WT, gate0=gate0, S0=S0, m0=m0, dtop=dtop, faces=faces, b=b, lt=lt, par=par, st=st, Gb=Gb, req=req, fi=fi)
+    if os.environ.get("TMIN") == "1":   # R202: the run has at least L steps (deterministic run: step L nonempty => all earlier steps nonempty)
+        C.add([mv[(L, v)] for v in range(N)])
+    info = dict(g0=g0, N=N, N0=N0, L=L, lev=lev, WT=WT, gate0=gate0, S0=S0, m0=m0, dtop=dtop, faces=faces, b=b, lt=lt, par=par, st=st, Gb=Gb, req=req, fi=fi)
     return C, info
 
 def decode(model, I):
@@ -194,10 +209,14 @@ def decode(model, I):
     xt = {f: next(u for u in range(-1, N) if u != f[0] and tv(I["b"][(f, u)])) for f in faces}
     rank = {f: sum(1 for g in faces if g != f and tv(I["lt"](fi[g], fi[f]))) for f in faces}
     gate = [list(g) for g in I["gate0"]] + [[0, 0] for _ in range(N - N0)]
-    for l in range(I["m0"], I["dtop"]):
+    for l in range(max(I["m0"], 1), I["dtop"]):
         for k in (0, 1):
             lo, hi = 2000 + 4 * l + 2 * k, 2001 + 4 * l + 2 * k
             gate[2 * l][k], gate[2 * l + 1][k] = (lo, hi) if tv(I["Gb"][(l, k)]) else (hi, lo)
+    if I["g0"]:
+        sl = [(0, 0), (0, 1), (1, 0), (1, 1)]
+        glt0 = lambda a, b: tv(I["g0"][(a, b)]) if (a, b) in I["g0"] else not tv(I["g0"][(b, a)])
+        for a in sl: gate[a[0]][a[1]] = sum(1 for b in sl if b != a and glt0(b, a))
     start = [I["S0"][0][v] if v < N0 else (1 if tv(I["st"][(0, v)]) else 0) for v in range(N)]
     import xisearch as XS
     G = RQ.genome(I["lev"], I["WT"], gate, start, dict(xt=xt, pos=XS.topo(N, xt), rank=rank, par={f: tv(I["par"][fi[f]]) for f in faces}))
