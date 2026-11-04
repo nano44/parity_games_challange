@@ -138,3 +138,50 @@ REFEREE successor 23 (Opus 5.5, D15), 2026-11-04T07:29Z by date -u. Independent:
   - Line L-1 NOT YET (M2-L1, DATA overclaim).
   - trig.py's random runs exercise no W-triggers.
 - NEEDS: Lead: route M2-G1 (fixes entry) and M2-L1 (optionally M2-L2 to L4) to L-NEW 51. I will do a §C when they are frozen.
+
+## §C (2026-11-04T08:52Z by date -u, successor 23; Opus 5.5, D15): fixes entries 1-2 and line L-2
+- Object: claude/l-new 4d244698, an ancestor of origin/claude/l-new. I re-measured every file:
+  - docs/new/P-IDEAL-M2-fixes.md: sha1 66fd6173…, 50 lines;
+  - docs/new/P-IDEAL-M2-line-L2.txt: sha1 c890f268…, 1 line, no «|»;
+  - packet: unchanged, bc47b06c, 171 lines;
+  - line L-1: unchanged, 0160d1e3.
+- Entry 1 (M2-G1): CLOSED.
+  - The quoted forms are in the landed R105 body, item «(b) Lemma LOCAL» (docs/RESULTS.md at trunk 651fb144, l. 10214-10217).
+    - They are verbatim, modulo a line break inside the first quote, which is why a single-line grep misses it.
+    - «(b) the same for every k when s, s′ agree on every strict Ξ-descendant of x» is verbatim RESULTS text. (RESULTS paraphrases the
+      packet's (b) there, unquoted. The paraphrase is sufficient: equal values for every k.)
+  - TRIGGER (b) replacement: LOCAL (a) is applied with s = s_(t−2), s′ = s_(t−1), x = z, for k ∈ {o, o′}. Its hypothesis excludes z
+    itself, so the conclusion holds whether or not z moved. Correct.
+  - MIN-FLIP XF replacement: LOCAL (b) is applied with s = s_(j−1), s′ = s_j. Correct.
+  - The premise route is still landed RESULTS only.
+  - TRIGGER and MIN-FLIP are now SIGNED, without gap. All 7 statements are SIGNED.
+- Entry 2 against my own word diff L-1 → L-2 (split on blanks): 15 hunks, equal to entry 2's 15 items, and nothing else differs.
+  - M2-L1 is MET: «34,934 random runs (every start for N ≤ 8, the genome start otherwise; …mcharge.py) and … 3,981 all-start
+    degree-≤-2 random runs (…trig.py)». This is packet §5 exactly.
+  - M2-L2 is MET: TRIGGER now says «and then some … under s_(t−2) moves at step t − 1» / «and then some mover of lower level moves at
+    step t». This is (b)/(c) as existence statements.
+  - M2-L3 is MET: N and M are named.
+  - M2-L4 is MET: «from its stored start T 13 > ⌊3·8/2⌋ = 12».
+  - REFEREE-2's MIN-FLIP binders: moves(x) and KF_x (R105 KEYFLIP's) are now bound. Correct.
+  - REFEREE-2 P-1: U's definition carries «as a mover other than h_t». This is packet §0 verbatim in substance, and it is needed.
+- VERDICT: line L-2 MATCHES. All 7 statements SIGNED with entry 1.
+
+### Answer to the Lead (08:53Z): R105's landed line against the signed P-IDEAL-RED
+- R105's heading text, without the label, is word for word the P-IDEAL-RED line L-2 (l-new ffeb9736, sha1 65ba7ca7) plus the
+  CHECKER tail. I checked this with a word diff.
+- So R105-E1 (CHAINED defined without «as a mover other than h_t») is a defect of L-2 that I MATCHED in R-P-IDEAL-RED §C addendum 1.
+  It is MY MISS.
+  - Packet §4 defines CHAINED with «(as a mover other than h_t)».
+  - Without it, a step with h_(t−1) = h_t is chained, because h_t lies first on its own chain, and CHAIN-BACK (i) «π(h_t) <
+    π(h_(t−1))» is false for it.
+  - Lesson: when matching a line, check every DEFINITION in it against the packet's §0, not only the claims.
+- Other places where R105's line is coarser than the packet (I re-read every definition):
+  - R105-E2 (precision, recommended for the same erratum). TOP-MONO: «RANK_t := 1 + #(unstable movers above y_t before the step)».
+    «above» is not anchored. The packet's RANK_t counts x ∈ S(s_(t−1)) with π(x) > π(y_t), and «above» could be read as «of higher
+    level». Fix: «… with π above π(y_t) …».
+  - R105-N1 (no erratum needed; it is now known and handled). LOCAL's line summary «an option's value depends only on the states on its
+    chain» is true but coarser than LOCAL (a)/(b). Citing packets must use the body forms, as P-IDEAL-M2 entry 1 now does.
+  - R105-N2 (no erratum needed). INTERVAL-RESTRICT's «step a + j» leaves «a» unnamed (my optional note in R-P-IDEAL-RED §C add. 1).
+    It is unambiguous in context: a is the index of the interval's first state.
+  - Everything else matches the packet's definitions: h_t, y_t, c_s, KP_s, A_s, ε, U (with t ∈ [2, T]), the TOP_k padding, R := 0,
+    U*, and the degree split.
