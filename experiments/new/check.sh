@@ -844,4 +844,10 @@ if grep -qxF "DECOMP genomes 25 faces 478953 USO 0 COMB 0 ORDER 0 ACYC 0 JUMP 0 
 else
   echo "box 153 check: FAILED"; echo "$w102"; exit 1
 fi
+w103=$(cd .. && python3 -I new/box154/ladder.py 10)
+if [ "$(grep -c ' OK$' <<<"$w103")" = 10 ] && grep -qF "LADDER K 7 N 14 path 254 = 2^(K+1)-2 True nonimproving 0 flips [2, 4, 8, 16, 32, 64, 128] DP_longest 254 ideal_T 0 OK" <<<"$w103"; then
+  echo "box 154 LADDER-LP: Xi-ladder L_K has a directed improving path of length 2^(K+1)-2 (K = 1..10; DP exact K <= 7): PASS"
+else
+  echo "box 154 LADDER check: FAILED"; echo "$w103"; exit 1
+fi
 rm -rf "$tmp"

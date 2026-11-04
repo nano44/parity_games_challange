@@ -27,6 +27,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - Check: box150/check.py (own simulator, XSIM vs box139/paths.py): 0 violations, 46 corpus genomes (386 steps) + 75,518 all-start runs
   of 200 random genomes (rand.py seed 150, 107 with degree 3-4). Negative controls NEG=1/2/3 fire (NEG=3 old-state keys: XINEW 6).
   Wired into check.sh as w99 (full check.sh PASS locally).
+### Box 154 P-IDEAL-CUBE FREEZE (Lead brief 01:56Z; docs/new/P-IDEAL-CUBE.md + line L-1; experiments/new/box154/ladder.py)
+- (i) DECOMP with [WW22] Def. 3 / Def. 4 / §2.2 / Thm 18 remark quoted VERBATIM (ar5iv HTML downloaded and text-extracted);
+  (ii) MULTI->SINGLE, T <= LP; (iii) Theorem LADDER-LP PROVED (full proof, induction UP(i)): explicit L_K, LP >= 2^(K+1) - 2
+  (exact for K <= 7 by DP). Chose: all of (i)-(iii) frozen (no part kept as DATA).
+
 ### Box 153 N5-CUBE (Lead GO 00:47Z; docs/new/N5-CUBE-box153.md; experiments/new/box153/)
 - Step 1 PASSED: DECOMP (improvement orientation = decomposable AUSO, combing order decreasing pi), MULTI->SINGLE (T <= LP(start)).
   decomp.py 0 violations (119 genomes, 603,741 faces). DEAD: Xi-side-only route (2-wide Xi-ladder LP 8/22/52/114, K = 2..5).
