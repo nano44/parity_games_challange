@@ -75,6 +75,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   negative literals as false (replay mismatches on the first runs; xcnf results unaffected, only decoding).
 - 00:29Z launched: for t in k3/ag_0 k3p2/ag_0 k3p2/ag_4; do n=$(echo $t | tr / _); nohup timeout 21600 python3 xcnf.py out/ag/$t.json 2
   out/d6_${n}.json > out/d6_${n}.log 2>&1 & done
+- 01:2xZ cube run: CUBEVARS=G,S0 nohup timeout 21600 python3 xcnf.py out/ag/k3p2/ag_0.json 2 out/d6c_k3p2_ag_0.json > out/d6c_k3p2_ag_0.log 2>&1 &
+- Cross-checks: bf.py (brute force N 4 + GREEDY) 85/85 agree with xcnf (LEM on/off), 8 UNSAT; agree.py vs xisat 30/30 + 29/30 + 29/30,
+  the two non-agreements are xisat UNKNOWN (z3 timeout 600-900 s, FD too) vs xcnf UNSAT on N 8 L 3 instances (s5_15: noLEM UNSAT too).
 
 ## Successor 48 PARK (FINAL 2026-11-03 23:4xZ, date -u; context ~510k; Lead 23:40Z: park, successor 49 gets the new exact engine)
 - DONE (claude/l-red, push.sh VERIFY PASS each): 220cc5439 (tools) … 990122a1b (final status §3b), and the park push (this section +
