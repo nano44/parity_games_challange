@@ -103,6 +103,10 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - 12:5xZ R204 (Lead 12:46Z, L-NEW box 158 SLOT-TRADE): SEG "1t:s,1:m,t:m,m:m" in xcnf (segments = nonempty steps before / between / after
   the level-0 steps). d 4 seg1+tail >= 10 SAT 91.5 s (split [5,0,5]). Running: SEG=1t:11, 1t:12, 1:6,t:6 (TMIN=0 SYMB=1 CMIN=0:2 xmax.py
   4 13 out/seg/d4_<tag>.json > .log). pcegar k3/ag_0 paused at 38 no-goods (resume = its line above).
+- 14:53Z d 5 T>=16 / T>=17 (SYMB, CaDiCaL): UNKNOWN at the 6 h timeout. Relaunched: SOLVER=kissat404 SYMB=1 nohup timeout 21600 python3
+  xmax.py 5 16 out/max/d5_t16K.json > out/max/d5_t16K.log; pcegar k3/ag_0 resumed (38 no-goods). R203 d 4 C_1 8 + C_2 >= 11 SAT 4690 s
+  (r203/d4_C1_8_C2_11, L 11, C [2,8,11,11]); C_2 >= 12 running (out/c/d4_c18_c2_12.log). R204 d 4: seg1+tail >= 12 / min >= 6 UNSAT
+  (trivial: T*(4) = 13); seg1 >= 8 SAT [8,0,0]; 5/5 SAT; seg1+tail >= 11 running; d 5 seg1+tail >= 14 horizon 20 running (out/seg/).
 - Cross-checks: bf.py (brute force N 4 + GREEDY) 85/85 agree with xcnf (LEM on/off), 8 UNSAT; agree.py vs xisat 30/30 + 29/30 + 29/30,
   the two non-agreements are xisat UNKNOWN (z3 timeout 600-900 s, FD too) vs xcnf UNSAT on N 8 L 3 instances (s5_15: noLEM UNSAT too).
 
