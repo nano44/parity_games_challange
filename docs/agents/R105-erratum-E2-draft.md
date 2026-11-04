@@ -14,7 +14,8 @@ Sources:
 **Erratum E-2** (not a result; <DATE> <HH:MM>Z by date -u; Lead; two definitions in RESULTS R105's title line):
 - What is wrong: RESULTS R105's title line (l. 10155) states two definitions more loosely than the signed packet P-IDEAL-RED
   (claude/l-new 0ebddcf5, sha1 06f2c186…), whose statements both referees signed. (E2a) CHAIN-BACK's parenthesis «(h_(t−1) lies on
-  the chain under s_(t−2) of the option h_t takes)» omits the packet's «(as a mover other than h_t)» (§4 l. 118-119). (E2b) TOP-MONO's
+  the chain under s_(t−2) of the option h_t takes)» omits the packet's «(as a mover other than h_t)» (§4 l. 118-119); R105's body item (f) (l. 10229-10230: «a step t ∈ [2, T] is
+  CHAINED iff h_(t−1) lies on the chain of (h_t, s_t(h_t)) under» «s_(t−2)») omits it too. (E2b) TOP-MONO's
   «RANK_t := 1 + #(unstable movers above y_t before the step)» leaves «above» unanchored; the packet counts unstable x with
   π(x) > π(y_t) (§7 l. 161).
 - Found by: REFEREE-2 successor 27 (claude/referee-2 e01175f6, R2-P-IDEAL-M2.md findings) and confirmed by REFEREE successor 23
@@ -25,9 +26,9 @@ Sources:
   bound T ≤ N (1 + U′) with U′ counted under the line's reading had 0 failures on 926,555 runs (equality reached, never exceeded), but
   it is NOT PROVED under that reading, and neither are U-EQ's (⇐) direction, RANK-BOUND, INTERVAL-RESTRICT and RECURSION as functions
   of U′: their signed proofs use the packet's U.
-- Correction: read R105's CHAIN-BACK parenthesis as «(h_(t−1) lies on the chain under s_(t−2) of the option h_t takes, as a mover
-  other than h_t)», and U, U-EQ, RANK-BOUND, INTERVAL-* and RECURSION with that U. Read TOP-MONO's RANK_t as «1 + #(unstable movers
-  with π above π(y_t) before the step)». These are the packet's definitions; the signatures (REFEREE 23 a71540d5 / d8f25ef2 /
+- Correction: read R105's CHAIN-BACK parenthesis (title line) and body item (f) with the packet's binder: the parenthesis as «(h_(t−1) lies on the chain under s_(t−2) of the option h_t takes, as a mover
+  other than h_t)», and U, U-EQ, RANK-BOUND, INTERVAL-* and RECURSION with that U. Read TOP-MONO's RANK_t in the title line as «1 + #(unstable movers
+  with π above π(y_t) before the step)» (body item (l), l. 10248, already anchors it: «above π(y_t)»). These are the packet's definitions; the signatures (REFEREE 23 a71540d5 / d8f25ef2 /
   0d2fef9f; REFEREE-2 26 2f9b6f5c / ca757330 / f81c6e57) are on the packet's statements, so every signed statement of R105 stands
   as read with the correction.
 - Unaffected: R105's other definitions (both referees re-read them: REFEREE 685a47de l. 186-187; REFEREE-2 0254976d); RESULTS R106
