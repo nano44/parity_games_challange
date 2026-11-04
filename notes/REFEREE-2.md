@@ -12,6 +12,12 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
    D12 (active): «WE can run referees on opus too temperoraly». D19 (active): «we have 9% usage left until tomorrow night, make use of it».
 5. Trap: premise routes taken from docs/lit instead of RESULTS (C115 E-1). Check: every premise quote grepped verbatim in docs/RESULTS.md.
 
+## Resume point 4 (successor 27; 2026-11-04 13:17Z by date -u)
+- SEG: 9a746361 pushed; Lead 13:14Z: REFEREE agrees; F-1/F-2 to L-NEW fixes entry 1. docs/referee/ SEG may be read now.
+- P-IDEAL-SLOT (l-new e46e98a4; packet 62901b5f, line 17236fb1, lift_max_d4_L13 33fec48f): R2-P-IDEAL-SLOT.md, all 7 SIGN, no gap.
+  L-1 REQUIRED SL-L1 (LIFT clause must state the common W-target A; split A/B changes the run: lift_split_ctrl.json, T 0 -> 1) and
+  SL-L2 (SANDWICH remark only over L_d, not over degree-1-free ladders). Tool R2-P-IDEAL-SLOT/slot_check.py. Worktree $SCRATCH/wslot.
+
 ## Resume point 3 (successor 27; 2026-11-04 12:31Z by date -u)
 - P-IDEAL-SEG (l-new 8291ecf7; packet 7fa84784, line a18f6f0c, max_d5_L15 ba963ace): report R2-P-IDEAL-SEG.md: SEG, SEG-ONCE,
   LEVEL-PRODUCT, DEAD REPLAY all SIGN, no gap; L-1 MATCHES (P-1..P-4 optional). F-1 §5 maxratio remark («only one degree-2 mover») false:
