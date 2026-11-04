@@ -877,4 +877,12 @@ if grep -qxF "SEGCHECK runs 59 steps 650 intervals 652 SEG 0 ONCE 0 COUNT 0 PROD
 else
   echo "box 157 segcheck: FAILED"; echo "$w106"; exit 1
 fi
+# P-IDEAL-SEG (box 157; L-NEW 51): REPLAY DEAD instance data (seg.py on max_d5_L15) + frozen-file pins; SEG checks are block w106
+w107=$(cd .. && python3 -I new/box157/seg.py new/box157/max_d5_L15.json)
+pin107=$(cd ../.. && sha1sum docs/new/P-IDEAL-SEG.md docs/new/P-IDEAL-SEG-line-L1.txt)
+if grep -qxF "max_d5_L15.json N 10 T 15 L 0 cuts [7, 8]" <<<"$w107" && grep -qF "  seg t9-15 len 7 NEWSTATES 7 REPLAY False: " <<<"$w107" && grep -qF "  seg t1-6 len 6 NEWSTATES 6 REPLAY False: " <<<"$w107" && [ "$(sha1sum box157/max_d5_L15.json | cut -d' ' -f1)" = ba963aceabeb35d95f9c47d80d1d0e87b87baf21 ] && grep -q "^7fa847843cb950e87dac38bf3d612effd5a9834e  docs/new/P-IDEAL-SEG.md$" <<<"$pin107" && grep -q "^a18f6f0c61d6d5f33adc61519d94252dd5ba9721  docs/new/P-IDEAL-SEG-line-L1.txt$" <<<"$pin107"; then
+  echo "P-IDEAL-SEG: REPLAY DEAD data on max_d5_L15 (segment t9-15 all new); pins packet 7fa84784, line L-1 a18f6f0c: PASS"
+else
+  echo "P-IDEAL-SEG check: FAILED"; echo "$w107"; echo "$pin107"; exit 1
+fi
 rm -rf "$tmp"
