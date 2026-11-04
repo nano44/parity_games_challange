@@ -850,4 +850,11 @@ if [ "$(grep -c ' OK$' <<<"$w103")" = 10 ] && grep -qF "LADDER K 7 N 14 path 254
 else
   echo "box 154 LADDER check: FAILED"; echo "$w103"; exit 1
 fi
+# frozen-file pins (CHECKER C116 G-3): P-IDEAL-CUBE packet and line L-1 (d97555d4)
+pin104=$(cd ../.. && sha1sum docs/new/P-IDEAL-CUBE.md docs/new/P-IDEAL-CUBE-line-L1.txt)
+if grep -q "^366afedcf7cd04a31302e25cec47c7fb3df455bb  docs/new/P-IDEAL-CUBE.md$" <<<"$pin104" && grep -q "^99ae8face50615b4ce1ce5cd5e69f223f17208e1  docs/new/P-IDEAL-CUBE-line-L1.txt$" <<<"$pin104"; then
+  echo "P-IDEAL-CUBE pins (packet 366afedc, line L-1 99ae8fac): PASS"
+else
+  echo "P-IDEAL-CUBE pin check: FAILED"; echo "$pin104"; exit 1
+fi
 rm -rf "$tmp"
