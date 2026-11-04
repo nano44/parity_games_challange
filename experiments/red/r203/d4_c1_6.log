@@ -1,0 +1,4 @@
+XMAX d 4 t 13 N 8 vars 124830 clauses 429878 build 0.8 s
+XMAX d 4 T >= 13: SAT 19.6 s
+replay L 6 opt (needs >= 13): OK -> out/c/d4_c1_6.json
+replayed C_l (steps moving a mover of level <= l): [2, 6, 6, 6]
