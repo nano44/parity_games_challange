@@ -13,7 +13,12 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   (circular). P-IDEAL-SLOT FROZEN e46e98a4 (packet 62901b5f / 192 lines, L-1 17236fb1, instance lift_max_d4_L13 33fec48f).
 - 159 TRADE (interim, docs/new/N5-TRADE-box159.md): restricted-energy premise DEAD (max_d5_L15 t8); R-IDENTITY T = R(s_0) + sum JUMP
   PROVED (lane); reversed lift (jump = T(G) - R0 + 1); FROZEN-SHORT = SLOT-TRADE + O(1) (no leverage). SLOT-TRADE OPEN.
-### IN FLIGHT: z3 box156: N 6 T >= 9 (pid 1823, log/T_N6_m9.log), N 6 M2 >= 6 (pid 9539, log/M2_N6_L9_q6.log). Append results
+### PARKED 2026-11-04 ~13:3xZ (Lead 13:14Z: «Then PARK»). P-IDEAL-SEG SIGNED by both (REFEREE 19e0742f, REFEREE-2 9a746361); fixes
+  entry 1 (F-1, F-2) in docs/new/P-IDEAL-SEG-fixes.md (sha1 2e3dd532), pinned in check.sh pin107. P-IDEAL-SLOT: REFEREE 23 signed all
+  7 (2a09dcf8), L-1 NOT YET -> line L-2 (55e74726) + fixes entry 1 (44bf76e7, word diff; SLOT-L1/L2/L3), pinned pin109. REFEREE-2 27
+  had not reported at park: its items go to fixes entry 2 / line L-3 (successor).
+### IN FLIGHT (left alive at park): z3 box156: N 6 T >= 9 (pid 1823, experiments/new/box156/log/T_N6_m9.log, started ~04:25Z),
+  N 6 M2 >= 6 (pid 9539, experiments/new/box156/log/M2_N6_L9_q6.log, started ~07:58Z). Container restarts kill them silently. Append results
   to docs/new/N5-M2-box156.md table (row N 6). P-IDEAL-SEG / P-IDEAL-SLOT with the referees: fixes only via *-fixes.md if routed.
 ### NEXT (Lead decides): SLOT-TRADE proof side, or L-RED R203/R204 support (seg1 = T*(d-1) via LIFT + long tail).
 ### Things only I know (successor 51, all boxes):

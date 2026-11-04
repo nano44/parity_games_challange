@@ -879,9 +879,9 @@ else
 fi
 # P-IDEAL-SEG (box 157; L-NEW 51): REPLAY DEAD instance data (seg.py on max_d5_L15) + frozen-file pins; SEG checks are block w106
 w107=$(cd .. && python3 -I new/box157/seg.py new/box157/max_d5_L15.json)
-pin107=$(cd ../.. && sha1sum docs/new/P-IDEAL-SEG.md docs/new/P-IDEAL-SEG-line-L1.txt)
-if grep -qxF "max_d5_L15.json N 10 T 15 L 0 cuts [7, 8]" <<<"$w107" && grep -qF "  seg t9-15 len 7 NEWSTATES 7 REPLAY False: " <<<"$w107" && grep -qF "  seg t1-6 len 6 NEWSTATES 6 REPLAY False: " <<<"$w107" && [ "$(sha1sum box157/max_d5_L15.json | cut -d' ' -f1)" = ba963aceabeb35d95f9c47d80d1d0e87b87baf21 ] && grep -q "^7fa847843cb950e87dac38bf3d612effd5a9834e  docs/new/P-IDEAL-SEG.md$" <<<"$pin107" && grep -q "^a18f6f0c61d6d5f33adc61519d94252dd5ba9721  docs/new/P-IDEAL-SEG-line-L1.txt$" <<<"$pin107"; then
-  echo "P-IDEAL-SEG: REPLAY DEAD data on max_d5_L15 (segment t9-15 all new); pins packet 7fa84784, line L-1 a18f6f0c: PASS"
+pin107=$(cd ../.. && sha1sum docs/new/P-IDEAL-SEG.md docs/new/P-IDEAL-SEG-line-L1.txt docs/new/P-IDEAL-SEG-fixes.md)
+if grep -qxF "max_d5_L15.json N 10 T 15 L 0 cuts [7, 8]" <<<"$w107" && grep -qF "  seg t9-15 len 7 NEWSTATES 7 REPLAY False: " <<<"$w107" && grep -qF "  seg t1-6 len 6 NEWSTATES 6 REPLAY False: " <<<"$w107" && [ "$(sha1sum box157/max_d5_L15.json | cut -d' ' -f1)" = ba963aceabeb35d95f9c47d80d1d0e87b87baf21 ] && grep -q "^7fa847843cb950e87dac38bf3d612effd5a9834e  docs/new/P-IDEAL-SEG.md$" <<<"$pin107" && grep -q "^a18f6f0c61d6d5f33adc61519d94252dd5ba9721  docs/new/P-IDEAL-SEG-line-L1.txt$" <<<"$pin107" && grep -q "^2e3dd53211b44ca752611aadf4f30e5a0e7c165f  docs/new/P-IDEAL-SEG-fixes.md$" <<<"$pin107"; then
+  echo "P-IDEAL-SEG: REPLAY DEAD data on max_d5_L15 (segment t9-15 all new); pins packet 7fa84784, line L-1 a18f6f0c, fixes 2e3dd532: PASS"
 else
   echo "P-IDEAL-SEG check: FAILED"; echo "$w107"; echo "$pin107"; exit 1
 fi
@@ -894,9 +894,9 @@ else
 fi
 # P-IDEAL-SLOT (box 158; L-NEW 51): instance lift_max_d4_L13 (box 150 checker), frozen-file pins; LIFT runs are block w108
 w109=$(cd .. && python3 -I new/box150/check.py new/box158/lift_max_d4_L13.json | tail -1; python3 -I new/box158/three.py new/box158/lift_max_d4_L13.json)
-pin109=$(cd ../.. && sha1sum docs/new/P-IDEAL-SLOT.md docs/new/P-IDEAL-SLOT-line-L1.txt experiments/new/box158/lift_max_d4_L13.json)
-if grep -qxF "TOTAL genomes 1 runs 1 steps 13 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYFLIP 0 DECR 0 TOPMONO 0 RBOUND 0 RESTR 0 ICHARGE 0 REC 0 VIOL 0 (info REC148 0)" <<<"$w109" && grep -qxF "lift_max_d4_L13.json d 5 T 13 cuts [] seg1 13" <<<"$w109" && grep -q "^62901b5f951598fb44426942b0fb1d999325625a  docs/new/P-IDEAL-SLOT.md$" <<<"$pin109" && grep -q "^17236fb18d70c1e2968689108a74a1acac938bd5  docs/new/P-IDEAL-SLOT-line-L1.txt$" <<<"$pin109" && grep -q "^33fec48f1a8f1c57891b7574d87cc6bbe5e3bd38  experiments/new/box158/lift_max_d4_L13.json$" <<<"$pin109"; then
-  echo "P-IDEAL-SLOT: instance lift_max_d4_L13 (d 5, T 13, seg1 13, 0 violations); pins packet 62901b5f, line L-1 17236fb1, instance 33fec48f: PASS"
+pin109=$(cd ../.. && sha1sum docs/new/P-IDEAL-SLOT.md docs/new/P-IDEAL-SLOT-line-L1.txt experiments/new/box158/lift_max_d4_L13.json docs/new/P-IDEAL-SLOT-line-L2.txt docs/new/P-IDEAL-SLOT-fixes.md)
+if grep -qxF "TOTAL genomes 1 runs 1 steps 13 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYFLIP 0 DECR 0 TOPMONO 0 RBOUND 0 RESTR 0 ICHARGE 0 REC 0 VIOL 0 (info REC148 0)" <<<"$w109" && grep -qxF "lift_max_d4_L13.json d 5 T 13 cuts [] seg1 13" <<<"$w109" && grep -q "^62901b5f951598fb44426942b0fb1d999325625a  docs/new/P-IDEAL-SLOT.md$" <<<"$pin109" && grep -q "^17236fb18d70c1e2968689108a74a1acac938bd5  docs/new/P-IDEAL-SLOT-line-L1.txt$" <<<"$pin109" && grep -q "^33fec48f1a8f1c57891b7574d87cc6bbe5e3bd38  experiments/new/box158/lift_max_d4_L13.json$" <<<"$pin109" && grep -q "^55e74726f0c7e6c6e27f780b779788014cc97e29  docs/new/P-IDEAL-SLOT-line-L2.txt$" <<<"$pin109" && grep -q "^44bf76e7bea59037ffe86ef434ae84c15891e2c4  docs/new/P-IDEAL-SLOT-fixes.md$" <<<"$pin109"; then
+  echo "P-IDEAL-SLOT: instance lift_max_d4_L13 (d 5, T 13, seg1 13, 0 violations); pins packet 62901b5f, line L-1 17236fb1, instance 33fec48f, line L-2 55e74726, fixes 44bf76e7: PASS"
 else
   echo "P-IDEAL-SLOT check: FAILED"; echo "$w109"; echo "$pin109"; exit 1
 fi
