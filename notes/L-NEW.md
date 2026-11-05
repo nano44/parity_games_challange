@@ -25,6 +25,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 ### BOX 168 (Lead 20:29Z: PM'_S kill test): docs/new/N5-CLOCK-box168.md, box168/pairflips.py, pairstat.py, climbclock.py. PM'_S
   SURVIVES (max pair excess flips-|W| = 6 on 263 files + climbs; a kill needs desc <= excess-1 <= 5 and key-free capacity >= desc+4).
   PROVED (lane) PAIR-KF (KF_x = flips of its W-target pair) => T <= N + sum flips. Open target CONJECTURE PAIR-LIN flips <= c|W| (data c = 2).
+### BOX 169 (Lead 21:02Z: PAIR-LIN proof attempt): docs/new/N5-PAIRLIN-box169.md. CASCADE PROVED (flip = own or below, <= 1 per
+  pair per step) -> F(l) <= 2 + 3F(l-1); step F(l) = 2(1+F(l-1)) ATTAINED on dd_d5_F14 level 3 (14 = 2*7); only brake = Xi capacity.
+  Kill candidate for R207: doubling tower (per-level Xi-gadgets, desc O(l)); not constructed.
+- DEAD (Lead 21:02Z): INF-2 (box 163 CONJECTURE T_inf(m) <= 2T^R(m)+1) by L-SI claude/l-si 5fd8a5e9 experiments/si/box71/pin/inf18_m3.json
+  (sha1 2af7d941): T_inf = 18 > 17 at m 3, re-run by box164/finf.py.
 ### Successor 54 handover check (STEP 0; written 2026-11-05 17:2xZ by date -u)
 1. claude/l-new: ls-remote a9851eba; local HEAD a9851eba = ls-remote after fetch + ff-only (not stale this time). Vs trunk
    claude/vibrant-johnson-nxvvxo (e4823bdd): 9 ahead / 9358 behind (count as printed by rev-list), merge-base 4c2e5124. Lane files only.
