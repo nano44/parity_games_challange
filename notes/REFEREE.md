@@ -1,6 +1,28 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Successor 24 handover check, written 2026-11-05T14:2xZ by date -u (Opus 5.5, D15)
+Start: ls-remote origin claude/referee = 74fae0fa = HEAD after fetch + ff-only («Already up to date»; no stale clone, no other writer).
+Trunk claude/vibrant-johnson-nxvvxo 61a1175c merged (59c4c3e6, clean). Oink setup_oink.sh started in the background.
+1. Branch claude/referee. Head at start 74fae0fa: 2 ahead of / 180 behind trunk 61a1175c (merge-base e51a0b37). After the merge
+   59c4c3e6: 3 ahead, 0 behind (this commit makes 4 ahead).
+2. Open work: FL-G1 of R-P-IDEAL-FLIP (DEAD SC-ISO CONDITIONAL on the machine premise T^R(3) ≤ 8). Next step (Lead brief, STEP 1):
+   independent audit of L-COMP 9 box 27 (claude/l-comp 6f19564f, experiments/comp/box27/: cnf.py, ENCODING.md, pinck.py, log/R_d3_L9/)
+   against R104's IDEAL-ACYC text and the 𝓛^R_d definition in R105-R109: clause map, own independent checker, re-run of the 16
+   T ≥ 9 cubes with CaDiCaL/kissat, DRAT/LRAT if feasible -> docs/referee/R-T3R-audit.md. STEP 2 (premise packet) waits for routing.
+   docs/referee-2/ on this item is not read before my report is pushed.
+3. GAPS rows owned by REFEREE: none (open table GAP-A, GAP-C, G-S5-6, G-NEST, G-N1-LB, G-N5-TIME; referees appear in G-N5-TIME as
+   «referees later»).
+4. Rulings (verbatim), status in docs/DECISIONS-INDEX.md:
+   - D1 (active): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the
+     fleet's own, as wrong until it passes the gauntlet below.» and «Never downgrade the referee to save money.»
+   - D18 (active): «Focus on N5 and work toward proving it. [...] Clearly distinguish proven results from conjectures and open problems.»
+   - D20 (active, 2026-11-05): «We have reset the weekly usage, so we can again work faster no?» Lead reading L48 (active): full pace;
+     stop on paid overage; gates on demand.
+5. Trap: R105-E1 (s23's own miss): P-IDEAL-RED L-2 was MATCHED although its CHAINED definition lacked «as a mover other than h_t».
+   Check now: every DEFINITION in a line or encoding is diffed against the source text (here: each clause family of cnf.py against
+   R104 / 𝓛^R_d wording, not only the target length), before a verdict.
+
 ## HANDOVER NOTE (successor 23), written 2026-11-05T12:55Z by date -u (Opus 5.5, D15); context ~480k
 - Head after this commit: see git log; every item pushed by scripts/push.sh (verify PASS each time). Lead: session_014FBi6o334DvwT5Uw2kDfoN.
 - DONE (successor 23): R-XI-NEW-precheck; R-P-IDEAL-RED (+§C, add. 1); R-P-IDEAL-CUBE (+§C); R-P-IDEAL-M2 (+§C, R105 line check);
