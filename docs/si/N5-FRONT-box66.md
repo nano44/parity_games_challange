@@ -49,3 +49,33 @@ Not a TARGET.md claim. No polynomial bound. FLIP-ADD, SLOT-TRADE and G-N5-TIME s
     2 on the climbs).
 
 ## 1. m = 3 climbs (front.py --climb 3 p; max post subject to pre ≥ p; lower bounds; frozen copies in pin/)
+- Champions are frozen in experiments/si/box66/pin/ (sha1 in pin/pins.sha1). The live climb outputs are in live/, gitignored.
+- Each point used below was replayed with L-NEW's box 150 Gen (an independent step rule; replay inline in check66.sh).
+- Combined lower bound: max post over pre ≥ p, on climbs, L-NEW witnesses and the box 65 pins.
+  | pre ≥ p | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | max post | 8 | 7 | 7 | 5 | 5 | 5 | 3 | 1 | 0 |
+  | point | (0, 8) | (1, 7) | (2, 7) | (5, 5) | (5, 5) | (5, 5) | (6, 3) | (7, 1) | (8, 0) |
+  | pre + post | 8 | 8 | 9 | 10 | 10 | 10 | 9 | 8 | 8 |
+  - Sources: (0, 8), (7, 1) and (8, 0) from pin/f_m3_p4_s1.json; (1, 7) from pin/f_m3_p2_s1.json; (2, 7) from box65/pin/j1_m3_s1.json;
+    (5, 5) from L-NEW kf1_d4_t10; (6, 3) from pin/f_m3_p6_s1.json.
+- Frontiers of single genomes:
+  - pin/f_m3_p4_s1: (0, 8), (1, 7), (2, 6), (4, 5), (5, 3), (6, 2), (7, 1), (8, 0). This genome reaches T^R(3) = 8 under EACH
+    bit separately, yet pre + post ≤ 9 = T^R(3) + 1 everywhere: the m = 2 line, one higher in the middle.
+  - pin/f_m3_p2_s1: max sum 8. pin/f_m3_p6_s1: (0, 6), (1, 5), (6, 3), max sum 9.
+  - kf1_d4_t10: the single point (5, 5), sum 10. Its own T_0(G) = 5, so both halves are full runs of a SHORT genome.
+- READING (DATA only, m = 3):
+  - At the ends (pre ≤ 1 or pre ≥ 7) the data obeys pre + post ≤ T^R(3) = 8.
+  - The excess appears only in the middle, and the largest sum (10) is reached by a genome whose flip-free maximum is 5, not 8.
+  - CONJECTURE BULGE (lane, DATA): pre + post ≤ T^R(m) + c(m) with the maximum taken at pre ≈ post. If the
+    excess comes from «two half-length runs chained», then FLIP-ADD at k = 1 asks how long two flip-free runs of opposite bits
+    can be when they chain at a common stuck state. That is a question about pairs of runs, not about one long run.
+  - Not exact. An exhaustive m = 3 enumeration is out of reach for bff.c, since its rank-order loop is 12! per Ξ-graph.
+    L-NEW's SAT frame with a pre / post side condition is the exact tool.
+
+## 2. Process note
+- Commit 35599262 (pushed) contained a check66.sh that fails: a for-loop's last test returned 1 inside $(...) under set -e. The
+  same shell command stopped before wiring it into experiments/si/check.sh, so verify passed without running it.
+- The exact m = 2 output files in that commit are unaffected.
+- Fixed in the next commit: if/then in the loop; wired into check.sh; a negative control (expected set mutated to pre + post ≤ 4)
+  makes the check fail as it should.

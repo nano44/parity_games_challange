@@ -1,6 +1,18 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## BOX 66 (successor 39; Lead GO 12:31Z: exact one-flip (pre, post) frontier) — DONE
+- Note docs/si/N5-FRONT-box66.md; tools experiments/si/box66/{bff.c (= box 65 bfg.c + FRONTIER hook), front.py, check66.sh};
+  out/bff_m1.txt, out/bff_m2_p0..3.txt (EXACT); pin/ (m 3 climb champions, sha1 pin/pins.sha1); live/, log/ gitignored.
+- EXACT: m 1 pairs (0,0..2), (1,0..2), (2,0); m 2 pairs = {post <= 4, pre + post <= 5}: the full trade-off line pre + post =
+  T^R(2) + 1 at every pre = 1..4 (STUCK flips), plus (0, 4).
+- DATA m 3 (lower bounds, Gen-replayed): best post for pre >= p = 8 7 7 5 5 5 3 1 0 (p = 0..8); sums 8 8 9 10 10 10 9 8 8;
+  excess only in the middle; (5,5) from kf1_d4_t10 (T_0(G) = 5); pin/f_m3_p4_s1 reaches 8 under each bit but sum <= 9.
+- CONJECTURE BULGE (DATA). Exact m 3 needs SAT (bff.c rank loop is 12! per Xi-graph).
+- TRAP (bit me): 35599262 pushed a check66.sh that FAILS (a for-loop's last test returned 1 inside $(...) under set -e). In that
+  command the && chain stopped, so check.sh was never wired and verify passed without running it. Fixed in the next commit
+  (if/then, wired, negative control fires). Check: after appending to check.sh, grep the committed check.sh for the new line.
+
 ## BOX 65 (successor 39; Lead GO 11:12Z: FLIP-ADD by induction on the flip footprint j) — DONE
 - Note docs/si/N5-FOOT-box65.md; tools experiments/si/box65/{gain.py, bfg.c (= copy of claude/l-comp 557b045b box27/bfk.c + GAIN
   hook)}; out/ (climb champions, bfg results, kf1 trace), log/.

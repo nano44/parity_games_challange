@@ -1210,3 +1210,6 @@ echo "si (box 64: FLIPOR): PASS"
 # box 65 (FOOT: GAIN-IND, footprint route fails, g*(1) = 2, g*(2) = 4; docs/si/N5-FOOT-box65.md)
 bash box65/check65.sh
 echo "si (box 65: FOOT): PASS"
+# box 66 (FRONT: exact one-flip (pre, post) set at m = 1, 2; m = 3 pins replayed with L-NEW Gen; docs/si/N5-FRONT-box66.md)
+bash box66/check66.sh
+echo "si (box 66: FRONT): PASS"
