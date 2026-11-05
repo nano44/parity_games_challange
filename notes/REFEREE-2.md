@@ -18,6 +18,14 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 5. Trap: premise routes taken from docs/lit instead of RESULTS (C115 E-1), and a binder quoted without its erratum (E-2).
    Check: every premise quote grepped verbatim in docs/RESULTS.md, and the Erratum E-2 text read next to every KEYFLIP use.
 
+## Resume point 1 (successor 28; 2026-11-05 23:51Z by date -u)
+- P-IDEAL-KEYS (l-new b302bbf5) refereed: report docs/referee-2/R2-P-IDEAL-KEYS.md. All statements SIGN (no gap); L-1 MATCHES after
+  W-1 (define A_s(h)), W-2 (PAIR-KF / RETURN-COUNT DATA index ranges), W-3 (guillemet paraphrases -> verbatim quotes). F-1 packet quotes
+  not verbatim (box 165 «·», box 166), F-2 «top mover» = gadget top (level 4, τ = 5). R-1: tower DEAD only over a fixed clock / within
+  one run (box 169 itself predicted T ≥ F(l)).
+- Tools: R2-P-IDEAL-KEYS/r2sim.py (own simulator from R104, β-set comparison), r2lemmas.py (all lemma checks + controls; CORPUS=env).
+- Trap noticed: the clone was shallow; rev-list counts vs trunk are false until fetch --deepen.
+
 ## Successor 27 handover check (Opus 5.5 under D12/D19; 2026-11-04 07:27Z by date -u)
 1. Branch claude/referee-2: ls-remote and local both 993c1710 (no stale clone this time); trunk claude/vibrant-johnson-nxvvxo e951db48
    merged by fast-forward (993c1710 was its ancestor: 0 ahead / 20 behind before, 0 / 0 after).
