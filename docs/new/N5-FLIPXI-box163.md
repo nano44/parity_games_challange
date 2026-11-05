@@ -123,3 +123,29 @@ level 0 at (0, 0), both bits; 19,234 moving frames)
   move at a flip (PROVED (lane), immediate from the definition + MONO-FLIP termination). So it is a usable potential, but what it proves
   is only T_k(m) ≤ T_∞(m) for every k. It gives FLIP-ADD iff INF-ADD (T_∞(m) ≤ T^R(m) + O(m)) holds. Data T_∞ − T^R = 1, 5, ≥ 9, ≥ 8
   (m 1-4). The real ISO runs need only k ≤ 2, so R_∞ throws away the k ≤ 2 restriction that SUM_2 uses.
+
+## 7. Why SUM breaks at k = 3, and whether it can be iterated (Lead 15:02Z)
+- DATA (box163/pieces.py: an optimal ≤ k-flip run over all starts, exact, cut into its constant-bit pieces; lengths in order):
+  | genome | V_0 | k = 1 | k = 2 | k = 3 |
+  | --- | --- | --- | --- | --- |
+  | ISO_1_d4_t12 | 5 | 3, 5 (= 8) | 4, 3, 5 (= 12) | 1, 4, 3, 5 (= 13) |
+  | kf1_d4_t10 | 5 | 5, 5 (= 10) | 10 (k 2 adds nothing) | |
+  | f_m3_p4_s1 (L-SI) | 8 | 4, 5 (= 9) | 3, 1, 5 (= 9) | |
+  - Every piece after the first runs until its bit is stuck (its length equals the frozen remainder R_c at its start). In ISO_1 the
+    optimal (k + 1)-schedule is the optimal k-schedule with ONE MORE PIECE IN FRONT: the run grows backwards, one stuck run at a time.
+- Answer (READING). On this data, k = 3 does not break SUM through a structural parity effect. k = 2 starts and ends on the same bit
+  (c, 1 − c, c) and k = 3 does not, but the break is simply one more short piece (length 1) in front of the k = 2 run, which was already
+  tight (5 + 12 = 17). Nothing in the data says that an even number of flips (back to the original genome) is special.
+- Can SUM be iterated? The natural iterable form is per bit, and it is DEAD:
+  - W_c(G) := the largest number of moving frames that use bit c, over all schedules with ANY number of flips (box163/perbit.py, exact).
+    «W_c(G) ≤ T^R(m) + 1 for both c» would give T_∞(m) ≤ 2 T^R(m) + 2 for every k at once.
+  - DEAD at m = 2: box163/out/perbit_m2_s32.json (ISO 𝓛^R_3; sha1 a530b076…): W_0, W_1, T_∞, V_0 = 2, 6, 8, 4. W_1 = 6 > T^R(2) + 1 = 5.
+  - DEAD at m = 3: box163/out/perbit_m3_s42.json (sha1 cb3838c9…): W_0 = 10 > 9; also perbit_m3_s44.json: W_1 = 10.
+  - Found by hill-climb (perbit.py --climb); each instance re-evaluated by the exact search and checked R197-convention, ISO, acyclic.
+  - SUM_k with k = 3 is DEAD (§6). So no per-genome form iterates over k on the data. The iterable statement left is global:
+    CONJECTURE INF-2 (lane; DATA): T_∞(m) ≤ 2 T^R(m) + 1. m = 1: 3 ≤ 5; m = 2: T_∞(2) = 9 = 2·4 + 1 (EXACT here and in L-COMP 27);
+    m = 3: ≥ 17 = 2·8 + 1 (L-SI lower bound; my climbs reach 13). Like SUM it is multiplicative (factor 2) and does not give a
+    polynomial bound through W-ONLY.
+- No lane proof of SUM_1 yet. What a proof must use, from the piece data: a one-flip run whose two pieces are both near-full runs exists
+  only when each bit's runs are short (kf1: 5 + 5 with V_0 = 5), and a genome with a full T^R run under one bit has only one long piece
+  (f_m3_p4_s1: 4 + 5 after an 8-run is possible). SUM_1 says this exchange rate is at most 2 : 1.
