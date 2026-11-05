@@ -205,7 +205,7 @@ def build(T, E, fixall=False, lem=True):
     if os.environ.get("SYMB") == "1" and m0 == 0:   # R202 symmetry break (all levels free): sigma_l swaps the two level-l movers and
         # relabels the options of level l+1 (states flip, gates / faces move along); the sigma_l commute and sigma_l touches only levels
         # l, l+1, so fixing levels bottom-up puts one member of every orbit into: s_0(u_l) >= s_0(v_l) for every level l
-        for l in range(dtop): C.add([st[(0, 2 * l)], neg(st[(0, 2 * l + 1)])])
+        for l in range(1 if os.environ.get("SYM0") == "1" else 0, dtop): C.add([st[(0, 2 * l)], neg(st[(0, 2 * l + 1)])])   # SYM0=1: level 0 broken by the cube order f0 <= f1 instead
     if os.environ.get("CMIN") or os.environ.get("CMAXV"):   # R203: C_l = #steps moving some mover of level <= l; CMIN "l:b,..." -> C_l >= b
         from pysat.card import CardEnc, EncType
         ml = {}

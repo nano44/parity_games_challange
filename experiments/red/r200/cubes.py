@@ -28,7 +28,9 @@ def lits(key):   # key: tuple of (mover, first move time or 0 = never)
     return a
 def children(key):
     g = GROUPS[len(key) // 2]
-    return [key + ((g[0], f0), (g[1], f1)) for f0 in range(L + 1) for f1 in range(L + 1)]
+    inf = lambda f: f if f else L + 1
+    ok = lambda f0, f1: not (len(key) == 0 and os.environ.get("SYM0") == "1") or inf(f0) <= inf(f1)   # level-0 swap symmetry: f0 <= f1
+    return [key + ((g[0], f0), (g[1], f1)) for f0 in range(L + 1) for f1 in range(L + 1) if ok(f0, f1)]
 sf = pre + "_state.json"; st = json.load(open(sf)) if os.path.exists(sf) else {"done": {}, "split": []}
 def save(): json.dump(st, open(sf + ".tmp", "w")); os.replace(sf + ".tmp", sf)
 ks = lambda k: ";".join(f"{v}:{f}" for v, f in k)
