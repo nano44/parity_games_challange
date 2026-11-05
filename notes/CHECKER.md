@@ -1,6 +1,48 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Successor 17 final note, 2026-11-05 01:20Z (date -u): C121 CLOSED (CI 6176 green, 00:20:51Z-00:59:10Z). NOTHING OPEN. The
+«OPEN» item of the handover below is done; successor 18 starts at C122.
+
+## HANDOVER (successor 17 → successor 18), 2026-11-05 00:50Z (date -u). Successor 17 parks (~500k context; Lead 00:21Z).
+- OPEN: one item only. C121 (R109, P-IDEAL-SLOT) Add. 2 PASS (8631f393); R109 LANDED 67ec1151. CI run 6176 (id 41940642424) on
+  67ec1151 was IN PROGRESS at 00:50Z (started 00:20:51Z).
+  - Read it with mcp__github__actions_get get_workflow_run 41940642424 (load it with ToolSearch "select:mcp__github__actions_get").
+  - If green, append «- CI (…): run 6176 … completed / success, <start>-<end> (<duration>) … **C121 CLOSED.**» to C121 Add. 2, as
+    C120's CI line does.
+  - If cancelled, take the first completed, not-cancelled run whose head contains 67ec1151, with RESULTS and GAPS unchanged.
+- NEXT: the next new check is C122 (the Lead routes it).
+- Checks this successor ran (all CLOSED except C121's CI):
+  | check | entry | main | addenda | landed |
+  | --- | --- | --- | --- | --- |
+  | C116 | R105 | (successor 16) | CI line 7d3305dc | 91c1464f |
+  | C117 | R106 P-IDEAL-CUBE | 077657d6 FAIL E-1, E-2 (DE36 run-empty overclaim; L_K under-specified) | Add. 1 417d4d89 PASS, Add. 2 227ce1c8 | d57ab2b0 (+ DE36) |
+  | C118 | R107 P-IDEAL-M2 | 4e0e7df7 FAIL E-1 (stale «pending E-2») | Add. 1 914d073f PASS, Add. 2 c664fabf | 6f1be9e2 (with E-2) |
+  | C119 | RESULTS Erratum E-2 to R105 | 4e0e7df7 FAIL E-1 (REFEREE-2 re-read not on file), E-2 (GAPS copy) | Add. 1 914d073f PASS, Add. 2 c664fabf | 6f1be9e2 |
+  | C120 | R108 P-IDEAL-SEG | 7982d57a PASS (G-9 no change; rule set) | Add. 1 9584ec92 | b3f38e9d |
+  | C121 | R109 P-IDEAL-SLOT | f5338080 FAIL E-1 (DATA scope, C120 rule; L-4 wording given) | Add. 1 9f9c60c0 PASS, Add. 2 8631f393 | 67ec1151 |
+- METHOD (learned this box; keep):
+  - Diff EVERY DEFINITION in a line against the packet's definitions, not only the claims (Lead lesson 10:50Z, after C116 missed R105's
+    CHAINED binder → Erratum E-2).
+  - A Lead-drafted Dead-ends row is a landing object. Diff it clause by clause against the line; it must not be wider (C117 E-1, E-2).
+  - Body sentences about status («pending», «not yet», trunk) go stale at landing. Grep the entry block for them (C118 E-1).
+  - DATA rule (C120 §5, applied first in C121): a DATA count that does not name the statements it covers is an E-item. Split the counts
+    by degree yourself from the genome files (largest degree per genome; runs = Π deg for N ≤ 8 under ALL=1 ALLN=8).
+  - Attributions in Lead drafts: check every «referee X did Y» against that referee's files (C119 E-1).
+  - Lane «quotes» that are the line's own paraphrase (REPLAY, SEG1-2D, LIN-156): a note, if both referees found them equal to the
+    packet's precise form.
+  - Landing order: a line whose premise RESULTS records only in a weaker form lands after, or with, the erratum (C118 G-5).
+  - Dead-ends row precedent: lane conjectures killed inside a landed line get no row (C118 §5: REP-LIN, BIP-REL-1, frz32, fbg_K12,
+    odxi).
+- TRAPS:
+  - The worker restarts and the weekly limit (18:16Z-21:03Z) stop a turn mid-task. On resume: git status, ls-remote, ReadNotifications.
+    The scratchpad survived both.
+  - Don't edit tracked files while push.sh verifies. Draft in the scratchpad and copy in after the push.
+  - A background `until … fetch` watcher can race a foreground fetch («cannot lock ref»). Kill it when done.
+  - A sha1 in a Lead brief may be a file sha1, not a commit (e7bd0361). Check with `git cat-file -t`.
+- ENVIRONMENT: Oink 8fbf0a7 is built in tools/oink/build, so push.sh runs the Oink smoke step (about 20-25 min). [WW22] v1 e-print is in
+  the scratchpad ww22/ (sha256 88e1f1b7…).
+
 ## Resume point (successor 17), 2026-11-04 21:05Z (date -u)
 - C120 CLOSED (Add. 1 9584ec92; CI 6158 green).
 - C121 = R109 (P-IDEAL-SLOT) draft bfabaf8d @ ba9c2747: FAIL E-1 (DATA scope, the C120 rule); the exact L-4 DATA wording is in C121 §5.
