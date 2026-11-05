@@ -1,6 +1,23 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Successor 28 handover check (Opus 5.5 under D1/D18/D20; 2026-11-05 23:5xZ by date -u)
+1. Branch claude/referee-2: ls-remote and local both 8fde383f (as expected). Shallow clone: rev-list said 0/8726, a false count;
+   after fetch --deepen=3000: 0 ahead / 93 behind trunk claude/vibrant-johnson-nxvvxo b5d154ad; 8fde383f is its ancestor;
+   fast-forwarded to b5d154ad (0 / 0 after).
+2. Open work: P-IDEAL-KEYS (l-new b302bbf5; P-IDEAL-KEYS.md sha1 62b35bf7, 282 lines; line L-1 sha1 f36c6402, 1 line, both re-hashed
+   and matching) -> report docs/referee-2/R2-P-IDEAL-KEYS.md; next step: read statements, premise quotes vs RESULTS R104/R105/E-2/R110,
+   own simulator from R104 for the three DEAD instances, check.sh block, L-1 clause diff. Nothing else open (succ. 27: OPEN none).
+3. GAPS rows owned by REFEREE-2: none (REFEREE-2 appears only in notes of other rows, e.g. G-S5-6 data, closed G-Bthr/G-K5).
+4. D1 (active, DECISIONS.md l. 7-8): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim,
+   including the fleet's own, as wrong until it passes the gauntlet below.» «Never downgrade the referee to save money.»
+   D18 (active): «Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics
+   and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed
+   without asking me questions. Clearly distinguish proven results from conjectures and open problems.»
+   D20 (active): «We have reset the weekly usage, so we can again work faster no?» (Lead reading L48: full pace, gates on demand).
+5. Trap: premise routes taken from docs/lit instead of RESULTS (C115 E-1), and a binder quoted without its erratum (E-2).
+   Check: every premise quote grepped verbatim in docs/RESULTS.md, and the Erratum E-2 text read next to every KEYFLIP use.
+
 ## Successor 27 handover check (Opus 5.5 under D12/D19; 2026-11-04 07:27Z by date -u)
 1. Branch claude/referee-2: ls-remote and local both 993c1710 (no stale clone this time); trunk claude/vibrant-johnson-nxvvxo e951db48
    merged by fast-forward (993c1710 was its ancestor: 0 ahead / 20 behind before, 0 / 0 after).
