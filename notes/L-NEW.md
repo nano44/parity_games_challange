@@ -22,6 +22,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 ### BOX 167 (Lead 19:48Z: PM' with key flips): docs/new/N5-PMPRIME-box167.md, box167/pmprime.py, tight.py. Dynamic kappa (KF / WE)
   PROVED (LOCAL-KP + KEYFLIP) but empty (KF = T on dd_d5_F14 movers 8, 9) -> LEVEL-PRODUCT recursion, DEAD route. Static kappa = |W(x)|:
   CONJECTURE PM'_S (0 viol. / 263 files, slack >= 2), polynomial (T <= (D-1)N^2), fragile under box 166 composition if T^R superlinear.
+### BOX 168 (Lead 20:29Z: PM'_S kill test): docs/new/N5-CLOCK-box168.md, box168/pairflips.py, pairstat.py, climbclock.py. PM'_S
+  SURVIVES (max pair excess flips-|W| = 6 on 263 files + climbs; a kill needs desc <= excess-1 <= 5 and key-free capacity >= desc+4).
+  PROVED (lane) PAIR-KF (KF_x = flips of its W-target pair) => T <= N + sum flips. Open target CONJECTURE PAIR-LIN flips <= c|W| (data c = 2).
 ### Successor 54 handover check (STEP 0; written 2026-11-05 17:2xZ by date -u)
 1. claude/l-new: ls-remote a9851eba; local HEAD a9851eba = ls-remote after fetch + ff-only (not stale this time). Vs trunk
    claude/vibrant-johnson-nxvvxo (e4823bdd): 9 ahead / 9358 behind (count as printed by rev-list), merge-base 4c2e5124. Lane files only.
