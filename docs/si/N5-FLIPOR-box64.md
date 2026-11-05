@@ -37,7 +37,7 @@ Not a TARGET.md claim. No polynomial bound. FLIP-ADD, SLOT-TRADE, IDEAL-ACYC-POL
 - **DATA:**
   - EXACT per genome: T_3(3) ≥ 13, from L-NEW's ISO_1_d4_t12 (T_k = 5, 8, 12, 13, 13, … on that genome). This is new: box 160
     had T_2(3) ≥ 12 and no T_3(3).
-  - Hill-climb lower bounds on T_∞(m), unlimited flips: 3, 9, ≥ 16, ≥ 18 for m = 1, 2, 3, 4. m = 2 equals L-NEW's EXACT
+  - Hill-climb lower bounds on T_∞(m), unlimited flips: 3, 9, ≥ 17, ≥ 21 for m = 1, 2, 3, 4. m = 2 equals L-NEW's EXACT
     T_8(2) = 9. On one genome a single flip can add up to +5 (kf1_d4_t10); T_k curves in §3. Nothing kills FLIP-ADD.
 
 ## 1. Sources opened
@@ -144,13 +144,13 @@ state, level by level from the bottom (R104).
   - On every witness, max R = T_0 of the genome.
   - W1 gap max_s (L_(1−b)(s) − L_b(s)) = T_0 of the genome on every witness: no inequality of the form "restart ≤ remaining + C"
     with C < T_0(G).
-- climb.py: hill-climb lower bounds on T_∞(m) (DATA): m = 1: 3 (= LP max = FLIP-1); m = 2: 9; m = 3: ≥ 16; m = 4: ≥ 18.
+- climb.py: hill-climb lower bounds on T_∞(m) (DATA): m = 1: 3 (= LP max = FLIP-1); m = 2: 9; m = 3: ≥ 17; m = 4: ≥ 21.
   - T_k curves of the champions:
     - m = 2: 2 4 5 6 7 8 8 9.
-    - m = 3: 4 5 7 8 9 11 12 13 14 15 15 16.
-    - m = 4: 5 8 10 13 15 16 18.
+    - m = 3 (inf_m3_s1, T_∞ 17, LP 23): 4 6 8 10 12 13 15 16 17. Here +2 per flip for the first four flips.
+    - m = 4 (inf_m4_s2, T_∞ 21, LP 29): 6 8 9 9 11 13 14 16 17 18 18 19 19 (k ≤ 12).
   - Per-flip increments (T_k − T_(k−1) on one genome) reach +5 (kf1_d4_t10, k = 1) and +4 (ISO_1_d4_t12, k = 2); on the
-    champions they are +1 to +3. T_∞(3) ≥ 16 = 2·T^R(3) needs 11 flips on its champion.
+    champions they are +1 to +3. T_∞(3) ≥ 17 > 2·T^R(3) needs 8 flips on its champion.
 
 ## 4. READING and next
 - The OR lens says FLIP-ADD is not a warm-start statement. Per genome, a restart can be a full cold run (§0 (c)). What must be

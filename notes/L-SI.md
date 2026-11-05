@@ -8,7 +8,7 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   out/ + log/ = hill-climb champions (DATA). check.sh «box 64».
 - VERDICT: import FAILS (no warm-start / rule-change theorem; SAME-CUBE: a flip changes the rule, not the objective; any-start
   polynomial theorems need γ < 1 + Howard/Dantzig; EXACT kf1_d4_t10 restart = full T_0(G)). PROVED (lane): SAME-CUBE, FLIP-PATH,
-  BIT-CHAIN (+ flip footprint 1..j), TOP-FIRST. DATA: T_3(3) >= 13; T_inf(m) >= 3, 9, 16, 18 (m = 1..4).
+  BIT-CHAIN (+ flip footprint 1..j), TOP-FIRST. DATA: T_3(3) >= 13; T_inf(m) >= 3, 9, 17, 21 (m = 1..4).
 ### Queue
 1. FLIP-ADD by induction on the flip footprint j (§4 of the note): exact test «added steps <= c·j» in L-NEW's SAT frame.
 2. 38's queue items 2-5 (see below).
