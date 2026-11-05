@@ -60,6 +60,15 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   - R200 pcegar k3/ag_0: 58 no-goods (cores 3-7 literals); k3p2/ag_0 44; k3p2/ag_4 2. No-goods committed in r200/nogoods/; to resume,
     copy them to out/ (cp nogoods/pc_*_nogoods.json out/) and rerun «nohup timeout 36000 python3 pcegar.py out/ag/<t>.json 2 10
     out/pc_<tag>_T10 > out/pc_<tag>_T10.log 2>&1 &» (targets: python3 ../r199/allgates.py 3 3 out/ag/k3; ... 3 2 out/ag/k3p2).
+- 23:43Z restart again (5th): d 5 T>=16 and seg runs lost (2 h 38 min each, UNKNOWN). Lead 00:22Z: convert to resumable runs.
+- RESUMABLE RELAUNCH LINES (idempotent: rerunning continues; cwd experiments/red/r200; state files are tracked in r200/cubes/):
+  - R202 validation d 4 T>=14 (must be UNSAT, R197): SYMB=1 TL=900 P=2 nohup python3 cubes.py 4 14 cubes/d4_t14 > out/cubes_d4_t14.log 2>&1 &
+  - R202 d 5 T>=16: SYMB=1 TL=1200 P=2 nohup python3 cubes.py 5 16 cubes/d5_t16 > out/cubes_d5_t16.log 2>&1 &
+  - R204 d 5 seg1+tail>=14 (horizon 20): TMIN=0 SYMB=1 SEG=1t:14 CMIN=0:2 TL=1200 P=1 nohup python3 cubes.py 5 20 cubes/d5_seg14 > out/cubes_d5_seg14.log 2>&1 &
+  - R200 pcegar: cp -n nogoods/pc_k3_0_T10_nogoods.json out/; nohup timeout 43200 python3 pcegar.py out/ag/k3/ag_0.json 2 10 out/pc_k3_0_T10 > out/pc_k3_0_T10.log 2>&1 &
+  - cubes.py: partition on first-move times of movers (0,1), split on timeout (TL s) to (2,3) then (4,5); forked worker per cube,
+    killed at TL; state <prefix>_state.json written after every cube (done / split), reread on start. Validated d 3: T>=9 UNSAT (100 cubes,
+    166 s), T>=8 SAT (replay L 8), resume skips all.
 - Setup after a fresh container: pip install z3-solver python-sat; scripts/setup_oink.sh (for pins).
 - Things only I know:
   - xcnf is 10-50x faster than z3 on the r199 models; the k 3 d 6 hardness sits in steps 15-16 of the L 16 target (14-step prefix SAT).

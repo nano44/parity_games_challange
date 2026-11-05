@@ -238,7 +238,7 @@ def build(T, E, fixall=False, lem=True):
                 C.n = max(C.n, enc.nv); [C.add(list(c)) for c in enc.clauses]
     if os.environ.get("TMIN") == "1":   # R202: the run has at least L steps (deterministic run: step L nonempty => all earlier steps nonempty)
         C.add([mv[(L, v)] for v in range(N)])
-    info = dict(g0=g0, N=N, N0=N0, L=L, lev=lev, WT=WT, gate0=gate0, S0=S0, m0=m0, dtop=dtop, faces=faces, b=b, lt=lt, par=par, st=st, Gb=Gb, req=req, fi=fi)
+    info = dict(mv=mv, g0=g0, N=N, N0=N0, L=L, lev=lev, WT=WT, gate0=gate0, S0=S0, m0=m0, dtop=dtop, faces=faces, b=b, lt=lt, par=par, st=st, Gb=Gb, req=req, fi=fi)
     return C, info
 
 def decode(model, I):
