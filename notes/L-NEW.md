@@ -8,7 +8,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   L^R_d), RENEW, MERGE, RETURN (+ RETURN-COUNT). DEAD: PM (c025a4b6), PMV (box172/inst/dd_d5_F14.json 06f0e501, mover 6 VR 10 > 8),
   doubling-tower step (F <= T). Premises: R104 def; R105 ENC, MONO, XI-NEW, RISE, KEYFLIP (E-2 (E2c) binder); R110 def of L^R_d.
   box172/inst also holds L-RED's max_d4_L13 (f0735b61) and max_d5_L15 (ba963ace) for box 173. Never add JSON under box172 (corpus frozen).
-### BOX 173 (next): CONJECTURE RENEW-COUNT; I vs L vs d+1 on the d 5 maxima (claude/l-red r202 etc.).
+### BOX 173 RENEWCOUNT (docs/new/N5-RENEWCOUNT-box173.md; box173/chain.py, climbR.py): RENEW-COUNT DEAD as stated (chain C_m, d 2,
+  I = m/2); RENEW-COUNT_2 (2-wide) OPEN: max_d4_L13 I 4 / L 9, max_d5_L15 I 2 / L 13 (the I ~ L/2 reading does not continue); lane bound
+  I <= 2 + 2F(d-2) (exponential). Climbs: no gain. Next (Lead): exact max I on L^R_d by SAT (L-RED).
 
 ## Successor 55 handover check (STEP 0; written 2026-11-05 22:5xZ by date -u)
 1. claude/l-new: ls-remote e16112ba; local checkout was detached at e16112ba; fetch + ff-only -> HEAD e16112ba = ls-remote (not stale).
@@ -1411,6 +1413,12 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   (b), (c); length < 2(n + m)(n² − n + 1 + SBC)). DEAD: NOFB (n3all_maxph_0), W-frame twin N5-SFW cycles (theta_thf16, period 10; 49/413).
   DATA: correct on 1,038 library + families + hard families; SF ≈ ½ N5; runquad 264 → 2, topfix 7N + 43; switchbestexp N=10 619 vs 89, SBC 97.
   Open count SBC (CONJECTURE SF-POLY OPEN).
+
+## Dead ends (successor 55, boxes 172-173; docs/new/P-IDEAL-KEYS.md §7, docs/new/N5-RENEWCOUNT-box173.md §0-§1)
+- RENEW-COUNT as stated (box 171: renewing lower steps O(d) / poly(d) on every IDEAL-ACYC run): DEAD by the alternating Xi-chain C_m
+  (box173/out/chain_C8.json 6c9962ba, chain_C20.json e5e65ab3): d 2, T m, I = m/2. Obstruction: width; each interval a new top mover.
+  Survives restricted to 2-wide ladders (RENEW-COUNT_2), DATA I <= d + 1 on 163 R197 genome-start pairs, I 2 on max_d5_L15.
+- PM, PMV, doubling-tower step: frozen for the referees in P-IDEAL-KEYS §7 (instances c025a4b6, box172/inst/dd_d5_F14.json 06f0e501).
 
 ## Dead ends (successor 47, box 137; docs/new/N5-REL-box137.md §0, §4)
 - «Between two consecutive moves of x in one FL run some vertex below x changes W-tight key in a way that cannot recur without a sbar-
