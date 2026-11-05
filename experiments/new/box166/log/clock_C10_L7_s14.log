@@ -1,0 +1,6 @@
+restart 0 moves(x0) 2 T 6 best (2, 6)
+restart 1 moves(x0) 3 T 5 best (3, 5)
+restart 2 moves(x0) 3 T 7 best (3, 7)
+restart 3 moves(x0) 1 T 5 best (3, 7)
+restart 4 moves(x0) 1 T 4 best (3, 7)
+restart 5 moves(x0) 1 T 7 best (3, 7)

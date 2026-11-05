@@ -15,6 +15,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   moves(x) <= (deg-1)(1+desc(x)) (0 violations, 255 file paths, tight); KF does not follow the Xi-position (desc 1, KF 14); key-free
   diamond max moves 2^(desc/2+1)-1 (PM needs keys from desc 4). PROVED (lane): MERGE, PM-1 (desc <= 1, any schedule), CHARGE-PM.
   NEEDS: exact SAT kill query (L-RED xcnf). L-RED tree extracted via `git archive origin/claude/l-red experiments/red | tar -x -C <scratch>/lred2`.
+### BOX 166 (Lead 19:36Z: PM proof attempt at desc 4): PM DEAD. box166/out/KILL_PM_compose_dd_d5_F14.json (sha1 c025a4b6; N 15 deg 2,
+  T 14; mover 12 desc 4 moves 6; box150/check.py XSIM 0, all R105 checks 0). Mechanism: FREE-KP (free keys = key-free dynamics); 2 free
+  bits suffice (bbit.py: B 1 -> 4, B 2 -> 6, B 3 -> 7); the bits = key orders of two pairs of an L-RED clock (compose2.py). PMV (value
+  rises) DEAD too (dd_d5_F14 mover 6). Doc docs/new/N5-PMKILL-box166.md.
 ### Successor 54 handover check (STEP 0; written 2026-11-05 17:2xZ by date -u)
 1. claude/l-new: ls-remote a9851eba; local HEAD a9851eba = ls-remote after fetch + ff-only (not stale this time). Vs trunk
    claude/vibrant-johnson-nxvvxo (e4823bdd): 9 ahead / 9358 behind (count as printed by rev-list), merge-base 4c2e5124. Lane files only.

@@ -5,6 +5,8 @@ unrefereed) / DATA / CONJECTURE / DEAD (instance) / READING. Model: RESULTS R104
 MONO, KEYFLIP) as landed. Not a TARGET.md claim. No polynomial bound is proved. G-N5-TIME stays OPEN.
 
 ## 0. Answer
+- UPDATE (box 166, docs/new/N5-PMKILL-box166.md): CONJECTURE PM is DEAD. Instance box166/out/KILL_PM_compose_dd_d5_F14.json
+  (sha1 c025a4b6, degree 2, N 15, T 14): a mover with desc 4 moves 6 times. MERGE, PM-1, CHARGE-PM (as an implication) stand.
 - Measurement (§2; experiments/new/box165/permover.py, log/all.txt): on 177 IDEAL instance files (all L-RED JSON genomes at
   claude/l-red 002f7cd1 experiments/red/*, including the r197/lag maxima max_d4_L13 (T 13 = T^R(4)), dd_d5_F14, c4x_d5_F12,
   grow_top_N24 (T 64), and every L-NEW box 160-164 genome), for each mover: moves(x), KF_x (R105 KEYFLIP's key flips), desc(x) := the
