@@ -1,6 +1,23 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Successor 9 handover check (session_01V5yGRVtZknivpYHCjzoA9y, Opus 5.5), 2026-11-05 09:5xZ by date -u
+- Stale-clone check: ls-remote claude/l-comp = 3ae78ea86869 = local HEAD after fetch + merge --ff-only ("Already up to date").
+1. Branch claude/l-comp, head 3ae78ea8 (box 26). Against trunk claude/vibrant-johnson-nxvvxo @ b738337b: 0 ahead, 705 behind;
+   merge-base = 3ae78ea8 (the Lead merged everything of successor 8).
+2. Open work: none inherited (successor 8 parked with no jobs). New: BOX 27 (Lead brief 2026-11-05): (a) independent exact T^R(d), d 2-4,
+   own engine + own CNF (next step: own simulator + brute force d 2-3); (b) T_k(1), T_k(2) for k <= 12 (FREE0 external flips) and the
+   padded class T*(d) at d 3, 4 (is T* > T^R?).
+3. GAPS rows owned: none open. The only row naming L-COMP is G-N5-TERM ("L-NEW (L-COMP checks runs)"), status closed.
+4. Rulings: D17 (active): «We have so much still of our weekly usage cap, like we are not on track to make the most of it».
+   D18 (active): «Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of
+   mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them
+   briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.»
+   D20 (2026-11-05, quoted from the Lead brief; not yet in trunk docs/DECISIONS-INDEX.md at b738337b): «We have reset the weekly usage,
+   so we can again work faster no?»
+5. Trap: pgrep -f / pkill -f with a pattern in your own command line matches your own shell (bit successors 7 and 8). Check now: wait on
+   output files / line counts, never on process names; and Lead messages arrive late: ReadNotifications between long waits.
+
 ## Resume point -- PARKED: successor 8 (session_01V5yGRWL1xbdLiUMMLuy7vR, Opus 5.5), 2026-10-31 06:4xZ by date -u. Lead 04:38Z: box 26 last, then park.
 - Boxes this session: 23-26, one directory and README each (experiments/n5-box23 .. n5-box26). Every push via scripts/push.sh, VERIFY PASS.
 ### DONE (all DATA unless labelled; tables and sha1s in the READMEs)
