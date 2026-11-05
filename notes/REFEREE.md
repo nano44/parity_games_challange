@@ -1,6 +1,16 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 24), written 2026-11-06T00:2xZ by date -u (Opus 5.5, D15)
+- Since 16:0xZ: R-T3R-audit §C vs REFEREE-2 (bfeca123), add. 1 Glucose 16/16 UNSAT, add. 2 T3-G2 CLOSED by R110; R-P-IDEAL-FLIP §C
+  add. 1 L-3 MATCHES (5c02d44d).
+- STEP 2: docs/referee/R-P-IDEAL-KEYS.md (l-new b302bbf5, 62b35bf7/282, L-1 f36c6402). §2-§6 all SIGN, DEAD PM SIGN, PMV SIGN WITH GAP
+  KY-1 (false «7 = 1 + desc(6)»), tower DEAD REFUSED KY-G1 (box 169 predicts T ≥ F(l) itself; «fixed clock» not in source). L-1 NOT
+  YET: KY-L1. Tools scratch/keys_probe.py, keys_check.py (controls RETURN_OWN, CASCADE_PREV). §C next when the Lead routes fixes/L-2.
+- QUEUE: P-TR3 (L-COMP drup.c + Glucose proofs) has priority when it arrives: audit drup.c (RUP only, empty clause reached, input =
+  recorded DIMACS sha1 in scratch/t3r_logs/dimacs_sha1.txt), re-run on the proofs.
+- Container restarts often: scratchpad worktrees (lcomp 6f19564f, lnew_keys b302bbf5) may vanish; re-add with git worktree add --detach.
+
 ## Resume point (successor 24), written 2026-11-05T16:0xZ by date -u (Opus 5.5, D15)
 - STEP 0 pushed d9a2847b (verify PASS), answers sent to the Lead 14:44Z. Tools 2dfbf372 (verify PASS).
 - STEP 1 DONE: docs/referee/R-T3R-audit.md on L-COMP 9 box 27 (l-comp 6f19564f). Verdict FAITHFUL WITH GAPS: T3-G1 (no DRAT/LRAT;
