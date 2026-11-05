@@ -1,6 +1,28 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## BOX 64 (successor 39; written 2026-11-05 (date -u: see commit); Lead brief 2026-11-05, OR/PI lens on FLIP-ADD)
+### Resume point
+- Note docs/si/N5-FLIPOR-box64.md. Tools experiments/si/box64/{flipdp.py, bitchain.py, climb.py, check64.sh}; ref/ = read-only copies
+  of claude/l-new 6f347876 box150/check.py, box139/{paths.py, fastcyc_r178.py}, box161/ext.py; wit/ = L-NEW box160/out witnesses;
+  out/ + log/ = hill-climb champions (DATA). check.sh «box 64».
+- VERDICT: import FAILS (no warm-start / rule-change theorem; SAME-CUBE: a flip changes the rule, not the objective; any-start
+  polynomial theorems need γ < 1 + Howard/Dantzig; EXACT kf1_d4_t10 restart = full T_0(G)). PROVED (lane): SAME-CUBE, FLIP-PATH,
+  BIT-CHAIN (+ flip footprint 1..j), TOP-FIRST. DATA: T_3(3) >= 13; T_inf(m) >= 3, 9, 16, 18 (m = 1..4).
+### Queue
+1. FLIP-ADD by induction on the flip footprint j (§4 of the note): exact test «added steps <= c·j» in L-NEW's SAT frame.
+2. 38's queue items 2-5 (see below).
+### Sources opened (box 64; literature pass by a subagent of this session, two texts re-read by me: [WW22] §2.2 l. 255-263, [SS04] §4 l. 433-441)
+- [WW22] arXiv:2207.05985 (Def. 4 USO; §2.2 Matoušek-type, decomposable in prose); [SS04] Schurr-Szabó DCG 31(4) 2004 §4 (combed /
+  decomposable defs), Prop. 1, Thm 1; [HMZ13] arXiv:1008.0530 Thm 6.5 (γ < 1); [Ye11] DOI 10.1287/moor.1110.0516 Thm 4.2, Cor. 4.1
+  (γ < 1); [PY15] arXiv:1208.5083 Thm 3.7 / 4.8; [MC94] DOI 10.1287/ijoc.6.2.188 Thm 2.8, Cor. 2.9-2.10, §2.1 (one-edge start, 2^n − 1);
+  [Fe10] arXiv:1003.3418 Thms 17-18; [MS99] arXiv:1301.6718 Thm 7; [MSz06] Adv. Math. 204 (2006) Thm 1; [GHZ98] DOI 10.1007/PL00009827
+  Thms 1-2; [Th17] arXiv:1706.09380 Thms 3, 4, 8; [AF13] arXiv:1305.3944 Thm 8. NOT opened: Williamson Hoke 1988; HPZ SODA 2014;
+  HKZ SODA 2014 (nothing rests on them).
+### Dead ends (box 64)
+- «Restart of PI on the swapped genome costs O(m) beyond the remaining run» (per-restart warm-start form): kf1_d4_t10 (m 3), seg 5 =
+  T_0(G), then restart R 5 = T_0(G) from the stuck state; W1 gap = T_0(G) on all 8 witnesses (check64.sh pins).
+
 ## Successor 39 handover check (written 2026-11-05T09:52Z (date -u); successor 39 = session_01V5yGRYm5eKzWv7G3F5cuYS (Opus); 38 was session_01V5yGRaKVKb8btaPGXC6cJ2)
 - CORRECTION: commit 14633be6 carries a wrong Claude-Session trailer (38's id); the author is session_01V5yGRYm5eKzWv7G3F5cuYS. Not amended (no history rewrite).
 1. Branch claude/l-si. Local clone was STALE at c7f003066 (box 53d); fetched, fast-forwarded to origin head 96fb62cb3 (P-N5-S4B fixes +

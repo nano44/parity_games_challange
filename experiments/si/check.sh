@@ -1204,3 +1204,6 @@ s=lambda k: sum(d[k] for d in seen.values())
 print(len(seen), s('STATES'), s('CHECKED'), s('SKIPPED'), s('RHOS'), s('OPTV'), s('ODDFB'), s('S4AV'))")
 [ "$o" = "813 5726 5058 668 213311 0 29 0" ] || { echo "P-N5-S4B L-1: distinct counts: $o"; exit 1; }
 echo "si (P-N5-S4B L-1 pinned, distinct counts): PASS"
+# box 64 (FLIPOR: SAME-CUBE / FLIP-PATH / BIT-CHAIN; docs/si/N5-FLIPOR-box64.md)
+bash box64/check64.sh
+echo "si (box 64: FLIPOR): PASS"
