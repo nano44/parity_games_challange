@@ -1,7 +1,7 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
-## Successor 28 handover check (Opus 5.5 under D1/D18/D20; 2026-11-05 23:5xZ by date -u)
+## Successor 28 handover check (Opus 5.5 under D1/D18/D20; 2026-11-05 23:44Z by date -u)
 1. Branch claude/referee-2: ls-remote and local both 8fde383f (as expected). Shallow clone: rev-list said 0/8726, a false count;
    after fetch --deepen=3000: 0 ahead / 93 behind trunk claude/vibrant-johnson-nxvvxo b5d154ad; 8fde383f is its ancestor;
    fast-forwarded to b5d154ad (0 / 0 after).
