@@ -12,6 +12,11 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
    D12 (active): «WE can run referees on opus too temperoraly». D19 (active): «we have 9% usage left until tomorrow night, make use of it».
 5. Trap: premise routes taken from docs/lit instead of RESULTS (C115 E-1). Check: every premise quote grepped verbatim in docs/RESULTS.md.
 
+## Resume point 7 (successor 27; 2026-11-05 12:49Z by date -u)
+- FLIP report dc622d03 pushed. T^R(3) audit (l-comp 6f19564f box27, cnf.py fd882af1): R2-T3R-audit.md. Encoding faithful; SYM sound;
+  16 cubes cover all starts; ISO off proven by CNF size (58,896 vs 30,994 with ISO); my re-run 16/16 UNSAT; pin test vs MY simulator
+  0 disagreements on 414 pairs. G-FLIP-1 CLOSES on my side (caveat: no DRAT). Extracted l-comp copy in $SCRATCH/lcomp.
+
 ## Resume point 6 (successor 27; 2026-11-05 11:17Z by date -u)
 - SLOT L-4 MATCHES (c11e2490). P-IDEAL-FLIP (l-new 9effea1f; packet 92803bd5, line 36418d16): R2-P-IDEAL-FLIP.md. W-ONLY, NOW-ONCE, SWAP,
   FLIP-1 SIGN; DEAD SC-ISO SIGN WITH GAP G-FLIP-1 (machine premise T^R(3) <= 8; close = independent encoding + referee encoding check).

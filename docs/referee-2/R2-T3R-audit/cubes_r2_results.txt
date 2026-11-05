@@ -1,0 +1,16 @@
+0 build d 3 L 9 P None W R SYM 1 CUBE 2:0,3:0,4:0,5:0, FREE0 None KF None vars 58896 clauses 204036 0.1 s || RESULT d 3 T >= 9 P None W R: UNSAT 292.3 s
+1 build d 3 L 9 P None W R SYM 1 CUBE 2:1,3:0,4:0,5:0, FREE0 None KF None vars 58896 clauses 204036 0.1 s || RESULT d 3 T >= 9 P None W R: UNSAT 152.2 s
+2 build d 3 L 9 P None W R SYM 1 CUBE 2:0,3:1,4:0,5:0, FREE0 None KF None vars 58896 clauses 204036 0.1 s || RESULT d 3 T >= 9 P None W R: UNSAT 163.8 s
+3 build d 3 L 9 P None W R SYM 1 CUBE 2:1,3:1,4:0,5:0, FREE0 None KF None vars 58896 clauses 204036 0.2 s || RESULT d 3 T >= 9 P None W R: UNSAT 340.5 s
+4 build d 3 L 9 P None W R SYM 1 CUBE 2:0,3:0,4:1,5:0, FREE0 None KF None vars 58896 clauses 204036 0.1 s || RESULT d 3 T >= 9 P None W R: UNSAT 297.9 s
+5 build d 3 L 9 P None W R SYM 1 CUBE 2:1,3:0,4:1,5:0, FREE0 None KF None vars 58896 clauses 204036 0.1 s || RESULT d 3 T >= 9 P None W R: UNSAT 161.0 s
+6 build d 3 L 9 P None W R SYM 1 CUBE 2:0,3:1,4:1,5:0, FREE0 None KF None vars 58896 clauses 204036 0.1 s || RESULT d 3 T >= 9 P None W R: UNSAT 149.9 s
+7 build d 3 L 9 P None W R SYM 1 CUBE 2:1,3:1,4:1,5:0, FREE0 None KF None vars 58896 clauses 204036 0.1 s || RESULT d 3 T >= 9 P None W R: UNSAT 243.4 s
+8 build d 3 L 9 P None W R SYM 1 CUBE 2:0,3:0,4:0,5:1, FREE0 None KF None vars 58896 clauses 204036 0.1 s || RESULT d 3 T >= 9 P None W R: UNSAT 269.2 s
+9 build d 3 L 9 P None W R SYM 1 CUBE 2:1,3:0,4:0,5:1, FREE0 None KF None vars 58896 clauses 204036 0.1 s || RESULT d 3 T >= 9 P None W R: UNSAT 147.3 s
+10 build d 3 L 9 P None W R SYM 1 CUBE 2:0,3:1,4:0,5:1, FREE0 None KF None vars 58896 clauses 204036 0.1 s || RESULT d 3 T >= 9 P None W R: UNSAT 152.6 s
+11 build d 3 L 9 P None W R SYM 1 CUBE 2:1,3:1,4:0,5:1, FREE0 None KF None vars 58896 clauses 204036 0.1 s || RESULT d 3 T >= 9 P None W R: UNSAT 229.0 s
+12 build d 3 L 9 P None W R SYM 1 CUBE 2:0,3:0,4:1,5:1, FREE0 None KF None vars 58896 clauses 204036 0.1 s || RESULT d 3 T >= 9 P None W R: UNSAT 279.9 s
+13 build d 3 L 9 P None W R SYM 1 CUBE 2:1,3:0,4:1,5:1, FREE0 None KF None vars 58896 clauses 204036 0.1 s || RESULT d 3 T >= 9 P None W R: UNSAT 128.5 s
+14 build d 3 L 9 P None W R SYM 1 CUBE 2:0,3:1,4:1,5:1, FREE0 None KF None vars 58896 clauses 204036 0.1 s || RESULT d 3 T >= 9 P None W R: UNSAT 135.8 s
+15 build d 3 L 9 P None W R SYM 1 CUBE 2:1,3:1,4:1,5:1, FREE0 None KF None vars 58896 clauses 204036 0.1 s || RESULT d 3 T >= 9 P None W R: UNSAT 303.8 s
