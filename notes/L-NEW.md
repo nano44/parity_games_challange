@@ -1,6 +1,28 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## HANDOVER (successor 52, PARKED 2026-11-05 ~09:0xZ by date -u; context large, second container restart 08:59Z)
+### DONE (every push via scripts/push.sh, VERIFY PASS; Lead informed at each box end)
+- Step 0 (a5583cae). Box 160 SLOT-TRADE channel split (docs/new/N5-SLOT-box160.md; 96650e2c .. e5aea8ed): W-ONLY, NOW-ONCE, FLIP-1
+  PROVED (lane); exact table d 3 (8 / ISO 7 / NOW 6 / NOL0 4; one level-0 mover 6 / 5 / 5), d 4 NOL0 = 8, ISO >= 12, NOW >= 10,
+  one level-0 mover ISO >= 10, NOW >= 9; T_k(1) = 2,3,3,3; T_k(2) = 4,5,7,8,8 (k 0-4), 9 (k 8); T_1(3) >= 10; DEAD single-channel
+  seg1+tail <= T(d-1) at d 4 (iso_d4_st9); adversarial-level-0 relaxation d 3 >= 10.
+- Box 161 FLIP-ADD interim (docs/new/N5-FLIPADD-box161.md, eec8c4ef): Lemma SWAP PROVED (lane); one flip adds 1, 1, >= 2 (m 1-3).
+  No potential checked exactly yet. Lead knows (07:0xZ report).
+### IN FLIGHT: nothing (container restarts 07:25Z and 08:59Z killed every run). UNKNOWN / killed: ISO d4 T>=13 and NOW d4 T>=11
+  (~5 h each), d4 seg1+tail queries (stopped), kf1_d4_t11 (T_1(3) >= 11), ext_d3_t11, ISO FRZ d4 t11, NOW FRZ d4 t10, kf 4 2 13 never ran.
+  L-RED R205 (Lead 03:48Z) has T_2(4) and T_k(3), k <= 4.
+### NEXT for successor 53 (Lead decides): box 161 §3: exact SAT checks of state potentials on E_m (add «Phi(s_t) >= Phi(s_(t-1)) at a
+  non-flip step» to iso.py FREE0; UNSAT = strict decrease). Warning (my reading): a pure armed-count potential with level weights only
+  reproduces LEVEL-PRODUCT; a useful one must use the Xi side (unhappy movers, MONO value vector). Relaunch any killed run you need:
+  re-extract LRED (`git archive 5f3e89e1 experiments/red/r178 experiments/red/r187 experiments/red/r199 experiments/red/r200 | tar -x -C
+  <scratch>/lred`), delete the target's log if it has no RESULT, drop its line from box160/log/queue.done, run box160/queue.sh.
+### Things only I know (successor 52):
+- push.sh pushes only the commit it verified; committing during a running push is safe but needs another push afterwards.
+- New solver logs go to *.part (gitignored) and are renamed at the end; a container restart loses .part logs (no partial result).
+- Never edit a run_*.sh while a copy runs (bash reads scripts lazily; I did it once, the running copies kept the old text).
+- d 4 ISO / NOW maxima at T 13 / 11 need L-RED's cube driver (monolithic CaDiCaL: > 5 h, no answer).
+
 ## Resume point (successor 52, Opus 5.5, session_01V5yGRY7HXy7DrLt8zSXsyD; started 2026-11-05 02:00Z by date -u)
 ### BOX 160 SLOT-TRADE (Lead brief 2026-11-05 ~01:5xZ; docs/new/N5-SLOT-box160.md; experiments/new/box160/)
 - Tools: box160/iso.py = exact max-T driver on R197 2-wide ladders, adds clauses to L-RED's xcnf.py (read-only copy of claude/l-red
