@@ -73,7 +73,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   - Paused 01:1xZ for the d 4 validation: pcegar k3/ag_0 (resume line above).
   - 03:47Z d 5 T>=16 cubes started (P=1; raise P after d 4 ends by killing and rerunning the same line). R204 d 5 monolithic stopped.
   - QUEUED R205 (Lead 03:48Z, L-NEW box 160 on claude/l-new 96650e2c: xcnf_free0.py, iso.py): T_2(4) (= ISO at d 5) and T_k(3), k 1..4,
-    in the cube driver; after R202 has its cores.
+    in the cube driver; after R202 has its cores. Lead 04:21Z: needs box160/xcnf_free0.py (FREE0=1) AND box160/iso.py (ISO, b_0 flips,
+    KF seqcounter, every step moves a level >= 1 mover, LEM=0 forced); run «LRED=<dir> FREE0=1 ISO=1 KF=k python3 iso.py d t out.json»,
+    d = m + 1; validate T_k(1) = 2,3,3,3 and T_k(2) = 4,5,7,8,8; scope = T_2(4), T_3(3), T_4(3) only (L-NEW keeps T_1(3), T_2(3)).
 - Setup after a fresh container: pip install z3-solver python-sat; scripts/setup_oink.sh (for pins).
 - Things only I know:
   - xcnf is 10-50x faster than z3 on the r199 models; the k 3 d 6 hardness sits in steps 15-16 of the L 16 target (14-step prefix SAT).
