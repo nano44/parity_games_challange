@@ -1,7 +1,8 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
-## Successor 39 handover check (written 2026-11-05T09:52Z (date -u); session_01V5yGRaKVKb8btaPGXC6cJ2 is 38; this is successor 39, Opus)
+## Successor 39 handover check (written 2026-11-05T09:52Z (date -u); successor 39 = session_01V5yGRYm5eKzWv7G3F5cuYS (Opus); 38 was session_01V5yGRaKVKb8btaPGXC6cJ2)
+- CORRECTION: commit 14633be6 carries a wrong Claude-Session trailer (38's id); the author is session_01V5yGRYm5eKzWv7G3F5cuYS. Not amended (no history rewrite).
 1. Branch claude/l-si. Local clone was STALE at c7f003066 (box 53d); fetched, fast-forwarded to origin head 96fb62cb3 (P-N5-S4B fixes +
    L-1, successor 38's last push). Against trunk claude/vibrant-johnson-nxvvxo b738337b3 (2026-11-05 08:02Z): 0 ahead / 447 behind;
    merge-base = 96fb62cb3 itself (trunk already contains all of claude/l-si).
