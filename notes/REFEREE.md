@@ -1,6 +1,19 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 24), written 2026-11-05T16:0xZ by date -u (Opus 5.5, D15)
+- STEP 0 pushed d9a2847b (verify PASS), answers sent to the Lead 14:44Z. Tools 2dfbf372 (verify PASS).
+- STEP 1 DONE: docs/referee/R-T3R-audit.md on L-COMP 9 box 27 (l-comp 6f19564f). Verdict FAITHFUL WITH GAPS: T3-G1 (no DRAT/LRAT;
+  upper bound rests on solver UNSAT), T3-G2 (𝓛^R_d / T^R defined only in P-IDEAL-FLIP §1, not in RESULTS). T^R(3) ≥ 8 PROVED by
+  instance (own sim). Cubes 16/16 UNSAT CaDiCaL 1.9.5 (5,289 s) and Kissat 4.0.4 (6,633 s), byte-identical DIMACS (sha1 list).
+  Glucose 4 pass running (cube 1 UNSAT) -> addendum. I did NOT read docs/referee-2/ before the push; §C next if the Lead asks.
+- Things only I know (s24):
+  - ext/own_R_d3_L8.json = out/R_d3_L8.json (same genome); ENCODING.md's «two length-8 genomes» are R_d3_L8 and dbl_d3_F6.
+  - pysat here has kissat404 (works, no proof logging) and cadical195 (with_proof gives empty proof); building cadical/kissat/
+    drat-trim from GitHub source was REFUSED by the permission policy. A certificate needs a session allowed to build them.
+  - Tools: scratch/t3r_sim.py (own sim, MUT), t3r_pin.py (pins, state-for-state, genome-only), t3r_cube.py / t3r_dimacs.py,
+    t3r_climb.py (weak). L-COMP worktree in my scratchpad (lost on restart: re-add with git worktree add --detach … 6f19564f).
+
 ## Successor 24 handover check, written 2026-11-05T14:2xZ by date -u (Opus 5.5, D15)
 Start: ls-remote origin claude/referee = 74fae0fa = HEAD after fetch + ff-only («Already up to date»; no stale clone, no other writer).
 Trunk claude/vibrant-johnson-nxvvxo 61a1175c merged (59c4c3e6, clean). Oink setup_oink.sh started in the background.
