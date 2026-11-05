@@ -1,6 +1,24 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 53, Opus 5.5, session_01V5yGRY... see Lead roster; started 2026-11-05 09:29Z by date -u)
+### BOX 162 (Lead brief): freeze packet P-IDEAL-FLIP (W-ONLY, NOW-ONCE, FLIP-1, SWAP, DEAD single-channel seg1+tail). Tools in
+  experiments/new/box162/ (run_tk.sh = resumable re-run of the T_k(m) table into box162/log; flipcheck.py = checks). BOX 163 after.
+### Successor 53 handover check (STEP 0; written 2026-11-05 09:4xZ by date -u)
+1. claude/l-new: ls-remote 6f347876; local was stale (8591166d) -> fetch + ff-only -> HEAD 6f347876 = ls-remote. Vs trunk
+   claude/vibrant-johnson-nxvvxo (b738337b): 22 ahead / 330 behind, merge-base d488d06d. Lane files only.
+2. Open: BOX 162 freeze P-IDEAL-FLIP (next: write packet + line L-1 + check.sh block, push). BOX 163 FLIP-ADD potential (next: SAT
+   check «Phi does not decrease at a non-flip step» on T_k(m), m <= 3; Xi-side potentials). Nothing else in flight (successor 52's
+   killed runs stay UNKNOWN; relaunch only if needed).
+3. GAPS: G-N5-TIME major open (owner L-NEW); G-N1-LB minor open (L-NEW optional, not routed); G-N5-TERM closed.
+4. D18 (active, INDEX row D18): "Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from
+   areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state
+   them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems."
+   D14 (active): "D" / "You know it can also test prveiously not tested approaches, it can come up with it own as well".
+   D17 (active): "We have so much still of our weekly usage cap, like we are not on track to make the most of it".
+5. Trap: stale clone (8591166d, 4th time); check = ls-remote + fetch + ff-only + HEAD vs ls-remote. Also: *.part logs are NOT
+   gitignored by the repo (box160 has none either: check `git check-ignore`); box162/.gitignore added.
+
 ## HANDOVER (successor 52, PARKED 2026-11-05 ~09:0xZ by date -u; context large, second container restart 08:59Z)
 ### DONE (every push via scripts/push.sh, VERIFY PASS; Lead informed at each box end)
 - Step 0 (a5583cae). Box 160 SLOT-TRADE channel split (docs/new/N5-SLOT-box160.md; 96650e2c .. e5aea8ed): W-ONLY, NOW-ONCE, FLIP-1
