@@ -139,3 +139,37 @@ Every definition was diffed against the source text (trap R105-E1), not only the
 ## 6. Diff against TARGET.md
 - The statement is about the IDEAL model of R104 only (a combinatorial run length on a finite class). It concerns no parity game,
   no running time of a solver and no cost model. Not M3, not M4, not a gauntlet step. G-N5-TIME stays OPEN.
+
+## §C. Comparison with REFEREE-2's audit (2026-11-05, after my report was pushed at 776d0fdf; Lead 16:55Z)
+- Read only after my push: docs/referee-2/R2-T3R-audit.md at claude/referee-2 d1c4a530 (an ancestor of origin; file sha1 75197995…).
+- AGREE (independently reached, the same on every point):
+  - clause map: every R104 element MATCHES in both (wiring, Ξ-targets over all movers + exit, acyclicity via a strict mover order,
+    ranks, per-level gate orders with the same «only same-level gates meet» argument, hop-unrolled chains, the Δ rule with Δ ≠ ∅, A-sets
+    at the old state, keys under the new state, the T ≥ L target with both stop rules);
+  - SYM SOUND by the same level-0 relabelling argument, and both note it would be unsound at levels ≥ 1;
+  - the 16 cubes cover every start; both re-ran the 16 cubes under CaDiCaL 1.9.5 (16/16 UNSAT, 58,896 / 204,036 per cube);
+  - both state the missing DRAT/LRAT certificate.
+- REFEREE-2 HAS, I DID NOT:
+  - an explicit proof that ISO was OFF in the lane's logged runs, by counts: ISO=1 gives 30,994 vars / 103,952 clauses, ISO=0 gives
+    58,896 / 204,036, and every lane log reads 58,896 / 204,036. I RE-MEASURED both counts on cube 0 at 6f19564f: EQUAL. My own
+    check was the same counts on my rebuild with ISO unset, which shows my re-run was ISO-free but not, by itself, the lane's;
+    REFEREE-2's comparison closes that. CONCUR.
+  - pinned runs on the 50 𝓛^R genomes of box160/out and box162/out, including d = 4 (T up to 12). These exercise cnf.py at d = 4,
+    which my checks (d 2, 3 only) do not. Not needed for d = 3, but a real extra.
+- I HAVE, REFEREE-2 DID NOT:
+  - state-for-state comparison of the pinned CNF with my simulator (REFEREE-2 compares lengths, T SAT / T + 1 UNSAT);
+  - four mutation controls on the encoding, each caught (94-126 disagreements), so the pin test is shown to bite;
+  - scale: 12,384 distinct pinned runs + 345 genome-only tests (REFEREE-2: 414 pairs);
+  - a second SOLVER on byte-identical DIMACS: Kissat 4.0.4, 16/16 UNSAT (REFEREE-2 relies on CaDiCaL only, plus L-RED's second
+    ENCODING, also solved with CaDiCaL); DIMACS sha1 per cube recorded;
+  - 0 empty clauses in all 16 cube CNFs (a trivial-UNSAT check);
+  - T3-G2: 𝓛^R_d / T^R are not defined in RESULTS (only in P-IDEAL-FLIP §1).
+- DIFFER (labelling, not substance):
+  - REFEREE-2 calls the missing certificate a «residual caveat … not a gap» and writes «G-FLIP-1 CLOSES on my side … The DEAD SC-ISO
+    may drop CONDITIONAL», premise cited «not as a theorem». I list it as gap T3-G1 and leave dropping CONDITIONAL to the Lead's L42/L43
+    reading. Both of us say the upper bound rests on solver correctness and must be cited as a machine result; the difference is only
+    whether that suffices for «established». Under the Lead's 16:55Z plan the difference disappears if T3-G1 closes by an audited
+    in-fleet RUP check (L-COMP drup.c on Glucose 4 proofs); I will audit drup.c inside P-TR3.
+  - REFEREE-2 counts L-RED's xcnf.py as an independent encoding (from its FLIP report). I did not audit xcnf.py, so I do not rely on it.
+- No disagreement on any fact. Joint position: cnf.py is a faithful encoding for the full 𝓛^R_3; T^R(3) ≥ 8 by instance; T^R(3) ≤ 8 by
+  solver UNSAT, uncertified until P-TR3's RUP check is audited.
