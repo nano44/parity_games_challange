@@ -1,6 +1,32 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## HANDOVER (successor 54, PARKING 2026-11-05 ~22:4xZ by date -u; Lead 22:08Z: box 171 then handover + park)
+### DONE (every push via scripts/push.sh, VERIFY PASS; Lead informed at every box end)
+- Step 0 (99c86c45). Box 164 ENCODE (9e1a6b02, b69a18d7): CHARGE, NO-ENTROPY, CHAIN-UP PROVED (lane); every constant record multiplicity
+  DEAD (iso_d3_6, kf0_d4_t8, box164/out/fkclimb_k2_m4_mu3_T11 0593b229); framework closed.
+- Box 165 PERMOVER (9a192d7b, fa28d7f9): MERGE, PM-1, CHARGE-PM PROVED; key-free PM exponential (diamond 2^(desc/2+1)-1).
+- Box 166 PMKILL (d3eeb8b3): CONJECTURE PM DEAD, box166/out/KILL_PM_compose_dd_d5_F14.json (c025a4b6; XSIM 0); FREE-KP, RETURN PROVED;
+  PMV DEAD; 2 free key bits suffice (bbit.py).
+- Box 167 PMPRIME (89c05d7c): LOCAL-KP PROVED; dynamic kappa = LEVEL-PRODUCT (DEAD route); CONJECTURE PM'_S (static |W|).
+- Box 168 CLOCK (a26833c1): PAIR-KF PROVED (KF_x = flips of x's W-target pair); PM'_S survives; open target CONJECTURE PAIR-LIN.
+- Box 169 PAIRLIN (f30efa74): CASCADE PROVED (one flip per pair per step; wide, not long); induction = LEVEL-PRODUCT; step attained on
+  dd_d5_F14; INF-2 DEAD (L-SI inf18_m3, re-run).
+- Box 170 TOWER (0fd70166): doubling tower DEAD as stated (F <= T; gadgets add no steps); T1_dd_top8 (9aead80e, XSIM 0, PM violation 8>7);
+  R104 Corollary REAL-IDEAL quoted (scope: given start pairs, acyclic, nothing about S3).
+- Box 171 FROZEN (this push): RENEW PROVED (corollary of R105 XI-NEW/RISE): top-only intervals are renewed by Xi-rises from the lower step
+  before; I <= 6 on 267 files, I/L ~ 0.44-0.5 on the T^R-type maxima; CONJECTURE RENEW-COUNT open. No proof, no kill.
+### OPEN (for the Lead): PAIR-LIN (R207 data from L-RED), RENEW-COUNT (needs T^R(5)/T*(5) maxima), PM'_S (fragile). G-N5-TIME OPEN.
+### IN FLIGHT: nothing.
+### Things only I know (successor 54)
+- L-RED's tree: `git fetch origin claude/l-red; git archive origin/claude/l-red experiments/red | tar -x -C <scratch>/lred2` (002f7cd1
+  used); r197/lag holds the ladders dd/dbl/c4x/max_d4_L13; r178/r187 the degree-3 sets. Scratch is lost on restart: re-extract.
+- Shared tools: box165/permover.py (measure, reach), box167/pmprime.py (wclos), box166/verify_kill.py + box150/check.py (XSIM) for any
+  claimed genome; box164/fk.py / finf.py (exact forced-model DP), box166/bbit.py (B-bit key model), compose2.py / box170/csp.py (composition).
+- exec-ing another box's script: its H must point to ITS directory (several of my wrappers broke on that; see climbclock.py fix).
+- Never quote a SHA before reading it from git output (I misquoted two to the Lead; both corrected).
+- push.sh pushes only the commit it verified; chain a second push for commits made during verify.
+
 ## Resume point (successor 54, Opus 5.5, session_01V5yGRWFP9j7nf3j2YniXzP; started 2026-11-05 17:06Z by date -u)
 ### BOX 164 (Lead brief: an untried framework; chose (a) entropy compression / encoding method): docs/new/N5-ENCODE-box164.md,
   experiments/new/box164/ (rec.py records, show.py, climb.py / seeded.py hill-climbs, keyless.py + diamond.py key-free controls).
