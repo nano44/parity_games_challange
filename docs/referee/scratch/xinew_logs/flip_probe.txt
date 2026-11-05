@@ -1,0 +1,4 @@
+INST LR True ISO True T 11 level-0 steps [7, 8] seg1 6 tail 3 states ['11111011', '11110011', '11110010', '11110000', '11100100', '11001101', '11001111', '10011111', '00010111', '00010110', '00010100', '00000100']
+kf0_d2_t2.json LR True ISO True frames [[0, 0], [0, 1], [1, 1], [1, 1]] moves 2 V_0 2 V_1 2 V_6 2
+kf1_d2_t3.json LR True ISO True frames [[1, 0], [1, 1], [0, 1], [0, 0]] moves 3 V_0 1 V_1 3 V_6 3
+RANDOM LR_2 ISO (genome,start) pairs 6400 max V_0 2 max V_6 3 | W-ONLY(a) real steps LR_3 (ISO not required) 367 | violations {'v0': 0, 'vk': 0, 'wonly': 0}
