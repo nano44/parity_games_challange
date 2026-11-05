@@ -219,7 +219,7 @@ def build(T, E, fixall=False, lem=True):
                 enc = CardEnc.atleast(lits=lits, bound=bnd - nt, top_id=C.n, encoding=EncType.seqcounter)
                 C.n = max(C.n, enc.nv); [C.add(list(c)) for c in enc.clauses]
         info_ml = ml
-    if os.environ.get("SEG"):   # R204: segments cut at the level-0 steps; SEG "1t:s,1:m,t:m,m:m" -> seg1+tail >= s, seg1 >= m, tail >= m, mid >= m
+    if os.environ.get("SEG") or os.environ.get("SEGMAX"):   # R204 (SEG lower bounds); SEGMAX=c: L-NEW box 158 SEG-CAP, each segment <= c (CONDITIONAL on that lane lemma): segments cut at the level-0 steps; SEG "1t:s,1:m,t:m,m:m" -> seg1+tail >= s, seg1 >= m, tail >= m, mid >= m
         from pysat.card import CardEnc, EncType
         z = {t: C.OR([mv[(t, v)] for v in range(N) if lev[v] == 0]) for t in range(1, L + 1)}
         ne = {t: C.OR([mv[(t, v)] for v in range(N)]) for t in range(1, L + 1)}
@@ -228,7 +228,15 @@ def build(T, E, fixall=False, lem=True):
         sg = {"1": {t: C.AND([neg(a1[t]), ne[t]]) for t in range(1, L + 1)},
               "t": {t: C.AND([a2[t - 1], neg(z[t]), ne[t]]) for t in range(1, L + 1)},
               "m": {t: C.AND([a1[t - 1], neg(a2[t - 1]), neg(z[t]), ne[t]]) for t in range(1, L + 1)}}
-        for item in [x for x in os.environ["SEG"].split(",") if x]:
+        if os.environ.get("SEGMAX"):
+            cap = int(os.environ["SEGMAX"])
+            for w in "1mt":
+                lits = [sg[w][u] for u in range(1, L + 1)]; nt = sum(1 for x in lits if x is True); lits = [x for x in lits if not isinstance(x, bool)]
+                if nt > cap: C.add([])
+                elif len(lits) + nt > cap:
+                    enc = CardEnc.atmost(lits=lits, bound=cap - nt, top_id=C.n, encoding=EncType.seqcounter)
+                    C.n = max(C.n, enc.nv); [C.add(list(c)) for c in enc.clauses]
+        for item in [x for x in os.environ.get("SEG", "").split(",") if x]:
             which, bnd = item.split(":"); bnd = int(bnd)
             lits = [sg[w][t] for w in which for t in range(1, L + 1)]
             lits = [x for x in lits if x is not False]; nt = sum(1 for x in lits if x is True); lits = [x for x in lits if x is not True]
