@@ -3,3 +3,4 @@ log/*.part
 dump/*.drup
 dump/*.drup.gz
 dump/*.cnf
+live/

@@ -1,6 +1,14 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## BOX 71 (successor 39; Lead 19:24Z: frame as exact engine for flip data) — IN FLIGHT
+- Note docs/si/N5-FRAMEK-box71.md; tools experiments/si/box70/frame.py (modes tk / sumk / pm), box71/{run71.sh, realise.py, check71.sh,
+  ref/drup.c (L-COMP copy)}; log/, dump/ (cnf.gz; DRUP gitignored, checked in place); pin/inf18_m3.json.
+- INF-2 (T_inf <= 2T^R + 1) DEAD at m 3: pin/inf18_m3.json (sha1 2af7d941) T_inf 18 > 17 (flipdp + L-NEW Gen replay, 14 bit changes);
+  found by realising the frame SAT model of «T_inf >= 18» (realise.py, Xi-graph kept, ENC data climbed).
+- Item (0) PM dropped (L-NEW box 166 kill); frame DATA in box71/pmlog/README.txt.
+- Running: m 3 T_2 >= 13, T_3 >= 14 (DRUP); m 4 T_1 >= 15. Queue: T_inf >= 19.., SUM_2 splits, m 4 T_0, T_2 >= 16.
+
 ## BOX 70 (successor 39; Lead 17:47Z: ABS-3 + IM exact frame) — DONE
 - Note docs/si/N5-FRAME-box70.md; tools experiments/si/box70/{frame.py (SAT frame, any m), run.sh (resumable), check70.sh}; log/3_*.log.
 - Frame = RELAXATION of ENC E_m genomes (LOCAL = R105, IM = box 69, keys = BIT-CHAIN). m 2 validation equals the exact values.
