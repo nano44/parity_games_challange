@@ -5,9 +5,9 @@
 4 CUBE 2:0,3:0,4:1,5:0 cnf_sha1 57e654b424153eb7542734a7616bca0d60ae204e vars 58896 clauses 204036 glucose4 UNSAT 359.0 s proof_sha1 e6c7527f3f925fb9b459ef1f4c4fead6463aa5e8 proof_bytes 1661515605 lemmas 939707 deletions applied drup_wall 1378 s VERIFIED
 5 CUBE 2:1,3:0,4:1,5:0 cnf_sha1 2701cae6e1025ef02c98c9d9b81b7fb181c68367 vars 58896 clauses 204036 glucose4 UNSAT 184.9 s proof_sha1 e45c0dd108e48fb8eddeb51ffcb4fe5787833baa proof_bytes 913302433 lemmas 544619 deletions applied drup_wall 654 s VERIFIED
 6 CUBE 2:0,3:1,4:1,5:0 cnf_sha1 e4886b4716f5fe07039fd62d9e2de787c780f83d vars 58896 clauses 204036 glucose4 UNSAT 194.0 s proof_sha1 ff59ee2cd3a9268d371022895e4509793f5f545b proof_bytes 941098907 lemmas 561107 deletions applied drup_wall 714 s VERIFIED
-7 MISSING
-8 MISSING
-9 MISSING
+7 CUBE 2:1,3:1,4:1,5:0 cnf_sha1 f87b694607906e572841ca29ff7bca3023051385 vars 58896 clauses 204036 glucose4 UNSAT 431.6 s proof_sha1 657258c11459e2cb951efcb7cec890c736a6eba6 proof_bytes 1623733639 lemmas 930211 deletions applied drup_wall 1453 s VERIFIED
+8 CUBE 2:0,3:0,4:0,5:1 cnf_sha1 7fd44a80cc886adb701e5f9069d02b69d62676cf vars 58896 clauses 204036 glucose4 UNSAT 345.1 s proof_sha1 2192cf5c5d051b976d5fad2dbe06c864a7c320dd proof_bytes 1598046419 lemmas 931580 deletions applied drup_wall 1378 s VERIFIED
+9 CUBE 2:1,3:0,4:0,5:1 cnf_sha1 01a9488a18b51267dd6010802c7f4c9a3425d936 vars 58896 clauses 204036 glucose4 UNSAT 177.5 s proof_sha1 942334eb3905ff3aa887e37db72d1df84433b804 proof_bytes 894105785 lemmas 526970 deletions applied drup_wall 641 s VERIFIED
 10 MISSING
 11 MISSING
 12 MISSING
