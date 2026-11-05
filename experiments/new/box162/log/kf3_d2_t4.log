@@ -1,0 +1,2 @@
+ISO d 2 t 4 N 4 ISO=1 NOL0=None NOW=None SEG=None vars 3094 clauses 10087 build 0.0 s
+RESULT d 2 T >= 4: UNSAT 0.0 s
