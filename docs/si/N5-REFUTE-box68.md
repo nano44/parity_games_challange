@@ -83,3 +83,23 @@ Not a TARGET.md claim. No polynomial bound. FLIP-ADD and G-N5-TIME stay OPEN.
     whose own runs are long enough to time the flips (O3).
 
 ## 2. m = 4 climbs (kclimb.py; lower bounds)
+- Champions are frozen in experiments/si/box68/pin/ (sha1 in pin/pins.sha1).
+  - Each is recomputed by flipdp.py (all self-checks 0). T_0 and T_1 are also replayed with L-NEW's box 150 Gen.
+  - 40 min climbs: 2 seeds × {k = 1, k = 2}, seeded from box 64 / 65 m = 4 genomes or random.
+  | pin | T_0(G) | T_1(G) | T_2(G) | against T^R(4) = 13 (EXACT) |
+  | --- | --- | --- | --- | --- |
+  | k1_m4_s2 (sha1 a75d4068…) | 8 | 14 | 15 | T_1 − T^R = 1, T_2 − T^R = 2 |
+  | k2_m4_s1 (sha1 1c17c5ed…) | 6 | 11 | 15 | T_2 − T^R = 2 |
+  | k2_m4_s2 (sha1 2f3e8712…) | 8 | 13 | 15 | T_2 − T^R = 2 |
+- Increment rows with the m = 4 lower bounds. The m = 4 entries are DATA: T^R(4) is exact, T_k(4) are lower bounds.
+  | m | 1 | 2 | 3 | 4 |
+  | --- | --- | --- | --- | --- |
+  | T^R(m) (EXACT) | 2 | 4 | 8 | 13 |
+  | T_1(m) − T^R(m) | 1 | 1 | ≥ 2 | ≥ 1 |
+  | T_2(m) − T^R(m) | 1 | 3 | ≥ 4 | ≥ 2 |
+  - m 1, 2: EXACT (L-COMP box 27). m 3: T_1(3) ≥ 10 (L-NEW kf1_d4_t10), T_2(3) ≥ 12 (L-NEW ISO witness).
+- READING:
+  - At m = 4 the climbs only just pass T^R(4); the per-genome gains are larger (k1_m4_s2: T_0(G) = 8, T_1(G) = 14).
+  - The pattern of boxes 65-67 repeats: gains are measured against the genome's own short runs, and their totals stay near T^R.
+  - Nothing here contradicts FLIP-ADD. Lower bounds at m = 4 are weak: a SAT query «T_1(4) ≥ 15» (L-COMP / L-NEW frame) would
+    test it.

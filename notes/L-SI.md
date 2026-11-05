@@ -1,6 +1,14 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## BOX 68 (successor 39; Lead 15:45Z: REFUTE FLIP-ADD by construction, D1) — DONE, no refutation
+- Note docs/si/N5-REFUTE-box68.md; tools experiments/si/box68/{compose.py, kclimb.py, check68.sh}; pin/ (m 4 champions, sha1).
+- Obstructions: O1 T^R exact only m <= 4 (upper bound 3^m - 1 only); O2 doubling dies near T^R/2; O3 COMPOSE costs levels (linear
+  amplification only); O4 R109 LIFT/SHIFT carry no flips.
+- PROVED (lane): Lemma COMPOSE (lower ladder = flip generator for the upper one via BIT-CHAIN; EXACT 200 pairs, NEG fires);
+  T_0(n) <= T^R(n+1); Corollary COMPOSE-LB.
+- DATA m 4 (vs T^R(4) = 13 exact): T_1 >= 14, T_2 >= 15 (pins replayed with L-NEW Gen). Increments k=1: 1 1 >=2 >=1; k=2: 1 3 >=4 >=2.
+
 ## BOX 67 (successor 39; Lead 14:07Z: m = 2 frontier as a lemma + proof shape; test on m = 3) — DONE
 - Note docs/si/N5-FRONT2-box67.md; tools experiments/si/box67/{bfd.c (= box 66 bff.c + TAU hook), tauclimb.py, check67.sh};
   out/bfd_m2_p0..3.txt (EXACT); pin/tau_m3_t4_s2.json (sha1 4811ab98).
