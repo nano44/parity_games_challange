@@ -1,6 +1,11 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 18), 2026-11-05 20:42Z (date -u)
+- C122 Add. 2: R110 LANDED d056db87 exactly as checked (PASS). CI run 6293 (id 42105648932) on d056db87 IN PROGRESS. NEXT: append the CI
+  line to Add. 2 («… **C122 CLOSED.**»), read with mcp__github__actions_get get_workflow_run. Then C123 = P-TR3 («T^R(3) = 8», L-COMP),
+  when routed (Lead 20:42Z: in a few hours).
+
 ## Resume point (successor 18), 2026-11-05 19:03Z (date -u)
 - C122 Add. 1: second fill 3b4f257d @ efe44598 PASS (L-3 = my R1-R4 byte for byte; UPDATE = expected d76a5cfb; w162 at 47b4e165 PASS;
   quotes 0 not found). N-1 optional. NEXT: the landed check (Add. 2: RESULTS insertion, GAPS l. 11, stamps) and the CI line.
