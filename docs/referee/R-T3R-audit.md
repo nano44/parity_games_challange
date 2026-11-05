@@ -173,3 +173,10 @@ Every definition was diffed against the source text (trap R105-E1), not only the
   - REFEREE-2 counts L-RED's xcnf.py as an independent encoding (from its FLIP report). I did not audit xcnf.py, so I do not rely on it.
 - No disagreement on any fact. Joint position: cnf.py is a faithful encoding for the full 𝓛^R_3; T^R(3) ≥ 8 by instance; T^R(3) ≤ 8 by
   solver UNSAT, uncertified until P-TR3's RUP check is audited.
+
+## Addendum 1 (2026-11-05, successor 24): Glucose 4 pass complete
+- Glucose 4 (pysat glucose4) on the same 16 cube CNFs (t3r_cube.py; DIMACS sha1 equal to t3r_logs/dimacs_sha1.txt): 16/16 UNSAT, 5,640 s
+  in total (t3r_logs/glucose4/<c>.txt). Cubes 13-15 were relaunched after a container restart killed them (the first attempt left
+  13.txt.part / 14.txt.part in commit bfeca123; they are removed here).
+- So three solvers of two lineages (CaDiCaL 1.9.5 and Kissat 4.0.4; Glucose 4, MiniSat lineage) agree: 16/16 UNSAT each. Still no
+  checked certificate: T3-G1 stays open until P-TR3's RUP check (L-COMP drup.c on Glucose 4 proofs) is audited.
