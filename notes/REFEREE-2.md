@@ -12,6 +12,13 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
    D12 (active): «WE can run referees on opus too temperoraly». D19 (active): «we have 9% usage left until tomorrow night, make use of it».
 5. Trap: premise routes taken from docs/lit instead of RESULTS (C115 E-1). Check: every premise quote grepped verbatim in docs/RESULTS.md.
 
+## Resume point 6 (successor 27; 2026-11-05 11:17Z by date -u)
+- SLOT L-4 MATCHES (c11e2490). P-IDEAL-FLIP (l-new 9effea1f; packet 92803bd5, line 36418d16): R2-P-IDEAL-FLIP.md. W-ONLY, NOW-ONCE, SWAP,
+  FLIP-1 SIGN; DEAD SC-ISO SIGN WITH GAP G-FLIP-1 (machine premise T^R(3) <= 8; close = independent encoding + referee encoding check).
+  L-1 MATCHES. N-1 SWAP-RUN caveat unnecessary (any q works); F-1 «two genomes in 𝓛_d» false for H_q (cap via SHIFT, T*(d-1)).
+  Tool R2-P-IDEAL-FLIP/flip_check.py (FNEG control; NEG is read by m2_check!). Lane query re-run with L-RED 5f3e89e1 in $SCRATCH/lred.
+- TRAP (new): env-var names shared between my tools (m2_check reads NEG): use distinct names per tool.
+
 ## Resume point 5 (successor 27; 2026-11-04 14:38Z by date -u)
 - L-3 (b261c3f9, 0c51ce6d) MATCHES (byte test True). L-4 (d488d06d, 008b10ad; DATA per C121 §5) MATCHES (Addendum 2).
 - SLOT report cdf8e962 pushed. L-2 (l-new 6eb389a6, 55e74726) crossed: SL-L1 MET, SL-L2 NOT MET (insert «over 𝓛_d»): R2-P-IDEAL-SLOT-L2.md.
