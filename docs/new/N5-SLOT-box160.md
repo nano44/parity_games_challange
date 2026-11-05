@@ -23,8 +23,8 @@ SLOT-TRADE, IDEAL-ACYC-POLY and G-N5-TIME stay OPEN.
   | NOW: Ξ-channel only (b_0 constant on the run) | - | 6 | ≥ 10 (T ≥ 11: UNKNOWN, ~5 h, killed by a container restart) |
   | NOL0: no level-0 step | - | 4 = T^R(2) | 8 = T^R(3) (T ≥ 9 UNSAT 143 s) |
   | only level-0 mover 0 may move (FRZ=1) | - | 6 | (queued) |
-  | ISO, only level-0 mover 0 may move | - | 5 | (queued) |
-  | NOW, only level-0 mover 0 may move | - | 5 | (queued) |
+  | ISO, only level-0 mover 0 may move | - | 5 | ≥ 10 (SAT 2424 s; 11 running) |
+  | NOW, only level-0 mover 0 may move | - | 5 | ≥ 9 (10 running) |
   | max seg1 + tail: all | - | 6 (seg1 3, tail 3) | ≥ 10 (L-RED R204) |
   | max seg1 + tail: ISO | - | 4 = T^R(2) | ≥ 9 (≥ 10: UNKNOWN, stopped after ~90 min) |
   | max seg1 + tail: NOW | - | 4 = T^R(2) | UNKNOWN (≥ 9 stopped after ~90 min) |
