@@ -6,3 +6,4 @@ L-NEW box 160 (SLOT-TRADE): files
   run_iso.sh      resumable driver (skips targets with a RESULT line in log/)
   ext/            copies of L-RED genomes (claude/l-red @ 5f3e89e1, experiments/red/r19x-r203)
   out/, log/      witnesses and solver logs
+L-NEW box 160: logs of running solver jobs are written as *.part (gitignored) and renamed when the job ends.
