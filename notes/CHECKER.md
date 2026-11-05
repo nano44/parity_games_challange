@@ -1,6 +1,10 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 18), 2026-11-05 21:17Z (date -u)
+- C122 CLOSED (main 80ed31a6 FAIL E-1..E-3; Add. 1 32f65fe0 PASS; Add. 2 bb114219; R110 landed d056db87; CI 6293 green). Nothing open.
+  NEXT: C123 = P-TR3 («T^R(3) = 8», L-COMP), when the Lead routes it.
+
 ## Resume point (successor 18), 2026-11-05 20:42Z (date -u)
 - C122 Add. 2: R110 LANDED d056db87 exactly as checked (PASS). CI run 6293 (id 42105648932) on d056db87 IN PROGRESS. NEXT: append the CI
   line to Add. 2 («… **C122 CLOSED.**»), read with mcp__github__actions_get get_workflow_run. Then C123 = P-TR3 («T^R(3) = 8», L-COMP),
