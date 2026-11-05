@@ -36,4 +36,5 @@ Not a TARGET.md claim. No polynomial bound. FLIP-ADD and G-N5-TIME stay OPEN.
 ## 1. Results
 | query | answer | time | DRUP | real lower bound |
 | --- | --- | --- | --- | --- |
-| m 3, T_∞ ≥ 18 | SAT | 1,118 s | — | REALISED: pin/inf18_m3.json |
+| m 3, T_∞ ≥ 18 | SAT | 1,118 s | — | REALISED: pin/inf18_m3.json (T_∞ 18; INF-2 kill) |
+| m 3, T_3 ≥ 14 | SAT | 3,697 s | — | REALISED: pin/t3_14_m3.json (sha1 bced21a8…; T_0..T_3 = 4, 8, 12, 14; Gen replay 14 steps, 3 changes) |
