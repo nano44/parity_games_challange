@@ -1,4 +1,5 @@
 # L-RED notebook (independent adversary lane)
+Successor 50 (Opus 5.5, D1/D18/D20) started 2026-11-05 22:06Z (date -u); STEP 0 handover check below; BOX R207 (T*(d) / T^R(d) lower bounds d 6-10, top-pair flips).
 Successor 49 (Opus 5.5) started 2026-11-04 00:18Z; R200-R206; PARKED 2026-11-05 21:1xZ at ~540k context, see «Successor 49 PARK» (supersedes «Successor 49 HANDOVER»).
 Successor 48 (Opus 5.5, D1/D18) started 2026-11-03 07:20Z (date -u); STEP 0 message 07:20Z; R199 nested doubling: k 2 SAT d 5 (pin nd2_d5_F12_n96), k 3 UNSAT d <= 5, UNKNOWN d 6-7; PARKED FINAL 23:4xZ, see «Successor 48 PARK».
 Successor 47 (Opus 5.5, D1/D18) started 2026-11-02 20:58Z (date -u); STEP 0 message 20:58Z; R197: fork ladders exact 3 / 5 (d 2 / 3); carry maxima 2, 6, 10 EXACT (d 4); max run d 4 = 13 EXACT (R193 item closed); pins dbl_d3_F6_n60, dbl_d4_F10_n78, max_d4_L13_n78; Lemmas DOWN / LEVEL-RISE / WAKE-CHAIN; PARKED, see «Successor 47 PARK».
@@ -47,6 +48,29 @@ Successor 15 PARKED ~09:40Z 2026-10-25 after box 38; RESUME POINT for successor 
 context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older notebook: `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
+
+## Successor 50 handover check (2026-11-05 22:5xZ, date -u)
+1. Branch claude/l-red. Clone head was 429351d5 at 22:06Z; polled ls-remote every 5 min; 5e98e81e appeared between 22:47Z and 22:52Z;
+   fetched + ff-only: HEAD 5e98e81e = ls-remote. The clone is SHALLOW: the first count vs trunk said 9394 behind (wrong). After
+   «git fetch --deepen=500»: vs trunk claude/vibrant-johnson-nxvvxo 1bf69719: 43 ahead / 277 behind, merge-base 39588215.
+2. Open work and next step:
+   - R207 (BOX, started 22:1xZ): lower-bound constructions of T*(d) (𝓛_d, degree-1 movers allowed) and T^R(d) (R197 ladders) for
+     d 6-10 by construction + simulation; next: staged climbs d 6 -> 10, diagnostics (segments, pair flips vs |W|), replays.
+   - Relaunched 22:52Z (cwd experiments/red/r200, same lines as «Successor 49 PARK»): MAIN conditional d 5 T>=16 (P=2; state 82 done,
+     6 split); unconditional d 4 T>=14 (nice 19, P=1 instead of 3 to leave cores for R207; state 2548 done, 14 split).
+   - Not relaunched: PM on L^R_4 mover 6 (18 cubes done in ~2 h; not cheap; resumable, same line); R205 T_3(3) >= 14 (monolithic,
+     12 h cap, not resumable, no run of > 6 h has survived a restart here): NOT restarted; it needs a cube design first (Lead decides).
+3. GAPS rows (trunk docs/GAPS.md): G-NEST (major, «L-RED (attacks + proof attempts)», open); L-RED attacks GAP-A, GAP-C (open), G-STR,
+   G-DOM (closed). G-N5-TIME (open) is L-NEW's; L-RED works against it under D18.
+4. Rulings (verbatim; status from trunk docs/DECISIONS-INDEX.md): D1 «A claimed polynomial algorithm is far more likely to be wrong
+   than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.» (active); D18 «Focus on
+   N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer
+   science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without
+   asking me questions. Clearly distinguish proven results from conjectures and open problems.» (active); D20 «We have reset the weekly
+   usage, so we can again work faster no?» (active; Lead reading L48: full pace, stop on paid overage).
+5. Trap: container restarts kill detached solver runs (5/day; monolithic > 6 h never survived). Check: only resumable cube runs with
+   tracked state files, relaunch lines written before launch, a harness-tracked wait loop armed while they run. New trap this start:
+   a shallow clone gives wrong ahead/behind counts; check = deepen before counting.
 
 ## Successor 49 PARK (2026-11-05 21:1xZ, date -u; ~540k context; Lead asked to park near 600k)
 - RESULTS (all in docs/red/R200-xcnf.md + notes below; labels EXACT = CaDiCaL, replayed under r187/ideal.py):
