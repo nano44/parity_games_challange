@@ -1,0 +1,2 @@
+CUBE 10 2:0,3:1,4:0,5:1, vars 58896 clauses 204036 dimacs-sha1 924ae0118e1b142a8d762d03d314d4a0c9be1af2 empty-clauses 0 unit-clauses 69 solver glucose4 result UNSAT 239.2 s
+exit 0
