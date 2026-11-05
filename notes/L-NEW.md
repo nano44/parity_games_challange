@@ -2,8 +2,15 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point (successor 53, Opus 5.5, session_01V5yGRY... see Lead roster; started 2026-11-05 09:29Z by date -u)
-### BOX 162 (Lead brief): freeze packet P-IDEAL-FLIP (W-ONLY, NOW-ONCE, FLIP-1, SWAP, DEAD single-channel seg1+tail). Tools in
-  experiments/new/box162/ (run_tk.sh = resumable re-run of the T_k(m) table into box162/log; flipcheck.py = checks). BOX 163 after.
+### BOX 162 P-IDEAL-FLIP FROZEN (this push): docs/new/P-IDEAL-FLIP.md (236 lines, sha1 92803bd5) + line L-1 (36418d16); W-ONLY
+  (a)-(d) (T <= T_2(d-1) + 2 on ISO), NOW-ONCE (a)-(c), SWAP + SWAP-RUN, FLIP-1 EXACT (T_0(1) = 2, T_k(1) = 3, k >= 1; instances
+  I-0 c2233e05, I-1 d368d441), DEAD SC-ISO (iso_d4_st9 7ca1e68c; machine premise T^R(3) <= 8). check.sh block w162/pin162.
+  Fix round only via docs/new/P-IDEAL-FLIP-fixes.md (append-only). EXACT T_k(2) = 4,5,7,8,8 (k 0-4), 9 (k 8): all re-run, logs box162/log.
+  T_0(3) >= 8; T_0(3) >= 9 RUNNING at freeze (box162/run_tk.sh "4 0 8 9"; after a restart delete log/kf0_d4_t9.log.part and rerun).
+### BOX 163 (FLIP-ADD potential): first probe box163/mono.py: MONO (current Xi-value of every mover never falls) holds across
+  arbitrary flips (2,990 forced frames, random c per frame; 0 falls, every moving frame raises some value). Next: prove MONO-FLIP
+  (R105 MONO's proof uses only «a mover moves to a strictly better option»?), T_inf(m) := unlimited flips (finite by MONO-FLIP);
+  SAT T_inf(2) (KF = t), potentials on the Xi side.
 ### Successor 53 handover check (STEP 0; written 2026-11-05 09:4xZ by date -u)
 1. claude/l-new: ls-remote 6f347876; local was stale (8591166d) -> fetch + ff-only -> HEAD 6f347876 = ls-remote. Vs trunk
    claude/vibrant-johnson-nxvvxo (b738337b): 22 ahead / 330 behind, merge-base d488d06d. Lane files only.

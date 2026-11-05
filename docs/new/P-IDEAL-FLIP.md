@@ -200,10 +200,15 @@ stay OPEN.
   witness re-evaluated by box162/flipcheck.py, which computes the exact per-genome maximum V_k(G, s_0) of the §1 definition by search).
   Each count covers ONLY the statement «T_k(m) ≥ t» (SAT) or «T_k(m) ≤ t − 1» (UNSAT at t) on 𝓛^R_(m+1) with ISO:
   - m = 1: T_0 ≥ 2 SAT, ≥ 3 UNSAT; T_1, T_2, T_3, T_6: ≥ 3 SAT, ≥ 4 UNSAT (all < 1 s). Agrees with §5 (PROVED).
-  - m = 2: T_0 = 4 (≥ 5 UNSAT 3.9 s), T_1 = 5 (≥ 6 UNSAT 88 s), T_2 = 7, T_3 = 8, T_4 = 8, T_8 = 9 (UNSAT times: see §7 table below).
-  - m = 3: T_0(3) see table; T_1(3) ≥ 10 (box160/out/kf1_d4_t10.json, V_1 = 10; T_1(3) ≥ 11 UNKNOWN); T_2(3) ≥ 12
-    (box160/out/ISO_1_d4_t12.json, V_2 = 12).
-  - TABLE-PLACEHOLDER
+  - m = 2 (d = 3):
+    | k | 0 | 1 | 2 | 3 | 4 | 8 |
+    | --- | --- | --- | --- | --- | --- | --- |
+    | T_k(2) | 4 | 5 | 7 | 8 | 8 | 9 |
+    | SAT at T_k(2) (s) | 0.2 | 1.8 | 2.4 | 7.3 | 10.0 | 27.4 |
+    | UNSAT at T_k(2) + 1 (s) | 3.9 | 88.4 | 261.4 | 1132.1 | 1180.7 | 1337.8 |
+  - m = 3 (d = 4): T_0(3) ≥ 8 (SAT 1286.9 s, box162/out/kf0_d4_t8.json; T_0(3) ≥ 9 RUNNING at the freeze: UNKNOWN); T_1(3) ≥ 10
+    (box160/out/kf1_d4_t10.json, V_1 = 10; T_1(3) ≥ 11 UNKNOWN); T_2(3) ≥ 12 (box160/out/ISO_1_d4_t12.json, V_2 = 12; this genome
+    has V_1 = 7). L-RED R205 (via the Lead) has T_k(3), k ≤ 4, and T_2(4): not used here.
   - Encoding vs definition (READING, not signed): the SAT model has free level-0 options q_t and a free order of the four level-0 gates,
     c_t = b_0(q_t), flips counted over q_0, …, q_L, and every frame must change U. These give the §1 supremum: q_0 can copy q_1; every bit
     sequence is some b_0(q_t) under the gate order g(0, 0) < g(1, 0) < g(1, 1) < g(0, 1) (b_0 = 1 iff q_t(0) = 0); deleting a frame that
@@ -214,7 +219,9 @@ stay OPEN.
   this packet, its line L-1, the instance and the two FLIP-1 instances):
   - 300 random 𝓛^R_d genomes (d = 2, 3, 4; 3 of 4 ISO) + every 𝓛^R genome in box160/out and box162/out, every start for d ≤ 4:
     WONLY (§2 (a)), ISOA (§2 (b)), FROZ (§2 (c)), CONS (§2 (d): b_0 changes ≤ 2 and moves ≤ V_2), SWAP (§4), NOWONCE (§3 (a)), FLIP1
-    (§5 bounds, every start of every d = 2 ISO genome, k ≤ 6): 0 violations. Controls: SWAPNEG (G^swap at the SAME c) and NOWCTRL
+    (§5 bounds, every start of every d = 2 ISO genome, k ≤ 6): 0 violations, on 44,084 real steps (WONLY; 300 random genomes + 50
+    corpus genomes), 31,320 (state, q) pairs (ISOA), 1,044 (genome, q) pairs (FROZ), 28,896 ISO runs (CONS), 15,660 (state, c) pairs
+    (SWAP), 307 consecutive move pairs of a level-1 mover (NOWONCE) and 1,312 (genome, start) pairs (FLIP1). Controls: SWAPNEG (G^swap at the SAME c) and NOWCTRL
     (level-1 movers moving twice somewhere) are nonzero; NEG=1 (c-step ignoring c) makes WONLY, FROZ, CONS and SWAP fire.
   - INST: iso_d4_st9 is in 𝓛^R_4, ISO, T 11, level-0 steps [7, 8], seg1 6, tail 3.
 - EXCLUDED (not to sign): CONJECTURE FLIP-ADD (T_2(m) ≤ T^R(m) + O(m)); CONJECTURE SLOT-TRADE; every READING and every other DATA row
@@ -225,4 +232,5 @@ stay OPEN.
   claim, none bounds anything polynomially, none is a gauntlet step. G-N5-TIME stays OPEN.
 - READING (value): W-ONLY + SWAP turn the W-channel part of SLOT-TRADE into a question about TWO fixed genomes alternating at most
   three times (k = 2): FLIP-ADD asks that such an alternation adds only O(m) steps to T^R(m). FLIP-1 settles m = 1 (+1 per flip, at most
-  +1 in total); the DATA show the gain T_k(m) − T_0(m) = 1, 3 at k = 1, 2 for m = 2 and ≥ 2, ≥ 4 for m = 3.
+  +1 in total); the DATA show the gain T_k(m) − T_0(m) = 1, 3, 4, 4, 5 at k = 1, 2, 3, 4, 8 for m = 2 (exact), and ≥ 2, ≥ 4 at k = 1, 2 for
+  m = 3 if T_0(3) = 8 (open here).
