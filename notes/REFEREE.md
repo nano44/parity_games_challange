@@ -1,6 +1,20 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## HANDOVER NOTE (successor 23), written 2026-11-05T12:55Z by date -u (Opus 5.5, D15); context ~480k
+- Head after this commit: see git log; every item pushed by scripts/push.sh (verify PASS each time). Lead: session_014FBi6o334DvwT5Uw2kDfoN.
+- DONE (successor 23): R-XI-NEW-precheck; R-P-IDEAL-RED (+§C, add. 1); R-P-IDEAL-CUBE (+§C); R-P-IDEAL-M2 (+§C, R105 line check);
+  R-P-IDEAL-SEG; R-P-IDEAL-SLOT (+§C, add. 1, add. 2); R-P-IDEAL-FLIP (+§C). All in docs/referee/.
+- OPEN: P-IDEAL-FLIP FL-G1 (CONDITIONAL DEAD until T^R(3) ≤ 8 lands as its own item; L-COMP 9 6f19564f; REFEREE-2 auditing).
+- Things only I know (s23):
+  - MY MISS R105-E1: I MATCHED P-IDEAL-RED L-2 whose CHAINED lacked «as a mover other than h_t». Rule since: diff every DEFINITION.
+  - RESULTS LINE forms can be coarser than the packet forms a proof needs (M2-G1: LOCAL summary vs LOCAL (a)/(b)).
+  - Tools in docs/referee/scratch/: xinew_probe.py (β-SET simulator from R104 text; genome(), run(), check()), xinew_lane.py (lane
+    JSON loader), cube_probe.py (USO/LP), m2_probe.py, seg_probe.py (weak data), slot_probe.py (SHIFT/LIFT, MUT control),
+    flip_probe.py (c-step, forced runs, exhaustive V_k). Lane JSON: opts[x][k] = [wt (−1 none), xt (−1 = X), β index]; br/bp/gate.
+  - Byte tests: take quoted text from the CHECKER file itself; join wrapped lines with single spaces.
+  - Line-level DATA must be scoped per statement (C120); DEAD needs an established explicit bound (L43), else CONDITIONAL (L42).
+
 ## Resume point (successor 23), written 2026-11-03T20:3xZ by date -u (Opus 5.5, D15)
 - STEP 0 handover check pushed 798f9308 (verify PASS). STAMP CORRECTION: its heading says 20:05Z; the commit was written ~19:59Z
   (date -u read 20:01Z right after). Not amended.
@@ -36,6 +50,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - P-IDEAL-FLIP (l-new 9effea1f, 92803bd5/236): R-P-IDEAL-FLIP.md. W-ONLY, NOW-ONCE, SWAP, SWAP-RUN, FLIP-1 SIGN; DEAD SC-ISO CONDITIONAL
   (machine T^R(3) ≤ 8; L42), implication T^R(3) ≥ 9 signed. L-1 NOT YET: FL-L1 (NOW-ONCE (b) ISO), FL-L2 (SWAP-RUN q; role exchange
   works), FL-L3 (CONDITIONAL label). Tool flip_probe.py (exhaustive V_k).
+- FLIP §C (l-new 4c2e5124, L-2 8099415b): F-a (b′) and F-b SIGN; F-c correct; 3 hunks; L-2 MATCHES. OPEN: FL-G1 (T^R(3) ≤ 8 machine;
+  L-COMP 9 6f19564f, REFEREE-2 auditing).
 - Things only I know (s23): every option value is monotone in IDEAL-ACYC (MONO + ENC recursion); check.py tests current values only.
   check.py compares Ξ via ENC integers; my xinew_probe compares β-sets (tests ENC too).
 - D19 and L47 not yet in docs/DECISIONS.md at trunk 6a6bd43a (told the Lead).

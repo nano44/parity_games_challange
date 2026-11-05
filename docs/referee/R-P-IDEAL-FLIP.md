@@ -157,3 +157,42 @@ REFEREE successor 23 (Opus 5.5, D15), 2026-11-05T11:14Z by date -u. Independent:
   - Lead: route FL-L1 to L3 (fixes entry or line) to L-NEW 53.
   - Lead: forward L-COMP 9's independent T^R(3) ≤ 8 result. Dropping «CONDITIONAL» needs that plus a faithfulness check of the encodings
     and a landed premise. The Lead or CHECKER decides the route.
+
+## §C (2026-11-05T12:55Z by date -u, successor 23; Opus 5.5, D15): fixes entry 1 and line L-2
+- Object: claude/l-new 4c2e5124, an ancestor of origin/claude/l-new. I re-measured every file:
+  - fixes f8d3677e, 57 lines;
+  - L-2 8099415b, 1 line, 0 «|»;
+  - packet 92803bd5 / 236 and L-1 36418d16: unchanged.
+- F-a, NOW-ONCE (b′) without ISO (new signed content): SIGN.
+  - The c_t-step sequence is defined on any G ∈ 𝓛^R_d via the c-step of 𝓦_d, and 0 and 1 are kept.
+  - KP^c(x) = 0 iff c = 1: key^c(x, k) = (κ^c_k, g(x, k)), and the first entries differ. This holds for every state.
+  - A change at frame t takes an option of A_(u_(t−1))(x) other than the current one. At degree 2 both options are then available, so
+    the new option is KP^(c_t)(x).
+  - Two consecutive changes in a constant-c interval give u_(t2)(x) = u_(t1)(x) = u_(t2−1)(x), a contradiction.
+  - No Ξ-value and no ISO is used. Correct; it closes FL-L1 by extension.
+- F-b, SWAP-RUN for ANY q (exchange argument): SIGN.
+  - Put v := b_0(q).
+  - Blocks with c = v are runs of H_q (W-ONLY (c) for G).
+  - Blocks with c = 1 − v use Step^(1−v)_G = Step^v_(G^swap) (SWAP with c := v), and are runs of (G^swap)_q (W-ONLY (c) for G^swap,
+    which is ISO with the same level-0 gates, so its b_0(q) = v).
+  - Once a step is idle it stays idle.
+  - Correct. It is the same argument as my FL-N2, in a cleaner form (no c* needed). It closes FL-L2, and the caveat paragraph is
+    superseded.
+- F-c (REFEREE-2 F-1, unsigned remark): CORRECT.
+  - H_q and (G^swap)_q have degree-1 level-0 movers, so they are not in 𝓛_d.
+  - R109 SHIFT applies (the quote's two pieces are verbatim in the landed R109 line). The shifted genome lies in 𝓛_(d−1): its new level
+    0 holds the two degree-2 movers of old level 1 plus two degree-1 movers, and every higher level holds two degree-2 movers.
+  - So each piece is ≤ T*(d − 1). The remark stays outside the signed text.
+- L-2: my own word diff (git diff --word-diff) finds exactly 3 hunks, equal to entry 1's list.
+  - «CONDITIONAL DEAD (premise T^R(3) ≤ 8, machine):»: FL-L3 is MET. The clause «without it … forces T^R(3) ≥ 9» is kept.
+  - «whose run from any state with q at 0 and 1 is the iterated b_0(q)-step»: this is W-ONLY (c)'s statement. Correct.
+  - «every start)»: §7 says every start for d ≤ 4, and every checked genome has d ≤ 4 (random d = 2, 3, 4; corpus d ≤ 4). Correct.
+  - NOW-ONCE's c_t-step half and SWAP-RUN's unconditional form now match signed statements ((b′), F-b).
+  - All other definitions and clauses are unchanged from L-1, which I diffed in §6.
+- VERDICT: line L-2 MATCHES.
+  - Signed: W-ONLY, NOW-ONCE (incl. (b′)), SWAP, SWAP-RUN (F-b form) and FLIP-1.
+  - SC-ISO is CONDITIONAL DEAD (gap FL-G1), and its implication «SC-ISO at d = 4 ⇒ T^R(3) ≥ 9» is signed.
+- FL-G1 status (FYI from the Lead): L-COMP 9 reports T^R(3) = 8 by an independent encoding (claude/l-comp 6f19564f), and REFEREE-2 is
+  auditing it. I have not audited either encoding.
+  - The label can lose «CONDITIONAL» only when the premise is established as its own landed item (as said in §2). That is a new
+    line, not this one.
