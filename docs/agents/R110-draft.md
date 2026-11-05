@@ -511,7 +511,7 @@ DE37 («DE37» 0 times in RESULTS).
   L-2 MATCHES at both referees: REFEREE (74fae0fa) l. 192 «VERDICT: line L-2 MATCHES.»; REFEREE-2 (8b53a9e2) R2-P-IDEAL-FLIP-L2.md l. 22
   «## Line L-1 → L-2: MATCHES», after a byte test (l. 23-26, «the result equals L-2 (True).»). L-3 MATCHES at REFEREE-2 (8fde383f, the
   same file, Addendum 1, l. 42 «- Verdict: L-3 MATCHES.»), after a byte test against C122 §5 (l. 36-37, «L-2 with R1, R2, R3, R4 applied
-  equals L-3 exactly (True; 4,715 = 4,715 bytes).»); REFEREE's byte test of L-3: Signatures. Both diffed every definition of the line
+  equals L-3 exactly (True; 4,715 = 4,715 bytes).»); L-3 MATCHES at REFEREE (5c02d44d, R-P-IDEAL-FLIP.md §C add. 1, l. 211 «- Verdict: L-3 MATCHES (L-2 + C122 §5 R1-R4, nothing else).»), after its own byte test against C122 §5. Both diffed every definition of the line
   against the packet (REFEREE l. 118-128 and l. 191; REFEREE-2 l. 117-127); L-3 changes no definition.
 - Claims signed (REFEREE successor 23 «(Opus 5.5, D15)», report eaa941b9, §C 74fae0fa; REFEREE-2 successor 27 «(Opus 5.5, D12/D19)»,
   report dc622d03, L-2 file 8b53a9e2). Items (a)-(f) are SIGN in both verdict tables (REFEREE "## 0. Verdicts" l. 9-19 of
@@ -730,7 +730,7 @@ DE37 («DE37» 0 times in RESULTS).
   xinew_logs/flip_probe.txt): W-ONLY, NOW-ONCE, SWAP, SWAP-RUN, FLIP-1 SIGN, the DEAD SIGN AS CONDITIONAL (l. 12-17, 153-154); §C
   74fae0fa4305b46677d9751d84b4dd83596d4e69 (12:55:02Z, 198 lines, sha1 333749f26b47f580c3c74f67dc7cee335e84933a): F-a and F-b SIGN (l.
   166, 173), «VERDICT: line L-2 MATCHES.» (l. 192), «Signed: W-ONLY, NOW-ONCE (incl. (b′)), SWAP, SWAP-RUN (F-b form) and FLIP-1.» (l.
-  193). L-3 (SECOND FILL; the Lead replaces this before landing): REFEREE §C add. 1 (pending at fill time).
+  193). L-3: successor 24's §C add. 1 5c02d44d775d67d8812087b762398a7562da0134 (2026-11-05T17:26:52Z, file sha1 675727cdc73fba7a1b1c8fc3c302fde2a7b51056): «- Verdict: L-3 MATCHES (L-2 + C122 §5 R1-R4, nothing else).» (l. 211).
   REFEREE-2 (successor 27): docs/referee-2/R2-P-IDEAL-FLIP.md dc622d031fbcf487ca000cbf4cde9b0b0153527b (2026-11-05T11:17:53Z, new file,
   136 lines, sha1 f7e1a3bd259f17b0c2049af4cdb4a3dc7dabfe99; with R2-P-IDEAL-FLIP/flip_check.py): every statement SIGN, the DEAD «SIGN
   WITH GAP G-FLIP-1», L-1 MATCHES (l. 10-19, 134-136); docs/referee-2/R2-P-IDEAL-FLIP-L2.md 8b53a9e2653ff89a20763ac7f33e18a00feab6b3
@@ -823,8 +823,8 @@ one commit holding this file. (2) TITLE l. 484 = "### R110 [refereed-only] " + L
 file. (3) BODY l. 484-757 (python slice d[483:757]; 0 "|"); GAPS preamble l. 759-771; UPDATE l. 772 (d[771]; one line, 0 "|", one each
 of <DATE>, <HH:MM>, <checker>; 4,748 bytes; sha1 d76a5cfb4b09dcf1d24dfc7acad17c6ac1db185c of the line without newline, computed on the
 UNFILLED form, as C122 §4 states it, «sha1 d76a5cfb4b09dcf1d24dfc7acad17c6ac1db185c of the line without newline»: equal). A landing
-script slices d[483:757] for the entry and reads d[771] for the UPDATE. (4) THE ONE PLACEHOLDER: Signatures, REFEREE, the sentence
-beginning L-3 (SECOND FILL; the Lead replaces this before landing); everything else in the entry is final for C122 Add. 1. (5) QUOTE
+script slices d[483:757] for the entry and reads d[771] for the UPDATE. (4) THE ONE PLACEHOLDER (Signatures, REFEREE, L-3 sentence; and its pointer in Object) was replaced by the Lead at 18:29Z by date -u
+with REFEREE §C add. 1 (5c02d44d); everything else in the entry is final for C122 Add. 1. (5) QUOTE
 SWEEP (chk110b.py: chk110.py's rule and sources plus L-3, fixes and check.sh at 47b4e165, R2-P-IDEAL-FLIP-L2.md at 8fde383f, C122, my
 second-fill outputs): 583 outermost quotes, 480 parts of 6+ characters, every part found (0 not found); in the title and body alone 142
 quotes, 140 parts, 0 not found; GAPS preamble and UPDATE 12 quotes, 7 parts, 0 not found. Line-precise: 153 of 153 (source, cited line
