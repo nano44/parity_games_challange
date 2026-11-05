@@ -8,6 +8,7 @@ For a genome G (box 150 JSON, ISO R197 ladder), a state s of levels >= 1 and a b
 Lemma GAIN-IND (docs/si/N5-FOOT-box65.md §1): T_k(G) <= T_0(G) + k * g*(G), g*(G) = max over s, b of g(s, b); checked here (IND).
 Per genome, prints g*(G), the largest gain per footprint j (over the maximising flip times), the largest gain of a flip at time t
 over flip states of footprint j: GJ[j] = max over s, b, t with j(s_t) = j of (t + L_(1-b)(s_t) - M(s)), and T_k for k <= K.
+Climb outputs (out/OBJ_m*_s*.json) are LIVE files rewritten while a climb runs; check65.sh pins frozen copies in pin/ only.
 Usage: gain.py genome.json ...  |  gain.py --random m count seed  |  gain.py --climb m seed iters out (maximise g*)"""
 import sys, os, json, itertools, random
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, os.path.join(HERE, "..", "box64"))

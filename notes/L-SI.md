@@ -1,12 +1,15 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
-## BOX 65 (successor 39; Lead GO 11:12Z: FLIP-ADD by induction on the flip footprint j) — IN FLIGHT
+## BOX 65 (successor 39; Lead GO 11:12Z: FLIP-ADD by induction on the flip footprint j) — DONE
 - Note docs/si/N5-FOOT-box65.md; tools experiments/si/box65/{gain.py, bfg.c (= copy of claude/l-comp 557b045b box27/bfk.c + GAIN
   hook)}; out/ (climb champions, bfg results, kf1 trace), log/.
 - PROVED (lane): GAIN-IND (T_k(G) <= T_0(G) + k g*(G)); FLIP-ADD <= ONE-FLIP (g*(m) = O(m)).
 - «added <= c·j» FAILS as a route: max gain always at footprint j = 1; GJ[1] = 2, >= 4, >= 6 (m 1, 2, 3); c·j collapses to c·m.
-- EXACT: g*(1) = 2, g*(2) = 4 (bfg, all m = 2 genomes). CONJECTURE ONE-FLIP-2M: g*(m) <= 2m. Climbs m 3, 4, 5 running.
+- EXACT: g*(1) = 2, g*(2) = 4 (bfg, all m = 2 genomes). ONE-FLIP-2M DEAD: pin/j1_m3_s1.json (sha1 01fac3be, g 7 > 6), also m 4
+  g 9, m 5 g 11 (replayed with L-NEW Gen). READING: g*(G) = T_0(G) on every champion (gain = a fresh run after one flip), so the
+  per-flip route gives only the trivial (k+1)T; FLIP-ADD needs a trade-off between segments of MAXIMAL runs.
+- TRAP (bit me): push 3 VERIFY FAILED because check65.sh pinned a live climb output (overwritten mid-push). Pin frozen copies only.
 - Box 64 overclaim corrected (constant-C form only).
 
 ## BOX 64 (successor 39; written 2026-11-05 (date -u: see commit); Lead brief 2026-11-05, OR/PI lens on FLIP-ADD)
@@ -27,6 +30,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   [Fe10] arXiv:1003.3418 Thms 17-18; [MS99] arXiv:1301.6718 Thm 7; [MSz06] Adv. Math. 204 (2006) Thm 1; [GHZ98] DOI 10.1007/PL00009827
   Thms 1-2; [Th17] arXiv:1706.09380 Thms 3, 4, 8; [AF13] arXiv:1305.3944 Thm 8. NOT opened: Williamson Hoke 1988; HPZ SODA 2014;
   HKZ SODA 2014 (nothing rests on them).
+### Dead ends (box 65)
+- «steps added by a flip <= c·j» (j = footprint at the flip): max gain is always at j = 1 and grows 2, 4, >= 7, >= 9, >= 11 (m 1-5);
+  instances kf1_d4_t10 (gain 5, j 1), box65/pin/j1_m3_s1.json (gain 7, j 1), pin/j1_m5_s1.json (gain 11, j 1).
+- CONJECTURE ONE-FLIP-2M (g*(m) <= 2m): pin/j1_m3_s1.json, m 3, start [1,0,0,1,1,0] b 1: M 2, run 2 + flip + 7 = 9, g 7 > 6.
 ### Dead ends (box 64) — CORRECTED 2026-11-05 (successor 39, box 65)
 - DEAD only in the constant form: «restart after a flip ≤ remaining run + C» for every constant C < T_0(G). Instance: kf1_d4_t10 (m 3),
   seg 5 = T_0(G), restart R 5 = T_0(G) from the stuck state; W1 gap = T_0(G) on all 8 witnesses (check64.sh pins).

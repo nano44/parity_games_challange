@@ -1,4 +1,4 @@
-# Box 65 N5-FOOT: FLIP-ADD by induction on the flip footprint fails. The largest gains come from flips of footprint 1, and they grow with m. FLIP-ADD reduces to ONE-FLIP (g*(m) = O(m)) by Lemma GAIN-IND
+# Box 65 N5-FOOT: FLIP-ADD by induction on the flip footprint fails, and so does the per-flip charge. The largest gains come from footprint 1 and grow like a fresh run (g* = 2, 4, ≥ 7, ≥ 9, ≥ 11). Lemma GAIN-IND reduces FLIP-ADD to ONE-FLIP; ONE-FLIP-2M is DEAD
 L-SI successor 39, 2026-11-05 (date -u: see the commit). Lead GO 11:12Z: test «added steps ≤ c·j» (j = flip footprint) exactly on
 the T_k(m) instances for m ≤ 3; prove it if a clean bound appears; otherwise give the killing instance. Model: E_m of L-NEW box 160
 §0 (R197 2-wide degree-2 ladders, ISO, level 0 external), as in docs/si/N5-FLIPOR-box64.md §2 (BIT-CHAIN).
@@ -23,19 +23,31 @@ Not a TARGET.md claim. No polynomial bound. FLIP-ADD, SLOT-TRADE and G-N5-TIME s
 - **«added steps ≤ c·j» FAILS as a route (the induction has nothing to work on).**
   - In every instance the largest gain comes from a flip of footprint j = 1: GJ[1] = g*(G) on the L-NEW witnesses and on every
     climb champion.
-  - GJ[1] grows with m: 2 (m = 1, EXACT), ≥ 4 (m = 2), ≥ 6 (m = 3), ≥ 6 (m = 5; climb still running at the push).
+  - GJ[1] grows with m: 2, 4 (m = 1, 2, EXACT), ≥ 7, ≥ 9, ≥ 11 (m = 3, 4, 5; climbs).
   - Killing instances for a constant c, i.e. any c below the value shown is refuted:
     - kf1_d4_t10 (L-NEW, m 3): flip at a footprint-1 state, gain 5, so c ≥ 5.
-    - box65/out/j1_m3_s1.json (m 3): gain 6 at j = 1, so c ≥ 6.
+    - box65/pin/j1_m3_s1.json (m 3): gain 7 at j = 1, so c ≥ 7. box65/pin/j1_m5_s1.json (m 5): gain 11 at j = 1.
   - So «c·j» holds on this data only with c ≥ 2m, which is the «c·m» form.
   - Obstruction (traced in §2): the flip at footprint 1 inverts only the level-1 key preference. The cascade is carried by the MOVES
     that follow. A level-1 move changes the pair (s(A_1), s(B_1)) from equal to unequal, which toggles b_1 and so unlocks level 2,
     and so on. The static footprint at the flip time does not bound the levels that are reached later.
-- What remains, CONJECTURE ONE-FLIP-2M (lane; DATA only): g*(m) ≤ 2m.
-  - g*(1) = 2 (EXACT; also L-COMP's enumerator with a gain hook, §3).
-  - g*(2) = 4 = 2·2 (EXACT, every m = 2 genome; §3), attained at a start with M(s) = 1 that a single flip extends to 5 steps.
-  - g*(3) ≥ 6 and g*(5) ≥ 6 (climbs).
-  - By GAIN-IND, ONE-FLIP-2M would give T_k(m) ≤ T^R(m) + 2km.
+- **CONJECTURE ONE-FLIP-2M («g*(m) ≤ 2m»): DEAD.**
+  - Kill: pin/j1_m3_s1.json (m 3, sha1 01fac3be…). From upper state [1,0,0,1,1,0] with b_0 = 1: M = 2. The b-run takes 2 steps, then
+    a flip, then 7 more, so 9 = M + 7 and g = 7 > 6.
+  - Replayed independently with L-NEW's box 150 Gen (replay_g.py; t + L_(1−b)(s_t) = 2, 3, 9).
+  - Further kills: pin/g_m4_s2.json (m 4, g 9 > 8) and pin/j1_m5_s1.json (m 5, g 11 > 10), both replayed.
+  - Values so far: g*(m) = 2, 4 (EXACT, m = 1, 2); ≥ 7, ≥ 9, ≥ 11 (m = 3, 4, 5; climbs, not exact).
+- **READING: the gain is a fresh run, so ONE-FLIP is not a simplification.**
+  - In every pinned champion g*(G) = T_0(G): 6, 7, 9, 11.
+  - Each maximal gain has the same shape. A start with M(s) ∈ {1, 2} is nearly stuck under both bits. One or two steps, a flip,
+    then a run of length about T_0(G).
+  - So ONE-FLIP («g*(m) = O(m)») asks for a fresh run after a flip to be O(m) long. That fails as soon as T^R(m) is superlinear
+    (2, 4, 8, 13, ≥ 15 for m = 1..5), unless the post-flip runs are much shorter than flip-free maxima, and the data says they are
+    not (g* ≥ 7, 9, 11 against T^R = 8, 13, ≥ 15).
+  - GAIN-IND then gives only T_k ≤ T_0 + k·g* ≈ (k + 1)·T, the trivial bound.
+  - Conclusion: per-start gain does not reduce FLIP-ADD to anything easier. FLIP-ADD is a statement about MAXIMA (T_k(m) vs
+    T^R(m)), not per start. It needs the trade-off «a long pre-flip segment ⇒ a short post-flip run», not a per-flip charge.
+  - ONE-FLIP (O(m)) itself stays OPEN, but the data above is evidence against it.
 - **Correction to box 64 (made in docs/si/N5-FLIPOR-box64.md and notes/L-SI.md):** box 64's §0 (c) and its dead-end entry
   overclaimed. kf1_d4_t10 kills «restart ≤ remaining + C» only for constants C < T_0(G) = 5. It does not kill an O(m) per-restart
   form (5 ≤ 2·3).
@@ -82,7 +94,14 @@ Not a TARGET.md claim. No polynomial bound. FLIP-ADD, SLOT-TRADE and G-N5-TIME s
     - kf1_d4_t10 (m 3): 5, {1: 5, 2: 4, 3: 1}.
     - ISO_1_d4_t12 (m 3): 5, {1: 5, 2: 3, 3: 1}.
   - Random ISO ladders (200 per m): g* max 2, 2, 3, 3 for m = 1..4. IND 0 everywhere.
-  - Climbs maximising GJ[1] (OBJ=j1): m 2 ≥ 4; m 3 ≥ 6 (out/j1_m3_s1.json, GJ {1: 6, 2: 5, 3: 0}); m 5 ≥ 6.
+  - Climbs (OBJ=j1: maximise GJ[1]; OBJ=g: maximise g*), frozen copies in pin/ (sha1 pin/pins.sha1; out/ = live outputs, not pinned):
+    | pin | m | g* | GJ | T_0 .. T_4 (this genome) |
+    | --- | --- | --- | --- | --- |
+    | g_m3_s3 | 3 | 6 | {1: 6, 2: 5, 3: 5} | 6 7 8 8 9 |
+    | j1_m3_s1 | 3 | 7 | {1: 7, 2: 5, 3: 5} | 7 9 10 10 11 |
+    | g_m4_s2 | 4 | 9 | {1: 9, 2: 8, 3: 5, 4: 4} | 9 10 11 11 11 |
+    | j1_m5_s1 | 5 | 11 | {1: 11, 2: 2, 3: 6, 4: 5, 5: 5} | 11 12 14 15 15 |
+  - replay_g.py: the three kills replayed with L-NEW's box 150 Gen (gain 7, 9, 11).
 - bfg.c: a COPY of L-COMP's exhaustive enumerator (claude/l-comp 557b045b experiments/comp/box27/bfk.c, every acyclic ISO Ξ-graph,
   rank order, parity vector, in-level gate order and start), with one hook marked GAIN that computes g*(m) from its own DP tables
   (V1 = max over level-0 configurations of the run with ≤ 1 flip; M = the same with 0 flips).
@@ -93,6 +112,9 @@ Not a TARGET.md claim. No polynomial bound. FLIP-ADD, SLOT-TRADE and G-N5-TIME s
       upper state 13; V1 5, M 1.
 
 ## 4. Next (proposal)
-- ONE-FLIP-2M is the clean target. Proving it means bounding the post-flip cascade per level by 2 steps. Candidate invariant from §2:
-  after a flip, each level re-arms at most once per carry. This is to be tested exactly as «number of moves at level l after the
-  flip ≤ 2» on the m = 2 enumeration and on the climbs.
+- The open content of FLIP-ADD is a trade-off between the pre-flip and post-flip segments of maximal runs, not a per-flip charge.
+- Exact target for m = 2 (bfg-style enumeration): the set of pairs (pre-flip length t, post-flip length) attained over all genomes and
+  starts with one flip, and its upper frontier. FLIP-ADD at k = 1 is the statement «frontier ≤ T^R(m) + O(m)».
+- This overlaps L-NEW's SLOT-TRADE. Route to whichever lane the Lead chooses.
+- Process lesson: box 65's first push failed (VERIFY FAILED, nothing pushed) because check65.sh pinned a climb output that the still
+  running climb overwrote with a better champion. Pins now point at frozen copies (pin/) with sha1.
