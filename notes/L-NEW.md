@@ -11,6 +11,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - Things only I know (54): fk.py = exact DP for T_k and mu_k (matches the T_k table on witness files); fkall.sh needs BOX=<dir>;
   L-RED r187/r178 instances via `git fetch origin claude/l-red` then `git archive 5f3e89e1 ... | tar -x` (the object is absent before
   the fetch). push.sh pushes only the verified commit: chain a second push for commits made during verify.
+### BOX 165 (Lead 18:50Z: per-mover move bound): docs/new/N5-PERMOVER-box165.md, experiments/new/box165/. CONJECTURE PM
+  moves(x) <= (deg-1)(1+desc(x)) (0 violations, 255 file paths, tight); KF does not follow the Xi-position (desc 1, KF 14); key-free
+  diamond max moves 2^(desc/2+1)-1 (PM needs keys from desc 4). PROVED (lane): MERGE, PM-1 (desc <= 1, any schedule), CHARGE-PM.
+  NEEDS: exact SAT kill query (L-RED xcnf). L-RED tree extracted via `git archive origin/claude/l-red experiments/red | tar -x -C <scratch>/lred2`.
 ### Successor 54 handover check (STEP 0; written 2026-11-05 17:2xZ by date -u)
 1. claude/l-new: ls-remote a9851eba; local HEAD a9851eba = ls-remote after fetch + ff-only (not stale this time). Vs trunk
    claude/vibrant-johnson-nxvvxo (e4823bdd): 9 ahead / 9358 behind (count as printed by rev-list), merge-base 4c2e5124. Lane files only.

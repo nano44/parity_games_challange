@@ -1,0 +1,5 @@
+restart 0 (excess, T) (0, 7) best (0, 7)
+restart 1 (excess, T) (0, 9) best (0, 9)
+restart 2 (excess, T) (0, 7) best (0, 9)
+restart 3 (excess, T) (0, 6) best (0, 9)
+restart 4 (excess, T) (0, 5) best (0, 9)
