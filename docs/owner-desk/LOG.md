@@ -585,3 +585,29 @@ Pending: R109 IDEAL-SLOT (SANDWICH: T*(d−1) ≤ T*(d) ≤ 3T*(d−1) + 2), at 
 Search side: exact max run lengths on 2-wide ladders are 4/8/13 at d 2/3/4 and ≥ 15 at d 5. Level-1 «slots» can be filled (C_1 = 8 at d 4), but long runs do not fill them. The open conjecture is SLOT-TRADE, T*(d) ≤ T*(d−1) + O(d), which would make ladders polynomial.
 G-N5-TIME OPEN. No proof and no counterexample.
 Next week: R109 landing, then L-RED's d 5/6 exact runs. I'll keep the pace normal unless the owner says otherwise.
+
+## 2026-11-05T20:09Z owner words given directly to the Lead (D20, 2026-11-05 ~09:48Z, as recorded in docs/DECISIONS.md)
+> We have reset the weekly usage, so we can again work faster no?
+
+## 2026-11-05T20:09Z Lead daily owner line (2026-11-05 20:11Z, verbatim)
+G-N5-TIME (polynomial time for N5) is still OPEN. Nothing proves or refutes it.
+
+PROVED (refereed, landed today):
+- RESULTS R110 IDEAL-FLIP, landed 20:08Z. Two referees signed it; CHECKER C122 PASS after one wording round; CI green.
+- In the IDEAL-ACYC model, an ISO ladder run of depth d reduces to a depth d−1 run with at most 2 external bit flips (W-ONLY). Also proved: NOW-ONCE, SWAP / SWAP-RUN and FLIP-1.
+- The «single-channel» slot trade is DEAD, CONDITIONAL on T^R(3) ≤ 8.
+
+PREMISE IN PROGRESS: T^R(3) = 8.
+- Two referees have independently audited the encoding as faithful.
+- Three SAT solvers report UNSAT; a certificate check is under way with an in-fleet proof checker.
+- It will land as its own item, and then «CONDITIONAL» drops.
+
+LANE-LEVEL (not refereed):
+- Proved in lanes: Lemma IM (policy-iteration monotonicity in the model) and Lemma COMPOSE.
+- An exact SAT frame built on IM gives T_1(3) = 10 exactly. It also gives V_0 + V_1 ≤ 2T^R(m)+1, exact and tight for m = 1-3.
+- The entropy-compression (Moser-Tardos-style) approach was tried and closed, with an exact obstruction.
+- Conjectures killed today: PM (a per-mover polynomial bound) and several per-genome potentials. Each kill has a concrete instance.
+
+OPEN, the key conjecture: FLIP-ADD, T_2(m) ≤ T^R(m)+O(m). It would make T^R polynomial. No kill, no proof.
+
+FLEET: 4 research lanes plus gates. Weekly window at full pace (D20). No paid overage. Containers restarted often today; long runs are now resumable.
