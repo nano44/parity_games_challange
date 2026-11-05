@@ -811,4 +811,93 @@ if grep -qxF "KEYFLIP x3_L8.json N 6 STEPS 8 MOVES 13 KFLIPS 10 VIOL 0" <<<"$w98
 else
   echo "box 149 KEYFLIP check: FAILED"; exit 1
 fi
+w99=$(cd .. && python3 -I new/box150/check.py new/box14*/out/*.json new/box14*/inst/*.json new/box142/*.json new/box146/*.json | tail -1; ALL=1 python3 -I new/box150/check.py new/box150/out/rand/*.json | tail -1; NEG=3 python3 -I new/box150/check.py new/box150/out/rand/*.json | tail -1)
+if grep -qxF "TOTAL genomes 46 runs 46 steps 386 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYFLIP 0 DECR 0 TOPMONO 0 RBOUND 0 RESTR 0 ICHARGE 0 REC 0 VIOL 0 (info REC148 0)" <<<"$w99" && grep -qxF "TOTAL genomes 200 runs 75518 steps 93963 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYFLIP 0 DECR 0 TOPMONO 0 RBOUND 0 RESTR 0 ICHARGE 0 REC 0 VIOL 0 (info REC148 0)" <<<"$w99" && grep -q "^TOTAL genomes 200 runs 200 .* XINEW [1-9]" <<<"$w99"; then
+  echo "box 150 P-IDEAL-RED: every packet inequality, 0 violations on 46 corpus genomes and 75,518 all-start runs of 200 random genomes; negative control fires: PASS"
+else
+  echo "box 150 P-IDEAL-RED check: FAILED"; exit 1
+fi
+if python3 -c "import z3" 2> /dev/null; then
+  w100=$(bash box151/run.sh check 2>&1)
+  exp100="NEST k 3 E 0 DEG 1 ANTI 0 FREEKP 0 xwake -> sat
+NEST k 3 E 0 DEG 0 ANTI 1 FREEKP 0 xwake_anti -> unsat
+NEST k 3 E 1 DEG 0 ANTI 1 FREEKP 0 xwake_anti -> unsat
+NEST k 2 E 2 DEG 0 ANTI 1 FREEKP 0 xwake_anti -> sat
+NEST k 4 E 2 DEG 0 ANTI 1 FREEKP 0 xwake_anti -> unsat
+NEST k 3 E 1 DEG 0 ANTI 1 FREEKP 1 xwake_anti -> unsat
+NEST k 4 E 2 DEG 0 ANTI 1 FREEKP 1 xwake_anti -> sat"
+  if [ "$w100" == "$exp100" ]; then
+    echo "box 151 NEST: xwake.py without antisymmetry SAT on bare k 3; with it UNSAT k 3 E 0/1, k 4 E 2, SAT k 2 E 2; gate-free UNSAT k 3 E 1, SAT k 4 E 2: PASS"
+  else
+    echo "box 151 NEST check: FAILED"; echo "$w100"; exit 1
+  fi
+else echo "box 151 NEST checks skipped (no z3)"; fi
+w101=$(cd .. && python3 -I new/box152/lemcheck.py new/box14*/out/*.json new/box14*/inst/*.json new/box142/*.json new/box146/*.json new/box152/*_d5_*.json)
+if grep -qxF "LEMCHECK runs 50 pairs 92308 PMDIFF 0 SPATH 0 pm_prem 32586 sp_prem 37303" <<<"$w101"; then
+  echo "box 152 PMDIFF / STABLE-PATH: 0 violations on 92,308 state pairs of 50 runs (incl. R198/R199 d 5 pins): PASS"
+else
+  echo "box 152 lemcheck: FAILED"; echo "$w101"; exit 1
+fi
+w102=$(cd .. && NMAX=10 python3 -I new/box153/decomp.py new/box14*/out/*.json new/box14*/inst/*.json new/box152/*_d5_*.json; python3 -I new/box153/longpath.py new/box153/ladlp_5.json)
+if grep -qxF "DECOMP genomes 25 faces 478953 USO 0 COMB 0 ORDER 0 ACYC 0 JUMP 0 maxjump 7" <<<"$w102" && grep -qxF "LONGPATH ladlp_5.json n2 10 longest 114 ideal_T 1" <<<"$w102"; then
+  echo "box 153 DECOMP: improvement orientation is a decomposable AUSO (0 violations); Xi-ladder K 5 longest improving path 114: PASS"
+else
+  echo "box 153 check: FAILED"; echo "$w102"; exit 1
+fi
+w103=$(cd .. && python3 -I new/box154/ladder.py 10)
+if [ "$(grep -c ' OK$' <<<"$w103")" = 10 ] && grep -qF "LADDER K 7 N 14 path 254 = 2^(K+1)-2 True nonimproving 0 flips [2, 4, 8, 16, 32, 64, 128] DP_longest 254 ideal_T 0 OK" <<<"$w103"; then
+  echo "box 154 LADDER-LP: Xi-ladder L_K has a directed improving path of length 2^(K+1)-2 (K = 1..10; DP exact K <= 7): PASS"
+else
+  echo "box 154 LADDER check: FAILED"; echo "$w103"; exit 1
+fi
+# frozen-file pins (CHECKER C116 G-3): P-IDEAL-CUBE packet and line L-1 (d97555d4)
+pin104=$(cd ../.. && sha1sum docs/new/P-IDEAL-CUBE.md docs/new/P-IDEAL-CUBE-line-L1.txt docs/new/P-IDEAL-CUBE-line-L2.txt docs/new/P-IDEAL-CUBE-fixes.md)
+if grep -q "^366afedcf7cd04a31302e25cec47c7fb3df455bb  docs/new/P-IDEAL-CUBE.md$" <<<"$pin104" && grep -q "^99ae8face50615b4ce1ce5cd5e69f223f17208e1  docs/new/P-IDEAL-CUBE-line-L1.txt$" <<<"$pin104" && grep -q "^449421e4cfaedbef577f68720fab4924111cd170  docs/new/P-IDEAL-CUBE-line-L2.txt$" <<<"$pin104" && grep -q "^006274ec3f0aa82ceac8fa9b8f294f1f8d2e138e  docs/new/P-IDEAL-CUBE-fixes.md$" <<<"$pin104"; then
+  echo "P-IDEAL-CUBE pins (packet 366afedc, line L-1 99ae8fac, line L-2 449421e4, fixes 006274ec): PASS"
+else
+  echo "P-IDEAL-CUBE pin check: FAILED"; echo "$pin104"; exit 1
+fi
+# P-IDEAL-M2 (box 156; L-NEW 51): MULTI-CHARGE (mcharge.py), TRIGGER / XIFLIP (trig.py, with NEG=3 control), LIN-156 DEAD instance, pins
+w105=$(cd .. && python3 -I new/box155/mcharge.py new/box14*/out/*.json new/box14*/inst/*.json new/box142/*.json new/box146/*.json new/box152/*.json new/box153/*.json new/box156/ext/*.json; ALL=1 ALLN=8 python3 -I new/box155/mcharge.py new/box150/out/rand/*.json; python3 -I new/box156/trig.py new/box14*/out/*.json new/box14*/inst/*.json new/box142/*.json new/box146/*.json new/box152/*.json new/box153/*.json new/box156/ext/*.json; ALL=1 python3 -I new/box156/trig.py new/box150/out/rand/*.json; NEG=3 python3 -I new/box156/trig.py new/box14*/out/*.json new/box14*/inst/*.json new/box142/*.json new/box146/*.json new/box152/*.json new/box153/*.json new/box156/ext/*.json; python3 -I new/box156/val.py new/box156/ext/max_d4_L13.json)
+if grep -qxF "MCHARGE runs 54 steps 468 unch 222 M2 300 VIOL 0 BOUND 0 single_runs 0 single_maxT_over_N 0.0" <<<"$w105" && grep -qxF "MCHARGE runs 34934 steps 38676 unch 2148 M2 5188 VIOL 0 BOUND 0 single_runs 6114 single_maxT_over_N 1.0" <<<"$w105" && grep -qxF "TRIG runs 54 moves 919 NEITHER 0 WNOLOW 0 XNODESC 0 XiT 707 WT 333 BOTH 121 multi 270 WREL 162 XIBR 108 XIFLIP 0" <<<"$w105" && grep -qxF "TRIG runs 3981 moves 298 NEITHER 0 WNOLOW 0 XNODESC 0 XiT 298 WT 0 BOTH 0 multi 12 WREL 0 XIBR 12 XIFLIP 0" <<<"$w105" && grep -q "^TRIG runs 54 moves 488 NEITHER 141 " <<<"$w105" && grep -qxF "new/box156/ext/max_d4_L13.json N 8 T 13 M2 5 U 4 mv [1, 1, 2, 1, 1, 2, 3, 2, 1, 1, 2, 1, 1]" <<<"$w105" && [ "$(sha1sum box156/ext/max_d4_L13.json | cut -d' ' -f1)" = f0735b61312bdbfe1bb553496d7e9ee38681dcee ]; then
+  echo "P-IDEAL-M2: MULTI-CHARGE 0 viol. (54 + 34,934 runs), TRIGGER / XIFLIP 0 viol. (54 + 3,981 runs; NEG=3 fires), max_d4_L13 T 13 > 12: PASS"
+else
+  echo "P-IDEAL-M2 check: FAILED"; echo "$w105"; exit 1
+fi
+pin105=$(cd ../.. && sha1sum docs/new/P-IDEAL-M2.md docs/new/P-IDEAL-M2-line-L1.txt docs/new/P-IDEAL-M2-line-L2.txt docs/new/P-IDEAL-M2-fixes.md)
+if grep -q "^bc47b06c4b8d90ceb28939c966083e0c057a442b  docs/new/P-IDEAL-M2.md$" <<<"$pin105" && grep -q "^0160d1e3ffa832536454a74c559b20280b87f53e  docs/new/P-IDEAL-M2-line-L1.txt$" <<<"$pin105" && grep -q "^c890f2685edf3725a5fccb12cf93e9d3dd7d44ff  docs/new/P-IDEAL-M2-line-L2.txt$" <<<"$pin105" && grep -q "^66fd61731df0667e380e8ac231ee27062ee6b8a8  docs/new/P-IDEAL-M2-fixes.md$" <<<"$pin105"; then
+  echo "P-IDEAL-M2 pins (packet bc47b06c, line L-1 0160d1e3, line L-2 c890f268, fixes 66fd6173): PASS"
+else
+  echo "P-IDEAL-M2 pin check: FAILED"; echo "$pin105"; exit 1
+fi
+# box 157 (L-NEW 51): Lemma SEG, SEG-ONCE, Corollary LEVEL-PRODUCT (segcheck.py; BADLEV=2 negative control)
+w106=$(cd .. && python3 -I new/box157/segcheck.py new/box14*/out/*.json new/box14*/inst/*.json new/box142/*.json new/box146/*.json new/box152/*.json new/box153/*.json new/box156/ext/*.json new/box157/max_d5_L15.json new/box139/genomes/*.json; ALL=1 ALLN=8 python3 -I new/box157/segcheck.py new/box150/out/rand/*.json; BADLEV=2 python3 -I new/box157/segcheck.py new/box14*/out/*.json new/box14*/inst/*.json new/box142/*.json new/box146/*.json new/box152/*.json new/box153/*.json new/box156/ext/*.json new/box157/max_d5_L15.json new/box139/genomes/*.json)
+if grep -qxF "SEGCHECK runs 59 steps 650 intervals 652 SEG 0 ONCE 0 COUNT 0 PROD 0 maxratio 0.3333" <<<"$w106" && grep -qxF "SEGCHECK runs 34934 steps 38676 intervals 57755 SEG 0 ONCE 0 COUNT 0 PROD 0 maxratio 1.0" <<<"$w106" && grep -qxF "SEGCHECK runs 59 steps 650 intervals 652 SEG 0 ONCE 112 COUNT 0 PROD 0 maxratio 0.3333" <<<"$w106" && [ "$(sha1sum box157/max_d5_L15.json | cut -d' ' -f1)" = ba963aceabeb35d95f9c47d80d1d0e87b87baf21 ]; then
+  echo "box 157 SEG / SEG-ONCE / LEVEL-PRODUCT: 0 violations (59 + 34,934 runs; BADLEV=2 control fires): PASS"
+else
+  echo "box 157 segcheck: FAILED"; echo "$w106"; exit 1
+fi
+# P-IDEAL-SEG (box 157; L-NEW 51): REPLAY DEAD instance data (seg.py on max_d5_L15) + frozen-file pins; SEG checks are block w106
+w107=$(cd .. && python3 -I new/box157/seg.py new/box157/max_d5_L15.json)
+pin107=$(cd ../.. && sha1sum docs/new/P-IDEAL-SEG.md docs/new/P-IDEAL-SEG-line-L1.txt docs/new/P-IDEAL-SEG-fixes.md)
+if grep -qxF "max_d5_L15.json N 10 T 15 L 0 cuts [7, 8]" <<<"$w107" && grep -qF "  seg t9-15 len 7 NEWSTATES 7 REPLAY False: " <<<"$w107" && grep -qF "  seg t1-6 len 6 NEWSTATES 6 REPLAY False: " <<<"$w107" && [ "$(sha1sum box157/max_d5_L15.json | cut -d' ' -f1)" = ba963aceabeb35d95f9c47d80d1d0e87b87baf21 ] && grep -q "^7fa847843cb950e87dac38bf3d612effd5a9834e  docs/new/P-IDEAL-SEG.md$" <<<"$pin107" && grep -q "^a18f6f0c61d6d5f33adc61519d94252dd5ba9721  docs/new/P-IDEAL-SEG-line-L1.txt$" <<<"$pin107" && grep -q "^2e3dd53211b44ca752611aadf4f30e5a0e7c165f  docs/new/P-IDEAL-SEG-fixes.md$" <<<"$pin107"; then
+  echo "P-IDEAL-SEG: REPLAY DEAD data on max_d5_L15 (segment t9-15 all new); pins packet 7fa84784, line L-1 a18f6f0c, fixes 2e3dd532: PASS"
+else
+  echo "P-IDEAL-SEG check: FAILED"; echo "$w107"; echo "$pin107"; exit 1
+fi
+# box 158 (L-NEW 51): Lemma LIFT on three champions (same run one level up, no level-0 move) and their segment data
+w108=$(cd .. && for f in new/box156/ext/max_d4_L13.json new/box157/max_d5_L15.json new/box152/dd_d5_F14.json; do python3 -I new/box158/lift.py $f "$tmp/lift_$(basename $f)"; done; python3 -I new/box158/three.py "$tmp"/lift_*.json)
+if [ "$(grep -c ' SAME True$' <<<"$w108")" = 3 ] && grep -qxF "lift_max_d4_L13.json d 5 T 13 cuts [] seg1 13" <<<"$w108" && grep -qxF "lift_max_d5_L15.json d 6 T 15 cuts [] seg1 15" <<<"$w108"; then
+  echo "box 158 LIFT: max_d4_L13 / max_d5_L15 / dd_d5_F14 lift one level up with the same run and seg1 = T: PASS"
+else
+  echo "box 158 LIFT check: FAILED"; echo "$w108"; exit 1
+fi
+# P-IDEAL-SLOT (box 158; L-NEW 51): instance lift_max_d4_L13 (box 150 checker), frozen-file pins; LIFT runs are block w108
+w109=$(cd .. && python3 -I new/box150/check.py new/box158/lift_max_d4_L13.json | tail -1; python3 -I new/box158/three.py new/box158/lift_max_d4_L13.json)
+pin109=$(cd ../.. && sha1sum docs/new/P-IDEAL-SLOT.md docs/new/P-IDEAL-SLOT-line-L1.txt experiments/new/box158/lift_max_d4_L13.json docs/new/P-IDEAL-SLOT-line-L2.txt docs/new/P-IDEAL-SLOT-fixes.md docs/new/P-IDEAL-SLOT-line-L3.txt docs/new/P-IDEAL-SLOT-line-L4.txt)
+if grep -qxF "TOTAL genomes 1 runs 1 steps 13 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYFLIP 0 DECR 0 TOPMONO 0 RBOUND 0 RESTR 0 ICHARGE 0 REC 0 VIOL 0 (info REC148 0)" <<<"$w109" && grep -qxF "lift_max_d4_L13.json d 5 T 13 cuts [] seg1 13" <<<"$w109" && grep -q "^62901b5f951598fb44426942b0fb1d999325625a  docs/new/P-IDEAL-SLOT.md$" <<<"$pin109" && grep -q "^17236fb18d70c1e2968689108a74a1acac938bd5  docs/new/P-IDEAL-SLOT-line-L1.txt$" <<<"$pin109" && grep -q "^33fec48f1a8f1c57891b7574d87cc6bbe5e3bd38  experiments/new/box158/lift_max_d4_L13.json$" <<<"$pin109" && grep -q "^55e74726f0c7e6c6e27f780b779788014cc97e29  docs/new/P-IDEAL-SLOT-line-L2.txt$" <<<"$pin109" && grep -q "^e7bd036111a2a87a67183b998a62f10f533aff9f  docs/new/P-IDEAL-SLOT-fixes.md$" <<<"$pin109" && grep -q "^0c51ce6da0a655c31112515c78cb0b5d22690168  docs/new/P-IDEAL-SLOT-line-L3.txt$" <<<"$pin109" && grep -q "^008b10ad8ee340793c5167fe5f990b7b71020630  docs/new/P-IDEAL-SLOT-line-L4.txt$" <<<"$pin109"; then
+  echo "P-IDEAL-SLOT: instance lift_max_d4_L13 (d 5, T 13, seg1 13, 0 violations); pins packet 62901b5f, line L-1 17236fb1, instance 33fec48f, line L-2 55e74726, fixes e7bd0361, line L-3 0c51ce6d, line L-4 008b10ad: PASS"
+else
+  echo "P-IDEAL-SLOT check: FAILED"; echo "$w109"; echo "$pin109"; exit 1
+fi
 rm -rf "$tmp"

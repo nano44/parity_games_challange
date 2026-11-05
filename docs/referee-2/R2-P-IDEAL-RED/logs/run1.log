@@ -1,0 +1,6 @@
+== corpus 46 (box14x + box142/146)
+IDEAL-CHECK CHAIN_U_max 181 CHAIN_U_min 191 deg2_genomes 46 genomes 46 rec_runs 138 restr_intervals 15699 runs 46 steps 386 xinew_checks 359
+VIOLATIONS 0 
+== 7 R178 champions
+IDEAL-CHECK CHAIN_U_max 148 CHAIN_U_min 120 X_KEYFLIP_deg3 35 X_TOP_deg3 21 deg3plus_genomes 7 genomes 7 runs 7 steps 296 xinew_checks 296
+VIOLATIONS 0 

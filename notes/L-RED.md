@@ -1,4 +1,7 @@
 # L-RED notebook (independent adversary lane)
+Successor 49 (Opus 5.5, D1/D18/D19) started 2026-11-04 00:18Z (date -u); STEP 0 check below; BOX R200 (exact engine, k 3 d 6).
+Successor 48 (Opus 5.5, D1/D18) started 2026-11-03 07:20Z (date -u); STEP 0 message 07:20Z; R199 nested doubling: k 2 SAT d 5 (pin nd2_d5_F12_n96), k 3 UNSAT d <= 5, UNKNOWN d 6-7; PARKED FINAL 23:4xZ, see «Successor 48 PARK».
+Successor 47 (Opus 5.5, D1/D18) started 2026-11-02 20:58Z (date -u); STEP 0 message 20:58Z; R197: fork ladders exact 3 / 5 (d 2 / 3); carry maxima 2, 6, 10 EXACT (d 4); max run d 4 = 13 EXACT (R193 item closed); pins dbl_d3_F6_n60, dbl_d4_F10_n78, max_d4_L13_n78; Lemmas DOWN / LEVEL-RISE / WAKE-CHAIN; PARKED, see «Successor 47 PARK».
 Successor 46 (Opus 5.5, D1/D18) started 2026-11-02 11:52Z (date -u); STEP 0 message 11:52Z; R191 (degree-3 rotation): ROT-CAP / KEY-ALT / NEST-PI / MERGE-1 / NEST-DEAD-3 PROVED (lane), U linear d 3-8; R192 (RANK) linear; R193 d 4 undecided; R194 (a′) → U; R195 NEST-DEAD-ALL; R196 SAME-WAKER; PARKED ~20:5xZ, see "Successor 46 PARK".
 Successor 45 (Opus 5.5) started 2026-11-02 02:33Z (date -u); P-N5-REALIZE FROZEN e609c5d2 + fixes entries 1-2 + L-1 (MATCHES at both referees); R189 LAG / NEST-DEAD; R190 clock (undecided, linear data); PARKED ~07:3xZ, see "Successor 45 PARK".
 Successor 44 (session id: see docs/NOW.md roster, Opus 5.5) started 2026-11-01 21:06Z (Lead brief; date -u); R187 (real-game W-ladder): Theorem REALIZE PROVED (lane), real L_FL 32 / 64, first active D″-cycle, no compounding; R188 (Ξ-counter): exact d 2 / 3 maxima 4 / 8, no compounding; PARKED ~02:1xZ 2026-11-02, see "Successor 44 PARK".
@@ -44,6 +47,221 @@ Successor 15 PARKED ~09:40Z 2026-10-25 after box 38; RESUME POINT for successor 
 context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older notebook: `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
+
+## Successor 49 handover check (2026-11-04 00:2xZ, date -u)
+1. Branch claude/l-red, head 32f6e040 (= ls-remote at 00:18Z; clone was current, ff-only no-op). vs trunk claude/vibrant-johnson-nxvvxo:
+   36 ahead / 36 behind, merge-base bb828553.
+2. Open work: BOX R200 = exact realisation test of NEST(3) at d 6 (k 3, 2 levels above). Next: build a faster exact engine (per-mover
+   Ξ decomposition / no-goods / ENC integer form), validate on k 2 d 4 UNSAT, k 2 d 5 SAT, k 3 d 5 UNSAT + 10 random xisat agreements,
+   then run k 3 d 6 over all W-feasible gate choices (allgates.py). Successor 48's d 6 HUNT runs died at the 23:39Z container restart
+   (438 proposals blocked, inexact; r199/hunt/); nothing running.
+3. GAPS rows: L-RED appears as attacker on GAP-A, GAP-C, G-STR (closed) and owner of G-NEST (open, "L-RED (attacks + proof attempts)");
+   G-N5-TIME (open) is L-NEW's; L-RED works against it under D18. No other rows.
+4. Rulings (verbatim, status from trunk docs/DECISIONS-INDEX.md): D1 «A claimed polynomial algorithm is far more likely to be wrong than
+   right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.» (active); D18 «Focus on N5 and
+   work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are
+   not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions.
+   Clearly distinguish proven results from conjectures and open problems.» (active); D19 «we have 9% usage left until tomorrow night, make
+   use of it» (active; L47 Lead reading: work to the 2026-11-04 21:00Z reset, stop on paid overage).
+5. Trap: container restarts kill nohup solver runs (23:3xZ, 438-proposal hunt lost mid-run). Check now: every long run writes its
+   state to disk incrementally and its exact relaunch line goes into this notebook before launch; results that matter are committed.
+   (Also: «pkill -f <pattern>» kills own shell: kill by PID only.)
+
+## Successor 49 RUN LOG (container-local; cwd experiments/red/r200; relaunch verbatim if lost)
+- Setup: pip install z3-solver python-sat (pysat 1.9.dev15: cadical195, kissat404). Targets: python3 ../r199/allgates.py 3 3 out/ag/k3;
+  python3 ../r199/allgates.py 3 2 out/ag/k3p2 (full-F choices: k3/ag_0 = r199 targets/ag_k3_0, k3p2/ag_0, k3p2/ag_4 = the r199 ones).
+- 00:2xZ xcnf.py (CNF + CaDiCaL, same model as xbmc) validation: g2_main E1 UNSAT 3.2 s; g2_main E2 SAT 78 s, replay L 12 opt, main
+  prefix matches; g3k_main E1 UNSAT 13.2 s; g3p2_main E1 UNSAT 17.2 s (z3: 4.9 / 4194 / 246 / 69 s). Bug fixed before: decode read
+  negative literals as false (replay mismatches on the first runs; xcnf results unaffected, only decoding).
+- 00:29Z launched: for t in k3/ag_0 k3p2/ag_0 k3p2/ag_4; do n=$(echo $t | tr / _); nohup timeout 21600 python3 xcnf.py out/ag/$t.json 2
+  out/d6_${n}.json > out/d6_${n}.log 2>&1 & done
+- 01:2xZ cube run: CUBEVARS=G,S0 nohup timeout 21600 python3 xcnf.py out/ag/k3p2/ag_0.json 2 out/d6c_k3p2_ag_0.json > out/d6c_k3p2_ag_0.log 2>&1 &
+- 02:01Z CONTAINER RESTART killed the three monolithic d 6 runs (92 min each, no answer) and the cube run (cube 0 > 35 min). Lost.
+- 02:0xZ relaunched as RESUMABLE cubes (4 parts, per-cube UNSAT lines survive restarts): bash runcubes.sh out/ag/k3p2/ag_0.json k3p2_0
+  (relaunch after a restart = the same command; it appends old logs to out/cube_<tag>_p<i>.hist and skips their UNSAT cubes).
+- 02:23Z second restart (cube runs lost, no cube finished in 20 min; G/S0 cubes do not split the hardness). Memory is not the cause
+  (~500 MB per solver). 02:53Z push b36d9bd1. Prefix runs (out/pre/, python one-liner truncating states): k3p2_0 first 10 steps SAT
+  262 s, first 14 steps SAT 623 s (EXACT, replay matches). Hinted extension of the t14 solution UNSAT 42 s (inexact).
+- 03:1xZ (cwd r200) for T0 in 10 14; do nohup timeout 36000 python3 pcegar.py out/ag/k3p2/ag_0.json 2 $T0 out/pc_k3p2_0_T$T0 >
+  out/pc_k3p2_0_T$T0.log 2>&1 & done   (resumable: no-goods in out/pc_*_nogoods.json; relaunch = same command)
+- Cross-checks: bf.py (brute force N 4 + GREEDY) 85/85 agree with xcnf (LEM on/off), 8 UNSAT; agree.py vs xisat 30/30 + 29/30 + 29/30,
+  the two non-agreements are xisat UNKNOWN (z3 timeout 600-900 s, FD too) vs xcnf UNSAT on N 8 L 3 instances (s5_15: noLEM UNSAT too).
+
+## Successor 48 PARK (FINAL 2026-11-03 23:4xZ, date -u; context ~510k; Lead 23:40Z: park, successor 49 gets the new exact engine)
+- DONE (claude/l-red, push.sh VERIFY PASS each): 220cc5439 (tools) … 990122a1b (final status §3b), and the park push (this section +
+  r199/hunt/, r199/targets/). Merged successor 47's final 46c73b9b no-ff (f531eff69).
+- RESULTS (lane level; G-N5-TIME OPEN; no family), docs/red/R199-nest.md (§0, §3, §3a, §3b table, §5b correction):
+  - PROVED (lane): Lemma C-ELEMENT (degree 2: s_t = KP_t if KP_t = C_(t-1), else s_(t-1)); Lemma GREEDY (ranks / parities exist for fixed
+    Xi-targets iff greedy top-face picking empties the requirement list); bare-ladder cycle argument (§2); 3/2/1 stacks cannot nest
+    (needs delays 2^(k-1)..1).
+  - EXACT: k 2 nested (delays 2, 1): d 4 UNSAT, d 5 SAT -> pin nd2_d5_F12_n96 (F [2, 6, 12, 8, 4]; N 10, M 20, R104 n 76, pin n 96).
+    k 3 nested (delays 4, 2, 1; L 24 and L 16): d 4, d 5 UNSAT; d 6, d 7 UNKNOWN. Slack / offsets / masks sweeps at d 5: all UNSAT
+    (87 + 1 UNKNOWN; rigid period-8 caveat).
+  - Fixed wake-order relaxation (xwake.py, acyclicity bug found by L-NEW 50, fixed 20:39Z): EXACT boundary at d <= 5; E_min 2, 2, 3 for
+    k 2, 3, 4 (= L-NEW's table); SAT for k 3 at d 6-8.
+- IN FLIGHT: none. The three d 6 HUNT runs died with a container restart at ~23:39Z (uptime 0 min at 23:39Z); last state on disk at
+  23:34Z, committed in r199/hunt/: blocked (refuted-by-hunt, NOT exactly refuted) proposals 116 (ag_k3_0, L 24), 189 (ag_k3p2_0, L 16),
+  133 (ag_k3p2_4, L 16) = 438; no SAT; best LNS 5 unmet requirements. Their exact command lines (cwd experiments/red/r199; targets now
+  also in r199/targets/, regenerate out/ag_* with «python3 allgates.py 3 3 out/ag_k3» and «python3 allgates.py 3 2 out/ag_k3p2»):
+    HUNT=1 LSIT=15000 MTMO=300 nohup python3 cegar2.py out/ag_k3/ag_0.json 2 300 out/hunt_out_ag_k3_ag_0_E2 > out/hunt_out_ag_k3_ag_0_E2.log 2>&1 &
+    HUNT=1 LSIT=15000 MTMO=300 nohup python3 cegar2.py out/ag_k3p2/ag_0.json 2 300 out/hunt_out_ag_k3p2_ag_0_E2 > out/hunt_out_ag_k3p2_ag_0_E2.log 2>&1 &
+    HUNT=1 LSIT=15000 MTMO=300 nohup python3 cegar2.py out/ag_k3p2/ag_4.json 2 300 out/hunt_out_ag_k3p2_ag_4_E2 > out/hunt_out_ag_k3p2_ag_4_E2.log 2>&1 &
+  Exact (non-hunt) CEGAR2: QTMO=180 XTMO=1200 python3 cegar2.py <target> 2 500 <prefix> (one full xisat check > 1200 s at d 6 = UNKNOWN).
+  Step core (r199/hunt/core2m_g3p2.log): CORE=2 MINCORE=1 TMO=600 python3 xbmc.py out/g3p2_main.json E1 out/core2m_g3p2.json -> d 5,
+  L 16 UNSAT with the level-4 IDEAL rule only at steps {4, 5, 6, 9, 10, 15} (main Xi-requirements on).
+- DESIGN FOR THE NEW EXACT ENGINE (k 3 at d 6; the bottleneck is xisat on ONE fixed-state proposal: 12 movers, 24 faces, L 16-24):
+  - What decomposes: with all states fixed, each requirement (s, x, bit) involves only x's two option chains at s, i.e. Xi-targets of x and
+    of the movers on those chains (descendants of x). Movers can be processed in REVERSE Xi-order: a mover's requirements depend only on
+    its own targets + the (already fixed) chain structure below it. So: enumerate Xi-targets bottom-up (pi-last movers first), at each mover
+    check its requirements' FEASIBILITY under GREEDY restricted to the faces fixed so far (a necessary condition), backtrack on failure.
+  - What couples: (i) ranks / parities are GLOBAL (one order over all faces): per-mover greedy is only a necessary test; the final test is
+    GREEDY over all requirements (polynomial, exact for fixed targets); (ii) the Xi-order pi itself (acyclicity) couples movers; enumerate
+    pi consistent with xwake's reach order first (it is a necessary relation for the proposal only if taken from the same proposal: NOT
+    sound to restrict to it in general — the «mid» check was UNSAT in 1-3 s, so the real genome, if any, uses a different reach order).
+  - Pruning that is sound: RE-REVERSAL / LAG over the actual Xi-reach (as xwake clauses), C-bits must change only when a reached mover moves
+    (checkable per mover once its descendants' targets are fixed); KEYFLIP is automatic from the fixed states.
+  - Suggested implementation: DFS over movers in a pi (outer loop over pi's consistent with the clauses), per mover 2 faces x (N + 1)
+    targets each, incremental greedy-feasibility on the requirements whose chains are complete; final global GREEDY = exact SAT test.
+    Expected branching: (N + 1)^2 per mover with strong pruning from requirements at ~5-10 states per mover.
+- Things only I know:
+  - xbmc.py (main fixed, extra levels free, LEM clauses) is the working exact engine at d <= 5; xbmc2.py (all free) is slower than bmc4.
+  - build.py fixes ONE gate choice; use allgates.py and test every full-F choice (1 for k 3 L 24, 2 for k 3 L 16, 1 for k 4).
+  - genk / xbmc gate numbers for extra levels are 2000+: renumber gates to 0..M-1 before r187/stab.py (done for nd2).
+  - xisearch's local search gets to 5-20 unmet requirements on d 6 proposals and stalls; LNS (xisat on 8 freed faces) is seconds when
+    the rest is right, useless when far.
+  - TRAPS: pkill -f with the pattern in your own command line kills your own shell (exit 144; hit 07:5xZ); container restarts kill nohup
+    runs (hit 23:3xZ); push races with another session on claude/l-red (Lead 10:36Z / 11:21Z): fetch + no-ff merge first.
+
+## Successor 48 (Opus 5.5, D1/D18; started 2026-11-03 07:20Z, date -u)
+- Start: clone stale at 996013948; ls-remote (l-red 2f3d13fb, trunk 69911543), fetched both, ff-only to 2f3d13fb; 7 ahead / 15 behind
+  trunk, merge-base bb828553. STEP 0 message 07:20Z. z3 pip; Oink setup_oink.sh.
+- RUN LOG (container-local; cwd experiments/red/r197; relaunch verbatim if lost):
+  - 07:2xZ XI=free KF=1 LAG=1 FMIN=2:13 nohup python3 liftloop.py 5 14 30 out/c5_L14_f2_13 > out/c5_L14_f2_13.log 2>&1 &
+  - 07:2xZ XI=free KF=1 LAG=1 FMIN=3:15 nohup python3 liftloop.py 5 18 30 out/c5_L18_f3_15 > out/c5_L18_f3_15.log 2>&1 &
+  - 07:3xZ (3 doublings, levels 2-4, base F_1 >= 2) XI=free KF=1 LAG=1 FMIN=1:1,2:3,3:7,4:15 nohup python3 liftloop.py 5 16 30 out/t3_d5_L16 > out/t3_d5_L16.log 2>&1 &
+  - 07:5xZ (cwd experiments/red/r199) TMO=3600 nohup python3 xbmc.py out/g3_main.json "4+,4-" out/g3_a44.json > out/g3_a44.log 2>&1 &
+- R199 tools (experiments/red/r199): req.py (C-ELEMENT form + Xi requirements of a prescribed run), xisearch.py (GREEDY exact rank/parity
+  check for fixed Xi-targets + local search + LNS), xisat.py (pure boolean exact Xi synthesis; UNSAT = exact obstruction), build.py
+  (W side: gates / starts for prescribed move times), gen3.py (period-8 three-level doubling target), xbmc.py (main run fixed, aux
+  movers free), match.py, schedof.py, synth.py (first z3 attempt, LIA, slow; superseded).
+- 07:52Z: g3_main (levels 0-3, period 8, F [2, 6, 12, 24], L 24) W side OK; Xi side on the bare d 4 ladder UNSAT (xisat 2.6 s).
+- 08:1xZ xbmc.py with LEM clauses (RE-REVERSAL, LAG over Xi-reach): g2_main (k 2, levels 0-2, F [2,6,12], L 12) + E1 (d 4) UNSAT 4.9 s
+  (agrees with exact d 4 F_2 <= 10); sanity dd_main4 + E1 SAT 68 s (replay matches). Launched (cwd r199, TMO=7000 nohup python3 xbmc.py
+  out/<main>.json <aux> out/<name>.json > out/<name>.log 2>&1 &): g2_main E2 g2_e2; g3k_main E1 g3_e1; g3k_main E2 g3_e2.
+- 08:3xZ g3k_main + E1 (d 5): UNSAT 246 s (exact: period-8 three-level target not realisable at d 5 as a width-2 ladder).
+- 09:13Z g2_main + E2 (d 5): SAT 4194 s -> nd2_d5_F12 (F [2, 6, 12, 8, 4], L 12, exact nested pattern: level 1 at 2F_0 + 2, level 2
+  at 2F_1; v1 woken by v2, v2 by u2; base by u4 / v4). Pinned nd2_d5_F12_n96 (PIN OK, lemck 0). Launched (r199) XTFIX='{"7,1": 6,
+  "5,1": 7, "3,1": 5}' TMO=9000 nohup python3 xbmc.py out/g3k_main.json E2 out/g3_e2h.json > out/g3_e2h.log 2>&1 &
+- 10:00Z g3k_main + E2 (d 6) unhinted: UNKNOWN (timeout 7000 s, 4 cores shared by 6 solvers). Launched strong hint (nd2 Xi map, a level
+  inserted at 2): XTFIX=<map in r199 notes of 10:0xZ: u0:[v5,X] v0:[u5,X] u1:[v5,u0] v1:[u4,v2] v2:[*,v3] u3:[u5,u2] v3:[u2,u3] u4:[X,v5]
+  v4:[u4,u3] u5:[u4,X] v5:[X,X]> TMO=3000 python3 xbmc.py out/g3k_main.json E2 out/g3_e2H.json > out/g3_e2H.log.
+- Growth log: k 2: d 5, N 10, M 20, n (R104 formula N + 3M + 6) 76, pin n 96 (stab pad 1), F_max 12, L 12. k 3: d 5 UNSAT; d 6 open.
+- 10:20Z TIMEBOX (Lead 09:49Z): killed, UNKNOWN (timeout, ~3 h wall-clock, ~95 CPU-min each under contention, REL call never returned):
+  XI=free KF=1 LAG=1 FMIN=2:13 python3 liftloop.py 5 14 30 out/c5_L14_f2_13 (cwd r197); XI=free KF=1 LAG=1 FMIN=3:15 python3 liftloop.py
+  5 18 30 out/c5_L18_f3_15; also mine: XI=free KF=1 LAG=1 FMIN=1:1,2:3,3:7,4:15 python3 liftloop.py 5 16 30 out/t3_d5_L16 (155 CPU-min).
+- 10:02Z strong hint g3_e2H: UNSAT 4.2 s (nd2 pattern with a level inserted does not extend). Bisection runs (TMO 900): g3_{Bnobase,
+  Cnoaux,Dtop,Elow} = hint minus base faces / minus aux faces / only levels >= 3 / only levels < 3.
+- 10:2xZ launched (r199, TMO=14000 nohup python3 xbmc.py out/g3k_main.json <E2|E3> out/<g3_e2b|g3_e3>.json > out/<name>.log 2>&1 &).
+- 10:3xZ bisection: Bnobase UNSAT 32 s, Dtop (levels >= 3 fixed) UNSAT 56 s, Gaux (nd2 aux wiring, levels 4-5) UNSAT 124 s; Cnoaux, Elow,
+  Ftop3, Hv3 UNKNOWN at 900 s. Launched TMO=10000 python3 xbmc.py out/g3k_main.json "E1,4+,4-" out/g3_e1h2.json (d 5 + 2 helpers at level 4).
+- Lead 10:36Z: successor 47 pushes 5 commits to claude/l-red-47-hold (FRATIO, pin tri_d5_L12_n96, F [2,1,3,5,8], weak form); merge it
+  no-ff into claude/l-red after the Lead confirms it landed, notes resolved in my favour keeping 47's R-entry. Trend table label: weak.
+- 11:4xZ g3_e2h (chain hint, d 6): UNKNOWN 9000 s. Launched NPER=2 python3 genk.py 3 0 out/g3p2_main.json (F [1,4,8,16], L 16) and
+  TMO=10000 python3 xbmc.py out/g3p2_main.json E2 out/g3p2_e2.json > out/g3p2_e2.log. Merged origin 46c73b9b (47's final) no-ff f531eff69.
+- 13:2xZ g3_e1h2 (d 5 + helpers 4+,4-): UNKNOWN 10000 s. g3p2_main + E1 (d 5, L 16): UNSAT 69 s. Launched TMO=6000 python3 xbmc.py
+  out/g3p2_main.json "E1,4+,4-" out/g3p2_e1h2.json > out/g3p2_e1h2.log.
+- 14:3xZ g3_e3 (d 7) UNKNOWN 14000 s; g3p2_e2 (d 6, L 16) UNKNOWN 10000 s. CORE=1 xbmc at d 5 (g3p2 / g3 + E1): UNSAT with EMPTY core
+  (no main Xi-requirement needed). xwake.py (wake-order relaxation, + degree 2, + comparison bits) is SAT: the d 5 refutation needs the
+  priority-value semantics of the aux movers. cegar.py (xwake proposes aux schedules, xisat refutes): ~5 min / pattern, test on g3p2 E1
+  (nohup python3 cegar.py out/g3p2_main.json 1 200 out/cg_g3p2_e1 > out/cg_g3p2_e1.log). Portfolio: SEED=1,2,3 TMO=20000 python3 xbmc.py
+  out/g3p2_main.json E2 out/g3p2_e2_s<seed>.json > out/g3p2_e2_s<seed>.log.
+- 19:xxZ D19 / L47 (Lead 19:15Z): no park at 21:00Z; continue to ~600k. Slack sweep (slack.py 3 2 2): 10 W-feasible variants (level-3 late
+  deletions, F_3 14-15), all UNSAT at d 5 (18-84 s). offs.py (uniform offsets, c 1): only the exact nest qualifies. masks.py (partial
+  doubling, ratio 1.5): 20 (L 16) + 68 (L 24) targets; running at d 5: nohup bash out/runmasks.sh (summary out/masks_summary.txt).
+- 20:39Z xwake acyclicity FIX (L-NEW box 151 finding, Lead 20:37Z): relaxation now = exact frontier (k 2 d 4 UNSAT / d 5 SAT; k 3 d <= 5
+  UNSAT), SAT at d 6-8; all W-feasible gate choices (allgates.py). R199 §5b correction. 21:00Z: portfolio SEED 1-3 (g3p2 E2, d 6) all
+  UNKNOWN 20000 s; masks sweep 87 UNSAT / 1 UNKNOWN at d 5.
+- 21:0xZ launched CEGAR2 (cwd r199): XTMO=1200 nohup python3 cegar2.py out/ag_k3p2/ag_0.json 2 500 out/cg2_out_ag_k3p2_ag_0_E2 >
+  out/cg2_out_ag_k3p2_ag_0_E2.log; same for out/ag_k3p2/ag_4.json and out/ag_k3/ag_0.json (regenerate ag_* with allgates.py 3 2 / 3 3).
+- TRAP hit again 07:5xZ: «pkill -f <pattern>» killed my own shell (exit 144). Use PIDs read in a separate call.
+
+## Successor 47 UN-PARK 2 (Lead 07:05Z GO (a): 3-level stacking at d 6; date -u 07:20Z)
+- bmcfork FRATIO="l1,l2,..": F_l >= 2 F_(l-1) >= 2 over transitions 2..L at each listed level (three listed = three consecutive doublings).
+- Runs launched 07:20Z (from experiments/red/r197; container-local, rerun if lost):
+  XI=free KF=1 LAG=1 FRATIO=2,3,4 python3 liftloop.py 5 12 30 out/r5_L12_2_3_4
+  XI=free KF=1 LAG=1 FRATIO=2,3,4 python3 liftloop.py 5 16 30 out/r5_L16_2_3_4
+  XI=free KF=1 LAG=1 FRATIO=3,4,5 python3 liftloop.py 6 12 30 out/r6_L12_3_4_5
+  XI=free KF=1 LAG=1 FRATIO=2,3,4 python3 liftloop.py 6 12 30 out/r6_L12_2_3_4
+- Proof-side item (b) for the handover: bound DBL_l - ZERO_l by the number of levels above l (R198 §3).
+- STATUS at the final park (09:24Z): r5_L12_2_3_4: iter 0 REL sat (2935 s), FIX unsat (211 s), blocked 1, iter 1 REL running (>1 h);
+  r5_L16_2_3_4, r6_L12_3_4_5, r6_L12_2_3_4: first REL call still running after 2 h. NO answer yet on 3 consecutive doublings (neither
+  witness nor UNSAT). Successor 48: rerun these four commands first (they die with the container), then the delay-delta construction.
+- 09:5xZ: r5_L12_2_3_4 iter 1: REL sat (5215 s), FIX sat (107 s): EXACT witness of three consecutive doublings over steps 2..L
+  (FRATIO 2,3,4): r197/lag/tri_d5_L12.json, d 5, L 12, F (all steps) = [2, 1, 3, 5, 8]; counted from step 1 the ratios are 3, 1.67,
+  1.6, so it is a SMALL-NUMBER instance (starts from F_1 = 1), not the strong form. Pinned tri_d5_L12_n96 (lemck 0, PIN OK). Strong
+  form (doubling from F >= 3 over three levels) still open; the other three FRATIO runs were running at the park.
+- Note: three doublings at levels l, l+1, l+2 need F_(l+2) >= 8 F_(l-1) >= 8 within L steps (FRATIO also forces F_(l-1) >= 1), so short
+  L can only show the small-F version; the d 5 two-doubling witness dd_d5_F14 used L 14.
+
+## Successor 47 UN-PARK (Lead 02:03Z: CARRY+4 at d 5 exact + proof attempt; date -u)
+- R198 docs/red/R198-carry4.md: Lemmas K0-K3, INTERVAL, FLIP-COUNT (F_l = F_(l-1) + 1 + DBL - ZERO), AUTOMATON PROVED (lane);
+  CARRY+4 <=> DBL - ZERO <= 3. EXACT d 5 (liftloop FMIN 2:11 L 12, KF LAG): F = [2, 6, 12, 9, 2] -> CARRY+4 FALSE; pin c4x_d5_F12_n96.
+  Lead messaged 03:12Z. r197/ivl.py checks; check.sh block «R198». JUMP climbs d 6 / 8 / 12 stop at 4 (did not find it).
+- 05:57Z: c5_L14_f3_13 SAT -> dd_d5_F14 (F [2, 3, 6, 14, 7], level 3 at ceiling 2F_2 + 2; pin dd_d5_F14_n96); c5_L16_f3_15 UNSAT
+  (11503 s). Lead messaged 05:58Z. jump_d10 climb: jump 5 (out/keep_jump_d10.json, container-local). Seeded climbs (SEEDT from c4x,
+  d 7, SCORE F2 / JUMP) stay at F_2 12 / jump 6.
+- Still running at the park push (container-local, lost on restart): c5_L14_f2_13 (total F_2 >= 13), c5_L18_f3_15.
+
+## Successor 47 PARK (first 2026-11-03 00:54Z; second ~06:0xZ; FINAL 09:2xZ after UN-PARK 2, date -u; context ~530k)
+- DONE (claude/l-red, push.sh VERIFY PASS each): 513e313c (trunk merge 67a8bc43 + R197 interim), final push (R197 final + this section).
+- RESULTS (lane level; G-N5-TIME OPEN; no kill, no family), docs/red/R197-alt.md:
+  - Fork (alternating-waker) ladders: EXACT max run 3 / 5 at d 2 / 3 (free: 4 / 8); XI=down: L <= d (Lemma DOWN); XI=up exact 5 at d 3.
+  - Lemmas (PROVED, lane): DOWN, LEVEL-RISE (L <= d (1 + #UPW)), WAKE-CHAIN (deg 2: every move PROMPT or LAG; wake chains forward in pi).
+  - EXACT carries: F_1 = 6 = 2F_0 + 2 (d 3, delay line v1 -> u2 -> u1; pin dbl_d3_F6_n60); d 4: F = [2, 6, 10, 2] (pin dbl_d4_F10_n78),
+    F_2 >= 11 impossible on every d 4 run (REL UNSAT, FMIN 2:10 over steps 2..L at L 11-15). Ceiling would be 14: no doubling.
+  - EXACT max run at d 4 = 13 (L 13 lifted, pin max_d4_L13_n78; L 14 REL+LEM+LAG+KF UNSAT ~6100 s). Maxima 4 / 8 / 13.
+  - Alternating single pairs: 0 in the d 3 maxima, 5 in max_d4_L13 (top mover u3, fork [v3, v1], a 2-tick clock paid by v1 / v3 moves).
+  - CONJECTURE CARRY+4: F_l <= 4l + 2 (exact rows d <= 4 only). REFUTED 03:12Z by R198 (d 5 exact, c4x_d5_F12_n96).
+  - d 5: F_2 >= 10 over steps 2..11 SAT (r197/d5/f2_d5_L12.json, total F_2 = 10 = the d 4 max). Running at the final push: total
+    F_2 >= 11 (out/llk_d5_L12_f2_11), F_3 >= 13 at L 14 (out/ll_d5_L14_f3_13, out/llk_d5_L14_f3_13), F_3 >= 15 at L 16 (out/ll_d5_L16_f3_15).
+    LOST: two container restarts (~01:05Z, later) killed these runs before any answer; rerun them (commands in R197 §2b / liftloop.py).
+- AFTER UN-PARK (R198): CARRY+4 FALSE (pins c4x_d5_F12_n96, dd_d5_F14_n96); see «Successor 47 UN-PARK».
+  TOP QUEUE ITEM FOR SUCCESSOR 48 (Lead 06:00Z, construction target):
+  - Build a delay-delta line by hand: a gadget that delivers a wake delta steps after a carry, for delta = 2, 3, 4 (dd_d5_F14 is the
+    delta = 2 / 1 case: level-2 carries every 2 steps, partner wake of delay 1 at level 3; R198 §0, r197/trace.py lag/dd_d5_F14.json).
+  - Stack it as delays delta, delta - 1, ..., 1 over delta levels, so that delta consecutive levels double (F_l = 2F_(l-1) + 2).
+  - Test delta = 3 constructively at d = 6-7, and exactly where the solver allows (FIX-seeded lifts: bmcfork FIX=<json> fixes xt / gate /
+    start; liftloop for fresh REL models; d 5 REL calls take 1-4 h, d 6 longer).
+  - Success: ~2^(d/2) carries, a real N5 super-polynomial family by RESULTS R104 (realise with r187/stab.py, pin with r187/pinck.sh).
+    Failure: the exact obstruction to delay >= 3.
+  RUNS LOST WITH THE CONTAINER (rerun from experiments/red/r197, each a REL call > 2.5 h at d 5):
+  - total F_2 >= 13: XI=free KF=1 LAG=1 FMIN=2:13 python3 liftloop.py 5 14 30 out/c5_L14_f2_13
+  - F_3 >= 15 over steps 2..18: XI=free KF=1 LAG=1 FMIN=3:15 python3 liftloop.py 5 18 30 out/c5_L18_f3_15
+  OTHER QUEUE: (1) delay lines of growing length: can doubling stack over 3 levels (d 6: F_l = 2F_(l-1) + 2 at two consecutive
+  levels above a level with carries spaced >= 3)? Exact d 6 is slow; try FIX-seeded lifts from dd_d5_F14 with a level added; (2) a
+  bound on the excess per level in terms of the levels above (proof side, R198 §3); (3) d 5 exact max run (>= 14).
+- OLD RESUME POINT (superseded): (1) CARRY+4 at d 5 (liftloop FMIN 3:13 at L 14, 3:15 at L 16, 2:10 at L 11: REL calls > 2 h at d 5) and a
+  proof attempt of F_l <= F_(l-1) + 4 (KEYFLIP + DELAY-CHARGE + interval nesting, R197 §4); (2) d 5 exact max run; (3) CNONLY in CROOT.
+- Things only I know:
+  - bmcfork FMIN=l:k counts flips of R_l over transitions 2..L only (states 1..L); step 1 is not counted. FMIN k > L - 1 is trivially UNSAT
+    (I first reported «F_2 >= 8 at d 3 L 8 UNSAT»: trivial; erratum in «Successor 47»).
+  - REL (free integer weights) + lemma clauses is a valid relaxation; REL UNSAT is exact. d 4 REL calls: seconds to ~1 h; d 5: > 2 h.
+  - liftloop's z3 calls have NO timeout: kill by PIDs read in a separate call (ps), never by pattern.
+  - The L 13 lift at d 4 succeeded at the FIRST REL model when KF=1 LAG=1 were on (R193's REL model without them did not lift).
+
+## Successor 47 (Opus 5.5, D1/D18; started 2026-11-02 20:58Z, date -u)
+- Start: clone stale at 996013948. ls-remote (l-red bb828553, trunk d8c9ee5d, l-new 2715601a), fetched those three; ff-only to bb828553;
+  9 ahead / 13 behind trunk, merge-base 3398c652; trunk merged no-ff 67a8bc43. STEP 0 message 20:58Z (answers in the message). Oink
+  8fbf0a7 rebuilt (setup_oink.sh exit 0), z3 pip.
+- Sources opened: CLAUDE.md, LANE-RESTART, «Successor 46 PARK», R189, R191, R195, R196, docs/new/N5-IDEAL-STATE.md (l-new 2715601a;
+  NOT on trunk), RESULTS R104 (l. 9864), R178 §2 (XI-NEW proof), r187/ideal.py, r178/fastcyc.py, r190/delclimb.py, r193/bmc4.py.
+- R197 docs/red/R197-alt.md: fork ladders (r197/bmcfork.py XI=fork|down|up; r197/forkclimb.py), EXACT fork max 3 / 5 at d 2 / 3;
+  Lemma DOWN (Xi only to lower W-levels => L <= d), LEVEL-RISE, WAKE-CHAIN; z3 FMIN finds F = [2, 6, 7] at d 3 (F_1 = 2F_0 + 2, the
+  KEYFLIP ceiling) through a delay line v1 -> u2 -> u1; pin dbl_d3_F6_n60 (PIN OK, lemck 0). F_2 >= 8 at d 3 UNSAT (ERRATUM, same session: trivially UNSAT, FMIN counts only transitions 2..L = 7; correct: F_2 <= L <= 8).
+- Interim push 513e313c (VERIFY PASS 22:31Z); Lead messaged 22:31Z. Then: REL d 4 L 8 FMIN 2:7 SAT in seconds -> lift (FIX) SAT 34 s;
+  liftloop.py (REL -> FIX + blocking): d 4 L 10 F_2 >= 9 SAT (dbl_d4_F10, F [2, 6, 10, 2], pinned); F_2 >= 10 UNSAT at L 11-15;
+  d 4 L 13 lifted at the first REL model (KF=1 LAG=1; REL 3204 s), pinned max_d4_L13_n78; REL L 14 (LEM LAG KF) UNSAT ~6100 s.
+  Fork d 4 exact runs (L 7, L 8) stopped after 80 min, undecided. FREE=1 driver run (d 3 L 8) timed out at 900 s (not used).
 
 ## Successor 46 PARK (final 2026-11-02 ~20:5xZ, date -u; context ~500k; first park 19:3xZ, un-parked 19:47Z)
 - DONE (claude/l-red, push.sh VERIFY PASS each): 5f2eaf3f + 314dcdda (R191), 24efabd0 (R192), 86f2a4e0 (R193 draft, bmc4), e8af7ca1

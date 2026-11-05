@@ -1,6 +1,158 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 51, Opus 5.5, session_01V5yGRYupWPCaWBqfX8Hjyk; started 2026-11-04 04:16Z; HANDOVER written ~13:1xZ by date -u)
+### SUMMARY (successor 51): boxes 156-159, every push via scripts/push.sh, each reported to the Lead
+- 156 M2 (docs/new/N5-M2-box156.md): exact z3 (box156/zmax.py) max T = 1,2,3,4,6 for N = 1..5, max M2 = 0,0,1,2,3; N 6: T >= 8,
+  M2 >= 5; DEAD «M2 <= N-2» (dd_d5_F14); LIN-156 DEAD (max_d4_L13 T 13 > 12). P-IDEAL-M2 FROZEN 6bcfa0de + fixes/L-2 4d244698:
+  fully signed (REFEREE 685a47de, REFEREE-2 0254976d) -> C118 / R107.
+- 157 SEG (docs/new/N5-SEG-box157.md): SEG, SEG-ONCE, LEVEL-PRODUCT (T+1 <= prod (n_l+1)); REPLAY DEAD (max_d5_L15).
+  P-IDEAL-SEG FROZEN 8291ecf7 (packet 7fa84784, L-1 a18f6f0c): REFEREE 23 signed all 4, L-1 MATCHES (19e0742f; optional SEG-L1
+  «(l >= -1)»); REFEREE-2 27 reviewing at 12:46Z.
+- 158 SLOT (docs/new/N5-SLOT-box158.md): SHIFT, SEG-CAP, LIFT, SANDWICH T*(d-1) <= T*(d) <= 3T*(d-1)+2; route «linear seg1» DEAD
+  (circular). P-IDEAL-SLOT FROZEN e46e98a4 (packet 62901b5f / 192 lines, L-1 17236fb1, instance lift_max_d4_L13 33fec48f).
+- 159 TRADE (interim, docs/new/N5-TRADE-box159.md): restricted-energy premise DEAD (max_d5_L15 t8); R-IDENTITY T = R(s_0) + sum JUMP
+  PROVED (lane); reversed lift (jump = T(G) - R0 + 1); FROZEN-SHORT = SLOT-TRADE + O(1) (no leverage). SLOT-TRADE OPEN.
+### PARKED 2026-11-04 ~13:3xZ (Lead 13:14Z: «Then PARK»). P-IDEAL-SEG SIGNED by both (REFEREE 19e0742f, REFEREE-2 9a746361); fixes
+  entry 1 (F-1, F-2) in docs/new/P-IDEAL-SEG-fixes.md (sha1 2e3dd532), pinned in check.sh pin107. P-IDEAL-SLOT: REFEREE 23 signed all
+  7 (2a09dcf8), L-1 NOT YET -> line L-2 (55e74726) + fixes entry 1 (44bf76e7, word diff; SLOT-L1/L2/L3), pinned pin109. REFEREE-2 27
+  had not reported at park: its items go to fixes entry 2 / line L-3 (successor).
+### UN-PARK 21:32Z (Lead): P-IDEAL-SLOT line L-4 (008b10ad; CHECKER C121 E-1, DATA parenthesis only) + fixes entry 3 (fixes e7bd0361), pin109.
+### UN-PARK 15:28Z (Lead): P-IDEAL-SLOT line L-3 (0c51ce6d) + fixes entry 2 (fixes now cae85ce1), pin109. Container restarted before
+  15:28Z: N 6 T >= 9 died with no answer (UNKNOWN, ~10 h). Nothing in flight now.
+### (old) IN FLIGHT at first park: z3 box156: N 6 T >= 9 (pid 1823, experiments/new/box156/log/T_N6_m9.log, started ~04:25Z),
+  N 6 M2 >= 6 FINISHED: UNSAT in the 9-step frame (20,212 s; exact iff max T(6) <= 9). Container restarts kill runs silently. Append results
+  to docs/new/N5-M2-box156.md table (row N 6). P-IDEAL-SEG / P-IDEAL-SLOT with the referees: fixes only via *-fixes.md if routed.
+### NEXT (Lead decides): SLOT-TRADE proof side, or L-RED R203/R204 support (seg1 = T*(d-1) via LIFT + long tail).
+### Things only I know (successor 51, all boxes):
+- box156/zmax.py: Int encoding (BV slower); LADDER=2 is very slow; never pkill -f (kill by pid); logs in box156/log/.
+- check.sh blocks: w105/pin105 (P-IDEAL-M2), w106 (segcheck), w107/pin107 (P-IDEAL-SEG), w108 (LIFT), w109/pin109 (P-IDEAL-SLOT).
+- seg.py / three.py / rjump.py / liftrev.py / lift.py all exec box150/check.py; scripts run with python3 -I need the sys.path insert.
+- External copies: box156/ext/ (R197 max_d4_L13 etc.), box157/max_d5_L15.json (R202, l-red 05c48415).
+
+
+### Box 156 N5-M2 (Lead brief; docs/new/N5-M2-box156.md; experiments/new/box156/)
+- EXACT z3 (zmax.py, symbolic genome, all starts, deg <= 2): max T = 1,2,3,4 (N 1..4), max M2 = 0,0,1,2; N 5: T >= 6, M2 <= 3 in
+  a 6-frame (exact iff T >= 7 UNSAT: RUNNING pid 1726); N 6: T >= 8 (x3_L8), T >= 9 / M2 >= 5 RUNNING (pids 1823, 13185).
+- DEAD «M2 <= N-2» (dd_d5_F14 M2 11, N 10). CONJECTURE LIN-156: T <= floor(3N/2), M2 <= N + 1 (corpus all-start max T/N 1.5).
+- PROVED (lane): two-way reduction (T <= N(1+M2), M2 <= T-1), Lemma TRIGGER, Lemma XIFLIP (moves <= 1 + XF); trig.py 0 viol.
+### P-IDEAL-M2 FROZEN (Lead GO 07:00Z): docs/new/P-IDEAL-M2.md (171 lines, sha1 bc47b06c) + line L-1 (0160d1e3); MULTI-CHARGE both
+  directions / M2-EQ / SINGLE-SHORT (any degree), TRIGGER, XIFLIP, MIN-FLIP (deg <= 2), DEAD LIN-156 (max_d4_L13). check.sh block
+  «P-IDEAL-M2» (w105 + pin105). Fix round -> docs/new/P-IDEAL-M2-fixes.md (append-only). LIN-156 DEAD 06:2xZ; d 5 ladder exact routed
+  by the Lead to L-RED 49.
+### Box 157 SEG (Lead GO 11:24Z; docs/new/N5-SEG-box157.md; experiments/new/box157/): Lemma SEG, SEG-ONCE, Corollary LEVEL-PRODUCT
+  (T + 1 <= prod_l (n_l + 1), deg <= 2) PROVED (lane), segcheck.py 0 viol. (check.sh w106); REPLAY DEAD on R202 max_d5_L15 (seg 2 len 7
+  > seg 1 len 6). N 5 exact: max T 6 (T >= 7 UNSAT 24,984 s), max M2 3. P-IDEAL-M2 fully signed (REFEREE 685a47de, REFEREE-2 0254976d,
+  C118 / R107).
+### P-IDEAL-SEG FROZEN 8291ecf7 (packet 7fa84784, 152 lines; L-1 a18f6f0c), with REFEREE 23 / REFEREE-2 27; fixes -> P-IDEAL-SEG-fixes.md.
+### Box 158 SLOT (Lead 12:23Z; docs/new/N5-SLOT-box158.md; box158/): SHIFT, SEG-CAP, LIFT PROVED (lane); T*(d-1) <= T*(d) <= 3T*(d-1)+2;
+  route «linear first segments» DEAD (circular: max seg1 = T*(d-1); lift_max_d4_L13 d 5 seg1 13); CONJECTURE SLOT-TRADE. check.sh w108.
+### Things only I know (successor 51): z3 Int encoding beats the BV one (N4 UNSAT 20 s vs > 10 min); LEVS split ~250 s / level
+  vector at N 5 (541 vectors: too slow). Logs of running jobs are in box156/log/ (commit after they finish). Never pkill -f.
+### Successor 51 handover check (STEP 0; written 2026-11-04 04:2xZ by date -u)
+1. claude/l-new: ls-remote a0bb2694; local was stale (8591166d); fetched + ff-only -> HEAD a0bb2694 = ls-remote. Vs trunk
+   claude/vibrant-johnson-nxvvxo: 4 ahead / 236 behind, merge-base 43125a61 (box 153). Lane files only.
+2. Open: BOX 156 (M2 := #steps moving >= 2 movers; (a) exact small-N max M2 / T, (b) charging lemma for multi-steps, (c) growing-M2
+   family -> L-RED). P-IDEAL-CUBE with the referees (fix round only if the Lead routes it; packet files frozen).
+3. GAPS: G-N5-TIME major open (owner L-NEW); G-N1-LB minor open (optional, not routed).
+4. D18 (active): "Focus on N5 and work toward proving it. Explore novel approaches ... Clearly distinguish proven results from
+   conjectures and open problems." D14 (active): "D" + "the (c) lane may test untested approaches, its own included".
+   D19 (owner 2026-11-03): "we have 9% usage left until tomorrow night, make use of it". CORRECTION (Lead 04:26Z, re-checked):
+   D19 IS on trunk (DECISIONS.md «## D19», INDEX row «| D19 |», since 8c37ab0b); my index grep missed it. Trunk head bed56cba.
+5. Trap: stale clone (8591166d again); check = ls-remote + fetch + ff-only + HEAD vs ls-remote. Also pkill -f on my own pattern
+   kills my shell: kill by pid.
+
+## Resume point (successor 50, Opus 5.5, session_01V5yGRX7oGaEPQeEN3KWdUD; FINAL, PARKED 2026-11-04 ~03:2xZ by date -u)
+### FINAL summary (successor 50): boxes 150-155, every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
+- 150 P-IDEAL-RED FROZEN (0ebddcf5, sha1 06f2c186): signed by both referees (16 statements); fixes entries 1-2 (b115ff3a,
+  ffeb9736), lines L-1 / L-2; both referees MATCH L-2; CHECKER C116 PASS -> RESULTS R105.
+- 151 NEST (76903103): r199/xwake.py lacks antisymmetry (L-RED confirmed, R199 reading withdrawn); NEST-BARE PROVED (lane);
+  wake-order E_min(k) = ceil(k/2) gate-free for k <= 5.
+- 152 VAL (4f6b6d6e): PREMERGE / PMDIFF / STABLE-PATH PROVED (lane); k3 E2 UNKNOWN; seeds in box152/hints/ for L-RED 49.
+- 153 CUBE (43125a61): DECOMP (decomposable AUSO), MULTI->SINGLE (T <= LP); sources WW22 / MC94 opened.
+- 154 P-IDEAL-CUBE FROZEN (d97555d4; packet 366afedc / 186 lines; line L-1 99ae8fac): DECOMP, MULTI->SINGLE, Theorem LADDER-LP
+  (explicit L_K, LP >= 2^(K+1) - 2, full proof). With both referees (REFEREE 23, REFEREE-2 26). Pins in check.sh (abe2b94c).
+- 155 GATE (this push): exact W-side search on L_K: the real run follows the LADDER-LP path only up to the first re-switch (K 2:
+  4 of 6; K 3: 5 of 14), merging late switches into one step; Lemma MULTI-CHARGE (U <= M2, T <= N(1 + M2); single-mover runs T <= N).
+### IN FLIGHT: P-IDEAL-CUBE with the referees (fix round goes to docs/new/P-IDEAL-CUBE-fixes.md, append-only; do NOT edit the packet).
+### NEXT for successor 51 (Lead decides): (a) P-IDEAL-CUBE fix round / line L-2; (b) bound M2 (multi-mover steps) or show it can be
+  exponential: the W gate's only way to follow long Xi paths is parallel moves (MULTI-CHARGE); (c) L-RED R201 support.
+### Things only I know (successor 50):
+- pip install z3-solver (not preinstalled; needed by box151/152/155 and check.sh blocks w100 (skips without z3)).
+- push.sh takes 20-40 min: run it in the background, output to a file, «echo exit $?» appended; the harness kills background
+  watchers after 30 min (use nohup for long solver runs, check files later).
+- NEVER pkill -f / pgrep -f a pattern that occurs in my own command line: it kills my shell. Kill by pid from
+  `ps -eo pid,args | grep "^ *[0-9]* python3 -I <script>"`.
+- box150/check.py is the simulator + all P-IDEAL-RED checks; box153/decomp.py, box154/ladder.py, box155/gate.py reuse it via exec.
+- WebFetch paraphrases; for verbatim quotes download the HTML (curl into its own dir) and extract text (done for WW22).
+
+## Successor 50 handover check (STEP 0, Opus 5.5; written 2026-11-03 19:18Z by date -u)
+1. claude/l-new: ls-remote 2715601a; fetched; ff-only (local was 535 behind = stale clone again) -> HEAD 2715601a = ls-remote.
+   Vs trunk claude/vibrant-johnson-nxvvxo: 0 ahead / 170 behind, merge-base 2715601a (trunk has merged l-new). Lane files only.
+2. Open: BOX 150 freeze P-IDEAL-RED (scope N5-IDEAL-STATE §6; CHAIN-BACK needs R178 XI-NEW carried in full or dropped);
+   then BOX 151 (DBL/ZERO nesting lemma from l-red R199).
+3. GAPS: G-N5-TIME major open (owner L-NEW); G-N1-LB minor open (optional, not routed); G-N5-TERM closed.
+4. D18 (active): "Focus on N5 and work toward proving it. ... Clearly distinguish proven results from conjectures and open problems."
+   D14 (active): "D" / "You know it can also test prveiously not tested approaches, it can come up with it own as well".
+   D1 (active, launch brief). D19 (owner 2026-11-03, quoted from the Lead brief; NOT yet in DECISIONS.md/INDEX on trunk at fetch):
+   "we have 9% usage left until tomorrow night, make use of it".
+5. Trap: stale clone (535 behind here); check = ls-remote + fetch + ff-only + HEAD vs ls-remote. push.sh ~20-40 min: background,
+   timeout 7200000, output to file + echo exit $?.
+
+### Box 150 P-IDEAL-RED FREEZE (Lead brief 2026-11-03; docs/new/P-IDEAL-RED.md; experiments/new/box150/)
+- Packet: ENC, LOCAL, MONO, XI-NEW + RISE (re-proved in full; R178 text not a premise), CHAIN-BACK + U-EQ, KEYFLIP + KF-EQ (deg <= 2),
+  DECREMENT + EXACT-ENERGY (any degree), TOP-MONO + RANK-BOUND, INTERVAL-RESTRICT, INTERVAL-CHARGE, RECURSION (deg <= 2).
+  Premise: RESULTS R104's model DEFINITION only. Excluded: R178 real-N5 XI-NEW, ladder identity KF_x = F_(l-1), box 148 opening
+  dichotomy, box 147 degree-D TOP forms, all conjectures.
+- FINDINGS while re-proving: (1) XI-NEW (ii)'s «Xi is monotone» needs Lemma MONO (current value of every mover never falls); proved by
+  induction in reverse pi with the integer encoding ENC (sum of +-2^rank). (2) Box 148 recursion «U*(n) <= sum_(p<n)(U*(p)+1)» omits
+  the boundary steps; packet proves U*(n) <= n + sum_(p<n)(U*(p)+1); the box 148 form unviolated on data (REC148 0), not claimed.
+  (3) Box 147 / 148 «any degree» for TOP-MONO / INTERVAL-RESTRICT is wrong as stated (an unstable mover may stay unstable after a
+  move at degree >= 3); packet restricts them to degree <= 2. DECREMENT / EXACT-ENERGY hold at any degree.
+- Check: box150/check.py (own simulator, XSIM vs box139/paths.py): 0 violations, 46 corpus genomes (386 steps) + 75,518 all-start runs
+  of 200 random genomes (rand.py seed 150, 107 with degree 3-4). Negative controls NEG=1/2/3 fire (NEG=3 old-state keys: XINEW 6).
+  Wired into check.sh as w99 (full check.sh PASS locally).
+### Box 154 P-IDEAL-CUBE FREEZE (Lead brief 01:56Z; docs/new/P-IDEAL-CUBE.md + line L-1; experiments/new/box154/ladder.py)
+- (i) DECOMP with [WW22] Def. 3 / Def. 4 / §2.2 / Thm 18 remark quoted VERBATIM (ar5iv HTML downloaded and text-extracted);
+  (ii) MULTI->SINGLE, T <= LP; (iii) Theorem LADDER-LP PROVED (full proof, induction UP(i)): explicit L_K, LP >= 2^(K+1) - 2
+  (exact for K <= 7 by DP). Chose: all of (i)-(iii) frozen (no part kept as DATA).
+
+### Box 153 N5-CUBE (Lead GO 00:47Z; docs/new/N5-CUBE-box153.md; experiments/new/box153/)
+- Step 1 PASSED: DECOMP (improvement orientation = decomposable AUSO, combing order decreasing pi), MULTI->SINGLE (T <= LP(start)).
+  decomp.py 0 violations (119 genomes, 603,741 faces). DEAD: Xi-side-only route (2-wide Xi-ladder LP 8/22/52/114, K = 2..5).
+- Sources opened (box 153):
+  - [WW22] Weber, Widmer, arXiv:2207.05985 (ar5iv HTML): Def. 4 (USO), §2.2 (combed / decomposable, after Obs. 7), Thm 18 + remark
+    (JumpAntipodal n evaluations on all decomposable USOs; exponential on some acyclic USOs, citing Schurr's thesis).
+  - [MC94] Melekopoglou, Condon, ORSA J. Comput. 6(2) 188-192 (1994), DOI 10.1287/ijoc.6.2.188 (author PDF cs.ubc.ca/~condon,
+    text-extracted): §2 select rules, «if the graph is acyclic the [topological] algorithm makes at most linear number of switches»;
+    Thm 2.8, Cor. 2.9, 2.10 (exponential, stochastic average vertices). Hypotheses do NOT match IDEAL; nothing imported.
+  - Klee-Minty 1972, Schurr thesis: NOT opened, not used.
+
+### Box 152 N5-VAL CLOSED (Lead 00:09Z; docs/new/N5-VAL-box152.md; experiments/new/box152/)
+- PROVED (lane): PREMERGE (C_s(x) = sign of the pre-merge segment difference), PMDIFF (C differs at two states => a pre-merge
+  mover differs), STABLE-PATH; lemcheck 0 violations (92,308 + 20,804 state pairs). k3 E2 UNKNOWN (5400 s) under PMDIFF+STABPATH;
+  12-step prefix SAT. E_min (value semantics, lower bounds) 2 / >=2 / >=2 / >=3 for k = 2..5: no super-linear trend visible.
+- P-IDEAL-RED: signed by both referees (16 statements); fixes entry 1 (b115ff3a), line L-1, line L-2 + entry 2 (ffeb9736).
+### Things only I know (successor 50, box 152): valcheck free-Xi-target REL checks time out at k3 (use FIXXT); cegar.py lincheck is
+  the fast path (strict LP over reals). Kill solvers by pid from `ps -eo pid,args | grep "^ *[0-9]* python3 -I cegar.py"` (pkill -f
+  and pgrep -f patterns that appear in my own command line kill my shell).
+
+### Box 150 push 0ebddcf5 (VERIFY PASS; Lean / Oink smoke NOT RUN: no lakefile, Oink not built); reported to the Lead 20:06Z.
+### Box 151 N5-NEST (Lead brief; docs/new/N5-NEST-box151.md; experiments/new/box151/)
+- FINDING: l-red r199/xwake.py «reaches» relation admits 2-cycles (DEG=1 recursion leaves re(x,x) unconnected; DEG=0 transitivity
+  only for 3 distinct movers). + antisymmetry: wake-order relaxation reproduces every exact R197/R199 nested result (k3 UNSAT d4/d5,
+  k2 UNSAT d4, SAT d5); R199's «value semantics needed» reading is an artefact of that.
+- PROVED (lane): NEST-BARE (every k >= 2, any gates: p_k -> q_(k-1) -> q_k -> p_k cycle at steps 2-5), F2 LAG, F3 RE-REVERSAL.
+- EXACT (sound relaxation): gate-free E_min(k) = 1, 2, 2, 3 for k = 2..5 (= ceil(k/2)); gate-fixed 2, 2, 3, >= 3.
+- READING: «nesting <= c * levels above» is NOT enough for poly (k = 2d/3 stacked under d/3); «DBL - ZERO <= f(above)» needs f
+  exponential-cost stacks, i.e. value semantics; WO witnesses k3 E2 / k4 E2 (hints/) are the L-RED realisation targets.
+### Things only I know (successor 50, box 151): pip install z3-solver (not preinstalled). genk.py k 6 takes ~70 s (build), k 6 xwake
+  encodings are slow; DEG=0 is much faster than DEG=1 and sound for UNSAT. pkill -f <pattern> killed my shell again: kill by pid.
+  Scratch: /tmp/claude-0/r199 (copies + xwake_opt.py OPT=1 per-option wake, OPT=2 exact increment propagation: both SAT at k3 E2).
+
+### Things only I know (successor 50): check.py ALL=1 ALLN=10 takes ~18 s on the rand corpus; restrict() maps kept movers to a single
+  option index 0, compare states via S[a] at kept movers.
+
 ## Resume point (successor 49, Opus 5.5, session_01V5yGRVusQANCQiXcbrWdJg; FINAL, PARKED 2026-11-02 ~14:1xZ by date -u)
 ### FINAL summary (successor 49): boxes 147-149, every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
 - 147 COARSE (60286d8c): every coarse Xi-statistic DEAD (B and MRG constant across realised lag1's unchained step; all-start quotient

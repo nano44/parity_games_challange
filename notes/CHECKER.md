@@ -1,6 +1,89 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 17), 2026-11-04 21:05Z (date -u)
+- C120 CLOSED (Add. 1 9584ec92; CI 6158 green).
+- C121 = R109 (P-IDEAL-SLOT) draft bfabaf8d @ ba9c2747: FAIL E-1 (DATA scope, the C120 rule); the exact L-4 DATA wording is in C121 §5.
+  Everything else PASS. NEXT: L-4 + second fill → C121 Add. 1 (byte test of the DATA swap, title, UPDATE rebuild, the body's «current
+  line» sentences).
+- The session was stopped by the weekly limit at about 18:16Z and resumed 21:03Z. The scratchpad survived.
+
+## Resume point (successor 17), 2026-11-04 15:58Z (date -u)
+- C120 = R108 (P-IDEAL-SEG) draft 208f4f40 @ 230c3318: PASS. G-9 needs no line change, but from now on a DATA count that does not name
+  its statements is an E-item. NEXT: the R108 landed check; C121 = R109 (P-IDEAL-SLOT) when routed.
+
+## Resume point (successor 17), 2026-11-04 15:30Z (date -u)
+- C118 (R107) and C119 (Erratum E-2) CLOSED: main 4e0e7df7 (FAIL, fixes), Add. 1 914d073f (PASS, the checker SHA in both), Add. 2
+  c664fabf (landed 6f1be9e2 in one commit), CI 6145 green.
+- Nothing open. NEXT: C120 = R108 (P-IDEAL-SEG), then C121 = R109 (P-IDEAL-SLOT), when routed.
+
+## Resume point (successor 17), 2026-11-04 11:17Z (date -u)
+- C118 = R107 (P-IDEAL-M2) draft 28228484 @ d08df7c8: FAIL E-1 (two «pending E-2» body sentences, l. 480 and l. 526). Landing
+  condition: E-2 lands first or with R107. DE37: «no row» confirmed.
+- C119 = R105 Erratum E-2 draft a2e36f6e: FAIL E-1 (a REFEREE-2 re-read that is not on file), E-2 (GAPS l. 11 copy not covered). The
+  correction itself is EXACT. N-1: moves(x) is unbound in R105's line.
+- NEXT: the Lead's new sha1s → C118 Add. 1 and C119 Add. 1 (diffs); then the landed checks and CI.
+- METHOD (Lead lesson 10:50Z): diff every DEFINITION in a line against the packet's definitions, not only the claims. Done for R107 and
+  R105 in C118 / C119.
+
+## Resume point (successor 17), 2026-11-04 08:55Z (date -u)
+- C117 CLOSED. Main report 077657d6: FAIL on DE36 (E-1, E-2). Add. 1 417d4d89: PASS (the checker SHA in R106). Add. 2 227ce1c8: landed
+  d57ab2b0 PASS. CI 6109 green. Nothing open. The next new check is C118 (P-IDEAL-M2 is at the referees).
+
+## Resume point (successor 17), 2026-11-04 05:38Z (date -u)
+- C116 CLOSED (7d3305dc; CI 6074 success).
+- C117 = R106 (P-IDEAL-CUBE), draft ae5c95ab @ trunk 495891e0. Main report: the entry and the UPDATE PASS; DE36 FAIL E-1 (the run-empty
+  sentence drops the gate order; unlabelled «W-key gate» gloss), E-2 (L_K parenthesis under-specified). The fixes are in C117 §5.
+- NEXT: the Lead's new draft SHA → Addendum 1 = DE36 diff against the §5 fixes, then the landed check (Addendum 2) and CI.
+- Oink 8fbf0a7 is built in this container (tools/oink/build), so push.sh now runs the Oink smoke step too.
+- [WW22] e-print v1 is in scratchpad ww22/ (sha256 88e1f1b7…, = REFEREE-2's).
+- METHOD: a Dead-ends row drafted by the Lead is a landing object. Diff it against the line clause by clause, like the title; it went
+  wider than L-2 here (C117 E-1).
+
+## Successor 17 handover check, 2026-11-04 04:43Z (date -u)
+1. Branch claude/checker, head 49f85ffc (= git ls-remote origin; local was already at it after fetch + ff-only). Against trunk
+   claude/vibrant-johnson-nxvvxo @ 8b31b166: 1 ahead (49f85ffc, C116 Add. 1 + handover), 3 behind (Lead 8e1c0722, bed56cba, 8b31b166);
+   merge-base 91c1464f (the R105 landing commit).
+2. Open work: (a) C116 CI line: run 6074 (id 41766925267, head 91c1464f) read by me via mcp__github__actions_get: completed / success,
+   03:24:27Z-03:58:22Z (33 min 55 s); next step: append to C116 Add. 1, mark CLOSED (this commit). (b) C117 = R106 (P-IDEAL-CUBE), not yet
+   routed; next step: wait for the Lead's draft SHA + sha1, then check as C116 did.
+3. GAPS rows owned: none (docs/GAPS.md has no row with CHECKER as owner; CHECKER only re-runs, e.g. ctx13_n40 «re-run CHECKER C11» in GAP-A).
+4. Rulings (all «active» in docs/DECISIONS-INDEX.md, rows D1 l. 5, D18 l. 32, D19 l. 40):
+   - D1 (DECISIONS.md l. 7): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including
+     the fleet's own, as wrong until it passes the gauntlet below.»
+   - D18 (l. 333): «... Clearly distinguish proven results from conjectures and open problems.»
+   - D19 (l. 409): «we have 9% usage left until tomorrow night, make use of it»
+5. Trap: stamps typed before running date -u (four times, successor 16). Check: `date -u` alone in its own call, then write (done for this
+   stamp). Also: stale clone, checked by ls-remote vs HEAD above.
+
+## HANDOVER (successor 16 → successor 17), 2026-11-04 03:25Z (date -u). Successor 16 parks (Lead 03:25Z, D19 usage budget).
+- OPEN: one item only. C116 (R105, P-IDEAL-RED) Add. 1 PASS; R105 LANDED 91c1464f. CI run 6074 (id 41766925267) on 91c1464f was IN
+  PROGRESS at 03:25Z.
+  - Read it with mcp__github__actions_list (branch claude/vibrant-johnson-nxvvxo).
+  - If it is green, append «- CI: run 6074 … success, <start>-<end> (<duration>). **C116 CLOSED.**» to C116 Add. 1.
+  - If it is cancelled, take the first completed, non-cancelled run whose head contains 91c1464f and leaves docs/RESULTS.md and
+    docs/GAPS.md unchanged.
+- NEXT: the Lead's next landing is P-IDEAL-CUBE (under review). The next new check is C117.
+- Checks this successor ran (all CLOSED except C116's CI):
+  | check | entry | main | addenda | landed |
+  | --- | --- | --- | --- | --- |
+  | C113 | R102 P-N5-S4B | 3c2f7413 FAIL E-1, E-2 (stale body) | Add. 1 c5c0ab5f PASS | 3ad13dec |
+  | C114 | R103 P-N5-ANCHOR | da67696a PASS | Add. 1 FAIL GAPS date (6d33a6a6), Add. 2 PASS (ec62f84d) | e89c772e + 92314793 |
+  | C115 | R104 P-N5-REALIZE | fbca67cf FAIL E-1 (VJ00 5.8 route → R36 (c)) | Add. 1 7c3c413f PASS, Add. 2 0dd31142 | 3398c652 |
+  | C116 | R105 P-IDEAL-RED | e85c3bb2 PASS | Add. 1 (this commit) PASS, CI pending | 91c1464f |
+- METHOD (add to the lists above; each was learned this box):
+  - Premise routes against RESULTS, never docs/lit (C115 E-1). For VJ00 5.8: R15 (iii), R36 (c) / (d), R57 l. 2932-2933.
+  - The GAPS UPDATE date = the commit date. Drafts carry <DATE> since C115.
+  - Body sentences about trunk status or «verbatim» go stale; check them (C113 E-1, E-2).
+  - Name clashes: settled by a body clause, not a line rename (C101 N-2, C116 G-2).
+- TRAPS:
+  - I typed stamps before running date -u four times. Run `date -u` ALONE, then write.
+  - pgrep -f "scripts/push.sh" matches the waiting shell; use pgrep -f "^bash scripts/push.sh" and wait on that PID.
+  - A sed that hits an older section of a shared file: use a python replace with count == 1.
+  - check.sh block extracts need the file's own l. 1-7 (L-RED's sets t=$(mktemp -d) at l. 7).
+- ENVIRONMENT: Oink 8fbf0a7 is built in tools/oink/build (gitignored; scripts/setup_oink.sh takes about 1 min). verify.sh then also runs
+  the Oink smoke step, and push.sh takes about 20-25 min. Trunk CI takes about 25-33 min, with a 60-min limit since e89c772e.
+
 ## Resume point (successor 16), 2026-11-02 12:33Z (date -u)
 - C115 = R104 (P-N5-REALIZE, L-RED 44-45).
   - Main report fbca67cf: FAIL E-1. L-1 cited VJ00 Lemma 5.8 «1 ⇒ 2» as «the direction that holds», but RESULTS R15 (iii) / R36 (d)

@@ -1,6 +1,74 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Successor 27 handover check (Opus 5.5 under D12/D19; 2026-11-04 07:27Z by date -u)
+1. Branch claude/referee-2: ls-remote and local both 993c1710 (no stale clone this time); trunk claude/vibrant-johnson-nxvvxo e951db48
+   merged by fast-forward (993c1710 was its ancestor: 0 ahead / 20 behind before, 0 / 0 after).
+2. Open work: P-IDEAL-M2 (l-new 6bcfa0de) -> report docs/referee-2/R2-P-IDEAL-M2.md; next step: re-hash, paper check, own simulator.
+   Nothing else open (succ. 26 queue empty).
+3. GAPS rows owned by REFEREE-2: none (REFEREE-2 appears only in closed rows' notes).
+4. D1 (active, DECISIONS.md l. 7-8): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim,
+   including the fleet's own, as wrong until it passes the gauntlet below.» «Never downgrade the referee to save money.»
+   D12 (active): «WE can run referees on opus too temperoraly». D19 (active): «we have 9% usage left until tomorrow night, make use of it».
+5. Trap: premise routes taken from docs/lit instead of RESULTS (C115 E-1). Check: every premise quote grepped verbatim in docs/RESULTS.md.
+
+## Resume point 5 (successor 27; 2026-11-04 14:38Z by date -u)
+- L-3 (b261c3f9, 0c51ce6d) MATCHES (byte test True). L-4 (d488d06d, 008b10ad; DATA per C121 §5) MATCHES (Addendum 2).
+- SLOT report cdf8e962 pushed. L-2 (l-new 6eb389a6, 55e74726) crossed: SL-L1 MET, SL-L2 NOT MET (insert «over 𝓛_d»): R2-P-IDEAL-SLOT-L2.md.
+  SEG fixes entry 1 (2e3dd532): F-1, F-2 CORRECT.
+
+## Resume point 4 (successor 27; 2026-11-04 13:17Z by date -u)
+- SEG: 9a746361 pushed; Lead 13:14Z: REFEREE agrees; F-1/F-2 to L-NEW fixes entry 1. docs/referee/ SEG may be read now.
+- P-IDEAL-SLOT (l-new e46e98a4; packet 62901b5f, line 17236fb1, lift_max_d4_L13 33fec48f): R2-P-IDEAL-SLOT.md, all 7 SIGN, no gap.
+  L-1 REQUIRED SL-L1 (LIFT clause must state the common W-target A; split A/B changes the run: lift_split_ctrl.json, T 0 -> 1) and
+  SL-L2 (SANDWICH remark only over L_d, not over degree-1-free ladders). Tool R2-P-IDEAL-SLOT/slot_check.py. Worktree $SCRATCH/wslot.
+
+## Resume point 3 (successor 27; 2026-11-04 12:31Z by date -u)
+- P-IDEAL-SEG (l-new 8291ecf7; packet 7fa84784, line a18f6f0c, max_d5_L15 ba963ace): report R2-P-IDEAL-SEG.md: SEG, SEG-ONCE,
+  LEVEL-PRODUCT, DEAD REPLAY all SIGN, no gap; L-1 MATCHES (P-1..P-4 optional). F-1 §5 maxratio remark («only one degree-2 mover») false:
+  r150_049 has none. F-2 §4 proposal quote not verbatim to N5-SEG-box157.md l. 24. Tool R2-P-IDEAL-SEG/seg_check.py (all sub-intervals).
+  Worktree $SCRATCH/wseg. NEXT: push, report; then docs/referee/ may be read.
+
+## Resume point 2 (successor 27; 2026-11-04 08:27Z by date -u)
+- Report e01175f6 pushed (VERIFY PASS), Lead messaged 08:09Z. Lead 08:27Z: L-2 round routed to L-NEW; asked (a) my view of REFEREE M2-G1,
+  (b) R105 CHAINED line-vs-packet DATA for Erratum E-2.
+- docs/referee-2/R2-R105-chained.md: instance diff_n2.json (degree 3, N 2, t 2, h_1 = h_2 = 0); LINE reading breaks CHAIN-BACK (i) at all
+  35,116 DIFF steps; (ii) T <= N(1+U') 0 failures on 926,555 runs (climbs reach slack 0), unproved; no DIFF at degree <= 2 (XI-NEW).
+  P-IDEAL-M2 unaffected. AGREE M2-G1 (LOCAL line form includes x; needs P-IDEAL-RED LOCAL (a)/(b)): my miss.
+- TRAP (new): a «depends only on the states on its chain» quote includes the option's own mover; check own-mover moves in every LOCAL use.
+
+## Resume point 1 (successor 27; 2026-11-04 07:33Z by date -u)
+- P-IDEAL-M2 (l-new 6bcfa0de; packet bc47b06c, line 0160d1e3): report docs/referee-2/R2-P-IDEAL-M2.md. All 7 statements SIGN, no gap.
+  Line L-1 REQUIRED M2-L1 (bind KF_x, moves(x)), M2-L2 (34,934 runs are all-start only for N <= 8; 8 of 200 genomes N 9-10). P-1..P-3 optional.
+- Tool R2-P-IDEAL-M2/m2_check.py (own simulator from R104 text, beta sets; json / ALLN / rand / LADDER / mut climb / NEG=1). Reproduces lane
+  totals exactly (468/222/300/919/707/333; 34,934/38,676/2,148/5,188; 3,981/298). Worktree $SCRATCH/wm2 = l-new 6bcfa0de.
+- Finding: landed R105 statement omits «as a mover other than h_t» in CHAINED (its packet has it); h_(t-1) = h_t occurs at degree >= 3.
+- L-2 (l-new 4d244698, fixes 66fd6173, L2 c890f268): MATCHES (R2-P-IDEAL-M2-L2.md); entry 1 CORRECT (M2-G1 closed). Optional P-4, P-5.
+
+## HANDOVER (successor 26, Opus 5.5 under D15; written 2026-11-04 04:17Z by date -u; context ~490k; Lead 04:16Z: report, then park)
+Branch claude/referee-2, merged with trunk (git merge, no rebase) before pushes. REFEREE-2 owns no docs/GAPS.md rows. Every push via
+scripts/push.sh in the background (redirect, echo exit; verify takes ~20-25 min), VERIFY PASS each time.
+### Reports of record (all «(Opus 5.5, D15)»)
+| packet | object | report | lines | outcome |
+| --- | --- | --- | --- | --- |
+| P-N5-REALIZE (R104 LANDED) | l-red e609c5d2, 067f06b6 | R2-N5-REALIZE.md (+ Add. 1 joint list, Add. 2 VJ-LOC correction) | L-1 MATCHES (R2-N5-REALIZE-L1.md), L-2 MATCHES (R2-N5-REALIZE-L2.md) | all SIGNED; G-REAL-1 closed; own tool R2-N5-REALIZE/realize_check.py |
+| P-IDEAL-RED (R105 LANDED 02:59Z) | l-new 0ebddcf5, 06f2c186 | R2-P-IDEAL-RED.md | fixes+L-1 REQUIRED (R2-P-IDEAL-RED-L1.md), L-2 MATCHES (R2-P-IDEAL-RED-L2.md) | 16 SIGN; tool R2-P-IDEAL-RED/ideal_check.py |
+| P-IDEAL-CUBE | l-new d97555d4, 366afedc | R2-P-IDEAL-CUBE.md | L-1 REQUIRED LC-1/LC-2, L-2 MATCHES (R2-P-IDEAL-CUBE-L2.md, l-new a0bb2694, 449421e4) | 4 SIGN; [WW22] v1 verbatim; tool R2-P-IDEAL-CUBE/cube_check.py |
+### OPEN: none. CHECKER may land P-IDEAL-CUBE (after R105, which has landed). A successor takes the next packet.
+### Tools (own code; lane code never imported)
+- R2-P-IDEAL-RED/ideal_check.py: IDEAL model simulator (sets, top-rank; keys under new state), every P-IDEAL-RED statement, several pi,
+  both tie rules, INTERVAL-RESTRICT builds and runs H; NEG=old control; random genome generator rand_genome(rng, Nmax, dmax, degmax).
+- R2-P-IDEAL-CUBE/cube_check.py: imports ideal_check; cube orientation, every face (USO/COMB/ORI/ACYC), MULTI->SINGLE, ladder L_K + DP LP.
+- R2-N5-REALIZE/realize_check.py: Gamma(G) builder (byte-identical to pins), SPEC N5 loop recording sigma_new before S4c, BF / MUT controls.
+- [WW22] e-print v1 in $SCRATCH/ww22 (container-local; sha256 88e1f1b7…); re-fetch https://arxiv.org/e-print/2207.05985 if needed.
+### Traps (mine this session; each was caught by CHECKER or REFEREE first)
+- Premise routes only from RESULTS, never docs/lit (C115 E-1: VJ00 5.8 «1 => 2» is NOT landed; R36 (c) is the one-player carrier).
+- Paper-check «Does NOT claim» / negative remarks too (IR-1: MONO's remark was false).
+- Bind every count's index range in a line (REFEREE L-1d: U over t in [2, T]).
+- Binder pass on lines: undefined symbols (eps, A) and DATA clauses that depend on unstated parameters (gate order in L_K).
+- Background waiters: copy the task id from the tool result exactly (I twice waited on a wrong id); never pkill -f a pattern in my own command.
+- Always run date -u alone and copy it into stamps (one message went out «approx.»).
+
 ## Resume point 1 (successor 26, Opus 5.5 under D15; 2026-11-02 04:19Z by date -u)
 - Start: ls-remote first; local container stale at cf5157fe, ff to 770a9a9c (succ. 25 handover); trunk 803e0545 merged (git merge).
   STEP 0 answers messaged to the Lead 04:03Z (handover-checks file is a Lead path: not written by me).
@@ -19,6 +87,18 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 - CHECKER C115 FAIL E-1: [VJ-LOC] = VJ00 5.8 «1 ⇒ 2» is NOT landed (R15 (iii)); carrier R36 (c) on G^d. My miss (took it from docs/lit T21).
   REALIZE L-2 (l-red c374be8f, b44456d1, fixes 64f062c2): MATCHES (R2-N5-REALIZE-L2.md); byte test True; R36 (c) coverage confirmed;
   R2-N5-REALIZE.md Addendum 2 corrects my row. TRAP: premise routes only from RESULTS, never from docs/lit. Queue empty.
+- 2026-11-03 20:46Z (date -u): P-IDEAL-RED (l-new 0ebddcf5, 06f2c186, 261 lines; D19 / L47): report R2-P-IDEAL-RED.md, all 16 statements
+  SIGN (U-EQ precision N-1: U <= T - 1 false at T = 0). Premise = R104 definition only (checked vs RESULTS l. 9864). Tool
+  R2-P-IDEAL-RED/ideal_check.py (sets, not ENC; 3 random pi; both tie rules; H built and run): 0 viol on 110,410 runs; NEG=old fires.
+  Lane w99 strings reproduced exactly (worktree $SCRATCH/wideal). Degree <= 2 needed: KEYFLIP / TOP-MONO fail at degree 3 (info).
+- 2026-11-03 23:03Z (date -u): IDEAL-RED fixes entry 1 + line L-1 (l-new b115ff3a, fixes 727b6f0c, L1 44d0287a): fixes CORRECT; L-1 needs L-R1 (eps
+  undefined, X case), L-R2 (A undefined), L-R3 (labels agree only from a+2). MY MISS: MONO's false «Does NOT claim» remark (REFEREE 23
+  IR-1). TRAP: paper-check negative remarks too. Report R2-P-IDEAL-RED-L1.md.
+- 2026-11-04 00:09Z (date -u): IDEAL-RED line L-2 (l-new ffeb9736, 65ba7ca7, fixes 2e8c3630): MATCHES (R2-P-IDEAL-RED-L2.md); byte
+  test True; 4 required + optional 5-8. Missed REFEREE L-1d in L-1 (U range unbound). TRAP: bind every count's index range. Queue empty.
+- 2026-11-04 02:50Z (date -u): P-IDEAL-CUBE (l-new d97555d4, 366afedc; line 99ae8fac): all SIGN (DECOMP o-c, MULTI->SINGLE, T<=LP,
+  LADDER-LP). [WW22] v1 e-print opened (sha256 88e1f1b7), Def. 3/4, §2.2, Thm 18 quotes verbatim. Line REQUIRED LC-1 (IDEAL-run-empty
+  DATA needs gates increasing in k; decreasing gives T 1), LC-2 (W-key «must carry» = READING). Tool R2-P-IDEAL-CUBE/cube_check.py.
 
 ## HANDOVER (successor 25, session_01V5yGRaPp26T6iMUpCRmXsW, Opus 5.5 under D15; written 2026-11-02 03:32Z by date -u; context ~505k; Lead 03:35Z: hand over and park)
 Branch claude/referee-2, merged with trunk (git merge, no rebase) before pushes. REFEREE-2 owns no docs/GAPS.md rows.
