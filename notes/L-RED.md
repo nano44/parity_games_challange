@@ -79,6 +79,11 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     SEGMAX=13 SYM0=1 SYMB=1 TL=1200 P=2 nohup python3 cubes.py 5 16 cubes/d5c_t16 > out/cubes_d5c_t16.log 2>&1 &   (d 5, conditional)
     checks: SEGMAX=4 d 3 T>=9 UNSAT (55 cubes 109 s), T>=8 (running); SEGMAX=8 SYMB=1 xmax.py 4 13 (SAT expected; running).
     Unconditional d 4 T>=14 kept at nice 19 (same line as before); unconditional d 5 (cubes/d5s_t16) paused, resumable.
+  - 17:5xZ: d 4 T>=13 under SEGMAX 8 settled by witness: max_d4_L13 (R197, exact) has segments [5, 1, 5] <= 8 and the ladder convention,
+    so SEGMAX 8 keeps 13 (monolithic SAT check stopped after ~3.5 h). R205 STARTED (one core, MONOLITHIC, not resumable): L-NEW iso.py
+    @ claude/l-new 9e1a6b02 read-only from scratch worktree: LRED=/home/user/parity_games_challange FREE0=1 ISO=1 KF=3 nohup timeout
+    43200 python3 <lnew>/experiments/new/box160/iso.py 4 14 out/r205/kf3_d4_t14.json > out/r205/kf3_d4_t14.log (T_3(3) >= 14?; L-SI has >= 13).
+    L-NEW logs read: T_2(2) = 7 (kf2 d3 t8 UNSAT), T_3(2) = 8, T_4(2) = 8, T_8(2) = 9; T_1(3) >= 10.
   - QUEUED R205 (Lead 03:48Z, L-NEW box 160 on claude/l-new 96650e2c: xcnf_free0.py, iso.py): T_2(4) (= ISO at d 5) and T_k(3), k 1..4,
     in the cube driver; after R202 has its cores. Lead 04:21Z: needs box160/xcnf_free0.py (FREE0=1) AND box160/iso.py (ISO, b_0 flips,
     KF seqcounter, every step moves a level >= 1 mover, LEM=0 forced); run «LRED=<dir> FREE0=1 ISO=1 KF=k python3 iso.py d t out.json»,
