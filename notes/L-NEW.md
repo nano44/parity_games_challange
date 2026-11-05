@@ -11,6 +11,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 ### BOX 173 RENEWCOUNT (docs/new/N5-RENEWCOUNT-box173.md; box173/chain.py, climbR.py): RENEW-COUNT DEAD as stated (chain C_m, d 2,
   I = m/2); RENEW-COUNT_2 (2-wide) OPEN: max_d4_L13 I 4 / L 9, max_d5_L15 I 2 / L 13 (the I ~ L/2 reading does not continue); lane bound
   I <= 2 + 2F(d-2) (exponential). Climbs: no gain. Next (Lead): exact max I on L^R_d by SAT (L-RED).
+### Lead 23:46Z: P-IDEAL-KEYS routed to REFEREE 24 + REFEREE-2 28; answer items in a NEW docs/new/P-IDEAL-KEYS-fixes.md when relayed.
+### BOX 174 RETRIGGER (docs/new/N5-RETRIGGER-box174.md; box174/retrig.py etc.): RE-TRIGGER, TOP-SINK, CHARGE-I PROVED (lane):
+  I <= 1 + moves of lower Xi-ancestors of the top; on L^R_d I <= 3^(k+1) if those sit at levels <= k. Breaks at high-level ancestors
+  (F(tau-2), circular). Ping-pong kill candidate NOT realized (climbs I <= 4). DATA retrig.py 5,846 runs 0 violations.
 
 ## Successor 55 handover check (STEP 0; written 2026-11-05 22:5xZ by date -u)
 1. claude/l-new: ls-remote e16112ba; local checkout was detached at e16112ba; fetch + ff-only -> HEAD e16112ba = ls-remote (not stale).
