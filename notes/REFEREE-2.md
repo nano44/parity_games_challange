@@ -12,6 +12,36 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
    D12 (active): «WE can run referees on opus too temperoraly». D19 (active): «we have 9% usage left until tomorrow night, make use of it».
 5. Trap: premise routes taken from docs/lit instead of RESULTS (C115 E-1). Check: every premise quote grepped verbatim in docs/RESULTS.md.
 
+## HANDOVER (successor 27, Opus 5.5 under D12/D19; written 2026-11-05 13:38Z by date -u; context ~525k)
+Branch claude/referee-2 (trunk fast-forwarded 2026-11-05 11:11Z, no merge commit needed). REFEREE-2 owns no docs/GAPS.md rows. Every push
+via scripts/push.sh in the background (redirect, echo exit; verify ~20-35 min; it pushes only the commit it verified, so push again
+after committing during a verify). All VERIFY PASS.
+### Reports of record (all «(Opus 5.5, D12)»)
+| packet | object | report | outcome |
+| --- | --- | --- | --- |
+| P-IDEAL-M2 | l-new 6bcfa0de; L-2 4d244698 | R2-P-IDEAL-M2.md, -L2.md | 7 SIGN; L-2 MATCHES; agreed REFEREE M2-G1 (my miss: LOCAL own-mover form) |
+| R105 CHAINED (Lead ask) | RESULTS R105 line | R2-R105-chained.md | instance diff_n2 (deg 3, N 2): line reading breaks CHAIN-BACK (i); now Erratum E-2 |
+| P-IDEAL-SEG | l-new 8291ecf7; fixes 6eb389a6 | R2-P-IDEAL-SEG.md | 4 SIGN; L-1 MATCHES; F-1 (maxratio remark), F-2 (quote) fixed, CORRECT |
+| P-IDEAL-SLOT | l-new e46e98a4; L-2 6eb389a6; L-3 b261c3f9; L-4 d488d06d | R2-P-IDEAL-SLOT.md, -SLOT-L2.md (Add. 1, 2) | 7 SIGN; SL-L1 (LIFT common W-target A; control lift_split_ctrl.json), SL-L2 («over 𝓛_d»); L-4 MATCHES (DATA per C121 §5) |
+| P-IDEAL-FLIP | l-new 9effea1f; fixes+L-2 4c2e5124 | R2-P-IDEAL-FLIP.md, -FLIP-L2.md | 5 SIGN + DEAD SC-ISO SIGN WITH GAP G-FLIP-1; L-1, L-2 MATCH; F-a/F-b SIGN |
+| T^R(3) audit (G-FLIP-1 (b)) | l-comp 6f19564f box27 cnf.py fd882af1 | R2-T3R-audit.md | encoding faithful, SYM sound, 16/16 cubes UNSAT re-run, pin 0/414: G-FLIP-1 CLOSES on my side (no DRAT) |
+### OPEN: none on my side. Pending at the Lead: drop «CONDITIONAL» from FLIP's DEAD (L-3 or erratum) after the other referee's audit.
+### Tools (own code; lane code never imported, except cnf.py as the audited artifact)
+- R2-P-IDEAL-M2/m2_check.py: IDEAL simulator from R104 (β-sets), all M2 / R105 counters, rand_genome (LADDER=1), mut climbs. Reads env NEG
+  (old-state keys) — do not reuse the name NEG in tools that import it.
+- R2-P-IDEAL-SEG/seg_check.py (SEG on every sub-interval, own freeze), R2-P-IDEAL-SLOT/slot_check.py (SHIFT, LIFT, 𝓛_d generator,
+  SEG-CAP chain), R2-P-IDEAL-FLIP/flip_check.py (c-step, forced runs, H_q, G^swap, exact FLIP-1 search; control FNEG),
+  R2-R105-chained/chained_check.py, R2-T3R-audit/pin_mine.py (CNFPY=path to an encoder with build(d, L)).
+- Scratch (container-local): worktrees wm2, wseg, wslot, wflip; lred (L-RED 5f3e89e1 r178/r187/r199/r200 for box160/iso.py with LRED=);
+  lcomp (l-comp 6f19564f box27).
+### Traps (mine this session)
+- LOCAL «states on its chain» includes the option's own mover: check own-mover moves in every LOCAL use (REFEREE M2-G1).
+- Paper-check «Does NOT claim» parentheticals (SEG F-1 maxratio, FLIP F-1 «in 𝓛_d»): they were false twice.
+- Line clauses that state a construction loosely (SLOT LIFT): test the loose reading with a control instance.
+- Scope of a remark bound to a subclass (SLOT SL-L2: bound over pure ladders vs over 𝓛_d).
+- Env-var names shared between imported tools (NEG): spurious control hits.
+- A lane log that does not print a flag (ISO): prove the setting from the CNF size or re-run with the flag unset.
+
 ## Resume point 7 (successor 27; 2026-11-05 12:49Z by date -u)
 - FLIP report dc622d03 pushed. T^R(3) audit (l-comp 6f19564f box27, cnf.py fd882af1): R2-T3R-audit.md. Encoding faithful; SYM sound;
   16 cubes cover all starts; ISO off proven by CNF size (58,896 vs 30,994 with ISO); my re-run 16/16 UNSAT; pin test vs MY simulator
