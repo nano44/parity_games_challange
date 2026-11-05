@@ -71,6 +71,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     166 s), T>=8 SAT (replay L 8), resume skips all. SYM0=1: level-0 swap broken by cube order f0 <= f1 (never = inf) instead of
     the level-0 SYMB clause (sigma_0 swaps the level-0 first-move times; fix level 0 first, then levels >= 1): d 3 T>=9 UNSAT 55 cubes 83 s.
   - Paused 01:1xZ for the d 4 validation: pcegar k3/ag_0 (resume line above).
+  - 03:47Z d 5 T>=16 cubes started (P=1; raise P after d 4 ends by killing and rerunning the same line). R204 d 5 monolithic stopped.
+  - QUEUED R205 (Lead 03:48Z, L-NEW box 160 on claude/l-new 96650e2c: xcnf_free0.py, iso.py): T_2(4) (= ISO at d 5) and T_k(3), k 1..4,
+    in the cube driver; after R202 has its cores.
 - Setup after a fresh container: pip install z3-solver python-sat; scripts/setup_oink.sh (for pins).
 - Things only I know:
   - xcnf is 10-50x faster than z3 on the r199 models; the k 3 d 6 hardness sits in steps 15-16 of the L 16 target (14-step prefix SAT).
