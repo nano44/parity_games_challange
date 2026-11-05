@@ -36,7 +36,7 @@ SLOT-TRADE, IDEAL-ACYC-POLY and G-N5-TIME stay OPEN.
     | k | 0 | 1 | 2 | 3 | 4 | 8 |
     | --- | --- | --- | --- | --- | --- | --- |
     | T_k(1) | 2 | 3 | 3 | 3 | 3 | (k 6: 3) |
-    | T_k(2) | 4 | 5 | 7 | 8 | 8 | ≥ 9 (10 running) |
+    | T_k(2) | 4 | 5 | 7 | 8 | 8 | 9 (T ≥ 10 UNSAT 1626 s) |
     | T_k(3) | ≥ 8 | ≥ 9 (10 running) | ≥ 12 (ISO witness) | | | |
 - READING (what the table says about SLOT-TRADE):
   - The W-channel alone gets almost all the growth: at d = 4, ISO runs reach ≥ 12 of T^R(4) = 13 (at d = 3: 7 of 8). The Lead's pointer
@@ -45,7 +45,7 @@ SLOT-TRADE, IDEAL-ACYC-POLY and G-N5-TIME stay OPEN.
     agent flips the level-0 key bit of H at most twice. SLOT-TRADE restricted to ISO is: T_2(d − 1) ≤ T^R(d − 1) + O(d), where T_k(m) :=
     max number of steps of an m-level 𝓛^R-ladder whose bottom key bit is flipped by an outside agent at most k times (FREE0 mode).
   - Each external flip adds little, not a fresh budget: T_k(1) = 2, 3, 3, 3 (k = 0, 1, 2, ≥ 3; PROVED (lane) for every k, §1) and
-    T_k(2) = 4, 5, 7, 8, 8 for k = 0..4 (EXACT), ≥ 9 at k = 8 (so it does NOT saturate at 8; it grows slowly). A fresh (m)-budget per
+    T_k(2) = 4, 5, 7, 8, 8 for k = 0..4 (EXACT), 9 at k = 8 (EXACT; so it does NOT saturate at 8; it grows slowly). A fresh (m)-budget per
     flip would give ≈ (k + 1)·T^R(m).
   - The single-channel trade «seg1 + tail ≤ T^R(d − 1)» is EXACT at d = 3 for both channels, and DEAD at d = 4 for ISO: instance
     box160/out/iso_d4_st9.json (ISO, T 11, level-0 steps t7, t8, seg1 6, tail 3: seg1 + tail = 9 > T^R(3) = 8).
@@ -53,7 +53,7 @@ SLOT-TRADE, IDEAL-ACYC-POLY and G-N5-TIME stay OPEN.
     (b_0 flips at t5 and back at t8) lifts it to 5, and the tail repeats seg1's move pattern on levels 1-3 (box160/rq.py). So in the
     W-channel the reset is a «pulse» that re-arms a stuck (d − 1)-run, and the second run is a copy, not a fresh maximum.
   - DATA (relaxation, not tight): if the two level-0 movers are an adversary (each changes once at any time, Ξ-coupling kept: FREE0
-    ONCE0), d = 3 reaches ≥ 9 steps above level 0 > T^R(3) = 8 (box160/out/ext_d3_9.json). So a proof that treats level 0 as an
+    ONCE0), d = 3 reaches ≥ 10 steps above level 0 > T^R(3) = 8 (box160/out/ext_d3_t10.json; ≥ 11 running). So a proof that treats level 0 as an
     arbitrary once-moving agent cannot give T^R(3); level 0's own step rule (it moves only when Ξ-unhappy and off its gate choice) matters.
 - CONJECTURE FLIP-ADD (lane; the W-channel form of SLOT-TRADE): T_2(m) ≤ T^R(m) + O(m). With Lemma W-ONLY it gives SLOT-TRADE on ISO
   genomes. DATA: T_2(1) − T^R(1) = 1, T_2(2) − T^R(2) = 3 (EXACT); d = 4 values in §2.
