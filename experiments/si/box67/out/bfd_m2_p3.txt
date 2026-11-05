@@ -1,0 +1,46 @@
+m 2: distinct (transition, b_0) functions over all in-level gate orders: 56
+m 2 part 3/4 graphs 1485 distinct_tables 23116
+T_0(2) 4
+T_1(2) 5
+witness T 4 k 0 xt -1 -1 -1 4 2 5 -1 2 rank 0 6 1 2 5 3 4 7 par 0 0 0 0 1 0 1 0 gate 0 2 1 3 16 18 19 17 32 33 34 35 start 17
+witness T 5 k 1 xt -1 -1 5 4 -1 5 2 2 rank 0 5 1 2 3 6 4 7 par 0 1 0 0 0 1 0 0 gate 0 2 1 3 17 18 16 19 32 33 34 35 start 21
+PAIR pre 0 post 0 MID witness xt -1 -1 -1 2 2 2 2 2 rank 0 1 2 3 4 5 6 7 par 0 0 0 0 0 0 0 0 gate 0 2 1 3 16 17 18 19 32 33 34 35 start 1
+PAIR pre 0 post 0 STUCK witness xt -1 -1 -1 2 2 2 2 2 rank 0 1 2 3 4 5 6 7 par 0 0 0 0 0 0 0 0 gate 0 2 1 3 16 17 18 19 32 33 34 35 start 12
+PAIR pre 0 post 1 MID witness xt -1 -1 -1 2 2 2 2 2 rank 0 1 2 3 4 5 6 7 par 0 0 0 0 0 0 0 0 gate 0 2 1 3 16 17 18 19 32 33 34 35 start 4
+PAIR pre 0 post 1 STUCK witness xt -1 -1 -1 2 2 2 2 2 rank 0 1 2 3 4 5 6 7 par 0 0 0 0 0 0 0 0 gate 0 2 1 3 16 17 18 19 32 33 34 35 start 0
+PAIR pre 0 post 2 MID witness xt -1 -1 -1 2 2 2 2 2 rank 0 3 1 2 4 5 6 7 par 0 0 0 1 0 0 0 0 gate 0 2 1 3 17 18 16 19 32 33 34 35 start 0
+PAIR pre 0 post 2 STUCK witness xt -1 -1 -1 2 2 2 2 2 rank 0 3 1 2 4 5 6 7 par 0 0 0 1 0 0 0 0 gate 0 2 1 3 16 17 18 19 32 33 34 35 start 0
+PAIR pre 0 post 3 MID witness xt -1 -1 2 4 5 2 2 2 rank 0 1 2 3 4 5 6 7 par 0 0 0 0 0 1 0 1 gate 0 2 1 3 16 17 18 19 32 33 34 35 start 48
+PAIR pre 0 post 3 STUCK witness xt -1 -1 2 4 5 2 2 2 rank 0 1 2 3 4 5 6 7 par 0 0 0 0 0 1 0 1 gate 0 2 1 3 16 17 18 19 32 33 34 35 start 52
+PAIR pre 0 post 4 MID witness xt -1 -1 -1 4 2 5 -1 2 rank 0 6 1 2 5 3 4 7 par 0 0 0 0 1 0 1 0 gate 0 2 1 3 17 19 16 18 32 33 34 35 start 16
+PAIR pre 0 post 4 STUCK witness xt -1 -1 -1 4 2 5 -1 2 rank 0 6 1 2 5 3 4 7 par 0 0 0 0 1 0 1 0 gate 0 2 1 3 16 18 19 17 32 33 34 35 start 16
+PAIR pre 1 post 0 MID witness xt -1 -1 -1 2 2 2 2 2 rank 0 3 1 2 4 5 6 7 par 0 0 0 1 0 0 0 0 gate 0 2 1 3 16 17 18 19 32 33 34 35 start 49
+PAIR pre 1 post 0 STUCK witness xt -1 -1 -1 2 2 2 2 2 rank 0 1 2 3 4 5 6 7 par 0 0 0 0 0 0 0 0 gate 0 2 1 3 16 17 18 19 32 33 34 35 start 1
+PAIR pre 1 post 1 MID witness xt -1 -1 -1 2 2 2 2 2 rank 0 3 1 2 4 5 6 7 par 0 0 0 1 0 0 0 0 gate 0 2 1 3 16 17 18 19 32 33 34 35 start 1
+PAIR pre 1 post 1 STUCK witness xt -1 -1 -1 2 2 2 2 2 rank 0 1 2 3 4 5 6 7 par 0 0 0 0 0 0 0 0 gate 0 2 1 3 16 17 18 19 32 33 34 35 start 4
+PAIR pre 1 post 2 MID witness xt -1 -1 2 4 5 2 2 2 rank 0 1 2 3 4 5 6 7 par 0 0 0 0 0 1 0 1 gate 0 2 1 3 16 17 18 19 32 33 34 35 start 48
+PAIR pre 1 post 2 STUCK witness xt -1 -1 -1 2 2 2 2 2 rank 0 3 1 2 4 5 6 7 par 0 0 0 1 0 0 0 0 gate 0 2 1 3 16 17 18 19 32 33 34 35 start 8
+PAIR pre 1 post 3 MID witness xt -1 3 -1 -1 5 3 2 2 rank 0 1 2 6 3 4 5 7 par 0 0 1 0 0 0 0 1 gate 0 2 1 3 16 17 18 19 32 33 34 35 start 48
+PAIR pre 1 post 3 STUCK witness xt -1 -1 2 4 5 2 2 2 rank 0 1 2 3 4 5 6 7 par 0 0 0 0 0 1 0 1 gate 0 2 1 3 16 17 18 19 32 33 34 35 start 36
+PAIR pre 1 post 4 STUCK witness xt -1 -1 -1 4 2 5 -1 2 rank 0 6 1 2 5 3 4 7 par 0 0 0 0 1 0 1 0 gate 0 2 1 3 16 18 19 17 32 33 34 35 start 24
+PAIR pre 2 post 0 MID witness xt -1 -1 2 4 5 2 2 2 rank 0 1 2 3 4 5 6 7 par 0 0 0 0 0 1 0 1 gate 0 2 1 3 16 17 18 19 32 33 34 35 start 49
+PAIR pre 2 post 0 STUCK witness xt -1 -1 -1 2 2 2 2 2 rank 0 3 1 2 4 5 6 7 par 0 0 0 1 0 0 0 0 gate 0 2 1 3 16 17 18 19 32 33 34 35 start 1
+PAIR pre 2 post 1 MID witness xt -1 -1 2 4 5 2 2 2 rank 0 1 2 3 4 5 6 7 par 0 1 0 0 0 1 0 1 gate 0 2 1 3 16 17 18 19 32 33 34 35 start 53
+PAIR pre 2 post 1 STUCK witness xt -1 -1 -1 4 2 2 2 2 rank 0 1 2 3 4 5 6 7 par 0 1 0 0 0 1 0 0 gate 0 2 1 3 16 17 18 19 32 33 34 35 start 21
+PAIR pre 2 post 2 MID witness xt -1 -1 -1 2 5 2 3 2 rank 0 7 1 6 2 3 4 5 par 0 0 0 1 0 0 0 1 gate 0 2 1 3 16 17 18 19 32 33 34 35 start 56
+PAIR pre 2 post 2 STUCK witness xt -1 -1 2 4 5 2 2 2 rank 0 1 2 3 4 5 6 7 par 0 1 0 0 0 0 0 1 gate 0 2 1 3 17 18 16 19 32 33 34 35 start 33
+PAIR pre 2 post 3 STUCK witness xt -1 -1 5 4 -1 5 2 2 rank 0 5 1 2 3 6 4 7 par 0 1 0 0 0 1 0 0 gate 0 2 1 3 17 18 16 19 32 33 34 35 start 21
+PAIR pre 3 post 0 MID witness xt 5 4 4 -1 -1 -1 4 3 rank 0 1 2 3 6 7 4 5 par 0 0 0 0 0 1 1 0 gate 0 2 1 3 16 17 18 19 32 33 34 35 start 28
+PAIR pre 3 post 0 STUCK witness xt -1 -1 2 4 5 2 2 2 rank 0 1 2 3 4 5 6 7 par 0 0 0 0 0 1 0 1 gate 0 2 1 3 16 17 18 19 32 33 34 35 start 49
+PAIR pre 3 post 1 MID witness xt -1 -1 -1 4 2 5 -1 2 rank 0 6 1 2 5 3 4 7 par 0 0 0 0 1 0 1 0 gate 0 2 1 3 16 18 19 17 32 33 34 35 start 17
+PAIR pre 3 post 1 STUCK witness xt -1 -1 2 4 5 2 2 2 rank 0 1 2 3 4 5 6 7 par 0 1 0 0 0 1 0 1 gate 0 2 1 3 16 17 18 19 32 33 34 35 start 53
+PAIR pre 3 post 2 STUCK witness xt -1 -1 -1 2 5 2 3 2 rank 0 7 1 6 2 3 4 5 par 0 0 0 1 0 0 0 1 gate 0 2 1 3 16 17 18 19 32 33 34 35 start 56
+PAIR pre 4 post 0 STUCK witness xt -1 -1 -1 4 2 5 -1 2 rank 0 6 1 2 5 3 4 7 par 0 0 0 0 1 0 1 0 gate 0 2 1 3 16 18 19 17 32 33 34 35 start 17
+PAIR pre 4 post 1 STUCK witness xt 4 -1 5 4 -1 -1 -1 2 rank 0 1 2 3 4 7 5 6 par 0 0 0 0 1 0 0 1 gate 0 2 1 3 17 18 16 19 32 33 34 35 start 44
+TAU T0G 0 genomes 6 max_T1G 0 double 6 witness xt 3 3 -1 -1 -1 3 -1 2 rank 0 1 2 7 3 4 5 6 par 0 1 0 1 0 0 0 0 gate 2 3 0 1 16 18 19 17 32 33 34 35
+TAU T0G 1 genomes 198819 max_T1G 2 double 129456 witness xt -1 -1 -1 2 2 2 2 2 rank 0 1 2 3 4 5 6 7 par 0 0 0 0 0 0 0 0 gate 0 2 1 3 16 17 18 19 32 33 34 35
+TAU T0G 2 genomes 973041 max_T1G 4 double 144288 witness xt -1 -1 2 4 5 2 2 2 rank 0 1 2 3 4 5 6 7 par 0 1 0 0 0 0 0 1 gate 0 2 1 3 17 18 16 19 32 33 34 35
+TAU T0G 3 genomes 120186 max_T1G 5 double 0 witness xt -1 -1 5 4 -1 5 2 2 rank 0 5 1 2 3 6 4 7 par 0 1 0 0 0 1 0 0 gate 0 2 1 3 17 18 16 19 32 33 34 35
+TAU T0G 4 genomes 2444 max_T1G 5 double 0 witness xt -1 -1 -1 4 2 5 -1 2 rank 0 6 1 2 5 3 4 7 par 0 0 0 0 1 0 1 0 gate 0 2 1 3 16 18 19 17 32 33 34 35
+GAIN g*(2) part 3/4 = 4
+GAIN witness g 4 V1 5 M 1 xt -1 -1 -1 4 2 5 -1 2 rank 0 6 1 2 5 3 4 7 par 0 0 0 0 1 0 1 0 gate 0 2 1 3 16 18 19 17 32 33 34 35 upper 6

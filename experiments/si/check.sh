@@ -1213,3 +1213,6 @@ echo "si (box 65: FOOT): PASS"
 # box 66 (FRONT: exact one-flip (pre, post) set at m = 1, 2; m = 3 pins replayed with L-NEW Gen; docs/si/N5-FRONT-box66.md)
 bash box66/check66.sh
 echo "si (box 66: FRONT): PASS"
+# box 67 (FRONT2: per-tau one-flip table D(m, tau) at m = 1, 2; docs/si/N5-FRONT2-box67.md)
+bash box67/check67.sh
+echo "si (box 67: FRONT2): PASS"
