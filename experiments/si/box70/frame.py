@@ -18,6 +18,8 @@ from pysat.formula import IDPool
 from pysat.solvers import Cadical153
 m, MODE, T = int(sys.argv[1]), sys.argv[2], int(sys.argv[3]); T2 = int(sys.argv[4]) if len(sys.argv) > 4 else 0
 NOIM = os.environ.get("NOIM") == "1"
+K = int(os.environ.get("K", "1"))                       # flips for modes tk / sumk
+DUMP = os.environ.get("DUMP")                           # directory: write DIMACS (and the DRUP proof on UNSAT) there
 U = 2 * m; NS = 1 << U; lev = [z // 2 + 1 for z in range(U)]
 P = IDPool(); cl = []
 def v(*a): return P.id(a)
@@ -70,11 +72,19 @@ for z in range(U):
             cl.append([-o1, o0, -u, b, -a])                                             # IM (c): only option 1 -> C' in {C, 1}
             cl.append([-o0, o1, -u, -b, a])                                             # IM (c): only option 0 -> C' in {C, 0}
 cbit = {(l, k): v("c", l, k) for l in range(1, m) for k in (0, 1)}
-def run(tag, L, flip):
+def run(tag, L, flip, kflips=None):
     S = [[v("S", tag, t, z) for z in range(U)] for t in range(L + 1)]; B = v("B", tag)
     F = [v("F", tag, t) for t in range(L + 1)]
-    for t in range(L): cl.append([-F[t], F[t + 1]])
-    if not flip: [cl.append([-f]) for f in F]
+    if kflips is None:
+        for t in range(L): cl.append([-F[t], F[t + 1]])
+        if not flip: [cl.append([-f]) for f in F]
+    else:                                                # F[t+1] = bit offset of step t (free); changes counted below
+        D = [XOR(F[t], F[t + 1]) for t in range(1, L)]
+        if kflips >= 0 and D:
+            from pysat.card import CardEnc, EncType
+            enc = CardEnc.atmost(lits=D, bound=kflips, top_id=P.top, encoding=EncType.seqcounter)
+            for c2 in enc.clauses: cl.append(c2)
+            P.top = max(P.top, enc.nv)              # later fresh ids come after the encoder's auxiliaries
     for t in range(L):
         eqs = []
         for s in range(NS):
@@ -98,9 +108,26 @@ def run(tag, L, flip):
 if MODE == "t0": runs = [run("a", T, False)]
 elif MODE == "t1": runs = [run("a", T, True)]
 elif MODE == "sum": runs = [run("a", T, False), run("b", T2, True)]
+elif MODE == "tk": runs = [run("a", T, True, kflips=K)]                      # T-step run with <= K bit changes (K = -1: unlimited)
+elif MODE == "sumk": runs = [run("a", T, False), run("b", T2, True, kflips=K)]
 else: raise SystemExit("mode")
-t0 = time.time(); sol = Cadical153(bootstrap_with=cl); r = sol.solve(); dt = time.time() - t0
-print("m", m, "MODE", MODE, "T", T, "T2", T2, "NOIM", int(NOIM), "vars", P.top, "clauses", len(cl), "->", "SAT" if r else "UNSAT", "%.1fs" % dt, flush=True)
+import hashlib
+tag = "m%d_%s_T%d_T2%d_K%d_NOIM%d" % (m, MODE, T, T2, K, int(NOIM))
+if DUMP:
+    os.makedirs(DUMP, exist_ok=True); nv = max(abs(l) for c in cl for l in c)
+    with open(os.path.join(DUMP, tag + ".cnf"), "w") as fo:
+        fo.write("p cnf %d %d\n" % (nv, len(cl)))
+        for c in cl: fo.write(" ".join(map(str, c)) + " 0\n")
+    print("DIMACS", tag + ".cnf", "sha1", hashlib.sha1(open(os.path.join(DUMP, tag + ".cnf"), "rb").read()).hexdigest(), flush=True)
+t0 = time.time()
+from pysat.solvers import Solver
+sol = Solver(name="cadical153", with_proof=bool(DUMP), bootstrap_with=cl); r = sol.solve(); dt = time.time() - t0
+print("m", m, "MODE", MODE, "T", T, "T2", T2, "K", K, "NOIM", int(NOIM), "vars", P.top, "clauses", len(cl), "->", "SAT" if r else "UNSAT", "%.1fs" % dt, flush=True)
+if DUMP and not r:
+    pf = os.path.join(DUMP, tag + ".drup")
+    with open(pf, "w") as fo:
+        for line in sol.get_proof(): fo.write(line + "\n")
+    print("DRUP", tag + ".drup", "sha1", hashlib.sha1(open(pf, "rb").read()).hexdigest(), "bytes", os.path.getsize(pf), flush=True)
 if r:
     M = set(l for l in sol.get_model() if l > 0)
     xt = [next(t for t in targets[o // 2] if v("x", o, t) in M) for o in range(2 * U)]

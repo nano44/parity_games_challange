@@ -1225,3 +1225,6 @@ echo "si (box 69: MECH): PASS"
 # box 70 (FRAME: SAT frame ABS-m + IM, m = 2 validation; docs/si/N5-FRAME-box70.md)
 bash box70/check70.sh
 echo "si (box 70: FRAME): PASS"
+# box 71 (FRAME-K: k-flip frame m = 2 validation + DRUP check; docs/si/N5-FRAMEK-box71.md)
+bash box71/check71.sh
+echo "si (box 71: FRAME-K): PASS"
