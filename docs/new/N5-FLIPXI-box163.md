@@ -98,3 +98,28 @@ level 0 at (0, 0), both bits; 19,234 moving frames)
   frames 1..p, flipped from frame p + 1 on, KF = 1). The d 4 one-flip runs are slow (T_1(3) ≥ 10 SAT took 8261 s; ≥ 11 died
   UNKNOWN after hours twice, the second time in today's 14:07Z container restart), and monolithic runs do not survive restarts. The
   mid-range UNSAT points (pre 3..6, sum ≥ 11) are the expensive ones.
+
+## 6. Global trade-off candidate SUM (Lead 14:13Z: a non-vacuous charge of V_1(G) − V_0(G) to T^R(m) − V_0(G))
+- V_k(G) := max over U-starts of the exact per-genome k-flip maximum (box162 Vk). Trivial facts: V_0(G) ≤ T_0(m); V_k(G) ≤ (k + 1) V_0(G)
+  (SWAP-RUN, both bits).
+- CONJECTURE SUM_k (lane; DATA m ≤ 3 only): for every ISO genome of 𝓛^R_(m+1), V_0(G) + V_k(G) ≤ 2 T^R(m) + 1, for k = 1 and k = 2.
+  - Charge form: V_k(G) − V_0(G) ≤ 2 (T^R(m) − V_0(G)) + 1. Each step a genome's flip-free runs fall short of T^R(m) buys at most two
+    extra flip steps.
+  - Not vacuous: at m = 3 the trivial facts allow V_0 + V_1 up to 8 + 10 = 18 and V_0 + V_2 up to 8 + 12 = 20. At m ≤ 2 it IS vacuous
+    (V_0 ≤ T^R, V_1 ≤ T^R + 1 already give it), so m = 3 is the first test.
+  - Tight at both ends: f_m3_p4_s1 (L-SI pin; V_0, V_1, V_2 = 8, 9, 9): 17 for k = 1, 2; ISO_1_d4_t12 (V_0 5, V_2 12): 17 for k = 2.
+  - k = 3 is DEAD: ISO_1_d4_t12 has V_0 + V_3 = 5 + 13 = 18 > 17 (EXACT per genome; box160/out/ISO_1_d4_t12.json).
+  - It does NOT imply FLIP-ADD. With V_k ≤ (k + 1) V_0 it gives T_1(m) ≤ (4 T^R(m) + 2) / 3 and T_2(m) ≤ (6 T^R(m) + 3) / 4.
+    Those are multiplicative, so with W-ONLY (d) the recursion is still exponential. SUM is a first true-looking global trade-off,
+    not the bound.
+- DATA (box163/sumclimb.py; hill-climb over ISO 𝓛^R_(m+1) genomes, objective V_0 + V_k; lower bounds only; logs box163/log/climb_*):
+  | m | objective | starts | best (V_0, V_1, V_2) | max found | 2 T^R(m) + 1 |
+  | --- | --- | --- | --- | --- | --- |
+  | 2 | V_0 + V_1 | 4 seeds × 10 random restarts × 2000 steps | (4, 5) | 9 | 9 |
+  | 3 | V_0 + V_1 | from f_m3_p4_s1 (2 seeds), kf1_d4_t10 (2 seeds), random, ISO_1 | (8, 9) | 17 | 17 |
+  | 3 | V_0 + V_2 | from ISO_1_d4_t12 and from f_m3_p4_s1 | (5, 8, 12) and (8, 9, 9) | 17 | 17 |
+  - The climb from kf1_d4_t10 (5, 10) moved to (8, 9): it trades flip gain for flip-free length along SUM = 17, never above it.
+- R_∞ on the ISO channel (Lead's question): R_∞ is defined ON the ISO forced model, decreases by ≥ 1 at every moving frame and does not
+  move at a flip (PROVED (lane), immediate from the definition + MONO-FLIP termination). So it is a usable potential, but what it proves
+  is only T_k(m) ≤ T_∞(m) for every k. It gives FLIP-ADD iff INF-ADD (T_∞(m) ≤ T^R(m) + O(m)) holds. Data T_∞ − T^R = 1, 5, ≥ 9, ≥ 8
+  (m 1-4). The real ISO runs need only k ≤ 2, so R_∞ throws away the k ≤ 2 restriction that SUM_2 uses.
