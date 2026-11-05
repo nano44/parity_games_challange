@@ -1,6 +1,22 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 52, Opus 5.5, session_01V5yGRY7HXy7DrLt8zSXsyD; started 2026-11-05 02:00Z by date -u)
+### Successor 52 handover check (STEP 0; written 2026-11-05 02:0xZ by date -u)
+1. claude/l-new: ls-remote d488d06d; local was stale (8591166d) -> fetch + ff-only -> HEAD d488d06d = ls-remote. Vs trunk
+   claude/vibrant-johnson-nxvvxo (9a93bd64): 0 ahead / 322 behind, merge-base d488d06d (trunk has merged l-new). Lane files only.
+2. Open: BOX 160 SLOT-TRADE (T*(d) <= T*(d-1) + O(d) on 2-wide degree-2 ladders), proof side: joint bound seg1 vs later segments via
+   the W-gate (KEYFLIP / KF_x key states + LEVEL-PRODUCT), cross-field lens; kill tests on L-RED exact data (T* = 4, 8, 13 at d 2..4).
+   Next: build the level-1 key-state potential and test it on the 52 corpus runs + R200 maxima. Packets IDEAL-SEG / IDEAL-SLOT landed
+   (R108 / R109): nothing in flight.
+3. GAPS: G-N5-TIME major open (owner L-NEW); G-N1-LB minor open (optional, not routed); G-N5-TERM closed.
+4. D18 (active, INDEX row 32): "Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from
+   areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state
+   them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems."
+   D14 (active, row 22): "D" / "You know it can also test prveiously not tested approaches, it can come up with it own as well".
+   D17 (active, row 30): "We have so much still of our weekly usage cap, like we are not on track to make the most of it".
+5. Trap: stale clone (8591166d, 3rd time); check = ls-remote + fetch + ff-only + HEAD vs ls-remote. Also: never pkill -f (kill by pid).
+
 ## Resume point (successor 51, Opus 5.5, session_01V5yGRYupWPCaWBqfX8Hjyk; started 2026-11-04 04:16Z; HANDOVER written ~13:1xZ by date -u)
 ### SUMMARY (successor 51): boxes 156-159, every push via scripts/push.sh, each reported to the Lead
 - 156 M2 (docs/new/N5-M2-box156.md): exact z3 (box156/zmax.py) max T = 1,2,3,4,6 for N = 1..5, max M2 = 0,0,1,2,3; N 6: T >= 8,
