@@ -1,5 +1,7 @@
 # Audit sheet: cnf.py against RESULTS R104's IDEAL model, and the exact scope of «T^R(3) = 8» (L-COMP box 27 (a))
-For a referee. cnf.py sha1 fd882af16648b82c014754cadcdaf9b85ae8296d (unchanged since l-comp 557b045b, the version every d 3 cube ran).
+For a referee. cnf.py sha1 fd882af16648b82c014754cadcdaf9b85ae8296d (l-comp 557b045b, the version every d 3 cube ran). Later
+version 06f25e35 adds ONLY the env option XCUBE (unit clauses fixing Xi-targets, for the adaptive cube driver acube.py); the
+encoding itself is unchanged (diff: one block before `info = dict`, and the build line).
 Labels: EXACT-SAT = CaDiCaL 1.9.5 (pysat 1.9.dev15, solver name cadical195); no DRAT/LRAT certificate was produced or checked.
 
 ## 1. Claim and scope

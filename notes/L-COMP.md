@@ -3,12 +3,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point -- successor 9, BOX 27 (running), updated 2026-11-05 10:5xZ by date -u
 - Everything: experiments/comp/box27/README.md. DONE: T^R(2) = 4 (C + CNF), T^R(3) = 8 (CNF cubes), T_k(1), T_k(2) k <= 12 + unlimited.
-- IN FLIGHT (idempotent relaunch lines; finished cubes are skipped, state = cubes/TAG/<id>.res, gitignored):
-  cd experiments/comp/box27
-  SYM=1 setsid nohup python3 cnf.py 4 13 out/R_d4_L13.json > log/R_d4_L13.log 2>&1 &      (d 4 witness search; not resumable, restart)
-  PAR=1 setsid nohup ./cubes.sh R_d4_L14 4 14 > log/cubes_R_d4_L14.out 2>&1 &            (d 4 T >= 14, 64 cubes)
-  W=free PAR=2 setsid nohup ./cubes.sh F_d3_L9 3 9 > log/cubes_F_d3_L9.out 2>&1 &       (d 3 free W-targets, T >= 9)
-  Progress: ./cubes.sh TAG d L summary. Running logs are listed in .git/info/exclude (local) until the job ends.
+- CONTAINER RESTART 2026-11-05 ~14:05Z killed every solve (no cube had finished). Since 14:3xZ all searches run under acube.py
+  (adaptive cubes: 20-min cap per cube, split on the next option's Xi-target on timeout; state cubes2/TAG/<id>.res|.split).
+- IN FLIGHT. After ANY restart run: experiments/comp/box27/relaunch.sh  (idempotent: skips running tags and finished cubes)
+  R_d4_L13 (d 4 witness), R_d4_L14 (d 4 T >= 14), F_d3_L9 (d 3 free W, T >= 9), P22_d2_L5 (d 2, W free, 2+2 padding, T >= 5).
+  Progress: python3 acube.py TAG d L summary. Logs log/acube_TAG.out (local exclude while running).
 - NEXT: padded d 3 (W=free P=1,1,0 and P=1,1,1) T >= 9 cubes; padded d 2 P=2,2 rerun without the 3000 s timeout if it timed out.
 
 ## Successor 9 handover check (session_01V5yGRVtZknivpYHCjzoA9y, Opus 5.5), 2026-11-05 09:5xZ by date -u

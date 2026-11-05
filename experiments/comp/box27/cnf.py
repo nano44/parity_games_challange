@@ -174,6 +174,9 @@ def build(d, L, P=None, wiring="R"):
             if not (free0 and lev[x] == 0): C.require(C.NOT(S[0][x]))
     for a in [a for a in os.environ.get("CUBE", "").split(",") if a]:   # CUBE=x:b,... fixes start bits s_0(x) = b
         x, b = (int(v) for v in a.split(":")); C.require(S[0][x] if b else C.NOT(S[0][x]))
+    for a in [a for a in os.environ.get("XCUBE", "").split(",") if a]:   # XCUBE=j:c,...: option j (in opts order) takes the
+        j, c = (int(v) for v in a.split(":")); o = opts[j]               # c-th value of its sorted Xi-target domain
+        C.require(Xv[o][sorted(Xv[o].keys())[c]])
     info = dict(d=d, L=L, movers=movers, lev=lev, deg=deg, opts=opts, Wv=Wv, Xv=Xv, rk=rk, par=par, gord=gord, S=S, pi=pi)
     return C, info
 
@@ -207,7 +210,7 @@ if __name__ == "__main__":
     P = [int(v) for v in os.environ.get("P", "").split(",")] if os.environ.get("P") else None
     wiring = os.environ.get("W", "R")
     t0 = time.time(); C, I = build(d, L, P, wiring)
-    print(f"build d {d} L {L} P {P} W {wiring} SYM {os.environ.get('SYM')} CUBE {os.environ.get('CUBE')} FREE0 {os.environ.get('FREE0')} KF {os.environ.get('KF')} vars {C.n} clauses {len(C.cl)} {time.time() - t0:.1f} s", flush=True)
+    print(f"build d {d} L {L} P {P} W {wiring} SYM {os.environ.get('SYM')} CUBE {os.environ.get('CUBE')} XCUBE {os.environ.get('XCUBE')} FREE0 {os.environ.get('FREE0')} KF {os.environ.get('KF')} vars {C.n} clauses {len(C.cl)} {time.time() - t0:.1f} s", flush=True)
     s = Solver(name=os.environ.get("SOLVER", "cadical195"), bootstrap_with=C.cl)
     t1 = time.time(); r = s.solve()
     print(f"RESULT d {d} T >= {L} P {P} W {wiring}: {'SAT' if r else 'UNSAT'} {time.time() - t1:.1f} s", flush=True)
