@@ -72,7 +72,8 @@ for z in range(U):
             cl.append([-o1, o0, -u, b, -a])                                             # IM (c): only option 1 -> C' in {C, 1}
             cl.append([-o0, o1, -u, -b, a])                                             # IM (c): only option 0 -> C' in {C, 0}
 cbit = {(l, k): v("c", l, k) for l in range(1, m) for k in (0, 1)}
-def run(tag, L, flip, kflips=None):
+MV = {}
+def run(tag, L, flip, kflips=None, idle=False):
     S = [[v("S", tag, t, z) for z in range(U)] for t in range(L + 1)]; B = v("B", tag)
     F = [v("F", tag, t) for t in range(L + 1)]
     if kflips is None:
@@ -103,13 +104,30 @@ def run(tag, L, flip, kflips=None):
             if l < m:
                 a, b2 = S[t + 1][2 * (l - 1)], S[t + 1][2 * (l - 1) + 1]
                 bit = ITE(XOR(a, b2), ITE(a, -bit, bit), ITE(a, cbit[(l, 1)], cbit[(l, 0)]))
-        cl.append(moves)                                  # every step moves some mover
+        if not idle: cl.append(moves)                     # every step moves some mover (idle steps allowed in mode pm)
+        MV.setdefault(tag, []).append(moves)
     return S, B, F
 if MODE == "t0": runs = [run("a", T, False)]
 elif MODE == "t1": runs = [run("a", T, True)]
 elif MODE == "sum": runs = [run("a", T, False), run("b", T2, True)]
 elif MODE == "tk": runs = [run("a", T, True, kflips=K)]                      # T-step run with <= K bit changes (K = -1: unlimited)
 elif MODE == "sumk": runs = [run("a", T, False), run("b", T2, True, kflips=K)]
+elif MODE == "pm":
+    # L-NEW CONJECTURE PM (degree 2): moves(x) <= 1 + desc(x). Query: mover x = PMX with desc(x) = PMD and moves(x) >= PMD + 2 within a
+    # run of T steps (idle steps allowed, so every run of length <= T is covered) with <= K bit changes.
+    from pysat.card import CardEnc, EncType
+    X, Dd = int(os.environ["PMX"]), int(os.environ["PMD"])
+    runs = [run("a", T, True, kflips=K, idle=True)]
+    def edge(w, y): return OR(*[v("x", 2 * w + k, y) for k in (0, 1)])
+    def dsc(y): return v("desc", X, y)
+    for y in range(U):
+        if y == X: continue
+        terms = [edge(X, y)] + [AND(dsc(w), edge(w, y)) for w in range(U) if w not in (X, y)]
+        o = dsc(y); [cl.append([o, -t]) for t in terms]; cl.append([-o] + terms)
+    dl = [dsc(y) for y in range(U) if y != X]
+    enc = CardEnc.equals(lits=dl, bound=Dd, top_id=P.top, encoding=EncType.seqcounter); cl.extend(enc.clauses); P.top = max(P.top, enc.nv)
+    mx = [MV["a"][t][X] for t in range(T)]                 # move indicator of mover X at each step (moves list is in mover order)
+    enc = CardEnc.atleast(lits=mx, bound=Dd + int(os.environ.get("PMPLUS", "2")), top_id=P.top, encoding=EncType.seqcounter); cl.extend(enc.clauses); P.top = max(P.top, enc.nv)
 else: raise SystemExit("mode")
 import hashlib
 tag = "m%d_%s_T%d_T2%d_K%d_NOIM%d" % (m, MODE, T, T2, K, int(NOIM))
