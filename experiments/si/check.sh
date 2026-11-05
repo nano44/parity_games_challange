@@ -1219,3 +1219,6 @@ echo "si (box 67: FRONT2): PASS"
 # box 68 (REFUTE: Lemma COMPOSE + negative control; docs/si/N5-REFUTE-box68.md)
 bash box68/check68.sh
 echo "si (box 68: REFUTE/COMPOSE): PASS"
+# box 69 (MECH: improvement monotonicity separates the m = 2 cap; docs/si/N5-MECH-box69.md)
+bash box69/check69.sh
+echo "si (box 69: MECH): PASS"

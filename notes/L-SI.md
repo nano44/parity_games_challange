@@ -1,6 +1,19 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## BOX 69 (successor 39; Lead 17:06Z: hand proof of the FRONT-2 cap / mechanism) — DONE (mechanism found; hand proof stops at a finite check)
+- Note docs/si/N5-MECH-box69.md; tools experiments/si/box69/{abs2.c, tabs.c, mine.py, additive.py, lpreal.py, imtest.py, sumclimb.py,
+  check69.sh}; data tabs_m2.txt (48,016 ENC tables), bad_tabs.txt (6,184), *.out.
+- ABS-2 (triangular C + BIT-CHAIN, every structural lane fact): EXACT max T_0 = 4 (flip-free bound needs nothing more), max T_1 = 7.
+  Breaking config: table 0xa0ec2064a0ec2064, c1 (0,1) (C(A1)=0, C(B1)=s(A1), C(A2)=not s(B1), C(B2)=s(A2) and (s(A1) or not s(B1))):
+  T_0 4, T_1 7; LP-infeasible for all 5,941 Xi-graphs (not even real-reward realisable).
+- Mechanism: Lemma IM (PROVED lane, from R105 ENC + LOCAL) = PI monotonicity. EXACT: 0 of 6,184 T_1 >= 6 tables admit a LOCAL + IM
+  graph; 2,401 of 2,401 sampled ENC tables do. Generic real rewards keep the cap (DATA): additivity, not powers of 2, is the mechanism.
+- m-general: «IM => pre + post <= T^R + 1» DEAD at m 3 (kf1_d4_t10, ENC, T_1 10 > 9). CONJECTURE SUM_1: T_0(G) + T_1(G) <= 2T^R(m)+1
+  (exact m 1, 2; m 3 tight 17 on box66 f_m3_p4_s1; kf1 15; m 4 k1_m4_s2 22 <= 27).
+- Remaining hand step: «triangular + LOCAL + IM + BIT-CHAIN => T_1 <= 5 at m 2» as a case analysis.
+- Env: scipy installed by pip in this container (lpreal.py); check69.sh skips the LP when scipy is absent.
+
 ## BOX 68 (successor 39; Lead 15:45Z: REFUTE FLIP-ADD by construction, D1) — DONE, no refutation
 - Note docs/si/N5-REFUTE-box68.md; tools experiments/si/box68/{compose.py, kclimb.py, check68.sh}; pin/ (m 4 champions, sha1).
 - Obstructions: O1 T^R exact only m <= 4 (upper bound 3^m - 1 only); O2 doubling dies near T^R/2; O3 COMPOSE costs levels (linear
