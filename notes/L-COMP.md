@@ -1,6 +1,16 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point -- successor 9, BOX 27 (running), updated 2026-11-05 10:5xZ by date -u
+- Everything: experiments/comp/box27/README.md. DONE: T^R(2) = 4 (C + CNF), T^R(3) = 8 (CNF cubes), T_k(1), T_k(2) k <= 12 + unlimited.
+- IN FLIGHT (idempotent relaunch lines; finished cubes are skipped, state = cubes/TAG/<id>.res, gitignored):
+  cd experiments/comp/box27
+  SYM=1 setsid nohup python3 cnf.py 4 13 out/R_d4_L13.json > log/R_d4_L13.log 2>&1 &      (d 4 witness search; not resumable, restart)
+  PAR=1 setsid nohup ./cubes.sh R_d4_L14 4 14 > log/cubes_R_d4_L14.out 2>&1 &            (d 4 T >= 14, 64 cubes)
+  W=free PAR=2 setsid nohup ./cubes.sh F_d3_L9 3 9 > log/cubes_F_d3_L9.out 2>&1 &       (d 3 free W-targets, T >= 9)
+  Progress: ./cubes.sh TAG d L summary. Running logs are listed in .git/info/exclude (local) until the job ends.
+- NEXT: padded d 3 (W=free P=1,1,0 and P=1,1,1) T >= 9 cubes; padded d 2 P=2,2 rerun without the 3000 s timeout if it timed out.
+
 ## Successor 9 handover check (session_01V5yGRVtZknivpYHCjzoA9y, Opus 5.5), 2026-11-05 09:5xZ by date -u
 - Stale-clone check: ls-remote claude/l-comp = 3ae78ea86869 = local HEAD after fetch + merge --ff-only ("Already up to date").
 1. Branch claude/l-comp, head 3ae78ea8 (box 26). Against trunk claude/vibrant-johnson-nxvvxo @ b738337b: 0 ahead, 705 behind;
