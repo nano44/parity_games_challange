@@ -87,9 +87,10 @@ level 0 at (0, 0), both bits; 19,234 moving frames)
     flip-free maximum over both bits bounds both), and kf1_d4_t10 attains it at k = 1.
   - (S2) So FLIP-ADD, if true, is a GLOBAL trade-off: a genome whose flip-free runs are long (≈ T^R(m)) must chain badly, and a genome
     that chains well must have short flip-free runs. L-SI's f_m3_p4_s1 (V_0 = 8 under each bit, max pre + post 9) and kf1_d4_t10 (V_0 =
-    5, sum 10) are the two ends. CONJECTURE CHAIN-TRADE (lane, DATA m ≤ 3 only): for every ISO genome of 𝓛^R_(m+1),
-    V_1(G) ≤ max(2 V_0(G), V_0(G) + c(m)) with c(m) = O(m) and 2 V_0(G) ≤ T^R(m) + O(m) whenever the maximum is the first term. It
-    implies FLIP-ADD at k = 1. Not checked beyond the two instances above and L-SI's pins.
+    5, sum 10) are the two ends. FLIP-ADD at k = 1 is exactly «V_1(G) ≤ T^R(m) + O(m) for every G»; the data say a proof has to charge
+    the excess V_1(G) − V_0(G) to the gap T^R(m) − V_0(G) (kf1_d4_t10: excess 5, gap 3), not to anything that is small per genome.
+    (A first draft of this entry stated a «CHAIN-TRADE» inequality V_1 ≤ max(2 V_0, V_0 + c); it is vacuous, since V_1(G) ≤ 2 V_0(G)
+    always holds by SWAP-RUN, and is withdrawn.)
 - The Ξ-side reading (box 163): MONO-FLIP makes the value vector rise along the whole flip run; a short flip-free run with a long flip
   run means the value vector has a long chain that no single bit can follow. A potential that sees this has to measure «distance to a
   bit-c dead end» for both c together: R_∞ (definitional) does, R_0, R_1 (frozen) do not (§3: R_0, R_1 ≤ 2 along a 9-step T_∞ run).
