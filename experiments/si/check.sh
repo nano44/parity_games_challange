@@ -1216,3 +1216,6 @@ echo "si (box 66: FRONT): PASS"
 # box 67 (FRONT2: per-tau one-flip table D(m, tau) at m = 1, 2; docs/si/N5-FRONT2-box67.md)
 bash box67/check67.sh
 echo "si (box 67: FRONT2): PASS"
+# box 68 (REFUTE: Lemma COMPOSE + negative control; docs/si/N5-REFUTE-box68.md)
+bash box68/check68.sh
+echo "si (box 68: REFUTE/COMPOSE): PASS"
