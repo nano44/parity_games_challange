@@ -19,8 +19,8 @@ SLOT-TRADE, IDEAL-ACYC-POLY and G-N5-TIME stay OPEN.
   | class (𝓛^R_d, all Ξ-data, gates, starts) | d = 2 | d = 3 | d = 4 |
   | --- | --- | --- | --- |
   | all (L-RED R197 / R202: T^R(d)) | 4 | 8 (reproduced here) | 13 |
-  | ISO: W-channel only | 4 | 7 | ≥ 12 (12 SAT; 13 running) |
-  | NOW: Ξ-channel only (b_0 constant on the run) | - | 6 | ≥ 10 (11 running) |
+  | ISO: W-channel only | 4 | 7 | ≥ 12 (T ≥ 13: UNKNOWN, ~5 h, killed by a container restart) |
+  | NOW: Ξ-channel only (b_0 constant on the run) | - | 6 | ≥ 10 (T ≥ 11: UNKNOWN, ~5 h, killed by a container restart) |
   | NOL0: no level-0 step | - | 4 = T^R(2) | 8 = T^R(3) (T ≥ 9 UNSAT 143 s) |
   | only level-0 mover 0 may move (FRZ=1) | - | 6 | (queued) |
   | ISO, only level-0 mover 0 may move | - | 5 | (queued) |
