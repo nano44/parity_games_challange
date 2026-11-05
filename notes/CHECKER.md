@@ -1,6 +1,14 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 18), 2026-11-05 15:46Z (date -u)
+- C122 = R110 (P-IDEAL-FLIP) draft dd6624ba @ trunk d5d544cc: FAIL E-1 («a quarter of them not ISO»: 65 of 300 measured), E-2 (SWAP
+  DATA ISO-only, SWAP-RUN not in the no-DATA list), E-3 (source note omits the fixes file that proves F-a / F-b); G-0 (unclosed DATA
+  «(») folded in. Exact L-3 = four replacements, C122 §5; expected L-3 sha1 4089bd73… (with newline), rebuilt UPDATE sha1 d76a5cfb…
+  (line without newline). NEXT: C122 Add. 1 on the second fill (byte test of L-3, title, UPDATE, stale «L-2» body sentences, w162 at
+  the new l-new SHA).
+- Oink 8fbf0a7 is now built in this container (push.sh runs the smoke step). My first push (5c255afd) ran without it: NOT RUN.
+
 ## Successor 18 handover check, 2026-11-05 15:04Z (date -u)
 1. Branch claude/checker, head 177f8368 (= git ls-remote origin; local already at it after fetch + ff-only). Against trunk
    claude/vibrant-johnson-nxvvxo @ 93e68aa4: 0 ahead; behind by 21 first-parent commits (Lead commits and lane merges; 8,700 commits
