@@ -4,6 +4,13 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 ## Resume point (successor 54, Opus 5.5, session_01V5yGRWFP9j7nf3j2YniXzP; started 2026-11-05 17:06Z by date -u)
 ### BOX 164 (Lead brief: an untried framework; chose (a) entropy compression / encoding method): docs/new/N5-ENCODE-box164.md,
   experiments/new/box164/ (rec.py records, show.py, climb.py / seeded.py hill-climbs, keyless.py + diamond.py key-free controls).
+- BOX 164 RESULT (pushed 9e1a6b02 first commit; final in this push): CHARGE T <= mu*|R| (|R| <= 8m^2) and NO-ENTROPY PROVED (lane);
+  CHAIN-UP PROVED (lane). DEAD: mu = 1 real (iso_d3_6), mu_0 = 1 (kf0_d4_t8), REC-K, k-free mu (finfclimb_m3_mu4_T11), REC-2 mu_2 <= 2
+  (box164/out/fkclimb_k2_m4_mu3_T11.json sha1 0593b229: record (5, beta(5,1)) at frames 1, 4, 10 with 2 flips). Obstruction: own-option
+  beta on top => record = mover name, mu >= floor(moves(x)/2). Framework closed (no leverage). Control: key-free diamond paths 8,22,52,114.
+- Things only I know (54): fk.py = exact DP for T_k and mu_k (matches the T_k table on witness files); fkall.sh needs BOX=<dir>;
+  L-RED r187/r178 instances via `git fetch origin claude/l-red` then `git archive 5f3e89e1 ... | tar -x` (the object is absent before
+  the fetch). push.sh pushes only the verified commit: chain a second push for commits made during verify.
 ### Successor 54 handover check (STEP 0; written 2026-11-05 17:2xZ by date -u)
 1. claude/l-new: ls-remote a9851eba; local HEAD a9851eba = ls-remote after fetch + ff-only (not stale this time). Vs trunk
    claude/vibrant-johnson-nxvvxo (e4823bdd): 9 ahead / 9358 behind (count as printed by rev-list), merge-base 4c2e5124. Lane files only.

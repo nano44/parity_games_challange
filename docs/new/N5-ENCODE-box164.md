@@ -1,4 +1,4 @@
-# Box 164 N5-ENCODE: the encoding (entropy-compression) method applied to IDEAL-ACYC run length — exact translation, the bound it gives (T ≤ μ·|R|), its degenerate form (no entropy is consumed), kills of the injective and constant-bit forms, and one surviving polynomial-strength conjecture REC-2
+# Box 164 N5-ENCODE: the encoding (entropy-compression) method applied to IDEAL-ACYC run length — exact translation, the bound it gives (T ≤ μ·|R|), why it degenerates (no entropy is consumed), and kills of every constant-multiplicity form (μ = 1 on real runs, μ_0 = 1, REC-2 μ_2 ≤ 2 at m = 4)
 L-NEW successor 54, 2026-11-05 (date -u: see the commit). Lead brief BOX 164 (D14 / D18): option (a), entropy compression. Labels:
 PROVED (lane, unrefereed) / DATA / CONJECTURE / DEAD (with instance) / READING. Model, c-step, forced run, T_k(m), T^R, ISO: packet
 P-IDEAL-FLIP §0-§1 (docs/new/P-IDEAL-FLIP.md, frozen 9effea1f; landing as R110). MONO-FLIP: box 163 §1 (docs/new/N5-FLIPXI-box163.md,
@@ -25,11 +25,15 @@ PROVED (lane)). Not a TARGET.md claim. No polynomial bound is proved. FLIP-ADD, 
   - records WITHOUT the key rule (control): on the 2-wide diamond Ξ-DAG the longest single-switch improving path is 8, 22, 52, 114
     (n = 2..5 layers, hill-climbed; = 2^(n+2) − 2n − 4 on these four points, DATA) with μ_free = 8 at n = 4. Any bound on μ must use
     the key rule (same phenomenon as the fleet's CDAG_n, docs/new/N5-K9-Pstrict-counter.md).
-- CONJECTURE REC-2 (DATA only, §5): in the forced model with ≤ 2 flips, μ_2(m) ≤ 2 for every m. Data: every screened ISO 𝓛^R genome
-  (m ≤ 3) and the m = 4 hill-climbs (interim: μ_2 = 2 at T_2 = 9). If true: T_2(m) ≤ 16m² (PROVED (lane) conditional, §2), hence by
-  W-ONLY (d) T ≤ 16(d − 1)² + 2 on ISO 𝓛^R_d. Warning (READING): μ_0 rises from 1 (m = 2) to 2 (m = 3), so μ may grow with m; a
-  bounded-by-poly(m) version is EQUIVALENT to T_2 polynomial (μ_2 ≤ #moves ≤ 2m·T_2), so it adds nothing. Only the constant form
-  REC-2 has new content, and it is the one to kill or prove.
+- DEAD REC-2 «μ_2(m) ≤ 2» (the one constant form that survived the first screen): out/fkclimb_k2_m4_mu3_T11.json (sha1 0593b229,
+  ISO 𝓛^R_5, m = 4): a forced run with 2 flips (c = 1, 1, 0 ×6, 1, 1) uses the record (5, β11) at frames 1, 4 and 10 (μ_2 = 3, T_2 = 11
+  on this genome; trace2.py replays it with the c-step). β11 = β(5, 1) is mover 5's OWN option (rank 12, odd): every time 5 returns to
+  option 1 and leaves it, the record repeats.
+- Exact obstruction of the route (§4 D6, PROVED (lane) as an inequality, instance above): when the β of a mover's own option is the
+  largest rank on both of its chains, every departure from that option carries the same record, so μ ≥ ⌊moves(x)/2⌋ for that x; the
+  record then carries no more than the mover's name and CHARGE becomes T ≤ Σ_x moves(x), i.e. nothing. Constant μ is DEAD (μ_0: 1, 1,
+  2 at m 1-3; μ_2: 2, 2, 3 at m 2-4); μ ≤ poly(m) is equivalent to T_2 polynomial (μ_2 ≤ #moves ≤ 2m·T_2). Verdict on box 164's
+  framework: no leverage. Only the definitional bound remains.
 
 ## 1. Translation: every R104 rule and where it goes (model: P-IDEAL-FLIP §0)
 | R104 rule (P-IDEAL-FLIP §0) | in the encoding |
@@ -57,7 +61,7 @@ PROVED (lane)). Not a TARGET.md claim. No polynomial bound is proved. FLIP-ADD, 
   #{records used}. In the forced model on G ∈ 𝓛^R_(m+1) with ISO, every record is (x, β(y, j)) with x, y ∈ U (U has 2m movers; under
   ISO no chain from a U-option visits level 0), so #records ≤ 2m · 4m = 8m². Hence T_k(m) ≤ μ_k(m) · 8m², μ_k(m) := the sup of μ over
   forced runs with ≤ k flips. Proof: each counted step has a move; each move has one record; group the moves by record. ∎
-- Corollary (PROVED (lane), conditional on REC-2): T_2(m) ≤ 16m²; with W-ONLY (d) (P-IDEAL-FLIP §2, signed by both referees, landing
+- Corollary (PROVED (lane), conditional on REC-2, which is DEAD by §4 D6, so this gives nothing): T_2(m) ≤ 16m²; with W-ONLY (d) (P-IDEAL-FLIP §2, signed by both referees, landing
   R110): T ≤ 16(d − 1)² + 2 for every ISO genome of 𝓛^R_d and every start.
 - Proposition NO-ENTROPY (PROVED (lane); the precise obstruction to the brief's «far fewer bits» form). The encoding method in the
   Moser–Tardos form bounds Pr[run ≥ L] ≤ #(record sequences of length L) · 2^(−b(L)), b(L) := random bits read in L steps. (i) A real
@@ -93,6 +97,14 @@ PROVED (lane)). Not a TARGET.md claim. No polynomial bound is proved. FLIP-ADD, 
 - D3 REC-K (μ_k ≤ 1 + ⌈k/2⌉): dies at k = 0 by D2 (fkall.sh screen: 6 (file, k) kills, all at k = 0, all m = 3).
 - D4 a k-independent μ: out/finfclimb_m3_mu4_T11.json (sha1 8e71f8a7, ISO 𝓛^R_4): (T_k, μ_k) = (3,1) (5,2) (6,2) (7,3) (8,3) (9,3)
   (10,4) (11,4) for k = 0..7 (fk.py). μ grows with the number of flips, so CHARGE cannot bound T_∞.
+- D6 REC-2 (μ_2 ≤ 2) and with it every constant-μ form: out/fkclimb_k2_m4_mu3_T11.json (sha1 0593b229, ISO 𝓛^R_5), frames
+  (U = movers 2-9; c; records): 1 c1 01110100→01100111 [(5,β11),(8,β18),(9,β18)]; 2 c1 [(3,β15),(5,β15)]; 3 c0 [(2,β15)]; 4 c0
+  [(5,β11),(6,β13)]; 5 c0 [(4,β8),(7,β14)]; 6 c0 [(3,β14)]; 7 c0 [(6,β14),(8,β14)]; 8 c0 [(4,β14),(5,β14)]; 9 c1 [(2,β14)]; 10 c1
+  01110001→01100001 [(5,β11)]. 2 flips. On this genome (T_k, μ_k) = (6,1) (9,2) (11,3) (11,3) for k = 0..3, (12,3) at k = 8.
+  Mechanism: β11 = β(5, 1) (rank 12, odd) is on 5's old chain whenever 5 sits on option 1, and outranks everything else on both
+  chains at those three frames, so each departure from option 1 gets the same record. Inequality (PROVED (lane)): if at every
+  departure of x from option k the top-rank β of the two chains is β(x, k), those departures share one record, so μ ≥ #departures
+  ≥ ⌊moves(x)/2⌋ (moves of x alternate between its two options); the record then says no more than «x moved».
 - D5 (control, no keys) records alone. keyless.py / diamond.py: all 2^N states, an edge for every improving switch (single switches
   for diamond.py; acyclic by MONO-FLIP). Diamond Ξ-DAG (layers 1..n, movers a_i, b_i, both options of a layer-i mover to a_(i+1) resp.
   b_(i+1)), ranks and parities hill-climbed: longest path 8, 22, 52, 114 for n = 2, 3, 4, 5 (out/diamond_n<n>_L<L>.json; n 5 sha1
@@ -109,12 +121,11 @@ PROVED (lane)). Not a TARGET.md claim. No polynomial bound is proved. FLIP-ADD, 
   witness files (T_0(2) 4, T_1(2) 5, T_2(2) 7, T_3(2) 8, T_8(2) = T_∞(2) 9; T_0(3) 8 on kf0_d4_t8). Screen fkall.sh over 94 ISO 𝓛^R
   files (m ≤ 3) × k 0..8 (log/reck_screen.txt): μ_0 ≤ 2, μ_1 ≤ 2, μ_2 ≤ 2 everywhere; μ_k reaches 3 at k ≥ 3 (kf4_d3_t8: μ_4 = 3) and 4
   at k ≥ 6 (D4).
-- S4 REC-2 hill-climbs at m = 4 (fkclimb.py k m; objective (μ_k, T_k)): interim at the commit μ_0 = 2 (T 5), μ_1 = 2 (T 9), μ_2 = 2 (T 9);
-  final numbers go into the box report. finf.py climb m 4: μ_∞ ≥ 3 at T_∞ ≥ 16.
+- S4 REC-2 hill-climbs (fkclimb.py k m; objective (μ_k, T_k)): m 4: μ_0 = 2 (T 5), μ_1 = 2 (T 9), μ_2 = 3 (D6; logs
+  rec2_m4_s1-3, the kill in s2); m 5 (2 × 3 restarts × 400 steps): μ_2 = 2 only (T 10): the climb is weak at m 5, no claim from it. finf.py climb m 4: μ_∞ ≥ 3 at T_∞ ≥ 16.
 
 ## 6. Next (Lead decides)
-- Kill side (cheap): a dedicated REC-2 search at m = 4, 5 (fkclimb.py 2 m, many restarts; m 5 = 1024 U-states, fine), and the
-  L-RED/L-COMP exact maxima of T_2(3), T^R(4) through fk.py. One instance with μ_2 = 3 kills REC-2.
-- Proof side: CHAIN-UP says a record (x, β(z, j)) recurs only after z (or a mover rerouting the chain above z) leaves and re-enters;
-  REC-2 needs: with ≤ 2 flips, this happens at most once per record. The natural induction is on the Ξ-depth of z below x combined with
-  NOW-ONCE's ratchet (between consecutive moves of x, the key-preferred option of x under the new state changes).
+- Box 164's framework is closed: CHARGE is valid but every constant-μ form is DEAD (D1, D2, D6) and a poly(m) μ is the open problem
+  restated. NO-ENTROPY explains why the Moser–Tardos form gives nothing more. Option (b) (tropical) has the same flaw (§2 READING).
+- Kept, possibly useful elsewhere: Lemma CHAIN-UP (every option's chain value is non-decreasing under any schedule) and the
+  diamond control (key-free improving paths 8, 22, 52, 114).
