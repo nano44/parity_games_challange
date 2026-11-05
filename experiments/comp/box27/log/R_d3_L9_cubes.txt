@@ -1,0 +1,16 @@
+0 RESULT d 3 T >= 9 P None W R: UNSAT 287.1 s
+1 RESULT d 3 T >= 9 P None W R: UNSAT 158.8 s
+2 RESULT d 3 T >= 9 P None W R: UNSAT 140.7 s
+3 RESULT d 3 T >= 9 P None W R: UNSAT 312.3 s
+4 RESULT d 3 T >= 9 P None W R: UNSAT 287.6 s
+5 RESULT d 3 T >= 9 P None W R: UNSAT 154.2 s
+6 RESULT d 3 T >= 9 P None W R: UNSAT 146.4 s
+7 RESULT d 3 T >= 9 P None W R: UNSAT 280.5 s
+8 RESULT d 3 T >= 9 P None W R: UNSAT 344.0 s
+9 RESULT d 3 T >= 9 P None W R: UNSAT 309.1 s
+10 RESULT d 3 T >= 9 P None W R: UNSAT 300.1 s
+11 RESULT d 3 T >= 9 P None W R: UNSAT 479.5 s
+12 RESULT d 3 T >= 9 P None W R: UNSAT 611.8 s
+13 RESULT d 3 T >= 9 P None W R: UNSAT 307.0 s
+14 RESULT d 3 T >= 9 P None W R: UNSAT 336.8 s
+15 RESULT d 3 T >= 9 P None W R: UNSAT 490.3 s
