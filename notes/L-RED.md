@@ -51,12 +51,12 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 
 ## Successor 50 R207 (2026-11-05, date -u) — docs/red/R207-tstar.md
 - DATA lower bounds (replayed: ideal.py, L-NEW box150 XSIM 0 + 13 counters 0, box166 well-formed, lemck 0 on d 5-7 and TR_d6):
-  - T*: d 5 >= 17, d 6 >= 25, d 7 >= 31, d 8 >= 33, d 9 >= 42 (helpers, 2 aux per level; d 9 climb still running at commit time).
+  - T*: d 5 >= 17, d 6 >= 25, d 7 >= 31, d 8 >= 33, d 9 >= 42, d 10 >= 46 (helpers, 2 aux per level). I / L (box171 frozen.py) <= 0.39, I <= d + 1 everywhere.
   - T^R: d 6 >= 18, d 7 >= 20.
   - d 4 with helpers: 13 (no gain).
   - Growth is linear; nothing superlinear. Flips: no pair beyond dd's 14 / |W| 8.
 - Lemma TOP-ADD PROVED (lane): a Ξ-unreached top level adds <= 2 steps. topadd_ck 800 random genomes, 0 violations.
-- Cube snapshot at commit: d5c_t16 183 done / 6 split; d4s_t14 2554 done / 15 split.
+- Cube snapshot at commit: d5c_t16 208 done / 6 split; d4s_t14 2564 done / 15 split (Lead 23:12Z: PM L^R_4 stays stopped; R205 DROPPED).
 - My error, corrected before commit: the draft called the d 8 top extension an instance of TOP-ADD. Its genome has 2 lower Ξ-targets
   in the top level, so it is not.
 - Container restart ~23:0xZ killed every run and the first push (relaunched; push e443f60c landed after).

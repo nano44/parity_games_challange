@@ -1,4 +1,4 @@
-# R207 Lower bounds for T*(d) and T^R(d), d 5-9, by construction plus simulation; Lemma TOP-ADD (L-RED successor 50)
+# R207 Lower bounds for T*(d) and T^R(d), d 5-10, by construction plus simulation; Lemma TOP-ADD (L-RED successor 50)
 Started 2026-11-05 22:1xZ (date -u). Lead BOX R207 (brief to successor 50). Model: IDEAL-ACYC (RESULTS R104), degree ≤ 2.
 - 𝓛_d (RESULTS R109): levels 0..d−1, exactly two two-option movers per level, any number of one-option ("aux") movers; T*(d) = max T.
 - 𝓛^R_d (RESULTS R110): the R197 2-wide ladder; T^R(d) = max T, and T^R(d) ≤ T*(d).
@@ -16,16 +16,17 @@ G-N5-TIME stays OPEN. No SAT is used in this file.
   | 7 | 20 | **31** | Tstar_d7_T31 (14 + 14) | [16, 0, 13] | (11, 19) | (11, 18) |
   | 8 | — | **33** | Tstar_d8_T33 (16 + 16) | [9, 8, 14] | (5, 26) | (5, 18) |
   | 9 | — | **42** | Tstar_d9_T42 (18 + 18) | [12, 9, 19] | (7, 22) | (10, 20) |
+  | 10 | — | **46** | Tstar_d10_T46 (20 + 20) | [13, 11, 20] | (5, 24) | (13, 20) (aux pair) |
 
   - Status of the bounds: they are lower bounds from hill climbs, not maxima.
   - T*(5) ≥ 17 is above the ladder bound T^R(5) ≥ 15, at the same depth.
   - In the data, therefore, the helper (one-option) movers separate T* from T^R from d 5 on. Whether T^R(d) = T*(d) is the open item in
     RESULTS R110. This is DATA, not a proof: T^R(5) = 15 is not proved, and the conditional d 5 T ≥ 16 cube run is still going.
   - With helpers, d 4 stays at 13 (two climbs, AUX 2 and 3). This is consistent with T*(4) = 13.
-- Growth: T* rises by +4, +8, +6, +2, +9 per added level (d 4 → 9), about 6 per level on average. T^R rises by +2, +3, +2 (d 5 → 7).
+- Growth: T* rises by +4, +8, +6, +2, +9, +4 per added level (d 4 → 10), 33 over 6 levels, about 5.5 per level. The increments do not grow. T^R rises by +2, +3, +2 (d 5 → 7).
   - In both, growth is LINEAR or slower. There is no superlinear signal.
   - This supports SLOT-TRADE (T*(d) ≤ T*(d − 1) + O(d)), as DATA only.
-  - The SANDWICH ceiling 3T*(d − 1) + 2 is never approached. The best ratio is 25 / 17 ≈ 1.47. d 10 was not reached (climb budget).
+  - The SANDWICH ceiling 3T*(d − 1) + 2 is never approached. The best ratio is 25 / 17 ≈ 1.47.
 - Top-pair flips against |W| (L-NEW's box168/pairflips.py and my own diag.py agree on every file):
   - The run-length champions keep flips ≤ |W| at every level.
   - The only pair with flips > |W| is still the dd clock's level-3 pair: 14 flips at |W| 8 (dd_d5_F14).
@@ -73,7 +74,7 @@ options with Ξ-target in the top level, and Tstar_d7_T31 has 3. So it is not an
 anyway, and it still gave only +1.
 
 ## 2. Witnesses and replays (experiments/red/r207/keep/)
-- Files: Tstar_d5_T17, Tstar_d6_T25, Tstar_d7_T31, Tstar_d8_T33, Tstar_d9_T42 (𝓛_d: movers 2l, 2l + 1 are the two-option movers of level l; the
+- Files: Tstar_d5_T17, Tstar_d6_T25, Tstar_d7_T31, Tstar_d8_T33, Tstar_d9_T42, Tstar_d10_T46 (𝓛_d: movers 2l, 2l + 1 are the two-option movers of level l; the
   aux movers follow); TR_d6_T18, TR_d7_T20 (𝓛^R_d, R197 convention checked).
 - Replay of every file:
   - r187/ideal.py (reference) and r207/lscore.py.
@@ -99,3 +100,28 @@ Movers per step (mover@level):
 - diag.py: segments, moves, C_l, pair flips vs |W|.
 - lscore.py, allstarts.py, stage.sh.
 - Climb logs are in r207/out/ (not committed).
+
+## 5. Frozen intervals I / L (Lead 22:52Z add-on; L-NEW box 171 frozen.py @ claude/l-new 2afbb491, run read-only, unmodified)
+- Definitions (box 171): a step is LOWER if some mover below the top level moves; otherwise it is TOP-ONLY. L = #lower steps.
+  I = #maximal runs of top-only steps.
+
+  | file | d | T | L | top-only | I | max run | I / L | pattern (L lower, T top-only) |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | dd_d5_F14 | 5 | 14 | 14 | 0 | 0 | 0 | 0 | all L |
+  | max_d5_L15 | 5 | 15 | 13 | 2 | 2 | 1 | 0.15 | LTLLTLLLLLLLLLL |
+  | Tstar_d5_T17 | 5 | 17 | 17 | 0 | 0 | 0 | 0 | all L |
+  | TR_d6_T18 | 6 | 18 | 15 | 3 | 3 | 1 | 0.20 | LLLLLLLLTLTLLLLLLT |
+  | Tstar_d6_T25 | 6 | 25 | 18 | 7 | 7 | 1 | 0.39 | LTLTLTLLLLLTLLLLTLTLLLLLT |
+  | TR_d7_T20 | 7 | 20 | 17 | 3 | 3 | 1 | 0.18 | LLLLLLTLLLLLLLLTLLLT |
+  | Tstar_d7_T31 | 7 | 31 | 25 | 6 | 3 | 2 | 0.12 | LLTTLLLLLLLLLLTTLLLLLLLLLLLLLTT |
+  | Tstar_d8_T33 | 8 | 33 | 27 | 6 | 3 | 2 | 0.11 | LLTTLLLLLLLLLLLTTLLLLLLLLLLLLLLTT |
+  | Tstar_d9_T42 | 9 | 42 | 34 | 8 | 4 | 2 | 0.12 | LLLLLTTLLLLLLLLLLLLTTLLLLLLTTLLLLLLLLLLLTT |
+  | Tstar_d10_T46 | 10 | 46 | 44 | 2 | 2 | 1 | 0.05 | LLTL…LTL… (2 isolated top-only steps) |
+
+- Where I sits against d + 1:
+  - I ≤ d + 1 on every file.
+  - The largest ratio is I / L = 0.39 (Tstar_d6_T25, I 7 = d + 1).
+  - At d 7-10, I is 2-4 and stays well below L / 2.
+- So no extremal file shows I ≈ L / 2 (DATA, lower-bound constructions only). The O(d) form of SLOT-TRADE survives these files.
+- T(H) is «None» on every file. Every witness has a lower option whose Ξ-target lies in the top level, so none is autonomous. This
+  matches §1: the top levels gain mainly through Ξ-coupling, not through top-only steps (top-only ≤ 8 of 42 at d 9).
