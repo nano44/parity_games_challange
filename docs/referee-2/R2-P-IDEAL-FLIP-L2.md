@@ -28,3 +28,15 @@ REFEREE-2 successor 27 (Opus 5.5, D12/D19). Written 2026-11-05 12:54Z (date -u).
 - «CONDITIONAL DEAD» is exactly my G-FLIP-1 ruling at the time of L-2. My audit R2-T3R-audit.md (same day) closes G-FLIP-1 on my side.
   If the other referee agrees, the label can drop «CONDITIONAL» (an L-3 or an erratum, the Lead's choice), keeping the premise wording
   «two independent CNF encodings, CaDiCaL UNSAT, no DRAT certificate».
+
+## Addendum 1: line L-3 (claude/l-new 47b4e165, branch head a9851eba), 2026-11-05 17:06Z (date -u)
+- Stale-clone check: ls-remote claude/referee-2 = local HEAD = b2c0fff8 (no container restart).
+- Hashes: docs/new/P-IDEAL-FLIP-line-L3.txt 4089bd73baf65929cf5b6094ef31882df817fd53 (with newline), 4,715 bytes, 1 line, 0 «|»;
+  L-2 8099415b unchanged; P-IDEAL-FLIP-fixes.md 4220c44e… (entry 2 appended).
+- Byte test: R1-R4 extracted from CHECKER C122 §5 (claude/checker 80ed31a6, line wraps joined). Each old string occurs exactly once in
+  L-2 and each new string once in L-3; L-2 with R1, R2, R3, R4 applied equals L-3 exactly (True; 4,715 = 4,715 bytes). Nothing else changed.
+- Parentheses: 53 «(» / 53 «)», depth never negative, final depth 0 (G-0 closed by R4's added «)»).
+- Content: R1 / R2 measured genome counts (225 + 75 drawn, 65 non-ISO, 36 ISO corpus, 261 ISO); R3 bounds SWAP's DATA to the ISO genomes;
+  R4 lists SWAP's concatenation clause under «no signed DATA» and names fixes entry 1 in the source note (F-a, F-b live there). These
+  are DATA scope / source-note changes only; no statement changes. The CONDITIONAL DEAD wording is unchanged.
+- Verdict: L-3 MATCHES.
