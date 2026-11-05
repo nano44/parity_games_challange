@@ -1222,3 +1222,6 @@ echo "si (box 68: REFUTE/COMPOSE): PASS"
 # box 69 (MECH: improvement monotonicity separates the m = 2 cap; docs/si/N5-MECH-box69.md)
 bash box69/check69.sh
 echo "si (box 69: MECH): PASS"
+# box 70 (FRAME: SAT frame ABS-m + IM, m = 2 validation; docs/si/N5-FRAME-box70.md)
+bash box70/check70.sh
+echo "si (box 70: FRAME): PASS"

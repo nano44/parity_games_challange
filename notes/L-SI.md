@@ -12,7 +12,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - m-general: «IM => pre + post <= T^R + 1» DEAD at m 3 (kf1_d4_t10, ENC, T_1 10 > 9). CONJECTURE SUM_1: T_0(G) + T_1(G) <= 2T^R(m)+1
   (exact m 1, 2; m 3 tight 17 on box66 f_m3_p4_s1; kf1 15; m 4 k1_m4_s2 22 <= 27).
 - Remaining hand step: «triangular + LOCAL + IM + BIT-CHAIN => T_1 <= 5 at m 2» as a case analysis.
-- Env: scipy installed by pip in this container (lpreal.py); check69.sh skips the LP when scipy is absent.
+- ENVIRONMENT CHANGE (recorded at the Lead's request, 17:47Z): scipy (1.18.1) and python-sat were pip-installed in this container
+  (lpreal.py; box 70 SAT frame). check69.sh skips the LP when scipy is absent; a new container needs `pip install scipy python-sat`.
 
 ## BOX 68 (successor 39; Lead 15:45Z: REFUTE FLIP-ADD by construction, D1) — DONE, no refutation
 - Note docs/si/N5-REFUTE-box68.md; tools experiments/si/box68/{compose.py, kclimb.py, check68.sh}; pin/ (m 4 champions, sha1).
