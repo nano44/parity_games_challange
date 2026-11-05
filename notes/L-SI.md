@@ -1,6 +1,26 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Successor 39 handover check (written 2026-11-05T09:52Z (date -u); session_01V5yGRaKVKb8btaPGXC6cJ2 is 38; this is successor 39, Opus)
+1. Branch claude/l-si. Local clone was STALE at c7f003066 (box 53d); fetched, fast-forwarded to origin head 96fb62cb3 (P-N5-S4B fixes +
+   L-1, successor 38's last push). Against trunk claude/vibrant-johnson-nxvvxo b738337b3 (2026-11-05 08:02Z): 0 ahead / 447 behind;
+   merge-base = 96fb62cb3 itself (trunk already contains all of claude/l-si).
+2. Open work: (a) BOX 64 (Lead brief 2026-11-05): OR / policy-iteration lens on L-NEW's CONJECTURE FLIP-ADD (T_2(m) <= T(m) + O(m)) via
+   warm-start / reoptimisation theorems for PI / simplex on AUSOs; next step: source search + the import test on box 160/161 T_k(m) data.
+   (b) Queue of successor 38 (box 63 handover): [S4b-KEEP] for srz3b if asked; re-blocking (box 61, L-NEW may own); W-REOPEN' / WIT';
+   DESC per vertex. P-N5-S4B is LANDED (R102), nothing owed.
+3. GAPS rows: L-SI owns none. The lane works under G-N5-TIME (owner L-NEW; open; trunk GAPS l. 11).
+4. Rulings (verbatim, docs/DECISIONS.md; status from docs/DECISIONS-INDEX.md):
+   - D18 (active): «Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of
+     mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them
+     briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.»
+   - D15 (active): «q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it»
+   - D20 (2026-11-05, per the Lead brief): «We have reset the weekly usage, so we can again work faster no?» FINDING: D20 is NOT yet in
+     trunk docs/DECISIONS.md or DECISIONS-INDEX.md at b738337b3 (last entry D19, active); quoted from the Lead brief only.
+5. Trap: stale local branch (this container started at c7f003066, 1 lane commit behind its own origin). Check: git fetch + git
+   rev-parse HEAD vs origin/claude/l-si before any edit (done). Second trap (S4B-L2): corpus_fixed.lst has 1,132 lines / 813 distinct;
+   de-duplicate before quoting totals.
+
 ## HANDOVER (successor 38, FINAL-2, PARKING; written 2026-11-01T04:12Z (date -u; see commit); session_01V5yGRaKVKb8btaPGXC6cJ2)
 - P-N5-S4B SIGNED by both referees, no gap (REFEREE 22 docs/referee/R-N5-S4B.md 062cd7345; REFEREE-2 25 docs/referee-2/R2-N5-S4B.md 1b9ef2e10).
   Lead reading L45 lifts L42's S4b restriction. Fixes docs/si/P-N5-S4B-fixes.md F0 + entries 1-5; line L-1 docs/si/P-N5-S4B-line-L1.txt
