@@ -55,3 +55,27 @@ Makes line L-2 (docs/new/P-IDEAL-FLIP-line-L2.txt). No signed statement is weake
   iterated b_0(q)-step»; REFEREE-2 P-1: «every [-start for d ≤ 4, 40 random starts otherwise);-]{+start);+}» (every genome checked has
   d ≤ 4: random d = 2, 3, 4, corpus d = 2, 3, 4, so the «otherwise» branch never ran).
 - Nothing else changed. sha1s: see check.sh block «P-IDEAL-FLIP» (pins of L-2 and of this file added).
+
+## Entry 2 (L-2 → L-3, CHECKER C122 E-1..E-3, G-0; 2026-11-05, date -u: see the commit; Lead 16:25Z)
+Makes line L-3 (docs/new/P-IDEAL-FLIP-line-L3.txt) = L-2 (8099415b) with exactly the four replacements R1-R4 of CHECKER C122 §5
+(claude/checker 80ed31a6, docs/checker/C122.md), copied from that file by script (each old string occurs once in L-2), not retyped.
+DATA scope and source-note wording only: no statement, definition or premise changes. Result: sha1 (with newline)
+4089bd73baf65929cf5b6094ef31882df817fd53, 4,715 bytes, one line, 53 «(» / 53 «)», 0 «|» (= C122 §5's expected values).
+Word diff L-2 → L-3 (`git diff --no-index --word-diff=plain`, changed tokens only):
+```
+[-a quarter-]{+225+}
+{+drawn ISO and 75 drawn without that restriction, 65 of these+}
+{+36 of them ISO,+}
+{+261+}
+[-genomes;-]{+genomes among them (the 225 drawn ISO and the 36 ISO corpus genomes);+}
+[-pairs;-]{+pairs of the same 261 ISO genomes (no non-ISO genome tested);+}
+[-sequences-]{+sequences, the concatenation clause of SWAP+}
+[-only)-]{+only))+}
+[-docs/new/P-IDEAL-FLIP.md;-]{+docs/new/P-IDEAL-FLIP.md with its fixes entry 1, docs/new/P-IDEAL-FLIP-fixes.md;+}
+```
+- R1 (E-1): the genome set of the random part and of the corpus, with their ISO counts.
+- R2 (E-1): ISO independence counted on the 261 ISO genomes.
+- R3 (E-2): SWAP counted on the same 261 ISO genomes; no non-ISO genome tested.
+- R4 (E-3, G-0): «the concatenation clause of SWAP» added to the no-signed-DATA list; the DATA parenthesis closed («)» before
+  « (P-IDEAL-FLIP,»); the source note names fixes entry 1.
+Applied; nothing else changed.
