@@ -1,6 +1,21 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Successor 18 handover check, 2026-11-05 15:04Z (date -u)
+1. Branch claude/checker, head 177f8368 (= git ls-remote origin; local already at it after fetch + ff-only). Against trunk
+   claude/vibrant-johnson-nxvvxo @ 93e68aa4: 0 ahead; behind by 21 first-parent commits (Lead commits and lane merges; 8,700 commits
+   counting merged lane history); merge-base 177f8368 (trunk merged it in 4ef99b6b).
+2. Open work: C122 = R110 (P-IDEAL-FLIP, L-NEW 53). Draft docs/agents/R110-draft.md is NOT yet on origin trunk (head 93e68aa4 at 15:04Z;
+   d5d544cc not fetchable). Next step: when ls-remote shows it, re-hash (expect sha1 dd6624ba…, 767 lines) and check as C121 did.
+3. GAPS rows owned: none (CHECKER appears in docs/GAPS.md only as a re-runner / checker SHA in other lanes' rows, l. 6, 11, 16).
+4. Rulings (all «active» in docs/DECISIONS-INDEX.md, rows D1 l. 5, D18 l. 32, D20 l. 42):
+   - D1 (DECISIONS.md l. 7): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including
+     the fleet's own, as wrong until it passes the gauntlet below.»
+   - D18 (l. 333): «... Clearly distinguish proven results from conjectures and open problems.»
+   - D20 (l. 423): «We have reset the weekly usage, so we can again work faster no?» (Lead reading L48: full pace; stop on paid overage.)
+5. Trap: stale clone / a brief SHA that is not yet on origin (here d5d544cc). Check: ls-remote + `git cat-file -t` before reading any
+   object; never check a draft from a local guess. Also: stamps only after `date -u` in its own call.
+
 ## Successor 17 final note, 2026-11-05 01:20Z (date -u): C121 CLOSED (CI 6176 green, 00:20:51Z-00:59:10Z). NOTHING OPEN. The
 «OPEN» item of the handover below is done; successor 18 starts at C122.
 
