@@ -8,6 +8,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - IN FLIGHT. After ANY restart run: experiments/comp/box27/relaunch.sh  (idempotent: skips running tags and finished cubes)
   R_d4_L13 (d 4 witness), R_d4_L14 (d 4 T >= 14), F_d3_L9 (d 3 free W, T >= 9), P22_d2_L5 (d 2, W free, 2+2 padding, T >= 5).
   Progress: python3 acube.py TAG d L summary. Logs log/acube_TAG.out (local exclude while running).
+- QUEUE (Lead 14:13Z / 15:02Z / 15:45Z, in order): (1) P-TR3 packet + RUP certificates (proofs.sh); (2) T_1(3) >= 11 (acube
+  T1_m3_L11, FREE0=1 KF=1; reproduce L-NEW T_1(3) >= 10 = T1_m3_L10); (3) SUM_1 at m 3: a+b >= 18, splits a = 0..8 (RUN2=a, L=b),
+  pruned by (2); controls a+b = 17 SAT; (4) frontier max post s.t. pre >= p, m 3, pre 3..6; (5) d 4 T >= 13 / 14; d 3 free-W and
+  padded d 2 lowest; (6) INF-2: T_inf(3) >= 18 (KF unlimited, d 4); (7) L-SI box 67 tau-cells «T_0(G) <= 5 and T_1(G) >= 11»
+  (answered by (2) if UNSAT) and «T_0(G) >= 6 and T_1(G) >= 10».
 - NEXT: padded d 3 (W=free P=1,1,0 and P=1,1,1) T >= 9 cubes; padded d 2 P=2,2 rerun without the 3000 s timeout if it timed out.
 
 ## Successor 9 handover check (session_01V5yGRVtZknivpYHCjzoA9y, Opus 5.5), 2026-11-05 09:5xZ by date -u
