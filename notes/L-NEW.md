@@ -30,6 +30,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   Kill candidate for R207: doubling tower (per-level Xi-gadgets, desc O(l)); not constructed.
 - DEAD (Lead 21:02Z): INF-2 (box 163 CONJECTURE T_inf(m) <= 2T^R(m)+1) by L-SI claude/l-si 5fd8a5e9 experiments/si/box71/pin/inf18_m3.json
   (sha1 2af7d941): T_inf = 18 > 17 at m 3, re-run by box164/finf.py.
+### BOX 170 (Lead 21:35Z: build the doubling tower): docs/new/N5-TOWER-box170.md. Tower as stated DEAD: F <= T (CASCADE), dd_d5_F14
+  level-3 pair flips at all 14 steps, gadgets add moves but 0 steps (T stays 14). Level 4 best 8/14 (box170/out/T1_dd_top8.json 9aead80e,
+  XSIM 0); csp.py: 14 and 12 impossible for the given diamond ranks. Tower reduces to T-growth per level = SLOT-TRADE (no shortcut).
 ### Successor 54 handover check (STEP 0; written 2026-11-05 17:2xZ by date -u)
 1. claude/l-new: ls-remote a9851eba; local HEAD a9851eba = ls-remote after fetch + ff-only (not stale this time). Vs trunk
    claude/vibrant-johnson-nxvvxo (e4823bdd): 9 ahead / 9358 behind (count as printed by rev-list), merge-base 4c2e5124. Lane files only.
