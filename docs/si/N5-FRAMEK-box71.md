@@ -37,4 +37,18 @@ Not a TARGET.md claim. No polynomial bound. FLIP-ADD and G-N5-TIME stay OPEN.
 | query | answer | time | DRUP | real lower bound |
 | --- | --- | --- | --- | --- |
 | m 3, T_∞ ≥ 18 | SAT | 1,118 s | — | REALISED: pin/inf18_m3.json (T_∞ 18; INF-2 kill) |
+| m 3, T_2 ≥ 13 | UNSAT | 6,173 s | 5.7 GB, sha1 f02fab2a…; RUP check NOT finished (two runs of ~1.5 h, one cut by a container restart) | T_2(3) = 12 EXACT-SAT (unchecked proof), witness L-NEW ISO_1_d4_t12 |
 | m 3, T_3 ≥ 14 | SAT | 3,697 s | — | REALISED: pin/t3_14_m3.json (sha1 bced21a8…; T_0..T_3 = 4, 8, 12, 14; Gen replay 14 steps, 3 changes) |
+| m 3, T_∞ ≥ 19 | OPEN at park (~1.5 h, relaunched after the restart) | — | — | — |
+| m 3, T_3 ≥ 15 | OPEN at park | — | — | — |
+| m 4, T_1 ≥ 15 | OPEN at park (no proof logging) | — | — | — |
+- Exact values at m = 3 now: T_0 = 8 (box 70), T_1 = 10 (box 70), T_2 = 12 (this box), T_3 ≥ 14, T_∞ ≥ 18. So the k-flip excess
+  over T^R(3) = 8 is 2, 4 for k = 1, 2, i.e. +2 per flip so far. SUM_2 lower bound 17 (three genomes); its splits are queued.
+- Relaunch lines, DIMACS sha1s and the proof state: experiments/si/box71/OPEN-QUERIES.txt.
+
+## 2. Proof files (item 3)
+- Every PROOF job writes dump/<tag>.cnf (gzipped and committed) and dump/<tag>.drup. On UNSAT the proof is RUP-checked in place by
+  L-COMP's drup.c (copy in ref/), and its sha1 and size are logged. Proofs are gitignored. A gzipped proof > 50 MB is deleted after the
+  check.
+- m = 2 positive control: m2 T_1 ≥ 6, 52,447 lemmas, «s VERIFIED» (check71.sh).
+- m 3 T_2 ≥ 13: 5.7 GB proof; the check did not finish before parking. That UNSAT is EXACT-SAT with an unchecked proof.
