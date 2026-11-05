@@ -8,6 +8,7 @@ Side conditions (env):
   NOW=1     the level-0 key order b_0 (which level-0 mover has the smaller key) is the same at every state of the run.
   FREE0=1 KF=k  level-0 states are FREE (external agent); b_0 changes <= k times; every step moves a mover of level >= 1;
             T counts those steps (the run above level 0 under an externally flipped level-0 key bit). Use with ISO=1.
+  ONCE0=1   (with FREE0) each level-0 mover changes at most once; without ISO this keeps the level-0 Xi-coupling (adversarial timing).
   FRZ=v,..  the listed movers never move.
   NOL0=1    no level-0 step at all (the run is a LIFT-type run; sanity: max = T*(d-1)).
   SEG=...   passed through to xcnf (seg1 / mid / tail cardinalities).
@@ -44,6 +45,10 @@ if os.environ.get("FREE0") == "1":   # KF=k: b_0 changes at most k times over s_
     BB = [b0f(tt) for tt in range(t + 1)]
     fl = [xcnf.neg(C.EQ(BB[tt], BB[tt - 1])) for tt in range(1, t + 1)]
     fl = [x for x in fl if x is not False]
+    if os.environ.get("ONCE0") == "1":   # each level-0 mover changes its option at most once (adversarial timing, Xi-coupling kept)
+        for u in L0:
+            lits = [I["mv"][(tt, u)] for tt in range(1, t + 1)]
+            enc = CardEnc.atmost(lits=lits, bound=1, top_id=C.n, encoding=EncType.seqcounter); C.n = max(C.n, enc.nv); [C.add(list(c)) for c in enc.clauses]
     k = int(os.environ.get("KF", "2"))
     if any(x is True for x in fl): k -= sum(1 for x in fl if x is True); fl = [x for x in fl if x is not True]
     if k < 0: C.add([])
