@@ -72,6 +72,11 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   pushed): flips(p,q) <= c |{p,q} u W(p) u W(q)| for same-level pairs. Build dd / dbl / lag clocks to d 6-10 by construction +
   simulation (no SAT), run box168/pairflips.py (or own) per file, report top-pair flips vs |W| per d (superlinear kills; slope > 2
   refutes c = 2). Start points: r197/lag/dd_d5_F14, dbl_d3_F6, dbl_d4_F10 (top KF 6, 10, 14 at d 3-5).
+  Lead 21:35Z: L-NEW box 169/170 (claude/l-new 7c3f9e1a when pushed, docs/new/N5-PAIRLIN-box169.md) builds a DOUBLING TOWER (2-wide
+  W-ladder, each level-l mover with a disjoint Xi-gadget of desc O(l); predicted F(l) = 2^(l+1) - 2; dd_d5_F14 = its levels 0-3, own flips
+  3, 6, 14, stops at level 4 for lack of Xi capacity of movers 8, 9). L-RED role (D1-strict): replay EVERY tower file with r187/ideal.py
+  + r189/lemck.py and attack it for any broken R104 hypothesis (acyclic Xi, W one level down, distinct gates / ranks, degree); for R207
+  report where own clocks lose doubling and whether it is always Xi capacity.
 - Things only I know:
   - Container restarts: ~5/day; L-COMP thinks idle reclaim (keep a harness-tracked wait loop armed). Monolithic runs >6 h never survived.
   - push.sh: 20-90 min under load; GitHub 500 twice (retry); one transient verify failure (experiments/new P-N5-TOPSHAPE under load;
