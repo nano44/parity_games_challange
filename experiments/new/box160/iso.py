@@ -6,6 +6,7 @@ L-RED's r200/xmax.py does, and replays every SAT model under L-RED's r187/ideal.
 Side conditions (env):
   ISO=1     no option has a level-0 mover as its Xi-target (level 0 acts on the rest only through the W-keys).
   NOW=1     the level-0 key order b_0 (which level-0 mover has the smaller key) is the same at every state of the run.
+  FRZ=v,..  the listed movers never move.
   NOL0=1    no level-0 step at all (the run is a LIFT-type run; sanity: max = T*(d-1)).
   SEG=...   passed through to xcnf (seg1 / mid / tail cardinalities).
 Usage: iso.py d t out.json   -> SAT/UNSAT for «some genome + start has T >= t»."""
@@ -29,6 +30,8 @@ if os.environ.get("NOW") == "1":   # level-0 steps never change the level-0 key 
         return C.OR([C.AND([a if ka else xcnf.neg(a), c if kc else xcnf.neg(c), glt0((0, ka), (1, kc))]) for ka in (0, 1) for kc in (0, 1)])
     B0 = b0(0)
     for tt in range(1, t + 1): C.add([C.EQ(b0(tt), B0)])
+for u in [int(x) for x in os.environ.get("FRZ", "").split(",") if x]:   # FRZ=v,...: these movers never move
+    for tt in range(1, t + 1): C.add([xcnf.neg(I["mv"][(tt, u)])])
 if os.environ.get("NOL0") == "1":
     for tt in range(1, t + 1):
         for u in L0: C.add([xcnf.neg(I["mv"][(tt, u)])])
