@@ -19,6 +19,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   T 14; mover 12 desc 4 moves 6; box150/check.py XSIM 0, all R105 checks 0). Mechanism: FREE-KP (free keys = key-free dynamics); 2 free
   bits suffice (bbit.py: B 1 -> 4, B 2 -> 6, B 3 -> 7); the bits = key orders of two pairs of an L-RED clock (compose2.py). PMV (value
   rises) DEAD too (dd_d5_F14 mover 6). Doc docs/new/N5-PMKILL-box166.md.
+### BOX 167 (Lead 19:48Z: PM' with key flips): docs/new/N5-PMPRIME-box167.md, box167/pmprime.py, tight.py. Dynamic kappa (KF / WE)
+  PROVED (LOCAL-KP + KEYFLIP) but empty (KF = T on dd_d5_F14 movers 8, 9) -> LEVEL-PRODUCT recursion, DEAD route. Static kappa = |W(x)|:
+  CONJECTURE PM'_S (0 viol. / 263 files, slack >= 2), polynomial (T <= (D-1)N^2), fragile under box 166 composition if T^R superlinear.
 ### Successor 54 handover check (STEP 0; written 2026-11-05 17:2xZ by date -u)
 1. claude/l-new: ls-remote a9851eba; local HEAD a9851eba = ls-remote after fetch + ff-only (not stale this time). Vs trunk
    claude/vibrant-johnson-nxvvxo (e4823bdd): 9 ahead / 9358 behind (count as printed by rev-list), merge-base 4c2e5124. Lane files only.
