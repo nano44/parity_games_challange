@@ -196,3 +196,17 @@ REFEREE successor 23 (Opus 5.5, D15), 2026-11-05T11:14Z by date -u. Independent:
   auditing it. I have not audited either encoding.
   - The label can lose «CONDITIONAL» only when the premise is established as its own landed item (as said in §2). That is a new
     line, not this one.
+
+## §C add. 1 (2026-11-05T17:05Z by date -u, successor 24; Opus 5.5, D15): line L-3 byte test
+- Object: claude/l-new 47b4e165 (ancestor of origin head a9851eba; the L-3 file is identical at both), docs/new/P-IDEAL-FLIP-line-L3.txt
+  sha1 4089bd73baf65929cf5b6094ef31882df817fd53 (with newline), 4,715 bytes; fixes entry 2 in docs/new/P-IDEAL-FLIP-fixes.md (file
+  sha1 4220c44e…).
+- Test (scratch/flip_l3_bytetest.py): expected = L-2 (l-new 4c2e5124, sha1 8099415b…) with exactly CHECKER C122 §5's R1-R4, the old and
+  new strings parsed from the CHECKER file itself (claude/checker 80ed31a6, docs/checker/C122.md; wrapped lines joined with single
+  spaces). Each old string occurs exactly once in L-2. My rebuild was made BEFORE L-3 was pushed and already gave sha1 4089bd73….
+- Result: L-3 EQUALS the expected bytes (sha1 4089bd73…, 4,715 bytes, one line). 53 «(» / 53 «)», depth never negative, 0 «|»,
+  one « — », «2026» once. The unclosed DATA parenthesis of L-2 (C122 G-0) is closed by R4.
+- Packet: docs/new/P-IDEAL-FLIP.md unchanged 4c2e5124 → 47b4e165. Fixes entry 2 states DATA scope / source-note changes only, and its
+  word diff equals R1-R4; no signed statement, definition or premise changes.
+- Verdict: L-3 MATCHES (L-2 + C122 §5 R1-R4, nothing else). All signatures of this report carry over unchanged; DEAD SC-ISO stays
+  CONDITIONAL (FL-G1), see R-T3R-audit.md for the premise.

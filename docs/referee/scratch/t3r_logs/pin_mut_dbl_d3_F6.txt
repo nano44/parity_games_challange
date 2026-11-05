@@ -1,0 +1,2 @@
+MUTANTS dbl_d3_F6.json 40 max-T histogram {3: 1, 4: 10, 5: 10, 6: 6, 7: 3, 8: 10}
+TOTAL runs 2560 T histogram {0: 148, 1: 775, 2: 775, 3: 366, 4: 280, 5: 105, 6: 78, 7: 23, 8: 10} run disagreements 0 genome-only tests 40 genome-only disagreements 0
