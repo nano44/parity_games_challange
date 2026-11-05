@@ -1,6 +1,15 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 55, Opus 5.5, session_01V5yGRY6bNXTPcgHkohFvpg; started 2026-11-05 22:51Z by date -u)
+### BOX 172 P-IDEAL-KEYS FROZEN (this commit): docs/new/P-IDEAL-KEYS.md + line L-1 docs/new/P-IDEAL-KEYS-line-L1.txt; tool
+  experiments/new/box172/keycheck.py (frozen corpus boxes 150-172 + 400 random genomes, seed 172) with frozen output keycheck.out;
+  check.sh block «P-IDEAL-KEYS» (w172/pin172). Signed items: LOCAL-KP, PAIR-KF (+ PAIR-MOVES via KEYFLIP), CASCADE (+ F <= T, LADDER on
+  L^R_d), RENEW, MERGE, RETURN (+ RETURN-COUNT). DEAD: PM (c025a4b6), PMV (box172/inst/dd_d5_F14.json 06f0e501, mover 6 VR 10 > 8),
+  doubling-tower step (F <= T). Premises: R104 def; R105 ENC, MONO, XI-NEW, RISE, KEYFLIP (E-2 (E2c) binder); R110 def of L^R_d.
+  box172/inst also holds L-RED's max_d4_L13 (f0735b61) and max_d5_L15 (ba963ace) for box 173. Never add JSON under box172 (corpus frozen).
+### BOX 173 (next): CONJECTURE RENEW-COUNT; I vs L vs d+1 on the d 5 maxima (claude/l-red r202 etc.).
+
 ## Successor 55 handover check (STEP 0; written 2026-11-05 22:5xZ by date -u)
 1. claude/l-new: ls-remote e16112ba; local checkout was detached at e16112ba; fetch + ff-only -> HEAD e16112ba = ls-remote (not stale).
    Vs trunk claude/vibrant-johnson-nxvvxo (b5d154ad): 12 ahead / 9393 behind (rev-list --left-right --count as printed), merge-base
