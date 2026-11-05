@@ -15,7 +15,7 @@ No polynomial bound. G-N5-TIME stays OPEN. Every statement is about the IDEAL-AC
 - Class and quantity (not landed terms; quoted from L-NEW's packet P-IDEAL-FLIP §1, claude/l-new 9effea1f, docs/new/P-IDEAL-FLIP.md
   l. 54-56): «𝓛^R_d (d ≥ 1; L-RED's R197 convention): N = 2d movers 0, …, 2d − 1, lev(x) = ⌊x/2⌋, every mover of degree 2, and
   wt(x, k) = 2(lev(x) − 1) + k for lev(x) ≥ 1 (option k of a level-l mover W-points to the k-th mover of level l − 1); Ξ-data, β's,
-  gates and start arbitrary.» «T^R(d) := the largest T over 𝓛^R_d and all starts.» Here T = R104's L(G) from the given start, and
+  gates and start arbitrary.» «T^R(d) := the largest T over 𝓛^R_d and all starts.» (= RESULTS R110 once landed; P-IDEAL-FLIP is CHECKER C122s item.) Here T = R104's L(G) from the given start, and
   «Ξ-data arbitrary» includes Ξ-targets at level-0 movers (ISO is NOT assumed).
 - KEEP APART: R109's 𝓛_d / T*(d) (any W-targets one level down, degree-1 movers allowed). Nothing here is about 𝓛_d.
 - STATEMENT P-TR3: for every genome G ∈ 𝓛^R_3 and every start s_0, the IDEAL run of G from s_0 has at most 8 steps: T^R(3) ≤ 8.
