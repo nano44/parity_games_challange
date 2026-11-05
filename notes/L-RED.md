@@ -84,6 +84,10 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     @ claude/l-new 9e1a6b02 read-only from scratch worktree: LRED=/home/user/parity_games_challange FREE0=1 ISO=1 KF=3 nohup timeout
     43200 python3 <lnew>/experiments/new/box160/iso.py 4 14 out/r205/kf3_d4_t14.json > out/r205/kf3_d4_t14.log (T_3(3) >= 14?; L-SI has >= 13).
     L-NEW logs read: T_2(2) = 7 (kf2 d3 t8 UNSAT), T_3(2) = 8, T_4(2) = 8, T_8(2) = 9; T_1(3) >= 10.
+  - 19:4xZ R206 (Lead 19:36Z, top priority): kill query for L-NEW CONJECTURE PM (box 165): PMX=x in xcnf (sum_t mv[t,x] + sum_y
+    not reach[x,y] >= N + 1, i.e. moves(x) >= 2 + desc(x)); horizon T*(d) covers every run. d 3 (horizon 8): all 6 movers UNSAT
+    (0.7-40 s) = PM holds on L^R_3 (exact). d 4 (horizon 13), resumable: for x in 6 4 2 (then 7 5 3 1 0): TMIN=0 PMX=$x SYM0=1 SYMB=1
+    TL=1200 P=1 nohup python3 cubes.py 4 13 cubes/pm_d4_x$x > out/pm/cubes_d4_x$x.log 2>&1 &. Conditional d 5 paused (resumable).
   - QUEUED R205 (Lead 03:48Z, L-NEW box 160 on claude/l-new 96650e2c: xcnf_free0.py, iso.py): T_2(4) (= ISO at d 5) and T_k(3), k 1..4,
     in the cube driver; after R202 has its cores. Lead 04:21Z: needs box160/xcnf_free0.py (FREE0=1) AND box160/iso.py (ISO, b_0 flips,
     KF seqcounter, every step moves a level >= 1 mover, LEM=0 forced); run «LRED=<dir> FREE0=1 ISO=1 KF=k python3 iso.py d t out.json»,

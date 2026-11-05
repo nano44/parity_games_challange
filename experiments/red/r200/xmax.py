@@ -21,3 +21,11 @@ if r:
     z = [u for u in range(1, len(S)) if any(S[u][v] != S[u - 1][v] for v in range(G["N"]) if lev[v] == 0)]
     cuts = [0] + z + [len(S)]; segs = [cuts[i + 1] - cuts[i] - 1 for i in range(len(cuts) - 1)]
     print(f"replayed level-0 steps {z}; segments (seg1, mid, tail) {segs}", flush=True)
+    if os.environ.get("PMX"):   # R206: replayed moves and strict Xi-descendants of the named mover
+        x = int(os.environ["PMX"]); succ = {v: {o[1] for o in G["opts"][v] if o[1] >= 0} for v in range(G["N"])}
+        seen, st = set(), [x]
+        while st:
+            for w in succ[st.pop()]:
+                if w not in seen: seen.add(w); st.append(w)
+        mvx = sum(1 for u in range(1, len(S)) if S[u][x] != S[u - 1][x])
+        print(f"PM check mover {x}: moves {mvx} desc {len(seen)} bound (deg-1)(1+desc) = {1 + len(seen)} -> {'VIOLATION' if mvx > 1 + len(seen) else 'no violation'}", flush=True)

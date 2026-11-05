@@ -175,6 +175,14 @@ def build(T, E, fixall=False, lem=True):
                 cond = [mv[(t, x)], neg(mv[(t - 1, x)]), C.EQ(KPb(t, x), KPb(t - 1, x))]
                 if any(g is False for g in cond): continue
                 C.add([neg(g) for g in cond if g is not True] + [C.AND([reach[(x, y)], mv[(t - 1, y)]]) for y in range(N) if y != x])
+    if os.environ.get("PMX"):   # R206: violation of L-NEW CONJECTURE PM at mover x: moves(x) >= (deg - 1)(1 + desc(x)) + 1, deg 2:
+        # sum_t mv[t, x] + sum_(y != x) not reach[x, y] >= N + 1   (reach = Xi-reachability, the LEM variables; needs LEM on)
+        from pysat.card import CardEnc, EncType
+        assert lem, "PMX needs LEM=1 (reach variables)"
+        xq = int(os.environ["PMX"]); lits = [mv[(u, xq)] for u in range(1, L + 1)] + [neg(reach[(xq, y)]) for y in range(N) if y != xq]
+        nt = sum(1 for z in lits if z is True); lits = [z for z in lits if not isinstance(z, bool)]
+        enc = CardEnc.atleast(lits=lits, bound=N + 1 - int(os.environ.get('PMOFF', '0')) - nt, top_id=C.n, encoding=EncType.seqcounter)   # PMOFF=1: sanity (tight bound)
+        C.n = max(C.n, enc.nv); [C.add(list(c)) for c in enc.clauses]
     for (s, x), bit in req.items():
         c = better1(s, x); C.add([c if bit == 1 else -c])
     for a in range(N0, N):
