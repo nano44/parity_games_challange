@@ -1,6 +1,22 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Successor 55 handover check (STEP 0; written 2026-11-05 22:5xZ by date -u)
+1. claude/l-new: ls-remote e16112ba; local checkout was detached at e16112ba; fetch + ff-only -> HEAD e16112ba = ls-remote (not stale).
+   Vs trunk claude/vibrant-johnson-nxvvxo (b5d154ad): 12 ahead / 9393 behind (rev-list --left-right --count as printed), merge-base
+   a9851eba. Lane files only.
+2. Open: BOX 172 freeze P-IDEAL-KEYS (LOCAL-KP, PAIR-KF, CASCADE + Cor F <= T, RENEW, opt. MERGE/RETURN; DEAD PM, PMV, doubling tower;
+   next: read R104/R105/E-2 verbatim, write packet + line L-1 + check.sh block, push). BOX 173 CONJECTURE RENEW-COUNT (next: I vs L vs
+   d+1 on the d 5 maxima from claude/l-red). Nothing in flight from successor 54.
+3. GAPS (trunk): G-N5-TIME major open (owner L-NEW); G-N1-LB minor open (optional, not routed); G-N5-TERM closed.
+4. D18 (active, trunk INDEX row 32): "Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas
+   from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state
+   them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems."
+   D14 (active, row 22): "D" / "You know it can also test prveiously not tested approaches, it can come up with it own as well".
+   D20 (active, row 42): "We have reset the weekly usage, so we can again work faster no?" (Lead reading L48: full pace).
+5. Trap: misquoted SHAs (three times on 2026-11-05); check = every SHA copied from git output in the same command. Stale clone check
+   (ls-remote + fetch + ff-only + HEAD vs ls-remote) passed.
+
 ## HANDOVER (successor 54, PARKING 2026-11-05 ~22:4xZ by date -u; Lead 22:08Z: box 171 then handover + park)
 ### DONE (every push via scripts/push.sh, VERIFY PASS; Lead informed at every box end)
 - Step 0 (99c86c45). Box 164 ENCODE (9e1a6b02, b69a18d7): CHARGE, NO-ENTROPY, CHAIN-UP PROVED (lane); every constant record multiplicity
