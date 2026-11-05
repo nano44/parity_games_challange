@@ -91,3 +91,22 @@ Not a TARGET.md claim. No polynomial bound. FLIP-ADD and G-N5-TIME stay OPEN.
     This is a restatement, not a reduction; it names where the difficulty sits.
 
 ## 3. m = 3 climbs for D(3, τ) (tauclimb.py; lower bounds; frozen copies in pin/)
+- Lower bounds on D(3, τ). Each point is recomputed by flipdp.py; the τ = 4 and τ = 5 points are also replayed with L-NEW's
+  box 150 Gen in check67.sh.
+  | τ = T_0(G) | 4 | 5 | 6 | 7 | 8 |
+  | --- | --- | --- | --- | --- | --- |
+  | D(3, τ) ≥ | 8 | 10 | 9 | 9 | 9 |
+  | 2τ | 8 | 10 | 12 | 14 | 16 |
+  | T^R(3) + 1 | 9 | 9 | 9 | 9 | 9 |
+  | genome | pin/tau_m3_t4_s2 (sha1 4811ab98…) | L-NEW kf1_d4_t10 | box66 pin/f_m3_p6_s1 | box65 pin/j1_m3_s1 | box66 pin/f_m3_p4_s1 |
+- Seeded climbs (40 min each, seeded from the τ = 6, 7, 8 genomes above) found nothing above 9 for τ ≥ 6. The τ = 4 climb from a
+  random start reached the doubling value 8.
+- READING (DATA, m = 3):
+  - Doubling holds up to τ = 5 (τ*(3) ≥ 5 > T^R(3)/2 = 4).
+  - For τ ≥ 6 the data sits exactly at the m = 2 cap T^R(3) + 1 = 9.
+  - So the shape min(2τ, T^R + 1) fails at m = 3 in ONE cell only, τ = 5 ((pre, post) = (5, 5), sum 10). Everywhere else the data
+    is at or below it.
+  - A refined CONJECTURE consistent with all data at m = 1, 2, 3 (lane, DATA): D(m, τ) ≤ max(2τ*(m), T^R(m) + 1) with
+    τ*(m) = ⌈(T^R(m) + 1)/2⌉, i.e. 1, 3, 5 for T^R = 2, 4, 8.
+    - At m = 2 this gives max(6, 5) = 6. That is NOT tight: the exact maximum is 5, because doubling stops at τ = 2.
+    - So the refined form is an upper envelope, not the exact shape. What decides whether τ = ⌈(T^R + 1)/2⌉ can double is open.

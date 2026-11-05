@@ -1,6 +1,16 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## BOX 67 (successor 39; Lead 14:07Z: m = 2 frontier as a lemma + proof shape; test on m = 3) — DONE
+- Note docs/si/N5-FRONT2-box67.md; tools experiments/si/box67/{bfd.c (= box 66 bff.c + TAU hook), tauclimb.py, check67.sh};
+  out/bfd_m2_p0..3.txt (EXACT); pin/tau_m3_t4_s2.json (sha1 4811ab98).
+- Lemma FRONT-2 (m 2): post <= 4, pre + post <= 5. Shape: (a) pre + post <= 2 T_0(G) PROVED trivial; (b) cap T^R + 1 EXACT only.
+  EXACT D(2, tau) = 0 2 4 5 5 (tau 0..4), D(1, tau) = 0 2 3. Cap cannot be per-genome (kf1_d3_5: T_0 3, T_1 5).
+- Sources: R104 def, R105 ENC/LOCAL, R106 DECOMP + MULTI->SINGLE, lane W-ONLY/BIT-CHAIN/FLIP-PATH; E-2 not used. Enumeration-only:
+  T^R(2) = 4, the tau table, the frontier set.
+- m 3 test: first failing cell (pre, post) = (5, 5) (kf1_d4_t10, tau 5 doubles to 10 > 9). D(3, tau) >= 8 10 9 9 9 (tau 4..8).
+- CONJECTURE (envelope, not exact): D(m, tau) <= max(2 ceil((T^R+1)/2), T^R + 1).
+
 ## BOX 66 (successor 39; Lead GO 12:31Z: exact one-flip (pre, post) frontier) — DONE
 - Note docs/si/N5-FRONT-box66.md; tools experiments/si/box66/{bff.c (= box 65 bfg.c + FRONTIER hook), front.py, check66.sh};
   out/bff_m1.txt, out/bff_m2_p0..3.txt (EXACT); pin/ (m 3 climb champions, sha1 pin/pins.sha1); live/, log/ gitignored.
