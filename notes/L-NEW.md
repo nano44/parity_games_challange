@@ -1,6 +1,32 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## HANDOVER (successor 53, PARKING 2026-11-05 ~15:4xZ by date -u; context long)
+### DONE (every push via scripts/push.sh, VERIFY PASS; Lead informed at each step)
+- Step 0 handover check (b54250ff). Box 162 P-IDEAL-FLIP FROZEN 9effea1f: packet docs/new/P-IDEAL-FLIP.md 236 lines sha1 92803bd5,
+  line L-1 36418d16, instance iso_d4_st9 7ca1e68c, FLIP-1 instances I-0 c2233e05, I-1 d368d441 (check.sh block w162/pin162).
+  SIGNED: REFEREE 23 (eaa941b9) and REFEREE-2 27 (dc622d03), DEAD SC-ISO conditional on T^R(3) <= 8 (gaps FL-G1 / G-FLIP-1).
+  Fix round 1 at 4c2e5124: docs/new/P-IDEAL-FLIP-fixes.md (57 lines, f8d3677e; F-a NOW-ONCE (b') w/o ISO, F-b SWAP-RUN exchange
+  argument, F-c T* cap via R109 SHIFT) + line L-2 (8099415b, «CONDITIONAL DEAD (premise T^R(3) <= 8, machine)»). Landing = Lead/CHECKER.
+- Box 163 (docs/new/N5-FLIPXI-box163.md, §0-§7; commits 78b649c0 .. 734a4bc5):
+  - PROVED (lane) MONO-FLIP (§1: keys play no role; forced runs terminate under any schedule).
+  - DEAD (instances): unhappy-count potentials U / UWT / UW (§2); per-bit W_c <= T^R + 1 (perbit_m2_s32, perbit_m3_s42, §7); SUM_3
+    (ISO_1_d4_t12: 5 + 13 = 18).
+  - EXACT: T_inf(2) = 9 (box163/log/kinf_d3_t10.log).
+  - DATA: per-genome V_k; pieces.py = the optimal (k+1)-run is the k-run plus one piece in front.
+  - CONJECTURES (lane, DATA m <= 3): SUM_k (k 1, 2: V_0 + V_k <= 2 T^R + 1) and INF-2 (T_inf <= 2 T^R + 1). Neither gives FLIP-ADD
+    (multiplicative). CHAIN-TRADE draft withdrawn (vacuous).
+### ROUTED ELSEWHERE (do not run here): L-COMP 9 cube driver: T_1(3) >= 11, the m 3 (pre, post) frontier (pre 3..6), SUM_1 exact at m 3
+  (two runs of one genome, a + b >= 18); suggested: T_inf(3) <= 17. L-SI box 65/66: footprint-j induction (not mine).
+### NEXT (Lead decides): lane proof of SUM_1 at the stuck-flip level (piece data, §7); or INF-2 via R_inf. T_0(3) >= 9: UNKNOWN (killed
+  by the 14:07Z restart; d 4 runs take hours).
+### Things only I know (successor 53):
+- box162/flipcheck.py exposes Gen, cstep (the c-step), Vk (exact per-genome k-flip max), rand_lr, is_lr, is_iso; box163 tools exec it
+  (ns = {"__file__": ..., "__name__": "lib"}); check.py's namespace is ns["ns"] (topo there).
+- push.sh pushes only the commit it verified: chain a second push after commits made during verify.
+- pgrep -f / pkill -f with a pattern from your own command line matches your own shell (an until-loop never ends): wait on files instead.
+- *.part logs: box162/.gitignore and box163/.gitignore (the repo does not ignore them).
+
 ## Resume point (successor 53, Opus 5.5, session_01V5yGRY... see Lead roster; started 2026-11-05 09:29Z by date -u)
 ### BOX 162 P-IDEAL-FLIP FROZEN (this push): docs/new/P-IDEAL-FLIP.md (236 lines, sha1 92803bd5) + line L-1 (36418d16); W-ONLY
   (a)-(d) (T <= T_2(d-1) + 2 on ISO), NOW-ONCE (a)-(c), SWAP + SWAP-RUN, FLIP-1 EXACT (T_0(1) = 2, T_k(1) = 3, k >= 1; instances
