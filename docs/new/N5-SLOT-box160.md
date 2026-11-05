@@ -21,23 +21,23 @@ SLOT-TRADE, IDEAL-ACYC-POLY and G-N5-TIME stay OPEN.
   | all (L-RED R197 / R202: T^R(d)) | 4 | 8 (reproduced here) | 13 |
   | ISO: W-channel only | 4 | 7 | ≥ 12 (12 SAT; 13 running) |
   | NOW: Ξ-channel only (b_0 constant on the run) | - | 6 | ≥ 10 (11 running) |
-  | NOL0: no level-0 step | - | 4 = T^R(2) | (queued) |
+  | NOL0: no level-0 step | - | 4 = T^R(2) | 8 = T^R(3) (T ≥ 9 UNSAT 143 s) |
   | only level-0 mover 0 may move (FRZ=1) | - | 6 | (queued) |
   | ISO, only level-0 mover 0 may move | - | 5 | (queued) |
   | NOW, only level-0 mover 0 may move | - | 5 | (queued) |
   | max seg1 + tail: all | - | 6 (seg1 3, tail 3) | ≥ 10 (L-RED R204) |
-  | max seg1 + tail: ISO | - | 4 = T^R(2) | ≥ 9 (10 running) |
-  | max seg1 + tail: NOW | - | 4 = T^R(2) | ≥ 9? (running) |
+  | max seg1 + tail: ISO | - | 4 = T^R(2) | ≥ 9 (≥ 10: UNKNOWN, stopped after ~90 min) |
+  | max seg1 + tail: NOW | - | 4 = T^R(2) | UNKNOWN (≥ 9 stopped after ~90 min) |
   - Exact maxima are «T ≥ m SAT and T ≥ m + 1 UNSAT» (TMIN form, as L-RED's xmax.py). seg1 + tail rows: horizon T^R(d) (exact
     because every run of 𝓛^R_d has at most T^R(d) steps). The d = 3 (seg1, tail) frontier of all three classes is in §2
     (grid: box160/log/grid_d3_seg1_tail.txt, SEG="1:a,t:b" TMIN=0 at horizon 8).
   - External flips (FREE0, ISO): T_k(m) = max number of steps above level 0 of an m-level 𝓛^R ladder whose level-0 key bit an outside
     agent flips at most k times (each counted step moves a mover of level ≥ 1; SAT models replayed with the schedule forced):
-    | k | 0 | 1 | 2 | 3 | 4 |
-    | --- | --- | --- | --- | --- | --- |
-    | T_k(1) | 2 | 3 | 3 | 3 | 3 (k 6: 3) |
-    | T_k(2) | 4 | 5 | 7 | 8 | 8 |
-    | T_k(3) | (8 = T^R(3) expected) | queued | queued | | |
+    | k | 0 | 1 | 2 | 3 | 4 | 8 |
+    | --- | --- | --- | --- | --- | --- | --- |
+    | T_k(1) | 2 | 3 | 3 | 3 | 3 | (k 6: 3) |
+    | T_k(2) | 4 | 5 | 7 | 8 | 8 | ≥ 9 (10 running) |
+    | T_k(3) | ≥ 8 | ≥ 9 (10 running) | ≥ 12 (ISO witness) | | | |
 - READING (what the table says about SLOT-TRADE):
   - The W-channel alone gets almost all the growth: at d = 4, ISO runs reach ≥ 12 of T^R(4) = 13 (at d = 3: 7 of 8). The Lead's pointer
     is right: the trade-off to be proved lives in the W-gate. The Ξ-coupling of level 0 is not needed for most of T^R(d) − T^R(d − 1).
@@ -45,7 +45,8 @@ SLOT-TRADE, IDEAL-ACYC-POLY and G-N5-TIME stay OPEN.
     agent flips the level-0 key bit of H at most twice. SLOT-TRADE restricted to ISO is: T_2(d − 1) ≤ T^R(d − 1) + O(d), where T_k(m) :=
     max number of steps of an m-level 𝓛^R-ladder whose bottom key bit is flipped by an outside agent at most k times (FREE0 mode).
   - Each external flip adds little, not a fresh budget: T_k(1) = 2, 3, 3, 3 (k = 0, 1, 2, ≥ 3; PROVED (lane) for every k, §1) and
-    T_k(2) = 4, 5, 7, 8 for k = 0..3 (EXACT). A fresh (m)-budget per flip would give ≈ (k + 1)·T^R(m).
+    T_k(2) = 4, 5, 7, 8, 8 for k = 0..4 (EXACT), ≥ 9 at k = 8 (so it does NOT saturate at 8; it grows slowly). A fresh (m)-budget per
+    flip would give ≈ (k + 1)·T^R(m).
   - The single-channel trade «seg1 + tail ≤ T^R(d − 1)» is EXACT at d = 3 for both channels, and DEAD at d = 4 for ISO: instance
     box160/out/iso_d4_st9.json (ISO, T 11, level-0 steps t7, t8, seg1 6, tail 3: seg1 + tail = 9 > T^R(3) = 8).
   - The ISO extremal runs replay: in ISO_1_d4_t12 the frozen remainder R_q is 4, 3, 2, 1, 0 over seg1 (H stuck at t4), the W-pulse
