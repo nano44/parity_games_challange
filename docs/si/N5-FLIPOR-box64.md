@@ -23,7 +23,10 @@ Not a TARGET.md claim. No polynomial bound. FLIP-ADD, SLOT-TRADE, IDEAL-ACYC-POL
     steps, which is T_0 of that genome, and ends stuck. After one flip, the run from that stuck state takes 5 more steps, again
     T_0 of the genome. So the restart costs as much as a worst cold start; this is the pattern of Melekopoglou–Condon §2.1 inside
     our model.
-  - Consequence (READING): FLIP-ADD can only hold as a TRADE-OFF (a long first segment forces a short restart), i.e. SLOT-TRADE's
+  - CORRECTION (box 65, 2026-11-05): (c) kills «restart ≤ remaining + C» only for constants C < T_0(G). It does NOT kill a
+    per-restart bound «restart ≤ remaining + O(m)» (5 ≤ 2·3). The next item overstated this; box 65 (docs/si/N5-FOOT-box65.md)
+    measures the per-flip gain as a function of m.
+  - Consequence (READING, as first written; see the correction above): FLIP-ADD can only hold as a TRADE-OFF (a long first segment forces a short restart), i.e. SLOT-TRADE's
     shape. It cannot hold as a per-restart warm-start bound, and no OR theorem supplies the trade-off.
 - **What does carry over:**
   - Lemma FLIP-PATH (PROVED, lane): every external-flip run, under any number of flips, is a directed path of the one AUSO o_G.

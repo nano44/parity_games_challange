@@ -1,6 +1,14 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## BOX 65 (successor 39; Lead GO 11:12Z: FLIP-ADD by induction on the flip footprint j) — IN FLIGHT
+- Note docs/si/N5-FOOT-box65.md; tools experiments/si/box65/{gain.py, bfg.c (= copy of claude/l-comp 557b045b box27/bfk.c + GAIN
+  hook)}; out/ (climb champions, bfg results, kf1 trace), log/.
+- PROVED (lane): GAIN-IND (T_k(G) <= T_0(G) + k g*(G)); FLIP-ADD <= ONE-FLIP (g*(m) = O(m)).
+- «added <= c·j» FAILS as a route: max gain always at footprint j = 1; GJ[1] = 2, >= 4, >= 6 (m 1, 2, 3); c·j collapses to c·m.
+- EXACT: g*(1) = 2, g*(2) = 4 (bfg, all m = 2 genomes). CONJECTURE ONE-FLIP-2M: g*(m) <= 2m. Climbs m 3, 4, 5 running.
+- Box 64 overclaim corrected (constant-C form only).
+
 ## BOX 64 (successor 39; written 2026-11-05 (date -u: see commit); Lead brief 2026-11-05, OR/PI lens on FLIP-ADD)
 ### Resume point
 - Note docs/si/N5-FLIPOR-box64.md. Tools experiments/si/box64/{flipdp.py, bitchain.py, climb.py, check64.sh}; ref/ = read-only copies
@@ -19,9 +27,32 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   [Fe10] arXiv:1003.3418 Thms 17-18; [MS99] arXiv:1301.6718 Thm 7; [MSz06] Adv. Math. 204 (2006) Thm 1; [GHZ98] DOI 10.1007/PL00009827
   Thms 1-2; [Th17] arXiv:1706.09380 Thms 3, 4, 8; [AF13] arXiv:1305.3944 Thm 8. NOT opened: Williamson Hoke 1988; HPZ SODA 2014;
   HKZ SODA 2014 (nothing rests on them).
-### Dead ends (box 64)
-- «Restart of PI on the swapped genome costs O(m) beyond the remaining run» (per-restart warm-start form): kf1_d4_t10 (m 3), seg 5 =
-  T_0(G), then restart R 5 = T_0(G) from the stuck state; W1 gap = T_0(G) on all 8 witnesses (check64.sh pins).
+### Dead ends (box 64) — CORRECTED 2026-11-05 (successor 39, box 65)
+- DEAD only in the constant form: «restart after a flip ≤ remaining run + C» for every constant C < T_0(G). Instance: kf1_d4_t10 (m 3),
+  seg 5 = T_0(G), restart R 5 = T_0(G) from the stuck state; W1 gap = T_0(G) on all 8 witnesses (check64.sh pins).
+- NOT killed (box 64 note §0 (c) and this entry first OVERCLAIMED it): «restart ≤ remaining + O(m)». 5 ≤ 2·3, so finite data cannot
+  kill an O(m) form; box 65 measures the per-flip gain g*(m) as a function of m.
+### R106 citation precision (Lead request 11:12Z; exact quotes and locations; for a possible erratum precision note)
+- [WW22] Weber, Widmer, «Realizability Makes a Difference: A Complexity Gap for Sink-Finding in USOs», arXiv:2207.05985v1 [cs.DS]
+  13 Jul 2022 (PDF sha1 90665269570caa4d65300b8ba8c389a39c1ec658; pdftotext extract line numbers, PDF page in brackets):
+  - l. 191-193 [p. 5], Definition 4: «A Unique Sink Orientation (USO) is an orientation of the hypercube, such that for each non-empty
+    face F of the hypercube, the subgraph induced by F has a unique sink, i.e., a unique vertex which has no outgoing edges.»
+  - l. 206 [p. 5-6], section heading «2.2 (Realizable) Matoušek-type USOs».
+  - l. 260-263 [p. 6] (the only place §2.2 says «decomposable»): «As the dimension influence graph G is acyclic (apart from the loops),
+    there must be a sink in every induced subgraph of G. Thus, in each face there is a dimension which is not influenced by any other
+    dimension, and all edges of that dimension point in the same direction. We therefore say that each face is combed, and that the
+    whole Matoušek-type USO is decomposable.»
+  - l. 120-122 [p. 3], §1: «All known unconditional lower bounds on general USOs use decomposable USOs [13], and the realizable
+    Matoušek-type USOs are the only known class of realizable decomposable USOs.» ([13] = Schurr, Szabó.)
+  - No numbered definition of «combed» or «decomposable» in [WW22].
+- [SS04] Schurr, Szabó, «Finding the Sink Takes Some Time: An Almost Quadratic Lower Bound for Finding the Sink of Unique Sink Oriented
+  Cubes», ESA 2002 version (author PDF, sha1 f26543368966b6ebe595261f69d11f4a462b1b0f; journal DCG 31(4):627-642, 2004,
+  DOI 10.1007/s00454-003-0813-8, NOT opened), §4, l. 433-441 [p. 8]: «an orientation is called combed, if there is a label l for
+  which all l-labeled edges are oriented towards the same facet. Iterating the construction we get the class of decomposable unique
+  sink orientations. … We call Dn the class of decomposable unique sink orientations in dimension n. Equivalently, an orientation is
+  decomposable iff every nonzero-dimensional subcube is combed.»
+- Reading: R106's «decomposable (every face combed, as in §2.2 of that paper)» matches [WW22] l. 263 in substance; the formal
+  definition is [SS04] §4. The ESA, not the DCG, text was opened, so section numbering in DCG is unchecked.
 
 ## Successor 39 handover check (written 2026-11-05T09:52Z (date -u); successor 39 = session_01V5yGRYm5eKzWv7G3F5cuYS (Opus); 38 was session_01V5yGRaKVKb8btaPGXC6cJ2)
 - CORRECTION: commit 14633be6 carries a wrong Claude-Session trailer (38's id); the author is session_01V5yGRYm5eKzWv7G3F5cuYS. Not amended (no history rewrite).
