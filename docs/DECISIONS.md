@@ -418,3 +418,13 @@ Lead reading L47 (2026-11-03 19:13Z by date -u):
     «DBL − ZERO bounded by the levels above».
 (3) Gates: when P-IDEAL-RED is frozen, a fresh REFEREE successor (REFEREE 22 is at ~474k) and REFEREE-2 26 review it; CHECKER 16 lands it.
     Peak: 2 research lanes + up to 3 gates (5 sessions, within D1's cap).
+
+## D20 (2026-11-05 ~09:48Z, owner directly in the Lead session)
+> We have reset the weekly usage, so we can again work faster no?
+
+Lead reading L48 (2026-11-05 09:58Z by date -u):
+(1) Yes: full pace for the new weekly window (as D17). Stop on paid overage (D1/D7); a «rejected» limit pauses lanes until its reset.
+(2) Research lanes: L-RED 49 (exact ladder searches, resumable cube driver; R202/R205), L-NEW 53 (P-IDEAL-FLIP freeze, FLIP-ADD),
+    plus two restarted lanes: L-COMP successor 9 (independent exact computation: T^R(d) re-derivation, T_k(m) for m ≤ 2, padded T*(d)) and
+    L-SI successor 39 (policy-iteration / OR lens on FLIP-ADD: warm-start bounds on decomposable USOs). Four research lanes (D1 cap 5).
+(3) Gates on demand: fresh REFEREE / REFEREE-2 / CHECKER successors when a packet freezes (L39 (3): gates run in addition to the lanes).
