@@ -72,6 +72,8 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     the level-0 SYMB clause (sigma_0 swaps the level-0 first-move times; fix level 0 first, then levels >= 1): d 3 T>=9 UNSAT 55 cubes 83 s.
   - Paused 01:1xZ for the d 4 validation: pcegar k3/ag_0 (resume line above).
   - 03:47Z d 5 T>=16 cubes started (P=1; raise P after d 4 ends by killing and rerunning the same line). R204 d 5 monolithic stopped.
+  - CORRECTION: the snapshot commit «11:0xZ (d 4: 1680 UNSAT, 10 split; d 5: 151 UNSAT)» has wrong numbers typed by me; the observed
+    counts at 11:03Z were d 4 1454 UNSAT, 8 split; d 5 118 UNSAT, 2 split (the state file in that commit is what it is).
   - QUEUED R205 (Lead 03:48Z, L-NEW box 160 on claude/l-new 96650e2c: xcnf_free0.py, iso.py): T_2(4) (= ISO at d 5) and T_k(3), k 1..4,
     in the cube driver; after R202 has its cores. Lead 04:21Z: needs box160/xcnf_free0.py (FREE0=1) AND box160/iso.py (ISO, b_0 flips,
     KF seqcounter, every step moves a level >= 1 mover, LEM=0 forced); run «LRED=<dir> FREE0=1 ISO=1 KF=k python3 iso.py d t out.json»,
