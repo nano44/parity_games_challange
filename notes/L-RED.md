@@ -74,6 +74,11 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   - 03:47Z d 5 T>=16 cubes started (P=1; raise P after d 4 ends by killing and rerunning the same line). R204 d 5 monolithic stopped.
   - CORRECTION: the snapshot commit «11:0xZ (d 4: 1680 UNSAT, 10 split; d 5: 151 UNSAT)» has wrong numbers typed by me; the observed
     counts at 11:03Z were d 4 1454 UNSAT, 8 split; d 5 118 UNSAT, 2 split (the state file in that commit is what it is).
+  - 14:2xZ Lead (c): CONDITIONAL runs with SEG-CAP (L-NEW box 158 / R109 L-4) as SEGMAX clauses; label every UNSAT «conditional on
+    SEG-CAP (as encoded in r200/xcnf.py@<sha>) and T*(4) = 13». segck.py: 3022 runs, 0 violations. Relaunch lines (idempotent):
+    SEGMAX=13 SYM0=1 SYMB=1 TL=1200 P=2 nohup python3 cubes.py 5 16 cubes/d5c_t16 > out/cubes_d5c_t16.log 2>&1 &   (d 5, conditional)
+    checks: SEGMAX=4 d 3 T>=9 UNSAT (55 cubes 109 s), T>=8 (running); SEGMAX=8 SYMB=1 xmax.py 4 13 (SAT expected; running).
+    Unconditional d 4 T>=14 kept at nice 19 (same line as before); unconditional d 5 (cubes/d5s_t16) paused, resumable.
   - QUEUED R205 (Lead 03:48Z, L-NEW box 160 on claude/l-new 96650e2c: xcnf_free0.py, iso.py): T_2(4) (= ISO at d 5) and T_k(3), k 1..4,
     in the cube driver; after R202 has its cores. Lead 04:21Z: needs box160/xcnf_free0.py (FREE0=1) AND box160/iso.py (ISO, b_0 flips,
     KF seqcounter, every step moves a level >= 1 mover, LEM=0 forced); run «LRED=<dir> FREE0=1 ISO=1 KF=k python3 iso.py d t out.json»,
