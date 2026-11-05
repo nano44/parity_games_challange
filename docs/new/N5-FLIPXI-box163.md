@@ -70,3 +70,30 @@ level 0 at (0, 0), both bits; 19,234 moving frames)
   bit chain.
 - Exact T_∞(3) (L-SI ≥ 17) only with a cube driver (d 4 monolithic runs take hours); not started.
 - Files: experiments/new/box163/mono.py (MONO across random flips: 2,990 frames, 0 falls, 0 non-strict), pot.py, path.py, out/, log/.
+
+## 5. Reading of L-SI box 66 BULGE (Lead 14:07Z; claude/l-si f21640dd, docs/si/N5-FRONT-box66.md, lane-level, not refereed)
+- DATA (EXACT per genome; box162/flipcheck.py Vk over every U-start, level 0 at (0, 0), so V_k(G) := the max over starts of V_k(G, s)):
+  | genome (𝓛^R_4, ISO) | V_0(G) | V_1(G) | V_2(G) | V_3(G) |
+  | --- | --- | --- | --- | --- |
+  | box160/out/kf1_d4_t10.json | 5 | 10 | 10 | 10 |
+  | box160/out/ISO_1_d4_t12.json | 5 | 8 | 12 | 13 |
+  - Both extremal flip genomes have a flip-free maximum of only 5 < T^R(3) = 8. Their flip runs are 2 and 2.6 times that.
+- Does BULGE contradict FLIP-ADD? NO. Every number is consistent with T_k(3) ≤ T^R(3) + O(1) (excess ≥ 2 at k = 1, ≥ 4 at k = 2, ≥ 5
+  at k = 3). Nothing here grows with m; there is only one m (3) in the data beyond m = 2.
+- It SHARPENS the target, in two ways.
+  - (S1) DEAD as a proof route (READING, by the two instances): any per-genome additive form «V_k(G) ≤ V_0(G) + c» with c < 5 at m = 3,
+    k = 1 (kf1_d4_t10: 10 > 5 + 4). In particular the m = 2 line «pre + post ≤ T_0 + 1», read per genome, does not lift. With SWAP-RUN
+    the only per-genome bound left is the trivial V_k(G) ≤ (k + 1) V_0(G) (each piece is a run of H_q or (G^swap)_q, and the
+    flip-free maximum over both bits bounds both), and kf1_d4_t10 attains it at k = 1.
+  - (S2) So FLIP-ADD, if true, is a GLOBAL trade-off: a genome whose flip-free runs are long (≈ T^R(m)) must chain badly, and a genome
+    that chains well must have short flip-free runs. L-SI's f_m3_p4_s1 (V_0 = 8 under each bit, max pre + post 9) and kf1_d4_t10 (V_0 =
+    5, sum 10) are the two ends. CONJECTURE CHAIN-TRADE (lane, DATA m ≤ 3 only): for every ISO genome of 𝓛^R_(m+1),
+    V_1(G) ≤ max(2 V_0(G), V_0(G) + c(m)) with c(m) = O(m) and 2 V_0(G) ≤ T^R(m) + O(m) whenever the maximum is the first term. It
+    implies FLIP-ADD at k = 1. Not checked beyond the two instances above and L-SI's pins.
+- The Ξ-side reading (box 163): MONO-FLIP makes the value vector rise along the whole flip run; a short flip-free run with a long flip
+  run means the value vector has a long chain that no single bit can follow. A potential that sees this has to measure «distance to a
+  bit-c dead end» for both c together: R_∞ (definitional) does, R_0, R_1 (frozen) do not (§3: R_0, R_1 ≤ 2 along a 9-step T_∞ run).
+- On the SAT query «max post subject to pre ≥ p at m = 3, p = 0..8»: the side condition is two lines in box160/iso.py (bits equal on
+  frames 1..p, flipped from frame p + 1 on, KF = 1). The d 4 one-flip runs are slow (T_1(3) ≥ 10 SAT took 8261 s; ≥ 11 died
+  UNKNOWN after hours twice, the second time in today's 14:07Z container restart), and monolithic runs do not survive restarts. The
+  mid-range UNSAT points (pre 3..6, sum ≥ 11) are the expensive ones.
