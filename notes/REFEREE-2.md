@@ -16,6 +16,7 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 - FLIP report dc622d03 pushed. T^R(3) audit (l-comp 6f19564f box27, cnf.py fd882af1): R2-T3R-audit.md. Encoding faithful; SYM sound;
   16 cubes cover all starts; ISO off proven by CNF size (58,896 vs 30,994 with ISO); my re-run 16/16 UNSAT; pin test vs MY simulator
   0 disagreements on 414 pairs. G-FLIP-1 CLOSES on my side (caveat: no DRAT). Extracted l-comp copy in $SCRATCH/lcomp.
+- FLIP fixes entry 1 + L-2 (l-new 4c2e5124): F-a/F-b SIGN, F-c correct, L-2 MATCHES (byte test): R2-P-IDEAL-FLIP-L2.md.
 
 ## Resume point 6 (successor 27; 2026-11-05 11:17Z by date -u)
 - SLOT L-4 MATCHES (c11e2490). P-IDEAL-FLIP (l-new 9effea1f; packet 92803bd5, line 36418d16): R2-P-IDEAL-FLIP.md. W-ONLY, NOW-ONCE, SWAP,
