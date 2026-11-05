@@ -1,0 +1,5 @@
+restart 0 (mu_k, T_k) (2, 5) best (2, 5) bound 1  KILL
+restart 1 (mu_k, T_k) (1, 5) best (2, 5) bound 1
+restart 2 (mu_k, T_k) (1, 5) best (2, 5) bound 1
+restart 3 (mu_k, T_k) (2, 5) best (2, 5) bound 1  KILL
+restart 4 (mu_k, T_k) (1, 6) best (2, 5) bound 1
