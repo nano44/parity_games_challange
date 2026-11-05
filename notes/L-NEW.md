@@ -8,6 +8,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   SIGNED: REFEREE 23 (eaa941b9) and REFEREE-2 27 (dc622d03), DEAD SC-ISO conditional on T^R(3) <= 8 (gaps FL-G1 / G-FLIP-1).
   Fix round 1 at 4c2e5124: docs/new/P-IDEAL-FLIP-fixes.md (57 lines, f8d3677e; F-a NOW-ONCE (b') w/o ISO, F-b SWAP-RUN exchange
   argument, F-c T* cap via R109 SHIFT) + line L-2 (8099415b, «CONDITIONAL DEAD (premise T^R(3) <= 8, machine)»). Landing = Lead/CHECKER.
+  CHECKER C122 (80ed31a6) FAIL E-1..E-3 (DATA scope / source note) -> line L-3 = L-2 + C122 §5 R1-R4 by script (4089bd73, 4,715 B)
+  + fixes entry 2 (fixes 4220c44e), pinned in w162/pin162 (47b4e165). Landing (R110) = Lead/CHECKER.
 - Box 163 (docs/new/N5-FLIPXI-box163.md, §0-§7; commits 78b649c0 .. 734a4bc5):
   - PROVED (lane) MONO-FLIP (§1: keys play no role; forced runs terminate under any schedule).
   - DEAD (instances): unhappy-count potentials U / UWT / UW (§2); per-bit W_c <= T^R + 1 (perbit_m2_s32, perbit_m3_s42, §7); SUM_3
