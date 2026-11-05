@@ -1,0 +1,7 @@
+it 36 pre>=2 max post 2 frontier [(2, 2)]
+it 52 pre>=2 max post 2 frontier [(1, 3), (2, 2), (3, 0)]
+it 116 pre>=2 max post 3 frontier [(2, 3), (3, 0)]
+it 291 pre>=2 max post 3 frontier [(1, 4), (2, 3), (3, 1), (4, 0)]
+it 322 pre>=2 max post 4 frontier [(2, 4), (3, 1), (4, 0)]
+it 1427 pre>=2 max post 5 frontier [(2, 5), (3, 2), (5, 1)]
+it 8411 pre>=2 max post 6 frontier [(2, 6), (5, 1), (6, 0)]
