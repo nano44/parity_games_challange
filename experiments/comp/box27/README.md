@@ -20,7 +20,7 @@ RESULTS R104 (definition only), acyclic Ξ-graphs. Not a TARGET.md claim. No pol
 | --- | --- | --- |
 | 2 | EXACT-BF bf2.c: 5,941 acyclic Ξ-graphs x 8! rank orders x 2^8 parities x 24 x 24 in-level gate orders x 16 starts | max T = 4 (no run longer; histogram in out/bf2_part*.txt) |
 | 2 | EXACT-SAT cnf.py | T >= 4 SAT, T >= 5 UNSAT (1.5 s) |
-| 3 | EXACT-SAT cnf.py | T >= 8 SAT (205 s; out/R_d3_L8.json, replay OK under sim.py and ideal.py); T >= 9: see below |
+| 3 | EXACT-SAT cnf.py | T >= 8 SAT (205 s; out/R_d3_L8.json, replay OK under sim.py and ideal.py); T >= 9 UNSAT in all 16 cubes (SYM=1 x start bits of movers 2-5; ~160 s each; cubes/R_d3_L9, logs gitignored, RESULT lines in log/R_d3_L9_cubes.txt): T^R(3) = 8 |
 | 4 | EXACT-SAT cnf.py (cubes) | running |
 - bf2 notes: the 576 gate-order pairs give only 24 distinct transition functions (top-level gates never decide: the two options of a
   top mover W-point to different movers). Witnesses out/bf2_wit0-3.json replay to T = 4 under both simulators.
@@ -44,5 +44,5 @@ s_0..s_T, every Ξ-target an upper mover or the exit, every step moves an upper 
 | d | class | result |
 | --- | --- | --- |
 | 2 | W free, no padding | T >= 5 UNSAT (3.1 s) |
-| 2 | W free, 1 + 1 padding | running |
+| 2 | W free, 1 + 1 padding | T >= 5 UNSAT (290 s) |
 | 2 | W free, 2 + 2 padding | running |
