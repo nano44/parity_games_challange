@@ -80,6 +80,9 @@ MONO, KEYFLIP) as landed. Not a TARGET.md claim. No polynomial bound is proved. 
 | 5 | 0:1 2:3 4:7 6:15 8:31 | 22 |
 - Files: box164/out/diamond_n<n>_L<L>.json. Max moves = 2^(desc/2 + 1) − 1 on these. Desc ≤ 2 stays within PM (PM-1, and the
   desc 2 case of the diamond), so the key rule is needed from desc 4 on.
+- Random acyclic degree-2 genomes (keylessrand.py, 300 each, exact DP): desc → max moves = {0:1, 1:2, 2:3, 3:4} at N 4;
+  {0:1, 1:2, 2:3, 3:4, 4:7} at N 5 (a desc-4 mover with 7 > 5: out/keyless_pmviol_N5_d4_m7.json); {0:1, …, 5:6} at N 6. So the
+  key-free form holds through desc 3 on the samples (DATA) and first fails at desc 4.
 - Mechanism (READING): a mover two layers up switches each time the comparison of its two branches flips, and each flip of a lower
   layer's comparison flips its value twice. Keys stop the cascade in every keyed instance seen: a mover whose comparison flipped
   still waits until its key-preferred option is the better one (R105 KEYFLIP), and the key flips come from the W-levels, not from the
