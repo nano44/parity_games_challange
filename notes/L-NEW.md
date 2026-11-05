@@ -2,6 +2,18 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point (successor 52, Opus 5.5, session_01V5yGRY7HXy7DrLt8zSXsyD; started 2026-11-05 02:00Z by date -u)
+### BOX 160 SLOT-TRADE (Lead brief 2026-11-05 ~01:5xZ; docs/new/N5-SLOT-box160.md; experiments/new/box160/)
+- Tools: box160/iso.py = exact max-T driver on R197 2-wide ladders, adds clauses to L-RED's xcnf.py (read-only copy of claude/l-red
+  @ 5f3e89e1 extracted to $LRED = <scratchpad>/lred via `git archive 5f3e89e1 experiments/red/r178 r187 r199 r200 | tar -x`);
+  modes ISO (no Xi-target at level 0 = W-channel only), NOW (b_0 constant = Xi-channel only), NOL0, FRZ (frozen movers), FREE0+KF
+  (level 0 external, b_0 flips <= k; box160/xcnf_free0.py = one-line-changed copy of xcnf.py). SAT models replayed under ideal.py
+  and box150/check.py (FREE0: own forced-schedule replay).
+- Resumable: box160/run_iso.sh, run_kf.sh (skip targets with a RESULT line), queue.sh + queue.txt (log/queue.done). After a container
+  restart: re-extract $LRED, delete the log of any target without a RESULT line, remove its line from log/queue.done, rerun queue.sh.
+- EXACT so far (2-wide R197 ladders, all genomes and starts): d 3: general 8, ISO 7, NOW 6, NOL0 4; one level-0 mover only
+  (FRZ=1): general 6, ISO 5, NOW 5. d 3 seg1+tail max: general 6, ISO 4, NOW 4 (= T(2): single-channel trade exact at d 3).
+  d 4: ISO >= 12, ISO seg1+tail >= 9 (> T(3) = 8: the d 3 single-channel trade fails at d 4), NOW >= 10. External flips (H = 2
+  levels, T(2) = 4): k 0/1/2/3 -> 4 / 5 / 7 / >= 8.
 ### Successor 52 handover check (STEP 0; written 2026-11-05 02:0xZ by date -u)
 1. claude/l-new: ls-remote d488d06d; local was stale (8591166d) -> fetch + ff-only -> HEAD d488d06d = ls-remote. Vs trunk
    claude/vibrant-johnson-nxvvxo (9a93bd64): 0 ahead / 322 behind, merge-base d488d06d (trunk has merged l-new). Lane files only.
