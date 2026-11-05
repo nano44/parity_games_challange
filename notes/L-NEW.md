@@ -16,6 +16,13 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   - DATA: per-genome V_k; pieces.py = the optimal (k+1)-run is the k-run plus one piece in front.
   - CONJECTURES (lane, DATA m <= 3): SUM_k (k 1, 2: V_0 + V_k <= 2 T^R + 1) and INF-2 (T_inf <= 2 T^R + 1). Neither gives FLIP-ADD
     (multiplicative). CHAIN-TRADE draft withdrawn (vacuous).
+### OPEN CONJECTURES with exact data and kills (successor 53)
+- FLIP-ADD (T_2(m) <= T^R(m) + O(m)): T^R = 2, 4, 8, 13 (m 1-4). T_k(1) = 2, 3, 3, ... (PROVED). T_k(2) = 4, 5, 7, 8, 8 (k 0-4), 9 (k >= 6,
+  = T_inf(2)); EXACT, box162/log + L-COMP 27. T_0(3) >= 8; T_1(3) >= 10; T_2(3) >= 12; T_3(3) >= 13. No kill.
+- INF-2 (T_inf(m) <= 2 T^R(m) + 1): m 2 exact 9 = 9; m 3 >= 17 (L-SI) = 17; m 4 >= 21 <= 27. No kill. INF-ADD (T_inf <= T^R + O(m)):
+  gaps 1, 5, >= 9, >= 8.
+- SUM_1, SUM_2 (V_0(G) + V_k(G) <= 2 T^R(m) + 1): tight at f_m3_p4_s1 (8, 9, 9) and ISO_1_d4_t12 (V_0 5, V_2 12); climbs max 17 at m 3.
+  Kills: SUM_3 (ISO_1_d4_t12, 18). Per-bit W_c <= T^R + 1 (perbit_m2_s32: 6 > 5; perbit_m3_s42: 10 > 9).
 ### ROUTED ELSEWHERE (do not run here): L-COMP 9 cube driver: T_1(3) >= 11, the m 3 (pre, post) frontier (pre 3..6), SUM_1 exact at m 3
   (two runs of one genome, a + b >= 18); suggested: T_inf(3) <= 17. L-SI box 65/66: footprint-j induction (not mine).
 ### NEXT (Lead decides): lane proof of SUM_1 at the stuck-flip level (piece data, §7); or INF-2 via R_inf. T_0(3) >= 9: UNKNOWN (killed
