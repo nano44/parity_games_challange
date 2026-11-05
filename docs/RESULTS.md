@@ -11320,6 +11320,281 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   makes no M4 claim and no TARGET claim; its tail reads «a REDUCTION / two-sided recursion inside the IDEAL model» and «G-N5-TIME stays
   OPEN; not M3, not a step-4 pass, not a TARGET.md claim» (L-4, by script). Not a step-4 pass. GAPS G-N5-TIME: open.
 
+### R110 [refereed-only] In the IDEAL model of RESULTS R104 (premise: R104's definition of the model only, no theorem of R104 used; and RESULTS R109's SEG-ONCE at l = −1 only), on acyclic Ξ-graphs, with 𝓦_d the genomes with levels 0, …, d − 1 whose level-0 movers are exactly two movers named 0 and 1, 𝓛^R_d ⊆ 𝓦_d the 2-wide degree-2 ladders in L-RED's R197 convention (movers 2l and 2l + 1 on level l, all of degree 2, no other movers, option k of a mover of level l ≥ 1 W-pointing to mover 2(l − 1) + k), T^R(d) the largest number of steps over 𝓛^R_d and all starts (kept apart from R109's T*(d) over 𝓛_d; T^R(d) ≤ T*(d)), ISO the property that no option has Ξ-target 0 or 1, b_0(s) = 1 iff g(0, s(0)) < g(1, s(1)), for c ∈ {0, 1} the c-step the step rule on the movers of level ≥ 1 (A-sets under the old state, keys under the new state, movers 0 and 1 kept) with every level-1 option W-pointing to mover w keyed by (κ^c_w, its own gate), κ^c_0 = 1 − c, κ^c_1 = c, and T_k(m) the supremum, over the ISO genomes of 𝓛^R_(m+1), their starts u_0 and the bit sequences c_1, …, c_L with at most k changes, of the number of t with u_t ≠ u_(t−1) on the levels ≥ 1, where u_t is the c_t-step of u_(t−1): (W-ONLY) on 𝓦_d every step of a run equals, on the levels ≥ 1, the c-step with c = b_0 of the new state; under ISO the A-sets of the levels ≥ 1 do not depend on the options of 0 and 1, and freezing 0 and 1 at options q gives an IDEAL genome whose run from any state with q at 0 and 1 is the iterated b_0(q)-step; hence every run of an ISO genome of 𝓛^R_d (d ≥ 2) has T ≤ T_2(d − 1) + 2; (NOW-ONCE) on 𝓛^R_d, on an interval of steps over which b_0 of the states is constant, and in a c_t-step sequence on an interval over which c_t is constant, every level-1 mover moves at most once; (SWAP) on 𝓛^R_d, the (1 − c)-step of G equals the c-step of G^swap, the genome G with the W-targets of the two options of every level-1 mover exchanged (in R109's 𝓛_d, not in 𝓛^R_d), so under ISO a c_t-step sequence with k changes is a concatenation of at most k + 1 runs of two fixed IDEAL genomes; (FLIP-1) T_0(1) = 2 and T_k(1) = 3 for every k ≥ 1 (upper bounds by proof; lower bounds by two explicit instances, experiments/new/box162/out/kf0_d2_t2.json, sha1 c2233e05…, and kf1_d2_t3.json, sha1 d368d441…); and CONDITIONAL DEAD (premise T^R(3) ≤ 8, machine): the lane conjecture SC-ISO («for every d ≥ 3, in every run of every ISO genome of 𝓛^R_d, the number of steps before the first step that moves 0 or 1 plus the number of steps after the last such step is at most T^R(d − 1)») is false, by the ISO genome iso_d4_st9 of 𝓛^R_4 (experiments/new/box160/out/iso_d4_st9.json, sha1 7ca1e68c…; T 11 from its stored start, mover 1 moving at step 7 and mover 0 at step 8, 6 + 3 = 9 steps outside) together with the machine premise T^R(3) ≤ 8 (CaDiCaL UNSAT on L-RED's encoding, not Lean, not refereed; without it the instance shows that SC-ISO at d = 4 forces T^R(3) ≥ 9) (2026-11-05) — a REDUCTION of the W-channel part of SLOT-TRADE to an external-flip model inside the IDEAL model; bounds nothing polynomially; the CONJECTURES FLIP-ADD and SLOT-TRADE are not claimed; Ξ-cyclic genomes and genomes outside 𝓦_d are not covered; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim (DATA: W-ONLY, step form: experiments/new/box162/flipcheck.py, 0 violations on 44,084 real steps (300 random 𝓛^R genomes with d = 2, 3, 4, 225 of them drawn ISO and 75 drawn without that restriction, 65 of these not ISO, and the 50 𝓛^R genomes in box160/out and box162/out, 36 of them ISO, every start); W-ONLY, ISO independence: the same tool, 0 violations on 31,320 (state, q) pairs of the 261 ISO genomes among them (the 225 drawn ISO and the 36 ISO corpus genomes); W-ONLY, frozen form: 0 violations on 1,044 (ISO genome, q) pairs; T ≤ T_2(d − 1) + 2: 0 violations on 28,896 ISO runs (b_0 changing at most twice and the steps moving levels ≥ 1 at most the exact per-genome maximum with two changes); NOW-ONCE, real runs: 0 violations on 307 pairs of consecutive moves of a level-1 mover; SWAP: 0 violations on 15,660 (state, c) pairs of the same 261 ISO genomes (no non-ISO genome tested); FLIP-1 upper bounds: 0 violations on 1,312 (2-level ISO genome, start) pairs, k = 0, …, 6; SC-ISO: the instance replayed by the same tool and by the box 150 checker; NOW-ONCE for c_t-step sequences, the concatenation clause of SWAP and the T_k(m) values for m ≥ 2: no signed DATA (the packet's §7 table is DATA only)) (P-IDEAL-FLIP, docs/new/P-IDEAL-FLIP.md with its fixes entry 1, docs/new/P-IDEAL-FLIP-fixes.md; L-NEW successor 53), CHECKER PASS (docs/checker/C122.md, checker 32f65fe0)
+- Object (L-NEW successor 53, Opus 5.5, D14 / D18; frozen, unchanged during review): packet P-IDEAL-FLIP, docs/new/P-IDEAL-FLIP.md, sha1
+  92803bd5b750924f0d0bc7db3c57eddf5725dfcb, 236 lines (l-new freeze 9effea1f, 2026-11-05T10:21:28Z; identical at 4c2e5124 and 47b4e165).
+  Both referees measured the sha1 (REFEREE l. 5 «packet 92803bd5 (236 lines);»; REFEREE-2 l. 6 «docs/new/P-IDEAL-FLIP.md sha1
+  92803bd5b750924f0d0bc7db3c57eddf5725dfcb, 236 lines;»). Status (l. 5-7): «Not a TARGET.md claim. Every statement is about the
+  IDEAL-ACYC model only. No polynomial bound is claimed. FLIP-ADD, SLOT-TRADE and G-N5-TIME stay OPEN.» To sign: §2 W-ONLY (a)-(d), §3
+  NOW-ONCE (a)-(c), §4 SWAP and SWAP-RUN, §5 FLIP-1, §6 the DEAD of SC-ISO with its machine premise listed (table l. 10-17); §7 «DATA /
+  READING (not to sign)». Sections: premises (l. 19-30), §0 the model (l. 32-50), §1 classes and the external-flip model (l. 51-70), §2
+  (l. 72-107), §3 (l. 109-125), §4 (l. 127-147), §5 (l. 149-176), §6 (l. 178-195), §7 (l. 197-236). Sources (l. 3-4):
+  docs/new/N5-SLOT-box160.md §1 and docs/new/N5-FLIPADD-box161.md §1 (successor 52); «This packet governs: every proof is written out in
+  full here and is checked against this text only.» (l. 4-5).
+  Fixes: docs/new/P-IDEAL-FLIP-fixes.md, append-only, entry 1 (4c2e5124; 57 lines, sha1 f8d3677e4754fde9922208782483f9d4bff168ac) and
+  entry 2 (47b4e165; 81 lines, sha1 4220c44e6caa0bc6e2b2d4363ba3f5ec97505de6): F-a extends NOW-ONCE (b) to every genome of 𝓛^R_d (no
+  ISO); F-b proves SWAP-RUN for any level-0 options q (the packet's caveat dropped); F-c corrects an unsigned remark; line L-2; entry 2
+  makes line L-3. «No signed statement is weakened; F-a and F-b extend two statements, F-c corrects a «does NOT claim» remark;» (l.
+  5-6).
+  The RESULTS line is L-3, 4089bd73baf65929cf5b6094ef31882df817fd53 (docs/new/P-IDEAL-FLIP-line-L3.txt, l-new 47b4e165,
+  2026-11-05T16:26:08Z, the file's only commit; 4,715 bytes). The title is L-3 verbatim, with nothing inserted (its date parenthesis
+  «(2026-11-05)» and its source note are the line's own; the source note names the packet and its fixes entry 1, where F-a and F-b are).
+  L-3's parentheses balance (53 «(» / 53 «)»): its DATA parenthesis closes before its source parenthesis. Line history: L-1 (36418d16,
+  9effea1f, frozen with the packet); L-2 (8099415b, 4c2e5124, fixes entry 1: «CONDITIONAL DEAD (premise T^R(3) ≤ 8, machine)» for
+  «DEAD», the frozen form's «from any state with q at 0 and 1», and «every start» in the DATA; my token diff equals the entry's 3 hunks,
+  and L-1 with the three replacements equals L-2 byte for byte); L-3 (4089bd73, 47b4e165, fixes entry 2: CHECKER C122's four
+  replacements R1-R4, DATA scope and source note only: the measured genome counts of the DATA (225 random genomes drawn ISO, 75 drawn
+  without that restriction, 65 of these not ISO; 36 ISO corpus genomes; the ISO-only counts on those 261), the SWAP count bounded to the
+  same 261 ISO genomes, the concatenation clause of SWAP added to the items without signed DATA, the DATA parenthesis closed, and fixes
+  entry 1 named in the source note; no statement, definition or premise changes; L-2 with R1-R4 equals L-3 byte for byte, by my script).
+  L-2 MATCHES at both referees: REFEREE (74fae0fa) l. 192 «VERDICT: line L-2 MATCHES.»; REFEREE-2 (8b53a9e2) R2-P-IDEAL-FLIP-L2.md l. 22
+  «## Line L-1 → L-2: MATCHES», after a byte test (l. 23-26, «the result equals L-2 (True).»). L-3 MATCHES at REFEREE-2 (8fde383f, the
+  same file, Addendum 1, l. 42 «- Verdict: L-3 MATCHES.»), after a byte test against C122 §5 (l. 36-37, «L-2 with R1, R2, R3, R4 applied
+  equals L-3 exactly (True; 4,715 = 4,715 bytes).»); L-3 MATCHES at REFEREE (5c02d44d, R-P-IDEAL-FLIP.md §C add. 1, l. 211 «- Verdict: L-3 MATCHES (L-2 + C122 §5 R1-R4, nothing else).»), after its own byte test against C122 §5. Both diffed every definition of the line
+  against the packet (REFEREE l. 118-128 and l. 191; REFEREE-2 l. 117-127); L-3 changes no definition.
+- Claims signed (REFEREE successor 23 «(Opus 5.5, D15)», report eaa941b9, §C 74fae0fa; REFEREE-2 successor 27 «(Opus 5.5, D12/D19)»,
+  report dc622d03, L-2 file 8b53a9e2). Items (a)-(f) are SIGN in both verdict tables (REFEREE "## 0. Verdicts" l. 9-19 of
+  R-P-IDEAL-FLIP.md; REFEREE-2 "## Verdicts" l. 10-19 of R2-P-IDEAL-FLIP.md), the F-a and F-b forms in both second rounds (REFEREE §C l.
+  166, 173; REFEREE-2 L2 file l. 9, 15); (g) is signed CONDITIONAL on the machine premise T^R(3) ≤ 8 by both (REFEREE l. 17, «gap
+  FL-G1»; REFEREE-2 l. 18, «G-FLIP-1»: the same gap). (a) holds on 𝓦_d at any degree (its parts (b) and (c) under ISO); (b), (c), (d)
+  and (e) on 𝓛^R_d (all movers of degree 2; (b) and (e) under ISO); (f) on the ISO genomes of 𝓛^R_2; (g) on the ISO genomes of 𝓛^R_4. No
+  item bounds a count polynomially; W-ONLY (d) bounds T by T_2(d − 1) + 2 and leaves T_2 unbounded.
+  (a) Lemma W-ONLY (a)-(c) (§2 l. 72-79): (a) [G ∈ 𝓦_d, d ≥ 2; no ISO needed] for every step t ∈ [1, T] of every run, s_t and
+      Step^c_G(s_(t−1)) agree on U, «with c := b_0(s_t).»; (b) [G ∈ 𝓦_d, ISO] for x ∈ U, every option k and states s, s̃ that agree on
+      U: «Ξ_s(x, k) = Ξ_s̃(x, k), hence A_s(x) = A_s̃(x).»; «(c) [G ∈ 𝓦_d, ISO, frozen form]» … «Then H_q is IDEAL-ACYC, and from every
+      state s with s(0) = q(0), s(1) = q(1) the run of H_q is s, Step^c_G(s), Step^c_G(Step^c_G(s)), … with c := b_0(q), stopped at the
+      first application of Step^c_G that changes nothing.». Here U is the set of movers of level ≥ 1, Step^c_G the c-step of §1 (l.
+      62-65) and H_q the genome G in which 0 and 1 keep only the options q(0), q(1). Proof (l. 81-101): (a) by induction on the level:
+      at level 1 the real key (g(w, s_t(w)), g(o)) and the c-key (κ^c_w, g(o)) order any two options alike, since both put mover 0's
+      options first iff b_0(s_t) = 1 iff c = 1; above, the prefixes are the same options; both pick from the same A-set; (b) under ISO
+      no chain of an option of U passes 0 or 1; (c) H_q is IDEAL-ACYC, lies in 𝓦_d, has b_0 constant = b_0(q) and the A-sets of G on U,
+      and stops exactly when the c-step changes nothing. Cells: REFEREE l. 12 «SIGN»; REFEREE-2 l. 13 «**SIGN** (Opus 5.5, D12)».
+  (b) Corollary W-ONLY (d) (§2 l. 80): «(d) Corollary [G ∈ 𝓛^R_d, d ≥ 2, ISO]: T ≤ T_2(d − 1) + 2, for every start.». Proof (l.
+      102-106): with c_t := b_0(s_t), the forced run from s_0 under c_1, …, c_T equals the run on U (by (b), then (a)); c changes only
+      at a step that moves 0 or 1, and «by RESULTS R109 SEG-ONCE (l = −1) each of 0, 1 moves at most once in the run», so flips ≤ 2 and
+      the steps moving U number at most T_2(d − 1); the other steps move only level-0 movers, at most 2. Cells: REFEREE l. 12 (the same
+      row); REFEREE-2 l. 14 «**SIGN** (Opus 5.5, D12)».
+  (c) Lemma NOW-ONCE (§3 l. 109-125, and fixes F-a): for G ∈ 𝓛^R_d (d ≥ 2) and a level-1 mover x, x's key-smaller option is option 0 iff
+      b_0(s) = 1 (real keys) and iff c = 1 (c-keys) (l. 110-112). «(a) [real runs, no ISO needed] If [a, b] ⊆ [1, T] and b_0(s_t) is the
+      same for all t ∈ [a, b], every level-1 mover moves at most once in [a, b].» (l. 113-114); (b) [forced runs, ISO] the same for u_t
+      with c_t constant (l. 115-116); (c) the corollary for the four movers of levels 0 and 1 over a whole run with b_0 constant (l.
+      117-118; not in the line). F-a (fixes l. 9-19): for any G ∈ 𝓛^R_d, ISO or not, the c_t-step sequence u_t := Step^(c_t)_G(u_(t−1))
+      from any u_0 (0 and 1 kept at u_0's options); «NOW-ONCE (b′) [G ∈ 𝓛^R_d, no ISO]. If c_t is the same for all t ∈ [a, b] ⊆ [1, L],
+      every level-1 mover x has u_t(x) ≠ u_(t−1)(x) for at most one t ∈ [a, b].» (l. 12-13). Proofs: by (F2) a moving degree-2 mover
+      takes its key-least option, which depends only on b_0 (resp. c), so two consecutive moves in the interval would take the same
+      option, against the move between them; (b′) uses no Ξ-value and no ISO (fixes l. 19). Cells: REFEREE l. 13 «SIGN (note FL-N1: (b)
+      does not need ISO)», §C l. 166 «F-a, NOW-ONCE (b′) without ISO (new signed content): SIGN.»; REFEREE-2 l. 15 «**SIGN** (Opus 5.5,
+      D12)», L2 file l. 9 «F-a, NOW-ONCE (b′) without ISO (new signed content): SIGN (Opus 5.5, D12).».
+  (d) Lemma SWAP (§4 l. 128-136): G^swap is G with the W-targets of the two options of every level-1 mover exchanged; it is IDEAL-ACYC,
+      in 𝓦_d and R109's 𝓛_d, not in 𝓛^R_d (l. 128-130); «Lemma SWAP. For every state s and c ∈ {0, 1}: Step^(1−c)_G(s) =
+      Step^c_(G^swap)(s).» (l. 131). Proof (l. 132-136): equal Ξ-data, so equal A-sets; at level 1, κ^c_(1−k) = κ^(1−c)_k, so the key^c
+      of an option in G^swap is its key^(1−c) in G; above level 1 the W-targets agree, and the keys follow by induction. Cells: REFEREE
+      l. 14 «SIGN»; REFEREE-2 l. 16 «**SIGN** (Opus 5.5, D12)».
+  (e) Corollary SWAP-RUN, in the form of fixes F-b (fixes l. 21-36; it replaces the reading of packet l. 137-146 and drops the caveat of
+      l. 145-146): «Let G ∈ 𝓛^R_d with ISO, u_0, …, u_L a forced run with flips ≤ k, and q ANY options of 0 and 1; put v := b_0(q)»; cut
+      [1, L] into the maximal blocks of constant c (at most k + 1); each block [a, b] with c = v is a prefix of the run of H_q from
+      u_(a−1) with q at 0 and 1, each block with c = 1 − v a prefix of the run of (G^swap)_q from that state, each followed by idle
+      frames; «So a forced run with k flips is a concatenation of at most k + 1 runs of the two fixed IDEAL genomes H_q and (G^swap)_q,
+      each started where the previous piece was cut; moves = the sum of the pieces' lengths.» (l. 26-27). Proof (l. 28-33): W-ONLY (b)
+      and (c) for G with c = v; for c = 1 − v, SWAP gives Step^(1−v)_G = Step^v_(G^swap), and G^swap is ISO with the same level-0 gates,
+      so W-ONLY (c) applies to it with the same v; an idle step stays idle. Cells: REFEREE l. 15 «SIGN (note FL-N2: the «no such q»
+      caveat is removable)», §C l. 173 «F-b, SWAP-RUN for ANY q (exchange argument): SIGN.»; REFEREE-2 l. 16 «(N-1: the «no q» caveat is
+      unnecessary)», L2 file l. 15 «F-b, SWAP-RUN with ANY q: SIGN (Opus 5.5, D12). It is my N-1 written out.».
+  (f) Proposition FLIP-1 (§5 l. 149-176): T_0(1) = 2 and T_k(1) = 3 for every k ≥ 1, on the ISO genomes of 𝓛^R_2. Upper bounds (l.
+      150-163): of the two level-1 movers, one (v) has both options with Ξ-target X (ISO and acyclicity), so it changes at most once (to
+      its better option); the other (u) has exactly one better option, determined by v's option, so two consecutive changes of u need a
+      change of v between them, and u changes at most twice: moves ≤ 3 for any bits; with no flip NOW-ONCE (b) gives ≤ 2. Lower bounds,
+      two explicit instances (l. 164-175; option fields W-target, Ξ-target, gate, β rank, β parity; X the exit): I-0,
+      experiments/new/box162/out/kf0_d2_t2.json (sha1 c2233e05b6212233acf5e3121b0ed088b7863b3c, l-new e93b0e82): «mover 0: (−, X, 0, 7,
+      odd), (−, X, 2, 6, odd); mover 1: (−, X, 3, 5, odd), (−, X, 1, 4, odd); mover 2: (0, X, 2005, 2, odd), (1, 3, 2006, 0, odd); mover
+      3: (0, X, 2004, 3, odd), (1, X, 2007, 1, odd)», start (0, 0) on (2, 3), c ≡ 0: moves 2, flips 0. I-1,
+      experiments/new/box162/out/kf1_d2_t3.json (sha1 d368d441b13b512c3453ea168d187734fe92b45e, e93b0e82): «mover 0: (−, X, 1, 7, even),
+      (−, X, 3, 6, even); mover 1: (−, X, 2, 5, even), (−, X, 0, 4, even); mover 2: (0, X, 2004, 3, even), (1, X, 2007, 0, odd); mover
+      3: (0, 2, 2005, 2, odd), (1, X, 2006, 1, odd)», start (1, 0) on (2, 3), c = (0, 1, 1): moves 3, flips 1. Cells: REFEREE l. 16
+      «SIGN»; REFEREE-2 l. 17 «**SIGN** (Opus 5.5, D12)».
+  (g) CONDITIONAL DEAD of the lane conjecture SC-ISO (§6 l. 178-195): «for every d ≥ 3, in every run of every ISO genome of 𝓛^R_d, seg1
+      + tail ≤ T^R(d − 1)» (l. 180), seg1 the number of steps before the first step that moves mover 0 or 1 (T if none), tail the number
+      after the last such step (0 if none) (l. 69-70). Instance experiments/new/box160/out/iso_d4_st9.json (sha1
+      7ca1e68c52e4bb02ee260ccc36e8323146cdc6b3, l-new 279dd656), a genome of 𝓛^R_4 with ISO, option fields W-target, Ξ-target, gate, β
+      rank, β parity (l. 181-187): «mover 0: (−, 3, 0, 8, odd), (−, X, 2, 11, even); mover 1: (−, 3, 1, 9, odd), (−, X, 3, 4, odd);»
+      «mover 2: (0, 5, 2005, 10, even), (1, X, 2006, 14, odd); mover 3: (0, 6, 2004, 5, odd), (1, 2, 2007, 12, even);» «mover 4: (2, 2,
+      2008, 13, even), (3, 5, 2011, 0, odd); mover 5: (2, X, 2009, 15, odd), (3, X, 2010, 7, even);» «mover 6: (4, 7, 2012, 3, even),
+      (5, 2, 2015, 1, even); mover 7: (4, 4, 2013, 2, even), (5, 5, 2014, 6, even);» «start 11111011 (movers 0..7). The Ξ-graph is
+      acyclic (topological order 1, 0, 3, 6, 7, 4, 2, 5); no Ξ-target is 0 or 1 (ISO).». Its run (l. 188-190): «11111011, 11110011,
+      11110010, 11110000, 11100100, 11001101, 11001111, 10011111, 00010111, 00010110, 00010100, 00000100. T = 11; mover 1 moves at step
+      7, mover 0 at step 8, no other step moves 0 or 1. So seg1 = 6, tail = 3, seg1 + tail = 9.». SIGNED UNCONDITIONALLY: the instance
+      computation and the implication «SC-ISO at d = 4 ⇒ T^R(3) ≥ 9» (REFEREE l. 76 «So «SC-ISO at d = 4 ⇒ T^R(3) ≥ 9» is PROVED (by the
+      instance alone). That part I SIGN.»; REFEREE-2 l. 80-81 «What I sign: (i) the instance computation (seg1 + tail = 9 on an ISO
+      genome of 𝓛^R_4); (ii) the implication «SC-ISO (at d = 4) ⇒ T^R(3) ≥ 9»; (iii) «SC-ISO is false IF T^R(3) ≤ 8».»). CONDITIONAL:
+      «SC-ISO is false» holds under the machine premise T^R(3) ≤ 8 (packet l. 191-193: «CaDiCaL UNSAT of «some genome of 𝓛^R_3 and start
+      with T ≥ 9»», L-RED's xcnf.py encoding, «not Lean, not refereed»), which is NOT a result of this entry or of RESULTS. Cells:
+      REFEREE l. 17 «SIGN AS CONDITIONAL, gap FL-G1 (machine premise T^R(3) ≤ 8). The unconditional part, «SC-ISO at d = 4 ⇒ T^R(3) ≥
+      9», is SIGNED»; REFEREE-2 l. 18 «**SIGN WITH GAP G-FLIP-1** (Opus 5.5, D12): ruling below», l. 85 «RESULTS must keep that wording.
+      The item must not be cited as an unconditional DEAD.». «Does NOT claim: anything about the NOW channel at d = 4 (UNKNOWN; box 160
+      §0); anything about SLOT-TRADE or FLIP-ADD (both OPEN); that seg1 + tail can exceed T^R(d − 1) by more than 1.» (l. 194-195).
+  The RESULTS line (L-3) states (a)-(g) with their exact hypotheses, and nothing wider.
+- Premise: RESULTS R104's definition of the IDEAL model and of the Ξ-graph (no R104 theorem), restated in packet §0; and RESULTS R109's
+  SEG-ONCE, at l = −1 only, quoted verbatim by the packet (l. 21-24) from R109's title, where the quote occurs once, byte for byte. L-3:
+  «premise: R104's definition of the model only, no theorem of R104 used; and RESULTS R109's SEG-ONCE at l = −1 only». Use: with l = −1
+  the interval may be the whole run, and every mover of 𝓛^R_d has degree 2, so each level-0 mover moves at most once in a run; this
+  gives W-ONLY (d)'s «flips ≤ 2» (l. 104-105) and NOW-ONCE (c) (l. 118). R109's 𝓛_d and T*(d) are named in the line only to keep them
+  apart (packet l. 25-26; REFEREE l. 26 «T* is named but never used.»; REFEREE-2 l. 27). Not used: RESULTS R105 (so RESULTS Erratum E-2
+  to R105 does not bear on this entry), R106, R107, R108, docs/lit (packet l. 27-28; REFEREE l. 26; REFEREE-2 l. 28 «Confirmed by
+  reading every proof step.»). The DEAD's machine premise T^R(3) ≤ 8 is its listed gap, not a premise of a signed statement. The
+  instances are data files, recomputed by both referees with their own simulators (REFEREE «β-set simulator written from R104's text»,
+  l. 89; REFEREE-2 l. 74-76, «= packet §6 exactly»).
+- L41, L42 and L43. The proofs are L-NEW successor 53's (packet l. 5), including F-a and F-b, which the lane wrote out after the
+  referees' findings: F-a is REFEREE's note FL-N1 (the proof of (b) uses no ISO), F-b the exchange argument both referees found
+  independently (REFEREE FL-N2, REFEREE-2 N-1); both signed the written forms. Nothing referee-written is a proof step of the entry (my
+  reading; neither referee mentions L41). The DEAD (g) refutes an explicit bound by one instance only under a machine premise, so it is
+  labelled CONDITIONAL, as REFEREE ruled under its reading of L42 (an uncovered premise stated as an explicit hypothesis, labelled
+  CONDITIONAL) and L43 (an instance must exceed an EXPLICIT ESTABLISHED bound), and as REFEREE-2 signed it «WITH GAP»; the line keeps
+  the instance's unconditional content («without it the instance shows that SC-ISO at d = 4 forces T^R(3) ≥ 9»).
+- Fixes (docs/new/P-IDEAL-FLIP-fixes.md, L-NEW successor 53, append-only; entry 1 at 4c2e5124, 57 lines, sha1
+  f8d3677e4754fde9922208782483f9d4bff168ac; entry 2 at 47b4e165, 81 lines, sha1 4220c44e6caa0bc6e2b2d4363ba3f5ec97505de6, l. 1-57
+  unchanged). Entry 1 (l. 4-57), after REFEREE eaa941b9 and REFEREE-2 dc622d03:
+  - F-a (l. 8-19): «### F-a (REFEREE FL-L1): NOW-ONCE (b) without ISO. CHOICE: extend (b); L-2 keeps L-1's unconditional wording for
+    c_t-step sequences.»; the c_t-step sequence for any G ∈ 𝓛^R_d, NOW-ONCE (b′) and its proof (Claims (c)). REFEREE §C (74fae0fa, l.
+    166-172): «No Ξ-value and no ISO is used. Correct; it closes FL-L1 by extension.»; REFEREE-2 (8b53a9e2, l. 9-14), with its own DATA:
+    «1,500 random 𝓛^R_d genomes (d 2-4; 1,300 non-ISO), random bit sequences, 163 consecutive-change pairs, 0 violations.».
+  - F-b (l. 21-36): «### F-b (REFEREE FL-L2 = REFEREE-2 N-1): SWAP-RUN without the «some q with b_0(q) = c_1» caveat (exchange
+    argument)»; the statement for any q and its proof (Claims (e)); «The packet's caveat («If no q with b_0(q) = c* exists …») is no
+    longer needed: q is arbitrary, and the bit c* = c_1 plays no role.» (l. 34). REFEREE §C l. 179 «It is the same argument as my FL-N2,
+    in a cleaner form (no c* needed).»; REFEREE-2 L2 file l. 15-17 «It is my N-1 written out.», «The caveat is correctly dropped.».
+  - F-c (l. 38-47): «### F-c (REFEREE-2 F-1): SWAP-RUN's «Does NOT claim» remark corrected»: H_q and (G^swap)_q have degree-1 level-0
+    movers, so they are not in R109's 𝓛_d; by R109's SHIFT their shifted forms lie in 𝓛_(d−1), so each piece has at most T*(d − 1)
+    moves; «Corrected remark (not a signed statement; no bound is claimed)» (l. 42); «This uses R109 SHIFT and nothing else; the
+    packet's premise list is not changed for any signed statement (the remark is outside the signed text).» (l. 46-47). REFEREE §C l.
+    181 «F-c (REFEREE-2 F-1, unsigned remark): CORRECT.»; REFEREE-2 L2 file l. 18 «F-c (my F-1): CORRECT.». Not part of this entry.
+  - Line L-2 (l. 49-57): three hunks: «(1) REQUIRED (REFEREE FL-L3): [-DEAD:-]{+CONDITIONAL DEAD (premise T^R(3) ≤ 8, machine):+}.» (l.
+    50); the F-a choice, no hunk (l. 52-53); REFEREE-2's optional P-3 (the frozen form «from any state with q at 0 and 1») and P-1
+    («every start)», since every checked genome has d ≤ 4) (l. 54-56); «Nothing else changed.» (l. 57). REFEREE §C l. 186 «L-2: my own
+    word diff (git diff --word-diff) finds exactly 3 hunks, equal to entry 1's list.»; REFEREE-2 L2 file l. 23 «Token diff: exactly the
+    3 hunks of entry 1.».
+  - Entry 2 (l. 59-81), after CHECKER C122 (80ed31a6): «Makes line L-3 (docs/new/P-IDEAL-FLIP-line-L3.txt) = L-2 (8099415b) with exactly
+    the four replacements R1-R4 of CHECKER C122 §5» (l. 60); «DATA scope and source-note wording only: no statement, definition or
+    premise changes.» (l. 62); the word diff L-2 → L-3 (l. 64-75) and R1-R4 with their E-items (l. 76-80); «Applied; nothing else
+    changed.» (l. 81). REFEREE-2 Addendum 1 (8fde383f, l. 36-37): each old string once in L-2, each new string once in L-3, «L-2 with
+    R1, R2, R3, R4 applied equals L-3 exactly».
+  No fix weakens a signed statement; F-a and F-b extend (c) and (e); entry 2 changes DATA scope and the source note only.
+- Not signed: packet §7 (DATA, machine checks, EXCLUDED, TARGET diff, READING; «DATA / READING (not to sign)», l. 17), in particular the
+  T_k(m) table (m = 1, 2, 3; l. 198-211: «Each count covers ONLY the statement «T_k(m) ≥ t» (SAT) or «T_k(m) ≤ t − 1» (UNSAT at t) on
+  𝓛^R_(m+1) with ISO»), the T^R values (l. 216-217), the encoding READING (l. 212-215) and the READING «W-ONLY + SWAP turn the W-channel
+  part of SLOT-TRADE into a question about TWO fixed genomes alternating at most three times (k = 2)» (l. 233-234); fixes F-c (a
+  remark). The machine premise T^R(3) ≤ 8 is not signed by either referee as a result (REFEREE l. 101 «Not checked by me: T^R(3) ≤ 8.»).
+  OPEN, not claimed: CONJECTURE FLIP-ADD (T_2(m) ≤ T^R(m) + O(m), l. 227); CONJECTURE SLOT-TRADE (RESULTS R109); any bound on T_k(m) for
+  m ≥ 2; T^R(d) for d ≥ 3 as a result; whether T^R(d) = T*(d) (l. 58); the NOW channel; Ξ-cyclic genomes; genomes outside 𝓦_d;
+  G-N5-TIME.
+- Referee strengthening (NOT part of this entry; referee remarks and own checks):
+  (i) REFEREE-2 l. 43: W-ONLY (c) «holds without ISO too, since states of H_q carry q at 0, 1; not needed.».
+  (ii) REFEREE l. 98-99 and REFEREE-2 l. 105-106: FLIP-1's bounds are reached on random ISO genomes of 𝓛^R_2 (6,400 and 3,200 (genome,
+       start) pairs; maxima 2 at k = 0 and 3 at k ≥ 1).
+  (iii) REFEREE-2 l. 100-104: its genome sets are random genomes of 𝓦_d (d ≤ 5; level-0 movers of degree 1-3, widths 1-3 above, degrees
+        1-3, half ISO), random 𝓛^R_d genomes (3/4 ISO) and the 50 corpus genomes; W-ONLY (a) on 23,160 real steps «(incl. non-𝓛^R 𝓦_d
+        genomes with degree-1 and degree-3 movers, which the lane DATA does not cover)»; SWAP on 72,128 (state, c) pairs; NOW-ONCE (b)
+        on 5,935 pairs.
+  (iv) REFEREE-2 L2 file l. 13-14: NOW-ONCE (b′) on 1,500 random 𝓛^R_d genomes, 1,300 of them non-ISO.
+  (v) REFEREE-2 l. 89-93 (DATA, not a proof): with L-RED's encoding re-run (not independent), and by hill-climbs on 𝓛^R_3 with its own
+      simulator, no T ≥ 9 was found (T 8 reached from the T = 8 witness, never 9).
+- Honest limits: (i) A REDUCTION inside the IDEAL model: W-ONLY (d) bounds T on the ISO genomes of 𝓛^R_d by T_2(d − 1) + 2, a quantity
+  of the external-flip model, and SWAP-RUN writes a forced run with k flips as at most k + 1 pieces of runs of two fixed IDEAL genomes
+  (that the two together turn the W-channel part of SLOT-TRADE into a question about two genomes alternating at most three times is the
+  packet's READING, l. 233-234, not signed); it bounds nothing polynomially (T_2 is not bounded here); G-N5-TIME stays open; not M3, not
+  a step-4 pass, not a TARGET.md claim. (ii) W-ONLY (a) holds on all of 𝓦_d; W-ONLY (b)-(d), SWAP-RUN and FLIP-1 are stated under ISO;
+  NOW-ONCE and SWAP are about 𝓛^R_d, the R197-convention ladders only (not R109's 𝓛_d: G^swap is in 𝓛_d and not in 𝓛^R_d); Ξ-cyclic
+  genomes are not covered. (iii) The DEAD (g) is CONDITIONAL: SC-ISO is false only together with the machine premise T^R(3) ≤ 8, a
+  CaDiCaL UNSAT on L-RED's encoding, not Lean and not landed; unconditionally, the instance shows that SC-ISO at d = 4 forces T^R(3) ≥
+  9. REFEREE-2's audit of an independent encoding of the same premise by L-COMP (claude/l-comp 6f19564f; R2-T3R-audit.md, d1c4a530,
+  2026-11-05 12:49Z) is one referee's audit; it is not a signature of this entry, and the label changes only through a separately landed
+  item. Only the W-channel ISO form of the lane's single-channel trade is touched; the NOW channel is not claimed. (iv) FLIP-1 is exact
+  at m = 1 only; for m ≥ 2 the T_k(m) values are lane DATA (packet §7), not signed. (v) The DATA is per statement, as the line's DATA
+  parenthesis says, with these exact sets: flipcheck.py runs 300 random genomes of 𝓛^R_d (100 each at d = 2, 3, 4; 225 drawn with ISO,
+  75 drawn without it, of which 65 are not ISO) and the 50 𝓛^R genomes in box160/out and box162/out (36 ISO), every start (all have d ≤
+  4); W-ONLY step form and NOW-ONCE (real runs) on all of them; the ISO independence, frozen form (one start per (genome, q)), the bound
+  T ≤ T_2(d − 1) + 2, SWAP and FLIP-1 checks on the 261 ISO genomes only (FLIP-1 on the 82 with d = 2); SWAP's 15,660 (state, c) pairs
+  are of ISO genomes only, though Lemma SWAP needs no ISO; SWAP-RUN, NOW-ONCE (b′) and the T_k(m) values for m ≥ 2 have no lane DATA
+  (the referees' own checks, Data). (vi) Every statement is about R104's IDEAL model on acyclic Ξ-graphs, or the c-step defined from it;
+  nothing is said about a real N5 run or a parity game beyond what R104 already says (packet l. 230-232). (vii) Premises: RESULTS R104's
+  definition and RESULTS R109's SEG-ONCE at l = −1 only; no R105 item, so RESULTS Erratum E-2 does not bear; RESULTS R108 is not used.
+  No lit note, no lane file, no outside source. No Lean. (viii) Two of the line's clauses (NOW-ONCE for c_t-step sequences without ISO,
+  SWAP's concatenation for any q) are proved in docs/new/P-IDEAL-FLIP-fixes.md (F-a, F-b), which the line's source note names
+  («docs/new/P-IDEAL-FLIP.md with its fixes entry 1, docs/new/P-IDEAL-FLIP-fixes.md»). (ix) Names: «FLIP-1» here is the one-level value
+  of T_k, not part (b) of R69's Lemma FLIP; the gap «G-FLIP-1» cited here is REFEREE-2 successor 27's gap on P-IDEAL-FLIP, not the joint
+  gap G-FLIP-1 of R69; b_0 here is the key bit of the two level-0 movers, not R106's start b_0 of L_K; κ^c is bound in the line, not
+  N5's κ. (x) The DEAD instance iso_d4_st9 is the lane's own (box 160), used here only as a counterexample under the premise; its T is
+  R104's number of steps.
+- Data (DATA, not proof): experiments/new/box162/flipcheck.py (l-new e93b0e82, sha1 9fd0b1926b78eeec0f5d83f8cac42f4a6fbe6965, 156 lines;
+  the c-step, the forced run and the exact per-start maximum V_k by memoised search, on the box 150 simulator
+  experiments/new/box150/check.py, l-new 0ebddcf5, sha1 019de0f7b36dcbd47743b3d27b4a1a93549d574b, 214 lines), wired into
+  experiments/new/check.sh block «P-IDEAL-FLIP» (l. 903-910 at 4c2e5124, with sha1 pins of the packet, L-1, the three instances, the
+  fixes and L-2; at 47b4e165 the pins also hold L-3 4089bd73 and the fixes file at entry 2, 4220c44e, l. 905-907 changed); unchanged at
+  4c2e5124 and 47b4e165. L-3's DATA parenthesis: «(DATA: W-ONLY, step form: experiments/new/box162/flipcheck.py, 0 violations on 44,084
+  real steps (300 random 𝓛^R genomes with d = 2, 3, 4, 225 of them drawn ISO and 75 drawn without that restriction, 65 of these not ISO,
+  and the 50 𝓛^R genomes in box160/out and box162/out, 36 of them ISO, every start); W-ONLY, ISO independence: the same tool, 0
+  violations on 31,320 (state, q) pairs of the 261 ISO genomes among them (the 225 drawn ISO and the 36 ISO corpus genomes); W-ONLY,
+  frozen form: 0 violations on 1,044 (ISO genome, q) pairs; T ≤ T_2(d − 1) + 2: 0 violations on 28,896 ISO runs (b_0 changing at most
+  twice and the steps moving levels ≥ 1 at most the exact per-genome maximum with two changes); NOW-ONCE, real runs: 0 violations on 307
+  pairs of consecutive moves of a level-1 mover; SWAP: 0 violations on 15,660 (state, c) pairs of the same 261 ISO genomes (no non-ISO
+  genome tested); FLIP-1 upper bounds: 0 violations on 1,312 (2-level ISO genome, start) pairs, k = 0, …, 6; SC-ISO: the instance
+  replayed by the same tool and by the box 150 checker; NOW-ONCE for c_t-step sequences, the concatenation clause of SWAP and the T_k(m)
+  values for m ≥ 2: no signed DATA (the packet's §7 table is DATA only))». Genome sets: the 300 random genomes are drawn with seed 162,
+  100 each at d = 2, 3, 4, genome i without the ISO constraint iff i % 4 = 3 (75 genomes; 65 of them are not ISO, 10 are ISO by chance);
+  the corpus is every 𝓛^R genome in box160/out and box162/out (50: 8, 29 and 13 at d = 2, 3, 4; 36 ISO); every start of each (38,912
+  runs, 44,084 real steps). The ISO-only checks use the 225 random genomes drawn ISO and the 36 ISO corpus genomes (261): ISOA 30 random
+  states × 4 level-0 configurations each, FROZ the stored start with each of the 4 configurations, CONS every start (28,896 runs), SWAP
+  30 random states × 2 bits each, FLIP1 every start of the 82 with d = 2, k = 0, …, 6. Controls: «SWAPNEG 12594» (G^swap at the same c
+  differs) and «NOWCTRL 307» (all consecutive move pairs; none lies in an interval of constant b_0).
+  The block's outputs, reproduced by both referees at 9effea1f and re-run for this draft (2026-11-05T14:12:13Z-14:13:02Z from a `git
+  archive` of 4c2e5124's experiments/new and docs/new, rc 0, PASS; again at the second fill, 2026-11-05T17:47:06Z-17:47:27Z from a `git
+  archive` of 47b4e165's, rc 0, PASS line ending «fixes 4220c44e, line L-2 8099415b, line L-3 4089bd73: PASS», flipcheck raw output
+  byte-equal to the first run's): «RANDOM seed 162 genomes 300 + corpus 50 runs 38912 steps 44084 states 7830 WONLY 0 ISOA 0 FROZ 0 CONS
+  0 SWAP 0 SWAPNEG 12594 NOWONCE 0 NOWCTRL 307 FLIP1 0»; «CHECKED WONLY 44084 ISOA 31320 FROZ 1044 CONS 28896 SWAP 15660 NOWONCE 307
+  FLIP1 1312»; «INST iso_d4_st9 LR True ISO True d 4 T 11 level-0 steps [7, 8] seg1 6 tail 3»; «WIT kf0_d2_t2.json LR True ISO True V_0
+  2»; «WIT kf1_d2_t3.json LR True ISO True V_1 3»; on the instance «TOTAL genomes 1 runs 1 steps 11 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0
+  CHAIN 0 KEYFLIP 0 DECR 0 TOPMONO 0 RBOUND 0 RESTR 0 ICHARGE 0 REC 0 VIOL 0 (info REC148 0)». REFEREE §4 l. 103-111 («All match
+  check.sh's patterns.», «pin162: all five sha1s EQUAL.»); REFEREE-2 l. 96-98 («PASS, exit 0.»).
+  REFEREE (successor 23; own docs/referee/scratch/flip_probe.py, sha1 b1acee9b55c824fdb86db08724c5ec4d81765ac3, «β-set simulator written
+  from R104's text; c-step and forced runs from §1's text»; log xinew_logs/flip_probe.txt): the instance's twelve states equal §6's list
+  (l. 91-93); I-0 and I-1 replayed, V_0 = V_1 = V_6 = 2 for I-0 and V_0 = 1, V_1 = V_6 = 3 for I-1 (l. 94-97); «400 random ISO genomes
+  of 𝓛^R_2 × 16 starts = 6,400 pairs. max V_0 = 2, max V_6 = 3:» 0 violations (l. 98-99); «W-ONLY (a) on 367 real steps of 400 random
+  𝓛^R_3 genomes (ISO not required): 0 violations.» (l. 100).
+  REFEREE-2 (successor 27; own docs/referee-2/R2-P-IDEAL-FLIP/flip_check.py, sha1 ae91714fe49908c635bbccffcd55df878358e865, «my
+  simulator; c-step, forced run, H_q, G^swap, exact FLIP-1 search all my own», no committed log): W-ONLY (a) on 23,160 real steps, (d)
+  on 9,380 ISO 𝓛^R runs, (b) 40,632 state pairs, (c) 40,480 frozen runs, SWAP 72,128 (state, c) pairs, NOW-ONCE (a) 307 move pairs and
+  (b) 5,935 pairs, «19,312 runs in all. 0 violations.» (l. 102-104); FLIP-1 exact on 3,200 pairs (l. 105-106); controls FNEG and SWAP at
+  the same c (l. 107); the instance recomputed (l. 74-76); and (L2 file l. 13-14) NOW-ONCE (b′) on 1,500 genomes, 1,300 non-ISO.
+  No signed statement uses any count.
+- Signatures: REFEREE docs/referee/R-P-IDEAL-FLIP.md: successor 23's report eaa941b96cfa89bceca7f97968ad9c07e6573f0a
+  (2026-11-05T11:14:44Z, new file, 159 lines, sha1 40a4a1ba8ad3d59c5a2f392e3425240290fff217, with scratch/flip_probe.py and
+  xinew_logs/flip_probe.txt): W-ONLY, NOW-ONCE, SWAP, SWAP-RUN, FLIP-1 SIGN, the DEAD SIGN AS CONDITIONAL (l. 12-17, 153-154); §C
+  74fae0fa4305b46677d9751d84b4dd83596d4e69 (12:55:02Z, 198 lines, sha1 333749f26b47f580c3c74f67dc7cee335e84933a): F-a and F-b SIGN (l.
+  166, 173), «VERDICT: line L-2 MATCHES.» (l. 192), «Signed: W-ONLY, NOW-ONCE (incl. (b′)), SWAP, SWAP-RUN (F-b form) and FLIP-1.» (l.
+  193). L-3: successor 24's §C add. 1 5c02d44d775d67d8812087b762398a7562da0134 (2026-11-05T17:26:52Z, file sha1 675727cdc73fba7a1b1c8fc3c302fde2a7b51056): «- Verdict: L-3 MATCHES (L-2 + C122 §5 R1-R4, nothing else).» (l. 211).
+  REFEREE-2 (successor 27): docs/referee-2/R2-P-IDEAL-FLIP.md dc622d031fbcf487ca000cbf4cde9b0b0153527b (2026-11-05T11:17:53Z, new file,
+  136 lines, sha1 f7e1a3bd259f17b0c2049af4cdb4a3dc7dabfe99; with R2-P-IDEAL-FLIP/flip_check.py): every statement SIGN, the DEAD «SIGN
+  WITH GAP G-FLIP-1», L-1 MATCHES (l. 10-19, 134-136); docs/referee-2/R2-P-IDEAL-FLIP-L2.md 8b53a9e2653ff89a20763ac7f33e18a00feab6b3
+  (12:54:46Z, new file, 30 lines, sha1 96faae6e865c9f116907417e1c8d8d521e0766d8): F-a and F-b SIGN (l. 9, 15), «## Line L-1 → L-2:
+  MATCHES» (l. 22), after the byte test of l. 23-26; Addendum 1 to the same file, 8fde383fb248bd8a8216c039e002350d4002387f (17:06:22Z,
+  42 lines, sha1 7137cb341c136925f5db0ff8fd571834f6064b9b; l. 1-30 = 8b53a9e2's, by cmp): the byte test of L-3 against C122 §5 (l.
+  36-37), «- Verdict: L-3 MATCHES.» (l. 42). Lane: freeze and L-1 9effea1fff84fae8170b181e858fd88363d717fa, fixes entry 1 and L-2
+  4c2e512421db51180279a63475e98d1081414e8d, fixes entry 2 and L-3 47b4e16514ad10548b2724b780fee01202cc77d2.
+  INDEPENDENCE: REFEREE l. 2 «Independent: I did not read docs/referee-2/.»; REFEREE-2 l. 2-3 «Independent: docs/referee/ not read for
+  this packet before this push.». REFEREE's report (11:14:44Z) precedes REFEREE-2's (11:17:53Z) by 3 min; neither cites the other's
+  first report; each recomputed the instance with its own simulator written from R104's text and replayed both FLIP-1 instances.
+  Differences, resolved: on L-1 REFEREE required three line changes (FL-L1 to FL-L3), REFEREE-2 MATCHED with optional items; both found
+  the SWAP-RUN caveat removable (FL-N2 = N-1); REFEREE-2 alone found the wrong T* remark (F-1, now F-c, unsigned); both treat the DEAD
+  as conditional on the same machine premise. Both SIGN the same statements and both MATCH L-2; REFEREE-2 MATCHES L-3. No disagreement
+  in substance.
+- TARGET.md diff: TARGET.md §1-§3 define parity games («A parity game is G = (V, V_E, V_O, E, pr) with V finite»), the regions W_E, W_O,
+  M4 (§2 «There is a deterministic algorithm A and a polynomial p such that for every parity game G, A on input G halts within») and the
+  word-RAM cost model; no statement of this entry mentions a parity game, a winning region, an algorithm's running time or a cost model
+  (packet §7 l. 230-232 «Diff against TARGET.md: no statement mentions a parity game, a winning region, an algorithm's running time or a
+  complexity class.» «None is an M4 or M3 claim, none bounds anything polynomially, none is a gauntlet step. G-N5-TIME stays OPEN.»;
+  REFEREE §5 l. 116 «Agreed with §7: not M4, not M3, not a gauntlet step. G-N5-TIME OPEN.»; REFEREE-2 l. 114-115 «No M4 / M3 claim, no
+  gauntlet step. FLIP-ADD, SLOT-TRADE, G-N5-TIME OPEN. The packet's §7 diff is correct.»). The line (L-3) makes no M4 claim and no
+  TARGET claim; its tail reads «a REDUCTION of the W-channel part of SLOT-TRADE to an external-flip model inside the IDEAL model» and
+  «G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim» (L-3, by script). Not a step-4 pass. GAPS G-N5-TIME: open.
+
 **Erratum E-1** (not a result; 2026-11-01 05:28Z by date -u; Lead; corpus counts in RESULTS R97-R100):
 - What is wrong: the DATA-of-record sentences that say «1,132 games» for the L-SI box 50b / box 53 corpus (sbcg.lst 719 lines + alt_all.lst
   413 lines) count RUNS, not games. Measured by CHECKER (C111 N-7, claude/checker d53e1d4f) at trunk 68d50c8f: experiments/si/anc58/
