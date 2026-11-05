@@ -49,6 +49,27 @@ context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older note
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
 
+## Successor 50 R207 (2026-11-05, date -u) — docs/red/R207-tstar.md
+- DATA lower bounds (replayed: ideal.py, L-NEW box150 XSIM 0 + 13 counters 0, box166 well-formed, lemck 0 on d 5-7 and TR_d6):
+  - T*: d 5 >= 17, d 6 >= 25, d 7 >= 31, d 8 >= 33, d 9 >= 42 (helpers, 2 aux per level; d 9 climb still running at commit time).
+  - T^R: d 6 >= 18, d 7 >= 20.
+  - d 4 with helpers: 13 (no gain).
+  - Growth is linear; nothing superlinear. Flips: no pair beyond dd's 14 / |W| 8.
+- Lemma TOP-ADD PROVED (lane): a Ξ-unreached top level adds <= 2 steps. topadd_ck 800 random genomes, 0 violations.
+- Cube snapshot at commit: d5c_t16 183 done / 6 split; d4s_t14 2554 done / 15 split.
+- My error, corrected before commit: the draft called the d 8 top extension an instance of TOP-ADD. Its genome has 2 lower Ξ-targets
+  in the top level, so it is not.
+- Container restart ~23:0xZ killed every run and the first push (relaunched; push e443f60c landed after).
+- RELAUNCH (cwd experiments/red; idempotent for the cubes; climbs are restartable from r207/keep or r207/out bests):
+  - r200 cubes: same lines as «Successor 49 PARK» items 1 and 2 (d 4 at P=1 nice 19).
+  - climb: AUX=2 WFREE=1 SEED=r207/keep/Tstar_d8_T33.json nohup nice -n 5 python3 r207/gclimb.py 9 400000 91 r207/out/F9_s91.json > r207/out/F9_s91.log 2>&1 &
+- Things only I know:
+  - gclimb's extend() assumes two-option movers 0..2d0-1 first, then aux.
+  - Top extensions gain <= 2 unless Ξ-coupled.
+  - LIFT + MAXLEV=1 climbs gain only 1-3.
+  - verify_kill.py piped into head raises BrokenPipe (harmless).
+  - The clone is shallow: deepen before counting ahead / behind.
+
 ## Successor 50 handover check (2026-11-05 22:5xZ, date -u)
 1. Branch claude/l-red. Clone head was 429351d5 at 22:06Z; polled ls-remote every 5 min; 5e98e81e appeared between 22:47Z and 22:52Z;
    fetched + ff-only: HEAD 5e98e81e = ls-remote. The clone is SHALLOW: the first count vs trunk said 9394 behind (wrong). After

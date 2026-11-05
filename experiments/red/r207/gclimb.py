@@ -10,7 +10,8 @@ Usage: gclimb.py d iters seed out.json"""
 import sys, os, json, random
 H = os.path.dirname(os.path.abspath(__file__)); sys.path[:0] = [os.path.join(H, "..", "r187"), os.path.join(H, "..", "r178")]
 import ideal
-AUX = int(os.environ.get("AUX", "0")); WFREE = os.environ.get("WFREE", "0") == "1"
+# MAXLEV: option-local mutations only on movers of level <= MAXLEV (default all)
+AUX = int(os.environ.get("AUX", "0")); MAXLEV = int(os.environ.get("MAXLEV", "99")); WFREE = os.environ.get("WFREE", "0") == "1"
 def norm(G):
     """renumber: gates 0..M-1 and ranks 0..M-1 order-preserving, beta ids in mover/option order"""
     N = G["N"]; flat = [(v, k) for v in range(N) for k in range(len(G["opts"][v]))]
@@ -79,8 +80,9 @@ def lift(G0):
         opts[u] = [[mp[w] if w >= 0 else 0, mp[x] if x >= 0 else -1, b] for (w, x, b) in G["opts"][v]]
     return norm(dict(N=N, lev=lev, opts=opts, gate=gate, br=br, bp=bp, start=start, pi=pi))
 def mutate(G, rng):
-    H2 = json.loads(json.dumps(G)); N = H2["N"]; pi = H2["pi"]; v = rng.randrange(N); k = rng.randrange(len(H2["opts"][v])); r = rng.random()
-    M = sum(len(o) for o in H2["opts"])
+    H2 = json.loads(json.dumps(G)); N = H2["N"]; pi = H2["pi"]; r = rng.random()
+    low = [u for u in range(N) if H2["lev"][u] <= MAXLEV]; v = rng.choice(low); k = rng.randrange(len(H2["opts"][v]))
+    M = sum(len(o) for o in H2["opts"]); lowb = [o[2] for u in low for o in H2["opts"][u]]
     if r < 0.30: H2["opts"][v][k][1] = rng.choice([u for u in range(N) if pi[u] > pi[v]] + [-1])
     elif r < 0.38:
         a, b = rng.randrange(N), rng.randrange(N); pi[a], pi[b] = pi[b], pi[a]
@@ -89,14 +91,13 @@ def mutate(G, rng):
         c = wchoices(H2, v, k)
         if len(c) < 2: return G
         H2["opts"][v][k][0] = rng.choice(c)
-    elif r < 0.6: a, b = rng.randrange(M), rng.randrange(M); H2["br"][a], H2["br"][b] = H2["br"][b], H2["br"][a]
-    elif r < 0.68: H2["bp"][rng.randrange(M)] ^= 1
+    elif r < 0.6: a, b = rng.choice(lowb), rng.randrange(M); H2["br"][a], H2["br"][b] = H2["br"][b], H2["br"][a]
+    elif r < 0.68: H2["bp"][rng.choice(lowb)] ^= 1
     elif r < 0.9:
-        a, b = rng.randrange(N), rng.randrange(N); ka, kb = rng.randrange(len(H2["opts"][a])), rng.randrange(len(H2["opts"][b]))
+        a, b = v, rng.randrange(N); ka, kb = rng.randrange(len(H2["opts"][a])), rng.randrange(len(H2["opts"][b]))
         H2["gate"][a][ka], H2["gate"][b][kb] = H2["gate"][b][kb], H2["gate"][a][ka]
     else:
-        if len(H2["opts"][v]) < 2: return G
-        H2["start"][v] ^= 1
+        v = rng.choice([u for u in range(N) if len(H2["opts"][u]) == 2]); H2["start"][v] ^= 1
     return H2
 SC = os.environ.get("SCORE", "T")
 def score(G):
