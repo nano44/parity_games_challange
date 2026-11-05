@@ -1,6 +1,82 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 53, Opus 5.5, session_01V5yGRY... see Lead roster; started 2026-11-05 09:29Z by date -u)
+### BOX 162 P-IDEAL-FLIP FROZEN (this push): docs/new/P-IDEAL-FLIP.md (236 lines, sha1 92803bd5) + line L-1 (36418d16); W-ONLY
+  (a)-(d) (T <= T_2(d-1) + 2 on ISO), NOW-ONCE (a)-(c), SWAP + SWAP-RUN, FLIP-1 EXACT (T_0(1) = 2, T_k(1) = 3, k >= 1; instances
+  I-0 c2233e05, I-1 d368d441), DEAD SC-ISO (iso_d4_st9 7ca1e68c; machine premise T^R(3) <= 8). check.sh block w162/pin162.
+  SIGNED: REFEREE 23 eaa941b9 (DEAD conditional, FL-G1), REFEREE-2 27 dc622d03 (DEAD with gap G-FLIP-1). Fixes entry 1 (F-a NOW-ONCE (b) w/o ISO,
+  F-b SWAP-RUN exchange argument, F-c T* cap via SHIFT) + line L-2 (CONDITIONAL DEAD): fixes f8d3677e, L-2 8099415b. EXACT T_k(2) = 4,5,7,8,8 (k 0-4), 9 (k 8): all re-run, logs box162/log.
+  T_0(3) >= 8; T_0(3) >= 9 RUNNING at freeze (box162/run_tk.sh "4 0 8 9"; after a restart delete log/kf0_d4_t9.log.part and rerun).
+### BOX 163 (FLIP-ADD potential): first probe box163/mono.py: MONO (current Xi-value of every mover never falls) holds across
+  arbitrary flips (2,990 forced frames, random c per frame; 0 falls, every moving frame raises some value). Next: prove MONO-FLIP
+  (R105 MONO's proof uses only «a mover moves to a strictly better option»?), T_inf(m) := unlimited flips (finite by MONO-FLIP);
+  SAT T_inf(2) (KF = t), potentials on the Xi side.
+### Successor 53 handover check (STEP 0; written 2026-11-05 09:4xZ by date -u)
+1. claude/l-new: ls-remote 6f347876; local was stale (8591166d) -> fetch + ff-only -> HEAD 6f347876 = ls-remote. Vs trunk
+   claude/vibrant-johnson-nxvvxo (b738337b): 22 ahead / 330 behind, merge-base d488d06d. Lane files only.
+2. Open: BOX 162 freeze P-IDEAL-FLIP (next: write packet + line L-1 + check.sh block, push). BOX 163 FLIP-ADD potential (next: SAT
+   check «Phi does not decrease at a non-flip step» on T_k(m), m <= 3; Xi-side potentials). Nothing else in flight (successor 52's
+   killed runs stay UNKNOWN; relaunch only if needed).
+3. GAPS: G-N5-TIME major open (owner L-NEW); G-N1-LB minor open (L-NEW optional, not routed); G-N5-TERM closed.
+4. D18 (active, INDEX row D18): "Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from
+   areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state
+   them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems."
+   D14 (active): "D" / "You know it can also test prveiously not tested approaches, it can come up with it own as well".
+   D17 (active): "We have so much still of our weekly usage cap, like we are not on track to make the most of it".
+5. Trap: stale clone (8591166d, 4th time); check = ls-remote + fetch + ff-only + HEAD vs ls-remote. Also: *.part logs are NOT
+   gitignored by the repo (box160 has none either: check `git check-ignore`); box162/.gitignore added.
+
+## HANDOVER (successor 52, PARKED 2026-11-05 ~09:0xZ by date -u; context large, second container restart 08:59Z)
+### DONE (every push via scripts/push.sh, VERIFY PASS; Lead informed at each box end)
+- Step 0 (a5583cae). Box 160 SLOT-TRADE channel split (docs/new/N5-SLOT-box160.md; 96650e2c .. e5aea8ed): W-ONLY, NOW-ONCE, FLIP-1
+  PROVED (lane); exact table d 3 (8 / ISO 7 / NOW 6 / NOL0 4; one level-0 mover 6 / 5 / 5), d 4 NOL0 = 8, ISO >= 12, NOW >= 10,
+  one level-0 mover ISO >= 10, NOW >= 9; T_k(1) = 2,3,3,3; T_k(2) = 4,5,7,8,8 (k 0-4), 9 (k 8); T_1(3) >= 10; DEAD single-channel
+  seg1+tail <= T(d-1) at d 4 (iso_d4_st9); adversarial-level-0 relaxation d 3 >= 10.
+- Box 161 FLIP-ADD interim (docs/new/N5-FLIPADD-box161.md, eec8c4ef): Lemma SWAP PROVED (lane); one flip adds 1, 1, >= 2 (m 1-3).
+  No potential checked exactly yet. Lead knows (07:0xZ report).
+### IN FLIGHT: nothing (container restarts 07:25Z and 08:59Z killed every run). UNKNOWN / killed: ISO d4 T>=13 and NOW d4 T>=11
+  (~5 h each), d4 seg1+tail queries (stopped), kf1_d4_t11 (T_1(3) >= 11), ext_d3_t11, ISO FRZ d4 t11, NOW FRZ d4 t10, kf 4 2 13 never ran.
+  L-RED R205 (Lead 03:48Z) has T_2(4) and T_k(3), k <= 4.
+### NEXT for successor 53 (Lead decides): box 161 §3: exact SAT checks of state potentials on E_m (add «Phi(s_t) >= Phi(s_(t-1)) at a
+  non-flip step» to iso.py FREE0; UNSAT = strict decrease). Warning (my reading): a pure armed-count potential with level weights only
+  reproduces LEVEL-PRODUCT; a useful one must use the Xi side (unhappy movers, MONO value vector). Relaunch any killed run you need:
+  re-extract LRED (`git archive 5f3e89e1 experiments/red/r178 experiments/red/r187 experiments/red/r199 experiments/red/r200 | tar -x -C
+  <scratch>/lred`), delete the target's log if it has no RESULT, drop its line from box160/log/queue.done, run box160/queue.sh.
+### Things only I know (successor 52):
+- push.sh pushes only the commit it verified; committing during a running push is safe but needs another push afterwards.
+- New solver logs go to *.part (gitignored) and are renamed at the end; a container restart loses .part logs (no partial result).
+- Never edit a run_*.sh while a copy runs (bash reads scripts lazily; I did it once, the running copies kept the old text).
+- d 4 ISO / NOW maxima at T 13 / 11 need L-RED's cube driver (monolithic CaDiCaL: > 5 h, no answer).
+
+## Resume point (successor 52, Opus 5.5, session_01V5yGRY7HXy7DrLt8zSXsyD; started 2026-11-05 02:00Z by date -u)
+### BOX 160 SLOT-TRADE (Lead brief 2026-11-05 ~01:5xZ; docs/new/N5-SLOT-box160.md; experiments/new/box160/)
+- Tools: box160/iso.py = exact max-T driver on R197 2-wide ladders, adds clauses to L-RED's xcnf.py (read-only copy of claude/l-red
+  @ 5f3e89e1 extracted to $LRED = <scratchpad>/lred via `git archive 5f3e89e1 experiments/red/r178 r187 r199 r200 | tar -x`);
+  modes ISO (no Xi-target at level 0 = W-channel only), NOW (b_0 constant = Xi-channel only), NOL0, FRZ (frozen movers), FREE0+KF
+  (level 0 external, b_0 flips <= k; box160/xcnf_free0.py = one-line-changed copy of xcnf.py). SAT models replayed under ideal.py
+  and box150/check.py (FREE0: own forced-schedule replay).
+- Resumable: box160/run_iso.sh, run_kf.sh (skip targets with a RESULT line), queue.sh + queue.txt (log/queue.done). After a container
+  restart: re-extract $LRED, delete the log of any target without a RESULT line, remove its line from log/queue.done, rerun queue.sh.
+- EXACT so far (2-wide R197 ladders, all genomes and starts): d 3: general 8, ISO 7, NOW 6, NOL0 4; one level-0 mover only
+  (FRZ=1): general 6, ISO 5, NOW 5. d 3 seg1+tail max: general 6, ISO 4, NOW 4 (= T(2): single-channel trade exact at d 3).
+  d 4: ISO >= 12, ISO seg1+tail >= 9 (> T(3) = 8: the d 3 single-channel trade fails at d 4), NOW >= 10. External flips (H = 2
+  levels, T(2) = 4): k 0/1/2/3 -> 4 / 5 / 7 / >= 8.
+### Successor 52 handover check (STEP 0; written 2026-11-05 02:0xZ by date -u)
+1. claude/l-new: ls-remote d488d06d; local was stale (8591166d) -> fetch + ff-only -> HEAD d488d06d = ls-remote. Vs trunk
+   claude/vibrant-johnson-nxvvxo (9a93bd64): 0 ahead / 322 behind, merge-base d488d06d (trunk has merged l-new). Lane files only.
+2. Open: BOX 160 SLOT-TRADE (T*(d) <= T*(d-1) + O(d) on 2-wide degree-2 ladders), proof side: joint bound seg1 vs later segments via
+   the W-gate (KEYFLIP / KF_x key states + LEVEL-PRODUCT), cross-field lens; kill tests on L-RED exact data (T* = 4, 8, 13 at d 2..4).
+   Next: build the level-1 key-state potential and test it on the 52 corpus runs + R200 maxima. Packets IDEAL-SEG / IDEAL-SLOT landed
+   (R108 / R109): nothing in flight.
+3. GAPS: G-N5-TIME major open (owner L-NEW); G-N1-LB minor open (optional, not routed); G-N5-TERM closed.
+4. D18 (active, INDEX row 32): "Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from
+   areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state
+   them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems."
+   D14 (active, row 22): "D" / "You know it can also test prveiously not tested approaches, it can come up with it own as well".
+   D17 (active, row 30): "We have so much still of our weekly usage cap, like we are not on track to make the most of it".
+5. Trap: stale clone (8591166d, 3rd time); check = ls-remote + fetch + ff-only + HEAD vs ls-remote. Also: never pkill -f (kill by pid).
+
 ## Resume point (successor 51, Opus 5.5, session_01V5yGRYupWPCaWBqfX8Hjyk; started 2026-11-04 04:16Z; HANDOVER written ~13:1xZ by date -u)
 ### SUMMARY (successor 51): boxes 156-159, every push via scripts/push.sh, each reported to the Lead
 - 156 M2 (docs/new/N5-M2-box156.md): exact z3 (box156/zmax.py) max T = 1,2,3,4,6 for N = 1..5, max M2 = 0,0,1,2,3; N 6: T >= 8,
