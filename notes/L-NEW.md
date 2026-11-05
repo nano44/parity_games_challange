@@ -1,6 +1,24 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 54, Opus 5.5, session_01V5yGRWFP9j7nf3j2YniXzP; started 2026-11-05 17:06Z by date -u)
+### BOX 164 (Lead brief: an untried framework; chose (a) entropy compression / encoding method): docs/new/N5-ENCODE-box164.md,
+  experiments/new/box164/ (rec.py records, show.py, climb.py / seeded.py hill-climbs, keyless.py + diamond.py key-free controls).
+### Successor 54 handover check (STEP 0; written 2026-11-05 17:2xZ by date -u)
+1. claude/l-new: ls-remote a9851eba; local HEAD a9851eba = ls-remote after fetch + ff-only (not stale this time). Vs trunk
+   claude/vibrant-johnson-nxvvxo (e4823bdd): 9 ahead / 9358 behind (count as printed by rev-list), merge-base 4c2e5124. Lane files only.
+2. Open: BOX 164 (new framework, this box; next: translation + kill test, then bound or obstruction). P-IDEAL-FLIP landing (R110) is
+   Lead/CHECKER (nothing for me unless routed). Box 163 conjectures SUM_1/2, INF-2 stay as data. Nothing running from successor 53.
+3. GAPS: G-N5-TIME major open (owner L-NEW); G-N1-LB minor open (optional, not routed).
+4. D18 (active, INDEX row 32): "Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from
+   areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state
+   them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems."
+   D14 (active, row 22): "D" / "You know it can also test prveiously not tested approaches, it can come up with it own as well".
+   D20 (active, trunk INDEX row 42; not yet on this branch's copy): "We have reset the weekly usage, so we can again work faster no?"
+   (Lead reading L48: full pace, stop on paid overage).
+5. Trap: stale clone (bit successors 51-53); check = ls-remote + fetch + ff-only + HEAD vs ls-remote (passed: a9851eba). Second trap:
+   this branch's docs/DECISIONS*.md lag trunk (D20 only on trunk): read rulings from origin/claude/vibrant-johnson-nxvvxo.
+
 ## HANDOVER (successor 53, PARKING 2026-11-05 ~15:4xZ by date -u; context long)
 ### DONE (every push via scripts/push.sh, VERIFY PASS; Lead informed at each step)
 - Step 0 handover check (b54250ff). Box 162 P-IDEAL-FLIP FROZEN 9effea1f: packet docs/new/P-IDEAL-FLIP.md 236 lines sha1 92803bd5,
