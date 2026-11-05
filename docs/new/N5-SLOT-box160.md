@@ -37,7 +37,7 @@ SLOT-TRADE, IDEAL-ACYC-POLY and G-N5-TIME stay OPEN.
     | --- | --- | --- | --- | --- | --- | --- |
     | T_k(1) | 2 | 3 | 3 | 3 | 3 | (k 6: 3) |
     | T_k(2) | 4 | 5 | 7 | 8 | 8 | 9 (T ≥ 10 UNSAT 1626 s) |
-    | T_k(3) | ≥ 8 | ≥ 9 (10 running) | ≥ 12 (ISO witness) | | | |
+    | T_k(3) | ≥ 8 | ≥ 10 (SAT 8261 s; 11 running) | ≥ 12 (ISO witness) | | | |
 - READING (what the table says about SLOT-TRADE):
   - The W-channel alone gets almost all the growth: at d = 4, ISO runs reach ≥ 12 of T^R(4) = 13 (at d = 3: 7 of 8). The Lead's pointer
     is right: the trade-off to be proved lives in the W-gate. The Ξ-coupling of level 0 is not needed for most of T^R(d) − T^R(d − 1).
