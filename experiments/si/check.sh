@@ -1207,3 +1207,6 @@ echo "si (P-N5-S4B L-1 pinned, distinct counts): PASS"
 # box 64 (FLIPOR: SAME-CUBE / FLIP-PATH / BIT-CHAIN; docs/si/N5-FLIPOR-box64.md)
 bash box64/check64.sh
 echo "si (box 64: FLIPOR): PASS"
+# box 65 (FOOT: GAIN-IND, footprint route fails, g*(1) = 2, g*(2) = 4; docs/si/N5-FOOT-box65.md)
+bash box65/check65.sh
+echo "si (box 65: FOOT): PASS"
