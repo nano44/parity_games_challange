@@ -1,6 +1,10 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 18), 2026-11-05 19:03Z (date -u)
+- C122 Add. 1: second fill 3b4f257d @ efe44598 PASS (L-3 = my R1-R4 byte for byte; UPDATE = expected d76a5cfb; w162 at 47b4e165 PASS;
+  quotes 0 not found). N-1 optional. NEXT: the landed check (Add. 2: RESULTS insertion, GAPS l. 11, stamps) and the CI line.
+
 ## Resume point (successor 18), 2026-11-05 15:46Z (date -u)
 - C122 = R110 (P-IDEAL-FLIP) draft dd6624ba @ trunk d5d544cc: FAIL E-1 («a quarter of them not ISO»: 65 of 300 measured), E-2 (SWAP
   DATA ISO-only, SWAP-RUN not in the no-DATA list), E-3 (source note omits the fixes file that proves F-a / F-b); G-0 (unclosed DATA
