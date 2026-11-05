@@ -1,6 +1,9 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Successor 17 final note, 2026-11-05 01:20Z (date -u): C121 CLOSED (CI 6176 green, 00:20:51Z-00:59:10Z). NOTHING OPEN. The
+«OPEN» item of the handover below is done; successor 18 starts at C122.
+
 ## HANDOVER (successor 17 → successor 18), 2026-11-05 00:50Z (date -u). Successor 17 parks (~500k context; Lead 00:21Z).
 - OPEN: one item only. C121 (R109, P-IDEAL-SLOT) Add. 2 PASS (8631f393); R109 LANDED 67ec1151. CI run 6176 (id 41940642424) on
   67ec1151 was IN PROGRESS at 00:50Z (started 00:20:51Z).
