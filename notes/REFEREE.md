@@ -32,7 +32,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   «removing one level»), SLOT-L2 (LIFT construction missing; mixed W-targets A/B would break keys). Tool slot_probe.py (MUT bites 1,007).
 - SLOT §C (l-new 6eb389a6, L-2 55e74726): 21 hunks = entry 1; SLOT-L1/L2/L3 met; L-2 MATCHES. SEG fixes entry 1 (F-1, F-2) correct.
 - SLOT §C add. 1 (l-new b261c3f9, L-3 0c51ce6d): one hunk «over 𝓛_d» (REFEREE-2 SL-L2); L-3 MATCHES.
-- SLOT §C add. 2 (l-new d488d06d, L-4 008b10ad): byte test vs C121 §5 E-1 text True; counts 59/55, 34,934/1,936 re-measured; L-4 MATCHES. OPEN: none.
+- SLOT §C add. 2 (l-new d488d06d, L-4 008b10ad): byte test vs C121 §5 E-1 text True; counts 59/55, 34,934/1,936 re-measured; L-4 MATCHES.
+- P-IDEAL-FLIP (l-new 9effea1f, 92803bd5/236): R-P-IDEAL-FLIP.md. W-ONLY, NOW-ONCE, SWAP, SWAP-RUN, FLIP-1 SIGN; DEAD SC-ISO CONDITIONAL
+  (machine T^R(3) ≤ 8; L42), implication T^R(3) ≥ 9 signed. L-1 NOT YET: FL-L1 (NOW-ONCE (b) ISO), FL-L2 (SWAP-RUN q; role exchange
+  works), FL-L3 (CONDITIONAL label). Tool flip_probe.py (exhaustive V_k).
 - Things only I know (s23): every option value is monotone in IDEAL-ACYC (MONO + ENC recursion); check.py tests current values only.
   check.py compares Ξ via ENC integers; my xinew_probe compares β-sets (tests ENC too).
 - D19 and L47 not yet in docs/DECISIONS.md at trunk 6a6bd43a (told the Lead).
