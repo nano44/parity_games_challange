@@ -1,6 +1,14 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## BOX 70 (successor 39; Lead 17:47Z: ABS-3 + IM exact frame) — DONE
+- Note docs/si/N5-FRAME-box70.md; tools experiments/si/box70/{frame.py (SAT frame, any m), run.sh (resumable), check70.sh}; log/3_*.log.
+- Frame = RELAXATION of ENC E_m genomes (LOCAL = R105, IM = box 69, keys = BIT-CHAIN). m 2 validation equals the exact values.
+- m 3 (EXACT-SAT, CaDiCaL 1.5.3, no certificate): T_0 <= 8 (9 UNSAT 693 s); T_1 <= 10 (11 UNSAT 1,282 s) => real T_1(3) = 10 EXACT
+  (kf1_d4_t10); sums (8,10), (7,11) UNSAT => max T_0 + T_1 = 17 = 2T^R(3) + 1, attained by box66 f_m3_p4_s1: SUM_1 EXACT m <= 3.
+- One-flip excess T_1 - T^R = 1, 1, 2 (m 1-3, EXACT). T_0(3) <= 8 is the E-model / NOL0-d4 quantity, not T^R(3) of the 3-level ladder.
+- Next if asked: frame at m 4 (t1 >= 15, sum >= 28), probably hours; or a SAT proof certificate (DRAT) for the m 3 UNSATs.
+
 ## BOX 69 (successor 39; Lead 17:06Z: hand proof of the FRONT-2 cap / mechanism) — DONE (mechanism found; hand proof stops at a finite check)
 - Note docs/si/N5-MECH-box69.md; tools experiments/si/box69/{abs2.c, tabs.c, mine.py, additive.py, lpreal.py, imtest.py, sumclimb.py,
   check69.sh}; data tabs_m2.txt (48,016 ENC tables), bad_tabs.txt (6,184), *.out.
