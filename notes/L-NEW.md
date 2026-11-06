@@ -1,6 +1,116 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 55, Opus 5.5, session_01V5yGRY6bNXTPcgHkohFvpg; started 2026-11-05 22:51Z by date -u)
+### BOX 172 P-IDEAL-KEYS FROZEN (this commit): docs/new/P-IDEAL-KEYS.md + line L-1 docs/new/P-IDEAL-KEYS-line-L1.txt; tool
+  experiments/new/box172/keycheck.py (frozen corpus boxes 150-172 + 400 random genomes, seed 172) with frozen output keycheck.out;
+  check.sh block «P-IDEAL-KEYS» (w172/pin172). Signed items: LOCAL-KP, PAIR-KF (+ PAIR-MOVES via KEYFLIP), CASCADE (+ F <= T, LADDER on
+  L^R_d), RENEW, MERGE, RETURN (+ RETURN-COUNT). DEAD: PM (c025a4b6), PMV (box172/inst/dd_d5_F14.json 06f0e501, mover 6 VR 10 > 8),
+  doubling-tower step (F <= T). Premises: R104 def; R105 ENC, MONO, XI-NEW, RISE, KEYFLIP (E-2 (E2c) binder); R110 def of L^R_d.
+  box172/inst also holds L-RED's max_d4_L13 (f0735b61) and max_d5_L15 (ba963ace) for box 173. Never add JSON under box172 (corpus frozen).
+### BOX 173 RENEWCOUNT (docs/new/N5-RENEWCOUNT-box173.md; box173/chain.py, climbR.py): RENEW-COUNT DEAD as stated (chain C_m, d 2,
+  I = m/2); RENEW-COUNT_2 (2-wide) OPEN: max_d4_L13 I 4 / L 9, max_d5_L15 I 2 / L 13 (the I ~ L/2 reading does not continue); lane bound
+  I <= 2 + 2F(d-2) (exponential). Climbs: no gain. Next (Lead): exact max I on L^R_d by SAT (L-RED).
+### Lead 23:46Z: P-IDEAL-KEYS routed to REFEREE 24 + REFEREE-2 28; answer items in a NEW docs/new/P-IDEAL-KEYS-fixes.md when relayed.
+### P-IDEAL-KEYS fix round 1 (Lead 00:47Z; REFEREE 24 ece8c4ee, REFEREE-2 28 ebcf52d0): fixes entry 1 docs/new/P-IDEAL-KEYS-fixes.md
+  (26088848) + line L-2 (fb1b2276): tower relabelled TOWER (consequence of F <= T) + READING «not a shortcut» (no longer DEAD); KY-1,
+  F-1, F-2, N-1, KY-L2; W-1..W-3; source note names the fixes file. check.sh pins added.
+### BOX 175 TOPC (docs/new/N5-TOPC-box175.md; box175/gain.py, gain2.py, xgain.py): L-RED CONJECTURE TOP-C at C = 1 DEAD under the
+  relayed definition (R208 / 16ae702d not on origin): fa_d2_k2_W2 gain' = gain'' = 4 (N 4, hand proof), iso_d4_st9 8 / 7, g4_L12 7 / 6,
+  tri_d5_L12 4 / 4; two simulators agree. Re-arm per top move (iso: mover 3 at steps 4, 11 after top moves 3, 10).
+### BOX 174 RETRIGGER (docs/new/N5-RETRIGGER-box174.md; box174/retrig.py etc.): RE-TRIGGER, TOP-SINK, CHARGE-I PROVED (lane):
+  I <= 1 + moves of lower Xi-ancestors of the top; on L^R_d I <= 3^(k+1) if those sit at levels <= k. Breaks at high-level ancestors
+  (F(tau-2), circular). Ping-pong kill candidate NOT realized (climbs I <= 4). DATA retrig.py 5,846 runs 0 violations.
+
+## Successor 55 handover check (STEP 0; written 2026-11-05 22:5xZ by date -u)
+1. claude/l-new: ls-remote e16112ba; local checkout was detached at e16112ba; fetch + ff-only -> HEAD e16112ba = ls-remote (not stale).
+   Vs trunk claude/vibrant-johnson-nxvvxo (b5d154ad): 12 ahead / 9393 behind (rev-list --left-right --count as printed), merge-base
+   a9851eba. Lane files only.
+2. Open: BOX 172 freeze P-IDEAL-KEYS (LOCAL-KP, PAIR-KF, CASCADE + Cor F <= T, RENEW, opt. MERGE/RETURN; DEAD PM, PMV, doubling tower;
+   next: read R104/R105/E-2 verbatim, write packet + line L-1 + check.sh block, push). BOX 173 CONJECTURE RENEW-COUNT (next: I vs L vs
+   d+1 on the d 5 maxima from claude/l-red). Nothing in flight from successor 54.
+3. GAPS (trunk): G-N5-TIME major open (owner L-NEW); G-N1-LB minor open (optional, not routed); G-N5-TERM closed.
+4. D18 (active, trunk INDEX row 32): "Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas
+   from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state
+   them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems."
+   D14 (active, row 22): "D" / "You know it can also test prveiously not tested approaches, it can come up with it own as well".
+   D20 (active, row 42): "We have reset the weekly usage, so we can again work faster no?" (Lead reading L48: full pace).
+5. Trap: misquoted SHAs (three times on 2026-11-05); check = every SHA copied from git output in the same command. Stale clone check
+   (ls-remote + fetch + ff-only + HEAD vs ls-remote) passed.
+
+## HANDOVER (successor 54, PARKING 2026-11-05 ~22:4xZ by date -u; Lead 22:08Z: box 171 then handover + park)
+### DONE (every push via scripts/push.sh, VERIFY PASS; Lead informed at every box end)
+- Step 0 (99c86c45). Box 164 ENCODE (9e1a6b02, b69a18d7): CHARGE, NO-ENTROPY, CHAIN-UP PROVED (lane); every constant record multiplicity
+  DEAD (iso_d3_6, kf0_d4_t8, box164/out/fkclimb_k2_m4_mu3_T11 0593b229); framework closed.
+- Box 165 PERMOVER (9a192d7b, fa28d7f9): MERGE, PM-1, CHARGE-PM PROVED; key-free PM exponential (diamond 2^(desc/2+1)-1).
+- Box 166 PMKILL (d3eeb8b3): CONJECTURE PM DEAD, box166/out/KILL_PM_compose_dd_d5_F14.json (c025a4b6; XSIM 0); FREE-KP, RETURN PROVED;
+  PMV DEAD; 2 free key bits suffice (bbit.py).
+- Box 167 PMPRIME (89c05d7c): LOCAL-KP PROVED; dynamic kappa = LEVEL-PRODUCT (DEAD route); CONJECTURE PM'_S (static |W|).
+- Box 168 CLOCK (a26833c1): PAIR-KF PROVED (KF_x = flips of x's W-target pair); PM'_S survives; open target CONJECTURE PAIR-LIN.
+- Box 169 PAIRLIN (f30efa74): CASCADE PROVED (one flip per pair per step; wide, not long); induction = LEVEL-PRODUCT; step attained on
+  dd_d5_F14; INF-2 DEAD (L-SI inf18_m3, re-run).
+- Box 170 TOWER (0fd70166): doubling tower DEAD as stated (F <= T; gadgets add no steps); T1_dd_top8 (9aead80e, XSIM 0, PM violation 8>7);
+  R104 Corollary REAL-IDEAL quoted (scope: given start pairs, acyclic, nothing about S3).
+- Box 171 FROZEN (this push): RENEW PROVED (corollary of R105 XI-NEW/RISE): top-only intervals are renewed by Xi-rises from the lower step
+  before; I <= 6 on 267 files, I/L ~ 0.44-0.5 on the T^R-type maxima; CONJECTURE RENEW-COUNT open. No proof, no kill.
+### OPEN (for the Lead): PAIR-LIN (R207 data from L-RED), RENEW-COUNT (needs T^R(5)/T*(5) maxima), PM'_S (fragile). G-N5-TIME OPEN.
+### IN FLIGHT: nothing.
+### Things only I know (successor 54)
+- L-RED's tree: `git fetch origin claude/l-red; git archive origin/claude/l-red experiments/red | tar -x -C <scratch>/lred2` (002f7cd1
+  used); r197/lag holds the ladders dd/dbl/c4x/max_d4_L13; r178/r187 the degree-3 sets. Scratch is lost on restart: re-extract.
+- Shared tools: box165/permover.py (measure, reach), box167/pmprime.py (wclos), box166/verify_kill.py + box150/check.py (XSIM) for any
+  claimed genome; box164/fk.py / finf.py (exact forced-model DP), box166/bbit.py (B-bit key model), compose2.py / box170/csp.py (composition).
+- exec-ing another box's script: its H must point to ITS directory (several of my wrappers broke on that; see climbclock.py fix).
+- Never quote a SHA before reading it from git output (I misquoted two to the Lead; both corrected).
+- push.sh pushes only the commit it verified; chain a second push for commits made during verify.
+
+## Resume point (successor 54, Opus 5.5, session_01V5yGRWFP9j7nf3j2YniXzP; started 2026-11-05 17:06Z by date -u)
+### BOX 164 (Lead brief: an untried framework; chose (a) entropy compression / encoding method): docs/new/N5-ENCODE-box164.md,
+  experiments/new/box164/ (rec.py records, show.py, climb.py / seeded.py hill-climbs, keyless.py + diamond.py key-free controls).
+- BOX 164 RESULT (pushed 9e1a6b02 first commit; final in this push): CHARGE T <= mu*|R| (|R| <= 8m^2) and NO-ENTROPY PROVED (lane);
+  CHAIN-UP PROVED (lane). DEAD: mu = 1 real (iso_d3_6), mu_0 = 1 (kf0_d4_t8), REC-K, k-free mu (finfclimb_m3_mu4_T11), REC-2 mu_2 <= 2
+  (box164/out/fkclimb_k2_m4_mu3_T11.json sha1 0593b229: record (5, beta(5,1)) at frames 1, 4, 10 with 2 flips). Obstruction: own-option
+  beta on top => record = mover name, mu >= floor(moves(x)/2). Framework closed (no leverage). Control: key-free diamond paths 8,22,52,114.
+- Things only I know (54): fk.py = exact DP for T_k and mu_k (matches the T_k table on witness files); fkall.sh needs BOX=<dir>;
+  L-RED r187/r178 instances via `git fetch origin claude/l-red` then `git archive 5f3e89e1 ... | tar -x` (the object is absent before
+  the fetch). push.sh pushes only the verified commit: chain a second push for commits made during verify.
+### BOX 165 (Lead 18:50Z: per-mover move bound): docs/new/N5-PERMOVER-box165.md, experiments/new/box165/. CONJECTURE PM
+  moves(x) <= (deg-1)(1+desc(x)) (0 violations, 255 file paths, tight); KF does not follow the Xi-position (desc 1, KF 14); key-free
+  diamond max moves 2^(desc/2+1)-1 (PM needs keys from desc 4). PROVED (lane): MERGE, PM-1 (desc <= 1, any schedule), CHARGE-PM.
+  NEEDS: exact SAT kill query (L-RED xcnf). L-RED tree extracted via `git archive origin/claude/l-red experiments/red | tar -x -C <scratch>/lred2`.
+### BOX 166 (Lead 19:36Z: PM proof attempt at desc 4): PM DEAD. box166/out/KILL_PM_compose_dd_d5_F14.json (sha1 c025a4b6; N 15 deg 2,
+  T 14; mover 12 desc 4 moves 6; box150/check.py XSIM 0, all R105 checks 0). Mechanism: FREE-KP (free keys = key-free dynamics); 2 free
+  bits suffice (bbit.py: B 1 -> 4, B 2 -> 6, B 3 -> 7); the bits = key orders of two pairs of an L-RED clock (compose2.py). PMV (value
+  rises) DEAD too (dd_d5_F14 mover 6). Doc docs/new/N5-PMKILL-box166.md.
+### BOX 167 (Lead 19:48Z: PM' with key flips): docs/new/N5-PMPRIME-box167.md, box167/pmprime.py, tight.py. Dynamic kappa (KF / WE)
+  PROVED (LOCAL-KP + KEYFLIP) but empty (KF = T on dd_d5_F14 movers 8, 9) -> LEVEL-PRODUCT recursion, DEAD route. Static kappa = |W(x)|:
+  CONJECTURE PM'_S (0 viol. / 263 files, slack >= 2), polynomial (T <= (D-1)N^2), fragile under box 166 composition if T^R superlinear.
+### BOX 168 (Lead 20:29Z: PM'_S kill test): docs/new/N5-CLOCK-box168.md, box168/pairflips.py, pairstat.py, climbclock.py. PM'_S
+  SURVIVES (max pair excess flips-|W| = 6 on 263 files + climbs; a kill needs desc <= excess-1 <= 5 and key-free capacity >= desc+4).
+  PROVED (lane) PAIR-KF (KF_x = flips of its W-target pair) => T <= N + sum flips. Open target CONJECTURE PAIR-LIN flips <= c|W| (data c = 2).
+### BOX 169 (Lead 21:02Z: PAIR-LIN proof attempt): docs/new/N5-PAIRLIN-box169.md. CASCADE PROVED (flip = own or below, <= 1 per
+  pair per step) -> F(l) <= 2 + 3F(l-1); step F(l) = 2(1+F(l-1)) ATTAINED on dd_d5_F14 level 3 (14 = 2*7); only brake = Xi capacity.
+  Kill candidate for R207: doubling tower (per-level Xi-gadgets, desc O(l)); not constructed.
+- DEAD (Lead 21:02Z): INF-2 (box 163 CONJECTURE T_inf(m) <= 2T^R(m)+1) by L-SI claude/l-si 5fd8a5e9 experiments/si/box71/pin/inf18_m3.json
+  (sha1 2af7d941): T_inf = 18 > 17 at m 3, re-run by box164/finf.py.
+### BOX 170 (Lead 21:35Z: build the doubling tower): docs/new/N5-TOWER-box170.md. Tower as stated DEAD: F <= T (CASCADE), dd_d5_F14
+  level-3 pair flips at all 14 steps, gadgets add moves but 0 steps (T stays 14). Level 4 best 8/14 (box170/out/T1_dd_top8.json 9aead80e,
+  XSIM 0); csp.py: 14 and 12 impossible for the given diamond ranks. Tower reduces to T-growth per level = SLOT-TRADE (no shortcut).
+### Successor 54 handover check (STEP 0; written 2026-11-05 17:2xZ by date -u)
+1. claude/l-new: ls-remote a9851eba; local HEAD a9851eba = ls-remote after fetch + ff-only (not stale this time). Vs trunk
+   claude/vibrant-johnson-nxvvxo (e4823bdd): 9 ahead / 9358 behind (count as printed by rev-list), merge-base 4c2e5124. Lane files only.
+2. Open: BOX 164 (new framework, this box; next: translation + kill test, then bound or obstruction). P-IDEAL-FLIP landing (R110) is
+   Lead/CHECKER (nothing for me unless routed). Box 163 conjectures SUM_1/2, INF-2 stay as data. Nothing running from successor 53.
+3. GAPS: G-N5-TIME major open (owner L-NEW); G-N1-LB minor open (optional, not routed).
+4. D18 (active, INDEX row 32): "Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from
+   areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state
+   them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems."
+   D14 (active, row 22): "D" / "You know it can also test prveiously not tested approaches, it can come up with it own as well".
+   D20 (active, trunk INDEX row 42; not yet on this branch's copy): "We have reset the weekly usage, so we can again work faster no?"
+   (Lead reading L48: full pace, stop on paid overage).
+5. Trap: stale clone (bit successors 51-53); check = ls-remote + fetch + ff-only + HEAD vs ls-remote (passed: a9851eba). Second trap:
+   this branch's docs/DECISIONS*.md lag trunk (D20 only on trunk): read rulings from origin/claude/vibrant-johnson-nxvvxo.
+
 ## HANDOVER (successor 53, PARKING 2026-11-05 ~15:4xZ by date -u; context long)
 ### DONE (every push via scripts/push.sh, VERIFY PASS; Lead informed at each step)
 - Step 0 handover check (b54250ff). Box 162 P-IDEAL-FLIP FROZEN 9effea1f: packet docs/new/P-IDEAL-FLIP.md 236 lines sha1 92803bd5,
@@ -1313,6 +1423,12 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   (b), (c); length < 2(n + m)(n² − n + 1 + SBC)). DEAD: NOFB (n3all_maxph_0), W-frame twin N5-SFW cycles (theta_thf16, period 10; 49/413).
   DATA: correct on 1,038 library + families + hard families; SF ≈ ½ N5; runquad 264 → 2, topfix 7N + 43; switchbestexp N=10 619 vs 89, SBC 97.
   Open count SBC (CONJECTURE SF-POLY OPEN).
+
+## Dead ends (successor 55, boxes 172-173; docs/new/P-IDEAL-KEYS.md §7, docs/new/N5-RENEWCOUNT-box173.md §0-§1)
+- RENEW-COUNT as stated (box 171: renewing lower steps O(d) / poly(d) on every IDEAL-ACYC run): DEAD by the alternating Xi-chain C_m
+  (box173/out/chain_C8.json 6c9962ba, chain_C20.json e5e65ab3): d 2, T m, I = m/2. Obstruction: width; each interval a new top mover.
+  Survives restricted to 2-wide ladders (RENEW-COUNT_2), DATA I <= d + 1 on 163 R197 genome-start pairs, I 2 on max_d5_L15.
+- PM, PMV, doubling-tower step: frozen for the referees in P-IDEAL-KEYS §7 (instances c025a4b6, box172/inst/dd_d5_F14.json 06f0e501).
 
 ## Dead ends (successor 47, box 137; docs/new/N5-REL-box137.md §0, §4)
 - «Between two consecutive moves of x in one FL run some vertex below x changes W-tight key in a way that cannot recur without a sbar-
