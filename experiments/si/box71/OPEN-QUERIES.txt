@@ -8,6 +8,6 @@ Queue after these: SUM_2 at m 3 (sumk K=2: pairs (a, 18 - a), a <= 8; lower boun
 # --- 2026-11-06 (successor 40, Lead 04:37Z, for L-COMP 9 certification) ---
 # Every frame UNSAT of boxes 70-74 is listed in experiments/si/UNSAT-LIST.txt: query | DIMACS sha1 | exact regeneration command (run in
 # experiments/si/box70; DUMPONLY=1 writes the DIMACS and does not solve). experiments/si/unsat_regen.sh regenerates all and checks each
-# sha1 (22 of 22 OK at 2026-11-06; the 15 that logged a sha1 when solved match it). The box 72 UNSAT DIMACS are also committed gzipped
+# sha1 (23 of 23 OK at 2026-11-06; the 16 that logged a sha1 when solved match it). The box 72 UNSAT DIMACS are also committed gzipped
 # in box72/unsat/. NOTE: mode pq names its file by T and T2 only (not PRE), so regenerate the box 73 pq queries one at a time.
-# Box 72 results: T_inf >= 19 UNSAT, T_3 >= 15 UNSAT, SUM_2 (8,11), (7,11) UNSAT; (7,12), (6,12) still running (status in box72/log/).
+# Box 72 results: T_inf >= 19 UNSAT, T_3 >= 15 UNSAT, SUM_2 (8,11), (7,11), (7,12) UNSAT, (8,10), (6,12) SAT: frame SUM_2(3) = 18 = real (box72/out/sum2_18_m3_s1.json).

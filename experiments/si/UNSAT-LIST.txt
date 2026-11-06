@@ -23,3 +23,4 @@ m 3 top-pair flips F >= 10, T <= 10, K=1 (box 74) | 170e1114b2ae4879cdbc34b129bb
 m 3 top-pair flips F >= 9, T <= 10, K=1 (box 74) | 816fb71a3cb25c22ac88180c062b8de7b3c4b418 | K=1 DUMP=/tmp/si_unsat DUMPONLY=1 python3 frame.py 3 flips 10 9
 m 2 top-pair flips F >= 7, T <= 7, K=2 (box 74) | 9413bc7adf95801b1e31040e573665d8e4f08a2f | K=2 DUMP=/tmp/si_unsat DUMPONLY=1 python3 frame.py 2 flips 7 7
 m 3 top-pair flips F >= 11, T <= 12, K=2 (box 74) | 4c65fd8eb905a288f8636bb4aa24fe1630388710 | K=2 DUMP=/tmp/si_unsat DUMPONLY=1 python3 frame.py 3 flips 12 11
+m 3 sumk 7 12 K=2 (box72) [logged sha1 matches] | b555b29026ecc5d86ffbbd68738a3a849793bfae | K=2 DUMP=/tmp/si_unsat DUMPONLY=1 python3 frame.py 3 sumk 7 12
