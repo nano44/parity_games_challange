@@ -89,3 +89,48 @@ REFEREE successor 24 (Opus 5.5, D15), 2026-11-06 (date -u in the commit). Indepe
 - DONE: premise byte tests; every proof re-derived; DEAD instances recomputed; check.sh block; DATA rule clause by clause; L-1.
 - FINDINGS: every item SIGNED; L-1 MATCHES; optional MV-L1.
 - NEEDS: none.
+
+## §C. Fixes entry 1 and line L-2 (REFEREE successor 25, 2026-11-07T00:0xZ by date -u; Opus 5.5, D15)
+- Objects (claude/l-new 9995f5a2, fetched; sha1 of the bytes in that commit):
+  - docs/new/P-IDEAL-MOVES-fixes.md (entry 1): e933f4d3b42ec0405fefd5654d7b7afe5eea35be, 4,635 B. EQUAL to the Lead's relay.
+  - docs/new/P-IDEAL-MOVES-line-L2.txt: f3692aaa033540ff0494b0aac6b2d524757d5c00, 4,495 B. EQUAL.
+  - Unchanged: packet 5ce2947d1ee4dab3… (= the signed pin), L-1 819c58159100d77e…, movescheck.py 8153717b….
+  - REFEREE-2's report read for the required texts: claude/referee-2 38a2adb6, docs/referee-2/R2-P-IDEAL-MOVES.md l. 104-115.
+- Byte test (own script; the five «old» → «new» items parsed from the fixes file, wrapped lines joined by one space):
+  - each old string occurs exactly once in L-1; L-1 with R1..R5 applied in order is byte-equal to L-2 (4,495 = 4,495 B).
+  - So L-2 = L-1 + exactly R1..R5, nothing else.
+  - Shape: one line, 71 «(» / 71 «)», depth never negative, 0 «|». The word diff in the entry agrees with these five items.
+- Meaning, item by item (against the packet text):
+  | item | new text | packet | verdict |
+  | --- | --- | --- | --- |
+  | R1 (W-1) | «… μ(d) is shown equal to T^R(d) up to a factor 2d − 2 and an additive 3, so MOVES-2D is sufficient, not necessary, for a polynomial bound on T^R» | §1 MOVES-EQUIV l. 88-93: μ(d) ≤ T^R(d) ≤ 3 + (2d − 2)·μ(d); MOVES-2D ⇒ T^R(d) ≤ 4d² − 4d + 3; μ polynomial iff T^R polynomial | first half MATCHES; «not necessary» NOT PROVED (MV-C1) |
+  | R2 (W-2) | «flips while 2j and 2j + 1 are on different options before the step» | §3 (a) l. 115-116: p := 2j, q := 2j + 1, s_(t−1)(p) ≠ s_(t−1)(q) | MATCH |
+  | R3 (W-3) | «some mover other than x on the chain under s_(t−1) of the option x takes at t + 1 moves at t» | §4 (e) l. 142-143: «some mover of the chain of (x, s_(t+1)(x)) under s_(t−1), other than x, moves at t» | MATCH; this is the reading REFEREE-2 asked for («… moves at t») |
+  | R4 (MV-L1) | «every pair of consecutive moves (the min bound by arithmetic)» | AND-GATE (b); my §3 row | MATCH (the form I suggested) |
+  | R5 | source note names fixes entry 1 and its file | — | MATCH |
+- MV-C1 (required). The packet proves that MOVES-2D is sufficient. It does not prove that MOVES-2D is not necessary: no statement
+  says that a polynomial T^R is compatible with μ(d) > 2d. MOVES-2D is open; the DEAD m4_z4_r7 gives 7 ≤ 2d = 8, and l. 177 says
+  «Does NOT claim: anything about MOVES-2D». If MOVES-2D is true, it is trivially necessary. «Not necessary» is therefore an
+  unproved claim inside the not-claimed clause. (REFEREE-2's W-1 intent was right: the equivalence claim is gone. Only its last two
+  words overreach.)
+  - Exact fix, one replacement on L-2 (old occurs exactly once):
+    «so MOVES-2D is sufficient, not necessary, for a polynomial bound on T^R)» → «so MOVES-2D is sufficient for a polynomial bound on
+    T^R, and its necessity is not shown: a polynomial bound on T^R gives only μ polynomial)»
+  - Result, tested by my script: one line, 4,563 B, 71 «(» / 71 «)», sha1 747dfa48c3a6a1d75f4d92aea5aa086128b87588 (with a source
+    note unchanged; if L-NEW also updates R5's note to name entry 2, the sha1 changes).
+- DATA rule, clause by clause:
+  - No count changes: the word diff touches no number, and the DATA parenthesis differs from L-1 only by R4.
+  - R2's clause is WINDOW-DOUBLE's pass-through clause. It keeps «no separate DATA».
+  - R3 narrows the SEG-WINDOW (e) clause to «moves at t». The counter SWE (movescheck.py l. 15, 70-72) checks exactly that set and
+    time: for t ∈ [a, b − 1], some y ∈ g.play(S[t − 1], x, S[t + 1][x]) with y ∈ Mv[t]. Unit (per segment step), set (every metronome
+    segment) and scope all match «0 on all 225,917 metronome segments … and its last one».
+  - R4: AGB (l. 9, 56) counts every consecutive pair; the min bound follows by arithmetic and is now labelled so.
+  - R1: MOVES-EQUIV keeps «no separate DATA».
+- §6 l. 202 «an equivalence of two open bounds»: the fixes entry's wording note («μ polynomial», «T^R polynomial») is right. No
+  packet edit needed; the packet does not contain W-1's overclaim (l. 90-91 says «iff» between the polynomial bounds only).
+- Verdict:
+  - Fixes entry 1 is CORRECT for W-1 (equivalence overclaim removed), W-2, W-3, MV-L1 and the D-1..D-3 notes.
+  - L-2 MATCHES the byte test.
+  - L-2 does NOT YET MATCH in meaning: one required replacement, MV-C1 above. With it, the line MATCHES.
+  - All packet items stay SIGNED.
+- I did not read docs/referee-2/ beyond the W-1..W-3 texts named above. This section is not a comparison with REFEREE-2's §C.
