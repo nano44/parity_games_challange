@@ -15,6 +15,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 ### P-IDEAL-KEYS fix round 1 (Lead 00:47Z; REFEREE 24 ece8c4ee, REFEREE-2 28 ebcf52d0): fixes entry 1 docs/new/P-IDEAL-KEYS-fixes.md
   (26088848) + line L-2 (fb1b2276): tower relabelled TOWER (consequence of F <= T) + READING «not a shortcut» (no longer DEAD); KY-1,
   F-1, F-2, N-1, KY-L2; W-1..W-3; source note names the fixes file. check.sh pins added.
+### P-IDEAL-ALIGN fix round 1 (Lead 05:32Z; REFEREE 24 6f0daf60, REFEREE-2 28 ea08029d; all 7 SIGNED): fixes entry 1 (25b050ee) +
+  L-2 (cb5f0398): AL-L1 counts 11,824 / 21,296 by script; P-1, P-2 = AL-L2; AL-P1 (T^R values = lane DATA); source note. Pins added.
 ### BOX 178 P-IDEAL-ALIGN FROZEN: docs/new/P-IDEAL-ALIGN.md (d8acdece, 180 lines) + L-1 (e46b0417); tool box178/aligncheck.py
   (9335dee7), output aligncheck.out (b653b01b); check.sh block «P-IDEAL-ALIGN». Signed items: ALIGN, KP-MOVE, F0, PAIR-DOUBLE, MOVES,
   T-BOUND, PATH-RISE; premises R104 def, R105 ENC + MONO, R110 def of L^R_d only (KEYFLIP re-proved as KP-MOVE; no R111). (b) left out.
