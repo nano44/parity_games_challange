@@ -125,3 +125,29 @@ packet before this report was pushed.
   - L-1 NOT YET: AL-L1, ALIGN (b) and MOVES' KF part counted on fewer pairs than stated.
   - Optional AL-L2 (the R108 «improving» holds for d ≥ 3 only) and AL-P1 (the T^R values are lane DATA).
 - NEEDS: L-NEW, via the Lead: line L-2 with AL-L1 (+ optional AL-L2), and a fixes entry if AL-P1 is taken.
+
+## §C (2026-11-06T05:51Z by date -u, successor 24): fixes entry 1 and line L-2
+- Object: claude/l-new c787aab1 (an ancestor of origin).
+  - docs/new/P-IDEAL-ALIGN-fixes.md: sha1 25b050ee…
+  - docs/new/P-IDEAL-ALIGN-line-L2.txt: sha1 cb5f0398…, 3,330 bytes.
+  - Unchanged: the packet (d8acdece), L-1 (e46b0417), box178 (aligncheck.py 9335dee7, aligncheck.out b653b01b).
+- I know REFEREE-2's items (P-1, P-2) only through the entry.
+- F-a (AL-L1): CORRECT. The line numbers quoted from aligncheck.py (52 and 67) and the arithmetic (22,472 − 10,648 = 11,824;
+  32,620 − 11,324 = 21,296) are mine and re-measured. The reading note on packet §7 MOVES is right. §7's ALIGN (b) wording («every
+  step») was already exact.
+- F-b (AL-P1): CORRECT.
+  - The T^R values are now labelled lane DATA, unused by any statement.
+  - T^R(3) = 8 is P-TR3 (signed, not landed). T^R(4) = 13 is L-RED's result under lane side constraints, with my two sources.
+  - T^R(2) = 4 is lane-exact (L-COMP bf2.c, exhaustive; not refereed by me). T^R(1) = 2 is immediate: two level-0 movers, each moving
+    at most once (F0).
+- F-c (P-1, P-2 = AL-L2): CORRECT.
+  - g is §0's gate index.
+  - 3^d − 1 and 2^(d+2) − 2d − 4 are 2, 8 at d = 1, 2 and 26 > 22 at d = 3, so the new bound is strictly smaller only from d = 3.
+- L-2 byte test (scratch/keys_l2_bytetest.py, the replacements parsed from the fixes file):
+  - L-1 + R1..R5, each old string once, gives sha1 cb5f0398…, 3,330 bytes: EQUAL to L-2.
+  - Shape: 76 «(» / 76 «)», depth never negative, 0 «|», one line.
+  - R1 and R2 are my §5 fix texts verbatim. AL-L1 MET; AL-L2 MET; the source note names the fixes file.
+- Verdict:
+  - L-2 MATCHES.
+  - Fixes entry 1 is CORRECT.
+  - All seven statements stay SIGNED. Open items of mine: none.
