@@ -71,7 +71,7 @@ static int tinf(uint32_t u) {
     *p = best; return best;
 }
 static int Tres[16], Tinf_res; static uint32_t argmax; static int SCOREMODE = 0; static int *RZ; static int64_t *CV; static int Rbest, Rz, RT;
-/* R213: rises of cv(z) (current value of mover z) along the run from u, memoised: RZ[u*N+z] */
+/* R213: SCORE=R rises of cv(z); SCORE=M moves of z (z a Xi-target; L-NEW box 181 MOVES-2D) (current value of mover z) along the run from u, memoised: RZ[u*N+z] */
 static int64_t cvz(const Gen *g, uint32_t u, int z) { int st[MAXN]; for (int v = 0; v < N; v++) st[v] = (u >> v) & 1; return face(g, st, z, st[z]); }
 static int isTarget[MAXN];
 static int trun(uint32_t u) {
@@ -95,7 +95,7 @@ static void evalg(const Gen *g, int K) {
         for (int u = 0; u < NS; u++) ord[cnt[TK[u]]++] = u;
         Rbest = -1;
         for (int i = 0; i < NS; i++) { uint32_t u = ord[i], w = NX[0][u];
-            for (int z = 0; z < N; z++) { int r = 0; if (w != u) r = (CV[(size_t)w * N + z] > CV[(size_t)u * N + z]) + RZ[(size_t)w * N + z]; RZ[(size_t)u * N + z] = r;
+            for (int z = 0; z < N; z++) { int r = 0; if (w != u) r = (SCOREMODE == 2 ? (int)(((w ^ u) >> z) & 1) : (CV[(size_t)w * N + z] > CV[(size_t)u * N + z])) + RZ[(size_t)w * N + z]; RZ[(size_t)u * N + z] = r;
                 if (isTarget[z] && (r > Rbest || (r == Rbest && TK[u] > RT))) { Rbest = r; Rz = z; RT = TK[u]; argmax = u; } } }
     }
 }
@@ -156,7 +156,7 @@ int main(int argc, char **argv) {
     NX[0] = malloc(sizeof(uint32_t) * NS); NX[1] = malloc(sizeof(uint32_t) * NS);
     TK = malloc(sizeof(int) * (size_t)(K + 1) * NS * 2 + 16); TI = malloc(sizeof(int) * NS);
     Gen g;
-    ISO = getenv("ISO") && atoi(getenv("ISO")); SCOREMODE = getenv("SCORE") && !strcmp(getenv("SCORE"), "R");
+    ISO = getenv("ISO") && atoi(getenv("ISO")); SCOREMODE = getenv("SCORE") ? (!strcmp(getenv("SCORE"), "R") ? 1 : !strcmp(getenv("SCORE"), "M") ? 2 : 0) : 0;
     RZ = malloc(sizeof(int) * (size_t)NS * N + 16); CV = malloc(sizeof(int64_t) * (size_t)NS * N + 16);
     if (!strcmp(argv[1], "eval")) {
         if (!readg(stdin, &g)) { fprintf(stderr, "bad genome\n"); return 1; }
