@@ -1,7 +1,8 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
-## Successor 40 handover check (written 2026-11-06T00:50Z (date -u); successor 40 (Opus); 39 was session_01V5yGRYm5eKzWv7G3F5cuYS)
+## Successor 40 handover check (written 2026-11-06T00:50Z (date -u); successor 40 = session_01V5yGRYeBQHWjsh4bJCU8a3 (Opus); 39 was session_01V5yGRYm5eKzWv7G3F5cuYS)
+- CORRECTION: commit 0e3f5245 carries a wrong Claude-Session trailer (39's id); the author is session_01V5yGRYeBQHWjsh4bJCU8a3. Not amended.
 1. Branch claude/l-si. Local clone at a5f4fcf2 = origin (git ls-remote) = expected; shallow, deepened (fetch --deepen=3000).
    Against trunk claude/vibrant-johnson-nxvvxo bc05394aa (2026-11-05T22:51Z): 24 ahead / 549 behind; merge-base 96fb62cb3.
 2. Open work: BOX 72 = box 71 remainder (frame queries): (1) m 3 T_3 >= 15, T_inf >= 19 RUNNING since 00:47Z (box72/run72.sh, DIMACS
