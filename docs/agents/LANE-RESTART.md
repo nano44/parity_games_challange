@@ -248,3 +248,4 @@ Five questions:
 | 2026-11-06 | CHECKER | session_01V5yGRZJdCaRbBvXAgb1nEA (PARKED, handover 559c9664; idle confirmed 13:1xZ before creation) | session_01V5yGRa5YAtaPMsyQHSckQ4 (Opus, D1/D18/D20) | PENDING | PENDING (successor's check) |
 | 2026-11-06 | L-RED | session_01V5yGRYH6Phj1nRvDkjRcAr (PARKED, handover b6426b33; idle confirmed 18:2xZ; its push 24 still in its container) | session_01V5yGRZ5wDYLSLhxR4XqKEW (Opus, D1/D18/D20) | PENDING | PENDING (told to wait for 51's final snapshot) |
 | 2026-11-06 | L-NEW | session_01V5yGRZaLkWxqVNtbeLt55J (PARKED, handover 0320ab9e) | session_01V5yGRXqTHhphYxB6STpz6Z (Opus, D14/D18/D20) | PENDING | PENDING |
+| 2026-11-06 | REFEREE | session_01V5yGRVwYrR9t5ou8J7NpU6 (PARKED, handover bc2bdd5a; idle confirmed 23:3xZ before creation) | session_01V5yGRYL9TALEt9Zg8U7NQg (Opus, D1/D18/D20) | PENDING | PENDING (successor's check) |
