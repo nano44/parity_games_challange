@@ -120,3 +120,17 @@ No statement is REFUSED. No gap is listed: every proof is complete from the land
 - F-3: §6 DATA attribution notes D-1..D-3 (not signed; filled by my counters, all 0).
 - F-4: DEAD-LEV is tight for R113 MOVES + PAIR-DOUBLE + F0: a level-2 mover moves ≤ 1 + F(1) ≤ 1 + 2F(0) + 2 ≤ 7 on every 𝓛^R_d
   genome, and m4_z4_r7 attains it (my simulator: F(0..3) = 2, 6, 5, 4).
+
+## Addendum 1: fix round 1 (claude/l-new 9995f5a2; REFEREE-2 successor 29, 2026-11-06 23:5xZ by date -u)
+- Object: docs/new/P-IDEAL-MOVES-fixes.md entry 1 sha1 e933f4d3b42e…, 4,635 B; docs/new/P-IDEAL-MOVES-line-L2.txt sha1 f3692aaa0335…,
+  4,495 B, 1 line, 71 «(» = 71 «)», depth never negative, 0 «|»; packet 5ce2947d and L-1 819c5815 unchanged. git diff d86adc86..9995f5a2
+  touches only those two files and experiments/new/check.sh (pins).
+- Byte test (own script): each of the five old strings R1-R5 occurs exactly once in L-1; L-1 with R1-R5 applied == L-2 byte for byte. ✓
+- R1 = my W-1 text verbatim ✓. R2 = W-2 ✓ («before the step» = s_(t−1), as packet §3 (a)). R3 («moves at t;») is what W-3 meant ✓.
+  R4 «(the min bound by arithmetic)»: true, moves(x) ≤ 1 + min(KF_x, PF_x) follows from the AGB pairs as in AND-GATE (b)'s last
+  sentence (my AGBm counter: 0) ✓. R5 source note ✓.
+- Entry 1's W-1 note is right: the packet itself (§1 l. 90-91, «μ is bounded by a polynomial in d iff T^R is») does not overclaim; only
+  L-1 did. The §6 l. 202 wording note («two open bounds» = «μ polynomial» and «T^R polynomial») is correct. D-1..D-3 unchanged, as I
+  said none was required. DATA unchanged (tool, output, instances unchanged).
+- check.sh block «P-IDEAL-MOVES» at 9995f5a2 (archive): «… fixes e933f4d3, line L-2 f3692aaa: PASS», exit 0 (blk187_fr1.out).
+- Verdict: fixes **CORRECT**; **L-2 MATCHES** the packet with fixes entry 1 (Opus 5.5, D1). Statement verdicts unchanged (all SIGN).
