@@ -1,0 +1,4 @@
+corpus files at d 4: 64
+class PHX d 4 genomes 100 transitions 38265 distinct-dec-rows 30601 distinct-states 39725 features 176
+FEASIBLE min max Phi = 40.8049
+weights: pair2_1111=-14.4 k5=13.2 k0=12.7 u4=12.4 pair2_1110=-12.3 pair2_0001=12.1 pair2_1001=12.1 pair2_0011=12.1 pair0_1000=-12 pair2_1000=11.7 pair2_0000=11.7 pair2_0010=11.7 pair0_0010=-8.46 zH0_6=-8.35 zH0_5=-8.29 pair0_1010=-8.28 z0=8.23 zH0_3=-8.22 u0=-8.18 zH0_2=-8 pair0_0000=-7.9 zH0_8=-7.87 zH0_7=-7.74 zH0_4=-7.13 uH0_2=6.15 uH0_3=5.49 uH0_5=5.04 uH0_6=4.68 u3=4.34 uH0_7=4.07 z2=4.06 uH0_4=4.01 pair1_1011=3.94 pair0_0101=3.94 zH2_1=3.93 zH1_8=-3.91 zH1_4=-3.91 zH1_7=-3.9 pair1_1000=-3.86 pair1_0000=-3.86 const=0

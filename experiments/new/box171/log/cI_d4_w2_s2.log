@@ -1,0 +1,4 @@
+restart 0 (I, T, lower) (2, 8, 6) best (2, 8, 6)
+restart 1 (I, T, lower) (1, 5, 4) best (2, 8, 6)
+restart 2 (I, T, lower) (2, 6, 4) best (2, 8, 6)
+restart 3 (I, T, lower) (3, 6, 3) best (3, 6, 3)

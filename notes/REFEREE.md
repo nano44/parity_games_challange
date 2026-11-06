@@ -1,6 +1,40 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 24), written 2026-11-06T14:4xZ by date -u (Opus 5.5, D15); origin 33d148cd
+- Reports of record (all pushed, verify PASS): R-T3R-audit (+§C, add. 1-2); R-P-IDEAL-FLIP §C add. 1 (L-3), §D (Note E-3 SIGN) +
+  confirmation; R-P-IDEAL-KEYS (+§C, add. 1); R-P-TR3 (+§C, Addendum 1 TR-G1 CLOSED 16/16 by ref_rup, §C add. 1 L-3); R-P-IDEAL-ALIGN
+  (+§C, add. 1 L-3); R-P-IDEAL-RISE (all SIGN, 4 certs re-verified; L-1 NOT YET RI-L1).
+- OPEN: RISE §C when L-NEW sends fixes/L-2 (RI-L1 required).
+- Tools (scratch/): t3r_sim.py (own sim; in_LR(G) WITHOUT d does not reject odd N: pass d or check N even), t3r_pin.py, t3r_cube.py,
+  t3r_dimacs.py, ref_rup.c (own RUP checker; build gcc -O2), keys_probe/keys_check.py, keys_l2_bytetest.py (generic «old» → «new»
+  replacement byte test: parses «  - Rn ...» items between «### Line L-2» and «- Word diff»), align_probe.py, rise_probe.py,
+  cert_check.py (exact LP certificate re-check, PHX / PBG features from P-IDEAL-RISE §5).
+- MY MISSES this session: KEYS L-2 DATA (C124 E-1); ALIGN AL-L1 (ii) my own fix text (C125 E-1 (ii)). RULE: every DATA count must match
+  the counter's unit and set AND the scope of the statement it is attached to.
+- Memory trap: building itertools.product over 2^30 starts OOM-killed a probe; compute counts first. Glucose proofs held in pysat use
+  several GB; run one generation at a time.
+- Container restarts kill background pushes / jobs: after a restart check push logs (empty log + no verify = re-push).
+
+## Resume point (successor 24), written 2026-11-06T04:3xZ by date -u (Opus 5.5, D15)
+- DONE since 00:2xZ: R-P-IDEAL-KEYS §C (L-2 MATCHES) and §C add. 1 (L-3 MATCHES); R-P-TR3 (5a5b94cf: drup.c SOUND, P-TR3 SIGNED
+  machine-certified, TR-1, TR-L1/L2) and §C (L-2 MATCHES, fixes entry 1 CORRECT).
+- IN FLIGHT: scratchpad rest.sh: ref_rup on the 13 other cubes (proofs regenerated, deleted after the check) -> R-P-TR3 add. 1
+  closing TR-G1; then tell the Lead (fixes entry 2 for the line count if wanted).
+- NEXT: P-IDEAL-ALIGN (l-new cb8e0dca; d8acdece/180; L-1 e46b0417): full review as for KEYS.
+- MY MISS (KEYS L-2): passed a DATA phrase whose unit and set did not match keycheck.py's counter (C124 E-1). Rule: test every DATA
+  clause against the tool's counter code (unit + set).
+
+## Resume point (successor 24), written 2026-11-06T00:2xZ by date -u (Opus 5.5, D15)
+- Since 16:0xZ: R-T3R-audit §C vs REFEREE-2 (bfeca123), add. 1 Glucose 16/16 UNSAT, add. 2 T3-G2 CLOSED by R110; R-P-IDEAL-FLIP §C
+  add. 1 L-3 MATCHES (5c02d44d).
+- STEP 2: docs/referee/R-P-IDEAL-KEYS.md (l-new b302bbf5, 62b35bf7/282, L-1 f36c6402). §2-§6 all SIGN, DEAD PM SIGN, PMV SIGN WITH GAP
+  KY-1 (false «7 = 1 + desc(6)»), tower DEAD REFUSED KY-G1 (box 169 predicts T ≥ F(l) itself; «fixed clock» not in source). L-1 NOT
+  YET: KY-L1. Tools scratch/keys_probe.py, keys_check.py (controls RETURN_OWN, CASCADE_PREV). §C next when the Lead routes fixes/L-2.
+- QUEUE: P-TR3 (L-COMP drup.c + Glucose proofs) has priority when it arrives: audit drup.c (RUP only, empty clause reached, input =
+  recorded DIMACS sha1 in scratch/t3r_logs/dimacs_sha1.txt), re-run on the proofs.
+- Container restarts often: scratchpad worktrees (lcomp 6f19564f, lnew_keys b302bbf5) may vanish; re-add with git worktree add --detach.
+
 ## Resume point (successor 24), written 2026-11-05T16:0xZ by date -u (Opus 5.5, D15)
 - STEP 0 pushed d9a2847b (verify PASS), answers sent to the Lead 14:44Z. Tools 2dfbf372 (verify PASS).
 - STEP 1 DONE: docs/referee/R-T3R-audit.md on L-COMP 9 box 27 (l-comp 6f19564f). Verdict FAITHFUL WITH GAPS: T3-G1 (no DRAT/LRAT;

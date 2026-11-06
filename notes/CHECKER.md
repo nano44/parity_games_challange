@@ -1,6 +1,104 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 19), 2026-11-06 17:59Z (date -u)
+- C125 CLOSED (Add. 1 bd7cb5e4 PASS; Add. 2 1b0cec5a; R113 landed b5ca0d4d; CI 6472 green on b5ca0d4d).
+- C126 CLOSED (main 2e1a91c8/f271c741 FAIL E-1; Add. 1 2f58a8bf PASS; Add. 2 1b0cec5a; Note E-3 landed b5ca0d4d; CI 6472 green).
+- CI rule kept: close on a run CONTAINING the landing (C113), not on runs of the draft commits (Lead asked; ruled in Add. 2).
+- NEXT: C127 = R114 (P-IDEAL-RISE), when the Lead sends the draft SHA.
+
+## Resume point (successor 19), 2026-11-06 16:05Z (date -u)
+- C126 (Note E-3): main 2e1a91c8 / f271c741 FAIL E-1 (E3-2 misplaced, not verbatim; R1 + R2 in §4); Add. 1 2f58a8bf PASS (block
+  a6311c7a = R1 + R2 + sign-off line; ruling: confirmations 1784dd28 / 0bdc659c cover the final block). NEXT: Add. 2 (landed) + CI.
+- C125 (R113): Add. 1 PASS (this commit; draft 0c044b1c @ 280117c7; L-3 4d28b1f3 = mine; UPDATE d57c030d; block re-run rc 0).
+  NEXT: Add. 2 (landed) + CI. Landing order: R113, then Note E-3.
+- Trap: never commit while push.sh runs (it may push an unverified commit); wait with a pgrep loop.
+
+## Successor 19 handover check, 2026-11-06 13:13Z (date -u)
+1. Branch claude/checker, head 559c9664 (= git ls-remote origin). STALE-CLONE TRAP HIT: the container's local claude/checker ref was
+   14 commits behind origin (HEAD detached); fetch --deepen + checkout + ff-only fixed it; HEAD = local ref = ls-remote = 559c9664.
+   Against trunk claude/vibrant-johnson-nxvvxo @ a05bc1db: 3 ahead (3ea53679 C123 Add. 2, 1bd0b98f C123 CI line, 559c9664 C125 main);
+   behind 216 (85 first-parent); merge-base 89764538 (C123 Add. 1).
+2. Open work: C125 = R113 (P-IDEAL-ALIGN), main FAIL E-1 (F0 / MOVES DATA). NEXT: C125 Add. 1 on the second fill (claude/l-new
+   e0d49b59; L-3 sha1 expected 4d28b1f3…, rebuilt UPDATE d57c030d…) when the Lead sends the draft sha1; then Add. 2 + CI line.
+   C126 = RESULTS Note E-3 (docs/agents/R110-note-E3-draft.md), when the Lead sends the SHA after both referees confirm.
+3. GAPS rows owned: none (CHECKER appears in 3 trunk GAPS lines, l. 6, 11, 16, only as checker / re-runner in other lanes' rows).
+4. Rulings (trunk docs/DECISIONS-INDEX.md, all «active»: D1 l. 5, D18 l. 32, D20 l. 42):
+   - D1 (DECISIONS.md l. 7): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including
+     the fleet's own, as wrong until it passes the gauntlet below.»
+   - D18 (l. 333): «... Clearly distinguish proven results from conjectures and open problems.»
+   - D20 (l. 423): «We have reset the weekly usage, so we can again work faster no?» (Lead reading L48: full pace.)
+5. Trap: stale clone (bit again here, 14 behind). Check: ls-remote, fetch, ff-only, then compare HEAD AND the local branch ref with
+   ls-remote before any work; `git cat-file -e` on every brief SHA before reading it.
+
+## HANDOVER (successor 18 → successor 19), 2026-11-06 12:14Z (date -u). Successor 18 parks at about 500k context on the Lead's word.
+- OPEN: C125 = R113 (P-IDEAL-ALIGN) draft 1dc18bc9 @ 7f6ee059: main report docs/checker/C125.md FAIL E-1 (F0 / MOVES DATA counts).
+  L-3 = two replacements (C125 §4); expected L-3 sha1 4d28b1f3… (with newline), rebuilt UPDATE sha1 d57c030d… (no newline).
+  NEXT: C125 Add. 1 on the second fill (byte-check the lane L-3 against the §4 text; title; UPDATE sha1; body word diff; quote sweep;
+  block «P-IDEAL-ALIGN» re-run at the new l-new SHA); then Add. 2 (landed check) and the CI line.
+- NEXT after that: C126 = RESULTS note E-3 (lifting R110's CONDITIONAL on T^R(3) ≤ 8 via R112), routed after both referees sign it.
+  Check: the note changes only R110's label as stated; R112 is the landed premise; both referee signatures; no other RESULTS byte.
+- Checks this successor ran (all CLOSED except C125):
+  | check | entry | main | addenda | landed |
+  | --- | --- | --- | --- | --- |
+  | C122 | R110 P-IDEAL-FLIP | 80ed31a6 FAIL E-1..E-3 (DATA count / scope; source note), G-0 | Add. 1 32f65fe0 PASS, Add. 2 bb114219 + CI 21ff8727 | d056db87 |
+  | C124 | R111 P-IDEAL-KEYS | 9c9b03b7 FAIL E-1 (RENEW DATA: KP form, a = 1 intervals) | Add. 1 18aa6728 PASS, Add. 2 fa9bd3db + CI 8f1ae7b4 | e751969c |
+  | C123 | R112 P-TR3 (machine-certified) | 96b7f8a1 FAIL E-1 (lane label in title), E-2 (TR-G1 body after REFEREE Add. 1) | Add. 1 89764538 PASS, Add. 2 3ea53679 + CI 1bd0b98f | 1393ebbc |
+  | C125 | R113 P-IDEAL-ALIGN | (this commit) FAIL E-1 | - | - |
+- METHOD (learned this box; keep):
+  - DATA rule, sharpened: read the lane tool and match each count to its counter. Compare its UNIT (what one check tests) and its SET
+    (which genomes / intervals / levels) with the clause that the count names. A weaker test (KP for keys, C124) or a wider set (a = 1
+    intervals, level-0 pairs, C124 / C125) is an E-item. A half that follows by arithmetic from checked inequalities on the same runs is a
+    note (C125 T-BOUND).
+  - When a DATA count has no committed record, re-run the lane's (seeded) tool from `git archive` and quote its output (C123 pinck).
+  - Build the L-3 yourself and give its sha1 and the rebuilt UPDATE sha1. Add. 1 is then a cmp plus a sha1 check.
+  - A RESULTS title carries one label only. No lane label and no packet name (C123 E-1).
+  - Referee addenda filed after a draft can make body sentences stale. Ask for exact replacements (C123 E-2).
+  - Parentheses: count «(» / «)» and depth on every line (C122 G-0).
+- TRAPS (this box): a stamp typed before date -u (C124 Add. 2, corrected in place). A brief's «sha1 X» may be a file sha1
+  (8099415b, f8d3677e). The Lead sometimes routes before its push lands: wait with a background `until git cat-file -e <sha>` loop.
+- ENVIRONMENT: Oink 8fbf0a7 is built (tools/oink/build); push.sh takes 20-35 min. pysat 1.9.dev15 is installed (pinck runs in
+  seconds). The GitHub MCP tool reconnects often: load mcp__github__actions_get with ToolSearch before each CI read.
+
+## Resume point (successor 18), 2026-11-06 11:31Z (date -u)
+- C123 CLOSED (main 96b7f8a1 FAIL E-1, E-2; Add. 1 89764538 PASS; Add. 2 3ea53679; R112 landed 1393ebbc; CI 6416 green). Nothing open.
+  NEXT (Lead 11:05Z): C125 = R113 (P-IDEAL-ALIGN); C126 = RESULTS note E-3 (lift R110's CONDITIONAL via R112), after both referees.
+
+## Resume point (successor 18), 2026-11-06 09:43Z (date -u)
+- C123 Add. 1 PASS (R112 second fill ad17fc0c @ 42d7c02d; L-3 d87bb3f0 = mine; E-2 applied verbatim). NEXT: C123 Add. 2 (landed check
+  + CI) when R112 lands.
+
+## Resume point (successor 18), 2026-11-06 08:10Z (date -u)
+- C124 CLOSED (main 9c9b03b7 FAIL E-1; Add. 1 18aa6728 PASS; Add. 2 fa9bd3db; R111 landed e751969c; CI 6387 green).
+- C123 (R112) open: main 96b7f8a1 FAIL E-1, E-2. NEXT: C123 Add. 1 on the second fill (L-3 = one deletion; E-2 (a)-(c); the optional
+  «all 16 cubes» change was NOT taken, Lead 07:45Z).
+- Trap repeated: a stamp typed before date -u (C124 Add. 2, 07:46Z vs 07:45:15Z; corrected in place). Run date -u alone first.
+
+## Resume point (successor 18), 2026-11-06 06:51Z (date -u)
+- C124 Add. 1 pushed 18aa6728 (PASS). R111 to land; then C124 Add. 2.
+- C123 = R112 (P-TR3) draft 35856ab5 @ cd5c9bb4: FAIL E-1 (title carries «P-TR3 [lane: EXACT-SAT + CERT] »; L-3 = one deletion, sha1
+  d87bb3f0…, rebuilt UPDATE 21ab6559…) and E-2 (body TR-G1 sentences vs REFEREE Add. 1 365f22e1; exact texts in C123 §5). pinck
+  re-run reproduces 300/150/128 (no committed record before). NEXT: C123 Add. 1 on the second fill.
+
+## Resume point (successor 18), 2026-11-06 06:21Z (date -u)
+- C124 Add. 1 PASS (R111 second fill a5936e6f @ 285e5061; L-3 c29f0a93 = mine). NEXT: C123 = R112 (P-TR3) draft 35856ab5 @ trunk
+  cd5c9bb4 (push started 06:21Z); then the landed checks of R111 (C124 Add. 2) and R112 when they land.
+
+## Resume point (successor 18), 2026-11-06 02:54Z (date -u)
+- C124 = R111 (P-IDEAL-KEYS) draft 462ac44d @ trunk 79eaa01e: FAIL E-1 only (RENEW's DATA «for the constant keys, on 2,704
+  intervals»: keycheck RENEWB checks KP only, and 2,188 of the intervals have a = 1, outside «if a ≥ 2»). L-3 = one replacement
+  (C124 §5); expected L-3 sha1 c29f0a93… (with newline), rebuilt UPDATE sha1 284c9dea… (no newline). C123 is reserved for P-TR3.
+  NEXT: C124 Add. 1 on the second fill.
+
+## Resume point (successor 18), 2026-11-05 21:17Z (date -u)
+- C122 CLOSED (main 80ed31a6 FAIL E-1..E-3; Add. 1 32f65fe0 PASS; Add. 2 bb114219; R110 landed d056db87; CI 6293 green). Nothing open.
+  NEXT: C123 = P-TR3 («T^R(3) = 8», L-COMP), when the Lead routes it.
+
+## Resume point (successor 18), 2026-11-05 20:42Z (date -u)
+- C122 Add. 2: R110 LANDED d056db87 exactly as checked (PASS). CI run 6293 (id 42105648932) on d056db87 IN PROGRESS. NEXT: append the CI
+  line to Add. 2 («… **C122 CLOSED.**»), read with mcp__github__actions_get get_workflow_run. Then C123 = P-TR3 («T^R(3) = 8», L-COMP),
+  when routed (Lead 20:42Z: in a few hours).
+
 ## Resume point (successor 18), 2026-11-05 19:03Z (date -u)
 - C122 Add. 1: second fill 3b4f257d @ efe44598 PASS (L-3 = my R1-R4 byte for byte; UPDATE = expected d76a5cfb; w162 at 47b4e165 PASS;
   quotes 0 not found). N-1 optional. NEXT: the landed check (Add. 2: RESULTS insertion, GAPS l. 11, stamps) and the CI line.

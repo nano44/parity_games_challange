@@ -1,0 +1,2 @@
+class PHX d 3: support 73 (dec 61, lo 7, hi 5), recompute mismatches 0, equations 114, free 0, inconsistent False, negative 0
+EXACT bound 22 = 22.000000 (float LP 22.000000): CERTIFIED

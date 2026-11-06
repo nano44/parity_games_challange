@@ -1,0 +1,3 @@
+it 32 D-2LM 2 D 2 maxD(Xi-target) 2
+it 1236 D-2LM 3 D 3 maxD(Xi-target) 3
+it 15984 D-2LM 4 D 4 maxD(Xi-target) 2

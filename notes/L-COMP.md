@@ -1,14 +1,28 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## STATUS 2026-11-06 01:4xZ (successor 9): P-TR3 FROZEN at d03d8370 (P-TR3.md sha1 cab32c0e, 125 lines; line L-1 221c81eb, 1 line);
+16/16 d 3 cubes CERTIFIED (Glucose 4 DRUP + own drup.c; log/R_d3_L9_cert.txt). Sent to the Lead for the two referees.
+- Restarts: 6 on 11-05 (~14:05, ~15:45-16:53, ~17:0x, 18:49, ~19:08, ~23:3x). Resource log (log/resources.txt, local) normal every
+  time; a tracked background task helps (no restart for 4 h) but does not prevent them. After a restart: experiments/comp/box27/
+  relaunch.sh; INT=60 setsid nohup ./mon.sh <abs>/log/resources.txt; keep one harness-tracked wait loop alive.
+- Running: R_d4_L13, R_d4_L14 (d 4), INF_m3_L18 (T_inf(3) >= 18), acube.py summaries. Queue after them: optional T_1(3) <= 10
+  re-derivation (L-SI box 70 has it EXACT; Lead 19:24Z); #5 d 3 free-W / padded d 2 lowest. #2, #3, #7 STOPPED (Lead 19:24Z).
+- Things only I know: pysat Solver.interrupt() does not stop cadical195 here: use subprocess + timeout (acube.py). drat-trim fetch is
+  refused (classifier). drup.c IGNDEL mode reaches the refutation one lemma earlier than the default mode.
+
 ## Resume point -- successor 9, BOX 27 (running), updated 2026-11-05 10:5xZ by date -u
 - Everything: experiments/comp/box27/README.md. DONE: T^R(2) = 4 (C + CNF), T^R(3) = 8 (CNF cubes), T_k(1), T_k(2) k <= 12 + unlimited.
-- IN FLIGHT (idempotent relaunch lines; finished cubes are skipped, state = cubes/TAG/<id>.res, gitignored):
-  cd experiments/comp/box27
-  SYM=1 setsid nohup python3 cnf.py 4 13 out/R_d4_L13.json > log/R_d4_L13.log 2>&1 &      (d 4 witness search; not resumable, restart)
-  PAR=1 setsid nohup ./cubes.sh R_d4_L14 4 14 > log/cubes_R_d4_L14.out 2>&1 &            (d 4 T >= 14, 64 cubes)
-  W=free PAR=2 setsid nohup ./cubes.sh F_d3_L9 3 9 > log/cubes_F_d3_L9.out 2>&1 &       (d 3 free W-targets, T >= 9)
-  Progress: ./cubes.sh TAG d L summary. Running logs are listed in .git/info/exclude (local) until the job ends.
+- CONTAINER RESTART 2026-11-05 ~14:05Z killed every solve (no cube had finished). Since 14:3xZ all searches run under acube.py
+  (adaptive cubes: 20-min cap per cube, split on the next option's Xi-target on timeout; state cubes2/TAG/<id>.res|.split).
+- IN FLIGHT. After ANY restart run: experiments/comp/box27/relaunch.sh  (idempotent: skips running tags and finished cubes)
+  R_d4_L13 (d 4 witness), R_d4_L14 (d 4 T >= 14), F_d3_L9 (d 3 free W, T >= 9), P22_d2_L5 (d 2, W free, 2+2 padding, T >= 5).
+  Progress: python3 acube.py TAG d L summary. Logs log/acube_TAG.out (local exclude while running).
+- QUEUE (Lead 14:13Z / 15:02Z / 15:45Z, in order): (1) P-TR3 packet + RUP certificates (proofs.sh); (2) T_1(3) >= 11 (acube
+  T1_m3_L11, FREE0=1 KF=1; reproduce L-NEW T_1(3) >= 10 = T1_m3_L10); (3) SUM_1 at m 3: a+b >= 18, splits a = 0..8 (RUN2=a, L=b),
+  pruned by (2); controls a+b = 17 SAT; (4) frontier max post s.t. pre >= p, m 3, pre 3..6; (5) d 4 T >= 13 / 14; d 3 free-W and
+  padded d 2 lowest; (6) INF-2: T_inf(3) >= 18 (KF unlimited, d 4); (7) L-SI box 67 tau-cells «T_0(G) <= 5 and T_1(G) >= 11»
+  (answered by (2) if UNSAT) and «T_0(G) >= 6 and T_1(G) >= 10».
 - NEXT: padded d 3 (W=free P=1,1,0 and P=1,1,1) T >= 9 cubes; padded d 2 P=2,2 rerun without the 3000 s timeout if it timed out.
 
 ## Successor 9 handover check (session_01V5yGRVtZknivpYHCjzoA9y, Opus 5.5), 2026-11-05 09:5xZ by date -u

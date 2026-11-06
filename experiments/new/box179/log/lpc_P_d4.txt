@@ -1,0 +1,4 @@
+corpus files at d 4: 64
+class P d 4 genomes 100 transitions 38265 distinct-dec-rows 18365 distinct-states 36803 features 92
+FEASIBLE min max Phi = 52.0000
+weights: pair2_0001=24 pair2_0011=17 pair2_0101=17 pair2_1001=17 k1=15 k0=15 pair0_1111=-15 pair2_0000=14 pair1_0000=-14 pair2_0111=10 pair2_1101=10 z5=-10 k5=10 k4=10 pair2_1011=10 pair1_0101=-7 pair1_0001=-7 pair2_1000=7 z4=7 pair2_0100=7 u2=7 pair1_0010=-7 pair2_1110=-7 u3=7 pair1_1000=-7 pair2_0010=7 z2=-7 pair1_0100=-7 z3=-7 pair1_1010=-7 pair3_0111=2 k6=1 pair3_1101=1 pair3_0101=1 pair3_0110=-1 k7=1 u7=-1 const=0
