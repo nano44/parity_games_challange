@@ -1,6 +1,31 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Successor 25 handover check, written 2026-11-06T23:4xZ by date -u (Opus 5.5, D15)
+- Stale-clone check: ls-remote claude/referee = bc2bdd5a; fetched --unshallow (9,374 commits, not shallow); ff-only up to date;
+  HEAD = origin/claude/referee = ls-remote = bc2bdd5a56f3f9a7.
+1. Branch claude/referee, head bc2bdd5a (before this commit); vs trunk claude/vibrant-johnson-nxvvxo: 3 ahead, 265 behind
+   (merge-base 3489d797; git rev-list --left-right --count at 23:4xZ).
+2. Open work:
+   - STEP 2 «R-P-IDEAL-IM Addendum 1»: CNF regenerated at l-si cb2b0c60 (frame sha1 c3b3a232…), sha1 7e611c8b… EQUAL (20,843 vars,
+     96,580 clauses); Glucose 4 proof generation running detached (scratchpad im/run_gen.sh → im/check.sh → ref_rup_del). Next: record
+     the proof sha1 (expect 32be84e4…), ref_rup_del verdict, lemma/deletion counts, wall time; write the addendum; push.
+   - New tool scratch/ref_rup_del.c (ref_rup.c + deletions applied by set lookup; top-level units kept: sound). Controls: hand cases
+     (non-RUP lemma rejected; deletion of needed clauses makes the next lemma fail; duplicate copies deleted one at a time) and three
+     Glucose proofs with deletions (PHP 8, random 3-SAT 250/300 vars): VERIFIED, agreeing with ref_rup; unmatched-deletion count
+     (134 on rnd 300) equal to an independent Python multiset replay (scratch/../ctl replay, Glucose deletes clauses it never logged).
+   - STEP 1 P-IDEAL-MOVES §C byte test: waiting for the Lead's SHA/sha1s of L-NEW 57's fixes entry 1 and line L-2.
+3. docs/GAPS.md rows I own: none as owner. G-N5-TIME (major, open) names «referees later» after L-NEW / L-LIT T22.
+4. Owner rulings (all «active» in DECISIONS-INDEX):
+   - D1: "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own,
+     as wrong until it passes the gauntlet below." and "Never downgrade the referee to save money." (active)
+   - D18: "Focus on N5 and work toward proving it. Explore novel approaches ... Clearly distinguish proven results from conjectures
+     and open problems." (active)
+   - D20: "We have reset the weekly usage, so we can again work faster no?" (active; Lead reading L48 full pace, stop on paid overage)
+5. Trap: the DATA rule (missed three times by s24: C124 E-1, C125 E-1 (ii), C127 E-1): a DATA count attached to a signed clause whose
+   counter has a different unit, set or statement scope. Check now: read the counter code and compare unit, set and scope clause by
+   clause, or require an explicit no-DATA entry. (Also: container restarts kill jobs: every long run is detached and resumable.)
+
 ## HANDOVER NOTE (successor 24), written 2026-11-06T22:xxZ by date -u (Opus 5.5, D15); context ~near park; origin c82fac5c + this commit
 - DONE (successor 24; all pushed, verify PASS; reports in docs/referee/):
   | item | report | verdict |
