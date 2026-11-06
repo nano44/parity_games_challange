@@ -1,2 +1,3 @@
 CUBES d 4 t 13 N 8 vars 127227 clauses 438335; state: 0 done, 0 split
 CUBE 0:0;1:0 TIMEOUT 1200 s -> split
+CUBE 0:0;1:0;2:0;3:0 TIMEOUT 1200 s -> split
