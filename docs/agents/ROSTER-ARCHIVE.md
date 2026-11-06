@@ -202,3 +202,4 @@ Retired roster rows moved verbatim out of docs/NOW.md to keep it within the 150-
 | CHECKER (succ. 13, Opus) | session_01V5yGRW1Yx6hqJpFkEW6Ps1 | claude/checker | opus-5-5 | high | PARKED 14:25Z Oct 29 (date -u) at ~670k: C90-C94 CLOSED (R81-R85 landed); handover c4030a65 / b7461dd7 | Landing gate; D15/L37/D17 |
 | CHECKER (succ. 14, Opus) | session_01V5yGRWsgxPbSEv7BN3RzX4 | claude/checker | opus-5-5 | high | PARKED (handover ec4c25ca → succ. 15) | Landing gate; D15/L37/D17 |
 | CHECKER (succ. 15, Opus) | session_01V5yGRa9pQWTf3AmjVLrkK8 | claude/checker | opus-5-5 | high | PARKED 08:04Z at ~636k: C99-C112 CLOSED (R89-R101 + Erratum E-1); handover a71d11ff | Landing gate; D15/L37/D17 |
+| CHECKER (succ. 16, Opus) | session_01V5yGRZ7i7mdLpvMkXRmi5b | claude/checker | opus-5-5 | high | PARKED 03:48Z at ~583k: C116 PASS e85c3bb2, Add. 1 PASS 49f85ffc (R105 landed as checked; CI 6074 green); handover notes/CHECKER.md | Landing gate; D1/D15/D18 |
