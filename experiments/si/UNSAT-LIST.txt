@@ -1,0 +1,25 @@
+# L-SI successor 40: every frame UNSAT (frame = experiments/si/box70/frame.py; CaDiCaL 1.5.3 via python-sat; one solver, proof unchecked)
+# Format: query | DIMACS sha1 | command, run from experiments/si/box70 (writes /tmp/si_unsat/<tag>.cnf; DUMPONLY=1 = write, do not solve).
+# Regenerate + check all: experiments/si/unsat_regen.sh. Logged sha1 (when the solve dumped one) must equal the regenerated one.
+m 3 sum 7 11 (box 70) | 80dd7013477fa60e15779b65a3383573a5de17cd | DUMP=/tmp/si_unsat DUMPONLY=1 python3 frame.py 3 sum 7 11
+m 3 sum 8 10 (box 70) | 5ab610478d539de618cee16b0180aeef81d57a4a | DUMP=/tmp/si_unsat DUMPONLY=1 python3 frame.py 3 sum 8 10
+m 3 t0 9 (box 70) | 5b66154445b0550bd44f039a175bf3a643684d84 | DUMP=/tmp/si_unsat DUMPONLY=1 python3 frame.py 3 t0 9
+m 3 t1 11 (box 70) | 7e611c8bdf53a70a398e9e1ec3b220a1b79e2507 | DUMP=/tmp/si_unsat DUMPONLY=1 python3 frame.py 3 t1 11
+m 3 t1 12 (box 70) | ed796756f20e9e456db242b8e483e1536cfe855e | DUMP=/tmp/si_unsat DUMPONLY=1 python3 frame.py 3 t1 12
+m 3 tk 13 K=2 (box71) [logged sha1 matches] | f3d4b6adcfef51d67f2c34aa4e27184c868788a8 | K=2 DUMP=/tmp/si_unsat DUMPONLY=1 python3 frame.py 3 tk 13
+m 3 tk 19 K=-1 (box72) [logged sha1 matches] | 7124020815a4fcabe07dcfebc716b679899b4310 | K=-1 DUMP=/tmp/si_unsat DUMPONLY=1 python3 frame.py 3 tk 19
+m 3 sumk 7 11 K=2 (box72) [logged sha1 matches] | 62bd86b2ac88671166230248af89f0f6ff53cc39 | K=2 DUMP=/tmp/si_unsat DUMPONLY=1 python3 frame.py 3 sumk 7 11
+m 3 sumk 8 11 K=2 (box72) [logged sha1 matches] | 02e35cae2abd71e7640d050ea67236dd847dd9d6 | K=2 DUMP=/tmp/si_unsat DUMPONLY=1 python3 frame.py 3 sumk 8 11
+m 3 tk 15 K=3 (box72) [logged sha1 matches] | 96bd291319d16c2fc9fd3fdd23c84911a2651c96 | K=3 DUMP=/tmp/si_unsat DUMPONLY=1 python3 frame.py 3 tk 15
+m 2 one-flip pre 3 post >= 3 (box 73) [logged sha1 matches] | 9b5def25316a45dd44b54d80efe614ad32c72284 | PRE=3 DUMP=/tmp/si_unsat DUMPONLY=1 python3 frame.py 2 pq 1 6
+m 2 one-flip pre 4 post >= 2 (box 73) [logged sha1 matches] | fd7dd6adec3cce6662c2437b3611866dcd6beaa2 | PRE=4 DUMP=/tmp/si_unsat DUMPONLY=1 python3 frame.py 2 pq 1 6
+m 3 one-flip pre 1 post >= 8 (box 73) [logged sha1 matches] | 6f93bde4ebd84d2aef44239efefd762784488180 | PRE=1 DUMP=/tmp/si_unsat DUMPONLY=1 python3 frame.py 3 pq 1 9
+m 3 one-flip pre 3 post >= 7 (box 73) [logged sha1 matches] | b2dc10c658711cec2249e104ed0647bc605ef969 | PRE=3 DUMP=/tmp/si_unsat DUMPONLY=1 python3 frame.py 3 pq 1 10
+m 3 one-flip pre 6 post >= 4 (box 73) [logged sha1 matches] | 822ea1a9c32d09b0947766787a104fb45ef73435 | PRE=6 DUMP=/tmp/si_unsat DUMPONLY=1 python3 frame.py 3 pq 1 10
+m 3 one-flip pre 7 post >= 3 (box 73) [logged sha1 matches] | c5476f6f6f97d076a7e89e54a0323c55279ece19 | PRE=7 DUMP=/tmp/si_unsat DUMPONLY=1 python3 frame.py 3 pq 1 10
+m 2 top-pair flips F >= 8, T <= 9, K=-1 (box 74) | 3d81fc33f645469476e26a842b7536a85bd22051 | K=-1 DUMP=/tmp/si_unsat DUMPONLY=1 python3 frame.py 2 flips 9 8
+m 3 top-pair flips F >= 8, T <= 8, K=0 (box 74) | 60487b021ce1d7187293c7c6adedb61f5de0c584 | K=0 DUMP=/tmp/si_unsat DUMPONLY=1 python3 frame.py 3 flips 8 8
+m 3 top-pair flips F >= 10, T <= 10, K=1 (box 74) | 170e1114b2ae4879cdbc34b129bb8a79f2a071fc | K=1 DUMP=/tmp/si_unsat DUMPONLY=1 python3 frame.py 3 flips 10 10
+m 3 top-pair flips F >= 9, T <= 10, K=1 (box 74) | 816fb71a3cb25c22ac88180c062b8de7b3c4b418 | K=1 DUMP=/tmp/si_unsat DUMPONLY=1 python3 frame.py 3 flips 10 9
+m 2 top-pair flips F >= 7, T <= 7, K=2 (box 74) | 9413bc7adf95801b1e31040e573665d8e4f08a2f | K=2 DUMP=/tmp/si_unsat DUMPONLY=1 python3 frame.py 2 flips 7 7
+m 3 top-pair flips F >= 11, T <= 12, K=2 (box 74) | 4c65fd8eb905a288f8636bb4aa24fe1630388710 | K=2 DUMP=/tmp/si_unsat DUMPONLY=1 python3 frame.py 3 flips 12 11

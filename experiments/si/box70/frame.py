@@ -166,6 +166,7 @@ if DUMP:
         fo.write("p cnf %d %d\n" % (nv, len(cl)))
         for c in cl: fo.write(" ".join(map(str, c)) + " 0\n")
     print("DIMACS", tag + ".cnf", "sha1", hashlib.sha1(open(os.path.join(DUMP, tag + ".cnf"), "rb").read()).hexdigest(), flush=True)
+    if os.environ.get("DUMPONLY") == "1": raise SystemExit(0)            # box 74: write the DIMACS, do not solve (for L-COMP)
 t0 = time.time()
 from pysat.solvers import Solver
 sol = Solver(name="cadical153", with_proof=PROOF, bootstrap_with=cl); r = sol.solve(); dt = time.time() - t0
