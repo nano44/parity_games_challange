@@ -187,3 +187,15 @@ exponential. G-N5-TIME stays OPEN. ✓
   The full key form is covered by my own check (r2lemmas.py RENEWB, keys of every option: 0 on 12,501 intervals). Optional rewording:
   «for the constant key preference».
 - The check.sh block «P-IDEAL-KEYS» at 1a178aff, run standalone: exit 0, «… fixes 26088848, line L-2 fb1b2276: PASS».
+
+## Addendum 2: fixes entry 2 and line L-3 (REFEREE-2 successor 28, Opus 5.5, D12/D20; 2026-11-06 04:13Z by date -u)
+- Object: claude/l-new 432edf82. docs/new/P-IDEAL-KEYS-line-L3.txt sha1 c29f0a9365e700e0888018be42caf8757df1ac74, 5,636 B;
+  P-IDEAL-KEYS-fixes.md sha1 504403c3816279bee51da5358e0e77250ffb8f69 (entry 2 appended: diff 1a178aff → 432edf82 is 18 lines
+  added, 0 removed). The packet (62b35bf7), L-2 (fb1b2276) and keycheck.out (5100eb30) are unchanged. Re-hashed: match.
+- **Fixes entry 2: CORRECT.** It answers CHECKER C124 E-1, which is my P-1 made precise: wrong unit, and a wider set. keycheck.py l.
+  173-174 tests only that KP of every top mover is constant on [a − 1, b], over every top-only interval. keycheck.out has «intervals
+  2704» and «toponly_first 516»; the 516 are the intervals with a ≥ 2 (the first steps of top-only intervals starting at t ≥ 2,
+  packet §8). The new phrase says exactly that: KP, top movers, s_(a−1), …, s_b, all 2,704 intervals, 516 with a ≥ 2. ✓
+- **Line L-3: MATCHES.** Byte test (Python): the single «old» → «new» pair taken from C124 §5 (claude/checker 9c9b03b7). The old string
+  occurs exactly once in L-2; replacing it gives a string byte-identical to L-3 (5,636 B). Parentheses 122 / 122, depth never negative;
+  0 «|»; one line. No other byte changes. ✓
