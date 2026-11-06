@@ -42,7 +42,7 @@ G-N5-TIME stays OPEN; the kill bounds nothing.
 | --- | --- | --- | --- | --- | --- |
 | 3 | 8 | 7 | 0, 1, 2, 3, 4, 5 | UNSAT (all six) | 453-701 s each |
 | 3 | 8 | 6 | 0, 1 / 2 | UNSAT, UNSAT / SAT (replayed, 6 rises) | 2,077, 2,061 / 110 s |
-| 4 | 13 | 9 | 0, 2, 4, 6 (σ_l swaps 2l, 2l + 1 and preserves R) | running (r200/cubes.py, resumable; r213/run_d4.sh) | |
+| 4 | 13 | 9 | 0, 2, 4, 6 (σ_l swaps 2l, 2l + 1 and preserves R) | STOPPED 14:10Z (Lead: low value after the kill); root cube split twice, no answer; state r213/cubes/ resumable (r213/run_d4.sh) | |
 
 ## 3. Climbs (r212/fl.c SCORE=R / SCORE=M, r212/out/L0_m*_r6xx / r7xx logs)
 | d | 2d | best max R | best max moves of a Ξ-target |
