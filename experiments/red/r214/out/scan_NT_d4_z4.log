@@ -10,3 +10,7 @@ MOVE d 4 t 13 z 4 r 5: SAT solve 15.5 s
   replay T 6 moves of z 5 target False (OK) -> ../r214/out/NT_d4_z4_r5.json
 MOVE d 4 t 13 z 4 r 6: SAT solve 55.1 s
   replay T 7 moves of z 6 target False (OK) -> ../r214/out/NT_d4_z4_r6.json
+MOVE d 4 t 13 z 4 r 7: SAT solve 1707.7 s
+  replay T 7 moves of z 7 target False (OK) -> ../r214/out/NT_d4_z4_r7.json
+MOVE d 4 t 13 z 4 r 8: UNSAT solve 4.3 s
+DONE z 4 max 7

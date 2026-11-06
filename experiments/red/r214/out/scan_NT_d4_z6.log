@@ -1,0 +1,14 @@
+MOVE d 4 t 13 z 6 r 1: SAT solve 0.9 s
+  replay T 1 moves of z 1 target False (OK) -> ../r214/out/NT_d4_z6_r1.json
+MOVE d 4 t 13 z 6 r 2: SAT solve 4.3 s
+  replay T 2 moves of z 2 target False (OK) -> ../r214/out/NT_d4_z6_r2.json
+MOVE d 4 t 13 z 6 r 3: SAT solve 5.3 s
+  replay T 4 moves of z 3 target False (OK) -> ../r214/out/NT_d4_z6_r3.json
+MOVE d 4 t 13 z 6 r 4: SAT solve 19.3 s
+  replay T 4 moves of z 4 target False (OK) -> ../r214/out/NT_d4_z6_r4.json
+MOVE d 4 t 13 z 6 r 5: SAT solve 16.4 s
+  replay T 6 moves of z 5 target False (OK) -> ../r214/out/NT_d4_z6_r5.json
+MOVE d 4 t 13 z 6 r 6: SAT solve 163.4 s
+  replay T 6 moves of z 6 target False (OK) -> ../r214/out/NT_d4_z6_r6.json
+MOVE d 4 t 13 z 6 r 7: SAT solve 912.7 s
+  replay T 7 moves of z 7 target False (OK) -> ../r214/out/NT_d4_z6_r7.json
