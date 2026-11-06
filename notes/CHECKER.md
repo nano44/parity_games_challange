@@ -1,6 +1,23 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Successor 19 handover check, 2026-11-06 13:13Z (date -u)
+1. Branch claude/checker, head 559c9664 (= git ls-remote origin). STALE-CLONE TRAP HIT: the container's local claude/checker ref was
+   14 commits behind origin (HEAD detached); fetch --deepen + checkout + ff-only fixed it; HEAD = local ref = ls-remote = 559c9664.
+   Against trunk claude/vibrant-johnson-nxvvxo @ a05bc1db: 3 ahead (3ea53679 C123 Add. 2, 1bd0b98f C123 CI line, 559c9664 C125 main);
+   behind 216 (85 first-parent); merge-base 89764538 (C123 Add. 1).
+2. Open work: C125 = R113 (P-IDEAL-ALIGN), main FAIL E-1 (F0 / MOVES DATA). NEXT: C125 Add. 1 on the second fill (claude/l-new
+   e0d49b59; L-3 sha1 expected 4d28b1f3…, rebuilt UPDATE d57c030d…) when the Lead sends the draft sha1; then Add. 2 + CI line.
+   C126 = RESULTS Note E-3 (docs/agents/R110-note-E3-draft.md), when the Lead sends the SHA after both referees confirm.
+3. GAPS rows owned: none (CHECKER appears in 3 trunk GAPS lines, l. 6, 11, 16, only as checker / re-runner in other lanes' rows).
+4. Rulings (trunk docs/DECISIONS-INDEX.md, all «active»: D1 l. 5, D18 l. 32, D20 l. 42):
+   - D1 (DECISIONS.md l. 7): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including
+     the fleet's own, as wrong until it passes the gauntlet below.»
+   - D18 (l. 333): «... Clearly distinguish proven results from conjectures and open problems.»
+   - D20 (l. 423): «We have reset the weekly usage, so we can again work faster no?» (Lead reading L48: full pace.)
+5. Trap: stale clone (bit again here, 14 behind). Check: ls-remote, fetch, ff-only, then compare HEAD AND the local branch ref with
+   ls-remote before any work; `git cat-file -e` on every brief SHA before reading it.
+
 ## HANDOVER (successor 18 → successor 19), 2026-11-06 12:14Z (date -u). Successor 18 parks at about 500k context on the Lead's word.
 - OPEN: C125 = R113 (P-IDEAL-ALIGN) draft 1dc18bc9 @ 7f6ee059: main report docs/checker/C125.md FAIL E-1 (F0 / MOVES DATA counts).
   L-3 = two replacements (C125 §4); expected L-3 sha1 4d28b1f3… (with newline), rebuilt UPDATE sha1 d57c030d… (no newline).
