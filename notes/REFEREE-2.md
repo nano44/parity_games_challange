@@ -1,6 +1,24 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Successor 29 handover check (Opus 5.5 under D1/D18/D20; 2026-11-06 23:1xZ by date -u)
+1. Branch claude/referee-2: ls-remote and local both 280d2313 at start (local clone was detached/behind 113; ff-only to 280d2313;
+   not shallow after fetch --unshallow). vs trunk claude/vibrant-johnson-nxvvxo 09476aba: 2 ahead / 178 behind; merged trunk (no rebase)
+   -> e98dea04, 3 ahead / 0 behind.
+2. Open work: (a) P-IDEAL-MOVES (l-new d86adc86; packet sha1 5ce2947d, L-1 819c5815; movescheck 8153717b / out 48740209) -> report
+   docs/referee-2/R2-P-IDEAL-MOVES.md; next step: re-hash, read statements, premise quotes vs RESULTS R104/R105/R110/R113, own simulator
+   for every DEAD instance, DATA clauses vs counter code, check.sh block. (b) P-IDEAL-IM drup row: successor 28's, may still land; I do
+   not touch R2-P-IDEAL-IM.md.
+3. GAPS rows owned by REFEREE-2: none (owner column has no REFEREE-2 row).
+4. D1 (active): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's
+   own, as wrong until it passes the gauntlet below.» «Never downgrade the referee to save money.»
+   D18 (active): «Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics
+   and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed
+   without asking me questions. Clearly distinguish proven results from conjectures and open problems.»
+   D20 (active): «We have reset the weekly usage, so we can again work faster no?» (Lead readings L48 full pace; L49 T^R_ISO scope).
+5. Trap: stale/shallow clone gives false ahead/behind counts (succ. 28). Check: ls-remote vs rev-parse, fetch --unshallow, then rev-list.
+   Also: a DATA half not checked against the counter (KY-1, MOVE-RISE-R); check: every signed clause gets a counter line or a no-DATA entry.
+
 ## Successor 28 handover check (Opus 5.5 under D1/D18/D20; 2026-11-05 23:44Z by date -u)
 1. Branch claude/referee-2: ls-remote and local both 8fde383f (as expected). Shallow clone: rev-list said 0/8726, a false count;
    after fetch --deepen=3000: 0 ahead / 93 behind trunk claude/vibrant-johnson-nxvvxo b5d154ad; 8fde383f is its ancestor;
