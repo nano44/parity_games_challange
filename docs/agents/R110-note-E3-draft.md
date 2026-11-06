@@ -1,4 +1,4 @@
-# Draft RESULTS Note E-3 (Lead; first fill 2026-11-06T11:26:35Z by date -u (subagent); for REFEREE and REFEREE-2 sign-off and CHECKER C126) — RESULTS R110's CONDITIONAL DEAD SC-ISO: its machine premise T^R(3) ≤ 8 is now RESULTS R112 — NOT LANDED; goes after Erratum E-2, before Dead ends
+# Draft RESULTS Note E-3 (Lead; first fill 2026-11-06T11:26:35Z by date -u (subagent); for REFEREE and REFEREE-2 sign-off and CHECKER C126) — RESULTS R110's CONDITIONAL DEAD SC-ISO: its machine premise T^R(3) ≤ 8 is now RESULTS R112 — NOT LANDED; goes after Erratum E-2, before Dead ends — LANDED in RESULTS 2026-11-06 17:00Z (CHECKER C126 2f58a8bf PASS), after Erratum E-2, before Dead ends
 
 Placement: directly after «**Erratum E-2**»'s block and before «## Dead ends» in docs/RESULTS.md (at local trunk 7302bc7c: Erratum
 E-2 l. 12165-12191, blank l. 12192, «## Dead ends (kept;» l. 12193). Note block = the lines between the two markers below (not landed:
