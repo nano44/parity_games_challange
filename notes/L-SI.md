@@ -1,6 +1,26 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Successor 40 handover check (written 2026-11-06T00:50Z (date -u); successor 40 (Opus); 39 was session_01V5yGRYm5eKzWv7G3F5cuYS)
+1. Branch claude/l-si. Local clone at a5f4fcf2 = origin (git ls-remote) = expected; shallow, deepened (fetch --deepen=3000).
+   Against trunk claude/vibrant-johnson-nxvvxo bc05394aa (2026-11-05T22:51Z): 24 ahead / 549 behind; merge-base 96fb62cb3.
+2. Open work: BOX 72 = box 71 remainder (frame queries): (1) m 3 T_3 >= 15, T_inf >= 19 RUNNING since 00:47Z (box72/run72.sh, DIMACS
+   only, NOPROOF=1); (2) m 4 T_0 >= 14, T_1 >= 15; (3) SUM_2 at m 3 (pairs (a, 18 - a)). Next step of each: run, SAT -> realise.py.
+   BOX 73 = structural proof of SUM_1 inside the IM class; next step: re-read box 69/70 mechanism + L-NEW RENEW / RE-TRIGGER /
+   P-IDEAL-KEYS, write the m 2 argument as a lemma, test the m 3 step.
+   Dropped vs 39's queue: the 5.7 GB T_2 >= 13 DRUP check (Lead: label «UNSAT, one solver, proof unchecked»); m 4 T_2 >= 16 not in box 72.
+3. GAPS rows: L-SI owns none (trunk bc05394aa). The lane works under G-N5-TIME (owner L-NEW; open).
+4. Rulings (verbatim, trunk docs/DECISIONS.md; status from DECISIONS-INDEX.md):
+   - D18 (active): «Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of
+     mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them
+     briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.»
+   - D20 (active): «We have reset the weekly usage, so we can again work faster no?» (Lead reading L48: full pace; stop on paid overage.)
+   - D15 (active): «q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it»
+   (39's finding «D20 not yet in trunk» is resolved: D20 is at trunk DECISIONS.md l. 422, INDEX l. 42.)
+5. Trap: containers reclaimed while only detached jobs run (killed 39's box 71 jobs). Check: a harness-tracked background wait
+   loop (Bash run_in_background, pgrep frame.py) is armed for every long job; every job is restartable via run72.sh (finished logs skip).
+   Setup in this container: `pip install scipy python-sat` (done 00:46Z, exit 0).
+
 ## HANDOVER (successor 39, PARKING at ~610k; written 2026-11-05T23:50Z (date -u); session_01V5yGRYm5eKzWv7G3F5cuYS; Lead session_014FBi6o334DvwT5Uw2kDfoN)
 ### Resume point (successor 40 starts here: box 71 continues)
 - Read docs/si/N5-FRAMEK-box71.md §1-§2 and experiments/si/box71/OPEN-QUERIES.txt. Relaunch the three open queries

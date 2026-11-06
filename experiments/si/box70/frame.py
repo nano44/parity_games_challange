@@ -20,6 +20,7 @@ m, MODE, T = int(sys.argv[1]), sys.argv[2], int(sys.argv[3]); T2 = int(sys.argv[
 NOIM = os.environ.get("NOIM") == "1"
 K = int(os.environ.get("K", "1"))                       # flips for modes tk / sumk
 DUMP = os.environ.get("DUMP")                           # directory: write DIMACS (and the DRUP proof on UNSAT) there
+PROOF = bool(DUMP) and os.environ.get("NOPROOF") != "1"  # box 72: NOPROOF=1 writes the DIMACS only (proofs at m >= 3 run to GBs)
 U = 2 * m; NS = 1 << U; lev = [z // 2 + 1 for z in range(U)]
 P = IDPool(); cl = []
 def v(*a): return P.id(a)
@@ -139,9 +140,9 @@ if DUMP:
     print("DIMACS", tag + ".cnf", "sha1", hashlib.sha1(open(os.path.join(DUMP, tag + ".cnf"), "rb").read()).hexdigest(), flush=True)
 t0 = time.time()
 from pysat.solvers import Solver
-sol = Solver(name="cadical153", with_proof=bool(DUMP), bootstrap_with=cl); r = sol.solve(); dt = time.time() - t0
+sol = Solver(name="cadical153", with_proof=PROOF, bootstrap_with=cl); r = sol.solve(); dt = time.time() - t0
 print("m", m, "MODE", MODE, "T", T, "T2", T2, "K", K, "NOIM", int(NOIM), "vars", P.top, "clauses", len(cl), "->", "SAT" if r else "UNSAT", "%.1fs" % dt, flush=True)
-if DUMP and not r:
+if PROOF and not r:
     pf = os.path.join(DUMP, tag + ".drup")
     with open(pf, "w") as fo:
         for line in sol.get_proof(): fo.write(line + "\n")
