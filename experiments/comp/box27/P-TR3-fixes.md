@@ -71,3 +71,16 @@ changes L-a, L-b required, L-c optional, L-d; robustness note D-1; stale-text no
   the RESULTS tag (REFEREE TR-L1). L-2 sha1 11cd9acc14147fb7a3820e9a16c9cee15875e611.
 - Not taken: none of the required or optional items was declined. REFEREE's count «3 cubes re-checked» and REFEREE-2's «1» are the
   counts on file at 5a5b94cf / 60e24158; no other re-check count is used.
+
+## Entry 2 (2026-11-06, L-COMP successor 9; Lead 07:38Z; CHECKER C123 E-1, claude/checker 96b7f8a1, docs/checker/C123.md §5)
+### F7: line L-3 (experiments/comp/box27/P-TR3-line-L3.txt)
+- L-3 = L-2 (sha1 11cd9acc14147fb7a3820e9a16c9cee15875e611) with exactly one deletion: the leading «P-TR3 [lane: EXACT-SAT + CERT] »
+  (31 characters, occurring once, at the start; C123 §5: the RESULTS title must not carry the lane label). The prefix was copied by
+  script from C123 §5's text (the «…» after «the leading» in the L-3 bullet) and the result checked: L-2 starts with it, it occurs
+  once, and L-3 == L-2 minus that prefix (Python string test: True). Nothing else changes.
+- Word diff (git diff --no-index --word-diff=plain L-2 L-3), verbatim start of its only line: «[-P-TR3 [lane: EXACT-SAT + CERT]-]In the
+  IDEAL model of RESULTS R104 …» (one deletion; no insertion).
+- L-3: sha1 d87bb3f062115ccf13164465395ef0187ccda7cf (with its final newline), 1,682 bytes, 13 «(» / 13 «)», 0 «|», one « — »,
+  «2026» once. = the expected sha1 given by the Lead (07:38Z) / C123 §5.
+- Not taken (Lead 07:38Z): C123's optional «REFEREE all 16 cubes» change; L-3 keeps the on-file counts «REFEREE 3 cubes, REFEREE-2
+  1 cube».
