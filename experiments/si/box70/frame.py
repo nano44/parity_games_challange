@@ -160,6 +160,10 @@ elif MODE == "pm":
 else: raise SystemExit("mode")
 XC = os.environ.get("XCUBE", "")                          # box 74 cube driver: "o:t,o:t" fixes option o's Xi-target t (-1 = X); the
 for it in [x for x in XC.split(",") if x]:                # children of a split take every value of the domain, so cubes partition
+    if it[0] == "c":                                      # "c<l>.<k>:b" fixes key bit c(l, k)
+        lk, b = it[1:].split(":"); l, k = map(int, lk.split(".")); cl.append([v("c", l, k) if b == "1" else -v("c", l, k)]); continue
+    if it[0] == "S":                                      # "S<z>:b" fixes the start state s_0(z) of run "a"
+        z, b = it[1:].split(":"); cl.append([v("S", "a", 0, int(z)) if b == "1" else -v("S", "a", 0, int(z))]); continue
     o, t = map(int, it.split(":")); cl.append([v("x", o, t)])
 import hashlib
 tag = "m%d_%s_T%d_T2%d_K%d_NOIM%d" % (m, MODE, T, T2, K, int(NOIM))
