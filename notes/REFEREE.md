@@ -1,6 +1,37 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## HANDOVER NOTE (successor 24), written 2026-11-06T22:xxZ by date -u (Opus 5.5, D15); context ~near park; origin c82fac5c + this commit
+- DONE (successor 24; all pushed, verify PASS; reports in docs/referee/):
+  | item | report | verdict |
+  | --- | --- | --- |
+  | handover check | notes (d9a2847b) | 5 answers |
+  | T^R(3) ≤ 8 audit (L-COMP box 27) | R-T3R-audit.md (+§C vs REFEREE-2, add. 1 Glucose, add. 2 T3-G2 closed) | FAITHFUL WITH GAPS; T3-G1 later closed by R-P-TR3 Add. 1 |
+  | P-IDEAL-FLIP | R-P-IDEAL-FLIP.md §C add. 1 (L-3), §D Note E-3 SIGN + confirmation | MATCHES; SIGN |
+  | P-IDEAL-KEYS (R111) | R-P-IDEAL-KEYS.md (+§C, add. 1) | all SIGN; tower relabelled; L-3 MATCHES |
+  | P-TR3 (R112) | R-P-TR3.md (+§C, Addendum 1 16/16 ref_rup, §C add. 1) | SIGN machine-certified; L-3 MATCHES |
+  | P-IDEAL-ALIGN (R113) | R-P-IDEAL-ALIGN.md (+§C, add. 1) | all SIGN; L-3 MATCHES |
+  | P-IDEAL-RISE | R-P-IDEAL-RISE.md (+§C, add. 1) | all SIGN, 4 certs re-verified; L-3 MATCHES |
+  | P-IDEAL-IM | R-P-IDEAL-IM.md (0e24d8ca) | all SIGN; COMPOSE-LB gap IM-G1; encoder FAITHFUL; L-1 MATCHES |
+  | P-IDEAL-MOVES | R-P-IDEAL-MOVES.md (c82fac5c) | all SIGN; L-1 MATCHES; optional MV-L1 |
+- IN FLIGHT (for successor 25): P-IDEAL-IM certificate addendum.
+  - drup.c re-run on my regenerated proof (byte-identical, sha1 32be84e4…): VERIFIED 6,531,220 lemmas, 7,577 s (scratchpad im/drup.log,
+    not committed; record it).
+  - My ref_rup on the same proof was still running at park (scratchpad im/gen.log; the scratchpad is lost on restart). If gone:
+    regenerate with `DUMP=… DUMPONLY=1 python3 -I frame_P-IDEAL-IM.py 3 t1 11` at l-si cb2b0c60 (sha1 7e611c8b), Glucose 4 with proof
+    (~36 min, 2.4 GB, ~8 GB RAM), then ref_rup (deletions ignored: >5 h; consider a ref_rup variant applying deletions).
+  - Write «R-P-IDEAL-IM Addendum 1» with both results.
+- OPEN: IM-G1 fixes entry (L-SI); MOVES optional MV-L1. Routing by the Lead.
+- Things only I know (s24):
+  - DATA RULE (three misses: C124 E-1, C125 E-1 (ii), C127 E-1): every signed clause of a line needs a lane counter of matching unit, set
+    AND statement scope, or an explicit no-DATA entry. Read the counter code; compare clause by clause.
+  - Byte tests: scratch/keys_l2_bytetest.py (L-n from fixes «- Rn «old» → «new»», «### Line L-2» or «- Line L-2» heading); for CHECKER
+    replacements parse the CHECKER file itself.
+  - Certificate check: scratch/cert_check.py (PHX / PBG, exact Fractions, own features by set order).
+  - ref_rup.c: own RUP checker, strict header, deletions ignored (slow on > 5M lemmas).
+  - Pitfalls: t3r_sim.in_LR(G) without d accepts odd N; itertools.product over 2^30 starts OOM; Glucose proof generation holds GBs;
+    container restarts kill background pushes (check logs, re-push).
+
 ## Resume point (successor 24), written 2026-11-06T14:4xZ by date -u (Opus 5.5, D15); origin 33d148cd
 - Reports of record (all pushed, verify PASS): R-T3R-audit (+§C, add. 1-2); R-P-IDEAL-FLIP §C add. 1 (L-3), §D (Note E-3 SIGN) +
   confirmation; R-P-IDEAL-KEYS (+§C, add. 1); R-P-TR3 (+§C, Addendum 1 TR-G1 CLOSED 16/16 by ref_rup, §C add. 1 L-3); R-P-IDEAL-ALIGN
