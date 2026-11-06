@@ -47,3 +47,26 @@
   {+pairs for the moves bound and on the 21,296 with level ≥ 1 for KF_x = F(l − 1);+}
   [-docs/new/P-IDEAL-ALIGN.md;-]
   {+docs/new/P-IDEAL-ALIGN.md with its fixes entry 1, docs/new/P-IDEAL-ALIGN-fixes.md;+}
+
+## Entry 2 (2026-11-06 from 12:3xZ by date -u; L-NEW successor 56; Lead relay 12:14Z of CHECKER C125 E-1, provisional)
+- Report answered: CHECKER C125 E-1 on the R113 draft (the C124 DATA class), relayed by the Lead at 12:14Z with the two replacement
+  texts. The formal report docs/checker/C125.md was not on origin at 12:28Z (claude/checker head 1bd0b98f), so the texts are copied
+  from the Lead's message. No statement, proof or other DATA changes; the packet and entry 1 stay as they are.
+- Counts checked against experiments/new/box178/aligncheck.out (unchanged, sha1 b653b01b…): «runs 5662», «runmovers 32620»; level ≥ 1
+  movers 21,296 (L-2, entry 1), so the level-0 (run, mover) pairs are 32,620 − 21,296 = 11,324. In aligncheck.py, the level-0 check
+  «moves(x) ≤ 1» is counted by MOV (line 68: «if mv > (1 + F[l - 1] if l >= 1 else 1): C["MOV"] += 1»), not by F0 (line 56, F(0) ≤ 2 per
+  run). Both counters are 0, so both new clauses state 0 violations on the sets named.
+- Line L-3 (docs/new/P-IDEAL-ALIGN-line-L3.txt, sha1 4d28b1f36f610c6ecda7ab48891edb5feae97d66, 1 line, 3,422 bytes, 78 «(» = 78 «)»): L-3
+  = L-2 (cb5f0398) with exactly two replacements, applied by script; each old string occurs exactly once in L-2; no other byte changes:
+  - R6 (C125 E-1): «F0 0 on 5,662 runs;» → «F0 0 on 5,662 runs for F(0) ≤ 2 and on the 11,324 (run, level-0 mover) pairs for the level-0
+    movers moving at most once;»
+  - R7 (C125 E-1): «MOVES 0 on 32,620 (run, mover) pairs for the moves bound and on the 21,296 with level ≥ 1 for KF_x = F(l − 1);» →
+    «MOVES 0 on the 21,296 (run, mover of level ≥ 1) pairs, for the moves bound and for KF_x = F(l − 1);»
+- Word diff L-2 → L-3 (git diff --no-index --word-diff=plain; [-removed-] {+added+}):
+  [-runs;-]
+  {+runs for F(0) ≤ 2 and on the 11,324 (run, level-0 mover) pairs for the level-0 movers moving at most once;+}
+  [-32,620-]
+  {+the 21,296+}
+  [-mover) pairs-]
+  {+mover of level ≥ 1) pairs,+}
+  [-on the 21,296 with level ≥ 1-]

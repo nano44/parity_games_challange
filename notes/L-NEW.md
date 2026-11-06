@@ -13,6 +13,25 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   the LP support). CERTIFIED: PHX d3 = 22 exactly (with Phi_K: class optimum EXACT); PBG (keys + budget + gaps) 8 / 18.86 / >= 35.55
   (DEAD instance out/cert_PBG_d4_s1794.json); PHXVDBG 13.92 / >= 23.28 (414 genomes; 700-genome run OOM-killed at 14 GB). Obstruction:
   a move spends one RANK of its own budget, and renewal of the partner leaves the partner's budget unchanged; rank budgets ~ #paths.
+### BOX 180 RISES (docs/new/N5-RISES-box180.md; box180/rises.py, riseshape.py, climbR.py): PROVED (lane) RISE-EQUIV max R <= T <= 1 +
+  sum R (R105 MONO/XI-NEW/RISE) => coarse value scale == G-N5-TIME. DATA: max R <= 2d on 40 champion runs (R212 TR_d5/d6, T* d5-10) and
+  all climbs; tight dd_d5_F14 (10) and climb d4 (8). CONJECTURE RISE-2D => T^R(d) <= 8d^2 + 1. Kill target: d 3 (T^R 8 > 6), max seen 5.
+### BOX 181 RISEPROOF (docs/new/N5-RISEPROOF-box181.md; box181/): Lead lemma «O(1) lower flips between rises» wrong direction, DEAD c<=6
+  (dd_d5_F14 z 9 gap (1,8] level 3: 7 flips). PROVED (lane) MOVE-RISE (a move strictly raises own cv) => RISE-2D implies MOVES-2D (Xi-target
+  movers move <= 2d). Charging: rises = own moves + propagated; break = DBL-O(1) again. Kill seed for L-RED: dd_d5_F14 level-4 mover.
+### C125 E-1 (Lead 12:14Z): P-IDEAL-ALIGN L-3 4d28b1f3 + fixes entry 2 (fixes 64e83e68), pins; pushed e0d49b59. Label nuance sent
+  (level-0 moves <= 1 is counted by MOV, not F0).
+### BOX 182 P-IDEAL-RISE FROZEN: docs/new/P-IDEAL-RISE.md (573ef117) + L-1 (7e4273a9); tool box182/risecheck.py (404df6de, numpy-free),
+  out 3685b69b; certs box182/cert/*.json; check.sh block «P-IDEAL-RISE». Items: KEY (re-proved ALIGN (a)(c) + KP-MOVE (a)), PHIK-DESCENT,
+  OPT-K (hand construction, machine d <= 8), RISE-EQUIV, MOVE-RISE; CERTIFIED C-PHX3 (= 22 exact) and C-PBG (8, 18.86, 35.55). Premises:
+  R104 def, R105 ENC/MONO/XI-NEW/RISE, R110 def, R111 CASCADE. Corpus of risecheck = L^R files under box150-181: never add genome JSON there.
+### BOX 183 NONISO (docs/new/N5-NONISO-box183.md; box183/upper.py, frozen.py): W-ONLY uses ISO only on the Xi side (A-sets above level 0
+  independent of 0, 1). PROVED (lane) NONISO-FRAME (<= 3 frozen segments, <= 2 switch steps; T <= U + 2). DEAD (premise exact T_k(2) =
+  4, 5, 7): «U <= T_C(d-1)» for non-ISO: now1_d3_5@001110 U 5 C 0; one_d3_6@110110 U 6 C 1; dbl_d3_F6@111101 U 8 C 2. CONJECTURE N-FLIP-ADD
+  (T^N_2(m) <= T^R(m) + O(m)). L-RED R213 (3d6eca45): RISE-2D DEAD at d 5/6, exact 6 at d 3; MOVES-2D alive (best 8 at d 5).
+### BOX 184 SWITCH (docs/new/N5-SWITCH-box184.md; box184/switchcost.py, relayfree.py): DATA excess U - T_C(2) <= 1 (<= Z) on all 3,968 d-3
+  runs; frozen non-ISO frames <= T_0 (56 at d 3, 68 at d 4). CONJECTURES SWITCH-Z (U <= T_C(d-1) + Z => T^R(d) <= T_2(d-1) + 4) and
+  RELAY-FREE. No proof (no Xi-analogue of SWAP). Context ~460k at box end: handover due ~600k.
 - Trap this session: clone was shallow -> verify FAILED on box49 quotecheck3 (e2da18b0 missing); fix = git fetch --unshallow first.
 
 ## Successor 56 handover check (STEP 0; written 2026-11-06 08:4xZ by date -u; session_01V5yGRZaLkWxqVNtbeLt55J)
