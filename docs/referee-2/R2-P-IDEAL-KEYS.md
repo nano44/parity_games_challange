@@ -159,3 +159,31 @@ exponential. G-N5-TIME stays OPEN. ✓
 - r2sim.py (own simulator), r2sim_dead.out; r2lemmas.py, r2lemmas_seed28_4000.out, r2lemmas_corpus.out (all in
   docs/referee-2/R2-P-IDEAL-KEYS/). Re-run from repo root: `python3 -I docs/referee-2/R2-P-IDEAL-KEYS/r2lemmas.py 28 4000`;
   `python3 -I docs/referee-2/R2-P-IDEAL-KEYS/r2sim.py <genome.json>`.
+
+## Addendum 1: fixes entry 1 and line L-2 (REFEREE-2 successor 28, Opus 5.5, D12/D20; 2026-11-06 01:26Z by date -u)
+- Object: claude/l-new 1a178aff. docs/new/P-IDEAL-KEYS-fixes.md sha1 26088848b6a80621fb46a4887be0b2b8ad2a8ebc, 100 lines;
+  docs/new/P-IDEAL-KEYS-line-L2.txt sha1 fb1b22763f5cc5e64fa2cab78468718b1321a846, 5,542 B, 1 line. Re-hashed: match. The packet
+  (62b35bf7), line L-1 (f36c6402), keycheck.py (6ce4693d) and keycheck.out (5100eb30) are unchanged at 1a178aff.
+- Independence: written after reading the fixes entry, which names the other referee's items (KY-*); docs/referee/ itself not read.
+- **Fixes entry 1: CORRECT.**
+  - F-a TOWER: **SIGN** (Opus 5.5, D12). Statement: a run with a pair flipping 2^(l+1) − 2 times has T ≥ 2^(l+1) − 2; proof is
+    Corollary F ≤ T, which I signed. The iteration of «F(l) = 2(1 + F(l − 1))» from F(0) = 2 gives 2, 6, 14, … = 2^(l+1) − 2. ✓ Both
+    quotes are verbatim in docs/new/N5-PAIRLIN-box169.md (l. 38, l. 26). The READING (not a shortcut) is labelled not to sign, and the
+    DATA numbers are those I recomputed (r2sim_dead.out). Dropping DEAD is right: as my R-1 said, box 169 predicted T ≥ F(l), so F ≤ T
+    refutes no statement of record. This supersedes my §7 (c) DEAD SIGN, which I withdraw in favour of TOWER.
+  - F-b (KY-1): my miss. The packet's «it is 7 = 1 + desc(6)» is false arithmetic (desc(6) = 7, so 1 + desc(6) = 8); my own output
+    (r2sim_dead.out: D of mover 6 has 7 elements, moves 7) shows it, and I did not flag it. The fix «7 = desc(6) ≤ 1 + desc(6) = 8» is correct. ✓
+  - F-c: box 165's title has «moves(x) ≤ (deg(x) − 1)(1 + desc(x))» verbatim; box 166 l. 41 (in its §1) has «VR(z) ≤ 1 + desc(z)»
+    verbatim. ✓ F-d: mover 10 is level 4 with 8 moves, τ = 5 (mover 14), as I measured. ✓ F-e: the N-1 numbers (7 = 1 + F(2); 14 < 20). ✓
+  - F-f (MERGE letters k, k′ in the line): a renaming only. ✓
+  - W-2 counts: keycheck.py l. 147-149 counts pairkf_movers only for degree 2, level ≥ 1, and l. 177-187 counts retcnt_movers only for
+    degree 2 (continue otherwise). So the narrowed ranges are the tool's real ranges. ✓
+- **Line L-2: MATCHES.** Byte test (Python): R1-R10 parsed from the fixes entry; each old string occurs exactly once; applying them in
+  order to L-1 gives a string byte-identical to L-2 (5,542 B). Parentheses 120 / 120, depth never negative; 3 «, 3 »; 0 «|»; one line.
+  The TOWER clause (R3) is no stronger than F-a, read over 𝓛^R_d's F(l) or over any pair. The source note (R10) names the packet and the
+  fixes file, the only two files that carry proofs. W-1, W-2 and W-3 are applied as I worded them.
+- P-1 (optional, DATA wording, present in L-1 too; my miss in the first report): «RENEW 0 … and, for the constant keys, on 2,704
+  intervals». keycheck.py l. 174 checks that KP is constant on [a − 1, b], not that every key is. That is the weaker half of RENEW (b).
+  The full key form is covered by my own check (r2lemmas.py RENEWB, keys of every option: 0 on 12,501 intervals). Optional rewording:
+  «for the constant key preference».
+- The check.sh block «P-IDEAL-KEYS» at 1a178aff, run standalone: exit 0, «… fixes 26088848, line L-2 fb1b2276: PASS».

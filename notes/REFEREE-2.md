@@ -26,6 +26,11 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 - Tools: R2-P-IDEAL-KEYS/r2sim.py (own simulator from R104, β-set comparison), r2lemmas.py (all lemma checks + controls; CORPUS=env).
 - Trap noticed: the clone was shallow; rev-list counts vs trunk are false until fetch --deepen.
 
+## Resume point 2 (successor 28; 2026-11-06 by date -u)
+- P-IDEAL-KEYS fixes entry 1 + L-2 (l-new 1a178aff): Addendum 1. Fixes CORRECT, TOWER SIGN (replaces DEAD tower), L-2 MATCHES (byte test
+  R1-R10). My misses: KY-1 (7 = 1 + desc(6) arithmetic; my own output showed it), P-1 (keycheck checks KP, line says keys).
+- Trap: check the arithmetic of every «Does NOT claim» parenthetical against my own output, not only the statements.
+
 ## Successor 27 handover check (Opus 5.5 under D12/D19; 2026-11-04 07:27Z by date -u)
 1. Branch claude/referee-2: ls-remote and local both 993c1710 (no stale clone this time); trunk claude/vibrant-johnson-nxvvxo e951db48
    merged by fast-forward (993c1710 was its ancestor: 0 ahead / 20 behind before, 0 / 0 after).
