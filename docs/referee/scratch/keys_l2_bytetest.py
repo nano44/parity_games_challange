@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""REFEREE successor 24: byte test of P-IDEAL-KEYS line L-2 = L-1 + the replacements R1..R10 of fixes entry 1, parsed from the fixes
+"""REFEREE successor 24: generic byte test (first written for P-IDEAL-KEYS line L-2; the section starts at «### Line L-2» or «- Line L-2») = L-1 + the replacements R1..R10 of fixes entry 1, parsed from the fixes
 file itself (lines «  - Rn (...) ...: «old» → «new»», wrapped lines joined with single spaces; nested guillemets handled).
 Usage: python3 -I keys_l2_bytetest.py L1.txt fixes.md L2.txt"""
 import hashlib, re, sys
 l1 = open(sys.argv[1], "rb").read().decode(); fx = open(sys.argv[2]).read(); l2 = open(sys.argv[3], "rb").read()
-sec = fx[fx.index("### Line L-2"):fx.index("- Word diff")]
+i0 = fx.index("### Line L-2") if "### Line L-2" in fx else fx.index("- Line L-2")
+sec = fx[i0:fx.index("- Word diff", i0)]
 items, cur = [], None
 for ln in sec.split("\n"):
     m = re.match(r"  - (R\d+) (.*)", ln)

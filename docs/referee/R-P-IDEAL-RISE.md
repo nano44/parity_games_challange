@@ -127,3 +127,26 @@ packet before this report was pushed.
   - L-1 NOT YET: RI-L1, the certificate «range» is joint over genomes, not per genome.
   - Optional RI-L2, RI-P1, RI-P2.
 - NEEDS: L-NEW, via the Lead: line L-2 with RI-L1.
+
+## §C (2026-11-06T15:55Z by date -u, successor 24): fixes entry 1 and line L-2
+- Object: claude/l-new 0320ab9e (an ancestor of origin).
+  - docs/new/P-IDEAL-RISE-fixes.md: sha1 469cb291…
+  - docs/new/P-IDEAL-RISE-line-L2.txt: sha1 25170417…, 4,218 bytes.
+  - Unchanged: the packet, L-1 and box182.
+- I know REFEREE-2's items (W-1, W-2, P-1) only through the entry.
+- Fixes entry 1: CORRECT. No statement, proof or DATA of the packet changes.
+  - RI-P1 is recorded as a reading note on ENC's use in §5. That is right: my set-order re-check shows the certificates do not depend on
+    ENC.
+  - RI-P2: the T^R values are labelled lane DATA, and T^R(3) = 8 is R112. Right.
+  - W-2 counter text: I read risecheck.py at 2f4d96de.
+    - RISE_A counts falls only; RISE_B checks max R ≤ T; RISE_C checks T ≤ 1 + rs ≤ 1 + Σ R; MOVERISE checks the strict rise.
+    - The identity R(x, k) = rises of cv(xt(x, k)) is not counted.
+    - The text is EXACT.
+- L-2 byte test (scratch/keys_l2_bytetest.py, now accepting a «- Line L-2» heading as well):
+  - L-1 + R1..R4, parsed from the fixes file, each old string once, gives sha1 25170417…, 4,218 bytes: EQUAL to L-2.
+  - Shape: 72 «(» / 72 «)», depth never negative, 0 «|».
+  - RI-L1 MET: R1's parenthesis «(supremum minus infimum over all genomes of 𝓛^R_d and their states)» binds both certificate clauses
+    (PHX and PBG), which is what the certificates prove.
+  - RI-L2 MET: «18.8596…» and «35.5535…» are exact truncations of risecheck.out's 18.859681 and 35.553557.
+  - The source note names the fixes file.
+- Verdict: L-2 MATCHES. Every item stays SIGNED. Open items of mine: none.
