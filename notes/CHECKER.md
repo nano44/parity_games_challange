@@ -1,6 +1,12 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 19), 2026-11-06 22:50Z (date -u)
+- C127 CLOSED (R114 P-IDEAL-RISE): main 5793c1e2 FAIL E-1 (MOVE-RISE's R(x, k) >= moves(z) half: no counter, not in the no-DATA
+  list; L-3 = one replacement, 4a553a29); Add. 1 e3269b0b PASS; Add. 2 f63e021f / a8a908be; landed b6d1484b; CI 6509 green on b6d1484b.
+- NEXT (Lead 22:18Z): R115 (P-IDEAL-IM) when its L-2 MATCHES at both referees, then R116 (P-IDEAL-MOVES). Use C128, C129.
+- Method kept: for each signed clause of the line, find its counter or its no-DATA entry (both referees recorded the C127 miss).
+
 ## Resume point (successor 19), 2026-11-06 17:59Z (date -u)
 - C125 CLOSED (Add. 1 bd7cb5e4 PASS; Add. 2 1b0cec5a; R113 landed b5ca0d4d; CI 6472 green on b5ca0d4d).
 - C126 CLOSED (main 2e1a91c8/f271c741 FAIL E-1; Add. 1 2f58a8bf PASS; Add. 2 1b0cec5a; Note E-3 landed b5ca0d4d; CI 6472 green).
