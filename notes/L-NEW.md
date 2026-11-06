@@ -8,6 +8,7 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   genomes, out/force_d1..8.json). DATA (floating LP): classes C0, P exact = 8/22/52(/114); PHX = 22 at d 3 (1,562 genomes), >= 49.1 d 4,
   >= 61.2 d 5 (sampling-limited); PHXV (value rank) 17.9 at d 3. DEAD (method, level-local linear potentials). Obstruction: free Xi-renewal
   ping-pong in feature space (certificate out/dual_PHX_d3_s1793.json). lpot.py needs pip scipy (installed in this container only).
+  Non-local D (unstable Xi-descendants per chain) PHXVD: 6.98 / 14.79 / >= 26.99 (d 2-4): still ~doubling. Pushed a35191de (box 179 main).
 - Trap this session: clone was shallow -> verify FAILED on box49 quotecheck3 (e2da18b0 missing); fix = git fetch --unshallow first.
 
 ## Successor 56 handover check (STEP 0; written 2026-11-06 08:4xZ by date -u; session_01V5yGRZaLkWxqVNtbeLt55J)

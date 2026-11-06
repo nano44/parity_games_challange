@@ -30,6 +30,7 @@ unrefereed) / DATA / CONJECTURE / DEAD. Not a TARGET.md claim. G-N5-TIME stays O
   | P | C0 + pair-automaton one-hot (k_p, k_q, z_p, z_q) + ord bit per level | — | 22 | 52 | — |
   | PHX | P + Ξ-height-indexed z / u counts + cross-level k·z products | 8 | 22 | ≥ 49.1 | ≥ 61.2 |
   | PHXV | PHX + value rank of cv(x) among x's path values (raw and normalised) | 8 | ≥ 17.9 | — | — |
+  | PHXVD | PHXV + NON-LOCAL renewal counts: unstable Ξ-descendants on x's other / current chain | ≥ 6.98 | ≥ 14.79 | ≥ 26.99 | — |
   | (T^R(d), exact) | | 4 | 8 | 13 (lane) | ≥ 17 |
 
   C0 and P are EXACT at the shown d: the LP lower bound equals Φ_K's range 2^(d+2) − 2d − 4, and Φ_K is in the class. PHX at d 2, 3 is
@@ -114,7 +115,7 @@ unrefereed) / DATA / CONJECTURE / DEAD. Not a TARGET.md claim. G-N5-TIME stays O
 - lp_*: random genomes only. lpc_*: corpus files at that d + random genomes. lpc_C0_d3 / d4 (62 / 64 corpus + 100 random): 22 / 52.
   lpc_P_d3 / d4: 22 / 52. lpc_C0_d5 (33 + 20): 114. lpc_PHX_d3 (62 + 100): 18.73; lpc_PHX_d3_r1500 (62 + 1,500): 22.00. lpc_PHX_d4
   (64 + 100): 40.80; lpc_PHX_d4_corpusonly: 36.97; lpc_PHX_d4_r700: 49.11. lpc_PHX_d5 (33 + 20): 45.40; lpc_PHX_d5_r100: 61.24.
-  lpc_PHXV_d3_r1500: 17.93. Earlier random-only console runs at d 3 (300 genomes, seed 179; not logged to files) gave P 21.38, H 21.50, X 22.00, PHX 13.70. Those are lower
+  lpc_PHXV_d3_r1500: 17.93. lpc_PHXVD_d2 (9 + 2,000): 6.98; lpc_PHXVD_d3_r1500: 14.79; lpc_PHXVD_d4_r700: 26.99. Earlier random-only console runs at d 3 (300 genomes, seed 179; not logged to files) gave P 21.38, H 21.50, X 22.00, PHX 13.70. Those are lower
   bounds only and are superseded.
 ### 4.2 Certificates
 - The dual multipliers of the decrease rows sum to the optimum. For C0 at d 3 (corpus only) the support is 16 rows from 12 different
@@ -144,6 +145,9 @@ unrefereed) / DATA / CONJECTURE / DEAD. Not a TARGET.md claim. G-N5-TIME stays O
 - lpot.py needs scipy (HiGHS); phik.py, forcing.py, maxT.py need only the box150 simulator.
 
 ## 7. Next (Lead decides)
+- DONE after the first push (log/lpc_PHXVD_d2.txt, _d3_r1500, _d4_r700): the non-local renewal feature D (the item below) lowers the
+  bound to 6.98 / 14.79 / ≥ 26.99 at d 2 / 3 / 4 (T^R 4 / 8 / 13). Ratios 2.12 and ≥ 1.82 (d 4 is sampling-limited, as for PHX): still
+  about doubling per level. DATA only. With universal weights, the depth-1 renewal count does not remove the doubling.
 - Exact LP (rational) for PHX at d 3, to turn «22» into a machine certificate in exact arithmetic.
 - A potential with a non-local Ξ-budget: charge a key-misaligned, Ξ-happy mover only through the movers whose moves can renew it (its
   Ξ-descendants on the non-current option's chain). Test it by LP with the feature «number of Ξ-descendants of x on its other chain that

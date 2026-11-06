@@ -46,6 +46,11 @@ def pathvals(g, G, x):
 
 def feats(cls, g, G, s, hx):
     N = G["N"]; d = N // 2; z, k, K = base(g, G, s); F = {}
+    if "D" in cls:  # non-local: unstable (u = 1) Xi-descendants on the chain of the other / current option of x, per level of x
+        u = [z[y] & k[y] for y in range(N)]
+        for x in range(N):
+            for tag, j in (("o", 1 - s[x]), ("c", s[x])):
+                F["D%s%d" % (tag, x)] = sum(u[y] for y in g.play(s, x, j))
     if "V" in cls:  # value-rank of the current chain value cv(x) among x's path values (MONO: never decreases)
         for x in range(N):
             pv = pathvals(g, G, x); i = pv.index(g.face(s, x, s[x]))
