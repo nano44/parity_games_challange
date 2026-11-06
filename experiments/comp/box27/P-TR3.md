@@ -1,4 +1,4 @@
-# Packet P-TR3 (L-COMP box 27): T^R(3) ≤ 8, so T^R(3) = 8 — no genome of 𝓛^R_3 has a run of 9 or more IDEAL steps from any start (EXACT-SAT, own encoding, 16 cubes; RUP certificate: §4)
+# Packet P-TR3 (L-COMP box 27): T^R(3) ≤ 8, so T^R(3) = 8 — no genome of 𝓛^R_3 has a run of 9 or more IDEAL steps from any start (EXACT-SAT, own encoding, 16 cubes; every cube CERTIFIED by a Glucose 4 DRUP proof checked by my own RUP checker, §4)
 L-COMP successor 9, 2026-11-05 (date -u: see the commit). Labels: EXACT-SAT (solver UNSAT, machine-checked, not Lean, not refereed),
 CERT (a solver proof checked by my own RUP checker), PROVED (lane: a short argument written out here), DATA. Not a TARGET.md claim.
 No polynomial bound. G-N5-TIME stays OPEN. Every statement is about the IDEAL-ACYC model only.
@@ -52,16 +52,70 @@ No polynomial bound. G-N5-TIME stays OPEN. Every statement is about the IDEAL-AC
   (claude/l-red 6f347876): T = 8, identical states, stop «opt».
 - Semantic checks of the encoding (DATA): pinck.py pins a whole genome and start by unit clauses; the CNF is SAT at L = T and UNSAT at
   L = T + 1 with T from sim.py: 0 disagreements on 300 random d 2 and 150 random d 3 genomes of 𝓛^R and on all 64 starts of each of
-  ext/dbl_d3_F6.json (L-RED R197) and ext/own_R_d3_L8.json (128 runs, T 0..8). At d 2 the same encoder gives Q(5) UNSAT and the
+  the 2 distinct length-8 genomes ext/dbl_d3_F6.json (L-RED R197) and ext/own_R_d3_L8.json (= the genome of out/R_d3_L8.json)
+  (128 runs, T 0..8). At d 2 the same encoder gives Q(5) UNSAT and the
   exhaustive C enumeration bf2.c (no SAT) gives max T = 4 over all of 𝓛^R_2 and all starts. sim.py = ideal.py on 198,085 runs.
 
 ## 4. Certificate
-CERT-SECTION
+- Route (REFEREE 24 gap T3-G1): drat-trim could not be fetched or built here (auto-mode classifier: «Code from External»; the same
+  happened at the referee). Instead: Glucose 4 (pysat 1.9.dev15, Solver(name="glucose4", with_proof=True)) produces a textual DRUP
+  proof per cube, and my own checker experiments/comp/box27/drup.c (sha1 2d4b8eab8fe9e9035c396733bb400d9d6e7d2366, l-comp 07cec839;
+  98 lines of C, built with gcc -O2) checks it. CERT = this check; it is an own tool, not drat-trim.
+- Checker semantics (summary of the drup.c header; the source is the reference):
+  - Input: the DIMACS file of the cube (written by mkproof.py from exactly the clause list cnf.py builds) and the proof (lines «l1 … lk 0»
+    = an added lemma; «d l1 … lk 0» = a deletion).
+  - Forward RUP: for each added lemma C (duplicates removed; tautologies skipped), assign the negation of every literal of C on top of
+    the current top-level assignment and unit-propagate over the current clause DB; the lemma is accepted iff a conflict arises (or a
+    literal of C is already true at top level). Accepted lemmas join the DB. A lemma that fails stops the check: «s NOT VERIFIED:
+    lemma i is not RUP». No RAT step is accepted.
+  - Deletions: default mode APPLIES them (the DB clause with the same literal set is removed; literals already assigned at top level
+    stay assigned). Mode IGNDEL=1 ignores them (the DB only grows). Both are sound: every clause ever in the DB is implied by the input
+    formula, so RUP against any subset of it is a sound step; deletion can only make a check fail.
+  - Verdict: «s VERIFIED (n lemmas RUP-checked)» iff the input plus the accepted lemmas reach a top-level conflict (empty clause /
+    unit-propagation refutation) before the proof ends; otherwise «s NOT VERIFIED: no refutation reached».
+- Negative tests (d 2, cnf.py d 2 L 5 / L 4 cube 0; files in the scratchpad, reproducible with mkproof.py): the d 2 L 5 UNSAT proof
+  is VERIFIED in both modes (5,730 lemmas); the satisfiable d 2 L 4 formula with its solver «proof» is NOT VERIFIED (no refutation);
+  the L 5 proof truncated to its first 3,000 lines is NOT VERIFIED (no refutation); the L 5 proof with deletion lines dropped and every
+  7th remaining line removed is NOT VERIFIED («lemma 10 is not RUP»).
+- Per cube (Q(9), d 3, SYM, CUBE as §2): DIMACS sha1 (= the §3 table, which equals cnf.py at 557b045b and now), Glucose time (s), proof
+  sha1, proof size (bytes), lemmas RUP-checked, drup wall time (s), verdict; all in deletion-applying mode:
+| cube | DIMACS sha1 | Glucose s | proof sha1 | proof bytes | lemmas | drup s | verdict |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 0 | 7e70b9e100155d8da2e7712469a6c1e145ac4850 | 488.7 | 0e98a96c3530a9f6da53234f17de00f3575094b2 | 1,460,488,502 | 807,459 | 1237 | s VERIFIED |
+| 1 | 40412c7b6a8db5b8c87f9673499fcb233f519145 | 209.3 | e7f8d3880415937598a78fc1e8aeec8d1064554b | 970,002,355 | 567,712 | 853 | s VERIFIED |
+| 2 | d8cadc0ce70965077f8cb8a01fc0ef0357a9512c | 258.9 | 41f973883c3b72755c54d84a15dabefd8e4b5f2f | 921,350,684 | 533,419 | 648 | s VERIFIED |
+| 3 | df5ecf8c3f31b1ce1671cbd6d71a4a445af71fd1 | 295.7 | 4cb7024e7cab26b89fed834eb718862f8e093fe0 | 1,419,744,096 | 803,571 | 1086 | s VERIFIED |
+| 4 | 57e654b424153eb7542734a7616bca0d60ae204e | 359.0 | e6c7527f3f925fb9b459ef1f4c4fead6463aa5e8 | 1,661,515,605 | 939,707 | 1378 | s VERIFIED |
+| 5 | 2701cae6e1025ef02c98c9d9b81b7fb181c68367 | 184.9 | e45c0dd108e48fb8eddeb51ffcb4fe5787833baa | 913,302,433 | 544,619 | 654 | s VERIFIED |
+| 6 | e4886b4716f5fe07039fd62d9e2de787c780f83d | 194.0 | ff59ee2cd3a9268d371022895e4509793f5f545b | 941,098,907 | 561,107 | 714 | s VERIFIED |
+| 7 | f87b694607906e572841ca29ff7bca3023051385 | 431.6 | 657258c11459e2cb951efcb7cec890c736a6eba6 | 1,623,733,639 | 930,211 | 1453 | s VERIFIED |
+| 8 | 7fd44a80cc886adb701e5f9069d02b69d62676cf | 345.1 | 2192cf5c5d051b976d5fad2dbe06c864a7c320dd | 1,598,046,419 | 931,580 | 1378 | s VERIFIED |
+| 9 | 01a9488a18b51267dd6010802c7f4c9a3425d936 | 177.5 | 942334eb3905ff3aa887e37db72d1df84433b804 | 894,105,785 | 526,970 | 641 | s VERIFIED |
+| 10 | 924ae0118e1b142a8d762d03d314d4a0c9be1af2 | 190.9 | cae6998bd94b78005931ee2faff7eaffc3c122fc | 851,461,087 | 485,366 | 709 | s VERIFIED |
+| 11 | 2ba36f3dc819868a75c8b6d3917d9298ee59065f | 357.3 | a8ede7f045be25665eb98844a38c47f3b25accac | 1,585,527,511 | 915,729 | 1411 | s VERIFIED |
+| 12 | 7215704a0707adbbd7b2d367c750d2dda00ed1e1 | 324.4 | cb63a3197c11ca175ccb1b9ae27ee627d7cc6e89 | 1,500,256,933 | 885,374 | 1418 | s VERIFIED |
+| 13 | 873e2eecd0e87c85d4ece243d47cb06d63a3cbb0 | 199.2 | b2cf489ac74bbd8d84330ab0d39bf49a03f195c3 | 860,468,273 | 528,362 | 719 | s VERIFIED |
+| 14 | c663d746f9c77edfaefb9fcfd4622b5b83eda04d | 204.7 | 77052f059eb2c02dcaa8c1d83dfd5d1bb4406aa3 | 926,008,396 | 551,347 | 741 | s VERIFIED |
+| 15 | 44fb279663b37e55c7c5f3d78f58470ce6208f71 | 331.9 | 142821525d1130b7f11c324fc38be03a43d17655 | 1,567,848,549 | 841,457 | 1201 | s VERIFIED |
+- Totals: 16/16 VERIFIED; 11,353,990 lemmas; 19,694,959,174 proof bytes. Each cube: 58,896 variables, 204,036 clauses (§3).
+- Determinism: cube 1 was proved twice (2026-11-05 ~14:39Z and ~01:0xZ on 11-06): both proofs have sha1 e7f8d388…, so a referee who
+  re-runs mkproof.py gets byte-identical proofs. Cube 1 was first checked in IGNDEL mode (567,711 lemmas, VERIFIED; record
+  log/R_d3_L9_c1_igndel.chk); the table row is the deletion-applying re-check (567,712 lemmas: with deletions ignored the larger DB
+  reached the refutation one lemma earlier).
+- Storage: the proofs (0.9-1.7 GB each, 19.7 GB in total) are NOT committed (too large for git); each was deleted after its check,
+  sha1 and size recorded. Re-run: python3 mkproof.py 3 9 <cube> DIR glucose4; ./drup DIR/d3_L9_c<cube>.cnf DIR/d3_L9_c<cube>.glucose4.proof
+  (or PDIR=DIR PAR=1 ./proofs.sh for all 16; records via certtab.py). Records: log/R_d3_L9_cert.txt.
+- Limits (stated plainly): drup.c is my own, unaudited tool (no drat-trim / LRAT cross-check); its correctness is a premise of CERT.
+  It checks only RUP, so it can wrongly REJECT, never (if correct) wrongly accept. The DIMACS files are produced by the same cnf.py
+  whose encoding §2 / ENCODING.md maps to R104; CERT certifies the UNSAT of those formulas, not the encoding.
 
 ## 5. What is proven, and what rests on the solver
 - PROVED (lane, written out above / in ENCODING.md): E1-E3, the soundness of SYM, the cube cover, «Q(9) UNSAT ⇔ P-TR3» given that the
   CNF encodes R104 for 𝓛^R_3 (ENCODING.md §3, which is the item a referee must check against R104's text).
-- Rests on the machine: the UNSAT of the 16 cube formulas. CERT-RESTS
+- Rests on the machine: the UNSAT of the 16 cube formulas, now CERTIFIED (§4): every cube has a Glucose proof accepted by drup.c.
+  What remains trusted: (i) drup.c (own forward RUP checker, §4 limits); (ii) cnf.py's DIMACS output being the encoding of §2 (checked
+  by two referee audits of ENCODING.md and by pinck.py, not by a proof). The original CaDiCaL 1.9.5 UNSAT results (§3) and Glucose 4's
+  16/16 UNSAT agree.
 - DATA only (not part of the claim): pinck, bf2, the replays.
 
 ## 6. EXCLUDED
