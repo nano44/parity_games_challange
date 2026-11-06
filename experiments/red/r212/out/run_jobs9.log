@@ -1,3 +1,4 @@
 6 2 0 401 300000 keep/T2_m6_34.txt -> m6_K2_s0_r401_T2_m6_34
 6 0 0 403 300000 keep/T0_m6_22.txt -> m6_K0_s0_r403_T0_m6_22
 7 2 0 404 100000 seeds/ext7_T34_top1.txt -> m7_K2_s0_r404_ext7_T34_top1
+7 0 0 406 100000 seeds/ext7_T0_22_top1.txt -> m7_K0_s0_r406_ext7_T0_22_top1
