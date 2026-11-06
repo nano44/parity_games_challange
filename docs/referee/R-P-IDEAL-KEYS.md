@@ -174,3 +174,53 @@ packet before this report was pushed.
     the implication F ≤ T.
   - L-1 NOT YET (KY-L1).
 - NEEDS: L-NEW (via the Lead): fixes entry for KY-1 and KY-G1 (relabel §7 (c)); line L-2 with KY-L1 (+ optional KY-L2-L4, KY-P1, P2).
+
+## §C (2026-11-06T01:26Z by date -u, successor 24): fixes entry 1 and line L-2
+- Object: claude/l-new 1a178aff (an ancestor of origin/claude/l-new).
+  - docs/new/P-IDEAL-KEYS-fixes.md: sha1 26088848b6a80621fb46a4887be0b2b8ad2a8ebc, 100 lines.
+  - docs/new/P-IDEAL-KEYS-line-L2.txt: sha1 fb1b22763f5cc5e64fa2cab78468718b1321a846, 5,542 bytes.
+  - Unchanged since b302bbf5: the packet (62b35bf7), L-1 (f36c6402) and experiments/new/box172/.
+- I read REFEREE-2's report only through the fixes entry's list of its items (W-1..W-3, R-1, F-1, F-2, N-1). My own report was
+  pushed before.
+
+### Fixes entry 1
+- F-a: SIGN TOWER as restated.
+  - The statement: a run in which a pair flips F(l) = 2^(l+1) − 2 times has T ≥ 2^(l+1) − 2.
+  - Proof: Corollary F ≤ T, already signed. Correct, with the hypotheses as stated.
+  - The «To sign» row becomes «DEAD (instances); TOWER PROVED». The READING «not a shortcut» and the instance values are labelled
+    not-to-sign.
+  - The «Does NOT claim» says the tower is not DEAD. KY-G1 is CLOSED.
+  - Quotes verified at 1a178aff: «Predicted: F(l) = 2^(l+1) − 2, N = O(l²), and T ≥ F(l)» is in box 169, and «F(l) = 2(1 + F(l − 1))»
+    is on box 169 l. 26.
+  - DATA values equal my recomputation (§3: F(0..4) = 2, 3, 6, 14, 7; T 14; both compositions T 14, largest flip count 14).
+- F-b: KY-1 CLOSED. The new text «(it is 7 = desc(6) ≤ 1 + desc(6) = 8)» is true; I measured moves(6) = 7 and desc(6) = 7.
+- F-c: KY-P1 / KY-L3 MET. «moves(x) ≤ (deg(x) − 1)(1 + desc(x))» is box 165's title text exactly. «VR(z) ≤ 1 + desc(z)» is box 166 §1
+  l. 41 exactly. The quantifiers are marked as a restatement.
+- F-d: KY-P2 MET. In T1_dd_top8, mover 10 has level 4 and 8 moves; the top level is τ = 5 (mover 14). Re-measured.
+- F-e (N-1): correct.
+  - The second LADDER inequality is tight at level 3 of dd_d5_F14: moves(6) = moves(7) = 7 = 1 + F(2) = 1 + 6.
+  - The first is not: F(3) = 14 < 7 + 7 + 6 = 20. Re-measured.
+- F-f: KY-L2 MET in the line (k, k′).
+- W-2 / KY-L4 counts: «pairkf_movers 34113» and «retcnt_movers 50260» are in keycheck.out (which I regenerated identically at
+  b302bbf5; box172 is unchanged), and they are the numbers in L-2. MET.
+- No signed statement, definition or premise of the packet changes. TOWER is the one new proof, and the entry says so.
+
+### Line L-2: byte test (scratch/keys_l2_bytetest.py)
+- Method: the expected line is L-1 with the entry's R1..R10 applied. The old and new strings were parsed from the fixes file itself,
+  with nested guillemets handled and wrapped lines joined. Each old string occurs exactly once in L-1, and still once when applied.
+- Result: EQUAL to L-2 (sha1 fb1b2276…, 5,542 bytes).
+- Shape: 120 «(» / 120 «)», depth never negative, 0 «|», one line. Three quotes, all verbatim:
+  - PM: box 165's title;
+  - PMV: box 166 §1;
+  - box 169's «F(l) = 2(1 + F(l − 1))».
+- R1's binder «(A_s(h): h's current option under s and its options strictly better under s)» is R105 XI-NEW's own text (1 hit in
+  RESULTS).
+- DEAD now covers PM and PMV only. TOWER stands as an implication with «(a READING, not a refutation …)», and its values are in the
+  DATA as «TOWER, on dd_d5_F14: …». KY-L1 MET.
+- The source note names «docs/new/P-IDEAL-KEYS.md with its fixes entry 1, docs/new/P-IDEAL-KEYS-fixes.md». These are the only two
+  files that carry proofs (C122 E-3 precedent). MET.
+- Definitions: unchanged from L-1 except MERGE's k, k′, all as diffed in §5. The added TOWER clause uses F(l), defined in LADDER.
+- Verdict:
+  - L-2 MATCHES.
+  - Every item is now SIGNED: §2-§6, DEAD PM, DEAD PMV (KY-1 closed), and TOWER (as restated in F-a).
+  - Open items of mine: none.
