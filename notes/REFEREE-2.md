@@ -26,7 +26,7 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 - Tools: R2-P-IDEAL-KEYS/r2sim.py (own simulator from R104, β-set comparison), r2lemmas.py (all lemma checks + controls; CORPUS=env).
 - Trap noticed: the clone was shallow; rev-list counts vs trunk are false until fetch --deepen.
 
-## Resume point 2 (successor 28; 2026-11-06 by date -u)
+## Resume point 2 (successor 28; 2026-11-06 01:26Z by date -u)
 - P-IDEAL-KEYS fixes entry 1 + L-2 (l-new 1a178aff): Addendum 1. Fixes CORRECT, TOWER SIGN (replaces DEAD tower), L-2 MATCHES (byte test
   R1-R10). My misses: KY-1 (7 = 1 + desc(6) arithmetic; my own output showed it), P-1 (keycheck checks KP, line says keys).
 - Trap: check the arithmetic of every «Does NOT claim» parenthetical against my own output, not only the statements.
