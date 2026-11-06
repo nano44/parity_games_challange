@@ -158,6 +158,9 @@ elif MODE == "pm":
     mx = [MV["a"][t][X] for t in range(T)]                 # move indicator of mover X at each step (moves list is in mover order)
     enc = CardEnc.atleast(lits=mx, bound=Dd + int(os.environ.get("PMPLUS", "2")), top_id=P.top, encoding=EncType.seqcounter); cl.extend(enc.clauses); P.top = max(P.top, enc.nv)
 else: raise SystemExit("mode")
+XC = os.environ.get("XCUBE", "")                          # box 74 cube driver: "o:t,o:t" fixes option o's Xi-target t (-1 = X); the
+for it in [x for x in XC.split(",") if x]:                # children of a split take every value of the domain, so cubes partition
+    o, t = map(int, it.split(":")); cl.append([v("x", o, t)])
 import hashlib
 tag = "m%d_%s_T%d_T2%d_K%d_NOIM%d" % (m, MODE, T, T2, K, int(NOIM))
 if DUMP:
