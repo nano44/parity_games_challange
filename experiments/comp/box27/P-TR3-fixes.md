@@ -78,7 +78,8 @@ changes L-a, L-b required, L-c optional, L-d; robustness note D-1; stale-text no
   (31 characters, occurring once, at the start; C123 §5: the RESULTS title must not carry the lane label). The prefix was copied by
   script from C123 §5's text (the «…» after «the leading» in the L-3 bullet) and the result checked: L-2 starts with it, it occurs
   once, and L-3 == L-2 minus that prefix (Python string test: True). Nothing else changes.
-- Word diff (git diff --no-index --word-diff=plain L-2 L-3): [-P-TR3-] [-[lane:-] [-EXACT-SAT-] [-+-] [-CERT]-] (deleted words only).
+- Word diff (git diff --no-index --word-diff=plain L-2 L-3), verbatim start of its only line: «[-P-TR3 [lane: EXACT-SAT + CERT]-]In the
+  IDEAL model of RESULTS R104 …» (one deletion; no insertion).
 - L-3: sha1 d87bb3f062115ccf13164465395ef0187ccda7cf (with its final newline), 1,682 bytes, 13 «(» / 13 «)», 0 «|», one « — »,
   «2026» once. = the expected sha1 given by the Lead (07:38Z) / C123 §5.
 - Not taken (Lead 07:38Z): C123's optional «REFEREE all 16 cubes» change; L-3 keeps the on-file counts «REFEREE 3 cubes, REFEREE-2
