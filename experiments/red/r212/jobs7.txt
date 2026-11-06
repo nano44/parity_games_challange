@@ -1,0 +1,4 @@
+5 2 0 91 500000 keep/T2_m5_22.txt
+6 2 0 92 200000 seeds/ext6_T22_top1.txt
+6 2 0 93 200000 seeds/ext6_T22_top2.txt
+5 1 0 94 500000 keep/T2_m5_22.txt
