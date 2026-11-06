@@ -273,6 +273,17 @@ def build(T, E, fixall=False, lem=True):
                     C.n = max(C.n, enc.nv); [C.add(list(c)) for c in enc.clauses]
     if os.environ.get("TMIN") == "1":   # R202: the run has at least L steps (deterministic run: step L nonempty => all earlier steps nonempty)
         C.add([mv[(L, v)] for v in range(N)])
+    if os.environ.get("MOVEZ"):   # R213 (L-NEW box 181 MOVES-2D): mover z moves >= MOVEMIN times in steps 1..L and is some option's Xi-target
+        from pysat.card import CardEnc, EncType
+        z = int(os.environ["MOVEZ"]); rmin = int(os.environ.get("MOVEMIN", "1"))
+        tl = [b[((x, k), z)] for x in range(N) if x != z for k in (0, 1) if ((x, k), z) in b]
+        if True not in tl: C.add([x for x in tl if x is not False])
+        lits = [mv[(t, z)] for t in range(1, L + 1)]
+        lits = [x for x in lits if x is not False]; nt = sum(1 for x in lits if x is True); lits = [x for x in lits if x is not True]
+        if rmin - nt > len(lits): C.add([])
+        elif rmin - nt > 0:
+            enc = CardEnc.atleast(lits=lits, bound=rmin - nt, top_id=C.n, encoding=EncType.seqcounter)
+            C.n = max(C.n, enc.nv); [C.add(list(c)) for c in enc.clauses]
     if os.environ.get("RISEZ"):   # R213 (L-NEW box 180 RISE-2D): mover z's current value cv(z) changes >= RISEMIN times in steps 1..L, and z
         # is the Xi-target of some option (so R(x, k) = #rises of cv(z) for that option). By R105 MONO cv never falls and ranks are distinct,
         # so «cv(z) rises at step t» = «z's current chain (face set) differs between states t-1 and t».

@@ -1,0 +1,1 @@
+MOVE d 3 t 8 z 0 r 2: UNSAT solve 0.1 s

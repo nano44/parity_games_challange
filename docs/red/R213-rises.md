@@ -20,6 +20,9 @@ G-N5-TIME stays OPEN; the kill bounds nothing.
   R ≥ 6 is SAT (z 2, 110 s): r213/keep/rise_d3_R6.json, d 3, T 7, option (1, 1) rises 6 times (own rises.py and L-NEW box180
   rises.py agree; box 150 VIOL 0; lemck L 7, 0 violations). So **max R at d 3 = 6 = 2d EXACTLY** (EXACT-SAT): RISE-2D is tight at d 3
   (climbs had 5). z 0 and z 1: UNSAT at r 6 (2,061-2,077 s); z 3-5 not run after the SAT.
+- **MOVES-2D at d 3 (EXACT-SAT, r213/move.py, env MOVEZ / MOVEMIN in xcnf; horizon 8):** max moves of a Ξ-target mover = 1 at level 0
+  (r 2 UNSAT, r 1 SAT; consistent with R109 SEG-ONCE at l = −1), 3 at level 1 (r 4 UNSAT, r 3 SAT, replayed), 4 at level 2 (r 5 UNSAT,
+  113-115 s; r 4 SAT, replayed); partners z 1, 3, 5 UNSAT at r 5. So MOVES-2D holds at d 3 with room: 4 < 2d = 6.
 - **MOVES-2D: not killed.** The RISE-2D kills have Ξ-target movers moving ≤ 5 / 6 times (dd_d5_F14: 7); their rises come from chain changes
   below, not from own moves. SCORE=M climbs (d 5 from dd_d5_F14 and rise_d5_R13; d 6) reach 8 at d 5 (2d = 10). DATA only.
 - READING: the kill removes the 8d² + 1 route only. In both kills R/T = 13/16, 14/16: one option rises at almost every step, so
@@ -46,5 +49,5 @@ G-N5-TIME stays OPEN; the kill bounds nothing.
 | --- | --- | --- | --- |
 | 4 | 8 | 8 | — |
 | 5 | 10 | 13 (kill) | 8 |
-| 6 | 12 | 14 (kill) | running |
-| 7 | 14 | 11 (60k iterations, running) | — |
+| 6 | 12 | 14 (kill) | 8 |
+| 7 | 14 | 14 (= 2d, no kill) | — |
