@@ -1,7 +1,7 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Successor 57 handover check (STEP 0; written 2026-11-06 18:4xZ by date -u; Opus 5.5)
+## Successor 57 handover check (STEP 0; written 2026-11-06 18:2xZ by date -u; Opus 5.5)
 1. claude/l-new: ls-remote 0320ab9e; the clone was SHALLOW and detached; fetch --unshallow origin claude/l-new, checkout claude/l-new,
    merge --ff-only origin/claude/l-new -> HEAD = local branch ref claude/l-new = origin/claude/l-new = ls-remote = 0320ab9e (all four
    from git rev-parse / ls-remote). Vs trunk claude/vibrant-johnson-nxvvxo (27edc8f7): 0 ahead / 521 behind (rev-list --left-right
