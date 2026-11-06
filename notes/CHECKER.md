@@ -1,6 +1,10 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 18), 2026-11-06 09:43Z (date -u)
+- C123 Add. 1 PASS (R112 second fill ad17fc0c @ 42d7c02d; L-3 d87bb3f0 = mine; E-2 applied verbatim). NEXT: C123 Add. 2 (landed check
+  + CI) when R112 lands.
+
 ## Resume point (successor 18), 2026-11-06 08:10Z (date -u)
 - C124 CLOSED (main 9c9b03b7 FAIL E-1; Add. 1 18aa6728 PASS; Add. 2 fa9bd3db; R111 landed e751969c; CI 6387 green).
 - C123 (R112) open: main 96b7f8a1 FAIL E-1, E-2. NEXT: C123 Add. 1 on the second fill (L-3 = one deletion; E-2 (a)-(c); the optional
