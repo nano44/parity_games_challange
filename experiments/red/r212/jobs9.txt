@@ -1,0 +1,4 @@
+6 2 0 401 300000 keep/T2_m6_34.txt
+6 0 0 403 300000 keep/T0_m6_22.txt
+7 2 0 404 100000 seeds/ext7_T34_top1.txt
+7 0 0 406 100000 seeds/ext7_T0_22_top1.txt
