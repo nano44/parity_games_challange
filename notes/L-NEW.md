@@ -15,6 +15,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 ### P-IDEAL-KEYS fix round 1 (Lead 00:47Z; REFEREE 24 ece8c4ee, REFEREE-2 28 ebcf52d0): fixes entry 1 docs/new/P-IDEAL-KEYS-fixes.md
   (26088848) + line L-2 (fb1b2276): tower relabelled TOWER (consequence of F <= T) + READING «not a shortcut» (no longer DEAD); KY-1,
   F-1, F-2, N-1, KY-L2; W-1..W-3; source note names the fixes file. check.sh pins added.
+### BOX 175 TOPC (docs/new/N5-TOPC-box175.md; box175/gain.py, gain2.py, xgain.py): L-RED CONJECTURE TOP-C at C = 1 DEAD under the
+  relayed definition (R208 / 16ae702d not on origin): fa_d2_k2_W2 gain' = gain'' = 4 (N 4, hand proof), iso_d4_st9 8 / 7, g4_L12 7 / 6,
+  tri_d5_L12 4 / 4; two simulators agree. Re-arm per top move (iso: mover 3 at steps 4, 11 after top moves 3, 10).
 ### BOX 174 RETRIGGER (docs/new/N5-RETRIGGER-box174.md; box174/retrig.py etc.): RE-TRIGGER, TOP-SINK, CHARGE-I PROVED (lane):
   I <= 1 + moves of lower Xi-ancestors of the top; on L^R_d I <= 3^(k+1) if those sit at levels <= k. Breaks at high-level ancestors
   (F(tau-2), circular). Ping-pong kill candidate NOT realized (climbs I <= 4). DATA retrig.py 5,846 runs 0 violations.
