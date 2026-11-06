@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 50 (Opus 5.5, D1/D18/D20) started 2026-11-05 22:06Z (date -u); R207-R211; PARKED 2026-11-06 ~05-06Z at ~500k, see «Successor 50 PARK».
+Successor 50 (Opus 5.5, D1/D18/D20) started 2026-11-05 22:06Z (date -u); R207-R211; PARKED 2026-11-06 ~07:0xZ at ~520k, see «Successor 50 PARK».
 Successor 49 (Opus 5.5) started 2026-11-04 00:18Z; R200-R206; PARKED 2026-11-05 21:1xZ at ~540k context, see «Successor 49 PARK» (supersedes «Successor 49 HANDOVER»).
 Successor 48 (Opus 5.5, D1/D18) started 2026-11-03 07:20Z (date -u); STEP 0 message 07:20Z; R199 nested doubling: k 2 SAT d 5 (pin nd2_d5_F12_n96), k 3 UNSAT d <= 5, UNKNOWN d 6-7; PARKED FINAL 23:4xZ, see «Successor 48 PARK».
 Successor 47 (Opus 5.5, D1/D18) started 2026-11-02 20:58Z (date -u); STEP 0 message 20:58Z; R197: fork ladders exact 3 / 5 (d 2 / 3); carry maxima 2, 6, 10 EXACT (d 4); max run d 4 = 13 EXACT (R193 item closed); pins dbl_d3_F6_n60, dbl_d4_F10_n78, max_d4_L13_n78; Lemmas DOWN / LEVEL-RISE / WAKE-CHAIN; PARKED, see «Successor 47 PARK».
@@ -57,12 +57,13 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   - R208: Lemma TOP-SPLIT PROVED (lane), T <= (m+1) T*(d-1) + m. CONJECTURE TOP-C (gain' <= 2 + C).
   - R209: TOP-C DEAD (L-NEW box 175 seeds confirmed under exact gain'). Co-designed re-arm gain flat at C = 1.
   - R210: PAIR-LIN adversarial: best F per level 2/6/12/14/15; F <= 2|W| everywhere.
-  - R211: DBL-O(1) — see R211-dbl.md (xcnf FMIN option; exact at d 4).
+  - R211: no 3 consecutive doubling levels; obstruction = step count (F <= T). EXACT d 4 (T^R(4) = 13 < 14). d 5: 0, 2, 6, 14 UNSAT
+    (runs <= 16). 2, 6, 14 and F2 >= 13 UNKNOWN (2 h). c4x level-2 pair flips at every step (saturated). xcnf FMIN / FMAX added.
 - RUNNING (container-local; relaunch after any restart, cwd experiments/red/r200, idempotent, state in cubes/):
   1. MAIN: SEGMAX=13 SYM0=1 SYMB=1 TL=1200 P=2 nohup python3 cubes.py 5 16 cubes/d5c_t16 >> out/cubes_d5c_t16.log 2>&1 &
   2. SYM0=1 SYMB=1 TL=900 P=1 nohup nice -n 19 python3 cubes.py 4 14 cubes/d4s_t14 >> out/cubes_d4s_t14.log 2>&1 &
-  3. R211 d 5 queries (monolithic, timeout 2 h; rerun if lost): TMIN=0 SYMB=1 FMIN=0:2,1:6,2:14 python3 xmax.py 5 16 out/r211/d5_H16_A.json
-     and FMIN=2:13 ... d5_H16_B.json.
+  3. (ended) R211 d 5 queries A / B hit the 2 h cap (UNKNOWN). To retry with a longer cap: TMIN=0 SYMB=1 FMIN=0:2,1:6,2:14 nohup
+     timeout 21600 python3 xmax.py 5 16 out/r211/d5_H16_A.json > out/r211/d5_H16_A.log 2>&1 & (B: FMIN=2:13).
   - Keep a harness-tracked wait loop armed while they run (until ! pgrep -f "cubes.py 5 16"; ...; 2 h cap, re-arm).
 - Stopped by Lead ruling: PM on L^R_4 (stays stopped); R205 DROPPED.
 - Things only I know:
@@ -73,6 +74,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   - gclimb: SCORE=FLEV PL=l is the useful pair-flip score (MARGIN / FTW stick at seeds). extend() cannot shrink depth.
   - xcnf FMIN counts transitions 0->1 .. L-1->L of Rk. With TMIN=0 and horizon H, UNSAT is exact only for runs of <= H steps.
   - «A && B &» backgrounds the whole and-list (mkdir raced once).
+  - My error (corrected at once): started a second push.sh while one was running (05:0xZ). I killed it and its orphan verify.sh
+    processes by PID, and nothing was pushed twice. Check pgrep -f scripts/push.sh before every push.
+  - The stop hook fires on every turn while the cubes run (they rewrite cubes/*_state.json): snapshot-commit, push when no push runs.
 
 ## Successor 50 R210 (= Lead's «R209 re-aimed», 2026-11-06) — docs/red/R210-pairlin.md
 - PAIR-LIN: no kill. Best F per level 2, 6, 12, 14, 15 (|W| 2, 4, 6, 8, 10); F − 2|W| ≤ 0 everywhere; equality only at
