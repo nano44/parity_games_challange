@@ -1,0 +1,12 @@
+it 12 score 5 T 3 4 5 Tinf 5
+it 32 score 6 T 2 4 6 Tinf 6
+it 56 score 7 T 3 5 7 Tinf 7
+it 202 score 8 T 3 6 8 Tinf 8
+it 265 score 9 T 4 7 9 Tinf 9
+it 283 score 10 T 4 8 10 Tinf 10
+it 639 score 11 T 4 8 11 Tinf 12
+it 828 score 12 T 5 9 12 Tinf 13
+it 1194 score 13 T 7 11 13 Tinf 14
+it 19485 score 14 T 8 12 14 Tinf 16
+it 59425 score 15 T 7 10 15 Tinf 16
+FINAL best 15
