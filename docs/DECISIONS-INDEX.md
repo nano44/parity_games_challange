@@ -41,3 +41,4 @@
 | L47 | 2026-11-03 | Lead reading of D19: pacing hold lifted until the 2026-11-04 21:00Z reset; L-RED 48 continues; L-NEW 50 (P-IDEAL-RED freeze, then stacking-limit lemma); fresh REFEREE successor + REFEREE-2 + CHECKER for the packet; stop on paid overage | active | docs/DECISIONS.md#d19 |
 | D20 | 2026-11-05 | Owner: "We have reset the weekly usage, so we can again work faster no?" | active | docs/DECISIONS.md#d20 |
 | L48 | 2026-11-05 | Lead reading of D20: full pace for the new weekly window; 4 research lanes (L-RED 49, L-NEW 53, L-COMP 9, L-SI 39); gates on demand; stop on paid overage | active | docs/DECISIONS.md#d20 |
+| L49 | 2026-11-06 | Lead reading: R110's W-ONLY is ISO-only, so FLIP-ADD ⇒ T^R_ISO(d) polynomial, not T^R(d); non-ISO 𝓛^R_d needs a separate route; excesses measured against T^R_ISO-best | active | docs/DECISIONS.md#d20 |
