@@ -6,6 +6,7 @@ infeasible, a Farkas certificate (lambda >= 0, sum 1, sum lambda_i (f(s_i) - f(s
 Usage: lpot.py CLASS d ngen seed [allstates|start] [genome files: those in L^R_d are added first]"""
 import os, sys, json, random, itertools
 import numpy as np
+from fractions import Fraction as Fr
 from scipy.optimize import linprog
 H = os.path.dirname(os.path.abspath(__file__)); P = os.path.join(H, "..", "box150", "check.py")
 ns = {"__file__": P, "__name__": "lib"}; exec(open(P).read().split("\nif __name__")[0], ns); Gen = ns["Gen"]
@@ -51,10 +52,20 @@ def feats(cls, g, G, s, hx):
         for x in range(N):
             for tag, j in (("o", 1 - s[x]), ("c", s[x])):
                 F["D%s%d" % (tag, x)] = sum(u[y] for y in g.play(s, x, j))
+    if "B" in cls or "G" in cls:  # MONO value budget and value gaps, from R105 ENC integers (path values of x)
+        for x in range(N):
+            pv = pathvals(g, G, x); vc = g.face(s, x, s[x]); vo = g.face(s, x, 1 - s[x])
+            ic, io = pv.index(vc), pv.index(vo); P = len(pv)
+            if "B" in cls:  # remaining budget: path values strictly above the current value (cv never decreases: MONO)
+                F["bud%d" % x] = P - 1 - ic; F["budn%d" % x] = Fr(P - 1 - ic, max(1, P - 1))
+                F["budL%d" % (x // 2)] = F.get("budL%d" % (x // 2), 0) + (P - 1 - ic)
+            if "G" in cls:  # gap of the other option: rank gap and its positive part (strictly better options and their gaps)
+                F["gap%d" % x] = io - ic; F["gapp%d" % x] = max(0, io - ic); F["gapn%d" % x] = Fr(max(0, io - ic), max(1, P - 1))
+                F["kgapp%d" % x] = k[x] * max(0, io - ic)
     if "V" in cls:  # value-rank of the current chain value cv(x) among x's path values (MONO: never decreases)
         for x in range(N):
             pv = pathvals(g, G, x); i = pv.index(g.face(s, x, s[x]))
-            F["vi%d" % x] = i; F["vr%d" % x] = i / max(1, len(pv) - 1)
+            F["vi%d" % x] = i; F["vr%d" % x] = Fr(i, max(1, len(pv) - 1))
     for x in range(N):
         l = x // 2
         F["z%d" % x] = z[x]; F["k%d" % x] = k[x]; F["u%d" % x] = z[x] & k[x]
@@ -75,7 +86,7 @@ def feats(cls, g, G, s, hx):
 def main():
     cls, d, ngen, seed = sys.argv[1], int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4])
     mode = sys.argv[5] if len(sys.argv) > 5 else "allstates"
-    rng = random.Random(seed); idx = {}; rows_dec, rows_val, meta = [], [], []
+    rng = random.Random(seed); idx = {}; rows_dec, rows_val, meta, vmeta = [], [], [], []
     def vec(F):
         for nm in F:
             if nm not in idx: idx[nm] = len(idx)
@@ -94,18 +105,18 @@ def main():
         states = itertools.product((0, 1), repeat=2 * d) if mode == "allstates" else [tuple(G["start"])]
         for s in states:
             s = tuple(s); n, _ = g.step(s)
-            Fs = vec(feats(cls, g, G, s, hx)); rows_val.append(Fs)
+            Fs = vec(feats(cls, g, G, s, hx)); rows_val.append(Fs); vmeta.append((gi, s))
             if n is None: continue
             Fn = vec(feats(cls, g, G, n, hx)); nontriv += 1
             rows_dec.append((Fs, Fn)); meta.append((gi, s, n))
     m = len(idx) + 1  # + constant
     def dense(F):
         v = np.zeros(m); v[-1] = 1
-        for nm, x in F.items(): v[idx[nm]] += x
+        for nm, x in F.items(): v[idx[nm]] += float(x)
         return v
     D = np.array([dense(a) - dense(b) for a, b in rows_dec]) if rows_dec else np.zeros((0, m))
     V = np.array([dense(a) for a in rows_val])
-    D, Dinv = np.unique(D, axis=0, return_inverse=True); V = np.unique(V, axis=0)
+    D, Dinv = np.unique(D, axis=0, return_inverse=True); V, Vfirst = np.unique(V, axis=0, return_index=True)
     print("class %s d %d genomes %d transitions %d distinct-dec-rows %d distinct-states %d features %d" % (cls, d, ngen, nontriv, len(D), len(V), m - 1))
     # variables: w (m), Mx ; minimise Mx
     nv = m + 1; c = np.zeros(nv); c[-1] = 1
@@ -135,6 +146,16 @@ def main():
             dump.append({"y": y[i], "src": files_used[gi] if gi < nfile else "rand", "genome": gens[gi], "s": s0, "next": n0,
                          "fdiff": {names_[j]: D[i, j] for j in range(m - 1) if abs(D[i, j]) > 1e-12}})
         json.dump(dump, open(os.path.join(H, "out", "dual_%s_d%d_s%d.json" % (cls, d, seed)), "w"), default=float)
+        # full dual (decrease rows y, lower state rows a, upper state rows b) for the exact check (exactcert.py)
+        nV = len(V); ya = y[nd:nd + nV]; yb = y[nd + nV:]
+        cert = {"cls": cls, "d": d, "seed": seed, "float_bound": float(r.x[-1]), "dec": [], "lo": [], "hi": []}
+        for i in sup:
+            gi, s0, n0 = meta[inv[i]]; cert["dec"].append({"y": float(y[i]), "genome": gens[gi], "s": list(s0), "next": list(n0)})
+        for tag, arr in (("lo", ya), ("hi", yb)):
+            for j in range(nV):
+                if arr[j] > 1e-9:
+                    gi, s0 = vmeta[int(Vfirst[j])]; cert[tag].append({"y": float(arr[j]), "genome": gens[gi], "s": list(s0)})
+        json.dump(cert, open(os.path.join(H, "out", "cert_%s_d%d_s%d.json" % (cls, d, seed)), "w"))
         print("dual: %d decrease rows in support, sum of their multipliers %.4f (= the bound)" % (len(sup), sum(y[i] for i in sup)))
         print("dual mass by genome source:", " ".join("%s:%.3g" % (os.path.basename(k), v) for k, v in sorted(src.items(), key=lambda kv: -kv[1])[:12]))
         return

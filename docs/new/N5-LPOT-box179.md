@@ -137,12 +137,48 @@ unrefereed) / DATA / CONJECTURE / DEAD. Not a TARGET.md claim. G-N5-TIME stays O
 - What a polynomial potential would need (CONJECTURE-shaped, not claimed): a Ξ-budget B(s), polynomial in d, that falls by ≥ 1 at every
   renewal of a key-misaligned mover. That is DBL-O(1) / RENEW-COUNT_2 in potential form.
 
+## 5b. Round 2 (Lead 10:03Z): value-budget features from R105 ENC, exact rational certificates
+- Features added (lpot.py letters B, G; all from the ENC integers of the maximal Ξ-paths of x, R105 ENC landed). B: budget bud(x) := the
+  number of path values of x strictly above cv(x) (MONO: cv never decreases, so this is x's remaining rise budget), its normalised form,
+  and its level sum. G: rank gap of the other option (io − ic), its positive part (the strictly better options at degree 2, with their
+  gaps), normalised, and k(x)·gap⁺(x).
+- Exact certificates. exactcert.py recomputes every transition (box150 simulator) and every feature in rational arithmetic. It re-solves the
+  dual multipliers exactly on the LP's support and checks y, a, b ≥ 0 and the dual equalities. By weak duality, max Φ ≥ Σ y for every
+  potential of the class that works on those genomes. A potential that works on all of 𝓛^R_d works on them, so this is a lower bound
+  for the class.
+- Results (EXACT lower bounds, CERTIFIED; log/exact_*.txt, certificates out/cert_*.json):
+
+  | class | d 2 | d 3 | d 4 |
+  | --- | --- | --- | --- |
+  | PHX (§0) | — | 22 (= Φ_K: class optimum EXACT) | — |
+  | PBG = P + budget B + gaps G («value budget + keys») | 8 | 18.8597 | 35.5536 |
+  | PHXVDBG = everything above | — | 13.9193 | ≥ 23.2849 (414 genomes) |
+  | T^R(d) | 4 | 8 | 13 (lane) |
+
+  PBG d 4 comes from 764 genomes (64 corpus + 700 random). PHXVDBG d 4 comes from 414 (64 + 350): the 700-genome run was killed by the
+  memory cgroup (dense LP, 14 GB). Both are sampling-limited lower bounds, exact as bounds. For comparison, PHX at d 4 rose from 40.8
+  (164 genomes) to 49.1 (764).
+- PROVED (machine, exact certificate + lane theorem): the least range of a PHX potential on 𝓛^R_3 is exactly 22 = 2^5 − 10.
+  Lower: certificate out/cert_PHX_d3_s1793.json (73 rows, exact, CERTIFIED). Upper: Φ_K (PHIK-DESCENT), which is in PHX.
+- PHXVDBG (all features, the non-local renewal counts D included): 13.92 at d 3 and ≥ 23.28 at d 4 (ratio ≥ 1.67, sampling-limited);
+  no evidence either way at d 4. Certificate out/cert_PHXVDBG_d4_s1794.json (202 rows, CERTIFIED).
+- DEAD (DATA, exact certificates) for «value budget + keys» as a polynomial route at d ≤ 4: PBG's exact lower bounds are 8 / 18.86 /
+  35.55, ratios 2.36 and ≥ 1.89, against T^R 4 / 8 / 13. The budget lowers the base-2 constant (22 → 18.9, 52 → ≥ 35.6) but not the
+  doubling. The DEAD instance is the certificate out/cert_PBG_d4_s1794.json (108 rows).
+- Obstruction (READING, PBG d 3 certificate, heaviest rows). A mover's move spends ONE rank of its OWN budget (bud −1) and renews its
+  partner (z +1), whose own budget does not change: the renewal raises the value of the partner's OTHER option, not its current one.
+  So the budget pays for a move only at the rank level. Rank budgets are as large as the number of Ξ-paths (PATH-RISE). With universal
+  weights, the budget term then has range Σ w·(P(x) − 1), and P(x) is exponential in Ξ-depth. A polynomial budget would need moves
+  to jump polynomially many ranks at once, i.e. a COARSE value scale. That is the open question, now in potential form.
+
 ## 6. Files (experiments/new/box179/)
 - lpot.py (LP synthesis; classes C0, P, H, X, V, and their combinations, by letters; Farkas certificate when infeasible; dual dump);
   phik.py (exact Φ_K descent check); phik_start.py (T against Φ_K(s_0)); forcing.py (OPT-K forcing transitions, d ≤ 8); maxT.py.
 - out/force_d1..8.json (OPT-K instances), out/dual_PHX_d3_s1793.json (certificate), out/dual_PHXV_*.json; lpot.py also writes
   out/w_<class>_d<d>.json (optimal weights; scratch, not committed). log/ as listed in §4.1.
-- lpot.py needs scipy (HiGHS); phik.py, forcing.py, maxT.py need only the box150 simulator.
+- exactcert.py (exact rational check of an LP certificate, round 2); out/cert_<class>_d<d>_s<seed>.json (certificates); log/exact_*.txt.
+- lpot.py needs scipy (HiGHS); phik.py, forcing.py, maxT.py, exactcert.py need only the box150 simulator (exactcert imports lpot.py,
+  so numpy/scipy must be importable).
 
 ## 7. Next (Lead decides)
 - DONE after the first push (log/lpc_PHXVD_d2.txt, _d3_r1500, _d4_r700): the non-local renewal feature D (the item below) lowers the

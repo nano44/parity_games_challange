@@ -9,6 +9,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   >= 61.2 d 5 (sampling-limited); PHXV (value rank) 17.9 at d 3. DEAD (method, level-local linear potentials). Obstruction: free Xi-renewal
   ping-pong in feature space (certificate out/dual_PHX_d3_s1793.json). lpot.py needs pip scipy (installed in this container only).
   Non-local D (unstable Xi-descendants per chain) PHXVD: 6.98 / 14.79 / >= 26.99 (d 2-4): still ~doubling. Pushed a35191de (box 179 main).
+- Round 2 (Lead 10:03Z): value-budget features B/G (R105 ENC path ranks) + EXACT certificates (box179/exactcert.py, rational re-solve on
+  the LP support). CERTIFIED: PHX d3 = 22 exactly (with Phi_K: class optimum EXACT); PBG (keys + budget + gaps) 8 / 18.86 / >= 35.55
+  (DEAD instance out/cert_PBG_d4_s1794.json); PHXVDBG 13.92 / >= 23.28 (414 genomes; 700-genome run OOM-killed at 14 GB). Obstruction:
+  a move spends one RANK of its own budget, and renewal of the partner leaves the partner's budget unchanged; rank budgets ~ #paths.
 - Trap this session: clone was shallow -> verify FAILED on box49 quotecheck3 (e2da18b0 missing); fix = git fetch --unshallow first.
 
 ## Successor 56 handover check (STEP 0; written 2026-11-06 08:4xZ by date -u; session_01V5yGRZaLkWxqVNtbeLt55J)
