@@ -1,6 +1,49 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## HANDOVER (successor 55, PARKING 2026-11-06 ~08:2xZ by date -u; Lead 08:14Z: handover + park at ~540k context)
+### DONE (every push via scripts/push.sh, VERIFY PASS; SHAs copied from git log; Lead informed at every box end)
+- Step 0 (1ee2ac2f).
+- Box 172 P-IDEAL-KEYS FROZEN b302bbf5 (packet 62b35bf7, L-1 f36c6402, tool box172/keycheck.py 6ce4693d, out 5100eb30). Fix round 1
+  1a178aff (fixes entry 1, L-2 fb1b2276: tower -> TOWER/READING, KY-1, quotes, W-1..W-3). C124 E-1: fixes entry 2 + L-3 c29f0a93
+  (432edf82; fixes now 504403c3). LANDED as R111 07:16Z (Lead).
+- Box 173 (2afbb491): RENEW-COUNT DEAD as stated (chain C_m, d 2, I = m/2; box173/out/chain_C8 6c9962ba, chain_C20 e5e65ab3).
+- Box 174 (d2dc2e69): RE-TRIGGER, TOP-SINK, CHARGE-I (lane): I <= 1 + moves of lower Xi-ancestors of the top; on L^R I <= 3^(k+1).
+- Box 175 (06d4238d): L-RED TOP-C (C = 1) DEAD: fa_d2_k2_W2 gain' 4, iso_d4_st9 8, g4_L12 7, tri_d5_L12 4 (L-RED confirmed, r208/gainx.py).
+- Box 176 (096870c1): CONJECTURE TOP-M; every top-move-resource repair sums to O(3^d); forcing instance dd_d5_F14 (gain' 13).
+- Box 177 (28c616e9): ALIGN + PAIR-DOUBLE F(l) <= 2F(l-1)+2 on L^R (tight on dd_d5_F14 l 3); T^R(d) <= 2^(d+2) - 2d - 4; PATH-RISE.
+- Box 178 P-IDEAL-ALIGN FROZEN cb8e0dca (packet d8acdece 180 lines, L-1 e46b0417, tool box178/aligncheck.py 9335dee7, out b653b01b).
+  Both referees SIGN all 7 (REFEREE 24 6f0daf60, REFEREE-2 28 ea08029d). Fix round 1 c787aab1: fixes entry 1 25b050ee, L-2 cb5f0398;
+  L-2 MATCHES at both (Lead 08:14Z). R113 to be drafted after R112 (P-TR3) lands.
+### PENDING (for successor 56)
+- P-IDEAL-ALIGN landing: CHECKER items (if any) go into P-IDEAL-ALIGN-fixes.md entry 2 + L-3, by script, C124 pattern (replace exactly
+  the CHECKER's text; pin new sha1s in check.sh block «P-IDEAL-ALIGN»; the packet stays frozen). Premises: R104 def, R105 ENC + MONO,
+  R110 def of L^R_d; R111 NOT used (KP-MOVE re-proves KEYFLIP's degree-2 step). AL-P1: T^R values are lane DATA (T^R(3) = 8 = P-TR3 →
+  R112 when landed; the line quotes none). The (b) bound (gamma(0) != gamma(1): F(l) <= F(l-1)+1) is EXCLUDED, machine range k <= 30.
+### OPEN CONJECTURES (data, kills)
+- PAIR-LIN (central, Lead reading): flips(p, q) <= c|{p, q} u W(p) u W(q)|. Corpus max ratio 2.0 (c4x 12/6; dd 14/8 at excess 6).
+  Reduced (box 177) to DBL-O(1) + a count of non-doubling levels. No kill.
+- DBL-O(1): on L^R a gamma-equal pair cannot be doubled (F(l) = 2F(l-1)+2-type, both movers Xi-renewed after every lower flip) for many
+  consecutive levels. DATA: max 2 consecutive doubling levels in 190 2-wide runs. Kill target given to L-RED (3 consecutive levels).
+- RENEW-COUNT_2 (2-wide): I <= d + 1 / poly(d). DATA: I <= d + 1 on 163 L^R pairs; max_d5_L15 I 2. Reduced (box 174) to «lower
+  Xi-ancestors of the top move poly(d) times». Width-free form DEAD (C_m).
+- TOP-M: gain' <= n2 + 3 m_c (box 176; 0/372 files; ratio 3.0 attained). Sums to O(3^d): no polynomial route by itself.
+- PM'_S (box 167): moves(x) <= (deg-1)(1 + desc + |W(x)|); 0/263 files, slack >= 2; fragile under composition if pair flips outgrow |W|.
+- SUM_1 (box 163): V_0 + V_1 <= 2T^R + 1; open. SUM_2 DEAD by L-SI (Lead 08:14Z; I have not opened the instance — successor: record its
+  file + sha1 from L-SI before citing). SUM_3 DEAD (ISO_1_d4_t12). INF-2 DEAD (L-SI inf18_m3).
+- DEAD this session: PM, PMV (P-IDEAL-KEYS §7), TOP-C at C = 1 (box 175), RENEW-COUNT width-free (box 173); FD/FB/FA repairs (box 176).
+### TOOLS (successor 55)
+- box172/keycheck.py (key-side lemmas; corpus frozen to boxes 150-172 — never add JSON genomes under box150-172).
+- box178/aligncheck.py (corpus frozen to boxes 150-177; same rule).
+- box174/retrig.py (RE-TRIGGER / CHARGE-I), box175/gain.py, gain2.py, xgain.py (gain' / gain'' with box150 Gen or L-RED r187/ideal.py),
+  box176/repair.py, forms.py, box177/align.py, automaton.py (8-state DP), slack.py, box171/frozen.py (I, L).
+- L-RED tree: `git archive origin/claude/l-red experiments/red | tar -x -C <scratch>/lred` from the REPO ROOT (git archive pathspec is
+  cwd-relative; it failed once from experiments/new). L-RED R207/R208 keep files: experiments/red/r207/keep, r208/keep.
+### Things only I know (successor 55)
+- push.sh pushes only the commit it verified ("HEAD moved during verify"): chain a second push for commits made during verify.
+- Line edits: always by script with assert count == 1, then word diff via git diff --no-index --word-diff=plain; check sha1/bytes/parens.
+- DATA wording in lines: read the counter code (if t / if l >= 1 guards) before naming the set (C124, AL-L1 lessons).
+
 ## Resume point (successor 55, Opus 5.5, session_01V5yGRY6bNXTPcgHkohFvpg; started 2026-11-05 22:51Z by date -u)
 ### BOX 172 P-IDEAL-KEYS FROZEN (this commit): docs/new/P-IDEAL-KEYS.md + line L-1 docs/new/P-IDEAL-KEYS-line-L1.txt; tool
   experiments/new/box172/keycheck.py (frozen corpus boxes 150-172 + 400 random genomes, seed 172) with frozen output keycheck.out;
