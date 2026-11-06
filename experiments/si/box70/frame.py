@@ -113,6 +113,15 @@ elif MODE == "t1": runs = [run("a", T, True)]
 elif MODE == "sum": runs = [run("a", T, False), run("b", T2, True)]
 elif MODE == "tk": runs = [run("a", T, True, kflips=K)]                      # T-step run with <= K bit changes (K = -1: unlimited)
 elif MODE == "sumk": runs = [run("a", T, False), run("b", T2, True, kflips=K)]
+elif MODE == "pq":                                                               # box 73: flip-free run a (T) + one-flip run b (T2) with
+    runs = [run("a", T, False), run("b", T2, True)]                              # the flip after exactly PRE steps; REL=pre: run a has the
+    PRE = int(os.environ["PRE"]); Fb = runs[1][2]                                # pre-segment's bit; REL=post: the post-segment's bit
+    for t in range(T2 + 1): cl.append([Fb[t]] if t >= PRE + 1 else [-Fb[t]])
+    REL = os.environ.get("REL", "")
+    if REL == "pre": cl.extend([[runs[0][1], -runs[1][1]], [-runs[0][1], runs[1][1]]])
+    if REL == "post": cl.extend([[runs[0][1], runs[1][1]], [-runs[0][1], -runs[1][1]]])
+elif MODE == "bits":                                                             # box 73: two flip-free runs, opposite external bits
+    runs = [run("a", T, False), run("b", T2, False)]; cl.extend([[runs[0][1], runs[1][1]], [-runs[0][1], -runs[1][1]]])
 elif MODE == "pm":
     # L-NEW CONJECTURE PM (degree 2): moves(x) <= 1 + desc(x). Query: mover x = PMX with desc(x) = PMD and moves(x) >= PMD + 2 within a
     # run of T steps (idle steps allowed, so every run of length <= T is covered) with <= K bit changes.

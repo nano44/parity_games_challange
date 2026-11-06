@@ -1228,3 +1228,6 @@ echo "si (box 70: FRAME): PASS"
 # box 71 (FRAME-K: k-flip frame m = 2 validation + DRUP check; docs/si/N5-FRAMEK-box71.md)
 bash box71/check71.sh
 echo "si (box 71: FRAME-K): PASS"
+# box 73 (SUM1: exact m = 2 frame enumeration, FRONT-2', pq realisation; docs/si/N5-SUM1-box73.md)
+bash box73/check73.sh
+echo "si (box 73: SUM1): PASS"
