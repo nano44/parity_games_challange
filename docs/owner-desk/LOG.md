@@ -619,3 +619,24 @@ Answered from trunk bfcad0441 (2026-11-06 13:40Z), RESULTS R111-R112, LEAD-STATE
 
 ## 2026-11-06T14:38Z Lead report (14:39Z, summary)
 G-N5-TIME OPEN. Note E-3 signed by both referees; CHECKER C126 found a Lead error (REFEREE's optional clause misplaced and logged as verbatim when it was not), fixed as specified, final check next. R113 ALIGN corrected line MATCHES at REFEREE-2; REFEREE byte test pending. P-IDEAL-RISE (potential proof of 2^(d+2) bound; RISE-EQUIV; machine-certified LP lower bounds) SIGNED by REFEREE-2 with two required word changes; REFEREE pending. Lane-level: NONISO-FRAME proved (T^R(d) ≤ T^N_2(d−1) + 2), closing L49's scope gap; target now CONJECTURE N-FLIP-ADD (would give T^R(d) = O(d²)). MOVES-2D exact at d 3 with room; RISE-2D exact/tight at d 3, DEAD at d 5, 6. m = 4 SAT-frame queries intractable, stopped.
+
+## 2026-11-06T20:18Z Lead daily owner line (2026-11-06 20:20Z, verbatim)
+G-N5-TIME (polynomial time for N5) is still OPEN. Nothing proves or refutes it.
+
+PROVED (refereed, landed today; two referee signatures + CHECKER each):
+- R111 IDEAL-KEYS: key-side lemmas LOCAL-KP, PAIR-KF, CASCADE, RENEW, MERGE, RETURN.
+- R112: T^R(3) = 8, machine-certified. All 16 SAT refutations were regenerated and re-checked by a referee's own proof checker.
+- R113 IDEAL-ALIGN: on 2-wide ladders, T^R(d) ≤ 2^(d+2) − 2d − 4, improving the earlier 3^d bound. Still exponential.
+- RESULTS Note E-3: R110's «SC-ISO» conjecture is DEAD, resting on R112's machine trust base.
+
+ALMOST LANDED:
+- R114 (P-IDEAL-RISE: a potential-function proof of that bound, «value rises ⇔ steps», and machine-certified lower bounds on simple potential classes) is fully signed, with its corrected line matched by both referees.
+- P-IDEAL-IM (Lemma IM, the SAT frame, T_1(3) = 10 machine-certified) is signed by REFEREE; REFEREE-2 is finishing.
+
+LANE-LEVEL (not refereed):
+- Killed today with verified instances: PM, TOP-C, INF-2, SUM_2, RISE-2D, the «doubling tower», and several potential-function classes.
+- Proved in lanes: NONISO-FRAME and REDUCE-XI. The latter shows the open conjecture MOVES-2D (each Ξ-target mover moves ≤ 2d times) is exactly a quadratic bound T^R(d) ≤ 4d² − 4d + 3.
+- MOVES-2D holds exactly for d ≤ 4 (one solver, no proof file). A targeted SAT kill query at d = 5 is running.
+- The best lower-bound constructions grow linearly in d. So the data fit a polynomial T^R, but nothing proves it.
+
+FLEET: 4 research lanes plus gates, at full pace (D20); no paid overage.
