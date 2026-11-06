@@ -117,6 +117,7 @@ def build(T, E, fixall=False, lem=True):
         rx = Rk[(t, l)] if x == 2 * l else neg(Rk[(t, l)])
         return neg(rx)
     need_t = set(s for (s, x) in req) | (set(range(L)) if N > N0 else set())
+    if os.environ.get("RISEZ"): need_t |= set(range(L + 1))   # R213: IN at every state 0..L (rise counter)
     IN = {}
     # topological evaluation is not available (order is symbolic): define IN by equations
     for t in sorted(need_t):
@@ -272,7 +273,20 @@ def build(T, E, fixall=False, lem=True):
                     C.n = max(C.n, enc.nv); [C.add(list(c)) for c in enc.clauses]
     if os.environ.get("TMIN") == "1":   # R202: the run has at least L steps (deterministic run: step L nonempty => all earlier steps nonempty)
         C.add([mv[(L, v)] for v in range(N)])
-    info = dict(mv=mv, g0=g0, N=N, N0=N0, L=L, lev=lev, WT=WT, gate0=gate0, S0=S0, m0=m0, dtop=dtop, faces=faces, b=b, lt=lt, par=par, st=st, Gb=Gb, req=req, fi=fi)
+    if os.environ.get("RISEZ"):   # R213 (L-NEW box 180 RISE-2D): mover z's current value cv(z) changes >= RISEMIN times in steps 1..L, and z
+        # is the Xi-target of some option (so R(x, k) = #rises of cv(z) for that option). By R105 MONO cv never falls and ranks are distinct,
+        # so «cv(z) rises at step t» = «z's current chain (face set) differs between states t-1 and t».
+        from pysat.card import CardEnc, EncType
+        z = int(os.environ["RISEZ"]); rmin = int(os.environ.get("RISEMIN", "1"))
+        chg = [C.OR([neg(C.EQ(IN[(t - 1, z, f)], IN[(t, z, f)])) for f in faces]) for t in range(1, L + 1)]
+        tl = [b[((x, k), z)] for x in range(N) if x != z for k in (0, 1) if ((x, k), z) in b]
+        if True not in tl: C.add([x for x in tl if x is not False])
+        lits = [x for x in chg if x is not False]; nt = sum(1 for x in lits if x is True); lits = [x for x in lits if x is not True]
+        if rmin - nt > len(lits): C.add([])
+        elif rmin - nt > 0:
+            enc = CardEnc.atleast(lits=lits, bound=rmin - nt, top_id=C.n, encoding=EncType.seqcounter)
+            C.n = max(C.n, enc.nv); [C.add(list(c)) for c in enc.clauses]
+    info = dict(mv=mv, g0=g0, N=N, N0=N0, L=L, lev=lev, WT=WT, gate0=gate0, S0=S0, m0=m0, dtop=dtop, faces=faces, b=b, lt=lt, par=par, st=st, Gb=Gb, req=req, fi=fi, IN=IN)
     return C, info
 
 def decode(model, I):

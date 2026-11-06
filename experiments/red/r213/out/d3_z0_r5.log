@@ -1,0 +1,2 @@
+RISE d 3 t 8 z 0 r 5: SAT build 0.1 s solve 6.2 s vars 33711 clauses 113078
+  replay T 5 rises of z 5 (needs >= 5: OK) maxR 5 at (1, 1) FALL 0 -> out/d3_z0_r5.json

@@ -70,7 +70,10 @@ static int tinf(uint32_t u) {
     for (int b = 0; b < 2; b++) { uint32_t w = NX[b][u]; if (w != u) { int x = 1 + tinf(w); if (x > best) best = x; } }
     *p = best; return best;
 }
-static int Tres[16], Tinf_res; static uint32_t argmax;
+static int Tres[16], Tinf_res; static uint32_t argmax; static int SCOREMODE = 0; static int *RZ; static int64_t *CV; static int Rbest, Rz, RT;
+/* R213: rises of cv(z) (current value of mover z) along the run from u, memoised: RZ[u*N+z] */
+static int64_t cvz(const Gen *g, uint32_t u, int z) { int st[MAXN]; for (int v = 0; v < N; v++) st[v] = (u >> v) & 1; return face(g, st, z, st[z]); }
+static int isTarget[MAXN];
 static int trun(uint32_t u) {
     int *p = &TK[u]; if (*p >= 0) return *p; if (*p == -2) { fprintf(stderr, "run cycle\n"); exit(3); }
     *p = -2; uint32_t w = NX[0][u]; int r = (w != u) ? 1 + trun(w) : 0; *p = r; return r;
@@ -81,6 +84,20 @@ static void evalg(const Gen *g, int K) {
     for (int u = 0; u < NS; u++) TK[u] = -1;
     int best = 0; for (int u = 0; u < NS; u++) { int x = trun(u); if (x > best) { best = x; argmax = u; } }
     Tres[0] = best; Tinf_res = best;
+    if (SCOREMODE) {
+        for (int z = 0; z < N; z++) isTarget[z] = 0;
+        for (int v = 0; v < N; v++) for (int k = 0; k < 2; k++) if (g->xt[v][k] >= 0) isTarget[g->xt[v][k]] = 1;
+        for (int u = 0; u < NS; u++) for (int z = 0; z < N; z++) CV[(size_t)u * N + z] = cvz(g, u, z);
+        /* process states in order of run length (T[u] increasing): RZ(u) = rise(u -> next) + RZ(next) */
+        static int *ord = 0; if (!ord) ord = malloc(sizeof(int) * NS);
+        int cnt[64] = {0}; for (int u = 0; u < NS; u++) cnt[TK[u] + 1]++;
+        for (int i = 1; i < 64; i++) cnt[i] += cnt[i - 1];
+        for (int u = 0; u < NS; u++) ord[cnt[TK[u]]++] = u;
+        Rbest = -1;
+        for (int i = 0; i < NS; i++) { uint32_t u = ord[i], w = NX[0][u];
+            for (int z = 0; z < N; z++) { int r = 0; if (w != u) r = (CV[(size_t)w * N + z] > CV[(size_t)u * N + z]) + RZ[(size_t)w * N + z]; RZ[(size_t)u * N + z] = r;
+                if (isTarget[z] && (r > Rbest || (r == Rbest && TK[u] > RT))) { Rbest = r; Rz = z; RT = TK[u]; argmax = u; } } }
+    }
 }
 static int reach(const Gen *g, int from, int to) { /* is 'to' reachable from 'from' in the Xi-graph */
     int stk[MAXN], sp = 0, seen[MAXN] = {0}; stk[sp++] = from; seen[from] = 1;
@@ -131,7 +148,7 @@ static int readg(FILE *f, Gen *g) {
     fscanf(f, "%15s", w); for (int v = 0; v < N; v++) for (int k = 0; k < 2; k++) fscanf(f, "%d", &g->gate[v][k]);
     return 1;
 }
-static long score(int mode, int K) { (void)mode; (void)K; return Tres[0]; }
+static long score(int mode, int K) { (void)mode; (void)K; return SCOREMODE ? (long)Rbest * 256 + RT : Tres[0]; }
 int main(int argc, char **argv) {
     if (argc < 3) { fprintf(stderr, "usage\n"); return 1; }
     m = atoi(argv[2]); N = 2 * (m + 1); NU = 2 * m; M = 2 * N; NS = 1 << N;
@@ -139,11 +156,12 @@ int main(int argc, char **argv) {
     NX[0] = malloc(sizeof(uint32_t) * NS); NX[1] = malloc(sizeof(uint32_t) * NS);
     TK = malloc(sizeof(int) * (size_t)(K + 1) * NS * 2 + 16); TI = malloc(sizeof(int) * NS);
     Gen g;
-    ISO = getenv("ISO") && atoi(getenv("ISO"));
+    ISO = getenv("ISO") && atoi(getenv("ISO")); SCOREMODE = getenv("SCORE") && !strcmp(getenv("SCORE"), "R");
+    RZ = malloc(sizeof(int) * (size_t)NS * N + 16); CV = malloc(sizeof(int64_t) * (size_t)NS * N + 16);
     if (!strcmp(argv[1], "eval")) {
         if (!readg(stdin, &g)) { fprintf(stderr, "bad genome\n"); return 1; }
         if (ISO) for (int v = 0; v < N; v++) for (int k = 0; k < 2; k++) if (g.xt[v][k] == 0 || g.xt[v][k] == 1) { printf("NOT ISO\n"); return 1; }
-        evalg(&g, K); printf("T %d start", Tres[0]); for (int v = 0; v < N; v++) printf("%d", (argmax >> v) & 1); printf("\n"); return 0;
+        evalg(&g, K); if (SCOREMODE) printf("maxR %d z %d T %d (that run) ", Rbest, Rz, RT); printf("T %d start", Tres[0]); for (int v = 0; v < N; v++) printf("%d", (argmax >> v) & 1); printf("\n"); return 0;
     }
     int Kc = atoi(argv[3]), mode = atoi(argv[4]); rs = 0x9E3779B97F4A7C15ULL ^ (uint64_t)atoll(argv[5]) * 2654435761ULL; if (!rs) rs = 1;
     long iters = atol(argv[6]); const char *out = argv[7];
@@ -160,7 +178,7 @@ int main(int argc, char **argv) {
         if (acc) { g = h; if (s > cs) stale = 0; cs = s; } else stale++;
         if (cs > best) {
             best = cs; bg = g; FILE *f = fopen(out, "w"); printg(f, &bg); fclose(f);
-            printf("it %ld T %ld\n", it, best); fflush(stdout);
+            if (SCOREMODE) printf("it %ld maxR %d z %d runT %d maxT %d\n", it, Rbest, Rz, RT, Tres[0]); else printf("it %ld T %ld\n", it, best); fflush(stdout);
         }
         if (stale > 200000) { g = bg; cs = best; stale = 0; for (int j = 0; j < 6; j++) mutate(&g); evalg(&g, Kc); cs = score(mode, Kc); }
     }
