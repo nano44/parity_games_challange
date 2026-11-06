@@ -100,7 +100,7 @@ land).
   CONDITIONAL clause) stay as landed (the heading equals the MATCHED line L-3); this note governs their reading, as Erratum E-2 does for
   R105. No title, GAPS line or Dead-ends row changes (SC-ISO is a lane conjecture killed inside a landed line, CHECKER C118 §5, applied
   to SC-ISO by C122). G-N5-TIME stays open.
-- Sign-off: REFEREE 5e4def16 and REFEREE-2 8db8eb95 (each: R110 (g)'s implication with RESULTS R112 gives the DEAD, and R112's
+- Sign-off: REFEREE 5e4def16 (block confirmed after the edits, 1784dd28) and REFEREE-2 8db8eb95 (confirmed, 0bdc659c) (each: R110 (g)'s implication with RESULTS R112 gives the DEAD, and R112's
   T^R(3) is R110's), CHECKER C126 <checker>.
 ---END NOTE BLOCK---
 FLAGS FOR THE REFEREES AND CHECKER (not part of the note):
@@ -156,3 +156,6 @@ LEAD EDIT after sign-off (2026-11-06 13:02Z by date -u): applied to the block, v
   «verbatim» was wrong); corrected by C126 §5's R1 + R2: the clause now follows «drup.c» as «and, for all 16 cubes, regenerated
   byte-identically and accepted by REFEREE's independently written RUP checker (R-P-TR3 Addendum 1, 365f22e1)».
 - Sign-off placeholders filled: REFEREE 5e4def16, REFEREE-2 8db8eb95. Remaining placeholders: <DATE>, <HH:MM>, <checker>.
+- Confirmations (2026-11-06 15:06Z): REFEREE R-P-IDEAL-FLIP §D 1784dd28 and REFEREE-2 R2-NOTE-E3.md 0bdc659c confirmed the
+  edited block at cfd25b61 (with E3-2 then misplaced); C126 R1 + R2 then moved E3-2 to REFEREE's own wording and place, so the
+  confirmed content is unchanged except that the clause is now REFEREE's text verbatim. Sign-off line updated (CHECKER C126 N-4).
