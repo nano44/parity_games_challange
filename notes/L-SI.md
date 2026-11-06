@@ -1,6 +1,18 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## BOX 73 (successor 40; Lead brief: structural proof of SUM_1 in the IM class) — DONE, no proof (failing step + instances)
+- Note docs/si/N5-SUM1-box73.md; tools experiments/si/box73/ (enum2.py exact m 2 frame tables, dyn2/mine2/stats2/rearm2/fullfull2.py,
+  run73.sh pq queue, realpq.py, replaypq.py, check73.sh wired); frame.py modes pq (flip after exactly PRE steps) and bits.
+- PROVED (lane) every m: KEY-DIR, LEVEL-1 BUDGET, RE-ARM (LOCAL form; IM form only for single-mover steps).
+- EXACT m 2: 52,112 LOCAL+IM tables; FRONT-2': p <= T_0^beta, q <= T_0^notbeta, p + q <= 5, one exception cell (4,2,3) -> q 1.
+  NOIM line is p + q <= 7. Length-5 runs need no level-1 re-arm (1,552 runs).
+- EXACT-SAT m 3: max post by pre 0..8 = 8 7 7 6 6 5 3 2 1 (one solver, UNSATs unchecked). Realised (4,6), (7,2), (8,1); (3,6) not.
+- Failing step: no constant exchange rate pre -> post at m 3 (instances in note §4); local lemmas (RE-ARM, RENEW, RE-TRIGGER) charge
+  to descendant moves, not to T^R.
+- TRAP (bit me): in check73.sh a `cmd > f && diff` chain does not stop set -e; split into separate lines. The self-check caught a false
+  claim in my draft (FRONT-2' without the (4,2,3) exception).
+
 ## Successor 40 handover check (written 2026-11-06T00:50Z (date -u); successor 40 = session_01V5yGRYeBQHWjsh4bJCU8a3 (Opus); 39 was session_01V5yGRYm5eKzWv7G3F5cuYS)
 - CORRECTION: commit 0e3f5245 carries a wrong Claude-Session trailer (39's id); the author is session_01V5yGRYeBQHWjsh4bJCU8a3. Not amended.
 1. Branch claude/l-si. Local clone at a5f4fcf2 = origin (git ls-remote) = expected; shallow, deepened (fetch --deepen=3000).

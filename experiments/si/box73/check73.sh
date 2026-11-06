@@ -22,10 +22,12 @@ def front(cap):
 assert front(5) == 0, "FRONT-2' fails"
 assert front(6) > 0, "negative control did not fire"
 PY
-python3 -I replaypq.py out/pq_8_1_m3_s1.json > /dev/null
+for g in out/pq_8_1_m3_s1.json out/pq_4_6_m3_s1.json out/pq_7_2_m3_s2.json; do python3 -I replaypq.py "$g" > /dev/null; done
 python3 -I - <<'PY'
 import sys, json; sys.path.insert(0, '../box64'); from flipdp import analyse
 r = analyse(json.load(open('out/pq_8_1_m3_s1.json')), K=1); assert r['T'] == [8, 9] and not r['bad'], r
+r = analyse(json.load(open('out/pq_7_2_m3_s2.json')), K=1); assert r['T'] == [7, 9] and not r['bad'], r
+r = analyse(json.load(open('out/pq_4_6_m3_s1.json')), K=1); assert r['T'][1] == 10 and not r['bad'], r
 PY
 echo "box 73 FRONT-2' + pq_8_1 pin: PASS"
 python3 -I -c "import pysat" 2>/dev/null || { echo "box 73: python-sat missing, frame controls skipped"; exit 0; }
