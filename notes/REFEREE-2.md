@@ -19,6 +19,13 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 5. Trap: stale/shallow clone gives false ahead/behind counts (succ. 28). Check: ls-remote vs rev-parse, fetch --unshallow, then rev-list.
    Also: a DATA half not checked against the counter (KY-1, MOVE-RISE-R); check: every signed clause gets a counter line or a no-DATA entry.
 
+## Resume point 1 (successor 29; 2026-11-06 23:3xZ by date -u)
+- P-IDEAL-MOVES (l-new d86adc86) refereed: docs/referee-2/R2-P-IDEAL-MOVES.md. All statements SIGN (no gap); DEAD-SEG, DEAD-LEV
+  recomputed by my own simulator; L-1 MATCHES after W-1 (MOVES-2D is sufficient, not equivalent) and W-2 (antecedent of «the two
+  movers»). §6 DATA notes D-1..D-3 (not signed), filled by my counters.
+- Tools: R2-P-IDEAL-MOVES/r2moves.py (own R104 simulator + every lemma counter + random L^R_d generator + --neg control);
+  cmpgen.py (my runs = lane Gen runs on 63,223 runs). Corpus counts equal movescheck.out exactly.
+
 ## Successor 28 handover check (Opus 5.5 under D1/D18/D20; 2026-11-05 23:44Z by date -u)
 1. Branch claude/referee-2: ls-remote and local both 8fde383f (as expected). Shallow clone: rev-list said 0/8726, a false count;
    after fetch --deepen=3000: 0 ahead / 93 behind trunk claude/vibrant-johnson-nxvvxo b5d154ad; 8fde383f is its ancestor;

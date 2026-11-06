@@ -1,0 +1,7 @@
+CORPUS RX1 9670 RX2 9670 RX3 1325 MEQ 0 F0 0 AGA 135567 AGB 15285 AGBm 0 AGC 0 WDA 0 WDB 0 WB2 0 SWA 8933 SWB1 8371 SWB2 6763 SWC 4 SWD 4 SWE1 0 SWE2 0 SWE3 0
+INFO files 208 runs 63223 steps 178029 segments 260676 windows 1882816 maxD 4 flipsNoMove 30345 runsha1 c6056035de97
+DEAD box186/out/pass_d3_D3.json sha1 8bca9764 LR True d 3 start 110100 z 5 level 2 Xi-target True T 4 moves 1 at [1] contiguous True LM 0 2(l+1) 6
+DEAD box186/out/pass_d4_D4.json sha1 3bf6a4a4 LR True d 4 start 01010111 z 7 level 3 Xi-target True T 5 moves 2 at [1, 5] contiguous False LM 0 2(l+1) 8
+DEAD box186/out/pass_d5_D5.json sha1 16be2e59 LR True d 5 start 0101010110 z 9 level 4 Xi-target True T 3 moves 1 at [2] contiguous True LM 0 2(l+1) 10
+DEAD box187/inst/m4_z4_r7.json sha1 7c158e2f LR True d 4 start 10111010 z 4 level 2 Xi-target True T 9 moves 1 at [1] contiguous True LM 0 2(l+1) 6
+exit 0
