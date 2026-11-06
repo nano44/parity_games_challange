@@ -293,7 +293,9 @@ def build(T, E, fixall=False, lem=True):
         from pysat.card import CardEnc, EncType
         z = int(os.environ["MOVEZ"]); rmin = int(os.environ.get("MOVEMIN", "1"))
         tl = [b[((x, k), z)] for x in range(N) if x != z for k in (0, 1) if ((x, k), z) in b]
-        if True not in tl: C.add([x for x in tl if x is not False])
+        if True not in tl and not os.environ.get("MOVEANY") and not os.environ.get("MOVENT"): C.add([x for x in tl if x is not False])   # R214: MOVEANY=1 drops «z is a Xi-target»
+        if os.environ.get("MOVENT") and True not in tl: [C.add([neg(x)]) for x in tl if x is not False]   # R214: MOVENT=1 forces z NOT a Xi-target
+        if os.environ.get("MOVENT") and True in tl: C.add([])
         lits = [mv[(t, z)] for t in range(1, L + 1)]
         lits = [x for x in lits if x is not False]; nt = sum(1 for x in lits if x is True); lits = [x for x in lits if x is not True]
         if rmin - nt > len(lits): C.add([])

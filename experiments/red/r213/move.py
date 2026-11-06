@@ -13,4 +13,4 @@ print(f"MOVE d {d} t {t} z {z} r {r}: {'SAT' if ok else 'UNSAT'} solve {time.tim
 if ok:
     G = xcnf.decode(model, I); json.dump(G, open(out, "w")); S, _ = ideal.traj(G)
     m = sum(1 for u in range(1, len(S)) if S[u][z] != S[u - 1][z]); tg = any(o[1] == z for v in range(G["N"]) for o in G["opts"][v])
-    print(f"  replay T {len(S) - 1} moves of z {m} target {tg} ({'OK' if m >= r and tg else 'MISMATCH'}) -> {out}", flush=True)
+    print(f"  replay T {len(S) - 1} moves of z {m} target {tg} ({'OK' if m >= r and (tg or os.environ.get('MOVEANY') or os.environ.get('MOVENT')) and not (tg and os.environ.get('MOVENT')) else 'MISMATCH'}) -> {out}", flush=True)

@@ -1,0 +1,11 @@
+# m seed iters anneal seedfile  (R214 round 1: max moves over all movers)
+4 11 2000000 0 ../r212/seedsL/dd_d5_F14.txt
+4 12 2000000 150 ../r212/out/L0_m4_K0_s0_r702_rise_d5_R13.txt
+5 21 1000000 0 ../r212/out/L0_m5_K0_s0_r704_ext_d6_dd_top1.txt
+5 22 1000000 150 ../r212/out/L0_m5_K0_s0_r703_rise_d6_R14.txt
+4 13 2000000 150 ../r213/keep/rise_d5_R13.txt
+5 23 1000000 150 ../r212/seedsL/ext_d6_dd_top2.txt
+6 31 400000 0 ../r212/keep/TRL_d7_26.txt
+6 32 400000 150 ../r212/seedsL/ext_d7_T22_top2.txt
+7 41 150000 0 ../r212/keep/T0_m7_26.txt
+7 42 150000 150 ../r212/out/m7_K2_s0_r81_lift_TR_d7_T20.txt
