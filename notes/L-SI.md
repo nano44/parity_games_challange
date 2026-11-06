@@ -25,7 +25,7 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - box72/run72.sh (DIMACS-only runner), box72/realsum.py; box73/{enum2.py (exact m 2 frame tables), dyn2/mine2/stats2/rearm2/fullfull2.py,
   run73.sh, realpq.py, replaypq.py}; box74/{run74.sh, realflip.py (env K), replayflip.py, fscan.py, cube74.py, cube74b.py};
   box75/{imcheck.py, frame_P-IDEAL-IM.py (FROZEN encoder, sha1 c3b3a232), check75.sh}.
-- experiments/si/UNSAT-LIST.txt + unsat_regen.sh: every frame UNSAT (24 entries incl. box 72 (7,12)) with DIMACS sha1 and exact command;
+- experiments/si/UNSAT-LIST.txt + unsat_regen.sh: every frame UNSAT (23 entries incl. box 72 (7,12)) with DIMACS sha1 and exact command;
   L-COMP certifies from it (T_1 >= 11 done: lsi_q1_cert.txt).
 ### Traps (things only I know)
 - Never commit while push.sh runs; never commit a live log (cubes_*.out tripped the stop hook every few minutes; now gitignored).
