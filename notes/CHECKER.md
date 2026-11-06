@@ -1,6 +1,12 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 19), 2026-11-06 17:59Z (date -u)
+- C125 CLOSED (Add. 1 bd7cb5e4 PASS; Add. 2 1b0cec5a; R113 landed b5ca0d4d; CI 6472 green on b5ca0d4d).
+- C126 CLOSED (main 2e1a91c8/f271c741 FAIL E-1; Add. 1 2f58a8bf PASS; Add. 2 1b0cec5a; Note E-3 landed b5ca0d4d; CI 6472 green).
+- CI rule kept: close on a run CONTAINING the landing (C113), not on runs of the draft commits (Lead asked; ruled in Add. 2).
+- NEXT: C127 = R114 (P-IDEAL-RISE), when the Lead sends the draft SHA.
+
 ## Resume point (successor 19), 2026-11-06 16:05Z (date -u)
 - C126 (Note E-3): main 2e1a91c8 / f271c741 FAIL E-1 (E3-2 misplaced, not verbatim; R1 + R2 in §4); Add. 1 2f58a8bf PASS (block
   a6311c7a = R1 + R2 + sign-off line; ruling: confirmations 1784dd28 / 0bdc659c cover the final block). NEXT: Add. 2 (landed) + CI.
