@@ -11595,6 +11595,317 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   TARGET claim; its tail reads «a REDUCTION of the W-channel part of SLOT-TRADE to an external-flip model inside the IDEAL model» and
   «G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim» (L-3, by script). Not a step-4 pass. GAPS G-N5-TIME: open.
 
+### R111 [refereed-only] In the IDEAL model of RESULTS R104 (premise: R104's definition of the model only, no theorem of R104 used; RESULTS R105's ENC, MONO, XI-NEW and RISE, and at degree ≤ 2 its KEYFLIP, read with moves(x) the number of steps t with x ∈ Mv_t as in RESULTS Erratum E-2 (E2c); and RESULTS R110's definition of 𝓛^R_d only), on acyclic Ξ-graphs, any number of movers per level, with Mv_t the movers of step t, T the number of steps of a run, KP_s(x) the option of x with the least key under s, KF_x the number of steps t with KP_(s_t)(x) ≠ KP_(s_(t−1))(x), W(x) the movers reachable from x along W-targets of any options (x excluded), WE_x the number of steps moving a mover of W(x), for two distinct movers p, q of one level a flip of (p, q) at step t a change between s_(t−1) and s_t of the order of the keys of their current options, flips(p, q) the number of steps at which (p, q) flips, v_s(x, k) the integer value of option (x, k) under s (R105 ENC) and cv_s(x) := v_s(x, s(x)): (LOCAL-KP) at any degree, if two states agree on W(x) then they give every option of x the same key, so KP(x) is the same and KF_x ≤ WE_x; (PAIR-KF) for a mover x of degree 2 and level ≥ 1 with W-targets a, b of its two options, KF_x = 0 if a = b, and KF_x = flips(a, b) if a ≠ b, x key-preferring its option 0 under s iff the current option of a has the smaller key; (PAIR-MOVES) if every mover has degree ≤ 2, moves(x) ≤ 1 + flips(a, b) for such x with a ≠ b and moves(x) ≤ 1 for every other mover, so T ≤ N + the sum of those flip counts; (CASCADE) at any degree, at every step at which two distinct movers p, q of one level l flip, p or q moves, or l ≥ 1, neither moves, their current W-targets w_p ≠ w_q and (w_p, w_q) flips at the same step, and flips(p, q) ≤ T; (LADDER) on 𝓛^R_d with F(l) := flips(2l, 2l + 1), F(0) ≤ 2, F(l) ≤ moves(2l) + moves(2l + 1) + F(l − 1) and moves(x) ≤ 1 + F(lev(x) − 1) for lev(x) ≥ 1, so F(l) ≤ 2 + 3F(l − 1) ≤ 3^(l+1) − 1; (RENEW) at any degree, with τ the largest level, a step top-only when all its movers have level τ and a top-only interval a maximal interval [a, b] of top-only steps, if a ≥ 2 then step a − 1 moves a mover of level below τ and every mover h of step a, moving to w, has w ∉ A_(s_(a−2))(h) (A_s(h): h's current option under s and its options strictly better under s), v_(s_(a−1))(h, w) > v_(s_(a−2))(h, w) and some strict Ξ-descendant of h on the chain of (h, w) under s_(a−2) moving at step a − 1, and the keys of every mover of level τ are constant on s_(a−1), …, s_b; (MERGE) at any degree, for two distinct options k, k′ of x and a state s, v_s(x, k) − v_s(x, k′) depends only on the options under s of the movers of the two chains before their first common mover; (RETURN) for a mover x of degree 2 that moves to o at step t_1 and next moves at step t_2, the Ξ-target z of its other option is a mover with cv_(s_(t_2−1))(z) > cv_(s_(t_1−1))(z), so moves(x) ≤ 1 + R(x, 0) + R(x, 1) with R(x, k) the number of steps at which cv of the Ξ-target of (x, k) rises (0 if that target is the exit X); (TOWER, by flips ≤ T) a run in which the doubling step of box 169, «F(l) = 2(1 + F(l − 1))» iterated level after level, reaches F(l) = 2^(l+1) − 2 has T ≥ 2^(l+1) − 2 (a READING, not a refutation: the doubling tower is not a shortcut around G-N5-TIME); and DEAD: the lane conjecture PM («moves(x) ≤ (deg(x) − 1)(1 + desc(x))» for every mover x, desc(x) the number of strict Ξ-descendants of x) is false, by experiments/new/box166/out/KILL_PM_compose_dd_d5_F14.json (degree 2, N 15, T 14, mover 12 with desc 4 moving 6 times; sha1 c025a4b6…); the lane conjecture PMV («VR(z) ≤ 1 + desc(z)» for every mover z, VR(z) the number of steps at which cv(z) rises) is false, by L-RED's 𝓛^R_5 genome dd_d5_F14 (experiments/new/box172/inst/dd_d5_F14.json, sha1 06f0e501…; T 14, mover 6 with desc 7 and 10 rises) (2026-11-05) — a STRUCTURE / REDUCTION statement inside the IDEAL model on the key side; bounds nothing polynomially (LADDER's bound is exponential); the conjectures PAIR-LIN, PM′_S and RENEW-COUNT are not claimed; Ξ-cyclic genomes are not covered, and degree ≥ 3 is not covered by PAIR-KF, PAIR-MOVES, LADDER or RETURN; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim (DATA, experiments/new/box172/keycheck.py on 413 in-tree genome files from their stored starts and 400 random acyclic genomes from up to 64 starts each, 13,813 runs: LOCAL-KP 0 violations on 27,102 (state pair, mover) checks and, for KF_x ≤ WE_x, on 90,811 (run, mover) pairs; PAIR-KF 0 on 34,113 (run, degree-2 mover of level ≥ 1) pairs; CASCADE 0 unclassified of 15,614 flips; LADDER's first inequality 0 on 231 runs of 𝓛^R genomes; RENEW 0 on 520 (step, mover) pairs at the first steps of top-only intervals starting at t ≥ 2 and, for the constant key preference KP of the top movers on s_(a−1), …, s_b, on all 2,704 top-only intervals (516 of them with a ≥ 2); MERGE 0 on 19,932 (state, degree-2 mover) checks; RETURN 0 on 722 consecutive move pairs and RETURN-COUNT 0 on 50,260 (run, degree-2 mover) pairs; flips ≤ T 0 on the same runs; PAIR-MOVES and the rest of LADDER: no separate DATA; the two DEAD instances replayed by the same tool and by the box 150 checker; TOWER, on dd_d5_F14: F(0..4) = 2, 3, 6, 14, 7 and T 14, the doubling step attained at level 3 (F(3) = 14 = 2(1 + F(2)) = T) and not at level 4 (2(1 + F(3)) = 30 > 14)) (P-IDEAL-KEYS, docs/new/P-IDEAL-KEYS.md with its fixes entry 1, docs/new/P-IDEAL-KEYS-fixes.md; L-NEW successors 54-55), CHECKER PASS (docs/checker/C124.md, checker 18aa6728)
+- Object (L-NEW successor 55, Opus 5.5, D14 / D18 / D20, from successor 54's boxes 165-171; frozen, unchanged during review): packet
+  P-IDEAL-KEYS, docs/new/P-IDEAL-KEYS.md, sha1 62b35bf7ed7616bb66ff512edc30fe30431db0e5, 282 lines (l-new freeze b302bbf5,
+  2026-11-05T23:00:53Z; identical at 1a178aff and 432edf82). Both referees measured the sha1 (REFEREE l. 6 «docs/new/P-IDEAL-KEYS.md
+  sha1 62b35bf7ed7616bb66ff512edc30fe30431db0e5, 282 lines;»; REFEREE-2 l. 7 «docs/new/P-IDEAL-KEYS.md sha1
+  62b35bf7ed7616bb66ff512edc30fe30431db0e5, 282 lines;»). Status (l. 8-9): «Not a TARGET.md claim. Every statement is about the
+  IDEAL-ACYC model only. No polynomial bound is claimed.» To sign (table l. 11-20): §2 LOCAL-KP, §3 PAIR-KF and PAIR-MOVES, §4 CASCADE,
+  F ≤ T and LADDER, §5 RENEW, §6 MERGE, RETURN and RETURN-COUNT, §7 the DEAD items; §8 «DATA / READING (not to sign)». Sections:
+  premises (l. 22-44), §0 the model and notation (l. 46-81), §2 (l. 83-94), §3 (l. 96-113), §4 (l. 115-143), §5 (l. 145-166), §6 (l.
+  168-202), §7 (l. 204-246), §8 (l. 248-282). Sources (l. 4-6): docs/new/N5-PERMOVER-box165.md to N5-FROZEN-box171.md (successor 54);
+  «This packet governs: every proof is written out in full HERE and is checked against this text only; no other file carries a proof of
+  a statement below.» (l. 6-7).
+  Fixes: docs/new/P-IDEAL-KEYS-fixes.md, append-only, entry 1 (1a178aff; 100 lines, sha1 26088848b6a80621fb46a4887be0b2b8ad2a8ebc) and
+  entry 2 (432edf82; 118 lines, sha1 504403c3816279bee51da5358e0e77250ffb8f69, l. 1-100 unchanged): F-a restates the packet's §7 (c) as
+  TOWER, a consequence of Corollary F ≤ T, no longer DEAD; F-b to F-e correct packet text; F-f renames MERGE's letters in the line; line
+  L-2; entry 2 makes line L-3 (one DATA replacement, CHECKER C124 E-1). Entry 1: «This entry carries one statement with a proof (TOWER,
+  F-a below); the packet and this entry are the only files that carry proofs of the packet's statements.» (l. 7-8).
+  The RESULTS line is L-3, c29f0a9365e700e0888018be42caf8757df1ac74 (docs/new/P-IDEAL-KEYS-line-L3.txt, l-new 432edf82,
+  2026-11-06T03:41:53Z, the file's only commit; 5,636 bytes). The title is L-3 verbatim, with nothing inserted (its date parenthesis
+  «(2026-11-05)» and its source note are the line's own; the source note names the packet and its fixes entry 1, the two files that
+  carry proofs; fixes entry 2 carries none). L-3's parentheses balance (122 «(» / 122 «)»). Line history: L-1 (f36c6402, b302bbf5,
+  frozen with the packet); L-2 (fb1b2276, 1a178aff, fixes entry 1: L-1 with exactly ten replacements R1-R10, fixes l. 59-69: the binder
+  of A_s(h) in RENEW, MERGE's letters k, k′, the tower moved out of DEAD into TOWER with its values as DATA, the PM and PMV quotes made
+  verbatim, the PAIR-KF and RETURN-COUNT DATA units narrowed to the degree-2 movers the tool counts, and the fixes file named in the
+  source note; L-1 with R1-R10 equals L-2 byte for byte, by my script); L-3 (c29f0a93, 432edf82, fixes entry 2: L-2 with exactly one
+  replacement R11, CHECKER C124 E-1, DATA wording only: the RENEW count of L-2's «for the constant keys, on 2,704 intervals» now names
+  what keycheck.py's RENEWB counts, the key preference KP of the top movers on s_(a−1), …, s_b, on all 2,704 top-only intervals, 516 of
+  them with a ≥ 2; no statement, definition or premise changes; L-2 with R11 equals L-3 byte for byte, by my script). L-2 MATCHES at
+  both referees, each after its own byte test: REFEREE (cb7e2909) §C l. 211 «Result: EQUAL to L-2 (sha1 fb1b2276…, 5,542 bytes).», l.
+  224 «L-2 MATCHES.»; REFEREE-2 (87b80d17) Addendum 1 l. 181 «**Line L-2: MATCHES.**». L-3 MATCHES at both referees, each after its own
+  byte test against C124 §5: REFEREE (fadbb9a0) §C add. 1 l. 236 «L-3 is byte-EQUAL to it (cmp).», l. 243 «Verdict: L-3 MATCHES. All
+  signatures stand.»; REFEREE-2 (7ff32432) Addendum 2 l. 199 «**Line L-3: MATCHES.**», l. 200 «replacing it gives a string
+  byte-identical to L-3 (5,636 B)». Both diffed every definition of L-1 against the packet (REFEREE l. 140-142; REFEREE-2 l. 134-135),
+  and REFEREE l. 222 «Definitions: unchanged from L-1 except MERGE's k, k′, all as diffed in §5.»; L-3 changes no definition.
+- Claims signed (REFEREE successor 24 «(Opus 5.5, D15)», report ece8c4ee, §C cb7e2909; REFEREE-2 successor 28 «(Opus 5.5, D12/D20)»,
+  report ebcf52d0, Addendum 1 87b80d17). Items (a)-(h), (j) are SIGN in both first-round verdict tables (REFEREE "## 0. Verdicts" l.
+  11-25 of R-P-IDEAL-KEYS.md; REFEREE-2 "## Verdicts" l. 12-25 of R2-P-IDEAL-KEYS.md); (k) is SIGN at REFEREE-2 and SIGN WITH GAP KY-1
+  at REFEREE, the gap closed by fixes F-b (REFEREE §C l. 196 «F-b: KY-1 CLOSED.»); (i) is the statement of fixes F-a, signed by both in
+  their second rounds (REFEREE §C l. 187 «F-a: SIGN TOWER as restated.»; REFEREE-2 Add. 1 l. 169 «F-a TOWER: **SIGN** (Opus 5.5,
+  D12).»). REFEREE §C l. 225 «Every item is now SIGNED: §2-§6, DEAD PM, DEAD PMV (KY-1 closed), and TOWER (as restated in F-a).»;
+  REFEREE-2 l. 25 «No statement is REFUSED. No gap is listed: every proof is complete from the landed premises and the definition.».
+  Every item is about R104's IDEAL model on acyclic Ξ-graphs; (a), (d), (f), (g) and (i) at any degree; (b) and (h) for movers of degree
+  2; (c) when every mover has degree ≤ 2; (e) on 𝓛^R_d. No item bounds a count polynomially; LADDER's bound 3^(l+1) − 1 is exponential.
+  Notation (packet §0 l. 46-81): Mv_t := {x : s_t(x) ≠ s_(t−1)(x)} and T the number of steps; moves(x) := #{t ∈ [1, T] : x ∈ Mv_t} (the
+  binder of Erratum E-2 (E2c)); KP_s(x) the option of x with the least key_s(x, ·) (unique by (F1)), KF_x := #{t ∈ [1, T] : KP_(s_t)(x)
+  ≠ KP_(s_(t−1))(x)}; W(x) the movers reachable from x along W-targets of any options, x excluded, and WE_x := #{t : Mv_t ∩ W(x) ≠ ∅};
+  D(x) the strict Ξ-descendants of x, desc(x) := its size; for p ≠ q of one level, ord_s(p, q) := [key_s(p, s(p)) < key_s(q, s(q))], a
+  flip of (p, q) at t a change of ord between s_(t−1) and s_t, flips(p, q) the number of such t; v_s(x, k) := Σ over the β's of Ξ_s(x,
+  k) of ±2^rank (+ for even parity), cv_s(x) := v_s(x, s(x)), cv_s(X) := 0, so v_s(x, k) = ε(x, k) + cv_s(xt(x, k)) by ENC; on 𝓛^R_d,
+  F(l) := flips(2l, 2l + 1); τ := the top level, a step TOP-ONLY if every mover of Mv_t has level τ, LOWER otherwise, a TOP-ONLY
+  INTERVAL a maximal interval [a, b] ⊆ [1, T] of consecutive top-only steps; A_s(x) := {s(x)} ∪ {k : Ξ_s(x, k) ▷ Ξ_s(x, s(x))}. (F1) the
+  keys of two distinct options of one level differ; (F2) if x ∈ Mv_t, then s_t(x) ∈ A_(s_(t−1))(x) minus {s_(t−1)(x)}, and at degree 2
+  s_(t−1)(x) is x's other option (l. 61-64).
+  (a) Lemma LOCAL-KP (§2 l. 83-94) [IDEAL-ACYC, any degree]: «(a) If s(y) = s′(y) for every y ∈ W(x), then key_s(x, k) = key_(s′)(x, k)
+      for every option k of x; hence KP_s(x) = KP_(s′)(x).»; «(b) For every run, KF_x ≤ WE_x.». Proof: (a) by induction on lev(x), since
+      wt(x, k) ∈ W(x) and W(wt(x, k)) ⊆ W(x); (b) a step with Mv_t ∩ W(x) = ∅ keeps s on W(x), so KP(x) does not change by (a). Cells:
+      REFEREE l. 14 «SIGN»; REFEREE-2 l. 15 «**SIGN** (Opus 5.5, D12)».
+  (b) Lemma PAIR-KF (§3 l. 96-105) [x of degree 2 and level ≥ 1, options 0, 1, a := wt(x, 0), b := wt(x, 1)]: «(a) If a = b, KP_s(x) is
+      the option of x with the smaller gate, for every state s; so KF_x = 0 in every run.»; «(b) If a ≠ b, then for every state s:
+      KP_s(x) = 0 iff ord_s(a, b) is true; so KF_x = flips(a, b) in every run.». Proof: key_s(x, k) is the key of x's W-target's current
+      option followed by g(x, k); equal prefixes leave the gates to decide; distinct prefixes (two options of one level, (F1)) decide.
+      Cells: REFEREE l. 15 «SIGN»; REFEREE-2 l. 16 «**SIGN** (Opus 5.5, D12)».
+  (c) Corollary PAIR-MOVES (§3 l. 106-111; premise R105 KEYFLIP read with E-2 (E2c)): «If every mover of G has degree ≤ 2, then in every
+      run, for every mover x: moves(x) ≤ 1 + flips(wt(x, 0), wt(x, 1)) if deg(x) = 2, lev(x) ≥ 1 and wt(x, 0) ≠ wt(x, 1); moves(x) ≤ 1
+      otherwise.»; hence T ≤ N plus the sum of those flip counts. Proof: KEYFLIP gives moves(x) ≤ 1 + KF_x; PAIR-KF (b) for the first
+      kind; KF_x = 0 at degree 2 with equal W-targets or at level 0, and moves(x) = 0 at degree 1; T ≤ the sum of moves(x) since Mv_t is
+      nonempty. Cells: REFEREE l. 16 «SIGN (KEYFLIP read with the E-2 (E2c) binder, correctly)»; REFEREE-2 l. 16 (the PAIR-KF row)
+      «**SIGN** (Opus 5.5, D12)».
+  (d) Lemma CASCADE and Corollary F ≤ T (§4 l. 115-131) [IDEAL-ACYC, any degree; p ≠ q of one level l; t a step at which (p, q) flips]:
+      «(a) If l = 0, then p ∈ Mv_t or q ∈ Mv_t.»; (b) if l ≥ 1, exactly one of (own) p ∈ Mv_t or q ∈ Mv_t, and (below) «p, q ∉ Mv_t, the
+      current W-targets w_p := wt(p, s_t(p)) and w_q := wt(q, s_t(q)) are distinct movers (of level l − 1), and (w_p, w_q) flips at step
+      t.» (l. 120-121). Proof: if neither moves, their options and W-targets are the same in s_(t−1) and s_t; at level 0 the keys are
+      constant; with w_p = w_q the constant gates decide; with w_p ≠ w_q, ord_s(p, q) = ord_s(w_p, w_q) for both states. Corollary F ≤
+      T: «flips(p, q) ≤ T for every pair and every run» (l. 129). Cells: REFEREE l. 17 «SIGN»; REFEREE-2 l. 17 «**SIGN** (Opus 5.5,
+      D12)».
+  (e) Corollary LADDER (§4 l. 132-140; premises R110's definition of 𝓛^R_d, R105 KEYFLIP) [G ∈ 𝓛^R_d, d ≥ 1, any run]: «F(0) ≤ moves(0)
+      + moves(1) ≤ 2, and F(l) ≤ moves(2l) + moves(2l + 1) + F(l − 1) for 1 ≤ l ≤ d − 1;»; «moves(x) ≤ 1 + F(lev(x) − 1) for lev(x) ≥ 1,
+      so F(l) ≤ 2 + 3 F(l − 1) and F(l) ≤ 3^(l+1) − 1; and F(l) ≤ T for every l.». Proof: CASCADE splits the flip steps of (2l, 2l + 1)
+      into own steps (at most moves(2l) + moves(2l + 1)) and below steps, which are distinct flip steps of (2l − 2, 2l − 1); PAIR-MOVES
+      with the distinct W-targets 2(l − 1) + k; F(l) + 1 ≤ 3 (F(l − 1) + 1). The second inequality is tight at level 3 of dd_d5_F14
+      (moves(6) = moves(7) = 7 = 1 + F(2)), the first is not (F(3) = 14 < 20) (fixes F-e, N-1). Cells: REFEREE l. 17 (the CASCADE row);
+      REFEREE-2 l. 17 (the same row; N-1).
+  (f) Lemma RENEW (§5 l. 145-159; premises R105 XI-NEW, RISE in the signed form of body item (e), LOCAL-KP) [IDEAL-ACYC, any degree; τ
+      the top level; [a, b] a top-only interval]: (a) if a ≥ 2, then step a − 1 is a LOWER step, and for every h ∈ Mv_a, with w :=
+      s_a(h): «(i) w ∉ A_(s_(a−2))(h);», «(ii) v_(s_(a−1))(h, w) > v_(s_(a−2))(h, w): step a − 1 strictly raised the value of the option
+      that h takes at a;», «(iii) some mover z ≠ h on the chain of (h, w) under s_(a−2) lies in Mv_(a−1), and every such z lies in
+      D(h).»; the same for every top-only step t ≥ 2 (l. 151); «(b) For every top mover h and every option k of h, key_(s_u)(h, k) is
+      the same for all u ∈ [a − 1, b]; so KP_(s_u)(h) is constant on [a − 1, b].». Proof: maximality makes step a − 1 lower; every mover
+      of a top-only step has level τ, so it is a least-level mover of its step, and XI-NEW and RISE (body item (e) (a)-(c)) give
+      (i)-(iii); for (b), the steps a, …, b move only level-τ movers and W(h) lies below τ, so LOCAL-KP (a) applies. Part (iii) does not
+      place z below the top (l. 162-163). Cells: REFEREE l. 18 «SIGN»; REFEREE-2 l. 18 «**SIGN** (Opus 5.5, D12)».
+  (g) Lemma MERGE (§6 l. 169-185; premise R105 ENC) [IDEAL-ACYC, any degree; x with two distinct options (the line's k, k′); s a state;
+      Pre the movers of the two chains under s before their first common mover m (m := X if none)]: (a) v_s(x, k) − v_s(x, k′) is the
+      difference of the ε-sums of the two prefixes, including the options themselves (l. 173); «(b) If a state s′ agrees with s on Pre_a
+      ∪ Pre_b, then v_(s′)(x, a) − v_(s′)(x, b) = v_s(x, a) − v_s(x, b); in particular the Ξ-order of (x, a) and (x, b) is the same
+      under s′ as under s.» (l. 174-175, the packet's letters). Proof: ENC unrolled along a chain; the terms cv(m) cancel; under s′ both
+      chains reach m through the same movers. Cells: REFEREE l. 19 «SIGN»; REFEREE-2 l. 19 «**SIGN** (Opus 5.5, D12)».
+  (h) Lemma RETURN and Corollary RETURN-COUNT (§6 l. 186-200; premises ENC, MONO) [x of degree 2, options o, o′; x moves at t_1 to o and
+      next at t_2]: «Then z := xt(x, o′) is a mover (not X), and cv_(s_(t_2 − 1))(z) > cv_(s_(t_1 − 1))(z).» (l. 187-188); RETURN-COUNT:
+      «moves(x) ≤ 1 + R(x, 0) + R(x, 1)», with R(x, k) the number of steps at which cv of xt(x, k) rises (0 if xt(x, k) = X) (l.
+      195-196). Proof: (F2) at t_1 and t_2; v(x, o) = ε(x, o) + cv(xt(x, o)) never decreases (MONO through ENC); so v(x, o′) rose
+      strictly, impossible if z = X; RETURN-COUNT by telescoping into the disjoint windows [t_(i−1), t_i − 1]. Cells: REFEREE l. 20
+      «SIGN»; REFEREE-2 l. 20 «**SIGN** (Opus 5.5, D12)».
+  (i) TOWER (fixes F-a, l. 17-21; it replaces packet §7 (c), which is no longer a DEAD item): «Let a run have a pair that flips F(l) =
+      2^(l+1) − 2 times (the value that the doubling step of box 169, «F(l) = 2(1 + F(l − 1))» (docs/new/N5-PAIRLIN-box169.md l. 26,
+      verbatim), gives when iterated from F(0) = 2). Then that run has T ≥ 2^(l+1) − 2.»; «Proof. Corollary F ≤ T (signed by both):
+      flips(p, q) ≤ T for every pair of every run. ∎». Hypotheses: «IDEAL-ACYC, any degree, any width; for 𝓛^R_d with F(l) of §0, or for
+      any pair a tower designates at level l» (l. 17-18). Why it is not DEAD (fixes l. 14-16): box 169's prediction reads «Predicted:
+      F(l) = 2^(l+1) − 2, N = O(l²), and T ≥ F(l)» (N5-PAIRLIN-box169.md l. 38), so «It already includes T ≥ F(l), so Corollary F ≤ T
+      refutes nothing in it»; «No statement of record is refuted, so nothing is DEAD.». «Does NOT claim: that the tower is DEAD; that no
+      IDEAL-ACYC family has exponential T; that a gadget can never add steps.» (l. 28). Cells: REFEREE l. 23 «REFUSE as DEAD (KY-G1).»,
+      signing the implication; §C l. 187 «F-a: SIGN TOWER as restated.», l. 192 «KY-G1 is CLOSED.»; REFEREE-2 l. 23 (the DEAD, «in the
+      scope stated in R-1»), Add. 1 l. 169 «F-a TOWER: **SIGN** (Opus 5.5, D12).», l. 173 «This supersedes my §7 (c) DEAD SIGN, which I
+      withdraw in favour of TOWER.».
+  (j) DEAD: the lane CONJECTURE PM (box 165, title; packet §7 (a) l. 205-224 with fixes F-c): «moves(x) ≤ (deg(x) − 1)(1 + desc(x))»,
+      stated there for every IDEAL-ACYC genome, every start and every mover x. Instance
+      experiments/new/box166/out/KILL_PM_compose_dd_d5_F14.json (sha1 c025a4b61cd6342775aba6cbe2f89a9362dfa172, l-new d3eeb8b3),
+      IDEAL-ACYC, every mover of degree 2, N = 15, levels 0-4 (levels 1 and 4 with more than two movers, so neither in 𝓛^R_d nor in
+      R109's 𝓛_d). Option fields (W-target, Ξ-target, gate, β rank, β parity; X the exit) (l. 209-215): «mover 0 (lev 0): (−, 4, 4, 7,
+      even), (−, 3, 17, 12, odd); 1 (lev 0): (−, 9, 3, 6, odd), (−, X, 9, 10, even); 2 (lev 1): (0, 8, 18, 1, odd), (1, 1, 15, 4, odd);
+      3 (lev 1): (0, X, 11, 19, even), (1, X, 16, 9, odd); 4 (lev 2): (2, 6, 6, 16, odd), (3, 9, 2, 15, odd); 5 (lev 2): (2, 8, 19, 13,
+      odd), (3, 3, 8, 8, odd); 6 (lev 3): (4, 7, 0, 14, even), (5, 5, 5, 11, odd); 7 (lev 3): (4, 5, 7, 3, even), (5, 2, 10, 2, odd); 8
+      (lev 4): (6, 9, 12, 17, even), (7, 3, 14, 18, odd); 9 (lev 4): (6, 3, 13, 5, odd), (7, X, 1, 0, even); 10 (lev 1): (0, X, 21, 26,
+      odd), (0, X, 20, 28, even); 11 (lev 1): (1, X, 22, 22, odd), (0, 10, 23, 29, even); 12 (lev 4): (6, 14, 24, 25, even), (7, 13, 25,
+      21, even); 13 (lev 4): (6, 11, 26, 24, even), (7, 10, 27, 23, odd); 14 (lev 1): (0, 10, 28, 20, even), (1, 11, 29, 27, even).
+      Start 110111111000000 (movers 0..14).». Run (l. 216-218): «110111111000000, 111111101110101, 111111000110001, 111110010110011,
+      111110110110011, 111100100110111, 010000000111110, 010001011111110, 010001111011000, 000011101011101, 001011000011001,
+      001010010011001, 001010110011001, 001000100011001, 001000000011001.»; T = 14; «Mover 12: D(12) = {10, 11, 13, 14} (desc 4), moves
+      at steps 1, 2, 5, 8, 9, 10: moves(12) = 6 > (2 − 1)(1 + 4) = 5.» (l. 207-208). Cells: REFEREE l. 21 «SIGN»; REFEREE-2 l. 21
+      «**SIGN** (Opus 5.5, D12) (F-1: quote not verbatim)», the quote made verbatim by F-c.
+  (k) DEAD: the lane CONJECTURE PMV (box 166 §1, hypothesis (H-values); packet §7 (b) l. 225-234 with fixes F-b, F-c): «VR(z) ≤ 1 +
+      desc(z)» (box 166 §1, verbatim), for every mover z, with VR(z) := #{t ∈ [1, T] : cv_(s_t)(z) > cv_(s_(t−1))(z)}. Instance
+      experiments/new/box172/inst/dd_d5_F14.json (sha1 06f0e5015d09c0f1e03f1b9293ab3cd8483e435b; a byte copy of L-RED's claude/l-red
+      experiments/red/r197/lag/dd_d5_F14.json), a genome of 𝓛^R_5 whose option fields are those of movers 0-9 in (j) (l. 230); start
+      1101111110; run (l. 231-232): «1101111110, 1111111011, 1111110001, 1111100101, 1111101101, 1111001001, 0100000001, 0100010111,
+      0100011110, 0000111010, 0010110000, 0010100100, 0010101100, 0010001000, 0010000000.»; T = 14; «Mover 6: D(6) = {1, 2, 3, 5, 7, 8,
+      9} (desc 7); cv(6) rises at steps 2, 3, 4, 6, 7, 8, 10, 11, 12, 14: VR(6) = 10 > 1 + 7 = 8.» (l. 228-229). moves(6) = 7 = desc(6)
+      ≤ 8 (fixes F-b, KY-1). Cells: REFEREE l. 22 «SIGN WITH GAP KY-1», §C l. 196 «F-b: KY-1 CLOSED.»; REFEREE-2 l. 22 «**SIGN** (Opus
+      5.5, D12) (F-1: quote not verbatim)», Add. 1 l. 174-175.
+  The RESULTS line (L-3) states (a)-(k) with their exact hypotheses, and nothing wider.
+- Premise: RESULTS R104's definition of the IDEAL model and of the Ξ-graph (no R104 theorem), restated in packet §0; RESULTS R105's ENC,
+  MONO, XI-NEW and RISE (RISE in the signed form of R105's body item (e)) and, at degree ≤ 2, KEYFLIP, each quoted verbatim by the
+  packet (l. 24-37) from R105's title or body, where each quote occurs once, byte for byte (whitespace normalised); KEYFLIP's moves(x)
+  read with RESULTS Erratum E-2 (E2c), «Read KEYFLIP's moves(x) as the number of steps that move x.», which is the packet's binder (§0
+  l. 66); and RESULTS R110's definition of 𝓛^R_d (quoted verbatim, packet l. 77-78). L-3: «premise: R104's definition of the model only,
+  no theorem of R104 used; RESULTS R105's ENC, MONO, XI-NEW and RISE, and at degree ≤ 2 its KEYFLIP, read with moves(x) the number of
+  steps t with x ∈ Mv_t as in RESULTS Erratum E-2 (E2c); and RESULTS R110's definition of 𝓛^R_d only». Use: ENC in v_s, MERGE and
+  RETURN; MONO in RETURN; XI-NEW and RISE in RENEW (a); KEYFLIP in PAIR-MOVES and LADDER, where every mover has degree ≤ 2; 𝓛^R_d in
+  LADDER. E-2's (E2a) and (E2b) concern R105 items not used. Not used: R105's LOCAL, CHAIN-BACK, U-EQ, DECREMENT, EXACT-ENERGY,
+  TOP-MONO, RANK-BOUND, INTERVAL-RESTRICT, INTERVAL-CHARGE, RECURSION; R106-R109; docs/lit (packet l. 42-43; REFEREE l. 41; REFEREE-2 l.
+  44-45). «No machine premise is used by any signed item.» (packet l. 43). Both referees byte-tested every premise quote against landed
+  RESULTS (REFEREE l. 28-34, «Each is FOUND exactly once»; REFEREE-2 l. 33-36, «all FOUND»). The DEAD instances are data files,
+  recomputed by both referees with their own simulators written from R104's text (REFEREE §3 l. 107-118, t3r_sim.py; REFEREE-2 l. 88-97,
+  r2sim.py, «Ξ-values compared as β-SETS»).
+- L41 and L43. The proofs are L-NEW successors 54-55's (packet l. 7), including TOWER's, which the lane wrote in fixes F-a after
+  REFEREE's refusal of the tower as DEAD (KY-G1; REFEREE l. 100-103, where it signs the implication) and REFEREE-2's scope note R-1 (l.
+  98-103); its proof step is the signed Corollary F ≤ T. Nothing referee-written is a proof step of the entry (my reading; neither
+  referee mentions L41). The DEAD items (j) and (k) refute explicit bounds by one instance each (6 > 5, 10 > 8), as L43 requires; the
+  doubling-tower step is not a DEAD item, since box 169's prediction includes T ≥ F(l) (REFEREE l. 94 «The prediction INCLUDES T ≥ F(l).
+  Corollary F ≤ T is consistent with it and refutes nothing in it.»).
+- Fixes (docs/new/P-IDEAL-KEYS-fixes.md, L-NEW successor 55, append-only; entry 1 at 1a178aff, 100 lines, sha1
+  26088848b6a80621fb46a4887be0b2b8ad2a8ebc; entry 2 at 432edf82, 118 lines, sha1 504403c3816279bee51da5358e0e77250ffb8f69, l. 1-100
+  unchanged); entry 1 after REFEREE ece8c4ee and REFEREE-2 ebcf52d0, entry 2 after CHECKER C124 (9c9b03b7):
+  - F-a (l. 10-28): «### F-a (KY-G1 REFUSE, KY-L1, R-1): §7 (c) is no longer DEAD; it becomes a consequence of Corollary F ≤ T plus a
+    READING»; the statement TOWER with its proof (Claims (i)); a READING and DATA, both «(not to sign)». REFEREE §C l. 187-195 (TOWER
+    SIGN; «KY-G1 is CLOSED.»; both box 169 quotes verified); REFEREE-2 Add. 1 l. 169-173 («Dropping DEAD is right: as my R-1 said, box
+    169 predicted T ≥ F(l), so F ≤ T refutes no statement of record.»).
+  - F-b (l. 30-32): «(it is 7 = desc(6) ≤ 1 + desc(6) = 8)» replaces packet §7 (b)'s false «(it is 7 = 1 + desc(6))» (REFEREE KY-1).
+    REFEREE §C l. 196; REFEREE-2 Add. 1 l. 174-175 («F-b (KY-1): my miss.»).
+  - F-c (l. 34-39): the PM and PMV guillemet texts made verbatim (box 165's title; box 166 l. 41), the quantifiers marked as a
+    restatement (REFEREE-2 F-1, REFEREE KY-P1, KY-L3). REFEREE §C l. 197-198; REFEREE-2 Add. 1 l. 176-177.
+  - F-d (l. 41-43): T1_dd_top8's mover 10 is the gadget's level-4 top with 8 moves; the genome's top level is τ = 5 (REFEREE-2 F-2,
+    REFEREE KY-P2). REFEREE §C l. 199; REFEREE-2 Add. 1 l. 177.
+  - F-e (l. 45-47): LADDER's «Does NOT claim» corrected: the second inequality is tight at level 3 of dd_d5_F14, the first is not
+    (REFEREE-2 N-1). REFEREE §C l. 200-202; REFEREE-2 Add. 1 l. 177.
+  - F-f (l. 49-51): in the line only, MERGE's options are k, k′ (REFEREE KY-L2). REFEREE §C l. 203; REFEREE-2 Add. 1 l. 178.
+  - The W-2 / KY-L4 counts (l. 53-55): «pairkf_movers 34113» and «retcnt_movers 50260» in keycheck.out are the numbers of L-2. REFEREE
+    §C l. 204-205; REFEREE-2 Add. 1 l. 179-180 («So the narrowed ranges are the tool's real ranges.»).
+  - Line L-2 (l. 57-100): L-1 with exactly the ten replacements R1-R10; «Verdict items closed by L-2: KY-L1 (R3, R6, R9), W-1 (R1), W-2
+    = KY-L4 (R7, R8), W-3 = KY-L3 (R4, R5), source note (R10), KY-L2 (R2).» (l. 100).
+  - Entry 2 (l. 102-118), after CHECKER C124 E-1: «No statement, proof or other DATA changes; the packet and entry 1 stay as they are.»
+    (l. 105); L-3 = L-2 «with exactly one replacement, copied by script from C124 §5» (l. 107), R11 (l. 109-110): «and, for the constant
+    keys, on 2,704 intervals;» → «and, for the constant key preference KP of the top movers on s_(a−1), …, s_b, on all 2,704 top-only
+    intervals (516 of them with a ≥ 2);»; the figures «intervals 2704» and «toponly_first 516» of the unchanged keycheck.out (l.
+    111-112); the word diff L-2 → L-3 (l. 113-118). REFEREE §C add. 1 (fadbb9a0) l. 237-238: «I read keycheck.py at 432edf82: RENEWB is
+    «KP[u][h] != KP[a − 1][h]», over every top-only interval.», «The wording is true.»; REFEREE-2 Add. 2 (7ff32432) l. 195 «**Fixes
+    entry 2: CORRECT.**», l. 198 «The new phrase says exactly that: KP, top movers, s_(a−1), …, s_b, all 2,704 intervals, 516 with a ≥
+    2.».
+  No fix weakens a signed statement; F-a turns a DEAD item into a signed implication; F-b to F-f change packet text or the line's
+  wording only; entry 2 (R11) changes one DATA phrase of the line only.
+- Not signed: packet §8 (DATA, machine checks, pins, EXCLUDED, TARGET diff, READING; «DATA / READING (not to sign)», l. 20), in
+  particular the counts of l. 256-267 and the READING «So T is polynomial at degree ≤ 2 iff the pair flip counts are (PAIR-MOVES with F
+  ≤ T), and every bound on them must come through the moves of the pair's own movers, i.e. through the Ξ side (RETURN, RENEW).» (l.
+  280-282); RENEW's reading (l. 160-163); TOWER's READING and DATA (fixes l. 22-27). OPEN, not claimed: CONJECTURE PAIR-LIN (l. 112);
+  CONJECTURE RENEW-COUNT (l. 164); PM′_S, PAIR-POLY, SLOT-TRADE (l. 274); any bound on flips(a, b), WE_x, KF_x or R(x, k); PAIR-MOVES
+  and RETURN at degree ≥ 3; LADDER outside 𝓛^R_d; whether any IDEAL-ACYC family has exponential T; G-N5-TIME.
+- Referee strengthening (NOT part of this entry; referee remarks and own checks):
+  (i) REFEREE-2 l. 74: RENEW (b) «(Holds also for a = 1, with s_0.)»; packet l. 152 states (b) for every top-only interval.
+  (ii) REFEREE-2 l. 86: in RETURN-COUNT, «equal Ξ-targets of the two options are counted twice in R(x, 0) + R(x, 1), which only weakens
+       the bound.».
+  (iii) REFEREE l. 111: mover 12 is «the only PM violator» of KILL_PM_compose; REFEREE l. 118 and REFEREE-2 l. 96-97: in T1_dd_top8,
+        mover 10 (level 4) moves 8 times.
+  (iv) The referees' own lemma checks (DATA, not proofs): REFEREE keys_check.py on 434 in-tree files and 2 × 1,500 random genomes
+       (19,350 runs; keys_logs, 0 violations, controls fire); REFEREE-2 r2lemmas.py on 4,000 random genomes (88,082 runs) and 119 corpus
+       files, «LADDER both inequalities and F(l) ≤ 3^(l+1) − 1 (28,864 ladder runs)», RENEW (b) on the full key form (12,501 intervals),
+       0 violations.
+- Honest limits: (i) A STRUCTURE / REDUCTION statement on the key side of the IDEAL model: LOCAL-KP, PAIR-KF and CASCADE make a degree-2
+  mover's key preference a function of its W-closure and of one pair order, PAIR-MOVES and LADDER bound moves and pair flips by pair
+  flips, RENEW, MERGE and RETURN describe the Ξ side; it bounds nothing polynomially (LADDER's bound 3^(l+1) − 1 is exponential; no
+  bound on flips(a, b) is claimed); G-N5-TIME stays open; not M3, not a step-4 pass, not a TARGET.md claim. (ii) PAIR-KF, PAIR-MOVES,
+  LADDER and RETURN are stated at degree 2 (PAIR-MOVES: every mover of degree ≤ 2); degree ≥ 3 is not covered by them; Ξ-cyclic genomes
+  are not covered. (iii) TOWER is an implication: an exponential flip count of the doubling tower needs an exponential T in the same
+  run; it does not say that no IDEAL-ACYC family has exponential T, and the tower is not DEAD. (iv) DEAD PM and PMV kill two per-mover
+  lane conjectures by one instance each; the PM instance is outside 𝓛^R_d and R109's 𝓛_d (levels 1 and 4 have more than two movers);
+  PMV's instance is in 𝓛^R_5; nothing is claimed about PM restricted to 𝓛^R_d or 𝓛_d, about PM′_S, or about a growth rate of VR. (v) The
+  DATA is per statement, as the line's DATA parenthesis says, with these exact sets: keycheck.py runs 413 in-tree genome files of boxes
+  150-172 (well-formed, with a start, N ≤ 30; 384 distinct contents) from their stored starts and 400 random IDEAL-ACYC genomes (levels
+  1-4, 1-3 movers per level, degree 2 or 3 with some degree-1 movers) from every start if there are at most 64, else the genome start
+  and 63 random ones: 13,813 runs, 14,027 steps; LOCAL-KP (a) and MERGE (b) on random states of each genome (MERGE on degree-2 movers
+  only, options 0 and 1); the constant-keys clause of RENEW is counted by keycheck.py in its KP form on all 2,704 top-only intervals,
+  516 of them with a ≥ 2; LADDER's first inequality on 231 runs of 𝓛^R genomes (58 of them one-level); PAIR-MOVES, the rest of LADDER
+  and TOWER have no lane count (TOWER's values on dd_d5_F14 are DATA). (vi) Every statement is about R104's IDEAL model on acyclic
+  Ξ-graphs; nothing is said about a real N5 run or a parity game beyond what R104 already says (packet l. 276-278). (vii) Premises:
+  RESULTS R104's definition, R105's ENC, MONO, XI-NEW, RISE and (degree ≤ 2) KEYFLIP read with Erratum E-2 (E2c), and R110's definition
+  of 𝓛^R_d; R106-R109 are not used. No lit note, no lane file, no outside source, no machine premise. No Lean. (viii) TOWER is proved in
+  docs/new/P-IDEAL-KEYS-fixes.md (F-a), which the line's source note names («docs/new/P-IDEAL-KEYS.md with its fixes entry 1,
+  docs/new/P-IDEAL-KEYS-fixes.md»). (ix) Names: «R111» here is this RESULTS entry, not L-RED's box R111 (cited in R86); «LADDER» is the
+  corollary on 𝓛^R_d, not R106's LADDER-LP; «MERGE» and «RETURN» are this packet's Ξ-side lemmas, not the MERGE items of R37 and R67 nor
+  the RETURN and SW-RETURN items of R12 and R73-R98; «W(x)» is the W-closure of x; «τ» is the top level, not N5's strategy τ; «flips(p,
+  q)» counts key-order flips, not DE35's Gflips; KF_x, KP_s(x) and Mv_t are R105's; dd_d5_F14 is the genome of R109's LIFT champion of
+  that name (sha1 06f0e501…). (x) The instances are the lane's (box 166) and L-RED's (dd_d5_F14), used here only as counterexamples and
+  as TOWER's DATA; T is R104's number of steps.
+- Data (DATA, not proof): experiments/new/box172/keycheck.py (l-new b302bbf5, sha1 6ce4693dda9f5baac0f524312009955d89a0a41a, 242 lines;
+  deterministic, seed 172; simulator: experiments/new/box150/check.py's Gen, l-new 0ebddcf5, sha1
+  019de0f7b36dcbd47743b3d27b4a1a93549d574b, 214 lines), output frozen in experiments/new/box172/keycheck.out (sha1
+  5100eb30482a1c5ceb60b7ed84b38d7700213770, 8 lines) and wired into experiments/new/check.sh block «P-IDEAL-KEYS» (l. 911-918 at
+  1a178aff, with sha1 pins of the packet, L-1, keycheck.py, keycheck.out, the three instances, the fixes and L-2; unchanged at 06d4238d;
+  at 432edf82, still l. 911-918, l. 913-915 changed: the pins also hold L-3 c29f0a93 and the fixes file at entry 2, 504403c3). L-3's
+  DATA parenthesis: «(DATA, experiments/new/box172/keycheck.py on 413 in-tree genome files from their stored starts and 400 random
+  acyclic genomes from up to 64 starts each, 13,813 runs: LOCAL-KP 0 violations on 27,102 (state pair, mover) checks and, for KF_x ≤
+  WE_x, on 90,811 (run, mover) pairs; PAIR-KF 0 on 34,113 (run, degree-2 mover of level ≥ 1) pairs; CASCADE 0 unclassified of 15,614
+  flips; LADDER's first inequality 0 on 231 runs of 𝓛^R genomes; RENEW 0 on 520 (step, mover) pairs at the first steps of top-only
+  intervals starting at t ≥ 2 and, for the constant key preference KP of the top movers on s_(a−1), …, s_b, on all 2,704 top-only
+  intervals (516 of them with a ≥ 2); MERGE 0 on 19,932 (state, degree-2 mover) checks; RETURN 0 on 722 consecutive move pairs and
+  RETURN-COUNT 0 on 50,260 (run, degree-2 mover) pairs; flips ≤ T 0 on the same runs; PAIR-MOVES and the rest of LADDER: no separate
+  DATA; the two DEAD instances replayed by the same tool and by the box 150 checker; TOWER, on dd_d5_F14: F(0..4) = 2, 3, 6, 14, 7 and T
+  14, the doubling step attained at level 3 (F(3) = 14 = 2(1 + F(2)) = T) and not at level 4 (2(1 + F(3)) = 30 > 14))». What each count
+  covers (keycheck.py, read by me): LOCALKP compares every key of x under a random state s and a state s′ that agrees with s on W(x) (6
+  random states per genome, every mover); KFWE every (run, mover); PAIRKF every (run, mover of degree 2 and level ≥ 1), KF_x against
+  flips of its W-target pair (0 if equal); CASCADE every flip of a same-level pair, classified own or below; LADDER F(l) ≤ moves(2l) +
+  moves(2l + 1) + F(l − 1) for l = 0, …, d − 1 with F(−1) := 0; RENEW the 520 (step, mover) pairs at the 516 first steps a ≥ 2 (573
+  pairs at every top-only step t ≥ 2); RENEWB KP of every top mover on [a − 1, b], every top-only interval (2,704: 516 with a ≥ 2, 2,188
+  with a = 1); MERGE random states, degree-2 movers, the difference v(x, 0) − v(x, 1) under a state that agrees on the two prefixes;
+  RETURN and RETCNT degree-2 movers; KEYFLIP (R105, sanity, not in the line) 51,431 (run, mover) pairs of degree-≤-2 genomes. Controls:
+  «LOCALCTL 48435» and «MERGECTL 23272» (changing one mover of W(x), resp. of a prefix, changes a key, resp. the difference).
+  The block's outputs, reproduced by both referees at b302bbf5 and re-run for this draft (2026-11-06T01:56:01Z-01:56:04Z from a `git
+  archive` of 1a178aff's experiments/new and docs/new, rc 0, PASS line ending «fixes 26088848, line L-2 fb1b2276: PASS»; keycheck.py's
+  output byte-equal to keycheck.out; again at the second fill, 2026-11-06T05:43:30Z-05:43:33Z from a `git archive` of 432edf82's
+  experiments and docs/new, rc 0, PASS line ending «fixes 504403c3, line L-2 fb1b2276, line L-3 c29f0a93: PASS», keycheck.py's output
+  again byte-equal to keycheck.out): «SCOPE corpus 413 random 400 runs 13813 steps 14027»; «LOCALKP 0 LOCALCTL 48435 KFWE 0 PAIRKF 0
+  CASCADE 0 LADDER 0 FLET 0 RENEW 0 RENEWB 0 MERGE 0 MERGECTL 23272 RETURN 0 RETCNT 0 KEYFLIP 0»; «DEAD PM KILL_PM_compose_dd_d5_F14
+  valid True deg 2 N 15 T 14 mover 12 desc 4 moves 6 bound 5»; «DEAD PMV dd_d5_F14 valid True LR True N 10 T 14 mover 6 desc 7 VR 10
+  bound 8»; «DEAD TOWER dd_d5_F14 T 14 pair flips by level [2, 3, 6, 14, 7] moves [1, 1, 3, 1, 3, 3, 7, 7, 3, 2] doubling F(3) = 2(1 +
+  F(2)) True next 2(1 + F(3)) = 30 > T True»; on each of the three instances «TOTAL genomes 1 runs 1 steps 14 XSIM 0 TOPO 0 MONO 0 XINEW
+  0 RISE 0 CHAIN 0 KEYFLIP 0 DECR 0 TOPMONO 0 RBOUND 0 RESTR 0 ICHARGE 0 REC 0 VIOL 0 (info REC148 0)». REFEREE §3 l. 130-132
+  («keycheck.py regenerates keycheck.out identically»); REFEREE-2 l. 123-126 and Add. 1 l. 189 («exit 0»).
+  REFEREE (successor 24; own docs/referee/scratch/keys_probe.py and keys_check.py on its simulator t3r_sim.py, «my simulator t3r_sim.py
+  from R104's text; no lane code», logs keys_logs/): the three instances recomputed, every value of §7 equal (l. 108-118); its lemma
+  checks on 434 in-tree files (10,350 runs) and two sets of 1,500 random genomes (4,500 runs each), 0 violations, with controls (l.
+  119-129); «The random sets are weak (short runs); the corpus carries the coverage.» (l. 129).
+  REFEREE-2 (successor 28; own docs/referee-2/R2-P-IDEAL-KEYS/r2sim.py and r2lemmas.py, «written from R104's text: Ξ-values compared as
+  β-SETS by the largest-rank β of the symmetric difference, not through ENC integers; no lane code imported»; outputs r2sim_dead.out,
+  r2lemmas_seed28_4000.out, r2lemmas_corpus.out): the instances recomputed (l. 88-97); 4,000 random genomes, 88,082 runs, and 119 corpus
+  files, 0 violations of every check, controls fire (l. 112-122).
+  No signed statement uses any count.
+- Signatures: REFEREE docs/referee/R-P-IDEAL-KEYS.md: successor 24's report ece8c4eeee5fb7b9529382d7ae745eebd7b8edbf
+  (2026-11-05T23:49:08Z, new file, 176 lines, sha1 55cf771dda81da770736e4098e6d6038d9479f0f, with scratch/keys_probe.py, keys_check.py
+  and keys_logs/): §2-§6 and DEAD PM SIGN, DEAD PMV SIGN WITH GAP KY-1, the tower REFUSED as DEAD (KY-G1) with its implication signed,
+  L-1 NOT YET (KY-L1) (l. 11-25); §C cb7e29098f7605a622577aeeb8a1548dbe8bcc34 (2026-11-06T01:26:42Z, 226 lines, sha1
+  80d291030b66e05e68141f8b630ec8a7940b1dac, with scratch/keys_l2_bytetest.py): F-a SIGN, KY-1 and KY-G1 CLOSED, the byte test of L-2 (l.
+  208-211), «L-2 MATCHES.» (l. 224), «Every item is now SIGNED: §2-§6, DEAD PM, DEAD PMV (KY-1 closed), and TOWER (as restated in F-a).»
+  (l. 225); §C add. 1 fadbb9a06ea3d829366d01023cead7040d389e88 (2026-11-06T04:09:18Z, 243 lines, sha1
+  d8ad9026df4de28230e1db7c8d33c839612ed08b; l. 1-226 = cb7e2909's, by cmp): the byte test of L-3 against C124 §5 (l. 233-236), «Verdict:
+  L-3 MATCHES. All signatures stand.» (l. 243). REFEREE-2 docs/referee-2/R2-P-IDEAL-KEYS.md: successor 28's report
+  ebcf52d06ecae0ae8caea4ae624233636fc103df (2026-11-05T23:51:25Z, new file, 161 lines, sha1 5156ea45aba4d865ef976de3f1c2da53b844cffd,
+  with R2-P-IDEAL-KEYS/r2sim.py and r2lemmas.py): every statement SIGN, the tower DEAD in the scope of R-1, L-1 MATCHES after W-1 to W-3
+  (l. 12-25); Addendum 1 87b80d170ecca6c6a6c2d4e61e1daf78845ef7fc (2026-11-06T01:26:59Z, 189 lines, sha1
+  493871a6b2502eee6f3c6e17506dcaeb5866865c; l. 1-161 = ebcf52d0's, by cmp): fixes entry 1 CORRECT, F-a TOWER SIGN and the DEAD sign
+  withdrawn (l. 168-173), «**Line L-2: MATCHES.**» after its byte test (l. 181-184); Addendum 2 7ff32432964d8adbf30d75932f37552de810434d
+  (2026-11-06T04:13:09Z, 201 lines, sha1 989ac4de08274fd3f6204bbac85113b2853322d5; l. 1-189 = 87b80d17's, by cmp): fixes entry 2 CORRECT
+  (l. 195), «**Line L-3: MATCHES.**» after its byte test (l. 199-201). Lane: freeze and L-1 b302bbf5728feb0b62a1295ba979102617686566,
+  fixes entry 1 and L-2 1a178affc45733577e2f2db0aa1b74f19aa7e244, fixes entry 2 and L-3 432edf823ddcf4d70d38a44eb8d07a7e09ef4829.
+  INDEPENDENCE: REFEREE l. 2-3 «Independent: I did not open or list docs/referee-2/ on this packet before this report was pushed.»;
+  REFEREE-2 l. 2-3 «Independent: docs/referee/ not read for this packet before this push.». REFEREE's report (23:49:08Z) precedes
+  REFEREE-2's (23:51:25Z) by 2 min; neither cites the other's first report; each recomputed the three instances with its own simulator
+  written from R104's text. In the second round each read the other's item labels only through the fixes entry (REFEREE §C l. 183-184;
+  REFEREE-2 Add. 1 l. 167). Differences, resolved: on the tower, REFEREE refused the DEAD and REFEREE-2 signed it only in its R-1 scope;
+  both now sign TOWER, and REFEREE-2 withdrew its DEAD sign; REFEREE alone found KY-1 (REFEREE-2 Add. 1 l. 174 «my miss»), REFEREE-2
+  alone W-1 and N-1; both found the DATA units (KY-L4 = W-2) and the non-verbatim quotes (KY-P1, KY-L3 = F-1, W-3). Both SIGN the same
+  statements and both MATCH L-2 and L-3 (each byte-tested L-3 against C124 §5 with its own script). No disagreement in substance.
+- TARGET.md diff: TARGET.md §1-§3 define parity games («A parity game is G = (V, V_E, V_O, E, pr) with V finite»), the regions W_E, W_O,
+  M4 (§2 «There is a deterministic algorithm A and a polynomial p such that for every parity game G, A on input G halts within») and the
+  word-RAM cost model; no statement of this entry mentions a parity game, a winning region, an algorithm's running time or a cost model
+  (packet §8 l. 276-278 «Diff against TARGET.md: no statement mentions a parity game, a winning region, an algorithm's running time or a
+  complexity class.» «None is an M4 or M3 claim, none bounds anything polynomially (LADDER's bound is exponential), none is a gauntlet
+  step. G-N5-TIME stays OPEN.»; REFEREE §4 l. 135-136 «Not M3, not M4, not a gauntlet step. LADDER's bound is exponential. G-N5-TIME
+  OPEN. Agreed with §8.»; REFEREE-2 l. 129-131 «No M3 / M4 / M4-R claim, no gauntlet step; the only bound (LADDER) is exponential.
+  G-N5-TIME stays OPEN.»). The line (L-3) makes no M4 claim and no TARGET claim; its tail reads «a STRUCTURE / REDUCTION statement
+  inside the IDEAL model on the key side; bounds nothing polynomially (LADDER's bound is exponential)» and «G-N5-TIME stays OPEN; not
+  M3, not a step-4 pass, not a TARGET.md claim» (L-3, by script). Not a step-4 pass. GAPS G-N5-TIME: open.
+
 **Erratum E-1** (not a result; 2026-11-01 05:28Z by date -u; Lead; corpus counts in RESULTS R97-R100):
 - What is wrong: the DATA-of-record sentences that say «1,132 games» for the L-SI box 50b / box 53 corpus (sbcg.lst 719 lines + alt_all.lst
   413 lines) count RUNS, not games. Measured by CHECKER (C111 N-7, claude/checker d53e1d4f) at trunk 68d50c8f: experiments/si/anc58/
