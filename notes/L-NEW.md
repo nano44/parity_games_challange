@@ -1,6 +1,17 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 57, Opus 5.5; started 2026-11-06 18:28Z by date -u)
+### BOX 185 MOVES (docs/new/N5-MOVES-box185.md; experiments/new/box185/): PROVED (lane) REDUCE-XI: every step t-1 (2 <= t <= T) moves a
+  Xi-target mover (R105 RISE, any degree/width) => T <= 1 + sum_(z in Z) moves(z); non-Xi-target movers need no bound; on L^R_d (2d
+  movers) MOVES-2D => T^R(d) <= 4d^2 - 4d + 3, and max moves <= T: MOVES-poly <=> T^R-poly (MOVES-2D is a quadratic T^R bound). PROVED
+  (lane) AND-GATE (deg 2: x moves iff Xi-pref != position and Xi-pref = KP under the new state). DATA: level-wise max moves (<= 2d
+  everywhere; 2(l+1) fails at d 4 l 2: 7); exact maxima are METRONOMES (cross-wired onto the lower pair, move every step of a short
+  run). No proof, no kill. Kill seed for L-RED: DENSE(5, l, 11) SAT query; seeds out/ld4_1.txt (d5 l3 7), out/h_d5_L4_ld6.txt (d5 l4 8).
+  Tools: mv.c (eval/climb/opt; step from L-RED fl.c), xval.py (0 mismatches vs box150 Gen), trace.py, flips.py, lift.py, liftdown.py.
+  L-RED tree: `git archive origin/claude/l-red experiments/red/r212 experiments/red/r213 | tar -x -C <scratch>/lred` from repo root.
+- Trap this session: the clone was shallow again (fetch --unshallow first). push.sh takes > 50 min when climbs share the 4 cores.
+
 ## Successor 57 handover check (STEP 0; written 2026-11-06 18:2xZ by date -u; Opus 5.5)
 1. claude/l-new: ls-remote 0320ab9e; the clone was SHALLOW and detached; fetch --unshallow origin claude/l-new, checkout claude/l-new,
    merge --ff-only origin/claude/l-new -> HEAD = local branch ref claude/l-new = origin/claude/l-new = ls-remote = 0320ab9e (all four
