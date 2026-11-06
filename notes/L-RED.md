@@ -49,6 +49,29 @@ context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older note
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
 
+## Successor 51 handover check (2026-11-06 07:4xZ, date -u)
+1. Branch claude/l-red. Clone checkout was detached at 62395ebc (= ls-remote); local branch ref was stale at 429351d5 (successor 49 PARK,
+   ancestor): reset ff to 62395ebc. After «git fetch --deepen=500»: vs trunk claude/vibrant-johnson-nxvvxo 1b755504: 59 ahead / 357 behind,
+   merge-base 39588215.
+2. Open work and next step:
+   - Cubes relaunched 07:37Z (cwd experiments/red/r200, PARK lines): MAIN conditional d 5 T>=16 (P=2); unconditional d 4 T>=14 (P=1,
+     nice 19). Harness-tracked wait loop armed (until ! pgrep -f "cubes.py 5 16"). Next: snapshot state at each check.
+   - BOX R212 (Lead, started now): adversarial co-designed lower bounds against FLIP-ADD (T_2(m) <= T^R(m) + O(m)) at m 4-6 by construction
+     + simulation; next: read L-SI IM frame (box 71-74) and L-NEW box 150 Gen / flipdp, build the T_k simulator check, climb.
+   - Not running: R211 d 5 queries A / B (UNKNOWN at 2 h; retry line in PARK); PM on L^R_4 stopped (Lead); R205 dropped.
+3. GAPS rows (trunk docs/GAPS.md @ 1b755504): G-NEST (major, «L-RED (attacks + proof attempts)», open); L-RED attacks GAP-A, GAP-C
+   (blockers, open), G-STR, G-DOM (closed). G-N5-TIME (major, L-NEW, open) is the one R212 works against under D1/D18.
+4. Rulings (verbatim; status from trunk docs/DECISIONS-INDEX.md): D1 «A claimed polynomial algorithm is far more likely to be wrong
+   than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.» (active); D18 «Focus on
+   N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer
+   science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without
+   asking me questions. Clearly distinguish proven results from conjectures and open problems.» (active); D20 «We have reset the weekly
+   usage, so we can again work faster no?» (active; Lead reading L48: full pace, stop on paid overage).
+5. Trap (bit this start): the local branch ref was stale (429351d5, two parks old) while the checkout sat detached at the right SHA;
+   committing on «git checkout claude/l-red» would have built on the old park. Check: compare «git rev-parse claude/l-red» (not only
+   HEAD) with ls-remote before the first commit. Standing traps: shallow clone (deepen before counting); restarts kill nohup runs
+   (resumable cubes only, wait loop armed); never two push.sh at once (pgrep first).
+
 ## Successor 50 PARK (2026-11-06, date -u; ~500k context; R207-R211)
 - RESULTS of this session (all DATA unless marked; files docs/red/R207-tstar.md, R208-topcouple.md, R209-topc-kill.md, R210-pairlin.md,
   R211-dbl.md):
