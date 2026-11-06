@@ -133,3 +133,32 @@ Every clause group was diffed against §5's frame definition (as for cnf.py in R
 - FINDINGS: all SIGN; COMPOSE-LB SIGN WITH GAP IM-G1 (b_0 = c by the choice of level-0 gates, unstated). The encoder is FAITHFUL.
   The proof regenerates byte-identically; my independent RUP re-checks are in flight (addendum).
 - NEEDS: L-SI, via the Lead: a fixes-entry sentence for IM-G1.
+
+## §C (2026-11-06T22:18Z by date -u, successor 24): fixes entry 1 and line L-2
+- Object: claude/l-si 4ee9fa78 (an ancestor of origin).
+  - docs/si/P-IDEAL-IM-fixes.md: sha1 15edc7d1…
+  - P-IDEAL-IM-line-L2.txt: sha1 8b7ccfb9a050955758452dc04fe5aafc58468680, 4,615 bytes.
+  - The packet is unchanged. check75.sh gains the COMPOSE assertion.
+- I know REFEREE-2's items (W-1, W-2) only through the entry.
+- F-1 (IM-G1): CORRECT. IM-G1 is CLOSED.
+  - The sentence gives the level-0 options the four smallest ranks and gates, so the upper rank and gate orders are unchanged. They are
+    ordered so that b_0(q) = c.
+  - By ISO no upper chain passes level 0, and R110's c-step does not read level-0 gates (level-1 keys are (κ^c_w, gate)).
+  - Movers 0 and 1 are happy forever, so b_0 = c throughout, and W-ONLY applies with this c. Complete and correct.
+- F-2 (W-2): RE-MEASURED at 4ee9fa78. «compose.py 200 68» gives «KPART 0 GPART 0»; with NEG=1 it gives «KPART 21234 GPART 54433». EQUAL.
+  check75.sh: «… COMPOSE seed 68: PASS», «certified CNF regenerated: PASS».
+- F-3 (W-1, IM-L2): CORRECT against imcheck.py.
+  - IM, LOCAL and independence of s(z) are counted once per state.
+  - BIT-CHAIN (i), KEY-DIR, VALUE-MONO and XSTEP are counted per state and both c.
+  - FRAME_STEP is counted once per state for both c2.
+- L-2. The entry lists three replacements by subject, not as «old» → «new» strings, so I tested by a word diff of L-1 → L-2 (difflib on
+  spaces). Every changed region lies in the three named places:
+  - the DATA scope words («once per state: … (c) with the direction reversed …; per state and both c: BIT-CHAIN (i) …»);
+  - the COMPOSE command, seed and figures;
+  - the source note, which names the fixes file.
+  - Nothing else changes. Shape: 81 «(» / 81 «)», depth never negative, 0 «|», one line.
+- Verdict: L-2 MATCHES. Fixes entry 1 is CORRECT. All items are SIGNED; IM-G1 is closed.
+- Certificate addendum (part 2 of §2):
+  - The audited drup.c, re-run on my byte-identical regenerated proof (sha1 32be84e4…): «s VERIFIED (6531220 lemmas RUP-checked)», 7,577
+    s, the same counts as L-COMP's.
+  - My independent ref_rup (deletions ignored) was still running when this was written; it is handed to successor 25 (notes/REFEREE.md).
