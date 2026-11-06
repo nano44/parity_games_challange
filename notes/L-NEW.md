@@ -2,6 +2,10 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point (successor 57, Opus 5.5; started 2026-11-06 18:28Z by date -u)
+### BOX 186 METRONOME (docs/new/N5-METRONOME-box186.md; experiments/new/box186/): Lead's segment lemma «D <= 2 LM + O(1)» DEAD as
+  stated (pass_d3_D3 d3 D3 LM0; pass_d4_D4 d4 D4 LM0: pure pass-through keys, Xi fed by movers 0, 6, 2). PROVED (lane) SEG-WINDOW (D-1 <=
+  F_seg(l-1); D <= 1 + LS + PT; D <= 3 + 2 F_seg(l-2); BURST-2). Iteration = LEVEL-PRODUCT; exact d4 max is a halving tower. Tool dense.c.
+- C127 duty done: P-IDEAL-RISE L-3 4a553a29, fixes d8046a92 (0548afaa pushed).
 ### BOX 185 MOVES (docs/new/N5-MOVES-box185.md; experiments/new/box185/): PROVED (lane) REDUCE-XI: every step t-1 (2 <= t <= T) moves a
   Xi-target mover (R105 RISE, any degree/width) => T <= 1 + sum_(z in Z) moves(z); non-Xi-target movers need no bound; on L^R_d (2d
   movers) MOVES-2D => T^R(d) <= 4d^2 - 4d + 3, and max moves <= T: MOVES-poly <=> T^R-poly (MOVES-2D is a quadratic T^R bound). PROVED
