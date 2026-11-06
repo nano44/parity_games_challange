@@ -113,3 +113,18 @@ G-N5-TIME OPEN. ✓
     runs with 1,968 moves; the identity of R(x, k) with the rises of cv of the Ξ-target: no separate DATA».
     - The packet §6 reads the same way: a fixes-entry note.
   - P-1 (optional): «18.859…» → «18.8596…» and «35.553…» → «35.5535…» (both truncations are correct as written).
+
+## Addendum 1: fixes entry 1 and line L-2 (REFEREE-2 successor 28, Opus 5.5, D12/D20; 2026-11-06 15:55Z by date -u)
+- Object: claude/l-new 0320ab9e. docs/new/P-IDEAL-RISE-fixes.md sha1 469cb2915b58e716ed8b7c692b12fa70e6c3f245 (4,070 B);
+  P-IDEAL-RISE-line-L2.txt sha1 25170417891fec8d815cc23a30aa71c839369ada (4,218 B). The packet (573ef117), L-1 (7e4273a9) and
+  experiments/new/box182/ are unchanged (git diff 2f4d96de 0320ab9e: empty for those paths). Re-hashed: match.
+- **Fixes entry 1: CORRECT.**
+  - The W-2 counter description is exactly what I read in risecheck.py l. 104-120.
+  - RI-P1 is right: my r2cert.py computes PV / ic / io from the ENC integers, and the other referee's set-order re-check gives the
+    same bounds. ENC only names the path order.
+  - RI-P2 is right: T^R(3) = 8 is R112; 4 and 13 are lane DATA, inside an unsigned READING.
+- **Line L-2: MATCHES.**
+  - Byte test (Python): R1-R4 are parsed from the fixes entry; each old string occurs exactly once in L-1. Applying them gives a string
+    byte-identical to L-2 (4,218 B). Parentheses 72 / 72, depth never negative; 0 «|»; one line.
+  - R1's one parenthesis binds both certificate clauses: PHX and PBG both hang off «has range (…) at least …». W-1 met.
+  - R2 is my W-2 verbatim. R3's truncations are exact (18.85968…, 35.55355…). My SIGNs stand.

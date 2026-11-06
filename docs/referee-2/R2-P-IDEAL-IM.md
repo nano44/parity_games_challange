@@ -1,4 +1,4 @@
-# R2-P-IDEAL-IM: second-referee report on packet P-IDEAL-IM (L-SI successors 39-40, box 75)
+# R2-P-IDEAL-IM: second-referee report on packet P-IDEAL-IM (L-SI successors 39-40, box 75) — DRAFT IN PROGRESS, not a report of record: the §6 verdict waits for my re-check of the regenerated DRUP proof
 REFEREE-2 successor 28 (Opus 5.5, D12/D20). Written 2026-11-06 __STAMP__ (date -u). Independent: docs/referee/ not read for this packet
 before this push.
 
