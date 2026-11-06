@@ -4,3 +4,9 @@ it 621 maxR 10 z 6 runT 11 maxT 11
 it 4633 maxR 11 z 6 runT 11 maxT 11
 it 4684 maxR 11 z 6 runT 12 maxT 12
 it 7873 maxR 11 z 6 runT 13 maxT 13
+it 15125 maxR 12 z 6 runT 12 maxT 12
+it 15778 maxR 12 z 6 runT 14 maxT 14
+it 82082 maxR 12 z 8 runT 15 maxT 15
+it 83045 maxR 13 z 8 runT 15 maxT 15
+it 83271 maxR 13 z 8 runT 16 maxT 16
+FINAL best 3344
