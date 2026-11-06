@@ -924,4 +924,12 @@ if grep -qxF "ALIGNCHECK SAME" <<<"$w178" && grep -qxF "KPEQ 0 LAND 0 ORD 0 DBL 
 else
   echo "P-IDEAL-ALIGN check: FAILED"; echo "$w178"; echo "$pin178"; exit 1
 fi
+# P-IDEAL-RISE (box 182, L-NEW successor 56): frozen risecheck output + pins
+w182=$(cd .. && python3 -I new/box182/risecheck.py | diff - new/box182/risecheck.out && echo RISECHECK SAME)
+pin182=$(cd ../.. && sha1sum docs/new/P-IDEAL-RISE.md docs/new/P-IDEAL-RISE-line-L1.txt experiments/new/box182/risecheck.py experiments/new/box182/risecheck.out experiments/new/box182/cert/cert_PBG_d2_s179.json experiments/new/box182/cert/cert_PBG_d3_s1793.json experiments/new/box182/cert/cert_PBG_d4_s1794.json experiments/new/box182/cert/cert_PHX_d3_s1793.json)
+if grep -qxF "RISECHECK SAME" <<<"$w182" && grep -qxF "PHIK 0 OPTK 0 RISE_A 0 RISE_B 0 RISE_C 0 MOVERISE 0 CERT 0" box182/risecheck.out && [ "$(grep -c " CERTIFIED$" box182/risecheck.out)" = 4 ] && grep -q "^573ef1171eec0f48aad974d221050681fc09ecc4  docs/new/P-IDEAL-RISE.md$" <<<"$pin182" && grep -q "^7e4273a97993e6e67fb8b7c81d6e215ceaa7bbbe  docs/new/P-IDEAL-RISE-line-L1.txt$" <<<"$pin182" && grep -q "^404df6de34c24ea8e86c305ae059ca3ce43db746  experiments/new/box182/risecheck.py$" <<<"$pin182" && grep -q "^3685b69bcdc03bf261931e94ef3427550026a1b6  experiments/new/box182/risecheck.out$" <<<"$pin182" && grep -q "^bf65a4e6cd20d497b7fed5dc7ab7c03752bf38cf  experiments/new/box182/cert/cert_PBG_d2_s179.json$" <<<"$pin182" && grep -q "^f878699ff959bf08f26d001275de2000a6bb68f1  experiments/new/box182/cert/cert_PBG_d3_s1793.json$" <<<"$pin182" && grep -q "^7f3d88c349511baa4abe78139ac5f9f019edd339  experiments/new/box182/cert/cert_PBG_d4_s1794.json$" <<<"$pin182" && grep -q "^71fb16831f47d8f2de6fc58791b749e672c3dc2a  experiments/new/box182/cert/cert_PHX_d3_s1793.json$" <<<"$pin182"; then
+  echo "P-IDEAL-RISE: risecheck 0 violations, 4 certificates CERTIFIED (output = frozen risecheck.out); pins packet 573ef117, line L-1 7e4273a9, tool 404df6de, output 3685b69b, certificates bf65a4e6 f878699f 7f3d88c3 71fb1683: PASS"
+else
+  echo "P-IDEAL-RISE check: FAILED"; echo "$w182"; echo "$pin182"; exit 1
+fi
 rm -rf "$tmp"

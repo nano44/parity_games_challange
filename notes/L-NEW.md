@@ -19,6 +19,12 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 ### BOX 181 RISEPROOF (docs/new/N5-RISEPROOF-box181.md; box181/): Lead lemma «O(1) lower flips between rises» wrong direction, DEAD c<=6
   (dd_d5_F14 z 9 gap (1,8] level 3: 7 flips). PROVED (lane) MOVE-RISE (a move strictly raises own cv) => RISE-2D implies MOVES-2D (Xi-target
   movers move <= 2d). Charging: rises = own moves + propagated; break = DBL-O(1) again. Kill seed for L-RED: dd_d5_F14 level-4 mover.
+### C125 E-1 (Lead 12:14Z): P-IDEAL-ALIGN L-3 4d28b1f3 + fixes entry 2 (fixes 64e83e68), pins; pushed e0d49b59. Label nuance sent
+  (level-0 moves <= 1 is counted by MOV, not F0).
+### BOX 182 P-IDEAL-RISE FROZEN: docs/new/P-IDEAL-RISE.md (573ef117) + L-1 (7e4273a9); tool box182/risecheck.py (404df6de, numpy-free),
+  out 3685b69b; certs box182/cert/*.json; check.sh block «P-IDEAL-RISE». Items: KEY (re-proved ALIGN (a)(c) + KP-MOVE (a)), PHIK-DESCENT,
+  OPT-K (hand construction, machine d <= 8), RISE-EQUIV, MOVE-RISE; CERTIFIED C-PHX3 (= 22 exact) and C-PBG (8, 18.86, 35.55). Premises:
+  R104 def, R105 ENC/MONO/XI-NEW/RISE, R110 def, R111 CASCADE. Corpus of risecheck = L^R files under box150-181: never add genome JSON there.
 - Trap this session: clone was shallow -> verify FAILED on box49 quotecheck3 (e2da18b0 missing); fix = git fetch --unshallow first.
 
 ## Successor 56 handover check (STEP 0; written 2026-11-06 08:4xZ by date -u; session_01V5yGRZaLkWxqVNtbeLt55J)
