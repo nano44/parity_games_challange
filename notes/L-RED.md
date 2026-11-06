@@ -49,6 +49,30 @@ context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older note
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
 
+## Successor 51 PARK (2026-11-06 ~17:2xZ, date -u; ~530k context)
+- RESULTS of this session (files docs/red/R212-flipadd.md, docs/red/R213-rises.md; all certified witnesses in r212/keep, r213/keep, sha1 pins):
+  - R212: Lemma FROZEN-EMBED PROVED (lane): T_k(m) <= (k+1) T^R(m) -> FLIP-ADD can fail only via superlinear T^R. Certified: T^R(5/6/7) >= 16/22/26;
+    T^R_ISO(5/6/7) >= 15/18/22; T_2(4/5/6/7) >= 17/22/34/37; T_0(4) = 13 EXACT. MAIN d 5 T>=16 answered SAT (TR_d5_T16 is a model of the encoding).
+  - R213: RISE-2D DEAD (rise_d5_R13, rise_d6_R14; L-NEW's own rises.py agrees). Max R at d 3 = 6 = 2d EXACT. MOVES-2D: exact at d 3
+    (1/3/4 by level) and HOLDS at d 4 (r 9 UNSAT at levels 1-3, level 0 <= 1); level 2 max 7, top 7-8. Box 183 real-run T^N_k(2) = 4/6/8 exact;
+    T^N_k(3): k 0 = 8 exact, k 1 >= 10, k 2 >= 12 (next values unknown at 1 h).
+- RUNNING (relaunch after a restart; cwd experiments/red/r200; idempotent):
+  1. MAIN: SEGMAX=13 SYM0=1 SYMB=1 TL=1200 P=2 nohup python3 cubes.py 5 17 cubes/d5c_t17 >> out/cubes_d5c_t17.log 2>&1 &   (label «conditional on
+     SEG-CAP (R109 L-4 as encoded) and T*(4) = 13 (lane)»; no SAT cube so far)
+- PAUSED / STOPPED (state kept, resumable with the same lines):
+  - d 4 T>=14 validation: SYM0=1 SYMB=1 TL=900 P=1 nohup nice -n 19 python3 cubes.py 4 14 cubes/d4s_t14 >> out/cubes_d4s_t14.log 2>&1 &  (paused 16:3xZ for cores)
+  - d 4 RISE R>=9 cubes: r213/run_d4.sh (stopped by Lead ruling 14:13Z; low value after the kill)
+  - d 4 MOVES z 6 r 8 (exact top max 7 or 8): cd r213 && timeout 14400 python3 move.py 4 13 6 8 out/m4_z6_r8.json  (UNKNOWN at 2 h)
+- Tools: r212/fk.c (E-model T_k climber), r212/fl.c (ladder climber; ISO=1; SCORE=R rises, SCORE=M Xi-target moves), cert.sh, certL.py, embed.py,
+  lift.py, extend.py, conv.py; r213/rises.py, rise.py (RISEZ), move.py (MOVEZ), tn.py (UMIN / Z0MAX), all as env-gated xcnf constraints.
+- Things only I know:
+  - Never test a check.sh block without set -euo pipefail (my NEG line killed verify silently once; fixed a4650e8c).
+  - A push waiter must key on the previous push log's «exit» line, never on pgrep of a string in its own command line.
+  - fk text genome = ISO ladder of L^R_(m+1); fl reads the same format with m = top level. LIFT / extend seeds made every record; random climbs are weak.
+  - fl SCORE=M prints «maxR» in its label (it is the move count).
+  - lemck needs gates / betas renumbered 0..M-1 (certL.py / embed.py do it).
+  - Keep-alive: harness wait loops die at 2 h; re-arm with a different tracked status job.
+
 ## Successor 51 R212 (2026-11-06, date -u) — docs/red/R212-flipadd.md
 - Lemma FROZEN-EMBED PROVED (lane): ISO G of L^R_(m+1), fixed c -> Lad_c(G) in L^R_m (drop level 0, re-rank the 4 level-1 gates by
   (kappa^c_w, gate)) with the same run. T_0(m) <= T^R(m), T_k(m) <= (k+1) T^R(m): FLIP-ADD can fail only through superlinear T^R.
