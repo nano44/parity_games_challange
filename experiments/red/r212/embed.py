@@ -23,7 +23,14 @@ def lad(G, b):
     vals = sorted(G["gate"][x][k] for x in (2, 3) for k in (0, 1))
     if os.environ.get("NEG") != "1":
         for r, (_, _, v, k) in enumerate(sorted(four)): gate[v][k] = vals[r]
-    return {"N": n, "lev": lev, "opts": opts, "gate": gate, "br": G["br"], "bp": G["bp"], "start": [0] * n}
+    # renumber (order-preserving) the betas used and the gates to 0..2n-1 (lemck needs gates 0..M-1)
+    used = sorted({o[2] for v in range(n) for o in opts[v]}, key=lambda i: G["br"][i]); rid = {i: r for r, i in enumerate(sorted({o[2] for v in range(n) for o in opts[v]}))}
+    br = [0] * len(rid); bp = [0] * len(rid)
+    for r, i in enumerate(used): br[rid[i]] = r; bp[rid[i]] = G["bp"][i]
+    opts = [[[o[0], o[1], rid[o[2]]] for o in opts[v]] for v in range(n)]
+    gs = sorted(gate[v][k] for v in range(n) for k in range(2)); gid = {x: r for r, x in enumerate(gs)}
+    gate = [[gid[gate[v][k]] for k in range(2)] for v in range(n)]
+    return {"N": n, "lev": lev, "opts": opts, "gate": gate, "br": br, "bp": bp, "start": [0] * n}
 def check(G):
     E = fd.Ext(G); bad = 0; tot = 0
     for b in (0, 1):
