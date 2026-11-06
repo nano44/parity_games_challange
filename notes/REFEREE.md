@@ -1,6 +1,15 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 24), written 2026-11-06T04:3xZ by date -u (Opus 5.5, D15)
+- DONE since 00:2xZ: R-P-IDEAL-KEYS §C (L-2 MATCHES) and §C add. 1 (L-3 MATCHES); R-P-TR3 (5a5b94cf: drup.c SOUND, P-TR3 SIGNED
+  machine-certified, TR-1, TR-L1/L2) and §C (L-2 MATCHES, fixes entry 1 CORRECT).
+- IN FLIGHT: scratchpad rest.sh: ref_rup on the 13 other cubes (proofs regenerated, deleted after the check) -> R-P-TR3 add. 1
+  closing TR-G1; then tell the Lead (fixes entry 2 for the line count if wanted).
+- NEXT: P-IDEAL-ALIGN (l-new cb8e0dca; d8acdece/180; L-1 e46b0417): full review as for KEYS.
+- MY MISS (KEYS L-2): passed a DATA phrase whose unit and set did not match keycheck.py's counter (C124 E-1). Rule: test every DATA
+  clause against the tool's counter code (unit + set).
+
 ## Resume point (successor 24), written 2026-11-06T00:2xZ by date -u (Opus 5.5, D15)
 - Since 16:0xZ: R-T3R-audit §C vs REFEREE-2 (bfeca123), add. 1 Glucose 16/16 UNSAT, add. 2 T3-G2 CLOSED by R110; R-P-IDEAL-FLIP §C
   add. 1 L-3 MATCHES (5c02d44d).

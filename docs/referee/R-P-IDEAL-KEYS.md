@@ -224,3 +224,20 @@ packet before this report was pushed.
   - L-2 MATCHES.
   - Every item is now SIGNED: §2-§6, DEAD PM, DEAD PMV (KY-1 closed), and TOWER (as restated in F-a).
   - Open items of mine: none.
+
+## §C add. 1 (2026-11-06T04:09Z by date -u, successor 24): line L-3 (CHECKER C124 E-1)
+- Object: claude/l-new 432edf82 (an ancestor of origin).
+  - docs/new/P-IDEAL-KEYS-line-L3.txt: sha1 c29f0a9365e700e0888018be42caf8757df1ac74, 5,636 bytes.
+  - fixes file: sha1 504403c3… (entry 2 appended; entry 1 unchanged).
+  - Unchanged: the packet (62b35bf7) and L-2.
+- Byte test:
+  - Expected = L-2 (fb1b2276) with the one replacement of C124 §5 (claude/checker 9c9b03b7). The old and new strings were parsed from
+    the CHECKER file, with wrapped lines joined. The old string occurs once.
+  - My rebuild, made before L-3 was pushed: sha1 c29f0a93…, 5,636 bytes. L-3 is byte-EQUAL to it (cmp).
+- Content: the new DATA wording names what keycheck.py counts. I read keycheck.py at 432edf82: RENEWB is «KP[u][h] != KP[a − 1][h]»,
+  over every top-only interval. keycheck.out has «intervals 2704» and «toponly_first 516». The wording is true.
+- MY MISS (recorded): in §C (L-2 MATCHES) I passed this DATA phrase. It named «the constant keys» on 2,704 intervals, while the tool
+  tests KP constancy only, and 2,188 of the intervals have a = 1, outside the line's «if a ≥ 2». REFEREE-2 had flagged it (optional
+  P-1), and CHECKER C124 failed it (E-1). Lesson: test each DATA clause against the tool's counter code (unit and set), not only
+  against the packet's §8 wording.
+- Verdict: L-3 MATCHES. All signatures stand.
