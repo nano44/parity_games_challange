@@ -15,6 +15,15 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 ### P-IDEAL-KEYS fix round 1 (Lead 00:47Z; REFEREE 24 ece8c4ee, REFEREE-2 28 ebcf52d0): fixes entry 1 docs/new/P-IDEAL-KEYS-fixes.md
   (26088848) + line L-2 (fb1b2276): tower relabelled TOWER (consequence of F <= T) + READING «not a shortcut» (no longer DEAD); KY-1,
   F-1, F-2, N-1, KY-L2; W-1..W-3; source note names the fixes file. check.sh pins added.
+### BOX 178 P-IDEAL-ALIGN FROZEN: docs/new/P-IDEAL-ALIGN.md (d8acdece, 180 lines) + L-1 (e46b0417); tool box178/aligncheck.py
+  (9335dee7), output aligncheck.out (b653b01b); check.sh block «P-IDEAL-ALIGN». Signed items: ALIGN, KP-MOVE, F0, PAIR-DOUBLE, MOVES,
+  T-BOUND, PATH-RISE; premises R104 def, R105 ENC + MONO, R110 def of L^R_d only (KEYFLIP re-proved as KP-MOVE; no R111). (b) left out.
+### BOX 177 PAIRDOUBLE (docs/new/N5-PAIRDOUBLE-box177.md; box177/align.py, automaton.py, slack.py): ALIGN (KP(p) = KP(q) = c(b);
+  moves land on c) and PAIR-DOUBLE F(l) <= 2F(l-1) + 2 PROVED (lane, Phi-accounting); (b) F(l) <= F(l-1)+1 if gamma0 != gamma1 machine-
+  proved k <= 30. T^R(d) <= 2^(d+2) - 2d - 4. PATH-RISE proved (Xi capacity = #paths, exponential). Doubling persists <= 2 levels (DATA).
+### BOX 176 TOPREPAIR (docs/new/N5-TOPREPAIR-box176.md; box176/repair.py, forms.py): R208 opened (16ae702d): gain' = box 175's.
+  CONJECTURE TOP-M gain' <= n2 + 3 m_c (DATA 0/372); FA (TOP-C) 53, FB (c 1) 34, FD 2 violations. Level sum O(3^d) = LEVEL-PRODUCT order
+  (m_c only bounded via F(tau-1)). Forcing instance dd_d5_F14: lower <= 1 under all 266 re-routings, T 14, gain' 13.
 ### BOX 175 TOPC (docs/new/N5-TOPC-box175.md; box175/gain.py, gain2.py, xgain.py): L-RED CONJECTURE TOP-C at C = 1 DEAD under the
   relayed definition (R208 / 16ae702d not on origin): fa_d2_k2_W2 gain' = gain'' = 4 (N 4, hand proof), iso_d4_st9 8 / 7, g4_L12 7 / 6,
   tri_d5_L12 4 / 4; two simulators agree. Re-arm per top move (iso: mover 3 at steps 4, 11 after top moves 3, 10).
