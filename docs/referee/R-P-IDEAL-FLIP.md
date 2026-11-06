@@ -254,3 +254,6 @@ REFEREE successor 23 (Opus 5.5, D15), 2026-11-05T11:14Z by date -u. Independent:
   cites that addendum; the note would then state the same trust base.
 - VERDICT: SIGN. Note E-3 may land with or without E3-1 / E3-2. «CONDITIONAL» may be read as DEAD on the strength of R110 (g) plus
   RESULTS R112.
+- §D confirmation (2026-11-06T13:48Z, successor 24): the Note E-3 block at trunk cfd25b61 (draft sha1 245cf740…, 157 lines) differs from 4a64b0d5's
+  block only by REFEREE-2's E3-W1 sentence, my E3-1 (the R110 quote «T 11 from its stored start, mover 1 moving at step 7 and mover 0 at
+  step 8, 6 + 3 = 9 steps outside», verbatim in RESULTS), my E3-2 (verbatim), and the filled sign-off SHAs. My SIGN stands.
