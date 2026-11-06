@@ -611,3 +611,8 @@ LANE-LEVEL (not refereed):
 OPEN, the key conjecture: FLIP-ADD, T_2(m) ≤ T^R(m)+O(m). It would make T^R polynomial. No kill, no proof.
 
 FLEET: 4 research lanes plus gates. Weekly window at full pace (D20). No paid overage. Containers restarted often today; long runs are now resumable.
+
+## 2026-11-06T14:21Z owner message (verbatim)
+> Give me a status update
+
+Answered from trunk bfcad0441 (2026-11-06 13:40Z), RESULTS R111-R112, LEAD-STATE.md 09:42Z-13:40Z (R113 at CHECKER, Note E-3 signed, RISE-2D dead, OPT-K, T^R(5) ≥ 16, push-overlap slip). Relayed to the Lead.
