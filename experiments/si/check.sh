@@ -1231,3 +1231,6 @@ echo "si (box 71: FRAME-K): PASS"
 # box 73 (SUM1: exact m = 2 frame enumeration, FRONT-2', pq realisation; docs/si/N5-SUM1-box73.md)
 bash box73/check73.sh
 echo "si (box 73: SUM1): PASS"
+# box 74 (FLIPS: top-pair key-order flips in the frame; realised genomes; docs/si/N5-FLIPS-box74.md)
+bash box74/check74.sh
+echo "si (box 74: FLIPS): PASS"

@@ -4,7 +4,7 @@
 # flipdp gives T_0, T_1 = 8, 9; frame pq mode m = 2 controls (needs python-sat; skipped without it).
 set -euo pipefail
 cd "$(dirname "$0")"
-sha1sum -c --quiet pins.sha1
+sha1sum -c --quiet --strict pins.sha1
 t=$(mktemp -d)
 python3 -I dyn2.py > "$t/dyn2"
 diff -q "$t/dyn2" dyn2.out
