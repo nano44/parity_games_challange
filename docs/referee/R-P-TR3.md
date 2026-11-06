@@ -169,3 +169,37 @@ packet before this report was pushed. Premise material of my own: docs/referee/R
   - L-COMP via the Lead: a fixes entry (TR-1, optional TR-P2 / P3) and line L-2 (TR-L1, TR-L2).
   - Optional: run the remaining 13 cubes through ref_rup to close TR-G1. About 1.5 h of machine time here; I can start it on the
     Lead's word.
+
+## §C (2026-11-06T04:09Z by date -u, successor 24): fixes entry 1 and line L-2
+- Object: claude/l-comp d3e3cde8 (an ancestor of origin).
+  - experiments/comp/box27/P-TR3-fixes.md: sha1 d7b33861ea3a6aecc0a069e43f6df8b53c3f28e3, 73 lines.
+  - P-TR3-line-L2.txt: sha1 11cd9acc14147fb7a3820e9a16c9cee15875e611, 1,713 bytes.
+  - Unchanged: P-TR3.md (cab32c0e), L-1 (221c81eb), drup.c (2d4b8eab), cnf.py (f1f803ae).
+  - New: drup2.c (not the checker of record).
+- I have still not read docs/referee-2/ on P-TR3; I know REFEREE-2's items only through the fixes entry's list.
+- F1 (TR-1): CORRECT; TR-1 CLOSED.
+  - The R110 quote («on acyclic Ξ-graphs, with 𝓦_d … T^R(d) ≤ T*(d))») is verbatim: 1 hit in RESULTS at trunk 4b35e2b0, l. 11323.
+  - «Ξ-data arbitrary» is read as «acyclic Ξ-data arbitrary», which matches the CNF.
+- F2 (TR-P3, §5 → §3): CORRECT.
+- F3 (TR-P2): CORRECT.
+  - fd882af1 built the CaDiCaL cubes; f1f803ae built the Glucose proofs.
+  - My independent evidence that the DIMACS are byte-identical: t3r_dimacs.py at 6f19564f (= fd882af1) gave the 16 sha1s of the
+    table, and mkproof.py with f1f803ae gave the same sha1 for cubes 5, 9, 10, 13, 1 and 14 in my runs.
+- F4 (drup.c status): CORRECT for my part.
+  - «REFEREE 24 regenerated the proofs of cubes 5, 9, 10 byte-identically and re-checked them with drup.c and its own ref_rup.c» is
+    what my report records.
+  - REFEREE-2's counts (1 cube; 12,902 fuzz runs) are REFEREE-2's to confirm.
+  - The ENCODING.md l. 5 reading note is right.
+- F5 (drup2.c): a NEW file, outside the certified record. The entry says so. I did not audit drup2.c; nothing in the claim uses it.
+- F6, line L-2 byte test (an inline script, the same method as scratch/keys_l2_bytetest.py):
+  - The expected line is L-1 with the entry's 4 replacements, parsed from the fixes file. Each old string occurs once.
+  - Result: EQUAL to L-2 (sha1 11cd9acc…, 1,713 bytes).
+  - Shape: 13 «(» / 13 «)», depth never negative, 0 «|», one « — », one line.
+  - TR-L1 MET: R110's definitions are cited, «acyclic» is added, and T^R(d) is defined verbatim from R110.
+  - TR-L2 MET: the source note names P-TR3.md, the fixes file and ENCODING.md.
+  - TR-L3 MET: the drup.c status and the re-check counts.
+  - The counts «REFEREE 3 cubes» are true as of 5a5b94cf.
+- Verdict:
+  - L-2 MATCHES.
+  - Fixes entry 1 is CORRECT.
+  - P-TR3 stays SIGNED as machine-certified. TR-G1 is being closed by the 13-cube ref_rup run (addendum to follow).
