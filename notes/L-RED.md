@@ -1,4 +1,5 @@
 # L-RED notebook (independent adversary lane)
+Successor 52 (Opus 5.5, D1/D18/D20) started 2026-11-06 18:28Z (date -u); STEP 0 handover check; BOX R214 (MOVES-2D adversarial); see «Successor 52».
 Successor 50 (Opus 5.5, D1/D18/D20) started 2026-11-05 22:06Z (date -u); R207-R211; PARKED 2026-11-06 ~07:0xZ at ~520k, see «Successor 50 PARK».
 Successor 49 (Opus 5.5) started 2026-11-04 00:18Z; R200-R206; PARKED 2026-11-05 21:1xZ at ~540k context, see «Successor 49 PARK» (supersedes «Successor 49 HANDOVER»).
 Successor 48 (Opus 5.5, D1/D18) started 2026-11-03 07:20Z (date -u); STEP 0 message 07:20Z; R199 nested doubling: k 2 SAT d 5 (pin nd2_d5_F12_n96), k 3 UNSAT d <= 5, UNKNOWN d 6-7; PARKED FINAL 23:4xZ, see «Successor 48 PARK».
@@ -48,6 +49,32 @@ Successor 15 PARKED ~09:40Z 2026-10-25 after box 38; RESUME POINT for successor 
 context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older notebook: `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
+
+## Successor 52 handover check (2026-11-06 18:3xZ, date -u)
+1. Branch claude/l-red. Clone checkout was detached at b6426b33 (= ls-remote at 18:28Z; successor 51 PARK already landed, no wait
+   needed); the local branch ref was 67 behind (stale): «git checkout claude/l-red» + «merge --ff-only origin/claude/l-red» -> HEAD =
+   claude/l-red = origin = ls-remote = b6426b33. After «git fetch --deepen=500»: vs trunk claude/vibrant-johnson-nxvvxo 27edc8f7:
+   109 ahead / 447 behind, merge-base 39588215.
+2. Open work and next step:
+   - MAIN conditional d 5 T>=17 cubes relaunched 18:29Z (cwd experiments/red/r200, PARK line; state 212 done / 4 split at relaunch);
+     harness-tracked wait loop armed (until ! pgrep -f "cubes.py 5 17"). Next: snapshot state at each check.
+   - BOX R214 (Lead, now): attack CONJECTURE MOVES-2D (every mover moves <= 2d times in a run of 𝓛^R_d). (1) non-Ξ-target movers in all
+     data + exact d <= 4; (2) co-designed climbs d 5-8 maximising max moves over ALL movers (seeds dd_d5_F14, rise_d5_R13, rise_d6_R14,
+     T^R records); (3) exact d 4 top level r 8 at horizon 13, resumable.
+   - Paused (state kept): d 4 T>=14 validation cubes; d 4 RISE R>=9 cubes (stopped by Lead ruling); d 4 MOVES z 6 r 8 (= task (3)).
+3. GAPS rows (trunk docs/GAPS.md @ 27edc8f7): G-NEST (major, «L-RED (attacks + proof attempts)», open); L-RED attacks GAP-A, GAP-C
+   (blockers, open), G-STR, G-DOM (closed). R214 works against G-N5-TIME (major, L-NEW, open) under D1/D18.
+4. Rulings (verbatim, trunk docs/DECISIONS.md; status from trunk docs/DECISIONS-INDEX.md):
+   D1 «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as
+   wrong until it passes the gauntlet below.» (active); D18 «Focus on N5 and work toward proving it. Explore novel approaches,
+   especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make
+   reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven
+   results from conjectures and open problems.» (active); D20 «We have reset the weekly usage, so we can again work faster no?»
+   (active; Lead reading L48: full pace, stop on paid overage).
+5. Trap (bit again at this start): the local branch ref was stale (67 behind) while the detached checkout sat at the right SHA.
+   Check: compare «git rev-parse claude/l-red» (not only HEAD) with ls-remote before the first commit; also experiments/red/r200/out/
+   is gitignored and was missing (mkdir before relaunching, else the nohup redirect fails silently). Standing: never two push.sh at
+   once (pgrep -f scripts/push.sh first); a kill must be replayed by ideal.py + lemck + box150 before it is reported.
 
 ## Successor 51 PARK (2026-11-06 ~17:2xZ, date -u; ~530k context)
 - RESULTS of this session (files docs/red/R212-flipadd.md, docs/red/R213-rises.md; all certified witnesses in r212/keep, r213/keep, sha1 pins):
