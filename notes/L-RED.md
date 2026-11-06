@@ -49,6 +49,14 @@ context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older note
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
 
+## Successor 50 R209 (2026-11-06, date -u) — docs/red/R209-topc-kill.md
+- TOP-C DEAD: L-NEW box 175 seeds confirmed under my exact gain′ (r208/gainx.py). gain′ 4 / 8 / 7 / 4 > 3; all-starts gains 4 / 7 / 6 / 4.
+  All replayed; lemck needs the gates renumbered (iso_d4_st9_rn).
+- Weak form T ≤ T*(d−1) + 2 + C: false at d 4 (g4_L12, 12 > 11), conditional on T*(3) = 8 over 𝓛_3 (helpers: DATA).
+- (b) Co-designed re-arm climbs (coclimb SCORE=rearm / gain), d 4-7: all-starts gain ≤ 7 at C = 1; re-armed segments short;
+  no growth.
+- Trap: the same-start gain′ is start-sensitive (ra6_s4: 15 same start vs 3 over all starts). Report both.
+
 ## Successor 50 R208 (2026-11-06, date -u) — docs/red/R208-topcouple.md
 - Lemma TOP-SPLIT PROVED (lane): between top moves, the lower part runs as one (d−1)-level genome with proxy helpers. Hence
   T ≤ (m+1)·T*(d−1) + m. split_ck: 957 segments, 0 violations.
