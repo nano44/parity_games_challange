@@ -1,6 +1,13 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 19), 2026-11-06 16:05Z (date -u)
+- C126 (Note E-3): main 2e1a91c8 / f271c741 FAIL E-1 (E3-2 misplaced, not verbatim; R1 + R2 in §4); Add. 1 2f58a8bf PASS (block
+  a6311c7a = R1 + R2 + sign-off line; ruling: confirmations 1784dd28 / 0bdc659c cover the final block). NEXT: Add. 2 (landed) + CI.
+- C125 (R113): Add. 1 PASS (this commit; draft 0c044b1c @ 280117c7; L-3 4d28b1f3 = mine; UPDATE d57c030d; block re-run rc 0).
+  NEXT: Add. 2 (landed) + CI. Landing order: R113, then Note E-3.
+- Trap: never commit while push.sh runs (it may push an unverified commit); wait with a pgrep loop.
+
 ## Successor 19 handover check, 2026-11-06 13:13Z (date -u)
 1. Branch claude/checker, head 559c9664 (= git ls-remote origin). STALE-CLONE TRAP HIT: the container's local claude/checker ref was
    14 commits behind origin (HEAD detached); fetch --deepen + checkout + ff-only fixed it; HEAD = local ref = ls-remote = 559c9664.
