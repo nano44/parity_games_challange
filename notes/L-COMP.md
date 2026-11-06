@@ -1,6 +1,16 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## STATUS 2026-11-06 01:4xZ (successor 9): P-TR3 FROZEN at d03d8370 (P-TR3.md sha1 cab32c0e, 125 lines; line L-1 221c81eb, 1 line);
+16/16 d 3 cubes CERTIFIED (Glucose 4 DRUP + own drup.c; log/R_d3_L9_cert.txt). Sent to the Lead for the two referees.
+- Restarts: 6 on 11-05 (~14:05, ~15:45-16:53, ~17:0x, 18:49, ~19:08, ~23:3x). Resource log (log/resources.txt, local) normal every
+  time; a tracked background task helps (no restart for 4 h) but does not prevent them. After a restart: experiments/comp/box27/
+  relaunch.sh; INT=60 setsid nohup ./mon.sh <abs>/log/resources.txt; keep one harness-tracked wait loop alive.
+- Running: R_d4_L13, R_d4_L14 (d 4), INF_m3_L18 (T_inf(3) >= 18), acube.py summaries. Queue after them: optional T_1(3) <= 10
+  re-derivation (L-SI box 70 has it EXACT; Lead 19:24Z); #5 d 3 free-W / padded d 2 lowest. #2, #3, #7 STOPPED (Lead 19:24Z).
+- Things only I know: pysat Solver.interrupt() does not stop cadical195 here: use subprocess + timeout (acube.py). drat-trim fetch is
+  refused (classifier). drup.c IGNDEL mode reaches the refutation one lemma earlier than the default mode.
+
 ## Resume point -- successor 9, BOX 27 (running), updated 2026-11-05 10:5xZ by date -u
 - Everything: experiments/comp/box27/README.md. DONE: T^R(2) = 4 (C + CNF), T^R(3) = 8 (CNF cubes), T_k(1), T_k(2) k <= 12 + unlimited.
 - CONTAINER RESTART 2026-11-05 ~14:05Z killed every solve (no cube had finished). Since 14:3xZ all searches run under acube.py
