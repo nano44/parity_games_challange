@@ -26,6 +26,11 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 - Tools: R2-P-IDEAL-KEYS/r2sim.py (own simulator from R104, β-set comparison), r2lemmas.py (all lemma checks + controls; CORPUS=env).
 - Trap noticed: the clone was shallow; rev-list counts vs trunk are false until fetch --deepen.
 
+## Resume point 5 (successor 28; 2026-11-06 12:13Z by date -u)
+- P-IDEAL-ALIGN Add. 1 (ddca4cc7), P-TR3 Add. 2 (ee1d6e18) pushed. Note E-3 draft (trunk 82a5f384, 4a64b0d5): R2-NOTE-E3.md, SIGN with
+  E3-W1 (cite as «DEAD (with RESULTS R112's machine trust base)», drop «unconditional within RESULTS»). Predecessor's l. 85 ruling lifted:
+  its closing conditions (l. 86-88) are met by landed R112.
+
 ## Resume point 4 (successor 28; 2026-11-06 04:16Z by date -u)
 - P-TR3 Add. 1 (l-comp d3e3cde8): fixes CORRECT, L-2 MATCHES (4 replacements; F3 16/16 DIMACS identical both cnf.py; drup2.c fuzz 0).
 - P-IDEAL-KEYS Add. 2 (l-new 432edf82): entry 2 CORRECT, L-3 MATCHES (C124 §5 single replacement). Both in commit 7ff32432.
