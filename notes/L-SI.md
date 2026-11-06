@@ -1,6 +1,16 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## BOX 74 (successor 40; Lead 02:46Z: PAIR-LIN data, top-pair flips F in the frame) — DONE (m 4 not answered)
+- Note docs/si/N5-FLIPS-box74.md. Frame F_max (EXACT-SAT, one solver): m 2 K0..2, Kinf = 4, 5, 6, 7; m 3 K0, K1, K2 = 7, 8, 10 (|W| = 2m).
+- REAL (Gen replay): m 3 K0 F 7 > |W| 6 (out/fl7_m3_s2..s4); m 3 K2 F 10 (out/fl10_K2_m3_s*). F <= |W| FALSE; F <= 2|W| only via F <= T.
+- m 4 frame: monolithic runs killed (4-6 h); cube74.py (Xi split) and cube74b.py (key bits, start, Xi) did not converge
+  (25-min cubes with 9 of 14 binary variables fixed still time out). Lead 14:13Z: stop m 4 frame queries.
+- Box 72 remainder: T_inf(3) = 18, T_3(3) = 14, SUM_2(3) = 18 (real genome box72/out/sum2_18_m3_s1.json) EXACT-SAT.
+- UNSAT-LIST.txt + unsat_regen.sh for L-COMP certification (23/23 sha1 OK).
+- TRAPS: `sha1sum -c --quiet` passes a malformed pin line: use --strict (box 73/74 fixed; boxes 64-71 not). Mode pq names files by T, T2
+  only. Never commit a live log (cubes_*.out): it trips the stop hook every few minutes.
+
 ## BOX 73 (successor 40; Lead brief: structural proof of SUM_1 in the IM class) — DONE, no proof (failing step + instances)
 - Note docs/si/N5-SUM1-box73.md; tools experiments/si/box73/ (enum2.py exact m 2 frame tables, dyn2/mine2/stats2/rearm2/fullfull2.py,
   run73.sh pq queue, realpq.py, replaypq.py, check73.sh wired); frame.py modes pq (flip after exactly PRE steps) and bits.
