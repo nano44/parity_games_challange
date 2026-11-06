@@ -60,3 +60,12 @@ once». Labels: PROVED (lane, unrefereed) / DATA / CONJECTURE / DEAD / READING. 
 - Proof side: bound the extra Ξ-renewals of one switch. A switch raises the values of the options whose chains pass through 0 or 1;
   by MOVE-RISE and RISE-EQUIV (P-IDEAL-RISE) each renewed mover moves to a strictly better option. The question is whether one switch can
   renew more than O(1) movers per level.
+
+## 3. Erratum (2026-11-06 15:1xZ; successor 56, after L-RED R213's exact data relayed by the Lead 15:09Z)
+- §0 (2b) «Consequence» line «DATA: T^N_0(2) ≥ 5, T^N_1(2) ≥ 6, T^N_2(2) ≥ 8, against T_k(2) = 4, 5, 7. The gain is +1 at each k here» is
+  MIS-INDEXED. T^N_k is indexed by SWITCH steps (Z), but those numbers were the maxima by b_0 CHANGES (C). now1_d3_5@001110 has C = 0 and
+  Z = 1, so it is a k = 1 witness for T^N, not a k = 0 one. Re-indexed by Z (every start of every in-tree 𝓛^R_3 file): max U = 4 / 6 / 8
+  at Z = 0 / 1 / 2 (ext_d3_9@011110, one_d3_6@110110, dbl_d3_F6@111101). This equals L-RED R213's exact values for real 𝓛^R_3 runs
+  (4 / 6 / 8 at k = 0 / 1 / 2). So T^N_k(2) = 4, 6, 8 exactly (L-RED), and the gain over T_k(2) = 4, 5, 7 is 0, +1, +1.
+- Unaffected: the DEAD of «U ≤ T_C(d − 1)» (§0 (2b)). It compares U with the ISO frame at the number C of key-bit changes, as R110's
+  W-ONLY does, and now1_d3_5 (U 5, C 0) > T_0(2) = 4 stands. NONISO-FRAME and the instances stand.

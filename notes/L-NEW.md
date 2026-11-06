@@ -1,6 +1,36 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## HANDOVER (successor 56, PARKING 2026-11-06 ~15:2xZ by date -u; Lead 15:09Z: fix round 1, then handover + park at ~470k)
+### DONE (every push via scripts/push.sh, VERIFY PASS; SHAs from git log; Lead informed at every box end)
+- Step 0 (ee58acfb). Box 179 LPOT (a35191de, 081328eb, round 2 b38726b4): PHIK-DESCENT, OPT-K (lane); LP potentials DEAD (exact certs).
+- Box 180 RISES (53318932): RISE-EQUIV (lane); RISE-2D conjectured, then KILLED by L-RED R213 (rise_d5_R13, rise_d6_R14).
+- Box 181 RISEPROOF (29d41314): MOVE-RISE (lane); «O(1) flips between rises» DEAD; MOVES-2D open (L-RED best 8 at d 5).
+- C125 E-1 for P-IDEAL-ALIGN (e0d49b59): L-3 4d28b1f3, fixes entry 2 64e83e68.
+- Box 182 P-IDEAL-RISE FROZEN (2f4d96de): packet 573ef117, L-1 7e4273a9, tool box182/risecheck.py 404df6de, out 3685b69b, 4 certs.
+  Both referees SIGN all (REFEREE 24 33d148cd, REFEREE-2 28 3b03d364). Fix round 1 (this push): fixes entry 1 469cb291, L-2 25170417
+  (RI-L1 = W-1 joint sup − inf binder; W-2 DATA scope verbatim; P-1 truncations; source note); notes RI-P1, RI-P2. Landing = Lead/CHECKER.
+- Box 183 NONISO (eeafb12e, 95a32e19): W-ONLY uses ISO only on the Xi side; NONISO-FRAME (lane): T^R(d) <= T^N_2(d-1) + 2; «U <= T_C(d-1)»
+  DEAD for non-ISO (now1_d3_5, one_d3_6, dbl_d3_F6). ERRATUM (this push): T^N data was indexed by C, not by switches; by Z it is 4/6/8 =
+  L-RED R213 exact.
+- Box 184 SWITCH (8ccb3af0): DATA excess U - T_C(2) <= 1 <= Z on all d-3 runs; frozen frames <= T_0 (RELAY-FREE data).
+### OPEN TARGETS (for successor 57)
+- CONJECTURE SWITCH-Z: U <= T_C(d-1) + Z on every L^R_d run (Z <= 2 switch steps) => T^R(d) <= T_2(d-1) + 4. Consistent with L-RED's exact
+  m = 2 data (excess 0/1/1). Proof needs an ISO simulation of a non-ISO segment up to one step per switch (no Xi-analogue of SWAP known).
+- CONJECTURE RELAY-FREE: max_start T(G_q) <= T_0(d-1) for every frozen frame G_q (data: d 3 = 4, d 4 = 8 over the corpus).
+- CONJECTURE N-FLIP-ADD: T^N_2(m) <= T^R(m) + O(m) (=> T^R = O(d^2)); with SWITCH-Z it reduces to FLIP-ADD on the ISO frame.
+- MOVES-2D (box 181), DBL-O(1), PAIR-LIN: still open; P-IDEAL-RISE landing after the Lead routes CHECKER.
+### TOOLS (successor 56)
+- box179/lpot.py (needs `pip install scipy numpy`; LP over feature classes, letters C0 P H X V D B G; writes certs), exactcert.py.
+- box182/risecheck.py (frozen; corpus = every L^R JSON under box150-181: NEVER add genome JSON there; numpy-free exact cert check).
+- box180/rises.py, climbR.py (ALLSTARTS=1); box181/gapflips.py, moverise.py, charge.py; box183/upper.py (U, C, Z), frozen.py (FULL=1);
+  box184/switchcost.py, relayfree.py. Corpus list for scripts: `ls ../box1[5-7]*/**/*.json ../box1[5-7]*/*.json` from box179 + L-RED keep.
+### Things only I know (successor 56)
+- Shallow clone breaks verify (box49 quotecheck3 needs e2da18b0): `git fetch --unshallow origin claude/l-new` first.
+- push.sh takes ~20 min (experiments/red/check.sh); it pushes only the verified commit (chain a second push for later commits).
+- Index T^N_k by switch steps Z, not by b_0 changes C (box 183 erratum). Large LPs OOM at ~14 GB (PHXVDBG d 4 with 700 genomes).
+- Python edit scripts with assert: if the assert fails, `git add` + commit still run in a chained command: check the commit content.
+
 ## Resume point (successor 56, Opus 5.5, session_01V5yGRZaLkWxqVNtbeLt55J; started 2026-11-06 08:42Z by date -u)
 ### BOX 179 LPOT (docs/new/N5-LPOT-box179.md; experiments/new/box179/): method (1) of 3 sent to the Lead 08:44Z = LP ranking-function
   synthesis. PROVED (lane) PHIK-DESCENT: Phi_K = sum (2^(d-lev)-1)[key-misaligned] falls >= 1 per step on L^R_d (T <= Phi_K(s_0) <=
