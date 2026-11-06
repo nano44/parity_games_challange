@@ -114,7 +114,7 @@ unrefereed) / DATA / CONJECTURE / DEAD. Not a TARGET.md claim. G-N5-TIME stays O
 - lp_*: random genomes only. lpc_*: corpus files at that d + random genomes. lpc_C0_d3 / d4 (62 / 64 corpus + 100 random): 22 / 52.
   lpc_P_d3 / d4: 22 / 52. lpc_C0_d5 (33 + 20): 114. lpc_PHX_d3 (62 + 100): 18.73; lpc_PHX_d3_r1500 (62 + 1,500): 22.00. lpc_PHX_d4
   (64 + 100): 40.80; lpc_PHX_d4_corpusonly: 36.97; lpc_PHX_d4_r700: 49.11. lpc_PHX_d5 (33 + 20): 45.40; lpc_PHX_d5_r100: 61.24.
-  lpc_PHXV_d3_r1500: 17.93. Earlier random-only runs (lp_*, 300 genomes at d 3) gave P 21.38, H 21.50, X 22.00, PHX 13.70. Those are lower
+  lpc_PHXV_d3_r1500: 17.93. Earlier random-only console runs at d 3 (300 genomes, seed 179; not logged to files) gave P 21.38, H 21.50, X 22.00, PHX 13.70. Those are lower
   bounds only and are superseded.
 ### 4.2 Certificates
 - The dual multipliers of the decrease rows sum to the optimum. For C0 at d 3 (corpus only) the support is 16 rows from 12 different
