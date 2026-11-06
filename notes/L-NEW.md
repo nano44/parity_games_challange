@@ -15,6 +15,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 ### P-IDEAL-KEYS fix round 1 (Lead 00:47Z; REFEREE 24 ece8c4ee, REFEREE-2 28 ebcf52d0): fixes entry 1 docs/new/P-IDEAL-KEYS-fixes.md
   (26088848) + line L-2 (fb1b2276): tower relabelled TOWER (consequence of F <= T) + READING «not a shortcut» (no longer DEAD); KY-1,
   F-1, F-2, N-1, KY-L2; W-1..W-3; source note names the fixes file. check.sh pins added.
+### BOX 178 P-IDEAL-ALIGN FROZEN: docs/new/P-IDEAL-ALIGN.md (d8acdece, 180 lines) + L-1 (e46b0417); tool box178/aligncheck.py
+  (9335dee7), output aligncheck.out (b653b01b); check.sh block «P-IDEAL-ALIGN». Signed items: ALIGN, KP-MOVE, F0, PAIR-DOUBLE, MOVES,
+  T-BOUND, PATH-RISE; premises R104 def, R105 ENC + MONO, R110 def of L^R_d only (KEYFLIP re-proved as KP-MOVE; no R111). (b) left out.
 ### BOX 177 PAIRDOUBLE (docs/new/N5-PAIRDOUBLE-box177.md; box177/align.py, automaton.py, slack.py): ALIGN (KP(p) = KP(q) = c(b);
   moves land on c) and PAIR-DOUBLE F(l) <= 2F(l-1) + 2 PROVED (lane, Phi-accounting); (b) F(l) <= F(l-1)+1 if gamma0 != gamma1 machine-
   proved k <= 30. T^R(d) <= 2^(d+2) - 2d - 4. PATH-RISE proved (Xi capacity = #paths, exponential). Doubling persists <= 2 levels (DATA).

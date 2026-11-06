@@ -916,4 +916,12 @@ if grep -qxF "KEYCHECK SAME" <<<"$w172" && [ "$(grep -cxF "TOTAL genomes 1 runs 
 else
   echo "P-IDEAL-KEYS check: FAILED"; echo "$w172"; echo "$pin172"; exit 1
 fi
+# P-IDEAL-ALIGN (box 178; L-NEW 55): ALIGN / PAIR-DOUBLE / MOVES / T-BOUND / PATH-RISE checks (aligncheck.py, frozen output), pins
+w178=$(cd .. && python3 -I new/box178/aligncheck.py | diff - new/box178/aligncheck.out && echo ALIGNCHECK SAME)
+pin178=$(cd ../.. && sha1sum docs/new/P-IDEAL-ALIGN.md docs/new/P-IDEAL-ALIGN-line-L1.txt experiments/new/box178/aligncheck.py experiments/new/box178/aligncheck.out experiments/new/box172/inst/dd_d5_F14.json)
+if grep -qxF "ALIGNCHECK SAME" <<<"$w178" && grep -qxF "KPEQ 0 LAND 0 ORD 0 DBL 0 F0 0 KFF 0 MOV 0 TB 0 PATH 0" box178/aligncheck.out && grep -q "^d8acdececb507bfad476341411bddd579fcc5b00  docs/new/P-IDEAL-ALIGN.md$" <<<"$pin178" && grep -q "^e46b0417295bfbde7f4cb2d434deed5d0f2e209c  docs/new/P-IDEAL-ALIGN-line-L1.txt$" <<<"$pin178" && grep -q "^9335dee71554491004b5f7567bb1a6784c5292dd  experiments/new/box178/aligncheck.py$" <<<"$pin178" && grep -q "^b653b01bbdca19c8e0c7d406b1bd2470c35c55fc  experiments/new/box178/aligncheck.out$" <<<"$pin178" && grep -q "^06f0e5015d09c0f1e03f1b9293ab3cd8483e435b  experiments/new/box172/inst/dd_d5_F14.json$" <<<"$pin178"; then
+  echo "P-IDEAL-ALIGN: aligncheck 0 violations (output = frozen aligncheck.out); pins packet d8acdece, line L-1 e46b0417, tool 9335dee7, output b653b01b, instance 06f0e501: PASS"
+else
+  echo "P-IDEAL-ALIGN check: FAILED"; echo "$w178"; echo "$pin178"; exit 1
+fi
 rm -rf "$tmp"
