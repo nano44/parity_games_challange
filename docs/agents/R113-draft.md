@@ -1,4 +1,53 @@
-# Draft RESULTS R113 (Lead; first fill 2026-11-06T11:20:49Z by date -u (subagent) on P-IDEAL-ALIGN line L-2, docs/new/P-IDEAL-ALIGN-line-L2.txt, l-new c787aab1, sha1 cb5f0398431cc1a5122e13327e7bbae9f9985e51) — to CHECKER C125 — NOT LANDED; goes after R112, before Erratum E-1
+# Draft RESULTS R113 (Lead; first fill 2026-11-06T11:20:49Z on line L-2 (draft sha1 1dc18bc9, CHECKER C125 559c9664: FAIL E-1); SECOND FILL 2026-11-06T15:08:50Z by date -u (subagent) on P-IDEAL-ALIGN line L-3, docs/new/P-IDEAL-ALIGN-line-L3.txt, l-new e0d49b59, sha1 4d28b1f36f610c6ecda7ab48891edb5feae97d66) — to CHECKER C125 Add. 1 — NOT LANDED; goes after R112, before Erratum E-1
+SECOND FILL (2026-11-06T15:08:50Z by date -u, subagent; for CHECKER C125 Add. 1). Read at the origin heads fetched at its start (git
+fetch, 2026-11-06T15:0xZ): l-new 8ccb3af0 (its ancestor e0d49b59 holds L-3 and fixes entry 2; the packet, L-1, L-2, L-3, the fixes,
+box178/, box150/check.py, box172/inst/dd_d5_F14.json and check.sh l. 919-926 are byte-equal at e0d49b59 and 8ccb3af0, git diff empty;
+check.sh gains the block «P-IDEAL-RISE» after them), referee 2a1ff10a (its ancestor 20048c1a holds §C add. 1 of R-P-IDEAL-ALIGN.md, the
+L-3 byte test; the file is byte-equal at 20048c1a and 2a1ff10a), referee-2 3b03d364 (its ancestor a4d3bc41 holds Addendum 2 of
+R2-P-IDEAL-ALIGN.md, the L-3 byte test; byte-equal at a4d3bc41 and 3b03d364), checker f271c741 (its ancestor 559c9664 holds
+docs/checker/C125.md, byte-equal at f271c741); origin trunk ccc409ce; local trunk 8e95fa31 («Lead: Note E-3 draft: referees'
+confirmation commits in the sign-off line (C126 N-4)»), one commit ahead of it. Local trunk a8eadcf8 = four merges (--no-ff, none an
+ancestor of 8e95fa31 before) into 8e95fa31: 0857f39f (l-new 8ccb3af0), 5a4ad180 (referee 2a1ff10a), 88ae8d2c (referee-2 3b03d364),
+a8eadcf8 (checker f271c741); then the commit holding this file. Not pushed; e0d49b59, 20048c1a, a4d3bc41 and 559c9664 are NOT ancestors
+of origin trunk ccc409ce (git merge-base --is-ancestor); the Lead pushes trunk before landing. RESULTS (sha1 70407ce7…, 12,730 lines),
+GAPS (sha1 f204d0a1…, 23 lines) and TARGET.md are byte-equal at 1393ebbc, ccc409ce and the local trunk (git diff, empty; last commit on
+RESULTS and GAPS: 1393ebbc, R112's landing), so the first fill's (0) and (6) stand, as does the GAPS state in (9) (its UPDATE, built on
+L-2, is superseded by the GAPS preamble below), and Addendum 2 (8) re-runs the landing simulation. New sources: docs/checker/C125.md
+(559c9664, 2026-11-06T12:14:03Z, 69 lines, sha1 604e52e7362fc560902b60b45d708a33d51c03c9): FAIL E-1 only (the first fill's G-9 (i) and
+(ii): «a count whose unit or set differs from the clause it names»), G-9 (iii) a note (F(l) ≤ 2^(l+2) − 2 follows by arithmetic from the
+F0 and PAIR-DOUBLE checks on the same runs), G-9 (iv), (v) and G-8 notes, a PATH-RISE scope note, everything else PASS; E-1 fixed by one
+L-3 = L-2 with the two replacements of its §4 (l. 52-56), the UPDATE to be rebuilt by the same rule; expected L-3 sha1 4d28b1f3… and
+rebuilt UPDATE sha1 d57c030d… (l. 57-59); line L-3, docs/new/P-IDEAL-ALIGN-line-L3.txt (l-new e0d49b59, 2026-11-06T12:29:03Z, the file's
+only commit; sha1 4d28b1f36f610c6ecda7ab48891edb5feae97d66 with newline, 3,422 bytes, = C125 §4's expected values); fixes entry 2
+(docs/new/P-IDEAL-ALIGN-fixes.md l. 51-72 at e0d49b59, L-NEW successor 56; file 72 lines, 6,735 bytes, sha1
+64e83e68e4a3642b724b2a5d3b712bec4162c21a, l. 1-49 = entry 1's file, by script); REFEREE's byte test of L-3
+(docs/referee/R-P-IDEAL-ALIGN.md §C add. 1, l. 155-172, 20048c1a, 2026-11-06T13:22:51Z, file sha1
+6b25e41b871600198a1e877181b87e832a1c6e54, 172 lines, l. 1-153 = 0e2c354f's, by cmp: l. 163 «L-3 is byte-EQUAL to it.», l. 172 «Verdict:
+L-3 MATCHES. All seven statements stay SIGNED.»); REFEREE-2's byte test of L-3 (docs/referee-2/R2-P-IDEAL-ALIGN.md Addendum 2, l.
+109-117, a4d3bc41, 2026-11-06T13:22:46Z, file sha1 92b0c061f2fa5117c47e56f22e191ccb7c5248c3, 117 lines, l. 1-107 = ddca4cc7's, by cmp:
+l. 113 «**Fixes entry 2: CORRECT.**», l. 116 «**Line L-3: MATCHES.**», l. 117 «My seven SIGNs stand.»). My byte test of L-3
+(fill2/l3rel113.py, rc 0): the two old / new pairs parsed by script from C125 §4 l. 53-56 (wrapped lines joined by one space, outermost
+guillemets), each old string once in the current text when applied in order, each new string once in L-3, L-2 with both = L-3 (True);
+fixes R6, R7 (l. 61-64) carry the same pairs (True); 78 «(» / 78 «)», depth never negative, final 0; 0 "|"; one « — »; «2026» once.
+Re-runs: check.sh block «P-IDEAL-ALIGN» from a git archive of e0d49b59's experiments/new and docs/new (l. 1-6, the «cd» and «tmp» lines,
+l. 919-927; 2026-11-06T15:09:44Z-15:09:45Z, rc 0, PASS line «P-IDEAL-ALIGN: aligncheck 0 violations (output = frozen aligncheck.out);
+pins packet d8acdece, line L-1 e46b0417, tool 9335dee7, output b653b01b, instance 06f0e501, fixes 64e83e68, line L-2 cb5f0398, line L-3
+4d28b1f3: PASS» (fill2/runw178L3.sh, w178L3.out); aligncheck.py's raw output byte-equal to aligncheck.out and to the first fill's, cmp);
+the UPDATE rebuilt from L-3 (fill2/upd113b.py: upd113.py's procedure and controls unchanged, run on L-3; the 16 controls, R97-R112, are
+the landed UPDATEs, byte for byte, True, and print exactly as at the first fill; it equals the first fill's UPDATE with C125 §4's two
+replacements, True; sha1 = C125 §4's d57c030d…, True); the quote sweep, the stale-status grep, the word diff and the landing simulation
+(Addendum 2). Changed at this fill, and nothing else: this header line and this paragraph; the title (L-3); in the entry, Object (the
+packet identical at e0d49b59 and 8ccb3af0, fixes entry 2, the line of record L-3, L-2 moved into the line history, the L-3 byte tests),
+Claims signed (the third rounds), Claims (L-3), Premise (L-3), Fixes (entry 2: the header, a new bullet, the closing sentence), Data
+(the pins and the block re-run at e0d49b59; L-3's DATA parenthesis), Signatures (REFEREE §C add. 1, REFEREE-2 Addendum 2, the lane
+commit), INDEPENDENCE (L-3; the third round), TARGET.md diff (L-3); the GAPS preamble and the UPDATE (rebuilt from L-3); the digest of
+Addendum (10); Addendum 2 (new). Honest limits (iv) is unchanged: it already gives the F0 count as F(0) ≤ 2 per run and the moves-bound
+count as 21,296 at level ≥ 1 and 11,324 at level 0 (bound 1, F0's first half), which is what L-3's DATA now says. The FIRST FILL text
+below (from FIRST FILL (this text) to (14)) and Addendum (1)-(9) are kept byte-unchanged as the record of the fill on L-2: where they
+call L-2 the title line or the current line, say that no L-3 exists, quote L-2's DATA phrases «F0 0 on 5,662 runs;» and «MOVES 0 on
+32,620 (run, mover) pairs for the moves bound», flag G-9 (i)-(iii) for a ruling, or give the first fill's line numbers, counts and
+UPDATE sha1, they describe draft 1dc18bc9 at 11:20Z; C125 ruled G-9 (i), (ii) E-1 and G-9 (iii)-(v) and G-8 notes, as above, used the
+number C125 (G-0), and the entry block follows L-3.
 FIRST FILL (this text). Read at the origin heads fetched at its start (git fetch, 2026-11-06T11:0xZ): l-new b38726b4 (its ancestor
 c787aab1 holds L-2 and fixes entry 1; b38726b4 changes no P-IDEAL-ALIGN file: the packet, L-1, L-2, the fixes, box178/aligncheck.py,
 box178/aligncheck.out, box150/check.py, box172/inst/dd_d5_F14.json and experiments/new/check.sh are byte-equal at c787aab1 and
@@ -344,11 +393,11 @@ align_logs/corpus.txt, random.txt) → 0e2c354f (§C, +26 lines). REFEREE-2 (cla
 r2align_seed178.out) → ddca4cc7 (Addendum 1, +18 lines). CHECKER: 89764538 (C123 Add. 1). Trunk: see the header.
 (14) Placement: see (0). DEAD-ENDS ROWS: NONE (not drafted). R113 kills nothing.
 
-### R113 [refereed-only] In the IDEAL model of RESULTS R104 (premise: R104's definition of the model only, no theorem of R104 used; RESULTS R105's ENC and MONO only; and RESULTS R110's definition of 𝓛^R_d only), on acyclic Ξ-graphs, with T the number of steps of a run, Mv_t the movers of step t, moves(x) the number of steps t with x ∈ Mv_t, KP_s(x) the option of x with the least key under s, KF_x the number of steps t with KP_(s_t)(x) ≠ KP_(s_(t−1))(x), for two distinct movers u, w of one level a flip of (u, w) at step t a change between s_(t−1) and s_t of the order of the keys of their current options, on 𝓛^R_d F(l) the number of steps at which the pair (2l, 2l + 1) flips, for 1 ≤ l ≤ d − 1 c_l(s) the option index k for which mover 2(l − 1) + k has the smaller current key under s, γ_l(j) := [g(2l, j) < g(2l + 1, j)] with g(x, k) the gate index of option (x, k), cv_s(z) the integer value of z's current option (R105 ENC) and P(z) the number of maximal Ξ-paths from z (one option chosen at every mover on the way, ending at the exit X): (ALIGN) on 𝓛^R_d, for 1 ≤ l ≤ d − 1 and every state s of a run, both movers 2l and 2l + 1 have KP_s = c_l(s), each of them that moves at step t moves to option c_l(s_t), and the order of their keys under s is [s(2l) = c_l(s)] if s(2l) ≠ s(2l + 1) and γ_l(j) if both are on option j; (KP-MOVE) at any degree elsewhere, a mover x of degree 2 that moves at step t moves to KP_(s_t)(x), so moves(x) ≤ 1 + KF_x; (F0) on 𝓛^R_d each level-0 mover moves at most once and F(0) ≤ 2; (PAIR-DOUBLE) on 𝓛^R_d, F(l) ≤ 2F(l − 1) + 2 for 1 ≤ l ≤ d − 1; (MOVES) on 𝓛^R_d, KF_x = F(l − 1) and moves(x) ≤ 1 + F(l − 1) for every mover x of level l ≥ 1; (T-BOUND) on 𝓛^R_d, F(l) ≤ 2^(l+2) − 2 and T ≤ 2d + 2(F(0) + … + F(d − 2)) ≤ 2^(d+2) − 2d − 4; (PATH-RISE) at any degree, the current value cv(z) of every mover z rises at most P(z) − 1 times in a run (2026-11-06) — a STRUCTURE / EXPONENTIAL-BOUND statement inside the IDEAL model on the key side of 2-wide ladders, improving RESULTS R108's bound T ≤ 3^d − 1 to T ≤ 2^(d+2) − 2d − 4 on 𝓛^R_d (strictly for d ≥ 3; equal at d = 1, 2); bounds nothing polynomially; the bound F(l) ≤ F(l − 1) + 1 for γ_l(0) ≠ γ_l(1) (machine-checked only) and the conjectures PAIR-LIN and DBL-O(1) are not claimed; Ξ-cyclic genomes and genomes outside 𝓛^R_d (outside PATH-RISE and KP-MOVE) are not covered; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim (DATA, experiments/new/box178/aligncheck.py on the 184 in-tree 𝓛^R_d genome files of experiments/new/box150 to box177 from their stored starts and 300 random 𝓛^R_d genomes, 5,662 runs: ALIGN (a) and (c) 0 violations on 22,472 (state, level ≥ 1) pairs and (b) on the 11,824 of them with t ≥ 1; F0 0 on 5,662 runs; PAIR-DOUBLE 0 on 10,648 (run, level ≥ 1) pairs, equality on 44, among them L-RED's dd_d5_F14 at level 3 (F(3) = 14 = 2·6 + 2); MOVES 0 on 32,620 (run, mover) pairs for the moves bound and on the 21,296 with level ≥ 1 for KF_x = F(l − 1); T-BOUND 0 on 5,662 runs; PATH-RISE 0 on 32,620 (run, mover) pairs; KP-MOVE outside 𝓛^R_d: no separate DATA) (P-IDEAL-ALIGN, docs/new/P-IDEAL-ALIGN.md with its fixes entry 1, docs/new/P-IDEAL-ALIGN-fixes.md; L-NEW successor 55), CHECKER PASS (docs/checker/C125.md, checker PENDING)
+### R113 [refereed-only] In the IDEAL model of RESULTS R104 (premise: R104's definition of the model only, no theorem of R104 used; RESULTS R105's ENC and MONO only; and RESULTS R110's definition of 𝓛^R_d only), on acyclic Ξ-graphs, with T the number of steps of a run, Mv_t the movers of step t, moves(x) the number of steps t with x ∈ Mv_t, KP_s(x) the option of x with the least key under s, KF_x the number of steps t with KP_(s_t)(x) ≠ KP_(s_(t−1))(x), for two distinct movers u, w of one level a flip of (u, w) at step t a change between s_(t−1) and s_t of the order of the keys of their current options, on 𝓛^R_d F(l) the number of steps at which the pair (2l, 2l + 1) flips, for 1 ≤ l ≤ d − 1 c_l(s) the option index k for which mover 2(l − 1) + k has the smaller current key under s, γ_l(j) := [g(2l, j) < g(2l + 1, j)] with g(x, k) the gate index of option (x, k), cv_s(z) the integer value of z's current option (R105 ENC) and P(z) the number of maximal Ξ-paths from z (one option chosen at every mover on the way, ending at the exit X): (ALIGN) on 𝓛^R_d, for 1 ≤ l ≤ d − 1 and every state s of a run, both movers 2l and 2l + 1 have KP_s = c_l(s), each of them that moves at step t moves to option c_l(s_t), and the order of their keys under s is [s(2l) = c_l(s)] if s(2l) ≠ s(2l + 1) and γ_l(j) if both are on option j; (KP-MOVE) at any degree elsewhere, a mover x of degree 2 that moves at step t moves to KP_(s_t)(x), so moves(x) ≤ 1 + KF_x; (F0) on 𝓛^R_d each level-0 mover moves at most once and F(0) ≤ 2; (PAIR-DOUBLE) on 𝓛^R_d, F(l) ≤ 2F(l − 1) + 2 for 1 ≤ l ≤ d − 1; (MOVES) on 𝓛^R_d, KF_x = F(l − 1) and moves(x) ≤ 1 + F(l − 1) for every mover x of level l ≥ 1; (T-BOUND) on 𝓛^R_d, F(l) ≤ 2^(l+2) − 2 and T ≤ 2d + 2(F(0) + … + F(d − 2)) ≤ 2^(d+2) − 2d − 4; (PATH-RISE) at any degree, the current value cv(z) of every mover z rises at most P(z) − 1 times in a run (2026-11-06) — a STRUCTURE / EXPONENTIAL-BOUND statement inside the IDEAL model on the key side of 2-wide ladders, improving RESULTS R108's bound T ≤ 3^d − 1 to T ≤ 2^(d+2) − 2d − 4 on 𝓛^R_d (strictly for d ≥ 3; equal at d = 1, 2); bounds nothing polynomially; the bound F(l) ≤ F(l − 1) + 1 for γ_l(0) ≠ γ_l(1) (machine-checked only) and the conjectures PAIR-LIN and DBL-O(1) are not claimed; Ξ-cyclic genomes and genomes outside 𝓛^R_d (outside PATH-RISE and KP-MOVE) are not covered; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim (DATA, experiments/new/box178/aligncheck.py on the 184 in-tree 𝓛^R_d genome files of experiments/new/box150 to box177 from their stored starts and 300 random 𝓛^R_d genomes, 5,662 runs: ALIGN (a) and (c) 0 violations on 22,472 (state, level ≥ 1) pairs and (b) on the 11,824 of them with t ≥ 1; F0 0 on 5,662 runs for F(0) ≤ 2 and on the 11,324 (run, level-0 mover) pairs for the level-0 movers moving at most once; PAIR-DOUBLE 0 on 10,648 (run, level ≥ 1) pairs, equality on 44, among them L-RED's dd_d5_F14 at level 3 (F(3) = 14 = 2·6 + 2); MOVES 0 on the 21,296 (run, mover of level ≥ 1) pairs, for the moves bound and for KF_x = F(l − 1); T-BOUND 0 on 5,662 runs; PATH-RISE 0 on 32,620 (run, mover) pairs; KP-MOVE outside 𝓛^R_d: no separate DATA) (P-IDEAL-ALIGN, docs/new/P-IDEAL-ALIGN.md with its fixes entry 1, docs/new/P-IDEAL-ALIGN-fixes.md; L-NEW successor 55), CHECKER PASS (docs/checker/C125.md, checker PENDING)
 - Object (L-NEW successor 55, Opus 5.5, D14 / D18 / D20, box 178; frozen, unchanged during review): packet P-IDEAL-ALIGN,
   docs/new/P-IDEAL-ALIGN.md, sha1 d8acdececb507bfad476341411bddd579fcc5b00, 180 lines (l-new freeze cb8e0dca, 2026-11-06T03:24:15Z;
-  identical at c787aab1 and b38726b4). Both referees measured the sha1 (REFEREE l. 5 «docs/new/P-IDEAL-ALIGN.md: sha1
-  d8acdececb507bfad476341411bddd579fcc5b00, 180 lines;»; REFEREE-2 l. 6 «docs/new/P-IDEAL-ALIGN.md sha1
+  identical at c787aab1, b38726b4, e0d49b59 and the l-new head 8ccb3af0). Both referees measured the sha1 (REFEREE l. 5
+  «docs/new/P-IDEAL-ALIGN.md: sha1 d8acdececb507bfad476341411bddd579fcc5b00, 180 lines;»; REFEREE-2 l. 6 «docs/new/P-IDEAL-ALIGN.md sha1
   d8acdececb507bfad476341411bddd579fcc5b00, 180 lines;»). Labels (l. 6-7): «Labels: PROVED (L-NEW 55, unrefereed) / DATA / READING (not
   to sign). Not a TARGET.md claim. Every statement is about the IDEAL model of RESULTS R104 only. The bounds proved are exponential.» To
   sign (table l. 9-17): §2 ALIGN, §3 KP-MOVE and F0, §4 PAIR-DOUBLE, §5 MOVES and T-BOUND, §6 PATH-RISE; §7 «DATA / READING (not to
@@ -358,34 +407,45 @@ r2align_seed178.out) → ddca4cc7 (Addendum 1, +18 lines). CHECKER: 89764538 (C1
   Fixes: docs/new/P-IDEAL-ALIGN-fixes.md, append-only, entry 1 (c787aab1; 49 lines, sha1 25b050ee187559f757c02eca97ed4f32d0c28b8f): F-a
   checks the two DATA ranges of the line against aligncheck.py's counter code; F-b labels the T^R values of §5's «Does NOT claim» as
   lane DATA used by no statement; F-c defines g in the line and qualifies «improving»; line L-2. Entry 1: «Both sign all seven
-  statements; no statement, proof or hypothesis changes here. This entry carries no proof.» (l. 5-6).
-  The RESULTS line is L-2, cb5f0398431cc1a5122e13327e7bbae9f9985e51 (docs/new/P-IDEAL-ALIGN-line-L2.txt, l-new c787aab1,
-  2026-11-06T05:31:56Z, the file's only commit; 3,330 bytes). The title is L-2 verbatim, with nothing inserted (its date parenthesis
-  «(2026-11-06)» and its source note are the line's own; the source note names the packet, which carries every proof, and the fixes
-  file, which carries none). L-2's parentheses balance (76 «(» / 76 «)»). Line history: L-1 (e46b0417, cb8e0dca, frozen with the
-  packet); L-2 (cb5f0398, c787aab1, fixes entry 1: L-1 with exactly five replacements R1-R5, fixes l. 33-37: the ALIGN and MOVES DATA
-  ranges narrowed to the counter code (AL-L1), g defined in γ_l (P-1), «improving» qualified «(strictly for d ≥ 3; equal at d = 1, 2)»
-  (P-2 = AL-L2), the fixes file named in the source note; L-1 with R1-R5 equals L-2 byte for byte, by my script). L-2 MATCHES at both
-  referees, each after its own byte test: REFEREE (0e2c354f) §C l. 147 «L-1 + R1..R5, each old string once, gives sha1 cb5f0398…, 3,330
-  bytes: EQUAL to L-2.», l. 151 «L-2 MATCHES.»; REFEREE-2 (ddca4cc7) Addendum 1 l. 105 «**Line L-2: MATCHES.**», l. 106 «applying them
-  gives a string byte-identical to L-2 (3,330 B)». Both diffed every definition of L-1 against packet §0 (REFEREE §5 l. 95; REFEREE-2 l.
-  73-75); L-2 adds the definition of g and changes no other definition.
-- Claims signed (REFEREE successor 24 «(Opus 5.5, D15)», report 6f0daf60, §C 0e2c354f; REFEREE-2 successor 28 «(Opus 5.5, D12/D20)»,
-  report ea08029d, Addendum 1 ddca4cc7). Items (a)-(g) are SIGN in both verdict tables (REFEREE "## 0. Verdicts" l. 10-18 of
-  R-P-IDEAL-ALIGN.md; REFEREE-2 "## Verdicts" l. 11-20 of R2-P-IDEAL-ALIGN.md) and stand in both second rounds (REFEREE §C l. 153 «All
-  seven statements stay SIGNED. Open items of mine: none.»; REFEREE-2 Add. 1 l. 107 «My seven SIGNs stand.»). REFEREE-2 l. 20 «No gap.
-  No REFUSE.». Every item is about R104's IDEAL model on acyclic Ξ-graphs; (a), (c), (d), (e) and (f) on 𝓛^R_d (RESULTS R110's 2-wide
-  degree-2 ladders: movers 2l and 2l + 1 on level l, all of degree 2, no other movers, option k of a mover of level l ≥ 1 W-pointing to
-  mover 2(l − 1) + k); (b) for a mover of degree 2 of any acyclic genome; (g) at any degree and width. Notation (packet §0 l. 49-65):
-  T the number of steps, Mv_t := {x : s_t(x) ≠ s_(t−1)(x)}; moves(x) := #{t ∈ [1, T] : x ∈ Mv_t} (the binder of Erratum E-2 (E2c));
-  KP_s(x) the option k of x with the least key_s(x, k) (unique by (F1)), KF_x := #{t ∈ [1, T] : KP_(s_t)(x) ≠ KP_(s_(t−1))(x)}; for u ≠
-  w of one level ord_s(u, w) := [key_s(u, s(u)) < key_s(w, s(w))], a flip of (u, w) at t a change of ord between s_(t−1) and s_t,
-  flips(u, w) their number; on 𝓛^R_d, F(l) := flips(2l, 2l + 1), and for 1 ≤ l ≤ d − 1, p := 2l, q := 2l + 1, b_l(s) := ord_s(2l − 2,
-  2l − 1), c_l(s) := 0 if b_l(s) is true, else 1, γ_l(j) := [g(p, j) < g(q, j)] with g the gate index; v_s(x, k) := Σ over the β's of
-  Ξ_s(x, k) of ±2^rank (+ for even parity), cv_s(x) := v_s(x, s(x)); P(z) the number of maximal Ξ-paths from z, a maximal Ξ-path being
-  a sequence of options (y_0, k_0), …, (y_r, k_r) with y_0 = z, y_(i+1) = xt(y_i, k_i) and xt(y_r, k_r) = X. (F1) the keys of two
-  distinct options of one level differ; (F2) if x ∈ Mv_t, then s_t(x) is available and strictly better under s_(t−1), and at degree 2
-  s_(t−1)(x) is x's other option (l. 50-53).
+  statements; no statement, proof or hypothesis changes here. This entry carries no proof.» (l. 5-6). Entry 2 (L-NEW successor 56,
+  e0d49b59, l. 51-72; the file then 72 lines, sha1 64e83e68e4a3642b724b2a5d3b712bec4162c21a, l. 1-49 unchanged) answers CHECKER C125
+  E-1: R6 and R7 (l. 61-64) are C125 §4's two replacements; line L-3. Entry 2: «No statement, proof or other DATA changes; the packet
+  and entry 1 stay as they are.» (l. 54).
+  The RESULTS line is L-3, 4d28b1f36f610c6ecda7ab48891edb5feae97d66 (docs/new/P-IDEAL-ALIGN-line-L3.txt, l-new e0d49b59,
+  2026-11-06T12:29:03Z, the file's only commit; unchanged at the l-new head 8ccb3af0; 3,422 bytes). The title is L-3 verbatim, with
+  nothing inserted (its date parenthesis «(2026-11-06)» and its source note are the line's own; the source note names the packet, which
+  carries every proof, and the fixes file, which carries none). L-3's parentheses balance (78 «(» / 78 «)»). Line history: L-1
+  (e46b0417, cb8e0dca, frozen with the packet); L-2 (cb5f0398, c787aab1, fixes entry 1: L-1 with exactly five replacements R1-R5, fixes
+  l. 33-37: the ALIGN and MOVES DATA ranges narrowed to the counter code (AL-L1), g defined in γ_l (P-1), «improving» qualified
+  «(strictly for d ≥ 3; equal at d = 1, 2)» (P-2 = AL-L2), the fixes file named in the source note; L-1 with R1-R5 equals L-2 byte for
+  byte, by my script; L-2 matched at both referees, each after its own byte test: REFEREE (0e2c354f) §C l. 147 «L-1 + R1..R5, each old
+  string once, gives sha1 cb5f0398…, 3,330 bytes: EQUAL to L-2.», l. 151 «L-2 MATCHES.»; REFEREE-2 (ddca4cc7) Addendum 1 l. 105 «**Line
+  L-2: MATCHES.**», l. 106 «applying them gives a string byte-identical to L-2 (3,330 B)»); L-3 (4d28b1f3, e0d49b59, fixes entry 2: L-2
+  with exactly two replacements R6, R7, fixes l. 61-64, which are CHECKER C125 §4's (E-1): F0's DATA now names both its sets, «for F(0)
+  ≤ 2» on the 5,662 runs and «the 11,324 (run, level-0 mover) pairs for the level-0 movers moving at most once», and MOVES' DATA is
+  narrowed to «the 21,296 (run, mover of level ≥ 1) pairs», MOVES' own scope; L-2 with R6, R7 equals L-3 byte for byte, by my script).
+  L-3 MATCHES at both referees, each after its own byte test against C125 §4's two pairs: REFEREE (20048c1a) §C add. 1 l. 163 «L-3 is
+  byte-EQUAL to it.», l. 172 «Verdict: L-3 MATCHES. All seven statements stay SIGNED.»; REFEREE-2 (a4d3bc41) Addendum 2 l. 116 «**Line
+  L-3: MATCHES.**», l. 116-117 «applying them gives a string byte-identical to L-3 (3,422 B)». Both diffed every definition of L-1
+  against packet §0 (REFEREE §5 l. 95; REFEREE-2 l. 73-75); L-2 adds the definition of g and changes no other definition; L-3 changes no
+  definition and no claim (R6 and R7 lie inside its DATA parenthesis).
+- Claims signed (REFEREE successor 24 «(Opus 5.5, D15)», report 6f0daf60, §C 0e2c354f, §C add. 1 20048c1a; REFEREE-2 successor 28 «(Opus
+  5.5, D12/D20)», report ea08029d, Addendum 1 ddca4cc7, Addendum 2 a4d3bc41). Items (a)-(g) are SIGN in both verdict tables (REFEREE "##
+  0. Verdicts" l. 10-18 of R-P-IDEAL-ALIGN.md; REFEREE-2 "## Verdicts" l. 11-20 of R2-P-IDEAL-ALIGN.md) and stand in both second rounds
+  (REFEREE §C l. 153 «All seven statements stay SIGNED. Open items of mine: none.»; REFEREE-2 Add. 1 l. 107 «My seven SIGNs stand.») and
+  in both third rounds, on L-3 (REFEREE §C add. 1 l. 172 «All seven statements stay SIGNED.»; REFEREE-2 Add. 2 l. 117 «My seven SIGNs
+  stand.»). REFEREE-2 l. 20 «No gap. No REFUSE.». Every item is about R104's IDEAL model on acyclic Ξ-graphs; (a), (c), (d), (e) and (f)
+  on 𝓛^R_d (RESULTS R110's 2-wide degree-2 ladders: movers 2l and 2l + 1 on level l, all of degree 2, no other movers, option k of a
+  mover of level l ≥ 1 W-pointing to mover 2(l − 1) + k); (b) for a mover of degree 2 of any acyclic genome; (g) at any degree and
+  width. Notation (packet §0 l. 49-65): T the number of steps, Mv_t := {x : s_t(x) ≠ s_(t−1)(x)}; moves(x) := #{t ∈ [1, T] : x ∈ Mv_t}
+  (the binder of Erratum E-2 (E2c)); KP_s(x) the option k of x with the least key_s(x, k) (unique by (F1)), KF_x := #{t ∈ [1, T] :
+  KP_(s_t)(x) ≠ KP_(s_(t−1))(x)}; for u ≠ w of one level ord_s(u, w) := [key_s(u, s(u)) < key_s(w, s(w))], a flip of (u, w) at t a
+  change of ord between s_(t−1) and s_t, flips(u, w) their number; on 𝓛^R_d, F(l) := flips(2l, 2l + 1), and for 1 ≤ l ≤ d − 1, p := 2l,
+  q := 2l + 1, b_l(s) := ord_s(2l − 2, 2l − 1), c_l(s) := 0 if b_l(s) is true, else 1, γ_l(j) := [g(p, j) < g(q, j)] with g the gate
+  index; v_s(x, k) := Σ over the β's of Ξ_s(x, k) of ±2^rank (+ for even parity), cv_s(x) := v_s(x, s(x)); P(z) the number of maximal
+  Ξ-paths from z, a maximal Ξ-path being a sequence of options (y_0, k_0), …, (y_r, k_r) with y_0 = z, y_(i+1) = xt(y_i, k_i) and
+  xt(y_r, k_r) = X. (F1) the keys of two distinct options of one level differ; (F2) if x ∈ Mv_t, then s_t(x) is available and strictly
+  better under s_(t−1), and at degree 2 s_(t−1)(x) is x's other option (l. 50-53).
   (a) Lemma ALIGN (§2 l. 68-82) [G ∈ 𝓛^R_d; 1 ≤ l ≤ d − 1; any run; s any state, t any step]: «(a) KP_s(p) = KP_s(q) = c_l(s).»; «(b)
       If x ∈ {p, q} and x ∈ Mv_t, then s_t(x) = c_l(s_t).»; «(c) ord_s(p, q) = [s(p) = c_l(s)] if s(p) ≠ s(q), and ord_s(p, q) = γ_l(j)
       if s(p) = s(q) = j.». In the line these are, in order, the ALIGN clause's three parts (its DATA calls them (a), (c) and (b)).
@@ -432,7 +492,7 @@ r2align_seed178.out) → ddca4cc7 (Addendum 1, +18 lines). CHECKER: 89764538 (C1
       distinct maximal Ξ-paths first differ at a mover y both visit, with different options there, and each visits y once (acyclic), so
       their β-sets differ, hence (ENC) their integers differ; so cv(z) takes at most P(z) values, and by MONO it never decreases. Cells:
       REFEREE l. 16 «SIGN»; REFEREE-2 l. 18 «**SIGN** (Opus 5.5, D12)».
-  The RESULTS line (L-2) states (a)-(g) with their exact hypotheses, and nothing wider.
+  The RESULTS line (L-3) states (a)-(g) with their exact hypotheses, and nothing wider.
 - Premise: RESULTS R104's definition of the IDEAL model and of the Ξ-graph (no R104 theorem), restated in packet §0 (REFEREE-2 l. 23-24
   diffed the restatement against RESULTS R104 l. 9864); RESULTS R105's ENC and MONO, each quoted verbatim by the packet (l. 21-24:
   «(ENC) the Ξ-order of β-sets is the order of the integers Σ ±2^rank (+ for even parity), so, with ε(x, k) := ±2^rank(x, k) (+ for even
@@ -440,7 +500,7 @@ r2align_seed178.out) → ddca4cc7 (Addendum 1, +18 lines). CHECKER: 89764538 (C1
   and «(MONO) the current Ξ-value of every mover never decreases along a run»), each 1 hit in RESULTS (R105's title, l. 10155),
   whitespace normalised; and RESULTS R110's definition of 𝓛^R_d, quoted verbatim by the packet (l. 27-29: «the 2-wide degree-2 ladders
   in L-RED's R197 convention (movers 2l and 2l + 1 on level l, all of degree 2, no other movers, option k of a mover of level l ≥ 1
-  W-pointing to mover 2(l − 1) + k)»), found in R110's title (l. 11323) and quoted from there in R112's body. L-2: «premise: R104's
+  W-pointing to mover 2(l − 1) + k)»), found in R110's title (l. 11323) and quoted from there in R112's body. L-3: «premise: R104's
   definition of the model only, no theorem of R104 used; RESULTS R105's ENC and MONO only; and RESULTS R110's definition of 𝓛^R_d only».
   Use: ENC and MONO in PATH-RISE only; R110's wiring in ALIGN (a) and through it in F0, PAIR-DOUBLE, MOVES and T-BOUND. Not used: R105
   KEYFLIP (KP-MOVE re-proves its degree-2 argument), R105 LOCAL and every other R105 item, R106-R109, RESULTS R111 (P-IDEAL-KEYS; its
@@ -452,8 +512,9 @@ r2align_seed178.out) → ddca4cc7 (Addendum 1, +18 lines). CHECKER: 89764538 (C1
 - L41 and L43. The proofs are L-NEW successor 55's (packet l. 2, 6); the fixes entry carries none; the referees' align_probe.py and
   r2align.py are checking tools. Nothing referee-written is a proof step of the entry (my reading; neither referee mentions L41). No
   DEAD item; L43 does not bear.
-- Fixes (docs/new/P-IDEAL-ALIGN-fixes.md, L-NEW successor 55, append-only; entry 1 at c787aab1, 49 lines, sha1
-  25b050ee187559f757c02eca97ed4f32d0c28b8f), after REFEREE 6f0daf60 and REFEREE-2 ea08029d:
+- Fixes (docs/new/P-IDEAL-ALIGN-fixes.md, append-only; entry 1 by L-NEW successor 55 at c787aab1, 49 lines, sha1
+  25b050ee187559f757c02eca97ed4f32d0c28b8f, after REFEREE 6f0daf60 and REFEREE-2 ea08029d; entry 2 by L-NEW successor 56 at e0d49b59, l.
+  51-72, the file then 72 lines, sha1 64e83e68e4a3642b724b2a5d3b712bec4162c21a, l. 1-49 unchanged, after CHECKER C125 E-1):
   - F-a (l. 8-16, AL-L1): LAND (ALIGN (b)) is counted under «if t and …» (aligncheck.py l. 52), so (b) covers 22,472 − 10,648 = 11,824
     pairs; KFF (KF_x = F(l − 1)) under «if l >= 1 and …» (l. 67), so it covers 32,620 − 2·5,662 = 21,296 pairs; packet §7's MOVES count
     is to be read with that split. REFEREE §C l. 135-137 «F-a (AL-L1): CORRECT.»; REFEREE-2 Add. 1 l. 96-101 («These are finer than my
@@ -465,7 +526,13 @@ r2align_seed178.out) → ddca4cc7 (Addendum 1, +18 lines). CHECKER: 89764538 (C1
     strictly smaller (22 < 26). REFEREE §C l. 143-145; REFEREE-2 Add. 1 l. 104.
   - Line L-2 (l. 29-49): L-1 «with exactly these five replacements, applied by script» (l. 31), R1-R5 (l. 33-37) and the word diff (l.
     38-49).
-  No fix changes a statement, a proof or a hypothesis; F-a and F-b re-read packet text; F-c and R1-R5 change the line's wording only.
+  - Entry 2 (l. 51-72; CHECKER C125 E-1, relayed by the Lead at 12:14Z, l. 52-54): the count check (l. 55-58) reads aligncheck.out and
+    aligncheck.py: the level-0 bound «moves(x) ≤ 1» is counted by MOV (l. 57, quoting aligncheck.py l. 68), not by F0 (F(0) ≤ 2 per
+    run), on 32,620 − 21,296 = 11,324 (run, level-0 mover) pairs; line L-3 (l. 59-64): L-2 «with exactly two replacements, applied by
+    script» (l. 60), R6 (l. 61-62) and R7 (l. 63-64), and the word diff (l. 65-72). REFEREE §C add. 1 l. 165-167 (true against
+    aligncheck.py's counters), l. 172; REFEREE-2 Add. 2 l. 113 «**Fixes entry 2: CORRECT.**».
+  No fix changes a statement, a proof or a hypothesis; F-a and F-b re-read packet text, entry 2's count check re-reads the tool and its
+  output; F-c, R1-R5 and R6, R7 change the line's wording only (R6, R7 inside its DATA parenthesis).
 - Not signed: packet §7 (DATA, machine checks, EXCLUDED, TARGET diff, READING; «DATA / READING (not to sign)», l. 17), in particular
   the bound F(l) ≤ F(l − 1) + 1 when γ_l(0) ≠ γ_l(1), «machine-checked only, by exhaustive DP over the 8-state automaton (a_p, a_q, b)
   for F(l − 1) ≤ 30» (l. 171-172), and the READING l. 178-180; §5's T^R values (lane DATA, F-b). OPEN, not claimed: CONJECTURE DBL-O(1)
@@ -501,26 +568,29 @@ r2align_seed178.out) → ddca4cc7 (Addendum 1, +18 lines). CHECKER: 89764538 (C1
   PAIR-MOVES; «P(z)» counts maximal Ξ-paths, not R99's P(z); «AL-L1», «AL-L2», «AL-P1» (REFEREE) and «P-1», «P-2» (REFEREE-2) are this
   packet's referee labels, not R104's AL-items; dd_d5_F14 is the genome of R109's LIFT champion and of R111 (sha1 06f0e501…). (ix) The
   tightness instance is L-RED's genome (dd_d5_F14), used here only to show PAIR-DOUBLE tight; T is R104's number of steps.
-- Data (DATA, not proof): experiments/new/box178/aligncheck.py (l-new cb8e0dca, sha1 9335dee71554491004b5f7567bb1a6784c5292dd, 93
-  lines; deterministic, seed 178; simulator: experiments/new/box150/check.py's Gen), output frozen in experiments/new/box178/aligncheck.out
+- Data (DATA, not proof): experiments/new/box178/aligncheck.py (l-new cb8e0dca, sha1 9335dee71554491004b5f7567bb1a6784c5292dd, 93 lines;
+  deterministic, seed 178; simulator: experiments/new/box150/check.py's Gen), output frozen in experiments/new/box178/aligncheck.out
   (sha1 b653b01bbdca19c8e0c7d406b1bd2470c35c55fc, 4 lines) and wired into experiments/new/check.sh block «P-IDEAL-ALIGN» (l. 919-927 at
-  c787aab1, with sha1 pins of the packet, L-1, aligncheck.py, aligncheck.out, dd_d5_F14, the fixes and L-2; unchanged at b38726b4).
-  L-2's DATA parenthesis: «(DATA, experiments/new/box178/aligncheck.py on the 184 in-tree 𝓛^R_d genome files of experiments/new/box150
-  to box177 from their stored starts and 300 random 𝓛^R_d genomes, 5,662 runs: ALIGN (a) and (c) 0 violations on 22,472 (state, level ≥
-  1) pairs and (b) on the 11,824 of them with t ≥ 1; F0 0 on 5,662 runs; PAIR-DOUBLE 0 on 10,648 (run, level ≥ 1) pairs, equality on
-  44, among them L-RED's dd_d5_F14 at level 3 (F(3) = 14 = 2·6 + 2); MOVES 0 on 32,620 (run, mover) pairs for the moves bound and on
-  the 21,296 with level ≥ 1 for KF_x = F(l − 1); T-BOUND 0 on 5,662 runs; PATH-RISE 0 on 32,620 (run, mover) pairs; KP-MOVE outside
-  𝓛^R_d: no separate DATA)». What each count covers (aligncheck.py, read by me): KPEQ and ORD every (state, level ≥ 1) pair of every
-  run (22,472); LAND the (s_t, level ≥ 1) pairs with t ≥ 1 (11,824), testing each mover of the pair that moved at step t; F0 F(0) ≤ 2
-  per run (5,662); DBL F(l) ≤ 2F(l − 1) + 2 per (run, level ≥ 1) (10,648), «dbltight» its equalities (44); KFF KF_x = F(l − 1) per
-  (run, mover of level ≥ 1) (21,296); MOV moves(x) ≤ 1 + F(l − 1) at level ≥ 1 and moves(x) ≤ 1 at level 0, per (run, mover) (32,620 =
-  21,296 + 11,324); TB T ≤ 2d + 2 Σ_(l ≤ d−2) F(l) and T ≤ 2^(d+2) − 2d − 4 per run (5,662); PATH the rises of cv(z) against P(z) per
-  (run, mover) (32,620). The block's outputs, reproduced by both referees at cb8e0dca (REFEREE §3 l. 86-87 «aligncheck.py regenerates
-  aligncheck.out identically»; REFEREE-2 l. 65-66, «exit 0») and re-run for this draft (2026-11-06T11:07:03Z from a `git archive` of
-  c787aab1's experiments/new and docs/new, rc 0, PASS line ending «fixes 25b050ee, line L-2 cb5f0398: PASS»; aligncheck.py's output
-  byte-equal to aligncheck.out): «SCOPE corpus files 184 random 300»; «COUNTS runs 5662 steps 5602 statelevels 22472 runlevels 10648
-  runmovers 32620 dbltight 44»; «KPEQ 0 LAND 0 ORD 0 DBL 0 F0 0 KFF 0 MOV 0 TB 0 PATH 0»; «TIGHT dd_d5_F14 LR True T 14 F [2, 3, 6,
-  14, 7] F(3) = 2F(2) + 2 True».
+  e0d49b59, with sha1 pins of the packet, L-1, aligncheck.py, aligncheck.out, dd_d5_F14, the fixes (64e83e68), L-2 and L-3; at c787aab1
+  the same block pinned the fixes at 25b050ee and no L-3; l. 919-926 byte-equal at the l-new head 8ccb3af0). L-3's DATA parenthesis:
+  «(DATA, experiments/new/box178/aligncheck.py on the 184 in-tree 𝓛^R_d genome files of experiments/new/box150 to box177 from their
+  stored starts and 300 random 𝓛^R_d genomes, 5,662 runs: ALIGN (a) and (c) 0 violations on 22,472 (state, level ≥ 1) pairs and (b) on
+  the 11,824 of them with t ≥ 1; F0 0 on 5,662 runs for F(0) ≤ 2 and on the 11,324 (run, level-0 mover) pairs for the level-0 movers
+  moving at most once; PAIR-DOUBLE 0 on 10,648 (run, level ≥ 1) pairs, equality on 44, among them L-RED's dd_d5_F14 at level 3 (F(3) =
+  14 = 2·6 + 2); MOVES 0 on the 21,296 (run, mover of level ≥ 1) pairs, for the moves bound and for KF_x = F(l − 1); T-BOUND 0 on 5,662
+  runs; PATH-RISE 0 on 32,620 (run, mover) pairs; KP-MOVE outside 𝓛^R_d: no separate DATA)». What each count covers (aligncheck.py, read
+  by me): KPEQ and ORD every (state, level ≥ 1) pair of every run (22,472); LAND the (s_t, level ≥ 1) pairs with t ≥ 1 (11,824), testing
+  each mover of the pair that moved at step t; F0 F(0) ≤ 2 per run (5,662); DBL F(l) ≤ 2F(l − 1) + 2 per (run, level ≥ 1) (10,648),
+  «dbltight» its equalities (44); KFF KF_x = F(l − 1) per (run, mover of level ≥ 1) (21,296); MOV moves(x) ≤ 1 + F(l − 1) at level ≥ 1
+  and moves(x) ≤ 1 at level 0, per (run, mover) (32,620 = 21,296 + 11,324); TB T ≤ 2d + 2 Σ_(l ≤ d−2) F(l) and T ≤ 2^(d+2) − 2d − 4 per
+  run (5,662); PATH the rises of cv(z) against P(z) per (run, mover) (32,620). The block's outputs, reproduced by both referees at
+  cb8e0dca (REFEREE §3 l. 86-87 «aligncheck.py regenerates aligncheck.out identically»; REFEREE-2 l. 65-66, «exit 0») and re-run for
+  this draft at the first fill (2026-11-06T11:07:03Z from a `git archive` of c787aab1's experiments/new and docs/new, rc 0, PASS line
+  ending «fixes 25b050ee, line L-2 cb5f0398: PASS») and at the second fill (2026-11-06T15:09:44Z from a `git archive` of e0d49b59's
+  experiments/new and docs/new, rc 0, PASS line ending «fixes 64e83e68, line L-2 cb5f0398, line L-3 4d28b1f3: PASS»; aligncheck.py's
+  output byte-equal to aligncheck.out both times): «SCOPE corpus files 184 random 300»; «COUNTS runs 5662 steps 5602 statelevels 22472
+  runlevels 10648 runmovers 32620 dbltight 44»; «KPEQ 0 LAND 0 ORD 0 DBL 0 F0 0 KFF 0 MOV 0 TB 0 PATH 0»; «TIGHT dd_d5_F14 LR True T 14
+  F [2, 3, 6, 14, 7] F(3) = 2F(2) + 2 True».
   REFEREE (successor 24; own docs/referee/scratch/align_probe.py on its simulator t3r_sim.py, logs align_logs/corpus.txt and
   random.txt): l. 78-81 (14,534 runs, 0 violations of every check). REFEREE-2 (successor 28; own docs/referee-2/R2-P-IDEAL-ALIGN/r2align.py
   on r2sim.py, output r2align_seed178.out): l. 55-63 (28,039 runs, 0 violations). No signed statement uses any count.
@@ -529,21 +599,31 @@ r2align_seed178.out) → ddca4cc7 (Addendum 1, +18 lines). CHECKER: 89764538 (C1
   align_logs/): every statement SIGN, L-1 NOT YET (AL-L1), optional AL-L2 and AL-P1 (l. 10-18, 67-71, 101-117); §C
   0e2c354f1340fc2f06fd946c1f0dc6df4ebc052b (2026-11-06T05:51:24Z, 153 lines, sha1 9e4df3674e2936086759280107792dbd0a3c6119; l. 1-127 =
   6f0daf60's, by cmp): F-a, F-b, F-c CORRECT, the byte test of L-2 (l. 146-149), «L-2 MATCHES.» (l. 151), «Fixes entry 1 is CORRECT.»
-  (l. 152), «All seven statements stay SIGNED. Open items of mine: none.» (l. 153). REFEREE-2 docs/referee-2/R2-P-IDEAL-ALIGN.md:
-  successor 28's report ea08029d31661ec9ea399e61055d33d5d42e6781 (2026-11-06T04:16:35Z, new file, 89 lines, sha1
+  (l. 152), «All seven statements stay SIGNED. Open items of mine: none.» (l. 153); §C add. 1 20048c1a842f1ae83ab71c1c12e5cd0d797a4286
+  (2026-11-06T13:22:51Z, 172 lines, sha1 6b25e41b871600198a1e877181b87e832a1c6e54; l. 1-153 = 0e2c354f's, by cmp): the byte test of L-3
+  against C125 §4 (l. 160-164), the content against aligncheck.py's counters (l. 165-167), «MY MISS (recorded)» on C125 E-1 (ii) (l.
+  168-171), «Verdict: L-3 MATCHES. All seven statements stay SIGNED.» (l. 172). REFEREE-2 docs/referee-2/R2-P-IDEAL-ALIGN.md: successor
+  28's report ea08029d31661ec9ea399e61055d33d5d42e6781 (2026-11-06T04:16:35Z, new file, 89 lines, sha1
   b6fcce64bf2cfdf2b2d735b652f4fb6ee29ec4b6, with R2-P-IDEAL-ALIGN/r2align.py and r2align_seed178.out): every statement SIGN, «No gap. No
   REFUSE.», L-1 MATCHES with optional P-1, P-2 (l. 10-20, 85-89); Addendum 1 ddca4cc7ee74887c22f533e94286313ba594484a
   (2026-11-06T05:51:29Z, 107 lines, sha1 4177f480861d27fe24ee78e643c5a7580c86dca9; l. 1-89 = ea08029d's, by cmp): «**Fixes entry 1:
-  CORRECT.**» (l. 95), «**Line L-2: MATCHES.**» after its byte test (l. 105-106), «My seven SIGNs stand.» (l. 107). Lane: freeze and
-  L-1 cb8e0dca169be4ee1f06508b7105334746cac4f2, fixes entry 1 and L-2 c787aab1e33ce464e59281df29d2f4037f5ffa38.
+  CORRECT.**» (l. 95), «**Line L-2: MATCHES.**» after its byte test (l. 105-106), «My seven SIGNs stand.» (l. 107); Addendum 2
+  a4d3bc41d1de50e2a61b678ba16a4e2b3ca55da0 (2026-11-06T13:22:46Z, stamped «13:12Z by date -u» in its heading, 117 lines, sha1
+  92b0c061f2fa5117c47e56f22e191ccb7c5248c3; l. 1-107 = ddca4cc7's, by cmp): «**Fixes entry 2: CORRECT.**» (l. 113), «**Line L-3:
+  MATCHES.**» after its byte test (l. 116-117), «My seven SIGNs stand.» (l. 117). Lane: freeze and L-1
+  cb8e0dca169be4ee1f06508b7105334746cac4f2, fixes entry 1 and L-2 c787aab1e33ce464e59281df29d2f4037f5ffa38, fixes entry 2 and L-3
+  e0d49b596cd7878d9812bcf8783c851a0daed0f3.
   INDEPENDENCE: REFEREE l. 2-3 «Independent: I did not open or list docs/referee-2/ on this packet before this report was pushed.»;
   REFEREE-2 l. 2-3 «Independent: docs/referee/ not read for this packet before this push.». REFEREE-2's report (04:16:35Z) precedes
   REFEREE's (04:32:55Z); neither cites the other's first report; each checked the statements with its own simulator written from R104's
   text and compared β-sets, not ENC integers. In the second round REFEREE knew REFEREE-2's items only through the fixes entry (§C l. 134
-  «I know REFEREE-2's items (P-1, P-2) only through the entry.»). Differences, resolved: REFEREE required AL-L1 on L-1, REFEREE-2 matched
-  L-1 and read ALIGN (b) inside the 22,472 (l. 81-82); REFEREE-2 accepted the finer ranges (Add. 1 l. 100-101); both raised the
+  «I know REFEREE-2's items (P-1, P-2) only through the entry.»). Differences, resolved: REFEREE required AL-L1 on L-1, REFEREE-2
+  matched L-1 and read ALIGN (b) inside the 22,472 (l. 81-82); REFEREE-2 accepted the finer ranges (Add. 1 l. 100-101); both raised the
   «improving» point (AL-L2 = P-2); REFEREE alone raised AL-P1, REFEREE-2 alone P-1. Both SIGN the same seven statements and both MATCH
-  L-2 (each byte-tested it with its own script). No disagreement in substance.
+  L-2 and L-3 (each byte-tested both with its own script, L-3 against C125 §4's two pairs: REFEREE §C add. 1 l. 161-163, REFEREE-2 Add.
+  2 l. 116-117). In the third round neither cites the other's addendum (REFEREE-2's Addendum 2 is stamped 13:12Z and REFEREE's §C add. 1
+  13:22Z; the commits a4d3bc41 and 20048c1a are 5 s apart, 13:22:46Z and 13:22:51Z); REFEREE records C125 E-1 (ii) as its own miss (§C
+  add. 1 l. 168-170 «I matched the counter, not the statement's scope.»). No disagreement in substance.
 - TARGET.md diff: TARGET.md §1-§3 define parity games («A parity game is G = (V, V_E, V_O, E, pr) with V finite»), the regions W_E, W_O,
   M4 (§2 «There is a deterministic algorithm A and a polynomial p such that for every parity game G, A on input G halts within») and the
   word-RAM cost model; no statement of this entry mentions a parity game, a winning region, an algorithm's running time or a cost model
@@ -551,21 +631,22 @@ r2align_seed178.out) → ddca4cc7 (Addendum 1, +18 lines). CHECKER: 89764538 (C1
   complexity class.» «None is an M4 or M3 claim, none bounds anything polynomially (T-BOUND is exponential), none is a gauntlet step.
   G-N5-TIME stays OPEN.»; REFEREE §4 l. 90-91 «Every statement is inside R104's IDEAL model. The bounds are exponential. Not M3, not M4,
   not a gauntlet step. G-N5-TIME OPEN.»; REFEREE-2 l. 69 «IDEAL model only; exponential bounds; no game, no algorithm, no complexity
-  class; not M3 / M4 / step 4; G-N5-TIME OPEN.»). The line (L-2) makes no M4 claim and no TARGET claim; its tail reads «a STRUCTURE /
+  class; not M3 / M4 / step 4; G-N5-TIME OPEN.»). The line (L-3) makes no M4 claim and no TARGET claim; its tail reads «a STRUCTURE /
   EXPONENTIAL-BOUND statement inside the IDEAL model on the key side of 2-wide ladders» and «G-N5-TIME stays OPEN; not M3, not a step-4
-  pass, not a TARGET.md claim» (L-2, by script). Not a step-4 pass. GAPS G-N5-TIME: open.
+  pass, not a TARGET.md claim» (L-3, by script). Not a step-4 pass. GAPS G-N5-TIME: open.
 
 Proposed GAPS line-11 UPDATE (append-only), to go AFTER R112's UPDATE of G-N5-TIME (GAPS at 1393ebbc: the last UPDATE on l. 11 is
 R112's, «UPDATE 2026-11-06 10:37Z: RESULTS R112 (P-TR3; CHECKER C123 89764538) …», before the row's closing « |»), built by script
-(upd113.py: upd112b.py's controls and procedures unchanged, R112's control added (16 controls, R97-R112, all landed, byte for byte,
-True); sentinel_build111 of upd111.py unchanged, default drops, the «(DATA, » opening; no DEAD clause; no adaptation; cross-checked
-against a direct build: True) only from the clauses of the title line L-2: the seven labels behind their clauses; « (2026-11-06) — » →
-«: »; the DATA parenthesis before the source parenthesis opened as «; DATA, …»; «G-N5-TIME stays OPEN» and «not M3, not a step-4 pass,
-not a TARGET.md claim» dropped; the source parenthesis kept; «. G-N5-TIME stays open.» at the end. L-2 holds no "|"; the UPDATE holds
-none (3,364 bytes, 75 «(» / 75 «)»; sha1 of the line without newline, placeholders unfilled:
-d4f2d7c1d7cc4076f0a19d87cd7daaa8a91b5d86). <DATE> is the landing date (YYYY-MM-DD, by date -u at the landing commit; C114 Add. 1 E-1),
+(upd113b.py: upd113.py's controls and procedure unchanged, run on L-3; upd113.py: upd112b.py's controls and procedures unchanged, R112's
+control added (16 controls, R97-R112, all landed, byte for byte, True); sentinel_build111 of upd111.py unchanged, default drops, the
+«(DATA, » opening; no DEAD clause; no adaptation; cross-checked against a direct build: True) only from the clauses of the title line
+L-3: the seven labels behind their clauses; « (2026-11-06) — » → «: »; the DATA parenthesis before the source parenthesis opened as «;
+DATA, …»; «G-N5-TIME stays OPEN» and «not M3, not a step-4 pass, not a TARGET.md claim» dropped; the source parenthesis kept; «.
+G-N5-TIME stays open.» at the end. L-3 holds no "|"; the UPDATE holds none (3,456 bytes, 77 «(» / 77 «)»; sha1 of the line without
+newline, placeholders unfilled: d57c030dcf0704177f138d9661120ecae283ade8, = C125 §4's; it equals the first fill's UPDATE (d4f2d7c1…)
+with C125 §4's two replacements, True). <DATE> is the landing date (YYYY-MM-DD, by date -u at the landing commit; C114 Add. 1 E-1),
 <HH:MM> the landing time and <checker> the CHECKER C125 commit, all filled at landing:
-UPDATE <DATE> <HH:MM>Z: RESULTS R113 (P-IDEAL-ALIGN; CHECKER C125 <checker>) [refereed-only] LANDED: In the IDEAL model of RESULTS R104 (premise: R104's definition of the model only, no theorem of R104 used; RESULTS R105's ENC and MONO only; and RESULTS R110's definition of 𝓛^R_d only), on acyclic Ξ-graphs, with T the number of steps of a run, Mv_t the movers of step t, moves(x) the number of steps t with x ∈ Mv_t, KP_s(x) the option of x with the least key under s, KF_x the number of steps t with KP_(s_t)(x) ≠ KP_(s_(t−1))(x), for two distinct movers u, w of one level a flip of (u, w) at step t a change between s_(t−1) and s_t of the order of the keys of their current options, on 𝓛^R_d F(l) the number of steps at which the pair (2l, 2l + 1) flips, for 1 ≤ l ≤ d − 1 c_l(s) the option index k for which mover 2(l − 1) + k has the smaller current key under s, γ_l(j) := [g(2l, j) < g(2l + 1, j)] with g(x, k) the gate index of option (x, k), cv_s(z) the integer value of z's current option (R105 ENC) and P(z) the number of maximal Ξ-paths from z (one option chosen at every mover on the way, ending at the exit X): on 𝓛^R_d, for 1 ≤ l ≤ d − 1 and every state s of a run, both movers 2l and 2l + 1 have KP_s = c_l(s), each of them that moves at step t moves to option c_l(s_t), and the order of their keys under s is [s(2l) = c_l(s)] if s(2l) ≠ s(2l + 1) and γ_l(j) if both are on option j (ALIGN); at any degree elsewhere, a mover x of degree 2 that moves at step t moves to KP_(s_t)(x), so moves(x) ≤ 1 + KF_x (KP-MOVE); on 𝓛^R_d each level-0 mover moves at most once and F(0) ≤ 2 (F0); on 𝓛^R_d, F(l) ≤ 2F(l − 1) + 2 for 1 ≤ l ≤ d − 1 (PAIR-DOUBLE); on 𝓛^R_d, KF_x = F(l − 1) and moves(x) ≤ 1 + F(l − 1) for every mover x of level l ≥ 1 (MOVES); on 𝓛^R_d, F(l) ≤ 2^(l+2) − 2 and T ≤ 2d + 2(F(0) + … + F(d − 2)) ≤ 2^(d+2) − 2d − 4 (T-BOUND); at any degree, the current value cv(z) of every mover z rises at most P(z) − 1 times in a run (PATH-RISE): a STRUCTURE / EXPONENTIAL-BOUND statement inside the IDEAL model on the key side of 2-wide ladders, improving RESULTS R108's bound T ≤ 3^d − 1 to T ≤ 2^(d+2) − 2d − 4 on 𝓛^R_d (strictly for d ≥ 3; equal at d = 1, 2); bounds nothing polynomially; the bound F(l) ≤ F(l − 1) + 1 for γ_l(0) ≠ γ_l(1) (machine-checked only) and the conjectures PAIR-LIN and DBL-O(1) are not claimed; Ξ-cyclic genomes and genomes outside 𝓛^R_d (outside PATH-RISE and KP-MOVE) are not covered; DATA, experiments/new/box178/aligncheck.py on the 184 in-tree 𝓛^R_d genome files of experiments/new/box150 to box177 from their stored starts and 300 random 𝓛^R_d genomes, 5,662 runs: ALIGN (a) and (c) 0 violations on 22,472 (state, level ≥ 1) pairs and (b) on the 11,824 of them with t ≥ 1; F0 0 on 5,662 runs; PAIR-DOUBLE 0 on 10,648 (run, level ≥ 1) pairs, equality on 44, among them L-RED's dd_d5_F14 at level 3 (F(3) = 14 = 2·6 + 2); MOVES 0 on 32,620 (run, mover) pairs for the moves bound and on the 21,296 with level ≥ 1 for KF_x = F(l − 1); T-BOUND 0 on 5,662 runs; PATH-RISE 0 on 32,620 (run, mover) pairs; KP-MOVE outside 𝓛^R_d: no separate DATA (P-IDEAL-ALIGN, docs/new/P-IDEAL-ALIGN.md with its fixes entry 1, docs/new/P-IDEAL-ALIGN-fixes.md; L-NEW successor 55). G-N5-TIME stays open.
+UPDATE <DATE> <HH:MM>Z: RESULTS R113 (P-IDEAL-ALIGN; CHECKER C125 <checker>) [refereed-only] LANDED: In the IDEAL model of RESULTS R104 (premise: R104's definition of the model only, no theorem of R104 used; RESULTS R105's ENC and MONO only; and RESULTS R110's definition of 𝓛^R_d only), on acyclic Ξ-graphs, with T the number of steps of a run, Mv_t the movers of step t, moves(x) the number of steps t with x ∈ Mv_t, KP_s(x) the option of x with the least key under s, KF_x the number of steps t with KP_(s_t)(x) ≠ KP_(s_(t−1))(x), for two distinct movers u, w of one level a flip of (u, w) at step t a change between s_(t−1) and s_t of the order of the keys of their current options, on 𝓛^R_d F(l) the number of steps at which the pair (2l, 2l + 1) flips, for 1 ≤ l ≤ d − 1 c_l(s) the option index k for which mover 2(l − 1) + k has the smaller current key under s, γ_l(j) := [g(2l, j) < g(2l + 1, j)] with g(x, k) the gate index of option (x, k), cv_s(z) the integer value of z's current option (R105 ENC) and P(z) the number of maximal Ξ-paths from z (one option chosen at every mover on the way, ending at the exit X): on 𝓛^R_d, for 1 ≤ l ≤ d − 1 and every state s of a run, both movers 2l and 2l + 1 have KP_s = c_l(s), each of them that moves at step t moves to option c_l(s_t), and the order of their keys under s is [s(2l) = c_l(s)] if s(2l) ≠ s(2l + 1) and γ_l(j) if both are on option j (ALIGN); at any degree elsewhere, a mover x of degree 2 that moves at step t moves to KP_(s_t)(x), so moves(x) ≤ 1 + KF_x (KP-MOVE); on 𝓛^R_d each level-0 mover moves at most once and F(0) ≤ 2 (F0); on 𝓛^R_d, F(l) ≤ 2F(l − 1) + 2 for 1 ≤ l ≤ d − 1 (PAIR-DOUBLE); on 𝓛^R_d, KF_x = F(l − 1) and moves(x) ≤ 1 + F(l − 1) for every mover x of level l ≥ 1 (MOVES); on 𝓛^R_d, F(l) ≤ 2^(l+2) − 2 and T ≤ 2d + 2(F(0) + … + F(d − 2)) ≤ 2^(d+2) − 2d − 4 (T-BOUND); at any degree, the current value cv(z) of every mover z rises at most P(z) − 1 times in a run (PATH-RISE): a STRUCTURE / EXPONENTIAL-BOUND statement inside the IDEAL model on the key side of 2-wide ladders, improving RESULTS R108's bound T ≤ 3^d − 1 to T ≤ 2^(d+2) − 2d − 4 on 𝓛^R_d (strictly for d ≥ 3; equal at d = 1, 2); bounds nothing polynomially; the bound F(l) ≤ F(l − 1) + 1 for γ_l(0) ≠ γ_l(1) (machine-checked only) and the conjectures PAIR-LIN and DBL-O(1) are not claimed; Ξ-cyclic genomes and genomes outside 𝓛^R_d (outside PATH-RISE and KP-MOVE) are not covered; DATA, experiments/new/box178/aligncheck.py on the 184 in-tree 𝓛^R_d genome files of experiments/new/box150 to box177 from their stored starts and 300 random 𝓛^R_d genomes, 5,662 runs: ALIGN (a) and (c) 0 violations on 22,472 (state, level ≥ 1) pairs and (b) on the 11,824 of them with t ≥ 1; F0 0 on 5,662 runs for F(0) ≤ 2 and on the 11,324 (run, level-0 mover) pairs for the level-0 movers moving at most once; PAIR-DOUBLE 0 on 10,648 (run, level ≥ 1) pairs, equality on 44, among them L-RED's dd_d5_F14 at level 3 (F(3) = 14 = 2·6 + 2); MOVES 0 on the 21,296 (run, mover of level ≥ 1) pairs, for the moves bound and for KF_x = F(l − 1); T-BOUND 0 on 5,662 runs; PATH-RISE 0 on 32,620 (run, mover) pairs; KP-MOVE outside 𝓛^R_d: no separate DATA (P-IDEAL-ALIGN, docs/new/P-IDEAL-ALIGN.md with its fixes entry 1, docs/new/P-IDEAL-ALIGN-fixes.md; L-NEW successor 55). G-N5-TIME stays open.
 
 Addendum (subagent, for the Lead; does not land; written 2026-11-06T11:20:49Z by date -u). (1) FIRST FILL on line L-2 (l-new c787aab1,
 sha1 cb5f0398…), to CHECKER C125. NOT pushed; my commits: the merge (--no-ff) 7302bc7c (l-new b38726b4) and one commit holding this file
@@ -602,5 +683,47 @@ suffix: True); 0 "|" inserted. GAPS: only l. 11 changes: True; new l. 11 = old l
 UPDATE + " |": True; "|" on l. 11 76 -> 76 (pipe count unchanged); UPDATE 2026- heads 47 -> 47 plus 1 UPDATE head with the simulation
 year 2099, directly after R112's and now the last on the line; 23 -> 23 lines (wc -l). Fill values used only for the simulation: <DATE>
 2099-01-03, <HH:MM> 00:00, <checker> 0000000. (10) THIS DRAFT'S SHA1: a file cannot state its own sha1. The sha1 of this file with the
-forty hex digits after the next colon replaced by forty «0» characters is: 5d3ab9913c17e8e229a3b750ec2f8e5a45a41489. The file's actual sha1 and line count are in the
+forty hex digits after the next colon replaced by forty «0» characters is: 2e6096d34b624852c594fadcce3d02265e030fee. The file's actual sha1 and line count are in the
 hand-back to the Lead (and re-measurable with sha1sum).
+
+Addendum 2 (subagent, for the Lead; does not land; written 2026-11-06T15:08:50Z by date -u). (1) SECOND FILL on line L-3 (l-new
+e0d49b59, sha1 4d28b1f3…), to CHECKER C125 Add. 1. NOT pushed; my commits: the four merges (--no-ff) 0857f39f, 5a4ad180, 88ae8d2c,
+a8eadcf8 and one commit holding this file. (2) TITLE l. 396 = "### R113 [refereed-only] " + L-3 without its newline + ", CHECKER PASS
+(docs/checker/C125.md, checker PENDING)", checked by script (chk113b.py): equal, byte for byte (True); the only «### R» heading of this
+file; 78 + 1 «(» and 78 + 1 «)», balanced; no «[lane», no packet name before the claims. (3) BODY l. 396-636 (python slice d[395:636]; 0
+"|"); GAPS preamble l. 638-648 (two "|", both inside quotation marks: the row's closing « |» and «holds no "|"»); UPDATE l. 649 (d[648];
+one line, 0 "|", one each of <DATE>, <HH:MM>, <checker>; 3,456 bytes; sha1 d57c030dcf0704177f138d9661120ecae283ade8 of the line without
+newline, computed on the UNFILLED form, as C125 §4 states it, «Rebuilt UPDATE (line without newline): sha1
+d57c030dcf0704177f138d9661120ecae283ade8»: equal). A landing script slices d[395:636] for the entry and reads d[648] for the UPDATE
+(with «R113», «R112» as PREV, «C125», and the GAPS l. 11 assertion on «RESULTS R112 (P-TR3» as the last UPDATE). (4) NO PLACEHOLDER:
+both referees' byte tests of L-3 are on file, so everything in the entry is final for C125 Add. 1 (the only fill left is the title's
+«checker PENDING)» and the UPDATE's three placeholders, at landing). (5) QUOTE SWEEP (chk113b.py: chk113.py's rule and sources, plus
+L-3, the fixes and check.sh at e0d49b59, R-P-IDEAL-ALIGN.md at 20048c1a, R2-P-IDEAL-ALIGN.md at a4d3bc41, C125, the trunk files at the
+local trunk, the commit subjects of the new commits, my second-fill outputs): 444 outermost quotes, 353 parts of 6+ characters, every
+part found (0 not found); in the title and body alone 126 quotes, 110 parts, 0 not found; GAPS preamble and UPDATE 11 quotes, 7 parts, 0
+not found. Line-precise: 155 of 155 (source, cited line range, quote) triples found verbatim, whitespace-normalised, inside the cited
+lines. (6) WORD DIFF 1dc18bc9 → this file (wd113b.py, difflib on whitespace tokens, Addendum 2 left out): 20 line regions, 69 token
+hunks (85 tokens deleted, 1796 inserted), every hunk in a region listed in the SECOND FILL paragraph. (7) STALE STATUS in title and body
+(by script): «pending» 0 apart from the title fill «checker PENDING)»; «not yet» once, REFEREE's L-1 verdict quoted as history (as at
+the first fill); «not landed» once, inside the quoted F-b label, followed by R112's landing (as at the first fill); L-2's two old DATA
+phrases «F0 0 on 5,662 runs;» and «MOVES 0 on 32,620», by script: 0 times in the title, the body and the UPDATE; «L-2» only as history
+(the line history, the L-2 verdicts and byte tests, fixes entry 1, the check.sh pins and the first-fill PASS line, R6's and R7's base),
+never as the line of record; L-2 named as the current line («RESULTS line is L-2», «title is L-2», «The RESULTS line (L-2)», «The line
+(L-2)», «L-2's DATA parenthesis», «(L-2, by script)», «L-2's parentheses», and L-2 with a colon before the premise quote), by script: 0
+times. (8) LANDING SIMULATION (sim113b.py: sim113.py with the UPDATE's sha1 assertion d57c030d…, otherwise unchanged, on in-memory
+copies of RESULTS and GAPS at the local trunk, R112 as landed): RESULTS 12,730 -> 12,972 lines (wc -l), a pure insertion of 242 lines
+(the entry block with "checker PENDING)" filled, plus one blank line) directly after R112's landed block (R112 l. 11,909-12,150, blank
+l. 12,151, byte-unchanged: True; R110's and R111's blocks byte-unchanged: True): True; R113 at l. 12,152-12,392, blank l. 12,393, the
+next line (**Erratum E-1**) moves to l. 12,394, the Erratum E-2 line to l. 12,407, the Dead ends heading to l. 12,435; order R110, R111,
+R112, R113, E-1, E-2, Dead ends: True; every other line byte-unchanged (common prefix and suffix: True); 0 "|" inserted. GAPS: only l.
+11 changes: True; new l. 11 = old l. 11 with its closing " |" replaced by " " + the filled UPDATE + " |": True; "|" on l. 11 76 -> 76
+(pipe count unchanged); UPDATE 2026- heads 47 -> 47 plus 1 UPDATE head with the simulation year 2099, directly after R112's and now the
+last on the line; 23 -> 23 lines (wc -l). Fill values used only for the simulation: <DATE> 2099-01-03, <HH:MM> 00:00, <checker> 0000000.
+(9) NOT VERIFIED: the referees' tools not re-run (their files read); scripts/verify.sh and the full check.sh not run; the Lead's 12:14Z
+relay (fixes l. 52) is a message, not verifiable from the repository. (10) NOTE: fixes entry 2's heading calls it «provisional» and l.
+53-54 say C125 «was not on origin at 12:28Z» and the texts were copied from the Lead's message; C125's commit 559c9664 is
+2026-11-06T12:14:03Z (commit time; its push time is not in the repository); R6 and R7 equal C125 §4's pairs (l3rel113.py), and both
+referees parsed C125 §4 from 559c9664 (REFEREE §C add. 1 l. 161; REFEREE-2 Add. 2 l. 113), so the texts are final; no verdict depends on
+the stamp. Scratch: /tmp/claude-0/-home-user-parity-games-challange/43a29ffc-0674-5391-84c1-1d3918a14b5d/scratchpad/r113/fill2/
+(edit113b.py, l3rel113.py / l3rel113.out, upd113b.py / upd113b.out / upd113L3.txt, runw178L3.sh / w178L3.out / w178L3raw.out,
+chk113b.py, lp113b.py, wd113b.py, sim113b.py, R113-draft-1dc18bc9.md).
