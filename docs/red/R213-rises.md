@@ -58,3 +58,10 @@ G-N5-TIME stays OPEN; the kill bounds nothing.
 - k = 0: 4 (U ≥ 5 UNSAT); k = 1: 6 (U ≥ 7 UNSAT, 414 s); k = 2: 8 (= T^R(3); witness T 8, U 8, two level-0 steps); k unbounded: 8.
 - READING: real runs give 4 / 6 / 8; L-NEW's frame lower bounds are 5 / 6 / 8, so at k = 0 the frame is strictly looser than real runs
   (or the definitions differ). m = 3 (d 4, horizon 13): scan started (1 h cap per query).
+
+## 5. d 4 exact queries (state 16:3xZ)
+- MOVES-2D at d 4 (horizon 13 = T^R(4), 2d = 8): z 6 (level 3) r 9 UNSAT (945 s), r 8 UNKNOWN (2 h cap), r 7 running; z 2 (level 1)
+  r 9 UNSAT (1 s); z 4 (level 2) r 9 running; level 0 moves ≤ 1 (R109 SEG-ONCE). σ_l covers z 7, 5, 3.
+- T^N_k(3), real-run form (horizon 13): k 0: max U = 8 (U ≥ 9 UNSAT 116 s; U 8 by any T_0(3) = 8 genome read as a ladder);
+  k 1: U ≥ 10 SAT (replayed), U ≥ 11 UNKNOWN (1 h cap); k 2: U ≥ 12 SAT (replayed T 12, two level-0 steps), U ≥ 13 running.
+- d 4 T ≥ 14 validation cubes (r200/cubes/d4s_t14) paused 16:3xZ to free a core (state kept, resumable with the PARK line).
