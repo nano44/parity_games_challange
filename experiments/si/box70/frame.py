@@ -120,6 +120,25 @@ elif MODE == "pq":                                                              
     REL = os.environ.get("REL", "")
     if REL == "pre": cl.extend([[runs[0][1], -runs[1][1]], [-runs[0][1], runs[1][1]]])
     if REL == "post": cl.extend([[runs[0][1], runs[1][1]], [-runs[0][1], -runs[1][1]]])
+elif MODE == "flips":                                                            # box 74: >= T2 key-order flips of the top pair
+    # (A_m, B_m) within a run of <= T steps (idle steps = the run has ended) with <= K external-bit changes (K = 0: flip-free).
+    # ord(A_m, B_m) under s_t is the BIT-CHAIN bit b_m(s_t) (box 64), computed from s_t and the external bit b_0 of s_t; c(m, k) free.
+    from pysat.card import CardEnc, EncType
+    runs = [run("a", T, K != 0, kflips=(K if K != 0 else None), idle=True)]
+    S, B, Fv = runs[0]
+    ctop = {k: v("c", m, k) for k in (0, 1)}
+    def bm(t):
+        bit = XOR(B, Fv[max(t, 1)])                  # b_0 of state s_t: the bit of the step that produced it (s_0: of step 0)
+        for l in range(1, m + 1):
+            a, b2 = S[t][2 * (l - 1)], S[t][2 * (l - 1) + 1]
+            cb = ctop if l == m else {k: cbit[(l, k)] for k in (0, 1)}
+            bit = ITE(XOR(a, b2), ITE(a, -bit, bit), ITE(a, cb[1], cb[0]))
+        return bit
+    bs = [bm(t) for t in range(T + 1)]
+    mvd = [OR(*MV["a"][t]) for t in range(T)]                                  # step t moves something; once idle, idle for good
+    for t in range(T - 1): cl.append([-mvd[t + 1], mvd[t]])
+    FL = [AND(XOR(bs[t], bs[t + 1]), mvd[t]) for t in range(T)]                  # a flip counts only at a real step
+    enc = CardEnc.atleast(lits=FL, bound=T2, top_id=P.top, encoding=EncType.seqcounter); cl.extend(enc.clauses); P.top = max(P.top, enc.nv)
 elif MODE == "bits":                                                             # box 73: two flip-free runs, opposite external bits
     runs = [run("a", T, False), run("b", T2, False)]; cl.extend([[runs[0][1], runs[1][1]], [-runs[0][1], -runs[1][1]]])
 elif MODE == "pm":
