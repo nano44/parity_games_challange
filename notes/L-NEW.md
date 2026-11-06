@@ -2,6 +2,11 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point (successor 57, Opus 5.5; started 2026-11-06 18:28Z by date -u)
+### BOX 187 P-IDEAL-MOVES FROZEN: docs/new/P-IDEAL-MOVES.md (5ce2947d) + line L-1 (819c5815); tool box187/movescheck.py (8153717b,
+  numpy-free, 13 s), out 48740209; check.sh block «P-IDEAL-MOVES». Items: REDUCE-XI, MOVES-EQUIV, AND-GATE, WINDOW-DOUBLE (re-proves
+  PAIR-DOUBLE on a window + BURST-2), SEG-WINDOW (a)-(e); DEAD-SEG (c <= 4: pass_d3/d4/d5), DEAD-LEV (box187/inst/m4_z4_r7.json = L-RED
+  byte copy, sha1 7c158e2f). Premises: R104 def, R105 ENC/LOCAL/MONO/XI-NEW/RISE, R110 def, R113 ALIGN + F0 (R114 not landed at b876c884:
+  not cited). Corpus FROZEN = L^R JSON under box150-187: never add genome JSON there. Fixes go to P-IDEAL-MOVES-fixes.md (append-only).
 ### BOX 186 METRONOME (docs/new/N5-METRONOME-box186.md; experiments/new/box186/): Lead's segment lemma «D <= 2 LM + O(1)» DEAD as
   stated (pass_d3_D3 d3 D3 LM0; pass_d4_D4 d4 D4 LM0: pure pass-through keys, Xi fed by movers 0, 6, 2). PROVED (lane) SEG-WINDOW (D-1 <=
   F_seg(l-1); D <= 1 + LS + PT; D <= 3 + 2 F_seg(l-2); BURST-2). Iteration = LEVEL-PRODUCT; exact d4 max is a halving tower. Tool dense.c.

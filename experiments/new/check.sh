@@ -932,4 +932,12 @@ if grep -qxF "RISECHECK SAME" <<<"$w182" && grep -qxF "PHIK 0 OPTK 0 RISE_A 0 RI
 else
   echo "P-IDEAL-RISE check: FAILED"; echo "$w182"; echo "$pin182"; exit 1
 fi
+# P-IDEAL-MOVES (box 187, L-NEW successor 57): frozen movescheck output + pins
+w187=$(python3 -I box187/movescheck.py | diff - box187/movescheck.out && echo MOVESCHECK SAME)
+pin187=$(cd ../.. && sha1sum docs/new/P-IDEAL-MOVES.md docs/new/P-IDEAL-MOVES-line-L1.txt experiments/new/box187/movescheck.py experiments/new/box187/movescheck.out experiments/new/box186/out/pass_d3_D3.json experiments/new/box186/out/pass_d4_D4.json experiments/new/box186/out/pass_d5_D5.json experiments/new/box187/inst/m4_z4_r7.json)
+if grep -qxF "MOVESCHECK SAME" <<<"$w187" && grep -qxF "RX 0 AGA 0 AGB 0 AGC 0 SWA 0 SWB 0 SWC 0 SWD 0 SWE 0 WPD 0" box187/movescheck.out && [ "$(grep -c "^DEAD-SEG .* Xi-target True .* LM 0$" box187/movescheck.out)" = 3 ] && grep -q "^DEAD-LEV box187/inst/m4_z4_r7.json start 10111010 mover 4 level 2 Xi-target True moves 7 T 8$" box187/movescheck.out && grep -q "^5ce2947d1ee4dab317e5c06446b38f050146cafb  docs/new/P-IDEAL-MOVES.md$" <<<"$pin187" && grep -q "^819c58159100d77ec509348345cfd1a641a6f9e7  docs/new/P-IDEAL-MOVES-line-L1.txt$" <<<"$pin187" && grep -q "^8153717b8596b82a68c8b35c7ab76aabc765d7c2  experiments/new/box187/movescheck.py$" <<<"$pin187" && grep -q "^4874020973e02bf269b64624e4e7b110bb08ca24  experiments/new/box187/movescheck.out$" <<<"$pin187" && grep -q "^8bca976438ca184bb8b8e4d5ecf3455f51809ff4  experiments/new/box186/out/pass_d3_D3.json$" <<<"$pin187" && grep -q "^3bf6a4a48bc2df9fb8809306f8347ee280965b07  experiments/new/box186/out/pass_d4_D4.json$" <<<"$pin187" && grep -q "^16be2e594732ad0b21e2c84aa4cdbc62d143e7c4  experiments/new/box186/out/pass_d5_D5.json$" <<<"$pin187" && grep -q "^7c158e2f806df2d1984418902548cfc2cb243d75  experiments/new/box187/inst/m4_z4_r7.json$" <<<"$pin187"; then
+  echo "P-IDEAL-MOVES: movescheck 0 violations, 4 DEAD instances re-run (output = frozen movescheck.out); pins packet 5ce2947d, line L-1 819c5815, tool 8153717b, output 48740209, instances 8bca9764 3bf6a4a4 16be2e59 7c158e2f: PASS"
+else
+  echo "P-IDEAL-MOVES check: FAILED"; echo "$w187"; echo "$pin187"; exit 1
+fi
 rm -rf "$tmp"
