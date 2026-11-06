@@ -1,0 +1,6 @@
+corpus files at d 5: 1
+class C0 d 5 genomes 0 transitions 976 distinct-dec-rows 484 distinct-states 1024 features 30
+FEASIBLE min max Phi = 19.0000
+weights: k1=9.65 k3=6.53 u3=-6.12 z3=5.76 k6=3 u1=-2.88 u2=2 z1=2 k0=1.88 u0=-1.76 k4=1.41 u7=1.41 u6=-1.29 k5=1.24 k2=1.24 u5=1.12 u8=1 u9=1 z2=-0.882 z0=0.882 z6=-0.706 z5=-0.353 k7=-0.294 z7=-0.294 z8=-0.118 const=-5.65
+dual: 12 decrease rows in support, sum of their multipliers 19.0000 (= the bound)
+dual mass by genome source: dd_d5_F14.json:19

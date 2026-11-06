@@ -1,0 +1,6 @@
+corpus files at d 7: 1
+class C0 d 7 genomes 0 transitions 16012 distinct-dec-rows 7639 distinct-states 16384 features 42
+FEASIBLE min max Phi = 41.2787
+weights: u2=12.7 k0=11.9 u5=8.34 z8=8.23 k1=5.93 z2=-4.43 k5=-3.59 u1=-2.79 k4=2.41 k3=2.23 z11=1.95 k2=-1.62 z1=1.41 z9=1.36 z13=1.36 z5=-1.36 k9=1.02 u13=1 u10=1 u7=1 u11=1 k8=0.984 k6=0.852 z3=-0.787 u3=0.738 z10=0.607 u12=0.607 k10=0.607 k11=-0.574 z4=0.377 k12=0.246 k7=0.18 z12=0.148 u6=0.148 u8=0.131 u0=-0.082 z0=0.082 z7=-0.0328 const=2.79
+dual: 31 decrease rows in support, sum of their multipliers 41.2787 (= the bound)
+dual mass by genome source: TR_d7_T20.json:41.3

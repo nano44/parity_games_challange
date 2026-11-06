@@ -1,6 +1,15 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 56, Opus 5.5, session_01V5yGRZaLkWxqVNtbeLt55J; started 2026-11-06 08:42Z by date -u)
+### BOX 179 LPOT (docs/new/N5-LPOT-box179.md; experiments/new/box179/): method (1) of 3 sent to the Lead 08:44Z = LP ranking-function
+  synthesis. PROVED (lane) PHIK-DESCENT: Phi_K = sum (2^(d-lev)-1)[key-misaligned] falls >= 1 per step on L^R_d (T <= Phi_K(s_0) <=
+  2^(d+2)-2d-4; 38,902 transitions 0 viol.). PROVED (lane) OPT-K: no potential linear in k bits has smaller range (forcing on Xi-trivial
+  genomes, out/force_d1..8.json). DATA (floating LP): classes C0, P exact = 8/22/52(/114); PHX = 22 at d 3 (1,562 genomes), >= 49.1 d 4,
+  >= 61.2 d 5 (sampling-limited); PHXV (value rank) 17.9 at d 3. DEAD (method, level-local linear potentials). Obstruction: free Xi-renewal
+  ping-pong in feature space (certificate out/dual_PHX_d3_s1793.json). lpot.py needs pip scipy (installed in this container only).
+- Trap this session: clone was shallow -> verify FAILED on box49 quotecheck3 (e2da18b0 missing); fix = git fetch --unshallow first.
+
 ## Successor 56 handover check (STEP 0; written 2026-11-06 08:4xZ by date -u; session_01V5yGRZaLkWxqVNtbeLt55J)
 1. claude/l-new: ls-remote 8bf32e2e; checkout was detached at 8bf32e2e, but the LOCAL BRANCH REF claude/l-new was stale at a9851eba
    (reflog: "Created from refs/remotes/origin/claude/l-new" at a9851eba); fetch --deepen + checkout + ff-only -> HEAD = claude/l-new =
