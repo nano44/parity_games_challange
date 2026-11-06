@@ -21,7 +21,8 @@ Notation (𝓛^R_d, level l ≥ 1): x a mover of level l; u := 2l − 2, w := 2l
     3, 4, all pass-throughs (it sits in a D-state, Φ = 1, while (2, 3) flips below it). The Ξ-preference flips are fed by movers 0, 6, 2 on
     the chains of 7's options (Ξ-targets 0 and 2: no option of 7 points into the lower pair).
   - Both are verified on L-NEW's own simulator (box150/check.py Gen, via box185/trace.py and flips.py) and on dense.c. DATA, max of D −
-    2·LM over all starts: corpus (214 genomes, d 1-8) ≤ 3; climbs on D − 2·LM: d 3: 3, d 4: 4, d 5: 3 so far, d 6: 3 so far (§3).
+    2·LM over all starts: corpus (214 genomes, d 1-8) ≤ 3; climbs on D − 2·LM: d 3: 3, d 4: 4, d 5: 5 (out/pass_d5_D5.txt: mover 9,
+    level 4, D 5, LM 0), d 6: 5 (climb stopped). So far the excess equals d: a pure pass-through metronome of length d at the top (§3).
   - So a metronome does not need its lower pair: its two inputs (a key flip and a Ξ-preference flip at every step) can both come from
     any level below, through pass-through on the key side and through chains on the Ξ side.
 - (1′) PROVED (lane) Lemma SEG-WINDOW, the corrected segment lemma (§1). For a metronome segment [a, b] of x at level l ≥ 1:
@@ -33,6 +34,11 @@ Notation (𝓛^R_d, level l ≥ 1): x a mover of level l; u := 2l − 2, w := 2l
     the pair two levels down in every 3 consecutive inner steps but at most 2.
   - (e) the Ξ side: at every step t ∈ [a, b − 1] the Ξ-preference of x flips, and some mover on the chain under s_(t−1) of the option x
     takes at t + 1 moves at t (R105 LOCAL: a value changes only through a move on its chain).
+- NEW RECORD for MOVES at d 5 (ADDENDUM, 2026-11-06 ~21:0xZ): out/dense_d5_D9.json (sha1 5619d2bd…; text dense_d5_D9.txt), start
+  0101111000: mover 9 (level 4, a Ξ-target) moves at EVERY step 1-9 of a 9-step run (moves 9; L-RED's previous best at d 5: 8; 2d = 10;
+  a kill needs 11). Cross-wired (xt(9, 0) = 7, xt(9, 1) = 6); per-mover moves 1 1 1 2 2 1 4 5 1 9; F = 1, 2, 4, 9, 3: a halving tower
+  (9 / 4 + 5 / 2 + 1 / 1 + 2 / 1 + 1). Found by dense.c SCORE=D from box185/out/h_d5_L4_ld6.txt; checked on box150 Gen (trace.py,
+  flips.py). Seed for R214's DENSE(5, 4, 11).
 - (2) Iterating gives LEVEL-PRODUCT, not O(l). With (c), D_l ≤ 3 + 2·F(l − 2) and F(j) ≤ 2F(j − 1) + 2: the iterate is 2^l-type, the
   key-side bound already known (R113 MOVES). The segment lemma, even in the Lead's form, only moves the question to the lower pair's
   moves inside the segment, and in the exact maxima those are half-dense themselves:
@@ -78,5 +84,5 @@ Notation (𝓛^R_d, level l ≥ 1): x a mover of level l; u := 2l − 2, w := 2l
 - dense.c (from box185/mv.c): per start and mover, the longest metronome segment from the start, LM and LS inside it; reports max D −
   2·LM, the D and D − 2·LS of that segment, and max D over Ξ-targets; climbs with score D − 2·LM (default) or D (SCORE=D).
 - log/corpus_dense.txt: 214 corpus genomes, every start: max D − 2·LM by d: 1 (d 2), 2 (d 3-7), 3 (d 8, seedpm_rk_D2_k2_d8_s1).
-- Climbs (log/x_m*.txt; m = d − 1): d 3: 3 (pass_d3_D3), d 4: 4 (pass_d4_D4), d 5 and d 6: 3 at the time of writing; SCORE=D at d 5 from
-  box185/out/h_d5_L4_ld6.txt (start value 7): log/D_d5_seed.txt.
+- Climbs (log/x_m*.txt; m = d − 1): d 3: 3 (pass_d3_D3), d 4: 4 (pass_d4_D4), d 5: 5 (pass_d5_D5), d 6: 5 (stopped); SCORE=D at d 5 from
+  box185/out/h_d5_L4_ld6.txt (start value 7): 9 (dense_d5_D9, log/D_d5_seed.txt).
