@@ -1,6 +1,80 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 56, Opus 5.5, session_01V5yGRZaLkWxqVNtbeLt55J; started 2026-11-06 08:42Z by date -u)
+### BOX 179 LPOT (docs/new/N5-LPOT-box179.md; experiments/new/box179/): method (1) of 3 sent to the Lead 08:44Z = LP ranking-function
+  synthesis. PROVED (lane) PHIK-DESCENT: Phi_K = sum (2^(d-lev)-1)[key-misaligned] falls >= 1 per step on L^R_d (T <= Phi_K(s_0) <=
+  2^(d+2)-2d-4; 38,902 transitions 0 viol.). PROVED (lane) OPT-K: no potential linear in k bits has smaller range (forcing on Xi-trivial
+  genomes, out/force_d1..8.json). DATA (floating LP): classes C0, P exact = 8/22/52(/114); PHX = 22 at d 3 (1,562 genomes), >= 49.1 d 4,
+  >= 61.2 d 5 (sampling-limited); PHXV (value rank) 17.9 at d 3. DEAD (method, level-local linear potentials). Obstruction: free Xi-renewal
+  ping-pong in feature space (certificate out/dual_PHX_d3_s1793.json). lpot.py needs pip scipy (installed in this container only).
+  Non-local D (unstable Xi-descendants per chain) PHXVD: 6.98 / 14.79 / >= 26.99 (d 2-4): still ~doubling. Pushed a35191de (box 179 main).
+- Round 2 (Lead 10:03Z): value-budget features B/G (R105 ENC path ranks) + EXACT certificates (box179/exactcert.py, rational re-solve on
+  the LP support). CERTIFIED: PHX d3 = 22 exactly (with Phi_K: class optimum EXACT); PBG (keys + budget + gaps) 8 / 18.86 / >= 35.55
+  (DEAD instance out/cert_PBG_d4_s1794.json); PHXVDBG 13.92 / >= 23.28 (414 genomes; 700-genome run OOM-killed at 14 GB). Obstruction:
+  a move spends one RANK of its own budget, and renewal of the partner leaves the partner's budget unchanged; rank budgets ~ #paths.
+- Trap this session: clone was shallow -> verify FAILED on box49 quotecheck3 (e2da18b0 missing); fix = git fetch --unshallow first.
+
+## Successor 56 handover check (STEP 0; written 2026-11-06 08:4xZ by date -u; session_01V5yGRZaLkWxqVNtbeLt55J)
+1. claude/l-new: ls-remote 8bf32e2e; checkout was detached at 8bf32e2e, but the LOCAL BRANCH REF claude/l-new was stale at a9851eba
+   (reflog: "Created from refs/remotes/origin/claude/l-new" at a9851eba); fetch --deepen + checkout + ff-only -> HEAD = claude/l-new =
+   origin/claude/l-new = ls-remote = 8bf32e2e. Vs trunk claude/vibrant-johnson-nxvvxo (07112377): 2 ahead / 451 behind (rev-list
+   --left-right --count as printed), merge-base 432edf82. Lane files only.
+2. Open: (a) DUTY P-IDEAL-ALIGN landing (R113 after R112): CHECKER items -> fixes entry 2 + L-3 by script; next step = wait for relay.
+   (b) BOX 179 (D14 untested method on T^R(d)): next = send 2-3 candidates to the Lead, then pursue the best. Conjectures PAIR-LIN,
+   DBL-O(1), RENEW-COUNT_2, TOP-M, PM'_S, SUM_1 stay as data. Nothing in flight from successor 55.
+3. GAPS (trunk): G-N5-TIME major open (owner L-NEW); G-N1-LB minor open (optional, not routed); G-N5-TERM closed.
+4. D18 (active, trunk INDEX row 32): "Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas
+   from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state
+   them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems."
+   D14 (active, row 22): "D" / "You know it can also test prveiously not tested approaches, it can come up with it own as well".
+   D20 (active, row 42): "We have reset the weekly usage, so we can again work faster no?" (Lead reading L48: full pace).
+5. Trap: stale clone. This time the detached HEAD was current but the branch ref was 2 boxes old (a9851eba); a checkout of claude/l-new
+   without ff would have put me on old files. Check = compare BOTH HEAD and the branch ref with ls-remote after fetch + ff-only (done).
+
+## HANDOVER (successor 55, PARKING 2026-11-06 ~08:2xZ by date -u; Lead 08:14Z: handover + park at ~540k context)
+### DONE (every push via scripts/push.sh, VERIFY PASS; SHAs copied from git log; Lead informed at every box end)
+- Step 0 (1ee2ac2f).
+- Box 172 P-IDEAL-KEYS FROZEN b302bbf5 (packet 62b35bf7, L-1 f36c6402, tool box172/keycheck.py 6ce4693d, out 5100eb30). Fix round 1
+  1a178aff (fixes entry 1, L-2 fb1b2276: tower -> TOWER/READING, KY-1, quotes, W-1..W-3). C124 E-1: fixes entry 2 + L-3 c29f0a93
+  (432edf82; fixes now 504403c3). LANDED as R111 07:16Z (Lead).
+- Box 173 (2afbb491): RENEW-COUNT DEAD as stated (chain C_m, d 2, I = m/2; box173/out/chain_C8 6c9962ba, chain_C20 e5e65ab3).
+- Box 174 (d2dc2e69): RE-TRIGGER, TOP-SINK, CHARGE-I (lane): I <= 1 + moves of lower Xi-ancestors of the top; on L^R I <= 3^(k+1).
+- Box 175 (06d4238d): L-RED TOP-C (C = 1) DEAD: fa_d2_k2_W2 gain' 4, iso_d4_st9 8, g4_L12 7, tri_d5_L12 4 (L-RED confirmed, r208/gainx.py).
+- Box 176 (096870c1): CONJECTURE TOP-M; every top-move-resource repair sums to O(3^d); forcing instance dd_d5_F14 (gain' 13).
+- Box 177 (28c616e9): ALIGN + PAIR-DOUBLE F(l) <= 2F(l-1)+2 on L^R (tight on dd_d5_F14 l 3); T^R(d) <= 2^(d+2) - 2d - 4; PATH-RISE.
+- Box 178 P-IDEAL-ALIGN FROZEN cb8e0dca (packet d8acdece 180 lines, L-1 e46b0417, tool box178/aligncheck.py 9335dee7, out b653b01b).
+  Both referees SIGN all 7 (REFEREE 24 6f0daf60, REFEREE-2 28 ea08029d). Fix round 1 c787aab1: fixes entry 1 25b050ee, L-2 cb5f0398;
+  L-2 MATCHES at both (Lead 08:14Z). R113 to be drafted after R112 (P-TR3) lands.
+### PENDING (for successor 56)
+- P-IDEAL-ALIGN landing: CHECKER items (if any) go into P-IDEAL-ALIGN-fixes.md entry 2 + L-3, by script, C124 pattern (replace exactly
+  the CHECKER's text; pin new sha1s in check.sh block «P-IDEAL-ALIGN»; the packet stays frozen). Premises: R104 def, R105 ENC + MONO,
+  R110 def of L^R_d; R111 NOT used (KP-MOVE re-proves KEYFLIP's degree-2 step). AL-P1: T^R values are lane DATA (T^R(3) = 8 = P-TR3 →
+  R112 when landed; the line quotes none). The (b) bound (gamma(0) != gamma(1): F(l) <= F(l-1)+1) is EXCLUDED, machine range k <= 30.
+### OPEN CONJECTURES (data, kills)
+- PAIR-LIN (central, Lead reading): flips(p, q) <= c|{p, q} u W(p) u W(q)|. Corpus max ratio 2.0 (c4x 12/6; dd 14/8 at excess 6).
+  Reduced (box 177) to DBL-O(1) + a count of non-doubling levels. No kill.
+- DBL-O(1): on L^R a gamma-equal pair cannot be doubled (F(l) = 2F(l-1)+2-type, both movers Xi-renewed after every lower flip) for many
+  consecutive levels. DATA: max 2 consecutive doubling levels in 190 2-wide runs. Kill target given to L-RED (3 consecutive levels).
+- RENEW-COUNT_2 (2-wide): I <= d + 1 / poly(d). DATA: I <= d + 1 on 163 L^R pairs; max_d5_L15 I 2. Reduced (box 174) to «lower
+  Xi-ancestors of the top move poly(d) times». Width-free form DEAD (C_m).
+- TOP-M: gain' <= n2 + 3 m_c (box 176; 0/372 files; ratio 3.0 attained). Sums to O(3^d): no polynomial route by itself.
+- PM'_S (box 167): moves(x) <= (deg-1)(1 + desc + |W(x)|); 0/263 files, slack >= 2; fragile under composition if pair flips outgrow |W|.
+- SUM_1 (box 163): V_0 + V_1 <= 2T^R + 1; open. SUM_2 DEAD by L-SI (Lead 08:14Z; I have not opened the instance — successor: record its
+  file + sha1 from L-SI before citing). SUM_3 DEAD (ISO_1_d4_t12). INF-2 DEAD (L-SI inf18_m3).
+- DEAD this session: PM, PMV (P-IDEAL-KEYS §7), TOP-C at C = 1 (box 175), RENEW-COUNT width-free (box 173); FD/FB/FA repairs (box 176).
+### TOOLS (successor 55)
+- box172/keycheck.py (key-side lemmas; corpus frozen to boxes 150-172 — never add JSON genomes under box150-172).
+- box178/aligncheck.py (corpus frozen to boxes 150-177; same rule).
+- box174/retrig.py (RE-TRIGGER / CHARGE-I), box175/gain.py, gain2.py, xgain.py (gain' / gain'' with box150 Gen or L-RED r187/ideal.py),
+  box176/repair.py, forms.py, box177/align.py, automaton.py (8-state DP), slack.py, box171/frozen.py (I, L).
+- L-RED tree: `git archive origin/claude/l-red experiments/red | tar -x -C <scratch>/lred` from the REPO ROOT (git archive pathspec is
+  cwd-relative; it failed once from experiments/new). L-RED R207/R208 keep files: experiments/red/r207/keep, r208/keep.
+### Things only I know (successor 55)
+- push.sh pushes only the commit it verified ("HEAD moved during verify"): chain a second push for commits made during verify.
+- Line edits: always by script with assert count == 1, then word diff via git diff --no-index --word-diff=plain; check sha1/bytes/parens.
+- DATA wording in lines: read the counter code (if t / if l >= 1 guards) before naming the set (C124, AL-L1 lessons).
+
 ## Resume point (successor 55, Opus 5.5, session_01V5yGRY6bNXTPcgHkohFvpg; started 2026-11-05 22:51Z by date -u)
 ### BOX 172 P-IDEAL-KEYS FROZEN (this commit): docs/new/P-IDEAL-KEYS.md + line L-1 docs/new/P-IDEAL-KEYS-line-L1.txt; tool
   experiments/new/box172/keycheck.py (frozen corpus boxes 150-172 + 400 random genomes, seed 172) with frozen output keycheck.out;
@@ -15,6 +89,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 ### P-IDEAL-KEYS fix round 1 (Lead 00:47Z; REFEREE 24 ece8c4ee, REFEREE-2 28 ebcf52d0): fixes entry 1 docs/new/P-IDEAL-KEYS-fixes.md
   (26088848) + line L-2 (fb1b2276): tower relabelled TOWER (consequence of F <= T) + READING «not a shortcut» (no longer DEAD); KY-1,
   F-1, F-2, N-1, KY-L2; W-1..W-3; source note names the fixes file. check.sh pins added.
+### P-IDEAL-ALIGN fix round 1 (Lead 05:32Z; REFEREE 24 6f0daf60, REFEREE-2 28 ea08029d; all 7 SIGNED): fixes entry 1 (25b050ee) +
+  L-2 (cb5f0398): AL-L1 counts 11,824 / 21,296 by script; P-1, P-2 = AL-L2; AL-P1 (T^R values = lane DATA); source note. Pins added.
 ### BOX 178 P-IDEAL-ALIGN FROZEN: docs/new/P-IDEAL-ALIGN.md (d8acdece, 180 lines) + L-1 (e46b0417); tool box178/aligncheck.py
   (9335dee7), output aligncheck.out (b653b01b); check.sh block «P-IDEAL-ALIGN». Signed items: ALIGN, KP-MOVE, F0, PAIR-DOUBLE, MOVES,
   T-BOUND, PATH-RISE; premises R104 def, R105 ENC + MONO, R110 def of L^R_d only (KEYFLIP re-proved as KP-MOVE; no R111). (b) left out.

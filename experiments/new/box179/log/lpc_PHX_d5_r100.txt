@@ -1,0 +1,6 @@
+corpus files at d 5: 33
+class PHX d 5 genomes 100 transitions 128889 distinct-dec-rows 98217 distinct-states 126968 features 227
+FEASIBLE min max Phi = 61.2400
+weights: zH0_1=16.1 k1=16.1 k0=14.7 uH0_1=-11.3 u1=-10.9 u0=-10.8 pair0_1001=-7.74 pair0_1100=-7.57 pair0_0110=-7.47 pair0_0011=-7.31 zH2_1=7.17 uH3_1=6.82 k2=5.4 uH1_1=5.39 zH4_1=5.3 uH3_2=4.75 k3=4.25 uH3_3=4.12 pair0_1000=-4.04 zH0_7=3.96 zH0_5=3.93 zH0_6=3.9 pair0_0100=-3.79 pair0_0101=3.75 pair0_0001=-3.72 zH0_3=3.68 uH3_4=3.61 pair0_0010=-3.61 zH0_4=3.61 pair0_1010=3.61 zH0_2=3.48 uH3_5=3.45 k5=3.43 uH2_1=3.35 zH0_10=3.29 zH0_8=3.29 uH3_6=3.06 pair3_1111=-2.99 uH0_2=2.95 uH3_7=2.75 const=0
+dual: 152 decrease rows in support, sum of their multipliers 61.2400 (= the bound)
+dual mass by genome source: rand:22.8 dd_d5_F14.json:5.71 fkclimb_k0_m4_mu2_T5.json:3.67 max_d5_L15.json:3.33 tri_d5_L12.json:3.08 climb_A_d5_m2_T8.json:2.83 climbI_d5_w2_LR_s3.json:2.72 fkclimb_k2_m4_mu2_T10.json:2.72 f2_d5_L12.json:2.29 seedpm_max_d5_L15_s1.json:2.02 ping_dd_d5_F14_s7.json:1.3 fkclimb_k2_m4_mu3_T11.json:1.29
