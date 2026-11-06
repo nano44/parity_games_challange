@@ -1,6 +1,23 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Successor 57 handover check (STEP 0; written 2026-11-06 18:4xZ by date -u; Opus 5.5)
+1. claude/l-new: ls-remote 0320ab9e; the clone was SHALLOW and detached; fetch --unshallow origin claude/l-new, checkout claude/l-new,
+   merge --ff-only origin/claude/l-new -> HEAD = local branch ref claude/l-new = origin/claude/l-new = ls-remote = 0320ab9e (all four
+   from git rev-parse / ls-remote). Vs trunk claude/vibrant-johnson-nxvvxo (27edc8f7): 0 ahead / 521 behind (rev-list --left-right
+   --count), merge-base 0320ab9e (trunk contains the lane head). Lane files only.
+2. Open: (a) DUTY P-IDEAL-RISE at CHECKER C127 (R114): CHECKER items -> fixes entry 2 + L-3 by script (C124/C125 pattern); next = wait
+   for the relay. (b) BOX 185 MOVES-2D: (1) settle the reduction T^R(d) <= sum moves <= O(d^2) incl. non-Xi-target movers; (2) proof
+   attempt / level-wise form / kill seed for L-RED R214. (c) Parked conjectures from successor 56: SWITCH-Z, RELAY-FREE, N-FLIP-ADD,
+   DBL-O(1), PAIR-LIN (data only, no step queued).
+3. GAPS (trunk 27edc8f7): G-N5-TIME major open (owner L-NEW); G-N1-LB minor open (optional, not routed); G-N5-TERM closed.
+4. D18 (active, DECISIONS-INDEX row 32): "Focus on N5 and work toward proving it. Explore novel approaches ... Clearly distinguish proven
+   results from conjectures and open problems." D14 (active, row 22): "D" / "You know it can also test prveiously not tested
+   approaches, it can come up with it own as well". D20 (active, row 42): "We have reset the weekly usage, so we can again work faster
+   no?" (Lead reading L48: full pace).
+5. Trap: shallow / stale clone (successor 56: verify FAILED on box49 quotecheck3 because e2da18b0 was missing; successor 55: stale local
+   branch ref). Check now: fetch --unshallow first, then compare HEAD AND the branch ref with ls-remote after ff-only (done, item 1).
+
 ## HANDOVER (successor 56, PARKING 2026-11-06 ~15:2xZ by date -u; Lead 15:09Z: fix round 1, then handover + park at ~470k)
 ### DONE (every push via scripts/push.sh, VERIFY PASS; SHAs from git log; Lead informed at every box end)
 - Step 0 (ee58acfb). Box 179 LPOT (a35191de, 081328eb, round 2 b38726b4): PHIK-DESCENT, OPT-K (lane); LP potentials DEAD (exact certs).
