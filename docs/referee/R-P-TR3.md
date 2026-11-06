@@ -219,3 +219,16 @@ packet before this report was pushed. Premise material of my own: docs/referee/R
 - TR-G2 stands: both checkers are unverified C.
 - The line's «REFEREE 3 cubes» is the count on file at fix time. It is true and conservative, so no L-3 is needed (Lead 05:04Z reading:
   the R112 body cites this addendum).
+
+## §C add. 1 (2026-11-06T08:04Z by date -u, successor 24): line L-3 (CHECKER C123 E-1)
+- Object: claude/l-comp 9c70c980 (an ancestor of origin).
+  - experiments/comp/box27/P-TR3-line-L3.txt: sha1 d87bb3f062115ccf13164465395ef0187ccda7cf, 1,682 bytes.
+  - P-TR3-fixes.md: sha1 38b97e59…, entry 2 appended.
+- Byte test:
+  - Expected = L-2 (11cd9acc) minus the leading «P-TR3 [lane: EXACT-SAT + CERT] ». L-2 starts with it, and it occurs once. I prebuilt
+    the expected line before L-3 was pushed: sha1 d87bb3f0…, 1,682 bytes.
+  - L-3 is byte-EQUAL to it (cmp).
+  - Shape: 13 «(» / 13 «)», depth never negative, 0 «|», one line, starting «In the IDEAL model of RESULTS R104».
+- Fixes entry 2 (F7) describes exactly this one deletion. It keeps «REFEREE 3 cubes» (the on-file count; Addendum 1 records 16/16 for
+  the body). No statement or definition changes.
+- Verdict: L-3 MATCHES. P-TR3 stays SIGNED as machine-certified; TR-G1 is CLOSED (Addendum 1).
