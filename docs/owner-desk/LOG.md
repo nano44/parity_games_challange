@@ -616,3 +616,6 @@ FLEET: 4 research lanes plus gates. Weekly window at full pace (D20). No paid ov
 > Give me a status update
 
 Answered from trunk bfcad0441 (2026-11-06 13:40Z), RESULTS R111-R112, LEAD-STATE.md 09:42Z-13:40Z (R113 at CHECKER, Note E-3 signed, RISE-2D dead, OPT-K, T^R(5) ≥ 16, push-overlap slip). Relayed to the Lead.
+
+## 2026-11-06T14:38Z Lead report (14:39Z, summary)
+G-N5-TIME OPEN. Note E-3 signed by both referees; CHECKER C126 found a Lead error (REFEREE's optional clause misplaced and logged as verbatim when it was not), fixed as specified, final check next. R113 ALIGN corrected line MATCHES at REFEREE-2; REFEREE byte test pending. P-IDEAL-RISE (potential proof of 2^(d+2) bound; RISE-EQUIV; machine-certified LP lower bounds) SIGNED by REFEREE-2 with two required word changes; REFEREE pending. Lane-level: NONISO-FRAME proved (T^R(d) ≤ T^N_2(d−1) + 2), closing L49's scope gap; target now CONJECTURE N-FLIP-ADD (would give T^R(d) = O(d²)). MOVES-2D exact at d 3 with room; RISE-2D exact/tight at d 3, DEAD at d 5, 6. m = 4 SAT-frame queries intractable, stopped.
