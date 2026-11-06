@@ -1,6 +1,13 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## BOX 75 (successor 40; Lead 14:13Z: freeze packet P-IDEAL-IM) — FROZEN
+- docs/si/P-IDEAL-IM.md + P-IDEAL-IM-line-L1.txt; experiments/si/box75/{imcheck.py, imcheck.out, frame_P-IDEAL-IM.py (frozen encoder),
+  pins.sha1, check75.sh (wired)}. Premises: R104 def, R105 ENC + LOCAL, R110 defs (+ W-ONLY in COMPOSE-LB only).
+- Items: Fact 0; IM; BIT-CHAIN + KEY-DIR (c-step form); VALUE-MONO + NO-REPEAT (replaces FLIP-PATH without R106); COMPOSE + COMPOSE-LB;
+  Theorem FRAME (relaxation); MACHINE T_1(3) = 10 (L-COMP Glucose + drup.c on CNF sha1 7e611c8b = frozen encoder's regeneration).
+- Dropped from the Lead's list as already landed: LEVEL-1 BUDGET = R110 NOW-ONCE; RE-ARM is weaker than R111 RETURN / RENEW.
+
 ## BOX 74 (successor 40; Lead 02:46Z: PAIR-LIN data, top-pair flips F in the frame) — DONE (m 4 not answered)
 - Note docs/si/N5-FLIPS-box74.md. Frame F_max (EXACT-SAT, one solver): m 2 K0..2, Kinf = 4, 5, 6, 7; m 3 K0, K1, K2 = 7, 8, 10 (|W| = 2m).
 - REAL (Gen replay): m 3 K0 F 7 > |W| 6 (out/fl7_m3_s2..s4); m 3 K2 F 10 (out/fl10_K2_m3_s*). F <= |W| FALSE; F <= 2|W| only via F <= T.

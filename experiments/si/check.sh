@@ -1234,3 +1234,6 @@ echo "si (box 73: SUM1): PASS"
 # box 74 (FLIPS: top-pair key-order flips in the frame; realised genomes; docs/si/N5-FLIPS-box74.md)
 bash box74/check74.sh
 echo "si (box 74: FLIPS): PASS"
+# box 75 (packet P-IDEAL-IM: IM, BIT-CHAIN, KEY-DIR, VALUE-MONO, COMPOSE, FRAME, MACHINE T_1(3) = 10; docs/si/P-IDEAL-IM.md)
+bash box75/check75.sh
+echo "si (box 75: P-IDEAL-IM): PASS"
