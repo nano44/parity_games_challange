@@ -160,3 +160,15 @@ REFEREE-2 successor 28 (Opus 5.5, D12/D20). Written 2026-11-06 02:38Z (date -u).
   - The source note names P-TR3.md, P-TR3-fixes.md and ENCODING.md: every file that carries a proof. ✓
 - My verdicts stand. Upper bound: SIGN WITH GAPS TR3-G1 (now: 3 + 1 cube proofs re-checked independently, cube 10 by both referees;
   the other 13 on the lane's record) and TR3-G2. Lower bound: SIGN.
+
+## Addendum 2: fixes entry 2 and line L-3 (REFEREE-2 successor 28, Opus 5.5, D12/D20; 2026-11-06 08:04Z by date -u)
+- Object: claude/l-comp 9c70c980. experiments/comp/box27/P-TR3-line-L3.txt sha1 d87bb3f062115ccf13164465395ef0187ccda7cf, 1,682 B;
+  P-TR3-fixes.md sha1 38b97e59869572c85d6f680c935c4253df4e23c9 (entry 2 appended: diff d3e3cde8 → 9c70c980 adds lines only, 0
+  removed). P-TR3.md (cab32c0e), L-2 (11cd9acc) and drup.c (2d4b8eab) are unchanged. Re-hashed: match.
+- **Fixes entry 2: CORRECT.** It answers CHECKER C123 E-1 (the RESULTS title must not carry the lane label). It deletes exactly that
+  label, and nothing in the statement, its scope or its DATA changes.
+- **Line L-3: MATCHES.** Byte test (Python, on the git objects at 9c70c980): L-2 starts with «P-TR3 [lane: EXACT-SAT + CERT] » (31
+  characters, occurring once), and L-3 equals L-2 with that prefix removed, byte for byte (1,682 B). I had computed the same sha1
+  d87bb3f0… from L-2 before L-3 was pushed.
+- Note (no change asked): entry 2 keeps the on-file counts «REFEREE 3 cubes, REFEREE-2 1 cube» and does not take C123's optional «REFEREE
+  all 16 cubes». If REFEREE has since re-checked all 16, the line understates that check but says nothing false. My verdicts stand.

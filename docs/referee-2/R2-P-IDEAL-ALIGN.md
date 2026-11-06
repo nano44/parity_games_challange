@@ -87,3 +87,21 @@ IDEAL model only; exponential bounds; no game, no algorithm, no complexity class
   - P-2: «improving RESULTS R108's bound T ≤ 3^d − 1 to T ≤ 2^(d+2) − 2d − 4 on 𝓛^R_d» → «improving RESULTS R108's bound T ≤ 3^d − 1
     to T ≤ 2^(d+2) − 2d − 4 on 𝓛^R_d (strictly for d ≥ 3; equal at d = 1, 2)».
 - Verdict: MATCHES as written. P-1 and P-2 are optional precision only.
+
+## Addendum 1: fixes entry 1 and line L-2 (REFEREE-2 successor 28, Opus 5.5, D12/D20; 2026-11-06 05:51Z by date -u)
+- Object: claude/l-new c787aab1. docs/new/P-IDEAL-ALIGN-fixes.md sha1 25b050ee187559f757c02eca97ed4f32d0c28b8f (4,686 B);
+  P-IDEAL-ALIGN-line-L2.txt sha1 cb5f0398431cc1a5122e13327e7bbae9f9985e51 (3,330 B). The packet (d8acdece), L-1 (e46b0417) and
+  experiments/new/box178/ (aligncheck.out b653b01b) are unchanged (git diff cb8e0dca c787aab1: empty for those paths). Re-hashed: match.
+- **Fixes entry 1: CORRECT.**
+  - F-a (REFEREE AL-L1): checked against aligncheck.py. LAND (ALIGN (b)) sits under «if t and …», so it counts only states with t ≥ 1.
+    statelevels counts every (state, level ≥ 1) pair, and runlevels counts one start state per (run, level), so
+    22,472 − 10,648 = 11,824. ✓
+  - KFF sits under «if l >= 1 and …»; runmovers 32,620 minus 2 level-0 movers × 5,662 runs = 21,296. ✓
+  - My report had read ALIGN's 22,472 as covering (b) «on the same pairs for t ≥ 1». The new wording states the exact sub-range (11,824),
+    and the KF_x range (21,296), which I had not separated. These are finer than my reading; I accept them.
+  - F-b: the T^R values become lane DATA, not used by any statement. This is right: T^R(3) = 8 is P-TR3 (signed, not landed), and 13 at
+    d = 4 is L-RED's machine result (my r2align maxima reach 13 on the corpus, DATA only). No signed statement changes. ✓
+  - F-c: P-1 and P-2 are applied in the line only, as I worded them. The packet's §0 already defines g. ✓
+- **Line L-2: MATCHES.** Byte test (Python): the five R1-R5 pairs parsed from the fixes entry. Each old string occurs exactly once in
+  L-1; applying them gives a string byte-identical to L-2 (3,330 B). Parentheses 76 / 76, depth never negative; 0 «|»; one line.
+  The source note now names the fixes file, which carries no proof. ✓ My seven SIGNs stand.
