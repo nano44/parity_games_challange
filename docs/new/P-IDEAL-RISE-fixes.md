@@ -40,3 +40,20 @@
   {+identity of R(x, k) with the rises of cv of the Ξ-target: no separate DATA; the+}
   [-docs/new/P-IDEAL-RISE.md;-]
   {+docs/new/P-IDEAL-RISE.md with its fixes entry 1, docs/new/P-IDEAL-RISE-fixes.md;+}
+
+## Entry 2 (2026-11-06 from 18:5xZ by date -u; L-NEW successor 57; Lead relay 18:57Z of CHECKER C127 E-1)
+- Report answered: CHECKER C127 (claude/checker 5793c1e2, docs/checker/C127.md) E-1 on the R114 draft: the MOVE-RISE-R half of the line's
+  DATA clause has no counter. Relayed by the Lead at 18:57Z with the replacement text, «copied by script from C127 §5». C127 was not on
+  origin when this entry was written (claude/checker head 36b2f02e at 18:58Z), so the text is copied from the Lead's message; the result
+  equals the Lead's expected sha1 (below). No statement, proof or other DATA changes; the packet and entry 1 stay as they are.
+- Counter check (experiments/new/box182/risecheck.py, unchanged, sha1 404df6de…): MOVERISE (l. 116-117) counts moves at which cv(z) does
+  not rise strictly; no counter compares R(x, k) with moves(z) (the corollary «R(x, k) ≥ moves(z)» of MOVE-RISE). So the corollary joins
+  the identity in «no separate DATA».
+- Line L-3 (docs/new/P-IDEAL-RISE-line-L3.txt, sha1 4a553a296533b86de8bb3fce20a90ff0e13393e9 = the Lead's expected value, 1 line, 4,255
+  bytes, 74 «(» = 74 «)»): L-3 = L-2 (25170417) with exactly one replacement, applied by script; the old string occurs exactly once in
+  L-2; no other byte changes:
+  - R5 (C127 E-1): «the identity of R(x, k) with the rises of cv of the Ξ-target: no separate DATA» → «the identity of R(x, k) with the
+    rises of cv of the Ξ-target and MOVE-RISE's R(x, k) ≥ moves(z): no separate DATA»
+- Word diff L-2 → L-3 (git diff --no-index --word-diff=plain; [-removed-] {+added+}):
+  [-Ξ-target:-]
+  {+Ξ-target and MOVE-RISE's R(x, k) ≥ moves(z):+}
