@@ -1,6 +1,12 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 18), 2026-11-06 02:54Z (date -u)
+- C124 = R111 (P-IDEAL-KEYS) draft 462ac44d @ trunk 79eaa01e: FAIL E-1 only (RENEW's DATA «for the constant keys, on 2,704
+  intervals»: keycheck RENEWB checks KP only, and 2,188 of the intervals have a = 1, outside «if a ≥ 2»). L-3 = one replacement
+  (C124 §5); expected L-3 sha1 c29f0a93… (with newline), rebuilt UPDATE sha1 284c9dea… (no newline). C123 is reserved for P-TR3.
+  NEXT: C124 Add. 1 on the second fill.
+
 ## Resume point (successor 18), 2026-11-05 21:17Z (date -u)
 - C122 CLOSED (main 80ed31a6 FAIL E-1..E-3; Add. 1 32f65fe0 PASS; Add. 2 bb114219; R110 landed d056db87; CI 6293 green). Nothing open.
   NEXT: C123 = P-TR3 («T^R(3) = 8», L-COMP), when the Lead routes it.
