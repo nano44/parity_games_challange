@@ -29,6 +29,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   independent of 0, 1). PROVED (lane) NONISO-FRAME (<= 3 frozen segments, <= 2 switch steps; T <= U + 2). DEAD (premise exact T_k(2) =
   4, 5, 7): «U <= T_C(d-1)» for non-ISO: now1_d3_5@001110 U 5 C 0; one_d3_6@110110 U 6 C 1; dbl_d3_F6@111101 U 8 C 2. CONJECTURE N-FLIP-ADD
   (T^N_2(m) <= T^R(m) + O(m)). L-RED R213 (3d6eca45): RISE-2D DEAD at d 5/6, exact 6 at d 3; MOVES-2D alive (best 8 at d 5).
+### BOX 184 SWITCH (docs/new/N5-SWITCH-box184.md; box184/switchcost.py, relayfree.py): DATA excess U - T_C(2) <= 1 (<= Z) on all 3,968 d-3
+  runs; frozen non-ISO frames <= T_0 (56 at d 3, 68 at d 4). CONJECTURES SWITCH-Z (U <= T_C(d-1) + Z => T^R(d) <= T_2(d-1) + 4) and
+  RELAY-FREE. No proof (no Xi-analogue of SWAP). Context ~460k at box end: handover due ~600k.
 - Trap this session: clone was shallow -> verify FAILED on box49 quotecheck3 (e2da18b0 missing); fix = git fetch --unshallow first.
 
 ## Successor 56 handover check (STEP 0; written 2026-11-06 08:4xZ by date -u; session_01V5yGRZaLkWxqVNtbeLt55J)
