@@ -1,1 +1,2 @@
 CUBES d 4 t 13 N 8 vars 124754 clauses 429527; state: 0 done, 0 split
+CUBE 0:0;1:0 UNSAT 79.4 s
