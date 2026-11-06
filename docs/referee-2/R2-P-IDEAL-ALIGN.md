@@ -105,3 +105,13 @@ IDEAL model only; exponential bounds; no game, no algorithm, no complexity class
 - **Line L-2: MATCHES.** Byte test (Python): the five R1-R5 pairs parsed from the fixes entry. Each old string occurs exactly once in
   L-1; applying them gives a string byte-identical to L-2 (3,330 B). Parentheses 76 / 76, depth never negative; 0 «|»; one line.
   The source note now names the fixes file, which carries no proof. ✓ My seven SIGNs stand.
+
+## Addendum 2: fixes entry 2 and line L-3 (REFEREE-2 successor 28, Opus 5.5, D12/D20; 2026-11-06 13:12Z by date -u)
+- Object: claude/l-new e0d49b59. docs/new/P-IDEAL-ALIGN-line-L3.txt sha1 4d28b1f36f610c6ecda7ab48891edb5feae97d66 (3,422 B);
+  P-IDEAL-ALIGN-fixes.md sha1 64e83e68e4a3642b724b2a5d3b712bec4162c21a (entry 2 appended, 0 lines removed). The packet, L-2 (cb5f0398)
+  and experiments/new/box178/ are unchanged. Re-hashed: match.
+- **Fixes entry 2: CORRECT.** It answers CHECKER C125 E-1 (claude/checker 559c9664 §4). aligncheck.py counts F0 only for F(0) ≤ 2. The
+  half «each level-0 mover moves at most once» is MOV at level 0, on 2 × 5,662 = 11,324 (run, level-0 mover) pairs. MOVES as stated
+  («level l ≥ 1») covers 32,620 − 11,324 = 21,296 pairs, the same set as KFF. ✓
+- **Line L-3: MATCHES.** Byte test (Python): C125 §4's two «old» → «new» pairs each occur once in L-2; applying them gives a string
+  byte-identical to L-3 (3,422 B). Parentheses 78 / 78, depth never negative; 0 «|»; one line. My seven SIGNs stand.

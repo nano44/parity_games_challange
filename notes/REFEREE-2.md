@@ -26,6 +26,18 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 - Tools: R2-P-IDEAL-KEYS/r2sim.py (own simulator from R104, β-set comparison), r2lemmas.py (all lemma checks + controls; CORPUS=env).
 - Trap noticed: the clone was shallow; rev-list counts vs trunk are false until fetch --deepen.
 
+## Resume point 6 (successor 28; 2026-11-06 13:57Z by date -u)
+- ALIGN Add. 2 (a4d3bc41), Note E-3 confirmation (0bdc659c; SIGN stands at cfd25b61).
+- P-IDEAL-RISE (l-new 2f4d96de): R2-P-IDEAL-RISE.md. All SIGN; the 4 certificates re-verified by my own r2cert.py (exact, unique,
+  >= 0, bounds 22, 8, beta_3, beta_4 equal to the tool's p/q). L-1 needs W-1 (certificate «range» = sup - inf over ALL genomes and
+  states; the certificates mix genomes) and W-2 (RISE_A does not count (a)'s identity).
+- Tools: R2-P-IDEAL-RISE/r2cert.py (PHX, PBG features), r2rise.py (PHIK, RISE, tau_main).
+
+## Resume point 5 (successor 28; 2026-11-06 12:13Z by date -u)
+- P-IDEAL-ALIGN Add. 1 (ddca4cc7), P-TR3 Add. 2 (ee1d6e18) pushed. Note E-3 draft (trunk 82a5f384, 4a64b0d5): R2-NOTE-E3.md, SIGN with
+  E3-W1 (cite as «DEAD (with RESULTS R112's machine trust base)», drop «unconditional within RESULTS»). Predecessor's l. 85 ruling lifted:
+  its closing conditions (l. 86-88) are met by landed R112.
+
 ## Resume point 4 (successor 28; 2026-11-06 04:16Z by date -u)
 - P-TR3 Add. 1 (l-comp d3e3cde8): fixes CORRECT, L-2 MATCHES (4 replacements; F3 16/16 DIMACS identical both cnf.py; drup2.c fuzz 0).
 - P-IDEAL-KEYS Add. 2 (l-new 432edf82): entry 2 CORRECT, L-3 MATCHES (C124 §5 single replacement). Both in commit 7ff32432.
