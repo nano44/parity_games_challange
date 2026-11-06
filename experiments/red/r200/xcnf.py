@@ -252,6 +252,24 @@ def build(T, E, fixall=False, lem=True):
             elif bnd - nt > 0:
                 enc = CardEnc.atleast(lits=lits, bound=bnd - nt, top_id=C.n, encoding=EncType.seqcounter)
                 C.n = max(C.n, enc.nv); [C.add(list(c)) for c in enc.clauses]
+    if os.environ.get("FMIN") is not None:   # R211: FMIN "l:k,..." -> the level-l pair order Rk flips at >= k of the transitions 0->1, ..., L-1->L
+        from pysat.card import CardEnc, EncType
+        for item in [x for x in os.environ["FMIN"].split(",") if x]:
+            l, bnd = map(int, item.split(":")); lits = [neg(C.EQ(Rk[(t, l)], Rk[(t - 1, l)])) for t in range(1, L + 1)]
+            lits = [x for x in lits if x is not False]; nt = sum(1 for x in lits if x is True); lits = [x for x in lits if x is not True]
+            if bnd - nt > len(lits): C.add([])
+            elif bnd - nt > 0:
+                enc = CardEnc.atleast(lits=lits, bound=bnd - nt, top_id=C.n, encoding=EncType.seqcounter)
+                C.n = max(C.n, enc.nv); [C.add(list(c)) for c in enc.clauses]
+        for item in [x for x in os.environ.get("FMAX", "").split(",") if x]:   # FMAX "l:k" -> at most k flips (needs FMIN set, may be "")
+            l, bnd = map(int, item.split(":")); lits = [neg(C.EQ(Rk[(t, l)], Rk[(t - 1, l)])) for t in range(1, L + 1)]
+            nt = sum(1 for x in lits if x is True); lits = [x for x in lits if not isinstance(x, bool)]
+            if nt > bnd: C.add([])
+            elif len(lits) + nt > bnd:
+                if bnd - nt == 0: [C.add([neg(x)]) for x in lits]
+                else:
+                    enc = CardEnc.atmost(lits=lits, bound=bnd - nt, top_id=C.n, encoding=EncType.seqcounter)
+                    C.n = max(C.n, enc.nv); [C.add(list(c)) for c in enc.clauses]
     if os.environ.get("TMIN") == "1":   # R202: the run has at least L steps (deterministic run: step L nonempty => all earlier steps nonempty)
         C.add([mv[(L, v)] for v in range(N)])
     info = dict(mv=mv, g0=g0, N=N, N0=N0, L=L, lev=lev, WT=WT, gate0=gate0, S0=S0, m0=m0, dtop=dtop, faces=faces, b=b, lt=lt, par=par, st=st, Gb=Gb, req=req, fi=fi)
