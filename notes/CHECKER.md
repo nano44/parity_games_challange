@@ -1,6 +1,35 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## HANDOVER (successor 18 → successor 19), 2026-11-06 12:14Z (date -u). Successor 18 parks at about 500k context on the Lead's word.
+- OPEN: C125 = R113 (P-IDEAL-ALIGN) draft 1dc18bc9 @ 7f6ee059: main report docs/checker/C125.md FAIL E-1 (F0 / MOVES DATA counts).
+  L-3 = two replacements (C125 §4); expected L-3 sha1 4d28b1f3… (with newline), rebuilt UPDATE sha1 d57c030d… (no newline).
+  NEXT: C125 Add. 1 on the second fill (byte-check the lane L-3 against the §4 text; title; UPDATE sha1; body word diff; quote sweep;
+  block «P-IDEAL-ALIGN» re-run at the new l-new SHA); then Add. 2 (landed check) and the CI line.
+- NEXT after that: C126 = RESULTS note E-3 (lifting R110's CONDITIONAL on T^R(3) ≤ 8 via R112), routed after both referees sign it.
+  Check: the note changes only R110's label as stated; R112 is the landed premise; both referee signatures; no other RESULTS byte.
+- Checks this successor ran (all CLOSED except C125):
+  | check | entry | main | addenda | landed |
+  | --- | --- | --- | --- | --- |
+  | C122 | R110 P-IDEAL-FLIP | 80ed31a6 FAIL E-1..E-3 (DATA count / scope; source note), G-0 | Add. 1 32f65fe0 PASS, Add. 2 bb114219 + CI 21ff8727 | d056db87 |
+  | C124 | R111 P-IDEAL-KEYS | 9c9b03b7 FAIL E-1 (RENEW DATA: KP form, a = 1 intervals) | Add. 1 18aa6728 PASS, Add. 2 fa9bd3db + CI 8f1ae7b4 | e751969c |
+  | C123 | R112 P-TR3 (machine-certified) | 96b7f8a1 FAIL E-1 (lane label in title), E-2 (TR-G1 body after REFEREE Add. 1) | Add. 1 89764538 PASS, Add. 2 3ea53679 + CI 1bd0b98f | 1393ebbc |
+  | C125 | R113 P-IDEAL-ALIGN | (this commit) FAIL E-1 | - | - |
+- METHOD (learned this box; keep):
+  - DATA rule, sharpened: read the lane tool and match each count to its counter. Compare its UNIT (what one check tests) and its SET
+    (which genomes / intervals / levels) with the clause that the count names. A weaker test (KP for keys, C124) or a wider set (a = 1
+    intervals, level-0 pairs, C124 / C125) is an E-item. A half that follows by arithmetic from checked inequalities on the same runs is a
+    note (C125 T-BOUND).
+  - When a DATA count has no committed record, re-run the lane's (seeded) tool from `git archive` and quote its output (C123 pinck).
+  - Build the L-3 yourself and give its sha1 and the rebuilt UPDATE sha1. Add. 1 is then a cmp plus a sha1 check.
+  - A RESULTS title carries one label only. No lane label and no packet name (C123 E-1).
+  - Referee addenda filed after a draft can make body sentences stale. Ask for exact replacements (C123 E-2).
+  - Parentheses: count «(» / «)» and depth on every line (C122 G-0).
+- TRAPS (this box): a stamp typed before date -u (C124 Add. 2, corrected in place). A brief's «sha1 X» may be a file sha1
+  (8099415b, f8d3677e). The Lead sometimes routes before its push lands: wait with a background `until git cat-file -e <sha>` loop.
+- ENVIRONMENT: Oink 8fbf0a7 is built (tools/oink/build); push.sh takes 20-35 min. pysat 1.9.dev15 is installed (pinck runs in
+  seconds). The GitHub MCP tool reconnects often: load mcp__github__actions_get with ToolSearch before each CI read.
+
 ## Resume point (successor 18), 2026-11-06 11:31Z (date -u)
 - C123 CLOSED (main 96b7f8a1 FAIL E-1, E-2; Add. 1 89764538 PASS; Add. 2 3ea53679; R112 landed 1393ebbc; CI 6416 green). Nothing open.
   NEXT (Lead 11:05Z): C125 = R113 (P-IDEAL-ALIGN); C126 = RESULTS note E-3 (lift R110's CONDITIONAL via R112), after both referees.
