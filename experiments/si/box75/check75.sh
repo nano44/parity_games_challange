@@ -12,7 +12,10 @@ python3 -I - <<'PY'
 import sys, json; sys.path.insert(0, '../box64'); from flipdp import analyse
 r = analyse(json.load(open('../box64/wit/kf1_d4_t10.json')), K=1); assert r['T'] == [5, 10] and not r['bad'], r
 PY
-echo "box 75 P-IDEAL-IM checks + witness: PASS"
+# fixes entry 1 (W-2): the COMPOSE DATA of line L-2, seed 68, and its negative control, exact counts
+[ "$(cd ../box68 && python3 -I compose.py 200 68 | tail -n 1)" = "COMPOSE random pairs 200 KPART 0 GPART 0" ]
+[ "$(cd ../box68 && NEG=1 python3 -I compose.py 200 68 | tail -n 1)" = "COMPOSE random pairs 200 KPART 21234 GPART 54433" ]
+echo "box 75 P-IDEAL-IM checks + witness + COMPOSE seed 68: PASS"
 python3 -I -c "import pysat" 2>/dev/null || { rm -rf "$t"; echo "box 75: python-sat missing, CNF regeneration skipped"; exit 0; }
 o=$(DUMP="$t" DUMPONLY=1 python3 -I frame_P-IDEAL-IM.py 3 t1 11 | grep -o "sha1 [0-9a-f]*")
 rm -rf "$t"
