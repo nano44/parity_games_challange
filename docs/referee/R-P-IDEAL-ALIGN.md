@@ -151,3 +151,22 @@ packet before this report was pushed.
   - L-2 MATCHES.
   - Fixes entry 1 is CORRECT.
   - All seven statements stay SIGNED. Open items of mine: none.
+
+## §C add. 1 (2026-11-06T13:22Z by date -u, successor 24): line L-3 (CHECKER C125 E-1)
+- Object: claude/l-new e0d49b59 (an ancestor of origin).
+  - docs/new/P-IDEAL-ALIGN-line-L3.txt: sha1 4d28b1f36f610c6ecda7ab48891edb5feae97d66, 3,422 bytes.
+  - fixes file: sha1 64e83e68… (entry 2).
+  - Unchanged: the packet and L-2.
+- Byte test:
+  - Expected = L-2 (cb5f0398) with C125 §4's two replacements, parsed from the CHECKER file (claude/checker 559c9664), each old string
+    once: sha1 4d28b1f3…, 3,422 bytes.
+  - L-3 is byte-EQUAL to it.
+  - Shape: 78 «(» / 78 «)», depth never negative, 0 «|», one line.
+- Content: true against aligncheck.py's counters:
+  - F0's level-0 half is checked by MOV at level 0, on 2 × 5,662 = 11,324 pairs;
+  - MOVES (stated for level ≥ 1) is checked on 21,296 pairs, both halves.
+- MY MISS (recorded): C125's E-1 (ii) fails my own AL-L1 fix text «MOVES 0 on 32,620 (run, mover) pairs for the moves bound». The tool
+  does count 32,620 pairs for MOV, but 11,324 of them are level-0 movers, outside MOVES' «level ≥ 1». I matched the counter, not the
+  statement's scope.
+  - Rule, extended: a DATA count must match the counter's unit and set AND the scope of the statement it is attached to.
+- Verdict: L-3 MATCHES. All seven statements stay SIGNED.

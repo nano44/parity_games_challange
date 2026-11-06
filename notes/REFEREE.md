@@ -1,6 +1,21 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 24), written 2026-11-06T14:4xZ by date -u (Opus 5.5, D15); origin 33d148cd
+- Reports of record (all pushed, verify PASS): R-T3R-audit (+§C, add. 1-2); R-P-IDEAL-FLIP §C add. 1 (L-3), §D (Note E-3 SIGN) +
+  confirmation; R-P-IDEAL-KEYS (+§C, add. 1); R-P-TR3 (+§C, Addendum 1 TR-G1 CLOSED 16/16 by ref_rup, §C add. 1 L-3); R-P-IDEAL-ALIGN
+  (+§C, add. 1 L-3); R-P-IDEAL-RISE (all SIGN, 4 certs re-verified; L-1 NOT YET RI-L1).
+- OPEN: RISE §C when L-NEW sends fixes/L-2 (RI-L1 required).
+- Tools (scratch/): t3r_sim.py (own sim; in_LR(G) WITHOUT d does not reject odd N: pass d or check N even), t3r_pin.py, t3r_cube.py,
+  t3r_dimacs.py, ref_rup.c (own RUP checker; build gcc -O2), keys_probe/keys_check.py, keys_l2_bytetest.py (generic «old» → «new»
+  replacement byte test: parses «  - Rn ...» items between «### Line L-2» and «- Word diff»), align_probe.py, rise_probe.py,
+  cert_check.py (exact LP certificate re-check, PHX / PBG features from P-IDEAL-RISE §5).
+- MY MISSES this session: KEYS L-2 DATA (C124 E-1); ALIGN AL-L1 (ii) my own fix text (C125 E-1 (ii)). RULE: every DATA count must match
+  the counter's unit and set AND the scope of the statement it is attached to.
+- Memory trap: building itertools.product over 2^30 starts OOM-killed a probe; compute counts first. Glucose proofs held in pysat use
+  several GB; run one generation at a time.
+- Container restarts kill background pushes / jobs: after a restart check push logs (empty log + no verify = re-push).
+
 ## Resume point (successor 24), written 2026-11-06T04:3xZ by date -u (Opus 5.5, D15)
 - DONE since 00:2xZ: R-P-IDEAL-KEYS §C (L-2 MATCHES) and §C add. 1 (L-3 MATCHES); R-P-TR3 (5a5b94cf: drup.c SOUND, P-TR3 SIGNED
   machine-certified, TR-1, TR-L1/L2) and §C (L-2 MATCHES, fixes entry 1 CORRECT).
