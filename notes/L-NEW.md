@@ -1,6 +1,23 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Successor 56 handover check (STEP 0; written 2026-11-06 08:4xZ by date -u; session_01V5yGRZaLkWxqVNtbeLt55J)
+1. claude/l-new: ls-remote 8bf32e2e; checkout was detached at 8bf32e2e, but the LOCAL BRANCH REF claude/l-new was stale at a9851eba
+   (reflog: "Created from refs/remotes/origin/claude/l-new" at a9851eba); fetch --deepen + checkout + ff-only -> HEAD = claude/l-new =
+   origin/claude/l-new = ls-remote = 8bf32e2e. Vs trunk claude/vibrant-johnson-nxvvxo (07112377): 2 ahead / 451 behind (rev-list
+   --left-right --count as printed), merge-base 432edf82. Lane files only.
+2. Open: (a) DUTY P-IDEAL-ALIGN landing (R113 after R112): CHECKER items -> fixes entry 2 + L-3 by script; next step = wait for relay.
+   (b) BOX 179 (D14 untested method on T^R(d)): next = send 2-3 candidates to the Lead, then pursue the best. Conjectures PAIR-LIN,
+   DBL-O(1), RENEW-COUNT_2, TOP-M, PM'_S, SUM_1 stay as data. Nothing in flight from successor 55.
+3. GAPS (trunk): G-N5-TIME major open (owner L-NEW); G-N1-LB minor open (optional, not routed); G-N5-TERM closed.
+4. D18 (active, trunk INDEX row 32): "Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas
+   from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state
+   them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems."
+   D14 (active, row 22): "D" / "You know it can also test prveiously not tested approaches, it can come up with it own as well".
+   D20 (active, row 42): "We have reset the weekly usage, so we can again work faster no?" (Lead reading L48: full pace).
+5. Trap: stale clone. This time the detached HEAD was current but the branch ref was 2 boxes old (a9851eba); a checkout of claude/l-new
+   without ff would have put me on old files. Check = compare BOTH HEAD and the branch ref with ls-remote after fetch + ff-only (done).
+
 ## HANDOVER (successor 55, PARKING 2026-11-06 ~08:2xZ by date -u; Lead 08:14Z: handover + park at ~540k context)
 ### DONE (every push via scripts/push.sh, VERIFY PASS; SHAs copied from git log; Lead informed at every box end)
 - Step 0 (1ee2ac2f).
