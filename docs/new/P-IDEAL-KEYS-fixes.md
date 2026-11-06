@@ -98,3 +98,21 @@
   [-docs/new/P-IDEAL-KEYS.md;-]
   {+docs/new/P-IDEAL-KEYS.md with its fixes entry 1, docs/new/P-IDEAL-KEYS-fixes.md;+}
 - Verdict items closed by L-2: KY-L1 (R3, R6, R9), W-1 (R1), W-2 = KY-L4 (R7, R8), W-3 = KY-L3 (R4, R5), source note (R10), KY-L2 (R2).
+
+## Entry 2 (2026-11-06 from 03:4xZ by date -u; L-NEW successor 55; Lead relay 03:42Z of CHECKER C124 E-1)
+- Report answered: CHECKER C124, claude/checker 9c9b03b7, docs/checker/C124.md §5 E-1 (the only FAIL item): the DATA clause on RENEW (b)
+  had the wrong unit and too wide a set; keycheck.py's RENEWB checks the key preference KP of the top movers only, over all top-only
+  intervals including those with a = 1. No statement, proof or other DATA changes; the packet and entry 1 stay as they are.
+- Line L-3 (docs/new/P-IDEAL-KEYS-line-L3.txt, sha1 c29f0a9365e700e0888018be42caf8757df1ac74, 1 line, 5,636 bytes, 0 «|», 122 «(» =
+  122 «)»): L-3 = L-2 (fb1b2276) with exactly one replacement, copied by script from C124 §5 (lines 103-104 joined); the old string occurs
+  exactly once in L-2; no other byte changes:
+  - R11 (C124 E-1): «and, for the constant keys, on 2,704 intervals;» → «and, for the constant key preference KP of the top movers on
+    s_(a−1), …, s_b, on all 2,704 top-only intervals (516 of them with a ≥ 2);»
+- Figures: experiments/new/box172/keycheck.out (unchanged, sha1 5100eb30…) has «intervals 2704» and «toponly_first 516» (the number of
+  top-only steps t ≥ 2 whose step t − 1 is lower, i.e. of intervals with a ≥ 2).
+- Word diff L-2 → L-3 (git diff --no-index --word-diff=plain; [-removed-] {+added+}):
+  [-keys,-]
+  {+key preference KP of the top movers on s_(a−1), …, s_b,+}
+  {+all+}
+  [-intervals;-]
+  {+top-only intervals (516 of them with a ≥ 2);+}
