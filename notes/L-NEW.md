@@ -13,6 +13,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   the LP support). CERTIFIED: PHX d3 = 22 exactly (with Phi_K: class optimum EXACT); PBG (keys + budget + gaps) 8 / 18.86 / >= 35.55
   (DEAD instance out/cert_PBG_d4_s1794.json); PHXVDBG 13.92 / >= 23.28 (414 genomes; 700-genome run OOM-killed at 14 GB). Obstruction:
   a move spends one RANK of its own budget, and renewal of the partner leaves the partner's budget unchanged; rank budgets ~ #paths.
+### BOX 180 RISES (docs/new/N5-RISES-box180.md; box180/rises.py, riseshape.py, climbR.py): PROVED (lane) RISE-EQUIV max R <= T <= 1 +
+  sum R (R105 MONO/XI-NEW/RISE) => coarse value scale == G-N5-TIME. DATA: max R <= 2d on 40 champion runs (R212 TR_d5/d6, T* d5-10) and
+  all climbs; tight dd_d5_F14 (10) and climb d4 (8). CONJECTURE RISE-2D => T^R(d) <= 8d^2 + 1. Kill target: d 3 (T^R 8 > 6), max seen 5.
 - Trap this session: clone was shallow -> verify FAILED on box49 quotecheck3 (e2da18b0 missing); fix = git fetch --unshallow first.
 
 ## Successor 56 handover check (STEP 0; written 2026-11-06 08:4xZ by date -u; session_01V5yGRZaLkWxqVNtbeLt55J)
