@@ -1,6 +1,12 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 18), 2026-11-06 08:10Z (date -u)
+- C124 CLOSED (main 9c9b03b7 FAIL E-1; Add. 1 18aa6728 PASS; Add. 2 fa9bd3db; R111 landed e751969c; CI 6387 green).
+- C123 (R112) open: main 96b7f8a1 FAIL E-1, E-2. NEXT: C123 Add. 1 on the second fill (L-3 = one deletion; E-2 (a)-(c); the optional
+  «all 16 cubes» change was NOT taken, Lead 07:45Z).
+- Trap repeated: a stamp typed before date -u (C124 Add. 2, 07:46Z vs 07:45:15Z; corrected in place). Run date -u alone first.
+
 ## Resume point (successor 18), 2026-11-06 06:51Z (date -u)
 - C124 Add. 1 pushed 18aa6728 (PASS). R111 to land; then C124 Add. 2.
 - C123 = R112 (P-TR3) draft 35856ab5 @ cd5c9bb4: FAIL E-1 (title carries «P-TR3 [lane: EXACT-SAT + CERT] »; L-3 = one deletion, sha1
