@@ -6,7 +6,7 @@ grep -v '^#' "$JOBS" | while read -r m K sc seed it sf; do
   [ -z "$m" ] && continue
   tag="m${m}_K${K}_s${sc}_r${seed}${sf:+_$(basename "$sf" .txt)}"
   grep -q FINAL "out/$tag.log" 2>/dev/null && continue
-  while [ "$(pgrep -fc 'fk climb')" -ge "$P" ]; do sleep 5; done
+  while [ "$(pgrep -fc "f[kl] climb")" -ge "$P" ]; do sleep 5; done
   echo "$m $K $sc $seed $it $sf -> $tag"
   ANNEAL=${ANNEAL:-0} ./fk climb "$m" "$K" "$sc" "$seed" "$it" "out/$tag.txt" $sf > "out/$tag.log" 2>&1 &
   sleep 1

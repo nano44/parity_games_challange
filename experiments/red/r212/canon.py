@@ -2,7 +2,7 @@
 """L-RED R212: locate an L^R_d witness (JSON, with start) in the r200 cube partition (SYM0=1 SYMB=1): apply the R202 symmetries
 sigma_l (swap movers 2l, 2l+1; swap the options of the level-(l+1) movers; rename Xi-targets) to reach s_0(2l) >= s_0(2l+1) for l >= 1
 and f0 <= f1 at level 0 (first-move times, 0 = never -> L+1); check T is unchanged under r187/ideal.py; print the cube keys
-(levels 0, 1, 2) and their status in a state file. Usage: canon.py witness.json L state.json"""
+(levels 0, 1, 2) and their status in a state file. Usage: canon.py witness.json L state.json [canonical_out.json]"""
 import sys, os, json
 H = os.path.dirname(os.path.abspath(__file__)); sys.path[:0] = [os.path.join(H, "..", "r187")]
 import ideal
@@ -30,6 +30,7 @@ if inf(f[0]) > inf(f[1]): G = sigma(G, 0)
 for l in range(1, d):
     if not G["start"][2 * l] >= G["start"][2 * l + 1]: G = sigma(G, l)
 T1, f = first(G)
+if len(sys.argv) > 4: json.dump(G, open(sys.argv[4], "w"))
 print("T before", T0, "after", T1, "start", G["start"], "first moves", f)
 keys = []
 for depth in (1, 2, 3):
