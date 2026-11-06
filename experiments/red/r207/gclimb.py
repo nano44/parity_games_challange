@@ -3,7 +3,7 @@
 A auxiliary movers of degree 1 per level (env AUX, default 0; AUX=0 and WFREE=0 = the R197 ladder 𝓛^R_d). W-target of an option of a
 level-l >= 1 mover: any mover of level l-1 (WFREE=1) or the R197 convention 2(l-1)+k (WFREE=0, two-option movers only; aux movers
 W-point to any level-(l-1) mover). Xi-targets: movers later in pi, or the exit X (-1); pi mutable (acyclic by construction).
-Score: SCORE=T (default; run length; FL = (max pair flips of the two-option pairs, T); FTOP = (top pair flips, T))
+Score: SCORE=T (default; run length; FL = (max pair flips of the two-option pairs, T); FTOP = (top pair flips, T); MARGIN = max over same-level pairs of (F - 2|W|, F, -|W|), then T; FTW = the same for the top two-option pair)
 (T = run length from the stored start, r187/ideal.py). Seeds: SEED=<genome> (same d: continue; smaller d: add levels on top,
 new movers at random pi positions); aux movers are added to a seed if it has fewer.
 Usage: gclimb.py d iters seed out.json"""
@@ -109,6 +109,20 @@ def score(G):
         o = [k[2 * l] < k[2 * l + 1] for k in K]; F.append(sum(a != b for a, b in zip(o, o[1:])))
     if SC == "FL": return (max(F), len(S) - 1)        # max pair flips (two-option pairs), then T
     if SC == "FTOP": return (F[-1], len(S) - 1)       # top pair flips, then T
+    if SC == "FLEV": return (F[int(os.environ.get("PL", "2"))], len(S) - 1)   # flips of the level-PL two-option pair, then T
+    if SC in ("MARGIN", "FTW"):
+        W = diag.wclos(G); lev = G["lev"]; N = G["N"]
+        def pm(a, b):
+            o = [k[a] < k[b] for k in K]; f = sum(x != y for x, y in zip(o, o[1:])); w = len({a, b} | W[a] | W[b]); return (f - 2 * w, f, -w)
+        if SC == "FTW": return pm(2 * (d - 1), 2 * d - 1) + (len(S) - 1,)
+        best = None
+        for l in range(d):
+            ms = [v for v in range(N) if lev[v] == l]
+            for i in range(len(ms)):
+                for j in range(i + 1, len(ms)):
+                    r = pm(ms[i], ms[j])
+                    if best is None or r > best: best = r
+        return best + (len(S) - 1,)
 if __name__ == "__main__":
     d, it, seed = int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]); out = sys.argv[4]; rng = random.Random(seed)
     G0 = json.load(open(os.environ["SEED"]))

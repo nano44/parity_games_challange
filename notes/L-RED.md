@@ -49,6 +49,13 @@ context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older note
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
 
+## Successor 50 R210 (= Lead's «R209 re-aimed», 2026-11-06) — docs/red/R210-pairlin.md
+- PAIR-LIN: no kill. Best F per level 2, 6, 12, 14, 15 (|W| 2, 4, 6, 8, 10); F − 2|W| ≤ 0 everywhere; equality only at
+  c4x-type 12 / 6. F flattens and is d-independent per level (L-NEW LADDER cap 3^(l+1) − 1).
+- 9 keep files replayed (verify_kill, box150 VIOL 0, lemck 0).
+- gclimb SCORE=FLEV PL=l is the useful score; MARGIN / FTW stay stuck at their seeds.
+- Keep-alive waiter: bwux7cgy0-type until-loop on «cubes.py 5 16» (re-arm after each restart / 2 h timeout).
+
 ## Successor 50 R209 (2026-11-06, date -u) — docs/red/R209-topc-kill.md
 - TOP-C DEAD: L-NEW box 175 seeds confirmed under my exact gain′ (r208/gainx.py). gain′ 4 / 8 / 7 / 4 > 3; all-starts gains 4 / 7 / 6 / 4.
   All replayed; lemck needs the gates renumbered (iso_d4_st9_rn).
