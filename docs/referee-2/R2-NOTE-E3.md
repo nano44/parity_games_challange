@@ -45,3 +45,13 @@ REFEREE-2 successor 28 (Opus 5.5, D12/D20). Written 2026-11-06 12:13Z (date -u).
 ## Sign-off line for the block
 - «REFEREE-2 <referee-2>» may be filled with this file's push commit. My statement for it: R110 (g)'s implication together with RESULTS
   R112 gives the DEAD, and R112's T^R(3) is R110's.
+
+## Confirmation (2026-11-06 13:41Z by date -u): the block at trunk cfd25b61 (R110-note-E3-draft.md sha1 245cf7407e8453cca558c9e573f47bb44efe805b) still has my SIGN
+- Word diff of the note block, 4a64b0d5 → 245cf740:
+  - E3-W1 is verbatim, and «unconditional within RESULTS» is gone.
+  - The instance clause now quotes R110 «T 11 from its stored start, mover 1 moving at step 7 and mover 0 at step 8, 6 + 3 = 9 steps
+    outside», verbatim in RESULTS at cfd25b61.
+  - The 16/16 clause cites REFEREE R-P-TR3 Addendum 1 (claude/referee 365f22e1 l. 207 ff.: «TR-G1 CLOSED, all 16 cubes re-checked by my
+    own checker»).
+  - The sign-off SHAs are filled: REFEREE 5e4def16, REFEREE-2 8db8eb95.
+  - Nothing else changes. **SIGN stands.**
