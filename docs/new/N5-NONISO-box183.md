@@ -22,7 +22,7 @@ once». Labels: PROVED (lane, unrefereed) / DATA / CONJECTURE / DEAD / READING. 
   - Proof. Within a segment, at every step 0 and 1 keep q. Their A-sets in G are irrelevant to the other movers' choices, which depend on
     A-sets computed from the old state, and on keys under the new state that agree with G_q's, because q is unchanged. G_q gives 0 and 1
     singleton A-sets and every other mover the same A-set (same old state, same chains) and the same keys. So the steps agree. The
-    switch count is F0. A non-switch step that moves only 0 or 1 cannot exist, since then it would be a switch step. Every step either
+    switch count is F0. Every step either
     changes a level-≥1 mover (counted in U) or moves only level-0 movers (a switch step, ≤ 2). ∎
 - (2b) DEAD (instances; premise the exact values T_0(2) = 4, T_1(2) = 5, T_2(2) = 7, SAT, L-COMP 27 / box 160 table, lane DATA, not landed):
   the ISO-frame inequality «U ≤ T_C(d − 1), with C the number of b_0 changes along the run» is FALSE for non-ISO genomes. Here U is the
@@ -32,7 +32,7 @@ once». Labels: PROVED (lane, unrefereed) / DATA / CONJECTURE / DEAD / READING. 
     raises their values; mover 2 becomes Ξ-unhappy and moves at step 2, and the chain 3, 5, 4 follows. The extra step is a Ξ-renewal
     through a level-0 mover, invisible to the key bit.
   - one_d3_6 (box160/out/one_d3_6.json, sha1 9f8b7c7c…) from start 110110: U 6, C 1 > T_1(2) = 5.
-  - dbl_d3_F6 (box156/ext/dbl_d3_F6.json, sha1 ef787bf4…) from start 111101: T 8, U 8, C 2, two switch steps (6 and 3): U = 8 > T_2(2) =
+  - dbl_d3_F6 (box156/ext/dbl_d3_F6.json, sha1 ef787bf4…) from start 111101: T 8, U 8, C 2, two switch steps (mover 1 at step 4, mover 0 at step 6): U = 8 > T_2(2) =
     7. Every one of the 8 steps changes the upper ladder, more than any ISO E-run with 2 external flips. This is the T^R(3) = 8 value.
   - Sanity (ISO genomes, same tool): the corpus maxima are exactly U = 4, 5, 7 at C = 0, 1, 2 (nol0_d3_4, iso1_d3_5, iso_d3_7) = T_0, T_1,
     T_2(2): ISO runs reach the frame values and never exceed them.

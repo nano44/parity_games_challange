@@ -25,6 +25,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   out 3685b69b; certs box182/cert/*.json; check.sh block «P-IDEAL-RISE». Items: KEY (re-proved ALIGN (a)(c) + KP-MOVE (a)), PHIK-DESCENT,
   OPT-K (hand construction, machine d <= 8), RISE-EQUIV, MOVE-RISE; CERTIFIED C-PHX3 (= 22 exact) and C-PBG (8, 18.86, 35.55). Premises:
   R104 def, R105 ENC/MONO/XI-NEW/RISE, R110 def, R111 CASCADE. Corpus of risecheck = L^R files under box150-181: never add genome JSON there.
+### BOX 183 NONISO (docs/new/N5-NONISO-box183.md; box183/upper.py, frozen.py): W-ONLY uses ISO only on the Xi side (A-sets above level 0
+  independent of 0, 1). PROVED (lane) NONISO-FRAME (<= 3 frozen segments, <= 2 switch steps; T <= U + 2). DEAD (premise exact T_k(2) =
+  4, 5, 7): «U <= T_C(d-1)» for non-ISO: now1_d3_5@001110 U 5 C 0; one_d3_6@110110 U 6 C 1; dbl_d3_F6@111101 U 8 C 2. CONJECTURE N-FLIP-ADD
+  (T^N_2(m) <= T^R(m) + O(m)). L-RED R213 (3d6eca45): RISE-2D DEAD at d 5/6, exact 6 at d 3; MOVES-2D alive (best 8 at d 5).
 - Trap this session: clone was shallow -> verify FAILED on box49 quotecheck3 (e2da18b0 missing); fix = git fetch --unshallow first.
 
 ## Successor 56 handover check (STEP 0; written 2026-11-06 08:4xZ by date -u; session_01V5yGRZaLkWxqVNtbeLt55J)
