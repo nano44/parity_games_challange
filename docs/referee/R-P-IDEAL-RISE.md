@@ -150,3 +150,17 @@ packet before this report was pushed.
   - RI-L2 MET: «18.8596…» and «35.5535…» are exact truncations of risecheck.out's 18.859681 and 35.553557.
   - The source note names the fixes file.
 - Verdict: L-2 MATCHES. Every item stays SIGNED. Open items of mine: none.
+
+## §C add. 1 (2026-11-06T19:37Z by date -u, successor 24): line L-3 (CHECKER C127 E-1)
+- Object: claude/l-new 0548afaa (an ancestor of origin).
+  - docs/new/P-IDEAL-RISE-line-L3.txt: sha1 4a553a296533b86de8bb3fce20a90ff0e13393e9, 4,255 bytes.
+  - fixes file: sha1 d8046a92… (entry 2).
+- Byte test: expected = L-2 (25170417) with C127 §4's one replacement (claude/checker 5793c1e2), parsed from the CHECKER file, the old
+  string once. It gives sha1 4a553a29…, 4,255 bytes: EQUAL to L-3.
+- Shape: 74 «(» / 74 «)», depth never negative, 0 «|», one line.
+- Content: true. MOVE-RISE-R (R(x, k) ≥ moves(z)) has no risecheck.py counter. My own probe did check it (rise_probe.py MOVERISE_R,
+  5,234 checks, 0 violations; §4), but that is referee DATA, not lane DATA.
+- MY MISS (recorded): in §C I called the W-2 counter text «EXACT». I compared the counters with the clauses they named, but not the
+  line's (MOVE-RISE) clause, both halves, against the no-DATA list. That is the scope rule I set myself after C125, applied incompletely.
+  Rule, restated: for each signed clause of the line, find its counter, or check that it is in the no-DATA list.
+- Verdict: L-3 MATCHES. All items stay SIGNED.
