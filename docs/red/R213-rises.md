@@ -51,3 +51,10 @@ G-N5-TIME stays OPEN; the kill bounds nothing.
 | 5 | 10 | 13 (kill) | 8 |
 | 6 | 12 | 14 (kill) | 8 |
 | 7 | 14 | 14 (= 2d, no kill) | — |
+
+## 4. L-NEW box 183 query: T^N_k(2), real-run form (EXACT-SAT; r213/tn.py, xcnf env UMIN / Z0MAX)
+- Quantity computed: max U over the REAL IDEAL runs of 𝓛^R_3 (horizon 8 = T^R(3), TMIN 0) with at most k steps moving mover 0 or 1;
+  U = #steps that change a mover of level ≥ 1. Every SAT model replayed by r187/ideal.py (U and level-0 steps recounted).
+- k = 0: 4 (U ≥ 5 UNSAT); k = 1: 6 (U ≥ 7 UNSAT, 414 s); k = 2: 8 (= T^R(3); witness T 8, U 8, two level-0 steps); k unbounded: 8.
+- READING: real runs give 4 / 6 / 8; L-NEW's frame lower bounds are 5 / 6 / 8, so at k = 0 the frame is strictly looser than real runs
+  (or the definitions differ). m = 3 (d 4, horizon 13): scan started (1 h cap per query).

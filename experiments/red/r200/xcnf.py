@@ -273,6 +273,22 @@ def build(T, E, fixall=False, lem=True):
                     C.n = max(C.n, enc.nv); [C.add(list(c)) for c in enc.clauses]
     if os.environ.get("TMIN") == "1":   # R202: the run has at least L steps (deterministic run: step L nonempty => all earlier steps nonempty)
         C.add([mv[(L, v)] for v in range(N)])
+    if os.environ.get("UMIN") or os.environ.get("Z0MAX"):   # R213 (L-NEW box 183 T^N_k, real-run form): U = #steps changing a mover of
+        # level >= 1 is >= UMIN; #steps moving a level-0 mover (0 or 1) is <= Z0MAX
+        from pysat.card import CardEnc, EncType
+        def card(lits, bnd, atleast):
+            lits = [x for x in lits if x is not False]; nt = sum(1 for x in lits if x is True); lits = [x for x in lits if x is not True]
+            if atleast:
+                if bnd - nt > len(lits): C.add([]); return
+                if bnd - nt <= 0: return
+                enc = CardEnc.atleast(lits=lits, bound=bnd - nt, top_id=C.n, encoding=EncType.seqcounter)
+            else:
+                if bnd - nt < 0: C.add([]); return
+                if bnd - nt >= len(lits): return
+                enc = CardEnc.atmost(lits=lits, bound=bnd - nt, top_id=C.n, encoding=EncType.seqcounter)
+            C.n = max(C.n, enc.nv); [C.add(list(c)) for c in enc.clauses]
+        if os.environ.get("UMIN"): card([C.OR([mv[(t, v)] for v in range(N) if lev[v] >= 1]) for t in range(1, L + 1)], int(os.environ["UMIN"]), True)
+        if os.environ.get("Z0MAX"): card([C.OR([mv[(t, v)] for v in range(N) if lev[v] == 0]) for t in range(1, L + 1)], int(os.environ["Z0MAX"]), False)
     if os.environ.get("MOVEZ"):   # R213 (L-NEW box 181 MOVES-2D): mover z moves >= MOVEMIN times in steps 1..L and is some option's Xi-target
         from pysat.card import CardEnc, EncType
         z = int(os.environ["MOVEZ"]); rmin = int(os.environ.get("MOVEMIN", "1"))
