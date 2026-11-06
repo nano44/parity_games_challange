@@ -3,3 +3,4 @@
 6 0 0 103 200000 seeds/ext6_T0_bot1.txt -> m6_K0_s0_r103_ext6_T0_bot1
 6 2 0 104 200000 keep/T2_m6_29.txt -> m6_K2_s0_r104_T2_m6_29
 7 0 0 105 60000 seeds/lift_TR_d7_T20.txt -> m7_K0_s0_r105_lift_TR_d7_T20
+7 2 0 106 60000 seeds/ext7_T29_top1.txt -> m7_K2_s0_r106_ext7_T29_top1
