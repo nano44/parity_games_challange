@@ -64,5 +64,5 @@ G-N5-TIME stays OPEN; the kill bounds nothing.
   19.6 s), z 2 (level 1, 1 s); z 0 (level 0) r 2 UNSAT (0.5 s); σ_l covers z 7, 5, 3, 1. So every Ξ-target mover moves ≤ 8 = 2d times
   at d 4. Exact top-level max: r 8 UNKNOWN (2 h cap), r 7 running (between 7 and 8 if r 7 is SAT).
 - T^N_k(3), real-run form (horizon 13): k 0: max U = 8 (U ≥ 9 UNSAT 116 s; U 8 by any T_0(3) = 8 genome read as a ladder);
-  k 1: U ≥ 10 SAT (replayed), U ≥ 11 UNKNOWN (1 h cap); k 2: U ≥ 12 SAT (replayed T 12, two level-0 steps), U ≥ 13 running.
+  k 1: U ≥ 10 SAT (replayed), U ≥ 11 UNKNOWN (1 h cap); k 2: U ≥ 12 SAT (replayed T 12, two level-0 steps), U ≥ 13 UNKNOWN (1 h cap). Scan ended.
 - d 4 T ≥ 14 validation cubes (r200/cubes/d4s_t14) paused 16:3xZ to free a core (state kept, resumable with the PARK line).
