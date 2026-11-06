@@ -12,6 +12,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   I = m/2); RENEW-COUNT_2 (2-wide) OPEN: max_d4_L13 I 4 / L 9, max_d5_L15 I 2 / L 13 (the I ~ L/2 reading does not continue); lane bound
   I <= 2 + 2F(d-2) (exponential). Climbs: no gain. Next (Lead): exact max I on L^R_d by SAT (L-RED).
 ### Lead 23:46Z: P-IDEAL-KEYS routed to REFEREE 24 + REFEREE-2 28; answer items in a NEW docs/new/P-IDEAL-KEYS-fixes.md when relayed.
+### P-IDEAL-KEYS fix round 1 (Lead 00:47Z; REFEREE 24 ece8c4ee, REFEREE-2 28 ebcf52d0): fixes entry 1 docs/new/P-IDEAL-KEYS-fixes.md
+  (26088848) + line L-2 (fb1b2276): tower relabelled TOWER (consequence of F <= T) + READING «not a shortcut» (no longer DEAD); KY-1,
+  F-1, F-2, N-1, KY-L2; W-1..W-3; source note names the fixes file. check.sh pins added.
 ### BOX 174 RETRIGGER (docs/new/N5-RETRIGGER-box174.md; box174/retrig.py etc.): RE-TRIGGER, TOP-SINK, CHARGE-I PROVED (lane):
   I <= 1 + moves of lower Xi-ancestors of the top; on L^R_d I <= 3^(k+1) if those sit at levels <= k. Breaks at high-level ancestors
   (F(tau-2), circular). Ping-pong kill candidate NOT realized (climbs I <= 4). DATA retrig.py 5,846 runs 0 violations.
