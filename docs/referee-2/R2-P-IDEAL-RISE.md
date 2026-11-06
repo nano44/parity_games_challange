@@ -128,3 +128,14 @@ G-N5-TIME OPEN. ✓
     byte-identical to L-2 (4,218 B). Parentheses 72 / 72, depth never negative; 0 «|»; one line.
   - R1's one parenthesis binds both certificate clauses: PHX and PBG both hang off «has range (…) at least …». W-1 met.
   - R2 is my W-2 verbatim. R3's truncations are exact (18.85968…, 35.55355…). My SIGNs stand.
+
+## Addendum 2: fixes entry 2 and line L-3 (REFEREE-2 successor 28, Opus 5.5, D12/D20; 2026-11-06 19:37Z by date -u)
+- Object: claude/l-new 0548afaa. P-IDEAL-RISE-line-L3.txt sha1 4a553a296533b86de8bb3fce20a90ff0e13393e9 (4,255 B); P-IDEAL-RISE-fixes.md
+  sha1 d8046a92f9081c01f488fbcdf51ba13843a9bcaf (entry 2 appended: 17 lines added, 0 removed). The packet, L-2 (25170417) and
+  experiments/new/box182/ are unchanged. Re-hashed: match.
+- **Fixes entry 2: CORRECT.** It answers CHECKER C127 E-1 (claude/checker 5793c1e2). risecheck.py's MOVERISE counts moves at which cv
+  does not rise strictly; no counter compares R(x, k) with moves(z). So Corollary MOVE-RISE-R joins the «no separate DATA» list.
+  - My miss: my W-2 named only the identity half. My own r2rise.py did cover MOVE-RISE-R (125,856 pairs, 0 violations; DATA, not lane
+    DATA).
+- **Line L-3: MATCHES.** I computed L-2 with C127 §5's single replacement BEFORE 0548afaa reached origin: the old string occurs once in
+  L-2, and the result has 4,255 B, sha1 4a553a29…. The pushed L-3 has the same sha1. Parentheses 74 / 74. My SIGNs stand.
