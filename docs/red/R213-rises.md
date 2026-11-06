@@ -17,7 +17,9 @@ G-N5-TIME stays OPEN; the kill bounds nothing.
     records TR_d5_T16 and TRL_d6_22. fl agrees with rises.py on dd_d5_F14 (10), TR_d6_T22 (9 over all starts; 8 from the stored start),
     TR_d5_T16 (8).
 - **RISE-2D at d 3 (EXACT-SAT):** R ≥ 7 is UNSAT for each of the six movers z, horizon 8 = T^R(3) (R197 exact), so max R(3) ≤ 6.
-  R ≥ 6: §2 (running at the time of writing).
+  R ≥ 6 is SAT (z 2, 110 s): r213/keep/rise_d3_R6.json, d 3, T 7, option (1, 1) rises 6 times (own rises.py and L-NEW box180
+  rises.py agree; box 150 VIOL 0; lemck L 7, 0 violations). So **max R at d 3 = 6 = 2d EXACTLY** (EXACT-SAT): RISE-2D is tight at d 3
+  (climbs had 5). z 0 and z 1: UNSAT at r 6 (2,061-2,077 s); z 3-5 not run after the SAT.
 - **MOVES-2D: not killed.** The RISE-2D kills have Ξ-target movers moving ≤ 5 / 6 times (dd_d5_F14: 7); their rises come from chain changes
   below, not from own moves. SCORE=M climbs (d 5 from dd_d5_F14 and rise_d5_R13; d 6) reach 8 at d 5 (2d = 10). DATA only.
 - READING: the kill removes the 8d² + 1 route only. In both kills R/T = 13/16, 14/16: one option rises at almost every step, so
@@ -36,7 +38,7 @@ G-N5-TIME stays OPEN; the kill bounds nothing.
 | d | horizon | r | z | answer | time |
 | --- | --- | --- | --- | --- | --- |
 | 3 | 8 | 7 | 0, 1, 2, 3, 4, 5 | UNSAT (all six) | 453-701 s each |
-| 3 | 8 | 6 | 0..5 | running | |
+| 3 | 8 | 6 | 0, 1 / 2 | UNSAT, UNSAT / SAT (replayed, 6 rises) | 2,077, 2,061 / 110 s |
 | 4 | 13 | 9 | 0, 2, 4, 6 (σ_l swaps 2l, 2l + 1 and preserves R) | running (r200/cubes.py, resumable; r213/run_d4.sh) | |
 
 ## 3. Climbs (r212/fl.c SCORE=R / SCORE=M, r212/out/L0_m*_r6xx / r7xx logs)
