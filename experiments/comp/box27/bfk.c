@@ -70,6 +70,7 @@ int main(int argc, char **argv) {
     for (;;) { memcpy(rp[np++], a, sizeof a); int i = NO - 2; while (i >= 0 && a[i] > a[i+1]) i--; if (i < 0) break;
       int j = NO - 1; while (a[j] < a[i]) j--; int t = a[i]; a[i] = a[j]; a[j] = t; for (int l = i+1, r = NO-1; l < r; l++, r--) { t = a[l]; a[l] = a[r]; a[r] = t; } } }
   int best[KMAX+1]; char wit[KMAX+1][600]; for (int k = 0; k <= KMAX; k++) { best[k] = -1; wit[k][0] = 0; }
+  static int pairseen[64][64]; int bestsum = -1; char sumwit[600] = "";
   long gidx = -1, ngraph = 0; u64 ntab = 0; long ncomb = 1; for (int o = 0; o < NO; o++) ncomb *= (U + 1);
   int nst = 1 << U; /* upper states */
   for (long cidx = 0; cidx < ncomb; cidx++) {
@@ -103,9 +104,17 @@ int main(int argc, char **argv) {
               n += sprintf(wit[k]+n, " rank"); for (int o = 0; o < NO; o++) n += sprintf(wit[k]+n, " %d", rk[o]);
               n += sprintf(wit[k]+n, " par"); for (int o = 0; o < NO; o++) n += sprintf(wit[k]+n, " %d", pv >> o & 1);
               n += sprintf(wit[k]+n, " gate"); for (int j = 0; j < 4*(m+1); j++) n += sprintf(wit[k]+n, " %d", Fg[f][j]);
-              sprintf(wit[k]+n, " start %d", s0); } } } } }
+              sprintf(wit[k]+n, " start %d", s0); } }
+          if (KMAX >= 1) { int V0 = 0, V1 = 0; for (int s0 = 0; s0 < NS; s0++) { if (memo[s0][0] > V0) V0 = memo[s0][0]; if (memo[s0][1] > V1) V1 = memo[s0][1]; }
+            pairseen[V0][V1] = 1; if (V0 + V1 > bestsum) { bestsum = V0 + V1; int n = sprintf(sumwit, "V0 %d V1 %d xt", V0, V1);
+              for (int o = 0; o < NO; o++) n += sprintf(sumwit+n, " %d", xt[o]);
+              n += sprintf(sumwit+n, " rank"); for (int o = 0; o < NO; o++) n += sprintf(sumwit+n, " %d", rk[o]);
+              n += sprintf(sumwit+n, " par"); for (int o = 0; o < NO; o++) n += sprintf(sumwit+n, " %d", pv >> o & 1);
+              n += sprintf(sumwit+n, " gate"); for (int j = 0; j < 4*(m+1); j++) n += sprintf(sumwit+n, " %d", Fg[f][j]); } } } } }
   }
   printf("m %d part %d/%d graphs %ld distinct_tables %llu\n", m, part, nparts, ngraph, ntab);
   for (int k = 0; k <= KMAX; k++) printf("T_%d(%d) %d\n", k, m, best[k]);
   for (int k = 0; k <= KMAX; k++) printf("witness %s\n", wit[k]);
+  printf("SUM max V0+V1 %d (per genome+gate order; V_k = max over all starts); witness %s\n", bestsum, sumwit);
+  printf("SUM pairs (V0,V1) realised:"); for (int a = 0; a < 64; a++) for (int b = 0; b < 64; b++) if (pairseen[a][b]) printf(" (%d,%d)", a, b); printf("\n");
   return 0; }
