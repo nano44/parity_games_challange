@@ -129,3 +129,24 @@ M4 / step 4; G-N5-TIME, FLIP-ADD, PAIR-LIN, SUM_1 OPEN. ✓
   - W-2: «the negated schedule disagreeing 6,786 and 16,853 times» → either the exact command and seed that print these figures, or
     «the negated schedule disagreeing on every run tried».
 - Optional (N-1 above): a fixes-entry sentence that COMPOSE-LB's level-0 gates are chosen so that b_0 = c.
+
+## Fix round 1 (claude/l-si 4ee9fa78): fixes entry 1 and line L-2
+- Object: docs/si/P-IDEAL-IM-fixes.md sha1 15edc7d1bfecdb4f1edf55b0eb861e6333d437ef (4,290 B); P-IDEAL-IM-line-L2.txt sha1
+  8b7ccfb9a050955758452dc04fe5aafc58468680 (4,615 B). The packet (7bef9419) and L-1 (493cac99) are unchanged. Re-hashed: match.
+- **Fixes entry 1: CORRECT.**
+  - F-1 (REFEREE's IM-G1 = my N-1): the level-0 ranks and gates are the four smallest, ordered so that b_0(q) = c. ISO keeps them off
+    every upper chain, and R110's c-step never reads them. This is the sentence COMPOSE-LB needed. ✓
+  - F-2 (my W-2): `compose.py 200 68` gives KPART 0 GPART 0, and `NEG=1 compose.py 200 68` gives 21,234 / 54,433. These are exactly the
+    figures I measured for seed 68 (and for seeds 1 and 7 as quoted). Both are now asserted verbatim by check75.sh (diff cb2b0c60 →
+    4ee9fa78: +3 lines, the PASS line re-worded). The old figures are withdrawn. ✓
+  - F-3 (my W-1, REFEREE's IM-L2): the per-state / per-state-and-both-c split matches imcheck.py (l. 69-81 per state and both c; l. 83
+    `if c == 1: continue`; FRAME_STEP over both c2). BIT-CHAIN is now «(i)». ✓
+- **Line L-2: MATCHES.**
+  - The fixes entry gives no old/new strings. So I took the whole L-1 → L-2 difference myself (difflib on space-separated tokens) and
+    checked that every change belongs to one of the three items, and nothing else:
+    - F-3 scope: «every start, both c:» → «every start; once per state:», «the reversed direction» → «(c) with the direction
+      reversed», + «per state and both c:», + «(i)» after BIT-CHAIN.
+    - F-2: + «200 68 (seed 68)», + «and NEG=1 compose.py 200 68,», «6,786 and 16,853 times» → «21,234 times on K's part and 54,433
+      times on G's».
+    - Source note: + «with its fixes entry 1, docs/si/P-IDEAL-IM-fixes.md».
+  - Parentheses 81 / 81, depth never negative; 0 «|»; one line. W-1 and W-2 are met.
