@@ -13876,6 +13876,241 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   N5's running time follows;» and «G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim» (L-4, by script). GAPS
   G-N5-TIME: open.
 
+### R119 [refereed-only] In the IDEAL model of RESULTS R104 (premise: R104's definition of the model only; RESULTS R105's ENC, MONO and LOCAL; RESULTS R110's definition of 𝓛^R_d only; RESULTS R113's ALIGN and PATH-RISE; and, for ALT-MIN and TOWER-NEED only, RESULTS R116's AND-GATE (a)-(c)), on acyclic Ξ-graphs, with T the number of steps of a run, Mv_t the movers of step t, moves(x) the number of steps t with x ∈ Mv_t, cv_s(y) the integer value of y's current option (R105 ENC), R(y) the number of steps at which cv(y) rises, R_k(x) the number of steps at which the value of option (x, k) rises, the old chain of y at t its chain under s_(t−1), P(x) the number of maximal Ξ-paths from x, on 𝓛^R_d F(l) the number of flips of the pair (2l, 2l + 1), an l-b-step a flip step of the pair l − 1, Φ_l(s) the number of members of the pair l off c_l(s), an l-window a maximal set of consecutive steps with no l-b-step after its first, a level l ≥ 1 doubling if F(l) = 2F(l − 1) + 2, U_l the Ξ-targets of options of movers of level ≤ l whose Ξ-target has a higher level than that mover and E_l the steps at which some y ∈ U_l changes its value: (MP-LIN) any recursion x_(j+1) ≤ (A ⊗ x_j) ⊕ b over a finite max-plus matrix A grows at most like max(λ, 0)·j + C with λ the maximum cycle mean; (WINDOW-ONCE) on 𝓛^R_d each member of the pair l moves at most once in every l-window; (DBL-EQ) level l is doubling iff Φ_l(s_0) = 2, Φ_l(s_T) = 0, Φ_l = 0 before every l-b-step, no step moves both members and the flips of the pair l are exactly its moving steps, and then each member moves exactly once in every l-window (so F(l − 1) + 1 times), γ_l(0) = γ_l(1) and the first mover of every window is 2l iff γ_l is false; (PASS-FREEZE) for 1 ≤ l ≤ d − 2, if the pair l + 1 never moves and starts split, then F(l + 1) = F(l); (HIT) at any degree, cv(y) rises at step t iff some mover of y's old chain moves at t, so R(y) ≥ moves(y); (FUEL-EXACT) on 𝓛^R_d, E_l is the set of steps at which some mover of the old chain of some y ∈ U_l moves; (ALT-MIN) for a mover x of degree 2, the changes of π(x) to k number at most R_k(x), PF_x ≤ 2 min(R_0(x), R_1(x)) + 1, moves(x) ≤ 2 + 2 min(R_0(x), R_1(x)), and R_k(x) is R of the Ξ-target of (x, k) (0 if X); (TOWER-NEED) at a doubling level l with f = F(l − 1), each member x moves f + 1 times, P(x) ≥ f + 2, and for f ≥ 2 both Ξ-targets of x are movers with R ≥ (f − 1)/2; and four statements are false (DEAD, instances machine-replayed): the max-plus transfers «moves at level j ≤ c + max moves below» and «moves(x) ≤ c + max moves of strict Ξ-descendants» for every c ≤ 5 (experiments/si/box76/inst/dense_d5_l3_H10.json, a byte copy of L-RED's, 𝓛^R_5, start 1100110110: mover 6 of level 3, a Ξ-target, moves 10 times, every mover of levels 0-2 and every strict Ξ-descendant of 6 at most 4 times), «two consecutive doubling levels only if F(l − 1) = 0» (experiments/si/box76/inst/lower/REC_d10_tower_mu30.json, a byte copy of L-LOWER's, 𝓛^R_10, its stored start 00111111010010111010: F(0..3) = 2, 6, 14, 30), «F(l + 1) ≤ F(l) − c above a doubling level without upward options» for every c ≥ 1 (experiments/si/box76/inst/passfreeze77_d5.json, 𝓛^R_5, its stored start 1101111101: F = 2, 2, 2, 6, 6, the top pair never moving), and «the strict Ξ-descendants of the fuel targets U_l lie at levels > l» (static Ξ-graph; measured for every l in 0, …, d − 2 by experiments/si/box79/reentry_levels.py: false for l = 1, …, 8 on experiments/si/box76/inst/lower/REC_d10_tower_mu30.json, a byte copy of L-LOWER's, 𝓛^R_10, witness 1 → 11 → 3 (mover 11 of level 5 is the Ξ-target of mover 1's option 0, and 3 of level 1 is a Ξ-target of an option of 11), and for l = 1, …, 4 on experiments/si/box76/inst/lower/KILL_M2D_d6_mu13.json, a byte copy of L-LOWER's, 𝓛^R_6, witness 2 → 5 → 3 (mover 5 of level 2 is the Ξ-target of an option of mover 2 of level 1, and 3 of level 1 is a Ξ-target of an option of 5); true for l = 0 on both) (2026-11-07) — each statement is about the step sequence of R104's IDEAL model (MP-LIN about max-plus recursions); DBL-EQ (b)'s window count uses one referee-originated step (REFEREE's DB-3, fixes entry 1 F-3, found independently by REFEREE-2); G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim (DATA, experiments/si/box79/dblcheck.py, CORPUS = the 63,223 runs (140,395 steps) of the 208 𝓛^R_d genomes of the frozen P-IDEAL-MOVES corpus (l-new 9995f5a2; every start for N ≤ 10, the stored start otherwise), LOWER = the 9 runs of L-LOWER 3's kill genomes from their stored starts, counts given as CORPUS / LOWER, every genome of degree 2 and width 2 (so HIT and ALT-MIN, stated at any degree, are tested only there): WINDOW-ONCE 0 violations on 577,908 / 1,736 (run, level, window, member); DBL-EQ (a) 0 on 225,647 / 72 (run, level ≥ 1), both directions, with 4,534 / 12 doubling (run, level); (b) 0 on 11,052 / 176 (run, doubling level, window, member); (c) 0 on every doubling (run, level); PASS-FREEZE 0 on the 23,317 (run, level) of CORPUS whose pair above never moves and starts split (none in LOWER); HIT 0 on 1,298,948 / 5,216 (run, mover, step); FUEL-EXACT 0 on 288,870 / 81 (run, level); ALT-MIN 0 on 577,740 / 162 (run, mover), (a) and (d) counted per (run, mover, k); TOWER-NEED's bounds on P and R 0 on 9,068 / 24 (run, doubling level, member), its moves clause through DBL-EQ (b); controls: ALT-MIN's bounds (b) and (c) minus 1 fail on 112,372 / 43 and 7,085 / 13 (run, mover), and with the key-least option taken regardless of availability HIT fails on 238,546 CORPUS (run, mover, step); MP-LIN, the sufficient condition of PASS-FREEZE and DEAD-REENTRY (static Ξ-graph; its level sets measured by experiments/si/box79/reentry_levels.py): no separate DATA; the other three DEAD instances re-run by experiments/si/box79/dead79.py; FUEL-NEED and FUEL (i), which use L-LOWER's unrefereed FEEDBACK (b), are not stated; no statement bounds T polynomially) (P-IDEAL-DBL, docs/si/P-IDEAL-DBL.md with its fixes entry 1, docs/si/P-IDEAL-DBL-fixes.md; L-SI successors 41-42), CHECKER PASS (docs/checker/C133.md, checker b86962ae)
+- Object (L-SI successors 41-42, D14 / D18 / D20, box 79; frozen, unchanged during review): packet P-IDEAL-DBL, docs/si/P-IDEAL-DBL.md,
+  sha1 3573e93bdbd18e824fb6a9d973eb9277d6d6d488, 199 lines, 21,583 bytes (l-si freeze f5263d5a, 2026-11-07T08:17:54Z, after RESULTS R116
+  landed at trunk 97d17f63; identical at 0ea6959f and 610897dd). Both referees measured it (REFEREE l. 23 «docs/si/P-IDEAL-DBL.md
+  3573e93b…;»; REFEREE-2 l. 5 «docs/si/P-IDEAL-DBL.md 3573e93b… (21,583 B)»). Labels (l. 5-6): «PROVED (L-SI 41, unrefereed) / DEAD
+  (instance, machine-checked) / CONDITIONAL (not to sign) / DATA / READING (not to sign)». To sign (table l. 11-21): §1 Fact MP-LIN, §2
+  Lemmas WINDOW-ONCE, DBL-EQ (a)-(c), PASS-FREEZE, §3 Lemma HIT and Corollary FUEL-EXACT, §4 Lemmas ALT-MIN (a)-(d) and TOWER-NEED, §6
+  DEAD-MAXPLUS, DEAD-DBLGAP, DEAD-DECAY, DEAD-REENTRY; not to sign: §5 FUEL-NEED and FUEL (i) («CONDITIONAL (not to sign)», on L-LOWER's
+  FEEDBACK (b), «not landed, not refereed»), §7 DATA / READING. Source (l. 4): docs/si/N5-TROPICAL-box76.md §1-§12 (this lane), history
+  only; the packet «carries every proof in full and is checked against this text only» (l. 4-5). The packet's own scope (l. 6-7): «Not a
+  TARGET.md claim. Every statement is about the IDEAL model of RESULTS R104's definition only. No statement bounds T polynomially;
+  G-N5-TIME stays OPEN.».
+  Fixes: docs/si/P-IDEAL-DBL-fixes.md, append-only, two entries by L-SI successor 42 (610897dd: 95 lines, 11,286 bytes, sha1
+  edda8237f4c30cea060f44b20392b29a57b126a5). Entry 1 (0ea6959f; the file then 67 lines, 8,797 bytes, sha1
+  172bfa2faf343b41075fdea2802539fbb782c9c3): F-1 (W-1 = DB-Q1: the PATH-RISE premise quoted from R113's line), F-2 (DB-2 + W-2 (d) +
+  N-3: DEAD-REENTRY's reading and its measured level sets), F-3 (DB-3: a proof step in DBL-EQ (iv)), F-4 (DB-L1 + W-3: the DATA clause),
+  F-5 (N-1: F0 dropped from the line's premises; N-2: U_l's wording), and line L-2 = L-1 with seven replacements (l. 44-65). «Not
+  changed: every statement of the packet (all SIGN at both referees); L-1 and the packet stay as frozen.» (l. 67). Entry 2 (610897dd, l.
+  69-95): CHECKER C133's E-1..E-6 with its §5 replacements R1-R6, line L-3; «Line only: no packet statement, proof or DATA changes.» (l.
+  70); «L-1, L-2 and the packet are unchanged.» (l. 94-95). Entry 1 carries one proof step (F-3) and the reading of one DEAD statement
+  (F-2); entry 2 carries none.
+  The RESULTS line is L-3, 845ffdc9f0306d5db4bdb41d613588b219545838 (docs/si/P-IDEAL-DBL-line-L3.txt, l-si 610897dd,
+  2026-11-07T12:38:17Z, the file's only commit; 6,167 bytes). The title is L-3 verbatim, with nothing inserted and nothing stripped (its
+  date parenthesis «(2026-11-07)», its scope tail and its source note are the line's own; the source note names the packet with its
+  fixes entry 1, which carries F-2 and F-3; entry 2 carries no proof). L-3's parentheses balance (101 «(» / 101 «)»). Line history: L-1
+  (93177184, committed with the draft packet at 2c396f6f, unchanged at the freeze f5263d5a); L-2 (1b3dc825, 0ea6959f, fixes entry 1: L-1
+  with exactly seven replacements: REFEREE-2's W-2 (a), (b), (c) (the DEAD instances by path and start), REFEREE's DB-L2 with
+  REFEREE-2's W-2 (d) and N-3 (DEAD-REENTRY's reading, with the level sets measured by experiments/si/box79/reentry_levels.py),
+  REFEREE's DB-L1 with REFEREE-2's W-3 no-DATA items (the DATA clause by clause), REFEREE-2's N-1 (F0 dropped) and N-2 (U_l «whose
+  Ξ-target has a higher level than that mover»)); L-3 (845ffdc9, 610897dd, fixes entry 2: L-2 with exactly CHECKER C133 §5's R1-R6,
+  applied in that order, R4's old string inside R3's new text; they are the first fill's R-A, R-B, R-C, R-G, R-D, R-E; see Fixes). Each
+  old string occurs once in L-1 and each new string once in L-2, and L-1 with the seven replacements is L-2 (my script, True; REFEREE by
+  its own script, §C l. 187-190); L-2 with R1-R6 is L-3 (my script, True; both referees by their own scripts). L-1: REFEREE «NOT YET:
+  DB-L1 (DATA rule), DB-L2 (REENTRY wording); exact texts in §5» (d7885be4 l. 19); REFEREE-2 «**MATCHES after W-2 (a)-(d), W-3** (DEAD
+  instances not reproducible from the line; DATA not clause by clause)» (2b425bb6 l. 22). L-2 MATCHES at REFEREE after its own byte
+  test: REFEREE successor 26 (34589c09) §C l. 187-190 («the seven OLD / NEW pairs are parsed from fixes entry 1;», «each old string
+  occurs once in L-1 and each new string once in L-2;», «L-1 with the seven replacements is byte-equal to L-2 (sha1 1b3dc825…).»), l.
+  191-210 (meaning: DB-L1 «MET», with «exactly one change» (the W-3 widening), «The widening is correct.»; DB-L2 «MET, with the MEASURED
+  level sets»), l. 223 «Verdict: fixes entry 1 CORRECT. L-2 MATCHES, by the byte test and in meaning.». REFEREE-2 successor 30
+  (30615935, heading stamp corrected at 1b9e3ea5) Addendum 1 l. 142-144 (own bt_l2.py: «each old string once in L-1, each new once in
+  L-2; L-1 with all seven == L-2 byte for byte (sha1 1b3dc825…, 5,810 B, 1 line, 97 «(» = 97 «)», depth never negative»; «W-2 (a), (b),
+  (c): NEW is my text verbatim ✓»), l. 147-155 (DEAD-REENTRY's sets by its own code: «Equal to the lane's reentry_levels.out as quoted
+  in F-2 ✓»), l. 156-162 (DATA: «My W-3 is met in substance.»), l. 165-166 «Verdict: fixes entry 1 **CORRECT**; W-1, W-2 (a)-(d), W-3
+  **met**; **L-2 MATCHES** the packet with fixes entry 1, in bytes and in meaning (Opus 5.5, D1).». L-3 MATCHES at both referees, each
+  after its own byte test: REFEREE successor 26 (07a950ae, 2026-11-07T13:01:15Z) §C add. 1 l. 232-236 (own script: «R1-R6 are parsed
+  from C133 §5 (wrapped lines joined by one space) and applied in C133's order.»; «The result is byte-equal to L-3 (sha1 845ffdc9…,
+  6,167 bytes).»), l. 237-248 (meaning: «R4: CORRECT, and correctly attributed.»; «R5: CORRECT.»; «R6: CORRECT.»; «R1-R3: CORRECT.»), l.
+  249 «Verdict: L-3 MATCHES, by the byte test and in meaning. All statements stay as signed in §C.»; REFEREE-2 successor 30 (37c733e2,
+  2026-11-07T13:01:16Z) Addendum 2 l. 171-174 (own bt_l3.py: «L-2 + R1..R6 == L-3 byte for byte, sha1
+  845ffdc9f0306d5db4bdb41d613588b219545838, 6,167 B (= C133's prediction)»), l. 175-184 (meaning: R5 and R6 against the packet's
+  hypotheses and the ranges it signed, R4 against its own report's DBL-EQ (iv), «written and pushed (2b425bb6) before I read any REFEREE
+  text», R3 against the packet's §7 TARGET diff, R1, R2), l. 185 «Verdict: entry 2 **CORRECT**; **L-3 MATCHES** the packet with fixes
+  entries 1-2, in bytes and in meaning (Opus 5.5, D1). Statements all SIGN.».
+- Claims signed (REFEREE successor 26 (D15), report d7885be4, §C 34589c09 and §C add. 1 07a950ae; REFEREE-2 successor 30 (D1), report
+  2b425bb6, Addendum 1 30615935 / 1b9e3ea5 and Addendum 2 37c733e2). REFEREE's table (l. 5-19 of R-P-IDEAL-DBL.md) reads MP-LIN,
+  WINDOW-ONCE, PASS-FREEZE «(and its sufficient condition)», HIT, FUEL-EXACT, ALT-MIN «SIGN», DBL-EQ «SIGN (optional DB-3: say why step
+  1 is no l-b-step at a doubling level)», TOWER-NEED «SIGN (its PATH-RISE premise with DB-Q1)», DEAD-MAXPLUS, DEAD-DBLGAP, DEAD-DECAY
+  «SIGN (own simulator; the IDEAL step is deterministic: distinct gate indices, no ties)», DEAD-REENTRY «SIGN WITH GAP DB-2 (the level l
+  is not named; read literally the statement is false almost trivially)», §5 «not reviewed for signature (CONDITIONAL on L-LOWER's
+  unrefereed FEEDBACK (b), as the packet says)»; REFEREE-2's table (l. 10-24 of R2-P-IDEAL-DBL.md) reads every §1-§4 row and the four
+  DEAD items «**SIGN** (Opus 5.5, D1)», with «the §0 mapping of R116 AND-GATE onto (a)-(c) is faithful» (l. 18) and «every instance
+  replayed with my own simulator (N-3 on REENTRY's l)» (l. 20), «Not signed (as the packet says): §5 FUEL-NEED and FUEL (i) (CONDITIONAL
+  on L-LOWER's unlanded FEEDBACK (b)); §7 DATA / READING.» (l. 23), «Nothing is REFUSED.» (l. 24). Fixes entry 1 closes DB-2 and DB-Q1 /
+  W-1 at REFEREE: §C l. 215-218 («F-1 (DB-Q1): CLOSED.», «F-2 (DB-2): CLOSED. It fixes the reading (strict Ξ-descendants, static
+  Ξ-graph) and gives the measured sets.», «F-3 (DB-3): CLOSED.») and l. 223-224 «All statements stay SIGNED; DEAD-REENTRY is now SIGN
+  (DB-2 closed).». REFEREE-2 Addendum 1 l. 145-146 «**W-1 closed** (F-1)» and l. 166 «Statement verdicts unchanged (all SIGN).». No gap
+  remains; nothing is REFUSED. The L-3 round changes no verdict: REFEREE §C add. 1 l. 249 «All statements stay as signed in §C.»;
+  REFEREE-2 Addendum 2 l. 185 «Statements all SIGN.». Setting: R104's IDEAL model on acyclic Ξ-graphs; 𝓛^R_d as R110 defines it; R113's
+  c_l(s), γ_l(j) and flips; R116's π_s(x), PF_x, KF_x. Statements as signed (packet with fixes entry 1):
+  (a) Notation (§0 l. 44-52): T, s_t, Mv_t, moves(x); on 𝓛^R_d the pair l = (2l, 2l + 1), F(l) its flips, an l-b-step a flip step of the
+    pair l − 1, Φ_l(s), the l-windows, a level l ≥ 1 doubling if F(l) = 2F(l − 1) + 2; cv_s(y), R(y), R_k(x), the old chain, P(x); the
+    upward options, U_l and E_l.
+  (b) Fact MP-LIN (§1 l. 54-58) [max-plus algebra, no premise]: «max_τ x_j(τ) ≤ max(λ, 0)·j + C for every j, where C depends on A, b and
+    x_0 but not on j».
+  (c) Lemma WINDOW-ONCE (§2 l. 65-69) [𝓛^R_d, 1 ≤ l ≤ d − 1, any run]: «Then c_l(s_t) is the same for every t ∈ ω, and each of 2l, 2l + 1
+    moves at most once in ω, to that option.»
+  (d) Lemma DBL-EQ (a)-(c) (§2 l. 70-94, with F-3 in (iv)) [𝓛^R_d, 1 ≤ l ≤ d − 1, any run]: «(a) Level l is doubling iff all of: Φ(s_0) =
+    2; Φ(s_T) = 0; Φ(s_(t−1)) = 0 at every l-b-step t; no step moves both p and q; the flip steps of the pair l are exactly the steps that
+    move p or q.»; «(b) If level l is doubling, each of p, q moves exactly once in every l-window; so moves(p) = moves(q) = F(l − 1) + 1.»;
+    «(c) If level l is doubling, γ_l(0) = γ_l(1) =: γ, and in every l-window the first of p, q to move is p iff γ is false.» Its proof
+    re-proves R113's PAIR-DOUBLE bound F(l) ≤ 2 + 2F(l − 1) (step (iii)).
+  (e) Lemma PASS-FREEZE (§2 l. 95-104) [𝓛^R_d, 1 ≤ l ≤ d − 2, any run]: «If neither member of the pair l + 1 moves in the run and they start
+    on different options, then F(l + 1) = F(l).», with a sufficient condition for «never moves» (not in the line).
+  (f) Lemma HIT (§3 l. 107-114) [IDEAL-ACYC, any degree, any width]: «cv_(s_t)(y) > cv_(s_(t−1))(y) iff some mover of the old chain of y at
+    t moves at t. Hence R(y) = #{t : Mv_t meets the old chain of y} ≥ moves(y).»
+  (g) Corollary FUEL-EXACT (§3 l. 115-118) [𝓛^R_d, Ξ-acyclic, 0 ≤ l ≤ d − 1]: «Then E_l = {t : some mover of the old chain at t of some y ∈
+    U_l moves at t}» with a size bound by Σ_(y ∈ U_l) R(y) (the line states the set form only).
+  (h) Lemma ALT-MIN (a)-(d) (§4 l. 121-129) [IDEAL-ACYC, any degree elsewhere, x of degree 2]: «(a) #{t : π(x) changes at t to k} ≤ R_k(x)
+    for k = 0, 1.», «(b) PF_x ≤ 2·min(R_0(x), R_1(x)) + 1.», «(c) moves(x) ≤ 2 + 2·min(R_0(x), R_1(x)).», «(d) R_k(x) = R(y_k) if y_k is a
+    mover, and R_k(x) = 0 if y_k = X; so if an option of x has Ξ-target X, moves(x) ≤ 2.» Premise: R116's AND-GATE, parts (b) and (c) of
+    the packet's partition (REFEREE l. 40 «Only (b) and (c) are used»; REFEREE-2 l. 43).
+  (i) Lemma TOWER-NEED (§4 l. 130-134) [𝓛^R_d, Ξ-acyclic, 1 ≤ l ≤ d − 1, a run in which level l is doubling, f := F(l − 1)]: «Then moves(x)
+    = f + 1, P(x) ≥ f + 2, and if f ≥ 2 both Ξ-targets of x are movers y with R(y) ≥ (f − 1)/2.» Premises: DBL-EQ (b), HIT, R113's PATH-RISE,
+    ALT-MIN (c), (d).
+  (j) DEAD (§6 l. 145-167, DEAD-REENTRY read by F-2) [instances, machine-replayed]: LEV-ADD c and DAG-ADD c for every c ≤ 5 on
+    dense_d5_l3_H10 from 1100110110 (mover 6 of level 3 moves 10 times; levels 0-2 and 6's strict Ξ-descendants at most 4); «If levels l
+    and l + 1 are both doubling in a run, then F(l − 1) = 0» on REC_d10_tower_mu30 from its stored start (F(0..3) = 2, 6, 14, 30); «If level
+    l is doubling and the level l + 1 has no upward option, then F(l + 1) ≤ F(l) − c», every c ≥ 1, on passfreeze77_d5 from its stored start
+    (F = 2, 2, 2, 6, 6); and F-2's «the strict Ξ-descendants of the fuel targets U_l lie at levels > l» (static Ξ-graph) on
+    REC_d10_tower_mu30 and KILL_M2D_d6_mu13, with the level sets of reentry_levels.out.
+- The RESULTS line (L-3, the title): «In the IDEAL model of RESULTS R104 (premise: R104's definition of the model only;» … «and, for
+  ALT-MIN and TOWER-NEED only, RESULTS R116's AND-GATE (a)-(c)), on acyclic Ξ-graphs,» … «(2026-11-07) — each statement is about the
+  step sequence of R104's IDEAL model (MP-LIN about max-plus recursions); DBL-EQ (b)'s window count uses one referee-originated step
+  (REFEREE's DB-3, fixes entry 1 F-3, found independently by REFEREE-2); G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a
+  TARGET.md claim (DATA,» … «(P-IDEAL-DBL, docs/si/P-IDEAL-DBL.md with its fixes entry 1, docs/si/P-IDEAL-DBL-fixes.md; L-SI successors
+  41-42)». Its clauses: notation = (a); MP-LIN = (b); WINDOW-ONCE = (c) without the constancy of c_l; DBL-EQ = (d); PASS-FREEZE = (e)
+  with its range 1 ≤ l ≤ d − 2 (R5), without its sufficient condition; HIT = (f); FUEL-EXACT = (g) set form, on 𝓛^R_d (R6), without the
+  size bound; ALT-MIN = (h) without (d)'s last clause; TOWER-NEED = (i); DEAD = (j). Its DATA: the parenthesis «(DATA,
+  experiments/si/box79/dblcheck.py, …)», clause by clause. L-3 changes, from L-2, the head (R1 drops «R1xx [refereed-only] »), the
+  source note (R2: the packet with its fixes entry 1, docs/si/P-IDEAL-DBL-fixes.md; L-SI successors 41-42), the scope tail (R3: the date
+  parenthesis, the packet's §7 scope words, «G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim»; R4: L41's sentence
+  inside it), PASS-FREEZE's range (R5) and FUEL-EXACT's class (R6).
+- Premise: RESULTS R104's definition of the IDEAL model only, no theorem of R104; RESULTS R105's «(ENC) the Ξ-order of β-sets is the order
+  of the integers Σ ±2^rank (+ for even parity), so, with ε(x, k) := ±2^rank(x, k) (+ for even parity), the value of option (x, k) is ε(x,
+  k) plus the current value of its Ξ-target (ε(x, k) alone if the Ξ-target is the exit X)», «(MONO) the current Ξ-value of every mover never
+  decreases along a run» and «(LOCAL) an option's value depends only on the states on its chain, a key only on the states below its level»
+  (R105 l. 10155), for HIT, FUEL-EXACT, ALT-MIN (d); RESULTS R110's definition of 𝓛^R_d only («movers 2l and 2l + 1 on level l, all of
+  degree 2, no other movers, option k of a mover of level l ≥ 1 W-pointing to mover 2(l − 1) + k», l. 11323); RESULTS R113's «(ALIGN) on
+  𝓛^R_d, for 1 ≤ l ≤ d − 1 and every state s of a run, both movers 2l and 2l + 1 have KP_s = c_l(s), each of them that moves at step t moves
+  to option c_l(s_t), and the order of their keys under s is [s(2l) = c_l(s)] if s(2l) ≠ s(2l + 1) and γ_l(j) if both are on option j»,
+  for WINDOW-ONCE, DBL-EQ, PASS-FREEZE, and «(PATH-RISE) at any degree, the current value cv(z) of every mover z rises at most P(z) − 1
+  times in a run» (l. 12152), for TOWER-NEED; RESULTS R116's «(AND-GATE) at any degree elsewhere, a mover x of degree 2 moves at step t
+  iff s_(t−1)(x) ≠ π_(s_(t−1))(x) = KP_(s_t)(x), so moves(x) ≤ 1 + min(KF_x, PF_x), and when π(x) changes at step t to b the value v(x, b)
+  rises strictly at t» (l. 13072), for ALT-MIN and through it TOWER-NEED. R113 and R116 are stated on acyclic Ξ-graphs, as this line is.
+  Both referees checked every premise quote against RESULTS (REFEREE l. 35-48; REFEREE-2 l. 26-43).
+- L41 and L43. The proofs are L-SI successor 41's (packet l. 2-5). One proof step, F-3 in DBL-EQ (iv) (step 1 is not an l-b-step at a
+  doubling level, so there are exactly F(l − 1) + 1 windows), was suggested by REFEREE as optional DB-3 (l. 67-68) and derived by
+  REFEREE-2 independently in its first report (l. 54-55); the packet's (iv) already stated the count. The Lead ruled that L41 applies
+  (CHECKER C133 E-6: «The Lead ruled that L41 applies.»); L-3's scope tail says so (R4, the first fill's R-G): «DBL-EQ (b)'s window
+  count uses one referee-originated step (REFEREE's DB-3, fixes entry 1 F-3, found independently by REFEREE-2)» (REFEREE §C add. 1 l.
+  237 «R4: CORRECT, and correctly attributed.»; REFEREE-2 Addendum 2 l. 179-181, «written and pushed (2b425bb6) before I read any
+  REFEREE text»). L43: the four DEAD items are not asymptotic statements; they are DEAD by explicit instances, replayed by both referees
+  with their own simulators.
+- Fixes (docs/si/P-IDEAL-DBL-fixes.md, append-only, entries 1-2 by L-SI successor 42; entry 1 at 0ea6959f, l. 1-67, the file then 67
+  lines, 8,797 bytes, sha1 172bfa2faf343b41075fdea2802539fbb782c9c3; entry 2 at 610897dd, l. 69-95, the file now 95 lines, 11,286 bytes,
+  sha1 edda8237f4c30cea060f44b20392b29a57b126a5, its l. 1-67 = entry 1's file, by script; entry 1: «Lead 09:20Z: REFEREE 26 d7885be4
+  DB-Q1, DB-2, DB-3, DB-L1, DB-L2; REFEREE-2 30 7891ba32 W-1, W-2 (a)-(d), W-3, N-1..N-3; Lead rulings 1-5», l. 3-4; «Strings copied by
+  script», l. 4; the referee reports byte-copied as experiments/si/box79/ref_d7885be4.md and ref2_7891ba32.md, equal to d7885be4's and
+  2b425bb6's files, by script):
+  - F-1 (W-1 = DB-Q1; Lead ruling 1): PATH-RISE quoted from R113's line («Same content; TOWER-NEED (§4) and FUEL-NEED (§5) use exactly this.
+    No proof changes.»).
+  - F-2 (DB-2 + W-2 (d) + N-3; Lead ruling 3): DEAD-REENTRY read as «the strict Ξ-descendants of the fuel targets U_l lie at levels > l»
+    (static Ξ-graph); the level sets MEASURED for every l in 0, …, d − 2 under readings A and B (reentry_levels.out); «The DEAD verdicts
+    stand.».
+  - F-3 (DB-3, taken; Lead ruling 4): DBL-EQ (iv), step 1 is not an l-b-step at a doubling level.
+  - F-4 (DB-L1 + W-3; Lead ruling 2): the DATA clause is DB-L1's New text with W-3's no-DATA items; PASS-FREEZE keeps its PF count.
+  - F-5 (N-1, N-2): F0 dropped from the line's premises; U_l's wording.
+  - Entry 2 (after CHECKER C133 8f6d03bc, «Verdict: FAIL (E-1 to E-6; one L-3 with six replacements, §5)» (C133 l. 15); L-SI successor
+    42, 610897dd, 2026-11-07T12:38:17Z): «Line only: no packet statement, proof or DATA changes.» (l. 70); «Strings copied by script
+    (experiments/si/box79/mkL3.py) from experiments/si/box79/c133_8f6d03bc.md, a byte copy of docs/checker/C133.md at 8f6d03bc, §5
+    (wrapped lines joined with one space).» (l. 70-71). Line L-3 = L-2 with R1-R6 applied in that order (l. 75-93), each old string once
+    in the text it is applied to (R4's inside R3's new text). My script (l3rel119.py): the six pairs of entry 2 (l. 76-93) and of C133
+    §5 (l. 60-71) are the same (True); they are the first fill's R-A, R-B, R-C, R-G, R-D, R-E (True ×6); L-2 + R1-R6 = L-3 (True). How
+    each E-item is resolved (by script on L-3; each new string once in L-3, R3's as edited by R4): E-1 (the heading label) by R1, and
+    «R1xx» occurs 0 times in L-3; E-2 (source note) by R2, «(P-IDEAL-DBL, docs/si/P-IDEAL-DBL.md with its fixes entry 1,
+    docs/si/P-IDEAL-DBL-fixes.md; L-SI successors 41-42)»; E-3 (scope tail) by R3, the date parenthesis and the scope words (see The
+    RESULTS line); E-4 (PASS-FREEZE's range) by R5, «for 1 ≤ l ≤ d − 2, if the pair l + 1 never moves and starts split, then F(l + 1) =
+    F(l)»; E-5 (FUEL-EXACT's class) by R6, «on 𝓛^R_d, E_l is the set of steps at which some mover of the old chain»; E-6 (L41) by R4
+    (see L41 and L43). The first fill's optional R-F is not taken («Not taken (note N-1): R-F», C133 l. 38).
+  - No statement of the packet changes; entry 1 corrects a premise quote, fixes one DEAD reading, adds one proof step and rewrites the
+    line; entry 2 changes the line only.
+- Not signed: packet §5 (FUEL-NEED, FUEL (i): CONDITIONAL on L-LOWER's Lemma FEEDBACK (b) of docs/lower/L3-families.md §4, «not landed, not
+  refereed», packet l. 137), §7 (DATA, lane DATA, READING), the READINGs of docs/si/N5-TROPICAL-box76.md, EXTRA (extra79.out).
+- Referee strengthening (NOT part of this entry; referee checks):
+  (i) REFEREE: own replay tools on its own IDEAL simulator t3r_sim.py (docs/referee/scratch/dbl_replay.py, dbl_dead_static.py,
+    dbl_corpus.py); 0 violations on 16 runs (the three run-based DEAD instances, EXTRA's four genomes, the nine LOWER genomes); DBL-EQ on
+    H6_d24_F126 (levels 1-5 doubling, F(0..5) = 2, 6, 14, 30, 62, 126); the corpus with N ≤ 10 (193 genomes, every start: 63,208 runs) with
+    0 violations of DBL-EQ, WINDOW-ONCE, TOWER-NEED, HIT, MONO and ALT-MIN (l. 93-121); every DEAD value equal to the packet; the
+    DEAD-REENTRY level sets measured with its own code (dbl_reentry_levels.py; §C l. 200-206).
+  (ii) REFEREE-2: own r2dbl.py on its own R104 simulator r2moves.py, no lane code: CORPUS 208 files, 63,223 runs, 140,395 steps, 4,534
+    doubling (run, level), «**0 violations of every check**» (l. 67-69); LOWER and EXTRA 0 (l. 70-73), DBL-EQ on H6_d24_F126 and on H5,
+    DBL4, RECF4; the four DEAD instances replayed (l. 74-82); check79.sh re-run on git archive f5263d5a (l. 7-8).
+  (iii) The L-3 round: REFEREE §C add. 1 checked R4's attribution against its own DB-3 and against REFEREE-2's report («REFEREE-2
+    derived the same step on its own: docs/referee-2/R2-P-IDEAL-DBL.md l. 53-54»; «Read after my reports on this packet were pushed.»),
+    R5's range against the hypothesis it signed (§3 of its report) and R6's class (l. 237-244); REFEREE-2 Addendum 2 checked R5 and R6
+    against the packet's hypotheses and the ranges it signed, R4 against its own report's DBL-EQ (iv) («written and pushed (2b425bb6)
+    before I read any REFEREE text») and R3 against the packet's §7 TARGET diff (l. 175-184).
+- Honest limits: (i) No statement bounds T, R or F polynomially; TOWER-NEED gives necessary conditions for doubling levels, not a bound
+  on their number (packet l. 134). (ii) MP-LIN bounds max-plus recursions; no such recursion is claimed for a quantity of the IDEAL
+  model, and DEAD-MAXPLUS kills the two natural scalar ones (packet l. 60). (iii) HIT and ALT-MIN are stated at any degree and tested on
+  degree-2, width-2 ladders only. (iv) FUEL-NEED and FUEL (i) are not stated: they rest on L-LOWER's unlanded, unrefereed FEEDBACK (b).
+  (v) All DATA runs are runs of implementations (box76/tw.py's Sim; the referees' own simulators). (vi) Names: «MP-LIN», «WINDOW-ONCE»,
+  «DBL-EQ», «PASS-FREEZE», «HIT», «FUEL-EXACT», «ALT-MIN», «TOWER-NEED» and the DEAD labels are new to RESULTS; «R119» is also an old
+  L-RED round label (docs/red/R119-mixed-gate.md), not a RESULTS label. (vii) MP-LIN is the standard max-plus growth bound, proved in
+  full in the packet; no literature source is cited and no novelty is claimed. (viii) CHECKER C133 (8f6d03bc) FAILED the first fill
+  (draft 3fb40db1, on L-2) with E-1..E-6, all line wording («No statement is strengthened; E-4 and E-5 narrow two clauses to their
+  signed scope.», C133 l. 16-17); L-3 resolves them by R1-R6 (Fixes).
+- Data (DATA, not proof): experiments/si/box79/ at l-si 0ea6959f (unchanged at 610897dd but for check79.sh, which adds the mkL3.py step,
+  and pins.sha1, which re-pins the fixes and adds L-3, mkL3.py, mkfix2.py and c133_8f6d03bc.md, a byte copy of C133 at 8f6d03bc):
+  dblcheck.py (the counters WO, DBLa, DBLb, DBLc, PF, HIT, FU2, ALTa-ALTd, TN and the controls; Sim of experiments/si/box76/tw.py,
+  R104's IDEAL model), dblcheck.out (CORPUS and LOWER), dblcheck_neg2.out (NEG=2: the key-least option regardless of availability),
+  dead79.py and dead79.out (the DEAD instances, every number asserted), reentry_levels.py and reentry_levels.out (DEAD-REENTRY, readings
+  A and B, every l in 0, …, d − 2). Wired into experiments/si/check.sh (l. 1247, «bash box79/check79.sh»; run by scripts/verify.sh):
+  check79.sh, pins.sha1 (sha1sum -c --strict: packet, L-1, L-2, L-3, fixes, tools, outputs, EXTRA genomes, the two byte-copied referee
+  reports, the C133 copy), then dblcheck.py (CORPUS, LOWER), NEG=2, EXTRA, wiring79.py, dead79.py, reentry_levels.py, mkL2.py and
+  mkL3.py, each diffed against its committed output (mkL2.py's against L-2, mkL3.py's against L-3), and four violation lines asserted.
+  Re-run from a git archive of 610897dd at the second fill: 2026-11-07T14:51:53Z-14:52:24Z, rc 0, «box 79 P-IDEAL-DBL (frozen) checks:
+  PASS» (first fill: 0ea6959f, 10:36:24Z-10:36:54Z, rc 0, PASS; CHECKER C133 §4: from 0ea6959f, rc 0, PASS; both referees re-ran it:
+  REFEREE §C l. 186 «check79.sh at 0ea6959f: PASS, exit 0»; REFEREE-2 l. 7-8 at f5263d5a). Sets: CORPUS = the 208 𝓛^R_d genomes of the
+  frozen P-IDEAL-MOVES corpus (experiments/si/box76/corpus_lr.json.gz, each text re-hashed against its git blob at l-new 9995f5a2),
+  every start for N ≤ 10 (193 genomes) and the stored start otherwise (15), 63,223 runs, 140,395 steps; LOWER = L-LOWER 3's nine kill
+  genomes (experiments/si/box76/inst/lower/, byte copies of l-lower 4d747490 experiments/lower/l3/kill/), stored starts, 9 runs, 270
+  steps. Instance and corpus files are pinned in experiments/si/box76/pins.sha1 (run by check76.sh).
+- Signatures: REFEREE docs/referee/R-P-IDEAL-DBL.md: successor 26's report d7885be4 (2026-11-07T08:49:35Z; «Written from
+  2026-11-07T08:48Z (date -u); the header time of record is the commit time.»), «I did NOT read docs/referee-2/ for this report.» (l.
+  3), verdict table l. 5-19; §C 34589c09 (2026-11-07T10:07Z by its heading, commit 10:08:01Z), l. 180-224, verdict l. 223-224: «Verdict:
+  fixes entry 1 CORRECT. L-2 MATCHES, by the byte test and in meaning. All statements stay SIGNED; DEAD-REENTRY is now SIGN (DB-2
+  closed).»; §C add. 1 07a950ae8f4690f851ee2b5d33a0e0252ce873b2 (2026-11-07T13:01:15Z; heading «date -u at writing 2026-11-07T13:01Z»),
+  l. 226-249, «Verdict: L-3 MATCHES, by the byte test and in meaning. All statements stay as signed in §C.» (l. 249). REFEREE-2
+  docs/referee-2/R2-P-IDEAL-DBL.md: successor 30's report 2b425bb6 (2026-11-07T08:49:56Z; carried to origin by 7891ba32), «Independent:
+  docs/referee/ not read on this item.» (l. 2), verdict table l. 10-24, «F-4: L-1 MATCHES after W-2 (a)-(d) and W-3.» (l. 131); Addendum
+  1 30615935 (2026-11-07T10:07:30Z; heading «10:0xZ by date -u» after the stamp fix 1b9e3ea5, 10:07:40Z), l. 137-166, «I read REFEREE's
+  items only as the fixes file quotes them, after my report (2b425bb6) was on origin.» (l. 140-141), verdict l. 165-166 (above);
+  Addendum 2 37c733e2362991d0e309879ff264ce1e2971d724 (2026-11-07T13:01:16Z; heading «2026-11-07 13:0xZ by date -u»), l. 168-185, with
+  R2-P-IDEAL-DBL/bt_l3.py and bt_l3.out, «Verdict: entry 2 **CORRECT**; **L-3 MATCHES** the packet with fixes entries 1-2, in bytes and
+  in meaning (Opus 5.5, D1). Statements all SIGN.» (l. 185). Lane (claude/l-si): L-SI successor 41, 2c396f6f (draft); successor 42,
+  f5263d5a (freeze), 0ea6959f (fixes entry 1, L-2), 610897dd (fixes entry 2, L-3).
+- INDEPENDENCE: the packet's proofs are L-SI's; each referee re-derived every step (REFEREE §3; REFEREE-2 «## Proofs (own
+  re-derivation)») and replayed the statements on a simulator that is not the lane's (REFEREE: t3r_sim.py, written by its successor 24
+  from R104's text; REFEREE-2: r2moves.py, «no lane code», l. 64). Each referee wrote its first report without reading the other's
+  (REFEREE l. 3; REFEREE-2 l. 2); REFEREE's §C read REFEREE-2's items through fixes entry 1. The DATA wording of L-2 is REFEREE's DB-L1
+  with REFEREE-2's W-3 items; the DEAD wording is REFEREE-2's W-2 (a)-(c) and REFEREE's DB-L2 with the lane's measured sets (F-2);
+  REFEREE §C l. 209-210 records that its own DB-L2 set was unmeasured («MY MISS») and that «The lane's measured sets replace mine.», and
+  REFEREE-2 Add. 1 l. 153-154 that its N-3 was incomplete («I withdraw «only».»); both re-measured the sets with their own code (REFEREE
+  dbl_reentry_levels.py; REFEREE-2 r2reentry.out), equal to the lane's. L-3's further wording (R1-R6) is CHECKER C133's (the first
+  fill's R-A, R-B, R-C, R-G, R-D, R-E, adopted by C133; R4 by the Lead's L41 ruling); in the L-3 round each referee byte-tested L-3 with
+  its own script and read R1-R6 in meaning (REFEREE §C add. 1 l. 232-248; REFEREE-2 Addendum 2 l. 171-184).
+- TARGET.md diff: TARGET.md §1 defines a parity game; the IDEAL model of R104 is a step rule on genomes (R104's definition), not a
+  parity-game solver, and no statement of this entry mentions a parity game, a winning region, an algorithm's running time or a
+  complexity class (packet §7 l. 193-195; REFEREE l. 167-168 «no statement mentions a parity game, a winning region or a running time»;
+  REFEREE-2 l. 24 «No statement bounds T; G-N5-TIME stays OPEN.»). No statement bounds T polynomially (L-3: «no statement bounds T
+  polynomially»). It is not an algorithm claim, so TARGET.md §5's gauntlet does not apply, and it is not a step-4 pass. L-3 carries the
+  scope tail «each statement is about the step sequence of R104's IDEAL model (MP-LIN about max-plus recursions);» … «G-N5-TIME stays
+  OPEN; not M3, not a step-4 pass, not a TARGET.md claim» (R3, by script). GAPS G-N5-TIME: open.
+
 **Erratum E-1** (not a result; 2026-11-01 05:28Z by date -u; Lead; corpus counts in RESULTS R97-R100):
 - What is wrong: the DATA-of-record sentences that say «1,132 games» for the L-SI box 50b / box 53 corpus (sbcg.lst 719 lines + alt_all.lst
   413 lines) count RUNS, not games. Measured by CHECKER (C111 N-7, claude/checker d53e1d4f) at trunk 68d50c8f: experiments/si/anc58/
