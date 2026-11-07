@@ -42,6 +42,10 @@ experiments/comp/box30/ on claude/l-comp) at d ≥ 32. No result of mine came fr
 07:15Z without a record). Seeds 300000-329999 are L-COMP's (box 30): keep outside.
 ### Seventh level status: guarded climb (`GUARD=5 LV=6 ANNEAL=0.02 $SP/rclimbG out/H6d28.txt 162 …`, rclimb.c GUARD) holds F 2 6 14
 30 62 126 and reaches F(6) = 190 at d 28 (254 needed); L-COMP box 30 runs the same target (A).
+  RELAUNCH (successor 5): `SP=<scratch>; gcc -O2 -o $SP/rclimbG experiments/lower/l4/rclimb.c -lm; cd experiments/lower/l4;
+  python3 -I ../l3/lift.py rec/H6_d24_F126.txt 4 out/H6d28.txt; GUARD=5 LV=6 ANNEAL=0.02 OUT=out/G7_s162.txt setsid nohup
+  $SP/rclimbG out/H6d28.txt 162 400000000 > out/G7_s162.log 2>&1 &` (d 28 only: ranks ≤ 111; for d ≥ 32 use L-COMP's rclimb30.c).
+  Its best genome at park is committed as rec/G7_best_d28.txt (F(6) = 190) for a warm restart: replace out/H6d28.txt by it.
 ### IN FLIGHT (die with the container; logs in experiments/lower/l4/out/, gitignored)
 - Seventh level: `LV=6 ANNEAL=0.02 OUT=out/L7_s131.txt $SP/rclimb128 out/H6d28.txt 131 400000000` (H6d28 = lift.py H6 + 4 levels;
   at handover F 2 6 14 30 62 94 128 …: level 5 lost). Frozen-core: `FROZENBELOW=10 LV=5 ANNEAL=0.02 $SP/rclimbF out/H5d24.txt 141 …`
