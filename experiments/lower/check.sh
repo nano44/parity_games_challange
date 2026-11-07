@@ -46,3 +46,5 @@ timeout 100 python3 -I l3/l3check.py
 timeout 100 python3 -I l3/p_m2d_check.py
 # BOX L4 (successor 4): driven-block relaxation, DOUBLE-EQ' / FROZEN-WINDOW checks, F(4) records
 timeout 100 python3 -I l4/l4check.py
+# BOX L5 (successor 5): packet P-TOWER-FUEL (instances G7_best_d28 / SL41_d28, lemma counters)
+timeout 100 python3 -I l5/p_tower_check.py
