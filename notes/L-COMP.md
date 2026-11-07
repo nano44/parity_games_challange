@@ -64,7 +64,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   p1-p7, each split x4 on vars 50, 56: parts q0-q3), then c0s1, c4s0, c4s2, c0s2, c0s3, c4s3 in 8 pieces each on vars 32, 38, 44
   (q2pieces.sh does exactly this; it skips any piece whose .chk holds «s VERIFIED»). Proof dir /home/user/pf/q2 (outside git; a new
   container must re-unzip the DIMACS: q2pieces.sh does it and checks sha1 f3d4b6ad).
-- xval_d3: 9/16 P-TR3 cubes done (9, 10, 5, 2, 13, 6, 14, 1, 15), each frup = drup = P-TR3 table (log/xval_d3.txt, log/xval_d3/); next cube 3.
+- xval_d3: 10/16 P-TR3 cubes done (0, 1, 2, 5, 6, 9, 10, 13, 14, 15: log/xval_d3/c<c>.done), each frup VERIFIED = drup VERIFIED with
+  DIMACS + proof sha1 = the P-TR3 table (log/xval_d3.txt, 11 lines: one cube logged twice across the 05:00Z restart); next cube 3.
 ### DONE (all pushed by commit_loop or by hand; all DATA unless labelled)
 - BOX 28 (T^R(4)): NOT certified, not even EXACT-SAT. cnf.py roots > 4 h without verdict; frup.c (own forward RUP checker, = drup.c on
   124 d 2 cases + the P-TR3 cubes so far; same speed) kept as a second checker; PAIR-SWAP symmetry (README "Symmetry", lane proof +
