@@ -44,3 +44,5 @@ PY
 # BOX L3 (successor 3): family A, simulator cross-check vs box150 Gen, TRI/FEEDBACK lemma checks
 timeout 100 python3 -I l3/l3check.py
 timeout 100 python3 -I l3/p_m2d_check.py
+# BOX L4 (successor 4): driven-block relaxation, DOUBLE-EQ' / FROZEN-WINDOW checks, F(4) records
+timeout 100 python3 -I l4/l4check.py

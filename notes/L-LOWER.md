@@ -25,6 +25,32 @@ explicit recursive design with proofs. Successor 3's sections below are kept unc
 Successor 3 (Opus 5.5, D1/D14/D18/D20) started 2026-11-07 00:05Z (date -u); STEP 0 handover check below; BOX L3 (explicit families
 for μ(d), IDEAL-ACYC model on 𝓛^R_d). The predecessor's T-L2 text (2026-10-15) is kept below unchanged as history.
 
+## Successor 4 BOX L4 state (2026-11-07 ~04:3xZ)
+### Resume point
+- Write-up: docs/lower/L4-tower.md (§1 DRV-RELAX, §2 DUAL, §3 DOUBLE-EQ′, §4 FROZEN-WINDOW + NO-CROSS/NO-PARALLEL/four targets, §5 DATA,
+  §6 obstruction reading). Code: experiments/lower/l4/ (drv.c, drvpy.py, drvpath.py, blk.py, tmpl.c, rclimb.c, j2t.py, fwcheck.py,
+  l4check.py in experiments/lower/check.sh). Records: l4/rec/RECF4_d14_F52.json (1e0b0a58…), RECF4_d16_F53.json (9b08c289…).
+- Binaries in the scratchpad: `gcc -O2 -o $SP/drv drv.c -lm`, `gcc -O2 -o $SP/rclimb rclimb.c -lm`, `gcc -O2 -o $SP/tmpl tmpl.c`.
+- IN FLIGHT (detached, die with the container; logs in l4/out/, gitignored): F(4) climbs `LV=4 ANNEAL=0.15 OUT=out/C14b_s21.txt
+  $SP/rclimb out/C14_F52.txt 21 300000000` (also s22), `… OUT=out/C16_s1.txt $SP/rclimb out/C16seed.txt 31 300000000` (C16seed =
+  C14_F52 + 2 TOP-ADD levels, lift.py), C14_s1 from out/tow14.txt. rclimb uses long double: exact only for d ≤ 16 (ranks ≤ 63).
+### Next
+1. Design a tower pair with four distinct targets whose fourth target rises once per window (§6 OPEN); seed from RECF4_d16_F53.
+2. FROZEN-WINDOW (b) to the referees if the Lead wants a packet (premises: landed only).
+### Sources opened (this box)
+- docs/RESULTS.md R105 (l. 10155: ENC, MONO), R113 (l. 12152, PAIR-DOUBLE proof l. 12220), R104 (l. 9864, definition); claude/l-si
+  b97aee9a docs/si/N5-TROPICAL-box76.md §7 (DBL-EQ), §8-§11 (TOWER-NEED, ACYC-SPLIT, FUEL-NEED, PASS-FREEZE, FUEL (i)/(ii), RE-ENTRY);
+  claude/l-new 73b3d1fd docs/new/P-N5-REACH.md header and §1 premises (REACH3 from S3; not used as a premise here); claude/referee
+  f66942c1 / claude/referee-2 b0860fcd logs (no new item on P-M2D-DEAD L-2).
+### Dead ends (this box)
+- Free-e relaxation as a search target: «F(4)» 63 at m 13 only via 57 e-changes (l4/out/rf4_s2.gen); F0 forbids; use EB=2.
+- Recursion «add one crossed level on the targeted top pair»: killed by FROZEN-WINDOW (b) (theorem); instances REC_d10_tower (CROSS
+  pair 3, F(4) 23), forced crossed pair 4 climbs (F(4) ≤ 34, out/X14_a2.txt), seedCR2 (CROSS pair 2: F(3) 20 < 22).
+- One-active-mover-per-level (KM-type) fuel chain: LP ≈ 2m even with free keys (drv HALF).
+### Things only I know
+- drv.c hash keys are unsigned (s << 3): m ≤ 14 in OBJL mode. blk.py refuses genomes with a level-0 Ξ-target (DRV-RELAX hypothesis).
+- In rclimb, ANNEAL is per score unit/256 for LV mode: 0.15 works, ≥ 1 is a random walk.
+
 ## Successor 3 handover check (2026-11-07 00:1xZ, date -u)
 1. Branch claude/l-lower. At start: local ref = HEAD = origin = ls-remote = aa8995e8 (clone was shallow: `fetch --unshallow`, then
    `merge --ff-only origin/claude/l-lower`: already up to date). Merge of trunk claude/vibrant-johnson-nxvvxo (ls-remote 2ccd037b) was a
