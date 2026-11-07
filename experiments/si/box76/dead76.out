@@ -1,0 +1,8 @@
+SUM-COUPLE dense_d5_l3_H10 start 1100110110 T 10 moves [1, 1, 3, 3, 4, 4, 10, 3, 1, 2]
+  mover 6 (level 3) moves 10 at steps [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; Xi-targets of its options: 5 (level 2, moves 4), 4 (level 2, moves 4)
+  pi(6) along the run 10101010101; max moves over levels 0-2 = 4; increment over levels below = 6
+  strict Xi-descendants of 6: [0, 2, 3, 4, 5, 7, 8, 9], max moves among them 4; moves(6) - that max = 6; moves(4) + moves(5) + 2 = 10
+  R(4) 5 R(5) 6; ALT-MIN bound 2 + 2 min(R(5), R(4)) = 12 >= moves(6) 10
+RISE-N rise_d5_R13 start 1110110001 T 16: R(8) = 13 > N = 10 (moves(8) = 5)
+SPAWN-2 dd_d5_F14 start 1101111110 T 14: F [2, 3, 6, 14, 7]; level-j windows (j = 1..4) [3, 4, 7, 15]; moves [1, 1, 3, 1, 3, 3, 7, 7, 3, 2]
+dead76: all assertions PASS

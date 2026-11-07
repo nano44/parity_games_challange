@@ -1,0 +1,38 @@
+ABSTRACT m=2 systems 3145728  max T0 4  max T1 7
+PAIR pre 0 post 0
+PAIR pre 0 post 1
+PAIR pre 0 post 2
+PAIR pre 0 post 3
+PAIR pre 0 post 4
+PAIR pre 1 post 0
+PAIR pre 1 post 1
+PAIR pre 1 post 2
+PAIR pre 1 post 3
+PAIR pre 1 post 4
+PAIR pre 2 post 0
+PAIR pre 2 post 1
+PAIR pre 2 post 2
+PAIR pre 2 post 3
+PAIR pre 2 post 4
+PAIR pre 3 post 0
+PAIR pre 3 post 1
+PAIR pre 3 post 2
+PAIR pre 3 post 3
+PAIR pre 3 post 4
+PAIR pre 4 post 0
+PAIR pre 4 post 1
+PAIR pre 4 post 2
+PAIR pre 4 post 3
+CELL T0 1 T1 1 count 56 witness pi 0123 f 0 0 2 34 c1 0 0
+CELL T0 1 T1 2 count 159208 witness pi 0123 f 0 0 0 0 c1 0 0
+CELL T0 2 T1 2 count 149288 witness pi 0123 f 0 0 3 0 c1 0 0
+CELL T0 2 T1 3 count 1516120 witness pi 0123 f 0 2 0 0 c1 0 0
+CELL T0 2 T1 4 count 683136 witness pi 0123 f 1 0 1 0 c1 0 0
+CELL T0 3 T1 3 count 85552 witness pi 0123 f 0 2 11 0 c1 0 0
+CELL T0 3 T1 4 count 377648 witness pi 0123 f 0 2 1 0 c1 0 0
+CELL T0 3 T1 5 count 148864 witness pi 0123 f 0 2 3 0 c1 0 1
+CELL T0 3 T1 6 count 5408 witness pi 0123 f 1 2 3 16 c1 0 1
+CELL T0 4 T1 4 count 4336 witness pi 0123 f 0 2 11 16 c1 0 0
+CELL T0 4 T1 5 count 12784 witness pi 0123 f 0 2 1 16 c1 0 0
+CELL T0 4 T1 6 count 3136 witness pi 0123 f 0 2 3 16 c1 0 1
+CELL T0 4 T1 7 count 192 witness pi 0123 f 0 2 3 176 c1 0 1

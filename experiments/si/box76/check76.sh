@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# L-SI box 76 (TROPICAL-WINDOW; docs/si/N5-TROPICAL-box76.md) self-check (~60 s): pins (--strict) of tools, corpus, instances and
+# frozen outputs; tw.py .. tw4.py reproduce their outputs byte for byte; the violation counters of ALT-MIN / HIT / MONO are 0; the
+# DEAD instances replay (dead76.py asserts every number it prints).
+set -euo pipefail
+cd "$(dirname "$0")"
+sha1sum -c --quiet --strict pins.sha1
+t=$(mktemp -d)
+python3 -I -B tw.py > "$t/tw"
+diff -q "$t/tw" tw.out
+python3 -I -B tw2.py > "$t/tw2"
+diff -q "$t/tw2" tw2.out
+python3 -I -B tw3.py > "$t/tw3"
+diff -q "$t/tw3" tw3.out
+python3 -I -B tw4.py > "$t/tw4"
+diff -q "$t/tw4" tw4.out
+python3 -I -B dead76.py > "$t/dead"
+diff -q "$t/dead" dead76.out
+rm -rf "$t"
+grep -q "^INFO ALT 0 MONO_VIOL 0 MOVEALT 0 RMV 0 TO_k 0 movers 577740 runs 63223$" tw3.out
+grep -q "^INFO HIT_VIOL 0 pairs 577740$" tw4.out
+grep -q "^INFO files 208 runs 63223 steps 140395$" tw.out
+echo "box 76 TROPICAL-WINDOW checks (ALT-MIN, HIT, window tables, DEAD SUM-COUPLE / RISE-N / SPAWN-2 replays): PASS"

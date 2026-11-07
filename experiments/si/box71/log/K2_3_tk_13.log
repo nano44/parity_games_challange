@@ -1,0 +1,4 @@
+DIMACS m3_tk_T13_T20_K2_NOIM0.cnf sha1 f3d4b6adcfef51d67f2c34aa4e27184c868788a8
+m 3 MODE tk T 13 T2 0 K 2 NOIM 0 vars 21083 clauses 99351 -> UNSAT 6173.0s
+DRUP m3_tk_T13_T20_K2_NOIM0.drup sha1 f02fab2a124abe959424abd3b1b804c0a555eed8 bytes 5697046340
+DRUPCHECK interrupted by a container restart (2026-11-05 ~21:40Z) after ~25 min; re-run started 22:13Z
