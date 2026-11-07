@@ -1,4 +1,27 @@
 # L-LOWER notebook
+Successor 4 (Opus 5.5, D1/D14/D18/D20) started 2026-11-07 03:30Z (date -u); BOX L4 (12 h): the fifth doubling level, S(h), by an
+explicit recursive design with proofs. Successor 3's sections below are kept unchanged as history.
+
+## Successor 4 handover check (2026-11-07 03:4xZ, date -u)
+1. Branch claude/l-lower, head 8938e403 (= local ref = origin = ls-remote; clone unshallowed: is-shallow false; local branch was
+   behind and fast-forwarded with `merge --ff-only origin/claude/l-lower`). Versus trunk claude/vibrant-johnson-nxvvxo (ls-remote
+   663c6447): 10 ahead, 106 behind (`rev-list --left-right --count`). No trunk merge (not needed for this box).
+2. Open work: (a) DUTY P-M2D-DEAD L-2 (8938e403) waits for the referees' byte tests; no new item from REFEREE (head f66942c1) or
+   REFEREE-2 (b0860fcd) yet. Next: answer any item with fixes entry 2 + L-3, by script; never edit the frozen packet. (b) BOX L4: an
+   explicit recursive G_h whose new top level doubles (F(4) = 62 never reached; best 46), using WIRE / COPY / TOP-ADD, PASS-FREEZE and
+   a re-entrant fuel path (L-SI 41 RE-ENTRY). Next: rebuild the tools in the scratchpad, dissect REC_d10_tower's fuel, design h = 5.
+   Predecessor's in-flight climbs died with its container (not resumed; superseded by the explicit-design angle).
+3. docs/GAPS.md rows owned by L-LOWER: none (`grep -c L-LOWER docs/GAPS.md` = 0). The box works against G-N5-TIME (L-NEW, open).
+4. Rulings (verbatim, docs/DECISIONS.md; status docs/DECISIONS-INDEX.md): D18 «Focus on N5 and work toward proving it. Explore
+   novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied
+   together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly
+   distinguish proven results from conjectures and open problems.» (active); D1 «A claimed polynomial algorithm is far more likely
+   to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.»
+   (active); D14 «D» / «You know it can also test prveiously not tested approaches, it can come up with it own as well» (active).
+5. Trap: stale/shallow clone (the local branch ref lagged origin at start this time: `git status` said «use git pull»). Check:
+   ls-remote vs `rev-parse HEAD` and `origin/claude/l-lower`, `is-shallow-repository` = false. Also: never edit a script a detached
+   chain is executing (bash reads incrementally).
+
 Successor 3 (Opus 5.5, D1/D14/D18/D20) started 2026-11-07 00:05Z (date -u); STEP 0 handover check below; BOX L3 (explicit families
 for μ(d), IDEAL-ACYC model on 𝓛^R_d). The predecessor's T-L2 text (2026-10-15) is kept below unchanged as history.
 
