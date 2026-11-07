@@ -1,0 +1,28 @@
+== 06:45Z d 10 seed-file out/xa_d9.json
+start n 310 xi 12 spec 6
+it 5 n 310 xi 16 spec 8 OK
+it 32 n 310 xi 17 spec 8 OK
+it 67 n 310 xi 17 spec 10 OK
+it 87 n 310 xi 17 spec 11 OK
+it 136 n 310 xi 18 spec 8 OK
+it 145 n 310 xi 18 spec 10 OK
+it 159 n 310 xi 19 spec 8 OK
+it 179 n 310 xi 20 spec 9 OK
+it 205 n 310 xi 21 spec 9 OK
+it 224 n 310 xi 21 spec 10 OK
+it 231 n 310 xi 22 spec 10 OK
+it 320 n 310 xi 22 spec 11 OK
+it 351 n 310 xi 23 spec 8 OK
+it 477 n 310 xi 24 spec 8 OK
+it 491 n 310 xi 25 spec 7 OK
+it 545 n 310 xi 25 spec 8 OK
+it 691 n 310 xi 25 spec 9 OK
+it 812 n 310 xi 26 spec 8 OK
+it 969 n 310 xi 26 spec 9 OK
+it 1018 n 310 xi 27 spec 7 OK
+it 1192 n 310 xi 27 spec 11 OK
+it 1811 n 310 xi 27 spec 12 OK
+it 3619 n 310 xi 28 spec 9 OK
+it 3772 n 310 xi 28 spec 10 OK
+it 4011 n 310 xi 28 spec 11 OK
+it 4540 n 310 xi 28 spec 12 OK
