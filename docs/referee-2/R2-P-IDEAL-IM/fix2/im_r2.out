@@ -1,0 +1,6 @@
+genomes 404 checks {'IM': 31208, 'BITCHAIN': 66520, 'KEYDIR': 133040, 'MONO': 133040, 'FRAME_LOCAL': 250248, 'FRAME_OWN': 66520, 'FRAME_STEP': 24184, 'XSTEP': 18944}
+violations {'IM': 0, 'BITCHAIN': 0, 'KEYDIR': 0, 'MONO': 0, 'FRAME_LOCAL': 0, 'FRAME_OWN': 0, 'FRAME_STEP': 0, 'XSTEP': 0}
+negative controls fired {'IM': 6284, 'BITCHAIN': 66520, 'KEYDIR': 67100, 'MONO': 33586, 'FRAME_STEP': 20486}
+R2CHECK {'LOCAL_unhappy': 125124, 'xgen': 301} distinct (genome,c,image) 5670 distinct (genome,image) 4715
+PASS
+exit 0

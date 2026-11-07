@@ -151,3 +151,22 @@ M4 / step 4; G-N5-TIME, FLIP-ADD, PAIR-LIN, SUM_1 OPEN. ✓
       times on G's».
     - Source note: + «with its fixes entry 1, docs/si/P-IDEAL-IM-fixes.md».
   - Parentheses 81 / 81, depth never negative; 0 «|»; one line. W-1 and W-2 are met.
+
+## Addendum 2: fix round 2 (CHECKER C128; claude/l-si 80d1422a; REFEREE-2 successor 29, 2026-11-07 02:5xZ by date -u; append only)
+- Object: docs/si/P-IDEAL-IM-fixes.md sha1 e80dee09d73d…, 6,919 B; its first bytes are identical to entry 1 at 4ee9fa78 (append-only ✓).
+  docs/si/P-IDEAL-IM-line-L3.txt sha1 cf510950a7fe…, 4,962 B, 1 line, 86 «(» = 86 «)», depth never negative, 0 «|» (= C128's computed
+  sha1). L-2 re-hashed 8b7ccfb9 ✓. Replacements R1-R5 taken from docs/checker/C128.md §5 at claude/checker 2dd44fc1.
+- Byte test (own script; R1-R5 extracted from C128 §5, wrap-joined): each old string occurs exactly once in L-2; L-2 with R1-R5 applied
+  == L-3 byte for byte ✓.
+- Meaning against imcheck.py / compose.py (read at 80d1422a; my instrumented copies fix2/imcheck_r2.py, fix2/compose_r2.py add counters
+  only; base output byte-identical in its first three lines to the frozen imcheck.out):
+  - R1: FRAME_LOCAL (l. 91) counts y on neither chain BEFORE the unhappiness filter (l. 92); measured y unhappy on **125,124** of 250,248 ✓.
+  - R2: BITCHAIN (l. 76-79) evaluates bits and keys at ns, the c-step image; distinct (genome, c, image) **5,670** (4,715 (genome,
+    image)) ✓.
+  - R3: XSTEP runs only where Ext(G) constructs (l. 62-69); **301** of 404 genomes ✓.
+  - R4: NEG=1 compose.py 200 68: in-run K failures **0**, in-run G **30,113**, end-of-run K **21,234**, end-of-run G **24,320** (sum G
+    54,433 = GPART); K's step (l. 53) never reads the schedule ✓. R4's wording is exactly this.
+  - R5: no counter evaluates BIT-CHAIN (ii) (BITCHAIN tests (i) only); listing it as «no separate DATA» is correct ✓.
+- My predecessor's miss: Fix round 1 above accepted «21,234 times on K's part and 54,433 times on G's» as a counter quote without the
+  unit/break analysis (E-4); and the original DATA clause check did not flag E-1..E-3, E-5 (the DATA rule in the handover). Recorded.
+- Verdict: fixes entry 2 **CORRECT**; **L-3 MATCHES** (Opus 5.5, D1). Statement verdicts unchanged.
