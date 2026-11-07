@@ -1,0 +1,1 @@
+climbR_d6_s5: best maxR 11 at (6, 1) with T 19 (N 12)

@@ -180,3 +180,8 @@ Every definition was diffed against the source text (trap R105-E1), not only the
   13.txt.part / 14.txt.part in commit bfeca123; they are removed here).
 - So three solvers of two lineages (CaDiCaL 1.9.5 and Kissat 4.0.4; Glucose 4, MiniSat lineage) agree: 16/16 UNSAT each. Still no
   checked certificate: T3-G1 stays open until P-TR3's RUP check (L-COMP drup.c on Glucose 4 proofs) is audited.
+
+## Addendum 2 (2026-11-06, successor 24): T3-G2 closed
+- RESULTS R110 (P-IDEAL-FLIP) has landed (trunk b5d154ad, RESULTS l. 11323). It defines 𝓛^R_d («the 2-wide degree-2 ladders in L-RED's
+  R197 convention (…)») and T^R(d) («the largest number of steps over 𝓛^R_d and all starts»). So the class and the quantity now
+  have a landed definition, and T3-G2 is CLOSED. A premise entry can cite R110's definitions. T3-G1 (certificate) is still open.

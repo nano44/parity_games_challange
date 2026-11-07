@@ -1,0 +1,6 @@
+corpus files at d 4: 64
+class PBG d 4 genomes 700 transitions 177208 distinct-dec-rows 137159 distinct-states 193565 features 144
+FEASIBLE min max Phi = 35.5536
+weights: budn7=6.76 k0=5.12 budn6=5.09 pair0_1111=-4.43 budn5=4.38 k1=4.06 budn4=3.67 pair1_1111=-3.28 gapn6=-3.1 k3=3.01 gapn7=-2.62 gapn5=-2.35 gapn1=2.32 pair3_0101=2.05 budn1=-1.99 budn2=1.96 k2=1.91 pair3_0011=-1.79 u4=-1.57 pair2_1010=1.49 z6=1.45 k5=1.41 pair2_1011=1.4 pair0_0000=-1.28 k4=1.26 gapn0=1.25 gapn3=1.22 u6=-1.17 pair0_0001=-1.16 k6=1.11 gapn2=-1.07 pair0_1000=-0.994 pair2_1110=0.963 pair3_0000=0.926 pair1_1101=-0.919 pair1_1100=-0.919 pair3_0010=-0.896 pair0_1110=0.872 pair0_1001=-0.872 pair1_0101=-0.869 const=0
+dual: 79 decrease rows in support, sum of their multipliers 35.5536 (= the bound)
+dual mass by genome source: rand:7.08 NOW_1_d4_t10.json:5.46 climbI2_d4_LR_s104.json:4.08 ISO_1_d4_t11.json:3.22 ISO_1_d4_t10.json:2.93 dbl_d4_F10.json:2.17 d4_C1_8.json:2.02 perbit_m3_s24.json:1.9 pm_d4_w2_s2.json:1.83 NOL0_1_d4_t8.json:0.839 seedpm_ISO_1_d4_t12_s1.json:0.667 d4_C1_8_C2_11.json:0.497

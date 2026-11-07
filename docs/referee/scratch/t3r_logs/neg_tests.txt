@@ -1,0 +1,13 @@
+valid UNSAT proof (d2 L5 c0)     | drup: s VERIFIED (5730 lemmas RUP-checked)       | drup IGNDEL: s VERIFIED (5730 lemmas RUP-checked)       | ref_rup: s VERIFIED (5730 lemmas RUP-checked, deletions ignored)
+SAT formula d2 L4 + its proof    | drup: s NOT VERIFIED: no refutation reached      | drup IGNDEL: s NOT VERIFIED: no refutation reached      | ref_rup: s NOT VERIFIED: no refutation reached
+truncated (3000 lines)           | drup: s NOT VERIFIED: no refutation reached      | drup IGNDEL: s NOT VERIFIED: no refutation reached      | ref_rup: s NOT VERIFIED: no refutation reached
+every 7th lemma dropped          | drup: s NOT VERIFIED: lemma 7 is not RUP         | drup IGNDEL: s NOT VERIFIED: lemma 7 is not RUP         | ref_rup: s NOT VERIFIED: lemma 7 is not RUP
+one early lemma dropped          | drup: s VERIFIED (5729 lemmas RUP-checked)       | drup IGNDEL: s VERIFIED (5729 lemmas RUP-checked)       | ref_rup: s VERIFIED (5729 lemmas RUP-checked, deletions ignored)
+one literal sign flipped         | drup: s NOT VERIFIED: lemma 2866 is not RUP      | drup IGNDEL: s NOT VERIFIED: lemma 2866 is not RUP      | ref_rup: s NOT VERIFIED: lemma 2866 is not RUP
+flip in every 50th lemma         | drup: s NOT VERIFIED: lemma 1 is not RUP         | drup IGNDEL: s NOT VERIFIED: lemma 1 is not RUP         | ref_rup: s NOT VERIFIED: lemma 1 is not RUP
+bogus unit lemma '1 0' first     | drup: s NOT VERIFIED: lemma 1 is not RUP         | drup IGNDEL: s NOT VERIFIED: lemma 1 is not RUP         | ref_rup: s NOT VERIFIED: lemma 1 is not RUP
+empty clause first               | drup: s NOT VERIFIED: lemma 1 is not RUP         | drup IGNDEL: s NOT VERIFIED: lemma 1 is not RUP         | ref_rup: s NOT VERIFIED: lemma 1 is not RUP
+cube0 proof vs cube3 CNF         | drup: s NOT VERIFIED: lemma 10 is not RUP        | drup IGNDEL: s NOT VERIFIED: lemma 20 is not RUP        | ref_rup: s NOT VERIFIED: lemma 20 is not RUP
+cube3 own proof                  | drup: s VERIFIED (5444 lemmas RUP-checked)       | drup IGNDEL: s VERIFIED (5444 lemmas RUP-checked)       | ref_rup: s VERIFIED (5444 lemmas RUP-checked, deletions ignored)
+SAT formula + proof '0' (file)   | drup: s NOT VERIFIED: lemma 1 is not RUP         | drup IGNDEL: s NOT VERIFIED: lemma 1 is not RUP         | ref_rup: s NOT VERIFIED: lemma 1 is not RUP
+UNSAT formula + empty proof      | drup: s NOT VERIFIED: no refutation reached      | drup IGNDEL: s NOT VERIFIED: no refutation reached      | ref_rup: s NOT VERIFIED: no refutation reached

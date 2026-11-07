@@ -152,29 +152,42 @@ def build(d, L, P=None, wiring="R"):
     D2 = [x for x in movers if deg[x] == 2]
     upper = [x for x in D2 if not (free0 and lev[x] == 0)]
     MV = []
-    for t in range(L):
+    def steps(L):
+      for t in range(L):
         cm = chains(t); lt = keys_lt(t + 1); mv = []
         for x in upper:
             Bx = C.XOR(better1(t, x, cm), S[t][x])           # other option strictly better
             nx = C.ITE(Bx, kp1(t + 1, x, lt), S[t][x])
             C.require(C.EQ(S[t + 1][x], nx)); mv.append(C.XOR(S[t + 1][x], S[t][x]))
         C.require(C.OR(mv)); MV.append(mv)
-    if free0:   # b_0 = [key(u_0) < key(v_0)] at s_t; at most KF changes over s_0..s_L
+    def flips(L, kf):   # b_0 = [key(u_0) < key(v_0)] at s_t; at most kf changes over s_0..s_L
         def b0(t):
             return C.OR([C.AND([st(t, 0, a), st(t, 1, b), gord[0][((0, a), (1, b))]]) for a in range(2) for b in range(2)])
         B = [b0(t) for t in range(L + 1)]
         fl = [C.XOR(B[t], B[t + 1]) for t in range(L)]
         fl = [f for f in fl if f is not False]
-        kf = int(os.environ.get("KF", "0"))
-        if kf < len(fl):
+        if kf == 0:
+            for f in fl: C.require(C.NOT(f))
+        elif kf < len(fl):
             enc = CardEnc.atmost(lits=fl, bound=kf, top_id=C.n, encoding=EncType.seqcounter)
             C.n = max(C.n, enc.nv); C.cl.extend(enc.clauses)
+    steps(L)
+    if free0 and int(os.environ.get("KF", "0")) > 0: flips(L, int(os.environ.get("KF", "0")))
+    elif free0: flips(L, 0)
+    S2 = None
+    if free0 and os.environ.get("RUN2"):   # RUN2=a: a SECOND forced run of the SAME genome (own start, own level-0 schedule),
+        a = int(os.environ["RUN2"])         # flip-free (b_0 constant), at least a steps each moving an upper mover
+        S_main = S; S = [{x: (C.var() if deg[x] == 2 else False) for x in movers} for _ in range(a + 1)]
+        steps(a); flips(a, 0); S2 = S; S = S_main
     if os.environ.get("SYM") == "1":   # sound relabelling: the two options of a level-0 mover have no W-role, so swapping their
         for x in (0, 1):                   # labels (with Xi-target, rank, parity, gate) is a symmetry; WLOG s_0(u_0) = s_0(v_0) = 0
             if not (free0 and lev[x] == 0): C.require(C.NOT(S[0][x]))
     for a in [a for a in os.environ.get("CUBE", "").split(",") if a]:   # CUBE=x:b,... fixes start bits s_0(x) = b
         x, b = (int(v) for v in a.split(":")); C.require(S[0][x] if b else C.NOT(S[0][x]))
-    info = dict(d=d, L=L, movers=movers, lev=lev, deg=deg, opts=opts, Wv=Wv, Xv=Xv, rk=rk, par=par, gord=gord, S=S, pi=pi)
+    for a in [a for a in os.environ.get("XCUBE", "").split(",") if a]:   # XCUBE=j:c,...: option j (in opts order) takes the
+        j, c = (int(v) for v in a.split(":")); o = opts[j]               # c-th value of its sorted Xi-target domain
+        C.require(Xv[o][sorted(Xv[o].keys())[c]])
+    info = dict(d=d, L=L, movers=movers, lev=lev, deg=deg, opts=opts, Wv=Wv, Xv=Xv, rk=rk, par=par, gord=gord, S=S, pi=pi, S2=S2)
     return C, info
 
 def val(model, l):
@@ -207,7 +220,7 @@ if __name__ == "__main__":
     P = [int(v) for v in os.environ.get("P", "").split(",")] if os.environ.get("P") else None
     wiring = os.environ.get("W", "R")
     t0 = time.time(); C, I = build(d, L, P, wiring)
-    print(f"build d {d} L {L} P {P} W {wiring} SYM {os.environ.get('SYM')} CUBE {os.environ.get('CUBE')} FREE0 {os.environ.get('FREE0')} KF {os.environ.get('KF')} vars {C.n} clauses {len(C.cl)} {time.time() - t0:.1f} s", flush=True)
+    print(f"build d {d} L {L} P {P} W {wiring} SYM {os.environ.get('SYM')} CUBE {os.environ.get('CUBE')} XCUBE {os.environ.get('XCUBE')} FREE0 {os.environ.get('FREE0')} KF {os.environ.get('KF')} vars {C.n} clauses {len(C.cl)} {time.time() - t0:.1f} s", flush=True)
     s = Solver(name=os.environ.get("SOLVER", "cadical195"), bootstrap_with=C.cl)
     t1 = time.time(); r = s.solve()
     print(f"RESULT d {d} T >= {L} P {P} W {wiring}: {'SAT' if r else 'UNSAT'} {time.time() - t1:.1f} s", flush=True)

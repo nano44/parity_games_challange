@@ -1,0 +1,4 @@
+FD-VIOL iso_d4_st9.json gain 8 n2 2 bound 6 C 1 moves {6: 3, 7: 3} T 11
+FD-VIOL pm_d5_w2_s3.json gain 8 n2 2 bound 7 C 2 moves {8: 2, 9: 1} T 8
+files 372 FA 53 FB 34 FD 2
+largest (gain'-n2)/mc: [(3.0, 'pm_d5_w2_s3.json', 8, 2, 2, 2, 8), (3.0, 'climbI2_d3_LR_s103.json', 5, 2, 1, 5, 5), (3.0, 'ISO_1_d4_t11.json', 8, 2, 2, 4, 11), (2.5, 'd4_C1_8.json', 7, 2, 2, 4, 10), (2.5, 'd4_C1_8.json', 7, 2, 2, 4, 10), (2.2, 'dd_d5_F14.json', 13, 2, 5, 4, 14)]

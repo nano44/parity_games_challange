@@ -428,3 +428,11 @@ Lead reading L48 (2026-11-05 09:58Z by date -u):
     plus two restarted lanes: L-COMP successor 9 (independent exact computation: T^R(d) re-derivation, T_k(m) for m ≤ 2, padded T*(d)) and
     L-SI successor 39 (policy-iteration / OR lens on FLIP-ADD: warm-start bounds on decomposable USOs). Four research lanes (D1 cap 5).
 (3) Gates on demand: fresh REFEREE / REFEREE-2 / CHECKER successors when a packet freezes (L39 (3): gates run in addition to the lanes).
+
+Lead reading L49 (2026-11-06 09:42Z by date -u; scope of the FLIP-ADD route, raised by L-RED successor 51, R212):
+(1) RESULTS R110 (IDEAL-FLIP) signs W-ONLY, T ≤ T_2(d−1) + 2, for ISO genomes of 𝓛^R_d only. Hence lane CONJECTURE FLIP-ADD
+    (T_2(m) ≤ T^R(m) + O(m)) would bound T^R restricted to ISO genomes, written T^R_ISO(d), and not T^R(d) over all of 𝓛^R_d.
+    The fleet's conjecture chain is recorded as FLIP-ADD ⇒ T^R_ISO(d) polynomial; the non-ISO part of 𝓛^R_d needs a separate route.
+(2) Lane lemma FROZEN-EMBED (L-RED R212, unrefereed) gives T_k(m) ≤ (k+1)·T^R(m), so the FLIP-ADD excess can grow only through T^R itself.
+    Lanes report T^R_ISO-best and T^R-best separately and measure excesses against T^R_ISO-best.
+(3) Nothing landed changes; G-N5-TIME stays OPEN.

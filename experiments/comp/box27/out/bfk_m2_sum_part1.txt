@@ -1,0 +1,30 @@
+m 2: distinct (transition, b_0) functions over all in-level gate orders: 56
+m 2 part 1/4 graphs 1485 distinct_tables 22570
+T_0(2) 4
+T_1(2) 5
+T_2(2) 7
+T_3(2) 8
+T_4(2) 8
+T_5(2) 8
+T_6(2) 8
+T_7(2) 9
+T_8(2) 9
+T_9(2) 9
+T_10(2) 9
+T_11(2) 9
+T_12(2) 9
+witness T 4 k 0 xt 3 -1 4 -1 -1 -1 4 2 rank 0 1 2 3 6 7 4 5 par 0 0 0 1 0 1 0 0 gate 0 1 2 3 17 18 16 19 32 33 34 35 start 28
+witness T 5 k 1 xt -1 -1 2 4 -1 5 2 2 rank 0 4 1 2 3 5 6 7 par 0 1 0 0 1 0 1 0 gate 0 2 1 3 17 18 16 19 32 33 34 35 start 21
+witness T 7 k 2 xt 3 4 -1 4 -1 -1 4 2 rank 0 1 2 5 6 7 3 4 par 0 0 0 1 0 1 0 0 gate 0 2 1 3 16 18 19 17 32 33 34 35 start 25
+witness T 8 k 3 xt -1 -1 -1 2 5 3 3 2 rank 0 7 1 6 2 3 4 5 par 0 1 0 0 0 0 0 0 gate 0 2 1 3 17 18 16 19 32 33 34 35 start 53
+witness T 8 k 4 xt -1 -1 -1 2 5 3 3 2 rank 0 7 1 6 2 3 4 5 par 0 1 0 0 0 0 0 0 gate 0 2 1 3 17 18 16 19 32 33 34 35 start 52
+witness T 8 k 5 xt -1 -1 -1 2 5 3 3 2 rank 0 7 1 6 2 3 4 5 par 0 1 0 0 0 0 0 0 gate 0 2 1 3 17 18 16 19 32 33 34 35 start 52
+witness T 8 k 6 xt -1 -1 -1 2 5 3 3 2 rank 0 7 1 6 2 3 4 5 par 0 1 0 0 0 0 0 0 gate 0 2 1 3 17 18 16 19 32 33 34 35 start 52
+witness T 9 k 7 xt 4 3 5 4 5 -1 -1 -1 rank 0 1 2 3 4 5 6 7 par 0 0 0 0 0 0 0 1 gate 0 2 1 3 17 19 16 18 32 33 34 35 start 32
+witness T 9 k 8 xt 4 5 2 4 -1 -1 4 -1 rank 0 1 2 3 4 7 5 6 par 0 0 0 0 0 1 0 1 gate 0 2 1 3 17 19 16 18 32 33 34 35 start 16
+witness T 9 k 9 xt 4 5 2 4 -1 -1 4 -1 rank 0 1 2 3 4 7 5 6 par 0 0 0 0 0 1 0 1 gate 0 2 1 3 17 19 16 18 32 33 34 35 start 16
+witness T 9 k 10 xt 4 5 2 4 -1 -1 4 -1 rank 0 1 2 3 4 7 5 6 par 0 0 0 0 0 1 0 1 gate 0 2 1 3 17 19 16 18 32 33 34 35 start 16
+witness T 9 k 11 xt 4 5 2 4 -1 -1 4 -1 rank 0 1 2 3 4 7 5 6 par 0 0 0 0 0 1 0 1 gate 0 2 1 3 17 19 16 18 32 33 34 35 start 16
+witness T 9 k 12 xt 4 5 2 4 -1 -1 4 -1 rank 0 1 2 3 4 7 5 6 par 0 0 0 0 0 1 0 1 gate 0 2 1 3 17 19 16 18 32 33 34 35 start 16
+SUM max V0+V1 9 (per genome+gate order; V_k = max over all starts); witness V0 4 V1 5 xt 3 -1 4 -1 -1 -1 4 2 rank 0 1 2 3 6 7 4 5 par 0 0 0 1 0 1 0 0 gate 0 2 1 3 17 18 16 19 32 33 34 35
+SUM pairs (V0,V1) realised: (0,0) (1,1) (1,2) (2,2) (2,3) (2,4) (3,3) (3,4) (3,5) (4,4) (4,5)
