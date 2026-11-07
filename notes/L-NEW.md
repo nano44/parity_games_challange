@@ -2,6 +2,13 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point (successor 58, Opus 5.5; started 2026-11-07 01:45Z by date -u)
+### P-N5-REACH FROZEN (Lead 02:28Z «freeze P-N5-REACH for both referees»): docs/new/P-N5-REACH.md (sha1 b7bd6937) + line L-1
+  docs/new/P-N5-REACH-line-L1.txt (b12ec57a); tool box189/reachcheck.py (c368b363; ~14 s), output reachcheck.out (af50ee34), pin file
+  box189/reach.pins (f0fc1ba6; also gamma3 8758456f, subdiv 63c7ae38, 14 corpus genomes box189/corpus/); check.sh block «P-N5-REACH».
+  Cross-check box189/xcheck.sh -> xcheck.out (n5b SPEC + Oink zlk/verify 28/28; needs scripts/setup_oink.sh). Premises: R104 defs +
+  its landed premises ([1E-N3] l. 9975, [RULE] l. 9989, [VJ-LOC] l. 10011 + R36 (c) l. 1730), SPEC S2-S4 + FIX 1, R15 (d) (finiteness
+  only). NO-REACH re-proved without R15 (a): K0, K1 never have an improving edge while K0 -> K1, K1 -> K0 (S4a/S4c text). SUBDIV DEAD
+  instances A (n 3, fallback flag) and B (n 5, 2 vs 3 iterations). Fixes go to docs/new/P-N5-REACH-fixes.md (append-only).
 ### BOX 189 REACH (docs/new/N5-REACH-box189.md; experiments/new/box189/): question = does N5 from S3 reach R104's IDEAL run on Gamma(G)?
 - PROVED (lane) NO-REACH: on Gamma(G) (every genome) S3 plays K0 -> K1, K1 -> K0 (top even cycle at u); by RESULTS R15 (a)(d) Xi_sigma is
   pointwise monotone, so sigma_j(K0) = K1, sigma_j(K1) = K0 forever: no standard state is ever visited; (acyclic) no beta in any P-set of

@@ -947,4 +947,12 @@ if grep -qxF "REACH SAME" <<<"$o189" && [ "$(grep -c "S3 == stated start: True (
 else
   echo "BOX 189 REACH check: FAILED"; echo "$o189"; exit 1
 fi
+# P-N5-REACH (box 189, L-NEW successor 58): frozen reachcheck output + sha1 pins (packet, line L-1, tools, output, 14 corpus genomes)
+w189=$(python3 -I box189/reachcheck.py --approx | diff - box189/reachcheck.out && echo REACHCHECK SAME)
+pin189=$(cd ../.. && sha1sum -c --quiet experiments/new/box189/reach.pins && echo PINS OK; sha1sum experiments/new/box189/reach.pins)
+if grep -qxF "REACHCHECK SAME" <<<"$w189" && grep -qxF "PINS OK" <<<"$pin189" && grep -q "^f0fc1ba6b197ad22fc1c23b8b85b0cfbc417ae75  experiments/new/box189/reach.pins$" <<<"$pin189" && grep -q "^C14+R440 NO-REACH runs 454 states 908: standard 0, core-not-(K0->K1,K1->K0) 0, cycle-node(K0)!=K0 0; (state, vertex) pairs 42880: beta-in-P-or-low-cycle-node 0;" box189/reachcheck.out && grep -q "^C14+R440 S3-START genomes 454: S3 != stated start 0$" box189/reachcheck.out && grep -q "^C14+R440 PAD (state, vertex, world) triples 693030: pad-in-P-or-cycle-node-Om<3 0$" box189/reachcheck.out && grep -q "^C14+R440 REACH3 genomes 454 (states 0..L checked 1225): failures 0$" box189/reachcheck.out && grep -q "^SUBDIV-DEAD instance B n 5: G from (s0, t0): iterations 2 fallbacks 0; G^pad (n 17) from S3: iterations 3 " box189/reachcheck.out; then
+  echo "P-N5-REACH: reachcheck re-run = frozen output (NO-REACH 0/908 states, S3-START 0/454, PAD 0/693030, REACH3 0/454 failures, SUBDIV-DEAD A and B); pins (reach.pins f0fc1ba6: packet b7bd6937, line L-1 b12ec57a, reachcheck c368b363, gamma3 8758456f, subdiv 63c7ae38, output af50ee34, 14 genomes): PASS"
+else
+  echo "P-N5-REACH check: FAILED"; echo "$w189"; echo "$pin189"; exit 1
+fi
 rm -rf "$tmp"
