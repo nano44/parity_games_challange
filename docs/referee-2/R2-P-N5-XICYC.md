@@ -177,3 +177,29 @@ r2howcyc.py / r2howcyc.out; r2howrand.py / r2howrand.out; r2xval.py / r2xval.out
 r2xi3rand.out; brseg_r2.py (brseg_gen191.py + counters only) / brseg_r2.out; bt_xicyc.py / bt_xicyc.out.
 Re-run: from the repo root, `python3 docs/referee-2/R2-P-N5-XICYC/r2howcyc.py <box191/inst/*.json>` (instances from a `git archive
 86afce49`); r2vjg.py SEED COUNT N; r2howrand.py SEED COUNT NMAX DMAX (ONEP=1 for the variant); r2xi3rand.py SEED COUNT NMAX DMAX.
+
+## Addendum 1: fix round 1 / L-3 (claude/l-new 50c80a92; REFEREE-2 successor 30, 2026-11-07 09:0xZ by date -u)
+- Object (sha1 at 50c80a92, equal to the Lead's relay 08:50Z): fixes a83e54d2… (14,214 B; entry 2 appended); L-3 1690b6ad… (5,543 B);
+  packet 149e2414… unchanged; xicyc.pins c77781e0….
+- Byte test (bt_l3.out; R1-R6 taken by script from entry 2): each old string once in L-2, each new string once in L-3; R1-R3 are my W-2,
+  W-3, W-4 verbatim (old and new); **L-2 + R1..R3 = dbdb1e61fc230de6ff8591fc9ee46f0aa453d3d9, 4,680 B = my prediction**; L-2 + R1..R6 ==
+  L-3 byte for byte (sha1 1690b6ad…, 1 line, 67 «(» = 67 «)», depth never negative, 0 «|») ✓.
+- **W-1 closed.** F4′ is exactly my W-1 hypothesis (v ∉ Π(A) ∪ Π(B)); its added «also when v ranks below Λ(A) and Λ(B)» is a special case
+  (Π holds only vertices above Λ). Every §4 use and Corollary T3's use satisfy it (movers Ω 0; PATH's non-mover z_0) ✓.
+- **G-1 closed.** Entry 2 replaces §5's proof by STRICT-G and PATH-G, judged here as packet text:
+  - STRICT-G: Ω_(t+1)(y′) ⊵ Ω_t(y′) ▷ Ω_t(σ_t(x)) (F1, F5); F4′ is applied to Ω_(t+1)(y′) and Ω_t(σ_t(x)), both x's own play after its
+    first step (x ∉ either Π since Λ ≠ x at t and t + 1), never to Ω_t(y′). Correct ✓.
+  - PATH-G (Even z_0): Ω_t(σ_t(z_0)) ⊵ Ω_(t−1)(σ_t(z_0)) ⊵ Ω_(t−1)(z_1) ⊵ val(tail) (F1, the Howard step, induction); F4′ on Ω_t(σ_t(z_0))
+    (z_0's own play after its first step, Λ_t(z_0) ≠ z_0) and val(tail) (π simple). Correct ✓. It avoids exactly the value my instance
+    r2dompex.out breaks (Ω_(t−1)(z_1) with z_0 ∈ Π is only compared, never extended).
+  - BR-SEG-G (a)-(c) and RED-XI then hold as stated; no DOM in §5-§6 ✓. My ext⁺ route stays recorded as a second route only.
+  - BR-SEG-G and RED-XI: **SIGN** (Opus 5.5, D1); the «WITH GAPS» of my report is withdrawn.
+- XC-3 Lemma K2-r (σ̄(K2) = r on Γ3, every genome; σ̄(K2) = K1 on Γ): agrees with my N-1 / §7 reading ✓. XC-4 [1E-N3] premise added ✓.
+  N-1 (mine), O-1, O-2, N-2 (mine: data/ outputs committed and pinned; I re-ran them, identical) ✓.
+- R4 (REFEREE XC-L2): inst/sae_6.pg 5dc850b1…, inst/sae_7.pg ff46e32f… are byte copies of 86afce49's out/sae_6.pg, out/sae_7.pg;
+  data/sae_6_7.out equals my re-run (run_sae67) line for line ✓. R5 (XC-L3): units match howard3_191.py (non-standard: per genome, `break`;
+  non-Howard: per transition; bad stop: per genome; the fallback flag is not read) ✓; the cited docs/referee/scratch/xicyc_logs/reach3_*.out
+  exist at claude/referee 695b610c (22/22 files, 300/300 random, first fallback at T3 + 1) ✓; my own r2xi3rand.out has a fallback in
+  1,000/1,000 too. R6 (XC-L4) ✓.
+- Verdict: entry 2 **CORRECT**; W-1 and G-1 **CLOSED**; **L-3 MATCHES** the packet with fixes entries 1-2 (Opus 5.5, D1). Every statement
+  of the packet: SIGN (§7 and Corollary T3 conditional on [REACH-L], as before).
