@@ -222,3 +222,28 @@ docs/referee/scratch/:
   - N-2: the U_l wording is now explicit.
 - Verdict: fixes entry 1 CORRECT. L-2 MATCHES, by the byte test and in meaning. All statements stay SIGNED; DEAD-REENTRY is now SIGN
   (DB-2 closed).
+
+## §C add. 1. Line L-3 (CHECKER C133 R1-R6; R119) (REFEREE successor 26; date -u at writing 2026-11-07T13:01Z)
+- Objects at claude/l-si 610897dd (worktree; sha1 of the bytes):
+  - L-3 845ffdc9…, 6,167 bytes, 101 «(» = 101 «)», one « — », 0 «|», no «[»;
+  - L-2 1b3dc825… unchanged; packet 3573e93b… unchanged;
+  - fixes edda8237… (entry 2 present; every C133 new string occurs in the fixes).
+  - C133 read at claude/checker 8f6d03bc.
+- Byte test (own script):
+  - R1-R6 are parsed from C133 §5 (wrapped lines joined by one space) and applied in C133's order.
+  - Each old string occurs once in the text it is applied to. R4's old string occurs only inside R3's new text, as C133 says; so R3's
+    new string does not occur verbatim in L-3, because R4 edits inside it.
+  - The result is byte-equal to L-3 (sha1 845ffdc9…, 6,167 bytes).
+- R4: CORRECT, and correctly attributed. DB-3 (this report §0 / §3 (iv), optional) is the step «at a doubling level step 1 ∉ B, so there
+  are exactly F(l − 1) + 1 windows», put into the packet as fixes entry 1 F-3.
+  - REFEREE-2 derived the same step on its own: docs/referee-2/R2-P-IDEAL-DBL.md l. 53-54, «under (a), 1 ∉ B (Φ(0) = 2 ≠ 0), so there
+    are exactly F(l − 1) + 1 windows». Read after my reports on this packet were pushed.
+- R5: CORRECT. PASS-FREEZE is signed for the packet's hypothesis 1 ≤ l ≤ d − 2 (§3 of this report). The proof also works at l = 0, but
+  that is not signed, so stating the signed range is right.
+- R6: CORRECT. FUEL-EXACT is signed under the packet's hypothesis G ∈ 𝓛^R_d. Its proof is general (HIT + MONO), but the signed class is
+  𝓛^R_d.
+- R1-R3: CORRECT.
+  - R1 drops the «R1xx [refereed-only]» prefix.
+  - R2 names the fixes file and the authors.
+  - R3 adds the scope tail. It matches this report's TARGET diff: no statement about running time or a TARGET claim; G-N5-TIME OPEN.
+- Verdict: L-3 MATCHES, by the byte test and in meaning. All statements stay as signed in §C.
