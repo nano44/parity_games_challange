@@ -1,6 +1,6 @@
 /* L-RED R214 tw.c: SINGLE-START climber for R197 ladders of L^R_d (d <= 13), built from r214/fa.c's step (stepL, validated against
    r187/ideal.py via r212/xvalfl.py) and mutation operators. Genome text as fa/fl plus a line "start b0 b1 ... b_{N-1}".
-   Score: moves of the best mover (env TGT=1: Xi-targets only) of level LEV (env LEV; LEV=-1: any mover) along the run from the stored start, x 256, + T.
+   Score (env TSC=1: T * 256 + moves): moves of the best mover (env TGT=1: Xi-targets only) of level LEV (env LEV; LEV=-1: any mover) along the run from the stored start, x 256, + T.
    Mutations: fa's genome mutations, or (prob. 1/5) flip a start bit. Search tool only; every output is replayed by r214/lowrep.py.
    Usage: tw eval m < g.txt | tw climb m seed iters out.txt seed.txt    (env ANNEAL temp, LEV) */
 #include <stdio.h>
@@ -91,21 +91,21 @@ static int readg(FILE *f, Gen *g) {
     return 1;
 }
 
-static int ST[MAXN]; static int LEV = -1; static int TGT = 0; static int Mbest, Zbest, Tbest, MV[MAXN];
+static int ST[MAXN]; static int LEV = -1; static int TGT = 0; static int TSC = 0; static int Mbest, Zbest, Tbest, MV[MAXN];
 static long evalr(const Gen *g) {
     uint64_t u = 0; for (int v = 0; v < N; v++) u |= (uint64_t)ST[v] << v;
     for (int v = 0; v < N; v++) MV[v] = 0; int T = 0;
     while (T < 100000) { uint64_t w = stepL(g, u); if (w == u) break; for (int v = 0; v < N; v++) MV[v] += (int)(((w ^ u) >> v) & 1); u = w; T++; }
     int isT[MAXN] = {0}; for (int v = 0; v < N; v++) for (int k = 0; k < 2; k++) if (g->xt[v][k] >= 0) isT[g->xt[v][k]] = 1;
     Mbest = -1; Zbest = 0; for (int v = 0; v < N; v++) if ((LEV < 0 || v / 2 == LEV) && (!TGT || isT[v]) && MV[v] > Mbest) { Mbest = MV[v]; Zbest = v; }
-    Tbest = T; return (long)Mbest * 256 + T;
+    Tbest = T; return TSC ? (long)T * 256 + Mbest : (long)Mbest * 256 + T;
 }
 static void printgs(FILE *f, const Gen *g) { printg(f, g); fprintf(f, "start"); for (int v = 0; v < N; v++) fprintf(f, " %d", ST[v]); fprintf(f, "\n"); }
 static int readgs(FILE *f, Gen *g) { if (!readg(f, g)) return 0; char w[16]; if (fscanf(f, "%15s", w) != 1) return 0; for (int v = 0; v < N; v++) if (fscanf(f, "%d", &ST[v]) != 1) return 0; return 1; }
 int main(int argc, char **argv) {
     if (argc < 3) { fprintf(stderr, "usage\n"); return 1; }
     m = atoi(argv[2]); N = 2 * (m + 1); NU = 2 * m; M = 2 * N; if (N > MAXN) { fprintf(stderr, "too big\n"); return 1; }
-    LEV = getenv("LEV") ? atoi(getenv("LEV")) : -1; TGT = getenv("TGT") && atoi(getenv("TGT")); Gen g;
+    LEV = getenv("LEV") ? atoi(getenv("LEV")) : -1; TGT = getenv("TGT") && atoi(getenv("TGT")); TSC = getenv("TSC") && atoi(getenv("TSC")); Gen g;
     if (!strcmp(argv[1], "eval")) { if (!readgs(stdin, &g)) { fprintf(stderr, "bad genome\n"); return 1; } evalr(&g);
         printf("T %d best mover %d lev %d moves %d | moves", Tbest, Zbest, Zbest / 2, Mbest); for (int v = 0; v < N; v++) printf(" %d", MV[v]); printf("\n"); return 0; }
     rs = 0x9E3779B97F4A7C15ULL ^ (uint64_t)atoll(argv[3]) * 2654435761ULL; if (!rs) rs = 1; for (int i = 0; i < 10; i++) rnd();
@@ -121,8 +121,8 @@ int main(int argc, char **argv) {
         int acc = s >= cs || (temp > 0 && (double)(rnd() % 1000000) / 1e6 < exp((double)(s - cs) / temp));
         if (acc) { g = h; memcpy(cst, ST, sizeof ST); if (s > cs) stale = 0; cs = s; } else stale++;
         if (cs > best) { best = cs; bg = g; memcpy(bst, cst, sizeof ST); memcpy(ST, bst, sizeof ST); FILE *o = fopen(out, "w"); printgs(o, &bg); fclose(o);
-            printf("it %ld moves %ld T %ld\n", it, best / 256, best % 256); fflush(stdout); }
+            printf(TSC ? "it %ld T %ld moves %ld\n" : "it %ld moves %ld T %ld\n", it, best / 256, best % 256); fflush(stdout); }
         if (stale > 200000) { g = bg; memcpy(cst, bst, sizeof ST); stale = 0; for (int j = 0; j < 6; j++) mutate(&g); memcpy(ST, cst, sizeof ST); cs = evalr(&g); }
     }
-    printf("FINAL best %ld moves %ld T %ld\n", best, best / 256, best % 256); return 0;
+    printf(TSC ? "FINAL best %ld T %ld moves %ld\n" : "FINAL best %ld moves %ld T %ld\n", best, best / 256, best % 256); return 0;
 }
