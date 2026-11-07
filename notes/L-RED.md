@@ -67,6 +67,14 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   - verify.sh takes ~25 min with 4 climbs running: push logs go to /home/user/push*.log (survive /tmp wipes).
   - gclimb lift (smaller seed genome) must not rewire old vertices (LIFTRW=0 default): rewiring 30% dropped xi 46 -> 7.
   - n5v / n5bxi take 0.1-0.3 s per run at n 100-300; climbs are cheap, 12k iterations ~ 30-60 min per stage.
+  - TRAP (bit twice, 07:2xZ and 08:4xZ): I typed a commit SHA into a Lead message before reading git's output (2d5ce1ad for
+    47507c3b; 7e3d2a0b for c81dd2d7). Check: copy SHAs only from `git rev-parse --short HEAD` output in the same turn.
+- 06:2xZ-08:4xZ: R216 replays (docs/red/R216-l4replay.md, 47507c3b): RECF4 / DBL4 / H5 / H6 all REPRODUCED (memb, ideal, lemck renum,
+  box150, N5 on Γ3 = T + 3). R215 (2) R-target (§53.1, c81dd2d7): R ≲ 2d, max flips/gate ≤ 10: linear.
+- RUNNING since 07:1xZ (cwd experiments/red/r215, «. ./env.sh»; WT3 = worktree of claude/l-new f09f67ec; runr.sh resumable):
+  nohup ./runr.sh rd2 2 2 11 1 3 4 5 6 > /dev/null 2>&1 &  nohup ./runr.sh rd2 2 2 11 1 7 8 9 10 > /dev/null 2>&1 &
+  nohup ./runr.sh rd3 2 3 12 1 3 4 5 6 7 8 9 10 > /dev/null 2>&1 &  SCORE=F nohup ./runr.sh rf 2 2 13 1 3 4 5 6 7 8 > /dev/null 2>&1 &
+  xa chain (runxi.sh xa ... 8 12) at d 12. PAD chains pl/ps and xb/xg stopped (Lead priorities). T-table OFF (Lead 06:22Z).
 
 ## Successor 53 handover check (2026-11-07 05:1xZ, date -u)
 1. Branch claude/l-red. Clone checkout was DETACHED and SHALLOW at b14066e1 (= ls-remote 05:03Z). «git fetch --unshallow origin
