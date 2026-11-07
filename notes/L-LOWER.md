@@ -34,6 +34,14 @@ for μ(d), IDEAL-ACYC model on 𝓛^R_d). The predecessor's T-L2 text (2026-10-1
   H6_d24_F126 (fb37fec9…; F 2 6 14 30 62 126, T 209), RECF4_d20_F60 (354b7d44…), F56, F53, F52.
 - DUTY P-M2D-DEAD fix round 2: afc85c57 (entry 2, L-3 4c056511…, fixes f5b3f78a…); waiting for the referees' byte tests of L-3.
 - SHAs: 5dcfa1e1 (check), 7777fc4f, 127a5f8c, 2f15c81a, afc85c57, 33eb8593, c45cf2f3, 10cac3d9, then push 9 (diffg + text genomes).
+### Confirmations (Lead 07:14Z, relayed; not opened by me): H5_d20_F62 and H6_d24_F126 REPRODUCED by L-SI 41 and L-RED 53;
+RECF4_d20_F60 and DBL4_d20_F30 REPRODUCED by L-RED; end to end on the real Γ3 games two N5 engines (n5v, n5b) agree: 33 / 70 / 139 /
+212 iterations = L + 3, one FL run of length L(G), Oink-verified (Lead's summary; open the L-SI / L-RED / engine commits to cite).
+### WARNING: rclimb.c's __int128 values overflow when ranks reach 127 (d ≥ 32; L-COMP 10). Use L-COMP's rclimb30.c (192-bit,
+experiments/comp/box30/ on claude/l-comp) at d ≥ 32. No result of mine came from d ≥ 32 (the one d 32 climb, G7d32, was stopped at
+07:15Z without a record). Seeds 300000-329999 are L-COMP's (box 30): keep outside.
+### Seventh level status: guarded climb (`GUARD=5 LV=6 ANNEAL=0.02 $SP/rclimbG out/H6d28.txt 162 …`, rclimb.c GUARD) holds F 2 6 14
+30 62 126 and reaches F(6) = 190 at d 28 (254 needed); L-COMP box 30 runs the same target (A).
 ### IN FLIGHT (die with the container; logs in experiments/lower/l4/out/, gitignored)
 - Seventh level: `LV=6 ANNEAL=0.02 OUT=out/L7_s131.txt $SP/rclimb128 out/H6d28.txt 131 400000000` (H6d28 = lift.py H6 + 4 levels;
   at handover F 2 6 14 30 62 94 128 …: level 5 lost). Frozen-core: `FROZENBELOW=10 LV=5 ANNEAL=0.02 $SP/rclimbF out/H5d24.txt 141 …`
