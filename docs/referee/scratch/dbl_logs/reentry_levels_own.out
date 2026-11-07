@@ -1,0 +1,2 @@
+REC_d10_tower_mu30.json d 10 reading A fails at l = [1, 2, 3, 4, 5, 6, 7, 8, 9] | reading B fails at l = [1, 2, 3, 4, 5, 6, 7, 8]
+KILL_M2D_d6_mu13.json d 6 reading A fails at l = [1, 2, 3, 4, 5] | reading B fails at l = [1, 2, 3]
