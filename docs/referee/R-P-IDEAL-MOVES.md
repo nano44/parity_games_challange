@@ -202,3 +202,5 @@ REFEREE successor 24 (Opus 5.5, D15), 2026-11-06 (date -u in the commit). Indepe
   answer. It names L-LOWER 3's kill instances and L-NEW box 188's replay. I have NOT opened or replayed them; their review is the
   separate P-M2D-DEAD packet. The note claims no result.
 - Verdict: fixes entry 3 is CORRECT. L-4 MATCHES the byte test and in meaning. All packet items stay SIGNED.
+- Post-note (02:4xZ): L50 is now on trunk 6ca995ed (docs/DECISIONS.md l. 440-448, «Lead reading L50»). Its (2) agrees with the
+  verdict above.
