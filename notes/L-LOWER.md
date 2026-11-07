@@ -26,7 +26,29 @@ for μ(d), IDEAL-ACYC model on 𝓛^R_d). The predecessor's T-L2 text (2026-10-1
    gives the Ξ-target maxima 1, 3, 4 by level at d = 3, so μ(3) = 4 < 6 (and T^R(3) = 8, R112). Reading: aim at μ(G_d) ≥ 2d for d ≥ 5
    (the first tight case) and at the growth rate.
 
-## Successor 3 BOX L3 (started 2026-11-07 00:10Z) — product: docs/lower/L3-families.md
+## Successor 3 HANDOVER (2026-11-07 ~02:2xZ, context ~450k; Lead asked to plan the handover near 550k)
+### DONE (all pushed on claude/l-lower; see docs/lower/L3-families.md and docs/lower/P-M2D-DEAD.md)
+- Simulator sim.py (+ inline second implementation in p_m2d_check.py), cross-checked vs box150 Gen / box139 XSIM / movescheck.
+- Lane lemmas (unrefereed): TRI, TRI-MU (no upward option ⇒ level-l mover ≤ 2l moves), FEEDBACK (a)/(b), TOP-ADD, WIRE, COPY; family A
+  (T = 2d, μ = 2⌊2(d−1)/3⌋+1, data to d 40, proof pending).
+- MOVES-2D DEAD (CANDIDATE → reproduced by L-NEW box 188 and L-SI 41; L-RED pending): kill/KILL_M2D_d6_mu13, d8_mu21; packet
+  P-M2D-DEAD FROZEN (87fcdf73) with check block p_m2d_check.py; μ records d 7-12 (kill/README.md).
+- Tower: REC_d10_tower (F 2 6 14 30 = R113 caps); T records 59 (d 11), 66 / 99 (d 13), 107 (d 14), 114 (d 15); F(4) up to 46 (d 14).
+### IN FLIGHT (die with this container; logs gitignored in experiments/lower/l3/out/)
+- out/pNF_d15.log: annealed F(4) climb from the COPY nested-fuel seed out/TOW10cp5.txt (F(4) 40 at handover).
+- out/pMF_m6.log: climb from the inert MUTUAL-FEEDBACK seed (mutual.py; F(4) 9).
+- Restart lines (cwd experiments/lower/l3, SP = scratchpad with binaries built by `gcc -O2 -o $SP/psearchA psearch.c -lm`):
+  `LV=4 SCORE=1 ANNEAL=16 $SP/psearchA out/TOW10cp5.txt 131 80000000 14 10000000` (regenerate TOW10cp5.txt with the snippet in the
+  commit message of the nested-fuel commit, or: REC_d10_tower + copy of levels 0-4 on top, ranks adjacent); `SCORE=2 $SP/psearchA
+  <txt> seed iters LM 8000000` for T climbs (lift.py adds levels). psearch env: SCORE 0 μ / 1 max F (LV=l: F(l)) / 2 T; LMIN, ANNEAL.
+### NEXT (Lead's top goal: S(h), the least d with h consecutive doubling levels)
+1. Fuel the 5th tower level (F(4) = 62) from a block outside the tower's Ξ-down-closure (L-SI ACYC-SPLIT/FUEL-NEED). Start C ACTIVE.
+2. If a height-5 tower appears, try to make the nesting recursive and prove T ≥ c·2^(αd) (lane), data to d ≈ 16.
+3. Otherwise extract the obstruction (what blocks F(4) > 46) for L-SI.
+4. Family A-RUN proof (low priority).
+### NEEDS
+- Lead: route P-M2D-DEAD to the referees (done per 01:43Z); L-RED's replay result.
+
 ### Resume point
 - Code: experiments/lower/l3/ — sim.py (own simulator, from the R104 definition), trace.py, xcheck.py (vs L-NEW box150 Gen +
   movescheck counters; needs LNEW = an l-new tree: `git archive origin/claude/l-new experiments/new | tar x -C DIR`), tricheck.py

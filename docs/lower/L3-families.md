@@ -222,7 +222,14 @@ statement is about the step sequence of the IDEAL model only (diff in §8).
   (psearch LV=4, d 11-13): F(4) = 31 at d 11, then 39 at d 13: kill/RECT_d13_T66.json (sha1 4eb7e76d…; d 13, T 66, F 2 6 14 30 39
   24 16 15 9 2 3 0 1; sim.py = box150 Gen, XSIM 0, TOPO 0, movescheck counters 0). T records of this box: 59 at d 11, 66 at d 13
   (≈ 5d; L-RED's T^R records 16, 22, 26 at d 5, 6, 7). Then (T-maximising climb, same checks): kill/RECT_d13_T99.json (sha1 8946c0ff…;
-  d 13, T 99 ≈ 7.6d, F 2 6 14 30 37 22 16 16 10 4 5 6 5) and kill/RECT_d14_F46.json (sha1 d3c9b701…; d 14, T 65, F(4) = 46). CANDIDATE.
+  d 13, T 99 ≈ 7.6d, F 2 6 14 30 37 22 16 16 10 4 5 6 5) and kill/RECT_d14_F46.json (sha1 d3c9b701…; d 14, T 65, F(4) = 46), kill/RECT_d14_T107.json (48bffdb3…; d 14, T 107),
+  kill/RECT_d15_T114.json (5b5d8bc6…; d 15, T 114). CANDIDATE. T series of this box (best per d): 59 (11), 99 (13), 107 (14), 114 (15):
+  the lifts add ≈ 8 per level from the T 99 seed (linear increments; no doubling of T observed).
+- Nested fuel / MUTUAL-FEEDBACK (L-SI 41 box 77 design, relayed by the Lead 02:08Z): (a) COPY of tower levels 0-4 on levels 10-14
+  (out/TOW10cp5.txt): runs a partial second tower (F 2 4 10 22) beside the untouched main tower; annealed F(4)-climb reached F(4) = 40
+  (unfinished at handover). (b) mutual.py (C block crossed onto the C pair below, bottom → X, tower upward options re-pointed to C's top):
+  the plain seed is inert (T 1: C starts static, so the fuel never rises); a climb from it was at F(4) = 9, T 32 at handover.
+  Lesson: C must be started active (its top must rise during the tower's run); seed C from a running block (e.g. the COPY of (a)).
 - Fuel analysis (experiments/lower/l3/fuel.py: for each change of π(x), the movers on the newly preferred option's chain that moved):
   - Levels 3, 4 are self-timed: (6, ·) → (4, 5), (7, ·) → (5, 4), (8, ·) → (7, 6); every change of their π is caused by a move of the
     pair below (or of a mover on its chain).
