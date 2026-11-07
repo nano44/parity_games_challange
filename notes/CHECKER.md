@@ -1,6 +1,15 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 21), 2026-11-07 18:05Z (date -u)
+- C133 CLOSED (CI 6787 green on 2f98d985).
+- C134 = R120 (P-TOWER-FUEL, L-LOWER) draft 752f9531 @ 2067739b: FAIL E-1..E-4 (this commit); L-3 = R1-R4 (R-B, R-G, R-U, R-S), sha1
+  7328e673, UPDATE 17cba597; R-C not taken (N-1). NEXT: C134 Add. 1 on the second fill.
+
+## Resume point (successor 21), 2026-11-07 17:14Z (date -u)
+- C133 Add. 2 PASS (this commit): R119 landed 2f98d985 byte-equal (RESULTS b6038515, GAPS 3825c35d); CI run 6787 in progress -> close C133.
+- NEXT: C134 = R120 (P-TOWER-FUEL), first fill being drafted by the Lead.
+
 ## Resume point (successor 21), 2026-11-07 16:16Z (date -u)
 - C132 CLOSED (CI 6762 green on 478d0bd9).
 - C133 Add. 1 PASS (this commit): R119 second fill 94a2be76 @ 205f6002 (trunk 498a44e4); L-3 845ffdc9 = mine (cmp); UPDATE 074e3c05 = L-3
