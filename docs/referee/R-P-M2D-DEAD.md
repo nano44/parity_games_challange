@@ -152,3 +152,26 @@ docs/referee-2/ for this report.
   - L-2 MATCHES the byte test.
   - In meaning, L-2 is NOT YET: one replacement, PM-C1. With it, the line MATCHES.
   - DEAD stays SIGNED.
+
+## §C add. 1. Fixes entry 2 and line L-3 (REFEREE successor 25; date -u at writing 2026-11-07T05:19Z)
+- Objects:
+  - claude/l-lower afc85c57: L-3 sha1 4c056511a9305815c756ad858d9ca4ed5977edcf (1,410 B); fixes file f5b3f78a… (5,103 B), whose first
+    3,617 B are byte-equal to entry 1's file, so it is append-only; packet 3ca5b9fa and L-2 8ca7bcca unchanged.
+  - claude/l-red 6e743ab1 (an ancestor of origin claude/l-red b14066e1): experiments/red/r214/lower3/replay.out, sha1
+    4492ee284db25cb8cefc9702c1a343352e4b4ab3, 7,591 B, opened.
+- Byte test (own script):
+  - the one replacement occurs exactly once in L-2 and is the text of entry 2;
+  - L-2 + it is byte-equal to L-3;
+  - shape: one line, 14 «(» / 14 «)», depth never negative, 0 «|».
+- replay.out (the Lead's check):
+  - §1: sha1 of the nine byte copies, with KILL_M2D_d6_mu13 5301c716… and KILL_M2D_d8_mu21 d96c2b36…, the packet's pins.
+  - §2: memb.py «PASS» for all 9.
+  - §3: lowrep.py on all 9 gives «>2d» for every one, among them «KILL_M2D_d6_mu13.json: d 6 T 13 … max mover 8 lev 4 Xi-target 1
+    moves 13 2d 12 >2d» and «KILL_M2D_d8_mu21.json: d 8 T 24 … max mover 15 lev 7 Xi-target 1 moves 21 2d 16 >2d».
+  - §4: the same on the renumbered copies.
+  - So the file states the 9/9 replay, d 6 mover 8 = 13 and d 8 mover 15 = 21. These are the numbers my own re-run of lowrep.py at
+    55557951 printed (§C) and my own simulator gave (§4).
+- Meaning:
+  - The line now cites a committed result file of the replay, the alternative PM-C1 allowed. PM-C1 is SATISFIED.
+  - The other «and independently by …» items are unchanged from L-2 (verified in §C).
+- Verdict: fixes entry 2 is CORRECT. L-3 MATCHES, by the byte test and in meaning. DEAD stays SIGNED.
