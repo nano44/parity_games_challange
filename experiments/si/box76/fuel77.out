@@ -1,0 +1,10 @@
+REC_d10_tower_mu30.json d 10 T 35 F [2, 6, 14, 30, 23, 8, 7, 6, 2, 1] doubling [1, 2, 3]; upward options (x,k->y) [(0, 0, 18), (0, 1, 4), (1, 0, 11), (1, 1, 4), (2, 0, 4), (2, 1, 19), (3, 0, 13), (3, 1, 17), (4, 0, 9), (4, 1, 10), (5, 0, 16), (9, 0, 16), (9, 1, 10), (10, 0, 16), (13, 0, 19), (13, 1, 19), (14, 0, 19), (17, 1, 18)]
+  level 1: max moves 3, |E_l| 14, FEEDBACK bound 30, Up_l [4, 11, 13, 17, 18, 19] (levels [2, 5, 6, 8, 9, 9])
+  level 2: max moves 7, |E_l| 27, FEEDBACK bound 112, Up_l [4, 9, 10, 11, 13, 16, 17, 18, 19] (levels [2, 4, 5, 5, 6, 8, 8, 9, 9])
+  level 3: max moves 15, |E_l| 27, FEEDBACK bound 168, Up_l [4, 9, 10, 11, 13, 16, 17, 18, 19] (levels [2, 4, 5, 5, 6, 8, 8, 9, 9])
+  level 4: max moves 30, |E_l| 27, FEEDBACK bound 224, Up_l [4, 9, 10, 11, 13, 16, 17, 18, 19] (levels [2, 4, 5, 5, 6, 8, 8, 9, 9])
+  level 5: max moves 8, |E_l| 27, FEEDBACK bound 280, Up_l [4, 9, 10, 11, 13, 16, 17, 18, 19] (levels [2, 4, 5, 5, 6, 8, 8, 9, 9])
+  level 6: max moves 8, |E_l| 27, FEEDBACK bound 336, Up_l [4, 9, 10, 11, 13, 16, 17, 18, 19] (levels [2, 4, 5, 5, 6, 8, 8, 9, 9])
+  level 7: max moves 4, |E_l| 27, FEEDBACK bound 392, Up_l [4, 9, 10, 11, 13, 16, 17, 18, 19] (levels [2, 4, 5, 5, 6, 8, 8, 9, 9])
+  level 8: max moves 4, |E_l| 27, FEEDBACK bound 448, Up_l [4, 9, 10, 11, 13, 16, 17, 18, 19] (levels [2, 4, 5, 5, 6, 8, 8, 9, 9])
+  level 9: max moves 1, |E_l| 27, FEEDBACK bound 504, Up_l [4, 9, 10, 11, 13, 16, 17, 18, 19] (levels [2, 4, 5, 5, 6, 8, 8, 9, 9])

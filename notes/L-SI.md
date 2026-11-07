@@ -37,6 +37,19 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - Commit 0e3f5245 has a wrong Claude-Session trailer (39's id).
 - Environment: `pip install scipy python-sat` in a new container.
 
+## BOX 77 (successor 41; Lead 00:50Z / 01:12Z: AMBIGUITY, (+,x) transfer / tower cap) — note docs/si/N5-TROPICAL-box76.md §8
+- REPLAY: L-LOWER 3's nine l3/kill genomes (4d747490; inst/lower/) reproduce with my Sim AND L-NEW Gen: MOVES-2D DEAD independently.
+- DEAD DBL-GAP on REC_d10_tower_mu30 (F 2 6 14 30 ...: doubling at levels 1, 2, 3 with F(0) = 2).
+- PROVED (lane): TOWER-NEED (doubling level l, f = F(l-1): members move f+1, P >= f+2, both Xi-targets movers with R >= (f-1)/2);
+  ACYC-SPLIT (trivial; instance: 9 cannot join the tower in REC_d10_tower, cycle 9 -> 6 -> 4 -> 9).
+- DATA: climb77.py 4 seeds x 20,000: F(4) stuck at 23; best T 45 at d 10 (inst/climb77_d10_T45.json, Gen-confirmed).
+- Negative controls done: NEG=2 trips MONO/RMV/TO_k/HIT; ALT/MOVEALT controlled by tightness counters (bound - 1 fails).
+- OPEN core: fuel economy (can an O(h)-size fuel subsystem change value ~2^h/h times?). No conjecture added.
+- Weber-Seidl (TCS 88, 1991) NOT opened; used by no statement.
+- Sources opened: claude/l-lower 4d747490 experiments/lower/l3/kill/README.md (table, membership checklist) and docs/lower/L3-families.md
+  §2 TRI, §3 TRI-MU, §4 FEEDBACK (lane, not landed); trunk RESULTS R113 (g) PATH-RISE (landed).
+- Climb jobs (out77/) are finished; none running.
+
 ## BOX 76 (successor 41; Lead 2026-11-07: TROPICAL-WINDOW, max-plus route to MOVES-2D) — DONE: route DEAD in its window-type and Xi-DAG forms
 - Note docs/si/N5-TROPICAL-box76.md; tools experiments/si/box76/{tw.py (own simulator + window tables), tw2.py, tw3.py, tw4.py,
   dead76.py, corpus_lr.json.gz (208 L^R_d genomes of the frozen P-IDEAL-MOVES corpus, blob-hashed), inst/, check76.sh (wired)}.

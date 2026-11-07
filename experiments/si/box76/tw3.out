@@ -1,4 +1,4 @@
-INFO ALT 0 MONO_VIOL 0 MOVEALT 0 RMV 0 TO_k 0 movers 577740 runs 63223
+INFO ALT 0 ALT_TIGHT 112372 MONO_VIOL 0 MOVEALT 0 MOVEALT_TIGHT 7085 RMV 0 TO_k 0 movers 577740 runs 63223
 (1, 'R') 1 ('experiments/new/box150/out/rand/r150_021.json', '01', 0, 0, False, 'mv', 1, 'R', 1, 'Rk', [0, 0], 'PF', 0, 'T', 1)
 (1, 'R-mv') 0 ('experiments/new/box150/out/rand/r150_021.json', '00', 0, 0, False, 'mv', 0, 'R', 0, 'Rk', [0, 0], 'PF', 0, 'T', 0)
 (1, 'Z:R') 1 ('experiments/new/box150/out/rand/r150_158.json', '00', 1, 0, True, 'mv', 1, 'R', 1, 'Rk', [0, 0], 'PF', 0, 'T', 1)

@@ -160,3 +160,43 @@ polynomial bound; MOVES-2D and G-N5-TIME stay OPEN.
   (F(l) + 2)/(F(l − g) + 2), tw5.out «RATIO»): g = 1: 2 (only from F(l − 1) = 0); g = 2: 4 at d 4, 5 (only from F = 0, 2, 6), 2.25 at d 6;
   g = 3: 5 at d 5 (dd_d5_F14 start 1100000001, F 0 1 4 8 2). L-LOWER's d 9 profile: 30/11 over l = 3..6. The data are too small in d to
   separate «ratio → 1» from a constant ratio > 1. OPEN.
+
+## 8. Box 77 AMBIGUITY (Lead 2026-11-07 00:50Z / 01:12Z; written from 01:20Z): replay, DBL-GAP dead, what the tower needs
+- Source note: the Lead's analogy with A. Weber, H. Seidl, «On the degree of ambiguity of finite automata» (TCS 88 (1991) 325-349) was
+  NOT opened in this box and is used by NO statement below; any automaton reading here is a READING only.
+- REPLAY (DATA, independent). L-LOWER 3's nine genomes claude/l-lower 4d747490 experiments/lower/l3/kill/*.json (byte copies in
+  experiments/si/box76/inst/lower/, sha1s = L-LOWER's README) replayed from the stored start by my simulator and by L-NEW's box150 Gen
+  (identical states; replay77.py with XCHK). Every (d, T, mover, moves) of the README table is reproduced (replay77.out); so
+  CONJECTURE MOVES-2D is DEAD by an independent replay as well (e.g. KILL_M2D_d6_mu13: d 6, T 13, mover 8 moves 13 > 12).
+- DEAD DBL-GAP (§7): REC_d10_tower_mu30.json (sha1 cc94dc9c46ef63f7a3a54b536d9d3b38fdee5255), stored start, T 35, F = 2 6 14 30 23 8
+  7 6 2 1: levels 1, 2, 3 are all doubling with F(0) = 2. (R113 T-BOUND's per-level bound F(l) ≤ 2^(l+2) − 2 is attained at l = 0..3.)
+- Lemma TOWER-NEED (PROVED, lane; DBL-EQ, ALT-MIN, HIT, R113 PATH-RISE): if level l is doubling and f := F(l − 1), then each member x
+  of the pair l moves f + 1 times, has P(x) ≥ f + 2, and both Ξ-targets of x are movers (not X) with R ≥ ⌈(f − 1)/2⌉.
+  - Proof. moves = f + 1 (DBL-EQ (b)); f + 1 ≤ R(x) ≤ P(x) − 1 (HIT, PATH-RISE); f + 1 ≤ 2 + 2 min_k R(xt(x, k)) (ALT-MIN (c)), and an
+    X-target has R = 0, which would give f + 1 ≤ 2, i.e. f ≤ 1; for f ≥ 2 both targets are movers with R ≥ (f − 1)/2. ∎ (For f ≤ 1 the
+    statement on targets is vacuous as written; only P(x) ≥ f + 2 is claimed then.)
+  - For a tower from level 1 (F(l) = 2^(l+2) − 2, l = 0..h): the pair l needs Ξ-targets with R ≥ 2^l − 1. The crossed choice (both
+    targets in the pair l − 1, R ≥ moves = 2^l − 1) meets this exactly: on the Ξ side the crossed ladder is self-sufficient above the
+    bottom. With L-LOWER's lane lemma FEEDBACK (b) (docs/lower/L3-families.md §4, 4d747490, NOT landed): 2^(l+1) − 1 ≤ 2l(1 + |E_l|), so
+    the upward-target values must change at least (2^(l+1) − 1)/(2l) − 1 times: the «fuel» must grow exponentially in the tower height.
+- Diagnosis of REC_d10_tower (DATA, tower77.out, fuel77.out): pairs 3 (movers 6, 7) and the level-4 mover 8 are crossed onto the pair
+  below (6: 4, 5; 7: 5, 4; 8: 7, 6) and move 15, 15, 30 = R; pairs 1, 2 take fuel from above (2: 4, 19; 3: 13, 17; 4: 9, 10; 5: 16,
+  3). Level 4 is not doubling because its second mover 9 (moves 7) is fuel for mover 4.
+- Fact ACYC-SPLIT (PROVED, trivial: Ξ-acyclicity) with its instance: if a mover w is Ξ-reachable from a mover x, no option of w has
+  Ξ-target x. Here 6 and 7 Ξ-reach 4 and 4 has an option with Ξ-target 9, so 9 cannot point to 6 or 7: re-pointing both options of 9
+  onto (6, 7) or (7, 6) closes the cycle 9 → 6/7 → 4 → 9 (replay77.py asserts it). So in this genome the fourth doubling level needs a fuel mover for the
+  pair 2 other than 9, from outside the Ξ-down-closure of the tower pair 3.
+- Climb (DATA): climb77.py from REC_d10_tower, 4 seeds × 20,000 moves (re-target, rank/gate swaps, parity, start): F(4) stays at 23 in
+  all four; the best run has T 45 at d 10 (inst/climb77_d10_T45.json, sha1 c5302641a4a7c921ed73c9fe012e2ee8d50f69f7, F 2 6 14 30 23 13
+  15 7 3 1, Gen-confirmed; max moves of a Ξ-target 15). A local optimum, not a cap.
+- READING (the open core): no landed or signed constraint that I can find caps the number of doubling levels: the Ξ side supports a
+  crossed tower (TOWER-NEED is met by the pair below), the key side allows doubling at every level (PAIR-DOUBLE). The brakes are
+  temporal: TRI / FEEDBACK (L-LOWER, lane) force the lower levels to settle within 2(l + 1) steps after every change of an upward target,
+  so a tower of height h needs ≳ 2^h/h fuel events, and ACYC-SPLIT forces the fuel to live outside the tower's Ξ-down-closure. Whether
+  a fuel subsystem of size O(h) can itself change value 2^h/h times (a second tower feeding the first, i.e. an ambiguity-type nesting)
+  or only polynomially often is the question; it is OPEN. No conjecture added.
+- Negative controls (box 76 counters, requested): tw.py env NEG=2 (key-least option ignoring availability) gives MONO_VIOL 226,066, RMV
+  150,575, TO_k 86,709, HIT_VIOL 238,546 (tw3_neg2.out, tw4_neg2.out); ALT and MOVEALT stay 0 under NEG=2 and NEG=1, so their controls
+  are the tightness counters ALT_TIGHT / MOVEALT_TIGHT (the bounds minus 1): 112,372 / 7,085 > 0 on the real model (tw3.out). NEG=1
+  (key-greatest available) leaves every Ξ-side counter at 0 (tw3_neg1.out): ALT-MIN and HIT do not depend on the key rule, as their
+  proofs say.
