@@ -1237,3 +1237,6 @@ echo "si (box 74: FLIPS): PASS"
 # box 75 (packet P-IDEAL-IM: IM, BIT-CHAIN, KEY-DIR, VALUE-MONO, COMPOSE, FRAME, MACHINE T_1(3) = 10; docs/si/P-IDEAL-IM.md)
 bash box75/check75.sh
 echo "si (box 75: P-IDEAL-IM): PASS"
+# box 76 (TROPICAL-WINDOW: WINDOW-ONCE, ALT-MIN, HIT; DEAD SUM-COUPLE, RISE-N, SPAWN-2; docs/si/N5-TROPICAL-box76.md)
+bash box76/check76.sh
+echo "si (box 76: TROPICAL-WINDOW): PASS"

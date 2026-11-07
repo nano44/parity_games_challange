@@ -37,10 +37,31 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - Commit 0e3f5245 has a wrong Claude-Session trailer (39's id).
 - Environment: `pip install scipy python-sat` in a new container.
 
+## BOX 76 (successor 41; Lead 2026-11-07: TROPICAL-WINDOW, max-plus route to MOVES-2D) — DONE: route DEAD in its window-type and Xi-DAG forms
+- Note docs/si/N5-TROPICAL-box76.md; tools experiments/si/box76/{tw.py (own simulator + window tables), tw2.py, tw3.py, tw4.py,
+  dead76.py, corpus_lr.json.gz (208 L^R_d genomes of the frozen P-IDEAL-MOVES corpus, blob-hashed), inst/, check76.sh (wired)}.
+- PROVED (lane): MP-LIN (any finite max-plus recursion is at most linear, slope max(lambda, 0); cycle mean 0 = BOUNDED, so the brief's
+  «MCM 0 gives linear» is corrected); WINDOW-ONCE (each pair member moves <= once per j-window); ALT-MIN (moves(x) <= 2 + 2 min(R(y_0),
+  R(y_1)), CONST-BRANCH: an X-option caps moves at 2); HIT (R(y) = #{t : Mv_t meets y's old chain} >= moves(y)).
+- DEAD: SUM-COUPLE (LEV-ADD c, DAG-ADD c false for c <= 5) on L-RED's dense_d5_l3_H10 start 1100110110: mover 6 moves 10 = moves(4) +
+  moves(5) + 2, pi(6) alternating every step, hits interleaving between its two Xi-targets; RISE-N = L-RED R213 RISE-2D (rise_d5_R13,
+  R(8) 13 > 10; not new); SPAWN-2 (dd_d5_F14 windows 3, 4, 7, 15; temporal MCM 2 per window).
+- No conjecture added. MOVES-2D OPEN. Increments of LEV-ADD by d 2..6: 1, 2, 4, 6, 2 (DATA).
+- Not done: negative controls for tw3/tw4 counters (the counters are exact re-statements; a mutated simulator was not run).
+- Sources opened this box: trunk docs/RESULTS.md 2ccd037b9 R104-R114 (R113 l. 12152-12393: ALIGN, F0, MOVES, PAIR-DOUBLE, dd_d5_F14);
+  claude/l-new d86adc86 docs/new/P-IDEAL-MOVES.md (202 lines; AND-GATE, WINDOW-DOUBLE, SEG-WINDOW, MOVES-EQUIV, DEAD-SEG/LEV);
+  l-new 9995f5a2 experiments/new/box187/movescheck.py, box150/check.py (Gen); claude/l-red 36d340c7 (R214 DENSE(5,3,10) commit
+  message + out/dense_d5_l3_H10.json), 9eac6d70 (R213 «RISE-2D DEAD» commit message + keep/rise_d5_R13.json).
+- Trap (new): importing a sibling script without a __main__ guard re-runs it (tw4 printed tw2's tables once); tw2 now has main().
+
 ## Successor 41 handover check (written 2026-11-07T00:06Z (date -u); successor 41 = session_01V5yGRZDRAGZFgHvmRBGoKz (Opus); 40 was session_01V5yGRYeBQHWjsh4bJCU8a3)
 1. Branch claude/l-si. Local HEAD 306e4862 = origin/claude/l-si = git ls-remote (306e48621840911d…); clone was shallow, fetched
    --unshallow (exit 0), ff-only: already up to date. Against trunk claude/vibrant-johnson-nxvvxo 2ccd037b9 (2026-11-06T23:35Z):
    49 ahead / 746 behind; merge-base 96fb62cb3.
+   CORRECTION (00:40Z): the checkout was a DETACHED HEAD at 306e4862 and the local branch claude/l-si was stale at a5f4fcf2 (the
+   stale-clone trap again); the first push.sh failed after VERIFY PASS («invalid refspec …:refs/heads/», exit 128, nothing pushed).
+   Fixed: `git branch -f claude/l-si HEAD` (origin/claude/l-si an ancestor, checked) + checkout. New check: `git branch --show-current`
+   must print claude/l-si before any push.
 2. Open work: (i) DUTY P-IDEAL-IM (frozen packet cb2b0c60, fixes entry 1 4ee9fa78, line L-2) -> CHECKER as R115; next step: answer
    any CHECKER item with fixes entry 2 + line L-3 (never edit the frozen packet). (ii) BOX 76 TROPICAL-WINDOW (new, Lead 2026-11-07):
    max-plus vector recursion over window types for MOVES-2D; next step: define types from P-IDEAL-MOVES (signed, not landed) +
