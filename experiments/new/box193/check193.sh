@@ -22,3 +22,5 @@ python3 low193.py 5
 python3 dead193.py rmon 5
 python3 klev193.py 5 1 2
 python3 klev193.py 5 2 2
+for c in "4 0" "4 1" "5 1"; do python3 hubasc193.py $c; done
+python3 ug193.py inst/RSG_K4.json inst/RS3.json ../box192/inst/rd2_d9.json ../box192/inst/cR_d2_w8_R22.json

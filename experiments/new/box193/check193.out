@@ -51,3 +51,10 @@ RMON-2 M 5: (same-level pair, low item) checks 10242, decreases 5
   witness: w 1; chains before {1: [1, 2, 5, 4], 2: [2, 5, 4], 3: [3, 4], 4: [4], 5: [5, 4]}; after {1: [1, 5, 3, 4], 2: [2, 1, 5, 3, 4], 3: [3, 4], 4: [4], 5: [5, 3, 4]}
 M 5 A 1 K 2: k-level keys 4659, max hub chains inside one k-level 7
 M 5 A 2 K 2: k-level keys 5977, max hub chains inside one k-level 8
+HUB-ASC CS(M 4, hub <= 0 ascents): max distinct hub chains 11; bound F_0 11; 2^M 16
+HUB-ASC CS(M 4, hub <= 1 ascents): max distinct hub chains 16; bound F_1 10185; 2^M 16
+HUB-ASC CS(M 5, hub <= 1 ascents): max distinct hub chains 29; bound F_1 39711; 2^M 32
+RSG_K4.json U(G) 1 max ascents 1 OK
+RS3.json U(G) 6 max ascents 2 OK
+rd2_d9.json U(G) 20 max ascents 3 OK
+cR_d2_w8_R22.json U(G) 9 max ascents 3 OK

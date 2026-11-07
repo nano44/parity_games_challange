@@ -374,3 +374,84 @@ Reading (status of the open core after milestone 3).
   - So R95's k-prefix refinement (polynomially many K-levels for fixed K) cannot by itself give ASC-POLY(2).
 - RECUR(2) stays CONJECTURE (equality with f_1(M − 1) at M 3-6, A1.3). A proof must handle a gap's segment whose items see a varying
   tail(τ(w)). In the witness that tail gains a segment of another gap.
+
+## Addendum 4 (milestone 4): Theorem HUB-ASC(B), polynomial for every fixed B; ASC-POLY(A) PROVED (abstract); game forms; Corollary UP-B
+RECUR(2) in its exact form (f_1(M − 1) per level) stays DATA; the dead step is RMON-2 (Addendum 3, witness CS(5, 2)). But a coarser
+induction avoids that step and proves polynomiality for every fixed number of ascents. Only the HUB's chain is constrained.
+
+Setting.
+- A run of CS(M, ∞): forests on items 1..M, every chain lex-nondecreasing.
+- A hub h_t whose chain has at most B ascents at every time t of the run.
+- The statement must also hold for runs restricted to a subset of times. Restricting a run to a subset of its times gives a run, since
+  monotonicity is between any two times.
+
+**Theorem HUB-ASC(B) (PROVED, lane, abstract).** The hub takes at most F_B(M) distinct chains, where F_0(M) := 1 + M(M + 1)/2 and
+F_B(M) := (M² + M + 1)(1 + M·F_(B−1)(M)²).
+So F_B(M) is a polynomial in M of degree 5·2^B − 3 (2, 7, 17, …) for each fixed B.
+
+Proof (induction on B).
+- B = 0 is DESC-POLY's argument (§2), which uses only the hub's chain:
+  - an (x, t) event has x on the hub chain at t − 1 and t, so x's chain is a descending suffix and x's pointer is top(tail(x)), which is
+    monotone (tails are lex-monotone);
+  - the hub's first element is its top, which is monotone.
+- B ≥ 1. Levels (A1.2): stretches with every τ(x) and the hub's top T constant. There are at most M² + M + 1 of them. Fix a level. By
+  SKELETON (b), (c), which hold in every forest, the hub chain c = chain(s) has one of three shapes:
+  - (N) s = T and no nonempty segment: c = P(T), the τ-path of T, fixed in the level.
+  - (a) s ≠ T: then τ(s) = T > s. The part of c before T consists of items with τ = T (SKELETON (b)); write it R(s). Then
+    c = R(s) ⊔ chain(T), and the step into T is an ascent. Entry y := T, entry item z := s.
+  - (c) s = T, with a first nonempty segment after skeleton node y_i: z := next(y_i) has τ(z) = y_(i+1) =: y. Then
+    c = {y_0, …, y_i} ⊔ R(z) ⊔ chain(y), where R(z) is the part of chain(z) before y, and the step into y is an ascent.
+  - In (a) and (c): c = Fix(y) ⊔ R(z) with Fix(y) := {skeleton nodes of T above y} ∪ chain(y). Both R(z) and chain(y) have at most
+    B − 1 ascents (the entry ascent is spent).
+- Group the level's times by entry y (at most M values, all on P(T)), and within y by the value of chain(y).
+  - (i) At entry-y times, chain(y) is the chain of the constant hub y in the run restricted to those times, and it has ≤ B − 1 ascents.
+    By HUB-ASC(B − 1) it takes at most F_(B−1)(M) values.
+  - (ii) Fix y and one value C of chain(y). Let Z_y := {w : τ(w) = y, w < y}. For every w ∈ Z_y and every time of the level,
+    chain(w) = R(w) ⊔ chain(y) (τ(w) = y lies on chain(w), and everything before it is in Z_y).
+    - So at the times where chain(y) = C, every R(w) is lex-nondecreasing: the common part C is removed.
+    - The pointers of Z_y (to the next element before y, or ⊥) form a forest on Z_y whose chains are the R(w). So those times carry a run
+      of CS(|Z_y|, ∞).
+    - The hub restricted to them is Fix(y) ⊔ R(z_t) with Fix(y) constant, so R(z_t) is lex-nondecreasing: a hub of that run with
+      ≤ B − 1 ascents.
+    - By HUB-ASC(B − 1) there are at most F_(B−1)(|Z_y|) ≤ F_(B−1)(M) distinct hub chains there.
+- Per level: at most 1 + M·F_(B−1)(M)·F_(B−1)(M) distinct hub chains. Lex-monotone hub values never repeat across levels, so
+  F_B(M) ≤ (M² + M + 1)(1 + M·F_(B−1)(M)²). ∎
+
+Remarks.
+- The constraint is on the hub only; other chains are unconstrained. In particular ASC-POLY(A) (CONJECTURE since §3) is now PROVED:
+  f_A(M) ≤ F_A(M).
+- The bound is far from tight: exact f_1 is cubic, F_1 has degree 7.
+- DATA (hubasc193.py; exact maxima with only the hub constrained; unit: distinct hub chains; set: all runs of CS(M, ∞); scope: abstract):
+  - B 0: 7, 11, 16 at M 3-5 (= F_0);
+  - B 1: 8, 16, 29 at M 3-5;
+  - B 2: 32 at M 5.
+  These are the same values as f_A with every chain constrained (§3).
+- Exact RECUR(2) (f_1(M − 1) per level) stays DATA. HUB-ASC replaces it for polynomiality.
+
+**Corollary HUB-ASC-G (PROVED, lane; game form).** Let v be a vertex of IDEAL-CYC(G) and I an interval with Λ_t(v) = w. If seq_t(v)
+has at most B ascents for every t ∈ I, then D_E,I(v) ≤ F′_B(M_w), with F′_0 := 1 + M(M + 1)/2 and
+F′_B(M) := (M² + 3M + 1)(1 + M·F′_(B−1)(M)²).
+- Proof: as ASC1 (Addendum 2). Items = U_w, active iff Λ_t(x) = w, active times are intervals; one forest per state (CHAIN-DECOMP),
+  lex-monotone tails (E-MON). Levels also fix the active set, so there are at most M_w² + 3M_w + 1 of them. Every restricted sub-run in
+  the induction lies inside one level, where the active set is constant. ∎
+- Premises: F1-F3, E-DOM-ALL-d. [LOC] is not used. No hypothesis on other vertices' plays.
+
+**Corollary UP-B (PROVED, lane).** Let U(G) be the number of strictly upward Ξ-edges of G (options (x, k) whose Ξ-target is a mover of
+level > lev(x)). Then every seq_t(v) has at most U(G) ascents, so D_E(v) ≤ (2M + 3)·F′_(U(G))(M) for every vertex v.
+- Proof: each ascent's segment (between consecutive e's of Π, on the play's prefix) contains a strictly upward Ξ-edge (UP-JUMP). The
+  segments of different ascents are disjoint parts of the prefix. The prefix's vertices are distinct, and each β-vertex has one Ξ-edge.
+  So the edges are distinct. Then HUB-ASC-G on each of the ≤ 2M + 3 Λ-intervals. ∎
+- So genomes with a bounded number of upward Ξ-edges have polynomial e-set height. NOUP (§4) is U(G) = 0.
+- DATA (ug193.py; unit: max ascents over all (state, vertex) plays vs U(G); set: the 8 inst/ files + rd2_d9, rf_d5, rd3_d7,
+  cR_d2_w8_R22; scope: IDEAL-CYC): max ascents ≤ U(G) everywhere. E.g. RSG_K4: U 1, max 1. rd2_d9: U 20, max 3.
+
+Reading (status of the open core after milestone 4).
+- PROVED (lane): the e-set height D_E(v) is polynomial whenever v's plays have a bounded number of ascents, in particular on genomes with
+  boundedly many upward Ξ-edges. The bound is M^(O(2^B)), so quasi-polynomial if B = O(log log M).
+- So a superpolynomial e-set walk, hence via OVT-DV + IN-BOUND any superpolynomial R, needs plays whose ascent count grows with the
+  genome, i.e. many upward Ξ-edges used on one play. That is the H1 lowest-first hub of ASC-EXP, now forced. With ASC-EXP's own
+  construction the count is M − 1.
+- Open: (1) IN-BOUND (CONJECTURE); (2) plays with ω(1) ascents. Is there a game run whose hub play climbs through k upward Ξ-edges and
+  realises ≫ poly e-sets? LEAK-ARCH kills [F09]'s H1-H3 version. A counter must avoid access edges (H2).
+- For L-RED: designs need ascents per play growing with size. A design with a fixed number of upward Ξ-edges, however large the genome,
+  cannot give superpolynomial e-set height.

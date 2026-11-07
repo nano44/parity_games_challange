@@ -23,6 +23,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - Milestone 3 (Addendum 2): LOW-SHAPE PROVED (CS(M,1) per forest), Theorem RECUR(1) PROVED (inside a level hub = P(T) + one
   descending D-part of low items; <= 1 + |L|(|L|+1)/2), Corollary ASC-POLY(1) f_1(M) <= (M^2+M+1)(1+M(M-1)/2), Corollary ASC1 (game:
   plays with <= 1 ascent => D_E <= (M^2+3M+1)(1+M(M-1)/2)). Next: RECUR(2) (data: equality M 3-6).
+- Addendum 3 (bf1d6e9c): DEAD RMON-2 (witness CS(5,2)), DEAD K-level collapse. Addendum 4 (milestone 4): Theorem HUB-ASC(B) PROVED
+  (abstract; only the hub's chain constrained; F_B <= (M^2+M+1)(1+M F_(B-1)^2), degree 5*2^B-3) => ASC-POLY(A) PROVED; game form
+  HUB-ASC-G (no [LOC]); Corollary UP-B (#ascents <= #strictly upward Xi-edges U(G); bounded U => polynomial e-set height). Lead
+  20:5xZ: after RECUR(2) proved/refuted, propose ASC1 + RECUR(1) packet candidate (do NOT open; tell the Lead first). Park at 450k.
+- Slip (successor 61): created hubasc193.py, ug193.py (untracked, not referenced by checks) while push 5 ran. Rule: none, even untracked.
 - Things only I know: the relocation test needs experiments/si, experiments/harness and box189-193 copied (ModuleNotFoundError si
   otherwise; that is an incomplete copy, not an absolute path). dp193 M = 7 A = 1 takes 70 s, A = 2 about 5 min; M = 8 about 3 h.
 
