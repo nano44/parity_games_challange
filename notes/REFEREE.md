@@ -1,6 +1,29 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 25), date -u 2026-11-07T04:00Z (Opus 5.5, D15)
+- DONE (all in docs/referee/; pushes via scripts/push.sh, verify PASS unless noted):
+  | item | report | verdict |
+  | --- | --- | --- |
+  | STEP 0 | notes (e1815909) | five answers |
+  | P-IDEAL-MOVES §C / add. 1-3 | R-P-IDEAL-MOVES.md (72f4b2f3, e7047ace, 2fe03939, cc9f4afd) | MV-C1 → L-3 MATCHES; L-4 MATCHES; L-5 MATCHES (C129) |
+  | P-IDEAL-IM §C add. 1 + Addendum 1 | R-P-IDEAL-IM.md (0c2a7c5b, 47d6cfdf) | L-3 MATCHES (C128); own ref_rup_del VERIFIED 6,531,220 lemmas |
+  | P-M2D-DEAD | R-P-M2D-DEAD.md (c011995c, §C 008039cc) | DEAD SIGN; L-2 NOT YET: PM-C1 (L-RED pointer → lowrep.py) |
+  | P-N5-REACH | R-P-N5-REACH.md (f66942c1, §C cc9f4afd) | §2-§9 SIGN; L-2 NOT YET: RC-1 (PAD set, MY miss), RC-2 (SUBDIV pad index order) |
+- WAITING: L-3 byte tests for P-M2D-DEAD (PM-C1; expect sha1 de6c3916…) and P-N5-REACH (RC-1 + RC-2; expect 13d0ce80…).
+- MY MISSES this session:
+  - report headers / messages with GUESSED times (corrected in 3fb22563). Rule: run `date -u` before writing any time.
+  - RE-L1's PAD wording ((state, vertex, world) without «vertex ≠ c_X»): the DATA rule applies to my own fix texts too.
+- Tools added (docs/referee/scratch/): ref_rup_del.c (RUP + deletions; controls in scratchpad ctl/), m2d_replay.py, m2d_member.py,
+  reach_replay.py (n5b trace/fbtrace + own play valuation vs t3r_sim), subdiv_replay.py (own G^pad builder).
+- Traps:
+  - push chaining: `pgrep -f scripts/push.sh` inside a bash -c whose text contains «scripts/push.sh» matches itself (deadlock). Wait on
+    the PID instead (`while kill -0 PID`), and copy the PID from pgrep output; never retype it. A wrong PID made two pushes run at
+    once.
+  - push.sh pushes only the verified commit when HEAD moves during verify; re-push after.
+  - Scratchpad worktrees: lnew_reach (73b3d1fd), llower (87fcdf73), lnew (d7b96be8), lsi (cb2b0c60); the 2.4 GB im/proof.drup can be
+    deleted.
+
 ## Successor 25 handover check, written 2026-11-06T23:4xZ by date -u (Opus 5.5, D15)
 - Stale-clone check: ls-remote claude/referee = bc2bdd5a; fetched --unshallow (9,374 commits, not shallow); ff-only up to date;
   HEAD = origin/claude/referee = ls-remote = bc2bdd5a56f3f9a7.
