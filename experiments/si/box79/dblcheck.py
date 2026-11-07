@@ -20,7 +20,7 @@ Counters (violations, each must be 0; the unit of each count is printed with it)
   FU2   FUEL (ii): (run, level l in 0..d-1) with E_l != {t : some mover on the old chain of some y in U_l moves at t}
 Controls (must be > 0): ALTb_T, ALTc_T (the bounds minus 1); WO_T (windows where a member moves exactly once);
 FU2_T ((run, level) with E_l nonempty); NEG=2 (key-least option ignoring availability) for HIT.
-Usage: dblcheck.py   (NEG=2 for the control)"""
+Usage: dblcheck.py   (NEG=2 for the control); dblcheck.py FILE... checks only the given genomes (scope EXTRA, stored start)"""
 import sys, os, json, glob, itertools, collections
 H = os.path.dirname(os.path.abspath(__file__)); B76 = os.path.join(H, "..", "box76"); sys.path.insert(0, B76)
 from tw import load_corpus, is_lr, Sim, analyse
@@ -122,14 +122,17 @@ def run_checks(G, s0, C, I):
         if E: C["FU2_T"] += 1
 
 def main():
-    for scope in ("CORPUS", "LOWER"):
+    scopes = ("CORPUS", "LOWER") if len(sys.argv) == 1 else ("EXTRA",)
+    for scope in scopes:
         C = collections.Counter({k: 0 for k in ("WO", "HIT", "ALTa", "ALTb", "ALTc", "ALTd", "DBLa", "DBLb", "DBLc", "TN", "PF", "FU2", "ALTb_T", "ALTc_T", "WO_T", "FU2_T")})
         I = collections.Counter()
         if scope == "CORPUS":
             items = [(p, G, s0) for p, G in load_corpus() if is_lr(G)
                      for s0 in (itertools.product((0, 1), repeat=G["N"]) if G["N"] <= 10 else [tuple(G["start"])])]
-        else:
+        elif scope == "LOWER":
             items = [(p, json.load(open(p)), None) for p in sorted(glob.glob(os.path.join(B76, "inst", "lower", "*.json")))]
+        else:
+            items = [(p, json.load(open(p)), None) for p in sys.argv[1:]]
         for p, G, s0 in items:
             run_checks(G, tuple(s0) if s0 is not None else tuple(G["start"]), C, I)
         print("%s violations: %s" % (scope, " ".join("%s %d" % (k, C[k]) for k in C if not k.endswith("_T"))))

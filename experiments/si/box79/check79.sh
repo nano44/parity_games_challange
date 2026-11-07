@@ -10,6 +10,8 @@ python3 -I -B dblcheck.py > "$t/c"
 diff -q "$t/c" dblcheck.out
 NEG=2 python3 -I -B dblcheck.py > "$t/n"
 diff -q "$t/n" dblcheck_neg2.out
+python3 -I -B dblcheck.py inst/RECF4_d20_F60.json > "$t/x"
+diff -q "$t/x" extra79.out
 python3 -I -B dead79.py > "$t/d"
 diff -q "$t/d" dead79.out
 rm -rf "$t"
