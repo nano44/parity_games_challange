@@ -59,7 +59,8 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     Random games xi = spec.
 - RUNNING at park (container-local; restarts kill them; relaunch lines):
   - T-table: cd experiments/red/r214 && nohup ./runtw.sh jobsT.txt 2 > out/runtw.log 2>&1 &   (FINAL logs are skipped), then
-    nohup bash -c 'while pgrep -f runtw.sh >/dev/null; do sleep 30; done; ./stage.sh 1 & ./stage.sh 2 & wait' > out/stage.log 2>&1 &
+    nohup ./stage.sh 1 > out/stage1.log 2>&1 & nohup ./stage.sh 2 > out/stage2.log 2>&1 &   (do NOT wrap in a «while pgrep -f runtw.sh»
+    loop: it matches its own command line and never exits). Seeds include L-LOWER's RECT genomes (keep/tw_d1*_RECT*.tw, replayed).
   - R215: cd experiments/red/r215 && nohup python3 xiclimb.py cyc 7 47 4000 out/cyc2_d7 > out/cyc2_d7.log 2>&1 &   (same for d 8, seed 48)
     xiclimb needs the read-only worktree of claude/l-new acdbd28b at env WT (default scratch wt190):
     git worktree add --detach <WT> acdbd28b. Oink: scripts/setup_oink.sh (tools/ gitignored).
