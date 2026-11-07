@@ -28,6 +28,9 @@ python3 -I -B fuel77.py inst/lower/REC_d10_tower_mu30.json > "$t/fuel"
 diff -q "$t/fuel" fuel77.out
 NEG=2 python3 -I -B tw4.py > "$t/n2"
 diff -q "$t/n2" tw4_neg2.out
+python3 -I -B append77.py inst/climbR_d4_s6.json 11011111 "$t/pf.json" > "$t/app"
+diff -q "$t/app" <(sed "s|inst/passfreeze77_d5.json|$t/pf.json|" append77.out)
+cmp "$t/pf.json" inst/passfreeze77_d5.json
 rm -rf "$t"
 grep -q "^INFO HIT_VIOL 238546 " tw4_neg2.out
 grep -q "MONO_VIOL 226066 " tw3_neg2.out
@@ -36,4 +39,4 @@ grep -q "^INFO HIT_VIOL 0 pairs 577740$" tw4.out
 grep -q "^INFO DBLEQ_VIOL 0 NONTRIVIAL_CONSEC 0 " tw5.out
 grep -q "^INFO DBLEQ_VIOL 0 NONTRIVIAL_CONSEC 0 doubling levels 5396 " tw5_lred.out
 grep -q "^INFO files 208 runs 63223 steps 140395$" tw.out
-echo "box 76 TROPICAL-WINDOW checks (ALT-MIN, HIT, window tables, DBL-EQ, DBL-GAP data, DEAD SUM-COUPLE / RISE-N / SPAWN-2 replays, box 77 replays + NEG control): PASS"
+echo "box 76 TROPICAL-WINDOW checks (ALT-MIN, HIT, window tables, DBL-EQ, DBL-GAP data, DEAD SUM-COUPLE / RISE-N / SPAWN-2 replays, box 77 replays + NEG control + PASS-FREEZE): PASS"

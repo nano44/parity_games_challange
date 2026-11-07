@@ -57,6 +57,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - Second pass (Lead 01:46Z, S(h)): FUEL-NEED PROVED lane CONDITIONAL on L-LOWER FEEDBACK (b) (fuel target Xi-depth >= h - 2 log h - 3);
   best provable lower bound S(h) >= h + 1; nothing forces S(h) super-polynomial. MUTUAL-FEEDBACK construction proposed for L-LOWER
   (note §9). No conjecture added.
+- Third pass (Lead 02:08Z, PASS-THROUGH DECAY; note §10): PASS-FREEZE PROVED lane (a split pair that never moves passes every flip:
+  F(l+1) = F(l)); decay lemma «F(l+1) <= F(l) - c unless upward fuel at l+1» DEAD on inst/passfreeze77_d5.json (F 2 2 2 6 6, level 3
+  doubling, level 4 frozen, top level). freeze77 data: freezing a pair above a doubling level kills L-LOWER's runs (fuel collapse).
 
 ## BOX 76 (successor 41; Lead 2026-11-07: TROPICAL-WINDOW, max-plus route to MOVES-2D) — DONE: route DEAD in its window-type and Xi-DAG forms
 - Note docs/si/N5-TROPICAL-box76.md; tools experiments/si/box76/{tw.py (own simulator + window tables), tw2.py, tw3.py, tw4.py,

@@ -231,3 +231,26 @@ polynomial bound; MOVES-2D and G-N5-TIME stay OPEN.
   never points into T). C's keys are driven by the tower top's F(h) through pass-through flips (Φ = 1 at b-steps). If C's values rise
   ~2^h/h times with m = O(h), then S(h) = O(h) and T^R(d) = 2^(Ω(d)). The measurable obstruction to watch: the decay of F above the tower
   (REC_d10_tower: F = 30 at level 3, then 23, 8, 7, 6, 2, 1), i.e. whether pass-through flips can carry F(h) into C.
+
+## 10. Box 77, third pass (Lead 02:08Z: PASS-THROUGH DECAY): flip counts do not decay; the candidate decay lemma is DEAD
+- Lemma PASS-FREEZE (PROVED, lane; premises R113 ALIGN (c), R113's definition of c_l; AND-GATE (a) (P-IDEAL-MOVES, signed, not landed)
+  for the sufficient condition). G ∈ 𝓛^R_d, 1 ≤ l ≤ d − 2, any run. If neither member of the pair l + 1 moves in the run and they start
+  on different options, then F(l + 1) = F(l). A sufficient condition for «never moves»: for each member x, π_s(x) = s_0(x) in every
+  state of the run (e.g. both options of x have Ξ-target X and the start option has the larger ε).
+  - Proof. The members keep distinct options, so by ALIGN (c) the order of their keys under s is [s(2l + 2) = c_(l+1)(s)], with s(2l + 2)
+    constant; c_(l+1)(s) is the key order of the pair l, which changes exactly at the flips of the pair l. So the pair l + 1 flips
+    exactly at the flips of the pair l. Sufficient condition: by AND-GATE (a) x moves at t only if s_(t−1)(x) ≠ π_(s_(t−1))(x); with π =
+    s_0(x) and x never moving, s_(t−1)(x) = s_0(x) = π, by induction on t. With Ξ-targets X the values are the constants ε. ∎
+- DEAD (the Lead's candidate decay «F(l + 1) ≤ F(l) − c unless the level l + 1 has upward fuel», every c ≥ 1, also above a doubling
+  level): instance experiments/si/box76/inst/passfreeze77_d5.json (built by append77.py from L-NEW's climbR_d4_s6, l-new 9995f5a2
+  experiments/new/box180/out/climbR_d4_s6.json, start 11011111 + a frozen top pair, stored start 1101111101): T 10, F = 2 2 2 6 6.
+  Level 3 is doubling (6 = 2·2 + 2); the level-4 pair never moves, has no upward option (top level), and F(4) = F(3) = 6. The lower
+  levels' states are identical to the base run (append77.py asserts it).
+  - Same construction on REC_d10_tower_mu30 (inst/passfreeze77_tower_d11.json): F(10) = F(9) = 1, the lower run unchanged (DATA).
+- Experiment (DATA, freeze77.py): freezing an untargeted pair (6, 7) directly above the doubling level 2 of REC_d12_mu42 / REC_d11_mu40
+  (both options to X, start option preferred, start split) does NOT preserve the run: T 48 → 2 or 6, T 44 → 4; the doubling disappears.
+  The pair's moves fed the upper levels' keys, whose moves are the lower levels' upward fuel (Ξ-values via upward options). So what
+  «decays» in L-LOWER's genomes is fuel activity, not the flip count.
+- READING (consequence for S(h)): a cap on doubling levels cannot come from flip counts alone. Keys pass through frozen pairs losslessly
+  (PASS-FREEZE); the scarce resource is Ξ-value change of the fuel (FUEL-NEED), whose movers must also obey AND-GATE (π = c at the
+  move). The quantity to bound is the number of rises of the fuel targets per unit of key activity reaching them. OPEN; no conjecture.
