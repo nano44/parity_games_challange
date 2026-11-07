@@ -62,6 +62,7 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   wt190b 066cd543. experiments/red/r218/env.sh needs R218_S=<scratchpad>. own.py runs alone (no worktrees).
 - 19:2xZ: R218 §4 trilemma (hidden route down / real-up / mirror-up); T3 mirror-up pair DEAD (state-0 cycle; all bits set at step 1),
   4-route checked; Lemma PLAY-BLIND (proved | F1). Pushed c63ca303d, 83ef8829a.
+- 20:1xZ: R218 §6 (Lead hint: H1 without access edges): T4 DEAD; Fact E-CYCLE, Proposition H1-CYCLE. 4-route checked.
 - Next if resumed: §5 items (lemma form of §4; a non-access reset). Nothing running.
 - Things only I know: meas.py reads <G>.labels.json (option labels: SET / X / c ...); a «re-arm» = switch INTO an X-labelled option.
   xcheck.py writes _g3.pg next to its input: I run it on copies in $R218_S/x.

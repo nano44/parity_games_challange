@@ -1,0 +1,4 @@
+t4_n4_S.json N 28 traj own==idealcyc True (T 4) | subrun191 C 2 R 0 p 2 | Gamma3 n 500: n5v xi 7 (fb 1) spec 3 n5bxi 7 (fb 1) | regions=Oink True verify 0/0
+t4p_n4_S.json N 32 traj own==idealcyc True (T 10) | subrun191 C 5 R 2 p 3 | Gamma3 n 532: n5v xi 13 (fb 1) spec 3 n5bxi 13 (fb 1) | regions=Oink True verify 0/0
+t4p_n6_S.json N 46 traj own==idealcyc True (T 14) | subrun191 C 9 R 2 p 3 | Gamma3 n 903: n5v xi 17 (fb 1) spec 3 n5bxi 17 (fb 1) | regions=Oink True verify 0/0
+t4p_n6_s.json N 46 traj own==idealcyc True (T 9) | subrun191 C 4 R 1 p 4 | Gamma3 n 903: n5v xi 12 (fb 1) spec 3 n5bxi 12 (fb 1) | regions=Oink True verify 0/0

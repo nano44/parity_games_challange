@@ -3,7 +3,7 @@ Labels: PROVED (lane, unrefereed) / PROVED-CONDITIONAL (named premise) / DATA (u
 Nothing here is a TARGET.md claim. G-N5-TIME stays OPEN. N5′-xi stays a CANDIDATE (D1). Setting, notation and premises ([LOC], F1-F6,
 IDEAL-CYC, MERGE, E-DOM-CHOICE, LEAK-ARCH) are those of docs/red/R217-ovt.md and L-NEW's frozen packets docs/new/P-N5-XICYC.md and
 docs/new/N5-RPOT-box192.md (claude/l-new a2db977d). Tools: experiments/red/r218/ (own.py = R217's independent implementation, copied;
-t1.py, t2.py, t3.py = constructions; play.py = plays at a state; meas.py = bit words, re-arms, D(v); otrace.py = named trace; xcheck.py = the 4-route check, copied).
+t1.py … t4.py = constructions; lam.py = cycle nodes; play.py = plays at a state; meas.py = bit words, re-arms, D(v); otrace.py = named trace; xcheck.py = the 4-route check, copied).
 
 ## 0. Answers (milestone 1, 19:0xZ)
 - Test (1), a hub H that tracks only the HIGHEST set bit: run (§2). DEAD as a counter. Every lane node re-arms at most once in the
@@ -24,8 +24,10 @@ t1.py, t2.py, t3.py = constructions; play.py = plays at a state; meas.py = bit w
   after the merge, and two plays cannot split after they merge, so no pair. Up through the real chain: a set bit's own lane option
   reaches its own SET gate, so the leak of LEAK-ARCH H2 occurs. Up through a mirror chain: a cycle through the open bit's own lane,
   which Odd keeps or breaks by misreading a probe. DEAD instance of the third branch: T3 (§4), every bit sets at step 1.
+- H1 hub without access edges (Lead 20:01Z hint; §6): DEAD. Fact E-CYCLE: every cycle through an e is Even-won. So an H1 hub that open
+  bits' lanes reach closes Even-won cycles through the lowest set bit's escape, and Odd hides that bit (Proposition H1-CYCLE; T4).
 - Box goal (doubling T per added bit, O(1) size growth): NOT reached. The obstruction is NOT proved. What is proved: SWITCH-IN-DV,
-  REARM-DV, REARM-PAIR, MIRROR-NOLEAK, SET-ROUTE-WINS, PLAY-BLIND. Open: an E-DOM hub pair (X, Y) that overtakes at every carry, outside the
+  REARM-DV, REARM-PAIR, MIRROR-NOLEAK, SET-ROUTE-WINS, PLAY-BLIND, E-CYCLE, H1-CYCLE. Open: an E-DOM hub pair (X, Y) that overtakes at every carry, outside the
   three branches of §4.
 
 ## 1. Lemma SWITCH-IN-DV and corollaries (PROVED-CONDITIONAL on F1, lane)
@@ -171,3 +173,43 @@ the lower state.
 1. Try to make §4 a lemma («under E-DOM, no hub pair over a common bit-probe chain overtakes at every bit-0 event»), or build a pair with
    private copies of the low bits' hidden routes. Each copy costs O(k) per lane, still O(n²) in all.
 2. A reset mechanism outside access copies that lands the reset bit in its lane. SET-ROUTE-WINS says it must switch at the carry.
+
+## 6. H1 hub WITHOUT access edges (Lead 20:01Z hint from L-NEW 61 box 193; t4.py; DATA; DEAD)
+Hint, as relayed (not opened by me as a source; L-NEW's file docs/new/N5-ASC-box193.md @ claude/l-new 2dc81001): all 2^M e-sets need
+an H1-type (lowest-first) hub; LEAK-ARCH kills H1 only together with H2 + H3 (access edges). So: an H1 hub whose lanes are re-armed
+without access edges.
+**Fact E-CYCLE (PROVED, lane; from E-DOM-ALL-d).** In IDEAL-CYC of any genome, at any d, every cycle of a play that contains an
+e-vertex has an even top. So Even wins it, with Λ above every play that ends in K1.
+- Proof: c_W has only its self-loop. K0 and K3 lead only to K2 and K1, which never return. So a cycle with an e contains neither, and
+  its most relevant vertex is an e (E-DOM-ALL-d), whose priority is even. ∎
+Construction T4(n, ROOT, PROBE) (r218/t4.py): bits B_k with SET_k (e_k → U_k, U_k = upper selector → B_(k+1) … or s) and lane options
+→ the shared lane (2k + 2 entries). NO access options. Lane exits → hub S; S → s or → B_k (PROBE 0), or → B_k through a copy gate Q_k
+(PROBE 1: e-face e_q(k) → U_k with e_k < e_q(k) < e_(k+1), so Odd ENTERS a set bit; β-face → B_k with the top odd β). S is therefore the
+lowest set bit's SET play, which runs up through every set bit (H1). Root d → s or → S.
+DATA (own.py; n 2-6; out/t4_meas.txt):
+- PROBE 0: no bit ever sets (words 0…0 only). S enters an open bit, and S → B_k → lane → d → S is a cycle whose top is the lane bonus
+  (even): every value is Even-won above K1, and no SET improves on it. T 2 (ROOT s) / 4 (ROOT S).
+- PROBE 1, ROOT S: bits set ONE AT A TIME and each resets at the next step: 0…01 → 0…0 → 0…010 → 0…0 → … (n 6: 11 words, T 14 = 2n + 2).
+  ROOT s: T 9, e.g. 000001 → 000010 → 011100 → 000000. No bit stays set while a higher one sets; there are no carries.
+- Mechanism (out/t4_play.txt, n 3, ROOT S, t 4-5): U_0's best option is the OPEN bit B_2, whose hidden route runs lane → d → S. Once S
+  enters B_0 (t 5), B_0's escape e_0 → U_0 → B_2 → lane → S → Q_0 → B_0 closes a cycle through e_0. By E-CYCLE it is Even-won with top
+  e_0, so Odd declines the escape and HIDES SET_0 (its β-face: the smaller even cycle B_0 → β_set → B_0). The set bit is reset by Odd's
+  choice, not by any access edge.
+**Proposition H1-CYCLE (PROVED, lane; from E-CYCLE).** Assume (H1′) every open bit's hidden route reaches a hub S whose play enters
+the escape e_l of a set bit B_l, and (U) some Even mover on e_l's escape continuation has an option whose play enters an open bit. Then
+that option's play is a cycle through e_l. So it is Even-won and beats every K1-play: Howard takes it at the next step unless an
+option of equal Λ is already chosen. After that, Odd's optimal response must leave the cycle at an Odd vertex on it. The only Odd
+vertices there whose other face is not c_W or DUMMY are SET gates (hiding a set bit) and probe gates (misreading a bit).
+- Proof: the option's play passes the open bit, then its hidden route to S, then e_l, then the continuation back to the mover: a cycle
+  containing e_l. E-CYCLE. The Odd vertices of IDEAL-CYC are gates; a level-0 gate's e-face leads to c_W and a lane option's to DUMMY. ∎
+- Avoiding (U) needs the escape chain to read the higher bits without entering open ones. With Even-reading (a selector enters a bit),
+  (U) holds whenever a higher bit is open. With Odd-reading (a probe whose β-face enters the bit), Odd enters a set bit only if the
+  skip face is ⊵ the SET face. That means a skip e above e_j, so open bits would count MORE than set bits. That inverts the order the
+  counter needs (READING).
+- So under E-DOM, H1 fails without access edges as well: by H1-CYCLE (T4, instances below), or by the inverted reading.
+- Frozen: inst/t4_n4_S, t4p_n4_S, t4p_n6_S, t4p_n6_s (.json + names + labels; inst/SHA1SUMS).
+- Four routes (t4_n4_S, t4p_n4_S, t4p_n6_S, t4p_n6_s): own = idealcyc; subrun191 C 2 / 5 / 9 / 4 (the cycle changes are counted as C
+  steps); Γ3 regions = Oink = n5v xi = n5bxi, verify 0 / 0, xi = T + 3. File out/t4_xcheck.txt.
+- Not addressed: L-NEW's ASC-GATE cases (ii) «the declined escape reaches b» and (iii) «reaches an e above b» as re-arming mechanisms.
+  T4's hiding is case (i): the declined escape reaches a better cycle node (the e_0 cycle). I did not open box 193 and have not built
+  (ii) or (iii).

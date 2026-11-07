@@ -1,0 +1,40 @@
+t4_n2_s.json N 16 T 2 words 1: 00
+  re-arms (switches into X) total 1 max/mover 1; D {'S': 2}
+t4p_n2_s.json N 18 T 7 words 4: 00 01 11 00
+  re-arms (switches into X) total 4 max/mover 1; D {'S': 4}
+t4_n2_S.json N 16 T 4 words 1: 00
+  re-arms (switches into X) total 0 max/mover 0; D {'S': 3}
+t4p_n2_S.json N 18 T 5 words 3: 00 01 00
+  re-arms (switches into X) total 0 max/mover 0; D {'S': 2}
+t4_n3_s.json N 22 T 2 words 1: 000
+  re-arms (switches into X) total 1 max/mover 1; D {'S': 2}
+t4p_n3_s.json N 25 T 8 words 4: 000 001 010 000
+  re-arms (switches into X) total 5 max/mover 1; D {'S': 4}
+t4_n3_S.json N 22 T 4 words 1: 000
+  re-arms (switches into X) total 0 max/mover 0; D {'S': 3}
+t4p_n3_S.json N 25 T 8 words 5: 000 001 000 010 000
+  re-arms (switches into X) total 0 max/mover 0; D {'S': 3}
+t4_n4_s.json N 28 T 2 words 1: 0000
+  re-arms (switches into X) total 1 max/mover 1; D {'S': 2}
+t4p_n4_s.json N 32 T 9 words 5: 0000 0001 0010 0100 0000
+  re-arms (switches into X) total 5 max/mover 1; D {'S': 5}
+t4_n4_S.json N 28 T 4 words 1: 0000
+  re-arms (switches into X) total 0 max/mover 0; D {'S': 3}
+t4p_n4_S.json N 32 T 10 words 7: 0000 0001 0000 0010 0000 0100 0000
+  re-arms (switches into X) total 0 max/mover 0; D {'S': 4}
+t4_n5_s.json N 34 T 2 words 1: 00000
+  re-arms (switches into X) total 1 max/mover 1; D {'S': 2}
+t4p_n5_s.json N 39 T 9 words 5: 00000 00001 00010 01100 00000
+  re-arms (switches into X) total 5 max/mover 1; D {'S': 5}
+t4_n5_S.json N 34 T 4 words 1: 00000
+  re-arms (switches into X) total 0 max/mover 0; D {'S': 3}
+t4p_n5_S.json N 39 T 12 words 9: 00000 00001 00000 00010 00000 00100 00000 01000 00000
+  re-arms (switches into X) total 0 max/mover 0; D {'S': 5}
+t4_n6_s.json N 40 T 2 words 1: 000000
+  re-arms (switches into X) total 1 max/mover 1; D {'S': 2}
+t4p_n6_s.json N 46 T 9 words 5: 000000 000001 000010 011100 000000
+  re-arms (switches into X) total 5 max/mover 1; D {'S': 5}
+t4_n6_S.json N 40 T 4 words 1: 000000
+  re-arms (switches into X) total 0 max/mover 0; D {'S': 3}
+t4p_n6_S.json N 46 T 14 words 11: 000000 000001 000000 000010 000000 000100 000000 001000 000000 010000 000000
+  re-arms (switches into X) total 0 max/mover 0; D {'S': 6}
