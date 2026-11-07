@@ -1,0 +1,176 @@
+== 11:05Z d 2 w 24 slice 0
+Traceback (most recent call last):
+  File "/home/user/r215live/rclimb.py", line 9, in <module>
+    WT3 = os.environ["WT3"]; B = os.path.join(WT3, "experiments/new/box191"); sys.path[:0] = [B]
+          ~~~~~~~~~~^^^^^^^
+  File "<frozen os>", line 717, in __getitem__
+KeyError: 'WT3'
+== 11:05Z d 2 w 24 slice 0
+Traceback (most recent call last):
+  File "/home/user/r215live/rclimb.py", line 9, in <module>
+    WT3 = os.environ["WT3"]; B = os.path.join(WT3, "experiments/new/box191"); sys.path[:0] = [B]
+          ~~~~~~~~~~^^^^^^^
+  File "<frozen os>", line 717, in __getitem__
+KeyError: 'WT3'
+== 11:05Z d 2 w 24 slice 0
+Traceback (most recent call last):
+  File "/home/user/r215live/rclimb.py", line 9, in <module>
+    WT3 = os.environ["WT3"]; B = os.path.join(WT3, "experiments/new/box191"); sys.path[:0] = [B]
+          ~~~~~~~~~~^^^^^^^
+  File "<frozen os>", line 717, in __getitem__
+KeyError: 'WT3'
+== 11:05Z d 2 w 24 slice 0
+Traceback (most recent call last):
+  File "/home/user/r215live/rclimb.py", line 9, in <module>
+    WT3 = os.environ["WT3"]; B = os.path.join(WT3, "experiments/new/box191"); sys.path[:0] = [B]
+          ~~~~~~~~~~^^^^^^^
+  File "<frozen os>", line 717, in __getitem__
+KeyError: 'WT3'
+== 11:05Z d 2 w 24 slice 0
+Traceback (most recent call last):
+  File "/home/user/r215live/rclimb.py", line 9, in <module>
+    WT3 = os.environ["WT3"]; B = os.path.join(WT3, "experiments/new/box191"); sys.path[:0] = [B]
+          ~~~~~~~~~~^^^^^^^
+  File "<frozen os>", line 717, in __getitem__
+KeyError: 'WT3'
+== 11:05Z d 2 w 24 slice 0
+Traceback (most recent call last):
+  File "/home/user/r215live/rclimb.py", line 9, in <module>
+    WT3 = os.environ["WT3"]; B = os.path.join(WT3, "experiments/new/box191"); sys.path[:0] = [B]
+          ~~~~~~~~~~^^^^^^^
+  File "<frozen os>", line 717, in __getitem__
+KeyError: 'WT3'
+== 11:05Z d 2 w 24 slice 0
+Traceback (most recent call last):
+  File "/home/user/r215live/rclimb.py", line 9, in <module>
+    WT3 = os.environ["WT3"]; B = os.path.join(WT3, "experiments/new/box191"); sys.path[:0] = [B]
+          ~~~~~~~~~~^^^^^^^
+  File "<frozen os>", line 717, in __getitem__
+KeyError: 'WT3'
+== 11:05Z d 2 w 24 slice 0
+Traceback (most recent call last):
+  File "/home/user/r215live/rclimb.py", line 9, in <module>
+    WT3 = os.environ["WT3"]; B = os.path.join(WT3, "experiments/new/box191"); sys.path[:0] = [B]
+          ~~~~~~~~~~^^^^^^^
+  File "<frozen os>", line 717, in __getitem__
+KeyError: 'WT3'
+== 11:05Z d 2 w 24 slice 0
+Traceback (most recent call last):
+  File "/home/user/r215live/rclimb.py", line 9, in <module>
+    WT3 = os.environ["WT3"]; B = os.path.join(WT3, "experiments/new/box191"); sys.path[:0] = [B]
+          ~~~~~~~~~~^^^^^^^
+  File "<frozen os>", line 717, in __getitem__
+KeyError: 'WT3'
+== 11:05Z d 2 w 24 slice 0
+Traceback (most recent call last):
+  File "/home/user/r215live/rclimb.py", line 9, in <module>
+    WT3 = os.environ["WT3"]; B = os.path.join(WT3, "experiments/new/box191"); sys.path[:0] = [B]
+          ~~~~~~~~~~^^^^^^^
+  File "<frozen os>", line 717, in __getitem__
+KeyError: 'WT3'
+== 11:05Z d 2 w 24 slice 0
+Traceback (most recent call last):
+  File "/home/user/r215live/rclimb.py", line 9, in <module>
+    WT3 = os.environ["WT3"]; B = os.path.join(WT3, "experiments/new/box191"); sys.path[:0] = [B]
+          ~~~~~~~~~~^^^^^^^
+  File "<frozen os>", line 717, in __getitem__
+KeyError: 'WT3'
+== 11:05Z d 2 w 24 slice 0
+Traceback (most recent call last):
+  File "/home/user/r215live/rclimb.py", line 9, in <module>
+    WT3 = os.environ["WT3"]; B = os.path.join(WT3, "experiments/new/box191"); sys.path[:0] = [B]
+          ~~~~~~~~~~^^^^^^^
+  File "<frozen os>", line 717, in __getitem__
+KeyError: 'WT3'
+== 11:05Z d 2 w 24 slice 0
+Traceback (most recent call last):
+  File "/home/user/r215live/rclimb.py", line 9, in <module>
+    WT3 = os.environ["WT3"]; B = os.path.join(WT3, "experiments/new/box191"); sys.path[:0] = [B]
+          ~~~~~~~~~~^^^^^^^
+  File "<frozen os>", line 717, in __getitem__
+KeyError: 'WT3'
+== 11:05Z d 2 w 24 slice 0
+Traceback (most recent call last):
+  File "/home/user/r215live/rclimb.py", line 9, in <module>
+    WT3 = os.environ["WT3"]; B = os.path.join(WT3, "experiments/new/box191"); sys.path[:0] = [B]
+          ~~~~~~~~~~^^^^^^^
+  File "<frozen os>", line 717, in __getitem__
+KeyError: 'WT3'
+== 11:05Z d 2 w 24 slice 0
+Traceback (most recent call last):
+  File "/home/user/r215live/rclimb.py", line 9, in <module>
+    WT3 = os.environ["WT3"]; B = os.path.join(WT3, "experiments/new/box191"); sys.path[:0] = [B]
+          ~~~~~~~~~~^^^^^^^
+  File "<frozen os>", line 717, in __getitem__
+KeyError: 'WT3'
+== 11:05Z d 2 w 24 slice 0
+Traceback (most recent call last):
+  File "/home/user/r215live/rclimb.py", line 9, in <module>
+    WT3 = os.environ["WT3"]; B = os.path.join(WT3, "experiments/new/box191"); sys.path[:0] = [B]
+          ~~~~~~~~~~^^^^^^^
+  File "<frozen os>", line 717, in __getitem__
+KeyError: 'WT3'
+== 11:05Z d 2 w 24 slice 0
+Traceback (most recent call last):
+  File "/home/user/r215live/rclimb.py", line 9, in <module>
+    WT3 = os.environ["WT3"]; B = os.path.join(WT3, "experiments/new/box191"); sys.path[:0] = [B]
+          ~~~~~~~~~~^^^^^^^
+  File "<frozen os>", line 717, in __getitem__
+KeyError: 'WT3'
+== 11:05Z d 2 w 24 slice 0
+Traceback (most recent call last):
+  File "/home/user/r215live/rclimb.py", line 9, in <module>
+    WT3 = os.environ["WT3"]; B = os.path.join(WT3, "experiments/new/box191"); sys.path[:0] = [B]
+          ~~~~~~~~~~^^^^^^^
+  File "<frozen os>", line 717, in __getitem__
+KeyError: 'WT3'
+== 11:05Z d 2 w 24 slice 0
+Traceback (most recent call last):
+  File "/home/user/r215live/rclimb.py", line 9, in <module>
+    WT3 = os.environ["WT3"]; B = os.path.join(WT3, "experiments/new/box191"); sys.path[:0] = [B]
+          ~~~~~~~~~~^^^^^^^
+  File "<frozen os>", line 717, in __getitem__
+KeyError: 'WT3'
+== 11:05Z d 2 w 24 slice 0
+Traceback (most recent call last):
+  File "/home/user/r215live/rclimb.py", line 9, in <module>
+    WT3 = os.environ["WT3"]; B = os.path.join(WT3, "experiments/new/box191"); sys.path[:0] = [B]
+          ~~~~~~~~~~^^^^^^^
+  File "<frozen os>", line 717, in __getitem__
+KeyError: 'WT3'
+== 11:05Z d 2 w 24 slice 0
+Traceback (most recent call last):
+  File "/home/user/r215live/rclimb.py", line 9, in <module>
+    WT3 = os.environ["WT3"]; B = os.path.join(WT3, "experiments/new/box191"); sys.path[:0] = [B]
+          ~~~~~~~~~~^^^^^^^
+  File "<frozen os>", line 717, in __getitem__
+KeyError: 'WT3'
+== 11:05Z d 2 w 24 slice 0
+Traceback (most recent call last):
+  File "/home/user/r215live/rclimb.py", line 9, in <module>
+    WT3 = os.environ["WT3"]; B = os.path.join(WT3, "experiments/new/box191"); sys.path[:0] = [B]
+          ~~~~~~~~~~^^^^^^^
+  File "<frozen os>", line 717, in __getitem__
+KeyError: 'WT3'
+== 11:05Z d 2 w 24 slice 0
+Traceback (most recent call last):
+  File "/home/user/r215live/rclimb.py", line 9, in <module>
+    WT3 = os.environ["WT3"]; B = os.path.join(WT3, "experiments/new/box191"); sys.path[:0] = [B]
+          ~~~~~~~~~~^^^^^^^
+  File "<frozen os>", line 717, in __getitem__
+KeyError: 'WT3'
+== 11:05Z d 2 w 24 slice 0
+Traceback (most recent call last):
+  File "/home/user/r215live/rclimb.py", line 9, in <module>
+    WT3 = os.environ["WT3"]; B = os.path.join(WT3, "experiments/new/box191"); sys.path[:0] = [B]
+          ~~~~~~~~~~^^^^^^^
+  File "<frozen os>", line 717, in __getitem__
+KeyError: 'WT3'
+== 11:05Z d 2 w 24 slice 0
+Traceback (most recent call last):
+  File "/home/user/r215live/rclimb.py", line 9, in <module>
+    WT3 = os.environ["WT3"]; B = os.path.join(WT3, "experiments/new/box191"); sys.path[:0] = [B]
+          ~~~~~~~~~~^^^^^^^
+  File "<frozen os>", line 717, in __getitem__
+KeyError: 'WT3'
+== 11:05Z d 2 w 24 slice 0

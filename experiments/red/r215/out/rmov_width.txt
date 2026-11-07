@@ -1,0 +1,6 @@
+m_d2_w12.json sha1 c5def156 d 2 w 12 N 24 T 26 C 1 R 24 R_mov 24 R_X 0 p 1 L 0 maxflip/gate 9
+m_d2_w16.json sha1 7f8f6877 d 2 w 16 N 32 T 36 C 7 R 27 R_mov 27 R_X 0 p 2 L 0 maxflip/gate 10
+m_d2_w4.json sha1 3954d0c2 d 2 w 4 N 8 T 11 C 1 R 9 R_mov 9 R_X 0 p 1 L 0 maxflip/gate 4
+m_d2_w8.json sha1 c8cdb8d3 d 2 w 8 N 16 T 24 C 3 R 20 R_mov 20 R_X 0 p 1 L 0 maxflip/gate 7
+f_d2_w16.json sha1 c1cf4a7d d 2 w 16 N 32 T 24 C 3 R 18 R_mov 18 R_X 0 p 3 L 0 maxflip/gate 12
+f_d2_w8.json sha1 571a8d00 d 2 w 8 N 16 T 20 C 5 R 13 R_mov 13 R_X 0 p 2 L 0 maxflip/gate 12

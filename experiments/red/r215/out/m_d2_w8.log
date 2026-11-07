@@ -1,0 +1,11 @@
+== 10:04Z d 2 w 8 slice 0
+start N 16 R 19 T 23 C 0
+it 1635 N 16 R 20 T 23 C 0
+SLICE end it 15912 best R 20 T 20
+== 10:24Z d 2 w 8 slice 1
+start N 16 R 20 T 23 C 0
+SLICE end it 14528 best R 20 T 20
+== 10:44Z d 2 w 8 slice 2
+start N 16 R 20 T 23 C 0
+it 3904 N 16 R 20 T 24 C 0
+SLICE end it 19408 best R 20 T 20

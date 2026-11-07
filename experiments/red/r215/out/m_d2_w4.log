@@ -1,0 +1,32 @@
+== 10:04Z d 2 w 4 slice 0
+start N 8 R 0 T 1 C 0
+it 14 N 8 R 0 T 2 C 0
+it 15 N 8 R 1 T 4 C 0
+it 20 N 8 R 1 T 5 C 0
+it 22 N 8 R 2 T 5 C 0
+it 36 N 8 R 2 T 6 C 0
+it 213 N 8 R 2 T 7 C 0
+it 234 N 8 R 3 T 7 C 0
+it 624 N 8 R 3 T 8 C 0
+it 634 N 8 R 3 T 9 C 0
+it 1005 N 8 R 4 T 9 C 0
+it 2028 N 8 R 5 T 9 C 0
+it 2934 N 8 R 5 T 10 C 0
+it 5156 N 8 R 5 T 11 C 0
+it 5424 N 8 R 5 T 12 C 0
+it 22060 N 8 R 6 T 9 C 0
+it 22100 N 8 R 6 T 10 C 0
+it 22175 N 8 R 7 T 8 C 0
+it 22908 N 8 R 7 T 9 C 0
+it 22977 N 8 R 7 T 10 C 0
+it 23607 N 8 R 8 T 10 C 0
+it 25628 N 8 R 8 T 11 C 0
+it 27691 N 8 R 9 T 10 C 0
+it 28771 N 8 R 9 T 11 C 0
+SLICE end it 75553 best R 9 T 9
+== 10:24Z d 2 w 4 slice 1
+start N 8 R 9 T 11 C 0
+SLICE end it 71378 best R 9 T 9
+== 10:44Z d 2 w 4 slice 2
+start N 8 R 9 T 11 C 0
+SLICE end it 99104 best R 9 T 9

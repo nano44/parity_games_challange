@@ -1,0 +1,40 @@
+== 10:44Z d 2 w 16 slice 0
+start N 32 R 3 T 10 C 6
+it 6 N 32 R 6 T 10 C 6
+it 25 N 32 R 6 T 9 C 4
+it 104 N 32 R 6 T 9 C 3
+it 217 N 32 R 6 T 10 C 4
+it 226 N 32 R 6 T 11 C 4
+it 314 N 32 R 6 T 11 C 3
+it 426 N 32 R 6 T 12 C 3
+it 555 N 32 R 6 T 12 C 3
+it 592 N 32 R 6 T 12 C 3
+it 729 N 32 R 6 T 13 C 3
+it 771 N 32 R 6 T 14 C 3
+it 1004 N 32 R 8 T 14 C 3
+it 1097 N 32 R 9 T 15 C 3
+it 1131 N 32 R 9 T 15 C 3
+it 1157 N 32 R 9 T 16 C 4
+it 1346 N 32 R 9 T 14 C 4
+it 1355 N 32 R 9 T 15 C 4
+it 1457 N 32 R 9 T 15 C 3
+it 1553 N 32 R 9 T 15 C 2
+it 1896 N 32 R 9 T 16 C 2
+it 1962 N 32 R 9 T 16 C 2
+it 2578 N 32 R 10 T 17 C 3
+it 2641 N 32 R 10 T 16 C 3
+it 2646 N 32 R 10 T 16 C 3
+it 2854 N 32 R 10 T 17 C 3
+it 3044 N 32 R 11 T 17 C 3
+it 3122 N 32 R 11 T 18 C 4
+it 3178 N 32 R 11 T 18 C 3
+it 3567 N 32 R 11 T 19 C 3
+it 3849 N 32 R 11 T 20 C 3
+it 3883 N 32 R 11 T 21 C 3
+it 3895 N 32 R 11 T 20 C 3
+it 4233 N 32 R 11 T 21 C 3
+it 4867 N 32 R 12 T 22 C 3
+it 4953 N 32 R 12 T 24 C 3
+SLICE end it 5220 best R 12 T 18
+== 11:04Z d 2 w 16 slice 1
+start N 32 R 12 T 24 C 3
