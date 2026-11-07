@@ -1,0 +1,81 @@
+== KILL_M2D_d6_mu13 (mover 8)
+(i)   IDEAL genome (R104): W-targets one level down / none at level 0, Xi-targets movers or X, start present: PASS
+(ii)  L^R_d (R110): 2d movers, movers 2l,2l+1 on level l, all degree 2, option k W-points to 2(l-1)+k: PASS d = 6
+(iii) ISO (R110: no option has Xi-target 0 or 1) - not required by L^R_d; this instance: not ISO
+(iv)  Xi-graph acyclic (edge x -> xt(x,k) for every option with a mover as Xi-target): PASS
+(v)   ranks a permutation of 0..M-1, gates distinct, parities 0/1, lev[x] = x//2, one beta per option: PASS M = 24
+(vi)  start: an option index per mover (R104: 'and a start'; every state is a legal start): PASS
+(vii) moves(z) per mover per run (P-IDEAL-MOVES §0 binder): z = 8, level 4, Xi-target: True; moves = 13 (sim.py) = 13 (box150 Gen); T = 13; 2d = 12: PASS
+ALL PASS
+== KILL_M2D_d8_mu21 (mover 15)
+(i)   IDEAL genome (R104): W-targets one level down / none at level 0, Xi-targets movers or X, start present: PASS
+(ii)  L^R_d (R110): 2d movers, movers 2l,2l+1 on level l, all degree 2, option k W-points to 2(l-1)+k: PASS d = 8
+(iii) ISO (R110: no option has Xi-target 0 or 1) - not required by L^R_d; this instance: not ISO
+(iv)  Xi-graph acyclic (edge x -> xt(x,k) for every option with a mover as Xi-target): PASS
+(v)   ranks a permutation of 0..M-1, gates distinct, parities 0/1, lev[x] = x//2, one beta per option: PASS M = 32
+(vi)  start: an option index per mover (R104: 'and a start'; every state is a legal start): PASS
+(vii) moves(z) per mover per run (P-IDEAL-MOVES §0 binder): z = 15, level 7, Xi-target: True; moves = 21 (sim.py) = 21 (box150 Gen); T = 24; 2d = 16: PASS
+ALL PASS
+== REC_d7_mu17 (mover 8)
+(i)   IDEAL genome (R104): W-targets one level down / none at level 0, Xi-targets movers or X, start present: PASS
+(ii)  L^R_d (R110): 2d movers, movers 2l,2l+1 on level l, all degree 2, option k W-points to 2(l-1)+k: PASS d = 7
+(iii) ISO (R110: no option has Xi-target 0 or 1) - not required by L^R_d; this instance: not ISO
+(iv)  Xi-graph acyclic (edge x -> xt(x,k) for every option with a mover as Xi-target): PASS
+(v)   ranks a permutation of 0..M-1, gates distinct, parities 0/1, lev[x] = x//2, one beta per option: PASS M = 28
+(vi)  start: an option index per mover (R104: 'and a start'; every state is a legal start): PASS
+(vii) moves(z) per mover per run (P-IDEAL-MOVES §0 binder): z = 8, level 4, Xi-target: True; moves = 17 (sim.py) = 17 (box150 Gen); T = 17; 2d = 14: PASS
+ALL PASS
+== REC_d8_mu24 (mover 8)
+(i)   IDEAL genome (R104): W-targets one level down / none at level 0, Xi-targets movers or X, start present: PASS
+(ii)  L^R_d (R110): 2d movers, movers 2l,2l+1 on level l, all degree 2, option k W-points to 2(l-1)+k: PASS d = 8
+(iii) ISO (R110: no option has Xi-target 0 or 1) - not required by L^R_d; this instance: not ISO
+(iv)  Xi-graph acyclic (edge x -> xt(x,k) for every option with a mover as Xi-target): PASS
+(v)   ranks a permutation of 0..M-1, gates distinct, parities 0/1, lev[x] = x//2, one beta per option: PASS M = 32
+(vi)  start: an option index per mover (R104: 'and a start'; every state is a legal start): PASS
+(vii) moves(z) per mover per run (P-IDEAL-MOVES §0 binder): z = 8, level 4, Xi-target: True; moves = 24 (sim.py) = 24 (box150 Gen); T = 25; 2d = 16: PASS
+ALL PASS
+== REC_d9_mu29 (mover 15)
+(i)   IDEAL genome (R104): W-targets one level down / none at level 0, Xi-targets movers or X, start present: PASS
+(ii)  L^R_d (R110): 2d movers, movers 2l,2l+1 on level l, all degree 2, option k W-points to 2(l-1)+k: PASS d = 9
+(iii) ISO (R110: no option has Xi-target 0 or 1) - not required by L^R_d; this instance: not ISO
+(iv)  Xi-graph acyclic (edge x -> xt(x,k) for every option with a mover as Xi-target): PASS
+(v)   ranks a permutation of 0..M-1, gates distinct, parities 0/1, lev[x] = x//2, one beta per option: PASS M = 36
+(vi)  start: an option index per mover (R104: 'and a start'; every state is a legal start): PASS
+(vii) moves(z) per mover per run (P-IDEAL-MOVES §0 binder): z = 15, level 7, Xi-target: True; moves = 29 (sim.py) = 29 (box150 Gen); T = 31; 2d = 18: PASS
+ALL PASS
+== REC_d10_mu32 (mover 15)
+(i)   IDEAL genome (R104): W-targets one level down / none at level 0, Xi-targets movers or X, start present: PASS
+(ii)  L^R_d (R110): 2d movers, movers 2l,2l+1 on level l, all degree 2, option k W-points to 2(l-1)+k: PASS d = 10
+(iii) ISO (R110: no option has Xi-target 0 or 1) - not required by L^R_d; this instance: not ISO
+(iv)  Xi-graph acyclic (edge x -> xt(x,k) for every option with a mover as Xi-target): PASS
+(v)   ranks a permutation of 0..M-1, gates distinct, parities 0/1, lev[x] = x//2, one beta per option: PASS M = 40
+(vi)  start: an option index per mover (R104: 'and a start'; every state is a legal start): PASS
+(vii) moves(z) per mover per run (P-IDEAL-MOVES §0 binder): z = 15, level 7, Xi-target: True; moves = 32 (sim.py) = 32 (box150 Gen); T = 33; 2d = 20: PASS
+ALL PASS
+== REC_d10_tower_mu30 (mover 8)
+(i)   IDEAL genome (R104): W-targets one level down / none at level 0, Xi-targets movers or X, start present: PASS
+(ii)  L^R_d (R110): 2d movers, movers 2l,2l+1 on level l, all degree 2, option k W-points to 2(l-1)+k: PASS d = 10
+(iii) ISO (R110: no option has Xi-target 0 or 1) - not required by L^R_d; this instance: ISO
+(iv)  Xi-graph acyclic (edge x -> xt(x,k) for every option with a mover as Xi-target): PASS
+(v)   ranks a permutation of 0..M-1, gates distinct, parities 0/1, lev[x] = x//2, one beta per option: PASS M = 40
+(vi)  start: an option index per mover (R104: 'and a start'; every state is a legal start): PASS
+(vii) moves(z) per mover per run (P-IDEAL-MOVES §0 binder): z = 8, level 4, Xi-target: True; moves = 30 (sim.py) = 30 (box150 Gen); T = 35; 2d = 20: PASS
+ALL PASS
+== REC_d11_mu40 (mover 15)
+(i)   IDEAL genome (R104): W-targets one level down / none at level 0, Xi-targets movers or X, start present: PASS
+(ii)  L^R_d (R110): 2d movers, movers 2l,2l+1 on level l, all degree 2, option k W-points to 2(l-1)+k: PASS d = 11
+(iii) ISO (R110: no option has Xi-target 0 or 1) - not required by L^R_d; this instance: not ISO
+(iv)  Xi-graph acyclic (edge x -> xt(x,k) for every option with a mover as Xi-target): PASS
+(v)   ranks a permutation of 0..M-1, gates distinct, parities 0/1, lev[x] = x//2, one beta per option: PASS M = 44
+(vi)  start: an option index per mover (R104: 'and a start'; every state is a legal start): PASS
+(vii) moves(z) per mover per run (P-IDEAL-MOVES §0 binder): z = 15, level 7, Xi-target: True; moves = 40 (sim.py) = 40 (box150 Gen); T = 44; 2d = 22: PASS
+ALL PASS
+== REC_d12_mu42 (mover 15)
+(i)   IDEAL genome (R104): W-targets one level down / none at level 0, Xi-targets movers or X, start present: PASS
+(ii)  L^R_d (R110): 2d movers, movers 2l,2l+1 on level l, all degree 2, option k W-points to 2(l-1)+k: PASS d = 12
+(iii) ISO (R110: no option has Xi-target 0 or 1) - not required by L^R_d; this instance: not ISO
+(iv)  Xi-graph acyclic (edge x -> xt(x,k) for every option with a mover as Xi-target): PASS
+(v)   ranks a permutation of 0..M-1, gates distinct, parities 0/1, lev[x] = x//2, one beta per option: PASS M = 48
+(vi)  start: an option index per mover (R104: 'and a start'; every state is a legal start): PASS
+(vii) moves(z) per mover per run (P-IDEAL-MOVES §0 binder): z = 15, level 7, Xi-target: True; moves = 42 (sim.py) = 42 (box150 Gen); T = 48; 2d = 24: PASS
+ALL PASS
