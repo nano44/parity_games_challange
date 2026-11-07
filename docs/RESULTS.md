@@ -13969,3 +13969,36 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   gate indices T = 1 for K = 1..7, docs/referee/scratch/xinew_logs/cube_gateT.txt). Not
   dead: a polynomial bound on T itself (IDEAL-ACYC-POLY) and G-N5-TIME, both OPEN; that such a bound must use the W-key rule is a
   READING (RESULTS R106's line), not a signed statement.
+- DE37 (2026-11-07): lane CONJECTURE MOVES-2D, as worded in P-IDEAL-MOVES §0 (claude/l-new d86adc86, docs/new/P-IDEAL-MOVES.md l. 77-78) «on
+  𝓛^R_d every z ∈ Z moves at most 2d times in every run», with «moves(x) := #{t ∈ [1, T] : x ∈ Mv_t}» and Z the movers that are the Ξ-target
+  of some option (same §0, l. 63), first stated in L-NEW box 181 (d86adc86, docs/new/N5-RISEPROOF-box181.md l. 20-21) as «on 𝓛^R_d, every
+  mover that is the Ξ-target of some option moves at most 2d times», and stated on all of 𝓛^R_d, not on ISO genomes only (Lead reading L50
+  (1), docs/DECISIONS.md), is DEAD by two measured instances. Refereed: DEAD SIGN by REFEREE 25 (docs/referee/R-P-M2D-DEAD.md c011995c) and
+  by REFEREE-2 29 (docs/referee-2/R2-P-M2D-DEAD.md 6eba8b93), each on its own simulator; line L-3 MATCHES at both (REFEREE §C add. 1
+  70ec6882; REFEREE-2 Addendum 2 59bfa452). Packet P-M2D-DEAD (L-LOWER successor 3; docs/lower/P-M2D-DEAD.md, frozen at claude/l-lower
+  87fcdf73) with fixes entries 1-2 (docs/lower/P-M2D-DEAD-fixes.md) and line L-3 (docs/lower/P-M2D-DEAD-line-L3.txt), both at claude/l-lower
+  afc85c57. Instances (experiments/lower/l3/kill/, each run from its stored start): (a) KILL_M2D_d6_mu13.json (sha1
+  5301c716f68f219bda2806f29b317c94e0ed5df0): 𝓛^R_6, Ξ-acyclic, not ISO (option (0, 0) has Ξ-target 1); stored start 000000001101; T 13;
+  mover 8 of level 4, the Ξ-target of option (4, 1), moves at every step 1-13: moves(8) = 13 > 12 = 2d. (b) KILL_M2D_d8_mu21.json (sha1
+  d96c2b3657e79c410b180580d829366cbecc9ea4): 𝓛^R_8, Ξ-acyclic, not ISO (option (10, 1) has Ξ-target 1); stored start 1101101001010010; T 24;
+  mover 15 of level 7, the Ξ-target of option (0, 0), moves at steps 1-13 and 17-24: moves(15) = 21 > 16 = 2d. Membership (DATA; R104's
+  IDEAL genome, R110's 𝓛^R_d, Ξ-acyclicity, the binder of moves): experiments/lower/l3/memcheck.py rows (i)-(vii) ALL PASS on both
+  (experiments/lower/l3/kill/memcheck.out), and both referees' own membership code from the RESULTS text (REFEREE §3; REFEREE-2 (2)).
+  Replays (DATA): the check block experiments/lower/l3/p_m2d_check.py (experiments/lower/check.sh; sha1 pins, L-LOWER's sim.py and an inline
+  second implementation with literal β-sets agree state for state, memcheck) ends «P-M2D-DEAD CHECK PASS»; L-LOWER's sim.py equals L-NEW's
+  box150 Gen state for state, trunk experiments/new/box150/check.py on both files gives XSIM 0 against box139 paths.py (L-LOWER; also in
+  L-RED's replay.out), and the P-IDEAL-MOVES movescheck counters are 0 on both stored-start runs and on all 4,096 starts of the d 6 genome
+  (experiments/lower/l3/xcheck.py, re-run by REFEREE §4). Independent replays: L-NEW box 188 (claude/l-new 6d043927,
+  docs/new/N5-KILLREPLAY-box188.md, «## 0. Answer: REPRODUCED (both)»; its addendum 42427d9e on the ISO reading); L-SI 41 (claude/l-si
+  0803d551, docs/si/N5-TROPICAL-box76.md §8: «Every (d, T, mover, moves) of the README table is reproduced»); L-RED 52 (claude/l-red
+  6e743ab1, experiments/red/r214/lower3/replay.out, sha1 4492ee28…: «max mover 8 lev 4 Xi-target 1 moves 13 2d 12 >2d» and «max mover 15 lev
+  7 Xi-target 1 moves 21 2d 16 >2d»); REFEREE 25's simulator (docs/referee/scratch/t3r_sim.py with m2d_replay.py) and REFEREE-2 29's
+  (docs/referee-2/R2-P-IDEAL-MOVES/r2moves.py with R2-P-M2D-DEAD/r2m2d.py), whose per-step tables equal the packet's §2 tables. Obstruction
+  (line L-3; a description, no separate DATA): a metronome reading the key order of the pair one level below it, which flips at steps 2-13
+  (d 6) and 1-13, 17-24 (d 8), fed by laps that the levels above level 1 replay between the level-0 moves (upward Ξ-options); the flip steps
+  were re-measured by both referees (REFEREE §5 PM-L1; REFEREE-2 Addendum 1). RESULTS R116 (P-IDEAL-MOVES) states in Corollary MOVES-EQUIV
+  that MOVES-2D would give T^R(d) ≤ 4d² − 4d + 3; with MOVES-2D false that implication is vacuous, while MOVES-EQUIV's μ(d) ≤ T^R(d) ≤ 3 +
+  (2d − 2)μ(d) and R116's other signed statements do not depend on MOVES-2D (Lead reading L50 (2)). Not claimed: nothing about T^R(d) or the
+  growth of μ; no polynomial or super-polynomial bound; nothing at d ≤ 5 (MOVES-2D there is lane DATA or open: packet §7, fixes entry 1
+  N-2); nothing about RISE-2D, N5, real parity games or TARGET.md; the lane lemmas of docs/lower/L3-families.md are not used. G-N5-TIME
+  stays OPEN.

@@ -1,4 +1,4 @@
-# Draft RESULTS DE37 (Lead; first fill 2026-11-07T06:09:58Z by date -u (subagent); on P-M2D-DEAD line L-3, docs/lower/P-M2D-DEAD-line-L3.txt, l-lower afc85c57, sha1 4c056511a9305815c756ad858d9ca4ed5977edcf) — to CHECKER C131 — NOT LANDED; to append after DE36 as the last lines of RESULTS «## Dead ends»; no GAPS change
+# Draft RESULTS DE37 (Lead; first fill 2026-11-07T06:09:58Z by date -u (subagent); on P-M2D-DEAD line L-3, docs/lower/P-M2D-DEAD-line-L3.txt, l-lower afc85c57, sha1 4c056511a9305815c756ad858d9ca4ed5977edcf) — to CHECKER C131 — NOT LANDED; to append after DE36 as the last lines of RESULTS «## Dead ends»; no GAPS change — LANDED in RESULTS 2026-11-07 08:50Z (CHECKER C131 2c6a2c1b PASS), appended after DE36; no GAPS change
 FIRST FILL. Read at the origin heads fetched 2026-11-07 05:20Z-06:10Z by date -u (claude/l-lower afc85c57, claude/l-red b14066e1,
 claude/referee 70ec6882, claude/referee-2 59bfa452 (successor 30's Addendum 2; 05:20:03Z), claude/checker 2603f321, claude/l-new and
 claude/l-si as fetched); trunk 5ec57d84 (R115 landed): RESULTS sha1 0ea360253a0e102ecf5750e187233ab750d0af04 (13,681 lines; DE36 ends at l.
