@@ -15,6 +15,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   => N5'-xi on Gamma3 super-poly needs super-poly R (gate-face flips of Odd's best response): handed to L-RED 53 via the Lead.
 - (c) RED-XI (PROVED, lane): under X0 + X1 (Howard-faithful sigma-steps), #it <= (nE+1)(n(n-1) + R_sigma + 1) + Q_tau. X1 holds on Gamma3,
   fails on general games (401/517 at n 12, 333/570 at n 24 sigma-steps faithful; x1gen191.py).
+- Addendum 1 (Lead 05:51Z; doc §6): REACH3-CYC PROVED (lane): (iii) closed by re-reading S3-START, PAD, K3, TAU3 (every genome) and
+  ESC3, W3 (proofs use only tau = pe plays / H-plays, never a beta-face) -> N5'-xi on Gamma3 = Howard on Gamma3 movers until the first
+  fallback, every genome (data howard3_191.py 0/2,167). Level-0 gates never flip (R only at level >= 1). Literature: DOM = folklore
+  (HMZ 1008.0530 Lemma 5.3/5.4); BR-SEG / CYC-COUNT / ONEP-POLY not found in the sources opened. Next: packet P-N5-XICYC.
 - Next: is R polynomial on IDEAL-CYC (proof attempt: gate-face flips need Even-won Xi-cycle closings?); TIE-restricted DOM for general
   games; L-LIT check whether ONEP-POLY / BR-SEG is known.
 
@@ -2914,6 +2918,11 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   packet rule (corrections only in new dated sections).
 
 ## Sources opened
+- (successor 59, box 191 add. 1) Hansen, Miltersen, Zwick arXiv 1008.0530 v1 (pdf sha256 f53a6b5127d95078d48c0567c3aa54483e11f026095ec20cae4f593bc8db0a69,
+  text via pdftotext): Lemma 5.3 (T v^pi0 >= v^pi1), Lemma 5.4 (SI dominated by VI, min convention), §5 «well-known ... Meister and
+  Holzbaur [27] ... (They may be folklore.)», Thm 6.5, §7 non-discounted open. Friedmann arXiv 1106.0778 (ar5iv html, first 100k chars):
+  §5 1-sink games (cycle component = sink), Lemma 5.1, Lemma 6.7, §6.4 G_n 1-sink, §6.1 / Lemma 6.1 tau(e_i) by cycle state.
+  arXiv 1210.2459 abstract only (Friedmann's examples have bounded tree/DAG-width; no one-player bound).
 - (successor 59, box 191) Asadi, Chatterjee, de Raaij, "Lower Bound on Howard Policy Iteration for Deterministic Markov Decision
   Processes", arXiv 2506.12254 (UAI 2025), html v1 opened 2026-11-07: Thm 3.1 ((n^2+7n-6)/2 iterations, 2n vertices, mean payoff,
   polynomial weights); abstract/§1 «the best known upper bound is exponential»; §1 Hansen-Zwick 2010 (m-n+1 iterations, weights

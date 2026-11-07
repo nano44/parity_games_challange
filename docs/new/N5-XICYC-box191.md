@@ -253,3 +253,71 @@ DATA (brseg_gen191.py):
   | x1gen191.py | X1 on general games |
   | climb191.py, runclimbs.sh | resumable climbs; outputs in out/ |
   | inst/ | 8 L-RED Ξ-cyclic genomes (byte copies from claude/l-red b14066e1, experiments/red/r215/out/), 3 DEAD SEG-2P genomes, switchallexp N 2-5 (SHA1SUMS) |
+
+## 6. Addendum 1 (Lead 05:51Z): (iii) closed (lane); literature; R at level 0
+### 6.1 REACH3-CYC (PROVED, lane; replaces §1.3's CONJECTURE label for (iii))
+Statement: for EVERY genome G (Ξ-cycles allowed), N5′-xi from S3 on Γ3(G) visits standard states 0, …, T3 (P-N5-REACH §3: τ = start,
+σ = start off the movers), and its mover parts s_0, …, s_T3 form a HOWARD run on Γ3. Each mover goes to a VJ-best successor of Γ3 under
+Ξσ (ties: SPEC's choice, then the larger index) and keeps σ when nothing is strictly better. Transition T3 + 1 is a fallback (S4c), and
+T3 is the first state at which no mover has a strictly better successor.
+
+Proof: P-N5-REACH §7's induction, with [RULE] replaced by N5′-xi's tie rule. Lemma by lemma (packet sha1 b7bd6937, read for Ξ-use):
+- S3-START (§4) and PAD (§5) are stated and proved for every genome. K3 (§6.1) is «every genome» and gives Iσ ∋ (K0, K1) in every
+  standard state.
+- TAU3 (§6.4) is «every genome»: Iτ = ∅. Moreover Iτ depends on τ alone (R15 (d)), so τ is kept.
+- ESC3 (§6.5), labelled IDEAL-ACYC: its proof follows H-plays only, and in H Odd plays τ = pe at every gate. An H-play from xt(g)
+  descends the W-levels to c_W; an H-play from pb_g ends in the core's odd cycle. Neither play enters a β-face, so the Ξ-graph is never
+  used: the proof holds verbatim for every genome.
+  - So σ_new = σ off the movers. The TIE sets at β_g and K0 are singletons: the unique pointwise-optimal option. So N5′-xi's tie rule
+    agrees with SPEC there, as box 190 §2.3 notes.
+- W3 (§6.6) (i)-(iii), labelled IDEAL-ACYC: its plays are (σ, τ)-plays and H-plays with τ = pe, which never use a β-face. W(β_g) uses
+  one β step and then a W-descent. So the proof holds verbatim for every genome, and TIE(x) = R(x) = {σ(x)} ∪ Iσ(x) at every mover.
+- Mover step. N5′-xi takes the Ξσ-best element of TIE(x) = R(x). R(x) contains every strictly better successor, so that is a VJ-best
+  successor (a Howard step). If no mover has a strictly better successor, then R(x) = {σ(x)} everywhere, σ_new = σ and τ_new = τ, and
+  S4c fires (Iσ ∋ (K0, K1)).
+- Not needed here: KEY3, PLAY3, SBAR3 and Fact X, which are the acyclic-only lemmas. ∎
+- Labels: «PROVED, lane» is the reading above. A referee must re-check ESC3 / W3 line by line for hidden Ξ-uses.
+- DATA (howard3_191.py, 1,000 random genomes, seeds 31 and 32, 2,167 mover-phase transitions): 0 non-standard states, 0 non-Howard
+  mover steps, 0 bad stops.
+- Link to IDEAL-CYC on Γ: by PAD (c), Γ3's values are Γ's values with padded lengths. So Howard on Γ3 = Howard on Γ (with others
+  frozen) except where two successors tie in (cycle node, P-set). That is where the 29 random divergences of §1.1 sit (DATA).
+- The §2 bounds hold for Howard on Γ3 directly, by the same proofs: movers have priority 0, pads are never cycle nodes (PAD), the
+  non-mover Even vertices are frozen in standard states, and the Odd vertices are the gates and K2. So:
+  - T3 ≤ C + R + (C + R + 1)·N, with C ≤ n3·(2M + 2), n3 = N + 7M + 10;
+  - N5′-xi's first fallback on Γ3(G) comes after T3 + 1 iterations, for every genome. The iterations after it are not bounded here
+    (DATA: 2 more on every run).
+- Consequence (PROVED, lane): «tower route dead for N5′-xi on ALL genomes» ⇔ «R is polynomial on Howard-on-Γ3 runs». That is the one
+  open quantity. L-RED 53 attacks it from the other side.
+
+### 6.2 R at level-0 gates (PROVED, lane)
+- At a level-0 gate the e-face leads to c_W, whose loop has the top even priority: the worst cycle node for Odd. c_W is reachable only
+  through level-0 e-faces, which are Odd's own choices. So Odd's optimal counterstrategy avoids every level-0 e-face: if it took one,
+  switching all of them to β would give each affected vertex a cycle node other than c_W, which is better for Odd.
+- So σ̄ is the β-face at every level-0 gate in every state, and R-flips happen only at gates of level ≥ 1. On a 1-level genome
+  (d = 1), R = 0 and T is polynomial (ONEP-POLY's bound).
+
+### 6.3 Literature check (Lead decision 2; there is no L-LIT lane; sources opened this session)
+- Hansen, Miltersen, Zwick, «Strategy iteration is strongly polynomial for 2-player turn-based stochastic games with a constant
+  discount factor», arXiv 1008.0530 v1 (pdf sha256 f53a6b51…; JACM 60(1) 2013).
+  - Lemma 5.3: T v^π0 ≥ v^π1, one strategy-iteration step is dominated by one value-iteration step, in their minimisation convention.
+  - Lemma 5.4: v^k ≤ u^k, strategy iteration dominates value iteration.
+  - §5: «The following lemmas for the case of MDPs are well-known and appear, e.g., in Meister and Holzbaur [27]. The proofs for the
+    2-player case are essentially identical. (They may be folklore.)»
+  - Thm 6.5: O((m/(1−γ)) log(n/(1−γ))) iterations.
+  - §7: the non-discounted case is open, and Friedmann's lower bound is exponential.
+  - So DOM is the VJ-valuation analogue of this known domination lemma (discounted, real values). BR-SEG's segment argument
+    (Bellman-Ford depth of simple paths to a FIXED cycle node, cut at changes of Odd's best response) and CYC-COUNT were NOT FOUND in
+    the sources opened.
+- Friedmann, «An Exponential Lower Bound for the Latest Deterministic Strategy Iteration Algorithms», arXiv 1106.0778 (LMCS 2011),
+  ar5iv html read for these points only:
+  - §5 defines 1-sink games: every valuation's cycle component is the sink, so C = 0.
+  - Lemma 6.7 / §6.4: the lower-bound games G_n are 1-sink games.
+  - §6.1: Odd's choice at the e_i nodes is set by the cycle state (closed → h_i, open → d_i, Lemma 6.1).
+  - Consistent with BR-SEG: there the exponential runs must consist of best-response changes. The paper does not state such a
+    decomposition, and does not discuss one-player games.
+- Asadi, Chatterjee, de Raaij, arXiv 2506.12254 (§5 above): Howard on mean-payoff DMDPs, best known upper bound exponential. That is a
+  different valuation, so it does not conflict with ONEP-POLY.
+- NOT opened: Puterman's MDP book (not accessible here); Meister-Holzbaur 1986 (only as cited by HMZ); Friedmann's thesis; Hansen-Zwick
+  2010.
+- Search «strategy improvement one-player parity polynomial»: no source found that states ONEP-POLY or BR-SEG.
+- Verdict: «not found in the sources opened». The DOM step itself is folklore (HMZ §5).
