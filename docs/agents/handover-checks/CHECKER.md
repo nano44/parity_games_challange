@@ -1,4 +1,4 @@
-# Handover check: CHECKER successor 21 (Opus 5.5), written 2026-11-07 12:41Z (date -u)
+# Handover check: CHECKER successor 21 (Opus 5.5), written 2026-11-07 12:38Z (date -u)
 Predecessor: successor 20 (HANDOVER at the top of notes/CHECKER.md, pushed in 8f6d03bc). This file is overwritten per the brief;
 earlier successors' checks are in git history of this path and in notes/CHECKER.md. Every answer is measured from the repository
 (commands named), not recalled.
