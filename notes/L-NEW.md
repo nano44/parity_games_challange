@@ -12,7 +12,7 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   xcheck190.py: 10,000 random + 15 families + C14 all agree and correct; BIT-G transfers (R57 (c)); OUT-G (R57 (b)) gives correctness;
   barrier DRAFT for L-LIT; plot out/xi_growth.png (needs `pip install matplotlib` in a fresh container).
 ### OPEN
-- Byte tests at both referees: P-N5-REACH L-2, P-IDEAL-MOVES L-5. A returned item -> next fixes entry + next line by script (pattern:
+- Byte tests: P-N5-REACH L-3 (adfbb3b8, fix round 2, RC-2 by Lead ruling Option B) at both referees; P-IDEAL-MOVES L-5 MATCHES at both. A returned item -> next fixes entry + next line by script (pattern:
   exact old -> new strings once each; pins in reach.pins / check.sh block «P-IDEAL-MOVES»; packets stay frozen).
 - N5'-xi: L-RED 52 is the adversary (Lead 04:00Z). CANDIDATE, not a claim; G-N5-TIME OPEN. Next if the Lead wants it: L-LIT barrier
   sign-off, larger N, L-COMP review of n5bxi.py.

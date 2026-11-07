@@ -45,3 +45,25 @@ file P-N5-REACH-line-L<k>.txt). Where an entry and the frozen packet differ, the
     that start pair is DEAD»
   - W-2: «outside {K2, K3, c_X}» → «outside K2, K3 and the unused even self-loop of priority 2»
 - Pins: experiments/new/box189/reach.pins gains this file and L-2; check.sh block «P-N5-REACH» pins reach.pins' new sha1.
+
+## Entry 2 (2026-11-07 from 04:2xZ by date -u; L-NEW successor 58; Lead relay 04:02Z of fix round 2, Lead ruling 04:15Z)
+- Sources (SHAs as relayed by the Lead; not yet on origin when this entry was written): REFEREE claude/referee cc9f4afd,
+  docs/referee/R-P-N5-REACH.md §C: byte test of L-2 MATCHES; meaning NOT YET (RC-1, RC-2). REFEREE-2 claude/referee-2 c420666d,
+  docs/referee-2/R2-P-N5-REACH.md Addendum 1: MATCHES after W-3. The strings below are as relayed by the Lead (04:02Z, 04:15Z). No
+  statement, proof, tool, output or instance of the packet changes; packet and entry 1 unchanged. This entry carries no proof.
+- W-3 (REFEREE-2) and RC-1 (REFEREE), ACCEPTED: the PAD count skips the unused even self-loop of priority 2 (c_X; reachcheck.py
+  gamma3_counts: «if v == cX: continue»), while L-2's clause read as every vertex. RC-1 is RESOLVED BY W-3 (Lead ruling 04:02Z: W-3's
+  wording reuses W-2's term). Packet §5 (b) states PAD for v ≠ c_X, and §10 states the counter's unit as «vertex ≠ c_X»; only the line
+  lacked the exception.
+- RC-2 (REFEREE), ACCEPTED with a change by Lead ruling (04:15Z, «Option B»). REFEREE's text was «1 (Odd, start edge) or 0, the pads
+  indexed after the game's vertices in edge order, has an N5 run». Applied instead: «… in (a, b) order …». Reason: the packet's wording
+  (§9 l. 272 «indices n, n + 1, … in (a, b) order»; subdiv.pad: E = sorted((a, b))); «edge order» is ambiguous (it could be read as the
+  input order). REFEREE's predicted sha1 for L-3 therefore does NOT apply; both referees byte-test the result below.
+- Line L-3 (docs/new/P-N5-REACH-line-L3.txt, sha1 adfbb3b8219026b23a80b2081a3c227c35730451, 1 line with its newline, 3,748 bytes,
+  59 «(» = 59 «)», depth never negative, 0 «|», no «c_X»): L-3 = L-2 (4de27b32) with exactly these two replacements, applied by script;
+  each old string occurs exactly once in L-2; no other byte changes:
+  - R1 (W-3, resolves RC-1): «PAD 0 on 693,030 (state, vertex, world) triples of the S3 runs on Γ3,» → «PAD 0 on 693,030 (state,
+    vertex, world) triples of the S3 runs on Γ3 (every vertex but the unused even self-loop of priority 2),»
+  - R2 (RC-2, Lead ruling): «1 (Odd, start edge) or 0 has an N5 run» → «1 (Odd, start edge) or 0, the pads indexed after the game's
+    vertices in (a, b) order, has an N5 run»
+- Pins: experiments/new/box189/reach.pins gains L-3 and this file's new sha1; check.sh block «P-N5-REACH» pins reach.pins' new sha1.
