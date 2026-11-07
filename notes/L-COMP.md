@@ -10,7 +10,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   SL41_d28.txt, sha1 c1b46c31 checked), GUARD 5, LV 6 (score F(6)), FROZENBELOW=12 (no field of movers 0-11 = pairs 0-5 mutated), seeds
   350000+. Re-measured: rclimb30 T 290 F 2 6 14 30 62 126 222 158 112 80 ...; replay30 the same; slack (SLACKDBG=7) 0 violations j 1-5.
   d 32 variant out/seed_SL41_d32.txt (4 TOP-ADD, sha1 c2012dcd; same T/F) prepared, NOT run (no free core).
-- B_d32: resumed at unit 6 (seed 310006), best F(6) 190. Query 2: from c0s0p1q0. xval_d3 cube 3 was already done (xval_d3.txt, b317e04a).
+- 11:39Z (Lead 11:42Z): B_d32 STOPPED (resume: unit 7 = seed 310007, out/B_d32.log). D_d28: NMIN 2 / NMAX 3 from unit 1. D_d28b (B's core):
+  fuel-biased (rclimb30 env BIAS/BIAS19/BIAS19P/BIASR/BIASP; relaunch30.sh comments), seeds 360000+; from unit 4 NMAX 4, BIAS19P 0.1
+  (Lead 12:36Z). Regression: defaults byte-identical to the original under SCORE=T (8 improving steps) and LV=7.
+- B_d32 (earlier): resumed at unit 6 (seed 310006), best F(6) 190. Query 2: from c0s0p1q0. xval_d3 cube 3 was already done (xval_d3.txt, b317e04a).
 
 ## FINAL (successor 9, 2026-11-07 05:2xZ by date -u): query 2 handed to L-COMP 10 (finer split); proofs in this scratchpad are not reachable from other sessions.
 - At hand-off: query 2 CERTIFIED cubes 1, 2, 3, 5, 6, 7 and sub-cube c4s1 (log/q2_cert/); open: c0s0..c0s3, c4s0, c4s2, c4s3 (restarts every

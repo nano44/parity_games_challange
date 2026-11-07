@@ -19,4 +19,5 @@ ENVX="FROZENBELOW=12 NMIN=2 NMAX=3" up D_d28 D_d28 out/seed_SL41_d28.txt 350000 
 # BIASP 0.5 of proposals carry one fuel edit on a mover of the Xi-closure (both options) of 22 and of 9:1's target 54 in SL41, movers >= 12
 # (static set from the seed); 1/4 of fuel edits on mover 19 (L-LOWER's candidate supplier, option 1 rank 95); rank swap above BIASR 87 /
 # parity flip / re-target to an owner of a rank > 87 option. Seeds 360000+.
-ENVX="FROZENBELOW=12 NMIN=2 NMAX=3 BIAS=14,15,16,19,20,21,22,24,25,26,29,30,32,34,35,36,39,40,41,43,47,49,50,52,54 BIAS19=19 BIASR=87 BIASP=0.5" up D_d28b D_d28b out/seed_SL41_d28.txt 360000 6 5 6
+# 12:3xZ (Lead 12:36Z: L-LOWER c7c1419d retall2.py, 144,011 two-edit genomes with mover 19: none > 222): from unit 3 NMAX 4, BIAS19P 0.1
+ENVX="FROZENBELOW=12 NMIN=2 NMAX=4 BIAS19P=0.1 BIAS=14,15,16,19,20,21,22,24,25,26,29,30,32,34,35,36,39,40,41,43,47,49,50,52,54 BIAS19=19 BIASR=87 BIASP=0.5" up D_d28b D_d28b out/seed_SL41_d28.txt 360000 6 5 6

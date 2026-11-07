@@ -85,7 +85,7 @@ int main(int argc,char**argv){ rd(argv[1]); rs+=atol(argv[2])*7919; long iters=a
   if(getenv("FIX")){ char*p=strdup(getenv("FIX")); for(char*t=strtok(p,",");t;t=strtok(NULL,",")) fixo[atoi(t)]=1; }
   if(getenv("NOMUT")){ char*p=strdup(getenv("NOMUT")); for(char*t=strtok(p,",");t;t=strtok(NULL,",")) {int x=atoi(t); nomut[x]=1; fixo[2*x]=fixo[2*x+1]=1;} }
   int NMIN=getenv("NMIN")?atoi(getenv("NMIN")):1, NMAX=getenv("NMAX")?atoi(getenv("NMAX")):3; if(NMAX<NMIN) NMAX=NMIN;
-  int biasm[MAXN], nbias=0, bias19=getenv("BIAS19")?atoi(getenv("BIAS19")):-1, biasr=getenv("BIASR")?atoi(getenv("BIASR")):87; double biasp=getenv("BIASP")?atof(getenv("BIASP")):0.5;
+  int biasm[MAXN], nbias=0, bias19=getenv("BIAS19")?atoi(getenv("BIAS19")):-1, biasr=getenv("BIASR")?atoi(getenv("BIASR")):87; double biasp=getenv("BIASP")?atof(getenv("BIASP")):0.5; double bias19p=getenv("BIAS19P")?atof(getenv("BIAS19P")):0.25;
   if(getenv("BIAS")){ char*p=strdup(getenv("BIAS")); for(char*t=strtok(p,",");t;t=strtok(NULL,",")){ int x=atoi(t); if(x<FB||x>=N){ fprintf(stderr,"BIAS mover %d outside [FB,N)\n",x); return 1; } biasm[nbias++]=x; } }
   if(bias19>=0 && (bias19<FB||bias19>=N)){ fprintf(stderr,"BIAS19 outside [FB,N)\n"); return 1; }
   double temp=getenv("ANNEAL")?atof(getenv("ANNEAL")):0; const char*out=getenv("OUT")?getenv("OUT"):"/dev/null";
@@ -99,7 +99,7 @@ int main(int argc,char**argv){ rd(argv[1]); rs+=atol(argv[2])*7919; long iters=a
        uniformly; with prob 1/4 w = BIAS19 if set): option m = 2w + k (k random); (a) prob 1/2: swap br[m] with a random option m2 >= 2FB
        whose rank > BIASR (m gets a rank above BIASR); (b) prob 1/2: flip bp[m]; (c) prob 1/2: re-target xt[m] to a random mover that owns
        an option m2 >= 2FB of rank > BIASR; at least one of (a)-(c) is applied. Movers of BIAS must be >= FB (checked at start). */
-    if(nbias && (rnd()%1000000) < (unsigned long long)(biasp*1e6)){ int w = (bias19>=0 && rnd()%4==0)? bias19 : biasm[rnd()%nbias]; int m=2*w+rnd()%2;
+    if(nbias && (rnd()%1000000) < (unsigned long long)(biasp*1e6)){ int w = (bias19>=0 && (rnd()%1000000) < (unsigned long long)(bias19p*1e6))? bias19 : biasm[rnd()%nbias];   /* BIAS19P default 0.25 = the original 1/4 */ int m=2*w+rnd()%2;
       int hi[MAXN*2], nh=0; for(int m2=2*FB;m2<2*N;m2++) if(br[m2]>biasr && m2!=m) hi[nh++]=m2; int done=0;
       while(!done){ if(nh && rnd()%2){ int m2=hi[rnd()%nh]; int t=br[m];br[m]=br[m2];br[m2]=t; done=1; }
         if(rnd()%2){ bp[m]^=1; done=1; }
