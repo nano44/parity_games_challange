@@ -221,7 +221,8 @@ statement is about the step sequence of the IDEAL model only (diff in §8).
   mover 8 a metronome (30). RECT_d11_T59 (d 11, T 59, F 2 6 14 30 31 …): the same tower, a longer run. Targeted climbs for F(4) = 62
   (psearch LV=4, d 11-13): F(4) = 31 at d 11, then 39 at d 13: kill/RECT_d13_T66.json (sha1 4eb7e76d…; d 13, T 66, F 2 6 14 30 39
   24 16 15 9 2 3 0 1; sim.py = box150 Gen, XSIM 0, TOPO 0, movescheck counters 0). T records of this box: 59 at d 11, 66 at d 13
-  (≈ 5d; L-RED's T^R records 16, 22, 26 at d 5, 6, 7).
+  (≈ 5d; L-RED's T^R records 16, 22, 26 at d 5, 6, 7). Then (T-maximising climb, same checks): kill/RECT_d13_T99.json (sha1 8946c0ff…;
+  d 13, T 99 ≈ 7.6d, F 2 6 14 30 37 22 16 16 10 4 5 6 5) and kill/RECT_d14_F46.json (sha1 d3c9b701…; d 14, T 65, F(4) = 46). CANDIDATE.
 - Fuel analysis (experiments/lower/l3/fuel.py: for each change of π(x), the movers on the newly preferred option's chain that moved):
   - Levels 3, 4 are self-timed: (6, ·) → (4, 5), (7, ·) → (5, 4), (8, ·) → (7, 6); every change of their π is caused by a move of the
     pair below (or of a mover on its chain).

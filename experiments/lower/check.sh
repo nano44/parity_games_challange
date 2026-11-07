@@ -43,3 +43,4 @@ print("L-LOWER CHECK PASS")
 PY
 # BOX L3 (successor 3): family A, simulator cross-check vs box150 Gen, TRI/FEEDBACK lemma checks
 timeout 100 python3 -I l3/l3check.py
+timeout 100 python3 -I l3/p_m2d_check.py

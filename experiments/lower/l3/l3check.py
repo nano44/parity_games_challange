@@ -58,4 +58,8 @@ print("T record: kill/RECT_d11_T59.json: d 11, T 59; box150 Gen agrees")
 p = os.path.join(H, "kill", "RECT_d13_T66.json"); assert hashlib.sha1(open(p, "rb").read()).hexdigest() == "4eb7e76d734503a0e7a5b70c1ac58cd0b610daa8"
 G = json.load(open(p)); S = run(G, G["start"]); assert len(S) - 1 == 66 and [tuple(s) for s in S] == [tuple(s) for s in Gen(G).run(G["start"])[0]]
 print("T record: kill/RECT_d13_T66.json: d 13, T 66; box150 Gen agrees")
+for f, sh, TT in (("RECT_d13_T99.json", "8946c0ff80d45d766726c645f53f546e1420824d", 99), ("RECT_d14_F46.json", "d3c9b701c59f16f25e300f5b9d690a734527561c", 65)):
+    p = os.path.join(H, "kill", f); assert hashlib.sha1(open(p, "rb").read()).hexdigest() == sh, f
+    G = json.load(open(p)); S = run(G, G["start"]); assert len(S) - 1 == TT and [tuple(s) for s in S] == [tuple(s) for s in Gen(G).run(G["start"])[0]], f
+    print(f"T record: kill/{f}: d {G['N'] // 2}, T {TT}; box150 Gen agrees")
 print("L3 CHECK PASS")
