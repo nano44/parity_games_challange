@@ -1,0 +1,9 @@
+start (0, 1) C 1
+iter 0 R 0 T 2 C 2
+iter 8 R 0 T 3 C 1
+iter 43 R 1 T 4 C 2
+iter 61 R 1 T 5 C 2
+iter 249 R 2 T 4 C 2
+iter 423 R 2 T 5 C 2
+iter 4274 R 2 T 6 C 3
+final d 2 seed 2 R 2 T 6

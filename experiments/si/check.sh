@@ -1252,3 +1252,6 @@ echo "si (box 80: TOWER stretch): PASS"
 # box 81 (BRIDGE: ascent census on IDEAL-CYC / Gamma3; BETA-ACYC, ACYC-LIN; xcheck; docs/si/box81-bridge.md)
 bash box81/check81.sh
 echo "si (box 81: BRIDGE): PASS"
+# box 82 (CYCLIC TOWERS: HS2_d3 Xi-cycle scans, climbs, CAP-R; docs/si/box82-cyctower.md)
+bash box82/check82.sh
+echo "si (box 82: CYCLIC TOWERS): PASS"

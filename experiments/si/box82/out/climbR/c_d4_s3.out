@@ -1,0 +1,18 @@
+start (0, 1) C 0
+iter 3 R 1 T 4 C 3
+iter 9 R 1 T 5 C 2
+iter 19 R 1 T 6 C 2
+iter 73 R 1 T 7 C 3
+iter 120 R 2 T 5 C 3
+iter 172 R 3 T 5 C 2
+iter 194 R 3 T 6 C 2
+iter 257 R 3 T 7 C 2
+iter 302 R 3 T 8 C 2
+iter 609 R 4 T 9 C 3
+iter 649 R 4 T 10 C 4
+iter 1753 R 5 T 9 C 3
+iter 1865 R 6 T 9 C 3
+iter 2076 R 6 T 10 C 2
+iter 8262 R 6 T 11 C 3
+iter 8340 R 7 T 11 C 2
+final d 4 seed 3 R 7 T 11

@@ -19,6 +19,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - SLIP (Lead 23:06Z): I reported P-ACYC's sha1 as 6b699f93 (taken BEFORE my last timestamp edit); the frozen file at e3ac4b06 is
   0e9edcfda3e3a68dee63ff01427d526b14c67bc4 (= pacyc.sha1). Check now: quote a sha1 only from `git show <frozen SHA>:path | sha1sum`
   run after the commit.
+- BOX 82 milestone 1: docs/si/box82-cyctower.md; experiments/si/box82 (scan82/climb82/anal82, check82.sh ~1 s, wired). PROVED CAP-R
+  (h capped levels under Howard => R >= (2^(h+1)-1)/(N+1) - C - 1). DATA: HS2_d3 + 1-2 Xi-edits (956 cyclic): R <= 2, T <= 5 < 6;
+  climbs d 2-6 R 2,5,7,9,10; Howard capped height 2 (d 3-5), 3 at d 6 (best_kf_d6_s1, T 20, R 6); best_R_d5_s3 has 2-ascent plays.
+  Climb scratch copies: scratchpad c82/, kf/ (frozen copies in box82/out). Next: hand gadget (one R-step at l+1 re-arms two at l).
 - NEXT: BOX 82 CYCLIC TOWERS (Lead 22:35Z): can tower doubling be carried by Odd (R > 0) in a Xi-cyclic genome? Start h = 2; baseline
   L-LOWER 8's HS2_d3 (claude/l-lower experiments/lower/l8/rec/HS2_d3.txt, sha1 8ddebddc...).
 
