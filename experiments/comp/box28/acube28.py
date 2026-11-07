@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """L-COMP box 28 (copy of box27/acube.py; changes: ROOTS env = list of root cube ids (default: the 8 PAIR-SWAP roots of d 4),
-state in box28/cubes/TAG, cnf.py from box27, SAT stop does not pkill). Box 27 text follows: adaptive, restart-safe cube driver for cnf.py ("T >= L" queries).
+state in box28/cubes/TAG, cnf.py from box27 or ENC=cnf2 (box28/cnf2.py), SAT stop does not pkill). Box 27 text follows: adaptive, restart-safe cube driver for cnf.py ("T >= L" queries).
 Roots: SYM=1 (s_0(u_0) = s_0(v_0) = 0, sound relabelling, ENCODING.md §1) x every assignment of s_0 of movers 2..2d-1.
 Each cube is solved under a wall-clock limit TLIM (s, default 1200); on timeout it is SPLIT into children by the Xi-target of the
 next option in a fixed order (options (x, k) in mover order, all values of its Xi-target domain: exit or each allowed mover), so
@@ -13,6 +13,8 @@ import os, sys, json, time, subprocess
 from concurrent.futures import ThreadPoolExecutor, as_completed
 HERE = os.path.dirname(os.path.abspath(__file__))
 B27 = os.path.join(HERE, "..", "box27"); sys.path.insert(0, B27)
+ENC = os.environ.get("ENC", "cnf")   # "cnf" = box27/cnf.py (R112-audited); "cnf2" = box28/cnf2.py (not audited)
+ENCPATH = os.path.join(B27, "cnf.py") if ENC == "cnf" else os.path.join(HERE, "cnf2.py")
 TAG, d, L = sys.argv[1], int(sys.argv[2]), int(sys.argv[3])
 DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "cubes", TAG); os.makedirs(DIR, exist_ok=True)
 TLIM = float(os.environ.get("TLIM", "1200")); PAR = int(os.environ.get("PAR", "4"))
@@ -37,7 +39,7 @@ def solve(cid):
     logf = os.path.join(DIR, cid + ".log"); t0 = time.time()
     try:
         with open(logf, "w") as lf:
-            subprocess.run([sys.executable, os.path.join(B27, "cnf.py"), str(d), str(L), os.path.join(DIR, cid + ".json")],
+            subprocess.run([sys.executable, ENCPATH, str(d), str(L), os.path.join(DIR, cid + ".json")],
                            env=env, stdout=lf, stderr=subprocess.STDOUT, timeout=TLIM)
     except subprocess.TimeoutExpired:
         dt = time.time() - t0; n = ndom(len(ch))
@@ -66,7 +68,7 @@ def summary():
         else: st["open"] += 1
     nsplit = sum(1 for f in os.listdir(DIR) if f.endswith(".split"))
     ans = "SAT" if st["SAT"] else ("UNSAT" if st["open"] == 0 else "OPEN")
-    print(f"TAG {TAG} d {d} L {L} P {P} W {W}: leaves {len(lv)} SAT {st['SAT']} UNSAT {st['UNSAT']} open {st['open']} splits {nsplit} -> {ans}", flush=True)
+    print(f"TAG {TAG} ENC {ENC} ISO {os.environ.get('ISO')} d {d} L {L} P {P} W {W}: leaves {len(lv)} SAT {st['SAT']} UNSAT {st['UNSAT']} open {st['open']} splits {nsplit} -> {ans}", flush=True)
     return ans
 
 if __name__ == "__main__":
