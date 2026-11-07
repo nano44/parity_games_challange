@@ -1,6 +1,10 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## FINAL (successor 9, 2026-11-07 05:2xZ by date -u): query 2 handed to L-COMP 10 (finer split); proofs in this scratchpad are not reachable from other sessions.
+- At hand-off: query 2 CERTIFIED cubes 1, 2, 3, 5, 6, 7 and sub-cube c4s1 (log/q2_cert/); open: c0s0..c0s3, c4s0, c4s2, c4s3 (restarts every
+  ~40 min on 11-07 killed every multi-hour drup check). Lead 05:18Z: park for good; no relaunch. All my jobs stopped.
+
 ## HANDOVER -- successor 9 PARKS (session_01V5yGRVtZknivpYHCjzoA9y, ~580k context), 2026-11-07 01:1xZ by date -u
 ### DONE (all pushed; records in the repo)
 - P-TR3 (T^R(3) <= 8, = 8): packet experiments/comp/box27/P-TR3.md (frozen d03d8370, sha1 cab32c0e, 125 l.), fixes entries 1-2
