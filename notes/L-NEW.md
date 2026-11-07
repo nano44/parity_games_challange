@@ -15,6 +15,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - Open core: OVT-POLY (overtakes of two monotone truncated values of the fixed pair (y_g, xt_g)); TIE-PERSIST for SEG-T.
 - Running: runclimbs192.sh (4 climbs, 40-min slices, resumable: rerun the script); tieclimb192.py queued (SEG-T climb).
 - Next: two-level genomes (d = 2, R ~ N already): OVT there; SEG-T climb.
+- Addenda 9-10 (d2295934 +): MERGE side-line erratum (RET); OVT-DV checked (correct; F4 citation unnecessary); E-DOM data IN <= 3
+  (dv192.py), CONJECTURE IN-BOUND; e-set order = R95 PREFIX-MON, height 2^M - 1, so the open core is realisable-e-set height (L-RED's
+  third-bit question). Trunk merged into l-new at 89a033ef (verify.yml timeout 60): CI 6772 green.
 - Addenda 4-8: DEAD CHARGE-RET, SRC-DEC, VCYC-STEP, TIE-PERSIST (tiep192.py, DEAD_SEGT_n20 window 3-10); DOM-T WITHDRAWN as stated
   (used F4; F4' form proved, A8); erratum cR_d2_w8 versions (A6). CI red fixed (53872ba7); run 6737 on a2db977d CANCELLED at the 30-min job
   timeout (Gate 29.7 min), reported to the Lead.

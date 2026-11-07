@@ -391,3 +391,22 @@ to the switch that completed the return route. It is not proved, and it would ne
   - That target is the number of distinct sets of e-vertices on v's play, a lex-monotone walk over subsets of the e's (R95 k-prefix
     form). By E-DOM it is the top layer of the value. It is still not bounded here; D_E ≤ T + 1 trivially.
   - Unit: values / changes per vertex. Set: the five instances listed. Scope: IDEAL-CYC.
+
+## Addendum 10: the lexicographic order on e-sets (L-RED 54 suggestion, R217 §11); what it can and cannot give
+- PROVED (lane, immediate). Under E-DOM, while Λ(v) is fixed, the e-part of Π_t(v) is ⊴-non-decreasing in the set order: a larger set
+  is better iff the most relevant e of the symmetric difference lies in it (all e's even). Reason: by E-DOM the e-part is the top layer
+  of the value below c_W, K0, K3, which are common to equal-Λ values; truncation of a lexicographic order is monotone (F1). This is RESULTS
+  R95 PREFIX-MON (k = the number of e's), read on IDEAL-CYC.
+- So D_E(v) ≤ 1 + (the height of the e-set order restricted to the e-sets v's plays can carry), per interval of fixed Λ(v).
+- The order on ALL subsets of the M e-vertices has height 2^M − 1, so monotonicity alone gives nothing polynomial:
+  - L-RED's RS2 (a 2-bit increment {b0} → {b1} → {b1, b0} under E-DOM, verified 4 ways) is a monotone step of exactly this order;
+  - a binary counter is a monotone walk in it.
+- A polynomial bound must therefore come from which e-sets are REALISABLE in sequence on one vertex's plays. Equivalently: can the
+  counter extend past 2 bits under E-DOM? That is L-RED's open third-bit question (LEAK-ARCH covers Friedmann's architecture H1-H3 only).
+- READING (not proved): the levels structure (an e at level ℓ leads to its fixed W-target at level ℓ − 1; going up again needs a Ξ-jump
+  through a β) bounds the e's on one play only by the number of gates, so it does not cut the height by itself.
+  - The candidate cut is E-DOM-CHOICE + LEAK-ARCH: a higher e entering B′ forces Odd's choice regardless of β's, which is what kills
+    delayed carries.
+  - A proof would need «no three bits», in some form, for every architecture, not only H1-H3.
+- Status unchanged: R on Γ3-Howard NOT proved polynomial. Open core = «D_E(v) polynomial» (realisable-e-set height) + CONJECTURE
+  IN-BOUND.
