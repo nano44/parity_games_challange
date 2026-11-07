@@ -153,6 +153,12 @@ TARGET.md claim (diff in §8).
     event from ABOVE (lpaudit.py). Found by the CHAIN=4 climb (rclimb.c, __int128) from the F(4) = 61 genome. So S(4) ≤ 20 (S as in L-SI
     41 §9: least d with h consecutive doubling levels). Levels 1-4 here start from F(0) = 0; the Lead's «fifth level» (F 2 6 14 30 62,
     levels 1-4 over F(0) = 2) is still open (best 61).
+  - THE FIFTH DOUBLING LEVEL (CANDIDATE, Lead's target «F(4) = 62»): rec/H5_d20_F62.json (sha1 2204079d…), 𝓛^R_20, Ξ-acyclic, stored
+    start, T 136, F = 2 6 14 30 62 94 63 32 16 8 …: levels 1, 2, 3, 4 exact doubling over F(0) = 2 (R113 T-BOUND's per-level cap
+    F(l) = 2^(l+2) − 2 attained on levels 0-4); moves 1/1, 3/3, 7/7, 15/15, 31/31 on pairs 0-4, and pairs 5, 6 move 31/31 too. Checks:
+    l3/sim.py = box150 Gen (SIM-MISMATCH 0, movescheck 0), memcheck (i)-(vi) PASS, DOUBLE-EQ′ 0 violations, LATE-PREF 0 violations on
+    25 windows (every window event from above). Found by the LV=5 climb (rclimb.c) from DBL4_d20_F30. T 136 ≈ 6.8d (the T record at d 15
+    was 114). Not yet replayed by another lane.
   - forced crossed pair 4 (9 → (6, 7), 4's option re-pointed; NOMUT 6-9; three annealing schedules, 2·10^8 proposals): F(4) ≤ 34.
   - forced CROSS pair 2 under a targeting pair 3 (seedCR2): F 2 4 10 20 …: level 3 stays below doubling (CR2_d10.json).
 - Relaxation (drv.c, EB = 2, block of the d 14 tower): climbs reach Fmax₂ F(4) = 30 (below the real 52 found by the real climb; the
