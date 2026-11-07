@@ -164,6 +164,9 @@ TARGET.md claim (diff in §8).
     31/31, 63/63 on pairs 0-5. Checks: l3/sim.py = box150 Gen (SIM-MISMATCH 0, movescheck 0), memcheck (i), (ii), (iv)-(vi) PASS,
     DOUBLE-EQ′ 0, LATE-PREF 0 violations on 56 windows (all events from above). Found by the LV=5 climb from H5 + 4 TOP-ADD levels (d 24).
     S(5) ≤ 20, S(6) ≤ 24 (h counted over F(0) = 2: S(h) := least d with levels 1..h−1 doubling); T 136 → 209 for +4 levels.
+  - Replays (relayed by the Lead 07:14Z): H5, H6 reproduced by L-SI 41 and L-RED 53; RECF4_d20_F60, DBL4 by L-RED. Seventh level: a
+    guarded climb (GUARD=5, LV=6) at d 28 keeps F 2 6 14 30 62 126 and reaches F(6) = 190 (254 needed) — no seventh level yet.
+    rclimb.c's __int128 values overflow at d ≥ 32 (ranks ≥ 127; L-COMP 10): every record here has d ≤ 24.
   - H5 → H6 is NOT a local rewiring (DATA, diffg.py on rec/H5_lift_d24.txt = H5 + 4 TOP-ADD levels, the climb's seed, against
     rec/H6_d24_F126.txt): Ξ-targets changed 89 of 96, parities 42 of 96, gate orders 34 of 96, start bits 19 of 48; the two rank orders
     share a longest common subsequence of 17 of 96. The annealed climb drifts through neutral changes, so the diff gives no rule

@@ -1,0 +1,79 @@
+sha1 b995fff21c1f8558eb3e1868ec5ce59a3d4ccfb3 G7_best_d28.txt; c1b46c319fd614e5bcb0909b616a9f2833e0dfee SL41_d28.txt
+start G7 11110011110011000111100110010001000101011001000100001100 | start SL41 11110011110011000111110111010110001111111000010111100110
+== I-ROOM G7_best_d28 T 270 F [2, 6, 14, 30, 62, 126, 222, 158, 126, 80, 32, 28, 20, 8, 8, 8, 8, 7, 7, 6, 5, 2, 2, 1, 2, 1, 2, 2] capped 0-5 True dbl 1-5 [True, True, True, True, True] dbl6 False
+  level 1 windows 3 need 6 PULSE viol 0 GAP viol 0 PULSE lengths {} GAP lengths {} PULSE openers {} GAP openers (earlier window W) {}
+  level 2 windows 7 need 5 PULSE viol 0 GAP viol 0 PULSE lengths {} GAP lengths {} PULSE openers {} GAP openers (earlier window W) {}
+  level 3 windows 15 need 4 PULSE viol 0 GAP viol 0 PULSE lengths {} GAP lengths {} PULSE openers {} GAP openers (earlier window W) {}
+  level 4 windows 31 need 3 PULSE viol 0 GAP viol 0 PULSE lengths {} GAP lengths {} PULSE openers {} GAP openers (earlier window W) {}
+  level 5 windows 63 need 2 PULSE viol 16 GAP viol 14 PULSE lengths {1: 16} GAP lengths {1: 14} PULSE openers {'first': 1, ((9, 1),): 15} GAP openers (earlier window W) {((9, 1),): 14}
+    GAP intervals [u2(W), u1(W+)-1] cross into W+ (u1(W+) > opening of W+): 0 of 14
+  level 6 windows 127 without exactly one move of each of 12, 13: 48 move-count profile {(12, 13): 79, (13,): 16, (): 16, (12,): 16}
+== I-FUEL SL41_d28 T 290 F [2, 6, 14, 30, 62, 126, 222, 158, 112, 80, 33, 32, 31, 31, 31, 32, 15, 8, 9, 4, 3, 3, 3, 2, 0, 0, 0, 0] capped 0-5 True dbl 1-5 [True, True, True, True, True] dbl6 False
+  level 1 windows 3 need 6 PULSE viol 0 GAP viol 0 PULSE lengths {} GAP lengths {} PULSE openers {} GAP openers (earlier window W) {}
+  level 2 windows 7 need 5 PULSE viol 0 GAP viol 0 PULSE lengths {} GAP lengths {} PULSE openers {} GAP openers (earlier window W) {}
+  level 3 windows 15 need 4 PULSE viol 0 GAP viol 0 PULSE lengths {} GAP lengths {} PULSE openers {} GAP openers (earlier window W) {}
+  level 4 windows 31 need 3 PULSE viol 0 GAP viol 0 PULSE lengths {} GAP lengths {} PULSE openers {} GAP openers (earlier window W) {}
+  level 5 windows 63 need 2 PULSE viol 0 GAP viol 0 PULSE lengths {} GAP lengths {} PULSE openers {} GAP openers (earlier window W) {}
+  level 6 windows 127 without exactly one move of each of 12, 13: 48 move-count profile {(12, 13): 79, (13,): 16, (): 16, (12,): 16}
+SL41 xt(12,0..1) 22 11 xt(13,0..1) 11 22 | option 19 = (9,1): rank 87 parity 1 | xt(11,0..1) 8 9 xt(22,0..1) 20 21
+  decider ('fail', 'every-state 12', False) 32
+  decider ('fail', 'every-state 12', True) 16
+  decider ('fail', 'every-state 12-or-13', False) 32
+  decider ('fail', 'every-state 12-or-13', True) 16
+  decider ('fail', 'every-state 13', False) 32
+  decider ('fail', 'every-state 13', True) 16
+  decider ('fail', 'mover 9 on option 1 at every pre-state', True) 48
+  decider ('fail', 'some incl s_e', True) 48
+  decider ('fail', 'some', True) 48
+  decider ('good', 'every-state 12', False) 79
+  decider ('good', 'every-state 12-or-13', False) 79
+  decider ('good', 'every-state 13', False) 79
+  decider ('good', 'mover 9 on option 1 at every pre-state', False) 62
+  decider ('good', 'mover 9 on option 1 at every pre-state', True) 17
+  decider ('good', 'some incl s_e', False) 79
+  decider ('good', 'some', False) 79
+  crossed doubling pair: REC_d10_tower_mu30.json level 3 A0, A1 = 4 5
+  crossed doubling pair: REC_d12_mu42.json level 6 A0, A1 = 9 11
+  crossed doubling pair: REC_d9_mu29.json level 6 A0, A1 = 9 16
+  crossed doubling pair: RECF4_d20_F60.json level 3 A0, A1 = 14 23
+corpus 24 runs: KILL_M2D_d6_mu13.json(T13) KILL_M2D_d8_mu21.json(T24) RECT_d11_T59.json(T59) RECT_d13_T66.json(T66) RECT_d13_T99.json(T99) RECT_d14_F46.json(T65) RECT_d14_T107.json(T107) RECT_d15_T114.json(T114) REC_d10_mu32.json(T33) REC_d10_tower_mu30.json(T35) REC_d11_mu40.json(T44) REC_d12_mu42.json(T48) REC_d7_mu17.json(T17) REC_d8_mu24.json(T25) REC_d9_mu29.json(T31) DBL4_d20_F30.json(T30) H5_d20_F62.json(T136) H6_d24_F126.json(T209) RECF4_d14_F52.json(T73) RECF4_d16_F53.json(T73) RECF4_d20_F56.json(T71) RECF4_d20_F60.json(T67) G7_best_d28(T270) SL41_d28(T290)
+  CE3_units                            43
+  CE3_viol                             0
+  CE_pair_names                        0
+  CE_pairs                             4
+  CE_viol                              0
+  CE_windows                           65
+  CR_pairs                             14
+  CRi_units                            1098
+  CRi_viol                             0
+  DFa_pairs                            65885
+  DFa_point                            77674
+  DFa_point_viol                       0
+  DFa_viol                             0
+  DFb_pairs                            1390
+  DFb_viol                             0
+  E1                                   0
+  E2                                   0
+  E3                                   0
+  E3_units                             7069
+  E4                                   0
+  E5                                   0
+  E5_F(j-1)=0_levels                   1
+  E5_gamma_all_dbl_levels_viol         0
+  GN_tight                             12
+  GN_units                             260
+  GN_viol                              0
+  MOVE_units                           72974
+  MOVE_viol                            0
+  PN_tight                             215
+  PN_units                             757
+  PN_viol                              0
+  RANK_states                          1010
+  iii_pointwise_viol                   0
+  levels                               62
+  proof_ineq1_fails(|D|<2^r*)          651
+  proof_ineq2_fails(|D|<=2max|th|)     5
+  repair_fails(|D|<=max|th|)           0
+  runs                                 24
+  steps                                1999
+  windows                              757

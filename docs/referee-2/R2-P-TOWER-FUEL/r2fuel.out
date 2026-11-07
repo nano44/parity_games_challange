@@ -1,0 +1,12 @@
+sha1 b995fff21c1f8558eb3e1868ec5ce59a3d4ccfb3 G7_best_d28.txt; c1b46c319fd614e5bcb0909b616a9f2833e0dfee SL41_d28.txt
+start G7 11110011110011000111100110010001000101011001000100001100 | start SL41 11110011110011000111110111010110001111111000010111100110
+('fail', 'non-mover', 12, 'dec=19 at every pre-state', False, 'already on preferred option at every pre-state', True) 16
+('fail', 'non-mover', 12, 'dec=19 at every pre-state', True, 'already on preferred option at every pre-state', True) 16
+('fail', 'non-mover', 13, 'dec=19 at every pre-state', False, 'already on preferred option at every pre-state', False) 16
+('fail', 'non-mover', 13, 'dec=19 at every pre-state', True, 'already on preferred option at every pre-state', True) 16
+('member', 12, 'consecutive-move pairs') 94
+('member', 12, 'dec constant and = option 19') 0
+('member', 12, 'dec constant between them') 0
+('member', 13, 'consecutive-move pairs') 94
+('member', 13, 'dec constant and = option 19') 0
+('member', 13, 'dec constant between them') 0

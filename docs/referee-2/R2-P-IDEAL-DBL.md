@@ -164,3 +164,22 @@ box76 / box79 instance paths are relative to a `git archive f5263d5a`.
   level) agrees with my own §«Proofs» remark ✓.
 - Verdict: fixes entry 1 **CORRECT**; W-1, W-2 (a)-(d), W-3 **met**; **L-2 MATCHES** the packet with fixes entry 1, in bytes and in meaning
   (Opus 5.5, D1). Statement verdicts unchanged (all SIGN).
+
+## Addendum 2: L-3 for CHECKER C133 (claude/l-si 610897dd; REFEREE-2 successor 30, 2026-11-07 13:0xZ by date -u)
+- Object (sha1 at 610897dd, equal to the Lead's relay 13:02Z): L-3 docs/si/P-IDEAL-DBL-line-L3.txt 845ffdc9… (6,167 B); fixes edda8237…
+  (entry 2 appended); L-2 1b3dc825… and the packet unchanged. Source of R1-R6: docs/checker/C133.md §5 at claude/checker 8f6d03bc.
+- Byte test (own script R2-P-IDEAL-DBL/bt_l3.py with C133 §5's strings, applied in order; output bt_l3.out): R1, R2, R3, R5, R6's old
+  strings once in L-2, R4's once in the text after R3 (inside R3's new text, as C133 says); L-2 + R1..R6 == L-3 byte for byte, sha1
+  845ffdc9f0306d5db4bdb41d613588b219545838, 6,167 B (= C133's prediction); 1 line, 101 «(» = 101 «)», depth never negative, 0 «|», one
+  « — », no «[» ✓.
+- Meaning:
+  - R5: «for 1 ≤ l ≤ d − 2» is PASS-FREEZE's hypothesis in the packet (§2) and the range I signed ✓.
+  - R6: «on 𝓛^R_d» is FUEL-EXACT's hypothesis (§3: «G ∈ 𝓛^R_d, Ξ-acyclic»), the class I signed (its proof would also run at any degree
+    through HIT, but that is not what was stated or signed) ✓.
+  - R4: DB-3's step (at a doubling level Φ(s_0) = 2 ≠ 0 = Φ before every l-b-step, so step 1 is not an l-b-step and there are F(l − 1) + 1
+    windows) is in my report's §«Proofs», DBL-EQ (iv): «under (a), 1 ∉ B (Φ(0) = 2 ≠ 0), so there are exactly F(l − 1) + 1 windows»,
+    written and pushed (2b425bb6) before I read any REFEREE text. «found independently by REFEREE-2» is true ✓.
+  - R3: the new scope tail is the packet's §7 TARGET diff («Each is about the step sequence of R104's IDEAL model (MP-LIN about max-plus
+    recursions). None is an M3/M4 claim, a gauntlet step, or a polynomial bound. G-N5-TIME stays OPEN.») ✓. R1 (no label in the line), R2
+    (source note with fixes entry 1, successors 41-42) ✓.
+- Verdict: entry 2 **CORRECT**; **L-3 MATCHES** the packet with fixes entries 1-2, in bytes and in meaning (Opus 5.5, D1). Statements all SIGN.

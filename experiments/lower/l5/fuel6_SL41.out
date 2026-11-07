@@ -1,0 +1,23 @@
+parent ((8, 0),) own ((10, 0),)
+     16 12:mv<[22] 13:mv<K
+parent ((8, 0),) own ((11, 0),)
+     16 12:mv<[11] 13:already on c
+parent ((8, 1),) own ((10, 0),)
+     15 12:mv<[20] 13:mv<K
+parent ((8, 1),) own ((11, 0),)
+     8 12:mv<[8, 11, 19] 13:mv<K
+     7 12:mv<[8, 11] 13:mv<K
+parent ((9, 0),) own ((10, 1),)
+     16 12:mv<[22] 13:mv<K
+parent ((9, 0),) own ((11, 1),)
+     16 12:mv<[9, 11, 14] 13:mv<K
+parent ((9, 1),) own ((10, 1),)
+     15 12:already on c 13:NO MOVE, pref never
+parent ((9, 1),) own ((11, 1),)
+     15 12:NO MOVE, pref never 13:mv<K
+parent () own ((10, 1),)
+     1 12:already on c 13:NO MOVE, pref never
+parent () own ((11, 1),)
+     1 12:NO MOVE, pref never 13:mv<K
+parent () own ()
+     1 12:mv<[20] 13:mv<K

@@ -1,0 +1,20 @@
+I-ROOM G7_best_d28.txt inLR True T 270 F[:8] [2, 6, 14, 30, 62, 126, 222, 158] doubling [1, 2, 3, 4, 5] start 11110011110011000111100110010001000101011001000100001100
+  level 1: windows 3 pulse-viol 0 gap-viol 0 distinct windows 0 pulse types {} gap types {} pulse lengths [] gap lengths [] first window in pulse-viol False
+  level 2: windows 7 pulse-viol 0 gap-viol 0 distinct windows 0 pulse types {} gap types {} pulse lengths [] gap lengths [] first window in pulse-viol False
+  level 3: windows 15 pulse-viol 0 gap-viol 0 distinct windows 0 pulse types {} gap types {} pulse lengths [] gap lengths [] first window in pulse-viol False
+  level 4: windows 31 pulse-viol 0 gap-viol 0 distinct windows 0 pulse types {} gap types {} pulse lengths [] gap lengths [] first window in pulse-viol False
+  level 5: windows 63 pulse-viol 16 gap-viol 14 distinct windows 16 pulse types {(): 1, ((9, 1),): 15} gap types {((9, 1),): 14} pulse lengths [1] gap lengths [1] first window in pulse-viol True
+  level 6: windows 127 without one move of each of 12, 13: 48 | move-count profile of those: [0, 1]
+I-FUEL SL41_d28.txt inLR True T 290 F[:8] [2, 6, 14, 30, 62, 126, 222, 158] doubling [1, 2, 3, 4, 5] start 11110011110011000111110111010110001111111000010111100110
+  level 1: windows 3 pulse-viol 0 gap-viol 0 distinct windows 0 pulse types {} gap types {} pulse lengths [] gap lengths [] first window in pulse-viol False
+  level 2: windows 7 pulse-viol 0 gap-viol 0 distinct windows 0 pulse types {} gap types {} pulse lengths [] gap lengths [] first window in pulse-viol False
+  level 3: windows 15 pulse-viol 0 gap-viol 0 distinct windows 0 pulse types {} gap types {} pulse lengths [] gap lengths [] first window in pulse-viol False
+  level 4: windows 31 pulse-viol 0 gap-viol 0 distinct windows 0 pulse types {} gap types {} pulse lengths [] gap lengths [] first window in pulse-viol False
+  level 5: windows 63 pulse-viol 0 gap-viol 0 distinct windows 0 pulse types {} gap types {} pulse lengths [] gap lengths [] first window in pulse-viol False
+  level 6: windows 127 without one move of each of 12, 13: 48 | move-count profile of those: [0, 1]
+  CROSS: xt(12,.) [22, 11] xt(13,.) [11, 22] option 19 rank 87 parity 1 xt(11,.) [8, 9]
+  decider (9,1) of 12 or 13, scope [any state s_(a-1)..s_(e-1)]: failing 48/48, others 0/79
+  decider (9,1) of 12 or 13, scope [s_(a-1) only]: failing 32/48, others 0/79
+  decider (9,1) of 12 or 13, scope [every state s_(a-1)..s_(e-1)]: failing 16/48, others 0/79
+  decider (9,1) of 12 or 13, scope [any state s_a..s_e]: failing 32/48, others 0/79
+  option 19 on chain of 11's current option at s_0: False | chain-membership over all states: 64 / 291

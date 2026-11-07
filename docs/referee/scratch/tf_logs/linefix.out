@@ -1,0 +1,7 @@
+TF-L1 old occurs once in L-1: OK; new occurs once in result: True
+TF-L2 old occurs once in L-1: OK; new occurs once in result: True
+TF-L3 old occurs once in L-1: OK; new occurs once in result: True
+TF-L4 old occurs once in L-1: OK; new occurs once in result: True
+TF-L5 old occurs once in L-1: OK; new occurs once in result: True
+proposed line: sha1 d115d8dfb8d63076d19d0c61ce7592bd3b31ade7 bytes 4366 chars 4218 ( = 74 ) = 74
+L-1: ( = 64 ) = 64

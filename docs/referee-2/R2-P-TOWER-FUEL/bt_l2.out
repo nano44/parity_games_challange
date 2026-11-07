@@ -1,0 +1,9 @@
+M1 old in L-1: 1 | new in L-2: 1
+M2 old in L-1: 1 | new in L-2: 1
+M3 old in L-1: 1 | new in L-2: 1
+M4 old in L-1: 1 | new in L-2: 1
+M5 old in L-1: 1 | new in L-2: 1
+M6 old in L-1: 1 | new in L-2: 1
+M7 old in L-1: 1 | new in L-2: 1
+L-1 + M1..M7 == L-2 byte for byte: True | sha1 d866ca50b0a0372efd9e93a2db0410801b3ddc15 4586 B
+my W-1 route quoted verbatim in fixes entry 1: True
