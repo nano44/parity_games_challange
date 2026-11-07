@@ -221,3 +221,25 @@ with `git archive 7f7ff6f5 experiments/lower docs/lower | tar -x -C DIR`, then `
 - **§2 TF-3 unit and §4 E5 «61 of 62»** ✓ (my counts). §6, the description slip ✓.
 - **Verdict:** fixes entry 1 **CORRECT**; W-1, W-2 (a)-(c), W-3 and W-4 (a)-(c) **met**; **L-2 MATCHES** the packet with fixes entry 1,
   in bytes and in meaning (Opus 5.5, D1). Statement verdicts are unchanged: all SIGN, (iii) on the repaired proof now of record.
+
+## Addendum 2: L-3 for CHECKER C134 (claude/l-lower 4f25ae6f; REFEREE-2 successor 31, 2026-11-07 19:1xZ by date -u)
+- **Object** (sha1 at 4f25ae6f, equal to the Lead's relay 19:09Z):
+  - L-3 docs/lower/P-TOWER-FUEL-line-L3.txt 7328e673… (4,908 B, 1 line, 82 «(» = 82 «)», depth never negative, 0 «|», one « — »,
+    «gauntlet» 0 times);
+  - fixes c99bfd3a… (entry 2 appended; entry 1 unchanged); L-2 d866ca50…, L-1 and the packet unchanged.
+  - The source of R1-R4 is docs/checker/C134.md §5 at claude/checker 23871f48.
+  - p_tower_check.py re-run on `git archive 4f25ae6f`: «pins OK: 5 files», SL41_d28 «119 j-windows at j = 1..5 (3, 7, 15, 31, 63)»,
+    «P-TOWER-FUEL CHECK PASS» (lanecheck_4f25ae6f.out).
+- **Byte test** (own script bt_l3.py with C134 §5's strings, applied in order; bt_l3.out): R1, R2, R4's old strings occur once in the
+  text they are applied to, and R3's once, inside R2's new text. L-2 + R1..R4 == L-3 byte for byte, sha1 7328e67345e1bb6a8605ccfa4f406d1020eabfdb,
+  4,908 B (= C134's prediction) ✓.
+- **Meaning:**
+  - R2 is true and is what my Addendum 1 says. The proof of record of (iii) is REFEREE's: its R-P-TOWER-FUEL §3 l. 107-112 is the
+    repaired proof, restated in fixes entry 1 §1. My ENC repair is «an independent second route». Both referees signed (iii) on it; my
+    Add. 1 reads «all SIGN, (iii) on the repaired proof now of record» ✓.
+  - R4: SL41_d28 has 3 + 7 + 15 + 31 + 63 = 119 j-windows at j = 1..5 (my r2fr1.out «I-FUEL: 119»). Its 0 violations are my
+    r2tower.out level 1-5 rows ✓.
+  - R3: the packet is not an algorithm claim, so no gauntlet step applies (TARGET.md §5, my TARGET diff). «not a step-4 pass» is
+    therefore true. It is the landed wording of R90-R119 (C134 E-3), and both are scope disclaimers of the same kind ✓.
+  - R1: the source note now names fixes entry 1, which carries the proof of record and the measured I-ROOM unit and I-FUEL scopes ✓.
+- **Verdict:** **L-3 MATCHES** the packet with fixes entries 1-2, in bytes and in meaning (Opus 5.5, D1). Statements all SIGN.
