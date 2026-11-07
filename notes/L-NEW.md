@@ -1,6 +1,42 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 59, Opus 5.5; started 2026-11-07 05:03Z by date -u)
+### BOX 191 XI-CYCLIC (docs/new/N5-XICYC-box191.md; experiments/new/box191/; check.sh block «BOX 191 XI-CYCLIC», check191.out)
+- (a) On Gamma3(G) for ANY genome, N5'-xi from S3 = mover phase (movers only; no beta escape, tau unchanged) + 3 iterations; mover step
+  = HOWARD (VJ-best successor). Model IDEAL-CYC (idealcyc.py): Howard at movers of Gamma(G), other Even frozen, Odd best response.
+  REALIZE-CYC: DATA 22/22 exact (8 L-RED cyc + 14 corpus; xi = T + 3), random 1,271/1,300 exact, 29 diverge at exact VJ ties
+  (xi uses SPEC's key there). Proof: (i) TIE = A at movers (arena H with tau = e never sees beta-faces) + (ii) sketch; (iii) tau / escape /
+  core untouched = CONJECTURE. SPEC N5 on Xi-cyclic Gamma3 also = mover phase + 3.
+- (b) PROVED (lane): DOM, STRICT, PATH, BR-SEG (runs with Lambda and sigma-bar constant <= N steps), CYC-COUNT (C <= n(2M+2)),
+  T_CYC <= C + R + (C+R+1) N; ONEP-POLY (gates forced to beta: R = 0, polynomial); general BR-SEG for Howard on any game (H0).
+  DATA: switchallexp N 2-7: C = 0, R 4..241, T 30..1243, p-runs <= 19 (Howard's exponential runs = exponentially many sigma-bar changes).
+  DEAD SEG-2P (inst/DEAD_SEG2P_d4_N8, d7_N14, d9_N18: 9 > 8, 15 > 14, 21 > 18), DEAD ODD-FIXED. Growth (weak climbs): T_CYC <= 33 at N 20.
+  => N5'-xi on Gamma3 super-poly needs super-poly R (gate-face flips of Odd's best response): handed to L-RED 53 via the Lead.
+- (c) RED-XI (PROVED, lane): under X0 + X1 (Howard-faithful sigma-steps), #it <= (nE+1)(n(n-1) + R_sigma + 1) + Q_tau. X1 holds on Gamma3,
+  fails on general games (401/517 at n 12, 333/570 at n 24 sigma-steps faithful; x1gen191.py).
+- Next: is R polynomial on IDEAL-CYC (proof attempt: gate-face flips need Even-won Xi-cycle closings?); TIE-restricted DOM for general
+  games; L-LIT check whether ONEP-POLY / BR-SEG is known.
+
+## Successor 59 handover check (STEP 0; written 2026-11-07 05:0xZ by date -u; Opus 5.5)
+1. claude/l-new: ls-remote 727163f0; the clone was SHALLOW and DETACHED at 727163f0 and the LOCAL BRANCH REF was stale (57 behind);
+   fetch --unshallow, checkout claude/l-new, merge --ff-only origin/claude/l-new -> HEAD = claude/l-new = origin/claude/l-new =
+   ls-remote = 727163f0. Vs trunk claude/vibrant-johnson-nxvvxo: 6 ahead / 660 behind (rev-list --left-right --count), merge-base
+   f55dac37. Lane files only.
+2. Open: (a) DUTY P-N5-REACH (R117, C130): L-3 adfbb3b8 at the gate; a CHECKER item -> fixes entry 3 + L-4 by script, packet frozen.
+   (b) DUTY P-IDEAL-MOVES (R116, C129 Add. 1): L-5 a42257cb; an item -> fixes entry 5 + L-6 by script. (c) BOX 191 XI-CYCLIC (new,
+   12 h): REALIZE/REACH3 on Xi-cyclic genomes, IDEAL-CYC model, N5'-xi run-length bound or growth structure for L-RED 53, reduction X.
+   Next = build Xi-cyclic genomes, measure N5'-xi on Gamma3 vs the Xi-graph's cycle structure.
+3. GAPS (trunk): G-N5-TIME major open (owner L-NEW); G-N1-LB minor open (optional, not routed); G-N5-TERM closed.
+4. D1 (DECISIONS, INDEX row 5, active): "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such
+   claim, including the fleet's own, as wrong until it passes the gauntlet below." D14 (row 22, active): "You know it can also test
+   prveiously not tested approaches, it can come up with it own as well". D18 (row 32, active): "Focus on N5 and work toward proving
+   it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually
+   studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly
+   distinguish proven results from conjectures and open problems." (D20 row 42 active: full pace, L48.)
+5. Trap: stale/shallow clone with detached HEAD (fourth successor in a row). Check = fetch --unshallow, checkout the branch,
+   ff-only, then compare HEAD AND the branch ref with ls-remote (done, item 1).
+
 ## HANDOVER (successor 58, written 2026-11-07 ~04:1xZ by date -u; context large: park on the Lead's word)
 ### DONE (every push via scripts/push.sh, VERIFY PASS; Lead informed each time)
 - Step 0 + box 189 REACH (f55dac37): NO-REACH, Gamma3, REACH3 (lane). P-N5-REACH FROZEN (73b3d1fd): packet b7bd6937, L-1 b12ec57a;
@@ -1701,6 +1737,12 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   DATA: correct on 1,038 library + families + hard families; SF ≈ ½ N5; runquad 264 → 2, topfix 7N + 43; switchbestexp N=10 619 vs 89, SBC 97.
   Open count SBC (CONJECTURE SF-POLY OPEN).
 
+## Dead ends (successor 59, box 191; docs/new/N5-XICYC-box191.md §2.1)
+- SEG-2P «in TWO-player IDEAL-CYC every run of steps with all VJ cycle nodes fixed has <= N steps»: DEAD, experiments/new/box191/inst/
+  DEAD_SEG2P_d4_N8.json (9 > 8), DEAD_SEG2P_d7_N14.json (15 > 14), DEAD_SEG2P_d9_N18.json (21 > 18). Obstruction: Odd's best response
+  (gate faces) changes inside the segment (R-steps); BR-SEG (sigma-bar also fixed) holds.
+- ODD-FIXED «Odd's optimal counterstrategy is constant on cycle-node-fixed segments»: DEAD, same instances (R-steps inside); random
+  genomes: essential sigma-bar changes in 144/586 path steps (oddfix191.py 500 5).
 ## Dead ends (successor 58, box 189; docs/new/N5-REACH-box189.md §2, §5)
 - «N5 from S3 on R104's Gamma(G) reaches a standard state / the IDEAL run»: DEAD for every genome (NO-REACH, proof). Instances:
   box189/inst/*_g0.pg (REC_d10_tower_mu30_g0 sha1 1c8ff4a7, RECT_d11_T59_g0 e9e2e570): 1 iteration from S3. Obstruction: S3 sets
@@ -2872,6 +2914,10 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   packet rule (corrections only in new dated sections).
 
 ## Sources opened
+- (successor 59, box 191) Asadi, Chatterjee, de Raaij, "Lower Bound on Howard Policy Iteration for Deterministic Markov Decision
+  Processes", arXiv 2506.12254 (UAI 2025), html v1 opened 2026-11-07: Thm 3.1 ((n^2+7n-6)/2 iterations, 2n vertices, mean payoff,
+  polynomial weights); abstract/§1 «the best known upper bound is exponential»; §1 Hansen-Zwick 2010 (m-n+1 iterations, weights
+  O(n^(n^2))) as reported there (Hansen-Zwick NOT opened); §3/§6 Hansen's conjecture (iterations <= #edges) open.
 - (succ. 58, box 189) RESULTS R104 (trunk fc665614 l. 9864, full line); packet docs/red/P-N5-REALIZE.md at claude/l-red 55557951 (sha1
   067f06b6c67969adf346621b4a92b253491ab2b9; §1-§6 read) and docs/red/P-N5-REALIZE-fixes.md entries 1-3 (same commit; entry 3 restates
   [VJ-LOC] as R36 (c) Lemma P1); RESULTS R15 (l. 624-640: (a) Lemma A = VJ00 BRICS RS-00-48 Lemma 5.7 as signed, (d)); SPEC

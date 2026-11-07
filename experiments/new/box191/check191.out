@@ -1,0 +1,36 @@
+cyc2_d7.json                   N  14 xi  24 T_CYC  21 MATCH
+cyc2_d8.json                   N  16 xi  25 T_CYC  22 MATCH
+cyc_d3.json                    N   6 xi  12 T_CYC   9 MATCH
+cyc_d4.json                    N   8 xi  15 T_CYC  12 MATCH
+cyc_d5.json                    N  10 xi  16 T_CYC  13 MATCH
+cyc_d6.json                    N  12 xi  22 T_CYC  19 MATCH
+cyc_d7.json                    N  14 xi  20 T_CYC  17 MATCH
+cyc_d8.json                    N  16 xi  20 T_CYC  17 MATCH
+A_d4_W2_k2.json                N   8 xi   8 T_CYC   5 MATCH
+A_d4_W3_k3.json                N  12 xi   8 T_CYC   5 MATCH
+A_d5_W2_k3.json                N  10 xi   6 T_CYC   3 MATCH
+A_d6_W2_k2.json                N  12 xi   6 T_CYC   3 MATCH
+KILL_M2D_d6_mu13_norm.json     N  12 xi  10 T_CYC   7 MATCH
+KILL_M2D_d8_mu21_norm.json     N  16 xi   8 T_CYC   5 MATCH
+RECT_d11_T59_norm.json         N  22 xi   8 T_CYC   5 MATCH
+REC_d10_mu32_norm.json         N  20 xi  10 T_CYC   7 MATCH
+REC_d10_tower_mu30_norm.json   N  20 xi   6 T_CYC   3 MATCH
+REC_d11_mu40_norm.json         N  22 xi   8 T_CYC   5 MATCH
+REC_d12_mu42_norm.json         N  24 xi   7 T_CYC   4 MATCH
+REC_d7_mu17_norm.json          N  14 xi  11 T_CYC   8 MATCH
+REC_d8_mu24_norm.json          N  16 xi  12 T_CYC   9 MATCH
+REC_d9_mu29_norm.json          N  18 xi   9 T_CYC   6 MATCH
+TOTAL match 22 mismatch 0
+MISMATCH 143 7 4
+MISMATCH 160 4 2
+MISMATCH 295 5 2
+eq count 300 seed 1 match 297 mismatch 3 (first divergence an exact VJ tie: 3) worst(T, maxrun) (0, 0)
+ONE-player: 300 genomes seed 11: maxrun > N in 0, C > N*M in 0, max maxrun/N 1.00, max T 7
+TWO-player: 300 genomes seed 11: maxrun > N in 0, C > N*M in 0, max maxrun/N 1.00, max T 7
+DEAD_SEG2P_d4_N8.json N 8 T 10 C 1 R 1 maxpure 8 ppppppppRC
+DEAD_SEG2P_d7_N14.json N 14 T 19 C 4 R 8 maxpure 3 CCCCpRRRRppRRRpRppp
+DEAD_SEG2P_d9_N18.json N 18 T 21 C 0 R 6 maxpure 6 pppRppRppRppRRRpppppp
+sae_2.pg n 35 nE 23 T 30 C 0 R 4 p 26 maxpure 9 H0events 0
+sae_3.pg n 49 nE 32 T 70 C 0 R 10 p 60 maxpure 11 H0events 0
+sae_4.pg n 63 nE 41 T 150 C 0 R 24 p 126 maxpure 13 H0events 0
+sae_5.pg n 77 nE 50 T 310 C 0 R 54 p 256 maxpure 15 H0events 0

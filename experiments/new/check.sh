@@ -962,4 +962,11 @@ if grep -qxF "DETOWER SAME" <<<"$o190" && [ "$(grep -c "^REC_d10_tower_mu30_norm
 else
   echo "BOX 190 DE-TOWER check: FAILED"; echo "$o190"; exit 1
 fi
+# BOX 191 XI-CYCLIC (L-NEW successor 59): REALIZE-CYC data (N5'-xi mover phase on Gamma3 = IDEAL-CYC), ONEP-POLY / BR-SEG counts, DEAD SEG-2P
+o191=$(cd box191 && bash check191.sh 2>&1 | diff - check191.out && echo XICYC SAME)
+if grep -qxF "XICYC SAME" <<<"$o191" && grep -qxF "TOTAL match 22 mismatch 0" box191/check191.out && grep -q "^ONE-player: 300 genomes seed 11: maxrun > N in 0, C > N\*M in 0" box191/check191.out && grep -q "^sae_5.pg n 77 nE 50 T 310 C 0 R 54 p 256 maxpure 15 H0events 0$" box191/check191.out; then
+  echo "BOX 191 XI-CYCLIC: REALIZE-CYC 22/22 (8 Xi-cyclic + 14 corpus), random 297/300 + 3 exact-VJ-tie divergences; SEG-1P / CYC-COUNT 0 violations; DEAD SEG-2P instances; BR-SEG on switchallexp N 2-5 = frozen: PASS"
+else
+  echo "BOX 191 XI-CYCLIC check: FAILED"; echo "$o191"; exit 1
+fi
 rm -rf "$tmp"
