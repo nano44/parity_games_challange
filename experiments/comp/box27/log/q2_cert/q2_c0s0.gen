@@ -1,0 +1,1 @@
+input q2_c0s0.proof.cnf sha1 d5322b8c17fd24e14b8967d0709c9a4765fc6a43 vars 21083 clauses 99356 cube -2,-8,-14,-20,-26 glucose4 UNSAT 5883.6 s proof q2_c0s0.proof sha1 8340e4e0377dba6371db37a89a2542f94b7443d9 bytes 5762712164
