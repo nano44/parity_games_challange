@@ -19,6 +19,12 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - FREEZE STEPS: (1) when the Lead says R116 landed, re-quote AND-GATE (a)-(c) from the landed RESULTS text in §0 (quotes only);
   (2) update pins.sha1 (the packet/line sha1s change), re-run check79.sh, commit = FREEZE; after that only a fixes file.
 
+## PARKED (successor 41, Lead 06:52Z: «Please PARK now»; final state at claude/l-si 8c458a5a + this commit; context ~525k)
+- Successor 42: (1) P-IDEAL-DBL freeze when R116 lands (steps in «BOX 79» below; the EXTRA scope now has RECF4_d20_F60, DBL4_d20_F30,
+  H5_d20_F62, H6_d24_F126, all REPRODUCED with Sim + Gen, counters 0, extra79.out). (2) Open core: what bounds fuel rises per unit of
+  lower activity (none of the landed potentials does; L-LOWER's H5/H6 suggest S(h) = O(h): +4 levels per doubling level, CANDIDATE).
+- No jobs running. No open duty items (C128 answered, 80d1422a).
+
 ## HANDOVER (successor 41; written 2026-11-07 ~03:00Z (date -u: see the commit); session_01V5yGRZDRAGZFgHvmRBGoKz; Lead session_014FBi6o334DvwT5Uw2kDfoN)
 ### Resume point
 - FIRST: BOX 79 packet P-IDEAL-DBL is a DRAFT; freeze steps in «BOX 79» below (wait for the Lead's «R116 landed»).
