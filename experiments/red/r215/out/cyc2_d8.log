@@ -16,3 +16,17 @@ it 584 n 250 xi 17 spec 8 OK
 it 640 n 250 xi 18 spec 10 OK
 it 1020 n 250 xi 18 spec 12 OK
 it 1065 n 250 xi 18 spec 13 OK
+it 1333 n 250 xi 20 spec 13 OK
+it 1420 n 250 xi 20 spec 14 OK
+it 1718 n 250 xi 21 spec 14 OK
+it 2034 n 250 xi 22 spec 4 OK
+it 2076 n 250 xi 22 spec 5 OK
+it 2248 n 250 xi 22 spec 6 OK
+it 2343 n 250 xi 23 spec 6 OK
+it 2744 n 250 xi 23 spec 7 OK
+it 2785 n 250 xi 23 spec 9 OK
+it 2856 n 250 xi 24 spec 8 OK
+it 3026 n 250 xi 24 spec 9 OK
+it 3139 n 250 xi 24 spec 10 OK
+it 3320 n 250 xi 25 spec 10 OK
+FINAL best xi 25

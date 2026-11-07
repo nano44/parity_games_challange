@@ -17,3 +17,12 @@ it 1103 n 220 xi 21 spec 10 OK
 it 1248 n 220 xi 22 spec 5 OK
 it 1262 n 220 xi 22 spec 6 OK
 it 1308 n 220 xi 22 spec 8 OK
+it 1745 n 220 xi 23 spec 6 OK
+it 1828 n 220 xi 23 spec 7 OK
+it 2007 n 220 xi 23 spec 8 OK
+it 2023 n 220 xi 23 spec 11 OK
+it 2033 n 220 xi 23 spec 13 OK
+it 3157 n 220 xi 24 spec 7 OK
+it 3650 n 220 xi 24 spec 9 OK
+it 3722 n 220 xi 24 spec 10 OK
+FINAL best xi 24
