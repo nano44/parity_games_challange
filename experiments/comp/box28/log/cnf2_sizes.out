@@ -1,0 +1,6 @@
+cnf d 3 L 9 ISO 0 vars 58896 clauses 204036 lits 497052 0.2 s
+cnf2 d 3 L 9 ISO 0 vars 22878 clauses 83778 lits 208314 0.1 s
+cnf d 4 L 14 ISO 0 vars 273590 clauses 972056 lits 2376280 0.9 s
+cnf2 d 4 L 14 ISO 0 vars 80838 clauses 302184 lits 752168 0.4 s
+cnf d 4 L 13 ISO 1 vars 156153 clauses 542624 lits 1320968 0.7 s
+cnf2 d 4 L 13 ISO 1 vars 65777 clauses 244482 lits 608802 0.2 s

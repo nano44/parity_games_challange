@@ -1,0 +1,12 @@
+ext/ISO_1_d4_t12.json: sim T 12 stop opt; pinned CNF L=12: SAT; L=13: UNSAT (2 s)
+original T 12; relabelled start [0, 0, 1, 1, 0, 1, 1, 0] T 12 stop opt; root cube 27
+SYM=1 CUBE root 27 (2:1,3:1,4:0,5:1,6:1,7:0) L 12: SAT
+SYM=1 CUBE root 27 (2:1,3:1,4:0,5:1,6:1,7:0) L 13: UNSAT
+SYM=1 CUBE root 28 (2:0,3:0,4:1,5:1,6:1,7:0) L 12: UNSAT
+PAIR-SWAP at level 2
+PAIR-SWAP at level 1
+PAIR-SWAP at level 0
+original T 12; relabelled start [0, 0, 0, 0, 0, 1, 0, 1] T 12 stop opt; root cube 40
+SYM=1 CUBE root 40 (2:0,3:0,4:0,5:1,6:0,7:1) L 12: SAT
+SYM=1 CUBE root 40 (2:0,3:0,4:0,5:1,6:0,7:1) L 13: UNSAT
+SYM=1 CUBE root 41 (2:1,3:0,4:0,5:1,6:0,7:1) L 12: UNSAT

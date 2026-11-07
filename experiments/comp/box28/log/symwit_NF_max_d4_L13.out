@@ -1,0 +1,4 @@
+original T 13; relabelled start [0, 0, 0, 0, 0, 1, 0, 1] T 13 stop stuck; root cube 40
+SYM=1 CUBE root 40 (2:0,3:0,4:0,5:1,6:0,7:1) L 13: SAT
+SYM=1 CUBE root 40 (2:0,3:0,4:0,5:1,6:0,7:1) L 14: UNSAT
+SYM=1 CUBE root 41 (2:1,3:0,4:0,5:1,6:0,7:1) L 13: UNSAT

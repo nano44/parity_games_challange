@@ -1,0 +1,4 @@
+cnf2mutA FAIL lines: 7
+regress2 random ISO None: runs 30, T histogram {0: 3, 1: 25, 2: 2}, failures 7
+cnf2mutB FAIL lines: 5
+regress2 random ISO None: runs 30, T histogram {0: 3, 1: 25, 2: 2}, failures 5
