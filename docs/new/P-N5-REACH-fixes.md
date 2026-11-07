@@ -67,3 +67,19 @@ file P-N5-REACH-line-L<k>.txt). Where an entry and the frozen packet differ, the
   - R2 (RC-2, Lead ruling): «1 (Odd, start edge) or 0 has an N5 run» → «1 (Odd, start edge) or 0, the pads indexed after the game's
     vertices in (a, b) order, has an N5 run»
 - Pins: experiments/new/box189/reach.pins gains L-3 and this file's new sha1; check.sh block «P-N5-REACH» pins reach.pins' new sha1.
+
+## Entry 3 (2026-11-07 from 07:3xZ by date -u; L-NEW successor 59; Lead relay 07:31Z of CHECKER C130, R117)
+- Source: CHECKER docs/checker/C130.md at claude/checker 126f9772. Verdict: FAIL E-1..E-4, all DATA wording. §5 gives «L-4 = L-3 with
+  exactly these replacements». No statement, proof, tool, output or instance of the packet changes. The packet and entries 1-2 are
+  unchanged. This entry carries no proof.
+- E-1 (NO-REACH count: unit; NR-CORE uncited), E-2 (the no-improving-edge clause had no counter and was not in the line's no-DATA
+  list), E-3 (the 28 games were unnamed), E-4 (the DEAD SUBDIV instances were not reproducible from the line): all ACCEPTED. The strings
+  are C130 §5's verbatim (wrapped lines joined with single spaces). Each was copied by script from C130.md, not retyped.
+- Line L-4 (docs/new/P-N5-REACH-line-L4.txt, sha1 f85a024b8c8caa4c996fcd15bf1e78fbd436b534, 1 line with its newline, 3,942 bytes):
+  L-4 = L-3 (adfbb3b8) with exactly these four replacements, applied by script. Each old string occurs exactly once in L-3; no other
+  byte changes. The sha1 and byte count equal C130 §5's «L-4 with R1-R4 (my script)».
+  - R1 (E-1): «0 standard states in 908 states of the S3 runs on Γ(G),» → «σ(K0) = K1 and σ(K1) = K0 at all 908 states of the S3 runs on Γ(G) and 0 of them equal to R104's stated start off the movers,»
+  - R2 (E-2): «Corollary REAL-IDEAL-S3 no separate DATA,» → «NO-REACH's no-improving-edge clause and Corollary REAL-IDEAL-S3 no separate DATA,»
+  - R3 (E-3): «n5b (SPEC mode) iteration counts equal on 28/28 games and Oink 8fbf0a7 --zlk with verify OK on 28/28» → «n5b (SPEC mode) iteration counts equal on the 28 games Γ(G) and Γ3(G) of the 14 corpus genomes and Oink 8fbf0a7 --zlk with verify OK on the same 28»
+  - R4 (E-4): «n = 3 and n = 5 games with given start pairs» → «the n = 3 and n = 5 games with the start pairs of packet §9 (instances A, B)»
+- Pins: experiments/new/box189/reach.pins gains L-4 and this file's new sha1; check.sh block «P-N5-REACH» pins reach.pins' new sha1.
