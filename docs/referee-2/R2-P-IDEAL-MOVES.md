@@ -169,3 +169,6 @@ No statement is REFUSED. No gap is listed: every proof is complete from the land
 - check.sh block «P-IDEAL-MOVES» at fd5c163f (archive): «… fixes 510152da, line L-2 f3692aaa, line L-3 d3983c68, line L-4 73c16d1e:
   PASS», exit 0 (blk187_fr3.out).
 - Verdict: entry 3 **CORRECT**; **L-4 MATCHES** the packet with fixes entries 1-3 (Opus 5.5, D1). Statement verdicts unchanged (all SIGN).
+- Post-note (02:1xZ): L50 is now on origin at trunk 6ca995ed (docs/DECISIONS.md l. 440, index row l. 45), opened. Its (2) «P-IDEAL-MOVES
+  lands with a line that makes no status claim about MOVES-2D (fix round 3, L-4). Its signed items do not depend on MOVES-2D (both
+  referees, 2026-11-07).» agrees with L-4 and with my Addendum 2. Addendum 3's verdict stands.
