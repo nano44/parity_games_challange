@@ -5,7 +5,7 @@
 cd "$(dirname "$0")"; R=$(cd ../../.. && pwd)
 while true; do
   python3 status_d4.py > /dev/null 2>&1
-  if ! pgrep -f "scripts/push.sh" > /dev/null; then
+  if ! pgrep -f "^bash scripts/push.sh" > /dev/null; then   # anchored: a waiting job whose command line merely CONTAINS the string must not block
     cd "$R"
     if [ -n "$(git status --porcelain experiments/comp/box28/log/cnf2_d4_status.txt experiments/comp/box28/log/q2)" ] || [ "$(git rev-list --count origin/claude/l-comp..HEAD 2>/dev/null)" != 0 ]; then
       git fetch -q origin claude/l-comp && git merge -q --no-edit origin/claude/l-comp >> experiments/comp/box28/log/commit_loop.out 2>&1

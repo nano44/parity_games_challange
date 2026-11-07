@@ -11,3 +11,4 @@ up diskguard setsid nohup ./diskguard.sh < /dev/null > /dev/null 2>&1
 up xval env PDIR=/home/user/pf/x setsid nohup nice -n 15 ./xval_d3.sh < /dev/null > log/xval_d3.run 2>&1
 up q2 env PDIR=/home/user/pf/q2 setsid nohup ./q2pieces.sh < /dev/null > log/q2pieces.run 2>&1
 up commit setsid nohup ./commit_loop.sh < /dev/null > /dev/null 2>&1
+../box30/relaunch30.sh   # BOX 30 climb lanes (Lead 07:12Z)

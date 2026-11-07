@@ -1,0 +1,4 @@
+DBL4_d20_F30: n 610 N5'-xi (n5bxi @ l-new 066cd543 on n5b SPEC, S3): iterations 12 fallbacks 1 | regions == oink zlk: True | 0.5 s
+RECF4_d20_F60: n 610 N5'-xi (n5bxi @ l-new 066cd543 on n5b SPEC, S3): iterations 12 fallbacks 1 | regions == oink zlk: True | 0.4 s
+H5_d20_F62: n 610 N5'-xi (n5bxi @ l-new 066cd543 on n5b SPEC, S3): iterations 12 fallbacks 1 | regions == oink zlk: True | 0.4 s
+H6_d24_F126: n 730 N5'-xi (n5bxi @ l-new 066cd543 on n5b SPEC, S3): iterations 15 fallbacks 1 | regions == oink zlk: True | 0.7 s

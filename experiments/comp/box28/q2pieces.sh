@@ -5,6 +5,9 @@
 # so the pieces partition the sub-cube). Per piece: Glucose 4 proof streamed by box27/dimproof.py, then box27/drup.c; proof and cube CNF
 # deleted after the check (VERIFIED or not); records log/q2/q2_c<C>s<s>p<p>.gen|.chk (final once .chk holds «s VERIFIED»).
 # Resumable: a piece with a VERIFIED .chk is skipped; any other piece is regenerated from scratch (Glucose is deterministic).
+# Lead 07:08Z: sub-cube c0s0 (whole proof 5.76 GB; its piece p0 alone 3.92 GB) re-split: pieces p1..p7 of c0s0 are each split into
+# 4 PARTS q0..q3 on vars 50, 56 (q: bit 0 -> +50, bit 1 -> +56; all sign patterns, so the parts partition the piece). Piece c0s0p0 keeps
+# its finished Glucose proof and is checked whole (records q2_c0s0p0.*). Records of parts: q2_c0s0p<p>q<q>.gen|.chk.
 # Usage: PDIR=dir ./q2pieces.sh   (order: c0s0, c0s1, c4s0, c4s2, c0s2, c0s3, c4s3; one piece at a time)
 cd "$(dirname "$0")"; P="${PDIR:?}"; mkdir -p "$P"; B=../box27; F="$P/m3_tk_T13_T20_K2_NOIM0.cnf"
 [ -f "$F" ] || zcat $B/lsi/dump/m3_tk_T13_T20_K2_NOIM0.cnf.gz > "$F"
@@ -12,13 +15,19 @@ cd "$(dirname "$0")"; P="${PDIR:?}"; mkdir -p "$P"; B=../box27; F="$P/m3_tk_T13_
 for cs in 0:0 0:1 4:0 4:2 0:2 0:3 4:3; do C=${cs%:*}; s=${cs#*:}
   if [ $C = 0 ]; then BASE=-2,-8,-14; else BASE=-2,-8,14; fi
   a=$(( s & 1 ? 20 : -20 )); b=$(( s & 2 ? 26 : -26 ))
-  for p in 0 1 2 3 4 5 6 7; do n=q2_c${C}s${s}p$p; R=log/q2/$n
+  for p in 0 1 2 3 4 5 6 7; do
+   e=$(( p & 1 ? 32 : -32 )); f=$(( p & 2 ? 38 : -38 )); g=$(( p & 4 ? 44 : -44 ))
+   if [ $C = 0 ] && [ $s = 0 ] && [ $p != 0 ]; then QS="0 1 2 3"; else QS="-"; fi
+   for q in $QS; do
+    if [ "$q" = - ]; then n=q2_c${C}s${s}p$p; cube="$BASE,$a,$b,$e,$f,$g"
+    else h=$(( q & 1 ? 50 : -50 )); i=$(( q & 2 ? 56 : -56 )); n=q2_c${C}s${s}p${p}q$q; cube="$BASE,$a,$b,$e,$f,$g,$h,$i"; fi
+    R=log/q2/$n; pf="$P/$n.proof"
     [ -f $R.chk ] && grep -q "^s VERIFIED" $R.chk && continue
-    e=$(( p & 1 ? 32 : -32 )); f=$(( p & 2 ? 38 : -38 )); g=$(( p & 4 ? 44 : -44 )); cube="$BASE,$a,$b,$e,$f,$g"; pf="$P/$n.proof"
     python3 $B/dimproof.py "$F" "$pf" "$cube" > $R.gen 2>&1
     t0=$(date +%s); { $B/drup "$pf.cnf" "$pf"; echo "drup exit $? wall $(( $(date +%s) - t0 )) s"; } > $R.chk.tmp 2>&1; mv $R.chk.tmp $R.chk
     rm -f "${P:?}/$n.proof" "${P:?}/$n.proof.cnf"
     echo "$(date -u +%FT%TZ) $n ($cube): $(grep -o 'glucose4 [A-Z]* [0-9.]* s\|sha1 [0-9a-f]*\|bytes [0-9]*' $R.gen | tr '\n' ' ') $(grep -h '^s ' $R.chk)" >> log/q2/summary.txt
+   done
   done
 done
 echo "$(date -u +%FT%TZ) q2pieces: all pieces processed" >> log/q2/summary.txt
