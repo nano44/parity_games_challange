@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 53 (Opus 5.5, D1/D18/D20) started 2026-11-07 05:03Z (date -u); R215 (vs N5′-xi) continued; see «Successor 53».
+Successor 53 (Opus 5.5, D1/D18/D20) started 2026-11-07 05:03Z (date -u); R215 (vs N5′-xi), R216 replays; PARKED ~13:5xZ, see «Successor 53 PARK».
 Successor 52 (Opus 5.5, D1/D18/D20) started 2026-11-06 18:28Z (date -u); R214 (MOVES-2D DEAD replay, T^R table d 8-14), R215 (vs N5′-xi); PARKED 2026-11-07 ~04:2xZ, see «Successor 52 PARK».
 Successor 50 (Opus 5.5, D1/D18/D20) started 2026-11-05 22:06Z (date -u); R207-R211; PARKED 2026-11-06 ~07:0xZ at ~520k, see «Successor 50 PARK».
 Successor 49 (Opus 5.5) started 2026-11-04 00:18Z; R200-R206; PARKED 2026-11-05 21:1xZ at ~540k context, see «Successor 49 PARK» (supersedes «Successor 49 HANDOVER»).
@@ -50,6 +50,22 @@ Successor 15 PARKED ~09:40Z 2026-10-25 after box 38; RESUME POINT for successor 
 context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older notebook: `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
+
+## Successor 53 PARK (2026-11-07 ~13:5xZ, date -u; ~430k context)
+- RESULTS (docs/red/R215-xi.md «Successor 53» §53.0-§53.2; docs/red/R216-l4replay.md):
+  - R215 (c): n5bxi vs n5v 2,766/2,766 agree. (a): PAD-COLLAPSE obstruction; PAD-class long runs are N5's own dynamics after one
+    override; N5 itself 0.7-0.9·n there: linear. (b): Ξ-cyclic Γ3 xi 13 … 42 at d 3-12 (d 12: 38): ≈ n/9, linear.
+  - R216: L-LOWER 4 RECF4_d20_F60, DBL4_d20_F30, H5_d20_F62 (T 136), H6_d24_F126 (T 209) all REPRODUCED (memb, ideal, lemck renum,
+    box150, N5 on Γ3 = T + 3).
+  - R215 (2) R-target (box 191/192): R-steps ≈ N to 1.5N (rd3_d9 R 27 at N 18); R_mov = R, L = 0 on all labelled instances; R_mov
+    vs width at d 2: 9 / 20 / 24 / 32 / 32 (w 4 / 8 / 12 / 16 / 24); max flips at one gate ≤ 15. cR_d2_w8 R 19/21/22 = three
+    file versions (0952ef28 / 575c8683 / b83785f6), unit R-steps.
+- NOTHING RUNNING at park. Live climb dir /home/user/r215live (outside the repo; scripts symlinked into experiments/red/r215;
+  state copied back into r215/out). To resume a width chain: cd /home/user/r215live && . ./env.sh && nohup ./runm.sh m 2 2 25 6 none 24 &
+  (ALWAYS source env.sh first: an env-less launch spun a crash loop, 843k log lines).
+- Worktrees (scratch; recreate if lost): WT acdbd28b, WT2 066cd543, WT3 f09f67ec (box 191), wt192 8c2a6678. Oink built in tools/.
+- Next ideas (not started): hand-built OVT gadget at d 2 (one gate, many overtakes of trunc Ω(y) vs trunc Ω(x′)); longer w 24-32
+  R_mov climbs seeded by lifting the w 16 best; T-table climbs stay OFF (Lead 06:22Z).
 
 ## Successor 53 (Opus 5.5, D1/D18/D20; from 2026-11-07 05:03Z, date -u) — R215 vs CANDIDATE N5′-xi (docs/red/R215-xi.md «Successor 53»)
 - DONE: (c) n5bxi vs n5v 2,766/2,766 agree (r215/xck.py, out/xck/); (a) PAD-COLLAPSE obstruction (famx.py, fam/); PAD-class climbs
