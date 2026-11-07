@@ -273,3 +273,4 @@ Five questions:
 | 2026-11-07 | L-LOWER | session_01V5yGRXYP8ag97efWS1F1Nr (PARKED, handover 96e63eb4; idle confirmed 18:19Z before creation) | session_01V5yGRZSUyjzsjpx81UN1S5 (Opus, D14/D18/D20) | 5 | none (9113b5cc; 4/456 vs 5f8b399e re-measured) |
 | 2026-11-07 | L-RED | session_01V5yGRXxiqpSvoVDbBeLXBJ (PARKED, f77a0eef; idle confirmed 18:19Z before creation) | session_01V5yGRWGTtvvA6shidDQPRY (Opus, D1/D14/D18) | 5 | none (47671081; 23/814 vs 5f8b399e, merge-base c2d1e88e re-measured) |
 | 2026-11-07 | L-NEW | session_01V5yGRa6UV7Jv1SCJv2zoMD (PARKED, handover 589c9fba; idle confirmed 18:56Z before creation) | session_01V5yGRXNcWRbrudUiyywbnE (Opus, D14/D18/D20) | 5 | none (d55dc439; 5/55 vs 762c2184, merge-base 478d0bd9 re-measured) |
+| 2026-11-07 | L-LOWER | session_01V5yGRZSUyjzsjpx81UN1S5 (PARKED, handover c1e16b59; idle confirmed 20:54Z before creation) | session_01V5yGRZEvhzSeuqED7hgBzJ (Opus, D1/D14/D18) | PENDING | PENDING (successor's check) |

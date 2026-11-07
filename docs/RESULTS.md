@@ -14111,6 +14111,212 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   scope tail «each statement is about the step sequence of R104's IDEAL model (MP-LIN about max-plus recursions);» … «G-N5-TIME stays
   OPEN; not M3, not a step-4 pass, not a TARGET.md claim» (R3, by script). GAPS G-N5-TIME: open.
 
+### R120 [refereed-only] In the IDEAL model of RESULTS R104 (premise: R104's definition of the model only, no theorem of R104 used; RESULTS R105's ENC only; RESULTS R110's definition of 𝓛^R_d only; and RESULTS R113's ALIGN only, with its notation c_l, γ_l, flip, F(l) and cv), on acyclic Ξ-graphs on 𝓛^R_d, with a j-window a maximal set of consecutive steps containing no change of c_j except possibly at its first step, level j doubling if F(j) = 2F(j − 1) + 2, and for a doubling level j and consecutive j-windows W, W⁺ with move steps u₁(W) < u₂(W) of the pair j PULSE(W) := u₂(W) − u₁(W) and GAP(W) := u₁(W⁺) − u₂(W), and dec_s(x) the option of largest rank in the symmetric difference of the Ξ-chains of x's two options under s together with its side: (MOVE) a mover x of level l ≥ 1 moves at step t iff its other option is strictly better under s_(t−1) and c_l(s_t) ≠ s_(t−1)(x), and then moves to c_l(s_t); (DOUBLE-EQ) if level j is doubling then no step moves both members of pair j, the pair flips exactly at the steps moving a member, each member moves exactly once in every j-window, and if F(j − 1) ≥ 1 the first mover is the same member in every j-window; (PULSE-NEST) if levels j, …, j + k are doubling then PULSE ≥ k + 1 on every j-window; (GAP-NEST) if moreover k ≥ 1 then GAP ≥ k + 1, so with levels 0, …, h − 1 capped (F(l) = 2^(l+2) − 2) PULSE and GAP are ≥ h − j for 1 ≤ j ≤ h − 2; (DOMINANCE-FREEZE) the option of larger value of x under s is fixed by dec_s(x), and for a member x of a doubling pair and consecutive moves t < t′ of x, dec(x) is not constant on s_(t−1), …, s_(t′−1); (CROSS-ECONOMY) if level j is doubling and pair j is crossed onto two movers A_0 ≠ A_1 outside it (xt(2j, k) = A_k = xt(2j + 1, 1 − k)), then with D := cv(A_0) − cv(A_1) and the member thresholds θ_(2j) := ε(2j, 1) − ε(2j, 0), θ_(2j+1) := ε(2j + 1, 0) − ε(2j + 1, 1), in every j-window [D(s_(u₁−1)) > θ_f] ≠ [D(s_(u₂−1)) > θ_(x₂)] for the first and second movers f, x₂, and D changes sign between s_(u₁−1) and s_(u₂−1) whenever at both states the largest rank in the symmetric difference of the Ξ-chains of the current options of A_0 and A_1 exceeds the ranks of the four options of pair j; instances (DATA, stored start): experiments/lower/l4/rec/G7_best_d28.txt (sha1 b995fff2…; levels 0-5 capped, F(6) = 222) violates PULSE, GAP ≥ 7 − j at levels j = 1, …, 5 (unit = j-window; set = all 119 of them) only at level 5, 30 times (unit = (5-window, PULSE or GAP); in 16 of its 63 5-windows) (15 pulses and 14 gaps of length 1 in the 5-windows opened by mover 9 moving to option 1, and 1 pulse of the first 5-window), and experiments/lower/l5/rec/SL41_d28.txt (sha1 c1b46c31…; levels 0-5 capped, F(6) = 222) meets PULSE, GAP ≥ 7 − j at levels 1-5 (unit = j-window; set = all 119 of them) while 48 of its 127 6-windows do not have exactly one move of each member of pair 6 (the movers 12 and 13, crossed onto movers 22, 11), and in each of these 48 windows [a, e] the option (9, 1) of rank 87 is dec_s(12) or dec_s(13) at some state s among s_(a−1), …, s_(e−1) (at every such state in 16 of them; at no such state in any of the other 79) (2026-11-07) — a STRUCTURE statement inside the IDEAL model on doubling levels of 2-wide ladders (room: PULSE-NEST, GAP-NEST; fuel: DOMINANCE-FREEZE, CROSS-ECONOMY), with two obstruction instances for a seventh capped level; bounds nothing polynomially and does not claim that F(6) = 222 is a cap or any bound on T^R(d); Ξ-cyclic genomes and genomes outside 𝓛^R_d are not covered; the proof of record of CROSS-ECONOMY's sign-change clause is referee-originated (REFEREE R-P-TOWER-FUEL §3, restated in P-TOWER-FUEL's fixes entry 1 §1; REFEREE-2's own repair is a second route), signed by both referees; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim (DATA: experiments/lower/l5/p_tower_check.py on 24 runs from the stored start (the 15 genomes experiments/lower/l3/kill/*.json, the 7 genomes experiments/lower/l4/rec/*.json and the two instances), 62 doubling (run, level) pairs, 757 j-windows: DOUBLE-EQ 0 violations (its first two clauses on 7,069 (step, doubling level) units, its third on the 757 j-windows, its fourth on the 62 doubling (run, level) pairs, 61 of them with F(j − 1) ≥ 1); PULSE-NEST 0 on 757 windows, attained on 215; GAP-NEST 0 on 260 window pairs, attained on 12; DOMINANCE-FREEZE 0 on 65,885 (consecutive-state pair, mover) units with equal deciders and on 1,390 (member of a doubling pair, pair of consecutive moves) units; CROSS-ECONOMY 0 on the 65 windows of 4 crossed doubling pairs, its sign clause on 43; MOVE: no separate DATA; the two instances re-derived exactly) (P-TOWER-FUEL, docs/lower/P-TOWER-FUEL.md with its fixes entry 1, docs/lower/P-TOWER-FUEL-fixes.md; L-LOWER successors 5-6), CHECKER PASS (docs/checker/C134.md, checker 0c816917)
+- Object (L-LOWER successors 5-7, D14 / D18 / D20, BOX L5; frozen, unchanged during review): packet P-TOWER-FUEL,
+  docs/lower/P-TOWER-FUEL.md, sha1 a093e0e7f668555395fb0aae476e7677c2a89ffd, 130 lines, 14,998 bytes (l-lower 7f7ff6f5,
+  2026-11-07T13:01:29Z, the file's only commit; identical at 740f6c79, f62faf37 and 4f25ae6f). Both referees measured it (REFEREE l. 26
+  «docs/lower/P-TOWER-FUEL.md a093e0e7…, 130 lines»; REFEREE-2 l. 5 «docs/lower/P-TOWER-FUEL.md a093e0e7… (14,998 B, 130 lines)»).
+  Labels (l. 4-5): «PROVED (the statements of §2, proofs below, premises §1 only) / DATA (§4, §5, each with its counter) / READING». To
+  sign (§2): Lemma 0 MOVE, Lemma 1 DOUBLE-EQ (E1)-(E5), Lemma 2 PULSE-NEST, Lemma 3 GAP-NEST with its capped corollary, Lemma 4
+  DOMINANCE-FREEZE (a), (b), Lemma 5 CROSS-ECONOMY (i)-(iii); DATA: §4 (the instances I-ROOM, I-FUEL) and §5 (the counters). The
+  packet's own scope (l. 5-6): «Nothing here bounds T polynomially; G-N5-TIME stays OPEN; not a TARGET.md claim (§7).».
+  Fixes: docs/lower/P-TOWER-FUEL-fixes.md, append-only, two entries, entry 1 by L-LOWER successor 6 and entry 2 by L-LOWER successor 7
+  (4f25ae6f: 144 lines, 15,426 bytes, sha1 c99bfd3acb8e062fd7b05fec98a5898a7ac883d2; its l. 1-93 are entry 1's file, by script). Entry 1
+  (740f6c79; the file then 93 lines, 9,973 bytes, sha1 0902efb9eaea48501e4289a8ce3980b235347ac8): §1 TF-1 = W-1 (the proof of Lemma 5
+  (iii) replaced by REFEREE's repair, the proof of record, with REFEREE-2's repair as a second route; statement unchanged), §2 TF-3 (the
+  unit of the 30 I-ROOM units), §3 TF-4 = W-3 (the I-FUEL sentence replaced by measured scopes and a READING), §4 (E5's hypothesis holds
+  on 61 of 62; TF-2 = N-1 noted, statement NOT changed), §5 line L-2 = L-1 with M1-M7, §6 the description slip. Entry 2 (4f25ae6f, l.
+  95-144, written by experiments/lower/l5/mkfix2_tf.py): CHECKER C134's E-1..E-4 with its §5 replacements R1-R4, line L-3, and
+  p_tower_check.py extended to pin L-3 and to assert SL41_d28's 119 j-windows; «The packet (frozen at 7f7ff6f5), L-1, L-2 and fixes
+  entry 1 are unchanged; no statement, proof, definition, instance or counter changes.» (l. 100-101). Entry 1 carries the proof of
+  record of CROSS-ECONOMY's sign clause; entry 2 carries none.
+  The RESULTS line is L-3, 7328e67345e1bb6a8605ccfa4f406d1020eabfdb (docs/lower/P-TOWER-FUEL-line-L3.txt, l-lower 4f25ae6f,
+  2026-11-07T18:44:07Z, the file's only commit; 4,908 bytes). The title is L-3 verbatim, with nothing inserted and nothing stripped (its
+  date parenthesis «(2026-11-07)», its scope tail with the L41 sentence and its source note are the line's own; the source note names
+  the packet with its fixes entry 1, which carries the proof of record; entry 2 carries no proof). L-3's parentheses balance (82 «(» /
+  82 «)»). Line history: L-1 (408470ad, committed with the frozen packet at 7f7ff6f5); L-2 (d866ca50, 740f6c79, fixes entry 1 §5: L-1
+  with exactly seven replacements M1-M7: REFEREE-2's W-2 (a) (cv in the notation), REFEREE's TF-L5 with REFEREE-2's W-2 (b) and
+  REFEREE's TF-3 (I-ROOM's level range, 119 j-windows, the 30 units' unit, 16 of 63), REFEREE's TF-L3 with REFEREE-2's W-2 (c) (I-FUEL's
+  failing windows defined, the crossing, the decider scope 48 / 16 / 0), REFEREE-2's W-4 (a) (the 24 runs and the (run, level) unit),
+  REFEREE's TF-L1 with REFEREE-2's W-4 (b) (DOUBLE-EQ's units 7,069 / 757 / 62, 61), REFEREE's TF-L2 containing REFEREE-2's W-4 (c)
+  (DOMINANCE-FREEZE's units), REFEREE's TF-L4 (the chains of the current options)); L-3 (7328e673, 4f25ae6f, fixes entry 2 §2-§3: L-2
+  with exactly CHECKER C134 §5's R1-R4, applied in that order, R3's old string inside R2's new text; they are the first fill's R-B, R-G,
+  R-U, R-S; see Fixes). Each old string occurs once in L-1 and each new string once in L-2, and L-1 with the seven replacements is L-2
+  (my script, True; REFEREE by its own script, §C l. 221-222; REFEREE-2 by its own bt_l2b.py, Add. 1 l. 193-194); L-2 with R1-R4 is L-3
+  (my script, True; mkL3_tf.py re-run, True; both referees by their own scripts). L-1: REFEREE «NOT YET: TF-L1, TF-L2, TF-L3 (DATA rule,
+  required); TF-L4, TF-L5 optional; exact texts in §5» (807984e3 l. 18); REFEREE-2 «**MATCHES after W-2 (a)-(c) and W-4 (a)-(c)**»
+  (4bede4dd l. 25). L-2 MATCHES at REFEREE (d39fc93a §C): «each OLD occurs once in L-1; each NEW once in L-2; L-1 with the seven
+  replacements is byte-equal to L-2.» (l. 221-222), M1-M7 judged for meaning (l. 224-237), «Verdict: fixes entry 1 CORRECT. L-2 MATCHES
+  (byte test and meaning).» (l. 251). L-2 MATCHES at REFEREE-2 (fa010874 Add. 1): «each OLD occurs once in L-1 and each NEW once in L-2,
+  and L-1 + M1..M7 == L-2 byte for byte (sha1 d866ca50…) ✓.» (l. 193-194), M1-M7 against its W items (l. 196-208), «**L-2 MATCHES** the
+  packet with fixes entry 1, in bytes and in meaning» (l. 222-223). L-3 MATCHES at both referees, each after its own byte test: REFEREE
+  successor 27 (af752251, 2026-11-07T19:08:39Z) §C add. 1 l. 260-262 (own script scratch/tf_l3.py: «each old string occurs once in the
+  text it is applied to (R3's only inside R2's new text); the result is byte-equal to L-3.»), l. 263-272 (meaning: «R1: CORRECT.»; «R2:
+  CORRECT and correctly attributed.»; «R3: CORRECT, same meaning.»; «R4: CORRECT.»), l. 273 «Verdict: L-3 MATCHES, by the byte test and
+  in meaning. All statements stay SIGN as in §C.»; REFEREE-2 successor 31 (e72661d0, 2026-11-07T19:08:25Z) Addendum 2 l. 233-235 (own
+  bt_l3.py: «L-2 + R1..R4 == L-3 byte for byte, sha1 7328e67345e1bb6a8605ccfa4f406d1020eabfdb, 4,908 B (= C134's prediction)»), l.
+  236-244 (meaning: R2, R4, R3 and R1, each marked ✓), l. 245 «**Verdict:** **L-3 MATCHES** the packet with fixes entries 1-2, in bytes
+  and in meaning (Opus 5.5, D1). Statements all SIGN.».
+- Claims signed (REFEREE successor 27, report 807984e3 and §C d39fc93a and §C add. 1 af752251; REFEREE-2 successor 31, report 4bede4dd,
+  Addendum 1 fa010874 and Addendum 2 e72661d0). REFEREE's table (l. 5-19 of R-P-TOWER-FUEL.md) reads Lemma 0 MOVE, Lemma 2 PULSE-NEST,
+  Lemma 4 DOMINANCE-FREEZE (a), (b), Lemma 5 CROSS-ECONOMY (i), (ii) «SIGN», Lemma 1 DOUBLE-EQ (E1)-(E5) «SIGN (remark TF-2, optional:
+  (E5) holds without F(j − 1) ≥ 1)», Lemma 3 GAP-NEST «(with the capped corollary)» SIGN, Lemma 5 CROSS-ECONOMY (iii) «SIGN WITH GAP
+  TF-1: statement true» with the proof's inequality false and a repaired proof in its §3, the premises «all LANDED on trunk 9315f36c»,
+  §7 «CLEAN»; «Gaps of record: TF-1 (proof of (iii); closed by the repair in §3 once the lane takes it into a fixes entry).» (l. 21).
+  REFEREE-2's table (l. 11-26 of R2-P-TOWER-FUEL.md) reads every §2 row «**SIGN**», Lemma 5 (iii) «on my repaired proof: the packet's
+  proof has a FALSE step (W-1, required)» (l. 20), §4 and §5 «re-derived exactly» / «every counter reproduced exactly by my own code»
+  (DATA, not signed), and «Nothing is REFUSED. No statement bounds T; G-N5-TIME stays OPEN.» (l. 26). Second round: REFEREE §C «TF-1 (=
+  W-1): CORRECT.» (l. 239) and «All statements SIGNED as in §0; CROSS-ECONOMY (iii) is now SIGN (TF-1 closed by the proof of record).
+  TF-L1..TF-L5, TF-3, TF-4 CLOSED.» (l. 251-252); REFEREE-2 Add. 1 «The proof of record (REFEREE's) is correct.» (l. 210) and «Statement
+  verdicts are unchanged: all SIGN, (iii) on the repaired proof now of record.» (l. 223). Third round (L-3, wording only): REFEREE §C
+  add. 1 «All statements stay SIGN as in §C.» (l. 273); REFEREE-2 Addendum 2 «Statements all SIGN.» (l. 245). No gap remains; nothing is
+  REFUSED. Setting: R104's IDEAL model on acyclic Ξ-graphs on 𝓛^R_d (R110); R113's c_l, γ_l, flip, F(l), cv; R105's ε and ranks.
+  Statements as signed (packet §2 with fixes entry 1):
+  (a) Notation (§1 l. 18-29): o_l(s), c_(l+1)(s) = o_l(s); j-b-steps and j-windows; doubling; for a doubling level and a window with one
+    move of each member u₁(W) < u₂(W), f(W), x₂(W), PULSE(W), GAP(W); cv_s, v_s(x, k), π_s(x), chain_s(x, k).
+  (b) Lemma 0 MOVE (§2 l. 31-32) [𝓛^R_d, level l ≥ 1]: «a mover x of level l ≥ 1 moves at step t iff its other option is strictly better
+    under s_(t−1) and c_l(s_t) ≠ s_(t−1)(x); it then moves to c_l(s_t).»
+  (c) Lemma 1 DOUBLE-EQ (E1)-(E5) (§2 l. 33-36) [1 ≤ j ≤ d − 1, level j doubling]: (E1) Φ(0) = 2, Φ(T) = 0; (E2) Φ(t − 1) = 0 at every
+    j-b-step; (E3) «no step moves both members, and pair j flips exactly at the steps that move a member»; (E4) «in every j-window each
+    member moves exactly once»; (E5) «if F(j − 1) ≥ 1, the first mover f is the same member in every j-window (and γ_j(0) = γ_j(1))». Its
+    proof re-proves R113's PAIR-DOUBLE bound F(j) ≤ 2 + 2F(j − 1) (REFEREE l. 49-50).
+  (d) Lemma 2 PULSE-NEST (§2 l. 37-38) [levels j, …, j + k doubling, k ≥ 0, j + k ≤ d − 1]: «every j-window has PULSE ≥ k + 1».
+  (e) Lemma 3 GAP-NEST (§2 l. 39-40) [the same, k ≥ 1]: «GAP(W) ≥ k + 1 for consecutive j-windows W, W⁺», with the capped corollary «PULSE
+    and GAP of every j-window are ≥ h − j for 1 ≤ j ≤ h − 2».
+  (f) Lemma 4 DOMINANCE-FREEZE (§2 l. 41-44) [a mover x, a state s; (b): x a member of pair j, level j doubling]: (a) «π_s(x) is determined
+    by dec_s(x)»; (b) «dec(x) is not constant on s_(t−1), …, s_(t′−1)» for consecutive moves t < t′ of x.
+  (g) Lemma 5 CROSS-ECONOMY (§2 l. 45-51) [level j doubling, pair j crossed onto A_0 ≠ A_1 outside it]: (i) the threshold form of π for
+    each member; (ii) «In every j-window: [D(s_(u₁−1)) > θ_f] ≠ [D(s_(u₂−1)) > θ_(x₂)].»; (iii) under the RANK hypothesis at both pre-states, D
+    changes sign between s_(u₁−1) and s_(u₂−1), proved by the proof of record (fixes entry 1 §1, REFEREE's repair); its closing «and nothing
+    else is required of it there» is a READING, not signed (REFEREE l. 113-114).
+- The RESULTS line (L-3, the title): «In the IDEAL model of RESULTS R104 (premise: R104's definition of the model only, no theorem of
+  R104 used; RESULTS R105's ENC only;» … «on acyclic Ξ-graphs on 𝓛^R_d,» … «(2026-11-07) — a STRUCTURE statement inside the IDEAL model
+  on doubling levels of 2-wide ladders» … «are not covered; the proof of record of CROSS-ECONOMY's sign-change clause is
+  referee-originated (REFEREE R-P-TOWER-FUEL §3, restated in P-TOWER-FUEL's fixes entry 1 §1; REFEREE-2's own repair is a second route),
+  signed by both referees; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim (DATA:» … «(P-TOWER-FUEL,
+  docs/lower/P-TOWER-FUEL.md with its fixes entry 1, docs/lower/P-TOWER-FUEL-fixes.md; L-LOWER successors 5-6)». Its clauses: notation =
+  (a) in words; MOVE = (b); DOUBLE-EQ = (c) (E3)-(E5) without the γ clause; PULSE-NEST = (d); GAP-NEST = (e); DOMINANCE-FREEZE = (f);
+  CROSS-ECONOMY = (g) (ii), (iii); instances = packet §4 as fixed by entry 1 §2-§3 (DATA). Its DATA: the parenthesis «(DATA:
+  experiments/lower/l5/p_tower_check.py on 24 runs from the stored start …)», clause by clause. What R1-R4 change (C134 §5): R1 the
+  source note (it names fixes entry 1, which carries the proof of record and the measured instance units and scopes, and the successors
+  5-6); R2 the scope tail's L41 sentence (see L41 and L43); R3 the drop words, «not a gauntlet step» → «not a step-4 pass», the landed
+  wording; R4 the unit and set of I-FUEL's PULSE, GAP clause, «(unit = j-window; set = all 119 of them)», as in I-ROOM's. «No statement,
+  proof, definition or instance changes.» (C134 l. 17-18).
+- Premise: RESULTS R104's definition of the IDEAL model only, no theorem of R104; RESULTS R105's ENC only («the Ξ-order of β-sets is the
+  order of the integers Σ ±2^rank (+ for even parity), so … the value of option (x, k) is ε(x, k) plus the current value of its Ξ-target»,
+  R105 l. 10155), for Lemmas 4 and 5; RESULTS R110's definition of 𝓛^R_d only («movers 2l and 2l + 1 on level l, all of degree 2, no other
+  movers, option k of a mover of level l ≥ 1 W-pointing to mover 2(l − 1) + k», l. 11323); RESULTS R113's ALIGN only («on 𝓛^R_d, for 1 ≤ l
+  ≤ d − 1 and every state s of a run, both movers 2l and 2l + 1 have KP_s = c_l(s), each of them that moves at step t moves to option
+  c_l(s_t), and the order of their keys under s is [s(2l) = c_l(s)] if s(2l) ≠ s(2l + 1) and γ_l(j) if both are on option j», l. 12152),
+  with its notation c_l, γ_l, flip, F(l) and cv, for Lemmas 0 and 1 and through them 2-5. R113 is stated on acyclic Ξ-graphs, as this line
+  is. Both referees checked every premise quote against RESULTS (REFEREE l. 38-52; REFEREE-2 l. 28-37); no R116, R119 or lane item is used.
+- L41 and L43. The packet's proofs are L-LOWER successor 5's, except one: the proof of record of CROSS-ECONOMY (iii) is REFEREE
+  successor 27's repair (R-P-TOWER-FUEL §3, l. 107-112), restated in fixes entry 1 §1 under the Lead's ruling of 15:18Z; the packet's
+  own step (its first inequality) is false (REFEREE: 57 of 86 RANK states; REFEREE-2: 651 of 1,010). REFEREE signs it (§C l. 251-252);
+  REFEREE-2, which wrote its own repair before reading REFEREE (report l. 70-74, «Independent: docs/referee/ not read on this item.», l.
+  2), checked the proof of record and signs (Add. 1 l. 209-214, l. 223). This is L41's case (DECISIONS l. 355-358), as the Lead ruled
+  («E-2 (G-7, L41; Lead ruling).», C134 l. 25; there «L41 requires the scope tail to say so», l. 26-27); L-3's scope tail says so (R2,
+  the first fill's R-G): «the proof of record of CROSS-ECONOMY's sign-change clause is referee-originated (REFEREE R-P-TOWER-FUEL §3,
+  restated in P-TOWER-FUEL's fixes entry 1 §1; REFEREE-2's own repair is a second route), signed by both referees». Both referees read
+  R2 in meaning (REFEREE §C add. 1 «R2: CORRECT and correctly attributed.», l. 265; REFEREE-2 Addendum 2 «R2 is true and is what my
+  Addendum 1 says.», l. 237). L43: no statement is asymptotic; the two instances are DATA, not DEAD.
+- Fixes (docs/lower/P-TOWER-FUEL-fixes.md, append-only; entry 1 by L-LOWER successor 6 at 740f6c79, written by
+  experiments/lower/l5/mkfix_tf.py, the file then 93 lines, 9,973 bytes, sha1 0902efb9eaea48501e4289a8ce3980b235347ac8, «Merged under
+  the Lead rulings of 15:18Z (Lead reading).», l. 7; entry 2 by L-LOWER successor 7 at 4f25ae6f, written by
+  experiments/lower/l5/mkfix2_tf.py, l. 95-144, the file now 144 lines, 15,426 bytes, sha1 c99bfd3acb8e062fd7b05fec98a5898a7ac883d2):
+  - §1 TF-1 = W-1: the packet's proof sentence replaced by the «Proof of record (REFEREE's repair; it uses only the packet's Lemma 4 (a),
+    ENC and acyclicity)» (l. 18-24); the «Independent second route (REFEREE-2's repair, recorded, not needed for the record)» (l. 25-31).
+  - §2 TF-3: the 30 I-ROOM units are (5-window, PULSE or GAP) units on 16 distinct 5-windows.
+  - §3 TF-4 = W-3: the I-FUEL sentence replaced by measured scopes (48 / 48 at some pre-state, 32 / 48 at s_(a−1), 16 / 48 at every
+    pre-state, 0 / 79 good; 188 of 188 consecutive-move pairs with a non-constant decider) and a READING («READING: the room conditions are
+    met and the missing piece is fuel»); Lemma 4 (b) is no longer said to be violated.
+  - §4: E5's hypothesis F(j − 1) ≥ 1 holds on 61 of the 62 doubling (run, level) pairs; TF-2 = N-1 recorded, statement NOT changed.
+  - §5: line L-2 = L-1 with M1-M7 (above); p_tower_check.py extended to pin L-2 and to assert 7,069, 61, 119, 16, 32, 16 and 188.
+  - §6: the description slip (L-1 is 3,834 bytes, 3,699 characters).
+  - Entry 2 (CHECKER C134's fix round; l. 95-144): §1 C134's four findings E-1..E-4 and N-1, each quoted from C134 by the script; §2
+    R1-R4 with C134 §5's joining rule; §3 line L-3 (made by experiments/lower/l5/mkL3_tf.py, which asserts C134's target sha1 and byte
+    count) and p_tower_check.py extended to pin L-3 and to assert SL41_d28's 119 j-windows (3, 7, 15, 31, 63). E-1 (the source note) by
+    R1 (the first fill's R-B); E-2 (L41: the proof of record is referee-originated) by R2 (R-G); E-3 (the scope words; C134's ruling on
+    the UPDATE procedure) by R3 (R-U); E-4 (the unit and set of I-FUEL's PULSE, GAP clause) by R4 (R-S). The first fill's optional R-C
+    is not taken («R-C is not taken (N-1).», C134 l. 17).
+  - No statement of the packet changes; entry 1 replaces one proof, re-measures §4 and rewrites the line; entry 2 rewrites the line
+    only.
+- Not signed: packet §4, §5 (DATA), the READING of fixes §3, TF-2 / N-1, the packet's «Not claimed» items, BOX L6 (lane).
+- Referee strengthening (NOT part of this entry; referee checks):
+  (i) REFEREE: own replay tools on its own IDEAL simulator t3r_sim.py (docs/referee/scratch/tf_replay.py, tf_units.py; no L-LOWER code
+    imported): both instances and every §5 counter reproduced exactly (l. 116-137); extra counters with 0 violations: MOVE both directions
+    on 72,974 (step, mover of level ≥ 1) units, E1 and E2 on 62 levels, γ_j(0) = γ_j(1) on 62, PAIR-DOUBLE on every (run, level ≥ 1), Lemma
+    4 (a) at every state on 77,674 (state, mover) units, Lemma 5 (i) at every state on 185 (l. 138-139); mutants (l. 140-142); the decider
+    scope table (l. 125-133).
+  (ii) REFEREE-2: own r2tower.py and r2fuel.py on its own R104 simulator r2moves.py, «Lane code was only run, never imported into mine.»
+    (l. 8-9): both instances, every §5 counter reproduced (l. 77-104); extra checks with 0 violations (l. 105-109); its repair checked
+    pointwise at 1,010 RANK states of the 14 crossed pairs, 0 violations (l. 74); the 188 consecutive-move pairs (r2fuel.out, l. 97-98).
+  (iii) The L-3 round: REFEREE §C add. 1 replayed R4's set on its own simulator («My own replay (tf_logs/inst.log, I-FUEL): 3, 7, 15,
+    31, 63 = 119 j-windows at j = 1, …, 5, 0 PULSE and 0 GAP violations of ≥ 7 − j.», l. 271-272) and checked R2's attribution against
+    its own §3 (l. 265-266); REFEREE-2 Addendum 2 counted the same set with its own code («SL41_d28 has 3 + 7 + 15 + 31 + 63 = 119
+    j-windows at j = 1..5», l. 240) and read R3 against its own TARGET diff (l. 242-243).
+- Honest limits: (i) Nothing is bounded polynomially; the lemmas are necessary conditions for doubling levels (room: PULSE-NEST,
+  GAP-NEST; fuel: DOMINANCE-FREEZE, CROSS-ECONOMY), not a bound on their number, and nothing is claimed about T^R(d). (ii) The two
+  instances are DATA from one start each; they say what a seventh capped level would need on those runs, not that it is impossible; the
+  plateau F(6) = 222 is not claimed a cap. (iii) DOMINANCE-FREEZE (a) is counted on consecutive states only (65,885 equal-decider
+  units); the every-state check is referee data. (iv) MOVE has no DATA of its own in the line (referee data only). (v) All DATA runs are
+  runs of implementations (l3/sim.py; the referees' own simulators), from stored starts only. (vi) Names: «MOVE», «DOUBLE-EQ»,
+  «PULSE-NEST», «GAP-NEST», «DOMINANCE-FREEZE», «CROSS-ECONOMY» are new to RESULTS; DOUBLE-EQ overlaps R119's DBL-EQ in content and is
+  re-proved here from ALIGN; «PULSE-NEST» is also L-SI's lane name; «R120» is also an old L-RED round label
+  (docs/red/R120-reset-lin.md), not a RESULTS label. (vii) No literature source is cited and no novelty is claimed. (viii) CHECKER C134
+  (85e4cdea, 23871f48) FAILED the first fill (draft 752f9531, on L-2) with E-1..E-4, all line wording («No statement, proof, definition
+  or instance changes.», C134 l. 17-18); L-3 resolves them by R1-R4 (Fixes).
+- Data (DATA, not proof): experiments/lower/l5/p_tower_check.py at l-lower 4f25ae6f (177 lines; 172 at 740f6c79; simulator
+  experiments/lower/l3/sim.py, R104's IDEAL model): pins (the two instances, L-1, L-2, L-3); §(2) the instance counts of I-ROOM and
+  I-FUEL, with SL41_d28's 119 j-windows at j = 1..5 (3, 7, 15, 31, 63) asserted since 4f25ae6f (fixes entry 2 §3; the set of R4's
+  clause); §(3) the counters E3, E4, E5, PN, GN, DF, DFa, CE (ii), CE (iii) on the 24 runs, every count asserted against an expected
+  table (l. 172-176; l. 167-171 at 740f6c79). Wired into experiments/lower/check.sh (l. 49-50), run by scripts/verify.sh. Re-run from a
+  git archive of 4f25ae6f at the second fill: the whole experiments/lower/check.sh, 2026-11-07T19:29:33Z-19:29:46Z, rc 0, 54 output
+  lines, «pins OK: 5 files», «SL41_d28: 119 j-windows at j = 1..5 (3, 7, 15, 31, 63)», «P-TOWER-FUEL CHECK PASS», the counters line
+  equal to the first fill's; and from a git archive of the l-lower head 8cc6ebc6 (BOX L7 added), 2026-11-07T19:36:55Z-19:37:07Z, rc 0,
+  the same 54 lines and «L7 CHECK PASS» (first fill: from f62faf37, 2026-11-07T16:23:15Z-16:23:27Z, rc 0, «pins OK: 4 files»; CHECKER
+  C134 §4: p_tower_check.py from git archive 2a89b7f2, rc 0; both referees re-ran it at 4f25ae6f, REFEREE §C add. 1 l. 258-259,
+  REFEREE-2 Addendum 2 l. 231-232, and at 740f6c79, REFEREE §C l. 219, exit 0, REFEREE-2 Add. 1 l. 184-185). Sets: the 15 genomes
+  experiments/lower/l3/kill/*.json, the 7 genomes experiments/lower/l4/rec/*.json and the two instances
+  experiments/lower/l4/rec/G7_best_d28.txt (b995fff2…) and experiments/lower/l5/rec/SL41_d28.txt (c1b46c31…), each from its stored
+  start: 24 runs, 1,999 steps, 62 doubling (run, level) pairs, 757 j-windows. Independent simulators named by the packet (§5): fev.c,
+  utmpl.c and L-NEW's box150 Gen via l3/xcheck.py (identical T and F on both instances; lane DATA).
+- Signatures: REFEREE docs/referee/R-P-TOWER-FUEL.md: successor 27's report 807984e3 (2026-11-07T14:42:53Z; «Written from
+  2026-11-07T14:41Z (date -u); the header time of record is the commit time.»), «I did NOT read docs/referee-2/ for this report.» (l.
+  3), verdict table l. 5-19; §C d39fc93a (2026-11-07T15:53:22Z), l. 213-252, «Independence: I read docs/referee-2/R2-P-TOWER-FUEL.md
+  (4bede4dd) only after 807984e3 was on origin.» (l. 223), verdict l. 251-252: «Verdict: fixes entry 1 CORRECT. L-2 MATCHES (byte test
+  and meaning). All statements SIGNED as in §0; CROSS-ECONOMY (iii) is now SIGN (TF-1 closed by the proof of record). TF-L1..TF-L5,
+  TF-3, TF-4 CLOSED.»; §C add. 1 af752251cf6a8afaf25073a960189b2281d9cbe1 (2026-11-07T19:08:39Z; heading «date -u at writing
+  2026-11-07T19:08Z»), l. 254-273, «Verdict: L-3 MATCHES, by the byte test and in meaning. All statements stay SIGN as in §C.» (l. 273).
+  REFEREE-2 docs/referee-2/R2-P-TOWER-FUEL.md: successor 31's report 4bede4dd (2026-11-07T14:40:11Z), «Independent: docs/referee/ not
+  read on this item.» (l. 2), verdict table l. 11-26; Addendum 1 fa010874 (2026-11-07T15:53:15Z), l. 179-223, REFEREE's report «was read
+  only now, after my report (4bede4dd) was on origin.» (l. 186), verdict l. 222-223: «**L-2 MATCHES** the packet with fixes entry 1, in
+  bytes and in meaning» … «Statement verdicts are unchanged: all SIGN, (iii) on the repaired proof now of record.»; Addendum 2
+  e72661d01602ab9c629cd1fe01676c98a7ae15ec (2026-11-07T19:08:25Z; heading «2026-11-07 19:1xZ by date -u»), l. 225-245, with
+  R2-P-TOWER-FUEL/bt_l3.py, bt_l3.out and lanecheck_4f25ae6f.out, «**Verdict:** **L-3 MATCHES** the packet with fixes entries 1-2, in
+  bytes and in meaning (Opus 5.5, D1). Statements all SIGN.» (l. 245). Lane (claude/l-lower): L-LOWER successor 5, 7f7ff6f5 (packet
+  FROZEN, L-1); successor 6, 740f6c79 (fixes entry 1, L-2); successor 7, 4f25ae6f (fixes entry 2, L-3).
+- INDEPENDENCE: the packet's proofs are L-LOWER's except (iii)'s proof of record (L41, above); each referee re-derived every step
+  (REFEREE §3; REFEREE-2 «## Proofs (own re-derivation)») and replayed the statements on a simulator that is not the lane's (REFEREE:
+  t3r_sim.py; REFEREE-2: r2moves.py). Each referee wrote its first report without reading the other's (REFEREE l. 3; REFEREE-2 l. 2),
+  and each found the false proof step and repaired it on its own (REFEREE l. 100-112; REFEREE-2 l. 65-74); the repairs are the same
+  argument (REFEREE §C l. 240-241: «REFEREE-2's route is the same argument written through ENC directly; both are sound.»). The L-2
+  wording merges both referees' line items under the Lead's rulings (M1-M7); each referee judged the merged strings for meaning against
+  its own items (REFEREE §C l. 224-237; REFEREE-2 Add. 1 l. 196-208). L-3's further wording (R1-R4) is CHECKER C134's (the first fill's
+  R-B, R-G, R-U, R-S, taken by C134; R-B and R-G by the Lead's rulings); in the L-3 round each referee byte-tested L-3 with its own
+  script and read R1-R4 in meaning (REFEREE §C add. 1 l. 260-272, scratch/tf_l3.py; REFEREE-2 Addendum 2 l. 233-244, bt_l3.py).
+- TARGET.md diff: TARGET.md §1 defines a parity game; the IDEAL model of R104 is a step rule on genomes (R104's definition), not a
+  parity-game solver, and no statement of this entry mentions a parity game, a winning region, an algorithm's running time or a
+  complexity class (packet §7: «No statement mentions a parity game, a winning region, an algorithm's running time or a complexity
+  class»; REFEREE §7 l. 203-204 «Nothing bounds T polynomially; the line says G-N5-TIME stays OPEN, not M3, not a gauntlet step, not a
+  TARGET.md claim. CLEAN.»; REFEREE-2 l. 163 «Not M3/M4, not a gauntlet step (§5 does not apply); G-N5-TIME OPEN ✓.»). «d» is the ladder
+  depth, not TARGET.md's number of priorities (REFEREE l. 205). No statement bounds T polynomially (L-3: «bounds nothing polynomially»).
+  It is not an algorithm claim, so TARGET.md §5's gauntlet does not apply, and it is not a step-4 pass. L-3 carries the scope tail
+  «G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim» (R3, by script). The referees' first-round TARGET diffs
+  quoted above read L-1's «not a gauntlet step»; both read R3 as the same meaning (REFEREE §C add. 1 «R3: CORRECT, same meaning.», l.
+  269; REFEREE-2 Addendum 2 «the packet is not an algorithm claim, so no gauntlet step applies (TARGET.md §5, my TARGET diff).», l.
+  242). GAPS G-N5-TIME: open.
+
 **Erratum E-1** (not a result; 2026-11-01 05:28Z by date -u; Lead; corpus counts in RESULTS R97-R100):
 - What is wrong: the DATA-of-record sentences that say «1,132 games» for the L-SI box 50b / box 53 corpus (sbcg.lst 719 lines + alt_all.lst
   413 lines) count RUNS, not games. Measured by CHECKER (C111 N-7, claude/checker d53e1d4f) at trunk 68d50c8f: experiments/si/anc58/
