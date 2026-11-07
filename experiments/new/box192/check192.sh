@@ -9,3 +9,4 @@ python3 xgate192.py rand 100 1
 python3 tie192.py 300 1 12
 python3 trunc192.py inst/rd2_d9.json inst/rf_d5.json
 python3 mtype192.py inst/rd2_d9.json inst/rf_d5.json
+python3 ret192.py inst/rd2_d9.json inst/rf_d5.json

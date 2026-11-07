@@ -15,3 +15,5 @@ rf_d5.json N 10 T 11 TRUNC-CHOICE ok 166 bad 0 (trunc-ties 136); max mover value
 rd2_d9.json [(('BRET', 'b'), 2), (('DISJ', 'b'), 21), (('DISJ', 'e'), 8), (('RET', 'e'), 24)]
 rf_d5.json [(('BRET', 'b'), 1), (('DISJ', 'b'), 4), (('DISJ', 'e'), 6), (('RET', 'e'), 8)]
 TOTAL [(('BRET', 'b'), 3), (('DISJ', 'b'), 25), (('DISJ', 'e'), 14), (('RET', 'e'), 32)]
+rd2_d9.json T 21 mover re-adoptions 72 (max per option 6); face returns 69 (max per face 5)
+rf_d5.json T 11 mover re-adoptions 22 (max per option 3); face returns 17 (max per face 5)

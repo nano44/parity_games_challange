@@ -205,3 +205,39 @@ DATA (unit: R-flips; set: 16 L-RED R-bests + cR_d2_w8 best; scope: IDEAL-CYC; to
 READING: about half the R-flips are «cycle avoidance». Even's switches complete a route from β_g back to g, and Odd answers by leaving
 through e_g. This is L-RED §53.1's «Odd leaves an Even-won β-cycle», made exact by MERGE. A charging argument would charge each RET flip
 to the switch that completed the return route. It is not proved, and it would need a per-route bound.
+
+## Addendum 2: literature check (Lead 10:05Z; L-LIT parked). Sources opened, with what each bound needs, and whether Γ3 runs meet it
+- Murota–Shioura, METR 2013-24 = ORL 42 (2014) 361-366, DOI 10.1016/j.orl.2014.06.005: Theorem 1.2. Opened. Covered in §3 (DEAD L♮-MODEL).
+- **Post–Ye, arXiv 1208.5083 (v2; SODA 2013; Math. Oper. Res. 2015, DOI 10.1287/moor.2014.0699).** Opened: the abstract on arxiv.org.
+  - Quoted: «the simplex method with the highest gain/most-negative-reduced cost pivoting rule converges in strongly polynomial time for
+    deterministic Markov decision processes (MDPs) regardless of the discount factor»; «O(n^3m^2log^2 n) iterations if the discount
+    factor is uniform and O(n^5m^3log^2 n) iterations if each action has a distinct discount factor».
+  - Needs: ONE player (an MDP); deterministic transitions; discounted total cost; Dantzig's rule, i.e. one switch per iteration (the
+    highest gain).
+  - DOES NOT APPLY to Γ3-Howard, for three reasons: two players (Odd best-responds at the gates); Howard switches every improvable mover at
+    once (up to 11 in one step, rd2_d9); the values are VJ parity values, not discounted costs.
+  - The one-player variant is already polynomial by ONEP-POLY (P-N5-XICYC), so Post–Ye adds nothing there.
+  - A possible use, NOT done: a Dantzig-rule variant of N5′-xi (one switch per step) on a parity-to-discounted reduction. The bound is
+    independent of the discount, so the exponentially small 1 − γ of that reduction would not hurt. But Odd's best response still breaks
+    the one-player hypothesis.
+- **Hansen–Miltersen–Zwick, arXiv 1008.0530.** Opened: the abstract on arxiv.org; Lemmas 5.3 / 5.4 were opened by successor 59 (DOM =
+  folklore).
+  - Bound: Howard's policy iteration / strategy iteration for 2-player turn-based stochastic games with discount γ «terminates after at
+    most O(m/(1−γ) log(n/(1−γ))) iterations».
+  - Needs: a FIXED discount, 1/(1−γ) polynomially bounded. Two players and Howard are allowed, so this is the closest match to our setting.
+  - DOES NOT APPLY: a parity game, or the VJ order, is captured by a discounted game only with 1 − γ exponentially small in the number of
+    priorities. That is the standard parity → mean-payoff → discounted reduction; I did not re-open its source here. With such a γ the bound
+    is exponential.
+  - Its proof idea, action elimination («after O(1/(1−γ) log(n/(1−γ))) iterations some action is never used again»), does not carry over
+    plainly. DATA: movers re-adopt options they left, up to 6 times per option (rd2_d9), and gate faces return up to 5 times (rd2_d9, rf_d5).
+    Unit: re-adoptions per (mover, option) / per (gate, face). Set: 16 L-RED R-bests + cR_d2_w8. Scope: IDEAL-CYC. Tool: ret192.py.
+    A VJ analogue would need «some action is never used again after poly steps». Untested.
+- **Hansen–Kaplan–Zwick, «Dantzig's pivoting rule for shortest paths, deterministic MDPs, and minimum cost to time ratio cycles», SODA
+  2014, pp. 847-860, DOI 10.1137/1.9781611973402.63.** NOT OPENED: epubs.siam.org returned 403, dblp blocked automated access, and the
+  arXiv API title search returned no entry.
+  - I therefore cite no theorem from it. The search-engine snippets (an O(mn log n) Dantzig bound for shortest paths, an Ω(n²) lower bound,
+    and an improvement of Post–Ye) are secondary and are not used.
+  - On the hypotheses those snippets name (Dantzig's rule, one player), it would not apply, for the same reasons as Post–Ye.
+- Summary: none of the three bounds applies to Γ3-Howard. Each needs one player, a single switch per step (Dantzig), or a fixed discount.
+  Γ3-Howard has two players, all-switch steps and parity (exponentially-small-discount) values. This is the expected gap: it is the gap
+  between «strongly polynomial for fixed discount» (HMZ) and «parity games».

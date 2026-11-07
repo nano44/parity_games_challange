@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Box 192: hill-climb GENERAL games for SEG-T: score = max p-run along the sigma-steps of N5'-xi (box190 n5v.py mode xi), then
-#sigma-steps. A genome = (prio, owner, succ). Resumable (OUT.json). Usage: tieclimb192.py n seed iters OUT"""
+#sigma-steps. A genome = (prio, owner, succ). Resumable (OUT.json). Env GAP=1: score (p-run - n_E, p-run, #sigma-steps). Usage: tieclimb192.py n seed iters OUT"""
 import sys, os, json, random, copy
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 sys.path[:0] = [os.path.join(ROOT, "experiments/new/box190")]
@@ -17,6 +17,7 @@ def score(G):
         lab += "C" if any(pv[v][0] != vs[v][0] for v in range(n)) else ("R" if any(ps[v] != sb[v] for v in range(n) if g.owner[v] == 1) else "p")
     mp = max((len(r) for r in lab.replace("R", "C").split("C")), default=0)
     nE = sum(1 for v in range(n) if g.owner[v] == 0)
+    if os.environ.get("GAP") == "1": return (mp - nE, mp, len(lab)), nE, lab
     return (mp, len(lab)), nE, lab
 
 def mut(G):
@@ -38,6 +39,6 @@ for it in range(iters):
     if s >= best:
         if s > best:
             print(f"it {it} score {s} nE {nE2} {lab2}", flush=True); json.dump(G, open(out + ".json", "w"))
-            if s[0] > nE2: print("SEG-T VIOLATION", flush=True); json.dump(G, open(out + "_viol.json", "w"))
+            if (s[1] if os.environ.get("GAP") == "1" else s[0]) > nE2: print("SEG-T VIOLATION", flush=True); json.dump(G, open(out + "_viol.json", "w"))
         cur, best = G, s
 print("final", best, flush=True)

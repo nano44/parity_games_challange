@@ -1,0 +1,40 @@
+start (-14, 0, 1) 14 R
+it 1 score (-13, 0, 1) nE 13 C
+it 5 score (-12, 1, 1) nE 13 p
+it 9 score (-11, 1, 1) nE 12 p
+it 13 score (-9, 2, 2) nE 11 pp
+it 58 score (-8, 2, 2) nE 10 pp
+it 67 score (-7, 2, 2) nE 9 pp
+it 97 score (-6, 2, 2) nE 8 pp
+it 101 score (-5, 2, 2) nE 7 pp
+it 103 score (-4, 2, 2) nE 6 pp
+it 113 score (-3, 3, 3) nE 6 ppp
+it 126 score (-2, 3, 3) nE 5 ppp
+it 134 score (-2, 4, 4) nE 6 pppp
+it 261 score (-1, 4, 4) nE 5 pppp
+it 1233 score (-1, 5, 5) nE 6 ppppp
+it 1268 score (0, 5, 5) nE 5 ppppp
+it 1514 score (1, 6, 6) nE 5 pppppp
+SEG-T VIOLATION
+it 3404 score (2, 6, 6) nE 4 pppppp
+SEG-T VIOLATION
+it 3666 score (3, 7, 7) nE 4 ppppppp
+SEG-T VIOLATION
+it 4566 score (4, 8, 8) nE 4 pppppppp
+SEG-T VIOLATION
+it 5686 score (4, 9, 9) nE 5 ppppppppp
+SEG-T VIOLATION
+it 7325 score (5, 10, 10) nE 5 pppppppppp
+SEG-T VIOLATION
+it 14545 score (6, 11, 11) nE 5 ppppppppppp
+SEG-T VIOLATION
+it 23587 score (6, 12, 12) nE 6 pppppppppppp
+SEG-T VIOLATION
+it 24287 score (6, 12, 13) nE 6 Rpppppppppppp
+SEG-T VIOLATION
+it 25993 score (7, 13, 13) nE 6 ppppppppppppp
+SEG-T VIOLATION
+it 40995 score (8, 13, 13) nE 5 ppppppppppppp
+SEG-T VIOLATION
+it 46621 score (8, 14, 14) nE 6 pppppppppppppp
+SEG-T VIOLATION

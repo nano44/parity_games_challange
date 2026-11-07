@@ -15,6 +15,12 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - Open core: OVT-POLY (overtakes of two monotone truncated values of the fixed pair (y_g, xt_g)); TIE-PERSIST for SEG-T.
 - Running: runclimbs192.sh (4 climbs, 40-min slices, resumable: rerun the script); tieclimb192.py queued (SEG-T climb).
 - Next: two-level genomes (d = 2, R ~ N already): OVT there; SEG-T climb.
+### Sources opened (successor 60; also in docs/new/N5-RPOT-box192.md Addendum 2)
+- Murota-Shioura, METR 2013-24 (keisu.t.u-tokyo.ac.jp PDF) = ORL 42 (2014) 361-366, DOI 10.1016/j.orl.2014.06.005: Algorithm
+  SteepestDescent, Theorem 1.2 («terminates exactly in mu(p0) + 1 iterations»).
+- Post-Ye, arXiv 1208.5083 v2 (abstract): Dantzig rule, deterministic MDP, O(n^3 m^2 log^2 n) uniform discount, O(n^5 m^3 log^2 n) distinct.
+- Hansen-Miltersen-Zwick, arXiv 1008.0530 (abstract): Howard / strategy iteration for 2TBSG, O(m/(1-gamma) log(n/(1-gamma))).
+- NOT opened: Hansen-Kaplan-Zwick SODA 2014 (DOI 10.1137/1.9781611973402.63): SIAM 403, dblp blocked, no arXiv entry by title.
 ### Things only I know (successor 60)
 - The L-RED instances are in box192/inst (copied by git archive of claude/l-red c81dd2d7 experiments/red/r215/out; SHA1SUMS).
 - climb192.py execs the def mut(G) block of box191/climb191.py (the file is unmodified); it needs the global rng.
