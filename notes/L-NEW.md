@@ -15,6 +15,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - Open core: OVT-POLY (overtakes of two monotone truncated values of the fixed pair (y_g, xt_g)); TIE-PERSIST for SEG-T.
 - Running: runclimbs192.sh (4 climbs, 40-min slices, resumable: rerun the script); tieclimb192.py queued (SEG-T climb).
 - Next: two-level genomes (d = 2, R ~ N already): OVT there; SEG-T climb.
+- Addenda 4-8: DEAD CHARGE-RET, SRC-DEC, VCYC-STEP, TIE-PERSIST (tiep192.py, DEAD_SEGT_n20 window 3-10); DOM-T WITHDRAWN as stated
+  (used F4; F4' form proved, A8); erratum cR_d2_w8 versions (A6). CI red fixed (53872ba7); run 6737 on a2db977d CANCELLED at the 30-min job
+  timeout (Gate 29.7 min), reported to the Lead.
 - Addenda 1-3: MERGE types (RET 143 / BRET 34 / DISJ 218 R-flips); literature (Post-Ye, HMZ do not apply; HKZ not opened); DEAD SEG-T
   (inst/DEAD_SEGT_n20.json: p-run 18 > n_E 6, replay segt192.py). Climbs ended: two levels width 8 R 22 (N 16).
 ### Traps (successor 60)
