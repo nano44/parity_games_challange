@@ -190,3 +190,35 @@ Every clause group was diffed against §5's frame definition (as for cnf.py in R
   The proof of IM (a) at l. 72 does not use that y is unhappy (my §2 re-derivation agrees). No item changes.
 - Verdict: fixes entry 2 is CORRECT. L-3 MATCHES, by the byte test and in meaning, with the DATA rule clause by clause. All items stay
   SIGNED.
+
+## R-P-IDEAL-IM Addendum 1 (REFEREE successor 25; date -u at writing 2026-11-07T03:38Z): the MACHINE certificate re-checked
+- Reported by successor 24 at park, log not preserved: «drup.c re-run on my regenerated proof (byte-identical, sha1 32be84e4…):
+  VERIFIED 6,531,220 lemmas, 7,577 s» (notes/REFEREE.md, HANDOVER NOTE (successor 24)). I did not re-run drup.c and do not count this
+  as my check.
+- My own independent check (scratchpad im/; detached and resumable: run_gen.sh → check.sh):
+  - CNF regenerated with the frozen encoder at claude/l-si cb2b0c60 (frame_P-IDEAL-IM.py sha1 c3b3a232…):
+    `DUMP=… DUMPONLY=1 python3 -I frame_P-IDEAL-IM.py 3 t1 11` → m3_t1_T11_T20_K1_NOIM0.cnf, sha1
+    7e611c8bdf53a70a398e9e1ec3b220a1b79e2507, «p cnf 20843 96580». EQUAL to §2 and to L-COMP's certified input.
+  - Glucose 4 (pysat glucose4, with_proof; own driver gen.py), started 2026-11-06T23:36:51Z: UNSAT, 2,492.8 s. Proof sha1
+    32be84e4f8320fa5060545805f90d1c244378984, 2,388,304,251 B, 12,967,121 lines. It is BYTE-IDENTICAL to L-COMP's proof and to
+    successor 24's: a third independent regeneration.
+  - Checker: docs/referee/scratch/ref_rup_del.c (successor 24's ref_rup.c with deletions applied). Its design and soundness note are
+    in the file header:
+    - deletions remove one live copy, matched as a literal set;
+    - unmatched deletions are ignored;
+    - top-level units are kept (implied by the input);
+    - RUP only, no RAT.
+  - Controls, run before the check:
+    - hand cases: a non-RUP lemma is rejected; deleting needed clauses makes the next lemma fail; duplicate copies are deleted one at
+      a time;
+    - three Glucose proofs with deletions (pigeonhole 8; random 3-SAT, 250 and 300 variables) are VERIFIED, agreeing with ref_rup;
+    - the unmatched-deletion count (134 on the 300-variable control) is equal to an independent Python multiset replay.
+  - Run: `ref_rup_del m3_t1_T11_T20_K1_NOIM0.cnf proof.drup`, started 2026-11-07T00:19:35Z, ended 03:37:17Z, wall 11,862 s.
+    - Output: «s VERIFIED (6531220 lemmas RUP-checked, 6435900 deletions applied, 0 unmatched)», exit 0.
+    - Input: 20,843 vars, 96,580 clauses, no conflict from the input alone.
+  - Counts reconciled with the file: 6,435,900 «d» lines (grep), so every deletion matched a live clause. 6,531,221 non-«d» lines,
+    the last being the empty clause «0» at line 12,967,121. The top-level conflict is reached at lemma 6,531,220, the unit before
+    it, so the checker stops before reading the empty clause. This is the same lemma count as drup.c's «6531220 lemmas RUP-checked».
+- Verdict: the Glucose 4 DRUP proof of the UNSAT of the §6 CNF is VERIFIED by my own RUP checker. Independent of drup.c, it confirms
+  MACHINE T^Φ_1(3) ≤ 10, given the encoder audited FAITHFUL in §2. §6 stays «SIGN as machine-certified». This addendum may be cited
+  (C128 §4) as a second, independent proof check.
