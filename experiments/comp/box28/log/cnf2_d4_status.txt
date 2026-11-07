@@ -1,4 +1,4 @@
-TAG ISO_L13 ENC cnf2 ISO 1 d 4 L 13 P None W R: leaves 392 SAT 0 UNSAT 1 open 391 splits 64 -> OPEN
+TAG ISO_L13 ENC cnf2 ISO 1 d 4 L 13 P None W R: leaves 404 SAT 0 UNSAT 1 open 403 splits 66 -> OPEN
 ISO_L13 34.6.6: RESULT d 4 T >= 13 P None W R: UNSAT 1085.7 s
 TAG R4_L14 ENC cnf2 ISO None d 4 L 14 P None W R: leaves 512 SAT 0 UNSAT 1 open 511 splits 72 -> OPEN
 R4_L14 34.7.7: RESULT d 4 T >= 14 P None W R: UNSAT 709.8 s
