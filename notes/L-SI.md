@@ -49,6 +49,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - Sources opened: claude/l-lower 4d747490 experiments/lower/l3/kill/README.md (table, membership checklist) and docs/lower/L3-families.md
   §2 TRI, §3 TRI-MU, §4 FEEDBACK (lane, not landed); trunk RESULTS R113 (g) PATH-RISE (landed).
 - Climb jobs (out77/) are finished; none running.
+- Second pass (Lead 01:46Z, S(h)): FUEL-NEED PROVED lane CONDITIONAL on L-LOWER FEEDBACK (b) (fuel target Xi-depth >= h - 2 log h - 3);
+  best provable lower bound S(h) >= h + 1; nothing forces S(h) super-polynomial. MUTUAL-FEEDBACK construction proposed for L-LOWER
+  (note §9). No conjecture added.
 
 ## BOX 76 (successor 41; Lead 2026-11-07: TROPICAL-WINDOW, max-plus route to MOVES-2D) — DONE: route DEAD in its window-type and Xi-DAG forms
 - Note docs/si/N5-TROPICAL-box76.md; tools experiments/si/box76/{tw.py (own simulator + window tables), tw2.py, tw3.py, tw4.py,

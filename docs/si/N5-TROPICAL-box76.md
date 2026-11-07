@@ -200,3 +200,34 @@ polynomial bound; MOVES-2D and G-N5-TIME stay OPEN.
   are the tightness counters ALT_TIGHT / MOVEALT_TIGHT (the bounds minus 1): 112,372 / 7,085 > 0 on the real model (tw3.out). NEG=1
   (key-greatest available) leaves every Ξ-side counter at 0 (tw3_neg1.out): ALT-MIN and HIT do not depend on the key rule, as their
   proofs say.
+
+## 9. Box 77, second pass (Lead 01:46Z: make fuel economy quantitative; S(h) := least d with h consecutive doubling levels)
+- Lemma FUEL-NEED (PROVED, lane, CONDITIONAL on L-LOWER's lane lemma FEEDBACK (b), docs/lower/L3-families.md §4 at 4d747490, not
+  landed, not refereed; other premises: DBL-EQ (b) §7, R105 MONO, HIT §2, R113 PATH-RISE). Hypotheses: G ∈ 𝓛^R_d, Ξ-acyclic, any
+  run, level h ≥ 1 doubling, f := F(h − 1); Up_h, E_h as in FEEDBACK (Ξ-targets of upward options of movers of level ≤ h; steps at
+  which the current value of one of them changes). Then
+  - (a) |E_h| ≥ (f + 1)/(2h) − 1, and Σ_(y ∈ Up_h) R(y) ≥ |E_h|;
+  - (b) some y ∈ Up_h has P(y) ≥ 1 + ((f + 1)/(2h) − 1)/|Up_h|, with |Up_h| ≤ 4h; hence its Ξ-depth dep(y) (the largest number of
+    movers on a Ξ-path from y) is ≥ log2 of that.
+  - Proof. (a) DBL-EQ (b): a member of the pair h moves f + 1 times; FEEDBACK (b): at most 2h(1 + |E_h|). By MONO a change of cv(y) is a
+    rise, so each t ∈ E_h is a rise step of some y ∈ Up_h. (b) Pigeonhole on (a) and PATH-RISE R(y) ≤ P(y) − 1; P(y) ≤ 2^dep(y) by
+    induction along the acyclic Ξ-graph (two options per mover, X counts 1). |Up_h| ≤ 2 options × 2 movers × h levels. ∎
+  - For a tower from level 1 with F(0) = 2 (f = 2^(h+1) − 2): some fuel target has P ≥ 2^(h+1)/(8h²) roughly, i.e. Ξ-depth ≥ h − 2 log2 h
+    − 3. DATA (REC_d10_tower, h = 1, 2, 3): Σ R over Up_h = 17, 40, 40 against needs 0.5, 0.75, 1.5; max P over Up_h = 91. The bound is
+    asymptotic and weak at small h.
+- What this does and does not force on S(h) (READING; the answer to task (1)):
+  - FORCED: a deep fuel target (Ξ-depth ≥ h − O(log h)), and (ACYC-SPLIT) it cannot Ξ-reach the movers it fuels. Movers reached by
+    upward options need not be outside the tower (REC_d10_tower: mover 2 (level 1) has the tower mover 4 (level 2) as an upward target);
+    only acyclicity separates them.
+  - NOT FORCED by anything landed (R104-R114), signed (P-IDEAL-MOVES) or lane-proved here or in L-LOWER's §2-§4: a fuel block of size
+    ≥ 2·S(h − 1), or a fuel that is itself a doubling tower. FUEL-NEED needs only Ξ-paths (counting), which a crossed block of
+    h − O(log h) levels provides; whether such a block's values actually RISE that often depends on its key side (pass-through flips
+    with Φ = 1, WINDOW-DOUBLE (a)) and on AND-GATE timing, which no statement here bounds.
+  - So the best LOWER bound I can prove is S(h) ≥ h + 1 (trivial: h doubling levels above level 0). No constraint I know forces S(h)
+    super-polynomial; equivalently, nothing proved here or landed rules out T^R(d) ≥ 2^(Ω(d^c)). CONJECTURE: none.
+- Construction proposal for L-LOWER (READING; via the Lead): a MUTUAL-FEEDBACK genome. Tower T on levels 1..h (crossed above the bottom,
+  as in REC_d10_tower levels 3-4); fuel block C on levels h + 1..h + m, each C pair crossed onto the C pair below (a Ξ-counter, P
+  doubling per level), the bottom C pair to X; the upward options of the tower's pairs 1, 2 target the TOP of C (ACYC-SPLIT holds: C
+  never points into T). C's keys are driven by the tower top's F(h) through pass-through flips (Φ = 1 at b-steps). If C's values rise
+  ~2^h/h times with m = O(h), then S(h) = O(h) and T^R(d) = 2^(Ω(d)). The measurable obstruction to watch: the decay of F above the tower
+  (REC_d10_tower: F = 30 at level 3, then 23, 8, 7, 6, 2, 1), i.e. whether pass-through flips can carry F(h) into C.
