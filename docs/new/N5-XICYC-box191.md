@@ -147,7 +147,7 @@ THEOREM (T_CYC). T_CYC ≤ C + R + (C + R + 1)·N, since the C- and R-steps spli
 General form (PROVED, lane, same proof). Howard VJ strategy improvement on ANY game, from any start: if every step switches some Even
 vertex that is not its own cycle node at t and at t+1 (H0), then T ≤ C + R + (C + R + 1)·n_E with C ≤ n(n − 1).
 DATA (brseg_gen191.py):
-- 2,000 random games, n 12: the longest p-run is ≤ n_E in all of them; no H0 event.
+- 2,000 random games, n 12: the longest p-run is ≤ n_E in all of them. 555 steps have some switching Even vertex that is its own cycle node (H0 itself is not checked; corrected 06:5xZ, P-N5-XICYC fixes entry 1 D-3).
 - Friedmann's switch-all family (pgsolver_port.py switchallexp, Howard's exponential family):
 
   | N | T | C | R | longest p-run | n_E |

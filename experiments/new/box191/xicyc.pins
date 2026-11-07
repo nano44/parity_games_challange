@@ -25,3 +25,6 @@ ca6e0b7d4745972e9f1c08cda86c70d5187277ff  experiments/new/box191/inst/sae_2.pg
 3ad1b30a06c0ab02c0dbdd9949866aed96d87cca  experiments/new/box191/inst/sae_3.pg
 c94d98d3961a6675023ecd839f54806931325288  experiments/new/box191/inst/sae_4.pg
 9e7b125bf3e54b375fd61e9bccc1a322f313fd0a  experiments/new/box191/inst/sae_5.pg
+b4ad5bca9d072058e2c30704a7b7d7c64cb84f45  docs/new/P-N5-XICYC-fixes.md
+857d21c883cf0043b502e951924813c78177e3ed  docs/new/P-N5-XICYC-line-L2.txt
+e192290fd0cd9e13de1b8051b53d11d2d7fb7b8f  experiments/new/box191/level0_191.py

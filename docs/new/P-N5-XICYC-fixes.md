@@ -1,0 +1,21 @@
+# P-N5-XICYC fixes (append-only; the packet docs/new/P-N5-XICYC.md stays frozen)
+
+## Fixes entry 1 (L-NEW successor 59, proactive, before any referee item; Lead 06:38Z: «Apply the DATA rule clause by clause»)
+- Scope: line L-1 (docs/new/P-N5-XICYC-line-L1.txt) → line L-2 (docs/new/P-N5-XICYC-line-L2.txt). Exactly ONE string is replaced,
+  once. Nothing else changes in the line. The packet is unchanged.
+- D-1 (DATA rule): every clause of the line now has a counter of matching unit, set and scope, or the entry «no separate DATA».
+  - BR-SEG, CYC-COUNT, ONEP-POLY, LEVEL0, BR-SEG-G, REACH3-CYC: counters.
+  - T-CYC, RED-XI: «no separate DATA».
+  - The Γ3 = IDEAL-CYC counts are moved to «context, not a clause»: no clause of the line asserts them.
+  - The DEAD items name their pinned instances and the counts read off them.
+- D-2 (new tool): experiments/new/box191/level0_191.py, the counter for LEVEL0, which had no counter in L-1. Its output:
+  «LEVEL0 count 1000 seed 41: states 3422, (state, level-0 gate) pairs 17013, sigma-bar on the e-face 0».
+- R-1, exact old string (in L-1, once):
+«DEAD SEG-2P (Λ-keeping runs ≤ N fails: 9 steps at N 8, 15 at N 14, 21 at N 18) and DEAD ODD-FIXED, on pinned genomes; DATA: Γ3 = IDEAL-CYC on 22/22 genomes, random 1,271/1,300 with every divergence at an exact VJ tie; REACH3-CYC 0 violations in 2,167 transitions; Friedmann's switchallexp N 2-7 (Howard): C = 0, R = 4 … 241, T = 30 … 1243, p-runs ≤ 19;»
+- R-1, exact new string (in L-2, once):
+«DEAD SEG-2P («every run of consecutive Λ-keeping steps has at most N steps» fails: longest such run 9 steps at N 8, 15 at N 14, 21 at N 18, on the pinned genomes experiments/new/box191/inst/DEAD_SEG2P_d4_N8.json, DEAD_SEG2P_d7_N14.json, DEAD_SEG2P_d9_N18.json, read off subrun191.py's step labels) and DEAD ODD-FIXED (those three runs contain 1, 8 and 6 R-steps respectively); DATA, clause by clause (unit, set, command; every random set is rand191.rgen with d 1-6 (1-5 where stated), width 1-3, degree 2-3): BR-SEG: p-runs longer than N in 0 of 1,000 genomes (subrun191.py 1000 21, two-player IDEAL-CYC); CYC-COUNT: C > N·M (a stronger bound than the clause) in 0 of 300 genomes for each of the one- and two-player models (seg1p191.py 300 11); T-CYC: no separate DATA (it follows from BR-SEG and CYC-COUNT); ONEP-POLY: in the one-player model, a Λ-keeping run longer than N, or C > N·M, in 0 of 300 genomes (seg1p191.py 300 11); LEVEL0: σ̄ on the e-face in 0 of 17,013 (state, level-0 gate) pairs, from 3,422 states of 1,000 genomes (level0_191.py 1000 41); BR-SEG-G: a p-run longer than n_E in 0 of 2,000 random games (n 12, owners and priorities uniform, out-degree 1-3; brseg_gen191.py random 2000 3 12; H0 itself is not checked by the tool, which counts 555 steps in these runs where some switching Even vertex is its own cycle node); and, on Friedmann's switchallexp for N = 2, …, 7 (pgsolver_port.py switchallexp N, Howard from si.py's best-reward start): C = 0; R = 4, 10, 24, 54, 116, 241; T = 30, 70, 150, 310, 630, 1243; longest p-run 9, 11, 13, 15, 17, 19 against n_E = 23, 32, 41, 50, 59, 68; RED-XI: no separate DATA (a reduction); REACH3-CYC: 0 non-standard states, 0 non-Howard mover steps and 0 bad stops in 2,167 mover-phase transitions of 1,000 genomes (d 1-5; howard3_191.py 500 31 and 500 32); context for REACH3-CYC, not a clause: Γ3 mover sequences equal the IDEAL-CYC run state for state, with xi = T + 3, on 22 of 22 pinned genomes (8 L-RED R215 Ξ-cyclic genomes in inst/cyc*.json and the 14 P-N5-REACH corpus genomes; eq191.py), and on 1,271 of 1,300 random genomes (d 1-5; rand191.py eq 300 1 and eq 1000 2); each of the other 29 diverges first at an exact VJ tie;»
+- Pins: experiments/new/box191/xicyc.pins now also pins this file, line L-2 and level0_191.py (check.sh block «P-N5-XICYC»).
+- D-3: in L-2's BR-SEG-G clause, «with 0 H0 events» (the draft's first wording) was wrong and is not used. brseg_gen191.py's sub-count
+  «of which with an H0 event: 0» counts H0 events among violations only. The total over the 2,000 games is 555 steps with some
+  switching Even vertex that is its own cycle node (recount 2026-11-07). This does not affect the p-run counter (0 violations).
+  The box doc docs/new/N5-XICYC-box191.md §2 «no H0 event» is corrected there (history doc, not frozen).

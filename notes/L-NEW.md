@@ -21,7 +21,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   (HMZ 1008.0530 Lemma 5.3/5.4); BR-SEG / CYC-COUNT / ONEP-POLY not found in the sources opened. Next: packet P-N5-XICYC.
 - PACKET P-N5-XICYC FROZEN (Lead 05:51Z decision 3): docs/new/P-N5-XICYC.md (149e2414) + line L-1 (d6f77b12); pins
   experiments/new/box191/xicyc.pins (c65b9655; check.sh block «P-N5-XICYC»); §7 REACH3-CYC CONDITIONAL on P-N5-REACH lemmas (not landed).
-  Fixes go to docs/new/P-N5-XICYC-fixes.md (append-only), next line L-2, by script; packet never edited.
+  Fixes entry 1 (proactive, Lead 06:38Z DATA rule): line L-2 857d21c8 (clause-by-clause DATA; LEVEL0 counter level0_191.py 0/17,013;
+  D-3 erratum: 555 steps with a self-cycle-node switcher, not «0 H0 events»); fixes b4ad5bca; pins 521ce400. Next: L-3 by script.
 - Next: is R polynomial on IDEAL-CYC (proof attempt: gate-face flips need Even-won Xi-cycle closings?); TIE-restricted DOM for general
   games; L-LIT check whether ONEP-POLY / BR-SEG is known.
 
