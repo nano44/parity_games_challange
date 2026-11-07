@@ -1,6 +1,30 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## HANDOVER (successor 61, PARKING 2026-11-07 ~21:5xZ by date -u; Lead 21:44Z: freeze P-N5-ASC, park near 450k)
+### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
+- d55dc439 handover check (score 5). Box 193 ASC (docs/new/N5-ASC-box193.md, experiments/new/box193/): 2dc81001 (milestone 1),
+  e3d399cd (A1), b76da963 (A2), bf1d6e9c (A3), 9cdb7209 (A4). PACKET P-N5-ASC FROZEN in the commit after 9cdb7209 (docs/new/P-N5-ASC.md;
+  pins experiments/new/box193/asc.pins; check.sh blocks «P-N5-ASC» and «BOX 193 ASC»).
+### RESULTS (labels as in the doc; nothing is a TARGET claim; G-N5-TIME OPEN)
+- PROVED (lane): E-MON, CHAIN-DECOMP, SKELETON, DESC-POLY, LOW-SHAPE, RECUR(1), ASC-POLY(1), ASC1, HUB-ASC(B) (abstract, polynomial
+  for every fixed B, degree 5*2^B-3, only the hub constrained), HUB-ASC-G (game; F1-F3 + R104 defs; no [LOC]), UP-JUMP / UP-B / NOUP
+  (under hypothesis [E-LEV]: e-priorities increase with level; NOT in a landed R-id). PROVED-CONDITIONAL [LOC]: ASC-GATE, LOCK-(i).
+- DEAD (abstract witnesses): PTR-MON-HI (CS(3,1)), FIXTOP-QUAD (CS(5,1)), RMON-2 (CS(5,2) forest in A3: breaks RECUR(1)'s charging
+  at A = 2), K-level collapse. RECUR(2)-exact = DATA (equality M 3-6).
+- DATA: CS exact maxima A0 = 1 + M(M+1)/2 (M <= 7), A1 = 2 4 8 16 29 50 82 (cubic M 3-7, predicts 128 at M 8), A2 119 < 128 at M 7.
+### OPEN (for successor 62)
+- DUTY P-N5-ASC: Lead routes it to L-RED (attack) and referees. Items -> docs/new/P-N5-ASC-fixes.md (append-only) + a line by script;
+  repin asc.pins; update check.sh block «P-N5-ASC».
+- M = 8, A = 1 (dp193b.c, scratch ck8/m8.log in the OLD container; lost on restart): at 1,299,365 / 1,454,040 best 82 at 21:41Z. If not
+  reported, rerun: gcc -O2 -fopenmp -o dp193b experiments/new/box193/dp193b.c; ./dp193b 8 1 ck8 (about 2.5 h on 4 cores; checkpoints
+  every 5 min; rerun the same command to resume). Report the end value to the Lead (cubic predicts 128).
+- Research: the step from D_E to R (IN-BOUND; OVT-DV) and plays with omega(1) ascents (H1 hub without access edges); exact RECUR(2).
+### Traps (successor 61)
+- Never create files in lane dirs while push.sh runs (untracked hubasc193.py, ug193.py were created during push 5; harmless but a slip).
+- Start push.sh from the repo root: one push ran in experiments/new (exit 127, nothing pushed).
+- The container clock: date -u is fine for wall time; CPU time is 4x on 4 threads.
+
 ## Resume point (successor 61, Opus; session_01V5yGRXNcWRbrudUiyywbnE; started 2026-11-07 18:57Z by date -u; GO 19:23Z)
 - Step 0: handover check d55dc439 (VERIFY PASS; Lead score 5). Stale container (975 behind) fast-forwarded to 589c9fba.
 - BOX 193 ASC (docs/new/N5-ASC-box193.md; experiments/new/box193/; check.sh block «BOX 193 ASC», check193.out). Milestone 1:

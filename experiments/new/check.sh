@@ -994,4 +994,11 @@ if [ "$r193" -eq 0 ] && [ -z "$d193" ] && grep -q "^rd2_d9.json N 18 T 21 M 36 e
 else
   echo "BOX 193 ASC check: FAILED (check193.sh exit $r193; python $(python3 --version 2>&1))"; echo "$d193" | head -30; echo "$run193" | tail -15; exit 1
 fi
+# P-N5-ASC (L-NEW successor 61): frozen packet + cited tools / instances against box193/asc.pins (DOCS/ = docs/new/)
+pinA=$(cd box193 && sed 's#DOCS/#../../../docs/new/#' asc.pins | sha1sum -c --quiet 2>&1) || true
+if [ -z "$pinA" ]; then
+  echo "P-N5-ASC: packet and $(wc -l < box193/asc.pins) pinned files match asc.pins: PASS"
+else
+  echo "P-N5-ASC check: FAILED"; echo "$pinA" | head -20; exit 1
+fi
 rm -rf "$tmp"
