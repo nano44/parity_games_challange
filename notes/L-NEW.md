@@ -1,6 +1,45 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 58, Opus 5.5; started 2026-11-07 01:45Z by date -u)
+### BOX 189 REACH (docs/new/N5-REACH-box189.md; experiments/new/box189/): question = does N5 from S3 reach R104's IDEAL run on Gamma(G)?
+- PROVED (lane) NO-REACH: on Gamma(G) (every genome) S3 plays K0 -> K1, K1 -> K0 (top even cycle at u); by RESULTS R15 (a)(d) Xi_sigma is
+  pointwise monotone, so sigma_j(K0) = K1, sigma_j(K1) = K0 forever: no standard state is ever visited; (acyclic) no beta in any P-set of
+  Xi_sigma_j. DATA: 1 iteration on all 14 corpus genomes + 440 random. BLIND (CONJECTURE, data 440/440): run independent of (br, bp).
+- PROVED (lane) REACH3: Gamma3(G) = Gamma(G) + single-successor Even pads of Om <= 2 (pA, s, q, r on the core; pe, pbeta on gate faces;
+  pb on escapes; m on mover edges, Om 2 for the start option), n = N + 7M + 10. S3-START: S3 = R104's stated start transported. PAD: pads
+  never cycle nodes / in P-sets. Lemma-by-lemma transfer of P-N5-REALIZE (length-decided spots: K3 at K3, SBAR at K2, W lengths 5l+5;
+  index spot: KEY (b), e first in each root-first block). => N5 from S3 has one FL run of exactly L(G). Corollary REAL-IDEAL-S3: R104's
+  «nothing about S3» removed; G-N5-TIME => IDEAL-ACYC-POLY; towers extend (S(h) poly) => N5 itself super-polynomial.
+- DATA: 14/14 corpus (L 9..59; REC_d10_tower L 35 -> 38 iterations on n 310), n5b SPEC mode same counts on 28 .pg, Oink zlk + verify 28/28.
+- DEAD SUBDIV (S3 WLOG on every game, state for state): n = 3 instance (§5): fallback flag differs; obstruction FIX 2 DFS at an own
+  cycle node. CONJECTURE SUBDIV-APPROX (|dT| <= 2, 550 games).
+- Tools: gamma3.py (own builder; selftest == L-RED stab.build), run3.py (own IDEAL sim + N5 + FL), reach.py (needs LRED tree), norm.py
+  (box150 genomes -> packet format: gate / br are NOT 0..M-1 in L-LOWER files), writepg.py, randtest.py, subdiv.py, check189.sh +
+  reach.out (check.sh block «BOX 189 REACH»). L-RED tree: git archive origin/claude/l-red experiments/red/r187 experiments/red/r178 |
+  tar -x -C <scratch>/lred, and do NOT copy experiments/new/box21 into it (stab.py would import that copy without pg on its path).
+- Oink built by scripts/setup_oink.sh (container only).
+- Next: Lead decides on a referee packet P-N5-REACH. DUTY P-IDEAL-MOVES L-4 unchanged (no referee item received yet).
+
+## Successor 58 handover check (STEP 0; written 2026-11-07 01:5xZ by date -u; Opus 5.5)
+1. claude/l-new: ls-remote fd5c163f; the clone was SHALLOW and DETACHED at fd5c163f, and the LOCAL BRANCH REF claude/l-new was stale
+   (checkout said "behind", 8 commits ahead of trunk only after ff); fetch --unshallow, checkout claude/l-new, merge --ff-only
+   origin/claude/l-new -> HEAD = claude/l-new = origin/claude/l-new = ls-remote = fd5c163f (git rev-parse / ls-remote). Vs trunk
+   claude/vibrant-johnson-nxvvxo (fc665614): 8 ahead / 624 behind (rev-list --left-right --count), merge-base a6744977. Lane files only.
+2. Open: (a) DUTY P-IDEAL-MOVES L-4 at both referees (byte tests): a returned item -> fixes entry 4 + L-5 by script, packet frozen;
+   next = wait for the relay. (b) BOX 189 REACH (new, 12 h): does N5 from S3 on Gamma(G) (R104) reach the IDEAL run? next = build
+   Gamma(G) for small towers / kill genomes, run N5 from S3, measure FL runs vs L(G). (c) Parked conjectures SWITCH-Z, RELAY-FREE,
+   N-FLIP-ADD, PAIR-LIN (data only); MOVES-2D DEAD (L-LOWER instances, replayed in box 188).
+3. GAPS (trunk fc665614): G-N5-TIME major open (owner L-NEW); G-N1-LB minor open (optional, not routed); G-N5-TERM closed.
+4. D1 (DECISIONS): "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the
+   fleet's own, as wrong until it passes the gauntlet below." D14 (active, INDEX row 22): "You know it can also test prveiously not
+   tested approaches, it can come up with it own as well". D18 (active, row 32): "Focus on N5 and work toward proving it. Explore novel
+   approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make
+   reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results
+   from conjectures and open problems." (D20 active, row 42: full pace, L48.)
+5. Trap: stale/shallow clone, third successor in a row (here: detached HEAD current, branch ref stale). Check = fetch --unshallow, then
+   compare HEAD AND the branch ref with ls-remote after ff-only (done, item 1).
+
 ## HANDOVER (successor 57, PARKING 2026-11-07 ~01:3xZ by date -u; Lead 01:16Z: fix round 3, then handover + park at ~490k)
 ### DONE (every push via scripts/push.sh, VERIFY PASS; SHAs from git log; Lead informed at every box end)
 - Step 0 (91c57673, bfe0c1f0). C127 E-1 duty for P-IDEAL-RISE (0548afaa): L-3 4a553a29, fixes entry 2 d8046a92.
@@ -1624,6 +1663,13 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   DATA: correct on 1,038 library + families + hard families; SF ≈ ½ N5; runquad 264 → 2, topfix 7N + 43; switchbestexp N=10 619 vs 89, SBC 97.
   Open count SBC (CONJECTURE SF-POLY OPEN).
 
+## Dead ends (successor 58, box 189; docs/new/N5-REACH-box189.md §2, §5)
+- «N5 from S3 on R104's Gamma(G) reaches a standard state / the IDEAL run»: DEAD for every genome (NO-REACH, proof). Instances:
+  box189/inst/*_g0.pg (REC_d10_tower_mu30_g0 sha1 1c8ff4a7, RECT_d11_T59_g0 e9e2e570): 1 iteration from S3. Obstruction: S3 sets
+  K1 -> K0, K0 -> K1 (top even cycle), and Xi_sigma never decreases.
+- SUBDIV state for state (S3 WLOG via edge subdivision): DEAD on n = 3, Om [3, 3, 1], own [O, E, O], succ 0 -> {1}, 1 -> {0, 1, 2},
+  2 -> {0}, sigma0(1) = 1, tau0 = {0: 1, 2: 0} (G: 1 iteration with fallback; G^pad: 1 iteration without). Obstruction: SPEC FIX 2 DFS.
+
 ## Dead ends (successor 55, boxes 172-173; docs/new/P-IDEAL-KEYS.md §7, docs/new/N5-RENEWCOUNT-box173.md §0-§1)
 - RENEW-COUNT as stated (box 171: renewing lower steps O(d) / poly(d) on every IDEAL-ACYC run): DEAD by the alternating Xi-chain C_m
   (box173/out/chain_C8.json 6c9962ba, chain_C20.json e5e65ab3): d 2, T m, I = m/2. Obstruction: width; each interval a new top mover.
@@ -2788,6 +2834,11 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   packet rule (corrections only in new dated sections).
 
 ## Sources opened
+- (succ. 58, box 189) RESULTS R104 (trunk fc665614 l. 9864, full line); packet docs/red/P-N5-REALIZE.md at claude/l-red 55557951 (sha1
+  067f06b6c67969adf346621b4a92b253491ab2b9; §1-§6 read) and docs/red/P-N5-REALIZE-fixes.md entries 1-3 (same commit; entry 3 restates
+  [VJ-LOC] as R36 (c) Lemma P1); RESULTS R15 (l. 624-640: (a) Lemma A = VJ00 BRICS RS-00-48 Lemma 5.7 as signed, (d)); SPEC
+  docs/new/N5-ssi-global.md (sha1 66fde9ef) S1-S5, FIX 1-4; L-RED experiments/red/r187/stab.py, ideal.py, r178/fastcyc.py (55557951);
+  L-LOWER experiments/lower/l3/kill/README.md + genomes (claude/l-lower 12216a37); L-COMP experiments/n5-second/n5b.py + README (trunk).
 - (succ. 45, box 131) docs/red/R176-depth.md at claude/l-red 76601782 (L-RED 41; read via the Lead's relay summary only, file not opened by me).
 - (succ. 45, box 129) docs/red/R174-zroute.md at claude/l-red 5d27d366 (L-RED 41, PHASE-PORTAL, SELF; read, not edited).
 - (succ. 45, box 128) docs/red/R173-portal.md and experiments/red/r173/portalck.py at claude/l-red 02119133 (L-RED 41, Lemma PORTAL; read, not edited). RESULTS Erratum E-1 (claude/l-red docs/RESULTS.md l. 9478). RESULTS R101 statement (l. 9251).
