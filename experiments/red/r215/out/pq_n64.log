@@ -34,3 +34,49 @@ it 9517 n 144 xi 36 spec 9 OK
 it 9926 n 146 xi 37 spec 9 OK
 it 10001 n 143 xi 38 spec 10 OK
 it 10098 n 143 xi 38 spec 9 OK
+it 11027 n 147 xi 38 spec 7 OK
+it 11328 n 148 xi 39 spec 7 OK
+it 11891 n 144 xi 43 spec 8 OK
+it 11966 n 144 xi 44 spec 8 OK
+FINAL best 36.044
+== 05:57Z n 64 seed-file 
+start n 150 xi 7 spec 6
+it 29 n 150 xi 8 spec 7 OK
+it 35 n 152 xi 9 spec 8 OK
+it 62 n 148 xi 10 spec 9 OK
+it 571 n 143 xi 10 spec 8 OK
+it 581 n 143 xi 10 spec 7 OK
+it 642 n 146 xi 10 spec 6 OK
+it 1333 n 138 xi 11 spec 6 OK
+it 1434 n 133 xi 12 spec 6 OK
+it 1537 n 129 xi 12 spec 5 OK
+it 5966 n 137 xi 13 spec 5 OK
+it 5985 n 139 xi 14 spec 6 OK
+it 5989 n 138 xi 15 spec 7 OK
+it 6172 n 141 xi 16 spec 7 OK
+it 6475 n 136 xi 17 spec 7 OK
+it 6702 n 140 xi 17 spec 6 OK
+it 6792 n 142 xi 18 spec 6 OK
+it 7357 n 136 xi 19 spec 6 OK
+it 7371 n 136 xi 22 spec 9 OK
+it 7379 n 136 xi 24 spec 9 OK
+it 7423 n 136 xi 25 spec 9 OK
+it 7424 n 136 xi 26 spec 9 OK
+it 7436 n 136 xi 26 spec 8 OK
+it 7511 n 139 xi 27 spec 8 OK
+it 7560 n 137 xi 28 spec 9 OK
+it 7657 n 141 xi 30 spec 9 OK
+it 8322 n 146 xi 31 spec 9 OK
+it 8683 n 146 xi 32 spec 9 OK
+it 8811 n 145 xi 33 spec 9 OK
+it 8892 n 145 xi 34 spec 9 OK
+it 9217 n 147 xi 35 spec 9 OK
+it 9517 n 144 xi 36 spec 9 OK
+it 9926 n 146 xi 37 spec 9 OK
+it 10001 n 143 xi 38 spec 10 OK
+it 10098 n 143 xi 38 spec 9 OK
+it 11027 n 147 xi 38 spec 7 OK
+it 11328 n 148 xi 39 spec 7 OK
+it 11891 n 144 xi 43 spec 8 OK
+it 11966 n 144 xi 44 spec 8 OK
+FINAL best 36.044

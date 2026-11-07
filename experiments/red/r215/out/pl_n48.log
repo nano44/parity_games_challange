@@ -10,3 +10,12 @@ it 1896 n 122 xi 75 spec 26 OK
 it 2352 n 120 xi 76 spec 12 OK
 it 2631 n 124 xi 76 spec 76 OK
 it 3257 n 118 xi 77 spec 77 OK
+it 4830 n 118 xi 78 spec 78 OK
+it 5501 n 125 xi 79 spec 79 OK
+it 5735 n 123 xi 80 spec 80 OK
+it 5753 n 123 xi 81 spec 81 OK
+it 5767 n 123 xi 82 spec 82 OK
+it 6402 n 123 xi 83 spec 83 OK
+it 6703 n 124 xi 84 spec 84 OK
+it 7960 n 118 xi 85 spec 85 OK
+FINAL best 85.085
