@@ -1,0 +1,17 @@
+FILE l-lower 4d747490:experiments/lower/l3/kill/KILL_M2D_d6_mu13.json
+MEMBERSHIP L^R_6 IDEAL-ACYC N_even OK levels OK degree2 OK Wwiring OK ranks_distinct OK beta_ids_distinct OK parities OK gates_distinct OK xt_range OK no_self_target OK Xi_acyclic OK start OK
+STARTS 4097 (all) Tmax 13 at 000000000101
+MOVER 0 level 0 Xi-target False max moves 1 (run T 7, start 000000000000)
+MOVER 1 level 0 Xi-target True max moves 1 (run T 7, start 000000000000)
+MOVER 2 level 1 Xi-target True max moves 3 (run T 7, start 000000000000)
+MOVER 3 level 1 Xi-target True max moves 3 (run T 13, start 000000000101)
+MOVER 4 level 2 Xi-target False max moves 6 (run T 13, start 000000000101)
+MOVER 5 level 2 Xi-target True max moves 2 (run T 13, start 000000000101)
+MOVER 6 level 3 Xi-target True max moves 6 (run T 13, start 000000000101)
+MOVER 7 level 3 Xi-target True max moves 7 (run T 13, start 000000010101)
+MOVER 8 level 4 Xi-target True max moves 13 (run T 13, start 000000001101)  > 2d = 12
+MOVER 9 level 4 Xi-target True max moves 7 (run T 13, start 000000000101)
+MOVER 10 level 5 Xi-target True max moves 2 (run T 5, start 000000000011)
+MOVER 11 level 5 Xi-target True max moves 1 (run T 5, start 000000000001)
+MU (max moves of a Xi-target of level >= 1) 13 ; 2d = 12 ; MOVES-2D VIOLATED
+MOVESCHECK RX 0 AGA 0 AGB 0 AGC 0 SWA 0 SWB 0 SWC 0 SWD 0 SWE 0 WPD 0
