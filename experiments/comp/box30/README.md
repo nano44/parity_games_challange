@@ -19,3 +19,13 @@ L-COMP successor 10, 2026-11-07. Recipe = L-LOWER 4's (docs/lower/L4-tower.md §
   ; j = 21 keeps T 101, F 0 2 6 14 30 62 47 … (levels 1-5 exact doubling over F(0) = 0), so lane C restarts from
   H6 minus level 21 (out/seed_d23_rm21.txt), seed base 320100.
 - First units (DATA): A_d28 and B_d32 keep levels 0-5 exact (2 … 126) and reach F(6) = 160 after one unit each (target 254).
+## Lead 09:32Z changes
+- A_d28 STOPPED (flat at F(6) = 160 for 6 units, seeds 300000-300005). B_d32 kept (F(6) = 190 after 4 units, levels 0-5 exact).
+- NEW lane D_d32, seeds 330000+: L-LOWER 4's warm start rec/G7_best_d28.txt (claude/l-lower af9a73d8, experiments/lower/l4/rec/;
+  copy l-lower/G7_best_d28.txt, sha1 b995fff2…) + 4 TOP-ADD (lift.py) -> out/seed_D_d32.txt. MEASURED before climbing, by rclimb30 and by
+  replay30.py: T 270, F 2 6 14 30 62 126 222 158 126 80 32 28 20 8 8 8 8 7 7 6 5 2 2 1 2 1 2 2 (lifted: the same, + four 0s on the
+  inert top levels).
+- C_d23: one more hour, stopped at 10:35Z by stopC.sh; S(h) DATA = out/remlevel_profiles.txt (unit: the start profile T, F(0..22) per
+  removed level j; set: the 18 single-level removals j = 6..23 of H6_d24_F126).
+- replay30.py: independent replay of a climb genome with MY simulator box27/sim.py (R104 rules) and F(l) counted from R104 key orders;
+  = rclimb30 on H6 (T 209), G7 (T 270) and B's best (T 257, F(6) 190). A HIT is reported only with this replay.

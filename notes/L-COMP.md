@@ -49,19 +49,34 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - Things only I know: pysat Solver.interrupt() does not stop cadical195 here: use subprocess + timeout (acube.py). drat-trim fetch is
   refused (classifier). drup.c IGNDEL mode reaches the refutation one lemma earlier than the default mode.
 
-## Resume point -- successor 10, BOX 28 (T^R(4) certified), updated 2026-11-07 05:0xZ by date -u
-- Everything: experiments/comp/box28/README.md. Lead 02:10Z: (a) EXACT-SAT on the 8 PAIR-SWAP roots, (b) certify sub-cubes, (c) frup.c
-  (done: same speed as drup.c, kept as an independent second checker). Lead 02:46Z: + ISO sub-class (1 core). Lead 04:28Z: NEW encoder
-  cnf2.py beside cnf.py (done, spec in README; regression (a) d 3 re-derivation, (b) decoded models = sim, (c) random 200: run).
-  A cnf2 UNSAT is DATA until the referees audit cnf2.
-- CONTAINER RESTART ~05:00Z killed all jobs (cnf.py roots 0, 42 at 3 h 51 min, 2 at 2 h 52 min, no verdict). Relaunched 05:02Z.
-- After ANY restart: experiments/comp/box28/relaunch_all.sh (idempotent: diskguard, ISO_L13 + R4_L14 cnf2 drivers with 25-min cubes,
-  xval niced, commit_loop). Since 05:2xZ (Lead 05:18Z) all d 4 work is in 25-min cubes (presplit depth 2 + adaptive). Query 2 (L-COMP 9's
-  sub-cubes) is next on a spare core, lower priority than d 4.
-  Delete a half-written proof in /home/user/pf/x and its log/xval_d3/c<c>.* before relaunching xval.
-- Things only I know: a d 4 L 14 Glucose proof grows ~7.6 GB per hour; pinck.py runs its CLI on import (box 28 tools exec its text
-  before 'if sys.argv[1] == "files"'); pkill -f / pgrep -f patterns also match a runner whose command line CONTAINS them (lost a queued
-  chain at 04:3xZ): wait on marker files, kill by PID.
+## HANDOVER -- successor 10 (L-COMP 10, Opus 5.5), written 2026-11-07 09:4xZ by date -u (~500k context; Lead 09:32Z: hand over ~550k)
+### DONE (all pushed by commit_loop or by hand; all DATA unless labelled)
+- BOX 28 (T^R(4)): NOT certified, not even EXACT-SAT. cnf.py roots > 4 h without verdict; frup.c (own forward RUP checker, = drup.c on
+  124 d 2 cases + the P-TR3 cubes so far; same speed) kept as a second checker; PAIR-SWAP symmetry (README "Symmetry", lane proof +
+  pairswap.py 0 mismatches) -> 8 roots; cnf2.py (new encoder, chains by one equivalence per (mover, option) along pi; 3.2x smaller;
+  regression: T^R(3) = 8 re-derived (SAT 8, UNSAT 9 on 16/16 cubes), 1,096 pinned runs 0 failures, mutants caught) -- NOT audited;
+  ISO witness ISO_1_d4_t12 (T 12) pinned; d 4 cnf2 cubes: R4_L14 1 UNSAT / 512, ISO_L13 2 UNSAT + 8 timeouts (25 min) -> STOPPED 07:05Z
+  (Lead 05:32Z rule: does not fit 10 h). Per-cube DATA: experiments/comp/box28/log/cnf2_d4_status.txt.
+- BOX 29 DONE: N5 (n5b SPEC, S3) on Γ3 of H5/H6/RECF4/DBL4: one FL run = L(G) = 136/209/67/30, one fallback at L(G)+1, iterations
+  L(G)+3 (= L-RED n5v); Oink zlk --verify + harness verify.py OK; valuations <= 280 bits; N5'-xi (L-NEW n5bxi) 12/12/12/15.
+### IN FLIGHT (restart: experiments/comp/box28/relaunch_all.sh; it also runs box30/relaunch30.sh)
+- BOX 30 tower climbs (rclimb30 = L-LOWER rclimb.c with 192-bit values): B_d32 (seeds 310000+, F(6) 190), D_d32 (330000+, from L-LOWER 4
+  G7_best_d28 + 4 TOP-ADD, start F(6) 222), C_d23 stops 10:35Z (stopC.sh). HIT = out/HITS.txt: report to the Lead at once with the genome
+  file, sha1, F vector, T, and replay30.py (own sim) output.
+- Query 2 (q2pieces.sh, records box28/log/q2/): c0s0p0 drup finishing (whole, 3.92 GB proof), then the finaliser q2fin_c0s0p0.sh starts
+  q2pieces.sh: c0s0 p1-p7 x 4 parts on vars 50, 56, then c0s1, c4s0, c4s2, c0s2, c0s3, c4s3 in 8 pieces on 32, 38, 44. A c0s0 piece ≈ 50 min
+  Glucose + ~4 h drup: query 2 is many hours away.
+- xval_d3 (niced): frup vs drup on the 16 P-TR3 cubes, 9/16 agree; log box28/log/xval_d3.txt (local until done, then commit).
+- commit_loop.sh (box28): every 10 min commits all box 28-30 files + this notebook and pushes synchronously; live lane files are
+  skip-worktree between rounds.
+### NEEDS: none from the owner. Lead decides BOX 30's continuation after the next units.
+### Things only I know (successor 10)
+- pgrep -f / pkill -f match ANY command line containing the pattern, including waiting bash -c jobs and runners: it lost a queued chain
+  (04:3xZ) and DEADLOCKED queued commit jobs (07:2xZ). Kill by PID files; anchor patterns ("^bash scripts/push.sh").
+- Never edit a running bash script (bash reads it as it runs): stop it by PID, edit, relaunch; after kill, wait for the PID to vanish
+  before relaunch_all.sh (its up() checks kill -0 on the old PID).
+- rclimb.c (L-LOWER) overflows __int128 at d 32 (ranks to 127): use rclimb30.c. pinck.py runs its CLI on import (exec its text before
+  'if sys.argv[1] == "files"'). A d 4 Glucose proof grows ~7.6 GB/h; drup slows as the DB grows (c0s0p0: 3.9 GB in ~4 h).
 
 ## Successor 10 handover check (L-COMP successor 10, Opus 5.5), 2026-11-07 01:1xZ by date -u
 - Stale-clone check: clone was shallow; fetch --unshallow + merge --ff-only ("Already up to date"); HEAD = origin/claude/l-comp =

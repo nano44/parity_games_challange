@@ -12,8 +12,8 @@ while true; do
       git fetch -q origin claude/l-comp && git merge -q --no-edit origin/claude/l-comp >> experiments/comp/box28/log/commit_loop.out 2>&1
       LIVE=$(git ls-files experiments/comp/box30/out | grep -E "\.log$|_best\.txt$")
       [ -n "$LIVE" ] && git update-index --no-skip-worktree $LIVE
-      git add experiments/comp/box28/log/cnf2_d4_status.txt experiments/comp/box28/log/q2 experiments/comp/box30/out
-      git diff --cached --quiet || git commit -qm "L-COMP box 28/30: periodic snapshot (cnf2 d 4 per-cube status, query 2 records, box 30 lane logs; DATA)
+      git add experiments/comp/box28 experiments/comp/box29 experiments/comp/box30 notes/L-COMP.md   # all lane files (excluded paths stay out)
+      git diff --cached --quiet || git commit -qm "L-COMP box 28/30: periodic snapshot of the lane files (box 28-30 status, query 2 records, box 30 lane logs and sources, notebook; DATA)
 
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 Claude-Session: https://claude.ai/code/session_01V5yGRYZ366UeNYojLQPsMh" >> experiments/comp/box28/log/commit_loop.out 2>&1
