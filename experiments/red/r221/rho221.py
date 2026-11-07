@@ -3,7 +3,8 @@
 seen, x' != x) / oth; rho_g = #maximal RET stretches (RET at t: the beta-play of g passes g and tau_t(g) = e).
 Checks RHO-SET (SET gates): every RET stretch after the first starts at an adoption of k at x, and rho_g <= 1 + #strict rises of
 Omega(e_g) (<= D(y)). RHO-E (SET gates): between consecutive RET starts, (Lambda(y), E(y)) takes >= 2 values (E = e-vertices of Pi).
-Also max over gates of rho_g / (D_E(y) * L(y)) (D_E(y) = #distinct E_t(y), L(y) = #distinct Lambda_t(y)).
+RHO-E endpoint form ([BELOW]: Lambda_t1(y) less relevant than e_g, t1 = last time before the next start with sigma(x) = k):
+(Lambda(y), E(y)) at t1 != at (next start - 1). Also max over gates of rho_g / (D_E(y) * L(y)) (D_E(y) = #distinct E_t(y), L(y) = #distinct Lambda_t(y)).
 Usage: rho221.py G.json ..."""
 import sys, json, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -13,10 +14,10 @@ def walk(nxt, v):
     while u not in seen: seen.append(u); u = nxt(u)
     return seen
 def census(G, cap=100000):
-    N = G["N"]; out, V, O, o_ = own.run(G, cap); n, prio, _, succ, _, _ = own.build(G); lev = G["lev"]
+    N = G["N"]; out, V, O, o_ = own.run(G, cap); n, prio, _, succ, _, _ = own.build(G); lev = G["lev"]; rk = own.VJ(prio).rk
     evs = {V[("e", q)] for q in O}
     nx = [(lambda s, tau: (lambda v: (s[v] if v < N else (tau[v] if o_[v] == 1 else succ[v][0]))))(s, tau) for s, _, tau in out]
-    r = dict(N=N, T=len(out) - 1, nset=0, sumrho=0, maxrho=(0, None, None), maxset=0, worst=0.0, viol=0, gaps=0, gapv=0)
+    r = dict(N=N, T=len(out) - 1, nset=0, sumrho=0, maxrho=(0, None, None), maxset=0, worst=0.0, viol=0, gaps=0, gapv=0, endv=0, above=0)
     for q in O:
         x, k = q
         if lev[x] < 1: continue
@@ -34,6 +35,9 @@ def census(G, cap=100000):
             for a, c in zip(starts, starts[1:]):
                 r["gaps"] += 1
                 if len({key(t) for t in range(a, c)}) == 1: r["gapv"] += 1
+                t1 = max(t for t in range(a, c) if out[t][0][x] == g)      # last time < c with sigma(x) = k
+                if rk[out[t1][1][y][0]] > rk[e]: r["above"] += 1           # Lambda(y) above e_g at t1: outside [BELOW]
+                elif key(t1) == key(c - 1): r["endv"] += 1                 # RHO-E endpoint form violated
         if rho > r["maxrho"][0]: r["maxrho"] = (rho, q, typ)
         r["worst"] = max(r["worst"], rho / (DE * Ly))
     return r
@@ -43,4 +47,4 @@ if __name__ == "__main__":
         except Exception: continue
         if not (isinstance(G, dict) and "opts" in G): continue
         c = census(G)
-        print(f"{f.split('/')[-1]} N {c['N']} T {c['T']} SET-gates {c['nset']} sum rho {c['sumrho']} max rho {c['maxrho']} max SET rho {c['maxset']} max rho/(D_E(y)L(y)) {c['worst']:.2f} RHO-SET violations {c['viol']} | RHO-E gaps {c['gaps']} violations {c['gapv']}", flush=True)
+        print(f"{f.split('/')[-1]} N {c['N']} T {c['T']} SET-gates {c['nset']} sum rho {c['sumrho']} max rho {c['maxrho']} max SET rho {c['maxset']} max rho/(D_E(y)L(y)) {c['worst']:.2f} RHO-SET violations {c['viol']} | RHO-E gaps {c['gaps']} violations {c['gapv']} | endpoint form: violations {c['endv']}, gaps outside [BELOW] {c['above']}", flush=True)

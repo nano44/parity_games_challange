@@ -1,72 +1,73 @@
-L10K5.json N 20 T 20 SET-gates 1 sum rho 14 max rho (3, (8, 1), 'SET') max SET rho 3 max rho/(D_E(y)L(y)) 0.12 RHO-SET violations 0 | RHO-E gaps 2 violations 0
-L12K6.json N 24 T 23 SET-gates 0 sum rho 14 max rho (2, (1, 0), 'CYC') max SET rho 0 max rho/(D_E(y)L(y)) 0.07 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-L4K3.json N 8 T 12 SET-gates 1 sum rho 8 max rho (2, (1, 0), 'CYC') max SET rho 2 max rho/(D_E(y)L(y)) 0.10 RHO-SET violations 0 | RHO-E gaps 1 violations 0
-L6K4.json N 12 T 11 SET-gates 0 sum rho 9 max rho (2, (0, 0), 'CYC') max SET rho 0 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-L8K5.json N 16 T 12 SET-gates 0 sum rho 9 max rho (2, (0, 1), 'CYC') max SET rho 0 max rho/(D_E(y)L(y)) 0.50 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-R102K6.json N 20 T 12 SET-gates 1 sum rho 8 max rho (2, (11, 0), 'CYC') max SET rho 0 max rho/(D_E(y)L(y)) 0.07 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-R33K3.json N 9 T 11 SET-gates 2 sum rho 9 max rho (3, (7, 0), 'SET') max SET rho 3 max rho/(D_E(y)L(y)) 0.17 RHO-SET violations 0 | RHO-E gaps 2 violations 0
-R43K4.json N 12 T 13 SET-gates 1 sum rho 10 max rho (2, (3, 0), 'CYC') max SET rho 2 max rho/(D_E(y)L(y)) 0.67 RHO-SET violations 0 | RHO-E gaps 1 violations 0
-R44K4.json N 16 T 14 SET-gates 0 sum rho 10 max rho (1, (4, 1), 'CYC') max SET rho 0 max rho/(D_E(y)L(y)) 0.11 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-R53K5.json N 15 T 15 SET-gates 2 sum rho 13 max rho (3, (7, 1), 'CYC') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-R62K5.json N 12 T 16 SET-gates 2 sum rho 18 max rho (3, (4, 0), 'CYC') max SET rho 1 max rho/(D_E(y)L(y)) 0.06 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-R63K5.json N 18 T 28 SET-gates 3 sum rho 23 max rho (3, (14, 0), 'CYC') max SET rho 2 max rho/(D_E(y)L(y)) 0.15 RHO-SET violations 0 | RHO-E gaps 1 violations 0
-R83K6.json N 24 T 13 SET-gates 2 sum rho 14 max rho (3, (17, 1), 'CYC') max SET rho 1 max rho/(D_E(y)L(y)) 0.09 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-lad_2.json N 4 T 0 SET-gates 0 sum rho 1 max rho (1, (0, 0), 'CYC') max SET rho 0 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-lad_3.json N 6 T 0 SET-gates 0 sum rho 0 max rho (0, None, None) max SET rho 0 max rho/(D_E(y)L(y)) 0.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-lad_4.json N 8 T 0 SET-gates 0 sum rho 1 max rho (1, (0, 0), 'CYC') max SET rho 0 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-lad_6.json N 12 T 0 SET-gates 0 sum rho 1 max rho (1, (0, 0), 'CYC') max SET rho 0 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-lad_8.json N 16 T 0 SET-gates 0 sum rho 1 max rho (1, (0, 0), 'CYC') max SET rho 0 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-SL_k16_s0.json N 32 T 1 SET-gates 16 sum rho 16 max rho (1, (0, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-SL_k16_s1.json N 32 T 2 SET-gates 16 sum rho 16 max rho (1, (0, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-SL_k2_s0.json N 4 T 1 SET-gates 2 sum rho 2 max rho (1, (0, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-SL_k2_s1.json N 4 T 2 SET-gates 2 sum rho 2 max rho (1, (0, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-SL_k32_s0.json N 64 T 1 SET-gates 32 sum rho 32 max rho (1, (0, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-SL_k32_s1.json N 64 T 2 SET-gates 32 sum rho 32 max rho (1, (0, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-SL_k4_s0.json N 8 T 1 SET-gates 4 sum rho 4 max rho (1, (0, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-SL_k4_s1.json N 8 T 2 SET-gates 4 sum rho 4 max rho (1, (0, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-SL_k8_s0.json N 16 T 1 SET-gates 8 sum rho 8 max rho (1, (0, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-SL_k8_s1.json N 16 T 2 SET-gates 8 sum rho 8 max rho (1, (0, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-NOUPC_1.json N 12 T 12 SET-gates 1 sum rho 4 max rho (2, (3, 1), 'CYC') max SET rho 1 max rho/(D_E(y)L(y)) 0.67 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-NOUPC_2.json N 18 T 16 SET-gates 6 sum rho 7 max rho (2, (5, 0), 'SET') max SET rho 2 max rho/(D_E(y)L(y)) 0.40 RHO-SET violations 0 | RHO-E gaps 2 violations 0
-NOUPC_3.json N 16 T 10 SET-gates 4 sum rho 4 max rho (2, (2, 0), 'SET') max SET rho 2 max rho/(D_E(y)L(y)) 0.67 RHO-SET violations 0 | RHO-E gaps 1 violations 0
-rd2_d7.json N 14 T 23 SET-gates 0 sum rho 13 max rho (3, (7, 0), 'CYC') max SET rho 0 max rho/(D_E(y)L(y)) 0.10 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-rd3_d4.json N 8 T 18 SET-gates 0 sum rho 8 max rho (2, (2, 1), 'CYC') max SET rho 0 max rho/(D_E(y)L(y)) 0.08 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-CLR_k4s10.json N 31 T 25 SET-gates 0 sum rho 5 max rho (2, (16, 0), 'CYC') max SET rho 0 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-CLR_k8s16.json N 53 T 28 SET-gates 1 sum rho 8 max rho (2, (28, 0), 'CYC') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-FPORT_n2.json N 54 T 14 SET-gates 0 sum rho 3 max rho (1, (5, 0), 'CYC') max SET rho 0 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-FPORT_n3.json N 76 T 16 SET-gates 0 sum rho 5 max rho (1, (5, 0), 'CYC') max SET rho 0 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-FPORT_n4.json N 98 T 18 SET-gates 0 sum rho 7 max rho (1, (5, 0), 'CYC') max SET rho 0 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-LEAP_k1.json N 9 T 2 SET-gates 3 sum rho 3 max rho (1, (2, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-LEAP_k16.json N 69 T 33 SET-gates 33 sum rho 33 max rho (1, (32, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-LEAP_k2.json N 13 T 5 SET-gates 5 sum rho 5 max rho (1, (4, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-LEAP_k3.json N 17 T 7 SET-gates 7 sum rho 7 max rho (1, (6, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-LEAP_k32.json N 133 T 65 SET-gates 65 sum rho 65 max rho (1, (64, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-LEAP_k4.json N 21 T 9 SET-gates 9 sum rho 9 max rho (1, (8, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-LEAP_k6.json N 29 T 13 SET-gates 13 sum rho 13 max rho (1, (12, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-LEAP_k64.json N 261 T 129 SET-gates 129 sum rho 129 max rho (1, (128, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-LEAP_k8.json N 37 T 17 SET-gates 17 sum rho 17 max rho (1, (16, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-RS2.json N 18 T 10 SET-gates 3 sum rho 4 max rho (2, (16, 0), 'SET') max SET rho 2 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 1 violations 0
-RS2_L8M6.json N 29 T 17 SET-gates 3 sum rho 4 max rho (2, (27, 0), 'SET') max SET rho 2 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 1 violations 0
-RS3.json N 38 T 13 SET-gates 5 sum rho 8 max rho (3, (26, 0), 'SET') max SET rho 3 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 3 violations 0
-RSG_K4.json N 14 T 7 SET-gates 7 sum rho 7 max rho (1, (4, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-SW_k4s10.json N 31 T 19 SET-gates 0 sum rho 11 max rho (4, (26, 0), 'CYC') max SET rho 0 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-SW_k8s16.json N 53 T 22 SET-gates 1 sum rho 20 max rho (5, (35, 0), 'CYC') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-t1_n3_M2_s.json N 34 T 12 SET-gates 3 sum rho 9 max rho (3, (16, 2), 'SET') max SET rho 3 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 3 violations 0
-t1_n4_M2_s.json N 46 T 14 SET-gates 4 sum rho 11 max rho (3, (20, 2), 'SET') max SET rho 3 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 4 violations 0
-t1_n5_M2_H.json N 59 T 16 SET-gates 5 sum rho 15 max rho (3, (24, 2), 'SET') max SET rho 3 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 5 violations 0
-t1_n5_M2_s.json N 59 T 16 SET-gates 5 sum rho 13 max rho (3, (24, 2), 'SET') max SET rho 3 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 5 violations 0
-t1_n8_M2_H.json N 104 T 28 SET-gates 8 sum rho 27 max rho (3, (36, 2), 'SET') max SET rho 3 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 11 violations 0
-t1_n8_M2_s.json N 104 T 22 SET-gates 8 sum rho 19 max rho (3, (36, 2), 'SET') max SET rho 3 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 8 violations 0
-t2_n4_M2_s.json N 69 T 9 SET-gates 4 sum rho 12 max rho (3, (2, 1), 'SET') max SET rho 3 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 5 violations 0
-t2_n6_M0_P.json N 129 T 14 SET-gates 6 sum rho 21 max rho (1, (2, 1), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-t2_n6_M2_P.json N 141 T 14 SET-gates 6 sum rho 21 max rho (1, (2, 1), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-t2_n6_M2_s.json N 141 T 13 SET-gates 6 sum rho 20 max rho (3, (2, 1), 'SET') max SET rho 3 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 9 violations 0
-t3_n4_u0_C.json N 74 T 10 SET-gates 4 sum rho 7 max rho (2, (2, 1), 'SET') max SET rho 2 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 3 violations 0
-t3_n6_u0_C.json N 155 T 14 SET-gates 6 sum rho 11 max rho (2, (2, 1), 'SET') max SET rho 2 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 5 violations 0
-t4_n4_S.json N 28 T 4 SET-gates 4 sum rho 0 max rho (0, None, None) max SET rho 0 max rho/(D_E(y)L(y)) 0.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-t4p_n4_S.json N 32 T 10 SET-gates 4 sum rho 3 max rho (1, (20, 2), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 0.25 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-t4p_n6_S.json N 46 T 14 SET-gates 6 sum rho 5 max rho (1, (28, 2), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 0.17 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-t4p_n6_s.json N 46 T 9 SET-gates 6 sum rho 5 max rho (1, (28, 2), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 0.25 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-NOUPC_1.json N 12 T 12 SET-gates 1 sum rho 4 max rho (2, (3, 1), 'CYC') max SET rho 1 max rho/(D_E(y)L(y)) 0.67 RHO-SET violations 0 | RHO-E gaps 0 violations 0
-NOUPC_2.json N 18 T 16 SET-gates 6 sum rho 7 max rho (2, (5, 0), 'SET') max SET rho 2 max rho/(D_E(y)L(y)) 0.40 RHO-SET violations 0 | RHO-E gaps 2 violations 0
-NOUPC_3.json N 16 T 10 SET-gates 4 sum rho 4 max rho (2, (2, 0), 'SET') max SET rho 2 max rho/(D_E(y)L(y)) 0.67 RHO-SET violations 0 | RHO-E gaps 1 violations 0
+L10K5.json N 20 T 20 SET-gates 1 sum rho 14 max rho (3, (8, 1), 'SET') max SET rho 3 max rho/(D_E(y)L(y)) 0.12 RHO-SET violations 0 | RHO-E gaps 2 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+L12K6.json N 24 T 23 SET-gates 0 sum rho 14 max rho (2, (1, 0), 'CYC') max SET rho 0 max rho/(D_E(y)L(y)) 0.07 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+L4K3.json N 8 T 12 SET-gates 1 sum rho 8 max rho (2, (1, 0), 'CYC') max SET rho 2 max rho/(D_E(y)L(y)) 0.10 RHO-SET violations 0 | RHO-E gaps 1 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+L6K4.json N 12 T 11 SET-gates 0 sum rho 9 max rho (2, (0, 0), 'CYC') max SET rho 0 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+L8K5.json N 16 T 12 SET-gates 0 sum rho 9 max rho (2, (0, 1), 'CYC') max SET rho 0 max rho/(D_E(y)L(y)) 0.50 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+R102K6.json N 20 T 16 SET-gates 2 sum rho 14 max rho (3, (11, 0), 'CYC') max SET rho 1 max rho/(D_E(y)L(y)) 0.11 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+R33K3.json N 9 T 11 SET-gates 2 sum rho 9 max rho (3, (7, 0), 'SET') max SET rho 3 max rho/(D_E(y)L(y)) 0.17 RHO-SET violations 0 | RHO-E gaps 2 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+R43K4.json N 12 T 13 SET-gates 1 sum rho 10 max rho (2, (3, 0), 'CYC') max SET rho 2 max rho/(D_E(y)L(y)) 0.67 RHO-SET violations 0 | RHO-E gaps 1 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+R44K4.json N 16 T 14 SET-gates 0 sum rho 10 max rho (1, (4, 1), 'CYC') max SET rho 0 max rho/(D_E(y)L(y)) 0.11 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+R53K3b.json N 15 T 16 SET-gates 2 sum rho 16 max rho (5, (5, 1), 'SET') max SET rho 5 max rho/(D_E(y)L(y)) 0.17 RHO-SET violations 0 | RHO-E gaps 4 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+R53K5.json N 15 T 15 SET-gates 2 sum rho 13 max rho (3, (7, 1), 'CYC') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+R62K5.json N 12 T 16 SET-gates 2 sum rho 18 max rho (3, (4, 0), 'CYC') max SET rho 1 max rho/(D_E(y)L(y)) 0.06 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+R63K5.json N 18 T 28 SET-gates 3 sum rho 23 max rho (3, (14, 0), 'CYC') max SET rho 2 max rho/(D_E(y)L(y)) 0.15 RHO-SET violations 0 | RHO-E gaps 1 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+R83K6.json N 24 T 25 SET-gates 5 sum rho 26 max rho (3, (5, 0), 'CYC') max SET rho 2 max rho/(D_E(y)L(y)) 0.03 RHO-SET violations 0 | RHO-E gaps 2 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+lad_2.json N 4 T 0 SET-gates 0 sum rho 1 max rho (1, (0, 0), 'CYC') max SET rho 0 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+lad_3.json N 6 T 0 SET-gates 0 sum rho 0 max rho (0, None, None) max SET rho 0 max rho/(D_E(y)L(y)) 0.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+lad_4.json N 8 T 0 SET-gates 0 sum rho 1 max rho (1, (0, 0), 'CYC') max SET rho 0 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+lad_6.json N 12 T 0 SET-gates 0 sum rho 1 max rho (1, (0, 0), 'CYC') max SET rho 0 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+lad_8.json N 16 T 0 SET-gates 0 sum rho 1 max rho (1, (0, 0), 'CYC') max SET rho 0 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+SL_k16_s0.json N 32 T 1 SET-gates 16 sum rho 16 max rho (1, (0, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+SL_k16_s1.json N 32 T 2 SET-gates 16 sum rho 16 max rho (1, (0, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+SL_k2_s0.json N 4 T 1 SET-gates 2 sum rho 2 max rho (1, (0, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+SL_k2_s1.json N 4 T 2 SET-gates 2 sum rho 2 max rho (1, (0, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+SL_k32_s0.json N 64 T 1 SET-gates 32 sum rho 32 max rho (1, (0, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+SL_k32_s1.json N 64 T 2 SET-gates 32 sum rho 32 max rho (1, (0, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+SL_k4_s0.json N 8 T 1 SET-gates 4 sum rho 4 max rho (1, (0, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+SL_k4_s1.json N 8 T 2 SET-gates 4 sum rho 4 max rho (1, (0, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+SL_k8_s0.json N 16 T 1 SET-gates 8 sum rho 8 max rho (1, (0, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+SL_k8_s1.json N 16 T 2 SET-gates 8 sum rho 8 max rho (1, (0, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+CLR_k4s10.json N 31 T 25 SET-gates 0 sum rho 5 max rho (2, (16, 0), 'CYC') max SET rho 0 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+CLR_k8s16.json N 53 T 28 SET-gates 1 sum rho 8 max rho (2, (28, 0), 'CYC') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+FPORT_n2.json N 54 T 14 SET-gates 0 sum rho 3 max rho (1, (5, 0), 'CYC') max SET rho 0 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+FPORT_n3.json N 76 T 16 SET-gates 0 sum rho 5 max rho (1, (5, 0), 'CYC') max SET rho 0 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+FPORT_n4.json N 98 T 18 SET-gates 0 sum rho 7 max rho (1, (5, 0), 'CYC') max SET rho 0 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+LEAP_k1.json N 9 T 2 SET-gates 3 sum rho 3 max rho (1, (2, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+LEAP_k16.json N 69 T 33 SET-gates 33 sum rho 33 max rho (1, (32, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+LEAP_k2.json N 13 T 5 SET-gates 5 sum rho 5 max rho (1, (4, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+LEAP_k3.json N 17 T 7 SET-gates 7 sum rho 7 max rho (1, (6, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+LEAP_k32.json N 133 T 65 SET-gates 65 sum rho 65 max rho (1, (64, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+LEAP_k4.json N 21 T 9 SET-gates 9 sum rho 9 max rho (1, (8, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+LEAP_k6.json N 29 T 13 SET-gates 13 sum rho 13 max rho (1, (12, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+LEAP_k64.json N 261 T 129 SET-gates 129 sum rho 129 max rho (1, (128, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+LEAP_k8.json N 37 T 17 SET-gates 17 sum rho 17 max rho (1, (16, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+RS2.json N 18 T 10 SET-gates 3 sum rho 4 max rho (2, (16, 0), 'SET') max SET rho 2 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 1 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+RS2_L8M6.json N 29 T 17 SET-gates 3 sum rho 4 max rho (2, (27, 0), 'SET') max SET rho 2 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 1 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+RS3.json N 38 T 13 SET-gates 5 sum rho 8 max rho (3, (26, 0), 'SET') max SET rho 3 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 3 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+RSG_K4.json N 14 T 7 SET-gates 7 sum rho 7 max rho (1, (4, 0), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+SW_k4s10.json N 31 T 19 SET-gates 0 sum rho 11 max rho (4, (26, 0), 'CYC') max SET rho 0 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+SW_k8s16.json N 53 T 22 SET-gates 1 sum rho 20 max rho (5, (35, 0), 'CYC') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+t1_n3_M2_s.json N 34 T 12 SET-gates 3 sum rho 9 max rho (3, (16, 2), 'SET') max SET rho 3 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 3 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+t1_n4_M2_s.json N 46 T 14 SET-gates 4 sum rho 11 max rho (3, (20, 2), 'SET') max SET rho 3 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 4 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+t1_n5_M2_H.json N 59 T 16 SET-gates 5 sum rho 15 max rho (3, (24, 2), 'SET') max SET rho 3 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 5 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+t1_n5_M2_s.json N 59 T 16 SET-gates 5 sum rho 13 max rho (3, (24, 2), 'SET') max SET rho 3 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 5 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+t1_n8_M2_H.json N 104 T 28 SET-gates 8 sum rho 27 max rho (3, (36, 2), 'SET') max SET rho 3 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 11 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+t1_n8_M2_s.json N 104 T 22 SET-gates 8 sum rho 19 max rho (3, (36, 2), 'SET') max SET rho 3 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 8 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+t2_n4_M2_s.json N 69 T 9 SET-gates 4 sum rho 12 max rho (3, (2, 1), 'SET') max SET rho 3 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 5 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+t2_n6_M0_P.json N 129 T 14 SET-gates 6 sum rho 21 max rho (1, (2, 1), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+t2_n6_M2_P.json N 141 T 14 SET-gates 6 sum rho 21 max rho (1, (2, 1), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+t2_n6_M2_s.json N 141 T 13 SET-gates 6 sum rho 20 max rho (3, (2, 1), 'SET') max SET rho 3 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 9 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+t3_n4_u0_C.json N 74 T 10 SET-gates 4 sum rho 7 max rho (2, (2, 1), 'SET') max SET rho 2 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 3 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+t3_n6_u0_C.json N 155 T 14 SET-gates 6 sum rho 11 max rho (2, (2, 1), 'SET') max SET rho 2 max rho/(D_E(y)L(y)) 1.00 RHO-SET violations 0 | RHO-E gaps 5 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+t4_n4_S.json N 28 T 4 SET-gates 4 sum rho 0 max rho (0, None, None) max SET rho 0 max rho/(D_E(y)L(y)) 0.00 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+t4p_n4_S.json N 32 T 10 SET-gates 4 sum rho 3 max rho (1, (20, 2), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 0.25 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+t4p_n6_S.json N 46 T 14 SET-gates 6 sum rho 5 max rho (1, (28, 2), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 0.17 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+t4p_n6_s.json N 46 T 9 SET-gates 6 sum rho 5 max rho (1, (28, 2), 'SET') max SET rho 1 max rho/(D_E(y)L(y)) 0.25 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+NOUPC_1.json N 12 T 12 SET-gates 1 sum rho 4 max rho (2, (3, 1), 'CYC') max SET rho 1 max rho/(D_E(y)L(y)) 0.67 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+NOUPC_2.json N 18 T 16 SET-gates 6 sum rho 7 max rho (2, (5, 0), 'SET') max SET rho 2 max rho/(D_E(y)L(y)) 0.40 RHO-SET violations 0 | RHO-E gaps 2 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+NOUPC_3.json N 16 T 10 SET-gates 4 sum rho 4 max rho (2, (2, 0), 'SET') max SET rho 2 max rho/(D_E(y)L(y)) 0.67 RHO-SET violations 0 | RHO-E gaps 1 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+rd2_d7.json N 14 T 23 SET-gates 0 sum rho 13 max rho (3, (7, 0), 'CYC') max SET rho 0 max rho/(D_E(y)L(y)) 0.10 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+rd3_d4.json N 8 T 18 SET-gates 0 sum rho 8 max rho (2, (2, 1), 'CYC') max SET rho 0 max rho/(D_E(y)L(y)) 0.08 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+NOUPC_1.json N 12 T 12 SET-gates 1 sum rho 4 max rho (2, (3, 1), 'CYC') max SET rho 1 max rho/(D_E(y)L(y)) 0.67 RHO-SET violations 0 | RHO-E gaps 0 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+NOUPC_2.json N 18 T 16 SET-gates 6 sum rho 7 max rho (2, (5, 0), 'SET') max SET rho 2 max rho/(D_E(y)L(y)) 0.40 RHO-SET violations 0 | RHO-E gaps 2 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0
+NOUPC_3.json N 16 T 10 SET-gates 4 sum rho 4 max rho (2, (2, 0), 'SET') max SET rho 2 max rho/(D_E(y)L(y)) 0.67 RHO-SET violations 0 | RHO-E gaps 1 violations 0 | endpoint form: violations 0, gaps outside [BELOW] 0

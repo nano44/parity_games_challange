@@ -5,7 +5,7 @@ DATA (unit, set, scope, counter) / DEAD (instance) / READING. Nothing here is a 
 CANDIDATE (D1). Tools: experiments/red/r221/ (own.py = R220's copy of R217's independent IDEAL-CYC run; lad221.py, ladclimb.py,
 wit221.py, rho221.py; xcheck.py = R218's four-route check). No L-NEW code is used except inside xcheck.py's second routes.
 
-## 0. Answers (milestone 1, 23:2xZ)
+## 0. Answers (milestone 1, 23:2xZ; milestone 2, 23:3xZ: RHO-E PROVED)
 - (2) No family with R superlinear in N. The ladder question splits in two, and only one half is a resource:
   - Ascents alone are FREE and HARMLESS. SL(k) (§2, a static SET-ladder, N 2k) has plays with k − 1 ascents = U(G), and T ≤ 2,
     R ≤ 1 for k ≤ 32. Four routes agree (k 4 / 8 / 16: own = idealcyc, Γ3 regions = Oink, n5v xi = n5bxi = 5 iterations).
@@ -22,11 +22,11 @@ wit221.py, rho221.py; xcheck.py = R218's four-route check). No L-NEW code is use
     So climbs ride RET stretches, and item (2) feeds item (3).
 - (3) Lemma RHO-SET (§7, PROVED-CONDITIONAL on F1, lane): at a SET-type gate g (Ξ-target = its own mover x), every RET stretch
   after the first starts with an adoption of g's option at x. Between consecutive starts Ω(e_g) rises strictly. So ρ_g ≤ D(y),
-  where y is g's W-target, one level lower (sharper than SWITCH-IN-DV's D(g)). Sub-lemma GAP-RETURN (PROVED, lane) and CONJECTURE
-  RHO-E: between consecutive starts, (Λ(y), E(y)) changes.
-  - With RHO-E, ρ_g ≤ (2M + 3)·F′_B(M), with B the number of ascents of y's plays and B ≤ U(G) (UP-B). So Σρ_g over SET gates is
-    polynomial when U(G) = O(1) (conditional on RHO-E and on [E-LEV] for UP-B).
-  - DATA: RHO-SET 0 violations and RHO-E 0 violations on 76 gaps (72 runs: frozen L-RED instances + climbs); adversarial climb §8.
+  where y is g's W-target, one level lower (sharper than SWITCH-IN-DV's D(g)). Lemma RHO-E (PROVED-CONDITIONAL on F1, lane;
+  milestone 2): between consecutive starts, (Λ(y), E(y)) changes, unless y's cycle node lies above e_g ([BELOW] fails; A_g).
+  - Corollary RHO-COUNT: ρ_g ≤ (2M + 3)·F′_B(M) + A_g, with B the number of ascents of y's plays and B ≤ U(G) (UP-B). So Σρ_g over
+    SET gates is polynomial when U(G) = O(1) and ΣA_g is polynomial (needs [E-LEV] for UP-B; A_g = 0 in all data).
+  - DATA: RHO-SET and RHO-E 0 violations on 76 gaps (73 runs: frozen L-RED instances + climbs), A_g = 0; adversarial climb §8.
 - (1) Not started: L-NEW 62's lemma is not frozen yet (Lead 23:02Z).
 
 ## 1. Setting
@@ -71,13 +71,17 @@ iterations). Set: the 14 runs below. Scope: own.py (cap 3000 steps). Counter: la
 | R33K3 | 3×3 / 3 | 9 | 5 | 3 | 5 | 11 | 3 | 7 | 5 |
 | R43K4 | 4×3 / 4 | 12 | 9 | 3 | 4 | 13 | 5 | 7 | 4 |
 | R53K5 | 5×3 / 5 | 15 | 14 | 4 | 10 | 15 | 1 | 11 | 8 |
-| R63K5 | 6×3 / 5 | 18 | 14 | 4 | 14 | 27 | 4 | 21 | 8 |
-| R83K6 | 8×3 / 6 | 24 | 19 | 4 | 3 | 13 | 6 | 5 | 6 |
-| R44K4 | 4×4 / 4 | 16 | 13 | 4 | 3 | 11 | 4 | 5 | 3 |
-| R62K5 | 6×2 / 5 | 12 | 12 | 3 | 7 | 15 | 4 | 10 | 6 |
+| R63K5 | 6×3 / 5 | 18 | 14 | 4 | 13 | 28 | 4 | 21 | 7 |
+| R83K6 | 8×3 / 6 | 24 | 17 | 4 | 3 | 25 | 11 | 8 | 9 |
+| R44K4 | 4×4 / 4 | 16 | 13 | 4 | 4 | 14 | 4 | 6 | 4 |
+| R62K5 | 6×2 / 5 | 12 | 12 | 3 | 7 | 16 | 5 | 10 | 6 |
+| R102K6 | 10×2 / 6 | 20 | 19 | 4 | 8 | 26 | 7 | 13 | 14 |
+| R53K3b | 5×3 / 3 | 15 | 11 | 3 | 7 | 16 | 3 | 12 | 9 |
 
-(Rows for L10K5, L12K6, R63K5, R83K6, R44K4, R62K5 are the best genomes when this was written; batch 2 was still running. The final
-values are in out/*.log.) For comparison: rd3_d4 N 8 R 10, rd2_d7 N 14 R 13, LEAP_k64 N 261 R 128 (all with 2 ascents). More ascents
+(Final values, batches 1-2 complete; set = these 14 runs.) Batch 3 (SCORE=reent: score = max re-entries at one (v, Λ-interval);
+8 runs, N 8-18, 4000 iterations): max re-entries 1 / 5 / 3 / 1 / 1 / 2 / 4 / 3 (E22 / E24 / E28 / E32 / E33 / E34 / E43 / EL6);
+best E24: N 12, 5 re-entries, 3 ascents, R 8. Baseline from the Lead (23:06Z, L-SI 43 @ claude/l-si e3ac4b06, not opened by me): L-SI's
+R-climbs with Ξ-cycles reach R 2 / 5 / 6 at d 2 / 3 / 4; my climbs are not R-climbs on L^R_d and use other scores. For comparison: rd3_d4 N 8 R 10, rd2_d7 N 14 R 13, LEAP_k64 N 261 R 128 (all with 2 ascents). More ascents
 do not buy more R per vertex in this data.
 
 ## 4. Why Odd keeps a climbing e (wit221.py; DATA)
@@ -114,7 +118,7 @@ impossible inside I.
 - What survives is the binary carry recursion T(k) = 2T(k−1) + 1 in which the carry into bit i clears bits < i in the SAME change as
   it sets bit i (+1 at the low end). In the hub's play this is a re-entry: the hub stops entering bit 0 and enters bit i directly.
   Later it re-enters lower bits as they set again. A re-climbing counter therefore needs about 2^(k−1) re-entries at its hub inside
-  one Λ-interval (READING). Data so far: ≤ 3 in climbs, k at LEAP_k (§4).
+  one Λ-interval (READING). Data so far: ≤ 5 in re-entry-targeted climbs (E24, N 12), k at LEAP_k (N 4k + 5) (§3, §4).
 **Corollary ASC-LOG (PROVED, lane; from HUB-ASC-G and UP-B @ l-new 95dc76d7).** If some vertex has D_E ≥ 2^k inside one Λ-interval,
 the plays of that vertex need B ascents with F′_B(M) ≥ 2^k. Since F′_B(M) ≤ (2M)^(5·2^B − 3) for M ≥ 4 (induction: F_0 ≤ M², F_(B+1) ≤ 4M³F_B²), that means
 B ≥ log₂ k − log₂ log₂ M − O(1), and also U(G) ≥ B.
@@ -154,31 +158,40 @@ Proof.
   - If τ_(t1)(g) = e: Ω_(t1)(g) = Ω_(t1)(e_g), so Ω_(s′−1)(e_g) ▷ Ω_(t1)(e_g), a strict rise inside (t1, s′ − 1] ⊆ (s, s′).
   - If τ_(t1)(g) = β: L ◁ Ω_(t1)(e_g) ⊴ Ω_(s′)(e_g) (F1). But at s′, σ = k and τ = e, so Ω_(s′)(e_g) ◁ L. Contradiction.
 - (c) The intervals (s, s′) of different consecutive pairs are disjoint. Ω(e_g) is a function of Ω(y) (single edge e_g → y). ∎
-**Sub-lemma GAP-RETURN (PROVED, lane; F1, E-DOM-ALL-d).** In (b), suppose Λ(y) is less relevant than e_g, and (Λ(y), E(y)) is constant
-on [t1, s′ − 1]. Then E_(t1)(g′) = E_(t1)(e_g). In particular g′'s play at t1 passes e_g, hence g, hence x: the option x leaves for
-returns into x.
-- Proof: Λ(e_g) = Λ(y) =: w and E(e_g) = {e_g} ∪ E(y) =: E are constant on [t1, s′ − 1].
-  Ω_(t1)(e_g) ◁ Ω_(t1)(g′) ⊴ Ω_(s′−1)(e_g) puts Λ_(t1)(g′) between two equal rewards, so it is w.
-  - If E_(t1)(g′) ≠ E, let ε be the most relevant element of E Δ E_(t1)(g′). In Π_(t1)(e_g) Δ Π_(t1)(g′) and in
-    Π_(s′−1)(e_g) Δ Π_(t1)(g′), every element more relevant than ε is an e (E-DOM-ALL-d; c_W, K0, K3 are common to both sides or
-    absent). The e-parts of both differences equal E Δ E_(t1)(g′). So both comparisons are decided by ε, the same way. That
-    contradicts ◁ on one side and ⊴ on the other.
-  - Hence E_(t1)(g′) = E ∋ e_g. e_g's only in-edge is from g, and g's only in-edge is from x. ∎
-**CONJECTURE RHO-E.** For a SET gate, (Λ(y), E(y)) changes strictly between any two consecutive RET starts. Open case after
-GAP-RETURN: x leaves k for an option whose play re-enters x, which makes x's next play an e-free cycle.
-- Consequence, if RHO-E holds (PROVED-CONDITIONAL on RHO-E, [LOC]-free): ρ_g ≤ Σ_I D_E,I(y) ≤ (2M + 3)·F′_B(M), where B is the max
-  ascents of y's plays (HUB-ASC-G). So Σρ_g over SET gates ≤ M·(2M + 3)·F′_(U(G))(M): polynomial when U(G) = O(1) (with UP-B, i.e.
-  [E-LEV]). With GATE-POLY this removes the Σρ_g condition at SET gates for bounded U, leaving ΣH_g and the CYC-type RET gates.
+**Lemma RHO-E (PROVED-CONDITIONAL on F1 and Odd's optimal response, lane; replaces the CONJECTURE and the sub-lemma GAP-RETURN of
+milestone 1).** Let s < s′ be consecutive RET starts at a SET gate g, and t1 := the last t < s′ with σ_t(x) = k. Assume [BELOW]:
+Λ_(t1)(y) is less relevant than e_g. Then (Λ(y), E(y)) at s′ − 1 differs from (Λ(y), E(y)) at t1.
+Proof. Suppose not: Λ(y) = w and E(y) = E_y at both t1 and t := s′ − 1. Put E := {e_g} ∪ E_y.
+- y's play never passes x: otherwise it passes g and e_g (σ(x) = k at t1), and the cycle contains e_g, so w ⊵ e_g, against [BELOW].
+  Hence at both times Λ(e_g) = w and E(e_g) = E (e_g ∈ Π because w is less relevant than e_g).
+- At t1, τ(g) = e (RHO-SET (b)), so x's play is x g e_g y …: Λ_(t1)(x) = w and E_(t1)(x) = E. Movers and gates are less relevant than
+  any cycle node, so they are never in Π.
+- At t, σ_t(x) =: u ≠ k. Howard adopts k at s′, so Ω_t(g) ▷ Ω_t(u). As g is Odd's, Ω_t(e_g) ⊵ Ω_t(g). x's value has the same Λ and Π
+  as u's. F1 at x gives Ω_t(x) ⊵ Ω_(t1)(x). So Λ_t(x) has reward between reward(w) and reward(w), i.e. Λ_t(x) = w.
+- Suppose E_t(x) ≠ E. Let ε be the most relevant e in E Δ E_t(x). With equal Λ, two values are compared by the top of the symmetric
+  difference of their Π's. When the e-parts differ, that top is ε: every non-e more relevant than an e is c_W, K0 or K3, which lie on
+  both plays or on neither (E-DOM-ALL-d). The e-parts of Π_t(x) Δ Π_(t1)(x) and of Π_t(u) Δ Π_t(e_g) are both E Δ E_t(x).
+  - If ε ∈ E_t(x), then Ω_t(u) ▷ Ω_t(e_g). Contradiction.
+  - If ε ∈ E, then Ω_(t1)(x) ▷ Ω_t(x). Contradiction with F1.
+- So E_t(x) = E ∋ e_g, i.e. x's play at t passes e_g, hence g. But g's only in-edge is from x, and x's play follows σ_t(x) = u ≠ k
+  each time it is at x. Contradiction. ∎
+**Corollary RHO-COUNT (PROVED-CONDITIONAL on F1, lane).** For a SET gate g: ρ_g ≤ 1 + #changes of (Λ(y), E(y)) over the run + A_g,
+where A_g is the number of gaps violating [BELOW]. #changes ≤ (2M + 2) + Σ_I (D_E,I(y) − 1), and E is lex-monotone on each Λ-interval
+I (E-MON). With HUB-ASC-G: ρ_g ≤ (2M + 3)·F′_B(M) + A_g, with B the max ascents of y's plays, and B ≤ U(G) under [E-LEV] (UP-B).
+So Σρ_g over SET gates is polynomial when U(G) = O(1) and ΣA_g is polynomial. A_g counts gaps whose y-cycle node lies above e_g: the
+analogue of R219's H_g (DATA 0 in every run, below).
 DATA (rho221.py; unit: gates of level ≥ 1, and gaps between consecutive RET starts at SET gates; set: all frozen L-RED instances
-r217-r221 inst/ plus the §3 climbs, 72 runs, file out/rho221_all.txt; scope: own.py): RHO-SET violations 0; RHO-E gaps 76, violations 0;
+r217-r221 inst/ plus the §3 climbs, 73 runs, file out/rho221_all.txt; scope: own.py): RHO-SET violations 0; RHO-E gaps 76: violations
+0 (whole-gap form and endpoint form), gaps outside [BELOW] 0 (A_g = 0);
 max ρ_g at one gate 5 (SW_k8s16, CYC type), at a SET gate 3 (L10K5); max over gates of ρ_g / (D_E(y)·L(y)) = 1.00; Σρ_g ≤ 1.5·N
 everywhere (max R62K5; LEAP_k: Σρ = 2k + 1).
 
-## 8. Adversarial climbs against RHO-SET / RHO-E (batch 4; RUNNING at milestone 1)
+## 8. Adversarial climbs against RHO-SET / RHO-E (batch 4; RUNNING at milestone 2)
 ladclimb.py with SCORE=rho: score = (RHO-SET + RHO-E violations, max ρ at a SET gate, R, T); Ξ-retargets favour SET options. Results
-in out/H*.log when done.
+in out/H*.log when done. At milestone 2 (partial, 7 of 8 runs started): violations 0; max ρ at a SET gate 6 (H34, N 12), 5 (H25,
+H43), 4 (H23, N 6).
 
 ## 9. Next
 1. Item (1): L-NEW 62's [LOC]-at-gates lemma, when frozen (own.py on LEAP_k64, rd3_d4, R217-R219 runs first).
-2. RHO-E's open case (x leaves for an option that returns into x); then CYC-type RET gates (Ξ-loops longer than a self-loop).
+2. CYC-type RET gates (Ξ-loops longer than a self-loop): does RHO-SET / RHO-E extend? Then bound A_g (gaps with y's cycle node above e_g).
 3. A two-hub rung (§6) in the carry order of §5, smallest k = 2 with two re-entries at one Λ-interval beyond LEAP's mechanism.

@@ -62,6 +62,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   Climbing e's are RET-held (LAM 0). Lemmas NO-REFLECT (Gray/Hanoi DEAD; carry order only), ASC-LOG (2^k e-sets need ~log k ascents;
   vEB/squaring reading), RUNG-ALT (re-climb = re-adoption → hub pair), RHO-SET (ρ_g ≤ D(y), PROVED-COND F1), GAP-RETURN; CONJECTURE
   RHO-E (76 gaps, 0 violations) ⇒ Σρ at SET gates polynomial for U = O(1).
+- Milestone 1 pushed b862bc9b1 (VERIFY PASS). Milestone 2 (23:3xZ): Lemma RHO-E PROVED (F1; [BELOW]); GAP-RETURN superseded;
+  Corollary RHO-COUNT ρ_g ≤ (2M+3)F′_B(M) + A_g; rho221.py endpoint check (76 gaps, 0 viol., A_g 0). Batches 2-3 done. Lead 23:06Z: L-SI box 82
+  = same object (Odd counter on Ξ-cyclic genome); do not duplicate R-climbs; L-SI R-climbs are the baseline.
 - Running (tracked tasks; resumable: each job skips if out/<name>.done): experiments/red/r221/go2.sh (ascent climbs), go3.sh (SCORE=reent),
   go4.sh (SCORE=rho, adversarial vs RHO-SET/RHO-E). Relaunch: `experiments/red/r221/goN.sh > experiments/red/r221/out/goN.txt 2>&1`.
 - Things only I know: wit221's first version counted v = e_g itself (gate not on the play) and showed fake «EST_bad»; fixed (skip seq[i] == v).
