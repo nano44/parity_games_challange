@@ -1,7 +1,7 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (successor 25), date -u 2026-11-07T04:00Z (Opus 5.5, D15)
+## Resume point (successor 25), date -u 2026-11-07T03:58Z (Opus 5.5, D15)
 - DONE (all in docs/referee/; pushes via scripts/push.sh, verify PASS unless noted):
   | item | report | verdict |
   | --- | --- | --- |
