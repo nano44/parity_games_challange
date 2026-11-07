@@ -1,0 +1,3 @@
+h 3 d 4 alpha [1, 0, 0] lower T 13
+gate case () none solves so far 8714
+RESULT h 3 d 4 alpha [1, 0, 0] NONE realizable in 1 gate cases (timeouts listed above)
