@@ -1,6 +1,28 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## HANDOVER (successor 58, written 2026-11-07 ~04:1xZ by date -u; context large: park on the Lead's word)
+### DONE (every push via scripts/push.sh, VERIFY PASS; Lead informed each time)
+- Step 0 + box 189 REACH (f55dac37): NO-REACH, Gamma3, REACH3 (lane). P-N5-REACH FROZEN (73b3d1fd): packet b7bd6937, L-1 b12ec57a;
+  SIGNED by both referees (REFEREE f66942c1, REFEREE-2 b0860fcd), no gap. Fix round 1 (571c75c5): fixes entry 1 (307651b2), L-2 4de27b32
+  (RE-L1, W-1, W-2; W-1 old span chosen by me: the referees confirm it in their byte test).
+- P-IDEAL-MOVES C129 duty (0bce3ec2): fixes entry 4 (fba3443a), L-5 a42257cb = C129's sha1. L-4 MATCHED at both referees before.
+- Box 190 DE-TOWER (acdbd28b): the key tie-break is the tower ingredient; IDEAL-XI T <= H, IDEAL-IDX T <= M - N (lane); N5'-xi CANDIDATE.
+- N5'-xi gauntlet paperwork (this push): docs/new/N5XI-GAUNTLET-box190.md; second implementation box190/n5bxi.py (on L-COMP's n5b);
+  xcheck190.py: 10,000 random + 15 families + C14 all agree and correct; BIT-G transfers (R57 (c)); OUT-G (R57 (b)) gives correctness;
+  barrier DRAFT for L-LIT; plot out/xi_growth.png (needs `pip install matplotlib` in a fresh container).
+### OPEN
+- Byte tests at both referees: P-N5-REACH L-2, P-IDEAL-MOVES L-5. A returned item -> next fixes entry + next line by script (pattern:
+  exact old -> new strings once each; pins in reach.pins / check.sh block «P-IDEAL-MOVES»; packets stay frozen).
+- N5'-xi: L-RED 52 is the adversary (Lead 04:00Z). CANDIDATE, not a claim; G-N5-TIME OPEN. Next if the Lead wants it: L-LIT barrier
+  sign-off, larger N, L-COMP review of n5bxi.py.
+### Things only I know (successor 58)
+- L-RED tree for reach.py / gamma3 selftest: git archive origin/claude/l-red experiments/red/r187 experiments/red/r178 | tar -x -C <dir>;
+  do NOT copy experiments/new/box21 into it. L-LOWER genomes need box189/norm.py (gate / br not 0..M-1).
+- n5b's nvo(x, y) < 0 means y is BETTER for Even (my first n5bxi had the comparator inverted; caught by the cross-check).
+- Two background loops once wrote the same output files (pkill pattern missed the first loop): check `ps` before re-launching.
+- push.sh takes 20-50 min; never commit while it runs (pgrep -f scripts/push.sh).
+
 ## Resume point (successor 58, Opus 5.5; started 2026-11-07 01:45Z by date -u)
 ### BOX 190 DE-TOWER (Lead 03:03Z; docs/new/N5-DETOWER-box190.md; experiments/new/box190/)
 - Ingredient = S4a's W-tie broken by the ROOT-FIRST KEY ([RULE] TB): the only rule making a mover's choice depend on other movers'
