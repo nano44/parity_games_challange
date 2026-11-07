@@ -75,3 +75,23 @@ this packet before this push.
 - F-3: on the d 6 genome the stored start attains the maximum over all 4,096 starts (13; the first start in lexicographic order
   reaching it is the stored one).
 - F-4: no signed item of P-IDEAL-MOVES is affected (my R2-P-IDEAL-MOVES Add. 2; L50 (2)).
+
+## Addendum 1: fix round 1 (claude/l-lower 8938e403; REFEREE-2 successor 29, 2026-11-07 03:4xZ by date -u)
+- Object: docs/lower/P-M2D-DEAD-fixes.md sha1 966aee219a0c…, 3,617 B (entry 1); P-M2D-DEAD-line-L1.txt 1dec8b4da3be…, 1,084 B;
+  P-M2D-DEAD-line-L2.txt 8ca7bcca624b…, 1,400 B, 1 line, 14 «(» = 14 «)», depth never negative, 0 «|». Packet 3ca5b9fa unchanged.
+- L-1 file == the frozen packet's §6 joined by single spaces + «\n» (own script) ✓.
+- Byte test (own script): each of the four old strings occurs exactly once in L-1; L-1 with the four replacements == L-2 byte for
+  byte ✓. PM-L1..PM-L3 are verbatim the REFEREE's texts (docs/referee/R-P-M2D-DEAD.md at c011995c l. 88-96, read after my report).
+- Meaning: PM-L1's flip steps re-measured by my simulator: pair (6, 7) of d 6 flips at steps 2-13, pair (12, 13) of d 8 at 1-13 and
+  17-24 ✓. PM-L2 ✓ (my membership table: both Ξ-acyclic, both not ISO). PM-L3: my r2moves counters (which include every movescheck
+  counter) are 0 on all 4,096 starts of the d 6 genome and on the d 8 stored-start run ✓. PM-L4 + W-1: «and by both referees' own
+  simulators» meets W-1 ✓; L-SI 41 0803d551 opened by me (docs/si/N5-TROPICAL-box76.md l. 167-170, «Every (d, T, mover, moves) of
+  the README table is reproduced (replay77.out)») ✓.
+- **L-RED 52 (55557951).** Opened: the commit message («… ideal.py / fa / lemck / box150 reproduce all 9») and the code
+  (experiments/red/r214/memb.py, lowrep.py, the byte copies in lower3/) exist; no committed per-genome output. A RESULTS line should
+  name only evidence whose result is on record. **W-1′ (required, wording):** replace «and L-RED 52 (55557951,
+  experiments/red/r214/lower3/),» by «and L-RED 52 (55557951, experiments/red/r214/lower3/; its 9/9 is stated in the commit message, no
+  output file),» — or drop L-RED 52 until an output file is committed. The DEAD verdict does not depend on it (my own replay, the
+  REFEREE's, L-NEW box 188 and L-SI 41 each reproduce).
+- N-1, N-2 taken as wording notes in entry 1 ✓.
+- Verdict: fixes entry 1 **CORRECT**; **L-2 MATCHES after W-1′** (Opus 5.5, D1). The DEAD verdict stands.
