@@ -1,5 +1,26 @@
 # L-LOWER notebook
 
+## Successor 8 (Opus 5.5) — BOX L8, GO from Lead 21:13Z 2026-11-07 (handover check f7c315e5, score 5)
+### Resume point (23:0xZ)
+- Product: docs/lower/L8-design.md; tools/data experiments/lower/l8/ (l8check.py in check.sh). Pushed: 5158ba4e (round 1), 69d7005a
+  (item 0), da105498 (§1d mirror), e70af4a2, b8594f46 (hsched3).
+- DONE: guard_l6 read (RC-PLATEAU test direction inverted; Lead withdrew «DEAD», RC-PLATEAU stays CONJECTURE, L8 §1); item 0 KILL238/230
+  (E5 63/63, 16 = 8 × 2 untriggered (8,0) windows with o8 = o9 = 0; 10:0 → 17:0 → 22 trigger; revert 122 forced / 110 neutral);
+  mirror by hand: 0 of 4,675 single re-points (L8 §1d; Lead: L-COMP's F240 / F246 then closed windows with ≥ 2 edits on movers ≥ 12, so
+  my reading «(i) lower pairs must read the delay» holds via helpers in their closure, not necessarily via lower-pair edits — note
+  this in L8 when F246 is dissected); item 1: HS2_d3 (h 2, d 3, needs α₁ = 0), HS2a11_d4; h = 3 d = 4 NONE (4 α); h = 3 d = 5 full
+  search TIMEOUT (stopped); item 3 ONE-READ XOR PROVED (L8 §3).
+- IN FLIGHT: pure-helper runs (hsched3.py, out/p_h3d5_a100/a110, p_h2d4_a11 — tracked tasks; die on restart: re-run
+  `python3 hsched3.py 3 5 1,0,0 3000 20 > out/p_h3d5_a100.out`, etc.); watcher for L-COMP's L6_FRZ_F246_D_l6v.txt (sha1 732c1228…).
+- NEXT: dissect F246 vs KILL238 (Lead 22:36Z: what closed 5 windows; why 45, 80, 116 resist; where 2 flips go; a by-hand 254 via
+  ranksolve is the prize); then F240 (sha1 3c5ccc70…) if still useful; then item 2/4.
+### Things only I know (successor 8)
+- hsched2's helper-in-DFS search explodes at d = 5 (one gate case > 3,000 s); hsched3 (pure helpers = constant preference: never moves
+  or flips once, at the first step its key = p) is the fast restricted class. alpha[0] is unused by l7/sched.py (1,0 ≡ 0,0).
+- mirror.py: the transplant target needs +2 steps per bad block; runclamp completes movers ≥ 14 with CURRENT ranks (scope limit).
+- Date stamps: use date -u (my 21:4x guess in one message was wrong).
+
+
 ## Successor 7 HANDOVER (2026-11-07 ~20:1xZ, context ~350k; to PARK after this push unless the Lead asks for more)
 ### DONE (claude/l-lower)
 - 9113b5cc handover check (score 5). 4f25ae6f C134 duty: fixes entry 2 + docs/lower/P-TOWER-FUEL-line-L3.txt (7328e673…, 4,908 B =
