@@ -1,0 +1,73 @@
+== ../l4/rec/H6_d24_F126.json 5
+parent ((6, 0),) own ((8, 0),)
+     8 10:mv<[8, 11] 11:mv<K
+parent ((6, 0),) own ((9, 0),)
+     8 10:mv<[11, 12] 11:mv<[9]
+parent ((6, 1),) own ((8, 0),)
+     7 10:mv<[8, 11] 11:mv<K
+parent ((6, 1),) own ((9, 0),)
+     7 10:mv<[11, 12] 11:mv<[9]
+parent ((7, 0),) own ((8, 1),)
+     8 10:mv<[8, 11] 11:mv<K
+parent ((7, 0),) own ((9, 1),)
+     8 10:mv<[11, 13] 11:mv<[9]
+parent ((7, 1),) own ((8, 1),)
+     5 10:mv<[8, 11] 11:mv<K
+     2 10:mv<[8, 11, 25] 11:mv<K
+parent ((7, 1),) own ((9, 1),)
+     7 10:mv<[11, 13] 11:mv<[9]
+parent () own ((8, 0),)
+     1 10:mv<[8, 11] 11:mv<K
+parent () own ((9, 0),)
+     1 10:mv<[11, 12] 11:mv<[9]
+parent () own ()
+     1 10:mv<[11, 13, 33, 47] 11:mv<K
+== out/j/G7_d28.json 5
+parent ((6, 0),) own ((8, 0),)
+     4 10:mv<[12] 11:mv<[16]
+     4 10:mv<[12] 11:mv<[16, 24]
+parent ((6, 0),) own ((9, 0),)
+     8 10:mv<[12, 15] 11:mv<[9]
+parent ((6, 1),) own ((8, 0),)
+     6 10:mv<[12] 11:mv<[16]
+     1 10:mv<[12] 11:mv<K
+parent ((6, 1),) own ((9, 0),)
+     7 10:mv<[12, 15] 11:mv<[9]
+parent ((7, 0),) own ((8, 1),)
+     8 10:mv<[12, 16] 11:mv<K
+parent ((7, 0),) own ((9, 1),)
+     8 10:mv<[15] 11:mv<[9]
+parent ((7, 1),) own ((8, 1),)
+     6 10:mv<[12, 16] 11:mv<K
+     1 10:mv<[12] 11:mv<K
+parent ((7, 1),) own ((9, 1),)
+     7 10:mv<[15] 11:mv<[9]
+parent () own ((8, 0),)
+     1 10:mv<[12] 11:mv<[43]
+parent () own ((9, 0),)
+     1 10:mv<[12, 15] 11:mv<[9]
+parent () own ()
+     1 10:mv<[15] 11:mv<[41]
+== ../l4/rec/H6_d24_F126.json 4
+parent ((4, 0),) own ((6, 0),)
+     3 8:mv<K 9:mv<[14]
+parent ((4, 0),) own ((7, 0),)
+     3 8:mv<K 9:mv<[12]
+parent ((4, 1),) own ((6, 0),)
+     4 8:mv<K 9:mv<[14]
+parent ((4, 1),) own ((7, 0),)
+     4 8:mv<K 9:mv<[12]
+parent ((5, 0),) own ((6, 1),)
+     3 8:mv<K 9:mv<[14]
+parent ((5, 0),) own ((7, 1),)
+     3 8:mv<K 9:mv<[12]
+parent ((5, 1),) own ((6, 1),)
+     4 8:mv<K 9:mv<[14]
+parent ((5, 1),) own ((7, 1),)
+     4 8:mv<K 9:mv<[12]
+parent () own ((6, 0),)
+     1 8:mv<K 9:mv<[14]
+parent () own ((7, 0),)
+     1 8:mv<K 9:mv<[12]
+parent () own ()
+     1 8:mv<[18] 9:mv<[14]

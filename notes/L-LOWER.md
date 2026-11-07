@@ -1,4 +1,81 @@
 # L-LOWER notebook
+
+## Successor 6 (Opus 5.5) — BOX L6: build the fuel supplier for SL41's level 6 (GO from Lead 14:08Z, 2026-11-07)
+### Resume point
+- Handover check 2ce74ff9 (score 5). Product: docs/lower/L6-supplier.md; tools/data experiments/lower/l6/ (sim6.py = Python big-int
+  simulator agreeing with fev; win.py windows/deciders; ins.py level insertion; dropscan.py; gad.c / gad2.c gadget annealers).
+- Result so far: success NOT met (F(6) never > 222 with 6 capped). Exact reason (L6 §7): MERGE at 22 (11:1 → 9:1 → 54:0 → 22 under
+  parent (9,1)); TOP-CLOCK (PROVED: TOP-ADD on SL41 needs ≥ 5 added levels to move 29 times); SAME-STEP (length-2 windows); couplings:
+  12 feeds capped pair 5 (10:0 → 55 → 12) and a single key-gated supplier is RANK-LOCKED (22-side needs a 2^87 drop at 240, none
+  exists; 11-side needs an idle β of rank ≥ 88, freezing 63 of 79 good windows). Gadget plateau 95 good 6-windows (rec/GAD95_P8_d29.txt).
+- D18 analogy: synchronous circuits (Ξ = register, key cascade = combinational ripple, length-2 window = setup-time; carry-lookahead
+  via the Gray-code cycle of pair 4's b-step types) — lookahead fails because a path reads the whole downstream sum (TAP).
+- DUTY P-TOWER-FUEL fix round 1 DONE 740f6c79 (fixes 0902efb9…, L-2 d866ca50… 4,586 B; mkL2_tf.py / mkfix_tf.py; check pins L-2).
+  Waiting for both referees' byte tests; answer further items with fixes entry 2 + L-3 by script, never edit packet / L-1 / L-2.
+- 15:53Z Lead: (a) READ-NEST by hand -> DEAD on SL41 (readnest.py: 10's path needs 12; 12 reads 13 kills all caps at step 1);
+  (b) predicate guard_l6.py + seed SL41 sent for L-COMP; GAD95 xcheck'd vs box150 (0/0).
+- Milestone report sent to Lead 15:50Z (SHAs 2ce74ff9, fa9104fa, e362f15b, 3329b094, 740f6c79). Waiting for routing (READ-NEST
+  test SL41′ or a non-merging tower).
+- Next ideas (not started): a lower tower where the (9,1) chain does not merge into 22, or PULSE_5 ≥ 3 under (9,1) (gives the fuel a
+  register); multi-mover gadgets outside gad2's space.
+### Things only I know (box L6)
+- gad/gad2 binaries and runs live in the scratchpad (lost on restart); rebuild: gcc -O2 -o gad2 experiments/lower/l6/gad2.c -lm.
+  gad's «good» counter differs from win.py by one on SL41 (78 vs 79: first-window handling); on GAD95 both give 95.
+- With insertion at P, old movers ≥ 2P shift by +2; at P = 6 pass J = 7 (old pair 6) and FT = 254 to gad2.
+
+## Successor 5 HANDOVER (2026-11-07 ~12:4xZ, context ~420k; PARKED after this push)
+### DONE (claude/l-lower; docs/lower/L5-rule.md is the box's product; tools/data experiments/lower/l5/)
+- §1-§2: H5→H6 dissection (revert.py, greedyback.py: ~half drift, ~70 Ξ-targets forced at every level); fuel source = f(own b-step
+  type) (fuelsrc.py; ruler/Hanoi DEAD). §4: uniform templates (utmpl.c) give ≤ 1 doubling level. §5: GAP-NEST (PROVED, lane).
+- §6: seventh-level obstruction. G7_best: 30 level-5 PULSE/GAP violations (corrected from 31), all type (9,1) + first window. SL41_d28
+  (rec/, sha1 c1b46c31…, xcheck'd vs L-NEW box150 Gen ae8e185d: SIM-MISMATCH 0, movescheck 0): all room conditions met, F(6) 222; fuel
+  gap: crossed pair 6 decided by (87, 9, 1) in all 48 failing windows (domin.py). DOMINANCE-FREEZE, CROSS-ECONOMY (PROVED, lane).
+  Local repair DEAD up to: 166 single dominator edits, 2,970 single closure re-targets, 20k random 2-edit, 144,011 two-edit (supplier 19).
+- §7: CONJECTURE L5-TYPE (O(h) suppliers per extension); evidence fuelctx.out (capped-level fuel = own type only).
+### PACKET P-TOWER-FUEL FROZEN at 7f7ff6f5 (Lead ruling 12:36Z (b)): docs/lower/P-TOWER-FUEL.md + line docs/lower/P-TOWER-FUEL-line-L1.txt
+  (sha1 408470ad…) + check experiments/lower/l5/p_tower_check.py (in check.sh; pins G7_best b995fff2…, SL41 c1b46c31…, the line).
+  Premises landed only (R104 def, R105 ENC, R110 def, R113 ALIGN); MOVE, DOUBLE-EQ, PULSE-NEST re-proved inside. Referee items go into
+  a fixes file docs/lower/P-TOWER-FUEL-fixes.md + new line files L-2…; NEVER edit the frozen packet or line L-1.
+### ROUTED (Lead): L-COMP 11 (session_01V5yGRYPZqSkyP1GtiC8bMh) lane D: from SL41, GUARD 0-5, F(6), 2-3 simultaneous edits outside
+  pairs 0-5, one restart biased to a changing β > 87 on 22's / 11's chain. Read its result before redoing anything.
+### NEXT (successor): (1) if L-COMP finds F(6) > 222 from SL41: dissect with domin.py / fuel6.py which supplier beat (87, 9, 1), and test
+  the same move at H5 → H6 (Lead: the L5-TYPE test). (2) Packet draft: GAP-NEST + PULSE-NEST re-proved + DOMINANCE-FREEZE + CROSS-ECONOMY,
+  premises landed only (R104, R105 ENC, R110, R113, R116; not R119). (3) Hand design: a supplier needs a β above rank 87 on 22's or 11's
+  chain that changes once per pulse under parent (9,1); 19 (β 95, 23 moves while 9 parked) is the candidate; 2 edits are not enough.
+### Things only I know: see «Things only I know (box L5)» below (fev batches, revert.py importable, SLACK score, xcheck recipe, push slip).
+
+## Successor 5 (Opus 5.5) — BOX L5: the inductive rule G_h → G_(h+1), or its obstruction (GO from Lead 09:42Z, 2026-11-07)
+### Resume point
+- Handover check 9ef2e415 (score 4.5). Corrected: DUTY P-M2D-DEAD is CLOSED (both referees MATCHED L-3: REFEREE §C add. 1 70ec6882,
+  REFEREE-2 Add. 2 59bfa452; CHECKER C131 PASSED 2c6a2c1b; DE37 MOVES-2D DEAD on 𝓛^R_d LANDED in trunk 172af6ad; Lead 09:42Z, relayed,
+  not opened by me). No duty open.
+- Box L5 write-up: docs/lower/L5-rule.md; code/data: experiments/lower/l5/. Brute climbing is L-COMP 10's (D_d32 from G7_best_d28 + 4
+  TOP-ADD); ask the Lead to route any seed/constraint.
+- Pre-go DATA (lpaudit, stored start): per-window fuel sources alternate by window parity (two feeders per level); exceptions H6 level 3
+  (period 4) and H5 level 3 (two irregular windows). Not a ruler/Hanoi function (ruler test DEAD). Lead: look at the period-4 exception.
+- 10:3xZ state (docs/lower/L5-rule.md §1-§7): fuel source = function of the b-step type (member × direction) on H6/DBL4/RECF4/G7;
+  greedy walk back H6 → H5: ~half drift, ~70 Ξ-targets forced at every level; GAP-NEST (PROVED, lane); G7_best's only 7-level pulse/gap
+  deficit = level 5, type (9, 1) (trigger 15 key-gated by the first move of pair 5); 94k random single splices: no gain; uniform
+  templates (P ≤ 3): one doubling level only. CONJECTURE L5-TYPE (O(h) delay movers per extension). Template runs out/r_p* may still run.
+- 11:1xZ state: SL41_d28 (targeted SLACK climb from G7_best; all 7-level PULSE/GAP conditions met, F(6) still 222). Obstruction = fuel:
+  pair 6 is CROSS onto (22, 11) and decided by (87, 9, 1) in all 48 failing windows (domin.py); single edits (domfix) and 20k two-edit
+  fuel splices (fuelsplice) fail. Lemmas (lane): GAP-NEST, DOMINANCE-FREEZE, CROSS-ECONOMY (docs/lower/L5-rule.md §5-§6).
+  Capped-level fuel depends on own b-step type only (fuelctx.out). Next idea: a supplier for D = cv(22) − cv(11) of rank > 87 that
+  changes once per pulse under parent (9, 1) — candidates from good-window deciders (19, 20 at ranks 91-95; 7 at 101).
+### Things only I know (box L5)
+- SLIP (12:0xZ): committed 5bc47311 while push.sh was verifying a92b5226 (my wait loop tested «output file non-empty», which the
+  commit step had already written). push.sh pushed only the verified a92b5226; 5bc47311 went out in the next push. Check now: wait on
+  `! pgrep -f "bash scripts/push.sh"` AND «exit» in the task output before any commit.
+- Two-edit supplier search (retall2) at 144k genomes ran in ~10 min with fev batches of 400; the SL41 plateau is > 2 edits deep.
+- xcheck against L-NEW: `git archive origin/claude/l-new experiments/new/box150 experiments/new/box139 experiments/new/box187 | tar -x
+  -C $SP/lnew; LNEW=$SP/lnew python3 -I ../l3/xcheck.py f.json`.
+- revert.py is importable (main guarded); greedyback/splice/domfix/fuelsplice import rd/wr/caps from it. fev = batch evaluator (one
+  process, many genomes): use it for all batch searches; utmpl GENOME= mode is an independent exact-order simulator.
+- mclimb.c SLACK=J:NEED score = 256·(good J-windows) + F(LV) under GUARD; validated on H6 / G7_best (L5 §6).
+### Sources opened (this box)
+- claude/l-si 9b51f2cb docs/si/N5-TOWER-box80.md §0-§6 (PULSE-NEST, CAP-PULSE, ZONE, INSERT-PASS, STRETCH-NEED, delay lines);
+  docs/si/N5-TROPICAL-box76.md §2 (ALT-MIN, HIT), §8-§12 (TOWER-NEED, FUEL-NEED, PASS-FREEZE, RE-ENTRY); experiments/si/box80/delay80.out.
+- Friedmann's binary-counter games: NOT opened; not used.
 Successor 4 (Opus 5.5, D1/D14/D18/D20) started 2026-11-07 03:30Z (date -u); BOX L4 (12 h): the fifth doubling level, S(h), by an
 explicit recursive design with proofs. Successor 3's sections below are kept unchanged as history.
 
@@ -34,6 +111,24 @@ for μ(d), IDEAL-ACYC model on 𝓛^R_d). The predecessor's T-L2 text (2026-10-1
   H6_d24_F126 (fb37fec9…; F 2 6 14 30 62 126, T 209), RECF4_d20_F60 (354b7d44…), F56, F53, F52.
 - DUTY P-M2D-DEAD fix round 2: afc85c57 (entry 2, L-3 4c056511…, fixes f5b3f78a…); waiting for the referees' byte tests of L-3.
 - SHAs: 5dcfa1e1 (check), 7777fc4f, 127a5f8c, 2f15c81a, afc85c57, 33eb8593, c45cf2f3, 10cac3d9, then push 9 (diffg + text genomes).
+### Confirmations (Lead 07:14Z, relayed; not opened by me): H5_d20_F62 and H6_d24_F126 REPRODUCED by L-SI 41 and L-RED 53;
+RECF4_d20_F60 and DBL4_d20_F30 REPRODUCED by L-RED; end to end on the real Γ3 games two N5 engines (n5v, n5b) agree: 33 / 70 / 139 /
+212 iterations = L + 3, one FL run of length L(G), Oink-verified (Lead's summary; open the L-SI / L-RED / engine commits to cite).
+### WARNING: rclimb.c's __int128 values overflow when ranks reach 127 (d ≥ 32; L-COMP 10). Use L-COMP's rclimb30.c (192-bit,
+experiments/comp/box30/ on claude/l-comp) at d ≥ 32. No result of mine came from d ≥ 32 (the one d 32 climb, G7d32, was stopped at
+07:15Z without a record). Seeds 300000-329999 are L-COMP's (box 30): keep outside.
+### Seventh level status: guarded climb (`GUARD=5 LV=6 ANNEAL=0.02 $SP/rclimbG out/H6d28.txt 162 …`, rclimb.c GUARD) holds F 2 6 14
+30 62 126 and reaches F(6) = 190 at d 28 (254 needed); L-COMP box 30 runs the same target (A).
+  RELAUNCH (successor 5): `SP=<scratch>; gcc -O2 -o $SP/rclimbG experiments/lower/l4/rclimb.c -lm; cd experiments/lower/l4;
+  python3 -I ../l3/lift.py rec/H6_d24_F126.txt 4 out/H6d28.txt; GUARD=5 LV=6 ANNEAL=0.02 OUT=out/G7_s162.txt setsid nohup
+  $SP/rclimbG out/H6d28.txt 162 400000000 > out/G7_s162.log 2>&1 &` (d 28 only: ranks ≤ 111; for d ≥ 32 use L-COMP's rclimb30.c).
+  Its best genome at PARK (09:0xZ) is committed as rec/G7_best_d28.txt: T 270, F 2 6 14 30 62 126 222 158 126 80 32 28 20 8 …
+  (levels 1-5 exact; F(6) = 222 vs cap 254; plateau since iteration ~106M). Warm restart: use it in place of out/H6d28.txt, a new seed
+  (< 300000), and re-arm a monitor on `grep "F 2 6 14 30 62 126 2[3-9][0-9]"` in the log. Tried: LV=6 alone (loses level 5), CHAIN=6
+  (collapses the tower), GUARD=5 LV=6 (this run: 160 → 190 → 208 → 222), frozen levels 0-4 (FROZENBELOW=10: stalls at F(5) = 94).
+  Next idea: lift to d 30 (ranks ≤ 119, still int128-safe) or move to L-COMP's rclimb30.c and lift to d 32+.
+
+## Successor 4 PARKED (2026-11-07 09:0xZ, context ~520k): handover = the «Successor 4 HANDOVER» section above. All my background jobs stopped.
 ### IN FLIGHT (die with the container; logs in experiments/lower/l4/out/, gitignored)
 - Seventh level: `LV=6 ANNEAL=0.02 OUT=out/L7_s131.txt $SP/rclimb128 out/H6d28.txt 131 400000000` (H6d28 = lift.py H6 + 4 levels;
   at handover F 2 6 14 30 62 94 128 …: level 5 lost). Frozen-core: `FROZENBELOW=10 LV=5 ANNEAL=0.02 $SP/rclimbF out/H5d24.txt 141 …`

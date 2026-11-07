@@ -1,53 +1,42 @@
-# Handover check: L-LOWER (successor session, 2026-10-15 08:35Z; LANE-RESTART step 3)
-Every answer measured from the repository at the time of writing (commands given), not recalled.
+# Handover check: L-LOWER successor 6 (2026-11-07 13:42Z, date -u; LANE-RESTART step 3)
+Every answer measured from the repository at the time of writing (commands named), not recalled.
 
 ## 1. Branch, head, distance to trunk
-- Branch: `claude/l-lower`, tracking `origin/claude/l-lower`, working tree clean.
-- Head: f0e5e8f6fa87be48988e53e3aeb6da90462c3bbd (f0e5e8f, "L-LOWER handover: notebook ...; 100-game minimal UNSAT core").
-- Trunk `origin/claude/vibrant-johnson-nxvvxo` at 9958cf1db1ba345864b1321f09c72285e0795657; merge-base fe676d9.
-- `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` → 29 ahead, 18 behind.
-- `scripts/verify.sh` at f0e5e8f: VERIFY PASS (doc shape PASS; experiment self-checks PASS incl. experiments/lower/check.sh
-  "L-LOWER CHECK PASS"; lean NOT RUN, no lakefile; oink smoke NOT RUN, Oink not built in this container).
+- Branch `claude/l-lower` (`git branch --show-current`); local branch was 16 commits behind origin at start and was fast-forwarded
+  (`merge --ff-only origin/claude/l-lower`); clone not shallow (`git rev-parse --is-shallow-repository` = false after `fetch --unshallow`).
+- Head 4d1c4e4bc8425891b52c7d7882d0f3008425cdd2 = origin/claude/l-lower = `git ls-remote` («L-LOWER 5: handover updated
+  (P-TOWER-FUEL frozen at 7f7ff6f5)»).
+- Trunk `claude/vibrant-johnson-nxvvxo` at 9315f36c0b005bcb2a41946cb844d02ba3797724 (ls-remote = local origin ref); merge-base f55b98e3.
+- `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` → 19 ahead, 376 behind. No trunk merge (not needed).
 
 ## 2. Open work and the next step of each
-- T-L2 theory box (the task after "go"): not started. Next step: notebook T-L2 plan step 1, minimise the 100-game core
-  experiments/lower/b2_n4_k6_core_min.json (measured: 100 games, list of (prio, owner, succ); by #Odd vertices {0: 2, 1: 20,
-  2: 43, 3: 28, 4: 7}; by #P_2 {1: 21, 2: 56, 3: 22, 4: 1}; the 400-game core b2_n4_k6.json: by #P_2 {1: 105, 2: 210, 3: 81,
-  4: 4}), then the human proof for "no 6-gate program at n = 4, two-player" (step 2), then the growing family (step 3).
-  Kill criterion as written in notes/L-LOWER.md.
-- T-L1 (one-player, B_1(n) = ω(n)): PARKED by the Lead 07:50Z; data against (B_1(1..5) = 2n − 2). No next step unless unparked.
-- Structural n = 5 runs (window-3 chains k = 8, window-2 k = 9): STOPPED, not concluded, no bound; nothing running now
-  (no detached processes, no timed wakes; notebook "IN FLIGHT: (none)").
-- Refereeing: L1-statement v2 OK (R-L1b); Lemma 2.1' OK; Theorem B OK with one change (Claim 3 case t < t' < a), which is
-  present in docs/lower/L1-report.md §2 Claim 3 at f0e5e8f. B_1(5) = 8, B_2(4) = 7 are data points, unrefereed; nothing is
-  due to REFEREE until a claim is to be recorded. L-LIT novelty check of T-L1/T-L2: parked.
+- DUTY P-TOWER-FUEL (frozen at 7f7ff6f5; line docs/lower/P-TOWER-FUEL-line-L1.txt sha1 408470ad…; check
+  experiments/lower/l5/p_tower_check.py): at the referees (REFEREE 26 now, REFEREE-2's successor later). No item received yet
+  (`ls docs/lower/ | grep fix` shows only P-M2D-DEAD-fixes.md). Next: when the Lead relays items, write
+  docs/lower/P-TOWER-FUEL-fixes.md entry k + line L-(k+1) by script, copying exact strings from the reports; never edit the frozen packet.
+- BOX L6 (after «go»): constructive test of CONJECTURE L5-TYPE. Build an explicit fuel supplier (TOP-ADD levels, β ranks > 87, changes
+  clocked to level 5's (9,1) windows) so that pair 6 flips in the 48 failing windows of rec/SL41_d28.txt (sha1 c1b46c31…, F(6) 222).
+  Next step: from domin.py / fuel6.py / retchain.py output, write the exact spec (which rank on 22's / 11's chain must change, in which
+  windows: DOMINANCE-FREEZE + CROSS-ECONOMY, packet §3), then hand-build the supplier levels and evaluate with two simulators
+  (fev / utmpl GENOME=) plus xcheck vs L-NEW box150 Gen. No brute climbing (L-COMP 11 lanes D_d28 / D_d28b own that).
+- No detached runs of mine (`pgrep -af "rclimb|mclimb|fev|push.sh"` empty).
 
 ## 3. docs/GAPS.md rows owned by L-LOWER
-None. `grep -n "L-LOWER" docs/GAPS.md` returns nothing; the only row (G1, L-STRUCT, closed) is not mine.
+None (`grep -c L-LOWER docs/GAPS.md` = 0). The box works against G-N5-TIME (major, owner L-NEW, open; GAPS.md line 11).
 
-## 4. Three owner rulings that most constrain this lane (verbatim; status from docs/DECISIONS-INDEX.md)
-1. D1 (active), M3 definition, docs/decisions/D001-launch-brief.md lines 39-41:
-   > - M3 Partial results: for example a new polynomial class or structural parameter, a lower bound
-   >   for a broader algorithm model, or a tighter analysis of a known algorithm. Each must be new
-   >   against the literature map.
-   Constraint: a T-L2 bound is M3 only if L-LIT finds it new; the SLP model (Def. 1.3) must be compared against CDHL's and ANP's.
-2. D2 (active), change 1, docs/DECISIONS.md:
-   > 1. Section 1: priorities range over {0, ..., n} (d ≤ n + 1); the compression step stays charged to the algorithm.
-   Constraint: the Büchi alphabet {1, 2} and the one-vertex priority-2 game need the translation of L1-statement §1.0; every
-   lower bound must hold a fortiori on the TARGET class.
-3. D1 (active), docs/decisions/D001-launch-brief.md:
-   > Never publish, post, email, submit or contact anyone outside the fleet. Anything external is my decision.
-   Constraint: sources are opened and quoted, never contacted; novelty questions go to L-LIT through the Lead.
+## 4. Three owner rulings that most constrain this lane (verbatim, docs/DECISIONS.md; status docs/DECISIONS-INDEX.md)
+1. D18 (active, index line 32; DECISIONS.md l. 333): «Focus on N5 and work toward proving it. Explore novel approaches, especially by
+   connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
+   where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
+   open problems.» Constraint: every statement labelled PROVED (lane) / CONJECTURE / DATA / DEAD; BOX L6 names and tests a D18 analogy.
+2. D1 (active, index line 5; DECISIONS.md l. 7): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every
+   such claim, including the fleet's own, as wrong until it passes the gauntlet below.» Constraint: a seven-level tower is a lower-bound
+   CANDIDATE datum only, not a proof that every level doubles.
+3. D14 (active, index line 22; DECISIONS.md l. 246): «You know it can also test prveiously not tested approaches, it can come up with it
+   own as well» (typos the owner's). Constraint: the designed supplier is an own design and goes through the same replay/xcheck path.
 
 ## 5. One trap that bit this lane, and the check that now prevents it
-Trap: ANP's bound n^{lg(d/lg n)+O(1)} (LIPIcs.CSL.2021.9 Cor. 3.7) was taken, via the landscape doc and L-LIT's T7, as the
-non-adaptive (SLP) upper bound. It is not: Lemma 3.6's proof is a worklist that re-evaluates only changed equations, i.e.
-adaptive; only the symmetric two-tree bound n^{2·lg(d/lg n)+O(1)} (Lemma 3.2, p.9:9) is straight-line.
-Check now in place: docs/lower/L1-statement.md Transfer 2.4 carries the CAUTION paragraph naming Lemma 3.6 and the worklist;
-REFEREE R-L1 (docs/referee/2026-10-14-L1-statement-check.md lines 114-120) and L-LIT T9 (docs/lit/T9-L1.md line 66,
-"L-LOWER's non-adaptive reading is confirmed: the best known oblivious exponent is 2·lg(d/lg n)+O(1)") both confirm it; T7 was
-amended. Procedural rule: every cited bound goes into the notebook's "Sources opened" table with theorem number and the
-adaptive/non-adaptive reading before it is used (CLAUDE.md: the landscape doc is never a source by itself).
-Second, tooling trap: SAT instances above ~20·10^6 clauses reach 8 GB and are OOM-killed by the 16 GB cgroup (window-2 k = 9
-run died at 2483 games). Check: at most two SAT runs at once, detached with `setsid nohup`, resumed from the .subset.json
-checkpoints (notebook "Things only I know").
+Trap: committing while push.sh was still verifying (successor 5, 12:0xZ: 5bc47311 committed during the verify of a92b5226; the wait loop
+tested «output file non-empty»). Check: before any commit, `pgrep -f "bash scripts/push.sh"` must be empty AND the tracked task's output
+must contain the «exit» line. Also run first this session: the stale-branch check (`fetch --unshallow`, `checkout`, `merge --ff-only`,
+then HEAD = origin/claude/l-lower = ls-remote, all 4d1c4e4b here).
