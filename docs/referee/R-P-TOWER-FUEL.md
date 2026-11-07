@@ -209,3 +209,44 @@ linefix.out): each OLD occurs exactly once in L-1, each NEW once in the result; 
 ## 8. Tools and outputs (committed)
 docs/referee/scratch/: tf_quotes.py, tf_replay.py (loader, own R on t3r_sim, corpus and instance counters), tf_units.py,
 tf_linefix.py; tf_logs/inst.log, corpus.log, mutants.log, units.log, linefix.out, L1_proposed.txt, lane_check_7f7ff6f5.out.
+
+## §C. Fixes entry 1 and line L-2 (REFEREE successor 27; date -u at writing 2026-11-07T15:52Z)
+- Objects at claude/l-lower 740f6c798860c24db35f12c5e19cac196b9b1f9b (worktree; ancestor of origin/claude/l-lower), sha1 of the bytes:
+  - fixes docs/lower/P-TOWER-FUEL-fixes.md 0902efb9eaea48501e4289a8ce3980b235347ac8 (EQUAL to the Lead's relay), entry 1;
+  - L-2 docs/lower/P-TOWER-FUEL-line-L2.txt d866ca50b0a0372efd9e93a2db0410801b3ddc15 (EQUAL), 4,586 bytes, 4,438 characters, 80 «(» =
+    80 «)», 0 «|»;
+  - packet a093e0e7… and L-1 408470ad… unchanged.
+- experiments/lower/check.sh at 740f6c79: exit 0, «pins OK: 4 files», «P-TOWER-FUEL CHECK PASS» (scratch/tf_logs/lane_check_740f6c79.out).
+  It now prints and asserts E3_units 7,069, E5_hyp 61, 119 j-windows, 16 distinct 5-windows, decider scopes 32 / 16, 188 of 188.
+- Byte test (own script scratch/tf_fix1.py, tf_logs/fix1.out; the seven pairs written in my script: olds from the two reports, news as
+  merged in fixes entry 1 §5): each OLD occurs once in L-1; each NEW once in L-2; L-1 with the seven replacements is byte-equal to L-2.
+- Independence: I read docs/referee-2/R2-P-TOWER-FUEL.md (4bede4dd) only after 807984e3 was on origin.
+- Merged strings, judged for meaning against my items:
+  - M1 (W-2 (a), «and cv»): correct; cv is R113's notation (its line defines «cv_s(z) the integer value of z's current option»). MY MISS:
+    L-1 used cv without listing it; REFEREE-2 caught it.
+  - M2 (TF-L5 + TF-3 + W-2 (b)): carries the level range j = 1, …, 5, the 119 j-windows (3 + 7 + 15 + 31 + 63, my inst.log), the unit
+    (5-window, PULSE or GAP) and 16 of 63. Every fact of TF-L5 and TF-3 present. MET.
+  - M3 (TF-L3 + W-2 (c)): defines the 48 (not exactly one move of each of 12, 13), names the crossed targets (22, 11 = A_0, A_1), gives
+    my scope «some state s among s_(a−1), …, s_(e−1)», adds «at every such state in 16» (my §4 table) and «at no such state in any of
+    the other 79». MET. (Like my own text, «the option (9, 1) … is dec_s(12)» means the option component of dec; acceptable.)
+  - M4 (W-4 (a)): names the 15 + 7 + 2 runs and the (run, level) unit. Correct (my corpus.log runs are exactly these 24). MY MISS: I
+    passed «24 runs» without asking for the set.
+  - M5 (TF-L1 + W-4 (b)): 7,069 (step, doubling level) for the first two clauses, 757 j-windows, 62 (run, level) pairs with 61 under
+    the hypothesis. Equal to my tf_units.log. MET; «0 violations on 62, 61 with the hypothesis» is exact for the lane's counter, which
+    tests the conclusion only where F(j − 1) ≥ 1 (and my extra count shows it holds on all 62).
+  - M6 = my TF-L2 verbatim (contains W-4 (c)). MET. M7 = my TF-L4 verbatim. MET.
+- Fixes entry 1 texts:
+  - TF-1 (= W-1): CORRECT. The replaced sentence is the packet's; my repair is quoted byte-exactly (script tf_fixquotes.py: every «…»
+    attributed to a referee occurs in that report, wrapped lines joined). REFEREE-2's route is the same argument written through ENC
+    directly; both are sound. REFEREE-2's counts (|D| < 2^r* at 651 of 1,010 RANK states over all states of the 14 crossed pairs; |D| ≤
+    2·max|θ| at 5) confirm on data that the packet's SECOND inequality fails too, which I had shown only by arithmetic.
+  - TF-3: CORRECT (unit (5-window, PULSE or GAP), 30 units on 16 distinct windows; my inst.log).
+  - TF-4 (= W-3): CORRECT. Every count in the new sentence measured by me on t3r_sim (tf_logs/fix1.out, inst.log): 48 / 48 at some
+    pre-state, 32 / 48 at s_(a−1), 16 / 48 at every pre-state, 0 / 79 good; mover 9 on option 1 at every pre-state of 48 / 48 failing and
+    17 / 79 good windows; dec non-constant on 188 of 188 consecutive-move pairs of 12, 13. «on 11's chain (11 → 9)»: at all 128 (state,
+    member) hits the deciding side is the one with Ξ-target 11, with s(11) = 1 and option 19 on 11's current chain. The interpretation
+    is labelled READING and Lemma 4 (b) is no longer said to be violated.
+  - §4 (E5 hypothesis 61 of 62): CORRECT. TF-2 recorded, statement unchanged: correct (optional).
+  - Description slip recorded: correct.
+- Verdict: fixes entry 1 CORRECT. L-2 MATCHES (byte test and meaning). All statements SIGNED as in §0; CROSS-ECONOMY (iii) is now SIGN
+  (TF-1 closed by the proof of record). TF-L1..TF-L5, TF-3, TF-4 CLOSED.
