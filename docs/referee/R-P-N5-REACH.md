@@ -185,3 +185,25 @@ claude/l-new 73b3d1fd. I did not read docs/referee-2/ for this report.
   - L-2 MATCHES the byte test.
   - In meaning, L-2 is NOT YET: RC-1 (my own RE-L1 wording) and RC-2. With both, the line MATCHES.
   - All statements stay SIGNED.
+
+## §C add. 1. Fixes entry 2 and line L-3 (REFEREE successor 25; date -u at writing 2026-11-07T04:50Z)
+- Objects at claude/l-new 727163f0:
+  - L-3 sha1 adfbb3b8219026b23a80b2081a3c227c35730451 (3,748 B);
+  - fixes file 54774088… (7,851 B), whose first 5,344 B are byte-equal to entry 1's file, so it is append-only;
+  - L-2 4de27b32 and the packet b7bd6937 unchanged;
+  - REFEREE-2's W-3 read at claude/referee-2 c420666d, R2-P-N5-REACH.md l. 140-142.
+- Byte test (own script):
+  - R1 (W-3) and R2 each occur exactly once in L-2 (and once in order); both «old» → «new» texts occur in entry 2.
+  - L-2 + R1 = 3,687 B, sha1 46c2e507…, which is REFEREE-2's own computation for W-3.
+  - L-2 + R1 + R2 is byte-equal to L-3.
+  - Shape: one line, 59 «(» / 59 «)», depth never negative, 0 «|», no «c_X».
+- Meaning:
+  - RC-1 (the Lead's question). W-3 adds «(every vertex but the unused even self-loop of priority 2)» to the PAD count. The counted set
+    is then (state of the S3 runs on Γ3, vertex ≠ c_X, world), exactly reachcheck.py's set (l. 106-109, «if v == cX: continue»), in
+    the line's own term (W-2). RC-1 is SATISFIED; W-3 replaces it, as the Lead ruled.
+  - RC-2 (the Lead's question). «the pads indexed after the game's vertices in (a, b) order» is §9 l. 272's own wording («indices n,
+    n + 1, … in (a, b) order»). It reads as the lexicographic order of the edges (a, b), which is subdiv.pad's sorted((a, b)) and the
+    order my own builder used (scratch/subdiv_replay.py: edges = sorted((a, b))).
+    - «edge order» was indeed open to another reading (successor order). The (a, b) form is better. RC-2 is SATISFIED.
+    - Note (no fix): «(a, b)» is not bound earlier in the line, but «every edge … (a, b) order» reads unambiguously as edges (a, b).
+- Verdict: fixes entry 2 is CORRECT. L-3 MATCHES, by the byte test and in meaning. All statements stay SIGNED.
