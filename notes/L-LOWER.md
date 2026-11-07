@@ -9,6 +9,10 @@
   gap: crossed pair 6 decided by (87, 9, 1) in all 48 failing windows (domin.py). DOMINANCE-FREEZE, CROSS-ECONOMY (PROVED, lane).
   Local repair DEAD up to: 166 single dominator edits, 2,970 single closure re-targets, 20k random 2-edit, 144,011 two-edit (supplier 19).
 - §7: CONJECTURE L5-TYPE (O(h) suppliers per extension); evidence fuelctx.out (capped-level fuel = own type only).
+### PACKET P-TOWER-FUEL FROZEN at 7f7ff6f5 (Lead ruling 12:36Z (b)): docs/lower/P-TOWER-FUEL.md + line docs/lower/P-TOWER-FUEL-line-L1.txt
+  (sha1 408470ad…) + check experiments/lower/l5/p_tower_check.py (in check.sh; pins G7_best b995fff2…, SL41 c1b46c31…, the line).
+  Premises landed only (R104 def, R105 ENC, R110 def, R113 ALIGN); MOVE, DOUBLE-EQ, PULSE-NEST re-proved inside. Referee items go into
+  a fixes file docs/lower/P-TOWER-FUEL-fixes.md + new line files L-2…; NEVER edit the frozen packet or line L-1.
 ### ROUTED (Lead): L-COMP 11 (session_01V5yGRYPZqSkyP1GtiC8bMh) lane D: from SL41, GUARD 0-5, F(6), 2-3 simultaneous edits outside
   pairs 0-5, one restart biased to a changing β > 87 on 22's / 11's chain. Read its result before redoing anything.
 ### NEXT (successor): (1) if L-COMP finds F(6) > 222 from SL41: dissect with domin.py / fuel6.py which supplier beat (87, 9, 1), and test
