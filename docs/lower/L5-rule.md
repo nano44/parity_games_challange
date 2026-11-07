@@ -123,6 +123,34 @@ its counter (unit, set, scope). Nothing here is a result in the sense of CLAUDE.
   data random; scope = stored start): no splice raises F(6) above 222 while keeping 6 capped levels. DATA (negative), not a cap: the
   splice mover needs a key clock that lags the first mover of pair 5 by one step in exactly the type-(9, 1) windows.
 
+- Trigger chains with link types (trig.py → trig_H6_G7.out; unit = j-window; scope = stored start; a link is Ξ if the mover's preference
+  flipped one step before its move, K if it waited for its key): H6 level 5, all four types: x₂ ← the b-step mover or a long Ξ-line
+  ending in a K-link (PULSE 1). G7_best level 5, types (8, 0), (8, 1), (9, 0): x₂ = 10 ← Ξ 12 (pair 6) ← Ξ 11 (the first mover of pair
+  5), i.e. f_5 at u₁, a pair-6 mover at u₁ + 1, x₂ at u₁ + 2 (PULSE 2); type (9, 1): x₂ ← Ξ 15 ← K (PULSE 1). So H6 → G7_best repaired
+  three types of level 5 by routing x₂_5's trigger through pair 6 (a RETURN-CHAIN f_j → pair j + 1 → x₂_j), and left the fourth on a
+  key-gated trigger.
+- RETURN-CHAIN in the records (retchain.py → retchain.out; unit = j-window, j and j + 1 doubling; scope = stored start): «x₂ of the
+  nested (j + 1)-window is a trigger of x₂_j» holds in 7 of 15 windows at G7_best j = 3 (exactly the types with member 5), 1 of 7 at G7
+  j = 2, 3 of 7 at H6 j = 2 (the types with member 2), 0 elsewhere (H5, DBL4, H6 j = 1, 3, 4); triggers lie 1-24 levels above j. A
+  motif, not the rule.
+- Targeted score (mclimb.c env SLACK=J:NEED with GUARD; checked against slack.py): G7_best: SLACK=5:2 → 47 good 5-windows of 63 (the
+  16 bad = type (9, 1) + the first window); SLACK=4:3 → 31 of 31. H6: SLACK=5:2 → 0, SLACK=4:3 → 16. This is the score proposed for a
+  routed climb (a gradient where F(6) has none).
+
+- Pulses and gaps repaired, level 6 still fails: the FUEL obstruction (DATA). A short targeted climb (mclimb.c SLACK=5:2 GUARD=5 LV=6
+  ANNEAL=0.02, seed 41, 2.2·10^6 of 2·10^7 steps to the best; a validation run of the score, not a brute climb campaign) from
+  G7_best_d28 gives rec/SL41_d28.txt (sha1 c1b46c319fd614e5bcb0909b616a9f2833e0dfee; d 28; T 290; F 2 6 14 30 62 126 222 158 …;
+  6 capped; identical T, F under fev, utmpl's exact-order simulator and l3/sim.py; not cross-checked against L-NEW's box150 Gen):
+  slack.py with H = 7 finds 0 violations at levels 1-5 (every PULSE and GAP ≥ 7 − j), yet F(6) = 222 and the same 48 level-6 windows
+  fail (now 2 steps long). fuel6.py → fuel6_SL41.out (unit = 6-window; scope = stored start): the first mover of pair 6 is 13
+  (key-gated in every window); the second mover 12 is triggered per (parent type, own type): (8,0)/(10,0) ← 22, (8,1)/(10,0) ← 20,
+  (9,0)/(10,1) ← 22, (9,0)/(11,1) ← {9, 11, 14}, (8,1)/(11,0) ← {8, 11, …}; in the windows nested under a level-5 window of type
+  (9, 1) the needed mover's preference NEVER turns ((9,1)/(11,1): 12 «pref never»; (9,1)/(10,1): 13 «pref never»), and (8,0)/(11,0)
+  fails because 13 did not return («already on c»). So the missing piece is fuel for pair 6 in the contexts under one parent type:
+  room (PULSE, GAP) is necessary (PULSE-NEST, GAP-NEST) but not sufficient, and at the level being added the fuel supplier depends on
+  the parent's type as well as the window's own type (in the capped levels of H6 / G7_best it depends on the own type only, §2).
+  This matches L-SI 42's climb snapshot (box 80 §5: pulses met, F(6) = 222).
+
 ## 7. Summary: rule, obstruction, conjecture (labels as stated)
 - No inductive rule G_h → G_(h+1) was found. What a rule must do is now specific (PROVED parts: GAP-NEST, PULSE-NEST, DOUBLE-EQ′; DATA:
   §2, §5, §6): for every level j ≤ h − 1 and each of the four b-step types (member of pair j − 1 × direction), the second mover of pair j
@@ -137,15 +165,17 @@ its counter (unit, set, scope). Nothing here is a result in the sense of CLAUDE.
   state equals c in every window are f_j and x₂_j itself. So a per-type trigger must reach x₂_j through f_j's current option, or through a
   copy of f_j, i.e. one more mover with its own racers per type: the per-level cost is O(1) movers per type if keys allow, which would give
   S(h) = O(h) to O(h²).
-- CONJECTURE (L5-TYPE): a capped tower of height h + 1 can be obtained from one of height h by adding O(h) movers, one delay mover per
-  (zero-slack level, b-step type), at levels whose key clock lags the pair below by one step. Evidence: the type-by-type repair H6 →
-  G7_best (DATA) and the fuel-type function (§2, DATA on H6, DBL4, RECF4, G7_best). Against: §6 (no single splice found), §4. If true,
+- CONJECTURE (L5-TYPE): a capped tower of height h + 1 can be obtained from one of height h by adding O(h) movers: one delay mover per
+  (zero-slack level, b-step type), at levels whose key clock lags the pair below by one step, plus one fuel supplier per (parent type,
+  own type) context of the new level (≤ 16). Evidence: the type-by-type repair H6 →
+  G7_best (DATA) and the fuel-type function (§2, DATA on H6, DBL4, RECF4, G7_best). Against: §6 (no single splice found; the fuel gap under parent type (9, 1) in SL41), §4. If the new level's fuel had to
+  distinguish the types of all its ancestors, the count would be 4^h, not O(h): that is the alternative to rule out. If true,
   S(h) = O(h²) and T^R is super-polynomial (the R104 / R117 transfer as stated by the Lead; not re-derived here).
 - OPEN: a construction of the lagging-clock delay mover; a proof that one exists for every (level, type).
 
 ## 8. Files
 - experiments/lower/l5/: fev.c, revert.py, revert_H5lift_H6.out, fuelsrc.py, fuelsrc.out, fuelsrc_G7.out, utmpl.c, mclimb.c,
-  greedyback.py, greedyback.out, slack.py, slack7.out, winfail.py, winfail_G7_l6.out, pulses.py, pulses_G7_l5.out, splice.py; out/ (gitignored).
+  greedyback.py, greedyback.out, slack.py, slack7.out, fuel6.py, fuel6_SL41.out, rec/SL41_d28.txt, trig.py, trig_H6_G7.out, retchain.py, retchain.out, winfail.py, winfail_G7_l6.out, pulses.py, pulses_G7_l5.out, splice.py; out/ (gitignored).
 - mclimb.c (edit-penalised climb from H5_lift, λ = 0.25-2 F-units per edit, 4 seeds): no improvement of F(5) = 94 in the runs before
   they were stopped (penalty too steep for the neutral drift the climb needs); superseded by the greedy walk back (§5).
 
