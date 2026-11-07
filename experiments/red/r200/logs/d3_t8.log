@@ -1,0 +1,3 @@
+XMAX d 3 t 8 N 6 vars 32620 clauses 109354 build 0.1 s
+XMAX d 3 T >= 8: SAT 10.7 s
+replay L 8 opt (needs >= 8): OK -> out/max/d3_t8.json

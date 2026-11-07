@@ -1,0 +1,6 @@
+R-1 old in L-1 1 new in L-2 1 L-1 + R-1 == L-2 True
+L-2 sha1 857d21c883cf0043b502e951924813c78177e3ed 4579 B lines 1 ( 60 ) 60 | 0 mindepth 0
+W-2 old in L-2 1
+W-3 old in L-2 1
+W-4 old in L-2 1
+L-2 + W-2..W-4 sha1 dbdb1e61fc230de6ff8591fc9ee46f0aa453d3d9 4680 B lines 1 ( 60 ) 60 | 0 mindepth 0

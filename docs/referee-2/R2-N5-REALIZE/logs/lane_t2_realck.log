@@ -1,0 +1,13 @@
+games 30 equal (states and FAITHFUL = IDEAL steps) 14
+20
+games 30 equal (states and FAITHFUL = IDEAL steps) 10
+REALCK big_d3_k3_W3.json IDEAL 17 stuck FAITHFUL 17 EQUAL True
+REALCK big_d4_k3_W3.json IDEAL 32 stuck FAITHFUL 32 EQUAL True
+REALCK big_d6_k3_W3.json IDEAL 42 stuck FAITHFUL 42 EQUAL True
+REALCK big_d8_k3_W3.json IDEAL 54 stuck FAITHFUL 54 EQUAL True
+REALCK grow_top_N15.json IDEAL 39 stuck FAITHFUL 39 EQUAL True
+REALCK grow_top_N24.json IDEAL 64 stuck FAITHFUL 64 EQUAL True
+REALCK grow_bottom_N24.json IDEAL 48 stuck FAITHFUL 48 EQUAL True
+REALCK random ACYC d 3 games 20 equal 20
+REALCK random ACYC d 4 games 20 equal 20
+REALCK random ACYC d 5 games 20 equal 20

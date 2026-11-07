@@ -1,0 +1,1 @@
+TRICHECK violations {'TRI': 0, 'TRI1': 0, 'FB': 0, 'FBI': 0} info {'runs': 368981, 'tri_runs': 355611, 'tri_eq2d': 49, 'fb_runs': 368981, 'maxT': 4}

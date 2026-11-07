@@ -1,0 +1,5 @@
+D1 dense_d5_l3_H10 start 1100110110: T 10, moves(6) 10 (level 3), max moves over levels 0-2 = 4, over strict Xi-descendants = 4
+D2 REC_d10_tower_mu30 stored start: T 35, F(0..3) = 2 6 14 30, levels 1, 2, 3 doubling with F(0) = 2
+D3 passfreeze77_d5 stored start: T 10, F = 2 2 2 6 6 (level 3 doubling), pair 4 never moves, no upward option, F(4) = F(3)
+D4 REC_d10_tower_mu30: fuel target 11 (level 5, upward target of a level <= 1 mover) has an option with Xi-target 3 (level 1); KILL_M2D_d6_mu13: fuel target 5 (level 2) -> 3 (level 1)
+dead79: all assertions PASS

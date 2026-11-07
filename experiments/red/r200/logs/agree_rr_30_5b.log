@@ -1,0 +1,31 @@
+inst 1 N 8 L 2 req 9 randrun: xisat sat (0.3 s) xcnf sat (0.1 s) replay-match True AGREE
+inst 2 N 6 L 2 req 10 randrun: xisat sat (0.3 s) xcnf sat (0.1 s) replay-match True AGREE
+inst 3 N 8 L 2 req 7 randrun: xisat sat (0.4 s) xcnf sat (0.1 s) replay-match True AGREE
+inst 4 N 8 L 2 req 11 flip t2v4 t2v5: xisat sat (0.5 s) xcnf sat (0.4 s) replay-match True AGREE
+inst 5 N 6 L 3 req 10 randrun: xisat sat (0.6 s) xcnf sat (0.3 s) replay-match True AGREE
+inst 6 N 6 L 4 req 15 randrun: xisat sat (0.4 s) xcnf sat (0.1 s) replay-match True AGREE
+inst 7 N 4 L 2 req 7 flip t1v2 t1v2: xisat sat (0.1 s) xcnf sat (0.0 s) replay-match True AGREE
+inst 8 N 6 L 3 req 10 randrun: xisat sat (0.4 s) xcnf sat (0.1 s) replay-match True AGREE
+inst 9 N 8 L 3 req 16 flip t1v1 t1v2: xisat sat (0.8 s) xcnf sat (0.6 s) replay-match True AGREE
+inst 10 N 6 L 3 req 9 randrun: xisat sat (0.4 s) xcnf sat (0.0 s) replay-match True AGREE
+inst 11 N 6 L 3 req 9 randrun: xisat sat (0.4 s) xcnf sat (0.0 s) replay-match True AGREE
+inst 12 N 8 L 2 req 10 randrun: xisat sat (0.5 s) xcnf sat (0.2 s) replay-match True AGREE
+inst 13 N 8 L 2 req 10 randrun: xisat sat (0.4 s) xcnf sat (0.1 s) replay-match True AGREE
+inst 14 N 6 L 2 req 5 randrun: xisat sat (0.3 s) xcnf sat (0.0 s) replay-match True AGREE
+inst 15 N 8 L 3 req 15 randrun: xisat unknown (5.0 s) xcnf unsat (noLEM unsat) (0.0 s) replay-match None DISAGREE
+inst 16 N 6 L 3 req 9 randrun: xisat sat (0.4 s) xcnf sat (0.1 s) replay-match True AGREE
+inst 17 N 6 L 2 req 6 randrun: xisat sat (0.3 s) xcnf sat (0.0 s) replay-match True AGREE
+inst 18 N 8 L 2 req 9 randrun: xisat sat (0.4 s) xcnf sat (0.4 s) replay-match True AGREE
+inst 19 N 4 L 4 req 8 randrun: xisat unsat (0.1 s) xcnf unsat (0.0 s) replay-match None AGREE
+inst 20 N 6 L 2 req 4 randrun: xisat sat (0.2 s) xcnf sat (0.0 s) replay-match True AGREE
+inst 21 N 8 L 2 req 10 randrun: xisat sat (0.4 s) xcnf sat (0.1 s) replay-match True AGREE
+inst 22 N 6 L 2 req 8 randrun: xisat unsat (0.4 s) xcnf unsat (0.1 s) replay-match None AGREE
+inst 23 N 8 L 3 req 15 randrun: xisat unknown (5.0 s) xcnf unsat (noLEM unsat) (0.2 s) replay-match None DISAGREE
+inst 24 N 6 L 2 req 6 flip t1v3: xisat sat (0.3 s) xcnf sat (0.0 s) replay-match True AGREE
+inst 25 N 6 L 2 req 6 randrun: xisat sat (0.2 s) xcnf sat (0.0 s) replay-match True AGREE
+inst 26 N 8 L 2 req 9 randrun: xisat sat (0.4 s) xcnf sat (0.1 s) replay-match True AGREE
+inst 27 N 6 L 3 req 7 randrun: xisat sat (0.3 s) xcnf sat (0.1 s) replay-match True AGREE
+inst 28 N 8 L 2 req 13 randrun: xisat sat (0.4 s) xcnf sat (0.1 s) replay-match True AGREE
+inst 29 N 8 L 2 req 10 flip t2v7: xisat sat (0.4 s) xcnf sat (0.1 s) replay-match True AGREE
+inst 30 N 6 L 3 req 9 flip t2v2 t2v2 t3v4: xisat sat (0.5 s) xcnf sat (0.0 s) replay-match True AGREE
+SUMMARY 28 / 30 agree; 26 sat; all sat replays match: True

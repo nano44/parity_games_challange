@@ -1,3 +1,176 @@
+# L-LOWER notebook
+Successor 4 (Opus 5.5, D1/D14/D18/D20) started 2026-11-07 03:30Z (date -u); BOX L4 (12 h): the fifth doubling level, S(h), by an
+explicit recursive design with proofs. Successor 3's sections below are kept unchanged as history.
+
+## Successor 4 handover check (2026-11-07 03:4xZ, date -u)
+1. Branch claude/l-lower, head 8938e403 (= local ref = origin = ls-remote; clone unshallowed: is-shallow false; local branch was
+   behind and fast-forwarded with `merge --ff-only origin/claude/l-lower`). Versus trunk claude/vibrant-johnson-nxvvxo (ls-remote
+   663c6447): 10 ahead, 106 behind (`rev-list --left-right --count`). No trunk merge (not needed for this box).
+2. Open work: (a) DUTY P-M2D-DEAD L-2 (8938e403) waits for the referees' byte tests; no new item from REFEREE (head f66942c1) or
+   REFEREE-2 (b0860fcd) yet. Next: answer any item with fixes entry 2 + L-3, by script; never edit the frozen packet. (b) BOX L4: an
+   explicit recursive G_h whose new top level doubles (F(4) = 62 never reached; best 46), using WIRE / COPY / TOP-ADD, PASS-FREEZE and
+   a re-entrant fuel path (L-SI 41 RE-ENTRY). Next: rebuild the tools in the scratchpad, dissect REC_d10_tower's fuel, design h = 5.
+   Predecessor's in-flight climbs died with its container (not resumed; superseded by the explicit-design angle).
+3. docs/GAPS.md rows owned by L-LOWER: none (`grep -c L-LOWER docs/GAPS.md` = 0). The box works against G-N5-TIME (L-NEW, open).
+4. Rulings (verbatim, docs/DECISIONS.md; status docs/DECISIONS-INDEX.md): D18 «Focus on N5 and work toward proving it. Explore
+   novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied
+   together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly
+   distinguish proven results from conjectures and open problems.» (active); D1 «A claimed polynomial algorithm is far more likely
+   to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.»
+   (active); D14 «D» / «You know it can also test prveiously not tested approaches, it can come up with it own as well» (active).
+5. Trap: stale/shallow clone (the local branch ref lagged origin at start this time: `git status` said «use git pull»). Check:
+   ls-remote vs `rev-parse HEAD` and `origin/claude/l-lower`, `is-shallow-repository` = false. Also: never edit a script a detached
+   chain is executing (bash reads incrementally).
+
+Successor 3 (Opus 5.5, D1/D14/D18/D20) started 2026-11-07 00:05Z (date -u); STEP 0 handover check below; BOX L3 (explicit families
+for μ(d), IDEAL-ACYC model on 𝓛^R_d). The predecessor's T-L2 text (2026-10-15) is kept below unchanged as history.
+
+## Successor 4 HANDOVER (2026-11-07 ~06:45Z, context ~420k)
+### DONE (claude/l-lower; docs/lower/L4-tower.md is the box's product)
+- Lane lemmas (unrefereed, premises landed only): DRV-RELAX §1, DUAL §2, DOUBLE-EQ′ §3, FROZEN-WINDOW §4 (+ NO-CROSS/NO-PARALLEL),
+  LATE-PREF + FUEL-PER-WINDOW §4b. Checks: experiments/lower/l4/l4check.py (in experiments/lower/check.sh).
+- CANDIDATE records (experiments/lower/l4/rec/; sim.py = box150 Gen, movescheck 0, memcheck (i)-(vi)):
+  DBL4_d20_F30 (43704358…; F 0 2 6 14 30), H5_d20_F62 (2204079d…; F 2 6 14 30 62, T 136; REPRODUCED by L-SI 41),
+  H6_d24_F126 (fb37fec9…; F 2 6 14 30 62 126, T 209), RECF4_d20_F60 (354b7d44…), F56, F53, F52.
+- DUTY P-M2D-DEAD fix round 2: afc85c57 (entry 2, L-3 4c056511…, fixes f5b3f78a…); waiting for the referees' byte tests of L-3.
+- SHAs: 5dcfa1e1 (check), 7777fc4f, 127a5f8c, 2f15c81a, afc85c57, 33eb8593, c45cf2f3, 10cac3d9, then push 9 (diffg + text genomes).
+### IN FLIGHT (die with the container; logs in experiments/lower/l4/out/, gitignored)
+- Seventh level: `LV=6 ANNEAL=0.02 OUT=out/L7_s131.txt $SP/rclimb128 out/H6d28.txt 131 400000000` (H6d28 = lift.py H6 + 4 levels;
+  at handover F 2 6 14 30 62 94 128 …: level 5 lost). Frozen-core: `FROZENBELOW=10 LV=5 ANNEAL=0.02 $SP/rclimbF out/H5d24.txt 141 …`
+  (F(5) stuck at 94).
+### RECIPE (how H5 and H6 were found; restart in a fresh container)
+1. `gcc -O2 -o $SP/rclimb128 experiments/lower/l4/rclimb.c -lm` (__int128 values: exact for d ≤ 32).
+2. Seed: rec/H6_d24_F126.txt (or H5: `python3 -I experiments/lower/l4/j2t.py rec/H5_d20_F62.json > h5.txt`).
+3. TOP-ADD 4 levels: `python3 -I experiments/lower/l3/lift.py seed.txt 4 out.txt`.
+4. Climb the next level: `LV=<h> ANNEAL=0.02 OUT=o.txt $SP/rclimb128 out.txt SEED 400000000` (LV = the level whose F must double;
+   H5 → H6 took ~34M proposals; CHAIN=<h> scores exact doubling of levels 1..h; ANNEAL ≥ 0.3 destroys the tower).
+5. Verify: txt2json.py, l3/sim.py, `LNEW=<l-new tree> l3/xcheck.py`, fwcheck.py, lpaudit.py, l3/memcheck.py f.json 8; pin in l4check.py.
+### NEXT (Lead 06:09Z / 06:14Z)
+1. Third point: F(6) = 254 at d 28 (same recipe). 2. An explicit rule G_h → G_(h+1): H5→H6 raw diff is global (diffg.py); compare
+   block structure (top pair reads pair below + partner; level below fed by an equal-rate block 2-3 levels up; L-SI 41 box79 wiring79).
+3. Least d for five capped levels (truncated seeds d 16 / 12 got F(4) 41 / 30 so far).
+### Things only I know
+- rclimb ANNEAL is per score unit/256 (LV) or /200 (CHAIN, ANYRUN); ANYRUN score is degenerate (rewards trivial doublings): do not use.
+- fwcheck.py random generators rarely hit FROZEN-WINDOW's hypothesis; dd_tg counts it.
+- The Lead once routed «6c5a6ff» (my typo, corrected): the H5 commit is c45cf2f3.
+
+## Successor 4 BOX L4 state (2026-11-07 ~04:3xZ)
+### Resume point
+- Write-up: docs/lower/L4-tower.md (§1 DRV-RELAX, §2 DUAL, §3 DOUBLE-EQ′, §4 FROZEN-WINDOW + NO-CROSS/NO-PARALLEL/four targets, §5 DATA,
+  §6 obstruction reading). Code: experiments/lower/l4/ (drv.c, drvpy.py, drvpath.py, blk.py, tmpl.c, rclimb.c, j2t.py, fwcheck.py,
+  l4check.py in experiments/lower/check.sh). Records: l4/rec/RECF4_d14_F52.json (1e0b0a58…), RECF4_d16_F53.json (9b08c289…).
+- Binaries in the scratchpad: `gcc -O2 -o $SP/drv drv.c -lm`, `gcc -O2 -o $SP/rclimb rclimb.c -lm`, `gcc -O2 -o $SP/tmpl tmpl.c`.
+- IN FLIGHT (detached, die with the container; logs in l4/out/, gitignored): F(4) climbs `LV=4 ANNEAL=0.15 OUT=out/C14b_s21.txt
+  $SP/rclimb out/C14_F52.txt 21 300000000` (also s22), `… OUT=out/C16_s1.txt $SP/rclimb out/C16seed.txt 31 300000000` (C16seed =
+  C14_F52 + 2 TOP-ADD levels, lift.py), C14_s1 from out/tow14.txt. rclimb uses long double: exact only for d ≤ 16 (ranks ≤ 63).
+- DUTY P-M2D-DEAD: fixes entry 2 (PM-C1 + W-1′ merged) and line L-3 (docs/lower/P-M2D-DEAD-line-L3.txt, sha1 8d7dbfe5…, by
+  l3/mkL3.py); pins in l3/p_m2d_check.py. Waiting for both referees' byte tests of L-3.
+- Records: rec/RECF4_d20_F56.json (1167b8a6…; F 2 6 13 28 56, T 71). Climbs at d 20 use $SP/rclimb128 (__int128; CHAIN=4 / ANYRUN=1
+  scores: exact-doubling rewards; ANNEAL ≤ 0.05 there, 0.3 destroyed the seed).
+- Max consecutive doubling levels observed: 3 (never 4). LATE-PREF (§4b) + lpaudit.py show the window events come from above.
+### Next
+1. Design a tower pair with four distinct targets whose fourth target rises once per window (§6 OPEN); seed from RECF4_d16_F53.
+2. FROZEN-WINDOW (b) to the referees if the Lead wants a packet (premises: landed only).
+### Sources opened (this box)
+- docs/RESULTS.md R105 (l. 10155: ENC, MONO), R113 (l. 12152, PAIR-DOUBLE proof l. 12220), R104 (l. 9864, definition); claude/l-si
+  b97aee9a docs/si/N5-TROPICAL-box76.md §7 (DBL-EQ), §8-§11 (TOWER-NEED, ACYC-SPLIT, FUEL-NEED, PASS-FREEZE, FUEL (i)/(ii), RE-ENTRY);
+  claude/l-new 73b3d1fd docs/new/P-N5-REACH.md header and §1 premises (REACH3 from S3; not used as a premise here); claude/referee
+  f66942c1 / claude/referee-2 b0860fcd logs; later 008039cc §C (PM-C1) and 5c8aea53 Add. 1 (W-1′).
+- claude/l-red 6e743ab1 experiments/red/r214/lower3/replay.out (7,591 B, sha1 4492ee28…): 9 distinct genomes «>2d», incl. d 6 mover 8
+  moves 13 (2d 12) and d 8 mover 15 moves 21 (2d 16); box150 XSIM 0. Cited in L-3 (fixes entry 2).
+### Dead ends (this box)
+- Free-e relaxation as a search target: «F(4)» 63 at m 13 only via 57 e-changes (l4/out/rf4_s2.gen); F0 forbids; use EB=2.
+- Recursion «add one crossed level on the targeted top pair»: killed by FROZEN-WINDOW (b) (theorem); instances REC_d10_tower (CROSS
+  pair 3, F(4) 23), forced crossed pair 4 climbs (F(4) ≤ 34, out/X14_a2.txt), seedCR2 (CROSS pair 2: F(3) 20 < 22).
+- One-active-mover-per-level (KM-type) fuel chain: LP ≈ 2m even with free keys (drv HALF).
+### Things only I know
+- drv.c hash keys are unsigned (s << 3): m ≤ 14 in OBJL mode. blk.py refuses genomes with a level-0 Ξ-target (DRV-RELAX hypothesis).
+- In rclimb, ANNEAL is per score unit/256 for LV mode: 0.15 works, ≥ 1 is a random walk.
+
+## Successor 3 handover check (2026-11-07 00:1xZ, date -u)
+1. Branch claude/l-lower. At start: local ref = HEAD = origin = ls-remote = aa8995e8 (clone was shallow: `fetch --unshallow`, then
+   `merge --ff-only origin/claude/l-lower`: already up to date). Merge of trunk claude/vibrant-johnson-nxvvxo (ls-remote 2ccd037b) was a
+   fast-forward (the branch had no commits beyond the merge-base): HEAD = 2ccd037b, `rev-list --left-right --count HEAD...trunk` = 0 0.
+   Before the merge: 0 ahead (aa8995e8 is an ancestor of trunk), 9,388 behind.
+2. Open work: the predecessor's three k = 9 SAT runs (B_2(5) ≥ 10) died with its container (no processes here; their checkpoints were
+   gitignored). Goal parked by the Lead (L25); not resumed. New work: BOX L3 (this brief): (a) explicit recursive family G_d with
+   μ(G_d) ≥ 2d, (b) compositions beyond 2d, (c) the obstruction. Next step: own simulator (experiments/lower/l3/), cross-checked
+   against L-NEW's movescheck.py on box186/187, then the d = 4/5 witnesses' structure.
+3. docs/GAPS.md rows owned by L-LOWER: none (`grep -c L-LOWER docs/GAPS.md` = 0). BOX L3 works against G-N5-TIME (major, L-NEW, open).
+4. Rulings (verbatim, docs/DECISIONS.md; status docs/DECISIONS-INDEX.md):
+   D1 «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as
+   wrong until it passes the gauntlet below.» (active); D18 «Focus on N5 and work toward proving it. Explore novel approaches,
+   especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make
+   reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven
+   results from conjectures and open problems.» (active); D14 «D» / «You know it can also test prveiously not tested approaches, it can come up with it own as
+   well» (verbatim, typos the owner's; active).
+5. Trap: stale/shallow clone (the checkout looked current but was shallow; a merge on a shallow clone can misreport the base). Check:
+   ls-remote vs `git rev-parse claude/l-lower` and HEAD, `rev-parse --is-shallow-repository` = false before merging. Older trap kept:
+   `pkill -f PATTERN` kills one's own shell; use anchored pgrep and kill PIDs.
+- Note on the brief's goal (a): «μ(G_d) ≥ 2d for every d» cannot hold at d = 3: the packet's lane DATA (L-RED R213, one solver)
+   gives the Ξ-target maxima 1, 3, 4 by level at d = 3, so μ(3) = 4 < 6 (and T^R(3) = 8, R112). Reading: aim at μ(G_d) ≥ 2d for d ≥ 5
+   (the first tight case) and at the growth rate.
+
+## Successor 3 PARKED (2026-11-07 ~03:3xZ, after P-M2D-DEAD fix round 1: fixes entry 1 + line L-2; waiting for the referees' byte tests)
+
+## Successor 3 HANDOVER (2026-11-07 ~02:2xZ, context ~450k; Lead asked to plan the handover near 550k)
+### DONE (all pushed on claude/l-lower; see docs/lower/L3-families.md and docs/lower/P-M2D-DEAD.md)
+- Simulator sim.py (+ inline second implementation in p_m2d_check.py), cross-checked vs box150 Gen / box139 XSIM / movescheck.
+- Lane lemmas (unrefereed): TRI, TRI-MU (no upward option ⇒ level-l mover ≤ 2l moves), FEEDBACK (a)/(b), TOP-ADD, WIRE, COPY; family A
+  (T = 2d, μ = 2⌊2(d−1)/3⌋+1, data to d 40, proof pending).
+- MOVES-2D DEAD (CANDIDATE → reproduced by L-NEW box 188 and L-SI 41; L-RED pending): kill/KILL_M2D_d6_mu13, d8_mu21; packet
+  P-M2D-DEAD FROZEN (87fcdf73) with check block p_m2d_check.py; μ records d 7-12 (kill/README.md).
+- Tower: REC_d10_tower (F 2 6 14 30 = R113 caps); T records 59 (d 11), 66 / 99 (d 13), 107 (d 14), 114 (d 15); F(4) up to 46 (d 14).
+### IN FLIGHT (die with this container; logs gitignored in experiments/lower/l3/out/)
+- out/pNF_d15.log: annealed F(4) climb from the COPY nested-fuel seed: FINISHED at F(4) = 40, T 49 (below the 46 record).
+- out/pMF_m6.log: climb from the inert MUTUAL-FEEDBACK seed (mutual.py; F(4) 9).
+- Restart lines (cwd experiments/lower/l3, SP = scratchpad with binaries built by `gcc -O2 -o $SP/psearchA psearch.c -lm`):
+  `LV=4 SCORE=1 ANNEAL=16 $SP/psearchA out/TOW10cp5.txt 131 80000000 14 10000000` (seed copies in experiments/lower/l3/seeds/:
+  TOW10cp5.txt = REC_d10_tower + copy of levels 0-4 on top, ranks adjacent; mf_m6.txt = mutual.py seed; b_pT_d15.txt = the T 114 genome); `SCORE=2 $SP/psearchA
+  <txt> seed iters LM 8000000` for T climbs (lift.py adds levels). psearch env: SCORE 0 μ / 1 max F (LV=l: F(l)) / 2 T; LMIN, ANNEAL.
+### NEXT (Lead's top goal: S(h), the least d with h consecutive doubling levels)
+1. Fuel the 5th tower level (F(4) = 62) from a block outside the tower's Ξ-down-closure (L-SI ACYC-SPLIT/FUEL-NEED). Start C ACTIVE.
+2. If a height-5 tower appears, try to make the nesting recursive and prove T ≥ c·2^(αd) (lane), data to d ≈ 16.
+3. Otherwise extract the obstruction (what blocks F(4) > 46) for L-SI.
+4. Family A-RUN proof (low priority).
+### NEEDS
+- Lead: route P-M2D-DEAD to the referees (done per 01:43Z); L-RED's replay result.
+
+### Resume point
+- Code: experiments/lower/l3/ — sim.py (own simulator, from the R104 definition), trace.py, xcheck.py (vs L-NEW box150 Gen +
+  movescheck counters; needs LNEW = an l-new tree: `git archive origin/claude/l-new experiments/new | tar x -C DIR`), tricheck.py
+  (TRI / TRI-MU / FEEDBACK checks), genA.py (family A), l3check.py (fast regression in check.sh), tsearch.c (uniform templates),
+  lsearch.c (template levels on a fixed base genome, BASE=txt), psearch.c (perturbation climb from a base txt; LM = mutable levels).
+  Binaries are built into the scratchpad (gcc -O2 -o $SP/x x.c); rebuild after a container change.
+- Status: §2 TRI, §3 TRI-MU, §4 FEEDBACK, §7 TOP-ADD written with proofs (lane); family A data to d = 40, A-RUN proof pending.
+- MOVES-2D DEAD (§9): kill/KILL_M2D_d6_mu13.json (μ 13 at d 6), kill/KILL_M2D_d8_mu21.json (μ 21 at d 8); reported to the Lead 00:31Z.
+- IN FLIGHT (detached; resumable: rerun the same line, finished levels are skipped): lift→climb chains
+  `PFX=out/cA/c SP=$SP ./chain.sh kill/KILL_M2D_d8_mu21.txt 8 12 20000000 100` (cA), `PFX=out/cB/c … out/best_d7.txt 7 12 … 200`
+  (cB), `PFX=out/cC/c … kill/KILL_M2D_d6_mu13.txt 6 11 … 300` (cC), cwd experiments/lower/l3. Records so far (verified by xcheck +
+  box150 check.py): d 7: 17 (out/best7_d7.json), d 9: 29 (out/cA/j_d9.json, F = 2 3 8 9 12 13 28 27 7: a doubling level).
+- Never edit chain.sh while a chain runs (bash reads scripts incrementally; I killed and restarted cA once for that).
+### Sources opened (this box)
+- claude/l-si 0803d551 docs/si/N5-TROPICAL-box76.md l. 167-170 (L-SI 41 replay of my nine genomes: «Every (d, T, mover, moves) of the
+  README table is reproduced»); claude/l-red 55557951 experiments/red/r214/lower3/, memb.py, lowrep.py (L-RED 52 replay; verdict
+  in the commit message «ideal.py / fa / lemck / box150 reproduce all 9»); claude/referee c011995c docs/referee/R-P-M2D-DEAD.md
+  (PM-L1..L4); claude/referee-2 6eba8b93 docs/referee-2/R2-P-M2D-DEAD.md (W-1, N-1, N-2).
+- docs/RESULTS.md R104 (l. 9864, IDEAL-model definition), R110 (l. 11323, 𝓛^R_d), R112 (l. 11909, T^R(3) = 8), R113 (l. 12152,
+  ALIGN, F0, PAIR-DOUBLE, MOVES, T-BOUND, PATH-RISE), R114 (l. 12394); R111 (l. 11598, CASCADE/LADDER, read only).
+- claude/l-new d86adc86-era docs/new/P-IDEAL-MOVES.md (§0-§6: REDUCE-XI, MOVES-EQUIV, AND-GATE, WINDOW-DOUBLE, SEG-WINDOW, DEAD-SEG,
+  DEAD-LEV, lane DATA μ by level d 3: 1, 3, 4); experiments/new/box187/movescheck.py, box150/check.py (Gen), box186/out/*.json,
+  box187/inst/m4_z4_r7.json.
+- claude/l-red 242fbd1e notes/L-RED.md (successor 51 PARK, successor 52 handover; R213: MOVES-2D exact d 3, holds d 4; R214 DENSE
+  runs), experiments/red/r214/keep/dense_d5_l3_H10.txt + out/dense_d5_l3_H10.json (36d340c7; μ 10 at d 5; copied byte-identical to
+  experiments/lower/l3/inst/, sha1 a449d771…), out/c_m5_*ext_d6* (climb d 6: maxR 10).
+### Things only I know
+- The Lead's goal (a) «μ(G_d) ≥ 2d for every d» is false at d = 3 (μ(3) = 4, L-RED R213 data) and maybe at d = 6 (my lift search
+  and L-RED's climb both stop at 10 < 12). TRI genomes cap at 2d − 2 (proved), so any 2d family needs upward options.
+- tsearch mode 2 once preferred cyclic templates (sentinel bug, fixed: cyclic = −1e9).
+- Family A d = 10 run (rows = steps, E/O = even/odd mover of each level moves):
+  1 .O .. .. .O .. .. .O .. .. .O / 2 E. .. .O .O .. .O .O .. .O .O / 3 .. .O .O .. .O .O .. .O .O .. / 4 .. E. .. .O .O .. .O .O .. .O
+  … / 20 .. .. .. .. .. .. .. .. .. E.  (regenerate: python3 -I experiments/lower/l3/trace.py with genA 10).
+
+## Predecessor (T-L2, 2026-10-15) notebook, kept as history
 # L-LOWER notebook (T-L2 theory box ended 2026-10-15 19:30Z; handover for the Lead / a successor)
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 

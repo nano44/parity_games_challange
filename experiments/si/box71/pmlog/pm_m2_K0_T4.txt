@@ -1,0 +1,16 @@
+m 2 K 0 T 4 x 0 desc 0 moves>=2 -> UNSAT 0.0s
+m 2 K 0 T 4 x 0 desc 1 moves>=3 -> UNSAT 0.0s
+m 2 K 0 T 4 x 0 desc 2 moves>=4 -> UNSAT 0.0s
+m 2 K 0 T 4 x 0 desc 3 moves>=5 -> UNSAT (trivial: more than T moves)
+m 2 K 0 T 4 x 1 desc 0 moves>=2 -> UNSAT 0.0s
+m 2 K 0 T 4 x 1 desc 1 moves>=3 -> UNSAT 0.0s
+m 2 K 0 T 4 x 1 desc 2 moves>=4 -> UNSAT 0.0s
+m 2 K 0 T 4 x 1 desc 3 moves>=5 -> UNSAT (trivial: more than T moves)
+m 2 K 0 T 4 x 2 desc 0 moves>=2 -> UNSAT 0.0s
+m 2 K 0 T 4 x 2 desc 1 moves>=3 -> UNSAT 0.0s
+m 2 K 0 T 4 x 2 desc 2 moves>=4 -> UNSAT 0.0s
+m 2 K 0 T 4 x 2 desc 3 moves>=5 -> UNSAT (trivial: more than T moves)
+m 2 K 0 T 4 x 3 desc 0 moves>=2 -> UNSAT 0.0s
+m 2 K 0 T 4 x 3 desc 1 moves>=3 -> UNSAT 0.0s
+m 2 K 0 T 4 x 3 desc 2 moves>=4 -> UNSAT 0.0s
+m 2 K 0 T 4 x 3 desc 3 moves>=5 -> UNSAT (trivial: more than T moves)

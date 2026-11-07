@@ -1,0 +1,5 @@
+DIMACS m2_pq_T1_T25_K1_NOIM0.cnf sha1 46c7925e2e8549d7cd5d1243ff7a26c9775a1ca6
+m 2 MODE pq T 1 T2 5 K 1 NOIM 0 vars 1527 clauses 6979 -> SAT 0.0s
+xt [-1, 2, 2, 0, -1, -1, 2, 1] c {(1, 0): 1, (1, 1): 0}
+B 1 F [0, 0] states ['1110', '0100']
+B 1 F [0, 0, 0, 1, 1, 1] states ['1110', '0100', '0000', '1000', '1100', '1101']

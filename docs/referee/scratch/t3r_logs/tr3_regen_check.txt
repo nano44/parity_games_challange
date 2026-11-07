@@ -1,0 +1,13 @@
+cube 10 gen: sha1 924ae0118e1b142a8d762d03d314d4a0c9be1af2 UNSAT 162.5 s 
+cube 10 cnf_sha1 924ae0118e1b142a8d762d03d314d4a0c9be1af2 proof_sha1 cae6998bd94b78005931ee2faff7eaffc3c122fc proof_bytes 851461087
+cube 10 drup(applied): s VERIFIED (485366 lemmas RUP-checked) wall 570 s; input clauses 204036, vars 59059, top-level conflict after input: 0 lemmas checked 485366, deletion lines 460782 (applied; clauses removed 460782) 
+cube 10 ref_rup: s VERIFIED (485366 lemmas RUP-checked, deletions ignored) wall 708 s; input: 58896 vars, 204036 clauses, conflict after input 0 lemmas 485366, deletion lines ignored 460782 
+cube 9 gen: sha1 01a9488a18b51267dd6010802c7f4c9a3425d936 UNSAT 184.0 s 
+cube 9 cnf_sha1 01a9488a18b51267dd6010802c7f4c9a3425d936 proof_sha1 942334eb3905ff3aa887e37db72d1df84433b804 proof_bytes 894105785
+cube 9 drup(applied): s VERIFIED (526970 lemmas RUP-checked) wall 643 s; input clauses 204036, vars 59059, top-level conflict after input: 0 lemmas checked 526970, deletion lines 576421 (applied; clauses removed 576421) 
+cube 9 ref_rup: s VERIFIED (526970 lemmas RUP-checked, deletions ignored) wall 802 s; input: 58896 vars, 204036 clauses, conflict after input 0 lemmas 526970, deletion lines ignored 576421 
+cube 5 gen: sha1 2701cae6e1025ef02c98c9d9b81b7fb181c68367 UNSAT 191.6 s 
+cube 5 cnf_sha1 2701cae6e1025ef02c98c9d9b81b7fb181c68367 proof_sha1 e45c0dd108e48fb8eddeb51ffcb4fe5787833baa proof_bytes 913302433
+cube 5 drup(applied): s VERIFIED (544619 lemmas RUP-checked) wall 647 s; input clauses 204036, vars 59059, top-level conflict after input: 0 lemmas checked 544619, deletion lines 621645 (applied; clauses removed 621645) 
+cube 5 ref_rup: s VERIFIED (544619 lemmas RUP-checked, deletions ignored) wall 837 s; input: 58896 vars, 204036 clauses, conflict after input 0 lemmas 544619, deletion lines ignored 621645 
+CHECKDONE

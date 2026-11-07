@@ -1,0 +1,2 @@
+DIMACS m3_sumk_T8_T211_K2_NOIM0.cnf sha1 02e35cae2abd71e7640d050ea67236dd847dd9d6
+m 3 MODE sumk T 8 T2 11 K 2 NOIM 0 vars 21709 clauses 107408 -> UNSAT 640.8s

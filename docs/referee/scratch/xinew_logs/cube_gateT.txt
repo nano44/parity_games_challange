@@ -1,0 +1,7 @@
+K 1 T(increasing gates) 0 T(decreasing gates) 1
+K 2 T(increasing gates) 0 T(decreasing gates) 1
+K 3 T(increasing gates) 0 T(decreasing gates) 1
+K 4 T(increasing gates) 0 T(decreasing gates) 1
+K 5 T(increasing gates) 0 T(decreasing gates) 1
+K 6 T(increasing gates) 0 T(decreasing gates) 1
+K 7 T(increasing gates) 0 T(decreasing gates) 1

@@ -1,0 +1,5 @@
+# m seed iters anneal seedfile  (R214 round 2: seeds = DENSE(5,3,9) witness, L-NEW box185 seeds)
+4 51 3000000 150 keep/dense_d5_l3_H9.txt
+4 52 3000000 150 seeds185/h_d5_L4_ld6.txt
+4 53 3000000 0 keep/dense_d5_l3_H9.txt
+4 54 3000000 0 seeds185/ld4_1.txt

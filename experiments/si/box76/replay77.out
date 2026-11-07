@@ -1,0 +1,13 @@
+KILL_M2D_d6_mu13.json d 6 T 13 F [2, 6, 6, 12, 6, 5] doubling [1] max moves (z in Z, lev >= 1) 13 (mover 8)
+KILL_M2D_d8_mu21.json d 8 T 24 F [2, 3, 7, 8, 11, 10, 21, 4] doubling [] max moves (z in Z, lev >= 1) 21 (mover 15)
+REC_d10_mu32.json d 10 T 33 F [2, 3, 8, 8, 12, 16, 32, 19, 11, 2] doubling [2] max moves (z in Z, lev >= 1) 32 (mover 15)
+REC_d10_tower_mu30.json d 10 T 35 F [2, 6, 14, 30, 23, 8, 7, 6, 2, 1] doubling [1, 2, 3] max moves (z in Z, lev >= 1) 30 (mover 8)
+REC_d11_mu40.json d 11 T 44 F [2, 3, 8, 9, 14, 20, 40, 22, 15, 7, 3] doubling [2] max moves (z in Z, lev >= 1) 40 (mover 15)
+REC_d12_mu42.json d 12 T 48 F [2, 3, 8, 9, 14, 20, 42, 23, 9, 9, 7, 5] doubling [2, 6] max moves (z in Z, lev >= 1) 42 (mover 15)
+REC_d7_mu17.json d 7 T 17 F [2, 6, 8, 17, 9, 4, 5] doubling [1] max moves (z in Z, lev >= 1) 17 (mover 8)
+REC_d8_mu24.json d 8 T 25 F [2, 5, 12, 24, 18, 13, 6, 5] doubling [2] max moves (z in Z, lev >= 1) 24 (mover 8)
+REC_d9_mu29.json d 9 T 31 F [2, 3, 8, 9, 12, 13, 28, 27, 7] doubling [2, 6] max moves (z in Z, lev >= 1) 29 (mover 15)
+replay77: done
+ACYC-SPLIT REC_d10_tower_mu30: mover 9 options -> (6, 7) gives a Xi-cycle (9 -> 6 -> 4 -> 9)
+ACYC-SPLIT REC_d10_tower_mu30: mover 9 options -> (7, 6) gives a Xi-cycle (9 -> 7 -> 4 -> 9)
+CLIMB climb77_d10_T45 d 10 T 45 max moves (z in Z, lev >= 1) 15

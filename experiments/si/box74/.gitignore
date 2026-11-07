@@ -1,0 +1,4 @@
+log/*.part
+cubes/*/*.log
+cubes_*.out
+cubes/

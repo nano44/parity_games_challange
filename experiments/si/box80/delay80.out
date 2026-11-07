@@ -1,0 +1,32 @@
+== H5_d20_F62 j 3
+x2 6 pulse 4 line 6 <- 14 <- 5 : 4 windows
+x2 6 pulse 4 line 6 <- 19 <- 5 : 4 windows
+x2 6 pulse 3 line 6 <- 14 <- 24 <- 2 : 2 windows
+x2 6 pulse 5 line 6 <- 19 <- ?2,5 : 2 windows
+x2 6 pulse 5 line 6 <- 18 <- ? : 1 windows
+x2 6 pulse 3 line 6 <- 35 <- 14 <- ?1,23,31,39 : 1 windows
+x2 6 pulse 5 line 6 <- 19 <- 31 <- ?1,23 : 1 windows
+== H5_d20_F62 j 4
+x2 9 pulse 1 line 9 <- 6 : 15 windows
+x2 9 pulse 2 line 9 <- 12 <- ?7,11 : 12 windows
+x2 9 pulse 2 line 9 <- 12 <- ?2,5,7,11 : 2 windows
+x2 9 pulse 1 line 9 <- 35 <- 14 <- ? : 1 windows
+x2 9 pulse 2 line 9 <- 12 <- ?5,7,11 : 1 windows
+== H6_d24_F126 j 3
+x2 6 pulse 5 line 6 <- 19 <- 5 : 6 windows
+x2 6 pulse 6 line 6 <- 23 <- 16 <- 24 <- ? : 1 windows
+x2 6 pulse 6 line 6 <- 24 <- 25 <- 31 <- 37 <- ? : 1 windows
+x2 6 pulse 6 line 6 <- 23 <- 24 <- 32 <- ? : 1 windows
+x2 6 pulse 6 line 6 <- 24 <- 25 <- 28 <- 32 <- ? : 1 windows
+x2 6 pulse 5 line 6 <- 19 <- ?5,25 : 1 windows
+x2 6 pulse 6 line 6 <- 23 <- 24 <- ?1,31,32 : 1 windows
+x2 6 pulse 6 line 6 <- 24 <- 25 <- 31 <- ?1,32 : 1 windows
+x2 6 pulse 6 line 6 <- 23 <- 24 <- 32 <- 1 : 1 windows
+x2 6 pulse 6 line 6 <- 24 <- 25 <- 28 <- 32 <- 1 : 1 windows
+== H6_d24_F126 j 4
+x2 9 pulse 2 line 9 <- 12 <- 7 : 13 windows
+x2 9 pulse 3 line 9 <- 14 <- 13 <- 6 : 10 windows
+x2 9 pulse 3 line 9 <- 14 <- ?13,27 : 4 windows
+x2 9 pulse 2 line 9 <- 12 <- ?7,25 : 2 windows
+x2 9 pulse 3 line 9 <- 14 <- 13 <- 44 <- 19 <- ? : 1 windows
+x2 9 pulse 4 line 9 <- 14 <- 13 <- 33 <- 6 : 1 windows
