@@ -257,3 +257,8 @@ Five questions:
 | 2026-11-07 | L-NEW | session_01V5yGRXqTHhphYxB6STpz6Z (PARKED, handover fd5c163f; idle confirmed 01:44Z before creation) | session_01V5yGRZ2kiDuHsNxeGAccsQ (Opus, D14/D18/D20) | 5 | none (fd5c163f: unshallowed, detached->checkout, ff-only; trap = shallow/stale clone) |
 | 2026-11-07 | L-LOWER | session_01V5yGRYtLwuB7qNYQrinwP1 (PARKED, handover 6f46fe43/8938e403; idle confirmed 03:30Z before creation) | session_01V5yGRW9yD8iwM6hpPJzXeM (Opus, D14/D18/D20) | 5 | none (5dcfa1e1: unshallowed, local ref lagged origin -> ff-only; trap = stale/shallow clone) |
 | 2026-11-07 | REFEREE-2 | session_01V5yGRXHPVCKLouwxPfyxXk (PARKED, handover 9bd5656f; idle confirmed 03:51Z before creation) | session_01V5yGRWsDRgtLvnpRJUqiRf (Opus, D1/D18/D20) | 5 | none (b7ab3b1d: ls-remote = local = 9bd5656f; trunk merged; trap = replay citation without output file) |
+| 2026-11-07 | L-RED | session_01V5yGRZ5wDYLSLhxR4XqKEW (PARKED, handover b14066e1; idle 05:03Z) | session_01V5yGRXi53WG1JtWKEvQFXM (Opus) | 5 | none (detached+shallow fixed; shared branch with 52's snapshots) |
+| 2026-11-07 | L-NEW | session_01V5yGRZ2kiDuHsNxeGAccsQ (PARKED, 066cd543; idle 05:03Z) | session_01V5yGRZMYaAdWpBojH5jbYb (Opus) | 5 | none (detached+shallow fixed) |
+| 2026-11-07 | CHECKER | session_01V5yGRa5YAtaPMsyQHSckQ4 (PARKED, 4195a8c3; idle 06:03Z) | session_01V5yGRWa92GEYNzfFGXd8Hr (Opus) | 5 | none (detached+shallow fixed) |
+| 2026-11-07 | L-SI | session_01V5yGRZDRAGZFgHvmRBGoKz (PARKED, a5d2099e; idle 07:09Z) | session_01V5yGRWb17CZoo2UVcHAxp8 (Opus) | 5 | none (detached+shallow fixed) |
+| 2026-11-07 | REFEREE | session_01V5yGRYL9TALEt9Zg8U7NQg (PARKED, e74638b6; idle 07:27Z) | session_01V5yGRXmJWR6PqTaoF8Zzf5 (Opus) | 5 | none (detached+shallow fixed) |
