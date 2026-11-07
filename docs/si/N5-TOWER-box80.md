@@ -90,6 +90,14 @@ DATA / READING. Not a TARGET.md claim; no statement bounds T polynomially; G-N5-
   trigger by delay lines of length 2-3, which is the stretch STRETCH-NEED requires. H6's pair 3 (x2 = 6 in all 15 windows) uses
   lines 6 ← 19 ← 5 (PULSE 5, 7 windows) and longer ones through 23, 24, 25 (PULSE 6). The top pair 5: mover 10 has options targeting 11
   (its partner) and 8, and moves one step after 11 in every window (PULSE 1).
+- Same pattern one level up, in the climb snapshot (§5, CANDIDATE DATA; delay80.py on out/climb_s2_snapshot.json). The old top pair
+  5 (x2 = 10 in all 63 5-windows) is no longer triggered by its partner. It now uses delay lines through block movers: 10 ← 12 ← 9/11 and
+  10 ← 14 ← 8 (PULSE 2), and 10 ← 21 ← 12 (PULSE 3). The pair 4 (x2 = 9) uses 9 ← 15 ← 6 (PULSE 3, 15 windows) and longer ones (PULSE
+  4-5).
+- READING (not to sign; candidate interface for an extension lemma): when a capped pair stops being the top pair, its second mover's
+  direct trigger (the partner, one step) is replaced by a delay line of 1-2 block movers. The lines of the pairs below get one link
+  longer only where their slack is 0. Seen twice (H5 → H6, H6 → snapshot); not proved, and nothing shows the block movers can be
+  added O(1) per level.
 - READING (BIT-CHAIN, RESULTS R115): on 𝓛^R the key bits satisfy b_l = b_(l−1) or its negation while the pair l is split and b_l =
   γ_l(k) while both members are on k, and c_l = 1 − b_(l−1). So a block mover at level L can move to a given option only when the bits
   between the highest «together» pair below L and L give the right c_L. Above a tower whose top pair is split only during its pulses,
