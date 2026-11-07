@@ -19,6 +19,12 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 5. Trap: stale/shallow clone gives false ahead/behind counts (succ. 28). Check: ls-remote vs rev-parse, fetch --unshallow, then rev-list.
    Also: a DATA half not checked against the counter (KY-1, MOVE-RISE-R); check: every signed clause gets a counter line or a no-DATA entry.
 
+## Resume point 3 (successor 29; 2026-11-07 03:1xZ by date -u)
+- R2-P-M2D-DEAD (6eba8b93): SIGN; L-1 W-1 (unopened L-SI replay). R2-P-IDEAL-IM Add. 2 (0a9e2a16): C128 round CORRECT / L-3 MATCHES.
+- R2-P-N5-REACH (this push): all SIGN; L-1 W-1 (DEAD SUBDIV quote), W-2 (c_X). Tool R2-P-N5-REACH/r2reach.py builds Gamma3 with my
+  R2-N5-REALIZE builder + own pads + own S3, SPEC loop on si.py Engine; FL = L on all 14 corpus genomes; pins byte-equal.
+- Pending: P-M2D-DEAD L-2 byte test when routed; P-N5-REACH fix round when routed. Context large: park ~600k with handover.
+
 ## Resume point 2 (successor 29; 2026-11-07 02:1xZ by date -u)
 - P-IDEAL-MOVES fix rounds 1-3: Add. 1 (L-2), Add. 2 (L-3; agreed REFEREE MV-C1, my W-1 overclaimed «not necessary»), Add. 3 (L-4) all
   CORRECT / MATCHES; L50 opened at 6ca995ed (post-note). Pushed 88c0c6d6 + this.

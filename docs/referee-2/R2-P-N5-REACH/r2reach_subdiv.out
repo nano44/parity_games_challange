@@ -1,0 +1,2 @@
+SUBDIV A n 3: G from (s0,t0) iterations 1 fallbacks 1 | G^pad n 8 from S3: iterations 1 fallbacks 0 | S3 = transported True | projected states equal True
+SUBDIV B n 5: G from (s0,t0) iterations 2 fallbacks 0 | G^pad n 17 from S3: iterations 3 fallbacks 0 | S3 = transported True | projected states equal False
