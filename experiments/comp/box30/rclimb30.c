@@ -118,6 +118,7 @@ int main(int argc,char**argv){ rd(argv[1]); rs+=atol(argv[2])*7919; long iters=a
   int biasm[MAXN], nbias=0, bias19=getenv("BIAS19")?atoi(getenv("BIAS19")):-1, biasr=getenv("BIASR")?atoi(getenv("BIASR")):87; double biasp=getenv("BIASP")?atof(getenv("BIASP")):0.5; double bias19p=getenv("BIAS19P")?atof(getenv("BIAS19P")):0.25;
   if(getenv("BIAS")){ char*p=strdup(getenv("BIAS")); for(char*t=strtok(p,",");t;t=strtok(NULL,",")){ int x=atoi(t); if(x<FB||x>=N){ fprintf(stderr,"BIAS mover %d outside [FB,N)\n",x); return 1; } biasm[nbias++]=x; } }
   if(bias19>=0 && (bias19<FB||bias19>=N)){ fprintf(stderr,"BIAS19 outside [FB,N)\n"); return 1; }
+  static int frz[MAXN]; if(getenv("FROZENSET")){ char*p=strdup(getenv("FROZENSET")); for(char*t=strtok(p,",");t;t=strtok(NULL,",")) frz[atoi(t)]=1; }   /* movers whose fields never change */
   int rept[MAXN*2], nrept=0; if(getenv("REPT")){ char*p=strdup(getenv("REPT")); for(char*t=strtok(p,",");t;t=strtok(NULL,",")) rept[nrept++]=atoi(t); }
   const char*testout=getenv("TESTOUT"); int tested=0; if(testout){ FILE*e=fopen(testout,"r"); if(e){ tested=1; fclose(e); } }   /* first test genome only, across units */
   double temp=getenv("ANNEAL")?atof(getenv("ANNEAL")):0; const char*out=getenv("OUT")?getenv("OUT"):"/dev/null";
@@ -139,11 +140,12 @@ int main(int argc,char**argv){ rd(argv[1]); rs+=atol(argv[2])*7919; long iters=a
       nm--; }
     if(nrept && nm>0 && rnd()%4==0){ int m=rept[rnd()%nrept]; int y=(int)(rnd()%(N+1))-1; if(y==m/2) y=-1; xt[m]=y; nm--; }   /* REPT re-point */
     for(int q=0;q<nm;q++){   /* box 30 (Lead 11:38Z): NMIN..NMAX edits per proposal (default 1..3 = original) */ int r=rnd()%6; int m=2*FB+rnd()%(2*N-2*FB);
+      if(frz[m/2]) continue;   /* FROZENSET (Lead 21:46Z): no field of a frozen mover changes */
       if(r==0||r==5){ if(fixo[m]) continue; int y=(int)(rnd()%(N+1))-1; if(y==m/2) y=-1; xt[m]=y; }
-      else if(r==1){ int m2=2*FB+rnd()%(2*N-2*FB); int t=br[m];br[m]=br[m2];br[m2]=t; }
+      else if(r==1){ int m2=2*FB+rnd()%(2*N-2*FB); if(frz[m2/2]) continue; int t=br[m];br[m]=br[m2];br[m2]=t; }
       else if(r==2){ bp[m]^=1; }
-      else if(r==3){ int x=m/2,l=x/2,k=m%2; if(l==0){ int m2=rnd()%4; int t=gate[m];gate[m]=gate[m2];gate[m2]=t; if(m>=4){} } else { int a=4*l+k, b=4*l+2+k; int t=gate[a];gate[a]=gate[b];gate[b]=t; } }
-      else { st[FB+rnd()%(N-FB)]^=1; } }
+      else if(r==3){ int x=m/2,l=x/2,k=m%2; if(frz[2*l]||frz[2*l+1]) continue; if(l==0){ int m2=rnd()%4; int t=gate[m];gate[m]=gate[m2];gate[m2]=t; if(m>=4){} } else { int a=4*l+k, b=4*l+2+k; int t=gate[a];gate[a]=gate[b];gate[b]=t; } }
+      else { int xs=FB+rnd()%(N-FB); if(frz[xs]) continue; st[xs]^=1; } }
     /* level-0 gate swaps must stay within level 0: m<4 guaranteed only if x<2; enforce */
     if(!acyclic()){ memcpy(xt,sxt,sizeof xt);memcpy(br,sbr,sizeof br);memcpy(bp,sbp,sizeof bp);memcpy(gate,sg,sizeof gate);memcpy(st,sst,sizeof st); acyclic(); continue; }
     long sc=score(&T); double tt=temp*(1.0-(double)it/iters);

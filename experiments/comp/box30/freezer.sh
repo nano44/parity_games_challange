@@ -5,7 +5,7 @@
 cd "$(dirname "$0")"
 while true; do
   M=$(awk '{print $4}' out/FROZEN.txt 2>/dev/null | sort -n | tail -1); M=${M:-238}
-  for g in out/D_l6z_u*.txt out/D_l6z_best.txt out/D_l6h_u*.txt out/D_l6h_best.txt out/D_l6w_u*.txt out/D_l6w_best.txt; do
+  for g in out/D_l6z_u*.txt out/D_l6z_best.txt out/D_l6h_u*.txt out/D_l6h_best.txt out/D_l6w_u*.txt out/D_l6w_best.txt out/D_l6w2_u*.txt out/D_l6w2_best.txt; do
     [ -f "$g" ] || continue; ln=$(tail -1 "$g")
     echo "$ln" | grep -Eq "l6_caps 6 l6_q5 [0-9]+ l6_npaths 0( l6_len1w6 [0-9]+)?$" || continue
     f6=$(echo "$ln" | awk '{for(i=1;i<=NF;i++) if($i=="F"){print $(i+7); exit}}')

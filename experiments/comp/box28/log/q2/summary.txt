@@ -71,3 +71,5 @@
 2026-11-07T21:12:23Z q2_c4s2p2 (-2,-8,14,-20,26,-32,38,-44): sha1 b76ffe40dea0933ac943d39b49e849c5db7df37e glucose4 UNSAT 140.7 s sha1 1b1839db3ce7180a8cd5c537830ae01ba62dc570 bytes 283464993  s VERIFIED (895032 lemmas RUP-checked)
 2026-11-07T21:20:09Z q2_c0s1p4 (-2,-8,-14,20,-26,-32,-38,44): sha1 235d9d889da4501b86c4a8d51e5a9b6434c6ca54 glucose4 UNSAT 334.7 s sha1 b2435c822c30512ea7e8c4b3d97a21db04932d52 bytes 576328115  s VERIFIED (1758241 lemmas RUP-checked)
 2026-11-07T21:20:09Z q2shard 0/3: all its pieces processed
+2026-11-07T21:42:25Z q2_c0s1p2 (-2,-8,-14,20,-26,-32,38,-44): sha1 4b4dbbb3e3e367340acf8d4ee76058fc380fe145 glucose4 UNSAT 367.7 s sha1 f33072e14b69996163c17068e07610111be39233 bytes 611986007  s VERIFIED (1821497 lemmas RUP-checked)
+2026-11-07T21:42:25Z q2shard 1/3: all its pieces processed

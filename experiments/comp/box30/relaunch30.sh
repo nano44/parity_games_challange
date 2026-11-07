@@ -45,4 +45,8 @@ ENVX="LANEANNEAL=0.15 L6SCORE=1 L6GATE=238 FROZENBELOW=12 NMIN=2 NMAX=4 REPT=20,
 # guard: 10:0 -> 17 and 17:0 -> 22 kept (FIX=20,34: never re-targeted; a genome without them scores -1e15); no REPT; edits on movers >= 12;
 # NMIN 2 / NMAX 4; ANNEAL 0.15. Seeds 400000+. REC238: n1 = 8 (windows at steps 10, 45, 80, 115, 152, 188, 223, 258).
 ENVX="LANEANNEAL=0.15 L6SCORE=1 L6W=1 L6GATE=238 FIX=20,34 FROZENBELOW=12 NMIN=2 NMAX=4" upa D_l6w D_l6w out/L6Z_KILL238_d28.txt 400000 6 5 6
+# 21:4xZ: query-2 redo finished (one q2 worker left) -> freed core: D_l6w2 = D_l6w's exact settings, second seed stream 405000+
+# 21:5xZ (Lead 21:46Z, L-LOWER 8 69d7005a: mirror trigger needs lower pairs 2-4 + helpers): D_l6w2 edits EVERY mover except pair 5
+# (FROZENBELOW 0, FROZENSET 10,11: no field of 10 / 11 changes; gate swaps of level 5 skipped), NMIN 2 / NMAX 6; FIX 20,34; L6W score.
+ENVX="LANEANNEAL=0.15 L6SCORE=1 L6W=1 L6GATE=238 FIX=20,34 FROZENBELOW=0 FROZENSET=10,11 NMIN=2 NMAX=6" upa D_l6w2 D_l6w2 out/L6Z_KILL238_d28.txt 405000 6 5 6
 f=out/.pid_freezer; if [ -f $f ] && kill -0 $(cat $f) 2>/dev/null; then echo "freezer running"; else setsid nohup ./freezer.sh < /dev/null > /dev/null 2>&1 & sleep 1; pgrep -f "^/bin/bash ./freezer.sh" > $f; echo "freezer launched $(cat $f)"; fi
