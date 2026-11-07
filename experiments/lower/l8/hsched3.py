@@ -4,8 +4,8 @@ its free steps (as both helpers of HS2_d3; Lemma SINK: every sink is pure, but a
 exactly at the free steps where c_l = p. So its trajectory is a function of (start bit, p) and its key sequence: 4 per helper mover.
 Enumerated: all (start, p) of all helpers and all gate patterns of helper levels h..d-2; for each full trajectory the wiring search
 of hsched.py (sink-first, joint ranksolve pruning, memo) decides realizability exactly. Scope: (lower target, d, pure helpers).
-CLI: hsched3.py h d alpha [tlimit_s]"""
-import sys, os, itertools, time
+CLI: hsched3.py h d alpha [tlimit_s] [per_traj_s]  (a trajectory whose wiring search exceeds per_traj_s is counted UNDECIDED)"""
+import sys, os, itertools, time, signal
 H = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(H, '..', 'l6')); sys.path.insert(0, os.path.join(H, '..', 'l7')); sys.path.insert(0, H)
 from sim6 import okeys, run, Fprof, caps
@@ -35,7 +35,9 @@ def pure_trajs(LS, h, d, gate):
             yield from rec(l + 1, [list(S[t]) + [cols[0][t], cols[1][t]] for t in range(T + 1)])
     yield from rec(h, [list(s) for s in LS])
 def main():
-    h, d = int(sys.argv[1]), int(sys.argv[2]); al = list(map(int, sys.argv[3].split(','))); tl = float(sys.argv[4]) if len(sys.argv) > 4 else 1e9
+    h, d = int(sys.argv[1]), int(sys.argv[2]); al = list(map(int, sys.argv[3].split(','))); tl = float(sys.argv[4]) if len(sys.argv) > 4 else 1e9; pt = int(sys.argv[5]) if len(sys.argv) > 5 else 0; und = 0
+    def _al(*a): raise TimeoutError
+    signal.signal(signal.SIGALRM, _al)
     _, LS = schedule(h, alpha=al); LS = [tuple(s[:2 * h]) for s in LS]; t0 = time.time()
     print('h', h, 'd', d, 'alpha', al, 'lower T', len(LS) - 1, 'pure helpers', flush=True)
     tot = 0; stats = {'solve': 0}; seen = set()
@@ -44,8 +46,11 @@ def main():
             key = (tuple(S), tuple(gate))
             if key in seen: continue
             seen.add(key); tot += 1
-            if time.time() - t0 > tl: print('TIMEOUT after', tot, 'trajectories'); return
-            xt = realize({'d': d, 'gate': gate}, S, stats)
+            if time.time() - t0 > tl: print('TIMEOUT after', tot, 'trajectories, undecided', und); return
+            signal.alarm(pt)
+            try: xt = realize({'d': d, 'gate': gate}, S, stats)
+            except TimeoutError: xt = None; und += 1
+            signal.alarm(0)
             if xt is None: continue
             N = 2 * d; E = {'d': d, 'xt': xt, 'br': list(range(2 * N)), 'bp': [0] * (2 * N), 'gate': gate, 'start': list(S[0])}
             (br, bp), _ = solve(constraints(E, S), 2 * N); E['br'], E['bp'] = br, bp
@@ -53,5 +58,5 @@ def main():
             print('RESULT REALIZED after', tot, 'trajectories; sim6 T', len(S2) - 1, 'F', F, 'caps', caps(F), 'prefix = target', S2[:len(S)] == S)
             for k in ('d', 'xt', 'br', 'bp', 'gate', 'start'): print('GENOME', k, E[k] if k == 'd' else ' '.join(map(str, E[k])))
             return
-    print('RESULT NONE: h', h, 'd', d, 'alpha', al, 'pure-helper trajectories', tot, 'solves', stats['solve'], f'{time.time() - t0:.0f}s')
+    print('RESULT NONE: h', h, 'd', d, 'alpha', al, 'pure-helper trajectories', tot, 'solves', stats['solve'], 'UNDECIDED (per-trajectory limit)', und, f'{time.time() - t0:.0f}s')
 if __name__ == '__main__': main()
