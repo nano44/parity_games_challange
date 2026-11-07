@@ -146,6 +146,25 @@ Nothing here is a result in the sense of CLAUDE.md; G-N5-TIME stays OPEN. Not a 
   passes «nomerge91», so the predicate must be combined with the room condition (slack.py H = 7: 0 violations at levels 1-5) and
   GUARD 0-5. Seed: rec/SL41_d28.txt (sha1 c1b46c31…).
 
+## 5d. The «48 of 127» plateau across four genomes (Lead 16:31Z question; DATA + READING)
+- struct48.py → struct48.out (unit = genome; scope = stored start; genomes: SL41_d28 c1b46c31…, G7_best_d28 b995fff2…, and L-SI 42's
+  claude/l-si 38f08152 experiments/si/box80/out/climb_s2_snapshot.txt (sha1 0d67617919cc830d791a256a2e232cb6d9f4ab41) and
+  climb_w1_P0.json (sha1 622f68e5783e16eddc47e6b46d2bc65071af88cd; read as text through l4/j2t.py)): all four have levels 0-5 capped,
+  F(6) = 222 and the SAME level-6 move profile: 79 windows with one move of each of 12, 13; 16 with only 12; 16 with only 13; 16 with
+  no move (48 failing of 127).
+- Pair 6 is crossed in SL41 and G7_best only; in snapshot and w1 it is NOT crossed (12:0 → 13: 12 reads 13 directly, in 48 of the 79
+  good windows, readpath.py). So «≥ 48 failing whenever levels 0-5 are capped and level 6 is crossed» does not describe the plateau:
+  the plateau occurs without CROSS, and with the «copy of f» read that READ-NEST asked for.
+- Common to all four (DATA): pair 5's second mover 10 is graph-upstream of 12 (its Ξ-closure reaches 12: RETURN-CHAIN), and 11 is not.
+  In no capped record (H5, H6, SL41, G7_best) is a capped pair crossed.
+- READING (information flow; not proved): for level 6 to double, 12's preference must change once per 6-window, in step with o(5),
+  which for the reachable states of a doubling level 5 is 1 exactly between the moves of 11 and 10 in a 5-window: it needs s₁₀.
+  If 10 is graph-upstream of 12, no Ξ-chain read by 12 can pass 10 (acyclicity), so s₁₀ can reach 12's comparison only through
+  movers keyed by o(5) or later keys (13, levels ≥ 7) or through proxies in the lower pairs' states. CONJECTURE RC-PLATEAU: if levels
+  0-5 are capped and 10 is graph-upstream of 12, then F(6) ≤ 222. Test proposed: a climb that forbids the RETURN-CHAIN (guard: 10 not
+  graph-upstream of 12, 13) while keeping levels 0-5 capped; a genome with F(6) > 222 kills the conjecture, and a plateau at ≤ 222
+  supports it.
+
 ## 6. The D18 analogy used, and its test: synchronous circuits (register vs combinational paths; carry-lookahead)
 - Dictionary (READING). A Ξ-preference is a REGISTER: a mover's move at t uses its preference under s_(t−1), one clock of delay. The
   key cascade is the only COMBINATIONAL path: within one step c_l = o(l − 1) is computed bottom-up from the new states (a ripple-carry
@@ -180,8 +199,8 @@ Nothing here is a result in the sense of CLAUDE.md; G-N5-TIME stays OPEN. Not a 
 - H5 → H6 repeat: NOT RUN (it was conditional on a working construction).
 
 ## 8. Files (experiments/lower/l6/)
-sim6.py, win.py, topadd.py, cross2.py, copyf.py, ins.py, dropscan.py, tight.py, readpath.py, readnest.py, guard_l6.py, gad.c, gad2.c;
-outputs readnest_SL41.out, xcheck_GAD95_SL41.out, tight_records.out,
+sim6.py, win.py, topadd.py, cross2.py, copyf.py, ins.py, dropscan.py, tight.py, readpath.py, readnest.py, guard_l6.py, struct48.py, gad.c, gad2.c;
+outputs struct48.out, readnest_SL41.out, xcheck_GAD95_SL41.out, tight_records.out,
 readpath_records.out, dropscan_SL41.out, win6_SL41_verbose.out, cross2_SL41.out,
 topadd_SL41_K2.out, topadd_SL41_K3.out, copyf_SL41_12_13.out, win6_GAD95.out, gad_runs.out; rec/GAD95_P8_d29.txt.
 
