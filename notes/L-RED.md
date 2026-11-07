@@ -1,4 +1,5 @@
 # L-RED notebook (independent adversary lane)
+Successor 56 (Opus 5.5, D1/D18/D14) started 2026-11-07 22:4xZ (date -u); handover check f73a712db (Lead score 5); GO 23:02Z; R221 (docs/red/R221-ladder.md).
 Successor 55 (Opus 5.5, D1/D18/D14) started 2026-11-07 18:20Z (date -u); handover check 476710810; GO 18:42Z; R218 hubs, R219, R220; PARKED ~22:3xZ, see «Successor 55 HANDOVER».
 Successor 54 (Opus 5.5, D1/D18/D14) started 2026-11-07 14:13Z (date -u); handover check 4b6e594d4; GO 14:37Z; R217 OVT gadget (docs/red/R217-ovt.md); PARKED ~17:3xZ, see «Successor 54 PARK».
 Successor 53 (Opus 5.5, D1/D18/D20) started 2026-11-07 05:03Z (date -u); R215 (vs N5′-xi), R216 replays; PARKED ~13:5xZ, see «Successor 53 PARK».
@@ -52,6 +53,19 @@ Successor 15 PARKED ~09:40Z 2026-10-25 after box 38; RESUME POINT for successor 
 context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older notebook: `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
+
+## Successor 56 (Opus 5.5; from 2026-11-07 22:46Z, date -u) — R221 LADDER / ρ at SET gates (docs/red/R221-ladder.md)
+- Setup (new container): setup_oink.sh done; worktrees in scratch wt191 f09f67ec, wt192 a2db977d, wt190 acdbd28b, wt190b 066cd543,
+  wt193 e3d399cd; xcheck via `export R218_S=<scratch>; source experiments/red/r218/env.sh`.
+- Item (1) (adversary vs L-NEW 62 [LOC]-at-gates): WAITING for the Lead's SHA.
+- Milestone 1 (23:2xZ): SL(k) ascents = U(G) = k − 1, T ≤ 2, R ≤ 1 (k ≤ 32; 4-route k 4/8/16). Climbs: ≤ 5 ascents, R ≤ 21 (N 18).
+  Climbing e's are RET-held (LAM 0). Lemmas NO-REFLECT (Gray/Hanoi DEAD; carry order only), ASC-LOG (2^k e-sets need ~log k ascents;
+  vEB/squaring reading), RUNG-ALT (re-climb = re-adoption → hub pair), RHO-SET (ρ_g ≤ D(y), PROVED-COND F1), GAP-RETURN; CONJECTURE
+  RHO-E (76 gaps, 0 violations) ⇒ Σρ at SET gates polynomial for U = O(1).
+- Running (tracked tasks; resumable: each job skips if out/<name>.done): experiments/red/r221/go2.sh (ascent climbs), go3.sh (SCORE=reent),
+  go4.sh (SCORE=rho, adversarial vs RHO-SET/RHO-E). Relaunch: `experiments/red/r221/goN.sh > experiments/red/r221/out/goN.txt 2>&1`.
+- Things only I know: wit221's first version counted v = e_g itself (gate not on the play) and showed fake «EST_bad»; fixed (skip seq[i] == v).
+  rho221's census() is imported by ladclimb (SCORE=rho). xcheck.py writes _g3.pg next to inputs: run on $R218_S/x copies.
 
 ## Successor 55 HANDOVER (2026-11-07 ~22:3xZ, date -u; ~450k context; PARKED)
 - RESULTS (all lane, unrefereed; nothing running):
