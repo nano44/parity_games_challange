@@ -3,7 +3,9 @@
   ptr M      PTR-MON-HI: «if the part of tail(x) above x is unchanged, next(x) does not decrease». Over all dominance pairs F <= F' of
              CS(M, 1) forests: counts pointer changes with unchanged high part, and how many decrease; prints the first witness at M.
   fixtop M   FIXTOP-QUAD: «with the hub's top fixed, at most quadratically many hub chains». Exact maximum per fixed top T.
-Usage: dead193.py ptr M | dead193.py fixtop M"""
+  rmon M     RMON-2: «inside a level of CS(M, 2), a low item's part before tau(w) is lex-nondecreasing» (the A = 2 analogue of the step
+             used in RECUR(1)). Counts (same-level dominance pair, low item) checks and decreases; prints the first witness.
+Usage: dead193.py ptr M | dead193.py fixtop M | dead193.py rmon M"""
 import sys, os, itertools
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 import chain193
@@ -49,5 +51,24 @@ def fixtop(M):
     print(f"FIXTOP M {M} A 1: max distinct hub chains with hub top fixed at T: " + " ".join(f"T{T} {v}" for T, v in res.items()))
 
 
+def rmon(M):
+    import collections
+    F = forests_full(M, 2); byl = collections.defaultdict(list); key = lambda S: sum(1 << j for j in S)
+    for nx, k, ch in F:
+        tau = {x: max(ch[x][1:], default=0) for x in ch}; byl[tuple(tau[x] for x in sorted(ch))].append((k, ch, tau))
+    tot = bad = 0; wit = None
+    for fs in byl.values():
+        for a, b in itertools.product(fs, fs):
+            if a is b or not all(a[0][x] <= b[0][x] for x in a[0]): continue
+            for w in a[1]:
+                if w < a[2][w]:
+                    tot += 1; ra = a[1][w][:a[1][w].index(a[2][w])]; rb = b[1][w][:b[1][w].index(b[2][w])]
+                    if key(ra) > key(rb):
+                        bad += 1
+                        if wit is None: wit = (w, a[1], b[1])
+    print(f"RMON-2 M {M}: (same-level pair, low item) checks {tot}, decreases {bad}")
+    if wit: print(f"  witness: w {wit[0]}; chains before {wit[1]}; after {wit[2]}")
+
+
 if __name__ == "__main__":
-    {"ptr": ptr, "fixtop": fixtop}[sys.argv[1]](int(sys.argv[2]))
+    {"ptr": ptr, "fixtop": fixtop, "rmon": rmon}[sys.argv[1]](int(sys.argv[2]))

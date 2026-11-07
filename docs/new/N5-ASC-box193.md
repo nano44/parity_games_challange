@@ -356,3 +356,21 @@ Reading (status of the open core after milestone 3).
 - e-set height is now PROVED polynomial on runs whose plays have at most one ascent (ASC1), and on NOUP genomes (no ascents).
 - A superpolynomial e-set walk, hence any superpolynomial R via OVT-DV, needs plays with at least two ascents.
 - RECUR(A ≥ 2) is the next target; the data says RECUR(2) holds with equality at M 3-6.
+
+## Addendum 3 (toward RECUR(2)): two more DEAD routes; RECUR(2) stays DATA
+- **DEAD RMON-2** (the step that proved RECUR(1), read at A = 2: «inside a level, a low item's part before τ(w) is lex-nondecreasing»).
+  - Witness, CS(5, 2), one valid same-level step: chains before 1: [1, 2, 5, 4], 2: [2, 5, 4], 3: [3, 4], 4: [4], 5: [5, 4]; after
+    1: [1, 5, 3, 4], 2: [2, 1, 5, 3, 4], 3: [3, 4], 4: [4], 5: [5, 3, 4]. τ = (5, 5, 4, 0, 4) in both.
+  - chain(1) rises (3 enters and beats 2), but its part before τ(1) = 5 drops from {1, 2} to {1}. The cause is the one named in A1.3:
+    with A = 2, chain(τ(w)) can still change inside a level (5 gains the segment {3} before 4), and it interleaves in rank with w's part.
+  - Counts (dead193.py rmon 5). Unit: (same-level dominance pair, low item). Set: CS(5, 2). Scope: abstract. 10,242 checks,
+    5 decreases. CS(4, 2): 234 checks, 0 decreases (scratch run).
+- **DEAD K-LEVEL collapse** («fixing deeper R95 prefixes (the top K elements of every tail) cuts the ascent budget further»).
+  - Exact maxima inside one K-level (klev193.py; unit: distinct hub chains; set: all runs; scope: abstract):
+    - A 2, K 2: 4, 8, 16 at M 4, 5, 6;
+    - A 2, K 3: 4, 8 at M 5, 6;
+    - A 1, K 2: 7, 11 at M 5, 6.
+  - That is f_(A−1)(M − K) in every case: deeper prefixes remove ITEMS, not ascents. Only the first level (K = 1) spends an ascent.
+  - So R95's k-prefix refinement (polynomially many K-levels for fixed K) cannot by itself give ASC-POLY(2).
+- RECUR(2) stays CONJECTURE (equality with f_1(M − 1) at M 3-6, A1.3). A proof must handle a gap's segment whose items see a varying
+  tail(τ(w)). In the witness that tail gains a segment of another gap.

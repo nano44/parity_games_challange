@@ -47,3 +47,7 @@ RECUR CS(M 5, A 2): level keys 2612; max distinct hub chains inside one level 16
 SKELETON CS(M 4, A 99): forests 125, violations 0
 SKELETON CS(M 5, A 99): forests 1296, violations 0
 LOW-SHAPE CS(M 5, 1): forests 870, violations 0
+RMON-2 M 5: (same-level pair, low item) checks 10242, decreases 5
+  witness: w 1; chains before {1: [1, 2, 5, 4], 2: [2, 5, 4], 3: [3, 4], 4: [4], 5: [5, 4]}; after {1: [1, 5, 3, 4], 2: [2, 1, 5, 3, 4], 3: [3, 4], 4: [4], 5: [5, 3, 4]}
+M 5 A 1 K 2: k-level keys 4659, max hub chains inside one k-level 7
+M 5 A 2 K 2: k-level keys 5977, max hub chains inside one k-level 8
