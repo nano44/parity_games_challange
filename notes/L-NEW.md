@@ -1,6 +1,53 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## HANDOVER (successor 60, PARKING 2026-11-07 ~18:0xZ by date -u; Lead 17:58Z: full handover + park)
+### DONE (all via scripts/push.sh, VERIFY PASS each; SHAs from git output)
+- Step 0: handover check ae8e185d (Lead score 4.5: R116 had landed, my answer listed it open).
+- Box 192 R-POT (docs/new/N5-RPOT-box192.md; experiments/new/box192/; check.sh block «BOX 192 R-POT», check192.out):
+  8c2a6678 (milestone 1), d52f9613 (A1), 1da5317c (A2), 05c5170b (A3), df108b05 (A4), e47d0203 (A5), 93411821 (A6 + diagnostic block),
+  53872ba7 (CI fix), a2db977d (A7), a8555576 (A8), d2295934 (A9), 57cae1c0 (A10).
+- Duty P-N5-XICYC: CHECKER C132 E-1..E-7 -> fixes entry 3 + line L-4 (sha1 85fe809c = C132 §5) e36fdfcd; pins df6f4799. R118 LANDED
+  (trunk 478d0bd9, Lead 15:06Z); my duty on it is closed.
+- Trunk merged into l-new 89a033ef (merge commit, no rebase; verify.yml timeout-minutes 60). CI green: 6724 (53872ba7), 6729 (e36fdfcd),
+  6765 (a8555576), 6772 (89a033ef). Earlier red 6692-6715 = the absolute-path trap below; 6737 (a2db977d) CANCELLED at the old 30-min timeout.
+### RESULTS of box 192 (labels as in the doc; nothing is a TARGET.md claim; G-N5-TIME OPEN; N5'-xi CANDIDATE)
+- PROVED (lane):
+  - EQ-FLIP: every sigma-bar change at an R-step is at a gate with Lambda(e_g) = Lambda(beta_g).
+  - MERGE: the face order is decided by the most relevant vertex of the two pre-merge segments above w. A9 erratum: the side line
+    «e_g in A' always» is false in the RET case (A' empty).
+  - RET => sigma-bar(g) = e; BRET => beta (A1.1).
+  - Under E-DOM, e-part monotone (A10; = R95 PREFIX-MON).
+- PROVED-CONDITIONAL on [LOC] (local optimality as in R104): X-GATE (xt = X gate flips <= 4M + 5 + L_g); R-SPLIT (R poly <=> R_mov +
+  sum L_g poly). BR-SEG-T conditional on TIE-PERSIST (which is DEAD).
+- WITHDRAWN: DOM-T as stated (A8: used F4, false on general games). The F4'-safe form is proved.
+- DEAD (instances in box192/inst): FLIP-H, HEAD-STEP, EXCH-1 (rd2_d9); L-natural / M-natural MODEL (Murota-Shioura METR 2013-24 Thm 1.2;
+  rd2_d3 T 9 > 2); SEG-T (DEAD_SEGT_n20: p-run 18 > n_E 6); CHARGE-RET (rf_d5); SRC-DEC (cR_d2_w8_R22); VCYC-STEP (rd2_d9 48/93);
+  TIE-PERSIST (DEAD_SEGT_n20 window 3-10, tiep192.py).
+- CONJECTURE: OVT-POLY (per-gate overtakes polynomial); IN-BOUND (value changes with (Lambda, e-part) fixed <= const; DATA <= 3, dv192.py).
+- Literature (A2): Post-Ye 1208.5083 and HMZ 1008.0530 do not apply; HKZ SODA 2014 NOT opened.
+### OPEN CORE (stated exactly; for successor 61)
+R on Gamma3-Howard is polynomial <=> (R-SPLIT, [LOC]) R_mov polynomial. By OVT-DV (L-RED 54, checked A9) that follows from: every vertex
+takes polynomially many values (D(v)). D(v) <= (IN + 1)·D_E(v) under CONJECTURE IN-BOUND, where D_E(v) = distinct (Lambda, e-part) pairs.
+The e-parts form a monotone walk in the subset order of the M e-vertices (height 2^M - 1). So the core is the HEIGHT OF THE REALISABLE
+e-SET WALK: «no 3-bit counter under E-DOM in any architecture». L-RED 54's inputs, read only, docs/red/R217-ovt.md at claude/l-red
+a52ba4f2: E-DOM-ALL-d, E-DOM-CHOICE (§11), LEAK-ARCH (under Friedmann's H1-H3), RS2 (a 2-bit increment exists), LEAP(k) (one gate
+flips 2k times, R linear). Successor 61's task (Lead 17:58Z): generalise LEAK-ARCH beyond H1-H3, or find the architecture that escapes
+it, against L-RED 54's third-bit attempt.
+### TOOLS (experiments/new/box192/; all imports relative to the file; check192.sh runs a fast sample, output = check192.out)
+rpot192 (labels, heads, xsz), depth192, xgate192 (X-GATE, ties, LOC), trunc192, tie192 / tieclimb192 (SEG-T), segt192 (replay), tiep192
+(TIE-PERSIST), mtype192 (RET/BRET/DISJ), charge192, src192, vcyc192, ret192 (re-adoptions), dv192 (D, D_E, IN), climb192 + runclimbs192.sh.
+inst/: 16 L-RED R-bests (claude/l-red c81dd2d7), cR_d2_w8_R22 (b83785f6), DEAD_SEGT_n20 (02efd55e); SHA1SUMS.
+### Things only I know / traps (successor 60)
+- ABSOLUTE PATH TRAP: a tool copied from scratch kept ROOT=/home/user/...; it passed in this container and failed in CI for six runs.
+  Check: grep -n '/home/user' box*/ before committing, and test a relocated copy with the repo path hidden.
+- The BOX 192 block prints FAILED with exit code, diff and tail. Never write a check block that can exit silently under set -e.
+- Never edit lane files while push.sh runs: push 3 failed that way.
+- FROZEN-COPY RULE (Lead 11:30Z): never cite a number for a path a live climb overwrites (out/*.json); freeze a copy in inst/ with its
+  sha1 first. cR_d2_w8 had three versions (A6).
+- CI uses the pushed branch's .github/workflows/verify.yml: merge trunk (merge commit) when the Lead raises the timeout; never edit .github.
+- CI takes ~26-37 min. The GitHub MCP tools (actions_list, get_job_logs failed_only) read the runs.
+
 ## Resume point (successor 60, Opus; session_01V5yGRa6UV7Jv1SCJv2zoMD; started 2026-11-07 09:16Z by date -u; GO 09:36Z)
 ### Duties (Lead 09:36Z, corrected from the handover check)
 - P-N5-XICYC: REFEREE 26 ITEM 3 DONE (§C 42648076: «fixes entry 2 CORRECT, L-3 MATCHES»; XC-1..4, XC-L1..L4 CLOSED); REFEREE-2 L-3
