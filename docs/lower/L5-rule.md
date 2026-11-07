@@ -158,13 +158,38 @@ its counter (unit, set, scope). Nothing here is a result in the sense of CLAUDE.
   type), independent of the ancestors; the parent-dependence of SL41's level 6 is a property of a level not yet capped. DATA for
   CONJECTURE L5-TYPE (O(1) suppliers per level), not a proof.
 
+- Lemma DOMINANCE-FREEZE (PROVED, lane; R105 ENC and the movement rule). For a mover x and a state s let dec_s(x) := the β of largest
+  rank in the symmetric difference of the chains of (x, 0) and (x, 1) under s (it decides the Ξ-comparison: by ENC the sign of
+  v(x, 0) − v(x, 1) is the parity sign of dec_s(x), negated if it lies on the chain of (x, 1)). (a) If dec_s(x) is the same β, on the
+  same side, for all states s of a stretch, then x's preference is constant on the stretch. (b) If x is a member of a doubling pair j
+  and x moves at t < t′ (consecutive moves of x), then x moves to opposite options (DOUBLE-EQ′ (E4) and the alternation of c_j between
+  consecutive j-windows), so its preference under s_(t−1) and under s_(t′−1) differ; hence dec(x) is not one fixed β on one fixed side
+  on all of s_(t−1), …, s_(t′−1). Proof: (a) ENC: v(x, 0) − v(x, 1) = Σ ±2^rank over the symmetric difference; the largest term fixes
+  the sign. (b) by the movement rule x moves at t only if the other option is strictly better under s_(t−1). ∎
+- The SL41 instance (domin.py → domin_SL41.out; unit = 6-window; scope = stored start): pair 6 is CROSS onto (22, 11) (12 → (22, 11),
+  13 → (11, 22); L4 §2 DUAL: both members compare the same difference cv(22) − cv(11), with mirror preferences). In all 48 failing
+  6-windows the deciding element of 12 and 13 is (rank 87, mover 9, option 1), alone in 16 of them and together with one other in
+  32 (the carried-over first state): mover 9 (pair 4) sits on option 1 for the whole level-5 window of type (9, 1), its option-1 β
+  (rank 87, odd) lies on 11's chain (11 → 9), and nothing that changes in those windows outranks it, so both members of pair 6
+  prefer the 22-side throughout and the member on the 11-side never moves. In no good window is (87, 9, 1) a decider. This is the
+  exact missing fuel: a β of rank > 87 on the chain of 22 or of 11 (above 9) that changes inside each window under parent (9, 1),
+  or re-routing 11's chain away from 9's option 1. It is FROZEN-WINDOW (L4 §4) realised by rank dominance rather than by a constant
+  difference.
+- Single edits at the dominator (domfix.py → domfix_SL41.out; unit = genome; set = 111 rank swaps of option (9, 1) + 55 re-targets of
+  the link 11:1 → 9; scope = stored start): 56 keep six capped levels, none raises F(6) above 222 (with rank 87 swapped down to 9, F is
+  unchanged: another fixed element then decides). So the gap is not one badly ranked β: inside the windows under parent (9, 1) nothing
+  on the chains of 22 or 11 changes that could flip the comparison: the fuel supplier for those 48 windows is absent.
+
 ## 7. Summary: rule, obstruction, conjecture (labels as stated)
 - No inductive rule G_h → G_(h+1) was found. What a rule must do is now specific (PROVED parts: GAP-NEST, PULSE-NEST, DOUBLE-EQ′; DATA:
   §2, §5, §6): for every level j ≤ h − 1 and each of the four b-step types (member of pair j − 1 × direction), the second mover of pair j
   needs a trigger line whose delay grows by one per extension (PULSE and GAP ≥ h − j), so an extension must lengthen Θ(h) lines (the
   zero-slack ones: all four types at j = h − 1, h − 2 in H6). The records realise this type by type (H6 → G7_best: 87 → 31 deficits, one
   type left), never by a uniform local rule (§4), and never without touching every level (§5).
-- The obstruction located (DATA, instance G7_best_d28, type (9, 1) at level 5): a trigger line cannot be lengthened by a mover whose key
+- The obstruction located, in two layers (DATA on G7_best_d28 and SL41_d28; DOMINANCE-FREEZE PROVED): (i) room: in G7_best the type-(9, 1)
+  pulses of level 5 are 1 (repaired in SL41); (ii) fuel: in SL41 the crossed pair 6 is decided by the β (87, 9, 1) of a capped pair-4
+  mover throughout the windows under parent type (9, 1). A recursive rule must therefore also order ranks: the fuel of a new level must
+  outrank the β's of lower tower movers that lie on its chains while those are parked. (i) in detail: a trigger line cannot be lengthened by a mover whose key
   clock is the flip it is supposed to delay; the delay mover must sit at a level whose key flips one step AFTER the first mover of the
   pair, in exactly the windows of one type. The search space of single splices did not contain one (§6).
 - READING (not proved; the routing problem behind §3 (b)): in a window with key c, x₂_j must see the trigger as a rise of its option-c
@@ -182,7 +207,7 @@ its counter (unit, set, scope). Nothing here is a result in the sense of CLAUDE.
 
 ## 8. Files
 - experiments/lower/l5/: fev.c, revert.py, revert_H5lift_H6.out, fuelsrc.py, fuelsrc.out, fuelsrc_G7.out, utmpl.c, mclimb.c,
-  greedyback.py, greedyback.out, slack.py, slack7.out, fuel6.py, fuel6_SL41.out, fuelctx.out, rec/SL41_d28.txt, trig.py, trig_H6_G7.out, retchain.py, retchain.out, winfail.py, winfail_G7_l6.out, pulses.py, pulses_G7_l5.out, splice.py; out/ (gitignored).
+  greedyback.py, greedyback.out, slack.py, slack7.out, fuel6.py, fuel6_SL41.out, fuelctx.out, domin.py, domin_SL41.out, domfix.py, domfix_SL41.out, rec/SL41_d28.txt, trig.py, trig_H6_G7.out, retchain.py, retchain.out, winfail.py, winfail_G7_l6.out, pulses.py, pulses_G7_l5.out, splice.py; out/ (gitignored).
 - mclimb.c (edit-penalised climb from H5_lift, λ = 0.25-2 F-units per edit, 4 seeds): no improvement of F(5) = 94 in the runs before
   they were stopped (penalty too steep for the neutral drift the climb needs); superseded by the greedy walk back (§5).
 
