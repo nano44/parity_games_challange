@@ -63,7 +63,11 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - 19:2xZ: R218 §4 trilemma (hidden route down / real-up / mirror-up); T3 mirror-up pair DEAD (state-0 cycle; all bits set at step 1),
   4-route checked; Lemma PLAY-BLIND (proved | F1). Pushed c63ca303d, 83ef8829a.
 - 20:1xZ: R218 §6 (Lead hint: H1 without access edges): T4 DEAD; Fact E-CYCLE, Proposition H1-CYCLE. 4-route checked.
-- Next if resumed: §5 items (lemma form of §4; a non-access reset). Nothing running.
+- 20:4xZ-21:0xZ: R219 (Lead box 20:35Z): docs/red/R219-xi.md. Lemma FLIP-E (14,642 checks, 0 viol.), GATE-REARM (cases i / ii RET / iii
+  e-set overtake), Corollary GATE-POLY (f(M) = O(M³) + 2ρ_g on descending plays; «≤ f(d)» DEAD by LEAP), LOCK-(ii/iii); (a): ASC-GATE
+  (ii)/(iii) are locks released by e-set overtakes; allowed by the trilemma; smallest release+re-arm rd3_d4 (L-NEW, frozen in r219/inst).
+  Worktree wt193 = claude/l-new e3d399cd (box 192/193 instances).
+- Next if resumed: R219 §7 (Σρ_g on NOUP genomes first); R218 §5 items (lemma form of §4; a non-access reset). Nothing running.
 - Things only I know: meas.py reads <G>.labels.json (option labels: SET / X / c ...); a «re-arm» = switch INTO an X-labelled option.
   xcheck.py writes _g3.pg next to its input: I run it on copies in $R218_S/x.
 

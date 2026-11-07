@@ -1,0 +1,37 @@
+cR_d2_w8_R22.json N 16 T 24 || i: pairs 13 gates 5 releases 0 rearms 0 maxflips 0 | ii: pairs 8 gates 3 releases 0 rearms 0 maxflips 4 | iii: pairs 2 gates 2 releases 1 rearms 0 maxflips 3
+rd2_d10.json N 20 T 26 || i: pairs 5 gates 2 releases 0 rearms 0 maxflips 0 | ii: pairs 13 gates 8 releases 1 rearms 1 maxflips 4
+rd2_d3.json N 6 T 9 || 
+rd2_d4.json N 8 T 11 || i: pairs 1 gates 1 releases 0 rearms 0 maxflips 0
+rd2_d5.json N 10 T 16 || i: pairs 1 gates 1 releases 0 rearms 0 maxflips 0 | ii: pairs 2 gates 2 releases 0 rearms 0 maxflips 4
+rd2_d6.json N 12 T 16 || i: pairs 11 gates 3 releases 0 rearms 0 maxflips 0 | ii: pairs 5 gates 4 releases 0 rearms 0 maxflips 5
+rd2_d7.json N 14 T 23 || i: pairs 2 gates 2 releases 0 rearms 0 maxflips 0 | ii: pairs 7 gates 5 releases 1 rearms 1 maxflips 4 | iii: pairs 1 gates 1 releases 1 rearms 1 maxflips 2
+rd2_d8.json N 16 T 16 || i: pairs 2 gates 1 releases 0 rearms 0 maxflips 0 | ii: pairs 12 gates 3 releases 0 rearms 0 maxflips 2 | iii: pairs 1 gates 1 releases 0 rearms 0 maxflips 1
+rd2_d9.json N 18 T 21 || i: pairs 22 gates 3 releases 0 rearms 0 maxflips 0 | ii: pairs 45 gates 12 releases 1 rearms 1 maxflips 7 | iii: pairs 5 gates 1 releases 0 rearms 0 maxflips 0
+rd3_d3.json N 6 T 12 || 
+rd3_d4.json N 8 T 18 || i: pairs 1 gates 1 releases 0 rearms 0 maxflips 0 | ii: pairs 1 gates 1 releases 1 rearms 1 maxflips 5
+rd3_d5.json N 10 T 18 || i: pairs 5 gates 2 releases 0 rearms 0 maxflips 0 | ii: pairs 2 gates 1 releases 0 rearms 0 maxflips 0
+rd3_d6.json N 12 T 22 || i: pairs 1 gates 1 releases 0 rearms 0 maxflips 0 | ii: pairs 3 gates 3 releases 0 rearms 0 maxflips 6 | iii: pairs 1 gates 1 releases 0 rearms 0 maxflips 2
+rd3_d7.json N 14 T 25 || ii: pairs 30 gates 9 releases 1 rearms 0 maxflips 4 | iii: pairs 1 gates 1 releases 0 rearms 0 maxflips 0
+rf_d3.json N 6 T 9 || ii: pairs 1 gates 1 releases 0 rearms 0 maxflips 6
+rf_d4.json N 8 T 12 || i: pairs 1 gates 1 releases 0 rearms 0 maxflips 0
+rf_d5.json N 10 T 11 || i: pairs 4 gates 2 releases 0 rearms 0 maxflips 0 | ii: pairs 1 gates 1 releases 0 rearms 0 maxflips 2
+LEAP_k8.json N 37 T 17 || i: pairs 162 gates 24 releases 0 rearms 0 maxflips 0
+RS3.json N 38 T 13 || i: pairs 15 gates 5 releases 0 rearms 0 maxflips 0
+CLR_k8s16.json N 53 T 28 || i: pairs 207 gates 24 releases 0 rearms 0 maxflips 0 | ii: pairs 16 gates 6 releases 0 rearms 0 maxflips 4 | iii: pairs 13 gates 5 releases 2 rearms 1 maxflips 3
+FPORT_n3.json N 76 T 16 || i: pairs 126 gates 18 releases 0 rearms 0 maxflips 0
+t1_n3_M2_s.json N 34 T 12 || i: pairs 15 gates 7 releases 0 rearms 0 maxflips 0
+t1_n4_M2_s.json N 46 T 14 || i: pairs 33 gates 11 releases 0 rearms 0 maxflips 0
+t1_n5_M2_H.json N 59 T 16 || i: pairs 49 gates 13 releases 0 rearms 0 maxflips 0
+t1_n5_M2_s.json N 59 T 16 || i: pairs 58 gates 16 releases 0 rearms 0 maxflips 0
+t1_n8_M2_H.json N 104 T 28 || i: pairs 172 gates 31 releases 0 rearms 0 maxflips 0
+t1_n8_M2_s.json N 104 T 22 || i: pairs 175 gates 37 releases 0 rearms 0 maxflips 0
+t2_n4_M2_s.json N 69 T 9 || i: pairs 33 gates 11 releases 0 rearms 0 maxflips 0
+t2_n6_M0_P.json N 129 T 14 || i: pairs 25 gates 5 releases 0 rearms 0 maxflips 0
+t2_n6_M2_P.json N 141 T 14 || i: pairs 75 gates 15 releases 0 rearms 0 maxflips 0
+t2_n6_M2_s.json N 141 T 13 || i: pairs 90 gates 22 releases 0 rearms 0 maxflips 0
+t3_n4_u0_C.json N 74 T 10 || i: pairs 19 gates 4 releases 0 rearms 0 maxflips 0
+t3_n6_u0_C.json N 155 T 14 || i: pairs 46 gates 11 releases 0 rearms 0 maxflips 0
+t4_n4_S.json N 28 T 4 || 
+t4p_n4_S.json N 32 T 10 || 
+t4p_n6_S.json N 46 T 14 || 
+t4p_n6_s.json N 46 T 9 || 
