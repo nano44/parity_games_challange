@@ -34,6 +34,11 @@ for μ(d), IDEAL-ACYC model on 𝓛^R_d). The predecessor's T-L2 text (2026-10-1
 - IN FLIGHT (detached, die with the container; logs in l4/out/, gitignored): F(4) climbs `LV=4 ANNEAL=0.15 OUT=out/C14b_s21.txt
   $SP/rclimb out/C14_F52.txt 21 300000000` (also s22), `… OUT=out/C16_s1.txt $SP/rclimb out/C16seed.txt 31 300000000` (C16seed =
   C14_F52 + 2 TOP-ADD levels, lift.py), C14_s1 from out/tow14.txt. rclimb uses long double: exact only for d ≤ 16 (ranks ≤ 63).
+- DUTY P-M2D-DEAD: fixes entry 2 (PM-C1 + W-1′ merged) and line L-3 (docs/lower/P-M2D-DEAD-line-L3.txt, sha1 8d7dbfe5…, by
+  l3/mkL3.py); pins in l3/p_m2d_check.py. Waiting for both referees' byte tests of L-3.
+- Records: rec/RECF4_d20_F56.json (1167b8a6…; F 2 6 13 28 56, T 71). Climbs at d 20 use $SP/rclimb128 (__int128; CHAIN=4 / ANYRUN=1
+  scores: exact-doubling rewards; ANNEAL ≤ 0.05 there, 0.3 destroyed the seed).
+- Max consecutive doubling levels observed: 3 (never 4). LATE-PREF (§4b) + lpaudit.py show the window events come from above.
 ### Next
 1. Design a tower pair with four distinct targets whose fourth target rises once per window (§6 OPEN); seed from RECF4_d16_F53.
 2. FROZEN-WINDOW (b) to the referees if the Lead wants a packet (premises: landed only).

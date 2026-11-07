@@ -16,7 +16,7 @@ def orders(G, s):
     k = keys(G, s); d = G["N"] // 2
     return [0 if k[2 * l] < k[2 * l + 1] else 1 for l in range(d)]
 
-C = dict(runs=0, dbl_levels=0, eq_viol=0, fw_hyp=0, fw_viol=0, adj_windows=0, adj_viol=0)
+C = dict(late_windows=0, late_viol=0, runs=0, dbl_levels=0, eq_viol=0, fw_hyp=0, fw_viol=0, adj_windows=0, adj_viol=0)
 def check(G, s0):
     N = G["N"]; d = N // 2; S = run(G, s0); T = len(S) - 1; C["runs"] += 1
     O = [orders(G, s) for s in S]
@@ -40,6 +40,29 @@ def check(G, s0):
             for x in (p, q):
                 if sum(1 for t in range(lo, b) if x in mv[t]) != 1: bad = True
         C["eq_viol"] += bad
+    from sim import val as _val
+    for j in range(1, d - 1):
+        if not (dbl[j] and dbl[j + 1]): continue
+        p, q = 2 * j, 2 * j + 1; c = [O[t][j - 1] for t in range(T + 1)]
+        cuts = [1] + [t for t in range(1, T + 1) if c[t] != c[t - 1]] + [T + 1]
+        for a, b in zip(cuts, cuts[1:]):
+            if a >= b: continue
+            mvs = [(t, x) for t in range(a, b) for x in (p, q) if S[t][x] != S[t - 1][x]]
+            C["late_windows"] += 1
+            if len(mvs) != 2: C["late_viol"] += 1; continue
+            (u1, _), (u2, x2) = mvs
+            better = lambda s: _val(G, s, x2, 1 - s[x2]) > _val(G, s, x2, s[x2])
+            ok = u2 >= u1 + 2 and better(S[u2 - 1]) and not any(better(S[v]) for v in range(a - 1, u2 - 1))
+            def chainset(s):
+                out = set()
+                for k in (0, 1):
+                    y = G["opts"][x2][k][1]
+                    while y >= 0: out.add(y); y = G["opts"][y][s[y]][1]
+                return out
+            if ok:
+                cs = chainset(S[u2 - 2]) | chainset(S[u2 - 1])
+                ok = any(S[u2 - 1][y] != S[u2 - 2][y] for y in cs) and S[u2 - 1][p] == S[u2 - 2][p] and S[u2 - 1][q] == S[u2 - 2][q]
+            C["late_viol"] += not ok
     for l in range(1, d - 1):
         tg = all(sorted([xt(x, 0), xt(x, 1)]) == [2 * l, 2 * l + 1] for x in (2 * l + 2, 2 * l + 3))
         frozen = lambda s: xt(2 * l, s[2 * l]) == xt(2 * l + 1, s[2 * l + 1])

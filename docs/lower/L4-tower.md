@@ -1,7 +1,7 @@
 # L4: the fifth doubling level, the driven-block relaxation, and why stacked doubling stops (L-LOWER successor 4, BOX L4)
 
 Box: Lead BRIEF (L-LOWER successor 4, D1/D14/D18/D20), BOX L4 «the fifth doubling level, i.e. S(h)», angle «EXPLICIT RECURSIVE
-design, with proofs». Written 2026-11-07 from 04:20Z (date -u). Labels: PROVED (lane, unrefereed) / CANDIDATE / DEAD (instance) /
+design, with proofs». Written 2026-11-07 from ~04:00Z (date -u; §4b added ~04:15Z). Labels: PROVED (lane, unrefereed) / CANDIDATE / DEAD (instance) /
 DATA / READING. Nothing here is a result in the sense of CLAUDE.md. Nothing here bounds T polynomially; G-N5-TIME stays OPEN. Not a
 TARGET.md claim (diff in §8).
 
@@ -108,6 +108,32 @@ TARGET.md claim (diff in §8).
   Ξ-target of pair l) at a step that moves no member of pair l, in every (l + 1)-window.
 - Does NOT claim: that towers stop (the lemma allows towers whose pairs have four distinct targets); any bound on S(h) or T.
 
+## 4b. Lemma LATE-PREF (PROVED, lane; §3, the movement rule, R105 ENC and LOCAL) — the general form of §4
+- Hypotheses: G ∈ 𝓛^R_d, 1 ≤ j, j + 1 ≤ d − 1, any run, levels j and j + 1 doubling. W = [t, t′ − 1] a j-window; u₁ < u₂ the steps of
+  W at which the two members of pair j move (E3, E4); x₂ the member moving at u₂, o its option c_j on W.
+- Claim. (i) u₂ ≥ u₁ + 2. (ii) o is not strictly better than x₂'s current option under s_v for v = t − 1, …, u₂ − 2, and is strictly
+  better under s_(u₂−1): x₂'s preference flips exactly at step u₂ − 1. (iii) Step u₂ − 1 is not a j-b-step, moves no member of pair j,
+  and moves some mover on the chain of one of x₂'s two options (under s_(u₂−2) or s_(u₂−1)).
+- Proof. (i) By (E3) at level j the moves of pair j are exactly the flips of its order, i.e. the (j + 1)-b-steps; so [u₁, u₂ − 1] is a
+  (j + 1)-window, in which both members of pair j + 1 move at distinct steps (E3, E4 at level j + 1). (ii) c_j = o on all of W; x₂ is on
+  1 − o until u₂; it does not move at the steps t, …, u₂ − 1, so by the movement rule o is not strictly better under s_(t−1), …,
+  s_(u₂−2); it moves at u₂, so o is strictly better under s_(u₂−1). (iii) t < u₁ + 1 ≤ u₂ − 1 < t′, so u₂ − 1 is an interior step of W;
+  by (ii) the value of o or of x₂'s current option changes at step u₂ − 1, and by ENC and LOCAL (R105) an option's value changes only if
+  a state on its chain changes. ∎
+- Corollary FUEL-PER-WINDOW (PROVED, lane). If levels j − 1, j, j + 1 are doubling (j ≥ 2) and F(j − 1) ≥ 1, the second mover x₂ is the
+  same member in every j-window (E5), and in each of the F(j − 1) + 1 j-windows some mover on a chain of x₂'s options, not in pair
+  j − 1 (pair j − 1 moves only at j-b-steps, E3 at level j − 1) and not in pair j, moves at a step that is interior to the window. These
+  F(j − 1) + 1 steps are distinct. So the Ξ-down-closure of x₂, minus pairs j − 1 and j, moves at ≥ F(j − 1) + 1 distinct steps.
+- §4 is the case «x₂'s options target {2l, 2l + 1} and the difference is frozen»; LATE-PREF needs only two doubling levels.
+- DATA (fwcheck.py counters late_windows / late_viol; lpaudit.py prints the sources): 101 windows on the records, 0 violations. The
+  records feed x₂ from ABOVE: REC_d10_tower j = 2: x₂ = 4, sources 9 (level 4) / 10 (level 5) alternately; RECF4-type d 20 genome
+  (out/C20rec_d20.json, F 2 5 12 26 54): j = 2: x₂ = 5, sources 16 (level 8) / 7 (level 3 = pair j + 1); j = 3: x₂ = 7, sources 10 / 11
+  (level 5) alternately. Every window's event comes from an upward option's chain (re-entrant fuel in L-SI 41's sense).
+- Supply count (READING, from R113 MOVES and PAIR-DOUBLE): in a tower doubling on levels 1, …, j − 1 with F(0) = f₀, the tower pairs
+  0, …, j − 2 make at most 2 + Σ_(i=1)^(j−2) 2(F(i − 1) + 1) moves, which is F(j − 1) + 1 − (2f₀ + 2j − 3) or less: even if every one of
+  them sat on x₂'s chains at the right step, at least 2f₀ + 2j − 3 window events per level must come from movers outside the tower
+  below (fuel). This forces only O(j) fuel events per level, i.e. no compounding by itself; the open question (§6) is timing.
+
 ## 5. DATA: searches for the fifth doubling level (h = 5: F = 2, 6, 14, 30, 62 on levels 0-4)
 - Real model (rclimb.c, own simulator, same rules as l3/sim.py; records re-run by l3/sim.py and L-NEW's box150 Gen via l3/xcheck.py:
   SIM-MISMATCH 0, movescheck counters 0):
@@ -116,6 +142,10 @@ TARGET.md claim (diff in §8).
     4 3; rec/RECF4_d16_F53.json, sha1 9b08c289…). CANDIDATE records (previous best F(4) = 46, RECT_d14_F46). Levels 2 and 3 are
     doubling (12 = 2·5 + 2, 26 = 2·12 + 2), level 4 is one short (53 = 2·26 + 1), level 1 is one short (5 = 2·2 + 1). Their tower pairs
     are not CROSS: pair 2 = (4: 26, 16; 5: 19, 12), pair 3 = (6: 14, 4; 7: 10, 11), pair 4 = (8: 6, 7; 9: 7, 8) — the shape §4 permits.
+  - after 4 more TOP-ADD levels (d 20, rclimb with __int128 values): F(4) = 54 (F 2 5 12 26 54: levels 2, 3, 4 exact doubling over
+    F(1) = 5), then F(4) = 56 (T 71, F 2 6 13 28 56 42 16 8 4 4 2 3 4 3 3 3 4 4 3 2; rec/RECF4_d20_F56.json, sha1 1167b8a6…; box150 Gen
+    SIM-MISMATCH 0, movescheck 0): level 1 doubles (6), level 2 one short (13), level 3 doubles (28), level 4 two short (56 = 2·28).
+    CANDIDATE record. No run so far has four CONSECUTIVE doubling levels (max 3: REC_d10_tower levels 1-3, the d 20 climb levels 2-4).
   - forced crossed pair 4 (9 → (6, 7), 4's option re-pointed; NOMUT 6-9; three annealing schedules, 2·10^8 proposals): F(4) ≤ 34.
   - forced CROSS pair 2 under a targeting pair 3 (seedCR2): F 2 4 10 20 …: level 3 stays below doubling (CR2_d10.json).
 - Relaxation (drv.c, EB = 2, block of the d 14 tower): climbs reach Fmax₂ F(4) = 30 (below the real 52 found by the real climb; the
