@@ -38,7 +38,7 @@ upa() { n=$1; shift; f=out/.pid_$n; [ -f $f ] && kill -0 $(cat $f) 2>/dev/null &
 # STOPPED 20:5xZ (Lead 20:5xZ; resume point in out/D_l6g.log): ENVX="LANEANNEAL=0.15 L6SCORE=1 L6GATE=222 FROZENBELOW=12 NMIN=2 NMAX=4 REPT=20,110 TESTOUT=out/D_l6g_TEST.txt TESTGATE=222" upa D_l6g D_l6g out/seed_SL41_d28.txt 390000 6 5 6
 # 20:5xZ (Lead 20:5xZ): D_l6h = D_l6g restarted from out/L6Z_KILL238_d28.txt (sha1 54450906; caps 6, npaths 0, F(6) 238), gate 238
 # (L6GATE=238: drops below 238 cost 1e9), same edits, ANNEAL 0.15; seeds 395000+. Target F(6) = 254 (HIT, seventh capped level).
-ENVX="LANEANNEAL=0.15 L6SCORE=1 L6GATE=238 FROZENBELOW=12 NMIN=2 NMAX=4 REPT=20,110" upa D_l6h D_l6h out/L6Z_KILL238_d28.txt 395000 6 5 6
+# STOPPED 22:3xZ (Lead 22:31Z; resume point in out/D_l6h.log): ENVX="LANEANNEAL=0.15 L6SCORE=1 L6GATE=238 FROZENBELOW=12 NMIN=2 NMAX=4 REPT=20,110" upa D_l6h D_l6h out/L6Z_KILL238_d28.txt 395000 6 5 6
 # freezer (Lead 20:5xZ item 2): copies every new constrained best above the running max to out/L6_FRZ_F<F6>_<lane>.txt (+ out/FROZEN.txt)
 # 21:4xZ (Lead 21:36Z, L-LOWER 8 L8-design §1c): D_l6w from REC238 (out/L6Z_KILL238_d28.txt): rclimb30 env L6W: score (caps, [F6 >= 238],
 # -npaths, -#length-1 6-windows, F6) = caps*1e12 + g*1e11 - npaths*1e8 - n1*1e4 + F6 (= Python reference on REC238/230, SL41, 20 mutants);
@@ -48,5 +48,12 @@ ENVX="LANEANNEAL=0.15 L6SCORE=1 L6W=1 L6GATE=238 FIX=20,34 FROZENBELOW=12 NMIN=2
 # 21:4xZ: query-2 redo finished (one q2 worker left) -> freed core: D_l6w2 = D_l6w's exact settings, second seed stream 405000+
 # 21:5xZ (Lead 21:46Z, L-LOWER 8 69d7005a: mirror trigger needs lower pairs 2-4 + helpers): D_l6w2 edits EVERY mover except pair 5
 # (FROZENBELOW 0, FROZENSET 10,11: no field of 10 / 11 changes; gate swaps of level 5 skipped), NMIN 2 / NMAX 6; FIX 20,34; L6W score.
-ENVX="LANEANNEAL=0.15 L6SCORE=1 L6W=1 L6GATE=238 FIX=20,34 FROZENBELOW=0 FROZENSET=10,11 NMIN=2 NMAX=6" upa D_l6w2 D_l6w2 out/L6Z_KILL238_d28.txt 405000 6 5 6
+# STOPPED 23:3xZ (Lead 23:36Z; resume in out/D_l6w2.log): ENVX="LANEANNEAL=0.15 L6SCORE=1 L6W=1 L6GATE=238 FIX=20,34 FROZENBELOW=0 FROZENSET=10,11 NMIN=2 NMAX=6" upa D_l6w2 D_l6w2 out/L6Z_KILL238_d28.txt 405000 6 5 6
+# 22:3xZ (Lead 22:31Z): D_l6v = L6W score, gate 240, from out/L6_FRZ_F240_D_l6w.txt (sha1 3c5ccc70; F(6) 240, n1 4), FIX 20,34, movers >= 12,
+# NMIN 2 / NMAX 4, ANNEAL 0.15; seeds 410000+.
+ENVX="LANEANNEAL=0.15 L6SCORE=1 L6W=1 L6GATE=240 FIX=20,34 FROZENBELOW=12 NMIN=2 NMAX=4" upa D_l6v D_l6v out/L6_FRZ_F240_D_l6w.txt 410000 6 5 6
+# 23:3xZ: query 2 COMPLETE (box28/log/lsi_q2_cert.txt) -> its 2 cores: D_l6u / D_l6u2 = D_l6v's settings from out/L6_FRZ_F248_D_l6v.txt
+# (sha1 ba061180; F(6) 248, n1 3), gate 248; seeds 415000+ / 420000+.
+ENVX="LANEANNEAL=0.15 L6SCORE=1 L6W=1 L6GATE=248 FIX=20,34 FROZENBELOW=12 NMIN=2 NMAX=4" upa D_l6u D_l6u out/L6_FRZ_F248_D_l6v.txt 415000 6 5 6
+ENVX="LANEANNEAL=0.15 L6SCORE=1 L6W=1 L6GATE=248 FIX=20,34 FROZENBELOW=12 NMIN=2 NMAX=4" upa D_l6u2 D_l6u2 out/L6_FRZ_F248_D_l6v.txt 420000 6 5 6
 f=out/.pid_freezer; if [ -f $f ] && kill -0 $(cat $f) 2>/dev/null; then echo "freezer running"; else setsid nohup ./freezer.sh < /dev/null > /dev/null 2>&1 & sleep 1; pgrep -f "^/bin/bash ./freezer.sh" > $f; echo "freezer launched $(cat $f)"; fi

@@ -1,35 +1,37 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## RESUME POINT -- successor 11 (L-COMP 11, Opus 5.5), GO 11:02Z 2026-11-07 (handover check a7f9ebad, Lead score 5)
-- Relaunch after any restart: experiments/comp/box28/relaunch_all.sh (starts diskguard, xval_d3 cubes 4 7 8 11 12, q2pieces.sh, commit_loop,
-  box30/relaunch30.sh = lanes B_d32 + D_d28). In a NEW container first: write box30/out/B_d32.unit / D_d28.unit from the last unit in
-  out/<lane>.log (+1) -- .unit files are local only -- and re-add the local excludes (.git/info/exclude: box28/frup, box28/cubes/,
-  box28/log/*.out|*.run, box30/bin/, box30/out/.pid_*, *.unit, *_u<k>.txt|.run), else commit_loop commits binaries.
-- Lane D (Lead 11:02Z): D_d32 SLACKH lane REPLACED by D_d28 = L-LOWER 5 rec/SL41_d28.txt (claude/l-lower eeb25f6e; copy box30/l-lower/
-  SL41_d28.txt, sha1 c1b46c31 checked), GUARD 5, LV 6 (score F(6)), FROZENBELOW=12 (no field of movers 0-11 = pairs 0-5 mutated), seeds
-  350000+. Re-measured: rclimb30 T 290 F 2 6 14 30 62 126 222 158 112 80 ...; replay30 the same; slack (SLACKDBG=7) 0 violations j 1-5.
-  d 32 variant out/seed_SL41_d32.txt (4 TOP-ADD, sha1 c2012dcd; same T/F) prepared, NOT run (no free core).
-- 11:39Z (Lead 11:42Z): B_d32 STOPPED (resume: unit 7 = seed 310007, out/B_d32.log). D_d28: NMIN 2 / NMAX 3 from unit 1. D_d28b (B's core):
-  fuel-biased (rclimb30 env BIAS/BIAS19/BIAS19P/BIASR/BIASP; relaunch30.sh comments), seeds 360000+; from unit 4 NMAX 4, BIAS19P 0.1
-  (Lead 12:36Z). Regression: defaults byte-identical to the original under SCORE=T (8 improving steps) and LV=7.
-- B_d32 (earlier): resumed at unit 6 (seed 310006), best F(6) 190.
-- 14:28Z (Lead 14:29Z): D_d28 STOPPED (resume unit 9 = seed 350009, out/D_d28.log). Query 2 now TWO workers: box28/q2shard.sh SHARD 0/1
-  of 2 (fixed piece index i in q2pieces.sh's enumeration order, VERIFIED ones included; worker k takes i % 2 == k; dry run: 39 + 38 = 77
-  pieces/parts, disjoint). relaunch_all.sh starts both (pid files cubes/.pid_q2, .pid_q2b). D_d28b is the one SL41 brute lane.
-- 16:5xZ: xval_d3 COMPLETE 16/16 (frup = drup = P-TR3). Query 2 re-sharded to THREE workers (i % 3; .pid_q2, .pid_q2b, .pid_q2c) by
-  box28/q2reshard3.sh at the c0s1p0 boundary (log/q2/reshard.txt). Trunk merged 006d9071 (Lead 15:10Z; verify.yml timeout 60).
-- 17:2xZ-19:2xZ L6 lanes (Lead 17:27Z/17:31Z/17:42Z; rclimb30 env L6SCORE [+ L6GATE], = guard_l6.score on SL41 + 40 mutants): D_l6 (stopped,
-  best 134, L6_BEST_D_l6_d28), D_l6z (ANNEAL 0, best 190, L6Z_BEST_d28), D_l6g (gated, seeds 390000+): npaths 0 at F(6) = 222 exactly
-  (L6G_TEST1_d28 sha1 86cf1903; boundary, RC-PLATEAU not killed). Query 2: shard 2/3 deferred (q2chain2.sh), final sweep q2sweep.sh.
-- 20:52Z D_l6z (ungated, ANNEAL 0) found caps 6 + npaths 0 + F(6) 230, then 238: frozen files out/L6Z_KILL230_d28.txt (29faf25f),
-  L6Z_KILL238_d28.txt (54450906); in text call them L6Z_REC230 / L6Z_REC238 (Lead 21:19Z). LABEL (Lead 21:19Z, from L-LOWER 8 + L6 §5d):
-  RC-PLATEAU is the implication «Xi-path q5 -> pair 6 => F(6) <= 222»; an RC-free genome with F(6) > 222 does NOT refute it: it stays
-  a CONJECTURE. REC230/238 refute (DATA) only «RC-free 6-capped genomes stay <= 222». My 20:53Z «KILLED» wording was wrong for that reason.
-  Now: D_l6h (gate 238, from REC238, seeds 395000+) + D_l6z; freezer.sh freezes every constrained best > running max (out/FROZEN.txt).
-- MY BUG (19:2xZ): q2stop2.sh's glob rm of log/q2/*.chk.tmp killed the live drup outputs of OTHER workers (c0s1p2, c0s1p4 lost; not
-  certified; q2sweep.sh re-runs them). Rule: never glob-delete a shared work dir; delete only files named by the stopped process.
-  Also: `setsid nohup X & echo $!` can record setsid's short-lived parent: re-read the pid with pgrep -f "^/bin/bash ./X". Query 2: from c0s0p1q0. xval_d3 cube 3 was already done (xval_d3.txt, b317e04a).
+## RESUME POINT -- successor 11 (L-COMP 11, Opus 5.5), updated 2026-11-07 23:3xZ by date -u (handover-ready; GO was 11:02Z)
+### RELAUNCH (after a restart or in a new container)
+1. New container only: scripts/setup_oink.sh (verify.sh needs Oink); re-add local excludes to .git/info/exclude:
+   experiments/comp/box28/frup, box28/cubes/, box28/log/*.out, box28/log/*.run, box30/bin/, box30/out/.pid_*, box30/out/*.unit,
+   box30/out/*_u[0-9]*.txt, box30/out/*_u[0-9]*.run, box30/out/.zseen (all under experiments/comp/), else commit_loop commits binaries.
+   Write each live lane's out/<lane>.unit = (last unit in out/<lane>.log) + 1 (.unit files are local only).
+2. experiments/comp/box28/relaunch_all.sh (idempotent: diskguard, commit_loop, then box30/relaunch30.sh = the climb lanes + freezer).
+   Query 2 and xval lines are commented DONE. Kill jobs by PID files only (box30/out/.pid_<lane>, box28/cubes/.pid_<name>); never edit a
+   running bash script (sed -i makes a new inode: the running copy keeps the old text; restart it to take effect).
+### LIVE (4 climbs on 4 cores, Lead 23:36Z) -- rclimb30.c sha1 f7c31685 (env L6SCORE/L6W/L6GATE/FIX/FROZENBELOW/FROZENSET/NMIN/NMAX/...)
+- Score L6W = (caps, [F(6) >= gate], -npaths(q5, pair 6), -n1, F(6)); n1 = length-1 6-windows (guard_l6.windows); = Python reference
+  (L-LOWER guard_l6.py 18e85589 + sim6.py 6953306e at claude/l-lower bca48384; copies only in a scratchpad -- git show them again).
+  Guard: options 20 (10:0) -> 17 and 34 (17:0) -> 22 fixed (FIX 20,34). Edits on movers >= 12. HIT = F(0..6) = 2,6,...,254.
+- D_l6w (from REC238, gate 238, seeds 400000+), D_l6v (from L6_FRZ_F240, gate 240, 410000+), D_l6u / D_l6u2 (from L6_FRZ_F248, gate 248,
+  415000+ / 420000+). freezer.sh copies every new constrained best to out/L6_FRZ_F<F6>_<lane>.txt (+ sha1 line in out/FROZEN.txt).
+- Constrained bests (caps 6, npaths 0; DATA, sim6 + guard_l6 + replay30 agree): 238 REC238 (file L6Z_KILL238_d28, n1 8) -> 240/242/244
+  (n1 4) -> 246 (n1 3) -> 248 L6_FRZ_F248_D_l6v.txt sha1 ba061180 (n1 3, windows at steps 44, 79, 114; 248 = 254 - 2 n1 exactly).
+- Stopped lanes (resume points in out/<lane>.log): B_d32, D_d28, D_d28b, D_l6, D_l6g, D_l6h, D_l6z, D_l6w2.
+### DONE this session (all DATA/CERT; details in the Lead messages and the files)
+- Query 2 (L-SI frame «T_2(3) >= 13») CERTIFIED: 84-cube complete split (1,024-pattern check), all Glucose UNSAT + drup.c VERIFIED;
+  table box28/log/lsi_q2_cert.txt. ONE checker only (frup not run; proofs deleted) -- state this with every mention (Lead 23:36Z).
+- xval_d3: frup = drup = P-TR3 on 16/16 cubes (box28/README.md section xval_d3).
+- RC-PLATEAU: stays a CONJECTURE (implication; Lead 21:19Z). REC230/REC238 (files L6Z_KILL230/238_d28) refute only «RC-free 6-capped
+  genomes stay <= 222». Constrained climb reached 248 (above).
+### Things only I know (successor 11)
+- A climb's out/<lane>_best.txt changes only at unit END; read live progress in out/<lane>_u<k>.txt; frozen copies are L6*_d28 / L6_FRZ_*.
+- push.sh now takes ~30-45 min (trunk merged 006d9071): commit_loop rounds ~45-55 min apart. Hand-commit urgent files by explicit path
+  only when pgrep -f "bash scripts/push.sh" is empty (commit_loop sleeps 600 s right after its push).
+- MY BUG 17:40Z: q2stop2.sh glob-deleted log/q2/*.chk.tmp of OTHER workers (c0s1p2/p4 drup results lost; re-run). Never glob-delete in a
+  shared work dir; delete only files named by the stopped process.
+- `setsid nohup X &; echo $!` may record setsid's short-lived parent: re-read with pgrep -f "^/bin/bash ./X".
 
 ## FINAL (successor 9, 2026-11-07 05:2xZ by date -u): query 2 handed to L-COMP 10 (finer split); proofs in this scratchpad are not reachable from other sessions.
 - At hand-off: query 2 CERTIFIED cubes 1, 2, 3, 5, 6, 7 and sub-cube c4s1 (log/q2_cert/); open: c0s0..c0s3, c4s0, c4s2, c4s3 (restarts every
