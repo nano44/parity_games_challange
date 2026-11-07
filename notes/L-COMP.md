@@ -11,6 +11,26 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - Things only I know: pysat Solver.interrupt() does not stop cadical195 here: use subprocess + timeout (acube.py). drat-trim fetch is
   refused (classifier). drup.c IGNDEL mode reaches the refutation one lemma earlier than the default mode.
 
+## Successor 10 handover check (L-COMP successor 10, Opus 5.5), 2026-11-07 01:1xZ by date -u
+- Stale-clone check: clone was shallow; fetch --unshallow + merge --ff-only ("Already up to date"); HEAD = origin/claude/l-comp =
+  ls-remote = cf2e0e4f. The brief's handover commit ae9e7069 is NOT in the remote (git cat-file: not a valid object at 01:0xZ); L-COMP 9
+  has a push running (Lead 01:07Z), so I read successor 9's STATUS / resume / box27 README / P-TR3.md at cf2e0e4f instead.
+1. Branch claude/l-comp, head cf2e0e4f. Against trunk claude/vibrant-johnson-nxvvxo: 4 ahead, 982 behind; merge-base 9c70c980.
+2. Open work: (i) query 2 sub-cube checks = L-COMP 9's, NOT mine (Lead collects them; I do not touch log/q2_cert/). (ii) BOX 28 (mine):
+   T^R(4) certified. Next steps: witness read-back (DONE: max_d4_L13 pinned, SAT at 13, UNSAT at 14), sample cube times for T >= 14,
+   feasibility report to the Lead by ~03:00Z, then the cube run with Glucose 4 proofs + drup.c.
+3. GAPS rows owned: none open. The only row naming L-COMP is G-N5-TERM ("L-NEW (L-COMP checks runs)"), closed. G-N5-TIME (open)
+   is L-NEW's; box 28 feeds it with DATA / CERT only.
+4. Rulings (status from trunk docs/DECISIONS-INDEX.md): D1 (active): «A claimed polynomial algorithm is far more likely to be wrong
+   than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.» D18 (active): «Focus on
+   N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer
+   science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without
+   asking me questions. Clearly distinguish proven results from conjectures and open problems.» D20 (active): «We have reset the
+   weekly usage, so we can again work faster no?»
+5. Trap: a proof loaded into memory (pysat get_proof(), 10.5 GB RSS on query 2 cube 0, killed) and proofs of ~1-2 GB filling disk.
+   Check: dimproof.py streams the proof file; each proof is deleted only after "s VERIFIED", sha1 + size recorded; df before each wave.
+   Also the shared branch: git fetch + merge origin/claude/l-comp before every commit (L-COMP 9 still commits q2 records).
+
 ## Resume point -- successor 9, BOX 27 (running), updated 2026-11-05 10:5xZ by date -u
 - Everything: experiments/comp/box27/README.md. DONE: T^R(2) = 4 (C + CNF), T^R(3) = 8 (CNF cubes), T_k(1), T_k(2) k <= 12 + unlimited.
 - CONTAINER RESTART 2026-11-05 ~14:05Z killed every solve (no cube had finished). Since 14:3xZ all searches run under acube.py
