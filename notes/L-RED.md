@@ -59,6 +59,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   MAIN d 5 T >= 17 cubes 562 done / 6 split (PARK line); d 4 top-level any-mover r 8 cubes 202 done / 1 split (r214/run_top4.sh).
 - Now: (b) support query r214/support.sh d H 3 15 (d 5-8, horizons 16 / 22 / 26 / 30 = best known T^R; UNSAT exact only up to H);
   (a) tw climbs (r214/tw.c, single stored start, LEV=4 score) from REC_d10_tower + top-extensions d 11 / 12.
+- DATA (Lead 03:25Z, stopped): least d for a 15-move level-3 Ξ-target ∈ [6, 10]; d 5 UNSAT within horizon 16 only (1,206 s);
+  d 6 / 7 / 8 (horizons 22 / 26 / 30) UNKNOWN at 2 h; d 6 support cubes stopped at 0 done. d 10 attained by REC_d10_tower (movers 6, 7).
+- Certified T^R lower bounds (all starts, fa): d 9 >= 47 (tw_d9_T47), d 10 >= 53 (tw_d10_T53). T-table climbs d 8, 11-14: r214/runtw.sh jobsT.txt 3.
 - Things only I know:
   - lemck crashes (IndexError) on L-LOWER JSONs (gates not 0..M-1): r214/renum.py first. tw/fa need the R197 beta convention (conv.py).
   - The predecessor's container pushed a post-park snapshot (3ac77661) after my first ls-remote: merged (aef66967), cube state = union.

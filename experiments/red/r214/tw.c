@@ -8,7 +8,7 @@
 #include <string.h>
 #include <stdint.h>
 #include <math.h>
-#define MAXN 26
+#define MAXN 28
 int m, N, NU, M;                      /* N movers (levels 0..m), NU = 2m upper movers, M = 2N options */
 typedef struct { int xt[MAXN][2]; int br[2*MAXN]; int bp[2*MAXN]; int gate[MAXN][2]; } Gen;
 static int lev(int v) { return v / 2; }
