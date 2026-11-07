@@ -86,6 +86,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   doubling, level 4 frozen, top level). freeze77 data: freezing a pair above a doubling level kills L-LOWER's runs (fuel collapse).
 - Fourth pass (Lead 02:50Z, FUEL-RECURSION; note §11): (i) g polynomial (FEEDBACK-conditional), (ii) HIT; (iii) RE-ENTRY DEAD; the
   iteration is circular. OPEN.
+- BOX 78 (Lead 03:13Z; note §12): no F(4) = 62 tower (annealing 5 x 1.5M, re-entrant targets; seeds are local optima); |E_l| ~ T on all
+  records; RANK grows 3 -> 7 with d; PHI_K / EXACT-ENERGY start near their exponential maxima; none is an interface quantity.
 
 ## BOX 76 (successor 41; Lead 2026-11-07: TROPICAL-WINDOW, max-plus route to MOVES-2D) — DONE: route DEAD in its window-type and Xi-DAG forms
 - Note docs/si/N5-TROPICAL-box76.md; tools experiments/si/box76/{tw.py (own simulator + window tables), tw2.py, tw3.py, tw4.py,
