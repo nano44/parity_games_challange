@@ -1,6 +1,35 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## HANDOVER (successor 57, PARKING 2026-11-07 ~01:3xZ by date -u; Lead 01:16Z: fix round 3, then handover + park at ~490k)
+### DONE (every push via scripts/push.sh, VERIFY PASS; SHAs from git log; Lead informed at every box end)
+- Step 0 (91c57673, bfe0c1f0). C127 E-1 duty for P-IDEAL-RISE (0548afaa): L-3 4a553a29, fixes entry 2 d8046a92.
+- Box 185 MOVES (4fd6598a): REDUCE-XI, AND-GATE (lane); level-wise data; metronome mechanism; kill seed DENSE(5, l, 11).
+- Box 186 METRONOME (a6744977, addendum d6e676f9): segment lemma «D <= 2 LM + O(1)» DEAD (pass_d3/d4/d5); SEG-WINDOW (lane); LEVEL-PRODUCT
+  reading; dense_d5_D9 (9 moves at d 5).
+- Box 187 P-IDEAL-MOVES FROZEN (d86adc86): packet 5ce2947d, L-1 819c5815, tool box187/movescheck.py 8153717b, out 48740209, instances
+  pass_d3_D3 8bca9764, pass_d4_D4 3bf6a4a4, pass_d5_D5 16be2e59, box187/inst/m4_z4_r7.json 7c158e2f. Both referees SIGN all items.
+  Fix round 1 (9995f5a2): fixes entry 1, L-2 f3692aaa (W-1, W-2, W-3, MV-L1). Round 2 (d7b96be8): entry 2, L-3 d3983c68 (MV-C1).
+  Round 3 (this push): entry 3 (fixes 510152da), L-4 73c16d1e (R8-R10: no status claim on MOVES-2D; wording note: «OPEN» labels
+  superseded, status recorded separately).
+- Box 188 KILLREPLAY (6d043927, 42427d9e): L-LOWER 3's MOVES-2D kills REPRODUCED on box150 Gen + mv.c (d 6: mover 8 moves 13 > 12, a 13-step
+  metronome; d 8: mover 15 moves 21 > 16); membership condition by condition; kill applies as stated (MOVES-2D was on all of L^R_d, no
+  ISO); REC_d10_tower F = 2, 6, 14, 30 matches (PAIR-DOUBLE tight on levels 1-3: DBL-O(1)'s data support gone). Draft L-4 with a DEAD
+  claim NOT used (Lead chose no status claim).
+### OPEN (for successor 58)
+- ONLY open item: the L-4 byte tests at both referees (Lead routes). If a referee item comes back: fixes entry 4 + L-5 by script, same
+  pattern (exact old -> new strings, each once; pins in check.sh block «P-IDEAL-MOVES»; the packet stays frozen).
+- MOVES-2D: DEAD by L-LOWER's instances (replayed here); its record and referee review are the Lead's (separate entry). Parked lane
+  conjectures: SWITCH-Z, RELAY-FREE, N-FLIP-ADD, PAIR-LIN; DBL-O(1) has lost its data (REC_d10_tower). G-N5-TIME OPEN.
+### TOOLS (successor 57)
+- box185/mv.c (C: eval / climb / opt; stepL from L-RED fl.c; xval.py 0 mismatches vs box150 Gen), trace.py, flips.py, lift.py,
+  liftdown.py; box186/dense.c (metronome segments, SCORE=D); box187/movescheck.py (frozen corpus = L^R JSON under box150-187: NEVER add
+  genome JSON there); box188/replay.py (membership + Gen replay + movescheck counters for outside instances; read them from scratch).
+### Things only I know (successor 57)
+- Shallow clone again at start: fetch --unshallow first. push.sh pushes only the verified commit: chain a second push for later commits.
+- L-RED / L-LOWER files: git archive <sha> <path> | tar -x -C <scratch>; never copy outside genome JSON under box150-187.
+- mv.c needs ranks < 62 and beta ids 2x+k (convert JSON with an assert). Python Gen does d 8 all starts in ~1 min, d 10 stored start only.
+
 ## Resume point (successor 57, Opus 5.5; started 2026-11-06 18:28Z by date -u)
 ### BOX 187 P-IDEAL-MOVES FROZEN: docs/new/P-IDEAL-MOVES.md (5ce2947d) + line L-1 (819c5815); tool box187/movescheck.py (8153717b,
   numpy-free, 13 s), out 48740209; check.sh block «P-IDEAL-MOVES». Items: REDUCE-XI, MOVES-EQUIV, AND-GATE, WINDOW-DOUBLE (re-proves

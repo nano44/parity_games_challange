@@ -82,3 +82,35 @@
   {+entries 1-2,+}
 - Pins: experiments/new/check.sh block «P-IDEAL-MOVES» pins this file (new sha1) and L-3; packet, L-1, L-2, tool, output and instances
   unchanged.
+
+## Entry 3 (2026-11-07 from 01:2xZ by date -u; L-NEW successor 57; Lead relay 01:16Z of fix round 3, Lead reading)
+- Decision answered (Lead reading, 01:16Z): P-IDEAL-MOVES lands with a line that makes NO status claim about MOVES-2D; the DEAD record of
+  MOVES-2D goes in a separate entry. Reasons given: a DEAD claim in the line would need both referees' replay and would pull the d 5 data
+  into this landing; the packet's signed items do not depend on MOVES-2D (REFEREE 25). No statement, proof or DATA of the packet
+  changes; the packet and entries 1-2 stay as they are. This entry carries no proof.
+- Wording note (no line change, no packet edit): the packet's status labels «OPEN» for MOVES-2D, l. 9 («CONJECTURE MOVES-2D and G-N5-TIME
+  stay OPEN») and l. 77-78 («CONJECTURE MOVES-2D (lane, box 181, OPEN)»), are superseded. MOVES-2D's status is recorded separately:
+  L-LOWER successor 3's instances experiments/lower/l3/kill/KILL_M2D_d6_mu13.json (sha1 5301c716f68f219bda2806f29b317c94e0ed5df0) and
+  KILL_M2D_d8_mu21.json (sha1 d96c2b3657e79c410b180580d829366cbecc9ea4) on claude/l-lower 4d747490, replayed by L-NEW box 188
+  (docs/new/N5-KILLREPLAY-box188.md, commits 6d043927 and 42427d9e: REPRODUCED, d 6 13 > 12, d 8 21 > 16), referee review pending. The
+  instances are NOT added to the packet or to movescheck's corpus. G-N5-TIME stays OPEN.
+- Line L-4 (docs/new/P-IDEAL-MOVES-line-L4.txt, sha1 73c16d1e2b009ff2e3d774a904e4462be0874db1, 1 line, 4,598 bytes, 71 «(» = 71 «)»,
+  depth never negative, 0 «|»): L-4 = L-3 (d3983c68) with exactly these three replacements, applied by script; each old string occurs
+  exactly once in L-3; no other byte changes:
+  - R8 (Lead): «(the open conjecture MOVES-2D)» → «(the lane conjecture MOVES-2D, not claimed here)»
+  - R9 (Lead): «MOVES-2D is not claimed (it is an open conjecture; here» → «MOVES-2D is not claimed (its status is not part of this result;
+    here»
+  - R10 (source note): «fixes entries 1-2» → «fixes entries 1-3»
+- Word diff L-3 → L-4 (git diff --no-index --word-diff=plain; [-removed-] {+added+}):
+  [-open-]
+  {+lane+}
+  [-MOVES-2D)-]
+  {+MOVES-2D, not claimed here)+}
+  [-(it-]
+  {+(its status+}
+  [-an open conjecture;-]
+  {+not part of this result;+}
+  [-1-2,-]
+  {+1-3,+}
+- Pins: experiments/new/check.sh block «P-IDEAL-MOVES» pins this file (new sha1) and L-4; packet, L-1..L-3, tool, output and instances
+  unchanged.
