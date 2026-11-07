@@ -140,7 +140,8 @@ its counter (unit, set, scope). Nothing here is a result in the sense of CLAUDE.
 - Pulses and gaps repaired, level 6 still fails: the FUEL obstruction (DATA). A short targeted climb (mclimb.c SLACK=5:2 GUARD=5 LV=6
   ANNEAL=0.02, seed 41, 2.2·10^6 of 2·10^7 steps to the best; a validation run of the score, not a brute climb campaign) from
   G7_best_d28 gives rec/SL41_d28.txt (sha1 c1b46c319fd614e5bcb0909b616a9f2833e0dfee; d 28; T 290; F 2 6 14 30 62 126 222 158 …;
-  6 capped; identical T, F under fev, utmpl's exact-order simulator and l3/sim.py; not cross-checked against L-NEW's box150 Gen):
+  6 capped; identical T, F under fev, utmpl's exact-order simulator and l3/sim.py; l3/xcheck.py against L-NEW's box150 Gen at claude/l-new
+  ae8e185d: SIM-MISMATCH 0, movescheck counters all 0, for SL41_d28 and G7_best_d28):
   slack.py with H = 7 finds 0 violations at levels 1-5 (every PULSE and GAP ≥ 7 − j), yet F(6) = 222 and the same 48 level-6 windows
   fail (now 2 steps long). fuel6.py → fuel6_SL41.out (unit = 6-window; scope = stored start): the first mover of pair 6 is 13
   (key-gated in every window); the second mover 12 is triggered per (parent type, own type): (8,0)/(10,0) ← 22, (8,1)/(10,0) ← 20,
