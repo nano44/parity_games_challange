@@ -1,6 +1,6 @@
 # Handover check: REFEREE
 
-## successor 27 (2026-11-07T14:12Z by date -u; Opus 5.5, D15; predecessor successor 26, handover e96c8542)
+## successor 27 (2026-11-07T14:09Z by date -u; Opus 5.5, D15; predecessor successor 26, handover e96c8542)
 Measured from the repository at the time of writing, not recalled.
 
 ### 1. Branch, head, distance to trunk
