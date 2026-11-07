@@ -4,8 +4,8 @@ For every state t and every gate g of a level >= 1 option: Lambda of both faces;
 (equal values). At non-RET states with Lambda(e_g) = Lambda(beta_g) = w less relevant than e_g: check
   sigma_bar(g) = e  <=>  E(e_g) <lex E(beta_g)   (E = e-vertices of Pi; lex by the most relevant element of the symmetric difference).
 Per gate: flips (face changes between consecutive states), RET states and stretches, tie states, and per maximal interval with both
-Lambda's fixed: D_E(y) and D_E(x') (distinct e-sets of the W-target / Xi-target movers) -> bound sum over intervals of
-2*min(D_E(y), D_E(x')) + 1 (only intervals with equal Lambda's can flip). Prints totals and the worst gate.
+Lambda's fixed: D_E(y) and D_E(x') (distinct e-sets of the W-target / Xi-target movers) -> Lemma GATE-REARM's bound (#J - 1) + sum over
+equal-Lambda intervals J of 2*min(D_E^J(y), D_E^J(x')) - 1 + 2 rho_J (+ H_g, flips in intervals with the shared cycle node above e_g). Prints totals and the worst gate.
 Usage: check219.py G.json ..."""
 import sys, json
 import own
@@ -36,17 +36,21 @@ def run(f):
                 if (tau[g] == e) != lexlt(E(vals[e]), E(vals[b])): viol += 1
         fl = sum(faces[i] != faces[i - 1] for i in range(1, len(faces)))
         rs = sum(1 for i in range(len(ret)) if ret[i] and (i == 0 or not ret[i - 1]))
-        bound = 0; i = 0
+        Js = []; i = 0
         while i < len(lam):
             j = i
             while j + 1 < len(lam) and lam[j + 1] == lam[i]: j += 1
+            Js.append((i, j)); i = j + 1
+        bound = len(Js) - 1                          # Lemma GATE-REARM, exactly: (#J - 1) + sum over equal-Lambda J
+        for (i, j) in Js:
             if lam[i][0] == lam[i][1]:
-                dy = len(set(Ey[i:j + 1])); dx = len(set(Ex[i:j + 1])); bound += 2 * min(dy, dx) + 1
-            i = j + 1
+                dy = len(set(Ey[i:j + 1])); dx = len(set(Ex[i:j + 1]))
+                rsJ = sum(1 for t in range(i, j + 1) if ret[t] and (t == i or not ret[t - 1]))
+                bound += 2 * min(dy, dx) - 1 + 2 * rsJ
         hf = sum(1 for i in range(1, len(faces)) if faces[i] != faces[i - 1] and (hi[i] or hi[i - 1]))
         stats[q] = (fl, sum(ret), rs, sum(tie), bound, sum(hi), hf)
     worst = max(stats, key=lambda q: stats[q][0])
-    over = sum(1 for q in stats if stats[q][0] > stats[q][4] + 2 * stats[q][2] + 2 * stats[q][3])
+    over = sum(1 for q in stats if stats[q][0] > stats[q][4] + stats[q][6])
     print(f"{f.split('/')[-1]} N {G['N']} T {len(out) - 1} gates {len(gates)} | FLIP-E checked {chk} violations {viol} | "
           f"RET states {sum(v[1] for v in stats.values())} stretches {sum(v[2] for v in stats.values())} ties {sum(v[3] for v in stats.values())} | "
           f"hi-w states {sum(v[5] for v in stats.values())} hi-w flips {sum(v[6] for v in stats.values())} | max flips {stats[worst][0]} (bound {stats[worst][4]}, RET-str {stats[worst][2]}, ties {stats[worst][3]}) | gates over bound {over}", flush=True)
