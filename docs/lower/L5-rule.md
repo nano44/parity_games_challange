@@ -92,10 +92,14 @@ its counter (unit, set, scope). Nothing here is a result in the sense of CLAUDE.
   at a move of pair j, and the next move of pair j is u₁(W⁺)). Levels j + 1, …, j + k are doubling, so by PULSE-NEST (base j + 1, with
   k − 1 further doubling levels) its two pair-(j + 1) moves are ≥ k steps apart, and both lie in the window, so its length u₁(W⁺) − u₂(W)
   is ≥ k + 1. Sum with PULSE. ∎
+- Premise note (Lead 11:38Z): for a packet, PULSE-NEST (L-SI 42, lane) must be re-proved inside it from landed RESULTS (R104, R105 ENC,
+  R110, R113) and DOUBLE-EQ′ (whose proof uses R113 ALIGN only, L4 §3); its proof (induction on k via the nested (j + 1)-window) uses
+  only (E3), (E4), so GAP-NEST and PULSE-NEST together need no unlanded premise. DOMINANCE-FREEZE uses R105 ENC and the R104 movement
+  rule only; CROSS-ECONOMY adds DOUBLE-EQ′ (E3)-(E5).
 - DATA (slack.py → slack7.out; unit = j-window; set = levels 1-5; scope = stored start; target H = 7): violations of PULSE ≥ 7 − j or
   GAP ≥ 7 − j: H6_d24_F126: 87 (level 4: 15 pulses of the types (7, 0), (7, 1); level 5: 63 pulses of all four types + 9 gaps);
-  G7_best_d28 (L-LOWER 4's warm start, F(6) = 222): 31, all at level 5, all in ONE b-step type (9, 1) (15 pulses and 14 gaps of length
-  1, plus the first window). The climb H6 → G7_best repaired the pulse/gap deficits type by type; one type is left.
+  G7_best_d28 (L-LOWER 4's warm start, F(6) = 222): 30 (corrected from «31», L-COMP 10's replay of slack.py, Lead 10:27Z; the parts are
+  15 + 14 + 1), all at level 5: 15 pulses and 14 gaps of length 1 in ONE b-step type (9, 1), plus 1 pulse in the first window. The climb H6 → G7_best repaired the pulse/gap deficits type by type; one type is left.
 - Greedy walk back (greedyback.py → greedyback.out; unit = single changed part; set = the 249 differences H6 vs H5_lift; 4 random
   orders; a revert is kept iff 6 capped levels survive): 118-122 reverts kept, 127-131 differences remain in every order, among them 70-72
   Ξ-targets, the same set up to 2 elements in all four orders, touching every level 0-23 (e.g. 0:0 25→42, 0:1 10→3, 2:0 23→40, 4:0 16→6,
@@ -203,7 +207,7 @@ its counter (unit, set, scope). Nothing here is a result in the sense of CLAUDE.
 - No inductive rule G_h → G_(h+1) was found. What a rule must do is now specific (PROVED parts: GAP-NEST, PULSE-NEST, DOUBLE-EQ′; DATA:
   §2, §5, §6): for every level j ≤ h − 1 and each of the four b-step types (member of pair j − 1 × direction), the second mover of pair j
   needs a trigger line whose delay grows by one per extension (PULSE and GAP ≥ h − j), so an extension must lengthen Θ(h) lines (the
-  zero-slack ones: all four types at j = h − 1, h − 2 in H6). The records realise this type by type (H6 → G7_best: 87 → 31 deficits, one
+  zero-slack ones: all four types at j = h − 1, h − 2 in H6). The records realise this type by type (H6 → G7_best: 87 → 30 deficits, one
   type left), never by a uniform local rule (§4), and never without touching every level (§5).
 - The obstruction located, in two layers (DATA on G7_best_d28 and SL41_d28; DOMINANCE-FREEZE PROVED): (i) room: in G7_best the type-(9, 1)
   pulses of level 5 are 1 (repaired in SL41); (ii) fuel: in SL41 the crossed pair 6 is decided by the β (87, 9, 1) of a capped pair-4

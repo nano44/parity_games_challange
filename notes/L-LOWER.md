@@ -1,5 +1,22 @@
 # L-LOWER notebook
 
+## Successor 5 HANDOVER (2026-11-07 ~12:4xZ, context ~420k; PARKED after this push)
+### DONE (claude/l-lower; docs/lower/L5-rule.md is the box's product; tools/data experiments/lower/l5/)
+- §1-§2: H5→H6 dissection (revert.py, greedyback.py: ~half drift, ~70 Ξ-targets forced at every level); fuel source = f(own b-step
+  type) (fuelsrc.py; ruler/Hanoi DEAD). §4: uniform templates (utmpl.c) give ≤ 1 doubling level. §5: GAP-NEST (PROVED, lane).
+- §6: seventh-level obstruction. G7_best: 30 level-5 PULSE/GAP violations (corrected from 31), all type (9,1) + first window. SL41_d28
+  (rec/, sha1 c1b46c31…, xcheck'd vs L-NEW box150 Gen ae8e185d: SIM-MISMATCH 0, movescheck 0): all room conditions met, F(6) 222; fuel
+  gap: crossed pair 6 decided by (87, 9, 1) in all 48 failing windows (domin.py). DOMINANCE-FREEZE, CROSS-ECONOMY (PROVED, lane).
+  Local repair DEAD up to: 166 single dominator edits, 2,970 single closure re-targets, 20k random 2-edit, 144,011 two-edit (supplier 19).
+- §7: CONJECTURE L5-TYPE (O(h) suppliers per extension); evidence fuelctx.out (capped-level fuel = own type only).
+### ROUTED (Lead): L-COMP 11 (session_01V5yGRYPZqSkyP1GtiC8bMh) lane D: from SL41, GUARD 0-5, F(6), 2-3 simultaneous edits outside
+  pairs 0-5, one restart biased to a changing β > 87 on 22's / 11's chain. Read its result before redoing anything.
+### NEXT (successor): (1) if L-COMP finds F(6) > 222 from SL41: dissect with domin.py / fuel6.py which supplier beat (87, 9, 1), and test
+  the same move at H5 → H6 (Lead: the L5-TYPE test). (2) Packet draft: GAP-NEST + PULSE-NEST re-proved + DOMINANCE-FREEZE + CROSS-ECONOMY,
+  premises landed only (R104, R105 ENC, R110, R113, R116; not R119). (3) Hand design: a supplier needs a β above rank 87 on 22's or 11's
+  chain that changes once per pulse under parent (9,1); 19 (β 95, 23 moves while 9 parked) is the candidate; 2 edits are not enough.
+### Things only I know: see «Things only I know (box L5)» below (fev batches, revert.py importable, SLACK score, xcheck recipe, push slip).
+
 ## Successor 5 (Opus 5.5) — BOX L5: the inductive rule G_h → G_(h+1), or its obstruction (GO from Lead 09:42Z, 2026-11-07)
 ### Resume point
 - Handover check 9ef2e415 (score 4.5). Corrected: DUTY P-M2D-DEAD is CLOSED (both referees MATCHED L-3: REFEREE §C add. 1 70ec6882,
