@@ -250,3 +250,24 @@ tf_linefix.py; tf_logs/inst.log, corpus.log, mutants.log, units.log, linefix.out
   - Description slip recorded: correct.
 - Verdict: fixes entry 1 CORRECT. L-2 MATCHES (byte test and meaning). All statements SIGNED as in §0; CROSS-ECONOMY (iii) is now SIGN
   (TF-1 closed by the proof of record). TF-L1..TF-L5, TF-3, TF-4 CLOSED.
+
+## §C add. 1. Line L-3 (CHECKER C134 R1-R4; R120) (REFEREE successor 27; date -u at writing 2026-11-07T19:08Z)
+- Objects (sha1 of the bytes): L-3 at claude/l-lower 4f25ae6f (ancestor of origin/claude/l-lower) 7328e67345e1bb6a8605ccfa4f406d1020eabfdb,
+  4,908 bytes, one line, 82 «(» = 82 «)», 0 «|», one « — », «gauntlet» 0 times; L-2 at 4f25ae6f d866ca50… unchanged; fixes c99bfd3a…
+  (entry 2 appended). C134 read at claude/checker 23871f48 (§5).
+- experiments/lower/check.sh at 4f25ae6f: exit 0, «pins OK: 5 files», «P-TOWER-FUEL CHECK PASS»; it now prints SL41_d28's 119
+  j-windows (tf_logs/lane_check_4f25ae6f.out).
+- Byte test (own script scratch/tf_l3.py, tf_logs/l3.out; R1-R4 written from C134 §5, wrapped lines joined by one space, applied in
+  C134's order): each old string occurs once in the text it is applied to (R3's only inside R2's new text); the result is byte-equal to
+  L-3.
+- R1: CORRECT. Fixes entry 1 (L-LOWER successor 6) carries the proof of record of (iii) and the measured instance units / scopes
+  that L-2 states.
+- R2: CORRECT and correctly attributed. The proof of record is my repair, R-P-TOWER-FUEL §3 l. 107-112 at 807984e3 (checked: those
+  lines are the «Repaired proof» bullet), restated byte-exactly in fixes entry 1 §1 (§C above). I signed it in §C; REFEREE-2's report
+  on origin has «The proof of record (REFEREE's) is correct.» (l. 210), and its own repair is a second route. «signed by both referees»
+  is true.
+- R3: CORRECT, same meaning. No statement concerns an algorithm, so the line is neither a gauntlet step nor a step-4 pass; my §7 diff
+  stands with the landed wording.
+- R4: CORRECT. My own replay (tf_logs/inst.log, I-FUEL): 3, 7, 15, 31, 63 = 119 j-windows at j = 1, …, 5, 0 PULSE and 0 GAP
+  violations of ≥ 7 − j.
+- Verdict: L-3 MATCHES, by the byte test and in meaning. All statements stay SIGN as in §C.
