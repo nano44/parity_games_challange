@@ -51,4 +51,8 @@ for f, sh, z, mz, T in KILLS:
     assert z in Zs and G["lev"][z] >= 1 and m[z] == mz and len(S) - 1 == T and m[z] > 2 * (G["N"] // 2), f
     assert [tuple(s) for s in S] == [tuple(s) for s in Gen(G).run(G["start"])[0]], f
     print(f"DEAD MOVES-2D: {f}: d {G['N'] // 2}, mover {z} (level {G['lev'][z]}, Xi-target) moves {mz} > 2d, T {T}; box150 Gen agrees")
+# T record (not a mu kill): kill/RECT_d11_T59.json
+p = os.path.join(H, "kill", "RECT_d11_T59.json"); assert hashlib.sha1(open(p, "rb").read()).hexdigest() == "57b6dc80810bd4b7e072186e4e97c23753f72afd"
+G = json.load(open(p)); S = run(G, G["start"]); assert len(S) - 1 == 59 and [tuple(s) for s in S] == [tuple(s) for s in Gen(G).run(G["start"])[0]]
+print("T record: kill/RECT_d11_T59.json: d 11, T 59; box150 Gen agrees")
 print("L3 CHECK PASS")
