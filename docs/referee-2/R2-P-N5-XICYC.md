@@ -203,3 +203,26 @@ Re-run: from the repo root, `python3 docs/referee-2/R2-P-N5-XICYC/r2howcyc.py <b
   1,000/1,000 too. R6 (XC-L4) ✓.
 - Verdict: entry 2 **CORRECT**; W-1 and G-1 **CLOSED**; **L-3 MATCHES** the packet with fixes entries 1-2 (Opus 5.5, D1). Every statement
   of the packet: SIGN (§7 and Corollary T3 conditional on [REACH-L], as before).
+
+## Addendum 2: L-4 for CHECKER C132 (claude/l-new e36fdfcd; REFEREE-2 successor 30, 2026-11-07 12:3xZ by date -u)
+- Object (sha1 at e36fdfcd, equal to the Lead's relay 12:40Z): L-4 docs/new/P-N5-XICYC-line-L4.txt 85fe809c… (6,342 B); fixes
+  90d0f09d… (entry 3 appended; packet 149e2414… and entries 1-2 unchanged); xicyc.pins df6f4799…. Source of R1-R7: docs/checker/C132.md
+  §5 at claude/checker d6b877f7.
+- Byte test (own script R2-P-N5-XICYC/bt_l4.py with C132 §5's strings, wrapped lines joined by one space; output bt_l4.out): each old
+  string once in L-3 (1690b6ad, my Addendum 1), each new string once in L-4; L-3 + R1..R7 == L-4 byte for byte, sha1
+  85fe809cce294bc46709ea0e3be82a61718fbf7c, 6,342 B (= C132's prediction); 1 line, 73 «(» = 73 «)», depth never negative, 0 «|» ✓.
+- R1 in meaning, against R117's landed entry (trunk origin/claude/vibrant-johnson-nxvvxo, RESULTS l. 13362 ff.; ac1bc37c on trunk):
+  «Claims signed» (c) Lemma S3-START «[every genome]», (d) Lemma PAD «[every genome]», (e) the transfer lemmas «[IDEAL-ACYC; K3 and TAU3
+  every genome]», so ESC3 and W3 are signed for acyclic Ξ-graphs ✓; R117's line states S3-START and PAD only inside Theorem REACH3 «for every
+  G with an ACYCLIC Ξ-graph» ✓; «P-N5-XICYC §7 reads ESC3's and W3's proofs for every genome» is what my report's §7 did (no Ξ-use) ✓. The
+  premise is now landed, so «not landed» had to go; R1 says exactly which scope R117 carries and where the extension comes from ✓.
+- R2 (source note with fixes 1-2), R3 (DOM, STRICT, PATH: no separate DATA — they are proof steps; my counters were a referee check, not
+  the lane's DATA), R4 (T3 and C bounds on Γ3: no separate DATA, they are T-CYC and CYC-COUNT read on Γ3 — my Corollary T3 reading), R5
+  («every random genome set»: the random general games of BR-SEG-G are not rand191 genomes) ✓.
+- R6: the cited docs/referee/scratch/xicyc_logs/brseg_gen191_H0fail_2000_3_12.out is on origin/claude/referee (file commit 42648076):
+  «INSTR H0-failing steps 388 of 2072», equal to my own brseg_r2.out («H0 failures 388» of 2,072 steps) ✓.
+- R7 (L41 note): BR-SEG-G's proof (STRICT-G, PATH-G) and Lemma K2-r are REFEREE's (fixes entry 2: «REFEREE's repair (REFEREE §2.2)»,
+  «Lemma K2-r (every genome; REFEREE §3.2 …)»); I judged STRICT-G and PATH-G as packet text and signed BR-SEG-G and RED-XI on them, and
+  agreed K2-r (Addendum 1), so «signed by both referees» is true for my side ✓.
+- Verdict: entry 3 **CORRECT**; **L-4 MATCHES** the packet with fixes entries 1-3, in bytes and in meaning (Opus 5.5, D1). Statement
+  verdicts unchanged (all SIGN; §7 and Corollary T3 conditional on [REACH-L], now R117 as landed, with its every-genome extension in §7).
