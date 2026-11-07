@@ -1,4 +1,71 @@
-# Draft RESULTS R115 (Lead; first fill 2026-11-07T01:03:12Z by date -u (subagent) on P-IDEAL-IM line L-2, docs/si/P-IDEAL-IM-line-L2.txt, l-si 4ee9fa78, sha1 8b7ccfb9a050955758452dc04fe5aafc58468680) — to CHECKER C128 — NOT LANDED; goes after R114, before Erratum E-1
+# Draft RESULTS R115 (Lead; first fill 2026-11-07T01:03:12Z by date -u (subagent) on P-IDEAL-IM line L-2, docs/si/P-IDEAL-IM-line-L2.txt, l-si 4ee9fa78, sha1 8b7ccfb9a050955758452dc04fe5aafc58468680 (draft sha1 bc987999, CHECKER C128 2dd44fc1: FAIL E-1..E-5); SECOND FILL 2026-11-07T03:02:04Z by date -u (subagent) on P-IDEAL-IM line L-3, docs/si/P-IDEAL-IM-line-L3.txt, l-si 80d1422a, sha1 cf510950a7feaf3e8d5f3c316acc2601e2ed17e7) — to CHECKER C128 Add. 1 — NOT LANDED; goes after R114, before Erratum E-1
+SECOND FILL (2026-11-07T03:02:04Z by date -u, subagent; for CHECKER C128 Add. 1). Read at the origin heads fetched at its start (git
+fetch, 2026-11-07T03:01Z, no Lead push running, pgrep empty) and re-fetched at 2026-11-07T03:09:23Z: l-si 77d536f6 (its ancestor
+80d1422a holds fixes entry 2 and line L-3; the packet, L-1, L-2, L-3, the fixes, experiments/si/box75/ (imcheck.py, imcheck.out,
+check75.sh, mkL3.py, pins.sha1, pins_fix2.sha1, frame_P-IDEAL-IM.py), box64/, box68/, box70/ and experiments/si/check.sh are byte-equal
+at 80d1422a and 77d536f6, git diff empty; 77d536f6 adds L-SI box 77 work and changes no P-IDEAL-IM file), referee 3fb22563 (0c2a7c5b, §C
+add. 1 of R-P-IDEAL-IM.md, the L-3 round, then 3fb22563, which corrects that section's guessed header time to its commit time; the
+file's l. 1-164 = bc2bdd5a's, by diff), referee-2 0a9e2a16 (Addendum 2 of R2-P-IDEAL-IM.md, the L-3 round; its l. 1-153 = 2e68c641's
+file, by diff), checker 2dd44fc1 (docs/checker/C128.md, 2026-11-07T01:46:51Z, 135 lines, sha1 bc16269482429ea2f3b3cfc01730f5de555d1494;
+already an ancestor of origin trunk); origin trunk 663c6447 («Lead: L-NEW 58 row; R116 draft to C129; IM L-3; P-M2D-DEAD and REACH
+routing; log»), pushed, which holds the first-fill draft bc987999 (commit fc665614, an ancestor). Local trunk d6410595 = four merges
+(--no-ff, none an ancestor of 663c6447 before) into 663c6447: 256e7461 (l-si 77d536f6), d06fff51 (referee 0c2a7c5b), 909706e4 (referee-2
+0a9e2a16), d6410595 (referee 3fb22563, fetched after the first three merges); then the commit holding this file. Not pushed; 80d1422a,
+0c2a7c5b, 3fb22563 and 0a9e2a16 are NOT ancestors of origin trunk 663c6447 (git merge-base --is-ancestor); the Lead pushes trunk before
+landing. RESULTS (sha1 555d41bd85b8ea52a1e57459c0a4fe0fcb7f6cc1, 13,306 lines), GAPS (sha1 3c4ff44d1b822110d9bfd0d1a2d8661ea6b5361e, 23
+lines), TARGET.md and CLAUDE.md are byte-equal at fc665614 and the local trunk (git diff, empty; last commit on RESULTS and GAPS:
+b6d1484b, R114's landing). DECISIONS and DECISIONS-INDEX add only Lead reading L50 (2026-11-07 01:42Z; MOVES-2D killed, landing scope of
+P-IDEAL-MOVES), which does not bear on this entry (the title, the entry and the UPDATE name neither MOVES-2D nor P-IDEAL-MOVES, by
+script); docs/NOW.md and LEAD-STATE changed (resume points) and the entry cites no changed text of either. So the first fill's premise
+checks and GAPS state stand (L-3's premise parenthesis is L-2's, by script), and Addendum 2 re-runs the landing simulation. New sources:
+docs/checker/C128.md: FAIL E-1..E-5, all DATA wording (the first fill's G-9 (v), (iv), (iii), (ii), (i): LOCAL's set, BIT-CHAIN (i) at
+the c-step images, the box 64 cross-check on 301 genomes, the NEG control's K-part count, BIT-CHAIN (ii) without a counter), every
+E-item confirmed by the CHECKER's own instrumented runs (§3); RULING G-M / G-R (l. 65-75): a second, referee-owned RUP checker is «not
+required», with the landing condition «if any referee file on origin at landing reports that a second checker REJECTS the proof, R115
+does not land.»; note N-1 (l. 24-26: «every start» covers every start up to the level-0 states), N-2 (l. 39: the negated-bit control
+fires by construction, «true as written»), N-3 (l. 90-91: IM is stated for degree-2 movers of any acyclic genome, its DATA is on ISO 𝓛^R
+genomes); G-2 (ii) a note, with the recommended fixes-entry sentence «(Φ2) is R105 LOCAL (the proof of Lemma IM (a), l. 72, does not use
+that y is unhappy)» (l. 76-81); G-10 (L49) PASS, G-C a note, G-U PASS, quotes 0 not found, placement PASS; L-3 = L-2 with the five
+replacements R1-R5 of §5 (l. 103-114), expected L-3 sha1 cf510950… and rebuilt UPDATE sha1 39d9a292… (l. 115-118); the second-fill list
+(l. 119-123). Line L-3, docs/si/P-IDEAL-IM-line-L3.txt (l-si 80d1422a, 2026-11-07T02:07:37Z, the file's only commit; sha1
+cf510950a7feaf3e8d5f3c316acc2601e2ed17e7 with newline, 4,962 bytes, = C128 §5's value); fixes entry 2 (docs/si/P-IDEAL-IM-fixes.md l.
+57-79 at 80d1422a, L-SI successor 41; file 79 lines, 6,919 bytes, sha1 e80dee09d73db36dd5b604814c171a04b5b42fc4, l. 1-55 = entry 1's
+file, by script; the CHECKER's wording note for FRAME's proof at l. 72-73); REFEREE successor 25's byte test and DATA check of L-3
+(docs/referee/R-P-IDEAL-IM.md §C add. 1, l. 166-192, 0c2a7c5b, 2026-11-07T02:30:13Z; header time corrected by 3fb22563; file sha1 at
+3fb22563 60778fdab1c08d1a341e85979e65ea927ba6d12b, 192 lines: l. 191-192 «Verdict: fixes entry 2 is CORRECT. L-3 MATCHES, by the byte
+test and in meaning, with the DATA rule clause by clause. All items stay SIGNED.»); REFEREE-2 successor 29's byte test and DATA check of
+L-3 (docs/referee-2/R2-P-IDEAL-IM.md Addendum 2, l. 155-172, 0a9e2a16, 2026-11-07T02:31:16Z, file sha1
+78545a522b0bce76bc74ba0f9f6f3485ce298343, 172 lines: l. 172 «Verdict: fixes entry 2 **CORRECT**; **L-3 MATCHES** (Opus 5.5, D1).
+Statement verdicts unchanged.»). REFEREE successor 25's «R-P-IDEAL-IM Addendum 1» (ref_rup_del on the 2.4 GB proof): NOT on origin at
+2026-11-07T03:09:23Z (claude/referee 3fb22563; R-P-IDEAL-IM.md has no such section; notes/REFEREE.md last changed at e1815909); PENDING,
+optional by C128's ruling; no referee file on origin reports a second checker's verdict, accepting or rejecting, so the landing
+condition is met at this fill. My byte test of L-3 (fill2/l3rel115.py, rc 0): the five old / new pairs parsed by script from C128 §5 l.
+105-114 (wrapped lines joined by one space, outermost guillemets), each old string once in L-2 and once at its turn, L-2 with R1-R5 =
+L-3 (True), L-3 byte-equal at 80d1422a and the l-si head (True); fixes entry 2's table (l. 67-71) carries the same five pairs (True); 86
+«(» / 86 «)», depth never negative, 0 "|", 8 token hunks; and the G-9 check: every DATA clause L-3 states, 15 phrases each found once in
+L-3's DATA parenthesis, against the frozen imcheck.out, compose.py's lines, my first-fill splits (imsplit.out, compsplit.out) and the
+figures of C128 §3 and both referees' third rounds: all agree (True). Re-runs: the check.sh block «# box 75 (packet P-IDEAL-IM: …)» from
+a git archive of 80d1422a's experiments/si and docs/si (check.sh l. 1-6 and l. 1237-1239; 2026-11-07T03:02:24Z-03:02:32Z, rc 0, «box 75
+P-IDEAL-IM checks + witness + COMPOSE seed 68: PASS», «box 75 certified CNF regenerated: PASS», «si (box 75: P-IDEAL-IM): PASS»;
+check75.sh at 80d1422a also re-makes L-3 by mkL3.py and compares it, fill2/runw75L3.sh, w75L3.out); the UPDATE rebuilt from L-3
+(fill2/upd115b.py: upd115.py's 18 controls and R115 procedure unchanged, run on L-3; the controls' 58 output lines byte-equal to the
+first fill's, cmp; it equals the first fill's UPDATE with C128 §5's R1-R5 parsed by script, True; sha1
+39d9a2925c2c193193f3b0845b37919defa75a2b = C128 §5's, True); the quote sweep, the stale-status grep, the word diff and the landing
+simulation (Addendum 2). Changed at this fill, and nothing else: this header line and this paragraph; the title (L-3); in the entry,
+Object (fixes entry 2, the line of record L-3, L-2 moved into the line history, the L-3 byte tests, L-3 changes no definition), Claims
+signed (the third rounds), (f) FRAME's proof sentence (C128 §4's wording, «(Φ2) is R105 LOCAL …»), «The RESULTS line (L-3)», What rests
+on the machine (viii) (the state on origin at this fill and C128's ruling), Premise (L-3), L41 and L43 (entry 2 carries no proof), Fixes
+(entry 2: the header, a note on F-3, two new bullets, the closing sentence), Not signed (the packet's table row behind E-1), Referee
+strengthening (iii) (new), Honest limits (iii) and (iv) (C128's ruling; L-3's sets and units; N-1, N-3), Data (imcheck.py unchanged at
+80d1422a, the box 64 cross-check's 301 genomes, check75.sh at 80d1422a, L-3's DATA parenthesis, N-2, the block re-run at 80d1422a),
+Signatures (REFEREE §C add. 1 and the header-time correction, Addendum 1 PENDING, REFEREE-2 Addendum 2, the lane commit), INDEPENDENCE
+(L-3; the third rounds), TARGET.md diff (L-3); the GAPS preamble and the UPDATE (rebuilt from L-3); the digest of Addendum
+(10); Addendum 2 (new). The FIRST FILL text below (from FIRST FILL (this text) to (14)) and Addendum (1)-(9) are kept byte-unchanged as
+the record of the fill on L-2: where they call L-2 the title line or the current line, quote L-2's DATA phrases as the line's, flag G-9
+(i)-(v), G-2 (ii), G-M or G-R for a ruling or propose wordings for them, call REFEREE successor 25's Addendum 1 pending at e7047ace, or
+give the first fill's line numbers, counts and UPDATE sha1, they describe draft bc987999 at 01:11Z; C128 ruled G-9 (i)-(v) E-5, E-4,
+E-3, E-2, E-1, G-2 (ii) a note, G-M / G-R not required with the landing condition, G-U and G-10 PASS, used the number C128 (G-0), and
+the entry block follows L-3.
 FIRST FILL (this text). Read at the origin heads fetched at 2026-11-07T00:53:20Z (git fetch, after the Lead push running at the start of
 this fill had ended; pgrep empty): l-si 91d40ec2 (its ancestor 4ee9fa78 holds fixes entry 1 and line L-2; the packet, L-1, L-2, the
 fixes, experiments/si/box75/, box64/, box68/, box70/, box71/, box72/-box74/, unsat_regen.sh and UNSAT-LIST.txt are byte-equal at
@@ -453,7 +520,7 @@ blocks and scripts/verify.sh.
   (1c4ba1c3). Trunk: see the header.
 (14) Placement: see (0). DEAD-ENDS ROWS: NONE (not drafted). R115 kills nothing.
 
-### R115 [refereed-only] In the IDEAL model of RESULTS R104 (premise: R104's definition of the model only, no theorem of R104 used; RESULTS R105's ENC and LOCAL; RESULTS R110's definitions of 𝓦_d, 𝓛^R_d, T^R(d), ISO, b_0, the c-step and T_k(m), and R110's W-ONLY in COMPOSE-LB only), on acyclic Ξ-graphs, with C_z(s) the option of a degree-2 mover z of larger value under s (the two values differ, Fact 0), z unhappy at s iff s(z) ≠ C_z(s), ch_k(z, s) the movers on the chain of (z, k) under s and s ⊕ e_y the state s with y switched: (IM) for degree-2 movers z ≠ y with y unhappy at s, C_z(s ⊕ e_y) = C_z(s) if y lies on neither or on both chains of z under s, and C_z(s ⊕ e_y) ∈ {C_z(s), k} if y lies only on the chain of (z, k); on 𝓛^R_(m+1) with A_l, B_l the movers 2l, 2l + 1: (BIT-CHAIN) for c ∈ {0, 1} and a state s, the bits b_0 := c and b_l := b_(l−1), 1 − b_(l−1) or [g(A_l, k) < g(B_l, k)] according as (s(A_l), s(B_l)) is (0, 1), (1, 0) or (k, k) satisfy b_l = [key(A_l) < key(B_l)] under R110's c-step keys, and a level-l mover prefers by key its option 0 iff b_(l−1) = 1; (KEY-DIR) in the c-step from u to u′ a mover x of level l ≥ 1 moves iff u(x) = b_(l−1) and C_x(u) ≠ b_(l−1), with the bits of u′, so the c-step depends on the gates only through c and the bits [g(A_l, k) < g(B_l, k)], l < m; under ISO: (VALUE-MONO) the c-step never lowers the current value of an upper mover and strictly raises it for every mover that moves, so in every c_t-step sequence, with any number of changes of c, no state repeats among the moving steps and T_k(m) ≤ T_∞(m) ≤ 2^(2m) − 1; (COMPOSE) for ISO genomes K of 𝓛^R_(m′+1) and G of 𝓛^R_(m+1) and their composite H of 𝓛^R_(m′+m+1) (G's upper levels above K's, G's level 0 dropped, G's ranks and gates above K's), H's c-step is K's c-step on K's movers and G's c_*-step on G's movers with c_* the bit b_(m′) of K's part of the new state, and (COMPOSE-LB) the number of steps of every such G-sequence driven by a flip-free c-step sequence of K is at most T^R(m′ + m + 1); (FRAME) every ISO genome of 𝓛^R_(m+1) gives, through its upper Ξ-targets, the table C and the bits [g(A_l, k) < g(B_l, k)], a system of the IM frame Φ_m (acyclic Ξ-targets on 2m upper movers, an arbitrary table C with C_z independent of s(z), LOCAL and IM, free key bits, and the BIT-CHAIN step) whose frame step with bit c is the genome's c-step, so T_k(m) ≤ T^Φ_k(m) for every k, T^Φ_k(m) the largest number of moving frame steps with at most k bit changes; and MACHINE: T^Φ_1(3) ≤ 10, hence T_1(3) = 10, by a Glucose 4 UNSAT of the frame CNF «T^Φ_1(3) ≥ 11» (sha1 7e611c8b…, regenerated by the frozen encoder experiments/si/box75/frame_P-IDEAL-IM.py, sha1 c3b3a232…, clause groups mapped to Φ_3 in the packet) with a DRUP proof accepted by the forward RUP checker drup.c of RESULTS R112 (sha1 2d4b8eab…; 6,531,220 lemmas; its correctness and the encoder's are premises), a second UNSAT by CaDiCaL 1.5.3 without a proof, and L-NEW's ISO genome kf1_d4_t10 of 𝓛^R_4 (experiments/new/box160/out/kf1_d4_t10.json, sha1 1c0dc8cc…; T_1 = 10 under two simulators) (2026-11-06) — a STRUCTURE / RELAXATION statement inside the IDEAL model; bounds nothing polynomially (VALUE-MONO's bound is exponential); the frame is a relaxation, no converse is claimed; FLIP-ADD, SUM_1 and PAIR-LIN are not claimed; degree ≥ 3, Ξ-cyclic genomes and genomes outside 𝓛^R are not covered except by IM (degree-2 movers of any acyclic genome); T_k(3) for k ≥ 2 is not claimed; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim (DATA, experiments/si/box75/imcheck.py on 404 ISO genomes of 𝓛^R_2, 𝓛^R_3 and 𝓛^R_4, every start; once per state: IM (b), (c) 0 violations on 31,208 checks, (c) with the direction reversed failing 6,284 times; LOCAL (IM (a)) 0 on 250,248; independence of s(z) 0 on 66,520; per state and both c: BIT-CHAIN (i) 0 on 66,520, the negated bit failing 66,520 times; KEY-DIR 0 on 133,040; VALUE-MONO 0 on 133,040; frame step = c-step 0 on 24,184; own c-step = the box 64 simulator 0 on 18,944; COMPOSE: experiments/si/box68/compose.py 200 68 (seed 68), 0 disagreements on 200 random pairs with (m′, m) ∈ {1, 2}², and NEG=1 compose.py 200 68, the negated schedule disagreeing 21,234 times on K's part and 54,433 times on G's; COMPOSE-LB and the T_∞ bound: no separate DATA; the encoder: only the m = 2 cross-checks T^Φ_1(2) = 5 against L-COMP's exhaustive T_1(2) = 5) (P-IDEAL-IM, docs/si/P-IDEAL-IM.md with its fixes entry 1, docs/si/P-IDEAL-IM-fixes.md; L-SI successors 39-40), CHECKER PASS (docs/checker/C128.md, checker PENDING)
+### R115 [refereed-only] In the IDEAL model of RESULTS R104 (premise: R104's definition of the model only, no theorem of R104 used; RESULTS R105's ENC and LOCAL; RESULTS R110's definitions of 𝓦_d, 𝓛^R_d, T^R(d), ISO, b_0, the c-step and T_k(m), and R110's W-ONLY in COMPOSE-LB only), on acyclic Ξ-graphs, with C_z(s) the option of a degree-2 mover z of larger value under s (the two values differ, Fact 0), z unhappy at s iff s(z) ≠ C_z(s), ch_k(z, s) the movers on the chain of (z, k) under s and s ⊕ e_y the state s with y switched: (IM) for degree-2 movers z ≠ y with y unhappy at s, C_z(s ⊕ e_y) = C_z(s) if y lies on neither or on both chains of z under s, and C_z(s ⊕ e_y) ∈ {C_z(s), k} if y lies only on the chain of (z, k); on 𝓛^R_(m+1) with A_l, B_l the movers 2l, 2l + 1: (BIT-CHAIN) for c ∈ {0, 1} and a state s, the bits b_0 := c and b_l := b_(l−1), 1 − b_(l−1) or [g(A_l, k) < g(B_l, k)] according as (s(A_l), s(B_l)) is (0, 1), (1, 0) or (k, k) satisfy b_l = [key(A_l) < key(B_l)] under R110's c-step keys, and a level-l mover prefers by key its option 0 iff b_(l−1) = 1; (KEY-DIR) in the c-step from u to u′ a mover x of level l ≥ 1 moves iff u(x) = b_(l−1) and C_x(u) ≠ b_(l−1), with the bits of u′, so the c-step depends on the gates only through c and the bits [g(A_l, k) < g(B_l, k)], l < m; under ISO: (VALUE-MONO) the c-step never lowers the current value of an upper mover and strictly raises it for every mover that moves, so in every c_t-step sequence, with any number of changes of c, no state repeats among the moving steps and T_k(m) ≤ T_∞(m) ≤ 2^(2m) − 1; (COMPOSE) for ISO genomes K of 𝓛^R_(m′+1) and G of 𝓛^R_(m+1) and their composite H of 𝓛^R_(m′+m+1) (G's upper levels above K's, G's level 0 dropped, G's ranks and gates above K's), H's c-step is K's c-step on K's movers and G's c_*-step on G's movers with c_* the bit b_(m′) of K's part of the new state, and (COMPOSE-LB) the number of steps of every such G-sequence driven by a flip-free c-step sequence of K is at most T^R(m′ + m + 1); (FRAME) every ISO genome of 𝓛^R_(m+1) gives, through its upper Ξ-targets, the table C and the bits [g(A_l, k) < g(B_l, k)], a system of the IM frame Φ_m (acyclic Ξ-targets on 2m upper movers, an arbitrary table C with C_z independent of s(z), LOCAL and IM, free key bits, and the BIT-CHAIN step) whose frame step with bit c is the genome's c-step, so T_k(m) ≤ T^Φ_k(m) for every k, T^Φ_k(m) the largest number of moving frame steps with at most k bit changes; and MACHINE: T^Φ_1(3) ≤ 10, hence T_1(3) = 10, by a Glucose 4 UNSAT of the frame CNF «T^Φ_1(3) ≥ 11» (sha1 7e611c8b…, regenerated by the frozen encoder experiments/si/box75/frame_P-IDEAL-IM.py, sha1 c3b3a232…, clause groups mapped to Φ_3 in the packet) with a DRUP proof accepted by the forward RUP checker drup.c of RESULTS R112 (sha1 2d4b8eab…; 6,531,220 lemmas; its correctness and the encoder's are premises), a second UNSAT by CaDiCaL 1.5.3 without a proof, and L-NEW's ISO genome kf1_d4_t10 of 𝓛^R_4 (experiments/new/box160/out/kf1_d4_t10.json, sha1 1c0dc8cc…; T_1 = 10 under two simulators) (2026-11-06) — a STRUCTURE / RELAXATION statement inside the IDEAL model; bounds nothing polynomially (VALUE-MONO's bound is exponential); the frame is a relaxation, no converse is claimed; FLIP-ADD, SUM_1 and PAIR-LIN are not claimed; degree ≥ 3, Ξ-cyclic genomes and genomes outside 𝓛^R are not covered except by IM (degree-2 movers of any acyclic genome); T_k(3) for k ≥ 2 is not claimed; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim (DATA, experiments/si/box75/imcheck.py on 404 ISO genomes of 𝓛^R_2, 𝓛^R_3 and 𝓛^R_4, every start; once per state: IM (b), (c) 0 violations on 31,208 checks, (c) with the direction reversed failing 6,284 times; LOCAL 0 on 250,248 (y on neither chain, unhappy or not), among them IM (a) on the 125,124 with y unhappy; independence of s(z) 0 on 66,520; per state and both c: BIT-CHAIN (i) at the c-step image of the state 0 on 66,520 (5,670 distinct (genome, c, image) triples), the negated bit failing 66,520 times; KEY-DIR 0 on 133,040; VALUE-MONO 0 on 133,040; frame step = c-step 0 on 24,184; own c-step = the box 64 simulator 0 on 18,944, on the 301 genomes the box 64 simulator accepts; COMPOSE: experiments/si/box68/compose.py 200 68 (seed 68), 0 disagreements on 200 random pairs with (m′, m) ∈ {1, 2}², and NEG=1 compose.py 200 68, the negated schedule failing 54,433 times on G's part (30,113 steps and 24,320 end-of-run checks) and 21,234 times on K's (end-of-run checks after a failure on G's part only; K's steps do not use the schedule); BIT-CHAIN (ii), COMPOSE-LB and the T_∞ bound: no separate DATA; the encoder: only the m = 2 cross-checks T^Φ_1(2) = 5 against L-COMP's exhaustive T_1(2) = 5) (P-IDEAL-IM, docs/si/P-IDEAL-IM.md with its fixes entry 1, docs/si/P-IDEAL-IM-fixes.md; L-SI successors 39-40), CHECKER PASS (docs/checker/C128.md, checker PENDING)
 - Object (L-SI successors 39-40, Opus 5.5, box 75; frozen, unchanged during review): packet P-IDEAL-IM, docs/si/P-IDEAL-IM.md, sha1
   7bef94196bdc6069f254e19aab9ecef1f0f16b95, 279 lines (l-si freeze cb2b0c60, 2026-11-06T14:29:25Z; identical at 4ee9fa78). Both referees
   measured the sha1 (REFEREE l. 5 «docs/si/P-IDEAL-IM.md: sha1 7bef94196bdc6069f254e19aab9ecef1f0f16b95, 279 lines;»; REFEREE-2 l. 6
@@ -463,28 +530,45 @@ blocks and scripts/verify.sh.
   65-90), §2 (l. 92-129), §3 (l. 131-145), §4 (l. 147-182), §5 (l. 184-218), §6 (l. 220-249), §7 (l. 251-271), §8 files (l. 273-279).
   Sources (l. 2-4): docs/si/N5-MECH-box69.md, N5-FLIPOR-box64.md, N5-REFUTE-box68.md, N5-FRAME-box70.md, N5-SUM1-box73.md; «Every proof
   is written out in full HERE, and this packet governs.» (l. 4).
-  Fixes: docs/si/P-IDEAL-IM-fixes.md, append-only, one entry (L-SI successor 40, 4ee9fa78, 2026-11-06T21:46:26Z; 55 lines, sha1
-  15edc7d1bfecdb4f1edf55b0eb861e6333d437ef): F-1 (REFEREE's IM-G1, REFEREE-2's N-1) one sentence in COMPOSE-LB's proof; F-2 (REFEREE-2's
-  W-2) the COMPOSE DATA re-measured with a named seed and command; F-3 (REFEREE-2's W-1, REFEREE's IM-L2) the DATA scopes checked
-  against imcheck.py's counters; line L-2. «The packet file is not edited.» (l. 2).
-  The RESULTS line is L-2, 8b7ccfb9a050955758452dc04fe5aafc58468680 (docs/si/P-IDEAL-IM-line-L2.txt, l-si 4ee9fa78, the file's only
-  commit; 4,615 bytes). The title is L-2 verbatim, with nothing inserted (its date parenthesis «(2026-11-06)» and its source note are
-  the line's own; the source note names the packet, which carries every proof, and the fixes file, which carries one proof sentence,
-  F-1; the machine premise's files are named in the line's MACHINE clause). L-2's parentheses balance (81 «(» / 81 «)»). Line history:
-  L-1 (493cac99, cb2b0c60, frozen with the packet); L-2 (8b7ccfb9, 4ee9fa78, fixes entry 1: L-1 «with exactly three replacements, made
-  by script» (l. 52), named by subject only: the DATA scope (F-3: once per state for IM, LOCAL and the independence of s(z), per state
-  and both c for the rest, «BIT-CHAIN (i)»), the COMPOSE command, seed 68 and figures (F-2), and the source note naming the fixes file;
-  my token diff finds 11 hunks, all inside these three places). L-2 MATCHES at both referees, each after its own word diff: REFEREE
-  (bc2bdd5a) §C l. 154-160, «Verdict: L-2 MATCHES. Fixes entry 1 is CORRECT. All items are SIGNED; IM-G1 is closed.»; REFEREE-2
-  (2e68c641) l. 145 «**Line L-2: MATCHES.**», l. 146-152.
+  Fixes: docs/si/P-IDEAL-IM-fixes.md, append-only, two entries. Entry 1 (L-SI successor 40, 4ee9fa78, 2026-11-06T21:46:26Z; 55 lines,
+  sha1 15edc7d1bfecdb4f1edf55b0eb861e6333d437ef): F-1 (REFEREE's IM-G1, REFEREE-2's N-1) one sentence in COMPOSE-LB's proof; F-2
+  (REFEREE-2's W-2) the COMPOSE DATA re-measured with a named seed and command; F-3 (REFEREE-2's W-1, REFEREE's IM-L2) the DATA scopes
+  checked against imcheck.py's counters; line L-2. Entry 2 (L-SI successor 41, 80d1422a, 2026-11-07T02:07:37Z; l. 57-79; the file then
+  79 lines, 6,919 bytes, sha1 e80dee09d73db36dd5b604814c171a04b5b42fc4, its l. 1-55 = entry 1's file, by script): CHECKER C128 E-1..E-5
+  answered by C128 §5's five replacements R1-R5 and line L-3, with the wording note C128 §4 recommended for Theorem FRAME's proof; «No
+  statement, proof or hypothesis changes. This entry carries no proof.» (l. 63-64). «The packet file is not edited.» (l. 2).
+  The RESULTS line is L-3, cf510950a7feaf3e8d5f3c316acc2601e2ed17e7 (docs/si/P-IDEAL-IM-line-L3.txt, l-si 80d1422a,
+  2026-11-07T02:07:37Z, the file's only commit; 4,962 bytes). The title is L-3 verbatim, with nothing inserted (its date parenthesis
+  «(2026-11-06)» and its source note are the line's own; the source note names the packet, which carries every proof, and the fixes
+  file, which carries one proof sentence, F-1; the machine premise's files are named in the line's MACHINE clause). L-3's parentheses
+  balance (86 «(» / 86 «)»). Line history: L-1 (493cac99, cb2b0c60, frozen with the packet); L-2 (8b7ccfb9, 4ee9fa78, fixes entry 1: L-1
+  «with exactly three replacements, made by script» (l. 52), named by subject only: the DATA scope (F-3: once per state for IM, LOCAL
+  and the independence of s(z), per state and both c for the rest, «BIT-CHAIN (i)»), the COMPOSE command, seed 68 and figures (F-2), and
+  the source note naming the fixes file; my token diff finds 11 hunks, all inside these three places); L-3 (cf510950, 80d1422a, fixes
+  entry 2: L-2 «with exactly R1-R5, made by experiments/si/box75/mkL3.py» (l. 78), the five replacements of CHECKER C128 §5 (E-1..E-5;
+  C128 l. 105-114 = entry 2's table, l. 67-71, string for string, by my script), all inside the DATA parenthesis: R1 names the 250,248
+  as LOCAL (y on neither chain, unhappy or not), among them IM (a) on the 125,124 with y unhappy; R2 puts BIT-CHAIN (i) at the c-step
+  image of the state, 5,670 distinct (genome, c, image) triples; R3 puts the box 64 cross-check on the 301 genomes its simulator
+  accepts; R4 splits the NEG control into 54,433 failures on G's part (30,113 steps and 24,320 end-of-run checks) and 21,234 on K's
+  (end-of-run checks after a failure on G's part only); R5 adds BIT-CHAIN (ii) to the no-DATA list; L-2 with R1-R5 equals L-3 byte for
+  byte, by my script, 8 token hunks). L-2 MATCHES at both referees, each after its own word diff: REFEREE (bc2bdd5a) §C l. 154-160,
+  «Verdict: L-2 MATCHES. Fixes entry 1 is CORRECT. All items are SIGNED; IM-G1 is closed.»; REFEREE-2 (2e68c641) l. 145 «**Line L-2:
+  MATCHES.**», l. 146-152. L-3 MATCHES at both referees, each after its own byte test against C128 §5 and its own instrumented copies of
+  the counters: REFEREE successor 25 (0c2a7c5b) §C add. 1 l. 173-178 (byte test), l. 179-188 (the DATA rule, clause by clause), l.
+  191-192 «Verdict: fixes entry 2 is CORRECT. L-3 MATCHES, by the byte test and in meaning, with the DATA rule clause by clause.»;
+  REFEREE-2 successor 29 (0a9e2a16) Addendum 2 l. 159-160 (byte test), l. 161-169 (meaning against imcheck.py / compose.py), l. 172
+  «Verdict: fixes entry 2 **CORRECT**; **L-3 MATCHES** (Opus 5.5, D1).».
   Both diffed every definition of the line against the packet (REFEREE l. 121-122 «Definitions diffed against §0 / §5: C_z, unhappy,
   ch_k, s ⊕ e_y, A_l / B_l, the BIT-CHAIN bits, T^Φ_k(m) and the frame's objects all MATCH.»; REFEREE-2 l. 121); L-2 changes no
-  definition and no claim (the three replacements lie inside the DATA parenthesis and the source note).
-- Claims signed (REFEREE successor 24 «(Opus 5.5, D15)», report 0e24d8ca, §C bc2bdd5a; REFEREE-2 successor 28 «(Opus 5.5, D12/D20)»,
-  report of record 2e68c641). Every item is SIGN in both verdict tables (REFEREE "## 0. Verdicts" l. 11-23 of R-P-IDEAL-IM.md; REFEREE-2
-  "## Verdicts" l. 11-21 of R2-P-IDEAL-IM.md), COMPOSE-LB at REFEREE «SIGN WITH GAP IM-G1» until fixes F-1 (§C l. 143 «F-1 (IM-G1):
-  CORRECT. IM-G1 is CLOSED.»), and MACHINE «SIGN as machine-certified» at both; they stand in both second rounds (REFEREE §C l. 160;
-  REFEREE-2 l. 137, 145, 153). Every item is about R104's IDEAL model on acyclic Ξ-graphs; (a) for movers of degree 2 of any such
+  definition and no claim (the three replacements lie inside the DATA parenthesis and the source note); L-3 changes none either (R1-R5
+  lie inside the DATA parenthesis; C128 §2 «No statement, definition, premise or proof changes.»).
+- Claims signed (REFEREE successor 24 «(Opus 5.5, D15)», report 0e24d8ca, §C bc2bdd5a; REFEREE successor 25 (Opus 5.5, D15), §C add. 1
+  0c2a7c5b; REFEREE-2 successor 28 «(Opus 5.5, D12/D20)», report of record 2e68c641; REFEREE-2 successor 29, Addendum 2 0a9e2a16). Every
+  item is SIGN in both verdict tables (REFEREE "## 0. Verdicts" l. 11-23 of R-P-IDEAL-IM.md; REFEREE-2 "## Verdicts" l. 11-21 of
+  R2-P-IDEAL-IM.md), COMPOSE-LB at REFEREE «SIGN WITH GAP IM-G1» until fixes F-1 (§C l. 143 «F-1 (IM-G1): CORRECT. IM-G1 is CLOSED.»),
+  and MACHINE «SIGN as machine-certified» at both; they stand in both second rounds (REFEREE §C l. 160; REFEREE-2 l. 137, 145, 153) and
+  in both third rounds, on CHECKER C128's fix round (REFEREE §C add. 1 l. 191-192 «All items stay SIGNED.»; REFEREE-2 Addendum 2 l. 172
+  «Statement verdicts unchanged.»). Every item is about R104's IDEAL model on acyclic Ξ-graphs; (a) for movers of degree 2 of any such
   genome; (b) on 𝓛^R_(m+1) (RESULTS R110's 2-wide degree-2 ladders, levels 0, …, m, A_l := mover 2l, B_l := mover 2l + 1) with R110's
   c-step; (c), (d), (e), (f) on ISO genomes of 𝓛^R (R110's ISO: «ISO the property that no option has Ξ-target 0 or 1»); (g) on the ISO
   genomes of 𝓛^R_4 (m = 3). Notation (packet §0 l. 49-57): the UPPER movers are those of level ≥ 1; T_∞(m) is T_k(m) with no bound on
@@ -546,8 +630,9 @@ blocks and scripts/verify.sh.
     level-l states by the BIT-CHAIN recursion; T^Φ_k(m) the largest T with s_t ≠ s_(t−1) for t = 1..T and at most k changes of the
     bits]: «(i) For every ISO genome G of 𝓛^R_(m+1), the system Σ(G) satisfies (Φ1)-(Φ3), and its frame step with bit c equals G's
     c-step (on the levels ≥ 1) at every state.»; «(ii) Hence T_k(m) ≤ T^Φ_k(m) for every k ≥ 0, and T_∞(m) ≤ T^Φ_∞(m).». Proof: (Φ1) by
-    acyclicity and LOCAL, (Φ2) by LOCAL (the proof cites IM (a), whose statement assumes y unhappy; its proof does not use it), (Φ3) by
-    IM (b), (c), the step by KEY-DIR; (ii) by deleting the identity steps, which does not increase the number of bit changes.
+    acyclicity and LOCAL, (Φ2) is R105 LOCAL (the proof of Lemma IM (a), l. 72, does not use that y is unhappy; the packet's l. 207 says
+    «(Φ2) is Lemma IM (a)», which fixes entry 2's wording note, l. 72-73, reads so, as CHECKER C128 §4 recommended), (Φ3) by IM (b),
+    (c), the step by KEY-DIR; (ii) by deleting the identity steps, which does not increase the number of bit changes.
     Consequence (l. 215-216): «Every frame query «T^Φ_k(m) ≥ L» that is UNSAT gives T_k(m) ≤ L − 1.»; a SAT model is a frame system, not
     a genome. Not claimed: «that T^Φ_k(m) = T_k(m) in general (the frame is a relaxation; no converse is proved)» (l. 217). Cells:
     REFEREE l. 20 «SIGN»; REFEREE-2 l. 19 «**SIGN** (Opus 5.5, D12)».
@@ -558,7 +643,7 @@ blocks and scripts/verify.sh.
     the Glucose proof regenerated byte-identically (my independent re-checks of it: addendum)»; REFEREE-2 l. 20 «**SIGN as
     machine-certified** (Opus 5.5, D12): encoder audited faithful; CNF and DRUP proof regenerated byte-identically; my drup.c build
     VERIFIED it; witness replayed; trust base = R112's (drup.c, an audited encoder)».
-  The RESULTS line (L-2) states (a)-(g) with their exact hypotheses and nothing wider.
+  The RESULTS line (L-3) states (a)-(g) with their exact hypotheses and nothing wider.
 - What rests on the machine (packet §6 l. 222-243; both referees' §6 checks): (i) PROVED (lane, signed): Theorem FRAME, so every UNSAT
   frame query «T^Φ_k(m) ≥ L» gives T_k(m) ≤ L − 1; and nothing else of (g). (ii) THE ENCODER, a premise, audited, not machine-checked:
   experiments/si/box75/frame_P-IDEAL-IM.py (sha1 c3b3a232e8ba56b6c6ed64511e2a24d1842e1f62, 191 lines; byte-equal to
@@ -587,9 +672,15 @@ blocks and scripts/verify.sh.
   no checker program other than drup.c has accepted this proof: REFEREE successor 24's own ref_rup was lost to a container restart (§C
   l. 164 «My independent ref_rup (deletions ignored) was still running when this was written; it is handed to successor 25
   (notes/REFEREE.md).»); REFEREE successor 25's «R-P-IDEAL-IM Addendum 1» (its own checker docs/referee/scratch/ref_rup_del.c, e1815909)
-  is PENDING and not on origin claude/referee at e7047ace; REFEREE-2's r2rup.c «NOT FINISHED» (l. 83; l. 86 «A new r2rup run is going;
-  its result will be an addendum.»). (R112's sixteen cube proofs were also accepted by REFEREE's own ref_rup; this proof is not, at this
-  fill.) (ix) CORROBORATION, not a certificate: CaDiCaL 1.5.3 through python-sat answered UNSAT (packet l. 236, «No proof.»;
+  is PENDING: it is not on origin claude/referee at 3fb22563 (fetched 2026-11-07T03:09:23Z by date -u; R-P-IDEAL-IM.md there ends with
+  successor 25's §C add. 1, l. 166-192, the L-3 round, which reports no result of it; notes/REFEREE.md last changed at e1815909);
+  REFEREE-2's r2rup.c «NOT FINISHED» (l. 83; l. 86 «A new r2rup run is going; its result will be an addendum.»), and REFEREE-2's
+  Addendum 2 (0a9e2a16) reports no result of it. No referee file on origin reports a verdict of a second checker on this proof,
+  accepting or rejecting. (R112's sixteen cube proofs were also accepted by REFEREE's own ref_rup; this proof is not, at this second
+  fill.) A second checker is not required: CHECKER C128 §4, ruling G-M / G-R, «RULING: not required.», with the landing condition «if
+  any referee file on origin at landing reports that a second checker REJECTS the proof, R115 does not land.»; an ACCEPT before landing
+  may be cited, optionally, by the Lead. (ix) CORROBORATION, not a certificate: CaDiCaL 1.5.3 through python-sat answered UNSAT (packet
+  l. 236, «No proof.»;
   experiments/si/box70/log/3_t1_11.log «m 3 MODE t1 T 11 T2 0 NOIM 0 vars 20843 clauses 96580 -> UNSAT 1281.5s»; the CNF's sha1 was not
   logged, and its encoder was the box-70 frame.py of 1ad6902d, whose t1 path equals the frozen copy's, by git diff). (x) NOT MACHINE:
   the lower bound is one explicit genome, experiments/si/box64/wit/kf1_d4_t10.json (sha1 1c0dc8cc5a8dd382e028d199f96f783f995b9a5a, =
@@ -607,7 +698,7 @@ blocks and scripts/verify.sh.
   R114's bodies; RESULTS R110's definitions of 𝓦_d, 𝓛^R_d, T^R(d), ISO, b_0(s), the c-step and T_k(m), quoted verbatim by the packet (§0
   l. 41-48), found in R110's title (l. 11323; its 𝓦_d / 𝓛^R_d / T^R(d) part also quoted in R112's body); and R110's W-ONLY, «on 𝓦_d
   every step of a run equals, on the levels ≥ 1, the c-step with c = b_0 of the new state» (packet l. 26-27), 1 hit (R110's title, l.
-  11323), used in COMPOSE-LB's proof only. Whitespace normalised. L-2: «premise: R104's definition of the model only, no theorem of R104
+  11323), used in COMPOSE-LB's proof only. Whitespace normalised. L-3: «premise: R104's definition of the model only, no theorem of R104
   used; RESULTS R105's ENC and LOCAL; RESULTS R110's definitions of 𝓦_d, 𝓛^R_d, T^R(d), ISO, b_0, the c-step and T_k(m), and R110's
   W-ONLY in COMPOSE-LB only». Use: ENC in Fact 0, IM, VALUE-MONO; LOCAL in IM (a), FRAME's (Φ1) and (Φ2) and COMPOSE's A-sets; R110's
   definitions throughout §2-§6; W-ONLY on the ISO composite H in COMPOSE-LB (within the scope of Lead reading L49, «RESULTS R110
@@ -618,10 +709,11 @@ blocks and scripts/verify.sh.
   not bear (it governs R105's CHAIN-BACK, TOP-MONO and KEYFLIP).
 - L41 and L43. The proofs are L-SI successors 39-40's (packet l. 2-4); fixes F-1, one proof sentence, was written by L-SI successor 40
   after REFEREE's IM-G1 (REFEREE l. 54-55 sketched the choice; the lane wrote the sentence); the referees' simulators and checkers are
-  checking tools. Nothing referee-written is a proof step of the entry (my reading; neither referee mentions L41). No DEAD item; L43
-  does not bear.
+  checking tools. Nothing referee-written is a proof step of the entry (my reading; neither referee mentions L41). Fixes entry 2 (L-SI
+  successor 41) carries no proof (l. 63-64). No DEAD item; L43 does not bear.
 - Fixes (docs/si/P-IDEAL-IM-fixes.md, append-only; entry 1 by L-SI successor 40 at 4ee9fa78, 55 lines, sha1
-  15edc7d1bfecdb4f1edf55b0eb861e6333d437ef, after REFEREE 0e24d8ca and REFEREE-2's draft 7856e7a9):
+  15edc7d1bfecdb4f1edf55b0eb861e6333d437ef, after REFEREE 0e24d8ca and REFEREE-2's draft 7856e7a9; entry 2 by L-SI successor 41 at
+  80d1422a, l. 57-79, the file then 79 lines, sha1 e80dee09d73db36dd5b604814c171a04b5b42fc4, after CHECKER C128 2dd44fc1):
   - F-1 (l. 16-31, IM-G1 required by REFEREE; REFEREE-2's N-1): one sentence inserted in COMPOSE-LB's proof: the four level-0 options
     get the four smallest ranks and gates, ordered so that «g(0, q(0)) < g(1, q(1)) holds iff c = 1, i.e. b_0(q) = c (R110's definition
     of b_0).»; ISO keeps them off every upper chain; R110's c-step does not read their gates; movers 0 and 1 never move, so «R110 W-ONLY
@@ -634,14 +726,31 @@ blocks and scripts/verify.sh.
   - F-3 (l. 40-49, W-1 required by REFEREE-2; IM-L2 optional by REFEREE, taken): the DATA scopes against imcheck.py: per state and both
     c XSTEP, MONO, BITCHAIN (BIT-CHAIN (i); «part (ii) is not counted separately; it enters KEY-DIR's prediction»), KEYDIR; once per
     state FRAME_OWN, FRAME_LOCAL, IM, and FRAME_STEP for both c2; «Line L-2 states exactly these scopes.» (l. 49). REFEREE §C l.
-    150-153; REFEREE-2 l. 143-144.
+    150-153; REFEREE-2 l. 143-144. F-3's «per state and both c» for BITCHAIN names the loop, not the state checked: the check is made at
+    the c-step image of each state (C128 E-2), as L-3 now says (R2); its FRAME_LOCAL «(IM (a))» counts y on neither chain, unhappy or
+    not (C128 E-1, R1).
   - Line L-2 (l. 51-55): L-1 «with exactly three replacements, made by script» (l. 52): the DATA scope (F-3), the COMPOSE figures (F-2),
     the source note.
+  - Entry 2 (l. 57-75; CHECKER C128 E-1..E-5, all DATA wording): the five old / new pairs R1-R5 as a table (l. 65-71), equal to C128 §5
+    (l. 105-114) string for string (my script; REFEREE §C add. 1 l. 174-175 «They equal the five pairs of entry 2's table, string for
+    string.»); the wording note for Theorem FRAME's proof (l. 72-73): read «(Φ2) is Lemma IM (a)» as «(Φ2) is R105 LOCAL (the proof of
+    Lemma IM (a), l. 72, does not use that y is unhappy)», the sentence C128 §4 (G-2 (ii)) recommended, not required; the scopes of
+    R1-R3 are the CHECKER's measured counts (l. 74-75). Entry 2's source paragraph (l. 58-62) says that C128 itself was not opened at
+    its writing (2dd44fc1 was then not on the remote) and that the pairs came from the Lead's relay «of C128 §4»; the pairs are C128
+    §5's, and REFEREE confirmed them against C128 itself (l. 175 «the pairs are now confirmed against C128 itself»). REFEREE §C add. 1
+    l. 189-191 (the wording note «is right»; «Verdict: fixes entry 2 is CORRECT.»); REFEREE-2 Addendum 2 l. 172 «Verdict: fixes entry 2
+    **CORRECT**».
+  - Line L-3 (l. 77-79): «docs/si/P-IDEAL-IM-line-L3.txt = L-2 with exactly R1-R5, made by experiments/si/box75/mkL3.py (each old string
+    asserted to occur once);» sha1 cf510950…, 4,962 bytes, re-made and compared by check75.sh (80d1422a; pins_fix2.sha1 pins L-2, L-3,
+    the fixes file and mkL3.py).
   - Not taken: REFEREE's optional IM-L1 (l. 14: «the re-check addendum has not landed; nothing to cite yet»).
-  No fix changes a statement or a hypothesis; F-1 completes COMPOSE-LB's proof, F-2 and F-3 change DATA wording, and L-2 changes the
-  line's DATA parenthesis and source note only.
+  No fix changes a statement or a hypothesis; F-1 completes COMPOSE-LB's proof, F-2 and F-3 change DATA wording, L-2 changes the line's
+  DATA parenthesis and source note only, entry 2 changes no statement, proof or hypothesis (one wording note on FRAME's proof), and L-3
+  changes the DATA parenthesis only (R1-R5).
 - Not signed: packet §7 (DATA; the summary table's §7 row, l. 17, labels it DATA, «scoped per statement»), in particular its table (l.
-  254-263), the COMPOSE figures and the encoder cross-checks at m = 2 (l. 264-270); the frame UNSATs for k = 2, 3, ∞ at m = 3 (l.
+  254-263; its row «(Φ2) = Lemma IM (a)» with the count 250,248, l. 257, is the source of C128 E-1; L-3's DATA names the 250,248 as
+  LOCAL, among them IM (a) on the 125,124 with y unhappy, R1), the COMPOSE figures and the encoder cross-checks at m = 2 (l. 264-270);
+  the frame UNSATs for k = 2, 3, ∞ at m = 3 (l.
   248-249, «single-solver, without a checked proof»); the Reading (OR) of §1 (l. 84-85). Not claimed: the lane conjectures FLIP-ADD,
   SUM_1 and PAIR-LIN (the line: «not claimed»; this entry states no status for them). OPEN, not claimed: any polynomial bound on T_k(m)
   or T^R(d); a converse of FRAME (T^Φ_k(m) = T_k(m)); T_k(3) for k ≥ 2; T_1(m) for m ≥ 4; any statement for degree ≥ 3 or Ξ-cyclic
@@ -653,6 +762,12 @@ blocks and scripts/verify.sh.
     every upper state, both c, 0 violations: IM (a) on 105,010 cases, IM (b) on 4,164, IM (c) on 19,842; BIT-CHAIN (i) on 56,048;
     KEY-DIR and VALUE-MONO on 112,096 each; frame step = its c-step on 20,912; compose.py on 18 seeds, KPART 0 and GPART 0 each time (l.
     111).
+  (iii) In CHECKER C128's fix round both referees ran instrumented copies of imcheck.py and compose.py (REFEREE successor 25:
+    imcheck_ref25.py and compose_ref25.py on `git archive 4ee9fa78`, §C add. 1 l. 179-187; REFEREE-2 successor 29: fix2/imcheck_r2.py
+    and fix2/compose_r2.py, read at 80d1422a, Addendum 2 l. 161-169): 125,124 of the 250,248 with y unhappy; 5,670 distinct (genome, c,
+    image) triples (4,715 (genome, image) pairs); XSTEP on 301 of the 404 genomes; under NEG=1 K in-run 0, G in-run 30,113, K end-of-run
+    21,234, G end-of-run 24,320; no counter for BIT-CHAIN (ii). C128 §3 measured the same and also checked BIT-CHAIN (i) at the states
+    themselves and (ii) at the c-step images, 0 failures each (its DATA, not lane DATA).
 - Honest limits: (i) A STRUCTURE / RELAXATION statement inside the IDEAL model: one improving switch of a degree-2 mover never lowers
   another degree-2 mover's preferred option except toward the chain it raises (IM); on 2-wide ladders under R110's c-step the key order
   is a bit chain (BIT-CHAIN) and a mover moves iff it is unhappy and on the bit's option (KEY-DIR); under ISO no c-step lowers a current
@@ -663,14 +778,18 @@ blocks and scripts/verify.sh.
   covered. (iii) The MACHINE item is a machine statement: its upper bound rests on Theorem FRAME (proved), on the audited, not proved,
   encoder (sha1 c3b3a232…), and on the UNSAT of the CNF sha1 7e611c8b… certified by one DRUP proof (sha1 32be84e4…) accepted by drup.c
   (sha1 2d4b8eab…; unverified C, audited sound by both referees), run three times by three parties; no second checker program has
-  accepted it at this fill (What rests on the machine (viii)); no drat-trim, LRAT, formally verified checker or Lean. (iv) The DATA is
-  per statement, as the line's DATA parenthesis says, with these exact sets and units (imcheck.py and compose.py, read by me): 404 ISO
-  𝓛^R genomes (400 random with m = 1, 2, 3 and 4 pins), every upper state with level 0 at (0, 0); IM per (state, z, y) with y unhappy on
-  a chain; LOCAL per (state, z, y) with y off both chains, happy or not (125,124 of the 250,248 with y unhappy, IM (a)'s hypothesis);
+  accepted it at this second fill (What rests on the machine (viii)), and CHECKER C128 requires none (ruling G-M / G-R); no drat-trim,
+  LRAT, formally verified checker or Lean. (iv) The DATA is per statement, as L-3's DATA parenthesis says (after CHECKER C128 E-1..E-5),
+  with these exact sets and units (imcheck.py and compose.py, read by me): 404 ISO 𝓛^R genomes (400 random with m = 1, 2, 3 and 4 pins),
+  every upper state with level 0 at (0, 0) (every start up to the level-0 states, C128 N-1); IM per (state, z, y) with y unhappy on a
+  chain; LOCAL per (state, z, y) with y off both chains, happy or not (125,124 of the 250,248 with y unhappy, IM (a)'s hypothesis);
   independence per (state, mover); BIT-CHAIN (i) per (state, c, level), evaluated at the c-step image of the state (5,670 distinct
-  images); KEY-DIR and VALUE-MONO per (state, c, upper mover); the frame step per (state, c); the box 64 cross-check on the 301 genomes
-  its simulator accepts; COMPOSE on 200 pairs, 41,056 runs, its NEG control counting counter increments, the 21,234 «K's part» ones all
-  after runs cut by a G-part disagreement; BIT-CHAIN (ii), COMPOSE-LB and the T_∞ bound have no lane count. (v) Every statement is about
+  (genome, c, image) triples); KEY-DIR and VALUE-MONO per (state, c, upper mover); the frame step per (state, c); the box 64 cross-check
+  on the 301 genomes its simulator accepts; COMPOSE on 200 pairs, 41,056 runs, its NEG control failing 54,433 times on G's part (30,113
+  steps and 24,320 end-of-run checks) and 21,234 times on K's, all end-of-run checks after a failure on G's part (K's steps do not use
+  the schedule); BIT-CHAIN (ii), COMPOSE-LB and the T_∞ bound have no lane count; the DATA of IM, BIT-CHAIN and KEY-DIR is on ISO 𝓛^R
+  genomes only, while IM is stated for degree-2 movers of any acyclic genome and BIT-CHAIN and KEY-DIR on all of 𝓛^R_(m+1) (C128 N-3).
+  (v) Every statement is about
   R104's IDEAL model; nothing is said about a real N5 run or a parity game beyond what R104 already says. (vi) Premises: RESULTS R104's
   definition, R105's ENC and LOCAL, R110's definitions and W-ONLY (in COMPOSE-LB only); R106-R109 and R111-R114 are not used. No lit
   note, no lane file, no outside source; the machine premises (the encoder, drup.c) for (g) only. No Lean. (vii) Every proof is in
@@ -683,30 +802,36 @@ blocks and scripts/verify.sh.
   (b) also follows from R111's MERGE; VALUE-MONO is the c-step form of R105's MONO and R114's MOVE-RISE; KEY-DIR implies R110's NOW-ONCE
   for c_t-step sequences; BIT-CHAIN (i) is the c-step analogue of R113's ALIGN and R114's KEY; none of these landed items is claimed
   again, and none is a premise.
-- Data (DATA, not proof): experiments/si/box75/imcheck.py (l-si cb2b0c60, sha1 f69e38ac59fb944c282f9b8660ac87b4f8171e91, 111 lines;
-  deterministic, `imcheck.py 400 75`; own c-step from R110's text, cross-checked against box 64's flipdp.py), output frozen in
-  experiments/si/box75/imcheck.out (sha1 2b0e08a67e9c8b5bf48948cfb50752d815e477f5, 4 lines); experiments/si/box68/compose.py (sha1
-  895d4026440bb5def5b84b159a31532908b5ef8c, 75 lines, b4404b06); wired into experiments/si/box75/check75.sh (4ee9fa78, 23 lines: pins of
-  the encoder and the witness, imcheck.py against imcheck.out, the witness's T_1 by flipdp, compose.py's two lines verbatim, the CNF
-  sha1 from the encoder), called by experiments/si/check.sh l. 1237-1239. L-2's DATA parenthesis:
-  «(DATA, experiments/si/box75/imcheck.py on 404 ISO genomes of 𝓛^R_2, 𝓛^R_3 and 𝓛^R_4, every start; once per state: IM (b), (c) 0
-  violations on 31,208 checks, (c) with the direction reversed failing 6,284 times; LOCAL (IM (a)) 0 on 250,248; independence of s(z) 0
-  on 66,520; per state and both c: BIT-CHAIN (i) 0 on 66,520, the negated bit failing 66,520 times; KEY-DIR 0 on 133,040; VALUE-MONO 0
-  on 133,040; frame step = c-step 0 on 24,184; own c-step = the box 64 simulator 0 on 18,944; COMPOSE: experiments/si/box68/compose.py
-  200 68 (seed 68), 0 disagreements on 200 random pairs with (m′, m) ∈ {1, 2}², and NEG=1 compose.py 200 68, the negated schedule
-  disagreeing 21,234 times on K's part and 54,433 times on G's; COMPOSE-LB and the T_∞ bound: no separate DATA; the encoder: only the m
-  = 2 cross-checks T^Φ_1(2) = 5 against L-COMP's exhaustive T_1(2) = 5)». What each count covers (imcheck.py and compose.py, read by
-  me): IM per (state, z, y) with y unhappy and on a chain of z (31,208; the control on (c) only); LOCAL per (state, z, y) with y on
-  neither chain, any y (250,248, of them 125,124 with y unhappy); independence per (state, z) (66,520); BIT-CHAIN (i) per (state, c,
-  level) at the c-step image (66,520; its control fires at every passing check); KEY-DIR and VALUE-MONO per (state, c, upper mover)
-  (133,040 each); the frame step per (state, c) (24,184); the box 64 cross-check per (state, c) on 301 of the 404 genomes (18,944);
-  COMPOSE per (pair, start, b_0) run (41,056 runs; NEG: KPART 21,234 end-of-run counts after a G-part break, GPART 30,113 in-run +
-  24,320 end-of-run); the encoder's m = 2 values by check70.sh (box70/frame.py = the frozen encoder) and L-COMP's bfk.c records.
-  BIT-CHAIN (ii), KEY-DIR's gate consequence and FRAME's «so T_k(m) ≤ T^Φ_k(m)» have no counter of their own. The block's outputs,
-  reproduced by both referees (REFEREE l. 108 and §C l. 148-149; REFEREE-2 l. 109-111, 140) and re-run for this draft
-  (2026-11-07T00:55:25Z from a `git archive` of 4ee9fa78's experiments/si, rc 0, the three PASS lines; imcheck.py's output equal to
-  imcheck.out; compose.py's two lines as asserted). No signed statement uses any count; the MACHINE item uses the certificate, not DATA
-  (What rests on the machine).
+- Data (DATA, not proof): experiments/si/box75/imcheck.py (l-si cb2b0c60, unchanged at 4ee9fa78 and 80d1422a, sha1
+  f69e38ac59fb944c282f9b8660ac87b4f8171e91, 111 lines; deterministic, `imcheck.py 400 75`; own c-step from R110's text, cross-checked
+  against box 64's flipdp.py on the 301 genomes it accepts), output frozen in experiments/si/box75/imcheck.out (sha1
+  2b0e08a67e9c8b5bf48948cfb50752d815e477f5, 4 lines); experiments/si/box68/compose.py (sha1 895d4026440bb5def5b84b159a31532908b5ef8c, 75
+  lines, b4404b06); wired into experiments/si/box75/check75.sh (80d1422a, 28 lines; at 4ee9fa78 23 lines: pins of the encoder and the
+  witness, imcheck.py against imcheck.out, the witness's T_1 by flipdp, compose.py's two lines verbatim, the CNF sha1 from the encoder;
+  fixes entry 2 added pins_fix2.sha1 (L-2, L-3, the fixes file, mkL3.py) and L-3 re-made by mkL3.py and compared with L-3 and its sha1
+  cf510950…), called by experiments/si/check.sh l. 1237-1239 (the same three lines at 80d1422a). L-3's DATA parenthesis: «(DATA,
+  experiments/si/box75/imcheck.py on 404 ISO genomes of 𝓛^R_2, 𝓛^R_3 and 𝓛^R_4, every start; once per state: IM (b), (c) 0 violations on
+  31,208 checks, (c) with the direction reversed failing 6,284 times; LOCAL 0 on 250,248 (y on neither chain, unhappy or not), among
+  them IM (a) on the 125,124 with y unhappy; independence of s(z) 0 on 66,520; per state and both c: BIT-CHAIN (i) at the c-step image
+  of the state 0 on 66,520 (5,670 distinct (genome, c, image) triples), the negated bit failing 66,520 times; KEY-DIR 0 on 133,040;
+  VALUE-MONO 0 on 133,040; frame step = c-step 0 on 24,184; own c-step = the box 64 simulator 0 on 18,944, on the 301 genomes the box 64
+  simulator accepts; COMPOSE: experiments/si/box68/compose.py 200 68 (seed 68), 0 disagreements on 200 random pairs with (m′, m) ∈ {1,
+  2}², and NEG=1 compose.py 200 68, the negated schedule failing 54,433 times on G's part (30,113 steps and 24,320 end-of-run checks)
+  and 21,234 times on K's (end-of-run checks after a failure on G's part only; K's steps do not use the schedule); BIT-CHAIN (ii),
+  COMPOSE-LB and the T_∞ bound: no separate DATA; the encoder: only the m = 2 cross-checks T^Φ_1(2) = 5 against L-COMP's exhaustive
+  T_1(2) = 5)». What each count covers (imcheck.py and compose.py, read by me): IM per (state, z, y) with y unhappy and on a chain of z
+  (31,208; the control on (c) only); LOCAL per (state, z, y) with y on neither chain, any y (250,248, of them 125,124 with y unhappy);
+  independence per (state, z) (66,520); BIT-CHAIN (i) per (state, c, level) at the c-step image (66,520 checks at 5,670 distinct
+  (genome, c, image) triples; its control fires at every passing check, by construction, true as written, C128 N-2); KEY-DIR and
+  VALUE-MONO per (state, c, upper mover) (133,040 each); the frame step per (state, c) (24,184); the box 64 cross-check per (state, c)
+  on 301 of the 404 genomes (18,944); COMPOSE per (pair, start, b_0) run (41,056 runs; NEG: KPART 21,234 end-of-run counts after a
+  G-part break, GPART 30,113 in-run + 24,320 end-of-run); the encoder's m = 2 values by check70.sh (box70/frame.py = the frozen encoder)
+  and L-COMP's bfk.c records. BIT-CHAIN (ii), KEY-DIR's gate consequence and FRAME's «so T_k(m) ≤ T^Φ_k(m)» have no counter of their
+  own. The block's outputs, reproduced by both referees (REFEREE l. 108 and §C l. 148-149; REFEREE-2 l. 109-111, 140) and re-run for
+  this draft (first fill 2026-11-07T00:55:25Z from a `git archive` of 4ee9fa78's experiments/si, rc 0, the three PASS lines; second fill
+  2026-11-07T03:02:24Z-03:02:32Z from a `git archive` of 80d1422a's experiments/si and docs/si, rc 0, the same three PASS lines,
+  check75.sh now also re-making L-3 by mkL3.py; imcheck.py's output equal to imcheck.out; compose.py's two lines as asserted). No signed
+  statement uses any count; the MACHINE item uses the certificate, not DATA (What rests on the machine).
 - Signatures: REFEREE docs/referee/R-P-IDEAL-IM.md: successor 24's report 0e24d8ca07cb9142cb18ce4ba588bc3c0911a533
   (2026-11-06T18:21:43Z, new file, 135 lines, sha1 56486e8287c25fcb89e434471da107ddb29c0583): every item SIGN, COMPOSE-LB with gap
   IM-G1, §6 «SIGN as machine-certified» with the encoder audited FAITHFUL, the CNF regenerated and the Glucose proof regenerated
@@ -714,47 +839,62 @@ blocks and scripts/verify.sh.
   (2026-11-06T22:32:47Z, 164 lines, sha1 4d19e9fa0808ecc010033c27b82d786da92e409f; l. 1-135 = 0e24d8ca's, by diff): «F-1 (IM-G1):
   CORRECT. IM-G1 is CLOSED.» (l. 143), F-2 re-measured EQUAL (l. 148), F-3 «CORRECT against imcheck.py.» (l. 150), its word diff of L-2
   (l. 154-159), «Verdict: L-2 MATCHES. Fixes entry 1 is CORRECT. All items are SIGNED; IM-G1 is closed.» (l. 160), and the certificate
-  addendum: drup.c on its regenerated proof «s VERIFIED (6531220 lemmas RUP-checked)» (l. 161-163). Successor 25's Addendum 1 (own RUP
-  checker with deletions): PENDING, not on origin claude/referee at e7047ace (What rests on the machine (viii)). REFEREE-2
-  docs/referee-2/R2-P-IDEAL-IM.md: successor 28's report of record 2e68c641ccac5342c7b4a38ef448f3f3c286c2d1 (2026-11-06T23:56:00Z, 153
-  lines, sha1 32e8bde68f9e8dbf848d31f3bff0534d94f5c62b; on claude/referee-2 by the merge f6bafb36; earlier pushes of the same file: the
-  draft body 7856e7a9 (21:44:03Z) and the fix round 280d2313 (22:18:02Z), both headed «DRAFT IN PROGRESS»; 2e68c641 changes l. 1-2, l.
-  20 and l. 81-82 only, by diff), with R2-P-IDEAL-IM/r2cstep.py, r2checks_seed75.out and r2cstep_kf1_d4_t10.out: every item SIGN, N-1 a
-  text note, §6 «**SIGN as machine-certified**», L-1 MATCHES after W-1 and W-2 (l. 11-21, 57-95, 104-132); fix round 1: «**Fixes entry
-  1: CORRECT.**» (l. 137), «**Line L-2: MATCHES.**» after its word diff (l. 145-152), «W-1 and W-2 are met.» (l. 153); r2rup.c NOT
-  FINISHED (l. 83-86). Lane: freeze and L-1 cb2b0c60f4202c008cebbb4be2bf1567de38a069, fixes entry 1 and L-2
-  4ee9fa7839441cce59e45a0884f63e4be0cc139a. Certificate record: L-COMP successor 9, claude/l-comp
+  addendum: drup.c on its regenerated proof «s VERIFIED (6531220 lemmas RUP-checked)» (l. 161-163); successor 25's §C add. 1
+  0c2a7c5bd207a9d0a79efc23f8720e69c04f38b1 (commit 2026-11-07T02:30:13Z; its header time, first written «2026-11-07T03:0xZ by date -u»,
+  was corrected to «committed 2026-11-07T02:30Z (0c2a7c5b)» by 3fb22563, 2026-11-07T02:49:14Z, «REFEREE 25: correct guessed header times
+  in four reports to their commit times», which changes only that line of this file; the file at 3fb22563: 192 lines, sha1
+  60778fdab1c08d1a341e85979e65ea927ba6d12b; l. 1-164 = bc2bdd5a's, by diff): C128 opened and R1-R5 parsed from its §5, equal to entry
+  2's table (l. 172-175), the byte test (l. 176-178), the DATA rule clause by clause with its own instrumented counters (l. 179-188),
+  the wording note «is right» (l. 189-190), «Verdict: fixes entry 2 is CORRECT. L-3 MATCHES, by the byte test and in meaning, with the
+  DATA rule clause by clause. All items stay SIGNED.» (l. 191-192). Successor 25's Addendum 1 (own RUP checker with deletions,
+  ref_rup_del): PENDING, not on origin claude/referee at 3fb22563 (What rests on the machine (viii)); optional by CHECKER C128's ruling
+  G-M / G-R. REFEREE-2 docs/referee-2/R2-P-IDEAL-IM.md: successor 28's report of record 2e68c641ccac5342c7b4a38ef448f3f3c286c2d1
+  (2026-11-06T23:56:00Z, 153 lines, sha1 32e8bde68f9e8dbf848d31f3bff0534d94f5c62b; on claude/referee-2 by the merge f6bafb36; earlier
+  pushes of the same file: the draft body 7856e7a9 (21:44:03Z) and the fix round 280d2313 (22:18:02Z), both headed «DRAFT IN PROGRESS»;
+  2e68c641 changes l. 1-2, l. 20 and l. 81-82 only, by diff), with R2-P-IDEAL-IM/r2cstep.py, r2checks_seed75.out and
+  r2cstep_kf1_d4_t10.out: every item SIGN, N-1 a text note, §6 «**SIGN as machine-certified**», L-1 MATCHES after W-1 and W-2 (l. 11-21,
+  57-95, 104-132); fix round 1: «**Fixes entry 1: CORRECT.**» (l. 137), «**Line L-2: MATCHES.**» after its word diff (l. 145-152), «W-1
+  and W-2 are met.» (l. 153); r2rup.c NOT FINISHED (l. 83-86); successor 29's Addendum 2 0a9e2a16247d47306cb751979d3d4f155ea372f0
+  (commit 2026-11-07T02:31:16Z, header stamp «2026-11-07 02:5xZ by date -u»; 172 lines, sha1 78545a522b0bce76bc74ba0f9f6f3485ce298343;
+  l. 1-153 = 2e68c641's, by diff): R1-R5 taken from C128 §5 (l. 158), the byte test (l. 159-160), the meaning against imcheck.py /
+  compose.py with its own instrumented copies (l. 161-169), its predecessor's miss recorded (l. 170-171), «Verdict: fixes entry 2
+  **CORRECT**; **L-3 MATCHES** (Opus 5.5, D1). Statement verdicts unchanged.» (l. 172); it reports no r2rup result. Lane: freeze and L-1
+  cb2b0c60f4202c008cebbb4be2bf1567de38a069, fixes entry 1 and L-2 4ee9fa7839441cce59e45a0884f63e4be0cc139a, fixes entry 2 and L-3
+  80d1422a2b403c01e8aaaa79cdcd5341874166ef. Certificate record: L-COMP successor 9, claude/l-comp
   39aec370ca6e38c555ebfc5263b71061e1fdee9e (experiments/comp/box27/log/lsi_q1_cert.txt, sha1 caae5fe1e83017a08d7377c2ccccceb92032defc, 7
-  lines).
-  INDEPENDENCE: REFEREE l. 2-3 «Independent: I did not open or list docs/referee-2/ on this packet before this report was pushed.»;
-  REFEREE-2 l. 2-3 «Independent: docs/referee/ not read for this packet before this push.». REFEREE's report (18:21:43Z) precedes
-  REFEREE-2's first report body (7856e7a9, 21:44:03Z); neither cites the other's report; each audited the encoder clause group by clause
-  group, regenerated the CNF and the proof on its own, ran drup.c on its own regenerated proof, and replayed the witness with its own
-  c-step. In the second round REFEREE knew REFEREE-2's items only through the fixes entry (§C l. 142 «I know REFEREE-2's items (W-1,
-  W-2) only through the entry.»). Differences, resolved: REFEREE's IM-G1 (a gap) and REFEREE-2's N-1 (a text note) name the same missing
-  sentence, F-1; REFEREE-2 alone required W-1 and W-2 (DATA), REFEREE offered IM-L2 (the same scope point as W-1) and IM-L1 (not taken).
-  Both SIGN the same items, and both MATCH L-2 (each by its own word diff). No disagreement in substance.
+  lines). INDEPENDENCE: REFEREE l. 2-3 «Independent: I did not open or list docs/referee-2/ on this packet before this report was
+  pushed.»; REFEREE-2 l. 2-3 «Independent: docs/referee/ not read for this packet before this push.». REFEREE's report (18:21:43Z)
+  precedes REFEREE-2's first report body (7856e7a9, 21:44:03Z); neither cites the other's report; each audited the encoder clause group
+  by clause group, regenerated the CNF and the proof on its own, ran drup.c on its own regenerated proof, and replayed the witness with
+  its own c-step. In the second round REFEREE knew REFEREE-2's items only through the fixes entry (§C l. 142 «I know REFEREE-2's items
+  (W-1, W-2) only through the entry.»). Differences, resolved: REFEREE's IM-G1 (a gap) and REFEREE-2's N-1 (a text note) name the same
+  missing sentence, F-1; REFEREE-2 alone required W-1 and W-2 (DATA), REFEREE offered IM-L2 (the same scope point as W-1) and IM-L1 (not
+  taken). Both SIGN the same items, and both MATCH L-2 (each by its own word diff) and L-3 (each by its own byte test against C128 §5
+  and its own instrumented counters). The two third rounds were committed 63 s apart (02:30:13Z, 02:31:16Z), each parsing C128 §5
+  itself; REFEREE-2 records as its predecessor's miss that its second round accepted the K's-part count without the unit / break
+  analysis (l. 170-171). No disagreement in substance.
 - TARGET.md diff: TARGET.md §1-§3 define parity games («A parity game is G = (V, V_E, V_O, E, pr) with V finite»), the regions W_E, W_O,
   M4 (§2 «There is a deterministic algorithm A and a polynomial p such that for every parity game G, A on input G halts within») and the
   word-RAM cost model; no statement of this entry mentions a parity game, a winning region, an algorithm's running time or a cost model
   (packet l. 6 «Not a TARGET.md claim. No polynomial bound. G-N5-TIME, FLIP-ADD, PAIR-LIN and SUM_1 stay OPEN.»; REFEREE §4 l. 116-117
   «Not M3, not M4, not a gauntlet step. G-N5-TIME OPEN.»; REFEREE-2 l. 117-118 «Not M3 / M4 / step 4; G-N5-TIME, FLIP-ADD, PAIR-LIN,
-  SUM_1 OPEN.»). The solver and checker times are machine data, not a running-time claim. The line (L-2) makes no M4 claim and no TARGET
+  SUM_1 OPEN.»). The solver and checker times are machine data, not a running-time claim. The line (L-3) makes no M4 claim and no TARGET
   claim; its tail reads «a STRUCTURE / RELAXATION statement inside the IDEAL model» and «G-N5-TIME stays OPEN; not M3, not a step-4
-  pass, not a TARGET.md claim» (L-2, by script). Not a step-4 pass. GAPS G-N5-TIME: open.
+  pass, not a TARGET.md claim» (L-3, by script). Not a step-4 pass. GAPS G-N5-TIME: open.
 
-Proposed GAPS line-11 UPDATE (append-only), to go AFTER R114's UPDATE of G-N5-TIME (GAPS at 96f4d708: the last UPDATE on l. 11 is
-R114's, «UPDATE 2026-11-06 21:57Z: RESULTS R114 (P-IDEAL-RISE; CHECKER C127 e3269b0b) …», before the row's closing « |»), built by
-script (upd115.py: r114/fill2/upd114b.py l. 1-315 with its 17 controls, R97-R113, plus R114's control, all 18 landed, byte for byte,
-True; sentinel_build111 of upd111.py unchanged, default drops, the «(DATA, » opening; the clause step applied to the MACHINE clause and
-one adaptation for «, and (COMPOSE-LB)» (G-U); cross-checked against a direct build: True) only from the clauses of the title line L-2:
-the seven labels behind their clauses, the MACHINE clause after «(FRAME)»; « (2026-11-06) — » → «: »; the DATA parenthesis before the
-source parenthesis opened as «; DATA, …»; «G-N5-TIME stays OPEN» and «not M3, not a step-4 pass, not a TARGET.md claim» dropped; the
-source parenthesis kept; «. G-N5-TIME stays open.» at the end. L-2 holds no "|"; the UPDATE holds none (4,646 bytes, 80 «(» / 80 «)»;
-sha1 of the line without newline, placeholders unfilled: 761cec506cc1f466f75b2b66ae6d42bafa7e8a0e). <DATE> is the landing date
-(YYYY-MM-DD, by date -u at the landing commit; C114 Add. 1 E-1), <HH:MM> the landing time and <checker> the CHECKER C128 commit, all
-filled at landing:
-UPDATE <DATE> <HH:MM>Z: RESULTS R115 (P-IDEAL-IM; CHECKER C128 <checker>) [refereed-only] LANDED: In the IDEAL model of RESULTS R104 (premise: R104's definition of the model only, no theorem of R104 used; RESULTS R105's ENC and LOCAL; RESULTS R110's definitions of 𝓦_d, 𝓛^R_d, T^R(d), ISO, b_0, the c-step and T_k(m), and R110's W-ONLY in COMPOSE-LB only), on acyclic Ξ-graphs, with C_z(s) the option of a degree-2 mover z of larger value under s (the two values differ, Fact 0), z unhappy at s iff s(z) ≠ C_z(s), ch_k(z, s) the movers on the chain of (z, k) under s and s ⊕ e_y the state s with y switched: for degree-2 movers z ≠ y with y unhappy at s, C_z(s ⊕ e_y) = C_z(s) if y lies on neither or on both chains of z under s, and C_z(s ⊕ e_y) ∈ {C_z(s), k} if y lies only on the chain of (z, k) (IM); on 𝓛^R_(m+1) with A_l, B_l the movers 2l, 2l + 1: for c ∈ {0, 1} and a state s, the bits b_0 := c and b_l := b_(l−1), 1 − b_(l−1) or [g(A_l, k) < g(B_l, k)] according as (s(A_l), s(B_l)) is (0, 1), (1, 0) or (k, k) satisfy b_l = [key(A_l) < key(B_l)] under R110's c-step keys, and a level-l mover prefers by key its option 0 iff b_(l−1) = 1 (BIT-CHAIN); in the c-step from u to u′ a mover x of level l ≥ 1 moves iff u(x) = b_(l−1) and C_x(u) ≠ b_(l−1), with the bits of u′, so the c-step depends on the gates only through c and the bits [g(A_l, k) < g(B_l, k)], l < m (KEY-DIR); under ISO: the c-step never lowers the current value of an upper mover and strictly raises it for every mover that moves, so in every c_t-step sequence, with any number of changes of c, no state repeats among the moving steps and T_k(m) ≤ T_∞(m) ≤ 2^(2m) − 1 (VALUE-MONO); for ISO genomes K of 𝓛^R_(m′+1) and G of 𝓛^R_(m+1) and their composite H of 𝓛^R_(m′+m+1) (G's upper levels above K's, G's level 0 dropped, G's ranks and gates above K's), H's c-step is K's c-step on K's movers and G's c_*-step on G's movers with c_* the bit b_(m′) of K's part of the new state (COMPOSE), and the number of steps of every such G-sequence driven by a flip-free c-step sequence of K is at most T^R(m′ + m + 1) (COMPOSE-LB); every ISO genome of 𝓛^R_(m+1) gives, through its upper Ξ-targets, the table C and the bits [g(A_l, k) < g(B_l, k)], a system of the IM frame Φ_m (acyclic Ξ-targets on 2m upper movers, an arbitrary table C with C_z independent of s(z), LOCAL and IM, free key bits, and the BIT-CHAIN step) whose frame step with bit c is the genome's c-step, so T_k(m) ≤ T^Φ_k(m) for every k, T^Φ_k(m) the largest number of moving frame steps with at most k bit changes (FRAME); and MACHINE: T^Φ_1(3) ≤ 10, hence T_1(3) = 10, by a Glucose 4 UNSAT of the frame CNF «T^Φ_1(3) ≥ 11» (sha1 7e611c8b…, regenerated by the frozen encoder experiments/si/box75/frame_P-IDEAL-IM.py, sha1 c3b3a232…, clause groups mapped to Φ_3 in the packet) with a DRUP proof accepted by the forward RUP checker drup.c of RESULTS R112 (sha1 2d4b8eab…; 6,531,220 lemmas; its correctness and the encoder's are premises), a second UNSAT by CaDiCaL 1.5.3 without a proof, and L-NEW's ISO genome kf1_d4_t10 of 𝓛^R_4 (experiments/new/box160/out/kf1_d4_t10.json, sha1 1c0dc8cc…; T_1 = 10 under two simulators): a STRUCTURE / RELAXATION statement inside the IDEAL model; bounds nothing polynomially (VALUE-MONO's bound is exponential); the frame is a relaxation, no converse is claimed; FLIP-ADD, SUM_1 and PAIR-LIN are not claimed; degree ≥ 3, Ξ-cyclic genomes and genomes outside 𝓛^R are not covered except by IM (degree-2 movers of any acyclic genome); T_k(3) for k ≥ 2 is not claimed; DATA, experiments/si/box75/imcheck.py on 404 ISO genomes of 𝓛^R_2, 𝓛^R_3 and 𝓛^R_4, every start; once per state: IM (b), (c) 0 violations on 31,208 checks, (c) with the direction reversed failing 6,284 times; LOCAL (IM (a)) 0 on 250,248; independence of s(z) 0 on 66,520; per state and both c: BIT-CHAIN (i) 0 on 66,520, the negated bit failing 66,520 times; KEY-DIR 0 on 133,040; VALUE-MONO 0 on 133,040; frame step = c-step 0 on 24,184; own c-step = the box 64 simulator 0 on 18,944; COMPOSE: experiments/si/box68/compose.py 200 68 (seed 68), 0 disagreements on 200 random pairs with (m′, m) ∈ {1, 2}², and NEG=1 compose.py 200 68, the negated schedule disagreeing 21,234 times on K's part and 54,433 times on G's; COMPOSE-LB and the T_∞ bound: no separate DATA; the encoder: only the m = 2 cross-checks T^Φ_1(2) = 5 against L-COMP's exhaustive T_1(2) = 5 (P-IDEAL-IM, docs/si/P-IDEAL-IM.md with its fixes entry 1, docs/si/P-IDEAL-IM-fixes.md; L-SI successors 39-40). G-N5-TIME stays open.
+Proposed GAPS line-11 UPDATE (append-only), to go AFTER R114's UPDATE of G-N5-TIME (GAPS at 96f4d708 and at this second fill's local
+trunk, byte-equal: the last UPDATE on l. 11 is R114's, «UPDATE 2026-11-06 21:57Z: RESULTS R114 (P-IDEAL-RISE; CHECKER C127 e3269b0b) …»,
+before the row's closing « |»), built by script (fill2/upd115b.py: upd115.py with its 18 controls (R97-R114, all landed, byte for byte,
+True; printed exactly as at the first fill) and its R115 procedure unchanged, run on L-3; sentinel_build111 of upd111.py unchanged,
+default drops, the «(DATA, » opening; the clause step applied to the MACHINE clause and one adaptation for «, and (COMPOSE-LB)» (G-U);
+cross-checked against a direct build: True; equal to the first fill's UPDATE with C128 §5's R1-R5: True) only from the clauses of the
+title line L-3: the seven labels behind their clauses, the MACHINE clause after «(FRAME)»; « (2026-11-06) — » → «: »; the DATA
+parenthesis before the source parenthesis opened as «; DATA, …»; «G-N5-TIME stays OPEN» and «not M3, not a step-4 pass, not a TARGET.md
+claim» dropped; the source parenthesis kept; «. G-N5-TIME stays open.» at the end. L-3 holds no "|"; the UPDATE holds none (4,993 bytes,
+85 «(» / 85 «)»; sha1 of the line without newline, placeholders unfilled: 39d9a2925c2c193193f3b0845b37919defa75a2b, = C128 §5's). <DATE>
+is the landing date (YYYY-MM-DD, by date -u at the landing commit; C114 Add. 1 E-1), <HH:MM> the landing time and <checker> the CHECKER
+C128 commit, all filled at landing:
+UPDATE <DATE> <HH:MM>Z: RESULTS R115 (P-IDEAL-IM; CHECKER C128 <checker>) [refereed-only] LANDED: In the IDEAL model of RESULTS R104 (premise: R104's definition of the model only, no theorem of R104 used; RESULTS R105's ENC and LOCAL; RESULTS R110's definitions of 𝓦_d, 𝓛^R_d, T^R(d), ISO, b_0, the c-step and T_k(m), and R110's W-ONLY in COMPOSE-LB only), on acyclic Ξ-graphs, with C_z(s) the option of a degree-2 mover z of larger value under s (the two values differ, Fact 0), z unhappy at s iff s(z) ≠ C_z(s), ch_k(z, s) the movers on the chain of (z, k) under s and s ⊕ e_y the state s with y switched: for degree-2 movers z ≠ y with y unhappy at s, C_z(s ⊕ e_y) = C_z(s) if y lies on neither or on both chains of z under s, and C_z(s ⊕ e_y) ∈ {C_z(s), k} if y lies only on the chain of (z, k) (IM); on 𝓛^R_(m+1) with A_l, B_l the movers 2l, 2l + 1: for c ∈ {0, 1} and a state s, the bits b_0 := c and b_l := b_(l−1), 1 − b_(l−1) or [g(A_l, k) < g(B_l, k)] according as (s(A_l), s(B_l)) is (0, 1), (1, 0) or (k, k) satisfy b_l = [key(A_l) < key(B_l)] under R110's c-step keys, and a level-l mover prefers by key its option 0 iff b_(l−1) = 1 (BIT-CHAIN); in the c-step from u to u′ a mover x of level l ≥ 1 moves iff u(x) = b_(l−1) and C_x(u) ≠ b_(l−1), with the bits of u′, so the c-step depends on the gates only through c and the bits [g(A_l, k) < g(B_l, k)], l < m (KEY-DIR); under ISO: the c-step never lowers the current value of an upper mover and strictly raises it for every mover that moves, so in every c_t-step sequence, with any number of changes of c, no state repeats among the moving steps and T_k(m) ≤ T_∞(m) ≤ 2^(2m) − 1 (VALUE-MONO); for ISO genomes K of 𝓛^R_(m′+1) and G of 𝓛^R_(m+1) and their composite H of 𝓛^R_(m′+m+1) (G's upper levels above K's, G's level 0 dropped, G's ranks and gates above K's), H's c-step is K's c-step on K's movers and G's c_*-step on G's movers with c_* the bit b_(m′) of K's part of the new state (COMPOSE), and the number of steps of every such G-sequence driven by a flip-free c-step sequence of K is at most T^R(m′ + m + 1) (COMPOSE-LB); every ISO genome of 𝓛^R_(m+1) gives, through its upper Ξ-targets, the table C and the bits [g(A_l, k) < g(B_l, k)], a system of the IM frame Φ_m (acyclic Ξ-targets on 2m upper movers, an arbitrary table C with C_z independent of s(z), LOCAL and IM, free key bits, and the BIT-CHAIN step) whose frame step with bit c is the genome's c-step, so T_k(m) ≤ T^Φ_k(m) for every k, T^Φ_k(m) the largest number of moving frame steps with at most k bit changes (FRAME); and MACHINE: T^Φ_1(3) ≤ 10, hence T_1(3) = 10, by a Glucose 4 UNSAT of the frame CNF «T^Φ_1(3) ≥ 11» (sha1 7e611c8b…, regenerated by the frozen encoder experiments/si/box75/frame_P-IDEAL-IM.py, sha1 c3b3a232…, clause groups mapped to Φ_3 in the packet) with a DRUP proof accepted by the forward RUP checker drup.c of RESULTS R112 (sha1 2d4b8eab…; 6,531,220 lemmas; its correctness and the encoder's are premises), a second UNSAT by CaDiCaL 1.5.3 without a proof, and L-NEW's ISO genome kf1_d4_t10 of 𝓛^R_4 (experiments/new/box160/out/kf1_d4_t10.json, sha1 1c0dc8cc…; T_1 = 10 under two simulators): a STRUCTURE / RELAXATION statement inside the IDEAL model; bounds nothing polynomially (VALUE-MONO's bound is exponential); the frame is a relaxation, no converse is claimed; FLIP-ADD, SUM_1 and PAIR-LIN are not claimed; degree ≥ 3, Ξ-cyclic genomes and genomes outside 𝓛^R are not covered except by IM (degree-2 movers of any acyclic genome); T_k(3) for k ≥ 2 is not claimed; DATA, experiments/si/box75/imcheck.py on 404 ISO genomes of 𝓛^R_2, 𝓛^R_3 and 𝓛^R_4, every start; once per state: IM (b), (c) 0 violations on 31,208 checks, (c) with the direction reversed failing 6,284 times; LOCAL 0 on 250,248 (y on neither chain, unhappy or not), among them IM (a) on the 125,124 with y unhappy; independence of s(z) 0 on 66,520; per state and both c: BIT-CHAIN (i) at the c-step image of the state 0 on 66,520 (5,670 distinct (genome, c, image) triples), the negated bit failing 66,520 times; KEY-DIR 0 on 133,040; VALUE-MONO 0 on 133,040; frame step = c-step 0 on 24,184; own c-step = the box 64 simulator 0 on 18,944, on the 301 genomes the box 64 simulator accepts; COMPOSE: experiments/si/box68/compose.py 200 68 (seed 68), 0 disagreements on 200 random pairs with (m′, m) ∈ {1, 2}², and NEG=1 compose.py 200 68, the negated schedule failing 54,433 times on G's part (30,113 steps and 24,320 end-of-run checks) and 21,234 times on K's (end-of-run checks after a failure on G's part only; K's steps do not use the schedule); BIT-CHAIN (ii), COMPOSE-LB and the T_∞ bound: no separate DATA; the encoder: only the m = 2 cross-checks T^Φ_1(2) = 5 against L-COMP's exhaustive T_1(2) = 5 (P-IDEAL-IM, docs/si/P-IDEAL-IM.md with its fixes entry 1, docs/si/P-IDEAL-IM-fixes.md; L-SI successors 39-40). G-N5-TIME stays open.
 
 Addendum (subagent, for the Lead; does not land; written 2026-11-07T01:11:54Z by date -u). (1) FIRST FILL on line L-2 (l-si 4ee9fa78,
 sha1 8b7ccfb9…), to CHECKER C128. NOT pushed; my commits: the five merges (--no-ff) 64164445 (l-si 91d40ec2), 16a4af14 (l-comp
@@ -800,9 +940,71 @@ and suffix: True); 0 "|" inserted. GAPS: only l. 11 changes: True; new l. 11 = o
 filled UPDATE + " |": True; "|" on l. 11 76 -> 76 (pipe count unchanged); UPDATE 2026- heads 49 -> 49 plus 1 UPDATE head with the
 simulation year 2099, directly after R114's and now the last on the line; 23 -> 23 lines (wc -l). Fill values used only for the
 simulation: <DATE> 2099-01-04, <HH:MM> 00:00, <checker> 0000000. (10) THIS DRAFT'S SHA1: a file cannot state its own sha1. The sha1 of
-this file with the forty hex digits after the next colon replaced by forty «0» characters is: 0c763ad3f10ffc81a17e8529d976a8ff914b8747.
+this file with the forty hex digits after the next colon replaced by forty «0» characters is: 42490b44ee5a31f736993e8fa581c76ef653e136.
 The file's actual sha1 and line count are in the hand-back to the Lead (and re-measurable with sha1sum). Scratch:
 /tmp/claude-0/-home-user-parity-games-challange/43a29ffc-0674-5391-84c1-1d3918a14b5d/scratchpad/r115/ (runw75.sh / w75.out, w70.out,
 imsplit.py / imsplit.out, compsplit.py / compsplit.out, wdiff115.py / wdiff115.out, prem115.py / prem115.out, upd115.py / upd115.out /
 upd115L2.txt, fill115.py (template fill and line wrap), R115-template.md, chk115.py / chk115.final.out, sim115.py / sim115.final.out,
 arch4ee9/).
+Addendum 2 (subagent, for the Lead; does not land; written 2026-11-07T03:02:04Z by date -u). (1) SECOND FILL on line L-3 (l-si 80d1422a,
+sha1 cf510950…), to CHECKER C128 Add. 1. NOT pushed; my commits: the four merges (--no-ff) 256e7461 (l-si 77d536f6), d06fff51 (referee
+0c2a7c5b), 909706e4 (referee-2 0a9e2a16), d6410595 (referee 3fb22563) and one commit holding this file. (2) TITLE l. 523 = "### R115
+[refereed-only] " + L-3 without its newline + ", CHECKER PASS (docs/checker/C128.md, checker PENDING)", checked by script (chk115b.py):
+equal, byte for byte (True); the only «### R» heading of this file; 86 + 1 «(» and 86 + 1 «)», balanced; no «[lane», no packet name
+before the claims. (3) BODY l. 523-883 (python slice d[522:883]; 0 "|"); GAPS preamble l. 885-896 (two "|", both inside quotation marks:
+the row's closing « |» and «holds no "|"»); UPDATE l. 897 (d[896]; one line, 0 "|", one each of <DATE>, <HH:MM>, <checker>; 4,993 bytes;
+sha1 39d9a2925c2c193193f3b0845b37919defa75a2b of the line without newline, computed on the UNFILLED form, as C128 §5 l. 117-118 states
+it, «Rebuilt UPDATE (the same five replacements in d[756], line without newline, unfilled): sha1
+39d9a2925c2c193193f3b0845b37919defa75a2b»: equal). A landing script slices d[522:883] for the entry and reads d[896] for the UPDATE
+(with «R115», «R114» as PREV, «C128», and the GAPS l. 11 assertion on «RESULTS R114 (P-IDEAL-RISE» as the last UPDATE). (4) WHAT IS LEFT
+TO FILL: only the title's «checker PENDING)» and the UPDATE's three placeholders, at landing. The one open referee item is REFEREE
+successor 25's «R-P-IDEAL-IM Addendum 1» (ref_rup_del on the 2.4 GB proof): not on origin at 2026-11-07T03:09:23Z (claude/referee
+3fb22563); optional by C128's ruling G-M / G-R. If it ACCEPTS before landing, the Lead may cite it in What rests on the machine (viii)
+and the Signatures; if any referee file on origin at landing reports a second checker REJECTING the proof, R115 does not land (C128 l.
+74). The body's two PENDING sentences go stale when it lands. (5) QUOTE SWEEP (chk115b.py: chk115.py's rule and sources, plus L-3, the
+fixes, check75.sh, mkL3.py and pins_fix2.sha1 at 80d1422a, R-P-IDEAL-IM.md at 0c2a7c5b and 3fb22563, R2-P-IDEAL-IM.md at 0a9e2a16,
+notes/REFEREE.md at 3fb22563, C128, the first-fill draft bc987999, the commit subjects of the new commits, my second-fill outputs): 575
+outermost quotes, 486 parts of 6+ characters, every part found (0 not found); in the title and body alone 172 quotes, 154 parts, 0 not
+found; GAPS preamble and UPDATE 14 quotes, 10 parts, 0 not found. Line-precise: 123 of 123 (source, cited line range, quote) triples
+found verbatim, whitespace-normalised, inside the cited lines. (6) WORD DIFF bc987999 → this file (wd115b.py, difflib on whitespace
+tokens, Addendum 2 left out): 24 line regions, 101 token hunks (127 tokens deleted, 3126 inserted), every hunk in a region listed in
+the SECOND FILL paragraph. (7) STALE STATUS in title and body (by script): «pending» 2 apart from the title fill «checker PENDING)»,
+both REFEREE successor 25's Addendum 1 (What rests on the machine (viii), Signatures), true at this fill; «not yet» 0; «not landed» 1
+(the quotation of fixes l. 14, IM-L1, history); «unlanded» 0; «provisional» 0; «to follow» 0; «stays OPEN» / «stay OPEN» 3 (each about
+G-N5-TIME, as at the first fill); L-2 named as the current line («RESULTS line is L-2», «title is L-2», «The RESULTS line (L-2)», «line
+(L-2)», «L-2's DATA parenthesis», «(L-2, by script)», «L-2's parentheses», «title line L-2», «L-2 holds no», and L-2 with a colon before
+the premise quote), by script in the title, the body, the GAPS preamble and the UPDATE: 0 times; the old strings of R1-R4 (C128 §5) 0
+times there, and R5's old phrase only inside «BIT-CHAIN (ii), COMPOSE-LB and the T_∞ bound: no separate DATA»; «on K's part» 0; «L-2» 19
+times in the title and body, every one history (the line history, the L-2 verdicts and word diffs, fixes entry 1, the pins, R1-R5's
+base); MOVES-2D and P-IDEAL-MOVES 0 times in the title, the body and the UPDATE. (8) G-9 CHECK of L-3's DATA (l3rel115.py, rc 0): 15 of
+15 DATA phrases, each once in L-3's DATA parenthesis, agree with the frozen imcheck.out, compose.py's two lines, my first-fill splits
+(imsplit.out: 125,124 of the 250,248 with y unhappy, 5,670 distinct c-step images, Ext fails on 103 genomes so XSTEP runs on 301;
+compsplit.out: K in-run 0, G in-run 30,113, K end-of-run 21,234, G end-of-run 24,320) and the figures of C128 §3 / §5, REFEREE §C add. 1
+and REFEREE-2 Addendum 2: True. Every signed clause of L-3 has a counter of matching unit, set and scope or is in its no-DATA list
+(BIT-CHAIN (ii), COMPOSE-LB, the T_∞ bound, the encoder's m = 2 cross-check named as such). (9) LANDING SIMULATION (sim115b.py:
+sim115.py with the UPDATE's sha1 assertion 39d9a292…, otherwise unchanged, on in-memory copies of RESULTS and GAPS at the local trunk,
+R114 as landed): RESULTS 13,306 -> 13,668 lines (wc -l), a pure insertion of 362 lines (the entry block with "checker PENDING)" filled,
+plus one blank line) directly after R114's landed block (R114 l. 12,394-12,695, blank l. 12,696, byte-unchanged: True; R110's to R113's
+blocks byte-unchanged: True): True; R115 at l. 12,697-13,057, blank l. 13,058, the next line (**Erratum E-1**) moves to l. 13,059, the
+Erratum E-2 line to l. 13,072, the Note E-3 line to l. 13,100, the Dead ends heading to l. 13,131; order R110, R111, R112, R113, R114,
+R115, E-1, E-2, E-3, Dead ends: True; every other line byte-unchanged (common prefix and suffix: True); 0 "|" inserted. GAPS: only l. 11
+changes: True; new l. 11 = old l. 11 with its closing " |" replaced by " " + the filled UPDATE + " |": True; "|" on l. 11 76 -> 76 (pipe
+count unchanged); UPDATE 2026- heads 49 -> 49 plus 1 UPDATE head with the simulation year 2099, directly after R114's and now the last
+on the line; 23 -> 23 lines (wc -l). Fill values used only for the simulation: <DATE> 2099-01-04, <HH:MM> 00:00, <checker> 0000000. (10)
+NOT VERIFIED: the referees' tools and C128's instrumented runs not re-run (their files read; my first-fill splits measure the same
+figures); scripts/verify.sh and the full check.sh not run; Glucose 4, drup.c and CaDiCaL not run; the Lead's relay to L-SI (fixes l. 58)
+is a message, not verifiable from the repository. (11) NOTES for the CHECKER, no verdict affected: (i) fixes entry 2 l. 58-60 says the
+pairs were taken from the Lead's relay «of C128 §4» with C128 unopened; they are C128 §5's pairs (equal by script, l3rel115.py), and
+REFEREE confirmed them against C128 itself (§C add. 1 l. 174-175). (ii) Header stamps: REFEREE's §C add. 1 first read «2026-11-07T03:0xZ
+by date -u», after its commit time 02:30:13Z, and 3fb22563 (02:49:14Z) corrected it to «committed 2026-11-07T02:30Z (0c2a7c5b)»;
+REFEREE-2's Addendum 2 header reads «2026-11-07 02:5xZ by date -u», after its commit time 02:31:16Z, uncorrected on origin at
+2026-11-07T03:09:23Z; the body cites the commit times and quotes both stamps. (iii) L-3's source note still reads «with its fixes entry
+1» and «L-SI successors 39-40», as C128 §5 requires (five replacements, nothing else changes; the R113 / R114 precedent); entry 2
+carries no proof and is named in the body (Object, L41 and L43, Fixes, Signatures). (iv) REFEREE-2's Addendum 2 signs «(Opus 5.5, D1)»,
+its earlier sections D12; quoted as written. (v) The body's FRAME proof sentence (Claims (f)) now uses C128 §4's wording; packet l. 207
+is frozen and is read through fixes entry 2 l. 72-73. (vi) C128's notes N-1 and N-3 are recorded in Honest limits (iv), N-2 in Data.
+(vii) The entry block grew from 289 to 361 lines (the third rounds, fixes entry 2, Referee strengthening (iii), the ruling in (viii)).
+Scratch: /tmp/claude-0/-home-user-parity-games-challange/43a29ffc-0674-5391-84c1-1d3918a14b5d/scratchpad/r115/fill2/ (edit115b.py,
+header1.txt, secondfill.raw / sf115.py / secondfill.txt, addendum2.raw / add2.py / addendum2.txt, l3rel115.py / l3rel115.out, upd115b.py
+/ upd115b.out / upd115L3.txt, runw75L3.sh / w75L3.out, chk115b.py / chk115b.out, wd115b.py / wd115b.out, sim115b.py / sim115b.out,
+R115-draft-bc987999.md, arch80d1/).
