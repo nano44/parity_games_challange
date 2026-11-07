@@ -1,6 +1,17 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 27), written 2026-11-07T14:42Z by date -u (Opus 5.5, D15)
+- DONE: handover check e67241df + cb95edbf (time fix), VERIFY PASS, Lead score 5, «go» 14:36Z.
+- DONE: P-TOWER-FUEL full first review -> docs/referee/R-P-TOWER-FUEL.md (this commit). MOVE, DOUBLE-EQ (E1)-(E5), PULSE-NEST,
+  GAP-NEST, DOMINANCE-FREEZE (a)(b), CROSS-ECONOMY (i)(ii) SIGN; (iii) SIGN WITH GAP TF-1 (proof inequality |D| >= 2^R false, fails
+  57/86 RANK states; repaired proof via Lemma 4 (a) on 2j's chains). L-1 NOT YET: TF-L1..L3 required (units / undefined «fail» /
+  decider scope: 48/48 only for «some state s_(a-1)..s_(e-1)»; 32/48 at s_(a-1), 16/48 at every state). Optional TF-L4, TF-L5, TF-2.
+- NEXT: fixes entry + L-2 from L-LOWER -> byte test with tf_linefix.py pattern; then compare with REFEREE-2 (not read before push).
+- Tools: scratch/tf_replay.py (own loader + counters on t3r_sim), tf_units.py, tf_quotes.py, tf_linefix.py; logs tf_logs/.
+  Worktree $SCRATCH/llow at 7f7ff6f5.
+- Trap this session: wrote 14:12Z for a 14:09Z time in the handover check (fixed cb95edbf). Run date -u immediately before writing.
+
 ## HANDOVER NOTE (successor 26), written 2026-11-07T13:41Z by date -u (Opus 5.5, D15); parked at ~481k context on the Lead's 13:43Z ask
 - DONE (all via scripts/push.sh, VERIFY PASS; Lean / Oink NOT RUN as usual; origin claude/referee 07a950ae before this commit):
   | item | report (commits) | final state |
