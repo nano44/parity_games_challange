@@ -66,3 +66,16 @@ Every run ends «nothing changes».
   shows the support matters (level 3 ≤ 8 at d 4).
 - RECT_d11_T59 (d 11, T 59): NOT CHECKED, not on claude/l-lower at 4d747490.
 - Pins: r214/lower3/pins.sha1 (originals and renumbered copies).
+
+## 4. Support query and T^R table (Lead 01:22Z / 03:25Z)
+- Least d for a 15-move level-3 Ξ-target ∈ [6, 10]:
+  - d 5: UNSAT within horizon 16 only (1,206 s).
+  - d 6 / 7 / 8: UNKNOWN at 2 h.
+  - d 10: REC_d10_tower, movers 6 and 7.
+  - Any mover: 15 at d 9 (sup_d9_l3_m15, mover 7, non-target).
+  - Target-only climbs: 14 at d 8 and d 9.
+- Level-4 target climbs: plateau at 28-30. No 31 was found.
+- Certified T^R(d) lower bounds (r214/tw single-start climbs, TSC=1; all checked by memb, ideal.py, lemck 0, box 150 VIOL 0; fa over all
+  starts where marked): d 8 38 (all), d 9 47 (all), d 10 53 (all), d 11 58, d 12 59, d 13 71, d 14 83. With d 5-7 = 16 / 22 / 26.
+  Growth looks linear (about 6.6 per level). The max-T genomes are not towers: a single mover moves at most 8-12 times.
+- tw_d9_T40 (a near-tower, F 2, 6, 14, 28) was superseded for T by tw_d9_T47.
