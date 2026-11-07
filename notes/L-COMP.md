@@ -45,16 +45,19 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - Things only I know: pysat Solver.interrupt() does not stop cadical195 here: use subprocess + timeout (acube.py). drat-trim fetch is
   refused (classifier). drup.c IGNDEL mode reaches the refutation one lemma earlier than the default mode.
 
-## Resume point -- successor 10, BOX 28 (T^R(4) certified), updated 2026-11-07 02:1xZ by date -u
-- Everything: experiments/comp/box28/README.md. Lead 02:10Z approved (a) EXACT-SAT on the 8 PAIR-SWAP roots with Xi-splits past a cap,
-  (b) certification of sub-cubes in parallel (smallest first, disk guard), (c) my own faster forward RUP checker frup.c (cross-validated
-  against drup.c: 16 P-TR3 proofs + negative tests + mutants), PAIR-SWAP proof as a lane lemma (README "Symmetry").
-- Running (setsid, survive the shell): CaDiCaL roots 0, 42 (since 01:08Z), 2 (since 02:07Z), logs log/sample/ (local exclude);
-  xval_d3.sh (PDIR=/home/user/pf/x; resumable, log/xval_d3/c<c>.done); diskguard.sh (kills dimproof.py below 6 GB free).
-- After a restart: rebuild gcc -O2 -o frup frup.c and box27/drup; relaunch xval_d3.sh and diskguard.sh; roots via acube28.py
-  (ROOTS=..., TLIM=..., PAR=...; state cubes/TAG).
-- Things only I know: a d 4 L 14 Glucose proof grows ~7.6 GB per hour (root 0, stopped at 62 min); pinck.py runs its CLI on import, so
-  box 28 tools exec only its text before 'if sys.argv[1] == "files"'.
+## Resume point -- successor 10, BOX 28 (T^R(4) certified), updated 2026-11-07 05:0xZ by date -u
+- Everything: experiments/comp/box28/README.md. Lead 02:10Z: (a) EXACT-SAT on the 8 PAIR-SWAP roots, (b) certify sub-cubes, (c) frup.c
+  (done: same speed as drup.c, kept as an independent second checker). Lead 02:46Z: + ISO sub-class (1 core). Lead 04:28Z: NEW encoder
+  cnf2.py beside cnf.py (done, spec in README; regression (a) d 3 re-derivation, (b) decoded models = sim, (c) random 200: run).
+  A cnf2 UNSAT is DATA until the referees audit cnf2.
+- CONTAINER RESTART ~05:00Z killed all jobs (cnf.py roots 0, 42 at 3 h 51 min, 2 at 2 h 52 min, no verdict). Relaunched 05:02Z.
+- After ANY restart (all idempotent / resumable): cd experiments/comp/box28; gcc -O2 -o frup frup.c; (cd ../box27 && gcc -O2 -o drup drup.c);
+  setsid nohup ./diskguard.sh &; setsid nohup ./d3cnf2.sh &; PDIR=/home/user/pf/x setsid nohup nice -n 15 ./xval_d3.sh &;
+  d 4 roots: SYM=1 CUBE=<bits of movers 2..7> python3 ../box27/cnf.py 4 14 log/sample/c<root>.json (or acube28.py / cnf2.py per the Lead).
+  Delete a half-written proof in /home/user/pf/x and its log/xval_d3/c<c>.* before relaunching xval.
+- Things only I know: a d 4 L 14 Glucose proof grows ~7.6 GB per hour; pinck.py runs its CLI on import (box 28 tools exec its text
+  before 'if sys.argv[1] == "files"'); pkill -f / pgrep -f patterns also match a runner whose command line CONTAINS them (lost a queued
+  chain at 04:3xZ): wait on marker files, kill by PID.
 
 ## Successor 10 handover check (L-COMP successor 10, Opus 5.5), 2026-11-07 01:1xZ by date -u
 - Stale-clone check: clone was shallow; fetch --unshallow + merge --ff-only ("Already up to date"); HEAD = origin/claude/l-comp =
