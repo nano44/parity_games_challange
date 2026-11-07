@@ -15,8 +15,11 @@ if cube:
         for c in cls: fo.write(" ".join(map(str, c)) + " 0\n")
 h = hashlib.sha1(open(fin, "rb").read()).hexdigest()
 s = Solver(name="glucose4", bootstrap_with=cls, with_proof=True); t = time.time(); r = s.solve(); dt = time.time() - t
+# stream pysat's proof temp file line by line (same text as get_proof(): each line rstripped + "\n"); get_proof() would load the
+# whole proof into memory (cube 0 of query 2: ~10.5 GB RSS, killed at 2026-11-06 10:13Z)
+pr = s.solver.prfile; pr.flush(); pr.seek(0)
 with open(out, "w") as fo:
-    for line in s.get_proof() or []: fo.write(line + "\n")
+    for line in pr: fo.write(line.rstrip().decode("ascii") + "\n")
 ph = hashlib.sha1(open(out, "rb").read()).hexdigest()
 import os
 print(f"input {fin} sha1 {h} vars {cnf.nv} clauses {len(cls)} cube {sys.argv[3] if len(sys.argv) > 3 else ''} glucose4 {'SAT' if r else 'UNSAT'} {dt:.1f} s proof {out} sha1 {ph} bytes {os.path.getsize(out)}", flush=True)
