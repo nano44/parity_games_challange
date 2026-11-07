@@ -182,6 +182,10 @@ its counter (unit, set, scope). Nothing here is a result in the sense of CLAUDE.
 - Two-edit fuel splices (fuelsplice.py; unit = genome; 20,000 trials: one option of a mover in the Ξ-closure of pair 6, outside pairs
   0-5, re-targeted to a mover that moves while 9 is parked on option 1, with its rank swapped above 87 and its parity flipped with
   probability 1/2; scope = stored start): no gain (F(6) = 222). The SL41 plateau survives every local repair tried.
+- Exhaustive single re-targets (retall.py → retall_SL41.out; unit = genome; set = every option of the 27 movers of pair 6's Ξ-closure
+  outside pairs 0-5, re-targeted to every mover and X: 2,970 genomes; scope = stored start): 145 are acyclic and keep six capped
+  levels, none has F(6) > 222. Supplier candidate by activity: mover 19 (β of rank 95) moves 23 times while 9 is parked on option 1,
+  but no single re-target puts it on the deciding chain without breaking a capped level. The plateau is at least two edits deep.
 - Corollary CROSS-ECONOMY (PROVED, lane; DOUBLE-EQ′ (E3)-(E5), the movement rule, ENC). Let pair j be doubling and CROSS onto two
   movers a, b outside pair j: xt(p, k) = A_k, xt(q, k) = A_(1−k) with {A_0, A_1} = {a, b}. Then p prefers k iff q prefers 1 − k (the
   same comparison of ε-shifted cv(a), cv(b), mirrored). In a window with key c and first mover p (E5): p moves to c at u₁, so «A_c's side
@@ -218,7 +222,7 @@ its counter (unit, set, scope). Nothing here is a result in the sense of CLAUDE.
 
 ## 8. Files
 - experiments/lower/l5/: fev.c, revert.py, revert_H5lift_H6.out, fuelsrc.py, fuelsrc.out, fuelsrc_G7.out, utmpl.c, mclimb.c,
-  greedyback.py, greedyback.out, slack.py, slack7.out, fuel6.py, fuel6_SL41.out, fuelctx.out, domin.py, domin_SL41.out, domfix.py, domfix_SL41.out, fuelsplice.py, rec/SL41_d28.txt, trig.py, trig_H6_G7.out, retchain.py, retchain.out, winfail.py, winfail_G7_l6.out, pulses.py, pulses_G7_l5.out, splice.py; out/ (gitignored).
+  greedyback.py, greedyback.out, slack.py, slack7.out, fuel6.py, fuel6_SL41.out, fuelctx.out, domin.py, domin_SL41.out, domfix.py, domfix_SL41.out, fuelsplice.py, retall.py, retall_SL41.out, rec/SL41_d28.txt, trig.py, trig_H6_G7.out, retchain.py, retchain.out, winfail.py, winfail_G7_l6.out, pulses.py, pulses_G7_l5.out, splice.py; out/ (gitignored).
 - mclimb.c (edit-penalised climb from H5_lift, λ = 0.25-2 F-units per edit, 4 seeds): no improvement of F(5) = 94 in the runs before
   they were stopped (penalty too steep for the neutral drift the climb needs); superseded by the greedy walk back (§5).
 

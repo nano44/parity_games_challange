@@ -13,6 +13,15 @@
   greedy walk back H6 → H5: ~half drift, ~70 Ξ-targets forced at every level; GAP-NEST (PROVED, lane); G7_best's only 7-level pulse/gap
   deficit = level 5, type (9, 1) (trigger 15 key-gated by the first move of pair 5); 94k random single splices: no gain; uniform
   templates (P ≤ 3): one doubling level only. CONJECTURE L5-TYPE (O(h) delay movers per extension). Template runs out/r_p* may still run.
+- 11:1xZ state: SL41_d28 (targeted SLACK climb from G7_best; all 7-level PULSE/GAP conditions met, F(6) still 222). Obstruction = fuel:
+  pair 6 is CROSS onto (22, 11) and decided by (87, 9, 1) in all 48 failing windows (domin.py); single edits (domfix) and 20k two-edit
+  fuel splices (fuelsplice) fail. Lemmas (lane): GAP-NEST, DOMINANCE-FREEZE, CROSS-ECONOMY (docs/lower/L5-rule.md §5-§6).
+  Capped-level fuel depends on own b-step type only (fuelctx.out). Next idea: a supplier for D = cv(22) − cv(11) of rank > 87 that
+  changes once per pulse under parent (9, 1) — candidates from good-window deciders (19, 20 at ranks 91-95; 7 at 101).
+### Things only I know (box L5)
+- revert.py is importable (main guarded); greedyback/splice/domfix/fuelsplice import rd/wr/caps from it. fev = batch evaluator (one
+  process, many genomes): use it for all batch searches; utmpl GENOME= mode is an independent exact-order simulator.
+- mclimb.c SLACK=J:NEED score = 256·(good J-windows) + F(LV) under GUARD; validated on H6 / G7_best (L5 §6).
 ### Sources opened (this box)
 - claude/l-si 9b51f2cb docs/si/N5-TOWER-box80.md §0-§6 (PULSE-NEST, CAP-PULSE, ZONE, INSERT-PASS, STRETCH-NEED, delay lines);
   docs/si/N5-TROPICAL-box76.md §2 (ALT-MIN, HIT), §8-§12 (TOWER-NEED, FUEL-NEED, PASS-FREEZE, RE-ENTRY); experiments/si/box80/delay80.out.
