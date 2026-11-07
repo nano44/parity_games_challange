@@ -2467,3 +2467,9 @@
 - 09:19Z REFEREE-2 30: 7891ba32 on origin (R2-P-IDEAL-DBL 2b425bb6 + XICYC Add. 1); notebook 58595823 pushing.
 - 09:19Z L-LOWER 4 PARKED: handover af9a73d8 (F(6) plateau 222 < 254 at d 28; no local inductive rule; int128 trap). Idle confirmed 09:19Z. L-LOWER 5 created 09:20Z session_01V5yGRaP391DPgEwbUVLTiT (box L5: inductive rule H_h -> H_{h+1} or obstruction; no brute climbs, L-COMP box 30 does those).
 - 09:21Z Lead: push662 (172af6ad) KILLED by the 30-min background limit (LEAD SLIP: launched without timeout 7200000; rule: every push.sh task gets timeout 7200000). R117 second fill committed cf744d24 (98fcbca7); merged l-new 3fa0f65d, referee d7885be4, referee-2 7891ba32, checker 2c6a2c1b; re-push as push663.
+- 09:31Z L-COMP 10: box 30 no HIT: B_d32 F(6) 190 (levels 0-5 exact); A_d28 flat 160; C_d23 GUARD stuck. Query 2 c0s0p0 drup ~87-90% (~4 h/piece). xval_d3 9/16 cubes frup = drup = P-TR3.
+- 09:32Z Lead: A stopped; D_d32 from L-LOWER G7_best_d28 (F(6) 222) + 4 TOP-ADD, seeds 330000+; B kept; C stops 10:35Z, remlevel_profiles.txt as S(h) DATA. L-COMP measured G7_best by rclimb30 AND replay30 (T 270, F(6) 222), sha1 b995fff2. Handover written; park at ~550k.
+- 09:36Z Lead: L-NEW 60 handover check ae8e185d re-measured, score 4.5 (miss: R116 listed open at C129 Add. 1; landed 07:42Z, C129 CLOSED) -> GO (box 192). LANE-RESTART row due.
+- 09:42Z Lead: L-LOWER 5 handover check 9ef2e415 re-measured, score 4.5 (miss: P-M2D-DEAD L-3 duty listed open; DE37 landed 172af6ad) -> GO BOX L5. Pre-go DATA: fuel sources alternate by window parity (not ruler); H6 l.3 period 4.
+- 09:42Z REFEREE 26: ITEM 3 XICYC §C 42648076 on origin (L-3 MATCHES). Queue empty; waits for DBL L-2. 09:44Z Lead: R118 (P-N5-XICYC) first fill started (subagent; R118-draft.md only; to C132 after R117).
+- 09:56Z Lead: push663 VERIFY PASS (trunk 7f4a68f0 on origin: DE37 172af6ad, R117 second fill cf744d24, merges). CHECKER 20 asked for C131 Add. 1 and C130 Add. 1.
