@@ -60,6 +60,11 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - Friedmann switchallexp port (R217 §7, comp.py / fried.py / fdiff.py): exact for 6 steps, then E-DOM (every escape e above every odd
   priority) breaks it: T 14 / 16 / 18 vs 30 / 70 / 150. Trunk worktree WTT (env.sh) holds pgsolver_port.py. gen.py renamed gdsl.py (name
   clash with harness/gen.py).
+- Sources opened (this session): arXiv 0901.2731 v1 (Friedmann, LICS 2009 «Super-Polynomial Lower Bound ... as We Know it»), abs page +
+  PDF pp. 7-10: Theorem 8 p. 9 «13·2^n − 9 iterations on G_n using the locally optimizing improvement policy»; Fig. 7 G_2 priorities
+  (k_1 45, z_1 43 > m_0 42); p. 8 RESET text («all lower f_j nodes have an edge leading to k_i»).
+- E-DOM-ALL-d (R217 §10): every e above every β at every d (gamma3.build eb). Lead's «d ≥ 3 lifts it?» -> no.
+- edomclimb (live /home/user/r217live/go3.sh, ed3a / ed3b): E-DOM priority orders on G_3's graph, Howard T 15 -> 39 (orig 70).
 - Live (outside repo): /home/user/r217live (go.sh = two rclimb SCORE=R climbs seeded with LEAP+spares, 40 min). Relaunch:
   cd /home/user/r217live && ./go.sh (go.sh sources env.sh). Worktrees in scratch (env.sh in experiments/red/r217): wt191 f09f67ec,
   wt192 a2db977d, wt190 acdbd28b, wt190b 066cd543. Oink built (tools/oink/build).
