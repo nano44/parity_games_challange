@@ -66,7 +66,29 @@ static int run(int *Tout){ int s[MAXN], ns[MAXN]; VT v[MAXN]; memcpy(s,st,sizeof
     memcpy(s,ns,sizeof(int)*N); T++; if(T<=MAXT) memcpy(SS[T],s,sizeof(int)*N); }
   *Tout=T; return T; }
 static int LV=-1, SCT=0, SCH=0; static int SLV=-1, SLG=-1;
+/* box 30 (Lead 17:27Z): port of L-LOWER 6 guard_l6.score (claude/l-lower bca48384, guard_l6.py sha1 18e85589): lexicographic
+   (min(caps, 6), -npaths(q5, {12, 13}), F(6)), encoded as caps*10^9 - min(npaths, 99999)*10^4 + F(6). caps = number of leading levels l
+   with F(l) = 2^(l+2) - 2. q5 = second mover of pair 5 from roles(): level-5 windows cut at the flips of key o(4) (cuts 1, flips, T+1);
+   the first window with EXACTLY two moves of movers 10, 11 (in step order, 10 before 11 within a step) at different steps -> q5 = the
+   second; none -> q5 = 10 (as score()). npaths: Xi-paths over the DISTINCT targets of each option pair, 1 at a mover in {12, 13}.
+   L6Q5/L6NP/L6CAPS hold the last values (written to OUT). */
+static int L6Q5=-1, L6CAPS=-1; static long long L6NP=-1;
+static long long np_memo[MAXN]; static int np_done[MAXN];
+static long long np_f(int x){ if(x==12||x==13) return 1; if(np_done[x]) return np_memo[x]; long long r=0; int a=xt[2*x], b=xt[2*x+1];
+  if(a>=0) r+=np_f(a); if(b>=0 && b!=a) r+=np_f(b); if(r>1000000000LL) r=1000000000LL; np_done[x]=1; np_memo[x]=r; return r; }
+static long l6score(int T){ int caps=0; for(int l=0;l<d;l++){ if(F[l]==(1<<(l+2))-2) caps++; else break; } if(caps>6) caps=6;
+  int q5=-1; if(T<=MAXT){ static int O[MAXT+1][MAXN]; for(int t=0;t<=T;t++) oflags(SS[t],O[t]);
+    int cuts[MAXT+3], nc=0; cuts[nc++]=1; for(int t=1;t<=T;t++) if(O[t][4]!=O[t-1][4]) cuts[nc++]=t; cuts[nc++]=T+1;
+    for(int w=0;w+1<nc && q5<0;w++){ int a=cuts[w], e=cuts[w+1]-1, n=0, mt[3], mx[3];
+      for(int t=a;t<=e && n<3;t++) for(int x=10;x<=11 && n<3;x++) if(SS[t][x]!=SS[t-1][x]){ mt[n]=t; mx[n]=x; n++; }
+      if(n==2 && mt[0]!=mt[1]) q5=mx[1]; } }
+  L6Q5=q5; int src = q5>=0? q5 : 10; memset(np_done,0,sizeof np_done); long long np=0; int a=xt[2*src], b=xt[2*src+1];
+  if(a>=0) np+=np_f(a); if(b>=0 && b!=a) np+=np_f(b); L6NP=np; L6CAPS=caps;
+  long long npc = np>99999? 99999 : np;
+  if(getenv("L6GATE")){ int g = F[6] >= atoi(getenv("L6GATE")); return (long)caps*10000000000L + (long)g*1000000000L - npc*10000L + F[6]; }  /* Lead 17:42Z: (caps, [F6>=gate], -npaths, F6) */
+  return (long)caps*1000000000L - npc*10000L + F[6]; }
 static long score(int *T){ run(T); if(SCT) return *T;
+  if(getenv("L6SCORE")) return l6score(*T);
   if(getenv("GUARD") && LV>=1){ int g=atoi(getenv("GUARD")); long pen=0; for(int l=1;l<=g;l++){ int df=2*F[l-1]+2-F[l]; if(F[0]!=2) df+=4; pen += df<0?-df:df; } if(pen) return -100000L*pen + F[LV]; }
   if(getenv("SLACKH") && LV>=0){ int H=atoi(getenv("SLACKH")), j=H-2, g; int v=slack_viol(*T,j,H-j,&g); SLV=v; SLG=g; return -1000L*v + F[LV]; }
   if(getenv("ANYRUN")){ long best=-1000000; for(int a=1;a<d;a++){ int h=0; while(a+h<d && F[a+h]==2*F[a+h-1]+2 && F[a+h]>0) h++; long sc=3000L*h + 4L*F[a+h-1>=0?a+h-1:0]; if(a+h<d){int def=2*F[a+h-1]+2-F[a+h]; sc -= 100L*(def<0?-def:def);} if(sc>best)best=sc; } return best; }
@@ -78,7 +100,7 @@ static void rd(const char*fn){ FILE*f=fopen(fn,"r"); char w[64]; while(fscanf(f,
 static void wr(const char*fn, long sc, int T){ FILE*f=fopen(fn,"w"); fprintf(f,"d %d\nxt",d); for(int i=0;i<2*N;i++)fprintf(f," %d",xt[i]);
   fprintf(f,"\nbr"); for(int i=0;i<2*N;i++)fprintf(f," %d",br[i]); fprintf(f,"\nbp"); for(int i=0;i<2*N;i++)fprintf(f," %d",bp[i]);
   fprintf(f,"\ngate"); for(int i=0;i<2*N;i++)fprintf(f," %d",gate[i]); fprintf(f,"\nstart"); for(int i=0;i<N;i++)fprintf(f," %d",st[i]);
-  fprintf(f,"\n# score %ld T %d F",sc,T); for(int l=0;l<d;l++)fprintf(f," %d",F[l]); fprintf(f," moves"); for(int x=0;x<N;x++)fprintf(f," %d",MV[x]); if(SLV>=0) fprintf(f," slack_viol %d good91 %d",SLV,SLG); fprintf(f,"\n"); fclose(f); }
+  fprintf(f,"\n# score %ld T %d F",sc,T); for(int l=0;l<d;l++)fprintf(f," %d",F[l]); fprintf(f," moves"); for(int x=0;x<N;x++)fprintf(f," %d",MV[x]); if(SLV>=0) fprintf(f," slack_viol %d good91 %d",SLV,SLG); if(L6CAPS>=0) fprintf(f," l6_caps %d l6_q5 %d l6_npaths %lld",L6CAPS,L6Q5,L6NP); fprintf(f,"\n"); fclose(f); }
 int main(int argc,char**argv){ rd(argv[1]); rs+=atol(argv[2])*7919; long iters=atol(argv[3]);
   if(getenv("LV")) LV=atoi(getenv("LV")); if(getenv("SCORE")&&!strcmp(getenv("SCORE"),"T")) SCT=1; if(getenv("CHAIN")) SCH=atoi(getenv("CHAIN"));
   int nomut[MAXN]={0}; int FB = getenv("FROZENBELOW")? atoi(getenv("FROZENBELOW")) : 0; /* movers < FB: no field mutated */
@@ -88,6 +110,8 @@ int main(int argc,char**argv){ rd(argv[1]); rs+=atol(argv[2])*7919; long iters=a
   int biasm[MAXN], nbias=0, bias19=getenv("BIAS19")?atoi(getenv("BIAS19")):-1, biasr=getenv("BIASR")?atoi(getenv("BIASR")):87; double biasp=getenv("BIASP")?atof(getenv("BIASP")):0.5; double bias19p=getenv("BIAS19P")?atof(getenv("BIAS19P")):0.25;
   if(getenv("BIAS")){ char*p=strdup(getenv("BIAS")); for(char*t=strtok(p,",");t;t=strtok(NULL,",")){ int x=atoi(t); if(x<FB||x>=N){ fprintf(stderr,"BIAS mover %d outside [FB,N)\n",x); return 1; } biasm[nbias++]=x; } }
   if(bias19>=0 && (bias19<FB||bias19>=N)){ fprintf(stderr,"BIAS19 outside [FB,N)\n"); return 1; }
+  int rept[MAXN*2], nrept=0; if(getenv("REPT")){ char*p=strdup(getenv("REPT")); for(char*t=strtok(p,",");t;t=strtok(NULL,",")) rept[nrept++]=atoi(t); }
+  const char*testout=getenv("TESTOUT"); int tested=0; if(testout){ FILE*e=fopen(testout,"r"); if(e){ tested=1; fclose(e); } }   /* first test genome only, across units */
   double temp=getenv("ANNEAL")?atof(getenv("ANNEAL")):0; const char*out=getenv("OUT")?getenv("OUT"):"/dev/null";
   if(!acyclic()){ fprintf(stderr,"input cyclic\n"); return 1; }
   int T; long cur=score(&T), best=cur; wr(out,best,T);
@@ -105,6 +129,7 @@ int main(int argc,char**argv){ rd(argv[1]); rs+=atol(argv[2])*7919; long iters=a
         if(rnd()%2){ bp[m]^=1; done=1; }
         if(nh && !fixo[m] && rnd()%2){ int y=hi[rnd()%nh]/2; if(y!=w){ xt[m]=y; done=1; } } }
       nm--; }
+    if(nrept && nm>0 && rnd()%4==0){ int m=rept[rnd()%nrept]; int y=(int)(rnd()%(N+1))-1; if(y==m/2) y=-1; xt[m]=y; nm--; }   /* REPT re-point */
     for(int q=0;q<nm;q++){   /* box 30 (Lead 11:38Z): NMIN..NMAX edits per proposal (default 1..3 = original) */ int r=rnd()%6; int m=2*FB+rnd()%(2*N-2*FB);
       if(r==0||r==5){ if(fixo[m]) continue; int y=(int)(rnd()%(N+1))-1; if(y==m/2) y=-1; xt[m]=y; }
       else if(r==1){ int m2=2*FB+rnd()%(2*N-2*FB); int t=br[m];br[m]=br[m2];br[m2]=t; }
@@ -114,6 +139,7 @@ int main(int argc,char**argv){ rd(argv[1]); rs+=atol(argv[2])*7919; long iters=a
     /* level-0 gate swaps must stay within level 0: m<4 guaranteed only if x<2; enforce */
     if(!acyclic()){ memcpy(xt,sxt,sizeof xt);memcpy(br,sbr,sizeof br);memcpy(bp,sbp,sizeof bp);memcpy(gate,sg,sizeof gate);memcpy(st,sst,sizeof st); acyclic(); continue; }
     long sc=score(&T); double tt=temp*(1.0-(double)it/iters);
+    if(testout && !tested && L6CAPS>=6 && L6Q5>=0 && L6NP==0 && (!getenv("TESTGATE") || F[6]>=atoi(getenv("TESTGATE")))){ tested=1; wr(testout,sc,T); printf("TEST it %ld caps 6 q5 %d npaths 0 F(6) %d\n",it,L6Q5,F[6]); fflush(stdout); }
     if(sc>=cur || (tt>0 && (rnd()%1000000)/1e6 < exp((double)(sc-cur)/(tt*(LV>=0?256:((SCH||getenv("ANYRUN"))?200:1)))))){ cur=sc; if(sc>best){ best=sc; wr(out,best,T); printf("it %ld score %ld T %d F",it,sc,T); for(int l=0;l<d;l++)printf(" %d",F[l]); printf("\n"); fflush(stdout);} }
     else { memcpy(xt,sxt,sizeof xt);memcpy(br,sbr,sizeof br);memcpy(bp,sbp,sizeof bp);memcpy(gate,sg,sizeof gate);memcpy(st,sst,sizeof st); acyclic(); } }
   return 0; }

@@ -1,0 +1,4 @@
+2026-11-07T17:23:33Z q2reshard3: 2-shard workers stopped after c0s1p0; 3 shards started
+D_d28b running
+removed in-flight /home/user/pf/q2/q2_c4s0p4.proof
+2026-11-07T17:40:43Z q2stop2: shard 2/3 stopped after c0s1p6; deferred to q2chain2.sh (after shard 0/3)

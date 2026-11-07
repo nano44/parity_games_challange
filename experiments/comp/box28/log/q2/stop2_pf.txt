@@ -1,0 +1,5 @@
+m3_tk_T13_T20_K2_NOIM0.cnf
+q2_c0s1p2.proof
+q2_c0s1p2.proof.cnf
+q2_c0s1p4.proof
+q2_c0s1p4.proof.cnf
