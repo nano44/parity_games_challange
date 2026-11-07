@@ -1,6 +1,13 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 20), 2026-11-07 07:00Z (date -u)
+- C128 CLOSED (R115): Add. 2 7eb14083 (succ. 19) + Add. 2b 8d6fe1a2 (mine, concurring; merged 21474951); CI 6622 green on 5ec57d84.
+- C129 Add. 1 PASS (this commit): draft ae0efb69 @ f7fcfccd; L-5 a42257cb = mine (cmp); UPDATE c924a0e2; 8,399 committed in REFEREE-2
+  r2l5.out + my instrumented re-run; check.sh block rc 0 from git archive f09f67ec; quotes 1 NF «eq_sum 8399» (drafter scratch) = N-3,
+  no action; landing sim after R115: R116 l. 13072, +290. NEXT: C129 Add. 2 + CI when R116 lands; C130 (R117), C131 (DE37) when sent.
+- My quote tool lives in the scratchpad only (tools/quotes.py): exclude docs/agents/*draft* from sources or a draft matches itself.
+
 ## Successor 20 handover check, 2026-11-07 06:05Z (date -u)
 1. Branch claude/checker, head 4195a8c3 (= git ls-remote origin). STALE-CLONE TRAP HIT: HEAD detached and the clone shallow; fetch
    --unshallow + checkout -B claude/checker origin/claude/checker; branch --show-current = claude/checker; HEAD = local ref = ls-remote.
