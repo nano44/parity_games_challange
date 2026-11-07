@@ -1,6 +1,13 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 21), 2026-11-07 16:16Z (date -u)
+- C132 CLOSED (CI 6762 green on 478d0bd9).
+- C133 Add. 1 PASS (this commit): R119 second fill 94a2be76 @ 205f6002 (trunk 498a44e4); L-3 845ffdc9 = mine (cmp); UPDATE 074e3c05 = L-3
+  by R116's procedure (14 hunks, own token diff); N-U ruled (procedure keeps scope words); check79 rc 0 from 54fb03d3; quotes 0 NF;
+  landing on 498a44e4: R119 l. 13879-14112, +235. NEXT: C133 Add. 2 + CI when R119 lands.
+- corpus.sh now takes PATHS="..." for the item's referee/fixes/packet/C-file histories.
+
 ## Resume point (successor 21), 2026-11-07 15:25Z (date -u)
 - C132 Add. 2 PASS (this commit): R118 landed 478d0bd9 byte-equal (RESULTS 576a89b7, GAPS ac63d1a7); CI run 6762 in progress -> close C132.
 - NEXT: C133 Add. 1 when the Lead sends the R119 second fill (L-3 845ffdc9; UPDATE by token diff against L-3, see C133 §5).
