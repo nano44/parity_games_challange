@@ -1,6 +1,27 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Successor 42 handover check (written 2026-11-07T07:15Z (date -u); successor 42 = session_01V5yGRWb17CZoo2UVcHAxp8 (Opus); 41 was session_01V5yGRZDRAGZFgHvmRBGoKz)
+1. Branch claude/l-si. Container started DETACHED at a5d2099e with a shallow clone (the trap again); fetched --unshallow (exit 0),
+   checked out claude/l-si, ff-only: local = origin/claude/l-si = ls-remote = a5d2099e9fd857ba…; `git branch --show-current` =
+   claude/l-si. Against trunk claude/vibrant-johnson-nxvvxo 6f9cc0b0 (2026-11-07T06:35Z): 8 ahead / 849 behind; merge-base 77d536f6.
+2. Open work: (i) DUTY P-IDEAL-DBL freeze (draft 2c396f6f; docs/si/P-IDEAL-DBL.md + line L1): waits for the Lead's «R116 landed»;
+   next step = re-quote AND-GATE (a)-(c) from the landed RESULTS R116 text in §0, re-pin pins.sha1, run check79.sh, commit FREEZE.
+   (ii) BOX 80 (main, 12 h): extension lemma for capped towers (h -> h+1 capped levels with O(1) more levels, fuel interface
+   preserved) or its obstruction; else a lower bound S(h) on levels per capped level. Next step: read the H5/H6 wiring
+   (wiring79.out, tower_H5.out), define the interface, test it on RECF4/DBL4/H5/H6.
+3. GAPS rows: L-SI owns none (trunk 6f9cc0b0). The lane works under G-N5-TIME (owner L-NEW; open).
+4. Rulings (verbatim, trunk docs/DECISIONS.md; all active in DECISIONS-INDEX.md):
+   - D18 (l. 332-333): «Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of
+     mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them
+     briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.»
+   - D1 (l. 7): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the
+     fleet's own, as wrong until it passes the gauntlet below.»
+   - D14: «D» / «You know it can also test prveiously not tested approaches, it can come up with it own as well»
+   (D20 l. 423 «We have reset the weekly usage, so we can again work faster no?» = pace; L50 = MOVES-2D killed, tower question open.)
+5. Trap: detached HEAD + stale/shallow clone (push.sh fails after VERIFY PASS with «invalid refspec»). Check: ls-remote vs HEAD vs
+   origin ref, and `git branch --show-current` = claude/l-si before every push.sh (done above).
+
 ## BOX 79 (Lead 03:58Z): packet P-IDEAL-DBL — DRAFT (freeze after R116 lands)
 - docs/si/P-IDEAL-DBL.md (+ line docs/si/P-IDEAL-DBL-line-L1.txt, 69/69 parens, 3,425 B); tools experiments/si/box79/{dblcheck.py,
   dead79.py, check79.sh (wired)}; frozen outputs dblcheck.out, dblcheck_neg2.out, dead79.out.
