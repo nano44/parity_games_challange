@@ -50,3 +50,16 @@ only), 𝓛^R_d of RESULTS R110 (definition only). Not a TARGET.md claim. G-N5-T
 - CaDiCaL 1.9.5 L 14 roots 0, 21, 42: no verdict after 58 min (21 then stopped, not a PAIR-SWAP root; root 2 started).
 - Glucose 4 + proof on root 0: no verdict at 55 min; proof ≈ 7 GB by then. drup.c ≈ 1 GB per CPU-hour (successor 9).
 - diskguard.sh kills proof generation below 6 GB free.
+
+## Lead 02:46Z: (ii) EXACT-SAT on the 8 roots (3 cores) + (iii) the ISO sub-class (1 core); (i) backward checking not now
+- frup vs drup.c, same load, P-TR3 cube 9: DIMACS 01a9488a… and Glucose proof 942334eb… = the P-TR3 table; frup VERIFIED 526,970
+  lemmas in 803 s, drup VERIFIED 526,970 in 784 s. No speed gain (drup.c already watches two literals; forward checking re-propagates
+  per lemma in both). frup is kept as an INDEPENDENT second checker. All 16 cubes: xval_d3.sh (niced), log/xval_d3.txt when done.
+- ISO sub-class 𝓛^R_ISO(4) (RESULTS R110: no option has Xi-target 0 or 1; cnf.py env ISO=1, which removes movers 0 and 1 from every
+  Xi-target domain; the "build" log line does not print ISO, the variable count shows it: L 13 root 0 156,153 vars / 542,624
+  clauses vs 254,071 / 902,936 without ISO). SYM and PAIR-SWAP keep ISO (they map the set {0, 1} of movers to itself and do not
+  change which mover an option's Xi-target is, up to that renaming), so the same 8 roots cover it.
+- ISO witness: ext/ISO_1_d4_t12.json = trunk experiments/new/box160/out/ISO_1_d4_t12.json (L-NEW box 160; sha1 01b71584…): in 𝓛^R_4,
+  ISO, sim T 12 (stop: opt). Pinned in the ISO CNF: SAT at L 12, UNSAT at L 13; after the normal form (NF=1: PAIR-SWAP at levels 2, 1,
+  0, then SYM) it lies in root 40: SAT at 12, UNSAT at 13 there; root 41 UNSAT at 12 (log/iso_pin_ISO_1_d4_t12.out). max_d4_L13
+  under NF=1 also lands in root 40 (log/symwit_NF_max_d4_L13.out). Query: ISO, T >= 13 on the 8 roots (target UNSAT: T^R_ISO(4) = 12).

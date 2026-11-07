@@ -30,18 +30,19 @@ def check(G, l):
         for x in range(G["N"]): t[p(x)] = (1 - s[x]) if G["lev"][x] == l + 1 else s[x]
         img.append(tuple(t))
     return len(S) == len(S2) and why == why2 and [tuple(v) for v in S2] == img, len(S) - 1
-n = int(sys.argv[1]); bad = runs = 0; hist = {}
-for d in (2, 3, 4):
-    rng = random.Random(77 + d)
-    for i in range(n):
-        G = pinck.rgen(rng, d)
-        for l in range(d - 1):
+if __name__ == "__main__":
+    n = int(sys.argv[1]); bad = runs = 0; hist = {}
+    for d in (2, 3, 4):
+        rng = random.Random(77 + d)
+        for i in range(n):
+            G = pinck.rgen(rng, d)
+            for l in range(d - 1):
+                ok, T = check(G, l); runs += 1; hist[T] = hist.get(T, 0) + 1
+                if not ok: bad += 1; print("MISMATCH", d, l, G)
+    W = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "ext", "max_d4_L13.json")))
+    for st in itertools.product((0, 1), repeat=8):
+        G = dict(W); G["start"] = list(st)
+        for l in range(3):
             ok, T = check(G, l); runs += 1; hist[T] = hist.get(T, 0) + 1
-            if not ok: bad += 1; print("MISMATCH", d, l, G)
-W = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "ext", "max_d4_L13.json")))
-for st in itertools.product((0, 1), repeat=8):
-    G = dict(W); G["start"] = list(st)
-    for l in range(3):
-        ok, T = check(G, l); runs += 1; hist[T] = hist.get(T, 0) + 1
-        if not ok: bad += 1; print("MISMATCH witness", st, l)
-print(f"pairswap: runs {runs}, T histogram {dict(sorted(hist.items()))}, mismatches {bad}")
+            if not ok: bad += 1; print("MISMATCH witness", st, l)
+    print(f"pairswap: runs {runs}, T histogram {dict(sorted(hist.items()))}, mismatches {bad}")

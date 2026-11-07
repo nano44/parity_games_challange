@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""L-COMP box 28: the witness under P-TR3's symmetry break. Relabel the options of each level-0 mover x with s_0(x) = 1 (swap
+"""L-COMP box 28: the witness under P-TR3's symmetry break (env NF=1: first the PAIR-SWAP normal form). Relabel the options of each level-0 mover x with s_0(x) = 1 (swap
 (x,0) and (x,1) together with their Xi-target, beta id (rank, parity) and gate; flip bit x of the start: box27 P-TR3.md §2), check
 sim T unchanged, then pin it in the SYM=1 + CUBE (its root) CNF: SAT at L = T, UNSAT at L = T + 1; and UNSAT at L = T in a
 different root cube (the pins contradict that cube's start bits). Usage: symwit.py genome.json"""
@@ -10,6 +10,10 @@ _src = open(os.path.join(B27, "pinck.py")).read(); _src = _src[:_src.index('if s
 pinck = types.ModuleType("pinck"); pinck.__file__ = os.path.join(B27, "pinck.py"); exec(compile(_src, pinck.__file__, "exec"), pinck.__dict__)
 G = json.load(open(sys.argv[1])); d = G["N"] // 2; T0 = len(sim.run(G)[0]) - 1
 H = copy.deepcopy(G)
+if os.environ.get("NF") == "1":   # full normal form (README "Symmetry"): PAIR-SWAP at l = d-2..0 where needed for s_0(2l+2) = 0
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import pairswap
+    for l in range(d - 2, -1, -1):
+        if H["start"][2 * l + 2] == 1: H, _ = pairswap.swap(H, l); print(f"PAIR-SWAP at level {l}", flush=True)
 for x in (0, 1):
     if H["start"][x] == 1:
         H["opts"][x] = H["opts"][x][::-1]; H["gate"][x] = H["gate"][x][::-1]; H["start"][x] = 0
