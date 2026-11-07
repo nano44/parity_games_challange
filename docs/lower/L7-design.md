@@ -91,8 +91,8 @@ Nothing here is a result in the sense of CLAUDE.md; G-N5-TIME stays OPEN. Not a 
   | LCOMP L6Z_TEST1 (RC-free) | 160 | 39 | 1 | 40 | 214 |
   | LCOMP L6_BEST_D_l6 (RC-free) | 134 | 40 | 1 | 68 | 186 |
   | LCOMP L6_TEST1 (RC-free) | 117 | 40 | 0 | 72 | 182 |
-  Lemma checks (l7check.py, run by check.sh; unit = (genome, level) and j-window; set = the six genomes, levels 1-7 and windows of
-  levels 1-6 with two staggered moves; scope = stored start): WINDOW-CAP 0 violations on 42 pairs, PULSE-TRIGGER 0 violations on 940 windows.
+  Lemma checks (l7check.py, run by check.sh; unit = (genome, level) and j-window; set = the six genomes (seven with L6G_TEST1, §1b), levels 1-7 and windows of
+  levels 1-6 with two staggered moves; scope = stored start): WINDOW-CAP 0 violations on 42 pairs, PULSE-TRIGGER 0 violations on 940 windows (with L6G_TEST1: 49 and 1,138).
   In the RC-free genomes the inner windows that keep PULSE_5 ≥ 2 use triggers of level 7 (D_l6z_best: lowest trigger level 7 in 31
   of its 39 PULSE_5 ≥ 2 windows) — the key-cascade route above. In SL41 the lowest trigger level is 6 (a pair-6 member: the RETURN-CHAIN) in 47 of 63.
 
