@@ -1,0 +1,8 @@
+d2 L5 UNSAT proof: frup «s VERIFIED (5730 lemmas RUP-checked)» drup «s VERIFIED (5730 lemmas RUP-checked)» agree OK
+d2 L4 SAT formula + solver proof: frup «s NOT VERIFIED: no refutation reached» drup «s NOT VERIFIED: no refutation reached» agree OK
+L5 proof truncated to 3000 lines: frup «s NOT VERIFIED: no refutation reached» drup «s NOT VERIFIED: no refutation reached» agree OK
+L5 proof, deletions dropped, every 7th line removed: frup «s NOT VERIFIED: lemma 7 is not RUP» drup «s NOT VERIFIED: lemma 7 is not RUP» agree OK
+drop-lemma: 40 mutants, rejected by frup 32, by drup 32
+flip-literal: 40 mutants, rejected by frup 33, by drup 33
+delete-input-clause: 40 mutants, rejected by frup 24, by drup 24
+negtests: disagreements 0

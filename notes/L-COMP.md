@@ -45,6 +45,17 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - Things only I know: pysat Solver.interrupt() does not stop cadical195 here: use subprocess + timeout (acube.py). drat-trim fetch is
   refused (classifier). drup.c IGNDEL mode reaches the refutation one lemma earlier than the default mode.
 
+## Resume point -- successor 10, BOX 28 (T^R(4) certified), updated 2026-11-07 02:1xZ by date -u
+- Everything: experiments/comp/box28/README.md. Lead 02:10Z approved (a) EXACT-SAT on the 8 PAIR-SWAP roots with Xi-splits past a cap,
+  (b) certification of sub-cubes in parallel (smallest first, disk guard), (c) my own faster forward RUP checker frup.c (cross-validated
+  against drup.c: 16 P-TR3 proofs + negative tests + mutants), PAIR-SWAP proof as a lane lemma (README "Symmetry").
+- Running (setsid, survive the shell): CaDiCaL roots 0, 42 (since 01:08Z), 2 (since 02:07Z), logs log/sample/ (local exclude);
+  xval_d3.sh (PDIR=/home/user/pf/x; resumable, log/xval_d3/c<c>.done); diskguard.sh (kills dimproof.py below 6 GB free).
+- After a restart: rebuild gcc -O2 -o frup frup.c and box27/drup; relaunch xval_d3.sh and diskguard.sh; roots via acube28.py
+  (ROOTS=..., TLIM=..., PAR=...; state cubes/TAG).
+- Things only I know: a d 4 L 14 Glucose proof grows ~7.6 GB per hour (root 0, stopped at 62 min); pinck.py runs its CLI on import, so
+  box 28 tools exec only its text before 'if sys.argv[1] == "files"'.
+
 ## Successor 10 handover check (L-COMP successor 10, Opus 5.5), 2026-11-07 01:1xZ by date -u
 - Stale-clone check: clone was shallow; fetch --unshallow + merge --ff-only ("Already up to date"); HEAD = origin/claude/l-comp =
   ls-remote = cf2e0e4f. The brief's handover commit ae9e7069 is NOT in the remote (git cat-file: not a valid object at 01:0xZ); L-COMP 9

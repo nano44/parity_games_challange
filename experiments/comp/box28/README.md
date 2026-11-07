@@ -33,6 +33,11 @@ only), 𝓛^R_d of RESULTS R110 (definition only). Not a TARGET.md claim. G-N5-T
   and every A-set, are the same objects; a key is the tuple of gates of the chain of W-targets of the current option under the new
   state, lowest level first: the same option objects, so the same gates in the same order. Hence the IDEAL step commutes with the map,
   the run of σG from σs_0 is the image of the run of G from s_0, and T and the stop reason are equal.
+- The R110 wiring property used (RESULTS R110, «option k of a mover of level l ≥ 1 W-pointing to mover 2(l − 1) + k»): the W-target
+  of an option depends only on its LABEL k and its owner's LEVEL, not on which of the two movers of that level owns it. So (a) renaming
+  the two movers of level l never changes which movers W-point where except through the targets 2l, 2l + 1 themselves, and (b) the
+  option-label exchange at level l + 1 exactly undoes that change (step (i)). Nothing else in 𝓛^R_d's definition names a mover or a
+  label: Ξ-targets, β's, gates and the start are arbitrary, and the Ξ-graph only has to be acyclic.
 - Normal form: apply PAIR-SWAP at l = d − 2, …, 0 (top down), each only if needed to make s_0(2l + 2) = 0. Step l exchanges the bits
   of movers 2l, 2l + 1 and flips those of level l + 1; it does not touch levels ≥ l + 2, so the bits fixed earlier stay. Then SYM sets
   s_0(0) = s_0(1) = 0 (touches only those two bits). So every (G, s_0) has an image with the same T and s_0(0) = s_0(1) = s_0(2) =
