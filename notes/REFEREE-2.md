@@ -1,6 +1,37 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 1 (successor 30; 2026-11-07 03:5xZ by date -u)
+- P-IDEAL-MOVES L-5 (l-new 571c75c5, C129): Addendum 4, entry 4 CORRECT, L-5 MATCHES (byte test bt_l5.out; E-1/E-2 measured r2l5.out).
+- P-N5-REACH L-2 (l-new 571c75c5): Addendum 1, W-1/W-2/RE-L1 applied correctly; L-2 MATCHES after W-3 (PAD count skips c_X:
+  693,030 vs 698,204 over every vertex; reachcheck_r2.out). L-2+W-3 sha1 46c2e507…, 3,687 B.
+- Pushed c420666d 04:47Z (2nd push). TRAP: container started on a DETACHED HEAD with a stale local branch ref (8fde383f); push.sh got
+  an empty branch name -> exit 128 after VERIFY PASS. Check before push.sh: `git branch --show-current` prints claude/referee-2.
+- P-N5-REACH L-3 (l-new 727163f0): Add. 2, L-3 MATCHES (bt_l3.out; RC-2 (a, b) order = subdiv.pad sorted order).
+- Pending: P-M2D-DEAD L-3 (L-LOWER 4; L-RED replay.out at l-red 6e743ab1, sha1 4492ee28…, not on origin at 03:5xZ).
+
+## Successor 30 handover check (Opus 5.5 under D1/D18/D20; 2026-11-07 03:5xZ by date -u)
+1. Branch claude/referee-2: ls-remote, local HEAD and origin ref all 9bd5656f at start (fetch --unshallow, ff-only: already up to date).
+   vs trunk claude/vibrant-johnson-nxvvxo 3c428cde: 3 ahead / 108 behind (merge-base 0a9e2a16); merged trunk with a merge commit (no
+   rebase) -> 4 ahead / 0 behind before this commit.
+2. Open work (all fix-round byte tests + meaning checks; none has arrived yet):
+   (a) P-M2D-DEAD L-3: wait for L-RED's committed output file for L-RED 52 (55557951), then L-LOWER 4's L-3; byte-test L-2 -> L-3, check
+       W-1′ is met (L-RED 52 cited with its output file, or dropped) and REFEREE PM-C1 wording; replay the output file against my r2m2d.py.
+   (b) P-N5-REACH L-2 (L-NEW 58): byte-test L-1 -> L-2; check W-1 (specific DEAD statement, no unquoted guillemets), W-2 (no «c_X»),
+       and REFEREE RE-L1 (read only after my report is pushed; it is, so I may read it for the fix round).
+   (c) P-IDEAL-MOVES L-5 (L-NEW 58): CHECKER C129 E-1, E-2, N-1; exact strings in docs/checker/C129.md (not on trunk at 3c428cde yet).
+3. GAPS rows owned by REFEREE-2: none (G-N5-TIME owner is L-NEW, «referees later»; no owner cell names REFEREE-2).
+4. D1 (active, D001; DECISIONS.md l. 7-8): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such
+   claim, including the fleet's own, as wrong until it passes the gauntlet below.» «Never downgrade the referee to save money.»
+   D18 (active, l. 333): «Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of
+   mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly,
+   and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.»
+   D20 (active, l. 423): «We have reset the weekly usage, so we can again work faster no?» (Lead readings L49 T^R_ISO scope, L50
+   MOVES-2D DEAD after referee review; both active in DECISIONS-INDEX).
+5. Trap: a RESULTS line citing a replay whose result is not on record (L-RED 52, W-1′). Check: for every cited replay, open the output
+   file at the cited SHA (`git cat-file -t`, `git show SHA:path`); a commit message alone is not a result. Also: Lead SHA not yet on
+   origin -> `git cat-file -t` after fetch, say so, do not hold the verdict.
+
 ## Successor 29 handover check (Opus 5.5 under D1/D18/D20; 2026-11-06 23:1xZ by date -u)
 1. Branch claude/referee-2: ls-remote and local both 280d2313 at start (local clone was detached/behind 113; ff-only to 280d2313;
    not shallow after fetch --unshallow). vs trunk claude/vibrant-johnson-nxvvxo 09476aba: 2 ahead / 178 behind; merged trunk (no rebase)
@@ -18,6 +49,38 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
    D20 (active): «We have reset the weekly usage, so we can again work faster no?» (Lead readings L48 full pace; L49 T^R_ISO scope).
 5. Trap: stale/shallow clone gives false ahead/behind counts (succ. 28). Check: ls-remote vs rev-parse, fetch --unshallow, then rev-list.
    Also: a DATA half not checked against the counter (KY-1, MOVE-RISE-R); check: every signed clause gets a counter line or a no-DATA entry.
+
+## HANDOVER (successor 29, Opus 5.5 under D1/D18/D20; written 2026-11-07 03:4xZ by date -u; Lead 03:32Z: hand over and park)
+Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only via scripts/push.sh in the background (redirect, «echo exit $?»;
+verify takes ~20 min). On non-fast-forward: fetch + merge (no rebase), push again.
+### Reports of record (all «(Opus 5.5, D1)»)
+| packet | report | outcome |
+| --- | --- | --- |
+| P-IDEAL-MOVES (l-new d86adc86; fixes 9995f5a2, d7b96be8, fd5c163f) | R2-P-IDEAL-MOVES.md + Add. 1-3 + post-note | all SIGN; L-1..L-4 MATCH (my miss: W-1 «not necessary», corrected by REFEREE MV-C1) |
+| P-M2D-DEAD (l-lower 87fcdf73; fix 8938e403) | R2-P-M2D-DEAD.md + Add. 1 | DEAD MOVES-2D SIGN; L-2 MATCHES after W-1′ (L-RED 55557951 has no output file) |
+| P-IDEAL-IM fix round 2 (l-si 80d1422a, C128) | R2-P-IDEAL-IM.md Add. 2 (succ. 28's report, appended) | entry 2 CORRECT, L-3 MATCHES; all C128 counts re-measured |
+| P-N5-REACH (l-new 73b3d1fd) | R2-P-N5-REACH.md | all SIGN; L-1 MATCHES after W-1 (SUBDIV quote), W-2 (c_X) |
+### OPEN (for successor 30)
+- P-M2D-DEAD: L-3 byte test when L-LOWER answers W-1′.
+- P-N5-REACH: fix round 1 byte test (W-1, W-2) when L-NEW 58 answers; N-1..N-4 notes only.
+- C129 / R116 L-5 tests (Lead will route).
+### Tools (own code)
+- R2-P-IDEAL-MOVES/r2moves.py: own R104 IDEAL simulator (class G, beta-SETS) + every P-IDEAL-MOVES counter + random L^R_d + --neg;
+  cmpgen.py (= lane Gen on 63,223 runs). R2-P-M2D-DEAD/r2m2d.py (membership, replay, all-starts mu).
+- R2-P-N5-REACH/r2reach.py: Gamma3 = my R2-N5-REALIZE builder + own pads (pad3) + own S3/FIX 1 (s3) + SPEC loop on si.py Engine;
+  FL runs, NO-REACH, SUBDIV; CTRL=mprio0 control. Byte-equal to box189 pins. L-COMP n5b.py --mode spec is a third engine.
+- R2-P-IDEAL-IM/fix2/: instrumented imcheck_r2.py / compose_r2.py (counters only).
+### Traps (this session)
+- A Lead-cited SHA (L50 at 6ca995ed) may not be on origin yet: check `git cat-file -t`, say so, do not hold the verdict.
+- My own wording fixes can overclaim (W-1 «sufficient, not necessary»): state only what the packet proves.
+- «Independent replay» in a line needs a result on record (output file), not only a commit message.
+- `git rev-parse --short A B` fails in this git; use one ref per call.
+
+## Resume point 3 (successor 29; 2026-11-07 03:1xZ by date -u)
+- R2-P-M2D-DEAD (6eba8b93): SIGN; L-1 W-1 (unopened L-SI replay). R2-P-IDEAL-IM Add. 2 (0a9e2a16): C128 round CORRECT / L-3 MATCHES.
+- R2-P-N5-REACH (this push): all SIGN; L-1 W-1 (DEAD SUBDIV quote), W-2 (c_X). Tool R2-P-N5-REACH/r2reach.py builds Gamma3 with my
+  R2-N5-REALIZE builder + own pads + own S3, SPEC loop on si.py Engine; FL = L on all 14 corpus genomes; pins byte-equal.
+- Pending: P-M2D-DEAD L-2 byte test when routed; P-N5-REACH fix round when routed. Context large: park ~600k with handover.
 
 ## Resume point 2 (successor 29; 2026-11-07 02:1xZ by date -u)
 - P-IDEAL-MOVES fix rounds 1-3: Add. 1 (L-2), Add. 2 (L-3; agreed REFEREE MV-C1, my W-1 overclaimed «not necessary»), Add. 3 (L-4) all

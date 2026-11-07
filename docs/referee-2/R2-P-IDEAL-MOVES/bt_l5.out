@@ -1,0 +1,6 @@
+R1 old count in L-4 1, new count in L-5 1
+R2 old count in L-4 1, new count in L-5 1
+R3 old count in L-4 1, new count in L-5 1
+L-4+R1..R3 == L-5: True a42257cb159b2e51128c2334062d44edb97661f6 4750
+lines 1 ( ) 74 74 | 0
+min depth 0
