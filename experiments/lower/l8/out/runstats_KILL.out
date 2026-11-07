@@ -1,0 +1,6 @@
+LCOMP_L6Z_KILL230_d28.txt | T 275 caps 6 F(6) 230 | closure(q5=10) meets levels >= 6: True | q5 movers {10: 63}
+   6-windows 127 of length 1: 8 -> WINDOW-CAP bound 246
+   5-windows: {('inner', 'PULSE1'): 8, ('inner', 'PULSE>=2', 'trigger level>=6'): 33, ('outer', 'PULSE>=2', 'trigger level>=6'): 22} | PULSE>=2 windows by lowest trigger level: {'min trigger level 11': 4, 'min trigger level 15': 16, 'min trigger level 7': 31, 'min trigger level 8': 4}
+LCOMP_L6Z_KILL238_d28.txt | T 283 caps 6 F(6) 238 | closure(q5=10) meets levels >= 6: True | q5 movers {10: 63}
+   6-windows 127 of length 1: 8 -> WINDOW-CAP bound 246
+   5-windows: {('inner', 'PULSE1'): 8, ('inner', 'PULSE>=2', 'trigger level>=6'): 33, ('outer', 'PULSE>=2', 'trigger level>=6'): 22} | PULSE>=2 windows by lowest trigger level: {'min trigger level 11': 8, 'min trigger level 15': 16, 'min trigger level 7': 31}

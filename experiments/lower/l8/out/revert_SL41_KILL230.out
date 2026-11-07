@@ -1,0 +1,239 @@
+B (new) T 275 caps 6 F 2 6 14 30 62 126 230 166
+A (old) T 290 caps 6 F 2 6 14 30 62 126 222 158
+x10 L5 xt[0] 17->55 | T 9 caps 0 F 0 0 0 0 1 2 4 1
+x12 L6 xt[0] 13->22 | T 17 caps 0 F 0 0 0 1 4 8 6 4
+x12 L6 br[0] 90->26 (swap with opt 30) | T 31 caps 0 F 0 0 0 2 6 13 22 14
+x12 L6 br[1] 43->71 (swap with opt 103) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x13 L6 bp[0] 1->0 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x13 L6 br[0] 7->5 (swap with opt 69) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x13 L6 xt[1] 19->22 | T 19 caps 0 F 0 0 0 1 4 8 8 6
+x13 L6 br[1] 86->37 (swap with opt 31) | T 5 caps 0 F 0 0 0 0 0 1 2 0
+x14 L7 br[0] 91->6 (swap with opt 77) | T 4 caps 0 F 0 0 0 0 0 0 2 0
+x14 L7 xt[1] 51->19 | CYCLIC
+x14 L7 br[1] 95->99 (swap with opt 63) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x15 L7 xt[0] 18->50 | T 16 caps 0 F 0 0 0 1 2 6 8 6
+x15 L7 bp[0] 1->0 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x15 L7 br[0] 26->46 (swap with opt 82) | T 275 caps 6 F 2 6 14 30 62 126 200 138
+x15 L7 xt[1] 20->52 | T 6 caps 0 F 0 0 0 0 0 1 4 0
+x15 L7 bp[1] 1->0 | T 275 caps 6 F 2 6 14 30 62 126 200 138
+x15 L7 br[1] 37->40 (swap with opt 80) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x16 L8 xt[0] 30->52 | T 8 caps 0 F 0 0 0 0 0 2 6 3
+x16 L8 br[0] 23->78 (swap with opt 60) | T 29 caps 0 F 0 0 0 2 6 14 22 14
+x16 L8 xt[1] 7->32 | CYCLIC
+x16 L8 bp[1] 1->0 | T 4 caps 0 F 0 0 0 0 1 0 2 0
+x16 L8 br[1] 69->7 (swap with opt 26) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x17 L8 xt[0] 22->32 | T 61 caps 0 F 0 0 2 6 13 26 46 33
+x17 L8 bp[0] 1->0 | T 11 caps 0 F 0 0 0 1 2 2 4 2
+x17 L8 br[0] 62->63 (swap with opt 65) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x17 L8 xt[1] 11->8 | T 11 caps 0 F 0 0 0 1 2 2 4 2
+x17 L8 br[1] 24->4 (swap with opt 99) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x18 L9 xt[0] 44->32 | CYCLIC
+x18 L9 br[0] 51->100 (swap with opt 83) | T 5 caps 0 F 0 0 0 0 0 0 2 0
+x18 L9 xt[1] 29->45 | T 12 caps 0 F 0 0 0 0 1 4 8 4
+x18 L9 bp[1] 1->0 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x18 L9 br[1] 15->65 (swap with opt 107) | T 275 caps 6 F 2 6 14 30 62 126 200 138
+x19 L9 xt[0] 16->21 | T 26 caps 0 F 0 0 0 2 6 11 15 10
+x19 L9 br[0] 36->41 (swap with opt 44) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x19 L9 xt[1] 54->32 | T 9 caps 0 F 0 0 0 0 1 4 4 3
+x19 L9 br[1] 18->95 (swap with opt 29) | T 11 caps 0 F 0 0 0 0 1 4 8 5
+x20 L10 bp[0] 1->0 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x20 L10 br[0] 22->91 (swap with opt 28) | T 4 caps 0 F 0 0 0 0 0 0 2 0
+x20 L10 xt[1] 50->19 | CYCLIC
+x20 L10 bp[1] 0->1 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x20 L10 br[1] 16->30 (swap with opt 105) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x21 L10 xt[0] 52->26 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x21 L10 br[0] 47->39 (swap with opt 55) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x21 L10 xt[1] 45->36 | CYCLIC
+x21 L10 br[1] 102->103 (swap with opt 75) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x22 L11 xt[0] 30->20 | T 27 caps 0 F 0 0 0 2 5 10 16 11
+x22 L11 bp[0] 1->0 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x22 L11 br[0] 41->45 (swap with opt 93) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x22 L11 xt[1] 11->21 | T 18 caps 0 F 0 2 2 0 2 6 10 8
+x22 L11 br[1] 34->84 (swap with opt 89) | T 12 caps 0 F 0 0 0 1 2 4 8 5
+x23 L11 xt[0] 6->8 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x23 L11 bp[0] 1->0 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x23 L11 br[0] 8->69 (swap with opt 33) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x23 L11 xt[1] 4->36 | T 37 caps 0 F 0 0 2 4 6 14 26 18
+x23 L11 br[1] 56->61 (swap with opt 48) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x24 L12 xt[0] 33->34 | CYCLIC
+x24 L12 bp[0] 0->1 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x24 L12 br[0] 61->94 (swap with opt 109) | T 3 caps 0 F 0 0 0 0 0 0 2 0
+x24 L12 xt[1] 25->40 | T 3 caps 0 F 0 0 0 0 0 0 2 0
+x24 L12 bp[1] 0->1 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x24 L12 br[1] 21->83 (swap with opt 92) | T 68 caps 0 F 0 0 2 6 14 30 56 40
+x25 L12 bp[0] 1->0 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x25 L12 br[0] 1->12 (swap with opt 88) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x25 L12 xt[1] 39->2 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x25 L12 bp[1] 1->0 | T 12 caps 0 F 0 1 2 0 1 4 8 5
+x25 L12 br[1] 104->85 (swap with opt 74) | T 11 caps 0 F 0 0 0 0 1 4 8 5
+x26 L13 br[0] 14->72 (swap with opt 104) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x26 L13 xt[1] 2->34 | CYCLIC
+x26 L13 bp[1] 1->0 | T 38 caps 0 F 0 2 2 4 8 16 28 20
+x26 L13 br[1] 80->44 (swap with opt 73) | T 38 caps 0 F 0 2 2 4 8 16 28 20
+x27 L13 xt[0] 41->17 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x27 L13 bp[0] 0->1 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x27 L13 br[0] 33->64 (swap with opt 64) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x27 L13 xt[1] 25->12 | T 45 caps 0 F 0 0 1 4 9 20 36 25
+x27 L13 bp[1] 0->1 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x27 L13 br[1] 39->19 (swap with opt 72) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x28 L14 xt[0] 48->19 | T 268 caps 6 F 2 6 14 30 62 126 222 158
+x28 L14 bp[0] 1->0 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x28 L14 br[0] 17->80 (swap with opt 53) | T 38 caps 0 F 0 2 2 4 8 16 28 20
+x28 L14 xt[1] 34->9 | T 33 caps 0 F 0 0 0 2 6 14 26 18
+x28 L14 br[1] 67->57 (swap with opt 111) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x29 L14 xt[0] 21->-1 | T 4 caps 0 F 0 0 0 0 0 1 4 0
+x29 L14 br[0] 68->3 (swap with opt 68) | T 6 caps 0 F 0 0 0 0 0 1 4 1
+x29 L14 xt[1] 52->-1 | T 2 caps 0 F 0 0 0 0 0 0 2 0
+x29 L14 bp[1] 1->0 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x29 L14 br[1] 59->109 (swap with opt 95) | T 6 caps 0 F 1 0 0 0 0 1 4 1
+x30 L15 xt[0] 31->15 | T 271 caps 6 F 2 6 14 30 62 126 222 158
+x30 L15 bp[0] 1->0 | T 9 caps 0 F 0 0 0 0 1 4 6 3
+x30 L15 br[0] 78->15 (swap with opt 37) | T 29 caps 0 F 0 0 0 2 6 14 20 12
+x30 L15 xt[1] 18->8 | CYCLIC
+x30 L15 br[1] 75->38 (swap with opt 90) | T 8 caps 0 F 0 0 0 0 1 2 4 1
+x31 L15 xt[0] 15->2 | T 5 caps 0 F 0 0 0 0 0 0 2 0
+x31 L15 bp[0] 0->1 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x31 L15 br[0] 32->102 (swap with opt 43) | T 5 caps 0 F 0 0 0 0 0 0 2 0
+x31 L15 xt[1] 44->3 | T 13 caps 0 F 0 0 0 0 2 4 8 5
+x31 L15 br[1] 99->51 (swap with opt 36) | T 5 caps 0 F 0 0 0 0 0 0 2 0
+x32 L16 xt[0] 22->7 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x32 L16 bp[0] 1->0 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x32 L16 br[0] 64->32 (swap with opt 62) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x32 L16 xt[1] 52->26 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x32 L16 br[1] 63->89 (swap with opt 87) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x33 L16 xt[0] 2->29 | CYCLIC
+x33 L16 bp[0] 1->0 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x33 L16 br[0] 60->82 (swap with opt 97) | T 36 caps 0 F 0 2 2 4 8 16 26 18
+x33 L16 xt[1] 5->9 | CYCLIC
+x33 L16 bp[1] 1->0 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x33 L16 br[1] 48->18 (swap with opt 39) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x34 L17 xt[0] 24->25 | T 38 caps 0 F 0 2 2 4 8 16 28 20
+x34 L17 br[0] 3->50 (swap with opt 86) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x34 L17 xt[1] 54->2 | T 22 caps 0 F 0 0 0 1 4 9 18 11
+x34 L17 br[1] 5->105 (swap with opt 81) | T 19 caps 0 F 0 1 3 2 2 6 12 8
+x35 L17 bp[1] 0->1 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x35 L17 br[1] 0->104 (swap with opt 51) | T 12 caps 0 F 0 1 2 0 1 4 8 5
+x36 L18 xt[0] 20->34 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x36 L18 bp[0] 1->0 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x36 L18 br[0] 19->23 (swap with opt 32) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x36 L18 xt[1] 41->24 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x36 L18 bp[1] 1->0 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x36 L18 br[1] 44->75 (swap with opt 61) | T 8 caps 0 F 0 0 0 0 1 2 4 1
+x37 L18 xt[0] 8->46 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x37 L18 bp[0] 1->0 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x37 L18 br[0] 85->73 (swap with opt 84) | T 277 caps 6 F 2 6 14 30 62 126 230 166
+x37 L18 xt[1] 8->53 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x37 L18 bp[1] 0->1 | T 103 caps 0 F 0 1 4 10 22 46 84 60
+x37 L18 br[1] 103->16 (swap with opt 41) | T 5 caps 0 F 0 0 0 1 2 2 4 3
+x38 L19 xt[0] 42->40 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x38 L19 bp[0] 1->0 | T 69 caps 0 F 0 0 2 6 14 30 56 40
+x38 L19 br[0] 88->24 (swap with opt 35) | T 9 caps 0 F 0 0 0 0 1 2 4 1
+x38 L19 xt[1] 22->41 | T 69 caps 0 F 0 0 2 6 14 30 56 40
+x38 L19 bp[1] 1->0 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x38 L19 br[1] 6->58 (swap with opt 85) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x39 L19 br[0] 77->66 (swap with opt 102) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x39 L19 br[1] 11->8 (swap with opt 46) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x40 L20 br[0] 40->56 (swap with opt 47) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x40 L20 br[1] 105->60 (swap with opt 66) | T 17 caps 0 F 0 1 2 0 2 6 12 8
+x41 L20 xt[0] 47->8 | T 138 caps 0 F 1 2 6 14 30 62 114 82
+x41 L20 br[0] 46->31 (swap with opt 110) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x41 L20 xt[1] 43->4 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x41 L20 br[1] 100->27 (swap with opt 101) | T 3 caps 0 F 0 0 0 0 0 0 2 1
+x42 L21 xt[0] 19->8 | T 73 caps 0 F 0 2 4 8 16 32 60 42
+x42 L21 br[0] 73->0 (swap with opt 71) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x42 L21 xt[1] 30->33 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x42 L21 br[1] 58->14 (swap with opt 52) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x43 L21 br[0] 50->97 (swap with opt 96) | T 3 caps 0 F 0 0 0 0 0 0 2 0
+x43 L21 xt[1] -1->35 | T 138 caps 0 F 1 2 6 14 30 62 114 82
+x43 L21 br[1] 89->9 (swap with opt 91) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x44 L22 xt[0] 7->53 | CYCLIC
+x44 L22 br[0] 12->62 (swap with opt 34) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x44 L22 xt[1] 25->20 | CYCLIC
+x44 L22 br[1] 84->28 (swap with opt 108) | T 11 caps 0 F 0 0 0 0 1 4 8 5
+x45 L22 xt[0] 33->35 | T 4 caps 0 F 0 0 0 0 0 1 4 0
+x45 L22 br[0] 38->86 (swap with opt 27) | T 5 caps 0 F 0 0 0 0 0 1 2 0
+x45 L22 xt[1] 44->22 | CYCLIC
+x45 L22 br[1] 9->17 (swap with opt 56) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x46 L23 xt[0] 22->39 | T 142 caps 0 F 1 3 7 15 31 64 118 84
+x46 L23 br[0] 83->11 (swap with opt 79) | T 34 caps 0 F 0 1 0 2 6 14 26 18
+x46 L23 xt[1] 24->47 | T 142 caps 0 F 1 3 7 15 31 64 118 84
+x46 L23 bp[1] 0->1 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x46 L23 br[1] 45->67 (swap with opt 57) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x47 L23 br[0] 110->108 (swap with opt 100) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x47 L23 xt[1] -1->49 | T 159 caps 0 F 1 4 10 18 36 72 130 94
+x47 L23 br[1] 109->110 (swap with opt 94) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x48 L24 xt[0] 26->40 | T 203 caps 1 F 2 4 10 22 46 94 168 120
+x48 L24 br[0] 97->77 (swap with opt 78) | T 229 caps 1 F 2 5 12 25 52 105 192 137
+x48 L24 xt[1] 24->2 | T 223 caps 1 F 2 5 12 25 52 105 186 131
+x48 L24 br[1] 82->88 (swap with opt 76) | T 207 caps 3 F 2 6 14 22 46 94 174 126
+x49 L24 xt[0] -1->29 | CYCLIC
+x49 L24 bp[0] 0->1 | T 172 caps 0 F 1 3 8 18 38 78 142 102
+x49 L24 br[0] 111->22 (swap with opt 40) | T 2 caps 0 F 0 0 0 0 0 0 2 0
+x49 L24 br[1] 4->74 (swap with opt 106) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x50 L25 xt[0] -1->41 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x50 L25 bp[0] 1->0 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x50 L25 br[0] 108->90 (swap with opt 24) | T 17 caps 0 F 0 0 0 1 4 8 6 4
+x50 L25 xt[1] 29->19 | CYCLIC
+x50 L25 br[1] 27->36 (swap with opt 38) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x51 L25 xt[0] 50->-1 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x51 L25 bp[0] 0->1 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x51 L25 br[0] 66->111 (swap with opt 98) | T 172 caps 0 F 1 3 8 18 38 78 142 102
+x51 L25 xt[1] 29->20 | CYCLIC
+x51 L25 br[1] 71->47 (swap with opt 42) | T 6 caps 0 F 0 0 0 0 0 1 4 1
+x52 L26 xt[0] 26->20 | CYCLIC
+x52 L26 bp[0] 0->1 | T 37 caps 0 F 0 0 2 4 6 14 26 18
+x52 L26 br[0] 72->48 (swap with opt 67) | T 68 caps 0 F 0 0 2 6 14 30 56 40
+x52 L26 xt[1] 44->5 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x52 L26 br[1] 30->33 (swap with opt 54) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x53 L26 xt[0] 9->15 | T 18 caps 0 F 0 0 0 0 2 6 12 8
+x53 L26 br[0] 74->1 (swap with opt 50) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x53 L26 xt[1] 39->34 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x53 L26 bp[1] 1->0 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x53 L26 br[1] 65->43 (swap with opt 25) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x54 L27 xt[0] 20->22 | CYCLIC
+x54 L27 br[0] 28->68 (swap with opt 58) | T 6 caps 0 F 0 0 0 0 0 1 4 1
+x54 L27 xt[1] 43->30 | T 3 caps 0 F 0 0 0 0 0 1 2 0
+x54 L27 bp[1] 0->1 | T 3 caps 0 F 0 0 0 0 0 0 2 0
+x54 L27 br[1] 94->59 (swap with opt 59) | T 3 caps 0 F 0 0 0 0 0 0 2 0
+x55 L27 br[0] 31->21 (swap with opt 49) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x55 L27 xt[1] 49->1 | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x55 L27 br[1] 57->34 (swap with opt 45) | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x14 L7 start | T 270 caps 5 F 2 6 14 30 62 124 226 165
+x15 L7 start | T 275 caps 6 F 2 6 14 30 62 126 230 168
+x22 L11 start | T 24 caps 0 F 0 0 0 1 4 10 20 13
+x28 L14 start | T 273 caps 6 F 2 6 14 30 62 126 228 164
+x33 L16 start | T 4 caps 0 F 0 0 0 0 0 1 4 0
+x34 L17 start | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x41 L20 start | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x45 L22 start | T 69 caps 0 F 0 0 2 6 14 30 56 40
+x51 L25 start | T 275 caps 6 F 2 6 14 30 62 126 230 166
+x53 L26 start | T 24 caps 0 F 0 0 0 1 4 10 20 13
+x55 L27 start | T 275 caps 6 F 2 6 14 30 62 126 230 166
+LEVEL 0 block xt/bp/start | T 275 caps 6 F 2 6 14 30 62 126 230 166
+LEVEL 1 block xt/bp/start | T 275 caps 6 F 2 6 14 30 62 126 230 166
+LEVEL 2 block xt/bp/start | T 275 caps 6 F 2 6 14 30 62 126 230 166
+LEVEL 3 block xt/bp/start | T 275 caps 6 F 2 6 14 30 62 126 230 166
+LEVEL 4 block xt/bp/start | T 275 caps 6 F 2 6 14 30 62 126 230 166
+LEVEL 5 block xt/bp/start | T 9 caps 0 F 0 0 0 0 1 2 4 1
+LEVEL 6 block xt/bp/start | T 19 caps 0 F 0 0 0 1 4 8 8 6
+LEVEL 7 block xt/bp/start | CYCLIC
+LEVEL 8 block xt/bp/start | CYCLIC
+LEVEL 9 block xt/bp/start | CYCLIC
+LEVEL 10 block xt/bp/start | CYCLIC
+LEVEL 11 block xt/bp/start | T 18 caps 0 F 0 2 2 0 2 6 10 8
+LEVEL 12 block xt/bp/start | CYCLIC
+LEVEL 13 block xt/bp/start | CYCLIC
+LEVEL 14 block xt/bp/start | T 2 caps 0 F 0 0 0 0 0 0 2 0
+LEVEL 15 block xt/bp/start | CYCLIC
+LEVEL 16 block xt/bp/start | CYCLIC
+LEVEL 17 block xt/bp/start | T 22 caps 0 F 0 0 0 1 4 9 18 11
+LEVEL 18 block xt/bp/start | T 104 caps 0 F 0 1 4 10 22 46 84 60
+LEVEL 19 block xt/bp/start | T 69 caps 0 F 0 0 2 6 14 30 56 40
+LEVEL 20 block xt/bp/start | T 138 caps 0 F 1 2 6 14 30 62 114 82
+LEVEL 21 block xt/bp/start | T 73 caps 0 F 0 2 4 8 16 32 60 42
+LEVEL 22 block xt/bp/start | CYCLIC
+LEVEL 23 block xt/bp/start | T 142 caps 0 F 1 3 7 15 31 64 118 84
+LEVEL 24 block xt/bp/start | CYCLIC
+LEVEL 25 block xt/bp/start | CYCLIC
+LEVEL 26 block xt/bp/start | CYCLIC
+LEVEL 27 block xt/bp/start | CYCLIC

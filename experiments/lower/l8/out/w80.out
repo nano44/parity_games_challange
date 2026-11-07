@@ -1,0 +1,33 @@
+[9,11] u1 10 u2 11 PULSE 1 trig(level,mover) [(5, 11), (10, 21)] keys o0-9 0100000000 o6-14 000011000
+[25,29] u1 26 u2 28 PULSE 2 trig(level,mover) [(11, 22)] keys o0-9 0100000011 o6-14 001111101
+[44,46] u1 45 u2 46 PULSE 1 trig(level,mover) [(5, 11), (10, 21)] keys o0-9 0110000000 o6-14 000011100
+[60,64] u1 61 u2 63 PULSE 2 trig(level,mover) [(11, 22)] keys o0-9 0100000011 o6-14 001111001
+[79,81] u1 80 u2 81 PULSE 1 trig(level,mover) [(5, 11), (10, 21)] keys o0-9 0000000000 o6-14 000011000
+[95,99] u1 96 u2 98 PULSE 2 trig(level,mover) [(11, 22)] keys o0-9 0000000011 o6-14 001111101
+[114,116] u1 115 u2 116 PULSE 1 trig(level,mover) [(5, 11), (10, 21)] keys o0-9 0110000000 o6-14 000011100
+[130,134] u1 131 u2 133 PULSE 2 trig(level,mover) [(11, 22)] keys o0-9 0100000011 o6-14 001111001
+[151,153] u1 152 u2 153 PULSE 1 trig(level,mover) [(5, 11), (10, 21)] keys o0-9 1000000000 o6-14 000011000
+[167,171] u1 168 u2 170 PULSE 2 trig(level,mover) [(11, 22)] keys o0-9 1000000011 o6-14 001111101
+[187,189] u1 188 u2 189 PULSE 1 trig(level,mover) [(5, 11), (10, 21)] keys o0-9 1110000000 o6-14 000011100
+[203,207] u1 204 u2 206 PULSE 2 trig(level,mover) [(11, 22)] keys o0-9 0100000011 o6-14 001111001
+[222,224] u1 223 u2 224 PULSE 1 trig(level,mover) [(5, 11), (10, 21)] keys o0-9 0000000000 o6-14 000011000
+[238,242] u1 239 u2 241 PULSE 2 trig(level,mover) [(11, 22)] keys o0-9 0000000011 o6-14 001111101
+[257,259] u1 258 u2 259 PULSE 1 trig(level,mover) [(5, 11), (10, 21)] keys o0-9 0110000000 o6-14 000011100
+[273,277] u1 274 u2 276 PULSE 2 trig(level,mover) [(11, 22)] keys o0-9 0100000011 o6-14 001111001
+SL41
+[6,11] u1 7 u2 9 PULSE 2 trig(level,mover) [(6, 12)] keys o0-9 0100000010 o6-14 001011000
+[24,28] u1 25 u2 27 PULSE 2 trig(level,mover) [(6, 12), (10, 21)] keys o0-9 0100000011 o6-14 001111110
+[43,48] u1 44 u2 46 PULSE 2 trig(level,mover) [(6, 12)] keys o0-9 0110000010 o6-14 001011010
+[61,65] u1 62 u2 64 PULSE 2 trig(level,mover) [(6, 12), (10, 21)] keys o0-9 0100000011 o6-14 001111000
+[79,84] u1 80 u2 82 PULSE 2 trig(level,mover) [(6, 12)] keys o0-9 0000000010 o6-14 001011000
+[97,101] u1 98 u2 100 PULSE 2 trig(level,mover) [(6, 12), (10, 21)] keys o0-9 0000000011 o6-14 001111110
+[116,121] u1 117 u2 119 PULSE 2 trig(level,mover) [(6, 12)] keys o0-9 0110000010 o6-14 001011010
+[134,138] u1 135 u2 137 PULSE 2 trig(level,mover) [(6, 12), (10, 21)] keys o0-9 1100000011 o6-14 001111000
+[152,157] u1 153 u2 155 PULSE 2 trig(level,mover) [(6, 12)] keys o0-9 1100000010 o6-14 001011000
+[170,174] u1 171 u2 173 PULSE 2 trig(level,mover) [(6, 12), (10, 21)] keys o0-9 1100000011 o6-14 001111110
+[189,194] u1 190 u2 192 PULSE 2 trig(level,mover) [(6, 12)] keys o0-9 1110000010 o6-14 001011010
+[207,211] u1 208 u2 210 PULSE 2 trig(level,mover) [(6, 12), (10, 21)] keys o0-9 0100000011 o6-14 001111000
+[225,230] u1 226 u2 228 PULSE 2 trig(level,mover) [(6, 12)] keys o0-9 0000000010 o6-14 001011000
+[243,247] u1 244 u2 246 PULSE 2 trig(level,mover) [(6, 12), (10, 21)] keys o0-9 0000000011 o6-14 001111110
+[262,267] u1 263 u2 265 PULSE 2 trig(level,mover) [(6, 12)] keys o0-9 0110000010 o6-14 001011010
+[280,284] u1 281 u2 283 PULSE 2 trig(level,mover) [(6, 12), (10, 21)] keys o0-9 0100000011 o6-14 001111000

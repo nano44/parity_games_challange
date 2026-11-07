@@ -35,7 +35,54 @@ Nothing here is a result in the sense of CLAUDE.md; G-N5-TIME stays OPEN. Not a 
   mover of the first 5-window with two moves at distinct steps; npaths over both options of every mover; levels 0-5 capped). Gap:
   roles() does not check DOUBLE-EQ (E5) (the same member second in every window); checked explicitly on the KILL files in item 0.
 - Status: the KILL230 / KILL238 files (L-COMP 11; sha1 29faf25f…, 54450906… as relayed) were not on origin/claude/l-comp at 21:13Z;
-  item 0 is pending them. Lead reading asked on the label.
+  item 0 is pending them.
+- Lead reading (Lead 21:19Z, quoted): «CONJECTURE RC-PLATEAU (j = 6 role form) stays a CONJECTURE: untested by D_l6z, and KILL230/238
+  are consistent with it.» «Its contrapositive is the useful form: a 6-capped genome with F(6) > 222 has npaths(q₅, pair 6) = 0. So a
+  seventh capped level must be found inside the RC-free set, which is exactly the space L-COMP's gated climb searches.» «What is
+  refuted (DATA, pending your re-run on the files): «RC-free genomes with levels 0-5 capped have F(6) ≤ 222». That was the L7 §1
+  «RC-free ≤ 190» reading and §1b's stall reading, not a conjecture.» The Lead withdrew its 20:5xZ «DEAD by the stated test» label.
+  Forward note: L6 §5d's «test proposed» sentence and L7 §1's «SURVIVES» line are superseded by this section (history not edited).
+
+## 1c. Item 0: KILL238 and KILL230 dissected (DATA; unit as stated per line; scope = stored start)
+- Sources: claude/l-comp efdd6010, experiments/comp/box30/out/L6Z_KILL230_d28.txt and L6Z_KILL238_d28.txt; frozen copies
+  l8/rec/LCOMP_L6Z_KILL230_d28.txt (sha1 29faf25f347a05e55d7dfb9600fe0241f6226d8c) and l8/rec/LCOMP_L6Z_KILL238_d28.txt
+  (sha1 544509062f68eb96b60becfab51924dd5d333913), = the relayed values. sim6 and fev agree: KILL230 T 275, F 2 6 14 30 62 126 230 166 …;
+  KILL238 T 283, F 2 6 14 30 62 126 238 174 …; guard_l6 'noreturn' ok on both (caps 6, q₅ = 10, npaths(q₅, pair 6) = 0).
+- E5 check (kill_dissect.py → out/kill_dissect.out; unit = 5-window; set = all 63 of each of SL41, L6G_TEST1, KILL230, KILL238): every
+  window has two pair-5 moves at distinct steps and mover 10 is second in 63 of 63 in all four. So q₅ = 10 is well defined and the
+  guard's role reading (first window only) is exact on these files. Hence (Lead 21:19Z reading) the refutation of «RC-free genomes with
+  levels 0-5 capped have F(6) ≤ 222» is confirmed on my re-run: KILL238 is RC-free with F(6) = 238 (DATA, two simulators).
+- 6-window profile (l6/struct48.py; unit = 6-window; set = the 127 of each): SL41 79 / 16 / 16 / 16 (both / only 12 / only 13 / none);
+  L6G_TEST1 the same; KILL230 99 / 4 / 20 / 4; KILL238 111 / 0 / 16 / 0. Pair 6 is NOT crossed in KILL230/238: 12 → (13, 11),
+  13 → (11, 19) (12:0 reads 13 directly).
+- SL41's MERGE (11:1 → 9:1 (rank 87) → 54:0 → 22): the prefix 11:1 → 9:1 (87, −) is still there in both KILL files (chain 11:1 at s₀:
+  79 → 87 → 54:1 → …), but pair 6 no longer reads 22, and (9, 1) is the decider of 12 or 13 at a pre-state of 0 of 127 6-windows in
+  KILL238 (dom87.py; 12 of 28 failing in KILL230). In KILL238 every 6-window under a (9, 1) 5-window is good: SL41's 32 merge-decided
+  failures are all repaired.
+- Diff vs SL41 (kill_dissect.py; unit = option / mover): KILL238 xt 71 options (movers 0-11: only 10:0, 55 → 17; pair 6: 2; ≥ 14: 68),
+  br 87 (pair 6: 4, ≥ 14: 83), bp 47, gates 16 movers ≥ 14, starts 12 movers ≥ 14. KILL230 alike (xt 73, br 87, bp 38). The re-point
+  creates the unique Ξ-path q₅ = 10 :0 → 17 :0 → 22 (level 11): the RC-free q₅ trigger of L7 §2 GUARD.
+- What the re-point repairs (w80.py, runstats.py; unit = 5-window; set = KILL238's 63): mover 22 moves at u₂ − 1 in 15 windows (8 of
+  the 16 opened by (8, 0), 7 of the 8 by (8, 1)); the other PULSE_5 ≥ 2 windows have triggers of levels 7 and 15. Lowest trigger level:
+  7 in 31 windows, 11 in 8, 15 in 16. SL41 used mover 12 (level 6, the RETURN-CHAIN) as the trigger of all 16 (8, 0) windows.
+- What still blocks 254 (fail16.py, w80.py; unit = 6-window / 5-window; set = KILL238's): the 16 failing 6-windows are 8 consecutive
+  pairs, one pair in each of the 8 (8, 0) 5-windows with o(8) = o(9) = 0 (the other 8 (8, 0) windows have o(8) o(9) = 1 1 and are
+  triggered by 22). In those 8 windows no mover of closure(10) of level ≥ 7 moves at u₁ (only 11 and 21 move), so PULSE_5 = 1
+  (inner windows: 8, = the 8 length-1 6-windows; WINDOW-CAP bound 2·127 − 8 = 246). Each such window costs 2 flips: the length-1
+  6-window [u₁, u₁] (13 moves, 12 cannot: WINDOW-CAP) and the next one [u₁ + 1, u₁ + 2] (13 moves at its last step, 12 is decided by
+  (13, 1) rank 89, i.e. 12 copies 13 and has no step left). 8 × 2 = 16 = 254 − 238. KILL230 has the same 8 pairs (16 windows) plus 12 more:
+  8 under (8, 0) 5-windows with PULSE_5 = 2 (4 only 13, 4 none) and 4 under (9, 0) (only 12); (9, 1) is a decider at some pre-state in
+  12 of its 28 failing windows (dom87.py), though no failing window lies under a (9, 1) 5-window.
+- Revert each changed part (l5/revert.py with fev → out/revert_SL41_KILL238.out, out/revert_SL41_KILL230.out; unit = one changed
+  option target / sign / rank swap / gate order / start bit of the new genome reset to SL41's; set = all of them): KILL238 245 units:
+  122 FORCED (84 lose a lower cap, 34 make the graph cyclic, 4 keep caps 6 with lower F(6)), 110 neutral (drift), 0 raise F(6).
+  KILL230 237 units: 127 forced (90 / 31 / 6), 95 neutral. Reverting 10:0 alone: caps 0, T 9 in both (it is load-bearing). Level
+  blocks 0-4 neutral; levels 5, 6 and every changed helper level ≥ 11 forced: the lower caps rest on the re-built helpers above pair 6,
+  as COUPLING-UP (L7 §4) predicts.
+- Constraint for L-COMP 11's climbs toward 254 (READING, from the above): keep 10:0 → 17:0 → 22 and the 22-trigger; the target is
+  the 8 (8, 0) 5-windows with o(8) = o(9) = 0, which need a level-≥7 mover of closure(10) moving at u₁ (one step after 11) — e.g. a
+  second q₅-reachable helper armed in the o(8) o(9) = 0 0 phase, the mirror of 22. A cheap guard/score term: the number of
+  6-windows of length 1 (= inner PULSE_5 = 1 5-windows here) must fall from 8 to 0; F(6) ≤ 254 − (that number) by WINDOW-CAP.
 
 ## 2. Item 1: the sequential schedule with helpers, decided exactly (DATA; unit = (h, d, α) case; scope = the sequential target)
 | h | d | α (α_1, …) | helper levels | result | outputs |
