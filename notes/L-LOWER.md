@@ -12,6 +12,8 @@
   via the Gray-code cycle of pair 4's b-step types) — lookahead fails because a path reads the whole downstream sum (TAP).
 - DUTY P-TOWER-FUEL fix round 1 DONE 740f6c79 (fixes 0902efb9…, L-2 d866ca50… 4,586 B; mkL2_tf.py / mkfix_tf.py; check pins L-2).
   Waiting for both referees' byte tests; answer further items with fixes entry 2 + L-3 by script, never edit packet / L-1 / L-2.
+- 15:53Z Lead: (a) READ-NEST by hand -> DEAD on SL41 (readnest.py: 10's path needs 12; 12 reads 13 kills all caps at step 1);
+  (b) predicate guard_l6.py + seed SL41 sent for L-COMP; GAD95 xcheck'd vs box150 (0/0).
 - Milestone report sent to Lead 15:50Z (SHAs 2ce74ff9, fa9104fa, e362f15b, 3329b094, 740f6c79). Waiting for routing (READ-NEST
   test SL41′ or a non-merging tower).
 - Next ideas (not started): a lower tower where the (9,1) chain does not merge into 22, or PULSE_5 ≥ 3 under (9,1) (gives the fuel a

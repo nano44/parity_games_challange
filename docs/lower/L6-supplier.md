@@ -122,6 +122,30 @@ Nothing here is a result in the sense of CLAUDE.md; G-N5-TIME stays OPEN. Not a 
   the new top pair, a read path q_h → f_h that does not pass through a mover on q_(h−1)'s read path, or re-route q_(h−1)'s read path.
   CONJECTURE (READ-NEST, untested): this is the missing step; a test is a construction of SL41′ with 10's read path re-routed around 12.
 
+## 5c. After the milestone (Lead 15:53Z routing): READ-NEST by hand, the climb predicate, the GAD95 xcheck
+- xcheck (l3/xcheck.py against L-NEW box150 Gen and box187 movescheck, L-NEW tree claude/l-new a8555576; xcheck_GAD95_SL41.out; unit =
+  run; set = GAD95_P8_d29 (d 29), SL41_d28; scope = stored start): SIM-MISMATCH 0, every movescheck counter 0. With gad's fev core and
+  sim6.py, GAD95 is checked by three simulators.
+- READ-NEST, by hand (readnest.py → readnest_SL41.out; unit = genome; scope = stored start; DATA):
+  - Step 1, re-route 10's read path around 12: every single re-point of 55:0 or 10:0 to another mover or X (112 genomes, 109 acyclic)
+    loses a capped level except 10:0 → 12, which still reads 12. So 10's fuel needs 12's state itself (RETURN-CHAIN x₂_5 ← 12), not
+    any other single relay.
+  - Step 2, 12 reads 13 (12:1 → 13 or 12:0 → 13) on SL41 and on the one kept re-route, with either option of 13 re-ranked to 57
+    tiers × 2 parities: 912 genomes, all acyclic, all with 0 capped levels.
+  - Step 3, PARALLEL 13 (13:0 → 22, 13:1 → 11, so that 10 → 55 → 12 → 13 reaches the original target whenever pair 6 is joined) with
+    12:1 → 13 and both options of 13 re-ranked (20 tiers × 2 parities each): 1,600 genomes, all with 0 capped levels.
+  - Mechanism: the stored start has pair 6 joined at 1, so 12:1's new tail changes v(12) at s_0; the run diverges from SL41 at step 1
+    (movers 10, 12, 27, 28) and stops at T = 3. Parallel 13 moreover moves the fuel need to 13 (it must prefer c before each b-step,
+    i.e. D must still turn once per window, now by the window's end): under (9, 1) D is 22b on s_239 … s_243, so 13 cannot open W105.
+  - CONJECTURE READ-NEST: DEAD on SL41 in these families (single re-route of 10's path; 12 reads 13 with any re-rank; parallel 13). It
+    is not tested on a different lower tower.
+- Climb predicate for L-COMP (Lead routing (b); guard_l6.py, importable, pure): guard(D, mode) with mode «nomerge91» (no pre-state of a
+  6-window under parent (9, 1) at which the chain of A_1's current option passes A_0 or vice versa, pair 6 crossed onto (A_0, A_1)),
+  «pulse3» (PULSE_5 ≥ 3 in every 5-window of type (9, 1)) or «either». DATA (unit = genome; stored start): SL41_d28: merge pre-states
+  64 in all 6-windows, 45 under parent (9, 1); PULSE_5 min 2 under (9, 1): fails all modes. G7_best_d28: no merge, PULSE_5 min 1:
+  passes «nomerge91», so the predicate must be combined with the room condition (slack.py H = 7: 0 violations at levels 1-5) and
+  GUARD 0-5. Seed: rec/SL41_d28.txt (sha1 c1b46c31…).
+
 ## 6. The D18 analogy used, and its test: synchronous circuits (register vs combinational paths; carry-lookahead)
 - Dictionary (READING). A Ξ-preference is a REGISTER: a mover's move at t uses its preference under s_(t−1), one clock of delay. The
   key cascade is the only COMBINATIONAL path: within one step c_l = o(l − 1) is computed bottom-up from the new states (a ripple-carry
@@ -156,7 +180,8 @@ Nothing here is a result in the sense of CLAUDE.md; G-N5-TIME stays OPEN. Not a 
 - H5 → H6 repeat: NOT RUN (it was conditional on a working construction).
 
 ## 8. Files (experiments/lower/l6/)
-sim6.py, win.py, topadd.py, cross2.py, copyf.py, ins.py, dropscan.py, tight.py, readpath.py, gad.c, gad2.c; outputs tight_records.out,
+sim6.py, win.py, topadd.py, cross2.py, copyf.py, ins.py, dropscan.py, tight.py, readpath.py, readnest.py, guard_l6.py, gad.c, gad2.c;
+outputs readnest_SL41.out, xcheck_GAD95_SL41.out, tight_records.out,
 readpath_records.out, dropscan_SL41.out, win6_SL41_verbose.out, cross2_SL41.out,
 topadd_SL41_K2.out, topadd_SL41_K3.out, copyf_SL41_12_13.out, win6_GAD95.out, gad_runs.out; rec/GAD95_P8_d29.txt.
 
