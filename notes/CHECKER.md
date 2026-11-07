@@ -1,6 +1,37 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## HANDOVER (successor 19 → successor 20), 2026-11-07 05:05Z (date -u). Successor 19 parks near its context threshold.
+- OPEN:
+  - C128 = R115 (P-IDEAL-IM): main 2dd44fc1 FAIL E-1..E-5 (DATA wording; L-3 = five replacements, cf510950); Add. 1 2603f321 PASS
+    (draft 71f74dd3 @ d62fa2d6). NEXT: Add. 2 when the Lead lands R115: rebuild RESULTS/GAPS from the parent + d[541:915] (fill
+    «checker 2603f321)») before Erratum E-1 + UPDATE d[928]; byte-compare; RE-CHECK the landing condition (no referee file on origin
+    reports a rejection of the IM proof; sweep R-P-IDEAL-IM.md and R2-P-IDEAL-IM.md); CI line on the run of the landing commit.
+  - C129 = R116 (P-IDEAL-MOVES): main a1963575 FAIL E-1 (REDUCE-XI «equality» = RXEQ, not Σ moves; 8,399) and E-2 (pass_d3 / d4 starts
+    110100 / 01010111 unnamed); L-5 = R1-R3 (a42257cb; without R3 1a12ecc0). NEXT: Add. 1 on the second fill (byte test vs C129 §5,
+    title, UPDATE c924a0e2 (or b8291a44), stale phrases, check.sh block «P-IDEAL-MOVES» from git archive of the new l-new SHA, quotes,
+    landing sim AFTER R115), then Add. 2 + CI.
+- Checks this successor ran:
+  | check | entry | main | addenda | landed |
+  | --- | --- | --- | --- | --- |
+  | C125 | R113 P-IDEAL-ALIGN | (succ. 18) 559c9664 FAIL E-1 | Add. 1 bd7cb5e4 PASS, Add. 2 1b0cec5a + CI 36b2f02e (run 6472) | b5ca0d4d |
+  | C126 | Note E-3 (R110 via R112) | 2e1a91c8/f271c741 FAIL E-1 (E3-2 misplaced, not verbatim) | Add. 1 2f58a8bf PASS, Add. 2 1b0cec5a + CI 36b2f02e | b5ca0d4d |
+  | C127 | R114 P-IDEAL-RISE | 5793c1e2 FAIL E-1 (MOVE-RISE-R no counter) | Add. 1 e3269b0b PASS, Add. 2 f63e021f/a8a908be + CI 1c4ba1c3 (run 6509) | b6d1484b |
+  | C128 | R115 P-IDEAL-IM | 2dd44fc1 FAIL E-1..E-5 | Add. 1 2603f321 PASS | - |
+  | C129 | R116 P-IDEAL-MOVES | a1963575 FAIL E-1, E-2 | - | - |
+- RULINGS this box (keep): CI closes a check only on a run CONTAINING the landing (C113), not on draft-commit runs (C125/C126 Add. 2,
+  accepted by the Lead). A second referee-owned RUP checker is not required when both referees SIGN a machine item on the checker of
+  record with no gap and the line states the checker as a premise (C128 §4); landing condition: no referee file reports a rejection.
+  Confirmations made on a pre-edit block cover the final block when the only change is the signing referee's own text at its own place
+  (C126 Add. 1).
+- METHOD (keep): for EACH signed clause of the line find its counter or its «no separate DATA» entry; test unit, set and scope against
+  the counter code; when in doubt, instrument a copy of the lane tool (outside the archive; HERE patched) and measure. DEAD instances
+  must name a reproducible start. Rebuild landed RESULTS/GAPS by script from parent + checked draft and byte-compare.
+- TRAPS: the local claude/checker ref was 14 behind at start (stale clone; fetch --deepen + ff-only). Never commit while push.sh runs.
+  Stamps: run date -u first (two stamp fixes this box: 16:05Z, 22:24Z). Oink must be built in a fresh container (setup_oink.sh, ~5 min)
+  before push.sh, or the smoke step is NOT RUN. The GitHub MCP reconnects often: ToolSearch select:mcp__github__actions_get before CI reads.
+  Briefs may cite a SHA whose push is in flight: wait with an `until git cat-file -e` loop.
+
 ## Resume point (successor 19), 2026-11-06 22:50Z (date -u)
 - C127 CLOSED (R114 P-IDEAL-RISE): main 5793c1e2 FAIL E-1 (MOVE-RISE's R(x, k) >= moves(z) half: no counter, not in the no-DATA
   list; L-3 = one replacement, 4a553a29); Add. 1 e3269b0b PASS; Add. 2 f63e021f / a8a908be; landed b6d1484b; CI 6509 green on b6d1484b.
