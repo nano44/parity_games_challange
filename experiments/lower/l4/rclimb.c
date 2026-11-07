@@ -47,7 +47,7 @@ static void wr(const char*fn, long sc, int T){ FILE*f=fopen(fn,"w"); fprintf(f,"
   fprintf(f,"\n# score %ld T %d F",sc,T); for(int l=0;l<d;l++)fprintf(f," %d",F[l]); fprintf(f," moves"); for(int x=0;x<N;x++)fprintf(f," %d",MV[x]); fprintf(f,"\n"); fclose(f); }
 int main(int argc,char**argv){ rd(argv[1]); rs+=atol(argv[2])*7919; long iters=atol(argv[3]);
   if(getenv("LV")) LV=atoi(getenv("LV")); if(getenv("SCORE")&&!strcmp(getenv("SCORE"),"T")) SCT=1; if(getenv("CHAIN")) SCH=atoi(getenv("CHAIN"));
-  int nomut[MAXN]={0};
+  int nomut[MAXN]={0}; int FB = getenv("FROZENBELOW")? atoi(getenv("FROZENBELOW")) : 0; /* movers < FB: no field mutated */
   if(getenv("FIX")){ char*p=strdup(getenv("FIX")); for(char*t=strtok(p,",");t;t=strtok(NULL,",")) fixo[atoi(t)]=1; }
   if(getenv("NOMUT")){ char*p=strdup(getenv("NOMUT")); for(char*t=strtok(p,",");t;t=strtok(NULL,",")) {int x=atoi(t); nomut[x]=1; fixo[2*x]=fixo[2*x+1]=1;} }
   double temp=getenv("ANNEAL")?atof(getenv("ANNEAL")):0; const char*out=getenv("OUT")?getenv("OUT"):"/dev/null";
@@ -55,12 +55,12 @@ int main(int argc,char**argv){ rd(argv[1]); rs+=atol(argv[2])*7919; long iters=a
   int T; long cur=score(&T), best=cur; wr(out,best,T); printf("start score %ld T %d F(LV) %d\n",cur,T,LV>=0?F[LV]:-1); fflush(stdout);
   int sxt[MAXN*2],sbr[MAXN*2],sbp[MAXN*2],sg[MAXN*2],sst[MAXN];
   for(long it=0;it<iters;it++){ memcpy(sxt,xt,sizeof xt);memcpy(sbr,br,sizeof br);memcpy(sbp,bp,sizeof bp);memcpy(sg,gate,sizeof gate);memcpy(sst,st,sizeof st);
-    int nm=1+rnd()%3; for(int q=0;q<nm;q++){ int r=rnd()%6; int m=rnd()%(2*N);
+    int nm=1+rnd()%3; for(int q=0;q<nm;q++){ int r=rnd()%6; int m=2*FB+rnd()%(2*N-2*FB);
       if(r==0||r==5){ if(fixo[m]) continue; int y=(int)(rnd()%(N+1))-1; if(y==m/2) y=-1; xt[m]=y; }
-      else if(r==1){ int m2=rnd()%(2*N); int t=br[m];br[m]=br[m2];br[m2]=t; }
+      else if(r==1){ int m2=2*FB+rnd()%(2*N-2*FB); int t=br[m];br[m]=br[m2];br[m2]=t; }
       else if(r==2){ bp[m]^=1; }
       else if(r==3){ int x=m/2,l=x/2,k=m%2; if(l==0){ int m2=rnd()%4; int t=gate[m];gate[m]=gate[m2];gate[m2]=t; if(m>=4){} } else { int a=4*l+k, b=4*l+2+k; int t=gate[a];gate[a]=gate[b];gate[b]=t; } }
-      else { st[rnd()%N]^=1; } }
+      else { st[FB+rnd()%(N-FB)]^=1; } }
     /* level-0 gate swaps must stay within level 0: m<4 guaranteed only if x<2; enforce */
     if(!acyclic()){ memcpy(xt,sxt,sizeof xt);memcpy(br,sbr,sizeof br);memcpy(bp,sbp,sizeof bp);memcpy(gate,sg,sizeof gate);memcpy(st,sst,sizeof st); acyclic(); continue; }
     long sc=score(&T); double tt=temp*(1.0-(double)it/iters);

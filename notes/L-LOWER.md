@@ -25,6 +25,35 @@ explicit recursive design with proofs. Successor 3's sections below are kept unc
 Successor 3 (Opus 5.5, D1/D14/D18/D20) started 2026-11-07 00:05Z (date -u); STEP 0 handover check below; BOX L3 (explicit families
 for μ(d), IDEAL-ACYC model on 𝓛^R_d). The predecessor's T-L2 text (2026-10-15) is kept below unchanged as history.
 
+## Successor 4 HANDOVER (2026-11-07 ~06:45Z, context ~420k)
+### DONE (claude/l-lower; docs/lower/L4-tower.md is the box's product)
+- Lane lemmas (unrefereed, premises landed only): DRV-RELAX §1, DUAL §2, DOUBLE-EQ′ §3, FROZEN-WINDOW §4 (+ NO-CROSS/NO-PARALLEL),
+  LATE-PREF + FUEL-PER-WINDOW §4b. Checks: experiments/lower/l4/l4check.py (in experiments/lower/check.sh).
+- CANDIDATE records (experiments/lower/l4/rec/; sim.py = box150 Gen, movescheck 0, memcheck (i)-(vi)):
+  DBL4_d20_F30 (43704358…; F 0 2 6 14 30), H5_d20_F62 (2204079d…; F 2 6 14 30 62, T 136; REPRODUCED by L-SI 41),
+  H6_d24_F126 (fb37fec9…; F 2 6 14 30 62 126, T 209), RECF4_d20_F60 (354b7d44…), F56, F53, F52.
+- DUTY P-M2D-DEAD fix round 2: afc85c57 (entry 2, L-3 4c056511…, fixes f5b3f78a…); waiting for the referees' byte tests of L-3.
+- SHAs: 5dcfa1e1 (check), 7777fc4f, 127a5f8c, 2f15c81a, afc85c57, 33eb8593, c45cf2f3, 10cac3d9, then push 9 (diffg + text genomes).
+### IN FLIGHT (die with the container; logs in experiments/lower/l4/out/, gitignored)
+- Seventh level: `LV=6 ANNEAL=0.02 OUT=out/L7_s131.txt $SP/rclimb128 out/H6d28.txt 131 400000000` (H6d28 = lift.py H6 + 4 levels;
+  at handover F 2 6 14 30 62 94 128 …: level 5 lost). Frozen-core: `FROZENBELOW=10 LV=5 ANNEAL=0.02 $SP/rclimbF out/H5d24.txt 141 …`
+  (F(5) stuck at 94).
+### RECIPE (how H5 and H6 were found; restart in a fresh container)
+1. `gcc -O2 -o $SP/rclimb128 experiments/lower/l4/rclimb.c -lm` (__int128 values: exact for d ≤ 32).
+2. Seed: rec/H6_d24_F126.txt (or H5: `python3 -I experiments/lower/l4/j2t.py rec/H5_d20_F62.json > h5.txt`).
+3. TOP-ADD 4 levels: `python3 -I experiments/lower/l3/lift.py seed.txt 4 out.txt`.
+4. Climb the next level: `LV=<h> ANNEAL=0.02 OUT=o.txt $SP/rclimb128 out.txt SEED 400000000` (LV = the level whose F must double;
+   H5 → H6 took ~34M proposals; CHAIN=<h> scores exact doubling of levels 1..h; ANNEAL ≥ 0.3 destroys the tower).
+5. Verify: txt2json.py, l3/sim.py, `LNEW=<l-new tree> l3/xcheck.py`, fwcheck.py, lpaudit.py, l3/memcheck.py f.json 8; pin in l4check.py.
+### NEXT (Lead 06:09Z / 06:14Z)
+1. Third point: F(6) = 254 at d 28 (same recipe). 2. An explicit rule G_h → G_(h+1): H5→H6 raw diff is global (diffg.py); compare
+   block structure (top pair reads pair below + partner; level below fed by an equal-rate block 2-3 levels up; L-SI 41 box79 wiring79).
+3. Least d for five capped levels (truncated seeds d 16 / 12 got F(4) 41 / 30 so far).
+### Things only I know
+- rclimb ANNEAL is per score unit/256 (LV) or /200 (CHAIN, ANYRUN); ANYRUN score is degenerate (rewards trivial doublings): do not use.
+- fwcheck.py random generators rarely hit FROZEN-WINDOW's hypothesis; dd_tg counts it.
+- The Lead once routed «6c5a6ff» (my typo, corrected): the H5 commit is c45cf2f3.
+
 ## Successor 4 BOX L4 state (2026-11-07 ~04:3xZ)
 ### Resume point
 - Write-up: docs/lower/L4-tower.md (§1 DRV-RELAX, §2 DUAL, §3 DOUBLE-EQ′, §4 FROZEN-WINDOW + NO-CROSS/NO-PARALLEL/four targets, §5 DATA,
