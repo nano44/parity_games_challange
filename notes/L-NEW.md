@@ -1,6 +1,23 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 61, Opus; session_01V5yGRXNcWRbrudUiyywbnE; started 2026-11-07 18:57Z by date -u; GO 19:23Z)
+- Step 0: handover check d55dc439 (VERIFY PASS; Lead score 5). Stale container (975 behind) fast-forwarded to 589c9fba.
+- BOX 193 ASC (docs/new/N5-ASC-box193.md; experiments/new/box193/; check.sh block «BOX 193 ASC», check193.out). Milestone 1:
+  - PROVED (lane): E-MON (= box 192 A10, re-proved), CHAIN-DECOMP (e-set = first e + tail of its W-target; one next-e forest per
+    state), DESC-POLY (descending plays: <= 1 + M(M+1)/2 e-sets per Lambda-interval; tight in CS for M <= 7), DESC-ALL, UP-JUMP
+    (an ascent needs a strictly upward Xi-edge), Corollary NOUP (no strictly upward Xi-edge => polynomial e-set height, Xi-cycles inside
+    levels allowed: 179/300 random NOUP genomes Xi-cyclic).
+  - PROVED-CONDITIONAL on [LOC]: ASC-GATE (declined escape on an ascent segment: better cycle (i), reaches b (ii), or e above b (iii)).
+    L-RED's E-DOM-CHOICE checked line by line before use (correct).
+  - DATA: CS(M, A) exact maxima (chain193.py M <= 5; dp193.c M 6, 7 in data/cs_dp.txt): A 0 = 1 + M(M+1)/2; A 1 = 2 4 8 16 29 50 82
+    (cubic on M 3-7, predicts 128 at M 8, not run); A 2: 119 < 128 at M 7. ASC-EXP (lowest-first counter) all 2^M, M <= 12.
+  - CONJECTURE ASC-POLY(A). Open: prove A = 1 cubic; game-side charge of ASC-GATE case (i).
+- Tools: asc193.py (asc / gates / CHAIN-DECOMP / TAIL-MON / E-DOM), chain193.py (+ --emit), dp193.c (gcc -O2), ascexp193.py,
+  noup193.py; inst/ = 8 L-RED R217 instances (claude/l-red 476710810; sha1 = L-RED's SHA1SUMS).
+- Things only I know: the relocation test needs experiments/si, experiments/harness and box189-193 copied (ModuleNotFoundError si
+  otherwise; that is an incomplete copy, not an absolute path). dp193 M = 7 A = 1 takes 70 s, A = 2 about 5 min; M = 8 about 3 h.
+
 ## HANDOVER (successor 60, PARKING 2026-11-07 ~18:0xZ by date -u; Lead 17:58Z: full handover + park)
 ### DONE (all via scripts/push.sh, VERIFY PASS each; SHAs from git output)
 - Step 0: handover check ae8e185d (Lead score 4.5: R116 had landed, my answer listed it open).
