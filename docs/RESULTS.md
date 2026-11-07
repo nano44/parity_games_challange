@@ -13604,6 +13604,278 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   (L-4) makes no TARGET claim; its tail reads «a REDUCTION / NECESSITY statement only (no count is bounded;» and «G-N5-TIME stays OPEN;
   not M3, not a step-4 pass, not a TARGET.md claim» (L-4, by script). GAPS G-N5-TIME: open.
 
+### R118 [refereed-only] Howard (switch-best) strategy improvement with Vöge-Jurdziński valuations (premises: RESULTS R15 (a) Lemma A and (d); VJ00 §4.2 / Friedmann arXiv 1106.0778 §3 for the order ⊴ on values (Λ, Π, k); R104's definitions of the genome and of Γ(G) only), with each step t → t+1 labelled C if some vertex's cycle node Λ changes, else R if Odd's optimal counterstrategy σ̄ (any fixed deterministic choice) changes somewhere, else p: (Theorem BR-SEG) in IDEAL-CYC(G) := Γ(G) of ANY genome G (Ξ-cycles allowed) with every non-mover Even vertex frozen at R104's start and Howard steps at the N movers, every maximal run of p-steps has at most N steps (proof: DOM Ω_(t+1)(x) ⊵ ext(x, Ω_t(y)), STRICT, and PATH, a Bellman-Ford induction over simple paths to a fixed cycle node in the graph of fixed σ̄-edges); (Lemma CYC-COUNT) C ≤ n(2M + 2) with n = N + 3M + 6; hence (Theorem T-CYC) T_CYC ≤ C + R + (C + R + 1)·N; (Corollary ONEP-POLY) with every gate restricted to its β-face, R = 0 and T is polynomial in N + M; (Lemma LEVEL0) σ̄ takes the β-face at every level-0 gate in every state; (Theorem BR-SEG-G) for Howard on ANY parity game under hypothesis H0 (each step switches an Even vertex that is not its own cycle node before and after), every p-run has at most n_E steps, C ≤ n(n − 1) and T ≤ C + R + (C + R + 1)·n_E; (Theorem RED-XI, a reduction only) an N5′-xi run (box 190's S4a tie rule by Ξσ) whose σ-changing iterations are Howard steps (X1) satisfying H0 (X0) has at most (n_E + 1)(n(n − 1) + R_σ + 1) + Q_τ iterations (R_σ: σ-changing iterations at which σ̄ changes; Q_τ: iterations keeping σ); (Theorem REACH3-CYC, CONDITIONAL on P-N5-REACH's S3-START, PAD, K3, TAU3, ESC3, W3 for every genome (RESULTS R117's entry signs S3-START, PAD, K3 and TAU3 for every genome and ESC3, W3 for acyclic Ξ-graphs; its line states S3-START and PAD for acyclic Ξ-graphs only; P-N5-XICYC §7 reads ESC3's and W3's proofs for every genome), with σ̄(K2) = r proved for every genome in P-N5-XICYC's fixes (K3 (b) otherwise cites SBAR3, which is IDEAL-ACYC), and on the landed premise [1E-N3] (RESULTS R57 (b), as landed in R104: S1's σ̄ and S4a's arena optimum are pointwise optima)) for every genome, N5′-xi from S3 on Γ3(G) visits only standard states and makes Howard steps at the movers until its first fallback, at iteration T3 + 1 with T3 ≤ C + R + (C + R + 1)·N and C ≤ (N + 7M + 10)(2M + 2) (2026-11-07) — no bound on R is claimed (OPEN), so nothing about N5′-xi's or N5's running time follows; BR-SEG-G's proof (STRICT-G, PATH-G) and Lemma K2-r are referee-originated (REFEREE R-P-N5-XICYC §2.2 and §3.2, restated in P-N5-XICYC's fixes entry 2), signed by both referees; DEAD SEG-2P («every run of consecutive Λ-keeping steps has at most N steps» fails: longest such run 9 steps at N 8, 15 at N 14, 21 at N 18, on the pinned genomes experiments/new/box191/inst/DEAD_SEG2P_d4_N8.json, DEAD_SEG2P_d7_N14.json, DEAD_SEG2P_d9_N18.json, read off subrun191.py's step labels) and DEAD ODD-FIXED («σ̄ is constant on every run of Λ-keeping steps» fails: those three runs contain 1, 8 and 6 R-steps respectively, each a Λ-keeping step at which σ̄ changes); DATA, clause by clause (unit, set, command; every random genome set is rand191.rgen with d 1-6 (1-5 where stated), width 1-3, degree 2-3): BR-SEG: p-runs longer than N in 0 of 1,000 genomes (subrun191.py 1000 21, two-player IDEAL-CYC); CYC-COUNT: C > N·M (a stronger bound than the clause) in 0 of 300 genomes for each of the one- and two-player models (seg1p191.py 300 11); T-CYC: no separate DATA (it follows from BR-SEG and CYC-COUNT); DOM, STRICT and PATH (BR-SEG's proof): no separate DATA; ONEP-POLY: in the one-player model, a Λ-keeping run longer than N, or C > N·M, in 0 of 300 genomes (seg1p191.py 300 11; R is not counted, R = 0 has no separate DATA); LEVEL0: σ̄ on the e-face in 0 of 17,013 (state, level-0 gate) pairs, from 3,422 states of 1,000 genomes (level0_191.py 1000 41); BR-SEG-G: a p-run longer than n_E in 0 of 2,000 random games (n 12, owners and priorities uniform, out-degree 1-3; brseg_gen191.py random 2000 3 12; H0 is not checked by the tool, and these runs include steps at which H0 fails (388 of their 2,072 steps, counted by REFEREE R-P-N5-XICYC with one counter added to brseg_gen191.py, docs/referee/scratch/xicyc_logs/brseg_gen191_H0fail_2000_3_12.out)); and, on Friedmann's switchallexp for N = 2, …, 7 (pgsolver_port.py switchallexp N, Howard from si.py's best-reward start): C = 0; R = 4, 10, 24, 54, 116, 241; T = 30, 70, 150, 310, 630, 1243; longest p-run 9, 11, 13, 15, 17, 19 against n_E = 23, 32, 41, 50, 59, 68 (N 2-5: inst/sae_2..5.pg and check191.out; N 6, 7: inst/sae_6.pg and inst/sae_7.pg, the outputs of pgsolver_port.py switchallexp 6 and 7, sha1 5dc850b1… and ff46e32f…, pinned in xicyc.pins, with brseg_gen191.py's output experiments/new/box191/data/sae_6_7.out); RED-XI: no separate DATA (a reduction); REACH3-CYC's bounds on T3 and C: no separate DATA (they are T-CYC and CYC-COUNT read on Γ3); REACH3-CYC: 0 genomes with a non-standard state among states 0, …, T3, 0 non-Howard mover steps, and 0 genomes whose first state with no strictly better mover successor is followed by a transition that changes a mover, in 2,167 mover-phase transitions of 1,000 genomes (the tool does not read the fallback flag; the fallback at transition T3 + 1 is checked by REFEREE R-P-N5-XICYC on 22 of 22 pinned and 300 of 300 random genomes, docs/referee/scratch/xicyc_logs/reach3_*.out) (d 1-5; howard3_191.py 500 31 and 500 32); context for REACH3-CYC, not a clause: Γ3 mover sequences equal the IDEAL-CYC run state for state, with xi = T + 3, on 22 of 22 pinned genomes (8 L-RED R215 Ξ-cyclic genomes in inst/cyc*.json and the 14 P-N5-REACH corpus genomes; eq191.py), and on 1,271 of 1,300 random genomes (d 1-5; rand191.py eq 300 1 and eq 1000 2); each of the other 29 diverges first at an exact VJ tie; DOM's MDP / discounted analogue is folklore (Hansen-Miltersen-Zwick arXiv 1008.0530 Lemma 5.3 / 5.4); BR-SEG, CYC-COUNT and ONEP-POLY were not found in the sources opened; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim (P-N5-XICYC, docs/new/P-N5-XICYC.md with its fixes entries 1-2, docs/new/P-N5-XICYC-fixes.md; L-NEW successor 59), CHECKER PASS (docs/checker/C132.md, checker af92b846)
+- Object (L-NEW successor 59, Opus 5.5, D1 / D14 / D18, box 191; frozen, unchanged during review): packet P-N5-XICYC,
+  docs/new/P-N5-XICYC.md, sha1 149e2414be657ba12472faa4f46d5a251f2d3e98, 259 lines (l-new freeze fd1266a5, 2026-11-07T06:39:17Z;
+  identical at 86afce49, 50c80a92 and e36fdfcd). Both referees measured it (REFEREE l. 28 «docs/new/P-N5-XICYC.md 149e2414… (same at fd1266a5 and
+  86afce49)»; REFEREE-2 l. 5 «docs/new/P-N5-XICYC.md 149e2414… (20,825 B; unchanged since the freeze fd1266a5)»). Labels (l. 6):
+  PROVED, PROVED-CONDITIONAL (on a named premise), DEAD (instance, machine-checked), DATA, READING (not to sign). To sign (table l. 11-20): §2 definitions (IDEAL-CYC(G), Howard step, labels C / R / p), §3 Facts F1-F6, §4
+  Lemmas DOM, STRICT, PATH, Theorem BR-SEG, Lemma CYC-COUNT, Theorem T-CYC, Corollary ONEP-POLY, Lemma LEVEL0, §5 Theorem BR-SEG-G, §6
+  Lemma DECOMP-G and Theorem RED-XI («PROVED (reduction only)»), §7 Theorem REACH3-CYC and Corollary T3 («PROVED-CONDITIONAL on
+  [REACH-L]»), §8 DEAD SEG-2P and DEAD ODD-FIXED; §9-§12 not to sign. Source (l. 5): docs/new/N5-XICYC-box191.md (f09f67ec + addendum
+  d6472691), history only; «This packet carries every proof in full.» (l. 5). The packet's own scope (l. 7-8): «This packet is NOT a
+  TARGET.md claim. It does NOT decide G-N5-TIME. It is NOT M3 and not a step-4 pass.» and «The packet bounds iterations only in terms of
+  R. It does not bound R.».
+  Fixes: docs/new/P-N5-XICYC-fixes.md, append-only, three entries, entries 1-2 by L-NEW successor 59 and entry 3 by L-NEW successor 60
+  (e36fdfcd: 132 lines, 17,623 bytes, sha1 90d0f09d234a034765965c39397e7110c03be7b5). Entry 1 (86afce49, proactive, before any referee item): the DATA rule clause by clause, the
+  counter level0_191.py, line L-2. Entry 2 (50c80a92): packet repairs XC-1 = W-1 (F4 → F4′), XC-2 = G-1 (STRICT-G, PATH-G for §5), XC-3
+  (Lemma K2-r; §7's «Not used» corrected), XC-4 ([1E-N3] added to §1 for §7), N-1, O-1, O-2, REFEREE-2's N-2 (data outputs committed and
+  pinned), line L-3. «The packet (149e2414) and entry 1 are unchanged. Where this entry and the packet differ, this entry governs.» (l.
+  28). Entry 3 (e36fdfcd): CHECKER C132's E-1..E-7 with its §5 replacements R1-R7, line L-4; «The packet (149e2414) and fixes entries 1-2 are
+  unchanged; no packet repair is asked for.» (l. 114-115). Entry 2 carries proofs (F4′, STRICT-G, PATH-G, Lemma K2-r); entries 1 and 3
+  carry none.
+  The RESULTS line is L-4, 85fe809cce294bc46709ea0e3be82a61718fbf7c (docs/new/P-N5-XICYC-line-L4.txt, l-new e36fdfcd,
+  2026-11-07T12:10:57Z, the file's only commit; 6,342 bytes). The title is L-4 verbatim, with nothing inserted (its date parenthesis
+  «(2026-11-07)» and its source note are the line's own; the source note names the packet with its fixes entries 1-2, which carry the
+  proofs F4′, STRICT-G, PATH-G and Lemma K2-r; entry 3 carries none). L-4's parentheses balance (73 «(» / 73 «)»). Line history: L-1 (d6f77b12,
+  fd1266a5, frozen with the packet); L-2 (857d21c8, 86afce49, fixes entry 1: L-1 with exactly one replacement, R-1, the lane's own DATA
+  rewrite: every clause with a counter of matching unit, set and scope, or «no separate DATA»); L-3 (1690b6ad, 50c80a92, fixes entry 2: L-2
+  with exactly R1-R6: R1-R3 REFEREE-2's W-2 (DEAD ODD-FIXED names its killed statement), W-3 (ONEP-POLY: «R is not counted, R = 0 has no
+  separate DATA»), W-4 (BR-SEG-G's H0 caveat, which also resolves REFEREE's XC-L1 by Lead ruling); R4 REFEREE's XC-L2 in its «Equivalent»
+  form (sae_6/7 pinned, the lane's own output); R5 REFEREE's XC-L3 (REACH3-CYC's DATA units, the fallback flag on REFEREE's logs); R6
+  REFEREE's XC-L4 (REACH3-CYC's premises: σ̄(K2) = r, [1E-N3])); L-4 (85fe809c, e36fdfcd, fixes entry 3: L-3 with exactly CHECKER C132
+  §5's R1-R7; R2-R7 are the first fill's R-B, R-C, R-D, R-E, R-F, R-G, and R1 is C132's own wording for E-1, not the first fill's R-A1
+  (C132 l. 16-17: «E-1's wording is mine, not the drafter's R-A1 (reason below).»); see Fixes). Each step is the previous line with
+  exactly the named replacements (my script, True ×3; both referees by their own scripts). L-2: REFEREE «byte test MATCHES fixes entry 1; verdict NOT YET: XC-L1, XC-L2,
+  XC-L3 (DATA rule), XC-L4 (premises), exact texts in §5» (695b610c l. 23); REFEREE-2 «**MATCHES after W-2, W-3, W-4** (all wording; L-1
+  → L-2 byte test passes)» (a0befd6c l. 24). L-3 MATCHES at both referees, each after its own byte test: REFEREE successor 26 (42648076)
+  §C l. 258-262 («R1-R6 are parsed from fixes entry 2. Each old string occurs once in L-2 and each new string once in L-3.»; «L-2 with
+  R1-R6 applied is byte-equal to L-3 (sha1 1690b6ad…, 5,543 bytes).»), l. 263-277 (meaning: XC-L2 «MET», XC-L3 and XC-L4 «MET
+  (verbatim)», XC-L1 «resolved by REFEREE-2's W-4 (R3) under the Lead's ruling», «XC-L1's intent is MET.»), l. 295 «fixes entry 2
+  CORRECT; L-3 MATCHES, by the byte test and in meaning;»; REFEREE-2 successor 30 (d3b6e3b9, heading stamp corrected at 7891ba32)
+  Addendum 1 l. 184-186 (own bt_l3: «R1-R3 are my W-2, W-3, W-4 verbatim (old and new)»; «L-2 + R1..R3 =
+  dbdb1e61fc230de6ff8591fc9ee46f0aa453d3d9, 4,680 B = my prediction»; L-2 + R1..R6 == L-3 byte for byte), l. 199-203 (R4-R6 against the
+  pins, howard3_191.py's units and REFEREE's logs), l. 204 «Verdict: entry 2 **CORRECT**; W-1 and G-1 **CLOSED**; **L-3 MATCHES** the
+  packet with fixes entries 1-2 (Opus 5.5, D1).».
+  L-4 MATCHES at both referees, each after its own byte test and a reading of R1 against R117's landed entry: REFEREE successor 26
+  (43f27f3b, 2026-11-07T12:39:22Z; heading stamp corrected at c352039c) §C add. 1 l. 307-308 (own script: «R1-R7 are parsed from C132
+  §5 (wrapped lines joined by one space).»; «L-3 with R1-R7 applied is byte-equal to L-4 (sha1 85fe809c…, 6,342 bytes).»), l. 309-317
+  (meaning: «R1 in meaning, against R117's landed entry and this report: CORRECT.»; «the every-genome forms of ESC3 and W3 are not a
+  landed result.»), l. 318-329 (R6, R7 and R2-R5 checked: «R6: CORRECT.», «R7: CORRECT.», «R2-R5: CORRECT.»), l. 330 «Verdict: L-4
+  MATCHES, by the byte test and in meaning. All statements stay as signed in §C.»; REFEREE-2 successor 30 (5016a1a2,
+  2026-11-07T12:39:23Z) Addendum 2 l. 211-213 (own bt_l4.py: «L-3 + R1..R7 == L-4 byte for byte, sha1
+  85fe809cce294bc46709ea0e3be82a61718fbf7c, 6,342 B»), l. 214-226 («R1 in meaning, against R117's landed entry»: R1 checked against
+  R117's Claims signed (c)-(e) and its line; R2-R7 checked), l. 227-228 «Verdict: entry 3 **CORRECT**; **L-4 MATCHES** the packet with
+  fixes entries 1-3, in bytes and in meaning (Opus 5.5, D1).» … «Statement verdicts unchanged (all SIGN; §7 and Corollary T3
+  conditional on [REACH-L], now R117 as landed, with its every-genome extension in §7).».
+- Claims signed (REFEREE successor 26 (Opus 5.5, D15), report 695b610c, §C 42648076 and §C add. 1 43f27f3b / c352039c; REFEREE-2
+  successor 30 (Opus 5.5, D1), report a0befd6c, Addendum 1 d3b6e3b9 / 7891ba32 and Addendum 2 5016a1a2). In the first round REFEREE's table (l. 7-23 of R-P-N5-XICYC.md) reads F4 «FALSE as stated
+  (XC-1, instance §2.1); TRUE in the restricted form F4′. Every §4 use is inside F4′», BR-SEG, T-CYC, ONEP-POLY «SIGN WITH GAP XC-1»,
+  BR-SEG-G «SIGN WITH GAPS XC-1, XC-2», RED-XI «SIGN WITH GAP XC-2 (inherited from BR-SEG-G)», REACH3-CYC «SIGN as PROVED-CONDITIONAL on
+  [REACH-L], WITH GAPS XC-3 (hidden SBAR3 use through K3 (b)/(d); every-genome proof supplied in §3.2) and XC-4 (premise [1E-N3] not
+  named)», CYC-COUNT, LEVEL0, DECOMP-G, the DEAD items «SIGN»; REFEREE-2's table (l. 11-24 of R2-P-N5-XICYC.md) reads F4 «**SIGN after
+  W-1** (false as stated; true in the form W-1 gives, which is all §4 uses)», §5 BR-SEG-G and §6 RED-XI «**SIGN WITH GAPS**» (G-1),
+  REACH3-CYC and Corollary T3 «**SIGN as PROVED-CONDITIONAL on [REACH-L]**», every other row «**SIGN**». Fixes entry 2 closes every gap:
+  REFEREE §C l. 296 «XC-1 to XC-4 and XC-L1 to XC-L4 all closed;» and l. 297-298 «every statement of §0 is now SIGN: BR-SEG, T-CYC,
+  ONEP-POLY and BR-SEG-G with their repaired proofs, RED-XI, REACH3-CYC and Corollary T3 still PROVED-CONDITIONAL on [REACH-L]»;
+  REFEREE-2 Add. 1 l. 196 «BR-SEG-G and RED-XI: **SIGN** (Opus 5.5, D1); the «WITH GAPS» of my report is withdrawn.» and l. 204-205
+  «Every statement of the packet: SIGN (§7 and Corollary T3 conditional on [REACH-L], as before).». No gap remains; nothing is REFUSED
+  (REFEREE-2 l. 25 «Nothing is REFUSED.»). The L-4 round changes no verdict: REFEREE §C add. 1 l. 330 «All statements stay as signed in §C.»;
+  REFEREE-2 Addendum 2 l. 227-228 «Statement verdicts unchanged (all SIGN; §7 and Corollary T3 conditional on [REACH-L], now R117 as landed, with its every-genome extension in §7).». Setting: Γ(G) of R104 for every genome G (Ξ-cycles allowed; packet l. 38); values (Λ, Π, k)
+  and the order ⊴ of VJ00 §4.2 as used in R15 (packet [VJ], l. 28-35); σ̄ is Odd's optimal counterstrategy, chosen by a fixed
+  deterministic rule. Statements as signed (packet with fixes entries 1-2):
+  (a) Definitions (§2 l. 52-66) [every genome]: IDEAL-CYC(G) («The game is Γ(G) with every Even vertex that is not a mover frozen at its
+    start successor. Odd is unrestricted (gates and K2).»); a Howard step («every mover x goes to a successor of ⊴-largest Ω_t value, and
+    keeps σ_t(x) if σ_t(x) is such a successor»; T_CYC := the number of steps to the first state where no mover has a strictly better
+    successor); the labels («C if Λ_t(v) ≠ Λ_(t+1)(v) for some vertex v;», «else R if σ̄_t(v) ≠ σ̄_(t+1)(v) for some Odd vertex v;», «else
+    p.»); n := N + 3M + 6, n_E the number of Even vertices.
+  (b) Facts F1-F6 (§3 l. 68-83) with F4 REPLACED by F4′ (fixes l. 33-41): «if v ∉ Π(A) ∪ Π(B), then A ⊴ B ⇒ ext(v, A) ⊴ ext(v, B), and A ◁
+    B ⇒ ext(v, A) ◁ ext(v, B).» F4 as printed is false (REFEREE's instance, fixes l. 31-32: «A = (w, ∅, 3) ▷ B = (w, {v, y}, 3), but ext(v,
+    A) ◁ ext(v, B).»); every §4 use and Corollary T3's use satisfy F4′ (movers have priority 0, below every cycle node; PATH's non-mover
+    z_0 is in neither Π), fixes l. 37-42 and both referees.
+  (c) Lemmas DOM, STRICT, PATH (§4 l. 86-101) [IDEAL-CYC, every genome]: DOM «For every mover x, step t and successor y of x: Ω_(t+1)(x) ⊵
+    ext(x, Ω_t(y)).»; STRICT «If σ_(t+1)(x) ≠ σ_t(x), then Ω_(t+1)(x) ▷ Ω_t(x).»; PATH: Ω_t(z_0) ⊵ val(π) along a simple path π of the
+    fixed-σ̄ graph to a fixed cycle node, once t − a ≥ μ(π) (Bellman-Ford induction).
+  (d) Theorem BR-SEG (§4 l. 102-111) [every genome]: «If Λ and σ̄ are constant on the states a, a+1, …, a+j+1 and the step a+j → a+j+1
+    changes σ, then j ≤ N − 1. Hence every maximal run of consecutive p-steps has at most N steps.»
+  (e) Lemma CYC-COUNT (§4 l. 112-117): «C ≤ n·(2M + 2).» (each vertex's Λ moves only to a vertex of strictly larger reward among at most
+    2M + 3 possible cycle nodes).
+  (f) Theorem T-CYC (§4 l. 118-119): «T_CYC ≤ C + R + (C + R + 1)·N ≤ (C + R + 1)(N + 1).»
+  (g) Corollary ONEP-POLY (§4 l. 120-123, with O-1, fixes l. 78-79): with every gate restricted to its β-face, R = 0 (K2's optimal choice
+    is unique: node K1 beats node K2 for Odd by reward) and «T ≤ n(2M + 2) + (n(2M + 2) + 1)·N.»
+  (h) Lemma LEVEL0 (§4 l. 124-131, with N-1, fixes l. 76-77): «In every state σ̄_t takes the β-face at every gate of a level-0 mover.»
+  (i) Theorem BR-SEG-G (§5 l. 133-149; proof replaced by fixes l. 43-60) [any parity game, Howard from any σ_0, under H0]: «H0: every
+    step t → t+1 switches some Even x with Λ_t(x) ≠ x and Λ_(t+1)(x) ≠ x.»; «(a) every maximal run of p-steps has at most n_E steps;»,
+    «(b) C ≤ n(n − 1);», «(c) T ≤ C + R + (C + R + 1)·n_E.» The packet's proof («§4's proofs, with «mover» read as «Even vertex»») uses DOM,
+    which is false on general games (REFEREE §2.1 instance; REFEREE-2 G-1, r2dompex.out); the proof of record is STRICT-G and PATH-G (fixes
+    l. 48-58), which use only F1, F3, F5 and F4′; «No DOM is used in §5 or §6.» (l. 60).
+  (j) Lemma DECOMP-G and Theorem RED-XI (§6 l. 151-162) [a reduction only]: an N5′-xi run whose σ-changing iterations are Howard steps
+    (X1) satisfying H0 (X0) has «#iterations ≤ (n_E + 1)·(n(n − 1) + R_σ + 1) + Q_τ»; «RED-XI inherits the repaired (c).» (fixes l. 60).
+  (k) Theorem REACH3-CYC (§7 l. 166-192, corrected by fixes l. 61-75) [every genome; PROVED-CONDITIONAL on [REACH-L]]: «The N5′-xi run of
+    Γ3(G) from S3 has the following form:» states 0, …, T3 standard; the mover parts a Howard run on Γ3(G); «T3 is the first state at
+    which no mover has a strictly better successor in Γ3;»; «transition T3 + 1 is an S4c fallback.» Premises: [REACH-L] = P-N5-REACH's
+    §3 (Γ3(G), the standard state), S3-START, PAD, K3, TAU3, ESC3, W3 (packet l. 48-50), which RESULTS R117 (P-N5-REACH) signs in its
+    entry (S3-START, PAD, K3, TAU3 for every genome; ESC3, W3 for IDEAL-ACYC) and states in its line only for acyclic Ξ-graphs
+    (S3-START, PAD); the every-genome reading of ESC3 and W3 is §7's own (l. 176-186: «Neither play takes a β-face, so the Ξ-graph is
+    never used and the proof holds verbatim for every genome.»), checked by both referees (REFEREE §3.1; REFEREE-2 l. 100-105); Lemma
+    K2-r (fixes l. 64-70, every genome: σ̄(K2) = r in every standard state, so «K3 (a)-(d), and with them ESC3 and the TIE sets {xt(g)} at
+    β_g and {pA} at K0, therefore hold for every genome.», l. 71); [1E-N3] (RESULTS R57 (b) as landed in R104, fixes l. 73-75). §7's «Not
+    used: KEY3, PLAY3, SBAR3, Fact X» is corrected to «Not used: KEY3, PLAY3, Fact X; SBAR3's conclusion σ̄(K2) = r is used through K3
+    (b) and is proved for every genome below» (fixes l. 61-63).
+  (l) Corollary T3 (§7 l. 194-201) [as REACH3-CYC; an EQUIVALENCE only]: §4 applies on Γ3 (movers priority 0, pads never cycle nodes by
+    PAD (b), non-mover Even vertices frozen in standard states, Odd = gates and K2), so «T3 ≤ C + R + (C + R + 1)·N, with C ≤ n3·(2M + 2)
+    and n3 = N + 7M + 10;», LEVEL0 holds on Γ3, «the first fallback of N5′-xi on Γ3(G) comes at iteration T3 + 1.» Hence
+    «N5′-xi's FL run on Γ3(G) is polynomial in N + M for every genome» ⇔ «R is polynomial along these Howard runs» (l. 200).
+  (m) DEAD SEG-2P and DEAD ODD-FIXED (§8 l. 203-213) [DEAD, by three pinned genomes]: SEG-2P «in IDEAL-CYC, every run of consecutive steps
+    keeping all Λ has at most N steps» fails on experiments/new/box191/inst/DEAD_SEG2P_d4_N8.json, DEAD_SEG2P_d7_N14.json,
+    DEAD_SEG2P_d9_N18.json (longest Λ-keeping runs 9, 15, 21 steps at N 8, 14, 18; labels ppppppppRC, CCCCpRRRRppRRRpRppp,
+    pppRppRppRppRRRpppppp); ODD-FIXED «σ̄ is constant on every run of Λ-keeping steps» fails on the same runs (1, 8 and 6 R-steps).
+    «Obstruction: R-steps inside the run, as BR-SEG requires.» (l. 212). REFEREE: both «rule-free» (l. 21-22; Howard ties 0, Λ part of
+    the unique value, every R-step forced); REFEREE-2: «all three instances replayed with my own run» (l. 23).
+- The RESULTS line (L-4, the title): «Howard (switch-best) strategy improvement with Vöge-Jurdziński valuations (premises: RESULTS R15 (a)
+  Lemma A and (d); VJ00 §4.2 / Friedmann arXiv 1106.0778 §3 for the order ⊴ on values (Λ, Π, k); R104's definitions of the genome and of
+  Γ(G) only)» … «(2026-11-07) — no bound on R is claimed (OPEN), so nothing about N5′-xi's or N5's running time follows;» … «G-N5-TIME
+  stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim (P-N5-XICYC, docs/new/P-N5-XICYC.md with its fixes entries 1-2,
+  docs/new/P-N5-XICYC-fixes.md; L-NEW successor 59)». Its clauses:
+  labels = (a); BR-SEG = (d) with (c) as its proof parenthesis; CYC-COUNT = (e); T-CYC = (f) without its second form; ONEP-POLY = (g)
+  without its explicit bound; LEVEL0 = (h); BR-SEG-G = (i); RED-XI = (j); REACH3-CYC = (k) with (l)'s two bounds and its fallback clause, its [REACH-L] premises named lemma by lemma against RESULTS R117 (R1);
+  DEAD = (m). L-4's DATA adds, to L-3's, the no-DATA entries «DOM, STRICT and PATH (BR-SEG's proof): no separate DATA;» (R3) and
+  «REACH3-CYC's bounds on T3 and C: no separate DATA (they are T-CYC and CYC-COUNT read on Γ3);» (R4), the set wording «every random
+  genome set is rand191.rgen» (R5) and the count of H0-failing steps on REFEREE's committed log (R6); the scope tail adds L41's
+  sentence (R7). The Facts (b) and DECOMP-G are proof steps, not clauses of the line.
+- Premise: RESULTS R15 (a) Lemma A (l. 631, «Lemma A: for any non-empty unambiguous set I of improvements of σ (VJ00 §4.4), Ωσ ⊴
+  Ω_{Switch_I(σ)}.»), for F1 (Ω_t ⊴ Ω_(t+1) under a Howard step, an unambiguous non-empty switch set); RESULTS R15 (d) (l. 640-641, «every
+  iteration applies Switch_I with ∅ ≠ I ⊆ Iσ to Even's σ (on G) and/or with ∅ ≠ I ⊆ Iτ to Odd's» … «Iσ depends on σ alone (Ωσ is against
+  ⊖'s optimal reply, not against τ).»), for DECOMP-G; the order ⊴ of VJ00 §4.2 as R15 uses it (R15 l. 628 «⊴ on play values (§4.2)»), in
+  Friedmann arXiv 1106.0778 §3's form (si.py); RESULTS R104's definitions of the genome and of Γ(G), no R104 theorem (packet l. 36-44);
+  for REACH3-CYC only: [1E-N3] (RESULTS R57 (b) as landed in R104: «the standing SPEC premise of RESULTS R57 (1E-N3 …), used in two forms:
+  S1's σ̄, and τ̄ on the dual game, are pointwise optima; and S4a's σ_new … is a pointwise optimum of that arena», R104 l. 9864, quoted in
+  fixes l. 73-75) and the [REACH-L] items of P-N5-REACH (RESULTS R117, landed at ac1bc37c), see (k). N5′-xi (packet [N5XI], l. 45-47) is SPEC S1-S5
+  (docs/new/N5-ssi-global.md) «with ONE change in S4a» (box 190's tie rule). Both referees checked the premises (REFEREE l. 25-36 objects
+  and counters; REFEREE-2 «## Premises» l. 28-39, HMZ opened).
+- L41 and L43. The proofs are L-NEW successor 59's (packet l. 2-5), except three repairs that fixes entry 2 takes from REFEREE's report:
+  STRICT-G and PATH-G (BR-SEG-G's proof of record; REFEREE §2.2, fixes l. 44-58) and Lemma K2-r (REFEREE §3.2, fixes l. 64-70). These
+  are referee-originated proofs (L41): the author REFEREE signs them (§C l. 281-285: XC-2 «CLOSED. STRICT-G and PATH-G are stated in full
+  (my §2.2 text)»; XC-3 «Lemma K2-r is my §3.2 argument.»), and REFEREE-2 checked and signed them independently (Add. 1 l. 190-193, 197:
+  STRICT-G «Correct ✓», PATH-G «Correct ✓», «XC-3 Lemma K2-r (σ̄(K2) = r on Γ3, every genome; σ̄(K2) = K1 on Γ): agrees with my N-1 / §7
+  reading ✓»), having found the same gap and its own repair first (G-1 and the ext⁺ route, l. 64-89; N-1, l. 55-57). Joint gap map: none
+  open. F4′ is both referees' restricted form (XC-1 = W-1), proved by the packet's own argument. REFEREE-2's ext⁺ route is «recorded as a
+  second route and is not needed» (REFEREE §C l. 282). L-4's scope tail says so (CHECKER C132 E-7, R7, the first fill's R-G): «BR-SEG-G's proof (STRICT-G, PATH-G) and Lemma K2-r are
+  referee-originated (REFEREE R-P-N5-XICYC §2.2 and §3.2, restated in P-N5-XICYC's fixes entry 2), signed by both referees;» (REFEREE
+  §C add. 1 l. 320 «R7: CORRECT.»; REFEREE-2 Addendum 2 l. 224-226). L43: SEG-2P and ODD-FIXED are not asymptotic statements; they are DEAD by three explicit runs, replayed by both referees.
+- Fixes (docs/new/P-N5-XICYC-fixes.md, append-only, entries 1-2 by L-NEW successor 59, entry 3 by L-NEW successor 60; entry 1 at
+  86afce49, the file then 21 lines, 4,352 bytes; entry 2 at 50c80a92, l. 23-109, the file then 109 lines, 14,214 bytes, sha1
+  a83e54d2212734a03bfeace4ba727b16eff8fe52, its l. 1-21 = entry 1's file; entry 3 at e36fdfcd, l. 111-132, the file now 132 lines,
+  17,623 bytes, sha1 90d0f09d234a034765965c39397e7110c03be7b5, its l. 1-109 = entry 2's file, by script):
+  - Entry 1 (before any referee item; «Lead 06:38Z: «Apply the DATA rule clause by clause»»): R-1, one replacement L-1 → L-2 (D-1: every
+    clause with a counter or «no separate DATA»; the Γ3 = IDEAL-CYC counts moved to «context, not a clause»; the DEAD items name their
+    instances); D-2, the new counter level0_191.py; D-3, an erratum on L-2's draft wording «with 0 H0 events» (not used).
+  - Entry 2 (after REFEREE 695b610c and REFEREE-2 a0befd6c; «Nothing was REFUSED.», l. 27): XC-1 = W-1 (F4′), XC-2 = G-1 (STRICT-G,
+    PATH-G), XC-3 (Lemma K2-r; §7's «Not used» corrected), XC-4 ([1E-N3]), N-1 (LEVEL0's σ̄(K2) constant), O-1 (ONEP-POLY's uniqueness at
+    K2), O-2 (level0_191.py imports from its own directory; output unchanged), O-3 (handled by R2), REFEREE-2 N-2 (the outputs of the
+    line's seeded commands committed in experiments/new/box191/data/ and pinned, with inst/sae_6.pg, inst/sae_7.pg), the DATA note «388
+    of the 2,072 steps of the 2,000 random games fail H0 (REFEREE-2 brseg_r2.out).» (l. 92); line L-3 = L-2 with R1-R6 (l. 96-108). The
+    Lead's ruling of this round (fixes l. 99-100, Lead ruling 08:24Z): «If the two exact texts conflict, use REFEREE-2's W-4 text and
+    record XC-L1 as resolved by it». REFEREE: «XC-L1's intent is MET.» (§C l. 269); its own instrumented counter gives «INSTR H0-failing
+    steps 388 of 2072» (l. 274).
+  - Entry 3 (after CHECKER C132 d6b877f7, «Verdict: FAIL (E-1 to E-7; one L-4 with seven replacements, §5)» (C132 l. 15); L-NEW
+    successor 60): «Every exact string below was copied by script from C132 §5 (wrapped lines joined with one space, as C132 states);
+    none was retyped.» (l. 113-114); «Nothing REFUSED.» (l. 115). Line L-4 = L-3 with exactly R1-R7 (l. 118-128), each old string once
+    in L-3. My script (l4rel118.py): the seven pairs of entry 3 (l. 122-128) and of C132 §5 (l. 85-110) are the same (True); R2-R7
+    equal the first fill's R-B..R-G (True ×6); R1's old string is R-A1's and its new string is C132's own (C132 l. 25-27: read in
+    order, the drafter's R-A1 claimed an every-genome signature for ESC3 and W3 that R117 does not have); L-3 + R1-R7 = L-4 (True).
+    How each E-item is resolved (by script on L-4; each new string once in L-4): E-1 (stale status) by R1, REACH3-CYC's label now
+    names what R117's landed entry and line sign, lemma by lemma, and R1's old string occurs 0 times in L-4; E-2 (source note) by R2,
+    «(P-N5-XICYC, docs/new/P-N5-XICYC.md with its fixes entries 1-2, docs/new/P-N5-XICYC-fixes.md; L-NEW successor 59)»; E-3 (DOM,
+    STRICT, PATH) by R3 and E-4 (the T3 and C bounds) by R4, the two no-DATA entries (see The RESULTS line); E-5 (set) by R5, and
+    «every random set is» occurs 0 times in L-4; E-6 (the H0 caveat) by R6, the count on REFEREE's log (at 42648076: «INSTR H0-failing
+    steps 388 of 2072»); E-7 (L41) by R7 (see L41 and L43).
+  - No entry changes a statement of the packet; entry 2 replaces F4 by F4′ and BR-SEG-G's proof, adds Lemma K2-r and the premise
+    [1E-N3], and corrects §7's «Not used» sentence; entry 3 changes the line only; every statement stands as stated (fixes l. 42 «So BR-SEG, T-CYC and ONEP-POLY stand as
+    stated.», l. 44 «The STATEMENT of BR-SEG-G stands.»).
+- Not signed: packet §9 (DATA), §10 (machine checks and pins), §11 (TARGET diff, READING), §12 (limits), the §6 READING (TIE-FULL: «X1
+  is exactly where the W-ties enter.»), the fixes' DATA notes.
+- Referee strengthening (NOT part of this entry; referee checks):
+  (i) REFEREE: own VJ engine and Γ / Γ3 builders (docs/referee/scratch/xicyc_vj.py, xicyc_replay.py); the F4 and DOM counterexamples
+    (dom_f4_cex.out; DOM fails in 150 random steps, brsegg_own.out); BR-SEG-G's repaired proof checked on 3,300 random games (0
+    stretches longer than n_E, the bound tight) and on switchallexp N 2-7 with its own start (H0 at every step); REACH3-CYC replayed with
+    its own Γ3 builder against L-NEW's box190 n5v.py «xi» on 22 of 22 pinned and 300 of 300 random genomes, fallback at T3 + 1 on every one
+    (l. 146-157); BR-SEG / CYC-COUNT / LEVEL0 on 500 genomes with its own engine; the DEAD runs replayed and shown rule-free (l. 163-175);
+    every lane counter of L-2 re-run (l. 176-182); the 388 H0-failing steps counted with one added counter (§C l. 273-276).
+  (ii) REFEREE-2: brute-force VJ Howard on 10,418 random games (r2vjg.py; DOM fails in 296 of 52,417 cases, every failure with x in
+    Π(Ω_t(y)); DOM⁺ 0 failures in 16,384 cases; STRICT 0 failures in 9,407); its own IDEAL-CYC Howard (r2howcyc.py) with every §4 counter
+    0 on 11 pinned and 2,500 random genomes (R = 0 on 2,683 ONEP steps); its own N5′-xi (r2xi3.py) on 11 pinned genomes and 1,000 random
+    genomes (2,780 mover transitions, 0 non-standard states, 0 non-Howard steps, fallback in 1,000 of 1,000; l. 109-116); the HMZ source
+    opened (l. 34-39); every L-2 command re-run on git archive 86afce49 (l. 130-152).
+  (iii) The L-4 round: REFEREE §C add. 1 read R1 lemma by lemma against R117's landed entry at trunk ac1bc37c (l. 306, 309-317),
+    re-read the H0 log R6 cites (l. 318-319) and checked R7's citations against its own §2.2 and §3.2 and against REFEREE-2's Addendum
+    1 (l. 320-325); REFEREE-2 Addendum 2 did the same against R117's Claims signed (c)-(e) and its line (l. 214-218) and compared R6's
+    count with its own brseg_r2.out (l. 222-223).
+- Honest limits: (i) R is not bounded anywhere (packet l. 253 «R is not bounded anywhere.»); every iteration bound here is in terms of R
+  (and C); nothing about N5′-xi's or N5's running time follows. It does not decide G-N5-TIME; it is not M3, not a step-4 pass and not a
+  TARGET.md claim. (ii) REACH3-CYC and Corollary T3 are PROVED-CONDITIONAL on [REACH-L] as signed (k); of its six lemmas, RESULTS R117
+  (landed) signs S3-START, PAD, K3 and TAU3 for every genome and ESC3, W3 for acyclic Ξ-graphs only, and its line states S3-START and
+  PAD for acyclic Ξ-graphs only; the every-genome forms of ESC3 and W3 rest on P-N5-XICYC §7's reading, signed by both referees here,
+  and are not a landed result (L-4's R1; REFEREE §C add. 1 l. 314-315). (iii) BR-SEG-G needs H0, which
+  the DATA does not check; its random runs include H0-failing steps (388 of 2,072, REFEREE's
+  instrumented count, which L-4 cites by R6). (iv) RED-XI is a reduction only, under X1 and X0; X1 fails often on
+  general games (packet l. 259), so RED-XI says nothing about general games without TIE-FULL. (v) The DATA is on rgen genomes (most of
+  them Ξ-cyclic), 22 pinned genomes, 2,000 random games at n 12 and six switchallexp games; all DATA runs are runs of implementations
+  (idealcyc.py on si.py; box 190's n5v.py; the referees' engines). (vi) DOM's analogue for MDPs and discounted games is folklore (HMZ
+  arXiv 1008.0530 Lemma 5.3 / 5.4, «They may be folklore.» per REFEREE-2 l. 36); BR-SEG, CYC-COUNT and ONEP-POLY were not found in the
+  sources opened; this is not a novelty claim. (vii) Names: «BR-SEG», «CYC-COUNT», «T-CYC», «ONEP-POLY», «LEVEL0», «BR-SEG-G», «RED-XI»,
+  «REACH3-CYC», «SEG-2P», «ODD-FIXED», «IDEAL-CYC» and «N5′-xi» are new to RESULTS; «T-CYC» occurs earlier only inside «WAIT-CYCLE′»;
+  hypothesis H0 is not R89's line file «H0». (viii) CHECKER C132 (d6b877f7) FAILED the first fill
+  (draft 217ac0cc, on L-3) with E-1..E-7, all line wording («No statement, proof, definition or DEAD claim changes.», C132 l. 17); L-4 resolves them by R1-R7 (Fixes).
+- Data (DATA, not proof): experiments/new/box191/ at l-new 50c80a92 (unchanged at ae8e185d, and at e36fdfcd but for xicyc.pins, which
+  adds L-4 and the fixes 90d0f09d): idealcyc.py (IDEAL-CYC on box189's gamma3.build with no pads, Howard at the movers, si.py's Engine),
+  subrun191.py, seg1p191.py, level0_191.py, rand191.py, brseg_gen191.py, howard3_191.py (N5′-xi via box 190's n5v.py on Γ3),
+  trace191.py, eq191.py; check191.sh prints check191.out (sha1 d07c2f0c…, 37 lines: eq191 on 22 pinned genomes, rand191 eq 300 1,
+  seg1p191 300 11, subrun191 on the three DEAD genomes, brseg_gen191 on sae_2..5.pg, howard3_191 200 31). The line's other seeded
+  commands have committed outputs in data/ (subrun_1000_21.out, level0_1000_41.out, brseg_random_2000_3_12.out, howard3_500_31.out,
+  howard3_500_32.out, rand_eq_1000_2.out, sae_6_7.out). Wired into experiments/new/check.sh (run by scripts/verify.sh): block «BOX 191
+  XI-CYCLIC» (l. 965-971: check191.sh re-run diffed against check191.out, three lines asserted) and block «P-N5-XICYC» (l. 972-978 at
+  e36fdfcd: sha1sum -c of xicyc.pins df6f4799, 41 pins: packet, L-1, L-2, L-3, L-4, fixes, tools, check191.out, data/*.out, 17 instance
+  files). Re-run from a git archive of e36fdfcd at the second fill: 2026-11-07T13:09:10Z-13:09:23Z, rc 0, «BOX 191 XI-CYCLIC:
+  REALIZE-CYC 22/22 (8 Xi-cyclic + 14 corpus), random 297/300 + 3 exact-VJ-tie divergences; SEG-1P / CYC-COUNT 0 violations; DEAD SEG-2P
+  instances; BR-SEG on switchallexp N 2-5 = frozen: PASS» and «P-N5-XICYC: pins (xicyc.pins df6f4799: packet 149e2414, line L-1
+  d6f77b12, fixes 90d0f09d, line L-2 857d21c8, line L-3 1690b6ad, line L-4 85fe809c, level0_191.py, data outputs, sae_6/7, check191.out
+  d07c2f0c, tools, 17 instance files): PASS» (first fill: ae8e185d, 09:49:01Z-09:49:15Z, rc 0, both PASS; CHECKER C132 §4: from
+  1da5317c, rc 0, both PASS); the seven data/ commands re-run at the first fill from the archive of ae8e185d (box191's tools and data/
+  are byte-equal at ae8e185d and e36fdfcd), 09:49:25Z-09:49:49Z, every rc 0, every output byte-equal to its committed file (both
+  referees re-ran them too: REFEREE l. 176-182, REFEREE-2 l. 130-147 and Add. 1 l. 198). Sets: rand191.rgen genomes (levels d, width
+  1-3, degree 2-3, Ξ-targets any mover or X, cycles allowed); 8 L-RED Ξ-cyclic genomes (inst/cyc*.json) and the 14 P-N5-REACH corpus
+  genomes (box189/corpus); 2,000 general random games at n 12; Friedmann's switchallexp games N 2-7
+  (experiments/hard-families/pgsolver_port.py; inst/sae_2..7.pg pinned). REACH3-CYC's fallback at T3 + 1 is REFEREE's data
+  (docs/referee/scratch/xicyc_logs/reach3_files.out, reach3_rand300_seed77.out at 695b610c: 22 and 300 rows, each «OK», each with its
+  first fallback at transition T3 + 1).
+- Signatures: REFEREE docs/referee/R-P-N5-XICYC.md: successor 26's report 695b610c (2026-11-07T07:46:09Z), «I did NOT read
+  docs/referee-2/ for this report.» (l. 3), verdict table l. 7-23, L-2 «verdict NOT YET: XC-L1, XC-L2, XC-L3 (DATA rule), XC-L4
+  (premises)» (l. 23); §C 42648076 (2026-11-07T09:02:01Z; heading «date -u at writing 2026-11-07T09:01Z»), l. 249-298, «After my report
+  was pushed (695b610c), I read docs/referee-2/R2-P-N5-XICYC.md only as fixes entry 2 quotes it.» (l. 257), verdicts l. 294-298: «fixes
+  entry 2 CORRECT; L-3 MATCHES, by the byte test and in meaning;», «XC-1 to XC-4 and XC-L1 to XC-L4 all closed;», «every statement of §0
+  is now SIGN: BR-SEG, T-CYC, ONEP-POLY and BR-SEG-G with their repaired proofs, RED-XI, REACH3-CYC and Corollary T3 still
+  PROVED-CONDITIONAL on [REACH-L]» …; §C add. 1 43f27f3b92df6da073c4756005b0fb8807c41bc5 (2026-11-07T12:39:22Z; heading stamp «12:43Z»
+  corrected to «12:39Z» by c352039c00dcb3cb1af50dfb6a74af55b8fb2e72, 12:39:27Z, the only change), l. 300-330, «Verdict: L-4 MATCHES, by
+  the byte test and in meaning. All statements stay as signed in §C.» (l. 330). REFEREE-2 docs/referee-2/R2-P-N5-XICYC.md: successor
+  30's report a0befd6c (2026-11-07T07:44:23Z), «Independent: docs/referee/ not read on this item.» (l. 2), verdict table l. 11-24,
+  «Nothing is REFUSED.» (l. 25), «F-5: HMZ citation correct (opened). L-2 MATCHES after W-2, W-3, W-4.» (l. 172); Addendum 1 d3b6e3b9
+  (2026-11-07T08:51:49Z; heading stamp «09:0xZ» corrected to «08:5xZ» by 7891ba32, 08:52:03Z), l. 181-205, «Verdict: entry 2
+  **CORRECT**; W-1 and G-1 **CLOSED**; **L-3 MATCHES** the packet with fixes entries 1-2 (Opus 5.5, D1). Every statement of the packet:
+  SIGN (§7 and Corollary T3 conditional on [REACH-L], as before).» (l. 204-205); Addendum 2 5016a1a2261640d35a9faba524818045c3099b32
+  (2026-11-07T12:39:23Z; heading «2026-11-07 12:3xZ by date -u»), l. 207-228, with bt_l4.py and bt_l4.out, «Verdict: entry 3
+  **CORRECT**; **L-4 MATCHES** the packet with fixes entries 1-3, in bytes and in meaning (Opus 5.5, D1). Statement verdicts unchanged
+  (all SIGN; §7 and Corollary T3 conditional on [REACH-L], now R117 as landed, with its every-genome extension in §7).» (l. 227-228).
+  Lane (claude/l-new): L-NEW successor 59, fd1266a5 (freeze), 86afce49 (fixes entry 1, L-2), 50c80a92 (fixes entry 2, L-3); L-NEW
+  successor 60, e36fdfcd (fixes entry 3, L-4).
+- INDEPENDENCE: the packet's proofs are L-NEW's; the repairs STRICT-G, PATH-G and Lemma K2-r are REFEREE's, signed independently by
+  REFEREE-2, which had found the same gap (G-1) and the same uniqueness at K2 (N-1) on its own (L41 and L43). Each referee replayed the
+  statements on engines that are not L-NEW's: REFEREE with its own VJ engine and builders (xicyc_vj.py, xicyc_replay.py), REFEREE-2 with
+  its own brute-force evaluator (r2vjg.py) and its own N5′-xi (r2xi3.py) on its predecessor's Γ3 builder, and si.py's Engine (shared
+  with the lane's idealcyc.py) checked against its brute force on 300 states (l. 30-32). Each referee wrote its report without reading
+  the other's (REFEREE l. 3; REFEREE-2 l. 2); the line round read the other's items through fixes entry 2 by design (REFEREE §C l. 257).
+  The DATA wording of L-4 is the lane's (entry 1), REFEREE-2's (W-2, W-3, W-4), REFEREE's (XC-L2 in the lane's own form, XC-L3, XC-L4)
+  and CHECKER C132's (R1-R7: R2-R7 the first fill's R-B..R-G, which C132 tested against the counters and adopted, R1 its own wording);
+  in the L-4 round each referee byte-tested L-4 with its own script and R1 against R117's landed entry (REFEREE §C add. 1 l. 307-317;
+  REFEREE-2 Addendum 2 l. 211-218).
+- TARGET.md diff: TARGET.md §1 defines a parity game («A parity game is G = (V, V_E, V_O, E, pr) with V finite»; «every vertex has at
+  least one successor (self-loops allowed)»); Γ(G), Γ3(G), the switchallexp games and the random games are such games, and BR-SEG-G and
+  RED-XI range over all of them. No statement of this entry bounds a running time: every bound is in terms of C, R (and R_σ, Q_τ), and R
+  is bounded nowhere; no winning region is claimed. It is not an algorithm claim, so TARGET.md §5's gauntlet does not apply, and it is
+  not a step-4 pass. The line (L-4) makes no TARGET claim; its tail reads «no bound on R is claimed (OPEN), so nothing about N5′-xi's or
+  N5's running time follows;» and «G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim» (L-4, by script). GAPS
+  G-N5-TIME: open.
+
 **Erratum E-1** (not a result; 2026-11-01 05:28Z by date -u; Lead; corpus counts in RESULTS R97-R100):
 - What is wrong: the DATA-of-record sentences that say «1,132 games» for the L-SI box 50b / box 53 corpus (sbcg.lst 719 lines + alt_all.lst
   413 lines) count RUNS, not games. Measured by CHECKER (C111 N-7, claude/checker d53e1d4f) at trunk 68d50c8f: experiments/si/anc58/

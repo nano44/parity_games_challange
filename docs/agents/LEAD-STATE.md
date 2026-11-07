@@ -2530,3 +2530,9 @@
 - Rulings today (Lead reading): R118 G-R -> R-A1 (CHECKER reworded as R1); L41 applies to referee-originated steps (R118 R7, R119 R4); RESULTS ids land in increasing order (R119 after R118); DBL DATA base = DB-L1 + W-3 additions; RE-ENTRY level sets measured.
 - Rules learned today: every push.sh background task needs timeout 7200000 (push662 killed at 30 min); lanes must use pgrep -f full command line; cite frozen inst/ copies only; no absolute /home/user paths in committed tools (L-NEW red CI).
 - Owner line due ~20:35Z via OWNER-DESK (session_01Eq99qsTJBiTh6xLzwCPtqv).
+- 14:27Z L-COMP 11: D_d28 + D_d28b 22 units (4.4e8 proposals) no F(6) > 222; query 2: c0s0 p0-p5 certified (21 records); xval_d3 15/16 cubes agree; l-comp 2013b621. 14:29Z Lead: D_d28 core -> second query-2 worker; D_d28b keeps running; L-LOWER 6 design seed to D core later.
+- 14:34Z Lead: REFEREE-2 31 handover check 7d7affb1 re-measured (65df9f94: 6/259 vs 9315f36c, merge-base 7891ba32), score 5 -> GO P-TOWER-FUEL.
+- 14:36Z Lead: REFEREE 27 handover check cb95edbf re-measured (e96c8542: 7/231 vs 9315f36c), score 5 -> GO P-TOWER-FUEL. L-1 is 3,834 bytes (L-LOWER 5 said 3,699 = characters; Lead repeated it: slip).
+- 14:37Z Lead: L-RED 54 handover check 4b6e594d re-measured (acd1a2fd: 14/755 vs 8ff0c956, mb c2d1e88e), score 5 -> GO OVT gadget.
+- 14:46Z CHECKER 21: C132 Add. 1 PASS af92b846 (3dd22cbd on origin).
+- 14:48Z Lead: push669 VERIFY PASS. Merged checker 3dd22cbd. R118 XICYC (P-N5-XICYC, line L-4) LANDED 14:48Z by land118.py: d[455:726] with «checker af92b846)» after R117 before Erratum E-1 (RESULTS l. 13607, +272, E-1 13879, 14,521 lines; RESULTS minus block = parent by script); GAPS l. 11 UPDATE d[733] filled, last, 76 «|»; NOW counters R31-R118 / R17-R118. Next: R119 second fill (L-3 845ffdc9) -> C133 Add. 1.
