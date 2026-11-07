@@ -152,3 +152,20 @@ No statement is REFUSED. No gap is listed: every proof is complete from the land
   about MOVES-2D» stays true. Only status remarks would change: packet header/§0 «CONJECTURE MOVES-2D … OPEN» and L-3's «(it is an open
   conjecture; …)». The candidate numbers are consistent with the packet: μ(6) = 13 and μ(8) = 21 are far below the R113 bound, and the
   packet's DATA (d 5: 9 ≤ 10) is not contradicted.
+
+## Addendum 3: fix round 3 (claude/l-new fd5c163f; REFEREE-2 successor 29, 2026-11-07 01:5xZ by date -u)
+- Object: docs/new/P-IDEAL-MOVES-fixes.md sha1 510152dab351…, 9,674 B; its first 7,238 B are byte-identical to entries 1-2 (8d6223a2):
+  append-only ✓. docs/new/P-IDEAL-MOVES-line-L4.txt sha1 73c16d1e2b00…, 4,598 B, 1 line, 71 «(» = 71 «)», depth never negative, 0 «|».
+  git diff d7b96be8..fd5c163f: the two files above, check.sh pins, notes/L-NEW.md and box 188 (N5-KILLREPLAY, replay.py, logs; no
+  genome JSON, and box188 is outside movescheck's 150-187 corpus anyway). Packet, L-1..L-3, tool, output, instances unchanged.
+- Byte test (own script): R8, R9, R10 each occur exactly once in L-3; L-3 with R8-R10 applied == L-4 byte for byte ✓.
+- Meaning: L-4 contains no «open» and no status claim on MOVES-2D; «(the lane conjecture MOVES-2D, not claimed here)» and «(its status
+  is not part of this result; …)» are true under either outcome of the L-LOWER candidate; the implication «would give T^R(d) ≤ 4d² −
+  4d + 3» stays true (vacuous if MOVES-2D is false) ✓. Entry 3's wording note (packet l. 9, l. 77-78 «OPEN» labels superseded) is
+  consistent with my Addendum 2 (only status remarks depended on it) ✓.
+- Note: the brief cites Lead ruling L50 at trunk 6ca995ed. At 01:5xZ that object is on no ref of origin (all heads fetched); trunk is
+  fc665614 and has no «L50» in docs/DECISIONS.md or DECISIONS-INDEX.md. Entry 3 itself cites a «Lead reading, 01:16Z». I did not open
+  L50; the verdict does not depend on it (L-4 is correct with or without it).
+- check.sh block «P-IDEAL-MOVES» at fd5c163f (archive): «… fixes 510152da, line L-2 f3692aaa, line L-3 d3983c68, line L-4 73c16d1e:
+  PASS», exit 0 (blk187_fr3.out).
+- Verdict: entry 3 **CORRECT**; **L-4 MATCHES** the packet with fixes entries 1-3 (Opus 5.5, D1). Statement verdicts unchanged (all SIGN).
