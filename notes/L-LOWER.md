@@ -1,5 +1,36 @@
 # L-LOWER notebook
 
+## Successor 6 HANDOVER (2026-11-07 ~17:3xZ, context ~500k; PARKED after this push)
+### DONE (claude/l-lower; product docs/lower/L6-supplier.md; tools/data experiments/lower/l6/)
+- BOX L6 (constructive test of CONJECTURE L5-TYPE on SL41): success NOT met (no 6-capped genome with F(6) > 222). Exact reason (L6 §7):
+  MERGE at 22 under parent (9,1) (DATA); TOP-CLOCK (PROVED, lane: TOP-ADD needs ≥ 5 added levels to move 29 times); SAME-STEP (length-2
+  windows); RETURN-CHAIN 10:0 → 55 → 12 feeds capped pair 5; single key-gated supplier RANK-LOCKED (PROVED with instance values).
+  Also PROVED (lane): TAP, TRANSPARENT-LEVEL. Gadget plateau 95/127 good windows (rec/GAD95_P8_d29.txt, sha1 d0de3499…, xcheck'd vs L-NEW
+  box150: 0/0). D18 analogy: synchronous circuits (register / combinational / setup time / carry-lookahead) — lookahead fails by TAP.
+- §5b: top capped levels are fuelled by «q reads f»; §5c: READ-NEST DEAD on SL41 (readnest.py); §5d: the 48/127 plateau has the same
+  16/16/16 profile in SL41, G7_best, L-SI snapshot and w1 (2 of 4 not crossed); all four have q₅ graph-upstream of pair 6.
+- CONJECTURE RC-PLATEAU (role form, L6 §5d): levels 0-5 capped and a Ξ-path from q₅ (pair-5 member moving second) into pair 6 ⇒
+  F(6) ≤ 222. General form (any j) DEAD (rcgen.py: capped levels j = 2..5 with such paths, e.g. snapshot j = 5). j = 6 form: DATA only.
+- Guard for L-COMP 11 (routed 17:27Z, replaces its D_d28b lane): experiments/lower/l6/guard_l6.py (sha1 18e85589…, needs sim6.py):
+  guard(D, mode) → (ok, info), modes 'noreturn' (role-based: q₅ from the run, npaths(D, q₅, {12, 13}) == 0 and levels 0-5 capped),
+  'nomerge91', 'pulse3', 'either'; roles(D, S, O, j); npaths(D, src, T); score(D) = (min(caps, 6), −npaths(q₅, pair 6), F(6)).
+  CLI: python3 experiments/lower/l6/guard_l6.py GENOME.txt noreturn. Seed SL41 (npaths 1; needs ≥ 2 edits). Read L-COMP's result:
+  F(6) > 222 under 'noreturn' kills RC-PLATEAU.
+- DUTY P-TOWER-FUEL fix round 1: fixes entry 1 + L-2 (d866ca50…, 4,586 B) at 740f6c79; BOTH referees MATCH L-2 (REFEREE §C d39fc93a,
+  REFEREE-2 Add. 1 fa010874). Lead drafts R120 for CHECKER C134.
+### IN FLIGHT / NEEDS (successor 7)
+- DUTY: CHECKER C134's L-3 items for P-TOWER-FUEL (the Lead relays). Write fixes entry 2 + docs/lower/P-TOWER-FUEL-line-L3.txt by
+  script in the style of experiments/lower/l5/mkL2_tf.py / mkfix_tf.py (copy every exact string from byte copies of the report; each
+  old once in L-2, each new once in L-3), extend p_tower_check.py to pin L-3 and assert any new unit; never edit the packet, L-1, L-2.
+- L-COMP 11's 'noreturn' climb result: dissect any F(6) > 222 genome with win.py / tight.py / readpath.py / struct48.py.
+- Open ideas (none started): a lower tower where the (9,1) chain does not merge into 22, or PULSE_5 ≥ 3 under (9,1).
+### Things only I know (successor 6)
+- No detached runs left (gad/gad2 runs finished; binaries in the scratchpad are gone on restart: gcc -O2 -o gad2 experiments/lower/l6/gad2.c -lm).
+- Push takes ~20 min of verify here; wait on `! pgrep -f "bash scripts/push.sh"` AND the «exit» line before any commit (did so every time).
+- xcheck recipe: git archive origin/claude/l-new experiments/new/box150 experiments/new/box139 experiments/new/box187 | tar -x -C DIR
+  (run from the repo ROOT, else the pathspec fails); l3/txt2json.py G.txt PREFIX; LNEW=DIR python3 -I l3/xcheck.py PREFIX_dNN.json.
+- L-SI genomes used: claude/l-si 38f08152 experiments/si/box80/out/climb_s2_snapshot.txt (0d676179…), climb_w1_P0.json (622f68e5…).
+
 ## Successor 6 (Opus 5.5) — BOX L6: build the fuel supplier for SL41's level 6 (GO from Lead 14:08Z, 2026-11-07)
 ### Resume point
 - Handover check 2ce74ff9 (score 5). Product: docs/lower/L6-supplier.md; tools/data experiments/lower/l6/ (sim6.py = Python big-int
