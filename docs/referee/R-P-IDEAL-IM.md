@@ -162,3 +162,31 @@ Every clause group was diffed against §5's frame definition (as for cnf.py in R
   - The audited drup.c, re-run on my byte-identical regenerated proof (sha1 32be84e4…): «s VERIFIED (6531220 lemmas RUP-checked)», 7,577
     s, the same counts as L-COMP's.
   - My independent ref_rup (deletions ignored) was still running when this was written; it is handed to successor 25 (notes/REFEREE.md).
+
+## §C add. 1 (REFEREE successor 25, 2026-11-07T03:0xZ by date -u; Opus 5.5, D15): fixes entry 2 and line L-3 (CHECKER C128 E-1..E-5)
+- Objects (fetched):
+  - claude/l-si 80d1422a: P-IDEAL-IM-fixes.md sha1 e80dee09d73db36dd5b604814c171a04b5b42fc4, 6,919 B. Its prefix is byte-equal to the
+    entry-1 file at 4ee9fa78, so it is append-only.
+  - P-IDEAL-IM-line-L3.txt cf510950a7feaf3e8d5f3c316acc2601e2ed17e7, 4,962 B.
+  - Unchanged: L-2 8b7ccfb9; imcheck.py byte-equal at 4ee9fa78 and 80d1422a.
+  - CHECKER C128: claude/checker 2dd44fc1, docs/checker/C128.md, opened.
+- Byte test (own script):
+  - R1..R5 parsed from C128 §5. They equal the five pairs of entry 2's table, string for string. Entry 2 says C128 was not opened at
+    its writing and relied on the sha1; the pairs are now confirmed against C128 itself.
+  - Each old string occurs exactly once in L-2 and still once when applied in order.
+  - L-2 + R1..R5 = 4,962 B, sha1 cf510950…, byte-equal to L-3.
+  - Shape: one line, 86 «(» / 86 «)», depth never negative, 0 «|».
+- DATA rule. I ran instrumented copies of the frozen counters (imcheck_ref25.py, compose_ref25.py on `git archive 4ee9fa78`, in my
+  scratchpad). Their output, minus my extra line, is byte-equal to the frozen imcheck.out.
+  | item | new clause | my measurement (counter, unit, set) | verdict |
+  | --- | --- | --- | --- |
+  | R1 (E-1) | «LOCAL 0 on 250,248 (y on neither chain, unhappy or not), among them IM (a) on the 125,124 with y unhappy» | FRAME_LOCAL (l. 91), per (state, z, y ≠ z on neither chain), c = 0 branch: 250,248; of them with S.C(st, y) ≠ st[y]: 125,124 | MATCH |
+  | R2 (E-2) | «BIT-CHAIN (i) at the c-step image of the state 0 on 66,520 (5,670 distinct (genome, c, image) triples)» | BITCHAIN (l. 76-79) evaluates bits and keys at ns = cstep(st, c), per (state, c, level): 66,520; distinct (genome, c, ns): 5,670 (4,715 (genome, ns)) | MATCH |
+  | R3 (E-3) | «… 0 on 18,944, on the 301 genomes the box 64 simulator accepts» | XSTEP only when Ext(G) constructs (l. 62-69): 301 of 404 genomes | MATCH |
+  | R4 (E-4) | «failing 54,433 times on G's part (30,113 steps and 24,320 end-of-run checks) and 21,234 times on K's (end-of-run checks after a failure on G's part only; K's steps do not use the schedule)» | compose.py 200 68 with NEG=1: K in-run (l. 54) 0, G in-run (l. 58) 30,113, K end (l. 63) 21,234, G end (l. 64) 24,320. Without NEG all four are 0. K's step does not read β, so without a G break K evolves as in the unnegated run and its end check passes: every K end failure follows a G break | MATCH |
+  | R5 (E-5) | «BIT-CHAIN (ii), COMPOSE-LB and the T_∞ bound: no separate DATA» | no counter for (ii) (C128 E-5; I read l. 75-82: KEY-DIR tests the move rule, not (ii)) | MATCH |
+- No other DATA figure changes: the word diff touches only the five clauses.
+- Entry 2's wording note for Theorem FRAME's proof (packet l. 207: read «(Φ2) is Lemma IM (a)» as «(Φ2) is R105 LOCAL») is right.
+  The proof of IM (a) at l. 72 does not use that y is unhappy (my §2 re-derivation agrees). No item changes.
+- Verdict: fixes entry 2 is CORRECT. L-3 MATCHES, by the byte test and in meaning, with the DATA rule clause by clause. All items stay
+  SIGNED.
