@@ -114,3 +114,64 @@ docs/referee-2/ for this report.
   - L-1 reviewed.
 - FINDINGS: DEAD SIGN; L-1 NOT YET, four exact replacements.
 - NEEDS: L-LOWER: fixes entry 1 with PM-L1..PM-L4 and line L-2; I will byte-test it.
+
+## §C. Fixes entry 1 and line L-2 (REFEREE successor 25; date -u at writing 2026-11-07T03:31Z)
+- Objects at claude/l-lower 8938e403 (fetched):
+  - P-M2D-DEAD-fixes.md 966aee21… (3,617 B);
+  - P-M2D-DEAD-line-L1.txt 1dec8b4d… (1,084 B);
+  - P-M2D-DEAD-line-L2.txt 8ca7bcca… (1,400 B);
+  - the packet is unchanged (3ca5b9fa).
+- L-1 file = §6 of the frozen packet: byte-equal to my own join of §6 (lines joined by single spaces, plus «\n»), the text I used in
+  §5. MATCH.
+- Byte test (own script):
+  - the four «old» → «new» items parsed from entry 1; each old string occurs exactly once in L-1, and once when applied in order;
+  - L-1 + the four = L-2, byte-equal;
+  - shape: one line, 14 «(» / 14 «)», depth never negative, 0 «|»;
+  - PM-L1, PM-L2, PM-L3 are my texts verbatim.
+- Merged PM-L4 + REFEREE-2 W-1, «… by L-NEW box 188 (6d043927), L-SI 41 (0803d551, docs/si/N5-TROPICAL-box76.md) and L-RED 52
+  (55557951, experiments/red/r214/lower3/), and by both referees' own simulators;»:
+  - L-NEW 188 and L-SI 41: opened (my §4). MATCH.
+  - «both referees' own simulators»: mine (§4, t3r_sim.py). REFEREE-2's R2-P-M2D-DEAD.md (6eba8b93), opened after my report was
+    pushed, l. 41 and 73: «Replay with my own simulator … no lane code», «both instances reproduced by my own simulator». MATCH.
+  - L-RED 52 (the Lead's question):
+    - 55557951 has the byte copies (sha1 5301c716…, d96c2b36…) and the replay code lowrep.py (r187/ideal.py), but no output file.
+    - I re-ran `lowrep.py lower3/KILL_M2D_d6_mu13.json lower3/KILL_M2D_d8_mu21.json` from `git archive 55557951` (r178, r187, r189,
+      r212, r214): «d 6 T 13 … max mover 8 lev 4 Xi-target 1 moves 13 2d 12 >2d» and «d 8 T 24 … max mover 15 lev 7 Xi-target 1
+      moves 21 2d 16 >2d».
+    - So the replay is real and checkable, and the citation may stay. But its pointer names the genome copies, not the replay, and
+      the line should not suggest a committed result.
+  - MV-type fix PM-C1 (required, opened source). One replacement on L-2 (old occurs exactly once):
+    «L-RED 52 (55557951, experiments/red/r214/lower3/)» → «L-RED 52 (55557951, experiments/red/r214/lowrep.py; its output is not
+    committed)»
+    - Result (my script): 1,431 B, 14 «(» / 14 «)», depth never negative, sha1 de6c3916e2229f10e032d8b0af2afc72e4169ad6 with «\n».
+    - If L-RED commits lowrep.py's output first, citing that file instead is equally fine.
+- Optional items N-1, N-2 (wording notes; L-2 unchanged by them): correct readings.
+- Verdict:
+  - Fixes entry 1 is CORRECT for PM-L1..PM-L3 and W-1.
+  - L-1's file MATCHES §6.
+  - L-2 MATCHES the byte test.
+  - In meaning, L-2 is NOT YET: one replacement, PM-C1. With it, the line MATCHES.
+  - DEAD stays SIGNED.
+
+## §C add. 1. Fixes entry 2 and line L-3 (REFEREE successor 25; date -u at writing 2026-11-07T05:19Z)
+- Objects:
+  - claude/l-lower afc85c57: L-3 sha1 4c056511a9305815c756ad858d9ca4ed5977edcf (1,410 B); fixes file f5b3f78a… (5,103 B), whose first
+    3,617 B are byte-equal to entry 1's file, so it is append-only; packet 3ca5b9fa and L-2 8ca7bcca unchanged.
+  - claude/l-red 6e743ab1 (an ancestor of origin claude/l-red b14066e1): experiments/red/r214/lower3/replay.out, sha1
+    4492ee284db25cb8cefc9702c1a343352e4b4ab3, 7,591 B, opened.
+- Byte test (own script):
+  - the one replacement occurs exactly once in L-2 and is the text of entry 2;
+  - L-2 + it is byte-equal to L-3;
+  - shape: one line, 14 «(» / 14 «)», depth never negative, 0 «|».
+- replay.out (the Lead's check):
+  - §1: sha1 of the nine byte copies, with KILL_M2D_d6_mu13 5301c716… and KILL_M2D_d8_mu21 d96c2b36…, the packet's pins.
+  - §2: memb.py «PASS» for all 9.
+  - §3: lowrep.py on all 9 gives «>2d» for every one, among them «KILL_M2D_d6_mu13.json: d 6 T 13 … max mover 8 lev 4 Xi-target 1
+    moves 13 2d 12 >2d» and «KILL_M2D_d8_mu21.json: d 8 T 24 … max mover 15 lev 7 Xi-target 1 moves 21 2d 16 >2d».
+  - §4: the same on the renumbered copies.
+  - So the file states the 9/9 replay, d 6 mover 8 = 13 and d 8 mover 15 = 21. These are the numbers my own re-run of lowrep.py at
+    55557951 printed (§C) and my own simulator gave (§4).
+- Meaning:
+  - The line now cites a committed result file of the replay, the alternative PM-C1 allowed. PM-C1 is SATISFIED.
+  - The other «and independently by …» items are unchanged from L-2 (verified in §C).
+- Verdict: fixes entry 2 is CORRECT. L-3 MATCHES, by the byte test and in meaning. DEAD stays SIGNED.

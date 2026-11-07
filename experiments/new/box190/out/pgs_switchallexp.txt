@@ -1,0 +1,7 @@
+pgs:switchallexp N 1 n 21 | spec 5 | xi 5
+pgs:switchallexp N 2 n 35 | spec 8 | xi 8
+pgs:switchallexp N 3 n 49 | spec 7 | xi 7
+pgs:switchallexp N 4 n 63 | spec 8 | xi 8
+pgs:switchallexp N 5 n 77 | spec 10 | xi 10
+pgs:switchallexp N 6 n 91 | spec 12 | xi 12
+pgs:switchallexp N 7 n 105 | spec 14 | xi 14

@@ -1,5 +1,8 @@
 # L-RED notebook (independent adversary lane)
-Successor 49 (Opus 5.5, D1/D18/D19) started 2026-11-04 00:18Z (date -u); STEP 0 check below; BOX R200 (exact engine, k 3 d 6).
+Successor 53 (Opus 5.5, D1/D18/D20) started 2026-11-07 05:03Z (date -u); R215 (vs N5′-xi) continued; see «Successor 53».
+Successor 52 (Opus 5.5, D1/D18/D20) started 2026-11-06 18:28Z (date -u); R214 (MOVES-2D DEAD replay, T^R table d 8-14), R215 (vs N5′-xi); PARKED 2026-11-07 ~04:2xZ, see «Successor 52 PARK».
+Successor 50 (Opus 5.5, D1/D18/D20) started 2026-11-05 22:06Z (date -u); R207-R211; PARKED 2026-11-06 ~07:0xZ at ~520k, see «Successor 50 PARK».
+Successor 49 (Opus 5.5) started 2026-11-04 00:18Z; R200-R206; PARKED 2026-11-05 21:1xZ at ~540k context, see «Successor 49 PARK» (supersedes «Successor 49 HANDOVER»).
 Successor 48 (Opus 5.5, D1/D18) started 2026-11-03 07:20Z (date -u); STEP 0 message 07:20Z; R199 nested doubling: k 2 SAT d 5 (pin nd2_d5_F12_n96), k 3 UNSAT d <= 5, UNKNOWN d 6-7; PARKED FINAL 23:4xZ, see «Successor 48 PARK».
 Successor 47 (Opus 5.5, D1/D18) started 2026-11-02 20:58Z (date -u); STEP 0 message 20:58Z; R197: fork ladders exact 3 / 5 (d 2 / 3); carry maxima 2, 6, 10 EXACT (d 4); max run d 4 = 13 EXACT (R193 item closed); pins dbl_d3_F6_n60, dbl_d4_F10_n78, max_d4_L13_n78; Lemmas DOWN / LEVEL-RISE / WAKE-CHAIN; PARKED, see «Successor 47 PARK».
 Successor 46 (Opus 5.5, D1/D18) started 2026-11-02 11:52Z (date -u); STEP 0 message 11:52Z; R191 (degree-3 rotation): ROT-CAP / KEY-ALT / NEST-PI / MERGE-1 / NEST-DEAD-3 PROVED (lane), U linear d 3-8; R192 (RANK) linear; R193 d 4 undecided; R194 (a′) → U; R195 NEST-DEAD-ALL; R196 SAME-WAKER; PARKED ~20:5xZ, see "Successor 46 PARK".
@@ -48,6 +51,377 @@ context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older note
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
 
+## Successor 53 (Opus 5.5, D1/D18/D20; from 2026-11-07 05:03Z, date -u) — R215 vs CANDIDATE N5′-xi (docs/red/R215-xi.md «Successor 53»)
+- DONE: (c) n5bxi vs n5v 2,766/2,766 agree (r215/xck.py, out/xck/); (a) PAD-COLLAPSE obstruction (famx.py, fam/); PAD-class climbs
+  (gclimb.py): xi 46-85 at n 79-118, mechanism = N5's own slow dynamics after one override (trace.py, fromstate.py); ps (SPEC-scored)
+  N5 = xi up to 79 at n 111; ratio falling: linear. (b) Γ3 xi chains ~ n/9 to d 9. Pushed dee5521f. Interim sent to Lead 06:2xZ.
+- RUNNING (relaunch after a restart; cwd experiments/red/r215; «. ./env.sh» first; worktrees: git worktree add --detach $WT acdbd28b,
+  $WT2 066cd543; Oink: scripts/setup_oink.sh; all resumable, finished stages skipped):
+  nohup ./runxi.sh xa 1 8 12 12000 out/cyc2_d8.json > /dev/null 2>&1 &
+  nohup ./runxi.sh xb 2 3 12 12000 > /dev/null 2>&1 &
+  SCORE=xi CHAIN=1 INIT=out/pg_n32.json nohup nice -n 5 ./rung.sh pl 6 8000 40 48 56 64 > /dev/null 2>&1 &
+  SCORE=spec CHAIN=1 nohup ./rung.sh ps 7 8000 16 24 32 40 48 > /dev/null 2>&1 &
+  (SCORE=gap nohup ./rung.sh pq 5 12000 32 48 64: finished; xg chain stopped 06:0xZ for cores, xg_d7 unfinished.)
+- Things only I know:
+  - Successor 52's container pushed snapshots until 05:26Z (37e83c53 «climbs stopped»); my first two pushes were non-ff, merged.
+  - verify.sh takes ~25 min with 4 climbs running: push logs go to /home/user/push*.log (survive /tmp wipes).
+  - gclimb lift (smaller seed genome) must not rewire old vertices (LIFTRW=0 default): rewiring 30% dropped xi 46 -> 7.
+  - n5v / n5bxi take 0.1-0.3 s per run at n 100-300; climbs are cheap, 12k iterations ~ 30-60 min per stage.
+
+## Successor 53 handover check (2026-11-07 05:1xZ, date -u)
+1. Branch claude/l-red. Clone checkout was DETACHED and SHALLOW at b14066e1 (= ls-remote 05:03Z). «git fetch --unshallow origin
+   claude/l-red» + «git checkout -B claude/l-red origin/claude/l-red» (ff, no history change) -> HEAD = claude/l-red = origin = ls-remote
+   = b14066e1. Vs trunk claude/vibrant-johnson-nxvvxo d62fa2d6: 153 ahead / 600 behind, merge-base 39588215.
+2. Open work and next step:
+   - R215 vs CANDIDATE N5′-xi (L-NEW box 190, acdbd28b / 066cd543): (a) Friedmann-style family tuned to the Ξσ tie-break (score xi - spec
+     and xi); (b) targeted Ξ-cyclic Γ3 climbs scoring xi to d 10-12 (linear or superlinear?); (c) faithfulness spot check n5bxi.py vs n5v.py
+     on my own corpus. Next: worktree of acdbd28b + Oink, relaunch climbs, then (c), then (a).
+   - Secondary: staged T-table climbs (r214/runtw.sh jobsT.txt, stage.sh); replay L-LOWER 4's RECF4_d20_F60.json when it lands.
+3. GAPS rows (trunk docs/GAPS.md @ d62fa2d6): G-NEST (major, «L-RED (attacks + proof attempts)», open); L-RED attacks GAP-A, GAP-C
+   (blockers, open), G-STR, G-DOM (closed). R215 works against G-N5-TIME (major, L-NEW, open) under D1/D18.
+4. Rulings (verbatim; status from trunk docs/DECISIONS-INDEX.md): D1 «A claimed polynomial algorithm is far more likely to be wrong
+   than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.» (active); D18 «Focus on
+   N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer
+   science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without
+   asking me questions. Clearly distinguish proven results from conjectures and open problems.» (active); D20 «We have reset the weekly
+   usage, so we can again work faster no?» (active).
+5. Trap (bit this start): detached + shallow clone; a «push.sh» from a detached HEAD pushes nothing useful. Check: «git branch
+   --show-current» prints claude/l-red and «git rev-parse claude/l-red» = ls-remote before any commit; fetch + merge (no rebase) before
+   every commit since successor 52's container may still push snapshots; «pgrep -f "bash scripts/push.sh"» before every push.
+
+## Successor 52 PARK (2026-11-07 ~04:2xZ, date -u; ~510k context)
+- RESULTS of this session (docs/red/R214-moves.md, docs/red/R215-xi.md; witnesses in experiments/red/r214/keep, r214/lower3, pins.sha1):
+  - R214: MOVES-2D DEAD on L-LOWER 3's instances, 9/9 REPRODUCED (replay.out sha1 4492ee28…, commit 6e743ab1). Own best: DENSE(5, 3, 10)
+    SAT (tie 2d). Exact per-level maxima d 3 1/3/4, d 4 1/3/7/7-8 (targets = non-targets). Support: 15-move level-3 Xi-target least
+    d ∈ [6, 10]. Certified T^R(d) >= 38 / 47 / 53 / 58 / 59 / 71 / 83 for d 8-14 (8-10 all starts).
+  - R215 (interim): N5′-xi: 0 wrong (3,000 Oink games + climb bests). Xi-cyclic Γ3 climbs xi 12-22 (spec 7-11), d 3-8, roughly linear.
+    Random games xi = spec.
+- RUNNING at park (container-local; restarts kill them; relaunch lines):
+  - T-table: cd experiments/red/r214 && nohup ./runtw.sh jobsT.txt 2 > out/runtw.log 2>&1 &   (FINAL logs are skipped), then
+    nohup ./stage.sh 1 > out/stage1.log 2>&1 & nohup ./stage.sh 2 > out/stage2.log 2>&1 &   (do NOT wrap in a «while pgrep -f runtw.sh»
+    loop: it matches its own command line and never exits). Seeds include L-LOWER's RECT genomes (keep/tw_d1*_RECT*.tw, replayed).
+  - R215: cd experiments/red/r215 && nohup python3 xiclimb.py cyc 7 47 4000 out/cyc2_d7 > out/cyc2_d7.log 2>&1 &   (same for d 8, seed 48)
+    xiclimb needs the read-only worktree of claude/l-new acdbd28b at env WT (default scratch wt190):
+    git worktree add --detach <WT> acdbd28b. Oink: scripts/setup_oink.sh (tools/ gitignored).
+- STOPPED (Lead rulings; state kept, no claim): DENSE(5, 3/4, 11) cubes (89 / 31 done, 0 SAT); MAIN d 5 T >= 17 (562 done, 0 SAT);
+  d 4 top-level any-mover r 8 cubes (202 done); d 6 support cubes (0 done). d 5 level-3 r 11 died in the 03:38Z restart (no answer).
+- Tools: r214/fa.c (all-starts, ALLM), tw.c (single start; LEV, TGT, TSC; MAXN 28 -> d <= 14), mvck.py, memb.py, certM.py, lowrep.py,
+  renum.py, totw.py, fromtw.py, scan.sh, dense.sh, run_*cubes.sh, support.sh, runfa.sh, runtw.sh, stage.sh; r215/xiclimb.py, oinkck.py.
+  r200/xcnf.py env MOVEANY / MOVENT (default unchanged).
+- Things only I know:
+  - Container restarts every ~30-60 min this session (3 seen 20:47Z, 03:38Z, 04:04Z): /tmp is wiped (push logs, the worktree survives
+    in scratch), disk is kept. Commit, then push, at every milestone, and re-check ls-remote after a restart.
+  - pgrep -f scripts/push.sh matches a waiter whose own command line contains that string; pgrep -f "bash scripts/push.sh" is safer.
+  - lemck crashes on non-0..M-1 gates (L-LOWER files): renum.py first. fa/tw need the R197 beta convention (conv.py totxt asserts it).
+  - The move.py MOVEZ query is Xi-target-only by default (my 01:5xZ message wrongly said otherwise for the support runs; corrected).
+  - My 04:1xZ T-table message cited commit «1a6b23d1»; the real commit is d3a374c4.
+  - Tower climbs (random mutation) cannot leave REC_d10_tower (30); T climbs move away from towers (max moves 8-12).
+
+## Successor 52 R214 (2026-11-06/07, date -u) — docs/red/R214-moves.md
+- MOVES-2D DEAD on L-LOWER 3's instances (claude/l-lower 4d747490), 9/9 REPRODUCED with L-RED tools (memb.py, ideal.py, fa all starts,
+  lemck on renumbered copies, box150, xcnf modelck). My own best: DENSE(5, 3, 10) SAT (tie 2d), certified (sha1 968ea733…).
+- Exact: d 3 per-level maxima 1/3/4 (targets = non-targets); d 4 1/3/7/7-8.
+- STOPPED by Lead ruling 01:22Z: INCOMPLETE SEARCHES, NO CLAIM (all 0 SAT; state kept, resumable with the same lines):
+  DENSE(5, 3, 11) cubes 89 done / 2 split; DENSE(5, 4, 11) cubes 31 done / 2 split (r214/run_dense_cubes.sh 5 l 11);
+  MAIN d 5 T >= 17 cubes 562 done / 6 split (PARK line); d 4 top-level any-mover r 8 cubes 202 done / 1 split (r214/run_top4.sh).
+- Now: (b) support query r214/support.sh d H 3 15 (d 5-8, horizons 16 / 22 / 26 / 30 = best known T^R; UNSAT exact only up to H);
+  (a) tw climbs (r214/tw.c, single stored start, LEV=4 score) from REC_d10_tower + top-extensions d 11 / 12.
+- DATA (Lead 03:25Z, stopped): least d for a 15-move level-3 Ξ-target ∈ [6, 10]; d 5 UNSAT within horizon 16 only (1,206 s);
+  d 6 / 7 / 8 (horizons 22 / 26 / 30) UNKNOWN at 2 h; d 6 support cubes stopped at 0 done. d 10 attained by REC_d10_tower (movers 6, 7).
+- Certified T^R lower bounds (all starts, fa): d 9 >= 47 (tw_d9_T47), d 10 >= 53 (tw_d10_T53). T-table climbs d 8, 11-14: r214/runtw.sh jobsT.txt 3.
+- Things only I know:
+  - lemck crashes (IndexError) on L-LOWER JSONs (gates not 0..M-1): r214/renum.py first. tw/fa need the R197 beta convention (conv.py).
+  - The predecessor's container pushed a post-park snapshot (3ac77661) after my first ls-remote: merged (aef66967), cube state = union.
+  - Container restart ~20:47Z killed everything; /tmp wiped, disk kept. Push logs live in /tmp/claude-0 (lost on restart).
+  - xcnf MOVENT needs the «z is a target» clause off (fixed); MOVEANY / MOVENT leave the default encoding unchanged.
+
+## Successor 52 handover check (2026-11-06 18:3xZ, date -u)
+1. Branch claude/l-red. Clone checkout was detached at b6426b33 (= ls-remote at 18:28Z; successor 51 PARK already landed, no wait
+   needed); the local branch ref was 67 behind (stale): «git checkout claude/l-red» + «merge --ff-only origin/claude/l-red» -> HEAD =
+   claude/l-red = origin = ls-remote = b6426b33. After «git fetch --deepen=500»: vs trunk claude/vibrant-johnson-nxvvxo 27edc8f7:
+   109 ahead / 447 behind, merge-base 39588215.
+2. Open work and next step:
+   - MAIN conditional d 5 T>=17 cubes relaunched 18:29Z (cwd experiments/red/r200, PARK line; state 212 done / 4 split at relaunch);
+     harness-tracked wait loop armed (until ! pgrep -f "cubes.py 5 17"). Next: snapshot state at each check.
+   - BOX R214 (Lead, now): attack CONJECTURE MOVES-2D (every mover moves <= 2d times in a run of 𝓛^R_d). (1) non-Ξ-target movers in all
+     data + exact d <= 4; (2) co-designed climbs d 5-8 maximising max moves over ALL movers (seeds dd_d5_F14, rise_d5_R13, rise_d6_R14,
+     T^R records); (3) exact d 4 top level r 8 at horizon 13, resumable.
+   - Paused (state kept): d 4 T>=14 validation cubes; d 4 RISE R>=9 cubes (stopped by Lead ruling); d 4 MOVES z 6 r 8 (= task (3)).
+3. GAPS rows (trunk docs/GAPS.md @ 27edc8f7): G-NEST (major, «L-RED (attacks + proof attempts)», open); L-RED attacks GAP-A, GAP-C
+   (blockers, open), G-STR, G-DOM (closed). R214 works against G-N5-TIME (major, L-NEW, open) under D1/D18.
+4. Rulings (verbatim, trunk docs/DECISIONS.md; status from trunk docs/DECISIONS-INDEX.md):
+   D1 «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as
+   wrong until it passes the gauntlet below.» (active); D18 «Focus on N5 and work toward proving it. Explore novel approaches,
+   especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make
+   reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven
+   results from conjectures and open problems.» (active); D20 «We have reset the weekly usage, so we can again work faster no?»
+   (active; Lead reading L48: full pace, stop on paid overage).
+5. Trap (bit again at this start): the local branch ref was stale (67 behind) while the detached checkout sat at the right SHA.
+   Check: compare «git rev-parse claude/l-red» (not only HEAD) with ls-remote before the first commit; also experiments/red/r200/out/
+   is gitignored and was missing (mkdir before relaunching, else the nohup redirect fails silently). Standing: never two push.sh at
+   once (pgrep -f scripts/push.sh first); a kill must be replayed by ideal.py + lemck + box150 before it is reported.
+
+## Successor 51 PARK (2026-11-06 ~17:2xZ, date -u; ~530k context)
+- RESULTS of this session (files docs/red/R212-flipadd.md, docs/red/R213-rises.md; all certified witnesses in r212/keep, r213/keep, sha1 pins):
+  - R212: Lemma FROZEN-EMBED PROVED (lane): T_k(m) <= (k+1) T^R(m) -> FLIP-ADD can fail only via superlinear T^R. Certified: T^R(5/6/7) >= 16/22/26;
+    T^R_ISO(5/6/7) >= 15/18/22; T_2(4/5/6/7) >= 17/22/34/37; T_0(4) = 13 EXACT. MAIN d 5 T>=16 answered SAT (TR_d5_T16 is a model of the encoding).
+  - R213: RISE-2D DEAD (rise_d5_R13, rise_d6_R14; L-NEW's own rises.py agrees). Max R at d 3 = 6 = 2d EXACT. MOVES-2D: exact at d 3
+    (1/3/4 by level) and HOLDS at d 4 (r 9 UNSAT at levels 1-3, level 0 <= 1); level 2 max 7, top 7-8. Box 183 real-run T^N_k(2) = 4/6/8 exact;
+    T^N_k(3): k 0 = 8 exact, k 1 >= 10, k 2 >= 12 (next values unknown at 1 h).
+- RUNNING (relaunch after a restart; cwd experiments/red/r200; idempotent):
+  1. MAIN: SEGMAX=13 SYM0=1 SYMB=1 TL=1200 P=2 nohup python3 cubes.py 5 17 cubes/d5c_t17 >> out/cubes_d5c_t17.log 2>&1 &   (label «conditional on
+     SEG-CAP (R109 L-4 as encoded) and T*(4) = 13 (lane)»; no SAT cube so far)
+- PAUSED / STOPPED (state kept, resumable with the same lines):
+  - d 4 T>=14 validation: SYM0=1 SYMB=1 TL=900 P=1 nohup nice -n 19 python3 cubes.py 4 14 cubes/d4s_t14 >> out/cubes_d4s_t14.log 2>&1 &  (paused 16:3xZ for cores)
+  - d 4 RISE R>=9 cubes: r213/run_d4.sh (stopped by Lead ruling 14:13Z; low value after the kill)
+  - d 4 MOVES z 6 r 8 (exact top max 7 or 8): cd r213 && timeout 14400 python3 move.py 4 13 6 8 out/m4_z6_r8.json  (UNKNOWN at 2 h)
+- Tools: r212/fk.c (E-model T_k climber), r212/fl.c (ladder climber; ISO=1; SCORE=R rises, SCORE=M Xi-target moves), cert.sh, certL.py, embed.py,
+  lift.py, extend.py, conv.py; r213/rises.py, rise.py (RISEZ), move.py (MOVEZ), tn.py (UMIN / Z0MAX), all as env-gated xcnf constraints.
+- Things only I know:
+  - Never test a check.sh block without set -euo pipefail (my NEG line killed verify silently once; fixed a4650e8c).
+  - A push waiter must key on the previous push log's «exit» line, never on pgrep of a string in its own command line.
+  - fk text genome = ISO ladder of L^R_(m+1); fl reads the same format with m = top level. LIFT / extend seeds made every record; random climbs are weak.
+  - fl SCORE=M prints «maxR» in its label (it is the move count).
+  - lemck needs gates / betas renumbered 0..M-1 (certL.py / embed.py do it).
+  - Keep-alive: harness wait loops die at 2 h; re-arm with a different tracked status job.
+
+## Successor 51 R212 (2026-11-06, date -u) — docs/red/R212-flipadd.md
+- Lemma FROZEN-EMBED PROVED (lane): ISO G of L^R_(m+1), fixed c -> Lad_c(G) in L^R_m (drop level 0, re-rank the 4 level-1 gates by
+  (kappa^c_w, gate)) with the same run. T_0(m) <= T^R(m), T_k(m) <= (k+1) T^R(m): FLIP-ADD can fail only through superlinear T^R.
+  embed.py 0 mismatches (41,728 runs), NEG 6,677/12,800. LIFT converse: T_0(4) = 13 EXACT.
+- NEW certified bounds: T^R(5) >= 16, T^R(6) >= 22, T^R(7) >= 26; T^R_ISO(5/6/7) >= 15/18/22; T_1(4/5/6/7) >= 15/17/26/27;
+  T_2(4/5/6/7) >= 17/22/34/37. Excess T_2 - T^R-best 4, 6, 12, 11 (m 4-7); ratio <= 1.55. No kill.
+- MAIN cube run: d 5 T>=16 answered SAT by TR_d5_T16 (modelck SAT, SEGMAX 7 UNSAT / 8 SAT controls); d5c_t16 record 1184 UNSAT 0 SAT;
+  re-aimed (Lead ruling): SEGMAX=13 SYM0=1 SYMB=1 TL=1200 P=2 nohup python3 cubes.py 5 17 cubes/d5c_t17 >> out/cubes_d5c_t17.log 2>&1 &
+  (cwd experiments/red/r200; label «conditional on SEG-CAP (R109 L-4 as encoded) and T*(4) = 13 (lane)»). d 4 T>=14 line unchanged.
+- Lead reading (09:35Z): W-ONLY bound is ISO-only; FLIP-ADD => T^R_ISO polynomial; excess measured against T^R_ISO-best too.
+- Climbs (resumable by rerunning run.sh / runfl.sh with the job file; finished logs skip): cwd experiments/red/r212,
+  ANNEAL=0.8 nohup ./run.sh jobs9.txt 5 ...; ANNEAL=0.6 ./run.sh jobs10.txt 6; ANNEAL=0.8 ./runfl.sh jobsL2.txt 5. Binaries: gcc -O2 -o fk fk.c -lm (fl same).
+- Things only I know:
+  - fk text genome = an ISO ladder of L^R_(m+1); fl reads the same format (m = top level, d = m+1). conv.py converts to box150 JSON.
+  - cert.sh paths are relative to r212/; it needs TMPD (default /tmp).
+  - The local branch ref can be stale while HEAD is right (handover); push waiters must not pgrep for their own command string.
+  - Every record came from LIFT or extend seeds; random climbs are weak (T_0(4) 11).
+
+## Successor 51 handover check (2026-11-06 07:4xZ, date -u)
+1. Branch claude/l-red. Clone checkout was detached at 62395ebc (= ls-remote); local branch ref was stale at 429351d5 (successor 49 PARK,
+   ancestor): reset ff to 62395ebc. After «git fetch --deepen=500»: vs trunk claude/vibrant-johnson-nxvvxo 1b755504: 59 ahead / 357 behind,
+   merge-base 39588215.
+2. Open work and next step:
+   - Cubes relaunched 07:37Z (cwd experiments/red/r200, PARK lines): MAIN conditional d 5 T>=16 (P=2); unconditional d 4 T>=14 (P=1,
+     nice 19). Harness-tracked wait loop armed (until ! pgrep -f "cubes.py 5 16"). Next: snapshot state at each check.
+   - BOX R212 (Lead, started now): adversarial co-designed lower bounds against FLIP-ADD (T_2(m) <= T^R(m) + O(m)) at m 4-6 by construction
+     + simulation; next: read L-SI IM frame (box 71-74) and L-NEW box 150 Gen / flipdp, build the T_k simulator check, climb.
+   - Not running: R211 d 5 queries A / B (UNKNOWN at 2 h; retry line in PARK); PM on L^R_4 stopped (Lead); R205 dropped.
+3. GAPS rows (trunk docs/GAPS.md @ 1b755504): G-NEST (major, «L-RED (attacks + proof attempts)», open); L-RED attacks GAP-A, GAP-C
+   (blockers, open), G-STR, G-DOM (closed). G-N5-TIME (major, L-NEW, open) is the one R212 works against under D1/D18.
+4. Rulings (verbatim; status from trunk docs/DECISIONS-INDEX.md): D1 «A claimed polynomial algorithm is far more likely to be wrong
+   than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.» (active); D18 «Focus on
+   N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer
+   science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without
+   asking me questions. Clearly distinguish proven results from conjectures and open problems.» (active); D20 «We have reset the weekly
+   usage, so we can again work faster no?» (active; Lead reading L48: full pace, stop on paid overage).
+5. Trap (bit this start): the local branch ref was stale (429351d5, two parks old) while the checkout sat detached at the right SHA;
+   committing on «git checkout claude/l-red» would have built on the old park. Check: compare «git rev-parse claude/l-red» (not only
+   HEAD) with ls-remote before the first commit. Standing traps: shallow clone (deepen before counting); restarts kill nohup runs
+   (resumable cubes only, wait loop armed); never two push.sh at once (pgrep first).
+
+## Successor 50 PARK (2026-11-06, date -u; ~500k context; R207-R211)
+- RESULTS of this session (all DATA unless marked; files docs/red/R207-tstar.md, R208-topcouple.md, R209-topc-kill.md, R210-pairlin.md,
+  R211-dbl.md):
+  - R207: T* >= 13/17/25/31/33/42/46 (d 4-10, helpers); T^R >= 18/20 (d 6/7); increments flat (~5.5/level); I <= d+1.
+    Lemma TOP-ADD PROVED (lane).
+  - R208: Lemma TOP-SPLIT PROVED (lane), T <= (m+1) T*(d-1) + m. CONJECTURE TOP-C (gain' <= 2 + C).
+  - R209: TOP-C DEAD (L-NEW box 175 seeds confirmed under exact gain'). Co-designed re-arm gain flat at C = 1.
+  - R210: PAIR-LIN adversarial: best F per level 2/6/12/14/15; F <= 2|W| everywhere.
+  - R211: no 3 consecutive doubling levels; obstruction = step count (F <= T). EXACT d 4 (T^R(4) = 13 < 14). d 5: 0, 2, 6, 14 UNSAT
+    (runs <= 16). 2, 6, 14 and F2 >= 13 UNKNOWN (2 h). c4x level-2 pair flips at every step (saturated). xcnf FMIN / FMAX added.
+- RUNNING (container-local; relaunch after any restart, cwd experiments/red/r200, idempotent, state in cubes/):
+  1. MAIN: SEGMAX=13 SYM0=1 SYMB=1 TL=1200 P=2 nohup python3 cubes.py 5 16 cubes/d5c_t16 >> out/cubes_d5c_t16.log 2>&1 &
+  2. SYM0=1 SYMB=1 TL=900 P=1 nohup nice -n 19 python3 cubes.py 4 14 cubes/d4s_t14 >> out/cubes_d4s_t14.log 2>&1 &
+  3. (ended) R211 d 5 queries A / B hit the 2 h cap (UNKNOWN). To retry with a longer cap: TMIN=0 SYMB=1 FMIN=0:2,1:6,2:14 nohup
+     timeout 21600 python3 xmax.py 5 16 out/r211/d5_H16_A.json > out/r211/d5_H16_A.log 2>&1 & (B: FMIN=2:13).
+  - Keep a harness-tracked wait loop armed while they run (until ! pgrep -f "cubes.py 5 16"; ...; 2 h cap, re-arm).
+- Stopped by Lead ruling: PM on L^R_4 (stays stopped); R205 DROPPED.
+- Things only I know:
+  - The clone is shallow: «git fetch --deepen=500» before counting ahead / behind.
+  - Container restarts ~every 1-2 h this session (3 seen): every nohup run dies; state files survive.
+  - lemck crashes on genomes whose gates are not 0..M-1 (e.g. 2000+ in box160 files): renumber order-preservingly first.
+  - The same-start gain' is start-sensitive: use the all-starts gain (r208/gainx.py prints both).
+  - gclimb: SCORE=FLEV PL=l is the useful pair-flip score (MARGIN / FTW stick at seeds). extend() cannot shrink depth.
+  - xcnf FMIN counts transitions 0->1 .. L-1->L of Rk. With TMIN=0 and horizon H, UNSAT is exact only for runs of <= H steps.
+  - «A && B &» backgrounds the whole and-list (mkdir raced once).
+  - My error (corrected at once): started a second push.sh while one was running (05:0xZ). I killed it and its orphan verify.sh
+    processes by PID, and nothing was pushed twice. Check pgrep -f scripts/push.sh before every push.
+  - The stop hook fires on every turn while the cubes run (they rewrite cubes/*_state.json): snapshot-commit, push when no push runs.
+
+## Successor 50 R210 (= Lead's «R209 re-aimed», 2026-11-06) — docs/red/R210-pairlin.md
+- PAIR-LIN: no kill. Best F per level 2, 6, 12, 14, 15 (|W| 2, 4, 6, 8, 10); F − 2|W| ≤ 0 everywhere; equality only at
+  c4x-type 12 / 6. F flattens and is d-independent per level (L-NEW LADDER cap 3^(l+1) − 1).
+- 9 keep files replayed (verify_kill, box150 VIOL 0, lemck 0).
+- gclimb SCORE=FLEV PL=l is the useful score; MARGIN / FTW stay stuck at their seeds.
+- Keep-alive waiter: bwux7cgy0-type until-loop on «cubes.py 5 16» (re-arm after each restart / 2 h timeout).
+
+## Successor 50 R209 (2026-11-06, date -u) — docs/red/R209-topc-kill.md
+- TOP-C DEAD: L-NEW box 175 seeds confirmed under my exact gain′ (r208/gainx.py). gain′ 4 / 8 / 7 / 4 > 3; all-starts gains 4 / 7 / 6 / 4.
+  All replayed; lemck needs the gates renumbered (iso_d4_st9_rn).
+- Weak form T ≤ T*(d−1) + 2 + C: false at d 4 (g4_L12, 12 > 11), conditional on T*(3) = 8 over 𝓛_3 (helpers: DATA).
+- (b) Co-designed re-arm climbs (coclimb SCORE=rearm / gain), d 4-7: all-starts gain ≤ 7 at C = 1; re-armed segments short;
+  no growth.
+- Trap: the same-start gain′ is start-sensitive (ra6_s4: 15 same start vs 3 over all starts). Report both.
+
+## Successor 50 R208 (2026-11-06, date -u) — docs/red/R208-topcouple.md
+- Lemma TOP-SPLIT PROVED (lane): between top moves, the lower part runs as one (d−1)-level genome with proxy helpers. Hence
+  T ≤ (m+1)·T*(d−1) + m. split_ck: 957 segments, 0 violations.
+- CONJECTURE TOP-C: gain′ ≤ 2 + C (gain′ against the best re-routing of the C couplings). Not proved: the route via SEG-ONCE + RENEW
+  stops at TOP-SPLIT.
+- Attack DATA: gain′ 3 (C = 1; bases T 17 / 25 / 31) and 4 (C = 2); ≤ 4 at C = 3. No growth with T(d−1); no kill.
+- Naive gain_x (couplings sent to X) is degenerate (26 at C = 1).
+- Container restarted ~00:5xZ (3rd time); cubes relaunched with the same lines.
+- coupext GAIN=t prints T in the «gain» slot of its final line.
+
+## Successor 50 R207 (2026-11-05, date -u) — docs/red/R207-tstar.md
+- DATA lower bounds (replayed: ideal.py, L-NEW box150 XSIM 0 + 13 counters 0, box166 well-formed, lemck 0 on d 5-7 and TR_d6):
+  - T*: d 5 >= 17, d 6 >= 25, d 7 >= 31, d 8 >= 33, d 9 >= 42, d 10 >= 46 (helpers, 2 aux per level). I / L (box171 frozen.py) <= 0.39, I <= d + 1 everywhere.
+  - T^R: d 6 >= 18, d 7 >= 20.
+  - d 4 with helpers: 13 (no gain).
+  - Growth is linear; nothing superlinear. Flips: no pair beyond dd's 14 / |W| 8.
+- Lemma TOP-ADD PROVED (lane): a Ξ-unreached top level adds <= 2 steps. topadd_ck 800 random genomes, 0 violations.
+- Cube snapshot at commit: d5c_t16 208 done / 6 split; d4s_t14 2564 done / 15 split (Lead 23:12Z: PM L^R_4 stays stopped; R205 DROPPED).
+- My error, corrected before commit: the draft called the d 8 top extension an instance of TOP-ADD. Its genome has 2 lower Ξ-targets
+  in the top level, so it is not.
+- Container restart ~23:0xZ killed every run and the first push (relaunched; push e443f60c landed after).
+- RELAUNCH (cwd experiments/red; idempotent for the cubes; climbs are restartable from r207/keep or r207/out bests):
+  - r200 cubes: same lines as «Successor 49 PARK» items 1 and 2 (d 4 at P=1 nice 19).
+  - climb: AUX=2 WFREE=1 SEED=r207/keep/Tstar_d8_T33.json nohup nice -n 5 python3 r207/gclimb.py 9 400000 91 r207/out/F9_s91.json > r207/out/F9_s91.log 2>&1 &
+- Things only I know:
+  - gclimb's extend() assumes two-option movers 0..2d0-1 first, then aux.
+  - Top extensions gain <= 2 unless Ξ-coupled.
+  - LIFT + MAXLEV=1 climbs gain only 1-3.
+  - verify_kill.py piped into head raises BrokenPipe (harmless).
+  - The clone is shallow: deepen before counting ahead / behind.
+
+## Successor 50 handover check (2026-11-05 22:5xZ, date -u)
+1. Branch claude/l-red. Clone head was 429351d5 at 22:06Z; polled ls-remote every 5 min; 5e98e81e appeared between 22:47Z and 22:52Z;
+   fetched + ff-only: HEAD 5e98e81e = ls-remote. The clone is SHALLOW: the first count vs trunk said 9394 behind (wrong). After
+   «git fetch --deepen=500»: vs trunk claude/vibrant-johnson-nxvvxo 1bf69719: 43 ahead / 277 behind, merge-base 39588215.
+2. Open work and next step:
+   - R207 (BOX, started 22:1xZ): lower-bound constructions of T*(d) (𝓛_d, degree-1 movers allowed) and T^R(d) (R197 ladders) for
+     d 6-10 by construction + simulation; next: staged climbs d 6 -> 10, diagnostics (segments, pair flips vs |W|), replays.
+   - Relaunched 22:52Z (cwd experiments/red/r200, same lines as «Successor 49 PARK»): MAIN conditional d 5 T>=16 (P=2; state 82 done,
+     6 split); unconditional d 4 T>=14 (nice 19, P=1 instead of 3 to leave cores for R207; state 2548 done, 14 split).
+   - Not relaunched: PM on L^R_4 mover 6 (18 cubes done in ~2 h; not cheap; resumable, same line); R205 T_3(3) >= 14 (monolithic,
+     12 h cap, not resumable, no run of > 6 h has survived a restart here): NOT restarted; it needs a cube design first (Lead decides).
+3. GAPS rows (trunk docs/GAPS.md): G-NEST (major, «L-RED (attacks + proof attempts)», open); L-RED attacks GAP-A, GAP-C (open), G-STR,
+   G-DOM (closed). G-N5-TIME (open) is L-NEW's; L-RED works against it under D18.
+4. Rulings (verbatim; status from trunk docs/DECISIONS-INDEX.md): D1 «A claimed polynomial algorithm is far more likely to be wrong
+   than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.» (active); D18 «Focus on
+   N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer
+   science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without
+   asking me questions. Clearly distinguish proven results from conjectures and open problems.» (active); D20 «We have reset the weekly
+   usage, so we can again work faster no?» (active; Lead reading L48: full pace, stop on paid overage).
+5. Trap: container restarts kill detached solver runs (5/day; monolithic > 6 h never survived). Check: only resumable cube runs with
+   tracked state files, relaunch lines written before launch, a harness-tracked wait loop armed while they run. New trap this start:
+   a shallow clone gives wrong ahead/behind counts; check = deepen before counting.
+
+## Successor 49 PARK (2026-11-05 21:1xZ, date -u; ~540k context; Lead asked to park near 600k)
+- RESULTS (all in docs/red/R200-xcnf.md + notes below; labels EXACT = CaDiCaL, replayed under r187/ideal.py):
+  - xcnf engine (r200/xcnf.py) validated (k2 d4/d5, k3 d5, bf.py 85/85, agree 88/90).
+  - R202: T*(5) >= 15 (pin max_d5_L15_n96). T>=16 open.
+  - R203: d 4 max C_1 = 8 (LEVEL-PRODUCT ceiling); C_1 8 + C_2 >= 11 SAT.
+  - R204: d 4 segment queries trivial by T*(4) = 13.
+  - R206: PM holds on L^R_3 (exact, all 6 movers); PM killed in general by L-NEW box 166 (my independent replay confirms: mover 12
+    moves 6 > 5). PM'_S: 0 violations on 13 genomes (no quick kill).
+  - R200 (NEST(3) d 6) UNKNOWN; R201 groundwork only.
+- RUNNING NOW (all resumable unless marked; cwd experiments/red/r200; rerun the same line after a restart, state files tracked in cubes/):
+  1. MAIN (Lead): conditional d 5 T>=16 (SEG-CAP, label every UNSAT «conditional on SEG-CAP (r200/xcnf.py SEGMAX @ f6a11760) and
+     T*(4) = 13»): SEGMAX=13 SYM0=1 SYMB=1 TL=1200 P=2 nohup python3 cubes.py 5 16 cubes/d5c_t16 > out/cubes_d5c_t16.log 2>&1 &
+     SEGMAX checks: d 3 unchanged (8 SAT / 9 UNSAT); d 4: T 13 kept by witness max_d4_L13 (segments [5,1,5] <= 8).
+  2. Background (nice 19): unconditional d 4 T>=14 validation: SYM0=1 SYMB=1 TL=900 P=3 nohup python3 cubes.py 4 14 cubes/d4s_t14 >
+     out/cubes_d4s_t14.log 2>&1 &   (then renice -n 19 its pids). ~2500 cubes UNSAT, 0 SAT, ~1/3 of the 120 tops.
+  3. PM on L^R_4, one mover: TMIN=0 PMX=6 SYM0=1 SYMB=1 TL=1200 P=1 nohup python3 cubes.py 4 13 cubes/pm_d4_x6 > out/pm/cubes_d4_x6.log 2>&1 &
+     (x 4, x 2 stopped; same line with their x resumes.) Label «PM on L^R_4».
+  4. R205 (MONOLITHIC, not resumable): T_3(3) >= 14 via L-NEW iso.py (FREE0 ISO KF=3; see the 17:5xZ line above). L-SI has >= 13.
+     Still to do in R205: T_4(3) (KF=4 d 4), T_2(4) (KF=2 d 5); L-NEW keeps T_1(3), T_2(3).
+  - Paused: unconditional d 5 T>=16 (cubes/d5s_t16, 138 UNSAT); R200 pcegar (nogoods/, 83).
+- NEXT (Lead 21:02Z, R207, not started): attack CONJECTURE PAIR-LIN (L-NEW box 168, docs/new/N5-CLOCK-box168.md on claude/l-new when
+  pushed): flips(p,q) <= c |{p,q} u W(p) u W(q)| for same-level pairs. Build dd / dbl / lag clocks to d 6-10 by construction +
+  simulation (no SAT), run box168/pairflips.py (or own) per file, report top-pair flips vs |W| per d (superlinear kills; slope > 2
+  refutes c = 2). Start points: r197/lag/dd_d5_F14, dbl_d3_F6, dbl_d4_F10 (top KF 6, 10, 14 at d 3-5).
+  Lead 21:35Z: L-NEW box 169/170 (claude/l-new 7c3f9e1a when pushed, docs/new/N5-PAIRLIN-box169.md) builds a DOUBLING TOWER (2-wide
+  W-ladder, each level-l mover with a disjoint Xi-gadget of desc O(l); predicted F(l) = 2^(l+1) - 2; dd_d5_F14 = its levels 0-3, own flips
+  3, 6, 14, stops at level 4 for lack of Xi capacity of movers 8, 9). L-RED role (D1-strict): replay EVERY tower file with r187/ideal.py
+  + r189/lemck.py and attack it for any broken R104 hypothesis (acyclic Xi, W one level down, distinct gates / ranks, degree); for R207
+  report where own clocks lose doubling and whether it is always Xi capacity.
+- Things only I know:
+  - Container restarts: ~5/day; L-COMP thinks idle reclaim (keep a harness-tracked wait loop armed). Monolithic runs >6 h never survived.
+  - push.sh: 20-90 min under load; GitHub 500 twice (retry); one transient verify failure (experiments/new P-N5-TOPSHAPE under load;
+    passes alone). Never two pushes at once. Snapshot cube state at each check.
+  - SAT witnesses: renumber gates (2000+) before stab / lemck. State-file key format «mover:firstmove;…».
+  - My errors this session (corrected): lemck claimed before running (12:35Z → 12:38Z); wrong counts in a commit message (11:0xZ,
+    corrected in notes); guessed split list (16:06Z → 16:08Z). Rule: only report numbers read from a file in the same turn.
+
+## Successor 49 HANDOVER (2026-11-04 21:1xZ, date -u; container restarted 21:03Z, every run killed; D19 window over)
+- DONE (claude/l-red, push.sh VERIFY PASS each; last pushed 9a5a5879): r200 engine + validation, R202 pin max_d5_L15_n96, R203
+  witnesses, R204 segment queries, docs/red/R200-xcnf.md (the result file for R200-R204; read it first).
+- KILLED at 21:03Z (none had answered; all UNKNOWN at their run time):
+  - R202 d 5 T>=16 Kissat (started 14:53Z, ~6 h): SOLVER=kissat404 SYMB=1 python3 xmax.py 5 16 out/max/d5_t16K.json. (CaDiCaL 6 h
+    UNKNOWN for T>=16 and T>=17 earlier.)
+  - R203 d 4 C_2 >= 12 | C_1 = 8 (started 13:1xZ, ~7.8 h): TMIN=0 CMIN=0:2,1:8,2:12 SYMB=1 python3 xmax.py 4 13 out/c/d4_c18_c2_12.json
+  - R204 d 4 seg1+tail >= 11 (started 12:5xZ, ~8 h): TMIN=0 SYMB=1 SEG=1t:11 CMIN=0:2 python3 xmax.py 4 13 out/seg/d4_1t11.json
+  - R204 d 5 seg1+tail >= 14, horizon 20 (started 13:0xZ, ~8 h): TMIN=0 SYMB=1 SEG=1t:14 CMIN=0:2 python3 xmax.py 5 20 out/seg/d5_1t14_H20.json
+  - R200 pcegar k3/ag_0: 58 no-goods (cores 3-7 literals); k3p2/ag_0 44; k3p2/ag_4 2. No-goods committed in r200/nogoods/; to resume,
+    copy them to out/ (cp nogoods/pc_*_nogoods.json out/) and rerun «nohup timeout 36000 python3 pcegar.py out/ag/<t>.json 2 10
+    out/pc_<tag>_T10 > out/pc_<tag>_T10.log 2>&1 &» (targets: python3 ../r199/allgates.py 3 3 out/ag/k3; ... 3 2 out/ag/k3p2).
+- 23:43Z restart again (5th): d 5 T>=16 and seg runs lost (2 h 38 min each, UNKNOWN). Lead 00:22Z: convert to resumable runs.
+- RESUMABLE RELAUNCH LINES (idempotent: rerunning continues; cwd experiments/red/r200; state files are tracked in r200/cubes/):
+  - R202 validation d 4 T>=14 (must be UNSAT, R197): SYM0=1 SYMB=1 TL=900 P=3 nohup python3 cubes.py 4 14 cubes/d4s_t14 > out/cubes_d4s_t14.log 2>&1 &
+  - R202 d 5 T>=16: SYM0=1 SYMB=1 TL=1200 P=2 nohup python3 cubes.py 5 16 cubes/d5s_t16 > out/cubes_d5_t16.log 2>&1 &
+  - R204 d 5 seg1+tail>=14 (horizon 20): TMIN=0 SYMB=1 SEG=1t:14 CMIN=0:2 TL=1200 P=1 nohup python3 cubes.py 5 20 cubes/d5_seg14 > out/cubes_d5_seg14.log 2>&1 &
+  - R200 pcegar: cp -n nogoods/pc_k3_0_T10_nogoods.json out/; nohup timeout 43200 python3 pcegar.py out/ag/k3/ag_0.json 2 10 out/pc_k3_0_T10 > out/pc_k3_0_T10.log 2>&1 &
+  - cubes.py: partition on first-move times of movers (0,1), split on timeout (TL s) to (2,3) then (4,5); forked worker per cube,
+    killed at TL; state <prefix>_state.json written after every cube (done / split), reread on start. Validated d 3: T>=9 UNSAT (100 cubes,
+    166 s), T>=8 SAT (replay L 8), resume skips all. SYM0=1: level-0 swap broken by cube order f0 <= f1 (never = inf) instead of
+    the level-0 SYMB clause (sigma_0 swaps the level-0 first-move times; fix level 0 first, then levels >= 1): d 3 T>=9 UNSAT 55 cubes 83 s.
+  - Paused 01:1xZ for the d 4 validation: pcegar k3/ag_0 (resume line above).
+  - 03:47Z d 5 T>=16 cubes started (P=1; raise P after d 4 ends by killing and rerunning the same line). R204 d 5 monolithic stopped.
+  - CORRECTION: the snapshot commit «11:0xZ (d 4: 1680 UNSAT, 10 split; d 5: 151 UNSAT)» has wrong numbers typed by me; the observed
+    counts at 11:03Z were d 4 1454 UNSAT, 8 split; d 5 118 UNSAT, 2 split (the state file in that commit is what it is).
+  - 14:2xZ Lead (c): CONDITIONAL runs with SEG-CAP (L-NEW box 158 / R109 L-4) as SEGMAX clauses; label every UNSAT «conditional on
+    SEG-CAP (as encoded in r200/xcnf.py@<sha>) and T*(4) = 13». segck.py: 3022 runs, 0 violations. Relaunch lines (idempotent):
+    SEGMAX=13 SYM0=1 SYMB=1 TL=1200 P=2 nohup python3 cubes.py 5 16 cubes/d5c_t16 > out/cubes_d5c_t16.log 2>&1 &   (d 5, conditional)
+    checks: SEGMAX=4 d 3 T>=9 UNSAT (55 cubes 109 s), T>=8 (running); SEGMAX=8 SYMB=1 xmax.py 4 13 (SAT expected; running).
+    Unconditional d 4 T>=14 kept at nice 19 (same line as before); unconditional d 5 (cubes/d5s_t16) paused, resumable.
+  - 17:5xZ: d 4 T>=13 under SEGMAX 8 settled by witness: max_d4_L13 (R197, exact) has segments [5, 1, 5] <= 8 and the ladder convention,
+    so SEGMAX 8 keeps 13 (monolithic SAT check stopped after ~3.5 h). R205 STARTED (one core, MONOLITHIC, not resumable): L-NEW iso.py
+    @ claude/l-new 9e1a6b02 read-only from scratch worktree: LRED=/home/user/parity_games_challange FREE0=1 ISO=1 KF=3 nohup timeout
+    43200 python3 <lnew>/experiments/new/box160/iso.py 4 14 out/r205/kf3_d4_t14.json > out/r205/kf3_d4_t14.log (T_3(3) >= 14?; L-SI has >= 13).
+    L-NEW logs read: T_2(2) = 7 (kf2 d3 t8 UNSAT), T_3(2) = 8, T_4(2) = 8, T_8(2) = 9; T_1(3) >= 10.
+  - 19:4xZ R206 (Lead 19:36Z, top priority): kill query for L-NEW CONJECTURE PM (box 165): PMX=x in xcnf (sum_t mv[t,x] + sum_y
+    not reach[x,y] >= N + 1, i.e. moves(x) >= 2 + desc(x)); horizon T*(d) covers every run. d 3 (horizon 8): all 6 movers UNSAT
+    (0.7-40 s) = PM holds on L^R_3 (exact). d 4 (horizon 13), resumable: for x in 6 4 2 (then 7 5 3 1 0): TMIN=0 PMX=$x SYM0=1 SYMB=1
+    TL=1200 P=1 nohup python3 cubes.py 4 13 cubes/pm_d4_x$x > out/pm/cubes_d4_x$x.log 2>&1 &. Conditional d 5 paused (resumable).
+  - 20:2xZ R206: PM DEAD in general (L-NEW box 166). Independent replay of KILL_PM_compose_dd_d5_F14 (claude/l-new 89c05d7c, sha1
+    c025a4b6): r187/ideal.py T 14 stuck; mover 12 moves 6 > (deg-1)(1+desc) = 5 (desc {10,11,13,14}); N 15, deg 2, levels 0-4, acyclic,
+    W one level down, gates / ranks distinct; lemck 0 violations. PM on L^R_3 holds (exact); L^R_4 only x = 6 running (cubes/pm_d4_x6).
+    Lead 19:48Z: conditional d 5 T>=16 is the main job again (relaunched 19:5xZ).
+  - QUEUED R205 (Lead 03:48Z, L-NEW box 160 on claude/l-new 96650e2c: xcnf_free0.py, iso.py): T_2(4) (= ISO at d 5) and T_k(3), k 1..4,
+    in the cube driver; after R202 has its cores. Lead 04:21Z: needs box160/xcnf_free0.py (FREE0=1) AND box160/iso.py (ISO, b_0 flips,
+    KF seqcounter, every step moves a level >= 1 mover, LEM=0 forced); run «LRED=<dir> FREE0=1 ISO=1 KF=k python3 iso.py d t out.json»,
+    d = m + 1; validate T_k(1) = 2,3,3,3 and T_k(2) = 4,5,7,8,8; scope = T_2(4), T_3(3), T_4(3) only (L-NEW keeps T_1(3), T_2(3)).
+- Setup after a fresh container: pip install z3-solver python-sat; scripts/setup_oink.sh (for pins).
+- Things only I know:
+  - xcnf is 10-50x faster than z3 on the r199 models; the k 3 d 6 hardness sits in steps 15-16 of the L 16 target (14-step prefix SAT).
+  - Monolithic d 6 / d 5 T>=16 runs need > 6 h; container restarts came at 02:01Z, 02:23Z, 21:03Z; only resumable designs (pcegar
+    no-goods on disk) survive.
+  - push.sh under full CPU load takes 40-90 min; one GitHub 500 (11:17Z) needed a retry. Do not start a second push while one runs.
+  - SAT witnesses carry gates 2000+ for free levels: renumber (order-preserving) before stab.py / lemck (my 12:35Z lemck claim was
+    made before running it; corrected 12:38Z).
+  - At d 4 every segment / C query is capped by T*(4) = 13 (R197); only d >= 5 queries are informative.
+  - R201: only heuristic groundwork (r201/wclimb.py); nothing exact.
+- NEEDS: (answered by the Lead 21:04Z: relaunch R202 T>=16 and R204 d 5.) Relaunched 21:05Z (cwd r200, timeout 43200):
+  SYMB=1 xmax.py 5 16 out/max/d5_t16R.json; TMIN=0 SYMB=1 SEG=1t:14 CMIN=0:2 xmax.py 5 20 out/seg/d5_1t14_H20R.json; pcegar k3/ag_0 (58).
+
 ## Successor 49 handover check (2026-11-04 00:2xZ, date -u)
 1. Branch claude/l-red, head 32f6e040 (= ls-remote at 00:18Z; clone was current, ff-only no-op). vs trunk claude/vibrant-johnson-nxvvxo:
    36 ahead / 36 behind, merge-base bb828553.
@@ -83,7 +457,30 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   (~500 MB per solver). 02:53Z push b36d9bd1. Prefix runs (out/pre/, python one-liner truncating states): k3p2_0 first 10 steps SAT
   262 s, first 14 steps SAT 623 s (EXACT, replay matches). Hinted extension of the t14 solution UNSAT 42 s (inexact).
 - 03:1xZ (cwd r200) for T0 in 10 14; do nohup timeout 36000 python3 pcegar.py out/ag/k3p2/ag_0.json 2 $T0 out/pc_k3p2_0_T$T0 >
-  out/pc_k3p2_0_T$T0.log 2>&1 & done   (resumable: no-goods in out/pc_*_nogoods.json; relaunch = same command)
+  out/pc_k3p2_0_T$T0.log 2>&1 & done; 04:2xZ same for out/ag/k3p2/ag_4.json T0 10 -> out/pc_k3p2_4_T10; 05:0xZ T0 14 stopped (no proposal in 1 h), out/ag/k3/ag_0.json T0 10 -> out/pc_k3_0_T10 (resumable: no-goods in out/pc_*_nogoods.json; relaunch = same command)
+- 07:0xZ Lead: R202 (exact max T at d 5, 2-wide degree-2 ladder) = priority beside R200; R201 queued (W-side over L-NEW box 153 ladders).
+  R201 groundwork (r201/wclimb.py, free start, 6 x 6000 mutations): best L 4 / 7 / 9 for K 3 / 4 / 5 (LP 22 / 52 / 114; 2n 12 / 16 / 20);
+  with ladlp's own start (the antipode of the sink) every W side tried gives L 1. DATA only.
+- R202 (cwd r200): xmax.py d t (xcnf with no prescribed movers, free level 0, TMIN). d 2: T>=4 SAT / 5 UNSAT 0.1 s; d 3: T>=8 SAT 10.7 s
+  (replay L 8) / T>=9 UNSAT 13.5 s; with SYMB=1 (level-swap symmetry break): 8 SAT 41 s, 9 UNSAT 16 s (under load). Running (08:2xZ):
+  nohup timeout 7200 python3 xmax.py 4 14 out/max/d4_t14.json; SYMB=1 nohup timeout 14400 python3 xmax.py 4 14 out/max/d4_t14S.json;
+  SYMB=1 nohup timeout 14400 python3 xmax.py 5 15 out/max/d5_t15S.json (logs: same name .log). d4 t13 (no SYMB) stopped at 75 min.
+  pcegar k3p2/ag_4 paused at 08:2xZ (2 no-goods; one F check > 1 h); relaunch line above resumes it.
+- 09:0xZ R202 d 5 T>=15 SAT 2092 s -> r202/max_d5_L15 (pin n 96, PIN OK; check.sh R202). Running (r200): SYMB=1 xmax.py 5 16 / 5 17
+  (timeout 21600, out/max/d5_t16S.log, d5_t17S.log). 10:4xZ XTHINT (L15 Xi-graph fixed) T>=16 UNSAT 18 s (inexact).
+- 11:5xZ R203 (Lead 11:49Z): CMIN="l:b" in xcnf (C_l = #steps moving a level-<=l mover, seqcounter). d 4 horizon 13 = exact max T, so exact.
+  Running: for b in 4 6; do TMIN=0 CMIN=0:2,1:$b SYMB=1 nohup timeout 14400 python3 xmax.py 4 13 out/c/d4_c1_$b.json > out/c/d4_c1_$b.log 2>&1 & done
+  Stopped: d4 T>=14 SYMB (R197 has it; 3 h no answer); pcegar k3p2/ag_0 paused at 44 no-goods (resume = same line).
+- 12:3xZ R203 d 4: C_0 2 + C_1 >= 4/6/7/8 all SAT (19/20/61/134 s); C_1 = 8 = LEVEL-PRODUCT ceiling, witness r203/d4_C1_8 (L 10, C [2,8,10,10],
+  lemck 0 after gate renumbering; my 12:35Z message claimed lemck before running it: corrected 12:38Z). C_2 >= 11 | C_1 = 8 running
+  (out/c/d4_c18_c2_11.log); >= 12 stopped 12:5xZ for R204.
+- 12:5xZ R204 (Lead 12:46Z, L-NEW box 158 SLOT-TRADE): SEG "1t:s,1:m,t:m,m:m" in xcnf (segments = nonempty steps before / between / after
+  the level-0 steps). d 4 seg1+tail >= 10 SAT 91.5 s (split [5,0,5]). Running: SEG=1t:11, 1t:12, 1:6,t:6 (TMIN=0 SYMB=1 CMIN=0:2 xmax.py
+  4 13 out/seg/d4_<tag>.json > .log). pcegar k3/ag_0 paused at 38 no-goods (resume = its line above).
+- 14:53Z d 5 T>=16 / T>=17 (SYMB, CaDiCaL): UNKNOWN at the 6 h timeout. Relaunched: SOLVER=kissat404 SYMB=1 nohup timeout 21600 python3
+  xmax.py 5 16 out/max/d5_t16K.json > out/max/d5_t16K.log; pcegar k3/ag_0 resumed (38 no-goods). R203 d 4 C_1 8 + C_2 >= 11 SAT 4690 s
+  (r203/d4_C1_8_C2_11, L 11, C [2,8,11,11]); C_2 >= 12 running (out/c/d4_c18_c2_12.log). R204 d 4: seg1+tail >= 12 / min >= 6 UNSAT
+  (trivial: T*(4) = 13); seg1 >= 8 SAT [8,0,0]; 5/5 SAT; seg1+tail >= 11 running; d 5 seg1+tail >= 14 horizon 20 running (out/seg/).
 - Cross-checks: bf.py (brute force N 4 + GREEDY) 85/85 agree with xcnf (LEM on/off), 8 UNSAT; agree.py vs xisat 30/30 + 29/30 + 29/30,
   the two non-agreements are xisat UNKNOWN (z3 timeout 600-900 s, FD too) vs xcnf UNSAT on N 8 L 3 instances (s5_15: noLEM UNSAT too).
 

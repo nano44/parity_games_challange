@@ -1,7 +1,125 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## HANDOVER (successor 59, PARKING 2026-11-07 ~08:5xZ by date -u; Lead 08:51Z: handover + park at ~440k)
+### DONE (every push via scripts/push.sh, VERIFY PASS (Oink smoke NOT RUN: Oink not built); Lead informed each time)
+- Step 0 + box 191 XI-CYCLIC (f09f67ec): IDEAL-CYC; HOWARD-EQ; BR-SEG / CYC-COUNT / T-CYC / ONEP-POLY; SEG-2P, ODD-FIXED DEAD;
+  RED-XI. ca2006d8 (tie-divergence genomes written by check191.sh). Addendum 1 (d6472691): REACH3-CYC (iii) closed (lane), LEVEL0,
+  literature (HMZ arXiv 1008.0530 Lem 5.3/5.4 = DOM folklore; Friedmann 1106.0778; BR-SEG / CYC-COUNT / ONEP-POLY not found).
+- P-N5-XICYC FROZEN (fd1266a5): packet docs/new/P-N5-XICYC.md 149e2414, L-1 d6f77b12. Fixes entry 1 (86afce49, proactive DATA rule):
+  L-2 857d21c8. Fixes entry 2 (50c80a92, referee fix round: REFEREE 695b610c, REFEREE-2 a0befd6c, nothing REFUSED): F4 -> F4',
+  BR-SEG-G proof = REFEREE STRICT-G / PATH-G, Lemma K2-r (sigma-bar(K2) = r every genome), [1E-N3], N-1, O-1, O-2, N-2; L-3 1690b6ad
+  (5,543 B; W-2, W-3, W-4 (= XC-L1 resolved, Lead ruling), XC-L2 lane form, XC-L3, XC-L4). Fixes file a83e54d2 (14,214 B). Pins
+  experiments/new/box191/xicyc.pins c77781e0 (40 files; check.sh block «P-N5-XICYC»).
+- R117 duty (fdf01b8c): P-N5-REACH fixes entry 3 + L-4 f85a024b (3,942 B = CHECKER C130 §5's sha1); reach.pins 1a075f50.
+### OPEN (for successor 60)
+- DUTY: L-3 byte tests at REFEREE 26 (ITEM 3) and REFEREE-2 30. A returned item -> P-N5-XICYC fixes entry 3 + L-4 by script (copy the
+  exact strings from the report by script, each old string once in L-3; repin xicyc.pins; update check.sh block «P-N5-XICYC» sha + message).
+- DUTY: R117 (P-N5-REACH) at C130 Add. 1 (L-4); R116 (P-IDEAL-MOVES) at C129 Add. 1 (L-5). An item -> next fixes entry + line by script.
+- RESEARCH: is R (steps where Odd's optimal counterstrategy changes, Lambda kept) polynomial along Howard runs on Gamma3 / IDEAL-CYC? That
+  is EQUIVALENT to «N5'-xi's FL run on Gamma3 polynomial for every genome» (Corollary T3). L-RED 53 attacks (R-growth). Proof idea not
+  found: both gate faces' values rise monotonically; flips at level >= 1 only (LEVEL0). Scratch R-climb reached R 8, T 17 at N 12.
+- RED-XI on general games needs TIE-FULL (X1), which fails often (x1gen191.py): a TIE-restricted domination lemma would be the next step.
+### TOOLS (experiments/new/box191/; all imports relative to the file's directory)
+- idealcyc.py (model; ONEP=1 env for the one-player variant), trace191.py (Gamma3 run trace), howard191.py / howard3_191.py (HOWARD-EQ,
+  REACH3-CYC data), eq191.py / rand191.py (Gamma3 vs IDEAL-CYC), segs191.py, oddfix191.py, seg1p191.py, subrun191.py (C / R / p labels),
+  brseg_gen191.py (general games, families), x1gen191.py, level0_191.py, climb191.py + runclimbs.sh (resumable). check191.sh ->
+  check191.out (block «BOX 191 XI-CYCLIC»). data/*.out = the line's seeded commands. inst/: 8 L-RED cyc genomes, 3 DEAD SEG-2P, sae_2..7.
+### Things only I know (successor 59)
+- rand191.py eq writes out/eq_mismatch_<seed>_<i>.json; check191.sh (seed 1) re-writes the 3 committed ones byte-identically; other
+  seeds leave untracked files: delete them before committing.
+- brseg_gen191.py's «of which with an H0 event» counts H0-type events among VIOLATIONS only (my D-3 erratum); the step counter is not H0.
+- When a command starts with cd, the shell stays there: a later relative append (>> check191.sh) once landed in the repo root. Use
+  absolute paths for writes.
+- Referee-string extraction pattern: python re over the report section, join wrapped lines with re.sub(r'\n\s+', ' ', ...), assert
+  count == 1 in the old line, apply in order, assert each new string occurs once; recompute the referee's predicted sha1 first.
+
+## Resume point (successor 59, Opus 5.5; started 2026-11-07 05:03Z by date -u)
+### BOX 191 XI-CYCLIC (docs/new/N5-XICYC-box191.md; experiments/new/box191/; check.sh block «BOX 191 XI-CYCLIC», check191.out)
+- (a) On Gamma3(G) for ANY genome, N5'-xi from S3 = mover phase (movers only; no beta escape, tau unchanged) + 3 iterations; mover step
+  = HOWARD (VJ-best successor). Model IDEAL-CYC (idealcyc.py): Howard at movers of Gamma(G), other Even frozen, Odd best response.
+  REALIZE-CYC: DATA 22/22 exact (8 L-RED cyc + 14 corpus; xi = T + 3), random 1,271/1,300 exact, 29 diverge at exact VJ ties
+  (xi uses SPEC's key there). Proof: (i) TIE = A at movers (arena H with tau = e never sees beta-faces) + (ii) sketch; (iii) tau / escape /
+  core untouched = CONJECTURE. SPEC N5 on Xi-cyclic Gamma3 also = mover phase + 3.
+- (b) PROVED (lane): DOM, STRICT, PATH, BR-SEG (runs with Lambda and sigma-bar constant <= N steps), CYC-COUNT (C <= n(2M+2)),
+  T_CYC <= C + R + (C+R+1) N; ONEP-POLY (gates forced to beta: R = 0, polynomial); general BR-SEG for Howard on any game (H0).
+  DATA: switchallexp N 2-7: C = 0, R 4..241, T 30..1243, p-runs <= 19 (Howard's exponential runs = exponentially many sigma-bar changes).
+  DEAD SEG-2P (inst/DEAD_SEG2P_d4_N8, d7_N14, d9_N18: 9 > 8, 15 > 14, 21 > 18), DEAD ODD-FIXED. Growth (weak climbs): T_CYC <= 33 at N 20.
+  => N5'-xi on Gamma3 super-poly needs super-poly R (gate-face flips of Odd's best response): handed to L-RED 53 via the Lead.
+- (c) RED-XI (PROVED, lane): under X0 + X1 (Howard-faithful sigma-steps), #it <= (nE+1)(n(n-1) + R_sigma + 1) + Q_tau. X1 holds on Gamma3,
+  fails on general games (401/517 at n 12, 333/570 at n 24 sigma-steps faithful; x1gen191.py).
+- Addendum 1 (Lead 05:51Z; doc §6): REACH3-CYC PROVED (lane): (iii) closed by re-reading S3-START, PAD, K3, TAU3 (every genome) and
+  ESC3, W3 (proofs use only tau = pe plays / H-plays, never a beta-face) -> N5'-xi on Gamma3 = Howard on Gamma3 movers until the first
+  fallback, every genome (data howard3_191.py 0/2,167). Level-0 gates never flip (R only at level >= 1). Literature: DOM = folklore
+  (HMZ 1008.0530 Lemma 5.3/5.4); BR-SEG / CYC-COUNT / ONEP-POLY not found in the sources opened. Next: packet P-N5-XICYC.
+- PACKET P-N5-XICYC FROZEN (Lead 05:51Z decision 3): docs/new/P-N5-XICYC.md (149e2414) + line L-1 (d6f77b12); pins
+  experiments/new/box191/xicyc.pins (c65b9655; check.sh block «P-N5-XICYC»); §7 REACH3-CYC CONDITIONAL on P-N5-REACH lemmas (not landed).
+  Fixes entry 1 (proactive, Lead 06:38Z DATA rule): line L-2 857d21c8 (clause-by-clause DATA; LEVEL0 counter level0_191.py 0/17,013;
+  D-3 erratum: 555 steps with a self-cycle-node switcher, not «0 H0 events»); fixes b4ad5bca; pins 521ce400.
+  Fix round (Lead 08:24Z; REFEREE 695b610c, REFEREE-2 a0befd6c, nothing REFUSED): fixes entry 2 (F4 -> F4'; BR-SEG-G proof by
+  REFEREE's STRICT-G / PATH-G; Lemma K2-r sigma-bar(K2) = r every genome; [1E-N3]; N-1, O-1, O-2, N-2) + L-3 1690b6ad (W-2, W-3, W-4
+  = XC-L1 resolved, XC-L2 lane form, XC-L3, XC-L4); pins c77781e0. R117: fixes entry 3 + L-4 f85a024b (C130) pushed fdf01b8c.
+- Next: is R polynomial on IDEAL-CYC (proof attempt: gate-face flips need Even-won Xi-cycle closings?); TIE-restricted DOM for general
+  games; L-LIT check whether ONEP-POLY / BR-SEG is known.
+
+## Successor 59 handover check (STEP 0; written 2026-11-07 05:0xZ by date -u; Opus 5.5)
+1. claude/l-new: ls-remote 727163f0; the clone was SHALLOW and DETACHED at 727163f0 and the LOCAL BRANCH REF was stale (57 behind);
+   fetch --unshallow, checkout claude/l-new, merge --ff-only origin/claude/l-new -> HEAD = claude/l-new = origin/claude/l-new =
+   ls-remote = 727163f0. Vs trunk claude/vibrant-johnson-nxvvxo: 6 ahead / 660 behind (rev-list --left-right --count), merge-base
+   f55dac37. Lane files only.
+2. Open: (a) DUTY P-N5-REACH (R117, C130): L-3 adfbb3b8 at the gate; a CHECKER item -> fixes entry 3 + L-4 by script, packet frozen.
+   (b) DUTY P-IDEAL-MOVES (R116, C129 Add. 1): L-5 a42257cb; an item -> fixes entry 5 + L-6 by script. (c) BOX 191 XI-CYCLIC (new,
+   12 h): REALIZE/REACH3 on Xi-cyclic genomes, IDEAL-CYC model, N5'-xi run-length bound or growth structure for L-RED 53, reduction X.
+   Next = build Xi-cyclic genomes, measure N5'-xi on Gamma3 vs the Xi-graph's cycle structure.
+3. GAPS (trunk): G-N5-TIME major open (owner L-NEW); G-N1-LB minor open (optional, not routed); G-N5-TERM closed.
+4. D1 (DECISIONS, INDEX row 5, active): "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such
+   claim, including the fleet's own, as wrong until it passes the gauntlet below." D14 (row 22, active): "You know it can also test
+   prveiously not tested approaches, it can come up with it own as well". D18 (row 32, active): "Focus on N5 and work toward proving
+   it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually
+   studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly
+   distinguish proven results from conjectures and open problems." (D20 row 42 active: full pace, L48.)
+5. Trap: stale/shallow clone with detached HEAD (fourth successor in a row). Check = fetch --unshallow, checkout the branch,
+   ff-only, then compare HEAD AND the branch ref with ls-remote (done, item 1).
+
+## HANDOVER (successor 58, written 2026-11-07 ~04:1xZ by date -u; context large: park on the Lead's word)
+### DONE (every push via scripts/push.sh, VERIFY PASS; Lead informed each time)
+- Step 0 + box 189 REACH (f55dac37): NO-REACH, Gamma3, REACH3 (lane). P-N5-REACH FROZEN (73b3d1fd): packet b7bd6937, L-1 b12ec57a;
+  SIGNED by both referees (REFEREE f66942c1, REFEREE-2 b0860fcd), no gap. Fix round 1 (571c75c5): fixes entry 1 (307651b2), L-2 4de27b32
+  (RE-L1, W-1, W-2; W-1 old span chosen by me: the referees confirm it in their byte test).
+- P-IDEAL-MOVES C129 duty (0bce3ec2): fixes entry 4 (fba3443a), L-5 a42257cb = C129's sha1. L-4 MATCHED at both referees before.
+- Box 190 DE-TOWER (acdbd28b): the key tie-break is the tower ingredient; IDEAL-XI T <= H, IDEAL-IDX T <= M - N (lane); N5'-xi CANDIDATE.
+- N5'-xi gauntlet paperwork (this push): docs/new/N5XI-GAUNTLET-box190.md; second implementation box190/n5bxi.py (on L-COMP's n5b);
+  xcheck190.py: 10,000 random + 15 families + C14 all agree and correct; BIT-G transfers (R57 (c)); OUT-G (R57 (b)) gives correctness;
+  barrier DRAFT for L-LIT; plot out/xi_growth.png (needs `pip install matplotlib` in a fresh container).
+### OPEN
+- Byte tests: P-N5-REACH L-3 (adfbb3b8, fix round 2, RC-2 by Lead ruling Option B) at both referees; P-IDEAL-MOVES L-5 MATCHES at both. A returned item -> next fixes entry + next line by script (pattern:
+  exact old -> new strings once each; pins in reach.pins / check.sh block «P-IDEAL-MOVES»; packets stay frozen).
+- N5'-xi: L-RED 52 is the adversary (Lead 04:00Z). CANDIDATE, not a claim; G-N5-TIME OPEN. Next if the Lead wants it: L-LIT barrier
+  sign-off, larger N, L-COMP review of n5bxi.py.
+### Things only I know (successor 58)
+- L-RED tree for reach.py / gamma3 selftest: git archive origin/claude/l-red experiments/red/r187 experiments/red/r178 | tar -x -C <dir>;
+  do NOT copy experiments/new/box21 into it. L-LOWER genomes need box189/norm.py (gate / br not 0..M-1).
+- n5b's nvo(x, y) < 0 means y is BETTER for Even (my first n5bxi had the comparator inverted; caught by the cross-check).
+- Two background loops once wrote the same output files (pkill pattern missed the first loop): check `ps` before re-launching.
+- push.sh takes 20-50 min; never commit while it runs (pgrep -f scripts/push.sh).
+
 ## Resume point (successor 58, Opus 5.5; started 2026-11-07 01:45Z by date -u)
+### BOX 190 DE-TOWER (Lead 03:03Z; docs/new/N5-DETOWER-box190.md; experiments/new/box190/)
+- Ingredient = S4a's W-tie broken by the ROOT-FIRST KEY ([RULE] TB): the only rule making a mover's choice depend on other movers'
+  current states. PROVED (lane): IDEAL-XI (Xi-best available) T <= H (Xi-height); IDEAL-IDX (largest gate index available) T <= M - N.
+  N5'-xi / N5'-idx (n5v.py: TIE broken by Xi_sigma / largest index) realise them on Gamma3 (DATA 14/14: iterations = T + 3; sketch on
+  P-N5-REACH lemmas). Correctness of every N5': sigma_new in A(v) => R15 (d) + S5 unchanged.
+- CANDIDATE N5'-xi: 10,000 random (n <= 40) 0 wrong; families correct, spec = xi on 14/15 families (all but tc). N5'-seq DEAD as a fix (longer;
+  does not realise IDEAL-SEQ). Climber idealv.py is weak (spec 10 at d 7 vs L-LOWER 17): data on bounds only.
+- Counter families rerun (out/fam_counter_*.txt): two loops once wrote the same files; both killed and rerun cleanly 03:0xZ.
+- Next: L-RED attack on N5'-xi (Xi-cyclic or untied W gadgets); gauntlet steps 2b-5 if the Lead wants N5'-xi pursued.
+### P-N5-REACH FROZEN (Lead 02:28Z «freeze P-N5-REACH for both referees»): docs/new/P-N5-REACH.md (sha1 b7bd6937) + line L-1
+  docs/new/P-N5-REACH-line-L1.txt (b12ec57a); tool box189/reachcheck.py (c368b363; ~14 s), output reachcheck.out (af50ee34), pin file
+  box189/reach.pins (f0fc1ba6; also gamma3 8758456f, subdiv 63c7ae38, 14 corpus genomes box189/corpus/); check.sh block «P-N5-REACH».
+  Cross-check box189/xcheck.sh -> xcheck.out (n5b SPEC + Oink zlk/verify 28/28; needs scripts/setup_oink.sh). Premises: R104 defs +
+  its landed premises ([1E-N3] l. 9975, [RULE] l. 9989, [VJ-LOC] l. 10011 + R36 (c) l. 1730), SPEC S2-S4 + FIX 1, R15 (d) (finiteness
+  only). NO-REACH re-proved without R15 (a): K0, K1 never have an improving edge while K0 -> K1, K1 -> K0 (S4a/S4c text). SUBDIV DEAD
+  instances A (n 3, fallback flag) and B (n 5, 2 vs 3 iterations). Fixes go to docs/new/P-N5-REACH-fixes.md (append-only).
 ### BOX 189 REACH (docs/new/N5-REACH-box189.md; experiments/new/box189/): question = does N5 from S3 reach R104's IDEAL run on Gamma(G)?
 - PROVED (lane) NO-REACH: on Gamma(G) (every genome) S3 plays K0 -> K1, K1 -> K0 (top even cycle at u); by RESULTS R15 (a)(d) Xi_sigma is
   pointwise monotone, so sigma_j(K0) = K1, sigma_j(K1) = K0 forever: no standard state is ever visited; (acyclic) no beta in any P-set of
@@ -1663,6 +1781,12 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   DATA: correct on 1,038 library + families + hard families; SF ≈ ½ N5; runquad 264 → 2, topfix 7N + 43; switchbestexp N=10 619 vs 89, SBC 97.
   Open count SBC (CONJECTURE SF-POLY OPEN).
 
+## Dead ends (successor 59, box 191; docs/new/N5-XICYC-box191.md §2.1)
+- SEG-2P «in TWO-player IDEAL-CYC every run of steps with all VJ cycle nodes fixed has <= N steps»: DEAD, experiments/new/box191/inst/
+  DEAD_SEG2P_d4_N8.json (9 > 8), DEAD_SEG2P_d7_N14.json (15 > 14), DEAD_SEG2P_d9_N18.json (21 > 18). Obstruction: Odd's best response
+  (gate faces) changes inside the segment (R-steps); BR-SEG (sigma-bar also fixed) holds.
+- ODD-FIXED «Odd's optimal counterstrategy is constant on cycle-node-fixed segments»: DEAD, same instances (R-steps inside); random
+  genomes: essential sigma-bar changes in 144/586 path steps (oddfix191.py 500 5).
 ## Dead ends (successor 58, box 189; docs/new/N5-REACH-box189.md §2, §5)
 - «N5 from S3 on R104's Gamma(G) reaches a standard state / the IDEAL run»: DEAD for every genome (NO-REACH, proof). Instances:
   box189/inst/*_g0.pg (REC_d10_tower_mu30_g0 sha1 1c8ff4a7, RECT_d11_T59_g0 e9e2e570): 1 iteration from S3. Obstruction: S3 sets
@@ -2834,6 +2958,15 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   packet rule (corrections only in new dated sections).
 
 ## Sources opened
+- (successor 59, box 191 add. 1) Hansen, Miltersen, Zwick arXiv 1008.0530 v1 (pdf sha256 f53a6b5127d95078d48c0567c3aa54483e11f026095ec20cae4f593bc8db0a69,
+  text via pdftotext): Lemma 5.3 (T v^pi0 >= v^pi1), Lemma 5.4 (SI dominated by VI, min convention), §5 «well-known ... Meister and
+  Holzbaur [27] ... (They may be folklore.)», Thm 6.5, §7 non-discounted open. Friedmann arXiv 1106.0778 (ar5iv html, first 100k chars):
+  §5 1-sink games (cycle component = sink), Lemma 5.1, Lemma 6.7, §6.4 G_n 1-sink, §6.1 / Lemma 6.1 tau(e_i) by cycle state.
+  arXiv 1210.2459 abstract only (Friedmann's examples have bounded tree/DAG-width; no one-player bound).
+- (successor 59, box 191) Asadi, Chatterjee, de Raaij, "Lower Bound on Howard Policy Iteration for Deterministic Markov Decision
+  Processes", arXiv 2506.12254 (UAI 2025), html v1 opened 2026-11-07: Thm 3.1 ((n^2+7n-6)/2 iterations, 2n vertices, mean payoff,
+  polynomial weights); abstract/§1 «the best known upper bound is exponential»; §1 Hansen-Zwick 2010 (m-n+1 iterations, weights
+  O(n^(n^2))) as reported there (Hansen-Zwick NOT opened); §3/§6 Hansen's conjecture (iterations <= #edges) open.
 - (succ. 58, box 189) RESULTS R104 (trunk fc665614 l. 9864, full line); packet docs/red/P-N5-REALIZE.md at claude/l-red 55557951 (sha1
   067f06b6c67969adf346621b4a92b253491ab2b9; §1-§6 read) and docs/red/P-N5-REALIZE-fixes.md entries 1-3 (same commit; entry 3 restates
   [VJ-LOC] as R36 (c) Lemma P1); RESULTS R15 (l. 624-640: (a) Lemma A = VJ00 BRICS RS-00-48 Lemma 5.7 as signed, (d)); SPEC

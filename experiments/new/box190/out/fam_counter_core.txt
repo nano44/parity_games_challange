@@ -1,0 +1,10 @@
+counter_core N 1 n 9 | spec 2 | xi 2 | idx 2
+counter_core N 2 n 15 | spec 4 | xi 4 | idx 4
+counter_core N 3 n 21 | spec 6 | xi 6 | idx 6
+counter_core N 4 n 27 | spec 8 | xi 8 | idx 8
+counter_core N 5 n 33 | spec 10 | xi 10 | idx 10
+counter_core N 6 n 39 | spec 12 | xi 12 | idx 12
+counter_core N 7 n 45 | spec 14 | xi 14 | idx 14
+counter_core N 8 n 51 | spec 16 | xi 16 | idx 16
+counter_core N 9 n 57 | spec 18 | xi 18 | idx 18
+counter_core N 10 n 63 | spec 20 | xi 20 | idx 20

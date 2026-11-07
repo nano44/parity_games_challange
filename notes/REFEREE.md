@@ -1,6 +1,111 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 26), written 2026-11-07T07:46Z by date -u (Opus 5.5, D15)
+- DONE: STEP 0 (ee57bdad; answers sent 07:46Z). ITEM 1 R-P-N5-XICYC.md (695b610c): §4 SIGN (BR-SEG/T-CYC/ONEP-POLY with gap XC-1 =
+  F4 false as stated, restricted F4′ suffices), BR-SEG-G / RED-XI SIGN WITH GAP XC-2 (DOM false on general games, 3-vertex instance;
+  repaired STRICT-G / PATH-G in report §2.2), REACH3-CYC + Cor. T3 SIGN conditional with XC-3 (K3 (b) cites SBAR3; every-genome
+  σ̄(K2) = r proof §3.2) and XC-4 ([1E-N3] unnamed); DEAD SEG-2P / ODD-FIXED SIGN rule-free. L-2 byte test MATCHES; L-2 NOT YET:
+  XC-L1 (555 not printed), XC-L2 (switchallexp N 6, 7 unpinned), XC-L3 («bad stops» does not read the fallback flag), XC-L4.
+- IN FLIGHT: push of ee57bdad + 695b610c (+ this). Then message the Lead with the verdicts.
+- NEXT: §C of XICYC when fixes entry 2 / L-3 arrive; ITEM 2 P-IDEAL-DBL (L-SI 42) when the Lead sends SHAs.
+- Tools (docs/referee/scratch/xicyc_*.py): own VJ engine (xicyc_vj: values, cmp, ext, Odd local improvement, brute force), own Γ/Γ3
+  builder (xicyc_replay.build, equal to gamma3.build on 322 genomes), reach3 replay against box190 n5v «xi», DEAD / ODD-FIXED forced
+  R-step test, sae runner with SPEC S3 start. Worktrees in scratchpad: lnew (86afce49), lnew_frz (fd1266a5).
+- Trap seen: verify.sh's experiment checks write untracked files (experiments/new/box191/out/eq_mismatch_*.json, __pycache__) into
+  the checkout; never `git add -A`.
+
+## Successor 26 handover check, written 2026-11-07T07:29Z by date -u (Opus 5.5, D15)
+- Stale-clone check: clone came up DETACHED («HEAD detached from refs/heads/claude/referee») and shallow. ls-remote claude/referee =
+  e74638b6; fetch --unshallow; checkout claude/referee; ff-only; HEAD = origin/claude/referee = ls-remote = e74638b6.
+1. Branch claude/referee, head e74638b6 at start: 0 ahead / 406 behind trunk claude/vibrant-johnson-nxvvxo 6f9cc0b0 (merge-base
+   e74638b6, i.e. trunk already contains my head). Fast-forwarded to 6f9cc0b0 (0 / 0); this commit makes 1 ahead.
+2. Open work:
+   - ITEM 1: full review of P-N5-XICYC (L-NEW 59, box 191; frozen l-new fd1266a5, L-2 + fixes entry 1 at 86afce49). Next: re-hash the
+     five objects, run check.sh blocks, review §4-§8 + Corollary T3, DATA rule on L-2 clause by clause, own replays (Howard on Γ3,
+     BR-SEG, DEAD instances) -> docs/referee/R-P-N5-XICYC.md. docs/referee-2/ not read on this item before my push.
+   - ITEM 2: P-IDEAL-DBL (L-SI 42) after item 1; waits for the Lead's SHAs (freezes after R116 lands).
+3. docs/GAPS.md rows owned by REFEREE: none. G-N5-TIME (major, open; owner L-NEW, «referees later») is the row item 1 feeds.
+4. Rulings (verbatim), status in docs/DECISIONS-INDEX.md:
+   - D1 (active): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the
+     fleet's own, as wrong until it passes the gauntlet below.» and «Never downgrade the referee to save money.»
+   - D18 (active): «Focus on N5 and work toward proving it. Explore novel approaches ... Clearly distinguish proven results from
+     conjectures and open problems.»
+   - D20 (active): «We have reset the weekly usage, so we can again work faster no?» (Lead readings L48-L50 under it, active.)
+5. Trap: DETACHED HEAD + stale clone at start (again this session: detached, 406 behind trunk). Check: `git branch --show-current`
+   must print claude/referee and HEAD must equal ls-remote before any push.sh. Second trap kept: the DATA rule applies to my own fix
+   texts (s25 RE-L1); every count is checked against the counter's loop bounds and «continue» lines.
+
+## HANDOVER NOTE (successor 25), date -u 2026-11-07T05:2xZ at writing (see the commit time); Opus 5.5, D15; parked on the Lead's 05:22Z ask
+- DONE (all pushed via scripts/push.sh, VERIFY PASS; Lean and Oink steps NOT RUN as usual):
+  | packet | report (commits) | final state |
+  | --- | --- | --- |
+  | STEP 0 handover check | notes (e1815909) | five answers sent |
+  | P-IDEAL-MOVES | R-P-IDEAL-MOVES.md §C, add. 1-3 (72f4b2f3, e7047ace, 2fe03939, cc9f4afd) | L-5 MATCHES (C129); all SIGN |
+  | P-IDEAL-IM | R-P-IDEAL-IM.md §C add. 1 (0c2a7c5b), Addendum 1 (47d6cfdf) | L-3 MATCHES (C128); own ref_rup_del VERIFIED; R115 LANDED citing it |
+  | P-M2D-DEAD | R-P-M2D-DEAD.md (c011995c), §C (008039cc), add. 1 (70ec6882) | DEAD SIGN; L-3 MATCHES |
+  | P-N5-REACH | R-P-N5-REACH.md (f66942c1), §C (cc9f4afd), add. 1 (85cc9ebb) | §2-§9 SIGN; L-3 MATCHES |
+- IN FLIGHT: nothing.
+- NEXT (Lead 05:22Z, for successor 26): P-IDEAL-DBL (L-SI 41; freezes once R116 lands); the cnf2 encoder audit (L-COMP 10), if its d 4
+  results come in.
+- Tools (docs/referee/scratch/; run with python3 -I; build C with gcc -O2):
+  - ref_rup_del.c: own RUP checker that APPLIES deletions (set lookup; unmatched deletions ignored; top-level units kept; RUP only).
+    It checked the 6.53M-lemma IM proof in 11,862 s (ref_rup without deletions took > 5 h).
+    - Controls (rebuild them if you change the code): a non-RUP lemma is rejected; deleting needed clauses makes the next lemma fail;
+      duplicates are deleted one copy at a time; Glucose proofs of PHP 8 and random 3-SAT (250, 300 vars) VERIFIED, agreeing with
+      ref_rup; the unmatched count equals a Python multiset replay (134 on rnd 300: Glucose deletes clauses it never logged).
+    - The checker stops at the first top-level conflict, so its lemma count excludes the final empty clause (same as drup.c).
+  - t3r_sim.py (s24's IDEAL simulator from R104 text; MUT=oldkeys/parity/minrank controls).
+    - m2d_replay.py: per-step tables and moves(z) on top of it.
+    - m2d_member.py: membership (i)-(vii) from R104 / R110 text.
+  - reach_replay.py: L-COMP's n5b (spec mode; trace / fbtrace hooks) on a Γ3 .pg; FL run measured with my own play valuation; mover
+    choices against t3r_sim's IDEAL states.
+  - subdiv_replay.py: own G^pad builder (edges sorted (a, b)) + n5b.
+  - IM certificate pipeline (scratchpad only, lost on restart; recreate as described):
+    - regenerate the CNF with the frozen encoder: `DUMP=dir DUMPONLY=1 python3 -I frame_P-IDEAL-IM.py 3 t1 11` in a worktree at l-si
+      cb2b0c60;
+    - Glucose 4: pysat Solver(name="glucose4", with_proof=True), write get_proof() lines (~41 min, 2.4 GB);
+    - then ref_rup_del;
+    - run all of it detached (setsid nohup) and resumable (check the proof sha1 first).
+  - DATA-rule instrumentation pattern: copy the lane counter (imcheck.py, compose.py, movescheck.py) from `git archive <frozen sha>`,
+    add counters by exact string replacement with an assert, then check that the original output lines stay byte-equal.
+- Traps (keep):
+  - GUESSED TIMESTAMPS: I wrote «03:0xZ» etc. without running date -u (wrong by up to 30 min; corrected in 3fb22563, then repeated
+    once in my own resume point). Run `date -u` immediately before writing any time; otherwise write «see the commit».
+  - DATA RULE applies to the referee's OWN fix texts: my RE-L1 said «(state, vertex, world) triples» while the counter skips c_X (fixed
+    by REFEREE-2's W-3). For every count you write, read the counter's loop bounds and «continue» lines.
+  - DETACHED HEAD at session start: the clone came up «HEAD detached from refs/heads/claude/referee». Do `git fetch --unshallow`, then
+    `git checkout -B claude/referee origin/claude/referee`, and compare with ls-remote before the first commit.
+  - Push chaining: wait on the push's PID (`while kill -0 PID`). Copy the PID from pgrep output; a retyped wrong PID ran two pushes at
+    once. `pgrep -f scripts/push.sh` inside a bash -c that contains that text matches itself (deadlock).
+  - push.sh pushes only the verified commit if HEAD moves during verify: re-push afterwards. Background waiters without an explicit
+    long timeout are killed after 30 min (the job they watch keeps running).
+  - A DEAD statement must name the exact object killed, index orders included: N5 depends on vertex indices (P-N5-REACH RC-2).
+  - A line may cite a replay only via a committed result or code you re-ran yourself (P-M2D-DEAD PM-C1 → replay.out).
+
+## Resume point (successor 25), date -u 2026-11-07T03:58Z (Opus 5.5, D15)
+- DONE (all in docs/referee/; pushes via scripts/push.sh, verify PASS unless noted):
+  | item | report | verdict |
+  | --- | --- | --- |
+  | STEP 0 | notes (e1815909) | five answers |
+  | P-IDEAL-MOVES §C / add. 1-3 | R-P-IDEAL-MOVES.md (72f4b2f3, e7047ace, 2fe03939, cc9f4afd) | MV-C1 → L-3 MATCHES; L-4 MATCHES; L-5 MATCHES (C129) |
+  | P-IDEAL-IM §C add. 1 + Addendum 1 | R-P-IDEAL-IM.md (0c2a7c5b, 47d6cfdf) | L-3 MATCHES (C128); own ref_rup_del VERIFIED 6,531,220 lemmas |
+  | P-M2D-DEAD | R-P-M2D-DEAD.md (c011995c, §C 008039cc) | DEAD SIGN; L-2 NOT YET: PM-C1 (L-RED pointer → lowrep.py) |
+  | P-N5-REACH | R-P-N5-REACH.md (f66942c1, §C cc9f4afd) | §2-§9 SIGN; L-2 NOT YET: RC-1 (PAD set, MY miss), RC-2 (SUBDIV pad index order) |
+- WAITING: L-3 byte tests for P-M2D-DEAD (PM-C1; expect sha1 de6c3916…) and P-N5-REACH (RC-1 + RC-2; expect 13d0ce80…).
+- MY MISSES this session:
+  - report headers / messages with GUESSED times (corrected in 3fb22563). Rule: run `date -u` before writing any time.
+  - RE-L1's PAD wording ((state, vertex, world) without «vertex ≠ c_X»): the DATA rule applies to my own fix texts too.
+- Tools added (docs/referee/scratch/): ref_rup_del.c (RUP + deletions; controls in scratchpad ctl/), m2d_replay.py, m2d_member.py,
+  reach_replay.py (n5b trace/fbtrace + own play valuation vs t3r_sim), subdiv_replay.py (own G^pad builder).
+- Traps:
+  - push chaining: `pgrep -f scripts/push.sh` inside a bash -c whose text contains «scripts/push.sh» matches itself (deadlock). Wait on
+    the PID instead (`while kill -0 PID`), and copy the PID from pgrep output; never retype it. A wrong PID made two pushes run at
+    once.
+  - push.sh pushes only the verified commit when HEAD moves during verify; re-push after.
+  - Scratchpad worktrees: lnew_reach (73b3d1fd), llower (87fcdf73), lnew (d7b96be8), lsi (cb2b0c60); the 2.4 GB im/proof.drup can be
+    deleted.
+
 ## Successor 25 handover check, written 2026-11-06T23:4xZ by date -u (Opus 5.5, D15)
 - Stale-clone check: ls-remote claude/referee = bc2bdd5a; fetched --unshallow (9,374 commits, not shallow); ff-only up to date;
   HEAD = origin/claude/referee = ls-remote = bc2bdd5a56f3f9a7.

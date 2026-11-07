@@ -934,9 +934,9 @@ else
 fi
 # P-IDEAL-MOVES (box 187, L-NEW successor 57): frozen movescheck output + pins
 w187=$(python3 -I box187/movescheck.py | diff - box187/movescheck.out && echo MOVESCHECK SAME)
-pin187=$(cd ../.. && sha1sum docs/new/P-IDEAL-MOVES.md docs/new/P-IDEAL-MOVES-line-L1.txt experiments/new/box187/movescheck.py experiments/new/box187/movescheck.out experiments/new/box186/out/pass_d3_D3.json experiments/new/box186/out/pass_d4_D4.json experiments/new/box186/out/pass_d5_D5.json experiments/new/box187/inst/m4_z4_r7.json docs/new/P-IDEAL-MOVES-fixes.md docs/new/P-IDEAL-MOVES-line-L2.txt docs/new/P-IDEAL-MOVES-line-L3.txt docs/new/P-IDEAL-MOVES-line-L4.txt)
-if grep -qxF "MOVESCHECK SAME" <<<"$w187" && grep -qxF "RX 0 AGA 0 AGB 0 AGC 0 SWA 0 SWB 0 SWC 0 SWD 0 SWE 0 WPD 0" box187/movescheck.out && [ "$(grep -c "^DEAD-SEG .* Xi-target True .* LM 0$" box187/movescheck.out)" = 3 ] && grep -q "^DEAD-LEV box187/inst/m4_z4_r7.json start 10111010 mover 4 level 2 Xi-target True moves 7 T 8$" box187/movescheck.out && grep -q "^5ce2947d1ee4dab317e5c06446b38f050146cafb  docs/new/P-IDEAL-MOVES.md$" <<<"$pin187" && grep -q "^819c58159100d77ec509348345cfd1a641a6f9e7  docs/new/P-IDEAL-MOVES-line-L1.txt$" <<<"$pin187" && grep -q "^8153717b8596b82a68c8b35c7ab76aabc765d7c2  experiments/new/box187/movescheck.py$" <<<"$pin187" && grep -q "^4874020973e02bf269b64624e4e7b110bb08ca24  experiments/new/box187/movescheck.out$" <<<"$pin187" && grep -q "^8bca976438ca184bb8b8e4d5ecf3455f51809ff4  experiments/new/box186/out/pass_d3_D3.json$" <<<"$pin187" && grep -q "^3bf6a4a48bc2df9fb8809306f8347ee280965b07  experiments/new/box186/out/pass_d4_D4.json$" <<<"$pin187" && grep -q "^16be2e594732ad0b21e2c84aa4cdbc62d143e7c4  experiments/new/box186/out/pass_d5_D5.json$" <<<"$pin187" && grep -q "^7c158e2f806df2d1984418902548cfc2cb243d75  experiments/new/box187/inst/m4_z4_r7.json$" <<<"$pin187" && grep -q "^510152dab3512980e5e739710f46ff14797edf87  docs/new/P-IDEAL-MOVES-fixes.md$" <<<"$pin187" && grep -q "^f3692aaa033540ff0494b0aac6b2d524757d5c00  docs/new/P-IDEAL-MOVES-line-L2.txt$" <<<"$pin187" && grep -q "^d3983c68cdda03e81fdaedec770af587f758d84e  docs/new/P-IDEAL-MOVES-line-L3.txt$" <<<"$pin187" && grep -q "^73c16d1e2b009ff2e3d774a904e4462be0874db1  docs/new/P-IDEAL-MOVES-line-L4.txt$" <<<"$pin187"; then
-  echo "P-IDEAL-MOVES: movescheck 0 violations, 4 DEAD instances re-run (output = frozen movescheck.out); pins packet 5ce2947d, line L-1 819c5815, tool 8153717b, output 48740209, instances 8bca9764 3bf6a4a4 16be2e59 7c158e2f, fixes 510152da, line L-2 f3692aaa, line L-3 d3983c68, line L-4 73c16d1e: PASS"
+pin187=$(cd ../.. && sha1sum docs/new/P-IDEAL-MOVES.md docs/new/P-IDEAL-MOVES-line-L1.txt experiments/new/box187/movescheck.py experiments/new/box187/movescheck.out experiments/new/box186/out/pass_d3_D3.json experiments/new/box186/out/pass_d4_D4.json experiments/new/box186/out/pass_d5_D5.json experiments/new/box187/inst/m4_z4_r7.json docs/new/P-IDEAL-MOVES-fixes.md docs/new/P-IDEAL-MOVES-line-L2.txt docs/new/P-IDEAL-MOVES-line-L3.txt docs/new/P-IDEAL-MOVES-line-L4.txt docs/new/P-IDEAL-MOVES-line-L5.txt)
+if grep -qxF "MOVESCHECK SAME" <<<"$w187" && grep -qxF "RX 0 AGA 0 AGB 0 AGC 0 SWA 0 SWB 0 SWC 0 SWD 0 SWE 0 WPD 0" box187/movescheck.out && [ "$(grep -c "^DEAD-SEG .* Xi-target True .* LM 0$" box187/movescheck.out)" = 3 ] && grep -q "^DEAD-LEV box187/inst/m4_z4_r7.json start 10111010 mover 4 level 2 Xi-target True moves 7 T 8$" box187/movescheck.out && grep -q "^5ce2947d1ee4dab317e5c06446b38f050146cafb  docs/new/P-IDEAL-MOVES.md$" <<<"$pin187" && grep -q "^819c58159100d77ec509348345cfd1a641a6f9e7  docs/new/P-IDEAL-MOVES-line-L1.txt$" <<<"$pin187" && grep -q "^8153717b8596b82a68c8b35c7ab76aabc765d7c2  experiments/new/box187/movescheck.py$" <<<"$pin187" && grep -q "^4874020973e02bf269b64624e4e7b110bb08ca24  experiments/new/box187/movescheck.out$" <<<"$pin187" && grep -q "^8bca976438ca184bb8b8e4d5ecf3455f51809ff4  experiments/new/box186/out/pass_d3_D3.json$" <<<"$pin187" && grep -q "^3bf6a4a48bc2df9fb8809306f8347ee280965b07  experiments/new/box186/out/pass_d4_D4.json$" <<<"$pin187" && grep -q "^16be2e594732ad0b21e2c84aa4cdbc62d143e7c4  experiments/new/box186/out/pass_d5_D5.json$" <<<"$pin187" && grep -q "^7c158e2f806df2d1984418902548cfc2cb243d75  experiments/new/box187/inst/m4_z4_r7.json$" <<<"$pin187" && grep -q "^fba3443ac0d732d820469a2e24785f1a374bfa20  docs/new/P-IDEAL-MOVES-fixes.md$" <<<"$pin187" && grep -q "^f3692aaa033540ff0494b0aac6b2d524757d5c00  docs/new/P-IDEAL-MOVES-line-L2.txt$" <<<"$pin187" && grep -q "^d3983c68cdda03e81fdaedec770af587f758d84e  docs/new/P-IDEAL-MOVES-line-L3.txt$" <<<"$pin187" && grep -q "^73c16d1e2b009ff2e3d774a904e4462be0874db1  docs/new/P-IDEAL-MOVES-line-L4.txt$" <<<"$pin187" && grep -q "^a42257cb159b2e51128c2334062d44edb97661f6  docs/new/P-IDEAL-MOVES-line-L5.txt$" <<<"$pin187"; then
+  echo "P-IDEAL-MOVES: movescheck 0 violations, 4 DEAD instances re-run (output = frozen movescheck.out); pins packet 5ce2947d, line L-1 819c5815, tool 8153717b, output 48740209, instances 8bca9764 3bf6a4a4 16be2e59 7c158e2f, fixes fba3443a, line L-2 f3692aaa, line L-3 d3983c68, line L-4 73c16d1e, line L-5 a42257cb: PASS"
 else
   echo "P-IDEAL-MOVES check: FAILED"; echo "$w187"; echo "$pin187"; exit 1
 fi
@@ -946,5 +946,34 @@ if grep -qxF "REACH SAME" <<<"$o189" && [ "$(grep -c "S3 == stated start: True (
   echo "BOX 189 REACH: Gamma3 from S3 = stated start, FL run [0, L(G)] on 3 pinned genomes (L 35, 59, 13); Gamma from S3: 1 iteration; 2 instances regenerated byte-identical: PASS"
 else
   echo "BOX 189 REACH check: FAILED"; echo "$o189"; exit 1
+fi
+# P-N5-REACH (box 189, L-NEW successor 58): frozen reachcheck output + sha1 pins (packet, line L-1, tools, output, 14 corpus genomes)
+w189=$(python3 -I box189/reachcheck.py --approx | diff - box189/reachcheck.out && echo REACHCHECK SAME)
+pin189=$(cd ../.. && sha1sum -c --quiet experiments/new/box189/reach.pins && echo PINS OK; sha1sum experiments/new/box189/reach.pins)
+if grep -qxF "REACHCHECK SAME" <<<"$w189" && grep -qxF "PINS OK" <<<"$pin189" && grep -q "^1a075f50314bd3fd8a5933b51d41a43b1f2f62a8  experiments/new/box189/reach.pins$" <<<"$pin189" && grep -q "^C14+R440 NO-REACH runs 454 states 908: standard 0, core-not-(K0->K1,K1->K0) 0, cycle-node(K0)!=K0 0; (state, vertex) pairs 42880: beta-in-P-or-low-cycle-node 0;" box189/reachcheck.out && grep -q "^C14+R440 S3-START genomes 454: S3 != stated start 0$" box189/reachcheck.out && grep -q "^C14+R440 PAD (state, vertex, world) triples 693030: pad-in-P-or-cycle-node-Om<3 0$" box189/reachcheck.out && grep -q "^C14+R440 REACH3 genomes 454 (states 0..L checked 1225): failures 0$" box189/reachcheck.out && grep -q "^SUBDIV-DEAD instance B n 5: G from (s0, t0): iterations 2 fallbacks 0; G^pad (n 17) from S3: iterations 3 " box189/reachcheck.out; then
+  echo "P-N5-REACH: reachcheck re-run = frozen output (NO-REACH 0/908 states, S3-START 0/454, PAD 0/693030, REACH3 0/454 failures, SUBDIV-DEAD A and B); pins (reach.pins 1a075f50: packet b7bd6937, line L-1 b12ec57a, fixes be31f774, line L-2 4de27b32, line L-3 adfbb3b8, line L-4 f85a024b, reachcheck c368b363, gamma3 8758456f, subdiv 63c7ae38, output af50ee34, 14 genomes): PASS"
+else
+  echo "P-N5-REACH check: FAILED"; echo "$w189"; echo "$pin189"; exit 1
+fi
+# BOX 190 DE-TOWER (L-NEW successor 58): N5 / N5'-xi / N5'-idx / N5'-seq on Gamma3 of the P-N5-REACH corpus (frozen table)
+o190=$(python3 -I box190/corpus190.py | diff - box190/corpus190.out && echo DETOWER SAME)
+if grep -qxF "DETOWER SAME" <<<"$o190" && [ "$(grep -c "^REC_d10_tower_mu30_norm.json d 10 N 20 Xi-depth 13 L 35 | spec 38 | xi 6 | idx 5 | seq 66$" box190/corpus190.out)" = 1 ] && [ "$(wc -l < box190/corpus190.out)" = 14 ]; then
+  echo "BOX 190 DE-TOWER: 14 corpus genomes on Gamma3 from S3, spec / xi / idx / seq iterations = frozen table: PASS"
+else
+  echo "BOX 190 DE-TOWER check: FAILED"; echo "$o190"; exit 1
+fi
+# BOX 191 XI-CYCLIC (L-NEW successor 59): REALIZE-CYC data (N5'-xi mover phase on Gamma3 = IDEAL-CYC), ONEP-POLY / BR-SEG counts, DEAD SEG-2P
+o191=$(cd box191 && bash check191.sh 2>&1 | diff - check191.out && echo XICYC SAME)
+if grep -qxF "XICYC SAME" <<<"$o191" && grep -qxF "TOTAL match 22 mismatch 0" box191/check191.out && grep -q "^ONE-player: 300 genomes seed 11: maxrun > N in 0, C > N\*M in 0" box191/check191.out && grep -q "^sae_5.pg n 77 nE 50 T 310 C 0 R 54 p 256 maxpure 15 H0events 0$" box191/check191.out; then
+  echo "BOX 191 XI-CYCLIC: REALIZE-CYC 22/22 (8 Xi-cyclic + 14 corpus), random 297/300 + 3 exact-VJ-tie divergences; SEG-1P / CYC-COUNT 0 violations; DEAD SEG-2P instances; BR-SEG on switchallexp N 2-5 = frozen: PASS"
+else
+  echo "BOX 191 XI-CYCLIC check: FAILED"; echo "$o191"; exit 1
+fi
+# P-N5-XICYC (box 191, L-NEW successor 59): sha1 pins (packet, line L-1, tools, check191.out, instances); the run itself is block BOX 191
+pin191=$(cd ../.. && sha1sum -c --quiet experiments/new/box191/xicyc.pins && echo PINS OK; sha1sum experiments/new/box191/xicyc.pins)
+if grep -qxF "PINS OK" <<<"$pin191" && grep -q "^c77781e04e68f06c4028fefbcf99db8d10b4f3bb  experiments/new/box191/xicyc.pins$" <<<"$pin191"; then
+  echo "P-N5-XICYC: pins (xicyc.pins c77781e0: packet 149e2414, line L-1 d6f77b12, fixes a83e54d2, line L-2 857d21c8, line L-3 1690b6ad, level0_191.py, data outputs, sae_6/7, check191.out d07c2f0c, tools, 17 instance files): PASS"
+else
+  echo "P-N5-XICYC check: FAILED"; echo "$pin191"; exit 1
 fi
 rm -rf "$tmp"

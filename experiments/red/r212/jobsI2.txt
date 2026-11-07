@@ -1,0 +1,3 @@
+4 0 0 311 300000 seeds/lift_max_d4_L13.txt
+5 0 0 312 200000 keep/T0_m5_16.txt
+6 0 0 313 60000 keep/T0_m6_22.txt

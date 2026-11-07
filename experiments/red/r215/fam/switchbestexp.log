@@ -1,0 +1,16 @@
+pgs:switchbestexp none N 1 n 35 xi 20 spec 20 OK
+pgs:switchbestexp none N 2 n 60 xi 32 spec 32 OK
+pgs:switchbestexp none N 3 n 85 xi 41 spec 41 OK
+pgs:switchbestexp none N 4 n 110 xi 47 spec 47 OK
+pgs:switchbestexp padback N 1 n 90 xi 2 spec 2 OK
+pgs:switchbestexp padback N 2 n 166 xi 3 spec 3 OK
+pgs:switchbestexp padback N 3 n 241 xi 3 spec 3 OK
+pgs:switchbestexp padback N 4 n 316 xi 3 spec 3 OK
+pgs:switchbestexp padsink N 1 n 91 xi 0 spec 0 OK
+pgs:switchbestexp padsink N 2 n 167 xi 0 spec 0 OK
+pgs:switchbestexp padsink N 3 n 242 xi 0 spec 0 OK
+pgs:switchbestexp padsink N 4 n 317 xi 0 spec 0 OK
+pgs:switchbestexp padpair N 1 n 90 xi 3 spec 4 OK
+pgs:switchbestexp padpair N 2 n 166 xi 4 spec 5 OK
+pgs:switchbestexp padpair N 3 n 241 xi 7 spec 9 OK
+pgs:switchbestexp padpair N 4 n 316 xi 9 spec 10 OK

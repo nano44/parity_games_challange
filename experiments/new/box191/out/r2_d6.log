@@ -1,0 +1,22 @@
+start score (0, 3) N 12
+it 14 N 12 T 4 maxrun 0 C 4
+it 15 N 12 T 5 maxrun 1 C 4
+it 23 N 12 T 6 maxrun 1 C 4
+it 32 N 12 T 6 maxrun 2 C 3
+it 40 N 12 T 7 maxrun 2 C 4
+it 46 N 12 T 8 maxrun 3 C 4
+it 57 N 12 T 9 maxrun 4 C 4
+it 183 N 12 T 10 maxrun 5 C 4
+it 199 N 12 T 11 maxrun 6 C 4
+it 606 N 12 T 11 maxrun 7 C 4
+it 751 N 12 T 12 maxrun 7 C 5
+it 1145 N 12 T 13 maxrun 8 C 5
+it 1156 N 12 T 14 maxrun 8 C 5
+it 1459 N 12 T 11 maxrun 9 C 2
+it 1901 N 12 T 12 maxrun 9 C 3
+it 2104 N 12 T 13 maxrun 9 C 3
+it 2242 N 12 T 14 maxrun 9 C 4
+it 2254 N 12 T 15 maxrun 10 C 4
+it 2443 N 12 T 16 maxrun 10 C 5
+it 3918 N 12 T 17 maxrun 10 C 5
+FINAL best (10, 17) N 12

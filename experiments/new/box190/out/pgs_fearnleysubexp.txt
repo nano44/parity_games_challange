@@ -1,0 +1,7 @@
+pgs:fearnleysubexp N 1 n 20 | spec 4 | xi 4
+pgs:fearnleysubexp N 2 n 38 | spec 8 | xi 8
+pgs:fearnleysubexp N 3 n 59 | spec 12 | xi 12
+pgs:fearnleysubexp N 4 n 83 | spec 14 | xi 14
+pgs:fearnleysubexp N 5 n 110 | spec 16 | xi 16
+pgs:fearnleysubexp N 6 n 140 | spec 18 | xi 18
+pgs:fearnleysubexp N 7 n 173 | spec 21 | xi 21

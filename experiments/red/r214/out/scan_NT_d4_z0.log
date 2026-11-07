@@ -1,0 +1,4 @@
+MOVE d 4 t 13 z 0 r 1: SAT solve 1.2 s
+  replay T 1 moves of z 1 target False (OK) -> ../r214/out/NT_d4_z0_r1.json
+MOVE d 4 t 13 z 0 r 2: UNSAT solve 1.1 s
+DONE z 0 max 1
