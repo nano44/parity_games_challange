@@ -1,6 +1,12 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 4 (successor 30; 2026-11-07 08:5xZ by date -u)
+- P-IDEAL-DBL (l-si f5263d5a): docs/referee-2/R2-P-IDEAL-DBL.md. All signable items SIGN (MP-LIN, WINDOW-ONCE, DBL-EQ, PASS-FREEZE, HIT,
+  FUEL-EXACT, ALT-MIN, TOWER-NEED, 4 DEAD); AND-GATE (a)-(c) mapping faithful. W-1 packet: PATH-RISE misquoted (not R113's words).
+  L-1 MATCHES after W-2 (a)-(d) (DEAD paths/starts, REENTRY at l = 1) and W-3 (DATA clause by clause); L-1+W sha1 837e3b06….
+  Own r2dbl.py: CORPUS 63,223 runs 0 violations, LOWER, EXTRA (H6 levels 1-5) 0; DEAD replayed.
+
 ## Resume point 3 (successor 30; 2026-11-07 08:2xZ by date -u)
 - P-N5-REACH L-4 (l-new fdf01b8c, C130 R1-R4): Add. 3, L-4 MATCHES (bt_l4.out). Waiting: P-N5-XICYC L-3 / fixes (L-NEW 59).
 
