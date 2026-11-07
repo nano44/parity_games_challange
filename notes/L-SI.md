@@ -13,6 +13,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   (sha1 2204079d, l-lower c45cf2f3) REPRODUCED (Sim + Gen identical): T 136, F 2 6 14 30 62 94 63 ..., doubling 1-4 (five levels at the
   R113 cap 2^(l+2) - 2, l = 0..4). All dblcheck counters 0 (extra79.out). Wiring: wiring79.out, tower_H5.out (levels 4-6 = a block of six
   movers moving 31 times each, pointing at each other and at pair 3).
+- Replay (Lead 06:12Z): H6_d24_F126 (sha1 fb37fec9, l-lower 10cac3d9) REPRODUCED (Sim + Gen): T 209, F 2 6 14 30 62 126 95 ...,
+  doubling 1-5 (six capped levels). Counters 0. Wiring: pair 5 crossed onto pair 4 (10 -> 11, 8; 11 -> 8, 9); pair 4 fed by a block on
+  levels 6-7 (12, 13, 14; ~31 moves each) that points down into pair 3.
 - FREEZE STEPS: (1) when the Lead says R116 landed, re-quote AND-GATE (a)-(c) from the landed RESULTS text in §0 (quotes only);
   (2) update pins.sha1 (the packet/line sha1s change), re-run check79.sh, commit = FREEZE; after that only a fixes file.
 

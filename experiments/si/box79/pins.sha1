@@ -4,11 +4,12 @@ f6263cd67ffb29e56c6e16bd11a838416898cb2d  dblcheck.py
 251e12fee38b03583b31e46a03d7438ee1b3c22e  dblcheck.out
 c0b15d4635777cd9a4d71777aab2b459140595ad  dblcheck_neg2.out
 7fa45c0ea8e99a33b132b45d7449327c75f912a1  dead79.out
-4456e022ac4291d5e720c772a49bcb62f21fd18a  extra79.out
-59f6d7d85e7f9960f9fa48d3ddd6871edb11c063  wiring79.out
-b976f3235b1b19b23f911b77e4652cbd3f28dbd1  tower_H5.out
+fefde3530836eabc51b467df9f29eae5caf00fbf  extra79.out
+c1fef11d71817689b258744b3afde6f49c6cc3e6  wiring79.out
+f309bd7352edf6085ebbef8338ab0539d2b34b2e  tower_H5.out
 43704358e77771aa667159be3dc92e5772608dca  inst/DBL4_d20_F30.json
 2204079dc19be1f6d4d30a65e5fc71f54c7d74fc  inst/H5_d20_F62.json
+fb37fec9536336e1e1bb2dff81bbe13354f46b93  inst/H6_d24_F126.json
 354b7d44a79c9453122ce5eb37b249dd50c5e171  inst/RECF4_d20_F60.json
 68a9df6ea7d6616c769b10523421ed16e9ec8bbf  ../../../docs/si/P-IDEAL-DBL.md
 9317718426138daf8f71c7ca0f5c67846e271bc9  ../../../docs/si/P-IDEAL-DBL-line-L1.txt

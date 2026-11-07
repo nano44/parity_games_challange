@@ -1,3 +1,3 @@
 EXTRA violations: WO 0 HIT 0 ALTa 0 ALTb 0 ALTc 0 ALTd 0 DBLa 0 DBLb 0 DBLc 0 TN 0 PF 0 FU2 0
-EXTRA controls (must be > 0): ALTb_T 18 ALTc_T 6 WO_T 650 FU2_T 60
-EXTRA units: ALT units (run, mover) 120; DBLa units (run, level) 57; DBLb units (run, doubling level, window, member) 214; FU2 units (run, level) 60; HIT units (run, mover, step) 9320; TN units (run, doubling level, member) 22; WO units (run, level, window, member) 1618; doubling (run, level) 11; runs 3; steps 233
+EXTRA controls (must be > 0): ALTb_T 23 ALTc_T 7 WO_T 1139 FU2_T 84
+EXTRA units: ALT units (run, mover) 168; DBLa units (run, level) 80; DBLb units (run, doubling level, window, member) 452; FU2 units (run, level) 84; HIT units (run, mover, step) 19352; TN units (run, doubling level, member) 32; WO units (run, level, window, member) 2646; doubling (run, level) 16; runs 4; steps 442

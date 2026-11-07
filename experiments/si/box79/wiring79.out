@@ -65,3 +65,32 @@ H5_d20_F62.json d 20 T 136
     mover 9 (moves 31, R 47): targets 6 (lev 3, moves 15, R 20), 12 (lev 6, moves 31, R 47)
     upward options of levels <= 4: 0.0 -> 25 (lev 12, R 13); 0.1 -> 10 (lev 5, R 78); 1.0 -> 36 (lev 18, R 1); 2.0 -> 23 (lev 11, R 3); 3.0 -> 17 (lev 8, R 20); 3.1 -> 25 (lev 12, R 13); 4.0 -> 16 (lev 8, R 47); 4.1 -> 17 (lev 8, R 20); 5.0 -> 23 (lev 11, R 3); 5.1 -> 39 (lev 19, R 5); 6.0 -> 18 (lev 9, R 12); 6.1 -> 35 (lev 17, R 13); 7.0 -> 32 (lev 16, R 13); 7.1 -> 19 (lev 9, R 12); 8.0 -> 11 (lev 5, R 32); 9.1 -> 12 (lev 6, R 47)
     re-entry: 10 reaches [1, 2, 5, 6, 7, 8, 9]; 11 reaches [1, 2, 5, 6, 7]; 12 reaches [1, 2, 5, 6, 7]; 16 reaches [1, 2, 5, 6, 7, 8, 9]; 17 reaches [1, 2, 5]; 18 reaches [1, 2, 5]; 19 reaches [1, 2, 5]; 23 reaches [1]; 25 reaches [1, 2, 5, 7]; 32 reaches [1, 2, 5]; 35 reaches [1, 2, 5]; 36 reaches []; 39 reaches [1, 2]
+H6_d24_F126.json d 24 T 209
+  F [2, 6, 14, 30, 62, 126, 95, 33, 32, 16, 16, 15, 9, 8, 9, 8, 5, 4, 3, 2, 2, 2, 0, 1]
+  doubling [1, 2, 3, 4, 5]
+  moves [1, 1, 3, 3, 7, 7, 15, 15, 31, 31, 63, 63, 31, 32, 32, 2, 1, 30, 1, 16, 16, 1, 2, 7, 8, 8, 8, 7, 3, 9, 9, 3, 3, 4, 3, 1, 3, 1, 0, 1, 0, 1, 2, 2, 1, 1, 1, 1]
+  level 1 doubling (f = F(0) = 2; TOWER-NEED: targets need R >= 0.5)
+    mover 2 (moves 3, R 4): targets 40 (lev 20, moves 0, R 3), 21 (lev 10, moves 1, R 2)
+    mover 3 (moves 3, R 20): targets 34 (lev 17, moves 3, R 20), 23 (lev 11, moves 7, R 16)
+    upward options of levels <= 1: 0.0 -> 42 (lev 21, R 21); 0.1 -> 3 (lev 1, R 20); 1.0 -> 39 (lev 19, R 1); 2.0 -> 40 (lev 20, R 3); 2.1 -> 21 (lev 10, R 2); 3.0 -> 34 (lev 17, R 20); 3.1 -> 23 (lev 11, R 16)
+    re-entry: 3 reaches [1, 2]; 21 reaches []; 23 reaches [1, 2]; 34 reaches [1, 2]; 39 reaches []; 40 reaches [1]; 42 reaches [1, 2, 3]
+  level 2 doubling (f = F(1) = 6; TOWER-NEED: targets need R >= 2.5)
+    mover 4 (moves 7, R 20): targets 6 (lev 3, moves 15, R 20), 25 (lev 12, moves 8, R 10)
+    mover 5 (moves 7, R 9): targets 47 (lev 23, moves 1, R 4), 31 (lev 15, moves 3, R 6)
+    upward options of levels <= 2: 0.0 -> 42 (lev 21, R 21); 0.1 -> 3 (lev 1, R 20); 1.0 -> 39 (lev 19, R 1); 2.0 -> 40 (lev 20, R 3); 2.1 -> 21 (lev 10, R 2); 3.0 -> 34 (lev 17, R 20); 3.1 -> 23 (lev 11, R 16); 4.0 -> 6 (lev 3, R 20); 4.1 -> 25 (lev 12, R 10); 5.0 -> 47 (lev 23, R 4); 5.1 -> 31 (lev 15, R 6)
+    re-entry: 3 reaches [1, 2, 5]; 6 reaches [1, 2, 5]; 21 reaches []; 23 reaches [1, 2]; 25 reaches [1, 2]; 31 reaches [1]; 34 reaches [1, 2, 5]; 39 reaches []; 40 reaches [1]; 42 reaches [1, 2, 3, 5]; 47 reaches [1, 2]
+  level 3 doubling (f = F(2) = 14; TOWER-NEED: targets need R >= 6.5)
+    mover 6 (moves 15, R 20): targets 23 (lev 11, moves 7, R 16), 44 (lev 22, moves 1, R 20)
+    mover 7 (moves 15, R 22): targets 27 (lev 13, moves 7, R 23), 5 (lev 2, moves 7, R 9)
+    upward options of levels <= 3: 0.0 -> 42 (lev 21, R 21); 0.1 -> 3 (lev 1, R 20); 1.0 -> 39 (lev 19, R 1); 2.0 -> 40 (lev 20, R 3); 2.1 -> 21 (lev 10, R 2); 3.0 -> 34 (lev 17, R 20); 3.1 -> 23 (lev 11, R 16); 4.0 -> 6 (lev 3, R 20); 4.1 -> 25 (lev 12, R 10); 5.0 -> 47 (lev 23, R 4); 5.1 -> 31 (lev 15, R 6); 6.0 -> 23 (lev 11, R 16); 6.1 -> 44 (lev 22, R 20); 7.0 -> 27 (lev 13, R 23)
+    re-entry: 3 reaches [1, 2, 5]; 6 reaches [1, 2, 5]; 21 reaches []; 23 reaches [1, 2]; 25 reaches [1, 2]; 27 reaches [1, 2, 4, 5, 6]; 31 reaches [1]; 34 reaches [1, 2, 5]; 39 reaches []; 40 reaches [1]; 42 reaches [1, 2, 3, 5, 6]; 44 reaches [1, 2, 5]; 47 reaches [1, 2]
+  level 4 doubling (f = F(3) = 30; TOWER-NEED: targets need R >= 14.5)
+    mover 8 (moves 31, R 70): targets 18 (lev 9, moves 1, R 42), 13 (lev 6, moves 32, R 37)
+    mover 9 (moves 31, R 41): targets 14 (lev 7, moves 32, R 57), 12 (lev 6, moves 31, R 41)
+    upward options of levels <= 4: 0.0 -> 42 (lev 21, R 21); 0.1 -> 3 (lev 1, R 20); 1.0 -> 39 (lev 19, R 1); 2.0 -> 40 (lev 20, R 3); 2.1 -> 21 (lev 10, R 2); 3.0 -> 34 (lev 17, R 20); 3.1 -> 23 (lev 11, R 16); 4.0 -> 6 (lev 3, R 20); 4.1 -> 25 (lev 12, R 10); 5.0 -> 47 (lev 23, R 4); 5.1 -> 31 (lev 15, R 6); 6.0 -> 23 (lev 11, R 16); 6.1 -> 44 (lev 22, R 20); 7.0 -> 27 (lev 13, R 23); 8.0 -> 18 (lev 9, R 42); 8.1 -> 13 (lev 6, R 37); 9.0 -> 14 (lev 7, R 57); 9.1 -> 12 (lev 6, R 41)
+    re-entry: 3 reaches [1, 2, 5]; 6 reaches [1, 2, 5]; 12 reaches [1, 2, 3, 4, 5, 6, 7]; 13 reaches [1, 2, 3, 4, 5, 6, 7]; 14 reaches [1, 2, 3, 4, 5, 6, 7, 8]; 18 reaches [1, 2, 3, 4, 5, 6, 7]; 21 reaches []; 23 reaches [1, 2]; 25 reaches [1, 2]; 27 reaches [1, 2, 4, 5, 6]; 31 reaches [1]; 34 reaches [1, 2, 5]; 39 reaches []; 40 reaches [1]; 42 reaches [1, 2, 3, 5, 6]; 44 reaches [1, 2, 5]; 47 reaches [1, 2]
+  level 5 doubling (f = F(4) = 62; TOWER-NEED: targets need R >= 30.5)
+    mover 10 (moves 63, R 129): targets 11 (lev 5, moves 63, R 70), 8 (lev 4, moves 31, R 70)
+    mover 11 (moves 63, R 70): targets 8 (lev 4, moves 31, R 70), 9 (lev 4, moves 31, R 41)
+    upward options of levels <= 5: 0.0 -> 42 (lev 21, R 21); 0.1 -> 3 (lev 1, R 20); 1.0 -> 39 (lev 19, R 1); 2.0 -> 40 (lev 20, R 3); 2.1 -> 21 (lev 10, R 2); 3.0 -> 34 (lev 17, R 20); 3.1 -> 23 (lev 11, R 16); 4.0 -> 6 (lev 3, R 20); 4.1 -> 25 (lev 12, R 10); 5.0 -> 47 (lev 23, R 4); 5.1 -> 31 (lev 15, R 6); 6.0 -> 23 (lev 11, R 16); 6.1 -> 44 (lev 22, R 20); 7.0 -> 27 (lev 13, R 23); 8.0 -> 18 (lev 9, R 42); 8.1 -> 13 (lev 6, R 37); 9.0 -> 14 (lev 7, R 57); 9.1 -> 12 (lev 6, R 41)
+    re-entry: 3 reaches [1, 2, 5]; 6 reaches [1, 2, 5]; 12 reaches [1, 2, 3, 4, 5, 6, 7]; 13 reaches [1, 2, 3, 4, 5, 6, 7]; 14 reaches [1, 2, 3, 4, 5, 6, 7, 8]; 18 reaches [1, 2, 3, 4, 5, 6, 7]; 21 reaches []; 23 reaches [1, 2]; 25 reaches [1, 2]; 27 reaches [1, 2, 4, 5, 6]; 31 reaches [1]; 34 reaches [1, 2, 5]; 39 reaches []; 40 reaches [1]; 42 reaches [1, 2, 3, 5, 6]; 44 reaches [1, 2, 5]; 47 reaches [1, 2]
