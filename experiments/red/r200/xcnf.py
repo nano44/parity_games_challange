@@ -52,9 +52,9 @@ def neg(l): return (not l) if isinstance(l, bool) else -l
 def build(T, E, fixall=False, lem=True):
     lev0 = [m[0] for m in T["movers"]]; WT0 = [m[1] for m in T["movers"]]; gate0 = T["gate"]; S0 = [tuple(s) for s in T["states"]]
     N0 = len(lev0); L = len(S0) - 1
-    lev = list(lev0); WT = [list(w) for w in WT0]; m0 = max(lev0) + 1
+    lev = list(lev0); WT = [list(w) for w in WT0]; m0 = max(lev0) + 1 if lev0 else 0   # no prescribed movers: the whole ladder is free (R202)
     for j in range(E):
-        l = m0 + j; lev += [l, l]; WT += [[2 * (l - 1), 2 * (l - 1) + 1]] * 2
+        l = m0 + j; lev += [l, l]; WT += [[2 * (l - 1), 2 * (l - 1) + 1] if l > 0 else [-1, -1]] * 2
     if E: assert N0 == 2 * m0 and not fixall
     N = len(lev); dtop = m0 + E
     bad, req = RQ.requirements(lev0, WT0, gate0, S0)
@@ -89,21 +89,35 @@ def build(T, E, fixall=False, lem=True):
     st = {}
     for t in range(L + 1):
         for v in range(N): st[(t, v)] = bool(S0[t][v]) if v < N0 else C.new()
-    Gb = {(l, k): C.new() for l in range(m0, dtop) for k in (0, 1)}
+    Gb = {(l, k): C.new() for l in range(max(m0, 1), dtop) for k in (0, 1)}
+    g0 = {}   # free level 0 (R202): a total order on the four level-0 gates, slots (v, k), v in {0, 1}
+    if m0 == 0 and E > 0:
+        sl = [(0, 0), (0, 1), (1, 0), (1, 1)]
+        for i in range(4):
+            for j in range(i + 1, 4): g0[(sl[i], sl[j])] = C.new()
+        glt0 = lambda a, b: g0[(a, b)] if (a, b) in g0 else -g0[(b, a)]
+        for p1 in sl:
+            for p2 in sl:
+                for p3 in sl:
+                    if len({p1, p2, p3}) == 3: C.add([-glt0(p1, p2), -glt0(p2, p3), glt0(p1, p3)])
     Rk = {}
     for t in range(L + 1):
         key = RQ.keys(lev0, WT0, gate0, S0[t])
         for l in range(m0): Rk[(t, l)] = key[2 * l] < key[2 * l + 1]
         for l in range(m0, dtop):
             a, c = st[(t, 2 * l)], st[(t, 2 * l + 1)]
+            if l == 0:
+                Rk[(t, 0)] = C.OR([C.AND([a if ka else neg(a), c if kc else neg(c), glt0((0, ka), (1, kc))]) for ka in (0, 1) for kc in (0, 1)]); continue
             Rk[(t, l)] = C.ITE(C.EQ(a, c), C.ITE(a, Gb[(l, 1)], Gb[(l, 0)]), C.ITE(neg(a), Rk[(t, l - 1)], neg(Rk[(t, l - 1)])))
     def KPb(t, a):
         if a < N0:
             key = RQ.keys(lev0, WT0, gate0, S0[t]); return RQ.kp(lev0, WT0, gate0, key, a) == 1
+        if lev[a] == 0: return glt0((a, 1), (a, 0))
         x, y = WT[a]; l = lev[a] - 1
         rx = Rk[(t, l)] if x == 2 * l else neg(Rk[(t, l)])
         return neg(rx)
     need_t = set(s for (s, x) in req) | (set(range(L)) if N > N0 else set())
+    if os.environ.get("RISEZ"): need_t |= set(range(L + 1))   # R213: IN at every state 0..L (rise counter)
     IN = {}
     # topological evaluation is not available (order is symbolic): define IN by equations
     for t in sorted(need_t):
@@ -162,6 +176,14 @@ def build(T, E, fixall=False, lem=True):
                 cond = [mv[(t, x)], neg(mv[(t - 1, x)]), C.EQ(KPb(t, x), KPb(t - 1, x))]
                 if any(g is False for g in cond): continue
                 C.add([neg(g) for g in cond if g is not True] + [C.AND([reach[(x, y)], mv[(t - 1, y)]]) for y in range(N) if y != x])
+    if os.environ.get("PMX"):   # R206: violation of L-NEW CONJECTURE PM at mover x: moves(x) >= (deg - 1)(1 + desc(x)) + 1, deg 2:
+        # sum_t mv[t, x] + sum_(y != x) not reach[x, y] >= N + 1   (reach = Xi-reachability, the LEM variables; needs LEM on)
+        from pysat.card import CardEnc, EncType
+        assert lem, "PMX needs LEM=1 (reach variables)"
+        xq = int(os.environ["PMX"]); lits = [mv[(u, xq)] for u in range(1, L + 1)] + [neg(reach[(xq, y)]) for y in range(N) if y != xq]
+        nt = sum(1 for z in lits if z is True); lits = [z for z in lits if not isinstance(z, bool)]
+        enc = CardEnc.atleast(lits=lits, bound=N + 1 - int(os.environ.get('PMOFF', '0')) - nt, top_id=C.n, encoding=EncType.seqcounter)   # PMOFF=1: sanity (tight bound)
+        C.n = max(C.n, enc.nv); [C.add(list(c)) for c in enc.clauses]
     for (s, x), bit in req.items():
         c = better1(s, x); C.add([c if bit == 1 else -c])
     for a in range(N0, N):
@@ -178,6 +200,10 @@ def build(T, E, fixall=False, lem=True):
                 for c2 in ts[i + 1:]:
                     for (p, q) in ((a, c2), (c2, a)):
                         C.add([neg(C.EQ(cvar[(a, x)], neg(cvar[(c2, x)])))] + [C.AND([dif[(p, x)][y], neg(C.EQ(st[(p, y)], st[(q, y)]))]) for y in range(N) if y != x])
+    if os.environ.get("XTHINT"):   # SAT-finding only: fix every face's Xi-target to that of a given genome (UNSAT with it is NOT exact)
+        Gx = json.load(open(os.environ["XTHINT"]))
+        for v in range(N):
+            for k in (0, 1): C.add([b[((v, k), Gx["opts"][v][k][1])]])
     if os.environ.get("HINT"):   # SAT-finding only (an UNSAT answer with a hint is NOT exact): fix extra movers' states at t <= HINTT and gate bits from a genome
         import ideal
         Gh = json.load(open(os.environ["HINT"])); Sh, _ = ideal.traj(Gh); HT = int(os.environ.get("HINTT", "0"))
@@ -185,7 +211,111 @@ def build(T, E, fixall=False, lem=True):
             for v in range(N0, N): C.add([st[(t, v)] if Sh[t][v] else neg(st[(t, v)])])
         if os.environ.get("HINTG", "1") == "1":
             for (l, k), var in Gb.items(): C.add([var if Gh["gate"][2 * l][k] < Gh["gate"][2 * l + 1][k] else -var])
-    info = dict(N=N, N0=N0, L=L, lev=lev, WT=WT, gate0=gate0, S0=S0, m0=m0, dtop=dtop, faces=faces, b=b, lt=lt, par=par, st=st, Gb=Gb, req=req, fi=fi)
+    if os.environ.get("SYMB") == "1" and m0 == 0:   # R202 symmetry break (all levels free): sigma_l swaps the two level-l movers and
+        # relabels the options of level l+1 (states flip, gates / faces move along); the sigma_l commute and sigma_l touches only levels
+        # l, l+1, so fixing levels bottom-up puts one member of every orbit into: s_0(u_l) >= s_0(v_l) for every level l
+        for l in range(1 if os.environ.get("SYM0") == "1" else 0, dtop): C.add([st[(0, 2 * l)], neg(st[(0, 2 * l + 1)])])   # SYM0=1: level 0 broken by the cube order f0 <= f1 instead
+    if os.environ.get("CMIN") or os.environ.get("CMAXV"):   # R203: C_l = #steps moving some mover of level <= l; CMIN "l:b,..." -> C_l >= b
+        from pysat.card import CardEnc, EncType
+        ml = {}
+        for l in range(dtop):
+            for t in range(1, L + 1): ml[(l, t)] = C.OR([mv[(t, v)] for v in range(N) if lev[v] <= l])
+        for item in [x for x in os.environ.get("CMIN", "").split(",") if x]:
+            l, bnd = map(int, item.split(":")); lits = [ml[(l, t)] for t in range(1, L + 1)]
+            lits = [x for x in lits if x is not False]; nt = sum(1 for x in lits if x is True); lits = [x for x in lits if x is not True]
+            if bnd - nt > len(lits): C.add([])
+            elif bnd - nt > 0:
+                enc = CardEnc.atleast(lits=lits, bound=bnd - nt, top_id=C.n, encoding=EncType.seqcounter)
+                C.n = max(C.n, enc.nv); [C.add(list(c)) for c in enc.clauses]
+        info_ml = ml
+    if os.environ.get("SEG") or os.environ.get("SEGMAX"):   # R204 (SEG lower bounds); SEGMAX=c: L-NEW box 158 SEG-CAP, each segment <= c (CONDITIONAL on that lane lemma): segments cut at the level-0 steps; SEG "1t:s,1:m,t:m,m:m" -> seg1+tail >= s, seg1 >= m, tail >= m, mid >= m
+        from pysat.card import CardEnc, EncType
+        z = {t: C.OR([mv[(t, v)] for v in range(N) if lev[v] == 0]) for t in range(1, L + 1)}
+        ne = {t: C.OR([mv[(t, v)] for v in range(N)]) for t in range(1, L + 1)}
+        a1 = {0: False}; a2 = {0: False}
+        for t in range(1, L + 1): a1[t] = C.OR([a1[t - 1], z[t]]); a2[t] = C.OR([a2[t - 1], C.AND([a1[t - 1], z[t]])])
+        sg = {"1": {t: C.AND([neg(a1[t]), ne[t]]) for t in range(1, L + 1)},
+              "t": {t: C.AND([a2[t - 1], neg(z[t]), ne[t]]) for t in range(1, L + 1)},
+              "m": {t: C.AND([a1[t - 1], neg(a2[t - 1]), neg(z[t]), ne[t]]) for t in range(1, L + 1)}}
+        if os.environ.get("SEGMAX"):
+            cap = int(os.environ["SEGMAX"])
+            for w in "1mt":
+                lits = [sg[w][u] for u in range(1, L + 1)]; nt = sum(1 for x in lits if x is True); lits = [x for x in lits if not isinstance(x, bool)]
+                if nt > cap: C.add([])
+                elif len(lits) + nt > cap:
+                    enc = CardEnc.atmost(lits=lits, bound=cap - nt, top_id=C.n, encoding=EncType.seqcounter)
+                    C.n = max(C.n, enc.nv); [C.add(list(c)) for c in enc.clauses]
+        for item in [x for x in os.environ.get("SEG", "").split(",") if x]:
+            which, bnd = item.split(":"); bnd = int(bnd)
+            lits = [sg[w][t] for w in which for t in range(1, L + 1)]
+            lits = [x for x in lits if x is not False]; nt = sum(1 for x in lits if x is True); lits = [x for x in lits if x is not True]
+            if bnd - nt > len(lits): C.add([])
+            elif bnd - nt > 0:
+                enc = CardEnc.atleast(lits=lits, bound=bnd - nt, top_id=C.n, encoding=EncType.seqcounter)
+                C.n = max(C.n, enc.nv); [C.add(list(c)) for c in enc.clauses]
+    if os.environ.get("FMIN") is not None:   # R211: FMIN "l:k,..." -> the level-l pair order Rk flips at >= k of the transitions 0->1, ..., L-1->L
+        from pysat.card import CardEnc, EncType
+        for item in [x for x in os.environ["FMIN"].split(",") if x]:
+            l, bnd = map(int, item.split(":")); lits = [neg(C.EQ(Rk[(t, l)], Rk[(t - 1, l)])) for t in range(1, L + 1)]
+            lits = [x for x in lits if x is not False]; nt = sum(1 for x in lits if x is True); lits = [x for x in lits if x is not True]
+            if bnd - nt > len(lits): C.add([])
+            elif bnd - nt > 0:
+                enc = CardEnc.atleast(lits=lits, bound=bnd - nt, top_id=C.n, encoding=EncType.seqcounter)
+                C.n = max(C.n, enc.nv); [C.add(list(c)) for c in enc.clauses]
+        for item in [x for x in os.environ.get("FMAX", "").split(",") if x]:   # FMAX "l:k" -> at most k flips (needs FMIN set, may be "")
+            l, bnd = map(int, item.split(":")); lits = [neg(C.EQ(Rk[(t, l)], Rk[(t - 1, l)])) for t in range(1, L + 1)]
+            nt = sum(1 for x in lits if x is True); lits = [x for x in lits if not isinstance(x, bool)]
+            if nt > bnd: C.add([])
+            elif len(lits) + nt > bnd:
+                if bnd - nt == 0: [C.add([neg(x)]) for x in lits]
+                else:
+                    enc = CardEnc.atmost(lits=lits, bound=bnd - nt, top_id=C.n, encoding=EncType.seqcounter)
+                    C.n = max(C.n, enc.nv); [C.add(list(c)) for c in enc.clauses]
+    if os.environ.get("TMIN") == "1":   # R202: the run has at least L steps (deterministic run: step L nonempty => all earlier steps nonempty)
+        C.add([mv[(L, v)] for v in range(N)])
+    if os.environ.get("UMIN") or os.environ.get("Z0MAX"):   # R213 (L-NEW box 183 T^N_k, real-run form): U = #steps changing a mover of
+        # level >= 1 is >= UMIN; #steps moving a level-0 mover (0 or 1) is <= Z0MAX
+        from pysat.card import CardEnc, EncType
+        def card(lits, bnd, atleast):
+            lits = [x for x in lits if x is not False]; nt = sum(1 for x in lits if x is True); lits = [x for x in lits if x is not True]
+            if atleast:
+                if bnd - nt > len(lits): C.add([]); return
+                if bnd - nt <= 0: return
+                enc = CardEnc.atleast(lits=lits, bound=bnd - nt, top_id=C.n, encoding=EncType.seqcounter)
+            else:
+                if bnd - nt < 0: C.add([]); return
+                if bnd - nt >= len(lits): return
+                enc = CardEnc.atmost(lits=lits, bound=bnd - nt, top_id=C.n, encoding=EncType.seqcounter)
+            C.n = max(C.n, enc.nv); [C.add(list(c)) for c in enc.clauses]
+        if os.environ.get("UMIN"): card([C.OR([mv[(t, v)] for v in range(N) if lev[v] >= 1]) for t in range(1, L + 1)], int(os.environ["UMIN"]), True)
+        if os.environ.get("Z0MAX"): card([C.OR([mv[(t, v)] for v in range(N) if lev[v] == 0]) for t in range(1, L + 1)], int(os.environ["Z0MAX"]), False)
+    if os.environ.get("MOVEZ"):   # R213 (L-NEW box 181 MOVES-2D): mover z moves >= MOVEMIN times in steps 1..L and is some option's Xi-target
+        from pysat.card import CardEnc, EncType
+        z = int(os.environ["MOVEZ"]); rmin = int(os.environ.get("MOVEMIN", "1"))
+        tl = [b[((x, k), z)] for x in range(N) if x != z for k in (0, 1) if ((x, k), z) in b]
+        if True not in tl and not os.environ.get("MOVEANY") and not os.environ.get("MOVENT"): C.add([x for x in tl if x is not False])   # R214: MOVEANY=1 drops «z is a Xi-target»
+        if os.environ.get("MOVENT") and True not in tl: [C.add([neg(x)]) for x in tl if x is not False]   # R214: MOVENT=1 forces z NOT a Xi-target
+        if os.environ.get("MOVENT") and True in tl: C.add([])
+        lits = [mv[(t, z)] for t in range(1, L + 1)]
+        lits = [x for x in lits if x is not False]; nt = sum(1 for x in lits if x is True); lits = [x for x in lits if x is not True]
+        if rmin - nt > len(lits): C.add([])
+        elif rmin - nt > 0:
+            enc = CardEnc.atleast(lits=lits, bound=rmin - nt, top_id=C.n, encoding=EncType.seqcounter)
+            C.n = max(C.n, enc.nv); [C.add(list(c)) for c in enc.clauses]
+    if os.environ.get("RISEZ"):   # R213 (L-NEW box 180 RISE-2D): mover z's current value cv(z) changes >= RISEMIN times in steps 1..L, and z
+        # is the Xi-target of some option (so R(x, k) = #rises of cv(z) for that option). By R105 MONO cv never falls and ranks are distinct,
+        # so «cv(z) rises at step t» = «z's current chain (face set) differs between states t-1 and t».
+        from pysat.card import CardEnc, EncType
+        z = int(os.environ["RISEZ"]); rmin = int(os.environ.get("RISEMIN", "1"))
+        chg = [C.OR([neg(C.EQ(IN[(t - 1, z, f)], IN[(t, z, f)])) for f in faces]) for t in range(1, L + 1)]
+        tl = [b[((x, k), z)] for x in range(N) if x != z for k in (0, 1) if ((x, k), z) in b]
+        if True not in tl: C.add([x for x in tl if x is not False])
+        lits = [x for x in chg if x is not False]; nt = sum(1 for x in lits if x is True); lits = [x for x in lits if x is not True]
+        if rmin - nt > len(lits): C.add([])
+        elif rmin - nt > 0:
+            enc = CardEnc.atleast(lits=lits, bound=rmin - nt, top_id=C.n, encoding=EncType.seqcounter)
+            C.n = max(C.n, enc.nv); [C.add(list(c)) for c in enc.clauses]
+    info = dict(mv=mv, g0=g0, N=N, N0=N0, L=L, lev=lev, WT=WT, gate0=gate0, S0=S0, m0=m0, dtop=dtop, faces=faces, b=b, lt=lt, par=par, st=st, Gb=Gb, req=req, fi=fi, IN=IN)
     return C, info
 
 def decode(model, I):
@@ -194,10 +324,14 @@ def decode(model, I):
     xt = {f: next(u for u in range(-1, N) if u != f[0] and tv(I["b"][(f, u)])) for f in faces}
     rank = {f: sum(1 for g in faces if g != f and tv(I["lt"](fi[g], fi[f]))) for f in faces}
     gate = [list(g) for g in I["gate0"]] + [[0, 0] for _ in range(N - N0)]
-    for l in range(I["m0"], I["dtop"]):
+    for l in range(max(I["m0"], 1), I["dtop"]):
         for k in (0, 1):
             lo, hi = 2000 + 4 * l + 2 * k, 2001 + 4 * l + 2 * k
             gate[2 * l][k], gate[2 * l + 1][k] = (lo, hi) if tv(I["Gb"][(l, k)]) else (hi, lo)
+    if I["g0"]:
+        sl = [(0, 0), (0, 1), (1, 0), (1, 1)]
+        glt0 = lambda a, b: tv(I["g0"][(a, b)]) if (a, b) in I["g0"] else not tv(I["g0"][(b, a)])
+        for a in sl: gate[a[0]][a[1]] = sum(1 for b in sl if b != a and glt0(b, a))
     start = [I["S0"][0][v] if v < N0 else (1 if tv(I["st"][(0, v)]) else 0) for v in range(N)]
     import xisearch as XS
     G = RQ.genome(I["lev"], I["WT"], gate, start, dict(xt=xt, pos=XS.topo(N, xt), rank=rank, par={f: tv(I["par"][fi[f]]) for f in faces}))

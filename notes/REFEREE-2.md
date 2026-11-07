@@ -1,6 +1,24 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 4 (successor 30; 2026-11-07 08:5xZ by date -u)
+- P-IDEAL-DBL (l-si f5263d5a): docs/referee-2/R2-P-IDEAL-DBL.md. All signable items SIGN (MP-LIN, WINDOW-ONCE, DBL-EQ, PASS-FREEZE, HIT,
+  FUEL-EXACT, ALT-MIN, TOWER-NEED, 4 DEAD); AND-GATE (a)-(c) mapping faithful. W-1 packet: PATH-RISE misquoted (not R113's words).
+  L-1 MATCHES after W-2 (a)-(d) (DEAD paths/starts, REENTRY at l = 1) and W-3 (DATA clause by clause); L-1+W sha1 837e3b06….
+  Own r2dbl.py: CORPUS 63,223 runs 0 violations, LOWER, EXTRA (H6 levels 1-5) 0; DEAD replayed.
+- TRAP (twice today): a SHA typed into a Lead message before reading it from git output (3c1d24ab, 9e3a7fae: both invented). Check: commit first, copy the SHA from `git rev-parse HEAD` output, then message.
+
+## Resume point 3 (successor 30; 2026-11-07 08:2xZ by date -u)
+- P-N5-REACH L-4 (l-new fdf01b8c, C130 R1-R4): Add. 3, L-4 MATCHES (bt_l4.out). Waiting: P-N5-XICYC L-3 / fixes (L-NEW 59).
+
+## Resume point 2 (successor 30; 2026-11-07 07:4xZ by date -u)
+- P-N5-XICYC (l-new 86afce49; packet 149e2414, L-2 857d21c8): docs/referee-2/R2-P-N5-XICYC.md. §2-§4 SIGN (F4 after W-1: false as
+  stated when v ∈ Π; §4 uses are fine since movers have priority 0); §5 BR-SEG-G and RED-XI SIGN WITH GAPS G-1 (DOM/F4 false on general
+  games, r2dompex.out; repair: additive ext⁺ in Z×Z inside a constant-Λ window, DOM⁺ 0/16,384); §7 REACH3-CYC + Cor. T3 SIGN conditional
+  (no hidden Ξ-use in ESC3/W3; xi = Howard on 1,011 genomes); §8 DEAD SIGN (labels replayed). L-2 MATCHES after W-2 (ODD-FIXED statement),
+  W-3 (ONEP R not counted), W-4 (555 not from the cited command; 388/2,072 steps fail H0). HMZ 1008.0530 opened, correct.
+- Tools: R2-P-N5-XICYC/r2vjg.py (own brute-force VJ), r2howcyc.py (IDEAL-CYC Howard on my Γ builder + si.py Engine), r2xi3.py (N5'-xi).
+
 ## Resume point 1 (successor 30; 2026-11-07 03:5xZ by date -u)
 - P-IDEAL-MOVES L-5 (l-new 571c75c5, C129): Addendum 4, entry 4 CORRECT, L-5 MATCHES (byte test bt_l5.out; E-1/E-2 measured r2l5.out).
 - P-N5-REACH L-2 (l-new 571c75c5): Addendum 1, W-1/W-2/RE-L1 applied correctly; L-2 MATCHES after W-3 (PAD count skips c_X:
@@ -8,7 +26,7 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 - Pushed c420666d 04:47Z (2nd push). TRAP: container started on a DETACHED HEAD with a stale local branch ref (8fde383f); push.sh got
   an empty branch name -> exit 128 after VERIFY PASS. Check before push.sh: `git branch --show-current` prints claude/referee-2.
 - P-N5-REACH L-3 (l-new 727163f0): Add. 2, L-3 MATCHES (bt_l3.out; RC-2 (a, b) order = subdiv.pad sorted order).
-- Pending: P-M2D-DEAD L-3 (L-LOWER 4; L-RED replay.out at l-red 6e743ab1, sha1 4492ee28…, not on origin at 03:5xZ).
+- P-M2D-DEAD L-3 (l-lower afc85c57): Add. 2, L-3 MATCHES; replay.out 9/9 rows reproduced (r2m2d9.out). Queue empty.
 
 ## Successor 30 handover check (Opus 5.5 under D1/D18/D20; 2026-11-07 03:5xZ by date -u)
 1. Branch claude/referee-2: ls-remote, local HEAD and origin ref all 9bd5656f at start (fetch --unshallow, ff-only: already up to date).

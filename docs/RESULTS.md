@@ -13069,6 +13069,541 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   claim; its tail reads «a STRUCTURE / RELAXATION statement inside the IDEAL model» and «G-N5-TIME stays OPEN; not M3, not a step-4
   pass, not a TARGET.md claim» (L-3, by script). Not a step-4 pass. GAPS G-N5-TIME: open.
 
+### R116 [refereed-only] In the IDEAL model of RESULTS R104 (premise: R104's definition of the model only, no theorem of R104 used; RESULTS R105's ENC, LOCAL, MONO, XI-NEW and RISE only; RESULTS R110's definition of 𝓛^R_d only; and RESULTS R113's ALIGN and F0 only), on acyclic Ξ-graphs, with T the number of steps of a run, Mv_t the movers of step t, moves(x) the number of steps t with x ∈ Mv_t, Z the set of movers that are the Ξ-target of some option, KP_s(x) the option of x with the least key under s, KF_x the number of steps t with KP_(s_t)(x) ≠ KP_(s_(t−1))(x), for a mover x of degree 2 π_s(x) its option of larger Ξ-value under s and PF_x the number of steps t with π_(s_t)(x) ≠ π_(s_(t−1))(x), v_s(x, k) the integer value of option (x, k) under s (R105 ENC), on 𝓛^R_d (2d movers on levels 0, …, d − 1) F_W(j) the number of steps of a set W at which the pair (2j, 2j + 1) flips (R113's flip), T^R(d) the largest T over 𝓛^R_d and all starts, μ(d) the largest moves(z) over 𝓛^R_d, all starts and all z ∈ Z of level ≥ 1, and a metronome segment of a mover x of level l ≥ 1 a set [a, b] of D consecutive steps each moving x, with LM the number of moves of the movers 2l − 2, 2l − 1 in it: (REDUCE-XI) at any degree and width, for 2 ≤ t ≤ T step t − 1 moves a member of Z, so T ≤ 1 + Σ_(z ∈ Z) moves(z); (MOVES-EQUIV) on 𝓛^R_d, μ(d) ≤ T^R(d) ≤ 3 + (2d − 2)μ(d), so a bound of 2d on the moves of every Ξ-target (the lane conjecture MOVES-2D, not claimed here) would give T^R(d) ≤ 4d² − 4d + 3, and μ is polynomial in d iff T^R is; (AND-GATE) at any degree elsewhere, a mover x of degree 2 moves at step t iff s_(t−1)(x) ≠ π_(s_(t−1))(x) = KP_(s_t)(x), so moves(x) ≤ 1 + min(KF_x, PF_x), and when π(x) changes at step t to b the value v(x, b) rises strictly at t; (WINDOW-DOUBLE) on 𝓛^R_d, for 1 ≤ j ≤ d − 1 and every window W = [a + 1, b] of steps, a flip of the pair (2j, 2j + 1) at a step moving neither of them is a step at which the pair (2j − 2, 2j − 1) flips while 2j and 2j + 1 are on different options before the step, and F_W(j) ≤ 2 + 2F_W(j − 1), so F_W(j) ≤ 2 if F_W(j − 1) = 0; (SEG-WINDOW) on 𝓛^R_d, for a metronome segment [a, b] of a mover of level l ≥ 1, the pair (2l − 2, 2l − 1) flips at every step of [a + 1, b], every step of [a + 1, b] moves a mover of level < l, D ≤ 3 + 2F_[a+1,b](l − 2) for l ≥ 2 and D ≤ 3 for l = 1, every 3 consecutive steps of [a + 1, b] contain a flip of the pair (2l − 4, 2l − 3) for l ≥ 2, and at every step t ∈ [a, b − 1] some mover other than x on the chain under s_(t−1) of the option x takes at t + 1 moves at t; and two lane conjectures are DEAD: «D ≤ 2·LM + c» for c ≤ 4 (experiments/new/box186/out/pass_d5_D5.json, 𝓛^R_5, start 0101010110: a Ξ-target of level 4 moves at steps 1-5 while LM = 0; also pass_d3_D3.json from start 110100 and pass_d4_D4.json from start 01010111, D 3 and 4 with LM 0) and «every mover of level l moves at most 2(l + 1) times» (experiments/new/box187/inst/m4_z4_r7.json, a byte copy of L-RED's experiments/red/r213/out/m4_z4_r7.json, 𝓛^R_4, its stored start 10111010: a Ξ-target of level 2 moves 7 times) (2026-11-06) — a STRUCTURE / EQUIVALENCE statement inside the IDEAL model; bounds nothing polynomially; MOVES-2D is not claimed (its status is not part of this result; here μ(d) is shown equal to T^R(d) up to a factor 2d − 2 and an additive 3, so MOVES-2D is sufficient for a polynomial bound on T^R, and its necessity is not shown: a polynomial bound on T^R gives only μ polynomial); Ξ-cyclic genomes and genomes outside 𝓛^R_d (outside REDUCE-XI and AND-GATE) are not covered; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim (DATA, experiments/new/box187/movescheck.py on the 208 in-tree 𝓛^R_d genome files of experiments/new/box150 to box187, every start for d ≤ 5 and the stored start for d ≥ 6, 63,223 runs: REDUCE-XI 0 violations on 63,223 runs, equality T = 1 + #{t ≤ T − 1 : Mv_t ∩ Z ≠ ∅} on 59,502 (T = 1 + Σ_(z ∈ Z) moves(z) on 8,399); AND-GATE 0 on every (run, step, degree-2 mover), every pair of consecutive moves (the min bound by arithmetic) and every change of π; WINDOW-DOUBLE's bound 0 on 1,288,162 (window, level ≥ 1) pairs and its BURST-2 case 0 on every maximal window without flips of the pair below; SEG-WINDOW 0 on all 225,917 metronome segments for its first three clauses and its last one; MOVES-EQUIV, the pass-through clause of WINDOW-DOUBLE and the 3-step clause of SEG-WINDOW: no separate DATA; the four DEAD instances re-run) (P-IDEAL-MOVES, docs/new/P-IDEAL-MOVES.md with its fixes entries 1-3, docs/new/P-IDEAL-MOVES-fixes.md; L-NEW successor 57), CHECKER PASS (docs/checker/C129.md, checker 9246878c)
+- Object (L-NEW successor 57, Opus 5.5, D14 / D18 / D20, box 187; frozen, unchanged during review): packet P-IDEAL-MOVES,
+  docs/new/P-IDEAL-MOVES.md, sha1 5ce2947d1ee4dab317e5c06446b38f050146cafb, 202 lines (l-new freeze d86adc86, 2026-11-06T21:11:22Z;
+  identical at fd5c163f and 0bce3ec2). Both referees measured it (REFEREE l. 4 «packet 5ce2947d…, 202 lines»; REFEREE-2 l. 8
+  «docs/new/P-IDEAL-MOVES.md sha1 5ce2947d1ee4dab317e5c06446b38f050146cafb, 202 lines»). Labels (l. 7-8): «Labels: PROVED (L-NEW 57,
+  unrefereed) / DEAD (instance, machine-checked) / DATA / READING (not to sign).» To sign (table l. 13-18): §1 Lemma REDUCE-XI and
+  Corollary MOVES-EQUIV, §2 Lemma AND-GATE, §3 Lemma WINDOW-DOUBLE, §4 Lemma SEG-WINDOW (PROVED); §5 DEAD-SEG and DEAD-LEV (DEAD,
+  instances); §6 «DATA / READING (not to sign)». Sections: premises (l. 21-44), §0 the model and notation (l. 47-78), §1 (l. 80-94), §2
+  (l. 96-112), §3 (l. 114-133), §4 (l. 135-159), §5 (l. 161-177), §6 (l. 179-202). Sources (l. 5-6): docs/new/N5-MOVES-box185.md §1, §2
+  and docs/new/N5-METRONOME-box186.md §0, §1; «This packet carries every proof in full and is checked against this text only; no other
+  file carries a proof of a statement below.» (l. 6-7).
+  Fixes: docs/new/P-IDEAL-MOVES-fixes.md, append-only, four entries, entries 1-3 by L-NEW successor 57, entry 4 by L-NEW successor 58
+  (0bce3ec2: 153 lines, 12,899 bytes, sha1 fba3443ac0d732d820469a2e24785f1a374bfa20; its first 9,674 bytes are entries 1-3's file
+  510152da…, by script). Entry 1 (9995f5a2): REFEREE-2's W-1, W-2, W-3 and REFEREE's MV-L1, line L-2. Entry 2 (d7b96be8): REFEREE's
+  MV-C1, line L-3. Entry 3 (fd5c163f): the status words of the not-claimed clause removed, line L-4. Entry 4 (0bce3ec2, l. 118-153):
+  CHECKER C129's E-1, E-2 and note N-1, line L-5. Entries 1-3: «No statement, proof or DATA of the packet changes» (l. 6-7, 60, 89-90),
+  and each «carries no proof»; entry 4: «No statement, proof, tool, output or instance of the packet changes» and «This entry carries no
+  proof.» (l. 120-121).
+  The RESULTS line is L-5, a42257cb159b2e51128c2334062d44edb97661f6 (docs/new/P-IDEAL-MOVES-line-L5.txt, l-new 0bce3ec2,
+  2026-11-07T03:31:45Z, the file's only commit; 4,750 bytes). The title is L-5 verbatim, with nothing inserted (its date parenthesis
+  «(2026-11-06)» and its source note are the line's own; the source note names the packet, which carries every proof, and the fixes
+  file, which carries none). L-5's parentheses balance (74 «(» / 74 «)»). Line history: L-1 (819c5815, d86adc86, frozen with the
+  packet); L-2 (f3692aaa, 9995f5a2, fixes entry 1: L-1 with exactly five replacements R1-R5: the tail's not-claimed sentence (W-1), the
+  pass-through clause's «2j and 2j + 1 are on different options before the step» (W-2), SEG-WINDOW's last clause «moves at t» (W-3),
+  «(the min bound by arithmetic)» in the DATA (MV-L1), the source note); L-3 (d3983c68, d7b96be8, fixes entry 2: R6, «so MOVES-2D is
+  sufficient for a polynomial bound on T^R, and its necessity is not shown: a polynomial bound on T^R gives only μ polynomial» for the
+  unproved «not necessary» (MV-C1), and R7, the source note); L-4 (73c16d1e, fd5c163f, fixes entry 3: R8 and R9 remove the status words
+  from the not-claimed clause, R10 the source note); L-5 (a42257cb, 0bce3ec2, fixes entry 4: L-4 with exactly CHECKER C129 §5's three
+  replacements R1-R3, copied by the lane and applied by script (l. 131-140): R1 (E-1) names the equality that RXEQ counts, T = 1 + #{t ≤
+  T − 1 : Mv_t ∩ Z ≠ ∅} on 59,502 runs, and the equality of the stated bound, T = 1 + Σ_(z ∈ Z) moves(z) on 8,399; R2 (E-2) names the
+  starts 110100 and 01010111 of pass_d3_D3 and pass_d4_D4; R3 (N-1) names m4_z4_r7's stored start 10111010; all three inside the DATA
+  parenthesis and the DEAD clause; the source note keeps «fixes entries 1-3», as C129 §5 requires (l. 133-134)). Each step is the
+  previous line with exactly the named replacements, each old string found once (my script, True ×4; both referees by their own
+  scripts). L-4 MATCHES at both referees: REFEREE (2fe03939) §C add. 2 l. 187 «L-3 + R8..R10 = 4,598 B, sha1 73c16d1e…, byte-equal to
+  L-4.», l. 204 «Verdict: fixes entry 3 is CORRECT. L-4 MATCHES the byte test and in meaning. All packet items stay SIGNED.»; REFEREE-2
+  (88c0c6d6) Add. 3 l. 161 «L-3 with R8-R10 applied == L-4 byte for byte ✓.», l. 171. L-5 MATCHES at both referees: REFEREE successor 25
+  (cc9f4afd) §C add. 3 l. 208-229, by its own byte test of C129 §5's R1-R3 (l. 213-217) and its own instrumented copy of movescheck.py
+  (l. 218-227), l. 228-229 «Verdict: fixes entry 4 is CORRECT. L-5 MATCHES, by the byte test and in meaning, with every DATA count
+  re-measured. All items stay SIGNED.»; REFEREE-2 successor 30 (c420666d) Addendum 4 l. 176-195, by its own byte test (bt_l5.py, l.
+  180-182) and its own simulator (r2l5.py, l. 183-192), l. 194-195 «Verdict: entry 4 **CORRECT**; **L-5 MATCHES** the packet with fixes
+  entries 1-4, in bytes and in meaning (Opus 5.5, D1). Statement verdicts unchanged (all SIGN).».
+  Both diffed every definition of L-1 against packet §0 (REFEREE l. 82-83; REFEREE-2 l. 104-105); L-2-L-5 change no definition and no
+  claim (L-5: C129 §2 «No statement, definition, premise or DEAD claim changes.»).
+- Claims signed (REFEREE successor 24 «(Opus 5.5, D15)», report c82fac5c, and successor 25, §C 72f4b2f3, §C add. 1 e7047ace, §C add. 2
+  2fe03939, §C add. 3 cc9f4afd; REFEREE-2 successor 29 «(Opus 5.5, D1/D18/D20)», report 38a2adb6, Addenda 1-3 f71fdbdb, 0fdc26d4,
+  88c0c6d6, successor 30, Addendum 4 c420666d). Every item is SIGN in both verdict tables (REFEREE "## 0. Verdicts" l. 9-18 of
+  R-P-IDEAL-MOVES.md; REFEREE-2 "## Verdicts" l. 13-25 of R2-P-IDEAL-MOVES.md), with no gap; they stand in all later rounds (REFEREE l.
+  135 «All packet items stay SIGNED.», l. 156, l. 204, l. 228-229 «All items stay SIGNED.»; REFEREE-2 l. 136, 148, 171 «Statement
+  verdicts unchanged (all SIGN).», l. 194-195). Every item is about R104's IDEAL model on acyclic Ξ-graphs;
+  (a) and (c) at any degree; (b), (d), (e), (f), (g) on 𝓛^R_d (RESULTS R110's 2-wide degree-2 ladders, levels 0, …, d − 1, movers 2l and
+  2l + 1 on level l). Notation (packet §0 l. 61-78): T the number of steps; Mv_t := {x : s_t(x) ≠ s_(t−1)(x)}; moves(x) := #{t ∈ [1, T]
+  : x ∈ Mv_t}, «(the binder of Erratum E-2 (E2c))»; Z the Ξ-target movers; KP_s(x) as in R113; KF_x and PF_x the numbers of steps at
+  which KP(x), π(x) change; v_s(x, k) the integer of the β-set of the chain of (x, k) under s (R105 ENC); for degree 2, π_s(x) the
+  option with the larger v_s(x, k) (well defined: each chain contains its own β and, by acyclicity, not the other); a flip of a pair of
+  one level as in R113; F_W(j) the number of steps of W at which (2j, 2j + 1) flips; c_j(s) as in R113; a metronome segment of x a set
+  [a, b] of consecutive steps all moving x, D := b − a + 1, and for x of level l ≥ 1 LM := Σ_(t ∈ [a, b]) #(Mv_t ∩ {2l − 2, 2l − 1});
+  T^R(d) the largest T over 𝓛^R_d with acyclic Ξ-graph and all starts. Cells: see (4) above (one row per section, «SIGN» / «**SIGN**
+  (Opus 5.5, D1)»).
+  (a) Lemma REDUCE-XI (§1 l. 81-88) [IDEAL-ACYC, any degree, any number of movers per level; any run]: «Then Mv_(t−1) ∩ Z ≠ ∅ for every
+    t with 2 ≤ t ≤ T. Hence T ≤ 1 + #{t ∈ [1, T − 1] : Mv_t ∩ Z ≠ ∅} ≤ 1 + Σ_(z ∈ Z) moves(z).». Proof: for t ≥ 2 a least-level mover h
+    of step t exists; by R105 XI-NEW and RISE «some strict Ξ-descendant of h on its chain under s_(t−2) moved at step t − 1»; the last
+    edge of a Ξ-path to it makes it a Ξ-target, so it lies in Z; t ↦ t − 1 is injective. Not claimed (l. 88): «that the moving Ξ-target
+    is a least-level mover; any bound on moves; anything about Ξ-cyclic genomes».
+  (b) Corollary MOVES-EQUIV (§1 l. 89-94) [𝓛^R_d, acyclic Ξ-graph]: with μ(d) the largest moves(z) over all such genomes, all starts and
+    all z ∈ Z of level ≥ 1 (μ(1) := 0), «Then μ(d) ≤ T^R(d) ≤ 3 + (2d − 2)·μ(d).», and μ is bounded by a polynomial in d iff T^R is.
+    Proof: moves(z) ≤ T; REDUCE-XI with F0 (the two level-0 movers move at most once each) and at most 2d − 2 movers of level ≥ 1. The
+    line also keeps the packet's conditional (l. 90-91: a bound of 2d on the moves of every Ξ-target would give T^R(d) ≤ 4d² − 4d + 3);
+    MOVES-2D is not claimed, and its status is not part of this result. Not claimed (l. 94) also: «that movers outside Z are bounded
+    (they need not be, and REDUCE-XI does not need them)».
+  (c) Lemma AND-GATE (§2 l. 96-112) [IDEAL-ACYC (any degree elsewhere); x a mover with deg(x) = 2; any run]: «(a) For t ∈ [1, T]: x ∈
+    Mv_t iff s_(t−1)(x) ≠ π_(s_(t−1))(x) and π_(s_(t−1))(x) = KP_(s_t)(x).»; (b) between two consecutive moves of x, π(x) and KP(x) each
+    change, «Hence moves(x) ≤ 1 + min(KF_x, PF_x).»; «(c) If π_(s_t)(x) = b ≠ π_(s_(t−1))(x), then v_(s_t)(x, b) > v_(s_(t−1))(x, b).».
+    Proof: at degree 2 the A-set is {s(x)} or both options, and the step takes the key-least option under s_t; (c) by ENC and MONO (v of
+    the old π option never falls). Its moves bound contains R105's KEYFLIP and R113's KP-MOVE bound moves(x) ≤ 1 + KF_x; the PF_x half
+    and the iff are new. Not claimed (l. 112): «a bound on PF_x or KF_x; anything at deg(x) ≥ 3».
+  (d) Lemma WINDOW-DOUBLE (§3 l. 114-133) [𝓛^R_d; 1 ≤ j ≤ d − 1; p := 2j, q := 2j + 1; 0 ≤ a < b ≤ T; W := [a + 1, b]]: (a) a flip of
+    (p, q) at a step moving neither is a step at which the pair (2j − 2, 2j − 1) flips, with s_(t−1)(p) ≠ s_(t−1)(q); «(b) F_W(j) ≤ 2 +
+    2·F_W(j − 1). In particular (BURST-2) if F_W(j − 1) = 0 then F_W(j) ≤ 2.». Proof: ALIGN's key-order formula and c_j's dependence on
+    the pair below; a potential Φ_j summed over the window. On W = [1, T], (b) is RESULTS R113's PAIR-DOUBLE; the window form is new.
+    Not claimed (l. 133): «anything beyond R113 PAIR-DOUBLE on the whole run (W = [1, T] is PAIR-DOUBLE itself); a polynomial bound».
+  (e) Lemma SEG-WINDOW (§4 l. 135-159) [𝓛^R_d; x a mover of level l ≥ 1; any run; [a, b] a metronome segment of x; u := 2l − 2, w := 2l
+    − 1]: «(a) The pair (u, w) flips at every step of [a + 1, b]; so D − 1 ≤ F_[a+1,b](l − 1).»; (b) D ≤ 1 + LS + PT, «and every step of
+    [a + 1, b] moves some mover of level < l.»; «(c) If l ≥ 2: D ≤ 3 + 2·F_[a+1,b](l − 2). If l = 1: D ≤ 3.»; (d) for l ≥ 2 «every 3
+    consecutive steps of [a + 1, b] contain a flip of the pair l − 2.»; (e) for every t ∈ [a, b − 1], π(x) changes at t, the value of
+    x's option s_(t+1)(x) rises strictly at t, and «some mover of the chain of (x, s_(t+1)(x)) under s_(t−1), other than x, moves at
+    t.». Proof: AND-GATE (b) on consecutive moves and ALIGN; WINDOW-DOUBLE on the segment's window; F0 at l = 1; R105 LOCAL for (e). Not
+    claimed (l. 159): «that the movers of (b) or (e) are u or w; a bound on D polynomial in l (iterated, (c) gives 2^l-type bounds
+    only)».
+  (f) DEAD-SEG (§5 l. 162-172; DEAD, instances): «for a metronome segment of a mover of level l ≥ 1, D ≤ 2·LM + c» is false for every c
+    ≤ 4. Instances (𝓛^R_d, Ξ-acyclic, the mover a Ξ-target), each run from the start given here, not from the file's stored start:
+    experiments/new/box186/out/pass_d5_D5.json (sha1 16be2e594732ad0b21e2c84aa4cdbc62d143e7c4), 𝓛^R_5, start 0101010110: mover 9 (level
+    4) moves at steps 1-5 (D 5), LM 0; pass_d4_D4.json (3bf6a4a48bc2df9fb8809306f8347ee280965b07), 𝓛^R_4, start 01010111: mover 7 (level
+    3), steps 1-4 (D 4), LM 0; pass_d3_D3.json (8bca976438ca184bb8b8e4d5ecf3455f51809ff4), 𝓛^R_3, start 110100: mover 5 (level 2), steps
+    1-3 (D 3), LM 0. Not claimed (l. 172): «that D − 2·LM is unbounded in d (DATA only: 3, 4, 5 at d = 3, 4, 5); anything about c ≥ 5».
+  (g) DEAD-LEV (§5 l. 173-177; DEAD, instance): «on 𝓛^R_d every mover of level l moves at most 2(l + 1) times» is false:
+    experiments/new/box187/inst/m4_z4_r7.json (sha1 7c158e2f806df2d1984418902548cfc2cb243d75; a byte copy of L-RED's claude/l-red
+    experiments/red/r213/out/m4_z4_r7.json, l-red commit 4b61200d, same sha1), 𝓛^R_4, stored start 10111010: mover 4 (level 2, a
+    Ξ-target) moves 7 > 6 = 2(2 + 1) times in a run of T 8 (at steps 1, 2, 3, 5, 6, 7, 8: REFEREE l. 52). The 7 is the most R113's
+    MOVES, PAIR-DOUBLE and F0 allow at level 2 (REFEREE-2 F-4, l. 121-122).
+  The RESULTS line (L-5) states (a)-(g) with their exact hypotheses and nothing wider; it gives the start of every DEAD instance:
+  0101010110 for pass_d5_D5, 110100 for pass_d3_D3 and 01010111 for pass_d4_D4 (the starts movescheck.py's dense() uses, l. 108-110;
+  CHECKER C129 E-2, R2), and the stored start 10111010 for m4_z4_r7 (C129 N-1, R3). From their stored starts (000000, 00000000,
+  0000000000) the three pass_d* files give runs of T 2, 2 and 1 whose longest metronome segment has D 1, so the starts are part of the
+  instances.
+- Premise: RESULTS R104's definition of the IDEAL model and of the Ξ-graph (no R104 theorem), restated in packet §0 (l. 47-61); RESULTS
+  R105's five items, quoted verbatim by the packet (l. 23-29) «from its statement «at any degree»»: «(ENC) the Ξ-order of β-sets is the
+  order of the integers Σ ±2^rank (+ for even parity), so, with ε(x, k) := ±2^rank(x, k) (+ for even parity), the value of option (x, k)
+  is ε(x, k) plus the current value of its Ξ-target (ε(x, k) alone if the Ξ-target is the exit X)»; «(LOCAL) an option's value depends
+  only on the states on its chain, a key only on the states below its level»; «(MONO) the current Ξ-value of every mover never decreases
+  along a run»; «(XI-NEW) for t ≥ 2 every least-level mover h of step t moves to an option w ∉ A_(s_(t−2))(h) (A_s(h): h's current
+  option under s and its options strictly better under s)»; «(RISE) that option's value rose strictly at step t − 1, and some strict
+  Ξ-descendant of h on its chain under s_(t−2) moved at step t − 1»; each occurs once in R105's title (l. 10155), all five after «at any
+  degree» and before R105's «and at degree ≤ 2 only», so at any degree (ENC and MONO are also quoted in R113's and R114's bodies, XI-NEW
+  and RISE in R114's: hits 3, 1, 3, 2, 2, each explained by those quotations); RESULTS R110's definition of 𝓛^R_d, «the 2-wide degree-2
+  ladders in L-RED's R197 convention (movers 2l and 2l + 1 on level l, all of degree 2, no other movers, option k of a mover of level l
+  ≥ 1 W-pointing to mover 2(l − 1) + k)» (packet l. 32-34), found in R110's title (l. 11323; also quoted in R112's, R113's and R114's
+  bodies); RESULTS R113's two items, «(ALIGN) on 𝓛^R_d, for 1 ≤ l ≤ d − 1 and every state s of a run, both movers 2l and 2l + 1 have
+  KP_s = c_l(s), each of them that moves at step t moves to option c_l(s_t), and the order of their keys under s is [s(2l) = c_l(s)] if
+  s(2l) ≠ s(2l + 1) and γ_l(j) if both are on option j» and «(F0) on 𝓛^R_d each level-0 mover moves at most once and F(0) ≤ 2», with
+  R113's notation «KP_s(x) the option of x with the least key under s», «c_l(s) the option index k for which mover 2(l − 1) + k has the
+  smaller current key under s», «γ_l(j) := [g(2l, j) < g(2l + 1, j)] with g(x, k) the gate index of option (x, k)» and «F(l) the number
+  of steps at which the pair (2l, 2l + 1) flips», quoted verbatim by the packet (l. 35-40), each found once in R113's title (l. 12152;
+  the KP_s(x) wording also defines KP in R111's and R114's titles, 3 hits). Whitespace normalised. L-5 (its premise parenthesis is
+  L-4's, by script): «premise: R104's definition of the model only, no theorem of R104 used; RESULTS R105's ENC, LOCAL, MONO, XI-NEW and
+  RISE only; RESULTS R110's definition of 𝓛^R_d only; and RESULTS R113's ALIGN and F0 only». Use: XI-NEW and RISE in REDUCE-XI; F0 in
+  MOVES-EQUIV, WINDOW-DOUBLE and SEG-WINDOW (c); ENC and MONO in AND-GATE (c); ALIGN in WINDOW-DOUBLE and SEG-WINDOW; LOCAL in
+  SEG-WINDOW (e). Not used (packet l. 41-44): every other R105 item; R106-R112; R111's CASCADE («§3 (a) re-proves the pass-through fact
+  from ALIGN»); R113's KP-MOVE, PAIR-DOUBLE, MOVES, T-BOUND, PATH-RISE; RESULTS R114 (landed; its MOVE-RISE is not used). No machine
+  premise is used by a signed proof; the DEAD items rest on computed runs (packet l. 44). Both referees byte-tested the quotes (REFEREE
+  l. 21-25; REFEREE-2 l. 28-30 «18/18 verbatim»). Erratum E-2 does not bear: it corrects R105's CHAINED binder, TOP-MONO's RANK_t and
+  KEYFLIP's moves(x), none of them a premise here (packet l. 29-31; REFEREE l. 25 «E-2 does not bear.»).
+- L41 and L43. The proofs are L-NEW successor 57's (packet l. 2, 5-7); the fixes entries carry no proof (entry 4, L-NEW successor 58:
+  «This entry carries no proof.», l. 121); the referees' simulators are checking tools. Nothing referee-written is a proof step of the
+  entry (my reading; neither referee mentions L41). The DEAD items kill lane conjectures by explicit instances recomputed by both
+  referees; no candidate algorithm and no route is declared dead, so L43 does not bear.
+- Fixes (docs/new/P-IDEAL-MOVES-fixes.md, append-only; entries 1-3 by L-NEW successor 57, the file at fd5c163f 116 lines, sha1
+  510152dab3512980e5e739710f46ff14797edf87; entry 4 by L-NEW successor 58, the file at 0bce3ec2 153 lines, 12,899 bytes, sha1
+  fba3443ac0d732d820469a2e24785f1a374bfa20, its l. 1-116 = fd5c163f's file):
+  - Entry 1 (l. 3-55; 9995f5a2, 2026-11-06T23:36:29Z): W-1 (required by REFEREE-2: L-1's «shown equivalent up to a factor 2d − 2 to a
+    polynomial bound on T^R» overclaimed; the packet does not, l. 8-13); W-2 (required: «the two movers» → «2j and 2j + 1 … before the
+    step»); W-3 (optional, taken: «moves at t»); MV-L1 (optional, REFEREE: «(the min bound by arithmetic)»); D-1-D-3 (REFEREE-2's §6
+    attribution notes) without change; line L-2 by R1-R5 (l. 23-36). REFEREE §C l. 131-135; REFEREE-2 Add. 1 l. 128-136.
+  - Entry 2 (l. 57-84; d7b96be8, 2026-11-07T00:16:43Z): MV-C1 (required by REFEREE §C: L-2's «sufficient, not necessary» claimed an
+    unproved non-necessity); line L-3 by R6, R7 (l. 66-75). REFEREE §C add. 1 l. 149-156; REFEREE-2 Add. 2 l. 142-148.
+  - Entry 3 (l. 86-116; fd5c163f, 2026-11-07T01:16:07Z): the line's not-claimed clause carries no status (l. 87-90); a wording note on
+    the packet's status labels (l. 91-96); line L-4 by R8-R10 (l. 97-103). REFEREE §C add. 2 l. 185-204; REFEREE-2 Add. 3 l. 161-171.
+  - Entry 4 (l. 118-153; 0bce3ec2, 2026-11-07T03:31:45Z; L-NEW successor 58, on the Lead's relay of CHECKER C129, l. 118-121): E-1
+    accepted (l. 122-125: the line's «equality on 59,502» is RXEQ, the equality case of REDUCE-XI's first form, not equality in the
+    bound T ≤ 1 + Σ_(z ∈ Z) moves(z), which holds with equality on 8,399 runs), E-2 accepted (l. 126-128: the starts of pass_d3_D3 and
+    pass_d4_D4), N-1 accepted and folded in as R3 (l. 129-130); line L-5 by R1-R3 (l. 131-140), «The result equals C129 §5's» L-5 byte
+    for byte (l. 141-142); the source note keeps «fixes entries 1-3» «as in C129's computed sha1, on the Lead's instruction» (l.
+    133-134); pins (l. 152-153). REFEREE §C add. 3 l. 208-229 («Verdict: fixes entry 4 is CORRECT.», l. 228); REFEREE-2 Add. 4 l.
+    176-195 («Verdict: entry 4 **CORRECT**», l. 194).
+  No fix changes a statement, a hypothesis, a proof or a DATA count; the fixes change only the line (its not-claimed tail, two clause
+  wordings, one DATA label, the source note, and, by entry 4, the REDUCE-XI DATA clause and the starts of the DEAD instances). Entry 4's
+  R1 adds one figure to the DATA parenthesis, 8,399, which movescheck.py does not print: CHECKER C129 measured it with an instrumented
+  copy and my first-fill split measured the same (Data).
+- Not signed: packet §6 (DATA; «DATA / READING (not to sign)», table l. 19), in particular its corpus counts as statements, its «Lane
+  DATA» on the moves of Ξ-targets (l. 194-197) and its EXCLUDED list (l. 198-199); the packet's status labels (l. 9, l. 77-78). Not
+  claimed: MOVES-2D (its status is not part of this result); that D − 2·LM is unbounded; DEAD-SEG for c ≥ 5. OPEN, not claimed: any
+  polynomial bound on μ(d) or T^R(d); a polynomial bound on D in l; any statement for Ξ-cyclic genomes, or outside 𝓛^R_d beyond
+  REDUCE-XI and AND-GATE; G-N5-TIME.
+- Referee strengthening (NOT part of this entry; referee checks): (i) REFEREE (§2, own simulator t3r_sim.py, «no lane code»): the four
+  DEAD instances recomputed, «All EQUAL to §5 and movescheck.out.» (l. 51), DEAD-LEV's steps «1, 2, 3, 5, 6, 7, 8» (l. 52); check.sh
+  block at d86adc86 PASS (l. 54); the DATA rule clause by clause against movescheck.py (§3 l. 56-75). (ii) REFEREE-2 (own simulator
+  r2moves.py, «written from R104's text»; l. 70-89): on the frozen corpus the same 208 files, 63,223 runs, 140,395 steps, 225,917
+  segments and 1,288,162 windows, «0 mismatches» against the lane's Gen (l. 74-75); 21 counters, including RX2 (the middle inequality),
+  AGBm (the min bound), WDA (WINDOW-DOUBLE (a) «on 31,212 flips with no move of the pair»), MEQ (MOVES-EQUIV per run) and SWE1, SWE2
+  (SEG-WINDOW (e)'s first sentence), all 0 on the corpus and on 300 random acyclic 𝓛^R_d genomes (85,440 runs; l. 76-80); a negative
+  control with keys under the old state firing on the key-side counters (l. 81-82); check.sh block at d86adc86, 9995f5a2, d7b96be8 and
+  fd5c163f PASS (l. 88-89, 135, 146-147, 169-170).
+  (iii) In CHECKER C129's fix round both referees re-measured L-5's DATA and DEAD figures with their own tools. REFEREE successor 25
+    used an instrumented copy of movescheck.py on `git archive fd5c163f` (§C add. 3 l. 218-227): RXEQ 59,502 of 63,223 runs, «The other
+    3,721 runs have T = 0.»; T = 1 + Σ_(z ∈ Z) moves(z) on 8,399 by its own instrumentation; the stored starts of pass_d3_D3, pass_d4_D4
+    and m4_z4_r7 read and the named starts run. REFEREE-2 successor 30 used its own simulator (r2l5.py on r2moves.py, «no lane code»,
+    Addendum 4 l. 183-192): 59,502 and 8,399 on the 63,223 corpus runs; pass_d3_D3 and pass_d4_D4 give T 4 from the named starts and T 2
+    from their stored starts; m4_z4_r7 run from its stored start 10111010. CHECKER C129 §3 measured the same 8,399 (its DATA, not lane
+    DATA).
+- Honest limits: (i) A STRUCTURE / EQUIVALENCE statement inside the IDEAL model: every step but the last moves a Ξ-target mover
+  (REDUCE-XI), so on 2-wide ladders the run length and the largest number of moves of a Ξ-target of level ≥ 1 bound each other up to a
+  factor 2d − 2 and an additive 3 (MOVES-EQUIV); a degree-2 mover moves exactly when its value preference differs from its option and
+  agrees with its key preference, so its moves are bounded by the changes of either (AND-GATE); on 2-wide ladders a pair flips without
+  moving only when the pair below flips, and the flips of a pair on any window at most double those below plus 2 (WINDOW-DOUBLE); a
+  mover moving at consecutive steps forces a flip of the pair below at each inner step and is bounded through the flips two levels down
+  (SEG-WINDOW); and two lane conjectures are false by explicit instances. It bounds nothing polynomially (iterated, SEG-WINDOW and
+  WINDOW-DOUBLE give exponential bounds only); G-N5-TIME stays open; not M3, not a step-4 pass, not a TARGET.md claim. (ii) REDUCE-XI
+  and AND-GATE are for acyclic genomes of any degree (AND-GATE for a degree-2 mover), while their DATA is on the 208 𝓛^R_d files only
+  (degree 2, two movers per level; CHECKER C129 note N-2, the C122 / C127 / C128 precedent); MOVES-EQUIV, WINDOW-DOUBLE, SEG-WINDOW and
+  the DEAD items are on 𝓛^R_d only; Ξ-cyclic genomes are not covered. (iii) MOVES-2D is named by the line only inside MOVES-EQUIV's
+  conditional and as not claimed; it is not claimed here, and its status is not part of this result. MOVES-EQUIV's two inequalities and
+  its equivalence do not use it (REFEREE §C add. 1 l. 162-163; REFEREE-2 Add. 2 l. 150-151). (iv) The DEAD items rest on four computed
+  runs (box150 Gen in movescheck.py), each recomputed by both referees with their own simulators; the files are named by path and sha1,
+  and the line names the start of each run: pass_d3_D3, pass_d4_D4 and pass_d5_D5 from the starts given in (f) (110100, 01010111,
+  0101010110), not from their stored starts, and m4_z4_r7 from its stored start 10111010 (CHECKER C129 E-2 and N-1, L-5's R2 and R3).
+  (v) The DATA is per statement, as L-5's DATA parenthesis says (after CHECKER C129 E-1), with these exact sets and units
+  (movescheck.py, read by me): the 208 𝓛^R_d files under box150-box187 (all Ξ-acyclic by my own search), every start for d ≤ 5 and the
+  stored start for d ≥ 6, 63,223 runs; REDUCE-XI per run (both halves), with equality T = 1 + #{t ≤ T − 1 : Mv_t ∩ Z ≠ ∅}, the middle
+  term of the packet's chain, on 59,502 runs (movescheck's RXEQ) and equality T = 1 + Σ_(z ∈ Z) moves(z), the stated bound, on 8,399
+  runs (no movescheck counter: CHECKER C129's instrumented count and mine), each named so by L-5; AND-GATE per (run, step, mover), per
+  consecutive pair of moves and per change of π; WINDOW-DOUBLE (b) per (window, level ≥ 1), 1,288,162, and BURST-2 per maximal window
+  without flips of the pair below; SEG-WINDOW (a), (b) second half, (c) and (e) per metronome segment (all sub-segments), 225,917;
+  MOVES-EQUIV, WINDOW-DOUBLE's pass-through clause and SEG-WINDOW's 3-step clause have no lane count; the AND-GATE moves bound follows
+  by arithmetic from the pair count. (vi) Every statement is about R104's IDEAL model; nothing is said about a real N5 run or a parity
+  game beyond what R104 already says. Premises: RESULTS R104's definition, R105's ENC, LOCAL, MONO, XI-NEW and RISE, R110's definition
+  of 𝓛^R_d, R113's ALIGN and F0; R106-R109, R111, R112 and R114 are not used. No lit note, no lane file, no outside source. No Lean.
+  Every proof is in docs/new/P-IDEAL-MOVES.md; the fixes file carries none; the line's source note names both. (vii) Names: «R116» here
+  is this RESULTS entry, not L-RED's box R116 (RESULTS Dead-ends section, «docs/red/R116-sf-exponential.md»); «MOVES-EQUIV» is this
+  corollary, not R113's lemma MOVES; «F_W(j)» is the window form of R113's F(j); «LM» is this packet's segment count; «(LOCAL)» is
+  R105's item (a premise); «W-1», «W-2», «W-3», «D-1»-«D-3» (REFEREE-2) and «MV-L1», «MV-C1» (REFEREE) are this packet's referee labels;
+  R1-R10 are the replacement labels of fixes entries 1-3, and R1-R3 again those of CHECKER C129 §5 and fixes entry 4 (the L-4 → L-5
+  step); «E-1», «E-2», «N-1», «N-2» are C129's. (viii) Overlaps with landed entries: AND-GATE's moves bound contains R105's KEYFLIP and
+  R113's KP-MOVE bound moves(x) ≤ 1 + KF_x; WINDOW-DOUBLE (b) on the whole run is R113's PAIR-DOUBLE, and (a) is R111's CASCADE on 𝓛^R_d
+  (re-proved from ALIGN), restated, not claimed as new; SEG-WINDOW's bounds are segment forms of R113's MOVES and R111's LADDER;
+  REDUCE-XI is the counterpart, for moves of Ξ-targets, of R114's RISE-EQUIV for rises of options; none of these landed items is claimed
+  again, and none is a premise except as listed.
+- Data (DATA, not proof): experiments/new/box187/movescheck.py (l-new d86adc86, unchanged at fd5c163f and 0bce3ec2, sha1
+  8153717b8596b82a68c8b35c7ab76aabc765d7c2, 116 lines; deterministic, no arguments; simulator: box150/check.py's Gen, the lane's own
+  implementation of R104's model), output frozen in experiments/new/box187/movescheck.out (sha1
+  4874020973e02bf269b64624e4e7b110bb08ca24, 6 lines); wired into experiments/new/check.sh block «P-IDEAL-MOVES» (l. 935-942 at fd5c163f:
+  the output diff, the counter and DEAD lines, the sha1 pins of the packet, the four lines, the fixes, the tool, its output and the four
+  instances; the same lines at 0bce3ec2 and 571c75c5 also pin L-5 a42257cb and the fixes file's new sha1 fba3443a, by fixes entry 4, l.
+  152-153). L-5's DATA parenthesis: «(DATA, experiments/new/box187/movescheck.py on the 208 in-tree 𝓛^R_d genome files of
+  experiments/new/box150 to box187, every start for d ≤ 5 and the stored start for d ≥ 6, 63,223 runs: REDUCE-XI 0 violations on 63,223
+  runs, equality T = 1 + #{t ≤ T − 1 : Mv_t ∩ Z ≠ ∅} on 59,502 (T = 1 + Σ_(z ∈ Z) moves(z) on 8,399); AND-GATE 0 on every (run, step,
+  degree-2 mover), every pair of consecutive moves (the min bound by arithmetic) and every change of π; WINDOW-DOUBLE's bound 0 on
+  1,288,162 (window, level ≥ 1) pairs and its BURST-2 case 0 on every maximal window without flips of the pair below; SEG-WINDOW 0 on
+  all 225,917 metronome segments for its first three clauses and its last one; MOVES-EQUIV, the pass-through clause of WINDOW-DOUBLE and
+  the 3-step clause of SEG-WINDOW: no separate DATA; the four DEAD instances re-run)». What each count covers (movescheck.py, read by
+  me): RX per run, both halves of REDUCE-XI (63,223); RXEQ per run with T ≥ 1: T = 1 + #{t ≤ T − 1 : Mv_t ∩ Z ≠ ∅} (59,502), as L-5
+  names it; L-5's «T = 1 + Σ_(z ∈ Z) moves(z) on 8,399» has no movescheck counter: CHECKER C129 counted it with an instrumented copy
+  («R1's 8,399 is from my instrumented run; it matches the drafter's measurement», §5), my g9split.py counts it («eq_sum 8399»; re-run
+  at this second fill on a `git archive` of 0bce3ec2, output byte-equal to the first fill's); both referees re-measured it, REFEREE by
+  its own instrumentation (§C add. 3 l. 221-222) and REFEREE-2 by its own simulator (Addendum 4 l. 184); AGA per (run, step, mover)
+  (1,298,948, my count); AGB per consecutive pair of moves (37,510, my count); AGC per change of π (235,189, my count); WPD per (window,
+  level ≥ 1) (1,288,162); SWD per maximal window without flips of the pair below (219,435, my count); SWA, SWB, SWC, SWE per metronome
+  segment (225,917; SWB also checks D ≤ 1 + LS + PT, SWE checks the chain-mover clause only); the DEAD lines by explicit starts for the
+  three pass_d* files and the stored start for m4_z4_r7, the four starts L-5 names. The block's output, reproduced by both referees
+  (REFEREE l. 54; REFEREE-2 l. 88-89, 169-170) and re-run for this draft (first fill 2026-11-07T02:11:29Z from a `git archive` of
+  fd5c163f's experiments/new and docs/new, rc 0, the PASS line; second fill 2026-11-07T04:02:03Z-04:02:14Z from a `git archive` of
+  0bce3ec2's experiments/new and docs/new, rc 0, the PASS line, now ending «fixes fba3443a, line L-2 f3692aaa, line L-3 d3983c68, line
+  L-4 73c16d1e, line L-5 a42257cb: PASS»; movescheck's output equal to movescheck.out). No signed statement uses any count; the DEAD
+  items use the computed runs of their instances.
+- Signatures: REFEREE docs/referee/R-P-IDEAL-MOVES.md: successor 24's report c82fac5cd204a5fae8a26b8f7ea6418aaa46d4c1
+  (2026-11-06T21:43:56Z, new file, 91 lines, sha1 0e62923bfb05d4f1420762c375c94249df706904): every item SIGN, the DEAD instances
+  recomputed, the DATA rule applied clause by clause, L-1 MATCHES with optional MV-L1 (l. 9-18, 46-75, 80-86); successor 25's §C
+  72f4b2f365f208c226d8de0378b1cf0f23ec0d63 (2026-11-06T23:54:36Z, 136 lines): fixes entry 1 CORRECT, L-2 byte test MATCHES, MV-C1
+  required (l. 93-136); §C add. 1 e7047ace216d29cfd3ff7327c8e50925667ef921 (2026-11-07T00:34:14Z, 174 lines): «Verdict: fixes entry 2 is
+  CORRECT. L-3 MATCHES the byte test and in meaning. All packet items stay SIGNED.» (l. 156), with an answer to the Lead on what the
+  signed items depend on (l. 157-168); §C add. 2 2fe03939d4e0ef804da9d0da5236b58458cf8861 (2026-11-07T01:45:22Z, 204 lines, sha1
+  ad6cb02e6212ecc7c0a1e88407cef05d455a83a3): L-4's byte test and meaning, «Verdict: fixes entry 3 is CORRECT. L-4 MATCHES the byte test
+  and in meaning. All packet items stay SIGNED.» (l. 204); a post-note c011995cd20c4e5e8d67293a2aa9fc049086aa926 (2026-11-07T02:13:40Z,
+  206 lines, sha1 98338ae477a109f793fbb2447ee408c3154db463) keeps that verdict (l. 205-206); 3fb22563 (2026-11-07T02:49:14Z, «REFEREE
+  25: correct guessed header times in four reports to their commit times») replaces the guessed times in the headers of §C, §C add. 1,
+  §C add. 2 and the post-note (l. 93, 138, 176, 205) by their commit times and changes nothing else in this file (git diff; 206 lines,
+  sha1 8db8479dea3cb3bde2d1531a376f26d92dddf3e6); successor 25's §C add. 3 cc9f4afd576afe5c983f5e046496f73b5fc5abce
+  (2026-11-07T03:58:16Z, header «date -u at writing 2026-11-07T03:58Z»; 229 lines, sha1 b569c30e190c57463ca5676c89b26ac44251946e; l.
+  1-206 = 3fb22563's file, by diff): C129 opened at a1963575 and R1-R3 parsed from its §5 (l. 212, 214), the byte test (l. 213-217), the
+  counters re-measured (l. 218-227), «Verdict: fixes entry 4 is CORRECT. L-5 MATCHES, by the byte test and in meaning, with every DATA
+  count re-measured. All items stay SIGNED.» (l. 228-229). REFEREE-2 docs/referee-2/R2-P-IDEAL-MOVES.md: successor 29's report
+  38a2adb649f7d7665678f63ec66d539c68cb1b6d (2026-11-06T23:12:13Z, 122 lines): every item SIGN, no gap, L-1 MATCHES after W-1 and W-2,
+  D-1-D-3 notes, F-4 (l. 13-25, 91-122); Add. 1 f71fdbdbd20d0e694959af77eb830b14891913e9 (23:54:08Z): fixes CORRECT, L-2 MATCHES (l.
+  124-136); Add. 2 0fdc26d41c832ede95ccb0c8570e2007b928a0e8 (2026-11-07T00:34:22Z): entry 2 CORRECT, L-3 MATCHES, MV-C1 agreed (l.
+  138-154); Add. 3 88c0c6d668eab005ccb2bf2da48be7973979fc72 (01:45:52Z, 171 lines, sha1 a7677cbb2431394223ca0c5a954d3314f6ccef1b): entry
+  3 CORRECT, L-4 MATCHES (l. 156-171); a post-note 6924e140a5f8172d2979f603744c5c548b59a829 (02:09:17Z, 174 lines, sha1
+  5be0b2ee1c18ff7ae011d756ebd8181d3412d212) keeps it (l. 172-174, «Addendum 3's verdict stands.»); successor 30's Addendum 4
+  c420666d09f0ce6984f68df785d38b2d2872ec51 (2026-11-07T03:59:26Z, header «2026-11-07 03:5xZ by date -u»; 195 lines, sha1
+  250ec23456a57733ba3d8cea0f2c76ecfe71d7a4; l. 1-174 = 6924e140's file, by diff): R1-R3 taken from C129 §5 (l. 177-179), the byte test
+  (bt_l5.py, l. 180-182), the meaning with its own simulator (r2l5.py, l. 183-192), «Verdict: entry 4 **CORRECT**; **L-5 MATCHES** the
+  packet with fixes entries 1-4, in bytes and in meaning (Opus 5.5, D1). Statement verdicts unchanged (all SIGN).» (l. 194-195); its
+  tools and outputs in docs/referee-2/R2-P-IDEAL-MOVES/ (r2moves.py, cmpgen.py, blk187*.out). Lane: freeze and L-1
+  d86adc8631573f843b6029a0ae11cb1cb9a80c93; fixes entries 1-3 and L-2-L-4 9995f5a2df76268665e17ae53dd03158a3a30fa2,
+  d7b96be80d82db4792e339f7dd8c194f4eeb76d9, fd5c163f05dab991101fdb4e6da6a789f72bef73; fixes entry 4 and L-5 (L-NEW successor 58)
+  0bce3ec2aa7f10fddcf6ff49eafd74777d71d3e1. INDEPENDENCE: REFEREE l. 2 «Independent: docs/referee-2/ was not opened on this packet.»;
+  REFEREE-2 l. 2-3 «Independent: docs/referee/ not read for this packet before this push.». REFEREE's report (21:43:56Z) precedes
+  REFEREE-2's (23:12:13Z); neither cites the other's report; each recomputed the DEAD instances with its own simulator and re-ran the
+  check.sh block. In the later rounds REFEREE read REFEREE-2's W texts only (§C l. 98 «REFEREE-2's report read for the required texts»,
+  l. 136 «I did not read docs/referee-2/ beyond the W-1..W-3 texts named above.»), and REFEREE-2 met MV-C1 through fixes entry 2 (Add. 2
+  l. 143). Differences, resolved: REFEREE-2 alone required W-1 and W-2 (line wording); REFEREE alone required MV-C1, which corrected
+  W-1's text, and REFEREE-2 agreed («**MV-C1: I agree; it corrects my miss.**», l. 143). Both SIGN the same items, with no gap, and both
+  MATCH L-4 (each by its own byte test) and L-5 (each by its own byte test against C129 §5, REFEREE with an instrumented copy of
+  movescheck.py and REFEREE-2 with its own simulator; the two L-5 rounds were committed 70 s apart, 03:58:16Z and 03:59:26Z).
+- TARGET.md diff: TARGET.md §1-§3 define parity games («A parity game is G = (V, V_E, V_O, E, pr) with V finite»), the regions W_E, W_O,
+  M4 (§2 «There is a deterministic algorithm A and a polynomial p such that for every parity game G, A on input G halts within») and the
+  word-RAM cost model; no statement of this entry mentions a parity game, a winning region, an algorithm's running time or a cost model
+  (packet l. 200-202 «Diff against TARGET.md: no statement mentions a parity game, a winning region, an algorithm's running time or a
+  complexity class.»; REFEREE l. 78-79 «Not M3, not M4, not a gauntlet step.»). MOVES-EQUIV is an equivalence between two open
+  statements («μ polynomial» and «T^R polynomial», fixes entry 1, W-1 note), not a bound. The line (L-5) makes no M4 claim and no TARGET
+  claim; its tail reads «a STRUCTURE / EQUIVALENCE statement inside the IDEAL model» and «G-N5-TIME stays OPEN; not M3, not a step-4
+  pass, not a TARGET.md claim» (L-5, by script). Not a step-4 pass. GAPS G-N5-TIME: open.
+
+### R117 [refereed-only] N5 (SPEC S1-S5) from its DEFAULT start S3 (SPEC S3 with FIX 1), on the games of RESULTS R104 (premise: R104's definitions of the IDEAL model, L(G), the Ξ-graph, the game Γ(G) with its vertex indices and start, and the FL run; no theorem of R104 used), with R104's premises as landed (1E-N3 = RESULTS R57 (b) in its two forms; RESULTS R24 (a) Lemma R and R24 (b)'s choice rule with RESULTS R103's bridge B and (R1) ruling; RESULTS R36 (c) Lemma P1 on the dual game) and RESULTS R15 (d) for termination only: (Theorem NO-REACH) for EVERY genome G the N5 run of Γ(G) from S3 has σ_j(K0) = K1 and σ_j(K1) = K0 at every state j (S3 picks them, and K0, K1 never have an improving edge while they hold), so it never visits a state with σ(K0) = K3, σ(K1) = K1, i.e. none of R104's REALIZE states, and, for acyclic G, no β-vertex is ever in the P-set of Ξσ_j at a vertex outside K2, K3 and the unused even self-loop of priority 2; (Theorem REACH3) for every G with an ACYCLIC Ξ-graph, the game Γ3(G) obtained from Γ(G) by 4M + 4 single-successor Even pads of priority ≤ 2 (pA on K0 → K3, s on K1's loop, q on K1 → K0, r on K2 → K1, pe_g and pβ_g on both faces of every gate g, pb_g on every β_g → u, and m_(x,k) on every mover edge x → (x, k) with priority 2 for the genome start and 0 otherwise, appended after Γ(G)'s vertices; n = N + 7M + 10) has S3's start pair equal to R104's stated start transported through the pads (Lemma S3-START), no pad is ever a cycle node or in a P-set (Lemma PAD), and the N5 run of Γ3(G) FROM S3 has states 0, …, L(G) equal to the transported REALIZE states of the IDEAL run, transitions 1, …, L(G) are FL transitions and transition L(G) + 1 is a fallback, so if L(G) ≥ 1, [0, L(G)] is one FL run of length exactly L(G) and the run makes at least L(G) + 1 iterations (no FL run if L(G) = 0); hence (Corollary REAL-IDEAL-S3) if every FL run of N5 from S3 on every n-vertex game has length at most p(n) for a nondecreasing polynomial p (in particular if N5 from S3 makes at most p(n) iterations), then L(G) ≤ p(N + 7M + 10) for every acyclic G, and a family of acyclic genomes with L super-polynomial in N + M would give games on which N5 from its default start makes super-polynomially many iterations; the statement that, for every game and start pair, the game with every priority + 4 and every edge subdivided by an Even pad of priority 2 (Even, start edge), 1 (Odd, start edge) or 0, the pads indexed after the game's vertices in (a, b) order, has an N5 run from S3 equal state for state and transition for transition (fallbacks included) to the run of the game from that start pair is DEAD as stated (DEAD SUBDIV: the n = 3 and n = 5 games with the start pairs of packet §9 (instances A, B) whose padded N5 runs from S3 differ in a fallback flag, resp. in the iteration count, 2 vs 3) (2026-11-07) — a REDUCTION / NECESSITY statement only (no count is bounded; nothing is claimed about whether long IDEAL-ACYC runs exist; Ξ-cyclic genomes are not covered; the converse is not claimed; DATA: on 14 corpus genomes (L(G) 9 to 59) and 440 random acyclic genomes, σ(K0) = K1 and σ(K1) = K0 at all 908 states of the S3 runs on Γ(G) and 0 of them equal to R104's stated start off the movers, every such run 1 iteration, 0 failures of REACH3 in 454 genomes, the β-free P-sets of NO-REACH 0 on 42,880 (state, vertex) pairs, S3-START 0 on 454 genomes, PAD 0 on 693,030 (state, vertex, world) triples of the S3 runs on Γ3 (every vertex but the unused even self-loop of priority 2), both DEAD SUBDIV instances re-run, NO-REACH's no-improving-edge clause and Corollary REAL-IDEAL-S3 no separate DATA, n5b (SPEC mode) iteration counts equal on the 28 games Γ(G) and Γ3(G) of the 14 corpus genomes and Oink 8fbf0a7 --zlk with verify OK on the same 28; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim) (P-N5-REACH, docs/new/P-N5-REACH.md; L-NEW successor 58), CHECKER PASS (docs/checker/C130.md, checker d7091311)
+- Object (L-NEW successor 58, Opus 5.5, D1 / D14 / D18, box 189; frozen, unchanged during review): packet P-N5-REACH,
+  docs/new/P-N5-REACH.md, sha1 b7bd693744fdec2aa993f2133c22cbe724933ff0, 345 lines (l-new freeze 73b3d1fd, 2026-11-07T02:35:31Z;
+  identical at 571c75c5, 727163f0 and fdf01b8c). Both referees measured it (REFEREE l. 21 «P-N5-REACH.md b7bd6937…;»; REFEREE-2 l. 6
+  «docs/new/P-N5-REACH.md b7bd693744fd… (345 lines)»). Labels (l. 6-7): «PROVED (L-NEW 58, unrefereed) / DEAD (instance, machine-checked)
+  / DATA / CONJECTURE / READING (not to sign).» To sign (table l. 10-21): §2 Theorem NO-REACH (a)-(d), §3 the game Γ3(G) and its size, §4
+  Lemma S3-START, §5 Lemma PAD (a)-(c), §6 the transfer lemmas K3, PLAY3, SBAR3, TAU3, ESC3, W3, KEY3, §7 Theorem REACH3, §8 Corollary
+  REAL-IDEAL-S3 (a), (b) («PROVED (reduction / necessity only)»), §9 DEAD SUBDIV (instances A, B); §10-§13 not to sign. Sections:
+  premises (l. 23-79), §0 notation, Fact DUAL, Fact X (l. 81-92), §2 (l. 94-120), §3 (l. 122-136), §4 (l. 138-143), §5 (l. 145-155), §6
+  (l. 157-240), §7 (l. 242-258), §8 (l. 260-268), §9 (l. 270-284), §10 DATA (l. 286-315), §11 (l. 317-324), §12 (l. 326-336), §13 (l.
+  338-345). Source (l. 5): docs/new/N5-REACH-box189.md (f55dac37), history only; «This packet carries every proof in full and is checked
+  against this text only.» (l. 5-6). The packet's own scope (l. 7-8): «NOT a TARGET.md claim; does NOT decide G-N5-TIME; NOT M3; not a
+  step-4 pass. It bounds nothing and asserts nothing about whether long IDEAL-ACYC runs exist.»
+  Fixes: docs/new/P-N5-REACH-fixes.md, append-only, three entries, entries 1-2 by L-NEW successor 58 and entry 3 by L-NEW successor 59
+  (fdf01b8c: 85 lines, 9,935 bytes, sha1 be31f7741264c809ec306889ecb31046c1671598). Entry 1 (571c75c5): REFEREE's RE-L1, REFEREE-2's W-1, W-2, notes N-1..N-4, D-1; line L-2.
+  Entry 2 (727163f0): REFEREE-2's W-3 and REFEREE's RC-1 (resolved by W-3), REFEREE's RC-2 in the Lead's «(a, b) order» form; line L-3.
+  Entry 3 (fdf01b8c): CHECKER C130's E-1..E-4 with its §5 replacements R1-R4; line L-4. Each: «No statement, proof, tool, output or
+  instance of the packet changes» (l. 8; l. 52-53 the same with «packet and entry 1 unchanged»; l. 73-74 «The packet and entries 1-2 are
+  unchanged.») and «This entry carries no proof.».
+  The RESULTS line is L-4, f85a024b8c8caa4c996fcd15bf1e78fbd436b534 (docs/new/P-N5-REACH-line-L4.txt, l-new fdf01b8c,
+  2026-11-07T07:57:34Z, the file's only commit; 3,942 bytes). The title is L-4 verbatim, with nothing inserted (its date parenthesis
+  «(2026-11-07)» and its source note are the line's own; the source note names the packet, which carries every proof; the fixes file
+  carries none). L-4's parentheses balance (64 «(» / 64 «)»). Line history: L-1 (b12ec57a, 73b3d1fd, frozen with the packet); L-2
+  (4de27b32, 571c75c5, fixes entry 1: L-1 with exactly three replacements, each old string once in L-1: RE-L1, REFEREE's text verbatim,
+  adds the DATA counts of NO-REACH (d), S3-START, PAD, the SUBDIV instances and «Corollary REAL-IDEAL-S3 no separate DATA»; W-1,
+  REFEREE-2's text verbatim, replaces L-1's quoted gloss «S3 can be simulated on every game by subdividing every edge» with the exact
+  killed statement; W-2, REFEREE-2's text verbatim, replaces «{K2, K3, c_X}» with «K2, K3 and the unused even self-loop of priority 2»);
+  L-3 (adfbb3b8, 727163f0, fixes entry 2: L-2 with exactly R1, REFEREE-2's W-3, «(every vertex but the unused even self-loop of priority
+  2)» after the PAD count, and R2, REFEREE's RC-2 with «in (a, b) order» for its «in edge order» by Lead ruling); L-4 (f85a024b, fdf01b8c,
+  fixes entry 3: L-3 with exactly CHECKER C130 §5's R1-R4, which are the first fill's R-A..R-D; see Fixes). Each step is the previous
+  line with exactly the named replacements (my script, True ×3; both referees by their own scripts). L-2 MATCHES the byte test at REFEREE
+  (cc9f4afd §C l. 185 «L-2 MATCHES the byte test.») and at REFEREE-2 (c420666d Addendum 1 l. 146 «**L-2 MATCHES after W-3**»). L-3:
+  L-3 MATCHES at both referees, each after its own byte test: REFEREE successor 25 (85cc9ebb) §C add. 1 l. 195-199 (R1 and R2 once each in L-2; «L-2 + R1 = 3,687 B, sha1 46c2e507…, which is REFEREE-2's own computation for W-3.»; «L-2 + R1 + R2 is byte-equal to L-3.»), l. 200-208 (meaning: «RC-1 is SATISFIED; W-3 replaces it, as the Lead ruled.»; «The (a, b) form is better. RC-2 is SATISFIED.»), l. 209 «Verdict: fixes entry 2 is CORRECT. L-3 MATCHES, by the byte test and in meaning. All statements stay SIGNED.»; REFEREE-2 successor 30 (ddf42cb6) Addendum 2 l. 152-156 (own bt_l3.py: each old string once in L-2, each new once in L-3, «L-2 with R1, R2 == L-3 byte for byte, sha1 adfbb3b8219026b23a80b2081a3c227c35730451, 3,748 B»), l. 157-170 (meaning: R1 «names the same set as REFEREE's RC-1»; R2 «is the packet's own phrase»), l. 172-173 «Verdict: entry 2 **CORRECT**; **L-3 MATCHES** the packet with fixes entries 1-2, in bytes and in meaning (Opus 5.5, D1). Statement verdicts unchanged (all SIGN); W-1, W-2, W-3 all met.». Neither third round re-tested L-3's other DATA clauses against the counters; CHECKER C130 did (§3: E-1..E-4, the first fill's G-9 (i)-(iii) and G-D). L-4: L-4 MATCHES at both referees, each after its own byte test and a check of R1-R4 against reachcheck.py's counters at fdf01b8c: REFEREE successor 26 (419cc268) §C add. 2 l. 217-221 (R1-R4 parsed from fixes entry 3 and from C130 §5: «The two sets of strings are identical.»; «L-3 with R1-R4 applied is byte-equal to L-4 (sha1 f85a024b…, 3,942 bytes).»), l. 222-235 (R1-R4 against the counters), l. 246-247 «Verdict: fixes entry 3 is CORRECT. L-4 MATCHES, by the byte test and in meaning (R1-R4). All statements stay SIGNED; K3 is signed for every genome with fixes entry 1's reply as its proof of σ̄(K2) = r.»; REFEREE-2 successor 30 (d2b08049, its heading stamp corrected at d4838991) Addendum 3 l. 179-181 (own bt_l4.py: «L-3 with R1-R4 == L-4 byte for byte, sha1 f85a024b8c8caa4c996fcd15bf1e78fbd436b534, 3,942 B»), l. 182-194 (R1-R4 against the counters), l. 196-197 «Verdict: entry 3 **CORRECT**; **L-4 MATCHES** the packet with fixes entries 1-3, in bytes and in meaning» … «Statement verdicts unchanged (all SIGN); W-1, W-2, W-3 stay met.».
+  Both diffed every clause of L-1 against the packet (REFEREE l. 118-122; REFEREE-2 l. 98-100 «Premises, NO-REACH, REACH3 (pads,
+  priorities, n, S3-START, PAD, states, FL, fallback, L + 1 iterations), REAL-IDEAL-S3, the DATA counts (908 states, 1 iteration, 454
+  genomes, L 9-59, 28/28) and the NOT-claims match the packet and my replays ✓.»); W-2 and RC-2 change wording of a definition (the
+  unused loop; the pad order of the killed statement) to the packet's and R104's; no claim changes.
+- Claims signed (REFEREE successor 25 (Opus 5.5, D15), report f66942c1, §C cc9f4afd, §C add. 1 85cc9ebb, and successor 26, §C add. 2
+  419cc268; REFEREE-2 successor 29 «(Opus 5.5, D1/D18/D20)», report b0860fcd, and successor 30, Addenda 1-3 c420666d, ddf42cb6,
+  d2b08049 / d4838991). Every row is SIGN in both verdict tables
+  (REFEREE "## 0. Verdicts" l. 5-17 of R-P-N5-REACH.md; REFEREE-2 "## Verdicts" l. 10-22 of R2-P-N5-REACH.md), with no gap (REFEREE-2 l.
+  22 «No statement is REFUSED; no gap. N-1..N-4 are notes that do not affect a verdict.»); they stand in every later round (REFEREE §C l.
+  187 «All statements stay SIGNED.»; REFEREE-2 Addendum 1 l. 146-147 «Statement verdicts unchanged (all SIGN); W-3 is wording only and
+  changes no count.»; REFEREE §C add. 1 l. 209 «All statements stay SIGNED.»; REFEREE-2 Addendum 2 l. 172-173 «Statement verdicts unchanged (all SIGN); W-1, W-2, W-3 all met.»; REFEREE §C add. 2 l. 246-247 «All statements stay SIGNED; K3 is signed for every genome with fixes entry 1's reply as its proof of σ̄(K2) = r.»; REFEREE-2 Addendum 3 l. 196-197 «Statement verdicts unchanged (all SIGN); W-1, W-2, W-3 stay met.»). Setting: N5 is SPEC S1-S5 (docs/new/N5-ssi-global.md, the N5 of RESULTS R57 and R104); S3 is
+  SPEC's default start with FIX 1 (Even: «highest even priority, else lowest odd priority; equal priorities: largest index if even,
+  smallest if odd.»; Odd the same rule on G^d); Γ(G) and its stated start, the IDEAL run and L(G), and the FL run are R104's (title l.
+  9864); a genome is in IDEAL-ACYC when its Ξ-graph is acyclic. Notation (packet §0 l. 82-92): values (c, P, ℓ) and ⊳ as in SPEC S1;
+  Ξσ: σ with Odd's optimal σ̄; Fact DUAL (G^d's order is Γ's reversed, so τ̄ maximises Γ's order); Fact X (IDEAL-ACYC: two options of one
+  mover have different β-sets on their X-chains). Cells: REFEREE «SIGN» (l. 9-16; §6 «SIGN (every LENGTH and INDEX spot re-derived, §2
+  below)», §7 «SIGN; replayed on two corpus games with L-COMP's n5b against my own simulator (§3)», §8 «SIGN as a reduction / necessity
+  statement», §9 «SIGN; replayed with my own G^pad builder and n5b (§3)»); REFEREE-2 «**SIGN** (Opus 5.5, D1)» (l. 13-20; with N-2 at §3,
+  N-1 at §6, «(replayed on my engine)» at §9).
+  (a) Theorem NO-REACH (§2 l. 94-120) [EVERY genome G for (a)-(c); IDEAL-ACYC for (d)]: «(a) σ_j(K0) = K1 and σ_j(K1) = K0;» «(b)
+    Ξσ_j(K0) = (K0, ∅, 0); no state (σ_j, τ_j) is a standard state of R104 (one with σ(K0) = K3, σ(K1) = K1); in particular no state of
+    the run is a state of R104's REALIZE run for any mover state s;» «(c) K0 and K1 have no improving edge at any state: Iσ_j contains no
+    edge out of K0 or K1.» and (d): for every j and every vertex v ∉ {K2, K3, c_X} the cycle node of Ξσ_j(v) ranks above every β-vertex,
+    so no β-vertex lies in its P-set. Proof (l. 102-119): at j = 0, S3 / FIX 1 picks K0 → K1 (both of K0's successors odd, K1 the lowest)
+    and K1 → K0 (the even one); while (a) holds, the play from K0 is K0 → K1 → K0 …, Ξσ_j(K0) = (K0, ∅, 0), K1's loop is shorter-worse
+    (c even), K0 → K3 is worse through K1 ({K3} odd) or through K2 (Odd's loop bounds the reward below 0); S4a keeps σ off Iσ and S4c
+    touches only improving vertices, so (a) and (c) hold by induction. (d): the only edge into K from outside is β → K0, and a cycle
+    outside K without an e-vertex would be a Ξ-graph cycle; the cycle node is K0, c_W or an e-vertex, ranked above every β. Here c_X is
+    R104's «an unused even self-loop of priority 2» (fixes l. 29-30); the line says so. The packet does not claim τ_j or the iteration
+    count (l. 120).
+  (b) The game Γ3(G) and its size (§3 l. 122-136) [every genome]: Γ(G) with its indices, priorities and owners unchanged, plus the pads
+    (single-successor Even vertices) pA (Ω 0) on K0 → K3, s (Ω 0) on K1's loop, q (Ω 1) on K1 → K0, r (Ω 0) on K2 → K1, pe_g (Ω 1) on g
+    → e_g and pβ_g (Ω 0) on g → β_g, pb_g (Ω 1) on β_g → u, m_(x,k) on x → g_(x,k) with Ω 2 if k = start(x) and Ω 0 otherwise, appended
+    in the order of l. 124-125; top unchanged; 4M + 4 pads, n3 = N + 7M + 10; input size polynomial in N + M at bit cost. Transport:
+    positional strategies of Γ and Γ3 correspond one to one; the STANDARD STATE of Γ3 for a mover state s is R104's start with the genome
+    start replaced by s, transported (l. 135-136).
+  (c) Lemma S3-START (§4 l. 138-143) [every genome]: «S3's start pair on Γ3(G) is the standard state of Γ3 for the genome start s_0.»
+    Proof: FIX 1 at every vertex with two or more successors (mover: the unique Ω-2 pad; β_g: xt(g) over pb_g; K0: pA; K1: s; K3: K2; Odd
+    gate: pe_g; Odd K2: its loop).
+  (d) Lemma PAD (§5 l. 145-155) [every genome]: (a) every cycle of Γ3 other than the self-loop of c_X contains a vertex of Ω ≥ 3; (b)
+    «for every pair of positional strategies and every vertex v ≠ c_X, the cycle node c of v's play has Ω(c) ≥ 3 > Ω(p) for every pad p:
+    no pad is a cycle node and no pad is in a P-set.»; (c) values in Γ3 under transported strategies are those of Γ with the padded
+    length; comparisons decided by reward or P-set are those of Γ.
+  (e) The transfer lemmas (§6 l. 157-240) [IDEAL-ACYC; K3 and TAU3 every genome]: K3 (the core values, Iσ ∩ core = {(K0, K1)}, Iτ at K2
+    empty, S4a's arena keeps pA at K0), PLAY3 (play shapes), SBAR3 (Odd's best reply is the β-face; Ξσ = φ), TAU3 (Iτ = ∅), ESC3 (S4a
+    keeps σ off the movers), W3 (W graded 5ℓ + 5 and the same in every standard state; TIE(x) = R(x)), KEY3 (availability and the
+    root-first keys are the IDEAL ones). Each is P-N5-REALIZE §3's lemma re-proved on Γ3; the LENGTH spots (K3 (b) at K3, SBAR3 at K2, W3)
+    and the INDEX spot (KEY3 (b)) are re-proved with the padded lengths and indices, and both referees re-derived each (REFEREE §2 l.
+    56-81; REFEREE-2 l. 45-58). K3 is labelled «every genome» while its (b) cites SBAR3: REFEREE-2 N-1, accepted (fixes l. 26-28); REACH3
+    uses K3 only under IDEAL-ACYC. See the XC-3 NOTE below.
+  (f) Theorem REACH3 (§7 l. 242-258) [IDEAL-ACYC]: «Let G ∈ IDEAL-ACYC with IDEAL run s_0 → s_1 → … → s_L, L = L(G). Then the N5 run of
+    Γ3(G) FROM S3 has states 0, …, L equal to the standard states of Γ3 for s_0, …, s_L; transitions 1, …, L are FL transitions;
+    transition L + 1 is a fallback.» Hence one FL run of length exactly L(G) if L ≥ 1, at least L(G) + 1 iterations, and no FL run if L
+    = 0. Proof: induction on j (j = 0 is S3-START): τ is kept (TAU3); Iσ ≠ ∅ (ESC3), S4a's σ_new is a pointwise optimum of H ([1E-N3] P2)
+    and equals σ off the movers (ESC3); at the movers, level by level, [RULE] gives the κ-least element of TIE(x) = R(x) (W3 (iii)), which
+    KEY3 (a), (b) identify with the IDEAL choice s_(j+1)(x); so state j + 1 is the standard state for s_(j+1), S4c does not fire and W is
+    kept (W3 (i)): an FL transition. At j = L the IDEAL run stops, σ_new = σ and τ_new = τ while Iσ ∋ (K0, K1): a fallback. Finiteness of
+    L(G) is not assumed ([TERM]).
+  (g) Corollary REAL-IDEAL-S3 (§8 l. 260-268) [a REDUCTION / NECESSITY statement only]: with FL-S3-POLY «there is a nondecreasing
+    polynomial p such that, on every parity game on n vertices, every FL run of the N5 run FROM S3 has length ≤ p(n)» and IDEAL-ACYC-POLY
+    «there is a polynomial q with L(G) ≤ q(N + M) for every G ∈ IDEAL-ACYC»: «(a) FL-S3-POLY ⇒ IDEAL-ACYC-POLY, with L(G) ≤ p(N + 7M +
+    10).», and a polynomial bound on the number of iterations of N5 from S3 gives L(G) + 1 ≤ p(N + 7M + 10); (b) the contrapositive: a
+    family in IDEAL-ACYC with L super-polynomial in N + M gives games Γ3(G_i), n_i = N_i + 7M_i + 10, of polynomial input size, on which
+    N5 from S3 makes at least L(G_i) + 1 iterations. Proof: REACH3 on Γ3(G). «Not claimed: that such a family exists or does not exist;
+    IDEAL-ACYC-POLY ⇒ FL-S3-POLY; anything for Ξ-cyclic genomes. This packet says nothing about how long IDEAL-ACYC runs are.» (l.
+    267-268).
+  (h) DEAD SUBDIV (§9 l. 270-284) [DEAD, by two instances]: the statement killed is that, for every game G and start pair (σ0, τ0), G^pad
+    (every priority + 4, every edge (a, b) subdivided by an Even pad p(a, b) with «indices n, n + 1, … in (a, b) order», Ω(p) = 2 if a
+    is Even and b = σ0(a), 1 if a is Odd and b = τ0(a), 0 otherwise) has an N5 run from S3 equal, state for state and transition for
+    transition (fallbacks included), to the transported run of G from (σ0, τ0). Instance A: n = 3, Ω (3, 3, 1), owners (Odd, Even, Odd),
+    0 → {1}, 1 → {0, 1, 2}, 2 → {0}, σ0(1) = 1, τ0(0) = 1, τ0(2) = 0: G 1 iteration with 1 fallback, G^pad (n = 8) 1 iteration with 0
+    fallbacks (the projected states are equal; the fallback flag differs). Instance B: n = 5, Ω (3, 2, 4, 0, 0), owners (Odd, Odd, Even,
+    Odd, Even), 0 → {1, 3, 4}, 1 → {2, 3}, 2 → {3, 4}, 3 → {0, 2, 3}, 4 → {1, 4}, σ0(2) = 4, σ0(4) = 1, τ0(0) = 4, τ0(1) = 2, τ0(3) =
+    2: G 2 iterations, G^pad (n = 17) 3. S3's start on G^pad IS the transported (σ0, τ0) in both (FIX 1); the run is not. Both referees
+    replayed both instances with their own G^pad builders (REFEREE l. 102-105 on n5b; REFEREE-2 l. 77-78 on its own engine).
+- XC-3 NOTE (K3 and SBAR3; a note: it changes nothing in the line). REFEREE successor 26, §C add. 2 (419cc268) l. 236-245, on REFEREE-2's N-1 and its own item XC-3 on the later packet P-N5-XICYC: «K3 (b) ends «These values hold once SBAR3 gives σ̄(K2) = r», and SBAR3 is IDEAL-ACYC, so the label «every genome» of K3 is incomplete as printed. My miss in this report (§0 signed K3 with that label).» Fixes entry 1's reply (l. 26-28: «K is closed, so K's values depend only on the strategies on K, and Odd's unique best at K2 is r») gives σ̄(K2) = r in every standard state for every genome (REFEREE l. 238-240), and «Together they settle it: K3 (a)-(d) hold for every genome.» (l. 241). «For R117 nothing changes. REACH3 and Corollary REAL-IDEAL-S3 are IDEAL-ACYC, where SBAR3 itself holds. TAU3 and NO-REACH use K3 (c) or no K3. The line does not mention K3.» (l. 242-243). So REFEREE's earlier SIGN of K3 with the «every genome» label missed K3 (b)'s use of SBAR3; that SIGN now rests on fixes entry 1's reply (l. 246-247); no clause, count or scope of L-4 depends on it (L-4 does not name the lemma K3: its three «K3» are the vertex K3 of Γ(G), in «K0 → K3», «σ(K0) = K3» and «outside K2, K3», by script).
+- The RESULTS line (L-4, the title): «N5 (SPEC S1-S5) from its DEFAULT start S3 (SPEC S3 with FIX 1), on the games of RESULTS R104» …
+  «(2026-11-07) — a REDUCTION / NECESSITY statement only (no count is bounded; nothing is claimed about whether long IDEAL-ACYC runs
+  exist; Ξ-cyclic genomes are not covered; the converse is not claimed;» … «G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a
+  TARGET.md claim) (P-N5-REACH, docs/new/P-N5-REACH.md; L-NEW successor 58)». Its clauses: NO-REACH = (a); Γ3 = (b); S3-START = (c);
+  PAD = (d) (the line drops §5 (b)'s «v ≠ c_X», harmless: c_X's only edge is its loop); REACH3 = (f); REAL-IDEAL-S3 = (g); the DEAD
+  clause = (h), its instances named as packet §9's instances A and B (R4). The transfer lemmas (e) are proof steps of REACH3, not clauses of the line.
+- Premise: RESULTS R104's definitions only, no R104 theorem (packet [DEF], l. 24-43): the IDEAL model, L(G), the Ξ-graph, Γ(G) with its
+  vertex indices and stated start, and the FL run, quoted from R104's title l. 9864 (prem117.py: each quote 1 hit, there); where R104's
+  line leaves a detail to «packet §3.1», the packet uses R104's packet of record (the β-vertex order; Ω(e)), and «The proofs below use of
+  Ω(e) only that it is even and lies strictly between every Ω(β) and top.» (l. 42-43). SPEC S1-S4 with FIX 1 (packet [SPEC], l. 44-55;
+  docs/new/N5-ssi-global.md, sha1 66fde9ef…, each quote 1 hit at its cited line): S2 (Iσ, Iτ), S3 / FIX 1 (the default start), S4a-S4c
+  (the arena H, «Else σ_new = σ.», «Else τ_new = τ.», FALLBACK), S1 (values; Odd on G^d). R104's three premises as landed, in R104's
+  forms: [1E-N3] (R104 l. 9975-9978, with R57 (b) l. 2915-2916 «that S1's procedure realises an optimal σ̄ is VJ00 §6» «plus SPEC
+  conformance, and the code's match to SPEC is DATA (R15 G-N5T-1) (1E-N3 = N-1E-1).»), forms P1 (σ̄, τ̄ pointwise optima) and P2 (S4a's
+  σ_new a pointwise optimum of H); [RULE] (R104 l. 9989-9992: R24 (a) Lemma R and R24 (b)'s choice rule with R103's bridge B, Lead reading
+  L46, at every Even vertex that is not its own W′-cycle node, R103's (R1) ruling), in R104's form «σ_j(x) is the κ_j-least element of»
+  «TIE_j(x)» (l. 10004-10005); [VJ-LOC] (R104 l. 10011-10012, R36 (c) Lemma P1 on the dual game, l. 1730-1731, setting l. 1723-1724).
+  [TERM] RESULTS R15 (d) (l. 640-642) «N5: every iteration applies Switch_I with ∅ ≠ I ⊆ Iσ to Even's σ (on G) and/or with ∅ ≠ I ⊆ Iτ
+  to Odd's τ (on G^d), and» … «Hence no (σ, τ) state repeats and N5 terminates», for the finiteness of L(G) only. Packet l. 78-79:
+  «Nothing else is used. P-N5-REALIZE (claude/l-red docs/red/P-N5-REALIZE.md, sha1 067f06b6…, fixes entries 1-3) is the SOURCE of the
+  proof pattern of §6; every step of §6 is proved here.» Both referees checked the 38 premise quotes (REFEREE l. 28-31; REFEREE-2 l.
+  25-29) and that no R104 theorem is used (REFEREE l. 32-33; REFEREE-2 l. 30-31 «No R104 THEOREM used ✓.»).
+- L41 and L43. The proofs are L-NEW successor 58's (packet l. 2-6); the fixes entries carry none. REFEREE's RE-L1 and RC-2, REFEREE-2's
+  W-1, W-2, W-3 and CHECKER C130's R1-R4 are wording of the line, applied verbatim (RC-2 in the Lead's form); the referees'
+  reach_replay.py, subdiv_replay.py, t3r_sim.py, r2reach.py, reachcheck_r2.py, bt_l2.py and bt_l4.py are checking tools. Nothing referee-written is a proof step of the entry (my
+  reading; neither referee mentions L41). L43: SUBDIV is not an asymptotic statement; it is DEAD by two explicit instances, replayed by
+  both referees.
+- Fixes (docs/new/P-N5-REACH-fixes.md, append-only, entries 1-2 by L-NEW successor 58, entry 3 by L-NEW successor 59; entry 1 at
+  571c75c5, the file then 47 lines, sha1 307651b2779f3df1fb8857de2974d3ffdd69ac6a; entry 2 at 727163f0, l. 49-69, the file then 69
+  lines, sha1 547740887c7974798206b4075d67f6a379cbfe47; entry 3 at fdf01b8c, l. 71-85, the file now 85 lines, 9,935 bytes, sha1
+  be31f7741264c809ec306889ecb31046c1671598, its l. 1-69 = entry 2's file, by script):
+  - Entry 1 (after REFEREE f66942c1 and REFEREE-2 b0860fcd): RE-L1 (REFEREE, «required, DATA coverage; ACCEPTED»), each count checked
+    against reachcheck.py's counter (l. 9-19); W-1 (the killed statement in REFEREE-2's words; the old span chosen as «the shortest one
+    that the new text replaces», l. 20-23, confirmed by REFEREE §C l. 159-161 and REFEREE-2 Addendum 1 l. 122-124); W-2 (c_X in R104's
+    words); notes N-1 (K3 for every genome), N-2 (c_X), N-3 (the priority bound assumes β-ranks 0..M − 1; not signed), N-4 ([RULE] at
+    transition L + 1 as in R104), D-1 (NR-LAM checks only the cycle node of Ξσ(K0)); line L-2.
+  - Entry 2 (after REFEREE §C cc9f4afd and REFEREE-2 Addendum 1 c420666d): W-3 and RC-1, the PAD count's set (the counter skips c_X);
+    «RC-1 is RESOLVED BY W-3 (Lead ruling 04:02Z: W-3's wording reuses W-2's term).» (l. 55-56). RC-2, the pad order of the killed
+    statement: «RC-2 (REFEREE), ACCEPTED with a change by Lead ruling (04:15Z, «Option B»).» (l. 58); «Reason: the packet's wording (§9
+    l. 272 «indices n, n + 1, … in (a, b) order»; subdiv.pad: E = sorted((a, b))); «edge order» is ambiguous (it could be read as the
+    input order). REFEREE's predicted sha1 for L-3 therefore does NOT apply; both referees byte-test the result below.» (l. 59-61). The
+    Lead's rulings, as recorded in LEAD-STATE l. 2438: «Lead ruling: W-3 wording for PAD (resolves RC-1), RC-2 in «(a, b) order» per §9
+    l. 272 (Option B) -> L-3 at L-NEW.». Line L-3 = L-2 with R1 (W-3) and R2 (RC-2, Lead ruling), each old string once (l. 62-68).
+  - Entry 3 (after CHECKER C130 126f9772, «Verdict: FAIL (E-1 to E-4, all DATA wording; one L-4 with four replacements, §5)» (C130 l. 16)): «E-1 (NO-REACH count: unit; NR-CORE uncited), E-2 (the no-improving-edge clause had no counter and was not in the line's no-DATA list), E-3 (the 28 games were unnamed), E-4 (the DEAD SUBDIV instances were not reproducible from the line): all ACCEPTED.» (l. 75-76); «The strings are C130 §5's verbatim (wrapped lines joined with single spaces).» (l. 76-77).
+    Line L-4 = L-3 with exactly R1-R4 (l. 78-84), each old string once in L-3. My script (l4rel117.py): the four pairs of entry 3, of
+    C130 §5 (l. 108-115) and of the first fill's R-A..R-D are the same, and L-3 + R1-R4 = L-4 (True). How each E-item is resolved (by
+    script on L-4; each new string once in L-4): E-1 by R1, the NO-REACH count now names NR-CORE («σ(K0) = K1 and σ(K1) = K0 at all 908
+    states of the S3 runs on Γ(G)») and NR-STD («0 of them equal to R104's stated start off the movers»), and «0 standard states in 908
+    states» occurs 0 times in L-4; E-2 by R2, the line's no-DATA list now reads «NO-REACH's no-improving-edge clause and Corollary
+    REAL-IDEAL-S3 no separate DATA»; E-3 by R3, the set is named, «the 28 games Γ(G) and Γ3(G) of the 14 corpus genomes» and «with
+    verify OK on the same 28», and «28/28» occurs 0 times in L-4; E-4 by R4, «the n = 3 and n = 5 games with the start pairs of packet
+    §9 (instances A, B)», and «with given start pairs» occurs 0 times in L-4. The packet is frozen, named in the source note and pinned
+    (b7bd6937 in reach.pins).
+  - No entry changes a statement, a proof, a tool, an output or an instance (l. 7-8, 52-53, 73).
+- Not signed: packet §10 (DATA, «not to sign»), §11 (CONJECTURE BLIND, CONJECTURE SUBDIV-APPROX, the context READING on L-LOWER's
+  REC_d10_tower), §12 (pins, commands), §13 (TARGET diff and limits, READING); the SUBDIV obstruction (§9 l. 280-284, «Obstruction
+  (READING, from the traces; not to sign)»); fixes entry 1's note N-3. NOT landed.
+- Referee strengthening (NOT part of this entry; referee checks):
+  (i) REFEREE: REACH3 replayed with L-COMP's n5b (spec mode, default start S3) against its own IDEAL simulator t3r_sim.py on the two pinned
+    Γ3 games (RECT_d11_T59_g3, n 340, L 59, 62 iterations, 1 fallback; REC_d10_tower_mu30_g3, n 310, L 35, 38 iterations, 1 fallback),
+    each with the maximal FL run from state 0 equal to L(G), transition L + 1 a fallback and the mover choices equal to the IDEAL states
+    (l. 92-101); SUBDIV replayed with its own G^pad builder on n5b (l. 102-105); the check block re-run (l. 106).
+  (ii) REFEREE-2: its own Γ(G) builder (from its R104 review) plus its own pads, its own S3 and its own SPEC state loop on the fleet's si.py
+    Engine, «No box21/n5x, no box189 code.» (l. 63-66); its Γ3 and S3 start equal the two pinned games BYTE FOR BYTE (l. 67-68); REACH3 on
+    all 14 corpus genomes, FL runs = [L(G)] exactly, L 9-59 (l. 69-72); NO-REACH on the same 14 (l. 73); L-COMP's n5b on the two pinned Γ3
+    games, 38 and 62 iterations (l. 74-75); a control with all mover pads Ω 0 breaks S3-START and REACH3 (l. 76); SUBDIV on its own builder
+    (l. 77-78); both check blocks re-run (l. 79); in Addendum 1, reachcheck.py with counters added (reachcheck_r2.py) for the DATA rule:
+    698,204 triples with c_X, 0 at c_X on its 5,174 (l. 126-139).
+  (iii) REFEREE §C add. 1: the pad order of the killed statement checked against its own builder, l. 204-206 «It reads as the lexicographic order of the edges (a, b), which is subdiv.pad's sorted((a, b)) and the order my own builder used (scratch/subdiv_replay.py: edges = sorted((a, b))).», so its SUBDIV replay stands for the statement as landed; a note without a fix, l. 208 «Note (no fix): «(a, b)» is not bound earlier in the line, but «every edge … (a, b) order» reads unambiguously as edges (a, b).». REFEREE-2 Addendum 2: subdiv.pad's order read against the line (l. 164-166) and its predecessor's builder r2reach.py subdiv() checked to append pads in the same (a, b) order on instances A and B (every successor list sorted), so «r2reach_subdiv.out (A: fallbacks 1 vs 0; B: iterations 2 vs 3, projected states differ) is a replay of the corrected statement too ✓.» (l. 167-170).
+  (iv) The L-4 rounds tested R1-R4 against reachcheck.py's counters at fdf01b8c. REFEREE §C add. 2 l. 222-235: R1's first half is NR-CORE; for its second half, «The σ-only phrase «0 of them equal to R104's stated start off the movers» follows from NR-CORE = 0, since every state has σ(K0) = K1 while the start has σ(K0) = K3.» (NR-STD tests the stated start off the movers and τ together); R2: NO-REACH (c) «has no counter in reachcheck.py (it never reads Iσ)»; R3 from xcheck.sh's loop and xcheck.out's 28 rows; R4 against its own G^pad replay of §C add. 1. REFEREE-2 Addendum 3 l. 182-194: R1's second half is NR-STD, whose predicate it read against gamma3.build's stated start (gamma3.py l. 67-70); R2 checked independently by its predecessor's r2reach.py on the 14 corpus genomes («NOREACH_noKimpr true»); R3 and R4 against xcheck.out and packet §9. The two read R1's second half through different counters (NR-CORE by arithmetic, NR-STD directly); reachcheck.out has both at 0 («standard 0, core-not-(K0->K1,K1->K0) 0»).
+- Honest limits: (i) A REDUCTION / NECESSITY statement only: no count is bounded, no run is shown long or short; it claims nothing about
+  whether super-polynomial IDEAL-ACYC families exist (packet l. 7-8, §8 l. 267-268). It does not decide G-N5-TIME; it is not M3, not a
+  step-4 pass and not a TARGET.md claim. (ii) Premises [1E-N3], [RULE], [VJ-LOC] as landed in R104: the correctness of S1's procedure stays
+  SPEC's requirement, and the code's match to SPEC is DATA (R57 (b)); every N5 run in the DATA is a run of an implementation (n5x; n5b; the
+  referees' engines). (iii) Ξ-cyclic genomes are not covered. (iv) Γ3 is one padding; other paddings and other start rules are not studied;
+  SUBDIV shows that subdividing every edge uniformly does NOT reproduce the run of a game from a given start pair (DEAD), so REACH3 is a
+  statement about Γ3's pads only. (v) NO-REACH speaks of Γ(G) only; it does not say that N5 from S3 is
+  fast or slow on any class (its 1-iteration runs are DATA). (vi) The DATA's long runs come from the 14 corpus genomes (L 9-59, n ≤ 370);
+  R440 has L ≤ 2 (94 genomes with L = 0), so the random part tests REACH3 weakly (packet l. 301). Packet §11 (the tower context and its two
+  lane conjectures) is context only and plays no part in this entry. (vii) Names: «REAL-IDEAL» is R104's Corollary (every start pair, Γ(G)); «REAL-IDEAL-S3» is
+  this entry's (S3, Γ3(G)); «NO-REACH», «REACH3», «S3-START», «PAD», «SUBDIV» and «Γ3» are new to RESULTS. (viii) The first fill's DATA flags
+  (G-9 (i)-(iii), G-D) were CHECKER C130's E-1..E-4 and are fixed in L-4 by R1-R4 (fixes entry 3). C130's two notes stand: NO-REACH
+  (a)-(c) is stated for every genome, its DATA is on acyclic genomes only (N-1); the line's DATA names neither its tool nor its corpus
+  directory, which packet §10, named by the source note, gives (N-2).
+- Data (DATA, not proof): experiments/new/box189/reachcheck.py (l-new 73b3d1fd, unchanged at 571c75c5, 727163f0 and fdf01b8c, sha1
+  c368b363ff654c8e7aead970f866b7e4d482f793, 183 lines; engine experiments/new/box21/n5x.py, SPEC S1-S5 on si.py's Engine; builder
+  gamma3.py; SUBDIV builder subdiv.py) prints reachcheck.out (sha1 af50ee340e11c35209c39496e7354925e832d3eb): «C14+R440 NO-REACH runs 454
+  states 908: standard 0, core-not-(K0->K1,K1->K0) 0, cycle-node(K0)!=K0 0; (state, vertex) pairs 42880: beta-in-P-or-low-cycle-node 0;
+  iterations histogram {1: 454}», «C14+R440 S3-START genomes 454: S3 != stated start 0», «C14+R440 PAD (state, vertex, world) triples
+  693030: pad-in-P-or-cycle-node-Om<3 0», «C14+R440 REACH3 genomes 454 (states 0..L checked 1225): failures 0», «C14+R440 W3 (state,
+  mover) pairs 11642: W(x) != (c_W, empty, 5 lev + 5) 0», the 14 «C14 …» rows (e.g. «C14 RECT_d11_T59_norm.json N 22 M 44 L 59 Gamma3 n
+  340 S3-iterations 62 fallbacks 1 REACH3 ok»), the two SUBDIV-DEAD lines and two CONJECTURE lines (BLIND, SUBDIV-APPROX). Sets: C14 = the
+  14 genomes of box189/corpus (4 L-RED r187 A_* genomes, 10 L-LOWER l3/kill genomes order-preservingly normalised by norm.py); R440 =
+  gen(Random(seed)), seed 1-440. Wired into experiments/new/check.sh (run by scripts/verify.sh): block «P-N5-REACH» (l. 950-957 at
+  fdf01b8c: the re-run diffed against reachcheck.out, the sha1 pins of reach.pins 1a075f50, which adds L-4 and the fixes be31f774 to
+  11ebdbee's list, five DATA lines asserted) and block «BOX 189
+  REACH» (l. 943-949: three pinned genomes, two .pg instances regenerated byte-identically). Re-run from a git archive of fdf01b8c at
+  this second fill: 2026-11-07T08:51:44Z-08:52:04Z, rc 0, both PASS, the P-N5-REACH line with «pins (reach.pins 1a075f50: packet
+  b7bd6937, line L-1 b12ec57a, fixes be31f774, line L-2 4de27b32, line L-3 adfbb3b8, line L-4 f85a024b,» (first fill: 727163f0,
+  04:54:26Z-04:54:43Z, rc 0, both PASS; CHECKER C130 l. 21: rc 0, PASS). Oink and a second engine: xcheck.sh (not in check.sh; it needs Oink) runs L-COMP's
+  experiments/n5-second/n5b.py --mode spec from its default start on the 28 games Γ3(G) and Γ(G) of the 14 corpus genomes and checks
+  n5b's solutions with experiments/new/check_sol2.py (Oink 8fbf0a7 --zlk, harness/verify.py): xcheck.out, 28 lines, each «zielonka(oink
+  zlk) OK strategies verified»; n5b's iterations and fallbacks equal the lane engine's on 28/28 (Γ3: L + 3 and 1; Γ: 1 and 0). Neither
+  referee ran Oink (REFEREE l. 107 «Oink: NOT RUN by me (Oink not built in this container). The lane's xcheck.out is lane DATA.»;
+  REFEREE-2 l. 80 «Oink cross-check (xcheck.sh): NOT RUN by me (Oink not built here); xcheck.out has 28/28 «OK strategies verified» lines
+  (lane DATA).»); the drafter re-ran xcheck.sh with Oink 8fbf0a7 built in the Lead's container, at 727163f0 (8 s) and at fdf01b8c
+  (2026-11-07T08:55:43Z-08:55:53Z, rc 0; xcheck.sh and xcheck.out unchanged at fdf01b8c), and CHECKER C130 re-ran it from fd1266a5 (l.
+  46-48): output byte-equal to xcheck.out each time. Oink checks n5b's final solutions, not the runs. L(G) cross-check: the 10 L-LOWER genomes' L equal the T column of
+  claude/l-lower experiments/lower/l3/kill/README.md (12216a37) (packet l. 304-305; not re-checked by me).
+- Signatures: REFEREE docs/referee/R-P-N5-REACH.md: successor 25's report f66942c1ab2cdd45987c033fa6015e6daaaea789 (2026-11-07T03:04:24Z),
+  «I did not read docs/referee-2/ for this report.» (l. 2-3), verdict table l. 5-17, «FINDINGS: §2-§9 all SIGN; L-1 NOT YET (RE-L1, DATA
+  coverage only).» (l. 145); §C cc9f4afd (2026-11-07T03:58:16Z), l. 148-187, «Fixes entry 1 is CORRECT as an application of RE-L1, W-1
+  and W-2.», «L-2 MATCHES the byte test.», «In meaning, L-2 is NOT YET: RC-1 (my own RE-L1 wording) and RC-2. With both, the line
+  MATCHES.», «All statements stay SIGNED.» (l. 184-187); §C add. 1 85cc9ebb: 85cc9ebb8976bb68b62345162d0d4b69c660cca9 (2026-11-07T04:50:03Z), l. 189-209, «Verdict: fixes entry 2 is CORRECT. L-3 MATCHES, by the byte test and in meaning. All statements stay SIGNED.» (l. 209); successor 26's §C add. 2 419cc2689733b0c3cf657386314d0c8ca5a410c3 (2026-11-07T08:23:51Z; heading «date -u at writing 2026-11-07T08:23Z»), l. 211-247, «Verdict: fixes entry 3 is CORRECT. L-4 MATCHES, by the byte test and in meaning (R1-R4). All statements stay SIGNED; K3 is signed for every genome with fixes entry 1's reply as its proof of σ̄(K2) = r.» (l. 246-247). REFEREE-2 docs/referee-2/R2-P-N5-REACH.md:
+  successor 29's report b0860fcd (2026-11-07T03:06:42Z), «Independent: docs/referee/ not read for this packet before this push.» (l. 2-3),
+  verdict table l. 10-22, «F-3: L-1 MATCHES after W-1, W-2.» (l. 114); successor 30's Addendum 1 c420666d (2026-11-07T03:59:26Z), l.
+  116-147, «Verdict: entry 1 **CORRECT** for W-1, W-2, RE-L1 as applied; **L-2 MATCHES after W-3** (Opus 5.5, D1).» (l. 146);
+  Addendum 2 ddf42cb6: ddf42cb6c15e49c38692239b65a33e69f346c726 (2026-11-07T04:50:08Z), l. 149-173, «Verdict: entry 2 **CORRECT**; **L-3 MATCHES** the packet with fixes entries 1-2, in bytes and in meaning (Opus 5.5, D1).» (l. 172); Addendum 3 d2b08049ba14c38cdae4a9ae9e38c80736d0317f (2026-11-07T08:23:41Z), its heading stamp «08:3xZ» corrected to «08:2xZ» by d4838991f4ce8cc9e0115d701f6d377054ca17e1 (2026-11-07T08:23:54Z, the only change), l. 175-197, «Verdict: entry 3 **CORRECT**; **L-4 MATCHES** the packet with fixes entries 1-3, in bytes and in meaning» … «Statement verdicts unchanged (all SIGN); W-1, W-2, W-3 stay met.» (l. 196-197). Lane: L-NEW successor 58, 73b3d1fd (freeze), 571c75c5 (fixes entry 1, L-2), 727163f0 (fixes
+  entry 2, L-3); L-NEW successor 59, fdf01b8c (fixes entry 3, L-4).
+- INDEPENDENCE: the proofs are L-NEW's; each referee re-derived every step, the LENGTH and INDEX spots in full (REFEREE §2; REFEREE-2
+  «Proof checks»), and replayed REACH3 and SUBDIV on engines that are not L-NEW's: REFEREE with L-COMP's n5b (experiments/n5-second, its
+  own SI in hard-families/pgsolver_si, not si.py) and its own IDEAL simulator, on the two pinned games; REFEREE-2 with its own builder
+  and SPEC state loop (r2reach.py) on the fleet's si.py Engine, on all 14 corpus genomes, and with n5b on the two pinned games. The
+  valuation Engine si.py is shared by n5x (L-NEW's engine) and REFEREE-2's loop; n5b shares no code with either. Each referee wrote its
+  report without reading the other's (REFEREE l. 2-3; REFEREE-2 l. 2-3); the line rounds read the other's W- / RC-items by design (fixes
+  entries 1-2). The DATA wording of L-4 is REFEREE's (RE-L1), REFEREE-2's (W-3) and CHECKER C130's (R1-R4: the first fill's
+  R-A..R-D, which C130 tested against the counters and adopted, l. 118-119); in the L-4 round each referee byte-tested L-4 with its own
+  script and read R1-R4 against reachcheck.py itself.
+- TARGET.md diff: TARGET.md §1 defines a parity game («A parity game is G = (V, V_E, V_O, E, pr) with V finite»; «every vertex has at
+  least one successor (self-loops allowed)»); Γ(G), Γ3(G) and the SUBDIV games are such games (every vertex of Γ3 has a successor; every
+  pad has one), and «on every n-vertex game» in the Corollary ranges over them; «polynomial» is in n at bit cost (TARGET.md §3), and Γ3(G)
+  has polynomial input size (packet §3 l. 131-132). No statement of this entry is M4 (TARGET.md §2), names an algorithm's running time or
+  claims a winning region; it is not an algorithm claim, so TARGET.md §5's gauntlet does not apply, and it is not a step-4 pass. The line
+  (L-4) makes no TARGET claim; its tail reads «a REDUCTION / NECESSITY statement only (no count is bounded;» and «G-N5-TIME stays OPEN;
+  not M3, not a step-4 pass, not a TARGET.md claim» (L-4, by script). GAPS G-N5-TIME: open.
+
 **Erratum E-1** (not a result; 2026-11-01 05:28Z by date -u; Lead; corpus counts in RESULTS R97-R100):
 - What is wrong: the DATA-of-record sentences that say «1,132 games» for the L-SI box 50b / box 53 corpus (sbcg.lst 719 lines + alt_all.lst
   413 lines) count RUNS, not games. Measured by CHECKER (C111 N-7, claude/checker d53e1d4f) at trunk 68d50c8f: experiments/si/anc58/
@@ -13679,3 +14214,36 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   gate indices T = 1 for K = 1..7, docs/referee/scratch/xinew_logs/cube_gateT.txt). Not
   dead: a polynomial bound on T itself (IDEAL-ACYC-POLY) and G-N5-TIME, both OPEN; that such a bound must use the W-key rule is a
   READING (RESULTS R106's line), not a signed statement.
+- DE37 (2026-11-07): lane CONJECTURE MOVES-2D, as worded in P-IDEAL-MOVES §0 (claude/l-new d86adc86, docs/new/P-IDEAL-MOVES.md l. 77-78) «on
+  𝓛^R_d every z ∈ Z moves at most 2d times in every run», with «moves(x) := #{t ∈ [1, T] : x ∈ Mv_t}» and Z the movers that are the Ξ-target
+  of some option (same §0, l. 63), first stated in L-NEW box 181 (d86adc86, docs/new/N5-RISEPROOF-box181.md l. 20-21) as «on 𝓛^R_d, every
+  mover that is the Ξ-target of some option moves at most 2d times», and stated on all of 𝓛^R_d, not on ISO genomes only (Lead reading L50
+  (1), docs/DECISIONS.md), is DEAD by two measured instances. Refereed: DEAD SIGN by REFEREE 25 (docs/referee/R-P-M2D-DEAD.md c011995c) and
+  by REFEREE-2 29 (docs/referee-2/R2-P-M2D-DEAD.md 6eba8b93), each on its own simulator; line L-3 MATCHES at both (REFEREE §C add. 1
+  70ec6882; REFEREE-2 Addendum 2 59bfa452). Packet P-M2D-DEAD (L-LOWER successor 3; docs/lower/P-M2D-DEAD.md, frozen at claude/l-lower
+  87fcdf73) with fixes entries 1-2 (docs/lower/P-M2D-DEAD-fixes.md) and line L-3 (docs/lower/P-M2D-DEAD-line-L3.txt), both at claude/l-lower
+  afc85c57. Instances (experiments/lower/l3/kill/, each run from its stored start): (a) KILL_M2D_d6_mu13.json (sha1
+  5301c716f68f219bda2806f29b317c94e0ed5df0): 𝓛^R_6, Ξ-acyclic, not ISO (option (0, 0) has Ξ-target 1); stored start 000000001101; T 13;
+  mover 8 of level 4, the Ξ-target of option (4, 1), moves at every step 1-13: moves(8) = 13 > 12 = 2d. (b) KILL_M2D_d8_mu21.json (sha1
+  d96c2b3657e79c410b180580d829366cbecc9ea4): 𝓛^R_8, Ξ-acyclic, not ISO (option (10, 1) has Ξ-target 1); stored start 1101101001010010; T 24;
+  mover 15 of level 7, the Ξ-target of option (0, 0), moves at steps 1-13 and 17-24: moves(15) = 21 > 16 = 2d. Membership (DATA; R104's
+  IDEAL genome, R110's 𝓛^R_d, Ξ-acyclicity, the binder of moves): experiments/lower/l3/memcheck.py rows (i)-(vii) ALL PASS on both
+  (experiments/lower/l3/kill/memcheck.out), and both referees' own membership code from the RESULTS text (REFEREE §3; REFEREE-2 (2)).
+  Replays (DATA): the check block experiments/lower/l3/p_m2d_check.py (experiments/lower/check.sh; sha1 pins, L-LOWER's sim.py and an inline
+  second implementation with literal β-sets agree state for state, memcheck) ends «P-M2D-DEAD CHECK PASS»; L-LOWER's sim.py equals L-NEW's
+  box150 Gen state for state, trunk experiments/new/box150/check.py on both files gives XSIM 0 against box139 paths.py (L-LOWER; also in
+  L-RED's replay.out), and the P-IDEAL-MOVES movescheck counters are 0 on both stored-start runs and on all 4,096 starts of the d 6 genome
+  (experiments/lower/l3/xcheck.py, re-run by REFEREE §4). Independent replays: L-NEW box 188 (claude/l-new 6d043927,
+  docs/new/N5-KILLREPLAY-box188.md, «## 0. Answer: REPRODUCED (both)»; its addendum 42427d9e on the ISO reading); L-SI 41 (claude/l-si
+  0803d551, docs/si/N5-TROPICAL-box76.md §8: «Every (d, T, mover, moves) of the README table is reproduced»); L-RED 52 (claude/l-red
+  6e743ab1, experiments/red/r214/lower3/replay.out, sha1 4492ee28…: «max mover 8 lev 4 Xi-target 1 moves 13 2d 12 >2d» and «max mover 15 lev
+  7 Xi-target 1 moves 21 2d 16 >2d»); REFEREE 25's simulator (docs/referee/scratch/t3r_sim.py with m2d_replay.py) and REFEREE-2 29's
+  (docs/referee-2/R2-P-IDEAL-MOVES/r2moves.py with R2-P-M2D-DEAD/r2m2d.py), whose per-step tables equal the packet's §2 tables. Obstruction
+  (line L-3; a description, no separate DATA): a metronome reading the key order of the pair one level below it, which flips at steps 2-13
+  (d 6) and 1-13, 17-24 (d 8), fed by laps that the levels above level 1 replay between the level-0 moves (upward Ξ-options); the flip steps
+  were re-measured by both referees (REFEREE §5 PM-L1; REFEREE-2 Addendum 1). RESULTS R116 (P-IDEAL-MOVES) states in Corollary MOVES-EQUIV
+  that MOVES-2D would give T^R(d) ≤ 4d² − 4d + 3; with MOVES-2D false that implication is vacuous, while MOVES-EQUIV's μ(d) ≤ T^R(d) ≤ 3 +
+  (2d − 2)μ(d) and R116's other signed statements do not depend on MOVES-2D (Lead reading L50 (2)). Not claimed: nothing about T^R(d) or the
+  growth of μ; no polynomial or super-polynomial bound; nothing at d ≤ 5 (MOVES-2D there is lane DATA or open: packet §7, fixes entry 1
+  N-2); nothing about RISE-2D, N5, real parity games or TARGET.md; the lane lemmas of docs/lower/L3-families.md are not used. G-N5-TIME
+  stays OPEN.
