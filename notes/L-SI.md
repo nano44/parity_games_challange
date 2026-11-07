@@ -16,6 +16,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - PACKET P-ACYC (Lead 22:35Z): docs/si/P-ACYC.md + line docs/si/P-ACYC-line-L1.txt, FROZEN at the commit that adds them (pins
   box81/pacyc.sha1; quotes81.py checks 28 premise quotes verbatim; pacyc81.py = Gamma3 N5'-xi data). After the freeze: fixes file only
   (P-ACYC-fixes.md + line L-2 by script). Referees take it after P-N5-ASC.
+- SLIP (Lead 23:06Z): I reported P-ACYC's sha1 as 6b699f93 (taken BEFORE my last timestamp edit); the frozen file at e3ac4b06 is
+  0e9edcfda3e3a68dee63ff01427d526b14c67bc4 (= pacyc.sha1). Check now: quote a sha1 only from `git show <frozen SHA>:path | sha1sum`
+  run after the commit.
 - NEXT: BOX 82 CYCLIC TOWERS (Lead 22:35Z): can tower doubling be carried by Odd (R > 0) in a Xi-cyclic genome? Start h = 2; baseline
   L-LOWER 8's HS2_d3 (claude/l-lower experiments/lower/l8/rec/HS2_d3.txt, sha1 8ddebddc...).
 
