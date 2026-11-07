@@ -49,3 +49,26 @@ claim. G-N5-TIME stays OPEN.
 ## 2. Files (experiments/new/box188/)
 - replay.py (membership + Gen replay + movescheck counters); log/replay_d6.txt, log/replay_d8.txt (Gen, all starts); log/mv_d6.txt,
   log/mv_d8.txt (mv.c, all starts).
+
+## 3. Addendum (2026-11-07 01:1xZ; Lead 01:12Z): the ISO reading, and REC_d10_tower
+- ISO. MOVES-2D was stated on all of 𝓛^R_d, not on ISO genomes only, so the kill applies as stated (the instances are not ISO,
+  L-LOWER's README (iii)). Texts:
+  - box 181 (docs/new/N5-RISEPROOF-box181.md §0, its origin): «RISE-2D implies MOVES-2D: «on 𝓛^R_d, every mover that is the Ξ-target of
+    some option moves at most 2d times»».
+  - P-IDEAL-MOVES §0 (l. 77-78): «T^R(d) := the largest T over all genomes of 𝓛^R_d with acyclic Ξ-graph and all starts (R110's T^R(d)).
+    CONJECTURE MOVES-2D (lane, box 181, OPEN): on 𝓛^R_d every z ∈ Z moves at most 2d times in every run».
+  - 𝓛^R_d there is R110's definition, quoted in the packet's premises: «the 2-wide degree-2 ladders in L-RED's R197 convention (movers 2l
+    and 2l + 1 on level l, all of degree 2, no other movers, option k of a mover of level l ≥ 1 W-pointing to mover 2(l − 1) + k)». It
+    says nothing about Ξ-targets beyond acyclicity. ISO (no option has Ξ-target 0 or 1) is a separate hypothesis in R110 (W-ONLY), and
+    neither text adds it. The L-RED exact data cited for MOVES-2D at d ≤ 4 were also over all Ξ-data (L-RED R213 §5: «every Ξ-target
+    mover moves ≤ 8 = 2d times at d 4», xcnf with any Ξ).
+- REC_d10_tower_mu30.json (l-lower 4d747490, sha1 cc94dc9c46ef63f7a3a54b536d9d3b38fdee5255; README sha1 a6e93f7e…): membership OK
+  (𝓛^R_10, IDEAL-ACYC, all conditions as in §0). From its stored start 00111111010010111010 on box150 Gen (log/replay_d10_tower.txt;
+  flips.py): T 35, F = 2, 6, 14, 30, 23, 8, 7, 6, 2, 1, moves per mover 1 1 3 3 7 7 15 15 30 7 8 2 8 1 4 1 4 1 1 1. So F(l) = 2^(l+2) − 2
+  (R113 T-BOUND's per-level bound) for l = 0, 1, 2, 3: MATCHES the README. The movers of levels 1-3 are key-tight (moves = 1 + F(l − 1) =
+  3, 7, 15), and mover 8 (level 4, Ξ-target) moves 30 > 2d = 20. mv.c over all 2^20 starts (log/mv_d10_tower.txt): Tmax 35, max moves 30
+  (mover 8). movescheck counters on the stored-start run: all 0.
+- DATA note (bears on the parked lane conjecture DBL-O(1), box 177 / P-IDEAL-ALIGN §7): PAIR-DOUBLE is tight, F(l) = 2F(l − 1) + 2, at the
+  three consecutive levels l = 1, 2, 3 of one run. The box 177 corpus had at most 2 consecutive doubling levels, and «3 consecutive
+  levels» was the kill target given to L-RED. DBL-O(1) as an O(1) statement is not killed by one instance, but its data support is gone:
+  the halving tower of box 186 is realised at full key-tightness on 4 levels.
