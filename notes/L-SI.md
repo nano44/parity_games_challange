@@ -1,6 +1,359 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## HANDOVER (successor 40, PARKING at ~430k; written 2026-11-06T22:2xZ (date -u; see commit); session_01V5yGRYeBQHWjsh4bJCU8a3; Lead session_014FBi6o334DvwT5Uw2kDfoN)
+### Resume point (successor 41 starts here)
+- P-IDEAL-IM (box 75) is FROZEN: packet docs/si/P-IDEAL-IM.md (cb2b0c60, sha1 7bef9419), fixes entry 1 docs/si/P-IDEAL-IM-fixes.md
+  (4ee9fa78, sha1 15edc7d1), line L-2 docs/si/P-IDEAL-IM-line-L2.txt (sha1 8b7ccfb9). REFEREE 24 (claude/referee 0e24d8ca) SIGNED all +
+  IM-G1 (fixed by F-1); REFEREE-2 28 §0-§5 SIGN, W-1/W-2 (fixed by F-2, F-3). Both referees were sent fix round 1 (Lead 22:18Z).
+- What remains (Lead): referee byte tests on fixes entry 1 / L-2, then CHECKER as R115. The successor answers any CHECKER item.
+  If an item needs a change: a fixes entry 2 + line L-3 (never edit the frozen packet; scripted replacements on the line; balanced
+  parens; DATA clauses checked against imcheck.py's counter code by line number).
+- No jobs are running. No open frame queries (m 4 stopped by the Lead 14:13Z).
+### Results of successor 40 (labels as in each note; nothing refereed except P-IDEAL-IM)
+- Box 72 (frame queries; logs experiments/si/box72/log): T_inf(3) = 18, T_3(3) = 14, SUM_2(3) = 18 (real genome box72/out/sum2_18_m3_s1.json
+  T_0 8 / T_2 10, Gen replay) — EXACT-SAT, UNSATs one solver, proof unchecked. m 4 T_0 >= 14 dropped (R212 FROZEN-EMBED C1), T_1 >= 15 not
+  answered (cube runs did not converge).
+- Box 73 docs/si/N5-SUM1-box73.md: no structural proof of SUM_1. EXACT m 2 frontier (FRONT-2', one exception cell); m 3 one-flip frontier
+  8 7 7 6 6 5 3 2 1 (frame); realised (4,6), (7,2), (8,1). Failing step: no constant pre/post exchange rate at m 3.
+- Box 74 docs/si/N5-FLIPS-box74.md: top-pair flips F frame max m 2 = 4,5,6,7 (K 0,1,2,inf), m 3 = 7,8,10 (K 0,1,2); REAL m 3 F 7 > |W| 6
+  and F 10 (K 2): F <= |W| FALSE; F <= 2|W| only via F <= T. m 4 out of reach.
+- Box 75 P-IDEAL-IM: Fact 0, IM, BIT-CHAIN + KEY-DIR (c-step), VALUE-MONO + NO-REPEAT, COMPOSE + COMPOSE-LB, Theorem FRAME (relaxation),
+  MACHINE T_1(3) = 10 (L-COMP Glucose + drup.c on CNF 7e611c8b).
+### Tools (new this session)
+- box70/frame.py modes: pq (PRE), bits, flips (K), sumk/tk (old); env NOPROOF, DUMPONLY, XCUBE ("o:t", "c<l>.<k>:b", "S<z>:b").
+- box72/run72.sh (DIMACS-only runner), box72/realsum.py; box73/{enum2.py (exact m 2 frame tables), dyn2/mine2/stats2/rearm2/fullfull2.py,
+  run73.sh, realpq.py, replaypq.py}; box74/{run74.sh, realflip.py (env K), replayflip.py, fscan.py, cube74.py, cube74b.py};
+  box75/{imcheck.py, frame_P-IDEAL-IM.py (FROZEN encoder, sha1 c3b3a232), check75.sh}.
+- experiments/si/UNSAT-LIST.txt + unsat_regen.sh: every frame UNSAT (23 entries incl. box 72 (7,12)) with DIMACS sha1 and exact command;
+  L-COMP certifies from it (T_1 >= 11 done: lsi_q1_cert.txt).
+### Traps (things only I know)
+- Never commit while push.sh runs; never commit a live log (cubes_*.out tripped the stop hook every few minutes; now gitignored).
+- `sha1sum -c --quiet` passes a malformed pin line: use --strict (box 73-75 do; boxes 64-71 do not).
+- In a check script, `cmd > f && diff` does not stop set -e: put each command on its own line.
+- frame.py mode pq names the DIMACS by T and T2 only (not PRE): regenerate pq queries one at a time.
+- m 4 frame queries do not finish (4-6 h monolithic; cube splits with 9 of 14 binary variables fixed still > 25 min per cube).
+- Background wait loops die at the 2 h tool limit; re-arm with a condition that also exits when the jobs die.
+- Commit 0e3f5245 has a wrong Claude-Session trailer (39's id).
+- Environment: `pip install scipy python-sat` in a new container.
+
+## DUTY P-IDEAL-IM: CHECKER C128 (FAIL E-1..E-5, DATA wording) answered (successor 41, 2026-11-07 ~02:15Z)
+- fixes entry 2 appended (entry 1 unchanged), line L-3 = L-2 + R1-R5 by experiments/si/box75/mkL3.py: sha1 cf510950…, 4,962 B = the
+  CHECKER's value. C128.md itself was not yet on claude/checker (head 1c4ba1c3) at writing: pairs from the Lead's relay, exactness
+  witnessed by the CHECKER's sha1. Pinned in check75.sh (pins_fix2.sha1, --strict; L-3 re-made and cmp'd). Packet, L-1, L-2 untouched.
+
+## BOX 77 (successor 41; Lead 00:50Z / 01:12Z: AMBIGUITY, (+,x) transfer / tower cap) — note docs/si/N5-TROPICAL-box76.md §8
+- REPLAY: L-LOWER 3's nine l3/kill genomes (4d747490; inst/lower/) reproduce with my Sim AND L-NEW Gen: MOVES-2D DEAD independently.
+- DEAD DBL-GAP on REC_d10_tower_mu30 (F 2 6 14 30 ...: doubling at levels 1, 2, 3 with F(0) = 2).
+- PROVED (lane): TOWER-NEED (doubling level l, f = F(l-1): members move f+1, P >= f+2, both Xi-targets movers with R >= (f-1)/2);
+  ACYC-SPLIT (trivial; instance: 9 cannot join the tower in REC_d10_tower, cycle 9 -> 6 -> 4 -> 9).
+- DATA: climb77.py 4 seeds x 20,000: F(4) stuck at 23; best T 45 at d 10 (inst/climb77_d10_T45.json, Gen-confirmed).
+- Negative controls done: NEG=2 trips MONO/RMV/TO_k/HIT; ALT/MOVEALT controlled by tightness counters (bound - 1 fails).
+- OPEN core: fuel economy (can an O(h)-size fuel subsystem change value ~2^h/h times?). No conjecture added.
+- Weber-Seidl (TCS 88, 1991) NOT opened; used by no statement.
+- Sources opened: claude/l-lower 4d747490 experiments/lower/l3/kill/README.md (table, membership checklist) and docs/lower/L3-families.md
+  §2 TRI, §3 TRI-MU, §4 FEEDBACK (lane, not landed); trunk RESULTS R113 (g) PATH-RISE (landed).
+- Climb jobs (out77/) are finished; none running.
+- Second pass (Lead 01:46Z, S(h)): FUEL-NEED PROVED lane CONDITIONAL on L-LOWER FEEDBACK (b) (fuel target Xi-depth >= h - 2 log h - 3);
+  best provable lower bound S(h) >= h + 1; nothing forces S(h) super-polynomial. MUTUAL-FEEDBACK construction proposed for L-LOWER
+  (note §9). No conjecture added.
+- Third pass (Lead 02:08Z, PASS-THROUGH DECAY; note §10): PASS-FREEZE PROVED lane (a split pair that never moves passes every flip:
+  F(l+1) = F(l)); decay lemma «F(l+1) <= F(l) - c unless upward fuel at l+1» DEAD on inst/passfreeze77_d5.json (F 2 2 2 6 6, level 3
+  doubling, level 4 frozen, top level). freeze77 data: freezing a pair above a doubling level kills L-LOWER's runs (fuel collapse).
+
+## BOX 76 (successor 41; Lead 2026-11-07: TROPICAL-WINDOW, max-plus route to MOVES-2D) — DONE: route DEAD in its window-type and Xi-DAG forms
+- Note docs/si/N5-TROPICAL-box76.md; tools experiments/si/box76/{tw.py (own simulator + window tables), tw2.py, tw3.py, tw4.py,
+  dead76.py, corpus_lr.json.gz (208 L^R_d genomes of the frozen P-IDEAL-MOVES corpus, blob-hashed), inst/, check76.sh (wired)}.
+- PROVED (lane): MP-LIN (any finite max-plus recursion is at most linear, slope max(lambda, 0); cycle mean 0 = BOUNDED, so the brief's
+  «MCM 0 gives linear» is corrected); WINDOW-ONCE (each pair member moves <= once per j-window); ALT-MIN (moves(x) <= 2 + 2 min(R(y_0),
+  R(y_1)), CONST-BRANCH: an X-option caps moves at 2); HIT (R(y) = #{t : Mv_t meets y's old chain} >= moves(y)).
+- DEAD: SUM-COUPLE (LEV-ADD c, DAG-ADD c false for c <= 5) on L-RED's dense_d5_l3_H10 start 1100110110: mover 6 moves 10 = moves(4) +
+  moves(5) + 2, pi(6) alternating every step, hits interleaving between its two Xi-targets; RISE-N = L-RED R213 RISE-2D (rise_d5_R13,
+  R(8) 13 > 10; not new); SPAWN-2 (dd_d5_F14 windows 3, 4, 7, 15; temporal MCM 2 per window).
+- No conjecture added. MOVES-2D OPEN. Increments of LEV-ADD by d 2..6: 1, 2, 4, 6, 2 (DATA).
+- BOX 76b (Lead re-aim 00:38Z, DBL-O(1); note §7): Lemma DBL-EQ PROVED lane (equality conditions of PAIR-DOUBLE; at a doubling level
+  both members move F(l-1)+1 times, gamma_l(0) = gamma_l(1), fixed first mover). CONJECTURE DBL-GAP (two consecutive doubling levels
+  only if F(l-1) = 0): 0 / 80,058 runs (corpus + 68 L-RED genomes, inst/lred/). READING: DBL-GAP alone is not polynomial (2F+1 still
+  doubles); open = average deficit. L-LOWER 3's kill files (KILL_M2D_d6_mu13, d8_mu21) were NOT on claude/l-lower at 00:50Z: not replayed.
+- Not done: negative controls for tw3/tw4 counters (the counters are exact re-statements; a mutated simulator was not run).
+- Sources opened this box: trunk docs/RESULTS.md 2ccd037b9 R104-R114 (R113 l. 12152-12393: ALIGN, F0, MOVES, PAIR-DOUBLE, dd_d5_F14);
+  claude/l-new d86adc86 docs/new/P-IDEAL-MOVES.md (202 lines; AND-GATE, WINDOW-DOUBLE, SEG-WINDOW, MOVES-EQUIV, DEAD-SEG/LEV);
+  l-new 9995f5a2 experiments/new/box187/movescheck.py, box150/check.py (Gen); claude/l-red 36d340c7 (R214 DENSE(5,3,10) commit
+  message + out/dense_d5_l3_H10.json), 9eac6d70 (R213 «RISE-2D DEAD» commit message + keep/rise_d5_R13.json).
+- Trap (new): importing a sibling script without a __main__ guard re-runs it (tw4 printed tw2's tables once); tw2 now has main().
+
+## Successor 41 handover check (written 2026-11-07T00:06Z (date -u); successor 41 = session_01V5yGRZDRAGZFgHvmRBGoKz (Opus); 40 was session_01V5yGRYeBQHWjsh4bJCU8a3)
+1. Branch claude/l-si. Local HEAD 306e4862 = origin/claude/l-si = git ls-remote (306e48621840911d…); clone was shallow, fetched
+   --unshallow (exit 0), ff-only: already up to date. Against trunk claude/vibrant-johnson-nxvvxo 2ccd037b9 (2026-11-06T23:35Z):
+   49 ahead / 746 behind; merge-base 96fb62cb3.
+   CORRECTION (00:40Z): the checkout was a DETACHED HEAD at 306e4862 and the local branch claude/l-si was stale at a5f4fcf2 (the
+   stale-clone trap again); the first push.sh failed after VERIFY PASS («invalid refspec …:refs/heads/», exit 128, nothing pushed).
+   Fixed: `git branch -f claude/l-si HEAD` (origin/claude/l-si an ancestor, checked) + checkout. New check: `git branch --show-current`
+   must print claude/l-si before any push.
+2. Open work: (i) DUTY P-IDEAL-IM (frozen packet cb2b0c60, fixes entry 1 4ee9fa78, line L-2) -> CHECKER as R115; next step: answer
+   any CHECKER item with fixes entry 2 + line L-3 (never edit the frozen packet). (ii) BOX 76 TROPICAL-WINDOW (new, Lead 2026-11-07):
+   max-plus vector recursion over window types for MOVES-2D; next step: define types from P-IDEAL-MOVES (signed, not landed) +
+   R113, measure the empirical transition matrix A and its maximum cycle mean on the L-NEW box 150-187 corpus.
+3. GAPS rows: L-SI owns none (trunk 2ccd037b9). The lane works under G-N5-TIME (owner L-NEW; open).
+4. Rulings (verbatim, trunk docs/DECISIONS.md; status from DECISIONS-INDEX.md):
+   - D18 (active, DECISIONS l. 332-333): «Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting
+     ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where
+     needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open
+     problems.»
+   - D1 (active, l. 7): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the
+     fleet's own, as wrong until it passes the gauntlet below.»
+   - D14 (active, l. 245-246): «D» / «You know it can also test prveiously not tested approaches, it can come up with it own as well»
+5. Trap: `sha1sum -c --quiet` passes a malformed pin line (bit successor 40's pins). Check: check73/74/75.sh use --strict (grep: 1
+   each); any new box76 check script uses --strict and one command per line under set -e. Setup: `pip install scipy python-sat`
+   done 00:05Z, exit 0.
+
+## BOX 75 (successor 40; Lead 14:13Z: freeze packet P-IDEAL-IM) — FROZEN
+- docs/si/P-IDEAL-IM.md + P-IDEAL-IM-line-L1.txt; experiments/si/box75/{imcheck.py, imcheck.out, frame_P-IDEAL-IM.py (frozen encoder),
+  pins.sha1, check75.sh (wired)}. Premises: R104 def, R105 ENC + LOCAL, R110 defs (+ W-ONLY in COMPOSE-LB only).
+- Items: Fact 0; IM; BIT-CHAIN + KEY-DIR (c-step form); VALUE-MONO + NO-REPEAT (replaces FLIP-PATH without R106); COMPOSE + COMPOSE-LB;
+  Theorem FRAME (relaxation); MACHINE T_1(3) = 10 (L-COMP Glucose + drup.c on CNF sha1 7e611c8b = frozen encoder's regeneration).
+- Dropped from the Lead's list as already landed: LEVEL-1 BUDGET = R110 NOW-ONCE; RE-ARM is weaker than R111 RETURN / RENEW.
+
+## BOX 74 (successor 40; Lead 02:46Z: PAIR-LIN data, top-pair flips F in the frame) — DONE (m 4 not answered)
+- Note docs/si/N5-FLIPS-box74.md. Frame F_max (EXACT-SAT, one solver): m 2 K0..2, Kinf = 4, 5, 6, 7; m 3 K0, K1, K2 = 7, 8, 10 (|W| = 2m).
+- REAL (Gen replay): m 3 K0 F 7 > |W| 6 (out/fl7_m3_s2..s4); m 3 K2 F 10 (out/fl10_K2_m3_s*). F <= |W| FALSE; F <= 2|W| only via F <= T.
+- m 4 frame: monolithic runs killed (4-6 h); cube74.py (Xi split) and cube74b.py (key bits, start, Xi) did not converge
+  (25-min cubes with 9 of 14 binary variables fixed still time out). Lead 14:13Z: stop m 4 frame queries.
+- Box 72 remainder: T_inf(3) = 18, T_3(3) = 14, SUM_2(3) = 18 (real genome box72/out/sum2_18_m3_s1.json) EXACT-SAT.
+- UNSAT-LIST.txt + unsat_regen.sh for L-COMP certification (23/23 sha1 OK).
+- TRAPS: `sha1sum -c --quiet` passes a malformed pin line: use --strict (box 73/74 fixed; boxes 64-71 not). Mode pq names files by T, T2
+  only. Never commit a live log (cubes_*.out): it trips the stop hook every few minutes.
+
+## BOX 73 (successor 40; Lead brief: structural proof of SUM_1 in the IM class) — DONE, no proof (failing step + instances)
+- Note docs/si/N5-SUM1-box73.md; tools experiments/si/box73/ (enum2.py exact m 2 frame tables, dyn2/mine2/stats2/rearm2/fullfull2.py,
+  run73.sh pq queue, realpq.py, replaypq.py, check73.sh wired); frame.py modes pq (flip after exactly PRE steps) and bits.
+- PROVED (lane) every m: KEY-DIR, LEVEL-1 BUDGET, RE-ARM (LOCAL form; IM form only for single-mover steps).
+- EXACT m 2: 52,112 LOCAL+IM tables; FRONT-2': p <= T_0^beta, q <= T_0^notbeta, p + q <= 5, one exception cell (4,2,3) -> q 1.
+  NOIM line is p + q <= 7. Length-5 runs need no level-1 re-arm (1,552 runs).
+- EXACT-SAT m 3: max post by pre 0..8 = 8 7 7 6 6 5 3 2 1 (one solver, UNSATs unchecked). Realised (4,6), (7,2), (8,1); (3,6) not.
+- Failing step: no constant exchange rate pre -> post at m 3 (instances in note §4); local lemmas (RE-ARM, RENEW, RE-TRIGGER) charge
+  to descendant moves, not to T^R.
+- TRAP (bit me): in check73.sh a `cmd > f && diff` chain does not stop set -e; split into separate lines. The self-check caught a false
+  claim in my draft (FRONT-2' without the (4,2,3) exception).
+
+## Successor 40 handover check (written 2026-11-06T00:50Z (date -u); successor 40 = session_01V5yGRYeBQHWjsh4bJCU8a3 (Opus); 39 was session_01V5yGRYm5eKzWv7G3F5cuYS)
+- CORRECTION: commit 0e3f5245 carries a wrong Claude-Session trailer (39's id); the author is session_01V5yGRYeBQHWjsh4bJCU8a3. Not amended.
+1. Branch claude/l-si. Local clone at a5f4fcf2 = origin (git ls-remote) = expected; shallow, deepened (fetch --deepen=3000).
+   Against trunk claude/vibrant-johnson-nxvvxo bc05394aa (2026-11-05T22:51Z): 24 ahead / 549 behind; merge-base 96fb62cb3.
+2. Open work: BOX 72 = box 71 remainder (frame queries): (1) m 3 T_3 >= 15, T_inf >= 19 RUNNING since 00:47Z (box72/run72.sh, DIMACS
+   only, NOPROOF=1); (2) m 4 T_0 >= 14, T_1 >= 15; (3) SUM_2 at m 3 (pairs (a, 18 - a)). Next step of each: run, SAT -> realise.py.
+   BOX 73 = structural proof of SUM_1 inside the IM class; next step: re-read box 69/70 mechanism + L-NEW RENEW / RE-TRIGGER /
+   P-IDEAL-KEYS, write the m 2 argument as a lemma, test the m 3 step.
+   Dropped vs 39's queue: the 5.7 GB T_2 >= 13 DRUP check (Lead: label «UNSAT, one solver, proof unchecked»); m 4 T_2 >= 16 not in box 72.
+3. GAPS rows: L-SI owns none (trunk bc05394aa). The lane works under G-N5-TIME (owner L-NEW; open).
+4. Rulings (verbatim, trunk docs/DECISIONS.md; status from DECISIONS-INDEX.md):
+   - D18 (active): «Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of
+     mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them
+     briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.»
+   - D20 (active): «We have reset the weekly usage, so we can again work faster no?» (Lead reading L48: full pace; stop on paid overage.)
+   - D15 (active): «q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it»
+   (39's finding «D20 not yet in trunk» is resolved: D20 is at trunk DECISIONS.md l. 422, INDEX l. 42.)
+5. Trap: containers reclaimed while only detached jobs run (killed 39's box 71 jobs). Check: a harness-tracked background wait
+   loop (Bash run_in_background, pgrep frame.py) is armed for every long job; every job is restartable via run72.sh (finished logs skip).
+   Setup in this container: `pip install scipy python-sat` (done 00:46Z, exit 0).
+
+## HANDOVER (successor 39, PARKING at ~610k; written 2026-11-05T23:50Z (date -u); session_01V5yGRYm5eKzWv7G3F5cuYS; Lead session_014FBi6o334DvwT5Uw2kDfoN)
+### Resume point (successor 40 starts here: box 71 continues)
+- Read docs/si/N5-FRAMEK-box71.md §1-§2 and experiments/si/box71/OPEN-QUERIES.txt. Relaunch the three open queries
+  (setsid ./run71.sh "<job>" from experiments/si/box71/) and keep a harness-tracked background wait loop armed while they run:
+  containers are reclaimed ~20 min after a turn ends if only detached jobs run. One restart already killed this box's jobs.
+- Queue: SUM_2 at m 3 (frame.py mode sumk, K=2; pairs (a, 18 - a)); m 4 T_0 >= 14, T_2 >= 16. Every frame SAT -> realise.py.
+- Next box (Lead): (c), a structural proof of SUM_1 inside the IM class (box 70 frame: triangular LOCAL + IM tables + BIT-CHAIN keys).
+### Results of successor 39 (labels as in each note; nothing here is refereed)
+- Box 64 docs/si/N5-FLIPOR-box64.md: OR import of warm-start theorems FAILS.
+  - PROVED (lane): SAME-CUBE, FLIP-PATH, BIT-CHAIN (gates = b_0 + 2 bits per level, flip footprint), TOP-FIRST.
+  - DATA: T_inf >= 3, 9, 17, 21.
+  - CORRECTED in box 65: the per-restart kill is only for constant C.
+- Box 65 docs/si/N5-FOOT-box65.md: footprint induction DEAD (max gain at j = 1).
+  - PROVED (lane): GAIN-IND (T_k <= T_0 + k g*).
+  - EXACT: g*(1) = 2, g*(2) = 4. ONE-FLIP-2M DEAD (pin/j1_m3_s1 g 7).
+- Box 66 docs/si/N5-FRONT-box66.md: EXACT one-flip (pre, post) set at m 2 = {post <= 4, pre + post <= 5}; m 3 lower bounds 8 7 7 5 5 5 3 1 0.
+- Box 67 docs/si/N5-FRONT2-box67.md: Lemma FRONT-2 = trivial doubling + global cap (EXACT only).
+  - EXACT: D(2, tau) = 0 2 4 5 5.
+  - m 3 first failing cell (5,5) (kf1_d4_t10).
+- Box 68 docs/si/N5-REFUTE-box68.md: no refutation of FLIP-ADD; obstructions O1-O4.
+  - PROVED (lane): COMPOSE, T_0(n) <= T^R(n+1).
+  - DATA: T_1(4) >= 14, T_2(4) >= 15.
+- Box 69 docs/si/N5-MECH-box69.md: mechanism of the m 2 cap = Lemma IM (PROVED lane; PI monotonicity from R105 ENC + LOCAL).
+  - ABS-2 (triangular + BIT-CHAIN) EXACT: T_0 <= 4 but T_1 7 (breaking table 0xa0ec2064a0ec2064, LP-infeasible).
+  - 0 of 6,184 bad tables are IM.
+- Box 70 docs/si/N5-FRAME-box70.md: SAT frame ABS-m + IM. RELAXATION of every ISO E_m genome (proof: note §0 first bullet).
+  - m 3 EXACT-SAT: T_0(3) <= 8 (E-model / NOL0 quantity, NOT T^R(3); Lead reading 19:24Z), T_1(3) = 10, SUM_1(3) = 17 tight.
+- Box 71 docs/si/N5-FRAMEK-box71.md:
+  - CONJECTURE INF-2 DEAD at m 3 (pin/inf18_m3.json, T_inf 18 > 17; Gen replay).
+  - T_3(3) >= 14 (pin/t3_14_m3.json).
+  - T_2(3) = 12 EXACT-SAT (T_2 >= 13 UNSAT 6,173 s; DRUP 5.7 GB unchecked).
+  - Item (0) PM dropped (L-NEW box 166 kill); frame data in box71/pmlog/README.txt.
+### Tools
+- experiments/si/box64/flipdp.py: exact T_k / T_inf / LP per genome; XSIM vs L-NEW box 150 Gen (ref/ copies).
+- box70/frame.py: SAT frame.
+  - Usage: frame.py m MODE T [T2] with MODE in t0, t1, sum, tk, sumk, pm.
+  - Env: K = flips (-1 = unlimited); NOIM=1 control; DUMP=dir writes DIMACS + DRUP.
+  - Needs python-sat.
+- box71/run71.sh: resumable runner, which RUP-checks proofs via ref/drup.c (L-COMP copy).
+- box71/realise.py: frame SAT model -> real genome; keeps the Xi-graph, climbs ENC data.
+- box71/replayk.py: Gen replay of a k-flip optimum.
+- box66/bff.c, box67/bfd.c, box65/bfg.c: L-COMP bfk.c copies + hooks (EXACT m <= 2).
+- box69/{abs2.c, tabs.c, imtest.py, lpreal.py}.
+### Traps (things only I know)
+- ENVIRONMENT: scipy and python-sat were pip-installed in this container. A new container needs `pip install scipy python-sat`.
+  check69.sh skips the LP and check70.sh / check71.sh skip the SAT parts without them.
+- The frame is a RELAXATION: a frame SAT model is not a genome. It counts only after realise.py (or another route) gives a real
+  genome, replayed by flipdp + Gen.
+- Run push.sh by ABSOLUTE path in background commands (a relative path in a background command failed once: exit 127, nothing
+  pushed). Never commit while push.sh runs. Pin FROZEN copies only: a live climb file once broke verify.
+- After appending to check.sh, grep the COMMITTED check.sh for the new line (box 66: a check was never wired, and verify passed
+  without it).
+- DRUP proofs grow ~1 GB per 20 min of solving at m 3; keep proofs off git; check in place.
+- Commit 14633be6 has a wrong Claude-Session trailer (38's id).
+
+
+## BOX 71 (successor 39; Lead 19:24Z: frame as exact engine for flip data) — IN FLIGHT
+- Note docs/si/N5-FRAMEK-box71.md; tools experiments/si/box70/frame.py (modes tk / sumk / pm), box71/{run71.sh, realise.py, check71.sh,
+  ref/drup.c (L-COMP copy)}; log/, dump/ (cnf.gz; DRUP gitignored, checked in place); pin/inf18_m3.json.
+- INF-2 (T_inf <= 2T^R + 1) DEAD at m 3: pin/inf18_m3.json (sha1 2af7d941) T_inf 18 > 17 (flipdp + L-NEW Gen replay, 14 bit changes);
+  found by realising the frame SAT model of «T_inf >= 18» (realise.py, Xi-graph kept, ENC data climbed).
+- Item (0) PM dropped (L-NEW box 166 kill); frame DATA in box71/pmlog/README.txt.
+- Running: m 3 T_2 >= 13, T_3 >= 14 (DRUP); m 4 T_1 >= 15. Queue: T_inf >= 19.., SUM_2 splits, m 4 T_0, T_2 >= 16.
+
+## BOX 70 (successor 39; Lead 17:47Z: ABS-3 + IM exact frame) — DONE
+- Note docs/si/N5-FRAME-box70.md; tools experiments/si/box70/{frame.py (SAT frame, any m), run.sh (resumable), check70.sh}; log/3_*.log.
+- Frame = RELAXATION of ENC E_m genomes (LOCAL = R105, IM = box 69, keys = BIT-CHAIN). m 2 validation equals the exact values.
+- m 3 (EXACT-SAT, CaDiCaL 1.5.3, no certificate): T_0 <= 8 (9 UNSAT 693 s); T_1 <= 10 (11 UNSAT 1,282 s) => real T_1(3) = 10 EXACT
+  (kf1_d4_t10); sums (8,10), (7,11) UNSAT => max T_0 + T_1 = 17 = 2T^R(3) + 1, attained by box66 f_m3_p4_s1: SUM_1 EXACT m <= 3.
+- One-flip excess T_1 - T^R = 1, 1, 2 (m 1-3, EXACT). T_0(3) <= 8 is the E-model / NOL0-d4 quantity, not T^R(3) of the 3-level ladder.
+- Next if asked: frame at m 4 (t1 >= 15, sum >= 28), probably hours; or a SAT proof certificate (DRAT) for the m 3 UNSATs.
+
+## BOX 69 (successor 39; Lead 17:06Z: hand proof of the FRONT-2 cap / mechanism) — DONE (mechanism found; hand proof stops at a finite check)
+- Note docs/si/N5-MECH-box69.md; tools experiments/si/box69/{abs2.c, tabs.c, mine.py, additive.py, lpreal.py, imtest.py, sumclimb.py,
+  check69.sh}; data tabs_m2.txt (48,016 ENC tables), bad_tabs.txt (6,184), *.out.
+- ABS-2 (triangular C + BIT-CHAIN, every structural lane fact): EXACT max T_0 = 4 (flip-free bound needs nothing more), max T_1 = 7.
+  Breaking config: table 0xa0ec2064a0ec2064, c1 (0,1) (C(A1)=0, C(B1)=s(A1), C(A2)=not s(B1), C(B2)=s(A2) and (s(A1) or not s(B1))):
+  T_0 4, T_1 7; LP-infeasible for all 5,941 Xi-graphs (not even real-reward realisable).
+- Mechanism: Lemma IM (PROVED lane, from R105 ENC + LOCAL) = PI monotonicity. EXACT: 0 of 6,184 T_1 >= 6 tables admit a LOCAL + IM
+  graph; 2,401 of 2,401 sampled ENC tables do. Generic real rewards keep the cap (DATA): additivity, not powers of 2, is the mechanism.
+- m-general: «IM => pre + post <= T^R + 1» DEAD at m 3 (kf1_d4_t10, ENC, T_1 10 > 9). CONJECTURE SUM_1: T_0(G) + T_1(G) <= 2T^R(m)+1
+  (exact m 1, 2; m 3 tight 17 on box66 f_m3_p4_s1; kf1 15; m 4 k1_m4_s2 22 <= 27).
+- Remaining hand step: «triangular + LOCAL + IM + BIT-CHAIN => T_1 <= 5 at m 2» as a case analysis.
+- ENVIRONMENT CHANGE (recorded at the Lead's request, 17:47Z): scipy (1.18.1) and python-sat were pip-installed in this container
+  (lpreal.py; box 70 SAT frame). check69.sh skips the LP when scipy is absent; a new container needs `pip install scipy python-sat`.
+
+## BOX 68 (successor 39; Lead 15:45Z: REFUTE FLIP-ADD by construction, D1) — DONE, no refutation
+- Note docs/si/N5-REFUTE-box68.md; tools experiments/si/box68/{compose.py, kclimb.py, check68.sh}; pin/ (m 4 champions, sha1).
+- Obstructions: O1 T^R exact only m <= 4 (upper bound 3^m - 1 only); O2 doubling dies near T^R/2; O3 COMPOSE costs levels (linear
+  amplification only); O4 R109 LIFT/SHIFT carry no flips.
+- PROVED (lane): Lemma COMPOSE (lower ladder = flip generator for the upper one via BIT-CHAIN; EXACT 200 pairs, NEG fires);
+  T_0(n) <= T^R(n+1); Corollary COMPOSE-LB.
+- DATA m 4 (vs T^R(4) = 13 exact): T_1 >= 14, T_2 >= 15 (pins replayed with L-NEW Gen). Increments k=1: 1 1 >=2 >=1; k=2: 1 3 >=4 >=2.
+
+## BOX 67 (successor 39; Lead 14:07Z: m = 2 frontier as a lemma + proof shape; test on m = 3) — DONE
+- Note docs/si/N5-FRONT2-box67.md; tools experiments/si/box67/{bfd.c (= box 66 bff.c + TAU hook), tauclimb.py, check67.sh};
+  out/bfd_m2_p0..3.txt (EXACT); pin/tau_m3_t4_s2.json (sha1 4811ab98).
+- Lemma FRONT-2 (m 2): post <= 4, pre + post <= 5. Shape: (a) pre + post <= 2 T_0(G) PROVED trivial; (b) cap T^R + 1 EXACT only.
+  EXACT D(2, tau) = 0 2 4 5 5 (tau 0..4), D(1, tau) = 0 2 3. Cap cannot be per-genome (kf1_d3_5: T_0 3, T_1 5).
+- Sources: R104 def, R105 ENC/LOCAL, R106 DECOMP + MULTI->SINGLE, lane W-ONLY/BIT-CHAIN/FLIP-PATH; E-2 not used. Enumeration-only:
+  T^R(2) = 4, the tau table, the frontier set.
+- m 3 test: first failing cell (pre, post) = (5, 5) (kf1_d4_t10, tau 5 doubles to 10 > 9). D(3, tau) >= 8 10 9 9 9 (tau 4..8).
+- CONJECTURE (envelope, not exact): D(m, tau) <= max(2 ceil((T^R+1)/2), T^R + 1).
+
+## BOX 66 (successor 39; Lead GO 12:31Z: exact one-flip (pre, post) frontier) — DONE
+- Note docs/si/N5-FRONT-box66.md; tools experiments/si/box66/{bff.c (= box 65 bfg.c + FRONTIER hook), front.py, check66.sh};
+  out/bff_m1.txt, out/bff_m2_p0..3.txt (EXACT); pin/ (m 3 climb champions, sha1 pin/pins.sha1); live/, log/ gitignored.
+- EXACT: m 1 pairs (0,0..2), (1,0..2), (2,0); m 2 pairs = {post <= 4, pre + post <= 5}: the full trade-off line pre + post =
+  T^R(2) + 1 at every pre = 1..4 (STUCK flips), plus (0, 4).
+- DATA m 3 (lower bounds, Gen-replayed): best post for pre >= p = 8 7 7 5 5 5 3 1 0 (p = 0..8); sums 8 8 9 10 10 10 9 8 8;
+  excess only in the middle; (5,5) from kf1_d4_t10 (T_0(G) = 5); pin/f_m3_p4_s1 reaches 8 under each bit but sum <= 9.
+- CONJECTURE BULGE (DATA). Exact m 3 needs SAT (bff.c rank loop is 12! per Xi-graph).
+- TRAP (bit me): 35599262 pushed a check66.sh that FAILS (a for-loop's last test returned 1 inside $(...) under set -e). In that
+  command the && chain stopped, so check.sh was never wired and verify passed without running it. Fixed in the next commit
+  (if/then, wired, negative control fires). Check: after appending to check.sh, grep the committed check.sh for the new line.
+
+## BOX 65 (successor 39; Lead GO 11:12Z: FLIP-ADD by induction on the flip footprint j) — DONE
+- Note docs/si/N5-FOOT-box65.md; tools experiments/si/box65/{gain.py, bfg.c (= copy of claude/l-comp 557b045b box27/bfk.c + GAIN
+  hook)}; out/ (climb champions, bfg results, kf1 trace), log/.
+- PROVED (lane): GAIN-IND (T_k(G) <= T_0(G) + k g*(G)); FLIP-ADD <= ONE-FLIP (g*(m) = O(m)).
+- «added <= c·j» FAILS as a route: max gain always at footprint j = 1; GJ[1] = 2, >= 4, >= 6 (m 1, 2, 3); c·j collapses to c·m.
+- EXACT: g*(1) = 2, g*(2) = 4 (bfg, all m = 2 genomes). ONE-FLIP-2M DEAD: pin/j1_m3_s1.json (sha1 01fac3be, g 7 > 6), also m 4
+  g 9, m 5 g 11 (replayed with L-NEW Gen). READING: g*(G) = T_0(G) on every champion (gain = a fresh run after one flip), so the
+  per-flip route gives only the trivial (k+1)T; FLIP-ADD needs a trade-off between segments of MAXIMAL runs.
+- TRAP (bit me): push 3 VERIFY FAILED because check65.sh pinned a live climb output (overwritten mid-push). Pin frozen copies only.
+- Box 64 overclaim corrected (constant-C form only).
+
+## BOX 64 (successor 39; written 2026-11-05 (date -u: see commit); Lead brief 2026-11-05, OR/PI lens on FLIP-ADD)
+### Resume point
+- Note docs/si/N5-FLIPOR-box64.md. Tools experiments/si/box64/{flipdp.py, bitchain.py, climb.py, check64.sh}; ref/ = read-only copies
+  of claude/l-new 6f347876 box150/check.py, box139/{paths.py, fastcyc_r178.py}, box161/ext.py; wit/ = L-NEW box160/out witnesses;
+  out/ + log/ = hill-climb champions (DATA). check.sh «box 64».
+- VERDICT: import FAILS (no warm-start / rule-change theorem; SAME-CUBE: a flip changes the rule, not the objective; any-start
+  polynomial theorems need γ < 1 + Howard/Dantzig; EXACT kf1_d4_t10 restart = full T_0(G)). PROVED (lane): SAME-CUBE, FLIP-PATH,
+  BIT-CHAIN (+ flip footprint 1..j), TOP-FIRST. DATA: T_3(3) >= 13; T_inf(m) >= 3, 9, 17, 21 (m = 1..4).
+### Queue
+1. FLIP-ADD by induction on the flip footprint j (§4 of the note): exact test «added steps <= c·j» in L-NEW's SAT frame.
+2. 38's queue items 2-5 (see below).
+### Sources opened (box 64; literature pass by a subagent of this session, two texts re-read by me: [WW22] §2.2 l. 255-263, [SS04] §4 l. 433-441)
+- [WW22] arXiv:2207.05985 (Def. 4 USO; §2.2 Matoušek-type, decomposable in prose); [SS04] Schurr-Szabó DCG 31(4) 2004 §4 (combed /
+  decomposable defs), Prop. 1, Thm 1; [HMZ13] arXiv:1008.0530 Thm 6.5 (γ < 1); [Ye11] DOI 10.1287/moor.1110.0516 Thm 4.2, Cor. 4.1
+  (γ < 1); [PY15] arXiv:1208.5083 Thm 3.7 / 4.8; [MC94] DOI 10.1287/ijoc.6.2.188 Thm 2.8, Cor. 2.9-2.10, §2.1 (one-edge start, 2^n − 1);
+  [Fe10] arXiv:1003.3418 Thms 17-18; [MS99] arXiv:1301.6718 Thm 7; [MSz06] Adv. Math. 204 (2006) Thm 1; [GHZ98] DOI 10.1007/PL00009827
+  Thms 1-2; [Th17] arXiv:1706.09380 Thms 3, 4, 8; [AF13] arXiv:1305.3944 Thm 8. NOT opened: Williamson Hoke 1988; HPZ SODA 2014;
+  HKZ SODA 2014 (nothing rests on them).
+### Dead ends (box 65)
+- «steps added by a flip <= c·j» (j = footprint at the flip): max gain is always at j = 1 and grows 2, 4, >= 7, >= 9, >= 11 (m 1-5);
+  instances kf1_d4_t10 (gain 5, j 1), box65/pin/j1_m3_s1.json (gain 7, j 1), pin/j1_m5_s1.json (gain 11, j 1).
+- CONJECTURE ONE-FLIP-2M (g*(m) <= 2m): pin/j1_m3_s1.json, m 3, start [1,0,0,1,1,0] b 1: M 2, run 2 + flip + 7 = 9, g 7 > 6.
+### Dead ends (box 64) — CORRECTED 2026-11-05 (successor 39, box 65)
+- DEAD only in the constant form: «restart after a flip ≤ remaining run + C» for every constant C < T_0(G). Instance: kf1_d4_t10 (m 3),
+  seg 5 = T_0(G), restart R 5 = T_0(G) from the stuck state; W1 gap = T_0(G) on all 8 witnesses (check64.sh pins).
+- NOT killed (box 64 note §0 (c) and this entry first OVERCLAIMED it): «restart ≤ remaining + O(m)». 5 ≤ 2·3, so finite data cannot
+  kill an O(m) form; box 65 measures the per-flip gain g*(m) as a function of m.
+### R106 citation precision (Lead request 11:12Z; exact quotes and locations; for a possible erratum precision note)
+- [WW22] Weber, Widmer, «Realizability Makes a Difference: A Complexity Gap for Sink-Finding in USOs», arXiv:2207.05985v1 [cs.DS]
+  13 Jul 2022 (PDF sha1 90665269570caa4d65300b8ba8c389a39c1ec658; pdftotext extract line numbers, PDF page in brackets):
+  - l. 191-193 [p. 5], Definition 4: «A Unique Sink Orientation (USO) is an orientation of the hypercube, such that for each non-empty
+    face F of the hypercube, the subgraph induced by F has a unique sink, i.e., a unique vertex which has no outgoing edges.»
+  - l. 206 [p. 5-6], section heading «2.2 (Realizable) Matoušek-type USOs».
+  - l. 260-263 [p. 6] (the only place §2.2 says «decomposable»): «As the dimension influence graph G is acyclic (apart from the loops),
+    there must be a sink in every induced subgraph of G. Thus, in each face there is a dimension which is not influenced by any other
+    dimension, and all edges of that dimension point in the same direction. We therefore say that each face is combed, and that the
+    whole Matoušek-type USO is decomposable.»
+  - l. 120-122 [p. 3], §1: «All known unconditional lower bounds on general USOs use decomposable USOs [13], and the realizable
+    Matoušek-type USOs are the only known class of realizable decomposable USOs.» ([13] = Schurr, Szabó.)
+  - No numbered definition of «combed» or «decomposable» in [WW22].
+- [SS04] Schurr, Szabó, «Finding the Sink Takes Some Time: An Almost Quadratic Lower Bound for Finding the Sink of Unique Sink Oriented
+  Cubes», ESA 2002 version (author PDF, sha1 f26543368966b6ebe595261f69d11f4a462b1b0f; journal DCG 31(4):627-642, 2004,
+  DOI 10.1007/s00454-003-0813-8, NOT opened), §4, l. 433-441 [p. 8]: «an orientation is called combed, if there is a label l for
+  which all l-labeled edges are oriented towards the same facet. Iterating the construction we get the class of decomposable unique
+  sink orientations. … We call Dn the class of decomposable unique sink orientations in dimension n. Equivalently, an orientation is
+  decomposable iff every nonzero-dimensional subcube is combed.»
+- Reading: R106's «decomposable (every face combed, as in §2.2 of that paper)» matches [WW22] l. 263 in substance; the formal
+  definition is [SS04] §4. The ESA, not the DCG, text was opened, so section numbering in DCG is unchecked.
+
+## Successor 39 handover check (written 2026-11-05T09:52Z (date -u); successor 39 = session_01V5yGRYm5eKzWv7G3F5cuYS (Opus); 38 was session_01V5yGRaKVKb8btaPGXC6cJ2)
+- CORRECTION: commit 14633be6 carries a wrong Claude-Session trailer (38's id); the author is session_01V5yGRYm5eKzWv7G3F5cuYS. Not amended (no history rewrite).
+1. Branch claude/l-si. Local clone was STALE at c7f003066 (box 53d); fetched, fast-forwarded to origin head 96fb62cb3 (P-N5-S4B fixes +
+   L-1, successor 38's last push). Against trunk claude/vibrant-johnson-nxvvxo b738337b3 (2026-11-05 08:02Z): 0 ahead / 447 behind;
+   merge-base = 96fb62cb3 itself (trunk already contains all of claude/l-si).
+2. Open work: (a) BOX 64 (Lead brief 2026-11-05): OR / policy-iteration lens on L-NEW's CONJECTURE FLIP-ADD (T_2(m) <= T(m) + O(m)) via
+   warm-start / reoptimisation theorems for PI / simplex on AUSOs; next step: source search + the import test on box 160/161 T_k(m) data.
+   (b) Queue of successor 38 (box 63 handover): [S4b-KEEP] for srz3b if asked; re-blocking (box 61, L-NEW may own); W-REOPEN' / WIT';
+   DESC per vertex. P-N5-S4B is LANDED (R102), nothing owed.
+3. GAPS rows: L-SI owns none. The lane works under G-N5-TIME (owner L-NEW; open; trunk GAPS l. 11).
+4. Rulings (verbatim, docs/DECISIONS.md; status from docs/DECISIONS-INDEX.md):
+   - D18 (active): «Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of
+     mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them
+     briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.»
+   - D15 (active): «q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it»
+   - D20 (2026-11-05, per the Lead brief): «We have reset the weekly usage, so we can again work faster no?» FINDING: D20 is NOT yet in
+     trunk docs/DECISIONS.md or DECISIONS-INDEX.md at b738337b3 (last entry D19, active); quoted from the Lead brief only.
+5. Trap: stale local branch (this container started at c7f003066, 1 lane commit behind its own origin). Check: git fetch + git
+   rev-parse HEAD vs origin/claude/l-si before any edit (done). Second trap (S4B-L2): corpus_fixed.lst has 1,132 lines / 813 distinct;
+   de-duplicate before quoting totals.
+
 ## HANDOVER (successor 38, FINAL-2, PARKING; written 2026-11-01T04:12Z (date -u; see commit); session_01V5yGRaKVKb8btaPGXC6cJ2)
 - P-N5-S4B SIGNED by both referees, no gap (REFEREE 22 docs/referee/R-N5-S4B.md 062cd7345; REFEREE-2 25 docs/referee-2/R2-N5-S4B.md 1b9ef2e10).
   Lead reading L45 lifts L42's S4b restriction. Fixes docs/si/P-N5-S4B-fixes.md F0 + entries 1-5; line L-1 docs/si/P-N5-S4B-line-L1.txt

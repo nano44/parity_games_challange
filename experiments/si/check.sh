@@ -1204,3 +1204,39 @@ s=lambda k: sum(d[k] for d in seen.values())
 print(len(seen), s('STATES'), s('CHECKED'), s('SKIPPED'), s('RHOS'), s('OPTV'), s('ODDFB'), s('S4AV'))")
 [ "$o" = "813 5726 5058 668 213311 0 29 0" ] || { echo "P-N5-S4B L-1: distinct counts: $o"; exit 1; }
 echo "si (P-N5-S4B L-1 pinned, distinct counts): PASS"
+# box 64 (FLIPOR: SAME-CUBE / FLIP-PATH / BIT-CHAIN; docs/si/N5-FLIPOR-box64.md)
+bash box64/check64.sh
+echo "si (box 64: FLIPOR): PASS"
+# box 65 (FOOT: GAIN-IND, footprint route fails, g*(1) = 2, g*(2) = 4; docs/si/N5-FOOT-box65.md)
+bash box65/check65.sh
+echo "si (box 65: FOOT): PASS"
+# box 66 (FRONT: exact one-flip (pre, post) set at m = 1, 2; m = 3 pins replayed with L-NEW Gen; docs/si/N5-FRONT-box66.md)
+bash box66/check66.sh
+echo "si (box 66: FRONT): PASS"
+# box 67 (FRONT2: per-tau one-flip table D(m, tau) at m = 1, 2; docs/si/N5-FRONT2-box67.md)
+bash box67/check67.sh
+echo "si (box 67: FRONT2): PASS"
+# box 68 (REFUTE: Lemma COMPOSE + negative control; docs/si/N5-REFUTE-box68.md)
+bash box68/check68.sh
+echo "si (box 68: REFUTE/COMPOSE): PASS"
+# box 69 (MECH: improvement monotonicity separates the m = 2 cap; docs/si/N5-MECH-box69.md)
+bash box69/check69.sh
+echo "si (box 69: MECH): PASS"
+# box 70 (FRAME: SAT frame ABS-m + IM, m = 2 validation; docs/si/N5-FRAME-box70.md)
+bash box70/check70.sh
+echo "si (box 70: FRAME): PASS"
+# box 71 (FRAME-K: k-flip frame m = 2 validation + DRUP check; docs/si/N5-FRAMEK-box71.md)
+bash box71/check71.sh
+echo "si (box 71: FRAME-K): PASS"
+# box 73 (SUM1: exact m = 2 frame enumeration, FRONT-2', pq realisation; docs/si/N5-SUM1-box73.md)
+bash box73/check73.sh
+echo "si (box 73: SUM1): PASS"
+# box 74 (FLIPS: top-pair key-order flips in the frame; realised genomes; docs/si/N5-FLIPS-box74.md)
+bash box74/check74.sh
+echo "si (box 74: FLIPS): PASS"
+# box 75 (packet P-IDEAL-IM: IM, BIT-CHAIN, KEY-DIR, VALUE-MONO, COMPOSE, FRAME, MACHINE T_1(3) = 10; docs/si/P-IDEAL-IM.md)
+bash box75/check75.sh
+echo "si (box 75: P-IDEAL-IM): PASS"
+# box 76 (TROPICAL-WINDOW: WINDOW-ONCE, ALT-MIN, HIT; DEAD SUM-COUPLE, RISE-N, SPAWN-2; docs/si/N5-TROPICAL-box76.md)
+bash box76/check76.sh
+echo "si (box 76: TROPICAL-WINDOW): PASS"

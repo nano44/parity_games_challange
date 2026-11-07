@@ -1,0 +1,1 @@
+d 8 Tmax 24 maxmoves 21 z 15 lev 7 runT 24 start 1101101001000010 levmax 1 3 3 0 5 1 11 21 levall 1 3 4 8 5 1 11 21 levdense 1 2 2 0 2 1 3 13 REDUCE_viol 0 minslack 0

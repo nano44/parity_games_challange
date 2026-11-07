@@ -436,3 +436,14 @@ Lead reading L49 (2026-11-06 09:42Z by date -u; scope of the FLIP-ADD route, rai
 (2) Lane lemma FROZEN-EMBED (L-RED R212, unrefereed) gives T_k(m) ≤ (k+1)·T^R(m), so the FLIP-ADD excess can grow only through T^R itself.
     Lanes report T^R_ISO-best and T^R-best separately and measure excesses against T^R_ISO-best.
 (3) Nothing landed changes; G-N5-TIME stays OPEN.
+
+Lead reading L50 (2026-11-07 01:42Z by date -u; MOVES-2D killed; landing scope of P-IDEAL-MOVES):
+(1) Lane CONJECTURE MOVES-2D (on 𝓛^R_d, every Ξ-target mover moves at most 2d times; stated on all of 𝓛^R_d, not ISO only) is killed
+    by L-LOWER 3's instances KILL_M2D_d6_mu13.json (sha1 5301c716…, d 6, 13 > 12) and KILL_M2D_d8_mu21.json (sha1 d96c2b36…, d 8, 21 > 16)
+    at claude/l-lower 4d747490. Three independent replays: L-NEW 57 box 188, L-SI 41, L-RED 52 r214. It is recorded as a DEAD END
+    only after referee review of packet P-M2D-DEAD; until then it is «DEAD (lane, triple-replayed)».
+(2) P-IDEAL-MOVES lands with a line that makes no status claim about MOVES-2D (fix round 3, L-4). Its signed items do not depend
+    on MOVES-2D (both referees, 2026-11-07). The DEAD record is a separate entry.
+(3) The growth of T^R(d) is the open question. L-LOWER's REC_d10_tower attains R113's per-level doubling on 4 consecutive levels.
+    A family doing so on linearly many levels would, by RESULTS R104 Corollary REAL-IDEAL, make FL-POLY false. Nothing landed changes;
+    G-N5-TIME stays OPEN.
