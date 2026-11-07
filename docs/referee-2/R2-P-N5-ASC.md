@@ -228,3 +228,54 @@ r2asc_inst_elevrev.out, r2asc_noup_elevrev.out (`r2asc.py FILES…`, `r2asc.py n
   - my D-2 and D-3;
   - optional AS-1 and AS-4.
   - I will byte-test L-1 when it arrives.
+
+## Addendum 2: fix round 1 / L-1 (claude/l-new 19cc23e3; REFEREE-2 successor 31, 2026-11-08 00:0xZ by date -u)
+- **Object** (sha1 at 19cc23e3, equal to the Lead's relay 23:52Z):
+  - docs/new/P-N5-ASC-fixes.md 68139c3e… (5,973 B, entry 1);
+  - L-1 docs/new/P-N5-ASC-line-L1.txt 08cced78… (4,896 B, 1 line, 116 «(» = 116 «)», depth never negative, 0 «|»);
+  - packet 9c9cb50d… unchanged;
+  - asc.pins: 34 rows, all match (`sha1sum -c` on `git archive 19cc23e3`).
+- **Re-run:** check193.sh on `git archive 19cc23e3` (40 s): exit 0, output byte-equal to the committed check193.out
+  (lane_check193_19cc23e3.out). Sums over the 13 instance lines (bt_l1.py / bt_l1.out): edomfail 0 in edomunits 1,892; decfail 0 in
+  decunits 24,818; tmonfail 0 in tmonunits 2,552; upfail 0 in asc 1,956 ✓.
+  - «CS(M 7, A 0): max distinct hub chains 29» ✓; 13 ug193 lines, each ≤ U(G), equal to my r2asc_inst.out on all 13 ✓.
+  - CHAIN-DECOMP's 24,818 equals my own independent count exactly (r2asc_inst.out «CDEC_units 24818») ✓.
+- **Required strings:** W-1's three new strings (§1, table, title) each occur once in L-1, and the old strings 0 times ✓. The fixes
+  entry gives the packet replacements with the same old/new strings ✓.
+  - Every UP-B / NOUP clause carries «under [E-LEV]» ✓, and the scope sentence is kept ✓.
+  - My control is cited correctly («209 of 21,116 plays», 533744a5) ✓.
+  - L-RED R220's NOUPC witnesses are cited as another lane's DATA, «one route only»; I did not replay them, and no verdict here rests on
+    them.
+- **Items met:**
+  - W-2: the five box192 instances are now in asc.pins, with sha1s equal to box192 SHA1SUMS ✓.
+  - D-1: unit counts printed and stated ✓, except the two mismatches below.
+  - D-2: ug193 runs on all 13, output committed ✓.
+  - D-3: M 6, 7 re-run by check193.sh ✓.
+  - AS-1 «F′_0 = F_0 (DESC-POLY on the whole interval)» ✓. AS-4 defines D_E(v) as distinct (Λ_t(v), E_t(v)) pairs; the whole-run bound
+    (2M + 3)·F′_B holds for that count exactly ✓.
+- **DATA rule on L-1, clause by clause.** Premises, definitions, statements and scope tail all agree with the packet + entry 1 ✓; NOUP,
+  HUB-ASC(B), SKELETON, tightness and the no-DATA list ✓. Two clauses do not match their counters (asc193.py l. 50-80 read):
+  - **W-3 (E-MON unit).** tmonunits counts every successor y of an e-vertex with Λ(y) fixed («v in W.values()»). That includes c_W
+    (level-0 e's go to c_W), which adds one unit per step: Σ T = 229 of the 2,552. So the unit is «W-target or c_W», as fixes entry 1
+    itself says («W-target or c_W-successor y»), not «W-target».
+    - Old (once in L-1): «(consecutive state pair, W-target with Λ fixed) pairs»
+    - New: «(consecutive state pair, W-target or c_W with Λ fixed) pairs»
+  - **W-4 (UP-JUMP tested form).**
+    - upfail tests only «some β on the segment whose Ξ-target is a mover of level ≥ lev(a's mover)» («lev(nxt[z]) >= la»). The lemma
+      also asserts that this Ξ-step goes strictly up, to a level > that of the mover the β was entered from. A Ξ-step between equal
+      levels ≥ ℓ would pass the counter.
+    - So «UP-JUMP: violations 0 in 1,956 ascents» cites a weaker test than the clause. **My miss in round 1:** I had not read the counter
+      and called this clause OK. My own r2asc.py tests the full form: UPJ 0 in 10,751 ascents of all vertices' plays.
+    - Fix, either (a) or (b):
+      - (a) add the strict condition to upfail in asc193.py (lev(nxt[z]) > lev of z's own mover) and re-run; the count stays 1,956 if
+        0 again; L-1 unchanged;
+      - (b) Old (once in L-1): «UP-JUMP: violations 0 in 1,956 ascents of movers' plays with Λ below every e» → New: «UP-JUMP, tested
+        as «a β on the segment whose Ξ-target mover has level ≥ that of a's mover»: violations 0 in 1,956 ascents of movers' plays with
+        Λ below every e; with the strict «above the β's own mover» condition added, 0 in 10,751 ascents of all vertices' plays
+        (REFEREE-2 r2asc.py, docs/referee-2/R2-P-N5-ASC/r2asc_inst.out at claude/referee-2 533744a5)»
+  - Both old strings occur exactly once in L-1 (bt_l1.out).
+- **Verdict:**
+  - fixes entry 1 **CORRECT**;
+  - W-1, W-2, D-1 (counts), D-2 and D-3 **met**; AS-1 and AS-4 taken correctly;
+  - **L-1 NOT YET: W-3 and W-4** (DATA rule, wording or counter only; no statement changes) (Opus 5.5, D1).
+  - Statement verdicts are unchanged: all SIGN.

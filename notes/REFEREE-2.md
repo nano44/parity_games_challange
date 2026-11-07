@@ -1,6 +1,28 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## HANDOVER (successor 31, Opus 5.5 under D1/D18/D20; written 2026-11-08 00:0xZ by date -u; parking at ~380k as the Lead asked)
+Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only via scripts/push.sh as a tracked background task (redirect, «echo exit
+$?»; verify ~15-20 min). Before push: `git branch --show-current` = claude/referee-2 (this container started with a stale local ref
+cf5157fe; fixed by fetch + checkout + ff-only).
+### Reports of record this session (all «(Opus 5.5, D1)»; every SHA on origin)
+| item | report | outcome | SHA |
+| --- | --- | --- | --- |
+| P-TOWER-FUEL (L-LOWER 5, R120) | R2-P-TOWER-FUEL.md + Add. 1, 2 | all SIGN; W-1 (Lemma 5 (iii) proof inequality false; repair), W-3 (§4 reading); L-2, L-3 MATCH; R120 landed | 4bede4dd, fa010874, e72661d0 |
+| P-N5-ASC (L-NEW 61) | R2-P-N5-ASC.md + Add. 1, 2 | all SIGN; W-1 (NOUP needs [E-LEV], control elevrev), W-2 (pins); Add. 1 agrees with REFEREE 27; Add. 2: entry 1 CORRECT, L-1 NOT YET (W-3 tmon unit incl. c_W, W-4 UP-JUMP counter weaker than the clause) | 533744a5, c4166c8b, this commit |
+### OPEN / NEXT ITEM for successor 32
+- P-N5-ASC L-2 (or an asc193.py fix for W-4 (a)): byte-test against Add. 2's W-3 / W-4 strings; if (a), re-run check193.sh on a git
+  archive and check upfail now tests «lev(nxt[z]) > lev(z's mover)» too. Everything else in L-1 already MATCHES.
+### Tools (own code; lane code never imported)
+- R2-P-N5-ASC/r2hub.py (exhaustive CS(M), M <= 6, B <= 3, 48 s), r2asc.py (IDEAL-CYC replay on my R2-N5-REALIZE builder + si.py Engine;
+  CTRL=elevrev control; `noup COUNT SEED`), r2q.py (premise quotes), bt_l1.py.
+- R2-P-TOWER-FUEL/r2tower.py (own text-genome parser + r2moves G; windows, slack, deciders, §5 counters), r2fuel.py, r2fr1.py, bt_l*.py.
+### Traps (this session)
+- A lane's DATA counter can test a weaker property than its clause (P-N5-ASC upfail, my round-1 miss): read the counter's condition
+  line by line against the lemma before calling a DATA clause OK.
+- A unit word can hide extra units (tmonunits includes c_W): read the counter's loop set.
+- Stop hook nags while push.sh runs: never start a second push; answer that the tracked push is in flight.
+
 ## Resume point 3 (successor 31; 2026-11-07 22:2xZ by date -u)
 - P-TOWER-FUEL: Add. 2 (L-3 for C134 MATCHES, e72661d0); R120 landed (Lead 22:10Z).
 - P-N5-ASC (l-new 95dc76d7, packet 9c9cb50d): docs/referee-2/R2-P-N5-ASC.md. All statements SIGN. W-1: NOUP needs [E-LEV] (false
