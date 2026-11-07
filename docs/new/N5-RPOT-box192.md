@@ -284,3 +284,16 @@ to the switch that completed the return route. It is not proved, and it would ne
   - Even on the charged ones, one mover carries up to 9 charges over a run (rd2_d9). A per-mover bound would need a separate argument.
   - Obstruction (reading): the return route can already exist at t. The flip then comes from a change of the segment's most relevant
     vertex (MERGE), not from the route's completion.
+
+## Addendum 5: DEAD SRC-DEC
+- Definition: a «source» at a state is a gate whose faces have different cycle nodes. Its choice is fixed by the rewards ([LOC]) and
+  changes only at C-steps.
+- **DEAD SRC-DEC** («whenever an equal-Λ gate takes e, MERGE's decisive vertex is the e-vertex of a source gate»). If true, e-taking
+  would be rooted in sources, whose choices change only polynomially often.
+  - Killed by cR_d2_w8_R22: of its 119 such e-takings, 0 are decided by a source's e-vertex, 87 by the e-vertex of another equal-Λ
+    gate, and 32 by a non-e vertex (the RET loop segment's top).
+  - Total: 1,044 e-takings, 40 source-decided, 763 decided by an equal-Λ gate's e, 241 other. Unit: (state, gate) pairs. Set: 16 L-RED
+    R-bests + cR_d2_w8_R22. Scope: IDEAL-CYC. Tool: src192.py.
+- READING: e-taking chains sustain themselves among equal-Λ gates. Their roots are mostly RET loops, i.e. cycles Odd would close by
+  taking β, not cycle-node differences. So a potential must see «virtual» cycles: the Even-won cycles that a β choice would close. A
+  candidate for the next step: count, per gate g, the changes of the top vertex of the would-be cycle g → β_g → … → g.

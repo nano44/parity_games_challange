@@ -40,3 +40,5 @@ labels pppppppppppppppppp max p-run 18
 rf_d5.json RET flips 8 charged 5; max per switch 1; max per mover 2
 cR_d2_w8_R22.json RET flips 14 charged 11; max per switch 2; max per mover 5
 TOTAL RET 22 charged 16
+rf_d5.json {'eqD': 26, 'srcdec': 4, 'eqdec': 14, 'other': 8}
+TOTAL {'eqD': 26, 'srcdec': 4, 'eqdec': 14, 'other': 8}
