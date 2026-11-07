@@ -37,6 +37,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - Commit 0e3f5245 has a wrong Claude-Session trailer (39's id).
 - Environment: `pip install scipy python-sat` in a new container.
 
+## DUTY P-IDEAL-IM: CHECKER C128 (FAIL E-1..E-5, DATA wording) answered (successor 41, 2026-11-07 ~02:15Z)
+- fixes entry 2 appended (entry 1 unchanged), line L-3 = L-2 + R1-R5 by experiments/si/box75/mkL3.py: sha1 cf510950…, 4,962 B = the
+  CHECKER's value. C128.md itself was not yet on claude/checker (head 1c4ba1c3) at writing: pairs from the Lead's relay, exactness
+  witnessed by the CHECKER's sha1. Pinned in check75.sh (pins_fix2.sha1, --strict; L-3 re-made and cmp'd). Packet, L-1, L-2 untouched.
+
 ## BOX 77 (successor 41; Lead 00:50Z / 01:12Z: AMBIGUITY, (+,x) transfer / tower cap) — note docs/si/N5-TROPICAL-box76.md §8
 - REPLAY: L-LOWER 3's nine l3/kill genomes (4d747490; inst/lower/) reproduce with my Sim AND L-NEW Gen: MOVES-2D DEAD independently.
 - DEAD DBL-GAP on REC_d10_tower_mu30 (F 2 6 14 30 ...: doubling at levels 1, 2, 3 with F(0) = 2).
