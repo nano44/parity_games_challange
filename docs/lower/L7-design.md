@@ -31,6 +31,28 @@ Nothing here is a result in the sense of CLAUDE.md; G-N5-TIME stays OPEN. Not a 
 - So CONJECTURE RC-PLATEAU (j = 6 role form) SURVIVES this test: every RC-free genome with levels 0-5 capped found so far has
   F(6) ≤ 190 < 222. Not a proof (annealing, not exhaustive). The D_l6g lane is unread (no file yet).
 
+## 1b. Item (a): L6G_TEST1, the RC-free genome with F(6) = 222 (Lead 19:20Z / 20:06Z; DATA)
+- Source: claude/l-comp d2e9f37b experiments/comp/box30/out/L6G_TEST1_d28.txt, frozen copy l7/rec/LCOMP_L6G_TEST1_d28.txt (sha1
+  86cf19033924662a418e1cbe6a48e93c285d3bd7). sim6 and fev agree (T 265, F 2 6 14 30 62 126 222 158 128 96 …); guard 'noreturn' ok
+  (levels 0-5 capped, q₅ = 10, npaths(q₅, pair 6) = 0). Against SL41_d28 it differs in 67 option targets, 87 ranks, 43 signs, 32
+  gate entries and 21 start bits, and its run differs on 53 of 56 movers (rcfree.py had shown SL41's own run is not RC-free-realizable).
+- Level-6 profile (l6/struct48.py; unit = 6-window; set = its 127): 79 with one move of each of 12, 13; 16 only 12; 16 only 13;
+  16 none — the same 79 / 16 / 16 / 16 as SL41, G7_best, the L-SI snapshot and w1 (L6 §5d). Pair 6 crossed onto (22, 11), as in SL41;
+  no mover outside pair 6 is upstream of 12, 13 (so no RETURN-CHAIN). l6/readpath.py: q₅ = 10 never reads f₅ = 11 («no f» 63 of 63),
+  q₆ = 12 never reads 13 (79 of 79).
+- What decides the 48 failing windows (dom87.py → dom87.out; p_tower_check's I-FUEL predicate; unit = 6-window; scope = stored start):
+  they are exactly three per block of a 5-window started by «9 → 1» (16 blocks; win.py → win6_L6G.out, e.g. W97 [204, 204] only 13,
+  W98 [205, 206] none, W99 [207, 208] only 12); 16 of the 48 have length 1 (PULSE_5 = 1 under parent (9, 1)) and fail by WINDOW-CAP;
+  in 32 of them option (9, 1), rank 87, is dec_s(12) or dec_s(13) at some pre-state (at the first pre-state in 32, at every one in
+  16), and in 0 of the 79 good windows. The chain is SL41's MERGE unchanged: 11:1 (79) → 9:1 (87, −) → 54:0 → 22:0 → 20:0 → … (L6 §2):
+  under (9, 1) 11's chain runs into 22, so D's difference is dominated by (9, 1). SL41 for comparison: (9, 1) decides in 48 of 48
+  failing windows and 0 of 79 good ones (P-TOWER-FUEL I-FUEL). D_l6z_best (F(6) 190): (9, 1) decides in none of its 80 failing windows.
+- READING (answers the Lead's 19:20Z question): the 222 plateau survives the removal of the return chain because the climb keeps the
+  level-4/5 wiring that produces the MERGE (9:1 → 54 → 22 with 11:1 → 9) and the (9, 1) 5-windows; the lost 32 flips are the 16
+  (9, 1)-blocks × 2, through two mechanisms at the same blocks: length-1 6-windows (16) and DOMINANCE-FREEZE by the merged β (87, 9, 1)
+  (32 windows). BOX L7's design must therefore avoid that merge in the lower tower, which COUPLING-UP (§4) says cannot be done by
+  editing level 6 alone.
+
 ## 2. Two window lemmas and what they say about RC-free towers
 - Lemma WINDOW-CAP (PROVED, lane; R104 movement rule). Let l ≥ 1 and [t₀, t₁) an l-window (c_l changes at t₀, is constant on
   t₀, …, t₁ − 1). Then o(l) changes at no more than 2 steps of the window, and at no more than 1 if t₁ − t₀ = 1. Hence
@@ -159,7 +181,7 @@ Nothing here is a result in the sense of CLAUDE.md; G-N5-TIME stays OPEN. Not a 
   dropped conditions (3 seeds × 60,000 steps), h = 4 best 38 (wsearch_h3.out); anneal_small.py over whole genomes, d = 2, 3, 4, 6, 8:
   at most 1 capped level (anneal_small.out) — weaker than the lane's own record KILL_M2D_d6_mu13 (l3/kill/, d 6, levels 0-1 capped),
   so this annealer is not evidence of absence.
-- How a real 2-capped record breaks the cycle (DATA; fired.py → fired_KILL_M2D_d6.out; unit = move; set = all moves of
+- How a real 2-capped record breaks the cycle (DATA; fired.py → fired_KILL_M2D_d6.out, dom87.out, win6_L6G.out, L6G_struct.out; unit = move; set = all moves of
   l3/kill/KILL_M2D_d6_mu13.txt, sha1 e07f39752fde1e8af12800cec2770ea2b73400d6, d 6, T 13, levels 0-1 capped; scope = stored start):
   f₁ = 3 moves at 1, 5, 9. At 9 it is KEY-fired (it moves in the step mover 1 of pair 0 moves, armed before). At 5 its only changed
   closure mover at step 4 is 11 (level 5), itself KEY-fired at 4: at step 4 the level-0 mover 0 and the level-2 mover 4 move together
@@ -184,8 +206,8 @@ Nothing here is a result in the sense of CLAUDE.md; G-N5-TIME stays OPEN. Not a 
 
 ## 9. Files (experiments/lower/l7/)
 ranksolve.py, clamp.py, runstats.py, rcfree.py, ideal.py, xorbrute.py, l7check.py (run by check.sh), sched.py, exh2.py, wsearch.py,
-anneal_small.py, rnd_small.py, fired.py; outputs runstats.out, ranksolve_SL41.out, rcfree_SL41.out, ideal_SL41.out, xorbrute.out, sched.out,
-exh2_h2.out, wsearch_h3.out, anneal_small.out, fired_KILL_M2D_d6.out; rec/LCOMP_*.txt (frozen copies, sha1 in §1).
+anneal_small.py, rnd_small.py, fired.py, dom87.py; outputs runstats.out, ranksolve_SL41.out, rcfree_SL41.out, ideal_SL41.out, xorbrute.out, sched.out,
+exh2_h2.out, wsearch_h3.out, anneal_small.out, fired_KILL_M2D_d6.out, dom87.out, win6_L6G.out, L6G_struct.out; rec/LCOMP_*.txt (frozen copies, sha1 in §1).
 
 ## 10. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class; all are about the IDEAL

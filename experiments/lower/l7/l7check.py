@@ -8,7 +8,8 @@ H = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, os.path.join(
 from sim6 import rd, run, Fprof, caps
 from ranksolve import constraints, solve
 P = {'LCOMP_L6_TEST1_d28.txt': 'c7a32d08b84554808f9c423d92974ee0d83ec1df', 'LCOMP_L6Z_TEST1_d28.txt': 'a7cca69a8c88f92e07597b3d6e3f708f8b91e8ab',
-     'LCOMP_L6_BEST_D_l6_d28.txt': '43e8b5def35e915ebae3a8e5706f367b75094d91', 'LCOMP_D_l6z_best.txt': '1ef15c3b3c2596087a9eabbc49264d6d4f5b765d'}
+     'LCOMP_L6_BEST_D_l6_d28.txt': '43e8b5def35e915ebae3a8e5706f367b75094d91', 'LCOMP_D_l6z_best.txt': '1ef15c3b3c2596087a9eabbc49264d6d4f5b765d',
+     'LCOMP_L6G_TEST1_d28.txt': '86cf19033924662a418e1cbe6a48e93c285d3bd7'}
 for f, h in P.items(): assert hashlib.sha1(open(os.path.join(H, 'rec', f), 'rb').read()).hexdigest() == h, f
 print('pins OK:', len(P), 'files')
 SL = os.path.join(H, '..', 'l5', 'rec', 'SL41_d28.txt'); G7 = os.path.join(H, '..', 'l4', 'rec', 'G7_best_d28.txt')
@@ -22,7 +23,7 @@ def clos(D, x):
             y = D['xt'][2 * z + k]
             if y >= 0 and y not in seen: seen.add(y); st.append(y)
     return seen
-F6 = {'SL41_d28.txt': 222, 'G7_best_d28.txt': 222, 'LCOMP_L6_TEST1_d28.txt': 117, 'LCOMP_L6Z_TEST1_d28.txt': 160, 'LCOMP_L6_BEST_D_l6_d28.txt': 134, 'LCOMP_D_l6z_best.txt': 190}
+F6 = {'SL41_d28.txt': 222, 'G7_best_d28.txt': 222, 'LCOMP_L6_TEST1_d28.txt': 117, 'LCOMP_L6Z_TEST1_d28.txt': 160, 'LCOMP_L6_BEST_D_l6_d28.txt': 134, 'LCOMP_D_l6z_best.txt': 190, 'LCOMP_L6G_TEST1_d28.txt': 222}
 nwc = npt = 0
 for p in [SL, G7] + [os.path.join(H, 'rec', f) for f in P]:
     D = rd(p); S, O = run(D); F = Fprof(D, O); T = len(S) - 1; nm = os.path.basename(p)

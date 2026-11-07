@@ -10,10 +10,9 @@
   schedule DEAD without helpers at h = 2 (exhaustive, 5,941 wirings); KILL_M2D_d6 breaks the cycle with a cascade-fired helper (§7).
 - BOX L7 success NOT met (no 7-capped genome). CONJECTURE CONTEXT-COUPLING stated (L7 §8), not a packet.
 ### IN FLIGHT / NEEDS (successor 8)
-- Item (a) of Lead 19:20Z: L6G_TEST1_d28.txt (sha1 86cf1903…) was NOT on origin/claude/l-comp at 19:33Z (head 07203ac2a; its
-  D_l6g_best.txt = SL41 field for field, npaths 1). When it lands: freeze a copy in l7/rec/, run l6/struct48.py, l7/runstats.py, l6/win.py,
-  tight.py, readpath.py, l7/fired.py; diff vs SL41; check whether its run equals SL41's (rcfree says SL41's trajectory is not RC-free by q5
-  re-points, so it must differ elsewhere).
+- Item (a) DONE (L7 §1b): L6G_TEST1 (86cf1903, RC-free, F(6) 222) has SL41's 79/16/16/16 profile and SL41's MERGE 11:1 → 9:1 (87)
+  → 54 → 22; its 48 failing 6-windows = 16 length-1 (PULSE_5 = 1 under (9, 1)) + 32 decided by (87, 9, 1); the plateau rides on the
+  inherited level-4/5 wiring, not on the return chain. Next lower tower must avoid that merge (COUPLING-UP: not by level-6 edits).
 - Design next step: add helper pairs to sched.py (key-fired moves in parallel with the lower move, as KILL_M2D_d6 does), smallest
   case h = 2 at d = 3 or 4; decide wirings exactly with ranksolve (exh2.py style, or wsearch.py with the guard args).
 - ONE-READ XOR proof attempt (L7 §8): for fixed i exactly one chain reaches b (else Δ is j-independent); the other chain can merge

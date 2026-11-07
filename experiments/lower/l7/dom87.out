@@ -1,0 +1,5 @@
+SL41_d28.txt T 290 rank of option 19 (9:1): 87 sign - | 6-windows [count, (9,1) decides at some / first / every pre-state]: {'fail': [48, 48, 32, 16], 'good': [79, 0, 0, 0]}
+   first failing pre-state s_3: chain 11:1 = [(79, 11, 1), (87, 9, 1), (68, 54, 0), (45, 22, 0), (91, 20, 0), (6, 14, 0)] | chain 9:1 = [(87, 9, 1), (68, 54, 0), (45, 22, 0), (91, 20, 0), (6, 14, 0)]
+LCOMP_L6G_TEST1_d28.txt T 265 rank of option 19 (9:1): 87 sign - | 6-windows [count, (9,1) decides at some / first / every pre-state]: {'fail': [48, 32, 32, 16], 'good': [79, 0, 0, 0]}
+   first failing pre-state s_3: chain 11:1 = [(79, 11, 1), (87, 9, 1), (61, 54, 0), (32, 22, 0), (88, 20, 0), (63, 14, 0)] | chain 9:1 = [(87, 9, 1), (61, 54, 0), (32, 22, 0), (88, 20, 0), (63, 14, 0)]
+LCOMP_D_l6z_best.txt T 249 rank of option 19 (9:1): 87 sign - | 6-windows [count, (9,1) decides at some / first / every pre-state]: {'fail': [80, 0, 0, 0], 'good': [47, 0, 0, 0]}

@@ -1,0 +1,10 @@
+LCOMP_L6G_TEST1_d28.txt T 265 caps 6 F6 222 windows 127 profile {(12, 13): 79, (13,): 16, (): 16, (12,): 16} pair6 12->[22, 11] 13->[11, 22] crossed True upstream(12,13) [12, 13] 10-upstream False 11-upstream False
+J 1 3x q3->f2:no f
+J 2 7x q4->f5:no f
+J 3 8x q6->f7:no f 7x q6->f7:(6, 53, 9, 54, 22, 20, 14, 7)
+J 4 31x q9->f8:no f
+J 5 63x q10->f11:no f
+J 6 79x q12->f13:no f
+LCOMP_L6G_TEST1_d28.txt | T 265 caps 6 F(6) 222 | closure(q5=10) meets levels >= 6: True | q5 movers {10: 63}
+   6-windows 127 of length 1: 16 -> WINDOW-CAP bound 238
+   5-windows: {('inner', 'PULSE1'): 9, ('inner', 'PULSE>=2', 'trigger level>=6'): 31, ('outer', 'PULSE1'): 7, ('outer', 'PULSE>=2', 'trigger level>=6'): 16} | PULSE>=2 windows by lowest trigger level: {'min trigger level 7': 31, 'min trigger level 9': 16}
