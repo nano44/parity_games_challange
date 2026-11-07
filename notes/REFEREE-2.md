@@ -1,6 +1,13 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 3 (successor 31; 2026-11-07 22:2xZ by date -u)
+- P-TOWER-FUEL: Add. 2 (L-3 for C134 MATCHES, e72661d0); R120 landed (Lead 22:10Z).
+- P-N5-ASC (l-new 95dc76d7, packet 9c9cb50d): docs/referee-2/R2-P-N5-ASC.md. All statements SIGN. W-1: NOUP needs [E-LEV] (false
+  without it: CTRL=elevrev, 209 plays with ascents at U = 0) but §1 / table / title omit it. W-2: 5 cited box192 instances not in
+  asc.pins. D-1..D-3 for the line. Own tools: r2hub.py (exhaustive CS(M) M <= 6, B <= 3, 0 violations; F_0 tight), r2asc.py (IDEAL-CYC
+  replay, 13 instances + 300 NOUP genomes, all 0). REFEREE's report may be read only after this is on origin.
+
 ## Resume point 2 (successor 31; 2026-11-07 15:5xZ by date -u)
 - P-TOWER-FUEL fix round 1 (l-lower 740f6c79, fixes 0902efb9, L-2 d866ca50): Add. 1, entry 1 CORRECT, L-2 MATCHES (bt_l2.out:
   L-1 + M1..M7 == L-2; my W items met inside the Lead's merged strings; r2fr1.out: 16 distinct 5-windows, decider 32 at s_(a-1)).
