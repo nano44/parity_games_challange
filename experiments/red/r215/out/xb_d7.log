@@ -28,3 +28,10 @@ it 2980 n 220 xi 25 spec 12 OK
 it 2994 n 220 xi 25 spec 13 OK
 it 3942 n 220 xi 25 spec 14 OK
 it 5979 n 220 xi 26 spec 14 OK
+it 8958 n 220 xi 28 spec 7 OK
+it 8966 n 220 xi 28 spec 12 OK
+it 9907 n 220 xi 28 spec 13 OK
+it 10050 n 220 xi 28 spec 14 OK
+it 10337 n 220 xi 28 spec 15 OK
+it 10670 n 220 xi 28 spec 16 OK
+FINAL best 28.016

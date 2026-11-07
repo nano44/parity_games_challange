@@ -3,3 +3,11 @@ start n 130 xi 85 spec 85
 it 290 n 130 xi 86 spec 86 OK
 it 852 n 143 xi 88 spec 88 OK
 it 1017 n 147 xi 89 spec 89 OK
+it 2284 n 138 xi 90 spec 90 OK
+it 2385 n 138 xi 91 spec 91 OK
+it 2625 n 142 xi 92 spec 92 OK
+it 3115 n 140 xi 94 spec 94 OK
+it 4410 n 145 xi 95 spec 95 OK
+it 4775 n 144 xi 96 spec 96 OK
+it 4875 n 144 xi 96 spec 97 OK
+it 5040 n 147 xi 97 spec 97 OK

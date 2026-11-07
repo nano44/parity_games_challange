@@ -8,3 +8,12 @@ it 1944 n 109 xi 75 spec 75 OK
 it 2270 n 113 xi 76 spec 76 OK
 it 2957 n 112 xi 77 spec 77 OK
 it 3120 n 111 xi 79 spec 79 OK
+it 4343 n 114 xi 80 spec 80 OK
+it 4664 n 113 xi 81 spec 81 OK
+it 5323 n 111 xi 82 spec 82 OK
+it 5439 n 112 xi 83 spec 83 OK
+it 5973 n 108 xi 84 spec 84 OK
+it 6891 n 109 xi 85 spec 85 OK
+it 7095 n 109 xi 86 spec 86 OK
+it 7661 n 112 xi 87 spec 87 OK
+FINAL best 87.087
