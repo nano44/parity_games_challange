@@ -297,3 +297,24 @@ to the switch that completed the return route. It is not proved, and it would ne
 - READING: e-taking chains sustain themselves among equal-Λ gates. Their roots are mostly RET loops, i.e. cycles Odd would close by
   taking β, not cycle-node differences. So a potential must see «virtual» cycles: the Even-won cycles that a β choice would close. A
   candidate for the next step: count, per gate g, the changes of the top vertex of the would-be cycle g → β_g → … → g.
+
+## Addendum 6: erratum on the cR_d2_w8 numbers (Lead 11:12Z, L-RED §53.2 discrepancy); CI diagnostics
+- Unit: my «R» in §6, A3 and my messages is the number of R-STEPS: rpot192.analyse's count of steps labelled R (no cycle-node change,
+  σ̄ changes somewhere). «R-flips» (rpot192 «flips») = σ̄-changes at R-steps, summed over Odd vertices.
+- Error: out/cR_d2_w8.json was rewritten by the running climb after each improvement, and I quoted log values for whatever version
+  existed at the time. The versions and their counts (rpot192.py / xgate192.py / climb192 flipcount; unit as stated):
+
+| version (sha1 of the genome file) | where | T | C | R-steps | R-flips | max flips at one gate (all steps) |
+| --- | --- | --- | --- | --- | --- | --- |
+| never committed | §6 table at 8c2a6678 («R 16, T 24», read from the climb log) | 24 | | 16 | | |
+| 0952ef28 | committed in 8c2a6678 | 23 | 2 | 19 | 38 | 8 |
+| 575c8683 | committed in d52f9613 (A1.1's set); my 10:02Z message «R 21» | 23 | 2 | 21 | 38 | 7 |
+| b83785f6 | committed in 1da5317c / 05c5170b; frozen as inst/cR_d2_w8_R22.json; A3 «R 22» | 24 | 2 | 22 | 44 | 7 |
+
+  On 0952ef28 these agree with L-RED's replay in §53.2 (T 23, C 2, R 19, max flips 8). §6's «R 16, T 24» row and the «R 21» in the
+  10:02Z report are withdrawn as counts of a committed genome. Only inst/cR_d2_w8_R22.json (b83785f6) is a frozen instance; out/ files
+  are live climb state, not instances.
+- CI: GitHub «verify» failed on 8c2a6678, 1da5317c, 05c5170b and df108b05 inside the BOX 192 block with no message. In this container it
+  passes on a clean worktree of e47d0203 with a fresh HOME, under python3.12 and python3.13 and with an 8 MB stack. The cause is not
+  reproduced here. The block now never exits silently: it prints «BOX 192 R-POT check: FAILED (check192.sh exit …; python …)», the diff
+  and the run's last 15 lines (control: an altered check192.out makes it fire).
