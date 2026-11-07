@@ -7,7 +7,7 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   GAP-NEST, DOMINANCE-FREEZE (a)(b), CROSS-ECONOMY (i)(ii) SIGN; (iii) SIGN WITH GAP TF-1 (proof inequality |D| >= 2^R false, fails
   57/86 RANK states; repaired proof via Lemma 4 (a) on 2j's chains). L-1 NOT YET: TF-L1..L3 required (units / undefined «fail» /
   decider scope: 48/48 only for «some state s_(a-1)..s_(e-1)»; 32/48 at s_(a-1), 16/48 at every state). Optional TF-L4, TF-L5, TF-2.
-- NEXT: fixes entry + L-2 from L-LOWER -> byte test with tf_linefix.py pattern; then compare with REFEREE-2 (not read before push).
+- DONE (15:52Z): §C fix round 1 (l-lower 740f6c79): fixes entry 1 CORRECT, L-2 d866ca50 MATCHES; (iii) now SIGN. Misses: W-2 (a) cv, W-4 (a) corpus set (REFEREE-2).
 - Tools: scratch/tf_replay.py (own loader + counters on t3r_sim), tf_units.py, tf_quotes.py, tf_linefix.py; logs tf_logs/.
   Worktree $SCRATCH/llow at 7f7ff6f5.
 - Trap this session: wrote 14:12Z for a 14:09Z time in the handover check (fixed cb95edbf). Run date -u immediately before writing.
