@@ -179,6 +179,17 @@ its counter (unit, set, scope). Nothing here is a result in the sense of CLAUDE.
   the link 11:1 → 9; scope = stored start): 56 keep six capped levels, none raises F(6) above 222 (with rank 87 swapped down to 9, F is
   unchanged: another fixed element then decides). So the gap is not one badly ranked β: inside the windows under parent (9, 1) nothing
   on the chains of 22 or 11 changes that could flip the comparison: the fuel supplier for those 48 windows is absent.
+- Two-edit fuel splices (fuelsplice.py; unit = genome; 20,000 trials: one option of a mover in the Ξ-closure of pair 6, outside pairs
+  0-5, re-targeted to a mover that moves while 9 is parked on option 1, with its rank swapped above 87 and its parity flipped with
+  probability 1/2; scope = stored start): no gain (F(6) = 222). The SL41 plateau survives every local repair tried.
+- Corollary CROSS-ECONOMY (PROVED, lane; DOUBLE-EQ′ (E3)-(E5), the movement rule, ENC). Let pair j be doubling and CROSS onto two
+  movers a, b outside pair j: xt(p, k) = A_k, xt(q, k) = A_(1−k) with {A_0, A_1} = {a, b}. Then p prefers k iff q prefers 1 − k (the
+  same comparison of ε-shifted cv(a), cv(b), mirrored). In a window with key c and first mover p (E5): p moves to c at u₁, so «A_c's side
+  better» under s_(u₁−1); q moves to c at u₂, so «A_(1−c)'s side better» under s_(u₂−1); the next window has key 1 − c and needs «A_(1−c)
+  better» at its u₁ − 1, which already holds at u₂ − 1. So (a) the shared comparison changes sign inside every pulse [u₁ − 1, u₂ − 1]
+  (F(j − 1) + 1 sign changes in all), and (b) the first mover needs no fuel of its own: it is key-gated whenever the comparison does
+  not change between u₂ and the next b-step. ∎ (DATA: SL41 pair 6, 13 «mv<K» in every window, fuel6_SL41.out.) With DOMINANCE-FREEZE:
+  a fixed decider over one pulse kills that window; in SL41 the decider (87, 9, 1) is fixed over the 48 failing windows.
 
 ## 7. Summary: rule, obstruction, conjecture (labels as stated)
 - No inductive rule G_h → G_(h+1) was found. What a rule must do is now specific (PROVED parts: GAP-NEST, PULSE-NEST, DOUBLE-EQ′; DATA:
@@ -207,7 +218,7 @@ its counter (unit, set, scope). Nothing here is a result in the sense of CLAUDE.
 
 ## 8. Files
 - experiments/lower/l5/: fev.c, revert.py, revert_H5lift_H6.out, fuelsrc.py, fuelsrc.out, fuelsrc_G7.out, utmpl.c, mclimb.c,
-  greedyback.py, greedyback.out, slack.py, slack7.out, fuel6.py, fuel6_SL41.out, fuelctx.out, domin.py, domin_SL41.out, domfix.py, domfix_SL41.out, rec/SL41_d28.txt, trig.py, trig_H6_G7.out, retchain.py, retchain.out, winfail.py, winfail_G7_l6.out, pulses.py, pulses_G7_l5.out, splice.py; out/ (gitignored).
+  greedyback.py, greedyback.out, slack.py, slack7.out, fuel6.py, fuel6_SL41.out, fuelctx.out, domin.py, domin_SL41.out, domfix.py, domfix_SL41.out, fuelsplice.py, rec/SL41_d28.txt, trig.py, trig_H6_G7.out, retchain.py, retchain.out, winfail.py, winfail_G7_l6.out, pulses.py, pulses_G7_l5.out, splice.py; out/ (gitignored).
 - mclimb.c (edit-penalised climb from H5_lift, λ = 0.25-2 F-units per edit, 4 seeds): no improvement of F(5) = 94 in the runs before
   they were stopped (penalty too steep for the neutral drift the climb needs); superseded by the greedy walk back (§5).
 
