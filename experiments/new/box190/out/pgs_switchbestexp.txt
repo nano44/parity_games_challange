@@ -1,0 +1,7 @@
+pgs:switchbestexp N 1 n 35 | spec 20 | xi 20
+pgs:switchbestexp N 2 n 60 | spec 32 | xi 32
+pgs:switchbestexp N 3 n 85 | spec 41 | xi 41
+pgs:switchbestexp N 4 n 110 | spec 47 | xi 47
+pgs:switchbestexp N 5 n 135 | spec 55 | xi 55
+pgs:switchbestexp N 6 n 160 | spec 62 | xi 62
+pgs:switchbestexp N 7 n 185 | spec 68 | xi 68

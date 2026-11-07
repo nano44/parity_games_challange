@@ -1,0 +1,12 @@
+tc N 1 n 8 | spec 1 | xi 1 | idx 1 | seq 1
+tc N 2 n 22 | spec 4 | xi 4 | idx 4 | seq 5
+tc N 3 n 42 | spec 7 | xi 7 | idx 7 | seq 9
+tc N 4 n 68 | spec 16 | xi 17 | idx 16 | seq 25
+tc N 5 n 100 | spec 19 | xi 16 | idx 18 | seq 48
+tc N 6 n 138 | spec 18 | xi 20 | idx 22 | seq 66
+tc N 7 n 182 | spec 23 | xi 20 | idx 25 | seq 92
+tc N 8 n 232 | spec 30 | xi 34 | idx 28 | seq 182
+tc N 9 n 288 | spec 32 | xi 24 | idx 27 | seq 159
+tc N 10 n 350 | spec 27 | xi 35 | idx 25 | seq 331
+tc N 11 n 418 | spec 33 | xi 30 | idx 31 | seq 354
+tc N 12 n 492 | spec 37 | xi 34 | idx 37 | seq 499

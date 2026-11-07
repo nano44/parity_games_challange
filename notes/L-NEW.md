@@ -2,6 +2,15 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point (successor 58, Opus 5.5; started 2026-11-07 01:45Z by date -u)
+### BOX 190 DE-TOWER (Lead 03:03Z; docs/new/N5-DETOWER-box190.md; experiments/new/box190/)
+- Ingredient = S4a's W-tie broken by the ROOT-FIRST KEY ([RULE] TB): the only rule making a mover's choice depend on other movers'
+  current states. PROVED (lane): IDEAL-XI (Xi-best available) T <= H (Xi-height); IDEAL-IDX (largest gate index available) T <= M - N.
+  N5'-xi / N5'-idx (n5v.py: TIE broken by Xi_sigma / largest index) realise them on Gamma3 (DATA 14/14: iterations = T + 3; sketch on
+  P-N5-REACH lemmas). Correctness of every N5': sigma_new in A(v) => R15 (d) + S5 unchanged.
+- CANDIDATE N5'-xi: 10,000 random (n <= 40) 0 wrong; families correct, spec = xi on 14/15 families (all but tc). N5'-seq DEAD as a fix (longer;
+  does not realise IDEAL-SEQ). Climber idealv.py is weak (spec 10 at d 7 vs L-LOWER 17): data on bounds only.
+- Counter families rerun (out/fam_counter_*.txt): two loops once wrote the same files; both killed and rerun cleanly 03:0xZ.
+- Next: L-RED attack on N5'-xi (Xi-cyclic or untied W gadgets); gauntlet steps 2b-5 if the Lead wants N5'-xi pursued.
 ### P-N5-REACH FROZEN (Lead 02:28Z «freeze P-N5-REACH for both referees»): docs/new/P-N5-REACH.md (sha1 b7bd6937) + line L-1
   docs/new/P-N5-REACH-line-L1.txt (b12ec57a); tool box189/reachcheck.py (c368b363; ~14 s), output reachcheck.out (af50ee34), pin file
   box189/reach.pins (f0fc1ba6; also gamma3 8758456f, subdiv 63c7ae38, 14 corpus genomes box189/corpus/); check.sh block «P-N5-REACH».

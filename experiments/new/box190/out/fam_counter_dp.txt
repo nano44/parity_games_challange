@@ -1,0 +1,10 @@
+counter_dp N 1 n 8 | spec 2 | xi 2 | idx 2
+counter_dp N 2 n 12 | spec 2 | xi 2 | idx 2
+counter_dp N 3 n 16 | spec 4 | xi 4 | idx 4
+counter_dp N 4 n 20 | spec 4 | xi 4 | idx 4
+counter_dp N 5 n 24 | spec 6 | xi 6 | idx 6
+counter_dp N 6 n 28 | spec 6 | xi 6 | idx 6
+counter_dp N 7 n 32 | spec 8 | xi 8 | idx 8
+counter_dp N 8 n 36 | spec 8 | xi 8 | idx 8
+counter_dp N 9 n 40 | spec 10 | xi 10 | idx 10
+counter_dp N 10 n 44 | spec 10 | xi 10 | idx 10

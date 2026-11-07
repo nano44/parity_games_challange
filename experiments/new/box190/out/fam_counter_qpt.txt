@@ -1,0 +1,10 @@
+counter_qpt N 1 n 2 | spec 0 | xi 0 | idx 0
+counter_qpt N 2 n 4 | spec 1 | xi 1 | idx 1
+counter_qpt N 3 n 6 | spec 1 | xi 1 | idx 1
+counter_qpt N 4 n 8 | spec 1 | xi 1 | idx 1
+counter_qpt N 5 n 10 | spec 1 | xi 1 | idx 1
+counter_qpt N 6 n 12 | spec 1 | xi 1 | idx 1
+counter_qpt N 7 n 14 | spec 1 | xi 1 | idx 1
+counter_qpt N 8 n 16 | spec 1 | xi 1 | idx 1
+counter_qpt N 9 n 18 | spec 1 | xi 1 | idx 1
+counter_qpt N 10 n 20 | spec 1 | xi 1 | idx 1

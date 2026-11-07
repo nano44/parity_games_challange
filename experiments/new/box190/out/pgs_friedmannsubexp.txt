@@ -1,0 +1,7 @@
+pgs:friedmannsubexp N 1 n 20 | spec 4 | xi 4
+pgs:friedmannsubexp N 2 n 44 | spec 10 | xi 10
+pgs:friedmannsubexp N 3 n 77 | spec 15 | xi 15
+pgs:friedmannsubexp N 4 n 119 | spec 19 | xi 19
+pgs:friedmannsubexp N 5 n 170 | spec 23 | xi 23
+pgs:friedmannsubexp N 6 n 230 | spec 27 | xi 27
+pgs:friedmannsubexp N 7 n 299 | spec 31 | xi 31

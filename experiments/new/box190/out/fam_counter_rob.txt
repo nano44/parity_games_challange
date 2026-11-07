@@ -1,0 +1,10 @@
+counter_rob N 1 n 14 | spec 3 | xi 3 | idx 3
+counter_rob N 2 n 31 | spec 5 | xi 5 | idx 5
+counter_rob N 3 n 54 | spec 7 | xi 7 | idx 7
+counter_rob N 4 n 83 | spec 10 | xi 10 | idx 10
+counter_rob N 5 n 118 | spec 13 | xi 13 | idx 13
+counter_rob N 6 n 159 | spec 16 | xi 16 | idx 16
+counter_rob N 7 n 206 | spec 19 | xi 19 | idx 19
+counter_rob N 8 n 259 | spec 22 | xi 22 | idx 22
+counter_rob N 9 n 318 | spec 25 | xi 25 | idx 25
+counter_rob N 10 n 383 | spec 28 | xi 28 | idx 28

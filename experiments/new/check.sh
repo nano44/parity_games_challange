@@ -955,4 +955,11 @@ if grep -qxF "REACHCHECK SAME" <<<"$w189" && grep -qxF "PINS OK" <<<"$pin189" &&
 else
   echo "P-N5-REACH check: FAILED"; echo "$w189"; echo "$pin189"; exit 1
 fi
+# BOX 190 DE-TOWER (L-NEW successor 58): N5 / N5'-xi / N5'-idx / N5'-seq on Gamma3 of the P-N5-REACH corpus (frozen table)
+o190=$(python3 -I box190/corpus190.py | diff - box190/corpus190.out && echo DETOWER SAME)
+if grep -qxF "DETOWER SAME" <<<"$o190" && [ "$(grep -c "^REC_d10_tower_mu30_norm.json d 10 N 20 Xi-depth 13 L 35 | spec 38 | xi 6 | idx 5 | seq 66$" box190/corpus190.out)" = 1 ] && [ "$(wc -l < box190/corpus190.out)" = 14 ]; then
+  echo "BOX 190 DE-TOWER: 14 corpus genomes on Gamma3 from S3, spec / xi / idx / seq iterations = frozen table: PASS"
+else
+  echo "BOX 190 DE-TOWER check: FAILED"; echo "$o190"; exit 1
+fi
 rm -rf "$tmp"

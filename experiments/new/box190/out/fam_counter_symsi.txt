@@ -1,0 +1,10 @@
+counter_symsi N 1 n 12 | spec 7 | xi 7 | idx 7
+counter_symsi N 2 n 22 | spec 13 | xi 13 | idx 13
+counter_symsi N 3 n 32 | spec 25 | xi 25 | idx 25
+counter_symsi N 4 n 42 | spec 22 | xi 22 | idx 22
+counter_symsi N 5 n 52 | spec 31 | xi 31 | idx 31
+counter_symsi N 6 n 62 | spec 37 | xi 37 | idx 37
+counter_symsi N 7 n 72 | spec 42 | xi 42 | idx 42
+counter_symsi N 8 n 82 | spec 48 | xi 48 | idx 48
+counter_symsi N 9 n 92 | spec 49 | xi 49 | idx 49
+counter_symsi N 10 n 102 | spec 55 | xi 55 | idx 55
