@@ -246,3 +246,85 @@ docs/referee/scratch/:
 - xicyc_replay.py (own Γ / Γ3 builder from R104 / P-N5-REACH §3 text, IDEAL-CYC Howard, labels);
 - xicyc_reach3.py, xicyc_oddfixed.py, xicyc_dom.py, xicyc_brsegg.py, xicyc_brseg_rand.py, xicyc_sae.py;
 - outputs in xicyc_logs/ (input sha1s in inputs.sha1).
+
+## §C. Fixes entry 2 and line L-3 (REFEREE successor 26; date -u at writing 2026-11-07T09:01Z)
+- Objects at claude/l-new 50c80a92 (worktree; sha1 of the bytes):
+  - fixes a83e54d2… (entries 1 and 2);
+  - line L-3 1690b6ad…, 5,543 bytes;
+  - packet 149e2414… unchanged; L-2 857d21c8… unchanged;
+  - xicyc.pins c77781e0…: `sha1sum -c` OK, all 40 entries.
+- check.sh blocks «BOX 191 XI-CYCLIC» and «P-N5-XICYC» at 50c80a92 (extracted from experiments/new/check.sh): both PASS, exit 0.
+- After my report was pushed (695b610c), I read docs/referee-2/R2-P-N5-XICYC.md only as fixes entry 2 quotes it.
+- Byte test (own script):
+  - R1-R6 are parsed from fixes entry 2. Each old string occurs once in L-2 and each new string once in L-3.
+  - L-2 with R1-R6 applied is byte-equal to L-3 (sha1 1690b6ad…, 5,543 bytes).
+  - R5's and R6's old and new strings are my XC-L3 and XC-L4 texts verbatim (wrapped lines joined).
+  - R3 and R4 replace my XC-L1 / XC-L2 old strings with other texts (judged below).
+- XC-L2 (R4, «Equivalent» form): MET.
+  - inst/sae_6.pg and inst/sae_7.pg have sha1 5dc850b1… / ff46e32f… (equal to my regenerated files) and are pinned in xicyc.pins.
+  - data/sae_6_7.out equals my run of the lane counter on my regenerated files (xicyc_logs/sae_lane_N6-7.out), apart from the path
+    prefix.
+- XC-L3 (R5) and XC-L4 (R6): MET (verbatim).
+- XC-L1, resolved by REFEREE-2's W-4 (R3) under the Lead's ruling: «H0 is not checked by the tool, and these runs include steps at which
+  H0 fails». XC-L1's intent is MET. My intent was:
+  - (i) the line must not state a count that the named command does not print. W-4 states no count.
+  - (ii) the caveat must say what the data does not cover. W-4 says it more directly than my text did: my «555» counted steps with
+    some self-cycle-node switcher, which is not an H0 failure.
+  - W-4's existential claim is true on exactly that set: one counter added by exact string replacement to the lane's brseg_gen191.py
+    (H0 fails at a step iff no switching Even vertex has Λ ≠ itself both before and after) gives «INSTR H0-failing steps 388 of 2072».
+    The original output line is byte-equal (xicyc_logs/brseg_gen191_H0fail_2000_3_12.out, tool brseg_h0_instr.py). This agrees
+    with fixes entry 2's figure from REFEREE-2 (388 of 2,072).
+  - Optional (no fix required): the line could cite that counter.
+- Packet repairs:
+  - XC-1: CLOSED. F4 is replaced by F4′ with its proof and the full list of §4 uses, including §7's Corollary T3 on Γ3 (movers Ω 0
+    < 3).
+  - XC-2: CLOSED. STRICT-G and PATH-G are stated in full (my §2.2 text); BR-SEG-G (a) follows; RED-XI inherits (c); «No DOM is used in
+    §5 or §6». REFEREE-2's Z × Z route is recorded as a second route and is not needed.
+  - XC-3: CLOSED.
+    - §7's «Not used» is corrected.
+    - Lemma K2-r is my §3.2 argument. Its premise [1E-N3] P1 is the XC-4 premise.
+    - Its IDEAL-CYC variant (K1 frozen to its loop: node K1 beats node K2) is also correct.
+    - REFEREE-2's N-1 (LEVEL0's «R-flips only at gates of level ≥ 1» also needs σ̄(K2) constant) is correctly answered by the same
+      uniqueness.
+  - XC-4: CLOSED. [1E-N3] is added to §1 for §7, quoted from R104 l. 9864.
+  - O-1: DONE.
+  - O-2: DONE. level0_191.py imports from its own directory; data/level0_1000_41.out = «states 3422, … pairs 17013, … e-face 0»,
+    unchanged.
+  - O-3: handled by R2.
+- Verdicts:
+  - fixes entry 2 CORRECT; L-3 MATCHES, by the byte test and in meaning;
+  - XC-1 to XC-4 and XC-L1 to XC-L4 all closed;
+  - every statement of §0 is now SIGN: BR-SEG, T-CYC, ONEP-POLY and BR-SEG-G with their repaired proofs, RED-XI, REACH3-CYC and
+    Corollary T3 still PROVED-CONDITIONAL on [REACH-L] (R117, not landed), and the DEAD items as before.
+
+## §C add. 1. Line L-4 (CHECKER C132 R1-R7; R118) (REFEREE successor 26; date -u at writing 2026-11-07T12:39Z)
+- Objects at claude/l-new e36fdfcd (worktree; sha1 of the bytes):
+  - L-4 85fe809c…, 6,342 bytes, 73 «(» = 73 «)», 0 «|»;
+  - L-3 1690b6ad… unchanged;
+  - fixes 90d0f09d… (entry 3 appended; every C132 new string occurs in it);
+  - xicyc.pins df6f4799…
+  - C132 read at claude/checker d6b877f7; RESULTS R117 read at trunk ac1bc37c (l. 13362 ff.).
+- Byte test (own script): R1-R7 are parsed from C132 §5 (wrapped lines joined by one space). Each old string occurs once in L-3 and
+  each new string once in L-4. L-3 with R1-R7 applied is byte-equal to L-4 (sha1 85fe809c…, 6,342 bytes).
+- R1 in meaning, against R117's landed entry and this report: CORRECT.
+  - R117's entry signs S3-START [every genome] and PAD [every genome] in (c) and (d). Its transfer lemmas carry
+    [IDEAL-ACYC; K3 and TAU3 every genome], so ESC3 and W3 are signed for acyclic Ξ-graphs only.
+  - R117's line states S3-START and PAD inside REACH3, «for every G with an ACYCLIC Ξ-graph».
+  - The every-genome forms of ESC3 and W3 are P-N5-XICYC §7's re-reading, which this report signed (§3.1, with XC-3 closed by
+    Lemma K2-r). So «CONDITIONAL on … ESC3, W3 for every genome» states the remaining condition exactly: the every-genome forms of
+    ESC3 and W3 are not a landed result.
+  - Dropping «not landed» is right, since R117 has landed.
+  - The rest of the clause (σ̄(K2) = r in the fixes; the [1E-N3] premise) is unchanged from L-3.
+- R6: CORRECT. docs/referee/scratch/xicyc_logs/brseg_gen191_H0fail_2000_3_12.out exists at 42648076 and prints «INSTR H0-failing steps
+  388 of 2072». «with one counter added to brseg_gen191.py» is how it was made (§C).
+- R7: CORRECT.
+  - STRICT-G and PATH-G are this report's §2.2; Lemma K2-r is §3.2.
+  - Both are restated in fixes entry 2.
+  - «signed by both referees»: this report's §C closes XC-2 and XC-3. REFEREE-2's Addendum 1 (claude/referee-2,
+    docs/referee-2/R2-P-N5-XICYC.md l. 189-197) signs BR-SEG-G and RED-XI with STRICT-G / PATH-G and accepts K2-r. Read after my
+    reports were pushed.
+- R2-R5: CORRECT.
+  - R2: the fixes file is named with its entries.
+  - R3, R4: the proof lemmas and the T3 / C bounds carry no counter.
+  - R5 is a wording fix.
+- Verdict: L-4 MATCHES, by the byte test and in meaning. All statements stay as signed in §C.

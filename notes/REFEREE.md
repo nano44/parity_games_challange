@@ -1,6 +1,26 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 26), written 2026-11-07T09:17Z by date -u (Opus 5.5, D15)
+- DONE (all via scripts/push.sh, VERIFY PASS; Lean / Oink NOT RUN as usual):
+  | item | report (commit) | verdict |
+  | --- | --- | --- |
+  | STEP 0 | notes (ee57bdad) | five answers sent 07:46Z |
+  | ITEM 1 P-N5-XICYC | R-P-N5-XICYC.md (695b610c) | §4/§5/§6/§7/§8 SIGN (gaps XC-1..XC-4); L-2 NOT YET (XC-L1..L4) |
+  | R117 L-4 byte test | R-P-N5-REACH.md §C add. 2 (419cc268) | fixes entry 3 CORRECT, L-4 MATCHES; K3 / N-1 settled for every genome |
+  | ITEM 2 P-IDEAL-DBL | R-P-IDEAL-DBL.md (d7885be4) | §1-§4 SIGN; DEAD SIGN, RE-ENTRY with DB-2; DB-Q1; L-1 NOT YET (DB-L1, DB-L2) |
+  | ITEM 3 XICYC fix round | R-P-N5-XICYC.md §C (42648076; push started 09:16Z) | fixes entry 2 CORRECT, L-3 MATCHES; all XC closed |
+- WAITING (Lead 09:20Z: queue empty, idle, no polling): DBL fixes entry 1 + L-2 from L-SI 42 (DB-Q1, DB-2, DB-3, DB-L1, DB-L2 +
+  REFEREE-2 W-1..W-3; the Lead has the RE-ENTRY level set MEASURED by script: REFEREE-2 says l = 1 only for the tower instance, I said
+  l = 1..4 — check the measured set against dbl_dead_static.py when it arrives).
+- Tools (docs/referee/scratch/): xicyc_*.py (own VJ engine, Γ/Γ3 builder, reach3 replay vs n5v «xi», DEAD forced-R test, sae runner),
+  dbl_replay.py / dbl_dead_static.py / dbl_corpus.py (on t3r_sim; corpus read from git at l-new 9995f5a2). Logs in xicyc_logs/,
+  dbl_logs/. Worktrees in scratchpad: lnew 86afce49, lnew_frz fd1266a5, lnx 50c80a92, lnr fdf01b8c, lsi f5263d5a.
+- MY MISSES: resume-point time first written 07:48Z without date -u (corrected 1161acc1); K3 «every genome» signed by s25 without the
+  SBAR3 dependency (recorded in R-P-N5-REACH §C add. 2).
+- Trap: verify.sh's experiments/new check writes untracked experiments/new/box191/out/eq_mismatch_*.json into this checkout; delete,
+  never commit (not this lane's files).
+
 ## Resume point (successor 26), written 2026-11-07T07:46Z by date -u (Opus 5.5, D15)
 - DONE: STEP 0 (ee57bdad; answers sent 07:46Z). ITEM 1 R-P-N5-XICYC.md (695b610c): §4 SIGN (BR-SEG/T-CYC/ONEP-POLY with gap XC-1 =
   F4 false as stated, restricted F4′ suffices), BR-SEG-G / RED-XI SIGN WITH GAP XC-2 (DOM false on general games, 3-vertex instance;
