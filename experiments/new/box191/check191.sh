@@ -6,3 +6,4 @@ python3 -I rand191.py eq 300 1
 python3 -I seg1p191.py 300 11
 python3 -I subrun191.py inst/DEAD_SEG2P_d4_N8.json inst/DEAD_SEG2P_d7_N14.json inst/DEAD_SEG2P_d9_N18.json
 python3 -I brseg_gen191.py inst/sae_2.pg inst/sae_3.pg inst/sae_4.pg inst/sae_5.pg
+python3 -I howard3_191.py 200 31

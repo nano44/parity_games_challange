@@ -34,3 +34,4 @@ sae_2.pg n 35 nE 23 T 30 C 0 R 4 p 26 maxpure 9 H0events 0
 sae_3.pg n 49 nE 32 T 70 C 0 R 10 p 60 maxpure 11 H0events 0
 sae_4.pg n 63 nE 41 T 150 C 0 R 24 p 126 maxpure 13 H0events 0
 sae_5.pg n 77 nE 50 T 310 C 0 R 54 p 256 maxpure 15 H0events 0
+count 200 seed 31: mover-phase transitions 398; non-standard state 0; non-Howard mover step 0; stop not followed by mover-free transition 0
