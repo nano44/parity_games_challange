@@ -1,3 +1,32 @@
+# L-LOWER notebook
+Successor 3 (Opus 5.5, D1/D14/D18/D20) started 2026-11-07 00:05Z (date -u); STEP 0 handover check below; BOX L3 (explicit families
+for μ(d), IDEAL-ACYC model on 𝓛^R_d). The predecessor's T-L2 text (2026-10-15) is kept below unchanged as history.
+
+## Successor 3 handover check (2026-11-07 00:1xZ, date -u)
+1. Branch claude/l-lower. At start: local ref = HEAD = origin = ls-remote = aa8995e8 (clone was shallow: `fetch --unshallow`, then
+   `merge --ff-only origin/claude/l-lower`: already up to date). Merge of trunk claude/vibrant-johnson-nxvvxo (ls-remote 2ccd037b) was a
+   fast-forward (the branch had no commits beyond the merge-base): HEAD = 2ccd037b, `rev-list --left-right --count HEAD...trunk` = 0 0.
+   Before the merge: 0 ahead (aa8995e8 is an ancestor of trunk), 9,388 behind.
+2. Open work: the predecessor's three k = 9 SAT runs (B_2(5) ≥ 10) died with its container (no processes here; their checkpoints were
+   gitignored). Goal parked by the Lead (L25); not resumed. New work: BOX L3 (this brief): (a) explicit recursive family G_d with
+   μ(G_d) ≥ 2d, (b) compositions beyond 2d, (c) the obstruction. Next step: own simulator (experiments/lower/l3/), cross-checked
+   against L-NEW's movescheck.py on box186/187, then the d = 4/5 witnesses' structure.
+3. docs/GAPS.md rows owned by L-LOWER: none (`grep -c L-LOWER docs/GAPS.md` = 0). BOX L3 works against G-N5-TIME (major, L-NEW, open).
+4. Rulings (verbatim, docs/DECISIONS.md; status docs/DECISIONS-INDEX.md):
+   D1 «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as
+   wrong until it passes the gauntlet below.» (active); D18 «Focus on N5 and work toward proving it. Explore novel approaches,
+   especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make
+   reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven
+   results from conjectures and open problems.» (active); D14 «D» / «You know it can also test prveiously not tested approaches, it can come up with it own as
+   well» (verbatim, typos the owner's; active).
+5. Trap: stale/shallow clone (the checkout looked current but was shallow; a merge on a shallow clone can misreport the base). Check:
+   ls-remote vs `git rev-parse claude/l-lower` and HEAD, `rev-parse --is-shallow-repository` = false before merging. Older trap kept:
+   `pkill -f PATTERN` kills one's own shell; use anchored pgrep and kill PIDs.
+- Note on the brief's goal (a): «μ(G_d) ≥ 2d for every d» cannot hold at d = 3: the packet's lane DATA (L-RED R213, one solver)
+   gives the Ξ-target maxima 1, 3, 4 by level at d = 3, so μ(3) = 4 < 6 (and T^R(3) = 8, R112). Reading: aim at μ(G_d) ≥ 2d for d ≥ 5
+   (the first tight case) and at the growth rate.
+
+## Predecessor (T-L2, 2026-10-15) notebook, kept as history
 # L-LOWER notebook (T-L2 theory box ended 2026-10-15 19:30Z; handover for the Lead / a successor)
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
