@@ -56,17 +56,96 @@ Nothing here is a result in the sense of CLAUDE.md; G-N5-TIME stays OPEN. Not a 
   key must change at step 240 or its preference at s_239: a supplier at a level whose key flips at 240 (levels 6, 7) or a Ξ-mover
   triggered by a move at 239 (9 → 1 itself, or 12 at 239).
 
-## 4. The coupling a supplier must beat (READING, with the exact inequalities on the instance)
-- A supplier Z on D's chain enters D only through its current option; Z's own preference compares both of its options. For Z
-  inserted on the 22-side (12:0 → Z, 13:1 → Z, Z:0 → 22 with a tiny β: neutral when inactive), with Z:1 → A: «11b at s_240» and «Z
-  prefers 1 at s_239» together need v(A) to DROP by more than 2^87 + 2^79 + 2^71 + 2^68 + 2^26 at step 240. A = 11 gives a rise (11's
-  option-1 chain passes 20:0 (91, +)); A = 9, 54 do not change at 240. For Z on the 11-side (12:1 → Z, 13:0 → Z, Z:0 → 11), «11b with
-  Z = 1» and «Z prefers 0 at s_241» contradict each other at once (both compare against the same 11-chain, which is 2^87 below 22's).
-  So a one-mover supplier needs a trigger whose value falls by ~2^87 in the same step as 11's move: a second mover (a delay line of
-  length ≥ 1 below the supplier), i.e. the supplier is itself a small clocked circuit.
+## 4. Structural lemmas for suppliers (PROVED, lane) and the two couplings on SL41 (DATA)
+- Lemma TAP (PROVED, lane; R105 ENC, movement rule). If both options of a mover x have the same Ξ-target (or both exit), x's two values
+  differ by β(x, 0) − β(x, 1) only, so x's preference is constant over the run and x moves at most once. Hence a mover that moves twice
+  has two different tails, and every comparison whose chain passes x reads x's whole current tail, not one bit: there is no «clean tap»
+  (a state-dependent β followed by a common continuation) built from one mover.
+- Lemma TRANSPARENT-LEVEL (PROVED, lane; o(l) rule). Insert a level P with members Z = 2P (first), W = 2P + 1, W fixed at 1 (both options
+  exit, W:1 of higher rank, start 1) and gates with g(1) = 1. Then o(P) = c_P whenever Z = 0 (split: o = (0 ≠ c) = c) and o(P) = 1 when
+  Z = 1 (joined at 1). So the level is transparent iff Z = 1 only while c_P = 1; a key-gated Z (it moves only to c_P) keeps this iff it
+  prefers 0 whenever c_P drops while Z = 1. DATA (ins.py; unit = genome; set = SL41 with an idle level inserted at P = 6 and P = 7, two
+  gate choices each; scope = stored start): T 290 and every old level's F unchanged; the new level copies its key's F (126 resp. 222).
+- Coupling 1, RETURN-CHAIN into a capped level (DATA): 12 is upstream of pair 5's mover 10 (10:0 → 55:0 → 12; the only movers upstream of
+  pair 6 are 10, 27, 55). 10's comparison is decided via 12's current tail in 120 + 32 of 291 states (deciders (81, 11, 0) ×72, (79, 11, 1) ×48
+  through 12:1 → 11, and (91, 20, 0) ×32 through 12:0 → 22; dropscan_SL41.out last line); unit = state; scope = stored start. So any change of 12's tails is a change of
+  level 5's fuel. DATA (copyf.py → copyf_SL41_12_13.out; unit = genome; set = 900: one option of 12 re-pointed to 13 («copy of f»,
+  12 reads the first mover's state), with either option of 13 re-ranked to any tier and parity; scope = stored start): all 900 lose
+  every capped level (F(0) = 0). 13 has no predecessor: its options can be changed freely (re-ranking either β of 13 to any tier keeps
+  six capped levels in many cases, F(6) = 222 in all; DATA, same scope).
+- Coupling 2, the RANK-LOCK of a single key-gated supplier (PROVED, lane, with the exact SL41 values of §2). Let R be one new mover at an
+  inserted transparent level P = 6 (key c_6 = o(5): it rises at 240 and falls at 242, the ideal clock), R:0 → the old target (neutral
+  when idle, β(R, 0) = β₀), R:1 → T (β(R, 1) = β₁). R must move to 1 at 240 (prefer 1 under s_239), make D 11b at s_240 and s_241, and move
+  back at 242 (prefer 0 under s_241); v22 is constant on s_239 … s_241, and v22 − v11 = 2^91 − … at s_239, 2^87 + 2^79 + 2^68 at s_240, s_241.
+  (a) R on the 22-side (12:0, 13:1 → R; R:0 → 22). «Prefer 1 at s_239» is β₁ + v(T)_239 > β₀ + v22; «11b at s_240» is
+      2^26 + β₁ + v(T)_240 < −2^71 + v11_240. Together: v(T)_239 − v(T)_240 > 2^87 + 2^79 + 2^71 + 2^68 + 2^26 + β₀ − … : T's value must DROP by
+      more than 2^87 in step 240. DATA (dropscan.py → dropscan_SL41.out; unit = mover × block; set = the 51 movers not upstream of 12, 13 (upstream: 10, 12, 13, 27, 55)
+      × the 15 blocks; scope = stored start): no mover drops by more than THR at the step after «9 → 1» in any block; the large changes are
+      rises (15 and 28, the movers that move at 240, rise by 2^96-2^97 in every block; 11 by 2^91). So T must be a new mover that moves at 240 too. At level 6 it would be W, which sits at 1 and can only move to
+      c_6(240) = 1 (no drop by a move); at level 7 its key o(6) is the split indicator of pair 6 (1 at 240, 0 at 241 once 12 has moved),
+      so T returns at 241 and D is 22b at s_241: 12 moves back at 242 together with 13 (a double move: o(6) does not flip twice). DEAD for
+      one supplier with one helper at levels 6-7.
+  (b) R on the 11-side (12:1, 13:0 → R; R:0 → 11). «11b with R = 1 at s_241» needs v(R:1)_241 > v22 + 2^71; «prefer 0 at s_241» needs
+      β₀ + v11_241 > v(R:1)_241; so β₀ > v22 − v11_241 + 2^71 = 2^87 + 2^79 + 2^71 + 2^68: the idle β₀ has rank ≥ 88 and sits on the 11-side
+      of D at every idle state. DATA (unit = good 6-window; set = the 79 good windows of SL41; scope = stored start): in 63 of the 79 a
+      move of pair 6 reads D at a decider of rank < 88 (most common pairs (84, 79) ×16, (79, 95) ×8, (81, 101) ×8, (101, 84) ×8, (79, 96) ×7), so
+      a fixed element of rank ≥ 88 in D freezes D over those windows and kills them (DOMINANCE-FREEZE (a)). DEAD.
+  (c) The general shape (READING): the element that makes a key-gated supplier WANT TO LEAVE at s_241 must either be visible to D at s_241
+      (then D is 22b at s_241: the supplier's own leaving signal cancels its effect) or sit on its idle side (then it is a constant
+      offset on D at every idle state). This is the lock; it is what (a) and (b) compute on SL41.
 
-## 5. Gadget search (running; DATA to follow)
-- gad.c: insert ONE new level at position P inside the cascade (old levels P … 27 shift up by one; d 29), with two new movers Z, W:
-  Ξ-targets from a candidate list (pairs 4, 5, 7-10 members, 22, 50, 52, 54, 7, 34, 35, 45, Z, W, X), ranks at tiers between the old
-  ranks, parities, start bits, the new level's gate order; up to NW re-points of D-chain options (12:0, 12:1, 13:0, 13:1, 11:0, 11:1,
-  9:0, 9:1, 22:0, 22:1, 54:0, 54:1) to Z or W. Score = 1000 · min(caps, 6) + good 6-windows (+ 10^5 if F(6) = 254). Annealing.
+## 5. Gadget searches (DATA; gad.c, gad2.c; two simulators agree: gad's fev core and sim6.py give identical T and F on every frozen
+## best genome)
+- gad (one inserted level at P ∈ {7, 8, 9}; Z, W options: Ξ-target from 19 candidates + Z, W, X, rank at 32 tiers among the old ranks,
+  parity; start bits; gate order; NW ∈ {2, 3} re-points of the D-chain options 12:0, 12:1, 13:0, 13:1, 11:0, 11:1, 9:0, 9:1, 22:0, 22:1,
+  54:0, 54:1 to Z or W; score 1000 · min(caps, 6) + good 6-windows; simulated annealing, 3·10^6 steps × 4 runs; unit = genome; scope =
+  stored start): best 95 good 6-windows of 127 (SL41: 79) at P = 7, 8 with six capped levels; F(6) ≤ 222 in every best genome.
+- gad2 (as gad plus free edits of 12's and 13's options (target any mover, rank tier, parity), the gate order of level 6, and P = 0 (no
+  inserted level) or P = 6 (directly below pair 6, key o(5)); 3·10^6 steps × 4 runs completed (gad_runs.out), 4·10^6 steps × 3 runs at
+  P = 6 still running when written (≥ 2·10^5 steps each, best 95 so far; one NW = 4 run discarded: no acyclic start)): the same plateau,
+  95 good windows; F(old 6) ≤ 222; P = 0 with edits of the options of 12, 13, 54, 11, 9 only: no genome better than SL41 itself.
+- Frozen best: rec/GAD95_P8_d29.txt (sha1 d0de3499043d47ba6930b0d0fda323f8eb1e123c; d 29; T 289; F 2 6 14 30 62 126 220 158 159 …; 6
+  capped; win6_GAD95.out: 32 failing 6-windows = two per (9, 1) block + the first ones). Its gadget: 12:0 and 13:1 → Z = 16 (CROSS kept),
+  Z:0 → 10 (rank 41, +), Z:1 → old 20 (rank 90, −). It repairs the third window of each block (13 stays in phase) but not the two
+  windows under parent (9, 1): 12 still never moves there. DATA (negative), not a cap: annealing over a structured space, not exhaustive.
+
+## 6. The D18 analogy used, and its test: synchronous circuits (register vs combinational paths; carry-lookahead)
+- Dictionary (READING). A Ξ-preference is a REGISTER: a mover's move at t uses its preference under s_(t−1), one clock of delay. The
+  key cascade is the only COMBINATIONAL path: within one step c_l = o(l − 1) is computed bottom-up from the new states (a ripple-carry
+  chain). A j-window of length L is a clock budget: the second mover must move by u₁ + L − 1, so its fuel path may contain at most L − 1
+  registers. In SL41's (9, 1) blocks L = 2 (PULSE_5 = GAP_5 = 2 = h − j for h = 7, j = 5, the tight case of GAP-NEST / PULSE-NEST), so
+  the fuel path for 12 has ZERO registers: a SETUP-TIME constraint. Its only legal sources are the combinational ones (key-gated movers
+  at levels whose key flips at 240: levels 6, 7) or a register loaded at 239 from the level-5 b-step (9 → 1).
+- Carry-lookahead (the classical fix for ripple delay): predict the carry from lower bits. Here the level-5 b-step types cycle (8, 0),
+  (9, 0), (8, 1), (9, 1) (DATA: parents of W99 … W107 in win6_SL41_verbose.out; a Gray-code walk of the two members of pair 4), so «the
+  next level-6 window is under (9, 1)» is predictable from (s_8, s_9) = (1, 0) one window early. Test (design, READING + DATA): a lookahead
+  supplier needs a mover y that goes «off» before the (9, 1) block (reading s_8 = 1, s_9 = 0) and «on» in the same step as R (240). By
+  TAP y has two different tails and by the lock of §4 (c) y's own leaving/arming signal is visible to whatever reads y; with y read by R,
+  y's arming element enters R's comparison and, when R is active, D. The gad / gad2 spaces contain such wirings (W reading 8 or 9, Z
+  reading W, ranks at all tiers), and the annealing found none above the 95-window plateau. So the analogy's prediction («a lookahead
+  path fixes the setup violation») FAILS here, for a reason the analogy does not have: in a circuit a gate reads a wire's bit; here a
+  path reads the whole downstream sum (TAP), so a lookahead wire carries the weight of everything it reads.
+
+## 7. Outcome of BOX L6 (labels as stated)
+- Success criterion (seven capped levels, F(6) = 254) NOT met. No genome with F(6) > 222 and six capped levels was found by any designed
+  construction or gadget search in this box.
+- The exact reason, at the instance (SL41_d28, sha1 c1b46c31…), in four parts: (i) MERGE (DATA, §2): under parent (9, 1) 11's chain runs
+  into 22, so D's difference is {12:0} vs {12:1, 11:1, 9:1, 54:0}; no supplier on 22's chain can act. (ii) TOP-CLOCK (PROVED, §3): a TOP-ADD
+  supplier on SL41 needs ≥ 5 added levels before it can move 29 times. (iii) SAME-STEP (DATA + movement rule, §1): the two windows have
+  length 2, so D must turn at s_240 by a mover moving at step 240. (iv) The two couplings (§4): 12 feeds capped pair 5 (RETURN-CHAIN
+  10 → 55 → 12), and a single key-gated supplier on either side of D is RANK-LOCKED (PROVED with the instance's values; DATA counters as
+  stated): 22-side needs a 2^87 drop at 240 that no mover has; 11-side needs an idle offset of rank ≥ 88 that freezes 63 good windows.
+- CONJECTURE L5-TYPE: not confirmed and not refuted. What this box adds against its simple form: on SL41 the fuel for the new level
+  cannot be one supplier per type placed on the crossed pair's chains; any supplier must come with at least one helper whose own
+  signal is hidden from D, and such hiding is not available from single movers (TAP). A constructive test therefore needs either a
+  different lower tower (one where the (9, 1) chain does not merge into 22, or where PULSE_5 ≥ 3 under (9, 1), giving the fuel a register)
+  or a multi-mover gadget outside the searched spaces.
+- H5 → H6 repeat: NOT RUN (it was conditional on a working construction).
+
+## 8. Files (experiments/lower/l6/)
+sim6.py, win.py, topadd.py, cross2.py, copyf.py, ins.py, dropscan.py, gad.c, gad2.c; outputs dropscan_SL41.out, win6_SL41_verbose.out, cross2_SL41.out,
+topadd_SL41_K2.out, topadd_SL41_K3.out, copyf_SL41_12_13.out, win6_GAD95.out, gad_runs.out; rec/GAD95_P8_d29.txt.
+
+## 9. Diff against TARGET.md
+No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class; all are about the IDEAL
+model's step sequence (R104's definition) on 𝓛^R_d and its F-profile. Not M3, not a gauntlet step.

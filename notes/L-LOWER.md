@@ -1,5 +1,22 @@
 # L-LOWER notebook
 
+## Successor 6 (Opus 5.5) — BOX L6: build the fuel supplier for SL41's level 6 (GO from Lead 14:08Z, 2026-11-07)
+### Resume point
+- Handover check 2ce74ff9 (score 5). Product: docs/lower/L6-supplier.md; tools/data experiments/lower/l6/ (sim6.py = Python big-int
+  simulator agreeing with fev; win.py windows/deciders; ins.py level insertion; dropscan.py; gad.c / gad2.c gadget annealers).
+- Result so far: success NOT met (F(6) never > 222 with 6 capped). Exact reason (L6 §7): MERGE at 22 (11:1 → 9:1 → 54:0 → 22 under
+  parent (9,1)); TOP-CLOCK (PROVED: TOP-ADD on SL41 needs ≥ 5 added levels to move 29 times); SAME-STEP (length-2 windows); couplings:
+  12 feeds capped pair 5 (10:0 → 55 → 12) and a single key-gated supplier is RANK-LOCKED (22-side needs a 2^87 drop at 240, none
+  exists; 11-side needs an idle β of rank ≥ 88, freezing 63 of 79 good windows). Gadget plateau 95 good 6-windows (rec/GAD95_P8_d29.txt).
+- D18 analogy: synchronous circuits (Ξ = register, key cascade = combinational ripple, length-2 window = setup-time; carry-lookahead
+  via the Gray-code cycle of pair 4's b-step types) — lookahead fails because a path reads the whole downstream sum (TAP).
+- Next ideas (not started): a lower tower where the (9,1) chain does not merge into 22, or PULSE_5 ≥ 3 under (9,1) (gives the fuel a
+  register); multi-mover gadgets outside gad2's space.
+### Things only I know (box L6)
+- gad/gad2 binaries and runs live in the scratchpad (lost on restart); rebuild: gcc -O2 -o gad2 experiments/lower/l6/gad2.c -lm.
+  gad's «good» counter differs from win.py by one on SL41 (78 vs 79: first-window handling); on GAD95 both give 95.
+- With insertion at P, old movers ≥ 2P shift by +2; at P = 6 pass J = 7 (old pair 6) and FT = 254 to gad2.
+
 ## Successor 5 HANDOVER (2026-11-07 ~12:4xZ, context ~420k; PARKED after this push)
 ### DONE (claude/l-lower; docs/lower/L5-rule.md is the box's product; tools/data experiments/lower/l5/)
 - §1-§2: H5→H6 dissection (revert.py, greedyback.py: ~half drift, ~70 Ξ-targets forced at every level); fuel source = f(own b-step
