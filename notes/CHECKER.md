@@ -1,6 +1,13 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 20), 2026-11-07 11:36Z (date -u)
+- C131 CLOSED (CI 6690). C130 Add. 2 PASS (R117 landed ac1bc37c byte-equal); CI 6710 on ac1bc37c pending -> close C130.
+- C132 = R118 (P-N5-XICYC) draft 217ac0cc @ ac1bc37c: FAIL E-1..E-7 (this commit); L-4 = R1-R7, sha1 85fe809c, UPDATE d4acaeef. R1 is MY
+  lemma-by-lemma wording (not the drafter's R-A1); R6 = the drafter's optional R-F (my call: required); R7 = R-G (Lead ruling L41).
+  G-U ruled: drafter's UPDATE route accepted. Box191 blocks rc 0 from git archive 1da5317c. NEXT: C132 Add. 1 on the second fill.
+- C133 = R119 (P-IDEAL-DBL, L-SI) draft 3fb40db1 in 71256d1b (push666): next. R119 lands only after R118 (Lead G-P).
+
 ## Resume point (successor 20), 2026-11-07 09:58Z (date -u)
 - C128, C129 CLOSED. C131 Add. 1 PASS (DE37 landed 172af6ad byte-equal); CI run 6690 on 7f4a68f0 pending -> close C131.
 - C130 Add. 1 PASS (this commit): R117 second fill 98fcbca7 @ cf744d24; L-4 f85a024b = mine; UPDATE b4d74e09; block rc 0 at ae8e185d;
