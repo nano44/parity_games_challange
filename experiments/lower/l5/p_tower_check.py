@@ -5,6 +5,10 @@ experiments/lower/check.sh. Simulator: l3/sim.py (R104 definition; own implement
 (2) the instance counts of §4 (G7_best_d28: room; SL41_d28: fuel), asserted exactly;
 (3) lemma counters of §5 on the corpus (l3/kill/*.json, l4/rec/*.json, the two instances): violations must be 0; tightness and
     hypothesis counters are printed (and asserted) as stated in the packet.
+Fix round 1 (L-LOWER successor 6; docs/lower/P-TOWER-FUEL-fixes.md entry 1): also pins line L-2 and asserts every unit L-2 names:
+E3 units 7,069; E5 levels with F(j - 1) >= 1: 61 of 62; I-ROOM: 119 j-windows at j = 1..5, the 30 units on 16 distinct 5-windows;
+I-FUEL decider scopes (some pre-state 48, s_(a-1) 32, every pre-state 16, good windows 0); 188 of 188 consecutive-move pairs of 12, 13
+with a non-constant decider (fixes entry 1, TF-4 / W-3).
 Prints «P-TOWER-FUEL CHECK PASS» at the end."""
 import sys, os, json, hashlib, glob
 H = os.path.dirname(os.path.abspath(__file__)); L = os.path.join(H, '..')
@@ -28,6 +32,7 @@ PINS = {G7: "b995fff21c1f8558eb3e1868ec5ce59a3d4ccfb3", SL: "c1b46c319fd614e5bcb
 if os.environ.get("PTF_LINE_SHA"): PINS[LINE] = os.environ["PTF_LINE_SHA"]
 LINE_SHA = "408470adbb1d80f0ed4f29b363867da3d6d430d4"
 if LINE_SHA != "LINE_SHA_PLACEHOLDER": PINS[LINE] = LINE_SHA
+LINE2 = os.path.join(L, '..', '..', 'docs', 'lower', 'P-TOWER-FUEL-line-L2.txt'); PINS[LINE2] = "d866ca50b0a0372efd9e93a2db0410801b3ddc15"
 for p, h in PINS.items(): assert sha(p) == h, (p, sha(p), h)
 print("pins OK:", len(PINS), "files")
 
@@ -74,6 +79,11 @@ c7 = {j: slack(R7, j, 7 - j)[:2] for j in range(1, 6)}; cs = {j: slack(RS, j, 7 
 assert c7 == {1: (0, 0), 2: (0, 0), 3: (0, 0), 4: (0, 0), 5: (16, 14)}, c7
 per = slack(R7, 5, 2)[2]; assert per[((9, 1),)] == [15, 14] and per[()] == [1, 0] and sum(v[0] + v[1] for k, v in per.items() if k not in (((9, 1),), ())) == 0, per
 assert cs == {j: (0, 0) for j in range(1, 6)}, cs
+nwin = sum(len(R7.windows(j)) for j in range(1, 6)); W5 = R7.windows(5); dist = set()
+for i, (a, e, typ, mv) in enumerate(W5):
+    if mv[1][0] - mv[0][0] < 2 or (i + 1 < len(W5) and W5[i+1][3][0][0] - mv[1][0] < 2): dist.add(a)
+assert nwin == 119 and len(W5) == 63 and len(dist) == 16, (nwin, len(dist))
+print("G7_best_d28: 119 j-windows at j = 1..5; the 30 (5-window, PULSE or GAP) units lie on 16 distinct 5-windows of 63")
 print("G7_best_d28: T 270, levels 0-5 capped; 7-capped PULSE/GAP violations: levels 1-4: 0; level 5: 30 = 15 pulses + 14 gaps of type (9, 1) + 1 pulse of the first window")
 print("SL41_d28: T 290, levels 0-5 capped; 7-capped PULSE/GAP violations at levels 1-5: 0")
 def fail6(R):
@@ -81,12 +91,19 @@ def fail6(R):
 for R, name in ((R7, "G7_best_d28"), (RS, "SL41_d28")):
     W, bad = fail6(R); assert len(W) == 127 and len(bad) == 48, (name, len(W), len(bad))
 print("both: level 6 has 127 windows, 48 without exactly one move of each member of pair 6")
-W, bad = fail6(RS); badset = {w[0] for w in bad}; dec_fail = dec_good = 0
+W, bad = fail6(RS); badset = {w[0] for w in bad}; dec_fail = dec_good = 0; dec_first = dec_every = 0
 for a, e, typ, mv in W:
-    ds = {RS.dec(RS.S[t], x) for t in range(a - 1, e) for x in (12, 13)}
-    has = any(m == 19 for m, _ in ds)                     # option 19 = (mover 9, option 1), rank 87
-    if a in badset: dec_fail += has
+    hit = [any(RS.dec(RS.S[t], x)[0] == 19 for x in (12, 13)) for t in range(a - 1, e)]   # option 19 = (mover 9, option 1), rank 87
+    has = any(hit)
+    if a in badset: dec_fail += has; dec_first += hit[0]; dec_every += all(hit)
     else: dec_good += has
+assert (dec_first, dec_every) == (32, 16), (dec_first, dec_every)
+cm = nc = 0
+for x in (12, 13):
+    ts = [t for t in range(1, RS.T + 1) if RS.S[t][x] != RS.S[t-1][x]]
+    for t, t2 in zip(ts, ts[1:]): cm += 1; nc += len({RS.dec(RS.S[v], x) for v in range(t - 1, t2)}) > 1
+assert (cm, nc) == (188, 188), (cm, nc)
+print("SL41_d28: option 19 decides 12 or 13 at s_(a-1) in 32, at every pre-state in 16 of the 48; decider not constant on 188 of 188 consecutive-move pairs of 12, 13")
 assert RS.G['br'][19] == 87 and RS.G['bp'][19] == 1 and RS.G['opts'][12][0][1] == 22 and RS.G['opts'][12][1][1] == 11 and RS.G['opts'][13][0][1] == 11 and RS.G['opts'][13][1][1] == 22
 assert dec_fail == 48 and dec_good == 0, (dec_fail, dec_good)
 print("SL41_d28: pair 6 is CROSS onto (22, 11); (rank 87, mover 9, option 1) decides 12 or 13 in all 48 failing 6-windows and in none of the 79 others")
@@ -94,7 +111,7 @@ print("SL41_d28: pair 6 is CROSS onto (22, 11); (rank 87, mover 9, option 1) dec
 # (3) lemma counters on the corpus
 files = sorted(glob.glob(os.path.join(L, 'l3', 'kill', '*.json')) + glob.glob(os.path.join(L, 'l4', 'rec', '*.json')))
 runs = [(os.path.basename(f), Run(json.load(open(f)))) for f in files] + [("G7_best_d28", R7), ("SL41_d28", RS)]
-C = dict(levels=0, E3=0, E4=0, E5=0, windows=0, PN_units=0, PN_viol=0, PN_tight=0, GN_units=0, GN_viol=0, GN_tight=0,
+C = dict(levels=0, E3_units=0, E5_hyp=0, E3=0, E4=0, E5=0, windows=0, PN_units=0, PN_viol=0, PN_tight=0, GN_units=0, GN_viol=0, GN_tight=0,
          DF_pairs=0, DF_viol=0, DFa_pairs=0, DFa_viol=0, CE_pairs=0, CE_windows=0, CE_viol=0, CE3_units=0, CE3_viol=0)
 for name, R in runs:
     # DOMINANCE-FREEZE (a): consecutive states with the same decider (element and side) have the same preference, every mover
@@ -104,7 +121,7 @@ for name, R in runs:
                 C['DFa_pairs'] += 1; C['DFa_viol'] += R.pi(R.S[t-1], x) != R.pi(R.S[t], x)
     for j in range(1, R.d):
         if not R.dbl[j]: continue
-        C['levels'] += 1; W = R.windows(j); p, q = 2*j, 2*j+1
+        C['levels'] += 1; W = R.windows(j); p, q = 2*j, 2*j+1; C['E3_units'] += R.T; C['E5_hyp'] += R.F[j-1] >= 1
         # DOUBLE-EQ' (E3): flips of pair j exactly at the steps moving p or q, never both; (E4): one move each per window
         for t in range(1, R.T + 1):
             mp, mq = R.S[t][p] != R.S[t-1][p], R.S[t][q] != R.S[t-1][q]
@@ -148,7 +165,7 @@ for name, R in runs:
 print("corpus:", len(runs), "runs (stored start):", ', '.join(n for n, _ in runs))
 print("counters:", C)
 for v in ('E3', 'E4', 'E5', 'PN_viol', 'GN_viol', 'DF_viol', 'DFa_viol', 'CE_viol', 'CE3_viol'): assert C[v] == 0, (v, C[v])
-EXP = {'levels': 62, 'E3': 0, 'E4': 0, 'E5': 0, 'windows': 757, 'PN_units': 757, 'PN_viol': 0, 'PN_tight': 215, 'GN_units': 260, 'GN_viol': 0,
+EXP = {'levels': 62, 'E3_units': 7069, 'E5_hyp': 61, 'E3': 0, 'E4': 0, 'E5': 0, 'windows': 757, 'PN_units': 757, 'PN_viol': 0, 'PN_tight': 215, 'GN_units': 260, 'GN_viol': 0,
        'GN_tight': 12, 'DF_pairs': 1390, 'DF_viol': 0, 'DFa_pairs': 65885, 'DFa_viol': 0, 'CE_pairs': 4, 'CE_windows': 65, 'CE_viol': 0,
        'CE3_units': 43, 'CE3_viol': 0}
 assert C == EXP, C
