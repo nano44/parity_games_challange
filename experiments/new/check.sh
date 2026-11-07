@@ -976,4 +976,11 @@ if grep -qxF "PINS OK" <<<"$pin191" && grep -q "^c77781e04e68f06c4028fefbcf99db8
 else
   echo "P-N5-XICYC check: FAILED"; echo "$pin191"; exit 1
 fi
+# BOX 192 R-POT (L-NEW successor 60): data behind DEAD FLIP-H / HEAD-STEP / EXCH-1, EQ-FLIP and X-GATE checks, SEG-T sample
+o192=$(cd box192 && bash check192.sh 2>&1 | diff - check192.out && echo RPOT SAME)
+if grep -qxF "RPOT SAME" <<<"$o192" && grep -q "^rd2_d9.json N 18 T 21 C 3 R 18 p 0 flips 55 eqfail 0 Rnohead 9 flipnoh 15 xsz 7 " box192/check192.out; then
+  echo "BOX 192 R-POT: EQ-FLIP 0 failures, X-GATE <= 1 flip per interval, DEAD FLIP-H / HEAD-STEP / EXCH-1 instances (rd2_d9), SEG-T sample = frozen: PASS"
+else
+  echo "BOX 192 R-POT check: FAILED"; echo "$o192"; exit 1
+fi
 rm -rf "$tmp"

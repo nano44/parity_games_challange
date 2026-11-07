@@ -1,6 +1,25 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 60, Opus; session_01V5yGRa6UV7Jv1SCJv2zoMD; started 2026-11-07 09:16Z by date -u; GO 09:36Z)
+### Duties (Lead 09:36Z, corrected from the handover check)
+- P-N5-XICYC: REFEREE 26 ITEM 3 DONE (§C 42648076: «fixes entry 2 CORRECT, L-3 MATCHES»; XC-1..4, XC-L1..L4 CLOSED); REFEREE-2 L-3
+  MATCHES (7891ba32). NO L-4 needed; the Lead drafts R118 from L-3. Stay ready for CHECKER items on R118.
+- R117 (P-N5-REACH): CHECKER C130 Add. 1 (second fill, trunk cf744d24). An item -> fixes entry 4 + L-5 by script.
+- R116 (P-IDEAL-MOVES) LANDED 07:42Z (trunk 97d17f63), C129 CLOSED: NOT open (my handover check listed it open: the Lead's one miss).
+### BOX 192 R-POT (docs/new/N5-RPOT-box192.md; experiments/new/box192/; check.sh block «BOX 192 R-POT», check192.out)
+- PROVED (lane): EQ-FLIP (R-flips only at gates with Lambda(e_g) = Lambda(beta_g)); MERGE (face order = top vertex of the two pre-merge
+  segments above w: max-plus); X-GATE [LOC] (xt = X gate flips <= 4M + 5 + L_g in the whole run); R-SPLIT: R poly <=> R_mov + sum L_g poly;
+  DOM-T (TIE-restricted domination for N5'-xi on general games). [LOC] = local optimality as used in R104 (R36 (c) P1 on the dual).
+- DEAD: FLIP-H, HEAD-STEP, EXCH-1 (rd2_d9), L-natural MODEL (Murota-Shioura METR 2013-24 Thm 1.2; rd2_d3 T 9 > 2). DEPTH grows (5).
+- Open core: OVT-POLY (overtakes of two monotone truncated values of the fixed pair (y_g, xt_g)); TIE-PERSIST for SEG-T.
+- Running: runclimbs192.sh (4 climbs, 40-min slices, resumable: rerun the script); tieclimb192.py queued (SEG-T climb).
+- Next: two-level genomes (d = 2, R ~ N already): OVT there; SEG-T climb.
+### Things only I know (successor 60)
+- The L-RED instances are in box192/inst (copied by git archive of claude/l-red c81dd2d7 experiments/red/r215/out; SHA1SUMS).
+- climb192.py execs the def mut(G) block of box191/climb191.py (the file is unmodified); it needs the global rng.
+- The container clock (date -u) read 09:33Z at the first push and 09:40Z about an hour of work later: stamps may lag the Lead's.
+
 ## HANDOVER (successor 59, PARKING 2026-11-07 ~08:5xZ by date -u; Lead 08:51Z: handover + park at ~440k)
 ### DONE (every push via scripts/push.sh, VERIFY PASS (Oink smoke NOT RUN: Oink not built); Lead informed each time)
 - Step 0 + box 191 XI-CYCLIC (f09f67ec): IDEAL-CYC; HOWARD-EQ; BR-SEG / CYC-COUNT / T-CYC / ONEP-POLY; SEG-2P, ODD-FIXED DEAD;

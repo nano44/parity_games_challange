@@ -1,0 +1,14 @@
+rd2_d4.json N 8 T 11 C 3 R 8 p 0 flips 12 eqfail 0 Rnohead 1 flipnoh 1 xsz 3 monfail 0 Rnohead_t [9]
+rd2_d9.json N 18 T 21 C 3 R 18 p 0 flips 55 eqfail 0 Rnohead 9 flipnoh 15 xsz 7 monfail 0 Rnohead_t [11, 13, 14, 15, 17, 18, 19, 20, 21]
+rd3_d5.json N 10 T 18 C 1 R 16 p 1 flips 26 eqfail 0 Rnohead 2 flipnoh 3 xsz 7 monfail 0 Rnohead_t [12, 17]
+rf_d5.json N 10 T 11 C 2 R 9 p 0 flips 19 eqfail 0 Rnohead 3 flipnoh 5 xsz 4 monfail 0 Rnohead_t [5, 7, 8]
+rd2_d8.json N 16 R-depth max 5 C99 R1 R1 R1 R1 R1 R1 R1 R1 R1 R5 R1 R2 R1 R1 p1
+rd2_d9.json N 18 R-depth max 2 C99 C99 C99 R1 R1 R1 R1 R1 R1 R1 R2 R1 R2 R2 R2 R1 R2 R2 R2 R2 R2
+rd2_d4.json ties 0 flipsX 0 flipsM 23 maxXint 0 locfail 0
+rd2_d9.json ties 0 flipsX 3 flipsM 90 maxXint 1 locfail 0
+rd3_d5.json ties 0 flipsX 1 flipsM 29 maxXint 1 locfail 0
+rf_d5.json ties 0 flipsX 3 flipsM 25 maxXint 1 locfail 0
+rand count 100 seed 1: ties 0 flipsX 66 flipsM 321 maxXint 1 locfail 0
+general random games count 300 seed 1 n 12 maxdeg 3: sigma-steps 314, X1 fails 67; games with a p-run > n_E: 0; max p-run/n_E 0.40 at (160, 2, 5, 'pp')
+rd2_d9.json N 18 T 21 TRUNC-CHOICE ok 651 bad 0 (trunc-ties 516); max mover value changes 20
+rf_d5.json N 10 T 11 TRUNC-CHOICE ok 166 bad 0 (trunc-ties 136); max mover value changes 10
