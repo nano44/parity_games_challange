@@ -1,0 +1,47 @@
+inst sha1: OK
+LEAP_k64.json T 129 cnlow 0 k2fail 0 gatestates 66950 ties 0 locfail 0 intervals 515 flips 128 ovtfail 0 efail 0 bfail 0 maxF 128 tight 0
+rd3_d4.json T 18 cnlow 0 k2fail 0 gatestates 380 ties 0 locfail 0 intervals 20 flips 34 ovtfail 0 efail 0 bfail 0 maxF 6 tight 1
+CLR_k8s16.json T 28 cnlow 0 k2fail 0 gatestates 2871 ties 0 locfail 0 intervals 99 flips 52 ovtfail 0 efail 0 bfail 0 maxF 4 tight 2
+FPORT_n2.json T 14 cnlow 0 k2fail 0 gatestates 1380 ties 0 locfail 0 intervals 92 flips 4 ovtfail 0 efail 0 bfail 0 maxF 1 tight 2
+FPORT_n3.json T 16 cnlow 0 k2fail 0 gatestates 2261 ties 0 locfail 0 intervals 133 flips 6 ovtfail 0 efail 0 bfail 0 maxF 1 tight 2
+LEAP_k8.json T 17 cnlow 0 k2fail 0 gatestates 1206 ties 0 locfail 0 intervals 67 flips 16 ovtfail 0 efail 0 bfail 0 maxF 16 tight 0
+RS2.json T 10 cnlow 0 k2fail 0 gatestates 330 ties 0 locfail 0 intervals 30 flips 5 ovtfail 0 efail 0 bfail 0 maxF 3 tight 3
+RS2_L8M6.json T 17 cnlow 0 k2fail 0 gatestates 936 ties 0 locfail 0 intervals 52 flips 5 ovtfail 0 efail 0 bfail 0 maxF 3 tight 3
+RS3.json T 13 cnlow 0 k2fail 0 gatestates 938 ties 0 locfail 0 intervals 67 flips 12 ovtfail 0 efail 0 bfail 0 maxF 5 tight 5
+RSG_K4.json T 7 cnlow 0 k2fail 0 gatestates 184 ties 0 locfail 0 intervals 23 flips 3 ovtfail 0 efail 0 bfail 0 maxF 1 tight 3
+cR_d2_w8_R22.json T 24 cnlow 0 k2fail 0 gatestates 800 ties 0 locfail 0 intervals 32 flips 54 ovtfail 0 efail 0 bfail 0 maxF 7 tight 0
+rd2_d9.json T 21 cnlow 0 k2fail 0 gatestates 792 ties 0 locfail 0 intervals 36 flips 93 ovtfail 0 efail 0 bfail 0 maxF 10 tight 3
+rd2_d10.json T 26 cnlow 0 k2fail 0 gatestates 1080 ties 0 locfail 0 intervals 40 flips 102 ovtfail 0 efail 0 bfail 0 maxF 9 tight 3
+rd3_d7.json T 25 cnlow 0 k2fail 0 gatestates 962 ties 0 locfail 0 intervals 37 flips 35 ovtfail 0 efail 0 bfail 0 maxF 4 tight 3
+rf_d5.json T 11 cnlow 0 k2fail 0 gatestates 240 ties 0 locfail 0 intervals 20 flips 28 ovtfail 0 efail 0 bfail 0 maxF 10 tight 3
+rand count 1000 seed 2: T 8 cnlow 0 k2fail 0 gatestates 68549 ties 0 locfail 0 intervals 15945 flips 3158 ovtfail 0 efail 0 bfail 0 maxF 4 tight 672
+rd3_d4.json N 8 M 20 n 74 T 18 Q 15 W 2 L 8334 wfail 0 Tfail 0 crossflip 0 DEtot 10 sumDE 488
+RS2_L32M6.json N 77 M 148 n 527 T 41 Q 9 W 32 L 3492237 wfail 0 Tfail 0 crossflip 0 DEtot 4 sumDE 36
+CLR_k8s16.json N 53 M 99 n 356 T 28 Q 28 W 0 L 1093416 wfail 0 Tfail 0 crossflip 0 DEtot 15 sumDE 1176
+FPORT_n2.json N 54 M 92 n 336 T 14 Q 8 W 3 L 964366 wfail 0 Tfail 0 crossflip 0 DEtot 4 sumDE 441
+FPORT_n3.json N 76 M 133 n 481 T 16 Q 9 W 3 L 2791387 wfail 0 Tfail 0 crossflip 0 DEtot 4 sumDE 646
+LEAP_k8.json N 37 M 67 n 244 T 17 Q 17 W 0 L 357832 wfail 0 Tfail 0 crossflip 0 DEtot 18 sumDE 212
+RS2.json N 18 M 30 n 114 T 10 Q 6 W 4 L 37964 wfail 0 Tfail 0 crossflip 0 DEtot 4 sumDE 27
+RS2_L8M6.json N 29 M 52 n 191 T 17 Q 9 W 8 L 172461 wfail 0 Tfail 0 crossflip 0 DEtot 4 sumDE 36
+RS3.json N 38 M 67 n 245 T 13 Q 9 W 2 L 367293 wfail 0 Tfail 0 crossflip 0 DEtot 7 sumDE 75
+RSG_K4.json N 14 M 23 n 89 T 7 Q 7 W 0 L 18153 wfail 0 Tfail 0 crossflip 0 DEtot 7 sumDE 87
+rd2_d9.json N 18 M 36 n 132 T 21 Q 21 W 0 L 53678 wfail 0 Tfail 0 crossflip 0 DEtot 21 sumDE 1413
+rd2_d10.json N 20 M 40 n 146 T 26 Q 21 W 3 L 72642 wfail 0 Tfail 0 crossflip 0 DEtot 16 sumDE 1433
+rand count 1000 seed 2: wfail 0 Tfail 0 crossflip 0 maxW 4 maxT 8 maxWoverN 1.0
+RS2_L2M6.json T 11 n 107 IN 3 INk 0 INb 3 INB 4 who ('x', 14)
+RS2_L4M6.json T 13 n 135 IN 5 INk 0 INb 5 INB 6 who ('x', 18)
+RS2_L8M6.json T 17 n 191 IN 9 INk 0 INb 9 INB 10 who ('x', 26)
+RS2_L16M6.json T 25 n 303 IN 17 INk 0 INb 17 INB 18 who ('x', 42)
+RS2_L32M6.json T 41 n 527 IN 33 INk 0 INb 33 INB 34 who ('x', 74)
+LEAP_k64.json T 129 n 1812 IN 0 INk 0 INb 0 INB 0 who 
+rd3_d4.json T 18 n 74 IN 2 INk 0 INb 2 INB 3 who ('x', 6)
+CLR_k8s16.json T 28 n 356 IN 2 INk 0 INb 2 INB 3 who ('x', 16)
+FPORT_n2.json T 14 n 336 IN 5 INk 0 INb 5 INB 6 who ('x', 4)
+FPORT_n3.json T 16 n 481 IN 5 INk 0 INb 5 INB 6 who ('x', 4)
+LEAP_k8.json T 17 n 244 IN 0 INk 0 INb 0 INB 0 who 
+RS2.json T 10 n 114 IN 5 INk 0 INb 5 INB 6 who ('x', 15)
+RS2_L8M6.json T 17 n 191 IN 9 INk 0 INb 9 INB 10 who ('x', 26)
+RS3.json T 13 n 245 IN 9 INk 0 INb 9 INB 10 who ('x', 28)
+RSG_K4.json T 7 n 89 IN 0 INk 0 INb 0 INB 0 who 
+rd2_d9.json T 21 n 132 IN 2 INk 0 INb 2 INB 3 who ('x', 8)
+rand count 300 seed 5 max: T 5 n 105 IN 3 INk 0 INb 3 INB 4 who ('x', 2)

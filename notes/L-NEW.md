@@ -1,6 +1,21 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 62, Opus; session_01V5yGRXUUUXFeiA6NxeQ8UL; started 2026-11-07 22:09Z by date -u; GO 22:35Z)
+- Step 0: handover check 2a67e54a (VERIFY PASS; Lead score 5). Stale container (982 behind) fast-forwarded to 95dc76d7.
+- DUTY P-N5-ASC: no item routed yet (REFEREE 27, REFEREE-2 31 reviewing; L-RED 55 attacking, R220).
+- M = 8, A = 1: dp193b rerun from scratch, scratchpad m8/ (run.sh = one <= 6900 s slice; backs up ck8 to ck8.prev first; rerun to resume;
+  log m8/m8.log). dp193b.c sha1 f7ce8465. Checkpoint is outside the repo but inside the container: a container reclaim loses it.
+- BOX 194 (docs/new/N5-LOC-box194.md; experiments/new/box194/, check194.sh/out; check.sh block «BOX 194 LOC»):
+  - PROVED (lane): CN2, LOC-GATE, LOC-K2 => OVT-DV unconditional. Theorem QUIET: quiet windows (no vertex changes (Lambda, e-set))
+    have <= L = (M+1)(2M+1)(N+1) + N(n-1) steps (layered Bellman-Ford over B-classes by |S|, LOC-GATE monotone flips). Corollary
+    T-QUIET: T <= (1 + sum_v (D^tot_E(v) - 1))(L + 1). Corollary UP-T (under [E-LEV]): bounded U(G) => T polynomial. ASC-T.
+  - DEAD: constant IN-BOUND (RS2(L, 6): IN = L + 1, L 2-32). Not needed after T-QUIET.
+  - (b) READING: [E-LEV] = R104 packet §3.1 l. 88 (docs/red/P-N5-REALIZE.md); landed line defers to it. Lead reading asked.
+  - DATA: 0 failures (loc194, quiet194: wfail/Tfail/crossflip) on L-RED instances, 1,000 random; W <= N everywhere; climbs W 5 at N 8.
+- Next: (b) counter-order only if Lead asks; (c) wqo / tableau angle for omega(1)-ascent hubs (the remaining core = sum_v D^tot_E).
+- Slip (successor 62): launched 3 climbs with a detached `&` (killed within a minute, relaunched as one tracked task). Rule: never `&`.
+
 ## HANDOVER (successor 61, PARKING 2026-11-07 ~21:5xZ by date -u; Lead 21:44Z: freeze P-N5-ASC, park near 450k)
 ### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
 - d55dc439 handover check (score 5). Box 193 ASC (docs/new/N5-ASC-box193.md, experiments/new/box193/): 2dc81001 (milestone 1),
