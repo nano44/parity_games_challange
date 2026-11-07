@@ -254,3 +254,27 @@ polynomial bound; MOVES-2D and G-N5-TIME stay OPEN.
 - READING (consequence for S(h)): a cap on doubling levels cannot come from flip counts alone. Keys pass through frozen pairs losslessly
   (PASS-FREEZE); the scarce resource is Ξ-value change of the fuel (FUEL-NEED), whose movers must also obey AND-GATE (π = c at the
   move). The quantity to bound is the number of rises of the fuel targets per unit of key activity reaching them. OPEN; no conjecture.
+
+## 11. Box 77, fourth pass (Lead 02:50Z: FUEL-RECURSION over Ξ-down-closures)
+- Target (Lead): for a set D of movers closed downward and U the upward-fuel targets of D: (i) moves(D) ≤ g(levels(D))·(1 + R(U)); (ii)
+  R(U) ≤ moves of the movers on U's chains; (iii) those movers lie outside D (ACYC-SPLIT); iterate.
+- (i) holds with a POLYNOMIAL g (PROVED, lane, conditional on FEEDBACK (b), L-LOWER lane, not landed): for D_l := the movers of levels
+  ≤ l and E_l as in FEEDBACK, Σ_(x ∈ D_l) moves(x) ≤ 2 + 2l·2l·(1 + |E_l|) ≤ 4l(l + 1)(1 + |E_l|). Proof: level 0 movers move ≤ 1 (R113
+  F0); a mover of level j, 1 ≤ j ≤ l, moves ≤ 2j(1 + |E_j|) by FEEDBACK (b), and E_j ⊆ E_l (Up_j ⊆ Up_l). ∎ So g is not 2^levels; the
+  exponential, if any, must come from |E_l|.
+- (ii) holds: |E_l| ≤ Σ_(y ∈ U_l) R(y) (MONO) and R(y) = #{t : Mv_t meets y's old chain} (HIT), so |E_l| ≤ |U_l|·#{t : some mover on a
+  chain of U_l moves}, |U_l| ≤ 4(l + 1). (PROVED, lane.)
+- (iii) is FALSE: DEAD «the movers on the chains of the fuel targets of D_l lie outside D_l» (RE-ENTRY), instances (reentry77.py,
+  static Ξ-graph; reentry77.out):
+  - REC_d10_tower_mu30 (sha1 cc94dc9c…), l = 1..4: the fuel target 11 (level 5) has an option with Ξ-target 3 (level 1): 11 → 3; l = 5,
+    6: 16 → 14 → 3.
+  - KILL_M2D_d6_mu13 (sha1 5301c716…), l = 1: 5 → 3 (5 is level 2, a fuel target of level 1; 3 is level 1); l = 2: 8 → 7 → 2.
+  - ACYC-SPLIT only forbids reaching the movers that point to the fuel target (and their Ξ-ancestors), not the rest of D.
+- And even where (iii) holds (no re-entry), the iteration does not close: the movers on U_l's chains are at levels > l, and their keys
+  read the levels ≤ l (keys depend on all lower levels; PASS-FREEZE shows flips pass up losslessly), so their moves are bounded only in
+  terms of D_l's activity again. The ingredients give T ≤ N(1 + |E|) (FEEDBACK (a)) with |E| ≤ |Up|·T: circular. No product over nested
+  closures follows, so no polynomial bound and no 2^Ω(d) lower bound follow from these ingredients.
+- READING (the structural answer for this model, as far as the current lemmas go): the coupling is two-way — Ξ-fuel goes upward-then-
+  back-down (re-entry allowed), keys go upward losslessly — so there is no one-way interface between level blocks along which a nested
+  recursion could run. A recursion needs a quantity that an upper block can receive from a lower one only in bounded amounts per unit of
+  its own activity; neither flips (PASS-FREEZE) nor fuel chains (RE-ENTRY) are such a quantity. OPEN; no conjecture.
