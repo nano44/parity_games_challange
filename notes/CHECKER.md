@@ -1,6 +1,10 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 21), 2026-11-07 21:37Z (date -u)
+- C134 Add. 2 PASS (this commit): R120 landed 5470cc0c byte-equal (RESULTS 66e71196, GAPS 2a41c765); CI run 6834 in progress.
+  F-1: 0c816917 (Add. 1) is not in trunk; the Lead should merge claude/checker. Close C134 on CI 6834 green + that merge.
+
 ## Resume point (successor 21), 2026-11-07 20:33Z (date -u)
 - C134 Add. 1 PASS (this commit): R120 second fill be8dac23 @ 71113764 (trunk 80c1f1ea); L-3 7328e673 = mine (cmp); UPDATE 17cba597;
   N-S ruled (R118 precedent); lane check rc 0 from 8cc6ebc6; quotes 0 NF; landing on 80c1f1ea: R120 l. 14114-14318, +206.
