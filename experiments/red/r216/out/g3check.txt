@@ -1,0 +1,4 @@
+DBL4_d20_F30 n 610 spec 33 OK | xi 12 OK
+RECF4_d20_F60 n 610 spec 70 OK | xi 12 OK
+H5_d20_F62 n 610 spec 139 OK | xi 12 OK
+H6_d24_F126 n 730 spec 212 OK | xi 15 OK
