@@ -101,13 +101,26 @@ Nothing here is a result in the sense of CLAUDE.md; G-N5-TIME stays OPEN. Not a 
   54:0, 54:1 to Z or W; score 1000 · min(caps, 6) + good 6-windows; simulated annealing, 3·10^6 steps × 4 runs; unit = genome; scope =
   stored start): best 95 good 6-windows of 127 (SL41: 79) at P = 7, 8 with six capped levels; F(6) ≤ 222 in every best genome.
 - gad2 (as gad plus free edits of 12's and 13's options (target any mover, rank tier, parity), the gate order of level 6, and P = 0 (no
-  inserted level) or P = 6 (directly below pair 6, key o(5)); 3·10^6 steps × 4 runs completed (gad_runs.out), 4·10^6 steps × 3 runs at
-  P = 6 still running when written (≥ 2·10^5 steps each, best 95 so far; one NW = 4 run discarded: no acyclic start)): the same plateau,
+  inserted level) or P = 6 (directly below pair 6, key o(5)); 3·10^6 steps × 4 runs and 4·10^6 steps × 3 runs at P = 6, all completed (gad_runs.out; one
+  NW = 4 run discarded: no acyclic start)): the same plateau,
   95 good windows; F(old 6) ≤ 222; P = 0 with edits of the options of 12, 13, 54, 11, 9 only: no genome better than SL41 itself.
 - Frozen best: rec/GAD95_P8_d29.txt (sha1 d0de3499043d47ba6930b0d0fda323f8eb1e123c; d 29; T 289; F 2 6 14 30 62 126 220 158 159 …; 6
   capped; win6_GAD95.out: 32 failing 6-windows = two per (9, 1) block + the first ones). Its gadget: 12:0 and 13:1 → Z = 16 (CROSS kept),
   Z:0 → 10 (rank 41, +), Z:1 → old 20 (rank 90, −). It repairs the third window of each block (13 stays in phase) but not the two
   windows under parent (9, 1): 12 still never moves there. DATA (negative), not a cap: annealing over a structured space, not exhaustive.
+
+## 5b. How the capped levels of the records fuel their second mover (DATA, for the rule question)
+- tight.py → tight_records.out (unit = J-window with two staggered pair-J moves; set = H5 J = 4, H6 J = 4, 5, SL41 J = 5, 6; scope =
+  stored start; H5 is l4/rec/H5_d20_F62.json through l4/j2t.py, sha1 of the text 5968fe42…): at the TOP capped level the decider of
+  the second mover q under s_(u2−1) is the FIRST mover f's own option, moved at u1 (H6 J = 5: 62 of 63 windows, 31 key-gated + 31 Ξ;
+  SL41 J = 5: 47 of 63). Below the top (H5 J = 4, H6 J = 4) the decider's mover did not move in the window (the turn comes from a change
+  of the chains' shape, the CROSS mechanism).
+- readpath.py → readpath_records.out (same unit; q's moving option followed until f): H6 J = 5: q 10 reads f 11 directly (10 → 11) in 31
+  of 63 windows; SL41 J = 5: 10 → 55 → 12 → 11 in 31 of 63, i.e. pair 5's read path runs THROUGH pair 6's member 12; SL41 J = 6: 12 never
+  reads 13 (79 of 79 good windows «no f»). READING: the top capped level is fuelled by «q reads f» («copy of f»); SL41's level 6 cannot
+  copy that without re-routing 12, and 12 carries level 5's read path (§4 coupling 1). A rule G_h → G_(h+1) would have to provide, for
+  the new top pair, a read path q_h → f_h that does not pass through a mover on q_(h−1)'s read path, or re-route q_(h−1)'s read path.
+  CONJECTURE (READ-NEST, untested): this is the missing step; a test is a construction of SL41′ with 10's read path re-routed around 12.
 
 ## 6. The D18 analogy used, and its test: synchronous circuits (register vs combinational paths; carry-lookahead)
 - Dictionary (READING). A Ξ-preference is a REGISTER: a mover's move at t uses its preference under s_(t−1), one clock of delay. The
@@ -143,7 +156,8 @@ Nothing here is a result in the sense of CLAUDE.md; G-N5-TIME stays OPEN. Not a 
 - H5 → H6 repeat: NOT RUN (it was conditional on a working construction).
 
 ## 8. Files (experiments/lower/l6/)
-sim6.py, win.py, topadd.py, cross2.py, copyf.py, ins.py, dropscan.py, gad.c, gad2.c; outputs dropscan_SL41.out, win6_SL41_verbose.out, cross2_SL41.out,
+sim6.py, win.py, topadd.py, cross2.py, copyf.py, ins.py, dropscan.py, tight.py, readpath.py, gad.c, gad2.c; outputs tight_records.out,
+readpath_records.out, dropscan_SL41.out, win6_SL41_verbose.out, cross2_SL41.out,
 topadd_SL41_K2.out, topadd_SL41_K3.out, copyf_SL41_12_13.out, win6_GAD95.out, gad_runs.out; rec/GAD95_P8_d29.txt.
 
 ## 9. Diff against TARGET.md
