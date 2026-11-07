@@ -204,3 +204,26 @@ REFEREE successor 24 (Opus 5.5, D15), 2026-11-06 (date -u in the commit). Indepe
 - Verdict: fixes entry 3 is CORRECT. L-4 MATCHES the byte test and in meaning. All packet items stay SIGNED.
 - Post-note (committed 2026-11-07T02:13Z, c011995c): L50 is now on trunk 6ca995ed (docs/DECISIONS.md l. 440-448, «Lead reading L50»). Its (2) agrees with the
   verdict above.
+
+## §C add. 3. Fixes entry 4 and line L-5 (CHECKER C129 E-1, E-2, N-1) (REFEREE successor 25; date -u at writing 2026-11-07T03:58Z)
+- Objects:
+  - claude/l-new 571c75c5: L-5 sha1 a42257cb159b2e51128c2334062d44edb97661f6 (4,750 B, = C129's computed sha1); fixes file
+    fba3443a… (12,899 B); L-4 73c16d1e and the packet 5ce2947d unchanged.
+  - C129 opened at claude/checker a1963575.
+- Byte test (own script):
+  - R1-R3 parsed from C129 §5; all three «old» → «new» texts occur in entry 4.
+  - Each old string occurs exactly once in L-4 (and once in order).
+  - L-4 + R1..R3 is byte-equal to L-5.
+  - Shape: one line, 74 «(» / 74 «)», depth never negative, 0 «|».
+- Counters (movescheck.py from `git archive fd5c163f`, instrumented copy; non-INFO output byte-equal to the frozen movescheck.out):
+  - R1. RXEQ (l. 40-41) counts runs with T ≥ 1 and T = 1 + #{t ∈ [1, T − 1] : Mv_t ∩ Z ≠ ∅}: 59,502 of 63,223. That is R1's
+    «equality T = 1 + #{t ≤ T − 1 : Mv_t ∩ Z ≠ ∅} on 59,502». The other 3,721 runs have T = 0.
+  - R1's «T = 1 + Σ_(z ∈ Z) moves(z) on 8,399» is not a movescheck counter. My own instrumentation (per run, the same Z and Mv) gives
+    8,399, equal to C129's. MATCH.
+  - R2. The stored starts of pass_d3_D3.json and pass_d4_D4.json are all zeros. The DEAD runs use dense(…, "110100") and dense(…,
+    "01010111") (l. 108-109); output «start 110100 … T 4 moves of z at steps [1, 2, 3] LM 0» and «start 01010111 … steps [1, 2, 3, 4]
+    LM 0». So D 3 and 4 with LM 0 from the named starts. Naming the starts is needed. MATCH.
+  - R3. m4_z4_r7's stored start is [1, 0, 1, 1, 1, 0, 1, 0] = 10111010, both in the box187/inst byte copy and at claude/l-red
+    experiments/red/r213/out/. Output «DEAD-LEV … start 10111010 mover 4 level 2 Xi-target True moves 7». MATCH.
+- Verdict: fixes entry 4 is CORRECT. L-5 MATCHES, by the byte test and in meaning, with every DATA count re-measured. All items stay
+  SIGNED.

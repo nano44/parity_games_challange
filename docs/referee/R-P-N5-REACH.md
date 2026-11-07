@@ -144,3 +144,44 @@ claude/l-new 73b3d1fd. I did not read docs/referee-2/ for this report.
   - DATA rule clause by clause.
 - FINDINGS: §2-§9 all SIGN; L-1 NOT YET (RE-L1, DATA coverage only).
 - NEEDS: L-NEW: fixes entry 1 + L-2 with RE-L1; I will byte-test it.
+
+## §C. Fixes entry 1 and line L-2 (REFEREE successor 25; date -u at writing 2026-11-07T03:58Z)
+- Objects at claude/l-new 571c75c5:
+  - L-2 sha1 4de27b32d5ed11accb092cf44cb27e14be6b9609 (3,628 B);
+  - fixes file 307651b2… (5,344 B);
+  - L-1 b12ec57a and the packet b7bd6937 unchanged.
+  - REFEREE-2's report read for its W-1, W-2 texts: claude/referee-2 b0860fcd, R2-P-N5-REACH.md l. 101-108.
+- Byte test (own script):
+  - the three replacements of entry 1 (RE-L1, W-1, W-2), as written there, each occur exactly once in L-1 (and once in order);
+  - L-1 + the three is byte-equal to L-2;
+  - shape: one line, 57 «(» / 57 «)», depth never negative, 0 «|», no «c_X»;
+  - RE-L1 is my text verbatim; W-1's and W-2's new texts are REFEREE-2's verbatim.
+- W-1's old span (the Lead's question): REFEREE-2 gave only the new text, ending «is DEAD». The shortest L-1 span it replaces is «the
+  statement «S3 can be simulated on every game by subdividing every edge» is DEAD». L-2 then reads «… to the run of the game from that
+  start pair is DEAD as stated (DEAD SUBDIV: …». The reading is CONFIRMED.
+- Meaning:
+  - W-2 MATCHES: «the unused even self-loop of priority 2» is R104's own wording for c_X.
+  - RE-L1, DATA rule against reachcheck.py, re-checked:
+    - NO-REACH (d): the counter's set (state, v ∉ {K2, K3, c_X}) is exactly the scope of the clause it is attached to («at a vertex
+      outside K2, K3 and the unused even self-loop»). «(state, vertex) pairs» therefore names the statement's own pairs. MATCH.
+    - S3-START 454 genomes: MATCH.
+    - Both SUBDIV instances: MATCH. Corollary no-DATA: MATCH.
+    - PAD: NOT a match (my own miss in RE-L1). L-2's clause is «no pad is ever a cycle node or in a P-set», at every vertex. The
+      counter (l. 106-109) skips v = c_X; it tests «cycle node Ω < 3 or a pad in P», which is stronger. So 693,030 counts (state,
+      vertex ≠ c_X, world), and «(state, vertex, world) triples» states a wider set than was counted. This is the C124 E-1 pattern;
+      the DATA rule's set clause applies to my own text too.
+  - W-1, new finding. The killed statement's game is not determined without §9's pad index order («indices n, n + 1, … in (a, b)
+    order», packet l. 272). N5's run depends on vertex indices, and §9's obstruction is index-driven (FIX 2's DFS order). A DEAD
+    record must name the exact statement that is killed.
+- Required, two replacements on L-2 (each old string occurs exactly once):
+  - RC-1 (DATA set): «PAD 0 on 693,030 (state, vertex, world) triples of the S3 runs on Γ3» → «PAD 0 on 693,030 (state, vertex other
+    than the unused loop, world) triples of the S3 runs on Γ3»
+  - RC-2 (DEAD statement exact): «1 (Odd, start edge) or 0 has an N5 run» → «1 (Odd, start edge) or 0, the pads indexed after the
+    game's vertices in edge order, has an N5 run»
+  - Result (my script, with «\n»): 3,714 B, 57 «(» / 57 «)», depth never negative, sha1 13d0ce803260aa5e3a704c311b83766e8be50d8e.
+  - My own G^pad builder (scratch/subdiv_replay.py, §3) used exactly this order, so the replay stands for the corrected statement.
+- Verdict:
+  - Fixes entry 1 is CORRECT as an application of RE-L1, W-1 and W-2.
+  - L-2 MATCHES the byte test.
+  - In meaning, L-2 is NOT YET: RC-1 (my own RE-L1 wording) and RC-2. With both, the line MATCHES.
+  - All statements stay SIGNED.
