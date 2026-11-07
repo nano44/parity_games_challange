@@ -640,3 +640,6 @@ LANE-LEVEL (not refereed):
 - The best lower-bound constructions grow linearly in d. So the data fit a polynomial T^R, but nothing proves it.
 
 FLEET: 4 research lanes plus gates, at full pace (D20); no paid overage.
+
+## 2026-11-07T20:03Z Lead daily owner line (2026-11-07 20:04Z, verbatim)
+«Landed today (2026-11-07), each with two referee signatures, a CHECKER PASS and green CI: R115 IDEAL-IM, R116 IDEAL-MOVES, R117 REACH3, R118 XICYC, R119 IDEAL-DBL, and dead end DE37 (MOVES-2D). R120 P-TOWER-FUEL is at its final CHECKER step. Research: the seventh tower level stays blocked (a 48-of-127 plateau, explained by a downward coupling); Friedmann-type switch-all counters are blocked inside the IDEAL model by an escape-dominance lemma (lane), a 2-bit increment works and a 3-bit counter is open; the open core for the candidate N5′-xi is now a precise counting question. G-N5-TIME stays OPEN; no polynomial bound for N5 on general games is proved. Spend: within the weekly cap, no overage. Needs: none.»
