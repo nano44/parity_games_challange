@@ -283,8 +283,29 @@ RS2_L8M6.json (sha1 in SHA1SUMS).
   - In [F09] the lane re-arms because its exits reach s, the access hub of the lowest set bit. That puts set escapes on every open
     bit's hidden route (bits hide into the lane). Then ACCESS-NO-PENALTY makes lower set bits access open higher bits prematurely,
     exactly the FPORT divergence.
-  - CONJECTURE (precise, not proved): in any design where an open bit's hidden route reaches the hub that re-arms the lanes, some
-    lower set bit accesses an open bit early. A design whose lanes re-arm without such a hub is not excluded. I have none yet.
+**Proposition LEAK-ARCH (PROVED, lane, under the architecture hypotheses H1-H3; consequence of E-DOM-CHOICE).** Consider bits = level-1
+movers B_0 … B_(n−1) with SET gates (escape e_i, e_0 < … < e_(n−1)), in a state where Λ is one cycle node below every e. Assume:
+- (H1) the hidden route of an open bit B_i′ (the play after Odd re-enters its open cycle) reaches the escape e_l of the LOWEST set bit
+  B_l, and from there runs up through the escapes of all set bits above l (the [F09] path «starts with the lowest cycle whose bit is
+  set, running through all other closed cycles»);
+- (H2) a set bit B_j′ with l < j′ < i′ has an access option ACC_i′ whose play enters B_i′'s gate, plus its SET option, whose play is
+  e_j′ followed by the same upward route;
+- (H3) the access play from ACC_i′ to B_i′'s gate carries no e (only β's, gates and movers).
+Then Ω(ACC_i′) ▷ Ω(SET_j′) at B_j′, so Howard moves B_j′ off SET at the next step: a premature reset of a set bit that no higher bit
+has caused.
+Proof.
+- The upward route from e_l passes through every set bit above l, including B_j′. So the access play from B_j′'s ACC gate returns to
+  the mover B_j′ and continues with its current choice, the SET gate. The SET play starts at the SET gate.
+- So the merge vertex m is the SET gate itself, A′ = ∅, and B′ = the access play up to B_j′, which contains e_l (H1, H3).
+- E-DOM-CHOICE with ε = e_l (A′ = ∅ has no e-vertex; Λ is shared, since the plays merge). ∎
+- Instance: FPORT_n2 (compiled G_2), t 7. The CycleSelector l1 (l = 0 set, bit 1 open) takes k1, whose hidden continuation passes s,
+  k0, h0 and e(m0). In G_2 that move is blocked only by the odd k1 (41) above m0 (38). E-DOM removes the block, at every d.
+- Scope: H1-H3 describe [F09]'s architecture (shared lane re-armed through the hub s, which reaches the lowest set bit; access edges
+  from lower bits to every higher bit). The statement says nothing about architectures violating H1 or H2.
+  - Variants I checked on paper fail differently. A hub that tracks only the HIGHEST set bit avoids the leak but re-arms the lanes
+    only at new-highest carries (n times). A per-bit lane ending at the next bit above needs, after a carry into B2, escape orders
+    e2^(x) > e2^(1) > e2^(0) > e2^(x), which is a cycle.
+  - These are READINGS, not proofs. A counter outside H1-H2 under E-DOM stays OPEN.
 
 ## 9. Next
 1. An E-DOM-respecting counter: delay a bit by withholding an e (Odd keeps the route on β), never by an odd penalty. Target: 2 bits

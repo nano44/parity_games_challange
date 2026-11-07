@@ -64,7 +64,11 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   PDF pp. 7-10: Theorem 8 p. 9 «13·2^n − 9 iterations on G_n using the locally optimizing improvement policy»; Fig. 7 G_2 priorities
   (k_1 45, z_1 43 > m_0 42); p. 8 RESET text («all lower f_j nodes have an edge leading to k_i»).
 - E-DOM-ALL-d (R217 §10): every e above every β at every d (gamma3.build eb). Lead's «d ≥ 3 lifts it?» -> no.
-- edomclimb (live /home/user/r217live/go3.sh, ed3a / ed3b): E-DOM priority orders on G_3's graph, Howard T 15 -> 39 (orig 70).
+- edomclimb: first runs (ed3a / ed3b, T 37 / 39) INVALID (they flipped the sink q); corrected runs (q fixed): n 3 T 34 (orig and genome
+  score, saturated); n 4 genome-scored (ed4g, live) T 28 at 16:44Z.
+- R217 §11: Lemma E-DOM-CHOICE (proved); RESET-NEXT / ACCESS-NO-PENALTY readings; RSG / RS2 = RESET and re-SET under E-DOM (4-route
+  verified); Proposition LEAK-ARCH (proved under H1-H3 = [F09]'s architecture): premature access, instance FPORT_n2 t 7. A third bit
+  (lane re-arming) is OPEN.
 - Live (outside repo): /home/user/r217live (go.sh = two rclimb SCORE=R climbs seeded with LEAP+spares, 40 min). Relaunch:
   cd /home/user/r217live && ./go.sh (go.sh sources env.sh). Worktrees in scratch (env.sh in experiments/red/r217): wt191 f09f67ec,
   wt192 a2db977d, wt190 acdbd28b, wt190b 066cd543. Oink built (tools/oink/build).
