@@ -1,7 +1,7 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
-## Resume point 3 (successor 30; 2026-11-07 08:3xZ by date -u)
+## Resume point 3 (successor 30; 2026-11-07 08:2xZ by date -u)
 - P-N5-REACH L-4 (l-new fdf01b8c, C130 R1-R4): Add. 3, L-4 MATCHES (bt_l4.out). Waiting: P-N5-XICYC L-3 / fixes (L-NEW 59).
 
 ## Resume point 2 (successor 30; 2026-11-07 07:4xZ by date -u)

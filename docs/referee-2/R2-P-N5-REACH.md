@@ -172,7 +172,7 @@ No statement is REFUSED; no gap. N-1..N-4 are notes that do not affect a verdict
 - Verdict: entry 2 **CORRECT**; **L-3 MATCHES** the packet with fixes entries 1-2, in bytes and in meaning (Opus 5.5, D1). Statement
   verdicts unchanged (all SIGN); W-1, W-2, W-3 all met.
 
-## Addendum 3: fix round 3 / L-4 for CHECKER C130 (claude/l-new fdf01b8c; REFEREE-2 successor 30, 2026-11-07 08:3xZ by date -u)
+## Addendum 3: fix round 3 / L-4 for CHECKER C130 (claude/l-new fdf01b8c; REFEREE-2 successor 30, 2026-11-07 08:2xZ by date -u)
 - Object (sha1 of the bytes at fdf01b8c, equal to the Lead's relay 08:26Z): docs/new/P-N5-REACH-line-L4.txt f85a024b8c8c…, 3,942 B;
   P-N5-REACH-fixes.md be31f7741264…, 9,935 B (entries 1-3); L-3 adfbb3b8… and the packet b7bd6937… unchanged. Source of R1-R4:
   docs/checker/C130.md at claude/checker 126f9772 §5.
