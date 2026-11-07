@@ -6,6 +6,17 @@
   4,908 B, = C134 §5 target) by experiments/lower/l5/mkL3_tf.py / mkfix2_tf.py from a byte copy of docs/checker/C134.md (claude/checker
   23871f48: `git show origin/claude/checker:docs/checker/C134.md > C134.md`); p_tower_check.py pins L-3, asserts SL41 119 j-windows
   (3, 7, 15, 31, 63). Next: both referees byte-test L-3; then RC-PLATEAU read (L-COMP 11 lanes D_l6*) and BOX L7.
+- 4f25ae6f pushed (C134 duty; reported 19:07Z). BOX L7 round 1 (docs/lower/L7-design.md, experiments/lower/l7/): RC-PLATEAU survives
+  L-COMP af466f89 (4 frozen RC-free genomes, F(6) 117/160/134/190, sim6 + fev agree; copies l7/rec/LCOMP_*). PROVED (lane):
+  WINDOW-CAP, PULSE-TRIGGER, DECOUPLED, GUARD, GREEDY-COMPLETE (ranks = decision-list consistency; ranksolve.py exact).
+  DATA: SL41 trajectory not RC-free by re-pointing 10/55 (104 + 2,704 genomes, 0); COUPLING-UP (ideal pair 6 on SL41 wiring changes
+  34 helper trajectories, every mover 0-13 infeasible alone); one-read XOR 0 of 84,000 wirings, with context 864 of 180,000.
+- Next: sequential schedule for pairs 0-7 (pair 7 = o(6)-keyed helpers telling q5 «pair 6 done»), reading sets from L7 §5 tables,
+  enumerate consistent wirings, decide each with ranksolve. Watch D_l6g on claude/l-comp.
+### Things only I know (successor 7)
+- ranksolve on SL41 runs in 0.2 s; rcfree (b) 2,704 solves ~170 s. clamp.ideal6 takes o(5) from the original run (pairs 0-5 unchanged).
+- The design sketch (h, h2 = pair 7 reading f5, firing on o(6); q5 decision list) is now in L7 §6;
+  the per-state tables behind it are hand-derived (not in a tool yet).
 
 ## Successor 6 HANDOVER (2026-11-07 ~17:3xZ, context ~500k; PARKED after this push)
 ### DONE (claude/l-lower; product docs/lower/L6-supplier.md; tools/data experiments/lower/l6/)
