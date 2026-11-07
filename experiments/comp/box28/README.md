@@ -20,3 +20,28 @@ only), 𝓛^R_d of RESULTS R110 (definition only). Not a TARGET.md claim. G-N5-T
   [0,0,0,0,0,1,0,1], sim T 13 unchanged; pinned in the SYM=1 + root-cube-40 CNF: SAT at L 13, UNSAT at L 14; pinned in root 41:
   UNSAT at L 13 (log/symwit_max_d4_L13.out).
 - mkdimacs.py writes one root cube's DIMACS (same text as box27/mkproof.py; no get_proof()); d 4 L 14 cube 0 sha1 2a07a8e9….
+
+## Symmetry: SYM + PAIR-SWAP (8 root cubes instead of 64)
+- SYM (P-TR3 §2, unchanged): swapping the two option labels of a level-0 mover is a symmetry; WLOG s_0(0) = s_0(1) = 0.
+- PAIR-SWAP at level l (0 ≤ l ≤ d − 2), PROVED (lane): let σ rename movers 2l ↔ 2l+1 (in every W- and Xi-target and in the state), and
+  then, for each mover y of level l + 1, exchange the labels of y's two options (each option object keeps its Xi-target, its β id =
+  rank and parity, and its gate) and flip bit y of every state. (i) Class: in G, option k of a level-(l+1) mover W-points to mover
+  2l + k; after renaming it points to 2l + 1 − k and carries label k; after the label exchange the option labelled k is the old option
+  1 − k, which points to σ(2l + 1 − k) = 2l + k. Every other W-target is a mover of another level, unchanged. Ranks and gates stay
+  distinct, Xi-acyclicity is preserved by renaming, levels are unchanged, so σG ∈ 𝓛^R_d. (ii) Runs: under the induced state map,
+  every mover's current option is the same option OBJECT before and after; Xi-chains, their β-sets, and so every Xi-value comparison
+  and every A-set, are the same objects; a key is the tuple of gates of the chain of W-targets of the current option under the new
+  state, lowest level first: the same option objects, so the same gates in the same order. Hence the IDEAL step commutes with the map,
+  the run of σG from σs_0 is the image of the run of G from s_0, and T and the stop reason are equal.
+- Normal form: apply PAIR-SWAP at l = d − 2, …, 0 (top down), each only if needed to make s_0(2l + 2) = 0. Step l exchanges the bits
+  of movers 2l, 2l + 1 and flips those of level l + 1; it does not touch levels ≥ l + 2, so the bits fixed earlier stay. Then SYM sets
+  s_0(0) = s_0(1) = 0 (touches only those two bits). So every (G, s_0) has an image with the same T and s_0(0) = s_0(1) = s_0(2) =
+  s_0(4) = s_0(6) = 0 (d = 4): the 8 roots fix s_0(3), s_0(5), s_0(7) freely; root ids (cube c sets s_0(2 + i) = bit i):
+  0, 2, 8, 10, 32, 34, 40, 42. The witness's root 40 is one of them.
+- DATA: pairswap.py, 0 mismatches (T, stop reason and the whole state sequence mapped) on 3,768 runs: 500 random 𝓛^R genomes each at
+  d 2, 3, 4 (box27/pinck.rgen) at every l ≤ d − 2, and all 256 starts of max_d4_L13 at l = 0, 1, 2.
+
+## Feasibility (2026-11-07 02:0xZ, DATA; sent to the Lead)
+- CaDiCaL 1.9.5 L 14 roots 0, 21, 42: no verdict after 58 min (21 then stopped, not a PAIR-SWAP root; root 2 started).
+- Glucose 4 + proof on root 0: no verdict at 55 min; proof ≈ 7 GB by then. drup.c ≈ 1 GB per CPU-hour (successor 9).
+- diskguard.sh kills proof generation below 6 GB free.
