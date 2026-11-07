@@ -1,27 +1,27 @@
-# Handover check: L-LOWER successor 7 (2026-11-07 18:20Z, date -u; LANE-RESTART step 3)
+# Handover check: L-LOWER successor 8 (2026-11-07 20:55Z, date -u; LANE-RESTART step 3)
 Every answer measured from the repository at the time of writing (commands named), not recalled.
 
 ## 1. Branch, head, distance to trunk
-- Branch `claude/l-lower` (`git branch --show-current`); local branch was 28 commits behind origin at start and was fast-forwarded
+- Branch `claude/l-lower` (`git branch --show-current`); local branch was 35 commits behind origin at start and was fast-forwarded
   (`merge --ff-only origin/claude/l-lower`); clone not shallow (`git rev-parse --is-shallow-repository` = false).
-- Head 96e63eb4ca5eefa5242ab9f0c48e0fd398d300b7 = origin/claude/l-lower = `git ls-remote` («L-LOWER 6 PARKED: handover (BOX L6
-  result, RC-PLATEAU role form, guard_l6 interface, C134 duty pending)»).
-- Trunk `claude/vibrant-johnson-nxvvxo` at 5f8b399eceb3e777583fe4473e506b55b961a0ef (ls-remote = local origin ref); merge-base 2a89b7f2.
-- `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` → 4 ahead, 456 behind. No trunk merge (not needed).
+- Head c1e16b59f56787604aa87bafa5f767341b434154 = origin/claude/l-lower («L-LOWER 7: L7 §2 lemma-check counts with L6G_TEST1»).
+- Trunk `claude/vibrant-johnson-nxvvxo` at 80c1f1ea3febf5eb6c3d776bc81edb9d8e958676; merge-base 8cc6ebc6.
+- `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` → 4 ahead, 469 behind. No trunk merge (not needed).
 
 ## 2. Open work and the next step of each
-- DUTY P-TOWER-FUEL (packet frozen, sha1 a093e0e7…; fixes file 0902efb9… = entry 1; L-1 408470ad…; L-2 d866ca50…, 4,586 B by
-  `wc -c`; check experiments/lower/l5/p_tower_check.py). Both referees MATCH L-2; now at CHECKER C134 (Lead draft R120;
-  `ls docs/checker | grep C134` empty on this branch). Next: when the Lead relays C134 §5's L-3, write fixes entry 2 +
-  docs/lower/P-TOWER-FUEL-line-L3.txt by script in the style of experiments/lower/l5/mkL2_tf.py / mkfix_tf.py (each old string once
-  in L-2, each new once in L-3), extend p_tower_check.py to pin L-3 and any new count; never edit the packet, L-1 or L-2.
-- RC-PLATEAU test (CONJECTURE, j = 6 role form, docs/lower/L6-supplier.md §5d): read L-COMP 11's lanes D_l6 / D_l6z / D_l6g and
-  frozen genomes L6_TEST1, L6Z_TEST1, L6_BEST on claude/l-comp experiments/comp/box30/out/ (not yet present at fetch: listing shows
-  only A_d28 … D_d32_fsix). Next: re-run guard_l6.py 'noreturn' + sim6.py on each frozen genome; any one with F(6) > 222 kills it.
-- BOX L7 (after «go»): seventh capped level with no Ξ-path q₅ → pair 6 by construction; fuel pair 6 via TOP-CLOCK, TAP,
-  TRANSPARENT-LEVEL, RANK-LOCKED, DOMINANCE-FREEZE, CROSS-ECONOMY. Next: design the top pairs on paper from L6 §5b-§7, build, score
-  with sim6.py + fev, xcheck vs L-NEW box150 Gen. Success F(6) = 254 with six capped below; else the exact obstruction + instance.
-- No detached runs of mine (`pgrep -af "push.sh|fev|mclimb|gad"` empty).
+- Referee byte tests of P-TOWER-FUEL L-3 (7328e673…): DONE per the Lead (REFEREE 27 af752251, REFEREE-2 31 e72661d0, both MATCH);
+  the notebook's «pending» is stale. R120 (second fill be8dac23 on trunk) waits only on CHECKER C134 Add. 1; no C134 duty for me unless routed.
+- RC-PLATEAU (j = 6 form, L6 §5d): Lead relays L-COMP 11 KILL230 (sha1 29faf25f…, F(6) 230) and KILL238 (sha1 54450906…, F(6) 238),
+  caps 6, npaths(q5, pair 6) 0. `git ls-tree -r origin/claude/l-comp | grep KILL2` is EMPTY at this check (fetched now): files not
+  on origin yet. Next (after «go»): fetch, sha1-check, freeze copies in experiments/lower/l8/rec/, confirm guard_l6 «noreturn»
+  (bca48384) matches L6 §5d, re-run sim6 + fev; if confirmed, RC-PLATEAU DEAD by its stated test.
+- BOX L8 item 0: dissect KILL238/230 against SL41 and L6G_TEST1 (6-window profile, MERGE 11:1 → 9:1 (87) → 54 → 22 present or not,
+  which failing windows the 10:0 → 17 re-point repairs, what blocks 254; revert each changed part, forced/unforced split).
+- Items 1-2: helper pairs in experiments/lower/l7/sched.py (key-fired moves parallel to the lower move, as KILL_M2D_d6); decide h = 2
+  exactly at d = 3, then 4, with ranksolve (exh2.py style); then h = 3, helper rule, h = 4 xcheck vs L-NEW box150 Gen; S(h) vs polynomial.
+- Item 3: ONE-READ XOR case split (L7 §8; max element over Q_i, Z_i, (b, j), R_j) — close or counterexample wiring.
+- Item 4: CANDIDATE G_h with proof sketch, or exact obstruction. Do NOT duplicate L-COMP 11's brute tower climbs.
+- No detached runs of mine (`pgrep -f "bash scripts/push.sh"` empty before this push).
 
 ## 3. docs/GAPS.md rows owned by L-LOWER
 None (`grep -c L-LOWER docs/GAPS.md` = 0). The box works against G-N5-TIME (major, owner L-NEW, open).
@@ -32,14 +32,15 @@ None (`grep -c L-LOWER docs/GAPS.md` = 0). The box works against G-N5-TIME (majo
    where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
    open problems.» Constraint: every statement labelled PROVED (lane) / CONJECTURE / DATA / DEAD with counters (unit, set, scope).
 2. D1 (active, index line 5; DECISIONS.md l. 7): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every
-   such claim, including the fleet's own, as wrong until it passes the gauntlet below.» Constraint: a seven-capped tower is a
-   lower-bound CANDIDATE datum only; no asymptotic claim from it.
+   such claim, including the fleet's own, as wrong until it passes the gauntlet below.» Constraint: a capped tower or helper schedule
+   is a lower-bound CANDIDATE datum only; no asymptotic claim from finite data.
 3. D14 (active, index line 22; DECISIONS.md l. 246): «You know it can also test prveiously not tested approaches, it can come up with it
-   own as well» (typos the owner's). Constraint: box L7's construction is an own design and goes through the same two-simulator +
-   xcheck path as any other genome.
+   own as well» (typos the owner's). Constraint: the helper-schedule family G_h is an own design and goes through the same
+   two-simulator + xcheck path as any other genome.
 
-## 5. One trap that bit this lane, and the check that now prevents it
-Trap: committing while push.sh was still verifying (successor 5: 5bc47311 committed during the verify of a92b5226; the wait loop tested
-«output file non-empty»). Check: before any commit, `pgrep -f "bash scripts/push.sh"` must be empty AND the tracked task's output must
-contain the «exit» line. Also run first this session: the stale-branch check (`fetch --unshallow`, `checkout`, `merge --ff-only`),
-then HEAD = origin/claude/l-lower = ls-remote (all 96e63eb4 here).
+## 5. One trap that bit this lane, and the check that prevents it
+- Trap: sessions started with a stale local branch (this one: 35 behind) or shallow clone; a push then fails or pushes old history.
+  Check: `git fetch --unshallow`, `checkout claude/l-lower`, `merge --ff-only origin/claude/l-lower`, then assert
+  `git branch --show-current` = claude/l-lower and HEAD = origin/claude/l-lower (done above, both true).
+- Second (successor 7): a background python started with `&` dies on container restart and escapes tracking. Check: only tracked
+  run_in_background tasks; push.sh output redirected to a file, exit code echoed, never piped; `pgrep -f "bash scripts/push.sh"` first.
