@@ -2513,3 +2513,20 @@
 - 13:06Z REFEREE 26: R118 §C add. 1 c352039c: L-4 MATCHES (R1 vs R117 landed CORRECT; R6, R7 CORRECT). R119 §C add. 1 07a950ae (pushing): L-3 MATCHES (R4 attribution CORRECT; R5/R6 signed hypotheses). 13:07Z Lead: R118 second fill subagent started (target UPDATE d4acaeef); R119 second fill after R118 lands.
 - 13:2xZ R118 second fill subagent DONE: R118-draft.md fd06f710 (848 l.); L-4 85fe809c checks true; blocks rc 0 (e36fdfcd); UPDATE d4acaeef = C132 §5; controls 21/21 (R117 landed); quotes 0 NF; landing sim pure insertion after R117 (R118 at l. 13,607-13,877). To commit after push667 + merges (l-new e36fdfcd+, referee c352039c, referee-2 5016a1a2+, checker).
 - 13:37Z Lead: push667 VERIFY PASS. R118 second fill committed (fd06f710); merged l-new, referee, referee-2, checker, l-si -> CHECKER 21 C132 Add. 1.
+- 13:40Z L-LOWER 5: P-TOWER-FUEL FROZEN 7f7ff6f5 (L-1 408470ad; MOVE, DOUBLE-EQ, PULSE-NEST, GAP-NEST, DOMINANCE-FREEZE, CROSS-ECONOMY from landed premises; I-ROOM / I-FUEL instances; check p_tower_check.py); handover 4d1c4e4b; PARKED ~460k. 13:43Z Lead: P-TOWER-FUEL -> REFEREE 26 (full review; handover first if > ~600k); REFEREE-2 30 (597k) -> hand over now, successor 31 reviews P-TOWER-FUEL. L-LOWER 6 to start (P-TOWER-FUEL items + BOX L6).
+- 13:41Z L-LOWER 5 idle confirmed; L-LOWER 6 created session_01V5yGRXYP8ag97efWS1F1Nr (duty P-TOWER-FUEL items; BOX L6 constructive supplier test of L5-TYPE via TOP-ADD supplier levels).
+- 13:41Z REFEREE 26 PARKING (481k; full review would pass 600k): handover e96c8542 pushing; REFEREE 27 brief ready (P-TOWER-FUEL). 13:44Z L-RED 53 PARKED (~430k; acd1a2fd pushing): no superlinear family, no OVT family; w 24 R_mov 32 weak; next: hand-built d 2 OVT gadget. L-RED 54 brief ready.
+- 14:04Z Lead hourly sweep: no overage; handovers still in push (REFEREE 26 e96c8542, L-RED 53 acd1a2fd); push668 (R118 second fill) verifying 28 min; successors REFEREE 27, L-RED 54, REFEREE-2 31 queued until handovers on origin; Lead ctx 568k (resume point due).
+- 14:08Z Lead: L-LOWER 6 handover check 2ce74ff9 re-measured (19/376 vs 9315f36c, merge-base f55b98e3), score 5 -> GO BOX L6.
+- 14:09Z REFEREE 26 PARKED (e96c8542 on origin, idle confirmed); REFEREE 27 created (P-TOWER-FUEL full review).
+- 14:12Z REFEREE-2 30 PARKED (handover 65df9f94 on origin; 37c733e2 R119 Add. 2 on origin); idle confirmed; REFEREE-2 31 created (P-TOWER-FUEL independent review).
+- 14:13Z Lead: push668 VERIFY PASS (8ff0c956: R118 second fill fd06f710) -> CHECKER 21 C132 Add. 1. Successors started: REFEREE 27, REFEREE-2 31 (P-TOWER-FUEL), L-RED 54 (OVT gadget), L-LOWER 6 (BOX L6).
+
+## RESUME POINT (Lead, 2026-11-07T14:13Z, context ~575k)
+- LANDED today: R115, R116, DE37, R117 (10:30Z ac1bc37c, C130 closed CI 6710). Trunk origin 8ff0c956.
+- IN FLIGHT: R118 (P-N5-XICYC) second fill fd06f710 at CHECKER 21 C132 Add. 1 -> land with scratchpad land117.py adapted (block d[455:726], UPDATE d[733], PREV R117, GAPS check 'RESULTS R117 (P-N5-REACH', C132; NOW counters R117->R118). Then R119 (P-IDEAL-DBL) second fill on L-3 845ffdc9 (l-si 610897dd; both referees MATCH: REFEREE 07a950ae, REFEREE-2 37c733e2), CHECKER C133 Add. 1, land after R118.
+- P-TOWER-FUEL (l-lower 7f7ff6f5, L-1 408470ad) at REFEREE 27 + REFEREE-2 31 (handover checks first). Items -> L-LOWER 6.
+- LANES: L-SI 42 (box 80; DBL duty), L-NEW 60 (box 192 OVT/R; CI green), L-COMP 11 (D_d28 / D_d28b from SL41, query 2, xval_d3), L-LOWER 6 (BOX L6), L-RED 54 (OVT gadget). CHECKER 21 waiting C132 Add. 1.
+- Rulings today (Lead reading): R118 G-R -> R-A1 (CHECKER reworded as R1); L41 applies to referee-originated steps (R118 R7, R119 R4); RESULTS ids land in increasing order (R119 after R118); DBL DATA base = DB-L1 + W-3 additions; RE-ENTRY level sets measured.
+- Rules learned today: every push.sh background task needs timeout 7200000 (push662 killed at 30 min); lanes must use pgrep -f full command line; cite frozen inst/ copies only; no absolute /home/user paths in committed tools (L-NEW red CI).
+- Owner line due ~20:35Z via OWNER-DESK (session_01Eq99qsTJBiTh6xLzwCPtqv).
