@@ -1,4 +1,5 @@
 # L-RED notebook (independent adversary lane)
+Successor 54 (Opus 5.5, D1/D18/D14) started 2026-11-07 14:13Z (date -u); handover check 4b6e594d4; GO 14:37Z; R217 OVT gadget (docs/red/R217-ovt.md).
 Successor 53 (Opus 5.5, D1/D18/D20) started 2026-11-07 05:03Z (date -u); R215 (vs N5′-xi), R216 replays; PARKED ~13:5xZ, see «Successor 53 PARK».
 Successor 52 (Opus 5.5, D1/D18/D20) started 2026-11-06 18:28Z (date -u); R214 (MOVES-2D DEAD replay, T^R table d 8-14), R215 (vs N5′-xi); PARKED 2026-11-07 ~04:2xZ, see «Successor 52 PARK».
 Successor 50 (Opus 5.5, D1/D18/D20) started 2026-11-05 22:06Z (date -u); R207-R211; PARKED 2026-11-06 ~07:0xZ at ~520k, see «Successor 50 PARK».
@@ -50,6 +51,16 @@ Successor 15 PARKED ~09:40Z 2026-10-25 after box 38; RESUME POINT for successor 
 context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older notebook: `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
+
+## Successor 54 (Opus 5.5; from 2026-11-07 14:13Z, date -u) — R217 OVT gadget (docs/red/R217-ovt.md)
+- DONE (milestone 1): LEAP(k) hand-built d 2 genome, N 4k + 5: one gate flips 2k times (k 64: 128 flips, N 261), R = 2k, C 0, L 0.
+  Four routes agree (own.py independent impl; idealcyc trajectory; subrun191 labels; Γ3 + Oink + n5v / n5bxi = T + 3). Lemmas TOP-DEC
+  (MERGE reading, proved) and OVT-DV (flips ≤ 2·min D(face) − 1, [LOC]). «≤ 15 flips per gate» pattern DEAD (LEAP_k64).
+- Superlinear: not reached. A fuse fires once; re-firing needs a self-timed reset (R217 §5); leapr v0 / v1 failed.
+- Live (outside repo): /home/user/r217live (go.sh = two rclimb SCORE=R climbs seeded with LEAP+spares, 40 min). Relaunch:
+  cd /home/user/r217live && ./go.sh (go.sh sources env.sh). Worktrees in scratch (env.sh in experiments/red/r217): wt191 f09f67ec,
+  wt192 a2db977d, wt190 acdbd28b, wt190b 066cd543. Oink built (tools/oink/build).
+- Things only I know: xcheck.py writes <genome>_g3.pg(+.sol) NEXT TO the genome: run it on out/ copies, not inst/.
 
 ## Successor 53 PARK (2026-11-07 ~13:5xZ, date -u; ~430k context)
 - RESULTS (docs/red/R215-xi.md «Successor 53» §53.0-§53.2; docs/red/R216-l4replay.md):

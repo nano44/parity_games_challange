@@ -1,0 +1,28 @@
+2026-11-07T14:51Z
+LEAP_k1.json sha1 f268aef0 d 2 w 5 N 9 T 2 C 0 R 2 R-flips 2 R_mov 2 R_X 0 p 0 L 0 maxflip/gate 2
+OWN LEAP_k1.json N 9 T 2 C 0 R 2 p 0 maxflip/gate 2 flips at (7, 0) 2
+LEAP_k2.json sha1 3e3cba4d d 2 w 7 N 13 T 5 C 0 R 4 R-flips 4 R_mov 4 R_X 0 p 1 L 0 maxflip/gate 4
+OWN LEAP_k2.json N 13 T 5 C 0 R 4 p 1 maxflip/gate 4 flips at (11, 0) 4
+LEAP_k3.json sha1 92a17f2f d 2 w 9 N 17 T 7 C 0 R 6 R-flips 6 R_mov 6 R_X 0 p 1 L 0 maxflip/gate 6
+OWN LEAP_k3.json N 17 T 7 C 0 R 6 p 1 maxflip/gate 6 flips at (15, 0) 6
+LEAP_k4.json sha1 184689eb d 2 w 11 N 21 T 9 C 0 R 8 R-flips 8 R_mov 8 R_X 0 p 1 L 0 maxflip/gate 8
+OWN LEAP_k4.json N 21 T 9 C 0 R 8 p 1 maxflip/gate 8 flips at (19, 0) 8
+LEAP_k6.json sha1 d8b322f3 d 2 w 15 N 29 T 13 C 0 R 12 R-flips 12 R_mov 12 R_X 0 p 1 L 0 maxflip/gate 12
+OWN LEAP_k6.json N 29 T 13 C 0 R 12 p 1 maxflip/gate 12 flips at (27, 0) 12
+LEAP_k8.json sha1 37f0350e d 2 w 19 N 37 T 17 C 0 R 16 R-flips 16 R_mov 16 R_X 0 p 1 L 0 maxflip/gate 16
+OWN LEAP_k8.json N 37 T 17 C 0 R 16 p 1 maxflip/gate 16 flips at (35, 0) 16
+LEAP_k16.json sha1 64583cc8 d 2 w 35 N 69 T 33 C 0 R 32 R-flips 32 R_mov 32 R_X 0 p 1 L 0 maxflip/gate 32
+OWN LEAP_k16.json N 69 T 33 C 0 R 32 p 1 maxflip/gate 32 flips at (67, 0) 32
+LEAP_k32.json sha1 01306ae2 d 2 w 67 N 133 T 65 C 0 R 64 R-flips 64 R_mov 64 R_X 0 p 1 L 0 maxflip/gate 64
+OWN LEAP_k32.json N 133 T 65 C 0 R 64 p 1 maxflip/gate 64 flips at (131, 0) 64
+LEAP_k64.json sha1 b09b2745 d 2 w 131 N 261 T 129 C 0 R 128 R-flips 128 R_mov 128 R_X 0 p 1 L 0 maxflip/gate 128
+OWN LEAP_k64.json N 261 T 129 C 0 R 128 p 1 maxflip/gate 128 flips at (259, 0) 128
+LEAP_k1.json N 9 traj own==idealcyc True (T 2) | subrun191 C 0 R 2 p 0 | Gamma3 n 96: n5v xi 5 (fb 1) spec 3 n5bxi 5 (fb 1) | regions=Oink True verify 0/0
+LEAP_k16.json N 69 traj own==idealcyc True (T 33) | subrun191 C 0 R 32 p 1 | Gamma3 n 996: n5v xi 36 (fb 1) spec 3 n5bxi 36 (fb 1) | regions=Oink True verify 0/0
+LEAP_k2.json N 13 traj own==idealcyc True (T 5) | subrun191 C 0 R 4 p 1 | Gamma3 n 156: n5v xi 8 (fb 1) spec 3 n5bxi 8 (fb 1) | regions=Oink True verify 0/0
+LEAP_k3.json N 17 traj own==idealcyc True (T 7) | subrun191 C 0 R 6 p 1 | Gamma3 n 216: n5v xi 10 (fb 1) spec 3 n5bxi 10 (fb 1) | regions=Oink True verify 0/0
+LEAP_k32.json N 133 traj own==idealcyc True (T 65) | subrun191 C 0 R 64 p 1 | Gamma3 n 1956: n5v xi 68 (fb 1) spec 3 n5bxi 68 (fb 1) | regions=Oink True verify 0/0
+LEAP_k4.json N 21 traj own==idealcyc True (T 9) | subrun191 C 0 R 8 p 1 | Gamma3 n 276: n5v xi 12 (fb 1) spec 3 n5bxi 12 (fb 1) | regions=Oink True verify 0/0
+LEAP_k6.json N 29 traj own==idealcyc True (T 13) | subrun191 C 0 R 12 p 1 | Gamma3 n 396: n5v xi 16 (fb 1) spec 3 n5bxi 16 (fb 1) | regions=Oink True verify 0/0
+LEAP_k64.json N 261 traj own==idealcyc True (T 129) | subrun191 C 0 R 128 p 1 | Gamma3 n 3876: n5v xi 132 (fb 1) spec 3 n5bxi 132 (fb 1) | regions=Oink True verify 0/0
+LEAP_k8.json N 37 traj own==idealcyc True (T 17) | subrun191 C 0 R 16 p 1 | Gamma3 n 516: n5v xi 20 (fb 1) spec 3 n5bxi 20 (fb 1) | regions=Oink True verify 0/0
