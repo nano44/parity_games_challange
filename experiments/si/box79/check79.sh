@@ -16,6 +16,10 @@ python3 -I -B wiring79.py inst/RECF4_d20_F60.json inst/DBL4_d20_F30.json inst/H5
 diff -q "$t/w" wiring79.out
 python3 -I -B dead79.py > "$t/d"
 diff -q "$t/d" dead79.out
+python3 -I -B reentry_levels.py > "$t/r"
+diff -q "$t/r" reentry_levels.out
+python3 -I -B mkL2.py > "$t/L2"
+cmp "$t/L2" ../../../docs/si/P-IDEAL-DBL-line-L2.txt
 rm -rf "$t"
 grep -q "^CORPUS violations: WO 0 HIT 0 ALTa 0 ALTb 0 ALTc 0 ALTd 0 DBLa 0 DBLb 0 DBLc 0 TN 0 PF 0 FU2 0$" dblcheck.out
 grep -q "^LOWER violations: WO 0 HIT 0 ALTa 0 ALTb 0 ALTc 0 ALTd 0 DBLa 0 DBLb 0 DBLc 0 TN 0 PF 0 FU2 0$" dblcheck.out

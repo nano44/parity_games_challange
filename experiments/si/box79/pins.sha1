@@ -13,3 +13,11 @@ fb37fec9536336e1e1bb2dff81bbe13354f46b93  inst/H6_d24_F126.json
 354b7d44a79c9453122ce5eb37b249dd50c5e171  inst/RECF4_d20_F60.json
 3573e93bdbd18e824fb6a9d973eb9277d6d6d488  ../../../docs/si/P-IDEAL-DBL.md
 9317718426138daf8f71c7ca0f5c67846e271bc9  ../../../docs/si/P-IDEAL-DBL-line-L1.txt
+051bbfa1b24022d3311fec9dba438fbf16951a31  reentry_levels.py
+3cbfaaffb5150d652916cee400bce994b6477a99  reentry_levels.out
+4fd0e157857562494c6c23554dc8f0d8fd3daa39  mkL2.py
+98ccb30eb055c24e81a25016aef6d893525bc982  mkfix1.py
+4aacbd64889bd5c87df3438c668671c592648faa  ref_d7885be4.md
+72a1986e66c039086cb9b362810996c396f5de18  ref2_7891ba32.md
+172bfa2faf343b41075fdea2802539fbb782c9c3  ../../../docs/si/P-IDEAL-DBL-fixes.md
+1b3dc82544adfaf2cdea0deffbcbd052db9cd371  ../../../docs/si/P-IDEAL-DBL-line-L2.txt
