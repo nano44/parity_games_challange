@@ -67,6 +67,8 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   e-set overtake), Corollary GATE-POLY (f(M) = O(M³) + 2ρ_g on descending plays; «≤ f(d)» DEAD by LEAP), LOCK-(ii/iii); (a): ASC-GATE
   (ii)/(iii) are locks released by e-set overtakes; allowed by the trilemma; smallest release+re-arm rd3_d4 (L-NEW, frozen in r219/inst).
   Worktree wt193 = claude/l-new e3d399cd (box 192/193 instances).
+- 21:3xZ: R219 + ASC1 (L-NEW b76da963): up-branches of the trilemma = plays with ≥ 2 ascents; GATE-POLY O(M⁵) under ≤ 1 ascent.
+  Pushed 2c0cb8e40, a3d4eb493. Nothing running.
 - Next if resumed: R219 §7 (Σρ_g on NOUP genomes first); R218 §5 items (lemma form of §4; a non-access reset). Nothing running.
 - Things only I know: meas.py reads <G>.labels.json (option labels: SET / X / c ...); a «re-arm» = switch INTO an X-labelled option.
   xcheck.py writes _g3.pg next to its input: I run it on copies in $R218_S/x.
