@@ -9,6 +9,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   CONDITIONAL (not to sign): FUEL-NEED, FUEL (i) (FEEDBACK (b)). DEAD: MAXPLUS, DBLGAP, DECAY, REENTRY.
 - Replay (Lead 05:34Z): L-LOWER 4's RECF4_d20_F60 (l-lower 2f15c81a, sha1 354b7d44) REPRODUCED (my Sim + Gen identical): d 20, T 67,
   F 2 6 14 30 60 ...; doubling levels 1-3; DBL-EQ etc. 0 violations (extra79.out, wired). DBL4_d20_F30 not yet on the remote (05:40Z).
+- Replay (Lead 05:55Z): DBL4_d20_F30 (sha1 43704358, l-lower 33eb8593) REPRODUCED: T 30, F 0 2 6 14 30, doubling 1-4. H5_d20_F62
+  (sha1 2204079d, l-lower c45cf2f3) REPRODUCED (Sim + Gen identical): T 136, F 2 6 14 30 62 94 63 ..., doubling 1-4 (five levels at the
+  R113 cap 2^(l+2) - 2, l = 0..4). All dblcheck counters 0 (extra79.out). Wiring: wiring79.out, tower_H5.out (levels 4-6 = a block of six
+  movers moving 31 times each, pointing at each other and at pair 3).
 - FREEZE STEPS: (1) when the Lead says R116 landed, re-quote AND-GATE (a)-(c) from the landed RESULTS text in §0 (quotes only);
   (2) update pins.sha1 (the packet/line sha1s change), re-run check79.sh, commit = FREEZE; after that only a fixes file.
 

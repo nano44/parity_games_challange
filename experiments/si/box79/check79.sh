@@ -10,12 +10,15 @@ python3 -I -B dblcheck.py > "$t/c"
 diff -q "$t/c" dblcheck.out
 NEG=2 python3 -I -B dblcheck.py > "$t/n"
 diff -q "$t/n" dblcheck_neg2.out
-python3 -I -B dblcheck.py inst/RECF4_d20_F60.json > "$t/x"
+python3 -I -B dblcheck.py inst/RECF4_d20_F60.json inst/DBL4_d20_F30.json inst/H5_d20_F62.json > "$t/x"
 diff -q "$t/x" extra79.out
+python3 -I -B wiring79.py inst/RECF4_d20_F60.json inst/DBL4_d20_F30.json inst/H5_d20_F62.json > "$t/w"
+diff -q "$t/w" wiring79.out
 python3 -I -B dead79.py > "$t/d"
 diff -q "$t/d" dead79.out
 rm -rf "$t"
 grep -q "^CORPUS violations: WO 0 HIT 0 ALTa 0 ALTb 0 ALTc 0 ALTd 0 DBLa 0 DBLb 0 DBLc 0 TN 0 PF 0 FU2 0$" dblcheck.out
 grep -q "^LOWER violations: WO 0 HIT 0 ALTa 0 ALTb 0 ALTc 0 ALTd 0 DBLa 0 DBLb 0 DBLc 0 TN 0 PF 0 FU2 0$" dblcheck.out
+grep -q "^EXTRA violations: WO 0 HIT 0 ALTa 0 ALTb 0 ALTc 0 ALTd 0 DBLa 0 DBLb 0 DBLc 0 TN 0 PF 0 FU2 0$" extra79.out
 grep -q "^CORPUS violations: WO 0 HIT 238546 ALTa 86709 " dblcheck_neg2.out
 echo "box 79 P-IDEAL-DBL (draft) checks: PASS"
