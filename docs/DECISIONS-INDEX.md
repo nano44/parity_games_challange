@@ -42,3 +42,4 @@
 | D20 | 2026-11-05 | Owner: "We have reset the weekly usage, so we can again work faster no?" | active | docs/DECISIONS.md#d20 |
 | L48 | 2026-11-05 | Lead reading of D20: full pace for the new weekly window; 4 research lanes (L-RED 49, L-NEW 53, L-COMP 9, L-SI 39); gates on demand; stop on paid overage | active | docs/DECISIONS.md#d20 |
 | L49 | 2026-11-06 | Lead reading: R110's W-ONLY is ISO-only, so FLIP-ADD ⇒ T^R_ISO(d) polynomial, not T^R(d); non-ISO 𝓛^R_d needs a separate route; excesses measured against T^R_ISO-best | active | docs/DECISIONS.md#d20 |
+| L50 | 2026-11-07 | Lead reading: MOVES-2D killed (L-LOWER 3, d 6/8, triple-replayed; DEAD END after referee review of P-M2D-DEAD); P-IDEAL-MOVES lands with no MOVES-2D status claim (L-4); T^R growth / tower question open | active | docs/DECISIONS.md#d20 |
