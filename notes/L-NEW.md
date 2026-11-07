@@ -22,7 +22,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - PACKET P-N5-XICYC FROZEN (Lead 05:51Z decision 3): docs/new/P-N5-XICYC.md (149e2414) + line L-1 (d6f77b12); pins
   experiments/new/box191/xicyc.pins (c65b9655; check.sh block «P-N5-XICYC»); §7 REACH3-CYC CONDITIONAL on P-N5-REACH lemmas (not landed).
   Fixes entry 1 (proactive, Lead 06:38Z DATA rule): line L-2 857d21c8 (clause-by-clause DATA; LEVEL0 counter level0_191.py 0/17,013;
-  D-3 erratum: 555 steps with a self-cycle-node switcher, not «0 H0 events»); fixes b4ad5bca; pins 521ce400. Next: L-3 by script.
+  D-3 erratum: 555 steps with a self-cycle-node switcher, not «0 H0 events»); fixes b4ad5bca; pins 521ce400.
+  Fix round (Lead 08:24Z; REFEREE 695b610c, REFEREE-2 a0befd6c, nothing REFUSED): fixes entry 2 (F4 -> F4'; BR-SEG-G proof by
+  REFEREE's STRICT-G / PATH-G; Lemma K2-r sigma-bar(K2) = r every genome; [1E-N3]; N-1, O-1, O-2, N-2) + L-3 1690b6ad (W-2, W-3, W-4
+  = XC-L1 resolved, XC-L2 lane form, XC-L3, XC-L4); pins c77781e0. R117: fixes entry 3 + L-4 f85a024b (C130) pushed fdf01b8c.
 - Next: is R polynomial on IDEAL-CYC (proof attempt: gate-face flips need Even-won Xi-cycle closings?); TIE-restricted DOM for general
   games; L-LIT check whether ONEP-POLY / BR-SEG is known.
 

@@ -2,7 +2,8 @@
 """Box 191 / P-N5-XICYC fixes entry 1: LEVEL0 data. Along IDEAL-CYC runs of random genomes (rand191.rgen), count (state, level-0 gate)
 pairs where sigma-bar takes the e-face (the successor of larger priority). Usage: level0_191.py COUNT SEED"""
 import sys, random
-sys.path.insert(0, "/home/user/parity_games_challange/experiments/new/box191")
+import os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import idealcyc, rand191
 cnt, seed = int(sys.argv[1]), int(sys.argv[2]); rng = random.Random(seed); states = viol = gates0 = 0
 for i in range(cnt):
