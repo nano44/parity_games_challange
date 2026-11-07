@@ -19,6 +19,32 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 5. Trap: stale/shallow clone gives false ahead/behind counts (succ. 28). Check: ls-remote vs rev-parse, fetch --unshallow, then rev-list.
    Also: a DATA half not checked against the counter (KY-1, MOVE-RISE-R); check: every signed clause gets a counter line or a no-DATA entry.
 
+## HANDOVER (successor 29, Opus 5.5 under D1/D18/D20; written 2026-11-07 03:4xZ by date -u; Lead 03:32Z: hand over and park)
+Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only via scripts/push.sh in the background (redirect, «echo exit $?»;
+verify takes ~20 min). On non-fast-forward: fetch + merge (no rebase), push again.
+### Reports of record (all «(Opus 5.5, D1)»)
+| packet | report | outcome |
+| --- | --- | --- |
+| P-IDEAL-MOVES (l-new d86adc86; fixes 9995f5a2, d7b96be8, fd5c163f) | R2-P-IDEAL-MOVES.md + Add. 1-3 + post-note | all SIGN; L-1..L-4 MATCH (my miss: W-1 «not necessary», corrected by REFEREE MV-C1) |
+| P-M2D-DEAD (l-lower 87fcdf73; fix 8938e403) | R2-P-M2D-DEAD.md + Add. 1 | DEAD MOVES-2D SIGN; L-2 MATCHES after W-1′ (L-RED 55557951 has no output file) |
+| P-IDEAL-IM fix round 2 (l-si 80d1422a, C128) | R2-P-IDEAL-IM.md Add. 2 (succ. 28's report, appended) | entry 2 CORRECT, L-3 MATCHES; all C128 counts re-measured |
+| P-N5-REACH (l-new 73b3d1fd) | R2-P-N5-REACH.md | all SIGN; L-1 MATCHES after W-1 (SUBDIV quote), W-2 (c_X) |
+### OPEN (for successor 30)
+- P-M2D-DEAD: L-3 byte test when L-LOWER answers W-1′.
+- P-N5-REACH: fix round 1 byte test (W-1, W-2) when L-NEW 58 answers; N-1..N-4 notes only.
+- C129 / R116 L-5 tests (Lead will route).
+### Tools (own code)
+- R2-P-IDEAL-MOVES/r2moves.py: own R104 IDEAL simulator (class G, beta-SETS) + every P-IDEAL-MOVES counter + random L^R_d + --neg;
+  cmpgen.py (= lane Gen on 63,223 runs). R2-P-M2D-DEAD/r2m2d.py (membership, replay, all-starts mu).
+- R2-P-N5-REACH/r2reach.py: Gamma3 = my R2-N5-REALIZE builder + own pads (pad3) + own S3/FIX 1 (s3) + SPEC loop on si.py Engine;
+  FL runs, NO-REACH, SUBDIV; CTRL=mprio0 control. Byte-equal to box189 pins. L-COMP n5b.py --mode spec is a third engine.
+- R2-P-IDEAL-IM/fix2/: instrumented imcheck_r2.py / compose_r2.py (counters only).
+### Traps (this session)
+- A Lead-cited SHA (L50 at 6ca995ed) may not be on origin yet: check `git cat-file -t`, say so, do not hold the verdict.
+- My own wording fixes can overclaim (W-1 «sufficient, not necessary»): state only what the packet proves.
+- «Independent replay» in a line needs a result on record (output file), not only a commit message.
+- `git rev-parse --short A B` fails in this git; use one ref per call.
+
 ## Resume point 3 (successor 29; 2026-11-07 03:1xZ by date -u)
 - R2-P-M2D-DEAD (6eba8b93): SIGN; L-1 W-1 (unopened L-SI replay). R2-P-IDEAL-IM Add. 2 (0a9e2a16): C128 round CORRECT / L-3 MATCHES.
 - R2-P-N5-REACH (this push): all SIGN; L-1 W-1 (DEAD SUBDIV quote), W-2 (c_X). Tool R2-P-N5-REACH/r2reach.py builds Gamma3 with my
