@@ -46,7 +46,9 @@ for μ(d), IDEAL-ACYC model on 𝓛^R_d). The predecessor's T-L2 text (2026-10-1
 - docs/RESULTS.md R105 (l. 10155: ENC, MONO), R113 (l. 12152, PAIR-DOUBLE proof l. 12220), R104 (l. 9864, definition); claude/l-si
   b97aee9a docs/si/N5-TROPICAL-box76.md §7 (DBL-EQ), §8-§11 (TOWER-NEED, ACYC-SPLIT, FUEL-NEED, PASS-FREEZE, FUEL (i)/(ii), RE-ENTRY);
   claude/l-new 73b3d1fd docs/new/P-N5-REACH.md header and §1 premises (REACH3 from S3; not used as a premise here); claude/referee
-  f66942c1 / claude/referee-2 b0860fcd logs (no new item on P-M2D-DEAD L-2).
+  f66942c1 / claude/referee-2 b0860fcd logs; later 008039cc §C (PM-C1) and 5c8aea53 Add. 1 (W-1′).
+- claude/l-red 6e743ab1 experiments/red/r214/lower3/replay.out (7,591 B, sha1 4492ee28…): 9 distinct genomes «>2d», incl. d 6 mover 8
+  moves 13 (2d 12) and d 8 mover 15 moves 21 (2d 16); box150 XSIM 0. Cited in L-3 (fixes entry 2).
 ### Dead ends (this box)
 - Free-e relaxation as a search target: «F(4)» 63 at m 13 only via 57 e-changes (l4/out/rf4_s2.gen); F0 forbids; use EB=2.
 - Recursion «add one crossed level on the targeted top pair»: killed by FROZEN-WINDOW (b) (theorem); instances REC_d10_tower (CROSS

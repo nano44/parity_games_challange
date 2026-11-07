@@ -33,3 +33,17 @@ Optional items taken (wording notes only; the frozen packet is not edited, and L
   attribution as «(as worded in P-IDEAL-MOVES §0; box 181 first)».
 - N-2 (REFEREE-2): in §7, «at d 3 it holds with room (μ(3) = 4 …), at d 4 it holds (L-RED R213, one solver)» is lane DATA (L-RED R213,
   unlanded, one solver), not a claim of this packet.
+
+## Entry 2 (fix round 2; L-LOWER successor 4, 2026-11-07 ~04:4xZ by date -u)
+Items: REFEREE PM-C1 (claude/referee 008039cc, docs/referee/R-P-M2D-DEAD.md §C) and REFEREE-2 W-1′ (claude/referee-2 5c8aea53,
+docs/referee-2/R2-P-M2D-DEAD.md Addendum 1). Both target the L-RED 52 citation of L-2 and both allow citing a committed output file
+instead. L-RED has committed it; both items are RESOLVED by citing it (one replacement, wording fixed by the Lead 03:55Z). L-RED's
+replay code stays at 55557951 (experiments/red/r214/lowrep.py, memb.py). The frozen packet is not edited.
+Line file (script experiments/lower/l3/mkL3.py from L-2 8ca7bcca…; the old string occurs exactly once in L-2, checked by an assert):
+- docs/lower/P-M2D-DEAD-line-L3.txt: L-2 with the replacement below, plus «\n»; pinned in experiments/lower/l3/p_m2d_check.py.
+Replacement (old → new):
+- PM-C1 + W-1′: «L-RED 52 (55557951, experiments/red/r214/lower3/)» → «L-RED 52 (6e743ab1, experiments/red/r214/lower3/replay.out)».
+Source opened for this entry: claude/l-red 6e743ab1 (on origin; branch head 41e50e10 at reading),
+experiments/red/r214/lower3/replay.out, 7,591 B, sha1 4492ee284db25cb8cefc9702c1a343352e4b4ab3: nine distinct genomes, each line
+«… moves N 2d M >2d», among them «KILL_M2D_d6_mu13.json: d 6 T 13 … max mover 8 lev 4 Xi-target 1 moves 13 2d 12 >2d» and
+«KILL_M2D_d8_mu21.json: d 8 T 24 … max mover 15 lev 7 Xi-target 1 moves 21 2d 16 >2d», box150 XSIM 0 on each (9/9).

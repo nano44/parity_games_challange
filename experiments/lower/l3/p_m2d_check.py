@@ -52,7 +52,7 @@ for f, sh, z, mz, T in PINS:
         for t, s in enumerate(S1):
             print(f"  t {t:2d} state {''.join(map(str, s))} movers {[x for x in range(G['N']) if t and s[x] != S1[t-1][x]]}")
 R = os.path.join(H, "..", "..", "..")
-for fn, sh in (("docs/lower/P-M2D-DEAD-line-L1.txt", "1dec8b4da3be767d4cffeb2f37fdd2f017cb10e6"), ("docs/lower/P-M2D-DEAD-fixes.md", "966aee219a0c9e894e3959714a6c1bf764a3962a"), ("docs/lower/P-M2D-DEAD-line-L2.txt", "8ca7bcca624b6bc9ca6ee92eb46457608efbe051")):
+for fn, sh in (("docs/lower/P-M2D-DEAD-line-L1.txt", "1dec8b4da3be767d4cffeb2f37fdd2f017cb10e6"), ("docs/lower/P-M2D-DEAD-fixes.md", "f5b3f78ac37451fbd48ef7d6e3f3619438f35437"), ("docs/lower/P-M2D-DEAD-line-L2.txt", "8ca7bcca624b6bc9ca6ee92eb46457608efbe051"), ("docs/lower/P-M2D-DEAD-line-L3.txt", "4c056511a9305815c756ad858d9ca4ed5977edcf")):
     assert hashlib.sha1(open(os.path.join(R, fn), "rb").read()).hexdigest() == sh, fn
-print("P-M2D-DEAD line files L-1, L-2 and fixes entry 1 pinned")
+print("P-M2D-DEAD line files L-1, L-2, L-3 and fixes (entries 1, 2) pinned")
 print("P-M2D-DEAD CHECK PASS")
