@@ -20,6 +20,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   CONJECTURE RECUR(A): inside a level max = f_(A-1)(M-1) (exact equality A 1 M 3-6, A 2 M 3-6) => f_A(M) <= (M^2+M+1)^(A+1)
   (implication PROVED); LOCK-(i) corollary (reading-level). M = 8 A = 1 running: dp193b.c (OpenMP, resumable; rerun
   «dp193b 8 1 <ckpt>» to resume; scratch ck8 + m8.log; ~50 min on 4 cores).
+- Milestone 3 (Addendum 2): LOW-SHAPE PROVED (CS(M,1) per forest), Theorem RECUR(1) PROVED (inside a level hub = P(T) + one
+  descending D-part of low items; <= 1 + |L|(|L|+1)/2), Corollary ASC-POLY(1) f_1(M) <= (M^2+M+1)(1+M(M-1)/2), Corollary ASC1 (game:
+  plays with <= 1 ascent => D_E <= (M^2+3M+1)(1+M(M-1)/2)). Next: RECUR(2) (data: equality M 3-6).
 - Things only I know: the relocation test needs experiments/si, experiments/harness and box189-193 copied (ModuleNotFoundError si
   otherwise; that is an incomplete copy, not an absolute path). dp193 M = 7 A = 1 takes 70 s, A = 2 about 5 min; M = 8 about 3 h.
 

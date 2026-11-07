@@ -18,3 +18,4 @@ python3 dead193.py fixtop 5
 for c in "4 0" "4 1" "5 1" "4 2" "5 2"; do python3 taulin193.py $c; done
 python3 skel193.py 4 99
 python3 skel193.py 5 99
+python3 low193.py 5

@@ -289,3 +289,70 @@ Proof.
   rest of w's interval. The ascent structure there changes only through MOVER switches on the segment, never through Odd.
 - A charge of ascents to cycle-node changes would need a bound on mover switches along frozen-gate segments. That is the original problem
   in another form (lanes). Not done. No claim.
+
+## Addendum 2 (milestone 3): RECUR(1) PROVED; hence ASC-POLY(1) PROVED (abstract) and its game form
+**Lemma LOW-SHAPE (PROVED, abstract; any forest of CS(M, 1)).** Call x LOW if x < τ(x). For a low x, chain(x) is a strictly
+descending run x = d_1 > … > d_k of low items with τ(d_j) = τ(x), followed by τ(x), followed by exactly the τ-path of τ(x). For a
+non-low y (τ(y) < y or τ(y) = 0), the τ-path of y is strictly descending.
+Proof.
+- Every element of tail(x) is ≤ τ(x), and x < τ(x). So the step into τ(x) on chain(x) comes from an element below τ(x): an ascent.
+- That is the chain's only ascent (A = 1). So the part before τ(x) is strictly descending, and the part from τ(x) on, chain(τ(x)), has
+  no ascent.
+- An ascent-free chain has no nonempty segment (SKELETON (c) holds per forest: its proof uses only τ). So chain(τ(x)) is exactly the
+  τ-path of τ(x).
+- Each d_j lies before τ(x), so tail(d_j) ⊆ tail(x) and contains τ(x): τ(d_j) = τ(x) > d_j.
+- For a non-low y, τ(y) < y, and each later τ-step stays below it (SKELETON (b), A1.2). ∎
+- DATA (low193.py; unit: forests; set: all forests of CS(4, 1), CS(5, 1), CS(6, 1); scope: abstract): violations 0.
+
+**Theorem RECUR(1) (PROVED, abstract).** Inside one level (A1.2) of a run of CS(M, 1), the hub takes at most 1 + M(M − 1)/2 distinct
+chains. That is f_0(M − 1).
+Proof.
+- Let T be the hub's top in the level and L the set of low items. T ∉ L: chain(T) is contained in a hub chain, so τ(T) < T or
+  τ(T) = 0. So |L| ≤ M − 1.
+- Shape of the hub chain. Let s be its first item.
+  - If s = T: the hub chain is chain(T). Its skeleton is the descending τ-path of T. By SKELETON it carries at most one nonempty segment,
+    and that segment's entry into the next skeleton node is the chain's one ascent. So the segment is strictly descending, of low items
+    with τ = that node (SKELETON (b)).
+  - If s ≠ T: then τ(s) = T > s, so s is low, and by LOW-SHAPE the hub chain is a descending run of low items, then T, then the τ-path
+    of T.
+  - Either way, hub = P(T) ∪ D, where P(T) is the τ-path of T (fixed in the level) and D (the D-PART) is empty or a strictly descending
+    run of low items. Low items are not on P(T), whose nodes are non-low by LOW-SHAPE. So D is disjoint from P(T).
+- Monotone parts.
+  - The hub is lex-nondecreasing and P(T) is fixed, so D is lex-nondecreasing.
+  - So top(D) = the first element of D is non-decreasing in rank (∅ first).
+  - For a low w, chain(w) = D(w) ∪ P(τ(w)) at every state of the level (LOW-SHAPE, with τ fixed). So D(w) is lex-nondecreasing.
+  - Then so is D(w) ∖ {w}. Its top is w's pointer (∅ when the pointer is τ(w)). So w's pointer is non-decreasing in rank, among ∅ and
+    the low items below w.
+- Charging. A change of D between consecutive states of the level either changes its first element (at most |L| times: values ∅ and L,
+  monotone), or keeps it. In the second case, at the last common element w of the two runs' common prefix, the pointer changes (it
+  cannot stay, since the runs then continue identically).
+  - w is low; its pointer changes at most |{u ∈ L : u < w}| times in the level.
+  - Total changes ≤ |L| + |L|(|L| − 1)/2 = |L|(|L| + 1)/2.
+  - Distinct D's (hence hub chains) ≤ 1 + |L|(|L| + 1)/2 ≤ 1 + (M − 1)M/2. ∎
+- Agreement with data: equality with the exact maxima 4, 7, 11, 16 at M 3-6 (A1.3).
+
+**Corollary ASC-POLY(1) (PROVED, abstract).** f_1(M) ≤ (M² + M + 1)(1 + M(M − 1)/2).
+- Levels ≤ M(M + 1) + 1 (A1.2), and lex-monotone hub values never repeat across levels.
+- DATA comparison: f_1 = 2, 4, 8, 16, 29, 50, 82 against the bound 3, 14, 52, 147, 341, 688, 1254 (M 1-7).
+- The bound is degree 4; the data's degree is 3. CONJECTURE ASC-POLY(A) for A ≥ 2 stays open; RECUR(A ≥ 2) is DATA only (A1.3).
+
+**Corollary ASC1 (PROVED, lane; the game form).** Let v be a vertex of IDEAL-CYC(G), I an interval of states with Λ_t(v) = w on I, U_w
+the e-vertices more relevant than w, M_w := |U_w|. Hypothesis (ASC≤1 on I): at every t ∈ I, every e-vertex x with Λ_t(x) = w has at
+most one ascent in seq_t(x), and so does v. Then D_E,I(v) ≤ (M_w² + 3M_w + 1)(1 + M_w(M_w − 1)/2).
+Proof.
+- Items := U_w. The item x is active at t iff Λ_t(x) = w. Its active times J_x form an interval (§2 proof).
+- At each t, the active items' next-e pointers form one forest (CHAIN-DECOMP). Their chains are lex-nondecreasing on J_x (E-MON). The
+  hub is v.
+- So every statement of SKELETON, LOW-SHAPE and RECUR(1) applies inside a level, where the active set, the τ's of active items and the
+  top of E(v) are constant. Every argument there compares states of one level at which the items concerned are active.
+- Level count: each item becomes active at most once and inactive at most once (2M_w); each τ(x) changes at most M_w times (M_w²); the
+  hub's top at most M_w times. So there are at most M_w² + 3M_w + 1 levels.
+- Multiply by RECUR(1)'s 1 + (M_w − 1)M_w/2. ∎
+- Premises: F1, F2, F3, E-DOM-ALL-d. [LOC] is not used.
+- DATA: the hypothesis holds in rd2_d3, rd2_d4, rd3_d3, rf_d4, RS2, RS2_L8M6, RSG_K4 and FPORT_n2 (max ascents per play 1, §4 table and
+  asc193.py lines). It fails in the others (2 or 3).
+
+Reading (status of the open core after milestone 3).
+- e-set height is now PROVED polynomial on runs whose plays have at most one ascent (ASC1), and on NOUP genomes (no ascents).
+- A superpolynomial e-set walk, hence any superpolynomial R via OVT-DV, needs plays with at least two ascents.
+- RECUR(A ≥ 2) is the next target; the data says RECUR(2) holds with equality at M 3-6.

@@ -46,3 +46,4 @@ RECUR CS(M 4, A 2): level keys 308; max distinct hub chains inside one level 8
 RECUR CS(M 5, A 2): level keys 2612; max distinct hub chains inside one level 16
 SKELETON CS(M 4, A 99): forests 125, violations 0
 SKELETON CS(M 5, A 99): forests 1296, violations 0
+LOW-SHAPE CS(M 5, 1): forests 870, violations 0
