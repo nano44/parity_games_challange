@@ -25,7 +25,7 @@ t1.py, t2.py, t3.py = constructions; play.py = plays at a state; meas.py = bit w
   reaches its own SET gate, so the leak of LEAK-ARCH H2 occurs. Up through a mirror chain: a cycle through the open bit's own lane,
   which Odd keeps or breaks by misreading a probe. DEAD instance of the third branch: T3 (§4), every bit sets at step 1.
 - Box goal (doubling T per added bit, O(1) size growth): NOT reached. The obstruction is NOT proved. What is proved: SWITCH-IN-DV,
-  REARM-DV, REARM-PAIR, MIRROR-NOLEAK, SET-ROUTE-WINS. Open: an E-DOM hub pair (X, Y) that overtakes at every carry, outside the
+  REARM-DV, REARM-PAIR, MIRROR-NOLEAK, SET-ROUTE-WINS, PLAY-BLIND. Open: an E-DOM hub pair (X, Y) that overtakes at every carry, outside the
   three branches of §4.
 
 ## 1. Lemma SWITCH-IN-DV and corollaries (PROVED-CONDITIONAL on F1, lane)
@@ -126,9 +126,13 @@ DATA (out/t2_meas.txt; own.py; set n 3-6, M 0 / 2, ROOT s / P):
 Needed (REARM-PAIR): for bit k's lane, two hub values X_k, Y_k that overtake each other at every event of the lower counter. Every
 increment flips bit 0, so sign(Ω(X_k) − Ω(Y_k)) must depend on bit 0. Both values must also rise at every carry, so both must encode
 the lower state.
-- ODD-BLIND (READING): a hub's play «sees» the SET event of B_j only if it passes B_j's mover at that moment. If the play avoids B_j,
-  B_j's switch only raises faces that Odd already declined. So a hub that reads an open bit j enters B_j's hidden route, and that
-  route is the same for every hub (one successor per vertex). Private copies cannot change this.
+- **Lemma PLAY-BLIND (PROVED-CONDITIONAL on F1, lane).** Let v be any vertex at state t, and let π be its play under (σ_t, τ_t), with
+  τ_t Odd's optimal counterstrategy. If π contains no mover that switches at step t + 1, then Ω_(t+1)(v) = Ω_t(v).
+  - Proof: σ_(t+1) agrees with σ_t on every mover of π. So under (σ_(t+1), τ_t) the play from v is again π, with the same value. Odd's
+    optimal value is at most the value of any Odd strategy, so Ω_(t+1)(v) ⊴ Ω_t(v). F1 gives ⊵. ∎
+  - Use (ODD-BLIND): a hub sees the SET of B_j at step t + 1 only if its play at t passes B_j or another mover that switches at t + 1.
+    A hub that is to react to bit j's SET therefore passes B_j while B_j is open, i.e. it follows B_j's hidden route. That route is the
+    same for every hub (one successor per vertex), so private copies cannot change it.
 - Order of reading. Two plays that merge coincide afterwards. So X_k and Y_k can differ only before their merge vertex.
   - Top-down chains (T2's P^k: bit k − 1 first): they divert at the HIGHEST open bit. The pre-merge part holds the leading ones of the
     lower counter, which change only at carries into the top. Bit 0 is read after the merge. No pair.
@@ -150,9 +154,10 @@ the lower state.
   Four routes (out/t3_xcheck.txt, n 4 and 6, UP 0, TAIL C): own = idealcyc (T 10 / 14); subrun191 C 1 (the state-0 cycle is left at
   step 1: Λ changes from that β to K1), R 6 / 10; Γ3 regions = Oink = n5v xi = n5bxi, verify 0 / 0, xi = T + 3 (13 / 17).
   Frozen: inst/t3_n4_u0_C.json (sha1 5ec72f3b…), t3_n6_u0_C.json (+ names / labels; inst/SHA1SUMS).
-- Not excluded by anything proved: a reset mechanism other than access copies, or a hidden route that goes up through a THIRD kind
-  of chain, neither mirror (cycle) nor real (leak). One candidate: hidden routes that go up through the real chain but enter each
-  set bit through a copy gate whose e lies BELOW the mirrors. It would have to block (b) without re-creating ODD-BLIND. Untested.
+- A «third chain» that goes up through the bits with copy gates whose e's lie below the mirrors (witnesses instead of mirrors) IS
+  branch (c). An open bit's copy gate still hands the play to its hidden route, so the cycle is the same whatever the witness ranks.
+  Not excluded by anything proved: a reset mechanism other than access copies, or hidden routes that read the bits above j through a
+  structure that is not a chain of per-bit gates.
 - CYCLE-BREAK (READING, from the T3 run and the structure). Any lane hub that reads bit 0 enters B_0's hidden route (ODD-BLIND). If
   that route goes up through probes of every bit, then with B_0 and B_u open the play closes a cycle through lane_u. The only Odd vertices
   on that cycle where Odd can leave it are probes: the global probes C_1 … C_u and lane u's private probes. Level-0 gates send their
