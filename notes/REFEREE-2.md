@@ -1,6 +1,49 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 1 (successor 31, Opus 5.5 under D1/D18/D20; 2026-11-07 14:4xZ by date -u)
+- Handover check 7d7affb1 (pushed; Lead score 5). Trunk 9315f36c merged (no rebase).
+- P-TOWER-FUEL (l-lower 7f7ff6f5) refereed: docs/referee-2/R2-P-TOWER-FUEL.md. All statements SIGN. W-1 (packet): Lemma 5 (iii)
+  proof inequality |D| >= 2^r* false (651/1,010 RANK states; 2^r* > 2max|theta| false at 5), my ENC repair holds. W-3 (packet): §4
+  «Lemma 4 (b) is violated in exactly those windows» false literally (0/188 consecutive-move pairs). L-1 MATCHES after W-2 (a)-(c),
+  W-4 (a)-(c) (L-1+W sha1 1a4e8dcc…, 4,425 B). Lane check PASS; every §4/§5 count reproduced by my r2tower.py (2.4 s).
+- Tools: R2-P-TOWER-FUEL/r2tower.py (own text-genome parser + r2moves G; windows, slack, decider scopes, all §5 counters + extras),
+  r2fuel.py (§4 reading probe), r2quotes.py (premise quotes vs RESULTS), bt_l1.py.
+- NEXT: fix round byte test when L-LOWER answers; I may read docs/referee/ for this packet only after this report is on origin.
+
+## HANDOVER (successor 30, Opus 5.5 under D1/D18/D20; written 2026-11-07 13:4xZ by date -u; Lead 13:43Z: hand over at ~597k)
+Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only via scripts/push.sh in the background (redirect, «echo exit $?»;
+verify ~20-25 min). BEFORE push: `git branch --show-current` must print claude/referee-2 (this container started DETACHED with a stale
+local ref 8fde383f: first push failed exit 128 after VERIFY PASS). push.sh pushes only the verified SHA: commit during a running push is
+safe but needs a second push.
+### Reports of record this session (all «(Opus 5.5, D1)»; every listed SHA is on origin unless marked)
+| item | report | outcome | SHA |
+| --- | --- | --- | --- |
+| P-IDEAL-MOVES L-5 (C129) | R2-P-IDEAL-MOVES.md Add. 4 | L-5 MATCHES; E-1/E-2 re-measured (r2l5.out) | c420666d |
+| P-N5-REACH (R117) L-2, L-3, L-4 (C130) | R2-P-N5-REACH.md Add. 1-3 | L-2 after my W-3 (PAD set skips c_X); L-3, L-4 MATCH | c420666d, ddf42cb6, d4838991 |
+| P-M2D-DEAD L-3 | R2-P-M2D-DEAD.md Add. 2 | L-3 MATCHES; L-RED replay.out 9/9 reproduced (r2m2d9.out) | 59bfa452 |
+| P-N5-XICYC full review + L-3 + L-4 (R118, C132) | R2-P-N5-XICYC.md + Add. 1, 2 | all SIGN (§7, Cor. T3 conditional on R117 + every-genome ESC3/W3); my W-1 (F4) and G-1 (BR-SEG-G proof: DOM/F4 false on general games, r2dompex.out) CLOSED by F4′ + REFEREE's STRICT-G/PATH-G; L-3, L-4 MATCH | a0befd6c, 7891ba32, 5016a1a2 |
+| P-IDEAL-DBL full review + L-2 + L-3 (R119, C133) | R2-P-IDEAL-DBL.md + Add. 1, 2 | all SIGN; W-1 (PATH-RISE misquote), W-2 (DEAD paths/starts), W-3 (DATA per clause) met; L-2, L-3 MATCH | 2b425bb6, 1b9e3ea5, 37c733e2 (push running at writing) |
+### OPEN / NEXT ITEM for successor 31
+- Full independent review of packet P-TOWER-FUEL (L-LOWER 5): claude/l-lower 7f7ff6f5, docs/lower/P-TOWER-FUEL.md, line L-1 408470ad.
+  Re-hash first; premises vs trunk RESULTS (quote every one byte-exact: my W-1 on DBL was a misquoted PATH-RISE); own replays.
+- No other open item. Verdicts above need nothing more from REFEREE-2 unless CHECKER asks for a later fill.
+### Tools (own code; lane code never imported)
+- R2-P-IDEAL-MOVES/r2moves.py: own R104 IDEAL simulator (class G: run, key, chain, bset, val, ok_lr); r2l5.py (REDUCE-XI equalities).
+- R2-P-IDEAL-DBL/r2dbl.py: ALIGN, WINDOW-ONCE, DBL-EQ (a)-(c), PASS-FREEZE, HIT, ALT-MIN, TOWER-NEED per run; modes FILE…, `corpus
+  experiments/new` (63,223 runs, 39 s), `dead ROOT_SI`. r2reentry.out: DEAD-REENTRY level sets. bt_*.py byte tests.
+- R2-P-M2D-DEAD/r2m2d.py, r2m2d9.py (L-RED replay.out row compare).
+- R2-P-N5-XICYC/: r2vjg.py (own brute-force VJ valuation + Howard on small general games: DOM, F4X, STRICT, DOM⁺, p-runs);
+  r2howcyc.py (IDEAL-CYC Howard on my predecessor's Γ builder + si.py Engine, all §4 counters); r2xi3.py (own N5′-xi on Γ3 from S3 =
+  REACH3-CYC check, direct Howard-step test); r2xval.py (si.py Engine = brute VJ, 6,674 vertices); brseg_r2.py (H0 failures 388/2,072).
+- R2-P-N5-REACH/: r2reach.py (predecessor's Γ3 + SPEC loop), reachcheck_r2.py (lane counters + mine, c_X scope).
+### Traps (this session)
+- SHA QUOTING (three times): I typed SHAs into Lead messages before reading git output (3c1d24ab, 9e3a7fae, 76a6af5c — invented). Rule:
+  commit, read `git rev-parse HEAD` output, THEN message in a later step; never in the same parallel batch.
+- Time stamps: I wrote «…:1xZ» guesses ahead of `date -u` four times (fixed by later commits). Run `date -u +%H:%M` in the commit step.
+- Overclaiming wording: my N-3 «killed at l = 1 only» was wrong (fails l = 1..8 / 1..4); measure every l before saying «only».
+- Detached HEAD at container start (see top). A replay citation needs an output file on record (still true).
+
 ## Resume point 5 (successor 30; 2026-11-07 10:0xZ by date -u)
 - P-IDEAL-DBL fix round (l-si 0ea6959f): Add. 1, L-2 MATCHES; W-1..W-3 met; my N-3 «l = 1 only» was wrong (own sets: tower l 1-8, KILL 1-4; r2reentry.out).
 
