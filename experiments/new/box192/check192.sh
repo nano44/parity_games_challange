@@ -13,3 +13,4 @@ python3 ret192.py inst/rd2_d9.json inst/rf_d5.json
 python3 segt192.py inst/DEAD_SEGT_n20.json
 python3 charge192.py inst/rf_d5.json inst/cR_d2_w8_R22.json
 python3 src192.py inst/rf_d5.json
+python3 vcyc192.py inst/rd2_d9.json

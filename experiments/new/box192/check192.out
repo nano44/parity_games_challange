@@ -42,3 +42,4 @@ cR_d2_w8_R22.json RET flips 14 charged 11; max per switch 2; max per mover 5
 TOTAL RET 22 charged 16
 rf_d5.json {'eqD': 26, 'srcdec': 4, 'eqdec': 14, 'other': 8}
 TOTAL {'eqD': 26, 'srcdec': 4, 'eqdec': 14, 'other': 8}
+rd2_d9.json max VCYC-top changes per gate 8 max flips per gate 10 flips 93 flips without VCYC change 48

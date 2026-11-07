@@ -318,3 +318,16 @@ to the switch that completed the return route. It is not proved, and it would ne
   passes on a clean worktree of e47d0203 with a fresh HOME, under python3.12 and python3.13 and with an 8 MB stack. The cause is not
   reproduced here. The block now never exits silently: it prints «BOX 192 R-POT check: FAILED (check192.sh exit …; python …)», the diff
   and the run's last 15 lines (control: an altered check192.out makes it fire).
+
+## Addendum 7: DEAD VCYC-STEP (the A5 candidate)
+- VCYC_t(g) := the most relevant vertex of the cycle closed by the play from β_g when g is forced to β (σ̄ elsewhere), or none if that
+  play does not return to g.
+- **DEAD VCYC-STEP** («every σ̄-change at a gate g coincides with a change of VCYC(g)»; with a per-gate bound on VCYC changes it would
+  bound flips per gate).
+  - Killed by rd2_d9: 48 of its 93 σ̄-changes at gates (all steps) leave VCYC(g) unchanged. Also cR_d2_w8_R22 (35 of 54), rf_d5 (16 of
+    28), rd3_d5 (12 of 30).
+  - Moreover VCYC itself changes up to 8 times per gate (rd2_d9), as often as the flips (max 10). So it is no cheaper a quantity.
+  - Unit: σ̄-changes at gates over all steps. Set: the four instances named. Scope: IDEAL-CYC. Tool: vcyc192.py.
+- Status of the open core after A1-A7: R (R-steps) on Γ3-Howard is NOT proved polynomial. Proved (lane): EQ-FLIP, MERGE, RET/BRET; X-GATE
+  and R-SPLIT [LOC]; DOM-T. Dead: FLIP-H, HEAD-STEP, EXCH-1, L♮/M♮ models, SEG-T, CHARGE-RET, SRC-DEC, VCYC-STEP. Per-gate flips stay
+  ≤ 10 in all data (L-RED §53.2: per-gate overtakes ≤ 15 on 37 instances), so CONJECTURE OVT-POLY is unrefuted.
