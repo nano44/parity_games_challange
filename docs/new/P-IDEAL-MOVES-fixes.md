@@ -53,3 +53,32 @@
   {+docs/new/P-IDEAL-MOVES.md with its fixes entry 1, docs/new/P-IDEAL-MOVES-fixes.md;+}
 - Pins: experiments/new/check.sh block «P-IDEAL-MOVES» now also pins this file and L-2; the packet, L-1, tool, output and instances are
   unchanged.
+
+## Entry 2 (2026-11-07 from 00:1xZ by date -u; L-NEW successor 57; Lead relay 00:16Z of fix round 2)
+- Reports answered: REFEREE 25, claude/referee 72f4b2f3, docs/referee/R-P-IDEAL-MOVES.md §C (fixes entry 1 CORRECT, L-2 byte test MATCHES,
+  MV-C1 REQUIRED); REFEREE-2 29, claude/referee-2 f71fdbdb (fixes entry 1 CORRECT, L-2 MATCHES, W-3 read as intended). Relayed by the Lead
+  at 00:16Z with the replacement text. No statement, proof or DATA of the packet changes; the packet and entry 1 stay as they are. This
+  entry carries no proof.
+- MV-C1 (REFEREE 25, required). L-2's «so MOVES-2D is sufficient, not necessary, for a polynomial bound on T^R» overclaims: the packet
+  proves sufficiency (§1 MOVES-EQUIV: MOVES-2D ⇒ T^R(d) ≤ 4d² − 4d + 3) and never proves non-necessity; MOVES-2D is open, and if it is
+  true it is trivially necessary. The phrase came in with W-1's wording (entry 1, R1). The packet does not contain it (entry 1, W-1
+  note). R6 below states only what is proved: sufficiency, and that a polynomial bound on T^R gives only μ polynomial (§1: μ(d) ≤ T^R(d)).
+- Line L-3 (docs/new/P-IDEAL-MOVES-line-L3.txt, sha1 d3983c68cdda03e81fdaedec770af587f758d84e, 1 line, 4,567 bytes, 71 «(» = 71 «)»,
+  depth never negative, 0 «|»): L-3 = L-2 (f3692aaa) with exactly these two replacements, applied by script; each old string occurs
+  exactly once in L-2; no other byte changes:
+  - R6 (MV-C1, the Lead's text verbatim): «so MOVES-2D is sufficient, not necessary, for a polynomial bound on T^R)» → «so MOVES-2D is
+    sufficient for a polynomial bound on T^R, and its necessity is not shown: a polynomial bound on T^R gives only μ polynomial)»
+  - R7 (source note names entry 2): «(P-IDEAL-MOVES, docs/new/P-IDEAL-MOVES.md with its fixes entry 1, docs/new/P-IDEAL-MOVES-fixes.md;
+    L-NEW successor 57)» → «(P-IDEAL-MOVES, docs/new/P-IDEAL-MOVES.md with its fixes entries 1-2, docs/new/P-IDEAL-MOVES-fixes.md; L-NEW
+    successor 57)»
+  - Byte test: L-2 with R6 alone gives 4,563 bytes, sha1 747dfa48c3a6a1d75f4d92aea5aa086128b87588 = REFEREE 25's prediction; R7 then adds
+    4 bytes («entry 1,» → «entries 1-2,»).
+- Word diff L-2 → L-3 (git diff --no-index --word-diff=plain; [-removed-] {+added+}):
+  [-sufficient, not necessary,-]
+  {+sufficient+}
+  [-T^R);-]
+  {+T^R, and its necessity is not shown: a polynomial bound on T^R gives only μ polynomial);+}
+  [-entry 1,-]
+  {+entries 1-2,+}
+- Pins: experiments/new/check.sh block «P-IDEAL-MOVES» pins this file (new sha1) and L-3; packet, L-1, L-2, tool, output and instances
+  unchanged.
