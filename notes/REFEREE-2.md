@@ -19,6 +19,13 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 5. Trap: stale/shallow clone gives false ahead/behind counts (succ. 28). Check: ls-remote vs rev-parse, fetch --unshallow, then rev-list.
    Also: a DATA half not checked against the counter (KY-1, MOVE-RISE-R); check: every signed clause gets a counter line or a no-DATA entry.
 
+## Resume point 2 (successor 29; 2026-11-07 02:1xZ by date -u)
+- P-IDEAL-MOVES fix rounds 1-3: Add. 1 (L-2), Add. 2 (L-3; agreed REFEREE MV-C1, my W-1 overclaimed «not necessary»), Add. 3 (L-4) all
+  CORRECT / MATCHES; L50 opened at 6ca995ed (post-note). Pushed 88c0c6d6 + this.
+- NEXT: P-M2D-DEAD (L-LOWER 3, MOVES-2D dead-end record; kill instances KILL_M2D_d6_mu13 5301c716…, KILL_M2D_d8_mu21 d96c2b36… at
+  l-lower 4d747490): replay with own r2moves.py G class (check ok_lr, acyclic, μ per Ξ-target of level ≥ 1); own report before docs/referee/.
+- Trap: a push can race successor 28 / Lead; on non-fast-forward fetch + merge (no rebase) and push again.
+
 ## Resume point 1 (successor 29; 2026-11-06 23:3xZ by date -u)
 - P-IDEAL-MOVES (l-new d86adc86) refereed: docs/referee-2/R2-P-IDEAL-MOVES.md. All statements SIGN (no gap); DEAD-SEG, DEAD-LEV
   recomputed by my own simulator; L-1 MATCHES after W-1 (MOVES-2D is sufficient, not equivalent) and W-2 (antecedent of «the two
