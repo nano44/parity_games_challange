@@ -171,3 +171,27 @@ No statement is REFUSED; no gap. N-1..N-4 are notes that do not affect a verdict
 - Entry 2 of the fixes file: read; it applies R1 and R2 as stated and changes no statement, proof, tool, output or instance ✓.
 - Verdict: entry 2 **CORRECT**; **L-3 MATCHES** the packet with fixes entries 1-2, in bytes and in meaning (Opus 5.5, D1). Statement
   verdicts unchanged (all SIGN); W-1, W-2, W-3 all met.
+
+## Addendum 3: fix round 3 / L-4 for CHECKER C130 (claude/l-new fdf01b8c; REFEREE-2 successor 30, 2026-11-07 08:3xZ by date -u)
+- Object (sha1 of the bytes at fdf01b8c, equal to the Lead's relay 08:26Z): docs/new/P-N5-REACH-line-L4.txt f85a024b8c8c…, 3,942 B;
+  P-N5-REACH-fixes.md be31f7741264…, 9,935 B (entries 1-3); L-3 adfbb3b8… and the packet b7bd6937… unchanged. Source of R1-R4:
+  docs/checker/C130.md at claude/checker 126f9772 §5.
+- Byte test (own script R2-P-N5-REACH/bt_l4.py, output bt_l4.out): R1-R4's old strings each occur once in L-3, new strings once in L-4;
+  L-3 with R1-R4 == L-4 byte for byte, sha1 f85a024b8c8caa4c996fcd15bf1e78fbd436b534, 3,942 B (= C130 §5's computed sha1); 1 line,
+  64 «(» = 64 «)», depth never negative, 0 «|» ✓.
+- Meaning, against reachcheck.py at fdf01b8c (gamma_counts l. 78-96, read) and my re-run reachcheck_r2.out (Addendum 1):
+  - R1 (E-1): «σ(K0) = K1 and σ(K1) = K0 at all 908 states» is NR-CORE («core-not-(K0->K1,K1->K0) 0» on 908 states); «0 of them equal
+    to R104's stated start off the movers» is NR-STD («standard 0»): its predicate compares every Even vertex v ≥ N with
+    gamma3.build(G, ∅)'s sig (R104's stated start: K0 → K3, K1 → K1, K3 → K2, β → xt or u; gamma3.py l. 67-70) and every Odd vertex with
+    tau. Unit (states), set (908 states of the 454 S3 runs on Γ(G)) and scope match ✓. NO-REACH's clause («never visits a state with
+    σ(K0) = K3, σ(K1) = K1») follows from NR-CORE ✓.
+  - R2 (E-2): reachcheck has no counter for «K0, K1 never have an improving edge while they hold»; so it belongs in the no-DATA list ✓
+    (my predecessor's r2reach.py checked it independently on the 14 corpus genomes, NOREACH_noKimpr true, r2reach_corpus.out).
+  - R3 (E-3): xcheck.out at fdf01b8c has exactly 28 rows, «<genome>_g3» and «<genome>_g0» for the 14 corpus genomes (Γ3(G), Γ(G) via
+    writepg.py), each «n5b iterations …» and «zielonka(oink zlk) OK strategies verified» ✓.
+  - R4 (E-4): packet §9 (l. 276-280) gives instances A (n = 3) and B (n = 5) with their start pairs; reachcheck's SUBDIV-DEAD code uses the
+    same games and start pairs (A: σ0(1) = 1, τ0(0) = 1, τ0(2) = 0; B: σ0(2) = 4, σ0(4) = 1, τ0(0) = 4, τ0(1) = 2, τ0(3) = 2) ✓, and
+    my predecessor's r2reach_subdiv.out reproduces both (fallbacks 1 vs 0; iterations 2 vs 3) ✓.
+- Entry 3 quotes C130 E-1..E-4 and §5's strings correctly and changes nothing else ✓.
+- Verdict: entry 3 **CORRECT**; **L-4 MATCHES** the packet with fixes entries 1-3, in bytes and in meaning (Opus 5.5, D1). Statement
+  verdicts unchanged (all SIGN); W-1, W-2, W-3 stay met.

@@ -1,6 +1,9 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 3 (successor 30; 2026-11-07 08:3xZ by date -u)
+- P-N5-REACH L-4 (l-new fdf01b8c, C130 R1-R4): Add. 3, L-4 MATCHES (bt_l4.out). Waiting: P-N5-XICYC L-3 / fixes (L-NEW 59).
+
 ## Resume point 2 (successor 30; 2026-11-07 07:4xZ by date -u)
 - P-N5-XICYC (l-new 86afce49; packet 149e2414, L-2 857d21c8): docs/referee-2/R2-P-N5-XICYC.md. §2-§4 SIGN (F4 after W-1: false as
   stated when v ∈ Π; §4 uses are fine since movers have priority 0); §5 BR-SEG-G and RED-XI SIGN WITH GAPS G-1 (DOM/F4 false on general
