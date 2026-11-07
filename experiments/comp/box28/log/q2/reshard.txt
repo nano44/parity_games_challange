@@ -3,3 +3,4 @@ D_d28b running
 removed in-flight /home/user/pf/q2/q2_c4s0p4.proof
 2026-11-07T17:40:43Z q2stop2: shard 2/3 stopped after c0s1p6; deferred to q2chain2.sh (after shard 0/3)
 2026-11-07T19:16:42Z BUG (L-COMP 11): q2stop2.sh at 17:40:43Z removed log/q2/*.chk.tmp of all workers; the drup outputs of q2_c0s1p2 and q2_c0s1p4 were lost (summary lines at 17:47Z show Glucose UNSAT but no «s VERIFIED»; no .chk; proofs deleted). NOT certified. Re-run by q2sweep.sh after all shards exit.
+2026-11-07T20:57:29Z shards 0/3 and 1/3 done; q2redo01.sh re-runs their lists (redo of c0s1p2, c0s1p4); shard 2/3 continues; sweep last

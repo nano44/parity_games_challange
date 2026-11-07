@@ -22,6 +22,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - 17:2xZ-19:2xZ L6 lanes (Lead 17:27Z/17:31Z/17:42Z; rclimb30 env L6SCORE [+ L6GATE], = guard_l6.score on SL41 + 40 mutants): D_l6 (stopped,
   best 134, L6_BEST_D_l6_d28), D_l6z (ANNEAL 0, best 190, L6Z_BEST_d28), D_l6g (gated, seeds 390000+): npaths 0 at F(6) = 222 exactly
   (L6G_TEST1_d28 sha1 86cf1903; boundary, RC-PLATEAU not killed). Query 2: shard 2/3 deferred (q2chain2.sh), final sweep q2sweep.sh.
+- 20:52Z D_l6z (ungated, ANNEAL 0) found caps 6 + npaths 0 + F(6) 230, then 238: frozen files out/L6Z_KILL230_d28.txt (29faf25f),
+  L6Z_KILL238_d28.txt (54450906); in text call them L6Z_REC230 / L6Z_REC238 (Lead 21:19Z). LABEL (Lead 21:19Z, from L-LOWER 8 + L6 §5d):
+  RC-PLATEAU is the implication «Xi-path q5 -> pair 6 => F(6) <= 222»; an RC-free genome with F(6) > 222 does NOT refute it: it stays
+  a CONJECTURE. REC230/238 refute (DATA) only «RC-free 6-capped genomes stay <= 222». My 20:53Z «KILLED» wording was wrong for that reason.
+  Now: D_l6h (gate 238, from REC238, seeds 395000+) + D_l6z; freezer.sh freezes every constrained best > running max (out/FROZEN.txt).
 - MY BUG (19:2xZ): q2stop2.sh's glob rm of log/q2/*.chk.tmp killed the live drup outputs of OTHER workers (c0s1p2, c0s1p4 lost; not
   certified; q2sweep.sh re-runs them). Rule: never glob-delete a shared work dir; delete only files named by the stopped process.
   Also: `setsid nohup X & echo $!` can record setsid's short-lived parent: re-read the pid with pgrep -f "^/bin/bash ./X". Query 2: from c0s0p1q0. xval_d3 cube 3 was already done (xval_d3.txt, b317e04a).

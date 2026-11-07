@@ -1,0 +1,4 @@
+input clauses 99359, vars 22026, top-level conflict after input: 0
+lemmas checked 627447, deletion lines 579478 (applied; clauses removed 579478)
+s VERIFIED (627447 lemmas RUP-checked)
+drup exit 0 wall 193 s

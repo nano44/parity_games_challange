@@ -72,7 +72,7 @@ static int LV=-1, SCT=0, SCH=0; static int SLV=-1, SLG=-1;
    the first window with EXACTLY two moves of movers 10, 11 (in step order, 10 before 11 within a step) at different steps -> q5 = the
    second; none -> q5 = 10 (as score()). npaths: Xi-paths over the DISTINCT targets of each option pair, 1 at a mover in {12, 13}.
    L6Q5/L6NP/L6CAPS hold the last values (written to OUT). */
-static int L6Q5=-1, L6CAPS=-1; static long long L6NP=-1;
+static int L6Q5=-1, L6CAPS=-1; static long long L6NP=-1; static int L6NS=-1;
 static long long np_memo[MAXN]; static int np_done[MAXN];
 static long long np_f(int x){ if(x==12||x==13) return 1; if(np_done[x]) return np_memo[x]; long long r=0; int a=xt[2*x], b=xt[2*x+1];
   if(a>=0) r+=np_f(a); if(b>=0 && b!=a) r+=np_f(b); if(r>1000000000LL) r=1000000000LL; np_done[x]=1; np_memo[x]=r; return r; }
@@ -85,6 +85,14 @@ static long l6score(int T){ int caps=0; for(int l=0;l<d;l++){ if(F[l]==(1<<(l+2)
   L6Q5=q5; int src = q5>=0? q5 : 10; memset(np_done,0,sizeof np_done); long long np=0; int a=xt[2*src], b=xt[2*src+1];
   if(a>=0) np+=np_f(a); if(b>=0 && b!=a) np+=np_f(b); L6NP=np; L6CAPS=caps;
   long long npc = np>99999? 99999 : np;
+  if(getenv("L6W")){ /* Lead 21:36Z (L-LOWER 8, L8-design §1c): (caps, [F6 >= L6GATE], -npaths, -#length-1 6-windows, F6); 6-windows as
+       guard_l6.windows(S, O, 6): cuts 1, the flips of o(5), T+1; window [a, next cut - 1]; length 1 <=> next cut - a == 1. Guard: options
+       20 (10:0) -> 17 and 34 (17:0) -> 22 must hold (else score -10^15). */
+    if(xt[20]!=17 || xt[34]!=22) return -1000000000000000L;
+    int ns=-1; if(T<=MAXT){ static int O6[MAXT+1][MAXN]; for(int t=0;t<=T;t++) oflags(SS[t],O6[t]); int prev=1; ns=0;
+      for(int t=1;t<=T;t++) if(O6[t][5]!=O6[t-1][5]){ if(t-prev==1) ns++; prev=t; } if(T+1-prev==1) ns++; }
+    if(ns<0) ns=9999; L6NS=ns; int g = F[6] >= (getenv("L6GATE")? atoi(getenv("L6GATE")) : 0); long long npc2 = np>999? 999 : np;
+    return (long)caps*1000000000000L + (long)g*100000000000L - npc2*100000000L - (long)ns*10000L + F[6]; }
   if(getenv("L6GATE")){ int g = F[6] >= atoi(getenv("L6GATE")); return (long)caps*10000000000L + (long)g*1000000000L - npc*10000L + F[6]; }  /* Lead 17:42Z: (caps, [F6>=gate], -npaths, F6) */
   return (long)caps*1000000000L - npc*10000L + F[6]; }
 static long score(int *T){ run(T); if(SCT) return *T;
@@ -100,7 +108,7 @@ static void rd(const char*fn){ FILE*f=fopen(fn,"r"); char w[64]; while(fscanf(f,
 static void wr(const char*fn, long sc, int T){ FILE*f=fopen(fn,"w"); fprintf(f,"d %d\nxt",d); for(int i=0;i<2*N;i++)fprintf(f," %d",xt[i]);
   fprintf(f,"\nbr"); for(int i=0;i<2*N;i++)fprintf(f," %d",br[i]); fprintf(f,"\nbp"); for(int i=0;i<2*N;i++)fprintf(f," %d",bp[i]);
   fprintf(f,"\ngate"); for(int i=0;i<2*N;i++)fprintf(f," %d",gate[i]); fprintf(f,"\nstart"); for(int i=0;i<N;i++)fprintf(f," %d",st[i]);
-  fprintf(f,"\n# score %ld T %d F",sc,T); for(int l=0;l<d;l++)fprintf(f," %d",F[l]); fprintf(f," moves"); for(int x=0;x<N;x++)fprintf(f," %d",MV[x]); if(SLV>=0) fprintf(f," slack_viol %d good91 %d",SLV,SLG); if(L6CAPS>=0) fprintf(f," l6_caps %d l6_q5 %d l6_npaths %lld",L6CAPS,L6Q5,L6NP); fprintf(f,"\n"); fclose(f); }
+  fprintf(f,"\n# score %ld T %d F",sc,T); for(int l=0;l<d;l++)fprintf(f," %d",F[l]); fprintf(f," moves"); for(int x=0;x<N;x++)fprintf(f," %d",MV[x]); if(SLV>=0) fprintf(f," slack_viol %d good91 %d",SLV,SLG); if(L6CAPS>=0) fprintf(f," l6_caps %d l6_q5 %d l6_npaths %lld",L6CAPS,L6Q5,L6NP); if(L6NS>=0) fprintf(f," l6_len1w6 %d",L6NS); fprintf(f,"\n"); fclose(f); }
 int main(int argc,char**argv){ rd(argv[1]); rs+=atol(argv[2])*7919; long iters=atol(argv[3]);
   if(getenv("LV")) LV=atoi(getenv("LV")); if(getenv("SCORE")&&!strcmp(getenv("SCORE"),"T")) SCT=1; if(getenv("CHAIN")) SCH=atoi(getenv("CHAIN"));
   int nomut[MAXN]={0}; int FB = getenv("FROZENBELOW")? atoi(getenv("FROZENBELOW")) : 0; /* movers < FB: no field mutated */

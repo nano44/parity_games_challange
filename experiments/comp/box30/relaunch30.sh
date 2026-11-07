@@ -31,8 +31,18 @@ up() { n=$1; shift; f=out/.pid_$n; [ -f $f ] && kill -0 $(cat $f) 2>/dev/null &&
 # lane30a.sh (= lane30.sh with LANEANNEAL); first genome with caps 6, q5 found, npaths 0 -> out/D_l6z_TEST.txt. Seeds 380000+.
 upa() { n=$1; shift; f=out/.pid_$n; [ -f $f ] && kill -0 $(cat $f) 2>/dev/null && { echo "$n running"; return; }
        setsid nohup env $ENVX ./lane30a.sh "$@" < /dev/null > /dev/null 2>&1 & echo $! > $f; echo "$n launched $!"; }
-ENVX="LANEANNEAL=0 L6SCORE=1 FROZENBELOW=12 NMIN=2 NMAX=4 REPT=20,110 TESTOUT=out/D_l6z_TEST.txt" upa D_l6z D_l6z out/seed_SL41_d28.txt 380000 6 5 6
+# STOPPED 21:4xZ (Lead 21:36Z; resume point in out/D_l6z.log): ENVX="LANEANNEAL=0 L6SCORE=1 FROZENBELOW=12 NMIN=2 NMAX=4 REPT=20,110 TESTOUT=out/D_l6z_TEST.txt" upa D_l6z D_l6z out/seed_SL41_d28.txt 380000 6 5 6
 # 17:4xZ (Lead 17:42Z): D_l6g = GATED L6 score (rclimb30 env L6GATE=222): (caps, [F(6) >= 222], -npaths, F(6)) as caps*1e10 + gate*1e9
 # - npaths*1e4 + F(6); same edits as D_l6; ANNEAL 0.15 (cannot cross the gate: a drop below 222 costs 1e9). TESTOUT out/D_l6g_TEST.txt with
 # TESTGATE=222: first genome with caps 6, npaths 0 AND F(6) >= 222 (F(6) > 222 kills RC-PLATEAU). Seeds 390000+.
-ENVX="LANEANNEAL=0.15 L6SCORE=1 L6GATE=222 FROZENBELOW=12 NMIN=2 NMAX=4 REPT=20,110 TESTOUT=out/D_l6g_TEST.txt TESTGATE=222" upa D_l6g D_l6g out/seed_SL41_d28.txt 390000 6 5 6
+# STOPPED 20:5xZ (Lead 20:5xZ; resume point in out/D_l6g.log): ENVX="LANEANNEAL=0.15 L6SCORE=1 L6GATE=222 FROZENBELOW=12 NMIN=2 NMAX=4 REPT=20,110 TESTOUT=out/D_l6g_TEST.txt TESTGATE=222" upa D_l6g D_l6g out/seed_SL41_d28.txt 390000 6 5 6
+# 20:5xZ (Lead 20:5xZ): D_l6h = D_l6g restarted from out/L6Z_KILL238_d28.txt (sha1 54450906; caps 6, npaths 0, F(6) 238), gate 238
+# (L6GATE=238: drops below 238 cost 1e9), same edits, ANNEAL 0.15; seeds 395000+. Target F(6) = 254 (HIT, seventh capped level).
+ENVX="LANEANNEAL=0.15 L6SCORE=1 L6GATE=238 FROZENBELOW=12 NMIN=2 NMAX=4 REPT=20,110" upa D_l6h D_l6h out/L6Z_KILL238_d28.txt 395000 6 5 6
+# freezer (Lead 20:5xZ item 2): copies every new constrained best above the running max to out/L6_FRZ_F<F6>_<lane>.txt (+ out/FROZEN.txt)
+# 21:4xZ (Lead 21:36Z, L-LOWER 8 L8-design §1c): D_l6w from REC238 (out/L6Z_KILL238_d28.txt): rclimb30 env L6W: score (caps, [F6 >= 238],
+# -npaths, -#length-1 6-windows, F6) = caps*1e12 + g*1e11 - npaths*1e8 - n1*1e4 + F6 (= Python reference on REC238/230, SL41, 20 mutants);
+# guard: 10:0 -> 17 and 17:0 -> 22 kept (FIX=20,34: never re-targeted; a genome without them scores -1e15); no REPT; edits on movers >= 12;
+# NMIN 2 / NMAX 4; ANNEAL 0.15. Seeds 400000+. REC238: n1 = 8 (windows at steps 10, 45, 80, 115, 152, 188, 223, 258).
+ENVX="LANEANNEAL=0.15 L6SCORE=1 L6W=1 L6GATE=238 FIX=20,34 FROZENBELOW=12 NMIN=2 NMAX=4" upa D_l6w D_l6w out/L6Z_KILL238_d28.txt 400000 6 5 6
+f=out/.pid_freezer; if [ -f $f ] && kill -0 $(cat $f) 2>/dev/null; then echo "freezer running"; else setsid nohup ./freezer.sh < /dev/null > /dev/null 2>&1 & sleep 1; pgrep -f "^/bin/bash ./freezer.sh" > $f; echo "freezer launched $(cat $f)"; fi

@@ -12,8 +12,10 @@ up diskguard setsid nohup ./diskguard.sh < /dev/null > /dev/null 2>&1
 # REPLACED 14:3xZ (Lead 14:29Z: two query-2 workers, q2shard.sh = q2pieces.sh + fixed piece index i, worker k takes i % 2 == k):
 # up q2 env PDIR=/home/user/pf/q2 setsid nohup ./q2pieces.sh < /dev/null > log/q2pieces.run 2>&1
 # 17:xxZ: xval_d3 finished (16/16) -> its core to query 2: THREE shards (i % 3), switched at a piece boundary (after c0s1p0) by q2reshard3.sh
-up q2 env PDIR=/home/user/pf/q2 SHARD=0 NSHARD=3 setsid nohup ./q2shard.sh < /dev/null > log/q2shard0.run 2>&1
-up q2b env PDIR=/home/user/pf/q2 SHARD=1 NSHARD=3 setsid nohup ./q2shard.sh < /dev/null > log/q2shard1.run 2>&1
+# 20:5xZ: shards 0/3, 1/3 finished; one worker re-runs both lists (q2redo01.sh)
+# up q2 env PDIR=/home/user/pf/q2 SHARD=0 NSHARD=3 setsid nohup ./q2shard.sh < /dev/null > log/q2shard0.run 2>&1
+# up q2b env PDIR=/home/user/pf/q2 SHARD=1 NSHARD=3 setsid nohup ./q2shard.sh < /dev/null > log/q2shard1.run 2>&1
+up q2 setsid nohup ./q2redo01.sh < /dev/null > log/q2redo01.run 2>&1
 # 17:3xZ (Lead 17:31Z: two query-2 cores): shard 2/3 DEFERRED, runs after shard 0/3 exits (q2chain2.sh); same index, nothing twice
 # up q2c env PDIR=/home/user/pf/q2 SHARD=2 NSHARD=3 setsid nohup ./q2shard.sh < /dev/null > log/q2shard2.run 2>&1
 up q2c setsid nohup ./q2chain2.sh < /dev/null > log/q2shard2.run 2>&1
