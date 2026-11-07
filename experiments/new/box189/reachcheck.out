@@ -1,0 +1,28 @@
+C14 A_d4_W2_k2.json N 8 M 16 L 9 Gamma3 n 130 S3-iterations 12 fallbacks 1 REACH3 ok
+C14 A_d4_W3_k3.json N 12 M 36 L 15 Gamma3 n 274 S3-iterations 18 fallbacks 1 REACH3 ok
+C14 A_d5_W2_k3.json N 10 M 30 L 13 Gamma3 n 230 S3-iterations 16 fallbacks 1 REACH3 ok
+C14 A_d6_W2_k2.json N 12 M 24 L 11 Gamma3 n 190 S3-iterations 14 fallbacks 1 REACH3 ok
+C14 KILL_M2D_d6_mu13_norm.json N 12 M 24 L 13 Gamma3 n 190 S3-iterations 16 fallbacks 1 REACH3 ok
+C14 KILL_M2D_d8_mu21_norm.json N 16 M 32 L 24 Gamma3 n 250 S3-iterations 27 fallbacks 1 REACH3 ok
+C14 RECT_d11_T59_norm.json N 22 M 44 L 59 Gamma3 n 340 S3-iterations 62 fallbacks 1 REACH3 ok
+C14 REC_d10_mu32_norm.json N 20 M 40 L 33 Gamma3 n 310 S3-iterations 36 fallbacks 1 REACH3 ok
+C14 REC_d10_tower_mu30_norm.json N 20 M 40 L 35 Gamma3 n 310 S3-iterations 38 fallbacks 1 REACH3 ok
+C14 REC_d11_mu40_norm.json N 22 M 44 L 44 Gamma3 n 340 S3-iterations 47 fallbacks 1 REACH3 ok
+C14 REC_d12_mu42_norm.json N 24 M 48 L 48 Gamma3 n 370 S3-iterations 51 fallbacks 1 REACH3 ok
+C14 REC_d7_mu17_norm.json N 14 M 28 L 17 Gamma3 n 220 S3-iterations 20 fallbacks 1 REACH3 ok
+C14 REC_d8_mu24_norm.json N 16 M 32 L 25 Gamma3 n 250 S3-iterations 28 fallbacks 1 REACH3 ok
+C14 REC_d9_mu29_norm.json N 18 M 36 L 31 Gamma3 n 280 S3-iterations 34 fallbacks 1 REACH3 ok
+C14 NO-REACH runs 14 states 28: standard 0, core-not-(K0->K1,K1->K0) 0, cycle-node(K0)!=K0 0; (state, vertex) pairs 3380: beta-in-P-or-low-cycle-node 0; iterations histogram {1: 14}
+C14 S3-START genomes 14: S3 != stated start 0
+C14 PAD (state, vertex, world) triples 251326: pad-in-P-or-cycle-node-Om<3 0
+C14 REACH3 genomes 14 (states 0..L checked 391): failures 0
+C14 W3 (state, mover) pairs 7254: W(x) != (c_W, empty, 5 lev + 5) 0
+C14+R440 NO-REACH runs 454 states 908: standard 0, core-not-(K0->K1,K1->K0) 0, cycle-node(K0)!=K0 0; (state, vertex) pairs 42880: beta-in-P-or-low-cycle-node 0; iterations histogram {1: 454}
+C14+R440 S3-START genomes 454: S3 != stated start 0
+C14+R440 PAD (state, vertex, world) triples 693030: pad-in-P-or-cycle-node-Om<3 0
+C14+R440 REACH3 genomes 454 (states 0..L checked 1225): failures 0
+C14+R440 W3 (state, mover) pairs 11642: W(x) != (c_W, empty, 5 lev + 5) 0
+R440 BLIND (CONJECTURE, not signed) genomes 440: S3 run changed by redrawing (br, bp) 0
+SUBDIV-DEAD instance A n 3: G from (s0, t0): iterations 1 fallbacks 1; G^pad (n 8) from S3: iterations 1 fallbacks 0; S3 start = transported (s0, t0) True; projected state sequences equal True
+SUBDIV-DEAD instance B n 5: G from (s0, t0): iterations 2 fallbacks 0; G^pad (n 17) from S3: iterations 3 fallbacks 0; S3 start = transported (s0, t0) True; projected state sequences equal False
+SUBDIV-APPROX (CONJECTURE, not signed) games 550: T(G^pad from S3) - T(G from (s0, t0)) histogram {-1: 8, 0: 506, 1: 35, 2: 1}

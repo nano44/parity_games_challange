@@ -1,0 +1,10 @@
+counter_ortl N 1 n 6 | spec 2 | xi 2 | idx 2
+counter_ortl N 2 n 11 | spec 3 | xi 3 | idx 3
+counter_ortl N 3 n 16 | spec 4 | xi 4 | idx 4
+counter_ortl N 4 n 21 | spec 5 | xi 5 | idx 5
+counter_ortl N 5 n 26 | spec 6 | xi 6 | idx 6
+counter_ortl N 6 n 31 | spec 7 | xi 7 | idx 7
+counter_ortl N 7 n 36 | spec 8 | xi 8 | idx 8
+counter_ortl N 8 n 41 | spec 9 | xi 9 | idx 9
+counter_ortl N 9 n 46 | spec 10 | xi 10 | idx 10
+counter_ortl N 10 n 51 | spec 11 | xi 11 | idx 11
