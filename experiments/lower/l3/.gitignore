@@ -1,0 +1,3 @@
+out/*
+!out/famA.txt
+!out/tplA.txt
