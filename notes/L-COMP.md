@@ -49,7 +49,22 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - Things only I know: pysat Solver.interrupt() does not stop cadical195 here: use subprocess + timeout (acube.py). drat-trim fetch is
   refused (classifier). drup.c IGNDEL mode reaches the refutation one lemma earlier than the default mode.
 
-## HANDOVER -- successor 10 (L-COMP 10, Opus 5.5), written 2026-11-07 09:4xZ by date -u (~500k context; Lead 09:32Z: hand over ~550k)
+## HANDOVER -- successor 10 (L-COMP 10, Opus 5.5) PARKED 2026-11-07 10:3xZ by date -u (~545k context; Lead 10:27Z order)
+### STATE AT PARK (all jobs STOPPED; everything below is in committed files; relaunch: experiments/comp/box28/relaunch_all.sh)
+- relaunch_all.sh (box28) starts: diskguard, xval_d3 (niced), q2pieces.sh (query 2), commit_loop, and box30/relaunch30.sh (lanes B_d32,
+  D_d32; A and C are commented out as STOPPED). The cnf2 d 4 drivers (ISO_L13, R4_L14) are commented out (stopped 07:05Z / 05:32Z).
+- BOX 30 lanes (state files experiments/comp/box30/out/<lane>.unit, <lane>_best.txt, <lane>.log; seed = base + unit):
+  B_d32: units 0-5 done (seeds 310000-310005), next unit 6 = seed 310006; best out/B_d32_best.txt: F 2 6 14 30 62 126 190 127 95 …, T 257.
+  D_d32 (SLACKH=7 score since 10:3xZ): no unit finished yet; next = unit 0 = seed 340000 from out/seed_D_d32.txt (G7_best_d28 + 4 TOP-ADD:
+  30 level-5 violations, F(6) 222, T 270). Its earlier F(6)-score lane (seeds 330000-…) is out/D_d32_fsix*.
+  A_d28 (300000-300005, flat F(6) 160) and C_d23 (320000-320009 top-trunc; 320100-320132 from H6 minus level 21, penalty 6) STOPPED.
+  S(h) DATA: out/remlevel_profiles.txt. No HIT.
+- Query 2 (records experiments/comp/box28/log/q2/): q2_c0s0p0 CERTIFIED (cube -2,-8,-14,-20,-26,-32,-38,-44; cube CNF sha1 32da2e76; Glucose
+  UNSAT 2,969.6 s; proof sha1 78c37e99, 3,921,344,874 bytes; drup.c VERIFIED 8,849,652 lemmas, ~15,472 s). NEXT piece: c0s0p1q0 (c0s0 pieces
+  p1-p7, each split x4 on vars 50, 56: parts q0-q3), then c0s1, c4s0, c4s2, c0s2, c0s3, c4s3 in 8 pieces each on vars 32, 38, 44
+  (q2pieces.sh does exactly this; it skips any piece whose .chk holds «s VERIFIED»). Proof dir /home/user/pf/q2 (outside git; a new
+  container must re-unzip the DIMACS: q2pieces.sh does it and checks sha1 f3d4b6ad).
+- xval_d3: 9/16 P-TR3 cubes done (9, 10, 5, 2, 13, 6, 14, 1, 15), each frup = drup = P-TR3 table (log/xval_d3.txt, log/xval_d3/); next cube 3.
 ### DONE (all pushed by commit_loop or by hand; all DATA unless labelled)
 - BOX 28 (T^R(4)): NOT certified, not even EXACT-SAT. cnf.py roots > 4 h without verdict; frup.c (own forward RUP checker, = drup.c on
   124 d 2 cases + the P-TR3 cubes so far; same speed) kept as a second checker; PAIR-SWAP symmetry (README "Symmetry", lane proof +

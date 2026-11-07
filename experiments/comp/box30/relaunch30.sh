@@ -8,4 +8,4 @@ up B_d32 B_d32 out/seed_d32.txt 310000 6 5 6      # 7th capped level at d 32 (H6
 # 10:3xZ (Lead 10:23Z): D_d32 re-scored: GUARD 5 + SLACKH 7 (level-5 violations of L-LOWER 5 slack.py, ported) then F(6); seeds 340000+
 ENVX="SLACKH=7" up D_d32 D_d32 out/seed_D_d32.txt 340000 6 5 6
 # 07:4xZ: top-truncated seed collapsed (F 2 0 0 ...; log out/C_d23_toptrunc.log); restarted from H6 minus level 21 (remlevel.py)
-up C_d23 C_d23 out/seed_d23_rm21.txt 320100 5 5 5      # six capped levels at d 23
+# STOPPED 10:2xZ at park (Lead 09:32Z / 10:27Z): up C_d23 C_d23 out/seed_d23_rm21.txt 320100 5 5 5      # six capped levels at d 23

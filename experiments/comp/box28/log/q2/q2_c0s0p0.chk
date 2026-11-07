@@ -1,0 +1,4 @@
+input clauses 99359, vars 22026, top-level conflict after input: 0
+lemmas checked 8849652, deletion lines 8744893 (applied; clauses removed 8744893)
+s VERIFIED (8849652 lemmas RUP-checked)
+drup exit (not available: parent stopped) wall 15472 s (from the proof mtime)

@@ -1,0 +1,1 @@
+cube 14 CUBE 2:0,3:1,4:1,5:1 cnf /home/user/pf/x/d3_L9_c14.cnf sha1 c663d746f9c77edfaefb9fcfd4622b5b83eda04d vars 58896 clauses 204036
