@@ -3,6 +3,7 @@
 allowed; claude/l-new f09f67ec, env WT3) scoring R = number of steps labelled R by box191 subrun191.labels (no VJ cycle node changes,
 Odd's optimal counterstrategy changes), ties by T. Mutation = box191 climb191.mut (imported unmodified). Time-bounded (SECS, default
 1200) and resumable: restarts from OUT.json if present. Every new best is printed with T, R, C, p and the label string length.
+SCORE=F scores the max number of face flips at one gate instead (ties by R, then T; the printed «R» column is then F).
 Usage: rclimb.py d w D seed OUT [seedjson]"""
 import sys, os, json, random, time
 WT3 = os.environ["WT3"]; B = os.path.join(WT3, "experiments/new/box191"); sys.path[:0] = [B]
@@ -13,8 +14,22 @@ import idealcyc, rand191, subrun191
 src = open(os.path.join(B, "climb191.py")).read(); ns = {"__file__": os.path.join(B, "climb191.py"), "__name__": "lib"}
 exec(compile(src.split("cur = json.load")[0], "climb191", "exec"), ns); mut = ns["mut"]; rng = ns["rng"]; rng.seed(seed)
 SECS = int(os.environ.get("SECS", "1200")); t0 = time.time()
+SCORE = os.environ.get("SCORE", "R")
+import gamma3
+def maxflip(G):   # max number of gate-face changes of Odd's optimal counterstrategy (si.Engine) at one gate over the run
+    h, s0, movers, inv = idealcyc.build(G); E = idealcyc.Engine(h); st = idealcyc.run(G); _, _, _, V = gamma3.build(G, set())
+    Q = [(x, k) for x in range(G["N"]) for k in range(len(G["opts"][x]))]; fl = {q: 0 for q in Q}; prev = None
+    for s in st:
+        cur = list(s0)
+        for x in range(G["N"]): cur[movers[x]] = V[("g", (x, s[x]))]
+        _, sb = E.evaluate(tuple(cur)); face = {q: sb[V[("g", q)]] == V[("e", q)] for q in Q}
+        if prev:
+            for q in Q: fl[q] += face[q] != prev[q]
+        prev = face
+    return max(fl.values())
 def score(G):
     lab = subrun191.labels(G); R, C = lab.count("R"), lab.count("C")
+    if SCORE == "F": F = maxflip(G); return (F, R, len(lab)), F, len(lab), C
     return (R, len(lab)), R, len(lab), C
 if os.path.exists(out + ".json"): cur = json.load(open(out + ".json"))
 elif seedf and os.path.exists(seedf): cur = json.load(open(seedf))

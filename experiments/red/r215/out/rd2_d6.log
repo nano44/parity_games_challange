@@ -1,0 +1,26 @@
+== 08:10Z d 6 slice 0
+start N 12 R 0 T 3 C 2
+it 26 N 12 R 1 T 3 C 1
+it 30 N 12 R 1 T 4 C 2
+it 32 N 12 R 1 T 6 C 3
+it 33 N 12 R 2 T 6 C 3
+it 39 N 12 R 3 T 6 C 1
+it 55 N 12 R 3 T 7 C 3
+it 62 N 12 R 3 T 9 C 4
+it 66 N 12 R 4 T 8 C 2
+it 70 N 12 R 4 T 9 C 2
+it 119 N 12 R 4 T 10 C 2
+it 189 N 12 R 5 T 10 C 2
+it 200 N 12 R 6 T 10 C 1
+it 228 N 12 R 7 T 10 C 1
+it 230 N 12 R 7 T 11 C 1
+it 276 N 12 R 8 T 11 C 1
+it 298 N 12 R 9 T 12 C 1
+it 672 N 12 R 9 T 13 C 1
+it 891 N 12 R 10 T 12 C 1
+it 893 N 12 R 10 T 13 C 1
+it 1288 N 12 R 11 T 13 C 1
+it 6696 N 12 R 11 T 14 C 2
+it 9747 N 12 R 12 T 14 C 1
+it 16416 N 12 R 12 T 15 C 1
+it 16615 N 12 R 12 T 16 C 2

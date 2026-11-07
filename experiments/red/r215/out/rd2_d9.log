@@ -1,0 +1,23 @@
+== 08:10Z d 9 slice 0
+start N 18 R 3 T 5 C 1
+it 4 N 18 R 3 T 6 C 1
+it 18 N 18 R 3 T 7 C 2
+it 32 N 18 R 3 T 8 C 2
+it 45 N 18 R 5 T 8 C 2
+it 65 N 18 R 6 T 8 C 2
+it 69 N 18 R 6 T 9 C 2
+it 79 N 18 R 6 T 10 C 2
+it 97 N 18 R 7 T 10 C 2
+it 127 N 18 R 8 T 11 C 2
+it 135 N 18 R 9 T 12 C 2
+it 136 N 18 R 9 T 13 C 2
+it 284 N 18 R 9 T 14 C 2
+it 574 N 18 R 10 T 14 C 2
+it 689 N 18 R 12 T 16 C 2
+it 1061 N 18 R 13 T 16 C 2
+it 1407 N 18 R 14 T 16 C 2
+it 1799 N 18 R 15 T 17 C 2
+it 2009 N 18 R 15 T 18 C 2
+it 2040 N 18 R 15 T 19 C 2
+it 2214 N 18 R 16 T 19 C 2
+it 2742 N 18 R 17 T 20 C 2

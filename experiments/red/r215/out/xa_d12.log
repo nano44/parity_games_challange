@@ -1,0 +1,13 @@
+== 08:19Z d 12 seed-file out/xa_d11.json
+start n 370 xi 14 spec 7
+it 7 n 370 xi 14 spec 9 OK
+it 18 n 370 xi 14 spec 10 OK
+it 35 n 370 xi 15 spec 6 OK
+it 72 n 370 xi 16 spec 6 OK
+it 85 n 370 xi 17 spec 6 OK
+it 117 n 370 xi 17 spec 7 OK
+it 122 n 370 xi 18 spec 7 OK
+it 233 n 370 xi 20 spec 7 OK
+it 265 n 370 xi 22 spec 7 OK
+it 446 n 370 xi 22 spec 8 OK
+it 896 n 370 xi 22 spec 9 OK

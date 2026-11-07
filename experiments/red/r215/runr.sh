@@ -7,6 +7,6 @@ for d in "$@"; do
   while :; do
     k=$(grep -c "SLICE end" $o.log 2>/dev/null); k=${k:-0}; [ "$k" -ge $sl ] && break
     echo "== $(date -u +%H:%MZ) d $d slice $k" >> $o.log
-    python3 rclimb.py $d $w $D $((seed*1000+d*10+k)) $o >> $o.log 2>&1
+    SCORE=${SCORE:-R} python3 rclimb.py $d $w $D $((seed*1000+d*10+k)) $o >> $o.log 2>&1
   done
 done
