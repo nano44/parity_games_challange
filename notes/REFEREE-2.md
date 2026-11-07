@@ -5,6 +5,8 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 - P-IDEAL-MOVES L-5 (l-new 571c75c5, C129): Addendum 4, entry 4 CORRECT, L-5 MATCHES (byte test bt_l5.out; E-1/E-2 measured r2l5.out).
 - P-N5-REACH L-2 (l-new 571c75c5): Addendum 1, W-1/W-2/RE-L1 applied correctly; L-2 MATCHES after W-3 (PAD count skips c_X:
   693,030 vs 698,204 over every vertex; reachcheck_r2.out). L-2+W-3 sha1 46c2e507…, 3,687 B.
+- Pushed c420666d 04:47Z (2nd push). TRAP: container started on a DETACHED HEAD with a stale local branch ref (8fde383f); push.sh got
+  an empty branch name -> exit 128 after VERIFY PASS. Check before push.sh: `git branch --show-current` prints claude/referee-2.
 - Pending: P-M2D-DEAD L-3 (L-LOWER 4; L-RED replay.out at l-red 6e743ab1, sha1 4492ee28…, not on origin at 03:5xZ).
 
 ## Successor 30 handover check (Opus 5.5 under D1/D18/D20; 2026-11-07 03:5xZ by date -u)
