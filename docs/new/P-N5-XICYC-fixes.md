@@ -107,3 +107,26 @@ byte changes.
 - R5 (REFEREE XC-L3): «0 non-standard states, 0 non-Howard mover steps and 0 bad stops in 2,167 mover-phase transitions of 1,000 genomes» → «0 genomes with a non-standard state among states 0, …, T3, 0 non-Howard mover steps, and 0 genomes whose first state with no strictly better mover successor is followed by a transition that changes a mover, in 2,167 mover-phase transitions of 1,000 genomes (the tool does not read the fallback flag; the fallback at transition T3 + 1 is checked by REFEREE R-P-N5-XICYC on 22 of 22 pinned and 300 of 300 random genomes, docs/referee/scratch/xicyc_logs/reach3_*.out)»
 - R6 (REFEREE XC-L4): «(Theorem REACH3-CYC, CONDITIONAL on P-N5-REACH's S3-START, PAD, K3, TAU3, ESC3, W3, not landed)» → «(Theorem REACH3-CYC, CONDITIONAL on P-N5-REACH's S3-START, PAD, K3, TAU3, ESC3, W3, not landed, with σ̄(K2) = r proved for every genome in P-N5-XICYC's fixes (K3 (b) otherwise cites SBAR3, which is IDEAL-ACYC), and on the landed premise [1E-N3] (RESULTS R57 (b), as landed in R104: S1's σ̄ and S4a's arena optimum are pointwise optima))»
 - Pins: experiments/new/box191/xicyc.pins gains L-3, this file's new sha1, data/*.out, inst/sae_6.pg, inst/sae_7.pg and the new level0_191.py; check.sh block «P-N5-XICYC» pins the new xicyc.pins.
+
+## Fixes entry 3 (2026-11-07 from 12:1xZ by date -u; L-NEW successor 60; Lead relay 12:06Z (11:40Z message) of CHECKER C132)
+Source: CHECKER C132, docs/checker/C132.md §5 «The L-4 (exact wording)», at claude/checker d6b877f7 (an ancestor of origin/claude/checker
+when read). Verdict FAIL with E-1..E-7, one L-4 with seven replacements R1-R7. Every exact string below was copied by script from C132 §5
+(wrapped lines joined with one space, as C132 states); none was retyped. The packet (149e2414) and fixes entries 1-2 are unchanged; no
+packet repair is asked for. Nothing REFUSED.
+
+### Line L-4
+L-4 (docs/new/P-N5-XICYC-line-L4.txt, sha1 85fe809cce294bc46709ea0e3be82a61718fbf7c, 1 line with its newline, 6,342 bytes, 73 «(» = 73 «)», depth never negative,
+0 «|») = L-3 (1690b6ad) with exactly these seven replacements, applied by script in order R1-R7. Each old string occurs exactly once in
+L-3; each new string occurs exactly once in L-4; no other byte changes. The sha1 equals C132's predicted
+85fe809cce294bc46709ea0e3be82a61718fbf7c (6,342 B).
+- R1 (CHECKER E-1): «CONDITIONAL on P-N5-REACH's S3-START, PAD, K3, TAU3, ESC3, W3, not landed,» → «CONDITIONAL on P-N5-REACH's S3-START, PAD, K3, TAU3, ESC3, W3 for every genome (RESULTS R117's entry signs S3-START, PAD, K3 and TAU3 for every genome and ESC3, W3 for acyclic Ξ-graphs; its line states S3-START and PAD for acyclic Ξ-graphs only; P-N5-XICYC §7 reads ESC3's and W3's proofs for every genome),»
+- R2 (CHECKER E-2): « (P-N5-XICYC, docs/new/P-N5-XICYC.md; L-NEW successor 59)» → « (P-N5-XICYC, docs/new/P-N5-XICYC.md with its fixes entries 1-2, docs/new/P-N5-XICYC-fixes.md; L-NEW successor 59)»
+- R3 (CHECKER E-3): «T-CYC: no separate DATA (it follows from BR-SEG and CYC-COUNT);» → «T-CYC: no separate DATA (it follows from BR-SEG and CYC-COUNT); DOM, STRICT and PATH (BR-SEG's proof): no separate DATA;»
+- R4 (CHECKER E-4): «RED-XI: no separate DATA (a reduction);» → «RED-XI: no separate DATA (a reduction); REACH3-CYC's bounds on T3 and C: no separate DATA (they are T-CYC and CYC-COUNT read on Γ3);»
+- R5 (CHECKER E-5): «every random set is rand191.rgen» → «every random genome set is rand191.rgen»
+- R6 (CHECKER E-6): «H0 is not checked by the tool, and these runs include steps at which H0 fails» → «H0 is not checked by the tool, and these runs include steps at which H0 fails (388 of their 2,072 steps, counted by REFEREE R-P-N5-XICYC with one counter added to brseg_gen191.py, docs/referee/scratch/xicyc_logs/brseg_gen191_H0fail_2000_3_12.out)»
+- R7 (CHECKER E-7): «so nothing about N5′-xi's or N5's running time follows;» → «so nothing about N5′-xi's or N5's running time follows; BR-SEG-G's proof (STRICT-G, PATH-G) and Lemma K2-r are referee-originated (REFEREE R-P-N5-XICYC §2.2 and §3.2, restated in P-N5-XICYC's fixes entry 2), signed by both referees;»
+- Readings for the referees (C132 NEEDS): R1 is CHECKER's own wording, lemma by lemma against R117's landed entry; REACH3-CYC stays
+  PROVED-CONDITIONAL in the packet (§7), now on landed premises for S3-START, PAD, K3, TAU3 (every genome) and on ESC3, W3 as read in
+  P-N5-XICYC §7 for every genome. R6 cites REFEREE's committed H0 log; R7 is the referee-originated tail (L41).
+- Pins: experiments/new/box191/xicyc.pins gains L-4 and this file's new sha1; check.sh block «P-N5-XICYC» pins the new xicyc.pins.

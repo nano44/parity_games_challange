@@ -971,8 +971,8 @@ else
 fi
 # P-N5-XICYC (box 191, L-NEW successor 59): sha1 pins (packet, line L-1, tools, check191.out, instances); the run itself is block BOX 191
 pin191=$(cd ../.. && sha1sum -c --quiet experiments/new/box191/xicyc.pins && echo PINS OK; sha1sum experiments/new/box191/xicyc.pins)
-if grep -qxF "PINS OK" <<<"$pin191" && grep -q "^c77781e04e68f06c4028fefbcf99db8d10b4f3bb  experiments/new/box191/xicyc.pins$" <<<"$pin191"; then
-  echo "P-N5-XICYC: pins (xicyc.pins c77781e0: packet 149e2414, line L-1 d6f77b12, fixes a83e54d2, line L-2 857d21c8, line L-3 1690b6ad, level0_191.py, data outputs, sae_6/7, check191.out d07c2f0c, tools, 17 instance files): PASS"
+if grep -qxF "PINS OK" <<<"$pin191" && grep -q "^df6f47994d849914819d5475a37d5f52540ed438  experiments/new/box191/xicyc.pins$" <<<"$pin191"; then
+  echo "P-N5-XICYC: pins (xicyc.pins df6f4799: packet 149e2414, line L-1 d6f77b12, fixes 90d0f09d, line L-2 857d21c8, line L-3 1690b6ad, line L-4 85fe809c, level0_191.py, data outputs, sae_6/7, check191.out d07c2f0c, tools, 17 instance files): PASS"
 else
   echo "P-N5-XICYC check: FAILED"; echo "$pin191"; exit 1
 fi
