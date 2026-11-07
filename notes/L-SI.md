@@ -47,6 +47,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   moves(5) + 2, pi(6) alternating every step, hits interleaving between its two Xi-targets; RISE-N = L-RED R213 RISE-2D (rise_d5_R13,
   R(8) 13 > 10; not new); SPAWN-2 (dd_d5_F14 windows 3, 4, 7, 15; temporal MCM 2 per window).
 - No conjecture added. MOVES-2D OPEN. Increments of LEV-ADD by d 2..6: 1, 2, 4, 6, 2 (DATA).
+- BOX 76b (Lead re-aim 00:38Z, DBL-O(1); note §7): Lemma DBL-EQ PROVED lane (equality conditions of PAIR-DOUBLE; at a doubling level
+  both members move F(l-1)+1 times, gamma_l(0) = gamma_l(1), fixed first mover). CONJECTURE DBL-GAP (two consecutive doubling levels
+  only if F(l-1) = 0): 0 / 80,058 runs (corpus + 68 L-RED genomes, inst/lred/). READING: DBL-GAP alone is not polynomial (2F+1 still
+  doubles); open = average deficit. L-LOWER 3's kill files (KILL_M2D_d6_mu13, d8_mu21) were NOT on claude/l-lower at 00:50Z: not replayed.
 - Not done: negative controls for tw3/tw4 counters (the counters are exact re-statements; a mutated simulator was not run).
 - Sources opened this box: trunk docs/RESULTS.md 2ccd037b9 R104-R114 (R113 l. 12152-12393: ALIGN, F0, MOVES, PAIR-DOUBLE, dd_d5_F14);
   claude/l-new d86adc86 docs/new/P-IDEAL-MOVES.md (202 lines; AND-GATE, WINDOW-DOUBLE, SEG-WINDOW, MOVES-EQUIV, DEAD-SEG/LEV);

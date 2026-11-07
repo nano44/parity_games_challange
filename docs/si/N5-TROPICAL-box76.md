@@ -124,3 +124,39 @@ polynomial bound; MOVES-2D and G-N5-TIME stay OPEN.
   this coupling is proposed here: CONJECTURE MOVES-2D stays OPEN, and this box adds no conjecture.
 - Diff against TARGET.md: no statement mentions a parity game, a winning region, an algorithm's running time or a complexity class.
   Every statement is about the step sequence of R104's IDEAL model. None is an M3/M4 claim, a gauntlet step, or a polynomial bound.
+
+## 7. Box 76b (Lead re-aim 2026-11-07 00:38Z: the DBL-O(1) question; written from 00:55Z)
+- Context: L-LOWER 3 (relayed by the Lead, UNREPLICATED, files not on claude/l-lower at 00:50Z) reports μ ≥ 13, 17, 21, 29 at d 6-9,
+  with μ tracking T; F-profile at d 9: 2 3 8 9 12 13 28 27 7. So the Lead re-aimed the box at the flip profile: can PAIR-DOUBLE's
+  equality F(l) = 2F(l − 1) + 2 hold at many consecutive levels? A level l is DOUBLING in a run if it holds there.
+- Lemma DBL-EQ (PROVED, lane; premises R113 ALIGN, F0, PAIR-DOUBLE's notation; WINDOW-DOUBLE (a), (b) and its proof's identity
+  (P-IDEAL-MOVES, signed, not landed); WINDOW-ONCE §1). G ∈ 𝓛^R_d, 1 ≤ l ≤ d − 1, any run, p := 2l, q := 2l + 1, Φ := Φ_l.
+  - (a) Level l is doubling iff all of: Φ(s_0) = 2; Φ(s_T) = 0; Φ(s_(t−1)) = 0 at every l-b-step t; no step moves both p and q; the
+    flips of (p, q) are exactly the steps that move p or q.
+  - (b) At a doubling level each of p, q moves exactly once in every l-window; so moves(p) = moves(q) = F(l − 1) + 1.
+  - (c) At a doubling level γ_l(0) = γ_l(1) =: γ, and in every l-window the first of p, q to move is p iff γ is false; so the order
+    of (p, q) is γ while p, q are on one option and ¬γ while they are split, and c_(l+1) takes one fixed value c* while they are
+    together and 1 − c* while they are split.
+  - Proof. (a) With W = [1, T], WINDOW-DOUBLE's proof gives F(l) ≤ M + B1 (by (a) of that lemma), M ≤ Σ_t #(Mv_t ∩ {p, q}) = Φ(s_0) −
+    Φ(s_T) + Σ_(l-b-steps t) (2 − 2Φ(s_(t−1))), and B1 = #{l-b-steps with Φ(s_(t−1)) = 1}; so F(l) ≤ Φ(s_0) − Φ(s_T) + Σ_b h(Φ(s_(t−1)))
+    with h(0) = 2, h(1) = 1, h(2) = −2, and Φ(s_0) ≤ 2, Φ(s_T) ≥ 0. F(l) = 2 + 2F(l − 1) iff every inequality is an equality: Φ(s_0) = 2,
+    Φ(s_T) = 0, h = 2 at every b-step (Φ = 0, hence B1 = 0), M = Σ #(Mv_t ∩ {p, q}) (no step moves both), and F(l) = M with B1 = 0 (every
+    moving step flips, and by WINDOW-DOUBLE (a) a flip without a move needs a b-step with Φ = 1, of which there are none). Conversely
+    these conditions make each inequality an equality. (b) Φ = 2 at the start of every l-window (Φ(s_0) = 2 for the first; for a later
+    window starting at a b-step t, Φ(s_(t−1)) = 0 and c_l changes at t, so both are off the new c_l), Φ = 0 at its end (the next b-step
+    or s_T), and a member of the pair moves only to c_l (ALIGN), so both move in the window, each at most once by WINDOW-ONCE. (c) In a
+    window both start on one option i (off c_l), so their order is γ_l(i) (ALIGN (c)); the first mover A goes to 1 − i = c_l, and then
+    the order is [s(p) = c_l] = [A = p]; the second mover brings both to 1 − i, order γ_l(1 − i). Both moving steps flip by (a): γ_l(i) ≠
+    [A = p] ≠ γ_l(1 − i). Hence γ_l(i) = γ_l(1 − i) and A = p iff ¬γ. c_(l+1) is a function of the order of (p, q) (R113's c_l). ∎
+  - Does NOT claim: anything about two consecutive levels; a bound on F.
+- CONJECTURE DBL-GAP (lane; DATA): if levels l and l + 1 are both doubling in a run, then F(l − 1) = 0. DATA: 0 counterexamples on the
+  frozen corpus (63,223 runs, 4,534 doubling levels) and on 68 L-RED 𝓛^R_d genomes (claude/l-red 242fbd1e3, experiments/red/r213 and
+  r214, byte copies in experiments/si/box76/inst/lred/; together 80,058 runs, 5,396 doubling levels). Pairs of consecutive doubling levels
+  occur only as F = (0, 2, 6, …) (e.g. NOL0_1_d4_t8 start 00000000, F 0 2 6 5); never 3 in a row. L-LOWER's relayed d 9 profile 2 3 8 9
+  12 13 28 27 7 doubles at l = 2 and l = 6 only (consistent; not replayed). DBL-EQ (a)-(c): 0 violations on all 5,396 levels
+  (tw5.out, tw5_lred.out counter DBLEQ_VIOL).
+- READING: DBL-GAP, even if true, does not give a polynomial bound: F(l) ≤ 2F(l − 1) + 1 still doubles. What decides DBL-O(1) is the
+  average deficit 2F(l − 1) + 2 − F(l) per level, i.e. whether ∏ (F(l) + 2)/(F(l − 1) + 2) over d levels is polynomial. DATA (largest
+  (F(l) + 2)/(F(l − g) + 2), tw5.out «RATIO»): g = 1: 2 (only from F(l − 1) = 0); g = 2: 4 at d 4, 5 (only from F = 0, 2, 6), 2.25 at d 6;
+  g = 3: 5 at d 5 (dd_d5_F14 start 1100000001, F 0 1 4 8 2). L-LOWER's d 9 profile: 30/11 over l = 3..6. The data are too small in d to
+  separate «ratio → 1» from a constant ratio > 1. OPEN.
