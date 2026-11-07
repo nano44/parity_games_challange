@@ -29,16 +29,18 @@ reentry_levels}.py; check79.sh regenerates L-2, L-3, reentry_levels.out.
   `pgrep -fc scripts/push.sh`. A commit made during a push is not in that push (it pushes the SHA it started with).
 - Container restart ~12:06Z killed the climbs; restarted from /tmp/claude-0/sp/h7_s{1,2}.txt (logs h7r_s*.log).
 
-## BOX 80 (successor 42; Lead brief ~07:05Z: proof side of the tower question) — IN FLIGHT
+## BOX 80 (successor 42; Lead brief ~07:05Z: proof side of the tower question) — state at 17:00Z (date -u)
 - Note docs/si/N5-TOWER-box80.md; tools + check experiments/si/box80/ (check80.sh wired in experiments/si/check.sh).
-- PROVED (lane): PULSE-NEST (levels j..j+k doubling => every j-window pulse >= k+1; capped h => P_j >= h - j); ZONE (W+Xi-closed
-  set runs autonomously); INSERT-PASS (never-moving split pair inserted at level L preserves the run, passes b_(L-1)); corollary
-  STRETCH-NEED / DEAD-RIGID (H6 zero slack at j = 4, 5; H5 at j = 4; every closure in H5/H6 = whole genome).
-- DATA: delay lines (H5 9<-6 pulse 1; H6 9<-12<-7 pulse 2, 9<-14<-13<-6 pulse 3).
-- Climbs (scratch /tmp/claude-0/sp, die with the container): pclimb (C, pulse-aware score, H=7) seeds 1-3 from H6 + 4 frozen levels
-  (h6p4.txt), and h7A = H6 with an inserted pair at level 6 (insert80.py), MUT=8..13 only. Rebuild: gcc -O2 -o pclimb pclimb.c -lm;
-  python3 j2t.py H6.json 4 > h6p4.txt; H=7 ANNEAL=0.02 OUT=o.txt ./pclimb h6p4.txt SEED 300000000.
-- (b): nothing beyond Xi-depth >= h proved; READING: poly(h) levels per capped level already gives super-polynomial T^R.
+- PROVED (lane): PULSE-NEST (levels j..j+k doubling => every j-window pulse >= k+1 and length >= k+2); ZONE; INSERT-PASS;
+  STRETCH-NEED / DEAD-RIGID (H6 zero slack at j = 4, 5; H5 at j = 4).
+- DATA: delay lines (H5 -> H6 -> snapshot); best genome out/climb_s2_snapshot.json (2a3bde93; 6 capped, F(6) 222);
+  out/climb_w1_P0.json (window deficit 0, F(6) 222). Stall analysis lvl6_80.py: 16 skipped 6-windows (index = 4 mod 8), first
+  length-1 gaps, then (window score) fuel-less length-2 windows in pair-4 pulses inside pair-3 gaps. decider80.py: 48/127 failing
+  6-windows, single parked decider ((13,1) / (23,1)); L-LOWER's SL41_d28 has the same count with (9,1): same shape, other owner.
+- (b): nothing beyond Xi-depth proved. Climbs: pclimb.c WIN=1 from /tmp/claude-0/sp/{seed2,s2p3,seed1}.txt (tracked tasks, 2 h
+  limits; flat at 222 since ~15:30Z). pclimb exact only for d <= 31.
+- Next: (i) a lemma for the parked-decider block (DOMINANCE-FREEZE (b) + the pair-3-gap phase), or a design that gives pair 6 a
+  live fuel path in pair-4 pulses inside pair-3 gaps; (ii) do not re-run plain climbs: 4 x ~2 h at 222.
 
 ## BOX 79 (Lead 03:58Z): packet P-IDEAL-DBL — DRAFT (freeze after R116 lands)
 - docs/si/P-IDEAL-DBL.md (+ line docs/si/P-IDEAL-DBL-line-L1.txt, 69/69 parens, 3,425 B); tools experiments/si/box79/{dblcheck.py,
