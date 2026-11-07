@@ -969,4 +969,11 @@ if grep -qxF "XICYC SAME" <<<"$o191" && grep -qxF "TOTAL match 22 mismatch 0" bo
 else
   echo "BOX 191 XI-CYCLIC check: FAILED"; echo "$o191"; exit 1
 fi
+# P-N5-XICYC (box 191, L-NEW successor 59): sha1 pins (packet, line L-1, tools, check191.out, instances); the run itself is block BOX 191
+pin191=$(cd ../.. && sha1sum -c --quiet experiments/new/box191/xicyc.pins && echo PINS OK; sha1sum experiments/new/box191/xicyc.pins)
+if grep -qxF "PINS OK" <<<"$pin191" && grep -q "^c65b9655b8bad65c3926d07bab14fb09e2c61107  experiments/new/box191/xicyc.pins$" <<<"$pin191"; then
+  echo "P-N5-XICYC: pins (xicyc.pins c65b9655: packet 149e2414, line L-1 d6f77b12, check191.out d07c2f0c, tools, 15 instance files): PASS"
+else
+  echo "P-N5-XICYC check: FAILED"; echo "$pin191"; exit 1
+fi
 rm -rf "$tmp"
