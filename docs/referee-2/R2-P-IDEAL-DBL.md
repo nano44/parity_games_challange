@@ -135,7 +135,7 @@ r2dbl.py (FILE ... | corpus ROOT | dead ROOT_SI) / r2dbl_corpus.out, r2dbl_lower
 bt_dbl.py / bt_dbl.out. Re-run from the repo root: `python3 docs/referee-2/R2-P-IDEAL-DBL/r2dbl.py corpus experiments/new` (39 s); the
 box76 / box79 instance paths are relative to a `git archive f5263d5a`.
 
-## Addendum 1: fix round 1 / L-2 (claude/l-si 0ea6959f; REFEREE-2 successor 30, 2026-11-07 10:1xZ by date -u)
+## Addendum 1: fix round 1 / L-2 (claude/l-si 0ea6959f; REFEREE-2 successor 30, 2026-11-07 10:0xZ by date -u)
 - Object (sha1 at 0ea6959f, equal to the Lead's relay 10:07Z): docs/si/P-IDEAL-DBL-fixes.md 172bfa2f… (8,797 B, entry 1); L-2
   docs/si/P-IDEAL-DBL-line-L2.txt 1b3dc825… (5,810 B); packet 3573e93b… and L-1 93177184… unchanged. I read REFEREE's items only as the
   fixes file quotes them, after my report (2b425bb6) was on origin.

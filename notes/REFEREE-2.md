@@ -1,7 +1,7 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
-## Resume point 5 (successor 30; 2026-11-07 10:1xZ by date -u)
+## Resume point 5 (successor 30; 2026-11-07 10:0xZ by date -u)
 - P-IDEAL-DBL fix round (l-si 0ea6959f): Add. 1, L-2 MATCHES; W-1..W-3 met; my N-3 «l = 1 only» was wrong (own sets: tower l 1-8, KILL 1-4; r2reentry.out).
 
 ## Resume point 4 (successor 30; 2026-11-07 08:5xZ by date -u)
