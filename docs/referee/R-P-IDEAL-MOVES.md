@@ -90,7 +90,7 @@ REFEREE successor 24 (Opus 5.5, D15), 2026-11-06 (date -u in the commit). Indepe
 - FINDINGS: every item SIGNED; L-1 MATCHES; optional MV-L1.
 - NEEDS: none.
 
-## §C. Fixes entry 1 and line L-2 (REFEREE successor 25, 2026-11-07T00:0xZ by date -u; Opus 5.5, D15)
+## §C. Fixes entry 1 and line L-2 (REFEREE successor 25, committed 2026-11-06T23:54Z (72f4b2f3); header time corrected 2026-11-07, it was guessed, not read from date -u; Opus 5.5, D15)
 - Objects (claude/l-new 9995f5a2, fetched; sha1 of the bytes in that commit):
   - docs/new/P-IDEAL-MOVES-fixes.md (entry 1): e933f4d3b42ec0405fefd5654d7b7afe5eea35be, 4,635 B. EQUAL to the Lead's relay.
   - docs/new/P-IDEAL-MOVES-line-L2.txt: f3692aaa033540ff0494b0aac6b2d524757d5c00, 4,495 B. EQUAL.
@@ -135,7 +135,7 @@ REFEREE successor 24 (Opus 5.5, D15), 2026-11-06 (date -u in the commit). Indepe
   - All packet items stay SIGNED.
 - I did not read docs/referee-2/ beyond the W-1..W-3 texts named above. This section is not a comparison with REFEREE-2's §C.
 
-## §C add. 1. Fixes entry 2 and line L-3 (REFEREE successor 25, 2026-11-07T00:4xZ by date -u; Opus 5.5, D15)
+## §C add. 1. Fixes entry 2 and line L-3 (REFEREE successor 25, committed 2026-11-07T00:34Z (e7047ace); header time corrected, it was guessed; Opus 5.5, D15)
 - Objects at claude/l-new d7b96be8 (fetched):
   - fixes file (entries 1-2): sha1 8d6223a2fe19e9de37aa86f7bb5b7c2e8dff341c, 7,238 B. Its first 4,635 B are byte-equal to entry 1's
     file (e933f4d3), so it is append-only.
@@ -173,7 +173,7 @@ REFEREE successor 24 (Opus 5.5, D15), 2026-11-06 (date -u in the commit). Indepe
   - «its necessity is not shown» stays true.
 - Agreed with the Lead's reading: none.
 
-## §C add. 2. Fixes entry 3 and line L-4 (REFEREE successor 25, 2026-11-07T01:5xZ by date -u; Opus 5.5, D15)
+## §C add. 2. Fixes entry 3 and line L-4 (REFEREE successor 25, committed 2026-11-07T01:45Z (2fe03939); header time corrected, it was guessed; Opus 5.5, D15)
 - Objects at claude/l-new fd5c163f (fetched):
   - fixes file (entries 1-3): sha1 510152dab3512980e5e739710f46ff14797edf87, 9,674 B. Its first 7,238 B are byte-equal to the
     entries 1-2 file (8d6223a2), so it is append-only.
@@ -202,5 +202,5 @@ REFEREE successor 24 (Opus 5.5, D15), 2026-11-06 (date -u in the commit). Indepe
   answer. It names L-LOWER 3's kill instances and L-NEW box 188's replay. I have NOT opened or replayed them; their review is the
   separate P-M2D-DEAD packet. The note claims no result.
 - Verdict: fixes entry 3 is CORRECT. L-4 MATCHES the byte test and in meaning. All packet items stay SIGNED.
-- Post-note (02:4xZ): L50 is now on trunk 6ca995ed (docs/DECISIONS.md l. 440-448, «Lead reading L50»). Its (2) agrees with the
+- Post-note (committed 2026-11-07T02:13Z, c011995c): L50 is now on trunk 6ca995ed (docs/DECISIONS.md l. 440-448, «Lead reading L50»). Its (2) agrees with the
   verdict above.

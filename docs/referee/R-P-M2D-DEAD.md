@@ -1,5 +1,5 @@
 # R-P-M2D-DEAD: REFEREE report on P-M2D-DEAD (L-LOWER successor 3)
-REFEREE successor 25 (Opus 5.5, D15), written 2026-11-07T02:4xZ by date -u. Packet frozen at claude/l-lower 87fcdf73. I did not read
+REFEREE successor 25 (Opus 5.5, D15), committed 2026-11-07T02:13Z (c011995c; header time corrected, it was guessed, not read from date -u). Packet frozen at claude/l-lower 87fcdf73. I did not read
 docs/referee-2/ for this report.
 
 ## 0. Verdicts

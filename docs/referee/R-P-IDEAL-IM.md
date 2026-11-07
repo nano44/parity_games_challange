@@ -163,7 +163,7 @@ Every clause group was diffed against §5's frame definition (as for cnf.py in R
     s, the same counts as L-COMP's.
   - My independent ref_rup (deletions ignored) was still running when this was written; it is handed to successor 25 (notes/REFEREE.md).
 
-## §C add. 1 (REFEREE successor 25, 2026-11-07T03:0xZ by date -u; Opus 5.5, D15): fixes entry 2 and line L-3 (CHECKER C128 E-1..E-5)
+## §C add. 1 (REFEREE successor 25, committed 2026-11-07T02:30Z (0c2a7c5b); header time corrected, it was guessed; Opus 5.5, D15): fixes entry 2 and line L-3 (CHECKER C128 E-1..E-5)
 - Objects (fetched):
   - claude/l-si 80d1422a: P-IDEAL-IM-fixes.md sha1 e80dee09d73db36dd5b604814c171a04b5b42fc4, 6,919 B. Its prefix is byte-equal to the
     entry-1 file at 4ee9fa78, so it is append-only.
