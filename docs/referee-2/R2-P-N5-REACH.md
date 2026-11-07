@@ -145,3 +145,29 @@ No statement is REFUSED; no gap. N-1..N-4 are notes that do not affect a verdict
 - Entry 1's notes N-1..N-4, D-1 quote my predecessor's items correctly ✓.
 - Verdict: entry 1 **CORRECT** for W-1, W-2, RE-L1 as applied; **L-2 MATCHES after W-3** (Opus 5.5, D1). Statement verdicts unchanged
   (all SIGN); W-3 is wording only and changes no count.
+
+## Addendum 2: fix round 2 / L-3 (claude/l-new 727163f0; REFEREE-2 successor 30, 2026-11-07 04:5xZ by date -u)
+- Object (sha1 of the bytes at 727163f0, equal to the Lead's relay 04:51Z): docs/new/P-N5-REACH-line-L3.txt adfbb3b82190…, 3,748 B;
+  P-N5-REACH-fixes.md 547740887c79…, 7,851 B (entries 1-2); L-2 4de27b32… and the packet b7bd6937… unchanged.
+- Byte test (own script R2-P-N5-REACH/bt_l3.py, output bt_l3.out): R1 = my W-3 verbatim, R2 = REFEREE RC-2 (claude/referee cc9f4afd,
+  R-P-N5-REACH.md l. 179-180) in the Lead-ruled form «1 (Odd, start edge) or 0 has an N5 run» → «1 (Odd, start edge) or 0, the pads
+  indexed after the game's vertices in (a, b) order, has an N5 run». Each old string occurs exactly once in L-2, each new string once in
+  L-3; L-2 with R1, R2 == L-3 byte for byte, sha1 adfbb3b8219026b23a80b2081a3c227c35730451, 3,748 B; 1 line, 59 «(» = 59 «)», depth
+  never negative, 0 «|», no «c_X» ✓.
+- R1 (W-3) meaning: as in Addendum 1 (counted set = every vertex but c_X; reachcheck_r2.out) ✓. It names the same set as REFEREE's RC-1
+  («vertex other than the unused loop»), so the Lead's ruling that R1 resolves RC-1 is consistent with both texts ✓.
+- R2 (RC-2) meaning:
+  - Packet §9 (l. 271-272): «EVERY edge (a, b) subdivided by an Even pad p(a, b) (indices n, n + 1, … in (a, b) order; …)». L-3's «the
+    pads indexed after the game's vertices in (a, b) order» states exactly this: indices start at n (after the vertices 0..n−1) and follow
+    the (a, b) order ✓. «(a, b) order» is the packet's own phrase; REFEREE's «edge order» is the same order only if edges are listed
+    (a, b)-sorted, so the Lead's form is the exact one ✓.
+  - subdiv.pad (experiments/new/box189/subdiv.py at 727163f0, l. 13): «E = sorted((a, b) for a in range(n) for b in g.succ[a]); P = {e: n
+    + i for i, e in enumerate(E)}»: pad of (a, b) gets index n + (rank of (a, b) in lexicographic order) ✓. So the DEAD instances
+    (reachcheck.out SUBDIV-DEAD lines) are runs of the statement as now worded ✓.
+  - My predecessor's independent builder (R2-P-N5-REACH/r2reach.py subdiv(), l. 133-137) appends pads in the order a = 0..n−1, b in sc[a];
+    in instances A and B every successor list is sorted ([1], [0, 1, 2], [0]; [1, 3, 4], [2, 3], [3, 4], [0, 2, 3], [1, 4]), so this is
+    the same (a, b) order, and r2reach_subdiv.out (A: fallbacks 1 vs 0; B: iterations 2 vs 3, projected states differ) is a replay of the
+    corrected statement too ✓.
+- Entry 2 of the fixes file: read; it applies R1 and R2 as stated and changes no statement, proof, tool, output or instance ✓.
+- Verdict: entry 2 **CORRECT**; **L-3 MATCHES** the packet with fixes entries 1-2, in bytes and in meaning (Opus 5.5, D1). Statement
+  verdicts unchanged (all SIGN); W-1, W-2, W-3 all met.
