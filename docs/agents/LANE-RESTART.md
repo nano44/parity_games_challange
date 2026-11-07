@@ -251,3 +251,5 @@ Five questions:
 | 2026-11-06 | REFEREE | session_01V5yGRVwYrR9t5ou8J7NpU6 (PARKED, handover bc2bdd5a; idle confirmed 23:3xZ before creation) | session_01V5yGRYL9TALEt9Zg8U7NQg (Opus, D1/D18/D20) | PENDING | PENDING (successor's check) |
 | 2026-11-06 | REFEREE-2 (second seat; 28 still finishing IM) | session_01V5yGRXnqmj4uUT6gvVHRfp (active until its IM report; then parks) | session_01V5yGRXHPVCKLouwxPfyxXk (Opus, D1/D18/D20) | 5 | none (handover check passed 5/5; row added late 00:0xZ 11-07 by Lead) |
 | 2026-11-06 | REFEREE (check) | session_01V5yGRYL9TALEt9Zg8U7NQg | (successor 25 STEP 0) | 5 | none (e1815909: ls-remote = HEAD = bc2bdd5a, not shallow; trap = DATA rule; jobs detached/resumable) |
+| 2026-11-07 | L-SI | session_01V5yGRYeBQHWjsh4bJCU8a3 (PARKED, handover 306e4862; idle confirmed 00:03Z before creation) | session_01V5yGRZDRAGZFgHvmRBGoKz (Opus, D14/D18/D20) | PENDING | PENDING (successor's check) |
+| 2026-11-07 | L-LOWER | session_0153E4mCB2wqi65xdfpxozfK (PARKED 2026-10-15, aa8995e; idle confirmed 00:04Z before creation) | session_01V5yGRYtLwuB7qNYQrinwP1 (Opus, D14/D18/D20) | PENDING | PENDING (successor's check; told to merge trunk first) |
