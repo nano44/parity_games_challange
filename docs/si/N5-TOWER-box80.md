@@ -137,6 +137,22 @@ DATA / READING. Not a TARGET.md claim; no statement bounds T polynomially; G-N5-
     There the middle 6-window gets no move and its two neighbours one each. While the pair 3 is split, every 6-window gets both moves.
   - READING: the pair 6's fuel reaches it only through chains that pass the split pair 3. A 7th capped level needs a fuel path for
     the pair 6 that is live in the pair-4 pulses inside the pair-3 gaps. That is a concrete design target, not yet met.
+- SECOND-INSTANCE TEST of L-LOWER's DOMINANCE-FREEZE observation (Lead 15:14Z; L-LOWER: on SL41_d28, sha1 c1b46c31, 48 of 127
+  6-windows fail, each decided by ONE parked lower-tower β, option (9, 1), rank 87; Lemma 4 DOMINANCE-FREEZE in docs/lower/P-TOWER-FUEL.md
+  at claude/l-lower 740f6c79). Own code experiments/si/box80/decider80.py → decider80.out; the decider is the option of largest rank in
+  the symmetric difference of the two option paths, owner and rank only, no parity. FAILING window = some member of the pair 6 does
+  not move exactly once. Results:
+  - climb_s2_snapshot (2a3bde93): 48 of 127 6-windows fail, in 64 (window, member) units.
+    - 48 units: the decider is the parked (13, 1), the option 1 of the pair-6 member 13 itself, rank 69. Alone in 32 units; in 16
+      units a higher-rank parked β also appears at some states: (7, 0) of level 3, or (25, 0), (26, 1), (32, 0), (51, 0), (28, 0).
+    - The other 16 units (member 12): the deciders are (12, 1) / (13, 1), and their owners move in the window.
+  - climb_w1_P0: 48 of 127 fail. The decider is (23, 1), a level-11 block mover, rank 58, parked, in every unit (with a second parked
+    β at some states).
+  - READING: three independent genomes (L-LOWER's SL41_d28 and these two) fail in exactly 48 of 127 6-windows. In each, a single PARKED
+    β dominates the pair-6 comparison, as DOMINANCE-FREEZE (b) predicts. But the parked β's owner differs: a lower-tower member (9, 1)
+    in SL41, the pair-6 member's own option in the snapshot, a block mover at level 11 in w1. Same obstruction shape, different owner.
+    This is evidence that the block is structural (some β of rank above every live β of the comparison stays parked through a
+    pulse-phase that recurs every 8 windows), not tied to the lower tower. Not proved.
 - Closures: every Z_j of H5 and of H6 (j = 0..6) is the whole genome (40 resp. 48 movers).
 
 ## 6. Question (b): a lower bound on the levels per capped level — what is and is not proved
