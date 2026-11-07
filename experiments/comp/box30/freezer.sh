@@ -5,12 +5,12 @@
 cd "$(dirname "$0")"
 while true; do
   M=$(awk '{print $4}' out/FROZEN.txt 2>/dev/null | sort -n | tail -1); M=${M:-238}
-  for g in out/D_l6z_u*.txt out/D_l6z_best.txt out/D_l6h_u*.txt out/D_l6h_best.txt out/D_l6w_u*.txt out/D_l6w_best.txt out/D_l6w2_u*.txt out/D_l6w2_best.txt out/D_l6v_u*.txt out/D_l6v_best.txt out/D_l6u_u*.txt out/D_l6u_best.txt out/D_l6u2_u*.txt out/D_l6u2_best.txt; do
+  for g in out/D_l6z_u*.txt out/D_l6z_best.txt out/D_l6h_u*.txt out/D_l6h_best.txt out/D_l6w_u*.txt out/D_l6w_best.txt out/D_l6w2_u*.txt out/D_l6w2_best.txt out/D_l6v_u*.txt out/D_l6v_best.txt out/D_l6u_u*.txt out/D_l6u_best.txt out/D_l6u2_u*.txt out/D_l6u2_best.txt out/D_l6x_u*.txt out/D_l6x_best.txt; do
     [ -f "$g" ] || continue; ln=$(tail -1 "$g")
-    echo "$ln" | grep -Eq "l6_caps 6 l6_q5 [0-9]+ l6_npaths 0( l6_len1w6 [0-9]+)?$" || continue
+    echo "$ln" | grep -Eq "l6_caps 6 l6_q5 [0-9]+ l6_npaths 0( l6_len1w6 [0-9]+)?( l6_c24 [0-9]+)?$" || continue
     f6=$(echo "$ln" | awk '{for(i=1;i<=NF;i++) if($i=="F"){print $(i+7); exit}}')
     [ -n "$f6" ] && [ "$f6" -gt "$M" ] || continue
     lane=$(basename "$g" .txt | sed 's/_u[0-9]*\(_killed\)\?$//; s/_best$//'); o=out/L6_FRZ_F${f6}_${lane}.txt; cp "$g" "$o"
-    grep -Eq "l6_npaths 0( l6_len1w6 [0-9]+)?$" "$o" || { rm -f "$o"; continue; }
+    grep -Eq "l6_npaths 0( l6_len1w6 [0-9]+)?( l6_c24 [0-9]+)?$" "$o" || { rm -f "$o"; continue; }
     echo "$(date -u +%FT%TZ) $o F6 $f6 sha1 $(sha1sum < "$o" | cut -c1-40) $(tail -1 "$o" | grep -o 'T [0-9]* F [-0-9 ]*moves' | sed 's/ moves//')" >> out/FROZEN.txt; M=$f6
   done; sleep 20; done

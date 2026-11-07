@@ -55,5 +55,9 @@ ENVX="LANEANNEAL=0.15 L6SCORE=1 L6W=1 L6GATE=240 FIX=20,34 FROZENBELOW=12 NMIN=2
 # 23:3xZ: query 2 COMPLETE (box28/log/lsi_q2_cert.txt) -> its 2 cores: D_l6u / D_l6u2 = D_l6v's settings from out/L6_FRZ_F248_D_l6v.txt
 # (sha1 ba061180; F(6) 248, n1 3), gate 248; seeds 415000+ / 420000+.
 ENVX="LANEANNEAL=0.15 L6SCORE=1 L6W=1 L6GATE=248 FIX=20,34 FROZENBELOW=12 NMIN=2 NMAX=4" upa D_l6u D_l6u out/L6_FRZ_F248_D_l6v.txt 415000 6 5 6
-ENVX="LANEANNEAL=0.15 L6SCORE=1 L6W=1 L6GATE=248 FIX=20,34 FROZENBELOW=12 NMIN=2 NMAX=4" upa D_l6u2 D_l6u2 out/L6_FRZ_F248_D_l6v.txt 420000 6 5 6
+# STOPPED 23:5xZ (Lead 23:48Z; resume in out/D_l6u2.log): ENVX="LANEANNEAL=0.15 L6SCORE=1 L6W=1 L6GATE=248 FIX=20,34 FROZENBELOW=12 NMIN=2 NMAX=4" upa D_l6u2 D_l6u2 out/L6_FRZ_F248_D_l6v.txt 420000 6 5 6
+# 23:5xZ (Lead 23:48Z, L-LOWER 8 c6a8980f L8-design §1e): D_l6x from L6_FRZ_F248 (sha1 ba061180): L6W score + c24 (env L6W24=138: number of
+# steps t in 1..137 with o(24) changed), order (caps, [F6>=248], -npaths, -n1, c24, F6) = caps*1e13 + g*1e12 - npaths*1e9 - n1*1e6 + c24*1e3
+# + F6 (= Python reference on F248, F246, 20 mutants, cutoffs 138 and 400). FIX 20,34, movers >= 12, NMIN 2 / NMAX 4. Seeds 425000+.
+ENVX="LANEANNEAL=0.15 L6SCORE=1 L6W=1 L6GATE=248 L6W24=138 FIX=20,34 FROZENBELOW=12 NMIN=2 NMAX=4" upa D_l6x D_l6x out/L6_FRZ_F248_D_l6v.txt 425000 6 5 6
 f=out/.pid_freezer; if [ -f $f ] && kill -0 $(cat $f) 2>/dev/null; then echo "freezer running"; else setsid nohup ./freezer.sh < /dev/null > /dev/null 2>&1 & sleep 1; pgrep -f "^/bin/bash ./freezer.sh" > $f; echo "freezer launched $(cat $f)"; fi
