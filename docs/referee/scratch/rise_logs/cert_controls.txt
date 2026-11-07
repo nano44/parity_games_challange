@@ -1,0 +1,3 @@
+ctl_swap: ctl_swap.json d 3 rows 73 features 121 bad 0 inconsistent False rank 73 free 0 negative 61 residual-features 0 sum_a 1 sum_b 1 bound -22.000000 = -22
+ctl_badstep: ctl_badstep.json d 3 rows 72 features 121 bad 1 inconsistent True rank 72 free 0 negative 0 residual-features 0 sum_a 0 sum_b 0 bound 0.000000 = 0
+ctl_droprow: ctl_droprow.json d 3 rows 72 features 121 bad 0 inconsistent True rank 72 free 0 negative 0 residual-features 0 sum_a 0 sum_b 0 bound 0.000000 = 0

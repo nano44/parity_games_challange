@@ -1,0 +1,13 @@
+LEMCK big_d3_k3_W3.json L 17 stuck viol SBAR 0 TAU 0 ESC 0 W 0 AV 0 KEY 0 FB 0
+LEMCK big_d4_k3_W3.json L 32 stuck viol SBAR 0 TAU 0 ESC 0 W 0 AV 0 KEY 0 FB 0
+LEMCK big_d6_k3_W3.json L 42 stuck viol SBAR 0 TAU 0 ESC 0 W 0 AV 0 KEY 0 FB 0
+LEMCK big_d8_k3_W3.json L 54 stuck viol SBAR 0 TAU 0 ESC 0 W 0 AV 0 KEY 0 FB 0
+LEMCK grow_top_N15.json L 39 stuck viol SBAR 0 TAU 0 ESC 0 W 0 AV 0 KEY 0 FB 0
+LEMCK grow_top_N24.json L 64 stuck viol SBAR 0 TAU 0 ESC 0 W 0 AV 0 KEY 0 FB 0
+LEMCK grow_bottom_N24.json L 48 stuck viol SBAR 0 TAU 0 ESC 0 W 0 AV 0 KEY 0 FB 0
+LEMCK x3_L8.json L 8 stuck viol SBAR 0 TAU 0 ESC 0 W 0 AV 0 KEY 0 FB 0
+LEMCK g4_L12.json L 12 stuck viol SBAR 0 TAU 0 ESC 0 W 0 AV 0 KEY 0 FB 0
+LEMCK random ACYC d 3 games 20 L 0-2 sum 19 viol SBAR 0 TAU 0 ESC 0 W 0 AV 0 KEY 0 FB 0
+LEMCK random ACYC d 4 games 20 L 1-2 sum 24 viol SBAR 0 TAU 0 ESC 0 W 0 AV 0 KEY 0 FB 0
+LEMCK random ACYC d 5 games 20 L 0-2 sum 20 viol SBAR 0 TAU 0 ESC 0 W 0 AV 0 KEY 0 FB 0
+LEMCK perturbed ACYC games 60 L 1-64 sum 1011 viol SBAR 0 TAU 0 ESC 0 W 0 AV 0 KEY 0 FB 0

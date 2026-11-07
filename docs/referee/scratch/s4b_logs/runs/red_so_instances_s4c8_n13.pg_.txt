@@ -1,0 +1,4 @@
+GAME red/so/instances/s4c8_n13.pg 
+GAMES 1
+VIOLATIONS 0
+RC 0

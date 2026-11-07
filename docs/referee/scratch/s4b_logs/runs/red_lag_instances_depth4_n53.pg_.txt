@@ -1,0 +1,9 @@
+GAME red/lag/instances/depth4_n53.pg 
+GAMES 1
+enum_skip 1
+enum_states 2
+loc_chk 36
+rhos 40
+states 3
+VIOLATIONS 0
+RC 0

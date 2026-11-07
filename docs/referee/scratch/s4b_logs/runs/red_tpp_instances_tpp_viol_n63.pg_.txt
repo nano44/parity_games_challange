@@ -1,0 +1,10 @@
+GAME red/tpp/instances/tpp_viol_n63.pg 
+GAMES 1
+enum_skip 2
+enum_states 6
+keep_chk 1
+loc_chk 65
+rhos 1428
+states 8
+VIOLATIONS 0
+RC 0

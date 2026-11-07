@@ -1,0 +1,9 @@
+GAME red/dtl/instances/lalg_dtl_restart8_n20.pg 
+GAMES 1
+enum_skip 3
+enum_states 2
+loc_chk 109
+rhos 6
+states 5
+VIOLATIONS 0
+RC 0

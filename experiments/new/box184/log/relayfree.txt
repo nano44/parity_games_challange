@@ -1,0 +1,2 @@
+d 3: frozen non-ISO frames 56, max T 4 (T_0(2) = 4) at dbl_d3_F6.json q (0, 1)
+d 4: frozen non-ISO frames 68, max T 8 (T_0(3) >= 8) at NOL0_1_d4_t8.json q (0, 0)

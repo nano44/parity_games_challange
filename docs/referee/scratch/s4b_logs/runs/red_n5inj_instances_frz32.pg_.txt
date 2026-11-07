@@ -1,0 +1,4 @@
+GAME red/n5inj/instances/frz32.pg 
+GAMES 1
+VIOLATIONS 0
+RC 0

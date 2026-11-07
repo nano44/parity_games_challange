@@ -1,0 +1,2 @@
+build d 3 L 9 P None W R SYM 1 CUBE 2:1,3:1,4:0,5:1, FREE0 None KF None vars 58896 clauses 204036 0.2 s
+RESULT d 3 T >= 9 P None W R: UNSAT 479.5 s

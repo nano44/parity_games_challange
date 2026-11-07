@@ -1,0 +1,10 @@
+GAMES 3000
+corner_own_cycle 1371
+even 5264
+flat_nc 76
+movers 6576
+odd 1312
+ties_even 233
+ties_even_kappa_ne_index 15
+ties_odd 20
+VIOLATIONS 0

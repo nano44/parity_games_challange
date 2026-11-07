@@ -1,0 +1,813 @@
+GAME n5-epoch/instances/ffin4_n24.pg CNIDX ffin4_n24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/ffin12_n32.pg CNIDX ffin12_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/ffin12_n32.pg n5-epoch/instances/ffin12_n32.start CNIDX ffin12_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/ffin4_n24.pg n5-epoch/instances/ffin4_n24.start CNIDX ffin4_n24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/ffin5_n32.pg CNIDX ffin5_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/gci2_n12.pg CNIDX gci2_n12.pg n 12 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/ffin5_n32.pg n5-epoch/instances/ffin5_n32.start CNIDX ffin5_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/gci2_n12.pg n5-epoch/instances/gci2_n12.start CNIDX gci2_n12.pg n 12 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/gci3_n24.pg CNIDX gci3_n24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/immfail_n14.pg CNIDX immfail_n14.pg n 14 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/gci3_n24.pg n5-epoch/instances/gci3_n24.start CNIDX gci3_n24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/immp_cex_n11.pg CNIDX immp_cex_n11.pg n 11 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/immp_cex_n11.pg n5-epoch/instances/immp_cex_n11.start CNIDX immp_cex_n11.pg n 11 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/lcount_n23.pg CNIDX lcount_n23.pg n 23 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/lcount_n23.pg n5-epoch/instances/lcount_n23.start CNIDX lcount_n23.pg n 23 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/lend107_n32.pg CNIDX lend107_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/lend13_n16.pg CNIDX lend13_n16.pg n 16 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/lend13_n16.pg n5-epoch/instances/lend13_n16.start CNIDX lend13_n16.pg n 16 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/lend107_n32.pg n5-epoch/instances/lend107_n32.start CNIDX lend107_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/lend15_n48.pg CNIDX lend15_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/lend27_n24.pg CNIDX lend27_n24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/lend15_n48.pg n5-epoch/instances/lend15_n48.start CNIDX lend15_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/lend27_n24.pg n5-epoch/instances/lend27_n24.start CNIDX lend27_n24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/lend39f_n32.pg CNIDX lend39f_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/lend47_n32.pg CNIDX lend47_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/lend39f_n32.pg n5-epoch/instances/lend39f_n32.start CNIDX lend39f_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/lend55_n32.pg CNIDX lend55_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/lend47_n32.pg n5-epoch/instances/lend47_n32.start CNIDX lend47_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/lend55_n32.pg n5-epoch/instances/lend55_n32.start CNIDX lend55_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/lend72_n48.pg CNIDX lend72_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/lend82_n32.pg CNIDX lend82_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/lend9_n8.pg CNIDX lend9_n8.pg n 8 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/lend9_n8.pg n5-epoch/instances/lend9_n8.start CNIDX lend9_n8.pg n 8 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/lend72_n48.pg n5-epoch/instances/lend72_n48.start CNIDX lend72_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/lend82_n32.pg n5-epoch/instances/lend82_n32.start CNIDX lend82_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/nep13_n24.pg CNIDX nep13_n24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/nep13_n24.pg n5-epoch/instances/nep13_n24.start CNIDX nep13_n24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/nconf61_n48.pg CNIDX nconf61_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/nep56_n32.pg CNIDX nep56_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/nep22f_n64.pg CNIDX nep22f_n64.pg n 64 CNMOVES 2 UP 2 DOWN 0 RET 0 DOWN_NOSHORT 0 EX [(15, 48, 19, 28), (24, 48, 19, 28)]
+GAME n5-epoch/instances/nconf61_n48.pg n5-epoch/instances/nconf61_n48.start CNIDX nconf61_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/nep22f_n64.pg n5-epoch/instances/nep22f_n64.start CNIDX nep22f_n64.pg n 64 CNMOVES 2 UP 2 DOWN 0 RET 0 DOWN_NOSHORT 0 EX [(15, 48, 19, 28), (24, 48, 19, 28)]
+GAME n5-epoch/instances/nep56_n32.pg n5-epoch/instances/nep56_n32.start CNIDX nep56_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/nep76_n40.pg CNIDX nep76_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/nep92_n40.pg CNIDX nep92_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/nep94_n48.pg CNIDX nep94_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/nep76_n40.pg n5-epoch/instances/nep76_n40.start CNIDX nep76_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/nep92_n40.pg n5-epoch/instances/nep92_n40.start CNIDX nep92_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/ret12_n40.pg CNIDX ret12_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/ret14_n48.pg CNIDX ret14_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/ret12_n40.pg n5-epoch/instances/ret12_n40.start CNIDX ret12_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/nep94_n48.pg n5-epoch/instances/nep94_n48.start CNIDX nep94_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/ret14_n64.pg CNIDX ret14_n64.pg n 64 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b4_cyc6_0.pg CNIDX b4_cyc6_0.pg n 11 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b4_cyc6_1.pg CNIDX b4_cyc6_1.pg n 12 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b4_cyc6_0.pg n5-exhaustive/instances/b4_cyc6_0.start CNIDX b4_cyc6_0.pg n 11 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b4_n4all_cyc3_0.pg CNIDX b4_n4all_cyc3_0.pg n 4 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b4_n4all_cyc3_0.pg n5-exhaustive/instances/b4_n4all_cyc3_0.start CNIDX b4_n4all_cyc3_0.pg n 4 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b4_n5_other_0.pg CNIDX b4_n5_other_0.pg n 5 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b4_nohlen5_0.pg CNIDX b4_nohlen5_0.pg n 11 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/ret14_n48.pg n5-epoch/instances/ret14_n48.start CNIDX ret14_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b4_nohlen5_0.pg n5-exhaustive/instances/b4_nohlen5_0.start CNIDX b4_nohlen5_0.pg n 11 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-epoch/instances/ret14_n64.pg n5-epoch/instances/ret14_n64.start CNIDX ret14_n64.pg n 64 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b4_theta_n7.pg n5-exhaustive/instances/b4_theta_n7.start CNIDX b4_theta_n7.pg n 7 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b5_n5_cyc4_0.pg CNIDX b5_n5_cyc4_0.pg n 5 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b4_theta_n7.pg CNIDX b4_theta_n7.pg n 7 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b5_o11.pg CNIDX b5_o11.pg n 10 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b5_os_n14.pg CNIDX b5_os_n14.pg n 14 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b5_os_n12.pg CNIDX b5_os_n12.pg n 12 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b5_os_n16.pg CNIDX b5_os_n16.pg n 16 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b5_os_n20.pg CNIDX b5_os_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b5_os_n24.pg CNIDX b5_os_n24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b5_os_n28.pg CNIDX b5_os_n28.pg n 28 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b5_os_n32.pg CNIDX b5_os_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b6_xl2_n32.pg CNIDX b6_xl2_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b6_xl_n32.pg CNIDX b6_xl_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b5_os_n40.pg CNIDX b5_os_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b6_xl_n40.pg CNIDX b6_xl_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b6_xs_n24.pg CNIDX b6_xs_n24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b6_xs_n32.pg CNIDX b6_xs_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b6_xl_n48.pg CNIDX b6_xl_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b6_xs_n48.pg CNIDX b6_xs_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b6_xs_n40.pg CNIDX b6_xs_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b6_xw_n32.pg CNIDX b6_xw_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/canonA_0.pg CNIDX canonA_0.pg n 15 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b6_xw_n40.pg CNIDX b6_xw_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/canonA_1.pg CNIDX canonA_1.pg n 15 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/frz1_n24.pg CNIDX frz1_n24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b6_xw_n48.pg CNIDX b6_xw_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/frz1_n24.pg n5-exhaustive/instances/frz1_n24.start CNIDX frz1_n24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/frz2_n24.pg CNIDX frz2_n24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/frz2_n24.pg n5-exhaustive/instances/frz2_n24.start CNIDX frz2_n24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/b6_xw_n56.pg CNIDX b6_xw_n56.pg n 56 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/frz3_n24.pg CNIDX frz3_n24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/frz3_n24.pg n5-exhaustive/instances/frz3_n24.start CNIDX frz3_n24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/n3all_maxph_0.pg CNIDX n3all_maxph_0.pg n 3 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/n3all_maxph_0.pg n5-exhaustive/instances/n3all_maxph_0.start CNIDX n3all_maxph_0.pg n 3 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/n3all_maxph_2.pg CNIDX n3all_maxph_2.pg n 3 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/n3all_maxph_1.pg CNIDX n3all_maxph_1.pg n 3 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/n3all_maxph_1.pg n5-exhaustive/instances/n3all_maxph_1.start CNIDX n3all_maxph_1.pg n 3 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/n3all_maxph_2.pg n5-exhaustive/instances/n3all_maxph_2.start CNIDX n3all_maxph_2.pg n 3 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/n4_maxph_0.pg CNIDX n4_maxph_0.pg n 4 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/n4all_maxph_0.pg CNIDX n4all_maxph_0.pg n 4 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/n4_maxph_1.pg CNIDX n4_maxph_1.pg n 4 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/n4_thch_0.pg CNIDX n4_thch_0.pg n 4 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/n4all_maxph_0.pg n5-exhaustive/instances/n4all_maxph_0.start CNIDX n4all_maxph_0.pg n 4 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/n4all_tgbad_0.pg CNIDX n4all_tgbad_0.pg n 4 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/n4all_maxph_1.pg CNIDX n4all_maxph_1.pg n 4 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/n4all_maxph_1.pg n5-exhaustive/instances/n4all_maxph_1.start CNIDX n4all_maxph_1.pg n 4 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/n4all_tgbad_0.pg n5-exhaustive/instances/n4all_tgbad_0.start CNIDX n4all_tgbad_0.pg n 4 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/n4all_thch_0.pg CNIDX n4all_thch_0.pg n 4 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/n5s_maxph_0.pg CNIDX n5s_maxph_0.pg n 5 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/n4all_thch_0.pg n5-exhaustive/instances/n4all_thch_0.start CNIDX n4all_thch_0.pg n 4 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/nh_n8.pg n5-exhaustive/instances/nh_n8.start CNIDX nh_n8.pg n 8 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/thetaA_canon_n12.pg CNIDX thetaA_canon_n12.pg n 12 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/nh_n8.pg CNIDX nh_n8.pg n 8 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/thetaA_canon_n8.pg CNIDX thetaA_canon_n8.pg n 8 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/thetaA_n17.pg CNIDX thetaA_n17.pg n 17 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/thetaA_n6.pg CNIDX thetaA_n6.pg n 6 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/thetaA_n17.pg n5-exhaustive/instances/thetaA_n17.start CNIDX thetaA_n17.pg n 17 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/thetaA_n7.pg CNIDX thetaA_n7.pg n 7 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/thetaA_n6.pg n5-exhaustive/instances/thetaA_n6.start CNIDX thetaA_n6.pg n 6 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/thetaA_n9.pg CNIDX thetaA_n9.pg n 9 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/thetaA_n7.pg n5-exhaustive/instances/thetaA_n7.start CNIDX thetaA_n7.pg n 7 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/thetaA_n9.pg n5-exhaustive/instances/thetaA_n9.start CNIDX thetaA_n9.pg n 9 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/wk1_n32.pg CNIDX wk1_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/wk1_n32.pg n5-exhaustive/instances/wk1_n32.start CNIDX wk1_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/wk2_n32.pg n5-exhaustive/instances/wk2_n32.start CNIDX wk2_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME n5-exhaustive/instances/wk2_n32.pg CNIDX wk2_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box48/instances/long121_n40.pg CNIDX long121_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg CNIDX best_qpc_nep76_n40_s63.pg n 64 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box48/instances/long121_n40.pg new/box48/instances/long121_n40.start CNIDX long121_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg CNIDX best_qpc_nep90_n40_s61.pg n 64 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg CNIDX best_qpc_nep90_n40_s62.pg n 80 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.start CNIDX best_qpc_nep76_n40_s63.pg n 64 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box48/out/qpcclimb/scale/snap_n80_s62.pg CNIDX snap_n80_s62.pg n 80 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box51/out/dlc_d2.pg CNIDX dlc_d2.pg n 27 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box51/out/dlc_d3.pg CNIDX dlc_d3.pg n 109 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.start CNIDX best_qpc_nep90_n40_s61.pg n 64 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.start CNIDX best_qpc_nep90_n40_s62.pg n 80 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box52/out/topfix_n3.pg CNIDX topfix_n3.pg n 63 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box48/out/qpcclimb/scale/snap_n80_s62.pg new/box48/out/qpcclimb/scale/snap_n80_s62.start CNIDX snap_n80_s62.pg n 80 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box52/out/topfix_n4.pg CNIDX topfix_n4.pg n 84 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box51/out/dlc_d4.pg CNIDX dlc_d4.pg n 455 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box52/out/topfix_n6.pg CNIDX topfix_n6.pg n 126 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/d_dlc_d3.pg CNIDX d_dlc_d3.pg n 109 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/d_hntop_n3.pg CNIDX d_hntop_n3.pg n 63 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/d_pivot_demo.pg CNIDX d_pivot_demo.pg n 11 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/d_runquad_K3.pg CNIDX d_runquad_K3.pg n 54 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_core_2.pg CNIDX counter_core_2.pg n 15 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_core_3.pg CNIDX counter_core_3.pg n 21 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_core_4.pg CNIDX counter_core_4.pg n 27 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_core_5.pg CNIDX counter_core_5.pg n 33 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_core_6.pg CNIDX counter_core_6.pg n 39 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_core_8.pg CNIDX counter_core_8.pg n 51 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_dp_2.pg CNIDX counter_dp_2.pg n 12 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_dp_3.pg CNIDX counter_dp_3.pg n 16 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_dp_4.pg CNIDX counter_dp_4.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box52/out/topfix_n8.pg CNIDX topfix_n8.pg n 168 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_dp_5.pg CNIDX counter_dp_5.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box52/out/topfix_n8_cmp.pg CNIDX topfix_n8_cmp.pg n 171 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_dp_6.pg CNIDX counter_dp_6.pg n 28 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_m_3.pg CNIDX counter_m_3.pg n 12 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_dp_8.pg CNIDX counter_dp_8.pg n 36 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_m_2.pg CNIDX counter_m_2.pg n 9 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_m_4.pg CNIDX counter_m_4.pg n 15 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_m_5.pg CNIDX counter_m_5.pg n 18 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_m_6.pg CNIDX counter_m_6.pg n 21 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_ortl_2.pg CNIDX counter_ortl_2.pg n 11 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_m_8.pg CNIDX counter_m_8.pg n 27 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box52/out/topfix_n10.pg CNIDX topfix_n10.pg n 210 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_ortl_3.pg CNIDX counter_ortl_3.pg n 16 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_ortl_4.pg CNIDX counter_ortl_4.pg n 21 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_ortl_5.pg CNIDX counter_ortl_5.pg n 26 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_ortl_6.pg CNIDX counter_ortl_6.pg n 31 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_ortl_8.pg CNIDX counter_ortl_8.pg n 41 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_qpt_2.pg CNIDX counter_qpt_2.pg n 4 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_qpt_3.pg CNIDX counter_qpt_3.pg n 6 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_qpt_4.pg CNIDX counter_qpt_4.pg n 8 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_qpt_5.pg CNIDX counter_qpt_5.pg n 10 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_qpt_6.pg CNIDX counter_qpt_6.pg n 12 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_qpt_8.pg CNIDX counter_qpt_8.pg n 16 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_rob_2.pg CNIDX counter_rob_2.pg n 31 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_rob_3.pg CNIDX counter_rob_3.pg n 54 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_rob_4.pg CNIDX counter_rob_4.pg n 83 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_rr_2.pg CNIDX counter_rr_2.pg n 8 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_rob_5.pg CNIDX counter_rob_5.pg n 118 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_rob_6.pg CNIDX counter_rob_6.pg n 159 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_rr_4.pg CNIDX counter_rr_4.pg n 16 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_rr_3.pg CNIDX counter_rr_3.pg n 12 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_rr_5.pg CNIDX counter_rr_5.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_rr_8.pg CNIDX counter_rr_8.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_rr_6.pg CNIDX counter_rr_6.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_rob_8.pg CNIDX counter_rob_8.pg n 259 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_symsi_2.pg CNIDX counter_symsi_2.pg n 22 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_symsi_3.pg CNIDX counter_symsi_3.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_symsi_4.pg CNIDX counter_symsi_4.pg n 42 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/recursiveladder_2.pg CNIDX recursiveladder_2.pg n 10 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_symsi_5.pg CNIDX counter_symsi_5.pg n 52 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/recursiveladder_3.pg CNIDX recursiveladder_3.pg n 15 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_symsi_6.pg CNIDX counter_symsi_6.pg n 62 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/recursiveladder_4.pg CNIDX recursiveladder_4.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/recursiveladder_5.pg CNIDX recursiveladder_5.pg n 25 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/recursiveladder_6.pg CNIDX recursiveladder_6.pg n 30 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/tc_2.pg CNIDX tc_2.pg n 22 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/tc_3.pg CNIDX tc_3.pg n 42 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/tc_4.pg CNIDX tc_4.pg n 68 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/counter_symsi_8.pg CNIDX counter_symsi_8.pg n 82 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/switchallexp_1.pg CNIDX switchallexp_1.pg n 21 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/switchallexp_2.pg CNIDX switchallexp_2.pg n 35 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/tc_5.pg CNIDX tc_5.pg n 100 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/tc_6.pg CNIDX tc_6.pg n 138 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/switchallexp_3.pg CNIDX switchallexp_3.pg n 49 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/switchallexp_5.pg CNIDX switchallexp_5.pg n 77 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/switchallexp_4.pg CNIDX switchallexp_4.pg n 63 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/switchbestexp_1.pg CNIDX switchbestexp_1.pg n 35 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/switchallexp_6.pg CNIDX switchallexp_6.pg n 91 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/hf/tc_8.pg CNIDX tc_8.pg n 232 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/switchbestexp_2.pg CNIDX switchbestexp_2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/switchbestexp_3.pg CNIDX switchbestexp_3.pg n 85 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/switchbestexp_4.pg CNIDX switchbestexp_4.pg n 110 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/switchbestexp_5.pg CNIDX switchbestexp_5.pg n 135 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/fc_3.pg CNIDX fc_3.pg n 85 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/switchbestexp_6.pg CNIDX switchbestexp_6.pg n 160 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/fc_4.pg CNIDX fc_4.pg n 110 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/switchbestexp_7.pg CNIDX switchbestexp_7.pg n 185 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/fc_5.pg CNIDX fc_5.pg n 135 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box54/out/switchbestexp_8.pg CNIDX switchbestexp_8.pg n 210 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/fc_6.pg CNIDX fc_6.pg n 160 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/fcobsP_3.pg CNIDX fcobsP_3.pg n 90 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/fcobsR_3.pg CNIDX fcobsR_3.pg n 90 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/fcobsP_4.pg CNIDX fcobsP_4.pg n 115 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/fc_7.pg CNIDX fc_7.pg n 185 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/fcobs_3.pg CNIDX fcobs_3.pg n 88 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/fcobsR_4.pg CNIDX fcobsR_4.pg n 115 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r100_n40.pg CNIDX r100_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r101_n50.pg CNIDX r101_n50.pg n 50 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r102_n60.pg CNIDX r102_n60.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r103_n70.pg CNIDX r103_n70.pg n 70 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r104_n80.pg CNIDX r104_n80.pg n 80 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r105_n20.pg CNIDX r105_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r106_n30.pg CNIDX r106_n30.pg n 30 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r107_n40.pg CNIDX r107_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r108_n50.pg CNIDX r108_n50.pg n 50 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/fcobs_4.pg CNIDX fcobs_4.pg n 113 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r109_n60.pg CNIDX r109_n60.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r10_n50.pg CNIDX r10_n50.pg n 50 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r110_n70.pg CNIDX r110_n70.pg n 70 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r111_n80.pg CNIDX r111_n80.pg n 80 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r112_n20.pg CNIDX r112_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r113_n30.pg CNIDX r113_n30.pg n 30 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r114_n40.pg CNIDX r114_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r115_n50.pg CNIDX r115_n50.pg n 50 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r116_n60.pg CNIDX r116_n60.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r117_n70.pg CNIDX r117_n70.pg n 70 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r118_n80.pg CNIDX r118_n80.pg n 80 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r119_n20.pg CNIDX r119_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r11_n60.pg CNIDX r11_n60.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r120_n30.pg CNIDX r120_n30.pg n 30 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r121_n40.pg CNIDX r121_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r122_n50.pg CNIDX r122_n50.pg n 50 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r123_n60.pg CNIDX r123_n60.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r124_n70.pg CNIDX r124_n70.pg n 70 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r125_n80.pg CNIDX r125_n80.pg n 80 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r126_n20.pg CNIDX r126_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r127_n30.pg CNIDX r127_n30.pg n 30 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r128_n40.pg CNIDX r128_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r129_n50.pg CNIDX r129_n50.pg n 50 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r130_n60.pg CNIDX r130_n60.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r12_n70.pg CNIDX r12_n70.pg n 70 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r131_n70.pg CNIDX r131_n70.pg n 70 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/fc_8.pg CNIDX fc_8.pg n 210 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r132_n80.pg CNIDX r132_n80.pg n 80 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r133_n20.pg CNIDX r133_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r134_n30.pg CNIDX r134_n30.pg n 30 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r135_n40.pg CNIDX r135_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r136_n50.pg CNIDX r136_n50.pg n 50 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r137_n60.pg CNIDX r137_n60.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r13_n80.pg CNIDX r13_n80.pg n 80 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r138_n70.pg CNIDX r138_n70.pg n 70 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r139_n80.pg CNIDX r139_n80.pg n 80 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r140_n20.pg CNIDX r140_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r141_n30.pg CNIDX r141_n30.pg n 30 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r142_n40.pg CNIDX r142_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r143_n50.pg CNIDX r143_n50.pg n 50 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r144_n60.pg CNIDX r144_n60.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r147_n20.pg CNIDX r147_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r145_n70.pg CNIDX r145_n70.pg n 70 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r146_n80.pg CNIDX r146_n80.pg n 80 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r149_n40.pg CNIDX r149_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r148_n30.pg CNIDX r148_n30.pg n 30 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r14_n20.pg CNIDX r14_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r151_n60d2.pg CNIDX r151_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r150_n50.pg CNIDX r150_n50.pg n 50 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r152_n60d2.pg CNIDX r152_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r154_n60d2.pg CNIDX r154_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r153_n60d2.pg CNIDX r153_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r155_n60d2.pg CNIDX r155_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r156_n60d2.pg CNIDX r156_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r157_n60d2.pg CNIDX r157_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r158_n60d2.pg CNIDX r158_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r159_n60d2.pg CNIDX r159_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/fcobs_6.pg CNIDX fcobs_6.pg n 163 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r15_n30.pg CNIDX r15_n30.pg n 30 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r161_n60d2.pg CNIDX r161_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r160_n60d2.pg CNIDX r160_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r162_n60d2.pg CNIDX r162_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r164_n60d2.pg CNIDX r164_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r165_n60d2.pg CNIDX r165_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r166_n60d2.pg CNIDX r166_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r163_n60d2.pg CNIDX r163_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r167_n60d2.pg CNIDX r167_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r169_n60d2.pg CNIDX r169_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r168_n60d2.pg CNIDX r168_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r16_n40.pg CNIDX r16_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r170_n60d2.pg CNIDX r170_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r171_n60d2.pg CNIDX r171_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r172_n60d2.pg CNIDX r172_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r173_n60d2.pg CNIDX r173_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r174_n60d2.pg CNIDX r174_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r175_n60d2.pg CNIDX r175_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r176_n60d2.pg CNIDX r176_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r179_n60d2.pg CNIDX r179_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r178_n60d2.pg CNIDX r178_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r177_n60d2.pg CNIDX r177_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r182_n60d2.pg CNIDX r182_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r180_n60d2.pg CNIDX r180_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r17_n50.pg CNIDX r17_n50.pg n 50 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r181_n60d2.pg CNIDX r181_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r183_n60d2.pg CNIDX r183_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r185_n60d2.pg CNIDX r185_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r184_n60d2.pg CNIDX r184_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r188_n60d2.pg CNIDX r188_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r187_n60d2.pg CNIDX r187_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r186_n60d2.pg CNIDX r186_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r18_n60.pg CNIDX r18_n60.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r190_n60d2.pg CNIDX r190_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r192_n60d2.pg CNIDX r192_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r189_n60d2.pg CNIDX r189_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r191_n60d2.pg CNIDX r191_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r193_n60d2.pg CNIDX r193_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r196_n60d2.pg CNIDX r196_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r195_n60d2.pg CNIDX r195_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r194_n60d2.pg CNIDX r194_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r197_n60d2.pg CNIDX r197_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r198_n60d2.pg CNIDX r198_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r19_n70.pg CNIDX r19_n70.pg n 70 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r1_n30.pg CNIDX r1_n30.pg n 30 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r200_n60d2.pg CNIDX r200_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r199_n60d2.pg CNIDX r199_n60d2.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r21_n20.pg CNIDX r21_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r20_n80.pg CNIDX r20_n80.pg n 80 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r22_n30.pg CNIDX r22_n30.pg n 30 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r23_n40.pg CNIDX r23_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r25_n60.pg CNIDX r25_n60.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r24_n50.pg CNIDX r24_n50.pg n 50 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r26_n70.pg CNIDX r26_n70.pg n 70 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r28_n20.pg CNIDX r28_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r2_n40.pg CNIDX r2_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r29_n30.pg CNIDX r29_n30.pg n 30 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r27_n80.pg CNIDX r27_n80.pg n 80 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r30_n40.pg CNIDX r30_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r31_n50.pg CNIDX r31_n50.pg n 50 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r35_n20.pg CNIDX r35_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r32_n60.pg CNIDX r32_n60.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r33_n70.pg CNIDX r33_n70.pg n 70 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r34_n80.pg CNIDX r34_n80.pg n 80 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r36_n30.pg CNIDX r36_n30.pg n 30 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r37_n40.pg CNIDX r37_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r3_n50.pg CNIDX r3_n50.pg n 50 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r39_n60.pg CNIDX r39_n60.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r38_n50.pg CNIDX r38_n50.pg n 50 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r43_n30.pg CNIDX r43_n30.pg n 30 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r41_n80.pg CNIDX r41_n80.pg n 80 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r40_n70.pg CNIDX r40_n70.pg n 70 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r42_n20.pg CNIDX r42_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r44_n40.pg CNIDX r44_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r46_n60.pg CNIDX r46_n60.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r47_n70.pg CNIDX r47_n70.pg n 70 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r45_n50.pg CNIDX r45_n50.pg n 50 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r48_n80.pg CNIDX r48_n80.pg n 80 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r4_n60.pg CNIDX r4_n60.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r49_n20.pg CNIDX r49_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r50_n30.pg CNIDX r50_n30.pg n 30 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r51_n40.pg CNIDX r51_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r53_n60.pg CNIDX r53_n60.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r54_n70.pg CNIDX r54_n70.pg n 70 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r52_n50.pg CNIDX r52_n50.pg n 50 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r56_n20.pg CNIDX r56_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r55_n80.pg CNIDX r55_n80.pg n 80 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r59_n50.pg CNIDX r59_n50.pg n 50 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r58_n40.pg CNIDX r58_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r57_n30.pg CNIDX r57_n30.pg n 30 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r5_n70.pg CNIDX r5_n70.pg n 70 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r60_n60.pg CNIDX r60_n60.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r61_n70.pg CNIDX r61_n70.pg n 70 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r62_n80.pg CNIDX r62_n80.pg n 80 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r63_n20.pg CNIDX r63_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r65_n40.pg CNIDX r65_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r64_n30.pg CNIDX r64_n30.pg n 30 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r68_n70.pg CNIDX r68_n70.pg n 70 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r66_n50.pg CNIDX r66_n50.pg n 50 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r69_n80.pg CNIDX r69_n80.pg n 80 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r67_n60.pg CNIDX r67_n60.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r71_n30.pg CNIDX r71_n30.pg n 30 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r70_n20.pg CNIDX r70_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r6_n80.pg CNIDX r6_n80.pg n 80 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r72_n40.pg CNIDX r72_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r73_n50.pg CNIDX r73_n50.pg n 50 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r74_n60.pg CNIDX r74_n60.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r75_n70.pg CNIDX r75_n70.pg n 70 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r77_n20.pg CNIDX r77_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r79_n40.pg CNIDX r79_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r76_n80.pg CNIDX r76_n80.pg n 80 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r78_n30.pg CNIDX r78_n30.pg n 30 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r7_n20.pg CNIDX r7_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r80_n50.pg CNIDX r80_n50.pg n 50 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r83_n80.pg CNIDX r83_n80.pg n 80 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r82_n70.pg CNIDX r82_n70.pg n 70 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r81_n60.pg CNIDX r81_n60.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r85_n30.pg CNIDX r85_n30.pg n 30 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r84_n20.pg CNIDX r84_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r86_n40.pg CNIDX r86_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r89_n70.pg CNIDX r89_n70.pg n 70 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r88_n60.pg CNIDX r88_n60.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r87_n50.pg CNIDX r87_n50.pg n 50 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r8_n30.pg CNIDX r8_n30.pg n 30 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r92_n30.pg CNIDX r92_n30.pg n 30 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r90_n80.pg CNIDX r90_n80.pg n 80 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r91_n20.pg CNIDX r91_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r93_n40.pg CNIDX r93_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r94_n50.pg CNIDX r94_n50.pg n 50 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r95_n60.pg CNIDX r95_n60.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r96_n70.pg CNIDX r96_n70.pg n 70 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r98_n20.pg CNIDX r98_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r97_n80.pg CNIDX r97_n80.pg n 80 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/absmono_viol_n44.pg CNIDX absmono_viol_n44.pg n 44 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r99_n30.pg CNIDX r99_n30.pg n 30 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME new/box59/out/rnd/r9_n40.pg CNIDX r9_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/carry3_2_2.pg CNIDX carry3_2_2.pg n 47 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/cm_mdrop_both_n28.pg CNIDX cm_mdrop_both_n28.pg n 28 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/cm_mdrop_oink_n28.pg CNIDX cm_mdrop_oink_n28.pg n 28 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/ctx11_n40.pg CNIDX ctx11_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/ctx12_n40.pg CNIDX ctx12_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/ctx6_n20.pg CNIDX ctx6_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/ctx7_n30.pg CNIDX ctx7_n30.pg n 30 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/ctx6_n56.pg CNIDX ctx6_n56.pg n 56 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/ctx13_n40.pg CNIDX ctx13_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/f1_twofall_n48.pg CNIDX f1_twofall_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/f1_twodef_n48.pg CNIDX f1_twodef_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/fall3_n76.pg CNIDX fall3_n76.pg n 76 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/firedlong667_n20.pg CNIDX firedlong667_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/fired10_n20.pg CNIDX fired10_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/fallv_viol_n28.pg CNIDX fallv_viol_n28.pg n 28 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/firedlong667_n43.pg CNIDX firedlong667_n43.pg n 43 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/gapb_dup_n20.pg CNIDX gapb_dup_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/gapbW_dup_n20.pg CNIDX gapbW_dup_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/firedstep13_n76.pg CNIDX firedstep13_n76.pg n 76 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/fall4_n116.pg CNIDX fall4_n116.pg n 116 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/h4_compound2x2_n44.pg CNIDX h4_compound2x2_n44.pg n 44 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/h4_compound_n44.pg CNIDX h4_compound_n44.pg n 44 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/h4_def7_n28.pg CNIDX h4_def7_n28.pg n 28 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/h4_def2ctx_n20.pg CNIDX h4_def2ctx_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/h4_notweaker_n20.pg CNIDX h4_notweaker_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/kfirst_viol_n13.pg CNIDX kfirst_viol_n13.pg n 13 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/kin_viol_n29.pg CNIDX kin_viol_n29.pg n 29 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/h4_disjoint_n20.pg CNIDX h4_disjoint_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/lemmaS_Mdrop_n20.pg CNIDX lemmaS_Mdrop_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/lalg_dtl_mviol_n20.pg CNIDX lalg_dtl_mviol_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/lex_viol_inj_n28.pg CNIDX lex_viol_inj_n28.pg n 28 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/lemmaS_viol_n20.pg CNIDX lemmaS_viol_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/lex_viol_tie_n28.pg CNIDX lex_viol_tie_n28.pg n 28 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/meet_viol_n17.pg CNIDX meet_viol_n17.pg n 17 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/meet_viol_n29.pg CNIDX meet_viol_n29.pg n 29 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/nosig_2_3.pg CNIDX nosig_2_3.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/pk_viol_n20.pg CNIDX pk_viol_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/phi_flat_alive_n32.pg CNIDX phi_flat_alive_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/replay4_n32.pg CNIDX replay4_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/spp19_oink_n30.pg CNIDX spp19_oink_n30.pg n 30 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/spp19_stable_n30.pg CNIDX spp19_stable_n30.pg n 30 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/spp22_oink_n40.pg CNIDX spp22_oink_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/spp25_oink_n40.pg CNIDX spp25_oink_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/stealonce_core_n76.pg CNIDX stealonce_core_n76.pg n 76 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/stealonce_both_n45.pg CNIDX stealonce_both_n45.pg n 45 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/stealonce_viol_n76.pg CNIDX stealonce_viol_n76.pg n 76 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/ctl/pivot_demo.pg CNIDX pivot_demo.pg n 11 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/tstep_near_n20.pg CNIDX tstep_near_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/carry/instances/stealer_viol_n76.pg CNIDX stealer_viol_n76.pg n 76 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/ctxp/instances/margin1_mc5.pg CNIDX margin1_mc5.pg n 50 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/ctxp/instances/deep1_n13.pg CNIDX deep1_n13.pg n 13 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/ctxp/instances/deep1_n21.pg CNIDX deep1_n21.pg n 21 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/ctxp/instances/margin1_mc1.pg CNIDX margin1_mc1.pg n 80 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/dtl/instances/lalg_dtl_pertop31_n18.pg CNIDX lalg_dtl_pertop31_n18.pg n 18 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/ctxp/instances/margin1_n20.pg CNIDX margin1_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/fbr/instances/bghm_k1_gap6_A.pg CNIDX bghm_k1_gap6_A.pg n 21 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/dtl/instances/lalg_dtl_restart8_n20.pg CNIDX lalg_dtl_restart8_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/fbr/instances/bghm_k3_gap4_A.pg CNIDX bghm_k3_gap4_A.pg n 45 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/fbr/instances/fr39_q4_n48.pg CNIDX fr39_q4_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/fbr/instances/rho144_n32.pg CNIDX rho144_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/fbr/instances/lev74_n40.pg CNIDX lev74_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/fbr/instances/rho3_253_n32.pg CNIDX rho3_253_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/fbr/instances/rho84_n16.pg CNIDX rho84_n16.pg n 16 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/fbr/instances/nep80_n40.pg CNIDX nep80_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/fbr/instances/sat4_n20.pg CNIDX sat4_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/fbr/instances/rho666_n48.pg CNIDX rho666_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/fbr/instances/lev56_n48.pg CNIDX lev56_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/fbr/instances/sat68_n20.pg CNIDX sat68_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/fbr/instances/twowave_L16.pg CNIDX twowave_L16.pg n 22 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/fbx/instances/exsw_loop_n15.pg CNIDX exsw_loop_n15.pg n 15 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/h3/instances/frzgap0_n4.pg CNIDX frzgap0_n4.pg n 4 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/frz/instances/fbcap_eq_u4_n11.pg CNIDX fbcap_eq_u4_n11.pg n 11 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/frz/instances/fx2_n11.pg CNIDX fx2_n11.pg n 11 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/fbx/instances/kt6_n58.pg CNIDX kt6_n58.pg n 58 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/h3/instances/frzgap0_n6.pg CNIDX frzgap0_n6.pg n 6 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/h3/instances/lcount2_n23.pg CNIDX lcount2_n23.pg n 23 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/h3/instances/lcount2_n23.pg red/h3/instances/lcount2_n23.start CNIDX lcount2_n23.pg n 23 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/h3/instances/lcount_n23.pg CNIDX lcount_n23.pg n 23 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/h3/instances/lcount_n23.pg red/h3/instances/lcount_n23.start CNIDX lcount_n23.pg n 23 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/kl/instances/klcount_n18_base.pg CNIDX klcount_n18_base.pg n 18 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/kl/instances/klcount_n16.pg CNIDX klcount_n16.pg n 16 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/h3/instances/offret_l19_n24.pg CNIDX offret_l19_n24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/kl/instances/klcount_n18_lvl.pg CNIDX klcount_n18_lvl.pg n 18 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/kl/instances/klglobal_n20_lvl2.pg CNIDX klglobal_n20_lvl2.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/kl/instances/klglobal_n16.pg CNIDX klglobal_n16.pg n 16 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/h3/instances/xsnpre36_n48.pg CNIDX xsnpre36_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/kl/instances/klglobal_n18_lvl.pg CNIDX klglobal_n18_lvl.pg n 18 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/kl/instances/r2climb_h13.pg CNIDX r2climb_h13.pg n 13 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/kl/instances/klmin_n13.pg CNIDX klmin_n13.pg n 13 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/kl/instances/r2lap_best_n22.pg CNIDX r2lap_best_n22.pg n 22 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/kl/instances/r2join_h0E_n14.pg CNIDX r2join_h0E_n14.pg n 14 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/kl24/instances/HL88_0.pg CNIDX HL88_0.pg n 41 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/kl/instances/r2crawl_n14.pg CNIDX r2crawl_n14.pg n 14 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/kl24/instances/HL88_1.pg CNIDX HL88_1.pg n 43 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/kl24/instances/HL88_2.pg CNIDX HL88_2.pg n 45 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/kl24/instances/HL88_3.pg CNIDX HL88_3.pg n 47 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/kl24/instances/HLg_1.pg CNIDX HLg_1.pg n 35 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/kl24/instances/HLg_3.pg CNIDX HLg_3.pg n 55 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/kl24/instances/HLg_2.pg CNIDX HLg_2.pg n 45 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/kl24/instances/HLg_0.pg CNIDX HLg_0.pg n 29 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/kw/instances/frzu_tight_n14.pg CNIDX frzu_tight_n14.pg n 14 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/lag/instances/depth3_n46.pg CNIDX depth3_n46.pg n 46 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/lag/instances/depth2_n39.pg CNIDX depth2_n39.pg n 39 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/kw/instances/cw11_n24.pg CNIDX cw11_n24.pg n 24 CNMOVES 7 UP 6 DOWN 1 RET 0 DOWN_NOSHORT 0 EX [(1, 7, 0, 10), (2, 7, 10, 14), (3, 7, 14, 23), (11, 7, 14, 23)]
+GAME red/lag/instances/depth4_n53.pg CNIDX depth4_n53.pg n 53 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/kw/instances/kc18_n24.pg CNIDX kc18_n24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/lag/instances/fam_D12_n106.pg CNIDX fam_D12_n106.pg n 106 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/lag/instances/fam_D8_n78.pg CNIDX fam_D8_n78.pg n 78 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/lag/instances/fam_D4_n50.pg CNIDX fam_D4_n50.pg n 50 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/mei/instances/mei_h4.pg CNIDX mei_h4.pg n 35 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/mei/instances/mei_h3.pg CNIDX mei_h3.pg n 27 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/mei/instances/mei_h2.pg CNIDX mei_h2.pg n 19 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/mei/instances/mei_h6.pg CNIDX mei_h6.pg n 51 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/mei/instances/mei_h5.pg CNIDX mei_h5.pg n 43 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n3/instances/comp54_n80.pg CNIDX comp54_n80.pg n 80 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/mei/instances/mei_h8.pg CNIDX mei_h8.pg n 67 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n3/instances/core41_n40.pg CNIDX core41_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n3/instances/lag11_n40.pg red/n3/instances/lag11_n40.start CNIDX lag11_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n3/instances/core41_n40.pg red/n3/instances/core41_n40.start CNIDX core41_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n3/instances/lag11_n40.pg CNIDX lag11_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n3/instances/lagx10_n40.pg CNIDX lagx10_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n3/instances/lagx10_n40.pg red/n3/instances/lagx10_n40.start CNIDX lagx10_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n3/instances/long121_n40.pg CNIDX long121_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n3/instances/comp54_n80.pg red/n3/instances/comp54_n80_fixed.start CNIDX comp54_n80.pg n 80 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n3/instances/long90_k2_n40.pg CNIDX long90_k2_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n3/instances/n3cov_lean.pg CNIDX n3cov_lean.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n3/instances/long121_n40.pg red/n3/instances/long121_n40.start CNIDX long121_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n3/instances/n3cov_phi.pg CNIDX n3cov_phi.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n3/instances/n3cov_lean.pg red/n3/instances/n3cov_lean_fixed.start CNIDX n3cov_lean.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n3/instances/long90_k2_n40.pg red/n3/instances/long90_k2_n40.start CNIDX long90_k2_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n3/instances/ret22_n40.pg CNIDX ret22_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n3/instances/n3cov_phi.pg red/n3/instances/n3cov_phi.start CNIDX n3cov_phi.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n3/instances/run34_n40.pg CNIDX run34_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n3/instances/run49_n32.pg CNIDX run49_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n3/instances/run49_n32.pg red/n3/instances/run49_n32.start CNIDX run49_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5/instances/dl_4_4.pg CNIDX dl_4_4.pg n 42 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n3/instances/run34_n40.pg red/n3/instances/run34_n40.start CNIDX run34_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5/instances/dl_4_4.pg red/n5/instances/dl_4_4.start CNIDX dl_4_4.pg n 42 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5/instances/dlm2_4.pg CNIDX dlm2_4.pg n 42 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n3/instances/ret22_n40.pg red/n3/instances/ret22_n40.start CNIDX ret22_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5/instances/dlm2_4.pg red/n5/instances/dlm2_4.start CNIDX dlm2_4.pg n 42 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5/instances/dl_6_8.pg red/n5/instances/dl_6_8.start CNIDX dl_6_8.pg n 110 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5/instances/dl_6_8.pg CNIDX dl_6_8.pg n 110 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5/instances/sym_h12_s1.pg CNIDX sym_h12_s1.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5/instances/sym_h8_s1.pg CNIDX sym_h8_s1.pg n 16 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5inj/instances/block_bk32.pg CNIDX block_bk32.pg n 36 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5/instances/sym_h16_s1.pg CNIDX sym_h16_s1.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5inj/instances/block_bk20.pg CNIDX block_bk20.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5inj/instances/blockph_bp20.pg CNIDX blockph_bp20.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5inj/instances/bribe_cex_n15.pg CNIDX bribe_cex_n15.pg n 15 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5inj/instances/frz24.pg CNIDX frz24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5inj/instances/blockph_bp32.pg CNIDX blockph_bp32.pg n 36 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5inj/instances/frz24.pg red/n5inj/instances/frz24.start CNIDX frz24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5inj/instances/frz32.pg CNIDX frz32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5inj/instances/frz32.pg red/n5inj/instances/frz32.start CNIDX frz32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5inj/instances/elimn_cex_n48.pg CNIDX elimn_cex_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5inj/instances/frz40.pg red/n5inj/instances/frz40.start CNIDX frz40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5inj/instances/frz40.pg CNIDX frz40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5inj/instances/phase2_pk32.pg CNIDX phase2_pk32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5inj/instances/returns_rt32.pg CNIDX returns_rt32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5inj/instances/phase2_pk48.pg CNIDX phase2_pk48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5inj/instances/theta_thc24.pg CNIDX theta_thc24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5inj/instances/returns_rt48.pg CNIDX returns_rt48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5inj/instances/theta_thf16.pg CNIDX theta_thf16.pg n 16 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5inj/instances/returns_ph64.pg CNIDX returns_ph64.pg n 64 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5inj/instances/theta_tp32.pg CNIDX theta_tp32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/nest16/instances/k4L72_n101.pg CNIDX k4L72_n101.pg n 101 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/nest16/instances/k4L72r_n101.pg CNIDX k4L72r_n101.pg n 101 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5inj/instances/theta_tp40.pg CNIDX theta_tp40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/nest16/instances/k4g50_n101.pg CNIDX k4g50_n101.pg n 101 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/nest16/instances/k4seed_c1_n82.pg CNIDX k4seed_c1_n82.pg n 82 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5inj/instances/wide_h16.pg CNIDX wide_h16.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/nest16/instances/k4seed_vr_n87.pg CNIDX k4seed_vr_n87.pg n 87 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/n5inj/instances/returns_rt64.pg CNIDX returns_rt64.pg n 64 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/nest16/instances/k4u_n101.pg CNIDX k4u_n101.pg n 101 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/nest16/instances/k4y1_n82.pg CNIDX k4y1_n82.pg n 82 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/nest16/instances/k4y2_n87.pg CNIDX k4y2_n87.pg n 87 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/nest16/instances/nest4u_n46.pg CNIDX nest4u_n46.pg n 46 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/nest16/instances/near4_n26.pg CNIDX near4_n26.pg n 26 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/nest16/instances/nest4uu_n51.pg CNIDX nest4uu_n51.pg n 51 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/nest16/instances/nest5_n49.pg CNIDX nest5_n49.pg n 49 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/nest16/instances/nest6_n75.pg CNIDX nest6_n75.pg n 75 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/nest16/instances/nest6min_n75.pg CNIDX nest6min_n75.pg n 75 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/nest16/instances/nest6x_n75.pg CNIDX nest6x_n75.pg n 75 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/nest16/instances/win3_n27.pg CNIDX win3_n27.pg n 27 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/nest16/instances/oseg_n26.pg CNIDX oseg_n26.pg n 26 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/nest16/instances/w1_n27.pg CNIDX w1_n27.pg n 27 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/nopre/instances/nopre_viol_n20.pg CNIDX nopre_viol_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/o1/instances/ph50_n32.pg CNIDX ph50_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/o1/instances/f39_n48.pg CNIDX f39_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/o1/instances/ph45_n32.pg CNIDX ph45_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/o1/instances/iter118_n48.pg CNIDX iter118_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/rec0/instances/n0_6_n24.pg CNIDX n0_6_n24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/rec0/instances/fbd0_n4.pg CNIDX fbd0_n4.pg n 4 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/o1/instances/tau18_n24.pg CNIDX tau18_n24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/rec0/instances/nep24_n20.pg CNIDX nep24_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/rec0/instances/nep90_n40.pg CNIDX nep90_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/seg/instances/runquad_K3_m4_n54.pg CNIDX runquad_K3_m4_n54.pg n 54 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/rec0/instances/nep87_n40.pg CNIDX nep87_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/rec0/instances/lend2_30_n48.pg CNIDX lend2_30_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/sgrow/instances/s20_n20.pg CNIDX s20_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/seg/instances/runquad_K8_m30_n192.pg CNIDX runquad_K8_m30_n192.pg n 192 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/seg/instances/s3quad_K3_m4.pg CNIDX s3quad_K3_m4.pg n 137 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/sgrow/instances/s21_oink_n20.pg CNIDX s21_oink_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/sgrow/instances/s29_n30.pg CNIDX s29_n30.pg n 30 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/sgrow/instances/s34_oink_n40.pg CNIDX s34_oink_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/sgrow/instances/s32_n60.pg CNIDX s32_n60.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/sgrow/instances/s35_oink_n80.pg CNIDX s35_oink_n80.pg n 80 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/sgrow/instances/s36_oink_n60.pg CNIDX s36_oink_n60.pg n 60 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/sgrow/instances/s34_oink_n80.pg CNIDX s34_oink_n80.pg n 80 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/beta2_n11.pg CNIDX beta2_n11.pg n 11 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/epsseg_cex_n16.pg CNIDX epsseg_cex_n16.pg n 16 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/epsseg_cex_n48.pg CNIDX epsseg_cex_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/exitr_cex_n16.pg CNIDX exitr_cex_n16.pg n 16 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/mn_abs74_n48.pg CNIDX mn_abs74_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/farrise25_n32.pg CNIDX farrise25_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/exitr_cex_n48.pg CNIDX exitr_cex_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/njb_reabs54_n32.pg CNIDX njb_reabs54_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/nleq33_n48.pg CNIDX nleq33_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/njb_reabs65_n48.pg CNIDX njb_reabs65_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/nleq_cex_n48.pg CNIDX nleq_cex_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/pft40_n40.pg CNIDX pft40_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/pftheta_cex_n32.pg CNIDX pftheta_cex_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/pft35_n48.pg CNIDX pft35_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/pftheta34_n32.pg CNIDX pftheta34_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/post31_n48.pg CNIDX post31_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/rise_fb38_n48.pg CNIDX rise_fb38_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/so_j19_n48.pg CNIDX so_j19_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/rise_thin51_n40.pg CNIDX rise_thin51_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/so_k2_n32.pg CNIDX so_k2_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/so_sor5_n24.pg CNIDX so_sor5_n24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/s4c8_n13.pg CNIDX s4c8_n13.pg n 13 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/so_tie13_n24.pg CNIDX so_tie13_n24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/so_sorl_n32.pg CNIDX so_sorl_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/so_tie15_n32.pg CNIDX so_tie15_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/so_th_n32.pg CNIDX so_th_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/tev_cex_n40.pg CNIDX tev_cex_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/tevlast7_n32.pg CNIDX tevlast7_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/tevlast11_n40.pg CNIDX tevlast11_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/tevlast_cex_n40.pg CNIDX tevlast_cex_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/tog6a_n32.pg CNIDX tog6a_n32.pg n 32 CNMOVES 1 UP 0 DOWN 1 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/tog6b_n32.pg CNIDX tog6b_n32.pg n 32 CNMOVES 1 UP 0 DOWN 1 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/xrun21_n24.pg CNIDX xrun21_n24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/xrun8_n10.pg CNIDX xrun8_n10.pg n 10 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/xsn29_n32.pg CNIDX xsn29_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/xsn43_n48.pg CNIDX xsn43_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/xsnf52_n64.pg CNIDX xsnf52_n64.pg n 64 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/xsnf42_n48.pg CNIDX xsnf42_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/tcpert/instances/leanT_N12.pg CNIDX leanT_N12.pg n 96 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/so/instances/xsn91_n48.pg CNIDX xsn91_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/tcpert/instances/leanT_N16.pg CNIDX leanT_N16.pg n 128 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/tcpert/instances/leanT_N6.pg CNIDX leanT_N6.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/tcpert/instances/leanT_N8.pg CNIDX leanT_N8.pg n 64 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/tcpert/instances/leanT_N24.pg CNIDX leanT_N24.pg n 192 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/tcpert/instances/tcL_N10.pg CNIDX tcL_N10.pg n 350 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/tcpert/instances/tcL_N3.pg CNIDX tcL_N3.pg n 42 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/tcpert/instances/tcL_N4.pg CNIDX tcL_N4.pg n 68 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/tcpert/instances/tcL_N5.pg CNIDX tcL_N5.pg n 100 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/tcpert/instances/tcL_N6.pg CNIDX tcL_N6.pg n 138 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/tcpert/instances/leanT_N32.pg CNIDX leanT_N32.pg n 256 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/tcpert/instances/tcR4_N4.pg CNIDX tcR4_N4.pg n 68 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/tcpert/instances/tcR4_N5.pg CNIDX tcR4_N5.pg n 100 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/tcpert/instances/tcR4_N6.pg CNIDX tcR4_N6.pg n 138 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/tcpert/instances/tcL_N8.pg CNIDX tcL_N8.pg n 232 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/tcpert/instances/tcR4_N8.pg CNIDX tcR4_N8.pg n 232 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/tcpert/instances/tcR4_N7.pg CNIDX tcR4_N7.pg n 182 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/tcpert/instances/tcL_N12.pg CNIDX tcL_N12.pg n 492 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/tcpert/instances/tcS8_N6.pg CNIDX tcS8_N6.pg n 138 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/tcpert/instances/tcS8_N7.pg CNIDX tcS8_N7.pg n 182 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/tcpert/instances/tcS8_N8.pg CNIDX tcS8_N8.pg n 232 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/tcpert/instances/tcS8_N10.pg CNIDX tcS8_N10.pg n 350 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/tcpert/instances/tcS8_N11.pg CNIDX tcS8_N11.pg n 418 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/tpp/instances/tpp_viol_n22.pg CNIDX tpp_viol_n22.pg n 22 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/tpp/instances/tpp_viol_n63.pg CNIDX tpp_viol_n63.pg n 63 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/tcpert/instances/tcS8_N9.pg CNIDX tcS8_N9.pg n 288 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/ul/instances/cxmig_k16_n138.pg red/ul/instances/cxmig_k16_n138.start CNIDX cxmig_k16_n138.pg n 138 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/ul/instances/cxmig_k4_n54.pg CNIDX cxmig_k4_n54.pg n 54 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/ul/instances/cxmig_k16_n138.pg CNIDX cxmig_k16_n138.pg n 138 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/ul/instances/cxmig_k4_n54.pg red/ul/instances/cxmig_k4_n54.start CNIDX cxmig_k4_n54.pg n 54 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/ul/instances/ladderd0_k12_n48.pg CNIDX ladderd0_k12_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/ul/instances/cxmig_k8_n82.pg red/ul/instances/cxmig_k8_n82.start CNIDX cxmig_k8_n82.pg n 82 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/ul/instances/cxmig_k8_n82.pg CNIDX cxmig_k8_n82.pg n 82 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/ul/instances/ladderd0_k12_n48.pg red/ul/instances/ladderd0_k12_n48.start CNIDX ladderd0_k12_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/ul/instances/ladderd0_k24_n84.pg red/ul/instances/ladderd0_k24_n84.start CNIDX ladderd0_k24_n84.pg n 84 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/ul/instances/ladderd0_k24_n84.pg CNIDX ladderd0_k24_n84.pg n 84 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/ul/instances/ladderent_k12_n48.pg CNIDX ladderent_k12_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/ul/instances/ladderent_k12_n48.pg red/ul/instances/ladderent_k12_n48.start CNIDX ladderent_k12_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/ul/instances/ladderent_k24_n84.pg CNIDX ladderent_k24_n84.pg n 84 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/ul/instances/ladderd0_k48_n156.pg red/ul/instances/ladderd0_k48_n156.start CNIDX ladderd0_k48_n156.pg n 156 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/ul/instances/ladderent_k24_n84.pg red/ul/instances/ladderent_k24_n84.start CNIDX ladderent_k24_n84.pg n 84 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/ul/instances/ladderd0_k48_n156.pg CNIDX ladderd0_k48_n156.pg n 156 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/ul/instances/reader_L10_n36.pg CNIDX reader_L10_n36.pg n 36 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/ul/instances/reader_L10_n36.pg red/ul/instances/reader_L10_n36.start CNIDX reader_L10_n36.pg n 36 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/ul/instances/reader_L20_n56.pg CNIDX reader_L20_n56.pg n 56 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/ul/instances/reader_L20_n56.pg red/ul/instances/reader_L20_n56.start CNIDX reader_L20_n56.pg n 56 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/ul/instances/ladderent_k48_n156.pg red/ul/instances/ladderent_k48_n156.start CNIDX ladderent_k48_n156.pg n 156 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/ul/instances/reader_L40_n96.pg red/ul/instances/reader_L40_n96.start CNIDX reader_L40_n96.pg n 96 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/ul/instances/ladderent_k48_n156.pg CNIDX ladderent_k48_n156.pg n 156 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/ul/instances/reader_L40_n96.pg CNIDX reader_L40_n96.pg n 96 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/usplit/instances/gate_K16_n197.pg red/usplit/instances/gate_K16_n197.start CNIDX gate_K16_n197.pg n 197 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/seg/instances/s3quad_K8_m30.pg CNIDX s3quad_K8_m30.pg n 479 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/usplit/instances/gate_K16_n197.pg CNIDX gate_K16_n197.pg n 197 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/usplit/instances/grow_K12_n149.pg CNIDX grow_K12_n149.pg n 149 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/usplit/instances/grow_K12_n149.pg red/usplit/instances/grow_K12_n149.start CNIDX grow_K12_n149.pg n 149 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/usplit/instances/grow_K40_n373.pg red/usplit/instances/grow_K40_n373.start CNIDX grow_K40_n373.pg n 373 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/usplit/instances/pairoc_n58.pg CNIDX pairoc_n58.pg n 58 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/usplit/instances/pairoc_n58.pg red/usplit/instances/pairoc_n58.start CNIDX pairoc_n58.pg n 58 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/usplit/instances/pp_K12_n161.pg CNIDX pp_K12_n161.pg n 161 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/usplit/instances/pp_K12_n161.pg red/usplit/instances/pp_K12_n161.start CNIDX pp_K12_n161.pg n 161 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/usplit/instances/pp_K12_n161_dual.pg CNIDX pp_K12_n161_dual.pg n 161 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/usplit/instances/grow_K40_n373.pg CNIDX grow_K40_n373.pg n 373 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/usplit/instances/gate_K64_n581.pg red/usplit/instances/gate_K64_n581.start CNIDX gate_K64_n581.pg n 581 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/usplit/instances/pp_K48_n449.pg red/usplit/instances/pp_K48_n449.start CNIDX pp_K48_n449.pg n 449 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/usplit/instances/pp_K48_n449.pg CNIDX pp_K48_n449.pg n 449 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/usplit/instances/usplit_n14.pg CNIDX usplit_n14.pg n 14 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/usplit/instances/usplit_n14.pg red/usplit/instances/usplit_n14.start CNIDX usplit_n14.pg n 14 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/usplit/instances/usplit_n23.pg CNIDX usplit_n23.pg n 23 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/usplit/instances/usplit_n23.pg red/usplit/instances/usplit_n23.start CNIDX usplit_n23.pg n 23 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/usplit/instances/usplit_rd_n24.pg red/usplit/instances/usplit_rd_n24.start CNIDX usplit_rd_n24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/usplit/instances/usplit_rd_n24.pg CNIDX usplit_rd_n24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/usplit/instances/usplit_rd_s3_n27.pg CNIDX usplit_rd_s3_n27.pg n 27 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xctx/instances/nest3_n20.pg CNIDX nest3_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/usplit/instances/usplit_s3_n16.pg CNIDX usplit_s3_n16.pg n 16 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xctx/instances/vrall_viol_n20.pg CNIDX vrall_viol_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xctx/instances/nest3_n24.pg CNIDX nest3_n24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xctx/instances/xcov11_n20.pg CNIDX xcov11_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xctx/instances/xctx_viol_n20.pg CNIDX xctx_viol_n20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/j10_n24.pg CNIDX j10_n24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/fbref_cex_n32.pg CNIDX fbref_cex_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/j5_n16.pg CNIDX j5_n16.pg n 16 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/j7_n32.pg CNIDX j7_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/j7_n48.pg CNIDX j7_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/j4_n40.pg CNIDX j4_n40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/j8_n32.pg CNIDX j8_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/kw25_n32.pg CNIDX kw25_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/j8_n48.pg CNIDX j8_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/kw_n16.pg CNIDX kw_n16.pg n 16 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/kw_n24.pg CNIDX kw_n24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/obr_eq_n24.pg CNIDX obr_eq_n24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/kw_n48.pg CNIDX kw_n48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/obr_n32.pg CNIDX obr_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/u1t_own6_n32.pg CNIDX u1t_own6_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/u1t_cex_n32.pg CNIDX u1t_cex_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/u23sw64_n32.pg CNIDX u23sw64_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/u2flat73_n32.pg CNIDX u2flat73_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/usplit/instances/gate_K64_n581.pg CNIDX gate_K64_n581.pg n 581 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/u2flat_n32.pg CNIDX u2flat_n32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/x31_cu32.pg CNIDX x31_cu32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/x31_cu24.pg CNIDX x31_cu24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/x31_cu16.pg CNIDX x31_cu16.pg n 16 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/x31_cu32i.pg CNIDX x31_cu32i.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/x31_lem_e24.pg CNIDX x31_lem_e24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/x31_nh_e24.pg CNIDX x31_nh_e24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/x31_cu48.pg CNIDX x31_cu48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/x31_nh_r20.pg CNIDX x31_nh_r20.pg n 20 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/x31_re24.pg CNIDX x31_re24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/x31_ru24.pg CNIDX x31_ru24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/x31_lem_t32.pg CNIDX x31_lem_t32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/x31_rx32.pg CNIDX x31_rx32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/x31_rx48.pg CNIDX x31_rx48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/x32_rand16.pg CNIDX x32_rand16.pg n 16 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/x32_nest40.pg CNIDX x32_nest40.pg n 40 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/x32_rand24.pg CNIDX x32_rand24.pg n 24 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/usplit/instances/pp_K48_n449_dual.pg CNIDX pp_K48_n449_dual.pg n 449 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/x32_rand32.pg CNIDX x32_rand32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/x32_rand48.pg CNIDX x32_rand48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/x32_rand64.pg CNIDX x32_rand64.pg n 64 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME si/root/instances/cone_n65.pg CNIDX cone_n65.pg n 65 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/x32_waves32.pg CNIDX x32_waves32.pg n 32 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME si/root/instances/cone_n69.pg CNIDX cone_n69.pg n 69 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME si/root/instances/ueonce_n27.pg CNIDX ueonce_n27.pg n 27 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME red/xing/instances/x32_waves48.pg CNIDX x32_waves48.pg n 48 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME si/runlin/instances/runfam_K10.pg CNIDX runfam_K10.pg n 49 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0
+GAME si/runlin/instances/runfam_K40.pg CNIDX runfam_K40.pg n 79 CNMOVES 0 UP 0 DOWN 0 RET 0 DOWN_NOSHORT 0

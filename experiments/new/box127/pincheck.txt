@@ -1,0 +1,18 @@
+PIN nep92_n40 ce224ec31e56 start 10fdf3a3c76c
+OINK nep92_n40 --zlk verified
+OINK nep92_n40 --tl verified
+PINWIN nep92_n40.pg n 40 states 99 fallbacks 8 W0 40 AGREE True
+n5b iterations 98 fallbacks 8 states 99 | n5x states 99 | identical state sequences: True
+EXP nep92_n40.pg n 40 K 98 WRUNS 9 MAXRUN 14 SRCS 360 XCH 964 BLK 964 MAXXCH 11 MAXBLK 11 RET 0 AF 50 AFREV 0 SRCVIOL 27 QOFF 2 Q2OFF 50 NEITHER 0
+  WIT run [6,20] src 0 blocks 0<8<9 u 0 v 19
+    PI_i (0, 19, 24, 20, 4, 30, 16, 37, 11, -1)
+    PI_j (0, 24, 19, 22, 14, 27, 38, 13, 2, 3, 15, 29, 5, 11, -1)
+    PI_k (0, 19, 22, 14, 27, 38, 13, 2, 3, 15, 29, 5, 11, -1)
+  WIT run [6,20] src 0 blocks 2<8<9 u 0 v 19
+    PI_i (0, 19, 24, 20, 7, 37, 11, -1)
+    PI_j (0, 24, 19, 22, 14, 27, 38, 13, 2, 3, 15, 29, 5, 11, -1)
+    PI_k (0, 19, 22, 14, 27, 38, 13, 2, 3, 15, 29, 5, 11, -1)
+  WIT run [6,20] src 1 blocks 0<7<8 u 1 v 19
+    PI_i (1, 19, 24, 20, 4, 30, 16, 37, 11, -1)
+    PI_j (1, 0, 24, 19, 22, 14, 27, 38, 13, 2, 3, 15, 29, 5, 11, -1)
+    PI_k (1, 19, 22, 14, 27, 38, 13, 2, 3, 15, 29, 5, 11, -1)

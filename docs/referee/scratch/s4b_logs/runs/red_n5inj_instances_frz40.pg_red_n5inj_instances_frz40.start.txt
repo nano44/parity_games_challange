@@ -1,0 +1,4 @@
+GAME red/n5inj/instances/frz40.pg red/n5inj/instances/frz40.start
+GAMES 1
+VIOLATIONS 0
+RC 0

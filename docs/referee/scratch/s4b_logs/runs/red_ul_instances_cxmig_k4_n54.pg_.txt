@@ -1,0 +1,4 @@
+GAME red/ul/instances/cxmig_k4_n54.pg 
+GAMES 1
+VIOLATIONS 0
+RC 0

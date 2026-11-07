@@ -1,0 +1,9 @@
+GAME red/h3/instances/offret_l19_n24.pg 
+GAMES 1
+enum_states 3
+keep_chk 1
+loc_chk 7
+rhos 22
+states 3
+VIOLATIONS 0
+RC 0

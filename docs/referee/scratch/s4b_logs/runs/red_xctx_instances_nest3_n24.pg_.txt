@@ -1,0 +1,9 @@
+GAME red/xctx/instances/nest3_n24.pg 
+GAMES 1
+enum_skip 1
+enum_states 1
+loc_chk 21
+rhos 2
+states 2
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,9 @@
+GAME red/fbr/instances/nep80_n40.pg 
+GAMES 1
+enum_states 22
+keep_chk 12
+loc_chk 204
+rhos 1510
+states 22
+VIOLATIONS 0
+RC 0

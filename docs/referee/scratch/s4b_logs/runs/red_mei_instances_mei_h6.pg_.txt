@@ -1,0 +1,8 @@
+GAME red/mei/instances/mei_h6.pg 
+GAMES 1
+enum_states 5
+loc_chk 9
+rhos 20
+states 5
+VIOLATIONS 0
+RC 0

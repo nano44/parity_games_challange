@@ -1,0 +1,4 @@
+GAME red/kl24/instances/HLg_1.pg 
+GAMES 1
+VIOLATIONS 0
+RC 0

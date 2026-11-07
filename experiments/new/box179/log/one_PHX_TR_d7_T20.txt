@@ -1,0 +1,6 @@
+corpus files at d 7: 1
+class PHX d 7 genomes 0 transitions 16012 distinct-dec-rows 12627 distinct-states 16384 features 233
+FEASIBLE min max Phi = 21.3268
+weights: pair1_0101=-7.38 zk1_3=6.09 zH1_1=5.69 pair0_0110=-5.52 pair1_1001=5.23 pair0_0100=-5.16 kz1_3=5.09 zk1_2=-4.48 zH1_4=-4.42 ord0=4.07 kz1_2=3.87 pair5_1100=-3.7 pair5_1011=3.42 pair4_1101=2.98 pair5_0001=2.94 k2=2.72 pair5_0111=2.68 k1=2.6 pair1_0110=-2.6 pair2_1111=-2.54 k5=2.39 k10=2.31 ord1=2.25 pair5_0011=2.23 uH4_6=-2.2 pair4_0110=-1.95 pair1_1101=1.95 k7=1.87 pair2_1000=1.85 zH4_2=1.73 zH5_5=-1.59 pair4_0011=-1.57 pair4_0010=-1.57 ord3=-1.54 zk3_5=1.48 pair3_0011=1.42 pair5_1000=-1.38 k6=1.38 k11=1.27 pair5_0010=1.22 const=0
+dual: 99 decrease rows in support, sum of their multipliers 21.3268 (= the bound)
+dual mass by genome source: TR_d7_T20.json:21.3

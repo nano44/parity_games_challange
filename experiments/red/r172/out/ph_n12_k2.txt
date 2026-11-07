@@ -1,0 +1,33 @@
+start PHNF 0 None
+it 107 PHNF 0 L 1 {'a': 1, 'b': 2, 'L': 1, 'ODIFF': 2, 'FB': 0, 'PHNF': 0}
+it 291 PHNF 0 L 2 {'a': 0, 'b': 2, 'L': 2, 'ODIFF': 2, 'FB': 0, 'PHNF': 0}
+it 340 PHNF 0 L 3 {'a': 0, 'b': 3, 'L': 3, 'ODIFF': 2, 'FB': 0, 'PHNF': 0}
+it 348 PHNF 1 L 3 {'a': 0, 'b': 3, 'L': 3, 'ODIFF': 2, 'FB': 0, 'PHNF': 1}
+it 394 PHNF 2 L 3 {'a': 0, 'b': 3, 'L': 3, 'ODIFF': 2, 'FB': 0, 'PHNF': 2}
+it 420 PHNF 2 L 4 {'a': 0, 'b': 4, 'L': 4, 'ODIFF': 2, 'FB': 0, 'PHNF': 2}
+it 546 PHNF 2 L 5 {'a': 0, 'b': 5, 'L': 5, 'ODIFF': 2, 'FB': 0, 'PHNF': 2}
+it 686 PHNF 2 L 6 {'a': 0, 'b': 6, 'L': 6, 'ODIFF': 2, 'FB': 0, 'PHNF': 2}
+it 1623 PHNF 2 L 7 {'a': 0, 'b': 7, 'L': 7, 'ODIFF': 2, 'FB': 0, 'PHNF': 2}
+it 2109 PHNF 2 L 8 {'a': 0, 'b': 8, 'L': 8, 'ODIFF': 2, 'FB': 0, 'PHNF': 2}
+it 2500 PHNF 3 L 5 {'a': 0, 'b': 5, 'L': 5, 'ODIFF': 2, 'FB': 0, 'PHNF': 3}
+it 3008 PHNF 3 L 6 {'a': 0, 'b': 6, 'L': 6, 'ODIFF': 2, 'FB': 1, 'PHNF': 3}
+it 3643 PHNF 3 L 7 {'a': 0, 'b': 7, 'L': 7, 'ODIFF': 2, 'FB': 1, 'PHNF': 3}
+it 3747 PHNF 3 L 8 {'a': 0, 'b': 8, 'L': 8, 'ODIFF': 2, 'FB': 2, 'PHNF': 3}
+it 3786 PHNF 3 L 9 {'a': 0, 'b': 9, 'L': 9, 'ODIFF': 2, 'FB': 2, 'PHNF': 3}
+it 4104 PHNF 3 L 10 {'a': 0, 'b': 10, 'L': 10, 'ODIFF': 2, 'FB': 2, 'PHNF': 3}
+it 4556 PHNF 4 L 7 {'a': 0, 'b': 7, 'L': 7, 'ODIFF': 2, 'FB': 2, 'PHNF': 4}
+it 4573 PHNF 4 L 8 {'a': 0, 'b': 8, 'L': 8, 'ODIFF': 2, 'FB': 2, 'PHNF': 4}
+it 4611 PHNF 4 L 9 {'a': 0, 'b': 9, 'L': 9, 'ODIFF': 2, 'FB': 2, 'PHNF': 4}
+it 4779 PHNF 4 L 10 {'a': 0, 'b': 10, 'L': 10, 'ODIFF': 2, 'FB': 2, 'PHNF': 4}
+it 4982 PHNF 4 L 11 {'a': 0, 'b': 11, 'L': 11, 'ODIFF': 2, 'FB': 3, 'PHNF': 4}
+it 5203 PHNF 4 L 12 {'a': 0, 'b': 12, 'L': 12, 'ODIFF': 2, 'FB': 3, 'PHNF': 4}
+it 5272 PHNF 4 L 13 {'a': 0, 'b': 13, 'L': 13, 'ODIFF': 2, 'FB': 3, 'PHNF': 4}
+it 5277 PHNF 5 L 12 {'a': 0, 'b': 12, 'L': 12, 'ODIFF': 2, 'FB': 3, 'PHNF': 5}
+it 5362 PHNF 5 L 13 {'a': 0, 'b': 13, 'L': 13, 'ODIFF': 2, 'FB': 4, 'PHNF': 5}
+it 5686 PHNF 5 L 14 {'a': 0, 'b': 14, 'L': 14, 'ODIFF': 2, 'FB': 3, 'PHNF': 5}
+it 5827 PHNF 5 L 15 {'a': 0, 'b': 15, 'L': 15, 'ODIFF': 2, 'FB': 3, 'PHNF': 5}
+it 6151 PHNF 5 L 16 {'a': 0, 'b': 16, 'L': 16, 'ODIFF': 2, 'FB': 3, 'PHNF': 5}
+it 6312 PHNF 6 L 13 {'a': 0, 'b': 13, 'L': 13, 'ODIFF': 2, 'FB': 3, 'PHNF': 6}
+it 6351 PHNF 6 L 14 {'a': 0, 'b': 14, 'L': 14, 'ODIFF': 2, 'FB': 3, 'PHNF': 6}
+it 7218 PHNF 6 L 15 {'a': 0, 'b': 15, 'L': 15, 'ODIFF': 2, 'FB': 3, 'PHNF': 6}
+BEST n 12 KO 2 PHNF 6 (n-1 = 11) {'a': 0, 'b': 15, 'L': 15, 'ODIFF': 2, 'FB': 3, 'PHNF': 6}

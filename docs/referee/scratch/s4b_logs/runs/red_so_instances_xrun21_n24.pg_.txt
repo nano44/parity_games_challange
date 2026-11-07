@@ -1,0 +1,9 @@
+GAME red/so/instances/xrun21_n24.pg 
+GAMES 1
+enum_states 3
+keep_chk 1
+loc_chk 4
+rhos 7
+states 3
+VIOLATIONS 0
+RC 0

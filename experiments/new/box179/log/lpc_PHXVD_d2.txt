@@ -1,0 +1,6 @@
+corpus files at d 2: 9
+class PHXVD d 2 genomes 2000 transitions 22077 distinct-dec-rows 19693 distinct-states 31348 features 86
+FEASIBLE min max Phi = 6.9803
+weights: u0=-3.3 pair0_1010=2.43 pair0_1011=2.36 pair0_1110=2.24 k0=1.93 k1=1.62 z1=1.26 uH0_2=1.09 zH0_2=-1.03 pair0_1101=-1.03 pair1_1010=1.01 pair1_1110=1.01 zH0_3=-0.99 z0=0.93 uH0_3=0.922 zH0_4=-0.888 vr2=-0.769 vr3=-0.563 pair1_1011=0.55 z3=0.55 pair1_0110=0.541 uH0_4=0.496 pair1_1101=0.474 pair1_0001=-0.469 pair0_1000=-0.466 pair0_0101=-0.447 pair1_1100=0.446 vr0=-0.42 u3=0.407 pair0_0111=-0.401 pair0_1001=-0.371 uH1_4=-0.37 Do2=0.33 Dc3=-0.324 Dc2=-0.318 z2=0.309 k3=0.293 Do3=0.266 pair1_0010=-0.258 Dc0=-0.229 const=1.56
+dual: 42 decrease rows in support, sum of their multipliers 6.9803 (= the bound)
+dual mass by genome source: rand:5.83 v_d2_4.json:0.854 sampleI_d2_s1.json:0.241 iso_d2_4.json:0.0522

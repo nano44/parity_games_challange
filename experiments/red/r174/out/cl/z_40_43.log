@@ -1,0 +1,7 @@
+it 46 score 4 {'moves': 0, 'span': 0, 'odiff': 0, 'zch': 0, 'wch': 0, 'h': None, 'X': None, 'K': 4}
+it 47 score 6 {'moves': 0, 'span': 0, 'odiff': 0, 'zch': 0, 'wch': 0, 'h': None, 'X': None, 'K': 6}
+it 64 score 1006 {'moves': 1, 'span': 0, 'odiff': 0, 'zch': 0, 'wch': 0, 'h': 5, 'X': 36, 'K': 6}
+it 98 score 1007 {'moves': 1, 'span': 0, 'odiff': 0, 'zch': 0, 'wch': 0, 'h': 5, 'X': 13, 'K': 7}
+it 280 score 1008 {'moves': 1, 'span': 0, 'odiff': 2, 'zch': 0, 'wch': 0, 'h': 6, 'X': 11, 'K': 8}
+it 386 score 1009 {'moves': 1, 'span': 0, 'odiff': 1, 'zch': 0, 'wch': 0, 'h': 6, 'X': 11, 'K': 9}
+FINAL score 1009 {'moves': 1, 'span': 0, 'odiff': 3, 'zch': 0, 'wch': 0, 'h': 7, 'X': 39, 'K': 10}

@@ -1,0 +1,12 @@
+FL_runs 20
+FL_transitions 42
+GCH 3
+ODIFF_xi_changes 13
+RULE_checks_mover 42644
+RULE_checks_nonmover 729730
+RULE_multi_mover 761
+RULE_multi_nonmover 614
+RULE_with_corner 18102
+epochs 23
+runs 813
+starts_valid 94

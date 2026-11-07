@@ -1,0 +1,2 @@
+ISO d 4 t 13 N 8 ISO=1 NOL0=None NOW=None SEG=1t:10 vars 124951 clauses 430151 build 0.4 s
+STOPPED by L-NEW 52 at 03:49Z after ~90 min without an answer: UNKNOWN (freed the cores for T_1(3))

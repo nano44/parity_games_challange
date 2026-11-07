@@ -1,0 +1,5 @@
+it 17 score 1006 {'moves': 1, 'span': 0, 'odiff': 1, 'zch': 0, 'wch': 0, 'h': 22, 'X': 2, 'K': 6}
+it 102 score 1007 {'moves': 1, 'span': 0, 'odiff': 0, 'zch': 0, 'wch': 0, 'h': 7, 'X': 15, 'K': 7}
+it 140 score 1008 {'moves': 1, 'span': 0, 'odiff': 0, 'zch': 0, 'wch': 0, 'h': 7, 'X': 15, 'K': 8}
+it 159 score 1009 {'moves': 1, 'span': 0, 'odiff': 0, 'zch': 0, 'wch': 0, 'h': 7, 'X': 15, 'K': 9}
+FINAL score 1009 {'moves': 1, 'span': 0, 'odiff': 9, 'zch': 0, 'wch': 0, 'h': 1, 'X': 19, 'K': 9}

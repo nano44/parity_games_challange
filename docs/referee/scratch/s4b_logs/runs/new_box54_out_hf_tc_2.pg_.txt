@@ -1,0 +1,8 @@
+GAME new/box54/out/hf/tc_2.pg 
+GAMES 1
+enum_states 4
+loc_chk 10
+rhos 24
+states 4
+VIOLATIONS 0
+RC 0

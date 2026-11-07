@@ -1,0 +1,9 @@
+GAME red/n5inj/instances/frz32.pg
+GAMES 1
+enum_states 8
+keep_chk 5
+loc_chk 11
+rhos 22
+states 8
+VIOLATIONS 0
+RC 0

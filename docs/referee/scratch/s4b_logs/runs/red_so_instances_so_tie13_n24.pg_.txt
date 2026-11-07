@@ -1,0 +1,4 @@
+GAME red/so/instances/so_tie13_n24.pg 
+GAMES 1
+VIOLATIONS 0
+RC 0

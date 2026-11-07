@@ -1,0 +1,177 @@
+A_d5_W2_k3.json                    T  13 N 10 deg 3 maxmv  5 maxkf  4 KEYFLIPviol 0 | desc:mv/kf 0:1/4 1:2/4 2:1/0 3:4/4 4:4/4 5:3/4 6:5/4 7:2/0
+T_d3_W2.json                       T   3 N  6 deg 2 maxmv  1 maxkf  2 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:1/0 2:1/0 3:1/2
+T_d4_W3.json                       T   4 N 12 deg 3 maxmv  1 maxkf  2 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:0/0 2:0/0 3:1/0 4:1/0 5:1/2 6:0/1 7:1/2
+T_d6_W2.json                       T   6 N 12 deg 2 maxmv  2 maxkf  2 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:1/2 2:1/1 3:2/2 4:1/1 5:1/0 6:1/0
+T_d4_W2.json                       T   4 N  8 deg 2 maxmv  2 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:1/1 1:1/1 2:1/0 4:2/1 5:1/1
+A_d4_W3_k3.json                    T  15 N 12 deg 3 maxmv  5 maxkf  5 KEYFLIPviol 0 | desc:mv/kf 0:1/4 1:3/5 2:3/2 3:1/1 4:4/3 5:3/4 7:5/3 8:3/4 9:2/0
+T_d3_W3.json                       T   3 N  9 deg 3 maxmv  2 maxkf  2 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:1/1 2:1/0 3:1/1 4:2/2 5:0/2
+A_d4_W2_k2.json                    T   9 N  8 deg 2 maxmv  3 maxkf  4 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:2/4 2:2/1 3:0/0 4:3/4 5:3/4 6:1/0
+T_d5_W2.json                       T   5 N 10 deg 2 maxmv  2 maxkf  2 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:1/0 2:1/0 3:2/1 4:0/0 5:1/2
+A_d6_W2_k2.json                    T  11 N 12 deg 2 maxmv  3 maxkf  4 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:1/3 3:2/2 4:1/3 5:2/2 6:2/1 7:3/4 8:2/4 9:2/1
+fa_d3_k2_W2.json                   T   7 N  6 deg 2 maxmv  3 maxkf  4 KEYFLIPviol 0 | desc:mv/kf 0:1/4 1:2/4 2:1/0 3:1/0 4:3/2 5:3/2
+fb_d8_k3_W3.json                   T  14 N 24 deg 3 maxmv  3 maxkf  5 KEYFLIPviol 0 | desc:mv/kf 0:1/2 1:0/0 2:1/1 3:2/2 4:1/0 5:2/5 7:2/3 8:2/0 9:2/1 10:3/3 11:2/0 13:2/2 14:0/0 18:2/1 19:2/0 20:2/5 21:2/2 22:1/1
+fa_d2_k2_W2.json                   T   4 N  4 deg 2 maxmv  1 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:1/0 2:1/0 3:1/0
+fb_d6_k2_W2.json                   T   6 N 12 deg 2 maxmv  3 maxkf  4 KEYFLIPviol 0 | desc:mv/kf 0:0/0 1:1/4 2:0/0 3:1/0 5:1/1 6:2/2 7:1/1 8:1/0 9:0/0 10:3/2 11:3/2
+fb_d6_k3_W3.json                   T   8 N 18 deg 3 maxmv  3 maxkf  6 KEYFLIPviol 0 | desc:mv/kf 0:1/1 1:1/1 2:1/1 3:1/4 4:2/4 5:3/6 6:2/3 7:2/0 8:3/1 9:2/1 12:3/3 13:1/0 14:0/0 15:3/2 16:3/1
+fa_d4_k2_W2.json                   T  10 N  8 deg 2 maxmv  3 maxkf  4 KEYFLIPviol 0 | desc:mv/kf 0:1/4 1:1/4 2:1/0 3:2/2 5:3/4 6:3/4 7:1/0
+fb_d8_k2_W2.json                   T   6 N 16 deg 2 maxmv  2 maxkf  2 KEYFLIPviol 0 | desc:mv/kf 0:0/1 1:1/0 2:0/2 3:1/1 4:1/2 5:0/0 6:1/0 8:2/1 9:1/1 10:1/2 11:1/0 12:1/1 13:1/0
+fb_d3_k2_W2.json                   T   3 N  6 deg 2 maxmv  1 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:0/0 1:1/0 2:1/0 3:1/0 4:1/0 5:1/0
+fb_d4_k4_W4.json                   T  12 N 16 deg 4 maxmv  3 maxkf  3 KEYFLIPviol 0 | desc:mv/kf 0:0/0 1:1/2 2:1/2 4:1/1 5:2/3 6:1/0 7:2/2 8:2/2 9:1/3 10:1/0 11:1/0 12:2/2 13:1/0 14:3/2
+fb_d2_k2_W2.json                   T   2 N  4 deg 2 maxmv  1 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:0/0 1:1/0 2:1/0 3:1/0
+fb_d4_k2_W2.json                   T   5 N  8 deg 2 maxmv  2 maxkf  3 KEYFLIPviol 0 | desc:mv/kf 0:0/0 1:0/3 2:1/2 3:2/3 5:2/2 6:1/0
+fb_d4_k3_W3.json                   T  10 N 12 deg 3 maxmv  4 maxkf  5 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:1/3 2:1/5 3:1/0 4:2/2 5:4/2 6:2/4 7:1/0 8:2/3 10:3/2 11:1/0
+fa_d3_k3_W3.json                   T  15 N  9 deg 3 maxmv  5 maxkf  6 KEYFLIPviol 0 | desc:mv/kf 0:1/6 1:2/5 3:5/3 4:4/6 5:2/0 6:3/3 7:5/3
+f2_d5_L12.json                     T  12 N 10 deg 2 maxmv  5 maxkf 10 KEYFLIPviol 0 | desc:mv/kf 0:1/7 1:1/0 2:3/7 3:3/6 5:4/6 6:5/10 7:3/2 9:2/10
+c4x_d5_F12.json                    T  12 N 10 deg 2 maxmv  5 maxkf 12 KEYFLIPviol 0 | desc:mv/kf 0:1/9 1:2/9 2:1/0 3:3/12 4:3/2 5:5/6 6:5/6 7:2/12 8:3/2 9:1/0
+dd_d5_F14.json                     T  14 N 10 deg 2 maxmv  7 maxkf 14 KEYFLIPviol 0 | desc:mv/kf 0:1/2 1:2/14 2:3/14 3:3/3 4:3/2 6:7/6 7:7/6 8:3/3 9:1/0
+fdown_d6.json                      T   6 N 12 deg 2 maxmv  2 maxkf  2 KEYFLIPviol 0 | desc:mv/kf 0:1/0 2:1/0 4:1/1 6:1/1 8:1/2 10:2/2
+tri_d5_L12.json                    T  12 N 10 deg 2 maxmv  3 maxkf  5 KEYFLIPviol 0 | desc:mv/kf 0:1/2 2:2/3 3:3/3 4:3/5 5:3/5 7:3/2 8:2/1
+dbl_d3_F6.json                     T   8 N  6 deg 2 maxmv  3 maxkf  6 KEYFLIPviol 0 | desc:mv/kf 0:1/6 1:1/0 2:3/2 3:3/6 4:3/2 5:1/0
+max_d4_L13.json                    T  13 N  8 deg 2 maxmv  4 maxkf  4 KEYFLIPviol 0 | desc:mv/kf 0:1/3 1:1/0 2:3/4 3:3/2 4:4/4 5:3/3 6:3/2 7:1/0
+dbl_d4_F10.json                    T  10 N  8 deg 2 maxmv  4 maxkf 10 KEYFLIPviol 0 | desc:mv/kf 0:1/10 1:1/10 2:1/0 3:3/2 4:3/6 5:4/6 6:3/2 7:1/0
+ladlp_3.json                       T   1 N  6 deg 2 maxmv  1 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:1/0 2:1/0 4:1/0
+ladlp_4.json                       T   1 N  8 deg 2 maxmv  1 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:1/0 2:0/0 4:1/0 6:1/0
+ladlp_5.json                       T   1 N 10 deg 2 maxmv  1 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:1/0 2:0/0 4:1/0 6:0/0 8:0/0
+max_d5_L15.json                    T  15 N 10 deg 2 maxmv  4 maxkf  3 KEYFLIPviol 0 | desc:mv/kf 0:1/2 1:2/3 2:2/2 3:2/2 4:4/3 6:3/2 7:3/3 8:3/3
+nd2_like_g2_E2_genome.json         T  12 N 10 deg 2 maxmv  6 maxkf 12 KEYFLIPviol 0 | desc:mv/kf 0:1/6 1:1/0 2:3/12 3:2/6 4:1/0 5:6/6 6:6/6 7:3/12 8:3/2
+rk_D3_k3_d8.json                   T  20 N 16 deg 3 maxmv  6 maxkf  6 KEYFLIPviol 0 | desc:mv/kf 0:0/4 1:1/6 2:1/0 3:2/1 4:2/2 5:2/4 6:5/2 7:4/4 8:4/4 9:4/3 10:6/6 11:4/3 12:5/3
+rk_D2_k2_d8.json                   T  14 N 16 deg 2 maxmv  5 maxkf  4 KEYFLIPviol 0 | desc:mv/kf 0:1/4 1:2/4 2:2/4 3:1/1 4:3/4 5:3/4 6:4/3 7:1/4 8:5/4 10:2/1
+grow_top_N21.json                  T  52 N 21 deg 3 maxmv 12 maxkf 15 KEYFLIPviol 0 | desc:mv/kf 0:2/12 1:3/15 2:3/13 3:2/9 4:1/0 5:4/3 6:3/15 7:6/11 8:7/10 10:5/2 13:7/13 15:12/12 16:10/15 17:5/13 18:5/10 20:4/2
+grow_top_N18.json                  T  46 N 18 deg 3 maxmv 10 maxkf 12 KEYFLIPviol 0 | desc:mv/kf 0:2/12 1:3/8 2:1/12 3:1/0 4:4/3 5:6/12 6:2/0 7:8/10 9:5/3 10:7/12 12:9/12 13:10/12 14:9/10 16:3/3 17:2/0
+fl_d3_k4_W4.json                   T  18 N 12 deg 4 maxmv  6 maxkf  5 KEYFLIPviol 0 | desc:mv/kf 0:1/4 1:3/4 2:4/3 3:6/4 4:6/5 5:3/4 6:4/5 7:5/5 8:3/0 9:2/0 10:3/0
+fl_d5_k3_W3.json                   T  21 N 15 deg 3 maxmv  8 maxkf 10 KEYFLIPviol 0 | desc:mv/kf 0:2/3 1:1/4 2:1/0 3:4/4 5:5/8 6:8/10 7:3/4 8:4/5 10:3/2 11:2/0
+grow_top_N15.json                  T  39 N 15 deg 3 maxmv 11 maxkf 13 KEYFLIPviol 0 | desc:mv/kf 0:2/13 1:2/13 2:1/0 3:4/3 4:6/13 5:2/0 6:7/11 7:5/2 8:5/2 10:8/13 11:11/12 12:2/0 14:4/2
+grow_bottom_N15.json               T  31 N 15 deg 3 maxmv  8 maxkf  9 KEYFLIPviol 0 | desc:mv/kf 0:2/4 1:3/9 2:1/0 3:4/7 4:3/3 5:2/3 6:6/7 7:6/5 8:7/7 10:8/9 11:2/0 12:6/4 13:4/3
+big_d3_k3_W3.json                  T  17 N  9 deg 3 maxmv  7 maxkf  7 KEYFLIPviol 0 | desc:mv/kf 0:2/2 1:4/7 2:6/5 3:7/5 4:4/3 5:2/0 6:5/3 7:1/0
+grow_bottom_N24.json               T  48 N 24 deg 3 maxmv  8 maxkf 10 KEYFLIPviol 0 | desc:mv/kf 0:1/6 1:0/0 2:2/3 3:4/10 4:5/6 5:5/3 6:5/3 7:6/3 8:6/6 10:3/6 11:3/3 13:5/6 14:8/7 15:5/6 16:3/5 17:7/5 18:3/6 19:8/6 20:7/7 21:7/6
+grow_top_N24.json                  T  64 N 24 deg 3 maxmv 10 maxkf 15 KEYFLIPviol 0 | desc:mv/kf 0:2/12 1:3/13 2:3/10 3:2/0 4:4/3 5:6/8 6:3/9 7:3/14 8:6/12 10:4/9 11:1/0 12:10/10 13:5/3 15:9/14 17:10/12 18:10/15 19:9/13 20:10/14 22:3/2
+big_d8_k3_W3.json                  T  54 N 24 deg 3 maxmv  9 maxkf 14 KEYFLIPviol 0 | desc:mv/kf 0:2/14 1:2/4 2:3/11 3:3/7 4:3/13 5:5/9 6:6/11 7:5/4 8:4/3 9:8/6 10:1/0 11:7/7 13:5/9 14:6/7 15:5/11 16:9/8 17:8/7 19:2/0 21:9/14
+fl_d2_k3_W3.json                   T   8 N  6 deg 3 maxmv  3 maxkf  3 KEYFLIPviol 0 | desc:mv/kf 0:1/1 1:3/3 2:2/1 3:2/0 4:2/0 5:2/0
+fl_d4_k3_W3.json                   T  22 N 12 deg 3 maxmv  7 maxkf  8 KEYFLIPviol 0 | desc:mv/kf 0:1/1 1:2/3 2:4/8 3:4/6 4:7/8 7:6/5 8:1/2 9:6/5
+big_d4_k3_W3.json                  T  32 N 12 deg 3 maxmv 10 maxkf 12 KEYFLIPviol 0 | desc:mv/kf 0:2/11 1:2/0 2:4/3 3:6/8 4:2/0 5:8/10 6:5/2 7:7/11 8:5/2 9:10/12 10:5/2
+grow_bottom_N18.json               T  33 N 18 deg 3 maxmv  6 maxkf  9 KEYFLIPviol 0 | desc:mv/kf 0:2/5 1:1/0 2:1/9 3:4/9 4:5/8 5:4/9 6:6/7 7:5/3 8:2/0 12:6/6 13:3/6 15:6/6 16:4/2
+grow_bottom_N21.json               T  41 N 21 deg 3 maxmv  9 maxkf 10 KEYFLIPviol 0 | desc:mv/kf 0:1/8 1:1/0 2:3/8 3:3/4 4:5/10 5:1/1 7:5/8 8:2/0 9:4/8 13:5/2 14:5/4 16:8/8 17:9/8 18:7/10 19:4/4
+big_d6_k3_W3.json                  T  42 N 18 deg 3 maxmv  9 maxkf  9 KEYFLIPviol 0 | desc:mv/kf 0:2/7 1:3/7 2:5/9 3:6/9 4:4/7 6:2/0 7:2/0 8:9/7 9:7/7 10:9/7 11:5/3 12:4/5 13:4/3 16:7/9
+rot_d3_D4.json                     T   8 N  6 deg 4 maxmv  5 maxkf  3 KEYFLIPviol 0 | desc:mv/kf 0:3/2 1:2/2 2:2/0 3:4/3 4:5/3 5:1/0
+u_d8_D3.json                       T  24 N 16 deg 3 maxmv  6 maxkf  7 KEYFLIPviol 0 | desc:mv/kf 0:2/5 1:2/1 2:2/3 3:3/3 4:3/1 5:4/7 6:3/3 7:2/0 8:3/5 9:5/5 10:3/5 11:6/3 12:6/7 13:2/2
+nest3_D3_p6.json                   T   6 N  6 deg 3 maxmv  3 maxkf  3 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:3/3 2:2/1 3:3/3 4:1/1
+bmc_d2_L4.json                     T   4 N  4 deg 2 maxmv  1 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:1/0 2:1/1 3:1/1
+u4_d8.json                         T  31 N 16 deg 4 maxmv 12 maxkf  8 KEYFLIPviol 0 | desc:mv/kf 0:3/7 1:1/8 2:2/8 3:5/7 4:5/6 5:12/8 6:7/6 8:4/2 9:7/8 10:7/8 11:6/8 12:6/4 14:9/4
+nd2_d5_F12.json                    T  12 N 10 deg 2 maxmv  6 maxkf 12 KEYFLIPviol 0 | desc:mv/kf 0:1/8 1:1/12 2:3/8 3:1/0 5:6/6 6:6/12 7:3/2
+g5_a.json                          T  18 N 10 deg 2 maxmv  4 maxkf  7 KEYFLIPviol 0 | desc:mv/kf 0:1/2 1:1/0 2:3/3 3:4/7 4:4/7 6:4/3 7:4/3 8:3/2
+b2_4.json                          T   4 N  4 deg 2 maxmv  1 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:1/0 2:1/0 3:1/0
+up5.json                           T   1 N 10 deg 2 maxmv  1 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:0/0 2:0/0 3:0/0 5:1/0 7:0/0
+g4_a.json                          T  12 N  8 deg 2 maxmv  4 maxkf  3 KEYFLIPviol 0 | desc:mv/kf 0:1/2 1:1/0 2:3/3 3:4/3 4:4/3 5:4/3 6:3/2
+fix3_8.json                        T   8 N  6 deg 2 maxmv  4 maxkf  3 KEYFLIPviol 0 | desc:mv/kf 0:1/2 1:1/0 2:3/3 3:4/3 4:3/2
+up3.json                           T   1 N  6 deg 2 maxmv  1 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:0/0 2:0/0 4:1/0
+upd5.json                          T   9 N 10 deg 2 maxmv  3 maxkf  4 KEYFLIPviol 0 | desc:mv/kf 0:1/3 2:2/3 3:3/4 4:2/4 5:3/2 6:1/0
+up4.json                           T   1 N  8 deg 2 maxmv  1 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:1/0 2:0/0 4:1/0
+upd3.json                          T   5 N  6 deg 2 maxmv  2 maxkf  2 KEYFLIPviol 0 | desc:mv/kf 0:1/2 2:2/2 3:1/0
+mid4.json                          T   9 N  8 deg 2 maxmv  4 maxkf  5 KEYFLIPviol 0 | desc:mv/kf 0:1/5 1:2/5 2:2/2 3:3/3 4:1/0 5:3/2 6:4/3
+fix3_7.json                        T   7 N  6 deg 2 maxmv  3 maxkf  3 KEYFLIPviol 0 | desc:mv/kf 0:1/3 1:1/0 2:3/3 3:3/2 5:3/2
+upd4.json                          T   7 N  8 deg 2 maxmv  3 maxkf  3 KEYFLIPviol 0 | desc:mv/kf 0:1/2 2:2/3 3:1/2 4:3/2 5:1/0
+mid6.json                          T  13 N 12 deg 2 maxmv  5 maxkf  4 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:1/3 2:3/2 3:2/3 5:4/4 7:5/4 8:4/4 9:3/4
+mid8.json                          T  11 N 16 deg 2 maxmv  5 maxkf  6 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:1/6 2:2/1 3:3/6 4:4/4 5:4/3 6:2/5 7:4/5 8:2/2 9:5/4
+x3_L8.json                         T   8 N  6 deg 2 maxmv  4 maxkf  3 KEYFLIPviol 0 | desc:mv/kf 0:1/2 1:1/0 2:3/3 3:4/3 4:3/2
+g4_L12.json                        T  12 N  8 deg 2 maxmv  4 maxkf  3 KEYFLIPviol 0 | desc:mv/kf 0:1/2 1:1/0 2:3/3 3:4/3 4:4/3 5:4/3 6:3/2
+d4_C1_8.json                       T  10 N  8 deg 2 maxmv  3 maxkf  3 KEYFLIPviol 0 | desc:mv/kf 0:1/3 1:1/0 2:1/3 3:2/3 4:1/0 5:3/2 6:3/2 7:3/3
+d4_C1_8_C2_11.json                 T  11 N  8 deg 2 maxmv  4 maxkf  4 KEYFLIPviol 0 | desc:mv/kf 0:1/4 1:1/4 2:1/0 3:3/2 4:4/3 5:1/0 6:4/3 7:3/2
+d4_C1_7.json                       T   9 N  8 deg 2 maxmv  3 maxkf  3 KEYFLIPviol 0 | desc:mv/kf 0:1/3 1:2/2 3:3/2 4:3/2 5:2/2 6:2/3
+lag2c_d4.json                      T   9 N  8 deg 2 maxmv  3 maxkf  3 KEYFLIPviol 0 | desc:mv/kf 0:1/2 1:2/3 2:2/2 3:1/0 4:2/2 5:3/2 6:3/3 7:1/0
+lag1u.json                         T   2 N  6 deg 2 maxmv  1 maxkf  2 KEYFLIPviol 0 | desc:mv/kf 0:1/2 1:1/1
+lag1.json                          T   2 N  6 deg 2 maxmv  2 maxkf  2 KEYFLIPviol 0 | desc:mv/kf 0:1/1 1:2/2
+nest_d3_L4.json                    T   4 N  6 deg 2 maxmv  2 maxkf  2 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:2/2 2:2/2 3:1/1 4:1/1
+ISO_1_FRZ_1_d4_t10.json            T  10 N  8 deg 2 maxmv  3 maxkf  5 KEYFLIPviol 0 | desc:mv/kf 0:1/1 1:2/5 2:3/3 3:2/3 4:3/5 5:2/1 6:0/0
+ISO_1_FRZ_1_d4_t9.json             T   9 N  8 deg 2 maxmv  3 maxkf  6 KEYFLIPviol 0 | desc:mv/kf 0:1/1 1:1/6 2:3/2 3:3/6 4:1/0 5:3/2
+ISO_1_d4_t10.json                  T  10 N  8 deg 2 maxmv  3 maxkf  4 KEYFLIPviol 0 | desc:mv/kf 0:1/4 1:2/2 2:3/2 3:3/3 4:3/3 5:3/4 6:1/0
+ISO_1_d4_t11.json                  T  11 N  8 deg 2 maxmv  3 maxkf  5 KEYFLIPviol 0 | desc:mv/kf 0:1/5 1:1/5 2:3/2 4:3/5 5:3/5 6:1/0
+ISO_1_d4_t12.json                  T  12 N  8 deg 2 maxmv  4 maxkf  4 KEYFLIPviol 0 | desc:mv/kf 0:1/4 1:1/2 2:3/3 3:3/2 4:4/3 5:3/4
+NOL0_1_d4_t8.json                  T   8 N  8 deg 2 maxmv  3 maxkf  6 KEYFLIPviol 0 | desc:mv/kf 0:0/0 1:1/6 2:1/0 3:3/2 4:3/6 5:3/2
+NOW_1_FRZ_1_d4_t9.json             T   9 N  8 deg 2 maxmv  3 maxkf  6 KEYFLIPviol 0 | desc:mv/kf 0:1/6 1:1/0 2:3/2 3:3/6 4:1/0 6:3/2
+NOW_1_d4_t10.json                  T  10 N  8 deg 2 maxmv  3 maxkf  3 KEYFLIPviol 0 | desc:mv/kf 0:1/2 1:1/0 2:1/0 3:3/2 4:3/3 5:3/3 6:1/0 7:1/0
+NOW_1_d4_t9.json                   T   9 N  8 deg 2 maxmv  3 maxkf  3 KEYFLIPviol 0 | desc:mv/kf 0:1/2 2:3/3 3:3/2 4:3/3 5:1/0 6:1/0
+ext_d3_7.json                      T   2 N  6 deg 2 maxmv  1 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:0/0 2:0/0 3:0/0 4:1/0 5:0/0
+ext_d3_8.json                      T   3 N  6 deg 2 maxmv  1 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:0/0 1:0/0 2:0/0 3:1/1 4:1/1 5:1/0
+ext_d3_9.json                      T   3 N  6 deg 2 maxmv  2 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:0/0 1:0/0 2:1/1 4:2/1 5:1/0
+ext_d3_t10.json                    T   4 N  6 deg 2 maxmv  2 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:0/0 1:0/0 2:1/1 3:1/0 4:2/1 5:1/0
+iso1_d3_5.json                     T   5 N  6 deg 2 maxmv  2 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:1/1 2:2/1 3:1/1 4:1/0
+iso_d2_3.json                      T   3 N  4 deg 2 maxmv  2 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:1/1 1:2/1 2:1/0
+iso_d2_4.json                      T   4 N  4 deg 2 maxmv  2 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:1/1 1:2/1 2:1/0
+iso_d3_6.json                      T   6 N  6 deg 2 maxmv  3 maxkf  3 KEYFLIPviol 0 | desc:mv/kf 0:1/2 1:2/3 2:3/2 3:3/3 4:1/0
+iso_d3_7.json                      T   7 N  6 deg 2 maxmv  3 maxkf  2 KEYFLIPviol 0 | desc:mv/kf 0:1/2 1:2/2 2:3/2 3:3/2 4:1/0
+iso_d4_st9.json                    T  11 N  8 deg 2 maxmv  3 maxkf  4 KEYFLIPviol 0 | desc:mv/kf 0:1/3 1:1/2 2:3/3 3:3/4 4:3/4 5:3/2 6:1/0
+kf0_d3_4.json                      T   1 N  6 deg 2 maxmv  1 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:1/1 1:0/0 2:0/0 3:0/1
+kf1_d3_4.json                      T   2 N  6 deg 2 maxmv  1 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:1/1 1:0/1 2:1/0 3:0/0
+kf1_d3_5.json                      T   2 N  6 deg 2 maxmv  1 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:1/1 2:0/1 3:1/1
+kf1_d4_t10.json                    T   5 N  8 deg 2 maxmv  2 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:1/1 1:0/0 2:1/0 3:1/1 4:2/1 5:1/1
+kf1_d4_t9.json                     T   3 N  8 deg 2 maxmv  2 maxkf  2 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:0/1 2:1/2 3:2/2 4:1/0 5:1/1
+kf2_d3_4.json                      T   2 N  6 deg 2 maxmv  1 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:1/1 1:0/1 2:1/0 3:0/0
+kf2_d3_5.json                      T   1 N  6 deg 2 maxmv  1 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:1/1 2:0/1 3:0/0
+kf2_d3_6.json                      T   2 N  6 deg 2 maxmv  1 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:1/1 1:0/0 2:1/0 3:1/1
+kf2_d3_7.json                      T   2 N  6 deg 2 maxmv  1 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:1/1 1:0/0 2:1/0 3:1/1
+kf3_d3_t8.json                     T   1 N  6 deg 2 maxmv  1 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:1/1 1:0/1 2:0/1 3:0/1
+kf8_d3_t8.json                     T   3 N  6 deg 2 maxmv  2 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:1/1 1:2/1 2:1/1 3:1/1
+kf8_d3_t9.json                     T   1 N  6 deg 2 maxmv  1 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:0/0 1:1/0 2:0/0 3:0/0
+nol0_d3_4.json                     T   4 N  6 deg 2 maxmv  1 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:1/0 2:1/0 3:1/0
+now1_d3_5.json                     T   5 N  6 deg 2 maxmv  2 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:1/0 2:0/0 3:1/0 4:2/1 5:1/1
+now_d3_4.json                      T   4 N  6 deg 2 maxmv  2 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:0/0 1:1/1 2:2/1 3:1/0 4:1/0
+now_d3_5.json                      T   5 N  6 deg 2 maxmv  2 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:0/0 1:1/1 2:1/0 3:2/1 4:1/0 5:1/0
+now_d3_6.json                      T   6 N  6 deg 2 maxmv  1 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:1/1 1:1/1 2:1/0 3:1/0 4:1/0 5:1/0
+one_d3_6.json                      T   6 N  6 deg 2 maxmv  3 maxkf  3 KEYFLIPviol 0 | desc:mv/kf 0:1/1 1:2/3 2:3/3 3:1/0 4:0/0 5:2/1
+v_d2_4.json                        T   4 N  4 deg 2 maxmv  2 maxkf  2 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:1/0 2:2/2 3:1/2
+kf0_d2_t2.json                     T   2 N  4 deg 2 maxmv  1 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:1/0
+kf0_d3_t4.json                     T   1 N  6 deg 2 maxmv  1 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:1/1 1:0/0 2:0/0 3:0/1
+kf0_d4_t8.json                     T   8 N  8 deg 2 maxmv  3 maxkf  6 KEYFLIPviol 0 | desc:mv/kf 0:1/6 1:1/0 2:3/2 3:3/6 4:3/2
+kf1_d2_t3.json                     T   1 N  4 deg 2 maxmv  1 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:1/1 1:0/1
+kf1_d3_t5.json                     T   2 N  6 deg 2 maxmv  1 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:1/1 2:0/1 3:1/1
+kf2_d2_t3.json                     T   1 N  4 deg 2 maxmv  1 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:1/1 1:0/1
+kf2_d3_t7.json                     T   2 N  6 deg 2 maxmv  1 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:1/1 1:0/0 2:1/0 3:1/1
+kf3_d2_t3.json                     T   1 N  4 deg 2 maxmv  1 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:1/1 1:0/1
+kf3_d3_t8.json                     T   1 N  6 deg 2 maxmv  1 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:1/1 1:0/1 2:0/1 3:0/1
+kf4_d3_t8.json                     T   1 N  6 deg 2 maxmv  1 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:0/1 1:1/1 3:1/0
+kf6_d2_t3.json                     T   1 N  4 deg 2 maxmv  1 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:1/1 1:0/1
+kf8_d3_t9.json                     T   1 N  6 deg 2 maxmv  1 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:0/0 1:1/0 2:0/0 3:0/0
+climb_SUM2_m3_s13.json             T   4 N  8 deg 2 maxmv  2 maxkf  2 KEYFLIPviol 0 | desc:mv/kf 0:0/1 1:1/0 2:1/2 3:1/0 4:2/2 5:1/1
+climb_SUM2_m3_s14.json             T   1 N  8 deg 2 maxmv  1 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:0/0 2:0/0 3:0/0 4:0/0 5:0/0
+climb_SUM_m2_s1.json               T   1 N  6 deg 2 maxmv  1 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:0/0 2:0/0 3:0/0
+climb_SUM_m2_s2.json               T   1 N  6 deg 2 maxmv  1 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:0/0 1:0/0 2:1/0 3:0/0
+climb_SUM_m2_s3.json               T   1 N  6 deg 2 maxmv  1 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:0/0 1:0/0 2:1/0 3:0/0
+climb_SUM_m2_s4.json               T   1 N  6 deg 2 maxmv  1 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:0/0 2:0/0 3:0/0
+climb_SUM_m3_s1.json               T   1 N  8 deg 2 maxmv  1 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:0/0 2:0/0 3:0/0 4:0/0 5:0/0
+climb_SUM_m3_s11.json              T   4 N  8 deg 2 maxmv  2 maxkf  2 KEYFLIPviol 0 | desc:mv/kf 0:1/2 1:0/0 2:1/0 3:1/1 4:2/2 5:1/1
+climb_SUM_m3_s12.json              T   3 N  8 deg 2 maxmv  1 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:0/1 1:0/0 2:0/1 3:1/0 4:1/1 5:1/1
+climb_SUM_m3_s2.json               T   1 N  8 deg 2 maxmv  1 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:0/1 2:0/1 3:0/0 4:0/0 5:0/0
+climb_SUM_m3_s3.json               T   4 N  8 deg 2 maxmv  2 maxkf  2 KEYFLIPviol 0 | desc:mv/kf 0:1/2 1:1/1 2:0/1 3:1/1 4:2/2 5:1/1
+climb_SUM_m3_s4.json               T   1 N  8 deg 2 maxmv  1 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:0/0 1:0/0 2:0/0 3:0/0 4:1/0
+kill_CNT.json                      T   1 N  8 deg 2 maxmv  1 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:0/0 1:1/1 2:0/1 4:0/0
+kill_U.json                        T   1 N  8 deg 2 maxmv  1 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:0/0 1:1/1 2:0/1 4:0/0
+kill_UW.json                       T   3 N  8 deg 2 maxmv  1 maxkf  3 KEYFLIPviol 0 | desc:mv/kf 0:0/3 1:1/0 2:0/3 3:1/0 4:1/2
+kill_UWT.json                      T   1 N  8 deg 2 maxmv  1 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:0/0 1:1/1 2:0/1 4:0/0
+lsi_f_m3_p4_s1.json                T   0 N  8 deg 2 maxmv  0 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:0/0 1:0/0 2:0/0 3:0/0 4:0/0 5:0/0
+perbit_m2_s21.json                 T   2 N  6 deg 2 maxmv  1 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:1/1 1:0/1 2:0/1 3:1/0
+perbit_m2_s22.json                 T   1 N  6 deg 2 maxmv  1 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:0/1 1:0/0 2:0/1 3:1/0
+perbit_m2_s31.json                 T   1 N  6 deg 2 maxmv  1 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:0/0 1:1/0 2:1/0 3:1/0
+perbit_m2_s32.json                 T   1 N  6 deg 2 maxmv  1 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:0/0 2:1/0 3:0/0
+perbit_m2_s33.json                 T   2 N  6 deg 2 maxmv  1 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:0/0 1:1/0 2:1/0 3:1/0 4:0/0
+perbit_m2_s34.json                 T   1 N  6 deg 2 maxmv  1 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:0/0 1:0/0 2:1/0 3:0/0 4:0/0
+perbit_m2_s35.json                 T   1 N  6 deg 2 maxmv  1 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:0/1 1:1/1 2:1/1 3:1/0
+perbit_m2_s36.json                 T   1 N  6 deg 2 maxmv  1 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:0/0 1:1/0 2:1/0 3:0/0
+perbit_m2_s37.json                 T   1 N  6 deg 2 maxmv  1 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:0/1 1:0/1 2:1/0 3:0/0
+perbit_m2_s38.json                 T   1 N  6 deg 2 maxmv  1 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:0/1 1:0/0 2:0/1 3:1/0 4:1/0
+perbit_m3_s23.json                 T   1 N  8 deg 2 maxmv  1 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:0/0 1:0/0 2:0/0 3:1/0 4:0/0 5:0/0
+perbit_m3_s24.json                 T   2 N  8 deg 2 maxmv  1 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:0/0 2:1/0 3:0/0 4:0/0 5:0/0
+perbit_m3_s41.json                 T   3 N  8 deg 2 maxmv  2 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:0/0 1:1/1 2:1/1 3:0/1 4:2/1 5:1/0
+perbit_m3_s42.json                 T   3 N  8 deg 2 maxmv  2 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:0/0 1:0/0 2:1/1 3:1/0 4:2/1 5:1/0
+perbit_m3_s43.json                 T   2 N  8 deg 2 maxmv  2 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:0/0 1:0/0 2:1/1 3:1/0 4:2/1 5:1/0
+perbit_m3_s44.json                 T   6 N  8 deg 2 maxmv  2 maxkf  2 KEYFLIPviol 0 | desc:mv/kf 0:1/1 1:1/2 2:1/2 3:1/2 4:2/2 5:1/1
+perbit_m3_s45.json                 T   1 N  8 deg 2 maxmv  1 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:0/0 1:1/0 2:0/0 3:0/0 4:1/0 5:0/0
+perbit_m3_s46.json                 T   2 N  8 deg 2 maxmv  1 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:1/1 3:1/0 4:0/0 5:1/1
+perbit_m3_s47.json                 T   0 N  8 deg 2 maxmv  0 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:0/0 1:0/0 2:0/0 3:0/0 4:0/0 5:0/0
+perbit_m3_s48.json                 T   1 N  8 deg 2 maxmv  1 maxkf  0 KEYFLIPviol 0 | desc:mv/kf 0:0/0 1:1/0 2:0/0 3:0/0 4:1/0
+climb_A_d3_m1_T5.json              T   5 N  6 deg 2 maxmv  2 maxkf  2 KEYFLIPviol 0 | desc:mv/kf 0:1/2 1:2/2 2:1/0 3:1/0
+climb_A_d4_m2_T6.json              T   6 N  8 deg 2 maxmv  3 maxkf  4 KEYFLIPviol 0 | desc:mv/kf 0:1/3 1:2/4 3:3/2 4:1/4 5:1/2
+climb_A_d5_m2_T8.json              T   8 N 10 deg 2 maxmv  3 maxkf  4 KEYFLIPviol 0 | desc:mv/kf 0:1/1 1:2/4 2:2/3 3:2/3 4:3/4 5:1/0 6:1/1 7:1/0
+climb_A_d6_m1_T8.json              T   8 N 12 deg 2 maxmv  2 maxkf  1 KEYFLIPviol 0 | desc:mv/kf 0:1/1 2:1/1 3:2/1 4:1/1 5:1/1 6:2/1 7:1/0
+climb_A_d6_m2_T8.json              T   8 N 12 deg 2 maxmv  3 maxkf  2 KEYFLIPviol 0 | desc:mv/kf 0:1/0 1:1/2 2:3/2 3:2/2 4:1/2 5:1/2 6:1/0 7:2/2
+climb_A_d6_m2_T9.json              T   9 N 12 deg 2 maxmv  3 maxkf  3 KEYFLIPviol 0 | desc:mv/kf 0:1/3 1:1/2 2:2/2 3:2/2 4:2/2 6:2/3 7:3/2 9:1/0
+seed_A_d4_m2_T9.json               T   9 N  8 deg 2 maxmv  3 maxkf  6 KEYFLIPviol 0 | desc:mv/kf 0:1/6 1:1/2 2:3/2 3:3/6 4:3/2 5:1/2

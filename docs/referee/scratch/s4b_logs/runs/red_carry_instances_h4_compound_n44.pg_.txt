@@ -1,0 +1,8 @@
+GAME red/carry/instances/h4_compound_n44.pg 
+GAMES 1
+enum_states 4
+loc_chk 29
+rhos 1128
+states 4
+VIOLATIONS 0
+RC 0

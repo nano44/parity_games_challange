@@ -1,0 +1,27 @@
+cube 13 gen: sha1 873e2eecd0e87c85d4ece243d47cb06d63a3cbb0 UNSAT 185.0 s  cnf_sha1 873e2eecd0e87c85d4ece243d47cb06d63a3cbb0 proof_sha1 b2cf489ac74bbd8d84330ab0d39bf49a03f195c3 proof_bytes 860468273
+cube 1 gen: sha1 40412c7b6a8db5b8c87f9673499fcb233f519145 UNSAT 200.7 s  cnf_sha1 40412c7b6a8db5b8c87f9673499fcb233f519145 proof_sha1 e7f8d3880415937598a78fc1e8aeec8d1064554b proof_bytes 970002355
+cube 13 ref_rup: s VERIFIED (528362 lemmas RUP-checked, deletions ignored) wall 840 s
+cube 14 gen: sha1 c663d746f9c77edfaefb9fcfd4622b5b83eda04d UNSAT 185.2 s  cnf_sha1 c663d746f9c77edfaefb9fcfd4622b5b83eda04d proof_sha1 77052f059eb2c02dcaa8c1d83dfd5d1bb4406aa3 proof_bytes 926008396
+cube 1 ref_rup: s VERIFIED (567711 lemmas RUP-checked, deletions ignored) wall 951 s
+cube 6 gen: sha1 e4886b4716f5fe07039fd62d9e2de787c780f83d UNSAT 190.7 s  cnf_sha1 e4886b4716f5fe07039fd62d9e2de787c780f83d proof_sha1 ff59ee2cd3a9268d371022895e4509793f5f545b proof_bytes 941098907
+cube 14 ref_rup: s VERIFIED (551347 lemmas RUP-checked, deletions ignored) wall 873 s
+cube 2 gen: sha1 d8cadc0ce70965077f8cb8a01fc0ef0357a9512c UNSAT 187.7 s  cnf_sha1 d8cadc0ce70965077f8cb8a01fc0ef0357a9512c proof_sha1 41f973883c3b72755c54d84a15dabefd8e4b5f2f proof_bytes 921350684
+cube 6 ref_rup: s VERIFIED (561107 lemmas RUP-checked, deletions ignored) wall 879 s
+cube 3 gen: sha1 df5ecf8c3f31b1ce1671cbd6d71a4a445af71fd1 UNSAT 288.6 s  cnf_sha1 df5ecf8c3f31b1ce1671cbd6d71a4a445af71fd1 proof_sha1 4cb7024e7cab26b89fed834eb718862f8e093fe0 proof_bytes 1419744096
+cube 2 ref_rup: s VERIFIED (533419 lemmas RUP-checked, deletions ignored) wall 855 s
+cube 15 gen: sha1 44fb279663b37e55c7c5f3d78f58470ce6208f71 UNSAT 311.6 s  cnf_sha1 44fb279663b37e55c7c5f3d78f58470ce6208f71 proof_sha1 142821525d1130b7f11c324fc38be03a43d17655 proof_bytes 1567848549
+cube 3 ref_rup: s VERIFIED (803559 lemmas RUP-checked, deletions ignored) wall 1566 s
+cube 12 gen: sha1 7215704a0707adbbd7b2d367c750d2dda00ed1e1 UNSAT 320.4 s  cnf_sha1 7215704a0707adbbd7b2d367c750d2dda00ed1e1 proof_sha1 cb63a3197c11ca175ccb1b9ae27ee627d7cc6e89 proof_bytes 1500256933
+cube 15 ref_rup: s VERIFIED (841457 lemmas RUP-checked, deletions ignored) wall 1716 s
+cube 11 gen: sha1 2ba36f3dc819868a75c8b6d3917d9298ee59065f UNSAT 355.8 s  cnf_sha1 2ba36f3dc819868a75c8b6d3917d9298ee59065f proof_sha1 a8ede7f045be25665eb98844a38c47f3b25accac proof_bytes 1585527511
+cube 12 ref_rup: s VERIFIED (885374 lemmas RUP-checked, deletions ignored) wall 1871 s
+cube 8 gen: sha1 7fd44a80cc886adb701e5f9069d02b69d62676cf UNSAT 347.5 s  cnf_sha1 7fd44a80cc886adb701e5f9069d02b69d62676cf proof_sha1 2192cf5c5d051b976d5fad2dbe06c864a7c320dd proof_bytes 1598046419
+cube 11 ref_rup: s VERIFIED (915729 lemmas RUP-checked, deletions ignored) wall 2123 s
+cube 7 gen: sha1 f87b694607906e572841ca29ff7bca3023051385 UNSAT 350.1 s  cnf_sha1 f87b694607906e572841ca29ff7bca3023051385 proof_sha1 657258c11459e2cb951efcb7cec890c736a6eba6 proof_bytes 1623733639
+cube 8 ref_rup: s VERIFIED (931579 lemmas RUP-checked, deletions ignored) wall 2149 s
+cube 0 gen: sha1 7e70b9e100155d8da2e7712469a6c1e145ac4850 UNSAT 296.2 s  cnf_sha1 7e70b9e100155d8da2e7712469a6c1e145ac4850 proof_sha1 0e98a96c3530a9f6da53234f17de00f3575094b2 proof_bytes 1460488502
+cube 7 ref_rup: s VERIFIED (930211 lemmas RUP-checked, deletions ignored) wall 2143 s
+cube 4 gen: sha1 57e654b424153eb7542734a7616bca0d60ae204e UNSAT 356.2 s  cnf_sha1 57e654b424153eb7542734a7616bca0d60ae204e proof_sha1 e6c7527f3f925fb9b459ef1f4c4fead6463aa5e8 proof_bytes 1661515605
+cube 0 ref_rup: s VERIFIED (807459 lemmas RUP-checked, deletions ignored) wall 1636 s
+cube 4 ref_rup: s VERIFIED (939707 lemmas RUP-checked, deletions ignored) wall 2207 s
+RESTDONE

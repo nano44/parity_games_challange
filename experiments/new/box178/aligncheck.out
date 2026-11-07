@@ -1,0 +1,4 @@
+SCOPE corpus files 184 random 300
+COUNTS runs 5662 steps 5602 statelevels 22472 runlevels 10648 runmovers 32620 dbltight 44
+KPEQ 0 LAND 0 ORD 0 DBL 0 F0 0 KFF 0 MOV 0 TB 0 PATH 0
+TIGHT dd_d5_F14 LR True T 14 F [2, 3, 6, 14, 7] F(3) = 2F(2) + 2 True

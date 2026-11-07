@@ -1,0 +1,1 @@
+climbR_d3_s31: best maxR 4 at (2, 1) with T 5 (N 6)

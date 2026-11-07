@@ -1,0 +1,6 @@
+FILE odxi_min_n12.pg n 12 K 2 fallbacks 0 FLruns 1 FLtrans 1
+RUN [0, 1] FL 1 CAP 5 GCH 0 epochs 1 ODIFF-Xi-changes 1 [(1, 10)]
+moves_nonCN 1
+pre_chk 22
+tight_chk 22
+VIOLATIONS 0

@@ -1,0 +1,5 @@
+CORPUS files 208 runs 63223 steps 140395 doubling (run, level) 4534 violations {'ALIGN': 0, 'WO': 0, 'DBLa': 0, 'DBLb': 0, 'DBLc': 0, 'PF': 0, 'HIT': 0, 'ALTa': 0, 'ALTb': 0, 'ALTc': 0, 'ALTd': 0, 'TN': 0}
+
+real	0m39.240s
+user	0m38.804s
+sys	0m0.023s

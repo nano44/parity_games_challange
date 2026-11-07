@@ -1,0 +1,7 @@
+PIN odxi_n37 83f263c1a4d0 start e2ed671588c7
+OINK odxi_n37 --zlk verified
+OINK odxi_n37 --tl verified
+PINWIN odxi_n37.pg n 37 states 17 fallbacks 1 W0 37 AGREE True
+n5b iterations 16 fallbacks 1 states 17 | n5x states 17 | identical state sequences: True
+ANCHOR odxi_n37.pg n 37 RUNS 1 FL 8 EPOCHS 6 GCH 5 VIOL 0 LVLVIOL 0 CMOVES 0 CMNORISE 0 CMLATE 0 MAXEP 2 EPVIOL 0 BOUNDVIOL 0 XIB 5 SBB 0 CYB 0 MAXLEN 8 CMXICH 0
+ODXI odxi_n37.pg n 37 RUNS 1 FL 8 XICH_ODIFF 5 GATEREL 1 EX [(1, 6, 35, 34, 33, 33)]

@@ -1,0 +1,4 @@
+MISMATCH 23 5 2
+MISMATCH 40 7 4
+MISMATCH 89 7 4
+eq count 1000 seed 2 match 974 mismatch 26 (first divergence an exact VJ tie: 26) worst(T, maxrun) (0, 0)

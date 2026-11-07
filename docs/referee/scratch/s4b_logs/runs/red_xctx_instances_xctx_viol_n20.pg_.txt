@@ -1,0 +1,8 @@
+GAME red/xctx/instances/xctx_viol_n20.pg 
+GAMES 1
+enum_states 5
+loc_chk 32
+rhos 798
+states 5
+VIOLATIONS 0
+RC 0

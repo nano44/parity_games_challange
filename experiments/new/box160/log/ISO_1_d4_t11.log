@@ -1,0 +1,3 @@
+ISO d 4 t 11 N 8 ISO=1 NOL0=None SEG=None vars 104468 clauses 357045 build 0.2 s
+RESULT d 4 T >= 11: SAT 53.6 s
+replay ideal.py L 11 (opt); box150 L 11; same True; level-0 steps [6, 9]; segs [5, 2, 2]; iso True -> box160/out/ISO_1_d4_t11.json

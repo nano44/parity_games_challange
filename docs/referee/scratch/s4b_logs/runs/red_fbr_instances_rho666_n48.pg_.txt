@@ -1,0 +1,10 @@
+GAME red/fbr/instances/rho666_n48.pg 
+GAMES 1
+enum_skip 1
+enum_states 15
+keep_chk 11
+loc_chk 59
+rhos 106
+states 16
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,9 @@
+GAME red/n3/instances/long90_k2_n40.pg
+GAMES 1
+enum_states 18
+keep_chk 15
+loc_chk 20
+rhos 38
+states 18
+VIOLATIONS 0
+RC 0

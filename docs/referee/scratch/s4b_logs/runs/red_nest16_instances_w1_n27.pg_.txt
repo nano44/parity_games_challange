@@ -1,0 +1,9 @@
+GAME red/nest16/instances/w1_n27.pg 
+GAMES 1
+enum_skip 1
+enum_states 1
+loc_chk 21
+rhos 9
+states 2
+VIOLATIONS 0
+RC 0

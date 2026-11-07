@@ -1,0 +1,8 @@
+GAME n5-epoch/instances/nep92_n40.pg 
+GAMES 1
+enum_states 3
+loc_chk 10
+rhos 53
+states 3
+VIOLATIONS 0
+RC 0

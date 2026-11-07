@@ -1,0 +1,2 @@
+REC_d10_tower_mu30.json sha1 cc94dc9c46ef63f7a3a54b536d9d3b38fdee5255 | upward options with Xi-target 11 (level 5): [(1, 0, 'level 0')] | options of 11 : [(0, 3, 'level 1'), (1, -1, 'X')]
+KILL_M2D_d6_mu13.json sha1 5301c716f68f219bda2806f29b317c94e0ed5df0 | upward options with Xi-target 5 (level 2): [(1, 0, 'level 0'), (2, 1, 'level 1')] | options of 5 : [(0, 3, 'level 1'), (1, 11, 'level 5')]

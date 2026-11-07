@@ -1,0 +1,9 @@
+GAME red/h3/instances/lcount2_n23.pg
+GAMES 1
+enum_states 4
+keep_chk 2
+loc_chk 5
+rhos 10
+states 4
+VIOLATIONS 0
+RC 0

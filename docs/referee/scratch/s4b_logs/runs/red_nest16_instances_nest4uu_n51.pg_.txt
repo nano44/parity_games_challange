@@ -1,0 +1,9 @@
+GAME red/nest16/instances/nest4uu_n51.pg 
+GAMES 1
+enum_skip 1
+enum_states 1
+loc_chk 40
+rhos 10
+states 2
+VIOLATIONS 0
+RC 0

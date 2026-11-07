@@ -1,0 +1,9 @@
+GAME red/carry/instances/fired10_n20.pg 
+GAMES 1
+enum_skip 2
+enum_states 2
+loc_chk 73
+rhos 15
+states 4
+VIOLATIONS 0
+RC 0

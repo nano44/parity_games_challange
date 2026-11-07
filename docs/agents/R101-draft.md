@@ -1,4 +1,4 @@
-# Draft RESULTS R101 (Lead; first fill 2026-11-01T03:08:02Z by date -u, read in the same command as the fill of this file (subagent); on GATE line
+# Draft RESULTS R101 (Lead; first fill 2026-11-01T03:08:02Z by date -u, read in the same command as the fill of this file (subagent); on GATE line — LANDED in RESULTS Results 2026-11-01 05:28Z (CHECKER C111 Add. 1 d53e1d4f PASS), after R100
 L-1, docs/new/P-N5-GATE-line-L1.txt (l-new afb8b99e, sha1 d677161c4123dd184db14c17d26630e037b51027); packet, frozen line 245ce9fe, L-1,
 fixes F0 + entry 1, REFEREE's R-N5-GATE (successor 21's report c9bc161c; successor 22's Addendum 1 c9644446 and §C ffbdc404) and
 REFEREE-2's R2-N5-GATE (e35e8280) and R2-N5-GATE-L1 (9b30c652) read at the origin heads fetched at the start of the fill, 2026-11-01
@@ -442,7 +442,7 @@ Dead-ends row). The Lead decides on a row (C110 §6 «the Lead decides on a row�
   (a)+(d).» Both ran the sandwich and both monotone halves on every state of their corpora (REFEREE §7 l. 86 «VIOLATIONS 0 for SQZ, SET,
   BR, RED and CR.»; REFEREE-2 §2 l. 38-39 «[SQZ], all three inequalities: 1,679,311 vertex-state checks, 0 violations (§4).»). Whether a
   class-free item of a subclass R-line is accepted as a premise «on every game» is the Lead's reading (REFEREE-2 l. 42; L1 l. 27); the
-  form applied is the Lead's brief quoted in fixes F0 l. 14-15, not a numbered Lead reading in docs/DECISIONS.md. Landed precedents carry
+  form applied is the Lead's brief quoted in fixes F0 l. 14-15, now recorded as Lead reading L44 (docs/DECISIONS.md, 2026-11-01 03:17Z), whose conditions (i) and (ii) hold here (above). Landed precedents carry
   the same reading in their bodies: R56 «R18 (d) Lemma S (a) is signed under a 𝒞^1O setting line; both referees read its proof (VJ00 (11)
   and R17 (F1) on the one-player game G_σ) and CONFIRM it holds on every game (N-FBRED-3 = REFEREE §1)»; R55 for R17 (a)-(c), R18 (c)'s
   flat case and R18 (d) Lemma S (c); R47 (Lemma Φ, every game) uses R18 (d) Lemma S (b). For CHECKER C111 to rule on.
@@ -600,3 +600,5 @@ both DEAD instances); lend107_n32 and fbg_K12 n5b runs beyond pincheck.sh. Scrat
 /tmp/claude-0/-home-user-parity-games-challange/43a29ffc-0674-5391-84c1-1d3918a14b5d/scratchpad: R101-template.md, assemble101.py,
 fill101.py, fxq101.py, upd101.py / upd101.txt, wdiff101.py / wdiff101.out, sum101.py / sum101.out, q101.py / q101.out, pin101.time / pin101.out
 (archafb8/experiments/new/pin101.sh), inph_fbg.time / inph_fbg.out, pc120.time / pc120.out, check_afb8.sh, archafb8/.
+
+Addendum 2 (Lead, 2026-11-01 04:35:46Z by date -u, read in the same command as this edit; for C111 Add. 1): CHECKER C111 E-1 (claude/checker 54645970) applied verbatim: body l. 445 «, not a numbered Lead reading in docs/DECISIONS.md.» → «, now recorded as Lead reading L44 (docs/DECISIONS.md, 2026-11-01 03:17Z), whose conditions (i) and (ii) hold here (above).» (once). No other change; title l. 348, UPDATE l. 583 and the line are unchanged.

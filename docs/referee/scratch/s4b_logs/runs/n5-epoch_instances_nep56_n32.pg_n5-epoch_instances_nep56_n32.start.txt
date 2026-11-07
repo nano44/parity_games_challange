@@ -1,0 +1,8 @@
+GAME n5-epoch/instances/nep56_n32.pg n5-epoch/instances/nep56_n32.start
+GAMES 1
+enum_states 1
+loc_chk 12
+rhos 45
+states 1
+VIOLATIONS 0
+RC 0

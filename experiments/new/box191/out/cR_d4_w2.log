@@ -1,0 +1,18 @@
+start score (0, 2) N 8
+it 2 N 8 T 3 maxrun 1 C 1
+it 3 N 8 T 4 maxrun 1 C 3
+it 4 N 8 T 5 maxrun 1 C 3
+it 5 N 8 T 5 maxrun 2 C 2
+it 21 N 8 T 6 maxrun 2 C 3
+it 24 N 8 T 7 maxrun 3 C 3
+it 48 N 8 T 7 maxrun 4 C 2
+it 93 N 8 T 7 maxrun 5 C 2
+it 112 N 8 T 8 maxrun 5 C 2
+it 123 N 8 T 9 maxrun 5 C 2
+it 387 N 8 T 7 maxrun 6 C 1
+it 435 N 8 T 8 maxrun 7 C 1
+it 468 N 8 T 9 maxrun 7 C 2
+it 556 N 8 T 10 maxrun 7 C 3
+it 1312 N 8 T 10 maxrun 8 C 2
+it 1961 N 8 T 10 maxrun 9 C 1
+FINAL best (9, 10) N 8

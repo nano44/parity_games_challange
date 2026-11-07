@@ -1,0 +1,6 @@
+restart 0 (mu_inf, T_inf) (3, 16) best (3, 16)
+restart 1 (mu_inf, T_inf) (2, 11) best (3, 16)
+restart 2 (mu_inf, T_inf) (3, 12) best (3, 16)
+restart 3 (mu_inf, T_inf) (2, 11) best (3, 16)
+restart 4 (mu_inf, T_inf) (3, 17) best (3, 17)
+restart 5 (mu_inf, T_inf) (3, 16) best (3, 17)

@@ -1,0 +1,9 @@
+GAME red/ul/instances/ladderd0_k24_n84.pg
+GAMES 1
+enum_states 26
+keep_chk 25
+loc_chk 26
+rhos 52
+states 26
+VIOLATIONS 0
+RC 0

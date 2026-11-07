@@ -1,0 +1,21 @@
+FLRUN new/box133/odxi_n37.pg#start 1 9 n 37 FL 8 CAP 9 GCH 5 epochs 6 ODIFF [27, 33, 34] ODIFFxi {33: 5, 34: 0, 27: 0}
+FLRUN new/box134/inst/odxi_min_n12.pg#start 0 1 n 12 FL 1 CAP 5 GCH 0 epochs 1 ODIFF [10] ODIFFxi {10: 1}
+FLRUN new/box134/inst/odxi_lasso_n13.pg#start 0 1 n 13 FL 1 CAP 6 GCH 0 epochs 1 ODIFF [8, 10] ODIFFxi {8: 0, 10: 1}
+FLRUN new/box134/inst/odxi_many_n32.pg#start 6 9 n 32 FL 3 CAP 8 GCH 2 epochs 3 ODIFF [3, 5, 9, 10, 12, 19, 20, 23, 25, 26, 27, 28] ODIFFxi {3: 2, 5: 2, 9: 2, 10: 2, 12: 2, 19: 2, 20: 2, 23: 2, 25: 2, 26: 2, 27: 0, 28: 2}
+FLRUN new/box134/inst/odxi_many_n32.pg#start 10 13 n 32 FL 3 CAP 9 GCH 1 epochs 2 ODIFF [3, 5, 9, 10, 12, 19, 20, 23, 25, 26, 27, 28] ODIFFxi {3: 1, 5: 1, 9: 1, 10: 1, 12: 1, 19: 1, 20: 1, 23: 1, 25: 1, 26: 1, 27: 0, 28: 1}
+FLRUN new/box134/inst/odxi_many_n32.pg#start 14 16 n 32 FL 2 CAP 9 GCH 1 epochs 2 ODIFF [3, 5, 10, 12, 19, 20, 23, 25, 26, 27, 28] ODIFFxi {3: 1, 5: 1, 10: 1, 12: 1, 19: 1, 20: 1, 23: 1, 25: 1, 26: 1, 27: 0, 28: 1}
+MODE files $SCRATCH/apins.lst 0 $SCRATCH/wanc/experiments/ MAXT 5000 BF 0
+FL_runs: 6
+FL_transitions: 18
+GCH: 9
+ODIFF_xi_changes: 50
+RULE_checks_mover: 162
+RULE_checks_nonmover: 679
+RULE_multi_mover: 101
+RULE_multi_nonmover: 36
+RULE_with_corner: 157
+epochs: 15
+runs: 4
+starts_valid: 4
+max max_ODIFF_xi_changes_one_vertex_one_run: 5
+RESULT PASS violations 0

@@ -1,0 +1,16 @@
+it 4 moves 2 runT 3
+it 7 moves 2 runT 4
+it 2724 moves 2 runT 5
+it 3589 moves 3 runT 5
+it 1070438 moves 3 runT 6
+it 1219204 moves 3 runT 7
+it 1284683 moves 4 runT 4
+it 1284699 moves 4 runT 5
+it 1285854 moves 4 runT 6
+it 1286121 moves 4 runT 7
+it 1343720 moves 4 runT 8
+it 1384087 moves 5 runT 5
+it 1384395 moves 5 runT 6
+it 1386066 moves 5 runT 7
+it 1464399 moves 5 runT 8
+FINAL moves 5 runT 8

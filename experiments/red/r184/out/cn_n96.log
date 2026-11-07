@@ -1,0 +1,5 @@
+START n 96 2042 {'FL': 4, 'STRETCHES': 0, 'CYCST': 0, 'LCYC': 0, 'LACYC': 0, 'HMAX': 0, 'CASCVIOL': 0, 'SELFL': 0, 'CNMOV': 4, 'CNMAX': 2, 'LFL': 2}
+IT 132 {'FL': 5, 'STRETCHES': 0, 'CYCST': 0, 'LCYC': 0, 'LACYC': 0, 'HMAX': 0, 'CASCVIOL': 0, 'SELFL': 0, 'CNMOV': 5, 'CNMAX': 2, 'LFL': 2}
+IT 292 {'FL': 6, 'STRETCHES': 0, 'CYCST': 0, 'LCYC': 0, 'LACYC': 0, 'HMAX': 0, 'CASCVIOL': 0, 'SELFL': 0, 'CNMOV': 6, 'CNMAX': 2, 'LFL': 2}
+IT 854 {'FL': 7, 'STRETCHES': 0, 'CYCST': 0, 'LCYC': 0, 'LACYC': 0, 'HMAX': 0, 'CASCVIOL': 0, 'SELFL': 0, 'CNMOV': 7, 'CNMAX': 2, 'LFL': 2}
+BEST n 96 {'FL': 7, 'STRETCHES': 0, 'CYCST': 0, 'LCYC': 0, 'LACYC': 0, 'HMAX': 0, 'CASCVIOL': 0, 'SELFL': 0, 'CNMOV': 7, 'CNMAX': 2, 'LFL': 2}

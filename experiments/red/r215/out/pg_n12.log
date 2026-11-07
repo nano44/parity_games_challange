@@ -1,0 +1,23 @@
+== 05:11Z n 12 seed-file 
+start n 36 xi 3 spec 3
+it 11 n 30 xi 4 spec 4 OK
+it 33 n 25 xi 6 spec 6 OK
+it 93 n 31 xi 7 spec 7 OK
+it 98 n 31 xi 8 spec 8 OK
+it 145 n 32 xi 10 spec 10 OK
+it 175 n 32 xi 11 spec 10 OK
+it 353 n 30 xi 12 spec 11 OK
+it 375 n 30 xi 13 spec 12 OK
+it 540 n 30 xi 14 spec 13 OK
+it 724 n 29 xi 15 spec 14 OK
+it 753 n 31 xi 17 spec 16 OK
+it 848 n 29 xi 18 spec 17 OK
+it 1094 n 32 xi 19 spec 18 OK
+it 1102 n 32 xi 11 spec 9 OK
+it 1144 n 32 xi 10 spec 6 OK
+it 3497 n 35 xi 10 spec 5 OK
+it 4433 n 33 xi 11 spec 6 OK
+it 5407 n 34 xi 13 spec 8 OK
+it 5975 n 34 xi 13 spec 7 OK
+it 6240 n 33 xi 13 spec 6 OK
+FINAL best 7.013

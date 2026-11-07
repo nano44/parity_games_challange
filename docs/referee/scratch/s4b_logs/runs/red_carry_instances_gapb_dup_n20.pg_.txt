@@ -1,0 +1,10 @@
+GAME red/carry/instances/gapb_dup_n20.pg 
+GAMES 1
+enum_skip 1
+enum_states 7
+keep_chk 3
+loc_chk 45
+rhos 42
+states 8
+VIOLATIONS 0
+RC 0

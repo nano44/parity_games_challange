@@ -1,0 +1,1 @@
+climbR_d3_s44_all: best maxR 3 at (4, 0) with T 5 (N 6)

@@ -1,0 +1,9 @@
+GAME red/ctxp/instances/margin1_mc1.pg 
+GAMES 1
+enum_skip 2
+enum_states 7
+loc_chk 129
+rhos 4404
+states 9
+VIOLATIONS 0
+RC 0

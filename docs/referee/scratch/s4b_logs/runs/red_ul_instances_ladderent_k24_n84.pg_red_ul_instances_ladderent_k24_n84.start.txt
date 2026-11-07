@@ -1,0 +1,4 @@
+GAME red/ul/instances/ladderent_k24_n84.pg red/ul/instances/ladderent_k24_n84.start
+GAMES 1
+VIOLATIONS 0
+RC 0

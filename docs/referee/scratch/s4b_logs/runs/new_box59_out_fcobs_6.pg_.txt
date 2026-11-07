@@ -1,0 +1,9 @@
+GAME new/box59/out/fcobs_6.pg 
+GAMES 1
+enum_states 18
+keep_chk 11
+loc_chk 19
+rhos 38
+states 18
+VIOLATIONS 0
+RC 0

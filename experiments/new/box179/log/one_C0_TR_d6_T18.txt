@@ -1,0 +1,6 @@
+corpus files at d 6: 1
+class C0 d 6 genomes 0 transitions 3933 distinct-dec-rows 2024 distinct-states 4096 features 36
+FEASIBLE min max Phi = 28.7857
+weights: z2=6.14 u5=4.54 u2=4.14 u0=-4.14 z8=4.14 k3=3.86 k2=-3.71 k0=3.46 u3=-2.5 k4=2.11 k9=1.82 k1=1.75 z5=-1.75 k8=1.71 z0=1.68 k5=-1.61 z11=1.54 u9=-1.39 k6=1.32 z9=1.04 z1=0.929 u7=0.643 u6=-0.643 z4=-0.571 k11=0.571 z3=0.464 k10=0.464 k7=0.357 u10=0.357 z7=-0.321 z6=0.321 z10=0.179 const=3.07
+dual: 25 decrease rows in support, sum of their multipliers 28.7857 (= the bound)
+dual mass by genome source: TR_d6_T18.json:28.8

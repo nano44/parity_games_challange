@@ -1,0 +1,8 @@
+GAME red/fbr/instances/rho84_n16.pg 
+GAMES 1
+enum_states 5
+loc_chk 18
+rhos 90
+states 5
+VIOLATIONS 0
+RC 0
