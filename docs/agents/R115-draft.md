@@ -66,6 +66,25 @@ the record of the fill on L-2: where they call L-2 the title line or the current
 give the first fill's line numbers, counts and UPDATE sha1, they describe draft bc987999 at 01:11Z; C128 ruled G-9 (i)-(v) E-5, E-4,
 E-3, E-2, E-1, G-2 (ii) a note, G-M / G-R not required with the landing condition, G-U and G-10 PASS, used the number C128 (G-0), and
 the entry block follows L-3.
+EDIT AFTER THE SECOND FILL (2026-11-07T04:11:27Z by date -u, subagent, at the Lead's request; for CHECKER C128 Add. 1). REFEREE
+successor 25's «R-P-IDEAL-IM Addendum 1» is on origin: claude/referee 47d6cfdfd70af78218ad369442e2e9d75aab06e6 (2026-11-07T03:38:06Z,
+pushed behind 008039cc and f66942c1; fetched 2026-11-07T04:10:10Z by date -u, after no push.sh was running, pgrep empty), merged into
+the local trunk as eed80482 (--no-ff), so the local trunk is 663c6447, the four merges 256e7461, d06fff51, 909706e4, d6410595, the
+second-fill commit 3c428cde, the merge eed80482 and the commit holding this file. R-P-IDEAL-IM.md at 47d6cfdf: 224 lines, sha1
+8754b6f9c06e7df86859d0cefb0169d66095064d, l. 1-192 = 3fb22563's, by diff; the addendum is l. 194-224, VERIFIED by REFEREE's own
+ref_rup_del. Changed by this edit, and nothing else: this paragraph; in the entry, What rests on the machine (viii) (a second,
+independent acceptance; drup.c stays the checker of record), Honest limits (iii) (the sentence that no second checker had accepted is
+replaced by the acceptance) and the Signatures (Addendum 1 cited); the digest of Addendum (10). The title, L-3 and the UPDATE are
+byte-unchanged (by script). The SECOND FILL paragraph above and Addendum 2 describe draft 6b56786d (3c428cde) at 03:14Z, when Addendum 1
+was PENDING; they are kept as that record, and their line numbers, slice and counts are those of 6b56786d. For this file: the title is
+l. 542 (= prefix + L-3 + fill: True, chk115c.py); the entry block is l. 542-915 (python slice d[541:915], 0 "|"), the GAPS preamble l.
+917-928, the UPDATE l. 929 (d[928], sha1 39d9a292…, unchanged); a landing script slices d[541:915] and reads d[928]. Quote sweep
+(chk115c.py: chk115b.py's rule and sources plus R-P-IDEAL-IM.md at 47d6cfdf and draft 6b56786d): 592 outermost quotes, 502 parts of 6+
+characters, every part found (0 not found); in the title and body alone 185 quotes, 167 parts, 0 not found; GAPS preamble and UPDATE 14
+quotes, 10 parts, 0 not found. Line-precise: 133 of 133 (source, cited line range, quote) triples found verbatim, whitespace-normalised,
+inside the cited lines. Stale grep: «pending» 0 in the title and body apart from the title fill «checker PENDING)». Landing simulation
+(sim115b.py, unchanged): RESULTS 13,306 -> 13,681 lines, a pure insertion of 375 lines after R114's block, R115 at l. 12,697-13,070,,
+E-1 l. 13,072, E-2 l. 13,085, E-3 l. 13,113, Dead ends l. 13,144; GAPS only l. 11 changes, 76 «|» kept, the new UPDATE last: True.
 FIRST FILL (this text). Read at the origin heads fetched at 2026-11-07T00:53:20Z (git fetch, after the Lead push running at the start of
 this fill had ended; pgrep empty): l-si 91d40ec2 (its ancestor 4ee9fa78 holds fixes entry 1 and line L-2; the packet, L-1, L-2, the
 fixes, experiments/si/box75/, box64/, box68/, box70/, box71/, box72/-box74/, unsat_regen.sh and UNSAT-LIST.txt are byte-equal at
@@ -668,19 +687,27 @@ blocks and scripts/verify.sh.
   RUP-checked)»); REFEREE successor 24 on its own regenerated proof (§C l. 161-163, «s VERIFIED (6531220 lemmas RUP-checked)», 7,577 s;
   its log was not committed, notes/REFEREE.md l. 43-44); REFEREE-2 successor 28 with its own gcc -O2 build of 2d4b8eab on its own
   regenerated proof (l. 81-82, «s VERIFIED (6531220 lemmas RUP-checked)», «all 6,435,900 deletions matched, 132 m 39 s.»). (vii) RESULT:
-  UNSAT of the CNF 7e611c8b…, certified by drup.c; with (ii) and (i): T^Φ_1(3) ≤ 10 and T_1(3) ≤ 10. (viii) NOT INDEPENDENT OF drup.c:
-  no checker program other than drup.c has accepted this proof: REFEREE successor 24's own ref_rup was lost to a container restart (§C
-  l. 164 «My independent ref_rup (deletions ignored) was still running when this was written; it is handed to successor 25
-  (notes/REFEREE.md).»); REFEREE successor 25's «R-P-IDEAL-IM Addendum 1» (its own checker docs/referee/scratch/ref_rup_del.c, e1815909)
-  is PENDING: it is not on origin claude/referee at 3fb22563 (fetched 2026-11-07T03:09:23Z by date -u; R-P-IDEAL-IM.md there ends with
-  successor 25's §C add. 1, l. 166-192, the L-3 round, which reports no result of it; notes/REFEREE.md last changed at e1815909);
-  REFEREE-2's r2rup.c «NOT FINISHED» (l. 83; l. 86 «A new r2rup run is going; its result will be an addendum.»), and REFEREE-2's
-  Addendum 2 (0a9e2a16) reports no result of it. No referee file on origin reports a verdict of a second checker on this proof,
-  accepting or rejecting. (R112's sixteen cube proofs were also accepted by REFEREE's own ref_rup; this proof is not, at this second
-  fill.) A second checker is not required: CHECKER C128 §4, ruling G-M / G-R, «RULING: not required.», with the landing condition «if
-  any referee file on origin at landing reports that a second checker REJECTS the proof, R115 does not land.»; an ACCEPT before landing
-  may be cited, optionally, by the Lead. (ix) CORROBORATION, not a certificate: CaDiCaL 1.5.3 through python-sat answered UNSAT (packet
-  l. 236, «No proof.»;
+  UNSAT of the CNF 7e611c8b…, certified by drup.c; with (ii) and (i): T^Φ_1(3) ≤ 10 and T_1(3) ≤ 10. (viii) A SECOND, INDEPENDENT
+  ACCEPTANCE: drup.c stays the checker of record ((vi); the line names drup.c only), and a second checker program has also accepted this
+  proof: REFEREE successor 25's «R-P-IDEAL-IM Addendum 1» (claude/referee 47d6cfdf, 2026-11-07T03:38:06Z; R-P-IDEAL-IM.md l. 194-224).
+  It regenerated the CNF with the frozen encoder at cb2b0c60 (sha1 7e611c8b…, «p cnf 20843 96580», «EQUAL to §2 and to L-COMP's
+  certified input.», l. 199-201) and the proof with Glucose 4 («UNSAT, 2,492.8 s», sha1 32be84e4…, «It is BYTE-IDENTICAL to L-COMP's
+  proof and to successor 24's: a third independent regeneration.», l. 202-204), and checked it with its own checker
+  docs/referee/scratch/ref_rup_del.c (successor 24's ref_rup.c with deletions applied; RUP only, no RAT; controls l. 211-215, run before
+  the check): «s VERIFIED (6531220 lemmas RUP-checked, 6435900 deletions applied, 0 unmatched)», exit 0, wall 11,862 s (l. 216-217); the
+  lemma count is drup.c's (l. 219-221). Its verdict (l. 222-224): «Independent of drup.c, it confirms MACHINE T^Φ_1(3) ≤ 10, given the
+  encoder audited FAITHFUL in §2.» and «This addendum may be cited (C128 §4) as a second, independent proof check.». Both checkers take
+  the encoder (ii) as given; ref_rup_del, like drup.c, is unverified C. The addendum records successor 24's drup.c run only as «Reported
+  by successor 24 at park, log not preserved» (l. 195) and does not count it as its own check (l. 196-197). REFEREE successor 24's own
+  ref_rup (deletions ignored) was lost to a container restart (§C l. 164 «My independent ref_rup (deletions ignored) was still running
+  when this was written; it is handed to successor 25 (notes/REFEREE.md).»); REFEREE-2's r2rup.c «NOT FINISHED» (l. 83; l. 86 «A new
+  r2rup run is going; its result will be an addendum.»), and REFEREE-2's Addendum 2 (0a9e2a16) reports no result of it. No referee file
+  on origin (fetched 2026-11-07T04:10:10Z by date -u) reports a second checker REJECTING the proof. (R112's sixteen cube proofs were
+  likewise also accepted by REFEREE's own ref_rup.) A second checker was not required (CHECKER C128 §4, ruling G-M / G-R, «RULING: not
+  required.»); C128 §4 allows this citation, «If REFEREE 25's Addendum 1 (or REFEREE-2's r2rup) ACCEPTS before landing, the body may
+  cite it (optional, by the Lead).», and keeps the landing condition «if any referee file on origin at landing reports that a second
+  checker REJECTS the proof, R115 does not land.». (ix) CORROBORATION, not a certificate: CaDiCaL 1.5.3 through python-sat answered
+  UNSAT (packet l. 236, «No proof.»;
   experiments/si/box70/log/3_t1_11.log «m 3 MODE t1 T 11 T2 0 NOIM 0 vars 20843 clauses 96580 -> UNSAT 1281.5s»; the CNF's sha1 was not
   logged, and its encoder was the box-70 frame.py of 1ad6902d, whose t1 path equals the frozen copy's, by git diff). (x) NOT MACHINE:
   the lower bound is one explicit genome, experiments/si/box64/wit/kf1_d4_t10.json (sha1 1c0dc8cc5a8dd382e028d199f96f783f995b9a5a, =
@@ -777,9 +804,10 @@ blocks and scripts/verify.sh.
   KEY-DIR on 𝓛^R_(m+1); VALUE-MONO, COMPOSE, COMPOSE-LB and FRAME on ISO genomes of 𝓛^R only; Ξ-cyclic genomes and degree ≥ 3 are not
   covered. (iii) The MACHINE item is a machine statement: its upper bound rests on Theorem FRAME (proved), on the audited, not proved,
   encoder (sha1 c3b3a232…), and on the UNSAT of the CNF sha1 7e611c8b… certified by one DRUP proof (sha1 32be84e4…) accepted by drup.c
-  (sha1 2d4b8eab…; unverified C, audited sound by both referees), run three times by three parties; no second checker program has
-  accepted it at this second fill (What rests on the machine (viii)), and CHECKER C128 requires none (ruling G-M / G-R); no drat-trim,
-  LRAT, formally verified checker or Lean. (iv) The DATA is per statement, as L-3's DATA parenthesis says (after CHECKER C128 E-1..E-5),
+  (sha1 2d4b8eab…; unverified C, audited sound by both referees), run three times by three parties, and also accepted by a second,
+  independent RUP checker, REFEREE's ref_rup_del (unverified C; Addendum 1, What rests on the machine (viii)), which C128 did not
+  require (ruling G-M / G-R); no drat-trim, LRAT, formally verified checker or Lean. (iv) The DATA is per statement, as L-3's DATA
+  parenthesis says (after CHECKER C128 E-1..E-5),
   with these exact sets and units (imcheck.py and compose.py, read by me): 404 ISO 𝓛^R genomes (400 random with m = 1, 2, 3 and 4 pins),
   every upper state with level 0 at (0, 0) (every start up to the level-0 states, C128 N-1); IM per (state, z, y) with y unhappy on a
   chain; LOCAL per (state, z, y) with y off both chains, happy or not (125,124 of the 250,248 with y unhappy, IM (a)'s hypothesis);
@@ -846,9 +874,13 @@ blocks and scripts/verify.sh.
   60778fdab1c08d1a341e85979e65ea927ba6d12b; l. 1-164 = bc2bdd5a's, by diff): C128 opened and R1-R5 parsed from its §5, equal to entry
   2's table (l. 172-175), the byte test (l. 176-178), the DATA rule clause by clause with its own instrumented counters (l. 179-188),
   the wording note «is right» (l. 189-190), «Verdict: fixes entry 2 is CORRECT. L-3 MATCHES, by the byte test and in meaning, with the
-  DATA rule clause by clause. All items stay SIGNED.» (l. 191-192). Successor 25's Addendum 1 (own RUP checker with deletions,
-  ref_rup_del): PENDING, not on origin claude/referee at 3fb22563 (What rests on the machine (viii)); optional by CHECKER C128's ruling
-  G-M / G-R. REFEREE-2 docs/referee-2/R2-P-IDEAL-IM.md: successor 28's report of record 2e68c641ccac5342c7b4a38ef448f3f3c286c2d1
+  DATA rule clause by clause. All items stay SIGNED.» (l. 191-192). Successor 25's «R-P-IDEAL-IM Addendum 1»
+  47d6cfdfd70af78218ad369442e2e9d75aab06e6 (commit 2026-11-07T03:38:06Z, header «date -u at writing 2026-11-07T03:38Z»; the file at
+  47d6cfdf: 224 lines, sha1 8754b6f9c06e7df86859d0cefb0169d66095064d; l. 1-192 = 3fb22563's, by diff): the CNF and a byte-identical
+  proof regenerated, its own ref_rup_del «s VERIFIED (6531220 lemmas RUP-checked, 6435900 deletions applied, 0 unmatched)», exit 0 (l.
+  198-221); «Verdict: the Glucose 4 DRUP proof of the UNSAT of the §6 CNF is VERIFIED by my own RUP checker.» (l. 222); cited as a
+  second, independent proof check, which C128's ruling G-M / G-R did not require (What rests on the machine (viii)). REFEREE-2
+  docs/referee-2/R2-P-IDEAL-IM.md: successor 28's report of record 2e68c641ccac5342c7b4a38ef448f3f3c286c2d1
   (2026-11-06T23:56:00Z, 153 lines, sha1 32e8bde68f9e8dbf848d31f3bff0534d94f5c62b; on claude/referee-2 by the merge f6bafb36; earlier
   pushes of the same file: the draft body 7856e7a9 (21:44:03Z) and the fix round 280d2313 (22:18:02Z), both headed «DRAFT IN PROGRESS»;
   2e68c641 changes l. 1-2, l. 20 and l. 81-82 only, by diff), with R2-P-IDEAL-IM/r2cstep.py, r2checks_seed75.out and
@@ -940,7 +972,7 @@ and suffix: True); 0 "|" inserted. GAPS: only l. 11 changes: True; new l. 11 = o
 filled UPDATE + " |": True; "|" on l. 11 76 -> 76 (pipe count unchanged); UPDATE 2026- heads 49 -> 49 plus 1 UPDATE head with the
 simulation year 2099, directly after R114's and now the last on the line; 23 -> 23 lines (wc -l). Fill values used only for the
 simulation: <DATE> 2099-01-04, <HH:MM> 00:00, <checker> 0000000. (10) THIS DRAFT'S SHA1: a file cannot state its own sha1. The sha1 of
-this file with the forty hex digits after the next colon replaced by forty «0» characters is: 42490b44ee5a31f736993e8fa581c76ef653e136.
+this file with the forty hex digits after the next colon replaced by forty «0» characters is: fc3916e1b8db06d97eaf8a61191865ca1cfc9133.
 The file's actual sha1 and line count are in the hand-back to the Lead (and re-measurable with sha1sum). Scratch:
 /tmp/claude-0/-home-user-parity-games-challange/43a29ffc-0674-5391-84c1-1d3918a14b5d/scratchpad/r115/ (runw75.sh / w75.out, w70.out,
 imsplit.py / imsplit.out, compsplit.py / compsplit.out, wdiff115.py / wdiff115.out, prem115.py / prem115.out, upd115.py / upd115.out /
