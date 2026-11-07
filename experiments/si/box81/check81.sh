@@ -23,7 +23,17 @@ python3 -I -B lemma81.py agen 300 7 > "$t/l"; diff -q "$t/l" out/lemma81_agen_30
 python3 -I -B lemma81.py agen 0 1 $(for i in $TOW; do echo inst/$i.json; done) > "$t/l"; diff -q "$t/l" out/lemma81_towers.out
 python3 -I -B lemma81.py rgen 0 1 inst/rd2_d3.json inst/rd2_d4.json inst/rd3_d3.json inst/rf_d4.json inst/RS2.json > "$t/l"
 diff -q "$t/l" out/lemma81_cyclic_control.out
+# packet P-ACYC (docs/si/P-ACYC.md): premise quotes verbatim; Gamma3 N5'-xi data; packet + line pins
+python3 -I -B quotes81.py > "$t/q"; diff -q "$t/q" out/quotes81.out
+python3 -I -B pacyc81.py 0 1 $(for i in $TOW; do echo inst/$i.json; done) > "$t/p"; diff -q "$t/p" out/pacyc81_towers.out
+python3 -I -B pacyc81.py 0 1 inst/rd2_d3.json inst/rd2_d4.json inst/rd3_d3.json inst/rf_d4.json inst/RS2.json > "$t/p"
+diff -q "$t/p" out/pacyc81_cyclic_control.out
+python3 -I -B pacyc81.py 300 7 > "$t/p"; diff -q "$t/p" out/pacyc81_agen_300_7.out
+sha1sum -c --quiet --strict pacyc.sha1
 rm -rf "$t"
+grep -q "nofallback 0 notbeta 0 nonstd 0 C 0 R 0 bigT 0" out/pacyc81_agen_300_7.out
+grep -q "nofallback 0 notbeta 0 nonstd 0 C 0 R 0 bigT 0" out/pacyc81_towers.out
+grep -q "^quotes: 28 of 28 verbatim$" out/quotes81.out
 grep -q "notbeta 0 nonstrict 0 C 0 R 0 T_gt_N 0" out/lemma81_agen_300_7.out
 grep -q "notbeta 0 nonstrict 0 C 0 R 0 T_gt_N 0" out/lemma81_towers.out
 ! grep -q "notbeta 0 " out/lemma81_cyclic_control.out

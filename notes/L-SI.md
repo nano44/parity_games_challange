@@ -13,6 +13,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - Things only I know: ref/ keeps L-NEW's directory layout so idealcyc's ROOT = ref/ resolves (do not flatten it). n5x.start_pair wants
   dicts and refuses invalid starts only with N5X_STRICT_START=1 (real81 sets it for --stated). sim80.Sim raises on Xi-cycles (use it
   for towers only). `time` output in this container looks wrong (0.07 s); use date -u around runs.
+- PACKET P-ACYC (Lead 22:35Z): docs/si/P-ACYC.md + line docs/si/P-ACYC-line-L1.txt, FROZEN at the commit that adds them (pins
+  box81/pacyc.sha1; quotes81.py checks 28 premise quotes verbatim; pacyc81.py = Gamma3 N5'-xi data). After the freeze: fixes file only
+  (P-ACYC-fixes.md + line L-2 by script). Referees take it after P-N5-ASC.
+- NEXT: BOX 82 CYCLIC TOWERS (Lead 22:35Z): can tower doubling be carried by Odd (R > 0) in a Xi-cyclic genome? Start h = 2; baseline
+  L-LOWER 8's HS2_d3 (claude/l-lower experiments/lower/l8/rec/HS2_d3.txt, sha1 8ddebddc...).
 
 ## Successor 42 HANDOVER (PARKED; Lead 21:05Z «Please PARK now»; written 2026-11-07 ~21:10Z (date -u: see the commit); session_01V5yGRWb17CZoo2UVcHAxp8; Lead session_014FBi6o334DvwT5Uw2kDfoN; ~465k context)
 ### Done (claude/l-si SHAs, all pushed via push.sh)
