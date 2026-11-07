@@ -61,6 +61,8 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     penalty. E-DOM G_n is linear (13-19); E-DOM priority search: n 3 T 34, n 4 T 36.
   - RSG / RS2 (§11): RESET and re-SET work under E-DOM (one increment 01 → 10 → 11). Third bit (lane re-arming) OPEN.
 - NOTHING RUNNING. Live dir /home/user/r217live (climbs finished; scripts symlinked from experiments/red/r217).
+- 18:0xZ (Lead GO 17:55Z): §12 HIDE-BUSY, CHAIN-SHIELD (proved, [LOC]); RS3 per-bit lanes DEAD (110 skipped; inst/RS3.json);
+  test (1) highest-set hub NOT RUN (context).
 - Next if resumed: an E-DOM counter outside H1-H2, i.e. lanes re-armed without a hub to the lowest set bit, or access edges that
   enter open bits on an e-free route. Start from RS2 (rs2.py) and add B2.
 - Things only I know:

@@ -310,6 +310,48 @@ Proof.
     e2^(x) > e2^(1) > e2^(0) > e2^(x), which is a cycle.
   - These are READINGS, not proofs. A counter outside H1-H2 under E-DOM stays OPEN.
 
+## 12. Third bit, outside H1-H2 (Lead 17:55Z GO; 18:0xZ): two lemmas, test (2) DEAD, test (1) not run
+**Lemma HIDE-BUSY (PROVED-CONDITIONAL on [LOC], lane).** Let B be a mover with a SET option whose gate g has xt = B and an even β_s. At
+state t let σ_t(B) = o ≠ g, σ̄_t(g) = β (the SET is hidden), and let β_s be more relevant than Λ_t(B). Then σ_(t+1)(B) ≠ o.
+Proof.
+- F6: B is not its own cycle node. F3: Ω_t(B) = ext(B, Ω_t(o)).
+- The play from g is g → β_s → B → (the play from o). g and β_s are not on its cycle, because the play from o does not pass g
+  (σ_t(B) = o). So Ω_t(g) = ext(g, ext(β_s, Ω_t(B))).
+- The two plays merge at o. The symmetric difference above Λ is {β_s}: g has priority 1, B has 0, and every cycle node has priority
+  ≥ 3. β_s is even, so Ω_t(g) ▷ Ω_t(o).
+- Howard keeps o only if o is ⊴-best, so B switches. ∎
+- Consequence: an open bit with a hidden SET switches at EVERY step. By STRICT, Ω(B) increases strictly at each step. So delaying a
+  bit's SET by D steps needs D distinct values of Ω(B): the delay of one bit is a value count (cf. OVT-DV). RS2's lane provides one new
+  value per lane node.
+
+**Lemma CHAIN-SHIELD (PROVED-CONDITIONAL on [LOC], lane).** Let a mover B_j be on its SET option (gate g_j, Odd escapes to e_j, then
+W-target w_j). Let ACC be another option of B_j whose route reaches a copy gate c (β-face → the mover B_k) through β's, gates and movers
+only. Suppose the play from w_j passes B_k, and all plays involved end in one cycle node below e_j. Then Ω(SET) ▷ Ω(ACC), so B_j does
+NOT reset to ACC.
+Proof.
+- [LOC]: Odd at c takes the ⊴-smaller face, so Ω(ACC) ⊴ the value of the route ACC → … → c → β_c → B_k → (B_k's play).
+- The SET play g_j → e_j → w_j → … → B_k → (B_k's play) merges with that route at B_k or earlier. Its pre-merge part contains e_j; the
+  other part contains no e.
+- E-DOM-CHOICE gives SET ▷ that route ⊵ ACC. ∎
+- Meaning: a bit whose escape continuation is CHAINED into a higher bit's mover is shielded from resetting to that bit's access.
+  Resetting needs the continuation lane to be unchained first, which needs its exits to beat its chain.
+
+Test (2), per-bit lanes (rs3.py; inst/RS3.json sha1 d16d60e4): B1, B2 each with an e-free delay lane (L1 3, L2 8); F0: B0 → B1, F1:
+B1 → B2 (M 2 each); access copies B0 → B1, B0 → B2, B1 → B2. Escape order e_x0 < e0 < e1′ < e_x1 < e1 < e2^(0) < e2^(1) < e2.
+- Run (bits B2 B1 B0; out/rs3_verify.txt): 001 (t 2), 011 (t 4), 010 (t 5, RESET), 011 (t 7, re-SET after the F0 wave), 111 (t 10:
+  B2 sets), 100 (t 11: B0 and B1 both RESET), 101 (t 12: B0 re-SETs AT ONCE, because F0 is still chained into B1, which leads to
+  e2^(1) > e2^(0)), 111 (t 13: B1 re-SETs after the F1 wave). T 13.
+- So 110 is never reached (CHAIN-SHIELD: once F0 is chained through B1, B0 cannot reset to ACC1), and after a carry the lower bit
+  re-sets with no delay: no recursion.
+- Verified 4 ways: own = idealcyc T 13; subrun191 C 0, R 8, p 5; Γ3: n5v xi = n5bxi = 16 = T + 3, regions = Oink, verify OK.
+- DEAD (design) as a counter.
+- READING, consistent with the paper analysis in §11: the re-SET delay needs the continuation lane to be unchained and re-discovered
+  after each carry. Unchaining needs exits that see the carry before the chain does. In this architecture the exits see nothing new.
+Test (1), a hub that tracks only the highest set bit: NOT RUN (context budget). It stays the paper reading of §11: no leak, but the
+lanes re-arm only at new-highest carries.
+Status of the box goal: no 3-bit counter with doubling T. The exact obstruction to re-arming without H1-H2 is NOT proved. Proved: LEAK-ARCH
+(under H1-H3), CHAIN-SHIELD, HIDE-BUSY, E-DOM-CHOICE.
+
 ## 9. Next
 1. An E-DOM-respecting counter: delay a bit by withholding an e (Odd keeps the route on β), never by an odd penalty. Target: 2 bits
    with one bit re-set (a re-adoption that re-fires a fuse), checked by own.py + idealcyc + Γ3 / Oink.
