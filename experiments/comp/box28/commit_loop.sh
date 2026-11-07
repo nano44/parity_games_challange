@@ -16,7 +16,7 @@ while true; do
       git diff --cached --quiet || git commit -qm "L-COMP box 28/30: periodic snapshot of the lane files (box 28-30 status, query 2 records, box 30 lane logs and sources, notebook; DATA)
 
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
-Claude-Session: https://claude.ai/code/session_01V5yGRYZ366UeNYojLQPsMh" >> experiments/comp/box28/log/commit_loop.out 2>&1
+Claude-Session: https://claude.ai/code/session_01V5yGRYPZqSkyP1GtiC8bMh" >> experiments/comp/box28/log/commit_loop.out 2>&1
       LIVE=$(git ls-files experiments/comp/box30/out | grep -E "\.log$|_best\.txt$"); [ -n "$LIVE" ] && git update-index --skip-worktree $LIVE
       if [ "$(git rev-list --count origin/claude/l-comp..HEAD)" != 0 ]; then
         scripts/push.sh > experiments/comp/box28/log/commit_loop_push.out 2>&1; echo "$(date -u +%FT%TZ) push exit $? head $(git rev-parse --short HEAD)" >> experiments/comp/box28/log/commit_loop.out
