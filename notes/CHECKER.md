@@ -1,6 +1,12 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 20), 2026-11-07 08:46Z (date -u)
+- C129 Add. 2 6aabf98f pushed (R116 landed 97d17f63 as checked); CI 6660 on 97d17f63 in progress -> close C129 on it.
+- C131 = DE37 (P-M2D-DEAD) draft 10542576 @ 32b43d04: PASS (this commit). xcheck.py re-run (RUNS 4097, counters 0) is recorded in C131 §3.
+  NEXT: C131 Add. 1 (landed check: append after DE36, no GAPS change) + CI when the Lead lands DE37.
+- C130 (R117) FAIL E-1..E-4, L-4 f85a024b: waiting for the second fill (Add. 1).
+
 ## Resume point (successor 20), 2026-11-07 07:29Z (date -u)
 - 9246878c pushed (C129 Add. 1 PASS; C128 CLOSED). R116 to land; then C129 Add. 2 + CI.
 - C130 = R117 (P-N5-REACH) draft f652c0d3 @ 6f9cc0b0: FAIL E-1 (NR-STD unit; NR-CORE uncited), E-2 (no-improving-edge clause: no counter,
