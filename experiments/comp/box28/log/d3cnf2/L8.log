@@ -1,0 +1,3 @@
+build cnf2 ISO None d 3 L 8 P None W R SYM 1 CUBE None XCUBE None FREE0 None KF None vars 20357 clauses 74662 0.0 s
+RESULT d 3 T >= 8 P None W R: SAT 201.5 s
+model -> log/d3cnf2/L8.json

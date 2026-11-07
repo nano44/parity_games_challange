@@ -1,0 +1,2 @@
+TAG ISO_L13 ENC cnf2 ISO 1 d 4 L 13 P None W R: leaves 392 SAT 0 UNSAT 0 open 392 splits 64 -> OPEN
+TAG R4_L14 ENC cnf2 ISO None d 4 L 14 P None W R: leaves 512 SAT 0 UNSAT 0 open 512 splits 72 -> OPEN

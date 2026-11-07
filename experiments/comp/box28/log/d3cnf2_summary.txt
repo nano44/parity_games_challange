@@ -1,0 +1,35 @@
+regression (a), cnf2.py, CaDiCaL 1.9.5 (pysat cadical195), SYM=1, machine fully loaded (3 other solver jobs + niced xval):
+RESULT d 3 T >= 8 P None W R: SAT 201.5 s
+cube 0 (CUBE 2:0,3:0,4:0,5:0
+CUBE ): RESULT d 3 T >= 9 P None W R: UNSAT 199.6 s
+cube 1 (CUBE 2:1,3:0,4:0,5:0
+CUBE ): RESULT d 3 T >= 9 P None W R: UNSAT 111.8 s
+cube 2 (CUBE 2:0,3:1,4:0,5:0
+CUBE ): RESULT d 3 T >= 9 P None W R: UNSAT 99.1 s
+cube 3 (CUBE 2:1,3:1,4:0,5:0
+CUBE ): RESULT d 3 T >= 9 P None W R: UNSAT 207.0 s
+cube 4 (CUBE 2:0,3:0,4:1,5:0
+CUBE ): RESULT d 3 T >= 9 P None W R: UNSAT 164.2 s
+cube 5 (CUBE 2:1,3:0,4:1,5:0
+CUBE ): RESULT d 3 T >= 9 P None W R: UNSAT 81.4 s
+cube 6 (CUBE 2:0,3:1,4:1,5:0
+CUBE ): RESULT d 3 T >= 9 P None W R: UNSAT 92.2 s
+cube 7 (CUBE 2:1,3:1,4:1,5:0
+CUBE ): RESULT d 3 T >= 9 P None W R: UNSAT 149.4 s
+cube 8 (CUBE 2:0,3:0,4:0,5:1
+CUBE ): RESULT d 3 T >= 9 P None W R: UNSAT 146.7 s
+cube 9 (CUBE 2:1,3:0,4:0,5:1
+CUBE ): RESULT d 3 T >= 9 P None W R: UNSAT 89.7 s
+cube 10 (CUBE 2:0,3:1,4:0,5:1
+CUBE ): RESULT d 3 T >= 9 P None W R: UNSAT 90.8 s
+cube 11 (CUBE 2:1,3:1,4:0,5:1
+CUBE ): RESULT d 3 T >= 9 P None W R: UNSAT 186.1 s
+cube 12 (CUBE 2:0,3:0,4:1,5:1
+CUBE ): RESULT d 3 T >= 9 P None W R: UNSAT 171.1 s
+cube 13 (CUBE 2:1,3:0,4:1,5:1
+CUBE ): RESULT d 3 T >= 9 P None W R: UNSAT 98.2 s
+cube 14 (CUBE 2:0,3:1,4:1,5:1
+CUBE ): RESULT d 3 T >= 9 P None W R: UNSAT 102.7 s
+cube 15 (CUBE 2:1,3:1,4:1,5:1
+CUBE ): RESULT d 3 T >= 9 P None W R: UNSAT 177.4 s
+sim T 8 opt states equal to model: True
