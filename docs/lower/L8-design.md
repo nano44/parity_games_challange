@@ -104,6 +104,38 @@ Nothing here is a result in the sense of CLAUDE.md; G-N5-TIME stays OPEN. Not a 
   supply at most one of these. Scope limit: the helpers' trajectories in the target are those of their current rules; a target with
   helpers designed (e.g. time-shifted and frozen in the inserted steps plus one designed trigger) is not decided here.
 
+## 1e. L-COMP 11's F240-F248 (Lead 22:31Z / 22:36Z / 23:45Z), F248 dissected (DATA; scope = stored start)
+- Sources: claude/l-comp ee9bc228 experiments/comp/box30/out/L6_FRZ_F240_D_l6w.txt, F242_D_l6w, F244_D_l6v, F246_D_l6v,
+  F248_D_l6v; frozen copies l8/rec/LCOMP_L6_FRZ_F*.txt, sha1 3c5ccc70e23fd10214f206ca548b3ddb3ec375c5 (240),
+  95942140421bff26680b34519458bbc117328a09 (242), 6198a77947402872522490f038e61f48432789da (244),
+  732c12288c3538e3bd8d6727d8f69f374996424a (246), ba061180a6ba6a27abb058bfb1534660900aec82 (248) (= the relayed values).
+  sim6 and fev agree on all five (F(6) 240, 242, 244, 246, 248; T 286, 292, 285, 287, 284); guard 'noreturn' ok on all five.
+- F248 vs KILL238 (kill_dissect_F248.out; unit = option / mover): xt 63 options changed (pair 6: 1, movers ≥ 14: 62), br 87, bp 40,
+  gates 22 movers, starts 20 movers; movers 0-11 unchanged (10:0 → 17:0 → 22 kept). E5: q₅ = 10 in 63 of 63. Failing 6-windows: 6
+  (3 of length 1 at 44, 79, 114; 3 of length 2 after them, 12 copies 13 via (13, 1)): 254 − 6 = 248 exactly, 3 × 2 lost flips.
+- What closed 5 of KILL238's 8 bad windows (w80_F248.out, trig17_F248.out, gadget_F248.out; unit = (8, 0) 5-window; set = its 16):
+  the (8, 0) windows with o(8) = o(9) = 0 at 7, 150, 186, 221, 257 now have PULSE_5 = 2, triggered by mover 17 (level 8, already on
+  q₅'s path 10:0 → 17): 17 is KEY-fired at u₁ + 1 (o(7) changes there) and its preference is decided by (11, 0) rank 81, i.e. 17 reads
+  f₅ = 11 (moved at u₁) and fires; 17 moves back at u₁ + 2. With it move helpers 29, 30, 31 (u₁ + 1), 51 (u₁ + 1), 52, 50.
+- Why 44, 79, 114 resist (gadget_F248.out): 17:0 = 22:1 → 11:0 → …, 17:1 → 51. When s₅₁ = 0, 51:0 → 14 avoids 11 and 11's option (81) is
+  in 17's symmetric difference; when s₅₁ = 1, 51:1 → 11 and 17's two chains MERGE at 11, (81) cancels, the decider is (22, 1) rank 66,
+  and 17 does not fire. s₅₁ = 1 throughout [9, 144) and is reset to 0 before each later closed window (144, 180, 215, 251). 51 (pair
+  25) is free only when its key o(24) = 0, and o(24) changes 8 times, all at t ≥ 138 (138, 148, 178, 184, 212, 219, 248, 255): one
+  0/1 pair before each second-half closed window. In the first half o(24) stays 1, 51 cannot reset, the gadget is disarmed in the
+  three first-half 00 windows (43, 78, 113). Window 7 closes because 51 starts at 0.
+- READING (the rule): the 00 windows are closed by a gadget whose arming helper 51 must be reset once per window, which costs two
+  o(24) changes per window. F248 supplies 4 such pairs (+ the start state): 5 windows. Closing all 8 this way needs o(24) to cycle
+  before 43, 78 and 113 too: about 6 more key changes at level 24, i.e. more fuel at a level that currently has F(24) = 8.
+  This is COUPLING-UP once more: the top-level gadget's arming reads a slow helper key.
+- By-hand test (DATA): every single re-point of any option of movers 12-55 of F248 (2,882 acyclic; current ranks; fev;
+  repoint_F248_fev.out): 626 keep six caps, best F(6) = 248 (515 of them), none higher. ranksolve on the transplanted target
+  (mirror.py, 3 blocks, helpers by current rules): infeasible, own-infeasible movers 4, 7, 9, 10, 11, 13, the same as for KILL238 (§1d),
+  because with current rules 17 does not fire in the open windows. Not run: a target that also transplants the gadget's helper moves
+  (17, 29-31, 50-52) — the helper states at a − 1 differ in 48, 50, 51 (43, 44, 45 at 43; 41, 42 at 113), so a copy needs the slow
+  helpers re-phased first.
+- Correction of §1d's READING (i) by this data: the lower pairs 2-4 «see the delay» in F248 through helpers in their closure (pairs
+  0-4 are unchanged from KILL238), so need (i) is met by edits on movers ≥ 12 alone; the single-edit negative of §1d stands.
+
 ## 2. Item 1: the sequential schedule with helpers, decided exactly (DATA; unit = (h, d, α) case; scope = the sequential target)
 | h | d | α (α_1, …) | helper levels | result | outputs |
 | --- | --- | --- | --- | --- | --- |

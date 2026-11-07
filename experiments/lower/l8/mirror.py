@@ -17,7 +17,7 @@ for a, e in zip(cuts, [c - 1 for c in cuts[1:]]):
     if a > 1 and S[a][8] != S[a - 1][8] and S[a][8] == 0:
         mv = [t for t in range(a, e + 1) for x in (10, 11) if S[t][x] != S[t - 1][x]]
         if mv[1] - mv[0] == 1: bad.append(a)
-assert len(bad) == 8, bad
+assert bad, bad   # KILL238: 8 blocks; F248: 3
 def target():
     tg = [list(S[0][:14])]; t = 1
     while t <= T:
