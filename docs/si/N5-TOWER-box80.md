@@ -111,6 +111,10 @@ DATA / READING. Not a TARGET.md claim; no statement bounds T polynomially; G-N5-
   pair split the other way round (a on 1, b on 0, still never moving; it inverts the bit) changes the old run on 1,841 of them.
 - SLACK table (P_j / bound h − j / SLACK_j): H5 (h 5, T 136): j 1: 8/4/4; j 2: 7/3/4; j 3: 3/2/1; j 4: 1/1/0. H6 (h 6, T 209): j 1:
   21/5/16; j 2: 7/4/3; j 3: 5/3/2; j 4: 2/2/0; j 5: 1/1/0. RECF4 (h 4): j 1: 8/3/5; j 2: 4/2/2; j 3: 2/1/1.
+- Climb snapshot (CANDIDATE DATA, not a record; experiments/si/box80/out/climb_s2_snapshot.json, sha1 2a3bde938a7a3d48c554a0aa68dc9d956de19add;
+  pclimb.c seed 2, H 7, from H6 + 4 frozen top levels, d 28): T 312, F 2 6 14 30 62 126 222 223 …; levels 0-5 capped and the PULSE-NEST
+  requirement for 7 capped levels already met (pair 4 pulses 3-5, pair 5 pulses 2-3), but F(6) = 222 < 254. The stretch STRETCH-NEED
+  asks for is reachable while keeping six capped levels; the seventh is not reached.
 - Closures: every Z_j of H5 and of H6 (j = 0..6) is the whole genome (40 resp. 48 movers).
 
 ## 6. Question (b): a lower bound on the levels per capped level — what is and is not proved
