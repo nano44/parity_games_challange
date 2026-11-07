@@ -84,13 +84,28 @@ int main(int argc,char**argv){ rd(argv[1]); rs+=atol(argv[2])*7919; long iters=a
   int nomut[MAXN]={0}; int FB = getenv("FROZENBELOW")? atoi(getenv("FROZENBELOW")) : 0; /* movers < FB: no field mutated */
   if(getenv("FIX")){ char*p=strdup(getenv("FIX")); for(char*t=strtok(p,",");t;t=strtok(NULL,",")) fixo[atoi(t)]=1; }
   if(getenv("NOMUT")){ char*p=strdup(getenv("NOMUT")); for(char*t=strtok(p,",");t;t=strtok(NULL,",")) {int x=atoi(t); nomut[x]=1; fixo[2*x]=fixo[2*x+1]=1;} }
+  int NMIN=getenv("NMIN")?atoi(getenv("NMIN")):1, NMAX=getenv("NMAX")?atoi(getenv("NMAX")):3; if(NMAX<NMIN) NMAX=NMIN;
+  int biasm[MAXN], nbias=0, bias19=getenv("BIAS19")?atoi(getenv("BIAS19")):-1, biasr=getenv("BIASR")?atoi(getenv("BIASR")):87; double biasp=getenv("BIASP")?atof(getenv("BIASP")):0.5;
+  if(getenv("BIAS")){ char*p=strdup(getenv("BIAS")); for(char*t=strtok(p,",");t;t=strtok(NULL,",")){ int x=atoi(t); if(x<FB||x>=N){ fprintf(stderr,"BIAS mover %d outside [FB,N)\n",x); return 1; } biasm[nbias++]=x; } }
+  if(bias19>=0 && (bias19<FB||bias19>=N)){ fprintf(stderr,"BIAS19 outside [FB,N)\n"); return 1; }
   double temp=getenv("ANNEAL")?atof(getenv("ANNEAL")):0; const char*out=getenv("OUT")?getenv("OUT"):"/dev/null";
   if(!acyclic()){ fprintf(stderr,"input cyclic\n"); return 1; }
   int T; long cur=score(&T), best=cur; wr(out,best,T);
   if(getenv("SLACKDBG")){ int H=atoi(getenv("SLACKDBG")); for(int j=1;j<=H-2;j++){ int g; printf("slack j %d need %d: %s violations %d\n", j, H-j, F[j]==2*F[j-1]+2?"doubling":"NOT doubling", slack_viol(T,j,H-j,&g)); } } printf("start score %ld T %d F(LV) %d\n",cur,T,LV>=0?F[LV]:-1); fflush(stdout);
   int sxt[MAXN*2],sbr[MAXN*2],sbp[MAXN*2],sg[MAXN*2],sst[MAXN];
   for(long it=0;it<iters;it++){ memcpy(sxt,xt,sizeof xt);memcpy(sbr,br,sizeof br);memcpy(sbp,bp,sizeof bp);memcpy(sg,gate,sizeof gate);memcpy(sst,st,sizeof st);
-    int nm=1+rnd()%3; for(int q=0;q<nm;q++){ int r=rnd()%6; int m=2*FB+rnd()%(2*N-2*FB);
+    int nm=NMIN+rnd()%(NMAX-NMIN+1);
+    /* box 30 (Lead 11:42Z) FUEL BIAS: with probability BIASP one of the nm edits is a fuel edit on a mover w of BIAS (default: drawn
+       uniformly; with prob 1/4 w = BIAS19 if set): option m = 2w + k (k random); (a) prob 1/2: swap br[m] with a random option m2 >= 2FB
+       whose rank > BIASR (m gets a rank above BIASR); (b) prob 1/2: flip bp[m]; (c) prob 1/2: re-target xt[m] to a random mover that owns
+       an option m2 >= 2FB of rank > BIASR; at least one of (a)-(c) is applied. Movers of BIAS must be >= FB (checked at start). */
+    if(nbias && (rnd()%1000000) < (unsigned long long)(biasp*1e6)){ int w = (bias19>=0 && rnd()%4==0)? bias19 : biasm[rnd()%nbias]; int m=2*w+rnd()%2;
+      int hi[MAXN*2], nh=0; for(int m2=2*FB;m2<2*N;m2++) if(br[m2]>biasr && m2!=m) hi[nh++]=m2; int done=0;
+      while(!done){ if(nh && rnd()%2){ int m2=hi[rnd()%nh]; int t=br[m];br[m]=br[m2];br[m2]=t; done=1; }
+        if(rnd()%2){ bp[m]^=1; done=1; }
+        if(nh && !fixo[m] && rnd()%2){ int y=hi[rnd()%nh]/2; if(y!=w){ xt[m]=y; done=1; } } }
+      nm--; }
+    for(int q=0;q<nm;q++){   /* box 30 (Lead 11:38Z): NMIN..NMAX edits per proposal (default 1..3 = original) */ int r=rnd()%6; int m=2*FB+rnd()%(2*N-2*FB);
       if(r==0||r==5){ if(fixo[m]) continue; int y=(int)(rnd()%(N+1))-1; if(y==m/2) y=-1; xt[m]=y; }
       else if(r==1){ int m2=2*FB+rnd()%(2*N-2*FB); int t=br[m];br[m]=br[m2];br[m2]=t; }
       else if(r==2){ bp[m]^=1; }
