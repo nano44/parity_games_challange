@@ -1,0 +1,1 @@
+input /home/user/pf/q2/q2_c4s2p7.proof.cnf sha1 552bffc40711c947c78077962bb6031540ed70b3 vars 21083 clauses 99359 cube -2,-8,14,-20,26,32,38,44 glucose4 UNSAT 23.2 s proof /home/user/pf/q2/q2_c4s2p7.proof sha1 905bcbc885b5749c0c60fe06f7c3998805aa773b bytes 67322413

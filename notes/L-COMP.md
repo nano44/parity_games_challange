@@ -16,7 +16,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - B_d32 (earlier): resumed at unit 6 (seed 310006), best F(6) 190.
 - 14:28Z (Lead 14:29Z): D_d28 STOPPED (resume unit 9 = seed 350009, out/D_d28.log). Query 2 now TWO workers: box28/q2shard.sh SHARD 0/1
   of 2 (fixed piece index i in q2pieces.sh's enumeration order, VERIFIED ones included; worker k takes i % 2 == k; dry run: 39 + 38 = 77
-  pieces/parts, disjoint). relaunch_all.sh starts both (pid files cubes/.pid_q2, .pid_q2b). D_d28b is the one SL41 brute lane. Query 2: from c0s0p1q0. xval_d3 cube 3 was already done (xval_d3.txt, b317e04a).
+  pieces/parts, disjoint). relaunch_all.sh starts both (pid files cubes/.pid_q2, .pid_q2b). D_d28b is the one SL41 brute lane.
+- 16:5xZ: xval_d3 COMPLETE 16/16 (frup = drup = P-TR3). Query 2 re-sharded to THREE workers (i % 3; .pid_q2, .pid_q2b, .pid_q2c) by
+  box28/q2reshard3.sh at the c0s1p0 boundary (log/q2/reshard.txt). Trunk merged 006d9071 (Lead 15:10Z; verify.yml timeout 60). Query 2: from c0s0p1q0. xval_d3 cube 3 was already done (xval_d3.txt, b317e04a).
 
 ## FINAL (successor 9, 2026-11-07 05:2xZ by date -u): query 2 handed to L-COMP 10 (finer split); proofs in this scratchpad are not reachable from other sessions.
 - At hand-off: query 2 CERTIFIED cubes 1, 2, 3, 5, 6, 7 and sub-cube c4s1 (log/q2_cert/); open: c0s0..c0s3, c4s0, c4s2, c4s3 (restarts every
