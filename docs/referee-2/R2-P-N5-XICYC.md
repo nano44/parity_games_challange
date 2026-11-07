@@ -178,7 +178,7 @@ r2xi3rand.out; brseg_r2.py (brseg_gen191.py + counters only) / brseg_r2.out; bt_
 Re-run: from the repo root, `python3 docs/referee-2/R2-P-N5-XICYC/r2howcyc.py <box191/inst/*.json>` (instances from a `git archive
 86afce49`); r2vjg.py SEED COUNT N; r2howrand.py SEED COUNT NMAX DMAX (ONEP=1 for the variant); r2xi3rand.py SEED COUNT NMAX DMAX.
 
-## Addendum 1: fix round 1 / L-3 (claude/l-new 50c80a92; REFEREE-2 successor 30, 2026-11-07 09:0xZ by date -u)
+## Addendum 1: fix round 1 / L-3 (claude/l-new 50c80a92; REFEREE-2 successor 30, 2026-11-07 08:5xZ by date -u)
 - Object (sha1 at 50c80a92, equal to the Lead's relay 08:50Z): fixes a83e54d2… (14,214 B; entry 2 appended); L-3 1690b6ad… (5,543 B);
   packet 149e2414… unchanged; xicyc.pins c77781e0….
 - Byte test (bt_l3.out; R1-R6 taken by script from entry 2): each old string once in L-2, each new string once in L-3; R1-R3 are my W-2,
