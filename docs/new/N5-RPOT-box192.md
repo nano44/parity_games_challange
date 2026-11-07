@@ -264,3 +264,23 @@ to the switch that completed the return route. It is not proved, and it would ne
 | cR_d3_w4 | 3 | 4 | 12 | 10 | 23 |
 
   The depth climb cD_d6_w2 (N 12) ended at R-depth 6.
+
+## Addendum 4: erratum to A1.1; DEAD CHARGE-RET
+- Erratum (A1.1 table): the row set «16 L-RED R-bests + cR_d2_w8 best» used the cR_d2_w8 genome as it stood at commit d52f9613 (R 21).
+  The climb then improved it to R 22. That genome is frozen as inst/cR_d2_w8_R22.json (sha1 in inst/SHA1SUMS). Re-run with
+  mtype192.py on the 16 + cR_d2_w8_R22 (unit R-flips):
+
+| type | to e | to β |
+| --- | --- | --- |
+| RET | 144 | 0 |
+| BRET | 0 | 29 |
+| DISJ | 151 | 77 |
+
+  The A1.1 statements (RET ⇒ e, BRET ⇒ β, about half the flips «to e» are RET) are unchanged.
+- **DEAD CHARGE-RET** («every RET flip at g at step t → t+1 has a mover on the return segment B′ = β_g … g that switched at step t»; this
+  would charge cycle-avoidance flips to the switch that completes the return route).
+  - Killed by rf_d5: 3 of its 8 RET flips have no switched mover on B′. Also rd2_d4 (2 of 8), rd2_d9 (3 of 24), cR_d2_w8_R22 (3 of 14).
+  - Total: 120 of 144 RET flips charged. Unit RET flips. Set 16 L-RED R-bests + cR_d2_w8_R22. Scope IDEAL-CYC. Tool charge192.py.
+  - Even on the charged ones, one mover carries up to 9 charges over a run (rd2_d9). A per-mover bound would need a separate argument.
+  - Obstruction (reading): the return route can already exist at t. The flip then comes from a change of the segment's most relevant
+    vertex (MERGE), not from the route's completion.

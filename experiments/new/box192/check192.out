@@ -37,3 +37,6 @@ n 20 nE 6 iterations 19 fallbacks 1
 17 p mono True strict True switches [(19, 17, 9)] improving True howard-best [True] own-cycle-node [False]
 18 p mono True strict False switches [(2, 8, 5)] improving True howard-best [True] own-cycle-node [True]
 labels pppppppppppppppppp max p-run 18
+rf_d5.json RET flips 8 charged 5; max per switch 1; max per mover 2
+cR_d2_w8_R22.json RET flips 14 charged 11; max per switch 2; max per mover 5
+TOTAL RET 22 charged 16
