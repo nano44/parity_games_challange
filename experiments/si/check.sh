@@ -1249,3 +1249,6 @@ echo "si (box 79: P-IDEAL-DBL frozen): PASS"
 # box 80 (TOWER proof side: PULSE-NEST, ZONE, INSERT-PASS, STRETCH-NEED; docs/si/N5-TOWER-box80.md)
 bash box80/check80.sh
 echo "si (box 80: TOWER stretch): PASS"
+# box 81 (BRIDGE: ascent census on IDEAL-CYC / Gamma3; BETA-ACYC, ACYC-LIN; xcheck; docs/si/box81-bridge.md)
+bash box81/check81.sh
+echo "si (box 81: BRIDGE): PASS"
