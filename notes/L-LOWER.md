@@ -1,5 +1,28 @@
 # L-LOWER notebook
 
+## Successor 7 HANDOVER (2026-11-07 ~20:1xZ, context ~350k; to PARK after this push unless the Lead asks for more)
+### DONE (claude/l-lower)
+- 9113b5cc handover check (score 5). 4f25ae6f C134 duty: fixes entry 2 + docs/lower/P-TOWER-FUEL-line-L3.txt (7328e673…, 4,908 B =
+  C134 §5 target) by l5/mkL3_tf.py / mkfix2_tf.py; p_tower_check.py pins L-3 + SL41 119 j-windows. Referee byte tests: pending (Lead).
+- 8cc6ebc6 BOX L7 round 1, e66baa63 round 2, this commit round 2b (docs/lower/L7-design.md; experiments/lower/l7/, l7check.py in check.sh):
+  RC-PLATEAU survives (4 frozen RC-free genomes ≤ 190); PROVED (lane) WINDOW-CAP, PULSE-TRIGGER, DECOUPLED, GUARD, GREEDY-COMPLETE;
+  ranksolve.py exact (SL41 6,023 conditions, 0.2 s); DATA COUPLING-UP, one-read XOR, SL41 not RC-free by q5 re-points; sequential
+  schedule DEAD without helpers at h = 2 (exhaustive, 5,941 wirings); KILL_M2D_d6 breaks the cycle with a cascade-fired helper (§7).
+- BOX L7 success NOT met (no 7-capped genome). CONJECTURE CONTEXT-COUPLING stated (L7 §8), not a packet.
+### IN FLIGHT / NEEDS (successor 8)
+- Item (a) of Lead 19:20Z: L6G_TEST1_d28.txt (sha1 86cf1903…) was NOT on origin/claude/l-comp at 19:33Z (head 07203ac2a; its
+  D_l6g_best.txt = SL41 field for field, npaths 1). When it lands: freeze a copy in l7/rec/, run l6/struct48.py, l7/runstats.py, l6/win.py,
+  tight.py, readpath.py, l7/fired.py; diff vs SL41; check whether its run equals SL41's (rcfree says SL41's trajectory is not RC-free by q5
+  re-points, so it must differ elsewhere).
+- Design next step: add helper pairs to sched.py (key-fired moves in parallel with the lower move, as KILL_M2D_d6 does), smallest
+  case h = 2 at d = 3 or 4; decide wirings exactly with ranksolve (exh2.py style, or wsearch.py with the guard args).
+- ONE-READ XOR proof attempt (L7 §8): for fixed i exactly one chain reaches b (else Δ is j-independent); the other chain can merge
+  with it only after b; case split on the max element over Q_i, Z_i, (b, j), R_j not closed.
+### Things only I know (successor 7)
+- Push verify takes ~20 min; wait for `! pgrep -f "bash scripts/push.sh"` AND the «exit» line in the output before committing.
+- Never start background python with `&` (I did once, killed it at once): use tracked run_in_background tasks.
+- fev binary: gcc -O2 -o fev experiments/lower/l5/fev.c -lm (scratchpad, lost on restart). L-COMP files: git show <sha>:path.
+
 ## Successor 7 (Opus 5.5) — GO from Lead 18:45Z 2026-11-07
 ### Resume point
 - Handover check 9113b5cc (score 5). DUTY C134 (Lead 18:28Z): fixes entry 2 + docs/lower/P-TOWER-FUEL-line-L3.txt (sha1 7328e673…,

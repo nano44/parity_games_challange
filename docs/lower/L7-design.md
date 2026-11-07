@@ -159,6 +159,14 @@ Nothing here is a result in the sense of CLAUDE.md; G-N5-TIME stays OPEN. Not a 
   dropped conditions (3 seeds × 60,000 steps), h = 4 best 38 (wsearch_h3.out); anneal_small.py over whole genomes, d = 2, 3, 4, 6, 8:
   at most 1 capped level (anneal_small.out) — weaker than the lane's own record KILL_M2D_d6_mu13 (l3/kill/, d 6, levels 0-1 capped),
   so this annealer is not evidence of absence.
+- How a real 2-capped record breaks the cycle (DATA; fired.py → fired_KILL_M2D_d6.out; unit = move; set = all moves of
+  l3/kill/KILL_M2D_d6_mu13.txt, sha1 e07f39752fde1e8af12800cec2770ea2b73400d6, d 6, T 13, levels 0-1 capped; scope = stored start):
+  f₁ = 3 moves at 1, 5, 9. At 9 it is KEY-fired (it moves in the step mover 1 of pair 0 moves, armed before). At 5 its only changed
+  closure mover at step 4 is 11 (level 5), itself KEY-fired at 4: at step 4 the level-0 mover 0 and the level-2 mover 4 move together
+  (both triggered at step 3 by 6, 8, 9), and 4's move changes o(2), …, o(5) in the same step. q₁ = 2 moves at 2, 6, 10, one step after
+  f₁, reading it (its trigger is 3 each time). So the link «f₁ learns that pair 0 moved» runs through a helper three levels up that
+  the cascade fires in the same step — a key-carried link, as §7's cycle requires. READING: helper design = choosing, for each
+  forced Ξ-cycle, the link that a cascade-fired helper carries, and which lower move the helper is fired in parallel with.
 - Consequence for BOX L7 (READING): the design object is not «a schedule for pairs 0-6» but «a schedule for pairs 0-6 together with
   the helper pairs whose key-fired moves break every Ξ-cycle the schedule forces». At the top, §6's pair 7 is one such helper for q₅;
   COUPLING-UP (§4) says those helpers' schedules feed the lower fuel, so they must be fixed before the lower wiring is chosen.
@@ -176,8 +184,8 @@ Nothing here is a result in the sense of CLAUDE.md; G-N5-TIME stays OPEN. Not a 
 
 ## 9. Files (experiments/lower/l7/)
 ranksolve.py, clamp.py, runstats.py, rcfree.py, ideal.py, xorbrute.py, l7check.py (run by check.sh), sched.py, exh2.py, wsearch.py,
-anneal_small.py, rnd_small.py; outputs runstats.out, ranksolve_SL41.out, rcfree_SL41.out, ideal_SL41.out, xorbrute.out, sched.out,
-exh2_h2.out, wsearch_h3.out, anneal_small.out; rec/LCOMP_*.txt (frozen copies, sha1 in §1).
+anneal_small.py, rnd_small.py, fired.py; outputs runstats.out, ranksolve_SL41.out, rcfree_SL41.out, ideal_SL41.out, xorbrute.out, sched.out,
+exh2_h2.out, wsearch_h3.out, anneal_small.out, fired_KILL_M2D_d6.out; rec/LCOMP_*.txt (frozen copies, sha1 in §1).
 
 ## 10. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class; all are about the IDEAL
