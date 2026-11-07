@@ -1,0 +1,6 @@
+NOUPC_1.json EORD rev T 12 U(G) 0 max ascents 2 (t, v) pairs at max 5 with >= 1 ascent 120 first witness (t, v) (3, 72) Howard ties 1
+NOUPC_2.json EORD rev T 15 U(G) 0 max ascents 3 (t, v) pairs at max 6 with >= 1 ascent 450 first witness (t, v) (1, 130) Howard ties 2
+NOUPC_3.json EORD rev T 10 U(G) 0 max ascents 4 (t, v) pairs at max 3 with >= 1 ascent 280 first witness (t, v) (2, 113) Howard ties 0
+NOUPC_1.json EORD lev T 12 U(G) 0 max ascents 0 (t, v) pairs at max 1404 with >= 1 ascent 0 first witness (t, v) None Howard ties 1
+NOUPC_2.json EORD lev T 16 U(G) 0 max ascents 0 (t, v) pairs at max 2805 with >= 1 ascent 0 first witness (t, v) None Howard ties 2
+NOUPC_3.json EORD lev T 10 U(G) 0 max ascents 0 (t, v) pairs at max 1463 with >= 1 ascent 0 first witness (t, v) None Howard ties 0

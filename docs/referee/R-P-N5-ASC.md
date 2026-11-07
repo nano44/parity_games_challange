@@ -194,3 +194,45 @@ the line when it is written.
 
 ## 8. Tools and outputs (committed)
 docs/referee/scratch/: asc_quotes.py, asc_cs.py, asc_game.py; asc_logs/cs.log, game.log, check193_rerun_95dc76d7.out.
+
+## §C. Fixes entry 1 and line L-1 (REFEREE successor 27; date -u at writing 2026-11-07T23:51Z)
+- Objects: a `git archive` of claude/l-new 19cc23e3 (ancestor of origin/claude/l-new), sha1 of the bytes:
+  - L-1 docs/new/P-N5-ASC-line-L1.txt 08cced78a214080dac3f8f07ebc900510e3f35ab (EQUAL to the Lead's relay), 4,896 bytes, one line, 116
+    «(» = 116 «)», 0 «|», one « — »;
+  - fixes docs/new/P-N5-ASC-fixes.md 68139c3e… (entry 1); packet 9c9cb50d… unchanged.
+- Machine check on the archive: box193/check193.sh exit 0, output byte-equal to the committed check193.out
+  (asc_logs/check193_rerun_19cc23e3.out); asc.pins 34 rows, all match.
+- String test (python str.count on L-1):
+  - my AS-2 new strings «UP-JUMP, UP-B and NOUP under HYPOTHESIS [E-LEV]» and «(only for §6 UP-JUMP, UP-B and NOUP)» occur once each;
+  - the old strings «UP-JUMP and UP-B under HYPOTHESIS [E-LEV]» and «(only for §6 UP-JUMP and UP-B)» occur 0 times;
+  - AS-3: «under [E-LEV]» occurs 4 times. The title clause, the UP-B and NOUP clauses and the UP-B / NOUP DATA clauses all carry it;
+    the scope sentence is kept.
+- AS-D1 (unit counts are real): my sums over the 13 instance lines of the re-run output are edomunits 1,892, tmonunits 2,552, decunits
+  24,818 and asc 1,956, with edomfail, tmonfail, decfail, upfail and gfail all 0. These are exactly L-1's numbers.
+- AS-D2: the five box192/inst rows are in asc.pins with box192/inst/SHA1SUMS's sha1s; all 34 pins match.
+- D-2 / D-3 (REFEREE-2): ug193 on all 13 instances, max ascents ≤ U(G) on every one (re-run output); chain193.py M 6 = 22, M 7 = 29 at
+  A 0, re-run by check193.sh.
+- AS-1, AS-4: taken. L-1's D_E(v) := «the number … of distinct (Λ_t(v), E_t(v))» is at least the number of distinct E_t(v), and the
+  (2M + 3)·F′ bound holds for it (a sum over the at most 2M + 3 Λ-intervals).
+- New clause «[E-LEV] is NECESSARY …»: CORRECT.
+  - REFEREE-2's «UPB/NOUP fail on 209 of 21,116 plays of U = 0 genomes (up to 2 ascents).» occurs verbatim at 533744a5.
+  - L-RED R220's «NOUPC_1 / 2 / 3 have U(G) = 0 and max ascents 2 / 3 / 4, in 120 / 450 / 280 (t, v) pairs» and «NOUPC_1, t 0, v 10»
+    occur at 68a1f609. The three .pg sha1s are equal to L-RED's inst/SHA1SUMS and to the bytes.
+  - SECOND ROUTE (mine, asc_elevrev.py on my own Γ builder and VJ engine; NOUPC_{1,2,3}.json from 68a1f609, e-priorities
+    re-assigned in the order (−level, gate); asc_logs/elevrev.log):
+    - U(G) 0, 0, 0; max ascents 2, 3, 4; (t, v) pairs with ≥ 1 ascent 120, 450, 280: EQUAL to R220;
+    - with the (level, gate) order: 0 ascents on all three (NOUP holds).
+    - So «one route only» is now two routes for the max-ascent numbers.
+    - Not re-checked: the witness «t 0, v 10»: my vertex numbering differs from L-RED's .pg. My engine has Howard ties (1, 2, 0) on
+      the three; the counts agree anyway.
+  - «the order of Γ(G) as built by gamma3.py (and of R104's packet §3.1)»: R104's packet P-N5-REALIZE §3.1 l. 89 orders the e's «by
+    (lev(owner), gate index)». CORRECT.
+- DATA rule on L-1, clause by clause: every clause has a counter of matching unit, set and scope (the four AS-D1 counts, UP-B 13 / 13,
+  NOUP 300, HUB-ASC rows, SKELETON, tightness M 1-7, the two [E-LEV] controls), or the no-DATA entry (HUB-ASC with B ≥ 2, HUB-ASC-G's
+  constants, the whole-run corollary, UP-B's D_E bound). MET.
+- Notes, no change required:
+  - L-1's units «vertices» (E-DOM) and «W-target with Λ fixed» (E-MON) are shorter than fixes entry 1's definitions («vertices other
+    than c_W, K0, K3 and the e's»; «W-target or c_W-successor y»). The fixes entry governs and the counts are those fields.
+  - Fixes entry 1 calls «the order of Γ(G) as built by … not in a landed line» R220's wording; it is not verbatim in R220-asc.md. It is
+    not quoted in L-1, so no change is needed.
+- Verdict: fixes entry 1 CORRECT for AS-2, AS-3, AS-D1, AS-D2, AS-1 and AS-4. L-1 MATCHES. All statements stay SIGN.

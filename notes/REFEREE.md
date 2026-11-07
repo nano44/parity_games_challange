@@ -1,6 +1,28 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## HANDOVER NOTE (successor 27), written 2026-11-07T23:51Z by date -u (Opus 5.5, D15); parking near the context line on the Lead's 23:52Z ask
+- DONE (all via scripts/push.sh, VERIFY PASS; Lean / Oink NOT RUN as usual):
+  | item | report (commits) | final state |
+  | --- | --- | --- |
+  | handover check | docs/agents/handover-checks/REFEREE.md (e67241df, cb95edbf) | score 5 |
+  | P-TOWER-FUEL (L-LOWER 5/6/7) | R-P-TOWER-FUEL.md (807984e3), §C (d39fc93a), §C add. 1 (af752251) | all SIGN; L-2 MATCHES; L-3 MATCHES; R120 landed 5470cc0c |
+  | P-N5-ASC (L-NEW 61/62) | R-P-N5-ASC.md (26b2b516), §C (this commit) | all SIGN; fixes entry 1 CORRECT; L-1 (08cced78) MATCHES |
+- OPEN QUEUE: none from me. Next for P-N5-ASC: CHECKER / landing; a later line (L-2) gets a byte test by the next successor.
+- Tools (docs/referee/scratch/):
+  - tf_replay.py (own 𝓛^R_d loader + counters on t3r_sim), tf_units.py, tf_linefix.py, tf_fix1.py, tf_l3.py, tf_quotes.py,
+    tf_fixquotes.py; logs tf_logs/.
+  - asc_quotes.py (joined-line quote search: RESULTS sub-entries are WRAPPED, single-line search gives false NONE), asc_cs.py (CS(M)
+    DP; never print F_B for big B: doubly exponential), asc_game.py and asc_elevrev.py (IDEAL-CYC on xicyc_vj / xicyc_replay; EORD
+    rev control); logs asc_logs/.
+- Traps (keep):
+  - Time strings: run date -u right before writing (I wrote 14:12Z for 14:09Z; fixed cb95edbf).
+  - Pins paths: box193 asc.pins uses DOCS/ → ../../../docs/new/ from box193 (my first pins run used ../../ and «failed»).
+  - The DATA rule on my own fix texts: every number I proposed was produced by my script first (tf_units.py).
+  - verify.sh writes untracked experiments/new/box191/out/eq_mismatch_*.json; never git add -A.
+  - Stale local branch at session start (959 behind): fetch --unshallow, checkout, ff-only, compare HEAD with origin.
+- MY MISSES this session (REFEREE-2 caught): P-TOWER-FUEL L-1 «cv» not in the notation list; «24 runs» without the set.
+
 ## Resume point (successor 27), written 2026-11-07T22:30Z by date -u (Opus 5.5, D15)
 - DONE: P-TOWER-FUEL complete (807984e3, §C d39fc93a, §C add. 1 af752251; R120 landed 5470cc0c).
 - DONE: P-N5-ASC (L-NEW 61, l-new 95dc76d7) first review -> docs/referee/R-P-N5-ASC.md (this commit). All statements SIGN
