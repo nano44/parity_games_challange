@@ -91,3 +91,54 @@ Reports answered: REFEREE 27 claude/referee 807984e30699f4fa5b042dabb1bf1470a83a
 ### 6. Description slip (REFEREE, REFEREE-2)
 - «Packet-description slip (Lead 14:36Z): the packet's report and the brief gave L-1 as «3,699 bytes»; it is 3,699 characters = 3,834
   bytes (sha1 binds).» L-2 above is given in bytes and characters.
+
+## Fixes entry 2 (2026-11-07, L-LOWER successor 7; fix round 2; written by experiments/lower/l5/mkfix2_tf.py)
+Report answered: CHECKER C134 claude/checker 23871f4806e2670ccfb04d32fc8664e8ede9bc04, docs/checker/C134.md (landing check of RESULTS
+  R120, first fill: FAIL E-1 to E-4; exact line L-3 in its §5), routed by the Lead 18:28Z. Verdict sentence: «All four are the drafter's
+  flags with its exact strings: G-1 (R-B), G-7 (R-G), G-U (R-U) and G-9 (i) (R-S). The Lead ruled R-B and R-G (Lead reading) and
+  recommended R-U and R-S; I take all four. R-C is not taken (N-1). No statement, proof, definition or instance changes.» Every «…»
+  below is copied by the script from a byte copy of C134.md (wrapped lines joined by single spaces). The packet (frozen at 7f7ff6f5),
+  L-1, L-2 and fixes entry 1 are unchanged; no statement, proof, definition, instance or counter changes.
+
+### 1. The four findings (CHECKER C134 §3)
+- E-1 (G-1, source note; the C122 E-3 / C132 E-2 / C133 E-2 class). «The note «(P-TOWER-FUEL, docs/lower/P-TOWER-FUEL.md; L-LOWER
+  successor 5)» names only the packet. Fixes entry 1 (L-LOWER successor 6) carries the proof of record of CROSS-ECONOMY's sign-change
+  clause (§1, REFEREE's repair; the packet's step is false: REFEREE 57 of 86 RANK states, REFEREE-2 651 of 1,010), and the measured
+  I-ROOM unit (§2) and I-FUEL scopes (§3) that L-2's instance clauses state. Fix: R1 (R-B).»
+- E-2 (G-7, L41; Lead ruling). «That proof of record is REFEREE's text (R-P-TOWER-FUEL §3, l. 107-112, read), signed by REFEREE (§C l.
+  251-252) and checked by REFEREE-2 after its own independent repair (Add. 1 «The proof of record (REFEREE's) is correct.»). L41
+  requires the scope tail to say so; L-2 has «referee» 0 times. Fix: R2 (R-G).»
+- E-3 (G-U, scope-tail wording; my ruling on the UPDATE procedure). «L-2's tail reads «not M3, not a gauntlet step, not a TARGET.md
+  claim»; every landed line R90-R119 except R112 reads «not M3, not a step-4 pass, not a TARGET.md claim» (the drafter's script on the
+  titles; «gauntlet» 0 times there). R105's procedure (sentinel_build, which L-2's «(DATA: » form requires) asserts the landed words, so
+  as written it applies only with a reading. With R3, L-3 has the landed words and R105's procedure applies unchanged. The meaning is
+  the same: both referees' TARGET diffs say the scope with «not a gauntlet step» (REFEREE §7, REFEREE-2 l. 163) and «step-4 pass» names
+  the same gauntlet step. Fix: R3 (R-U), applied after R2 (R2's new text carries the only occurrence).»
+- E-4 (G-9 (i), set per clause; the C130 E-3 / C132 E-5 class). «I-FUEL's «meets PULSE, GAP ≥ 7 − j at levels 1-5» names no unit and no
+  set, where I-ROOM's clause names «(unit = j-window; set = all 119 of them)». p_tower_check.py tests it (slack on SL41 at need 7 − j,
+  asserted 0) but counts windows for G7_best_d28 only. My instrumented copy (below) gives SL41_d28 119 j-windows at j = 1..5 (3, 7, 15,
+  31, 63). Fix: R4 (R-S).»
+- N-1 (R-C not taken). «GAP-NEST's capped form «so with levels 0, …, h − 1 capped (F(l) = 2^(l+2) − 2) PULSE and GAP are ≥ h − j for 1 ≤
+  j ≤ h − 2» is a consequence the counters cover: on such a run levels 1, …, h − 1 are doubling, so the counters' k at j ≤ h − 2 is ≥ h
+  − 1 − j and PN, GN test PULSE, GAP ≥ k + 1 ≥ h − j. The R119 precedent («so R(y) ≥ moves(y)», covered) was not an E-item (C133).»
+
+### 2. The replacements (C134 §5, applied to L-2 in this order)
+- R1 (E-1): old « (P-TOWER-FUEL, docs/lower/P-TOWER-FUEL.md; L-LOWER successor 5)» → new « (P-TOWER-FUEL, docs/lower/P-TOWER-FUEL.md
+  with its fixes entry 1, docs/lower/P-TOWER-FUEL-fixes.md; L-LOWER successors 5-6)»
+- R2 (E-2): old «; G-N5-TIME stays OPEN; not M3, not a gauntlet step» → new «; the proof of record of CROSS-ECONOMY's sign-change clause
+  is referee-originated (REFEREE R-P-TOWER-FUEL §3, restated in P-TOWER-FUEL's fixes entry 1 §1; REFEREE-2's own repair is a second
+  route), signed by both referees; G-N5-TIME stays OPEN; not M3, not a gauntlet step»
+- R3 (E-3): old «not a gauntlet step» → new «not a step-4 pass»
+- R4 (E-4): old «meets PULSE, GAP ≥ 7 − j at levels 1-5 while» → new «meets PULSE, GAP ≥ 7 − j at levels 1-5 (unit = j-window; set = all
+  119 of them) while»
+- C134 §5 rule: «In the strings above, a wrapped line is joined to the next with one space.» R3 is applied after R2: its old string then
+  occurs once, inside R2's new text (asserted).
+
+### 3. Line L-3 (docs/lower/P-TOWER-FUEL-line-L3.txt; made by experiments/lower/l5/mkL3_tf.py)
+- sha1 7328e67345e1bb6a8605ccfa4f406d1020eabfdb, 4908 bytes, 4758 characters, 1 line + «\n»; 82 «(» / 82 «)», depth never negative; no
+  «|»; «gauntlet» 0 times. It equals CHECKER C134's target byte for byte: «L-3 with R1-R4 (my script): sha1
+  7328e67345e1bb6a8605ccfa4f406d1020eabfdb with its newline (4,908 bytes), one line, 82 «(» / 82 «)», depth never negative, 0 "|", one «
+  — », «gauntlet» 0 times.» (mkL3_tf.py asserts the sha1 and the byte count it reads from C134 §5).
+- p_tower_check.py (extended; it still pins L-1 and L-2) now pins L-3 and asserts the set of R4's clause on SL41_d28: 119 j-windows at j
+  = 1..5, (3, 7, 15, 31, 63) per level, the same counts as C134 §3 E-4 (its instrumented copy), here from the lane's own windows(j). No
+  other counter changes.

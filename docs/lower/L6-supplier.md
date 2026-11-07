@@ -161,7 +161,20 @@ Nothing here is a result in the sense of CLAUDE.md; G-N5-TIME stays OPEN. Not a 
   which for the reachable states of a doubling level 5 is 1 exactly between the moves of 11 and 10 in a 5-window: it needs s₁₀.
   If 10 is graph-upstream of 12, no Ξ-chain read by 12 can pass 10 (acyclicity), so s₁₀ can reach 12's comparison only through
   movers keyed by o(5) or later keys (13, levels ≥ 7) or through proxies in the lower pairs' states. CONJECTURE RC-PLATEAU: if levels
-  0-5 are capped and 10 is graph-upstream of 12, then F(6) ≤ 222. Test proposed: a climb that forbids the RETURN-CHAIN (guard: 10 not
+  0-5 are capped and 10 is graph-upstream of 12, then F(6) ≤ 222. Role form (Lead 16:44Z; replaces the mover names): in a genome of
+  𝓛^R_d (d ≥ 7) with levels 0, …, 5 capped, let q₅ be the member of pair 5 that moves second in its 5-windows (one member, by DOUBLE-EQ
+  (E5)); if there is a Ξ-path (any options) from q₅ to a member of pair 6, then F(6) ≤ 222 (= 2^8 − 2 − 32). General form, to be
+  tested before any proof: with levels 0, …, j − 1 capped, a Ξ-path from q_(j−1) into pair j forces F(j) < 2^(j+2) − 2.
+  Guard for the test: guard_l6.py mode 'noreturn' (role-based: q₅ from the run; npaths(D, q₅, pair 6) = 0 and levels 0-5 capped) and
+  score(D) = (min(caps, 6), −npaths(q₅, pair 6), F(6)), lexicographic. DATA (unit = genome; stored start): no record with levels 0-5
+  capped meets it (SL41, G7_best, snapshot, w1: npaths 1; H6: 8; H5 has 5 capped levels, npaths 2). SL41's single path is
+  10:0 → 55:0 → 12, and none of the 112 single re-routes of 10:0 or 55:0 keeps six capped levels (readnest.py step 1), so a seed needs
+  ≥ 2 edits.
+  General form DEAD (rcgen.py → rcgen_records.out; unit = (genome, capped level j ≥ 2); set = H5, H6, SL41, G7_best, snapshot, w1;
+  scope = stored start): capped levels with a Ξ-path from q_(j−1) into pair j occur at j = 2, 3, 4, 5, e.g. SL41 j = 3 and 4 (1 path
+  each), snapshot j = 5, its top capped level (1 path), H6 j = 2 and 3, w1 j = 3 (28 paths). So a RETURN-CHAIN alone does not stop a
+  level from doubling, and the information-flow READING above has no force at j ≤ 5; RC-PLATEAU at j = 6 stays a CONJECTURE supported only
+  by the four plateau genomes (DATA), with no proof idea left from this section. Test proposed: a climb that forbids the RETURN-CHAIN (guard: 10 not
   graph-upstream of 12, 13) while keeping levels 0-5 capped; a genome with F(6) > 222 kills the conjecture, and a plateau at ≤ 222
   supports it.
 
@@ -199,8 +212,8 @@ Nothing here is a result in the sense of CLAUDE.md; G-N5-TIME stays OPEN. Not a 
 - H5 → H6 repeat: NOT RUN (it was conditional on a working construction).
 
 ## 8. Files (experiments/lower/l6/)
-sim6.py, win.py, topadd.py, cross2.py, copyf.py, ins.py, dropscan.py, tight.py, readpath.py, readnest.py, guard_l6.py, struct48.py, gad.c, gad2.c;
-outputs struct48.out, readnest_SL41.out, xcheck_GAD95_SL41.out, tight_records.out,
+sim6.py, win.py, topadd.py, cross2.py, copyf.py, ins.py, dropscan.py, tight.py, readpath.py, readnest.py, guard_l6.py, struct48.py, rcgen.py, gad.c, gad2.c;
+outputs struct48.out, rcgen_records.out, readnest_SL41.out, xcheck_GAD95_SL41.out, tight_records.out,
 readpath_records.out, dropscan_SL41.out, win6_SL41_verbose.out, cross2_SL41.out,
 topadd_SL41_K2.out, topadd_SL41_K3.out, copyf_SL41_12_13.out, win6_GAD95.out, gad_runs.out; rec/GAD95_P8_d29.txt.
 

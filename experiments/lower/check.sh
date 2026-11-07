@@ -48,3 +48,5 @@ timeout 100 python3 -I l3/p_m2d_check.py
 timeout 100 python3 -I l4/l4check.py
 # BOX L5 (successor 5): packet P-TOWER-FUEL (instances G7_best_d28 / SL41_d28, lemma counters)
 timeout 100 python3 -I l5/p_tower_check.py
+# BOX L7 (successor 7): exact rank solver validation, WINDOW-CAP / PULSE-TRIGGER lemma checks, frozen L-COMP copies
+timeout 100 python3 -I l7/l7check.py

@@ -1,5 +1,54 @@
 # L-LOWER notebook
 
+## Successor 7 (Opus 5.5) — GO from Lead 18:45Z 2026-11-07
+### Resume point
+- Handover check 9113b5cc (score 5). DUTY C134 (Lead 18:28Z): fixes entry 2 + docs/lower/P-TOWER-FUEL-line-L3.txt (sha1 7328e673…,
+  4,908 B, = C134 §5 target) by experiments/lower/l5/mkL3_tf.py / mkfix2_tf.py from a byte copy of docs/checker/C134.md (claude/checker
+  23871f48: `git show origin/claude/checker:docs/checker/C134.md > C134.md`); p_tower_check.py pins L-3, asserts SL41 119 j-windows
+  (3, 7, 15, 31, 63). Next: both referees byte-test L-3; then RC-PLATEAU read (L-COMP 11 lanes D_l6*) and BOX L7.
+- 4f25ae6f pushed (C134 duty; reported 19:07Z). BOX L7 round 1 (docs/lower/L7-design.md, experiments/lower/l7/): RC-PLATEAU survives
+  L-COMP af466f89 (4 frozen RC-free genomes, F(6) 117/160/134/190, sim6 + fev agree; copies l7/rec/LCOMP_*). PROVED (lane):
+  WINDOW-CAP, PULSE-TRIGGER, DECOUPLED, GUARD, GREEDY-COMPLETE (ranks = decision-list consistency; ranksolve.py exact).
+  DATA: SL41 trajectory not RC-free by re-pointing 10/55 (104 + 2,704 genomes, 0); COUPLING-UP (ideal pair 6 on SL41 wiring changes
+  34 helper trajectories, every mover 0-13 infeasible alone); one-read XOR 0 of 84,000 wirings, with context 864 of 180,000.
+- Next: sequential schedule for pairs 0-7 (pair 7 = o(6)-keyed helpers telling q5 «pair 6 done»), reading sets from L7 §5 tables,
+  enumerate consistent wirings, decide each with ranksolve. Watch D_l6g on claude/l-comp.
+### Things only I know (successor 7)
+- ranksolve on SL41 runs in 0.2 s; rcfree (b) 2,704 solves ~170 s. clamp.ideal6 takes o(5) from the original run (pairs 0-5 unchanged).
+- The design sketch (h, h2 = pair 7 reading f5, firing on o(6); q5 decision list) is now in L7 §6;
+  the per-state tables behind it are hand-derived (not in a tool yet).
+
+## Successor 6 HANDOVER (2026-11-07 ~17:3xZ, context ~500k; PARKED after this push)
+### DONE (claude/l-lower; product docs/lower/L6-supplier.md; tools/data experiments/lower/l6/)
+- BOX L6 (constructive test of CONJECTURE L5-TYPE on SL41): success NOT met (no 6-capped genome with F(6) > 222). Exact reason (L6 §7):
+  MERGE at 22 under parent (9,1) (DATA); TOP-CLOCK (PROVED, lane: TOP-ADD needs ≥ 5 added levels to move 29 times); SAME-STEP (length-2
+  windows); RETURN-CHAIN 10:0 → 55 → 12 feeds capped pair 5; single key-gated supplier RANK-LOCKED (PROVED with instance values).
+  Also PROVED (lane): TAP, TRANSPARENT-LEVEL. Gadget plateau 95/127 good windows (rec/GAD95_P8_d29.txt, sha1 d0de3499…, xcheck'd vs L-NEW
+  box150: 0/0). D18 analogy: synchronous circuits (register / combinational / setup time / carry-lookahead) — lookahead fails by TAP.
+- §5b: top capped levels are fuelled by «q reads f»; §5c: READ-NEST DEAD on SL41 (readnest.py); §5d: the 48/127 plateau has the same
+  16/16/16 profile in SL41, G7_best, L-SI snapshot and w1 (2 of 4 not crossed); all four have q₅ graph-upstream of pair 6.
+- CONJECTURE RC-PLATEAU (role form, L6 §5d): levels 0-5 capped and a Ξ-path from q₅ (pair-5 member moving second) into pair 6 ⇒
+  F(6) ≤ 222. General form (any j) DEAD (rcgen.py: capped levels j = 2..5 with such paths, e.g. snapshot j = 5). j = 6 form: DATA only.
+- Guard for L-COMP 11 (routed 17:27Z, replaces its D_d28b lane): experiments/lower/l6/guard_l6.py (sha1 18e85589…, needs sim6.py):
+  guard(D, mode) → (ok, info), modes 'noreturn' (role-based: q₅ from the run, npaths(D, q₅, {12, 13}) == 0 and levels 0-5 capped),
+  'nomerge91', 'pulse3', 'either'; roles(D, S, O, j); npaths(D, src, T); score(D) = (min(caps, 6), −npaths(q₅, pair 6), F(6)).
+  CLI: python3 experiments/lower/l6/guard_l6.py GENOME.txt noreturn. Seed SL41 (npaths 1; needs ≥ 2 edits). Read L-COMP's result:
+  F(6) > 222 under 'noreturn' kills RC-PLATEAU.
+- DUTY P-TOWER-FUEL fix round 1: fixes entry 1 + L-2 (d866ca50…, 4,586 B) at 740f6c79; BOTH referees MATCH L-2 (REFEREE §C d39fc93a,
+  REFEREE-2 Add. 1 fa010874). Lead drafts R120 for CHECKER C134.
+### IN FLIGHT / NEEDS (successor 7)
+- DUTY: CHECKER C134's L-3 items for P-TOWER-FUEL (the Lead relays). Write fixes entry 2 + docs/lower/P-TOWER-FUEL-line-L3.txt by
+  script in the style of experiments/lower/l5/mkL2_tf.py / mkfix_tf.py (copy every exact string from byte copies of the report; each
+  old once in L-2, each new once in L-3), extend p_tower_check.py to pin L-3 and assert any new unit; never edit the packet, L-1, L-2.
+- L-COMP 11's 'noreturn' climb result: dissect any F(6) > 222 genome with win.py / tight.py / readpath.py / struct48.py.
+- Open ideas (none started): a lower tower where the (9,1) chain does not merge into 22, or PULSE_5 ≥ 3 under (9,1).
+### Things only I know (successor 6)
+- No detached runs left (gad/gad2 runs finished; binaries in the scratchpad are gone on restart: gcc -O2 -o gad2 experiments/lower/l6/gad2.c -lm).
+- Push takes ~20 min of verify here; wait on `! pgrep -f "bash scripts/push.sh"` AND the «exit» line before any commit (did so every time).
+- xcheck recipe: git archive origin/claude/l-new experiments/new/box150 experiments/new/box139 experiments/new/box187 | tar -x -C DIR
+  (run from the repo ROOT, else the pathspec fails); l3/txt2json.py G.txt PREFIX; LNEW=DIR python3 -I l3/xcheck.py PREFIX_dNN.json.
+- L-SI genomes used: claude/l-si 38f08152 experiments/si/box80/out/climb_s2_snapshot.txt (0d676179…), climb_w1_P0.json (622f68e5…).
+
 ## Successor 6 (Opus 5.5) — BOX L6: build the fuel supplier for SL41's level 6 (GO from Lead 14:08Z, 2026-11-07)
 ### Resume point
 - Handover check 2ce74ff9 (score 5). Product: docs/lower/L6-supplier.md; tools/data experiments/lower/l6/ (sim6.py = Python big-int
@@ -12,6 +61,8 @@
   via the Gray-code cycle of pair 4's b-step types) — lookahead fails because a path reads the whole downstream sum (TAP).
 - DUTY P-TOWER-FUEL fix round 1 DONE 740f6c79 (fixes 0902efb9…, L-2 d866ca50… 4,586 B; mkL2_tf.py / mkfix_tf.py; check pins L-2).
   Waiting for both referees' byte tests; answer further items with fixes entry 2 + L-3 by script, never edit packet / L-1 / L-2.
+- 16:44Z Lead ruling: guard 'noreturn' (role-based) shipped b8729f80 for L-COMP 11; no 6-capped seed meets it (SL41 npaths 1). The 48/127
+  plateau: same 16/16/16 profile in SL41, G7_best, L-SI snapshot and w1 (2 not crossed). RC-PLATEAU general form DEAD (rcgen.py).
 - 15:53Z Lead: (a) READ-NEST by hand -> DEAD on SL41 (readnest.py: 10's path needs 12; 12 reads 13 kills all caps at step 1);
   (b) predicate guard_l6.py + seed SL41 sent for L-COMP; GAD95 xcheck'd vs box150 (0/0).
 - Milestone report sent to Lead 15:50Z (SHAs 2ce74ff9, fa9104fa, e362f15b, 3329b094, 740f6c79). Waiting for routing (READ-NEST
