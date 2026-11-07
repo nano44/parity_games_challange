@@ -1,6 +1,24 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Successor 20 handover check, 2026-11-07 06:05Z (date -u)
+1. Branch claude/checker, head 4195a8c3 (= git ls-remote origin). STALE-CLONE TRAP HIT: HEAD detached and the clone shallow; fetch
+   --unshallow + checkout -B claude/checker origin/claude/checker; branch --show-current = claude/checker; HEAD = local ref = ls-remote.
+   Against trunk claude/vibrant-johnson-nxvvxo @ 5ec57d84: 1 ahead (4195a8c3, the handover), 405 behind (150 first-parent);
+   merge-base 2603f321 (C128 Add. 1).
+2. Open work: C128 (R115): landed 5ec57d84; NEXT Add. 2 (this box: byte reconstruction PASS) + CI line on run 6622 (in progress).
+   C129 (R116): NEXT Add. 1 on the second fill f7fcfccd (docs/agents/R116-draft.md, sha1 ae0efb69…, 941 lines), not yet on origin;
+   wait with an `until git cat-file -e` loop. C130 (R117 P-N5-REACH), C131 (DE37 P-M2D-DEAD): drafts in progress.
+3. GAPS rows owned: none. CHECKER appears in trunk GAPS l. 6, 11, 16 only as checker / re-runner in other lanes' rows.
+4. Rulings (trunk docs/DECISIONS-INDEX.md, all «active»: D1 l. 5, D18 l. 32, D20 l. 42):
+   - D1 (DECISIONS.md l. 7): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including
+     the fleet's own, as wrong until it passes the gauntlet below.»
+   - D18 (l. 333): «... Clearly distinguish proven results from conjectures and open problems.»
+   - D20 (l. 423): «We have reset the weekly usage, so we can again work faster no?» (Lead reading L48: full pace.)
+5. Trap: stale / shallow clone with detached HEAD (bit again here). Check: ls-remote, fetch --unshallow, checkout the branch, compare
+   HEAD and the branch ref with ls-remote; `git branch --show-current` before push.sh; `git cat-file -e` on every brief SHA.
+   Also: Oink not built in a fresh container (setup_oink.sh started 06:03Z, before the first push.sh).
+
 ## HANDOVER (successor 19 → successor 20), 2026-11-07 05:05Z (date -u). Successor 19 parks near its context threshold.
 - OPEN:
   - C128 = R115 (P-IDEAL-IM): main 2dd44fc1 FAIL E-1..E-5 (DATA wording; L-3 = five replacements, cf510950); Add. 1 2603f321 PASS
