@@ -13359,6 +13359,251 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   claim; its tail reads «a STRUCTURE / EQUIVALENCE statement inside the IDEAL model» and «G-N5-TIME stays OPEN; not M3, not a step-4
   pass, not a TARGET.md claim» (L-5, by script). Not a step-4 pass. GAPS G-N5-TIME: open.
 
+### R117 [refereed-only] N5 (SPEC S1-S5) from its DEFAULT start S3 (SPEC S3 with FIX 1), on the games of RESULTS R104 (premise: R104's definitions of the IDEAL model, L(G), the Ξ-graph, the game Γ(G) with its vertex indices and start, and the FL run; no theorem of R104 used), with R104's premises as landed (1E-N3 = RESULTS R57 (b) in its two forms; RESULTS R24 (a) Lemma R and R24 (b)'s choice rule with RESULTS R103's bridge B and (R1) ruling; RESULTS R36 (c) Lemma P1 on the dual game) and RESULTS R15 (d) for termination only: (Theorem NO-REACH) for EVERY genome G the N5 run of Γ(G) from S3 has σ_j(K0) = K1 and σ_j(K1) = K0 at every state j (S3 picks them, and K0, K1 never have an improving edge while they hold), so it never visits a state with σ(K0) = K3, σ(K1) = K1, i.e. none of R104's REALIZE states, and, for acyclic G, no β-vertex is ever in the P-set of Ξσ_j at a vertex outside K2, K3 and the unused even self-loop of priority 2; (Theorem REACH3) for every G with an ACYCLIC Ξ-graph, the game Γ3(G) obtained from Γ(G) by 4M + 4 single-successor Even pads of priority ≤ 2 (pA on K0 → K3, s on K1's loop, q on K1 → K0, r on K2 → K1, pe_g and pβ_g on both faces of every gate g, pb_g on every β_g → u, and m_(x,k) on every mover edge x → (x, k) with priority 2 for the genome start and 0 otherwise, appended after Γ(G)'s vertices; n = N + 7M + 10) has S3's start pair equal to R104's stated start transported through the pads (Lemma S3-START), no pad is ever a cycle node or in a P-set (Lemma PAD), and the N5 run of Γ3(G) FROM S3 has states 0, …, L(G) equal to the transported REALIZE states of the IDEAL run, transitions 1, …, L(G) are FL transitions and transition L(G) + 1 is a fallback, so if L(G) ≥ 1, [0, L(G)] is one FL run of length exactly L(G) and the run makes at least L(G) + 1 iterations (no FL run if L(G) = 0); hence (Corollary REAL-IDEAL-S3) if every FL run of N5 from S3 on every n-vertex game has length at most p(n) for a nondecreasing polynomial p (in particular if N5 from S3 makes at most p(n) iterations), then L(G) ≤ p(N + 7M + 10) for every acyclic G, and a family of acyclic genomes with L super-polynomial in N + M would give games on which N5 from its default start makes super-polynomially many iterations; the statement that, for every game and start pair, the game with every priority + 4 and every edge subdivided by an Even pad of priority 2 (Even, start edge), 1 (Odd, start edge) or 0, the pads indexed after the game's vertices in (a, b) order, has an N5 run from S3 equal state for state and transition for transition (fallbacks included) to the run of the game from that start pair is DEAD as stated (DEAD SUBDIV: the n = 3 and n = 5 games with the start pairs of packet §9 (instances A, B) whose padded N5 runs from S3 differ in a fallback flag, resp. in the iteration count, 2 vs 3) (2026-11-07) — a REDUCTION / NECESSITY statement only (no count is bounded; nothing is claimed about whether long IDEAL-ACYC runs exist; Ξ-cyclic genomes are not covered; the converse is not claimed; DATA: on 14 corpus genomes (L(G) 9 to 59) and 440 random acyclic genomes, σ(K0) = K1 and σ(K1) = K0 at all 908 states of the S3 runs on Γ(G) and 0 of them equal to R104's stated start off the movers, every such run 1 iteration, 0 failures of REACH3 in 454 genomes, the β-free P-sets of NO-REACH 0 on 42,880 (state, vertex) pairs, S3-START 0 on 454 genomes, PAD 0 on 693,030 (state, vertex, world) triples of the S3 runs on Γ3 (every vertex but the unused even self-loop of priority 2), both DEAD SUBDIV instances re-run, NO-REACH's no-improving-edge clause and Corollary REAL-IDEAL-S3 no separate DATA, n5b (SPEC mode) iteration counts equal on the 28 games Γ(G) and Γ3(G) of the 14 corpus genomes and Oink 8fbf0a7 --zlk with verify OK on the same 28; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim) (P-N5-REACH, docs/new/P-N5-REACH.md; L-NEW successor 58), CHECKER PASS (docs/checker/C130.md, checker d7091311)
+- Object (L-NEW successor 58, Opus 5.5, D1 / D14 / D18, box 189; frozen, unchanged during review): packet P-N5-REACH,
+  docs/new/P-N5-REACH.md, sha1 b7bd693744fdec2aa993f2133c22cbe724933ff0, 345 lines (l-new freeze 73b3d1fd, 2026-11-07T02:35:31Z;
+  identical at 571c75c5, 727163f0 and fdf01b8c). Both referees measured it (REFEREE l. 21 «P-N5-REACH.md b7bd6937…;»; REFEREE-2 l. 6
+  «docs/new/P-N5-REACH.md b7bd693744fd… (345 lines)»). Labels (l. 6-7): «PROVED (L-NEW 58, unrefereed) / DEAD (instance, machine-checked)
+  / DATA / CONJECTURE / READING (not to sign).» To sign (table l. 10-21): §2 Theorem NO-REACH (a)-(d), §3 the game Γ3(G) and its size, §4
+  Lemma S3-START, §5 Lemma PAD (a)-(c), §6 the transfer lemmas K3, PLAY3, SBAR3, TAU3, ESC3, W3, KEY3, §7 Theorem REACH3, §8 Corollary
+  REAL-IDEAL-S3 (a), (b) («PROVED (reduction / necessity only)»), §9 DEAD SUBDIV (instances A, B); §10-§13 not to sign. Sections:
+  premises (l. 23-79), §0 notation, Fact DUAL, Fact X (l. 81-92), §2 (l. 94-120), §3 (l. 122-136), §4 (l. 138-143), §5 (l. 145-155), §6
+  (l. 157-240), §7 (l. 242-258), §8 (l. 260-268), §9 (l. 270-284), §10 DATA (l. 286-315), §11 (l. 317-324), §12 (l. 326-336), §13 (l.
+  338-345). Source (l. 5): docs/new/N5-REACH-box189.md (f55dac37), history only; «This packet carries every proof in full and is checked
+  against this text only.» (l. 5-6). The packet's own scope (l. 7-8): «NOT a TARGET.md claim; does NOT decide G-N5-TIME; NOT M3; not a
+  step-4 pass. It bounds nothing and asserts nothing about whether long IDEAL-ACYC runs exist.»
+  Fixes: docs/new/P-N5-REACH-fixes.md, append-only, three entries, entries 1-2 by L-NEW successor 58 and entry 3 by L-NEW successor 59
+  (fdf01b8c: 85 lines, 9,935 bytes, sha1 be31f7741264c809ec306889ecb31046c1671598). Entry 1 (571c75c5): REFEREE's RE-L1, REFEREE-2's W-1, W-2, notes N-1..N-4, D-1; line L-2.
+  Entry 2 (727163f0): REFEREE-2's W-3 and REFEREE's RC-1 (resolved by W-3), REFEREE's RC-2 in the Lead's «(a, b) order» form; line L-3.
+  Entry 3 (fdf01b8c): CHECKER C130's E-1..E-4 with its §5 replacements R1-R4; line L-4. Each: «No statement, proof, tool, output or
+  instance of the packet changes» (l. 8; l. 52-53 the same with «packet and entry 1 unchanged»; l. 73-74 «The packet and entries 1-2 are
+  unchanged.») and «This entry carries no proof.».
+  The RESULTS line is L-4, f85a024b8c8caa4c996fcd15bf1e78fbd436b534 (docs/new/P-N5-REACH-line-L4.txt, l-new fdf01b8c,
+  2026-11-07T07:57:34Z, the file's only commit; 3,942 bytes). The title is L-4 verbatim, with nothing inserted (its date parenthesis
+  «(2026-11-07)» and its source note are the line's own; the source note names the packet, which carries every proof; the fixes file
+  carries none). L-4's parentheses balance (64 «(» / 64 «)»). Line history: L-1 (b12ec57a, 73b3d1fd, frozen with the packet); L-2
+  (4de27b32, 571c75c5, fixes entry 1: L-1 with exactly three replacements, each old string once in L-1: RE-L1, REFEREE's text verbatim,
+  adds the DATA counts of NO-REACH (d), S3-START, PAD, the SUBDIV instances and «Corollary REAL-IDEAL-S3 no separate DATA»; W-1,
+  REFEREE-2's text verbatim, replaces L-1's quoted gloss «S3 can be simulated on every game by subdividing every edge» with the exact
+  killed statement; W-2, REFEREE-2's text verbatim, replaces «{K2, K3, c_X}» with «K2, K3 and the unused even self-loop of priority 2»);
+  L-3 (adfbb3b8, 727163f0, fixes entry 2: L-2 with exactly R1, REFEREE-2's W-3, «(every vertex but the unused even self-loop of priority
+  2)» after the PAD count, and R2, REFEREE's RC-2 with «in (a, b) order» for its «in edge order» by Lead ruling); L-4 (f85a024b, fdf01b8c,
+  fixes entry 3: L-3 with exactly CHECKER C130 §5's R1-R4, which are the first fill's R-A..R-D; see Fixes). Each step is the previous
+  line with exactly the named replacements (my script, True ×3; both referees by their own scripts). L-2 MATCHES the byte test at REFEREE
+  (cc9f4afd §C l. 185 «L-2 MATCHES the byte test.») and at REFEREE-2 (c420666d Addendum 1 l. 146 «**L-2 MATCHES after W-3**»). L-3:
+  L-3 MATCHES at both referees, each after its own byte test: REFEREE successor 25 (85cc9ebb) §C add. 1 l. 195-199 (R1 and R2 once each in L-2; «L-2 + R1 = 3,687 B, sha1 46c2e507…, which is REFEREE-2's own computation for W-3.»; «L-2 + R1 + R2 is byte-equal to L-3.»), l. 200-208 (meaning: «RC-1 is SATISFIED; W-3 replaces it, as the Lead ruled.»; «The (a, b) form is better. RC-2 is SATISFIED.»), l. 209 «Verdict: fixes entry 2 is CORRECT. L-3 MATCHES, by the byte test and in meaning. All statements stay SIGNED.»; REFEREE-2 successor 30 (ddf42cb6) Addendum 2 l. 152-156 (own bt_l3.py: each old string once in L-2, each new once in L-3, «L-2 with R1, R2 == L-3 byte for byte, sha1 adfbb3b8219026b23a80b2081a3c227c35730451, 3,748 B»), l. 157-170 (meaning: R1 «names the same set as REFEREE's RC-1»; R2 «is the packet's own phrase»), l. 172-173 «Verdict: entry 2 **CORRECT**; **L-3 MATCHES** the packet with fixes entries 1-2, in bytes and in meaning (Opus 5.5, D1). Statement verdicts unchanged (all SIGN); W-1, W-2, W-3 all met.». Neither third round re-tested L-3's other DATA clauses against the counters; CHECKER C130 did (§3: E-1..E-4, the first fill's G-9 (i)-(iii) and G-D). L-4: L-4 MATCHES at both referees, each after its own byte test and a check of R1-R4 against reachcheck.py's counters at fdf01b8c: REFEREE successor 26 (419cc268) §C add. 2 l. 217-221 (R1-R4 parsed from fixes entry 3 and from C130 §5: «The two sets of strings are identical.»; «L-3 with R1-R4 applied is byte-equal to L-4 (sha1 f85a024b…, 3,942 bytes).»), l. 222-235 (R1-R4 against the counters), l. 246-247 «Verdict: fixes entry 3 is CORRECT. L-4 MATCHES, by the byte test and in meaning (R1-R4). All statements stay SIGNED; K3 is signed for every genome with fixes entry 1's reply as its proof of σ̄(K2) = r.»; REFEREE-2 successor 30 (d2b08049, its heading stamp corrected at d4838991) Addendum 3 l. 179-181 (own bt_l4.py: «L-3 with R1-R4 == L-4 byte for byte, sha1 f85a024b8c8caa4c996fcd15bf1e78fbd436b534, 3,942 B»), l. 182-194 (R1-R4 against the counters), l. 196-197 «Verdict: entry 3 **CORRECT**; **L-4 MATCHES** the packet with fixes entries 1-3, in bytes and in meaning» … «Statement verdicts unchanged (all SIGN); W-1, W-2, W-3 stay met.».
+  Both diffed every clause of L-1 against the packet (REFEREE l. 118-122; REFEREE-2 l. 98-100 «Premises, NO-REACH, REACH3 (pads,
+  priorities, n, S3-START, PAD, states, FL, fallback, L + 1 iterations), REAL-IDEAL-S3, the DATA counts (908 states, 1 iteration, 454
+  genomes, L 9-59, 28/28) and the NOT-claims match the packet and my replays ✓.»); W-2 and RC-2 change wording of a definition (the
+  unused loop; the pad order of the killed statement) to the packet's and R104's; no claim changes.
+- Claims signed (REFEREE successor 25 (Opus 5.5, D15), report f66942c1, §C cc9f4afd, §C add. 1 85cc9ebb, and successor 26, §C add. 2
+  419cc268; REFEREE-2 successor 29 «(Opus 5.5, D1/D18/D20)», report b0860fcd, and successor 30, Addenda 1-3 c420666d, ddf42cb6,
+  d2b08049 / d4838991). Every row is SIGN in both verdict tables
+  (REFEREE "## 0. Verdicts" l. 5-17 of R-P-N5-REACH.md; REFEREE-2 "## Verdicts" l. 10-22 of R2-P-N5-REACH.md), with no gap (REFEREE-2 l.
+  22 «No statement is REFUSED; no gap. N-1..N-4 are notes that do not affect a verdict.»); they stand in every later round (REFEREE §C l.
+  187 «All statements stay SIGNED.»; REFEREE-2 Addendum 1 l. 146-147 «Statement verdicts unchanged (all SIGN); W-3 is wording only and
+  changes no count.»; REFEREE §C add. 1 l. 209 «All statements stay SIGNED.»; REFEREE-2 Addendum 2 l. 172-173 «Statement verdicts unchanged (all SIGN); W-1, W-2, W-3 all met.»; REFEREE §C add. 2 l. 246-247 «All statements stay SIGNED; K3 is signed for every genome with fixes entry 1's reply as its proof of σ̄(K2) = r.»; REFEREE-2 Addendum 3 l. 196-197 «Statement verdicts unchanged (all SIGN); W-1, W-2, W-3 stay met.»). Setting: N5 is SPEC S1-S5 (docs/new/N5-ssi-global.md, the N5 of RESULTS R57 and R104); S3 is
+  SPEC's default start with FIX 1 (Even: «highest even priority, else lowest odd priority; equal priorities: largest index if even,
+  smallest if odd.»; Odd the same rule on G^d); Γ(G) and its stated start, the IDEAL run and L(G), and the FL run are R104's (title l.
+  9864); a genome is in IDEAL-ACYC when its Ξ-graph is acyclic. Notation (packet §0 l. 82-92): values (c, P, ℓ) and ⊳ as in SPEC S1;
+  Ξσ: σ with Odd's optimal σ̄; Fact DUAL (G^d's order is Γ's reversed, so τ̄ maximises Γ's order); Fact X (IDEAL-ACYC: two options of one
+  mover have different β-sets on their X-chains). Cells: REFEREE «SIGN» (l. 9-16; §6 «SIGN (every LENGTH and INDEX spot re-derived, §2
+  below)», §7 «SIGN; replayed on two corpus games with L-COMP's n5b against my own simulator (§3)», §8 «SIGN as a reduction / necessity
+  statement», §9 «SIGN; replayed with my own G^pad builder and n5b (§3)»); REFEREE-2 «**SIGN** (Opus 5.5, D1)» (l. 13-20; with N-2 at §3,
+  N-1 at §6, «(replayed on my engine)» at §9).
+  (a) Theorem NO-REACH (§2 l. 94-120) [EVERY genome G for (a)-(c); IDEAL-ACYC for (d)]: «(a) σ_j(K0) = K1 and σ_j(K1) = K0;» «(b)
+    Ξσ_j(K0) = (K0, ∅, 0); no state (σ_j, τ_j) is a standard state of R104 (one with σ(K0) = K3, σ(K1) = K1); in particular no state of
+    the run is a state of R104's REALIZE run for any mover state s;» «(c) K0 and K1 have no improving edge at any state: Iσ_j contains no
+    edge out of K0 or K1.» and (d): for every j and every vertex v ∉ {K2, K3, c_X} the cycle node of Ξσ_j(v) ranks above every β-vertex,
+    so no β-vertex lies in its P-set. Proof (l. 102-119): at j = 0, S3 / FIX 1 picks K0 → K1 (both of K0's successors odd, K1 the lowest)
+    and K1 → K0 (the even one); while (a) holds, the play from K0 is K0 → K1 → K0 …, Ξσ_j(K0) = (K0, ∅, 0), K1's loop is shorter-worse
+    (c even), K0 → K3 is worse through K1 ({K3} odd) or through K2 (Odd's loop bounds the reward below 0); S4a keeps σ off Iσ and S4c
+    touches only improving vertices, so (a) and (c) hold by induction. (d): the only edge into K from outside is β → K0, and a cycle
+    outside K without an e-vertex would be a Ξ-graph cycle; the cycle node is K0, c_W or an e-vertex, ranked above every β. Here c_X is
+    R104's «an unused even self-loop of priority 2» (fixes l. 29-30); the line says so. The packet does not claim τ_j or the iteration
+    count (l. 120).
+  (b) The game Γ3(G) and its size (§3 l. 122-136) [every genome]: Γ(G) with its indices, priorities and owners unchanged, plus the pads
+    (single-successor Even vertices) pA (Ω 0) on K0 → K3, s (Ω 0) on K1's loop, q (Ω 1) on K1 → K0, r (Ω 0) on K2 → K1, pe_g (Ω 1) on g
+    → e_g and pβ_g (Ω 0) on g → β_g, pb_g (Ω 1) on β_g → u, m_(x,k) on x → g_(x,k) with Ω 2 if k = start(x) and Ω 0 otherwise, appended
+    in the order of l. 124-125; top unchanged; 4M + 4 pads, n3 = N + 7M + 10; input size polynomial in N + M at bit cost. Transport:
+    positional strategies of Γ and Γ3 correspond one to one; the STANDARD STATE of Γ3 for a mover state s is R104's start with the genome
+    start replaced by s, transported (l. 135-136).
+  (c) Lemma S3-START (§4 l. 138-143) [every genome]: «S3's start pair on Γ3(G) is the standard state of Γ3 for the genome start s_0.»
+    Proof: FIX 1 at every vertex with two or more successors (mover: the unique Ω-2 pad; β_g: xt(g) over pb_g; K0: pA; K1: s; K3: K2; Odd
+    gate: pe_g; Odd K2: its loop).
+  (d) Lemma PAD (§5 l. 145-155) [every genome]: (a) every cycle of Γ3 other than the self-loop of c_X contains a vertex of Ω ≥ 3; (b)
+    «for every pair of positional strategies and every vertex v ≠ c_X, the cycle node c of v's play has Ω(c) ≥ 3 > Ω(p) for every pad p:
+    no pad is a cycle node and no pad is in a P-set.»; (c) values in Γ3 under transported strategies are those of Γ with the padded
+    length; comparisons decided by reward or P-set are those of Γ.
+  (e) The transfer lemmas (§6 l. 157-240) [IDEAL-ACYC; K3 and TAU3 every genome]: K3 (the core values, Iσ ∩ core = {(K0, K1)}, Iτ at K2
+    empty, S4a's arena keeps pA at K0), PLAY3 (play shapes), SBAR3 (Odd's best reply is the β-face; Ξσ = φ), TAU3 (Iτ = ∅), ESC3 (S4a
+    keeps σ off the movers), W3 (W graded 5ℓ + 5 and the same in every standard state; TIE(x) = R(x)), KEY3 (availability and the
+    root-first keys are the IDEAL ones). Each is P-N5-REALIZE §3's lemma re-proved on Γ3; the LENGTH spots (K3 (b) at K3, SBAR3 at K2, W3)
+    and the INDEX spot (KEY3 (b)) are re-proved with the padded lengths and indices, and both referees re-derived each (REFEREE §2 l.
+    56-81; REFEREE-2 l. 45-58). K3 is labelled «every genome» while its (b) cites SBAR3: REFEREE-2 N-1, accepted (fixes l. 26-28); REACH3
+    uses K3 only under IDEAL-ACYC. See the XC-3 NOTE below.
+  (f) Theorem REACH3 (§7 l. 242-258) [IDEAL-ACYC]: «Let G ∈ IDEAL-ACYC with IDEAL run s_0 → s_1 → … → s_L, L = L(G). Then the N5 run of
+    Γ3(G) FROM S3 has states 0, …, L equal to the standard states of Γ3 for s_0, …, s_L; transitions 1, …, L are FL transitions;
+    transition L + 1 is a fallback.» Hence one FL run of length exactly L(G) if L ≥ 1, at least L(G) + 1 iterations, and no FL run if L
+    = 0. Proof: induction on j (j = 0 is S3-START): τ is kept (TAU3); Iσ ≠ ∅ (ESC3), S4a's σ_new is a pointwise optimum of H ([1E-N3] P2)
+    and equals σ off the movers (ESC3); at the movers, level by level, [RULE] gives the κ-least element of TIE(x) = R(x) (W3 (iii)), which
+    KEY3 (a), (b) identify with the IDEAL choice s_(j+1)(x); so state j + 1 is the standard state for s_(j+1), S4c does not fire and W is
+    kept (W3 (i)): an FL transition. At j = L the IDEAL run stops, σ_new = σ and τ_new = τ while Iσ ∋ (K0, K1): a fallback. Finiteness of
+    L(G) is not assumed ([TERM]).
+  (g) Corollary REAL-IDEAL-S3 (§8 l. 260-268) [a REDUCTION / NECESSITY statement only]: with FL-S3-POLY «there is a nondecreasing
+    polynomial p such that, on every parity game on n vertices, every FL run of the N5 run FROM S3 has length ≤ p(n)» and IDEAL-ACYC-POLY
+    «there is a polynomial q with L(G) ≤ q(N + M) for every G ∈ IDEAL-ACYC»: «(a) FL-S3-POLY ⇒ IDEAL-ACYC-POLY, with L(G) ≤ p(N + 7M +
+    10).», and a polynomial bound on the number of iterations of N5 from S3 gives L(G) + 1 ≤ p(N + 7M + 10); (b) the contrapositive: a
+    family in IDEAL-ACYC with L super-polynomial in N + M gives games Γ3(G_i), n_i = N_i + 7M_i + 10, of polynomial input size, on which
+    N5 from S3 makes at least L(G_i) + 1 iterations. Proof: REACH3 on Γ3(G). «Not claimed: that such a family exists or does not exist;
+    IDEAL-ACYC-POLY ⇒ FL-S3-POLY; anything for Ξ-cyclic genomes. This packet says nothing about how long IDEAL-ACYC runs are.» (l.
+    267-268).
+  (h) DEAD SUBDIV (§9 l. 270-284) [DEAD, by two instances]: the statement killed is that, for every game G and start pair (σ0, τ0), G^pad
+    (every priority + 4, every edge (a, b) subdivided by an Even pad p(a, b) with «indices n, n + 1, … in (a, b) order», Ω(p) = 2 if a
+    is Even and b = σ0(a), 1 if a is Odd and b = τ0(a), 0 otherwise) has an N5 run from S3 equal, state for state and transition for
+    transition (fallbacks included), to the transported run of G from (σ0, τ0). Instance A: n = 3, Ω (3, 3, 1), owners (Odd, Even, Odd),
+    0 → {1}, 1 → {0, 1, 2}, 2 → {0}, σ0(1) = 1, τ0(0) = 1, τ0(2) = 0: G 1 iteration with 1 fallback, G^pad (n = 8) 1 iteration with 0
+    fallbacks (the projected states are equal; the fallback flag differs). Instance B: n = 5, Ω (3, 2, 4, 0, 0), owners (Odd, Odd, Even,
+    Odd, Even), 0 → {1, 3, 4}, 1 → {2, 3}, 2 → {3, 4}, 3 → {0, 2, 3}, 4 → {1, 4}, σ0(2) = 4, σ0(4) = 1, τ0(0) = 4, τ0(1) = 2, τ0(3) =
+    2: G 2 iterations, G^pad (n = 17) 3. S3's start on G^pad IS the transported (σ0, τ0) in both (FIX 1); the run is not. Both referees
+    replayed both instances with their own G^pad builders (REFEREE l. 102-105 on n5b; REFEREE-2 l. 77-78 on its own engine).
+- XC-3 NOTE (K3 and SBAR3; a note: it changes nothing in the line). REFEREE successor 26, §C add. 2 (419cc268) l. 236-245, on REFEREE-2's N-1 and its own item XC-3 on the later packet P-N5-XICYC: «K3 (b) ends «These values hold once SBAR3 gives σ̄(K2) = r», and SBAR3 is IDEAL-ACYC, so the label «every genome» of K3 is incomplete as printed. My miss in this report (§0 signed K3 with that label).» Fixes entry 1's reply (l. 26-28: «K is closed, so K's values depend only on the strategies on K, and Odd's unique best at K2 is r») gives σ̄(K2) = r in every standard state for every genome (REFEREE l. 238-240), and «Together they settle it: K3 (a)-(d) hold for every genome.» (l. 241). «For R117 nothing changes. REACH3 and Corollary REAL-IDEAL-S3 are IDEAL-ACYC, where SBAR3 itself holds. TAU3 and NO-REACH use K3 (c) or no K3. The line does not mention K3.» (l. 242-243). So REFEREE's earlier SIGN of K3 with the «every genome» label missed K3 (b)'s use of SBAR3; that SIGN now rests on fixes entry 1's reply (l. 246-247); no clause, count or scope of L-4 depends on it (L-4 does not name the lemma K3: its three «K3» are the vertex K3 of Γ(G), in «K0 → K3», «σ(K0) = K3» and «outside K2, K3», by script).
+- The RESULTS line (L-4, the title): «N5 (SPEC S1-S5) from its DEFAULT start S3 (SPEC S3 with FIX 1), on the games of RESULTS R104» …
+  «(2026-11-07) — a REDUCTION / NECESSITY statement only (no count is bounded; nothing is claimed about whether long IDEAL-ACYC runs
+  exist; Ξ-cyclic genomes are not covered; the converse is not claimed;» … «G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a
+  TARGET.md claim) (P-N5-REACH, docs/new/P-N5-REACH.md; L-NEW successor 58)». Its clauses: NO-REACH = (a); Γ3 = (b); S3-START = (c);
+  PAD = (d) (the line drops §5 (b)'s «v ≠ c_X», harmless: c_X's only edge is its loop); REACH3 = (f); REAL-IDEAL-S3 = (g); the DEAD
+  clause = (h), its instances named as packet §9's instances A and B (R4). The transfer lemmas (e) are proof steps of REACH3, not clauses of the line.
+- Premise: RESULTS R104's definitions only, no R104 theorem (packet [DEF], l. 24-43): the IDEAL model, L(G), the Ξ-graph, Γ(G) with its
+  vertex indices and stated start, and the FL run, quoted from R104's title l. 9864 (prem117.py: each quote 1 hit, there); where R104's
+  line leaves a detail to «packet §3.1», the packet uses R104's packet of record (the β-vertex order; Ω(e)), and «The proofs below use of
+  Ω(e) only that it is even and lies strictly between every Ω(β) and top.» (l. 42-43). SPEC S1-S4 with FIX 1 (packet [SPEC], l. 44-55;
+  docs/new/N5-ssi-global.md, sha1 66fde9ef…, each quote 1 hit at its cited line): S2 (Iσ, Iτ), S3 / FIX 1 (the default start), S4a-S4c
+  (the arena H, «Else σ_new = σ.», «Else τ_new = τ.», FALLBACK), S1 (values; Odd on G^d). R104's three premises as landed, in R104's
+  forms: [1E-N3] (R104 l. 9975-9978, with R57 (b) l. 2915-2916 «that S1's procedure realises an optimal σ̄ is VJ00 §6» «plus SPEC
+  conformance, and the code's match to SPEC is DATA (R15 G-N5T-1) (1E-N3 = N-1E-1).»), forms P1 (σ̄, τ̄ pointwise optima) and P2 (S4a's
+  σ_new a pointwise optimum of H); [RULE] (R104 l. 9989-9992: R24 (a) Lemma R and R24 (b)'s choice rule with R103's bridge B, Lead reading
+  L46, at every Even vertex that is not its own W′-cycle node, R103's (R1) ruling), in R104's form «σ_j(x) is the κ_j-least element of»
+  «TIE_j(x)» (l. 10004-10005); [VJ-LOC] (R104 l. 10011-10012, R36 (c) Lemma P1 on the dual game, l. 1730-1731, setting l. 1723-1724).
+  [TERM] RESULTS R15 (d) (l. 640-642) «N5: every iteration applies Switch_I with ∅ ≠ I ⊆ Iσ to Even's σ (on G) and/or with ∅ ≠ I ⊆ Iτ
+  to Odd's τ (on G^d), and» … «Hence no (σ, τ) state repeats and N5 terminates», for the finiteness of L(G) only. Packet l. 78-79:
+  «Nothing else is used. P-N5-REALIZE (claude/l-red docs/red/P-N5-REALIZE.md, sha1 067f06b6…, fixes entries 1-3) is the SOURCE of the
+  proof pattern of §6; every step of §6 is proved here.» Both referees checked the 38 premise quotes (REFEREE l. 28-31; REFEREE-2 l.
+  25-29) and that no R104 theorem is used (REFEREE l. 32-33; REFEREE-2 l. 30-31 «No R104 THEOREM used ✓.»).
+- L41 and L43. The proofs are L-NEW successor 58's (packet l. 2-6); the fixes entries carry none. REFEREE's RE-L1 and RC-2, REFEREE-2's
+  W-1, W-2, W-3 and CHECKER C130's R1-R4 are wording of the line, applied verbatim (RC-2 in the Lead's form); the referees'
+  reach_replay.py, subdiv_replay.py, t3r_sim.py, r2reach.py, reachcheck_r2.py, bt_l2.py and bt_l4.py are checking tools. Nothing referee-written is a proof step of the entry (my
+  reading; neither referee mentions L41). L43: SUBDIV is not an asymptotic statement; it is DEAD by two explicit instances, replayed by
+  both referees.
+- Fixes (docs/new/P-N5-REACH-fixes.md, append-only, entries 1-2 by L-NEW successor 58, entry 3 by L-NEW successor 59; entry 1 at
+  571c75c5, the file then 47 lines, sha1 307651b2779f3df1fb8857de2974d3ffdd69ac6a; entry 2 at 727163f0, l. 49-69, the file then 69
+  lines, sha1 547740887c7974798206b4075d67f6a379cbfe47; entry 3 at fdf01b8c, l. 71-85, the file now 85 lines, 9,935 bytes, sha1
+  be31f7741264c809ec306889ecb31046c1671598, its l. 1-69 = entry 2's file, by script):
+  - Entry 1 (after REFEREE f66942c1 and REFEREE-2 b0860fcd): RE-L1 (REFEREE, «required, DATA coverage; ACCEPTED»), each count checked
+    against reachcheck.py's counter (l. 9-19); W-1 (the killed statement in REFEREE-2's words; the old span chosen as «the shortest one
+    that the new text replaces», l. 20-23, confirmed by REFEREE §C l. 159-161 and REFEREE-2 Addendum 1 l. 122-124); W-2 (c_X in R104's
+    words); notes N-1 (K3 for every genome), N-2 (c_X), N-3 (the priority bound assumes β-ranks 0..M − 1; not signed), N-4 ([RULE] at
+    transition L + 1 as in R104), D-1 (NR-LAM checks only the cycle node of Ξσ(K0)); line L-2.
+  - Entry 2 (after REFEREE §C cc9f4afd and REFEREE-2 Addendum 1 c420666d): W-3 and RC-1, the PAD count's set (the counter skips c_X);
+    «RC-1 is RESOLVED BY W-3 (Lead ruling 04:02Z: W-3's wording reuses W-2's term).» (l. 55-56). RC-2, the pad order of the killed
+    statement: «RC-2 (REFEREE), ACCEPTED with a change by Lead ruling (04:15Z, «Option B»).» (l. 58); «Reason: the packet's wording (§9
+    l. 272 «indices n, n + 1, … in (a, b) order»; subdiv.pad: E = sorted((a, b))); «edge order» is ambiguous (it could be read as the
+    input order). REFEREE's predicted sha1 for L-3 therefore does NOT apply; both referees byte-test the result below.» (l. 59-61). The
+    Lead's rulings, as recorded in LEAD-STATE l. 2438: «Lead ruling: W-3 wording for PAD (resolves RC-1), RC-2 in «(a, b) order» per §9
+    l. 272 (Option B) -> L-3 at L-NEW.». Line L-3 = L-2 with R1 (W-3) and R2 (RC-2, Lead ruling), each old string once (l. 62-68).
+  - Entry 3 (after CHECKER C130 126f9772, «Verdict: FAIL (E-1 to E-4, all DATA wording; one L-4 with four replacements, §5)» (C130 l. 16)): «E-1 (NO-REACH count: unit; NR-CORE uncited), E-2 (the no-improving-edge clause had no counter and was not in the line's no-DATA list), E-3 (the 28 games were unnamed), E-4 (the DEAD SUBDIV instances were not reproducible from the line): all ACCEPTED.» (l. 75-76); «The strings are C130 §5's verbatim (wrapped lines joined with single spaces).» (l. 76-77).
+    Line L-4 = L-3 with exactly R1-R4 (l. 78-84), each old string once in L-3. My script (l4rel117.py): the four pairs of entry 3, of
+    C130 §5 (l. 108-115) and of the first fill's R-A..R-D are the same, and L-3 + R1-R4 = L-4 (True). How each E-item is resolved (by
+    script on L-4; each new string once in L-4): E-1 by R1, the NO-REACH count now names NR-CORE («σ(K0) = K1 and σ(K1) = K0 at all 908
+    states of the S3 runs on Γ(G)») and NR-STD («0 of them equal to R104's stated start off the movers»), and «0 standard states in 908
+    states» occurs 0 times in L-4; E-2 by R2, the line's no-DATA list now reads «NO-REACH's no-improving-edge clause and Corollary
+    REAL-IDEAL-S3 no separate DATA»; E-3 by R3, the set is named, «the 28 games Γ(G) and Γ3(G) of the 14 corpus genomes» and «with
+    verify OK on the same 28», and «28/28» occurs 0 times in L-4; E-4 by R4, «the n = 3 and n = 5 games with the start pairs of packet
+    §9 (instances A, B)», and «with given start pairs» occurs 0 times in L-4. The packet is frozen, named in the source note and pinned
+    (b7bd6937 in reach.pins).
+  - No entry changes a statement, a proof, a tool, an output or an instance (l. 7-8, 52-53, 73).
+- Not signed: packet §10 (DATA, «not to sign»), §11 (CONJECTURE BLIND, CONJECTURE SUBDIV-APPROX, the context READING on L-LOWER's
+  REC_d10_tower), §12 (pins, commands), §13 (TARGET diff and limits, READING); the SUBDIV obstruction (§9 l. 280-284, «Obstruction
+  (READING, from the traces; not to sign)»); fixes entry 1's note N-3. NOT landed.
+- Referee strengthening (NOT part of this entry; referee checks):
+  (i) REFEREE: REACH3 replayed with L-COMP's n5b (spec mode, default start S3) against its own IDEAL simulator t3r_sim.py on the two pinned
+    Γ3 games (RECT_d11_T59_g3, n 340, L 59, 62 iterations, 1 fallback; REC_d10_tower_mu30_g3, n 310, L 35, 38 iterations, 1 fallback),
+    each with the maximal FL run from state 0 equal to L(G), transition L + 1 a fallback and the mover choices equal to the IDEAL states
+    (l. 92-101); SUBDIV replayed with its own G^pad builder on n5b (l. 102-105); the check block re-run (l. 106).
+  (ii) REFEREE-2: its own Γ(G) builder (from its R104 review) plus its own pads, its own S3 and its own SPEC state loop on the fleet's si.py
+    Engine, «No box21/n5x, no box189 code.» (l. 63-66); its Γ3 and S3 start equal the two pinned games BYTE FOR BYTE (l. 67-68); REACH3 on
+    all 14 corpus genomes, FL runs = [L(G)] exactly, L 9-59 (l. 69-72); NO-REACH on the same 14 (l. 73); L-COMP's n5b on the two pinned Γ3
+    games, 38 and 62 iterations (l. 74-75); a control with all mover pads Ω 0 breaks S3-START and REACH3 (l. 76); SUBDIV on its own builder
+    (l. 77-78); both check blocks re-run (l. 79); in Addendum 1, reachcheck.py with counters added (reachcheck_r2.py) for the DATA rule:
+    698,204 triples with c_X, 0 at c_X on its 5,174 (l. 126-139).
+  (iii) REFEREE §C add. 1: the pad order of the killed statement checked against its own builder, l. 204-206 «It reads as the lexicographic order of the edges (a, b), which is subdiv.pad's sorted((a, b)) and the order my own builder used (scratch/subdiv_replay.py: edges = sorted((a, b))).», so its SUBDIV replay stands for the statement as landed; a note without a fix, l. 208 «Note (no fix): «(a, b)» is not bound earlier in the line, but «every edge … (a, b) order» reads unambiguously as edges (a, b).». REFEREE-2 Addendum 2: subdiv.pad's order read against the line (l. 164-166) and its predecessor's builder r2reach.py subdiv() checked to append pads in the same (a, b) order on instances A and B (every successor list sorted), so «r2reach_subdiv.out (A: fallbacks 1 vs 0; B: iterations 2 vs 3, projected states differ) is a replay of the corrected statement too ✓.» (l. 167-170).
+  (iv) The L-4 rounds tested R1-R4 against reachcheck.py's counters at fdf01b8c. REFEREE §C add. 2 l. 222-235: R1's first half is NR-CORE; for its second half, «The σ-only phrase «0 of them equal to R104's stated start off the movers» follows from NR-CORE = 0, since every state has σ(K0) = K1 while the start has σ(K0) = K3.» (NR-STD tests the stated start off the movers and τ together); R2: NO-REACH (c) «has no counter in reachcheck.py (it never reads Iσ)»; R3 from xcheck.sh's loop and xcheck.out's 28 rows; R4 against its own G^pad replay of §C add. 1. REFEREE-2 Addendum 3 l. 182-194: R1's second half is NR-STD, whose predicate it read against gamma3.build's stated start (gamma3.py l. 67-70); R2 checked independently by its predecessor's r2reach.py on the 14 corpus genomes («NOREACH_noKimpr true»); R3 and R4 against xcheck.out and packet §9. The two read R1's second half through different counters (NR-CORE by arithmetic, NR-STD directly); reachcheck.out has both at 0 («standard 0, core-not-(K0->K1,K1->K0) 0»).
+- Honest limits: (i) A REDUCTION / NECESSITY statement only: no count is bounded, no run is shown long or short; it claims nothing about
+  whether super-polynomial IDEAL-ACYC families exist (packet l. 7-8, §8 l. 267-268). It does not decide G-N5-TIME; it is not M3, not a
+  step-4 pass and not a TARGET.md claim. (ii) Premises [1E-N3], [RULE], [VJ-LOC] as landed in R104: the correctness of S1's procedure stays
+  SPEC's requirement, and the code's match to SPEC is DATA (R57 (b)); every N5 run in the DATA is a run of an implementation (n5x; n5b; the
+  referees' engines). (iii) Ξ-cyclic genomes are not covered. (iv) Γ3 is one padding; other paddings and other start rules are not studied;
+  SUBDIV shows that subdividing every edge uniformly does NOT reproduce the run of a game from a given start pair (DEAD), so REACH3 is a
+  statement about Γ3's pads only. (v) NO-REACH speaks of Γ(G) only; it does not say that N5 from S3 is
+  fast or slow on any class (its 1-iteration runs are DATA). (vi) The DATA's long runs come from the 14 corpus genomes (L 9-59, n ≤ 370);
+  R440 has L ≤ 2 (94 genomes with L = 0), so the random part tests REACH3 weakly (packet l. 301). Packet §11 (the tower context and its two
+  lane conjectures) is context only and plays no part in this entry. (vii) Names: «REAL-IDEAL» is R104's Corollary (every start pair, Γ(G)); «REAL-IDEAL-S3» is
+  this entry's (S3, Γ3(G)); «NO-REACH», «REACH3», «S3-START», «PAD», «SUBDIV» and «Γ3» are new to RESULTS. (viii) The first fill's DATA flags
+  (G-9 (i)-(iii), G-D) were CHECKER C130's E-1..E-4 and are fixed in L-4 by R1-R4 (fixes entry 3). C130's two notes stand: NO-REACH
+  (a)-(c) is stated for every genome, its DATA is on acyclic genomes only (N-1); the line's DATA names neither its tool nor its corpus
+  directory, which packet §10, named by the source note, gives (N-2).
+- Data (DATA, not proof): experiments/new/box189/reachcheck.py (l-new 73b3d1fd, unchanged at 571c75c5, 727163f0 and fdf01b8c, sha1
+  c368b363ff654c8e7aead970f866b7e4d482f793, 183 lines; engine experiments/new/box21/n5x.py, SPEC S1-S5 on si.py's Engine; builder
+  gamma3.py; SUBDIV builder subdiv.py) prints reachcheck.out (sha1 af50ee340e11c35209c39496e7354925e832d3eb): «C14+R440 NO-REACH runs 454
+  states 908: standard 0, core-not-(K0->K1,K1->K0) 0, cycle-node(K0)!=K0 0; (state, vertex) pairs 42880: beta-in-P-or-low-cycle-node 0;
+  iterations histogram {1: 454}», «C14+R440 S3-START genomes 454: S3 != stated start 0», «C14+R440 PAD (state, vertex, world) triples
+  693030: pad-in-P-or-cycle-node-Om<3 0», «C14+R440 REACH3 genomes 454 (states 0..L checked 1225): failures 0», «C14+R440 W3 (state,
+  mover) pairs 11642: W(x) != (c_W, empty, 5 lev + 5) 0», the 14 «C14 …» rows (e.g. «C14 RECT_d11_T59_norm.json N 22 M 44 L 59 Gamma3 n
+  340 S3-iterations 62 fallbacks 1 REACH3 ok»), the two SUBDIV-DEAD lines and two CONJECTURE lines (BLIND, SUBDIV-APPROX). Sets: C14 = the
+  14 genomes of box189/corpus (4 L-RED r187 A_* genomes, 10 L-LOWER l3/kill genomes order-preservingly normalised by norm.py); R440 =
+  gen(Random(seed)), seed 1-440. Wired into experiments/new/check.sh (run by scripts/verify.sh): block «P-N5-REACH» (l. 950-957 at
+  fdf01b8c: the re-run diffed against reachcheck.out, the sha1 pins of reach.pins 1a075f50, which adds L-4 and the fixes be31f774 to
+  11ebdbee's list, five DATA lines asserted) and block «BOX 189
+  REACH» (l. 943-949: three pinned genomes, two .pg instances regenerated byte-identically). Re-run from a git archive of fdf01b8c at
+  this second fill: 2026-11-07T08:51:44Z-08:52:04Z, rc 0, both PASS, the P-N5-REACH line with «pins (reach.pins 1a075f50: packet
+  b7bd6937, line L-1 b12ec57a, fixes be31f774, line L-2 4de27b32, line L-3 adfbb3b8, line L-4 f85a024b,» (first fill: 727163f0,
+  04:54:26Z-04:54:43Z, rc 0, both PASS; CHECKER C130 l. 21: rc 0, PASS). Oink and a second engine: xcheck.sh (not in check.sh; it needs Oink) runs L-COMP's
+  experiments/n5-second/n5b.py --mode spec from its default start on the 28 games Γ3(G) and Γ(G) of the 14 corpus genomes and checks
+  n5b's solutions with experiments/new/check_sol2.py (Oink 8fbf0a7 --zlk, harness/verify.py): xcheck.out, 28 lines, each «zielonka(oink
+  zlk) OK strategies verified»; n5b's iterations and fallbacks equal the lane engine's on 28/28 (Γ3: L + 3 and 1; Γ: 1 and 0). Neither
+  referee ran Oink (REFEREE l. 107 «Oink: NOT RUN by me (Oink not built in this container). The lane's xcheck.out is lane DATA.»;
+  REFEREE-2 l. 80 «Oink cross-check (xcheck.sh): NOT RUN by me (Oink not built here); xcheck.out has 28/28 «OK strategies verified» lines
+  (lane DATA).»); the drafter re-ran xcheck.sh with Oink 8fbf0a7 built in the Lead's container, at 727163f0 (8 s) and at fdf01b8c
+  (2026-11-07T08:55:43Z-08:55:53Z, rc 0; xcheck.sh and xcheck.out unchanged at fdf01b8c), and CHECKER C130 re-ran it from fd1266a5 (l.
+  46-48): output byte-equal to xcheck.out each time. Oink checks n5b's final solutions, not the runs. L(G) cross-check: the 10 L-LOWER genomes' L equal the T column of
+  claude/l-lower experiments/lower/l3/kill/README.md (12216a37) (packet l. 304-305; not re-checked by me).
+- Signatures: REFEREE docs/referee/R-P-N5-REACH.md: successor 25's report f66942c1ab2cdd45987c033fa6015e6daaaea789 (2026-11-07T03:04:24Z),
+  «I did not read docs/referee-2/ for this report.» (l. 2-3), verdict table l. 5-17, «FINDINGS: §2-§9 all SIGN; L-1 NOT YET (RE-L1, DATA
+  coverage only).» (l. 145); §C cc9f4afd (2026-11-07T03:58:16Z), l. 148-187, «Fixes entry 1 is CORRECT as an application of RE-L1, W-1
+  and W-2.», «L-2 MATCHES the byte test.», «In meaning, L-2 is NOT YET: RC-1 (my own RE-L1 wording) and RC-2. With both, the line
+  MATCHES.», «All statements stay SIGNED.» (l. 184-187); §C add. 1 85cc9ebb: 85cc9ebb8976bb68b62345162d0d4b69c660cca9 (2026-11-07T04:50:03Z), l. 189-209, «Verdict: fixes entry 2 is CORRECT. L-3 MATCHES, by the byte test and in meaning. All statements stay SIGNED.» (l. 209); successor 26's §C add. 2 419cc2689733b0c3cf657386314d0c8ca5a410c3 (2026-11-07T08:23:51Z; heading «date -u at writing 2026-11-07T08:23Z»), l. 211-247, «Verdict: fixes entry 3 is CORRECT. L-4 MATCHES, by the byte test and in meaning (R1-R4). All statements stay SIGNED; K3 is signed for every genome with fixes entry 1's reply as its proof of σ̄(K2) = r.» (l. 246-247). REFEREE-2 docs/referee-2/R2-P-N5-REACH.md:
+  successor 29's report b0860fcd (2026-11-07T03:06:42Z), «Independent: docs/referee/ not read for this packet before this push.» (l. 2-3),
+  verdict table l. 10-22, «F-3: L-1 MATCHES after W-1, W-2.» (l. 114); successor 30's Addendum 1 c420666d (2026-11-07T03:59:26Z), l.
+  116-147, «Verdict: entry 1 **CORRECT** for W-1, W-2, RE-L1 as applied; **L-2 MATCHES after W-3** (Opus 5.5, D1).» (l. 146);
+  Addendum 2 ddf42cb6: ddf42cb6c15e49c38692239b65a33e69f346c726 (2026-11-07T04:50:08Z), l. 149-173, «Verdict: entry 2 **CORRECT**; **L-3 MATCHES** the packet with fixes entries 1-2, in bytes and in meaning (Opus 5.5, D1).» (l. 172); Addendum 3 d2b08049ba14c38cdae4a9ae9e38c80736d0317f (2026-11-07T08:23:41Z), its heading stamp «08:3xZ» corrected to «08:2xZ» by d4838991f4ce8cc9e0115d701f6d377054ca17e1 (2026-11-07T08:23:54Z, the only change), l. 175-197, «Verdict: entry 3 **CORRECT**; **L-4 MATCHES** the packet with fixes entries 1-3, in bytes and in meaning» … «Statement verdicts unchanged (all SIGN); W-1, W-2, W-3 stay met.» (l. 196-197). Lane: L-NEW successor 58, 73b3d1fd (freeze), 571c75c5 (fixes entry 1, L-2), 727163f0 (fixes
+  entry 2, L-3); L-NEW successor 59, fdf01b8c (fixes entry 3, L-4).
+- INDEPENDENCE: the proofs are L-NEW's; each referee re-derived every step, the LENGTH and INDEX spots in full (REFEREE §2; REFEREE-2
+  «Proof checks»), and replayed REACH3 and SUBDIV on engines that are not L-NEW's: REFEREE with L-COMP's n5b (experiments/n5-second, its
+  own SI in hard-families/pgsolver_si, not si.py) and its own IDEAL simulator, on the two pinned games; REFEREE-2 with its own builder
+  and SPEC state loop (r2reach.py) on the fleet's si.py Engine, on all 14 corpus genomes, and with n5b on the two pinned games. The
+  valuation Engine si.py is shared by n5x (L-NEW's engine) and REFEREE-2's loop; n5b shares no code with either. Each referee wrote its
+  report without reading the other's (REFEREE l. 2-3; REFEREE-2 l. 2-3); the line rounds read the other's W- / RC-items by design (fixes
+  entries 1-2). The DATA wording of L-4 is REFEREE's (RE-L1), REFEREE-2's (W-3) and CHECKER C130's (R1-R4: the first fill's
+  R-A..R-D, which C130 tested against the counters and adopted, l. 118-119); in the L-4 round each referee byte-tested L-4 with its own
+  script and read R1-R4 against reachcheck.py itself.
+- TARGET.md diff: TARGET.md §1 defines a parity game («A parity game is G = (V, V_E, V_O, E, pr) with V finite»; «every vertex has at
+  least one successor (self-loops allowed)»); Γ(G), Γ3(G) and the SUBDIV games are such games (every vertex of Γ3 has a successor; every
+  pad has one), and «on every n-vertex game» in the Corollary ranges over them; «polynomial» is in n at bit cost (TARGET.md §3), and Γ3(G)
+  has polynomial input size (packet §3 l. 131-132). No statement of this entry is M4 (TARGET.md §2), names an algorithm's running time or
+  claims a winning region; it is not an algorithm claim, so TARGET.md §5's gauntlet does not apply, and it is not a step-4 pass. The line
+  (L-4) makes no TARGET claim; its tail reads «a REDUCTION / NECESSITY statement only (no count is bounded;» and «G-N5-TIME stays OPEN;
+  not M3, not a step-4 pass, not a TARGET.md claim» (L-4, by script). GAPS G-N5-TIME: open.
+
 **Erratum E-1** (not a result; 2026-11-01 05:28Z by date -u; Lead; corpus counts in RESULTS R97-R100):
 - What is wrong: the DATA-of-record sentences that say «1,132 games» for the L-SI box 50b / box 53 corpus (sbcg.lst 719 lines + alt_all.lst
   413 lines) count RUNS, not games. Measured by CHECKER (C111 N-7, claude/checker d53e1d4f) at trunk 68d50c8f: experiments/si/anc58/
