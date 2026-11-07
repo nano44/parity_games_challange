@@ -1,0 +1,32 @@
+t3_n3_u0_C.json N 44 T 8 words 5: 000 111 100 110 111
+  re-arms (switches into X) total 10 max/mover 1; D {'PA2_0': 2, 'PB2_0': 2, 'C0': 2}
+t3_n3_u0_s.json N 44 T 8 words 5: 000 111 100 110 111
+  re-arms (switches into X) total 10 max/mover 1; D {'PA2_0': 2, 'PB2_0': 2, 'C0': 2}
+t3_n3_u1_C.json N 44 T 9 words 2: 000 111
+  re-arms (switches into X) total 10 max/mover 1; D {'PA2_0': 3, 'PB2_0': 3, 'C0': 3}
+t3_n3_u1_s.json N 44 T 9 words 2: 000 111
+  re-arms (switches into X) total 6 max/mover 1; D {'PA2_0': 3, 'PB2_0': 3, 'C0': 3}
+t3_n4_u0_C.json N 74 T 10 words 6: 0000 1111 1000 1100 1110 1111
+  re-arms (switches into X) total 18 max/mover 1; D {'PA3_0': 2, 'PB3_0': 2, 'C0': 2}
+t3_n4_u0_s.json N 74 T 10 words 6: 0000 1111 1000 1100 1110 1111
+  re-arms (switches into X) total 18 max/mover 1; D {'PA3_0': 2, 'PB3_0': 2, 'C0': 2}
+t3_n4_u1_C.json N 74 T 11 words 4: 0000 1111 1110 1111
+  re-arms (switches into X) total 18 max/mover 1; D {'PA3_0': 3, 'PB3_0': 3, 'C0': 3}
+t3_n4_u1_s.json N 74 T 11 words 4: 0000 1111 1110 1111
+  re-arms (switches into X) total 8 max/mover 1; D {'PA3_0': 3, 'PB3_0': 3, 'C0': 3}
+t3_n5_u0_C.json N 111 T 12 words 7: 00000 11111 10000 11000 11100 11110 11111
+  re-arms (switches into X) total 28 max/mover 1; D {'PA4_0': 2, 'PB4_0': 2, 'C0': 2}
+t3_n5_u0_s.json N 111 T 12 words 7: 00000 11111 10000 11000 11100 11110 11111
+  re-arms (switches into X) total 28 max/mover 1; D {'PA4_0': 2, 'PB4_0': 2, 'C0': 2}
+t3_n5_u1_C.json N 111 T 13 words 5: 00000 11111 11100 11110 11111
+  re-arms (switches into X) total 28 max/mover 1; D {'PA4_0': 3, 'PB4_0': 3, 'C0': 3}
+t3_n5_u1_s.json N 111 T 13 words 5: 00000 11111 11100 11110 11111
+  re-arms (switches into X) total 10 max/mover 1; D {'PA4_0': 3, 'PB4_0': 3, 'C0': 3}
+t3_n6_u0_C.json N 155 T 14 words 8: 000000 111111 100000 110000 111000 111100 111110 111111
+  re-arms (switches into X) total 40 max/mover 1; D {'PA5_0': 2, 'PB5_0': 2, 'C0': 2}
+t3_n6_u0_s.json N 155 T 14 words 8: 000000 111111 100000 110000 111000 111100 111110 111111
+  re-arms (switches into X) total 40 max/mover 1; D {'PA5_0': 2, 'PB5_0': 2, 'C0': 2}
+t3_n6_u1_C.json N 155 T 15 words 6: 000000 111111 111000 111100 111110 111111
+  re-arms (switches into X) total 40 max/mover 1; D {'PA5_0': 3, 'PB5_0': 3, 'C0': 3}
+t3_n6_u1_s.json N 155 T 15 words 6: 000000 111111 111000 111100 111110 111111
+  re-arms (switches into X) total 12 max/mover 1; D {'PA5_0': 3, 'PB5_0': 3, 'C0': 3}

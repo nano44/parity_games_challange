@@ -3,7 +3,7 @@ Labels: PROVED (lane, unrefereed) / PROVED-CONDITIONAL (named premise) / DATA (u
 Nothing here is a TARGET.md claim. G-N5-TIME stays OPEN. N5′-xi stays a CANDIDATE (D1). Setting, notation and premises ([LOC], F1-F6,
 IDEAL-CYC, MERGE, E-DOM-CHOICE, LEAK-ARCH) are those of docs/red/R217-ovt.md and L-NEW's frozen packets docs/new/P-N5-XICYC.md and
 docs/new/N5-RPOT-box192.md (claude/l-new a2db977d). Tools: experiments/red/r218/ (own.py = R217's independent implementation, copied;
-t1.py, t2.py = constructions; meas.py = bit words, re-arms, D(v); otrace.py = named trace; xcheck.py = the 4-route check, copied).
+t1.py, t2.py, t3.py = constructions; play.py = plays at a state; meas.py = bit words, re-arms, D(v); otrace.py = named trace; xcheck.py = the 4-route check, copied).
 
 ## 0. Answers (milestone 1, 19:0xZ)
 - Test (1), a hub H that tracks only the HIGHEST set bit: run (§2). DEAD as a counter. Every lane node re-arms at most once in the
@@ -20,12 +20,13 @@ t1.py, t2.py = constructions; meas.py = bit words, re-arms, D(v); otrace.py = na
   target has D = 1 (ROOT s), or when root and exits see the same hub (ROOT P).
 - The precise requirement (Corollary REARM-PAIR, §1): a lane that re-arms at every lower event needs TWO vertices X (exits) and Y
   (root) that overtake each other at every such event. Each overtake is a strict increase of the overtaker. With E-DOM, every pair I
-  could build fails in one of two ways (READING §4, not a lemma): top-down chains put the decisive bit-0 probe at the END of the play,
-  and two plays cannot split after they merge; bottom-up chains divert an unset bit's play into its fixed hidden route, which either
-  drops the upper mirrors (the value would decrease: F1 forbids it, so the run does something else) or comes back through the open
-  bit's own lane (a cycle).
+  could build fails (READING §4, a trilemma on where an open bit's hidden route goes). Down (top-down chains): the bit-0 probe comes
+  after the merge, and two plays cannot split after they merge, so no pair. Up through the real chain: a set bit's own lane option
+  reaches its own SET gate, so the leak of LEAK-ARCH H2 occurs. Up through a mirror chain: a cycle through the open bit's own lane,
+  which Odd keeps or breaks by misreading a probe. DEAD instance of the third branch: T3 (§4), every bit sets at step 1.
 - Box goal (doubling T per added bit, O(1) size growth): NOT reached. The obstruction is NOT proved. What is proved: SWITCH-IN-DV,
-  REARM-DV, REARM-PAIR, MIRROR-NOLEAK, SET-ROUTE-WINS. Open: an E-DOM hub pair (X, Y) that overtakes at every carry.
+  REARM-DV, REARM-PAIR, MIRROR-NOLEAK, SET-ROUTE-WINS. Open: an E-DOM hub pair (X, Y) that overtakes at every carry, outside the
+  three branches of §4.
 
 ## 1. Lemma SWITCH-IN-DV and corollaries (PROVED-CONDITIONAL on F1, lane)
 Setting: the IDEAL-CYC Howard run σ_0, σ_1, … of any genome (any d). σ_t(x) is computed from the values Ω_(t−1) of state t − 1. Every
@@ -121,21 +122,45 @@ DATA (out/t2_meas.txt; own.py; set n 3-6, M 0 / 2, ROOT s / P):
 - Verdict: DEAD as a counter. The hub is rich (it counts the lower state) and does not leak, but a lane needs a PAIR of hubs that
   overtake (REARM-PAIR). Here Y is s (D 1) or Y = X.
 
-## 4. The hub pair (READING; the open crux, sharpened)
-Needed: for bit k's lane, two monotone hub values X_k, Y_k with X_k ▷ Y_k after every «bit 0 sets» event and Y_k ▷ X_k after every
-«bit 0 resets» event in the lower counter (every increment flips bit 0). Both must also rise at every carry, so both must encode the
-lower state. An abstract solution exists: X = [bit 0 set]·x ∪ M, Y = [bit 0 set]·y ∪ M with x < y < every mirror in M, and the unset
-case decided by the β's of the two probes. Both are monotone in the counter value.
-Realising it in IDEAL-CYC fails in the two ways I could find:
-- Top-down chains (T2's P^k): the play visits bit k − 1 first and bit 0 last. X and Y would have to share the upper part and differ
-  at the end. A play is a lasso: after two plays merge they coincide. So they cannot differ only at the end.
-- Bottom-up chains (bit 0 first, then up): a probe of an open bit j hands the play to B_j's hidden route, which is the same for every
-  hub. If that route stays low (as in T2), the upper mirrors are lost and the hub value would fall at a carry; F1 forbids this, so the
-  run is not the intended one. If that route goes up into the shared chain, it comes back through the probe of the open bit k and
-  then lane_k, which closes a cycle through lane_k (Odd then breaks it at some probe, which corrupts the encoding).
-- Not excluded by anything proved: private per-lane copies of the low bits' hidden routes, or a different reset mechanism.
-  SET-ROUTE-WINS restricts the latter. With access resets the reset bit sits on a real-e option, and every mirror-based hub ranks below
-  it.
+## 4. The hub pair (the open crux, sharpened; READING plus one DEAD instance)
+Needed (REARM-PAIR): for bit k's lane, two hub values X_k, Y_k that overtake each other at every event of the lower counter. Every
+increment flips bit 0, so sign(Ω(X_k) − Ω(Y_k)) must depend on bit 0. Both values must also rise at every carry, so both must encode
+the lower state.
+- ODD-BLIND (READING): a hub's play «sees» the SET event of B_j only if it passes B_j's mover at that moment. If the play avoids B_j,
+  B_j's switch only raises faces that Odd already declined. So a hub that reads an open bit j enters B_j's hidden route, and that
+  route is the same for every hub (one successor per vertex). Private copies cannot change this.
+- Order of reading. Two plays that merge coincide afterwards. So X_k and Y_k can differ only before their merge vertex.
+  - Top-down chains (T2's P^k: bit k − 1 first): they divert at the HIGHEST open bit. The pre-merge part holds the leading ones of the
+    lower counter, which change only at carries into the top. Bit 0 is read after the merge. No pair.
+  - Bottom-up chains (bit 0 first): they divert at the LOWEST open bit j, i.e. after the trailing ones. The decision works abstractly:
+    with copy B's mirrors ranked above copy A's at every level, and the bit-0 probe β's deciding when bit 0 is open, X ▷ Y iff the
+    counter is even. But then the rest of the value (bits above j) must come from B_j's hidden route, which must therefore go UP.
+- Trilemma for an open bit's hidden route (READING; each branch with its mechanism):
+  (a) Down (T2): no cycle, no leak, but no pair (above).
+  (b) Up through the real chain (the upper selectors U, which pass every set bit): then a set bit i's own lane option reaches its own
+      SET gate after carrying mirror e's. The merge vertex is SET_i's gate, so SET_i's pre-merge part is empty, and E-DOM-CHOICE makes
+      the lane option win: a premature reset. This is LEAK-ARCH's H2 case.
+  (c) Up through the mirror chain C (bottom-up probes of every bit): B_j's route passes the probe of the open bit k, hence lane_k,
+      hence X_k / Y_k, which read bit j again: a cycle. Odd keeps it if its top is odd, so every hidden route through it looks
+      terrible. Otherwise Odd breaks it at a probe e-face, which misreads an open bit as set.
+- DEAD instance for (c): T3(n, UP, TAIL) (r218/t3.py; per-lane hub pair XA_k, XB_k = bottom-up probe copies A / B, root selector T_k,
+  B_0's hidden route → C_1). At state 0 (all bits open) the play from C_1 is the cycle C_1 → B_1 → a1_0 → b1_0 → PA1_0 → B_0 → C_1
+  (out/t3_play.txt). Its top vertex is the odd β of the probe PA1_0, so Odd keeps it. Every bit then sets at step 1
+  (word 0…0 → 1…1) for every n 3-6, UP 0 / 1, TAIL C / s. T = 2n + 2 or 2n + 3; D(hubs) ≤ 3; re-arms ≤ 1 per node.
+  Four routes (out/t3_xcheck.txt, n 4 and 6, UP 0, TAIL C): own = idealcyc (T 10 / 14); subrun191 C 1 (the state-0 cycle is left at
+  step 1: Λ changes from that β to K1), R 6 / 10; Γ3 regions = Oink = n5v xi = n5bxi, verify 0 / 0, xi = T + 3 (13 / 17).
+  Frozen: inst/t3_n4_u0_C.json (sha1 5ec72f3b…), t3_n6_u0_C.json (+ names / labels; inst/SHA1SUMS).
+- Not excluded by anything proved: a reset mechanism other than access copies, or a hidden route that goes up through a THIRD kind
+  of chain, neither mirror (cycle) nor real (leak). One candidate: hidden routes that go up through the real chain but enter each
+  set bit through a copy gate whose e lies BELOW the mirrors. It would have to block (b) without re-creating ODD-BLIND. Untested.
+- CYCLE-BREAK (READING, from the T3 run and the structure). Any lane hub that reads bit 0 enters B_0's hidden route (ODD-BLIND). If
+  that route goes up through probes of every bit, then with B_0 and B_u open the play closes a cycle through lane_u. The only Odd vertices
+  on that cycle where Odd can leave it are probes: the global probes C_1 … C_u and lane u's private probes. Level-0 gates send their
+  e-face to c_W, and a bit's lane-option gates send theirs to DUMMY, so Odd never leaves there. So Odd must either keep the cycle (odd
+  top: every hidden route through it looks terrible, and all bits set at once, as in T3) or misread some probe. A global misread at C_u
+  drops bit u from every hub. A private misread at lane u's bit-0 probe kills lane u's parity pair.
+- Even-reading instead of Odd-reading: a level-0 selector that enters a bit when it is set reads by going INTO the set bit's real
+  chain. Bottom-up, that is «go to the lowest set bit», i.e. [F09]'s s-hub, which is LEAK-ARCH's H1.
 
 ## 5. Next
 1. Try to make §4 a lemma («under E-DOM, no hub pair over a common bit-probe chain overtakes at every bit-0 event»), or build a pair with

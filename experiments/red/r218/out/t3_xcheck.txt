@@ -1,0 +1,2 @@
+t3_n4_u0_C.json N 74 traj own==idealcyc True (T 10) | subrun191 C 1 R 6 p 3 | Gamma3 n 1092: n5v xi 13 (fb 1) spec 3 n5bxi 13 (fb 1) | regions=Oink True verify 0/0
+t3_n6_u0_C.json N 155 traj own==idealcyc True (T 14) | subrun191 C 1 R 10 p 3 | Gamma3 n 2342: n5v xi 17 (fb 1) spec 3 n5bxi 17 (fb 1) | regions=Oink True verify 0/0
