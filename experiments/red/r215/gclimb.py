@@ -3,7 +3,7 @@
 Genome: core of n vertices (prio 2..2n+1 distinct-ish, owner, Even core vertices have 2-3 options); every Even option is an Odd pad
 of priority 0/1 (lowest) with two successors (target w, escape u). W-ties at v in the tau-arena occur whenever tau sends two pads
 to the same vertex, while Xi_sigma (Odd best-responding to sigma) can tell them apart. Odd core vertices have 1-3 successors.
-Score: SCORE=xi -> xi + spec/1000; SCORE=gap -> (xi - spec) + xi/1000. Every new best checked (zielonka + verify).
+Score: SCORE=xi -> xi + spec/1000; SCORE=gap -> (xi - spec) + xi/1000; SCORE=spec -> spec (N5 itself) + xi/1000. Every new best checked (zielonka + verify).
 Usage: gclimb.py n seed iters outprefix [seedjson]  (a seed genome with fewer core vertices is lifted to n)"""
 import sys, os, json, random, copy
 WT = os.environ["WT"]
@@ -41,7 +41,8 @@ def toG(G):
     return pg.Game(prio, own, succ)
 def score(G):
     g = toG(G); st, fb, E = n5v.run(g, "xi", cap=20000); sp, _, _ = n5v.run(g, "spec", cap=20000); a, b = len(st) - 1, len(sp) - 1
-    return (a + b / 1000.0 if SCORE == "xi" else (a - b) + a / 1000.0), a, b, g, st, E
+    sc = {"xi": a + b / 1000.0, "gap": (a - b) + a / 1000.0, "spec": b + a / 1000.0}[SCORE]
+    return sc, a, b, g, st, E
 def check(g, st, E):
     win, strat = n5v.solution(g, st, E)
     return win == zielonka.solve(g) and not verify.check(g, win, [strat[v] if win[v] == g.owner[v] else None for v in range(g.n)])

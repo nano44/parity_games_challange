@@ -1,0 +1,20 @@
+== 05:47Z d 9 seed-file out/xa_d8.json
+start n 280 xi 13 spec 6
+it 3 n 280 xi 13 spec 7 OK
+it 5 n 280 xi 14 spec 7 OK
+it 6 n 280 xi 14 spec 8 OK
+it 11 n 280 xi 16 spec 6 OK
+it 16 n 280 xi 16 spec 7 OK
+it 42 n 280 xi 16 spec 8 OK
+it 57 n 280 xi 17 spec 6 OK
+it 69 n 280 xi 18 spec 7 OK
+it 78 n 280 xi 21 spec 7 OK
+it 95 n 280 xi 21 spec 9 OK
+it 148 n 280 xi 22 spec 8 OK
+it 161 n 280 xi 23 spec 7 OK
+it 218 n 280 xi 23 spec 8 OK
+it 230 n 280 xi 24 spec 8 OK
+it 262 n 280 xi 25 spec 8 OK
+it 1214 n 280 xi 26 spec 8 OK
+it 1263 n 280 xi 27 spec 5 OK
+it 1270 n 280 xi 27 spec 6 OK
