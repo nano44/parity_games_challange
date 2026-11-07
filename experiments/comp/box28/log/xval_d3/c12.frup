@@ -1,1 +1,4 @@
 input clauses 204036, top-level conflict after input: 0
+lemmas checked 885374, deletion lines 831809 (applied; clauses removed 831809)
+s VERIFIED (885374 lemmas RUP-checked)
+frup exit 0 wall 1101.383746687 s
