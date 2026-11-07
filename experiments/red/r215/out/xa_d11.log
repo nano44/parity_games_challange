@@ -1,0 +1,32 @@
+== 07:35Z d 11 seed-file out/xa_d10.json
+start n 340 xi 11 spec 7
+it 3 n 340 xi 13 spec 7 OK
+it 13 n 340 xi 14 spec 7 OK
+it 41 n 340 xi 16 spec 7 OK
+it 42 n 340 xi 18 spec 7 OK
+it 80 n 340 xi 18 spec 8 OK
+it 101 n 340 xi 18 spec 9 OK
+it 114 n 340 xi 18 spec 10 OK
+it 174 n 340 xi 19 spec 8 OK
+it 210 n 340 xi 20 spec 7 OK
+it 248 n 340 xi 21 spec 7 OK
+it 301 n 340 xi 21 spec 8 OK
+it 310 n 340 xi 23 spec 7 OK
+it 321 n 340 xi 23 spec 9 OK
+it 339 n 340 xi 23 spec 10 OK
+it 372 n 340 xi 24 spec 8 OK
+it 381 n 340 xi 25 spec 6 OK
+it 392 n 340 xi 26 spec 6 OK
+it 395 n 340 xi 26 spec 7 OK
+it 534 n 340 xi 27 spec 7 OK
+it 638 n 340 xi 27 spec 8 OK
+it 678 n 340 xi 28 spec 8 OK
+it 893 n 340 xi 28 spec 9 OK
+it 977 n 340 xi 28 spec 11 OK
+it 1851 n 340 xi 29 spec 11 OK
+it 3804 n 340 xi 30 spec 6 OK
+it 3848 n 340 xi 30 spec 9 OK
+it 4038 n 340 xi 31 spec 5 OK
+it 4218 n 340 xi 31 spec 6 OK
+it 4342 n 340 xi 33 spec 9 OK
+it 4540 n 340 xi 33 spec 10 OK

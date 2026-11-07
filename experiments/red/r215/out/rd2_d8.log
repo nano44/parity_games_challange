@@ -1,0 +1,10 @@
+== 07:50Z d 8 slice 0
+start N 16 R 1 T 2 C 0
+it 6 N 16 R 2 T 2 C 0
+it 26 N 16 R 2 T 3 C 0
+it 34 N 16 R 3 T 6 C 2
+it 39 N 16 R 4 T 6 C 2
+it 109 N 16 R 4 T 7 C 2
+it 130 N 16 R 4 T 8 C 2
+it 161 N 16 R 6 T 8 C 2
+it 169 N 16 R 6 T 9 C 2

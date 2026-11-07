@@ -1,0 +1,23 @@
+== 07:08Z d 3 slice 0
+start N 6 R 0 T 4 C 3
+it 4 N 6 R 0 T 5 C 3
+it 15 N 6 R 0 T 7 C 3
+it 89 N 6 R 1 T 4 C 2
+it 157 N 6 R 1 T 5 C 3
+it 184 N 6 R 1 T 6 C 3
+it 269 N 6 R 1 T 7 C 3
+it 305 N 6 R 2 T 5 C 2
+it 316 N 6 R 2 T 6 C 3
+it 403 N 6 R 2 T 7 C 4
+it 450 N 6 R 2 T 8 C 4
+it 486 N 6 R 3 T 8 C 3
+it 646 N 6 R 3 T 9 C 3
+it 870 N 6 R 4 T 9 C 4
+== 07:09Z d 3 slice 0
+start N 6 R 4 T 9 C 4
+it 8920 N 6 R 4 T 10 C 3
+it 13759 N 6 R 4 T 11 C 3
+it 15362 N 6 R 4 T 12 C 3
+SLICE end it 125664 best R 4 T 12
+== 07:29Z d 3 slice 1
+start N 6 R 4 T 12 C 3

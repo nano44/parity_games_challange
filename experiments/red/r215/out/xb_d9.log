@@ -1,0 +1,31 @@
+== 07:10Z d 9 seed-file out/xb_d8.json
+start n 280 xi 10 spec 7
+it 1 n 280 xi 12 spec 7 OK
+it 9 n 280 xi 15 spec 5 OK
+it 12 n 280 xi 15 spec 6 OK
+it 108 n 280 xi 16 spec 7 OK
+it 338 n 280 xi 16 spec 8 OK
+it 448 n 280 xi 17 spec 6 OK
+it 491 n 280 xi 17 spec 7 OK
+it 582 n 280 xi 18 spec 6 OK
+it 604 n 280 xi 19 spec 6 OK
+it 605 n 280 xi 19 spec 8 OK
+it 637 n 280 xi 20 spec 6 OK
+it 672 n 280 xi 21 spec 6 OK
+it 863 n 280 xi 21 spec 7 OK
+it 917 n 280 xi 21 spec 9 OK
+it 1198 n 280 xi 22 spec 9 OK
+it 1276 n 280 xi 22 spec 11 OK
+it 1518 n 280 xi 23 spec 12 OK
+it 2256 n 280 xi 23 spec 13 OK
+it 4873 n 280 xi 23 spec 14 OK
+it 5299 n 280 xi 24 spec 8 OK
+it 5468 n 280 xi 24 spec 9 OK
+it 5593 n 280 xi 25 spec 8 OK
+it 5810 n 280 xi 26 spec 8 OK
+it 5871 n 280 xi 26 spec 9 OK
+it 5921 n 280 xi 27 spec 9 OK
+it 6202 n 280 xi 28 spec 9 OK
+it 6377 n 280 xi 28 spec 10 OK
+it 6395 n 280 xi 29 spec 10 OK
+it 6538 n 280 xi 29 spec 11 OK

@@ -1,0 +1,35 @@
+== 07:30Z d 4 slice 0
+start N 8 R 0 T 3 C 2
+it 43 N 8 R 1 T 2 C 1
+it 44 N 8 R 1 T 4 C 1
+it 49 N 8 R 1 T 5 C 2
+it 162 N 8 R 1 T 6 C 2
+it 247 N 8 R 1 T 7 C 3
+it 271 N 8 R 1 T 8 C 3
+it 327 N 8 R 2 T 6 C 2
+it 336 N 8 R 2 T 7 C 2
+it 407 N 8 R 2 T 8 C 3
+it 571 N 8 R 3 T 7 C 2
+it 644 N 8 R 3 T 8 C 2
+it 652 N 8 R 3 T 9 C 2
+it 701 N 8 R 3 T 10 C 4
+it 734 N 8 R 4 T 10 C 3
+it 925 N 8 R 4 T 11 C 3
+it 1070 N 8 R 4 T 12 C 6
+it 1138 N 8 R 4 T 13 C 6
+it 1677 N 8 R 4 T 14 C 5
+it 1764 N 8 R 4 T 15 C 5
+it 4162 N 8 R 5 T 16 C 5
+it 10327 N 8 R 6 T 12 C 5
+it 10399 N 8 R 6 T 13 C 5
+it 10840 N 8 R 6 T 14 C 5
+it 11306 N 8 R 7 T 13 C 4
+it 11307 N 8 R 7 T 14 C 4
+it 13618 N 8 R 8 T 13 C 4
+it 14403 N 8 R 8 T 14 C 3
+it 15561 N 8 R 8 T 15 C 4
+it 16316 N 8 R 8 T 16 C 4
+it 17708 N 8 R 9 T 17 C 4
+it 23161 N 8 R 9 T 18 C 5
+it 60977 N 8 R 10 T 18 C 5
+SLICE end it 77052 best R 10 T 18

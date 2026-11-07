@@ -26,3 +26,24 @@ it 3619 n 310 xi 28 spec 9 OK
 it 3772 n 310 xi 28 spec 10 OK
 it 4011 n 310 xi 28 spec 11 OK
 it 4540 n 310 xi 28 spec 12 OK
+it 5307 n 310 xi 29 spec 12 OK
+it 5636 n 310 xi 29 spec 13 OK
+it 6479 n 310 xi 31 spec 12 OK
+it 6891 n 310 xi 31 spec 13 OK
+it 7691 n 310 xi 31 spec 14 OK
+it 7998 n 310 xi 32 spec 6 OK
+it 8095 n 310 xi 32 spec 7 OK
+it 8113 n 310 xi 32 spec 8 OK
+it 8152 n 310 xi 32 spec 10 OK
+it 8486 n 310 xi 32 spec 11 OK
+it 9265 n 310 xi 32 spec 13 OK
+it 9490 n 310 xi 33 spec 7 OK
+it 9558 n 310 xi 33 spec 8 OK
+it 9612 n 310 xi 33 spec 9 OK
+it 9660 n 310 xi 33 spec 10 OK
+it 10295 n 310 xi 34 spec 8 OK
+it 10346 n 310 xi 34 spec 9 OK
+it 10370 n 310 xi 34 spec 10 OK
+it 10374 n 310 xi 34 spec 11 OK
+it 10520 n 310 xi 34 spec 12 OK
+FINAL best 34.012

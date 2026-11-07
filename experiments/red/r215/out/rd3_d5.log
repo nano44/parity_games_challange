@@ -1,0 +1,12 @@
+== 07:50Z d 5 slice 0
+start N 10 R 0 T 2 C 1
+it 13 N 10 R 1 T 5 C 1
+it 25 N 10 R 1 T 6 C 1
+it 26 N 10 R 2 T 6 C 0
+it 27 N 10 R 2 T 7 C 2
+it 31 N 10 R 3 T 8 C 2
+it 39 N 10 R 4 T 7 C 2
+it 57 N 10 R 4 T 8 C 1
+it 61 N 10 R 5 T 8 C 1
+it 68 N 10 R 6 T 8 C 1
+it 412 N 10 R 7 T 8 C 1
