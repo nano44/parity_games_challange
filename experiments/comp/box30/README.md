@@ -29,3 +29,15 @@ L-COMP successor 10, 2026-11-07. Recipe = L-LOWER 4's (docs/lower/L4-tower.md §
   removed level j; set: the 18 single-level removals j = 6..23 of H6_d24_F126).
 - replay30.py: independent replay of a climb genome with MY simulator box27/sim.py (R104 rules) and F(l) counted from R104 key orders;
   = rclimb30 on H6 (T 209), G7 (T 270) and B's best (T 257, F(6) 190). A HIT is reported only with this replay.
+## Lead 10:23Z: targeted score for lane D (L-LOWER 5, claude/l-lower 13b2b4d8, docs/lower/L5-rule.md §4, experiments/lower/l5/slack.py)
+- rclimb30.c now has env SLACKH = H: after the GUARD check (levels 1..5 exact over F(0) = 2) the score is −1000·v + F(LV), v = the
+  violations of slack.py's counter at level j = H − 2 with need = H − j (PULSE < need, GAP < need; windows cut at level j−1's flips),
+  ported to C (slack_viol); output files carry «slack_viol v good91 g» (g = (9,1)-type windows with PULSE, GAP ≥ need). Without SLACKH
+  the binary's behaviour is unchanged (identical output on H6).
+- Port check (H = 7), port = slack.py at every level j = 1..5: G7_best_d28 0 0 0 0 30; B_d32 best 0 0 0 0 48; D_d32 best (F(6) score)
+  0 0 0 0 30. NOTE: slack.py itself gives 30 level-5 violations on G7_best (15 pulse + 14 gap in (9,1) windows + 1 pulse in the first
+  window), not the 31 quoted in the 10:23Z message.
+- Choice (mine, stated): the primary score minimises ALL level-5 violations (not only the (9,1)-type count): on G7 they coincide except
+  the first window, and a move that only shifts violations to another window type earns nothing.
+- Lane D_d32 restarted 10:3xZ from out/seed_D_d32.txt (G7 + 4 TOP-ADD; TOP-ADD adds levels above, so level indices are unchanged: port gives
+  the same 30 there), seeds 340000+. Its earlier F(6)-score files: out/D_d32_fsix*.

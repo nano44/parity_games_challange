@@ -60,8 +60,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - BOX 29 DONE: N5 (n5b SPEC, S3) on Γ3 of H5/H6/RECF4/DBL4: one FL run = L(G) = 136/209/67/30, one fallback at L(G)+1, iterations
   L(G)+3 (= L-RED n5v); Oink zlk --verify + harness verify.py OK; valuations <= 280 bits; N5'-xi (L-NEW n5bxi) 12/12/12/15.
 ### IN FLIGHT (restart: experiments/comp/box28/relaunch_all.sh; it also runs box30/relaunch30.sh)
-- BOX 30 tower climbs (rclimb30 = L-LOWER rclimb.c with 192-bit values): B_d32 (seeds 310000+, F(6) 190), D_d32 (330000+, from L-LOWER 4
-  G7_best_d28 + 4 TOP-ADD, start F(6) 222), C_d23 stops 10:35Z (stopC.sh). HIT = out/HITS.txt: report to the Lead at once with the genome
+- BOX 30 tower climbs (rclimb30 = L-LOWER rclimb.c with 192-bit values): B_d32 (seeds 310000+, F(6) 190), D_d32 (since 10:3xZ: seeds
+  340000+, from L-LOWER 4 G7_best_d28 + 4 TOP-ADD, score GUARD 5 then −1000·(level-5 violations of L-LOWER 5's slack.py, ported as
+  SLACKH=7; port = slack.py on 3 genomes) + F(6); start: 30 violations, F(6) 222), C_d23 stops 10:35Z (stopC.sh). HIT = out/HITS.txt: report to the Lead at once with the genome
   file, sha1, F vector, T, and replay30.py (own sim) output.
 - Query 2 (q2pieces.sh, records box28/log/q2/): c0s0p0 drup finishing (whole, 3.92 GB proof), then the finaliser q2fin_c0s0p0.sh starts
   q2pieces.sh: c0s0 p1-p7 x 4 parts on vars 50, 56, then c0s1, c4s0, c4s2, c0s2, c0s3, c4s3 in 8 pieces on 32, 38, 44. A c0s0 piece ≈ 50 min

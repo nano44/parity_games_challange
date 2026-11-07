@@ -18,6 +18,30 @@ static int dfs(int x){ if(vis[x]==2) return 1; if(vis[x]==1) return 0; vis[x]=1;
 static int no; static void topo(int x){ if(vis[x]) return; vis[x]=1; for(int k=0;k<2;k++){int y=xt[2*x+k]; if(y>=0) topo(y);} ord_[no++]=x; }
 static int acyclic(){ memset(vis,0,sizeof vis); for(int x=0;x<N;x++) if(!dfs(x)) return 0; memset(vis,0,sizeof vis); no=0; for(int x=0;x<N;x++) topo(x); return 1; }
 static int F[MAXN], MV[MAXN];
+#define MAXT 5000
+static int SS[MAXT+1][MAXN];   /* box 30: the run's states s_0..s_T (for the slack counter) */
+/* box 30 (Lead 10:23Z): port of L-LOWER 5's experiments/lower/l5/slack.py counter (claude/l-lower 13b2b4d8) for ONE level j and
+   need = H - j: windows of level j are cut at the steps where level j-1's key order flips (cuts = 1, those steps, T+1); in window
+   [a, b) the moves of movers 2j, 2j+1 in step order (t, then 2j before 2j+1); PULSE = u2 - u1 (first two moves), GAP = first move of
+   the next window - u2; a violation for each PULSE < need and each GAP < need (a window with < 2 moves, where slack.py would stop
+   with an error, counts 1 violation). Key order per level as in run(). Also counts the (q-2, 1)-type windows (only mover 2j-1 moved
+   at the window's first step, to option 1) with PULSE >= need and GAP >= need into *good. */
+static void oflags(const int *s, int *o){ int c=0; for(int l=0;l<d;l++){ if(l==0) o[0]=gate[0+s[0]]>gate[2+s[1]];
+    else { int a=s[2*l],b=s[2*l+1]; o[l]=(a!=b)?(a!=c):(gate[4*l+a]>gate[4*l+2+a]); } c=o[l]; } }
+static int slack_viol(int T, int j, int need, int *good){
+  static int O[MAXT+1][MAXN]; if(T>MAXT) return 1000000;
+  for(int t=0;t<=T;t++) oflags(SS[t],O[t]);
+  int p=2*j, q=2*j+1; int cuts[MAXT+3], nc=0; cuts[nc++]=1; for(int t=1;t<=T;t++) if(O[t][j-1]!=O[t-1][j-1]) cuts[nc++]=t; cuts[nc++]=T+1;
+  int v=0; *good=0; int prev_u2=-1, prev_ok=0, prev_typ91=0, prev_pu=0;
+  for(int w=0;w+1<nc;w++){ int a=cuts[w], b=cuts[w+1]; int u[2], nm=0;
+    for(int t=a;t<b && nm<2;t++) for(int x=p;x<=q && nm<2;x++) if(SS[t][x]!=SS[t-1][x]) u[nm++]=t;
+    int m8 = a>1 && SS[a][p-2]!=SS[a-1][p-2], m9 = a>1 && SS[a][q-2]!=SS[a-1][q-2]; int typ91 = !m8 && m9 && SS[a][q-2]==1;
+    if(prev_ok){ int ga = (nm>=1)? u[0]-prev_u2 : -1; if(ga<need) v++; else if(prev_typ91 && prev_pu>=need) (*good)++; }
+    if(nm<2){ v++; prev_ok=0; continue; }
+    int pu=u[1]-u[0]; if(pu<need) v++;
+    if(w+2==nc && typ91 && pu>=need) (*good)++;     /* last window: no GAP */
+    prev_u2=u[1]; prev_ok=1; prev_typ91=typ91; prev_pu=pu; }
+  return v; }
 typedef struct { __int128 hi; unsigned long long lo; } VT;   /* value = hi*2^64 + lo, two's complement over 192 bits */
 static VT vz(void){ VT z={0,0}; return z; }
 static VT vadd(VT a, VT b){ VT r; r.lo=a.lo+b.lo; r.hi=a.hi+b.hi+(r.lo<a.lo); return r; }
@@ -25,7 +49,7 @@ static VT vneg(VT a){ VT r; r.lo=~a.lo+1ULL; r.hi=~a.hi+(a.lo==0ULL); return r; 
 static int vgt(VT a, VT b){ return a.hi>b.hi || (a.hi==b.hi && a.lo>b.lo); }
 static VT bv(int m){ VT b; int r=br[m]; if(r<64){ b.hi=0; b.lo=1ULL<<r; } else { b.hi=((__int128)1)<<(r-64); b.lo=0; } return bp[m]? vneg(b) : b; }
 static int run(int *Tout){ int s[MAXN], ns[MAXN]; VT v[MAXN]; memcpy(s,st,sizeof(int)*N); memset(F,0,sizeof F); memset(MV,0,sizeof MV);
-  int T=0; int oprev[MAXN]; int have=0;
+  int T=0; int oprev[MAXN]; int have=0; memcpy(SS[0],s,sizeof(int)*N);
   for(;T<5000;){ for(int i=0;i<N;i++){int x=ord_[i]; int m=2*x+s[x]; v[x]=vadd(bv(m), xt[m]>=0? v[xt[m]]:vz());}
     int av[MAXN]; int any=0; for(int x=0;x<N;x++){ int m=2*x+1-s[x]; VT ov=vadd(bv(m), xt[m]>=0? v[xt[m]]:vz()); av[x]= vgt(ov,v[x]); any|=av[x]; }
     if(!any) break;
@@ -39,11 +63,12 @@ static int run(int *Tout){ int s[MAXN], ns[MAXN]; VT v[MAXN]; memcpy(s,st,sizeof
     int ch=0; for(int x=0;x<N;x++) if(ns[x]!=s[x]){ch=1; MV[x]++;} if(!ch) break;
     if(!have){ /* o at s_0 */ int c0=0, o0[MAXN]; for(int l=0;l<d;l++){ if(l==0) o0[0]=gate[0+s[0]]>gate[2+s[1]]; else {int a=s[2*l],b=s[2*l+1]; o0[l]=(a!=b)?(a!=c0):(gate[4*l+a]>gate[4*l+2+a]);} c0=o0[l]; } memcpy(oprev,o0,sizeof(int)*d); have=1; }
     for(int l=0;l<d;l++){ if(o[l]!=oprev[l]) F[l]++; oprev[l]=o[l]; }
-    memcpy(s,ns,sizeof(int)*N); T++; }
+    memcpy(s,ns,sizeof(int)*N); T++; if(T<=MAXT) memcpy(SS[T],s,sizeof(int)*N); }
   *Tout=T; return T; }
-static int LV=-1, SCT=0, SCH=0;
+static int LV=-1, SCT=0, SCH=0; static int SLV=-1, SLG=-1;
 static long score(int *T){ run(T); if(SCT) return *T;
   if(getenv("GUARD") && LV>=1){ int g=atoi(getenv("GUARD")); long pen=0; for(int l=1;l<=g;l++){ int df=2*F[l-1]+2-F[l]; if(F[0]!=2) df+=4; pen += df<0?-df:df; } if(pen) return -100000L*pen + F[LV]; }
+  if(getenv("SLACKH") && LV>=0){ int H=atoi(getenv("SLACKH")), j=H-2, g; int v=slack_viol(*T,j,H-j,&g); SLV=v; SLG=g; return -1000L*v + F[LV]; }
   if(getenv("ANYRUN")){ long best=-1000000; for(int a=1;a<d;a++){ int h=0; while(a+h<d && F[a+h]==2*F[a+h-1]+2 && F[a+h]>0) h++; long sc=3000L*h + 4L*F[a+h-1>=0?a+h-1:0]; if(a+h<d){int def=2*F[a+h-1]+2-F[a+h]; sc -= 100L*(def<0?-def:def);} if(sc>best)best=sc; } return best; }
   if(SCH){ long sc=0; for(int l=1;l<=SCH;l++){ int def=2*F[l-1]+2-F[l]; sc += def==0? 3000 : -200*(def<0?-def:def); } return sc + 16L*F[SCH] + (*T<15?*T:15); } if(LV>=0) return (long)F[LV]*256 + (*T<255?*T:255); return *T; }
 static void rd(const char*fn){ FILE*f=fopen(fn,"r"); char w[64]; while(fscanf(f,"%63s",w)==1){ int n=0;
@@ -53,7 +78,7 @@ static void rd(const char*fn){ FILE*f=fopen(fn,"r"); char w[64]; while(fscanf(f,
 static void wr(const char*fn, long sc, int T){ FILE*f=fopen(fn,"w"); fprintf(f,"d %d\nxt",d); for(int i=0;i<2*N;i++)fprintf(f," %d",xt[i]);
   fprintf(f,"\nbr"); for(int i=0;i<2*N;i++)fprintf(f," %d",br[i]); fprintf(f,"\nbp"); for(int i=0;i<2*N;i++)fprintf(f," %d",bp[i]);
   fprintf(f,"\ngate"); for(int i=0;i<2*N;i++)fprintf(f," %d",gate[i]); fprintf(f,"\nstart"); for(int i=0;i<N;i++)fprintf(f," %d",st[i]);
-  fprintf(f,"\n# score %ld T %d F",sc,T); for(int l=0;l<d;l++)fprintf(f," %d",F[l]); fprintf(f," moves"); for(int x=0;x<N;x++)fprintf(f," %d",MV[x]); fprintf(f,"\n"); fclose(f); }
+  fprintf(f,"\n# score %ld T %d F",sc,T); for(int l=0;l<d;l++)fprintf(f," %d",F[l]); fprintf(f," moves"); for(int x=0;x<N;x++)fprintf(f," %d",MV[x]); if(SLV>=0) fprintf(f," slack_viol %d good91 %d",SLV,SLG); fprintf(f,"\n"); fclose(f); }
 int main(int argc,char**argv){ rd(argv[1]); rs+=atol(argv[2])*7919; long iters=atol(argv[3]);
   if(getenv("LV")) LV=atoi(getenv("LV")); if(getenv("SCORE")&&!strcmp(getenv("SCORE"),"T")) SCT=1; if(getenv("CHAIN")) SCH=atoi(getenv("CHAIN"));
   int nomut[MAXN]={0}; int FB = getenv("FROZENBELOW")? atoi(getenv("FROZENBELOW")) : 0; /* movers < FB: no field mutated */
@@ -61,7 +86,8 @@ int main(int argc,char**argv){ rd(argv[1]); rs+=atol(argv[2])*7919; long iters=a
   if(getenv("NOMUT")){ char*p=strdup(getenv("NOMUT")); for(char*t=strtok(p,",");t;t=strtok(NULL,",")) {int x=atoi(t); nomut[x]=1; fixo[2*x]=fixo[2*x+1]=1;} }
   double temp=getenv("ANNEAL")?atof(getenv("ANNEAL")):0; const char*out=getenv("OUT")?getenv("OUT"):"/dev/null";
   if(!acyclic()){ fprintf(stderr,"input cyclic\n"); return 1; }
-  int T; long cur=score(&T), best=cur; wr(out,best,T); printf("start score %ld T %d F(LV) %d\n",cur,T,LV>=0?F[LV]:-1); fflush(stdout);
+  int T; long cur=score(&T), best=cur; wr(out,best,T);
+  if(getenv("SLACKDBG")){ int H=atoi(getenv("SLACKDBG")); for(int j=1;j<=H-2;j++){ int g; printf("slack j %d need %d: %s violations %d\n", j, H-j, F[j]==2*F[j-1]+2?"doubling":"NOT doubling", slack_viol(T,j,H-j,&g)); } } printf("start score %ld T %d F(LV) %d\n",cur,T,LV>=0?F[LV]:-1); fflush(stdout);
   int sxt[MAXN*2],sbr[MAXN*2],sbp[MAXN*2],sg[MAXN*2],sst[MAXN];
   for(long it=0;it<iters;it++){ memcpy(sxt,xt,sizeof xt);memcpy(sbr,br,sizeof br);memcpy(sbp,bp,sizeof bp);memcpy(sg,gate,sizeof gate);memcpy(sst,st,sizeof st);
     int nm=1+rnd()%3; for(int q=0;q<nm;q++){ int r=rnd()%6; int m=2*FB+rnd()%(2*N-2*FB);
