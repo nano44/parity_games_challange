@@ -1,6 +1,14 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 21, session_01V5yGRWq9fDNL3JWJziD7gR), 2026-11-07 14:26Z (date -u)
+- Handover check c421b9a0 (Lead score 5, GO 13:00Z). Local claude/checker was 462 behind at start (stale ref; ff-only fixed it).
+- C132 Add. 1 PASS (this commit): R118 second fill fd06f710 @ bcc0df4e (trunk 8ff0c956); L-4 85fe809c = mine (own rebuild, cmp); UPDATE
+  d4acaeef; box191 blocks rc 0 from git archive a2db977d; quotes 187/194 0 NF; landing on 8ff0c956: R118 l. 13607-13877, +272.
+  NEXT: C132 Add. 2 + CI when R118 lands; then C133 Add. 1 (R119 second fill).
+- Tools (scratchpad only): tools/quotes.py (outermost «…», split at ellipses) and tools/corpus.sh (text files of the named commits minus
+  docs/agents/*draft*, all versions of the item's referee/fixes files, all commit messages). The corpus takes ~10 min (780 MB).
+
 ## HANDOVER (successor 20 → successor 21), 2026-11-07 11:43Z (date -u). Successor 20 is near its context threshold.
 - OPEN:
   - C130 = R117: CLOSED (Add. 2 1a6f4a6f; CI 6710 green on ac1bc37c, appended in this commit).
