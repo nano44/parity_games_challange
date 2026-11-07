@@ -74,8 +74,8 @@ its counter (unit, set, scope). Nothing here is a result in the sense of CLAUDE.
   10, 12} of 1000·(capped levels) (run A) or 1000·(longest run of doubling levels) (run B) + partial credit.
 - Run A (P = 1; DM/DP = 1/2, 2/3, 2/6, 3/8; 100,000 hill-climb steps × 200 restarts each; unit = template; scope = stored start): best
   F = 0 2 4 6 … 2(d − 1) for every d (T = 2d − 2): linear, no doubling level beyond l = 1, no capped level (F(0) = 0).
-- Run B (P = 1, 2, 3; DM/DP 2/4, 3/6, 3/8; 100,000 steps × up to 300 restarts; unit = template; scope = stored start; logs out/r_p*,
-  status at 10:2xZ: 60-147 restarts done per configuration): best score ≈ 4,660 of a possible ≥ 8,000, i.e. ONE doubling level per d
+- Run B (P = 1, 2, 3; DM/DP 2/4, 3/6, 3/8; 100,000 steps × 300 restarts, all six configurations completed; unit = template; scope =
+  stored start; logs out/r_p*): best score 4,659 of a possible ≥ 8,000, i.e. ONE doubling level per d
   (e.g. P = 2: F = 0 1 4 3 4 5 8 7 8 9 12 11 at d 12; P = 3: F = 0 1 2 6 3 6 4 1 2 6 3 5): never two consecutive doubling levels, while
   non-uniform genomes have 2-3 consecutive doubling levels already at d ≤ 10 (REC_d10_tower, L4 §5). DATA, not a proof: a heuristic
   search over a restricted rule space (rank keys monotone in the level, radius ≤ 8). READING: a local periodic rule does not even
@@ -110,8 +110,11 @@ its counter (unit, set, scope). Nothing here is a result in the sense of CLAUDE.
 - Cause (pulses_G7_l5.out; unit = 5-window; scope = stored start): pair 5's PULSE is 2 in the 47 windows of the types (8, 0), (8, 1),
   (9, 0) and 1 in the 15 windows of type (9, 1) (+ the first window); in type (9, 1) the second mover 10 is triggered by mover 15 alone
   (10 → 30 → 15), and 15 is KEY-GATED by the same flip: in the window at steps 20-22 (9 → 1 at 20), 15 prefers its other option from
-  step 19 but moves only at 21, when c_7 changes with the first move of pair 5 (11 at 21); 10 follows at 22. The trigger's key clock
-  coincides with the first mover's move, so the line has length 1.
+  step 19 but moves only at 21, when c_7 = o_6 changes: at 21 the first mover of pair 6 (13) moves, in the same step as the first mover
+  of pair 5 (11); 10 follows at 22. The trigger is keyed by the FIRST move of pair 6, which comes at u₁ itself, so the line has length 1.
+  READING (self-consistency): a trigger keyed by pair 6's SECOND move would give u₂ ≥ u₂(6-window) + 1, but the 6-window [u₁, u₂ − 1]
+  has length 1, so pair 6 cannot make its second move there; the failure of level 6 and the short level-5 pulse sustain each other,
+  which is consistent with the plateau (no single change improves F(6)).
 - What the seventh level needs here (from PULSE-NEST, GAP-NEST, DOUBLE-EQ′; exact): a trigger for 10 in the type-(9, 1) windows that
   fires at u₁ + 1 or later (pulse ≥ 2) and a gap ≥ 2 after it, without shortening the other three types below 2. Every other pulse/gap
   condition for 7 capped levels already holds in G7_best (slack7.out, levels 1-4: 0 violations).
