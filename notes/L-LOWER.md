@@ -45,7 +45,13 @@ experiments/comp/box30/ on claude/l-comp) at d ≥ 32. No result of mine came fr
   RELAUNCH (successor 5): `SP=<scratch>; gcc -O2 -o $SP/rclimbG experiments/lower/l4/rclimb.c -lm; cd experiments/lower/l4;
   python3 -I ../l3/lift.py rec/H6_d24_F126.txt 4 out/H6d28.txt; GUARD=5 LV=6 ANNEAL=0.02 OUT=out/G7_s162.txt setsid nohup
   $SP/rclimbG out/H6d28.txt 162 400000000 > out/G7_s162.log 2>&1 &` (d 28 only: ranks ≤ 111; for d ≥ 32 use L-COMP's rclimb30.c).
-  Its best genome at park is committed as rec/G7_best_d28.txt (F(6) = 190) for a warm restart: replace out/H6d28.txt by it.
+  Its best genome at PARK (09:0xZ) is committed as rec/G7_best_d28.txt: T 270, F 2 6 14 30 62 126 222 158 126 80 32 28 20 8 …
+  (levels 1-5 exact; F(6) = 222 vs cap 254; plateau since iteration ~106M). Warm restart: use it in place of out/H6d28.txt, a new seed
+  (< 300000), and re-arm a monitor on `grep "F 2 6 14 30 62 126 2[3-9][0-9]"` in the log. Tried: LV=6 alone (loses level 5), CHAIN=6
+  (collapses the tower), GUARD=5 LV=6 (this run: 160 → 190 → 208 → 222), frozen levels 0-4 (FROZENBELOW=10: stalls at F(5) = 94).
+  Next idea: lift to d 30 (ranks ≤ 119, still int128-safe) or move to L-COMP's rclimb30.c and lift to d 32+.
+
+## Successor 4 PARKED (2026-11-07 09:0xZ, context ~520k): handover = the «Successor 4 HANDOVER» section above. All my background jobs stopped.
 ### IN FLIGHT (die with the container; logs in experiments/lower/l4/out/, gitignored)
 - Seventh level: `LV=6 ANNEAL=0.02 OUT=out/L7_s131.txt $SP/rclimb128 out/H6d28.txt 131 400000000` (H6d28 = lift.py H6 + 4 levels;
   at handover F 2 6 14 30 62 94 128 …: level 5 lost). Frozen-core: `FROZENBELOW=10 LV=5 ANNEAL=0.02 $SP/rclimbF out/H5d24.txt 141 …`
