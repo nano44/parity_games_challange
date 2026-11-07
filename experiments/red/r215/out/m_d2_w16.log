@@ -59,3 +59,23 @@ it 2041 N 32 R 27 T 36 C 0
 SLICE end it 4127 best R 27 T 27
 == 11:05Z d 2 w 16 slice 3
 start N 32 R 27 T 36 C 0
+it 1301 N 32 R 27 T 37 C 0
+it 1305 N 32 R 28 T 37 C 0
+it 1787 N 32 R 28 T 38 C 0
+it 1872 N 32 R 28 T 39 C 0
+it 2801 N 32 R 29 T 39 C 0
+it 3233 N 32 R 29 T 40 C 0
+it 4626 N 32 R 30 T 41 C 0
+SLICE end it 5810 best R 30 T 30
+== 11:25Z d 2 w 16 slice 4
+start N 32 R 30 T 41 C 0
+it 3292 N 32 R 30 T 42 C 0
+it 4883 N 32 R 30 T 43 C 0
+SLICE end it 5675 best R 30 T 30
+== 11:45Z d 2 w 16 slice 5
+start N 32 R 30 T 43 C 0
+it 796 N 32 R 30 T 44 C 0
+it 4946 N 32 R 30 T 45 C 0
+it 4984 N 32 R 31 T 45 C 0
+it 5279 N 32 R 32 T 45 C 0
+SLICE end it 5351 best R 32 T 32
