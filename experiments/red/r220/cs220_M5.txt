@@ -1,0 +1,4 @@
+M 5 B 0: exhaustive max distinct hub values 16 | packet bound F_B(M) 16 | states 4802
+M 5 B 1: exhaustive max distinct hub values 29 | packet bound F_B(M) 39711 | states 7143
+M 5 B 2: exhaustive max distinct hub values 32 | packet bound F_B(M) 244429345786 | states 7724
+M 5 B 3: exhaustive max distinct hub values 32 | packet bound F_B(M) 9260584287612653173458411 | states 7775
