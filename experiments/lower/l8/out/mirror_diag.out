@@ -1,0 +1,3 @@
+target T 299 | helpers (movers >= 14) whose clamped trajectory differs from the time-shifted original: 14 [14, 15, 17, 18, 19, 20, 22, 24, 25, 27, 28, 30, 31, 32]
+first difference (target step, original step, movers): (14, 12, [14, 15, 18, 19, 30])
+movers infeasible on own conditions: [4, 7, 9, 10, 11, 13]

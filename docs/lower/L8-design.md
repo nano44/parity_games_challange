@@ -84,6 +84,26 @@ Nothing here is a result in the sense of CLAUDE.md; G-N5-TIME stays OPEN. Not a 
   second q₅-reachable helper armed in the o(8) o(9) = 0 0 phase, the mirror of 22. A cheap guard/score term: the number of
   6-windows of length 1 (= inner PULSE_5 = 1 5-windows here) must fall from 8 to 0; F(6) ≤ 254 − (that number) by WINDOW-CAP.
 
+## 1d. The mirror trigger by hand (Lead 21:36Z), decided by ranksolve (DATA; exact for the stated target; scope = KILL238)
+- Target (mirror.py): KILL238's run for movers 0-13, except in each of the 8 bad (8, 0) blocks (opener at a = 9, 44, 79, 114, 151, 187,
+  222, 257) the pair-5/6 pattern of the good (8, 0) windows is transplanted: a: 8; a+1: 11, 13; a+2: 12; a+3: 10, 13; a+4: 12; a+5: the
+  pairs-0-4 moves of the original a+3 (9); the original run resumes (+2 steps per block; T 299; the pair-0..6 states after each block
+  equal the original ones). The +2 is forced: PULSE_5 = 2 makes the 5-window 2 steps longer, so the pair-4 opener 9 must wait.
+  Movers ≥ 14 are completed by their own rules (clamp.runclamp, current ranks); then ranksolve on the whole trajectory, all ranks and
+  signs free. Validation: with the untransplanted target the pipeline reproduces KILL238 (FEASIBLE).
+- No edit: INFEASIBLE. Movers infeasible on their own conditions: 4, 7, 9 (pairs 2-4), 10, 11, 13. Mover 9 must change its preference
+  between two pre-states that differ only in pairs 5-6 and in helpers, i.e. the lower pairs must SEE the delay; and 14 helpers
+  (movers 14-32) follow a different trajectory from the time-shifted original after the first block (first difference at target step
+  14 = original 12: movers 14, 15, 18, 19, 30; mirror_diag.out), which re-fuels 4 and 7 wrongly (COUPLING-UP, L7 §4).
+- Every single re-point (out/mirror_single.out; unit = (option, new target); set = option 10:1 and every option of movers 14-55, every
+  target in {exit} ∪ movers, ≠ self, ≠ current; 4,675 cases): 0 FEASIBLE (3,027 infeasible, 1,648 cyclic). So within this target the
+  mirror trigger is NOT available by one edit. Two edits (~10⁷ pairs) were not run.
+- READING (the finding): a q₅ trigger is necessary (GUARD) but not sufficient: lengthening the 8 windows also requires (i) pairs 2-4
+  (movers 4, 7, 9) to read something that moves in the inserted steps — a Ξ-path from them to pair 5/6 or to the new trigger — and
+  (ii) the helpers that fuel 4 and 7 to keep their schedule although the lower history is 2 steps longer per block. One re-point can
+  supply at most one of these. Scope limit: the helpers' trajectories in the target are those of their current rules; a target with
+  helpers designed (e.g. time-shifted and frozen in the inserted steps plus one designed trigger) is not decided here.
+
 ## 2. Item 1: the sequential schedule with helpers, decided exactly (DATA; unit = (h, d, α) case; scope = the sequential target)
 | h | d | α (α_1, …) | helper levels | result | outputs |
 | --- | --- | --- | --- | --- | --- |
