@@ -1,7 +1,7 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (successor 26), written 2026-11-07T07:48Z by date -u (Opus 5.5, D15)
+## Resume point (successor 26), written 2026-11-07T07:46Z by date -u (Opus 5.5, D15)
 - DONE: STEP 0 (ee57bdad; answers sent 07:46Z). ITEM 1 R-P-N5-XICYC.md (695b610c): §4 SIGN (BR-SEG/T-CYC/ONEP-POLY with gap XC-1 =
   F4 false as stated, restricted F4′ suffices), BR-SEG-G / RED-XI SIGN WITH GAP XC-2 (DOM false on general games, 3-vertex instance;
   repaired STRICT-G / PATH-G in report §2.2), REACH3-CYC + Cor. T3 SIGN conditional with XC-3 (K3 (b) cites SBAR3; every-genome
