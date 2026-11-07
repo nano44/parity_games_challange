@@ -34,6 +34,12 @@ for μ(d), IDEAL-ACYC model on 𝓛^R_d). The predecessor's T-L2 text (2026-10-1
   lsearch.c (template levels on a fixed base genome, BASE=txt), psearch.c (perturbation climb from a base txt; LM = mutable levels).
   Binaries are built into the scratchpad (gcc -O2 -o $SP/x x.c); rebuild after a container change.
 - Status: §2 TRI, §3 TRI-MU, §4 FEEDBACK, §7 TOP-ADD written with proofs (lane); family A data to d = 40, A-RUN proof pending.
+- MOVES-2D DEAD (§9): kill/KILL_M2D_d6_mu13.json (μ 13 at d 6), kill/KILL_M2D_d8_mu21.json (μ 21 at d 8); reported to the Lead 00:31Z.
+- IN FLIGHT (detached; resumable: rerun the same line, finished levels are skipped): lift→climb chains
+  `PFX=out/cA/c SP=$SP ./chain.sh kill/KILL_M2D_d8_mu21.txt 8 12 20000000 100` (cA), `PFX=out/cB/c … out/best_d7.txt 7 12 … 200`
+  (cB), `PFX=out/cC/c … kill/KILL_M2D_d6_mu13.txt 6 11 … 300` (cC), cwd experiments/lower/l3. Records so far (verified by xcheck +
+  box150 check.py): d 7: 17 (out/best7_d7.json), d 9: 29 (out/cA/j_d9.json, F = 2 3 8 9 12 13 28 27 7: a doubling level).
+- Never edit chain.sh while a chain runs (bash reads scripts incrementally; I killed and restarted cA once for that).
 ### Sources opened (this box)
 - docs/RESULTS.md R104 (l. 9864, IDEAL-model definition), R110 (l. 11323, 𝓛^R_d), R112 (l. 11909, T^R(3) = 8), R113 (l. 12152,
   ALIGN, F0, PAIR-DOUBLE, MOVES, T-BOUND, PATH-RISE), R114 (l. 12394); R111 (l. 11598, CASCADE/LADDER, read only).

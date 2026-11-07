@@ -33,4 +33,22 @@ out = subprocess.run([sys.executable, "-I", os.path.join(H, "tricheck.py"), "11"
                      env=dict(os.environ, ALLN="8")).stdout
 line = [l for l in out.splitlines() if l.startswith("TRICHECK")][-1]; print(line)
 V = eval(line.split("violations ")[1].split(" info")[0]); assert all(v == 0 for v in V.values()), V
+# DEAD MOVES-2D instances (docs/lower/L3-families.md §9): sha1 pins, moves of the named Xi-target mover, agreement with box150 Gen
+import hashlib
+KILLS = [("kill/KILL_M2D_d6_mu13.json", "5301c716f68f219bda2806f29b317c94e0ed5df0", 8, 13, 13),
+         ("kill/KILL_M2D_d8_mu21.json", "d96c2b3657e79c410b180580d829366cbecc9ea4", 15, 21, 24),
+         ("kill/REC_d7_mu17.json", "62917c189113bee004d02ada48803f235143a9eb", 8, 17, 17),
+         ("kill/REC_d8_mu24.json", "18d26cec2651290dfd9d137712bdadbb36d6f3d8", 8, 24, 25),
+         ("kill/REC_d9_mu29.json", "2d034e7fcc3a9261e2fbdcaf5eae9dd5f38a2313", 15, 29, 31),
+         ("kill/REC_d10_mu32.json", "b114f4cdefaf1da6818e15512bc1fdb19c249e59", 15, 32, 33),
+         ("kill/REC_d10_tower_mu30.json", "cc94dc9c46ef63f7a3a54b536d9d3b38fdee5255", 8, 30, 35),
+         ("kill/REC_d11_mu40.json", "bbdb33d963d198c439aec63c8c75b0f080043510", 15, 40, 44),
+         ("kill/REC_d12_mu42.json", "28e62d513b697ab3083da6310af631c14e1fc830", 15, 42, 48)]
+for f, sh, z, mz, T in KILLS:
+    p = os.path.join(H, f); assert hashlib.sha1(open(p, "rb").read()).hexdigest() == sh, f
+    G = json.load(open(p)); S = run(G, G["start"]); m = moves(S, G["N"])
+    Zs = {o[1] for x in range(G["N"]) for o in G["opts"][x]} - {-1}
+    assert z in Zs and G["lev"][z] >= 1 and m[z] == mz and len(S) - 1 == T and m[z] > 2 * (G["N"] // 2), f
+    assert [tuple(s) for s in S] == [tuple(s) for s in Gen(G).run(G["start"])[0]], f
+    print(f"DEAD MOVES-2D: {f}: d {G['N'] // 2}, mover {z} (level {G['lev'][z]}, Xi-target) moves {mz} > 2d, T {T}; box150 Gen agrees")
 print("L3 CHECK PASS")

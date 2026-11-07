@@ -134,6 +134,21 @@ static int parsetpl(const char *line, Tpl *T){
    gate swaps inside levels <= LM, start bits of levels <= LM. Score = mu (max moves of a Xi-target mover of level >= 1).
    Usage: psearch BASE.txt SEED ITERS LM [restartEvery] */
 static Gen B0;
+static int SCOREF=0;
+static int runF(const Gen *G, int *Tout){ /* max over levels of flips of the key order of pair (2l,2l+1) */
+  int N=G->N, d=G->d; int s[MAXN], ns[MAXN]; memcpy(s,G->start,sizeof(int)*N); i128 cv[MAXN]; int T=0; int F[MAXD]={0}; int prev[MAXD];
+  mktopo(G);
+  for(int l=0;l<d;l++) prev[l]=keycmp(G,s,2*l,s[2*l],2*l+1,s[2*l+1])<0;
+  while(T<100000){
+    for (int i=0;i<N;i++){ int v=topo[i]; int w=G->xt[v][s[v]]; cv[v]=eps(G,v,s[v]) + (w>=0?cv[w]:0); }
+    int any=0, A1[MAXN];
+    for (int v=0;v<N;v++){ int o=1-s[v]; int w=G->xt[v][o]; i128 vo=eps(G,v,o)+(w>=0?cv[w]:0); A1[v] = vo>cv[v]; any|=A1[v]; }
+    if(!any) break; memcpy(ns,s,sizeof(int)*N);
+    for (int l=0;l<d;l++) for(int p=0;p<2;p++){ int x=2*l+p; if(!A1[x]) continue; int o=1-s[x]; if (keycmp(G,ns,x,o,x,s[x])<0) ns[x]=o; }
+    int ch=0; for(int v=0;v<N;v++) if(ns[v]!=s[v]) ch=1; if(!ch) break; memcpy(s,ns,sizeof(int)*N); T++;
+    for(int l=0;l<d;l++){ int c=keycmp(G,s,2*l,s[2*l],2*l+1,s[2*l+1])<0; if(c!=prev[l]) F[l]++; prev[l]=c; } }
+  if(Tout)*Tout=T; if(getenv("LV")) { int lv=atoi(getenv("LV")); return F[lv]*64 + (T<63?T:63); } int m=0; for(int l=0;l<d;l++) if(F[l]>m) m=F[l]; return m; }
+static int fit(const Gen *G, int *T){ if(SCOREF==1) return runF(G,T); if(SCOREF==2){ int t; mu(G,&t); *T=t; return t; } return mu(G,T); }
 static int loadtxt(const char *fn, Gen *G){
   FILE *f=fopen(fn,"r"); if(!f){ perror(fn); exit(1);} char line[200000]; int n=0;
   static int xt[4*MAXN], br[4*MAXN], bp[4*MAXN], gt[4*MAXN], st[2*MAXN];
@@ -150,19 +165,19 @@ int main(int argc,char**argv){
   if(argc<5){ fprintf(stderr,"usage\n"); return 1; }
   loadtxt(argv[1],&B0); rs ^= (uint64_t)atol(argv[2])*0x9E3779B97F4A7C15ULL; for(int i=0;i<10;i++) rnd();
   long iters=atol(argv[3]); int LM=atoi(argv[4]); long RE = argc>5? atol(argv[5]) : 2000000;
-  int N=B0.N; Gen cur=B0, best=B0, nw; int T; int cs=mu(&cur,&T), bs=cs; printf("base mu %d T %d\n",cs,T);
-  int nmut=2*(LM+1);
+  if(getenv("SCORE")) SCOREF=atoi(getenv("SCORE")); int N=B0.N; Gen cur=B0, best=B0, nw; int T; int cs=fit(&cur,&T), bs=cs; printf("base mu %d T %d\n",cs,T);
+  int nmut=2*(LM+1); int LMIN = getenv("LMIN")? atoi(getenv("LMIN")) : 0;
   for(long it=0; it<iters; it++){
-    if (RE && it%RE==0 && it) cur=B0, cs=mu(&cur,&T);
+    if (RE && it%RE==0 && it) cur=B0, cs=fit(&cur,&T);
     nw=cur; int nm=1+rnd()%3;
-    for(int j=0;j<nm;j++){ int x=rnd()%(2*(LM+1)); if(x>=N) x=N-1; int k=rnd()%2; int w=rnd()%5;
+    for(int j=0;j<nm;j++){ int x=2*LMIN + rnd()%(2*(LM+1-LMIN)); if(x>=N) x=N-1; int k=rnd()%2; int w=rnd()%5;
       if(w==0){ int y=(int)(rnd()%(N+1))-1; if(y==x) y=-1; nw.xt[x][k]=y; }
       else if(w==1){ int y=rnd()%N, ky=rnd()%2; int t=nw.rk[x][k]; nw.rk[x][k]=nw.rk[y][ky]; nw.rk[y][ky]=t; }
       else if(w==2){ nw.par[x][k]^=1; }
       else if(w==3){ int y=2*(x/2)+(rnd()%2), ky=rnd()%2; int t=nw.gate[x][k]; nw.gate[x][k]=nw.gate[y][ky]; nw.gate[y][ky]=t; }
       else nw.start[x]^=1; (void)nmut; }
     if(!acyc(&nw)) continue;
-    int s=mu(&nw,&T);
+    int s=fit(&nw,&T);
     if(s>=cs){ cur=nw; cs=s; if(s>bs){ bs=s; best=nw; printf("it %ld mu %d T %d\n",it,bs,T); fflush(stdout);} } }
   int mv[MAXN]; mktopo(&best); int TT=run(&best,best.start,mv,100000); printf("BEST mu %d T %d moves",bs,TT); for(int v=0;v<N;v++) printf(" %d",mv[v]); printf("\n");
   printgen(&best,stdout); return 0; }

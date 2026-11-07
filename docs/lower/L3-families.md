@@ -144,6 +144,75 @@ statement is about the step sequence of the IDEAL model only (diff in §8).
   is a transducer chain like the key side and §2 gives T ≤ 2d; so the doubling needs |E| ≥ T/(2d) − 1 rises of upward targets (§4 (a)).
   No construction of such rises found (§6).
 
+- WIRE (PROVED; R104 definition): for G ∈ 𝓛^R_d and 1 ≤ L ≤ d, let G′ ∈ 𝓛^R_(d+1) insert a new level L (old levels ≥ L shift up
+  one, Ξ-targets renamed) whose movers u = 2L, w = 2L + 1 start on options 0 and 1, have both options Ξ-targeting X, the current
+  option of even parity and the other of odd parity, ranks below every old rank (old ranks keep their order), fresh gates. Then u, w
+  never move, and the run of G′ from the extended start is the run of G on the old movers (same T, same moves). Proof: u, w have
+  constant values with the current option strictly better, so A = {current} always. No old option Ξ-points to u, w, so every old
+  chain and its β-set are unchanged. Keys: u is on option 0 (W-target 2L − 2) and w on option 1 (W-target 2L − 1), so the key order
+  of the pair (u, w) is the key order of the old pair L − 1; an old mover of old level L with option k now W-points to the new mover
+  2L + k, so the order of its two options' keys is again the old order (the two keys differ first in the W-target part, and the
+  orders of all lower pairs are unchanged by induction; options of one pair on the same option compare by their unchanged gates).
+  So every A-set and every key-least choice is as in G, step by step. ∎ Consequences: μ(d + 1) ≥ μ(d), T^R(d + 1) ≥ T^R(d), and a
+  gadget level can be placed at any height. (Data: experiments/lower/l3/insert.py on REC_d10_tower at L = 5: same run, T 35.)
+- COPY (PROVED; R104 definition, R105 ENC not needed): if m is a mover of G and x a new mover whose two options have the Ξ-targets of
+  m's options (in the same order), the parities of m's options, and ranks placed immediately next to the ranks of m's options in the
+  rank order (each β(x, k) adjacent to β(m, k), on the same side), and no option of G Ξ-points to x, then π_s(x) = π_s(m) at every
+  state s. Proof: the chains of (x, k) and (m, k) agree after the first option; the β-sets differ only by β(x, k) ↔ β(m, k); the
+  largest-rank element of the symmetric difference of the two option sets of x is the image of the one for m (adjacent ranks keep
+  every comparison with the chain elements; m's own β's are not on the chains of its targets by acyclicity), with the same parity. ∎
+  Reading: a copy of a metronome follows it only if its key signal matches; it gains no moves (TOP-ADD), so growth needs feedback.
+
+## 9. CANDIDATE DEAD: CONJECTURE MOVES-2D (P-IDEAL-MOVES §0: «on 𝓛^R_d every z ∈ Z moves at most 2d times in every run») is FALSE
+- Label CANDIDATE (Lead 00:33Z) until two independent replays agree (routed by the Lead to L-RED 52 and L-NEW 57).
+- Membership checklist (full text with the quoted R104 / R110 / P-IDEAL-MOVES definition sentences: experiments/lower/l3/kill/
+  README.md; machine output kill/memcheck.out, ALL PASS on all nine files): (i) IDEAL genome per R104 (W-targets one level down,
+  none at level 0; Ξ-targets movers or X; a start) — memcheck (i); (ii) 𝓛^R_d per R110 (movers 2l, 2l + 1 on level l, degree 2, no
+  other movers, option k W-pointing to 2(l − 1) + k) — memcheck (ii) and movescheck's is_lr; (iii) ISO — not part of R110's 𝓛^R_d
+  (a separate property; MOVES-2D is stated on 𝓛^R_d); the instances are not ISO — memcheck (iii); (iv) Ξ-acyclic — memcheck (iv),
+  box150 TOPO 0; (v) ranks a permutation, gates distinct, parities 0/1, lev[x] = x // 2 — memcheck (v); (vi) the start is one option
+  per mover (R104 requires nothing more) — memcheck (vi); (vii) moves(z) per mover per run from the stored start, z ∈ Z of level ≥ 1,
+  the binder of P-IDEAL-MOVES §0 / movescheck.py — memcheck (vii) by sim.py and box150 Gen.
+- Instances (𝓛^R_d, R110 wiring, Ξ-acyclic, ranks a permutation of 0..4d − 1, gates distinct; stored start):
+  - experiments/lower/l3/kill/KILL_M2D_d6_mu13.json (sha1 5301c716f68f219bda2806f29b317c94e0ed5df0; text form .txt beside it):
+    d 6, T 13, mover 8 (level 4; Ξ-target of option (4, 1)) moves 13 > 12 = 2d times — at every step of the run.
+    moves by mover: 1 1 3 3 6 2 6 6 13 7 1 1.
+  - experiments/lower/l3/kill/KILL_M2D_d8_mu21.json (sha1 d96c2b3657e79c410b180580d829366cbecc9ea4): d 8, T 24, mover 15 (level 7,
+    the top; Ξ-target of option (0, 0)) moves 21 > 16 = 2d times. moves: 1 1 3 1 3 4 6 7 5 5 1 1 10 11 1 21.
+- Further records (same checks; lift→climb chains chain.sh from the kills; sha1 pinned in l3check.py):
+  | d | file (experiments/lower/l3/kill/) | sha1 | mover (level) | moves | 2d | T | F(0..d−1) |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 6 | KILL_M2D_d6_mu13.json | 5301c716… | 8 (4) | 13 | 12 | 13 | 2 6 6 12 6 5 |
+  | 7 | REC_d7_mu17.json | 62917c18… | 8 (4) | 17 | 14 | 17 | 2 6 8 17 9 4 5 |
+  | 8 | REC_d8_mu24.json | 18d26cec… | 8 (4) | 24 | 16 | 25 | 2 5 12 24 18 13 6 5 |
+  | 8 | KILL_M2D_d8_mu21.json | d96c2b36… | 15 (7) | 21 | 16 | 24 | 2 3 7 8 11 10 21 4 |
+  | 9 | REC_d9_mu29.json | 2d034e7f… | 15 (7) | 29 | 18 | 31 | 2 3 8 9 12 13 28 27 7 |
+  | 10 | REC_d10_mu32.json | b114f4cd… | 15 (7) | 32 | 20 | 33 | 2 3 8 8 12 16 32 19 11 2 |
+  | 10 | REC_d10_tower_mu30.json | cc94dc9c… | 8 (4) | 30 | 20 | 35 | 2 6 14 30 23 8 7 6 2 1 |
+  | 11 | REC_d11_mu40.json | bbdb33d9… | 15 (7) | 40 | 22 | 44 | 2 3 8 9 14 20 40 22 15 7 3 |
+  | 12 | REC_d12_mu42.json | 28e62d51… | 15 (7) | 42 | 24 | 48 | 2 3 8 9 14 20 42 23 9 9 7 5 |
+  In every record the named mover moves 1 + F(l − 1) times or one less (R113 MOVES is tight or nearly), and some level doubles
+  (F(l) = 2F(l − 1) + 2 or 2F(l − 1): R113 PAIR-DOUBLE tight): d 8 (REC): F(2) = 12 = 2·5 + 2, F(3) = 24 = 2·12 (a doubling tower of
+  height 2 under the level-4 metronome; moves 3, 6/6, 12/12, 24 at levels 1-4). REC_d10_tower: F(l) = 2^(l+2) − 2 for l = 0, 1, 2, 3
+  (2, 6, 14, 30), i.e. R113 PAIR-DOUBLE and T-BOUND's per-level bound F(l) ≤ 2^(l+2) − 2 are attained on four consecutive levels;
+  moves 3/3, 7/7, 15/15 (= 1 + F(l − 1), R113 MOVES with equality) at levels 1-3 and 30 at level 4. The levels 1-4 run a binary
+  counter (pair l flips with period 2^(4−l) steps inside each lap); the tower levels 3, 4 Ξ-point only to the pair below (crossed),
+  the bottom levels 1, 2 have upward options (fuel) to movers of levels 5-9.
+- Checks (machine): own simulator sim.py (§0 definition only) and L-NEW box150 Gen agree state for state (d 6: on all 4,096 starts);
+  box150/check.py on both files: XSIM 0 (vs box139 paths.py, a third simulator), TOPO 0 (acyclic), MONO, XINEW, RISE, CHAIN, KEYFLIP,
+  DECR, TOPMONO, RBOUND, RESTR, ICHARGE, REC all 0; movescheck.py's check_run (box187) counters RX, AGA, AGB, AGC, SWA-SWE, WPD all 0
+  (xcheck.py). Re-checked at every verify by l3check.py (sha1 pins, the named mover's count, agreement with box150 Gen).
+- How found: psearch.c (perturbation climb: Ξ-targets, rank swaps, parities, gate swaps, start bits; fitness = the largest moves of a
+  Ξ-target mover of level ≥ 1) seeded with family A_6 / A_8 (§5), all levels mutable; i.e. a TRI wave plus upward options.
+- Mechanism (DATA, trace.py): d 6: three laps of 4 steps separated by the two level-0 moves (steps 4 and 9; the c_1-phases of R113 F0),
+  the level-4 mover reading c_4 = the key order of the pair (6, 7), which alternates at every step 1-13; the lap patterns of steps 2-3,
+  6-7, 10-11 coincide on the key orders of levels 2-3. d 8: levels 2-7 run an 8-step lap twice (their states at steps 5 and 16 are
+  equal), the two level-0 moves (steps 14, 15) and level 1 resetting in between; mover 0 Ξ-points to the top mover 15 (feedback).
+  Both use upward options, as §3 requires.
+- Does NOT claim: anything about T^R(d) beyond the instances (T 13 and 24 are below the records 22 at d 6 and ≥ 26 at d 7); that μ is
+  superlinear (DATA so far: μ(6) ≥ 13, μ(7) ≥ 17 (climb, see notebook), μ(8) ≥ 21); a polynomial bound; anything about G-N5-TIME.
+  MOVES-EQUIV (P-IDEAL-MOVES §1) is unaffected: μ polynomial ⇔ T^R polynomial still holds, only the conjectured constant 2d is dead.
+
 ## 8. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class; each is about the IDEAL
 model's step sequence (R104's definition). §2-§4 bound T only on TRI genomes or in terms of |E|; nothing is polynomial on 𝓛^R_d.
