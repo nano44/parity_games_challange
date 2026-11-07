@@ -1,0 +1,1 @@
+regress2 files ISO None: runs 384, T histogram {0: 18, 1: 74, 2: 66, 3: 45, 4: 53, 5: 38, 6: 37, 7: 24, 8: 9, 9: 6, 10: 6, 11: 4, 12: 3, 13: 1}, failures 0

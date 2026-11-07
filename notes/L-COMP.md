@@ -55,9 +55,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   cnf2.py beside cnf.py (done, spec in README; regression (a) d 3 re-derivation, (b) decoded models = sim, (c) random 200: run).
   A cnf2 UNSAT is DATA until the referees audit cnf2.
 - CONTAINER RESTART ~05:00Z killed all jobs (cnf.py roots 0, 42 at 3 h 51 min, 2 at 2 h 52 min, no verdict). Relaunched 05:02Z.
-- After ANY restart (all idempotent / resumable): cd experiments/comp/box28; gcc -O2 -o frup frup.c; (cd ../box27 && gcc -O2 -o drup drup.c);
-  setsid nohup ./diskguard.sh &; setsid nohup ./d3cnf2.sh &; PDIR=/home/user/pf/x setsid nohup nice -n 15 ./xval_d3.sh &;
-  d 4 roots: SYM=1 CUBE=<bits of movers 2..7> python3 ../box27/cnf.py 4 14 log/sample/c<root>.json (or acube28.py / cnf2.py per the Lead).
+- After ANY restart: experiments/comp/box28/relaunch_all.sh (idempotent: diskguard, ISO_L13 + R4_L14 cnf2 drivers with 25-min cubes,
+  xval niced, commit_loop). Since 05:2xZ (Lead 05:18Z) all d 4 work is in 25-min cubes (presplit depth 2 + adaptive). Query 2 (L-COMP 9's
+  sub-cubes) is next on a spare core, lower priority than d 4.
   Delete a half-written proof in /home/user/pf/x and its log/xval_d3/c<c>.* before relaunching xval.
 - Things only I know: a d 4 L 14 Glucose proof grows ~7.6 GB per hour; pinck.py runs its CLI on import (box 28 tools exec its text
   before 'if sys.argv[1] == "files"'); pkill -f / pgrep -f patterns also match a runner whose command line CONTAINS them (lost a queued

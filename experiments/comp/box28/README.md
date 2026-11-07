@@ -90,3 +90,19 @@ only), 𝓛^R_d of RESULTS R110 (definition only). Not a TARGET.md claim. G-N5-T
   «<-» half of the mem equivalence dropped; the base term ignoring the state) FAIL regress2 random 15: 7 / 30 and 5 / 30 runs
   (log/regress2_mutants.out).
 - Status: cnf2 is NOT audited. A cnf2 UNSAT is DATA until the referees audit this spec; proofs + drup.c / frup certify the formula only.
+- Regression (a) DONE 05:13Z (log/d3cnf2_summary.txt): cnf2, d 3, SYM: T ≥ 8 SAT (201.5 s; decoded genome replayed by sim.py: T 8, the
+  model's states); T ≥ 9 UNSAT on all 16 P-TR3 cubes (81.4-207.0 s, total 2,167 s, under full machine load; cnf.py P-TR3 §3: 141-612 s,
+  total 4,946 s). So cnf2 re-derives T^R(3) = 8 (DATA for cnf2; R112 rests on cnf.py).
+- Regression (b)+(c) DONE (0 failures): random 100 𝓛^R_3 + 100 𝓛^R_4 (log/regress2_random.out); every start of dbl_d3_F6, own_R_d3_L8,
+  max_d4_L13 (384 runs, T 0-13; log/regress2_files.out); ISO=1 every start of ISO_1_d4_t12 and iso_d4_st9 (512 runs, T 0-12;
+  log/regress2_iso.out). Each SAT case: decoded states = sim states, decoded Xi-targets = the genome's.
+- d 4 on cnf2 since 05:14Z (launch_cnf2.sh, Lead 05:04Z): R4_L14 (𝓛^R_4, T ≥ 14, 2 workers) and ISO_L13 (ISO, T ≥ 13, 1 worker), roots
+  in the order 40, 0, 42, 2, 8, 10, 32, 34, cap 4 h per cube then Xi-split; state cubes/<TAG>/. The cnf.py roots 0, 42, 2 were stopped
+  (no verdict, ~10 min after the restart relaunch). All cnf2 verdicts are DATA until cnf2 is audited.
+- RESTART-PROOF SCHEME (Lead 05:18Z: restarts every ~40 min): presplit.py splits every PAIR-SWAP root two levels deep by acube's own
+  complete rule (all values of the Xi-target of option (0,0), then of option (0,1); the encoders' exactly-one Xi-target clauses make the
+  children a partition of the parent, so the leaves cover the root exactly). R4_L14: 8 roots × 8 × 8 = 512 cubes; ISO_L13: 8 × 7 × 7 =
+  392 cubes. Each cube runs under TLIM = 1500 s (25 min); a timeout splits it again by the same rule (option 2, 3, ...). A finished
+  cube's .res is final; a restart loses only the cubes in flight. relaunch_all.sh restarts everything (idempotent); commit_loop.sh
+  commits log/cnf2_d4_status.txt (status_d4.py: per-cube RESULT lines) every 10 min and pushes synchronously (one push at a time).
+- Proofs (Lead 05:18Z (2)): an UNSAT cube gets a Glucose proof only if proof + drup check fit in ~25 min; otherwise «UNSAT (no proof kept)».
