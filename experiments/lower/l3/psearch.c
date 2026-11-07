@@ -178,6 +178,7 @@ int main(int argc,char**argv){
       else nw.start[x]^=1; (void)nmut; }
     if(!acyc(&nw)) continue;
     int s=fit(&nw,&T);
-    if(s>=cs){ cur=nw; cs=s; if(s>bs){ bs=s; best=nw; printf("it %ld mu %d T %d\n",it,bs,T); fflush(stdout);} } }
+    double TEMP = getenv("ANNEAL")? atof(getenv("ANNEAL")) : 0;
+    if(s>=cs || (TEMP>0 && s>-1000000 && (double)(rnd()%1000000)/1e6 < __builtin_exp((s-cs)/TEMP))){ cur=nw; cs=s; if(s>bs){ bs=s; best=nw; printf("it %ld mu %d T %d\n",it,bs,T); fflush(stdout);} } }
   int mv[MAXN]; mktopo(&best); int TT=run(&best,best.start,mv,100000); printf("BEST mu %d T %d moves",bs,TT); for(int v=0;v<N;v++) printf(" %d",mv[v]); printf("\n");
   printgen(&best,stdout); return 0; }

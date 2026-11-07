@@ -213,6 +213,29 @@ statement is about the step sequence of the IDEAL model only (diff in §8).
   superlinear (DATA so far: μ(6) ≥ 13, μ(7) ≥ 17 (climb, see notebook), μ(8) ≥ 21); a polynomial bound; anything about G-N5-TIME.
   MOVES-EQUIV (P-IDEAL-MOVES §1) is unaffected: μ polynomial ⇔ T^R polynomial still holds, only the conjectured constant 2d is dead.
 
+## 10. The tower and its fuel (DATA + READING; the Lead's top goal 01:14Z)
+- Why it matters (RESULTS R104 Corollary REAL-IDEAL, opened l. 9864): «a family of acyclic genomes with L super-polynomial in N + M
+  is a family of real games with super-polynomially long FL runs from the stated start pairs». On 𝓛^R_d, N + M = 6d. A tower with
+  F(l) = 2^(l+2) − 2 on a number of levels linear in d would make T^R exponential (not a statement about N5's default start S3).
+- Tower data: REC_d10_tower: F = 2, 6, 14, 30 at levels 0-3 (the R113 caps), moves 3/3, 7/7, 15/15 at levels 1-3, the level-4
+  mover 8 a metronome (30). RECT_d11_T59 (d 11, T 59, F 2 6 14 30 31 …): the same tower, a longer run. Targeted climbs for F(4) = 62
+  (psearch LV=4, d 11-13): F(4) = 31 at d 11, then 39 at d 13: kill/RECT_d13_T66.json (sha1 4eb7e76d…; d 13, T 66, F 2 6 14 30 39
+  24 16 15 9 2 3 0 1; sim.py = box150 Gen, XSIM 0, TOPO 0, movescheck counters 0). T records of this box: 59 at d 11, 66 at d 13
+  (≈ 5d; L-RED's T^R records 16, 22, 26 at d 5, 6, 7).
+- Fuel analysis (experiments/lower/l3/fuel.py: for each change of π(x), the movers on the newly preferred option's chain that moved):
+  - Levels 3, 4 are self-timed: (6, ·) → (4, 5), (7, ·) → (5, 4), (8, ·) → (7, 6); every change of their π is caused by a move of the
+    pair below (or of a mover on its chain).
+  - Level 2 is fuelled from above: (4, ·) → (9, 10) with 9 on level 4 and 10 on level 5; π(4) changes 7 times, alternately «via 9» and
+    «via 10»; (5, ·) → (16, 3), changes via 16 (level 8), 3, 14. Level 1: (2, ·) → (4, 19), (3, ·) → (13, 17).
+  - The fuel movers move at the rate of the level they feed: 9 and 10 move 7 and 8 times (level 2 moves 7). Mover 9 is the
+    partner of the level-4 metronome 8; being fuel it moves 7 times, not 31, so pair 4 cannot double: F(4) = 23 here.
+- READING (not claimed): a doubling level j needs (a) the pair below to flip with spacing ≥ 2 (the second follower moves one step
+  after the first), so the flip spacing halves per tower level and the lower levels must WAIT for the levels above; (b) the waiting
+  is supplied by upward options to a fuel pair that rises alternately about 2^(j+1) times at the right steps. In the data every fuel
+  mover is itself a mover of the ladder that needs its own fuel; whether O(1) fuel movers per tower level suffice (which would give an
+  exponential family) or the fuel demand compounds (the obstruction) is open. FEEDBACK (§4 (b)) gives only the counting form: a
+  level-l mover making 2^(l+1) − 1 moves needs |E_l| ≥ (2^(l+1) − 1)/(2l) − 1 rise-steps of upward targets.
+
 ## 8. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class; each is about the IDEAL
 model's step sequence (R104's definition). §2-§4 bound T only on TRI genomes or in terms of |E|; nothing is polynomial on 𝓛^R_d.
