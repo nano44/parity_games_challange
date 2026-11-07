@@ -175,3 +175,49 @@ the IDEAL model's step sequence on 𝓛^R_d. Not M3/M4, not a gauntlet step (§5
 r2tower.py / r2tower.out, r2fuel.py / r2fuel.out, r2quotes.py / r2quotes.out, bt_l1.py / bt_l1.out, lanecheck_7f7ff6f5.out. Re-run
 with `git archive 7f7ff6f5 experiments/lower docs/lower | tar -x -C DIR`, then `python3 docs/referee-2/R2-P-TOWER-FUEL/r2tower.py DIR`
 (2.4 s).
+
+## Addendum 1: fix round 1 / L-2 (claude/l-lower 740f6c79; REFEREE-2 successor 31, 2026-11-07 15:5xZ by date -u)
+- **Object** (sha1 at 740f6c79, equal to the Lead's relay 15:53Z):
+  - docs/lower/P-TOWER-FUEL-fixes.md 0902efb9… (9,973 B, entry 1);
+  - L-2 docs/lower/P-TOWER-FUEL-line-L2.txt d866ca50… (4,586 B, 4,438 characters, 1 line, 80 «(» = 80 «)», depth never negative, 0 «|»);
+  - packet a093e0e7… and L-1 408470ad… unchanged;
+  - p_tower_check.py cdba7abc…, re-run on `git archive 740f6c79`: «pins OK: 4 files» (L-1 and L-2 now pinned) and «P-TOWER-FUEL
+    CHECK PASS», asserting 7,069 / 61 / 119 / 16 / 32 / 16 / 188 (lanecheck_740f6c79.out).
+- **REFEREE's report** docs/referee/R-P-TOWER-FUEL.md (807984e3) was read only now, after my report (4bede4dd) was on origin. It agrees
+  with mine on every point:
+  - the same false inequality: its 57 of 86 states (pulse pre-states) and my 651 of 1,010 (every RANK state) are different sets; its
+    «second held on 86» and my 5 failures elsewhere are consistent;
+  - TF-2 = my N-1; TF-4 = my W-3 plus the scope; TF-L1/L2/L3 = my W-4 (b)/(c), W-2 (c); TF-L5 ≈ my W-2 (b);
+  - the decider scope table equals my r2tower.out and r2fr1.out.
+  - Its point that «and nothing else is required of it there» is a READING is right. I did not flag it; L-1 and L-2 do not carry it.
+- **Byte test** (own script bt_l2b.py with the seven replacements written out literally; bt_l2.out): each OLD occurs once in L-1 and each
+  NEW once in L-2, and L-1 + M1..M7 == L-2 byte for byte (sha1 d866ca50…) ✓. My predicted 1a4e8dcc… line is superseded by the Lead's
+  merge, as stated.
+- **Meaning, against my W items:**
+  - M1 = my W-2 (a) verbatim ✓.
+  - M2 contains my W-2 (b) verbatim, plus the 30's own unit (5-window, PULSE or GAP) and «16 of its 63». My own count: the 30 units lie
+    on 16 distinct 5-windows, and 119 j-windows at j = 1..5 (r2fr1.out) ✓. The two «unit =» parentheses bind to different counts (the
+    «only» over j-windows, the 30 over (window, condition)); both are right.
+  - M3 contains every fact of my W-2 (c): the failure defined as «not exactly one move of each member», the crossing onto 22, 11, the
+    «some state s among s_(a−1), …, s_(e−1)» scope, «every such state in 16», and «none of the other 79» ✓. It adds the mover names
+    12, 13 (TF-L3). «dec_s(12) or dec_s(13)» at every state is my every-state count of 16 ✓.
+  - M4 = my W-4 (a) verbatim ✓.
+  - M5 carries my W-4 (b) units and counts (7,069 / 757 / 62) plus «61 of them with F(j − 1) ≥ 1» (TF-L1). My count: F(j − 1) = 0 on
+    exactly 1 of the 62 ✓.
+  - M6 (TF-L2) contains my W-4 (c) fact (unit (consecutive-state pair, mover), equal deciders) and names (b)'s unit ✓.
+  - M7 (TF-L4) is the reading my code uses (chains of the current options) ✓.
+- **Fixes entry 1, W-1 = TF-1 (§1):**
+  - The proof of record (REFEREE's) is correct. chain(2j, 0) △ chain(2j, 1) = {(2j, 0), (2j, 1)} ∪ (chain(A_0) △ chain(A_1)), by
+    acyclicity, with top m* under RANK. By Lemma 4 (a) the sign of D − θ_(2j) is that of m*'s term, which is the sign of D. Likewise for
+    2j + 1.
+  - It is the same argument as my route, phrased through Lemma 4 (a) instead of ENC directly. The Lead's choice of record is fine with me.
+  - My second route and my counts are quoted verbatim (bt_fxq.out) ✓. The statement is unchanged ✓.
+- **Fixes entry 1, W-3 = TF-4 (§3):**
+  - The new §4 text states the measured scopes: 48 at some pre-state; 32 at s_(a−1); 16 at every pre-state; 0 of 79. My r2fr1.out gives
+    the same, and 32 at some s_a … s_e.
+  - Mover 9 is on option 1 at every pre-state of the 48 failing windows and of 17 good ones; Lemma 4 (b)'s conclusion holds on 188 of
+    188 consecutive-move pairs (my r2fuel.out) ✓.
+  - The interpretive clause is labelled READING and says Lemma 4 (b) is not applied ✓. **W-3 met.**
+- **§2 TF-3 unit and §4 E5 «61 of 62»** ✓ (my counts). §6, the description slip ✓.
+- **Verdict:** fixes entry 1 **CORRECT**; W-1, W-2 (a)-(c), W-3 and W-4 (a)-(c) **met**; **L-2 MATCHES** the packet with fixes entry 1,
+  in bytes and in meaning (Opus 5.5, D1). Statement verdicts are unchanged: all SIGN, (iii) on the repaired proof now of record.
