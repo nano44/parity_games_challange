@@ -26,6 +26,8 @@ for μ(d), IDEAL-ACYC model on 𝓛^R_d). The predecessor's T-L2 text (2026-10-1
    gives the Ξ-target maxima 1, 3, 4 by level at d = 3, so μ(3) = 4 < 6 (and T^R(3) = 8, R112). Reading: aim at μ(G_d) ≥ 2d for d ≥ 5
    (the first tight case) and at the growth rate.
 
+## Successor 3 PARKED (2026-11-07 ~03:3xZ, after P-M2D-DEAD fix round 1: fixes entry 1 + line L-2; waiting for the referees' byte tests)
+
 ## Successor 3 HANDOVER (2026-11-07 ~02:2xZ, context ~450k; Lead asked to plan the handover near 550k)
 ### DONE (all pushed on claude/l-lower; see docs/lower/L3-families.md and docs/lower/P-M2D-DEAD.md)
 - Simulator sim.py (+ inline second implementation in p_m2d_check.py), cross-checked vs box150 Gen / box139 XSIM / movescheck.
@@ -63,6 +65,10 @@ for μ(d), IDEAL-ACYC model on 𝓛^R_d). The predecessor's T-L2 text (2026-10-1
   box150 check.py): d 7: 17 (out/best7_d7.json), d 9: 29 (out/cA/j_d9.json, F = 2 3 8 9 12 13 28 27 7: a doubling level).
 - Never edit chain.sh while a chain runs (bash reads scripts incrementally; I killed and restarted cA once for that).
 ### Sources opened (this box)
+- claude/l-si 0803d551 docs/si/N5-TROPICAL-box76.md l. 167-170 (L-SI 41 replay of my nine genomes: «Every (d, T, mover, moves) of the
+  README table is reproduced»); claude/l-red 55557951 experiments/red/r214/lower3/, memb.py, lowrep.py (L-RED 52 replay; verdict
+  in the commit message «ideal.py / fa / lemck / box150 reproduce all 9»); claude/referee c011995c docs/referee/R-P-M2D-DEAD.md
+  (PM-L1..L4); claude/referee-2 6eba8b93 docs/referee-2/R2-P-M2D-DEAD.md (W-1, N-1, N-2).
 - docs/RESULTS.md R104 (l. 9864, IDEAL-model definition), R110 (l. 11323, 𝓛^R_d), R112 (l. 11909, T^R(3) = 8), R113 (l. 12152,
   ALIGN, F0, PAIR-DOUBLE, MOVES, T-BOUND, PATH-RISE), R114 (l. 12394); R111 (l. 11598, CASCADE/LADDER, read only).
 - claude/l-new d86adc86-era docs/new/P-IDEAL-MOVES.md (§0-§6: REDUCE-XI, MOVES-EQUIV, AND-GATE, WINDOW-DOUBLE, SEG-WINDOW, DEAD-SEG,
