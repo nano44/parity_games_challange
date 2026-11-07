@@ -1,0 +1,8 @@
+pins OK: 3 files
+G7_best_d28: T 270, levels 0-5 capped; 7-capped PULSE/GAP violations: levels 1-4: 0; level 5: 30 = 15 pulses + 14 gaps of type (9, 1) + 1 pulse of the first window
+SL41_d28: T 290, levels 0-5 capped; 7-capped PULSE/GAP violations at levels 1-5: 0
+both: level 6 has 127 windows, 48 without exactly one move of each member of pair 6
+SL41_d28: pair 6 is CROSS onto (22, 11); (rank 87, mover 9, option 1) decides 12 or 13 in all 48 failing 6-windows and in none of the 79 others
+corpus: 24 runs (stored start): KILL_M2D_d6_mu13.json, KILL_M2D_d8_mu21.json, RECT_d11_T59.json, RECT_d13_T66.json, RECT_d13_T99.json, RECT_d14_F46.json, RECT_d14_T107.json, RECT_d15_T114.json, REC_d10_mu32.json, REC_d10_tower_mu30.json, REC_d11_mu40.json, REC_d12_mu42.json, REC_d7_mu17.json, REC_d8_mu24.json, REC_d9_mu29.json, DBL4_d20_F30.json, H5_d20_F62.json, H6_d24_F126.json, RECF4_d14_F52.json, RECF4_d16_F53.json, RECF4_d20_F56.json, RECF4_d20_F60.json, G7_best_d28, SL41_d28
+counters: {'levels': 62, 'E3': 0, 'E4': 0, 'E5': 0, 'windows': 757, 'PN_units': 757, 'PN_viol': 0, 'PN_tight': 215, 'GN_units': 260, 'GN_viol': 0, 'GN_tight': 12, 'DF_pairs': 1390, 'DF_viol': 0, 'DFa_pairs': 65885, 'DFa_viol': 0, 'CE_pairs': 4, 'CE_windows': 65, 'CE_viol': 0, 'CE3_units': 43, 'CE3_viol': 0}
+P-TOWER-FUEL CHECK PASS

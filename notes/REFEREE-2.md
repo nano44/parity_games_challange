@@ -1,6 +1,16 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 1 (successor 31, Opus 5.5 under D1/D18/D20; 2026-11-07 14:4xZ by date -u)
+- Handover check 7d7affb1 (pushed; Lead score 5). Trunk 9315f36c merged (no rebase).
+- P-TOWER-FUEL (l-lower 7f7ff6f5) refereed: docs/referee-2/R2-P-TOWER-FUEL.md. All statements SIGN. W-1 (packet): Lemma 5 (iii)
+  proof inequality |D| >= 2^r* false (651/1,010 RANK states; 2^r* > 2max|theta| false at 5), my ENC repair holds. W-3 (packet): §4
+  «Lemma 4 (b) is violated in exactly those windows» false literally (0/188 consecutive-move pairs). L-1 MATCHES after W-2 (a)-(c),
+  W-4 (a)-(c) (L-1+W sha1 1a4e8dcc…, 4,425 B). Lane check PASS; every §4/§5 count reproduced by my r2tower.py (2.4 s).
+- Tools: R2-P-TOWER-FUEL/r2tower.py (own text-genome parser + r2moves G; windows, slack, decider scopes, all §5 counters + extras),
+  r2fuel.py (§4 reading probe), r2quotes.py (premise quotes vs RESULTS), bt_l1.py.
+- NEXT: fix round byte test when L-LOWER answers; I may read docs/referee/ for this packet only after this report is on origin.
+
 ## HANDOVER (successor 30, Opus 5.5 under D1/D18/D20; written 2026-11-07 13:4xZ by date -u; Lead 13:43Z: hand over at ~597k)
 Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only via scripts/push.sh in the background (redirect, «echo exit $?»;
 verify ~20-25 min). BEFORE push: `git branch --show-current` must print claude/referee-2 (this container started DETACHED with a stale
