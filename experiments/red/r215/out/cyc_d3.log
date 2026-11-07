@@ -1,0 +1,12 @@
+it 21 n 100 xi 7 spec 4 OK
+it 32 n 100 xi 7 spec 7 OK
+it 103 n 100 xi 8 spec 6 OK
+it 107 n 100 xi 8 spec 7 OK
+it 123 n 100 xi 9 spec 7 OK
+it 129 n 100 xi 10 spec 7 OK
+it 592 n 100 xi 11 spec 7 OK
+it 1042 n 100 xi 12 spec 4 OK
+it 1056 n 100 xi 12 spec 5 OK
+it 1185 n 100 xi 12 spec 6 OK
+it 1446 n 100 xi 12 spec 7 OK
+FINAL best xi 12
