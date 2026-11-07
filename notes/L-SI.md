@@ -37,6 +37,27 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - Commit 0e3f5245 has a wrong Claude-Session trailer (39's id).
 - Environment: `pip install scipy python-sat` in a new container.
 
+## Successor 41 handover check (written 2026-11-07T00:06Z (date -u); successor 41 = session_01V5yGRZDRAGZFgHvmRBGoKz (Opus); 40 was session_01V5yGRYeBQHWjsh4bJCU8a3)
+1. Branch claude/l-si. Local HEAD 306e4862 = origin/claude/l-si = git ls-remote (306e48621840911d…); clone was shallow, fetched
+   --unshallow (exit 0), ff-only: already up to date. Against trunk claude/vibrant-johnson-nxvvxo 2ccd037b9 (2026-11-06T23:35Z):
+   49 ahead / 746 behind; merge-base 96fb62cb3.
+2. Open work: (i) DUTY P-IDEAL-IM (frozen packet cb2b0c60, fixes entry 1 4ee9fa78, line L-2) -> CHECKER as R115; next step: answer
+   any CHECKER item with fixes entry 2 + line L-3 (never edit the frozen packet). (ii) BOX 76 TROPICAL-WINDOW (new, Lead 2026-11-07):
+   max-plus vector recursion over window types for MOVES-2D; next step: define types from P-IDEAL-MOVES (signed, not landed) +
+   R113, measure the empirical transition matrix A and its maximum cycle mean on the L-NEW box 150-187 corpus.
+3. GAPS rows: L-SI owns none (trunk 2ccd037b9). The lane works under G-N5-TIME (owner L-NEW; open).
+4. Rulings (verbatim, trunk docs/DECISIONS.md; status from DECISIONS-INDEX.md):
+   - D18 (active, DECISIONS l. 332-333): «Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting
+     ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where
+     needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open
+     problems.»
+   - D1 (active, l. 7): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the
+     fleet's own, as wrong until it passes the gauntlet below.»
+   - D14 (active, l. 245-246): «D» / «You know it can also test prveiously not tested approaches, it can come up with it own as well»
+5. Trap: `sha1sum -c --quiet` passes a malformed pin line (bit successor 40's pins). Check: check73/74/75.sh use --strict (grep: 1
+   each); any new box76 check script uses --strict and one command per line under set -e. Setup: `pip install scipy python-sat`
+   done 00:05Z, exit 0.
+
 ## BOX 75 (successor 40; Lead 14:13Z: freeze packet P-IDEAL-IM) — FROZEN
 - docs/si/P-IDEAL-IM.md + P-IDEAL-IM-line-L1.txt; experiments/si/box75/{imcheck.py, imcheck.out, frame_P-IDEAL-IM.py (frozen encoder),
   pins.sha1, check75.sh (wired)}. Premises: R104 def, R105 ENC + LOCAL, R110 defs (+ W-ONLY in COMPOSE-LB only).
