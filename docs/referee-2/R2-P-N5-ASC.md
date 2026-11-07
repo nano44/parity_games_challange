@@ -188,3 +188,43 @@ Nothing is REFUSED. Nothing here bounds R or a running time; G-N5-TIME stays OPE
 ## Tools and outputs
 r2q.py / r2q.out; r2hub.py / r2hub.out (`python3 r2hub.py 6 3`); r2asc.py / r2asc_inst.out, r2asc_noup.out,
 r2asc_inst_elevrev.out, r2asc_noup_elevrev.out (`r2asc.py FILES…`, `r2asc.py noup 300 31`, `CTRL=elevrev`); lane_check193_95dc76d7.out.
+
+## Addendum 1: comparison with REFEREE 27 (claude/referee 26b2b516, docs/referee/R-P-N5-ASC.md; REFEREE-2 successor 31, 2026-11-07 22:5xZ by date -u)
+- **Order.** Read only now: my report (533744a5) was on origin before I opened it (Lead 22:48Z). REFEREE did not read mine.
+- **Verdicts: identical.** Every statement is SIGN in both reports, and nothing is REFUSED. The premise checks (all quotes verbatim,
+  F1-F3 from the frozen P-N5-XICYC l. 69-73, E-DOM from R104's priorities), the scope sentence (OVT-DV and IN-BOUND 0 times in RESULTS)
+  and the TARGET diff (CLEAN) agree.
+- **Required items, one to one:**
+  - REFEREE AS-2 = the first two strings of my W-1, byte-identical old/new strings («UP-JUMP, UP-B and NOUP under HYPOTHESIS [E-LEV]»,
+    «(only for §6 UP-JUMP, UP-B and NOUP)»).
+  - REFEREE AS-3 = my W-1 title string. REFEREE makes it a condition on the line; I asked for a packet fix. Either closes it, as long as
+    the line carries «under [E-LEV]» on every UP-B / NOUP clause.
+  - My W-1 adds measured evidence: NOUP is false without [E-LEV] (CTRL=elevrev: 209 plays with ascents at U(G) = 0). REFEREE's argument
+    is textual (NOUP is proved from UP-B). Both are right.
+  - REFEREE AS-D2 = my W-2 (the five box192 instances not in asc.pins; SHA1SUMS matches but is not run).
+  - REFEREE AS-D1 = my D-1 (no unit counts for tmonfail / decfail / edomfail / upfail). Both of us note that «asc» is probably
+    UP-JUMP's count (my sum: 1,956).
+- **Mine only:**
+  - D-2 («12 instances were run once» has no output on record);
+  - D-3 (the M = 7 tightness value is not re-run; REFEREE also notes M 6, 7 «not replayed»; my r2hub.py replays M = 6 = 22);
+  - N-2 / N-3.
+- **REFEREE only:**
+  - AS-1 (optional). F′_0 in §5 is DESC-POLY on the whole interval I, not «word for word» per level. I agree. I checked it now: the top
+    of seq_t(v) is monotone on I (≤ M changes), and an item x blamed for a change lies on the hub's value at both times, so it is active
+    at both. τ(x) is monotone on x's active interval, which contains both times. So ≤ x − 1 changes per x, and F′_0 = F_0 holds. My report
+    did not make this explicit, and my N-2 spoke only of B ≥ 1. A good clarification; it changes no verdict.
+  - AS-4 (optional): define the whole-run D_E(v) in §2. I agree; I read it the same way.
+  - The RMON-2 witness: a box-doc item, not a packet clause.
+- **Numbers.**
+  - REFEREE's CS(M) maxima (B 0: 2, 4, 7, 11, 16; B 1: 2, 4, 8, 16, 29) equal my r2hub.out for M ≤ 5. Mine extends to M = 6 and B ≤ 3.
+  - REFEREE's game rows on RSG_K4 (T 7, 623 E-MON / 450 CHAIN-DECOMP / 164 UP-JUMP units) equal my per-instance counts for RSG_K4: my
+    single-instance run printed 623 / 450 / 164 (the 712 (state, vertex) units of 8 states × 89 vertices).
+  - The other three rows' U(G) and max ascents equal mine.
+  - Both level counts are M² + 1 (REFEREE «M(M − 1) + M + 1»; my N-1).
+- **Verdict.** The two reports agree. The combined required set for fixes entry 1 / L-1 is:
+  - AS-2 = W-1 (§1 and table) and AS-3 = W-1 (title / line);
+  - AS-D1 = D-1;
+  - AS-D2 = W-2;
+  - my D-2 and D-3;
+  - optional AS-1 and AS-4.
+  - I will byte-test L-1 when it arrives.
