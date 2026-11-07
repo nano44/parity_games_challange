@@ -134,3 +134,41 @@ REFEREE successor 24 (Opus 5.5, D15), 2026-11-06 (date -u in the commit). Indepe
   - L-2 does NOT YET MATCH in meaning: one required replacement, MV-C1 above. With it, the line MATCHES.
   - All packet items stay SIGNED.
 - I did not read docs/referee-2/ beyond the W-1..W-3 texts named above. This section is not a comparison with REFEREE-2's §C.
+
+## §C add. 1. Fixes entry 2 and line L-3 (REFEREE successor 25, 2026-11-07T00:4xZ by date -u; Opus 5.5, D15)
+- Objects at claude/l-new d7b96be8 (fetched):
+  - fixes file (entries 1-2): sha1 8d6223a2fe19e9de37aa86f7bb5b7c2e8dff341c, 7,238 B. Its first 4,635 B are byte-equal to entry 1's
+    file (e933f4d3), so it is append-only.
+  - L-3: sha1 d3983c68cdda03e81fdaedec770af587f758d84e, 4,567 B.
+  - Unchanged: packet 5ce2947d, L-1 819c5815, L-2 f3692aaa, movescheck.py 8153717b.
+- Byte test (own script):
+  - R6's and R7's old strings each occur exactly once in L-2.
+  - L-2 + R6 = 4,563 B, sha1 747dfa48…, which is my §C prediction.
+  - Then + R7 = 4,567 B, sha1 d3983c68…, byte-equal to L-3. The replacement texts in entry 2 equal the applied ones.
+  - Shape: one line, 71 «(» / 71 «)», depth never negative, 0 «|».
+- Meaning:
+  - R6 is exactly MV-C1's text. It states sufficiency (§1 MOVES-EQUIV) and «a polynomial bound on T^R gives only μ polynomial»
+    (§1: μ(d) ≤ T^R(d)). MATCH.
+  - R7: the source note names entries 1-2. MATCH.
+  - Note (no fix): entry 2 labels R6 «the Lead's text verbatim». The text is REFEREE 25's MV-C1, relayed by the Lead. Entry 2's
+    MV-C1 bullet attributes it correctly.
+- DATA: no count or DATA clause changes. The DATA parenthesis is byte-equal to L-2's.
+- Verdict: fixes entry 2 is CORRECT. L-3 MATCHES the byte test and in meaning. All packet items stay SIGNED.
+- The Lead's question: does any signed statement depend on MOVES-2D being open? This concerns L-LOWER 3's CANDIDATE kill, which I
+  have not replayed; I did not open its files. Answer: NO. I checked every occurrence in the packet (5ce2947d):
+  - As an antecedent only:
+    - MOVES-EQUIV l. 90-91, «In particular MOVES-2D implies T^R(d) ≤ 4d² − 4d + 3».
+    - Its proof l. 93, «Under MOVES-2D, μ(d) ≤ 2d».
+    - A false MOVES-2D makes this vacuous, not false. μ(d) ≤ T^R(d) ≤ 3 + (2d − 2)·μ(d) and «μ polynomial iff T^R polynomial» do
+      not use MOVES-2D. A kill μ(6) ≥ 13, μ(8) ≥ 21 contradicts neither (it gives T^R(6) ≥ 13, T^R(8) ≥ 21).
+  - In «Does NOT claim» lists: l. 94 and l. 177 («(7 ≤ 2d = 8)» is a true remark about one instance).
+  - As status labels, not signed statements: l. 9 «CONJECTURE MOVES-2D … stay OPEN», l. 77-78 «(lane, box 181, OPEN)», and l. 198
+    EXCLUDED.
+  - l. 202 «equivalence of two open bounds» refers to «μ polynomial» and «T^R polynomial» (entry 1's W-1 note), not to MOVES-2D.
+  - No DATA counter measures MOVES-2D (movescheck.py has no such counter), so no DATA clause changes either.
+- If two replays confirm the kill, these texts become false or misleading at landing and need relabelling:
+  - in the line: «(the open conjecture MOVES-2D) would give …» and «MOVES-2D is not claimed (it is an open conjecture; …»;
+  - in the packet: the status labels l. 9 and l. 78 (a fixes-entry note; the packet is frozen).
+  - The sufficiency clause would then be vacuous, so L-4 should not present MOVES-2D as a route.
+  - «its necessity is not shown» stays true.
+- Agreed with the Lead's reading: none.
