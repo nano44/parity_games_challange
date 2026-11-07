@@ -1,27 +1,27 @@
-# Handover check: L-NEW (successor 60, Opus; session started 2026-11-07 09:16Z by date -u)
-Overwrites successor 18/19's answers (history in git). Each answer measured from the repository at writing (commands named).
-Predecessor: successor 59, parked at l-new 3fa0f65d (handover section «HANDOVER (successor 59)» in notes/L-NEW.md).
+# Handover check: L-NEW (successor 61, Opus; session started 2026-11-07 18:57Z by date -u)
+Overwrites successor 60's answers (history in git). Each answer measured from the repository at writing (commands named).
+Predecessor: successor 60, parked at l-new 589c9fba (handover section «HANDOVER (successor 60, …)» in notes/L-NEW.md).
 
 ### 1. Branch, head, ahead/behind trunk
 - Trap check: `git fetch --unshallow origin; git fetch origin claude/l-new claude/vibrant-johnson-nxvvxo; git checkout claude/l-new;
-  git merge --ff-only origin/claude/l-new` -> `git branch --show-current` = claude/l-new; `git rev-parse HEAD origin/claude/l-new`
-  both 3fa0f65d. Lane files only.
-- Trunk origin/claude/vibrant-johnson-nxvvxo head 137b5e18 («Lead: roster rows (L-SI 42, REFEREE 26, L-RED 53, L-NEW 59, CHECKER
-  20); routing log», 08:17Z). `git rev-list --left-right --count HEAD...trunk` = **4 ahead / 885 behind**; merge-base fd1266a5 (trunk
-  has l-new up to the P-N5-XICYC freeze commit). Not merged (the brief does not ask for a merge; Lead merges l-new into trunk).
+  git merge --ff-only origin/claude/l-new` (local branch was 975 commits behind: stale container, fast-forwarded) ->
+  `git branch --show-current` = claude/l-new; `git rev-parse HEAD origin/claude/l-new` both 589c9fba.
+- Trunk origin/claude/vibrant-johnson-nxvvxo head 762c2184 («Lead: roster L-LOWER 7, L-RED 55; restart rows; log», 18:20Z).
+  `git rev-list --left-right --count HEAD...trunk` = **5 ahead / 55 behind**; merge-base 478d0bd9 (= the R118 landing commit).
+  Not merged (the brief does not ask for a merge).
+- CI on the lane head (GitHub MCP actions_list, branch claude/l-new): run 6803 on 589c9fba IN PROGRESS (started 18:52Z);
+  run 6798 on 57cae1c0 IN PROGRESS (started 18:23Z); last completed: 6786 on d2295934 SUCCESS, 6772 on 89a033ef SUCCESS.
 
 ### 2. Open work and the next step of each
-- DUTY P-N5-XICYC: L-3 (sha1 1690b6ad, pushed in 50c80a92) at the referees' byte tests. REFEREE-2 30: L-3 MATCHES (its Addendum 1,
-  claude/referee-2 7891ba32, per the Lead brief). REFEREE 26 ITEM 3 pending. Next: if an item is relayed, fixes entry 3 + line L-4 by
-  script (exact strings copied from the report, old string once in L-3, new once), repin experiments/new/box191/xicyc.pins, update
-  check.sh block «P-N5-XICYC», push.
-- DUTY R117 (P-N5-REACH) at CHECKER C130 Add. 1 (L-4 f85a024b); R116 (P-IDEAL-MOVES) at C129 Add. 1 (L-5 a42257cb). Next: an item ->
-  next fixes entry + next line by script.
-- RESEARCH box 192 (after «go»): is R (changes of Odd's best response along N5'-xi = Howard at the movers on Gamma3) polynomial?
-  Equivalent to Corollary T3 («N5'-xi on Gamma3 polynomial for every genome»). Next: read L-RED 53's docs/red/R215-xi.md §53.1
-  (claude/l-red c81dd2d7, read only), then try potential functions from fields not usually used here (matroid / submodular exchange,
-  M-natural concavity, tropical geometry of Xi-values, amortised splay-style potentials), stating at once what each needs; second item:
-  a TIE-restricted domination lemma for RED-XI on general games (X1 fails: x1gen191.py). Nothing of mine running; Oink not built.
+- DUTIES: none open. R116, R117 (REACH3) and R118 (XICYC) are LANDED (trunk docs/RESULTS.md l. 13362 R117, l. 13607 R118);
+  stay ready for any CHECKER / referee item on them (an item -> next fixes entry + next line by script).
+- RESEARCH box 193 (after «go»), the PROOF side of the open core: R polynomial <=> R_mov polynomial (R-SPLIT, [LOC]) <= D(v)
+  polynomial (OVT-DV) <= CONJECTURE IN-BOUND + polynomial height of REALISABLE e-set walks on one vertex's plays («no 3-bit counter
+  under E-DOM in any architecture»). Next: read docs/new/N5-RPOT-box192.md and docs/red/R217-ovt.md (claude/l-red, read only);
+  check each lane lemma used (E-DOM-ALL-d, E-DOM-CHOICE, LEAK-ARCH, CHAIN-SHIELD, HIDE-BUSY; my MERGE, EQ-FLIP, A10 e-part
+  monotone) on pinned instances; then try to prove «lane re-arms <= poly» by generalising LEAK-ARCH / CHAIN-SHIELD without H1-H2
+  (classify how a lane's exits come to beat its chain again, from R104's model + E-DOM + MERGE only), and IN-BOUND. If the proof
+  fails: the escaping architecture as an instance, to L-RED via the Lead. Nothing of mine running; Oink not built.
 
 ### 3. docs/GAPS.md rows I own (`git show trunk:docs/GAPS.md | grep -n L-NEW`)
 - G-N5-TIME (l.11): major; owner «L-NEW (L-LIT T22; referees later)»; status **open**.
@@ -37,9 +37,9 @@ Predecessor: successor 59, parked at l-new 3fa0f65d (handover section «HANDOVER
    claim, including the fleet's own, as wrong until it passes the gauntlet below.»
 
 ### 5. One trap, and the check that prevents it
-- Trap: the lane starts shallow and detached (or with a stale local branch ref); pushes then fail with «invalid refspec», or work
-  lands on a stale base. Check: fetch --unshallow + checkout claude/l-new + merge --ff-only, then `git branch --show-current` =
-  claude/l-new and HEAD = origin/claude/l-new before any work (done, item 1).
-- Also carried: push only via scripts/push.sh as a tracked background task, output redirected to a file then `echo $?` (never piped,
-  never two pushes: pgrep first, no commits while it runs); SHAs quoted only from git output after the commit; stamps from date -u;
-  absolute paths for writes after a cd.
+- Trap (successor 60): ABSOLUTE PATH: a tool copied from scratch kept ROOT=/home/user/...; it passed in the container and failed
+  in CI for six runs (6692-6715). Check: `grep -rn '/home/user' experiments/new/` before every commit, and run a relocated copy of a
+  new tool with the repo path hidden.
+- Also caught again this time: stale container (local claude/l-new 975 behind); fetch + ff-only + HEAD = origin check (item 1).
+- Carried: push only via scripts/push.sh as a tracked background task, output redirected to a file then `echo $?` (never piped,
+  never two pushes: pgrep first, no commits or lane-file edits while it runs); SHAs quoted only from git output; stamps from date -u.
