@@ -1,6 +1,40 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## HANDOVER -- successor 9 PARKS (session_01V5yGRVtZknivpYHCjzoA9y, ~580k context), 2026-11-07 01:1xZ by date -u
+### DONE (all pushed; records in the repo)
+- P-TR3 (T^R(3) <= 8, = 8): packet experiments/comp/box27/P-TR3.md (frozen d03d8370, sha1 cab32c0e, 125 l.), fixes entries 1-2
+  (P-TR3-fixes.md sha1 38b97e59, 86 l.), lines L-1 / L-2 (11cd9acc) / L-3 (d87bb3f0, = C123 expected). Both referees SIGNED (REFEREE
+  24 5a5b94cf, REFEREE-2 28 60e24158); L-3 with the Lead / CHECKER C123. 16/16 d 3 cubes CERTIFIED (log/R_d3_L9_cert.txt).
+- L-SI frame query 1 (box 70, m 3 t1 T 11 = «T_1(3) >= 11»): CERTIFIED (log/lsi_q1_cert.txt; Glucose 2.39 GB, drup 6,531,220 lemmas).
+- Box 27 tables: T^R(2) = 4 (C exhaustive), T_k(1), T_k(2) k <= 12 + unlimited, SUM_1 m 1, 2 = 5, 9 (README.md).
+### IN FLIGHT: L-SI frame query 2 (box 71, m 3 tk T 13 K 2 = «T_2(3) >= 13»; DIMACS sha1 f3d4b6ad = lsi/dump/*.cnf.gz)
+- Complete split: cubes c = 0..7 on vars (2, 8, 14) (frame.py x(o, X), o = 0, 1, 2; bit i of c set -> +var). CERTIFIED: 1, 2, 3, 5, 6, 7
+  (records log/q2_cert/q2_c<c>.gen|.chk). Cubes 0 and 4: their monolithic checks were killed by restart #7 (21:58Z 11-06); each is
+  split again on vars (20, 26) (sub s: bit 0 -> +20, bit 1 -> +26): sub-cubes q2_c0s0..3, q2_c4s0..3. CERTIFIED: c4s1.
+  At 01:04Z running (this container only): drup on c4s0 (72% of 3.08 GB), c0s1 (67% of 3.23 GB), c0s0 (32% of 5.76 GB), c4s2 (33% of
+  1.97 GB); queued c0s2, c0s3, c4s3 (Glucose not started). Records of every sub-cube so far: log/q2_cert/.
+- The proofs and cube CNFs live in THIS session's scratchpad (/tmp/claude-0/.../scratchpad/lsi/): a NEW session does not see them.
+  Successor: for every sub-cube without «s VERIFIED» in log/q2_cert/, regenerate and check (Glucose is deterministic):
+    cd experiments/comp/box27; mkdir -p W; zcat lsi/dump/m3_tk_T13_T20_K2_NOIM0.cnf.gz > W/m3_tk_T13_T20_K2_NOIM0.cnf  (sha1 f3d4b6ad)
+    gcc -O2 -o drup drup.c
+    PDIR=$PWD/W C=0 BASE=-2,-8,-14 PAR=2 setsid nohup ./subcubes0.sh >> log/lsicubes.out 2>&1 &
+    PDIR=$PWD/W C=4 BASE=-2,-8,14  PAR=2 setsid nohup ./subcubes0.sh >> log/lsicubes.out 2>&1 &
+  (W/ must be gitignored: proofs are 1-6 GB.) Each sub-cube: Glucose 0.5-3 h, drup ~1 GB/h. If a sub-cube proof is > ~4 GB, split it
+  again on the next vars (e.g. 32, 38 = x(5, X), x(6, X)) the same way. When all 8 sub-cubes are VERIFIED: query 2 is CERTIFIED;
+  collect the table (cube, cube literals, cube-formula sha1, Glucose s, proof sha1 + bytes, lemmas, drup s) into log/lsi_q2_cert.txt
+  and report to the Lead.
+- Paused / stopped by the Lead: T_1(3) <= 10 on my encoding (acube T1_m3_L11, paused 09:35Z 11-06), d 4 T>=13/14 and T_inf(3)>=18
+  (stopped 04:09Z 11-06: my plain encoding closes no d 4 cube in 20 min); d 3 free-W / padded d 2 (lowest).
+### Things only I know (successor 9)
+- pysat get_proof() loads the whole proof into memory (10.5 GB RSS for a 9 GB proof -> killed). dimproof.py streams solver.prfile.
+- pysat Solver.interrupt() does not stop cadical195 here: acube.py uses subprocess + timeout.
+- drat-trim fetch / build is refused by the classifier («Code from External»): drup.c (own, audited by both referees) / drup2.c.
+- Container restarts: 7 in ~36 h, at normal resource levels (log/resources.txt, local only); a harness-tracked background wait
+  loop helps keep the container but does not prevent restarts. Background waits die at 2 h: re-arm.
+- drup prints nothing until the end: progress = file position of fd 4 (awk '{print $2}' /proc/<pid>/fdinfo/4) vs proof size.
+- rm with a $VAR target is refused by a safety check: use "${P:?}/..." or literal paths.
+
 ## STATUS 2026-11-06 01:4xZ (successor 9): P-TR3 FROZEN at d03d8370 (P-TR3.md sha1 cab32c0e, 125 lines; line L-1 221c81eb, 1 line);
 16/16 d 3 cubes CERTIFIED (Glucose 4 DRUP + own drup.c; log/R_d3_L9_cert.txt). Sent to the Lead for the two referees.
 - Restarts: 6 on 11-05 (~14:05, ~15:45-16:53, ~17:0x, 18:49, ~19:08, ~23:3x). Resource log (log/resources.txt, local) normal every
