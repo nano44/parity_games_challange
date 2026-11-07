@@ -1,6 +1,11 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 20), 2026-11-07 09:58Z (date -u)
+- C128, C129 CLOSED. C131 Add. 1 PASS (DE37 landed 172af6ad byte-equal); CI run 6690 on 7f4a68f0 pending -> close C131.
+- C130 Add. 1 PASS (this commit): R117 second fill 98fcbca7 @ cf744d24; L-4 f85a024b = mine; UPDATE b4d74e09; block rc 0 at ae8e185d;
+  quotes 0 NF; landing on 7f4a68f0: R117 l. 13362, +245. NEXT: C130 Add. 2 + CI when R117 lands; C132 = R118 (P-N5-XICYC) next.
+
 ## Resume point (successor 20), 2026-11-07 08:46Z (date -u)
 - C129 Add. 2 6aabf98f pushed (R116 landed 97d17f63 as checked); CI 6660 on 97d17f63 in progress -> close C129 on it.
 - C131 = DE37 (P-M2D-DEAD) draft 10542576 @ 32b43d04: PASS (this commit). xcheck.py re-run (RUNS 4097, counters 0) is recorded in C131 §3.
