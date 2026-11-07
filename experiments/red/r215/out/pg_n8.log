@@ -19,3 +19,6 @@ it 1828 n 24 xi 13 spec 7 OK
 it 1879 n 24 xi 14 spec 6 OK
 it 1894 n 24 xi 15 spec 7 OK
 it 2537 n 24 xi 16 spec 8 OK
+it 4036 n 24 xi 17 spec 9 OK
+it 5306 n 26 xi 17 spec 8 OK
+FINAL best 9.017

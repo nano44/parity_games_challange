@@ -4,7 +4,7 @@ Genome: core of n vertices (prio 2..2n+1 distinct-ish, owner, Even core vertices
 of priority 0/1 (lowest) with two successors (target w, escape u). W-ties at v in the tau-arena occur whenever tau sends two pads
 to the same vertex, while Xi_sigma (Odd best-responding to sigma) can tell them apart. Odd core vertices have 1-3 successors.
 Score: SCORE=xi -> xi + spec/1000; SCORE=gap -> (xi - spec) + xi/1000. Every new best checked (zielonka + verify).
-Usage: gclimb.py n seed iters outprefix [seedjson]"""
+Usage: gclimb.py n seed iters outprefix [seedjson]  (a seed genome with fewer core vertices is lifted to n)"""
 import sys, os, json, random, copy
 WT = os.environ["WT"]
 sys.path[:0] = [os.path.join(WT, "experiments/new/box190"), os.path.join(WT, "experiments/harness")]
@@ -45,7 +45,16 @@ def score(G):
 def check(g, st, E):
     win, strat = n5v.solution(g, st, E)
     return win == zielonka.solve(g) and not verify.check(g, win, [strat[v] if win[v] == g.owner[v] else None for v in range(g.n)])
+def lift(G):   # grow a smaller genome to n core vertices: new vertices get fresh priorities above the old ones, random options
+    G = copy.deepcopy(G); m = len(G["own"]); top = max(G["prio"])
+    for v in range(m, n):
+        o = rng.randrange(2); G["own"].append(o); top += 1; G["prio"].append(top)
+        G["opt"].append([[rng.randrange(n), rng.randrange(n), rng.randrange(2)] for _ in range(2)] if o == 0 else [[rng.randrange(n)] for _ in range(rng.randint(1, 2))])
+    for v in range(m):   # LIFTRW (default 0): fraction of old vertices rewired into the new part
+        if rng.random() < float(os.environ.get("LIFTRW", "0")): o = rng.choice(G["opt"][v]); o[0] = rng.randrange(m, n)
+    return G
 cur = json.load(open(seedf)) if seedf and os.path.exists(seedf) else rgen()
+if len(cur["own"]) < n: cur = lift(cur)
 cs = score(cur); best, bestG, since = cs[0], cur, 0
 print(f"start n {cs[3].n} xi {cs[1]} spec {cs[2]}", flush=True)
 for it in range(iters):

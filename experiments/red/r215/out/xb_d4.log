@@ -18,3 +18,9 @@ it 1868 n 130 xi 15 spec 7 OK
 it 2118 n 130 xi 15 spec 8 OK
 it 2570 n 130 xi 16 spec 8 OK
 it 3076 n 130 xi 16 spec 9 OK
+it 4845 n 130 xi 16 spec 11 OK
+it 10163 n 130 xi 17 spec 6 OK
+it 10283 n 130 xi 18 spec 6 OK
+it 10509 n 130 xi 18 spec 7 OK
+it 10745 n 130 xi 18 spec 8 OK
+FINAL best 18.008

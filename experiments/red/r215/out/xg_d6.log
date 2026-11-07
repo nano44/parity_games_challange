@@ -1,0 +1,14 @@
+== 05:24Z d 6 seed-file out/xg_d5.json
+start n 190 xi 10 spec 3
+it 4 n 190 xi 11 spec 3 OK
+it 13 n 190 xi 12 spec 4 OK
+it 41 n 190 xi 12 spec 3 OK
+it 52 n 190 xi 13 spec 3 OK
+it 57 n 190 xi 14 spec 3 OK
+it 295 n 190 xi 15 spec 3 OK
+it 385 n 190 xi 17 spec 3 OK
+it 413 n 190 xi 18 spec 4 OK
+it 420 n 190 xi 18 spec 3 OK
+it 1239 n 190 xi 19 spec 3 OK
+it 4489 n 190 xi 20 spec 3 OK
+it 7093 n 190 xi 21 spec 4 OK

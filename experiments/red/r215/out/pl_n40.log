@@ -1,0 +1,5 @@
+== 05:32Z n 40 seed-file out/pg_n32.json
+start n 91 xi 46 spec 7
+it 27 n 91 xi 46 spec 8 OK
+it 120 n 92 xi 47 spec 7 OK
+it 369 n 96 xi 47 spec 8 OK

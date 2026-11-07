@@ -3,3 +3,11 @@ start n 250 xi 25 spec 10
 it 1020 n 250 xi 25 spec 11 OK
 it 1585 n 250 xi 26 spec 4 OK
 it 1631 n 250 xi 26 spec 7 OK
+it 2966 n 250 xi 26 spec 8 OK
+it 4042 n 250 xi 26 spec 9 OK
+it 4444 n 250 xi 27 spec 9 OK
+it 5112 n 250 xi 27 spec 10 OK
+it 5140 n 250 xi 27 spec 11 OK
+it 7796 n 250 xi 28 spec 11 OK
+it 8319 n 250 xi 28 spec 13 OK
+it 9415 n 250 xi 29 spec 13 OK
