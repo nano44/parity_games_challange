@@ -1,4 +1,5 @@
 # L-RED notebook (independent adversary lane)
+Successor 53 (Opus 5.5, D1/D18/D20) started 2026-11-07 05:03Z (date -u); R215 (vs N5′-xi) continued; see «Successor 53».
 Successor 52 (Opus 5.5, D1/D18/D20) started 2026-11-06 18:28Z (date -u); R214 (MOVES-2D DEAD replay, T^R table d 8-14), R215 (vs N5′-xi); PARKED 2026-11-07 ~04:2xZ, see «Successor 52 PARK».
 Successor 50 (Opus 5.5, D1/D18/D20) started 2026-11-05 22:06Z (date -u); R207-R211; PARKED 2026-11-06 ~07:0xZ at ~520k, see «Successor 50 PARK».
 Successor 49 (Opus 5.5) started 2026-11-04 00:18Z; R200-R206; PARKED 2026-11-05 21:1xZ at ~540k context, see «Successor 49 PARK» (supersedes «Successor 49 HANDOVER»).
@@ -49,6 +50,27 @@ Successor 15 PARKED ~09:40Z 2026-10-25 after box 38; RESUME POINT for successor 
 context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older notebook: `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
+
+## Successor 53 handover check (2026-11-07 05:1xZ, date -u)
+1. Branch claude/l-red. Clone checkout was DETACHED and SHALLOW at b14066e1 (= ls-remote 05:03Z). «git fetch --unshallow origin
+   claude/l-red» + «git checkout -B claude/l-red origin/claude/l-red» (ff, no history change) -> HEAD = claude/l-red = origin = ls-remote
+   = b14066e1. Vs trunk claude/vibrant-johnson-nxvvxo d62fa2d6: 153 ahead / 600 behind, merge-base 39588215.
+2. Open work and next step:
+   - R215 vs CANDIDATE N5′-xi (L-NEW box 190, acdbd28b / 066cd543): (a) Friedmann-style family tuned to the Ξσ tie-break (score xi - spec
+     and xi); (b) targeted Ξ-cyclic Γ3 climbs scoring xi to d 10-12 (linear or superlinear?); (c) faithfulness spot check n5bxi.py vs n5v.py
+     on my own corpus. Next: worktree of acdbd28b + Oink, relaunch climbs, then (c), then (a).
+   - Secondary: staged T-table climbs (r214/runtw.sh jobsT.txt, stage.sh); replay L-LOWER 4's RECF4_d20_F60.json when it lands.
+3. GAPS rows (trunk docs/GAPS.md @ d62fa2d6): G-NEST (major, «L-RED (attacks + proof attempts)», open); L-RED attacks GAP-A, GAP-C
+   (blockers, open), G-STR, G-DOM (closed). R215 works against G-N5-TIME (major, L-NEW, open) under D1/D18.
+4. Rulings (verbatim; status from trunk docs/DECISIONS-INDEX.md): D1 «A claimed polynomial algorithm is far more likely to be wrong
+   than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.» (active); D18 «Focus on
+   N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer
+   science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without
+   asking me questions. Clearly distinguish proven results from conjectures and open problems.» (active); D20 «We have reset the weekly
+   usage, so we can again work faster no?» (active).
+5. Trap (bit this start): detached + shallow clone; a «push.sh» from a detached HEAD pushes nothing useful. Check: «git branch
+   --show-current» prints claude/l-red and «git rev-parse claude/l-red» = ls-remote before any commit; fetch + merge (no rebase) before
+   every commit since successor 52's container may still push snapshots; «pgrep -f "bash scripts/push.sh"» before every push.
 
 ## Successor 52 PARK (2026-11-07 ~04:2xZ, date -u; ~510k context)
 - RESULTS of this session (docs/red/R214-moves.md, docs/red/R215-xi.md; witnesses in experiments/red/r214/keep, r214/lower3, pins.sha1):
