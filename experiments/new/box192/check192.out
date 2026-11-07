@@ -58,3 +58,5 @@ switched 8 cycle node 2 play [8, 16, 0, 18, 15, 12, 7, 3, 10, 1, 2]
   k 9: z 8 edge to 16 not in TIE_k(z) = [6]
   k 9: z 7 not a TIE vertex
 TIE-PERSIST failures 13
+rd2_d9.json T 21 max mover D 21 max mover D_E 21 max inner changes (e-part fixed, any vertex) 2
+rf_d5.json T 11 max mover D 11 max mover D_E 11 max inner changes (e-part fixed, any vertex) 1

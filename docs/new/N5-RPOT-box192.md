@@ -360,3 +360,34 @@ to the switch that completed the return route. It is not proved, and it would ne
   that, and this instance shows the loss.
 - Consequence for RED-XI on general games: the X1 route (Howard-faithful σ-steps) is still the only reduction. The TIE route is dead in
   its natural form. The Γ3 route (X1 holds there by REACH3-CYC, R117/R118) is unaffected.
+
+## Addendum 9: erratum on MERGE's side line (L-RED 54, R217 §7); value counts under E-DOM (DATA)
+- Erratum (§2 MERGE). The closing side line «e_g ∈ A′ always» is FALSE in the RET case. There m = e_g (the β-play runs back through g
+  and e_g), so A′ = ∅, by A1.1's own definition. Correct statement: «e_g ∈ A′ unless m = e_g (RET), where A′ = ∅».
+  - MERGE's statement and proof, MERGE-CHOICE, EQ-FLIP, X-GATE, R-SPLIT and A1.1 do not use the side line. A1.1 treats RET separately.
+    The only uses are READINGS: §2's reading after MERGE, and §4's «What remains», which presumes e_g on the e-side. Read both with the
+    RET case split. Thanks to L-RED 54, which corrected its TOP-DEC the same way.
+- OVT-DV (L-RED 54, R217 §2), checked here line by line: correct. One citation needs changing: «D(e_g) ≤ D(y) + 1 because ext is
+  injective (F4)». F4 is false in general (XC-1), but the bound needs no injectivity: the image of a set of D(y) values under ext(e_g, ·)
+  has at most D(y) elements.
+- E-DOM (L-RED 54, from R104 [DEF] eb = bmax + 1: every e lies above every β; only c_W, K0, K3 lie above an e). DATA on whether values
+  move through e-level events.
+  - Per vertex v, define:
+    - D(v): distinct values;
+    - D_E(v): distinct (cycle node, e-part of Π) pairs;
+    - IN(v): the most value changes of v inside one stretch with (cycle node, e-part) constant.
+  - Results (dv192.py):
+
+| instance | T | max mover D | max mover D_E | max IN (any vertex) |
+| --- | --- | --- | --- | --- |
+| rd2_d9 | 21 | 21 | 21 | 2 |
+| rd2_d10 | 26 | 18 | 16 | 3 |
+| rd3_d7 | 25 | 19 | 13 | 3 |
+| cR_d2_w8_R22 | 24 | 16 | 16 | 2 |
+| rf_d5 | 11 | 11 | 11 | 1 |
+
+  - So values move almost only through e-part changes: D(v) ≤ (IN + 1)·D_E(v) with IN ≤ 3 in this data.
+  - CONJECTURE IN-BOUND: IN(v) ≤ c (a constant, or polynomial) on IDEAL-CYC. Then OVT-DV gives OVT-POLY ⇐ «D_E(v) polynomial».
+  - That target is the number of distinct sets of e-vertices on v's play, a lex-monotone walk over subsets of the e's (R95 k-prefix
+    form). By E-DOM it is the top layer of the value. It is still not bounded here; D_E ≤ T + 1 trivially.
+  - Unit: values / changes per vertex. Set: the five instances listed. Scope: IDEAL-CYC.
