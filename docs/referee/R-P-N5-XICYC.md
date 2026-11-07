@@ -296,3 +296,35 @@ docs/referee/scratch/:
   - XC-1 to XC-4 and XC-L1 to XC-L4 all closed;
   - every statement of §0 is now SIGN: BR-SEG, T-CYC, ONEP-POLY and BR-SEG-G with their repaired proofs, RED-XI, REACH3-CYC and
     Corollary T3 still PROVED-CONDITIONAL on [REACH-L] (R117, not landed), and the DEAD items as before.
+
+## §C add. 1. Line L-4 (CHECKER C132 R1-R7; R118) (REFEREE successor 26; date -u at writing 2026-11-07T12:43Z)
+- Objects at claude/l-new e36fdfcd (worktree; sha1 of the bytes):
+  - L-4 85fe809c…, 6,342 bytes, 73 «(» = 73 «)», 0 «|»;
+  - L-3 1690b6ad… unchanged;
+  - fixes 90d0f09d… (entry 3 appended; every C132 new string occurs in it);
+  - xicyc.pins df6f4799…
+  - C132 read at claude/checker d6b877f7; RESULTS R117 read at trunk ac1bc37c (l. 13362 ff.).
+- Byte test (own script): R1-R7 are parsed from C132 §5 (wrapped lines joined by one space). Each old string occurs once in L-3 and
+  each new string once in L-4. L-3 with R1-R7 applied is byte-equal to L-4 (sha1 85fe809c…, 6,342 bytes).
+- R1 in meaning, against R117's landed entry and this report: CORRECT.
+  - R117's entry signs S3-START [every genome] and PAD [every genome] in (c) and (d). Its transfer lemmas carry
+    [IDEAL-ACYC; K3 and TAU3 every genome], so ESC3 and W3 are signed for acyclic Ξ-graphs only.
+  - R117's line states S3-START and PAD inside REACH3, «for every G with an ACYCLIC Ξ-graph».
+  - The every-genome forms of ESC3 and W3 are P-N5-XICYC §7's re-reading, which this report signed (§3.1, with XC-3 closed by
+    Lemma K2-r). So «CONDITIONAL on … ESC3, W3 for every genome» states the remaining condition exactly: the every-genome forms of
+    ESC3 and W3 are not a landed result.
+  - Dropping «not landed» is right, since R117 has landed.
+  - The rest of the clause (σ̄(K2) = r in the fixes; the [1E-N3] premise) is unchanged from L-3.
+- R6: CORRECT. docs/referee/scratch/xicyc_logs/brseg_gen191_H0fail_2000_3_12.out exists at 42648076 and prints «INSTR H0-failing steps
+  388 of 2072». «with one counter added to brseg_gen191.py» is how it was made (§C).
+- R7: CORRECT.
+  - STRICT-G and PATH-G are this report's §2.2; Lemma K2-r is §3.2.
+  - Both are restated in fixes entry 2.
+  - «signed by both referees»: this report's §C closes XC-2 and XC-3. REFEREE-2's Addendum 1 (claude/referee-2,
+    docs/referee-2/R2-P-N5-XICYC.md l. 189-197) signs BR-SEG-G and RED-XI with STRICT-G / PATH-G and accepts K2-r. Read after my
+    reports were pushed.
+- R2-R5: CORRECT.
+  - R2: the fixes file is named with its entries.
+  - R3, R4: the proof lemmas and the T3 / C bounds carry no counter.
+  - R5 is a wording fix.
+- Verdict: L-4 MATCHES, by the byte test and in meaning. All statements stay as signed in §C.
