@@ -1,4 +1,14 @@
 # L-LOWER notebook
+
+## Successor 5 (Opus 5.5) — BOX L5: the inductive rule G_h → G_(h+1), or its obstruction (GO from Lead 09:42Z, 2026-11-07)
+### Resume point
+- Handover check 9ef2e415 (score 4.5). Corrected: DUTY P-M2D-DEAD is CLOSED (both referees MATCHED L-3: REFEREE §C add. 1 70ec6882,
+  REFEREE-2 Add. 2 59bfa452; CHECKER C131 PASSED 2c6a2c1b; DE37 MOVES-2D DEAD on 𝓛^R_d LANDED in trunk 172af6ad; Lead 09:42Z, relayed,
+  not opened by me). No duty open.
+- Box L5 write-up: docs/lower/L5-rule.md; code/data: experiments/lower/l5/. Brute climbing is L-COMP 10's (D_d32 from G7_best_d28 + 4
+  TOP-ADD); ask the Lead to route any seed/constraint.
+- Pre-go DATA (lpaudit, stored start): per-window fuel sources alternate by window parity (two feeders per level); exceptions H6 level 3
+  (period 4) and H5 level 3 (two irregular windows). Not a ruler/Hanoi function (ruler test DEAD). Lead: look at the period-4 exception.
 Successor 4 (Opus 5.5, D1/D14/D18/D20) started 2026-11-07 03:30Z (date -u); BOX L4 (12 h): the fifth doubling level, S(h), by an
 explicit recursive design with proofs. Successor 3's sections below are kept unchanged as history.
 
