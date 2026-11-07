@@ -207,3 +207,41 @@ claude/l-new 73b3d1fd. I did not read docs/referee-2/ for this report.
     - «edge order» was indeed open to another reading (successor order). The (a, b) form is better. RC-2 is SATISFIED.
     - Note (no fix): «(a, b)» is not bound earlier in the line, but «every edge … (a, b) order» reads unambiguously as edges (a, b).
 - Verdict: fixes entry 2 is CORRECT. L-3 MATCHES, by the byte test and in meaning. All statements stay SIGNED.
+
+## §C add. 2. Fixes entry 3 and line L-4 (CHECKER C130 R1-R4) (REFEREE successor 26; date -u at writing 2026-11-07T08:23Z)
+- Objects at claude/l-new fdf01b8c (worktree; sha1 of the bytes):
+  - line L-4 f85a024b8c8caa4c996fcd15bf1e78fbd436b534, 3,942 bytes, 1 line, 64 «(» / 64 «)»;
+  - fixes (entries 1-3) be31f7741264c809ec306889ecb31046c1671598, 9,935 bytes;
+  - L-3 adfbb3b8… unchanged.
+  - CHECKER docs/checker/C130.md read at claude/checker 126f9772.
+- Byte test (own script, not C130's):
+  - R1-R4 are parsed from fixes entry 3 and, independently, from C130 §5 (wrapped lines joined by one space). The two sets of
+    strings are identical.
+  - Each old string occurs once in L-3 and each new string once in L-4.
+  - L-3 with R1-R4 applied is byte-equal to L-4 (sha1 f85a024b…, 3,942 bytes).
+- Meaning against the counters (experiments/new/box189 at fdf01b8c):
+  - R1 (E-1): «σ(K0) = K1 and σ(K1) = K0 at all 908 states»
+    - Counter: reachcheck.py NR-CORE, which counts states with not (s[K0] = K1 and s[K1] = K0). reachcheck.out «C14+R440 NO-REACH runs
+      454 states 908: … core-not-(K0->K1,K1->K0) 0»: unit = state, set = the 908 states of the 454 S3 runs on Γ(G).
+    - Note: NR-STD (the «standard 0» count) tests the stated start off the movers AND τ = start together, so on its own it would give
+      only the conjunction. The σ-only phrase «0 of them equal to R104's stated start off the movers» follows from NR-CORE = 0, since
+      every state has σ(K0) = K1 while the start has σ(K0) = K3. The clause is therefore backed by a counter.
+  - R2 (E-2): NO-REACH (c), the no-improving-edge clause, has no counter in reachcheck.py (it never reads Iσ). Listing it as «no
+    separate DATA» is correct.
+  - R3 (E-3): xcheck.sh loops over the *_g3 and *_g0 .pg files of the 14 corpus genomes; xcheck.out has 28 lines with 28 «OK strategies
+    verified». n5b's Γ3 iteration counts equal reachcheck.out's S3-iterations on 14 of 14. Its Γ iteration counts are all 1, which
+    equals NO-REACH's histogram {1: 14} on C14. «the 28 games Γ(G) and Γ3(G) of the 14 corpus genomes» is exact.
+  - R4 (E-4): packet §9's instances A (n = 3) and B (n = 5) are the two SUBDIV-DEAD lines of reachcheck.out. My own G^pad replay
+    (§C add. 1, scratch/subdiv_replay.py) used the same start pairs.
+- XC-3 / REFEREE-2 N-1 for R117. K3 (b) ends «These values hold once SBAR3 gives σ̄(K2) = r», and SBAR3 is IDEAL-ACYC, so the label
+  «every genome» of K3 is incomplete as printed. My miss in this report (§0 signed K3 with that label).
+  - Fixes entry 1's reply («K is closed, so K's values depend only on the strategies on K, and Odd's unique best at K2 is r») is the
+    argument of R-P-N5-XICYC §3.2. In every standard state σ(K1) = s, so r leads to the cycle node K1 (Ω 5), while K2's loop is node
+    K2 (Ω 3). Both are odd, so r is strictly better for Odd, and [1E-N3] P1 gives σ̄(K2) = r for every genome.
+  - Together they settle it: K3 (a)-(d) hold for every genome.
+  - For R117 nothing changes. REACH3 and Corollary REAL-IDEAL-S3 are IDEAL-ACYC, where SBAR3 itself holds. TAU3 and NO-REACH use
+    K3 (c) or no K3. The line does not mention K3.
+  - K3's «every genome» label now rests on fixes entry 1's reply, which is the record that P-N5-XICYC's REACH3-CYC needs (XC-3 / XC-L4
+    there).
+- Verdict: fixes entry 3 is CORRECT. L-4 MATCHES, by the byte test and in meaning (R1-R4). All statements stay SIGNED; K3 is signed for
+  every genome with fixes entry 1's reply as its proof of σ̄(K2) = r.

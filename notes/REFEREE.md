@@ -1,6 +1,41 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 26), written 2026-11-07T07:46Z by date -u (Opus 5.5, D15)
+- DONE: STEP 0 (ee57bdad; answers sent 07:46Z). ITEM 1 R-P-N5-XICYC.md (695b610c): §4 SIGN (BR-SEG/T-CYC/ONEP-POLY with gap XC-1 =
+  F4 false as stated, restricted F4′ suffices), BR-SEG-G / RED-XI SIGN WITH GAP XC-2 (DOM false on general games, 3-vertex instance;
+  repaired STRICT-G / PATH-G in report §2.2), REACH3-CYC + Cor. T3 SIGN conditional with XC-3 (K3 (b) cites SBAR3; every-genome
+  σ̄(K2) = r proof §3.2) and XC-4 ([1E-N3] unnamed); DEAD SEG-2P / ODD-FIXED SIGN rule-free. L-2 byte test MATCHES; L-2 NOT YET:
+  XC-L1 (555 not printed), XC-L2 (switchallexp N 6, 7 unpinned), XC-L3 («bad stops» does not read the fallback flag), XC-L4.
+- IN FLIGHT: push of ee57bdad + 695b610c (+ this). Then message the Lead with the verdicts.
+- NEXT: §C of XICYC when fixes entry 2 / L-3 arrive; ITEM 2 P-IDEAL-DBL (L-SI 42) when the Lead sends SHAs.
+- Tools (docs/referee/scratch/xicyc_*.py): own VJ engine (xicyc_vj: values, cmp, ext, Odd local improvement, brute force), own Γ/Γ3
+  builder (xicyc_replay.build, equal to gamma3.build on 322 genomes), reach3 replay against box190 n5v «xi», DEAD / ODD-FIXED forced
+  R-step test, sae runner with SPEC S3 start. Worktrees in scratchpad: lnew (86afce49), lnew_frz (fd1266a5).
+- Trap seen: verify.sh's experiment checks write untracked files (experiments/new/box191/out/eq_mismatch_*.json, __pycache__) into
+  the checkout; never `git add -A`.
+
+## Successor 26 handover check, written 2026-11-07T07:29Z by date -u (Opus 5.5, D15)
+- Stale-clone check: clone came up DETACHED («HEAD detached from refs/heads/claude/referee») and shallow. ls-remote claude/referee =
+  e74638b6; fetch --unshallow; checkout claude/referee; ff-only; HEAD = origin/claude/referee = ls-remote = e74638b6.
+1. Branch claude/referee, head e74638b6 at start: 0 ahead / 406 behind trunk claude/vibrant-johnson-nxvvxo 6f9cc0b0 (merge-base
+   e74638b6, i.e. trunk already contains my head). Fast-forwarded to 6f9cc0b0 (0 / 0); this commit makes 1 ahead.
+2. Open work:
+   - ITEM 1: full review of P-N5-XICYC (L-NEW 59, box 191; frozen l-new fd1266a5, L-2 + fixes entry 1 at 86afce49). Next: re-hash the
+     five objects, run check.sh blocks, review §4-§8 + Corollary T3, DATA rule on L-2 clause by clause, own replays (Howard on Γ3,
+     BR-SEG, DEAD instances) -> docs/referee/R-P-N5-XICYC.md. docs/referee-2/ not read on this item before my push.
+   - ITEM 2: P-IDEAL-DBL (L-SI 42) after item 1; waits for the Lead's SHAs (freezes after R116 lands).
+3. docs/GAPS.md rows owned by REFEREE: none. G-N5-TIME (major, open; owner L-NEW, «referees later») is the row item 1 feeds.
+4. Rulings (verbatim), status in docs/DECISIONS-INDEX.md:
+   - D1 (active): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the
+     fleet's own, as wrong until it passes the gauntlet below.» and «Never downgrade the referee to save money.»
+   - D18 (active): «Focus on N5 and work toward proving it. Explore novel approaches ... Clearly distinguish proven results from
+     conjectures and open problems.»
+   - D20 (active): «We have reset the weekly usage, so we can again work faster no?» (Lead readings L48-L50 under it, active.)
+5. Trap: DETACHED HEAD + stale clone at start (again this session: detached, 406 behind trunk). Check: `git branch --show-current`
+   must print claude/referee and HEAD must equal ls-remote before any push.sh. Second trap kept: the DATA rule applies to my own fix
+   texts (s25 RE-L1); every count is checked against the counter's loop bounds and «continue» lines.
+
 ## HANDOVER NOTE (successor 25), date -u 2026-11-07T05:2xZ at writing (see the commit time); Opus 5.5, D15; parked on the Lead's 05:22Z ask
 - DONE (all pushed via scripts/push.sh, VERIFY PASS; Lean and Oink steps NOT RUN as usual):
   | packet | report (commits) | final state |

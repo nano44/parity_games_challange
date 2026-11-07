@@ -1,0 +1,6 @@
+F4 test: cmp(A,B) = 1 ; cmp(ext(x,A), ext(x,B)) = -1 (F4 needs >= 0 for both)
+t 0 sigma [0, 0, 1] values [(0, [], 0), (0, [1], 1), (0, [1, 2], 2)]
+DOM at x, step 0->1, successor y: Omega_1(x) = (0, [1], 1) ext(x, Omega_0(y)) = (0, [1, 2], 3) cmp = -1 (DOM claims >= 0)
+t 1 sigma [0, 0, 0] label p values [(0, [], 0), (0, [1], 1), (0, [2], 1)]
+t 2 sigma [0, 2, 0] label p values [(0, [], 0), (0, [1, 2], 2), (0, [2], 1)]
+p-run length 2 n_E 3: BR-SEG-G (a) holds here
