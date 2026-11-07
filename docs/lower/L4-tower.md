@@ -145,7 +145,14 @@ TARGET.md claim (diff in §8).
   - after 4 more TOP-ADD levels (d 20, rclimb with __int128 values): F(4) = 54 (F 2 5 12 26 54: levels 2, 3, 4 exact doubling over
     F(1) = 5), then F(4) = 56 (T 71, F 2 6 13 28 56 42 16 8 4 4 2 3 4 3 3 3 4 4 3 2; rec/RECF4_d20_F56.json, sha1 1167b8a6…; box150 Gen
     SIM-MISMATCH 0, movescheck 0): level 1 doubles (6), level 2 one short (13), level 3 doubles (28), level 4 two short (56 = 2·28).
-    CANDIDATE record. No run so far has four CONSECUTIVE doubling levels (max 3: REC_d10_tower levels 1-3, the d 20 climb levels 2-4).
+    CANDIDATE record. Then F(4) = 60 (T 67, F 2 6 14 30 60 …, levels 1-3 exact; rec/RECF4_d20_F60.json, sha1 354b7d44…) and 61.
+  - FOUR CONSECUTIVE DOUBLING LEVELS (first instance; CANDIDATE): rec/DBL4_d20_F30.json (sha1 43704358…), 𝓛^R_20, Ξ-acyclic, stored
+    start, T 30, F = 0 2 6 14 30 20 16 …: levels 1, 2, 3, 4 all exact (F(l) = 2F(l − 1) + 2 from F(0) = 0), moves 1/1, 3/3, 7/7, 15/15
+    on pairs 1-4 (= 2^l − 1 = F(l − 1) + 1, R113 MOVES with equality). Checks: l3/sim.py = box150 Gen (xcheck SIM-MISMATCH 0, movescheck
+    counters 0), memcheck (i)-(vi) PASS, DOUBLE-EQ′ 0 violations on all 4 levels, LATE-PREF 0 violations on its 11 windows, every window
+    event from ABOVE (lpaudit.py). Found by the CHAIN=4 climb (rclimb.c, __int128) from the F(4) = 61 genome. So S(4) ≤ 20 (S as in L-SI
+    41 §9: least d with h consecutive doubling levels). Levels 1-4 here start from F(0) = 0; the Lead's «fifth level» (F 2 6 14 30 62,
+    levels 1-4 over F(0) = 2) is still open (best 61).
   - forced crossed pair 4 (9 → (6, 7), 4's option re-pointed; NOMUT 6-9; three annealing schedules, 2·10^8 proposals): F(4) ≤ 34.
   - forced CROSS pair 2 under a targeting pair 3 (seedCR2): F 2 4 10 20 …: level 3 stays below doubling (CR2_d10.json).
 - Relaxation (drv.c, EB = 2, block of the d 14 tower): climbs reach Fmax₂ F(4) = 30 (below the real 52 found by the real climb; the
