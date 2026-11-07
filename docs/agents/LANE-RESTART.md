@@ -249,3 +249,5 @@ Five questions:
 | 2026-11-06 | L-RED | session_01V5yGRYH6Phj1nRvDkjRcAr (PARKED, handover b6426b33; idle confirmed 18:2xZ; its push 24 still in its container) | session_01V5yGRZ5wDYLSLhxR4XqKEW (Opus, D1/D18/D20) | PENDING | PENDING (told to wait for 51's final snapshot) |
 | 2026-11-06 | L-NEW | session_01V5yGRZaLkWxqVNtbeLt55J (PARKED, handover 0320ab9e) | session_01V5yGRXqTHhphYxB6STpz6Z (Opus, D14/D18/D20) | PENDING | PENDING |
 | 2026-11-06 | REFEREE | session_01V5yGRVwYrR9t5ou8J7NpU6 (PARKED, handover bc2bdd5a; idle confirmed 23:3xZ before creation) | session_01V5yGRYL9TALEt9Zg8U7NQg (Opus, D1/D18/D20) | PENDING | PENDING (successor's check) |
+| 2026-11-06 | REFEREE-2 (second seat; 28 still finishing IM) | session_01V5yGRXnqmj4uUT6gvVHRfp (active until its IM report; then parks) | session_01V5yGRXHPVCKLouwxPfyxXk (Opus, D1/D18/D20) | 5 | none (handover check passed 5/5; row added late 00:0xZ 11-07 by Lead) |
+| 2026-11-06 | REFEREE (check) | session_01V5yGRYL9TALEt9Zg8U7NQg | (successor 25 STEP 0) | 5 | none (e1815909: ls-remote = HEAD = bc2bdd5a, not shallow; trap = DATA rule; jobs detached/resumable) |
