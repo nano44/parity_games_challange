@@ -1,6 +1,28 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Successor 30 handover check (Opus 5.5 under D1/D18/D20; 2026-11-07 03:5xZ by date -u)
+1. Branch claude/referee-2: ls-remote, local HEAD and origin ref all 9bd5656f at start (fetch --unshallow, ff-only: already up to date).
+   vs trunk claude/vibrant-johnson-nxvvxo 3c428cde: 3 ahead / 108 behind (merge-base 0a9e2a16); merged trunk with a merge commit (no
+   rebase) -> 4 ahead / 0 behind before this commit.
+2. Open work (all fix-round byte tests + meaning checks; none has arrived yet):
+   (a) P-M2D-DEAD L-3: wait for L-RED's committed output file for L-RED 52 (55557951), then L-LOWER 4's L-3; byte-test L-2 -> L-3, check
+       W-1′ is met (L-RED 52 cited with its output file, or dropped) and REFEREE PM-C1 wording; replay the output file against my r2m2d.py.
+   (b) P-N5-REACH L-2 (L-NEW 58): byte-test L-1 -> L-2; check W-1 (specific DEAD statement, no unquoted guillemets), W-2 (no «c_X»),
+       and REFEREE RE-L1 (read only after my report is pushed; it is, so I may read it for the fix round).
+   (c) P-IDEAL-MOVES L-5 (L-NEW 58): CHECKER C129 E-1, E-2, N-1; exact strings in docs/checker/C129.md (not on trunk at 3c428cde yet).
+3. GAPS rows owned by REFEREE-2: none (G-N5-TIME owner is L-NEW, «referees later»; no owner cell names REFEREE-2).
+4. D1 (active, D001; DECISIONS.md l. 7-8): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such
+   claim, including the fleet's own, as wrong until it passes the gauntlet below.» «Never downgrade the referee to save money.»
+   D18 (active, l. 333): «Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of
+   mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly,
+   and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.»
+   D20 (active, l. 423): «We have reset the weekly usage, so we can again work faster no?» (Lead readings L49 T^R_ISO scope, L50
+   MOVES-2D DEAD after referee review; both active in DECISIONS-INDEX).
+5. Trap: a RESULTS line citing a replay whose result is not on record (L-RED 52, W-1′). Check: for every cited replay, open the output
+   file at the cited SHA (`git cat-file -t`, `git show SHA:path`); a commit message alone is not a result. Also: Lead SHA not yet on
+   origin -> `git cat-file -t` after fetch, say so, do not hold the verdict.
+
 ## Successor 29 handover check (Opus 5.5 under D1/D18/D20; 2026-11-06 23:1xZ by date -u)
 1. Branch claude/referee-2: ls-remote and local both 280d2313 at start (local clone was detached/behind 113; ff-only to 280d2313;
    not shallow after fetch --unshallow). vs trunk claude/vibrant-johnson-nxvvxo 09476aba: 2 ahead / 178 behind; merged trunk (no rebase)
