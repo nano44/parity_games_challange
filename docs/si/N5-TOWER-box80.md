@@ -130,6 +130,13 @@ DATA / READING. Not a TARGET.md claim; no statement bounds T polynomially; G-N5-
   move at once. PULSE-NEST's second clause (every j-window has length ≥ k + 2) forbids them for 7 capped levels. The climb's score
   counted only pulses (u_2 − u_1), not the gap windows, so it could not see this obstruction. pclimb.c now has WIN=1 (every j-window of
   length ≥ H − j + 1 for j = 1..H − 1); on the snapshot it scores exactly these 16 deficits. Climbs with WIN=1 run from the snapshot.
+- With the window score (WIN=1), two independent climbs reach window deficit 0 and still have F(6) = 222. One of them is
+  experiments/si/box80/out/climb_w1_P0.json (sha1 622f68e5783e16eddc47e6b46d2bc65071af88cd; d 28, T 281, F 2 6 14 30 62 126 222 190 94 …; lvl6_w1.out).
+  - The same 16 windows (index ≡ 4 mod 8) are skipped. They now have length 2, but π of the pair 6 never reaches c in them (no fuel).
+  - Phase (DATA): the lost moves are exactly in the pair-4 pulse that falls while the pair 3 is TOGETHER (outside its pulse).
+    There the middle 6-window gets no move and its two neighbours one each. While the pair 3 is split, every 6-window gets both moves.
+  - READING: the pair 6's fuel reaches it only through chains that pass the split pair 3. A 7th capped level needs a fuel path for
+    the pair 6 that is live in the pair-4 pulses inside the pair-3 gaps. That is a concrete design target, not yet met.
 - Closures: every Z_j of H5 and of H6 (j = 0..6) is the whole genome (40 resp. 48 movers).
 
 ## 6. Question (b): a lower bound on the levels per capped level — what is and is not proved
