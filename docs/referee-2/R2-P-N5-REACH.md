@@ -112,3 +112,36 @@ No statement is REFUSED; no gap. N-1..N-4 are notes that do not affect a verdict
 - F-2: independent replay on my own builder + SPEC loop (si.py Engine) and on L-COMP's n5b: FL run = L(G) on all 14 corpus genomes
   (up to L 59, n 340); NO-REACH on all 14; my Γ3 builder equals the lane's pins byte for byte.
 - F-3: L-1 MATCHES after W-1, W-2.
+
+## Addendum 1: fix round 1 / L-2 (claude/l-new 571c75c5; REFEREE-2 successor 30, 2026-11-07 03:5xZ by date -u)
+- Object (sha1 of the bytes at 571c75c5, equal to the Lead's relay 04:00Z): docs/new/P-N5-REACH-line-L2.txt 4de27b32d5ed…, 3,628 B;
+  P-N5-REACH-fixes.md 307651b2779f…, 5,344 B (entry 1); L-1 b12ec57a… unchanged.
+- Byte test (own script R2-P-N5-REACH/bt_l2.py, output bt_l2.out): RE-L1, W-1, W-2 old strings each occur exactly once in L-1, new strings
+  once in L-2; L-1 with the three replacements == L-2 byte for byte (sha1 4de27b32…, 3,628 B); 1 line, 57 «(» = 57 «)», depth never
+  negative, 0 «|», no «c_X» ✓.
+- W-1 (old span chosen by L-NEW): my predecessor's W-1 gave the new text from «the statement that, …» to «… is DEAD», replacing the
+  guillemet quote that L-1 presented as the DEAD statement. The span «the statement «S3 can be simulated on every game by subdividing every
+  edge» is DEAD» is exactly what that new text replaces; the following «as stated (DEAD SUBDIV: …)» stays. This is W-1's intent ✓.
+- W-2: «outside K2, K3 and the unused even self-loop of priority 2», verbatim ✓.
+- RE-L1 counts, re-run (git archive 571c75c5; reachcheck.py with counters added only, R2-P-N5-REACH/reachcheck_r2.py, runs from
+  experiments/new/box189 of that archive; output reachcheck_r2.out; its lane lines are identical to the committed reachcheck.out apart from
+  the --approx line, which I did not run). Counter code read (gamma_counts l. 78-96, gamma3_counts l. 98-112):
+  - «the β-free P-sets of NO-REACH 0 on 42,880 (state, vertex) pairs»: NR-PAIRS = the 908 states of the Γ runs from S3 × every vertex
+    except K2, K3, c_X (all vertices: 45,604). The line's NO-REACH clause is itself stated «at a vertex outside K2, K3 and the unused even
+    self-loop of priority 2», so the pairs «of NO-REACH» carry that scope in the line ✓. NR-BETA also counts «cycle node ranked ≤ some β»,
+    which is packet §2 (d) exactly (stronger than the line's wording; 0 either way) ✓. All 454 genomes are acyclic (asserted), as (d) needs ✓.
+  - «S3-START 0 on 454 genomes» ✓ (one count per genome).
+  - **«PAD 0 on 693,030 (state, vertex, world) triples of the S3 runs on Γ3»: the counter skips c_X** (l. 110 «if v == cX: continue»);
+    over every vertex the triples are 698,204. Its predicate «cycle node Ω < 3 or pad in P» is packet §5 (b), which is stated for v ≠ c_X
+    only (c_X's own cycle node has Ω 2, so the predicate would fire there). The line's PAD clause («no pad is ever a cycle node or in a
+    P-set») has no exception and is true at c_X too: my added counter gives 0 pads in the P-set or as cycle node at c_X on its 5,174
+    triples, cycle node always c_X. So the number is correct but its set is not the one the line names: a reader counting the line's
+    triples gets 698,204. This is the C129 E-1 class (unit / set of a DATA count).
+    **W-3 (required, wording; old string occurs once in L-2):** «PAD 0 on 693,030 (state, vertex, world) triples of the S3 runs on Γ3,» →
+    «PAD 0 on 693,030 (state, vertex, world) triples of the S3 runs on Γ3 (every vertex but the unused even self-loop of priority 2),»
+    (L-2 with W-3: sha1 46c2e5079e47e0dc67993ec184933a21d2f17b5d with its newline, 3,687 B, 1 line, 58 «(» = 58 «)»; own computation.)
+  - «both DEAD SUBDIV instances re-run»: the two SUBDIV-DEAD lines (my run: identical; my own r2reach_subdiv.out agrees) ✓.
+  - «Corollary REAL-IDEAL-S3 no separate DATA»: packet §10 no-DATA list ✓.
+- Entry 1's notes N-1..N-4, D-1 quote my predecessor's items correctly ✓.
+- Verdict: entry 1 **CORRECT** for W-1, W-2, RE-L1 as applied; **L-2 MATCHES after W-3** (Opus 5.5, D1). Statement verdicts unchanged
+  (all SIGN); W-3 is wording only and changes no count.

@@ -172,3 +172,24 @@ No statement is REFUSED. No gap is listed: every proof is complete from the land
 - Post-note (02:1xZ): L50 is now on origin at trunk 6ca995ed (docs/DECISIONS.md l. 440, index row l. 45), opened. Its (2) «P-IDEAL-MOVES
   lands with a line that makes no status claim about MOVES-2D (fix round 3, L-4). Its signed items do not depend on MOVES-2D (both
   referees, 2026-11-07).» agrees with L-4 and with my Addendum 2. Addendum 3's verdict stands.
+
+## Addendum 4: fix round 4 / L-5 for CHECKER C129 (claude/l-new 571c75c5; REFEREE-2 successor 30, 2026-11-07 03:5xZ by date -u)
+- Object (sha1 of the bytes at 571c75c5, equal to the Lead's relay 04:00Z): docs/new/P-IDEAL-MOVES-line-L5.txt a42257cb159b…, 4,750 B;
+  P-IDEAL-MOVES-fixes.md fba3443ac0d7…, 12,899 B (entry 4); L-4 73c16d1e… unchanged. Source of R1-R3: docs/checker/C129.md at claude/checker
+  a1963575 §5.
+- Byte test (own script R2-P-IDEAL-MOVES/bt_l5.py, output bt_l5.out): each of R1, R2, R3's old strings occurs exactly once in L-4 and each
+  new string once in L-5; L-4 with R1-R3 applied == L-5 byte for byte, sha1 a42257cb159b2e51128c2334062d44edb97661f6, 4,750 B (= C129 §5's
+  computed sha1); 1 line, 74 «(» = 74 «)», depth never negative, 0 «|» ✓.
+- Meaning, measured with my own simulator (R2-P-IDEAL-MOVES/r2l5.py on r2moves.py class G; output r2l5.out; no lane code):
+  - R1 (E-1): on the 63,223 corpus runs, T = 1 + #{t ≤ T − 1 : Mv_t ∩ Z ≠ ∅} holds on 59,502 and T = 1 + Σ_(z ∈ Z) moves(z) on 8,399 ✓
+    (both C129 numbers). The first form is the one REDUCE-XI's statement in L-5 states («for 2 ≤ t ≤ T step t − 1 moves a member of Z»),
+    so «equality … on 59,502» is now named by its own equation ✓.
+  - R2 (E-2): pass_d3_D3.json (8bca9764) from 110100 and pass_d4_D4.json (3bf6a4a4) from 01010111 give T 4 (D 3, 4, LM 0 as in my
+    r2moves.out DEAD lines); from their stored starts 000000 / 00000000 both give T 2. So the instance is reproducible only with the start
+    named, as R2 does ✓.
+  - R3 (N-1): m4_z4_r7.json is run from its stored start 10111010 (my r2moves.out DEAD line «start 10111010 … T 8 moves 7 … LM 6») ✓.
+    The cited path experiments/red/r213/out/m4_z4_r7.json is on claude/l-red (sha1 7c158e2f…, byte-equal to experiments/new/box187/inst/
+    m4_z4_r7.json), not on trunk 3c428cde; the path is unchanged since L-4 (not new in this round).
+- Entry 4 quotes C129 E-1, E-2, N-1 correctly and changes no statement, proof, tool, output or instance ✓.
+- Verdict: entry 4 **CORRECT**; **L-5 MATCHES** the packet with fixes entries 1-4, in bytes and in meaning (Opus 5.5, D1). Statement
+  verdicts unchanged (all SIGN).

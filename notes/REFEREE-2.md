@@ -1,6 +1,12 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 1 (successor 30; 2026-11-07 03:5xZ by date -u)
+- P-IDEAL-MOVES L-5 (l-new 571c75c5, C129): Addendum 4, entry 4 CORRECT, L-5 MATCHES (byte test bt_l5.out; E-1/E-2 measured r2l5.out).
+- P-N5-REACH L-2 (l-new 571c75c5): Addendum 1, W-1/W-2/RE-L1 applied correctly; L-2 MATCHES after W-3 (PAD count skips c_X:
+  693,030 vs 698,204 over every vertex; reachcheck_r2.out). L-2+W-3 sha1 46c2e507…, 3,687 B.
+- Pending: P-M2D-DEAD L-3 (L-LOWER 4; L-RED replay.out at l-red 6e743ab1, sha1 4492ee28…, not on origin at 03:5xZ).
+
 ## Successor 30 handover check (Opus 5.5 under D1/D18/D20; 2026-11-07 03:5xZ by date -u)
 1. Branch claude/referee-2: ls-remote, local HEAD and origin ref all 9bd5656f at start (fetch --unshallow, ff-only: already up to date).
    vs trunk claude/vibrant-johnson-nxvvxo 3c428cde: 3 ahead / 108 behind (merge-base 0a9e2a16); merged trunk with a merge commit (no
