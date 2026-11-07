@@ -1,0 +1,1 @@
+input /home/user/pf/x/d3_L9_c11.cnf sha1 2ba36f3dc819868a75c8b6d3917d9298ee59065f vars 58896 clauses 204036 cube  glucose4 UNSAT 431.6 s proof /home/user/pf/x/d3_L9_c11.proof sha1 a8ede7f045be25665eb98844a38c47f3b25accac bytes 1585527511
