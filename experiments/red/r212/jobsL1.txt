@@ -1,0 +1,4 @@
+5 0 0 201 400000 seedsL/TR_d6_T18.txt
+5 0 0 202 400000 seedsL/ext_d6_T16_top1.txt
+5 0 0 203 400000 seedsL/ext_d6_T16_bot1.txt
+6 0 0 204 150000 seedsL/TR_d7_T20.txt

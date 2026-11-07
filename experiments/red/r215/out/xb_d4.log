@@ -1,0 +1,26 @@
+== 05:09Z d 4 seed-file out/xb_d3.json
+start n 130 xi 9 spec 7
+it 8 n 130 xi 9 spec 8 OK
+it 16 n 130 xi 10 spec 8 OK
+it 24 n 130 xi 11 spec 6 OK
+it 97 n 130 xi 12 spec 5 OK
+it 98 n 130 xi 13 spec 5 OK
+it 126 n 130 xi 13 spec 6 OK
+it 281 n 130 xi 13 spec 7 OK
+it 432 n 130 xi 13 spec 8 OK
+it 477 n 130 xi 13 spec 9 OK
+it 598 n 130 xi 14 spec 5 OK
+it 601 n 130 xi 14 spec 6 OK
+it 649 n 130 xi 14 spec 7 OK
+it 1159 n 130 xi 14 spec 8 OK
+it 1753 n 130 xi 14 spec 9 OK
+it 1868 n 130 xi 15 spec 7 OK
+it 2118 n 130 xi 15 spec 8 OK
+it 2570 n 130 xi 16 spec 8 OK
+it 3076 n 130 xi 16 spec 9 OK
+it 4845 n 130 xi 16 spec 11 OK
+it 10163 n 130 xi 17 spec 6 OK
+it 10283 n 130 xi 18 spec 6 OK
+it 10509 n 130 xi 18 spec 7 OK
+it 10745 n 130 xi 18 spec 8 OK
+FINAL best 18.008
