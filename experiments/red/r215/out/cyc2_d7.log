@@ -11,3 +11,6 @@ it 310 n 220 xi 17 spec 10 OK
 it 337 n 220 xi 18 spec 10 OK
 it 452 n 220 xi 18 spec 11 OK
 it 601 n 220 xi 18 spec 13 OK
+it 861 n 220 xi 19 spec 13 OK
+it 1028 n 220 xi 20 spec 11 OK
+it 1103 n 220 xi 21 spec 10 OK
