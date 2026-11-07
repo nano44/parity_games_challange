@@ -1,5 +1,12 @@
 # L-LOWER notebook
 
+## Successor 7 (Opus 5.5) — GO from Lead 18:45Z 2026-11-07
+### Resume point
+- Handover check 9113b5cc (score 5). DUTY C134 (Lead 18:28Z): fixes entry 2 + docs/lower/P-TOWER-FUEL-line-L3.txt (sha1 7328e673…,
+  4,908 B, = C134 §5 target) by experiments/lower/l5/mkL3_tf.py / mkfix2_tf.py from a byte copy of docs/checker/C134.md (claude/checker
+  23871f48: `git show origin/claude/checker:docs/checker/C134.md > C134.md`); p_tower_check.py pins L-3, asserts SL41 119 j-windows
+  (3, 7, 15, 31, 63). Next: both referees byte-test L-3; then RC-PLATEAU read (L-COMP 11 lanes D_l6*) and BOX L7.
+
 ## Successor 6 HANDOVER (2026-11-07 ~17:3xZ, context ~500k; PARKED after this push)
 ### DONE (claude/l-lower; product docs/lower/L6-supplier.md; tools/data experiments/lower/l6/)
 - BOX L6 (constructive test of CONJECTURE L5-TYPE on SL41): success NOT met (no 6-capped genome with F(6) > 222). Exact reason (L6 §7):

@@ -9,6 +9,8 @@ Fix round 1 (L-LOWER successor 6; docs/lower/P-TOWER-FUEL-fixes.md entry 1): als
 E3 units 7,069; E5 levels with F(j - 1) >= 1: 61 of 62; I-ROOM: 119 j-windows at j = 1..5, the 30 units on 16 distinct 5-windows;
 I-FUEL decider scopes (some pre-state 48, s_(a-1) 32, every pre-state 16, good windows 0); 188 of 188 consecutive-move pairs of 12, 13
 with a non-constant decider (fixes entry 1, TF-4 / W-3).
+Fix round 2 (L-LOWER successor 7; fixes entry 2; CHECKER C134 §5): also pins line L-3 and asserts the unit and set L-3 names on SL41's
+clause (C134 E-4): SL41_d28 has 119 j-windows at j = 1..5 (3, 7, 15, 31, 63).
 Prints «P-TOWER-FUEL CHECK PASS» at the end."""
 import sys, os, json, hashlib, glob
 H = os.path.dirname(os.path.abspath(__file__)); L = os.path.join(H, '..')
@@ -33,6 +35,7 @@ if os.environ.get("PTF_LINE_SHA"): PINS[LINE] = os.environ["PTF_LINE_SHA"]
 LINE_SHA = "408470adbb1d80f0ed4f29b363867da3d6d430d4"
 if LINE_SHA != "LINE_SHA_PLACEHOLDER": PINS[LINE] = LINE_SHA
 LINE2 = os.path.join(L, '..', '..', 'docs', 'lower', 'P-TOWER-FUEL-line-L2.txt'); PINS[LINE2] = "d866ca50b0a0372efd9e93a2db0410801b3ddc15"
+LINE3 = os.path.join(L, '..', '..', 'docs', 'lower', 'P-TOWER-FUEL-line-L3.txt'); PINS[LINE3] = "7328e67345e1bb6a8605ccfa4f406d1020eabfdb"
 for p, h in PINS.items(): assert sha(p) == h, (p, sha(p), h)
 print("pins OK:", len(PINS), "files")
 
@@ -79,6 +82,8 @@ c7 = {j: slack(R7, j, 7 - j)[:2] for j in range(1, 6)}; cs = {j: slack(RS, j, 7 
 assert c7 == {1: (0, 0), 2: (0, 0), 3: (0, 0), 4: (0, 0), 5: (16, 14)}, c7
 per = slack(R7, 5, 2)[2]; assert per[((9, 1),)] == [15, 14] and per[()] == [1, 0] and sum(v[0] + v[1] for k, v in per.items() if k not in (((9, 1),), ())) == 0, per
 assert cs == {j: (0, 0) for j in range(1, 6)}, cs
+nws = [len(RS.windows(j)) for j in range(1, 6)]; assert nws == [3, 7, 15, 31, 63] and sum(nws) == 119, nws   # fix round 2 (C134 E-4)
+print("SL41_d28: 119 j-windows at j = 1..5 (3, 7, 15, 31, 63), the set of L-3's «(unit = j-window; set = all 119 of them)» on its clause")
 nwin = sum(len(R7.windows(j)) for j in range(1, 6)); W5 = R7.windows(5); dist = set()
 for i, (a, e, typ, mv) in enumerate(W5):
     if mv[1][0] - mv[0][0] < 2 or (i + 1 < len(W5) and W5[i+1][3][0][0] - mv[1][0] < 2): dist.add(a)
