@@ -224,11 +224,44 @@ IDEAL-CYC. The bound L is far from tight (L ≥ 8,334 on these runs).
 - R117 and R118 take Γ(G) from «R104's definitions»; the fleet's builder (box189/gamma3.py) uses the same order.
 - So [E-LEV] holds for Γ(G) as R104's packet defines it. It is not stated in a landed line's own text, and R104's «immaterial» covers
   R104's theorem (REALIZE), not UP-B. Lead reading needed: is packet §3.1 part of «R104's definitions» for P-N5-ASC §6 and UP-T?
-- Not done: an e-order violating [E-LEV] on which UP-B fails (not needed if the reading above is accepted; queued).
+- An e-order violating [E-LEV] on which UP-B / NOUP fail exists (DEAD without [E-LEV]; instances of others, as the Lead asked):
+  REFEREE-2 control CTRL=elevrev, «UPB/NOUP fail on 209 of 21,116 plays of U = 0 genomes (up to 2 ascents)» (claude/referee-2 533744a5);
+  L-RED R220, e-order (−level, gate): NOUPC_1 / 2 / 3 with U(G) = 0 and max ascents 2 / 3 / 4, witness NOUPC_1, t 0, v 10 (claude/l-red
+  68a1f609, experiments/red/r220/inst/, one route only). Not re-run here. P-N5-ASC fixes entry 1 (19cc23e3) carries the scope change.
 
-## 9. Next (box 194 continues)
+## 9. (c) D18 angle: well-quasi-orders (Higman / Kruskal) and tableau structures for hubs with ω(1) ascents
+Question (Lead): does a wqo or nested-tableau structure of the hub's chains give a length bound for hubs with ω(1) ascents?
+Answer: NO in the abstract model. The reason and the source are below. Labels: DATA / READING / DEAD (conditional on ASC-EXP).
+
+Source opened (pdftotext of arXiv:1103.4399, S. Schmitz and Ph. Schnoebelen, «Multiply-Recursive Upper Bounds with Higman's Lemma»,
+ICALP 2011): §2 «A sequence x = x0, x1, x2, . . . over a qo is good if xi ≤ xj for some positions i < j. It is bad otherwise.»;
+Definition 2.4 (controlled sequences: |x_i| < g^i(n)); Proposition 2.5 (a finite maximal length L_(A,g)(n) of (g, n)-controlled bad
+sequences exists); Theorem 5.3 (Main Theorem: for a smooth control g eventually bounded in F_γ and an exponential nwqo of maximal order
+type < ω^(β+1), L_(A,g) is bounded by a function in F_β (γ < ω, β ≥ ω) or F_(γ+β) (γ ≥ 2, β < ω)). Also opened, abstract only:
+arXiv:1007.2989 (Figueira, Figueira, Schmitz, Schnoebelen, LICS 2011, Dickson's lemma, «Ackermannian and primitive-recursive bounds»).
+
+- READING 1 (why wqo theory does not apply). Every wqo length theorem bounds BAD sequences: those with no i < j and x_i ≤ x_j. A hub
+  sequence is the opposite: strictly increasing in the total lex order. Under the natural wqo's on its values it is good almost
+  everywhere: under ⊆ (Dickson on {0,1}^M), under Higman's subword order on chains read as words, or under Kruskal's tree order on the
+  forests, the step {3} → {3, 1} is an embedding. A chain in a total order has no bad structure to exploit. Reversing the order does not
+  help either: the reversed sequence is decreasing in a total order, and a total order of height 2^M has decreasing chains of length 2^M.
+- READING 2 (why the bound would be useless anyway). Even where a translation to controlled bad sequences exists, Theorem 5.3's bounds
+  are functions in classes F_β / F_(γ+β) of the fast-growing hierarchy, not polynomials. On the finite universe 2^[M] the trivial
+  bound 2^M is already better.
+- DATA (the abstract obstruction): Construction ASC-EXP (box 193 §3) is a run of CS(M) whose hub takes all 2^M sets, verified exactly
+  for M ≤ 12 (ascexp193.py; M ≤ 10 in check193.sh). Its hub has up to M − 1 ascents. So no statement that depends only on the CS
+  axioms (CHAIN-DECOMP + E-MON), wqo-based, tableau-based or otherwise, can give a polynomial bound for ω(1)-ascent hubs, unless
+  ASC-EXP fails for some M > 12. DEAD (conditional on ASC-EXP for all M, a CONJECTURE with exact data M ≤ 12): «an abstract structure
+  of the hub's chains bounds ω(1)-ascent hubs polynomially».
+- READING 3 (tableaux). Insertion tableaux (RSK) bound monotone SUBSEQUENCES of one word (Greene); here the object is a long sequence of
+  words, each a chain, linked only by lex monotonicity. HUB-ASC(B)'s recursion is already a tableau-like nesting (levels by τ-tops,
+  then segments, then B − 1 ascents inside), and its degree 5·2^B − 3 shows the nesting cost doubles per ascent. No source opened for
+  RSK, so nothing is cited.
+- Consequence for the programme: after Theorem QUIET (§6), the only open quantity is Σ_v D^tot_E(v). By ASC-EXP it cannot be bounded
+  from CS alone; any bound must use which e-set walks are REALISABLE by Howard / Odd in Γ(G) (box 192 Addendum 10). That is L-RED's
+  third-bit question, and UP-B is the only realisability fact proved so far (it needs [E-LEV] and bounded U(G)).
+
+## 10. Next (box 194 continues)
 - (a) is done in the sense of §6: the step D_E → R is PROVED (T-QUIET); the remaining core is Σ_v D^tot_E(v) for plays with
   unboundedly many ascents.
-- (b) only if the Lead does not accept §8's reading: an e-order where UP-B fails, with an instance.
-- (b) [E-LEV]: does R104 / R117 fix the e-order? If not, an e-order where UP-B fails, with an instance.
-- (c) D18: well-quasi-order / tableau structure of the hub's chains, with sources opened.
+- (c) done (§9): no abstract structure gives it; next is realisability of e-set walks in Γ(G) (third-bit question).
