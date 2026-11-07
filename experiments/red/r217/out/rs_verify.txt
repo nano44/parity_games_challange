@@ -1,0 +1,28 @@
+2026-11-07T16:43Z
+OWN RSG_K4.json N 14 T 7 C 0 R 2 p 5 maxflip/gate 1 flips at (10, 4) 1
+RSG_K4.json sha1 e3626d62 d 2 w 8 N 14 T 7 C 0 R 2 R-flips 3 R_mov 2 R_X 0 p 5 L 0 maxflip/gate 1
+OWN RS2.json N 18 T 10 C 0 R 4 p 6 maxflip/gate 3 flips at (16, 0) 3
+RS2.json sha1 e8fff77e d 2 w 14 N 18 T 10 C 0 R 4 R-flips 5 R_mov 4 R_X 0 p 6 L 0 maxflip/gate 3
+OWN RS2_L8M6.json N 29 T 17 C 0 R 4 p 13 maxflip/gate 3 flips at (27, 0) 3
+RS2_L8M6.json sha1 982d5911 d 2 w 25 N 29 T 17 C 0 R 4 R-flips 5 R_mov 4 R_X 0 p 13 L 0 maxflip/gate 3
+RS2.json N 18 traj own==idealcyc True (T 10) | subrun191 C 0 R 4 p 6 | Gamma3 n 238: n5v xi 13 (fb 1) spec 4 n5bxi 13 (fb 1) | regions=Oink True verify 0/0
+RS2_L8M6.json N 29 traj own==idealcyc True (T 17) | subrun191 C 0 R 4 p 13 | Gamma3 n 403: n5v xi 20 (fb 1) spec 4 n5bxi 20 (fb 1) | regions=Oink True verify 0/0
+RSG_K4.json N 14 traj own==idealcyc True (T 7) | subrun191 C 0 R 2 p 5 | Gamma3 n 185: n5v xi 10 (fb 1) spec 4 n5bxi 10 (fb 1) | regions=Oink True verify 0/0
+0 b0>u b1>u b2>u b3>u b4>u b5>u b6>u b7>u f0>TOPX f1>TOPX f2>TOPX f3>TOPX f4>TOPX f5>TOPX B1>a0 B0>A1 
+1 b0>d b1>u b2>u b3>u b4>u b5>u b6>u b7>u f0>TOPX f1>TOPX f2>TOPX f3>TOPX f4>TOPX f5>TOPX B1>a7 B0>B0 
+2 b0>d b1>b0 b2>u b3>u b4>u b5>u b6>u b7>u f0>TOPX f1>TOPX f2>TOPX f3>TOPX f4>TOPX f5>TOPX B1>a0 B0>B0 
+3 b0>d b1>b0 b2>b1 b3>u b4>u b5>u b6>u b7>u f0>TOPX f1>TOPX f2>TOPX f3>TOPX f4>TOPX f5>TOPX B1>a1 B0>B0 
+4 b0>d b1>b0 b2>b1 b3>b2 b4>u b5>u b6>u b7>u f0>TOPX f1>TOPX f2>TOPX f3>TOPX f4>TOPX f5>TOPX B1>a2 B0>B0 
+5 b0>d b1>b0 b2>b1 b3>b2 b4>b3 b5>u b6>u b7>u f0>TOPX f1>TOPX f2>TOPX f3>TOPX f4>TOPX f5>TOPX B1>a3 B0>B0 
+6 b0>d b1>b0 b2>b1 b3>b2 b4>b3 b5>b4 b6>u b7>u f0>TOPX f1>TOPX f2>TOPX f3>TOPX f4>TOPX f5>TOPX B1>a4 B0>B0 
+7 b0>d b1>b0 b2>b1 b3>b2 b4>b3 b5>b4 b6>b5 b7>u f0>TOPX f1>TOPX f2>TOPX f3>TOPX f4>TOPX f5>TOPX B1>a5 B0>B0 
+8 b0>d b1>b0 b2>b1 b3>b2 b4>b3 b5>b4 b6>b5 b7>b6 f0>TOPX f1>TOPX f2>TOPX f3>TOPX f4>TOPX f5>TOPX B1>a6 B0>B0 
+9 b0>d b1>b0 b2>b1 b3>b2 b4>b3 b5>b4 b6>b5 b7>b6 f0>TOPX f1>TOPX f2>TOPX f3>TOPX f4>TOPX f5>TOPX B1>a7 B0>B0 
+10 b0>d b1>b0 b2>b1 b3>b2 b4>b3 b5>b4 b6>b5 b7>b6 f0>TOPX f1>TOPX f2>TOPX f3>TOPX f4>TOPX f5>TOPX B1>B1 B0>B0 
+11 b0>d b1>b0 b2>b1 b3>b2 b4>b3 b5>b4 b6>b5 b7>b6 f0>TOPX f1>TOPX f2>TOPX f3>TOPX f4>TOPX f5>B1 B1>B1 B0>A1 
+12 b0>d b1>b0 b2>b1 b3>b2 b4>b3 b5>b4 b6>b5 b7>b6 f0>TOPX f1>TOPX f2>TOPX f3>TOPX f4>f5 f5>B1 B1>B1 B0>A1 
+13 b0>d b1>b0 b2>b1 b3>b2 b4>b3 b5>b4 b6>b5 b7>b6 f0>TOPX f1>TOPX f2>TOPX f3>f4 f4>f5 f5>B1 B1>B1 B0>A1 
+14 b0>d b1>b0 b2>b1 b3>b2 b4>b3 b5>b4 b6>b5 b7>b6 f0>TOPX f1>TOPX f2>f3 f3>f4 f4>f5 f5>B1 B1>B1 B0>A1 
+15 b0>d b1>b0 b2>b1 b3>b2 b4>b3 b5>b4 b6>b5 b7>b6 f0>TOPX f1>f2 f2>f3 f3>f4 f4>f5 f5>B1 B1>B1 B0>A1 
+16 b0>d b1>b0 b2>b1 b3>b2 b4>b3 b5>b4 b6>b5 b7>b6 f0>f1 f1>f2 f2>f3 f3>f4 f4>f5 f5>B1 B1>B1 B0>A1 
+17 b0>d b1>b0 b2>b1 b3>b2 b4>b3 b5>b4 b6>b5 b7>b6 f0>f1 f1>f2 f2>f3 f3>f4 f4>f5 f5>B1 B1>B1 B0>B0 

@@ -246,6 +246,46 @@ Delayed RESET under E-DOM: OPEN. No lemma either way.
 - READING: with E-DOM, «bit i not set» has to be expressed by a missing e on a competitor, never by an odd penalty on the access
   route. A gadget that withholds an e on the competing route until bit i is set is not excluded by anything I can prove.
 
+## 11. E-DOM-respecting counter pieces: RESET and re-SET work; the obstruction is the access penalty only (Lead 16:47Z; 17:1xZ)
+**Lemma E-DOM-CHOICE (PROVED, lane).** Let u, v be vertices at a state of IDEAL-CYC(G) (any genome, any d), with Λ(u) = Λ(v) = w. Let
+A′, B′ be the parts of the two plays before they merge (MERGE's construction, which only needs two lassos ending in the same cycle).
+Suppose B′ contains an e-vertex ε, w is less relevant than ε, and A′ contains no e-vertex more relevant than ε. Then Ω(v) ▷ Ω(u). This
+holds whatever else A′ and B′ contain: β's of either parity, gates, movers.
+Proof.
+- As in TOP-DEC (a), with ε in place of e_g: cW lies on neither play (w is less relevant than ε, which is less relevant than cW), and
+  K0, K3 lie only in the common suffix. So every vertex of A′ ∪ B′ at least as relevant as ε is an e-vertex (E-DOM-ALL-d).
+- z := top((A′ ∪ B′) ∩ U_w) is at least as relevant as ε ∈ B′. So z is an e-vertex, hence even.
+- z ∉ A′ unless z is an e-vertex of A′ more relevant than ε, which is excluded. So z ∈ B′, and the B-side is ⊴-larger (MERGE). ∎
+Readings (both immediate):
+- (RESET-NEXT) If a mover f's current option u has no e on its pre-merge part above ε, and another option v reaches a newly set bit's
+  escape ε, then Howard moves f off u at the next step. Under E-DOM a set bit CAN reset lower nodes one step after it sets, as in
+  [F09] p. 8.
+- (ACCESS-NO-PENALTY) An access route v to an OPEN bit continues along that bit's hidden route (Odd's best response re-enters the
+  cycle). If the hidden route carries a set escape ε that the competitor u lacks above ε, then v ▷ u: no vertex on the access route,
+  in particular no odd priority, can penalise it. [F09] needs exactly such a penalty (k_i 45 > m_0 42 in Fig. 7). Instance:
+  FPORT_n2, t 7 (l1 → k1; e(m0) on k1's hidden continuation).
+- So the Lead's candidate «under E-DOM a set bit cannot reset a lower lane» is REFUTED (instances below). The precise obstruction is
+  ACCESS-NO-PENALTY: an open bit's hidden route must not carry an e that its accessors' competitors lack.
+
+DATA: E-DOM counter pieces. No odd penalty anywhere; every e respects E-DOM. Verified by own.py = idealcyc trajectory, subrun191, rmov,
+and Γ3 (n5v xi = n5bxi = T + 3, regions = Oink, verify OK). Output: out/rs_verify.txt. Instances inst/RSG_K4.json, RS2.json,
+RS2_L8M6.json (sha1 in SHA1SUMS).
+- RSG(k) (rsg.py): a LEAP fuse keeps bit B1 busy (it follows the newest tap), then B1 sets. Lower bit B0 has SET0 or ACC1 (an access
+  mover with a copy gate of B1). e order: taps < e_top < e0 < e1′ < e1. k 4: B0 sets at step 1 (no premature access), B1 sets at step 6,
+  B0 RESETS at step 7. T 7.
+- RS2(L, M) (rs2.py): B1's delay is an e-free Friedmann-style deceleration lane (helpers a_j with increasing even β; lane movers b_j
+  chain from b_0 upward to a bonus helper). B0's escape continues into lane F0 (M movers). F0's EXIT goes to a forced-escape bit with
+  e_x; its CHAIN end goes to B1; chain β's are odd. e order: e_x < e0 < e1′ < e1.
+  - L 4, M 3: B0 SET at 1; B1 follows a_0 … a_3; B1 SET at 6; B0 RESET at 7; F0 wave at 7-9; B0 re-SET at 10. T 10.
+  - L 8, M 6: B1 SET at 10; B0 RESET at 11; F0 wave at 11-16; B0 re-SET at 17. T 17.
+  This is one full increment 01 → 10 → 11 with both delays. B0 re-adopts SET (a re-adoption that re-fires lane F0's discovery).
+- Not done: a third bit. That needs the lanes to RE-ARM (reset when a higher bit sets).
+  - In [F09] the lane re-arms because its exits reach s, the access hub of the lowest set bit. That puts set escapes on every open
+    bit's hidden route (bits hide into the lane). Then ACCESS-NO-PENALTY makes lower set bits access open higher bits prematurely,
+    exactly the FPORT divergence.
+  - CONJECTURE (precise, not proved): in any design where an open bit's hidden route reaches the hub that re-arms the lanes, some
+    lower set bit accesses an open bit early. A design whose lanes re-arm without such a hub is not excluded. I have none yet.
+
 ## 9. Next
 1. An E-DOM-respecting counter: delay a bit by withholding an e (Odd keeps the route on β), never by an odd penalty. Target: 2 bits
    with one bit re-set (a re-adoption that re-fires a fuse), checked by own.py + idealcyc + Γ3 / Oink.
