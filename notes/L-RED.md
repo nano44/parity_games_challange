@@ -57,6 +57,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   Four routes agree (own.py independent impl; idealcyc trajectory; subrun191 labels; Γ3 + Oink + n5v / n5bxi = T + 3). Lemmas TOP-DEC
   (MERGE reading, proved) and OVT-DV (flips ≤ 2·min D(face) − 1, [LOC]). «≤ 15 flips per gate» pattern DEAD (LEAP_k64).
 - Superlinear: not reached. A fuse fires once; re-firing needs a self-timed reset (R217 §5); leapr v0 / v1 failed.
+- Friedmann switchallexp port (R217 §7, comp.py / fried.py / fdiff.py): exact for 6 steps, then E-DOM (every escape e above every odd
+  priority) breaks it: T 14 / 16 / 18 vs 30 / 70 / 150. Trunk worktree WTT (env.sh) holds pgsolver_port.py. gen.py renamed gdsl.py (name
+  clash with harness/gen.py).
 - Live (outside repo): /home/user/r217live (go.sh = two rclimb SCORE=R climbs seeded with LEAP+spares, 40 min). Relaunch:
   cd /home/user/r217live && ./go.sh (go.sh sources env.sh). Worktrees in scratch (env.sh in experiments/red/r217): wt191 f09f67ec,
   wt192 a2db977d, wt190 acdbd28b, wt190b 066cd543. Oink built (tools/oink/build).

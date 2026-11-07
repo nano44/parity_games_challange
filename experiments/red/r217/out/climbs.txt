@@ -1,0 +1,4 @@
+CLR_k4s10.json sha1 e261340a d 2 w 16 N 31 T 25 C 0 R 24 R-flips 37 R_mov 24 R_X 0 p 1 L 0 maxflip/gate 6
+CLR_k8s16.json sha1 c09fb459 d 2 w 27 N 53 T 28 C 0 R 27 R-flips 52 R_mov 27 R_X 0 p 1 L 0 maxflip/gate 4
+SW_k4s10.json sha1 7661bfea d 2 w 16 N 31 T 19 C 1 R 16 R-flips 39 R_mov 16 R_X 0 p 2 L 0 maxflip/gate 8
+SW_k8s16.json sha1 70950fa9 d 2 w 27 N 53 T 22 C 5 R 16 R-flips 53 R_mov 16 R_X 0 p 1 L 0 maxflip/gate 11

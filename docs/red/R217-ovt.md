@@ -20,6 +20,9 @@ Tools: experiments/red/r217/ (own.py = my independent implementation; leap.py = 
   that, carriers reach every chained mover in the same step, so a fuse fires once. Repeated firing needs a RESET (exit ▷ chain), and
   monotonicity forces each reset to bring a new, higher value. My two self-triggered round designs (leapr v0 / v1) did not re-fire
   (instances in §5).
+- Friedmann's switch-all counter (§7): compiled into a d 2 genome, it follows the original Howard run exactly for 6 steps, then
+  diverges (T 14 / 16 / 18 vs 30 / 70 / 150). The cause is a structural fact of Γ(G), E-DOM: every escape e lies above every odd
+  priority, while G_n needs odd CycleAccess / UpperSelector priorities above lower CycleLeavers. DEAD port; instances FPORT_n2-4.
 
 ## 1. Lemma TOP-DEC (PROVED, lane; the decision part PROVED-CONDITIONAL on [LOC])
 This is the «MERGE reading» from my 14:35Z message, stated and proved as the Lead asked.
@@ -134,9 +137,62 @@ plus 2 options at Y / X′. Constant. Flips at g = (N − 5)/2: super-constant, 
 - Side search (DATA, running): R-scored climbs (r215 rclimb.py, box191 mutation) seeded with LEAP(4) + 10 spare movers (N 31) and
   LEAP(8) + 16 spare (N 53). At 14:50Z: R 15 at N 31 (seed R 8); R 17 at N 53 (seed 16). Unit: R-steps. Scope: IDEAL-CYC.
 
-## 6. Next
-1. A self-timed reset: a hub whose value rises above the carrier exactly when c_0 chains, without a play through c_0 after the reset.
-   Candidate: read c_0 through an Odd gate (β → c_0), so that the reading play leaves the fuse once Odd takes e.
-2. Inspect the climb bests from the LEAP seeds for any re-firing mechanism (ntrace.py).
-3. If re-firing works, W rounds would give R ≈ W·2k at size O(k + W), i.e. quadratic R (still polynomial: CYC-COUNT allows
-   C ≤ n(2M + 2) rounds).
+## 7. Friedmann's switch-all counter compiled into a genome: DEAD port; obstruction E-DOM (15:2xZ)
+Motivation:
+- In Friedmann's switchallexp G_n (arXiv 0901.2731; PGSolver switchallexp.ml, ported in trunk experiments/hard-families/pgsolver_port.py),
+  the only Odd choice nodes are the CycleCenters h_i = {CycleNode e_i (back into the cycle), CycleLeaver m_i (escape)}. That is exactly
+  a level-1 SET gate: β-face back to its own mover, e-face to a level-0 W-target.
+- Switch-all VJ (= Howard) on G_n from the best-reward start is exponential. DATA (fried.py; si.Engine; unit: iterations): n 2 / 3 / 4 / 5
+  → T 30 / 70 / 150 / 310 = 10·2^n − 10, matching R140 V0.
+- N5′-xi on Γ3 is Howard on IDEAL-CYC (REACH3-CYC). A faithful compilation would therefore transfer the counter to N5′-xi.
+Compilation (comp.py):
+- Every node v gets a level-0 single-option helper carrying pr(v), with v's parity. Even choice nodes become movers; option β's are in
+  the lowest band.
+- h_i becomes the gate of e_i's option: xt = helper of e_i, β of priority pr(h_i), e ranked by pr(m_i), W-target = helper of m_i's
+  successor.
+- The CycleAccess k_i (Odd, → h_i) becomes a level-1 mover whose single option is a copy gate.
+- Non-cycle options of level-1 movers escape to a DUMMY Even-won self-loop, so Odd never escapes there.
+- The sink pair p, q becomes u.
+- Start: the best-reward start.
+Result (DATA; out/fport.txt; instances inst/FPORT_n{2,3,4}.json, sha1 in inst/SHA1SUMS):
+
+| n | G_n T (Howard) | genome N | genome T (idealcyc = own.py) | R | first divergence (fdiff.py) |
+| --- | --- | --- | --- | --- | --- |
+| 2 | 30 | 54 | 14 | 3 | t 7: l1 → k1 (orig stays z1) |
+| 3 | 70 | 76 | 16 | 4 | t 7: l1 → k1, l2 → k2 |
+| 4 | 150 | 98 | 18 | 5 | t 7: l1, l2, l3 → k_i |
+
+- Steps 1-6 coincide exactly with the original run at every mover. So the compilation is faithful until step 7.
+- Cause, read off the plays at t 6 (fdbg.py 2 6 l1 k1 z1):
+  - In G_2, the route l1 → k1 → h1 → e1 → s → k0 → h0 → m0 → z0 → p has top k1 = CA(1), priority 41, odd. It lies above
+    m0 = CL(0), 38. So the route is bad for Even and l1 stays on z1.
+  - In the genome, CL(0) is an escape e. Every e lies above every β, so e(CL(0)) beats the β carrying 41 and the route becomes good.
+- **Obstruction E-DOM (structural fact of R104's Γ(G); P-N5-XICYC [DEF], gamma3.build).** Every e-vertex has a priority above every β
+  and every other non-K vertex; the only odd priorities above the e's are K3 (and K0, even), which lie only on the sink suffix u → K0 → K3.
+  So in a genome no odd priority can sit above an escape priority.
+  - G_n needs exactly that. Odd priorities above min CL: n 2: z1 39, k1 41; n 3: z1, k1, z2, k2 (51-57); n 4: 63-73. The CycleAccess
+    k_i and UpperSelector z_i carry odd priorities interleaved with the CycleLeavers. They are the penalty that keeps l_i away from an
+    unset bit i.
+  - Every compilation of G_n into a genome must therefore change these comparisons. The port is DEAD.
+- Repair attempt (BONUS=l): replace the odd penalty pr(k_i) on l_i → k_i by an even bonus on l_i → z_i (a forced-escape bit with e
+  ranked at pr(k_i)). It diverges at t 1 (n 2, 3), because every route through l_i now collects the bonus. A penalty cannot be turned
+  into a bonus locally. DEAD.
+- READING (not a lemma): under E-DOM, a mover compares the e-sets of its options lexicographically first, and Odd's only lever is not
+  passing an e. A Friedmann-type counter would have to delay bits with «missing e's» instead of «odd penalties above lower escapes».
+  I have no such gadget. E-DOM does not bound the number of distinct e-sets at one vertex: a lexicographic binary counter over e's is
+  not excluded.
+
+## 8. Climbs seeded with LEAP (DATA, 15:2xZ; outside the repo, /home/user/r217live; box191 mutation; unit as named)
+- R-scored (r215 rclimb.py SCORE=R): LEAP(4) + 10 spares: R 8 → 24 at N 31 (T 25). LEAP(8) + 16 spares: R 16 → 27 at N 53 (T 28).
+  The gains are extra fuse / path steps (max flips at one gate 6 / 4). R ≤ N.
+- Frozen (40-min climbs finished): inst/CLR_k4s10.json e261340a, CLR_k8s16.json c09fb459, SW_k4s10.json 7661bfea, SW_k8s16.json 70950fa9
+  (rmov.py: out/climbs.txt).
+- Re-adoption-scored (swclimb.py: max over movers of switches back to an option held before): 13 at N 31 (T 19), 16 at N 53 (T 22).
+  That is one mover oscillating between two options, i.e. OVT at a mover. No fuse re-fired: T stays below N.
+
+## 9. Next
+1. An E-DOM-respecting counter: delay a bit by withholding an e (Odd keeps the route on β), never by an odd penalty. Target: 2 bits
+   with one bit re-set (a re-adoption that re-fires a fuse), checked by own.py + idealcyc + Γ3 / Oink.
+2. A lemma attempt in the other direction: under E-DOM, bound the number of distinct e-sets of one vertex's play inside a Λ-interval.
+   Via OVT-DV this would give OVT-POLY. It is open; I have no proof.
+3. The self-timed reset (§5) stays open. No lemma excludes it.

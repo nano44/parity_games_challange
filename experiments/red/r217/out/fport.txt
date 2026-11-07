@@ -1,0 +1,36 @@
+2026-11-07T15:27Z
+switchallexp n 2 |V| 35 Howard(VJ switch-all, best-reward start) T 30
+switchallexp n 3 |V| 49 Howard(VJ switch-all, best-reward start) T 70
+switchallexp n 4 |V| 63 Howard(VJ switch-all, best-reward start) T 150
+switchallexp n 5 |V| 77 Howard(VJ switch-all, best-reward start) T 310
+compiled switchallexp 2: N 54 movers, levels [0, 1], options 92
+FPORT_n2.json sha1 4ef73ca1 d 2 w 50 N 54 T 14 C 0 R 3 R-flips 4 R_mov 3 R_X 0 p 11 L 0 maxflip/gate 1
+OWN FPORT_n2.json N 54 T 14 C 0 R 3 p 11 maxflip/gate 1 flips at (3, 0) 1
+orig T 30 genome T 14
+t 7 first divergence (orig, genome): {'l1': ('z1', 'k1')}
+  orig switches at t: {'x': ('w', 'y'), 'w': ('p', 'y'), 'd': ('x', 't'), 'e1': ('s', 'g1')}
+  genome switches at t: {'x': ('w', 'y'), 'w': ('p', 'y'), 'l1': ('z1', 'k1'), 'd': ('x', 't'), 'e1': ('s', 'g1')}
+compiled switchallexp 3: N 76 movers, levels [0, 1], options 133
+FPORT_n3.json sha1 4b873c0e d 2 w 70 N 76 T 16 C 0 R 4 R-flips 6 R_mov 4 R_X 0 p 12 L 0 maxflip/gate 1
+OWN FPORT_n3.json N 76 T 16 C 0 R 4 p 12 maxflip/gate 1 flips at (3, 0) 1
+orig T 70 genome T 16
+t 7 first divergence (orig, genome): {'l1': ('z1', 'k1'), 'l2': ('z2', 'k2')}
+  orig switches at t: {'x': ('w', 'y'), 'w': ('p', 'y'), 'd': ('x', 't'), 'e1': ('s', 'g1'), 'e2': ('s', 'g2')}
+  genome switches at t: {'x': ('w', 'y'), 'w': ('p', 'y'), 'l1': ('z1', 'k1'), 'l2': ('z2', 'k2'), 'd': ('x', 't'), 'e1': ('s', 'g1'), 'e2': ('s', 'g2')}
+compiled switchallexp 4: N 98 movers, levels [0, 1], options 174
+FPORT_n4.json sha1 a7fc7b7e d 2 w 90 N 98 T 18 C 0 R 5 R-flips 8 R_mov 5 R_X 0 p 13 L 0 maxflip/gate 1
+OWN FPORT_n4.json N 98 T 18 C 0 R 5 p 13 maxflip/gate 1 flips at (3, 0) 1
+orig T 150 genome T 18
+t 7 first divergence (orig, genome): {'l1': ('z1', 'k1'), 'l2': ('z2', 'k2'), 'l3': ('z3', 'k3')}
+  orig switches at t: {'x': ('w', 'y'), 'w': ('p', 'y'), 'd': ('x', 't'), 'e1': ('s', 'g1'), 'e2': ('s', 'g2'), 'e3': ('s', 'g3'), 'f3': ('f2', 'a6'), 'g3': ('g2', 'a7')}
+  genome switches at t: {'x': ('w', 'y'), 'w': ('p', 'y'), 'l1': ('z1', 'k1'), 'l2': ('z2', 'k2'), 'l3': ('z3', 'k3'), 'd': ('x', 't'), 'e1': ('s', 'g1'), 'e2': ('s', 'g2'), 'e3': ('s', 'g3'), 'f3': ('f2', 'a6'), 'g3': ('g2', 'a7')}
+BONUS=l
+orig T 30 genome T 12
+t 1 first divergence (orig, genome): {'w': ('p', 'l1'), 'v0': ('p', 'r1'), 'r1': ('z1', 'l1')}
+  orig switches at t: {'x': ('y', 'w'), 'b0': ('x', 'd'), 'b1': ('x', 'd'), 'e0': ('x', 'g0'), 'r0': ('l0', 'z0'), 'r1': ('l1', 'z1'), 'e1': ('x', 'g1'), 'f1': ('d', 'f0'), 'g1': ('d', 'g0')}
+  genome switches at t: {'x': ('y', 'w'), 'w': ('p', 'l1'), 'b0': ('x', 'd'), 'b1': ('x', 'd'), 'e0': ('x', 'g0'), 'v0': ('p', 'r1'), 'r0': ('l0', 'z0'), 'e1': ('x', 'g1'), 'f1': ('d', 'f0'), 'g1': ('d', 'g0')}
+BONUS=l
+orig T 70 genome T 17
+t 1 first divergence (orig, genome): {'w': ('p', 'l2'), 'z0': ('p', 'v0'), 'v0': ('v1', 'r1'), 'v1': ('p', 'r2'), 'r1': ('z1', 'l1'), 'r2': ('z2', 'l2')}
+  orig switches at t: {'x': ('y', 'w'), 'b0': ('x', 'd'), 'b1': ('x', 'd'), 'e0': ('x', 'g0'), 'v0': ('r1', 'v1'), 'r0': ('l0', 'z0'), 'r1': ('l1', 'z1'), 'e1': ('x', 'g1'), 'f1': ('d', 'f0'), 'g1': ('d', 'g0'), 'r2': ('l2', 'z2'), 'e2': ('x', 'g2'), 'f2': ('d', 'f1'), 'g2': ('d', 'g1')}
+  genome switches at t: {'x': ('y', 'w'), 'w': ('p', 'l2'), 'b0': ('x', 'd'), 'b1': ('x', 'd'), 'e0': ('x', 'g0'), 'z0': ('p', 'v0'), 'r0': ('l0', 'z0'), 'v1': ('p', 'r2'), 'e1': ('x', 'g1'), 'f1': ('d', 'f0'), 'g1': ('d', 'g0'), 'e2': ('x', 'g2'), 'f2': ('d', 'f1'), 'g2': ('d', 'g1')}

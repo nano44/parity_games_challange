@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """L-RED 54 R217: LEAP with self-triggered rounds (experimental). k taps per side, W rounds. Usage: leapr.py k W variant [out]"""
 import sys, json
-from gen import Gen
+from gdsl import Gen
 def build(k, W, var):
     g = Gen(); L = 2 * k
     c = [g.mv(f"c{i}", 0) for i in range(L)]; H = g.mv("H", 0); s = g.mv("s", 0)
