@@ -38,3 +38,14 @@ it 40995 score (8, 13, 13) nE 5 ppppppppppppp
 SEG-T VIOLATION
 it 46621 score (8, 14, 14) nE 6 pppppppppppppp
 SEG-T VIOLATION
+it 59008 score (9, 15, 15) nE 6 ppppppppppppppp
+SEG-T VIOLATION
+it 65092 score (10, 16, 16) nE 6 pppppppppppppppp
+SEG-T VIOLATION
+it 76213 score (11, 16, 16) nE 5 pppppppppppppppp
+SEG-T VIOLATION
+it 77249 score (11, 17, 17) nE 6 ppppppppppppppppp
+SEG-T VIOLATION
+it 104531 score (12, 18, 18) nE 6 pppppppppppppppppp
+SEG-T VIOLATION
+final (12, 18, 18)

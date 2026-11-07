@@ -241,3 +241,26 @@ to the switch that completed the return route. It is not proved, and it would ne
 - Summary: none of the three bounds applies to Γ3-Howard. Each needs one player, a single switch per step (Dantzig), or a fixed discount.
   Γ3-Howard has two players, all-switch steps and parity (exponentially-small-discount) values. This is the expected gap: it is the gap
   between «strongly polynomial for fixed discount» (HMZ) and «parity games».
+
+## Addendum 3: DEAD SEG-T (TIE item); final climb values
+- **DEAD SEG-T** («along DECOMP-G's σ-steps S of N5′-xi on a general game, every maximal run of p-steps (Λ and σ̄ constant) has
+  ≤ n_E steps»).
+  - Instance: experiments/new/box192/inst/DEAD_SEGT_n20.json (sha1 02efd55e…, in inst/SHA1SUMS), a general game with n 20, n_E 6, 19
+    iterations, 1 fallback. Found by tieclimb192.py (GAP=1, n 20, seed 7), climb log out/tieg_n20.log.
+  - Its 18 σ-steps are ALL p-steps: p-run 18 > n_E = 6.
+  - Replay with segt192.py (independent of the climb's scorer): every step is ⊴-monotone at every vertex, and every switch is improving.
+    Most switches are improving but NOT ⊴-best (X1 fails). Steps 2, 11 and 18 switch vertex 2 while it is its own cycle node (H0 fails),
+    and Ω does not change strictly there.
+  - Even without those steps, steps 3-10 are 8 consecutive p-steps with no own-cycle-node switch, 8 > 6. So SEG-T is dead also under H0.
+  - Consequence: DOM-T, the TIE-restricted domination of §5, stays PROVED (lane), but no segment bound follows from it alone.
+    RED-XI's route on general games needs X1, or TIE-PERSIST plus TIE vertices at every switch; the latter is still unrefuted as stated.
+    The Γ3 route (X1 holds there by REACH3-CYC) is unaffected.
+- Final climb values (40-min slices ended; DATA; unit R-steps; set: climb bests; scope: IDEAL-CYC):
+
+| climb | levels | width | N | best R | its T |
+| --- | --- | --- | --- | --- | --- |
+| cR_d2_w4 | 2 | 4 | 8 | 9 | 10 |
+| cR_d2_w8 | 2 | 8 | 16 | 22 | 24 |
+| cR_d3_w4 | 3 | 4 | 12 | 10 | 23 |
+
+  The depth climb cD_d6_w2 (N 12) ended at R-depth 6.

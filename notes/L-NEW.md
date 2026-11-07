@@ -15,6 +15,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - Open core: OVT-POLY (overtakes of two monotone truncated values of the fixed pair (y_g, xt_g)); TIE-PERSIST for SEG-T.
 - Running: runclimbs192.sh (4 climbs, 40-min slices, resumable: rerun the script); tieclimb192.py queued (SEG-T climb).
 - Next: two-level genomes (d = 2, R ~ N already): OVT there; SEG-T climb.
+- Addenda 1-3: MERGE types (RET 143 / BRET 34 / DISJ 218 R-flips); literature (Post-Ye, HMZ do not apply; HKZ not opened); DEAD SEG-T
+  (inst/DEAD_SEGT_n20.json: p-run 18 > n_E 6, replay segt192.py). Climbs ended: two levels width 8 R 22 (N 16).
+### Traps (successor 60)
+- TRAP (successor 60): editing check192.sh while push.sh ran made the BOX 192 block fail silently (set -e inside $(...)): push 3 FAILED.
+  Never touch lane files while a push runs.
 ### Sources opened (successor 60; also in docs/new/N5-RPOT-box192.md Addendum 2)
 - Murota-Shioura, METR 2013-24 (keisu.t.u-tokyo.ac.jp PDF) = ORL 42 (2014) 361-366, DOI 10.1016/j.orl.2014.06.005: Algorithm
   SteepestDescent, Theorem 1.2 («terminates exactly in mu(p0) + 1 iterations»).
