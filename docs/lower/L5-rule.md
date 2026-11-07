@@ -151,6 +151,13 @@ its counter (unit, set, scope). Nothing here is a result in the sense of CLAUDE.
   the parent's type as well as the window's own type (in the capped levels of H6 / G7_best it depends on the own type only, §2).
   This matches L-SI 42's climb snapshot (box 80 §5: pulses met, F(6) = 222).
 
+- Context of the fuel in CAPPED levels (fuel6.py → fuelctx.out; unit = j-window; scope = stored start): in H6 levels 4 and 5 and in
+  G7_best level 5 the trigger set of each member of pair j is a function of the window's OWN b-step type, the same under every parent
+  type (H6 level 5: own (8, ·) ← {8, 11}, (9, 0) ← {11, 12}, (9, 1) ← {11, 13}, under all four parents; G7_best level 5 likewise, up to
+  an extra co-trigger 24 in 4 windows and 43 / 41 in the first windows). So a capped level needs at most four suppliers (one per own
+  type), independent of the ancestors; the parent-dependence of SL41's level 6 is a property of a level not yet capped. DATA for
+  CONJECTURE L5-TYPE (O(1) suppliers per level), not a proof.
+
 ## 7. Summary: rule, obstruction, conjecture (labels as stated)
 - No inductive rule G_h → G_(h+1) was found. What a rule must do is now specific (PROVED parts: GAP-NEST, PULSE-NEST, DOUBLE-EQ′; DATA:
   §2, §5, §6): for every level j ≤ h − 1 and each of the four b-step types (member of pair j − 1 × direction), the second mover of pair j
@@ -175,7 +182,7 @@ its counter (unit, set, scope). Nothing here is a result in the sense of CLAUDE.
 
 ## 8. Files
 - experiments/lower/l5/: fev.c, revert.py, revert_H5lift_H6.out, fuelsrc.py, fuelsrc.out, fuelsrc_G7.out, utmpl.c, mclimb.c,
-  greedyback.py, greedyback.out, slack.py, slack7.out, fuel6.py, fuel6_SL41.out, rec/SL41_d28.txt, trig.py, trig_H6_G7.out, retchain.py, retchain.out, winfail.py, winfail_G7_l6.out, pulses.py, pulses_G7_l5.out, splice.py; out/ (gitignored).
+  greedyback.py, greedyback.out, slack.py, slack7.out, fuel6.py, fuel6_SL41.out, fuelctx.out, rec/SL41_d28.txt, trig.py, trig_H6_G7.out, retchain.py, retchain.out, winfail.py, winfail_G7_l6.out, pulses.py, pulses_G7_l5.out, splice.py; out/ (gitignored).
 - mclimb.c (edit-penalised climb from H5_lift, λ = 0.25-2 F-units per edit, 4 seeds): no improvement of F(5) = 94 in the runs before
   they were stopped (penalty too steep for the neutral drift the climb needs); superseded by the greedy walk back (§5).
 
