@@ -9,3 +9,5 @@ rd2_d6.json sha1 9b786630 d 6 w 2 N 12 T 16 C 1 R 14 R_mov 14 R_X 0 p 1 L 0 maxf
 rd2_d7.json sha1 c5eab34b d 7 w 2 N 14 T 23 C 4 R 13 R_mov 13 R_X 0 p 6 L 0 maxflip/gate 6
 rd2_d8.json sha1 27f0d0ff d 8 w 2 N 16 T 16 C 1 R 14 R_mov 14 R_X 0 p 1 L 0 maxflip/gate 6
 rd2_d9.json sha1 3ef8f80b d 9 w 2 N 18 T 21 C 3 R 18 R_mov 18 R_X 0 p 0 L 0 maxflip/gate 10
+rd3_d10.json sha1 bc8cf9b8 d 10 w 2 N 20 T 28 C 5 R 17 R_mov 17 R_X 0 p 6 L 0 maxflip/gate 6
+rf_d8.json sha1 d911a318 d 8 w 2 N 16 T 15 C 2 R 13 R_mov 13 R_X 0 p 0 L 0 maxflip/gate 11
