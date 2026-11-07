@@ -1,1 +1,16 @@
 it 2 n 220 xi 7 spec 4 OK
+it 8 n 220 xi 7 spec 6 OK
+it 13 n 220 xi 8 spec 6 OK
+it 25 n 220 xi 9 spec 6 OK
+it 50 n 220 xi 10 spec 6 OK
+it 61 n 220 xi 11 spec 5 OK
+it 68 n 220 xi 12 spec 5 OK
+it 112 n 220 xi 12 spec 6 OK
+it 115 n 220 xi 12 spec 7 OK
+it 116 n 220 xi 13 spec 8 OK
+it 118 n 220 xi 15 spec 6 OK
+it 129 n 220 xi 16 spec 4 OK
+it 141 n 220 xi 16 spec 5 OK
+it 146 n 220 xi 17 spec 5 OK
+it 294 n 220 xi 17 spec 6 OK
+it 305 n 220 xi 17 spec 7 OK

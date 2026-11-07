@@ -1,0 +1,8 @@
+it 6 n 250 xi 8 spec 5 OK
+it 52 n 250 xi 9 spec 5 OK
+it 66 n 250 xi 9 spec 6 OK
+it 76 n 250 xi 9 spec 7 OK
+it 98 n 250 xi 9 spec 8 OK
+it 126 n 250 xi 11 spec 7 OK
+it 139 n 250 xi 11 spec 8 OK
+it 170 n 250 xi 12 spec 8 OK

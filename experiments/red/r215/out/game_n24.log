@@ -1,3 +1,14 @@
 it 6 n 24 xi 4 spec 4 OK
 it 21 n 24 xi 5 spec 5 OK
 it 23 n 24 xi 6 spec 7 OK
+it 199 n 24 xi 7 spec 7 OK
+it 211 n 24 xi 8 spec 8 OK
+it 224 n 24 xi 10 spec 10 OK
+it 321 n 24 xi 11 spec 11 OK
+it 500 n 24 xi 12 spec 12 OK
+it 531 n 24 xi 13 spec 13 OK
+it 551 n 24 xi 14 spec 14 OK
+it 590 n 24 xi 15 spec 15 OK
+it 1242 n 24 xi 16 spec 16 OK
+it 1440 n 24 xi 17 spec 17 OK
+it 1502 n 24 xi 18 spec 18 OK
