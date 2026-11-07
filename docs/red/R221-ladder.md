@@ -5,7 +5,7 @@ DATA (unit, set, scope, counter) / DEAD (instance) / READING. Nothing here is a 
 CANDIDATE (D1). Tools: experiments/red/r221/ (own.py = R220's copy of R217's independent IDEAL-CYC run; lad221.py, ladclimb.py,
 wit221.py, rho221.py; xcheck.py = R218's four-route check). No L-NEW code is used except inside xcheck.py's second routes.
 
-## 0. Answers (milestone 1, 23:2xZ; milestone 2, 23:3xZ: RHO-E PROVED)
+## 0. Answers (milestone 1, 23:2xZ; milestone 2, 23:3xZ: RHO-E PROVED; batch 4 added 23:4xZ)
 - (2) No family with R superlinear in N. The ladder question splits in two, and only one half is a resource:
   - Ascents alone are FREE and HARMLESS. SL(k) (§2, a static SET-ladder, N 2k) has plays with k − 1 ascents = U(G), and T ≤ 2,
     R ≤ 1 for k ≤ 32. Four routes agree (k 4 / 8 / 16: own = idealcyc, Γ3 regions = Oink, n5v xi = n5bxi = 5 iterations).
@@ -26,7 +26,7 @@ wit221.py, rho221.py; xcheck.py = R218's four-route check). No L-NEW code is use
   milestone 2): between consecutive starts, (Λ(y), E(y)) changes, unless y's cycle node lies above e_g ([BELOW] fails; A_g).
   - Corollary RHO-COUNT: ρ_g ≤ (2M + 3)·F′_B(M) + A_g, with B the number of ascents of y's plays and B ≤ U(G) (UP-B). So Σρ_g over
     SET gates is polynomial when U(G) = O(1) and ΣA_g is polynomial (needs [E-LEV] for UP-B; A_g = 0 in all data).
-  - DATA: RHO-SET and RHO-E 0 violations on 76 gaps (73 runs: frozen L-RED instances + climbs), A_g = 0; adversarial climb §8.
+  - DATA: RHO-SET and RHO-E 0 violations on 76 + 54 gaps (73 runs + 8 adversarial climbs, §8), A_g = 0; max ρ at a SET gate 6.
 - (1) Not started: L-NEW 62's lemma is not frozen yet (Lead 23:02Z).
 
 ## 1. Setting
@@ -186,10 +186,13 @@ r217-r221 inst/ plus the §3 climbs, 73 runs, file out/rho221_all.txt; scope: ow
 max ρ_g at one gate 5 (SW_k8s16, CYC type), at a SET gate 3 (L10K5); max over gates of ρ_g / (D_E(y)·L(y)) = 1.00; Σρ_g ≤ 1.5·N
 everywhere (max R62K5; LEAP_k: Σρ = 2k + 1).
 
-## 8. Adversarial climbs against RHO-SET / RHO-E (batch 4; RUNNING at milestone 2)
-ladclimb.py with SCORE=rho: score = (RHO-SET + RHO-E violations, max ρ at a SET gate, R, T); Ξ-retargets favour SET options. Results
-in out/H*.log when done. At milestone 2 (partial, 7 of 8 runs started): violations 0; max ρ at a SET gate 6 (H34, N 12), 5 (H25,
-H43), 4 (H23, N 6).
+## 8. Adversarial climbs against RHO-SET / RHO-E (batch 4; DATA)
+ladclimb.py with SCORE=rho: score = (RHO-SET + RHO-E violations, max ρ at a SET gate, R, T); Ξ-retargets favour SET options (30 %).
+Unit: best genome of one climb (4000 iterations). Set: 8 runs H23, H25, H26, H33, H333, H34, H43, H44 (N 6-16). Scope: own.py.
+Counter: rho221.py (endpoint form included) on the best genomes.
+- Violations 0 (RHO-SET; RHO-E whole-gap and endpoint forms) on 54 further gaps, none outside [BELOW] (A_g = 0).
+- Max ρ at a SET gate: 4 (H23, N 6), 5 (H25 N 10, H26 N 12, H43 N 12), 6 (H333 N 9, H34 N 12, H44 N 16). Σρ max 39 (H44, N 16).
+- Every best genome has max ρ_g / (D_E(y)·L(y)) ≤ 0.67: the climb raises ρ only by raising y's (Λ, E) changes, as RHO-COUNT says.
 
 ## 9. Next
 1. Item (1): L-NEW 62's [LOC]-at-gates lemma, when frozen (own.py on LEAP_k64, rd3_d4, R217-R219 runs first).
