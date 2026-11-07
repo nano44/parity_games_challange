@@ -35,6 +35,7 @@ static int run(int *Tout){ int s[MAXN], ns[MAXN]; VT v[MAXN]; memcpy(s,st,sizeof
   *Tout=T; return T; }
 static int LV=-1, SCT=0, SCH=0;
 static long score(int *T){ run(T); if(SCT) return *T;
+  if(getenv("GUARD") && LV>=1){ int g=atoi(getenv("GUARD")); long pen=0; for(int l=1;l<=g;l++){ int df=2*F[l-1]+2-F[l]; if(F[0]!=2) df+=4; pen += df<0?-df:df; } if(pen) return -100000L*pen + F[LV]; }
   if(getenv("ANYRUN")){ long best=-1000000; for(int a=1;a<d;a++){ int h=0; while(a+h<d && F[a+h]==2*F[a+h-1]+2 && F[a+h]>0) h++; long sc=3000L*h + 4L*F[a+h-1>=0?a+h-1:0]; if(a+h<d){int def=2*F[a+h-1]+2-F[a+h]; sc -= 100L*(def<0?-def:def);} if(sc>best)best=sc; } return best; }
   if(SCH){ long sc=0; for(int l=1;l<=SCH;l++){ int def=2*F[l-1]+2-F[l]; sc += def==0? 3000 : -200*(def<0?-def:def); } return sc + 16L*F[SCH] + (*T<15?*T:15); } if(LV>=0) return (long)F[LV]*256 + (*T<255?*T:255); return *T; }
 static void rd(const char*fn){ FILE*f=fopen(fn,"r"); char w[64]; while(fscanf(f,"%63s",w)==1){ int n=0;
