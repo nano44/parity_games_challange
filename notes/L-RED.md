@@ -69,6 +69,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   Worktree wt193 = claude/l-new e3d399cd (box 192/193 instances).
 - 21:3xZ: R219 + ASC1 (L-NEW b76da963): up-branches of the trilemma = plays with ≥ 2 ascents; GATE-POLY O(M⁵) under ≤ 1 ascent.
   Pushed 2c0cb8e40, a3d4eb493. Nothing running.
+- 21:5xZ: R219 + HUB-ASC-G / UP-B (L-NEW 9cdb7209): case (iii) polynomial for ≤ B ascents, B ≤ U(G) upward Ξ-edges; open = ω(1) climbs.
+- QUEUED (Lead 21:44Z): adversary vs packet P-N5-ASC (HUB-ASC-G + UP-B) when L-NEW freezes it: find an instance violating F′_B or UP-B,
+  or a premise gap. Lead will send the freeze SHA. Tools ready: r219/check219.py, asc219.py (own.py-based, independent of asc193.py).
 - Next if resumed: R219 §7 (Σρ_g on NOUP genomes first); R218 §5 items (lemma form of §4; a non-access reset). Nothing running.
 - Things only I know: meas.py reads <G>.labels.json (option labels: SET / X / c ...); a «re-arm» = switch INTO an X-labelled option.
   xcheck.py writes _g3.pg next to its input: I run it on copies in $R218_S/x.
