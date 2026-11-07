@@ -1240,3 +1240,6 @@ echo "si (box 75: P-IDEAL-IM): PASS"
 # box 76 (TROPICAL-WINDOW: WINDOW-ONCE, ALT-MIN, HIT; DEAD SUM-COUPLE, RISE-N, SPAWN-2; docs/si/N5-TROPICAL-box76.md)
 bash box76/check76.sh
 echo "si (box 76: TROPICAL-WINDOW): PASS"
+# box 78 (RE-ENTRANT fuel search; landed potentials and RANK on the records; docs/si/N5-TROPICAL-box76.md §12)
+bash box78/check78.sh
+echo "si (box 78): PASS"

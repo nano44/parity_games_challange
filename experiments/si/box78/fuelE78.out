@@ -1,0 +1,67 @@
+KILL_M2D_d6_mu13.json T 13
+      level 1: max moves 3, |E_l| 13, FEEDBACK bound 28, Up_l [5, 6, 9, 10, 11] (levels [2
+      level 2: max moves 6, |E_l| 13, FEEDBACK bound 56, Up_l [5, 6, 8, 9, 10, 11] (levels
+      level 3: max moves 6, |E_l| 13, FEEDBACK bound 84, Up_l [5, 6, 8, 9, 10, 11] (levels
+      level 4: max moves 13, |E_l| 13, FEEDBACK bound 112, Up_l [5, 6, 8, 9, 10, 11] (leve
+KILL_M2D_d8_mu21.json T 24
+      level 1: max moves 3, |E_l| 23, FEEDBACK bound 48, Up_l [3, 9, 10, 13, 15] (levels [
+      level 2: max moves 4, |E_l| 23, FEEDBACK bound 96, Up_l [3, 9, 10, 13, 15] (levels [
+      level 3: max moves 7, |E_l| 23, FEEDBACK bound 144, Up_l [3, 9, 10, 12, 13, 15] (lev
+      level 4: max moves 5, |E_l| 23, FEEDBACK bound 192, Up_l [3, 9, 10, 12, 13, 14, 15] 
+      level 6: max moves 11, |E_l| 23, FEEDBACK bound 288, Up_l [3, 9, 10, 12, 13, 14, 15]
+      level 7: max moves 21, |E_l| 23, FEEDBACK bound 336, Up_l [3, 9, 10, 12, 13, 14, 15]
+REC_d10_mu32.json T 33
+      level 1: max moves 3, |E_l| 33, FEEDBACK bound 68, Up_l [3, 4, 6, 15, 19] (levels [1
+      level 2: max moves 4, |E_l| 33, FEEDBACK bound 136, Up_l [3, 4, 6, 10, 15, 17, 19] (
+      level 3: max moves 8, |E_l| 33, FEEDBACK bound 204, Up_l [3, 4, 6, 10, 12, 14, 15, 1
+      level 4: max moves 8, |E_l| 33, FEEDBACK bound 272, Up_l [3, 4, 6, 10, 12, 14, 15, 1
+      level 6: max moves 16, |E_l| 33, FEEDBACK bound 408, Up_l [3, 4, 6, 10, 12, 14, 15, 
+      level 7: max moves 32, |E_l| 33, FEEDBACK bound 476, Up_l [3, 4, 6, 10, 12, 14, 15, 
+REC_d10_tower_mu30.json T 35
+      level 1: max moves 3, |E_l| 14, FEEDBACK bound 30, Up_l [4, 11, 13, 17, 18, 19] (lev
+      level 2: max moves 7, |E_l| 27, FEEDBACK bound 112, Up_l [4, 9, 10, 11, 13, 16, 17, 
+      level 3: max moves 15, |E_l| 27, FEEDBACK bound 168, Up_l [4, 9, 10, 11, 13, 16, 17,
+      level 4: max moves 30, |E_l| 27, FEEDBACK bound 224, Up_l [4, 9, 10, 11, 13, 16, 17,
+      level 6: max moves 8, |E_l| 27, FEEDBACK bound 336, Up_l [4, 9, 10, 11, 13, 16, 17, 
+      level 7: max moves 4, |E_l| 27, FEEDBACK bound 392, Up_l [4, 9, 10, 11, 13, 16, 17, 
+REC_d11_mu40.json T 44
+      level 1: max moves 3, |E_l| 40, FEEDBACK bound 82, Up_l [3, 9, 10, 15, 16] (levels [
+      level 2: max moves 4, |E_l| 42, FEEDBACK bound 172, Up_l [3, 9, 10, 15, 16, 18, 21] 
+      level 3: max moves 9, |E_l| 42, FEEDBACK bound 258, Up_l [3, 9, 10, 12, 15, 16, 18, 
+      level 4: max moves 10, |E_l| 42, FEEDBACK bound 344, Up_l [3, 9, 10, 12, 15, 16, 17,
+      level 6: max moves 20, |E_l| 42, FEEDBACK bound 516, Up_l [3, 9, 10, 12, 15, 16, 17,
+      level 7: max moves 40, |E_l| 42, FEEDBACK bound 602, Up_l [3, 9, 10, 12, 15, 16, 17,
+REC_d12_mu42.json T 48
+      level 1: max moves 3, |E_l| 24, FEEDBACK bound 50, Up_l [3, 8, 11, 17] (levels [1, 4
+      level 2: max moves 4, |E_l| 29, FEEDBACK bound 120, Up_l [3, 8, 10, 11, 17, 18, 21, 
+      level 3: max moves 9, |E_l| 48, FEEDBACK bound 294, Up_l [3, 8, 9, 10, 11, 12, 13, 1
+      level 4: max moves 10, |E_l| 48, FEEDBACK bound 392, Up_l [3, 8, 9, 10, 11, 12, 13, 
+      level 6: max moves 21, |E_l| 48, FEEDBACK bound 588, Up_l [3, 8, 9, 10, 11, 12, 13, 
+      level 7: max moves 42, |E_l| 48, FEEDBACK bound 686, Up_l [3, 8, 9, 10, 11, 12, 13, 
+REC_d7_mu17.json T 17
+      level 1: max moves 3, |E_l| 8, FEEDBACK bound 18, Up_l [5, 10, 13] (levels [2, 5, 6]
+      level 2: max moves 7, |E_l| 17, FEEDBACK bound 72, Up_l [5, 6, 8, 10, 12, 13] (level
+      level 3: max moves 9, |E_l| 17, FEEDBACK bound 108, Up_l [5, 6, 8, 9, 10, 11, 12, 13
+      level 4: max moves 17, |E_l| 17, FEEDBACK bound 144, Up_l [5, 6, 8, 9, 10, 11, 12, 1
+      level 6: max moves 1, |E_l| 17, FEEDBACK bound 216, Up_l [5, 6, 8, 9, 10, 11, 12, 13
+REC_d8_mu24.json T 25
+      level 1: max moves 3, |E_l| 24, FEEDBACK bound 50, Up_l [8, 10, 11, 12, 15] (levels 
+      level 2: max moves 6, |E_l| 24, FEEDBACK bound 100, Up_l [8, 9, 10, 11, 12, 14, 15] 
+      level 3: max moves 12, |E_l| 24, FEEDBACK bound 150, Up_l [8, 9, 10, 11, 12, 14, 15]
+      level 4: max moves 24, |E_l| 24, FEEDBACK bound 200, Up_l [8, 9, 10, 11, 12, 14, 15]
+      level 6: max moves 3, |E_l| 24, FEEDBACK bound 300, Up_l [8, 9, 10, 11, 12, 14, 15] 
+      level 7: max moves 1, |E_l| 24, FEEDBACK bound 350, Up_l [8, 9, 10, 11, 12, 14, 15] 
+REC_d9_mu29.json T 31
+      level 1: max moves 3, |E_l| 31, FEEDBACK bound 64, Up_l [3, 4, 9, 15, 16] (levels [1
+      level 2: max moves 4, |E_l| 31, FEEDBACK bound 128, Up_l [3, 4, 6, 7, 9, 10, 15, 16]
+      level 3: max moves 5, |E_l| 31, FEEDBACK bound 192, Up_l [3, 4, 6, 7, 9, 10, 11, 15,
+      level 4: max moves 6, |E_l| 31, FEEDBACK bound 256, Up_l [3, 4, 6, 7, 9, 10, 11, 15,
+      level 6: max moves 14, |E_l| 31, FEEDBACK bound 384, Up_l [3, 4, 6, 7, 9, 10, 11, 12
+      level 7: max moves 29, |E_l| 31, FEEDBACK bound 448, Up_l [3, 4, 6, 7, 9, 10, 11, 12
+climb77_d10_T45.json T 45
+      level 1: max moves 3, |E_l| 36, FEEDBACK bound 74, Up_l [3, 7, 12, 13, 15, 17, 19] (
+      level 2: max moves 7, |E_l| 40, FEEDBACK bound 164, Up_l [3, 7, 8, 9, 12, 13, 15, 16
+      level 3: max moves 15, |E_l| 40, FEEDBACK bound 246, Up_l [3, 7, 8, 9, 12, 13, 15, 1
+      level 4: max moves 7, |E_l| 42, FEEDBACK bound 344, Up_l [3, 7, 8, 9, 10, 12, 13, 15
+      level 6: max moves 10, |E_l| 42, FEEDBACK bound 516, Up_l [3, 7, 8, 9, 10, 12, 13, 1
+      level 7: max moves 8, |E_l| 42, FEEDBACK bound 602, Up_l [3, 7, 8, 9, 10, 12, 13, 15

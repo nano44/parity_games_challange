@@ -278,3 +278,16 @@ polynomial bound; MOVES-2D and G-N5-TIME stay OPEN.
   back-down (re-entry allowed), keys go upward losslessly — so there is no one-way interface between level blocks along which a nested
   recursion could run. A recursion needs a quantity that an upper block can receive from a lower one only in bounded amounts per unit of
   its own activity; neither flips (PASS-FREEZE) nor fuel chains (RE-ENTRY) are such a quantity. OPEN; no conjecture.
+
+## 12. Box 78 (Lead 03:13Z: RE-ENTRANT fuel loop; interface quantity) — INTERIM (searches running)
+- Coordinated rewire (DATA): in REC_d10_tower_mu30, re-pointing mover 4's option 0 (fuel 9) to any other legal target and mover 9 onto
+  (6, 7) / (7, 6), over starts and parities of 9, collapses the run (best F = 0 2 2 6 9 4 1 1 0 0): the tower's fuel is holistic.
+- |E_l| saturates (DATA, fuelE78.out): on all ten records |E_l| ≥ 0.77·T for l ≥ 2 (e.g. REC_d12_mu42: 48 of T = 48), so FUEL (i)
+  (§11) carries no information beyond T there: the fuel changes at almost every step.
+- Landed potentials as an interface (DATA, pot78.out, rank78.out): none bounds fuel changes per unit of lower activity.
+  - R105 RANK: the maximum RANK (π a Kahn order) grows with d on the records: 3 (d 6), 4-6 (d 7-10), 7 (d 11, 12); RANK-BOUND then gives
+    Σ_(j ≤ 7) C(N, j) − 1, not a fixed polynomial.
+  - R114 PHIK-DESCENT: Φ_K(s_0) is near its exponential ceiling (REC_d10_tower: 3,914 of 2^(d+2) − 2d − 4 = 4,072); R105 EXACT-ENERGY:
+    E(s_0) ≈ 0.72·(2^N − 1). Both fall by ≥ 1 per step (checked), with exponential slack; both are global, not per level block.
+- Searches (box78/climb78.py, smooth score Σ_(l ≤ 4) min(F(l), 2^(l+2) − 2), from REC_d10_tower + 2 frozen top pairs and from
+  climb77_d10_T45): running; results to follow in this section's final version.

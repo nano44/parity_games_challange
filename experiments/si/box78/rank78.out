@@ -1,0 +1,10 @@
+KILL_M2D_d6_mu13.json N 12 T 13 maxRANK 3 hist {1: 6, 2: 5, 3: 2} RANK-BOUND sum_(j<=3) C(N,j)-1 = 297
+KILL_M2D_d8_mu21.json N 16 T 24 maxRANK 6 hist {1: 5, 2: 7, 3: 6, 4: 3, 5: 2, 6: 1} RANK-BOUND sum_(j<=6) C(N,j)-1 = 14891
+REC_d10_mu32.json N 20 T 33 maxRANK 6 hist {1: 7, 2: 10, 3: 8, 4: 4, 5: 2, 6: 2} RANK-BOUND sum_(j<=6) C(N,j)-1 = 60458
+REC_d10_tower_mu30.json N 20 T 35 maxRANK 6 hist {1: 8, 2: 4, 3: 10, 4: 6, 5: 5, 6: 2} RANK-BOUND sum_(j<=6) C(N,j)-1 = 60458
+REC_d11_mu40.json N 22 T 44 maxRANK 7 hist {1: 6, 2: 8, 3: 9, 4: 8, 5: 6, 6: 4, 7: 3} RANK-BOUND sum_(j<=7) C(N,j)-1 = 280598
+REC_d12_mu42.json N 24 T 48 maxRANK 7 hist {1: 6, 2: 8, 3: 13, 4: 6, 5: 8, 6: 6, 7: 1} RANK-BOUND sum_(j<=7) C(N,j)-1 = 536153
+REC_d7_mu17.json N 14 T 17 maxRANK 5 hist {1: 7, 2: 5, 3: 3, 4: 1, 5: 1} RANK-BOUND sum_(j<=5) C(N,j)-1 = 3471
+REC_d8_mu24.json N 16 T 25 maxRANK 4 hist {1: 8, 2: 4, 3: 8, 4: 5} RANK-BOUND sum_(j<=4) C(N,j)-1 = 2515
+REC_d9_mu29.json N 18 T 31 maxRANK 6 hist {1: 7, 2: 10, 3: 9, 4: 4, 6: 1} RANK-BOUND sum_(j<=6) C(N,j)-1 = 31178
+climb77_d10_T45.json N 20 T 45 maxRANK 6 hist {1: 1, 2: 11, 3: 10, 4: 9, 5: 10, 6: 4} RANK-BOUND sum_(j<=6) C(N,j)-1 = 60458
