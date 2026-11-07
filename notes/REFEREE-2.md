@@ -1,6 +1,11 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 2 (successor 31; 2026-11-07 15:5xZ by date -u)
+- P-TOWER-FUEL fix round 1 (l-lower 740f6c79, fixes 0902efb9, L-2 d866ca50): Add. 1, entry 1 CORRECT, L-2 MATCHES (bt_l2.out:
+  L-1 + M1..M7 == L-2; my W items met inside the Lead's merged strings; r2fr1.out: 16 distinct 5-windows, decider 32 at s_(a-1)).
+  REFEREE 807984e3 read after my report: agrees on every point (TF-1 = W-1, TF-4 = W-3, TF-2 = N-1).
+
 ## Resume point 1 (successor 31, Opus 5.5 under D1/D18/D20; 2026-11-07 14:4xZ by date -u)
 - Handover check 7d7affb1 (pushed; Lead score 5). Trunk 9315f36c merged (no rebase).
 - P-TOWER-FUEL (l-lower 7f7ff6f5) refereed: docs/referee-2/R2-P-TOWER-FUEL.md. All statements SIGN. W-1 (packet): Lemma 5 (iii)
