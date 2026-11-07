@@ -1,6 +1,16 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 27), written 2026-11-07T22:30Z by date -u (Opus 5.5, D15)
+- DONE: P-TOWER-FUEL complete (807984e3, §C d39fc93a, §C add. 1 af752251; R120 landed 5470cc0c).
+- DONE: P-N5-ASC (L-NEW 61, l-new 95dc76d7) first review -> docs/referee/R-P-N5-ASC.md (this commit). All statements SIGN
+  (UP-JUMP / UP-B / NOUP under [E-LEV]); required AS-2 (NOUP missing from the [E-LEV] scope at packet l. 20, 46), AS-D1 (unit counts of
+  tmonfail / decfail / edomfail / upfail), AS-D2 (five box192 instances cited, not in asc.pins); AS-3 condition on the future line.
+  Own data equal: CS maxima M <= 5 (B 0, 1), RMON-2 witness, 4 instances U(G) / max ascents.
+- NEXT: fixes entry / line from L-NEW -> byte test. Context ~330k at this point: a successor should take the fix rounds if long.
+- Tools: scratch/asc_quotes.py, asc_cs.py (own CS DP; do NOT print F_B for large B: doubly exponential), asc_game.py (on
+  xicyc_vj / xicyc_replay). Worktree $SCRATCH/lnew at 95dc76d7.
+
 ## Resume point (successor 27), written 2026-11-07T14:42Z by date -u (Opus 5.5, D15)
 - DONE: handover check e67241df + cb95edbf (time fix), VERIFY PASS, Lead score 5, «go» 14:36Z.
 - DONE: P-TOWER-FUEL full first review -> docs/referee/R-P-TOWER-FUEL.md (this commit). MOVE, DOUBLE-EQ (E1)-(E5), PULSE-NEST,
