@@ -234,11 +234,15 @@ K0 and K3, which occur only as a cycle node (cW) or on the sink suffix u → K0 
 Delayed RESET under E-DOM: OPEN. No lemma either way.
 - DEAD (port): G_n compiled faithfully is exact for 6 steps, then diverges at the RESET-penalty comparison (§7).
 - DEAD (simple repair): BONUS=l (§7).
-- DATA, E-DOM priority search on G_n's fixed graph (edomclimb.py; Howard = switch-all VJ on the ORIGINAL game with E-DOM-compatible
-  priorities: escapes on top, every other rank and parity free; unit: iterations; n 3; two 40-min climbs, seeds 31, 32). The E-DOM
-  order that keeps the original order inside the bands gives T 15, against T 70 with the original priorities. The climbs reach T 37 and
-  T 39 at 15:52Z (running). Whether any E-DOM order stays exponential in n is untested. The orders are learned per instance and do not
-  yet transfer to n 4.
+- DATA, E-DOM priority search on G_n's fixed graph (edomclimb.py; E-DOM-compatible priorities: escapes on top, every other rank and
+  parity free; unit: iterations; n 3). The E-DOM order that keeps the original order inside the bands gives Howard T 15 on the original
+  game, against T 70 with the original priorities.
+  - ERRATUM (16:1xZ) to the first version of this paragraph (commit 73a35a0ca): its «T 37 and T 39» are INVALID. Those climbs were
+    allowed to move and flip the sink loop q; they made q even (priority 12), which changes the game. The compiler maps p, q to u
+    (Λ = K1, odd). Found by edomdiff.py: first divergence at t 1 on lane nodes b4, b5, because Λ = q was even. Files kept as
+    out/ed3*_n3_INVALID_qflip.json.
+  - Relaunched 16:1xZ with q fixed lowest and odd. Two scores: Howard T on the original E-DOM game (ed3o), and Howard T on IDEAL-CYC of
+    the compiled genome (ed3g; box191 idealcyc), which is the object N5′-xi runs on via Γ3. Running.
 - READING: with E-DOM, «bit i not set» has to be expressed by a missing e on a competitor, never by an odd penalty on the access
   route. A gadget that withholds an e on the competing route until bit i is set is not excluded by anything I can prove.
 
