@@ -1,0 +1,1 @@
+TAG ISO13 d 4 L 13 P None W R: leaves 26 SAT 0 UNSAT 0 open 26 splits 3 -> OPEN

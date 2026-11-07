@@ -63,3 +63,30 @@ only), 𝓛^R_d of RESULTS R110 (definition only). Not a TARGET.md claim. G-N5-T
   ISO, sim T 12 (stop: opt). Pinned in the ISO CNF: SAT at L 12, UNSAT at L 13; after the normal form (NF=1: PAIR-SWAP at levels 2, 1,
   0, then SYM) it lies in root 40: SAT at 12, UNSAT at 13 there; root 41 UNSAT at 12 (log/iso_pin_ISO_1_d4_t12.out). max_d4_L13
   under NF=1 also lands in root 40 (log/symwit_NF_max_d4_L13.out). Query: ISO, T >= 13 on the 8 roots (target UNSAT: T^R_ISO(4) = 12).
+
+## cnf2 spec (Lead 04:28Z: a NEW encoder beside box27/cnf.py, which stays the R112-audited encoder)
+- cnf2.py = box27/cnf.py with exactly ONE clause family replaced (diff: chains(t) and a helper defeq; the build line names cnf2 and
+  ISO). Unchanged families, quoted from box27/ENCODING.md §2-§3: state variables S[t][x]; Xi-targets Xv (exactly one per option,
+  ISO=1 removes movers 0, 1 from every domain); acyclicity Xv[(x,k)][y] -> pi(x < y), pi a strict total order; ranks rk (strict
+  total order on all options), parities par; per-level gate orders gord; the comparison better1 (largest-rank β of the symmetric
+  difference, parity decides); A-sets at the OLD state (B_t(x) = better1 XOR S[t][x]); keys at the NEW state (keys_lt, kp1); the step
+  S[t+1][x] = ITE(B_t(x), KP_(t+1)(x), S[t][x]); «T ≥ L» = every one of the first L steps changes the state; SYM, CUBE, XCUBE.
+- Replaced family (chain sets under S[t]):
+  - XC_t[y][z] := OR_k (S[t] gives y option k AND Xv[(y,k)][z])   (y's current option has Xi-target z; Tseitin AND/OR gates).
+  - mem_t[y][o], one variable per mover y and option o, with the equivalence (clauses ¬m ∨ terms…, and m ∨ ¬term for each term)
+      mem_t[y][o] <-> OR_k [S[t] gives y option k AND o = (y,k)]  OR  OR_z [XC_t[y][z] AND mem_t[z][o]].
+  - cm_t[(x,k)][o] <-> [o = (x,k)] OR OR_z [Xv[(x,k)][z] AND mem_t[z][o]]   (z over movers; the exit contributes nothing).
+- Why this is R104's chain (PROVED, lane): fix a genome and a state. Every XC_t[y][z] that is true has pi(y < z) (acyclicity
+  clauses), and y has exactly one current Xi-target (or the exit). Process movers in DECREASING pi order: when y is reached, every
+  mem_t[z][·] it refers to (z after y) is already determined, so the equivalence fixes mem_t[y][·] uniquely, and by induction
+  mem_t[y] = {(y, s(y))} ∪ mem_t[xt(y, s(y))] = the β-set of the chain of y's current option (R104: «(x,k), (xt, s(xt)), … up to the
+  first Ξ-target X»). Hence cm_t[(x,k)] = {(x,k)} ∪ chain(xt(x,k), s(xt)) = R104's chain of option (x,k), the same set cnf.py's
+  N-hop unrolling computes (an acyclic chain visits at most N movers). So for every genome and start the cnf2 and cnf.py formulas
+  have the same solutions projected on the genome and state variables.
+- Size (log/cnf2_sizes.out, SYM + root 0): d 3 L 9: 22,878 vars / 83,778 clauses (cnf.py 58,896 / 204,036); d 4 L 14: 80,838 /
+  302,184 (273,590 / 972,056); d 4 ISO L 13: 65,777 / 244,482 (156,153 / 542,624).
+- Regression (Lead items (a)-(c)): regress2.py (pins genome + start, SAT at sim T with decoded states = sim states state by state and
+  decoded Xi-targets = the genome's, UNSAT at T + 1), d3cnf2.sh (T^R(3) = 8 re-derived). Harness teeth: two broken cnf2 variants (the
+  «<-» half of the mem equivalence dropped; the base term ignoring the state) FAIL regress2 random 15: 7 / 30 and 5 / 30 runs
+  (log/regress2_mutants.out).
+- Status: cnf2 is NOT audited. A cnf2 UNSAT is DATA until the referees audit this spec; proofs + drup.c / frup certify the formula only.
