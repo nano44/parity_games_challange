@@ -1,0 +1,12 @@
+GAME new/box59/out/rnd/r76_n80.pg
+BGmax 0
+GAMES 1
+INC 1
+K 5
+MAXPH 1
+SGmax 0
+SQZ_chk 480
+steps 1
+stretches 1
+VIOLATIONS 0
+RC 0

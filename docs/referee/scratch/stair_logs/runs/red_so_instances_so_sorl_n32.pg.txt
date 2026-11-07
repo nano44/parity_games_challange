@@ -1,0 +1,13 @@
+GAME red/so/instances/so_sorl_n32.pg
+BIT_chk 76
+DESC 0
+FROZEN_chk 22
+GAMES 1
+ROOT_chk 23
+TD 235
+WCH 36
+WCT 22
+trans 22
+wruns 1
+VIOLATIONS 0
+RC 0

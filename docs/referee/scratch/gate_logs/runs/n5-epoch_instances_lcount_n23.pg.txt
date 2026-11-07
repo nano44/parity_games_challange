@@ -1,0 +1,12 @@
+GAME n5-epoch/instances/lcount_n23.pg
+BGmax 4
+GAMES 1
+INC 4
+K 5
+MAXPH 4
+SGmax 4
+SQZ_chk 138
+steps 4
+stretches 1
+VIOLATIONS 0
+RC 0

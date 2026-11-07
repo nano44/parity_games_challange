@@ -1,0 +1,12 @@
+GAME new/box54/out/switchbestexp_2.pg
+BGmax 12
+GAMES 1
+INC 6
+K 32
+MAXPH 18
+SGmax 15
+SQZ_chk 1980
+steps 30
+stretches 2
+VIOLATIONS 0
+RC 0

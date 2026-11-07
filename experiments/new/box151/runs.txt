@@ -1,0 +1,25 @@
+L-NEW box 151 runs (2026-11-03, this container, z3-solver from pip; DEG=0 unless said; times wall-clock under load)
+run.sh quick (all rows):
+NEST k 3 E 0 DEG 1 ANTI 0 FREEKP 0 xwake -> sat
+NEST k 3 E 1 DEG 1 ANTI 0 FREEKP 0 xwake -> sat
+NEST k 2 E 0 DEG 0 ANTI 1 FREEKP 0 xwake_anti -> unsat
+NEST k 3 E 0 DEG 0 ANTI 1 FREEKP 0 xwake_anti -> unsat
+NEST k 4 E 0 DEG 0 ANTI 1 FREEKP 0 xwake_anti -> unsat
+NEST k 5 E 0 DEG 0 ANTI 1 FREEKP 0 xwake_anti -> unsat
+NEST k 2 E 1 DEG 0 ANTI 1 FREEKP 0 xwake_anti -> unsat
+NEST k 2 E 2 DEG 0 ANTI 1 FREEKP 0 xwake_anti -> sat
+NEST k 3 E 1 DEG 0 ANTI 1 FREEKP 0 xwake_anti -> unsat
+NEST k 4 E 1 DEG 0 ANTI 1 FREEKP 0 xwake_anti -> unsat
+NEST k 4 E 2 DEG 0 ANTI 1 FREEKP 0 xwake_anti -> unsat
+NEST k 2 E 1 DEG 0 ANTI 1 FREEKP 1 xwake_anti -> sat
+NEST k 3 E 1 DEG 0 ANTI 1 FREEKP 1 xwake_anti -> unsat
+NEST k 3 E 2 DEG 0 ANTI 1 FREEKP 1 xwake_anti -> sat
+NEST k 4 E 1 DEG 0 ANTI 1 FREEKP 1 xwake_anti -> unsat
+NEST k 4 E 2 DEG 0 ANTI 1 FREEKP 1 xwake_anti -> sat
+Separate runs (same tools):
+k 3 E 2 DEG 0 ANTI 1 FREEKP 0 -> sat 0.3 s
+k 4 E 3 DEG 1 ANTI 1 FREEKP 0 -> sat 521.6 s ; k 4 E 2 DEG 1 ANTI 1 -> unknown 1200 s (DEG 0: unsat 3.9 s)
+k 5 E 1 DEG 0 ANTI 1 FREEKP 0 -> unsat 2.2 s ; k 5 E 2 DEG 0 ANTI 1 FREEKP 0 -> unsat 12.2 s
+k 5 E 1 DEG 0 ANTI 1 FREEKP 1 -> unsat 2.4 s ; k 5 E 2 DEG 0 ANTI 1 FREEKP 1 -> unsat 204.7 s ; k 5 E 3 FREEKP 1 -> sat 229.2 s
+k 5 E 3 FREEKP 0, k 6 E 2/3 FREEKP 1: running at the push
+k 3 E 1 ANTI 1 CBIT 0 -> sat 0.3 s (comparison-bit clause needed)

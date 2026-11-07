@@ -1,0 +1,7 @@
+GAME red/carry/instances/tstep_near_n20.pg
+GAMES 1
+OLD_chk 72
+STEP_caseII 5
+STEP_chk 40
+VIOLATIONS 0
+RC 0

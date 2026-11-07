@@ -1,0 +1,8 @@
+GAME n5-exhaustive/instances/frz3_n24.pg n5-exhaustive/instances/frz3_n24.start
+GAMES 1
+enum_states 2
+loc_chk 7
+rhos 15
+states 2
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,6 @@
+corpus files at d 4: 64
+class PHX d 4 genomes 700 transitions 177208 distinct-dec-rows 139525 distinct-states 192222 features 180
+FEASIBLE min max Phi = 49.1132
+weights: pair2_1111=-19.2 zH2_7=17.5 pair2_0011=-17.1 pair2_0111=-17.1 pair2_1011=-16.9 zH2_1=16.9 pair2_1100=16.8 pair2_1000=14.6 zH2_2=13.8 zH2_4=13.8 zH2_3=13.5 zH2_5=13.5 zH2_8=13.3 zH2_6=13.2 pair2_0100=12.9 pair2_0000=11.1 pair0_0000=-10.9 k3=9.88 k0=8.93 pair0_1000=-8.11 u1=7.71 pair0_1110=7.25 pair0_0010=-7.19 pair0_1011=6.94 uH0_8=-6.58 pair1_1011=5.41 pair1_1001=5.41 pair1_1000=5.25 pair1_1010=5.18 uH2_2=5.06 zH1_1=4.99 pair1_0100=-4.96 pair1_0110=-4.95 pair1_1101=4.78 u3=-4.76 uH2_3=4.64 uH0_2=-4.37 zH0_5=-4.26 uH2_1=4.18 uH0_7=-4.13 const=0
+dual: 100 decrease rows in support, sum of their multipliers 49.1132 (= the bound)
+dual mass by genome source: rand:28.8 perbit_m3_s47.json:2.45 NOW_1_d4_t10.json:1.96 ISO_1_FRZ_1_d4_t10.json:1.92 pm_d4_w2_s2.json:1.65 climbI2_d4_LR_s104.json:1.44 ISO_1_FRZ_1_d4_t9.json:1.42 climb_SUM2_m3_s14.json:1.39 ISO_1_d4_t10.json:1.05 fkclimb_k0_m3_mu1_T6.json:0.976 iso_d4_st9.json:0.866 lsi_inf18_m3.json:0.662

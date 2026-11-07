@@ -1,0 +1,9 @@
+GAME red/carry/instances/pk_viol_n20.pg
+GAMES 1
+OLD_chk 6
+STEP_caseII 3
+STEP_chk 27
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

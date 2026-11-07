@@ -1,0 +1,7 @@
+GAME red/kl/instances/r2join_h0E_n14.pg
+GAMES 1
+OLD_chk 30
+STEP_caseII 11
+STEP_chk 24
+VIOLATIONS 0
+RC 0

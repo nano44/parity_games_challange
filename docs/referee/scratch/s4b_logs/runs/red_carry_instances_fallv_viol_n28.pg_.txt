@@ -1,0 +1,10 @@
+GAME red/carry/instances/fallv_viol_n28.pg 
+GAMES 1
+enum_skip 2
+enum_states 3
+keep_chk 1
+loc_chk 41
+rhos 39
+states 5
+VIOLATIONS 0
+RC 0

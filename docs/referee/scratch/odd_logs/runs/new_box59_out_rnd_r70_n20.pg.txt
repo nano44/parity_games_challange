@@ -1,0 +1,15 @@
+GAME new/box59/out/rnd/r70_n20.pg
+CNT_chk 1
+FR 1
+FR_maxpair 1
+GAMES 1
+OLD_chk 6
+ROOT_chk 2
+ROOT_endPE 2
+ROOT_maxlen 1
+STEP_caseII 4
+STEP_chk 10
+trans 2
+wruns 1
+VIOLATIONS 0
+RC 0

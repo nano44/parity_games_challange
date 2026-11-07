@@ -1,0 +1,12 @@
+GAME new/box59/out/rnd/r177_n60d2.pg
+GAMES 1
+OLD_chk 84
+ROOT_chk 11
+ROOT_endPE 11
+ROOT_maxlen 1
+STEP_caseII 14
+STEP_chk 66
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,32 @@
+== 05:32Z n 40 seed-file out/pg_n32.json
+start n 91 xi 46 spec 7
+it 27 n 91 xi 46 spec 8 OK
+it 120 n 92 xi 47 spec 7 OK
+it 369 n 96 xi 47 spec 8 OK
+it 1902 n 97 xi 48 spec 7 OK
+it 1906 n 97 xi 49 spec 7 OK
+it 2075 n 99 xi 50 spec 7 OK
+it 2188 n 101 xi 52 spec 7 OK
+it 2209 n 101 xi 52 spec 8 OK
+it 2262 n 103 xi 53 spec 8 OK
+it 2366 n 98 xi 54 spec 8 OK
+it 2379 n 98 xi 55 spec 8 OK
+it 2597 n 100 xi 57 spec 8 OK
+it 2674 n 100 xi 57 spec 9 OK
+it 2691 n 100 xi 58 spec 9 OK
+it 2857 n 99 xi 59 spec 9 OK
+it 3159 n 102 xi 60 spec 9 OK
+it 3295 n 99 xi 62 spec 9 OK
+it 3493 n 95 xi 63 spec 9 OK
+it 3499 n 95 xi 64 spec 9 OK
+it 3515 n 95 xi 65 spec 8 OK
+it 3593 n 94 xi 66 spec 8 OK
+it 3868 n 101 xi 67 spec 8 OK
+it 4930 n 100 xi 67 spec 9 OK
+it 4954 n 100 xi 68 spec 9 OK
+it 5021 n 99 xi 69 spec 9 OK
+it 5245 n 97 xi 69 spec 11 OK
+it 5283 n 100 xi 70 spec 11 OK
+it 5285 n 100 xi 71 spec 11 OK
+it 5769 n 101 xi 72 spec 11 OK
+FINAL best 72.011

@@ -1,0 +1,15 @@
+GAME red/fbr/instances/lev56_n48.pg
+DCOPIED 29
+DR 39
+DR_chk 71
+DS 3
+DT 0
+GAMES 1
+NF_chk 126
+ON_chk 121
+ROLD 0
+TS 0
+trans 70
+wruns 10
+VIOLATIONS 0
+RC 0

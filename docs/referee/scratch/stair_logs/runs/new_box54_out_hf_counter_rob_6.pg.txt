@@ -1,0 +1,4 @@
+GAME new/box54/out/hf/counter_rob_6.pg
+skip_big 1
+VIOLATIONS 0
+RC 0

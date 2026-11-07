@@ -1,0 +1,13 @@
+GAME red/so/instances/tog6a_n32.pg
+BIT_chk 76
+DCOPY_chk 8
+DESC 13
+FROZEN_chk 5
+GAMES 1
+TD 0
+WCH 38
+WCT 4
+trans 5
+wruns 1
+VIOLATIONS 0
+RC 0

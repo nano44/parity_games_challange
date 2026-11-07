@@ -1,0 +1,1 @@
+cert_PHX_d3_s1793.json d 3 rows 73 features 121 bad 0 inconsistent False rank 73 free 0 negative 0 residual-features 0 sum_a 1 sum_b 1 bound 22.000000 = 22

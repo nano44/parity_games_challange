@@ -1,0 +1,8 @@
+GAME new/box54/out/d_runquad_K3.pg
+GAMES 1
+enum_states 2
+loc_chk 15
+rhos 544
+states 2
+VIOLATIONS 0
+RC 0

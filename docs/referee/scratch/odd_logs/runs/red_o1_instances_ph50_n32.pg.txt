@@ -1,0 +1,7 @@
+GAME red/o1/instances/ph50_n32.pg
+GAMES 1
+OLD_chk 124
+STEP_caseII 52
+STEP_chk 64
+VIOLATIONS 0
+RC 0

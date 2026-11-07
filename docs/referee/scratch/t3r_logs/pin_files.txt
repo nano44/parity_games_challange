@@ -1,0 +1,6 @@
+FILE R_d3_L8.json max T 8
+FILE dbl_d3_F6.json max T 8
+FILE own_R_d3_L8.json max T 8
+FILE bf2_wit0.json max T 4
+FILE bf2_wit1.json max T 4
+TOTAL runs 224 T histogram {0: 16, 1: 44, 2: 54, 3: 29, 4: 29, 5: 28, 6: 15, 7: 6, 8: 3} run disagreements 0 genome-only tests 5 genome-only disagreements 0

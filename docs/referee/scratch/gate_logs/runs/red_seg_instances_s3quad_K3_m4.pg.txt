@@ -1,0 +1,4 @@
+GAME red/seg/instances/s3quad_K3_m4.pg
+skip_big 1
+VIOLATIONS 0
+RC 0

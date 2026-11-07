@@ -1,0 +1,12 @@
+GAME red/carry/instances/ctx13_n40.pg
+BGmax 5
+GAMES 1
+INC 3
+K 17
+MAXPH 5
+SGmax 5
+SQZ_chk 720
+steps 9
+stretches 3
+VIOLATIONS 0
+RC 0

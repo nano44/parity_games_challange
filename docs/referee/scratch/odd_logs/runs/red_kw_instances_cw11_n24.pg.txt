@@ -1,0 +1,12 @@
+GAME red/kw/instances/cw11_n24.pg
+CNT_chk 4
+FR 4
+FR_maxpair 1
+GAMES 1
+OLD_chk 101
+STEP_caseII 6
+STEP_chk 51
+trans 12
+wruns 5
+VIOLATIONS 0
+RC 0

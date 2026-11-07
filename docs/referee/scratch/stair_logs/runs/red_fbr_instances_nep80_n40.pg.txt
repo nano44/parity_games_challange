@@ -1,0 +1,13 @@
+GAME red/fbr/instances/nep80_n40.pg
+BIT_chk 149
+DESC 0
+FROZEN_chk 9
+GAMES 1
+ROOT_chk 18
+TD 218
+WCH 46
+WCT 9
+trans 9
+wruns 4
+VIOLATIONS 0
+RC 0

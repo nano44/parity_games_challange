@@ -1,0 +1,8 @@
+GAME red/mei/instances/mei_h2.pg
+BGmax 0
+GAMES 1
+K 1
+SGmax 0
+SQZ_chk 38
+VIOLATIONS 0
+RC 0

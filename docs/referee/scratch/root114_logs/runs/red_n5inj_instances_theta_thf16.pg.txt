@@ -1,0 +1,15 @@
+GAME red/n5inj/instances/theta_thf16.pg
+DCOPIED 1
+DR 6
+DR_chk 8
+DS 1
+DT 0
+GAMES 1
+NF_chk 23
+ON_chk 23
+ROLD 0
+TS 0
+trans 17
+wruns 2
+VIOLATIONS 0
+RC 0

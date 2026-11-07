@@ -1,0 +1,35 @@
+== 05:13Z n 24 seed-file 
+start n 40 xi 2 spec 2
+it 0 n 40 xi 4 spec 4 OK
+it 3 n 40 xi 5 spec 5 OK
+it 22 n 39 xi 7 spec 7 OK
+it 27 n 39 xi 11 spec 11 OK
+it 36 n 41 xi 15 spec 15 OK
+it 38 n 41 xi 17 spec 17 OK
+it 85 n 43 xi 19 spec 19 OK
+it 88 n 44 xi 20 spec 20 OK
+it 127 n 44 xi 6 spec 5 OK
+it 130 n 46 xi 7 spec 5 OK
+it 281 n 47 xi 8 spec 6 OK
+it 309 n 48 xi 8 spec 5 OK
+it 314 n 47 xi 9 spec 6 OK
+it 345 n 48 xi 10 spec 6 OK
+it 483 n 50 xi 11 spec 7 OK
+it 623 n 49 xi 12 spec 8 OK
+it 1358 n 50 xi 13 spec 9 OK
+it 1447 n 47 xi 14 spec 9 OK
+it 2053 n 53 xi 15 spec 10 OK
+it 2449 n 50 xi 16 spec 11 OK
+it 2589 n 53 xi 15 spec 9 OK
+it 3020 n 51 xi 16 spec 10 OK
+it 3207 n 51 xi 17 spec 11 OK
+it 3504 n 52 xi 14 spec 7 OK
+it 5441 n 52 xi 15 spec 8 OK
+it 5667 n 54 xi 15 spec 7 OK
+it 5916 n 55 xi 16 spec 7 OK
+it 5934 n 54 xi 17 spec 7 OK
+it 6136 n 56 xi 17 spec 6 OK
+it 7204 n 55 xi 18 spec 6 OK
+it 7405 n 58 xi 19 spec 7 OK
+it 7840 n 54 xi 19 spec 6 OK
+FINAL best 13.019

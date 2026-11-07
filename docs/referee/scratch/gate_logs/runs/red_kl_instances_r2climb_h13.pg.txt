@@ -1,0 +1,12 @@
+GAME red/kl/instances/r2climb_h13.pg
+BGmax 3
+GAMES 1
+INC 0
+K 4
+MAXPH 1
+SGmax 3
+SQZ_chk 65
+steps 1
+stretches 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,8 @@
+GAME red/carry/instances/lalg_dtl_mviol_n20.pg 
+GAMES 1
+enum_states 5
+loc_chk 21
+rhos 202
+states 5
+VIOLATIONS 0
+RC 0

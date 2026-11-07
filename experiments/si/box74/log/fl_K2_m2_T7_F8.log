@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/user/parity_games_challange/experiments/si/box74/../box70/frame.py", line 141, in <module>
+    enc = CardEnc.atleast(lits=FL, bound=T2, top_id=P.top, encoding=EncType.seqcounter); cl.extend(enc.clauses); P.top = max(P.top, enc.nv)
+  File "/usr/local/lib/python3.13/site-packages/pysat/card.py", line 362, in atleast
+    raise ValueError('Wrong bound: {0}'.format(bound))
+ValueError: Wrong bound: 8

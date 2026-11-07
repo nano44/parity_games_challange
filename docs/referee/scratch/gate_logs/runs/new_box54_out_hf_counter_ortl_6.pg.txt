@@ -1,0 +1,12 @@
+GAME new/box54/out/hf/counter_ortl_6.pg
+BGmax 5
+GAMES 1
+INC 5
+K 7
+MAXPH 1
+SGmax 5
+SQZ_chk 248
+steps 7
+stretches 1
+VIOLATIONS 0
+RC 0

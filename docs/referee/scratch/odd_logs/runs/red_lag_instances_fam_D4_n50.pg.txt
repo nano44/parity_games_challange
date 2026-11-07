@@ -1,0 +1,7 @@
+GAME red/lag/instances/fam_D4_n50.pg
+GAMES 1
+OLD_chk 42
+STEP_caseII 12
+STEP_chk 37
+VIOLATIONS 0
+RC 0

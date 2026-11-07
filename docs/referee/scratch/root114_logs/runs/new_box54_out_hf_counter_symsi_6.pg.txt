@@ -1,0 +1,12 @@
+GAME new/box54/out/hf/counter_symsi_6.pg
+DCOPIED 0
+DR 0
+DS 0
+DT 0
+GAMES 1
+ROLD 0
+TS 0
+trans 4
+wruns 4
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,15 @@
+GAME new/box59/out/rnd/r4_n60.pg
+CNT_chk 1
+FR 1
+FR_maxpair 1
+GAMES 1
+OLD_chk 30
+ROOT_chk 4
+ROOT_endPE 4
+ROOT_maxlen 1
+STEP_caseII 36
+STEP_chk 144
+trans 2
+wruns 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,18 @@
+PIN gci3_n24 05b980fb85a6 start 80346d9405b9
+OINK gci3_n24 --zlk verified
+OINK gci3_n24 --tl verified
+PINWIN gci3_n24.pg n 24 states 22 fallbacks 0 W0 23 AGREE True
+n5b iterations 21 fallbacks 0 states 22 | n5x states 22 | identical state sequences: True
+WIN gci3_n24.pg n 24 K 21 [1, 21] L 20 ODIFF 1 FB 0 SB 20 SBSTEP 20 MAXSEG 20 MAXPH 20 PHNF 20 FLATNF 0 LAMNF 0 O [(0, 0, 6)]
+PIN farrise25_n32 8941d1c90594 start 07e800703f7e
+OINK farrise25_n32 --zlk verified
+OINK farrise25_n32 --tl verified
+PINWIN farrise25_n32.pg n 32 states 36 fallbacks 28 W0 32 AGREE True
+n5b iterations 35 fallbacks 28 states 36 | n5x states 36 | identical state sequences: True
+WIN farrise25_n32.pg n 32 K 35 [0, 33] L 33 ODIFF 1 FB 28 SB 31 SBSTEP 27 MAXSEG 2 MAXPH 26 PHNF 1 FLATNF 0 LAMNF 3 O [(0, 4, 11)]
+PIN b5_os_n40 00fc4562fea7 start 3301f31e2e0a
+OINK b5_os_n40 --zlk verified
+OINK b5_os_n40 --tl verified
+PINWIN b5_os_n40.pg n 40 states 82 fallbacks 9 W0 40 AGREE True
+n5b iterations 81 fallbacks 9 states 82 | n5x states 82 | identical state sequences: True
+WIN b5_os_n40.pg n 40 K 81 [0, 77] L 77 ODIFF 1 FB 9 SB 7 SBSTEP 9 MAXSEG 17 MAXPH 17 PHNF 17 FLATNF 0 LAMNF 7 O [(7, 2, 7)]

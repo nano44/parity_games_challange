@@ -1,0 +1,8 @@
+GAME new/box54/out/d_dlc_d3.pg 
+GAMES 1
+enum_states 15
+loc_chk 99
+rhos 9012
+states 15
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,14 @@
+GAME red/ul/instances/cxmig_k8_n82.pg
+CNT_chk 39
+FR 39
+FR_maxpair 1
+GAMES 1
+OLD_chk 76
+ROOT_chk 17
+ROOT_endPE 17
+ROOT_maxlen 1
+STEP_chk 144
+trans 16
+wruns 1
+VIOLATIONS 0
+RC 0

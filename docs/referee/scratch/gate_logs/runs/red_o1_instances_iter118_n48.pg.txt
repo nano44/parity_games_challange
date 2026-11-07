@@ -1,0 +1,12 @@
+GAME red/o1/instances/iter118_n48.pg
+BGmax 6
+GAMES 1
+INC 16
+K 18
+MAXPH 12
+SGmax 15
+SQZ_chk 912
+steps 17
+stretches 1
+VIOLATIONS 0
+RC 0

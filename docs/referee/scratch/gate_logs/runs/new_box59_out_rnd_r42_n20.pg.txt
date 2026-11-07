@@ -1,0 +1,8 @@
+GAME new/box59/out/rnd/r42_n20.pg
+BGmax 0
+GAMES 1
+K 0
+SGmax 0
+SQZ_chk 20
+VIOLATIONS 0
+RC 0

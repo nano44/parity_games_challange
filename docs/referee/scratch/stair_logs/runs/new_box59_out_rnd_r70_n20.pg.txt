@@ -1,0 +1,13 @@
+GAME new/box59/out/rnd/r70_n20.pg
+BIT_chk 4
+DESC 0
+FROZEN_chk 2
+GAMES 1
+ROOT_chk 3
+TD 7
+WCH 3
+WCT 2
+trans 2
+wruns 1
+VIOLATIONS 0
+RC 0

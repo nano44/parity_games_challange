@@ -1,0 +1,16 @@
+GAME red/fbr/instances/rho666_n48.pg
+CNT_chk 10
+FR 10
+FR_maxpair 1
+GAMES 1
+OLD_chk 313
+ROOT_chk 86
+ROOT_endPE 86
+ROOT_endPE_oddonly 24
+ROOT_maxlen 2
+STEP_caseII 9
+STEP_chk 304
+trans 9
+wruns 2
+VIOLATIONS 0
+RC 0

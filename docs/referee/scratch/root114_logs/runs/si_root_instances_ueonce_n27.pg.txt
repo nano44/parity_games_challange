@@ -1,0 +1,15 @@
+GAME si/root/instances/ueonce_n27.pg
+DCOPIED 0
+DR 2
+DR_chk 3
+DS 1
+DT 0
+GAMES 1
+NF_chk 28
+ON_chk 27
+ROLD 0
+TS 0
+trans 10
+wruns 1
+VIOLATIONS 0
+RC 0

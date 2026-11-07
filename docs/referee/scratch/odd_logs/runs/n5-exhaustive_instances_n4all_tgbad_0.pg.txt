@@ -1,0 +1,9 @@
+GAME n5-exhaustive/instances/n4all_tgbad_0.pg
+GAMES 1
+OLD_chk 5
+STEP_caseII 1
+STEP_chk 3
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

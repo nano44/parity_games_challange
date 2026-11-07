@@ -358,3 +358,92 @@ the author referee signs it in its report and the OTHER referee independently ch
 are quoted in the RESULTS entry, whose scope tail says the proof is referee-originated. Applied first to FLAT-SW in R94 (SW-KEEP by
 REFEREE 20, signed by REFEREE-2 23; OWN by REFEREE-2 23, signed by REFEREE 20); CHECKER C104 5c4d6e45 found it meets the rule (its N-3:
 weaker than lane-authored plus two non-author checks for the general form). Lanes write line files without a heading marker (C104 N-1).
+
+Lead reading L42 (2026-10-31 12:37Z by date -u):
+Premises not in R57. R57's standing SPEC premise (1E-N3) covers S1's procedure and S4a (σ_(k+1) is the pointwise optimum of H_k). It
+does NOT cover S4b: an Odd mirror «S4b's τ' is a pointwise optimum of O(τ) against the old σ» ([S4b-OPT], asked by L-NEW 41 for
+P-N5-STAIR's O-ARENA) is a separate premise. A packet claim that needs an uncovered premise is not signed: it is moved to "not to sign"
+(or stated with the premise as an explicit hypothesis, labelled CONDITIONAL). Applied first to P-N5-STAIR (docs/new/P-N5-STAIR-box112.md
+sha1 31771241): O-ARENA is withdrawn from the to-sign list; nothing else in the packet uses it (L-NEW 41, 12:30Z).
+
+Lead reading L43 (2026-10-31 20:27Z by date -u):
+Lane DEADs in RESULTS lines. A lane DEAD of an ASYMPTOTIC statement (one with an unspecified constant, e.g. «DESC_F ≤ c·n») does not
+enter a RESULTS line as «DEAD»: it enters as DATA with its numbers and source commit, or not at all. «DEAD» in a landing line needs a
+refereed proof, or one instance exceeding an EXPLICIT bound (as R90's REP-LIN, 570 > 538). Grounds: CHECKER C108 E-1 and C109 E-3
+(«A DATA label does not cure an overclaim»), REFEREE ROOT-L4 / ROOT-L5 (claude/referee 74025e44). Applied: P-N5-STAIR line L-3 drops
+the DESC-LIN clause; P-N5-ROOT line L-2 drops the DESC-LIN and DESC*-LIN clauses.
+
+Lead reading L44 (2026-11-01 03:17Z by date -u):
+Class-free items inside class-scoped RESULTS entries. An item of a landed RESULTS entry whose heading or Setting names a subclass (e.g.
+R18, 𝒞^1O) may be cited «on every game» in a later line when (i) the item's own statement carries no class hypothesis and (ii) both
+referees of the citing packet confirm that its signed proof uses none; the citing line says so («its proof uses no 𝒞^1O hypothesis»)
+and the entry quotes both confirmations. Applied first to R18 (d) Lemma R / Lemma S (a)-(b) in P-N5-GATE (REFEREE c9bc161c §1;
+REFEREE-2 e35e8280 §2). Landed precedents in entry bodies: R47, R55, R56.
+
+Lead reading L45 (2026-11-01 04:10Z by date -u):
+S4b is covered by R57's 1E-N3. L42's restriction («R57 covers S1 and S4a only; [S4b-OPT] not covered») is LIFTED for S4b: S4b runs S1's
+procedure on the restricted game H′_k (same V, Ω, owners; E′ ⊆ E; a successor at every vertex; «S1 procedure on H', not dual»), which is an
+input of the kind 1E-N3 / N-1E-1 speaks of (R57 (b): «that S1's procedure realises an optimal σ̄ is VJ00 §6 plus SPEC conformance»).
+Grounds: P-N5-S4B (l-si 68fa36619) Lemma S4B-OPT and Corollary S4B-KEEP, SIGNED by REFEREE (062cd734) and REFEREE-2 (1b9ef2e1), both
+stating that 1E-N3 covers S4b and that the lift is consistent with their signatures. Effect: lemmas that used [S4b-OPT] / [S4b-KEEP]
+(e.g. O-ARENA, withdrawn from P-N5-STAIR under L42) are as conditional as every landed N5 result, i.e. on R57's SPEC premise only; they
+still need their own referee review to land. L42 stays in force for any premise other than S1's procedure on a valid input.
+
+Lead reading L46 (2026-11-01 13:32Z by date -u):
+RESULTS R24 (a) Lemma R and R24 (b) Lemma TB are class-free under L44 (i)-(ii): both referees confirmed, independently and before any
+citing packet, that the statements carry no class hypothesis and that the signed proofs use none; 𝒞^1O enters R24 only in (c) CASC,
+(d) U1 and (e) WC (REFEREE docs/referee/R-R24-L44.md 472f0dcd; REFEREE-2 docs/referee-2/R2-R24-L44.md d96d2f9e). A citing packet may
+quote both confirmations as L44's (ii); its own referees still check how the items are used. The CHOICE FORM («a flat non-corner Even
+mover picks the smallest index at an odd W′-cycle node, the lex-min root-first key at an even one, among its tied options») is NOT
+R24 (b)'s literal statement: a citing line states it as «R24 (a) Lemma R and R24 (b)'s choice rule (TB proof steps 1, 3-5) with
+bridge B; its proof uses no 𝒞^1O hypothesis» (REFEREE CF-1), and bridge B (flat + non-corner ⇒ the old option is fully optimal) is
+signed in the citing packet. «Tied» means fully optimal under W′ = H_k's arena optimum (W′(z) ⊕ h = W′(h)), not under W_k; an option
+whose play passes h is a corner, outside the rule (REFEREE-2 precision note). Not covered: R24 (c)-(e).
+Amendment to L46 (2026-11-01 17:35Z by date -u, Lead): (1) attribution: «tied under W′» is REFEREE-2's precision note (d96d2f9e); the corner
+clause is REFEREE's CF-1 (472f0dcd), not REFEREE-2's. (2) wording: «corner» means that h occurs on the option's play BEFORE that play's
+cycle node (REFEREE R-R24-L44.md Addendum 1; ANC-1 on P-N5-ANCHOR); read with the full lasso the clause would wrongly exclude σ_j(h)
+when h lies on its own W-cycle. REFEREE-2 (R2-N5-ANCHOR G-ANC-1) shows the clause is vacuous on fully W′-optimal options. Verdicts of
+both L44 checks unchanged.
+
+## D19 (2026-11-03 ~19:12Z, owner directly in the Lead session)
+> we have 9% usage left until tomorrow night, make use of it
+
+Lead reading L47 (2026-11-03 19:13Z by date -u):
+(1) Spend signal (as D17): about 9% of the weekly allowance remains until the reset (2026-11-04 21:00Z). Idle capacity is waste, so the
+    pacing hold of 2026-11-02 is lifted. The spend is spread so the allowance lasts until about the reset. D1/D7 still stand: stop on paid
+    overage (isUsingOverage true). A «rejected» rate limit just pauses lanes until the reset.
+(2) Research: L-RED 48 does not park at its 21:00Z timebox; it continues R199 until about 600k context. L-NEW successor 50 starts with
+    (a) freezing packet P-IDEAL-RED (CHAIN-BACK + KEYFLIP, R178 XI-NEW proof carried) for the referees, then (b) the proof side: a
+    stacking-limit lemma from L-RED 48's d 5 refutations (k = 3 nesting needs value semantics; wake-order relaxation SAT), aimed at
+    «DBL − ZERO bounded by the levels above».
+(3) Gates: when P-IDEAL-RED is frozen, a fresh REFEREE successor (REFEREE 22 is at ~474k) and REFEREE-2 26 review it; CHECKER 16 lands it.
+    Peak: 2 research lanes + up to 3 gates (5 sessions, within D1's cap).
+
+## D20 (2026-11-05 ~09:48Z, owner directly in the Lead session)
+> We have reset the weekly usage, so we can again work faster no?
+
+Lead reading L48 (2026-11-05 09:58Z by date -u):
+(1) Yes: full pace for the new weekly window (as D17). Stop on paid overage (D1/D7); a «rejected» limit pauses lanes until its reset.
+(2) Research lanes: L-RED 49 (exact ladder searches, resumable cube driver; R202/R205), L-NEW 53 (P-IDEAL-FLIP freeze, FLIP-ADD),
+    plus two restarted lanes: L-COMP successor 9 (independent exact computation: T^R(d) re-derivation, T_k(m) for m ≤ 2, padded T*(d)) and
+    L-SI successor 39 (policy-iteration / OR lens on FLIP-ADD: warm-start bounds on decomposable USOs). Four research lanes (D1 cap 5).
+(3) Gates on demand: fresh REFEREE / REFEREE-2 / CHECKER successors when a packet freezes (L39 (3): gates run in addition to the lanes).
+
+Lead reading L49 (2026-11-06 09:42Z by date -u; scope of the FLIP-ADD route, raised by L-RED successor 51, R212):
+(1) RESULTS R110 (IDEAL-FLIP) signs W-ONLY, T ≤ T_2(d−1) + 2, for ISO genomes of 𝓛^R_d only. Hence lane CONJECTURE FLIP-ADD
+    (T_2(m) ≤ T^R(m) + O(m)) would bound T^R restricted to ISO genomes, written T^R_ISO(d), and not T^R(d) over all of 𝓛^R_d.
+    The fleet's conjecture chain is recorded as FLIP-ADD ⇒ T^R_ISO(d) polynomial; the non-ISO part of 𝓛^R_d needs a separate route.
+(2) Lane lemma FROZEN-EMBED (L-RED R212, unrefereed) gives T_k(m) ≤ (k+1)·T^R(m), so the FLIP-ADD excess can grow only through T^R itself.
+    Lanes report T^R_ISO-best and T^R-best separately and measure excesses against T^R_ISO-best.
+(3) Nothing landed changes; G-N5-TIME stays OPEN.
+
+Lead reading L50 (2026-11-07 01:42Z by date -u; MOVES-2D killed; landing scope of P-IDEAL-MOVES):
+(1) Lane CONJECTURE MOVES-2D (on 𝓛^R_d, every Ξ-target mover moves at most 2d times; stated on all of 𝓛^R_d, not ISO only) is killed
+    by L-LOWER 3's instances KILL_M2D_d6_mu13.json (sha1 5301c716…, d 6, 13 > 12) and KILL_M2D_d8_mu21.json (sha1 d96c2b36…, d 8, 21 > 16)
+    at claude/l-lower 4d747490. Three independent replays: L-NEW 57 box 188, L-SI 41, L-RED 52 r214. It is recorded as a DEAD END
+    only after referee review of packet P-M2D-DEAD; until then it is «DEAD (lane, triple-replayed)».
+(2) P-IDEAL-MOVES lands with a line that makes no status claim about MOVES-2D (fix round 3, L-4). Its signed items do not depend
+    on MOVES-2D (both referees, 2026-11-07). The DEAD record is a separate entry.
+(3) The growth of T^R(d) is the open question. L-LOWER's REC_d10_tower attains R113's per-level doubling on 4 consecutive levels.
+    A family doing so on linearly many levels would, by RESULTS R104 Corollary REAL-IDEAL, make FL-POLY false. Nothing landed changes;
+    G-N5-TIME stays OPEN.

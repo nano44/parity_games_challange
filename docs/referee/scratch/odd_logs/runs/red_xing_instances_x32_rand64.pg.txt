@@ -1,0 +1,11 @@
+GAME red/xing/instances/x32_rand64.pg
+CNT_chk 65
+FR 65
+FR_maxpair 1
+GAMES 1
+OLD_chk 97
+STEP_chk 168
+trans 55
+wruns 1
+VIOLATIONS 0
+RC 0

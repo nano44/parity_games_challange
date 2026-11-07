@@ -1,0 +1,7 @@
+GAME red/sgrow/instances/s21_oink_n20.pg
+GAMES 1
+OLD_chk 6
+STEP_caseII 41
+STEP_chk 96
+VIOLATIONS 0
+RC 0

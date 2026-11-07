@@ -1,0 +1,43 @@
+BIT_chk 7206
+DCOPY_chk 35
+DESC 119
+FROZEN_AF_V 33
+FROZEN_chk 143
+GAMES 5
+ROOT_chk 320
+TD 2103
+WCH 2869
+WCT 134
+trans 143
+wruns 12
+VIOLATIONS 33
+EX ('FROZEN_AF', 'x31_rx48.pg', 2)
+EX ('FROZEN_AF', 'x31_rx48.pg', 10)
+EX ('FROZEN_AF', 'x31_rx48.pg', 11)
+EX ('FROZEN_AF', 'x31_rx48.pg', 12)
+EX ('FROZEN_AF', 'x31_rx48.pg', 13)
+EX ('FROZEN_AF', 'x31_rx48.pg', 14)
+EX ('FROZEN_AF', 'x31_rx48.pg', 15)
+EX ('FROZEN_AF', 'x31_rx48.pg', 16)
+EX ('FROZEN_AF', 'x31_rx48.pg', 17)
+EX ('FROZEN_AF', 'x31_rx48.pg', 18)
+EX ('FROZEN_AF', 'x31_rx48.pg', 19)
+EX ('FROZEN_AF', 'x31_rx48.pg', 20)
+EX ('FROZEN_AF', 'x31_rx48.pg', 21)
+EX ('FROZEN_AF', 'x31_rx48.pg', 22)
+EX ('FROZEN_AF', 'x31_rx48.pg', 23)
+EX ('FROZEN_AF', 'x31_rx48.pg', 26)
+EX ('FROZEN_AF', 'hit_b6a_1.pg', 13)
+EX ('FROZEN_AF', 'hit_b6a_1.pg', 14)
+EX ('FROZEN_AF', 'hit_b6a_1.pg', 15)
+EX ('FROZEN_AF', 'hit_b6a_1.pg', 17)
+EX ('FROZEN_AF', 'hit_b6a_1.pg', 18)
+EX ('FROZEN_AF', 'hit_b6a_1.pg', 21)
+EX ('FROZEN_AF', 'hit_b6a_1.pg', 22)
+EX ('FROZEN_AF', 'hit_b6a_1.pg', 24)
+EX ('FROZEN_AF', 'hit_b6a_1.pg', 25)
+EX ('FROZEN_AF', 'hit_b6a_1.pg', 26)
+EX ('FROZEN_AF', 'hit_b6a_1.pg', 27)
+EX ('FROZEN_AF', 'hit_b6a_1.pg', 28)
+EX ('FROZEN_AF', 'hit_b6a_1.pg', 29)
+EX ('FROZEN_AF', 'hit_b6a_1.pg', 30)

@@ -1,0 +1,13 @@
+GAME red/so/instances/so_tie15_n32.pg
+BIT_chk 50
+DESC 0
+FROZEN_chk 19
+GAMES 1
+ROOT_chk 22
+TD 255
+WCH 24
+WCT 19
+trans 19
+wruns 1
+VIOLATIONS 0
+RC 0

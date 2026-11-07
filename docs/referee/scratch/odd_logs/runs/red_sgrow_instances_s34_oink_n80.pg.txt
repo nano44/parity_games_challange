@@ -1,0 +1,12 @@
+GAME red/sgrow/instances/s34_oink_n80.pg
+GAMES 1
+OLD_chk 346
+ROOT_chk 20
+ROOT_endPE 20
+ROOT_maxlen 1
+STEP_caseII 27
+STEP_chk 312
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

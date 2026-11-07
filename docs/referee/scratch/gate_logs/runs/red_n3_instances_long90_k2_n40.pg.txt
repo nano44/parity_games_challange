@@ -1,0 +1,14 @@
+GAME red/n3/instances/long90_k2_n40.pg
+BGmax 91
+GAMES 1
+INC 90
+K 92
+MAXPH 87
+PH_over 1
+SGmax 91
+SQZ_chk 3720
+steps 91
+stretches 1
+VIOLATIONS 0
+EX ('PH_over', 'long90_k2_n40.pg', 1, 91, 87, 39)
+RC 0

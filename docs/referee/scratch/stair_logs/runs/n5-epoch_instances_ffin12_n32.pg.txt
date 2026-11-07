@@ -1,0 +1,13 @@
+GAME n5-epoch/instances/ffin12_n32.pg
+BIT_chk 158
+DESC 0
+FROZEN_chk 17
+GAMES 1
+ROOT_chk 62
+TD 398
+WCH 71
+WCT 17
+trans 17
+wruns 5
+VIOLATIONS 0
+RC 0

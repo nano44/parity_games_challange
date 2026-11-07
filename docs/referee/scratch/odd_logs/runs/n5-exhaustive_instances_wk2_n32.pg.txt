@@ -1,0 +1,15 @@
+GAME n5-exhaustive/instances/wk2_n32.pg
+CNT_chk 4
+FR 4
+FR_maxpair 1
+GAMES 1
+OLD_chk 114
+ROOT_chk 4
+ROOT_endPE 4
+ROOT_maxlen 1
+STEP_caseII 10
+STEP_chk 56
+trans 4
+wruns 2
+VIOLATIONS 0
+RC 0

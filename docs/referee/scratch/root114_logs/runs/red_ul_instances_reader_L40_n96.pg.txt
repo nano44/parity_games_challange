@@ -1,0 +1,15 @@
+GAME red/ul/instances/reader_L40_n96.pg
+DCOPIED 0
+DR 1
+DR_chk 1
+DS 0
+DT 0
+GAMES 1
+NF_chk 43
+ON_chk 43
+ROLD 0
+TS 0
+trans 43
+wruns 1
+VIOLATIONS 0
+RC 0

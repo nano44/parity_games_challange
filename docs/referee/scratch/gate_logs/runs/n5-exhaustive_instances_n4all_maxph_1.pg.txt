@@ -1,0 +1,12 @@
+GAME n5-exhaustive/instances/n4all_maxph_1.pg
+BGmax 1
+GAMES 1
+INC 1
+K 4
+MAXPH 2
+SGmax 1
+SQZ_chk 20
+steps 3
+stretches 1
+VIOLATIONS 0
+RC 0

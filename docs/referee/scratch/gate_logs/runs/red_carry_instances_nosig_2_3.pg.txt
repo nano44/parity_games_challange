@@ -1,0 +1,12 @@
+GAME red/carry/instances/nosig_2_3.pg
+BGmax 0
+GAMES 1
+INC 0
+K 2
+MAXPH 1
+SGmax 0
+SQZ_chk 72
+steps 1
+stretches 1
+VIOLATIONS 0
+RC 0

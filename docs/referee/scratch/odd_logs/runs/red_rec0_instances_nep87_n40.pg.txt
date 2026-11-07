@@ -1,0 +1,15 @@
+GAME red/rec0/instances/nep87_n40.pg
+CNT_chk 22
+FR 23
+FR_maxpair 2
+GAMES 1
+OLD_chk 291
+ROOT_chk 44
+ROOT_endPE 44
+ROOT_maxlen 2
+STEP_caseII 6
+STEP_chk 150
+trans 13
+wruns 3
+VIOLATIONS 0
+RC 0

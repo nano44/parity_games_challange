@@ -1,0 +1,6 @@
+solved with 11 iterations.
+solved with 31 iterations.
+solved with 71 iterations.
+solved with 151 iterations.
+solved with 311 iterations.
+solved with 631 iterations.

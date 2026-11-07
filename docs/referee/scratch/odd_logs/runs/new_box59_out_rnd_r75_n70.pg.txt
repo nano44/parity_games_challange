@@ -1,0 +1,7 @@
+GAME new/box59/out/rnd/r75_n70.pg
+GAMES 1
+OLD_chk 35
+STEP_caseII 26
+STEP_chk 200
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,12 @@
+GAME red/xing/instances/kw_n48.pg
+BGmax 0
+GAMES 1
+INC 0
+K 40
+MAXPH 40
+SGmax 0
+SQZ_chk 1968
+steps 40
+stretches 1
+VIOLATIONS 0
+RC 0

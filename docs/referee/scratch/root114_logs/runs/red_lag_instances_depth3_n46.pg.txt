@@ -1,0 +1,4 @@
+GAME red/lag/instances/depth3_n46.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

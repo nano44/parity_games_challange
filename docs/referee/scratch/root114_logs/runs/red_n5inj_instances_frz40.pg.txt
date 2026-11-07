@@ -1,0 +1,15 @@
+GAME red/n5inj/instances/frz40.pg
+DCOPIED 4
+DR 11
+DR_chk 20
+DS 5
+DT 0
+GAMES 1
+NF_chk 100
+ON_chk 98
+ROLD 1
+TS 0
+trans 74
+wruns 9
+VIOLATIONS 0
+RC 0

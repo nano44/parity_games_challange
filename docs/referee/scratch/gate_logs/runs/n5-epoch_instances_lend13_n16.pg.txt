@@ -1,0 +1,12 @@
+GAME n5-epoch/instances/lend13_n16.pg
+BGmax 0
+GAMES 1
+INC 1
+K 14
+MAXPH 13
+SGmax 13
+SQZ_chk 240
+steps 14
+stretches 1
+VIOLATIONS 0
+RC 0

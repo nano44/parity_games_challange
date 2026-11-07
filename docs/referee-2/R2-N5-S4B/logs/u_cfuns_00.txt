@@ -1,0 +1,10 @@
+MODE files $SCRATCH/cfuns_00 1 $SCRATCH/ws4b/experiments/ MAXT 5000 BF 0
+KEEP_checks: 757
+odd_fallbacks: 12
+rhos: 67521
+runs: 226
+states_It: 1516
+states_enumerated: 1370
+states_not_enumerated: 146
+RESULT PASS violations 0
+EXIT 0

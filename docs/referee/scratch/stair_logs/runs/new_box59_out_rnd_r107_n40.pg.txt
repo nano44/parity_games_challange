@@ -1,0 +1,13 @@
+GAME new/box59/out/rnd/r107_n40.pg
+BIT_chk 2
+DESC 0
+FROZEN_chk 1
+GAMES 1
+ROOT_chk 1
+TD 3
+WCH 1
+WCT 1
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,15 @@
+GAME red/carry/instances/h4_compound2x2_n44.pg
+CNT_chk 2
+FR 2
+FR_maxpair 1
+GAMES 1
+OLD_chk 170
+ROOT_chk 8
+ROOT_endPE 8
+ROOT_maxlen 2
+STEP_caseII 4
+STEP_chk 150
+trans 3
+wruns 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,8 @@
+GAME red/h3/instances/frzgap0_n4.pg
+BGmax 0
+GAMES 1
+K 1
+SGmax 0
+SQZ_chk 8
+VIOLATIONS 0
+RC 0

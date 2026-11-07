@@ -1,0 +1,15 @@
+GAME red/xing/instances/j7_n32.pg
+DCOPIED 2
+DR 32
+DR_chk 35
+DS 1
+DT 0
+GAMES 1
+NF_chk 67
+ON_chk 65
+ROLD 0
+TS 0
+trans 46
+wruns 3
+VIOLATIONS 0
+RC 0

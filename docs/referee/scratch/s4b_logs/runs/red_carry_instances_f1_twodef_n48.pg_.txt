@@ -1,0 +1,9 @@
+GAME red/carry/instances/f1_twodef_n48.pg 
+GAMES 1
+enum_skip 1
+enum_states 3
+loc_chk 44
+rhos 2604
+states 4
+VIOLATIONS 0
+RC 0

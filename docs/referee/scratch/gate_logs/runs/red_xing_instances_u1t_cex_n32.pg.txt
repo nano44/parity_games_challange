@@ -1,0 +1,12 @@
+GAME red/xing/instances/u1t_cex_n32.pg
+BGmax 9
+GAMES 1
+INC 9
+K 12
+MAXPH 3
+SGmax 9
+SQZ_chk 416
+steps 10
+stretches 2
+VIOLATIONS 0
+RC 0

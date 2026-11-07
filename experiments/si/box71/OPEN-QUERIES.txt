@@ -1,0 +1,13 @@
+# L-SI box 71 open queries at park (2026-11-05 23:45Z, successor 39). Each was running ~1 h 30 min (CPU) when parked; CaDiCaL cannot resume, so relaunch from scratch.
+# Relaunch (from experiments/si/box71/): setsid ./run71.sh "<job>"   (finished logs are skipped; PROOF = DIMACS + DRUP + in-place RUP check)
+job "-1 3 tk 19 PROOF"   m 3, T_inf >= 19 (unlimited flips)   DIMACS sha1 7124020815a4fcabe07dcfebc716b679899b4310
+job "3 3 tk 15 PROOF"    m 3, T_3 >= 15                         DIMACS sha1 96bd291319d16c2fc9fd3fdd23c84911a2651c96
+job "1 4 tk 15"          m 4, T_1 >= 15 (no proof: m 4 proofs too large)
+RUP check of dump/m3_tk_T13_T20_K2_NOIM0.drup (5,697,046,340 bytes, sha1 f02fab2a124abe959424abd3b1b804c0a555eed8; DIMACS sha1 f3d4b6ad...): ran ~1 h 30 min twice (one container restart), no verdict yet; ./drup dump/<cnf> dump/<drup> (gcc -O2 -o drup ref/drup.c). The proof file is NOT committed (gitignored); a new container must regenerate it (re-run job "2 3 tk 13 PROOF" after deleting log/K2_3_tk_13.log, ~1 h 45 min).
+Queue after these: SUM_2 at m 3 (sumk K=2: pairs (a, 18 - a), a <= 8; lower bound 17 from three genomes); m 4 T_0 >= 14, T_2 >= 16; every SAT -> realise.py.
+# --- 2026-11-06 (successor 40, Lead 04:37Z, for L-COMP 9 certification) ---
+# Every frame UNSAT of boxes 70-74 is listed in experiments/si/UNSAT-LIST.txt: query | DIMACS sha1 | exact regeneration command (run in
+# experiments/si/box70; DUMPONLY=1 writes the DIMACS and does not solve). experiments/si/unsat_regen.sh regenerates all and checks each
+# sha1 (23 of 23 OK at 2026-11-06; the 16 that logged a sha1 when solved match it). The box 72 UNSAT DIMACS are also committed gzipped
+# in box72/unsat/. NOTE: mode pq names its file by T and T2 only (not PRE), so regenerate the box 73 pq queries one at a time.
+# Box 72 results: T_inf >= 19 UNSAT, T_3 >= 15 UNSAT, SUM_2 (8,11), (7,11), (7,12) UNSAT, (8,10), (6,12) SAT: frame SUM_2(3) = 18 = real (box72/out/sum2_18_m3_s1.json).

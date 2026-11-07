@@ -1,0 +1,15 @@
+GAME si/runlin/instances/runfam_K40.pg
+DCOPIED 28
+DR 146
+DR_chk 253
+DS 79
+DT 0
+GAMES 1
+NF_chk 220
+ON_chk 220
+ROLD 0
+TS 0
+trans 171
+wruns 1
+VIOLATIONS 0
+RC 0

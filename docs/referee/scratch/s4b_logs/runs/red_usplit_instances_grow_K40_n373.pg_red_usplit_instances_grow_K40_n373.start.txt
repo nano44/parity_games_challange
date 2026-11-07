@@ -1,0 +1,4 @@
+GAME red/usplit/instances/grow_K40_n373.pg red/usplit/instances/grow_K40_n373.start
+GAMES 1
+VIOLATIONS 0
+RC 0

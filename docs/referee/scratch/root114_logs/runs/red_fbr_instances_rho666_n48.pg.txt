@@ -1,0 +1,15 @@
+GAME red/fbr/instances/rho666_n48.pg
+DCOPIED 16
+DR 2
+DR_chk 19
+DS 1
+DT 0
+GAMES 1
+NF_chk 10
+ON_chk 10
+ROLD 0
+TS 0
+trans 9
+wruns 2
+VIOLATIONS 0
+RC 0

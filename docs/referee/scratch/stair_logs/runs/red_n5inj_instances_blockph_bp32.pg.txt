@@ -1,0 +1,14 @@
+GAME red/n5inj/instances/blockph_bp32.pg
+BIT_chk 104
+DCOPY_chk 1
+DESC 12
+FROZEN_chk 30
+GAMES 1
+ROOT_chk 44
+TD 440
+WCH 52
+WCT 30
+trans 30
+wruns 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,12 @@
+GAME red/carry/instances/stealer_viol_n76.pg
+BGmax 7
+GAMES 1
+INC 2
+K 12
+MAXPH 1
+SGmax 7
+SQZ_chk 988
+steps 4
+stretches 2
+VIOLATIONS 0
+RC 0

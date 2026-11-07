@@ -1,0 +1,11 @@
+# L-SI box 65: kf1_d4_t10 (L-NEW box160/out), upper movers A1 B1 A2 B2 A3 B3 (= 2..7); C = Xi-better option; bits b_0..b_3 (BIT-CHAIN)
+b0 0 state (0, 1, 0, 0, 0, 0) C (1, 0, 1, 1, 0, 0) bits [0, 0, 1, 0] foot 2
+b0 0 state (1, 1, 0, 0, 0, 0) C (1, 0, 1, 1, 0, 0) bits [0, 1, 1, 0] foot 1
+-- flip
+b0 1 state (1, 1, 0, 0, 0, 0) C (1, 0, 1, 1, 0, 0) bits [1, 1, 1, 0] foot 1
+b0 1 state (1, 0, 1, 1, 0, 0) C (0, 0, 1, 1, 0, 0) bits [1, 0, 0, 0] foot 2
+b0 1 state (0, 0, 1, 1, 0, 0) C (0, 0, 1, 0, 0, 0) bits [1, 1, 0, 0] foot 1
+b0 1 state (0, 0, 1, 0, 0, 0) C (0, 0, 1, 0, 1, 0) bits [1, 1, 0, 0] foot 1
+b0 1 state (0, 0, 1, 0, 1, 0) C (0, 0, 0, 0, 1, 0) bits [1, 1, 0, 1] foot 1
+b0 1 state (0, 0, 0, 0, 1, 0) C (0, 0, 0, 0, 1, 0) bits [1, 1, 1, 0] foot 1
+-- flip

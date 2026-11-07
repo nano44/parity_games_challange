@@ -1,0 +1,8 @@
+GAME red/nest16/instances/nest5_n49.pg
+BGmax 0
+GAMES 1
+K 3
+SGmax 0
+SQZ_chk 196
+VIOLATIONS 0
+RC 0

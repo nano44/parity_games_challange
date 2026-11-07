@@ -1,0 +1,13 @@
+GAME red/carry/instances/spp19_stable_n30.pg
+BIT_chk 36
+DESC 0
+FROZEN_chk 2
+GAMES 1
+ROOT_chk 12
+TD 46
+WCH 12
+WCT 2
+trans 2
+wruns 1
+VIOLATIONS 0
+RC 0

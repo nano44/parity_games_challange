@@ -1,0 +1,9 @@
+GAME new/box54/out/hf/tc_4.pg 
+GAMES 1
+enum_states 16
+keep_chk 1
+loc_chk 101
+rhos 3372
+states 16
+VIOLATIONS 0
+RC 0

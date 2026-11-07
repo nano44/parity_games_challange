@@ -1,0 +1,8 @@
+GAME red/carry/instances/h4_def7_n28.pg 
+GAMES 1
+enum_states 2
+loc_chk 3
+rhos 6
+states 2
+VIOLATIONS 0
+RC 0

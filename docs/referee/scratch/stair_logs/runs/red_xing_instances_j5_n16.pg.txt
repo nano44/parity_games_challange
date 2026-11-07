@@ -1,0 +1,13 @@
+GAME red/xing/instances/j5_n16.pg
+BIT_chk 90
+DESC 2
+FROZEN_chk 20
+GAMES 1
+ROOT_chk 23
+TD 105
+WCH 26
+WCT 20
+trans 20
+wruns 5
+VIOLATIONS 0
+RC 0

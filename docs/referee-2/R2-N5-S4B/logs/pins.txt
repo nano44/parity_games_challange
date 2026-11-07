@@ -1,0 +1,8 @@
+MODE files $SCRATCH/s4pins.lst 0 $SCRATCH/ws4b/experiments/ MAXT 5000 BF 0
+KEEP_checks: 13
+rhos: 348
+runs: 2
+starts_valid: 2
+states_It: 31
+states_enumerated: 31
+RESULT PASS violations 0

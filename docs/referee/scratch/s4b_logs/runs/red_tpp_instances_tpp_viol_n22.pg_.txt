@@ -1,0 +1,8 @@
+GAME red/tpp/instances/tpp_viol_n22.pg 
+GAMES 1
+enum_states 2
+loc_chk 2
+rhos 4
+states 2
+VIOLATIONS 0
+RC 0

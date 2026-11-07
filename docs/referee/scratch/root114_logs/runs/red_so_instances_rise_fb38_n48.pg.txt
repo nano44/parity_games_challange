@@ -1,0 +1,15 @@
+GAME red/so/instances/rise_fb38_n48.pg
+DCOPIED 0
+DR 5
+DR_chk 5
+DS 0
+DT 0
+GAMES 1
+NF_chk 27
+ON_chk 27
+ROLD 0
+TS 0
+trans 8
+wruns 3
+VIOLATIONS 0
+RC 0

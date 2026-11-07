@@ -1,0 +1,14 @@
+GAME red/n3/instances/ret22_n40.pg
+BIT_chk 1198
+DCOPY_chk 46
+DESC 111
+FROZEN_chk 82
+GAMES 1
+ROOT_chk 417
+TD 2080
+WCH 426
+WCT 82
+trans 82
+wruns 10
+VIOLATIONS 0
+RC 0

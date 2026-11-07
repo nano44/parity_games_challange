@@ -1,0 +1,4 @@
+GAME red/carry/instances/spp19_oink_n30.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

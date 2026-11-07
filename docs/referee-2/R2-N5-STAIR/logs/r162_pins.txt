@@ -1,0 +1,4 @@
+WRUN suf_K4.pg#start 0 44 n 103 WT 44 WCT 44 WCH 523 DESC 28 TD 3042 NF 0
+RESULT PASS violations 0
+
+[exited with code 0]

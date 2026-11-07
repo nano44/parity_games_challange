@@ -1,0 +1,6 @@
+corpus files at d 3: 62
+class PHX d 3 genomes 1500 transitions 81704 distinct-dec-rows 55315 distinct-states 85558 features 121
+FEASIBLE min max Phi = 22.0000
+weights: k0=7 k1=7 pair1_1111=-6 zH1_1=3 uH1_2=3 pair1_1011=-3 pair1_0100=3 pair1_1100=3 pair1_1010=-3 uH1_6=3 uH1_5=3 uH1_4=3 uH1_3=3 k2=3 pair1_0110=3 pair2_0011=-1 u5=-1 pair2_0001=-1 pair2_1101=1 pair2_0010=-1 k5=1 pair2_0000=-1 pair2_0100=-1 pair2_0111=1 zH2_1=1.2e-09 uH2_2=1.11e-09 const=1
+dual: 61 decrease rows in support, sum of their multipliers 22.0000 (= the bound)
+dual mass by genome source: rand:13.6 now1_d3_5.json:3.12 kf2_d3_6.json:1.49 ext_d3_9.json:0.793 pm_d3_w2_s1.json:0.745 fkclimb_k2_m2_mu2_T7.json:0.683 dbl_d3_F6.json:0.312 now_d3_5.json:0.289 climb_SUM_m2_s2.json:0.277 climbI_d3_w2_LR_s1.json:0.239 iso_d3_7.json:0.221 kf8_d3_t8.json:0.137

@@ -1,0 +1,9 @@
+GAME red/usplit/instances/pairoc_n58.pg
+GAMES 1
+enum_states 4
+keep_chk 3
+loc_chk 16
+rhos 64
+states 4
+VIOLATIONS 0
+RC 0

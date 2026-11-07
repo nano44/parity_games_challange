@@ -1,0 +1,6 @@
+GAME red/xctx/instances/xctx_viol_n20.pg
+GAMES 1
+STEP_caseII 25
+STEP_chk 70
+VIOLATIONS 0
+RC 0

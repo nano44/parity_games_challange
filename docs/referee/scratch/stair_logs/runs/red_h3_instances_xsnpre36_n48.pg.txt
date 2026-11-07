@@ -1,0 +1,13 @@
+GAME red/h3/instances/xsnpre36_n48.pg
+BIT_chk 96
+DESC 0
+FROZEN_chk 30
+GAMES 1
+ROOT_chk 37
+TD 617
+WCH 48
+WCT 30
+trans 30
+wruns 1
+VIOLATIONS 0
+RC 0

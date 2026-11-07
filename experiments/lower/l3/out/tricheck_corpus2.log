@@ -1,0 +1,1 @@
+TRICHECK files 220 violations {'TRI': 0, 'TRI1': 0, 'FB': 0, 'FBI': 0, 'FBM': 0} info {'runs': 114944, 'tri_runs': 49474, 'tri_eq2d': 30, 'fb_runs': 114944, 'maxT': 32, 'nontri_T_gt_2d': 745}

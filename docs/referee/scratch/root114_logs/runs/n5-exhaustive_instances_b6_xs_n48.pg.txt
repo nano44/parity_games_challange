@@ -1,0 +1,14 @@
+GAME n5-exhaustive/instances/b6_xs_n48.pg
+DCOPIED 0
+DR 0
+DS 0
+DT 0
+GAMES 1
+NF_chk 38
+ON_chk 38
+ROLD 0
+TS 0
+trans 37
+wruns 1
+VIOLATIONS 0
+RC 0

@@ -982,6 +982,129 @@ case "$o" in *"LTX 8 "*) ;; *) echo "box 53b: MUT control did not bite: $o"; exi
 [ "$(cat sb53/tree_*.txt | grep -c TREESTAB)" = 1134 ] || { echo "box 53b: treestab outputs incomplete"; exit 1; }
 if grep -q "LTX [1-9]\|TSX [1-9]\|NOVT [1-9]\|KB [1-9]" sb53/tree_*.txt; then echo "box 53b: corpus violation"; exit 1; fi
 echo "si (box 53b: LEX-TREE, TREE-STABLE, OVERTAKE, KEYCH <= 1 + INS): PASS"
+# box 53c (§8): CEIL-ACC data on obs_K12_m24 (one W-run of 324, AUP 1, ANDN 1); corpus outputs complete.
+o=$(python3 -I sb53/ceilpot.py ../red/xich/instances/obs_K12_m24.pg ../red/xich/instances/obs_K12_m24.start)
+case "$o" in *"WT 324 "*"AUP 1 ADN 323 AEQ 0 "*"ANDN 1 "*"MAXWR 324 MAXAUP 1 MAXANDN 1"*) ;; *) echo "box 53c: obs_K12_m24: $o"; exit 1;; esac
+[ "$(cat sb53/ceil_*.txt | grep -c CEILPOT)" = 1134 ] || { echo "box 53c: ceilpot outputs incomplete"; exit 1; }
+echo "si (box 53c: CEIL-ACC data): PASS"
+# box 53d (§9): «A falls at every source-free transition» DEAD on u23sw64_n32 (12 source-free non-falls: floor 8, ceiling 3, inside 1).
+o=$(python3 -I sb53/ceilpot.py ../red/xing/instances/u23sw64_n32.pg)
+case "$o" in *"SRC 1 AUPSF 0 ANDNSF 12 AEQSF 12 AEQ0SF 8 AEQMAXSF 3 AMIDSF 1"*) ;; *) echo "box 53d: u23sw64: $o"; exit 1;; esac
+echo "si (box 53d: source-free A-flats): PASS"
+# box 54 (docs/si/N5-SRC-box54.md, Lead 08:13Z): OLD-PLAY / ODD-STEP / ODD-RELAY checks (0 violations, MUT control bites); W-rank,
+# ASC-W and TURN-W DEAD (sbq2_K8_m16, src2_K3); corpus outputs complete and violation-free.
+( cd src54/inst && sha1sum -c --quiet pins.sha1 ) || { echo "box 54: pins changed"; exit 1; }
+# P-N5-ODD fixes entry 4 (D-ODD-1 / F-1): sbq2_K8_m16.start has the non-edge 242:243; rows below use sbq2_K8_m16_fix.start (242:244).
+if python3 -I src54/wtie.py src54/inst/sbq2_K8_m16.pg src54/inst/sbq2_K8_m16.start 260 >/dev/null 2>&1; then echo "box 54: invalid sbq2 start accepted"; exit 1; fi
+[ "$(sha1sum < src54/inst/sbq2_K8_m16_fix.start)" = "83a57866574c36b85646864b06349196d2b8d312  -" ] || { echo "box 54: sbq2 fix start changed"; exit 1; }
+o=$(python3 -I src54/oddadd.py src54/inst/sbq2_K8_m16.pg src54/inst/sbq2_K8_m16_fix.start)
+case "$o" in *"VOLD 0 ODDCH 2206 VSTEP 0 VSTEPB 0 OSRC 762 PROP 120 PFX 642 PFXSW 642 PFXDIN 0 PFXNOU 0 VADD 0 MAXHXS 136 MAXPFX 72"*) ;; *) echo "box 54: oddadd sbq2: $o"; exit 1;; esac
+o=$(MUT=1 python3 -I src54/oddadd.py src54/inst/sbq2_K8_m16.pg src54/inst/sbq2_K8_m16_fix.start)
+case "$o" in *"VOLD 2849 "*) ;; *) echo "box 54: MUT control did not bite: $o"; exit 1;; esac
+o=$(python3 -I src54/wtie.py src54/inst/sbq2_K8_m16.pg src54/inst/sbq2_K8_m16_fix.start 260)
+case "$o" in *"taus 2 states 153 Wtie 0 sbflips 128"*) ;; *) echo "box 54: wtie sbq2: $o"; exit 1;; esac
+o=$(python3 -I src54/ascw.py src54/inst/src2_K3.pg src54/inst/src2_K3.start)
+case "$o" in *"TURNBAD 67 SRCTURNBAD 23 "*"NA 3692 BAD 1012 "*) ;; *) echo "box 54: ascw src2: $o"; exit 1;; esac
+[ "$(cat src54/odd_*.txt | grep -c ODDADD)" = 1132 ] || { echo "box 54: oddadd outputs incomplete"; exit 1; }
+if grep -q "VOLD [1-9]\|VSTEP [1-9]\|VSTEPB [1-9]\|VADD [1-9]" src54/odd_*.txt; then echo "box 54: corpus violation"; exit 1; fi
+echo "si (box 54: OLD-PLAY, ODD-STEP, ODD-RELAY; W-rank / ASC-W / TURN-W dead): PASS"
+# box 55 (docs/si/N5-FSEG-box55.md, Lead 09:46Z): Lemma NO-RET search (0 RET; MUT control bites); hit_b6a_1 (h^W = 3): every source
+# event carries a first-segment switch; Odd 0's segment peeled at k 34-40; corpus outputs complete.
+( cd fseg55/inst && sha1sum -c --quiet pins.sha1 ) || { echo "box 55: pins changed"; exit 1; }
+o=$(python3 -I fseg55/retsearch.py 7 3000 10 3 1 /tmp/si_box55_ret)
+case "$o" in *" RETX 0 BAD 0"*) ;; *) echo "box 55: retsearch: $o"; exit 1;; esac
+o=$(MUT=1 python3 -I fseg55/retsearch.py 7 50 8 3 1 /tmp/si_box55_ret)
+case "$o" in *" RETX 0 "*) echo "box 55: MUT control did not bite: $o"; exit 1;; esac
+o=$(python3 -I fseg55/fseg.py fseg55/inst/hit_b6a_1.pg fseg55/inst/hit_b6a_1.start -t)
+case "$o" in *"k 34 SRC D [0, 4] sw 1:5>10N[FS[0, 4]]"*"k 40 SRC D [0] sw 6:22>0N[FS[0]]"*"SRCEV 11 SRCFS 11 SRCNOFS 0 "*) ;; *) echo "box 55: fseg hit_b6a_1: $o"; exit 1;; esac
+[ "$(cat fseg55/fseg_*.txt | grep -c SRCNOFS_CSW)" = 1132 ] || { echo "box 55: fseg outputs incomplete"; exit 1; }
+[ "$(grep -c RETSEARCH fseg55/ret_out.txt)" = 9 ] || { echo "box 55: ret_out incomplete"; exit 1; }
+if grep -q "RETX [1-9]" fseg55/ret_out.txt; then echo "box 55: RET found"; exit 1; fi
+echo "si (box 55: NO-RET search; first-segment releases on hit_b6a_1): PASS"
+# box 56 (docs/si/N5-GROW-box56.md, Lead 10:34Z): obs re-growth = fuel re-routes at 244 after source-free steps; FUEL-MONO / FUEL-DESC
+# DEAD (so_th_n32, nep56_n32); corpus outputs complete.
+o=$(python3 -I grow56/grow.py src54/inst/obs_K12_m24.pg src54/inst/obs_K12_m24.start)
+case "$o" in *"ESW 529 "*"ESW_NEWEDGE 529 ESW_PREVFREE 529 "*"ESW_ZROSE 529 "*) ;; *) echo "box 56: grow obs: $o"; exit 1;; esac
+o=$(python3 -I grow56/srcfuel.py ../red/so/instances/so_th_n32.pg)
+case "$o" in *"KEYEQ 6 RESET 6 DESCV 0 "*) ;; *) echo "box 56: srcfuel so_th: $o"; exit 1;; esac
+o=$(python3 -I grow56/srcfuel.py ../n5-epoch/instances/nep56_n32.pg ../n5-epoch/instances/nep56_n32.start)
+case "$o" in *"DESCV nep56_n32.pg 28 2 ((1, 22), 9) ((1, 25), 13)"*"DESCV 1 "*) ;; *) echo "box 56: srcfuel nep56: $o"; exit 1;; esac
+[ "$(cat grow56/grow_*.txt | grep -c ' GROW ')" = 1132 ] || { echo "box 56: grow outputs incomplete"; exit 1; }
+[ "$(cat grow56/fuel_*.txt | grep -c ' SRCFUEL ')" = 1132 ] || { echo "box 56: srcfuel outputs incomplete"; exit 1; }
+echo "si (box 56: first-segment re-growth; FUEL-MONO / FUEL-DESC dead): PASS"
+# box 57 (docs/si/N5-FLEX-box57.md, Lead 11:23Z): FUEL-LEX (LEXV 0) on nep56_n32 (ASC 2) and so_th_n32 (EQHI 6); corpus LEXV 0.
+o=$(python3 -I grow56/srcfuel.py ../n5-epoch/instances/nep56_n32.pg ../n5-epoch/instances/nep56_n32.start)
+case "$o" in *"LEXV 0 ASC 2 EQHI 0 REP 0 MAXRUNS 2 YONZ 11 FUELEV 56"*) ;; *) echo "box 57: nep56: $o"; exit 1;; esac
+o=$(python3 -I grow56/srcfuel.py ../red/so/instances/so_th_n32.pg)
+case "$o" in *"LEXV 0 ASC 0 EQHI 6 REP 0 "*) ;; *) echo "box 57: so_th: $o"; exit 1;; esac
+[ "$(cat grow56/fuel_*.txt | grep -c ' LEXV ')" = 1132 ] || { echo "box 57: srcfuel outputs incomplete"; exit 1; }
+if grep -q "LEXV [1-9]" grow56/fuel_*.txt; then echo "box 57: FUEL-LEX violation"; exit 1; fi
+echo "si (box 57: FUEL-LEX): PASS"
+# box 58 (docs/si/N5-ANC-box58.md, Lead 13:06Z): key ancestry. Lemma checks 0 on sbq2 and on classical switch-all SI (switchallexp_6:
+# one pair re-routed 64 = 2^6 times, no self-feeding); corpus outputs complete and violation-free.
+o=$(python3 -I anc58/anc.py src54/inst/sbq2_K8_m16.pg src54/inst/sbq2_K8_m16_fix.start)
+case "$o" in *"PREFV 0 OLDV 0 EVENV 0 ODDV 0 ODD2 475 ODD2V 0 ARM 513 ARMV 0 INIT 16 EROOT 2642 OROOT 239 LOOP 0 "*"FUELEV 496 GAINV 0 HC 77 SELF1 0 CHAINV 0 "*"SELFESC 2 SELFESC0 1 MAXHC 1 MAXSELF 1 MAXFUEL 8 WESC 1 "*) ;; *) echo "box 58: sbq2: $o"; exit 1;; esac
+(cd anc58/inst && sha1sum -c --quiet pins.sha1) || { echo "box 58: switchallexp pins changed"; exit 1; }
+o=$(python3 -I anc58/anc.py --si anc58/inst/switchallexp_6.pg)
+case "$o" in *"iters 630 "*"PREFV 0 OLDV 0 EVENV 0 ODDV 0 "*"ODD2V 0 "*"ARMV 0 "*"GAINV 0 "*"SELF1 0 CHAINV 0 "*"SELFESC 0 "*"MAXFUEL 64 "*) ;; *) echo "box 58: switchallexp_6: $o"; exit 1;; esac
+[ "$(cat anc58/anc_*.txt | grep -c ' ANC ')" = 1132 ] || { echo "box 58: anc outputs incomplete"; exit 1; }
+if grep -qE "(PREFV|OLDV|EVENV|ODDV|ODD2V|ARMV|GAINV|CHAINV|LOOPLOW0) [1-9]" anc58/anc_*.txt; then echo "box 58: ancestry violation"; exit 1; fi
+echo "si (box 58: ANCESTRY): PASS"
+# box 58 §7 (Lead 14:47Z): repeat escapes. Switch-all SI repeats one (s, x) at an equal swap key 2^(N-1) - 1 times; N5 PLAT <= 1.
+o=$(python3 -I anc58/anc.py --si anc58/inst/switchallexp_6.pg)
+case "$o" in *"ESCREP 57 ESCNODESC 57 ESCEQ 57 MAXPLAT 31 ESCNONMONO 0 "*) ;; *) echo "box 58 s7: switchallexp_6: $o"; exit 1;; esac
+o=$(python3 -I anc58/anc.py ../new/box54/out/switchbestexp_5.pg)
+case "$o" in *"ESCEQ 3 MAXPLAT 1 ESCNONMONO 0 "*"MAXESC_SX 2 "*) ;; *) echo "box 58 s7: switchbestexp_5: $o"; exit 1;; esac
+o=$(python3 -I anc58/anc.py ../red/usplit/instances/pp_K48_n449.pg ../red/usplit/instances/pp_K48_n449.start)
+case "$o" in *"ESCREP 45 ESCNODESC 45 ESCEQ 0 MAXPLAT 0 ESCNONMONO 0 ESCASC 45 MAXESC_SX 24 "*) ;; *) echo "box 58 s7: pp_K48: $o"; exit 1;; esac
+[ "$(grep -c ' ANC ' anc58/esc_corpus.txt)" = 1132 ] || { echo "box 58 s7: esc corpus incomplete"; exit 1; }
+if grep -qE "MAXPLAT ([2-9]|[1-9][0-9])|ESCNONMONO [1-9]" anc58/esc_corpus.txt; then echo "box 58 s7: PLAT / ESC-MONO data changed"; exit 1; fi
+echo "si (box 58 s7: repeat escapes): PASS"
+# box 58 §8 (Lead 18:36Z): «re-opening needs a W-rise on x's / x2's W-play» DEAD on Odd-only 2-cycles (n3cov_lean, n3cov_phi); CONJECTURE
+# W-REOPEN (escaped cycle with an Even vertex) 0 violations in the corpus; W never drops inside a W-run (R164 W-MON).
+o=$(python3 -I anc58/wrise.py ../red/n3/instances/n3cov_lean.pg ../red/n3/instances/n3cov_lean_fixed.start)
+case "$o" in *"ODDONLY 1 ODDONLY_NOWRISE 1 EVEN_NOWRISE 0 REP 2 EQ 1 EQ_WRISE 0 EQ_NOWRISE 1 "*"WMONV 0"*) ;; *) echo "box 58 s8: n3cov_lean: $o"; exit 1;; esac
+o=$(python3 -I anc58/wrise.py ../red/n3/instances/n3cov_phi.pg anc58/inst/n3cov_phi_full.start)
+case "$o" in *"ODDONLY 3 ODDONLY_NOWRISE 2 EVEN_NOWRISE 0 REP 3 "*"WMONV 0"*) ;; *) echo "box 58 s8: n3cov_phi: $o"; exit 1;; esac
+[ "$(grep -c 'WRISE ' anc58/wrise_corpus.txt)" = 1132 ] || { echo "box 58 s8: wrise corpus incomplete"; exit 1; }
+if grep -qE "EVEN_NOWRISE [1-9]|WMONV [1-9]" anc58/wrise_corpus.txt; then echo "box 58 s8: W-REOPEN / W-MON data changed"; exit 1; fi
+echo "si (box 58 s8: W-REOPEN): PASS"
+# box 58 §9 (Lead 19:33Z): Lemma ESC-XCH data: every W-run escape has Xi(s) and Xi(x) changing; Odd-only escapes never exceed XCH_F(x).
+[ "$(grep -c 'ODDONLY ' anc58/oddonly_corpus.txt)" = 1132 ] || { echo "box 58 s9: oddonly corpus incomplete"; exit 1; }
+if grep -qE "OOEXCESS [1-9]" anc58/oddonly_corpus.txt; then echo "box 58 s9: ESC-XCH violated"; exit 1; fi
+o=$(awk '{for(i=1;i<=NF;i++){if($i=="ALLESC")a+=$(i+1); if($i=="ALLXCHX")b+=$(i+1); if($i=="ALLSCH")c+=$(i+1)}} END{print a, b, c}' anc58/oddonly_corpus.txt)
+[ "$o" = "1434 1434 1434" ] || { echo "box 58 s9: ESC-XCH data: $o"; exit 1; }
+o=$(python3 -I anc58/oddonly.py ../red/n3/instances/n3cov_phi.pg anc58/inst/n3cov_phi_full.start)
+case "$o" in *"OOEXCESS 0"*) ;; *) echo "box 58 s9: n3cov_phi: $o"; exit 1;; esac
+echo "si (box 58 s9: ESC-XCH): PASS"
+# box 58 §10 (Lead 20:00Z): «Odd W-SEP» DEAD (frz2_n24 u 17: Odd 12 18 -> 19 = tau(12) on an escaped cycle with an Even vertex, no W-rise).
+o=$(python3 -I anc58/wsep.py ../n5-exhaustive/instances/frz2_n24.pg)
+case "$o" in *"ESCNOSEP o 12 17 18 19 19"*"ESCE 3 ESCED 3 ESCESEP 2 ESCENOSEP 1 "*) ;; *) echo "box 58 s10: frz2_n24: $o"; exit 1;; esac
+[ "$(grep -c 'WSEP ' anc58/wsep_corpus.txt)" = 1132 ] || { echo "box 58 s10: wsep corpus incomplete"; exit 1; }
+o=$(awk '{for(i=1;i<=NF;i++){if($i=="ESCE")a+=$(i+1); if($i=="ESCENOSEP")b+=$(i+1)}} END{print a, b}' anc58/wsep_corpus.txt)
+[ "$o" = "1514 136" ] || { echo "box 58 s10: wsep corpus totals: $o"; exit 1; }
+echo "si (box 58 s10: Odd W-SEP DEAD): PASS"
+# box 58 §11 (Lead 20:30Z): W-changes per vertex are not paid by source events (topfix_n10: 36 in a source-free W-run; obs ratio 12.04).
+o=$(python3 -I anc58/wch.py ../new/box52/out/topfix_n10.pg)
+case "$o" in *"LEN 58 SRC 0 WCHMAX 36 "*) ;; *) echo "box 58 s11: topfix_n10: $o"; exit 1;; esac
+o=$(python3 -I anc58/wch.py src54/inst/obs_K12_m24.pg src54/inst/obs_K12_m24.start)
+case "$o" in *"LEN 324 SRC 24 WCHMAX 301 WCHSUM 2976 "*) ;; *) echo "box 58 s11: obs: $o"; exit 1;; esac
+[ "$(grep -c 'WCH ' anc58/wch_corpus.txt)" = 1132 ] || { echo "box 58 s11: wch corpus incomplete"; exit 1; }
+echo "si (box 58 s11: WCH vs source events): PASS"
+# P-N5-ODD (FROZEN packet, boxes 54/55/57; line docs/si/P-N5-ODD-line.txt): must not change. Data pins: «box 54», «box 55», «box 57».
+echo "03eec41d3bfc63a6945d0f30d831a46f14e46b84  ../../docs/si/P-N5-ODD-box57.md" | sha1sum -c --quiet
+echo "cd121dffd06dbc794f3154e34aa238d8df81f837  ../../docs/si/P-N5-ODD-line.txt" | sha1sum -c --quiet
+echo "si (P-N5-ODD pinned): PASS"
+# P-N5-ODD line revision L-1 (fixes entry 3; both referees word-diff it): must not change.
+echo "3e25138b9e7ef228ddba306d35ae3897cb797ea2  ../../docs/si/P-N5-ODD-line-L1.txt" | sha1sum -c --quiet
+echo "si (P-N5-ODD L-1 pinned): PASS"
+# P-N5-ODD line revision L-2 (fixes entry 5, ODD-L5): must not change.
+echo "ee114e2fe704a8ebf278910e6097a126afe94780  ../../docs/si/P-N5-ODD-line-L2.txt" | sha1sum -c --quiet
+echo "si (P-N5-ODD L-2 pinned): PASS"
+# P-N5-ODD line revision L-3 (fixes entry 6, CHECKER C108 E-1 / N-1): must not change.
+echo "f83b169ed1d51015a28ece3d34bd522cee72737a  ../../docs/si/P-N5-ODD-line-L3.txt" | sha1sum -c --quiet
+echo "si (P-N5-ODD L-3 pinned): PASS"
+if python3 -I startcheck.py root/instances/l121ereader_n41.pg root/instances/l121ereader_n41.start >/dev/null; then echo "l121ereader: wrong-owner entry not detected"; exit 1; fi
 # P-N5-SETTLE line revision L-1 (fixes entry 1; both referees word-diff it): must not change.
 echo "997e39eee8d72ae94be4764bb1e3841914ffc78e  ../../docs/si/P-N5-SETTLE-line-L1.txt" | sha1sum -c --quiet
 echo "si (P-N5-SETTLE L-1 pinned): PASS"
@@ -997,3 +1120,132 @@ echo "si (P-N5-SETTLE L-4 pinned): PASS"
 # P-N5-SETTLE line revision L-5 (fixes entry 5, SETTLE-L6 / L7): must not change.
 echo "39e44fe2b8b4cced9133270de0896e7652cc859c  ../../docs/si/P-N5-SETTLE-line-L5.txt" | sha1sum -c --quiet
 echo "si (P-N5-SETTLE L-5 pinned): PASS"
+# box 59 (Lead, successor-38 brief): repaired W-REOPEN' (Even vertex of the escaped cycles switching in [u1, u2]) 0 violations; R166 pins
+# fall outside its scope; WIT witness on every in-scope repeat; per-escape CLOSE-W DEAD (frz40 u 44). Note docs/si/N5-WRE-box59.md.
+(cd anc58/inst && sha1sum -c --quiet pins.sha1) || { echo "box 59: pins changed"; exit 1; }
+o=$(python3 -I anc58/wrise2.py anc58/inst/lean_29_35.pg anc58/inst/lean_29_35.start)
+case "$o" in *"REP 2 EQ 1 "*"SW_CLOSED 1 SW_CLOSED_NOWRISE 0 "*"EVEN_NOSW 1 EVEN_NOSW_NOWRISE 1 "*) ;; *) echo "box 59: lean_29_35: $o"; exit 1;; esac
+o=$(python3 -I anc58/wrise2.py anc58/inst/leanc_29_35.pg anc58/inst/leanc_29_35.start)
+case "$o" in *"SW_CLOSED 1 SW_CLOSED_NOWRISE 0 "*"EVEN_NOSW 1 EVEN_NOSW_NOWRISE 1 "*) ;; *) echo "box 59: leanc_29_35: $o"; exit 1;; esac
+o=$(python3 -I anc58/wsw.py ../red/sax/instances/fbA_K8_m8_m8.pg ../red/sax/instances/fbA_K8_m8_m8.start)
+case "$o" in *"SCOPE 28 "*"CH_NONE 0 "*"CH_PFXC 28 "*) ;; *) echo "box 59: fbA wsw: $o"; exit 1;; esac
+o=$(python3 -I anc58/tight.py ../red/sax/instances/fbA_K8_m8_m8.pg ../red/sax/instances/fbA_K8_m8_m8.start)
+case "$o" in *"TIGHTV 0 SW 28 SW_TIGHT 0 SW_NOTIGHT 28 "*) ;; *) echo "box 59: fbA tight: $o"; exit 1;; esac
+o=$(python3 -I anc58/escw.py ../red/n5inj/instances/frz40.pg anc58/inst/frz40_default.start)
+case "$o" in *"CLOSE 3 NOCLOSE 0 CLOSE_WX 2 CLOSE_NOWX 1 "*) ;; *) echo "box 59: frz40: $o"; exit 1;; esac
+for f in wrise2:WRISE2 wsw:WSW tight:TIGHT escw:ESCW; do [ "$(grep -c " ${f#*:} " anc58/${f%:*}_corpus.txt)" = 1132 ] || { echo "box 59: ${f%:*} corpus incomplete"; exit 1; }; done
+b59sum() { awk -v k="$2" '{for(i=1;i<=NF;i++) if($i==k) a+=$(i+1)} END{print a+0}' "anc58/$1_corpus.txt"; }
+[ "$(b59sum wrise2 SW_CLOSED) $(b59sum wrise2 SW_CLOSED_NOWRISE) $(b59sum wrise2 EVEN_NOSW) $(b59sum wrise2 REP)" = "63 0 54 121" ] || { echo "box 59: wrise2 totals"; exit 1; }
+[ "$(b59sum wsw SCOPE) $(b59sum wsw CH_PFXC) $(b59sum wsw WSW_FLAT)" = "63 63 397" ] || { echo "box 59: wsw totals"; exit 1; }
+[ "$(b59sum tight SW_TIGHT) $(b59sum tight TIGHTV)" = "63 0" ] || { echo "box 59: tight totals"; exit 1; }
+[ "$(b59sum escw ESC) $(b59sum escw CLOSE) $(b59sum escw CLOSE_NOWX) $(b59sum escw CLOSE_EFLAT)" = "1434 1301 20 0" ] || { echo "box 59: escw totals"; exit 1; }
+echo "si (box 59: W-REOPEN' repaired, WIT, CLOSE-W DEAD): PASS"
+# box 60 (Lead 22:19Z): Lemma KEY-RETURN (Xi-side return charge) holds, also under switch-all SI (barrier); fan-out SHARE 5N + 2.
+(cd anc58/inst && sha1sum -c --quiet pins.sha1) || { echo "box 60: pins changed"; exit 1; }
+o=$(python3 -I anc58/retxi.py anc58/inst/sr_K2_m6_m4.pg anc58/inst/sr_K2_m6_m4.start)
+case "$o" in *"RET 24 PASSV 0 CURV 0 KEYV 0 CHARGEV 0 MAXRET 2 "*) ;; *) echo "box 60: sr_K2: $o"; exit 1;; esac
+o=$(python3 -I anc58/retxi.py --si anc58/inst/switchallexp_5.pg)
+case "$o" in *"RET 2745 PASSV 0 CURV 0 KEYV 0 CHARGEV 0 MAXRET 76 SHARE 17"*) ;; *) echo "box 60: switchallexp_5 SI: $o"; exit 1;; esac
+o=$(python3 -I anc58/retxi.py ../new/box54/out/switchbestexp_5.pg)
+case "$o" in *"PASSV 0 CURV 0 KEYV 0 CHARGEV 0 "*"SHARE 27"*) ;; *) echo "box 60: switchbestexp_5: $o"; exit 1;; esac
+[ "$(grep -c ' RETXI ' anc58/retxi_corpus.txt)" = 1132 ] || { echo "box 60: retxi corpus incomplete"; exit 1; }
+o=$(awk '{for(i=1;i<=NF;i++){if($i=="RET")a+=$(i+1); if($i ~ /^(PASSV|CURV|KEYV|CHARGEV)$/)b+=$(i+1)}} END{print a, b}' anc58/retxi_corpus.txt)
+[ "$o" = "6265 0" ] || { echo "box 60: retxi corpus totals: $o"; exit 1; }
+echo "si (box 60: KEY-RETURN): PASS"
+# box 61 (Lead 23:15Z): Lemma UNBLOCK-KEY data (every unblock = simultaneous Xi-rise of the target, key >= unblock key); per-(edge, key)
+# repeat DEAD on fbg_K4_m6_m24 (4 unblocks of (124, 126) at (1, 145) in one tau-stretch).
+echo "456d12b06750be507a570a340a7d683c2208cb02  ../new/box116/inst/fbg_K4_m6_m24.pg
+463fb03b187623c071fd0198d7b6f72bb7fabe93  ../new/box116/inst/fbg_K4_m6_m24_fixed.start" | sha1sum -c --quiet || { echo "box 61: fbg pin changed"; exit 1; }
+o=$(python3 -I anc58/unblock.py -v ../new/box116/inst/fbg_K4_m6_m24.pg ../new/box116/inst/fbg_K4_m6_m24_fixed.start)
+case "$o" in *"edge (124, 126) key (1, 145) count 4"*"STEPS 139 INC 131 "*"UNB 109 UNBK 43 MAXREP 4 "*"SRCDN 0 UNBKCH 0"*) ;; *) echo "box 61: fbg_K4: $o"; exit 1;; esac
+[ "$(grep -c ' UNBLOCK ' anc58/unblock_corpus.txt)" = 1132 ] || { echo "box 61: unblock corpus incomplete"; exit 1; }
+o=$(awk '{for(i=1;i<=NF;i++){if($i=="STEPS")a+=$(i+1); if($i=="INC")b+=$(i+1); if($i=="UNB")c+=$(i+1); if($i=="SRCDN"||$i=="UNBKCH")d+=$(i+1)}} END{print a, b, c, d}' anc58/unblock_corpus.txt)
+[ "$o" = "17841 12433 6889 0" ] || { echo "box 61: unblock corpus totals: $o"; exit 1; }
+echo "si (box 61: UNBLOCK-KEY): PASS"
+# box 62 (Lead 00:06Z): I_tau != {} inside tau-stretches and W-runs (S4b keeps tau); Lemma ESC-SQUEEZE data at tau-stable states.
+echo "77f592fe0117b0dbc7e03f0771112342b5d320c2  ../n5-exhaustive/instances/n3all_maxph_0.pg
+ed221977791e59ceddefe2e3e95ee63cf389343b  ../n5-exhaustive/instances/n3all_maxph_0.start
+dd9847c6b19cb9f44af73bcc23de7ca2aca9a14c  ../red/h3/instances/lcount2_n23.pg
+7d3626aa4a6a80d59878fa442886473505390c17  ../red/h3/instances/lcount2_n23.start
+f87fee647f1c8b57f3466c0b68e7e284e3d559d3  ../red/n5/instances/sym_h8_s1.pg" | sha1sum -c --quiet || { echo "box 62: pins changed"; exit 1; }
+o=$(python3 -I anc58/itau.py ../n5-exhaustive/instances/n3all_maxph_0.pg ../n5-exhaustive/instances/n3all_maxph_0.start)
+case "$o" in *"STEPS 2 ITNE 1 ITNE_NOFB 1 "*) ;; *) echo "box 62: n3all: $o"; exit 1;; esac
+o=$(python3 -I anc58/itau.py ../red/h3/instances/lcount2_n23.pg ../red/h3/instances/lcount2_n23.start)
+case "$o" in *"DEVIT_ST 4 ITNE_W 3 DEVIT_W 3"*) ;; *) echo "box 62: lcount2: $o"; exit 1;; esac
+o=$(python3 -I anc58/itau.py ../red/n5/instances/sym_h8_s1.pg anc58/inst/sym_h8_s1_default.start)
+case "$o" in *"DEVIT 10 DEVIT_ST 9 "*) ;; *) echo "box 62: sym_h8_s1: $o"; exit 1;; esac
+[ "$(grep -c ' ITAU ' anc58/itau_corpus.txt)" = 1132 ] || { echo "box 62: itau corpus incomplete"; exit 1; }
+o=$(awk '{for(i=1;i<=NF;i++){if($i=="STEPS")a+=$(i+1); if($i=="ITNE")b+=$(i+1); if($i=="ITNE_W")c+=$(i+1); if($i=="DEVIT_W")d+=$(i+1); if($i=="SQV")e+=$(i+1); if($i=="DEV")f+=$(i+1)}} END{print a, b, c, d, e, f}' anc58/itau_corpus.txt)
+[ "$o" = "17841 3768 2647 585 0 32179" ] || { echo "box 62: itau corpus totals: $o"; exit 1; }
+echo "si (box 62: I_tau in tau-stretches, ESC-SQUEEZE): PASS"
+# box 63 (Lead 01:30Z): [S4b-OPT] brute force (S4b's tau_new is Odd's pointwise optimum of H' against sigma); mutation control must fail.
+o=$(python3 -I anc58/s4bopt.py ../red/h3/instances/lcount2_n23.pg ../red/h3/instances/lcount2_n23.start)
+case "$o" in *"STATES 6 CHECKED 6 SKIPPED 0 RHOS 46 OPTV 0 TAUNEW_EQ_RUN 6 "*"S4AV 0"*) ;; *) echo "box 63: lcount2: $o"; exit 1;; esac
+o=$(MUT=1 python3 -I anc58/s4bopt.py ../red/h3/instances/lcount2_n23.pg ../red/h3/instances/lcount2_n23.start)
+case "$o" in *"OPTV 215 "*) ;; *) echo "box 63: mutation control: $o"; exit 1;; esac
+[ "$(grep -c ' S4BOPT ' anc58/s4bopt_corpus.txt)" = 1132 ] || { echo "box 63: s4bopt corpus incomplete"; exit 1; }
+o=$(awk '{for(i=1;i<=NF;i++){if($i=="STATES")a+=$(i+1); if($i=="CHECKED")b+=$(i+1); if($i=="OPTV"||$i=="S4AV")c+=$(i+1); if($i=="ODDFB")d+=$(i+1); if($i=="TAUNEW_EQ_RUN")e+=$(i+1)}} END{print a, b, c, d, e}' anc58/s4bopt_corpus.txt)
+[ "$o" = "7772 6719 0 36 7736" ] || { echo "box 63: s4bopt corpus totals: $o"; exit 1; }
+echo "si (box 63: S4B-OPT): PASS"
+# P-N5-S4B (FROZEN packet, box 63; line docs/si/P-N5-S4B-line.txt): must not change. Data pins: «box 63».
+echo "f1b65da522d927406a403ae5d023bb48ac73d022  ../../docs/si/P-N5-S4B-box63.md" | sha1sum -c --quiet
+echo "f8559b5e539a461a0fac89a5a9bf6f4432721c74  ../../docs/si/P-N5-S4B-line.txt" | sha1sum -c --quiet
+echo "si (P-N5-S4B pinned): PASS"
+# P-N5-S4B line revision L-1 (fixes entries 1-2: REFEREE S4B-L1 / S4B-L2): must not change; de-duplicated DATA counts (813 distinct lines).
+echo "95373010d54c69907308d224fa1111127055b8f5  ../../docs/si/P-N5-S4B-line-L1.txt" | sha1sum -c --quiet
+o=$(python3 -I -c "
+seen={}
+for l in open('anc58/s4bopt_corpus.txt'):
+    pre,_,post=l.partition(' S4BOPT ')
+    a=pre[5:].strip()
+    if a in seen: continue
+    t=post.split(); seen[a]={t[i]:int(t[i+1]) for i in range(1,len(t)-1,2)}
+s=lambda k: sum(d[k] for d in seen.values())
+print(len(seen), s('STATES'), s('CHECKED'), s('SKIPPED'), s('RHOS'), s('OPTV'), s('ODDFB'), s('S4AV'))")
+[ "$o" = "813 5726 5058 668 213311 0 29 0" ] || { echo "P-N5-S4B L-1: distinct counts: $o"; exit 1; }
+echo "si (P-N5-S4B L-1 pinned, distinct counts): PASS"
+# box 64 (FLIPOR: SAME-CUBE / FLIP-PATH / BIT-CHAIN; docs/si/N5-FLIPOR-box64.md)
+bash box64/check64.sh
+echo "si (box 64: FLIPOR): PASS"
+# box 65 (FOOT: GAIN-IND, footprint route fails, g*(1) = 2, g*(2) = 4; docs/si/N5-FOOT-box65.md)
+bash box65/check65.sh
+echo "si (box 65: FOOT): PASS"
+# box 66 (FRONT: exact one-flip (pre, post) set at m = 1, 2; m = 3 pins replayed with L-NEW Gen; docs/si/N5-FRONT-box66.md)
+bash box66/check66.sh
+echo "si (box 66: FRONT): PASS"
+# box 67 (FRONT2: per-tau one-flip table D(m, tau) at m = 1, 2; docs/si/N5-FRONT2-box67.md)
+bash box67/check67.sh
+echo "si (box 67: FRONT2): PASS"
+# box 68 (REFUTE: Lemma COMPOSE + negative control; docs/si/N5-REFUTE-box68.md)
+bash box68/check68.sh
+echo "si (box 68: REFUTE/COMPOSE): PASS"
+# box 69 (MECH: improvement monotonicity separates the m = 2 cap; docs/si/N5-MECH-box69.md)
+bash box69/check69.sh
+echo "si (box 69: MECH): PASS"
+# box 70 (FRAME: SAT frame ABS-m + IM, m = 2 validation; docs/si/N5-FRAME-box70.md)
+bash box70/check70.sh
+echo "si (box 70: FRAME): PASS"
+# box 71 (FRAME-K: k-flip frame m = 2 validation + DRUP check; docs/si/N5-FRAMEK-box71.md)
+bash box71/check71.sh
+echo "si (box 71: FRAME-K): PASS"
+# box 73 (SUM1: exact m = 2 frame enumeration, FRONT-2', pq realisation; docs/si/N5-SUM1-box73.md)
+bash box73/check73.sh
+echo "si (box 73: SUM1): PASS"
+# box 74 (FLIPS: top-pair key-order flips in the frame; realised genomes; docs/si/N5-FLIPS-box74.md)
+bash box74/check74.sh
+echo "si (box 74: FLIPS): PASS"
+# box 75 (packet P-IDEAL-IM: IM, BIT-CHAIN, KEY-DIR, VALUE-MONO, COMPOSE, FRAME, MACHINE T_1(3) = 10; docs/si/P-IDEAL-IM.md)
+bash box75/check75.sh
+echo "si (box 75: P-IDEAL-IM): PASS"
+# box 76 (TROPICAL-WINDOW: WINDOW-ONCE, ALT-MIN, HIT; DEAD SUM-COUPLE, RISE-N, SPAWN-2; docs/si/N5-TROPICAL-box76.md)
+bash box76/check76.sh
+echo "si (box 76: TROPICAL-WINDOW): PASS"
+# box 78 (RE-ENTRANT fuel search; landed potentials and RANK on the records; docs/si/N5-TROPICAL-box76.md §12)
+bash box78/check78.sh
+echo "si (box 78): PASS"
+# box 79 (packet P-IDEAL-DBL, frozen: WINDOW-ONCE, DBL-EQ, PASS-FREEZE, HIT, FUEL-EXACT, ALT-MIN, TOWER-NEED; DEAD x4)
+bash box79/check79.sh
+echo "si (box 79: P-IDEAL-DBL frozen): PASS"
+# box 80 (TOWER proof side: PULSE-NEST, ZONE, INSERT-PASS, STRETCH-NEED; docs/si/N5-TOWER-box80.md)
+bash box80/check80.sh
+echo "si (box 80: TOWER stretch): PASS"

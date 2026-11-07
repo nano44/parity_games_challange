@@ -1,0 +1,10 @@
+GAME red/carry/instances/absmono_viol_n44.pg 
+GAMES 1
+enum_skip 1
+enum_states 5
+keep_chk 1
+loc_chk 84
+rhos 1555
+states 6
+VIOLATIONS 0
+RC 0

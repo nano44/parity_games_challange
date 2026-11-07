@@ -1,0 +1,14 @@
+GAME red/usplit/instances/usplit_rd_s3_n27.pg
+CNT_chk 6
+FR 6
+FR_maxpair 1
+GAMES 1
+OLD_chk 21
+ROOT_chk 2
+ROOT_endPE 2
+ROOT_maxlen 1
+STEP_chk 8
+trans 4
+wruns 1
+VIOLATIONS 0
+RC 0

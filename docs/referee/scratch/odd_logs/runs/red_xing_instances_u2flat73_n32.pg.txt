@@ -1,0 +1,12 @@
+GAME red/xing/instances/u2flat73_n32.pg
+CNT_chk 34
+FR 34
+FR_maxpair 1
+GAMES 1
+OLD_chk 186
+STEP_caseII 14
+STEP_chk 32
+trans 9
+wruns 5
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,44 @@
+BGmax 16
+BR_V 73
+GAMES 1
+INC 108
+K 112
+MAXPH 107
+PH_over 1
+SET_V 30
+SGmax 12
+SQZM_V 239
+SQZ_chk 3616
+steps 109
+stretches 1
+VIOLATIONS 342
+EX ('SQZM', 'lend107_n32.pg', 0, 1)
+EX ('SQZM', 'lend107_n32.pg', 0, 2)
+EX ('SQZM', 'lend107_n32.pg', 0, 7)
+EX ('SQZM', 'lend107_n32.pg', 0, 8)
+EX ('SQZM', 'lend107_n32.pg', 0, 9)
+EX ('SQZM', 'lend107_n32.pg', 0, 10)
+EX ('SQZM', 'lend107_n32.pg', 0, 14)
+EX ('SQZM', 'lend107_n32.pg', 0, 15)
+EX ('SQZM', 'lend107_n32.pg', 0, 16)
+EX ('SQZM', 'lend107_n32.pg', 0, 17)
+EX ('SQZM', 'lend107_n32.pg', 0, 18)
+EX ('SQZM', 'lend107_n32.pg', 0, 19)
+EX ('SQZM', 'lend107_n32.pg', 0, 21)
+EX ('SQZM', 'lend107_n32.pg', 0, 24)
+EX ('SQZM', 'lend107_n32.pg', 0, 25)
+EX ('SQZM', 'lend107_n32.pg', 0, 26)
+EX ('SQZM', 'lend107_n32.pg', 0, 28)
+EX ('SQZM', 'lend107_n32.pg', 0, 30)
+EX ('SQZM', 'lend107_n32.pg', 1, 3)
+EX ('SQZM', 'lend107_n32.pg', 1, 4)
+EX ('SQZM', 'lend107_n32.pg', 1, 5)
+EX ('SQZM', 'lend107_n32.pg', 1, 7)
+EX ('SQZM', 'lend107_n32.pg', 1, 9)
+EX ('SQZM', 'lend107_n32.pg', 1, 10)
+EX ('SQZM', 'lend107_n32.pg', 1, 13)
+EX ('SQZM', 'lend107_n32.pg', 1, 14)
+EX ('SQZM', 'lend107_n32.pg', 1, 15)
+EX ('SQZM', 'lend107_n32.pg', 1, 16)
+EX ('SQZM', 'lend107_n32.pg', 1, 20)
+EX ('SQZM', 'lend107_n32.pg', 1, 21)

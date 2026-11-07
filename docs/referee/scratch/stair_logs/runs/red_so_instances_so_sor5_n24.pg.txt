@@ -1,0 +1,13 @@
+GAME red/so/instances/so_sor5_n24.pg
+BIT_chk 130
+DESC 17
+FROZEN_chk 21
+GAMES 1
+ROOT_chk 40
+TD 192
+WCH 44
+WCT 21
+trans 21
+wruns 1
+VIOLATIONS 0
+RC 0

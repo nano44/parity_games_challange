@@ -1,0 +1,3 @@
+runs 52 moves 907 MOVE_NORISE 0 MOVES_gt_2d 0
+max moves (7, 'dd_d5_F14.json', 'mover', 6, 'd', 5)
+max inner-gap flips of one lower level (7, 'dd_d5_F14.json', (1, 1, 0, 1, 1, 1, 1, 1, 1, 0), 'z', 9, 'gap', (1, 8), 'level', 3)

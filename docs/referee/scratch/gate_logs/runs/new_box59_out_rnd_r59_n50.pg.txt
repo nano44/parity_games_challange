@@ -1,0 +1,12 @@
+GAME new/box59/out/rnd/r59_n50.pg
+BGmax 2
+GAMES 1
+INC 3
+K 7
+MAXPH 2
+SGmax 2
+SQZ_chk 400
+steps 3
+stretches 1
+VIOLATIONS 0
+RC 0

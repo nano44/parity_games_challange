@@ -1,0 +1,12 @@
+GAME red/ul/instances/ladderd0_k12_n48.pg
+BGmax 0
+GAMES 1
+INC 14
+K 14
+MAXPH 14
+SGmax 0
+SQZ_chk 720
+steps 14
+stretches 1
+VIOLATIONS 0
+RC 0

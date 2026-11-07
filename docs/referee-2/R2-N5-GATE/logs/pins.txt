@@ -1,0 +1,17 @@
+RUN new/box116/inst/fbg_K12_m6_m24.pg#start n 290 K 404 fb 0 SG 395 BG 395 climb 403 INC 395 maxWchPerPhase 403
+RUN n5-epoch/instances/lend107_n32.pg#start n 32 K 112 fb 10 SG 108 BG 92 climb 109 INC 108 maxWchPerPhase 106
+MODE files $SCRATCH/gpins.lst 0 $SCRATCH/wgate/experiments/ MAXT 5000 BF 0
+INC: 503
+OPT_checks: 500
+SQZ_checks: 121066
+climb: 512
+fallbacks: 10
+runs: 2
+runs_exceed_n-1: 2
+starts_valid: 2
+transitions: 516
+max BG_over_n: 2.875
+max SG_over_n: 3.375
+max maxWchPerPhase: 403
+RESULT PASS violations 0
+EXIT 0

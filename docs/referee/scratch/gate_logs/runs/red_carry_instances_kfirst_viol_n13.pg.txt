@@ -1,0 +1,8 @@
+GAME red/carry/instances/kfirst_viol_n13.pg
+BGmax 0
+GAMES 1
+K 0
+SGmax 0
+SQZ_chk 13
+VIOLATIONS 0
+RC 0

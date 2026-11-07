@@ -1,0 +1,4 @@
+GAME red/usplit/instances/grow_K40_n373.pg
+skip_big 1
+VIOLATIONS 0
+RC 0

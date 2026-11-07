@@ -1,0 +1,8 @@
+GAME red/xctx/instances/vrall_viol_n20.pg
+BGmax 2
+GAMES 1
+K 4
+SGmax 2
+SQZ_chk 100
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,14 @@
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg
+BGmax 10
+GAMES 1
+INC 85
+K 93
+MAXPH 87
+PH_over 1
+SGmax 90
+SQZ_chk 6016
+steps 87
+stretches 1
+VIOLATIONS 0
+EX ('PH_over', 'best_qpc_nep76_n40_s63.pg', 6, 87, 87, 63)
+RC 0

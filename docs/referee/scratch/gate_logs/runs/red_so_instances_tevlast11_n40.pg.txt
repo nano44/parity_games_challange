@@ -1,0 +1,12 @@
+GAME red/so/instances/tevlast11_n40.pg
+BGmax 15
+GAMES 1
+INC 35
+K 36
+MAXPH 32
+SGmax 34
+SQZ_chk 1480
+steps 36
+stretches 1
+VIOLATIONS 0
+RC 0

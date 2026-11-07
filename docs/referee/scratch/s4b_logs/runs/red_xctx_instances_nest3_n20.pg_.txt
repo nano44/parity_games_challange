@@ -1,0 +1,8 @@
+GAME red/xctx/instances/nest3_n20.pg 
+GAMES 1
+enum_states 2
+loc_chk 10
+rhos 70
+states 2
+VIOLATIONS 0
+RC 0

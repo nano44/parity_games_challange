@@ -1,0 +1,8 @@
+GAME red/xing/instances/x31_rx32.pg 
+GAMES 1
+enum_states 1
+loc_chk 12
+rhos 13
+states 1
+VIOLATIONS 0
+RC 0

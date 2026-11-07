@@ -1,0 +1,14 @@
+GAME red/usplit/instances/pairoc_n58.pg
+CNT_chk 19
+FR 19
+FR_maxpair 1
+GAMES 1
+OLD_chk 58
+ROOT_chk 7
+ROOT_endPE 7
+ROOT_maxlen 2
+STEP_chk 35
+trans 5
+wruns 1
+VIOLATIONS 0
+RC 0

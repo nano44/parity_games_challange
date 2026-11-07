@@ -1,0 +1,15 @@
+GAME red/n5inj/instances/theta_tp40.pg
+DCOPIED 15
+DR 11
+DR_chk 26
+DS 0
+DT 0
+GAMES 1
+NF_chk 48
+ON_chk 48
+ROLD 0
+TS 0
+trans 36
+wruns 3
+VIOLATIONS 0
+RC 0

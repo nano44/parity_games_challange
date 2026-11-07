@@ -1,0 +1,15 @@
+GAME n5-epoch/instances/nep76_n40.pg
+CNT_chk 141
+FR 144
+FR_maxpair 2
+GAMES 1
+OLD_chk 783
+ROOT_chk 173
+ROOT_endPE 173
+ROOT_maxlen 2
+STEP_caseII 19
+STEP_chk 435
+trans 72
+wruns 7
+VIOLATIONS 0
+RC 0

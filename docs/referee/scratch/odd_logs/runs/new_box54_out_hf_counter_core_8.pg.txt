@@ -1,0 +1,7 @@
+GAME new/box54/out/hf/counter_core_8.pg
+GAMES 1
+OLD_chk 72
+STEP_caseII 137
+STEP_chk 400
+VIOLATIONS 0
+RC 0

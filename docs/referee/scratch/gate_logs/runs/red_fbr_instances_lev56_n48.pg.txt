@@ -1,0 +1,14 @@
+GAME red/fbr/instances/lev56_n48.pg
+BGmax 70
+GAMES 1
+INC 82
+K 86
+MAXPH 79
+PH_over 1
+SGmax 82
+SQZ_chk 4176
+steps 83
+stretches 3
+VIOLATIONS 0
+EX ('PH_over', 'lev56_n48.pg', 5, 81, 79, 47)
+RC 0

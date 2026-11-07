@@ -1,0 +1,9 @@
+GAME red/kl/instances/klcount_n18_lvl.pg 
+GAMES 1
+enum_states 6
+keep_chk 1
+loc_chk 52
+rhos 1672
+states 6
+VIOLATIONS 0
+RC 0

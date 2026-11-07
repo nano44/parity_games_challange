@@ -1,0 +1,7 @@
+GAME red/carry/instances/lalg_dtl_mviol_n20.pg
+GAMES 1
+OLD_chk 59
+STEP_caseII 13
+STEP_chk 50
+VIOLATIONS 0
+RC 0

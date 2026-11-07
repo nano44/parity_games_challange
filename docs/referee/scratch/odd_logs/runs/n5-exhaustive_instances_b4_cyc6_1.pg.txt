@@ -1,0 +1,14 @@
+GAME n5-exhaustive/instances/b4_cyc6_1.pg
+CNT_chk 5
+FR 5
+FR_maxpair 1
+GAMES 1
+OLD_chk 14
+ROOT_chk 3
+ROOT_endPE 3
+ROOT_maxlen 1
+STEP_chk 4
+trans 4
+wruns 1
+VIOLATIONS 0
+RC 0

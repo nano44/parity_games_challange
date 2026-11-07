@@ -1,0 +1,13 @@
+GAME n5-epoch/instances/gci2_n12.pg
+BIT_chk 40
+DESC 0
+FROZEN_chk 10
+GAMES 1
+ROOT_chk 9
+TD 46
+WCH 15
+WCT 10
+trans 10
+wruns 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,813 @@
+GAME n5-epoch/instances/ffin4_n24.pg FVCH ffin4_n24.pg n 24 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/ffin12_n32.pg n5-epoch/instances/ffin12_n32.start FVCH ffin12_n32.pg n 32 K 33 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/ffin4_n24.pg n5-epoch/instances/ffin4_n24.start FVCH ffin4_n24.pg n 24 K 20 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/ffin12_n32.pg FVCH ffin12_n32.pg n 32 K 16 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/ffin5_n32.pg FVCH ffin5_n32.pg n 32 K 10 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/gci2_n12.pg FVCH gci2_n12.pg n 12 K 7 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/ffin5_n32.pg n5-epoch/instances/ffin5_n32.start FVCH ffin5_n32.pg n 32 K 23 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/gci3_n24.pg FVCH gci3_n24.pg n 24 K 16 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/gci2_n12.pg n5-epoch/instances/gci2_n12.start FVCH gci2_n12.pg n 12 K 10 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/gci3_n24.pg n5-epoch/instances/gci3_n24.start FVCH gci3_n24.pg n 24 K 21 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/immfail_n14.pg FVCH immfail_n14.pg n 14 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/immp_cex_n11.pg FVCH immp_cex_n11.pg n 11 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/lcount_n23.pg FVCH lcount_n23.pg n 23 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/immp_cex_n11.pg n5-epoch/instances/immp_cex_n11.start FVCH immp_cex_n11.pg n 11 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/lcount_n23.pg n5-epoch/instances/lcount_n23.start FVCH lcount_n23.pg n 23 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/lend13_n16.pg FVCH lend13_n16.pg n 16 K 11 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/lend107_n32.pg FVCH lend107_n32.pg n 32 K 26 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/lend13_n16.pg n5-epoch/instances/lend13_n16.start FVCH lend13_n16.pg n 16 K 14 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/lend27_n24.pg FVCH lend27_n24.pg n 24 K 7 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/lend15_n48.pg FVCH lend15_n48.pg n 48 K 11 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/lend15_n48.pg n5-epoch/instances/lend15_n48.start FVCH lend15_n48.pg n 48 K 27 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/lend107_n32.pg n5-epoch/instances/lend107_n32.start FVCH lend107_n32.pg n 32 K 112 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/lend27_n24.pg n5-epoch/instances/lend27_n24.start FVCH lend27_n24.pg n 24 K 32 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/lend39f_n32.pg FVCH lend39f_n32.pg n 32 K 13 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/lend55_n32.pg FVCH lend55_n32.pg n 32 K 18 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/lend47_n32.pg n5-epoch/instances/lend47_n32.start FVCH lend47_n32.pg n 32 K 50 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/lend47_n32.pg FVCH lend47_n32.pg n 32 K 22 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/lend39f_n32.pg n5-epoch/instances/lend39f_n32.start FVCH lend39f_n32.pg n 32 K 47 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/lend72_n48.pg FVCH lend72_n48.pg n 48 K 13 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/lend55_n32.pg n5-epoch/instances/lend55_n32.start FVCH lend55_n32.pg n 32 K 58 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/lend82_n32.pg FVCH lend82_n32.pg n 32 K 24 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/lend9_n8.pg FVCH lend9_n8.pg n 8 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/lend9_n8.pg n5-epoch/instances/lend9_n8.start FVCH lend9_n8.pg n 8 K 10 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/lend72_n48.pg n5-epoch/instances/lend72_n48.start FVCH lend72_n48.pg n 48 K 76 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/lend82_n32.pg n5-epoch/instances/lend82_n32.start FVCH lend82_n32.pg n 32 K 87 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/nep13_n24.pg FVCH nep13_n24.pg n 24 K 12 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/nconf61_n48.pg FVCH nconf61_n48.pg n 48 K 47 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/nep13_n24.pg n5-epoch/instances/nep13_n24.start FVCH nep13_n24.pg n 24 K 35 runs 1 BEST a 15 b 16 L 1 FVCH 0 FVMAX 0 FVU 4 CNCH 1 SBCH 1 FLIPS 0 CROSS 0 CAP 5 BOUND 15 BVIOL 0 | TOT L 1 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/nep22f_n64.pg FVCH nep22f_n64.pg n 64 K 51 runs 2 BEST a 14 b 15 L 1 FVCH 1 FVMAX 1 FVU 5 CNCH 0 SBCH 1 FLIPS 0 CROSS 0 CAP 13 BOUND 39 BVIOL 0 | TOT L 2 FVCH 1 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/nep56_n32.pg FVCH nep56_n32.pg n 32 K 18 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/nconf61_n48.pg n5-epoch/instances/nconf61_n48.start FVCH nconf61_n48.pg n 48 K 73 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/nep22f_n64.pg n5-epoch/instances/nep22f_n64.start FVCH nep22f_n64.pg n 64 K 52 runs 2 BEST a 14 b 15 L 1 FVCH 1 FVMAX 1 FVU 5 CNCH 0 SBCH 1 FLIPS 0 CROSS 0 CAP 13 BOUND 39 BVIOL 0 | TOT L 2 FVCH 1 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/nep56_n32.pg n5-epoch/instances/nep56_n32.start FVCH nep56_n32.pg n 32 K 57 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/nep76_n40.pg FVCH nep76_n40.pg n 40 K 18 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/nep92_n40.pg FVCH nep92_n40.pg n 40 K 13 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/nep76_n40.pg n5-epoch/instances/nep76_n40.start FVCH nep76_n40.pg n 40 K 87 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/nep94_n48.pg FVCH nep94_n48.pg n 48 K 18 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/nep92_n40.pg n5-epoch/instances/nep92_n40.start FVCH nep92_n40.pg n 40 K 98 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/ret12_n40.pg FVCH ret12_n40.pg n 40 K 13 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/ret14_n48.pg FVCH ret14_n48.pg n 48 K 17 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/ret14_n64.pg FVCH ret14_n64.pg n 64 K 14 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/ret12_n40.pg n5-epoch/instances/ret12_n40.start FVCH ret12_n40.pg n 40 K 60 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b4_cyc6_0.pg FVCH b4_cyc6_0.pg n 11 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/nep94_n48.pg n5-epoch/instances/nep94_n48.start FVCH nep94_n48.pg n 48 K 100 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b4_cyc6_0.pg n5-exhaustive/instances/b4_cyc6_0.start FVCH b4_cyc6_0.pg n 11 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b4_n4all_cyc3_0.pg FVCH b4_n4all_cyc3_0.pg n 4 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b4_cyc6_1.pg FVCH b4_cyc6_1.pg n 12 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/ret14_n48.pg n5-epoch/instances/ret14_n48.start FVCH ret14_n48.pg n 48 K 61 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b4_n5_other_0.pg FVCH b4_n5_other_0.pg n 5 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b4_n4all_cyc3_0.pg n5-exhaustive/instances/b4_n4all_cyc3_0.start FVCH b4_n4all_cyc3_0.pg n 4 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b4_nohlen5_0.pg FVCH b4_nohlen5_0.pg n 11 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b4_theta_n7.pg n5-exhaustive/instances/b4_theta_n7.start FVCH b4_theta_n7.pg n 7 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b4_theta_n7.pg FVCH b4_theta_n7.pg n 7 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b4_nohlen5_0.pg n5-exhaustive/instances/b4_nohlen5_0.start FVCH b4_nohlen5_0.pg n 11 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-epoch/instances/ret14_n64.pg n5-epoch/instances/ret14_n64.start FVCH ret14_n64.pg n 64 K 65 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b5_o11.pg FVCH b5_o11.pg n 10 K 12 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b5_os_n12.pg FVCH b5_os_n12.pg n 12 K 18 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b5_n5_cyc4_0.pg FVCH b5_n5_cyc4_0.pg n 5 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b5_os_n14.pg FVCH b5_os_n14.pg n 14 K 22 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b5_os_n16.pg FVCH b5_os_n16.pg n 16 K 26 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b5_os_n20.pg FVCH b5_os_n20.pg n 20 K 34 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b5_os_n24.pg FVCH b5_os_n24.pg n 24 K 53 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b5_os_n32.pg FVCH b5_os_n32.pg n 32 K 71 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b5_os_n28.pg FVCH b5_os_n28.pg n 28 K 65 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b6_xl_n32.pg FVCH b6_xl_n32.pg n 32 K 85 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b6_xl2_n32.pg FVCH b6_xl2_n32.pg n 32 K 87 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b6_xs_n24.pg FVCH b6_xs_n24.pg n 24 K 21 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b5_os_n40.pg FVCH b5_os_n40.pg n 40 K 81 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b6_xl_n40.pg FVCH b6_xl_n40.pg n 40 K 89 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b6_xs_n32.pg FVCH b6_xs_n32.pg n 32 K 29 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b6_xs_n40.pg FVCH b6_xs_n40.pg n 40 K 36 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b6_xs_n48.pg FVCH b6_xs_n48.pg n 48 K 37 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b6_xl_n48.pg FVCH b6_xl_n48.pg n 48 K 97 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b6_xw_n32.pg FVCH b6_xw_n32.pg n 32 K 79 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/canonA_0.pg FVCH canonA_0.pg n 15 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b6_xw_n40.pg FVCH b6_xw_n40.pg n 40 K 80 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/canonA_1.pg FVCH canonA_1.pg n 15 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/frz1_n24.pg FVCH frz1_n24.pg n 24 K 31 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b6_xw_n48.pg FVCH b6_xw_n48.pg n 48 K 85 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/frz1_n24.pg n5-exhaustive/instances/frz1_n24.start FVCH frz1_n24.pg n 24 K 31 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/frz2_n24.pg FVCH frz2_n24.pg n 24 K 25 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/frz2_n24.pg n5-exhaustive/instances/frz2_n24.start FVCH frz2_n24.pg n 24 K 25 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/frz3_n24.pg FVCH frz3_n24.pg n 24 K 26 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/b6_xw_n56.pg FVCH b6_xw_n56.pg n 56 K 85 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/n3all_maxph_0.pg FVCH n3all_maxph_0.pg n 3 K 0 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/frz3_n24.pg n5-exhaustive/instances/frz3_n24.start FVCH frz3_n24.pg n 24 K 26 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/n3all_maxph_0.pg n5-exhaustive/instances/n3all_maxph_0.start FVCH n3all_maxph_0.pg n 3 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/n3all_maxph_1.pg FVCH n3all_maxph_1.pg n 3 K 0 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/n3all_maxph_2.pg FVCH n3all_maxph_2.pg n 3 K 0 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/n3all_maxph_1.pg n5-exhaustive/instances/n3all_maxph_1.start FVCH n3all_maxph_1.pg n 3 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/n3all_maxph_2.pg n5-exhaustive/instances/n3all_maxph_2.start FVCH n3all_maxph_2.pg n 3 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/n4_maxph_0.pg FVCH n4_maxph_0.pg n 4 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/n4_maxph_1.pg FVCH n4_maxph_1.pg n 4 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/n4_thch_0.pg FVCH n4_thch_0.pg n 4 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/n4all_maxph_0.pg FVCH n4all_maxph_0.pg n 4 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/n4all_maxph_0.pg n5-exhaustive/instances/n4all_maxph_0.start FVCH n4all_maxph_0.pg n 4 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/n4all_maxph_1.pg FVCH n4all_maxph_1.pg n 4 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/n4all_maxph_1.pg n5-exhaustive/instances/n4all_maxph_1.start FVCH n4all_maxph_1.pg n 4 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/n4all_tgbad_0.pg FVCH n4all_tgbad_0.pg n 4 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/n4all_tgbad_0.pg n5-exhaustive/instances/n4all_tgbad_0.start FVCH n4all_tgbad_0.pg n 4 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/n4all_thch_0.pg FVCH n4all_thch_0.pg n 4 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/n4all_thch_0.pg n5-exhaustive/instances/n4all_thch_0.start FVCH n4all_thch_0.pg n 4 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/n5s_maxph_0.pg FVCH n5s_maxph_0.pg n 5 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/thetaA_canon_n12.pg FVCH thetaA_canon_n12.pg n 12 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/nh_n8.pg n5-exhaustive/instances/nh_n8.start FVCH nh_n8.pg n 8 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/nh_n8.pg FVCH nh_n8.pg n 8 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/thetaA_canon_n8.pg FVCH thetaA_canon_n8.pg n 8 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/thetaA_n17.pg FVCH thetaA_n17.pg n 17 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/thetaA_n6.pg FVCH thetaA_n6.pg n 6 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/thetaA_n17.pg n5-exhaustive/instances/thetaA_n17.start FVCH thetaA_n17.pg n 17 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/thetaA_n7.pg FVCH thetaA_n7.pg n 7 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/thetaA_n7.pg n5-exhaustive/instances/thetaA_n7.start FVCH thetaA_n7.pg n 7 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/thetaA_n6.pg n5-exhaustive/instances/thetaA_n6.start FVCH thetaA_n6.pg n 6 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/thetaA_n9.pg n5-exhaustive/instances/thetaA_n9.start FVCH thetaA_n9.pg n 9 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/wk1_n32.pg FVCH wk1_n32.pg n 32 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/thetaA_n9.pg FVCH thetaA_n9.pg n 9 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/wk2_n32.pg FVCH wk2_n32.pg n 32 K 7 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/wk1_n32.pg n5-exhaustive/instances/wk1_n32.start FVCH wk1_n32.pg n 32 K 7 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME n5-exhaustive/instances/wk2_n32.pg n5-exhaustive/instances/wk2_n32.start FVCH wk2_n32.pg n 32 K 7 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box48/instances/long121_n40.pg FVCH long121_n40.pg n 40 K 23 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg FVCH best_qpc_nep76_n40_s63.pg n 64 K 9 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box48/instances/long121_n40.pg new/box48/instances/long121_n40.start FVCH long121_n40.pg n 40 K 122 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg FVCH best_qpc_nep90_n40_s61.pg n 64 K 23 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg FVCH best_qpc_nep90_n40_s62.pg n 80 K 20 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.start FVCH best_qpc_nep76_n40_s63.pg n 64 K 93 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box48/out/qpcclimb/scale/snap_n80_s62.pg FVCH snap_n80_s62.pg n 80 K 20 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.start FVCH best_qpc_nep90_n40_s61.pg n 64 K 102 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box51/out/dlc_d2.pg FVCH dlc_d2.pg n 27 K 7 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box51/out/dlc_d3.pg FVCH dlc_d3.pg n 109 K 15 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.start FVCH best_qpc_nep90_n40_s62.pg n 80 K 105 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box52/out/topfix_n3.pg FVCH topfix_n3.pg n 63 K 22 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box48/out/qpcclimb/scale/snap_n80_s62.pg new/box48/out/qpcclimb/scale/snap_n80_s62.start FVCH snap_n80_s62.pg n 80 K 105 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box52/out/topfix_n4.pg FVCH topfix_n4.pg n 84 K 28 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box51/out/dlc_d4.pg FVCH dlc_d4.pg n 455 K 31 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box52/out/topfix_n6.pg FVCH topfix_n6.pg n 126 K 40 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/d_dlc_d3.pg FVCH d_dlc_d3.pg n 109 K 15 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/d_hntop_n3.pg FVCH d_hntop_n3.pg n 63 K 22 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/d_pivot_demo.pg FVCH d_pivot_demo.pg n 11 K 0 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/d_runquad_K3.pg FVCH d_runquad_K3.pg n 54 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_core_2.pg FVCH counter_core_2.pg n 15 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_core_3.pg FVCH counter_core_3.pg n 21 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_core_4.pg FVCH counter_core_4.pg n 27 K 8 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_core_5.pg FVCH counter_core_5.pg n 33 K 10 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_core_6.pg FVCH counter_core_6.pg n 39 K 12 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_core_8.pg FVCH counter_core_8.pg n 51 K 16 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_dp_2.pg FVCH counter_dp_2.pg n 12 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box52/out/topfix_n8_cmp.pg FVCH topfix_n8_cmp.pg n 171 K 52 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box52/out/topfix_n8.pg FVCH topfix_n8.pg n 168 K 52 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_dp_3.pg FVCH counter_dp_3.pg n 16 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_dp_4.pg FVCH counter_dp_4.pg n 20 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_dp_6.pg FVCH counter_dp_6.pg n 28 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_dp_5.pg FVCH counter_dp_5.pg n 24 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_dp_8.pg FVCH counter_dp_8.pg n 36 K 8 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_m_2.pg FVCH counter_m_2.pg n 9 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_m_3.pg FVCH counter_m_3.pg n 12 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_m_5.pg FVCH counter_m_5.pg n 18 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_m_4.pg FVCH counter_m_4.pg n 15 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box52/out/topfix_n10.pg FVCH topfix_n10.pg n 210 K 64 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_m_6.pg FVCH counter_m_6.pg n 21 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_m_8.pg FVCH counter_m_8.pg n 27 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_ortl_2.pg FVCH counter_ortl_2.pg n 11 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_ortl_3.pg FVCH counter_ortl_3.pg n 16 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_ortl_4.pg FVCH counter_ortl_4.pg n 21 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_ortl_6.pg FVCH counter_ortl_6.pg n 31 K 7 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_ortl_5.pg FVCH counter_ortl_5.pg n 26 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_qpt_2.pg FVCH counter_qpt_2.pg n 4 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_ortl_8.pg FVCH counter_ortl_8.pg n 41 K 9 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_qpt_3.pg FVCH counter_qpt_3.pg n 6 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_qpt_4.pg FVCH counter_qpt_4.pg n 8 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_qpt_5.pg FVCH counter_qpt_5.pg n 10 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_qpt_6.pg FVCH counter_qpt_6.pg n 12 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_qpt_8.pg FVCH counter_qpt_8.pg n 16 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_rob_2.pg FVCH counter_rob_2.pg n 31 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_rob_3.pg FVCH counter_rob_3.pg n 54 K 7 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_rob_5.pg FVCH counter_rob_5.pg n 118 K 13 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_rob_4.pg FVCH counter_rob_4.pg n 83 K 10 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_rob_6.pg FVCH counter_rob_6.pg n 159 K 16 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_rr_2.pg FVCH counter_rr_2.pg n 8 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_rr_3.pg FVCH counter_rr_3.pg n 12 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_rr_5.pg FVCH counter_rr_5.pg n 20 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_rr_4.pg FVCH counter_rr_4.pg n 16 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_rr_8.pg FVCH counter_rr_8.pg n 32 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_rr_6.pg FVCH counter_rr_6.pg n 24 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_symsi_2.pg FVCH counter_symsi_2.pg n 22 K 13 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_rob_8.pg FVCH counter_rob_8.pg n 259 K 22 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_symsi_3.pg FVCH counter_symsi_3.pg n 32 K 25 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_symsi_4.pg FVCH counter_symsi_4.pg n 42 K 22 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/recursiveladder_2.pg FVCH recursiveladder_2.pg n 10 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_symsi_5.pg FVCH counter_symsi_5.pg n 52 K 31 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/recursiveladder_3.pg FVCH recursiveladder_3.pg n 15 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/recursiveladder_4.pg FVCH recursiveladder_4.pg n 20 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_symsi_6.pg FVCH counter_symsi_6.pg n 62 K 37 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/recursiveladder_5.pg FVCH recursiveladder_5.pg n 25 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/recursiveladder_6.pg FVCH recursiveladder_6.pg n 30 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/tc_2.pg FVCH tc_2.pg n 22 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/tc_3.pg FVCH tc_3.pg n 42 K 7 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/counter_symsi_8.pg FVCH counter_symsi_8.pg n 82 K 48 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/tc_4.pg FVCH tc_4.pg n 68 K 16 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/tc_5.pg FVCH tc_5.pg n 100 K 19 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/switchallexp_1.pg FVCH switchallexp_1.pg n 21 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/switchallexp_2.pg FVCH switchallexp_2.pg n 35 K 8 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/tc_6.pg FVCH tc_6.pg n 138 K 18 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/switchallexp_3.pg FVCH switchallexp_3.pg n 49 K 7 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/switchallexp_4.pg FVCH switchallexp_4.pg n 63 K 8 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/switchallexp_5.pg FVCH switchallexp_5.pg n 77 K 10 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/switchbestexp_1.pg FVCH switchbestexp_1.pg n 35 K 20 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/switchallexp_6.pg FVCH switchallexp_6.pg n 91 K 12 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/switchbestexp_2.pg FVCH switchbestexp_2.pg n 60 K 32 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/hf/tc_8.pg FVCH tc_8.pg n 232 K 30 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/switchbestexp_3.pg FVCH switchbestexp_3.pg n 85 K 41 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/switchbestexp_4.pg FVCH switchbestexp_4.pg n 110 K 47 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/switchbestexp_5.pg FVCH switchbestexp_5.pg n 135 K 55 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/fc_3.pg FVCH fc_3.pg n 85 K 41 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/switchbestexp_6.pg FVCH switchbestexp_6.pg n 160 K 62 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/fc_4.pg FVCH fc_4.pg n 110 K 47 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/switchbestexp_7.pg FVCH switchbestexp_7.pg n 185 K 68 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/fc_5.pg FVCH fc_5.pg n 135 K 55 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box54/out/switchbestexp_8.pg FVCH switchbestexp_8.pg n 210 K 77 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/fc_6.pg FVCH fc_6.pg n 160 K 62 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/fcobsP_3.pg FVCH fcobsP_3.pg n 90 K 41 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/fcobsR_3.pg FVCH fcobsR_3.pg n 90 K 41 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/fcobsP_4.pg FVCH fcobsP_4.pg n 115 K 47 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/fc_7.pg FVCH fc_7.pg n 185 K 68 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/fcobs_3.pg FVCH fcobs_3.pg n 88 K 41 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/fcobsR_4.pg FVCH fcobsR_4.pg n 115 K 47 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r100_n40.pg FVCH r100_n40.pg n 40 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r101_n50.pg FVCH r101_n50.pg n 50 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r102_n60.pg FVCH r102_n60.pg n 60 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r103_n70.pg FVCH r103_n70.pg n 70 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r104_n80.pg FVCH r104_n80.pg n 80 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/fcobs_4.pg FVCH fcobs_4.pg n 113 K 47 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r106_n30.pg FVCH r106_n30.pg n 30 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r105_n20.pg FVCH r105_n20.pg n 20 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r107_n40.pg FVCH r107_n40.pg n 40 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r108_n50.pg FVCH r108_n50.pg n 50 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r109_n60.pg FVCH r109_n60.pg n 60 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r10_n50.pg FVCH r10_n50.pg n 50 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r110_n70.pg FVCH r110_n70.pg n 70 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r111_n80.pg FVCH r111_n80.pg n 80 K 7 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r112_n20.pg FVCH r112_n20.pg n 20 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r113_n30.pg FVCH r113_n30.pg n 30 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r114_n40.pg FVCH r114_n40.pg n 40 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r115_n50.pg FVCH r115_n50.pg n 50 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r116_n60.pg FVCH r116_n60.pg n 60 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r117_n70.pg FVCH r117_n70.pg n 70 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r118_n80.pg FVCH r118_n80.pg n 80 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r119_n20.pg FVCH r119_n20.pg n 20 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r120_n30.pg FVCH r120_n30.pg n 30 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r11_n60.pg FVCH r11_n60.pg n 60 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/fc_8.pg FVCH fc_8.pg n 210 K 77 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r121_n40.pg FVCH r121_n40.pg n 40 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r122_n50.pg FVCH r122_n50.pg n 50 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r123_n60.pg FVCH r123_n60.pg n 60 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r124_n70.pg FVCH r124_n70.pg n 70 K 7 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r127_n30.pg FVCH r127_n30.pg n 30 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r125_n80.pg FVCH r125_n80.pg n 80 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r126_n20.pg FVCH r126_n20.pg n 20 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r129_n50.pg FVCH r129_n50.pg n 50 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r128_n40.pg FVCH r128_n40.pg n 40 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r12_n70.pg FVCH r12_n70.pg n 70 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r130_n60.pg FVCH r130_n60.pg n 60 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r131_n70.pg FVCH r131_n70.pg n 70 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r133_n20.pg FVCH r133_n20.pg n 20 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r132_n80.pg FVCH r132_n80.pg n 80 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r134_n30.pg FVCH r134_n30.pg n 30 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r135_n40.pg FVCH r135_n40.pg n 40 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r136_n50.pg FVCH r136_n50.pg n 50 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r137_n60.pg FVCH r137_n60.pg n 60 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r138_n70.pg FVCH r138_n70.pg n 70 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r139_n80.pg FVCH r139_n80.pg n 80 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r140_n20.pg FVCH r140_n20.pg n 20 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r13_n80.pg FVCH r13_n80.pg n 80 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r142_n40.pg FVCH r142_n40.pg n 40 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r141_n30.pg FVCH r141_n30.pg n 30 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r143_n50.pg FVCH r143_n50.pg n 50 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r144_n60.pg FVCH r144_n60.pg n 60 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r145_n70.pg FVCH r145_n70.pg n 70 K 7 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r146_n80.pg FVCH r146_n80.pg n 80 K 7 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r147_n20.pg FVCH r147_n20.pg n 20 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r149_n40.pg FVCH r149_n40.pg n 40 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r14_n20.pg FVCH r14_n20.pg n 20 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r148_n30.pg FVCH r148_n30.pg n 30 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r150_n50.pg FVCH r150_n50.pg n 50 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r152_n60d2.pg FVCH r152_n60d2.pg n 60 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r151_n60d2.pg FVCH r151_n60d2.pg n 60 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r153_n60d2.pg FVCH r153_n60d2.pg n 60 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r154_n60d2.pg FVCH r154_n60d2.pg n 60 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r155_n60d2.pg FVCH r155_n60d2.pg n 60 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/fcobs_6.pg FVCH fcobs_6.pg n 163 K 62 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r157_n60d2.pg FVCH r157_n60d2.pg n 60 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r159_n60d2.pg FVCH r159_n60d2.pg n 60 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r156_n60d2.pg FVCH r156_n60d2.pg n 60 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r158_n60d2.pg FVCH r158_n60d2.pg n 60 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r15_n30.pg FVCH r15_n30.pg n 30 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r162_n60d2.pg FVCH r162_n60d2.pg n 60 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r161_n60d2.pg FVCH r161_n60d2.pg n 60 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r160_n60d2.pg FVCH r160_n60d2.pg n 60 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r164_n60d2.pg FVCH r164_n60d2.pg n 60 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r163_n60d2.pg FVCH r163_n60d2.pg n 60 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r165_n60d2.pg FVCH r165_n60d2.pg n 60 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r166_n60d2.pg FVCH r166_n60d2.pg n 60 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r168_n60d2.pg FVCH r168_n60d2.pg n 60 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r167_n60d2.pg FVCH r167_n60d2.pg n 60 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r169_n60d2.pg FVCH r169_n60d2.pg n 60 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r16_n40.pg FVCH r16_n40.pg n 40 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r170_n60d2.pg FVCH r170_n60d2.pg n 60 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r171_n60d2.pg FVCH r171_n60d2.pg n 60 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r173_n60d2.pg FVCH r173_n60d2.pg n 60 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r172_n60d2.pg FVCH r172_n60d2.pg n 60 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r174_n60d2.pg FVCH r174_n60d2.pg n 60 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r175_n60d2.pg FVCH r175_n60d2.pg n 60 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r176_n60d2.pg FVCH r176_n60d2.pg n 60 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r177_n60d2.pg FVCH r177_n60d2.pg n 60 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r178_n60d2.pg FVCH r178_n60d2.pg n 60 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r179_n60d2.pg FVCH r179_n60d2.pg n 60 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r17_n50.pg FVCH r17_n50.pg n 50 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r180_n60d2.pg FVCH r180_n60d2.pg n 60 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r181_n60d2.pg FVCH r181_n60d2.pg n 60 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r182_n60d2.pg FVCH r182_n60d2.pg n 60 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r183_n60d2.pg FVCH r183_n60d2.pg n 60 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r184_n60d2.pg FVCH r184_n60d2.pg n 60 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r185_n60d2.pg FVCH r185_n60d2.pg n 60 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r186_n60d2.pg FVCH r186_n60d2.pg n 60 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r187_n60d2.pg FVCH r187_n60d2.pg n 60 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r189_n60d2.pg FVCH r189_n60d2.pg n 60 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r188_n60d2.pg FVCH r188_n60d2.pg n 60 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r18_n60.pg FVCH r18_n60.pg n 60 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r190_n60d2.pg FVCH r190_n60d2.pg n 60 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r192_n60d2.pg FVCH r192_n60d2.pg n 60 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r191_n60d2.pg FVCH r191_n60d2.pg n 60 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r193_n60d2.pg FVCH r193_n60d2.pg n 60 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r195_n60d2.pg FVCH r195_n60d2.pg n 60 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r194_n60d2.pg FVCH r194_n60d2.pg n 60 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r196_n60d2.pg FVCH r196_n60d2.pg n 60 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r197_n60d2.pg FVCH r197_n60d2.pg n 60 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r199_n60d2.pg FVCH r199_n60d2.pg n 60 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r198_n60d2.pg FVCH r198_n60d2.pg n 60 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r19_n70.pg FVCH r19_n70.pg n 70 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r1_n30.pg FVCH r1_n30.pg n 30 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r200_n60d2.pg FVCH r200_n60d2.pg n 60 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r21_n20.pg FVCH r21_n20.pg n 20 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r20_n80.pg FVCH r20_n80.pg n 80 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r22_n30.pg FVCH r22_n30.pg n 30 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r25_n60.pg FVCH r25_n60.pg n 60 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r23_n40.pg FVCH r23_n40.pg n 40 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r24_n50.pg FVCH r24_n50.pg n 50 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r26_n70.pg FVCH r26_n70.pg n 70 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r2_n40.pg FVCH r2_n40.pg n 40 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r29_n30.pg FVCH r29_n30.pg n 30 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r28_n20.pg FVCH r28_n20.pg n 20 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r27_n80.pg FVCH r27_n80.pg n 80 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r30_n40.pg FVCH r30_n40.pg n 40 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r31_n50.pg FVCH r31_n50.pg n 50 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r32_n60.pg FVCH r32_n60.pg n 60 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r33_n70.pg FVCH r33_n70.pg n 70 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r35_n20.pg FVCH r35_n20.pg n 20 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r34_n80.pg FVCH r34_n80.pg n 80 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r36_n30.pg FVCH r36_n30.pg n 30 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r37_n40.pg FVCH r37_n40.pg n 40 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r38_n50.pg FVCH r38_n50.pg n 50 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r39_n60.pg FVCH r39_n60.pg n 60 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r3_n50.pg FVCH r3_n50.pg n 50 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r40_n70.pg FVCH r40_n70.pg n 70 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r41_n80.pg FVCH r41_n80.pg n 80 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r42_n20.pg FVCH r42_n20.pg n 20 K 0 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r43_n30.pg FVCH r43_n30.pg n 30 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r44_n40.pg FVCH r44_n40.pg n 40 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r45_n50.pg FVCH r45_n50.pg n 50 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r46_n60.pg FVCH r46_n60.pg n 60 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r47_n70.pg FVCH r47_n70.pg n 70 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r49_n20.pg FVCH r49_n20.pg n 20 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r48_n80.pg FVCH r48_n80.pg n 80 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r4_n60.pg FVCH r4_n60.pg n 60 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r50_n30.pg FVCH r50_n30.pg n 30 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r52_n50.pg FVCH r52_n50.pg n 50 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r51_n40.pg FVCH r51_n40.pg n 40 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r53_n60.pg FVCH r53_n60.pg n 60 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r54_n70.pg FVCH r54_n70.pg n 70 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r56_n20.pg FVCH r56_n20.pg n 20 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r55_n80.pg FVCH r55_n80.pg n 80 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r57_n30.pg FVCH r57_n30.pg n 30 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r58_n40.pg FVCH r58_n40.pg n 40 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r59_n50.pg FVCH r59_n50.pg n 50 K 7 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r60_n60.pg FVCH r60_n60.pg n 60 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r5_n70.pg FVCH r5_n70.pg n 70 K 8 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r61_n70.pg FVCH r61_n70.pg n 70 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r63_n20.pg FVCH r63_n20.pg n 20 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r64_n30.pg FVCH r64_n30.pg n 30 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r62_n80.pg FVCH r62_n80.pg n 80 K 10 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r65_n40.pg FVCH r65_n40.pg n 40 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r66_n50.pg FVCH r66_n50.pg n 50 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r67_n60.pg FVCH r67_n60.pg n 60 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r68_n70.pg FVCH r68_n70.pg n 70 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r69_n80.pg FVCH r69_n80.pg n 80 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r6_n80.pg FVCH r6_n80.pg n 80 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r71_n30.pg FVCH r71_n30.pg n 30 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r70_n20.pg FVCH r70_n20.pg n 20 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r72_n40.pg FVCH r72_n40.pg n 40 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r73_n50.pg FVCH r73_n50.pg n 50 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r74_n60.pg FVCH r74_n60.pg n 60 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r75_n70.pg FVCH r75_n70.pg n 70 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r76_n80.pg FVCH r76_n80.pg n 80 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r77_n20.pg FVCH r77_n20.pg n 20 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r78_n30.pg FVCH r78_n30.pg n 30 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r7_n20.pg FVCH r7_n20.pg n 20 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r79_n40.pg FVCH r79_n40.pg n 40 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r80_n50.pg FVCH r80_n50.pg n 50 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r81_n60.pg FVCH r81_n60.pg n 60 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r82_n70.pg FVCH r82_n70.pg n 70 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r85_n30.pg FVCH r85_n30.pg n 30 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r84_n20.pg FVCH r84_n20.pg n 20 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r83_n80.pg FVCH r83_n80.pg n 80 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r86_n40.pg FVCH r86_n40.pg n 40 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r88_n60.pg FVCH r88_n60.pg n 60 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r87_n50.pg FVCH r87_n50.pg n 50 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r8_n30.pg FVCH r8_n30.pg n 30 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r89_n70.pg FVCH r89_n70.pg n 70 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r91_n20.pg FVCH r91_n20.pg n 20 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r90_n80.pg FVCH r90_n80.pg n 80 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r92_n30.pg FVCH r92_n30.pg n 30 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r93_n40.pg FVCH r93_n40.pg n 40 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r94_n50.pg FVCH r94_n50.pg n 50 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r95_n60.pg FVCH r95_n60.pg n 60 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r96_n70.pg FVCH r96_n70.pg n 70 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r97_n80.pg FVCH r97_n80.pg n 80 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r98_n20.pg FVCH r98_n20.pg n 20 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r99_n30.pg FVCH r99_n30.pg n 30 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME new/box59/out/rnd/r9_n40.pg FVCH r9_n40.pg n 40 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/absmono_viol_n44.pg FVCH absmono_viol_n44.pg n 44 K 7 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/carry3_2_2.pg FVCH carry3_2_2.pg n 47 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/cm_mdrop_both_n28.pg FVCH cm_mdrop_both_n28.pg n 28 K 10 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/cm_mdrop_oink_n28.pg FVCH cm_mdrop_oink_n28.pg n 28 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/ctx11_n40.pg FVCH ctx11_n40.pg n 40 K 9 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/ctx12_n40.pg FVCH ctx12_n40.pg n 40 K 8 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/ctx6_n20.pg FVCH ctx6_n20.pg n 20 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/ctx7_n30.pg FVCH ctx7_n30.pg n 30 K 11 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/ctx13_n40.pg FVCH ctx13_n40.pg n 40 K 17 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/ctx6_n56.pg FVCH ctx6_n56.pg n 56 K 12 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/f1_twodef_n48.pg FVCH f1_twodef_n48.pg n 48 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/f1_twofall_n48.pg FVCH f1_twofall_n48.pg n 48 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/fall3_n76.pg FVCH fall3_n76.pg n 76 K 8 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/fallv_viol_n28.pg FVCH fallv_viol_n28.pg n 28 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/firedlong667_n20.pg FVCH firedlong667_n20.pg n 20 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/fired10_n20.pg FVCH fired10_n20.pg n 20 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/fall4_n116.pg FVCH fall4_n116.pg n 116 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/firedlong667_n43.pg FVCH firedlong667_n43.pg n 43 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/gapb_dup_n20.pg FVCH gapb_dup_n20.pg n 20 K 8 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/gapbW_dup_n20.pg FVCH gapbW_dup_n20.pg n 20 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/h4_compound2x2_n44.pg FVCH h4_compound2x2_n44.pg n 44 K 10 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/firedstep13_n76.pg FVCH firedstep13_n76.pg n 76 K 8 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/h4_compound_n44.pg FVCH h4_compound_n44.pg n 44 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/h4_def2ctx_n20.pg FVCH h4_def2ctx_n20.pg n 20 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/h4_def7_n28.pg FVCH h4_def7_n28.pg n 28 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/h4_disjoint_n20.pg FVCH h4_disjoint_n20.pg n 20 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/h4_notweaker_n20.pg FVCH h4_notweaker_n20.pg n 20 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/kfirst_viol_n13.pg FVCH kfirst_viol_n13.pg n 13 K 0 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/kin_viol_n29.pg FVCH kin_viol_n29.pg n 29 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/lalg_dtl_mviol_n20.pg FVCH lalg_dtl_mviol_n20.pg n 20 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/lemmaS_Mdrop_n20.pg FVCH lemmaS_Mdrop_n20.pg n 20 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/lemmaS_viol_n20.pg FVCH lemmaS_viol_n20.pg n 20 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/lex_viol_inj_n28.pg FVCH lex_viol_inj_n28.pg n 28 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/lex_viol_tie_n28.pg FVCH lex_viol_tie_n28.pg n 28 K 7 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/meet_viol_n17.pg FVCH meet_viol_n17.pg n 17 K 0 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/nosig_2_3.pg FVCH nosig_2_3.pg n 24 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/phi_flat_alive_n32.pg FVCH phi_flat_alive_n32.pg n 32 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/meet_viol_n29.pg FVCH meet_viol_n29.pg n 29 K 11 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/pk_viol_n20.pg FVCH pk_viol_n20.pg n 20 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/replay4_n32.pg FVCH replay4_n32.pg n 32 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/spp19_oink_n30.pg FVCH spp19_oink_n30.pg n 30 K 10 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/spp19_stable_n30.pg FVCH spp19_stable_n30.pg n 30 K 7 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/spp22_oink_n40.pg FVCH spp22_oink_n40.pg n 40 K 8 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/spp25_oink_n40.pg FVCH spp25_oink_n40.pg n 40 K 10 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/stealonce_both_n45.pg FVCH stealonce_both_n45.pg n 45 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/stealonce_core_n76.pg FVCH stealonce_core_n76.pg n 76 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/stealer_viol_n76.pg FVCH stealer_viol_n76.pg n 76 K 12 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/tstep_near_n20.pg FVCH tstep_near_n20.pg n 20 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/ctl/pivot_demo.pg FVCH pivot_demo.pg n 11 K 0 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/carry/instances/stealonce_viol_n76.pg FVCH stealonce_viol_n76.pg n 76 K 12 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/ctxp/instances/deep1_n13.pg FVCH deep1_n13.pg n 13 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/ctxp/instances/deep1_n21.pg FVCH deep1_n21.pg n 21 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/ctxp/instances/margin1_n20.pg FVCH margin1_n20.pg n 20 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/ctxp/instances/margin1_mc1.pg FVCH margin1_mc1.pg n 80 K 10 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/ctxp/instances/margin1_mc5.pg FVCH margin1_mc5.pg n 50 K 12 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/dtl/instances/lalg_dtl_pertop31_n18.pg FVCH lalg_dtl_pertop31_n18.pg n 18 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/dtl/instances/lalg_dtl_restart8_n20.pg FVCH lalg_dtl_restart8_n20.pg n 20 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/fbr/instances/bghm_k3_gap4_A.pg FVCH bghm_k3_gap4_A.pg n 45 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/fbr/instances/bghm_k1_gap6_A.pg FVCH bghm_k1_gap6_A.pg n 21 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/fbr/instances/lev74_n40.pg FVCH lev74_n40.pg n 40 K 18 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/fbr/instances/fr39_q4_n48.pg FVCH fr39_q4_n48.pg n 48 K 36 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/fbr/instances/nep80_n40.pg FVCH nep80_n40.pg n 40 K 22 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/fbr/instances/rho144_n32.pg FVCH rho144_n32.pg n 32 K 9 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/fbr/instances/rho3_253_n32.pg FVCH rho3_253_n32.pg n 32 K 11 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/fbr/instances/lev56_n48.pg FVCH lev56_n48.pg n 48 K 86 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/fbr/instances/rho666_n48.pg FVCH rho666_n48.pg n 48 K 16 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/fbr/instances/rho84_n16.pg FVCH rho84_n16.pg n 16 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/fbr/instances/sat4_n20.pg FVCH sat4_n20.pg n 20 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/fbr/instances/sat68_n20.pg FVCH sat68_n20.pg n 20 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/fbx/instances/exsw_loop_n15.pg FVCH exsw_loop_n15.pg n 15 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/fbr/instances/twowave_L16.pg FVCH twowave_L16.pg n 22 K 15 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/h3/instances/frzgap0_n4.pg FVCH frzgap0_n4.pg n 4 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/frz/instances/fbcap_eq_u4_n11.pg FVCH fbcap_eq_u4_n11.pg n 11 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/fbx/instances/kt6_n58.pg FVCH kt6_n58.pg n 58 K 38 runs 1 BEST a 18 b 20 L 2 FVCH 0 FVMAX 0 FVU 2 CNCH 0 SBCH 0 FLIPS 1 CROSS 0 CAP 19 BOUND 19 BVIOL 0 | TOT L 2 FVCH 0 CROSS 0 FLIPS 1 BVIOL 0
+GAME red/frz/instances/fx2_n11.pg FVCH fx2_n11.pg n 11 K 9 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/h3/instances/frzgap0_n6.pg FVCH frzgap0_n6.pg n 6 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/h3/instances/lcount2_n23.pg red/h3/instances/lcount2_n23.start FVCH lcount2_n23.pg n 23 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/h3/instances/lcount2_n23.pg FVCH lcount2_n23.pg n 23 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/h3/instances/lcount_n23.pg FVCH lcount_n23.pg n 23 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/h3/instances/lcount_n23.pg red/h3/instances/lcount_n23.start FVCH lcount_n23.pg n 23 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/kl/instances/klcount_n16.pg FVCH klcount_n16.pg n 16 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/h3/instances/offret_l19_n24.pg FVCH offret_l19_n24.pg n 24 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/h3/instances/xsnpre36_n48.pg FVCH xsnpre36_n48.pg n 48 K 33 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/kl/instances/klcount_n18_lvl.pg FVCH klcount_n18_lvl.pg n 18 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/kl/instances/klcount_n18_base.pg FVCH klcount_n18_base.pg n 18 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/kl/instances/klglobal_n16.pg FVCH klglobal_n16.pg n 16 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/kl/instances/klglobal_n18_lvl.pg FVCH klglobal_n18_lvl.pg n 18 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/kl/instances/klglobal_n20_lvl2.pg FVCH klglobal_n20_lvl2.pg n 20 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/kl/instances/r2climb_h13.pg FVCH r2climb_h13.pg n 13 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/kl/instances/klmin_n13.pg FVCH klmin_n13.pg n 13 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/kl/instances/r2lap_best_n22.pg FVCH r2lap_best_n22.pg n 22 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/kl24/instances/HL88_0.pg FVCH HL88_0.pg n 41 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/kl/instances/r2join_h0E_n14.pg FVCH r2join_h0E_n14.pg n 14 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/kl/instances/r2crawl_n14.pg FVCH r2crawl_n14.pg n 14 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/kl24/instances/HL88_1.pg FVCH HL88_1.pg n 43 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/kl24/instances/HL88_3.pg FVCH HL88_3.pg n 47 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/kl24/instances/HL88_2.pg FVCH HL88_2.pg n 45 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/kl24/instances/HLg_0.pg FVCH HLg_0.pg n 29 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/kl24/instances/HLg_1.pg FVCH HLg_1.pg n 35 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/kl24/instances/HLg_3.pg FVCH HLg_3.pg n 55 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/kl24/instances/HLg_2.pg FVCH HLg_2.pg n 45 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/kw/instances/cw11_n24.pg FVCH cw11_n24.pg n 24 K 17 runs 4 BEST a 0 b 3 L 3 FVCH 0 FVMAX 0 FVU 0 CNCH 0 SBCH 0 FLIPS 0 CROSS 0 CAP 9 BOUND 9 BVIOL 0 | TOT L 7 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/kw/instances/frzu_tight_n14.pg FVCH frzu_tight_n14.pg n 14 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/lag/instances/depth2_n39.pg FVCH depth2_n39.pg n 39 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/lag/instances/depth3_n46.pg FVCH depth3_n46.pg n 46 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/kw/instances/kc18_n24.pg FVCH kc18_n24.pg n 24 K 23 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/lag/instances/depth4_n53.pg FVCH depth4_n53.pg n 53 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/lag/instances/fam_D4_n50.pg FVCH fam_D4_n50.pg n 50 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/lag/instances/fam_D8_n78.pg FVCH fam_D8_n78.pg n 78 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/lag/instances/fam_D12_n106.pg FVCH fam_D12_n106.pg n 106 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/mei/instances/mei_h2.pg FVCH mei_h2.pg n 19 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/mei/instances/mei_h4.pg FVCH mei_h4.pg n 35 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/mei/instances/mei_h3.pg FVCH mei_h3.pg n 27 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/mei/instances/mei_h5.pg FVCH mei_h5.pg n 43 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/mei/instances/mei_h6.pg FVCH mei_h6.pg n 51 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/mei/instances/mei_h8.pg FVCH mei_h8.pg n 67 K 7 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n3/instances/core41_n40.pg FVCH core41_n40.pg n 40 K 11 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n3/instances/comp54_n80.pg FVCH comp54_n80.pg n 80 K 11 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n3/instances/lag11_n40.pg FVCH lag11_n40.pg n 40 K 17 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n3/instances/core41_n40.pg red/n3/instances/core41_n40.start FVCH core41_n40.pg n 40 K 42 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n3/instances/lag11_n40.pg red/n3/instances/lag11_n40.start FVCH lag11_n40.pg n 40 K 23 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n3/instances/lagx10_n40.pg FVCH lagx10_n40.pg n 40 K 17 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n3/instances/lagx10_n40.pg red/n3/instances/lagx10_n40.start FVCH lagx10_n40.pg n 40 K 17 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n3/instances/long121_n40.pg FVCH long121_n40.pg n 40 K 23 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n3/instances/comp54_n80.pg red/n3/instances/comp54_n80_fixed.start FVCH comp54_n80.pg n 80 K 55 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n3/instances/long90_k2_n40.pg FVCH long90_k2_n40.pg n 40 K 18 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n3/instances/n3cov_lean.pg FVCH n3cov_lean.pg n 48 K 18 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n3/instances/n3cov_lean.pg red/n3/instances/n3cov_lean_fixed.start FVCH n3cov_lean.pg n 48 K 35 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n3/instances/n3cov_phi.pg FVCH n3cov_phi.pg n 32 K 10 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n3/instances/long90_k2_n40.pg red/n3/instances/long90_k2_n40.start FVCH long90_k2_n40.pg n 40 K 92 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n3/instances/ret22_n40.pg FVCH ret22_n40.pg n 40 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n3/instances/long121_n40.pg red/n3/instances/long121_n40.start FVCH long121_n40.pg n 40 K 122 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n3/instances/n3cov_phi.pg red/n3/instances/n3cov_phi.start FVCH n3cov_phi.pg n 32 K 31 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n3/instances/run49_n32.pg FVCH run49_n32.pg n 32 K 20 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n3/instances/run34_n40.pg red/n3/instances/run34_n40.start FVCH run34_n40.pg n 40 K 51 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n3/instances/run34_n40.pg FVCH run34_n40.pg n 40 K 40 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n3/instances/run49_n32.pg red/n3/instances/run49_n32.start FVCH run49_n32.pg n 32 K 51 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5/instances/dl_4_4.pg FVCH dl_4_4.pg n 42 K 8 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5/instances/dl_4_4.pg red/n5/instances/dl_4_4.start FVCH dl_4_4.pg n 42 K 8 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n3/instances/ret22_n40.pg red/n3/instances/ret22_n40.start FVCH ret22_n40.pg n 40 K 94 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5/instances/dlm2_4.pg FVCH dlm2_4.pg n 42 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5/instances/dlm2_4.pg red/n5/instances/dlm2_4.start FVCH dlm2_4.pg n 42 K 8 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5/instances/sym_h12_s1.pg FVCH sym_h12_s1.pg n 24 K 34 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5/instances/dl_6_8.pg FVCH dl_6_8.pg n 110 K 14 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5/instances/dl_6_8.pg red/n5/instances/dl_6_8.start FVCH dl_6_8.pg n 110 K 14 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5/instances/sym_h8_s1.pg FVCH sym_h8_s1.pg n 16 K 25 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5inj/instances/block_bk20.pg FVCH block_bk20.pg n 24 K 27 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5/instances/sym_h16_s1.pg FVCH sym_h16_s1.pg n 32 K 55 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5inj/instances/block_bk32.pg FVCH block_bk32.pg n 36 K 49 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5inj/instances/bribe_cex_n15.pg FVCH bribe_cex_n15.pg n 15 K 1 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5inj/instances/blockph_bp32.pg FVCH blockph_bp32.pg n 36 K 39 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5inj/instances/blockph_bp20.pg FVCH blockph_bp20.pg n 24 K 25 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5inj/instances/frz24.pg FVCH frz24.pg n 24 K 39 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5inj/instances/frz24.pg red/n5inj/instances/frz24.start FVCH frz24.pg n 24 K 39 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5inj/instances/frz32.pg FVCH frz32.pg n 32 K 8 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5inj/instances/frz32.pg red/n5inj/instances/frz32.start FVCH frz32.pg n 32 K 66 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5inj/instances/elimn_cex_n48.pg FVCH elimn_cex_n48.pg n 48 K 92 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5inj/instances/frz40.pg FVCH frz40.pg n 40 K 90 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5inj/instances/frz40.pg red/n5inj/instances/frz40.start FVCH frz40.pg n 40 K 90 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5inj/instances/phase2_pk32.pg FVCH phase2_pk32.pg n 32 K 56 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5inj/instances/phase2_pk48.pg FVCH phase2_pk48.pg n 48 K 72 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5inj/instances/returns_rt32.pg FVCH returns_rt32.pg n 32 K 57 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5inj/instances/returns_rt48.pg FVCH returns_rt48.pg n 48 K 80 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5inj/instances/theta_thc24.pg FVCH theta_thc24.pg n 24 K 29 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5inj/instances/theta_thf16.pg FVCH theta_thf16.pg n 16 K 20 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5inj/instances/returns_ph64.pg FVCH returns_ph64.pg n 64 K 105 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5inj/instances/theta_tp32.pg FVCH theta_tp32.pg n 32 K 45 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/nest16/instances/k4L72_n101.pg FVCH k4L72_n101.pg n 101 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5inj/instances/returns_rt64.pg FVCH returns_rt64.pg n 64 K 90 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5inj/instances/theta_tp40.pg FVCH theta_tp40.pg n 40 K 41 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/n5inj/instances/wide_h16.pg FVCH wide_h16.pg n 32 K 44 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/nest16/instances/k4L72r_n101.pg FVCH k4L72r_n101.pg n 101 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/nest16/instances/k4seed_vr_n87.pg FVCH k4seed_vr_n87.pg n 87 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/nest16/instances/k4u_n101.pg FVCH k4u_n101.pg n 101 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/nest16/instances/k4g50_n101.pg FVCH k4g50_n101.pg n 101 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/nest16/instances/k4seed_c1_n82.pg FVCH k4seed_c1_n82.pg n 82 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/nest16/instances/k4y1_n82.pg FVCH k4y1_n82.pg n 82 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/nest16/instances/nest4u_n46.pg FVCH nest4u_n46.pg n 46 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/nest16/instances/k4y2_n87.pg FVCH k4y2_n87.pg n 87 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/nest16/instances/near4_n26.pg FVCH near4_n26.pg n 26 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/nest16/instances/nest4uu_n51.pg FVCH nest4uu_n51.pg n 51 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/nest16/instances/nest5_n49.pg FVCH nest5_n49.pg n 49 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/nest16/instances/nest6min_n75.pg FVCH nest6min_n75.pg n 75 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/nest16/instances/nest6_n75.pg FVCH nest6_n75.pg n 75 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/nest16/instances/nest6x_n75.pg FVCH nest6x_n75.pg n 75 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/nest16/instances/oseg_n26.pg FVCH oseg_n26.pg n 26 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/nest16/instances/w1_n27.pg FVCH w1_n27.pg n 27 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/nest16/instances/win3_n27.pg FVCH win3_n27.pg n 27 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/nopre/instances/nopre_viol_n20.pg FVCH nopre_viol_n20.pg n 20 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/o1/instances/ph45_n32.pg FVCH ph45_n32.pg n 32 K 21 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/o1/instances/iter118_n48.pg FVCH iter118_n48.pg n 48 K 18 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/o1/instances/f39_n48.pg FVCH f39_n48.pg n 48 K 38 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/rec0/instances/fbd0_n4.pg FVCH fbd0_n4.pg n 4 K 0 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/o1/instances/ph50_n32.pg FVCH ph50_n32.pg n 32 K 32 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/o1/instances/tau18_n24.pg FVCH tau18_n24.pg n 24 K 12 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/rec0/instances/n0_6_n24.pg FVCH n0_6_n24.pg n 24 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/rec0/instances/nep24_n20.pg FVCH nep24_n20.pg n 20 K 15 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/rec0/instances/nep87_n40.pg FVCH nep87_n40.pg n 40 K 25 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/rec0/instances/lend2_30_n48.pg FVCH lend2_30_n48.pg n 48 K 25 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/rec0/instances/nep90_n40.pg FVCH nep90_n40.pg n 40 K 23 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/seg/instances/runquad_K3_m4_n54.pg FVCH runquad_K3_m4_n54.pg n 54 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/seg/instances/runquad_K8_m30_n192.pg FVCH runquad_K8_m30_n192.pg n 192 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/sgrow/instances/s20_n20.pg FVCH s20_n20.pg n 20 K 8 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/seg/instances/s3quad_K3_m4.pg FVCH s3quad_K3_m4.pg n 137 K 21 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/sgrow/instances/s29_n30.pg FVCH s29_n30.pg n 30 K 7 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/sgrow/instances/s21_oink_n20.pg FVCH s21_oink_n20.pg n 20 K 8 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/sgrow/instances/s32_n60.pg FVCH s32_n60.pg n 60 K 8 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/sgrow/instances/s34_oink_n40.pg FVCH s34_oink_n40.pg n 40 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/sgrow/instances/s34_oink_n80.pg FVCH s34_oink_n80.pg n 80 K 8 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/sgrow/instances/s36_oink_n60.pg FVCH s36_oink_n60.pg n 60 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/sgrow/instances/s35_oink_n80.pg FVCH s35_oink_n80.pg n 80 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/epsseg_cex_n16.pg FVCH epsseg_cex_n16.pg n 16 K 11 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/beta2_n11.pg FVCH beta2_n11.pg n 11 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/exitr_cex_n16.pg FVCH exitr_cex_n16.pg n 16 K 10 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/epsseg_cex_n48.pg FVCH epsseg_cex_n48.pg n 48 K 26 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/exitr_cex_n48.pg FVCH exitr_cex_n48.pg n 48 K 22 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/farrise25_n32.pg FVCH farrise25_n32.pg n 32 K 35 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/mn_abs74_n48.pg FVCH mn_abs74_n48.pg n 48 K 22 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/njb_reabs54_n32.pg FVCH njb_reabs54_n32.pg n 32 K 40 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/nleq33_n48.pg FVCH nleq33_n48.pg n 48 K 40 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/njb_reabs65_n48.pg FVCH njb_reabs65_n48.pg n 48 K 70 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/nleq_cex_n48.pg FVCH nleq_cex_n48.pg n 48 K 10 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/pftheta34_n32.pg FVCH pftheta34_n32.pg n 32 K 39 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/pft35_n48.pg FVCH pft35_n48.pg n 48 K 41 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/pft40_n40.pg FVCH pft40_n40.pg n 40 K 54 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/pftheta_cex_n32.pg FVCH pftheta_cex_n32.pg n 32 K 38 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/post31_n48.pg FVCH post31_n48.pg n 48 K 36 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/rise_fb38_n48.pg FVCH rise_fb38_n48.pg n 48 K 53 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/s4c8_n13.pg FVCH s4c8_n13.pg n 13 K 12 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/so_k2_n32.pg FVCH so_k2_n32.pg n 32 K 20 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/so_j19_n48.pg FVCH so_j19_n48.pg n 48 K 25 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/rise_thin51_n40.pg FVCH rise_thin51_n40.pg n 40 K 78 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/so_sor5_n24.pg FVCH so_sor5_n24.pg n 24 K 23 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/so_sorl_n32.pg FVCH so_sorl_n32.pg n 32 K 22 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/so_th_n32.pg FVCH so_th_n32.pg n 32 K 36 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/so_tie13_n24.pg FVCH so_tie13_n24.pg n 24 K 16 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/so_tie15_n32.pg FVCH so_tie15_n32.pg n 32 K 20 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/tev_cex_n40.pg FVCH tev_cex_n40.pg n 40 K 27 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/tevlast7_n32.pg FVCH tevlast7_n32.pg n 32 K 41 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/tevlast11_n40.pg FVCH tevlast11_n40.pg n 40 K 36 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/tog6a_n32.pg FVCH tog6a_n32.pg n 32 K 10 runs 1 BEST a 8 b 9 L 1 FVCH 0 FVMAX 0 FVU 0 CNCH 0 SBCH 0 FLIPS 0 CROSS 0 CAP 8 BOUND 8 BVIOL 0 | TOT L 1 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/tevlast_cex_n40.pg FVCH tevlast_cex_n40.pg n 40 K 11 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/tog6b_n32.pg FVCH tog6b_n32.pg n 32 K 8 runs 1 BEST a 6 b 7 L 1 FVCH 0 FVMAX 0 FVU 0 CNCH 0 SBCH 0 FLIPS 0 CROSS 0 CAP 12 BOUND 12 BVIOL 0 | TOT L 1 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/xrun21_n24.pg FVCH xrun21_n24.pg n 24 K 24 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/xrun8_n10.pg FVCH xrun8_n10.pg n 10 K 11 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/xsn29_n32.pg FVCH xsn29_n32.pg n 32 K 29 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/xsn43_n48.pg FVCH xsn43_n48.pg n 48 K 45 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/xsnf42_n48.pg FVCH xsnf42_n48.pg n 48 K 44 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/xsnf52_n64.pg FVCH xsnf52_n64.pg n 64 K 55 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/tcpert/instances/leanT_N12.pg FVCH leanT_N12.pg n 96 K 13 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/so/instances/xsn91_n48.pg FVCH xsn91_n48.pg n 48 K 115 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/tcpert/instances/leanT_N16.pg FVCH leanT_N16.pg n 128 K 16 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/tcpert/instances/leanT_N6.pg FVCH leanT_N6.pg n 48 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/tcpert/instances/leanT_N8.pg FVCH leanT_N8.pg n 64 K 8 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/tcpert/instances/leanT_N24.pg FVCH leanT_N24.pg n 192 K 25 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/tcpert/instances/tcL_N10.pg FVCH tcL_N10.pg n 350 K 27 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/tcpert/instances/tcL_N3.pg FVCH tcL_N3.pg n 42 K 7 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/tcpert/instances/tcL_N4.pg FVCH tcL_N4.pg n 68 K 16 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/tcpert/instances/tcL_N5.pg FVCH tcL_N5.pg n 100 K 19 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/tcpert/instances/tcL_N6.pg FVCH tcL_N6.pg n 138 K 18 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/tcpert/instances/leanT_N32.pg FVCH leanT_N32.pg n 256 K 33 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/tcpert/instances/tcR4_N4.pg FVCH tcR4_N4.pg n 68 K 12 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/tcpert/instances/tcR4_N5.pg FVCH tcR4_N5.pg n 100 K 14 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/tcpert/instances/tcR4_N6.pg FVCH tcR4_N6.pg n 138 K 22 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/tcpert/instances/tcL_N8.pg FVCH tcL_N8.pg n 232 K 30 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/tcpert/instances/tcR4_N7.pg FVCH tcR4_N7.pg n 182 K 41 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/tcpert/instances/tcR4_N8.pg FVCH tcR4_N8.pg n 232 K 33 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/tcpert/instances/tcL_N12.pg FVCH tcL_N12.pg n 492 K 37 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/tcpert/instances/tcS8_N6.pg FVCH tcS8_N6.pg n 138 K 17 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/tcpert/instances/tcS8_N7.pg FVCH tcS8_N7.pg n 182 K 14 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/tcpert/instances/tcS8_N10.pg FVCH tcS8_N10.pg n 350 K 16 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/tcpert/instances/tcS8_N8.pg FVCH tcS8_N8.pg n 232 K 10 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/tpp/instances/tpp_viol_n22.pg FVCH tpp_viol_n22.pg n 22 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/tcpert/instances/tcS8_N11.pg FVCH tcS8_N11.pg n 418 K 20 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/tpp/instances/tpp_viol_n63.pg FVCH tpp_viol_n63.pg n 63 K 8 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/ul/instances/cxmig_k16_n138.pg red/ul/instances/cxmig_k16_n138.start FVCH cxmig_k16_n138.pg n 138 K 24 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/tcpert/instances/tcS8_N9.pg FVCH tcS8_N9.pg n 288 K 36 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/ul/instances/cxmig_k4_n54.pg FVCH cxmig_k4_n54.pg n 54 K 12 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/ul/instances/cxmig_k4_n54.pg red/ul/instances/cxmig_k4_n54.start FVCH cxmig_k4_n54.pg n 54 K 12 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/ul/instances/cxmig_k16_n138.pg FVCH cxmig_k16_n138.pg n 138 K 24 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/ul/instances/cxmig_k8_n82.pg red/ul/instances/cxmig_k8_n82.start FVCH cxmig_k8_n82.pg n 82 K 16 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/ul/instances/ladderd0_k12_n48.pg FVCH ladderd0_k12_n48.pg n 48 K 14 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/ul/instances/cxmig_k8_n82.pg FVCH cxmig_k8_n82.pg n 82 K 16 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/ul/instances/ladderd0_k12_n48.pg red/ul/instances/ladderd0_k12_n48.start FVCH ladderd0_k12_n48.pg n 48 K 14 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/ul/instances/ladderd0_k24_n84.pg red/ul/instances/ladderd0_k24_n84.start FVCH ladderd0_k24_n84.pg n 84 K 26 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/ul/instances/ladderd0_k24_n84.pg FVCH ladderd0_k24_n84.pg n 84 K 26 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/ul/instances/ladderent_k12_n48.pg FVCH ladderent_k12_n48.pg n 48 K 14 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/ul/instances/ladderent_k12_n48.pg red/ul/instances/ladderent_k12_n48.start FVCH ladderent_k12_n48.pg n 48 K 14 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/ul/instances/ladderent_k24_n84.pg FVCH ladderent_k24_n84.pg n 84 K 26 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/ul/instances/ladderent_k24_n84.pg red/ul/instances/ladderent_k24_n84.start FVCH ladderent_k24_n84.pg n 84 K 26 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/ul/instances/ladderd0_k48_n156.pg red/ul/instances/ladderd0_k48_n156.start FVCH ladderd0_k48_n156.pg n 156 K 50 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/ul/instances/ladderd0_k48_n156.pg FVCH ladderd0_k48_n156.pg n 156 K 50 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/ul/instances/reader_L10_n36.pg FVCH reader_L10_n36.pg n 36 K 13 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/ul/instances/reader_L10_n36.pg red/ul/instances/reader_L10_n36.start FVCH reader_L10_n36.pg n 36 K 13 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/ul/instances/reader_L20_n56.pg FVCH reader_L20_n56.pg n 56 K 23 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/ul/instances/reader_L20_n56.pg red/ul/instances/reader_L20_n56.start FVCH reader_L20_n56.pg n 56 K 23 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/ul/instances/ladderent_k48_n156.pg red/ul/instances/ladderent_k48_n156.start FVCH ladderent_k48_n156.pg n 156 K 50 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/ul/instances/ladderent_k48_n156.pg FVCH ladderent_k48_n156.pg n 156 K 50 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/ul/instances/reader_L40_n96.pg FVCH reader_L40_n96.pg n 96 K 43 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/ul/instances/reader_L40_n96.pg red/ul/instances/reader_L40_n96.start FVCH reader_L40_n96.pg n 96 K 43 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/seg/instances/s3quad_K8_m30.pg FVCH s3quad_K8_m30.pg n 479 K 264 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/usplit/instances/gate_K16_n197.pg red/usplit/instances/gate_K16_n197.start FVCH gate_K16_n197.pg n 197 K 23 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/usplit/instances/gate_K16_n197.pg FVCH gate_K16_n197.pg n 197 K 23 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/usplit/instances/grow_K12_n149.pg FVCH grow_K12_n149.pg n 149 K 18 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/usplit/instances/grow_K12_n149.pg red/usplit/instances/grow_K12_n149.start FVCH grow_K12_n149.pg n 149 K 19 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/usplit/instances/grow_K40_n373.pg red/usplit/instances/grow_K40_n373.start FVCH grow_K40_n373.pg n 373 K 47 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/usplit/instances/pairoc_n58.pg FVCH pairoc_n58.pg n 58 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/usplit/instances/pairoc_n58.pg red/usplit/instances/pairoc_n58.start FVCH pairoc_n58.pg n 58 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/usplit/instances/grow_K40_n373.pg FVCH grow_K40_n373.pg n 373 K 46 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/usplit/instances/pp_K12_n161.pg FVCH pp_K12_n161.pg n 161 K 20 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/usplit/instances/pp_K12_n161.pg red/usplit/instances/pp_K12_n161.start FVCH pp_K12_n161.pg n 161 K 19 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/usplit/instances/pp_K12_n161_dual.pg FVCH pp_K12_n161_dual.pg n 161 K 20 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/usplit/instances/gate_K64_n581.pg red/usplit/instances/gate_K64_n581.start FVCH gate_K64_n581.pg n 581 K 71 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/usplit/instances/pp_K48_n449.pg red/usplit/instances/pp_K48_n449.start FVCH pp_K48_n449.pg n 449 K 55 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/usplit/instances/usplit_n14.pg FVCH usplit_n14.pg n 14 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/usplit/instances/usplit_n14.pg red/usplit/instances/usplit_n14.start FVCH usplit_n14.pg n 14 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/usplit/instances/usplit_n23.pg FVCH usplit_n23.pg n 23 K 9 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/usplit/instances/usplit_n23.pg red/usplit/instances/usplit_n23.start FVCH usplit_n23.pg n 23 K 9 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/usplit/instances/usplit_rd_n24.pg FVCH usplit_rd_n24.pg n 24 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/usplit/instances/usplit_rd_n24.pg red/usplit/instances/usplit_rd_n24.start FVCH usplit_rd_n24.pg n 24 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/usplit/instances/usplit_rd_s3_n27.pg FVCH usplit_rd_s3_n27.pg n 27 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/usplit/instances/usplit_s3_n16.pg FVCH usplit_s3_n16.pg n 16 K 3 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xctx/instances/nest3_n20.pg FVCH nest3_n20.pg n 20 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xctx/instances/nest3_n24.pg FVCH nest3_n24.pg n 24 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xctx/instances/vrall_viol_n20.pg FVCH vrall_viol_n20.pg n 20 K 4 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xctx/instances/xcov11_n20.pg FVCH xcov11_n20.pg n 20 K 2 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xctx/instances/xctx_viol_n20.pg FVCH xctx_viol_n20.pg n 20 K 5 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/fbref_cex_n32.pg FVCH fbref_cex_n32.pg n 32 K 56 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/j10_n24.pg FVCH j10_n24.pg n 24 K 25 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/usplit/instances/pp_K48_n449.pg FVCH pp_K48_n449.pg n 449 K 56 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/j5_n16.pg FVCH j5_n16.pg n 16 K 30 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/j4_n40.pg FVCH j4_n40.pg n 40 K 106 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/j7_n32.pg FVCH j7_n32.pg n 32 K 50 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/j8_n32.pg FVCH j8_n32.pg n 32 K 54 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/j7_n48.pg FVCH j7_n48.pg n 48 K 78 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/kw25_n32.pg FVCH kw25_n32.pg n 32 K 29 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/kw_n16.pg FVCH kw_n16.pg n 16 K 12 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/kw_n24.pg FVCH kw_n24.pg n 24 K 20 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/j8_n48.pg FVCH j8_n48.pg n 48 K 86 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/obr_eq_n24.pg FVCH obr_eq_n24.pg n 24 K 7 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/kw_n48.pg FVCH kw_n48.pg n 48 K 40 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/obr_n32.pg FVCH obr_n32.pg n 32 K 22 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/u1t_cex_n32.pg FVCH u1t_cex_n32.pg n 32 K 12 runs 2 BEST a 3 b 7 L 4 FVCH 0 FVMAX 0 FVU 2 CNCH 0 SBCH 0 FLIPS 5 CROSS 0 CAP 16 BOUND 16 BVIOL 0 | TOT L 5 FVCH 0 CROSS 0 FLIPS 5 BVIOL 0
+GAME red/xing/instances/u1t_own6_n32.pg FVCH u1t_own6_n32.pg n 32 K 9 runs 1 BEST a 1 b 6 L 5 FVCH 0 FVMAX 0 FVU 2 CNCH 0 SBCH 0 FLIPS 10 CROSS 0 CAP 13 BOUND 13 BVIOL 0 | TOT L 5 FVCH 0 CROSS 0 FLIPS 10 BVIOL 0
+GAME red/xing/instances/u23sw64_n32.pg FVCH u23sw64_n32.pg n 32 K 16 runs 1 BEST a 1 b 9 L 8 FVCH 0 FVMAX 0 FVU 2 CNCH 0 SBCH 0 FLIPS 44 CROSS 0 CAP 9 BOUND 9 BVIOL 0 | TOT L 8 FVCH 0 CROSS 0 FLIPS 44 BVIOL 0
+GAME red/xing/instances/u2flat73_n32.pg FVCH u2flat73_n32.pg n 32 K 16 runs 3 BEST a 6 b 9 L 3 FVCH 0 FVMAX 0 FVU 2 CNCH 0 SBCH 0 FLIPS 11 CROSS 0 CAP 11 BOUND 11 BVIOL 0 | TOT L 7 FVCH 0 CROSS 0 FLIPS 34 BVIOL 0
+GAME red/xing/instances/u2flat_n32.pg FVCH u2flat_n32.pg n 32 K 13 runs 1 BEST a 1 b 2 L 1 FVCH 0 FVMAX 0 FVU 1 CNCH 0 SBCH 0 FLIPS 0 CROSS 0 CAP 9 BOUND 9 BVIOL 0 | TOT L 1 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/x31_cu16.pg FVCH x31_cu16.pg n 16 K 23 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/usplit/instances/pp_K48_n449_dual.pg FVCH pp_K48_n449_dual.pg n 449 K 56 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/x31_cu24.pg FVCH x31_cu24.pg n 24 K 22 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/x31_cu32.pg FVCH x31_cu32.pg n 32 K 49 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/x31_cu32i.pg FVCH x31_cu32i.pg n 32 K 42 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/x31_lem_e24.pg FVCH x31_lem_e24.pg n 24 K 54 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/usplit/instances/gate_K64_n581.pg FVCH gate_K64_n581.pg n 581 K 71 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/x31_cu48.pg FVCH x31_cu48.pg n 48 K 46 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/x31_lem_t32.pg FVCH x31_lem_t32.pg n 32 K 65 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/x31_nh_e24.pg FVCH x31_nh_e24.pg n 24 K 20 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/x31_nh_r20.pg FVCH x31_nh_r20.pg n 20 K 15 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/x31_re24.pg FVCH x31_re24.pg n 24 K 6 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/x31_ru24.pg FVCH x31_ru24.pg n 24 K 7 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/x31_rx32.pg FVCH x31_rx32.pg n 32 K 55 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/x32_rand16.pg FVCH x32_rand16.pg n 16 K 15 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/x32_nest40.pg FVCH x32_nest40.pg n 40 K 58 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/x32_rand24.pg FVCH x32_rand24.pg n 24 K 20 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/x31_rx48.pg FVCH x31_rx48.pg n 48 K 53 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/x32_rand32.pg FVCH x32_rand32.pg n 32 K 29 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/x32_rand48.pg FVCH x32_rand48.pg n 48 K 44 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/x32_rand64.pg FVCH x32_rand64.pg n 64 K 56 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME si/root/instances/cone_n65.pg FVCH cone_n65.pg n 65 K 12 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/x32_waves32.pg FVCH x32_waves32.pg n 32 K 81 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME si/root/instances/cone_n69.pg FVCH cone_n69.pg n 69 K 25 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME si/root/instances/ueonce_n27.pg FVCH ueonce_n27.pg n 27 K 12 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME red/xing/instances/x32_waves48.pg FVCH x32_waves48.pg n 48 K 89 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME si/runlin/instances/runfam_K10.pg FVCH runfam_K10.pg n 49 K 97 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0
+GAME si/runlin/instances/runfam_K40.pg FVCH runfam_K40.pg n 79 K 163 runs 0 BEST none | TOT L 0 FVCH 0 CROSS 0 FLIPS 0 BVIOL 0

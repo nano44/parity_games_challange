@@ -1,0 +1,12 @@
+GAME red/ctxp/instances/margin1_mc5.pg
+BGmax 8
+GAMES 1
+INC 2
+K 12
+MAXPH 1
+SGmax 8
+SQZ_chk 650
+steps 2
+stretches 2
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,15 @@
+GAME red/ul/instances/ladderent_k24_n84.pg
+CNT_chk 25
+FR 25
+FR_maxpair 1
+GAMES 1
+OLD_chk 102
+ROOT_chk 50
+ROOT_endPE 50
+ROOT_maxlen 1
+STEP_caseII 25
+STEP_chk 676
+trans 26
+wruns 1
+VIOLATIONS 0
+RC 0

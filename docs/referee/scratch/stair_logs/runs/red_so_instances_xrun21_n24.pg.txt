@@ -1,0 +1,14 @@
+GAME red/so/instances/xrun21_n24.pg
+BIT_chk 56
+DCOPY_chk 1
+DESC 2
+FROZEN_chk 21
+GAMES 1
+ROOT_chk 26
+TD 273
+WCH 28
+WCT 21
+trans 21
+wruns 1
+VIOLATIONS 0
+RC 0

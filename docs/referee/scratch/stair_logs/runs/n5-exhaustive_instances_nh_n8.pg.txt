@@ -1,0 +1,12 @@
+GAME n5-exhaustive/instances/nh_n8.pg
+BIT_chk 10
+DESC 1
+FROZEN_chk 3
+GAMES 1
+TD 0
+WCH 5
+WCT 3
+trans 3
+wruns 1
+VIOLATIONS 0
+RC 0

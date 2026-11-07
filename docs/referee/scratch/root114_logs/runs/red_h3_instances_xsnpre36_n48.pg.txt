@@ -1,0 +1,14 @@
+GAME red/h3/instances/xsnpre36_n48.pg
+DCOPIED 0
+DR 0
+DS 0
+DT 0
+GAMES 1
+NF_chk 32
+ON_chk 32
+ROLD 0
+TS 0
+trans 30
+wruns 1
+VIOLATIONS 0
+RC 0

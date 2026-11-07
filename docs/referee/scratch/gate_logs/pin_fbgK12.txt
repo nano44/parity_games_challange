@@ -1,0 +1,13 @@
+BGmax 395
+GAMES 1
+INC 395
+K 404
+MAXPH 403
+PH_over 1
+SGmax 395
+SQZ_chk 117450
+steps 403
+stretches 1
+VIOLATIONS 0
+EX ('PH_over', 'fbg_K12_m6_m24.pg', 1, 403, 403, 289)
+RC 0

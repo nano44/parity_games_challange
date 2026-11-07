@@ -1,0 +1,12 @@
+GAME red/rec0/instances/nep90_n40.pg
+BGmax 21
+GAMES 1
+INC 14
+K 23
+MAXPH 9
+SGmax 21
+SQZ_chk 960
+steps 16
+stretches 2
+VIOLATIONS 0
+RC 0

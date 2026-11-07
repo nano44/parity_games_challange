@@ -1,0 +1,12 @@
+GAME red/xing/instances/u1t_own6_n32.pg
+BGmax 8
+GAMES 1
+INC 8
+K 9
+MAXPH 4
+SGmax 8
+SQZ_chk 320
+steps 9
+stretches 1
+VIOLATIONS 0
+RC 0

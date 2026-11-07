@@ -1,0 +1,4 @@
+GAME red/tcpert/instances/leanT_N6.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

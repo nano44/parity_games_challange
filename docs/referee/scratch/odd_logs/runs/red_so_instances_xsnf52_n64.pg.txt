@@ -1,0 +1,15 @@
+GAME red/so/instances/xsnf52_n64.pg
+CNT_chk 51
+FR 51
+FR_maxpair 1
+GAMES 1
+OLD_chk 156
+ROOT_chk 2
+ROOT_endPE 2
+ROOT_maxlen 1
+STEP_caseII 3
+STEP_chk 275
+trans 52
+wruns 1
+VIOLATIONS 0
+RC 0

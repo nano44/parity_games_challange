@@ -1,0 +1,12 @@
+GAME n5-epoch/instances/nep13_n24.pg
+BGmax 6
+GAMES 1
+INC 18
+K 35
+MAXPH 15
+SGmax 28
+SQZ_chk 864
+steps 22
+stretches 5
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,12 @@
+PIN lend107_n32 ab4c9811b311 start 9df4ea2ceafe
+OINK lend107_n32 --zlk verified
+OINK lend107_n32 --tl verified
+PINWIN lend107_n32.pg n 32 states 113 fallbacks 10 W0 32 AGREE True
+n5b iterations 112 fallbacks 10 states 113 | n5x states 113 | identical state sequences: True
+INPHASE lend107_n32.pg n 32 K 112 maxFirst 107 maxInPhase 106 at (2, 107)
+PIN fbg_K12_m6_m24 2f035ca0a999 start 9f03f81fae59
+OINK fbg_K12_m6_m24 --zlk verified
+OINK fbg_K12_m6_m24 --tl verified
+PINWIN fbg_K12_m6_m24.pg n 290 states 405 fallbacks 0 W0 0 AGREE True
+n5b iterations 404 fallbacks 0 states 405 | n5x states 405 | identical state sequences: True
+INPHASE fbg_K12_m6_m24.pg n 290 K 404 maxFirst 403 maxInPhase 403 at (1, 403)

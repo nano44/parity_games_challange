@@ -1,0 +1,14 @@
+GAME n5-exhaustive/instances/b6_xl_n48.pg
+BGmax 27
+GAMES 1
+INC 95
+K 97
+MAXPH 94
+PH_over 1
+SGmax 94
+SQZ_chk 4704
+steps 96
+stretches 1
+VIOLATIONS 0
+EX ('PH_over', 'b6_xl_n48.pg', 1, 96, 94, 47)
+RC 0

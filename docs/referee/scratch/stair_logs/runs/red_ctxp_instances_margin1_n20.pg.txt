@@ -1,0 +1,4 @@
+GAME red/ctxp/instances/margin1_n20.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

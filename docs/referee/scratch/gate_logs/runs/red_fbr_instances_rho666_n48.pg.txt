@@ -1,0 +1,12 @@
+GAME red/fbr/instances/rho666_n48.pg
+BGmax 15
+GAMES 1
+INC 5
+K 16
+MAXPH 8
+SGmax 15
+SQZ_chk 816
+steps 11
+stretches 2
+VIOLATIONS 0
+RC 0

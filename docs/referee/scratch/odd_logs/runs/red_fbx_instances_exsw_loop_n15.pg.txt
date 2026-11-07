@@ -1,0 +1,7 @@
+GAME red/fbx/instances/exsw_loop_n15.pg
+GAMES 1
+OLD_chk 6
+STEP_caseII 2
+STEP_chk 4
+VIOLATIONS 0
+RC 0

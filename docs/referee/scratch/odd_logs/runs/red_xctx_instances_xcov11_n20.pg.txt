@@ -1,0 +1,6 @@
+GAME red/xctx/instances/xcov11_n20.pg
+GAMES 1
+STEP_caseII 12
+STEP_chk 32
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,15 @@
+GAME red/xing/instances/j4_n40.pg
+DCOPIED 21
+DR 81
+DR_chk 108
+DS 6
+DT 0
+GAMES 1
+NF_chk 177
+ON_chk 170
+ROLD 0
+TS 0
+trans 99
+wruns 5
+VIOLATIONS 0
+RC 0

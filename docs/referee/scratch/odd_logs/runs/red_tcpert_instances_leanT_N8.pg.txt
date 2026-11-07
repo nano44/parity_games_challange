@@ -1,0 +1,7 @@
+GAME red/tcpert/instances/leanT_N8.pg
+GAMES 1
+OLD_chk 273
+STEP_caseII 32
+STEP_chk 256
+VIOLATIONS 0
+RC 0

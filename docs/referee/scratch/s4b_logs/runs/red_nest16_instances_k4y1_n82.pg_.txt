@@ -1,0 +1,9 @@
+GAME red/nest16/instances/k4y1_n82.pg 
+GAMES 1
+enum_skip 3
+enum_states 2
+loc_chk 132
+rhos 8
+states 5
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,13 @@
+GAME n5-epoch/instances/immp_cex_n11.pg
+BIT_chk 15
+DESC 0
+FROZEN_chk 2
+GAMES 1
+ROOT_chk 5
+TD 6
+WCH 6
+WCT 2
+trans 2
+wruns 1
+VIOLATIONS 0
+RC 0

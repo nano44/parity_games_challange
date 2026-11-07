@@ -1,0 +1,13 @@
+GAME red/so/instances/xsn29_n32.pg
+BIT_chk 84
+DESC 0
+FROZEN_chk 29
+GAMES 1
+ROOT_chk 29
+TD 346
+WCH 42
+WCT 29
+trans 29
+wruns 1
+VIOLATIONS 0
+RC 0

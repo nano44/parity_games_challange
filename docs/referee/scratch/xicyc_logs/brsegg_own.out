@@ -1,0 +1,2 @@
+BR-SEG-G random count 300 seed 1 n 7 prio 0..13 brute True: {'runs': 300, 'steps': 318, 'h0fail': 85, 'viol': 0, 'domfail': 9, 'brute_bad': 0, 'maxratio': 0.5}
+BR-SEG-G random count 3000 seed 2 n 10 prio 0..19 brute False: {'runs': 3000, 'steps': 4060, 'h0fail': 802, 'viol': 0, 'domfail': 141, 'brute_bad': 0, 'maxratio': 1.0}

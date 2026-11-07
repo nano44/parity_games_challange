@@ -1,0 +1,9 @@
+GAME red/n3/instances/comp54_n80.pg
+GAMES 1
+enum_states 10
+keep_chk 8
+loc_chk 44
+rhos 192
+states 10
+VIOLATIONS 0
+RC 0

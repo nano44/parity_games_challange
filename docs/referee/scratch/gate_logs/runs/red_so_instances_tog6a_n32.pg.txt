@@ -1,0 +1,12 @@
+GAME red/so/instances/tog6a_n32.pg
+BGmax 3
+GAMES 1
+INC 1
+K 10
+MAXPH 4
+SGmax 3
+SQZ_chk 352
+steps 9
+stretches 2
+VIOLATIONS 0
+RC 0

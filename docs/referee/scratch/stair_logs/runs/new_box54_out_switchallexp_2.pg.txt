@@ -1,0 +1,13 @@
+GAME new/box54/out/switchallexp_2.pg
+BIT_chk 62
+DESC 2
+FROZEN_chk 5
+GAMES 1
+ROOT_chk 29
+TD 139
+WCH 29
+WCT 5
+trans 5
+wruns 1
+VIOLATIONS 0
+RC 0

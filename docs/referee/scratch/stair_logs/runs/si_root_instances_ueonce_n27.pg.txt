@@ -1,0 +1,13 @@
+GAME si/root/instances/ueonce_n27.pg
+BIT_chk 73
+DESC 3
+FROZEN_chk 10
+GAMES 1
+ROOT_chk 31
+TD 176
+WCH 33
+WCT 10
+trans 10
+wruns 1
+VIOLATIONS 0
+RC 0

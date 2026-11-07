@@ -1,0 +1,26 @@
+A_d5_W2_k3.json              N 10 T 13 moves 25 multA 2 multV 2 nrecA 22 nrecV 22 firstA ((4, 12), [3, 12
+T_d3_W2.json                 N 6 T  3 moves  5 multA 1 multV 1 nrecA 5 nrecV 5 firstA None firstV None
+T_d4_W3.json                 N 12 T  4 moves  6 multA 1 multV 1 nrecA 6 nrecV 6 firstA None firstV None
+T_d6_W2.json                 N 12 T  6 moves 10 multA 1 multV 1 nrecA 10 nrecV 10 firstA None firstV None
+T_d4_W2.json                 N 8 T  4 moves  7 multA 1 multV 1 nrecA 7 nrecV 7 firstA None firstV None
+A_d4_W3_k3.json              N 12 T 15 moves 30 multA 2 multV 2 nrecA 28 nrecV 28 firstA ((5, 16), [2, 13
+T_d3_W3.json                 N 9 T  3 moves  8 multA 1 multV 1 nrecA 8 nrecV 8 firstA None firstV None
+A_d4_W2_k2.json              N 8 T  9 moves 13 multA 1 multV 1 nrecA 13 nrecV 13 firstA None firstV None
+T_d5_W2.json                 N 10 T  5 moves  7 multA 1 multV 1 nrecA 7 nrecV 7 firstA None firstV None
+A_d6_W2_k2.json              N 12 T 11 moves 20 multA 1 multV 1 nrecA 20 nrecV 20 firstA None firstV None
+grow_top_N21.json            N 21 T 52 moves 98 multA 2 multV 2 nrecA 90 nrecV 90 firstA ((14, 42), [13, 
+grow_top_N18.json            N 18 T 46 moves 86 multA 4 multV 4 nrecA 73 nrecV 73 firstA ((8, 25), [2, 9]
+fl_d3_k4_W4.json             N 12 T 18 moves 43 multA 3 multV 3 nrecA 39 nrecV 40 firstA ((6, 25), [2, 10
+fl_d5_k3_W3.json             N 15 T 21 moves 44 multA 2 multV 2 nrecA 41 nrecV 41 firstA ((11, 33), [2, 1
+grow_top_N15.json            N 15 T 39 moves 66 multA 4 multV 2 nrecA 59 nrecV 60 firstA ((8, 25), [2, 8]
+grow_bottom_N15.json         N 15 T 31 moves 59 multA 4 multV 4 nrecA 47 nrecV 47 firstA ((8, 25), [8, 15
+big_d3_k3_W3.json            N 9 T 17 moves 33 multA 3 multV 3 nrecA 29 nrecV 29 firstA ((6, 20), [1, 8])
+grow_bottom_N24.json         N 24 T 48 moves 100 multA 3 multV 3 nrecA 86 nrecV 87 firstA ((1, 28), [11, 
+grow_top_N24.json            N 24 T 64 moves 119 multA 4 multV 4 nrecA 106 nrecV 106 firstA ((11, 34), [6
+big_d8_k3_W3.json            N 24 T 54 moves 108 multA 4 multV 4 nrecA 93 nrecV 92 firstA ((15, 45), [9, 
+fl_d2_k3_W3.json             N 6 T  8 moves 12 multA 1 multV 1 nrecA 12 nrecV 12 firstA None firstV None
+fl_d4_k3_W3.json             N 12 T 22 moves 38 multA 2 multV 2 nrecA 32 nrecV 32 firstA ((11, 35), [4, 1
+big_d4_k3_W3.json            N 12 T 32 moves 57 multA 4 multV 4 nrecA 46 nrecV 47 firstA ((8, 25), [2, 8]
+grow_bottom_N18.json         N 18 T 33 moves 66 multA 2 multV 2 nrecA 56 nrecV 56 firstA ((8, 49), [16, 2
+grow_bottom_N21.json         N 21 T 41 moves 83 multA 4 multV 4 nrecA 71 nrecV 72 firstA ((4, 13), [1, 19
+big_d6_k3_W3.json            N 18 T 42 moves 80 multA 3 multV 3 nrecA 72 nrecV 72 firstA ((16, 51), [15, 

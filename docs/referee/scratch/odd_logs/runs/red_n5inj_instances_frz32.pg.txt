@@ -1,0 +1,16 @@
+GAME red/n5inj/instances/frz32.pg
+CNT_chk 44
+FR 44
+FR_maxpair 1
+GAMES 1
+OLD_chk 397
+ROOT_chk 12
+ROOT_endC 2
+ROOT_endPE 10
+ROOT_maxlen 2
+STEP_caseII 81
+STEP_chk 198
+trans 43
+wruns 11
+VIOLATIONS 0
+RC 0

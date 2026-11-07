@@ -1,0 +1,9 @@
+GAME red/xctx/instances/xcov11_n20.pg 
+GAMES 1
+enum_skip 1
+enum_states 1
+loc_chk 28
+rhos 216
+states 2
+VIOLATIONS 0
+RC 0

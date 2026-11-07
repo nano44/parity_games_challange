@@ -1,0 +1,8 @@
+GAME red/carry/instances/spp19_oink_n30.pg
+BGmax 4
+GAMES 1
+K 10
+SGmax 4
+SQZ_chk 330
+VIOLATIONS 0
+RC 0

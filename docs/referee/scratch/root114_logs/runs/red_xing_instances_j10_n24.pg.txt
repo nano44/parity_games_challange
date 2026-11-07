@@ -1,0 +1,15 @@
+GAME red/xing/instances/j10_n24.pg
+DCOPIED 1
+DR 4
+DR_chk 5
+DS 0
+DT 0
+GAMES 1
+NF_chk 31
+ON_chk 31
+ROLD 0
+TS 0
+trans 23
+wruns 2
+VIOLATIONS 0
+RC 0

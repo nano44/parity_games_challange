@@ -1,0 +1,4 @@
+GAME red/usplit/instances/pp_K12_n161_dual.pg
+skip_big 1
+VIOLATIONS 0
+RC 0

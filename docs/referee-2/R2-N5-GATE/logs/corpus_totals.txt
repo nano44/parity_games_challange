@@ -1,0 +1,10 @@
+INC 12433
+OPT_checks 347234
+SQZ_checks 1679311
+climb 17841
+fallbacks 1486
+runs 1132
+runs_INC0 575
+runs_exceed_n-1 116
+starts_valid 94
+transitions 21845

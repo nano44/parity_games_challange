@@ -1,0 +1,12 @@
+GAME red/carry/instances/h4_compound2x2_n44.pg
+BGmax 4
+GAMES 1
+INC 1
+K 10
+MAXPH 3
+SGmax 4
+SQZ_chk 484
+steps 4
+stretches 1
+VIOLATIONS 0
+RC 0

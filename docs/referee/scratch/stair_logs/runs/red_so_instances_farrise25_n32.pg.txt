@@ -1,0 +1,13 @@
+GAME red/so/instances/farrise25_n32.pg
+BIT_chk 68
+DESC 0
+FROZEN_chk 4
+GAMES 1
+ROOT_chk 31
+TD 64
+WCH 32
+WCT 4
+trans 4
+wruns 2
+VIOLATIONS 0
+RC 0

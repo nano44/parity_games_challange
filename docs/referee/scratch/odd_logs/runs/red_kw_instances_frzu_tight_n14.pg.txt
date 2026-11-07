@@ -1,0 +1,12 @@
+GAME red/kw/instances/frzu_tight_n14.pg
+CNT_chk 1
+FR 1
+FR_maxpair 1
+GAMES 1
+OLD_chk 18
+STEP_caseII 4
+STEP_chk 12
+trans 3
+wruns 2
+VIOLATIONS 0
+RC 0

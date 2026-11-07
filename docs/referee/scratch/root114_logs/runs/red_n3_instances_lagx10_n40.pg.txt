@@ -1,0 +1,15 @@
+GAME red/n3/instances/lagx10_n40.pg
+DCOPIED 24
+DR 12
+DR_chk 39
+DS 3
+DT 0
+GAMES 1
+NF_chk 26
+ON_chk 26
+ROLD 0
+TS 0
+trans 11
+wruns 1
+VIOLATIONS 0
+RC 0

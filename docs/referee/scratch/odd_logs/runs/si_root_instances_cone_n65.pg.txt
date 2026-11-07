@@ -1,0 +1,15 @@
+GAME si/root/instances/cone_n65.pg
+CNT_chk 2
+FR 2
+FR_maxpair 1
+GAMES 1
+OLD_chk 289
+ROOT_chk 6
+ROOT_endPE 6
+ROOT_maxlen 1
+STEP_caseII 6
+STEP_chk 84
+trans 3
+wruns 2
+VIOLATIONS 0
+RC 0

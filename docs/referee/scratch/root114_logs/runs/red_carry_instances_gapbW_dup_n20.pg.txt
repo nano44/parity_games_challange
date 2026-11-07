@@ -1,0 +1,15 @@
+GAME red/carry/instances/gapbW_dup_n20.pg
+DCOPIED 0
+DR 1
+DR_chk 1
+DS 0
+DT 0
+GAMES 1
+NF_chk 1
+ON_chk 1
+ROLD 0
+TS 0
+trans 2
+wruns 1
+VIOLATIONS 0
+RC 0

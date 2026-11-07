@@ -1,0 +1,14 @@
+VIOLATION OPTV red/h3/instances/lcount2_n23.pg#start@0 x=2
+VIOLATION OPTV red/h3/instances/lcount2_n23.pg#start@0 x=2
+VIOLATION OPTV red/h3/instances/lcount2_n23.pg#start@0 x=2
+VIOLATION OPTV red/h3/instances/lcount2_n23.pg#start@0 x=2
+VIOLATION OPTV red/h3/instances/lcount2_n23.pg#start@0 x=2
+MODE files $SCRATCH/s4pins.lst 0 $SCRATCH/ws4b/experiments/ MAXT 5000 BF 0
+KEEP_checks: 13
+OPTV: 193
+rhos: 348
+runs: 2
+starts_valid: 2
+states_It: 31
+states_enumerated: 31
+RESULT FAIL violations 193

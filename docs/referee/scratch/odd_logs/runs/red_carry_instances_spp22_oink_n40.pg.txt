@@ -1,0 +1,7 @@
+GAME red/carry/instances/spp22_oink_n40.pg
+GAMES 1
+OLD_chk 93
+STEP_caseII 14
+STEP_chk 136
+VIOLATIONS 0
+RC 0

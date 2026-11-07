@@ -1,0 +1,9 @@
+GAME red/nest16/instances/near4_n26.pg 
+GAMES 1
+enum_skip 1
+enum_states 1
+loc_chk 27
+rhos 2
+states 2
+VIOLATIONS 0
+RC 0

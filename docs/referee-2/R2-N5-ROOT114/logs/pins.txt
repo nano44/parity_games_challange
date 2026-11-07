@@ -1,0 +1,89 @@
+EX BND_ONEW_FAILS_fb new/box113/inst/w_re3_1.pg#start@6 y=12 z=29 yinC=False
+EX BND_ONEW_FAILS_fb new/box113/inst/w_re3_1.pg#start@6 y=16 z=29 yinC=False
+EX BND_ONEW_FAILS_fb new/box113/inst/w_re3_1.pg#start@6 y=25 z=29 yinC=False
+WRUN new/box113/inst/w_re3_1.pg#start 2 6 n 32 T 4 WCT 4 DESC 17 {'R': 9, 'T': 0, 'S': 1, 'COPIED': 7} TS 0 Rold 0 Rfuel 9
+WRUN new/box113/inst/w_re3_1.pg#start 7 28 n 32 T 21 WCT 21 DESC 3 {'R': 2, 'T': 0, 'S': 1, 'COPIED': 0} TS 0 Rold 2 Rfuel 0
+EX BND_ONEW_FAILS_fb new/box109/out/hit_b6a_1.pg#start@12 y=2 z=15 yinC=False
+EX BND_ONEW_FAILS_fb new/box109/out/hit_b6a_1.pg#start@12 y=5 z=9 yinC=False
+EX BND_ONEW_FAILS_fb new/box109/out/hit_b6a_1.pg#start@12 y=18 z=16 yinC=False
+EX BND_ONEW_FAILS_fb new/box109/out/hit_b6a_1.pg#start@12 y=23 z=11 yinC=False
+EX BND_ONEW_FAILS_fb new/box109/out/hit_b6a_1.pg#start@12 y=24 z=10 yinC=False
+EX BND_ONEW_FAILS_fb new/box109/out/hit_b6a_1.pg#start@12 y=29 z=10 yinC=False
+WRUN new/box109/out/hit_b6a_1.pg#start 3 12 n 32 T 9 WCT 9 DESC 0 {'R': 0, 'T': 0, 'S': 0, 'COPIED': 0} TS 0 Rold 0 Rfuel 0
+EX BND_ONEW_FAILS_fb new/box109/out/hit_b6a_1.pg#start@19 y=1 z=10 yinC=False
+EX BND_ONEW_FAILS_fb new/box109/out/hit_b6a_1.pg#start@19 y=6 z=22 yinC=False
+EX BND_ONEW_FAILS_fb new/box109/out/hit_b6a_1.pg#start@19 y=8 z=29 yinC=False
+EX BND_ONEW_FAILS_fb new/box109/out/hit_b6a_1.pg#start@19 y=12 z=5 yinC=False
+EX BND_ONEW_FAILS_fb new/box109/out/hit_b6a_1.pg#start@19 y=13 z=29 yinC=False
+EX BND_ONEW_FAILS_fb new/box109/out/hit_b6a_1.pg#start@19 y=21 z=18 yinC=False
+EX BND_ONEW_FAILS_fb new/box109/out/hit_b6a_1.pg#start@19 y=30 z=22 yinC=False
+WRUN new/box109/out/hit_b6a_1.pg#start 13 19 n 32 T 6 WCT 6 DESC 12 {'R': 7, 'T': 0, 'S': 0, 'COPIED': 5} TS 0 Rold 0 Rfuel 7
+WRUN new/box109/out/hit_b6a_1.pg#start 20 43 n 32 T 23 WCT 23 DESC 12 {'R': 10, 'T': 0, 'S': 1, 'COPIED': 1} TS 0 Rold 0 Rfuel 10
+EX BND_ONEW_FAILS_lamW red/n5inj/instances/frz32.pg#start@8 y=12 z=21 yinC=False
+EX BND_ONEW_FAILS_lamW red/n5inj/instances/frz32.pg#start@8 y=15 z=9 yinC=False
+EX BND_ONEW_FAILS_lamW red/n5inj/instances/frz32.pg#start@8 y=30 z=1 yinC=False
+WRUN red/n5inj/instances/frz32.pg#start 0 8 n 32 T 8 WCT 8 DESC 15 {'R': 11, 'T': 0, 'S': 2, 'COPIED': 2} TS 0 Rold 3 Rfuel 8
+EX BND_ONEW_FAILS_lamW red/n5inj/instances/frz32.pg#start@26 y=25 z=15 yinC=False
+EX BND_ONEW_FAILS_lamW red/n5inj/instances/frz32.pg#start@26 y=26 z=30 yinC=True
+WRUN red/n5inj/instances/frz32.pg#start 19 26 n 32 T 7 WCT 7 DESC 8 {'R': 6, 'T': 0, 'S': 0, 'COPIED': 2} TS 0 Rold 0 Rfuel 6
+WRUN red/n5inj/instances/frz32.pg#start 27 28 n 32 T 1 WCT 1 DESC 0 {'R': 0, 'T': 0, 'S': 0, 'COPIED': 0} TS 0 Rold 0 Rfuel 0
+EX BND_ONEW_FAILS_lamW red/n5inj/instances/frz32.pg#start@33 y=2 z=0 yinC=False
+EX BND_ONEW_FAILS_lamW red/n5inj/instances/frz32.pg#start@33 y=7 z=0 yinC=False
+EX BND_ONEW_FAILS_lamW red/n5inj/instances/frz32.pg#start@33 y=10 z=6 yinC=False
+EX BND_ONEW_FAILS_lamW red/n5inj/instances/frz32.pg#start@33 y=11 z=16 yinC=False
+EX BND_ONEW_FAILS_lamW red/n5inj/instances/frz32.pg#start@33 y=13 z=26 yinC=False
+EX BND_ONEW_FAILS_lamW red/n5inj/instances/frz32.pg#start@33 y=18 z=6 yinC=False
+EX BND_ONEW_FAILS_lamW red/n5inj/instances/frz32.pg#start@33 y=20 z=0 yinC=False
+EX BND_ONEW_FAILS_lamW red/n5inj/instances/frz32.pg#start@33 y=27 z=14 yinC=False
+EX BND_ONEW_FAILS_lamW red/n5inj/instances/frz32.pg#start@33 y=31 z=14 yinC=False
+WRUN red/n5inj/instances/frz32.pg#start 32 33 n 32 T 1 WCT 1 DESC 0 {'R': 0, 'T': 0, 'S': 0, 'COPIED': 0} TS 0 Rold 0 Rfuel 0
+EX BND_ONEW_FAILS_lamW red/n5inj/instances/frz32.pg#start@46 y=8 z=13 yinC=False
+EX BND_ONEW_FAILS_lamW red/n5inj/instances/frz32.pg#start@46 y=20 z=11 yinC=False
+WRUN red/n5inj/instances/frz32.pg#start 34 46 n 32 T 12 WCT 12 DESC 0 {'R': 0, 'T': 0, 'S': 0, 'COPIED': 0} TS 0 Rold 0 Rfuel 0
+EX BND_ONEW_FAILS_lamW red/n5inj/instances/frz32.pg#start@52 y=23 z=20 yinC=False
+EX BND_ONEW_FAILS_lamW red/n5inj/instances/frz32.pg#start@52 y=29 z=20 yinC=False
+WRUN red/n5inj/instances/frz32.pg#start 47 52 n 32 T 5 WCT 5 DESC 5 {'R': 4, 'T': 0, 'S': 0, 'COPIED': 1} TS 0 Rold 0 Rfuel 4
+EX BND_ONEW_FAILS_lamW red/n5inj/instances/frz32.pg#start@54 y=22 z=29 yinC=False
+EX BND_ONEW_FAILS_lamW red/n5inj/instances/frz32.pg#start@54 y=27 z=23 yinC=False
+WRUN red/n5inj/instances/frz32.pg#start 53 54 n 32 T 1 WCT 1 DESC 0 {'R': 0, 'T': 0, 'S': 0, 'COPIED': 0} TS 0 Rold 0 Rfuel 0
+WRUN red/n5inj/instances/frz32.pg#start 55 57 n 32 T 2 WCT 2 DESC 0 {'R': 0, 'T': 0, 'S': 0, 'COPIED': 0} TS 0 Rold 0 Rfuel 0
+WRUN red/n5inj/instances/frz32.pg#start 58 59 n 32 T 1 WCT 1 DESC 0 {'R': 0, 'T': 0, 'S': 0, 'COPIED': 0} TS 0 Rold 0 Rfuel 0
+WRUN red/n5inj/instances/frz32.pg#start 60 61 n 32 T 1 WCT 1 DESC 0 {'R': 0, 'T': 0, 'S': 0, 'COPIED': 0} TS 0 Rold 0 Rfuel 0
+WRUN red/n5inj/instances/frz32.pg#start 62 66 n 32 T 4 WCT 4 DESC 0 {'R': 0, 'T': 0, 'S': 0, 'COPIED': 0} TS 0 Rold 0 Rfuel 0
+WRUN red/h3/instances/lcount2_n23.pg#start 1 4 n 23 T 3 WCT 3 DESC 6 {'R': 1, 'T': 1, 'S': 1, 'COPIED': 3} TS 1 Rold 0 Rfuel 1
+WRUN new/box113/inst/cp_K4.pg#start 0 44 n 192 T 44 WCT 44 DESC 388 {'R': 388, 'T': 0, 'S': 0, 'COPIED': 0} TS 0 Rold 0 Rfuel 388
+WRUN new/box113/inst/fbg_K4_m6_m48.pg#start 1 236 n 250 T 235 WCT 235 DESC 640 {'R': 210, 'T': 0, 'S': 0, 'COPIED': 430} TS 0 Rold 0 Rfuel 210
+WRUN new/box113/inst/fbg_K4_m6_m48.pg#start 1 236 n 250 T 235 WCT 235 DESC 640 {'R': 210, 'T': 0, 'S': 0, 'COPIED': 430} TS 0 Rold 0 Rfuel 210
+MODE files $SCRATCH/pins.lst 0 $SCRATCH/wroot/experiments/ MAXT 5000 BF 0
+BND_ONEW_FAILS_fb: 16
+BND_ONEW_FAILS_lamW: 26
+BND_fb: 3
+BND_lamW: 11
+BND_newedge_lamW: 3
+BND_origin_fb: 16
+BND_origin_lamW: 26
+DESC: 1746
+DESC_COPIED: 881
+DESC_R: 858
+DESC_S: 6
+DESC_T: 1
+DROOT_checks: 1746
+DROOT_j_pos: 881
+FUEL_reroutes: 4243
+NEWEDGE: 4243
+OPTOFF_checks: 38892
+ORIGIN: 3999
+ORIGIN_first: 143
+RELAY: 420
+ROOTCH: 4419
+R_fuel: 853
+R_old: 5
+TS: 1
+WRUNS: 20
+WRUN_transitions: 623
+XIPLAY_checks: 131781
+runs: 7
+starts_valid: 7
+transitions: 659
+max max_LCT_run: 9
+RESULT PASS violations 0

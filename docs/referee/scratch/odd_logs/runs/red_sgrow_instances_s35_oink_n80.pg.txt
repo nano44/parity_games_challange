@@ -1,0 +1,9 @@
+GAME red/sgrow/instances/s35_oink_n80.pg
+GAMES 1
+OLD_chk 197
+STEP_caseII 6
+STEP_chk 185
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

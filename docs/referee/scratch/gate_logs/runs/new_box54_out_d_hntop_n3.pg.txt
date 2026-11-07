@@ -1,0 +1,8 @@
+GAME new/box54/out/d_hntop_n3.pg
+BGmax 41
+GAMES 1
+K 61
+SGmax 41
+SQZ_chk 3906
+VIOLATIONS 0
+RC 0

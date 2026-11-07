@@ -1,0 +1,8 @@
+GAME red/so/instances/nleq_cex_n48.pg 
+GAMES 1
+enum_states 1
+loc_chk 6
+rhos 7
+states 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,16 @@
+it 5 best (5, 2) T [2, 3, 4] Tinf 5 LP 10
+it 78 best (6, 2) T [2, 4, 5] Tinf 6 LP 11
+it 140 best (6, 3) T [3, 4, 5] Tinf 6 LP 11
+it 191 best (7, 3) T [3, 4, 5] Tinf 7 LP 13
+it 196 best (8, 3) T [3, 4, 6] Tinf 8 LP 13
+it 469 best (9, 3) T [3, 5, 6] Tinf 9 LP 15
+it 473 best (10, 4) T [4, 6, 8] Tinf 10 LP 17
+it 512 best (12, 4) T [4, 6, 8] Tinf 12 LP 19
+it 677 best (13, 4) T [4, 6, 9] Tinf 13 LP 24
+it 1074 best (13, 5) T [5, 7, 8] Tinf 13 LP 28
+it 1320 best (14, 6) T [6, 8, 9] Tinf 14 LP 28
+it 1324 best (16, 6) T [6, 8, 10] Tinf 16 LP 38
+it 1383 best (16, 7) T [7, 9, 10] Tinf 16 LP 38
+it 1455 best (17, 7) T [7, 9, 11] Tinf 17 LP 38
+it 13125 best (19, 7) T [7, 9, 13] Tinf 19 LP 40
+it 28761 best (20, 4) T [4, 6, 8] Tinf 20 LP 33

@@ -1,0 +1,12 @@
+GAME red/fbr/instances/fr39_q4_n48.pg
+BGmax 34
+GAMES 1
+INC 0
+K 36
+MAXPH 33
+SGmax 34
+SQZ_chk 1776
+steps 33
+stretches 1
+VIOLATIONS 0
+RC 0

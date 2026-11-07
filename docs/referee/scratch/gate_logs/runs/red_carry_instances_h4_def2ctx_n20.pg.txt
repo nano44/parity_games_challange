@@ -1,0 +1,12 @@
+GAME red/carry/instances/h4_def2ctx_n20.pg
+BGmax 1
+GAMES 1
+INC 2
+K 6
+MAXPH 1
+SGmax 1
+SQZ_chk 140
+steps 3
+stretches 3
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,10 @@
+GAME red/carry/instances/ctx12_n40.pg 
+GAMES 1
+enum_skip 2
+enum_states 6
+keep_chk 1
+loc_chk 107
+rhos 1498
+states 8
+VIOLATIONS 0
+RC 0

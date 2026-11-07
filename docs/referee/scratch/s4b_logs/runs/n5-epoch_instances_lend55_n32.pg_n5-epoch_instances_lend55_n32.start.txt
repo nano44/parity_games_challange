@@ -1,0 +1,9 @@
+GAME n5-epoch/instances/lend55_n32.pg n5-epoch/instances/lend55_n32.start
+GAMES 1
+enum_states 58
+keep_chk 56
+loc_chk 58
+rhos 116
+states 58
+VIOLATIONS 0
+RC 0

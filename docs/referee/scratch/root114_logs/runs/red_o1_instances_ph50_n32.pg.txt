@@ -1,0 +1,4 @@
+GAME red/o1/instances/ph50_n32.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

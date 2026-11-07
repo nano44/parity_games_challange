@@ -1,0 +1,4 @@
+GAME new/box51/out/dlc_d4.pg
+skip_big 1
+VIOLATIONS 0
+RC 0

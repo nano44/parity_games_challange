@@ -1,0 +1,8 @@
+GAME new/box54/out/hf/recursiveladder_6.pg 
+GAMES 1
+enum_states 6
+loc_chk 9
+rhos 18
+states 6
+VIOLATIONS 0
+RC 0

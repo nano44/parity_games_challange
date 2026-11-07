@@ -1,0 +1,8 @@
+GAME red/carry/instances/phi_flat_alive_n32.pg
+BGmax 3
+GAMES 1
+K 4
+SGmax 3
+SQZ_chk 160
+VIOLATIONS 0
+RC 0

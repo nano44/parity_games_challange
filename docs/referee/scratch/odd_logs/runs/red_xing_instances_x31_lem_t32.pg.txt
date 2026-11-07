@@ -1,0 +1,15 @@
+GAME red/xing/instances/x31_lem_t32.pg
+CNT_chk 90
+FR 90
+FR_maxpair 1
+GAMES 1
+OLD_chk 236
+ROOT_chk 4
+ROOT_endPE 4
+ROOT_maxlen 1
+STEP_caseII 3
+STEP_chk 195
+trans 56
+wruns 7
+VIOLATIONS 0
+RC 0

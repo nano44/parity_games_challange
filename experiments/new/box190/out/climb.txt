@@ -1,0 +1,16 @@
+CLIMB mode spec d 3 seeds 4 iters 3000: best T per seed [5, 5, 6, 6], max 6
+CLIMB mode idx d 3 seeds 4 iters 3000: best T per seed [5, 5, 4, 5], max 5
+CLIMB mode xi d 3 seeds 4 iters 3000: best T per seed [6, 6, 6, 6], max 6
+CLIMB mode spec d 4 seeds 4 iters 3000: best T per seed [7, 7, 5, 6], max 7
+CLIMB mode idx d 4 seeds 4 iters 3000: best T per seed [6, 7, 6, 7], max 7
+CLIMB mode xi d 4 seeds 4 iters 3000: best T per seed [8, 8, 8, 8], max 8
+CLIMB mode spec d 5 seeds 4 iters 3000: best T per seed [8, 6, 6, 8], max 8
+CLIMB mode idx d 5 seeds 4 iters 3000: best T per seed [5, 5, 6, 7], max 7
+CLIMB mode xi d 5 seeds 4 iters 3000: best T per seed [9, 8, 9, 10], max 10
+CLIMB mode spec d 6 seeds 4 iters 3000: best T per seed [8, 9, 8, 6], max 9
+CLIMB mode idx d 6 seeds 4 iters 3000: best T per seed [6, 6, 6, 9], max 9
+CLIMB mode xi d 6 seeds 4 iters 3000: best T per seed [11, 9, 10, 10], max 11
+CLIMB mode spec d 7 seeds 4 iters 3000: best T per seed [8, 10, 8, 7], max 10
+CLIMB mode idx d 7 seeds 4 iters 3000: best T per seed [5, 6, 9, 7], max 9
+CLIMB mode xi d 7 seeds 4 iters 3000: best T per seed [11, 12, 12, 12], max 12
+DONE

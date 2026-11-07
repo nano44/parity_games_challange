@@ -1,0 +1,12 @@
+GAME red/carry/instances/cm_mdrop_oink_n28.pg
+GAMES 1
+OLD_chk 64
+ROOT_chk 3
+ROOT_endPE 3
+ROOT_maxlen 1
+STEP_caseII 3
+STEP_chk 36
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

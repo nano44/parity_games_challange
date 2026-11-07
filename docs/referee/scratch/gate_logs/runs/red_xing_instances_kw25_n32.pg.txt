@@ -1,0 +1,12 @@
+GAME red/xing/instances/kw25_n32.pg
+BGmax 27
+GAMES 1
+INC 27
+K 29
+MAXPH 28
+SGmax 27
+SQZ_chk 960
+steps 29
+stretches 1
+VIOLATIONS 0
+RC 0

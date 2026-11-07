@@ -1,0 +1,7 @@
+GAME red/fbr/instances/rho84_n16.pg
+GAMES 1
+OLD_chk 56
+STEP_caseII 8
+STEP_chk 50
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,14 @@
+GAME red/so/instances/pftheta34_n32.pg
+BGmax 20
+GAMES 1
+INC 37
+K 39
+MAXPH 35
+PH_over 1
+SGmax 37
+SQZ_chk 1280
+steps 39
+stretches 1
+VIOLATIONS 0
+EX ('PH_over', 'pftheta34_n32.pg', 0, 39, 35, 31)
+RC 0

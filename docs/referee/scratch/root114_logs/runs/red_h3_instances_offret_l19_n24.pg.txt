@@ -1,0 +1,4 @@
+GAME red/h3/instances/offret_l19_n24.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

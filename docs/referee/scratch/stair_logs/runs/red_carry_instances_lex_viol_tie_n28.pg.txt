@@ -1,0 +1,4 @@
+GAME red/carry/instances/lex_viol_tie_n28.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

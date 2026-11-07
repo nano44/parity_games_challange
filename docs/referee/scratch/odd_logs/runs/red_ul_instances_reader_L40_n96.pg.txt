@@ -1,0 +1,15 @@
+GAME red/ul/instances/reader_L40_n96.pg
+CNT_chk 43
+FR 43
+FR_maxpair 1
+GAMES 1
+OLD_chk 53
+ROOT_chk 3
+ROOT_endPE 3
+ROOT_maxlen 1
+STEP_caseII 41
+STEP_chk 129
+trans 43
+wruns 1
+VIOLATIONS 0
+RC 0

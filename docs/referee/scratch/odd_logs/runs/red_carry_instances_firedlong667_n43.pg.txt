@@ -1,0 +1,7 @@
+GAME red/carry/instances/firedlong667_n43.pg
+GAMES 1
+OLD_chk 8
+STEP_caseII 14
+STEP_chk 69
+VIOLATIONS 0
+RC 0

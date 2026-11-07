@@ -1,0 +1,12 @@
+GAME ../box116/inst/fbA_K4_m8_m8.pg ../box116/inst/fbA_K4_m8_m8_fixed.start UNBLOCK fbA_K4_m8_m8.pg n 136 iters 44 INC 43 UNPAID 36 REL 9 DREL 9 maxrel 1 UNB 9 target 9 source 0 both 0 TGT 8 FAN 2 OLDFED 0
+GAME ../box113/inst/cp_K4.pg ../box113/inst/cp_K4.start UNBLOCK cp_K4.pg n 192 iters 44 INC 43 UNPAID 36 REL 9 DREL 9 maxrel 1 UNB 9 target 9 source 0 both 0 TGT 8 FAN 2 OLDFED 0
+GAME ../box115/inst/switchbestexp_4.pg - UNBLOCK switchbestexp_4.pg n 110 iters 47 INC 7 UNPAID 6 REL 12 DREL 12 maxrel 1 UNB 17 target 17 source 0 both 0 TGT 14 FAN 2 OLDFED 0
+GAME ../box115/inst/switchbestexp_6.pg - UNBLOCK switchbestexp_6.pg n 160 iters 62 INC 8 UNPAID 6 REL 23 DREL 23 maxrel 1 UNB 34 target 34 source 0 both 0 TGT 29 FAN 2 OLDFED 0
+GAME ../box116/inst/fbA_K8_m8_m8.pg ../box116/inst/fbA_K8_m8_m8_fixed.start UNBLOCK fbA_K8_m8_m8.pg n 192 iters 88 INC 87 UNPAID 72 REL 17 DREL 17 maxrel 1 UNB 17 target 17 source 0 both 0 TGT 16 FAN 2 OLDFED 0
+GAME ../box116/inst/fbg_K4_m6_m24.pg ../box116/inst/fbg_K4_m6_m24_fixed.start UNBLOCK fbg_K4_m6_m24.pg n 178 iters 140 INC 131 UNPAID 111 REL 109 DREL 34 maxrel 4 UNB 109 target 21 source 0 both 88 TGT 108 FAN 2 OLDFED 0
+GAME ../box113/inst/suf_K8.pg ../box113/inst/suf_K8.start UNBLOCK suf_K8.pg n 199 iters 152 INC 151 UNPAID 136 REL 17 DREL 17 maxrel 1 UNB 17 target 17 source 0 both 0 TGT 16 FAN 2 OLDFED 0
+GAME ../box117/inst/fb3_K4_m6_m12_m12.pg ../box117/inst/fb3_K4_m6_m12_m12.start UNBLOCK fb3_K4_m6_m12_m12.pg n 215 iters 159 INC 140 UNPAID 107 REL 79 DREL 26 maxrel 5 UNB 79 target 35 source 0 both 44 TGT 78 FAN 2 OLDFED 0
+GAME ../box116/inst/fbg_K4_m6_m48.pg ../box116/inst/fbg_K4_m6_m48_fixed.start UNBLOCK fbg_K4_m6_m48.pg n 250 iters 236 INC 227 UNPAID 207 REL 205 DREL 58 maxrel 4 UNB 205 target 21 source 0 both 184 TGT 204 FAN 2 OLDFED 0
+GAME ../box116/inst/fbg_K8_m6_m24.pg ../box116/inst/fbg_K8_m6_m24_fixed.start UNBLOCK fbg_K8_m6_m24.pg n 234 iters 272 INC 263 UNPAID 223 REL 217 DREL 42 maxrel 8 UNB 217 target 41 source 0 both 176 TGT 216 FAN 2 OLDFED 0
+GAME ../../red/seg/instances/s3quad_K8_m30.pg ../box116/inst/s3quad_K8_m30_default.start UNBLOCK s3quad_K8_m30.pg n 479 iters 264 INC 263 UNPAID 248 REL 17 DREL 17 maxrel 1 UNB 17 target 17 source 0 both 0 TGT 17 FAN 1 OLDFED 0
+GAME ../box116/inst/fbg_K12_m6_m24.pg ../box116/inst/fbg_K12_m6_m24_fixed.start UNBLOCK fbg_K12_m6_m24.pg n 290 iters 404 INC 395 UNPAID 335 REL 325 DREL 50 maxrel 12 UNB 325 target 61 source 0 both 264 TGT 324 FAN 2 OLDFED 0

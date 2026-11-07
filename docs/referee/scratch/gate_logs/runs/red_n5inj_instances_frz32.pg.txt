@@ -1,0 +1,12 @@
+GAME red/n5inj/instances/frz32.pg
+BGmax 30
+GAMES 1
+INC 62
+K 66
+MAXPH 13
+SGmax 30
+SQZ_chk 2144
+steps 66
+stretches 1
+VIOLATIONS 0
+RC 0

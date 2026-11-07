@@ -1,0 +1,15 @@
+GAME red/xing/instances/fbref_cex_n32.pg
+CNT_chk 57
+FR 58
+FR_maxpair 2
+GAMES 1
+OLD_chk 406
+ROOT_chk 35
+ROOT_endPE 35
+ROOT_maxlen 2
+STEP_caseII 4
+STEP_chk 280
+trans 42
+wruns 7
+VIOLATIONS 0
+RC 0

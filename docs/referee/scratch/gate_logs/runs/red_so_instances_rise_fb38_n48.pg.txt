@@ -1,0 +1,12 @@
+GAME red/so/instances/rise_fb38_n48.pg
+BGmax 49
+GAMES 1
+INC 49
+K 53
+MAXPH 46
+SGmax 49
+SQZ_chk 2592
+steps 51
+stretches 1
+VIOLATIONS 0
+RC 0

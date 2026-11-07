@@ -1,0 +1,7 @@
+GAME red/carry/instances/spp19_oink_n30.pg
+GAMES 1
+OLD_chk 128
+STEP_caseII 23
+STEP_chk 160
+VIOLATIONS 0
+RC 0

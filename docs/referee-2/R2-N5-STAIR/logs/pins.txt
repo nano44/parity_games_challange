@@ -1,0 +1,35 @@
+WRUN /tmp/claude-0/-home-user-parity-games-challange/6818e6dd-24e8-54a7-b5bf-dc0c0a4d1c69/scratchpad/stpins/hd_H40.pg#start 0 40 n 122 WT 40 WCT 40 WCH 2420 DESC 0 TD 0 NF 39
+WRUN /tmp/claude-0/-home-user-parity-games-challange/6818e6dd-24e8-54a7-b5bf-dc0c0a4d1c69/scratchpad/stpins/hit_b6a_1.pg#start 3 12 n 32 WT 9 WCT 9 WCH 10 DESC 0 TD 44 NF 0
+WRUN /tmp/claude-0/-home-user-parity-games-challange/6818e6dd-24e8-54a7-b5bf-dc0c0a4d1c69/scratchpad/stpins/hit_b6a_1.pg#start 13 19 n 32 WT 6 WCT 6 WCH 33 DESC 12 TD 72 NF 0
+WRUN /tmp/claude-0/-home-user-parity-games-challange/6818e6dd-24e8-54a7-b5bf-dc0c0a4d1c69/scratchpad/stpins/hit_b6a_1.pg#start 20 43 n 32 WT 23 WCT 23 WCH 70 DESC 12 TD 424 NF 8
+WRUN /tmp/claude-0/-home-user-parity-games-challange/6818e6dd-24e8-54a7-b5bf-dc0c0a4d1c69/scratchpad/stpins/x31_rx48.pg#start 2 24 n 48 WT 22 WCT 22 WCH 111 DESC 52 TD 717 NF 4
+WRUN /tmp/claude-0/-home-user-parity-games-challange/6818e6dd-24e8-54a7-b5bf-dc0c0a4d1c69/scratchpad/stpins/x31_rx48.pg#start 25 35 n 48 WT 10 WCT 10 WCH 67 DESC 28 TD 154 NF 0
+WRUN /tmp/claude-0/-home-user-parity-games-challange/6818e6dd-24e8-54a7-b5bf-dc0c0a4d1c69/scratchpad/stpins/x31_rx48.pg#start 36 50 n 48 WT 14 WCT 14 WCH 68 DESC 0 TD 661 NF 13
+WRUN /tmp/claude-0/-home-user-parity-games-challange/6818e6dd-24e8-54a7-b5bf-dc0c0a4d1c69/scratchpad/stpins/x31_rx48.pg#start 52 53 n 48 WT 1 WCT 1 WCH 1 DESC 0 TD 0 NF 0
+WRUN /tmp/claude-0/-home-user-parity-games-challange/6818e6dd-24e8-54a7-b5bf-dc0c0a4d1c69/scratchpad/stpins/u23sw64_n32.pg#start 1 9 n 32 WT 8 WCT 0 WCH 0 DESC 0 TD 0 NF 8
+WRUN /tmp/claude-0/-home-user-parity-games-challange/6818e6dd-24e8-54a7-b5bf-dc0c0a4d1c69/scratchpad/stpins/u23sw64_n32.pg#start 10 12 n 32 WT 2 WCT 2 WCH 30 DESC 2 TD 31 NF 0
+WRUN /tmp/claude-0/-home-user-parity-games-challange/6818e6dd-24e8-54a7-b5bf-dc0c0a4d1c69/scratchpad/stpins/u23sw64_n32.pg#start 13 16 n 32 WT 3 WCT 3 WCH 21 DESC 0 TD 0 NF 0
+WRUN /tmp/claude-0/-home-user-parity-games-challange/6818e6dd-24e8-54a7-b5bf-dc0c0a4d1c69/scratchpad/stpins/tog6a_n32.pg#start 4 9 n 32 WT 5 WCT 4 WCH 38 DESC 13 TD 0 NF 1
+WRUN /tmp/claude-0/-home-user-parity-games-challange/6818e6dd-24e8-54a7-b5bf-dc0c0a4d1c69/scratchpad/stpins/obs_K12_m24.pg#start 0 324 n 272 WT 324 WCT 324 WCH 2976 DESC 12 TD 55090 NF 0
+MODE files /tmp/claude-0/-home-user-parity-games-challange/6818e6dd-24e8-54a7-b5bf-dc0c0a4d1c69/scratchpad/stpins.lst 0 MAXT 5000 BF 0
+BITK_checks: 5845
+BWRISE: 82
+COPY_checks: 4668
+DCOPY_checks: 35
+DESC: 131
+LEXK_checks: 195732
+RESET_T: 406
+ROOT_checks: 3294
+SWCH: 5845
+T4: 64
+TD: 57193
+WCT: 458
+WRUNS: 25
+WRUN_transitions: 467
+XIPLAY_checks: 98298
+runs: 6
+starts_valid: 6
+transitions: 486
+max max_LCT_run: 5
+max max_T4_run: (39, '/tmp/claude-0/-home-user-parity-games-challange/6818e6dd-24e8-54a7-b5bf-dc0c0a4d1c69/scratchpad/stpins/hd_H40.pg#start')
+RESULT PASS violations 0

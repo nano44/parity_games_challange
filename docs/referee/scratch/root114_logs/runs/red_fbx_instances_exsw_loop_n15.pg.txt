@@ -1,0 +1,4 @@
+GAME red/fbx/instances/exsw_loop_n15.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

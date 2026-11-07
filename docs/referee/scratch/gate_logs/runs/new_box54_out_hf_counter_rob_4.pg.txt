@@ -1,0 +1,12 @@
+GAME new/box54/out/hf/counter_rob_4.pg
+BGmax 1
+GAMES 1
+INC 5
+K 10
+MAXPH 1
+SGmax 1
+SQZ_chk 913
+steps 6
+stretches 5
+VIOLATIONS 0
+RC 0

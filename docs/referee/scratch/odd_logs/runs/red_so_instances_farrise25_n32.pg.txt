@@ -1,0 +1,15 @@
+GAME red/so/instances/farrise25_n32.pg
+CNT_chk 3
+FR 3
+FR_maxpair 1
+GAMES 1
+OLD_chk 123
+ROOT_chk 4
+ROOT_endPE 4
+ROOT_maxlen 2
+STEP_caseII 44
+STEP_chk 105
+trans 4
+wruns 2
+VIOLATIONS 0
+RC 0

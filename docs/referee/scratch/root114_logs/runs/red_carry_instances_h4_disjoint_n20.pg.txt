@@ -1,0 +1,4 @@
+GAME red/carry/instances/h4_disjoint_n20.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

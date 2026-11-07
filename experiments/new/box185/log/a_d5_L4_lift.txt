@@ -1,0 +1,8 @@
+it 30 moves 2 runT 2
+it 31 moves 2 runT 3
+it 102 moves 2 runT 4
+it 1221 moves 2 runT 5
+it 2043 moves 3 runT 3
+it 3467 moves 3 runT 4
+it 5491 moves 3 runT 5
+it 114293 moves 4 runT 5

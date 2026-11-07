@@ -1,0 +1,15 @@
+GAME red/h3/instances/lcount2_n23.pg
+CNT_chk 5
+FR 5
+FR_maxpair 1
+GAMES 1
+OLD_chk 70
+ROOT_chk 10
+ROOT_endPE 10
+ROOT_maxlen 1
+STEP_caseII 20
+STEP_chk 48
+trans 3
+wruns 1
+VIOLATIONS 0
+RC 0

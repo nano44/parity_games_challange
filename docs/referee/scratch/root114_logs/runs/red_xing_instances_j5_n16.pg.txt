@@ -1,0 +1,15 @@
+GAME red/xing/instances/j5_n16.pg
+DCOPIED 0
+DR 1
+DR_chk 2
+DS 1
+DT 0
+GAMES 1
+NF_chk 19
+ON_chk 18
+ROLD 0
+TS 0
+trans 20
+wruns 5
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,15 @@
+GAME red/n5inj/instances/theta_tp32.pg
+DCOPIED 5
+DR 46
+DR_chk 56
+DS 5
+DT 0
+GAMES 1
+NF_chk 63
+ON_chk 63
+ROLD 0
+TS 0
+trans 40
+wruns 2
+VIOLATIONS 0
+RC 0

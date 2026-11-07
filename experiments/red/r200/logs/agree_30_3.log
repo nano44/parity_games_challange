@@ -1,0 +1,14 @@
+inst 1 N 6 L 3 req 11 own: xisat sat (0.3 s) xcnf sat (0.1 s) replay-match True AGREE
+inst 2 N 6 L 3 req 9 flip t1v3 t2v5: xisat sat (0.4 s) xcnf sat (0.0 s) replay-match False AGREE
+inst 3 N 8 L 3 req 15 own: xisat sat (0.4 s) xcnf sat (0.1 s) replay-match True AGREE
+inst 4 N 6 L 3 req 9 flip t3v5 t1v1 t1v1: xisat unsat (7.8 s) xcnf unsat (0.0 s) replay-match None AGREE
+inst 5 N 8 L 3 req 11 own: xisat sat (0.4 s) xcnf sat (0.5 s) replay-match True AGREE
+inst 6 N 8 L 3 req 9 own: xisat sat (0.3 s) xcnf sat (0.1 s) replay-match True AGREE
+inst 7 N 4 L 3 req 6 own: xisat sat (0.1 s) xcnf sat (0.0 s) replay-match True AGREE
+inst 8 N 8 L 3 req 15 own: xisat sat (0.4 s) xcnf sat (0.3 s) replay-match True AGREE
+inst 9 N 6 L 3 req 7 own: xisat sat (0.3 s) xcnf sat (0.0 s) replay-match True AGREE
+inst 10 N 8 L 3 req 11 own: xisat sat (0.4 s) xcnf sat (0.2 s) replay-match True AGREE
+inst 11 N 6 L 3 req 8 own: xisat sat (0.4 s) xcnf sat (0.1 s) replay-match True AGREE
+inst 12 N 8 L 3 req 12 own: xisat sat (0.4 s) xcnf sat (0.5 s) replay-match True AGREE
+inst 13 N 4 L 3 req 8 own: xisat sat (0.1 s) xcnf sat (0.0 s) replay-match True AGREE
+inst 14 N 6 L 3 req 13 flip t1v1 t1v1 t2v3: xisat unsat (7.1 s) xcnf unsat (0.0 s) replay-match None AGREE

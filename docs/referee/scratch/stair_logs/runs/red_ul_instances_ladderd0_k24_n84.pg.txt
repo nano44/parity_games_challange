@@ -1,0 +1,13 @@
+GAME red/ul/instances/ladderd0_k24_n84.pg
+BIT_chk 125
+DESC 1
+FROZEN_chk 26
+GAMES 1
+ROOT_chk 75
+TD 724
+WCH 75
+WCT 26
+trans 26
+wruns 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,8 @@
+GAME new/box54/out/hf/counter_rr_3.pg
+BGmax 0
+GAMES 1
+K 1
+SGmax 0
+SQZ_chk 24
+VIOLATIONS 0
+RC 0

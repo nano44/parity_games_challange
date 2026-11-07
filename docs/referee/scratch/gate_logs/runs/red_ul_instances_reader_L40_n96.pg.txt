@@ -1,0 +1,12 @@
+GAME red/ul/instances/reader_L40_n96.pg
+BGmax 0
+GAMES 1
+INC 42
+K 43
+MAXPH 43
+SGmax 0
+SQZ_chk 4224
+steps 43
+stretches 1
+VIOLATIONS 0
+RC 0

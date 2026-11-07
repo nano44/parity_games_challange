@@ -1,0 +1,13 @@
+GAME n5-epoch/instances/lend39f_n32.pg
+BIT_chk 157
+DESC 2
+FROZEN_chk 36
+GAMES 1
+ROOT_chk 53
+TD 228
+WCH 81
+WCT 36
+trans 36
+wruns 9
+VIOLATIONS 0
+RC 0

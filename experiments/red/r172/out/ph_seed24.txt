@@ -1,0 +1,5 @@
+start PHNF 12 {'a': 0, 'b': 23, 'L': 23, 'ODIFF': 1, 'FB': 0, 'PHNF': 12}
+it 1665 PHNF 14 L 16 {'a': 0, 'b': 16, 'L': 16, 'ODIFF': 1, 'FB': 0, 'PHNF': 14}
+it 1802 PHNF 15 L 17 {'a': 0, 'b': 17, 'L': 17, 'ODIFF': 1, 'FB': 0, 'PHNF': 15}
+it 2164 PHNF 16 L 17 {'a': 0, 'b': 17, 'L': 17, 'ODIFF': 1, 'FB': 0, 'PHNF': 16}
+BEST n 24 KO 1 PHNF 16 (n-1 = 23) {'a': 0, 'b': 17, 'L': 17, 'ODIFF': 1, 'FB': 0, 'PHNF': 16}

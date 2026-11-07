@@ -1,0 +1,12 @@
+GAME red/kw/instances/cw11_n24.pg
+BGmax 15
+GAMES 1
+INC 16
+K 17
+MAXPH 4
+SGmax 15
+SQZ_chk 432
+steps 17
+stretches 1
+VIOLATIONS 0
+RC 0

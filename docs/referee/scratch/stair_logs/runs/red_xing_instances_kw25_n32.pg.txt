@@ -1,0 +1,14 @@
+GAME red/xing/instances/kw25_n32.pg
+BIT_chk 143
+DCOPY_chk 2
+DESC 12
+FROZEN_chk 27
+GAMES 1
+ROOT_chk 57
+TD 428
+WCH 70
+WCT 27
+trans 27
+wruns 3
+VIOLATIONS 0
+RC 0

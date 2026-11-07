@@ -1,0 +1,16 @@
+GAME red/xing/instances/u23sw64_n32.pg
+CNT_chk 51
+EQHI 4
+FR 57
+FR_maxpair 2
+GAMES 1
+OLD_chk 219
+ROOT_chk 5
+ROOT_endPE 5
+ROOT_maxlen 1
+STEP_caseII 14
+STEP_chk 48
+trans 13
+wruns 3
+VIOLATIONS 0
+RC 0

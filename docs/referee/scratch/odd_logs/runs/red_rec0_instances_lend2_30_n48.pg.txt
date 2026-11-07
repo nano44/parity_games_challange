@@ -1,0 +1,16 @@
+GAME red/rec0/instances/lend2_30_n48.pg
+ASC 1
+CNT_chk 26
+FR 27
+FR_maxpair 2
+GAMES 1
+OLD_chk 290
+ROOT_chk 44
+ROOT_endPE 44
+ROOT_maxlen 2
+STEP_caseII 26
+STEP_chk 400
+trans 13
+wruns 1
+VIOLATIONS 0
+RC 0

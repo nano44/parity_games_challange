@@ -1,0 +1,1 @@
+K 112 n 32 stretch 1 110 len 109 lam-changes at [1, 108, 109] strict 106 first-state 107 fallbacks 10

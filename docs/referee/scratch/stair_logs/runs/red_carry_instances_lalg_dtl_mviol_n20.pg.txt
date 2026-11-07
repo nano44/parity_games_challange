@@ -1,0 +1,4 @@
+GAME red/carry/instances/lalg_dtl_mviol_n20.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,9 @@
+GAME red/usplit/instances/gate_K16_n197.pg
+GAMES 1
+enum_states 22
+keep_chk 20
+loc_chk 67
+rhos 184
+states 22
+VIOLATIONS 0
+RC 0

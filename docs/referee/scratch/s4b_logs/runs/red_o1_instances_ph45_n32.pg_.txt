@@ -1,0 +1,9 @@
+GAME red/o1/instances/ph45_n32.pg 
+GAMES 1
+enum_states 21
+keep_chk 14
+loc_chk 71
+rhos 92
+states 21
+VIOLATIONS 0
+RC 0

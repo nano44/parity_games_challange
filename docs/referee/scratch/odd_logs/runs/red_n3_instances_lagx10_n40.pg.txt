@@ -1,0 +1,15 @@
+GAME red/n3/instances/lagx10_n40.pg
+CNT_chk 23
+FR 26
+FR_maxpair 2
+GAMES 1
+OLD_chk 176
+ROOT_chk 7
+ROOT_endPE 7
+ROOT_maxlen 1
+STEP_caseII 45
+STEP_chk 255
+trans 11
+wruns 1
+VIOLATIONS 0
+RC 0

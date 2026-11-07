@@ -1,0 +1,56 @@
+r180/bmc_d2_L4.json: d 2 N 4 T 4 maxmoves target 1 nontarget 2 2d 4 ok per-mover 0:L0t1 1:L0t1 2:L1n2 3:L1t1
+r202/max_d5_L15.json: d 5 N 10 T 15 maxmoves target 4 nontarget 3 2d 10 ok per-mover 0:L0n1 1:L0t1 2:L1t1 3:L1t2 4:L2t3 5:L2t2 6:L3n3 7:L3t3 8:L4t2 9:L4t4
+r203/d4_C1_7.json: d 4 N 8 T 9 maxmoves target 3 nontarget 3 2d 8 ok per-mover 0:L0t1 1:L0t1 2:L1t3 3:L1n3 4:L2t1 5:L2n3 6:L3t2 7:L3t2
+r203/d4_C1_8.json: d 4 N 8 T 10 maxmoves target 3 nontarget 3 2d 8 ok per-mover 0:L0t1 1:L0t1 2:L1t3 3:L1t3 4:L2t2 5:L2n3 6:L3t1 7:L3t2
+r203/d4_C1_8_C2_11.json: d 4 N 8 T 11 maxmoves target 4 nontarget 3 2d 8 ok per-mover 0:L0t1 1:L0t1 2:L1n3 3:L1t3 4:L2t4 5:L2t4 6:L3t1 7:L3t2
+r207/keep/TR_d6_T18.json: d 6 N 12 T 18 maxmoves target 4 nontarget 3 2d 12 ok per-mover 0:L0n1 1:L0t1 2:L1t1 3:L1t2 4:L2t3 5:L2t2 6:L3n3 7:L3t3 8:L4t2 9:L4t4 10:L5t4 11:L5t2
+r209/keep/cc4_s1.json: d 4 N 8 T 11 maxmoves target 3 nontarget 1 2d 8 ok per-mover 0:L0n1 1:L0n1 2:L1t1 3:L1t3 4:L2t3 5:L2t1 6:L3t3 7:L3t3
+r209/keep/cc5_s2.json: d 5 N 10 T 9 maxmoves target 2 nontarget 2 2d 10 ok per-mover 0:L0n1 1:L0t1 2:L1t2 3:L1t2 4:L2t1 5:L2n2 6:L3t1 7:L3t2 8:L4n2 9:L4t1
+r209/keep/ra5_s3.json: d 5 N 10 T 14 maxmoves target 4 nontarget 2 2d 10 ok per-mover 0:L0t1 1:L0t1 2:L1t3 3:L1t1 4:L2n2 5:L2t1 6:L3t3 7:L3t3 8:L4t4 9:L4t4
+r209/keep/ra6_s4.json: d 6 N 12 T 16 maxmoves target 4 nontarget 4 2d 12 ok per-mover 0:L0t1 1:L0t1 2:L1t3 3:L1t1 4:L2n2 5:L2t1 6:L3t3 7:L3t3 8:L4t3 9:L4t4 10:L5t3 11:L5n4
+r210/keep/f2_d6.json: d 6 N 12 T 13 maxmoves target 5 nontarget 1 2d 12 ok per-mover 0:L0n1 1:L0t1 2:L1t3 3:L1t3 4:L2t5 5:L2t5 6:L3t2 7:L3t3 8:L4t2 9:L4t1 10:L5t2 11:L5n1
+r210/keep/f3_d6.json: d 6 N 12 T 18 maxmoves target 7 nontarget 4 2d 12 ok per-mover 0:L0n1 1:L0t1 2:L1t3 3:L1t1 4:L2n3 5:L2t3 6:L3t7 7:L3t7 8:L4t3 9:L4t2 10:L5t4 11:L5n4
+r210/keep/ft4R.json: d 4 N 8 T 10 maxmoves target 3 nontarget 1 2d 8 ok per-mover 0:L0n1 1:L0t1 2:L1t3 3:L1t2 4:L2t3 5:L2t3 6:L3t3 7:L3t1
+r210/keep/ft6R.json: d 6 N 12 T 15 maxmoves target 3 nontarget 3 2d 12 ok per-mover 0:L0t1 1:L0t1 2:L1t3 3:L1t3 4:L2t2 5:L2t3 6:L3n3 7:L3t3 8:L4t2 9:L4t1 10:L5t3 11:L5t3
+r212/keep/ISO_d5_T15.json: d 5 N 10 T 15 maxmoves target 4 nontarget 1 2d 10 ok per-mover 0:L0n1 1:L0n1 2:L1t2 3:L1t2 4:L2t3 5:L2t3 6:L3t3 7:L3t1 8:L4t4 9:L4t3
+r212/keep/ISO_d6_T18.json: d 6 N 12 T 18 maxmoves target 4 nontarget 3 2d 12 ok per-mover 0:L0n1 1:L0n1 2:L1n3 3:L1t3 4:L2t3 5:L2t3 6:L3t2 7:L3t3 8:L4t3 9:L4t1 10:L5t4 11:L5t4
+r212/keep/TRL_d6_T22.json: d 6 N 12 T 22 maxmoves target 4 nontarget 5 2d 12 ok per-mover 0:L0t1 1:L0t1 2:L1t3 3:L1t3 4:L2t4 5:L2t3 6:L3t4 7:L3t4 8:L4n5 9:L4t4 10:L5t1 11:L5t4
+r212/keep/TR_d5_T16.json: d 5 N 10 T 16 maxmoves target 4 nontarget 1 2d 10 ok per-mover 0:L0n1 1:L0t1 2:L1t1 3:L1t3 4:L2t4 5:L2t4 6:L3t4 7:L3t3 8:L4t2 9:L4t3
+r212/keep/TR_d5_T16_canon.json: d 5 N 10 T 16 maxmoves target 4 nontarget 1 2d 10 ok per-mover 0:L0n1 1:L0t1 2:L1t1 3:L1t3 4:L2t4 5:L2t4 6:L3t4 7:L3t3 8:L4t2 9:L4t3
+r212/keep/TR_d6_T22.json: d 6 N 12 T 22 maxmoves target 5 nontarget 4 2d 12 ok per-mover 0:L0n1 1:L0t1 2:L1t2 3:L1t2 4:L2t4 5:L2t4 6:L3n4 7:L3t1 8:L4t5 9:L4t4 10:L5t5 11:L5t4
+r213/keep/rise_d3_R6.json: d 3 N 6 T 7 maxmoves target 3 nontarget 1 2d 6 ok per-mover 0:L0t1 1:L0n1 2:L1t3 3:L1t3 4:L2t1 5:L2t3
+r213/keep/rise_d5_R13.json: d 5 N 10 T 16 maxmoves target 5 nontarget 4 2d 10 ok per-mover 0:L0n1 1:L0t1 2:L1t1 3:L1t3 4:L2t4 5:L2t4 6:L3n4 7:L3t4 8:L4t5 9:L4t3
+r213/keep/rise_d6_R14.json: d 6 N 12 T 16 maxmoves target 6 nontarget 3 2d 12 ok per-mover 0:L0t1 1:L0t1 2:L1n3 3:L1t3 4:L2t4 5:L2t3 6:L3t6 7:L3t5 8:L4t4 9:L4t4 10:L5t1 11:L5t4
+r213/kill_d5.json: d 5 N 10 T 16 maxmoves target 5 nontarget 4 2d 10 ok per-mover 0:L0n1 1:L0t1 2:L1t1 3:L1t3 4:L2t4 5:L2t4 6:L3n4 7:L3t4 8:L4t5 9:L4t3
+r213/kill_d5_cert.json: d 5 N 10 T 16 maxmoves target 5 nontarget 4 2d 10 ok per-mover 0:L0n1 1:L0t1 2:L1t1 3:L1t3 4:L2t4 5:L2t4 6:L3n4 7:L3t4 8:L4t5 9:L4t3
+r213/kill_d6.json: d 6 N 12 T 16 maxmoves target 6 nontarget 3 2d 12 ok per-mover 0:L0t1 1:L0t1 2:L1n3 3:L1t3 4:L2t4 5:L2t3 6:L3t6 7:L3t5 8:L4t4 9:L4t4 10:L5t1 11:L5t4
+r213/kill_d6_cert.json: d 6 N 12 T 16 maxmoves target 6 nontarget 3 2d 12 ok per-mover 0:L0t1 1:L0t1 2:L1n3 3:L1t3 4:L2t4 5:L2t3 6:L3t6 7:L3t5 8:L4t4 9:L4t4 10:L5t1 11:L5t4
+r213/out/d3_z0_r5.json: d 3 N 6 T 5 maxmoves target 2 nontarget 1 2d 6 ok per-mover 0:L0t1 1:L0n1 2:L1t1 3:L1t2 4:L2t2 5:L2t2
+r213/out/d3_z2_r6.json: d 3 N 6 T 7 maxmoves target 3 nontarget 1 2d 6 ok per-mover 0:L0t1 1:L0n1 2:L1t3 3:L1t3 4:L2t1 5:L2t3
+r213/out/d3_z3_r6.json: d 3 N 6 T 7 maxmoves target 3 nontarget 1 2d 6 ok per-mover 0:L0n1 1:L0t1 2:L1t3 3:L1t3 4:L2t3 5:L2t1
+r213/out/m3_z0_r1.json: d 3 N 6 T 2 maxmoves target 1 nontarget 1 2d 6 ok per-mover 0:L0t1 1:L0n0 2:L1n1 3:L1t1 4:L2t1 5:L2n1
+r213/out/m3_z2_r3.json: d 3 N 6 T 4 maxmoves target 3 nontarget 1 2d 6 ok per-mover 0:L0n1 1:L0t1 2:L1t3 3:L1t2 4:L2t1 5:L2n1
+r213/out/m3_z4_r4.json: d 3 N 6 T 4 maxmoves target 4 nontarget 1 2d 6 ok per-mover 0:L0n1 1:L0t1 2:L1t2 3:L1t1 4:L2t4 5:L2t2
+r213/out/m4_z4_r7.json: d 4 N 8 T 8 maxmoves target 7 nontarget 1 2d 8 ok per-mover 0:L0n1 1:L0t1 2:L1t3 3:L1t3 4:L2t7 5:L2t3 6:L3t1 7:L3t2
+r213/out/m4_z6_r7.json: d 4 N 8 T 7 maxmoves target 7 nontarget 1 2d 8 ok per-mover 0:L0n1 1:L0t1 2:L1t2 3:L1t2 4:L2t4 5:L2t3 6:L3t7 7:L3t1
+r213/out/tn3_k-1_u4.json: d 3 N 6 T 4 maxmoves target 1 nontarget 1 2d 6 ok per-mover 0:L0n0 1:L0t1 2:L1n1 3:L1t1 4:L2n1 5:L2t1
+r213/out/tn3_k-1_u5.json: d 3 N 6 T 5 maxmoves target 2 nontarget 1 2d 6 ok per-mover 0:L0t1 1:L0n1 2:L1t2 3:L1t1 4:L2t2 5:L2t1
+r213/out/tn3_k-1_u6.json: d 3 N 6 T 6 maxmoves target 2 nontarget 1 2d 6 ok per-mover 0:L0t1 1:L0n1 2:L1t2 3:L1t2 4:L2t1 5:L2t1
+r213/out/tn3_k-1_u7.json: d 3 N 6 T 7 maxmoves target 3 nontarget 1 2d 6 ok per-mover 0:L0t1 1:L0n1 2:L1t2 3:L1t3 4:L2t1 5:L2t2
+r213/out/tn3_k-1_u8.json: d 3 N 6 T 8 maxmoves target 4 nontarget 1 2d 6 ok per-mover 0:L0t1 1:L0n1 2:L1t3 3:L1t1 4:L2t3 5:L2t4
+r213/out/tn3_k0_u4.json: d 3 N 6 T 4 maxmoves target 2 nontarget 1 2d 6 ok per-mover 0:L0t0 1:L0n0 2:L1n1 3:L1t1 4:L2t2 5:L2t1
+r213/out/tn3_k1_u4.json: d 3 N 6 T 5 maxmoves target 2 nontarget 2 2d 6 ok per-mover 0:L0t1 1:L0n0 2:L1t1 3:L1t1 4:L2n2 5:L2t2
+r213/out/tn3_k1_u5.json: d 3 N 6 T 5 maxmoves target 3 nontarget 1 2d 6 ok per-mover 0:L0t0 1:L0n1 2:L1t1 3:L1t1 4:L2t1 5:L2t3
+r213/out/tn3_k1_u6.json: d 3 N 6 T 6 maxmoves target 3 nontarget 1 2d 6 ok per-mover 0:L0t1 1:L0n1 2:L1t1 3:L1t2 4:L2t3 5:L2t2
+r213/out/tn3_k2_u4.json: d 3 N 6 T 4 maxmoves target 2 nontarget 2 2d 6 ok per-mover 0:L0n1 1:L0t1 2:L1n1 3:L1t1 4:L2t2 5:L2n2
+r213/out/tn3_k2_u5.json: d 3 N 6 T 5 maxmoves target 2 nontarget 3 2d 6 ok per-mover 0:L0t1 1:L0n1 2:L1t1 3:L1n3 4:L2t1 5:L2t2
+r213/out/tn3_k2_u6.json: d 3 N 6 T 6 maxmoves target 2 nontarget 2 2d 6 ok per-mover 0:L0t1 1:L0t1 2:L1t2 3:L1t1 4:L2n2 5:L2t2
+r213/out/tn3_k2_u7.json: d 3 N 6 T 7 maxmoves target 3 nontarget 1 2d 6 ok per-mover 0:L0n1 1:L0t1 2:L1t3 3:L1t1 4:L2t3 5:L2t2
+r213/out/tn3_k2_u8.json: d 3 N 6 T 8 maxmoves target 3 nontarget 3 2d 6 ok per-mover 0:L0t1 1:L0t1 2:L1t3 3:L1n3 4:L2t3 5:L2t1
+r213/out/tn4_k1_u10.json: d 4 N 8 T 10 maxmoves target 4 nontarget 2 2d 8 ok per-mover 0:L0t1 1:L0t1 2:L1t2 3:L1n2 4:L2t3 5:L2t1 6:L3t4 7:L3t3
+r213/out/tn4_k1_u9.json: d 4 N 8 T 9 maxmoves target 3 nontarget 3 2d 8 ok per-mover 0:L0n1 1:L0t0 2:L1t2 3:L1t1 4:L2t3 5:L2n3 6:L3t1 7:L3t2
+r213/out/tn4_k2_u10.json: d 4 N 8 T 10 maxmoves target 3 nontarget 4 2d 8 ok per-mover 0:L0t1 1:L0t1 2:L1t3 3:L1t2 4:L2n4 5:L2t2 6:L3t1 7:L3t3
+r213/out/tn4_k2_u11.json: d 4 N 8 T 11 maxmoves target 3 nontarget 1 2d 8 ok per-mover 0:L0n1 1:L0t1 2:L1t2 3:L1t3 4:L2t3 5:L2t1 6:L3t3 7:L3t2
+r213/out/tn4_k2_u12.json: d 4 N 8 T 12 maxmoves target 3 nontarget 4 2d 8 ok per-mover 0:L0t1 1:L0t1 2:L1t3 3:L1t3 4:L2t3 5:L2n4 6:L3t1 7:L3t3
+r213/out/tn4_k2_u9.json: d 4 N 8 T 9 maxmoves target 4 nontarget 3 2d 8 ok per-mover 0:L0n1 1:L0n0 2:L1t1 3:L1t2 4:L2n3 5:L2t1 6:L3t4 7:L3t3
+exit 0

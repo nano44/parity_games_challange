@@ -1,0 +1,4 @@
+GAME red/usplit/instances/gate_K16_n197.pg
+skip_big 1
+VIOLATIONS 0
+RC 0

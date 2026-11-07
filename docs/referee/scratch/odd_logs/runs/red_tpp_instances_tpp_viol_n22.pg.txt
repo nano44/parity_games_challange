@@ -1,0 +1,6 @@
+GAME red/tpp/instances/tpp_viol_n22.pg
+GAMES 1
+STEP_caseII 10
+STEP_chk 24
+VIOLATIONS 0
+RC 0

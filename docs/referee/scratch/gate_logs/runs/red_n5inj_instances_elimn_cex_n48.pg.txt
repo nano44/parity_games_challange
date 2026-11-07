@@ -1,0 +1,14 @@
+GAME red/n5inj/instances/elimn_cex_n48.pg
+BGmax 80
+GAMES 1
+INC 81
+K 92
+MAXPH 54
+PH_over 1
+SGmax 82
+SQZ_chk 4464
+steps 90
+stretches 3
+VIOLATIONS 0
+EX ('PH_over', 'elimn_cex_n48.pg', 2, 54, 54, 47)
+RC 0

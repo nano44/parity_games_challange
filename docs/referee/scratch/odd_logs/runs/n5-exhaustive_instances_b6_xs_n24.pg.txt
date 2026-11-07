@@ -1,0 +1,11 @@
+GAME n5-exhaustive/instances/b6_xs_n24.pg
+CNT_chk 20
+FR 20
+FR_maxpair 1
+GAMES 1
+OLD_chk 25
+STEP_chk 21
+trans 21
+wruns 1
+VIOLATIONS 0
+RC 0

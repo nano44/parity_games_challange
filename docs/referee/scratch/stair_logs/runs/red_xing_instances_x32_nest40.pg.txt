@@ -1,0 +1,14 @@
+GAME red/xing/instances/x32_nest40.pg
+BIT_chk 554
+DCOPY_chk 11
+DESC 81
+FROZEN_chk 53
+GAMES 1
+ROOT_chk 162
+TD 915
+WCH 176
+WCT 53
+trans 53
+wruns 3
+VIOLATIONS 0
+RC 0

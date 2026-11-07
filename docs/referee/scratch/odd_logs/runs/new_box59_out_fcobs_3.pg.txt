@@ -1,0 +1,17 @@
+GAME new/box59/out/fcobs_3.pg
+ASC 7
+CNT_chk 168
+EQHI 8
+FR 192
+FR_maxpair 2
+GAMES 1
+OLD_chk 800
+ROOT_chk 181
+ROOT_endPE 181
+ROOT_maxlen 2
+STEP_caseII 46
+STEP_chk 1271
+trans 34
+wruns 2
+VIOLATIONS 0
+RC 0

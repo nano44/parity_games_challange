@@ -1,0 +1,9 @@
+GAME n5-epoch/instances/nconf61_n48.pg 
+GAMES 1
+enum_states 73
+keep_chk 68
+loc_chk 230
+rhos 849
+states 73
+VIOLATIONS 0
+RC 0

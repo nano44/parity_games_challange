@@ -1,0 +1,6 @@
+GAME red/nest16/instances/k4y2_n87.pg
+GAMES 1
+STEP_caseII 54
+STEP_chk 432
+VIOLATIONS 0
+RC 0

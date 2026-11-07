@@ -1,0 +1,12 @@
+GAME new/box52/out/topfix_n3.pg
+BGmax 41
+GAMES 1
+INC 38
+K 61
+MAXPH 19
+SGmax 41
+SQZ_chk 3906
+steps 61
+stretches 1
+VIOLATIONS 0
+RC 0

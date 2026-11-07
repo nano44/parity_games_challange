@@ -1,0 +1,13 @@
+GAME red/kw/instances/frzu_tight_n14.pg
+BIT_chk 8
+DESC 0
+FROZEN_chk 3
+GAMES 1
+ROOT_chk 3
+TD 8
+WCH 4
+WCT 3
+trans 3
+wruns 2
+VIOLATIONS 0
+RC 0

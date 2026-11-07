@@ -1,0 +1,15 @@
+GAME new/box59/out/rnd/r69_n80.pg
+CNT_chk 1
+FR 1
+FR_maxpair 1
+GAMES 1
+OLD_chk 51
+ROOT_chk 5
+ROOT_endPE 5
+ROOT_maxlen 1
+STEP_caseII 28
+STEP_chk 164
+trans 2
+wruns 1
+VIOLATIONS 0
+RC 0

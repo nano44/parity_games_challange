@@ -1,0 +1,6 @@
+PIN nep92_n40 ce224ec31e56 start 10fdf3a3c76c
+OINK nep92_n40 --zlk verified
+OINK nep92_n40 --tl verified
+PINWIN nep92_n40.pg n 40 states 99 fallbacks 8 W0 40 AGREE True
+n5b iterations 98 fallbacks 8 states 99 | n5x states 99 | identical state sequences: True
+CHAIN nep92_n40.pg n 40 K 98 stretches 1 T 95 WIN 93 SBC 92 FBX 8 VMOVES 160 VAL 160 TIE 0 TOW 40 AWAY 37 SIDE 83 DSW 160 MOVERS 6 MAXFLIP 67 | longest [3, 98] L 95 SBC 92 OD [3, 5, 5, 6, 5, 5, 5, 3, 5, 2, 3, 1, 2, 2, 2, 3, 2, 3, 4, 3, '...', 4, 4, 4, 3, 1, 1, 1, 2, 1, 0]

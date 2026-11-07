@@ -1,0 +1,4 @@
+GAME red/frz/instances/fbcap_eq_u4_n11.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

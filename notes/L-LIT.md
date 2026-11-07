@@ -1,7 +1,21 @@
 # L-LIT notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (HANDOVER, successor T59-T62, 2026-10-30 ~21:10Z by date -u; session_01V5yGRY1xa1eQQyQ64QZ58e; D18; PARKED after T62)
+## Resume point (HANDOVER, T64, 2026-11-01 ~03:15Z by date -u; same session; PARKED after T64)
+T64 (Lead 02:52Z, one box): docs/lit/T64-one-player-pivots.md.
+- Post-Ye Thm 3.7 / 4.8; HKZ abstract only; Zhong-Ye Thm 2.1, 6.1, 7.1; MC94 via Christ-Yannakakis p.3.
+- TWO-FIX = one-player switch-best (R17) iff D = empty; otherwise a stale-model arena optimum, with no opened bound.
+IN FLIGHT: none. NEEDS: none.
+
+## Previous resume point (HANDOVER, T63, 2026-10-31 ~08:40Z by date -u; same session; PARKED again after T63 on the Lead's word)
+T63 (un-parked by the Lead 08:12Z for one box): docs/lit/T63-potentials.md.
+- (a) The ES / incremental BFS level bound (HKN 1308.0776 Lemma 2.10; Nanongkai ADFOCS'18 slide 42). Lex-min path changes: NOT FOUND.
+  LEXINS PROVED (n + INS).
+- (b) Numeric gap potentials vs the lcp potential.
+- (c) FEEDBACK = Friedmann LMCS Lemma 6.1 -> sigma-bar -> Xi -> I_sigma (DECEL-RED). No one-W-run feedback counter in the literature.
+IN FLIGHT: none. NEEDS: none.
+
+## Previous resume point (HANDOVER, successor T59-T62, 2026-10-30 ~21:10Z by date -u; session_01V5yGRY1xa1eQQyQ64QZ58e; D18; PARKED after T62)
 DONE (claude/l-lit; every push via scripts/push.sh, exit 0, VERIFY PASS; lean and Oink smoke NOT RUN):
 - c7dc03db, d3535a23 T59 (elimination windows; HW-LB; ARENA-MAX vs H_n; C-DISC, DZ-W; gap-contraction DEAD on fx).
 - 54584c0c, 2b120701 T60 (best-reply flips; Topkis DEAD on latew/gate; PAIR-CROSS).
@@ -580,6 +594,16 @@ NEEDS: none from the owner.
   Prop. 2.2 p.7, Def. 3.2-3.3 p.8, Thm 3.1, 3.4, Lemma 3.7, Sec. 4.1-4.2 pp.13-14, Alg. 2, Thm 4.1 p.14, Lemma 4.2, 4.4 pp.15-16);
   Auger-Badin de Montjoye-Strozecki arXiv 2102.04922 (c992c3f4f49d4b74; Prop. 7 p.4, Def. 10 p.6, Lemma 11-12 pp.6-7, Lemma 14, Prop. 18,
   Prop. 21 p.10, Thm 22 p.12, Thm 23 p.13, Thm 26 + Def. 27 + Lemma 28 pp.15-16, Thm 29 + proof pp.16-17, Sec. 5.1 p.17, Thm 30 p.18).
+
+- T63 (2026-10-31). OPENED (scratchpad t63): Henzinger-Krinninger-Nanongkai arXiv 1308.0776 (663740ad4abf3b70; Sec. 2 pp.18-19, ES-tree
+  charging, Lemma 2.10 (King)); Nanongkai ADFOCS 2018 slides "4 Deeper Discussions" conferences.mpi-inf.mpg.de/adfocs18/danupon/
+  4-Deeper_Discussions.pdf (376ce8ed945a1fa5; slides 41-48, Thm [Even-Shiloach JACM'81, Dinitz'71] slide 42). Re-used: T58/T59/T60
+  sources. NOT OPENED: Even-Shiloach JACM 1981; King FOCS 1999. NOT FOUND: dynamic lexicographic BFS / lex-min path trees (one search).
+
+- T64 (2026-11-01). OPENED: Christ-Yannakakis arXiv 2212.00083 (ab6b525118aadbb3; p.3 MC94 remark, p.8 PI variants, Def. 1); re-used
+  Post-Ye 1208.5083v2 (Thm 3.7 p.9, Thm 4.8 p.12, abstract), Zhong-Ye 2609.40147v2, ABS 2102.04922, Friedmann 1106.0778 p.7. ABSTRACT ONLY:
+  Hansen-Kaplan-Zwick SODA 2014, CRIS record cris.iucc.ac.il (DOI 10.1137/1.9781611973402.63, pp.847-860). NOT OPENED: Melekopoglou-Condon
+  1994; Orlin 1997.
 
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).

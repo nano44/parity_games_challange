@@ -1,0 +1,413 @@
+GAME n5-epoch/instances/ffin4_n24.pg n5-epoch/instances/ffin4_n24.start TAUC ffin4_n24.pg n 24 ITERS 20 TCH 1 OSW 2 ORET 0 MAXOSW 1 FB 4 TFB 0
+GAME n5-epoch/instances/ffin12_n32.pg n5-epoch/instances/ffin12_n32.start TAUC ffin12_n32.pg n 32 ITERS 33 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 13 TFB 0
+GAME n5-epoch/instances/ffin5_n32.pg n5-epoch/instances/ffin5_n32.start TAUC ffin5_n32.pg n 32 ITERS 23 TCH 2 OSW 5 ORET 0 MAXOSW 2 FB 7 TFB 1
+GAME n5-epoch/instances/gci2_n12.pg n5-epoch/instances/gci2_n12.start TAUC gci2_n12.pg n 12 ITERS 10 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME n5-epoch/instances/immfail_n14.pg  TAUC immfail_n14.pg n 14 ITERS 6 TCH 2 OSW 2 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME n5-epoch/instances/immp_cex_n11.pg n5-epoch/instances/immp_cex_n11.start TAUC immp_cex_n11.pg n 11 ITERS 2 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME n5-epoch/instances/gci3_n24.pg n5-epoch/instances/gci3_n24.start TAUC gci3_n24.pg n 24 ITERS 21 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME n5-epoch/instances/lcount_n23.pg n5-epoch/instances/lcount_n23.start TAUC lcount_n23.pg n 23 ITERS 5 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME n5-epoch/instances/lend13_n16.pg n5-epoch/instances/lend13_n16.start TAUC lend13_n16.pg n 16 ITERS 14 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME n5-epoch/instances/lend15_n48.pg n5-epoch/instances/lend15_n48.start TAUC lend15_n48.pg n 48 ITERS 27 TCH 9 OSW 15 ORET 2 MAXOSW 2 FB 5 TFB 0
+GAME n5-epoch/instances/lend27_n24.pg n5-epoch/instances/lend27_n24.start TAUC lend27_n24.pg n 24 ITERS 32 TCH 2 OSW 6 ORET 0 MAXOSW 2 FB 6 TFB 0
+GAME n5-epoch/instances/lend107_n32.pg n5-epoch/instances/lend107_n32.start TAUC lend107_n32.pg n 32 ITERS 112 TCH 3 OSW 3 ORET 1 MAXOSW 2 FB 10 TFB 0
+GAME n5-epoch/instances/lend47_n32.pg n5-epoch/instances/lend47_n32.start TAUC lend47_n32.pg n 32 ITERS 50 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 5 TFB 0
+GAME n5-epoch/instances/lend39f_n32.pg n5-epoch/instances/lend39f_n32.start TAUC lend39f_n32.pg n 32 ITERS 47 TCH 5 OSW 8 ORET 0 MAXOSW 2 FB 7 TFB 1
+GAME n5-epoch/instances/lend55_n32.pg n5-epoch/instances/lend55_n32.start TAUC lend55_n32.pg n 32 ITERS 58 TCH 2 OSW 2 ORET 0 MAXOSW 1 FB 10 TFB 0
+GAME n5-epoch/instances/lend9_n8.pg n5-epoch/instances/lend9_n8.start TAUC lend9_n8.pg n 8 ITERS 10 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 3 TFB 0
+GAME n5-epoch/instances/lend82_n32.pg n5-epoch/instances/lend82_n32.start TAUC lend82_n32.pg n 32 ITERS 87 TCH 3 OSW 4 ORET 0 MAXOSW 2 FB 10 TFB 0
+GAME n5-epoch/instances/lend72_n48.pg n5-epoch/instances/lend72_n48.start TAUC lend72_n48.pg n 48 ITERS 76 TCH 2 OSW 2 ORET 0 MAXOSW 1 FB 10 TFB 0
+GAME n5-epoch/instances/nep13_n24.pg n5-epoch/instances/nep13_n24.start TAUC nep13_n24.pg n 24 ITERS 35 TCH 13 OSW 17 ORET 0 MAXOSW 4 FB 2 TFB 0
+GAME n5-epoch/instances/nep56_n32.pg n5-epoch/instances/nep56_n32.start TAUC nep56_n32.pg n 32 ITERS 57 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 3 TFB 0
+GAME n5-epoch/instances/nep22f_n64.pg n5-epoch/instances/nep22f_n64.start TAUC nep22f_n64.pg n 64 ITERS 52 TCH 30 OSW 75 ORET 31 MAXOSW 8 FB 14 TFB 4
+GAME n5-epoch/instances/nconf61_n48.pg n5-epoch/instances/nconf61_n48.start TAUC nconf61_n48.pg n 48 ITERS 73 TCH 5 OSW 8 ORET 0 MAXOSW 2 FB 6 TFB 0
+GAME n5-epoch/instances/nep76_n40.pg n5-epoch/instances/nep76_n40.start TAUC nep76_n40.pg n 40 ITERS 87 TCH 2 OSW 4 ORET 0 MAXOSW 2 FB 7 TFB 0
+GAME n5-epoch/instances/nep92_n40.pg n5-epoch/instances/nep92_n40.start TAUC nep92_n40.pg n 40 ITERS 98 TCH 3 OSW 5 ORET 0 MAXOSW 2 FB 8 TFB 0
+GAME n5-epoch/instances/ret12_n40.pg n5-epoch/instances/ret12_n40.start TAUC ret12_n40.pg n 40 ITERS 60 TCH 3 OSW 4 ORET 1 MAXOSW 2 FB 5 TFB 0
+GAME n5-epoch/instances/nep94_n48.pg n5-epoch/instances/nep94_n48.start TAUC nep94_n48.pg n 48 ITERS 100 TCH 5 OSW 10 ORET 1 MAXOSW 3 FB 8 TFB 0
+GAME n5-exhaustive/instances/b4_cyc6_0.pg n5-exhaustive/instances/b4_cyc6_0.start TAUC b4_cyc6_0.pg n 11 ITERS 5 TCH 2 OSW 2 ORET 0 MAXOSW 2 FB 0 TFB 0
+GAME n5-epoch/instances/ret14_n48.pg n5-epoch/instances/ret14_n48.start TAUC ret14_n48.pg n 48 ITERS 61 TCH 3 OSW 4 ORET 0 MAXOSW 2 FB 5 TFB 0
+GAME n5-exhaustive/instances/b4_n4all_cyc3_0.pg n5-exhaustive/instances/b4_n4all_cyc3_0.start TAUC b4_n4all_cyc3_0.pg n 4 ITERS 3 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME n5-exhaustive/instances/b4_cyc6_1.pg  TAUC b4_cyc6_1.pg n 12 ITERS 4 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME n5-exhaustive/instances/b4_n5_other_0.pg  TAUC b4_n5_other_0.pg n 5 ITERS 2 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 1 TFB 0
+GAME n5-exhaustive/instances/b4_nohlen5_0.pg n5-exhaustive/instances/b4_nohlen5_0.start TAUC b4_nohlen5_0.pg n 11 ITERS 6 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 1 TFB 0
+GAME n5-epoch/instances/ret14_n64.pg n5-epoch/instances/ret14_n64.start TAUC ret14_n64.pg n 64 ITERS 65 TCH 4 OSW 14 ORET 1 MAXOSW 3 FB 5 TFB 0
+GAME n5-exhaustive/instances/b4_theta_n7.pg n5-exhaustive/instances/b4_theta_n7.start TAUC b4_theta_n7.pg n 7 ITERS 2 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 1 TFB 0
+GAME n5-exhaustive/instances/b5_o11.pg  TAUC b5_o11.pg n 10 ITERS 12 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 3 TFB 0
+GAME n5-exhaustive/instances/b5_n5_cyc4_0.pg  TAUC b5_n5_cyc4_0.pg n 5 ITERS 3 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME n5-exhaustive/instances/b5_os_n12.pg  TAUC b5_os_n12.pg n 12 ITERS 18 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 4 TFB 0
+GAME n5-exhaustive/instances/b5_os_n20.pg  TAUC b5_os_n20.pg n 20 ITERS 34 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 7 TFB 0
+GAME n5-exhaustive/instances/b5_os_n16.pg  TAUC b5_os_n16.pg n 16 ITERS 26 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 7 TFB 0
+GAME n5-exhaustive/instances/b5_os_n14.pg  TAUC b5_os_n14.pg n 14 ITERS 22 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 6 TFB 0
+GAME n5-exhaustive/instances/b5_os_n28.pg  TAUC b5_os_n28.pg n 28 ITERS 65 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 8 TFB 0
+GAME n5-exhaustive/instances/b5_os_n24.pg  TAUC b5_os_n24.pg n 24 ITERS 53 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 7 TFB 0
+GAME n5-exhaustive/instances/b5_os_n32.pg  TAUC b5_os_n32.pg n 32 ITERS 71 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 8 TFB 0
+GAME n5-exhaustive/instances/b6_xl2_n32.pg  TAUC b6_xl2_n32.pg n 32 ITERS 87 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 10 TFB 0
+GAME n5-exhaustive/instances/b5_os_n40.pg  TAUC b5_os_n40.pg n 40 ITERS 81 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 9 TFB 0
+GAME n5-exhaustive/instances/b6_xl_n32.pg  TAUC b6_xl_n32.pg n 32 ITERS 85 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 10 TFB 0
+GAME n5-exhaustive/instances/b6_xs_n24.pg  TAUC b6_xs_n24.pg n 24 ITERS 21 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME n5-exhaustive/instances/b6_xs_n32.pg  TAUC b6_xs_n32.pg n 32 ITERS 29 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME n5-exhaustive/instances/b6_xl_n40.pg  TAUC b6_xl_n40.pg n 40 ITERS 89 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 10 TFB 0
+GAME n5-exhaustive/instances/b6_xl_n48.pg  TAUC b6_xl_n48.pg n 48 ITERS 97 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 9 TFB 0
+GAME n5-exhaustive/instances/b6_xs_n40.pg  TAUC b6_xs_n40.pg n 40 ITERS 36 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME n5-exhaustive/instances/b6_xs_n48.pg  TAUC b6_xs_n48.pg n 48 ITERS 37 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME n5-exhaustive/instances/b6_xw_n32.pg  TAUC b6_xw_n32.pg n 32 ITERS 79 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 10 TFB 0
+GAME n5-exhaustive/instances/canonA_0.pg  TAUC canonA_0.pg n 15 ITERS 3 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME n5-exhaustive/instances/b6_xw_n40.pg  TAUC b6_xw_n40.pg n 40 ITERS 80 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 10 TFB 0
+GAME n5-exhaustive/instances/canonA_1.pg  TAUC canonA_1.pg n 15 ITERS 4 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME n5-exhaustive/instances/frz1_n24.pg n5-exhaustive/instances/frz1_n24.start TAUC frz1_n24.pg n 24 ITERS 31 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 1 TFB 0
+GAME n5-exhaustive/instances/b6_xw_n48.pg  TAUC b6_xw_n48.pg n 48 ITERS 85 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 9 TFB 0
+GAME n5-exhaustive/instances/frz2_n24.pg n5-exhaustive/instances/frz2_n24.start TAUC frz2_n24.pg n 24 ITERS 25 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 1 TFB 0
+GAME n5-exhaustive/instances/b6_xw_n56.pg  TAUC b6_xw_n56.pg n 56 ITERS 85 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 9 TFB 0
+GAME n5-exhaustive/instances/n3all_maxph_0.pg n5-exhaustive/instances/n3all_maxph_0.start TAUC n3all_maxph_0.pg n 3 ITERS 3 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 1 TFB 0
+GAME n5-exhaustive/instances/n3all_maxph_1.pg n5-exhaustive/instances/n3all_maxph_1.start TAUC n3all_maxph_1.pg n 3 ITERS 3 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 1 TFB 0
+GAME n5-exhaustive/instances/n4_maxph_0.pg  TAUC n4_maxph_0.pg n 4 ITERS 2 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME n5-exhaustive/instances/n4_maxph_1.pg  TAUC n4_maxph_1.pg n 4 ITERS 2 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME n5-exhaustive/instances/frz3_n24.pg n5-exhaustive/instances/frz3_n24.start TAUC frz3_n24.pg n 24 ITERS 26 TCH 2 OSW 2 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME n5-exhaustive/instances/n3all_maxph_2.pg n5-exhaustive/instances/n3all_maxph_2.start TAUC n3all_maxph_2.pg n 3 ITERS 3 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 1 TFB 0
+GAME n5-exhaustive/instances/n4all_maxph_0.pg n5-exhaustive/instances/n4all_maxph_0.start TAUC n4all_maxph_0.pg n 4 ITERS 4 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 1 TFB 0
+GAME n5-exhaustive/instances/n4_thch_0.pg  TAUC n4_thch_0.pg n 4 ITERS 2 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME n5-exhaustive/instances/n4all_tgbad_0.pg n5-exhaustive/instances/n4all_tgbad_0.start TAUC n4all_tgbad_0.pg n 4 ITERS 3 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME n5-exhaustive/instances/n4all_maxph_1.pg n5-exhaustive/instances/n4all_maxph_1.start TAUC n4all_maxph_1.pg n 4 ITERS 4 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 1 TFB 0
+GAME n5-exhaustive/instances/n4all_thch_0.pg n5-exhaustive/instances/n4all_thch_0.start TAUC n4all_thch_0.pg n 4 ITERS 3 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME n5-exhaustive/instances/n5s_maxph_0.pg  TAUC n5s_maxph_0.pg n 5 ITERS 3 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 1 TFB 0
+GAME n5-exhaustive/instances/thetaA_canon_n8.pg  TAUC thetaA_canon_n8.pg n 8 ITERS 3 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME n5-exhaustive/instances/nh_n8.pg n5-exhaustive/instances/nh_n8.start TAUC nh_n8.pg n 8 ITERS 4 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 1 TFB 0
+GAME n5-exhaustive/instances/thetaA_canon_n12.pg  TAUC thetaA_canon_n12.pg n 12 ITERS 3 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME n5-exhaustive/instances/thetaA_n17.pg n5-exhaustive/instances/thetaA_n17.start TAUC thetaA_n17.pg n 17 ITERS 5 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME n5-exhaustive/instances/thetaA_n6.pg n5-exhaustive/instances/thetaA_n6.start TAUC thetaA_n6.pg n 6 ITERS 3 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME n5-exhaustive/instances/thetaA_n7.pg n5-exhaustive/instances/thetaA_n7.start TAUC thetaA_n7.pg n 7 ITERS 3 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME n5-exhaustive/instances/thetaA_n9.pg n5-exhaustive/instances/thetaA_n9.start TAUC thetaA_n9.pg n 9 ITERS 4 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME n5-exhaustive/instances/wk1_n32.pg n5-exhaustive/instances/wk1_n32.start TAUC wk1_n32.pg n 32 ITERS 7 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 1 TFB 0
+GAME n5-exhaustive/instances/wk2_n32.pg n5-exhaustive/instances/wk2_n32.start TAUC wk2_n32.pg n 32 ITERS 7 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 1 TFB 0
+GAME new/box48/instances/long121_n40.pg new/box48/instances/long121_n40.start TAUC long121_n40.pg n 40 ITERS 122 TCH 1 OSW 2 ORET 0 MAXOSW 1 FB 8 TFB 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.start TAUC best_qpc_nep90_n40_s61.pg n 64 ITERS 102 TCH 4 OSW 21 ORET 1 MAXOSW 3 FB 8 TFB 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.start TAUC best_qpc_nep76_n40_s63.pg n 64 ITERS 93 TCH 6 OSW 26 ORET 2 MAXOSW 3 FB 7 TFB 0
+GAME red/carry/instances/absmono_viol_n44.pg  TAUC absmono_viol_n44.pg n 44 ITERS 7 TCH 5 OSW 17 ORET 1 MAXOSW 3 FB 1 TFB 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.start TAUC best_qpc_nep90_n40_s62.pg n 80 ITERS 105 TCH 4 OSW 25 ORET 0 MAXOSW 2 FB 8 TFB 0
+GAME red/carry/instances/carry3_2_2.pg  TAUC carry3_2_2.pg n 47 ITERS 2 TCH 1 OSW 2 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/carry/instances/cm_mdrop_both_n28.pg  TAUC cm_mdrop_both_n28.pg n 28 ITERS 10 TCH 4 OSW 7 ORET 1 MAXOSW 3 FB 0 TFB 0
+GAME red/carry/instances/cm_mdrop_oink_n28.pg  TAUC cm_mdrop_oink_n28.pg n 28 ITERS 3 TCH 2 OSW 5 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/carry/instances/ctx11_n40.pg  TAUC ctx11_n40.pg n 40 ITERS 9 TCH 6 OSW 34 ORET 7 MAXOSW 4 FB 0 TFB 0
+GAME red/carry/instances/ctx12_n40.pg  TAUC ctx12_n40.pg n 40 ITERS 8 TCH 7 OSW 27 ORET 6 MAXOSW 4 FB 0 TFB 0
+GAME red/carry/instances/ctx13_n40.pg  TAUC ctx13_n40.pg n 40 ITERS 17 TCH 8 OSW 25 ORET 6 MAXOSW 3 FB 0 TFB 0
+GAME red/carry/instances/ctx6_n20.pg  TAUC ctx6_n20.pg n 20 ITERS 3 TCH 3 OSW 11 ORET 1 MAXOSW 3 FB 0 TFB 0
+GAME red/carry/instances/ctx6_n56.pg  TAUC ctx6_n56.pg n 56 ITERS 12 TCH 11 OSW 44 ORET 8 MAXOSW 5 FB 0 TFB 0
+GAME red/carry/instances/f1_twodef_n48.pg  TAUC f1_twodef_n48.pg n 48 ITERS 6 TCH 4 OSW 8 ORET 1 MAXOSW 2 FB 0 TFB 0
+GAME red/carry/instances/ctx7_n30.pg  TAUC ctx7_n30.pg n 30 ITERS 11 TCH 9 OSW 30 ORET 9 MAXOSW 5 FB 0 TFB 0
+GAME red/carry/instances/f1_twofall_n48.pg  TAUC f1_twofall_n48.pg n 48 ITERS 6 TCH 3 OSW 12 ORET 0 MAXOSW 2 FB 0 TFB 0
+GAME new/box48/out/qpcclimb/scale/snap_n80_s62.pg new/box48/out/qpcclimb/scale/snap_n80_s62.start TAUC snap_n80_s62.pg n 80 ITERS 105 TCH 4 OSW 25 ORET 0 MAXOSW 2 FB 8 TFB 0
+GAME red/carry/instances/fall3_n76.pg  TAUC fall3_n76.pg n 76 ITERS 8 TCH 5 OSW 23 ORET 1 MAXOSW 3 FB 0 TFB 0
+GAME red/carry/instances/fallv_viol_n28.pg  TAUC fallv_viol_n28.pg n 28 ITERS 5 TCH 4 OSW 13 ORET 1 MAXOSW 2 FB 0 TFB 0
+GAME red/carry/instances/fired10_n20.pg  TAUC fired10_n20.pg n 20 ITERS 6 TCH 4 OSW 14 ORET 2 MAXOSW 3 FB 1 TFB 0
+GAME red/carry/instances/fall4_n116.pg  TAUC fall4_n116.pg n 116 ITERS 6 TCH 5 OSW 28 ORET 0 MAXOSW 2 FB 0 TFB 0
+GAME red/carry/instances/firedlong667_n20.pg  TAUC firedlong667_n20.pg n 20 ITERS 4 TCH 2 OSW 11 ORET 0 MAXOSW 2 FB 0 TFB 0
+GAME red/carry/instances/firedlong667_n43.pg  TAUC firedlong667_n43.pg n 43 ITERS 3 TCH 2 OSW 15 ORET 0 MAXOSW 2 FB 1 TFB 0
+GAME red/carry/instances/firedstep13_n76.pg  TAUC firedstep13_n76.pg n 76 ITERS 8 TCH 6 OSW 34 ORET 5 MAXOSW 5 FB 0 TFB 0
+GAME red/carry/instances/gapbW_dup_n20.pg  TAUC gapbW_dup_n20.pg n 20 ITERS 5 TCH 3 OSW 11 ORET 0 MAXOSW 3 FB 0 TFB 0
+GAME red/carry/instances/gapb_dup_n20.pg  TAUC gapb_dup_n20.pg n 20 ITERS 8 TCH 5 OSW 13 ORET 1 MAXOSW 4 FB 0 TFB 0
+GAME red/carry/instances/h4_compound_n44.pg  TAUC h4_compound_n44.pg n 44 ITERS 4 TCH 4 OSW 13 ORET 2 MAXOSW 3 FB 0 TFB 0
+GAME red/carry/instances/h4_def7_n28.pg  TAUC h4_def7_n28.pg n 28 ITERS 3 TCH 2 OSW 2 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/carry/instances/h4_def2ctx_n20.pg  TAUC h4_def2ctx_n20.pg n 20 ITERS 6 TCH 3 OSW 6 ORET 0 MAXOSW 2 FB 0 TFB 0
+GAME red/carry/instances/h4_compound2x2_n44.pg  TAUC h4_compound2x2_n44.pg n 44 ITERS 10 TCH 6 OSW 16 ORET 5 MAXOSW 3 FB 0 TFB 0
+GAME red/carry/instances/h4_disjoint_n20.pg  TAUC h4_disjoint_n20.pg n 20 ITERS 3 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/carry/instances/h4_notweaker_n20.pg  TAUC h4_notweaker_n20.pg n 20 ITERS 5 TCH 4 OSW 5 ORET 0 MAXOSW 2 FB 0 TFB 0
+GAME red/carry/instances/kfirst_viol_n13.pg  TAUC kfirst_viol_n13.pg n 13 ITERS 0 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/carry/instances/lalg_dtl_mviol_n20.pg  TAUC lalg_dtl_mviol_n20.pg n 20 ITERS 5 TCH 5 OSW 11 ORET 1 MAXOSW 2 FB 0 TFB 0
+GAME red/carry/instances/kin_viol_n29.pg  TAUC kin_viol_n29.pg n 29 ITERS 5 TCH 5 OSW 7 ORET 0 MAXOSW 2 FB 0 TFB 0
+GAME red/carry/instances/lemmaS_Mdrop_n20.pg  TAUC lemmaS_Mdrop_n20.pg n 20 ITERS 6 TCH 4 OSW 6 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/carry/instances/lex_viol_inj_n28.pg  TAUC lex_viol_inj_n28.pg n 28 ITERS 6 TCH 3 OSW 8 ORET 0 MAXOSW 2 FB 0 TFB 0
+GAME red/carry/instances/lemmaS_viol_n20.pg  TAUC lemmaS_viol_n20.pg n 20 ITERS 4 TCH 4 OSW 7 ORET 0 MAXOSW 2 FB 0 TFB 0
+GAME red/carry/instances/lex_viol_tie_n28.pg  TAUC lex_viol_tie_n28.pg n 28 ITERS 7 TCH 4 OSW 13 ORET 1 MAXOSW 3 FB 0 TFB 0
+GAME red/carry/instances/phi_flat_alive_n32.pg  TAUC phi_flat_alive_n32.pg n 32 ITERS 4 TCH 4 OSW 13 ORET 0 MAXOSW 2 FB 0 TFB 0
+GAME red/carry/instances/meet_viol_n29.pg  TAUC meet_viol_n29.pg n 29 ITERS 11 TCH 8 OSW 12 ORET 1 MAXOSW 3 FB 0 TFB 0
+GAME red/carry/instances/meet_viol_n17.pg  TAUC meet_viol_n17.pg n 17 ITERS 0 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/carry/instances/pk_viol_n20.pg  TAUC pk_viol_n20.pg n 20 ITERS 3 TCH 2 OSW 8 ORET 0 MAXOSW 2 FB 1 TFB 1
+GAME red/carry/instances/nosig_2_3.pg  TAUC nosig_2_3.pg n 24 ITERS 2 TCH 1 OSW 2 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/carry/instances/replay4_n32.pg  TAUC replay4_n32.pg n 32 ITERS 4 TCH 4 OSW 19 ORET 1 MAXOSW 3 FB 0 TFB 0
+GAME red/carry/instances/spp25_oink_n40.pg  TAUC spp25_oink_n40.pg n 40 ITERS 10 TCH 7 OSW 22 ORET 4 MAXOSW 3 FB 0 TFB 0
+GAME red/carry/instances/spp22_oink_n40.pg  TAUC spp22_oink_n40.pg n 40 ITERS 8 TCH 6 OSW 18 ORET 4 MAXOSW 2 FB 0 TFB 0
+GAME red/carry/instances/spp19_oink_n30.pg  TAUC spp19_oink_n30.pg n 30 ITERS 10 TCH 10 OSW 33 ORET 8 MAXOSW 5 FB 0 TFB 0
+GAME red/carry/instances/spp19_stable_n30.pg  TAUC spp19_stable_n30.pg n 30 ITERS 7 TCH 5 OSW 19 ORET 3 MAXOSW 3 FB 0 TFB 0
+GAME red/carry/instances/stealonce_both_n45.pg  TAUC stealonce_both_n45.pg n 45 ITERS 4 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/carry/instances/tstep_near_n20.pg  TAUC tstep_near_n20.pg n 20 ITERS 5 TCH 4 OSW 10 ORET 1 MAXOSW 4 FB 0 TFB 0
+GAME red/carry/instances/stealonce_core_n76.pg  TAUC stealonce_core_n76.pg n 76 ITERS 4 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/ctxp/instances/deep1_n13.pg  TAUC deep1_n13.pg n 13 ITERS 1 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/ctxp/instances/deep1_n21.pg  TAUC deep1_n21.pg n 21 ITERS 3 TCH 3 OSW 4 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/carry/instances/stealer_viol_n76.pg  TAUC stealer_viol_n76.pg n 76 ITERS 12 TCH 8 OSW 37 ORET 7 MAXOSW 3 FB 0 TFB 0
+GAME red/carry/instances/stealonce_viol_n76.pg  TAUC stealonce_viol_n76.pg n 76 ITERS 12 TCH 9 OSW 39 ORET 7 MAXOSW 4 FB 0 TFB 0
+GAME red/ctxp/instances/margin1_n20.pg  TAUC margin1_n20.pg n 20 ITERS 5 TCH 4 OSW 9 ORET 0 MAXOSW 3 FB 0 TFB 0
+GAME red/ctxp/instances/margin1_mc1.pg  TAUC margin1_mc1.pg n 80 ITERS 10 TCH 9 OSW 41 ORET 4 MAXOSW 4 FB 1 TFB 0
+GAME red/dtl/instances/lalg_dtl_pertop31_n18.pg  TAUC lalg_dtl_pertop31_n18.pg n 18 ITERS 2 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/ctxp/instances/margin1_mc5.pg  TAUC margin1_mc5.pg n 50 ITERS 12 TCH 10 OSW 35 ORET 9 MAXOSW 4 FB 3 TFB 1
+GAME red/dtl/instances/lalg_dtl_restart8_n20.pg  TAUC lalg_dtl_restart8_n20.pg n 20 ITERS 5 TCH 5 OSW 15 ORET 0 MAXOSW 2 FB 0 TFB 0
+GAME red/fbr/instances/bghm_k1_gap6_A.pg  TAUC bghm_k1_gap6_A.pg n 21 ITERS 1 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/fbr/instances/bghm_k3_gap4_A.pg  TAUC bghm_k3_gap4_A.pg n 45 ITERS 1 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/fbr/instances/lev74_n40.pg  TAUC lev74_n40.pg n 40 ITERS 18 TCH 8 OSW 9 ORET 1 MAXOSW 6 FB 0 TFB 0
+GAME red/fbr/instances/fr39_q4_n48.pg  TAUC fr39_q4_n48.pg n 48 ITERS 36 TCH 3 OSW 4 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/fbr/instances/rho144_n32.pg  TAUC rho144_n32.pg n 32 ITERS 9 TCH 5 OSW 12 ORET 0 MAXOSW 3 FB 0 TFB 0
+GAME red/fbr/instances/lev56_n48.pg  TAUC lev56_n48.pg n 48 ITERS 86 TCH 3 OSW 5 ORET 1 MAXOSW 2 FB 9 TFB 0
+GAME red/fbr/instances/nep80_n40.pg  TAUC nep80_n40.pg n 40 ITERS 22 TCH 10 OSW 12 ORET 0 MAXOSW 8 FB 1 TFB 0
+GAME red/fbr/instances/rho3_253_n32.pg  TAUC rho3_253_n32.pg n 32 ITERS 11 TCH 5 OSW 11 ORET 0 MAXOSW 2 FB 0 TFB 0
+GAME red/fbr/instances/sat4_n20.pg  TAUC sat4_n20.pg n 20 ITERS 6 TCH 3 OSW 6 ORET 0 MAXOSW 2 FB 0 TFB 0
+GAME red/fbr/instances/rho666_n48.pg  TAUC rho666_n48.pg n 48 ITERS 16 TCH 5 OSW 11 ORET 0 MAXOSW 3 FB 0 TFB 0
+GAME red/fbr/instances/rho84_n16.pg  TAUC rho84_n16.pg n 16 ITERS 5 TCH 5 OSW 6 ORET 0 MAXOSW 2 FB 0 TFB 0
+GAME red/fbr/instances/sat68_n20.pg  TAUC sat68_n20.pg n 20 ITERS 5 TCH 2 OSW 2 ORET 0 MAXOSW 1 FB 1 TFB 0
+GAME red/fbr/instances/twowave_L16.pg  TAUC twowave_L16.pg n 22 ITERS 15 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/fbx/instances/exsw_loop_n15.pg  TAUC exsw_loop_n15.pg n 15 ITERS 1 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/frz/instances/fx2_n11.pg  TAUC fx2_n11.pg n 11 ITERS 9 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/fbx/instances/kt6_n58.pg  TAUC kt6_n58.pg n 58 ITERS 38 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 2 TFB 0
+GAME red/frz/instances/fbcap_eq_u4_n11.pg  TAUC fbcap_eq_u4_n11.pg n 11 ITERS 6 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 2 TFB 0
+GAME red/h3/instances/frzgap0_n4.pg  TAUC frzgap0_n4.pg n 4 ITERS 1 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/h3/instances/frzgap0_n6.pg  TAUC frzgap0_n6.pg n 6 ITERS 3 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/h3/instances/lcount_n23.pg red/h3/instances/lcount_n23.start TAUC lcount_n23.pg n 23 ITERS 5 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/h3/instances/lcount2_n23.pg red/h3/instances/lcount2_n23.start TAUC lcount2_n23.pg n 23 ITERS 6 TCH 2 OSW 4 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/h3/instances/offret_l19_n24.pg  TAUC offret_l19_n24.pg n 24 ITERS 3 TCH 2 OSW 3 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/kl/instances/klcount_n16.pg  TAUC klcount_n16.pg n 16 ITERS 6 TCH 5 OSW 13 ORET 0 MAXOSW 3 FB 0 TFB 0
+GAME red/kl/instances/klcount_n18_base.pg  TAUC klcount_n18_base.pg n 18 ITERS 6 TCH 5 OSW 13 ORET 0 MAXOSW 3 FB 0 TFB 0
+GAME red/kl/instances/klcount_n18_lvl.pg  TAUC klcount_n18_lvl.pg n 18 ITERS 6 TCH 5 OSW 13 ORET 0 MAXOSW 3 FB 0 TFB 0
+GAME red/kl/instances/klglobal_n16.pg  TAUC klglobal_n16.pg n 16 ITERS 6 TCH 5 OSW 15 ORET 2 MAXOSW 4 FB 1 TFB 1
+GAME red/h3/instances/xsnpre36_n48.pg  TAUC xsnpre36_n48.pg n 48 ITERS 33 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/kl/instances/klglobal_n18_lvl.pg  TAUC klglobal_n18_lvl.pg n 18 ITERS 6 TCH 5 OSW 15 ORET 2 MAXOSW 4 FB 1 TFB 1
+GAME red/kl/instances/klglobal_n20_lvl2.pg  TAUC klglobal_n20_lvl2.pg n 20 ITERS 6 TCH 5 OSW 15 ORET 2 MAXOSW 4 FB 1 TFB 1
+GAME red/kl/instances/klmin_n13.pg  TAUC klmin_n13.pg n 13 ITERS 3 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/kl/instances/r2crawl_n14.pg  TAUC r2crawl_n14.pg n 14 ITERS 5 TCH 3 OSW 17 ORET 0 MAXOSW 2 FB 0 TFB 0
+GAME red/kl/instances/r2climb_h13.pg  TAUC r2climb_h13.pg n 13 ITERS 4 TCH 3 OSW 7 ORET 0 MAXOSW 2 FB 0 TFB 0
+GAME red/kl/instances/r2join_h0E_n14.pg  TAUC r2join_h0E_n14.pg n 14 ITERS 3 TCH 2 OSW 2 ORET 0 MAXOSW 2 FB 0 TFB 0
+GAME red/kl/instances/r2lap_best_n22.pg  TAUC r2lap_best_n22.pg n 22 ITERS 5 TCH 2 OSW 2 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/kl24/instances/HL88_2.pg  TAUC HL88_2.pg n 45 ITERS 3 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/kl24/instances/HL88_1.pg  TAUC HL88_1.pg n 43 ITERS 3 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/kl24/instances/HL88_0.pg  TAUC HL88_0.pg n 41 ITERS 3 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/kl24/instances/HL88_3.pg  TAUC HL88_3.pg n 47 ITERS 3 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/kl24/instances/HLg_0.pg  TAUC HLg_0.pg n 29 ITERS 3 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/kl24/instances/HLg_1.pg  TAUC HLg_1.pg n 35 ITERS 3 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/kl24/instances/HLg_2.pg  TAUC HLg_2.pg n 45 ITERS 3 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/kl24/instances/HLg_3.pg  TAUC HLg_3.pg n 55 ITERS 3 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/kw/instances/cw11_n24.pg  TAUC cw11_n24.pg n 24 ITERS 17 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 4 TFB 0
+GAME red/kw/instances/frzu_tight_n14.pg  TAUC frzu_tight_n14.pg n 14 ITERS 4 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/kw/instances/kc18_n24.pg  TAUC kc18_n24.pg n 24 ITERS 23 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 1 TFB 0
+GAME red/lag/instances/depth3_n46.pg  TAUC depth3_n46.pg n 46 ITERS 3 TCH 3 OSW 20 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/lag/instances/depth2_n39.pg  TAUC depth2_n39.pg n 39 ITERS 3 TCH 2 OSW 13 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/lag/instances/depth4_n53.pg  TAUC depth4_n53.pg n 53 ITERS 4 TCH 3 OSW 21 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/lag/instances/fam_D12_n106.pg  TAUC fam_D12_n106.pg n 106 ITERS 1 TCH 1 OSW 43 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/lag/instances/fam_D4_n50.pg  TAUC fam_D4_n50.pg n 50 ITERS 1 TCH 1 OSW 19 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/lag/instances/fam_D8_n78.pg  TAUC fam_D8_n78.pg n 78 ITERS 1 TCH 1 OSW 31 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/mei/instances/mei_h2.pg  TAUC mei_h2.pg n 19 ITERS 1 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/mei/instances/mei_h5.pg  TAUC mei_h5.pg n 43 ITERS 4 TCH 4 OSW 6 ORET 2 MAXOSW 3 FB 0 TFB 0
+GAME red/mei/instances/mei_h3.pg  TAUC mei_h3.pg n 27 ITERS 2 TCH 2 OSW 2 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/mei/instances/mei_h4.pg  TAUC mei_h4.pg n 35 ITERS 3 TCH 3 OSW 5 ORET 2 MAXOSW 3 FB 0 TFB 0
+GAME red/mei/instances/mei_h6.pg  TAUC mei_h6.pg n 51 ITERS 5 TCH 5 OSW 9 ORET 4 MAXOSW 3 FB 0 TFB 0
+GAME red/mei/instances/mei_h8.pg  TAUC mei_h8.pg n 67 ITERS 7 TCH 7 OSW 19 ORET 12 MAXOSW 7 FB 0 TFB 0
+GAME red/n3/instances/core41_n40.pg red/n3/instances/core41_n40.start TAUC core41_n40.pg n 40 ITERS 42 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 6 TFB 0
+GAME red/n3/instances/lag11_n40.pg red/n3/instances/lag11_n40.start TAUC lag11_n40.pg n 40 ITERS 23 TCH 4 OSW 6 ORET 1 MAXOSW 2 FB 2 TFB 0
+GAME red/n3/instances/lagx10_n40.pg red/n3/instances/lagx10_n40.start TAUC lagx10_n40.pg n 40 ITERS 17 TCH 2 OSW 3 ORET 0 MAXOSW 1 FB 1 TFB 0
+GAME red/n3/instances/n3cov_lean.pg new/box113/inst/n3cov_lean_fixed.start TAUC n3cov_lean.pg n 48 ITERS 35 TCH 4 OSW 6 ORET 1 MAXOSW 2 FB 1 TFB 0
+GAME red/n3/instances/long121_n40.pg red/n3/instances/long121_n40.start TAUC long121_n40.pg n 40 ITERS 122 TCH 1 OSW 2 ORET 0 MAXOSW 1 FB 8 TFB 0
+GAME red/n3/instances/n3cov_phi.pg red/n3/instances/n3cov_phi.start TAUC n3cov_phi.pg n 32 ITERS 31 TCH 5 OSW 17 ORET 3 MAXOSW 3 FB 3 TFB 0
+GAME red/n3/instances/comp54_n80.pg new/box113/inst/comp54_n80_fixed.start TAUC comp54_n80.pg n 80 ITERS 55 TCH 1 OSW 2 ORET 0 MAXOSW 1 FB 6 TFB 0
+GAME red/n3/instances/long90_k2_n40.pg red/n3/instances/long90_k2_n40.start TAUC long90_k2_n40.pg n 40 ITERS 92 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 8 TFB 0
+GAME red/n3/instances/run34_n40.pg red/n3/instances/run34_n40.start TAUC run34_n40.pg n 40 ITERS 51 TCH 5 OSW 6 ORET 0 MAXOSW 2 FB 1 TFB 0
+GAME red/n5/instances/dl_4_4.pg red/n5/instances/dl_4_4.start TAUC dl_4_4.pg n 42 ITERS 8 TCH 8 OSW 37 ORET 17 MAXOSW 4 FB 0 TFB 0
+GAME red/n3/instances/run49_n32.pg red/n3/instances/run49_n32.start TAUC run49_n32.pg n 32 ITERS 51 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/n3/instances/ret22_n40.pg red/n3/instances/ret22_n40.start TAUC ret22_n40.pg n 40 ITERS 94 TCH 2 OSW 2 ORET 0 MAXOSW 1 FB 7 TFB 0
+GAME red/n5/instances/dlm2_4.pg red/n5/instances/dlm2_4.start TAUC dlm2_4.pg n 42 ITERS 8 TCH 8 OSW 16 ORET 8 MAXOSW 4 FB 0 TFB 0
+GAME red/n5/instances/sym_h12_s1.pg  TAUC sym_h12_s1.pg n 24 ITERS 34 TCH 21 OSW 35 ORET 18 MAXOSW 7 FB 2 TFB 1
+GAME red/n5/instances/dl_6_8.pg red/n5/instances/dl_6_8.start TAUC dl_6_8.pg n 110 ITERS 14 TCH 14 OSW 103 ORET 49 MAXOSW 4 FB 0 TFB 0
+GAME red/n5inj/instances/block_bk20.pg  TAUC block_bk20.pg n 24 ITERS 27 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/n5/instances/sym_h8_s1.pg  TAUC sym_h8_s1.pg n 16 ITERS 25 TCH 16 OSW 17 ORET 5 MAXOSW 5 FB 1 TFB 0
+GAME red/n5/instances/sym_h16_s1.pg  TAUC sym_h16_s1.pg n 32 ITERS 55 TCH 33 OSW 47 ORET 23 MAXOSW 6 FB 0 TFB 0
+GAME red/n5inj/instances/bribe_cex_n15.pg  TAUC bribe_cex_n15.pg n 15 ITERS 1 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/n5inj/instances/blockph_bp32.pg  TAUC blockph_bp32.pg n 36 ITERS 39 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/n5inj/instances/block_bk32.pg  TAUC block_bk32.pg n 36 ITERS 49 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/n5inj/instances/blockph_bp20.pg  TAUC blockph_bp20.pg n 24 ITERS 25 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/n5inj/instances/frz24.pg red/n5inj/instances/frz24.start TAUC frz24.pg n 24 ITERS 39 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 4 TFB 0
+GAME red/n5inj/instances/phase2_pk32.pg  TAUC phase2_pk32.pg n 32 ITERS 56 TCH 2 OSW 2 ORET 0 MAXOSW 1 FB 6 TFB 0
+GAME red/n5inj/instances/frz40.pg red/n5inj/instances/frz40.start TAUC frz40.pg n 40 ITERS 90 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 7 TFB 0
+GAME red/n5inj/instances/frz32.pg red/n5inj/instances/frz32.start TAUC frz32.pg n 32 ITERS 66 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 8 TFB 0
+GAME red/n5inj/instances/elimn_cex_n48.pg  TAUC elimn_cex_n48.pg n 48 ITERS 92 TCH 2 OSW 2 ORET 0 MAXOSW 1 FB 10 TFB 0
+GAME red/n5inj/instances/returns_rt48.pg  TAUC returns_rt48.pg n 48 ITERS 80 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 14 TFB 0
+GAME red/n5inj/instances/returns_rt32.pg  TAUC returns_rt32.pg n 32 ITERS 57 TCH 3 OSW 3 ORET 0 MAXOSW 2 FB 6 TFB 0
+GAME red/n5inj/instances/returns_ph64.pg  TAUC returns_ph64.pg n 64 ITERS 105 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 15 TFB 0
+GAME red/n5inj/instances/phase2_pk48.pg  TAUC phase2_pk48.pg n 48 ITERS 72 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 8 TFB 0
+GAME red/n5inj/instances/theta_tp32.pg  TAUC theta_tp32.pg n 32 ITERS 45 TCH 2 OSW 2 ORET 0 MAXOSW 2 FB 1 TFB 0
+GAME red/n5inj/instances/theta_thc24.pg  TAUC theta_thc24.pg n 24 ITERS 29 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/n5inj/instances/theta_thf16.pg  TAUC theta_thf16.pg n 16 ITERS 20 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 1 TFB 0
+GAME red/n5inj/instances/theta_tp40.pg  TAUC theta_tp40.pg n 40 ITERS 41 TCH 2 OSW 2 ORET 0 MAXOSW 2 FB 0 TFB 0
+GAME red/nest16/instances/k4L72_n101.pg  TAUC k4L72_n101.pg n 101 ITERS 6 TCH 6 OSW 69 ORET 7 MAXOSW 3 FB 0 TFB 0
+GAME red/n5inj/instances/returns_rt64.pg  TAUC returns_rt64.pg n 64 ITERS 90 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 14 TFB 0
+GAME red/nest16/instances/k4L72r_n101.pg  TAUC k4L72r_n101.pg n 101 ITERS 6 TCH 6 OSW 69 ORET 7 MAXOSW 3 FB 0 TFB 0
+GAME red/n5inj/instances/wide_h16.pg  TAUC wide_h16.pg n 32 ITERS 44 TCH 37 OSW 57 ORET 24 MAXOSW 8 FB 0 TFB 0
+GAME red/nest16/instances/k4seed_vr_n87.pg  TAUC k4seed_vr_n87.pg n 87 ITERS 3 TCH 3 OSW 45 ORET 2 MAXOSW 2 FB 0 TFB 0
+GAME red/nest16/instances/k4u_n101.pg  TAUC k4u_n101.pg n 101 ITERS 3 TCH 3 OSW 55 ORET 2 MAXOSW 2 FB 0 TFB 0
+GAME red/nest16/instances/k4g50_n101.pg  TAUC k4g50_n101.pg n 101 ITERS 5 TCH 5 OSW 66 ORET 4 MAXOSW 3 FB 0 TFB 0
+GAME red/nest16/instances/k4seed_c1_n82.pg  TAUC k4seed_c1_n82.pg n 82 ITERS 3 TCH 3 OSW 45 ORET 2 MAXOSW 2 FB 0 TFB 0
+GAME red/nest16/instances/k4y1_n82.pg  TAUC k4y1_n82.pg n 82 ITERS 5 TCH 5 OSW 58 ORET 3 MAXOSW 3 FB 0 TFB 0
+GAME red/nest16/instances/near4_n26.pg  TAUC near4_n26.pg n 26 ITERS 2 TCH 2 OSW 10 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/nest16/instances/k4y2_n87.pg  TAUC k4y2_n87.pg n 87 ITERS 6 TCH 6 OSW 94 ORET 12 MAXOSW 3 FB 0 TFB 0
+GAME red/nest16/instances/nest4uu_n51.pg  TAUC nest4uu_n51.pg n 51 ITERS 2 TCH 2 OSW 20 ORET 0 MAXOSW 2 FB 0 TFB 0
+GAME red/nest16/instances/nest4u_n46.pg  TAUC nest4u_n46.pg n 46 ITERS 2 TCH 2 OSW 21 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/nest16/instances/nest6_n75.pg  TAUC nest6_n75.pg n 75 ITERS 3 TCH 3 OSW 32 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/nest16/instances/nest6min_n75.pg  TAUC nest6min_n75.pg n 75 ITERS 3 TCH 3 OSW 44 ORET 2 MAXOSW 2 FB 0 TFB 0
+GAME red/nest16/instances/nest5_n49.pg  TAUC nest5_n49.pg n 49 ITERS 3 TCH 3 OSW 27 ORET 0 MAXOSW 2 FB 0 TFB 0
+GAME red/nest16/instances/oseg_n26.pg  TAUC oseg_n26.pg n 26 ITERS 3 TCH 3 OSW 11 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/nest16/instances/win3_n27.pg  TAUC win3_n27.pg n 27 ITERS 2 TCH 2 OSW 10 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/nest16/instances/nest6x_n75.pg  TAUC nest6x_n75.pg n 75 ITERS 5 TCH 5 OSW 72 ORET 4 MAXOSW 3 FB 0 TFB 0
+GAME red/nopre/instances/nopre_viol_n20.pg  TAUC nopre_viol_n20.pg n 20 ITERS 3 TCH 3 OSW 4 ORET 0 MAXOSW 2 FB 0 TFB 0
+GAME red/nest16/instances/w1_n27.pg  TAUC w1_n27.pg n 27 ITERS 2 TCH 2 OSW 11 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/o1/instances/ph45_n32.pg  TAUC ph45_n32.pg n 32 ITERS 21 TCH 7 OSW 7 ORET 0 MAXOSW 7 FB 0 TFB 0
+GAME red/o1/instances/iter118_n48.pg  TAUC iter118_n48.pg n 48 ITERS 18 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 1 TFB 0
+GAME red/rec0/instances/fbd0_n4.pg  TAUC fbd0_n4.pg n 4 ITERS 0 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/o1/instances/f39_n48.pg  TAUC f39_n48.pg n 48 ITERS 38 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/o1/instances/ph50_n32.pg  TAUC ph50_n32.pg n 32 ITERS 32 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 18 TFB 0
+GAME red/o1/instances/tau18_n24.pg  TAUC tau18_n24.pg n 24 ITERS 12 TCH 11 OSW 11 ORET 0 MAXOSW 11 FB 0 TFB 0
+GAME red/rec0/instances/n0_6_n24.pg  TAUC n0_6_n24.pg n 24 ITERS 3 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/rec0/instances/nep24_n20.pg  TAUC nep24_n20.pg n 20 ITERS 15 TCH 13 OSW 13 ORET 0 MAXOSW 13 FB 0 TFB 0
+GAME red/rec0/instances/lend2_30_n48.pg  TAUC lend2_30_n48.pg n 48 ITERS 25 TCH 8 OSW 20 ORET 4 MAXOSW 3 FB 0 TFB 0
+GAME red/rec0/instances/nep87_n40.pg  TAUC nep87_n40.pg n 40 ITERS 25 TCH 9 OSW 11 ORET 2 MAXOSW 5 FB 1 TFB 0
+GAME red/sgrow/instances/s20_n20.pg  TAUC s20_n20.pg n 20 ITERS 8 TCH 7 OSW 20 ORET 3 MAXOSW 3 FB 0 TFB 0
+GAME red/sgrow/instances/s21_oink_n20.pg  TAUC s21_oink_n20.pg n 20 ITERS 8 TCH 8 OSW 21 ORET 4 MAXOSW 3 FB 0 TFB 0
+GAME red/rec0/instances/nep90_n40.pg  TAUC nep90_n40.pg n 40 ITERS 23 TCH 7 OSW 10 ORET 1 MAXOSW 5 FB 1 TFB 0
+GAME red/sgrow/instances/s29_n30.pg  TAUC s29_n30.pg n 30 ITERS 7 TCH 7 OSW 18 ORET 3 MAXOSW 4 FB 0 TFB 0
+GAME red/sgrow/instances/s34_oink_n40.pg  TAUC s34_oink_n40.pg n 40 ITERS 5 TCH 3 OSW 11 ORET 0 MAXOSW 2 FB 0 TFB 0
+GAME red/sgrow/instances/s32_n60.pg  TAUC s32_n60.pg n 60 ITERS 8 TCH 8 OSW 63 ORET 5 MAXOSW 4 FB 0 TFB 0
+GAME red/sgrow/instances/s36_oink_n60.pg  TAUC s36_oink_n60.pg n 60 ITERS 5 TCH 4 OSW 19 ORET 2 MAXOSW 3 FB 0 TFB 0
+GAME red/sgrow/instances/s35_oink_n80.pg  TAUC s35_oink_n80.pg n 80 ITERS 5 TCH 4 OSW 20 ORET 2 MAXOSW 3 FB 0 TFB 0
+GAME red/sgrow/instances/s34_oink_n80.pg  TAUC s34_oink_n80.pg n 80 ITERS 8 TCH 7 OSW 87 ORET 11 MAXOSW 6 FB 0 TFB 0
+GAME red/so/instances/beta2_n11.pg  TAUC beta2_n11.pg n 11 ITERS 4 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 2 TFB 0
+GAME red/so/instances/epsseg_cex_n16.pg  TAUC epsseg_cex_n16.pg n 16 ITERS 11 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/so/instances/exitr_cex_n16.pg  TAUC exitr_cex_n16.pg n 16 ITERS 10 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/so/instances/epsseg_cex_n48.pg  TAUC epsseg_cex_n48.pg n 48 ITERS 26 TCH 2 OSW 2 ORET 0 MAXOSW 2 FB 1 TFB 0
+GAME red/so/instances/farrise25_n32.pg  TAUC farrise25_n32.pg n 32 ITERS 35 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 28 TFB 0
+GAME red/so/instances/exitr_cex_n48.pg  TAUC exitr_cex_n48.pg n 48 ITERS 22 TCH 2 OSW 2 ORET 0 MAXOSW 2 FB 1 TFB 0
+GAME red/so/instances/mn_abs74_n48.pg  TAUC mn_abs74_n48.pg n 48 ITERS 22 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 4 TFB 0
+GAME red/so/instances/njb_reabs54_n32.pg  TAUC njb_reabs54_n32.pg n 32 ITERS 40 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 22 TFB 0
+GAME red/so/instances/njb_reabs65_n48.pg  TAUC njb_reabs65_n48.pg n 48 ITERS 70 TCH 2 OSW 2 ORET 0 MAXOSW 2 FB 29 TFB 0
+GAME red/so/instances/nleq_cex_n48.pg  TAUC nleq_cex_n48.pg n 48 ITERS 10 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 1 TFB 0
+GAME red/so/instances/nleq33_n48.pg  TAUC nleq33_n48.pg n 48 ITERS 40 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 1 TFB 0
+GAME red/so/instances/pftheta34_n32.pg  TAUC pftheta34_n32.pg n 32 ITERS 39 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 1 TFB 0
+GAME red/so/instances/pft35_n48.pg  TAUC pft35_n48.pg n 48 ITERS 41 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 1 TFB 0
+GAME red/so/instances/pft40_n40.pg  TAUC pft40_n40.pg n 40 ITERS 54 TCH 2 OSW 2 ORET 0 MAXOSW 2 FB 4 TFB 0
+GAME red/so/instances/pftheta_cex_n32.pg  TAUC pftheta_cex_n32.pg n 32 ITERS 38 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 1 TFB 0
+GAME red/so/instances/s4c8_n13.pg  TAUC s4c8_n13.pg n 13 ITERS 12 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 8 TFB 0
+GAME red/so/instances/rise_fb38_n48.pg  TAUC rise_fb38_n48.pg n 48 ITERS 53 TCH 2 OSW 2 ORET 0 MAXOSW 2 FB 38 TFB 1
+GAME red/so/instances/post31_n48.pg  TAUC post31_n48.pg n 48 ITERS 36 TCH 2 OSW 2 ORET 0 MAXOSW 2 FB 1 TFB 0
+GAME red/so/instances/so_j19_n48.pg  TAUC so_j19_n48.pg n 48 ITERS 25 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 1 TFB 0
+GAME red/so/instances/so_k2_n32.pg  TAUC so_k2_n32.pg n 32 ITERS 20 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 2 TFB 0
+GAME red/so/instances/so_sorl_n32.pg  TAUC so_sorl_n32.pg n 32 ITERS 22 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/so/instances/rise_thin51_n40.pg  TAUC rise_thin51_n40.pg n 40 ITERS 78 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 7 TFB 0
+GAME red/so/instances/so_sor5_n24.pg  TAUC so_sor5_n24.pg n 24 ITERS 23 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/so/instances/so_tie13_n24.pg  TAUC so_tie13_n24.pg n 24 ITERS 16 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/so/instances/so_tie15_n32.pg  TAUC so_tie15_n32.pg n 32 ITERS 20 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/so/instances/so_th_n32.pg  TAUC so_th_n32.pg n 32 ITERS 36 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/so/instances/tev_cex_n40.pg  TAUC tev_cex_n40.pg n 40 ITERS 27 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 16 TFB 0
+GAME red/so/instances/tevlast7_n32.pg  TAUC tevlast7_n32.pg n 32 ITERS 41 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 2 TFB 0
+GAME red/so/instances/tevlast11_n40.pg  TAUC tevlast11_n40.pg n 40 ITERS 36 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 2 TFB 0
+GAME red/so/instances/tog6a_n32.pg  TAUC tog6a_n32.pg n 32 ITERS 10 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 1 TFB 0
+GAME red/so/instances/tevlast_cex_n40.pg  TAUC tevlast_cex_n40.pg n 40 ITERS 11 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 1 TFB 0
+GAME red/so/instances/xrun21_n24.pg  TAUC xrun21_n24.pg n 24 ITERS 24 TCH 2 OSW 2 ORET 0 MAXOSW 2 FB 0 TFB 0
+GAME red/so/instances/tog6b_n32.pg  TAUC tog6b_n32.pg n 32 ITERS 8 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 1 TFB 0
+GAME red/so/instances/xrun8_n10.pg  TAUC xrun8_n10.pg n 10 ITERS 11 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 1 TFB 0
+GAME red/so/instances/xsn29_n32.pg  TAUC xsn29_n32.pg n 32 ITERS 29 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/so/instances/xsnf52_n64.pg  TAUC xsnf52_n64.pg n 64 ITERS 55 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 1 TFB 0
+GAME red/so/instances/xsnf42_n48.pg  TAUC xsnf42_n48.pg n 48 ITERS 44 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 1 TFB 0
+GAME red/so/instances/xsn43_n48.pg  TAUC xsn43_n48.pg n 48 ITERS 45 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/tcpert/instances/leanT_N12.pg  TAUC leanT_N12.pg n 96 ITERS 13 TCH 11 OSW 23 ORET 0 MAXOSW 2 FB 0 TFB 0
+GAME red/so/instances/xsn91_n48.pg  TAUC xsn91_n48.pg n 48 ITERS 115 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 9 TFB 0
+GAME red/tcpert/instances/leanT_N6.pg  TAUC leanT_N6.pg n 48 ITERS 6 TCH 3 OSW 8 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/tcpert/instances/leanT_N8.pg  TAUC leanT_N8.pg n 64 ITERS 8 TCH 6 OSW 14 ORET 0 MAXOSW 2 FB 0 TFB 0
+GAME red/tcpert/instances/leanT_N16.pg  TAUC leanT_N16.pg n 128 ITERS 16 TCH 15 OSW 40 ORET 3 MAXOSW 3 FB 0 TFB 0
+GAME red/tcpert/instances/leanT_N24.pg  TAUC leanT_N24.pg n 192 ITERS 25 TCH 19 OSW 56 ORET 2 MAXOSW 3 FB 0 TFB 0
+GAME red/tcpert/instances/tcL_N3.pg  TAUC tcL_N3.pg n 42 ITERS 7 TCH 5 OSW 14 ORET 1 MAXOSW 3 FB 0 TFB 0
+GAME red/tcpert/instances/tcL_N4.pg  TAUC tcL_N4.pg n 68 ITERS 16 TCH 15 OSW 44 ORET 22 MAXOSW 4 FB 0 TFB 0
+GAME red/tcpert/instances/tcL_N10.pg  TAUC tcL_N10.pg n 350 ITERS 27 TCH 26 OSW 279 ORET 130 MAXOSW 7 FB 0 TFB 0
+GAME red/tcpert/instances/tcL_N5.pg  TAUC tcL_N5.pg n 100 ITERS 19 TCH 17 OSW 58 ORET 21 MAXOSW 4 FB 0 TFB 0
+GAME red/tcpert/instances/tcL_N6.pg  TAUC tcL_N6.pg n 138 ITERS 18 TCH 18 OSW 89 ORET 35 MAXOSW 4 FB 0 TFB 0
+GAME red/tcpert/instances/tcR4_N4.pg  TAUC tcR4_N4.pg n 68 ITERS 12 TCH 10 OSW 28 ORET 5 MAXOSW 2 FB 0 TFB 0
+GAME red/tcpert/instances/tcR4_N5.pg  TAUC tcR4_N5.pg n 100 ITERS 14 TCH 11 OSW 51 ORET 6 MAXOSW 3 FB 0 TFB 0
+GAME red/tcpert/instances/tcR4_N6.pg  TAUC tcR4_N6.pg n 138 ITERS 22 TCH 18 OSW 89 ORET 20 MAXOSW 4 FB 0 TFB 0
+GAME red/tcpert/instances/leanT_N32.pg  TAUC leanT_N32.pg n 256 ITERS 33 TCH 27 OSW 64 ORET 2 MAXOSW 3 FB 0 TFB 0
+GAME red/tcpert/instances/tcL_N8.pg  TAUC tcL_N8.pg n 232 ITERS 30 TCH 29 OSW 227 ORET 124 MAXOSW 9 FB 0 TFB 0
+GAME red/tcpert/instances/tcR4_N7.pg  TAUC tcR4_N7.pg n 182 ITERS 41 TCH 25 OSW 91 ORET 8 MAXOSW 4 FB 0 TFB 0
+GAME red/tcpert/instances/tcR4_N8.pg  TAUC tcR4_N8.pg n 232 ITERS 33 TCH 26 OSW 155 ORET 32 MAXOSW 4 FB 0 TFB 0
+GAME red/tcpert/instances/tcS8_N10.pg  TAUC tcS8_N10.pg n 350 ITERS 16 TCH 16 OSW 156 ORET 49 MAXOSW 4 FB 0 TFB 0
+GAME red/tcpert/instances/tcS8_N6.pg  TAUC tcS8_N6.pg n 138 ITERS 17 TCH 16 OSW 98 ORET 35 MAXOSW 5 FB 0 TFB 0
+GAME red/tcpert/instances/tcS8_N8.pg  TAUC tcS8_N8.pg n 232 ITERS 10 TCH 9 OSW 108 ORET 33 MAXOSW 4 FB 0 TFB 0
+GAME red/tcpert/instances/tcL_N12.pg  TAUC tcL_N12.pg n 492 ITERS 37 TCH 35 OSW 356 ORET 145 MAXOSW 9 FB 0 TFB 0
+GAME red/tcpert/instances/tcS8_N7.pg  TAUC tcS8_N7.pg n 182 ITERS 14 TCH 14 OSW 107 ORET 37 MAXOSW 4 FB 0 TFB 0
+GAME red/tpp/instances/tpp_viol_n22.pg  TAUC tpp_viol_n22.pg n 22 ITERS 2 TCH 2 OSW 2 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/tcpert/instances/tcS8_N11.pg  TAUC tcS8_N11.pg n 418 ITERS 20 TCH 19 OSW 218 ORET 76 MAXOSW 4 FB 0 TFB 0
+GAME red/tpp/instances/tpp_viol_n63.pg  TAUC tpp_viol_n63.pg n 63 ITERS 8 TCH 7 OSW 26 ORET 1 MAXOSW 3 FB 0 TFB 0
+GAME red/ul/instances/cxmig_k8_n82.pg red/ul/instances/cxmig_k8_n82.start TAUC cxmig_k8_n82.pg n 82 ITERS 16 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/ul/instances/cxmig_k4_n54.pg red/ul/instances/cxmig_k4_n54.start TAUC cxmig_k4_n54.pg n 54 ITERS 12 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/ul/instances/ladderd0_k12_n48.pg red/ul/instances/ladderd0_k12_n48.start TAUC ladderd0_k12_n48.pg n 48 ITERS 14 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/ul/instances/cxmig_k16_n138.pg red/ul/instances/cxmig_k16_n138.start TAUC cxmig_k16_n138.pg n 138 ITERS 24 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/ul/instances/ladderd0_k24_n84.pg red/ul/instances/ladderd0_k24_n84.start TAUC ladderd0_k24_n84.pg n 84 ITERS 26 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/tcpert/instances/tcS8_N9.pg  TAUC tcS8_N9.pg n 288 ITERS 36 TCH 29 OSW 194 ORET 77 MAXOSW 6 FB 3 TFB 0
+GAME red/ul/instances/ladderent_k12_n48.pg red/ul/instances/ladderent_k12_n48.start TAUC ladderent_k12_n48.pg n 48 ITERS 14 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/ul/instances/ladderent_k24_n84.pg red/ul/instances/ladderent_k24_n84.start TAUC ladderent_k24_n84.pg n 84 ITERS 26 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/ul/instances/reader_L10_n36.pg red/ul/instances/reader_L10_n36.start TAUC reader_L10_n36.pg n 36 ITERS 13 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/ul/instances/ladderd0_k48_n156.pg red/ul/instances/ladderd0_k48_n156.start TAUC ladderd0_k48_n156.pg n 156 ITERS 50 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/ul/instances/reader_L20_n56.pg red/ul/instances/reader_L20_n56.start TAUC reader_L20_n56.pg n 56 ITERS 23 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/ul/instances/reader_L40_n96.pg red/ul/instances/reader_L40_n96.start TAUC reader_L40_n96.pg n 96 ITERS 43 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/usplit/instances/gate_K16_n197.pg red/usplit/instances/gate_K16_n197.start TAUC gate_K16_n197.pg n 197 ITERS 23 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/usplit/instances/grow_K12_n149.pg red/usplit/instances/grow_K12_n149.start TAUC grow_K12_n149.pg n 149 ITERS 19 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/usplit/instances/pairoc_n58.pg red/usplit/instances/pairoc_n58.start TAUC pairoc_n58.pg n 58 ITERS 5 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/ul/instances/ladderent_k48_n156.pg red/ul/instances/ladderent_k48_n156.start TAUC ladderent_k48_n156.pg n 156 ITERS 50 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/usplit/instances/pp_K12_n161_dual.pg  TAUC pp_K12_n161_dual.pg n 161 ITERS 20 TCH 19 OSW 87 ORET 2 MAXOSW 3 FB 0 TFB 0
+GAME red/usplit/instances/pp_K12_n161.pg red/usplit/instances/pp_K12_n161.start TAUC pp_K12_n161.pg n 161 ITERS 19 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/usplit/instances/grow_K40_n373.pg red/usplit/instances/grow_K40_n373.start TAUC grow_K40_n373.pg n 373 ITERS 47 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/usplit/instances/usplit_n14.pg red/usplit/instances/usplit_n14.start TAUC usplit_n14.pg n 14 ITERS 3 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/usplit/instances/usplit_n23.pg red/usplit/instances/usplit_n23.start TAUC usplit_n23.pg n 23 ITERS 9 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/usplit/instances/usplit_rd_n24.pg red/usplit/instances/usplit_rd_n24.start TAUC usplit_rd_n24.pg n 24 ITERS 4 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/usplit/instances/usplit_rd_s3_n27.pg  TAUC usplit_rd_s3_n27.pg n 27 ITERS 4 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/usplit/instances/usplit_s3_n16.pg  TAUC usplit_s3_n16.pg n 16 ITERS 3 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/xctx/instances/nest3_n20.pg  TAUC nest3_n20.pg n 20 ITERS 2 TCH 2 OSW 5 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/xctx/instances/nest3_n24.pg  TAUC nest3_n24.pg n 24 ITERS 2 TCH 2 OSW 10 ORET 0 MAXOSW 2 FB 0 TFB 0
+GAME red/xctx/instances/vrall_viol_n20.pg  TAUC vrall_viol_n20.pg n 20 ITERS 4 TCH 4 OSW 15 ORET 3 MAXOSW 3 FB 0 TFB 0
+GAME red/xctx/instances/xcov11_n20.pg  TAUC xcov11_n20.pg n 20 ITERS 2 TCH 2 OSW 11 ORET 0 MAXOSW 2 FB 0 TFB 0
+GAME red/xctx/instances/xctx_viol_n20.pg  TAUC xctx_viol_n20.pg n 20 ITERS 5 TCH 5 OSW 16 ORET 1 MAXOSW 3 FB 0 TFB 0
+GAME red/usplit/instances/pp_K48_n449.pg red/usplit/instances/pp_K48_n449.start TAUC pp_K48_n449.pg n 449 ITERS 55 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/xing/instances/fbref_cex_n32.pg  TAUC fbref_cex_n32.pg n 32 ITERS 56 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 8 TFB 0
+GAME red/xing/instances/j10_n24.pg  TAUC j10_n24.pg n 24 ITERS 25 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 1 TFB 0
+GAME red/xing/instances/j5_n16.pg  TAUC j5_n16.pg n 16 ITERS 30 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 4 TFB 0
+GAME red/xing/instances/j4_n40.pg  TAUC j4_n40.pg n 40 ITERS 106 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 4 TFB 0
+GAME red/xing/instances/j7_n32.pg  TAUC j7_n32.pg n 32 ITERS 50 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 1 TFB 0
+GAME red/xing/instances/j8_n32.pg  TAUC j8_n32.pg n 32 ITERS 54 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 2 TFB 0
+GAME red/xing/instances/j7_n48.pg  TAUC j7_n48.pg n 48 ITERS 78 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 7 TFB 0
+GAME red/xing/instances/j8_n48.pg  TAUC j8_n48.pg n 48 ITERS 86 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 8 TFB 0
+GAME red/xing/instances/kw25_n32.pg  TAUC kw25_n32.pg n 32 ITERS 29 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 1 TFB 0
+GAME red/xing/instances/kw_n16.pg  TAUC kw_n16.pg n 16 ITERS 12 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/xing/instances/kw_n24.pg  TAUC kw_n24.pg n 24 ITERS 20 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/xing/instances/obr_eq_n24.pg  TAUC obr_eq_n24.pg n 24 ITERS 7 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 1 TFB 0
+GAME red/xing/instances/obr_n32.pg  TAUC obr_n32.pg n 32 ITERS 22 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 2 TFB 0
+GAME red/xing/instances/kw_n48.pg  TAUC kw_n48.pg n 48 ITERS 40 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/xing/instances/u1t_cex_n32.pg  TAUC u1t_cex_n32.pg n 32 ITERS 12 TCH 2 OSW 2 ORET 0 MAXOSW 2 FB 1 TFB 0
+GAME red/xing/instances/u1t_own6_n32.pg  TAUC u1t_own6_n32.pg n 32 ITERS 9 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 1 TFB 0
+GAME red/xing/instances/u23sw64_n32.pg  TAUC u23sw64_n32.pg n 32 ITERS 16 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 1 TFB 0
+GAME red/xing/instances/u2flat73_n32.pg  TAUC u2flat73_n32.pg n 32 ITERS 16 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 5 TFB 0
+GAME red/xing/instances/u2flat_n32.pg  TAUC u2flat_n32.pg n 32 ITERS 13 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 3 TFB 0
+GAME red/xing/instances/x31_cu16.pg  TAUC x31_cu16.pg n 16 ITERS 23 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 1 TFB 0
+GAME red/xing/instances/x31_cu24.pg  TAUC x31_cu24.pg n 24 ITERS 22 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 1 TFB 0
+GAME red/xing/instances/x31_cu32i.pg  TAUC x31_cu32i.pg n 32 ITERS 42 TCH 2 OSW 2 ORET 0 MAXOSW 2 FB 1 TFB 0
+GAME red/usplit/instances/gate_K64_n581.pg red/usplit/instances/gate_K64_n581.start TAUC gate_K64_n581.pg n 581 ITERS 71 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/xing/instances/x31_cu32.pg  TAUC x31_cu32.pg n 32 ITERS 49 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 1 TFB 0
+GAME red/xing/instances/x31_lem_e24.pg  TAUC x31_lem_e24.pg n 24 ITERS 54 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 4 TFB 0
+GAME red/xing/instances/x31_cu48.pg  TAUC x31_cu48.pg n 48 ITERS 46 TCH 2 OSW 2 ORET 0 MAXOSW 2 FB 1 TFB 0
+GAME red/xing/instances/x31_lem_t32.pg  TAUC x31_lem_t32.pg n 32 ITERS 65 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 6 TFB 0
+GAME red/xing/instances/x31_nh_r20.pg  TAUC x31_nh_r20.pg n 20 ITERS 15 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 1 TFB 0
+GAME red/xing/instances/x31_nh_e24.pg  TAUC x31_nh_e24.pg n 24 ITERS 20 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/usplit/instances/pp_K48_n449_dual.pg  TAUC pp_K48_n449_dual.pg n 449 ITERS 56 TCH 55 OSW 267 ORET 2 MAXOSW 3 FB 0 TFB 0
+GAME red/xing/instances/x31_ru24.pg  TAUC x31_ru24.pg n 24 ITERS 7 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 1 TFB 0
+GAME red/xing/instances/x31_re24.pg  TAUC x31_re24.pg n 24 ITERS 6 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME red/xing/instances/x32_rand16.pg  TAUC x32_rand16.pg n 16 ITERS 15 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 1 TFB 0
+GAME red/xing/instances/x31_rx32.pg  TAUC x31_rx32.pg n 32 ITERS 55 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 3 TFB 0
+GAME red/xing/instances/x31_rx48.pg  TAUC x31_rx48.pg n 48 ITERS 53 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 2 TFB 0
+GAME red/xing/instances/x32_rand24.pg  TAUC x32_rand24.pg n 24 ITERS 20 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/xing/instances/x32_nest40.pg  TAUC x32_nest40.pg n 40 ITERS 58 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 2 TFB 0
+GAME red/xing/instances/x32_rand32.pg  TAUC x32_rand32.pg n 32 ITERS 29 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME red/xing/instances/x32_rand48.pg  TAUC x32_rand48.pg n 48 ITERS 44 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 0 TFB 0
+GAME si/root/instances/cone_n65.pg  TAUC cone_n65.pg n 65 ITERS 12 TCH 1 OSW 2 ORET 0 MAXOSW 1 FB 1 TFB 0
+GAME red/xing/instances/x32_waves32.pg  TAUC x32_waves32.pg n 32 ITERS 81 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 9 TFB 0
+GAME red/xing/instances/x32_rand64.pg  TAUC x32_rand64.pg n 64 ITERS 56 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 1 TFB 0
+GAME red/xing/instances/x32_waves48.pg  TAUC x32_waves48.pg n 48 ITERS 89 TCH 0 OSW 0 ORET 0 MAXOSW 0 FB 19 TFB 0
+GAME si/root/instances/cone_n69.pg  TAUC cone_n69.pg n 69 ITERS 25 TCH 4 OSW 4 ORET 0 MAXOSW 1 FB 0 TFB 0
+GAME si/root/instances/ueonce_n27.pg  TAUC ueonce_n27.pg n 27 ITERS 12 TCH 1 OSW 1 ORET 0 MAXOSW 1 FB 0 TFB 0

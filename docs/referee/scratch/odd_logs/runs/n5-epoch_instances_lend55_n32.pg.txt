@@ -1,0 +1,15 @@
+GAME n5-epoch/instances/lend55_n32.pg
+CNT_chk 42
+FR 42
+FR_maxpair 1
+GAMES 1
+OLD_chk 162
+ROOT_chk 6
+ROOT_endPE 6
+ROOT_maxlen 3
+STEP_caseII 1
+STEP_chk 348
+trans 44
+wruns 10
+VIOLATIONS 0
+RC 0

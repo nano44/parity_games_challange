@@ -1,0 +1,11 @@
+GAME new/box51/out/dlc_d2.pg
+ASC 1
+CNT_chk 15
+FR 16
+FR_maxpair 2
+GAMES 1
+OLD_chk 20
+trans 7
+wruns 1
+VIOLATIONS 0
+RC 0

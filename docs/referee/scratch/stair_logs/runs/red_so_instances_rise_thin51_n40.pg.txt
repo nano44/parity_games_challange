@@ -1,0 +1,14 @@
+GAME red/so/instances/rise_thin51_n40.pg
+BIT_chk 1008
+DCOPY_chk 11
+DESC 63
+FROZEN_chk 64
+GAMES 1
+ROOT_chk 267
+TD 1523
+WCH 269
+WCT 64
+trans 64
+wruns 8
+VIOLATIONS 0
+RC 0

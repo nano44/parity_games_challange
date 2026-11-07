@@ -1,0 +1,8 @@
+GAME red/sgrow/instances/s21_oink_n20.pg
+BGmax 7
+GAMES 1
+K 8
+SGmax 7
+SQZ_chk 180
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,14 @@
+GAME red/n3/instances/lagx10_n40.pg
+BIT_chk 149
+DCOPY_chk 24
+DESC 39
+FROZEN_chk 11
+GAMES 1
+ROOT_chk 89
+TD 373
+WCH 89
+WCT 11
+trans 11
+wruns 1
+VIOLATIONS 0
+RC 0

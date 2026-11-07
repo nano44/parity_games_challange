@@ -1,0 +1,8 @@
+GAME red/nest16/instances/k4seed_c1_n82.pg
+BGmax 0
+GAMES 1
+K 3
+SGmax 0
+SQZ_chk 328
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,8 @@
+GAME new/box59/out/rnd/r36_n30.pg
+BGmax 0
+GAMES 1
+K 3
+SGmax 0
+SQZ_chk 120
+VIOLATIONS 0
+RC 0

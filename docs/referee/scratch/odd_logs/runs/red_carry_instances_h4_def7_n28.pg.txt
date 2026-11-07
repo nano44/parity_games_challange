@@ -1,0 +1,6 @@
+GAME red/carry/instances/h4_def7_n28.pg
+GAMES 1
+OLD_chk 49
+STEP_chk 30
+VIOLATIONS 0
+RC 0

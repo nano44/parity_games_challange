@@ -1,0 +1,10 @@
+GAME red/seg/instances/runquad_K8_m30_n192.pg
+GAMES 1
+enum_skip 2
+enum_states 1
+keep_chk 1
+loc_chk 43
+rhos 512
+states 3
+VIOLATIONS 0
+RC 0

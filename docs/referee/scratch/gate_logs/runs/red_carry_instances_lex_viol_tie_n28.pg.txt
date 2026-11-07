@@ -1,0 +1,12 @@
+GAME red/carry/instances/lex_viol_tie_n28.pg
+BGmax 3
+GAMES 1
+INC 3
+K 7
+MAXPH 1
+SGmax 3
+SQZ_chk 224
+steps 3
+stretches 2
+VIOLATIONS 0
+RC 0

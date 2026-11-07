@@ -1,0 +1,22 @@
+P-M2D-DEAD kill/KILL_M2D_d6_mu13.json: sha1 ok, two implementations agree (T 13), mover 8 moves 13 > 2d = 12, membership ALL PASS
+P-M2D-DEAD kill/KILL_M2D_d8_mu21.json: sha1 ok, two implementations agree (T 24), mover 15 moves 21 > 2d = 16, membership ALL PASS
+P-M2D-DEAD CHECK PASS
+exit 0
+family A: T = 2d and moves(2l+1) = 2*floor(2l/3)+1 for d = 3..20
+sim.py == box150 Gen on 2371 runs
+TRICHECK files 6 violations {'TRIMU': 0, 'TRI': 0, 'TRI1': 0, 'FB': 0, 'FBI': 0, 'FBM': 0, 'FBM2': 0} info {'runs': 2321, 'tri_runs': 2209, 'tri_eq2d': 8, 'fb_runs': 2321, 'maxT': 16, 'fbm2_eq': 40}
+DEAD MOVES-2D: kill/KILL_M2D_d6_mu13.json: d 6, mover 8 (level 4, Xi-target) moves 13 > 2d, T 13; box150 Gen agrees
+DEAD MOVES-2D: kill/KILL_M2D_d8_mu21.json: d 8, mover 15 (level 7, Xi-target) moves 21 > 2d, T 24; box150 Gen agrees
+DEAD MOVES-2D: kill/REC_d7_mu17.json: d 7, mover 8 (level 4, Xi-target) moves 17 > 2d, T 17; box150 Gen agrees
+DEAD MOVES-2D: kill/REC_d8_mu24.json: d 8, mover 8 (level 4, Xi-target) moves 24 > 2d, T 25; box150 Gen agrees
+DEAD MOVES-2D: kill/REC_d9_mu29.json: d 9, mover 15 (level 7, Xi-target) moves 29 > 2d, T 31; box150 Gen agrees
+DEAD MOVES-2D: kill/REC_d10_mu32.json: d 10, mover 15 (level 7, Xi-target) moves 32 > 2d, T 33; box150 Gen agrees
+DEAD MOVES-2D: kill/REC_d10_tower_mu30.json: d 10, mover 8 (level 4, Xi-target) moves 30 > 2d, T 35; box150 Gen agrees
+DEAD MOVES-2D: kill/REC_d11_mu40.json: d 11, mover 15 (level 7, Xi-target) moves 40 > 2d, T 44; box150 Gen agrees
+DEAD MOVES-2D: kill/REC_d12_mu42.json: d 12, mover 15 (level 7, Xi-target) moves 42 > 2d, T 48; box150 Gen agrees
+T record: kill/RECT_d11_T59.json: d 11, T 59; box150 Gen agrees
+T record: kill/RECT_d13_T66.json: d 13, T 66; box150 Gen agrees
+T record: kill/RECT_d13_T99.json: d 13, T 99; box150 Gen agrees
+T record: kill/RECT_d14_F46.json: d 14, T 65; box150 Gen agrees
+L3 CHECK PASS
+exit 0

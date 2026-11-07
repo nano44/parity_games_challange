@@ -1,0 +1,15 @@
+GAME n5-epoch/instances/nconf61_n48.pg
+DCOPIED 30
+DR 54
+DR_chk 88
+DS 4
+DT 0
+GAMES 1
+NF_chk 128
+ON_chk 116
+ROLD 1
+TS 0
+trans 61
+wruns 7
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,7 @@
+GAME red/dtl/instances/lalg_dtl_restart8_n20.pg
+GAMES 1
+OLD_chk 22
+STEP_caseII 8
+STEP_chk 65
+VIOLATIONS 0
+RC 0

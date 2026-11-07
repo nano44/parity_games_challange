@@ -1,0 +1,14 @@
+GAME red/n5inj/instances/phase2_pk32.pg
+BGmax 55
+GAMES 1
+INC 45
+K 56
+MAXPH 51
+PH_over 1
+SGmax 55
+SQZ_chk 1824
+steps 54
+stretches 1
+VIOLATIONS 0
+EX ('PH_over', 'phase2_pk32.pg', 0, 54, 51, 31)
+RC 0

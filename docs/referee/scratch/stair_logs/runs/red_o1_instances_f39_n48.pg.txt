@@ -1,0 +1,13 @@
+GAME red/o1/instances/f39_n48.pg
+BIT_chk 74
+DESC 0
+FROZEN_chk 33
+GAMES 1
+ROOT_chk 37
+TD 1021
+WCH 37
+WCT 33
+trans 33
+wruns 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,14 @@
+GAME red/n5inj/instances/returns_rt64.pg
+BIT_chk 413
+DCOPY_chk 4
+DESC 17
+FROZEN_chk 73
+GAMES 1
+ROOT_chk 170
+TD 953
+WCH 205
+WCT 73
+trans 73
+wruns 15
+VIOLATIONS 0
+RC 0

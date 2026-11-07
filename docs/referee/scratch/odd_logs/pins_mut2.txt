@@ -1,0 +1,28 @@
+NOTE start file /tmp/claude-0/-home-user-parity-games-challange/1fd072a7-fcd3-5f36-a504-fa02c7011caa/scratchpad/wt_odd/experiments/si/src54/inst/sbq2_K8_m16.start invalid for its game (move not an edge, or missing); given start skipped
+ASC 2
+CNT_chk 488
+FR 3153
+FR_maxpair 12
+GAMES 7
+LEX_V 10
+OLD_chk 17506
+ROOT_chk 11968
+ROOT_endPE 11968
+ROOT_maxlen 2
+STEP_caseII 61
+STEP_chk 233310
+skip_big 1
+trans 1085
+wruns 12
+VIOLATIONS 10
+EX ('LEX', 'so_th_n32.pg', (22, 16), 3, 14, (1, 30))
+EX ('LEX', 'so_th_n32.pg', (24, 21), 4, 15, (1, 30))
+EX ('LEX', 'so_th_n32.pg', (12, 6), 8, 17, (1, 29))
+EX ('LEX', 'so_th_n32.pg', (15, 0), 8, 17, (1, 29))
+EX ('LEX', 'so_th_n32.pg', (24, 0), 8, 17, (1, 29))
+EX ('LEX', 'so_th_n32.pg', (12, 15), 9, 18, (1, 29))
+EX ('LEX', 'so_th_n32.pg', (21, 24), 9, 18, (1, 29))
+EX ('LEX', 'so_th_n32.pg', (6, 12), 10, 19, (1, 27))
+EX ('LEX', 'so_th_n32.pg', (21, 3), 11, 20, (1, 27))
+EX ('LEX', 'so_th_n32.pg', (18, 21), 12, 21, (1, 24))
+RC 0

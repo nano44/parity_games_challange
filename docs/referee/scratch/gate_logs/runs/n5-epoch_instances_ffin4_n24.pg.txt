@@ -1,0 +1,12 @@
+GAME n5-epoch/instances/ffin4_n24.pg
+BGmax 3
+GAMES 1
+INC 7
+K 20
+MAXPH 19
+SGmax 6
+SQZ_chk 504
+steps 19
+stretches 1
+VIOLATIONS 0
+RC 0

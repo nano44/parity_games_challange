@@ -1,0 +1,14 @@
+GAME red/so/instances/pftheta34_n32.pg
+BIT_chk 445
+DCOPY_chk 1
+DESC 28
+FROZEN_chk 34
+GAMES 1
+ROOT_chk 71
+TD 444
+WCH 84
+WCT 34
+trans 34
+wruns 1
+VIOLATIONS 0
+RC 0

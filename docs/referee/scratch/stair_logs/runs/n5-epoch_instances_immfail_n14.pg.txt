@@ -1,0 +1,13 @@
+GAME n5-epoch/instances/immfail_n14.pg
+BIT_chk 22
+DESC 0
+FROZEN_chk 3
+GAMES 1
+ROOT_chk 11
+TD 23
+WCH 11
+WCT 3
+trans 3
+wruns 2
+VIOLATIONS 0
+RC 0

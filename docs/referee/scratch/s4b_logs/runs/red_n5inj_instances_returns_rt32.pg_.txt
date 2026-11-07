@@ -1,0 +1,9 @@
+GAME red/n5inj/instances/returns_rt32.pg 
+GAMES 1
+enum_states 55
+keep_chk 52
+loc_chk 57
+rhos 112
+states 55
+VIOLATIONS 0
+RC 0

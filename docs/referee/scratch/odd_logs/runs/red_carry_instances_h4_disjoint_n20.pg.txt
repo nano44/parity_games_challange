@@ -1,0 +1,7 @@
+GAME red/carry/instances/h4_disjoint_n20.pg
+GAMES 1
+OLD_chk 23
+STEP_caseII 2
+STEP_chk 18
+VIOLATIONS 0
+RC 0

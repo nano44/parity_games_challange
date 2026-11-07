@@ -49,6 +49,13 @@ def start_pair(g, E, Ed, start=None):
     if start:
         for v, w in start[0].items(): sigma[v] = w
         for v, w in start[1].items(): tau[v] = w
+        # start validation (box 113, referee finding D-ODD-1 / F-1): every start move must be an edge of its owner's vertex
+        bad = [(v, w) for d, own in ((start[0], 0), (start[1], 1)) for v, w in d.items()
+               if not (0 <= v < g.n and g.owner[v] == own and w in g.succ[v])]
+        # strict for L-NEW's own tools (scripts under experiments/new) or when N5X_STRICT_START=1; other lanes' callers are unchanged
+        # (their pinned checks, e.g. si/check.sh on src54's sbq2 start, are theirs to repair; reported to the Lead)
+        strict = os.environ.get("N5X_STRICT_START") == "1" or os.path.abspath(sys.argv[0]).startswith(os.path.abspath(os.path.join(HERE, "..")) + os.sep)
+        if bad and strict: raise SystemExit(f"start_pair: invalid start entries (vertex not of that player, or move not an edge): {bad[:5]}")
     return sigma, tau
 
 def trace(g, start=None, cap=10 ** 6, check=True):

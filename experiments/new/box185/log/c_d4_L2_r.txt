@@ -1,0 +1,16 @@
+it 4 moves 2 runT 2
+it 6 moves 2 runT 3
+it 134 moves 2 runT 4
+it 212 moves 3 runT 4
+it 522 moves 3 runT 5
+it 797 moves 3 runT 6
+it 1672 moves 3 runT 7
+it 1786 moves 3 runT 8
+it 13220 moves 4 runT 6
+it 13514 moves 4 runT 7
+it 24439 moves 4 runT 8
+it 26737 moves 4 runT 9
+it 53528 moves 4 runT 10
+it 59163 moves 4 runT 11
+it 397446 moves 4 runT 12
+FINAL moves 4 runT 12

@@ -1,0 +1,9 @@
+GAME red/carry/instances/cm_mdrop_both_n28.pg 
+GAMES 1
+enum_states 10
+keep_chk 6
+loc_chk 22
+rhos 78
+states 10
+VIOLATIONS 0
+RC 0

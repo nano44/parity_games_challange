@@ -1,0 +1,12 @@
+GAME new/box54/out/hf/counter_symsi_6.pg
+GAMES 1
+OLD_chk 696
+ROOT_chk 51
+ROOT_endPE 51
+ROOT_maxlen 6
+STEP_caseII 131
+STEP_chk 1147
+trans 4
+wruns 4
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,7 @@
+GAME red/carry/instances/kin_viol_n29.pg
+GAMES 1
+OLD_chk 73
+STEP_caseII 22
+STEP_chk 70
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,15 @@
+GAME red/so/instances/so_j19_n48.pg
+CNT_chk 26
+FR 26
+FR_maxpair 1
+GAMES 1
+OLD_chk 443
+ROOT_chk 71
+ROOT_endPE 71
+ROOT_maxlen 2
+STEP_caseII 22
+STEP_chk 175
+trans 21
+wruns 2
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,13 @@
+GAME red/fbr/instances/rho3_253_n32.pg
+BIT_chk 80
+DESC 0
+FROZEN_chk 4
+GAMES 1
+ROOT_chk 6
+TD 55
+WCH 6
+WCT 4
+trans 4
+wruns 1
+VIOLATIONS 0
+RC 0

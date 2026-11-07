@@ -1,0 +1,35 @@
+BGmax 98
+GAMES 656
+INC 7083
+K 11289
+MAXPH 7540
+PH_over 71
+RC 0
+RC0 719
+SGmax 120
+SQZ_chk 529356
+VIOLATIONS 0
+skip_big 63
+steps 9379
+stretches 619
+EX ('PH_over', 'lend107_n32.pg', 1, 109, 107, 31)
+EX ('PH_over', 'lend47_n32.pg', 0, 50, 49, 31)
+EX ('PH_over', 'lend55_n32.pg', 0, 56, 55, 31)
+EX ('PH_over', 'lend72_n48.pg', 0, 74, 73, 47)
+EX ('PH_over', 'lend82_n32.pg', 1, 84, 82, 31)
+EX ('PH_over', 'nconf61_n48.pg', 3, 68, 68, 47)
+EX ('PH_over', 'nep56_n32.pg', 1, 56, 56, 31)
+EX ('PH_over', 'nep76_n40.pg', 2, 85, 79, 39)
+EX ('PH_over', 'nep92_n40.pg', 3, 95, 95, 39)
+EX ('PH_over', 'nep94_n48.pg', 3, 95, 95, 47)
+EX ('PH_over', 'ret12_n40.pg', 5, 55, 55, 39)
+EX ('PH_over', 'b6_xl2_n32.pg', 1, 86, 83, 31)
+EX ('PH_over', 'b6_xl_n32.pg', 1, 84, 81, 31)
+EX ('PH_over', 'b6_xl_n40.pg', 1, 88, 87, 39)
+EX ('PH_over', 'b6_xl_n48.pg', 1, 96, 94, 47)
+EX ('PH_over', 'b6_xw_n32.pg', 1, 78, 75, 31)
+EX ('PH_over', 'b6_xw_n40.pg', 1, 79, 76, 39)
+EX ('PH_over', 'b6_xw_n48.pg', 1, 84, 80, 47)
+EX ('PH_over', 'b6_xw_n56.pg', 1, 84, 81, 55)
+EX ('PH_over', 'frz1_n24.pg', 0, 31, 29, 23)
+DONE

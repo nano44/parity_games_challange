@@ -1,0 +1,7 @@
+GAME red/sgrow/instances/s29_n30.pg
+GAMES 1
+OLD_chk 101
+STEP_caseII 22
+STEP_chk 91
+VIOLATIONS 0
+RC 0

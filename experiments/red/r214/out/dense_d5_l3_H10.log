@@ -1,0 +1,2 @@
+MOVE d 5 t 10 z 6 r 10: SAT solve 530.4 s
+  replay T 10 moves of z 10 target True (OK) -> ../r214/out/dense_d5_l3_H10.json

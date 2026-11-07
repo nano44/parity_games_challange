@@ -1,0 +1,11 @@
+GAMES 3000
+even 6517
+flat_nc 76
+movers 7947
+nonmovers 2135
+odd 1430
+on_own_cycle_tested 1371
+ties_even 265
+ties_even_kappa_ne_index 18
+ties_odd 23
+VIOLATIONS 0

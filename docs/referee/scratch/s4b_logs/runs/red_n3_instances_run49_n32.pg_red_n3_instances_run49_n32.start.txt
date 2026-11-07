@@ -1,0 +1,4 @@
+GAME red/n3/instances/run49_n32.pg red/n3/instances/run49_n32.start
+GAMES 1
+VIOLATIONS 0
+RC 0

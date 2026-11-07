@@ -1,0 +1,16 @@
+GAME red/xing/instances/kw_n48.pg
+CNT_chk 43
+EQHI 1
+FR 44
+FR_maxpair 2
+GAMES 1
+OLD_chk 62
+ROOT_chk 1
+ROOT_endPE 1
+ROOT_maxlen 1
+STEP_caseII 80
+STEP_chk 160
+trans 40
+wruns 1
+VIOLATIONS 0
+RC 0

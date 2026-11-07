@@ -1,0 +1,12 @@
+GAME new/box51/out/dlc_d2.pg
+BGmax 0
+GAMES 1
+INC 0
+K 7
+MAXPH 7
+SGmax 0
+SQZ_chk 216
+steps 7
+stretches 1
+VIOLATIONS 0
+RC 0

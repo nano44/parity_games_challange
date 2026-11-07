@@ -1,0 +1,9 @@
+GAME red/usplit/instances/pp_K48_n449.pg
+GAMES 1
+enum_states 56
+keep_chk 53
+loc_chk 275
+rhos 1752
+states 56
+VIOLATIONS 0
+RC 0

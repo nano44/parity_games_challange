@@ -1,0 +1,15 @@
+GAME n5-epoch/instances/immfail_n14.pg
+CNT_chk 1
+FR 1
+FR_maxpair 1
+GAMES 1
+OLD_chk 20
+ROOT_chk 3
+ROOT_endPE 3
+ROOT_maxlen 1
+STEP_caseII 1
+STEP_chk 24
+trans 3
+wruns 2
+VIOLATIONS 0
+RC 0

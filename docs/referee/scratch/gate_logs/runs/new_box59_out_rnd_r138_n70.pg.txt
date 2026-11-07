@@ -1,0 +1,8 @@
+GAME new/box59/out/rnd/r138_n70.pg
+BGmax 1
+GAMES 1
+K 4
+SGmax 1
+SQZ_chk 350
+VIOLATIONS 0
+RC 0

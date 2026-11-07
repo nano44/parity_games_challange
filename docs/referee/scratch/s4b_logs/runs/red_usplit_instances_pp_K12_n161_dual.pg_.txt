@@ -1,0 +1,9 @@
+GAME red/usplit/instances/pp_K12_n161_dual.pg 
+GAMES 1
+enum_skip 1
+enum_states 18
+loc_chk 99
+rhos 1036
+states 19
+VIOLATIONS 0
+RC 0

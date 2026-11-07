@@ -1,0 +1,8 @@
+GAME red/so/instances/xsnf52_n64.pg 
+GAMES 1
+enum_states 1
+loc_chk 1
+rhos 2
+states 1
+VIOLATIONS 0
+RC 0

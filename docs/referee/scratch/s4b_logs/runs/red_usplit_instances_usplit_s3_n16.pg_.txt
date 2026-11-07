@@ -1,0 +1,4 @@
+GAME red/usplit/instances/usplit_s3_n16.pg 
+GAMES 1
+VIOLATIONS 0
+RC 0

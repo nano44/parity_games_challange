@@ -1,0 +1,13 @@
+GAME red/carry/instances/spp25_oink_n40.pg
+BIT_chk 17
+DESC 0
+FROZEN_chk 3
+GAMES 1
+ROOT_chk 8
+TD 109
+WCH 8
+WCT 3
+trans 3
+wruns 1
+VIOLATIONS 0
+RC 0

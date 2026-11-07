@@ -1,0 +1,13 @@
+GAME red/so/instances/nleq_cex_n48.pg
+BIT_chk 72
+DESC 0
+FROZEN_chk 4
+GAMES 1
+ROOT_chk 27
+TD 143
+WCH 36
+WCT 4
+trans 4
+wruns 3
+VIOLATIONS 0
+RC 0

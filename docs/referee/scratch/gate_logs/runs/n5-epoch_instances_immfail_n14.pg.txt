@@ -1,0 +1,12 @@
+GAME n5-epoch/instances/immfail_n14.pg
+BGmax 3
+GAMES 1
+INC 0
+K 6
+MAXPH 2
+SGmax 3
+SQZ_chk 98
+steps 4
+stretches 3
+VIOLATIONS 0
+RC 0

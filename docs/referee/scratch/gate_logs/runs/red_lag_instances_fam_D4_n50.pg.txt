@@ -1,0 +1,8 @@
+GAME red/lag/instances/fam_D4_n50.pg
+BGmax 0
+GAMES 1
+K 1
+SGmax 0
+SQZ_chk 100
+VIOLATIONS 0
+RC 0

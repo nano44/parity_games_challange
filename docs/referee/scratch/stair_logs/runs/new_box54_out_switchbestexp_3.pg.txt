@@ -1,0 +1,14 @@
+GAME new/box54/out/switchbestexp_3.pg
+BIT_chk 1080
+DCOPY_chk 93
+DESC 173
+FROZEN_chk 35
+GAMES 1
+ROOT_chk 491
+TD 2520
+WCH 521
+WCT 35
+trans 35
+wruns 2
+VIOLATIONS 0
+RC 0

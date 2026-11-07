@@ -1,0 +1,15 @@
+GAME red/n3/instances/run34_n40.pg
+DCOPIED 12
+DR 22
+DR_chk 41
+DS 7
+DT 0
+GAMES 1
+NF_chk 67
+ON_chk 65
+ROLD 0
+TS 0
+trans 43
+wruns 2
+VIOLATIONS 0
+RC 0

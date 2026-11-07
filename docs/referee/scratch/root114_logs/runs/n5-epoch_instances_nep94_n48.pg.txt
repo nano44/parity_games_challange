@@ -1,0 +1,15 @@
+GAME n5-epoch/instances/nep94_n48.pg
+DCOPIED 47
+DR 53
+DR_chk 107
+DS 7
+DT 0
+GAMES 1
+NF_chk 159
+ON_chk 151
+ROLD 0
+TS 0
+trans 86
+wruns 8
+VIOLATIONS 0
+RC 0

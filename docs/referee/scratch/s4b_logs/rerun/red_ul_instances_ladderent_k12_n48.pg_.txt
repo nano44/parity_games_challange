@@ -1,0 +1,9 @@
+GAME red/ul/instances/ladderent_k12_n48.pg
+GAMES 1
+enum_states 14
+keep_chk 13
+loc_chk 14
+rhos 28
+states 14
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,13 @@
+GAME si/root/instances/cone_n65.pg
+BIT_chk 84
+DESC 1
+FROZEN_chk 3
+GAMES 1
+ROOT_chk 9
+TD 45
+WCH 42
+WCT 3
+trans 3
+wruns 2
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,4 @@
+GAME n5-exhaustive/instances/nh_n8.pg n5-exhaustive/instances/nh_n8.start
+GAMES 1
+VIOLATIONS 0
+RC 0

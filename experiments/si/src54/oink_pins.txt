@@ -1,0 +1,6 @@
+sbq2_K8_m16 RESULT mode=n5 n=261 iterations=152 fallback=0 capped=0 evals=154 secs=2.28 | zielonka(oink zlk) OK strategies verified
+src2_K3 RESULT mode=n5 n=285 iterations=324 fallback=0 capped=0 evals=326 secs=7.45 | zielonka(oink zlk) OK strategies verified
+obs_K12_m24 RESULT mode=n5 n=272 iterations=324 fallback=0 capped=0 evals=326 secs=8.14 | zielonka(oink zlk) OK strategies verified
+rcl_K24 RESULT mode=n5 n=321 iterations=324 fallback=0 capped=0 evals=326 secs=10.55 | zielonka(oink zlk) OK strategies verified
+latew_K16_m32 RESULT mode=n5 n=482 iterations=560 fallback=0 capped=0 evals=562 secs=34.47 | zielonka(oink zlk) OK strategies verified
+done

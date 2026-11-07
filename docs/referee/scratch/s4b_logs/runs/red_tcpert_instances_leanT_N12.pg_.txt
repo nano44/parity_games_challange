@@ -1,0 +1,8 @@
+GAME red/tcpert/instances/leanT_N12.pg 
+GAMES 1
+enum_states 11
+loc_chk 43
+rhos 4272
+states 11
+VIOLATIONS 0
+RC 0

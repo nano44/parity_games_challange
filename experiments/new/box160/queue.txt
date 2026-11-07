@@ -1,0 +1,7 @@
+box160/run_kf.sh 4 1 9 10 11
+box160/run_iso.sh "NOL0=1" 4 8 9
+box160/run_kf.sh 3 8 8 9 10
+box160/run_env.sh "FREE0=1 ONCE0=1 KF=2" ext 3 10 11 12
+box160/run_iso.sh "ISO=1 FRZ=1" 4 9 10 11
+box160/run_iso.sh "NOW=1 FRZ=1" 4 9 10 11
+box160/run_kf.sh 4 2 13 14 15

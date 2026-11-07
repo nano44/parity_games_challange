@@ -1,0 +1,12 @@
+GAME n5-epoch/instances/ffin12_n32.pg
+BGmax 24
+GAMES 1
+INC 18
+K 33
+MAXPH 23
+SGmax 24
+SQZ_chk 1088
+steps 32
+stretches 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,14 @@
+GAME red/xing/instances/obr_n32.pg
+BIT_chk 80
+DCOPY_chk 1
+DESC 10
+FROZEN_chk 16
+GAMES 1
+ROOT_chk 27
+TD 155
+WCH 40
+WCT 16
+trans 16
+wruns 2
+VIOLATIONS 0
+RC 0

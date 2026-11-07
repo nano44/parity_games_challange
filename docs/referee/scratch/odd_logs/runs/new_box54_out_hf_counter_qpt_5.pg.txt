@@ -1,0 +1,5 @@
+GAME new/box54/out/hf/counter_qpt_5.pg
+GAMES 1
+OLD_chk 10
+VIOLATIONS 0
+RC 0

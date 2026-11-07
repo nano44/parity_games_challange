@@ -1,0 +1,21 @@
+PIN odxi_min_n12 51661a75a4ec start 91ae8cad39b2
+OINK odxi_min_n12 --zlk verified
+OINK odxi_min_n12 --tl verified
+PINWIN odxi_min_n12.pg n 12 states 3 fallbacks 0 W0 12 AGREE True
+n5b iterations 2 fallbacks 0 states 3 | n5x states 3 | identical state sequences: True
+ANCHOR odxi_min_n12.pg n 12 RUNS 1 FL 1 EPOCHS 1 GCH 0 VIOL 0 LVLVIOL 0 CMOVES 0 CMNORISE 0 CMLATE 0 MAXEP 1 EPVIOL 0 BOUNDVIOL 0 XIB 0 SBB 0 CYB 0 MAXLEN 1 CMXICH 0
+ODXI odxi_min_n12.pg n 12 RUNS 1 FL 1 XICH_ODIFF 1 GATEREL 0
+PIN odxi_lasso_n13 5cf187982d72 start c2a4e074f892
+OINK odxi_lasso_n13 --zlk verified
+OINK odxi_lasso_n13 --tl verified
+PINWIN odxi_lasso_n13.pg n 13 states 5 fallbacks 2 W0 13 AGREE True
+n5b iterations 4 fallbacks 2 states 5 | n5x states 5 | identical state sequences: True
+ANCHOR odxi_lasso_n13.pg n 13 RUNS 1 FL 1 EPOCHS 1 GCH 0 VIOL 0 LVLVIOL 0 CMOVES 0 CMNORISE 0 CMLATE 0 MAXEP 1 EPVIOL 0 BOUNDVIOL 0 XIB 0 SBB 0 CYB 0 MAXLEN 1 CMXICH 0
+ODXI odxi_lasso_n13.pg n 13 RUNS 1 FL 1 XICH_ODIFF 1 GATEREL 0
+PIN odxi_many_n32 42094483eefd start c7565702c359
+OINK odxi_many_n32 --zlk verified
+OINK odxi_many_n32 --tl verified
+PINWIN odxi_many_n32.pg n 32 states 27 fallbacks 5 W0 32 AGREE True
+n5b iterations 26 fallbacks 5 states 27 | n5x states 27 | identical state sequences: True
+ANCHOR odxi_many_n32.pg n 32 RUNS 3 FL 8 EPOCHS 7 GCH 4 VIOL 0 LVLVIOL 0 CMOVES 0 CMNORISE 0 CMLATE 0 MAXEP 2 EPVIOL 0 BOUNDVIOL 0 XIB 4 SBB 0 CYB 0 MAXLEN 3 CMXICH 0
+ODXI odxi_many_n32.pg n 32 RUNS 3 FL 8 XICH_ODIFF 43 GATEREL 0

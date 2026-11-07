@@ -1,0 +1,413 @@
+GAME n5-epoch/instances/ffin4_n24.pg n5-epoch/instances/ffin4_n24.start RESETS ffin4_n24.pg n 24 WT 15 WCT 15 WCH 64 GOOD 132 TD 284 RT 15 ROOTRES 15 VIOL 0 VB 0 MAXTD/run 180 MAXWCT/run 8
+GAME n5-epoch/instances/ffin12_n32.pg n5-epoch/instances/ffin12_n32.start RESETS ffin12_n32.pg n 32 WT 17 WCT 17 WCH 71 GOOD 110 TD 398 RT 15 ROOTRES 15 VIOL 0 VB 0 MAXTD/run 163 MAXWCT/run 7
+GAME n5-epoch/instances/gci2_n12.pg n5-epoch/instances/gci2_n12.start RESETS gci2_n12.pg n 12 WT 10 WCT 10 WCH 15 GOOD 21 TD 46 RT 9 ROOTRES 9 VIOL 0 VB 0 MAXTD/run 46 MAXWCT/run 10
+GAME n5-epoch/instances/ffin5_n32.pg n5-epoch/instances/ffin5_n32.start RESETS ffin5_n32.pg n 32 WT 12 WCT 12 WCH 32 GOOD 52 TD 149 RT 12 ROOTRES 12 VIOL 0 VB 0 MAXTD/run 61 MAXWCT/run 7
+GAME n5-epoch/instances/gci3_n24.pg n5-epoch/instances/gci3_n24.start RESETS gci3_n24.pg n 24 WT 20 WCT 20 WCH 53 GOOD 98 TD 226 RT 19 ROOTRES 19 VIOL 0 VB 0 MAXTD/run 226 MAXWCT/run 20
+GAME n5-epoch/instances/immfail_n14.pg RESETS immfail_n14.pg n 14 WT 3 WCT 3 WCH 11 GOOD 12 TD 23 RT 3 ROOTRES 3 VIOL 0 VB 0 MAXTD/run 16 MAXWCT/run 2
+GAME n5-epoch/instances/immp_cex_n11.pg n5-epoch/instances/immp_cex_n11.start RESETS immp_cex_n11.pg n 11 WT 2 WCT 2 WCH 6 GOOD 8 TD 6 RT 2 ROOTRES 2 VIOL 0 VB 0 MAXTD/run 6 MAXWCT/run 2
+GAME n5-epoch/instances/lcount_n23.pg n5-epoch/instances/lcount_n23.start RESETS lcount_n23.pg n 23 WT 4 WCT 4 WCH 18 GOOD 49 TD 49 RT 3 ROOTRES 3 VIOL 0 VB 0 MAXTD/run 49 MAXWCT/run 4
+GAME n5-epoch/instances/lend13_n16.pg n5-epoch/instances/lend13_n16.start RESETS lend13_n16.pg n 16 WT 13 WCT 13 WCH 13 GOOD 13 TD 90 RT 11 ROOTRES 11 VIOL 0 VB 0 MAXTD/run 90 MAXWCT/run 13
+GAME n5-epoch/instances/lend15_n48.pg n5-epoch/instances/lend15_n48.start RESETS lend15_n48.pg n 48 WT 11 WCT 11 WCH 43 GOOD 162 TD 48 RT 8 ROOTRES 8 VIOL 0 VB 0 MAXTD/run 20 MAXWCT/run 3
+GAME n5-epoch/instances/lend27_n24.pg n5-epoch/instances/lend27_n24.start RESETS lend27_n24.pg n 24 WT 23 WCT 23 WCH 61 GOOD 165 TD 19 RT 10 ROOTRES 10 VIOL 0 VB 0 MAXTD/run 7 MAXWCT/run 8
+GAME n5-epoch/instances/lend107_n32.pg n5-epoch/instances/lend107_n32.start RESETS lend107_n32.pg n 32 WT 96 WCT 96 WCH 172 GOOD 508 TD 845 RT 87 ROOTRES 87 VIOL 0 VB 0 MAXTD/run 211 MAXWCT/run 15
+GAME n5-epoch/instances/lend55_n32.pg n5-epoch/instances/lend55_n32.start RESETS lend55_n32.pg n 32 WT 44 WCT 44 WCH 81 GOOD 198 TD 324 RT 36 ROOTRES 36 VIOL 0 VB 0 MAXTD/run 170 MAXWCT/run 11
+GAME n5-epoch/instances/lend39f_n32.pg n5-epoch/instances/lend39f_n32.start RESETS lend39f_n32.pg n 32 WT 36 WCT 36 WCH 81 GOOD 299 TD 228 RT 28 ROOTRES 28 VIOL 0 VB 0 MAXTD/run 88 MAXWCT/run 8
+GAME n5-epoch/instances/lend47_n32.pg n5-epoch/instances/lend47_n32.start RESETS lend47_n32.pg n 32 WT 44 WCT 44 WCH 84 GOOD 169 TD 416 RT 27 ROOTRES 27 VIOL 0 VB 0 MAXTD/run 285 MAXWCT/run 19
+GAME n5-epoch/instances/lend9_n8.pg n5-epoch/instances/lend9_n8.start RESETS lend9_n8.pg n 8 WT 5 WCT 5 WCH 5 GOOD 17 TD 5 RT 3 ROOTRES 3 VIOL 0 VB 0 MAXTD/run 2 MAXWCT/run 2
+GAME n5-epoch/instances/nep13_n24.pg n5-epoch/instances/nep13_n24.start RESETS nep13_n24.pg n 24 WT 15 WCT 14 WCH 23 GOOD 28 TD 130 RT 12 ROOTRES 12 VIOL 0 VB 0 MAXTD/run 130 MAXWCT/run 12
+GAME n5-epoch/instances/lend72_n48.pg n5-epoch/instances/lend72_n48.start RESETS lend72_n48.pg n 48 WT 62 WCT 62 WCH 184 GOOD 580 TD 802 RT 54 ROOTRES 54 VIOL 0 VB 0 MAXTD/run 334 MAXWCT/run 14
+GAME n5-epoch/instances/lend82_n32.pg n5-epoch/instances/lend82_n32.start RESETS lend82_n32.pg n 32 WT 71 WCT 71 WCH 141 GOOD 326 TD 592 RT 65 ROOTRES 65 VIOL 0 VB 0 MAXTD/run 157 MAXWCT/run 14
+GAME n5-epoch/instances/nep22f_n64.pg n5-epoch/instances/nep22f_n64.start RESETS nep22f_n64.pg n 64 WT 11 WCT 9 WCH 39 GOOD 156 TD 71 RT 7 ROOTRES 7 VIOL 0 VB 0 MAXTD/run 60 MAXWCT/run 3
+GAME n5-epoch/instances/nconf61_n48.pg n5-epoch/instances/nconf61_n48.start RESETS nconf61_n48.pg n 48 WT 61 WCT 61 WCH 333 GOOD 1865 TD 1606 RT 61 ROOTRES 61 VIOL 0 VB 0 MAXTD/run 441 MAXWCT/run 13
+GAME n5-epoch/instances/nep56_n32.pg n5-epoch/instances/nep56_n32.start RESETS nep56_n32.pg n 32 WT 53 WCT 53 WCH 166 GOOD 545 TD 598 RT 53 ROOTRES 53 VIOL 0 VB 0 MAXTD/run 279 MAXWCT/run 25
+GAME n5-epoch/instances/nep92_n40.pg n5-epoch/instances/nep92_n40.start RESETS nep92_n40.pg n 40 WT 87 WCT 87 WCH 394 GOOD 2020 TD 1658 RT 86 ROOTRES 86 VIOL 0 VB 0 MAXTD/run 377 MAXWCT/run 14
+GAME n5-epoch/instances/ret12_n40.pg n5-epoch/instances/ret12_n40.start RESETS ret12_n40.pg n 40 WT 51 WCT 51 WCH 251 GOOD 1493 TD 1287 RT 51 ROOTRES 51 VIOL 0 VB 0 MAXTD/run 467 MAXWCT/run 14
+GAME n5-epoch/instances/nep76_n40.pg n5-epoch/instances/nep76_n40.start RESETS nep76_n40.pg n 40 WT 72 WCT 72 WCH 325 GOOD 1582 TD 1417 RT 69 ROOTRES 69 VIOL 0 VB 0 MAXTD/run 387 MAXWCT/run 15
+GAME n5-exhaustive/instances/b4_cyc6_0.pg n5-exhaustive/instances/b4_cyc6_0.start RESETS b4_cyc6_0.pg n 11 WT 2 WCT 2 WCH 11 GOOD 26 TD 7 RT 2 ROOTRES 2 VIOL 0 VB 0 MAXTD/run 7 MAXWCT/run 2
+GAME n5-epoch/instances/ret14_n48.pg n5-epoch/instances/ret14_n48.start RESETS ret14_n48.pg n 48 WT 41 WCT 41 WCH 249 GOOD 997 TD 1278 RT 41 ROOTRES 41 VIOL 0 VB 0 MAXTD/run 201 MAXWCT/run 6
+GAME n5-exhaustive/instances/b4_cyc6_1.pg RESETS b4_cyc6_1.pg n 12 WT 4 WCT 4 WCH 14 GOOD 29 TD 20 RT 3 ROOTRES 3 VIOL 0 VB 0 MAXTD/run 20 MAXWCT/run 4
+GAME n5-epoch/instances/nep94_n48.pg n5-epoch/instances/nep94_n48.start RESETS nep94_n48.pg n 48 WT 86 WCT 86 WCH 396 GOOD 2160 TD 1672 RT 77 ROOTRES 77 VIOL 0 VB 0 MAXTD/run 396 MAXWCT/run 14
+GAME n5-exhaustive/instances/b4_n4all_cyc3_0.pg n5-exhaustive/instances/b4_n4all_cyc3_0.start RESETS b4_n4all_cyc3_0.pg n 4 WT 1 WCT 1 WCH 1 GOOD 1 TD 1 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 1 MAXWCT/run 1
+GAME n5-exhaustive/instances/b4_theta_n7.pg n5-exhaustive/instances/b4_theta_n7.start RESETS b4_theta_n7.pg n 7 WT 1 WCT 1 WCH 1 GOOD 2 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 1
+GAME n5-exhaustive/instances/b4_n5_other_0.pg RESETS b4_n5_other_0.pg n 5 WT 1 WCT 1 WCH 2 GOOD 2 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 1
+GAME n5-exhaustive/instances/b4_nohlen5_0.pg n5-exhaustive/instances/b4_nohlen5_0.start RESETS b4_nohlen5_0.pg n 11 WT 4 WCT 4 WCH 4 GOOD 9 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 4
+GAME n5-exhaustive/instances/b5_n5_cyc4_0.pg RESETS b5_n5_cyc4_0.pg n 5 WT 1 WCT 1 WCH 2 GOOD 2 TD 4 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 4 MAXWCT/run 1
+GAME n5-exhaustive/instances/b5_os_n12.pg RESETS b5_os_n12.pg n 12 WT 10 WCT 10 WCH 14 GOOD 45 TD 41 RT 10 ROOTRES 10 VIOL 0 VB 0 MAXTD/run 19 MAXWCT/run 5
+GAME n5-exhaustive/instances/b5_o11.pg RESETS b5_o11.pg n 10 WT 7 WCT 7 WCH 7 GOOD 24 TD 22 RT 6 ROOTRES 6 VIOL 0 VB 0 MAXTD/run 18 MAXWCT/run 4
+GAME n5-epoch/instances/ret14_n64.pg n5-epoch/instances/ret14_n64.start RESETS ret14_n64.pg n 64 WT 56 WCT 56 WCH 470 GOOD 2279 TD 2154 RT 56 ROOTRES 56 VIOL 0 VB 0 MAXTD/run 664 MAXWCT/run 14
+GAME n5-exhaustive/instances/b5_os_n14.pg RESETS b5_os_n14.pg n 14 WT 14 WCT 14 WCH 19 GOOD 85 TD 65 RT 13 ROOTRES 13 VIOL 0 VB 0 MAXTD/run 31 MAXWCT/run 7
+GAME n5-exhaustive/instances/b5_os_n16.pg RESETS b5_os_n16.pg n 16 WT 16 WCT 16 WCH 21 GOOD 59 TD 123 RT 15 ROOTRES 15 VIOL 0 VB 0 MAXTD/run 75 MAXWCT/run 8
+GAME n5-exhaustive/instances/b5_os_n24.pg RESETS b5_os_n24.pg n 24 WT 43 WCT 43 WCH 73 GOOD 268 TD 415 RT 41 ROOTRES 41 VIOL 0 VB 0 MAXTD/run 225 MAXWCT/run 14
+GAME n5-exhaustive/instances/b5_os_n28.pg RESETS b5_os_n28.pg n 28 WT 52 WCT 52 WCH 96 GOOD 360 TD 570 RT 49 ROOTRES 49 VIOL 0 VB 0 MAXTD/run 246 MAXWCT/run 13
+GAME n5-exhaustive/instances/b5_os_n20.pg RESETS b5_os_n20.pg n 20 WT 24 WCT 24 WCH 35 GOOD 64 TD 162 RT 20 ROOTRES 20 VIOL 0 VB 0 MAXTD/run 87 MAXWCT/run 10
+GAME n5-exhaustive/instances/b6_xl2_n32.pg RESETS b6_xl2_n32.pg n 32 WT 73 WCT 73 WCH 214 GOOD 1100 TD 984 RT 65 ROOTRES 65 VIOL 0 VB 0 MAXTD/run 349 MAXWCT/run 22
+GAME n5-exhaustive/instances/b5_os_n32.pg RESETS b5_os_n32.pg n 32 WT 60 WCT 60 WCH 142 GOOD 492 TD 783 RT 56 ROOTRES 56 VIOL 0 VB 0 MAXTD/run 305 MAXWCT/run 14
+GAME n5-exhaustive/instances/b6_xl_n32.pg RESETS b6_xl_n32.pg n 32 WT 71 WCT 71 WCH 217 GOOD 1005 TD 920 RT 61 ROOTRES 61 VIOL 0 VB 0 MAXTD/run 348 MAXWCT/run 22
+GAME n5-exhaustive/instances/b6_xs_n24.pg RESETS b6_xs_n24.pg n 24 WT 21 WCT 21 WCH 25 GOOD 29 TD 218 RT 21 ROOTRES 21 VIOL 0 VB 0 MAXTD/run 218 MAXWCT/run 21
+GAME n5-exhaustive/instances/b5_os_n40.pg RESETS b5_os_n40.pg n 40 WT 63 WCT 63 WCH 177 GOOD 735 TD 1159 RT 59 ROOTRES 59 VIOL 0 VB 0 MAXTD/run 614 MAXWCT/run 17
+GAME n5-exhaustive/instances/b6_xs_n32.pg RESETS b6_xs_n32.pg n 32 WT 29 WCT 29 WCH 36 GOOD 44 TD 354 RT 29 ROOTRES 29 VIOL 0 VB 0 MAXTD/run 354 MAXWCT/run 29
+GAME n5-exhaustive/instances/b6_xl_n40.pg RESETS b6_xl_n40.pg n 40 WT 77 WCT 77 WCH 281 GOOD 1690 TD 2105 RT 77 ROOTRES 77 VIOL 0 VB 0 MAXTD/run 672 MAXWCT/run 25
+GAME n5-exhaustive/instances/b6_xs_n48.pg RESETS b6_xs_n48.pg n 48 WT 37 WCT 37 WCH 59 GOOD 76 TD 742 RT 37 ROOTRES 37 VIOL 0 VB 0 MAXTD/run 742 MAXWCT/run 37
+GAME n5-exhaustive/instances/b6_xs_n40.pg RESETS b6_xs_n40.pg n 40 WT 36 WCT 36 WCH 48 GOOD 56 TD 805 RT 36 ROOTRES 36 VIOL 0 VB 0 MAXTD/run 805 MAXWCT/run 36
+GAME n5-exhaustive/instances/b6_xl_n48.pg RESETS b6_xl_n48.pg n 48 WT 85 WCT 85 WCH 361 GOOD 2311 TD 2578 RT 85 ROOTRES 85 VIOL 0 VB 0 MAXTD/run 861 MAXWCT/run 24
+GAME n5-exhaustive/instances/b6_xw_n32.pg RESETS b6_xw_n32.pg n 32 WT 65 WCT 65 WCH 239 GOOD 1473 TD 1453 RT 65 ROOTRES 65 VIOL 0 VB 0 MAXTD/run 442 MAXWCT/run 21
+GAME n5-exhaustive/instances/canonA_0.pg RESETS canonA_0.pg n 15 WT 3 WCT 3 WCH 10 GOOD 63 TD 31 RT 3 ROOTRES 3 VIOL 0 VB 0 MAXTD/run 31 MAXWCT/run 3
+GAME n5-exhaustive/instances/canonA_1.pg RESETS canonA_1.pg n 15 WT 3 WCT 3 WCH 14 GOOD 63 TD 23 RT 3 ROOTRES 3 VIOL 0 VB 0 MAXTD/run 23 MAXWCT/run 3
+GAME n5-exhaustive/instances/frz1_n24.pg n5-exhaustive/instances/frz1_n24.start RESETS frz1_n24.pg n 24 WT 28 WCT 28 WCH 59 GOOD 148 TD 404 RT 28 ROOTRES 28 VIOL 0 VB 0 MAXTD/run 368 MAXWCT/run 24
+GAME n5-exhaustive/instances/frz2_n24.pg n5-exhaustive/instances/frz2_n24.start RESETS frz2_n24.pg n 24 WT 23 WCT 23 WCH 55 GOOD 119 TD 337 RT 23 ROOTRES 23 VIOL 0 VB 0 MAXTD/run 337 MAXWCT/run 23
+GAME n5-exhaustive/instances/b6_xw_n40.pg RESETS b6_xw_n40.pg n 40 WT 66 WCT 66 WCH 284 GOOD 1512 TD 1731 RT 66 ROOTRES 66 VIOL 0 VB 0 MAXTD/run 627 MAXWCT/run 22
+GAME n5-exhaustive/instances/b6_xw_n56.pg RESETS b6_xw_n56.pg n 56 WT 72 WCT 72 WCH 430 GOOD 2495 TD 2858 RT 72 ROOTRES 72 VIOL 0 VB 0 MAXTD/run 1003 MAXWCT/run 23
+GAME n5-exhaustive/instances/frz3_n24.pg n5-exhaustive/instances/frz3_n24.start RESETS frz3_n24.pg n 24 WT 24 WCT 24 WCH 56 GOOD 160 TD 401 RT 24 ROOTRES 24 VIOL 0 VB 0 MAXTD/run 401 MAXWCT/run 24
+GAME n5-exhaustive/instances/n3all_maxph_1.pg n5-exhaustive/instances/n3all_maxph_1.start RESETS n3all_maxph_1.pg n 3 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME n5-exhaustive/instances/n3all_maxph_0.pg n5-exhaustive/instances/n3all_maxph_0.start RESETS n3all_maxph_0.pg n 3 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME n5-exhaustive/instances/n3all_maxph_2.pg n5-exhaustive/instances/n3all_maxph_2.start RESETS n3all_maxph_2.pg n 3 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME n5-exhaustive/instances/b6_xw_n48.pg RESETS b6_xw_n48.pg n 48 WT 71 WCT 71 WCH 381 GOOD 2272 TD 2465 RT 71 ROOTRES 71 VIOL 0 VB 0 MAXTD/run 892 MAXWCT/run 22
+GAME n5-exhaustive/instances/n4_maxph_0.pg RESETS n4_maxph_0.pg n 4 WT 1 WCT 1 WCH 1 GOOD 1 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 1
+GAME n5-exhaustive/instances/n4_maxph_1.pg RESETS n4_maxph_1.pg n 4 WT 1 WCT 1 WCH 1 GOOD 1 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 1
+GAME n5-exhaustive/instances/n4all_maxph_0.pg n5-exhaustive/instances/n4all_maxph_0.start RESETS n4all_maxph_0.pg n 4 WT 2 WCT 2 WCH 3 GOOD 3 TD 2 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 2 MAXWCT/run 2
+GAME n5-exhaustive/instances/n4all_tgbad_0.pg n5-exhaustive/instances/n4all_tgbad_0.start RESETS n4all_tgbad_0.pg n 4 WT 1 WCT 1 WCH 2 GOOD 2 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 1
+GAME n5-exhaustive/instances/n4_thch_0.pg RESETS n4_thch_0.pg n 4 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME n5-exhaustive/instances/n4all_thch_0.pg n5-exhaustive/instances/n4all_thch_0.start RESETS n4all_thch_0.pg n 4 WT 1 WCT 1 WCH 1 GOOD 1 TD 1 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 1 MAXWCT/run 1
+GAME n5-exhaustive/instances/n4all_maxph_1.pg n5-exhaustive/instances/n4all_maxph_1.start RESETS n4all_maxph_1.pg n 4 WT 2 WCT 2 WCH 3 GOOD 3 TD 2 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 2 MAXWCT/run 2
+GAME n5-exhaustive/instances/n5s_maxph_0.pg RESETS n5s_maxph_0.pg n 5 WT 1 WCT 1 WCH 2 GOOD 2 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 1
+GAME n5-exhaustive/instances/nh_n8.pg n5-exhaustive/instances/nh_n8.start RESETS nh_n8.pg n 8 WT 3 WCT 3 WCH 5 GOOD 13 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 3
+GAME n5-exhaustive/instances/thetaA_canon_n8.pg RESETS thetaA_canon_n8.pg n 8 WT 3 WCT 3 WCH 5 GOOD 18 TD 8 RT 3 ROOTRES 3 VIOL 0 VB 0 MAXTD/run 8 MAXWCT/run 3
+GAME n5-exhaustive/instances/thetaA_canon_n12.pg RESETS thetaA_canon_n12.pg n 12 WT 3 WCT 3 WCH 7 GOOD 48 TD 24 RT 3 ROOTRES 3 VIOL 0 VB 0 MAXTD/run 24 MAXWCT/run 3
+GAME n5-exhaustive/instances/thetaA_n7.pg n5-exhaustive/instances/thetaA_n7.start RESETS thetaA_n7.pg n 7 WT 3 WCT 3 WCH 5 GOOD 10 TD 8 RT 3 ROOTRES 3 VIOL 0 VB 0 MAXTD/run 8 MAXWCT/run 3
+GAME n5-exhaustive/instances/thetaA_n17.pg n5-exhaustive/instances/thetaA_n17.start RESETS thetaA_n17.pg n 17 WT 3 WCT 3 WCH 13 GOOD 73 TD 14 RT 3 ROOTRES 3 VIOL 0 VB 0 MAXTD/run 14 MAXWCT/run 3
+GAME n5-exhaustive/instances/thetaA_n9.pg n5-exhaustive/instances/thetaA_n9.start RESETS thetaA_n9.pg n 9 WT 3 WCT 3 WCH 5 GOOD 31 TD 11 RT 3 ROOTRES 3 VIOL 0 VB 0 MAXTD/run 11 MAXWCT/run 3
+GAME n5-exhaustive/instances/thetaA_n6.pg n5-exhaustive/instances/thetaA_n6.start RESETS thetaA_n6.pg n 6 WT 3 WCT 3 WCH 5 GOOD 9 TD 7 RT 2 ROOTRES 2 VIOL 0 VB 0 MAXTD/run 7 MAXWCT/run 3
+GAME n5-exhaustive/instances/wk1_n32.pg n5-exhaustive/instances/wk1_n32.start RESETS wk1_n32.pg n 32 WT 4 WCT 4 WCH 20 GOOD 25 TD 14 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 14 MAXWCT/run 2
+GAME n5-exhaustive/instances/wk2_n32.pg n5-exhaustive/instances/wk2_n32.start RESETS wk2_n32.pg n 32 WT 4 WCT 4 WCH 12 GOOD 17 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 3
+GAME new/box48/instances/long121_n40.pg new/box48/instances/long121_n40.start RESETS long121_n40.pg n 40 WT 113 WCT 113 WCH 381 GOOD 2348 TD 1822 RT 107 ROOTRES 107 VIOL 0 VB 0 MAXTD/run 441 MAXWCT/run 17
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.start RESETS best_qpc_nep90_n40_s61.pg n 64 WT 90 WCT 90 WCH 512 GOOD 3054 TD 2516 RT 89 ROOTRES 89 VIOL 0 VB 0 MAXTD/run 492 MAXWCT/run 15
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.start RESETS best_qpc_nep76_n40_s63.pg n 64 WT 80 WCT 80 WCH 564 GOOD 3372 TD 3015 RT 80 ROOTRES 80 VIOL 0 VB 0 MAXTD/run 1060 MAXWCT/run 16
+GAME red/carry/instances/absmono_viol_n44.pg RESETS absmono_viol_n44.pg n 44 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/carry/instances/carry3_2_2.pg RESETS carry3_2_2.pg n 47 WT 1 WCT 1 WCH 3 GOOD 12 TD 6 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 6 MAXWCT/run 1
+GAME red/carry/instances/cm_mdrop_both_n28.pg RESETS cm_mdrop_both_n28.pg n 28 WT 3 WCT 3 WCH 25 GOOD 74 TD 149 RT 3 ROOTRES 3 VIOL 0 VB 0 MAXTD/run 149 MAXWCT/run 3
+GAME red/carry/instances/cm_mdrop_oink_n28.pg RESETS cm_mdrop_oink_n28.pg n 28 WT 1 WCT 1 WCH 8 GOOD 9 TD 9 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 9 MAXWCT/run 1
+GAME red/carry/instances/ctx11_n40.pg RESETS ctx11_n40.pg n 40 WT 2 WCT 2 WCH 20 GOOD 133 TD 101 RT 2 ROOTRES 2 VIOL 0 VB 0 MAXTD/run 101 MAXWCT/run 2
+GAME red/carry/instances/ctx12_n40.pg RESETS ctx12_n40.pg n 40 WT 1 WCT 1 WCH 2 GOOD 10 TD 22 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 22 MAXWCT/run 1
+GAME red/carry/instances/ctx6_n20.pg RESETS ctx6_n20.pg n 20 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/carry/instances/ctx13_n40.pg RESETS ctx13_n40.pg n 40 WT 8 WCT 8 WCH 25 GOOD 212 TD 160 RT 8 ROOTRES 8 VIOL 0 VB 0 MAXTD/run 86 MAXWCT/run 5
+GAME red/carry/instances/ctx6_n56.pg RESETS ctx6_n56.pg n 56 WT 1 WCT 1 WCH 2 GOOD 16 TD 2 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 2 MAXWCT/run 1
+GAME red/carry/instances/ctx7_n30.pg RESETS ctx7_n30.pg n 30 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/carry/instances/f1_twofall_n48.pg RESETS f1_twofall_n48.pg n 48 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/carry/instances/f1_twodef_n48.pg RESETS f1_twodef_n48.pg n 48 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/carry/instances/fall3_n76.pg RESETS fall3_n76.pg n 76 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/carry/instances/fallv_viol_n28.pg RESETS fallv_viol_n28.pg n 28 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/carry/instances/fall4_n116.pg RESETS fall4_n116.pg n 116 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.start RESETS best_qpc_nep90_n40_s62.pg n 80 WT 93 WCT 93 WCH 746 GOOD 4372 TD 3971 RT 90 ROOTRES 90 VIOL 0 VB 0 MAXTD/run 875 MAXWCT/run 15
+GAME red/carry/instances/firedlong667_n20.pg RESETS firedlong667_n20.pg n 20 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/carry/instances/fired10_n20.pg RESETS fired10_n20.pg n 20 WT 1 WCT 1 WCH 4 GOOD 4 TD 44 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 44 MAXWCT/run 1
+GAME red/carry/instances/firedlong667_n43.pg RESETS firedlong667_n43.pg n 43 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME new/box48/out/qpcclimb/scale/snap_n80_s62.pg new/box48/out/qpcclimb/scale/snap_n80_s62.start RESETS snap_n80_s62.pg n 80 WT 93 WCT 93 WCH 746 GOOD 4372 TD 3971 RT 90 ROOTRES 90 VIOL 0 VB 0 MAXTD/run 875 MAXWCT/run 15
+GAME red/carry/instances/gapbW_dup_n20.pg RESETS gapbW_dup_n20.pg n 20 WT 2 WCT 2 WCH 9 GOOD 9 TD 3 RT 2 ROOTRES 2 VIOL 0 VB 0 MAXTD/run 3 MAXWCT/run 2
+GAME red/carry/instances/h4_compound2x2_n44.pg RESETS h4_compound2x2_n44.pg n 44 WT 3 WCT 3 WCH 10 GOOD 81 TD 66 RT 3 ROOTRES 3 VIOL 0 VB 0 MAXTD/run 66 MAXWCT/run 3
+GAME red/carry/instances/firedstep13_n76.pg RESETS firedstep13_n76.pg n 76 WT 2 WCT 2 WCH 26 GOOD 94 TD 94 RT 2 ROOTRES 2 VIOL 0 VB 0 MAXTD/run 94 MAXWCT/run 2
+GAME red/carry/instances/h4_compound_n44.pg RESETS h4_compound_n44.pg n 44 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/carry/instances/gapb_dup_n20.pg RESETS gapb_dup_n20.pg n 20 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/carry/instances/h4_def2ctx_n20.pg RESETS h4_def2ctx_n20.pg n 20 WT 1 WCT 1 WCH 1 GOOD 2 TD 6 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 6 MAXWCT/run 1
+GAME red/carry/instances/h4_disjoint_n20.pg RESETS h4_disjoint_n20.pg n 20 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/carry/instances/h4_notweaker_n20.pg RESETS h4_notweaker_n20.pg n 20 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/carry/instances/kfirst_viol_n13.pg RESETS kfirst_viol_n13.pg n 13 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/carry/instances/h4_def7_n28.pg RESETS h4_def7_n28.pg n 28 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/carry/instances/kin_viol_n29.pg RESETS kin_viol_n29.pg n 29 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/carry/instances/lemmaS_Mdrop_n20.pg RESETS lemmaS_Mdrop_n20.pg n 20 WT 1 WCT 1 WCH 1 GOOD 2 TD 6 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 6 MAXWCT/run 1
+GAME red/carry/instances/lalg_dtl_mviol_n20.pg RESETS lalg_dtl_mviol_n20.pg n 20 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/carry/instances/lemmaS_viol_n20.pg RESETS lemmaS_viol_n20.pg n 20 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/carry/instances/lex_viol_inj_n28.pg RESETS lex_viol_inj_n28.pg n 28 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/carry/instances/meet_viol_n17.pg RESETS meet_viol_n17.pg n 17 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/carry/instances/lex_viol_tie_n28.pg RESETS lex_viol_tie_n28.pg n 28 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/carry/instances/meet_viol_n29.pg RESETS meet_viol_n29.pg n 29 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/carry/instances/nosig_2_3.pg RESETS nosig_2_3.pg n 24 WT 1 WCT 1 WCH 4 GOOD 4 TD 38 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 38 MAXWCT/run 1
+GAME red/carry/instances/phi_flat_alive_n32.pg RESETS phi_flat_alive_n32.pg n 32 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/carry/instances/pk_viol_n20.pg RESETS pk_viol_n20.pg n 20 WT 1 WCT 1 WCH 1 GOOD 1 TD 1 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 1 MAXWCT/run 1
+GAME red/carry/instances/spp19_oink_n30.pg RESETS spp19_oink_n30.pg n 30 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/carry/instances/replay4_n32.pg RESETS replay4_n32.pg n 32 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/carry/instances/spp19_stable_n30.pg RESETS spp19_stable_n30.pg n 30 WT 2 WCT 2 WCH 12 GOOD 67 TD 46 RT 2 ROOTRES 2 VIOL 0 VB 0 MAXTD/run 46 MAXWCT/run 2
+GAME red/carry/instances/spp22_oink_n40.pg RESETS spp22_oink_n40.pg n 40 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/carry/instances/stealonce_both_n45.pg RESETS stealonce_both_n45.pg n 45 WT 1 WCT 1 WCH 7 GOOD 58 TD 122 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 122 MAXWCT/run 1
+GAME red/carry/instances/stealonce_core_n76.pg RESETS stealonce_core_n76.pg n 76 WT 1 WCT 1 WCH 9 GOOD 72 TD 150 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 150 MAXWCT/run 1
+GAME red/carry/instances/spp25_oink_n40.pg RESETS spp25_oink_n40.pg n 40 WT 3 WCT 3 WCH 8 GOOD 45 TD 109 RT 3 ROOTRES 3 VIOL 0 VB 0 MAXTD/run 109 MAXWCT/run 3
+GAME red/carry/instances/tstep_near_n20.pg RESETS tstep_near_n20.pg n 20 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/carry/instances/stealer_viol_n76.pg RESETS stealer_viol_n76.pg n 76 WT 1 WCT 1 WCH 6 GOOD 43 TD 31 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 31 MAXWCT/run 1
+GAME red/ctxp/instances/deep1_n13.pg RESETS deep1_n13.pg n 13 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/carry/instances/stealonce_viol_n76.pg RESETS stealonce_viol_n76.pg n 76 WT 1 WCT 1 WCH 7 GOOD 50 TD 36 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 36 MAXWCT/run 1
+GAME red/ctxp/instances/deep1_n21.pg RESETS deep1_n21.pg n 21 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/ctxp/instances/margin1_mc5.pg RESETS margin1_mc5.pg n 50 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/ctxp/instances/margin1_n20.pg RESETS margin1_n20.pg n 20 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/ctxp/instances/margin1_mc1.pg RESETS margin1_mc1.pg n 80 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/dtl/instances/lalg_dtl_pertop31_n18.pg RESETS lalg_dtl_pertop31_n18.pg n 18 WT 1 WCT 1 WCH 6 GOOD 25 TD 10 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 10 MAXWCT/run 1
+GAME red/dtl/instances/lalg_dtl_restart8_n20.pg RESETS lalg_dtl_restart8_n20.pg n 20 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/fbr/instances/bghm_k3_gap4_A.pg RESETS bghm_k3_gap4_A.pg n 45 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/fbr/instances/bghm_k1_gap6_A.pg RESETS bghm_k1_gap6_A.pg n 21 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/fbr/instances/lev74_n40.pg RESETS lev74_n40.pg n 40 WT 6 WCT 6 WCH 17 GOOD 74 TD 104 RT 6 ROOTRES 6 VIOL 0 VB 0 MAXTD/run 49 MAXWCT/run 3
+GAME red/fbr/instances/rho144_n32.pg RESETS rho144_n32.pg n 32 WT 2 WCT 2 WCH 2 GOOD 11 TD 79 RT 2 ROOTRES 2 VIOL 0 VB 0 MAXTD/run 79 MAXWCT/run 2
+GAME red/fbr/instances/fr39_q4_n48.pg RESETS fr39_q4_n48.pg n 48 WT 32 WCT 32 WCH 40 GOOD 66 TD 1143 RT 32 ROOTRES 32 VIOL 0 VB 0 MAXTD/run 1143 MAXWCT/run 32
+GAME red/fbr/instances/rho3_253_n32.pg RESETS rho3_253_n32.pg n 32 WT 4 WCT 4 WCH 6 GOOD 115 TD 55 RT 4 ROOTRES 4 VIOL 0 VB 0 MAXTD/run 55 MAXWCT/run 4
+GAME red/fbr/instances/nep80_n40.pg RESETS nep80_n40.pg n 40 WT 9 WCT 9 WCH 46 GOOD 234 TD 218 RT 8 ROOTRES 8 VIOL 0 VB 0 MAXTD/run 128 MAXWCT/run 4
+GAME red/fbr/instances/sat4_n20.pg RESETS sat4_n20.pg n 20 WT 1 WCT 1 WCH 1 GOOD 2 TD 6 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 6 MAXWCT/run 1
+GAME red/fbr/instances/rho84_n16.pg RESETS rho84_n16.pg n 16 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/fbr/instances/lev56_n48.pg RESETS lev56_n48.pg n 48 WT 70 WCT 70 WCH 327 GOOD 1434 TD 1536 RT 67 ROOTRES 67 VIOL 0 VB 0 MAXTD/run 571 MAXWCT/run 15
+GAME red/fbr/instances/rho666_n48.pg RESETS rho666_n48.pg n 48 WT 9 WCT 9 WCH 66 GOOD 104 TD 1024 RT 9 ROOTRES 9 VIOL 0 VB 0 MAXTD/run 513 MAXWCT/run 7
+GAME red/fbr/instances/twowave_L16.pg RESETS twowave_L16.pg n 22 WT 15 WCT 15 WCH 15 GOOD 162 TD 207 RT 15 ROOTRES 15 VIOL 0 VB 0 MAXTD/run 207 MAXWCT/run 15
+GAME red/fbr/instances/sat68_n20.pg RESETS sat68_n20.pg n 20 WT 1 WCT 1 WCH 8 GOOD 32 TD 16 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 16 MAXWCT/run 1
+GAME red/frz/instances/fbcap_eq_u4_n11.pg RESETS fbcap_eq_u4_n11.pg n 11 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/frz/instances/fx2_n11.pg RESETS fx2_n11.pg n 11 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/fbx/instances/exsw_loop_n15.pg RESETS exsw_loop_n15.pg n 15 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/h3/instances/frzgap0_n6.pg RESETS frzgap0_n6.pg n 6 WT 2 WCT 2 WCH 2 GOOD 2 TD 7 RT 2 ROOTRES 2 VIOL 0 VB 0 MAXTD/run 7 MAXWCT/run 2
+GAME red/h3/instances/frzgap0_n4.pg RESETS frzgap0_n4.pg n 4 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/h3/instances/lcount2_n23.pg red/h3/instances/lcount2_n23.start RESETS lcount2_n23.pg n 23 WT 3 WCT 3 WCH 22 GOOD 52 TD 36 RT 2 ROOTRES 2 VIOL 0 VB 0 MAXTD/run 36 MAXWCT/run 3
+GAME red/h3/instances/lcount_n23.pg red/h3/instances/lcount_n23.start RESETS lcount_n23.pg n 23 WT 4 WCT 4 WCH 18 GOOD 49 TD 49 RT 3 ROOTRES 3 VIOL 0 VB 0 MAXTD/run 49 MAXWCT/run 4
+GAME red/fbx/instances/kt6_n58.pg RESETS kt6_n58.pg n 58 WT 29 WCT 27 WCH 88 GOOD 253 TD 180 RT 5 ROOTRES 5 VIOL 0 VB 0 MAXTD/run 180 MAXWCT/run 16
+GAME red/h3/instances/offret_l19_n24.pg RESETS offret_l19_n24.pg n 24 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/kl/instances/klcount_n16.pg RESETS klcount_n16.pg n 16 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/kl/instances/klcount_n18_lvl.pg RESETS klcount_n18_lvl.pg n 18 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/kl/instances/klglobal_n16.pg RESETS klglobal_n16.pg n 16 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/kl/instances/klcount_n18_base.pg RESETS klcount_n18_base.pg n 18 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/kl/instances/klglobal_n18_lvl.pg RESETS klglobal_n18_lvl.pg n 18 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/kl/instances/klglobal_n20_lvl2.pg RESETS klglobal_n20_lvl2.pg n 20 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/h3/instances/xsnpre36_n48.pg RESETS xsnpre36_n48.pg n 48 WT 30 WCT 30 WCH 48 GOOD 61 TD 617 RT 30 ROOTRES 30 VIOL 0 VB 0 MAXTD/run 617 MAXWCT/run 30
+GAME red/kl/instances/r2crawl_n14.pg RESETS r2crawl_n14.pg n 14 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/kl/instances/r2climb_h13.pg RESETS r2climb_h13.pg n 13 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/kl/instances/klmin_n13.pg RESETS klmin_n13.pg n 13 WT 1 WCT 1 WCH 3 GOOD 12 TD 6 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 6 MAXWCT/run 1
+GAME red/kl/instances/r2join_h0E_n14.pg RESETS r2join_h0E_n14.pg n 14 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/kl24/instances/HL88_0.pg RESETS HL88_0.pg n 41 WT 1 WCT 1 WCH 3 GOOD 54 TD 24 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 24 MAXWCT/run 1
+GAME red/kl24/instances/HL88_1.pg RESETS HL88_1.pg n 43 WT 1 WCT 1 WCH 3 GOOD 54 TD 24 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 24 MAXWCT/run 1
+GAME red/kl/instances/r2lap_best_n22.pg RESETS r2lap_best_n22.pg n 22 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/kl24/instances/HL88_2.pg RESETS HL88_2.pg n 45 WT 1 WCT 1 WCH 3 GOOD 54 TD 24 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 24 MAXWCT/run 1
+GAME red/kl24/instances/HLg_0.pg RESETS HLg_0.pg n 29 WT 1 WCT 1 WCH 3 GOOD 36 TD 15 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 15 MAXWCT/run 1
+GAME red/kl24/instances/HL88_3.pg RESETS HL88_3.pg n 47 WT 1 WCT 1 WCH 3 GOOD 54 TD 24 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 24 MAXWCT/run 1
+GAME red/kl24/instances/HLg_2.pg RESETS HLg_2.pg n 45 WT 1 WCT 1 WCH 3 GOOD 54 TD 24 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 24 MAXWCT/run 1
+GAME red/kl24/instances/HLg_1.pg RESETS HLg_1.pg n 35 WT 1 WCT 1 WCH 3 GOOD 42 TD 18 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 18 MAXWCT/run 1
+GAME red/kl24/instances/HLg_3.pg RESETS HLg_3.pg n 55 WT 1 WCT 1 WCH 3 GOOD 66 TD 30 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 30 MAXWCT/run 1
+GAME red/kw/instances/cw11_n24.pg RESETS cw11_n24.pg n 24 WT 12 WCT 5 WCH 12 GOOD 36 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 3
+GAME red/lag/instances/depth2_n39.pg RESETS depth2_n39.pg n 39 WT 1 WCT 1 WCH 6 GOOD 12 TD 57 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 57 MAXWCT/run 1
+GAME red/kw/instances/frzu_tight_n14.pg RESETS frzu_tight_n14.pg n 14 WT 3 WCT 3 WCH 4 GOOD 5 TD 8 RT 2 ROOTRES 2 VIOL 0 VB 0 MAXTD/run 7 MAXWCT/run 2
+GAME red/lag/instances/depth3_n46.pg RESETS depth3_n46.pg n 46 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/lag/instances/depth4_n53.pg RESETS depth4_n53.pg n 53 WT 1 WCT 1 WCH 3 GOOD 9 TD 15 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 15 MAXWCT/run 1
+GAME red/kw/instances/kc18_n24.pg RESETS kc18_n24.pg n 24 WT 19 WCT 19 WCH 43 GOOD 56 TD 194 RT 19 ROOTRES 19 VIOL 0 VB 0 MAXTD/run 158 MAXWCT/run 18
+GAME red/lag/instances/fam_D12_n106.pg RESETS fam_D12_n106.pg n 106 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/lag/instances/fam_D4_n50.pg RESETS fam_D4_n50.pg n 50 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/lag/instances/fam_D8_n78.pg RESETS fam_D8_n78.pg n 78 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/mei/instances/mei_h3.pg RESETS mei_h3.pg n 27 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/mei/instances/mei_h5.pg RESETS mei_h5.pg n 43 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/mei/instances/mei_h4.pg RESETS mei_h4.pg n 35 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/mei/instances/mei_h6.pg RESETS mei_h6.pg n 51 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/mei/instances/mei_h8.pg RESETS mei_h8.pg n 67 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/mei/instances/mei_h2.pg RESETS mei_h2.pg n 19 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/n3/instances/core41_n40.pg red/n3/instances/core41_n40.start RESETS core41_n40.pg n 40 WT 35 WCT 35 WCH 252 GOOD 1571 TD 1804 RT 34 ROOTRES 34 VIOL 0 VB 0 MAXTD/run 632 MAXWCT/run 7
+GAME red/n3/instances/lag11_n40.pg red/n3/instances/lag11_n40.start RESETS lag11_n40.pg n 40 WT 15 WCT 15 WCH 160 GOOD 502 TD 691 RT 14 ROOTRES 14 VIOL 0 VB 0 MAXTD/run 691 MAXWCT/run 14
+GAME red/n3/instances/lagx10_n40.pg red/n3/instances/lagx10_n40.start RESETS lagx10_n40.pg n 40 WT 11 WCT 11 WCH 89 GOOD 419 TD 373 RT 11 ROOTRES 11 VIOL 0 VB 0 MAXTD/run 373 MAXWCT/run 11
+GAME red/n3/instances/n3cov_lean.pg red/n3/instances/n3cov_lean.start RESETS n3cov_lean.pg n 48 WT 30 WCT 30 WCH 79 GOOD 126 TD 675 RT 29 ROOTRES 29 VIOL 0 VB 0 MAXTD/run 675 MAXWCT/run 30
+GAME red/n3/instances/long90_k2_n40.pg red/n3/instances/long90_k2_n40.start RESETS long90_k2_n40.pg n 40 WT 82 WCT 82 WCH 306 GOOD 1941 TD 1735 RT 77 ROOTRES 77 VIOL 0 VB 0 MAXTD/run 479 MAXWCT/run 13
+GAME red/n3/instances/n3cov_phi.pg red/n3/instances/n3cov_phi.start RESETS n3cov_phi.pg n 32 WT 23 WCT 23 WCH 71 GOOD 369 TD 192 RT 20 ROOTRES 20 VIOL 0 VB 0 MAXTD/run 150 MAXWCT/run 9
+GAME red/n3/instances/long121_n40.pg red/n3/instances/long121_n40.start RESETS long121_n40.pg n 40 WT 113 WCT 113 WCH 381 GOOD 2348 TD 1822 RT 107 ROOTRES 107 VIOL 0 VB 0 MAXTD/run 441 MAXWCT/run 17
+GAME red/n3/instances/comp54_n80.pg red/n3/instances/comp54_n80.start RESETS comp54_n80.pg n 80 WT 48 WCT 48 WCH 582 GOOD 4583 TD 4215 RT 48 ROOTRES 48 VIOL 0 VB 0 MAXTD/run 1008 MAXWCT/run 12
+GAME red/n3/instances/run34_n40.pg red/n3/instances/run34_n40.start RESETS run34_n40.pg n 40 WT 43 WCT 43 WCH 149 GOOD 298 TD 955 RT 41 ROOTRES 41 VIOL 0 VB 0 MAXTD/run 690 MAXWCT/run 32
+GAME red/n5/instances/dl_4_4.pg red/n5/instances/dl_4_4.start RESETS dl_4_4.pg n 42 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/n3/instances/ret22_n40.pg red/n3/instances/ret22_n40.start RESETS ret22_n40.pg n 40 WT 82 WCT 82 WCH 426 GOOD 2230 TD 2080 RT 81 ROOTRES 81 VIOL 0 VB 0 MAXTD/run 505 MAXWCT/run 19
+GAME red/n3/instances/run49_n32.pg red/n3/instances/run49_n32.start RESETS run49_n32.pg n 32 WT 49 WCT 49 WCH 85 GOOD 254 TD 544 RT 44 ROOTRES 44 VIOL 0 VB 0 MAXTD/run 544 MAXWCT/run 49
+GAME red/n5/instances/dlm2_4.pg red/n5/instances/dlm2_4.start RESETS dlm2_4.pg n 42 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/n5/instances/sym_h16_s1.pg RESETS sym_h16_s1.pg n 32 WT 1 WCT 1 WCH 1 GOOD 8 TD 2 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 2 MAXWCT/run 1
+GAME red/n5/instances/dl_6_8.pg red/n5/instances/dl_6_8.start RESETS dl_6_8.pg n 110 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/n5/instances/sym_h12_s1.pg RESETS sym_h12_s1.pg n 24 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/n5/instances/sym_h8_s1.pg RESETS sym_h8_s1.pg n 16 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/n5inj/instances/block_bk20.pg RESETS block_bk20.pg n 24 WT 17 WCT 17 WCH 28 GOOD 48 TD 193 RT 15 ROOTRES 15 VIOL 0 VB 0 MAXTD/run 131 MAXWCT/run 9
+GAME red/n5inj/instances/block_bk32.pg RESETS block_bk32.pg n 36 WT 21 WCT 21 WCH 43 GOOD 83 TD 237 RT 20 ROOTRES 20 VIOL 0 VB 0 MAXTD/run 237 MAXWCT/run 21
+GAME red/n5inj/instances/bribe_cex_n15.pg RESETS bribe_cex_n15.pg n 15 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/n5inj/instances/blockph_bp20.pg RESETS blockph_bp20.pg n 24 WT 22 WCT 22 WCH 37 GOOD 82 TD 233 RT 19 ROOTRES 19 VIOL 0 VB 0 MAXTD/run 233 MAXWCT/run 19
+GAME red/n5inj/instances/blockph_bp32.pg RESETS blockph_bp32.pg n 36 WT 30 WCT 30 WCH 52 GOOD 85 TD 440 RT 29 ROOTRES 29 VIOL 0 VB 0 MAXTD/run 440 MAXWCT/run 30
+GAME red/n5inj/instances/frz24.pg red/n5inj/instances/frz24.start RESETS frz24.pg n 24 WT 22 WCT 22 WCH 30 GOOD 137 TD 4 RT 2 ROOTRES 2 VIOL 0 VB 0 MAXTD/run 2 MAXWCT/run 7
+GAME red/n5inj/instances/frz40.pg red/n5inj/instances/frz40.start RESETS frz40.pg n 40 WT 74 WCT 74 WCH 154 GOOD 596 TD 776 RT 67 ROOTRES 67 VIOL 0 VB 0 MAXTD/run 265 MAXWCT/run 18
+GAME red/n5inj/instances/elimn_cex_n48.pg RESETS elimn_cex_n48.pg n 48 WT 79 WCT 79 WCH 223 GOOD 1039 TD 838 RT 66 ROOTRES 66 VIOL 0 VB 0 MAXTD/run 223 MAXWCT/run 14
+GAME red/n5inj/instances/frz32.pg red/n5inj/instances/frz32.start RESETS frz32.pg n 32 WT 43 WCT 43 WCH 115 GOOD 464 TD 449 RT 37 ROOTRES 37 VIOL 0 VB 0 MAXTD/run 119 MAXWCT/run 12
+GAME red/n5inj/instances/phase2_pk32.pg RESETS phase2_pk32.pg n 32 WT 44 WCT 44 WCH 63 GOOD 138 TD 294 RT 30 ROOTRES 30 VIOL 0 VB 0 MAXTD/run 229 MAXWCT/run 19
+GAME red/n5inj/instances/phase2_pk48.pg RESETS phase2_pk48.pg n 48 WT 40 WCT 40 WCH 63 GOOD 155 TD 592 RT 37 ROOTRES 37 VIOL 0 VB 0 MAXTD/run 235 MAXWCT/run 12
+GAME red/n5inj/instances/returns_rt32.pg RESETS returns_rt32.pg n 32 WT 44 WCT 44 WCH 58 GOOD 119 TD 306 RT 26 ROOTRES 26 VIOL 0 VB 0 MAXTD/run 231 MAXWCT/run 18
+GAME red/n5inj/instances/returns_rt48.pg RESETS returns_rt48.pg n 48 WT 64 WCT 64 WCH 177 GOOD 742 TD 602 RT 60 ROOTRES 60 VIOL 0 VB 0 MAXTD/run 201 MAXWCT/run 15
+GAME red/n5inj/instances/theta_thf16.pg RESETS theta_thf16.pg n 16 WT 17 WCT 17 WCH 34 GOOD 163 TD 116 RT 16 ROOTRES 16 VIOL 0 VB 0 MAXTD/run 95 MAXWCT/run 12
+GAME red/n5inj/instances/theta_thc24.pg RESETS theta_thc24.pg n 24 WT 16 WCT 16 WCH 58 GOOD 94 TD 250 RT 16 ROOTRES 16 VIOL 0 VB 0 MAXTD/run 215 MAXWCT/run 12
+GAME red/n5inj/instances/theta_tp32.pg RESETS theta_tp32.pg n 32 WT 40 WCT 40 WCH 103 GOOD 436 TD 585 RT 40 ROOTRES 40 VIOL 0 VB 0 MAXTD/run 451 MAXWCT/run 25
+GAME red/n5inj/instances/returns_ph64.pg RESETS returns_ph64.pg n 64 WT 88 WCT 88 WCH 293 GOOD 1190 TD 1217 RT 82 ROOTRES 82 VIOL 0 VB 0 MAXTD/run 316 MAXWCT/run 16
+GAME red/n5inj/instances/wide_h16.pg RESETS wide_h16.pg n 32 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/n5inj/instances/theta_tp40.pg RESETS theta_tp40.pg n 40 WT 36 WCT 36 WCH 102 GOOD 278 TD 467 RT 36 ROOTRES 36 VIOL 0 VB 0 MAXTD/run 269 MAXWCT/run 20
+GAME red/nest16/instances/k4L72r_n101.pg RESETS k4L72r_n101.pg n 101 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/nest16/instances/k4L72_n101.pg RESETS k4L72_n101.pg n 101 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/nest16/instances/k4g50_n101.pg RESETS k4g50_n101.pg n 101 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/nest16/instances/k4seed_c1_n82.pg RESETS k4seed_c1_n82.pg n 82 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/n5inj/instances/returns_rt64.pg RESETS returns_rt64.pg n 64 WT 73 WCT 73 WCH 205 GOOD 689 TD 953 RT 65 ROOTRES 65 VIOL 0 VB 0 MAXTD/run 392 MAXWCT/run 17
+GAME red/nest16/instances/k4seed_vr_n87.pg RESETS k4seed_vr_n87.pg n 87 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/nest16/instances/k4u_n101.pg RESETS k4u_n101.pg n 101 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/nest16/instances/near4_n26.pg RESETS near4_n26.pg n 26 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/nest16/instances/nest4u_n46.pg RESETS nest4u_n46.pg n 46 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/nest16/instances/k4y1_n82.pg RESETS k4y1_n82.pg n 82 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/nest16/instances/k4y2_n87.pg RESETS k4y2_n87.pg n 87 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/nest16/instances/nest4uu_n51.pg RESETS nest4uu_n51.pg n 51 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/nest16/instances/nest5_n49.pg RESETS nest5_n49.pg n 49 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/nest16/instances/nest6min_n75.pg RESETS nest6min_n75.pg n 75 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/nest16/instances/nest6_n75.pg RESETS nest6_n75.pg n 75 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/nest16/instances/oseg_n26.pg RESETS oseg_n26.pg n 26 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/nest16/instances/nest6x_n75.pg RESETS nest6x_n75.pg n 75 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/nest16/instances/w1_n27.pg RESETS w1_n27.pg n 27 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/nest16/instances/win3_n27.pg RESETS win3_n27.pg n 27 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/nopre/instances/nopre_viol_n20.pg RESETS nopre_viol_n20.pg n 20 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/o1/instances/ph45_n32.pg RESETS ph45_n32.pg n 32 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/o1/instances/iter118_n48.pg RESETS iter118_n48.pg n 48 WT 13 WCT 13 WCH 61 GOOD 223 TD 741 RT 13 ROOTRES 13 VIOL 0 VB 0 MAXTD/run 733 MAXWCT/run 12
+GAME red/o1/instances/tau18_n24.pg RESETS tau18_n24.pg n 24 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/o1/instances/ph50_n32.pg RESETS ph50_n32.pg n 32 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/o1/instances/f39_n48.pg RESETS f39_n48.pg n 48 WT 33 WCT 33 WCH 37 GOOD 60 TD 1021 RT 33 ROOTRES 33 VIOL 0 VB 0 MAXTD/run 1021 MAXWCT/run 33
+GAME red/rec0/instances/fbd0_n4.pg RESETS fbd0_n4.pg n 4 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/rec0/instances/n0_6_n24.pg RESETS n0_6_n24.pg n 24 WT 1 WCT 1 WCH 3 GOOD 9 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 1
+GAME red/rec0/instances/nep24_n20.pg RESETS nep24_n20.pg n 20 WT 1 WCT 1 WCH 6 GOOD 6 TD 16 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 16 MAXWCT/run 1
+GAME red/rec0/instances/lend2_30_n48.pg RESETS lend2_30_n48.pg n 48 WT 13 WCT 13 WCH 59 GOOD 177 TD 499 RT 13 ROOTRES 13 VIOL 0 VB 0 MAXTD/run 499 MAXWCT/run 13
+GAME red/sgrow/instances/s20_n20.pg RESETS s20_n20.pg n 20 WT 1 WCT 1 WCH 1 GOOD 1 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 1
+GAME red/rec0/instances/nep87_n40.pg RESETS nep87_n40.pg n 40 WT 13 WCT 13 WCH 68 GOOD 349 TD 459 RT 12 ROOTRES 12 VIOL 0 VB 0 MAXTD/run 320 MAXWCT/run 8
+GAME red/rec0/instances/nep90_n40.pg RESETS nep90_n40.pg n 40 WT 13 WCT 13 WCH 100 GOOD 369 TD 504 RT 12 ROOTRES 12 VIOL 0 VB 0 MAXTD/run 373 MAXWCT/run 8
+GAME red/sgrow/instances/s21_oink_n20.pg RESETS s21_oink_n20.pg n 20 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/sgrow/instances/s34_oink_n40.pg RESETS s34_oink_n40.pg n 40 WT 2 WCT 2 WCH 10 GOOD 23 TD 88 RT 2 ROOTRES 2 VIOL 0 VB 0 MAXTD/run 88 MAXWCT/run 2
+GAME red/sgrow/instances/s32_n60.pg RESETS s32_n60.pg n 60 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/sgrow/instances/s29_n30.pg RESETS s29_n30.pg n 30 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/sgrow/instances/s36_oink_n60.pg RESETS s36_oink_n60.pg n 60 WT 1 WCT 1 WCH 2 GOOD 4 TD 4 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 4 MAXWCT/run 1
+GAME red/sgrow/instances/s35_oink_n80.pg RESETS s35_oink_n80.pg n 80 WT 1 WCT 1 WCH 2 GOOD 4 TD 4 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 4 MAXWCT/run 1
+GAME red/so/instances/beta2_n11.pg RESETS beta2_n11.pg n 11 WT 1 WCT 1 WCH 8 GOOD 16 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 1
+GAME red/so/instances/epsseg_cex_n16.pg RESETS epsseg_cex_n16.pg n 16 WT 6 WCT 6 WCH 16 GOOD 19 TD 55 RT 6 ROOTRES 6 VIOL 0 VB 0 MAXTD/run 55 MAXWCT/run 6
+GAME red/sgrow/instances/s34_oink_n80.pg RESETS s34_oink_n80.pg n 80 WT 1 WCT 1 WCH 31 GOOD 31 TD 93 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 93 MAXWCT/run 1
+GAME red/so/instances/exitr_cex_n16.pg RESETS exitr_cex_n16.pg n 16 WT 7 WCT 7 WCH 16 GOOD 32 TD 82 RT 7 ROOTRES 7 VIOL 0 VB 0 MAXTD/run 82 MAXWCT/run 7
+GAME red/so/instances/epsseg_cex_n48.pg RESETS epsseg_cex_n48.pg n 48 WT 6 WCT 6 WCH 23 GOOD 93 TD 108 RT 5 ROOTRES 5 VIOL 0 VB 0 MAXTD/run 104 MAXWCT/run 4
+GAME red/so/instances/exitr_cex_n48.pg RESETS exitr_cex_n48.pg n 48 WT 4 WCT 4 WCH 22 GOOD 90 TD 202 RT 3 ROOTRES 3 VIOL 0 VB 0 MAXTD/run 202 MAXWCT/run 3
+GAME red/so/instances/farrise25_n32.pg RESETS farrise25_n32.pg n 32 WT 4 WCT 4 WCH 32 GOOD 88 TD 64 RT 4 ROOTRES 4 VIOL 0 VB 0 MAXTD/run 63 MAXWCT/run 3
+GAME red/so/instances/mn_abs74_n48.pg RESETS mn_abs74_n48.pg n 48 WT 10 WCT 10 WCH 139 GOOD 446 TD 32 RT 5 ROOTRES 5 VIOL 0 VB 0 MAXTD/run 15 MAXWCT/run 4
+GAME red/so/instances/njb_reabs54_n32.pg RESETS njb_reabs54_n32.pg n 32 WT 12 WCT 12 WCH 66 GOOD 234 TD 72 RT 9 ROOTRES 9 VIOL 0 VB 0 MAXTD/run 26 MAXWCT/run 4
+GAME red/so/instances/nleq33_n48.pg RESETS nleq33_n48.pg n 48 WT 33 WCT 33 WCH 43 GOOD 47 TD 655 RT 33 ROOTRES 33 VIOL 0 VB 0 MAXTD/run 655 MAXWCT/run 33
+GAME red/so/instances/nleq_cex_n48.pg RESETS nleq_cex_n48.pg n 48 WT 4 WCT 4 WCH 36 GOOD 40 TD 143 RT 2 ROOTRES 2 VIOL 0 VB 0 MAXTD/run 143 MAXWCT/run 2
+GAME red/so/instances/njb_reabs65_n48.pg RESETS njb_reabs65_n48.pg n 48 WT 37 WCT 37 WCH 160 GOOD 349 TD 821 RT 36 ROOTRES 36 VIOL 0 VB 0 MAXTD/run 405 MAXWCT/run 19
+GAME red/so/instances/pft35_n48.pg RESETS pft35_n48.pg n 48 WT 38 WCT 38 WCH 161 GOOD 552 TD 544 RT 31 ROOTRES 31 VIOL 0 VB 0 MAXTD/run 520 MAXWCT/run 35
+GAME red/so/instances/pftheta_cex_n32.pg RESETS pftheta_cex_n32.pg n 32 WT 34 WCT 34 WCH 84 GOOD 249 TD 430 RT 32 ROOTRES 32 VIOL 0 VB 0 MAXTD/run 430 MAXWCT/run 34
+GAME red/so/instances/pftheta34_n32.pg RESETS pftheta34_n32.pg n 32 WT 34 WCT 34 WCH 84 GOOD 282 TD 444 RT 33 ROOTRES 33 VIOL 0 VB 0 MAXTD/run 444 MAXWCT/run 34
+GAME red/so/instances/pft40_n40.pg RESETS pft40_n40.pg n 40 WT 43 WCT 43 WCH 139 GOOD 700 TD 909 RT 42 ROOTRES 42 VIOL 0 VB 0 MAXTD/run 687 MAXWCT/run 27
+GAME red/so/instances/post31_n48.pg RESETS post31_n48.pg n 48 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/so/instances/s4c8_n13.pg RESETS s4c8_n13.pg n 13 WT 2 WCT 2 WCH 3 GOOD 4 TD 18 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 18 MAXWCT/run 1
+GAME red/so/instances/rise_fb38_n48.pg RESETS rise_fb38_n48.pg n 48 WT 8 WCT 8 WCH 42 GOOD 92 TD 59 RT 6 ROOTRES 6 VIOL 0 VB 0 MAXTD/run 38 MAXWCT/run 4
+GAME red/so/instances/so_k2_n32.pg RESETS so_k2_n32.pg n 32 WT 10 WCT 10 WCH 38 GOOD 90 TD 58 RT 6 ROOTRES 6 VIOL 0 VB 0 MAXTD/run 49 MAXWCT/run 5
+GAME red/so/instances/so_j19_n48.pg RESETS so_j19_n48.pg n 48 WT 21 WCT 21 WCH 45 GOOD 236 TD 211 RT 21 ROOTRES 21 VIOL 0 VB 0 MAXTD/run 204 MAXWCT/run 20
+GAME red/so/instances/so_sor5_n24.pg RESETS so_sor5_n24.pg n 24 WT 21 WCT 21 WCH 44 GOOD 91 TD 192 RT 19 ROOTRES 19 VIOL 0 VB 0 MAXTD/run 192 MAXWCT/run 21
+GAME red/so/instances/so_sorl_n32.pg RESETS so_sorl_n32.pg n 32 WT 22 WCT 22 WCH 36 GOOD 46 TD 235 RT 19 ROOTRES 19 VIOL 0 VB 0 MAXTD/run 235 MAXWCT/run 22
+GAME red/so/instances/rise_thin51_n40.pg RESETS rise_thin51_n40.pg n 40 WT 64 WCT 64 WCH 269 GOOD 1762 TD 1523 RT 64 ROOTRES 64 VIOL 0 VB 0 MAXTD/run 440 MAXWCT/run 13
+GAME red/so/instances/so_tie13_n24.pg RESETS so_tie13_n24.pg n 24 WT 16 WCT 16 WCH 31 GOOD 56 TD 196 RT 16 ROOTRES 16 VIOL 0 VB 0 MAXTD/run 196 MAXWCT/run 16
+GAME red/so/instances/so_th_n32.pg RESETS so_th_n32.pg n 32 WT 22 WCT 22 WCH 93 GOOD 148 TD 458 RT 21 ROOTRES 21 VIOL 0 VB 0 MAXTD/run 458 MAXWCT/run 21
+GAME red/so/instances/so_tie15_n32.pg RESETS so_tie15_n32.pg n 32 WT 19 WCT 19 WCH 24 GOOD 24 TD 255 RT 18 ROOTRES 18 VIOL 0 VB 0 MAXTD/run 255 MAXWCT/run 19
+GAME red/so/instances/tev_cex_n40.pg RESETS tev_cex_n40.pg n 40 WT 7 WCT 7 WCH 39 GOOD 170 TD 165 RT 5 ROOTRES 5 VIOL 0 VB 0 MAXTD/run 165 MAXWCT/run 5
+GAME red/so/instances/tevlast11_n40.pg RESETS tevlast11_n40.pg n 40 WT 31 WCT 31 WCH 57 GOOD 210 TD 553 RT 31 ROOTRES 31 VIOL 0 VB 0 MAXTD/run 533 MAXWCT/run 30
+GAME red/so/instances/tog6a_n32.pg RESETS tog6a_n32.pg n 32 WT 5 WCT 4 WCH 38 GOOD 95 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 4
+GAME red/so/instances/tevlast_cex_n40.pg RESETS tevlast_cex_n40.pg n 40 WT 6 WCT 6 WCH 41 GOOD 119 TD 185 RT 5 ROOTRES 5 VIOL 0 VB 0 MAXTD/run 185 MAXWCT/run 5
+GAME red/so/instances/tog6b_n32.pg RESETS tog6b_n32.pg n 32 WT 6 WCT 5 WCH 34 GOOD 105 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 5
+GAME red/so/instances/tevlast7_n32.pg RESETS tevlast7_n32.pg n 32 WT 36 WCT 36 WCH 65 GOOD 307 TD 661 RT 31 ROOTRES 31 VIOL 0 VB 0 MAXTD/run 428 MAXWCT/run 29
+GAME red/so/instances/xrun8_n10.pg RESETS xrun8_n10.pg n 10 WT 7 WCT 7 WCH 9 GOOD 23 TD 38 RT 7 ROOTRES 7 VIOL 0 VB 0 MAXTD/run 38 MAXWCT/run 7
+GAME red/so/instances/xrun21_n24.pg RESETS xrun21_n24.pg n 24 WT 21 WCT 21 WCH 28 GOOD 31 TD 273 RT 21 ROOTRES 21 VIOL 0 VB 0 MAXTD/run 273 MAXWCT/run 21
+GAME red/so/instances/xsn29_n32.pg RESETS xsn29_n32.pg n 32 WT 29 WCT 29 WCH 42 GOOD 54 TD 346 RT 29 ROOTRES 29 VIOL 0 VB 0 MAXTD/run 346 MAXWCT/run 29
+GAME red/so/instances/xsn43_n48.pg RESETS xsn43_n48.pg n 48 WT 43 WCT 43 WCH 45 GOOD 45 TD 992 RT 42 ROOTRES 42 VIOL 0 VB 0 MAXTD/run 992 MAXWCT/run 43
+GAME red/so/instances/xsnf52_n64.pg RESETS xsnf52_n64.pg n 64 WT 52 WCT 52 WCH 88 GOOD 152 TD 1293 RT 47 ROOTRES 47 VIOL 0 VB 0 MAXTD/run 1293 MAXWCT/run 52
+GAME red/so/instances/xsnf42_n48.pg RESETS xsnf42_n48.pg n 48 WT 42 WCT 42 WCH 85 GOOD 135 TD 780 RT 42 ROOTRES 42 VIOL 0 VB 0 MAXTD/run 780 MAXWCT/run 42
+GAME red/so/instances/xsn91_n48.pg RESETS xsn91_n48.pg n 48 WT 103 WCT 103 WCH 384 GOOD 2382 TD 2666 RT 103 ROOTRES 103 VIOL 0 VB 0 MAXTD/run 915 MAXWCT/run 25
+GAME red/tcpert/instances/leanT_N12.pg RESETS leanT_N12.pg n 96 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/tcpert/instances/leanT_N6.pg RESETS leanT_N6.pg n 48 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/tcpert/instances/leanT_N16.pg RESETS leanT_N16.pg n 128 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/tcpert/instances/leanT_N8.pg RESETS leanT_N8.pg n 64 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/tcpert/instances/leanT_N24.pg RESETS leanT_N24.pg n 192 WT 3 WCT 3 WCH 3 GOOD 39 TD 9 RT 3 ROOTRES 3 VIOL 0 VB 0 MAXTD/run 9 MAXWCT/run 3
+GAME red/tcpert/instances/tcL_N3.pg RESETS tcL_N3.pg n 42 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/tcpert/instances/tcL_N4.pg RESETS tcL_N4.pg n 68 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/tcpert/instances/tcL_N10.pg RESETS tcL_N10.pg n 350 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/tcpert/instances/tcL_N5.pg RESETS tcL_N5.pg n 100 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/tcpert/instances/tcL_N6.pg RESETS tcL_N6.pg n 138 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/tcpert/instances/tcR4_N4.pg RESETS tcR4_N4.pg n 68 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/tcpert/instances/tcR4_N5.pg RESETS tcR4_N5.pg n 100 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/tcpert/instances/leanT_N32.pg RESETS leanT_N32.pg n 256 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/tcpert/instances/tcR4_N6.pg RESETS tcR4_N6.pg n 138 WT 1 WCT 1 WCH 46 GOOD 425 TD 22 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 22 MAXWCT/run 1
+GAME red/tcpert/instances/tcL_N8.pg RESETS tcL_N8.pg n 232 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/tcpert/instances/tcR4_N7.pg RESETS tcR4_N7.pg n 182 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/tcpert/instances/tcR4_N8.pg RESETS tcR4_N8.pg n 232 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/tcpert/instances/tcS8_N10.pg RESETS tcS8_N10.pg n 350 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/tcpert/instances/tcS8_N6.pg RESETS tcS8_N6.pg n 138 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/tcpert/instances/tcS8_N8.pg RESETS tcS8_N8.pg n 232 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/tcpert/instances/tcS8_N7.pg RESETS tcS8_N7.pg n 182 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/tpp/instances/tpp_viol_n22.pg RESETS tpp_viol_n22.pg n 22 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/tpp/instances/tpp_viol_n63.pg RESETS tpp_viol_n63.pg n 63 WT 1 WCT 1 WCH 6 GOOD 12 TD 63 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 63 MAXWCT/run 1
+GAME red/tcpert/instances/tcS8_N11.pg RESETS tcS8_N11.pg n 418 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/tcpert/instances/tcL_N12.pg RESETS tcL_N12.pg n 492 WT 2 WCT 2 WCH 197 GOOD 4879 TD 197 RT 2 ROOTRES 2 VIOL 0 VB 0 MAXTD/run 197 MAXWCT/run 2
+GAME red/tcpert/instances/tcS8_N9.pg RESETS tcS8_N9.pg n 288 WT 2 WCT 2 WCH 62 GOOD 62 TD 502 RT 2 ROOTRES 2 VIOL 0 VB 0 MAXTD/run 502 MAXWCT/run 2
+GAME red/ul/instances/cxmig_k4_n54.pg red/ul/instances/cxmig_k4_n54.start RESETS cxmig_k4_n54.pg n 54 WT 12 WCT 12 WCH 38 GOOD 43 TD 180 RT 12 ROOTRES 12 VIOL 0 VB 0 MAXTD/run 180 MAXWCT/run 12
+GAME red/ul/instances/cxmig_k8_n82.pg red/ul/instances/cxmig_k8_n82.start RESETS cxmig_k8_n82.pg n 82 WT 16 WCT 16 WCH 66 GOOD 75 TD 416 RT 16 ROOTRES 16 VIOL 0 VB 0 MAXTD/run 416 MAXWCT/run 16
+GAME red/ul/instances/ladderd0_k12_n48.pg red/ul/instances/ladderd0_k12_n48.start RESETS ladderd0_k12_n48.pg n 48 WT 14 WCT 14 WCH 39 GOOD 41 TD 220 RT 14 ROOTRES 14 VIOL 0 VB 0 MAXTD/run 220 MAXWCT/run 14
+GAME red/ul/instances/ladderent_k12_n48.pg red/ul/instances/ladderent_k12_n48.start RESETS ladderent_k12_n48.pg n 48 WT 14 WCT 14 WCH 39 GOOD 41 TD 220 RT 14 ROOTRES 14 VIOL 0 VB 0 MAXTD/run 220 MAXWCT/run 14
+GAME red/ul/instances/cxmig_k16_n138.pg red/ul/instances/cxmig_k16_n138.start RESETS cxmig_k16_n138.pg n 138 WT 24 WCT 24 WCH 122 GOOD 139 TD 1176 RT 24 ROOTRES 24 VIOL 0 VB 0 MAXTD/run 1176 MAXWCT/run 24
+GAME red/ul/instances/ladderd0_k24_n84.pg red/ul/instances/ladderd0_k24_n84.start RESETS ladderd0_k24_n84.pg n 84 WT 26 WCT 26 WCH 75 GOOD 77 TD 724 RT 26 ROOTRES 26 VIOL 0 VB 0 MAXTD/run 724 MAXWCT/run 26
+GAME red/ul/instances/ladderent_k24_n84.pg red/ul/instances/ladderent_k24_n84.start RESETS ladderent_k24_n84.pg n 84 WT 26 WCT 26 WCH 75 GOOD 77 TD 724 RT 26 ROOTRES 26 VIOL 0 VB 0 MAXTD/run 724 MAXWCT/run 26
+GAME red/ul/instances/reader_L10_n36.pg red/ul/instances/reader_L10_n36.start RESETS reader_L10_n36.pg n 36 WT 13 WCT 13 WCH 19 GOOD 21 TD 146 RT 13 ROOTRES 13 VIOL 0 VB 0 MAXTD/run 146 MAXWCT/run 13
+GAME red/ul/instances/reader_L20_n56.pg red/ul/instances/reader_L20_n56.start RESETS reader_L20_n56.pg n 56 WT 23 WCT 23 WCH 29 GOOD 31 TD 381 RT 23 ROOTRES 23 VIOL 0 VB 0 MAXTD/run 381 MAXWCT/run 23
+GAME red/ul/instances/reader_L40_n96.pg red/ul/instances/reader_L40_n96.start RESETS reader_L40_n96.pg n 96 WT 43 WCT 43 WCH 49 GOOD 51 TD 1151 RT 43 ROOTRES 43 VIOL 0 VB 0 MAXTD/run 1151 MAXWCT/run 43
+GAME red/ul/instances/ladderd0_k48_n156.pg red/ul/instances/ladderd0_k48_n156.start RESETS ladderd0_k48_n156.pg n 156 WT 50 WCT 50 WCH 147 GOOD 149 TD 2596 RT 50 ROOTRES 50 VIOL 0 VB 0 MAXTD/run 2596 MAXWCT/run 50
+GAME red/usplit/instances/gate_K16_n197.pg red/usplit/instances/gate_K16_n197.start RESETS gate_K16_n197.pg n 197 WT 23 WCT 23 WCH 251 GOOD 487 TD 2101 RT 23 ROOTRES 23 VIOL 0 VB 0 MAXTD/run 2101 MAXWCT/run 23
+GAME red/usplit/instances/grow_K12_n149.pg red/usplit/instances/grow_K12_n149.start RESETS grow_K12_n149.pg n 149 WT 19 WCT 19 WCH 140 GOOD 178 TD 1219 RT 19 ROOTRES 19 VIOL 0 VB 0 MAXTD/run 1219 MAXWCT/run 19
+GAME red/ul/instances/ladderent_k48_n156.pg red/ul/instances/ladderent_k48_n156.start RESETS ladderent_k48_n156.pg n 156 WT 50 WCT 50 WCH 147 GOOD 149 TD 2596 RT 50 ROOTRES 50 VIOL 0 VB 0 MAXTD/run 2596 MAXWCT/run 50
+GAME red/usplit/instances/pairoc_n58.pg red/usplit/instances/pairoc_n58.start RESETS pairoc_n58.pg n 58 WT 5 WCT 5 WCH 38 GOOD 42 TD 102 RT 5 ROOTRES 5 VIOL 0 VB 0 MAXTD/run 102 MAXWCT/run 5
+GAME red/usplit/instances/pp_K12_n161_dual.pg RESETS pp_K12_n161_dual.pg n 161 WT 1 WCT 1 WCH 4 GOOD 6 TD 12 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 12 MAXWCT/run 1
+GAME red/usplit/instances/pp_K12_n161.pg red/usplit/instances/pp_K12_n161.start RESETS pp_K12_n161.pg n 161 WT 19 WCT 19 WCH 142 GOOD 197 TD 1226 RT 19 ROOTRES 19 VIOL 0 VB 0 MAXTD/run 1226 MAXWCT/run 19
+GAME red/usplit/instances/pp_K48_n449_dual.pg RESETS pp_K48_n449_dual.pg n 449 WT 1 WCT 1 WCH 4 GOOD 6 TD 12 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 12 MAXWCT/run 1
+GAME red/usplit/instances/usplit_n14.pg red/usplit/instances/usplit_n14.start RESETS usplit_n14.pg n 14 WT 3 WCT 3 WCH 7 GOOD 9 TD 23 RT 3 ROOTRES 3 VIOL 0 VB 0 MAXTD/run 23 MAXWCT/run 3
+GAME red/usplit/instances/usplit_n23.pg red/usplit/instances/usplit_n23.start RESETS usplit_n23.pg n 23 WT 9 WCT 9 WCH 16 GOOD 17 TD 133 RT 9 ROOTRES 9 VIOL 0 VB 0 MAXTD/run 133 MAXWCT/run 9
+GAME red/usplit/instances/usplit_rd_n24.pg red/usplit/instances/usplit_rd_n24.start RESETS usplit_rd_n24.pg n 24 WT 4 WCT 4 WCH 13 GOOD 13 TD 32 RT 4 ROOTRES 4 VIOL 0 VB 0 MAXTD/run 32 MAXWCT/run 4
+GAME red/usplit/instances/grow_K40_n373.pg red/usplit/instances/grow_K40_n373.start RESETS grow_K40_n373.pg n 373 WT 47 WCT 47 WCH 392 GOOD 514 TD 8247 RT 47 ROOTRES 47 VIOL 0 VB 0 MAXTD/run 8247 MAXWCT/run 47
+GAME red/usplit/instances/usplit_rd_s3_n27.pg RESETS usplit_rd_s3_n27.pg n 27 WT 4 WCT 4 WCH 12 GOOD 13 TD 42 RT 4 ROOTRES 4 VIOL 0 VB 0 MAXTD/run 42 MAXWCT/run 4
+GAME red/usplit/instances/usplit_s3_n16.pg RESETS usplit_s3_n16.pg n 16 WT 3 WCT 3 WCH 6 GOOD 10 TD 30 RT 3 ROOTRES 3 VIOL 0 VB 0 MAXTD/run 30 MAXWCT/run 3
+GAME red/xctx/instances/nest3_n20.pg RESETS nest3_n20.pg n 20 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/xctx/instances/nest3_n24.pg RESETS nest3_n24.pg n 24 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/xctx/instances/vrall_viol_n20.pg RESETS vrall_viol_n20.pg n 20 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/xctx/instances/xcov11_n20.pg RESETS xcov11_n20.pg n 20 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/xctx/instances/xctx_viol_n20.pg RESETS xctx_viol_n20.pg n 20 WT 0 WCT 0 WCH 0 GOOD 0 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 0
+GAME red/xing/instances/j10_n24.pg RESETS j10_n24.pg n 24 WT 23 WCT 23 WCH 51 GOOD 223 TD 179 RT 23 ROOTRES 23 VIOL 0 VB 0 MAXTD/run 98 MAXWCT/run 15
+GAME red/xing/instances/j4_n40.pg RESETS j4_n40.pg n 40 WT 99 WCT 99 WCH 267 GOOD 1246 TD 1224 RT 91 ROOTRES 91 VIOL 0 VB 0 MAXTD/run 415 MAXWCT/run 31
+GAME red/xing/instances/fbref_cex_n32.pg RESETS fbref_cex_n32.pg n 32 WT 42 WCT 42 WCH 161 GOOD 1039 TD 740 RT 42 ROOTRES 42 VIOL 0 VB 0 MAXTD/run 230 MAXWCT/run 16
+GAME red/xing/instances/j5_n16.pg RESETS j5_n16.pg n 16 WT 20 WCT 20 WCH 26 GOOD 62 TD 105 RT 17 ROOTRES 17 VIOL 0 VB 0 MAXTD/run 72 MAXWCT/run 11
+GAME red/xing/instances/j7_n48.pg RESETS j7_n48.pg n 48 WT 70 WCT 70 WCH 170 GOOD 962 TD 819 RT 67 ROOTRES 67 VIOL 0 VB 0 MAXTD/run 302 MAXWCT/run 20
+GAME red/xing/instances/j8_n32.pg RESETS j8_n32.pg n 32 WT 49 WCT 49 WCH 121 GOOD 491 TD 442 RT 35 ROOTRES 35 VIOL 0 VB 0 MAXTD/run 312 MAXWCT/run 21
+GAME red/xing/instances/j7_n32.pg RESETS j7_n32.pg n 32 WT 46 WCT 46 WCH 116 GOOD 556 TD 572 RT 43 ROOTRES 43 VIOL 0 VB 0 MAXTD/run 391 MAXWCT/run 23
+GAME red/xing/instances/kw25_n32.pg RESETS kw25_n32.pg n 32 WT 27 WCT 27 WCH 70 GOOD 107 TD 428 RT 26 ROOTRES 26 VIOL 0 VB 0 MAXTD/run 368 MAXWCT/run 25
+GAME red/xing/instances/kw_n16.pg RESETS kw_n16.pg n 16 WT 12 WCT 12 WCH 14 GOOD 14 TD 107 RT 12 ROOTRES 12 VIOL 0 VB 0 MAXTD/run 107 MAXWCT/run 12
+GAME red/xing/instances/j8_n48.pg RESETS j8_n48.pg n 48 WT 77 WCT 77 WCH 175 GOOD 1202 TD 1044 RT 61 ROOTRES 61 VIOL 0 VB 0 MAXTD/run 695 MAXWCT/run 20
+GAME red/xing/instances/kw_n24.pg RESETS kw_n24.pg n 24 WT 20 WCT 20 WCH 25 GOOD 26 TD 207 RT 19 ROOTRES 19 VIOL 0 VB 0 MAXTD/run 207 MAXWCT/run 20
+GAME red/xing/instances/obr_eq_n24.pg RESETS obr_eq_n24.pg n 24 WT 4 WCT 4 WCH 6 GOOD 8 TD 4 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 4 MAXWCT/run 4
+GAME red/xing/instances/kw_n48.pg RESETS kw_n48.pg n 48 WT 40 WCT 40 WCH 62 GOOD 74 TD 981 RT 40 ROOTRES 40 VIOL 0 VB 0 MAXTD/run 981 MAXWCT/run 40
+GAME red/xing/instances/obr_n32.pg RESETS obr_n32.pg n 32 WT 16 WCT 16 WCH 40 GOOD 56 TD 155 RT 15 ROOTRES 15 VIOL 0 VB 0 MAXTD/run 155 MAXWCT/run 15
+GAME red/xing/instances/u1t_cex_n32.pg RESETS u1t_cex_n32.pg n 32 WT 7 WCT 2 WCH 16 GOOD 101 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 2
+GAME red/xing/instances/u1t_own6_n32.pg RESETS u1t_own6_n32.pg n 32 WT 7 WCT 2 WCH 25 GOOD 34 TD 64 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 64 MAXWCT/run 1
+GAME red/xing/instances/u23sw64_n32.pg RESETS u23sw64_n32.pg n 32 WT 13 WCT 5 WCH 51 GOOD 140 TD 31 RT 2 ROOTRES 2 VIOL 0 VB 0 MAXTD/run 31 MAXWCT/run 3
+GAME red/xing/instances/u2flat_n32.pg RESETS u2flat_n32.pg n 32 WT 7 WCT 6 WCH 21 GOOD 30 TD 31 RT 4 ROOTRES 4 VIOL 0 VB 0 MAXTD/run 13 MAXWCT/run 2
+GAME red/xing/instances/u2flat73_n32.pg RESETS u2flat73_n32.pg n 32 WT 9 WCT 2 WCH 2 GOOD 2 TD 4 RT 2 ROOTRES 2 VIOL 0 VB 0 MAXTD/run 3 MAXWCT/run 1
+GAME red/xing/instances/x31_cu16.pg RESETS x31_cu16.pg n 16 WT 20 WCT 20 WCH 32 GOOD 102 TD 100 RT 17 ROOTRES 17 VIOL 0 VB 0 MAXTD/run 85 MAXWCT/run 13
+GAME red/xing/instances/x31_cu24.pg RESETS x31_cu24.pg n 24 WT 17 WCT 17 WCH 111 GOOD 274 TD 321 RT 16 ROOTRES 16 VIOL 0 VB 0 MAXTD/run 188 MAXWCT/run 8
+GAME red/xing/instances/x31_cu32.pg RESETS x31_cu32.pg n 32 WT 40 WCT 40 WCH 111 GOOD 587 TD 740 RT 40 ROOTRES 40 VIOL 0 VB 0 MAXTD/run 495 MAXWCT/run 21
+GAME red/xing/instances/x31_cu32i.pg RESETS x31_cu32i.pg n 32 WT 38 WCT 38 WCH 126 GOOD 416 TD 624 RT 38 ROOTRES 38 VIOL 0 VB 0 MAXTD/run 332 MAXWCT/run 21
+GAME red/xing/instances/x31_lem_e24.pg RESETS x31_lem_e24.pg n 24 WT 46 WCT 46 WCH 77 GOOD 201 TD 405 RT 41 ROOTRES 41 VIOL 0 VB 0 MAXTD/run 163 MAXWCT/run 14
+GAME red/xing/instances/x31_cu48.pg RESETS x31_cu48.pg n 48 WT 41 WCT 41 WCH 218 GOOD 740 TD 1061 RT 41 ROOTRES 41 VIOL 0 VB 0 MAXTD/run 690 MAXWCT/run 22
+GAME red/xing/instances/x31_lem_t32.pg RESETS x31_lem_t32.pg n 32 WT 56 WCT 56 WCH 172 GOOD 467 TD 561 RT 52 ROOTRES 52 VIOL 0 VB 0 MAXTD/run 166 MAXWCT/run 12
+GAME red/xing/instances/x31_nh_e24.pg RESETS x31_nh_e24.pg n 24 WT 20 WCT 20 WCH 42 GOOD 124 TD 226 RT 20 ROOTRES 20 VIOL 0 VB 0 MAXTD/run 226 MAXWCT/run 20
+GAME red/xing/instances/x31_nh_r20.pg RESETS x31_nh_r20.pg n 20 WT 13 WCT 13 WCH 24 GOOD 65 TD 69 RT 11 ROOTRES 11 VIOL 0 VB 0 MAXTD/run 69 MAXWCT/run 13
+GAME red/xing/instances/x31_re24.pg RESETS x31_re24.pg n 24 WT 4 WCT 4 WCH 50 GOOD 81 TD 63 RT 2 ROOTRES 2 VIOL 0 VB 0 MAXTD/run 63 MAXWCT/run 4
+GAME red/xing/instances/x31_ru24.pg RESETS x31_ru24.pg n 24 WT 4 WCT 4 WCH 56 GOOD 213 TD 258 RT 4 ROOTRES 4 VIOL 0 VB 0 MAXTD/run 258 MAXWCT/run 4
+GAME red/xing/instances/x31_rx32.pg RESETS x31_rx32.pg n 32 WT 50 WCT 50 WCH 163 GOOD 588 TD 617 RT 47 ROOTRES 47 VIOL 0 VB 0 MAXTD/run 247 MAXWCT/run 22
+GAME red/xing/instances/x32_nest40.pg RESETS x32_nest40.pg n 40 WT 53 WCT 53 WCH 176 GOOD 807 TD 915 RT 52 ROOTRES 52 VIOL 0 VB 0 MAXTD/run 473 MAXWCT/run 26
+GAME red/xing/instances/x32_rand16.pg RESETS x32_rand16.pg n 16 WT 13 WCT 13 WCH 13 GOOD 68 TD 84 RT 13 ROOTRES 13 VIOL 0 VB 0 MAXTD/run 84 MAXWCT/run 13
+GAME red/xing/instances/x31_rx48.pg RESETS x31_rx48.pg n 48 WT 47 WCT 47 WCH 247 GOOD 924 TD 1532 RT 46 ROOTRES 46 VIOL 0 VB 0 MAXTD/run 717 MAXWCT/run 22
+GAME red/xing/instances/x32_rand24.pg RESETS x32_rand24.pg n 24 WT 20 WCT 20 WCH 36 GOOD 51 TD 171 RT 18 ROOTRES 18 VIOL 0 VB 0 MAXTD/run 171 MAXWCT/run 20
+GAME red/xing/instances/x32_rand32.pg RESETS x32_rand32.pg n 32 WT 29 WCT 29 WCH 39 GOOD 48 TD 359 RT 29 ROOTRES 29 VIOL 0 VB 0 MAXTD/run 359 MAXWCT/run 29
+GAME red/xing/instances/x32_rand48.pg RESETS x32_rand48.pg n 48 WT 44 WCT 44 WCH 89 GOOD 176 TD 789 RT 39 ROOTRES 39 VIOL 0 VB 0 MAXTD/run 789 MAXWCT/run 44
+GAME red/xing/instances/x32_rand64.pg RESETS x32_rand64.pg n 64 WT 55 WCT 55 WCH 97 GOOD 143 TD 1434 RT 54 ROOTRES 54 VIOL 0 VB 0 MAXTD/run 1434 MAXWCT/run 55
+GAME red/xing/instances/x32_waves32.pg RESETS x32_waves32.pg n 32 WT 68 WCT 68 WCH 241 GOOD 1153 TD 1029 RT 68 ROOTRES 68 VIOL 0 VB 0 MAXTD/run 347 MAXWCT/run 22
+GAME si/root/instances/cone_n65.pg RESETS cone_n65.pg n 65 WT 3 WCT 3 WCH 42 GOOD 77 TD 45 RT 1 ROOTRES 1 VIOL 0 VB 0 MAXTD/run 45 MAXWCT/run 2
+GAME red/xing/instances/x32_waves48.pg RESETS x32_waves48.pg n 48 WT 66 WCT 66 WCH 120 GOOD 617 TD 664 RT 43 ROOTRES 43 VIOL 0 VB 0 MAXTD/run 348 MAXWCT/run 26
+GAME si/root/instances/cone_n69.pg RESETS cone_n69.pg n 69 WT 1 WCT 1 WCH 27 GOOD 31 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 MAXTD/run 0 MAXWCT/run 1
+GAME si/root/instances/ueonce_n27.pg RESETS ueonce_n27.pg n 27 WT 10 WCT 10 WCH 33 GOOD 34 TD 176 RT 10 ROOTRES 10 VIOL 0 VB 0 MAXTD/run 176 MAXWCT/run 10
+GAME red/usplit/instances/pp_K48_n449.pg red/usplit/instances/pp_K48_n449.start RESETS pp_K48_n449.pg n 449 WT 55 WCT 55 WCH 466 GOOD 665 TD 11414 RT 55 ROOTRES 55 VIOL 0 VB 0 MAXTD/run 11414 MAXWCT/run 55
+GAME red/usplit/instances/gate_K64_n581.pg red/usplit/instances/gate_K64_n581.start RESETS gate_K64_n581.pg n 581 WT 71 WCT 71 WCH 899 GOOD 1759 TD 20173 RT 71 ROOTRES 71 VIOL 0 VB 0 MAXTD/run 20173 MAXWCT/run 71

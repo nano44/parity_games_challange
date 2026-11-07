@@ -1,0 +1,14 @@
+GAME new/box48/out/qpcclimb/scale/snap_n80_s62.pg
+BGmax 36
+GAMES 1
+INC 99
+K 105
+MAXPH 101
+PH_over 1
+SGmax 100
+SQZ_chk 8480
+steps 101
+stretches 1
+VIOLATIONS 0
+EX ('PH_over', 'snap_n80_s62.pg', 4, 101, 101, 79)
+RC 0

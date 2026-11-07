@@ -1,0 +1,15 @@
+GAME red/carry/instances/ctx13_n40.pg
+CNT_chk 11
+FR 11
+FR_maxpair 1
+GAMES 1
+OLD_chk 228
+ROOT_chk 11
+ROOT_endPE 11
+ROOT_maxlen 1
+STEP_caseII 14
+STEP_chk 272
+trans 8
+wruns 2
+VIOLATIONS 0
+RC 0

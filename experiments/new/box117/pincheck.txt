@@ -1,0 +1,5 @@
+OINK fb3_K4_m6_m12_m12 --zlk verified
+OINK fb3_K4_m6_m12_m12 --tl verified
+PINWIN fb3_K4_m6_m12_m12.pg n 215 states 160 fallbacks 0 W0 0 AGREE True
+OINK fb3_K4_m6_m12_m12 zlk = tl regions
+n5b iterations 159 fallbacks 0 states 160 | n5x states 160 | identical state sequences: True

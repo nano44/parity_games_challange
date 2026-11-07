@@ -1,0 +1,14 @@
+GAME red/xing/instances/kw_n16.pg
+DCOPIED 0
+DR 0
+DS 0
+DT 0
+GAMES 1
+NF_chk 11
+ON_chk 11
+ROLD 0
+TS 0
+trans 12
+wruns 1
+VIOLATIONS 0
+RC 0

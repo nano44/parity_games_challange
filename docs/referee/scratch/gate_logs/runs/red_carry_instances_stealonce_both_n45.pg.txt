@@ -1,0 +1,12 @@
+GAME red/carry/instances/stealonce_both_n45.pg
+BGmax 0
+GAMES 1
+INC 2
+K 4
+MAXPH 1
+SGmax 0
+SQZ_chk 225
+steps 3
+stretches 1
+VIOLATIONS 0
+RC 0

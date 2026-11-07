@@ -1,0 +1,12 @@
+GAME red/so/instances/tevlast_cex_n40.pg
+BGmax 9
+GAMES 1
+INC 8
+K 11
+MAXPH 7
+SGmax 9
+SQZ_chk 480
+steps 10
+stretches 1
+VIOLATIONS 0
+RC 0

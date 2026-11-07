@@ -1,0 +1,14 @@
+GAME red/h3/instances/lcount2_n23.pg
+BIT_chk 46
+DCOPY_chk 3
+DESC 6
+FROZEN_chk 3
+GAMES 1
+ROOT_chk 12
+TD 36
+WCH 22
+WCT 3
+trans 3
+wruns 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,14 @@
+GAME red/xing/instances/j7_n48.pg
+BIT_chk 587
+DCOPY_chk 4
+DESC 29
+FROZEN_chk 70
+GAMES 1
+ROOT_chk 163
+TD 819
+WCH 170
+WCT 70
+trans 70
+wruns 8
+VIOLATIONS 0
+RC 0

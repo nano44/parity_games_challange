@@ -1,0 +1,7 @@
+GAME red/carry/instances/lemmaS_viol_n20.pg
+GAMES 1
+OLD_chk 36
+STEP_caseII 7
+STEP_chk 40
+VIOLATIONS 0
+RC 0

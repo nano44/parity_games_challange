@@ -1,0 +1,9 @@
+GAME red/tcpert/instances/tcS8_N10.pg 
+GAMES 1
+enum_skip 11
+enum_states 5
+loc_chk 506
+rhos 3586
+states 16
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,10 @@
+OINK lend107_n32 --zlk verified
+OINK lend107_n32 --tl verified
+PINWIN lend107_n32.pg n 32 states 113 fallbacks 10 W0 32 AGREE True
+n5b iterations 112 fallbacks 10 states 113 | n5x states 113 | identical state sequences: True
+GATE lend107_n32.pg n 32 iters 112 stretches 3 climbsteps 109 fb 10 flat 0 gated 107 blsteps 108 BLsum 1372 EXsum 206 lagmax 26 | longest: steps 109 wch 109 gated 107 phases 3 maxWchPerPhase 107 onep 25 maxratio 4.4 INC 108 maxConsistentWindow 1
+OINK fbg_K12_m6_m24 --zlk verified
+OINK fbg_K12_m6_m24 --tl verified
+PINWIN fbg_K12_m6_m24.pg n 290 states 405 fallbacks 0 W0 0 AGREE True
+n5b iterations 404 fallbacks 0 states 405 | n5x states 405 | identical state sequences: True
+GATE fbg_K12_m6_m24.pg n 290 iters 404 stretches 2 climbsteps 403 fb 0 flat 0 gated 395 blsteps 395 BLsum 6897 EXsum 4728 lagmax 182 | longest: steps 403 wch 403 gated 395 phases 1 maxWchPerPhase 403 onep 7 maxratio 57.6 INC 395 maxConsistentWindow 8

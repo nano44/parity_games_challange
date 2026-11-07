@@ -1,0 +1,12 @@
+GAME red/n5inj/instances/theta_thc24.pg
+BGmax 18
+GAMES 1
+INC 0
+K 29
+MAXPH 13
+SGmax 18
+SQZ_chk 720
+steps 28
+stretches 2
+VIOLATIONS 0
+RC 0

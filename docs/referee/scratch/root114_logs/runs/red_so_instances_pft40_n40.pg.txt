@@ -1,0 +1,15 @@
+GAME red/so/instances/pft40_n40.pg
+DCOPIED 12
+DR 33
+DR_chk 47
+DS 2
+DT 0
+GAMES 1
+NF_chk 78
+ON_chk 77
+ROLD 1
+TS 0
+trans 43
+wruns 4
+VIOLATIONS 0
+RC 0

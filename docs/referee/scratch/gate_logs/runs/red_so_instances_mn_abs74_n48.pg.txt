@@ -1,0 +1,12 @@
+GAME red/so/instances/mn_abs74_n48.pg
+BGmax 20
+GAMES 1
+INC 18
+K 22
+MAXPH 15
+SGmax 20
+SQZ_chk 1104
+steps 22
+stretches 1
+VIOLATIONS 0
+RC 0

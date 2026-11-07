@@ -1,0 +1,4 @@
+GAME red/seg/instances/runquad_K3_m4_n54.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

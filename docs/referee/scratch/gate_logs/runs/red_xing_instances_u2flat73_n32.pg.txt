@@ -1,0 +1,12 @@
+GAME red/xing/instances/u2flat73_n32.pg
+BGmax 14
+GAMES 1
+INC 15
+K 16
+MAXPH 8
+SGmax 14
+SQZ_chk 544
+steps 16
+stretches 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,719 @@
+GAME new/box59/out/fc_3.pg HIER fc_3.pg n 85 WT 35 WCH 35 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 34 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 34 NLV2 1
+GAME new/box59/out/fc_4.pg HIER fc_4.pg n 110 WT 40 WCH 40 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 40 | NOV 0 DEPTHV 1 NLV1 40
+GAME new/box59/out/fc_5.pg HIER fc_5.pg n 135 WT 47 WCH 47 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 46 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 46 NLV2 1
+GAME new/box59/out/fcobsR_3.pg HIER fcobsR_3.pg n 90 WT 34 WCH 34 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 33 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 33 NLV2 1
+GAME new/box59/out/fc_6.pg HIER fc_6.pg n 160 WT 53 WCH 53 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 52 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 52 NLV2 1
+GAME new/box59/out/fcobs_3.pg HIER fcobs_3.pg n 88 WT 34 WCH 34 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 33 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 33 NLV2 1
+GAME new/box59/out/fcobsR_4.pg HIER fcobsR_4.pg n 115 WT 39 WCH 39 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 39 | NOV 0 DEPTHV 1 NLV1 39
+GAME n5-epoch/instances/ffin12_n32.pg HIER ffin12_n32.pg n 32 WT 8 WCH 8 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 8 | NOV 0 DEPTHV 1 NLV1 8
+GAME n5-epoch/instances/ffin4_n24.pg HIER ffin4_n24.pg n 24 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME n5-epoch/instances/ffin5_n32.pg HIER ffin5_n32.pg n 32 WT 6 WCH 6 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 6 | NOV 0 DEPTHV 1 NLV1 6
+GAME n5-epoch/instances/gci2_n12.pg HIER gci2_n12.pg n 12 WT 5 WCH 5 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 5 | NOV 0 DEPTHV 1 NLV1 5
+GAME n5-epoch/instances/immfail_n14.pg HIER immfail_n14.pg n 14 WT 3 WCH 3 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 3 | NOV 0 DEPTHV 1 NLV1 3
+GAME n5-epoch/instances/immp_cex_n11.pg HIER immp_cex_n11.pg n 11 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME n5-epoch/instances/gci3_n24.pg HIER gci3_n24.pg n 24 WT 12 WCH 12 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 12 | NOV 0 DEPTHV 1 NLV1 12
+GAME n5-epoch/instances/lcount_n23.pg HIER lcount_n23.pg n 23 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/fc_7.pg HIER fc_7.pg n 185 WT 58 WCH 58 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 58 | NOV 0 DEPTHV 1 NLV1 58
+GAME n5-epoch/instances/lend13_n16.pg HIER lend13_n16.pg n 16 WT 7 WCH 7 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 7 | NOV 0 DEPTHV 1 NLV1 7
+GAME n5-epoch/instances/lend27_n24.pg HIER lend27_n24.pg n 24 WT 2 WCH 2 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 2 | NOV 0 DEPTHV 1 NLV1 2
+GAME new/box59/out/fcobs_4.pg HIER fcobs_4.pg n 113 WT 39 WCH 39 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 39 | NOV 0 DEPTHV 1 NLV1 39
+GAME n5-epoch/instances/lend107_n32.pg HIER lend107_n32.pg n 32 WT 22 WCH 22 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 22 | NOV 0 DEPTHV 1 NLV1 22
+GAME n5-epoch/instances/lend15_n48.pg HIER lend15_n48.pg n 48 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME n5-epoch/instances/lend39f_n32.pg HIER lend39f_n32.pg n 32 WT 4 WCH 4 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 4 | NOV 0 DEPTHV 1 NLV1 4
+GAME n5-epoch/instances/lend47_n32.pg HIER lend47_n32.pg n 32 WT 16 WCH 16 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 16 | NOV 0 DEPTHV 1 NLV1 16
+GAME n5-epoch/instances/lend55_n32.pg HIER lend55_n32.pg n 32 WT 14 WCH 14 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 14 | NOV 0 DEPTHV 1 NLV1 14
+GAME n5-epoch/instances/lend9_n8.pg HIER lend9_n8.pg n 8 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME n5-epoch/instances/lend82_n32.pg HIER lend82_n32.pg n 32 WT 19 WCH 19 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 19 | NOV 0 DEPTHV 1 NLV1 19
+GAME n5-epoch/instances/lend72_n48.pg HIER lend72_n48.pg n 48 WT 9 WCH 9 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 9 | NOV 0 DEPTHV 1 NLV1 9
+GAME n5-epoch/instances/nep13_n24.pg HIER nep13_n24.pg n 24 WT 5 WCH 5 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 5 | NOV 0 DEPTHV 1 NLV1 5
+GAME n5-epoch/instances/nep56_n32.pg HIER nep56_n32.pg n 32 WT 9 WCH 9 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 9 | NOV 0 DEPTHV 1 NLV1 9
+GAME n5-epoch/instances/nconf61_n48.pg HIER nconf61_n48.pg n 48 WT 34 WCH 34 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 34 | NOV 0 DEPTHV 1 NLV1 34
+GAME n5-epoch/instances/nep22f_n64.pg HIER nep22f_n64.pg n 64 WT 10 WCH 8 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 8 | NOV 0 DEPTHV 1 NLV1 10
+GAME n5-epoch/instances/nep76_n40.pg HIER nep76_n40.pg n 40 WT 12 WCH 12 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 12 | NOV 0 DEPTHV 1 NLV1 12
+GAME n5-epoch/instances/nep92_n40.pg HIER nep92_n40.pg n 40 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME n5-epoch/instances/nep94_n48.pg HIER nep94_n48.pg n 48 WT 10 WCH 10 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 10 | NOV 0 DEPTHV 1 NLV1 10
+GAME n5-epoch/instances/ret12_n40.pg HIER ret12_n40.pg n 40 WT 5 WCH 5 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 5 | NOV 0 DEPTHV 1 NLV1 5
+GAME n5-exhaustive/instances/b4_cyc6_0.pg HIER b4_cyc6_0.pg n 11 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME n5-exhaustive/instances/b4_n4all_cyc3_0.pg HIER b4_n4all_cyc3_0.pg n 4 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME n5-exhaustive/instances/b4_cyc6_1.pg HIER b4_cyc6_1.pg n 12 WT 4 WCH 4 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 4 | NOV 0 DEPTHV 1 NLV1 4
+GAME n5-exhaustive/instances/b4_nohlen5_0.pg HIER b4_nohlen5_0.pg n 11 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME n5-exhaustive/instances/b4_n5_other_0.pg HIER b4_n5_other_0.pg n 5 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME n5-exhaustive/instances/b4_theta_n7.pg HIER b4_theta_n7.pg n 7 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME n5-epoch/instances/ret14_n48.pg HIER ret14_n48.pg n 48 WT 11 WCH 11 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 11 | NOV 0 DEPTHV 1 NLV1 11
+GAME n5-epoch/instances/ret14_n64.pg HIER ret14_n64.pg n 64 WT 4 WCH 4 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 4 | NOV 0 DEPTHV 1 NLV1 4
+GAME n5-exhaustive/instances/b5_o11.pg HIER b5_o11.pg n 10 WT 7 WCH 7 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 7 | NOV 0 DEPTHV 1 NLV1 7
+GAME n5-exhaustive/instances/b5_n5_cyc4_0.pg HIER b5_n5_cyc4_0.pg n 5 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME n5-exhaustive/instances/b5_os_n12.pg HIER b5_os_n12.pg n 12 WT 10 WCH 10 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 10 | NOV 0 DEPTHV 1 NLV1 10
+GAME n5-exhaustive/instances/b5_os_n14.pg HIER b5_os_n14.pg n 14 WT 14 WCH 14 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 14 | NOV 0 DEPTHV 1 NLV1 14
+GAME n5-exhaustive/instances/b5_os_n16.pg HIER b5_os_n16.pg n 16 WT 16 WCH 16 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 16 | NOV 0 DEPTHV 1 NLV1 16
+GAME n5-exhaustive/instances/b5_os_n20.pg HIER b5_os_n20.pg n 20 WT 24 WCH 24 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 24 | NOV 0 DEPTHV 1 NLV1 24
+GAME n5-exhaustive/instances/b5_os_n24.pg HIER b5_os_n24.pg n 24 WT 43 WCH 43 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 43 | NOV 0 DEPTHV 1 NLV1 43
+GAME n5-exhaustive/instances/b5_os_n28.pg HIER b5_os_n28.pg n 28 WT 52 WCH 52 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 52 | NOV 0 DEPTHV 1 NLV1 52
+GAME n5-exhaustive/instances/b6_xl2_n32.pg HIER b6_xl2_n32.pg n 32 WT 73 WCH 73 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 72 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 72 NLV2 1
+GAME n5-exhaustive/instances/b5_os_n40.pg HIER b5_os_n40.pg n 40 WT 63 WCH 63 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 63 | NOV 0 DEPTHV 1 NLV1 63
+GAME n5-exhaustive/instances/b5_os_n32.pg HIER b5_os_n32.pg n 32 WT 60 WCH 60 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 60 | NOV 0 DEPTHV 1 NLV1 60
+GAME n5-exhaustive/instances/b6_xs_n24.pg HIER b6_xs_n24.pg n 24 WT 21 WCH 21 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 21 | NOV 0 DEPTHV 1 NLV1 21
+GAME n5-exhaustive/instances/b6_xl_n32.pg HIER b6_xl_n32.pg n 32 WT 71 WCH 71 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 70 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 70 NLV2 1
+GAME n5-exhaustive/instances/b6_xl_n40.pg HIER b6_xl_n40.pg n 40 WT 77 WCH 77 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 76 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 76 NLV2 1
+GAME n5-exhaustive/instances/b6_xs_n32.pg HIER b6_xs_n32.pg n 32 WT 29 WCH 29 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 29 | NOV 0 DEPTHV 1 NLV1 29
+GAME n5-exhaustive/instances/b6_xs_n40.pg HIER b6_xs_n40.pg n 40 WT 36 WCH 36 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 36 | NOV 0 DEPTHV 1 NLV1 36
+GAME n5-exhaustive/instances/b6_xs_n48.pg HIER b6_xs_n48.pg n 48 WT 37 WCH 37 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 37 | NOV 0 DEPTHV 1 NLV1 37
+GAME n5-exhaustive/instances/b6_xl_n48.pg HIER b6_xl_n48.pg n 48 WT 85 WCH 85 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 84 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 84 NLV2 1
+GAME n5-exhaustive/instances/canonA_0.pg HIER canonA_0.pg n 15 WT 3 WCH 3 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 3 | NOV 0 DEPTHV 1 NLV1 3
+GAME n5-exhaustive/instances/b6_xw_n32.pg HIER b6_xw_n32.pg n 32 WT 65 WCH 65 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 64 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 64 NLV2 1
+GAME n5-exhaustive/instances/canonA_1.pg HIER canonA_1.pg n 15 WT 3 WCH 3 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 3 | NOV 0 DEPTHV 1 NLV1 3
+GAME n5-exhaustive/instances/b6_xw_n40.pg HIER b6_xw_n40.pg n 40 WT 66 WCH 66 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 65 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 65 NLV2 1
+GAME n5-exhaustive/instances/frz1_n24.pg HIER frz1_n24.pg n 24 WT 28 WCH 28 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 28 | NOV 0 DEPTHV 1 NLV1 28
+GAME n5-exhaustive/instances/frz2_n24.pg HIER frz2_n24.pg n 24 WT 23 WCH 23 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 23 | NOV 0 DEPTHV 1 NLV1 23
+GAME n5-exhaustive/instances/n3all_maxph_0.pg HIER n3all_maxph_0.pg n 3 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME n5-exhaustive/instances/n3all_maxph_1.pg HIER n3all_maxph_1.pg n 3 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME n5-exhaustive/instances/b6_xw_n48.pg HIER b6_xw_n48.pg n 48 WT 71 WCH 71 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 70 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 70 NLV2 1
+GAME n5-exhaustive/instances/frz3_n24.pg HIER frz3_n24.pg n 24 WT 24 WCH 24 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 24 | NOV 0 DEPTHV 1 NLV1 24
+GAME n5-exhaustive/instances/n3all_maxph_2.pg HIER n3all_maxph_2.pg n 3 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME n5-exhaustive/instances/n4_maxph_1.pg HIER n4_maxph_1.pg n 4 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME n5-exhaustive/instances/n4_maxph_0.pg HIER n4_maxph_0.pg n 4 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME n5-exhaustive/instances/n4_thch_0.pg HIER n4_thch_0.pg n 4 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME n5-exhaustive/instances/n4all_maxph_0.pg HIER n4all_maxph_0.pg n 4 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME n5-exhaustive/instances/n4all_maxph_1.pg HIER n4all_maxph_1.pg n 4 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME n5-exhaustive/instances/n4all_tgbad_0.pg HIER n4all_tgbad_0.pg n 4 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME n5-exhaustive/instances/n4all_thch_0.pg HIER n4all_thch_0.pg n 4 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME n5-exhaustive/instances/n5s_maxph_0.pg HIER n5s_maxph_0.pg n 5 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME n5-exhaustive/instances/nh_n8.pg HIER nh_n8.pg n 8 WT 2 WCH 2 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 2 | NOV 0 DEPTHV 1 NLV1 2
+GAME n5-exhaustive/instances/thetaA_canon_n8.pg HIER thetaA_canon_n8.pg n 8 WT 3 WCH 3 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 3 | NOV 0 DEPTHV 1 NLV1 3
+GAME n5-exhaustive/instances/thetaA_canon_n12.pg HIER thetaA_canon_n12.pg n 12 WT 3 WCH 3 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 3 | NOV 0 DEPTHV 1 NLV1 3
+GAME n5-exhaustive/instances/thetaA_n6.pg HIER thetaA_n6.pg n 6 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME n5-exhaustive/instances/thetaA_n17.pg HIER thetaA_n17.pg n 17 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME n5-exhaustive/instances/b6_xw_n56.pg HIER b6_xw_n56.pg n 56 WT 72 WCH 72 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 71 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 71 NLV2 1
+GAME n5-exhaustive/instances/thetaA_n9.pg HIER thetaA_n9.pg n 9 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME n5-exhaustive/instances/thetaA_n7.pg HIER thetaA_n7.pg n 7 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME n5-exhaustive/instances/wk1_n32.pg HIER wk1_n32.pg n 32 WT 2 WCH 2 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 2 | NOV 0 DEPTHV 1 NLV1 2
+GAME n5-exhaustive/instances/wk2_n32.pg HIER wk2_n32.pg n 32 WT 4 WCH 4 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 4 | NOV 0 DEPTHV 1 NLV1 4
+GAME new/box48/instances/long121_n40.pg HIER long121_n40.pg n 40 WT 17 WCH 17 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 17 | NOV 0 DEPTHV 1 NLV1 17
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg HIER best_qpc_nep76_n40_s63.pg n 64 WT 2 WCH 2 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 2 | NOV 0 DEPTHV 1 NLV1 2
+GAME red/carry/instances/absmono_viol_n44.pg HIER absmono_viol_n44.pg n 44 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg HIER best_qpc_nep90_n40_s61.pg n 64 WT 11 WCH 11 DEPTH 2 MONOX 0 MAXSUB1 2 NLEV1 9 NLEV2 2 | NOV 0 DEPTHV 2 NLV1 9 NLV2 2
+GAME red/carry/instances/cm_mdrop_both_n28.pg HIER cm_mdrop_both_n28.pg n 28 WT 3 WCH 3 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 3 | NOV 0 DEPTHV 1 NLV1 3
+GAME red/carry/instances/carry3_2_2.pg HIER carry3_2_2.pg n 47 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/carry/instances/cm_mdrop_oink_n28.pg HIER cm_mdrop_oink_n28.pg n 28 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/carry/instances/ctx11_n40.pg HIER ctx11_n40.pg n 40 WT 2 WCH 2 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 2 | NOV 0 DEPTHV 1 NLV1 2
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg HIER best_qpc_nep90_n40_s62.pg n 80 WT 10 WCH 10 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 10 | NOV 0 DEPTHV 1 NLV1 10
+GAME red/carry/instances/ctx6_n20.pg HIER ctx6_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/carry/instances/ctx12_n40.pg HIER ctx12_n40.pg n 40 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/carry/instances/ctx7_n30.pg HIER ctx7_n30.pg n 30 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/carry/instances/ctx13_n40.pg HIER ctx13_n40.pg n 40 WT 8 WCH 8 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 8 | NOV 0 DEPTHV 1 NLV1 8
+GAME red/carry/instances/f1_twodef_n48.pg HIER f1_twodef_n48.pg n 48 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/carry/instances/ctx6_n56.pg HIER ctx6_n56.pg n 56 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/carry/instances/f1_twofall_n48.pg HIER f1_twofall_n48.pg n 48 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/carry/instances/fallv_viol_n28.pg HIER fallv_viol_n28.pg n 28 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box48/out/qpcclimb/scale/snap_n80_s62.pg HIER snap_n80_s62.pg n 80 WT 10 WCH 10 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 10 | NOV 0 DEPTHV 1 NLV1 10
+GAME red/carry/instances/fired10_n20.pg HIER fired10_n20.pg n 20 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/carry/instances/firedlong667_n20.pg HIER firedlong667_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/carry/instances/firedlong667_n43.pg HIER firedlong667_n43.pg n 43 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/carry/instances/gapbW_dup_n20.pg HIER gapbW_dup_n20.pg n 20 WT 2 WCH 2 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 2 | NOV 0 DEPTHV 1 NLV1 2
+GAME red/carry/instances/fall3_n76.pg HIER fall3_n76.pg n 76 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/carry/instances/gapb_dup_n20.pg HIER gapb_dup_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/carry/instances/fall4_n116.pg HIER fall4_n116.pg n 116 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/carry/instances/h4_compound2x2_n44.pg HIER h4_compound2x2_n44.pg n 44 WT 3 WCH 3 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 3 | NOV 0 DEPTHV 1 NLV1 3
+GAME red/carry/instances/firedstep13_n76.pg HIER firedstep13_n76.pg n 76 WT 2 WCH 2 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 2 | NOV 0 DEPTHV 1 NLV1 2
+GAME red/carry/instances/h4_def2ctx_n20.pg HIER h4_def2ctx_n20.pg n 20 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/carry/instances/h4_compound_n44.pg HIER h4_compound_n44.pg n 44 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/carry/instances/h4_def7_n28.pg HIER h4_def7_n28.pg n 28 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/carry/instances/h4_disjoint_n20.pg HIER h4_disjoint_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/carry/instances/kfirst_viol_n13.pg HIER kfirst_viol_n13.pg n 13 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/carry/instances/h4_notweaker_n20.pg HIER h4_notweaker_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/carry/instances/kin_viol_n29.pg HIER kin_viol_n29.pg n 29 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/carry/instances/lemmaS_Mdrop_n20.pg HIER lemmaS_Mdrop_n20.pg n 20 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/carry/instances/lalg_dtl_mviol_n20.pg HIER lalg_dtl_mviol_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/carry/instances/lemmaS_viol_n20.pg HIER lemmaS_viol_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/carry/instances/meet_viol_n17.pg HIER meet_viol_n17.pg n 17 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/carry/instances/lex_viol_inj_n28.pg HIER lex_viol_inj_n28.pg n 28 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/carry/instances/lex_viol_tie_n28.pg HIER lex_viol_tie_n28.pg n 28 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/carry/instances/nosig_2_3.pg HIER nosig_2_3.pg n 24 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/carry/instances/phi_flat_alive_n32.pg HIER phi_flat_alive_n32.pg n 32 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/carry/instances/pk_viol_n20.pg HIER pk_viol_n20.pg n 20 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/carry/instances/meet_viol_n29.pg HIER meet_viol_n29.pg n 29 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/carry/instances/replay4_n32.pg HIER replay4_n32.pg n 32 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/carry/instances/spp19_oink_n30.pg HIER spp19_oink_n30.pg n 30 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/carry/instances/spp22_oink_n40.pg HIER spp22_oink_n40.pg n 40 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/carry/instances/spp19_stable_n30.pg HIER spp19_stable_n30.pg n 30 WT 2 WCH 2 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 2 | NOV 0 DEPTHV 1 NLV1 2
+GAME new/box59/out/fc_8.pg HIER fc_8.pg n 210 WT 66 WCH 66 DEPTH 2 MONOX 0 MAXSUB1 2 NLEV1 64 NLEV2 2 | NOV 0 DEPTHV 2 NLV1 64 NLV2 2
+GAME red/carry/instances/stealonce_both_n45.pg HIER stealonce_both_n45.pg n 45 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/carry/instances/tstep_near_n20.pg HIER tstep_near_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/carry/instances/spp25_oink_n40.pg HIER spp25_oink_n40.pg n 40 WT 3 WCH 3 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 3 | NOV 0 DEPTHV 1 NLV1 3
+GAME red/carry/instances/stealonce_core_n76.pg HIER stealonce_core_n76.pg n 76 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/ctxp/instances/deep1_n13.pg HIER deep1_n13.pg n 13 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/ctxp/instances/deep1_n21.pg HIER deep1_n21.pg n 21 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/ctxp/instances/margin1_mc5.pg HIER margin1_mc5.pg n 50 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/carry/instances/stealer_viol_n76.pg HIER stealer_viol_n76.pg n 76 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/ctxp/instances/margin1_mc1.pg HIER margin1_mc1.pg n 80 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/ctxp/instances/margin1_n20.pg HIER margin1_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/dtl/instances/lalg_dtl_pertop31_n18.pg HIER lalg_dtl_pertop31_n18.pg n 18 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/fbr/instances/bghm_k1_gap6_A.pg HIER bghm_k1_gap6_A.pg n 21 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/dtl/instances/lalg_dtl_restart8_n20.pg HIER lalg_dtl_restart8_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/fbr/instances/bghm_k3_gap4_A.pg HIER bghm_k3_gap4_A.pg n 45 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/carry/instances/stealonce_viol_n76.pg HIER stealonce_viol_n76.pg n 76 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/fbr/instances/lev74_n40.pg HIER lev74_n40.pg n 40 WT 6 WCH 6 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 6 | NOV 0 DEPTHV 1 NLV1 6
+GAME red/fbr/instances/rho144_n32.pg HIER rho144_n32.pg n 32 WT 2 WCH 2 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 2 | NOV 0 DEPTHV 1 NLV1 2
+GAME red/fbr/instances/fr39_q4_n48.pg HIER fr39_q4_n48.pg n 48 WT 32 WCH 32 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 32 | NOV 0 DEPTHV 1 NLV1 32
+GAME red/fbr/instances/rho84_n16.pg HIER rho84_n16.pg n 16 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/fbr/instances/rho3_253_n32.pg HIER rho3_253_n32.pg n 32 WT 4 WCH 4 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 4 | NOV 0 DEPTHV 1 NLV1 4
+GAME red/fbr/instances/sat4_n20.pg HIER sat4_n20.pg n 20 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/fbr/instances/nep80_n40.pg HIER nep80_n40.pg n 40 WT 9 WCH 9 DEPTH 2 MONOX 0 MAXSUB1 2 NLEV1 7 NLEV2 2 | NOV 0 DEPTHV 2 NLV1 7 NLV2 2
+GAME red/fbr/instances/sat68_n20.pg HIER sat68_n20.pg n 20 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/fbr/instances/rho666_n48.pg HIER rho666_n48.pg n 48 WT 9 WCH 9 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 9 | NOV 0 DEPTHV 1 NLV1 9
+GAME red/fbx/instances/exsw_loop_n15.pg HIER exsw_loop_n15.pg n 15 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/fbr/instances/twowave_L16.pg HIER twowave_L16.pg n 22 WT 15 WCH 15 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 15 | NOV 0 DEPTHV 1 NLV1 15
+GAME red/fbr/instances/lev56_n48.pg HIER lev56_n48.pg n 48 WT 70 WCH 70 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 69 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 69 NLV2 1
+GAME red/frz/instances/fbcap_eq_u4_n11.pg HIER fbcap_eq_u4_n11.pg n 11 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/h3/instances/frzgap0_n6.pg HIER frzgap0_n6.pg n 6 WT 2 WCH 2 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 2 | NOV 0 DEPTHV 1 NLV1 2
+GAME red/frz/instances/fx2_n11.pg HIER fx2_n11.pg n 11 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/h3/instances/frzgap0_n4.pg HIER frzgap0_n4.pg n 4 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/h3/instances/lcount2_n23.pg HIER lcount2_n23.pg n 23 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/h3/instances/lcount_n23.pg HIER lcount_n23.pg n 23 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/fbx/instances/kt6_n58.pg HIER kt6_n58.pg n 58 WT 29 WCH 27 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 27 | NOV 0 DEPTHV 1 NLV1 29
+GAME red/h3/instances/offret_l19_n24.pg HIER offret_l19_n24.pg n 24 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/kl/instances/klcount_n18_base.pg HIER klcount_n18_base.pg n 18 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/kl/instances/klcount_n16.pg HIER klcount_n16.pg n 16 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/kl/instances/klcount_n18_lvl.pg HIER klcount_n18_lvl.pg n 18 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/kl/instances/klglobal_n16.pg HIER klglobal_n16.pg n 16 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/kl/instances/klglobal_n20_lvl2.pg HIER klglobal_n20_lvl2.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/kl/instances/klglobal_n18_lvl.pg HIER klglobal_n18_lvl.pg n 18 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/kl/instances/klmin_n13.pg HIER klmin_n13.pg n 13 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/h3/instances/xsnpre36_n48.pg HIER xsnpre36_n48.pg n 48 WT 30 WCH 30 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 30 | NOV 0 DEPTHV 1 NLV1 30
+GAME red/kl/instances/r2join_h0E_n14.pg HIER r2join_h0E_n14.pg n 14 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/kl/instances/r2climb_h13.pg HIER r2climb_h13.pg n 13 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/kl/instances/r2crawl_n14.pg HIER r2crawl_n14.pg n 14 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/kl/instances/r2lap_best_n22.pg HIER r2lap_best_n22.pg n 22 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/kl24/instances/HL88_0.pg HIER HL88_0.pg n 41 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/kl24/instances/HL88_1.pg HIER HL88_1.pg n 43 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/kl24/instances/HL88_2.pg HIER HL88_2.pg n 45 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/kl24/instances/HLg_0.pg HIER HLg_0.pg n 29 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/kl24/instances/HLg_1.pg HIER HLg_1.pg n 35 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/kl24/instances/HLg_3.pg HIER HLg_3.pg n 55 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/kl24/instances/HL88_3.pg HIER HL88_3.pg n 47 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/kl24/instances/HLg_2.pg HIER HLg_2.pg n 45 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/kw/instances/cw11_n24.pg HIER cw11_n24.pg n 24 WT 12 WCH 5 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 5 | NOV 0 DEPTHV 3 NLV1 9 NLV2 2 NLV3 1
+GAME red/lag/instances/depth2_n39.pg HIER depth2_n39.pg n 39 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/kw/instances/frzu_tight_n14.pg HIER frzu_tight_n14.pg n 14 WT 3 WCH 3 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 3 | NOV 0 DEPTHV 1 NLV1 3
+GAME red/kw/instances/kc18_n24.pg HIER kc18_n24.pg n 24 WT 19 WCH 19 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 19 | NOV 0 DEPTHV 1 NLV1 19
+GAME red/lag/instances/depth3_n46.pg HIER depth3_n46.pg n 46 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/lag/instances/fam_D4_n50.pg HIER fam_D4_n50.pg n 50 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/lag/instances/fam_D12_n106.pg HIER fam_D12_n106.pg n 106 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/lag/instances/depth4_n53.pg HIER depth4_n53.pg n 53 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/mei/instances/mei_h2.pg HIER mei_h2.pg n 19 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/mei/instances/mei_h3.pg HIER mei_h3.pg n 27 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/mei/instances/mei_h4.pg HIER mei_h4.pg n 35 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/lag/instances/fam_D8_n78.pg HIER fam_D8_n78.pg n 78 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/mei/instances/mei_h6.pg HIER mei_h6.pg n 51 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/n3/instances/core41_n40.pg HIER core41_n40.pg n 40 WT 7 WCH 7 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 7 | NOV 0 DEPTHV 1 NLV1 7
+GAME red/mei/instances/mei_h5.pg HIER mei_h5.pg n 43 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/mei/instances/mei_h8.pg HIER mei_h8.pg n 67 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/n3/instances/lag11_n40.pg HIER lag11_n40.pg n 40 WT 5 WCH 5 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 5 | NOV 0 DEPTHV 1 NLV1 5
+GAME red/n3/instances/lagx10_n40.pg HIER lagx10_n40.pg n 40 WT 11 WCH 11 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 11 | NOV 0 DEPTHV 1 NLV1 11
+GAME red/n3/instances/comp54_n80.pg HIER comp54_n80.pg n 80 WT 6 WCH 6 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 6 | NOV 0 DEPTHV 1 NLV1 6
+GAME red/n3/instances/long121_n40.pg HIER long121_n40.pg n 40 WT 17 WCH 17 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 17 | NOV 0 DEPTHV 1 NLV1 17
+GAME red/n3/instances/long90_k2_n40.pg HIER long90_k2_n40.pg n 40 WT 14 WCH 14 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 14 | NOV 0 DEPTHV 1 NLV1 14
+GAME red/n3/instances/n3cov_phi.pg HIER n3cov_phi.pg n 32 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/n3/instances/n3cov_lean.pg HIER n3cov_lean.pg n 48 WT 11 WCH 11 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 11 | NOV 0 DEPTHV 1 NLV1 11
+GAME red/n3/instances/run49_n32.pg HIER run49_n32.pg n 32 WT 11 WCH 11 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 11 | NOV 0 DEPTHV 1 NLV1 11
+GAME red/n3/instances/ret22_n40.pg HIER ret22_n40.pg n 40 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/n5/instances/dlm2_4.pg HIER dlm2_4.pg n 42 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/n5/instances/dl_4_4.pg HIER dl_4_4.pg n 42 WT 5 WCH 5 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 5 | NOV 0 DEPTHV 1 NLV1 5
+GAME red/n5/instances/sym_h12_s1.pg HIER sym_h12_s1.pg n 24 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/n5/instances/sym_h8_s1.pg HIER sym_h8_s1.pg n 16 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/n3/instances/run34_n40.pg HIER run34_n40.pg n 40 WT 29 WCH 29 DEPTH 2 MONOX 0 MAXSUB1 15 NLEV1 14 NLEV2 15 | NOV 0 DEPTHV 2 NLV1 14 NLV2 15
+GAME red/n5inj/instances/block_bk20.pg HIER block_bk20.pg n 24 WT 17 WCH 17 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 17 | NOV 0 DEPTHV 1 NLV1 17
+GAME red/n5/instances/sym_h16_s1.pg HIER sym_h16_s1.pg n 32 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/n5inj/instances/blockph_bp20.pg HIER blockph_bp20.pg n 24 WT 22 WCH 22 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 22 | NOV 0 DEPTHV 1 NLV1 22
+GAME red/n5inj/instances/bribe_cex_n15.pg HIER bribe_cex_n15.pg n 15 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/n5inj/instances/block_bk32.pg HIER block_bk32.pg n 36 WT 21 WCH 21 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 21 | NOV 0 DEPTHV 1 NLV1 21
+GAME red/n5inj/instances/frz24.pg HIER frz24.pg n 24 WT 22 WCH 22 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 22 | NOV 0 DEPTHV 1 NLV1 22
+GAME red/n5inj/instances/blockph_bp32.pg HIER blockph_bp32.pg n 36 WT 30 WCH 30 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 30 | NOV 0 DEPTHV 1 NLV1 30
+GAME red/n5inj/instances/frz32.pg HIER frz32.pg n 32 WT 2 WCH 2 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 2 | NOV 0 DEPTHV 1 NLV1 2
+GAME red/n5inj/instances/phase2_pk32.pg HIER phase2_pk32.pg n 32 WT 44 WCH 44 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 44 | NOV 0 DEPTHV 1 NLV1 44
+GAME red/n5inj/instances/returns_rt32.pg HIER returns_rt32.pg n 32 WT 44 WCH 44 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 44 | NOV 0 DEPTHV 1 NLV1 44
+GAME red/n5inj/instances/frz40.pg HIER frz40.pg n 40 WT 74 WCH 74 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 74 | NOV 0 DEPTHV 1 NLV1 74
+GAME red/n5/instances/dl_6_8.pg HIER dl_6_8.pg n 110 WT 9 WCH 9 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 9 | NOV 0 DEPTHV 1 NLV1 9
+GAME red/n5inj/instances/elimn_cex_n48.pg HIER elimn_cex_n48.pg n 48 WT 79 WCH 79 DEPTH 2 MONOX 0 MAXSUB1 4 NLEV1 75 NLEV2 4 | NOV 0 DEPTHV 2 NLV1 75 NLV2 4
+GAME red/n5inj/instances/theta_thc24.pg HIER theta_thc24.pg n 24 WT 16 WCH 16 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 16 | NOV 0 DEPTHV 1 NLV1 16
+GAME red/n5inj/instances/theta_thf16.pg HIER theta_thf16.pg n 16 WT 17 WCH 17 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 17 | NOV 0 DEPTHV 1 NLV1 17
+GAME red/n5inj/instances/phase2_pk48.pg HIER phase2_pk48.pg n 48 WT 40 WCH 40 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 40 | NOV 0 DEPTHV 1 NLV1 40
+GAME red/n5inj/instances/returns_rt48.pg HIER returns_rt48.pg n 48 WT 64 WCH 64 DEPTH 2 MONOX 0 MAXSUB1 3 NLEV1 61 NLEV2 3 | NOV 0 DEPTHV 2 NLV1 61 NLV2 3
+GAME red/n5inj/instances/theta_tp32.pg HIER theta_tp32.pg n 32 WT 40 WCH 40 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 40 | NOV 0 DEPTHV 1 NLV1 40
+GAME red/n5inj/instances/wide_h16.pg HIER wide_h16.pg n 32 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/nest16/instances/k4L72_n101.pg HIER k4L72_n101.pg n 101 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/nest16/instances/k4L72r_n101.pg HIER k4L72r_n101.pg n 101 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/n5inj/instances/theta_tp40.pg HIER theta_tp40.pg n 40 WT 36 WCH 36 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 36 | NOV 0 DEPTHV 1 NLV1 36
+GAME red/nest16/instances/k4seed_c1_n82.pg HIER k4seed_c1_n82.pg n 82 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/nest16/instances/k4g50_n101.pg HIER k4g50_n101.pg n 101 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/n5inj/instances/returns_ph64.pg HIER returns_ph64.pg n 64 WT 88 WCH 88 DEPTH 2 MONOX 0 MAXSUB1 4 NLEV1 84 NLEV2 4 | NOV 0 DEPTHV 2 NLV1 84 NLV2 4
+GAME red/nest16/instances/k4u_n101.pg HIER k4u_n101.pg n 101 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/nest16/instances/k4seed_vr_n87.pg HIER k4seed_vr_n87.pg n 87 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/nest16/instances/k4y1_n82.pg HIER k4y1_n82.pg n 82 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/nest16/instances/k4y2_n87.pg HIER k4y2_n87.pg n 87 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/nest16/instances/near4_n26.pg HIER near4_n26.pg n 26 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/nest16/instances/nest4u_n46.pg HIER nest4u_n46.pg n 46 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/nest16/instances/nest4uu_n51.pg HIER nest4uu_n51.pg n 51 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/nest16/instances/nest5_n49.pg HIER nest5_n49.pg n 49 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/nest16/instances/nest6_n75.pg HIER nest6_n75.pg n 75 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/nest16/instances/nest6min_n75.pg HIER nest6min_n75.pg n 75 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/nest16/instances/oseg_n26.pg HIER oseg_n26.pg n 26 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/nest16/instances/nest6x_n75.pg HIER nest6x_n75.pg n 75 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/nest16/instances/win3_n27.pg HIER win3_n27.pg n 27 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/nest16/instances/w1_n27.pg HIER w1_n27.pg n 27 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/nopre/instances/nopre_viol_n20.pg HIER nopre_viol_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/o1/instances/ph45_n32.pg HIER ph45_n32.pg n 32 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/o1/instances/ph50_n32.pg HIER ph50_n32.pg n 32 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/o1/instances/tau18_n24.pg HIER tau18_n24.pg n 24 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/n5inj/instances/returns_rt64.pg HIER returns_rt64.pg n 64 WT 73 WCH 73 DEPTH 2 MONOX 0 MAXSUB1 4 NLEV1 69 NLEV2 4 | NOV 0 DEPTHV 2 NLV1 69 NLV2 4
+GAME red/o1/instances/iter118_n48.pg HIER iter118_n48.pg n 48 WT 13 WCH 13 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 13 | NOV 0 DEPTHV 1 NLV1 13
+GAME red/rec0/instances/n0_6_n24.pg HIER n0_6_n24.pg n 24 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/rec0/instances/fbd0_n4.pg HIER fbd0_n4.pg n 4 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/rec0/instances/nep24_n20.pg HIER nep24_n20.pg n 20 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/sgrow/instances/s20_n20.pg HIER s20_n20.pg n 20 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/o1/instances/f39_n48.pg HIER f39_n48.pg n 48 WT 33 WCH 33 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 33 | NOV 0 DEPTHV 1 NLV1 33
+GAME red/sgrow/instances/s21_oink_n20.pg HIER s21_oink_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/rec0/instances/lend2_30_n48.pg HIER lend2_30_n48.pg n 48 WT 13 WCH 13 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 13 | NOV 0 DEPTHV 1 NLV1 13
+GAME red/sgrow/instances/s29_n30.pg HIER s29_n30.pg n 30 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/sgrow/instances/s34_oink_n40.pg HIER s34_oink_n40.pg n 40 WT 2 WCH 2 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 2 | NOV 0 DEPTHV 1 NLV1 2
+GAME red/rec0/instances/nep87_n40.pg HIER nep87_n40.pg n 40 WT 13 WCH 13 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 12 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 12 NLV2 1
+GAME red/sgrow/instances/s32_n60.pg HIER s32_n60.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/sgrow/instances/s35_oink_n80.pg HIER s35_oink_n80.pg n 80 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/rec0/instances/nep90_n40.pg HIER nep90_n40.pg n 40 WT 13 WCH 13 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 12 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 12 NLV2 1
+GAME red/so/instances/beta2_n11.pg HIER beta2_n11.pg n 11 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/so/instances/epsseg_cex_n16.pg HIER epsseg_cex_n16.pg n 16 WT 6 WCH 6 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 6 | NOV 0 DEPTHV 1 NLV1 6
+GAME red/sgrow/instances/s36_oink_n60.pg HIER s36_oink_n60.pg n 60 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/so/instances/exitr_cex_n16.pg HIER exitr_cex_n16.pg n 16 WT 7 WCH 7 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 7 | NOV 0 DEPTHV 1 NLV1 7
+GAME red/sgrow/instances/s34_oink_n80.pg HIER s34_oink_n80.pg n 80 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/so/instances/exitr_cex_n48.pg HIER exitr_cex_n48.pg n 48 WT 4 WCH 4 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 4 | NOV 0 DEPTHV 1 NLV1 4
+GAME red/so/instances/farrise25_n32.pg HIER farrise25_n32.pg n 32 WT 4 WCH 4 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 3 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 3 NLV2 1
+GAME red/so/instances/epsseg_cex_n48.pg HIER epsseg_cex_n48.pg n 48 WT 6 WCH 6 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 6 | NOV 0 DEPTHV 1 NLV1 6
+GAME red/so/instances/nleq_cex_n48.pg HIER nleq_cex_n48.pg n 48 WT 4 WCH 4 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 4 | NOV 0 DEPTHV 1 NLV1 4
+GAME red/so/instances/mn_abs74_n48.pg HIER mn_abs74_n48.pg n 48 WT 10 WCH 10 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 10 | NOV 0 DEPTHV 1 NLV1 10
+GAME red/so/instances/njb_reabs54_n32.pg HIER njb_reabs54_n32.pg n 32 WT 12 WCH 12 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 12 | NOV 0 DEPTHV 1 NLV1 12
+GAME red/so/instances/pftheta34_n32.pg HIER pftheta34_n32.pg n 32 WT 34 WCH 34 DEPTH 2 MONOX 0 MAXSUB1 3 NLEV1 31 NLEV2 3 | NOV 0 DEPTHV 2 NLV1 31 NLV2 3
+GAME red/so/instances/nleq33_n48.pg HIER nleq33_n48.pg n 48 WT 33 WCH 33 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 33 | NOV 0 DEPTHV 1 NLV1 33
+GAME red/so/instances/pftheta_cex_n32.pg HIER pftheta_cex_n32.pg n 32 WT 34 WCH 34 DEPTH 2 MONOX 0 MAXSUB1 4 NLEV1 30 NLEV2 4 | NOV 0 DEPTHV 2 NLV1 30 NLV2 4
+GAME red/so/instances/pft40_n40.pg HIER pft40_n40.pg n 40 WT 43 WCH 43 DEPTH 2 MONOX 0 MAXSUB1 9 NLEV1 34 NLEV2 9 | NOV 0 DEPTHV 2 NLV1 34 NLV2 9
+GAME red/so/instances/njb_reabs65_n48.pg HIER njb_reabs65_n48.pg n 48 WT 37 WCH 37 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 37 | NOV 0 DEPTHV 1 NLV1 37
+GAME red/so/instances/pft35_n48.pg HIER pft35_n48.pg n 48 WT 38 WCH 38 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 38 | NOV 0 DEPTHV 1 NLV1 38
+GAME red/so/instances/post31_n48.pg HIER post31_n48.pg n 48 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/so/instances/s4c8_n13.pg HIER s4c8_n13.pg n 13 WT 2 WCH 2 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 2 | NOV 0 DEPTHV 1 NLV1 2
+GAME red/so/instances/so_k2_n32.pg HIER so_k2_n32.pg n 32 WT 10 WCH 10 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 10 | NOV 0 DEPTHV 1 NLV1 10
+GAME red/so/instances/rise_fb38_n48.pg HIER rise_fb38_n48.pg n 48 WT 8 WCH 8 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 8 | NOV 0 DEPTHV 1 NLV1 8
+GAME red/so/instances/so_sor5_n24.pg HIER so_sor5_n24.pg n 24 WT 21 WCH 21 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 21 | NOV 0 DEPTHV 1 NLV1 21
+GAME red/so/instances/so_tie13_n24.pg HIER so_tie13_n24.pg n 24 WT 16 WCH 16 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 16 | NOV 0 DEPTHV 1 NLV1 16
+GAME red/so/instances/so_sorl_n32.pg HIER so_sorl_n32.pg n 32 WT 22 WCH 22 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 22 | NOV 0 DEPTHV 1 NLV1 22
+GAME red/so/instances/so_j19_n48.pg HIER so_j19_n48.pg n 48 WT 21 WCH 21 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 21 | NOV 0 DEPTHV 1 NLV1 21
+GAME red/so/instances/so_th_n32.pg HIER so_th_n32.pg n 32 WT 22 WCH 22 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 22 | NOV 0 DEPTHV 1 NLV1 22
+GAME red/so/instances/rise_thin51_n40.pg HIER rise_thin51_n40.pg n 40 WT 64 WCH 64 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 63 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 63 NLV2 1
+GAME red/so/instances/so_tie15_n32.pg HIER so_tie15_n32.pg n 32 WT 19 WCH 19 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 19 | NOV 0 DEPTHV 1 NLV1 19
+GAME red/so/instances/tev_cex_n40.pg HIER tev_cex_n40.pg n 40 WT 7 WCH 7 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 6 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 6 NLV2 1
+GAME red/so/instances/tevlast7_n32.pg HIER tevlast7_n32.pg n 32 WT 36 WCH 36 DEPTH 2 MONOX 0 MAXSUB1 2 NLEV1 34 NLEV2 2 | NOV 0 DEPTHV 2 NLV1 34 NLV2 2
+GAME red/so/instances/tog6a_n32.pg HIER tog6a_n32.pg n 32 WT 5 WCH 4 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 4 | NOV 1 DEPTHV 1 NLV1 4
+GAME red/so/instances/tog6b_n32.pg HIER tog6b_n32.pg n 32 WT 6 WCH 5 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 5 | NOV 1 DEPTHV 1 NLV1 5
+GAME red/so/instances/tevlast11_n40.pg HIER tevlast11_n40.pg n 40 WT 31 WCH 31 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 30 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 30 NLV2 1
+GAME red/so/instances/tevlast_cex_n40.pg HIER tevlast_cex_n40.pg n 40 WT 6 WCH 6 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 5 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 5 NLV2 1
+GAME red/so/instances/xrun8_n10.pg HIER xrun8_n10.pg n 10 WT 7 WCH 7 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 7 | NOV 0 DEPTHV 1 NLV1 7
+GAME red/so/instances/xrun21_n24.pg HIER xrun21_n24.pg n 24 WT 21 WCH 21 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 21 | NOV 0 DEPTHV 1 NLV1 21
+GAME red/so/instances/xsn29_n32.pg HIER xsn29_n32.pg n 32 WT 29 WCH 29 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 29 | NOV 0 DEPTHV 1 NLV1 29
+GAME red/so/instances/xsn43_n48.pg HIER xsn43_n48.pg n 48 WT 43 WCH 43 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 43 | NOV 0 DEPTHV 1 NLV1 43
+GAME red/so/instances/xsnf42_n48.pg HIER xsnf42_n48.pg n 48 WT 42 WCH 42 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 42 | NOV 0 DEPTHV 1 NLV1 42
+GAME red/tcpert/instances/leanT_N12.pg HIER leanT_N12.pg n 96 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/tcpert/instances/leanT_N6.pg HIER leanT_N6.pg n 48 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/tcpert/instances/leanT_N8.pg HIER leanT_N8.pg n 64 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/tcpert/instances/leanT_N16.pg HIER leanT_N16.pg n 128 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/so/instances/xsnf52_n64.pg HIER xsnf52_n64.pg n 64 WT 52 WCH 52 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 52 | NOV 0 DEPTHV 1 NLV1 52
+GAME red/so/instances/xsn91_n48.pg HIER xsn91_n48.pg n 48 WT 103 WCH 103 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 102 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 102 NLV2 1
+GAME red/tcpert/instances/tcL_N3.pg HIER tcL_N3.pg n 42 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/tcpert/instances/tcL_N4.pg HIER tcL_N4.pg n 68 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/tcpert/instances/tcL_N5.pg HIER tcL_N5.pg n 100 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/tcpert/instances/tcL_N6.pg HIER tcL_N6.pg n 138 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/tcpert/instances/tcR4_N4.pg HIER tcR4_N4.pg n 68 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/tcpert/instances/tcR4_N5.pg HIER tcR4_N5.pg n 100 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/tcpert/instances/tcL_N10.pg HIER tcL_N10.pg n 350 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/tcpert/instances/leanT_N24.pg HIER leanT_N24.pg n 192 WT 3 WCH 3 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 3 | NOV 0 DEPTHV 1 NLV1 3
+GAME red/tcpert/instances/tcR4_N6.pg HIER tcR4_N6.pg n 138 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/tcpert/instances/tcR4_N7.pg HIER tcR4_N7.pg n 182 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/tcpert/instances/tcL_N8.pg HIER tcL_N8.pg n 232 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/tcpert/instances/tcS8_N6.pg HIER tcS8_N6.pg n 138 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/tcpert/instances/tcR4_N8.pg HIER tcR4_N8.pg n 232 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/tcpert/instances/tcS8_N7.pg HIER tcS8_N7.pg n 182 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/tcpert/instances/leanT_N32.pg HIER leanT_N32.pg n 256 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/tpp/instances/tpp_viol_n22.pg HIER tpp_viol_n22.pg n 22 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/tcpert/instances/tcS8_N8.pg HIER tcS8_N8.pg n 232 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/tpp/instances/tpp_viol_n63.pg HIER tpp_viol_n63.pg n 63 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/tcpert/instances/tcS8_N10.pg HIER tcS8_N10.pg n 350 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/ul/instances/cxmig_k4_n54.pg HIER cxmig_k4_n54.pg n 54 WT 11 WCH 11 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 11 | NOV 0 DEPTHV 1 NLV1 11
+GAME red/ul/instances/cxmig_k8_n82.pg HIER cxmig_k8_n82.pg n 82 WT 15 WCH 15 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 15 | NOV 0 DEPTHV 1 NLV1 15
+GAME red/ul/instances/ladderd0_k12_n48.pg HIER ladderd0_k12_n48.pg n 48 WT 13 WCH 13 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 13 | NOV 0 DEPTHV 1 NLV1 13
+GAME red/tcpert/instances/tcS8_N11.pg HIER tcS8_N11.pg n 418 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/ul/instances/ladderd0_k24_n84.pg HIER ladderd0_k24_n84.pg n 84 WT 25 WCH 25 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 25 | NOV 0 DEPTHV 1 NLV1 25
+GAME red/ul/instances/cxmig_k16_n138.pg HIER cxmig_k16_n138.pg n 138 WT 23 WCH 23 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 23 | NOV 0 DEPTHV 1 NLV1 23
+GAME red/ul/instances/ladderent_k12_n48.pg HIER ladderent_k12_n48.pg n 48 WT 13 WCH 13 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 13 | NOV 0 DEPTHV 1 NLV1 13
+GAME red/ul/instances/reader_L10_n36.pg HIER reader_L10_n36.pg n 36 WT 12 WCH 12 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 12 | NOV 0 DEPTHV 1 NLV1 12
+GAME red/ul/instances/ladderent_k24_n84.pg HIER ladderent_k24_n84.pg n 84 WT 25 WCH 25 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 25 | NOV 0 DEPTHV 1 NLV1 25
+GAME red/ul/instances/reader_L20_n56.pg HIER reader_L20_n56.pg n 56 WT 22 WCH 22 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 22 | NOV 0 DEPTHV 1 NLV1 22
+GAME red/tcpert/instances/tcS8_N9.pg HIER tcS8_N9.pg n 288 WT 2 WCH 2 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 2 | NOV 0 DEPTHV 1 NLV1 2
+GAME red/tcpert/instances/tcL_N12.pg HIER tcL_N12.pg n 492 WT 2 WCH 2 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 2 | NOV 0 DEPTHV 1 NLV1 2
+GAME red/ul/instances/reader_L40_n96.pg HIER reader_L40_n96.pg n 96 WT 42 WCH 42 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 42 | NOV 0 DEPTHV 1 NLV1 42
+GAME red/usplit/instances/gate_K16_n197.pg HIER gate_K16_n197.pg n 197 WT 21 WCH 21 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 21 | NOV 0 DEPTHV 1 NLV1 21
+GAME red/usplit/instances/pairoc_n58.pg HIER pairoc_n58.pg n 58 WT 3 WCH 3 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 3 | NOV 0 DEPTHV 1 NLV1 3
+GAME red/usplit/instances/grow_K12_n149.pg HIER grow_K12_n149.pg n 149 WT 17 WCH 17 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 17 | NOV 0 DEPTHV 1 NLV1 17
+GAME red/usplit/instances/pp_K12_n161_dual.pg HIER pp_K12_n161_dual.pg n 161 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/usplit/instances/pp_K12_n161.pg HIER pp_K12_n161.pg n 161 WT 17 WCH 17 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 17 | NOV 0 DEPTHV 1 NLV1 17
+GAME red/ul/instances/ladderd0_k48_n156.pg HIER ladderd0_k48_n156.pg n 156 WT 49 WCH 49 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 49 | NOV 0 DEPTHV 1 NLV1 49
+GAME red/usplit/instances/usplit_n14.pg HIER usplit_n14.pg n 14 WT 2 WCH 2 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 2 | NOV 0 DEPTHV 1 NLV1 2
+GAME red/usplit/instances/usplit_n23.pg HIER usplit_n23.pg n 23 WT 8 WCH 8 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 8 | NOV 0 DEPTHV 1 NLV1 8
+GAME red/usplit/instances/usplit_rd_n24.pg HIER usplit_rd_n24.pg n 24 WT 2 WCH 2 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 2 | NOV 0 DEPTHV 1 NLV1 2
+GAME red/usplit/instances/usplit_rd_s3_n27.pg HIER usplit_rd_s3_n27.pg n 27 WT 4 WCH 4 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 4 | NOV 0 DEPTHV 1 NLV1 4
+GAME red/usplit/instances/usplit_s3_n16.pg HIER usplit_s3_n16.pg n 16 WT 3 WCH 3 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 3 | NOV 0 DEPTHV 1 NLV1 3
+GAME red/xctx/instances/nest3_n20.pg HIER nest3_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/xctx/instances/nest3_n24.pg HIER nest3_n24.pg n 24 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/xctx/instances/vrall_viol_n20.pg HIER vrall_viol_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/xctx/instances/xcov11_n20.pg HIER xcov11_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/xctx/instances/xctx_viol_n20.pg HIER xctx_viol_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/ul/instances/ladderent_k48_n156.pg HIER ladderent_k48_n156.pg n 156 WT 49 WCH 49 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 49 | NOV 0 DEPTHV 1 NLV1 49
+GAME red/xing/instances/fbref_cex_n32.pg HIER fbref_cex_n32.pg n 32 WT 42 WCH 42 DEPTH 2 MONOX 0 MAXSUB1 3 NLEV1 37 NLEV2 5 | NOV 0 DEPTHV 2 NLV1 40 NLV2 2
+GAME red/xing/instances/j10_n24.pg HIER j10_n24.pg n 24 WT 23 WCH 23 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 23 | NOV 0 DEPTHV 1 NLV1 23
+GAME red/xing/instances/j5_n16.pg HIER j5_n16.pg n 16 WT 20 WCH 20 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 20 | NOV 0 DEPTHV 1 NLV1 20
+GAME red/xing/instances/j7_n32.pg HIER j7_n32.pg n 32 WT 46 WCH 46 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 46 | NOV 0 DEPTHV 1 NLV1 46
+GAME red/xing/instances/j7_n48.pg HIER j7_n48.pg n 48 WT 70 WCH 70 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 69 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 69 NLV2 1
+GAME red/xing/instances/j4_n40.pg HIER j4_n40.pg n 40 WT 99 WCH 99 DEPTH 2 MONOX 0 MAXSUB1 6 NLEV1 88 NLEV2 11 | NOV 0 DEPTHV 2 NLV1 94 NLV2 5
+GAME red/xing/instances/j8_n32.pg HIER j8_n32.pg n 32 WT 49 WCH 49 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 49 | NOV 0 DEPTHV 1 NLV1 49
+GAME red/xing/instances/kw25_n32.pg HIER kw25_n32.pg n 32 WT 27 WCH 27 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 27 | NOV 0 DEPTHV 1 NLV1 27
+GAME red/xing/instances/kw_n16.pg HIER kw_n16.pg n 16 WT 12 WCH 12 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 12 | NOV 0 DEPTHV 1 NLV1 12
+GAME red/xing/instances/kw_n24.pg HIER kw_n24.pg n 24 WT 20 WCH 20 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 20 | NOV 0 DEPTHV 1 NLV1 20
+GAME red/xing/instances/kw_n48.pg HIER kw_n48.pg n 48 WT 40 WCH 40 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 40 | NOV 0 DEPTHV 1 NLV1 40
+GAME red/xing/instances/obr_eq_n24.pg HIER obr_eq_n24.pg n 24 WT 4 WCH 4 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 4 | NOV 0 DEPTHV 1 NLV1 4
+GAME red/xing/instances/j8_n48.pg HIER j8_n48.pg n 48 WT 77 WCH 77 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 76 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 76 NLV2 1
+GAME red/xing/instances/obr_n32.pg HIER obr_n32.pg n 32 WT 16 WCH 16 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 16 | NOV 0 DEPTHV 1 NLV1 16
+GAME red/xing/instances/u1t_cex_n32.pg HIER u1t_cex_n32.pg n 32 WT 7 WCH 2 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 2 | NOV 0 DEPTHV 1 NLV1 7
+GAME red/xing/instances/u1t_own6_n32.pg HIER u1t_own6_n32.pg n 32 WT 7 WCH 2 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 2 | NOV 0 DEPTHV 1 NLV1 7
+GAME red/xing/instances/u23sw64_n32.pg HIER u23sw64_n32.pg n 32 WT 13 WCH 5 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 5 | NOV 0 DEPTHV 1 NLV1 13
+GAME red/xing/instances/u2flat73_n32.pg HIER u2flat73_n32.pg n 32 WT 9 WCH 2 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 2 | NOV 0 DEPTHV 1 NLV1 9
+GAME red/xing/instances/u2flat_n32.pg HIER u2flat_n32.pg n 32 WT 7 WCH 6 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 6 | NOV 0 DEPTHV 1 NLV1 7
+GAME red/xing/instances/x31_cu16.pg HIER x31_cu16.pg n 16 WT 20 WCH 20 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 20 | NOV 0 DEPTHV 1 NLV1 20
+GAME red/xing/instances/x31_cu24.pg HIER x31_cu24.pg n 24 WT 17 WCH 17 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 17 | NOV 0 DEPTHV 1 NLV1 17
+GAME red/xing/instances/x31_cu32.pg HIER x31_cu32.pg n 32 WT 40 WCH 40 DEPTH 2 MONOX 0 MAXSUB1 7 NLEV1 33 NLEV2 7 | NOV 0 DEPTHV 1 NLV1 40
+GAME red/xing/instances/x31_cu32i.pg HIER x31_cu32i.pg n 32 WT 38 WCH 38 DEPTH 2 MONOX 0 MAXSUB1 6 NLEV1 32 NLEV2 6 | NOV 0 DEPTHV 1 NLV1 38
+GAME red/usplit/instances/pp_K48_n449_dual.pg HIER pp_K48_n449_dual.pg n 449 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME red/xing/instances/x31_lem_e24.pg HIER x31_lem_e24.pg n 24 WT 46 WCH 46 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 46 | NOV 0 DEPTHV 1 NLV1 46
+GAME red/xing/instances/x31_lem_t32.pg HIER x31_lem_t32.pg n 32 WT 56 WCH 56 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 55 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 55 NLV2 1
+GAME red/xing/instances/x31_nh_r20.pg HIER x31_nh_r20.pg n 20 WT 13 WCH 13 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 13 | NOV 0 DEPTHV 1 NLV1 13
+GAME red/xing/instances/x31_cu48.pg HIER x31_cu48.pg n 48 WT 41 WCH 41 DEPTH 2 MONOX 0 MAXSUB1 6 NLEV1 35 NLEV2 6 | NOV 0 DEPTHV 1 NLV1 41
+GAME red/xing/instances/x31_nh_e24.pg HIER x31_nh_e24.pg n 24 WT 20 WCH 20 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 20 | NOV 0 DEPTHV 1 NLV1 20
+GAME red/xing/instances/x31_ru24.pg HIER x31_ru24.pg n 24 WT 4 WCH 4 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 4 | NOV 0 DEPTHV 1 NLV1 4
+GAME red/xing/instances/x31_re24.pg HIER x31_re24.pg n 24 WT 4 WCH 4 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 4 | NOV 0 DEPTHV 1 NLV1 4
+GAME red/xing/instances/x31_rx32.pg HIER x31_rx32.pg n 32 WT 50 WCH 50 DEPTH 2 MONOX 0 MAXSUB1 5 NLEV1 44 NLEV2 6 | NOV 0 DEPTHV 2 NLV1 49 NLV2 1
+GAME red/xing/instances/x32_rand16.pg HIER x32_rand16.pg n 16 WT 13 WCH 13 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 13 | NOV 0 DEPTHV 1 NLV1 13
+GAME red/xing/instances/x31_rx48.pg HIER x31_rx48.pg n 48 WT 47 WCH 47 DEPTH 2 MONOX 0 MAXSUB1 13 NLEV1 30 NLEV2 17 | NOV 0 DEPTHV 2 NLV1 34 NLV2 13
+GAME red/xing/instances/x32_nest40.pg HIER x32_nest40.pg n 40 WT 53 WCH 53 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 53 | NOV 0 DEPTHV 1 NLV1 53
+GAME red/xing/instances/x32_rand24.pg HIER x32_rand24.pg n 24 WT 20 WCH 20 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 20 | NOV 0 DEPTHV 1 NLV1 20
+GAME red/xing/instances/x32_rand32.pg HIER x32_rand32.pg n 32 WT 29 WCH 29 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 29 | NOV 0 DEPTHV 1 NLV1 29
+GAME red/xing/instances/x32_rand48.pg HIER x32_rand48.pg n 48 WT 44 WCH 44 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 44 | NOV 0 DEPTHV 1 NLV1 44
+GAME red/xing/instances/x32_waves32.pg HIER x32_waves32.pg n 32 WT 68 WCH 68 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 67 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 67 NLV2 1
+GAME si/root/instances/cone_n65.pg HIER cone_n65.pg n 65 WT 3 WCH 3 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 3 | NOV 0 DEPTHV 1 NLV1 3
+GAME red/xing/instances/x32_rand64.pg HIER x32_rand64.pg n 64 WT 55 WCH 55 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 55 | NOV 0 DEPTHV 1 NLV1 55
+GAME red/xing/instances/x32_waves48.pg HIER x32_waves48.pg n 48 WT 66 WCH 66 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 65 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 65 NLV2 1
+GAME si/root/instances/ueonce_n27.pg HIER ueonce_n27.pg n 27 WT 10 WCH 10 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 10 | NOV 0 DEPTHV 1 NLV1 10
+GAME si/root/instances/cone_n69.pg HIER cone_n69.pg n 69 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box54/out/switchbestexp_1.pg HIER switchbestexp_1.pg n 35 WT 18 WCH 18 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 18 | NOV 0 DEPTHV 1 NLV1 18
+GAME red/usplit/instances/grow_K40_n373.pg HIER grow_K40_n373.pg n 373 WT 45 WCH 45 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 45 | NOV 0 DEPTHV 1 NLV1 45
+GAME new/box54/out/switchbestexp_2.pg HIER switchbestexp_2.pg n 60 WT 27 WCH 27 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 26 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 26 NLV2 1
+GAME new/box54/out/switchbestexp_3.pg HIER switchbestexp_3.pg n 85 WT 35 WCH 35 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 33 NLEV2 2 | NOV 0 DEPTHV 2 NLV1 33 NLV2 2
+GAME new/box54/out/switchbestexp_4.pg HIER switchbestexp_4.pg n 110 WT 40 WCH 40 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 39 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 39 NLV2 1
+GAME new/box54/out/switchbestexp_5.pg HIER switchbestexp_5.pg n 135 WT 47 WCH 47 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 45 NLEV2 2 | NOV 0 DEPTHV 2 NLV1 45 NLV2 2
+GAME new/box54/out/switchbestexp_6.pg HIER switchbestexp_6.pg n 160 WT 53 WCH 53 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 51 NLEV2 2 | NOV 0 DEPTHV 2 NLV1 51 NLV2 2
+GAME red/usplit/instances/pp_K48_n449.pg HIER pp_K48_n449.pg n 449 WT 53 WCH 53 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 53 | NOV 0 DEPTHV 1 NLV1 53
+GAME new/box54/out/switchallexp_1.pg HIER switchallexp_1.pg n 21 WT 3 WCH 3 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 3 | NOV 0 DEPTHV 1 NLV1 3
+GAME new/box54/out/switchallexp_2.pg HIER switchallexp_2.pg n 35 WT 5 WCH 5 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 5 | NOV 0 DEPTHV 1 NLV1 5
+GAME new/box54/out/switchallexp_3.pg HIER switchallexp_3.pg n 49 WT 3 WCH 3 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 3 | NOV 0 DEPTHV 1 NLV1 3
+GAME new/box54/out/switchallexp_4.pg HIER switchallexp_4.pg n 63 WT 3 WCH 3 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 3 | NOV 0 DEPTHV 1 NLV1 3
+GAME new/box54/out/switchallexp_5.pg HIER switchallexp_5.pg n 77 WT 4 WCH 4 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 4 | NOV 0 DEPTHV 1 NLV1 4
+GAME new/box54/out/switchallexp_6.pg HIER switchallexp_6.pg n 91 WT 5 WCH 5 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 5 | NOV 0 DEPTHV 1 NLV1 5
+GAME new/box54/out/hf/counter_core_2.pg HIER counter_core_2.pg n 15 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_core_3.pg HIER counter_core_3.pg n 21 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_core_4.pg HIER counter_core_4.pg n 27 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_core_5.pg HIER counter_core_5.pg n 33 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_core_6.pg HIER counter_core_6.pg n 39 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_core_8.pg HIER counter_core_8.pg n 51 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_dp_2.pg HIER counter_dp_2.pg n 12 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_dp_3.pg HIER counter_dp_3.pg n 16 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_dp_4.pg HIER counter_dp_4.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_dp_5.pg HIER counter_dp_5.pg n 24 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_dp_6.pg HIER counter_dp_6.pg n 28 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_dp_8.pg HIER counter_dp_8.pg n 36 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_m_2.pg HIER counter_m_2.pg n 9 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_m_3.pg HIER counter_m_3.pg n 12 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_m_4.pg HIER counter_m_4.pg n 15 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_m_5.pg HIER counter_m_5.pg n 18 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_m_6.pg HIER counter_m_6.pg n 21 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_m_8.pg HIER counter_m_8.pg n 27 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_ortl_2.pg HIER counter_ortl_2.pg n 11 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_ortl_3.pg HIER counter_ortl_3.pg n 16 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_ortl_4.pg HIER counter_ortl_4.pg n 21 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_ortl_5.pg HIER counter_ortl_5.pg n 26 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_ortl_6.pg HIER counter_ortl_6.pg n 31 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_ortl_8.pg HIER counter_ortl_8.pg n 41 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_qpt_2.pg HIER counter_qpt_2.pg n 4 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_qpt_3.pg HIER counter_qpt_3.pg n 6 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_qpt_4.pg HIER counter_qpt_4.pg n 8 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_qpt_5.pg HIER counter_qpt_5.pg n 10 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_qpt_6.pg HIER counter_qpt_6.pg n 12 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_qpt_8.pg HIER counter_qpt_8.pg n 16 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_rob_2.pg HIER counter_rob_2.pg n 31 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_rob_3.pg HIER counter_rob_3.pg n 54 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_rob_4.pg HIER counter_rob_4.pg n 83 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_rob_5.pg HIER counter_rob_5.pg n 118 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_rob_6.pg HIER counter_rob_6.pg n 159 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_rob_8.pg HIER counter_rob_8.pg n 259 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_rr_2.pg HIER counter_rr_2.pg n 8 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_rr_3.pg HIER counter_rr_3.pg n 12 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_rr_4.pg HIER counter_rr_4.pg n 16 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_rr_5.pg HIER counter_rr_5.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_rr_6.pg HIER counter_rr_6.pg n 24 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_rr_8.pg HIER counter_rr_8.pg n 32 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_symsi_2.pg HIER counter_symsi_2.pg n 22 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_symsi_3.pg HIER counter_symsi_3.pg n 32 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box54/out/hf/counter_symsi_4.pg HIER counter_symsi_4.pg n 42 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box54/out/switchbestexp_7.pg HIER switchbestexp_7.pg n 185 WT 58 WCH 58 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 57 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 57 NLV2 1
+GAME new/box54/out/hf/counter_symsi_5.pg HIER counter_symsi_5.pg n 52 WT 3 WCH 3 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 3 | NOV 0 DEPTHV 1 NLV1 3
+GAME new/box54/out/hf/counter_symsi_6.pg HIER counter_symsi_6.pg n 62 WT 4 WCH 4 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 4 | NOV 0 DEPTHV 1 NLV1 4
+GAME new/box54/out/hf/recursiveladder_2.pg HIER recursiveladder_2.pg n 10 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/recursiveladder_3.pg HIER recursiveladder_3.pg n 15 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/recursiveladder_4.pg HIER recursiveladder_4.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/recursiveladder_5.pg HIER recursiveladder_5.pg n 25 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/recursiveladder_6.pg HIER recursiveladder_6.pg n 30 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/tc_2.pg HIER tc_2.pg n 22 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/tc_3.pg HIER tc_3.pg n 42 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/tc_4.pg HIER tc_4.pg n 68 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/counter_symsi_8.pg HIER counter_symsi_8.pg n 82 WT 6 WCH 6 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 6 | NOV 0 DEPTHV 1 NLV1 6
+GAME new/box54/out/hf/tc_6.pg HIER tc_6.pg n 138 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/tc_5.pg HIER tc_5.pg n 100 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/ctl/pivot_demo.pg HIER pivot_demo.pg n 11 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/d_pivot_demo.pg HIER d_pivot_demo.pg n 11 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/seg/instances/runquad_K3_m4_n54.pg HIER runquad_K3_m4_n54.pg n 54 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/hf/tc_8.pg HIER tc_8.pg n 232 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/seg/instances/runquad_K8_m30_n192.pg HIER runquad_K8_m30_n192.pg n 192 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/seg/instances/s3quad_K3_m4.pg HIER s3quad_K3_m4.pg n 137 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box54/out/d_runquad_K3.pg HIER d_runquad_K3.pg n 54 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box52/out/topfix_n3.pg HIER topfix_n3.pg n 63 WT 18 WCH 18 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 18 | NOV 0 DEPTHV 1 NLV1 18
+GAME new/box52/out/topfix_n4.pg HIER topfix_n4.pg n 84 WT 24 WCH 24 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 24 | NOV 0 DEPTHV 1 NLV1 24
+GAME new/box54/out/switchbestexp_8.pg HIER switchbestexp_8.pg n 210 WT 66 WCH 66 DEPTH 2 MONOX 0 MAXSUB1 2 NLEV1 63 NLEV2 3 | NOV 0 DEPTHV 2 NLV1 63 NLV2 3
+GAME new/box52/out/topfix_n6.pg HIER topfix_n6.pg n 126 WT 36 WCH 36 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 36 | NOV 0 DEPTHV 1 NLV1 36
+GAME new/box52/out/topfix_n8.pg HIER topfix_n8.pg n 168 WT 48 WCH 48 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 48 | NOV 0 DEPTHV 1 NLV1 48
+GAME new/box54/out/d_hntop_n3.pg HIER d_hntop_n3.pg n 63 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box52/out/topfix_n8_cmp.pg HIER topfix_n8_cmp.pg n 171 WT 48 WCH 48 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 48 | NOV 0 DEPTHV 1 NLV1 48
+GAME new/box52/out/topfix_n10.pg HIER topfix_n10.pg n 210 WT 60 WCH 60 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 60 | NOV 0 DEPTHV 1 NLV1 60
+GAME new/box51/out/dlc_d2.pg HIER dlc_d2.pg n 27 WT 7 WCH 7 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 7 | NOV 0 DEPTHV 1 NLV1 7
+GAME new/box51/out/dlc_d3.pg HIER dlc_d3.pg n 109 WT 15 WCH 15 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 15 | NOV 0 DEPTHV 1 NLV1 15
+GAME new/box54/out/d_dlc_d3.pg HIER d_dlc_d3.pg n 109 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME si/runlin/instances/runfam_K10.pg HIER runfam_K10.pg n 49 WT 93 WCH 93 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 93 | NOV 0 DEPTHV 1 NLV1 93
+GAME red/seg/instances/s3quad_K8_m30.pg HIER s3quad_K8_m30.pg n 479 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r100_n40.pg HIER r100_n40.pg n 40 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r101_n50.pg HIER r101_n50.pg n 50 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r102_n60.pg HIER r102_n60.pg n 60 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r103_n70.pg HIER r103_n70.pg n 70 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r104_n80.pg HIER r104_n80.pg n 80 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r105_n20.pg HIER r105_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r106_n30.pg HIER r106_n30.pg n 30 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r107_n40.pg HIER r107_n40.pg n 40 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r108_n50.pg HIER r108_n50.pg n 50 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r109_n60.pg HIER r109_n60.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r10_n50.pg HIER r10_n50.pg n 50 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r110_n70.pg HIER r110_n70.pg n 70 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r111_n80.pg HIER r111_n80.pg n 80 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r112_n20.pg HIER r112_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r113_n30.pg HIER r113_n30.pg n 30 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r114_n40.pg HIER r114_n40.pg n 40 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r115_n50.pg HIER r115_n50.pg n 50 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r116_n60.pg HIER r116_n60.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r117_n70.pg HIER r117_n70.pg n 70 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME si/runlin/instances/runfam_K40.pg HIER runfam_K40.pg n 79 WT 159 WCH 159 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 159 | NOV 0 DEPTHV 1 NLV1 159
+GAME new/box59/out/rnd/r118_n80.pg HIER r118_n80.pg n 80 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r119_n20.pg HIER r119_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r11_n60.pg HIER r11_n60.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r120_n30.pg HIER r120_n30.pg n 30 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r121_n40.pg HIER r121_n40.pg n 40 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r123_n60.pg HIER r123_n60.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r122_n50.pg HIER r122_n50.pg n 50 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r124_n70.pg HIER r124_n70.pg n 70 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r126_n20.pg HIER r126_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r125_n80.pg HIER r125_n80.pg n 80 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r127_n30.pg HIER r127_n30.pg n 30 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r129_n50.pg HIER r129_n50.pg n 50 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r128_n40.pg HIER r128_n40.pg n 40 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r130_n60.pg HIER r130_n60.pg n 60 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r12_n70.pg HIER r12_n70.pg n 70 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r131_n70.pg HIER r131_n70.pg n 70 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r133_n20.pg HIER r133_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r132_n80.pg HIER r132_n80.pg n 80 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r134_n30.pg HIER r134_n30.pg n 30 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r136_n50.pg HIER r136_n50.pg n 50 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r137_n60.pg HIER r137_n60.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r135_n40.pg HIER r135_n40.pg n 40 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r138_n70.pg HIER r138_n70.pg n 70 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r139_n80.pg HIER r139_n80.pg n 80 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r13_n80.pg HIER r13_n80.pg n 80 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r141_n30.pg HIER r141_n30.pg n 30 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r140_n20.pg HIER r140_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r142_n40.pg HIER r142_n40.pg n 40 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r144_n60.pg HIER r144_n60.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r143_n50.pg HIER r143_n50.pg n 50 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r145_n70.pg HIER r145_n70.pg n 70 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r147_n20.pg HIER r147_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r146_n80.pg HIER r146_n80.pg n 80 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r148_n30.pg HIER r148_n30.pg n 30 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r149_n40.pg HIER r149_n40.pg n 40 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r14_n20.pg HIER r14_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r150_n50.pg HIER r150_n50.pg n 50 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r151_n60d2.pg HIER r151_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r152_n60d2.pg HIER r152_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r153_n60d2.pg HIER r153_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r154_n60d2.pg HIER r154_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r155_n60d2.pg HIER r155_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r156_n60d2.pg HIER r156_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r157_n60d2.pg HIER r157_n60d2.pg n 60 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r159_n60d2.pg HIER r159_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r158_n60d2.pg HIER r158_n60d2.pg n 60 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r15_n30.pg HIER r15_n30.pg n 30 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r161_n60d2.pg HIER r161_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r160_n60d2.pg HIER r160_n60d2.pg n 60 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r163_n60d2.pg HIER r163_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r162_n60d2.pg HIER r162_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r164_n60d2.pg HIER r164_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r165_n60d2.pg HIER r165_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r166_n60d2.pg HIER r166_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r167_n60d2.pg HIER r167_n60d2.pg n 60 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r168_n60d2.pg HIER r168_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r16_n40.pg HIER r16_n40.pg n 40 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r169_n60d2.pg HIER r169_n60d2.pg n 60 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r170_n60d2.pg HIER r170_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r171_n60d2.pg HIER r171_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r173_n60d2.pg HIER r173_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r172_n60d2.pg HIER r172_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r174_n60d2.pg HIER r174_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r176_n60d2.pg HIER r176_n60d2.pg n 60 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r175_n60d2.pg HIER r175_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r177_n60d2.pg HIER r177_n60d2.pg n 60 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r178_n60d2.pg HIER r178_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r179_n60d2.pg HIER r179_n60d2.pg n 60 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r17_n50.pg HIER r17_n50.pg n 50 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r180_n60d2.pg HIER r180_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r181_n60d2.pg HIER r181_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r183_n60d2.pg HIER r183_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r182_n60d2.pg HIER r182_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r184_n60d2.pg HIER r184_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r185_n60d2.pg HIER r185_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r187_n60d2.pg HIER r187_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r186_n60d2.pg HIER r186_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r188_n60d2.pg HIER r188_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r189_n60d2.pg HIER r189_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r18_n60.pg HIER r18_n60.pg n 60 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r191_n60d2.pg HIER r191_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r190_n60d2.pg HIER r190_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r192_n60d2.pg HIER r192_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r194_n60d2.pg HIER r194_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r193_n60d2.pg HIER r193_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r195_n60d2.pg HIER r195_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r196_n60d2.pg HIER r196_n60d2.pg n 60 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r198_n60d2.pg HIER r198_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r197_n60d2.pg HIER r197_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r199_n60d2.pg HIER r199_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r19_n70.pg HIER r19_n70.pg n 70 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r1_n30.pg HIER r1_n30.pg n 30 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r200_n60d2.pg HIER r200_n60d2.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r21_n20.pg HIER r21_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r22_n30.pg HIER r22_n30.pg n 30 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r20_n80.pg HIER r20_n80.pg n 80 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r24_n50.pg HIER r24_n50.pg n 50 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r23_n40.pg HIER r23_n40.pg n 40 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r26_n70.pg HIER r26_n70.pg n 70 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r25_n60.pg HIER r25_n60.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r27_n80.pg HIER r27_n80.pg n 80 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r29_n30.pg HIER r29_n30.pg n 30 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r28_n20.pg HIER r28_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r2_n40.pg HIER r2_n40.pg n 40 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME red/usplit/instances/gate_K64_n581.pg HIER gate_K64_n581.pg n 581 WT 69 WCH 69 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 69 | NOV 0 DEPTHV 1 NLV1 69
+GAME new/box59/out/rnd/r30_n40.pg HIER r30_n40.pg n 40 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r31_n50.pg HIER r31_n50.pg n 50 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r32_n60.pg HIER r32_n60.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r33_n70.pg HIER r33_n70.pg n 70 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r34_n80.pg HIER r34_n80.pg n 80 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r36_n30.pg HIER r36_n30.pg n 30 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r35_n20.pg HIER r35_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r37_n40.pg HIER r37_n40.pg n 40 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r38_n50.pg HIER r38_n50.pg n 50 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r39_n60.pg HIER r39_n60.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r40_n70.pg HIER r40_n70.pg n 70 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r41_n80.pg HIER r41_n80.pg n 80 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r3_n50.pg HIER r3_n50.pg n 50 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r42_n20.pg HIER r42_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r43_n30.pg HIER r43_n30.pg n 30 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r44_n40.pg HIER r44_n40.pg n 40 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r45_n50.pg HIER r45_n50.pg n 50 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r46_n60.pg HIER r46_n60.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r49_n20.pg HIER r49_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r48_n80.pg HIER r48_n80.pg n 80 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r47_n70.pg HIER r47_n70.pg n 70 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r50_n30.pg HIER r50_n30.pg n 30 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r4_n60.pg HIER r4_n60.pg n 60 WT 2 WCH 2 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 2 | NOV 0 DEPTHV 1 NLV1 2
+GAME new/box59/out/rnd/r53_n60.pg HIER r53_n60.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r52_n50.pg HIER r52_n50.pg n 50 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r51_n40.pg HIER r51_n40.pg n 40 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r54_n70.pg HIER r54_n70.pg n 70 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r55_n80.pg HIER r55_n80.pg n 80 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r56_n20.pg HIER r56_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r57_n30.pg HIER r57_n30.pg n 30 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r58_n40.pg HIER r58_n40.pg n 40 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r60_n60.pg HIER r60_n60.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r59_n50.pg HIER r59_n50.pg n 50 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r5_n70.pg HIER r5_n70.pg n 70 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r61_n70.pg HIER r61_n70.pg n 70 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r62_n80.pg HIER r62_n80.pg n 80 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r64_n30.pg HIER r64_n30.pg n 30 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r63_n20.pg HIER r63_n20.pg n 20 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r65_n40.pg HIER r65_n40.pg n 40 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r66_n50.pg HIER r66_n50.pg n 50 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r69_n80.pg HIER r69_n80.pg n 80 WT 2 WCH 2 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 2 | NOV 0 DEPTHV 1 NLV1 2
+GAME new/box59/out/rnd/r68_n70.pg HIER r68_n70.pg n 70 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r67_n60.pg HIER r67_n60.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r6_n80.pg HIER r6_n80.pg n 80 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r70_n20.pg HIER r70_n20.pg n 20 WT 2 WCH 2 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 2 | NOV 0 DEPTHV 1 NLV1 2
+GAME new/box59/out/rnd/r71_n30.pg HIER r71_n30.pg n 30 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r72_n40.pg HIER r72_n40.pg n 40 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r73_n50.pg HIER r73_n50.pg n 50 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r75_n70.pg HIER r75_n70.pg n 70 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box51/out/dlc_d4.pg HIER dlc_d4.pg n 455 WT 31 WCH 31 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 31 | NOV 0 DEPTHV 1 NLV1 31
+GAME new/box59/out/rnd/r74_n60.pg HIER r74_n60.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r76_n80.pg HIER r76_n80.pg n 80 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r78_n30.pg HIER r78_n30.pg n 30 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r79_n40.pg HIER r79_n40.pg n 40 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r77_n20.pg HIER r77_n20.pg n 20 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r7_n20.pg HIER r7_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r81_n60.pg HIER r81_n60.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r80_n50.pg HIER r80_n50.pg n 50 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r82_n70.pg HIER r82_n70.pg n 70 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r83_n80.pg HIER r83_n80.pg n 80 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r85_n30.pg HIER r85_n30.pg n 30 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r84_n20.pg HIER r84_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r86_n40.pg HIER r86_n40.pg n 40 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r87_n50.pg HIER r87_n50.pg n 50 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r88_n60.pg HIER r88_n60.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r89_n70.pg HIER r89_n70.pg n 70 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r8_n30.pg HIER r8_n30.pg n 30 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r91_n20.pg HIER r91_n20.pg n 20 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r92_n30.pg HIER r92_n30.pg n 30 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r93_n40.pg HIER r93_n40.pg n 40 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r90_n80.pg HIER r90_n80.pg n 80 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r95_n60.pg HIER r95_n60.pg n 60 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r94_n50.pg HIER r94_n50.pg n 50 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r97_n80.pg HIER r97_n80.pg n 80 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r96_n70.pg HIER r96_n70.pg n 70 WT 1 WCH 1 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 1 | NOV 0 DEPTHV 1 NLV1 1
+GAME new/box59/out/rnd/r98_n20.pg HIER r98_n20.pg n 20 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r9_n40.pg HIER r9_n40.pg n 40 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/rnd/r99_n30.pg HIER r99_n30.pg n 30 WT 0 WCH 0 DEPTH 0 MONOX 0 MAXSUB1 0  | NOV 0 DEPTHV 0 
+GAME new/box59/out/fcobsP_3.pg HIER fcobsP_3.pg n 90 WT 34 WCH 34 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 33 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 33 NLV2 1
+GAME new/box59/out/fcobsP_4.pg HIER fcobsP_4.pg n 115 WT 39 WCH 39 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 39 | NOV 0 DEPTHV 1 NLV1 39
+GAME new/box59/out/fcobs_6.pg HIER fcobs_6.pg n 163 WT 52 WCH 52 DEPTH 2 MONOX 0 MAXSUB1 1 NLEV1 51 NLEV2 1 | NOV 0 DEPTHV 2 NLV1 51 NLV2 1

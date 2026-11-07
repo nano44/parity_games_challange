@@ -1,0 +1,15 @@
+GAME red/xing/instances/x32_rand64.pg
+DCOPIED 0
+DR 5
+DR_chk 5
+DS 0
+DT 0
+GAMES 1
+NF_chk 65
+ON_chk 65
+ROLD 0
+TS 0
+trans 55
+wruns 1
+VIOLATIONS 0
+RC 0

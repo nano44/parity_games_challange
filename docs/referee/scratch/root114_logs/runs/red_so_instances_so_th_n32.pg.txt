@@ -1,0 +1,15 @@
+GAME red/so/instances/so_th_n32.pg
+DCOPIED 10
+DR 30
+DR_chk 44
+DS 4
+DT 0
+GAMES 1
+NF_chk 56
+ON_chk 55
+ROLD 0
+TS 0
+trans 22
+wruns 2
+VIOLATIONS 0
+RC 0

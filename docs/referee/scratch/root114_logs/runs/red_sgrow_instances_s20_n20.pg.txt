@@ -1,0 +1,12 @@
+GAME red/sgrow/instances/s20_n20.pg
+DCOPIED 0
+DR 0
+DS 0
+DT 0
+GAMES 1
+ROLD 0
+TS 0
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

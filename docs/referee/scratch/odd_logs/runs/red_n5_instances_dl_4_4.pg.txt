@@ -1,0 +1,7 @@
+GAME red/n5/instances/dl_4_4.pg
+GAMES 1
+OLD_chk 91
+STEP_caseII 9
+STEP_chk 168
+VIOLATIONS 0
+RC 0

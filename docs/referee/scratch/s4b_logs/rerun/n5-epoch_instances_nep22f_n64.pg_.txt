@@ -1,0 +1,11 @@
+GAME n5-epoch/instances/nep22f_n64.pg
+GAMES 1
+enum_skip 5
+enum_states 46
+keep_chk 21
+loc_chk 455
+oddfb 4
+rhos 16912
+states 51
+VIOLATIONS 0
+RC 0

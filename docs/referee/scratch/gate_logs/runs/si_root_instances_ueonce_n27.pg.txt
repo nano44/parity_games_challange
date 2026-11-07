@@ -1,0 +1,12 @@
+GAME si/root/instances/ueonce_n27.pg
+BGmax 9
+GAMES 1
+INC 1
+K 12
+MAXPH 11
+SGmax 9
+SQZ_chk 351
+steps 11
+stretches 1
+VIOLATIONS 0
+RC 0

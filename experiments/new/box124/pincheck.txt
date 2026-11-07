@@ -1,0 +1,6 @@
+PIN b5_os_n24 3aca11030505 start 0d3ae7add6a5
+OINK b5_os_n24 --zlk verified
+OINK b5_os_n24 --tl verified
+PINWIN b5_os_n24.pg n 24 states 54 fallbacks 7 W0 24 AGREE True
+n5b iterations 53 fallbacks 7 states 54 | n5x states 54 | identical state sequences: True
+LEMMAP b5_os_n24.pg n 24 K 53 pieces 9 longest 14 checks 5236 viol 2363 BLK 379 NOTBLK 1984 INX 42 INZ 402

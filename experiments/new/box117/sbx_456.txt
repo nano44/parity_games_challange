@@ -1,0 +1,18 @@
+SQZ switchbestexp_4.pg N5 n 110 iters 47 SANDV 0 LODROP 0 HIRISE 0 UNSET 0 set0 4 setK 110 growths 26 maxgap 19
+SEP switchbestexp_4.pg N5 n 110 iters 47 ostretches 5 OMV 4 ONI 0 DDROP 0 ORET 0 ORETBAD 0 FR 319 REIN 25 RECROSS 118 MAXFR 3
+SQZ switchbestexp_4.pg TBR n 110 iters 155 SANDV 0 LODROP 0 HIRISE 11 UNSET 18 set0 4 setK 110 growths 35 maxgap 107
+SEP switchbestexp_4.pg TBR n 110 iters 155 ostretches 22 OMV 24 ONI 13 DDROP 11 ORET 20 ORETBAD 12 FR 986 REIN 27 RECROSS 781 MAXFR 8
+SQZ switchbestexp_4.pg ARSB n 110 iters 258 SANDV 0 LODROP 0 HIRISE 13 UNSET 18 set0 4 setK 110 growths 42 maxgap 144
+SEP switchbestexp_4.pg ARSB n 110 iters 258 ostretches 27 OMV 26 ONI 13 DDROP 13 ORET 22 ORETBAD 15 FR 1743 REIN 65 RECROSS 1493 MAXFR 14
+SQZ switchbestexp_5.pg N5 n 135 iters 55 SANDV 0 LODROP 0 HIRISE 0 UNSET 0 set0 4 setK 135 growths 32 maxgap 21
+SEP switchbestexp_5.pg N5 n 135 iters 55 ostretches 6 OMV 5 ONI 0 DDROP 0 ORET 0 ORETBAD 0 FR 392 REIN 30 RECROSS 143 MAXFR 3
+SQZ switchbestexp_5.pg TBR n 135 iters 209 SANDV 0 LODROP 0 HIRISE 18 UNSET 9 set0 4 setK 135 growths 40 maxgap 132
+SEP switchbestexp_5.pg TBR n 135 iters 209 ostretches 36 OMV 41 ONI 20 DDROP 18 ORET 36 ORETBAD 26 FR 1726 REIN 31 RECROSS 1473 MAXFR 12
+SQZ switchbestexp_5.pg ARSB n 135 iters 364 SANDV 0 LODROP 0 HIRISE 22 UNSET 30 set0 4 setK 135 growths 52 maxgap 221
+SEP switchbestexp_5.pg ARSB n 135 iters 364 ostretches 50 OMV 51 ONI 24 DDROP 22 ORET 46 ORETBAD 35 FR 2937 REIN 80 RECROSS 2625 MAXFR 19
+SQZ switchbestexp_6.pg N5 n 160 iters 62 SANDV 0 LODROP 0 HIRISE 0 UNSET 0 set0 4 setK 160 growths 38 maxgap 22
+SEP switchbestexp_6.pg N5 n 160 iters 62 ostretches 7 OMV 6 ONI 0 DDROP 0 ORET 0 ORETBAD 0 FR 476 REIN 38 RECROSS 176 MAXFR 4
+SQZ switchbestexp_6.pg TBR n 160 iters 217 SANDV 0 LODROP 0 HIRISE 18 UNSET 9 set0 4 setK 160 growths 47 maxgap 132
+SEP switchbestexp_6.pg TBR n 160 iters 217 ostretches 37 OMV 46 ONI 23 DDROP 18 ORET 40 ORETBAD 27 FR 2017 REIN 30 RECROSS 1721 MAXFR 12
+SQZ switchbestexp_6.pg ARSB n 160 iters 412 SANDV 0 LODROP 0 HIRISE 25 UNSET 45 set0 4 setK 160 growths 62 maxgap 221
+SEP switchbestexp_6.pg ARSB n 160 iters 412 ostretches 57 OMV 64 ONI 33 DDROP 25 ORET 58 ORETBAD 41 FR 3771 REIN 90 RECROSS 3401 MAXFR 21

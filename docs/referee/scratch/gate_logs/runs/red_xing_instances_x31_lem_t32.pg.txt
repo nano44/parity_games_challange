@@ -1,0 +1,14 @@
+GAME red/xing/instances/x31_lem_t32.pg
+BGmax 52
+GAMES 1
+INC 58
+K 65
+MAXPH 59
+PH_over 1
+SGmax 57
+SQZ_chk 2112
+steps 65
+stretches 1
+VIOLATIONS 0
+EX ('PH_over', 'x31_lem_t32.pg', 0, 65, 59, 31)
+RC 0

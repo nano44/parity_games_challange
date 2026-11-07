@@ -1,0 +1,12 @@
+GAME red/sgrow/instances/s20_n20.pg
+BGmax 6
+GAMES 1
+INC 0
+K 8
+MAXPH 1
+SGmax 6
+SQZ_chk 180
+steps 1
+stretches 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,13 @@
+GAME red/so/instances/tog6b_n32.pg
+BIT_chk 71
+DCOPY_chk 7
+DESC 16
+FROZEN_chk 6
+GAMES 1
+TD 0
+WCH 34
+WCT 5
+trans 6
+wruns 1
+VIOLATIONS 0
+RC 0

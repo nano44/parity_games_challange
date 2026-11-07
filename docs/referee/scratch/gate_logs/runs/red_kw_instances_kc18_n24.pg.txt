@@ -1,0 +1,12 @@
+GAME red/kw/instances/kc18_n24.pg
+BGmax 21
+GAMES 1
+INC 21
+K 23
+MAXPH 19
+SGmax 21
+SQZ_chk 576
+steps 22
+stretches 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,5 @@
+E-1 runs 63223  T=1+#{t<=T-1: Mv_t cap Z nonempty} on 59502  T=1+sum_z moves(z) on 8399
+E-2 box186/out/pass_d3_D3.json sha1 8bca9764 start 110100 T 4
+E-2 box186/out/pass_d3_D3.json sha1 8bca9764 start 000000 T 2
+E-2 box186/out/pass_d4_D4.json sha1 3bf6a4a4 start 01010111 T 4
+E-2 box186/out/pass_d4_D4.json sha1 3bf6a4a4 start 00000000 T 2

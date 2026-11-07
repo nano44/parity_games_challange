@@ -1,0 +1,12 @@
+GAME red/so/instances/pft35_n48.pg
+BGmax 11
+GAMES 1
+INC 37
+K 41
+MAXPH 39
+SGmax 39
+SQZ_chk 2016
+steps 40
+stretches 1
+VIOLATIONS 0
+RC 0

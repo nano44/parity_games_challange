@@ -1,0 +1,12 @@
+GAME red/so/instances/tev_cex_n40.pg
+BGmax 25
+GAMES 1
+INC 24
+K 27
+MAXPH 23
+SGmax 25
+SQZ_chk 1120
+steps 26
+stretches 1
+VIOLATIONS 0
+RC 0

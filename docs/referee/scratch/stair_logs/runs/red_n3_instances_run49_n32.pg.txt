@@ -1,0 +1,13 @@
+GAME red/n3/instances/run49_n32.pg
+BIT_chk 212
+DESC 56
+FROZEN_chk 49
+GAMES 1
+ROOT_chk 71
+TD 544
+WCH 85
+WCT 49
+trans 49
+wruns 1
+VIOLATIONS 0
+RC 0

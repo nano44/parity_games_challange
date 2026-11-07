@@ -1,0 +1,12 @@
+GAME red/fbr/instances/lev74_n40.pg
+BGmax 17
+GAMES 1
+INC 5
+K 18
+MAXPH 4
+SGmax 17
+SQZ_chk 760
+steps 10
+stretches 5
+VIOLATIONS 0
+RC 0

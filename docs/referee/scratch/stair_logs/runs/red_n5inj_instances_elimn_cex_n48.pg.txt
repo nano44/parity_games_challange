@@ -1,0 +1,14 @@
+GAME red/n5inj/instances/elimn_cex_n48.pg
+BIT_chk 468
+DCOPY_chk 7
+DESC 15
+FROZEN_chk 79
+GAMES 1
+ROOT_chk 179
+TD 838
+WCH 223
+WCT 79
+trans 79
+wruns 12
+VIOLATIONS 0
+RC 0

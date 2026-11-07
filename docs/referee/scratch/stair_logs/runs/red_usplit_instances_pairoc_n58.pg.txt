@@ -1,0 +1,13 @@
+GAME red/usplit/instances/pairoc_n58.pg
+BIT_chk 96
+DESC 2
+FROZEN_chk 5
+GAMES 1
+ROOT_chk 37
+TD 102
+WCH 38
+WCT 5
+trans 5
+wruns 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,8 @@
+GAME red/n5/instances/dl_4_4.pg red/n5/instances/dl_4_4.start
+GAMES 1
+enum_states 8
+loc_chk 37
+rhos 1170
+states 8
+VIOLATIONS 0
+RC 0

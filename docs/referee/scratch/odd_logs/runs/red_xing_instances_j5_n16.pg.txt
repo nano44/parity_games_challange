@@ -1,0 +1,15 @@
+GAME red/xing/instances/j5_n16.pg
+CNT_chk 19
+FR 19
+FR_maxpair 1
+GAMES 1
+OLD_chk 147
+ROOT_chk 7
+ROOT_endPE 7
+ROOT_maxlen 1
+STEP_caseII 12
+STEP_chk 30
+trans 20
+wruns 5
+VIOLATIONS 0
+RC 0

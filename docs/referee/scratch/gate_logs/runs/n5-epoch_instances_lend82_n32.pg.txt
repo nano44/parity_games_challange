@@ -1,0 +1,14 @@
+GAME n5-epoch/instances/lend82_n32.pg
+BGmax 86
+GAMES 1
+INC 84
+K 87
+MAXPH 82
+PH_over 1
+SGmax 86
+SQZ_chk 2816
+steps 84
+stretches 1
+VIOLATIONS 0
+EX ('PH_over', 'lend82_n32.pg', 1, 84, 82, 31)
+RC 0

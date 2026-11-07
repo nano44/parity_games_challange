@@ -1,0 +1,14 @@
+GAME red/xing/instances/x32_waves32.pg
+BIT_chk 626
+DCOPY_chk 20
+DESC 62
+FROZEN_chk 68
+GAMES 1
+ROOT_chk 199
+TD 1029
+WCH 241
+WCT 68
+trans 68
+wruns 9
+VIOLATIONS 0
+RC 0

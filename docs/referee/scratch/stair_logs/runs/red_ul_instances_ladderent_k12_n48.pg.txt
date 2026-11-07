@@ -1,0 +1,13 @@
+GAME red/ul/instances/ladderent_k12_n48.pg
+BIT_chk 89
+DESC 1
+FROZEN_chk 14
+GAMES 1
+ROOT_chk 39
+TD 220
+WCH 39
+WCT 14
+trans 14
+wruns 1
+VIOLATIONS 0
+RC 0

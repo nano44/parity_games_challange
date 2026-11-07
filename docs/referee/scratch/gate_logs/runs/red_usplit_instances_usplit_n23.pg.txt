@@ -1,0 +1,12 @@
+GAME red/usplit/instances/usplit_n23.pg
+BGmax 0
+GAMES 1
+INC 4
+K 9
+MAXPH 9
+SGmax 0
+SQZ_chk 230
+steps 9
+stretches 1
+VIOLATIONS 0
+RC 0

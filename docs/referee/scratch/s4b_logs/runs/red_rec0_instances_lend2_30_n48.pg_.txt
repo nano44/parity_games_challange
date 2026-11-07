@@ -1,0 +1,9 @@
+GAME red/rec0/instances/lend2_30_n48.pg 
+GAMES 1
+enum_states 25
+keep_chk 17
+loc_chk 71
+rhos 1490
+states 25
+VIOLATIONS 0
+RC 0

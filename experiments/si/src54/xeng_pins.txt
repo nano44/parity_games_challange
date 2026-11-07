@@ -1,0 +1,6 @@
+sbq2_K8_m16 state sequences identical: True
+src2_K3 state sequences identical: True
+obs_K12_m24 state sequences identical: True
+rcl_K24 state sequences identical: True
+latew_K16_m32 state sequences identical: True
+done
