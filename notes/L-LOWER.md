@@ -9,6 +9,14 @@
   TOP-ADD); ask the Lead to route any seed/constraint.
 - Pre-go DATA (lpaudit, stored start): per-window fuel sources alternate by window parity (two feeders per level); exceptions H6 level 3
   (period 4) and H5 level 3 (two irregular windows). Not a ruler/Hanoi function (ruler test DEAD). Lead: look at the period-4 exception.
+- 10:3xZ state (docs/lower/L5-rule.md §1-§7): fuel source = function of the b-step type (member × direction) on H6/DBL4/RECF4/G7;
+  greedy walk back H6 → H5: ~half drift, ~70 Ξ-targets forced at every level; GAP-NEST (PROVED, lane); G7_best's only 7-level pulse/gap
+  deficit = level 5, type (9, 1) (trigger 15 key-gated by the first move of pair 5); 94k random single splices: no gain; uniform
+  templates (P ≤ 3): one doubling level only. CONJECTURE L5-TYPE (O(h) delay movers per extension). Template runs out/r_p* may still run.
+### Sources opened (this box)
+- claude/l-si 9b51f2cb docs/si/N5-TOWER-box80.md §0-§6 (PULSE-NEST, CAP-PULSE, ZONE, INSERT-PASS, STRETCH-NEED, delay lines);
+  docs/si/N5-TROPICAL-box76.md §2 (ALT-MIN, HIT), §8-§12 (TOWER-NEED, FUEL-NEED, PASS-FREEZE, RE-ENTRY); experiments/si/box80/delay80.out.
+- Friedmann's binary-counter games: NOT opened; not used.
 Successor 4 (Opus 5.5, D1/D14/D18/D20) started 2026-11-07 03:30Z (date -u); BOX L4 (12 h): the fifth doubling level, S(h), by an
 explicit recursive design with proofs. Successor 3's sections below are kept unchanged as history.
 
