@@ -74,7 +74,8 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - RUNNING since 07:1xZ (cwd experiments/red/r215, «. ./env.sh»; WT3 = worktree of claude/l-new f09f67ec; runr.sh resumable):
   nohup ./runr.sh rd2 2 2 11 1 3 4 5 6 > /dev/null 2>&1 &  nohup ./runr.sh rd2 2 2 11 1 7 8 9 10 > /dev/null 2>&1 &
   nohup ./runr.sh rd3 2 3 12 1 3 4 5 6 7 8 9 10 > /dev/null 2>&1 &  SCORE=F nohup ./runr.sh rf 2 2 13 1 3 4 5 6 7 8 > /dev/null 2>&1 &
-  xa chain (runxi.sh xa ... 8 12) at d 12. PAD chains pl/ps and xb/xg stopped (Lead priorities). T-table OFF (Lead 06:22Z).
+  xa chain (runxi.sh xa ... 8 12) FINISHED (d 12 xi 38); rd2 FINISHED (d 10 R 16). Since 09:3xZ the live rd3 / rf chains run in
+  /home/user/r215live (scripts symlinked, out/ copied) so the repo tree stays clean; copy out/ back into r215/out at milestones. PAD chains pl/ps and xb/xg stopped (Lead priorities). T-table OFF (Lead 06:22Z).
 
 ## Successor 53 handover check (2026-11-07 05:1xZ, date -u)
 1. Branch claude/l-red. Clone checkout was DETACHED and SHALLOW at b14066e1 (= ls-remote 05:03Z). «git fetch --unshallow origin
