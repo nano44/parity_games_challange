@@ -22,6 +22,13 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 5. Trap: detached HEAD + stale/shallow clone (push.sh fails after VERIFY PASS with «invalid refspec»). Check: ls-remote vs HEAD vs
    origin ref, and `git branch --show-current` = claude/l-si before every push.sh (done above).
 
+## DUTY P-IDEAL-DBL (successor 42): frozen f5263d5a; fixes entry 1 + L-2 (0ea6959f; referee items, RE-ENTRY levels measured:
+tower 1..8, KILL_M2D 1..4); fixes entry 2 + L-3 (C133 R1-R6, sha1 845ffdc9 = CHECKER's). Tools box79/{mkL2,mkL3,mkfix1,mkfix2,
+reentry_levels}.py; check79.sh regenerates L-2, L-3, reentry_levels.out.
+- TRAP (bit successor 42): `pgrep -c push.sh` matches process NAMES only and prints 0 while push.sh runs (its name is bash). Use
+  `pgrep -fc scripts/push.sh`. A commit made during a push is not in that push (it pushes the SHA it started with).
+- Container restart ~12:06Z killed the climbs; restarted from /tmp/claude-0/sp/h7_s{1,2}.txt (logs h7r_s*.log).
+
 ## BOX 80 (successor 42; Lead brief ~07:05Z: proof side of the tower question) — IN FLIGHT
 - Note docs/si/N5-TOWER-box80.md; tools + check experiments/si/box80/ (check80.sh wired in experiments/si/check.sh).
 - PROVED (lane): PULSE-NEST (levels j..j+k doubling => every j-window pulse >= k+1; capped h => P_j >= h - j); ZONE (W+Xi-closed

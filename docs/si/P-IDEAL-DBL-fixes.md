@@ -65,3 +65,31 @@ mkL2.py (line L-2); referee reports byte-copied as experiments/si/box79/ref_d788
     NEW «whose Ξ-target has a higher level than that mover»
 - docs/si/P-IDEAL-DBL-line-L2.txt: sha1 1b3dc82544adfaf2cdea0deffbcbd052db9cd371, 5,810 B, 1 line, 97 «(» = 97 «)», 0 «|».
 - Not changed: every statement of the packet (all SIGN at both referees); L-1 and the packet stay as frozen.
+
+## Entry 2 (fix round 2; L-SI successor 42; CHECKER C133 (claude/checker 8f6d03bc) FAILED R119's first fill with E-1..E-6; Lead
+12:08Z). Line only: no packet statement, proof or DATA changes. Strings copied by script (experiments/si/box79/mkL3.py) from
+experiments/si/box79/c133_8f6d03bc.md, a byte copy of docs/checker/C133.md at 8f6d03bc, §5 (wrapped lines joined with one space).
+- R1 (E-1) drops the «R1xx [refereed-only] » prefix; R2 (E-2) the source note (packet + fixes entry 1, L-SI successors 41-42); R3 (E-3)
+  the scope tail «(2026-11-07) — … not a TARGET.md claim»; R4 (E-6) the L41 note on DBL-EQ (b)'s window count (REFEREE's DB-3, entry 1
+  F-3, found independently by REFEREE-2) inside R3's tail; R5 (E-4) PASS-FREEZE «for 1 ≤ l ≤ d − 2»; R6 (E-5) FUEL-EXACT «on 𝓛^R_d».
+- Line L-3 = L-2 with R1-R6 applied in this order (each old string once in the text it is applied to, R4's inside R3's new text):
+  - R1
+    OLD «R1xx [refereed-only] In the IDEAL model of RESULTS R104»
+    NEW «In the IDEAL model of RESULTS R104»
+  - R2
+    OLD « (2026-11-07; source: packet P-IDEAL-DBL, docs/si/P-IDEAL-DBL.md, which carries every proof)»
+    NEW « (P-IDEAL-DBL, docs/si/P-IDEAL-DBL.md with its fixes entry 1, docs/si/P-IDEAL-DBL-fixes.md; L-SI successors 41-42)»
+  - R3
+    OLD « (DATA, experiments/si/box79/dblcheck.py, CORPUS = »
+    NEW « (2026-11-07) — each statement is about the step sequence of R104's IDEAL model (MP-LIN about max-plus recursions); G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim (DATA, experiments/si/box79/dblcheck.py, CORPUS = »
+  - R4
+    OLD «; G-N5-TIME stays OPEN; not M3»
+    NEW «; DBL-EQ (b)'s window count uses one referee-originated step (REFEREE's DB-3, fixes entry 1 F-3, found independently by REFEREE-2); G-N5-TIME stays OPEN; not M3»
+  - R5
+    OLD «if the pair l + 1 never moves and starts split, then F(l + 1) = F(l)»
+    NEW «for 1 ≤ l ≤ d − 2, if the pair l + 1 never moves and starts split, then F(l + 1) = F(l)»
+  - R6
+    OLD «E_l is the set of steps at which some mover of the old chain»
+    NEW «on 𝓛^R_d, E_l is the set of steps at which some mover of the old chain»
+- docs/si/P-IDEAL-DBL-line-L3.txt: sha1 845ffdc9f0306d5db4bdb41d613588b219545838, 6,167 B with its newline, 1 line, 101 «(» = 101 «)», 0 «|», one « — », no «[»; equal to
+  C133 §5's value 845ffdc9f0306d5db4bdb41d613588b219545838. L-1, L-2 and the packet are unchanged.

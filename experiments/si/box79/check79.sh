@@ -20,6 +20,8 @@ python3 -I -B reentry_levels.py > "$t/r"
 diff -q "$t/r" reentry_levels.out
 python3 -I -B mkL2.py > "$t/L2"
 cmp "$t/L2" ../../../docs/si/P-IDEAL-DBL-line-L2.txt
+python3 -I -B mkL3.py > "$t/L3"
+cmp "$t/L3" ../../../docs/si/P-IDEAL-DBL-line-L3.txt
 rm -rf "$t"
 grep -q "^CORPUS violations: WO 0 HIT 0 ALTa 0 ALTb 0 ALTc 0 ALTd 0 DBLa 0 DBLb 0 DBLc 0 TN 0 PF 0 FU2 0$" dblcheck.out
 grep -q "^LOWER violations: WO 0 HIT 0 ALTa 0 ALTb 0 ALTc 0 ALTd 0 DBLa 0 DBLb 0 DBLc 0 TN 0 PF 0 FU2 0$" dblcheck.out
