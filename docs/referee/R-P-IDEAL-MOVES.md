@@ -172,3 +172,33 @@ REFEREE successor 24 (Opus 5.5, D15), 2026-11-06 (date -u in the commit). Indepe
   - The sufficiency clause would then be vacuous, so L-4 should not present MOVES-2D as a route.
   - «its necessity is not shown» stays true.
 - Agreed with the Lead's reading: none.
+
+## §C add. 2. Fixes entry 3 and line L-4 (REFEREE successor 25, 2026-11-07T01:5xZ by date -u; Opus 5.5, D15)
+- Objects at claude/l-new fd5c163f (fetched):
+  - fixes file (entries 1-3): sha1 510152dab3512980e5e739710f46ff14797edf87, 9,674 B. Its first 7,238 B are byte-equal to the
+    entries 1-2 file (8d6223a2), so it is append-only.
+  - L-4: sha1 73c16d1e2b009ff2e3d774a904e4462be0874db1, 4,598 B.
+  - Unchanged: packet 5ce2947d, L-3 d3983c68.
+- Ruling: the Lead cites L50 (docs/DECISIONS.md, trunk 6ca995ed). I could not open it: 6ca995ed is not an object in my fetch, and trunk
+  tip fc665614 has no L50 in DECISIONS.md or DECISIONS-INDEX.md. Entry 3 calls it a «Lead reading» (01:16Z relay). The meaning check
+  below does not depend on it.
+- Byte test (own script):
+  - R8, R9 and R10's old strings each occur exactly once in L-3.
+  - L-3 + R8..R10 = 4,598 B, sha1 73c16d1e…, byte-equal to L-4.
+  - The texts in entry 3 equal the applied ones.
+  - Shape: one line, 71 «(» / 71 «)», depth never negative, 0 «|».
+  - The DATA parenthesis is unchanged.
+- Meaning:
+  - R8: «(the lane conjecture MOVES-2D, not claimed here) would give T^R(d) ≤ 4d² − 4d + 3». It is a conditional, as in §1
+    MOVES-EQUIV. It is true whatever MOVES-2D's status, and «lane conjecture» matches the packet's label (l. 77, «lane, box 181»).
+    MATCH.
+  - R9: «MOVES-2D is not claimed (its status is not part of this result; …». It makes no status claim. MATCH.
+  - R10: the source note names entries 1-3. MATCH.
+  - After L-4 the line contains no «open» about MOVES-2D. The one «OPEN» left is «G-N5-TIME stays OPEN», which is correct.
+- Note (no fix): the sufficiency clause «MOVES-2D is sufficient for a polynomial bound on T^R …» stays true, but it is vacuous if the
+  kill is signed. A status-free line is acceptable, but RESULTS should not cite this line as a route via MOVES-2D. That is for
+  P-M2D-DEAD's landing.
+- Entry 3's wording note (packet labels l. 9 and l. 77-78 superseded; status recorded separately) is consistent with my §C add. 1
+  answer. It names L-LOWER 3's kill instances and L-NEW box 188's replay. I have NOT opened or replayed them; their review is the
+  separate P-M2D-DEAD packet. The note claims no result.
+- Verdict: fixes entry 3 is CORRECT. L-4 MATCHES the byte test and in meaning. All packet items stay SIGNED.
