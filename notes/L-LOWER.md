@@ -19,6 +19,12 @@
   Capped-level fuel depends on own b-step type only (fuelctx.out). Next idea: a supplier for D = cv(22) − cv(11) of rank > 87 that
   changes once per pulse under parent (9, 1) — candidates from good-window deciders (19, 20 at ranks 91-95; 7 at 101).
 ### Things only I know (box L5)
+- SLIP (12:0xZ): committed 5bc47311 while push.sh was verifying a92b5226 (my wait loop tested «output file non-empty», which the
+  commit step had already written). push.sh pushed only the verified a92b5226; 5bc47311 went out in the next push. Check now: wait on
+  `! pgrep -f "bash scripts/push.sh"` AND «exit» in the task output before any commit.
+- Two-edit supplier search (retall2) at 144k genomes ran in ~10 min with fev batches of 400; the SL41 plateau is > 2 edits deep.
+- xcheck against L-NEW: `git archive origin/claude/l-new experiments/new/box150 experiments/new/box139 experiments/new/box187 | tar -x
+  -C $SP/lnew; LNEW=$SP/lnew python3 -I ../l3/xcheck.py f.json`.
 - revert.py is importable (main guarded); greedyback/splice/domfix/fuelsplice import rd/wr/caps from it. fev = batch evaluator (one
   process, many genomes): use it for all batch searches; utmpl GENOME= mode is an independent exact-order simulator.
 - mclimb.c SLACK=J:NEED score = 256·(good J-windows) + F(LV) under GUARD; validated on H6 / G7_best (L5 §6).
