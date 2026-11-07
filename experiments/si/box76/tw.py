@@ -6,6 +6,7 @@ corpus.txt with blob sha1s), every start for N <= 10, the stored start otherwise
 Output (deterministic): per (d, level) maxima of F(j), moves; window-type tables; additive-increment tables. See docs/si/N5-TROPICAL-box76.md.
 """
 import sys, os, json, itertools, collections
+NEG = os.environ.get("NEG")  # negative controls: 1 = key-greatest available option, 2 = key-least option ignoring availability
 
 def load_corpus():
     """the 208 L^R_d genomes of the frozen corpus (corpus_lr.json.gz: [git blob sha1, path at l-new 9995f5a2d, file text]);
@@ -53,7 +54,8 @@ class Sim:
             if all(len(a) == 1 for a in A): return S
             ns = list(st); K = [None] * s.N
             for x in s.order:
-                k = min(A[x], key=lambda k: s.okey(K, x, k)); ns[x] = k; K[x] = s.okey(K, x, k)
+                cand = A[x] if NEG != "2" else range(2)          # NEG=2: ignore availability (negative control)
+                k = (max if NEG == "1" else min)(cand, key=lambda k: s.okey(K, x, k)); ns[x] = k; K[x] = s.okey(K, x, k)
             if tuple(ns) == st: return S
             S.append(tuple(ns))
         raise RuntimeError("cap")

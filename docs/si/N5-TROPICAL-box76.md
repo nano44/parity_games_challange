@@ -124,3 +124,133 @@ polynomial bound; MOVES-2D and G-N5-TIME stay OPEN.
   this coupling is proposed here: CONJECTURE MOVES-2D stays OPEN, and this box adds no conjecture.
 - Diff against TARGET.md: no statement mentions a parity game, a winning region, an algorithm's running time or a complexity class.
   Every statement is about the step sequence of R104's IDEAL model. None is an M3/M4 claim, a gauntlet step, or a polynomial bound.
+
+## 7. Box 76b (Lead re-aim 2026-11-07 00:38Z: the DBL-O(1) question; written from 00:55Z)
+- Context: L-LOWER 3 (relayed by the Lead, UNREPLICATED, files not on claude/l-lower at 00:50Z) reports μ ≥ 13, 17, 21, 29 at d 6-9,
+  with μ tracking T; F-profile at d 9: 2 3 8 9 12 13 28 27 7. So the Lead re-aimed the box at the flip profile: can PAIR-DOUBLE's
+  equality F(l) = 2F(l − 1) + 2 hold at many consecutive levels? A level l is DOUBLING in a run if it holds there.
+- Lemma DBL-EQ (PROVED, lane; premises R113 ALIGN, F0, PAIR-DOUBLE's notation; WINDOW-DOUBLE (a), (b) and its proof's identity
+  (P-IDEAL-MOVES, signed, not landed); WINDOW-ONCE §1). G ∈ 𝓛^R_d, 1 ≤ l ≤ d − 1, any run, p := 2l, q := 2l + 1, Φ := Φ_l.
+  - (a) Level l is doubling iff all of: Φ(s_0) = 2; Φ(s_T) = 0; Φ(s_(t−1)) = 0 at every l-b-step t; no step moves both p and q; the
+    flips of (p, q) are exactly the steps that move p or q.
+  - (b) At a doubling level each of p, q moves exactly once in every l-window; so moves(p) = moves(q) = F(l − 1) + 1.
+  - (c) At a doubling level γ_l(0) = γ_l(1) =: γ, and in every l-window the first of p, q to move is p iff γ is false; so the order
+    of (p, q) is γ while p, q are on one option and ¬γ while they are split, and c_(l+1) takes one fixed value c* while they are
+    together and 1 − c* while they are split.
+  - Proof. (a) With W = [1, T], WINDOW-DOUBLE's proof gives F(l) ≤ M + B1 (by (a) of that lemma), M ≤ Σ_t #(Mv_t ∩ {p, q}) = Φ(s_0) −
+    Φ(s_T) + Σ_(l-b-steps t) (2 − 2Φ(s_(t−1))), and B1 = #{l-b-steps with Φ(s_(t−1)) = 1}; so F(l) ≤ Φ(s_0) − Φ(s_T) + Σ_b h(Φ(s_(t−1)))
+    with h(0) = 2, h(1) = 1, h(2) = −2, and Φ(s_0) ≤ 2, Φ(s_T) ≥ 0. F(l) = 2 + 2F(l − 1) iff every inequality is an equality: Φ(s_0) = 2,
+    Φ(s_T) = 0, h = 2 at every b-step (Φ = 0, hence B1 = 0), M = Σ #(Mv_t ∩ {p, q}) (no step moves both), and F(l) = M with B1 = 0 (every
+    moving step flips, and by WINDOW-DOUBLE (a) a flip without a move needs a b-step with Φ = 1, of which there are none). Conversely
+    these conditions make each inequality an equality. (b) Φ = 2 at the start of every l-window (Φ(s_0) = 2 for the first; for a later
+    window starting at a b-step t, Φ(s_(t−1)) = 0 and c_l changes at t, so both are off the new c_l), Φ = 0 at its end (the next b-step
+    or s_T), and a member of the pair moves only to c_l (ALIGN), so both move in the window, each at most once by WINDOW-ONCE. (c) In a
+    window both start on one option i (off c_l), so their order is γ_l(i) (ALIGN (c)); the first mover A goes to 1 − i = c_l, and then
+    the order is [s(p) = c_l] = [A = p]; the second mover brings both to 1 − i, order γ_l(1 − i). Both moving steps flip by (a): γ_l(i) ≠
+    [A = p] ≠ γ_l(1 − i). Hence γ_l(i) = γ_l(1 − i) and A = p iff ¬γ. c_(l+1) is a function of the order of (p, q) (R113's c_l). ∎
+  - Does NOT claim: anything about two consecutive levels; a bound on F.
+- CONJECTURE DBL-GAP (lane; DATA): if levels l and l + 1 are both doubling in a run, then F(l − 1) = 0. DATA: 0 counterexamples on the
+  frozen corpus (63,223 runs, 4,534 doubling levels) and on 68 L-RED 𝓛^R_d genomes (claude/l-red 242fbd1e3, experiments/red/r213 and
+  r214, byte copies in experiments/si/box76/inst/lred/; together 80,058 runs, 5,396 doubling levels). Pairs of consecutive doubling levels
+  occur only as F = (0, 2, 6, …) (e.g. NOL0_1_d4_t8 start 00000000, F 0 2 6 5); never 3 in a row. L-LOWER's relayed d 9 profile 2 3 8 9
+  12 13 28 27 7 doubles at l = 2 and l = 6 only (consistent; not replayed). DBL-EQ (a)-(c): 0 violations on all 5,396 levels
+  (tw5.out, tw5_lred.out counter DBLEQ_VIOL).
+- READING: DBL-GAP, even if true, does not give a polynomial bound: F(l) ≤ 2F(l − 1) + 1 still doubles. What decides DBL-O(1) is the
+  average deficit 2F(l − 1) + 2 − F(l) per level, i.e. whether ∏ (F(l) + 2)/(F(l − 1) + 2) over d levels is polynomial. DATA (largest
+  (F(l) + 2)/(F(l − g) + 2), tw5.out «RATIO»): g = 1: 2 (only from F(l − 1) = 0); g = 2: 4 at d 4, 5 (only from F = 0, 2, 6), 2.25 at d 6;
+  g = 3: 5 at d 5 (dd_d5_F14 start 1100000001, F 0 1 4 8 2). L-LOWER's d 9 profile: 30/11 over l = 3..6. The data are too small in d to
+  separate «ratio → 1» from a constant ratio > 1. OPEN.
+
+## 8. Box 77 AMBIGUITY (Lead 2026-11-07 00:50Z / 01:12Z; written from 01:20Z): replay, DBL-GAP dead, what the tower needs
+- Source note: the Lead's analogy with A. Weber, H. Seidl, «On the degree of ambiguity of finite automata» (TCS 88 (1991) 325-349) was
+  NOT opened in this box and is used by NO statement below; any automaton reading here is a READING only.
+- REPLAY (DATA, independent). L-LOWER 3's nine genomes claude/l-lower 4d747490 experiments/lower/l3/kill/*.json (byte copies in
+  experiments/si/box76/inst/lower/, sha1s = L-LOWER's README) replayed from the stored start by my simulator and by L-NEW's box150 Gen
+  (identical states; replay77.py with XCHK). Every (d, T, mover, moves) of the README table is reproduced (replay77.out); so
+  CONJECTURE MOVES-2D is DEAD by an independent replay as well (e.g. KILL_M2D_d6_mu13: d 6, T 13, mover 8 moves 13 > 12).
+- DEAD DBL-GAP (§7): REC_d10_tower_mu30.json (sha1 cc94dc9c46ef63f7a3a54b536d9d3b38fdee5255), stored start, T 35, F = 2 6 14 30 23 8
+  7 6 2 1: levels 1, 2, 3 are all doubling with F(0) = 2. (R113 T-BOUND's per-level bound F(l) ≤ 2^(l+2) − 2 is attained at l = 0..3.)
+- Lemma TOWER-NEED (PROVED, lane; DBL-EQ, ALT-MIN, HIT, R113 PATH-RISE): if level l is doubling and f := F(l − 1), then each member x
+  of the pair l moves f + 1 times, has P(x) ≥ f + 2, and both Ξ-targets of x are movers (not X) with R ≥ ⌈(f − 1)/2⌉.
+  - Proof. moves = f + 1 (DBL-EQ (b)); f + 1 ≤ R(x) ≤ P(x) − 1 (HIT, PATH-RISE); f + 1 ≤ 2 + 2 min_k R(xt(x, k)) (ALT-MIN (c)), and an
+    X-target has R = 0, which would give f + 1 ≤ 2, i.e. f ≤ 1; for f ≥ 2 both targets are movers with R ≥ (f − 1)/2. ∎ (For f ≤ 1 the
+    statement on targets is vacuous as written; only P(x) ≥ f + 2 is claimed then.)
+  - For a tower from level 1 (F(l) = 2^(l+2) − 2, l = 0..h): the pair l needs Ξ-targets with R ≥ 2^l − 1. The crossed choice (both
+    targets in the pair l − 1, R ≥ moves = 2^l − 1) meets this exactly: on the Ξ side the crossed ladder is self-sufficient above the
+    bottom. With L-LOWER's lane lemma FEEDBACK (b) (docs/lower/L3-families.md §4, 4d747490, NOT landed): 2^(l+1) − 1 ≤ 2l(1 + |E_l|), so
+    the upward-target values must change at least (2^(l+1) − 1)/(2l) − 1 times: the «fuel» must grow exponentially in the tower height.
+- Diagnosis of REC_d10_tower (DATA, tower77.out, fuel77.out): pairs 3 (movers 6, 7) and the level-4 mover 8 are crossed onto the pair
+  below (6: 4, 5; 7: 5, 4; 8: 7, 6) and move 15, 15, 30 = R; pairs 1, 2 take fuel from above (2: 4, 19; 3: 13, 17; 4: 9, 10; 5: 16,
+  3). Level 4 is not doubling because its second mover 9 (moves 7) is fuel for mover 4.
+- Fact ACYC-SPLIT (PROVED, trivial: Ξ-acyclicity) with its instance: if a mover w is Ξ-reachable from a mover x, no option of w has
+  Ξ-target x. Here 6 and 7 Ξ-reach 4 and 4 has an option with Ξ-target 9, so 9 cannot point to 6 or 7: re-pointing both options of 9
+  onto (6, 7) or (7, 6) closes the cycle 9 → 6/7 → 4 → 9 (replay77.py asserts it). So in this genome the fourth doubling level needs a fuel mover for the
+  pair 2 other than 9, from outside the Ξ-down-closure of the tower pair 3.
+- Climb (DATA): climb77.py from REC_d10_tower, 4 seeds × 20,000 moves (re-target, rank/gate swaps, parity, start): F(4) stays at 23 in
+  all four; the best run has T 45 at d 10 (inst/climb77_d10_T45.json, sha1 c5302641a4a7c921ed73c9fe012e2ee8d50f69f7, F 2 6 14 30 23 13
+  15 7 3 1, Gen-confirmed; max moves of a Ξ-target 15). A local optimum, not a cap.
+- READING (the open core): no landed or signed constraint that I can find caps the number of doubling levels: the Ξ side supports a
+  crossed tower (TOWER-NEED is met by the pair below), the key side allows doubling at every level (PAIR-DOUBLE). The brakes are
+  temporal: TRI / FEEDBACK (L-LOWER, lane) force the lower levels to settle within 2(l + 1) steps after every change of an upward target,
+  so a tower of height h needs ≳ 2^h/h fuel events, and ACYC-SPLIT forces the fuel to live outside the tower's Ξ-down-closure. Whether
+  a fuel subsystem of size O(h) can itself change value 2^h/h times (a second tower feeding the first, i.e. an ambiguity-type nesting)
+  or only polynomially often is the question; it is OPEN. No conjecture added.
+- Negative controls (box 76 counters, requested): tw.py env NEG=2 (key-least option ignoring availability) gives MONO_VIOL 226,066, RMV
+  150,575, TO_k 86,709, HIT_VIOL 238,546 (tw3_neg2.out, tw4_neg2.out); ALT and MOVEALT stay 0 under NEG=2 and NEG=1, so their controls
+  are the tightness counters ALT_TIGHT / MOVEALT_TIGHT (the bounds minus 1): 112,372 / 7,085 > 0 on the real model (tw3.out). NEG=1
+  (key-greatest available) leaves every Ξ-side counter at 0 (tw3_neg1.out): ALT-MIN and HIT do not depend on the key rule, as their
+  proofs say.
+
+## 9. Box 77, second pass (Lead 01:46Z: make fuel economy quantitative; S(h) := least d with h consecutive doubling levels)
+- Lemma FUEL-NEED (PROVED, lane, CONDITIONAL on L-LOWER's lane lemma FEEDBACK (b), docs/lower/L3-families.md §4 at 4d747490, not
+  landed, not refereed; other premises: DBL-EQ (b) §7, R105 MONO, HIT §2, R113 PATH-RISE). Hypotheses: G ∈ 𝓛^R_d, Ξ-acyclic, any
+  run, level h ≥ 1 doubling, f := F(h − 1); Up_h, E_h as in FEEDBACK (Ξ-targets of upward options of movers of level ≤ h; steps at
+  which the current value of one of them changes). Then
+  - (a) |E_h| ≥ (f + 1)/(2h) − 1, and Σ_(y ∈ Up_h) R(y) ≥ |E_h|;
+  - (b) some y ∈ Up_h has P(y) ≥ 1 + ((f + 1)/(2h) − 1)/|Up_h|, with |Up_h| ≤ 4h; hence its Ξ-depth dep(y) (the largest number of
+    movers on a Ξ-path from y) is ≥ log2 of that.
+  - Proof. (a) DBL-EQ (b): a member of the pair h moves f + 1 times; FEEDBACK (b): at most 2h(1 + |E_h|). By MONO a change of cv(y) is a
+    rise, so each t ∈ E_h is a rise step of some y ∈ Up_h. (b) Pigeonhole on (a) and PATH-RISE R(y) ≤ P(y) − 1; P(y) ≤ 2^dep(y) by
+    induction along the acyclic Ξ-graph (two options per mover, X counts 1). |Up_h| ≤ 2 options × 2 movers × h levels. ∎
+  - For a tower from level 1 with F(0) = 2 (f = 2^(h+1) − 2): some fuel target has P ≥ 2^(h+1)/(8h²) roughly, i.e. Ξ-depth ≥ h − 2 log2 h
+    − 3. DATA (REC_d10_tower, h = 1, 2, 3): Σ R over Up_h = 17, 40, 40 against needs 0.5, 0.75, 1.5; max P over Up_h = 91. The bound is
+    asymptotic and weak at small h.
+- What this does and does not force on S(h) (READING; the answer to task (1)):
+  - FORCED: a deep fuel target (Ξ-depth ≥ h − O(log h)), and (ACYC-SPLIT) it cannot Ξ-reach the movers it fuels. Movers reached by
+    upward options need not be outside the tower (REC_d10_tower: mover 2 (level 1) has the tower mover 4 (level 2) as an upward target);
+    only acyclicity separates them.
+  - NOT FORCED by anything landed (R104-R114), signed (P-IDEAL-MOVES) or lane-proved here or in L-LOWER's §2-§4: a fuel block of size
+    ≥ 2·S(h − 1), or a fuel that is itself a doubling tower. FUEL-NEED needs only Ξ-paths (counting), which a crossed block of
+    h − O(log h) levels provides; whether such a block's values actually RISE that often depends on its key side (pass-through flips
+    with Φ = 1, WINDOW-DOUBLE (a)) and on AND-GATE timing, which no statement here bounds.
+  - So the best LOWER bound I can prove is S(h) ≥ h + 1 (trivial: h doubling levels above level 0). No constraint I know forces S(h)
+    super-polynomial; equivalently, nothing proved here or landed rules out T^R(d) ≥ 2^(Ω(d^c)). CONJECTURE: none.
+- Construction proposal for L-LOWER (READING; via the Lead): a MUTUAL-FEEDBACK genome. Tower T on levels 1..h (crossed above the bottom,
+  as in REC_d10_tower levels 3-4); fuel block C on levels h + 1..h + m, each C pair crossed onto the C pair below (a Ξ-counter, P
+  doubling per level), the bottom C pair to X; the upward options of the tower's pairs 1, 2 target the TOP of C (ACYC-SPLIT holds: C
+  never points into T). C's keys are driven by the tower top's F(h) through pass-through flips (Φ = 1 at b-steps). If C's values rise
+  ~2^h/h times with m = O(h), then S(h) = O(h) and T^R(d) = 2^(Ω(d)). The measurable obstruction to watch: the decay of F above the tower
+  (REC_d10_tower: F = 30 at level 3, then 23, 8, 7, 6, 2, 1), i.e. whether pass-through flips can carry F(h) into C.
+
+## 10. Box 77, third pass (Lead 02:08Z: PASS-THROUGH DECAY): flip counts do not decay; the candidate decay lemma is DEAD
+- Lemma PASS-FREEZE (PROVED, lane; premises R113 ALIGN (c), R113's definition of c_l; AND-GATE (a) (P-IDEAL-MOVES, signed, not landed)
+  for the sufficient condition). G ∈ 𝓛^R_d, 1 ≤ l ≤ d − 2, any run. If neither member of the pair l + 1 moves in the run and they start
+  on different options, then F(l + 1) = F(l). A sufficient condition for «never moves»: for each member x, π_s(x) = s_0(x) in every
+  state of the run (e.g. both options of x have Ξ-target X and the start option has the larger ε).
+  - Proof. The members keep distinct options, so by ALIGN (c) the order of their keys under s is [s(2l + 2) = c_(l+1)(s)], with s(2l + 2)
+    constant; c_(l+1)(s) is the key order of the pair l, which changes exactly at the flips of the pair l. So the pair l + 1 flips
+    exactly at the flips of the pair l. Sufficient condition: by AND-GATE (a) x moves at t only if s_(t−1)(x) ≠ π_(s_(t−1))(x); with π =
+    s_0(x) and x never moving, s_(t−1)(x) = s_0(x) = π, by induction on t. With Ξ-targets X the values are the constants ε. ∎
+- DEAD (the Lead's candidate decay «F(l + 1) ≤ F(l) − c unless the level l + 1 has upward fuel», every c ≥ 1, also above a doubling
+  level): instance experiments/si/box76/inst/passfreeze77_d5.json (built by append77.py from L-NEW's climbR_d4_s6, l-new 9995f5a2
+  experiments/new/box180/out/climbR_d4_s6.json, start 11011111 + a frozen top pair, stored start 1101111101): T 10, F = 2 2 2 6 6.
+  Level 3 is doubling (6 = 2·2 + 2); the level-4 pair never moves, has no upward option (top level), and F(4) = F(3) = 6. The lower
+  levels' states are identical to the base run (append77.py asserts it).
+  - Same construction on REC_d10_tower_mu30 (inst/passfreeze77_tower_d11.json): F(10) = F(9) = 1, the lower run unchanged (DATA).
+- Experiment (DATA, freeze77.py): freezing an untargeted pair (6, 7) directly above the doubling level 2 of REC_d12_mu42 / REC_d11_mu40
+  (both options to X, start option preferred, start split) does NOT preserve the run: T 48 → 2 or 6, T 44 → 4; the doubling disappears.
+  The pair's moves fed the upper levels' keys, whose moves are the lower levels' upward fuel (Ξ-values via upward options). So what
+  «decays» in L-LOWER's genomes is fuel activity, not the flip count.
+- READING (consequence for S(h)): a cap on doubling levels cannot come from flip counts alone. Keys pass through frozen pairs losslessly
+  (PASS-FREEZE); the scarce resource is Ξ-value change of the fuel (FUEL-NEED), whose movers must also obey AND-GATE (π = c at the
+  move). The quantity to bound is the number of rises of the fuel targets per unit of key activity reaching them. OPEN; no conjecture.

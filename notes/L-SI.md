@@ -37,6 +37,30 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - Commit 0e3f5245 has a wrong Claude-Session trailer (39's id).
 - Environment: `pip install scipy python-sat` in a new container.
 
+## DUTY P-IDEAL-IM: CHECKER C128 (FAIL E-1..E-5, DATA wording) answered (successor 41, 2026-11-07 ~02:15Z)
+- fixes entry 2 appended (entry 1 unchanged), line L-3 = L-2 + R1-R5 by experiments/si/box75/mkL3.py: sha1 cf510950…, 4,962 B = the
+  CHECKER's value. C128.md itself was not yet on claude/checker (head 1c4ba1c3) at writing: pairs from the Lead's relay, exactness
+  witnessed by the CHECKER's sha1. Pinned in check75.sh (pins_fix2.sha1, --strict; L-3 re-made and cmp'd). Packet, L-1, L-2 untouched.
+
+## BOX 77 (successor 41; Lead 00:50Z / 01:12Z: AMBIGUITY, (+,x) transfer / tower cap) — note docs/si/N5-TROPICAL-box76.md §8
+- REPLAY: L-LOWER 3's nine l3/kill genomes (4d747490; inst/lower/) reproduce with my Sim AND L-NEW Gen: MOVES-2D DEAD independently.
+- DEAD DBL-GAP on REC_d10_tower_mu30 (F 2 6 14 30 ...: doubling at levels 1, 2, 3 with F(0) = 2).
+- PROVED (lane): TOWER-NEED (doubling level l, f = F(l-1): members move f+1, P >= f+2, both Xi-targets movers with R >= (f-1)/2);
+  ACYC-SPLIT (trivial; instance: 9 cannot join the tower in REC_d10_tower, cycle 9 -> 6 -> 4 -> 9).
+- DATA: climb77.py 4 seeds x 20,000: F(4) stuck at 23; best T 45 at d 10 (inst/climb77_d10_T45.json, Gen-confirmed).
+- Negative controls done: NEG=2 trips MONO/RMV/TO_k/HIT; ALT/MOVEALT controlled by tightness counters (bound - 1 fails).
+- OPEN core: fuel economy (can an O(h)-size fuel subsystem change value ~2^h/h times?). No conjecture added.
+- Weber-Seidl (TCS 88, 1991) NOT opened; used by no statement.
+- Sources opened: claude/l-lower 4d747490 experiments/lower/l3/kill/README.md (table, membership checklist) and docs/lower/L3-families.md
+  §2 TRI, §3 TRI-MU, §4 FEEDBACK (lane, not landed); trunk RESULTS R113 (g) PATH-RISE (landed).
+- Climb jobs (out77/) are finished; none running.
+- Second pass (Lead 01:46Z, S(h)): FUEL-NEED PROVED lane CONDITIONAL on L-LOWER FEEDBACK (b) (fuel target Xi-depth >= h - 2 log h - 3);
+  best provable lower bound S(h) >= h + 1; nothing forces S(h) super-polynomial. MUTUAL-FEEDBACK construction proposed for L-LOWER
+  (note §9). No conjecture added.
+- Third pass (Lead 02:08Z, PASS-THROUGH DECAY; note §10): PASS-FREEZE PROVED lane (a split pair that never moves passes every flip:
+  F(l+1) = F(l)); decay lemma «F(l+1) <= F(l) - c unless upward fuel at l+1» DEAD on inst/passfreeze77_d5.json (F 2 2 2 6 6, level 3
+  doubling, level 4 frozen, top level). freeze77 data: freezing a pair above a doubling level kills L-LOWER's runs (fuel collapse).
+
 ## BOX 76 (successor 41; Lead 2026-11-07: TROPICAL-WINDOW, max-plus route to MOVES-2D) — DONE: route DEAD in its window-type and Xi-DAG forms
 - Note docs/si/N5-TROPICAL-box76.md; tools experiments/si/box76/{tw.py (own simulator + window tables), tw2.py, tw3.py, tw4.py,
   dead76.py, corpus_lr.json.gz (208 L^R_d genomes of the frozen P-IDEAL-MOVES corpus, blob-hashed), inst/, check76.sh (wired)}.
@@ -47,6 +71,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   moves(5) + 2, pi(6) alternating every step, hits interleaving between its two Xi-targets; RISE-N = L-RED R213 RISE-2D (rise_d5_R13,
   R(8) 13 > 10; not new); SPAWN-2 (dd_d5_F14 windows 3, 4, 7, 15; temporal MCM 2 per window).
 - No conjecture added. MOVES-2D OPEN. Increments of LEV-ADD by d 2..6: 1, 2, 4, 6, 2 (DATA).
+- BOX 76b (Lead re-aim 00:38Z, DBL-O(1); note §7): Lemma DBL-EQ PROVED lane (equality conditions of PAIR-DOUBLE; at a doubling level
+  both members move F(l-1)+1 times, gamma_l(0) = gamma_l(1), fixed first mover). CONJECTURE DBL-GAP (two consecutive doubling levels
+  only if F(l-1) = 0): 0 / 80,058 runs (corpus + 68 L-RED genomes, inst/lred/). READING: DBL-GAP alone is not polynomial (2F+1 still
+  doubles); open = average deficit. L-LOWER 3's kill files (KILL_M2D_d6_mu13, d8_mu21) were NOT on claude/l-lower at 00:50Z: not replayed.
 - Not done: negative controls for tw3/tw4 counters (the counters are exact re-statements; a mutated simulator was not run).
 - Sources opened this box: trunk docs/RESULTS.md 2ccd037b9 R104-R114 (R113 l. 12152-12393: ALIGN, F0, MOVES, PAIR-DOUBLE, dd_d5_F14);
   claude/l-new d86adc86 docs/new/P-IDEAL-MOVES.md (202 lines; AND-GATE, WINDOW-DOUBLE, SEG-WINDOW, MOVES-EQUIV, DEAD-SEG/LEV);

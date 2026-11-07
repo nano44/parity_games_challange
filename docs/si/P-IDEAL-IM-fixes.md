@@ -53,3 +53,27 @@ Line numbers are those of experiments/si/box75/imcheck.py.
   - the DATA scope (F-3);
   - the COMPOSE figures (F-2);
   - the source note, which now names this fixes file.
+
+## Entry 2 (CHECKER C128: FAIL E-1..E-5, DATA wording only; Lead 01:50Z). L-SI successor 41, 2026-11-07 (date -u: see the commit)
+- Source: CHECKER report docs/checker/C128.md at claude/checker 2dd44fc1, as relayed by the Lead (01:50Z). At writing (02:1xZ),
+  2dd44fc1 was not yet on the remote (claude/checker = 1c4ba1c3), so C128.md itself was not opened; the five old/new pairs are taken from
+  the Lead's relay of C128 §4, and their exactness is checked by the CHECKER's own target: L-2 with R1-R5 has sha1
+  cf510950a7feaf3e8d5f3c316acc2601e2ed17e7, 4,962 B, the value the CHECKER computed (L-3 with a trailing newline). A byte difference in
+  any pair would change this sha1.
+- The packet (cb2b0c60), entry 1 and line L-2 (4ee9fa78) are unchanged. No statement, proof or hypothesis changes. This entry carries
+  no proof.
+| item | change (line L-2 → L-3, one replacement each, old string occurs once in L-2) |
+| --- | --- |
+| E-1 (R1) | «LOCAL (IM (a)) 0 on 250,248;» → «LOCAL 0 on 250,248 (y on neither chain, unhappy or not), among them IM (a) on the 125,124 with y unhappy;» |
+| E-2 (R2) | «BIT-CHAIN (i) 0 on 66,520,» → «BIT-CHAIN (i) at the c-step image of the state 0 on 66,520 (5,670 distinct (genome, c, image) triples),» |
+| E-3 (R3) | «own c-step = the box 64 simulator 0 on 18,944;» → «own c-step = the box 64 simulator 0 on 18,944, on the 301 genomes the box 64 simulator accepts;» |
+| E-4 (R4) | «the negated schedule disagreeing 21,234 times on K's part and 54,433 times on G's;» → «the negated schedule failing 54,433 times on G's part (30,113 steps and 24,320 end-of-run checks) and 21,234 times on K's (end-of-run checks after a failure on G's part only; K's steps do not use the schedule);» |
+| E-5 (R5) | «COMPOSE-LB and the T_∞ bound: no separate DATA;» → «BIT-CHAIN (ii), COMPOSE-LB and the T_∞ bound: no separate DATA;» |
+- Wording note (no line change; the CHECKER's recommended sentence for Theorem FRAME's proof, packet l. 207): read «(Φ2) is Lemma IM
+  (a)» as «(Φ2) is R105 LOCAL (the proof of Lemma IM (a), l. 72, does not use that y is unhappy)».
+- The DATA figures of L-3 are the counts measured on the scopes named in R1-R3 (the CHECKER's measurements, C128); F-3 of entry 1
+  described the counters' code, and these replacements state the scopes those counters actually cover.
+
+## Line L-3
+- docs/si/P-IDEAL-IM-line-L3.txt = L-2 with exactly R1-R5, made by experiments/si/box75/mkL3.py (each old string asserted to occur once);
+  sha1 cf510950a7feaf3e8d5f3c316acc2601e2ed17e7, 4,962 bytes; re-made and compared by experiments/si/box75/check75.sh.
