@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 54 (Opus 5.5, D1/D18/D14) started 2026-11-07 14:13Z (date -u); handover check 4b6e594d4; GO 14:37Z; R217 OVT gadget (docs/red/R217-ovt.md).
+Successor 54 (Opus 5.5, D1/D18/D14) started 2026-11-07 14:13Z (date -u); handover check 4b6e594d4; GO 14:37Z; R217 OVT gadget (docs/red/R217-ovt.md); PARKED ~17:3xZ, see «Successor 54 PARK».
 Successor 53 (Opus 5.5, D1/D18/D20) started 2026-11-07 05:03Z (date -u); R215 (vs N5′-xi), R216 replays; PARKED ~13:5xZ, see «Successor 53 PARK».
 Successor 52 (Opus 5.5, D1/D18/D20) started 2026-11-06 18:28Z (date -u); R214 (MOVES-2D DEAD replay, T^R table d 8-14), R215 (vs N5′-xi); PARKED 2026-11-07 ~04:2xZ, see «Successor 52 PARK».
 Successor 50 (Opus 5.5, D1/D18/D20) started 2026-11-05 22:06Z (date -u); R207-R211; PARKED 2026-11-06 ~07:0xZ at ~520k, see «Successor 50 PARK».
@@ -52,6 +52,24 @@ context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older note
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
 
+## Successor 54 PARK (2026-11-07 ~17:3xZ, date -u; ~370k context)
+- RESULTS (docs/red/R217-ovt.md; experiments/red/r217/, inst/SHA1SUMS):
+  - LEAP(k) (§3): one gate flips 2k times, N 4k + 5 (k ≤ 64), R = 2k; 4-route verified. DEAD «≤ 15 flips per gate».
+  - Lemmas (lane): TOP-DEC (with the RET case split; box 192 MERGE side-line erratum), OVT-DV (flips ≤ 2·min D − 1), E-DOM-ALL-d (fact),
+    E-DOM-CHOICE (§11), Proposition LEAK-ARCH (under H1-H3).
+  - Friedmann port (§7, §10): source arXiv 0901.2731 v1, Thm 8. Compiled G_n is exact for 6 steps, then E-DOM breaks the access
+    penalty. E-DOM G_n is linear (13-19); E-DOM priority search: n 3 T 34, n 4 T 36.
+  - RSG / RS2 (§11): RESET and re-SET work under E-DOM (one increment 01 → 10 → 11). Third bit (lane re-arming) OPEN.
+- NOTHING RUNNING. Live dir /home/user/r217live (climbs finished; scripts symlinked from experiments/red/r217).
+- Next if resumed: an E-DOM counter outside H1-H2, i.e. lanes re-armed without a hub to the lowest set bit, or access edges that
+  enter open bits on an e-free route. Start from RS2 (rs2.py) and add B2.
+- Things only I know:
+  - edomclimb's q must stay lowest and odd (the compiler maps p, q to u). An import of edomclimb used to run the climb; it is split
+    now (edomprio.py).
+  - It wrote /nonexistent.json (outside the repo); the safety check blocked its removal; the user was told.
+  - xcheck.py writes _g3.pg next to its inputs: run it on scratch copies.
+  - Push takes 10-25 min (verify); never commit during it.
+
 ## Successor 54 (Opus 5.5; from 2026-11-07 14:13Z, date -u) — R217 OVT gadget (docs/red/R217-ovt.md)
 - DONE (milestone 1): LEAP(k) hand-built d 2 genome, N 4k + 5: one gate flips 2k times (k 64: 128 flips, N 261), R = 2k, C 0, L 0.
   Four routes agree (own.py independent impl; idealcyc trajectory; subrun191 labels; Γ3 + Oink + n5v / n5bxi = T + 3). Lemmas TOP-DEC
@@ -65,7 +83,7 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   (k_1 45, z_1 43 > m_0 42); p. 8 RESET text («all lower f_j nodes have an edge leading to k_i»).
 - E-DOM-ALL-d (R217 §10): every e above every β at every d (gamma3.build eb). Lead's «d ≥ 3 lifts it?» -> no.
 - edomclimb: first runs (ed3a / ed3b, T 37 / 39) INVALID (they flipped the sink q); corrected runs (q fixed): n 3 T 34 (orig and genome
-  score, saturated); n 4 genome-scored (ed4g, live) T 28 at 16:44Z.
+  score, saturated); n 4 genome-scored (ed4g) FINAL T 36 (n 3: 34; orig 70 / 150).
 - R217 §11: Lemma E-DOM-CHOICE (proved); RESET-NEXT / ACCESS-NO-PENALTY readings; RSG / RS2 = RESET and re-SET under E-DOM (4-route
   verified); Proposition LEAK-ARCH (proved under H1-H3 = [F09]'s architecture): premature access, instance FPORT_n2 t 7. A third bit
   (lane re-arming) is OPEN.

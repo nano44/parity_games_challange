@@ -242,7 +242,10 @@ Delayed RESET under E-DOM: OPEN. No lemma either way.
     (Λ = K1, odd). Found by edomdiff.py: first divergence at t 1 on lane nodes b4, b5, because Λ = q was even. Files kept as
     out/ed3*_n3_INVALID_qflip.json.
   - Relaunched 16:1xZ with q fixed lowest and odd. Two scores: Howard T on the original E-DOM game (ed3o), and Howard T on IDEAL-CYC of
-    the compiled genome (ed3g; box191 idealcyc), which is the object N5′-xi runs on via Γ3. Running.
+    the compiled genome (ed3g; box191 idealcyc), which is the object N5′-xi runs on via Γ3.
+  - FINAL (50-min slices): n 3: T 34 on both scores (ed3o 170k iterations, ed3g 6k). n 4, genome-scored (ed4g, 4k iterations): T 36.
+  - Original priorities: 70 / 150. Under E-DOM, search finds no doubling (34 → 36). Weak search; not a bound.
+  - States: out/ed3o_n3.json, ed3g_n3.json, ed4g_n4.json (order + parity per node name).
 - READING: with E-DOM, «bit i not set» has to be expressed by a missing e on a competitor, never by an odd penalty on the access
   route. A gadget that withholds an e on the competing route until bit i is set is not excluded by anything I can prove.
 
