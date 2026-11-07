@@ -989,12 +989,12 @@ fi
 # no silent exit: every failure path prints «BOX 193 ASC check: FAILED» with the exit code, the diff and the run's last lines
 r193=0; run193=$(cd box193 && bash check193.sh 2>&1) || r193=$?
 d193=$(diff <(printf '%s\n' "$run193") box193/check193.out 2>&1) || true
-if [ "$r193" -eq 0 ] && [ -z "$d193" ] && grep -q "^rd2_d9.json N 18 T 21 M 36 edomfail 0 decfail 0 tmonfail 0 ascstates 1053 maxasc 3 maxDE 18 asc 180 upfail 0 gates 448 ci 147 con 263 chi 38 gfail 0$" box193/check193.out && grep -q "^CS(M 5, A 1): max distinct hub chains 29;" box193/check193.out; then
+if [ "$r193" -eq 0 ] && [ -z "$d193" ] && grep -q "^rd2_d9.json N 18 T 21 M 36 edomfail 0 decfail 0 tmonfail 0 ascstates 1053 maxasc 3 maxDE 18 asc 180 upfail 0 gates 448 ci 147 con 263 chi 38 gfail 0 edomunits 93 decunits 2154 tmonunits 291$" box193/check193.out && grep -q "^CS(M 7, A 0): max distinct hub chains 29;" box193/check193.out && grep -q "^CS(M 5, A 1): max distinct hub chains 29;" box193/check193.out; then
   echo "BOX 193 ASC: CHAIN-DECOMP / TAIL-MON / UP-JUMP / ASC-GATE 0 failures, CS(M <= 5) exact values, ASC-EXP M <= 10, NOUP 0 ascents = frozen: PASS"
 else
   echo "BOX 193 ASC check: FAILED (check193.sh exit $r193; python $(python3 --version 2>&1))"; echo "$d193" | head -30; echo "$run193" | tail -15; exit 1
 fi
-# P-N5-ASC (L-NEW successor 61): frozen packet + cited tools / instances against box193/asc.pins (DOCS/ = docs/new/)
+# P-N5-ASC (L-NEW successor 61; fixes entry 1 + line L-1, successor 62): frozen packet, fixes, L-1, cited tools / instances against box193/asc.pins (DOCS/ = docs/new/)
 pinA=$(cd box193 && sed 's#DOCS/#../../../docs/new/#' asc.pins | sha1sum -c --quiet 2>&1) || true
 if [ -z "$pinA" ]; then
   echo "P-N5-ASC: packet and $(wc -l < box193/asc.pins) pinned files match asc.pins: PASS"

@@ -8,6 +8,8 @@ Records (counts over all (state, vertex) pairs unless said otherwise):
   ascstates (state, vertex) pairs whose seq has an ascent (consecutive a, b with rank(b) > rank(a)); maxasc = max ascents in one seq
   maxDE    max over (v, Lambda) of the number of distinct e-parts of v while Lambda(v) = that cycle node; M = number of e-vertices
   Ascent gates, for each ascent (a, b) of a mover's seq with Lambda below every e (cases of Lemma ASC-GATE, box 193 doc §4):
+  edomunits / decunits / tmonunits: the number of units checked by edomfail (vertices) / decfail ((state, vertex) pairs with a
+           nonempty e-sequence) / tmonfail ((consecutive state pair, W-target or c_W successor y with Lambda(y) fixed) pairs)
   asc      ascents examined; upfail = ascents whose segment y_a .. b has no beta whose Xi-target has level >= lev(a) (UP-JUMP)
   gates    gates on the segment where Odd takes beta; ci = Lambda(e_h) != w; con = b on e_h's play; chi = e_h's pre-merge part has
            an e more relevant than b; gfail = none of the three (would contradict ASC-GATE)
@@ -49,7 +51,8 @@ def analyse(G):
     W = {v: ev[0][1][v] for v in evs}            # e -> its only successor (W-target mover or c_W), frozen
     lev = lambda v: G["lev"][name[v][1]]          # level of a mover
     r = dict(T=len(ev) - 1, M=len(evs), edomfail=edomfail, decfail=0, tmonfail=0, ascstates=0, maxasc=0, maxDE=0,
-             asc=0, upfail=0, gates=0, ci=0, con=0, chi=0, gfail=0)
+             asc=0, upfail=0, gates=0, ci=0, con=0, chi=0, gfail=0, edomunits=0, decunits=0, tmonunits=0)
+    r["edomunits"] = sum(1 for v in range(h.n) if v not in top and name[v][0] != "e")
     prev, seen = {}, {}
     for t, (vals, nxt) in enumerate(ev):
         for v in range(h.n):
@@ -61,11 +64,11 @@ def analyse(G):
             if na: r["ascstates"] += 1
             r["maxasc"] = max(r["maxasc"], na)
             if seq:
-                y = W[seq[0]]
+                r["decunits"] += 1; y = W[seq[0]]
                 if not (vals[y][0] == lam and (vals[y][1] & ES) | (1 << E.rank[seq[0]]) == epart): r["decfail"] += 1
             seen.setdefault((v, lam), set()).add(epart)
             if v in prev and prev[v][0] == lam and v in W.values():
-                d = prev[v][1] ^ epart
+                r["tmonunits"] += 1; d = prev[v][1] ^ epart
                 if d and not (epart >> (d.bit_length() - 1)) & 1: r["tmonfail"] += 1
             prev[v] = (lam, epart)
             if name[v][0] != "x" or E.rank[lam] >= emin: continue

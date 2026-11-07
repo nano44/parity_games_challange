@@ -3,7 +3,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 
 ## Resume point (successor 62, Opus; session_01V5yGRXUUUXFeiA6NxeQ8UL; started 2026-11-07 22:09Z by date -u; GO 22:35Z)
 - Step 0: handover check 2a67e54a (VERIFY PASS; Lead score 5). Stale container (982 behind) fast-forwarded to 95dc76d7.
-- DUTY P-N5-ASC: no item routed yet (REFEREE 27, REFEREE-2 31 reviewing; L-RED 55 attacking, R220).
+- DUTY P-N5-ASC: fixes entry 1 + line L-1 (docs/new/P-N5-ASC-fixes.md, P-N5-ASC-line-L1.txt) for REFEREE 27 (26b2b516), REFEREE-2 31
+  (533744a5, Add. 1 c4166c8b), L-RED R220 (68a1f609): W-1/AS-2/AS-3, W-2/AS-D2, D-1/AS-D1, D-2, D-3, AS-1, AS-4. asc.pins 34 rows.
+- Box 194 pushed e9993378 (VERIFY PASS).
 - M = 8, A = 1: dp193b rerun from scratch, scratchpad m8/ (run.sh = one <= 6900 s slice; backs up ck8 to ck8.prev first; rerun to resume;
   log m8/m8.log). dp193b.c sha1 f7ce8465. Checkpoint is outside the repo but inside the container: a container reclaim loses it.
 - BOX 194 (docs/new/N5-LOC-box194.md; experiments/new/box194/, check194.sh/out; check.sh block «BOX 194 LOC»):
