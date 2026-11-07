@@ -35,3 +35,6 @@ it 6340 N 14 R 14 T 20 C 7
 it 7903 N 14 R 15 T 19 C 7
 it 11713 N 14 R 15 T 20 C 8
 it 11723 N 14 R 15 T 21 C 8
+== 09:28Z d 7 slice 0
+start N 14 R 15 T 21 C 8
+SLICE end it 14373 best R 15 T 11

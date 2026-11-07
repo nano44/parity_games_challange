@@ -1,0 +1,11 @@
+seed_cR_d2_w8.json sha1 0952ef28 d 2 w 8 N 16 T 23 C 2 R 19 R_mov 19 R_X 0 p 2 L 0 maxflip/gate 8
+rd3_d9.json sha1 2d0d473f d 9 w 2 N 18 T 34 C 5 R 27 R_mov 27 R_X 0 p 2 L 0 maxflip/gate 13
+rf_d7.json sha1 66cc4791 d 7 w 2 N 14 T 21 C 8 R 11 R_mov 11 R_X 0 p 2 L 0 maxflip/gate 15
+rd2_d10.json sha1 de76b172 d 10 w 2 N 20 T 29 C 6 R 16 R_mov 16 R_X 0 p 7 L 0 maxflip/gate 8
+rd2_d3.json sha1 1605f24b d 3 w 2 N 6 T 9 C 3 R 5 R_mov 5 R_X 0 p 1 L 0 maxflip/gate 3
+rd2_d4.json sha1 51ebb242 d 4 w 2 N 8 T 11 C 3 R 8 R_mov 8 R_X 0 p 0 L 0 maxflip/gate 6
+rd2_d5.json sha1 a60f363e d 5 w 2 N 10 T 16 C 6 R 9 R_mov 9 R_X 0 p 1 L 0 maxflip/gate 6
+rd2_d6.json sha1 9b786630 d 6 w 2 N 12 T 16 C 1 R 14 R_mov 14 R_X 0 p 1 L 0 maxflip/gate 5
+rd2_d7.json sha1 c5eab34b d 7 w 2 N 14 T 23 C 4 R 13 R_mov 13 R_X 0 p 6 L 0 maxflip/gate 6
+rd2_d8.json sha1 27f0d0ff d 8 w 2 N 16 T 16 C 1 R 14 R_mov 14 R_X 0 p 1 L 0 maxflip/gate 6
+rd2_d9.json sha1 3ef8f80b d 9 w 2 N 18 T 21 C 3 R 18 R_mov 18 R_X 0 p 0 L 0 maxflip/gate 10

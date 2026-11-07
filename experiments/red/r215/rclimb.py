@@ -3,7 +3,7 @@
 allowed; claude/l-new f09f67ec, env WT3) scoring R = number of steps labelled R by box191 subrun191.labels (no VJ cycle node changes,
 Odd's optimal counterstrategy changes), ties by T. Mutation = box191 climb191.mut (imported unmodified). Time-bounded (SECS, default
 1200) and resumable: restarts from OUT.json if present. Every new best is printed with T, R, C, p and the label string length.
-SCORE=F scores the max number of face flips at one gate instead (ties by R, then T; the printed «R» column is then F).
+SCORE=M scores R_mov (Lead 10:05Z, box 192 R-SPLIT; own labeller rmov.py; the «C» column then prints L = face ties). SCORE=F scores the max number of face flips at one gate instead (ties by R, then T; the printed «R» column is then F).
 Usage: rclimb.py d w D seed OUT [seedjson]"""
 import sys, os, json, random, time
 WT3 = os.environ["WT3"]; B = os.path.join(WT3, "experiments/new/box191"); sys.path[:0] = [B]
@@ -27,7 +27,10 @@ def maxflip(G):   # max number of gate-face changes of Odd's optimal counterstra
             for q in Q: fl[q] += face[q] != prev[q]
         prev = face
     return max(fl.values())
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import rmov
 def score(G):
+    if SCORE == "M":   # R_mov by L-RED's own labeller (rmov.py), ties by R, then T; printed «R» column = R_mov; L printed in «C» slot
+        r = rmov.label(G); return (r["R_mov"], r["R"], r["T"]), r["R_mov"], r["T"], r["L"]
     lab = subrun191.labels(G); R, C = lab.count("R"), lab.count("C")
     if SCORE == "F": F = maxflip(G); return (F, R, len(lab)), F, len(lab), C
     return (R, len(lab)), R, len(lab), C
