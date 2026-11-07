@@ -36,3 +36,13 @@ ASC-EXP M 8 OK 256 256
 ASC-EXP M 9 OK 512 512
 ASC-EXP M 10 OK 1024 1024
 NOUP genomes 300 seed 1: Xi-cyclic 179; max ascents 0; decfail 0; tmonfail 0; max D_E per Lambda 3; min slack to 1+M(M+1)/2 3
+PTR-MON-HI M 3: pointer changes with unchanged high part 31, decreasing 4
+  witness: x 3; chains before {1: [1], 2: [2], 3: [3, 2]}; after {1: [1, 2], 2: [2], 3: [3, 1, 2]}
+FIXTOP M 5 A 1: max distinct hub chains with hub top fixed at T: T1 1 T2 2 T3 4 T4 8 T5 16
+RECUR CS(M 4, A 0): level keys 120; max distinct hub chains inside one level 1
+RECUR CS(M 4, A 1): level keys 308; max distinct hub chains inside one level 7
+RECUR CS(M 5, A 1): level keys 2612; max distinct hub chains inside one level 11
+RECUR CS(M 4, A 2): level keys 308; max distinct hub chains inside one level 8
+RECUR CS(M 5, A 2): level keys 2612; max distinct hub chains inside one level 16
+SKELETON CS(M 4, A 99): forests 125, violations 0
+SKELETON CS(M 5, A 99): forests 1296, violations 0

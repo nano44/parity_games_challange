@@ -15,6 +15,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   - CONJECTURE ASC-POLY(A). Open: prove A = 1 cubic; game-side charge of ASC-GATE case (i).
 - Tools: asc193.py (asc / gates / CHAIN-DECOMP / TAIL-MON / E-DOM), chain193.py (+ --emit), dp193.c (gcc -O2), ascexp193.py,
   noup193.py; inst/ = 8 L-RED R217 instances (claude/l-red 476710810; sha1 = L-RED's SHA1SUMS).
+- Milestone 2 (Addendum 1): DEAD routes PTR-MON-HI (witness CS(3,1): 3->2 to 3->1->2) and FIXTOP-QUAD (CS(5,1) top-fixed 1,2,4,8,16);
+  Lemma SKELETON PROVED (levels = constant tail tops; <= M(M+1)+1 levels; skeleton fixed, each nonempty segment costs an ascent);
+  CONJECTURE RECUR(A): inside a level max = f_(A-1)(M-1) (exact equality A 1 M 3-6, A 2 M 3-6) => f_A(M) <= (M^2+M+1)^(A+1)
+  (implication PROVED); LOCK-(i) corollary (reading-level). M = 8 A = 1 running: dp193b.c (OpenMP, resumable; rerun
+  «dp193b 8 1 <ckpt>» to resume; scratch ck8 + m8.log; ~50 min on 4 cores).
 - Things only I know: the relocation test needs experiments/si, experiments/harness and box189-193 copied (ModuleNotFoundError si
   otherwise; that is an incomplete copy, not an absolute path). dp193 M = 7 A = 1 takes 70 s, A = 2 about 5 min; M = 8 about 3 h.
 

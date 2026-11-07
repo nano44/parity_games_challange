@@ -225,3 +225,67 @@ DATA (asc193.py; unit as named; scope IDEAL-CYC; set: the 13 check193.sh instanc
    change while the cycle node of every declined escape stays fixed.
 3. For L-RED (via the Lead): a design needs an H1-type hub (many ascents per play) with lanes re-armed without access edges. The
    abstract runs (M ≤ 7) need chains with ≥ (M − 2)/2 ascents for all 2^M sets.
+
+## Addendum 1 (milestone 2; Lead 20:01Z: M = 8, ASC-POLY(1), case-(i) charge, DEAD «pointer monotone»)
+### A1.1 Two DEAD proof routes for ASC-POLY(1) (abstract witnesses; tool dead193.py, in check193.sh)
+- **DEAD PTR-MON-HI** («if the part of tail(x) above x is unchanged, next(x) does not move down»: the two-level version of
+  DESC-POLY's charging).
+  - Witness, CS(3, 1), one valid step: chains before 1: [1], 2: [2], 3: [3, 2]; after 1: [1, 2], 2: [2], 3: [3, 1, 2].
+  - tail(3) rises lex from {2} to {1, 2}, its top stays 2, and next(3) drops from 2 to 1. The ascent 1 → 2 lies below x.
+  - Counts. Unit: pointer changes with unchanged high part, over all dominance pairs of forests. Set: CS(M, 1). Scope: abstract.
+    M 3: 31 changes, 4 decreasing. M 4: 1,200 / 191. M 5: 62,916 / 10,282.
+- **DEAD FIXTOP-QUAD** («with the hub's top fixed, at most quadratically many hub chains»).
+  - CS(5, 1), exact, per fixed top T = 1-5: 1, 2, 4, 8, 16 = 2^(T−1).
+  - Fixing the hub's top alone does not reduce the problem.
+
+### A1.2 Lemma SKELETON (PROVED, abstract; transfers to IDEAL-CYC through CHAIN-DECOMP)
+Definitions.
+- In CS(M, A) (or IDEAL-CYC with Λ fixed), let τ(x) := top(tail(x)), the most relevant element of chain(x) ∖ {x} (0 if empty).
+- By E-MON / lex-monotone tails, τ(x) is non-decreasing in rank for every x. The hub's top is non-decreasing too.
+- A LEVEL is a stretch of a run on which τ(x) is constant for every x and the hub's top is constant.
+- A run has at most M(M + 1) + 1 levels: each τ(x) changes at most M times, the hub's top at most M times.
+
+Statement. Inside a level, for every item x:
+- (a) the τ-path x, τ(x), τ²(x), … (fixed in the level) lies on chain(x), in this order;
+- (b) every element z strictly between τ^i(x) and τ^(i+1)(x) on chain(x) has z < τ^(i+1)(x) and τ(z) = τ^(i+1)(x);
+- (c) chain(x) has at least as many ascents as it has nonempty segments (b).
+So inside a level a chain with at most A ascents is its fixed skeleton plus at most A nonempty segments.
+
+Proof.
+- (a): τ(x) ∈ tail(x), so τ(x) lies on chain(x), and chain(τ(x)) is the suffix of chain(x) from τ(x). Induct along the path.
+- (b): every element of tail(τ^i(x)) is ≤ its top τ^(i+1)(x). So an element z before τ^(i+1)(x) is below it. And tail(z) ⊆ tail(τ^i(x))
+  contains τ^(i+1)(x), so τ(z) = τ^(i+1)(x).
+- (c): if the segment is nonempty, the step from its last element (below τ^(i+1)(x)) into τ^(i+1)(x) is an ascent. Distinct segments
+  give distinct steps. ∎
+- DATA (skel193.py; unit: forests; set: all forests of CS(4, ∞), CS(5, ∞), CS(6, 1), CS(6, 2); scope: abstract): violations 0.
+
+### A1.3 CONJECTURE RECUR (exact data) and what it would give (the implication is PROVED)
+- **CONJECTURE RECUR(A):** inside one level, the hub takes at most f_(A−1)(M − 1) distinct chains. Here f_A(M) := the maximum of
+  CS(M, A) and f_(−1) := 1.
+- DATA (taulin193.py; unit: distinct hub chains inside one level, maximised over level keys; set: all runs; scope: abstract):
+
+| A | M 3 | M 4 | M 5 | M 6 | predicted f_(A−1)(M − 1) |
+| --- | --- | --- | --- | --- | --- |
+| 0 | - | 1 | 1 | - | 1 |
+| 1 | 4 | 7 | 11 | 16 | f_0 = 4, 7, 11, 16 |
+| 2 | 4 | 8 | 16 | 29 | f_1 = 4, 8, 16, 29 |
+
+  Equality in every case computed.
+- Implication (PROVED): there are at most M(M + 1) + 1 levels (A1.2), and lex-monotone values never repeat across levels. So RECUR(A)
+  gives f_A(M) ≤ (M² + M + 1)·f_(A−1)(M − 1), hence f_A(M) ≤ (M² + M + 1)^(A+1). That is ASC-POLY(A) for each fixed A, with
+  degree ≤ 2A + 2.
+  - The data's degrees are 2 (A = 0) and 3 (A = 1): the bound is loose but polynomial.
+- Why RECUR is plausible (READING, from SKELETON): inside a level the skeletons are fixed. Each nonempty segment spends one ascent, and
+  its elements z all have τ(z) = the next skeleton node, so a segment is a chain of the sub-forest {z : τ(z) = y} ending at y. A proof
+  must show that such a segment walk behaves like CS(M − 1, A − 1).
+  - Not done. The difficulty: chain(z) also contains tail(y), which varies inside the level and interleaves in rank with the segment.
+
+### A1.4 ASC-GATE case (i): what it gives (READING plus a corollary)
+- Corollary LOCK-(i) (PROVED-CONDITIONAL on [LOC]): if at state t gate h has Λ_t(e_h) ≠ Λ_t(β_h) =: w and σ̄_t(h) = β, then
+  σ̄_s(h) = β at every later s with Λ_s(β_h) = w.
+  - Proof: F1 at e_h gives reward(Λ_s(e_h)) ≥ reward(Λ_t(e_h)) > reward(w) (F2). So Ω_s(β_h) ◁ Ω_s(e_h), and [LOC] applies. ∎
+  - This is EQ-FLIP plus monotone rewards (the X-GATE argument), not a new bound.
+- So in L-RED's designs (only case (i) at ascent gates, §4 DATA), every ascent segment runs through gates that are frozen to β for the
+  rest of w's interval. The ascent structure there changes only through MOVER switches on the segment, never through Odd.
+- A charge of ascents to cycle-node changes would need a bound on mover switches along frozen-gate segments. That is the original problem
+  in another form (lanes). Not done. No claim.
