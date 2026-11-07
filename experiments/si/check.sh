@@ -1246,3 +1246,6 @@ echo "si (box 78): PASS"
 # box 79 (packet P-IDEAL-DBL, draft: WINDOW-ONCE, DBL-EQ, PASS-FREEZE, HIT, FUEL-EXACT, ALT-MIN, TOWER-NEED; DEAD x4)
 bash box79/check79.sh
 echo "si (box 79: P-IDEAL-DBL draft): PASS"
+# box 80 (TOWER proof side: PULSE-NEST, ZONE, INSERT-PASS, STRETCH-NEED; docs/si/N5-TOWER-box80.md)
+bash box80/check80.sh
+echo "si (box 80: TOWER stretch): PASS"

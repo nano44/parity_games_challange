@@ -22,6 +22,17 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 5. Trap: detached HEAD + stale/shallow clone (push.sh fails after VERIFY PASS with «invalid refspec»). Check: ls-remote vs HEAD vs
    origin ref, and `git branch --show-current` = claude/l-si before every push.sh (done above).
 
+## BOX 80 (successor 42; Lead brief ~07:05Z: proof side of the tower question) — IN FLIGHT
+- Note docs/si/N5-TOWER-box80.md; tools + check experiments/si/box80/ (check80.sh wired in experiments/si/check.sh).
+- PROVED (lane): PULSE-NEST (levels j..j+k doubling => every j-window pulse >= k+1; capped h => P_j >= h - j); ZONE (W+Xi-closed
+  set runs autonomously); INSERT-PASS (never-moving split pair inserted at level L preserves the run, passes b_(L-1)); corollary
+  STRETCH-NEED / DEAD-RIGID (H6 zero slack at j = 4, 5; H5 at j = 4; every closure in H5/H6 = whole genome).
+- DATA: delay lines (H5 9<-6 pulse 1; H6 9<-12<-7 pulse 2, 9<-14<-13<-6 pulse 3).
+- Climbs (scratch /tmp/claude-0/sp, die with the container): pclimb (C, pulse-aware score, H=7) seeds 1-3 from H6 + 4 frozen levels
+  (h6p4.txt), and h7A = H6 with an inserted pair at level 6 (insert80.py), MUT=8..13 only. Rebuild: gcc -O2 -o pclimb pclimb.c -lm;
+  python3 j2t.py H6.json 4 > h6p4.txt; H=7 ANNEAL=0.02 OUT=o.txt ./pclimb h6p4.txt SEED 300000000.
+- (b): nothing beyond Xi-depth >= h proved; READING: poly(h) levels per capped level already gives super-polynomial T^R.
+
 ## BOX 79 (Lead 03:58Z): packet P-IDEAL-DBL — DRAFT (freeze after R116 lands)
 - docs/si/P-IDEAL-DBL.md (+ line docs/si/P-IDEAL-DBL-line-L1.txt, 69/69 parens, 3,425 B); tools experiments/si/box79/{dblcheck.py,
   dead79.py, check79.sh (wired)}; frozen outputs dblcheck.out, dblcheck_neg2.out, dead79.out.
