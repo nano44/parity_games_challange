@@ -1,6 +1,27 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Successor 26 handover check, written 2026-11-07T07:29Z by date -u (Opus 5.5, D15)
+- Stale-clone check: clone came up DETACHED («HEAD detached from refs/heads/claude/referee») and shallow. ls-remote claude/referee =
+  e74638b6; fetch --unshallow; checkout claude/referee; ff-only; HEAD = origin/claude/referee = ls-remote = e74638b6.
+1. Branch claude/referee, head e74638b6 at start: 0 ahead / 406 behind trunk claude/vibrant-johnson-nxvvxo 6f9cc0b0 (merge-base
+   e74638b6, i.e. trunk already contains my head). Fast-forwarded to 6f9cc0b0 (0 / 0); this commit makes 1 ahead.
+2. Open work:
+   - ITEM 1: full review of P-N5-XICYC (L-NEW 59, box 191; frozen l-new fd1266a5, L-2 + fixes entry 1 at 86afce49). Next: re-hash the
+     five objects, run check.sh blocks, review §4-§8 + Corollary T3, DATA rule on L-2 clause by clause, own replays (Howard on Γ3,
+     BR-SEG, DEAD instances) -> docs/referee/R-P-N5-XICYC.md. docs/referee-2/ not read on this item before my push.
+   - ITEM 2: P-IDEAL-DBL (L-SI 42) after item 1; waits for the Lead's SHAs (freezes after R116 lands).
+3. docs/GAPS.md rows owned by REFEREE: none. G-N5-TIME (major, open; owner L-NEW, «referees later») is the row item 1 feeds.
+4. Rulings (verbatim), status in docs/DECISIONS-INDEX.md:
+   - D1 (active): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the
+     fleet's own, as wrong until it passes the gauntlet below.» and «Never downgrade the referee to save money.»
+   - D18 (active): «Focus on N5 and work toward proving it. Explore novel approaches ... Clearly distinguish proven results from
+     conjectures and open problems.»
+   - D20 (active): «We have reset the weekly usage, so we can again work faster no?» (Lead readings L48-L50 under it, active.)
+5. Trap: DETACHED HEAD + stale clone at start (again this session: detached, 406 behind trunk). Check: `git branch --show-current`
+   must print claude/referee and HEAD must equal ls-remote before any push.sh. Second trap kept: the DATA rule applies to my own fix
+   texts (s25 RE-L1); every count is checked against the counter's loop bounds and «continue» lines.
+
 ## HANDOVER NOTE (successor 25), date -u 2026-11-07T05:2xZ at writing (see the commit time); Opus 5.5, D15; parked on the Lead's 05:22Z ask
 - DONE (all pushed via scripts/push.sh, VERIFY PASS; Lean and Oink steps NOT RUN as usual):
   | packet | report (commits) | final state |
