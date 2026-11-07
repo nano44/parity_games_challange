@@ -1,0 +1,16 @@
+rd2_d10.json d 10 N 20 T 26 R 15 C 5 flips 102 maxflip/gate 9 maxmoves/mover 8
+rd2_d3.json d 3 N 6 T 9 R 5 C 3 flips 11 maxflip/gate 3 maxmoves/mover 5
+rd2_d4.json d 4 N 8 T 11 R 8 C 3 flips 23 maxflip/gate 6 maxmoves/mover 5
+rd2_d5.json d 5 N 10 T 16 R 9 C 6 flips 37 maxflip/gate 6 maxmoves/mover 8
+rd2_d6.json d 6 N 12 T 16 R 14 C 1 flips 32 maxflip/gate 5 maxmoves/mover 6
+rd2_d7.json d 7 N 14 T 23 R 13 C 4 flips 47 maxflip/gate 6 maxmoves/mover 7
+rd2_d8.json d 8 N 16 T 16 R 14 C 1 flips 30 maxflip/gate 6 maxmoves/mover 6
+rd2_d9.json d 9 N 18 T 21 R 18 C 3 flips 93 maxflip/gate 10 maxmoves/mover 12
+rd3_d3.json d 3 N 6 T 12 R 4 C 3 flips 15 maxflip/gate 4 maxmoves/mover 5
+rd3_d4.json d 4 N 8 T 18 R 10 C 5 flips 34 maxflip/gate 6 maxmoves/mover 8
+rd3_d5.json d 5 N 10 T 18 R 16 C 1 flips 30 maxflip/gate 7 maxmoves/mover 12
+rd3_d6.json d 6 N 12 T 22 R 11 C 6 flips 61 maxflip/gate 6 maxmoves/mover 7
+rd3_d7.json d 7 N 14 T 25 R 15 C 1 flips 35 maxflip/gate 4 maxmoves/mover 9
+rf_d3.json d 3 N 6 T 9 R 4 C 4 flips 23 maxflip/gate 6 maxmoves/mover 6
+rf_d4.json d 4 N 8 T 12 R 4 C 6 flips 31 maxflip/gate 7 maxmoves/mover 7
+rf_d5.json d 5 N 10 T 11 R 9 C 2 flips 28 maxflip/gate 10 maxmoves/mover 6

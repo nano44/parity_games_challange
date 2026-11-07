@@ -1,0 +1,31 @@
+== 08:31Z d 5 slice 0
+start N 10 R 0 T 3 C 0
+it 12 N 10 R 2 T 3 C 1
+it 29 N 10 R 2 T 4 C 1
+it 32 N 10 R 2 T 4 C 1
+it 44 N 10 R 2 T 5 C 2
+it 102 N 10 R 2 T 6 C 0
+it 147 N 10 R 2 T 7 C 1
+it 152 N 10 R 2 T 8 C 1
+it 208 N 10 R 3 T 7 C 1
+it 229 N 10 R 4 T 8 C 1
+it 275 N 10 R 4 T 9 C 0
+it 307 N 10 R 6 T 8 C 2
+it 326 N 10 R 6 T 8 C 2
+it 348 N 10 R 7 T 9 C 2
+it 382 N 10 R 7 T 10 C 2
+it 610 N 10 R 7 T 11 C 2
+it 648 N 10 R 7 T 12 C 2
+it 1821 N 10 R 7 T 13 C 2
+it 2497 N 10 R 7 T 13 C 2
+it 3896 N 10 R 7 T 14 C 3
+it 3994 N 10 R 7 T 12 C 3
+it 4524 N 10 R 7 T 13 C 3
+it 4859 N 10 R 8 T 10 C 4
+it 5013 N 10 R 8 T 11 C 3
+it 5371 N 10 R 8 T 12 C 3
+it 5464 N 10 R 8 T 10 C 3
+it 5500 N 10 R 8 T 11 C 3
+it 5686 N 10 R 8 T 11 C 2
+it 5720 N 10 R 8 T 12 C 2
+it 6096 N 10 R 10 T 11 C 2
