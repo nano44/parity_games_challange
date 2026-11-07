@@ -1,0 +1,21 @@
+MOD (((1, 0), 0),) R 0 T 3 C 1 maxasc 0 U 2 F_H [2, 1, 0] specT3 2 specIters 5
+MOD (((1, 0), 2),) R 0 T 2 C 2 maxasc 0 U 3 F_H [2, 1, 0] specT3 2 specIters 5
+MOD (((1, 0), 3),) R 1 T 4 C 1 maxasc 1 U 3 F_H [2, 3, 0] specT3 3 specIters 6
+MOD (((1, 1), 0),) R 0 T 4 C 0 maxasc 0 U 3 F_H [2, 2, 0] specT3 6 specIters 9
+MOD (((1, 1), 2),) R 0 T 3 C 1 maxasc 0 U 4 F_H [2, 2, 0] specT3 4 specIters 7
+MOD (((1, 1), 3),) R 0 T 3 C 0 maxasc 0 U 4 F_H [2, 2, 0] specT3 3 specIters 6
+MOD (((2, 0), 0),) R 0 T 4 C 0 maxasc 0 U 3 F_H [2, 3, 0] specT3 4 specIters 7
+MOD (((2, 1), 0),) R 0 T 4 C 0 maxasc 0 U 3 F_H [2, 2, 0] specT3 1 specIters 4
+MOD (((3, 0), 0),) R 0 T 4 C 0 maxasc 0 U 3 F_H [2, 3, 0] specT3 5 specIters 8
+MOD (((3, 0), 2),) R 0 T 4 C 1 maxasc 0 U 3 F_H [2, 2, 0] specT3 3 specIters 6
+MOD (((3, 1), 0),) R 0 T 4 C 0 maxasc 0 U 2 F_H [2, 2, 0] specT3 5 specIters 8
+MOD (((3, 1), 2),) R 2 T 2 C 0 maxasc 1 U 2 F_H [0, 0, 0] specT3 2 specIters 5
+MOD (((5, 0), 0),) R 0 T 5 C 1 maxasc 0 U 3 F_H [2, 3, 0] specT3 5 specIters 8
+MOD (((5, 0), 1),) R 1 T 4 C 1 maxasc 1 U 3 F_H [2, 3, 0] specT3 4 specIters 7
+MOD (((5, 0), 2),) R 1 T 3 C 1 maxasc 0 U 3 F_H [2, 1, 0] specT3 4 specIters 7
+MOD (((5, 0), 3),) R 1 T 4 C 2 maxasc 1 U 3 F_H [2, 3, 0] specT3 5 specIters 8
+MOD (((5, 1), 0),) R 0 T 4 C 0 maxasc 0 U 3 F_H [2, 2, 0] specT3 6 specIters 9
+MOD (((5, 1), 1),) R 0 T 4 C 0 maxasc 0 U 3 F_H [2, 2, 0] specT3 6 specIters 9
+MOD (((5, 1), 2),) R 0 T 4 C 0 maxasc 0 U 3 F_H [2, 2, 0] specT3 6 specIters 9
+MOD (((5, 1), 3),) R 0 T 4 C 1 maxasc 0 U 3 F_H [2, 2, 0] specT3 6 specIters 9
+variants 60 cyclic 20
