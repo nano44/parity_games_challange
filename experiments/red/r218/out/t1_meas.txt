@@ -1,0 +1,48 @@
+t1_n2_M0_s.json N 19 T 7 words 3: 00 01 11
+  re-arms (switches into X) total 4 max/mover 1; D {'H': 3}
+t1_n2_M2_s.json N 23 T 9 words 5: 00 01 11 10 11
+  re-arms (switches into X) total 6 max/mover 1; D {'H': 3}
+t1_n2_M0_H.json N 19 T 7 words 3: 00 01 11
+  re-arms (switches into X) total 0 max/mover 0; D {'H': 3}
+t1_n2_M2_H.json N 23 T 7 words 3: 00 01 11
+  re-arms (switches into X) total 0 max/mover 0; D {'H': 3}
+t1_n3_M0_s.json N 28 T 8 words 5: 000 001 011 110 111
+  re-arms (switches into X) total 5 max/mover 1; D {'H': 4}
+t1_n3_M2_s.json N 34 T 12 words 8: 000 001 011 110 100 111 110 111
+  re-arms (switches into X) total 9 max/mover 1; D {'H': 4}
+t1_n3_M0_H.json N 28 T 9 words 5: 000 001 011 010 111
+  re-arms (switches into X) total 0 max/mover 0; D {'H': 4}
+t1_n3_M2_H.json N 34 T 9 words 5: 000 001 011 010 111
+  re-arms (switches into X) total 0 max/mover 0; D {'H': 4}
+t1_n4_M0_s.json N 38 T 12 words 8: 0000 0001 0011 1010 1111 1100 1110 1111
+  re-arms (switches into X) total 5 max/mover 1; D {'H': 4}
+t1_n4_M2_s.json N 46 T 14 words 9: 0000 0001 0011 1010 1000 1111 1100 1110 1111
+  re-arms (switches into X) total 11 max/mover 1; D {'H': 4}
+t1_n4_M0_H.json N 38 T 12 words 8: 0000 0001 0011 0010 0111 0100 1110 1111
+  re-arms (switches into X) total 0 max/mover 0; D {'H': 5}
+t1_n4_M2_H.json N 46 T 12 words 8: 0000 0001 0011 0010 0111 0100 1110 1111
+  re-arms (switches into X) total 0 max/mover 0; D {'H': 5}
+t1_n5_M0_s.json N 49 T 14 words 9: 00000 00001 00011 10010 11011 11000 11100 11110 11111
+  re-arms (switches into X) total 5 max/mover 1; D {'H': 4}
+t1_n5_M2_s.json N 59 T 16 words 10: 00000 00001 00011 10010 10000 11111 11000 11100 11110 11111
+  re-arms (switches into X) total 13 max/mover 1; D {'H': 4}
+t1_n5_M0_H.json N 49 T 16 words 11: 00000 00001 00011 00010 00111 00100 01110 01000 11100 11110 11111
+  re-arms (switches into X) total 0 max/mover 0; D {'H': 6}
+t1_n5_M2_H.json N 59 T 16 words 11: 00000 00001 00011 00010 00111 00100 01110 01000 11100 11110 11111
+  re-arms (switches into X) total 0 max/mover 0; D {'H': 6}
+t1_n6_M0_s.json N 61 T 16 words 10: 000000 000001 000011 100010 110011 110000 111000 111100 111110 111111
+  re-arms (switches into X) total 5 max/mover 1; D {'H': 4}
+t1_n6_M2_s.json N 73 T 18 words 11: 000000 000001 000011 100010 100000 111111 110000 111000 111100 111110 111111
+  re-arms (switches into X) total 15 max/mover 1; D {'H': 4}
+t1_n6_M0_H.json N 61 T 20 words 14: 000000 000001 000011 000010 000111 000100 001110 001000 011100 010000 111000 111100 111110 111111
+  re-arms (switches into X) total 0 max/mover 0; D {'H': 7}
+t1_n6_M2_H.json N 73 T 20 words 14: 000000 000001 000011 000010 000111 000100 001110 001000 011100 010000 111000 111100 111110 111111
+  re-arms (switches into X) total 0 max/mover 0; D {'H': 7}
+t1_n8_M0_s.json N 88 T 20 words 12: 00000000 00000001 00000011 10000010 11000011 11000000 11100000 11110000 11111000 11111100 11111110 11111111
+  re-arms (switches into X) total 5 max/mover 1; D {'H': 4}
+t1_n8_M2_s.json N 104 T 22 words 13: 00000000 00000001 00000011 10000010 10000000 11111111 11000000 11100000 11110000 11111000 11111100 11111110 11111111
+  re-arms (switches into X) total 19 max/mover 1; D {'H': 4}
+t1_n8_M0_H.json N 88 T 28 words 20: 00000000 00000001 00000011 00000010 00000111 00000100 00001110 00001000 00011100 00010000 00111000 00100000 01110000 01000000 11100000 11110000 11111000 11111100 11111110 11111111
+  re-arms (switches into X) total 0 max/mover 0; D {'H': 9}
+t1_n8_M2_H.json N 104 T 28 words 20: 00000000 00000001 00000011 00000010 00000111 00000100 00001110 00001000 00011100 00010000 00111000 00100000 01110000 01000000 11100000 11110000 11111000 11111100 11111110 11111111
+  re-arms (switches into X) total 0 max/mover 0; D {'H': 9}

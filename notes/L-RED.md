@@ -1,4 +1,5 @@
 # L-RED notebook (independent adversary lane)
+Successor 55 (Opus 5.5, D1/D18/D14) started 2026-11-07 18:20Z (date -u); handover check 476710810; GO 18:42Z; R218 hubs (docs/red/R218-hubs.md).
 Successor 54 (Opus 5.5, D1/D18/D14) started 2026-11-07 14:13Z (date -u); handover check 4b6e594d4; GO 14:37Z; R217 OVT gadget (docs/red/R217-ovt.md); PARKED ~17:3xZ, see «Successor 54 PARK».
 Successor 53 (Opus 5.5, D1/D18/D20) started 2026-11-07 05:03Z (date -u); R215 (vs N5′-xi), R216 replays; PARKED ~13:5xZ, see «Successor 53 PARK».
 Successor 52 (Opus 5.5, D1/D18/D20) started 2026-11-06 18:28Z (date -u); R214 (MOVES-2D DEAD replay, T^R table d 8-14), R215 (vs N5′-xi); PARKED 2026-11-07 ~04:2xZ, see «Successor 52 PARK».
@@ -51,6 +52,16 @@ Successor 15 PARKED ~09:40Z 2026-10-25 after box 38; RESUME POINT for successor 
 context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older notebook: `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
+
+## Successor 55 (Opus 5.5; from 2026-11-07 18:20Z, date -u) — R218 hubs (docs/red/R218-hubs.md)
+- DONE (milestone 1, ~19:1xZ): test (1) T1 (hub = highest set bit, probe gates): DEAD, re-arms ≤ 1 per lane node, D(H) ≤ n + 1, T linear
+  (n 2-8). Test (2) v1 T2 (per-bit lanes, prefix mirror hubs P^k over lower bits): no leak, D(P) 2n + 1, still ≤ 1 re-arm, unary fill:
+  DEAD. Both 4-route verified (out/t1_xcheck.txt, out/t2_xcheck.txt). Lemmas: SWITCH-IN-DV (+ REARM-DV, REARM-PAIR), MIRROR-NOLEAK,
+  SET-ROUTE-WINS. Open crux sharpened: a hub PAIR overtaking at every bit-0 event (R218 §4).
+- Setup (new container): scripts/setup_oink.sh done; worktrees in the scratchpad: wt191 f09f67ec, wt192 a2db977d, wt190 acdbd28b,
+  wt190b 066cd543. experiments/red/r218/env.sh needs R218_S=<scratchpad>. own.py runs alone (no worktrees).
+- Things only I know: meas.py reads <G>.labels.json (option labels: SET / X / c ...); a «re-arm» = switch INTO an X-labelled option.
+  xcheck.py writes _g3.pg next to its input: I run it on copies in $R218_S/x.
 
 ## Successor 54 PARK (2026-11-07 ~17:3xZ, date -u; ~370k context)
 - RESULTS (docs/red/R217-ovt.md; experiments/red/r217/, inst/SHA1SUMS):

@@ -1,0 +1,7 @@
+t1_n3_M2_s.json N 34 traj own==idealcyc True (T 12) | subrun191 C 0 R 7 p 5 | Gamma3 n 513: n5v xi 15 (fb 1) spec 3 n5bxi 15 (fb 1) | regions=Oink True verify 0/0
+t1_n4_M0_H.json N 38 traj own==idealcyc True (T 12) | subrun191 C 0 R 8 p 4 | Gamma3 n 622: n5v xi 15 (fb 1) spec 3 n5bxi 15 (fb 1) | regions=Oink True verify 0/0
+t1_n4_M2_s.json N 46 traj own==idealcyc True (T 14) | subrun191 C 0 R 9 p 5 | Gamma3 n 742: n5v xi 17 (fb 1) spec 3 n5bxi 17 (fb 1) | regions=Oink True verify 0/0
+t1_n5_M2_H.json N 59 traj own==idealcyc True (T 16) | subrun191 C 0 R 12 p 4 | Gamma3 n 1007: n5v xi 19 (fb 1) spec 3 n5bxi 19 (fb 1) | regions=Oink True verify 0/0
+t1_n5_M2_s.json N 59 traj own==idealcyc True (T 16) | subrun191 C 0 R 11 p 5 | Gamma3 n 1007: n5v xi 19 (fb 1) spec 3 n5bxi 19 (fb 1) | regions=Oink True verify 0/0
+t1_n8_M2_H.json N 104 traj own==idealcyc True (T 28) | subrun191 C 0 R 24 p 4 | Gamma3 n 2018: n5v xi 31 (fb 1) spec 3 n5bxi 31 (fb 1) | regions=Oink True verify 0/0
+t1_n8_M2_s.json N 104 traj own==idealcyc True (T 22) | subrun191 C 0 R 17 p 5 | Gamma3 n 2018: n5v xi 25 (fb 1) spec 3 n5bxi 25 (fb 1) | regions=Oink True verify 0/0

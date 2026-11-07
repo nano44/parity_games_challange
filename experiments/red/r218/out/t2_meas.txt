@@ -1,0 +1,32 @@
+t2_n3_M0_s.json N 36 T 2 words 3: 000 001 111
+  re-arms (switches into X) total 2 max/mover 1; D {'P2_1': 3}
+t2_n3_M2_s.json N 42 T 7 words 7: 000 001 111 100 111 110 111
+  re-arms (switches into X) total 4 max/mover 1; D {'P2_1': 3}
+t2_n3_M0_P.json N 36 T 8 words 4: 000 001 011 111
+  re-arms (switches into X) total 0 max/mover 0; D {'P2_1': 7}
+t2_n3_M2_P.json N 42 T 8 words 4: 000 001 011 111
+  re-arms (switches into X) total 2 max/mover 1; D {'P2_1': 7}
+t2_n4_M0_s.json N 61 T 2 words 3: 0000 0001 1111
+  re-arms (switches into X) total 3 max/mover 1; D {'P3_2': 3}
+t2_n4_M2_s.json N 69 T 9 words 8: 0000 0001 1111 1000 1111 1100 1110 1111
+  re-arms (switches into X) total 6 max/mover 1; D {'P3_2': 3}
+t2_n4_M0_P.json N 61 T 10 words 5: 0000 0001 0011 0111 1111
+  re-arms (switches into X) total 0 max/mover 0; D {'P3_2': 9}
+t2_n4_M2_P.json N 69 T 10 words 5: 0000 0001 0011 0111 1111
+  re-arms (switches into X) total 3 max/mover 1; D {'P3_2': 9}
+t2_n5_M0_s.json N 92 T 2 words 3: 00000 00001 11111
+  re-arms (switches into X) total 4 max/mover 1; D {'P4_3': 3}
+t2_n5_M2_s.json N 102 T 11 words 9: 00000 00001 11111 10000 11111 11000 11100 11110 11111
+  re-arms (switches into X) total 8 max/mover 1; D {'P4_3': 3}
+t2_n5_M0_P.json N 92 T 12 words 6: 00000 00001 00011 00111 01111 11111
+  re-arms (switches into X) total 0 max/mover 0; D {'P4_3': 11}
+t2_n5_M2_P.json N 102 T 12 words 6: 00000 00001 00011 00111 01111 11111
+  re-arms (switches into X) total 4 max/mover 1; D {'P4_3': 11}
+t2_n6_M0_s.json N 129 T 2 words 3: 000000 000001 111111
+  re-arms (switches into X) total 5 max/mover 1; D {'P5_4': 3}
+t2_n6_M2_s.json N 141 T 13 words 10: 000000 000001 111111 100000 111111 110000 111000 111100 111110 111111
+  re-arms (switches into X) total 10 max/mover 1; D {'P5_4': 3}
+t2_n6_M0_P.json N 129 T 14 words 7: 000000 000001 000011 000111 001111 011111 111111
+  re-arms (switches into X) total 0 max/mover 0; D {'P5_4': 13}
+t2_n6_M2_P.json N 141 T 14 words 7: 000000 000001 000011 000111 001111 011111 111111
+  re-arms (switches into X) total 5 max/mover 1; D {'P5_4': 13}
