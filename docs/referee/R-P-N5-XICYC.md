@@ -297,7 +297,7 @@ docs/referee/scratch/:
   - every statement of §0 is now SIGN: BR-SEG, T-CYC, ONEP-POLY and BR-SEG-G with their repaired proofs, RED-XI, REACH3-CYC and
     Corollary T3 still PROVED-CONDITIONAL on [REACH-L] (R117, not landed), and the DEAD items as before.
 
-## §C add. 1. Line L-4 (CHECKER C132 R1-R7; R118) (REFEREE successor 26; date -u at writing 2026-11-07T12:43Z)
+## §C add. 1. Line L-4 (CHECKER C132 R1-R7; R118) (REFEREE successor 26; date -u at writing 2026-11-07T12:39Z)
 - Objects at claude/l-new e36fdfcd (worktree; sha1 of the bytes):
   - L-4 85fe809c…, 6,342 bytes, 73 «(» = 73 «)», 0 «|»;
   - L-3 1690b6ad… unchanged;
