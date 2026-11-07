@@ -12,3 +12,6 @@ rand count 100 seed 1: ties 0 flipsX 66 flipsM 321 maxXint 1 locfail 0
 general random games count 300 seed 1 n 12 maxdeg 3: sigma-steps 314, X1 fails 67; games with a p-run > n_E: 0; max p-run/n_E 0.40 at (160, 2, 5, 'pp')
 rd2_d9.json N 18 T 21 TRUNC-CHOICE ok 651 bad 0 (trunc-ties 516); max mover value changes 20
 rf_d5.json N 10 T 11 TRUNC-CHOICE ok 166 bad 0 (trunc-ties 136); max mover value changes 10
+rd2_d9.json [(('BRET', 'b'), 2), (('DISJ', 'b'), 21), (('DISJ', 'e'), 8), (('RET', 'e'), 24)]
+rf_d5.json [(('BRET', 'b'), 1), (('DISJ', 'b'), 4), (('DISJ', 'e'), 6), (('RET', 'e'), 8)]
+TOTAL [(('BRET', 'b'), 3), (('DISJ', 'b'), 25), (('DISJ', 'e'), 14), (('RET', 'e'), 32)]

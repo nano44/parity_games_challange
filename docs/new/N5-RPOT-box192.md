@@ -182,3 +182,26 @@ So even two levels give R ≈ N. That fits L-RED's R ≲ 2d ≈ N. DATA. Unit: R
 2. SEG-T climb (tieclimb192.py); if it holds, look for a TIE-PERSIST proof on Γ3-like arenas.
 3. L-LIT: is the «overtake count of two monotone sequences coupled through a positional game» bounded in any source on policy iteration
    for deterministic games (e.g. Hansen–Zwick-style Howard bounds for deterministic MDPs)? Not opened here.
+
+## Addendum 1 (after milestone 1; date -u from 10:0xZ)
+### A1.1 MERGE types of R-flips (DATA)
+I classify every R-flip at a gate g by MERGE's first common vertex m, in the state after the flip:
+- RET: m = e_g. The β-play runs back through g and then through e_g, so A′ = ∅. The comparison is the top of the loop segment
+  B′ = β_g → … → g. Odd takes e to avoid closing the cycle g → β_g → … → g.
+- BRET: m = β_g, the mirror case.
+- DISJ: A′ and B′ are both non-empty.
+
+PROVED (lane, immediate): a RET state has σ̄(g) = e, and a BRET state has σ̄(g) = β. The play from β_g passes g and continues with
+σ̄(g), so e_g on P_B forces σ̄(g) = e, and symmetrically for BRET.
+
+DATA (unit: R-flips; set: 16 L-RED R-bests + cR_d2_w8 best; scope: IDEAL-CYC; tool: mtype192.py):
+
+| type | to e | to β |
+| --- | --- | --- |
+| RET | 143 | 0 |
+| BRET | 0 | 34 |
+| DISJ | 147 | 71 |
+
+READING: about half the R-flips are «cycle avoidance». Even's switches complete a route from β_g back to g, and Odd answers by leaving
+through e_g. This is L-RED §53.1's «Odd leaves an Even-won β-cycle», made exact by MERGE. A charging argument would charge each RET flip
+to the switch that completed the return route. It is not proved, and it would need a per-route bound.
