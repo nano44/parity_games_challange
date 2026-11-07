@@ -26,6 +26,31 @@ for μ(d), IDEAL-ACYC model on 𝓛^R_d). The predecessor's T-L2 text (2026-10-1
    gives the Ξ-target maxima 1, 3, 4 by level at d = 3, so μ(3) = 4 < 6 (and T^R(3) = 8, R112). Reading: aim at μ(G_d) ≥ 2d for d ≥ 5
    (the first tight case) and at the growth rate.
 
+## Successor 3 BOX L3 (started 2026-11-07 00:10Z) — product: docs/lower/L3-families.md
+### Resume point
+- Code: experiments/lower/l3/ — sim.py (own simulator, from the R104 definition), trace.py, xcheck.py (vs L-NEW box150 Gen +
+  movescheck counters; needs LNEW = an l-new tree: `git archive origin/claude/l-new experiments/new | tar x -C DIR`), tricheck.py
+  (TRI / TRI-MU / FEEDBACK checks), genA.py (family A), l3check.py (fast regression in check.sh), tsearch.c (uniform templates),
+  lsearch.c (template levels on a fixed base genome, BASE=txt), psearch.c (perturbation climb from a base txt; LM = mutable levels).
+  Binaries are built into the scratchpad (gcc -O2 -o $SP/x x.c); rebuild after a container change.
+- Status: §2 TRI, §3 TRI-MU, §4 FEEDBACK, §7 TOP-ADD written with proofs (lane); family A data to d = 40, A-RUN proof pending.
+### Sources opened (this box)
+- docs/RESULTS.md R104 (l. 9864, IDEAL-model definition), R110 (l. 11323, 𝓛^R_d), R112 (l. 11909, T^R(3) = 8), R113 (l. 12152,
+  ALIGN, F0, PAIR-DOUBLE, MOVES, T-BOUND, PATH-RISE), R114 (l. 12394); R111 (l. 11598, CASCADE/LADDER, read only).
+- claude/l-new d86adc86-era docs/new/P-IDEAL-MOVES.md (§0-§6: REDUCE-XI, MOVES-EQUIV, AND-GATE, WINDOW-DOUBLE, SEG-WINDOW, DEAD-SEG,
+  DEAD-LEV, lane DATA μ by level d 3: 1, 3, 4); experiments/new/box187/movescheck.py, box150/check.py (Gen), box186/out/*.json,
+  box187/inst/m4_z4_r7.json.
+- claude/l-red 242fbd1e notes/L-RED.md (successor 51 PARK, successor 52 handover; R213: MOVES-2D exact d 3, holds d 4; R214 DENSE
+  runs), experiments/red/r214/keep/dense_d5_l3_H10.txt + out/dense_d5_l3_H10.json (36d340c7; μ 10 at d 5; copied byte-identical to
+  experiments/lower/l3/inst/, sha1 a449d771…), out/c_m5_*ext_d6* (climb d 6: maxR 10).
+### Things only I know
+- The Lead's goal (a) «μ(G_d) ≥ 2d for every d» is false at d = 3 (μ(3) = 4, L-RED R213 data) and maybe at d = 6 (my lift search
+  and L-RED's climb both stop at 10 < 12). TRI genomes cap at 2d − 2 (proved), so any 2d family needs upward options.
+- tsearch mode 2 once preferred cyclic templates (sentinel bug, fixed: cyclic = −1e9).
+- Family A d = 10 run (rows = steps, E/O = even/odd mover of each level moves):
+  1 .O .. .. .O .. .. .O .. .. .O / 2 E. .. .O .O .. .O .O .. .O .O / 3 .. .O .O .. .O .O .. .O .O .. / 4 .. E. .. .O .O .. .O .O .. .O
+  … / 20 .. .. .. .. .. .. .. .. .. E.  (regenerate: python3 -I experiments/lower/l3/trace.py with genA 10).
+
 ## Predecessor (T-L2, 2026-10-15) notebook, kept as history
 # L-LOWER notebook (T-L2 theory box ended 2026-10-15 19:30Z; handover for the Lead / a successor)
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
