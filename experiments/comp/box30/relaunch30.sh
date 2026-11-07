@@ -14,7 +14,7 @@ up() { n=$1; shift; f=out/.pid_$n; [ -f $f ] && kill -0 $(cat $f) 2>/dev/null &&
 # (out/seed_SL41_d32.txt, 4 TOP-ADD) NOT run: no free core (B_d32, D_d28, query 2, xval_d3 on 4 cores).
 # 11:4xZ (Lead 11:38Z, L-LOWER aac4ebcc: SL41 plateau >= 2 edits deep): from unit 1 every proposal = NMIN..NMAX = 2-3 simultaneous edits
 # (rclimb30 env NMIN/NMAX; defaults 1-3 = original, regression byte-identical); equal-score moves were already accepted (sc >= cur) + ANNEAL.
-ENVX="FROZENBELOW=12 NMIN=2 NMAX=3" up D_d28 D_d28 out/seed_SL41_d28.txt 350000 6 5 6
+# STOPPED 14:3xZ (Lead 14:29Z; resume point in out/D_d28.log): ENVX="FROZENBELOW=12 NMIN=2 NMAX=3" up D_d28 D_d28 out/seed_SL41_d28.txt 350000 6 5 6
 # 11:4xZ (Lead 11:42Z): biased D lane on B's core: SL41, GUARD 5, LV 6, FROZENBELOW 12, NMIN 2 / NMAX 3, FUEL BIAS (rclimb30 env BIAS*):
 # BIASP 0.5 of proposals carry one fuel edit on a mover of the Xi-closure (both options) of 22 and of 9:1's target 54 in SL41, movers >= 12
 # (static set from the seed); 1/4 of fuel edits on mover 19 (L-LOWER's candidate supplier, option 1 rank 95); rank swap above BIASR 87 /
