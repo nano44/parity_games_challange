@@ -1,0 +1,5 @@
+== 05:06Z d 8 seed-file out/cyc2_d8.json
+start n 250 xi 25 spec 10
+it 1020 n 250 xi 25 spec 11 OK
+it 1585 n 250 xi 26 spec 4 OK
+it 1631 n 250 xi 26 spec 7 OK

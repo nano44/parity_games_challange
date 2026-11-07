@@ -1,0 +1,21 @@
+== 05:10Z n 8 seed-file 
+start n 16 xi 1 spec 1
+it 0 n 16 xi 2 spec 2 OK
+it 1 n 16 xi 3 spec 3 OK
+it 26 n 18 xi 4 spec 4 OK
+it 129 n 16 xi 5 spec 5 OK
+it 137 n 16 xi 6 spec 6 OK
+it 176 n 18 xi 7 spec 7 OK
+it 197 n 20 xi 8 spec 8 OK
+it 207 n 18 xi 10 spec 10 OK
+it 300 n 19 xi 11 spec 11 OK
+it 401 n 21 xi 10 spec 8 OK
+it 455 n 21 xi 11 spec 9 OK
+it 491 n 21 xi 12 spec 9 OK
+it 1447 n 25 xi 9 spec 5 OK
+it 1463 n 24 xi 10 spec 6 OK
+it 1629 n 22 xi 12 spec 8 OK
+it 1828 n 24 xi 13 spec 7 OK
+it 1879 n 24 xi 14 spec 6 OK
+it 1894 n 24 xi 15 spec 7 OK
+it 2537 n 24 xi 16 spec 8 OK

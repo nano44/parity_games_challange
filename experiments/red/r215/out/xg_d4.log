@@ -1,0 +1,13 @@
+== 05:09Z d 4 seed-file out/xg_d3.json
+start n 130 xi 5 spec 4
+it 2 n 130 xi 6 spec 4 OK
+it 10 n 130 xi 9 spec 5 OK
+it 20 n 130 xi 9 spec 4 OK
+it 27 n 130 xi 9 spec 3 OK
+it 70 n 130 xi 10 spec 4 OK
+it 100 n 130 xi 11 spec 4 OK
+it 225 n 130 xi 12 spec 4 OK
+it 275 n 130 xi 12 spec 3 OK
+it 358 n 130 xi 13 spec 4 OK
+it 503 n 130 xi 13 spec 3 OK
+it 864 n 130 xi 14 spec 3 OK
