@@ -159,6 +159,23 @@ TARGET.md claim (diff in §8).
     l3/sim.py = box150 Gen (SIM-MISMATCH 0, movescheck 0), memcheck (i)-(vi) PASS, DOUBLE-EQ′ 0 violations, LATE-PREF 0 violations on
     25 windows (every window event from above). Found by the LV=5 climb (rclimb.c) from DBL4_d20_F30. T 136 ≈ 6.8d (the T record at d 15
     was 114). Not yet replayed by another lane.
+  - THE SIXTH DOUBLING LEVEL (CANDIDATE): rec/H6_d24_F126.json (sha1 fb37fec9…), 𝓛^R_24, Ξ-acyclic, stored start, T 209, F = 2 6 14
+    30 62 126 95 33 …: levels 1-5 exact doubling over F(0) = 2 (T-BOUND's per-level cap on levels 0-5); moves 1/1, 3/3, 7/7, 15/15,
+    31/31, 63/63 on pairs 0-5. Checks: l3/sim.py = box150 Gen (SIM-MISMATCH 0, movescheck 0), memcheck (i), (ii), (iv)-(vi) PASS,
+    DOUBLE-EQ′ 0, LATE-PREF 0 violations on 56 windows (all events from above). Found by the LV=5 climb from H5 + 4 TOP-ADD levels (d 24).
+    S(5) ≤ 20, S(6) ≤ 24 (h counted over F(0) = 2: S(h) := least d with levels 1..h−1 doubling); T 136 → 209 for +4 levels.
+  - H5 → H6 is NOT a local rewiring (DATA, diffg.py on rec/H5_lift_d24.txt = H5 + 4 TOP-ADD levels, the climb's seed, against
+    rec/H6_d24_F126.txt): Ξ-targets changed 89 of 96, parities 42 of 96, gate orders 34 of 96, start bits 19 of 48; the two rank orders
+    share a longest common subsequence of 17 of 96. The annealed climb drifts through neutral changes, so the diff gives no rule
+    G_h → G_(h+1); an inductive construction needs a designed tower, not a read-off of the search output (OPEN).
+  - Fuel pattern of H5_d20_F62 (DATA, lpaudit.py; READING, not a proved inductive step): the second mover of each doubling level j is
+    fed by TWO movers above the tower that alternate window by window, each moving ≈ (F(j − 1) + 1)/2 times (the rate of pair j − 1):
+    j = 1: x₂ = 3 ← 17 (L8) / 7 (L3); j = 2: x₂ = 4 ← 17 (L8) / 13 (L6); j = 3: x₂ = 6 ← 14 (L7) / 19 (L9) (one window 35, L17). The
+    level-3 feeders re-enter the tower: 14 → (5, 24), 19 → (5, 31), with 5 in pair 2 (RE-ENTRY in L-SI 41's sense; ACYC-SPLIT holds:
+    5 → (23, 39) does not reach 6). Pairs 5, 6 echo pair 4 (31/31 moves each) and feed it: 8 → (11, 9), 9 → (6, 12).
+  - Core extraction (simplify.py: re-target one option to X, or drop the top level): no single change keeps F(0..4); every Ξ-link
+    of the d 20 genome is load-bearing for the exact profile. Least d with F(4) = 62: open (climbs from top-truncated copies at d 16 / 12
+    are at F(4) = 41 / 30).
   - forced crossed pair 4 (9 → (6, 7), 4's option re-pointed; NOMUT 6-9; three annealing schedules, 2·10^8 proposals): F(4) ≤ 34.
   - forced CROSS pair 2 under a targeting pair 3 (seedCR2): F 2 4 10 20 …: level 3 stays below doubling (CR2_d10.json).
 - Relaxation (drv.c, EB = 2, block of the d 14 tower): climbs reach Fmax₂ F(4) = 30 (below the real 52 found by the real climb; the

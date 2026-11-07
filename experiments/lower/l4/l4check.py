@@ -32,7 +32,7 @@ out = sh("python3 -I fwcheck.py " + " ".join(os.path.join(L3, "kill", f) for f i
 w = dict(zip(out.split()[0::2], map(int, out.split()[1::2])))
 assert w["late_viol"] == 0 and w["late_windows"] > 0 and w["eq_viol"] == 0 and w["fw_viol"] == 0 and w["adj_viol"] == 0 and w["dbl_levels"] > 0, out
 print("DOUBLE-EQ'/FROZEN-WINDOW:", out.strip())
-PIN = {"RECF4_d14_F52.json": ("PIN14", 73, 52), "RECF4_d16_F53.json": ("PIN16", 73, 53), "RECF4_d20_F56.json": ("PIN20", 71, 56), "RECF4_d20_F60.json": ("PIN20b", 67, 60), "DBL4_d20_F30.json": ("PIN20c", 30, 30), "H5_d20_F62.json": ("PIN20d", 136, 62)}
+PIN = {"RECF4_d14_F52.json": ("PIN14", 73, 52), "RECF4_d16_F53.json": ("PIN16", 73, 53), "RECF4_d20_F56.json": ("PIN20", 71, 56), "RECF4_d20_F60.json": ("PIN20b", 67, 60), "DBL4_d20_F30.json": ("PIN20c", 30, 30), "H5_d20_F62.json": ("PIN20d", 136, 62), "H6_d24_F126.json": ("PIN24", 209, 62)}
 for f, (pin, Texp, F4) in PIN.items():
     p = os.path.join(H, "rec", f); G = json.load(open(p)); S = run(G, G["start"])
     O = [[0 if k[2*l] < k[2*l+1] else 1 for l in range(G["N"] // 2)] for k in (keys(G, s) for s in S)]
