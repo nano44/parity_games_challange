@@ -8,7 +8,7 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 - Pushed c420666d 04:47Z (2nd push). TRAP: container started on a DETACHED HEAD with a stale local branch ref (8fde383f); push.sh got
   an empty branch name -> exit 128 after VERIFY PASS. Check before push.sh: `git branch --show-current` prints claude/referee-2.
 - P-N5-REACH L-3 (l-new 727163f0): Add. 2, L-3 MATCHES (bt_l3.out; RC-2 (a, b) order = subdiv.pad sorted order).
-- Pending: P-M2D-DEAD L-3 (L-LOWER 4; L-RED replay.out at l-red 6e743ab1, sha1 4492ee28…, not on origin at 03:5xZ).
+- P-M2D-DEAD L-3 (l-lower afc85c57): Add. 2, L-3 MATCHES; replay.out 9/9 rows reproduced (r2m2d9.out). Queue empty.
 
 ## Successor 30 handover check (Opus 5.5 under D1/D18/D20; 2026-11-07 03:5xZ by date -u)
 1. Branch claude/referee-2: ls-remote, local HEAD and origin ref all 9bd5656f at start (fetch --unshallow, ff-only: already up to date).
