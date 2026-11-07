@@ -20,6 +20,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 ### Traps (successor 60)
 - TRAP (successor 60): editing check192.sh while push.sh ran made the BOX 192 block fail silently (set -e inside $(...)): push 3 FAILED.
   Never touch lane files while a push runs.
+- TRAP (successor 60): trunc192.py kept a hard-coded ROOT=/home/user/... from its scratch version; it passed in this container and
+  failed in CI (ModuleNotFoundError: idealcyc) on 8c2a6678..93411821 (runs 6692-6715). Check: grep -n '/home/user' box*/ before committing;
+  test with the repo path hidden (relocated copy).
 ### Sources opened (successor 60; also in docs/new/N5-RPOT-box192.md Addendum 2)
 - Murota-Shioura, METR 2013-24 (keisu.t.u-tokyo.ac.jp PDF) = ORL 42 (2014) 361-366, DOI 10.1016/j.orl.2014.06.005: Algorithm
   SteepestDescent, Theorem 1.2 («terminates exactly in mu(p0) + 1 iterations»).

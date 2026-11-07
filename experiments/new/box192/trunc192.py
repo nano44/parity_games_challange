@@ -3,7 +3,7 @@ r"""Box 192: check TRUNC-CHOICE: at a gate g with Lambda(e_g) = Lambda(beta_g) =
 Odd's optimal choice is e iff trunc_{>e_g}(Pi(B)) beats trunc_{>e_g}(Pi(A)) for Even, where trunc keeps the path-set bits above rank(e_g);
 on truncated equality: e_g in Pi(A)\Pi(B) => beta. Also count per-vertex value changes (all vertices) and truncated changes."""
 import sys, os, json
-ROOT = "/home/user/parity_games_challange"
+HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 sys.path.insert(0, os.path.join(ROOT, "experiments/new/box191")); sys.path.insert(0, os.path.join(ROOT, "experiments/new/box189"))
 import idealcyc, gamma3
 
