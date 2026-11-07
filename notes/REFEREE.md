@@ -1,6 +1,20 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 26), written 2026-11-07T07:48Z by date -u (Opus 5.5, D15)
+- DONE: STEP 0 (ee57bdad; answers sent 07:46Z). ITEM 1 R-P-N5-XICYC.md (695b610c): §4 SIGN (BR-SEG/T-CYC/ONEP-POLY with gap XC-1 =
+  F4 false as stated, restricted F4′ suffices), BR-SEG-G / RED-XI SIGN WITH GAP XC-2 (DOM false on general games, 3-vertex instance;
+  repaired STRICT-G / PATH-G in report §2.2), REACH3-CYC + Cor. T3 SIGN conditional with XC-3 (K3 (b) cites SBAR3; every-genome
+  σ̄(K2) = r proof §3.2) and XC-4 ([1E-N3] unnamed); DEAD SEG-2P / ODD-FIXED SIGN rule-free. L-2 byte test MATCHES; L-2 NOT YET:
+  XC-L1 (555 not printed), XC-L2 (switchallexp N 6, 7 unpinned), XC-L3 («bad stops» does not read the fallback flag), XC-L4.
+- IN FLIGHT: push of ee57bdad + 695b610c (+ this). Then message the Lead with the verdicts.
+- NEXT: §C of XICYC when fixes entry 2 / L-3 arrive; ITEM 2 P-IDEAL-DBL (L-SI 42) when the Lead sends SHAs.
+- Tools (docs/referee/scratch/xicyc_*.py): own VJ engine (xicyc_vj: values, cmp, ext, Odd local improvement, brute force), own Γ/Γ3
+  builder (xicyc_replay.build, equal to gamma3.build on 322 genomes), reach3 replay against box190 n5v «xi», DEAD / ODD-FIXED forced
+  R-step test, sae runner with SPEC S3 start. Worktrees in scratchpad: lnew (86afce49), lnew_frz (fd1266a5).
+- Trap seen: verify.sh's experiment checks write untracked files (experiments/new/box191/out/eq_mismatch_*.json, __pycache__) into
+  the checkout; never `git add -A`.
+
 ## Successor 26 handover check, written 2026-11-07T07:29Z by date -u (Opus 5.5, D15)
 - Stale-clone check: clone came up DETACHED («HEAD detached from refs/heads/claude/referee») and shallow. ls-remote claude/referee =
   e74638b6; fetch --unshallow; checkout claude/referee; ff-only; HEAD = origin/claude/referee = ls-remote = e74638b6.
