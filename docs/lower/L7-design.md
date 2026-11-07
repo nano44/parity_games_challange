@@ -142,10 +142,43 @@ Nothing here is a result in the sense of CLAUDE.md; G-N5-TIME stays OPEN. Not a 
 - RC-PLATEAU: survives L-COMP 11's frozen tests (§1). DECOUPLED and GUARD (§2) are partial explanations, not a proof: they cap F(6)
   only through the count of inner windows without a level-≥7 trigger.
 
-## 7. Files (experiments/lower/l7/)
-ranksolve.py, clamp.py, runstats.py, rcfree.py, ideal.py, xorbrute.py, l7check.py (run by check.sh); outputs runstats.out, ranksolve_SL41.out, rcfree_SL41.out,
-ideal_SL41.out, xorbrute.out; rec/LCOMP_*.txt (frozen copies, sha1 in §1).
+## 7. Round 2 (Lead 19:35Z: «the sequential-schedule design … decided exactly with ranksolve»): the schedule alone is not enough
+- sched.py builds the SEQUENTIAL target for an h-capped tower with d = h (no levels above the top): f_l = 2l + 1 moves α_l steps after
+  each change of c_l, the higher levels run their windows, q_l = 2l moves one step after the last of them; the initial windows nest;
+  level 0 has gates 0 2 1 3, start (1, 1). DATA (sched.out; unit = schedule; set = h = 2..7, α = 1): every one is capped as a target
+  (F = 2, 6, …, 2^(h+1) − 2; T = 8, 22, 52, 114, 240, 494).
+- Exact, exhaustive (exh2.py → exh2_h2.out; unit = wiring; set = all 5,941 acyclic wirings without self-targets of d = 2; ranks and
+  signs free, decided by GREEDY-COMPLETE): h = 2 with α₁ = 1 and with α₁ = 0: 0 realizable, in both. DEAD: the sequential schedule
+  without helper levels, at h = 2 (instance: the 8- and 6-step targets printed in exh2_h2.out).
+- Why (READING from the per-mover tables of the α = 1 target, by hand): f₁ must change its preference at the steps where a pair-0
+  member moves (it reads pair 0); q₁ = 2 moves one step after f₁ (it reads f₁); each pair-0 member must change its preference at the
+  step where q₁ completes the level-1 job (it reads q₁). Ξ-reads f₁ → pair 0 → q₁ → f₁ form a cycle, and with one move per step no
+  link can be carried by the key cascade instead. Any realizable schedule must route at least one link of each such cycle through a
+  key (a mover that fires in the step its key changes, armed earlier), which is what helpers above the top supply.
+- Search DATA (weak, not exhaustive): wsearch.py (annealing over wirings, exact soft score) on the sequential targets: h = 3 best 13
+  dropped conditions (3 seeds × 60,000 steps), h = 4 best 38 (wsearch_h3.out); anneal_small.py over whole genomes, d = 2, 3, 4, 6, 8:
+  at most 1 capped level (anneal_small.out) — weaker than the lane's own record KILL_M2D_d6_mu13 (l3/kill/, d 6, levels 0-1 capped),
+  so this annealer is not evidence of absence.
+- Consequence for BOX L7 (READING): the design object is not «a schedule for pairs 0-6» but «a schedule for pairs 0-6 together with
+  the helper pairs whose key-fired moves break every Ξ-cycle the schedule forces». At the top, §6's pair 7 is one such helper for q₅;
+  COUPLING-UP (§4) says those helpers' schedules feed the lower fuel, so they must be fixed before the lower wiring is chosen.
 
-## 8. Diff against TARGET.md
+## 8. On the Lead's question: «a 7th capped level forces a context mover whose fuel couples down» (status)
+- What is proved (lane): PULSE-TRIGGER and GUARD (§2): an RC-free seventh level needs a level-≥7 trigger of q₅ in every inner 5-window,
+  reachable only through the key cascade above pair 6.
+- What is data: ONE-READ XOR (§5, exhaustive only for ≤ 2 fixed nodes), COUPLING-UP (§4, on SL41's wiring only), the d = 2 cycle (§7,
+  exhaustive at h = 2 only).
+- Candidate statement (CONJECTURE CONTEXT-COUPLING): in every genome of 𝓛^R_d with levels 0, …, 6 capped, the first mover of pair 6
+  has in its closure a mover w of a level ≤ 4 with an option whose Ξ-target is in pair 5. Its proof needs (i) ONE-READ XOR for arbitrary
+  DAGs (my attempt: the four symmetric differences are the parts of two walks before they merge, and merging can cancel the top element
+  in some combinations only — the case split is not closed), and (ii) a reason why the context must come from below rather than from
+  helpers above pair 6 (not attempted). Not a packet yet.
+
+## 9. Files (experiments/lower/l7/)
+ranksolve.py, clamp.py, runstats.py, rcfree.py, ideal.py, xorbrute.py, l7check.py (run by check.sh), sched.py, exh2.py, wsearch.py,
+anneal_small.py, rnd_small.py; outputs runstats.out, ranksolve_SL41.out, rcfree_SL41.out, ideal_SL41.out, xorbrute.out, sched.out,
+exh2_h2.out, wsearch_h3.out, anneal_small.out; rec/LCOMP_*.txt (frozen copies, sha1 in §1).
+
+## 10. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class; all are about the IDEAL
 model's step sequence (R104's definition) on 𝓛^R_d and its F-profile. Not M3, not a step-4 pass, not a TARGET.md claim.

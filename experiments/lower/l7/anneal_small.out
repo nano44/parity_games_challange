@@ -1,0 +1,9 @@
+# stdout of anneal_small.py runs, 2026-11-07 ~19:50Z (commands: anneal_small.py d 30000 seed), copied verbatim
+d 2 seed 1 best caps 1 F [2, 4]
+d 2 seed 2 best caps 1 F [2, 4]
+d 3 seed 1 best caps 1 F [2, 4, 2]
+d 3 seed 2 best caps 1 F [2, 3, 3]
+d 4 seed 1 best caps 1 F [2, 3, 2, 1]
+d 4 seed 2 best caps 1 F [2, 4, 2, 0]
+d 6 seed 1 best caps 1 F [2, 4, 1, 1, 0, 1]
+d 8 seed 1 best caps 1 F [2, 4, 2, 1, 0, 0, 0, 0]

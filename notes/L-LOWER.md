@@ -13,6 +13,10 @@
   34 helper trajectories, every mover 0-13 infeasible alone); one-read XOR 0 of 84,000 wirings, with context 864 of 180,000.
 - Next: sequential schedule for pairs 0-7 (pair 7 = o(6)-keyed helpers telling q5 «pair 6 done»), reading sets from L7 §5 tables,
   enumerate consistent wirings, decide each with ranksolve. Watch D_l6g on claude/l-comp.
+- Round 2 (Lead 19:35Z GO for the sequential design): sched.py capped targets h = 2..7; exhaustive d = 2: 0 of 5,941 wirings realize
+  h = 2 (α 1 and 0) -> DEAD without helpers (Ξ-cycle f1 -> pair 0 -> q1 -> f1); L7 §7-§8 (CONJECTURE CONTEXT-COUPLING, not a packet).
+  Next: add helper pairs to the schedule (key-fired moves breaking each cycle), smallest case h = 2 with d = 3, exhaustive if possible.
+  Item (a) L6G_TEST1 (86cf1903) still not on origin/claude/l-comp at 19:33Z.
 ### Things only I know (successor 7)
 - ranksolve on SL41 runs in 0.2 s; rcfree (b) 2,704 solves ~170 s. clamp.ideal6 takes o(5) from the original run (pairs 0-5 unchanged).
 - The design sketch (h, h2 = pair 7 reading f5, firing on o(6); q5 decision list) is now in L7 §6;
