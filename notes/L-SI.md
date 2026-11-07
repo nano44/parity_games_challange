@@ -1,6 +1,94 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Successor 42 handover check (written 2026-11-07T07:15Z (date -u); successor 42 = session_01V5yGRWb17CZoo2UVcHAxp8 (Opus); 41 was session_01V5yGRZDRAGZFgHvmRBGoKz)
+1. Branch claude/l-si. Container started DETACHED at a5d2099e with a shallow clone (the trap again); fetched --unshallow (exit 0),
+   checked out claude/l-si, ff-only: local = origin/claude/l-si = ls-remote = a5d2099e9fd857ba…; `git branch --show-current` =
+   claude/l-si. Against trunk claude/vibrant-johnson-nxvvxo 6f9cc0b0 (2026-11-07T06:35Z): 8 ahead / 849 behind; merge-base 77d536f6.
+2. Open work: (i) DUTY P-IDEAL-DBL freeze (draft 2c396f6f; docs/si/P-IDEAL-DBL.md + line L1): waits for the Lead's «R116 landed»;
+   next step = re-quote AND-GATE (a)-(c) from the landed RESULTS R116 text in §0, re-pin pins.sha1, run check79.sh, commit FREEZE.
+   (ii) BOX 80 (main, 12 h): extension lemma for capped towers (h -> h+1 capped levels with O(1) more levels, fuel interface
+   preserved) or its obstruction; else a lower bound S(h) on levels per capped level. Next step: read the H5/H6 wiring
+   (wiring79.out, tower_H5.out), define the interface, test it on RECF4/DBL4/H5/H6.
+3. GAPS rows: L-SI owns none (trunk 6f9cc0b0). The lane works under G-N5-TIME (owner L-NEW; open).
+4. Rulings (verbatim, trunk docs/DECISIONS.md; all active in DECISIONS-INDEX.md):
+   - D18 (l. 332-333): «Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of
+     mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them
+     briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.»
+   - D1 (l. 7): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the
+     fleet's own, as wrong until it passes the gauntlet below.»
+   - D14: «D» / «You know it can also test prveiously not tested approaches, it can come up with it own as well»
+   (D20 l. 423 «We have reset the weekly usage, so we can again work faster no?» = pace; L50 = MOVES-2D killed, tower question open.)
+5. Trap: detached HEAD + stale/shallow clone (push.sh fails after VERIFY PASS with «invalid refspec»). Check: ls-remote vs HEAD vs
+   origin ref, and `git branch --show-current` = claude/l-si before every push.sh (done above).
+
+## DUTY P-IDEAL-DBL (successor 42): frozen f5263d5a; fixes entry 1 + L-2 (0ea6959f; referee items, RE-ENTRY levels measured:
+tower 1..8, KILL_M2D 1..4); fixes entry 2 + L-3 (C133 R1-R6, sha1 845ffdc9 = CHECKER's). Tools box79/{mkL2,mkL3,mkfix1,mkfix2,
+reentry_levels}.py; check79.sh regenerates L-2, L-3, reentry_levels.out.
+- TRAP (bit successor 42): `pgrep -c push.sh` matches process NAMES only and prints 0 while push.sh runs (its name is bash). Use
+  `pgrep -fc scripts/push.sh`. A commit made during a push is not in that push (it pushes the SHA it started with).
+- Container restart ~12:06Z killed the climbs; restarted from /tmp/claude-0/sp/h7_s{1,2}.txt (logs h7r_s*.log).
+
+## BOX 80 (successor 42; Lead brief ~07:05Z: proof side of the tower question) — IN FLIGHT
+- Note docs/si/N5-TOWER-box80.md; tools + check experiments/si/box80/ (check80.sh wired in experiments/si/check.sh).
+- PROVED (lane): PULSE-NEST (levels j..j+k doubling => every j-window pulse >= k+1; capped h => P_j >= h - j); ZONE (W+Xi-closed
+  set runs autonomously); INSERT-PASS (never-moving split pair inserted at level L preserves the run, passes b_(L-1)); corollary
+  STRETCH-NEED / DEAD-RIGID (H6 zero slack at j = 4, 5; H5 at j = 4; every closure in H5/H6 = whole genome).
+- DATA: delay lines (H5 9<-6 pulse 1; H6 9<-12<-7 pulse 2, 9<-14<-13<-6 pulse 3).
+- Climbs (scratch /tmp/claude-0/sp, die with the container): pclimb (C, pulse-aware score, H=7) seeds 1-3 from H6 + 4 frozen levels
+  (h6p4.txt), and h7A = H6 with an inserted pair at level 6 (insert80.py), MUT=8..13 only. Rebuild: gcc -O2 -o pclimb pclimb.c -lm;
+  python3 j2t.py H6.json 4 > h6p4.txt; H=7 ANNEAL=0.02 OUT=o.txt ./pclimb h6p4.txt SEED 300000000.
+- (b): nothing beyond Xi-depth >= h proved; READING: poly(h) levels per capped level already gives super-polynomial T^R.
+
+## BOX 79 (Lead 03:58Z): packet P-IDEAL-DBL — DRAFT (freeze after R116 lands)
+- docs/si/P-IDEAL-DBL.md (+ line docs/si/P-IDEAL-DBL-line-L1.txt, 69/69 parens, 3,425 B); tools experiments/si/box79/{dblcheck.py,
+  dead79.py, check79.sh (wired)}; frozen outputs dblcheck.out, dblcheck_neg2.out, dead79.out.
+- To sign: MP-LIN, WINDOW-ONCE, DBL-EQ (proof self-contained from ALIGN; PAIR-DOUBLE re-proved inside), PASS-FREEZE (sufficient
+  condition from R104 directly, no AND-GATE), HIT + FUEL-EXACT (R105 only), ALT-MIN + TOWER-NEED (R116 AND-GATE, pending landing).
+  CONDITIONAL (not to sign): FUEL-NEED, FUEL (i) (FEEDBACK (b)). DEAD: MAXPLUS, DBLGAP, DECAY, REENTRY.
+- Replay (Lead 05:34Z): L-LOWER 4's RECF4_d20_F60 (l-lower 2f15c81a, sha1 354b7d44) REPRODUCED (my Sim + Gen identical): d 20, T 67,
+  F 2 6 14 30 60 ...; doubling levels 1-3; DBL-EQ etc. 0 violations (extra79.out, wired). DBL4_d20_F30 not yet on the remote (05:40Z).
+- Replay (Lead 05:55Z): DBL4_d20_F30 (sha1 43704358, l-lower 33eb8593) REPRODUCED: T 30, F 0 2 6 14 30, doubling 1-4. H5_d20_F62
+  (sha1 2204079d, l-lower c45cf2f3) REPRODUCED (Sim + Gen identical): T 136, F 2 6 14 30 62 94 63 ..., doubling 1-4 (five levels at the
+  R113 cap 2^(l+2) - 2, l = 0..4). All dblcheck counters 0 (extra79.out). Wiring: wiring79.out, tower_H5.out (levels 4-6 = a block of six
+  movers moving 31 times each, pointing at each other and at pair 3).
+- Replay (Lead 06:12Z): H6_d24_F126 (sha1 fb37fec9, l-lower 10cac3d9) REPRODUCED (Sim + Gen): T 209, F 2 6 14 30 62 126 95 ...,
+  doubling 1-5 (six capped levels). Counters 0. Wiring: pair 5 crossed onto pair 4 (10 -> 11, 8; 11 -> 8, 9); pair 4 fed by a block on
+  levels 6-7 (12, 13, 14; ~31 moves each) that points down into pair 3.
+- FREEZE STEPS: (1) when the Lead says R116 landed, re-quote AND-GATE (a)-(c) from the landed RESULTS text in §0 (quotes only);
+  (2) update pins.sha1 (the packet/line sha1s change), re-run check79.sh, commit = FREEZE; after that only a fixes file.
+
+## PARKED (successor 41, Lead 06:52Z: «Please PARK now»; final state at claude/l-si 8c458a5a + this commit; context ~525k)
+- Successor 42: (1) P-IDEAL-DBL freeze when R116 lands (steps in «BOX 79» below; the EXTRA scope now has RECF4_d20_F60, DBL4_d20_F30,
+  H5_d20_F62, H6_d24_F126, all REPRODUCED with Sim + Gen, counters 0, extra79.out). (2) Open core: what bounds fuel rises per unit of
+  lower activity (none of the landed potentials does; L-LOWER's H5/H6 suggest S(h) = O(h): +4 levels per doubling level, CANDIDATE).
+- No jobs running. No open duty items (C128 answered, 80d1422a).
+
+## HANDOVER (successor 41; written 2026-11-07 ~03:00Z (date -u: see the commit); session_01V5yGRZDRAGZFgHvmRBGoKz; Lead session_014FBi6o334DvwT5Uw2kDfoN)
+### Resume point
+- FIRST: BOX 79 packet P-IDEAL-DBL is a DRAFT; freeze steps in «BOX 79» below (wait for the Lead's «R116 landed»).
+- Main line (Lead 02:50Z): bound the fuel rises. FUEL-RECURSION has (i) polynomial g = 4l(l+1) (conditional on L-LOWER FEEDBACK (b)) and
+  (ii) HIT, but (iii) «fuel chains lie outside D» is DEAD (RE-ENTRY, reentry77.out), and the iteration is circular (keys pass up
+  losslessly, PASS-FREEZE). Next step: find a quantity an upper block can receive from below only in bounded amounts per unit of its own
+  activity (the open core), or help L-LOWER realise MUTUAL-FEEDBACK (replay their instances with replay77/tw5/tower77/fuel77).
+- Duty: P-IDEAL-IM fixes entry 2 + L-3 done (80d1422a; L-3 sha1 cf510950 = CHECKER). C128.md was not on claude/checker at writing; if the
+  CHECKER asks, add a one-line confirmation quoting C128 §4 (no line change).
+- No jobs running (climb77 finished).
+### Results of successor 41 (all in docs/si/N5-TROPICAL-box76.md §1-§11; tools + checks experiments/si/box76/check76.sh, wired)
+- PROVED (lane): MP-LIN, WINDOW-ONCE, ALT-MIN (+CONST-BRANCH), HIT, DBL-EQ, TOWER-NEED, ACYC-SPLIT, PASS-FREEZE; FUEL-NEED and FUEL (i)
+  conditional on L-LOWER FEEDBACK (b).
+- DEAD: SUM-COUPLE (max-plus transfers; dense_d5_l3_H10), RISE-N (= L-RED RISE-2D), SPAWN-2, DBL-GAP (REC_d10_tower), PASS-THROUGH DECAY
+  (passfreeze77_d5), RE-ENTRY clause (REC_d10_tower 11 -> 3; KILL_M2D_d6 5 -> 3).
+- REPLAYED: L-LOWER 3's nine kill genomes (two simulators): MOVES-2D DEAD.
+- DATA: climb77_d10_T45 (d 10 T 45, lane record at the time).
+### Traps (things only I know)
+- The container started with a DETACHED HEAD and a stale local branch: push.sh failed after VERIFY PASS (invalid refspec). Check
+  `git branch --show-current` = claude/l-si before every push.
+- verify.sh checks the WORKING TREE (uncommitted files are verified too); never commit while push.sh runs.
+- tw.py exec-imports nothing from other lanes; XCHK=<l-new box150/check.py> is optional (scratch copy via git archive of l-new).
+- A sibling script imported without a __main__ guard re-runs (tw2 had to get main()).
+- `pip install scipy python-sat` in a new container (box 70-75 checks).
+
 ## HANDOVER (successor 40, PARKING at ~430k; written 2026-11-06T22:2xZ (date -u; see commit); session_01V5yGRYeBQHWjsh4bJCU8a3; Lead session_014FBi6o334DvwT5Uw2kDfoN)
 ### Resume point (successor 41 starts here)
 - P-IDEAL-IM (box 75) is FROZEN: packet docs/si/P-IDEAL-IM.md (cb2b0c60, sha1 7bef9419), fixes entry 1 docs/si/P-IDEAL-IM-fixes.md
@@ -60,6 +148,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - Third pass (Lead 02:08Z, PASS-THROUGH DECAY; note §10): PASS-FREEZE PROVED lane (a split pair that never moves passes every flip:
   F(l+1) = F(l)); decay lemma «F(l+1) <= F(l) - c unless upward fuel at l+1» DEAD on inst/passfreeze77_d5.json (F 2 2 2 6 6, level 3
   doubling, level 4 frozen, top level). freeze77 data: freezing a pair above a doubling level kills L-LOWER's runs (fuel collapse).
+- Fourth pass (Lead 02:50Z, FUEL-RECURSION; note §11): (i) g polynomial (FEEDBACK-conditional), (ii) HIT; (iii) RE-ENTRY DEAD; the
+  iteration is circular. OPEN.
+- BOX 78 (Lead 03:13Z; note §12): no F(4) = 62 tower (annealing 5 x 1.5M, re-entrant targets; seeds are local optima); |E_l| ~ T on all
+  records; RANK grows 3 -> 7 with d; PHI_K / EXACT-ENERGY start near their exponential maxima; none is an interface quantity.
 
 ## BOX 76 (successor 41; Lead 2026-11-07: TROPICAL-WINDOW, max-plus route to MOVES-2D) — DONE: route DEAD in its window-type and Xi-DAG forms
 - Note docs/si/N5-TROPICAL-box76.md; tools experiments/si/box76/{tw.py (own simulator + window tables), tw2.py, tw3.py, tw4.py,

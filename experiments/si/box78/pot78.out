@@ -1,0 +1,10 @@
+KILL_M2D_d6_mu13.json d 6 T 13 PHI_K(s0) 195 (bound 2^(d+2)-2d-4 = 240) min drop 5 | ENERGY(s0) 2618 (2^N - 1 = 4095) min drop 16
+KILL_M2D_d8_mu21.json d 8 T 24 PHI_K(s0) 760 (bound 2^(d+2)-2d-4 = 1004) min drop 2 | ENERGY(s0) 46896 (2^N - 1 = 65535) min drop 116
+REC_d10_mu32.json d 10 T 33 PHI_K(s0) 3302 (bound 2^(d+2)-2d-4 = 4072) min drop 3 | ENERGY(s0) 757480 (2^N - 1 = 1048575) min drop 224
+REC_d10_tower_mu30.json d 10 T 35 PHI_K(s0) 3914 (bound 2^(d+2)-2d-4 = 4072) min drop 1 | ENERGY(s0) 751840 (2^N - 1 = 1048575) min drop 256
+REC_d11_mu40.json d 11 T 44 PHI_K(s0) 6980 (bound 2^(d+2)-2d-4 = 8166) min drop 2 | ENERGY(s0) 2836832 (2^N - 1 = 4194303) min drop 114
+REC_d12_mu42.json d 12 T 48 PHI_K(s0) 14262 (bound 2^(d+2)-2d-4 = 16356) min drop 3 | ENERGY(s0) 11404500 (2^N - 1 = 16777215) min drop 240
+REC_d7_mu17.json d 7 T 17 PHI_K(s0) 471 (bound 2^(d+2)-2d-4 = 494) min drop 8 | ENERGY(s0) 10936 (2^N - 1 = 16383) min drop 16
+REC_d8_mu24.json d 8 T 25 PHI_K(s0) 774 (bound 2^(d+2)-2d-4 = 1004) min drop 2 | ENERGY(s0) 53400 (2^N - 1 = 65535) min drop 31
+REC_d9_mu29.json d 9 T 31 PHI_K(s0) 1629 (bound 2^(d+2)-2d-4 = 2026) min drop 3 | ENERGY(s0) 189972 (2^N - 1 = 262143) min drop 64
+climb77_d10_T45.json d 10 T 45 PHI_K(s0) 3953 (bound 2^(d+2)-2d-4 = 4072) min drop 1 | ENERGY(s0) 751680 (2^N - 1 = 1048575) min drop 8
