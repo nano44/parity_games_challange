@@ -1,0 +1,11 @@
+W-2 (a)                    old in L-1 1, new in L-2 1
+W-2 (b)                    old in L-1 1, new in L-2 1
+W-2 (c)                    old in L-1 1, new in L-2 1
+DB-L2 + W-2 (d) + N-3      old in L-1 1, new in L-2 1
+DB-L1 + W-3                old in L-1 1, new in L-2 1
+N-1                        old in L-1 1, new in L-2 1
+N-2                        old in L-1 1, new in L-2 1
+7 replacements; L-1 + all == L-2 True 1b3dc82544adfaf2cdea0deffbcbd052db9cd371 5810 lines 1 ( 97 ) 97 | 0 mindepth 0
+W-2 (a) NEW == my W-2 text: True
+W-2 (b) NEW == my W-2 text: True
+W-2 (c) NEW == my W-2 text: True

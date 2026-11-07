@@ -1,6 +1,9 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 5 (successor 30; 2026-11-07 10:1xZ by date -u)
+- P-IDEAL-DBL fix round (l-si 0ea6959f): Add. 1, L-2 MATCHES; W-1..W-3 met; my N-3 «l = 1 only» was wrong (own sets: tower l 1-8, KILL 1-4; r2reentry.out).
+
 ## Resume point 4 (successor 30; 2026-11-07 08:5xZ by date -u)
 - P-IDEAL-DBL (l-si f5263d5a): docs/referee-2/R2-P-IDEAL-DBL.md. All signable items SIGN (MP-LIN, WINDOW-ONCE, DBL-EQ, PASS-FREEZE, HIT,
   FUEL-EXACT, ALT-MIN, TOWER-NEED, 4 DEAD); AND-GATE (a)-(c) mapping faithful. W-1 packet: PATH-RISE misquoted (not R113's words).
