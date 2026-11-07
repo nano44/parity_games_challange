@@ -1,7 +1,7 @@
-# Packet P-IDEAL-DBL (box 79, DRAFT): window and doubling structure of 2-wide ladders; max-plus routes, the doubling gap, pass-through decay and fuel separation are dead
-L-SI successor 41 (Opus 5.5), D14 / D18 / D20; Lead brief BOX 79 (2026-11-07 03:58Z). DRAFT, written 2026-11-07 from 04:05Z (date
--u: see the commit). It is NOT frozen: it freezes only after RESULTS R116 (packet P-IDEAL-MOVES) lands; the premises marked «R116
-(pending landing)» are then re-quoted from the landed text. Sources: docs/si/N5-TROPICAL-box76.md §1-§12 (this lane). This packet
+# Packet P-IDEAL-DBL (box 79, FROZEN): window and doubling structure of 2-wide ladders; max-plus routes, the doubling gap, pass-through decay and fuel separation are dead
+L-SI successor 41 (Opus 5.5), D14 / D18 / D20; Lead brief BOX 79 (2026-11-07 03:58Z). Written 2026-11-07 from 04:05Z (date -u: see
+the commits); FROZEN 2026-11-07 by L-SI successor 42 after RESULTS R116 (packet P-IDEAL-MOVES) landed (trunk 97d17f63): the R116
+premise of §4 is quoted from the landed text (§0); changes after the freeze go to a fixes file only. Sources: docs/si/N5-TROPICAL-box76.md §1-§12 (this lane). This packet
 carries every proof in full and is checked against this text only. Labels: PROVED (L-SI 41, unrefereed) / DEAD (instance,
 machine-checked) / CONDITIONAL (not to sign) / DATA / READING (not to sign). Not a TARGET.md claim. Every statement is about the
 IDEAL model of RESULTS R104's definition only. No statement bounds T polynomially; G-N5-TIME stays OPEN.
@@ -14,7 +14,7 @@ IDEAL model of RESULTS R104's definition only. No statement bounds T polynomiall
 | §2 | Lemma DBL-EQ (a), (b), (c) | PROVED | R113 ALIGN; WINDOW-ONCE |
 | §2 | Lemma PASS-FREEZE | PROVED | R104 definition; R113 ALIGN |
 | §3 | Lemma HIT; Corollary FUEL-EXACT (= FUEL (ii)) | PROVED | R104 definition; R105 ENC, MONO, LOCAL |
-| §4 | Lemma ALT-MIN (a)-(d) | PROVED | R105 ENC, MONO; R116 AND-GATE (pending landing) |
+| §4 | Lemma ALT-MIN (a)-(d) | PROVED | R105 ENC, MONO; R116 AND-GATE |
 | §4 | Lemma TOWER-NEED | PROVED | DBL-EQ, HIT, ALT-MIN, R113 PATH-RISE |
 | §5 | FUEL-NEED; FUEL (i) | CONDITIONAL (not to sign) | L-LOWER's FEEDBACK (b), not landed, not refereed |
 | §6 | DEAD-MAXPLUS, DEAD-DBLGAP, DEAD-DECAY, DEAD-REENTRY | DEAD (instances) | |
@@ -32,10 +32,13 @@ IDEAL model of RESULTS R104's definition only. No statement bounds T polynomiall
     that moves at step t moves to option c_l(s_t), and the order of their keys under s is [s(2l) = c_l(s)] if s(2l) ≠ s(2l + 1) and
     γ_l(j) if both are on option j»; (F0) «on 𝓛^R_d each level-0 mover moves at most once and F(0) ≤ 2»; (PATH-RISE) «Then the number
     of steps at which cv(z) rises is at most P(z) − 1.» [IDEAL-ACYC, any degree, any width]; with R113's notation c_l(s), γ_l(j), F(l).
-- R116 (pending landing) = packet P-IDEAL-MOVES (claude/l-new d86adc86; fixes at 9995f5a2; signed by both referees; at CHECKER C129):
-  Lemma AND-GATE (a) «x ∈ Mv_t iff s_(t−1)(x) ≠ π_(s_(t−1))(x) and π_(s_(t−1))(x) = KP_(s_t)(x)», (b) «If x moves at steps t < t′ and at no
-  step strictly between, then π(x) changes at some step of [t, t′ − 1] … Hence moves(x) ≤ 1 + min(KF_x, PF_x).», (c) «If π_(s_t)(x) = b ≠
-  π_(s_(t−1))(x), then v_(s_t)(x, b) > v_(s_(t−1))(x, b).» [IDEAL-ACYC, x of degree 2]; its notation π_s(x), PF_x. Used ONLY by §4.
+- R116 (LANDED: trunk docs/RESULTS.md at 97d17f63, «### R116 [refereed-only]», CHECKER PASS docs/checker/C129.md; packet
+  P-IDEAL-MOVES), item AND-GATE, quoted in full: «(AND-GATE) at any degree elsewhere, a mover x of degree 2 moves at step t iff s_(t−1)(x) ≠
+  π_(s_(t−1))(x) = KP_(s_t)(x), so moves(x) ≤ 1 + min(KF_x, PF_x), and when π(x) changes at step t to b the value v(x, b) rises strictly at
+  t», with R116's notation «π_s(x) its option of larger Ξ-value under s and PF_x the number of steps t with π_(s_t)(x) ≠ π_(s_(t−1))(x)»
+  and «KF_x the number of steps t with KP_(s_t)(x) ≠ KP_(s_(t−1))(x)». This packet cites its three parts as AND-GATE (a) (the «moves at
+  step t iff …» clause), (b) (the bound «moves(x) ≤ 1 + min(KF_x, PF_x)»), (c) (the clause «when π(x) changes at step t to b the value
+  v(x, b) rises strictly at t»). Used ONLY by §4.
 - Not used: every other RESULTS item; WINDOW-DOUBLE and SEG-WINDOW of P-IDEAL-MOVES (the facts needed are re-proved in §2); L-LOWER's
   lane lemmas except in §5 (CONDITIONAL); docs/lit, docs/sources.
 - Notation. T, s_t, Mv_t := {x : s_t(x) ≠ s_(t−1)(x)}, moves(x) := #{t ∈ [1, T] : x ∈ Mv_t}. On 𝓛^R_d: the pair l is (2l, 2l + 1); a
@@ -114,7 +117,7 @@ IDEAL model of RESULTS R104's definition only. No statement bounds T polynomiall
   - Proof. By MONO a change of cv(y) is a rise; by HIT a rise at t is exactly a move at t on y's old chain. The union over y ∈ U_l gives
     the set; its size is at most the sum of the sizes. ∎
 
-## 4. Lemma ALT-MIN and Lemma TOWER-NEED (PROVED; R105 ENC, MONO; R116 AND-GATE (pending landing); R113 PATH-RISE)
+## 4. Lemma ALT-MIN and Lemma TOWER-NEED (PROVED; R105 ENC, MONO; R116 AND-GATE; R113 PATH-RISE)
 - Lemma ALT-MIN. Hypotheses: IDEAL-ACYC, any degree elsewhere, x a mover of degree 2, any run; y_k := xt(x, k).
   - (a) #{t : π(x) changes at t to k} ≤ R_k(x) for k = 0, 1.
   - (b) PF_x ≤ 2·min(R_0(x), R_1(x)) + 1.
@@ -191,6 +194,6 @@ IDEAL model of RESULTS R104's definition only. No statement bounds T polynomiall
   Each is about the step sequence of R104's IDEAL model (MP-LIN about max-plus recursions). None is an M3/M4 claim, a gauntlet step, or
   a polynomial bound. G-N5-TIME stays OPEN.
 
-## Freeze steps (after R116 lands)
+## Freeze steps (after R116 lands; DONE 2026-11-07 by successor 42, trunk 97d17f63)
 1. Re-quote AND-GATE (a)-(c) from the landed R116 text in §0; if the landed wording differs, update the quotes only.
 2. Re-run experiments/si/box79/check79.sh; commit the frozen packet with its line L-1; from then on changes go to a fixes file only.
