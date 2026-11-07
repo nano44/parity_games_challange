@@ -1,0 +1,2 @@
+seed 30 count 1500 Nmax 14 dmax 5 ONEP False {"genomes": 1500, "cyclic": 1492, "steps": 4502, "C": 2751, "R": 601, "P": 1150, "maxp_over_N": 1.0, "maxT": 9, "BRSEG_viol": 0, "CYC_viol": 0, "TCYC_viol": 0, "F1": 0, "F6": 0, "STRICT": 0, "DOM": 0, "LEVEL0": 0, "K2": 0}
+seed 31 count 1000 Nmax 14 dmax 5 ONEP True {"genomes": 1000, "cyclic": 988, "steps": 2683, "C": 2110, "R": 0, "P": 573, "maxp_over_N": 0.75, "maxT": 8, "BRSEG_viol": 0, "CYC_viol": 0, "TCYC_viol": 0, "F1": 0, "F6": 0, "STRICT": 0, "DOM": 0, "LEVEL0": 0, "K2": 0}
