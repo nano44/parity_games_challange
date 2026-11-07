@@ -123,6 +123,13 @@ DATA / READING. Not a TARGET.md claim; no statement bounds T polynomially; G-N5-
   pclimb.c seed 2, H 7, from H6 + 4 frozen top levels, d 28): T 312, F 2 6 14 30 62 126 222 223 …; levels 0-5 capped and the PULSE-NEST
   requirement for 7 capped levels already met (pair 4 pulses 3-5, pair 5 pulses 2-3), but F(6) = 222 < 254. The stretch STRETCH-NEED
   asks for is reachable while keeping six capped levels; the seventh is not reached.
+- Why the snapshot stops at F(6) = 222 (experiments/si/box80/lvl6_80.py → lvl6_80.out; DATA). In 111 of the 127 6-windows each
+  member of the pair 6 moves once. In the other 16 (window indices ≡ 4 mod 8) neither moves: π never reaches c there, and the next
+  window then starts already on c. Each such window loses 2 flips, so F(6) = 254 − 2·16 = 222 exactly. All 16 have LENGTH 1. They are
+  one-step gaps between consecutive pulses of the pair 5, at a step where the pair 4's b-step lets the next first mover of the pair 5
+  move at once. PULSE-NEST's second clause (every j-window has length ≥ k + 2) forbids them for 7 capped levels. The climb's score
+  counted only pulses (u_2 − u_1), not the gap windows, so it could not see this obstruction. pclimb.c now has WIN=1 (every j-window of
+  length ≥ H − j + 1 for j = 1..H − 1); on the snapshot it scores exactly these 16 deficits. Climbs with WIN=1 run from the snapshot.
 - Closures: every Z_j of H5 and of H6 (j = 0..6) is the whole genome (40 resp. 48 movers).
 
 ## 6. Question (b): a lower bound on the levels per capped level — what is and is not proved

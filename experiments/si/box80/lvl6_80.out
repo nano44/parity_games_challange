@@ -1,0 +1,8 @@
+level 6 F 222 (doubling needs 254) F(j-1) 126 T 312
+  Phi(0) 2 Phi(T) 0 b-steps with Phi(t-1) != 0: 32 of 126; steps moving both: 0; flips without a move: 32
+  already on c                             mover 12: 16 windows
+  already on c                             mover 13: 16 windows
+  moves once                               mover 12: 95 windows
+  moves once                               mover 13: 95 windows
+  no move, pi never c (fuel)               mover 12: 16 windows
+  no move, pi never c (fuel)               mover 13: 16 windows
