@@ -1,6 +1,17 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## RESUME POINT -- successor 11 (L-COMP 11, Opus 5.5), GO 11:02Z 2026-11-07 (handover check a7f9ebad, Lead score 5)
+- Relaunch after any restart: experiments/comp/box28/relaunch_all.sh (starts diskguard, xval_d3 cubes 4 7 8 11 12, q2pieces.sh, commit_loop,
+  box30/relaunch30.sh = lanes B_d32 + D_d28). In a NEW container first: write box30/out/B_d32.unit / D_d28.unit from the last unit in
+  out/<lane>.log (+1) -- .unit files are local only -- and re-add the local excludes (.git/info/exclude: box28/frup, box28/cubes/,
+  box28/log/*.out|*.run, box30/bin/, box30/out/.pid_*, *.unit, *_u<k>.txt|.run), else commit_loop commits binaries.
+- Lane D (Lead 11:02Z): D_d32 SLACKH lane REPLACED by D_d28 = L-LOWER 5 rec/SL41_d28.txt (claude/l-lower eeb25f6e; copy box30/l-lower/
+  SL41_d28.txt, sha1 c1b46c31 checked), GUARD 5, LV 6 (score F(6)), FROZENBELOW=12 (no field of movers 0-11 = pairs 0-5 mutated), seeds
+  350000+. Re-measured: rclimb30 T 290 F 2 6 14 30 62 126 222 158 112 80 ...; replay30 the same; slack (SLACKDBG=7) 0 violations j 1-5.
+  d 32 variant out/seed_SL41_d32.txt (4 TOP-ADD, sha1 c2012dcd; same T/F) prepared, NOT run (no free core).
+- B_d32: resumed at unit 6 (seed 310006), best F(6) 190. Query 2: from c0s0p1q0. xval_d3 cube 3 was already done (xval_d3.txt, b317e04a).
+
 ## FINAL (successor 9, 2026-11-07 05:2xZ by date -u): query 2 handed to L-COMP 10 (finer split); proofs in this scratchpad are not reachable from other sessions.
 - At hand-off: query 2 CERTIFIED cubes 1, 2, 3, 5, 6, 7 and sub-cube c4s1 (log/q2_cert/); open: c0s0..c0s3, c4s0, c4s2, c4s3 (restarts every
   ~40 min on 11-07 killed every multi-hour drup check). Lead 05:18Z: park for good; no relaunch. All my jobs stopped.

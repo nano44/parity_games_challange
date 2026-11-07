@@ -9,3 +9,7 @@ up B_d32 B_d32 out/seed_d32.txt 310000 6 5 6      # 7th capped level at d 32 (H6
 # REPLACED 11:0xZ (Lead 11:02Z: lane D from L-LOWER SL41, score F(6), core-fixed mutations): ENVX="SLACKH=7" up D_d32 D_d32 out/seed_D_d32.txt 340000 6 5 6
 # 07:4xZ: top-truncated seed collapsed (F 2 0 0 ...; log out/C_d23_toptrunc.log); restarted from H6 minus level 21 (remlevel.py)
 # STOPPED 10:2xZ at park (Lead 09:32Z / 10:27Z): up C_d23 C_d23 out/seed_d23_rm21.txt 320100 5 5 5      # six capped levels at d 23
+# 11:1xZ (Lead 11:02Z): lane D_d28 = L-LOWER 5 rec/SL41_d28.txt (eeb25f6e, sha1 c1b46c31; 0 level-1..5 slack violations, F(6) 222, T 290);
+# GUARD 5, score F(6) (LV 6), mutations only on movers >= 12 (FROZENBELOW=12: pairs 0-5 untouched); seeds 350000+. d 32 variant
+# (out/seed_SL41_d32.txt, 4 TOP-ADD) NOT run: no free core (B_d32, D_d28, query 2, xval_d3 on 4 cores).
+ENVX="FROZENBELOW=12" up D_d28 D_d28 out/seed_SL41_d28.txt 350000 6 5 6
