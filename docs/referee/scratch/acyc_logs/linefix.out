@@ -1,0 +1,12 @@
+AC-L1 old occurs 1 at 259
+AC-L2 old occurs 1 at 832
+AC-L3 old occurs 1 at 1656
+AC-L4 old occurs 1 at 1875
+AC-L5 old occurs 1 at 1928
+AC-L1 new occurs in result 1
+AC-L2 new occurs in result 1
+AC-L3 new occurs in result 1
+AC-L4 new occurs in result 1
+AC-L5 new occurs in result 1
+L-1 parens 27 27 | predicted L-2 parens 36 36
+predicted line: sha1 c8ed32a8424ac126f0280c897962cca139ce6d79 2638 bytes; L-1: bb12deec6fb0129b4ea9f5af7dd96d6302c5ca50 2085 bytes

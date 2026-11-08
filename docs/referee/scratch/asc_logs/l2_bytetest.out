@@ -1,0 +1,9 @@
+old in L-1: 1 | new in L-2: 1 | old in L-2: 0 | (consecutive state pair, W-target with Λ fixed) pairs -> (consecutive state pair, W-target or c_W with Λ fixed) pairs
+old in L-1: 1 | new in L-2: 1 | old in L-2: 0 | with fixes entry 1 -> with fixes entries 1-2
+L-1 + 2 changes == L-2: True f109cb69507efd863133a08a2e90096ad2acb7f5 4907 | L-2 f109cb69507efd863133a08a2e90096ad2acb7f5 4907
+L-1 1 L-2 1 | UP-JUMP, UP-B and NOUP under HYPOTHESIS [E-LEV]
+L-1 1 L-2 1 | (only for §6 UP-JUMP, UP-B and NOUP)
+L-1 0 L-2 0 | UP-JUMP and UP-B under HYPOTHESIS [E-LEV]
+L-1 0 L-2 0 | (only for §6 UP-JUMP and UP-B)
+L-1 4 L-2 4 | under [E-LEV]
+parens L-2 116 116 | lines 1
