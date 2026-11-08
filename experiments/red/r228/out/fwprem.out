@@ -1,0 +1,7 @@
+FW4_2.json N 55 M 108 n3 821 (N+7M+10 = 821) formfail 0 xicyc [['W']] elevfail 0 s3own: vs engine 0, vs standard 0, ties 0 T3 17 nonstd 0 badmover 0 noncore 0 iters 18
+FW8_2.json N 123 M 248 n3 1869 (N+7M+10 = 1869) formfail 0 xicyc [['W']] elevfail 0 s3own: vs engine 0, vs standard 0, ties 0 T3 29 nonstd 0 badmover 0 noncore 0 iters 30
+FW12_2.json N 191 M 388 n3 2917 (N+7M+10 = 2917) formfail 0 xicyc [['W']] elevfail 0 s3own: vs engine 0, vs standard 0, ties 0 T3 41 nonstd 0 badmover 0 noncore 0 iters 42
+FW6_3.json N 156 M 315 n3 2371 (N+7M+10 = 2371) formfail 0 xicyc [['W']] elevfail 0 s3own: vs engine 0, vs standard 0, ties 0 T3 30 nonstd 0 badmover 0 noncore 0 iters 31
+FW6_4.json N 238 M 481 n3 3615 (N+7M+10 = 3615) formfail 0 xicyc [['W']] elevfail 0 s3own: vs engine 0, vs standard 0, ties 0 T3 37 nonstd 0 badmover 0 noncore 0 iters 38
+FW8_4.json N 372 M 755 n3 5667 (N+7M+10 = 5667) formfail 0 xicyc [['W']] elevfail 0 s3own: vs engine 0, vs standard 0, ties 0 T3 47 nonstd 0 badmover 0 noncore 0 iters 48
+FW16_2.json N 259 M 528 n3 3965 (N+7M+10 = 3965) formfail 0 xicyc [['W']] elevfail 0 s3own: vs engine 0, vs standard 0, ties 0 T3 53 nonstd 0 badmover 0 noncore 0 iters 54
