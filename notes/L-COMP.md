@@ -1,6 +1,41 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## HANDOVER -- successor 12 (L-COMP 12, Opus 5.5) PARKS 2026-11-08 07:1xZ by date -u (Lead 05:59Z park order; ~450k context)
+### STATE AT PARK: ALL JOBS STOPPED (L7br, L7cr, freezer31, commit_loop, diskguard, monitors). Nothing runs. Everything is DATA.
+### HEADLINE: box 31 (eight capped levels, cap F(7) = 510, d 32) -- NO HIT; every scoring order plateaued (table below).
+Counters: unit = one rclimb31 run of 2e7 proposals (~15 min); set = the lane; scope = rclimb31 LJ=7 at d 32, from HIT7 + 4 TOP-ADD
+(out/seed_HIT7_d32.txt sha1 ad9a39d4: npaths 8, n1 218, sv 105, T 299, F(7) 190). npaths = npaths into pair 7 (L7a/L7b: from q6 =
+roles(6)[1]; others: LJNPMAX max over 12, 13); n1 = length-1 7-windows; sv = slack violations j 4+5 at H 8; caps 7 in every file.
+| lane | settings (all: LJ 7, LJGATE 190, LJGUARD 20:17,34:22, FIX 20,34, NMIN 2) | ~units | final frozen best (box31/out/) | npaths | n1 | sv | T |
+| L7a | FB 0, NMAX 4, anneal .15, RC order | 14 | L7_FRZ_K7099283200044_L7a.txt e7b254bb | 7 | 168 | - | 445 |
+| L7b | FB 0, NMAX 4, anneal .15, RC order | 14 | L7_FRZ_PREROOM_L7b.txt 5168b927 | 6 | 174 | - | 466 |
+| L7d | FB 12 (FB 12 + LJSLACK 8 + LJNPMAX from 04:2xZ) | 13 | L7_FRZ_K70929298210041_L7d.txt 92c1f661 | 7 | 179 | 70 | 410 |
+| L7c -> L7cr | FB 8 + LJSLACK 8 + LJNPMAX + LJORDER room (from 04:57Z) | 10+10 | L7_FRZ_FINAL_L7cr.txt 7562f645 | 7 | 190 | 92 | 423 |
+| L7br | seed, FB 0, NMAX 8, anneal .5, LJSLACK 8 + LJNPMAX + room | 8 | L7_FRZ_FINAL_L7br.txt 741afe4c | 7 | 192 | 79 | 434 |
+Bests over all lanes: npaths 6 (L7b, first 02:29:49Z), n1 168 (L7a), sv 70 (L7d), T 466 (L7b), F(7) 206 (L7br). Cap needs T >= 510,
+n1 = 0, sv = 0 (L-LOWER 9). Reading (mine): random 1-8-edit proposals cannot re-time pairs 0-5 without breaking a lower cap.
+### OTHER RESULTS (DATA)
+- Item 2: L-RED n5v (spec) on HIT7's Γ3 (box29/hit7/HIT7_d28_F254_g3.pg sha1 8a360485): 302 iterations, 1 fallback = n5b's 302 = L + 3;
+  regions == Oink zlk (--verify OK) == n5b; harness verify.py OK (box31/n5v/check_n5v.out). COMPLETE.
+- Phase 2 (fix q6 = 12's options to level 9): one edit 4/4 break level 0 (12 is upstream of movers 0-3); two edits + short climbs
+  (12 runs, 2e6 proposals): caps <= 2; LJNOREAD reaches nr = 0 in 6/6 but no caps (phase2_test.out, phase2b_sum.out). NEGATIVE.
+- Counters: slack j 4/5/6 on the seed = 15/90/217 = L-LOWER slack.py; 217 (slack j 6) != 218 (n1_7) are different counters.
+- fenc (L-LOWER 9, box31/l-lower/l9/fenc.c) = sim6 = replay30 on every genome checked; never use l5/fev.c at d >= 32 (overflow).
+### RELAUNCH (only if the Lead asks; all lines exist in box31/relaunch31.sh, ended lanes commented)
+1. New container: scripts/setup_oink.sh; .git/info/exclude lines as in the resume point below; box31/bin is rebuilt by relaunch31.sh
+   (fenc: gcc -O2 -o box31/bin/fenc box31/l-lower/l9/fenc.c).
+2. Resume points: out/L7br.unit = 9, out/L7cr.unit = 11 (logged at park; .unit files are local: re-write them in a new container).
+3. Exact lane lines (from experiments/comp/box31, RCLIMB=$PWD/bin/rclimb31, via relaunch31.sh's upa):
+   ENVX="LANEANNEAL=0.5 LJ=7 LJGATE=190 LJGUARD=20:17,34:22 FIX=20,34 NMIN=2 NMAX=8 FROZENBELOW=0 LJSLACK=8 LJNPMAX=1 LJORDER=room" upa L7br L7br out/seed_HIT7_d32.txt 550000 6 5 7
+   ENVX="LANEANNEAL=0.15 LJ=7 LJGATE=190 LJGUARD=20:17,34:22 FIX=20,34 NMIN=2 NMAX=4 FROZENBELOW=8 LJSLACK=8 LJNPMAX=1 LJORDER=room" upa L7cr L7cr out/L7_FRZ_PREROOM_L7c.txt 540000 6 5 7
+   (lane31.sh starts from out/<lane>_best.txt when it exists, else from the seed file.) Then upf (freezer31), box28/commit_loop via
+   box28/relaunch_all.sh (it also runs relaunch31.sh; idempotent).
+4. Code: rclimb31.c sha1 dcbb3b44 (options LJ, LJGATE, LJGUARD, LJSLACK, LJSLACKJ, LJNPMAX, LJNOREAD, LJORDER=room); references ref_lj.py
+   310c4f91 / check_lj.py 83aca26c / check_nr.py 4d83108b; all checks 0 mismatches (check_lj_J7*.out, check_nr.out).
+### NEXT (my proposal; the Lead decides): no more blind climbing at level 7; support L-LOWER 9's by-hand level-8 design with replays
+(sim6 + fenc + replay30) and the N5 end-to-end check (box29 pipeline; n5b + n5v + Oink) on any candidate.
+
 ## RESUME POINT -- successor 12 (L-COMP 12, Opus 5.5), updated 2026-11-08 03:4xZ by date -u (GO 02:14Z) -- HANDOVER-READY
 ### RELAUNCH (container restarts every ~40 min; a new container needs steps 1-3)
 1. New container only: scripts/setup_oink.sh (verify.sh needs Oink). Re-add to .git/info/exclude (local only; else commit_loop commits
@@ -698,3 +733,7 @@ AM9 Lemma 3's proof sets D_{dbar} = D cap U_{dtilde} (tex:345), probably a typo 
   Instances: gci3_n24 S3 (phase [3, 15], v 8, |PΔP_i| 6 → 5) and lend107_n32 S3 (odd part 5 → 4).
 - 2026-10-29 (box 19): CONJECTURE CUT-Φ (T35 §4) DEAD. Obstruction: a REL cut can change no path set at all (cycle appearance or σ̄ change
   with ℓ-only effect). Instance: n5-exhaustive/instances/b4_n5_other_0.pg (n 5, S3), cut 0 → 1.
+- 2026-11-08 (box 31, L-COMP 12): PHASE-2 hand edit at level 7 (re-target q6 = 12's options to a level-9 trigger) DEAD as a one- or
+  two-edit repair. Obstruction: 12 is upstream of movers 0-3 (they read 12's value), so any re-target of 12 breaks level 0 (F(0) = 0).
+  Instance: box31/out/L7_FRZ_K7099382600043_L7b.txt (sha1 0e71e029), edits 24 -> 18/19, 25 -> 18/19 (box31/phase2_test.out); two
+  edits + 2e6-proposal climbs reach caps <= 2 (box31/phase2b_sum.out).
