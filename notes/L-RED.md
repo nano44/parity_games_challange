@@ -74,6 +74,8 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     - §6 CORRECTION: wc is a total; per-letter maxW ≤ 3.
     - §7 Addendum 1: RW-SHAPE, RW-1, RW-2, REWIN-ASC SURVIVE. RW-B0 not broken (2,301 re-wins; B0 climb 569 multi-split, no kill).
 - Frozen: r227/inst HOLD2(K)_n84, HOLD3(K)_n125, C2CX4_n23, W86_n77, W14_n75, W68_n66, B0M569_n57 (SHA1SUMS).
+- R227-si90.md (BOX 90, l-si 4ded1e8d): FW4_2 / FW8_2 / FW12_2 / FW6_4 REPRODUCED on own.py (maxP F_(d+2) − 1, depth d, C k + 1); RA-LOG DEAD on
+  two engines. Box90 doc NOT read; (2) S3 / premises and (3) RA-MULT maxm climb left.
 - OPEN / next step: L-NEW 66 box 199 Addendum 2 (SHA from the Lead). Attack «c_y ≤ Σ_(u,b) #values of E(b) ∩ U_y» with a non-consecutive
   re-win counter in rwwt227.py, on W86 / W68 / B0M569 (many non-re-win re-entries). Then a climb on (c_y − that bound).
 - Things only I know:
