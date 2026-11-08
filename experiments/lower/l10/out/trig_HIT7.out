@@ -1,0 +1,12 @@
+mover 2 level 1: w9 trig[39] dec5 x2 | w0 trig[] dec38 x1
+mover 3 level 1: w9 trig[40] dec3 x2 | w8 trig[49] dec49 x1
+mover 4 level 2: w9 trig[25] dec5 x4 | w7 trig[32] dec32 x3
+mover 5 level 2: w0 trig[] dec5 x3 | w9 trig[38, 39] dec49 x2 | w0 trig[] dec38 x2
+mover 6 level 3: w5 trig[9] dec7 x7 | w9 trig[26] dec7 x4 | w9 trig[24, 26] dec7 x4
+mover 7 level 3: w0 trig[] dec7 x7 | w9 trig[27] dec24 x4 | w1 trig[27] dec49 x2 | w1 trig[27] dec38 x2
+mover 8 level 4: w0 trig[] dec31 x8 | w4 trig[16] dec20 x7 | w1 trig[7] dec7 x5 | w1 trig[7] dec24 x4 | w1 trig[7] dec21 x4 | w1 trig[7, 25] dec7 x2 | w9 trig[16] dec20 x1
+mover 9 level 4: w5 trig[21] dec7 x8 | w4 trig[20] dec7 x7 | w4 trig[20] dec24 x4 | w4 trig[20] dec21 x4 | w8 trig[35] dec32 x3 | w8 trig[35] dec49 x2 | w8 trig[35] dec38 x2 | w9 trig[35] dec32 x1
+mover 10 level 5: w3 trig[30] dec9 x15 | w3 trig[15, 30] dec11 x12 | w3 trig[17, 22, 23, 31] dec11 x8 | w2 trig[16, 17, 18] dec11 x8 | w3 trig[22] dec11 x8 | w2 trig[16, 17, 18, 22] dec11 x7 | w3 trig[15, 30, 35] dec11 x4 | w7 trig[30] dec9 x1
+mover 11 level 5: w0 trig[] dec11 x15 | w1 trig[9] dec20 x15 | w1 trig[8] dec9 x8 | w1 trig[8] dec31 x8 | w1 trig[9] dec7 x8 | w1 trig[9] dec32 x4 | w1 trig[9] dec49 x2 | w1 trig[9] dec38 x2 | w5 trig[54] dec20 x1
+mover 12 level 6: w1 trig[13] dec12 x32 | w1 trig[13, 19, 20] dec12 x25 | w1 trig[11, 13] dec20 x16 | w1 trig[11, 19] dec11 x8 | w1 trig[11, 13] dec31 x8 | w1 trig[11, 13] dec7 x8 | w1 trig[8, 11, 13] dec7 x6 | w1 trig[11, 13] dec32 x4 | w1 trig[8, 11, 13] dec24 x4 | w1 trig[8, 11, 13] dec21 x4 | w1 trig[13, 19, 20, 29] dec12 x4 | w1 trig[13, 19, 20, 38, 39] dec12 x2 | w1 trig[11, 13] dec49 x2 | w1 trig[11, 13] dec38 x2 | w2 trig[13, 19, 25, 26, 33] dec12 x1 | w1 trig[8, 11, 13, 40] dec7 x1
+mover 13 level 6: w0 trig[] dec13 x63 | w0 trig[] dec20 x16 | w0 trig[] dec31 x16 | w0 trig[] dec14 x16 | w0 trig[] dec7 x7 | w0 trig[] dec24 x4 | w0 trig[] dec21 x4 | w1 trig[] dec7 x1

@@ -1,5 +1,16 @@
 # L-LOWER notebook
 
+## Successor 10 (Opus 5.5): BOX L10, GO from the Lead 07:02Z 2026-11-08 (handover check 085a821b, score 5)
+### Resume point (07:1xZ, date -u)
+- Product docs/lower/L10-design.md; tools/data experiments/lower/l10/ (stretch.py, stmap.py, need.py, trig.py).
+- Item 1 written (§1): CONJECTURE STRETCH-AND-STACK. Lemma STRETCH (PROVED, lane): idle steps for pairs 0..h-1 keep caps 0..h-1.
+  DATA: HIT7's minimal stretch for h = 8 is T' = 510 exactly (Lemma 3 bound), 219 idle steps = second steps of 7-windows; retrigger
+  bill 261 events (q6 127, q5 63, f5 24, q4 23, ...). Rule: the new q7 moves at every idle step; o(7) flips there; key-fired level >= 8
+  movers + selectors retrigger the lower movers.
+- NEXT: item 2, realize the target at d 32 (clamp + ranksolve on the stretched target; per-event selector routes).
+### Things only I know (successor 10)
+- The stretched target is a deterministic function of HIT7 (stmap.target(D, 8)); out/target_HIT7_H8.txt is its frozen print.
+
 ## Successor 9 HANDOVER (2026-11-08 ~05:0xZ, date -u; written near the park point)
 ### DONE (claude/l-lower; product docs/lower/L9-design.md §0-§4; tools/data experiments/lower/l9/)
 - dd962007 handover check (score 5). 8f717610 §0-§1: L8 §4 recipe insufficient. P-TOWER-FUEL Lemmas 2, 3 at h = 8 give 322 room
