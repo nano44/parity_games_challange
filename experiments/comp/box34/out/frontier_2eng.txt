@@ -1,0 +1,8 @@
+OK C2_NM37_04e8ae09.json own T3 4 maxalt 3 | fix 4 3 | old 4 3
+OK C3_NM83_e5d885a6.json own T3 6 maxalt 3 | fix 6 3 | old 6 3
+OK C4_NM93_ce1b3afb.json own T3 8 maxalt 4 | fix 8 4 | old 8 4
+OK C5_NM95_f9cd9ebc.json own T3 10 maxalt 4 | fix 10 4 | old 10 4
+OK C6_NM100_05cbade8.json own T3 12 maxalt 6 | fix 12 6 | old 12 6
+OK C7_NM106_2a3599c7.json own T3 14 maxalt 6 | fix 14 6 | old 14 6
+OK C8_NM114_5c90fbd4.json own T3 16 maxalt 8 | fix 16 8 | old 16 8
+OK C9_NM122_737fdada.json own T3 18 maxalt 10 | fix 18 10 | old 18 10

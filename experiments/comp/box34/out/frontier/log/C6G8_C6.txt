@@ -87,3 +87,11 @@ kept o N+M 94 C 6 C 6 maxm 2 T3 13 117s
 kept m N+M 91 C 6 C 6 maxm 2 T3 13 117s
 kept m N+M 89 C 6 C 6 maxm 2 T3 13 121s
 kept m N+M 87 C 6 C 6 maxm 2 T3 13 124s
+kept m N+M 85 C 6 C 6 maxm 2 T3 13 128s
+kept m N+M 83 C 6 C 6 maxm 2 T3 13 130s
+kept o N+M 82 C 6 C 6 maxm 2 T3 12 131s
+kept o N+M 81 C 6 C 6 maxm 2 T3 12 133s
+kept o N+M 80 C 6 C 6 maxm 2 T3 12 134s
+kept m N+M 78 C 6 C 6 maxm 2 T3 12 136s
+kept m N+M 76 C 6 C 6 maxm 2 T3 12 136s
+kept o N+M 75 C 6 C 6 maxm 2 T3 12 143s

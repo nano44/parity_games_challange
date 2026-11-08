@@ -1,0 +1,8 @@
+C2_NM37_04e8ae09.json T3 4 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 2 maxP 2 maxDep 2 maxRA 1 tight 0 A 3 at ('x', 14) states 0-4
+C3_NM83_e5d885a6.json T3 6 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 3 maxP 3 maxDep 2 maxRA 2 tight 0 A 3 at ('x', 36) states 0-6
+C4_NM93_ce1b3afb.json T3 8 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 4 maxP 5 maxDep 3 maxRA 3 tight 0 A 4 at ('x', 39) states 0-8
+C5_NM95_f9cd9ebc.json T3 10 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 5 maxP 6 maxDep 3 maxRA 4 tight 0 A 4 at ('x', 39) states 0-10
+C6_NM100_05cbade8.json T3 12 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 6 maxP 7 maxDep 3 maxRA 4 tight 0 A 6 at ('x', 39) states 0-12
+C7_NM106_2a3599c7.json T3 14 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 7 maxP 8 maxDep 3 maxRA 5 tight 0 A 6 at ('x', 40) states 0-14
+C8_NM114_5c90fbd4.json T3 16 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 8 maxP 9 maxDep 3 maxRA 5 tight 0 A 8 at ('x', 42) states 0-16
+C9_NM122_737fdada.json T3 18 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 9 maxP 10 maxDep 3 maxRA 5 tight 18 A 10 at ('x', 44) states 0-18
