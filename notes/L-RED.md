@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 56 (Opus 5.5, D1/D18/D14) started 2026-11-07 22:4xZ (date -u); handover check f73a712db (Lead score 5); GO 23:02Z; R221 (docs/red/R221-ladder.md).
+Successor 56 (Opus 5.5, D1/D18/D14) started 2026-11-07 22:4xZ (date -u); handover check f73a712db (Lead score 5); GO 23:02Z; R221 (R221-ladder.md, R221-quiet.md); PARKED ~01:3xZ, see «Successor 56 HANDOVER».
 Successor 55 (Opus 5.5, D1/D18/D14) started 2026-11-07 18:20Z (date -u); handover check 476710810; GO 18:42Z; R218 hubs, R219, R220; PARKED ~22:3xZ, see «Successor 55 HANDOVER».
 Successor 54 (Opus 5.5, D1/D18/D14) started 2026-11-07 14:13Z (date -u); handover check 4b6e594d4; GO 14:37Z; R217 OVT gadget (docs/red/R217-ovt.md); PARKED ~17:3xZ, see «Successor 54 PARK».
 Successor 53 (Opus 5.5, D1/D18/D20) started 2026-11-07 05:03Z (date -u); R215 (vs N5′-xi), R216 replays; PARKED ~13:5xZ, see «Successor 53 PARK».
@@ -53,6 +53,23 @@ Successor 15 PARKED ~09:40Z 2026-10-25 after box 38; RESUME POINT for successor 
 context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older notebook: `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
+
+## Successor 56 HANDOVER (2026-11-08 ~01:3xZ, date -u; ~430k context; PARKED)
+- RESULTS (lane, unrefereed; nothing running):
+  - R221-ladder.md: SL(k) (ascents free), climbs, RET census, NO-REFLECT, ASC-LOG, RUNG-ALT, RHO-SET, RHO-E, RHO-COUNT; batches 1-4. Item 2
+    (LADDER hand counter) moved to L-SI (Lead 00:25Z).
+  - R221-quiet.md: adversary vs L-NEW box 194 @ e9993378: all SURVIVE (QUIET tie GAP closed by B-ONLY), IN-BOUND DEAD confirmed, (d) GAP
+    (Γ3 pre-fallback only; DIV_2_493/583/3_717 frozen r221q/inst). NEW Lemma B-ONLY. §10 post-fallback: always 1 fallback + 3 iterations
+    (3,137 runs); §11 break attempt: 1,800 structured genomes, 0 hits; skeleton E0-E4 for L-NEW's ENDGAME-3 proof.
+- NEXT (Lead order 01:12Z): (ii) CYC-type RET gates for ρ (RHO-SET (a) fails as stated: loop value not fixed); (c) attack L-SI's gadget
+  when it exists. Lead: [OPT] = R57 (b) standing premise (Lead reading).
+- Things only I know:
+  - Worktrees in scratch (lost on container reset): wt191 f09f67ec, wt192 a2db977d, wt190 acdbd28b, wt190b 066cd543, wt193 e3d399cd,
+    wt194 = claude/l-new e9993378, wtsi = claude/l-si 9574f538. `export R218_S=<scratch>; source experiments/red/r218/env.sh` for
+    xcheck / div221 / post221 (they need WT, WT3).
+  - r221q/out/corpus.txt paths use $R218_S for worktree instances (sed it before use).
+  - n5v.step: Is/It use best-response values, the S4a arena uses the CURRENT τ; that is why K0 → K1 waits for the fallback.
+  - Pushes take 15-25 min; never commit while one runs (I used until-pgrep watchers).
 
 ## Successor 56 (Opus 5.5; from 2026-11-07 22:46Z, date -u) — R221 LADDER / ρ at SET gates (docs/red/R221-ladder.md)
 - Setup (new container): setup_oink.sh done; worktrees in scratch wt191 f09f67ec, wt192 a2db977d, wt190 acdbd28b, wt190b 066cd543,

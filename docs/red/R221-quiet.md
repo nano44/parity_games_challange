@@ -165,3 +165,35 @@ all pads); rpost221.py random genomes; ladclimb.py SCORE=post). Phases = maximal
   improves, and why the Even-top core cycle ends the game in one best-response step). Next step if the Lead wants it: write ENDGAME-3's
   proof from SPEC's text (docs/new/N5-ssi-global.md) with the K-gadget of R117.
 - Instances: the 80 random genomes with 2 post-fallback mover changes are in r221p/out/post_*.json (not frozen as kills; no kill).
+
+## 11. (i) BREAK ENDGAME-3 (Lead 01:12Z): no counterexample; the mechanism as a proof skeleton for L-NEW
+Tools: r221p/spost221.py (structured families aimed at the core), gos.sh. Unit: N5′-xi runs on Γ3(G). Set: 1,800 genomes, 300 per family:
+- esc: 70 % of the Ξ-targets are X, so many gates feed K.
+- noesc: no X targets.
+- deep: d 6-9, width 1-2.
+- dense: degree 3-4.
+- late: every mover starts at its option of LEAST final IDEAL-CYC value, so movers converge late.
+- lvl0: 2-4 extra level-0 movers, degree 3-4.
+Fixed seeds 61-66. Counter: (#fallbacks, post-fallback iterations, post-fallback mover changes, τ changes after the fallback).
+Result: 0 hits. Every run is (1, 3, 0-2, 0) (out/spost_*.txt). With §10: 4,937 runs, 0 counterexamples. Nothing frozen (no kill).
+Skeleton (each step with what the attempts could not violate; S4a = arena step, S4c = fallback, Is / It = improving switch sets of
+σ / τ computed with the opponent's best response, as in box 190 n5v.step):
+- E0. τ is constant on the whole run. Start τ = every gate on its e-pad, K2 → K2. It = ∅ at every iteration (rd3_d4 trace: 0 τ
+  changes; 4,937 runs: 0 τ changes after the fallback). WHY is open: the dual improving set is empty at the S3 start and stays so. L-NEW
+  should prove it from S3-START / TAU3 (R117).
+- E1. K0 → K1 ∈ Is at every state, and S4a never applies it. Genome-independent; this is a READING with the reason, not a proof yet.
+  - Under Odd's best response, K2 → r → K1, so K0 → K1 → s → K1 has Π = {K0} (even, top + 2). K0 → pA → K3 adds K3 (odd, top + 3).
+    So K0 → K1 is improving.
+  - S4a's arena evaluates against the CURRENT τ with K2 → K2. There K0 → pA → K3 → K2 ends in Λ = K2 (reward −3), better for Even than
+    Λ = K1 (reward −5). So the arena keeps K0 → pA.
+  - Hence K0 moves only at a fallback. No family changed this, and the late family (movers converging late) only shifts T3.
+- E2. The first fallback happens exactly when the mover phase has converged, i.e. no σ-change at movers or β's in S4a. REACH3-CYC
+  (CONDITIONAL) gives «Howard steps until the first fallback». S4c then applies Is: K0 → K1, plus β → pad switches that are already
+  improving.
+- E3. Next iteration: K1 → q becomes improving and the arena takes it. K0 K1 q is a cycle with top K0 (top + 2), which does not
+  involve K2, so the current τ and the best response agree. 0-1 mover switches happen alongside.
+- E4. Last iteration: every β → pad → K0 escape and the remaining mover / K3 switches are applied in one S4a step. After it Is = It = ∅.
+  - The data says one step always suffices (4,937 / 4,937). The reason to prove: after E3, every improving σ-switch is an escape into
+    the top cycle or a re-choice among c_W-plays under the fixed all-e τ.
+  - Open sub-question for the proof: can an S4a step leave a NEW improving switch, i.e. a chain effect through an escaped β? None was
+    seen, including deep (d ≤ 9) and dense (degree 4) genomes.
