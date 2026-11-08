@@ -3,7 +3,7 @@
 Score = (depth, maxP, C, -size) from ra227.census (depth = longest RA-chain in letters, maxP = max paths, C = max c_y); size N + M <= CAP.
 Moves: sharp226.mutate (rewire / ranks / start) and the GROW moves of growclimb226 (add an option; add a level-0/1 mover reached by a new option).
 Freezes every strict (depth, maxP, C) gain to out/dc_<CAP>_<SEED>.json and logs (depth, maxP, C, fanin, A, T, N, M).
-Env ORDER=RW scores (rw, wc, rewin) from rwwt227 and freezes any rw > 0 genome to out/rwkill_<SEED>.json. Env ORDER=C scores (C, maxP, depth) instead (the C-EQUIV target). Resumable: RESUME=out/dc_<CAP>_<SEED>.json restarts from the frozen best. Usage: depthclimb227.py SEED CAP ITER START.json"""
+Env ORDER=W scores (wc, -size). Env ORDER=RW scores (rw, wc, rewin) from rwwt227 and freezes any rw > 0 genome to out/rwkill_<SEED>.json. Env ORDER=C scores (C, maxP, depth) instead (the C-EQUIV target). Resumable: RESUME=out/dc_<CAP>_<SEED>.json restarts from the frozen best. Usage: depthclimb227.py SEED CAP ITER START.json"""
 import sys, os, json, random, copy
 H = os.path.dirname(os.path.abspath(__file__)); sys.path[:0] = [H, os.path.join(H, "..", "r226"), os.path.join(H, "..", "r225"), os.path.join(H, "..", "r221")]
 from sharp226 import mutate
@@ -12,6 +12,10 @@ from ra227 import census
 seed, CAP, IT, SG = int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), sys.argv[4]; rng = random.Random(seed)
 size = lambda G: G["N"] + sum(len(o) for o in G["opts"])
 def score(G):
+    if os.environ.get("ORDER") == "W":          # BOX 199's open term W (non-re-win re-entries breaking the RW-WT pattern): maximize wc, then small size
+        import rwwt227; c = rwwt227.census(G, 600)
+        for k in ("depth", "maxP", "C", "fanin", "A"): c.setdefault(k, -1)
+        return (c["wc"], -size(G), 0, 0), c
     if os.environ.get("ORDER") == "RW":         # falsification of L-NEW 66's CONJECTURE RW-WT (BOX 199): maximize rw, then wc
         import rwwt227; c = rwwt227.census(G, 600)
         for k in ("depth", "maxP", "C", "fanin", "A"): c.setdefault(k, -1)
@@ -37,8 +41,9 @@ for it in range(IT):
     if size(Hh) > CAP: continue
     try: check(Hh); s2, c2 = score(Hh)
     except Exception: continue
-    if s2[:3] >= s[:3]:
-        if s2[:3] > s[:3]:
+    kk = 2 if os.environ.get("ORDER") == "W" else 3
+    if s2[:kk] >= s[:kk]:
+        if s2[:kk] > s[:kk]:
             json.dump(Hh, open(f"out/dc{os.environ.get('ORDER', '')}_{CAP}_{seed}.json", "w"))
             print(it, "rw", c2.get("rw"), "wc", c2.get("wc"), "depth", c2["depth"], "maxP", c2["maxP"], "C", c2["C"], "fanin", c2["fanin"], "A", c2["A"], "T", c2["T"], "N", Hh["N"], "M", len(Hh["br"]), flush=True)
         G, s = Hh, s2
