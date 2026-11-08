@@ -386,3 +386,50 @@ Verdict: RW-B0* is NOT proved. Below is what is proved toward it, and the one mi
   - A potential argument on the pre-f segments (their low parts are lex-monotone where Λ is fixed, E-MON3 at the segment's vertices) is
     the natural tool. I did not complete it.
 - DATA unchanged: Bne_t1 = Bne_t2 = 0 and rw2fail = 0 on every instance and sample (A1.3, A2.2, Add. 3).
+
+## Addendum 5 (L-NEW successor 66, 21:50Z by date -u; Lead 21:27Z relays L-SI 47 BOX 90 milestone 2 (MW family, claude/l-si 2d0344d3); Lead 21:37Z relays L-RED 62's kill of RW-WT / RW-WT* / RW-B0 / RW-B0* (claude/l-red 68639e7a, docs/red/R228-box199.md Addendum A))
+### A5.1 DEAD: RW-WT, RW-WT*, RW-B0, RW-B0* (and C-WT's premise)
+- Instance experiments/new/box199/inst/RWX_n95.json (sha1 da8b3a30; N 95, M 233; T3 12). Copy of claude/l-red
+  experiments/red/r228/inst/RWX_n95.json. L-RED 62 checked its premises: R104 form, [E-LEV], S3 standard, all states standard.
+- Re-run on my split199.py (this commit; the counters are unchanged from 42e9c728):
+  - rwfail 31, Bne_t2 31, rw2fail 31, spwfail 31 (unit: re-win / same-pair couple / (v, I, y)). All 31 failures are at multi-split
+    re-wins (rw_multi 31, rw_single 0).
+  - Every PROVED-lemma counter is 0: playfail, kindfail, hwfail, gtfail, trfail, dnfail, rhfail, rh2fail, spfail, wlamfail, and the new
+    rw1fail (RW-1: a failure at a single-split re-win).
+- Witness (L-RED's ids): v = u = mover 17, b = 240, y = 764, wt(y) = mover 20, same-pair y-tops t 3 / t′ 6.
+  - E(wt(y)) ∩ U_y = ∅ at both times, while E(b) ∩ U_y goes ∅ → {647}, and 647 lies on b's route BEFORE y.
+  - So the forced rise of REWIN-HI is on the route, as RW-SHAPE allows: (F1′)-(F4′) of Addendum 4 all occur. The missing step of
+    Addendum 4 is FALSE.
+- Consequences:
+  - Corollary C-WT and the A1.4 consequence REWIN-ASC lose their premise. They stand only as implications from a false conjecture.
+  - RW-1 (single-split re-wins) and RW-SHAPE(*) SURVIVE; RWX_n95 is consistent with them.
+  - C = 2 on RWX_n95: a reduction died, not polynomiality.
+- C6G8_n54 (claude/l-red r228/inst, sha1 52067442, N + M 204): C = 6 (max c_y 6, max split pairs 2). All proved counters 0; RW counters 0
+  there.
+
+### A5.2 MW family (L-SI BOX 90 milestone 2; copies in box199/inst, sha1 = claude/l-si SHA1SUMS)
+| instance (sha1) | T3 | re-entries = re-wins | max c_y (= 2n + 1) | at the argmax: split pairs | y-tops per pair | values of E(wt(y)) ∩ U_y | Z depth / fan / P_Z |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| MW4_2 (7fc9f49f) | 31 | 152 | 9 | 1 | 9 | 9 | 3 / 5 / 10 |
+| MW8_2 (66b84dcb) | 55 | 304 | 17 | 1 | 17 | 17 | 3 / 9 / 18 |
+| MW16_2 (2fce5fd9) | 103 | 608 | 33 | 1 | 33 | 33 | 3 / 17 / 34 |
+| MW32_2 (445031d1) | 199 | 1,216 | 65 | 1 | 65 | 65 | 3 / 33 / 66 |
+- Every lemma counter is 0. Here the RW counters are 0 too (rw2fail 0 on 30,304 same-pair couples at MW32_2), and W = 0: every
+  re-entry is a re-win through ONE split pair.
+- So on MW, SPLIT-COUNT is TIGHT through the high parts of b (Dhi_y(b) = c_y with one pair), and the high parts of wt(y) also grow, 2n + 1.
+  FW grows the split pairs; MW grows the high parts at one pair. Both are linear in n with T3 linear: the bounds hold, nothing breaks.
+- Argmax tool: a scratch variant of split199.py recording (c_y, SPL, per-pair maximum, values of E(wt(y)) ∩ U_y) at the max (v, I, y).
+  It is not committed; its numbers are in the table above.
+
+### A5.3 What survives, and the open core now
+- PROVED (lane, P-N5-CHAIN facts, R125 pending), all SURVIVE L-RED 61 / 62: SPLIT, TRANSFER, REWIN, REWIN-HI, PAIR-SPLIT, SPLIT-COUNT,
+  RW-SHAPE(*), RW-1.
+  - L-RED checked line by line that consecutiveness is unused.
+  - SPL ≤ 3M = M mover edges + 2M gate faces holds because β_g, K0, K1, K3 are frozen in HOW3 (F6, (Core)).
+- The surviving C bound is SPLIT-COUNT:
+      c_y(v, I) ≤ Σ_((u,b) ∈ SPL_y(v,I)) Dhi_y(b, J_b) ≤ 3M · max_b Dhi_y(b, J_b),
+  b ranging over the successors at split vertices, i.e. the first vertices of y-routes.
+- OPEN CORE, sharpest form: the number of distinct high parts (e-letters above y) of the ROUTE vertices b, on one Λ-interval.
+  - These are vertices on v's play just after a split. Their high parts can change on the route before y (RWX_n95) or at wt(y) (MW).
+  - A polynomial bound on max over y, b, J of Dhi_y(b, J) gives C polynomial, hence T3 polynomial (C-EQUIV).
+  - It is not a reduction to one fixed vertex per letter: that form (C-WT) is DEAD.

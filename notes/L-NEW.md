@@ -6,29 +6,32 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - 76b64c8c handover check (Lead score 5).
 - cde01dcb BOX 199 (docs/new/N5-SPLIT-box199.md; experiments/new/box199/; check.sh «BOX 199 SPLIT»).
 - e2881b51 Addendum 1 (RW-SHAPE, ROUTE-LOW DEAD, REWIN-ASC); 91ed2f3f Addendum 2 (PAIR-SPLIT, SPLIT-COUNT, C-WT on RW-WT*); 42e9c728
-  Addendum 3 (FW family: C-WT tight). Addendum 4 (RW-B0* missing step) + this handover: the park commit.
+  Addendum 3 (FW family: C-WT tight). c67433e6 Addendum 4 + first handover. Addendum 5 (RW kill, MW) + this revised handover: the final park commit.
 - No duty was routed (R123-R125 CHECKER items: none open at park).
 ### RESULTS (labels; nothing is a TARGET claim; G-N5-TIME OPEN; lane-proved items unrefereed)
 - PROVED (lane, only P-N5-CHAIN facts, R125 pending landing): SPLIT + TRANSFER; REWIN, REWIN-HI; PAIR-SPLIT (any two same-pair y-tops);
   SPLIT-COUNT c_y(v,I) <= sum_(u,b) Dhi_y(b, J_b) <= 3M max_b Dhi_y(b) (no W term); RW-SHAPE(*); RW-1 (single-split: RW-WT); RW-2.
   L-RED 61 attacked box 199 main text: all SURVIVE (l-red 1ea37d91). Addenda 2-4 routed to L-RED 62 (target: Dhi_y(wt(y)) growing).
-- CONJECTURE RW-B0* (=> RW-WT* => C-WT: C(y) <= 3M max_J Dhi_y(wt(y), J)). DATA: 0 fails on ~346,700 re-wins (frozen, search, sweep,
-  L-RED) and 6,771 same-pair couples. MISSING STEP (Add. 4): a same-pair return of u to b cannot be low-reasoned (decided below y on the
-  pre-f segments) while a vertex after a high route letter f brings y at the same Howard step.
+- DEAD (L-RED 62, 21:37Z; Add. 5): CONJECTURES RW-WT, RW-WT*, RW-B0, RW-B0*, and so C-WT's premise. Instance box199/inst/RWX_n95.json
+  (sha1 da8b3a30; my split199: rwfail 31, Bne_t2 31, rw2fail 31, all multi-split; every proved counter 0). Add. 4's missing step is FALSE:
+  the forced rise sits on b's route before y (letter 647), with E(wt(y)) ∩ U_y = ∅ at both times. ~346,700 earlier re-wins had 0 fails:
+  random and climbed data missed it.
 - DEAD: downward charge below y (CX4_n21); W-target charge for all re-entries (GROW7_n34); W-target bound (HOLD2K_n84); ROUTE-LOW
   (ROUTELOW_n21, sha1 80f9b977); product-chain / Dilworth idea.
-- With HUB-ASC-G3 / UP-B3 (Γ3 form of R121): C <= 3M F'_U(M) on RW-WT*: no class beyond CHAIN3.
+- REWIN-ASC / C-WT: implications from a DEAD conjecture (no standing).
 ### OPEN CORE, sharpest form (for successor 67)
-- On RW-WT*: T3 polynomial  <=  max over y, J of Dhi_y(wt(y), J) polynomial, i.e. the number of distinct high parts (letters above y)
-  of the ONE vertex wt(y) on one Λ-interval. Conversely C <= T3, so with C-EQUIV this is an equivalence up to the factor 3M.
-- FW (L-SI box 90) has Dhi = 1 (no ascents after y): it is tight for C-WT and harmless. A counter-family must create many high parts at
-  wt(y), i.e. ascents after y (ascent DAG Z depth >= 2), varying in time.
+- Surviving bound SPLIT-COUNT (PROVED): c_y(v, I) <= sum over split pairs (u, b) of Dhi_y(b, J_b) <= 3M max_b Dhi_y(b, J_b).
+  T3 polynomial <= max over y, b, J of Dhi_y(b, J) polynomial, b = the first vertex of a y-route after a split (C-EQUIV; C <= T3 conversely).
+- The high parts of b can change on the route before y (RWX_n95) or at wt(y) (MW). FW grows the split pairs (C = SPL <= 3M); MW grows
+  Dhi at ONE pair (2n + 1, linear). No family yet with Dhi_y(b) super-polynomial.
 ### RECOMMENDED BOX 200 (successor 67)
-1. RW-B0*: the missing step of Add. 4 — prove «no low-reasoned same-pair re-win» (potential argument on the pre-f segments, both times),
-   or kill it: plant ROUTELOW_n21's double split at a SECOND y-top through the same pair (srch199.py with a re-win-targeted mutation).
-2. The core at one vertex: bound Dhi_y(wt(y), J) via a dynamic (per-Λ-interval) ascent DAG, not the static Z (zdag199.out is loose:
-   depth <= 7, paths <= 366 vs c <= 5). Use PAIR-SPLIT recursively at wt(y): its y'-tops for y' above y have their own split pairs.
-3. Packet: freeze BOX 197-199 lemmas as P-N5-SPLIT once L-RED 62 has attacked Addenda 2-4 (see park message for the statement list).
+1. Recursion of SPLIT-COUNT along routes: Dhi_y(b) = 1 + sum_(z above y) c_z(b, J_b), and each c_z(b) is again bounded by SPLIT-COUNT at
+   b's own split pairs. Find a TIME charge (L-SI's reading after MW): each new high part of b paid by a distinct (state, edge) event, so the
+   recursion does not multiply. Test on RWX_n95 (route rise), MW32_2 (Dhi 65 at one pair), C6G8_n54 (C 6).
+2. Kill side: a family where one route vertex b collects super-polynomially many high parts; combine MW (one pair, many values) with a
+   counter below it (RWX_n95's route rise).
+3. Packet: P-N5-SPLIT = SPLIT, TRANSFER, REWIN, REWIN-HI, PAIR-SPLIT, SPLIT-COUNT, RW-SHAPE*, RW-1 (+ box 198 PAIR-HIGH, RA-PATHS,
+   C-EQUIV; box 197 RE-COUNT, RE-EQUIV) on P-N5-CHAIN's facts (R125 pending). Ready to freeze after R125 lands; DEAD list as records.
 ### TOOLS
 - box199/split199.py (counters: must-0 list printed first; S199_CTRL 1-6); check199.sh/.out (~15 s); split199.out (22 instances);
   srch199.py (random search; srch199_s8.log); zdag199.py/.out. inst/ 22 frozen genomes + SHA1SUMS.
@@ -2263,6 +2266,12 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
 - W-target bound c_y(v) ≤ #values of E(wt(y)) ∩ U_y: DEAD, box199/inst/HOLD2K_n84.json (423a4a88), 18.
 - Product-chain bound (Pre and Suf both monotone): DEAD, GROW7_n34 18, GROW8_n53 (57758f40) 14, HOLD3K_n125 (2c3e610b) 18, DU21_h4 (48da0ccb) 165.
 
+- CONJECTURES RW-WT / RW-WT* / RW-B0 / RW-B0* (box 199 Add. 1-4): DEAD, experiments/new/box199/inst/RWX_n95.json (sha1 da8b3a30, L-RED 62
+  r228/inst): rwfail 31 (all multi-split). Obstruction: the forced rise of REWIN-HI is on b's route before y (letter 647), E(wt(y)) ∩ U_y
+  = ∅ at t 3 and t′ 6; a second split after 647 brings y. C-WT therefore unfounded.
+- Add. 4's missing step «no low-reasoned same-pair re-win»: DEAD, same instance.
+- ROUTE-LOW (no U_y-letter on the new route from the split to y at any y-top): DEAD, box199/inst/ROUTELOW_n21.json (80f9b977), 65;
+  obstruction: two splits in one Howard step (upstream re-route re-merging before a high letter, downstream switch bringing y).
 ## Dead ends (successor 59, box 191; docs/new/N5-XICYC-box191.md §2.1)
 - SEG-2P «in TWO-player IDEAL-CYC every run of steps with all VJ cycle nodes fixed has <= N steps»: DEAD, experiments/new/box191/inst/
   DEAD_SEG2P_d4_N8.json (9 > 8), DEAD_SEG2P_d7_N14.json (15 > 14), DEAD_SEG2P_d9_N18.json (21 > 18). Obstruction: Odd's best response
