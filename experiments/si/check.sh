@@ -1276,3 +1276,5 @@ bash box88/check88.sh
 bash box89/check89.sh
 # box 90 (FW staircase: P exponential with C 3 on N5'-xi runs; window k: C = k + 1; docs/si/box90-ra.md)
 bash box90/check90.sh
+# box 91 (PARALLEL / PAIR-EXPEL / GATE-RACE census, two engines; docs/si/box91-expel.md)
+bash box91/check91.sh
