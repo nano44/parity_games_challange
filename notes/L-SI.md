@@ -3062,6 +3062,10 @@ in experiments/si/orlens/instances/ (all Oink zlk OK, strategies verified). Oink
   l. 68-87, 365-412); L-RED R217 §2 Lemma OVT-DV (claude/l-red docs/red/R217-ovt.md l. 64-83). VJ00 §4.2 / Friedmann arXiv 1106.0778 §3
   via R118 [VJ] (order ⊴; optimal counterstrategy minimises every vertex's value).
 
+- Box 88 (successor 46): L-RED R225-core.md §1-§6 and R225-leap.md §1-§3 (claude/l-red 029e5d8b; maxdepth definition §2), R226-race.md §3-§4
+  (claude/l-red d08e317a; Lemma SHARP, N2 / switch-depth definitions); L-NEW docs/new/N5-CORE-box197.md §4 and asc197.py l. 1-11, 85-96
+  (claude/l-new 2f4167cd; maxalt counting). Own box 85 §2 (FLIP-U (6′)), box 87 §1-§3. No external literature cited (DS theory NOT opened).
+
 ## Dead ends (details in docs/si/DEAD.md)
 - (succ. 45, box 85) TWO COPIES PER LEVEL (high mirror + LOW copy as E-MON carry in w_l): DEAD as a counter. Obstruction: Lemma FLIP-U
   + Corollary LOW-NULL (a copy below e_SET_l never decides B_l). Instances box85/inst/TC*.json, CL*.json (db6e9b50; TC3m = HP3_mup bits).
@@ -3263,3 +3267,7 @@ Consequence for the bound S10: X now counts play-notion escapes, and cycle-creat
 switches on random small games (1,447 of 4,154), so X is of the order of the iteration count itself there; the bound
 (n(n+1) + n² + 1)(n² + X + 1) is correct but says nothing until X is bounded. Re-measured X: out/adv_msf_esc3.log.
 The msfa/msfc family sweep (out/fam_msfvar.log, bit notion) is withdrawn; rerun with the play notion: out/fam_msfvar2.log.
+- Box 88 (2026-11-08): SET-flip NESTING as a counter source independent of hub heights is DEAD: Corollary NEST-CHARGE (ev ≤ 1 + da + db,
+  = FLIP-U for nesting) charges every type-II flip to U-projected e-set changes at the bit's w / gates. Instance: HP5t (box88/inst; lowest
+  bit 9 flips, k 7, da 13, db 11). Tuned MIRROR maxev 3 / 7 / 9 / 9 at h = 2-5; untuned 5 at h = 3-8. CARRY-TIE (ties at Howard switches)
+  is true but vacuous (tie decisions at every step; low-blind run T = 0): not an obstruction.
