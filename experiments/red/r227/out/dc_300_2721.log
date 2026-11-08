@@ -1,0 +1,3 @@
+start (4, 6, 4, -120) {'fanin': 2, 'A': 7, 'T': 13} N 34 M 86
+1531 depth 4 maxP 8 C 4 fanin 3 A 7 T 13 N 75 M 225
+FINAL cap 300 score (4, 8, 4, -300) N 75 M 225

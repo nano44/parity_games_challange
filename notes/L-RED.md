@@ -70,6 +70,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   cheap (staircase, P = d + 1). Tools ra227.py, depthclimb227.py (ORDER=C scores C first). Worktree <scratchpad>/wt198 = fcba92fc.
 - Item 1b (Lead 17:03Z: L-LOWER BOX L11, l-lower b6da086e) DONE: docs/red/R227-l11.md. TOP-LOOP SURVIVES; slack / sharing reproduced exactly
   (slackcl227.py, sim6 states, own counting); CNFs rebuild byte-equal; scope note: core gates clamped. Worktree <scratchpad>/wtlow = b6da086e.
+- Item 1c (Lead 17:37Z: L-SI BOX 89, l-si 9d44222d) DONE: docs/red/R227-si89.md. Trivial bound SURVIVES; DU21_h4 N2 48 / depth 8 / T 24 reproduced
+  (nest226); C 3, P 3 there; §3 tie parenthetical = READING, false beyond one step by CARRY-TIE.
+- Climb dc 2721 (GROW7, cap 300) FINAL depth 4, maxP 8, C 4 (N 75, M 225). Running: dc 2723 (cap 600, from that best), dcC 2722.
 - Running: depthclimb 2721 (GROW7, depth-first) and ORDER=C 2722 (CX4), cap 300; logs out/dc_300_2721.log, out/dcC_300_2722.log.
 - Worktree: <scratchpad>/wt197 = l-new f98e93ee (detached); run asc197 from inside it with --files <abs path>; remove at park.
 - Sources opened: l-new f98e93ee docs/new/N5-CORE-box197.md (§0 list, E-MON3 l. 23/67, ALT-EQUIV l. 189-234), asc197.py header (run).
