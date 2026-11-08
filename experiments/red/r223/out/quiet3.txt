@@ -1,0 +1,3 @@
+QUIET3 elev-U<=2-N4-8-seed2250 genomes 2000 wov 0 tq 0 maxW3 3 maxT3 6 maxQ3 6 maxU 2
+QUIET3 rand-cyclic-N3-4-seed2251 genomes 3000 wov 0 tq 0 maxW3 3 maxT3 5 maxQ3 5 maxU 5
+QUIET3 rand-cyclic-N5-6-seed2252 genomes 1000 wov 0 tq 0 maxW3 2 maxT3 8 maxQ3 7 maxU 7

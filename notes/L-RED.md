@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 58 (Opus 5.5, D1/D18/D14) started 2026-11-08 04:4xZ (date -u); handover check 512d4fa14 (Lead score 5); GO 05:05Z; R223 (R223-end.md, R223-flip.md, R223-q2.md, R223-reach.md, R223-si85.md, R224-stack.md); see «Successor 58».
+Successor 58 (Opus 5.5, D1/D18/D14) started 2026-11-08 04:4xZ (date -u); handover check 512d4fa14 (Lead score 5); GO 05:05Z; R223 (R223-end.md, R223-flip.md, R223-q2.md, R223-reach.md, R223-si85.md, R224-stack.md, R224-chain.md); PARKED ~08:2xZ at ~430k, see «Successor 58 HANDOVER»; see «Successor 58».
 Successor 57 (Opus 5.5, D1/D18/D14) started 2026-11-08 01:3xZ (date -u); handover check 93876994e (Lead score 5); GO 01:56Z; R222 (R222-lockup.md, R222-cyc.md, R222-end.md); PARKED ~04:3xZ, see «Successor 57 HANDOVER».
 Successor 56 (Opus 5.5, D1/D18/D14) started 2026-11-07 22:4xZ (date -u); handover check f73a712db (Lead score 5); GO 23:02Z; R221 (R221-ladder.md, R221-quiet.md); PARKED ~01:3xZ, see «Successor 56 HANDOVER».
 Successor 55 (Opus 5.5, D1/D18/D14) started 2026-11-07 18:20Z (date -u); handover check 476710810; GO 18:42Z; R218 hubs, R219, R220; PARKED ~22:3xZ, see «Successor 55 HANDOVER».
@@ -56,6 +56,27 @@ context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older note
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
 
+## Successor 58 HANDOVER (2026-11-08 ~08:2xZ, date -u; ~430k context; PARKED)
+- RESULTS (lane, unrefereed; all pushed or in the final push):
+  - R223-end.md: P-N5-END (l-new 131b4c1c) all SURVIVE; W-1 (1E-N3 standing premise missing from «To sign»), T-1 (quotes_end.py reads
+    working tree). R223-flip.md: FLIP-A PROVED (FLIP for every Λ(B) via B-ONLY); non-SET FLIP DEAD (inst/flip223_E_NS_K12_rand_2235_10.json);
+    FLIP-G trivial. R223-q2.md: P-QUIET (cond. on QUIET): Q2 ⊂ Q1. R223-reach.md: ESC3 / W3 / REACH3-CYC SURVIVE on 50,816 cyclic genomes,
+    own Γ3 builder own3.py == gamma3. R223-si85.md: L-SI box 85 FLIP-U / LOW-NULL / POOL-ALT SURVIVE. R224-stack.md: L-LOWER STRETCH +
+    T′ 510 SURVIVE; frozen target off by one (first 7-window 1 step); Lemma PARITY-8. R224-chain.md: box 196 (l-new 08801298) all
+    SURVIVE; CHAIN3 formula exact; QUIET3 measured on Γ3 (6,000 runs, 0); controls for nonstd / cnlow / k2fail / crossflip / emon built
+    by fault injection, 75/75 fire.
+- OPEN: P-decided switch compounding is closed only conditionally (QUIET); the «lag tower» (Q1) is L-SI's open design; PARITY-8's shadow
+  bill for L-LOWER's level-8 ranksolve; QUIET3 data are short runs (T3 ≤ 43), L3 loose.
+- Things only I know:
+  - Worktrees (scratchpad, lost on reset): wtend (l-new 131b4c1c: env WT = WT3), wt196 (l-new 08801298: env W196), wtlow (l-lower 1802a93f:
+    env LOW). Oink BUILT here (tools/oink/build).
+  - Tools: experiments/red/r223/ (sweep_end223.sh, exh223.py (exhaustive N ≤ 2 genomes, 48,816), xend223.py (n5b / n5bxi + Oink),
+    exactl223.py, flip223.py, quiet223.py, own3.py (Γ3 from text), reach223.py, flipu223.py, quiet3.py (own.py, slow on > 300 vertices)),
+    experiments/red/r224/ (stack224.py, okeys224.py, ctrl224.py).
+  - TRAP REPEATED by me: I launched one quiet3 chain with a bare `&` (07:5xZ); killed it by its parent shell (killing the child only moved
+    the chain to its next command). Check: never `&`; `ps -eo pid,args | grep <tool>` after every launch.
+  - Pushes took 15-35 min with other jobs running; never committed during one.
+
 ## Successor 58 (Opus 5.5; from 2026-11-08 04:4xZ, date -u) — R223
 - Trap check: local claude/l-red was 36 behind; ff to 5fdb96b3e. Handover check 512d4fa14 pushed (VERIFY PASS), Lead 5/5, GO 05:05Z.
 - Item 1 DONE (lane): docs/red/R223-end.md. P-N5-END frozen l-new 131b4c1c (sha1 5cae845b…, 22,967 B): every statement SURVIVES.
@@ -79,6 +100,7 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - Item 6 (L-LOWER STRETCH-AND-STACK, l-lower 1802a93f) DONE: docs/red/R224-stack.md. STRETCH SURVIVES (0/42,000); T′ 510 + bill 261 SURVIVE;
   frozen target e031533a BROKEN (first 7-window 1 step; stretch.py first change >= 2 should be >= 3); corrected target 12642daa.
   Lemma PARITY-8 PROVED: R3's suppliers = pair 8 only, >= 217 odd-step shadow moves, >= 147 before idle steps. Tools experiments/red/r224/ (env LOW).
+- Item 7 (box 196, l-new f725af5a + 08801298) DONE: docs/red/R224-chain.md, all SURVIVE; controls built (ctrl224.py).
 - Things only I know: worktree $scratch/wtend (detached 131b4c1c) is container-local; Oink BUILT in this container (tools/oink/build).
   Tools experiments/red/r223/: sweep_end223.sh, exh223.py, xend223.py, exactl223.py (env WT = WT3 = wtend), flip223.py (no env).
 
