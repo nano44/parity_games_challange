@@ -233,3 +233,19 @@ linefix.out, rt_n1.out, L1.txt, P-N5-CHAIN.md (the frozen packet, copied for the
   97-99, LOC-K2-3, l. 198). The step is referee-originated (REFEREE-2 35) and now signed by both referees (REFEREE-2 35, R2-P-N5-CHAIN.md
   W-1; this section). The line should name it in one clause, e.g. «(F-cls3)'s convexity and E-MON3's reason hold for non-core vertices;
   the eight core vertices are constant (W-1, REFEREE-2 35, both referees)». No statement, label or number changes.
+
+### §D follow-up 2: the (Q5) boundary step on Γ3 (REFEREE successor 30; date -u at writing 2026-11-08T13:10Z; Lead 13:02Z; no runs)
+- The omission is real here too, as in P-N5-QUIET (Lead ruling 12:24Z, (b)). (Q5) (frozen text l. 247-249) says «F4′ (… the face is in
+  neither Π, by (Q4)'s argument and simplicity)». F4′ at the face β_g compares continuation values; on the last segment one of them is a
+  boundary value. (Q4)'s argument (l. 234-235) is the cycle argument for β_g ∉ Π(z), z the face's own frozen successor; it does not give
+  β_g ∉ Π of an outside boundary value, and simplicity covers only the path. My lane's first review (§3) did not catch it.
+- Γ3 form (REFEREE-2 35, R2-P-N5-CHAIN.md Add. 3, claude/referee-2 09ce14fc), re-derived; every boundary kind of (Q4) l. 236-238:
+  - e-face boundary: pe_g → e_g → y with y in the B-class (w, S ∖ {e_g}). If y's play passed β_g ∈ C, then by memorylessness it contains
+    β_g's play, with the same cycle and node w, so Π(y) ⊇ Π(β_g) and E(y) ⊇ E(β_g) = S, contradicting E(y) = S ∖ {e_g}. So β_g ∉ Π(y).
+    (pe_g, the face pads and the gate are in no Π by CN2-3, so they add nothing.)
+  - core exit β → pb → K0 → pA → K3 → K2 → r → K1 → s → K1 (constant, σ̄(K2) = r by LOC-K2-3): node K1 (priority 5); on the play only K0
+    (top + 2) and K3 (top + 3) are more relevant than K1 (pb, pA, r, s pads of priority ≤ 2; K2 priority 3), so Π = {K0, K3} ∌ β_g. This
+    agrees with my W-1 derivation (follow-up 1).
+  - w itself: Ω(w) = (w, ∅, 0), Π = ∅.
+- Verdict: the Γ3 form of the step is CORRECT; I SIGN it. With REFEREE-2 35's signature it is signed by both referees. L41 (Lead ruling
+  13:02Z): the line names it (R-G3); I will byte-test L-4. No statement, label or number changes.
