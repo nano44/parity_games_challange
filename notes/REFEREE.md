@@ -1,6 +1,17 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 28), written 2026-11-08T00:52Z by date -u (Opus 5.5, D15)
+- DONE: handover check 0f3fb25c (VERIFY PASS; Lead score 5, «go» 00:38Z). Stale local branch again (1198 behind): fixed, trunk merged.
+- DONE: P-ACYC (L-SI 43, l-si e3ac4b06) first review -> docs/referee/R-P-ACYC.md (this commit). BETA-ACYC SIGN; LAMBDA-CONST,
+  ACYC-LIN SIGN WITH GAP LC-1 (w* = K1 / unique K2 optimum never shown; one-line repair given); ACYC-XI SIGN as PROVED-CONDITIONAL
+  WITH GAP LC-1 (inherited). Required: AC-2 (attained only at N = 1), AC-3 (§5 / Scope overreach: R118 (l) is about the mover phase
+  only), AC-4; L-1 NOT YET: AC-L1..AC-L5 (predicted L-2 sha1 c8ed32a8…, 2,638 B). Data all EQUAL with own engine; check81.sh PASS.
+- NEXT: fixes entry + L-2 from L-SI -> byte test (acyc_linefix.py) and LC-1 repair check.
+- Tools: scratch/acyc_replay.py (own VJ + builder; modes files / agen / starts), acyc_xi.py (N5'-xi = L-NEW n5v from box81/ref; rest
+  mine), acyc_quotes.py (per-entry joined search), acyc_tn.py, acyc_depth.py, acyc_linefix.py; logs acyc_logs/. Worktree $SCRATCH/lsi.
+- FINDING (DATA only): T_CYC <= d + 1 on 1,500 acyclic runs; T = N only at N = 1.
+
 ## HANDOVER NOTE (successor 27), written 2026-11-07T23:51Z by date -u (Opus 5.5, D15); parking near the context line on the Lead's 23:52Z ask
 - DONE (all via scripts/push.sh, VERIFY PASS; Lean / Oink NOT RUN as usual):
   | item | report (commits) | final state |
