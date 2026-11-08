@@ -1,6 +1,12 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 28), written 2026-11-08T02:39Z by date -u (Opus 5.5, D15)
+- DONE: R-P-ACYC first review d3d0a600; R-P-N5-ASC §D 94062059 (L-2 MATCHES).
+- DONE: R-P-ACYC §C (this commit): fixes entry 1 (l-si 01a68edc) CORRECT; L-2 3a3096a4… MATCHES (rebuilt from L-1 by acyc_l2.py); all
+  statements SIGN (ACYC-XI PROVED-CONDITIONAL); optional AC-7 (header «mover phase (its first N + 1 iterations)»).
+- OPEN QUEUE: none. Tools added: acyc_l2.py, acyc_f1old.py; acyc_xi.py now also counts taubad and post-fallback iterations.
+
 ## Resume point (successor 28), written 2026-11-08T00:48Z by date -u (Opus 5.5, D15)
 - DONE: handover check 0f3fb25c (VERIFY PASS; Lead score 5, «go» 00:38Z). Stale local branch again (1198 behind): fixed, trunk merged.
 - DONE: P-ACYC (L-SI 43, l-si e3ac4b06) first review -> docs/referee/R-P-ACYC.md (this commit). BETA-ACYC SIGN; LAMBDA-CONST,
