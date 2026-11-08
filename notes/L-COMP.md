@@ -15,9 +15,16 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 4. Re-arm the monitor (FROZEN npaths < 6, HITS, dead lanes, commit_loop «push exit»).
 ### LANES (box31/README.md; rclimb31.c 46c1746c; ref ref_lj.py 53b22e78; checks check_lj*.out, check_nr.out: 0 mismatches)
 - Common C = LANEANNEAL 0.15 LJ 7 LJGATE 190 LJGUARD 20:17,34:22 FIX 20,34 NMIN 2 NMAX 4; lane31.sh args 6 5 7; seed out/seed_HIT7_d32.txt.
-  L7a FB 0 (500000+), L7b FB 0 (510000+): baseline, unchanged. L7c, L7d: relaunch31.sh ALREADY has the Lead-approved switch (02:53Z, 03:43Z):
+  L7a FB 0 (500000+), L7b FB 0 (510000+): baseline, unchanged. L7c (now L7cr, below), L7d: relaunch31.sh ALREADY has the Lead-approved switch (02:53Z, 03:43Z):
   L7c = FB 8 + LJSLACK 8 + LJNPMAX 1, L7d = FB 12 + LJSLACK 8 + LJNPMAX 1; it takes effect at their next (re)start (score scale changes;
   freezer31 keeps a per-lane max).
+  APPLIED 04:2xZ (no container restart since 02:25Z; L7c/L7d had not improved since 03:24Z/03:11Z; Lead 02:46Z: timing my call, never
+  interrupt an improving lane): L7c stopped at unit 9, L7d at unit 8 (partial bests kept if higher; logged), relaunched; env confirmed.
+- 04:57Z (Lead 04:57Z, ROOM lane): L7c ENDED; its best frozen as out/L7_FRZ_PREROOM_L7c.txt (sha1 75514342). NEW LANE L7cr = from that
+  file, seeds 540000+, C + FROZENBELOW 8 + LJSLACK 8 + LJNPMAX 1 + LJORDER room: order (caps, g, -sv, -n1, -npaths, T, F(7)) = caps*1e18 +
+  g*1e17 - sv*1e14 - n1*1e11 - np*1e9 + T*1e4 + F (gate kept right after caps). rclimb31.c sha1 dcbb3b44 (ref_lj.py 310c4f91, check_lj.py
+  83aca26c): check_lj_J7_room.out = L7c best + 40 mutants + 34 L7 frozen files, 75 genomes, 0 mismatches; without LJORDER bit-identical.
+  New lane name because the room scale differs: lane best and freezer per-lane max stay consistent. Monitor/relaunch use L7cr, not L7c.
 - Score options in rclimb31 (all off = the launched score, bit-identical): LJSLACK=H (slack j 4,5 term), LJNOREAD=t:x.. (readers of t),
   LJNPMAX=1 (npaths = max over movers 12, 13, role-free; Lead 03:43Z, because q6 can switch to 13).
 - Phase 2 (fix q6's options to level 9): one-edit test (phase2_test.out) and two-edit + short-climb test (b) (phase2b_sum.out): NEGATIVE,

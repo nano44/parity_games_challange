@@ -35,9 +35,14 @@ for p in files:
     else:
         tup, cp, q = r
         if os.environ.get('LJSLACK'):
-            enc = tup[0] * 10**18 + tup[1] * 10**17 + max(tup[2], -99) * 10**15 + max(tup[3], -999) * 10**12 + max(tup[4], -999) * 10**9 + min(tup[5], 99999) * 10**4 + min(tup[6], 9999)
-            ok = (lj is not None and svm is not None and sc == enc and T == tup[5] and F[J] == tup[6] and -int(svm.group(1)) == tup[3] and -int(lj.group(4)) == tup[4]
-                  and -int(lj.group(3)) == tup[2] and int(lj.group(1)) == cp); rs = f"{tup} caps {cp} q {q}"
+            if os.environ.get('LJORDER') == 'room':   # tup = (caps, g, -sv, -n1, -np, T, F)
+                enc = tup[0] * 10**18 + tup[1] * 10**17 + max(tup[2], -999) * 10**14 + max(tup[3], -999) * 10**11 + max(tup[4], -99) * 10**9 + min(tup[5], 99999) * 10**4 + min(tup[6], 9999)
+                ok = (lj is not None and svm is not None and sc == enc and T == tup[5] and F[J] == tup[6] and -int(svm.group(1)) == tup[2] and -int(lj.group(4)) == tup[3]
+                      and -int(lj.group(3)) == tup[4] and int(lj.group(1)) == cp); rs = f"{tup} caps {cp} q {q}"
+            else:
+                enc = tup[0] * 10**18 + tup[1] * 10**17 + max(tup[2], -99) * 10**15 + max(tup[3], -999) * 10**12 + max(tup[4], -999) * 10**9 + min(tup[5], 99999) * 10**4 + min(tup[6], 9999)
+                ok = (lj is not None and svm is not None and sc == enc and T == tup[5] and F[J] == tup[6] and -int(svm.group(1)) == tup[3] and -int(lj.group(4)) == tup[4]
+                      and -int(lj.group(3)) == tup[2] and int(lj.group(1)) == cp); rs = f"{tup} caps {cp} q {q}"
             bad += not ok; print(f"{os.path.basename(p)} C score {sc} T {T} sv {svm.group(1) if svm else None} | ref {rs} | {'OK' if ok else 'MISMATCH'}"); continue
         enc = tup[0] * 10**17 + tup[1] * 10**16 + max(tup[2], -999) * 10**13 + max(tup[3], -999) * 10**10 + min(tup[4], 99999) * 10**4 + min(tup[5], 9999)
         ok = (lj is not None and sc == enc and T == tup[4] and F[J] == tup[5] and int(lj.group(1)) == cp and (int(lj.group(2)) if int(lj.group(2)) >= 0 else 2 * J - 2) == q

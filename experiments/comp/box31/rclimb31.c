@@ -137,6 +137,9 @@ static long ljscore(int T, int J){
     int H=atoi(getenv("LJSLACK")), sv=0, gd; char*p=strdup(getenv("LJSLACKJ")? getenv("LJSLACKJ") : "4,5");
     for(char*t=strtok(p,",");t;t=strtok(NULL,",")) sv+=slack_viol(T, atoi(t), H-atoi(t), &gd); free(p); LJSV=sv;
     long long npc2 = np>99? 99 : np; long svc = sv>999? 999 : sv;
+    if(getenv("LJORDER") && !strcmp(getenv("LJORDER"),"room")) /* Lead 04:57Z (L7c): ROOM order (caps, g, -sv, -n1, -npaths, T, F(J)) =
+         caps*1e18 + g*1e17 - min(sv,999)*1e14 - min(n1,999)*1e11 - min(np,99)*1e9 + T*1e4 + F(J) */
+      return (long)caps*1000000000000000000L + (long)g*100000000000000000L - svc*100000000000000L - n1c*100000000000L - npc2*1000000000L + Tc*10000L + Fc;
     return (long)caps*1000000000000000000L + (long)g*100000000000000000L - npc2*1000000000000000L - svc*1000000000000L - n1c*1000000000L + Tc*10000L + Fc; }
   return (long)caps*100000000000000000L + (long)g*10000000000000000L - npc*10000000000000L - n1c*10000000000L + Tc*10000L + Fc; }
 /* L-COMP 12 (Lead 03:31Z, phase-2 test (b)): env LJNOREAD="t:x1,x2,.." -> nr = number of movers x_i whose Xi-closure (both options,

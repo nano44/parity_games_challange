@@ -18,6 +18,7 @@ def ref(D, J, gate, guard):
     if os.environ.get('LJSLACK'):
         H = int(os.environ['LJSLACK']); js = [int(x) for x in os.environ.get('LJSLACKJ', '4,5').split(',')]
         sv = sum(slack(S, O, j, H - j) for j in js); tup = tup[:3] + (-sv,) + tup[3:]
+        if os.environ.get('LJORDER') == 'room': tup = (tup[0], tup[1], tup[3], tup[4], tup[2], tup[5], tup[6])   # (caps, g, -sv, -n1, -np, T, F)
     return tup, caps(F), q
 def slack(S, O, j, need):
     """L-LOWER l5/slack.py's per-level count (PULSE u2 - u1 < need, GAP u1(next) - u2 < need), on sim6's (S, O); a window with < 2 moves
