@@ -9,6 +9,9 @@
 - fev.c invalid at d ≥ 32 (int128 overflow, F(31) wrong on HIT7_lift_d32); fenc.c (ENC, exact) is the second simulator from d 32 on.
 - NEXT: stage ROOM (as G7_best → SL41) then FUEL. Decide with the Lead whether L-COMP 12's climb scores the room conditions,
   to avoid duplicating it.
+- 02:5xZ: sched.py targets are capped iff alpha_(h-2) = 1; sat_all.sh's a100/a101 are uncapped -> stopped; sat_capped.sh (8 capped
+  h3d5 instances) runs as 3 tracked workers (logs out/sat/capK.log); h3d4 a110 proof regenerated in $SP/sat for IGNDEL=1 DRUP.
+  Lead 02:13Z approved the counter-target redirect.
 ### Things only I know (successor 9)
 - sched.py with alpha [1, 0, 0] has an idle core step (h 3, t 2 → 3): helpers must move there or the run ends.
 - fenc build: gcc -O2 -o $SP/fenc experiments/lower/l9/fenc.c (scratchpad).

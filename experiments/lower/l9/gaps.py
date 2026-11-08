@@ -11,5 +11,5 @@ D = rd(sys.argv[1]); lm = int(sys.argv[2]) if len(sys.argv) > 2 else 8
 S, O = run(D); T = len(S) - 1; print('T', T)
 for l in range(lm):
     ch = [t for t in range(1, T + 1) if O[t][l] != O[t - 1][l]]
-    cuts = [1] + ch + [T + 1]; g = [b - a for a, b in zip(cuts, cuts[1:])]
+    cuts = ([1] if not ch or ch[0] != 1 else []) + ch + [T + 1]  # a change at step 1 opens the second window; g = [b - a for a, b in zip(cuts, cuts[1:])]
     print(f'o({l}): F {len(ch)} windows of level {l+1}: {len(g)} gaps hist {sorted(Counter(g).items())} len<2: {sum(1 for x in g if x < 2)}')

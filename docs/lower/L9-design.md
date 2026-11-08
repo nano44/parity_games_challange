@@ -31,6 +31,10 @@ Labels: PROVED (lane) / CONJECTURE / DATA / DEAD / READING. Model and notation a
   HIT7's 6-windows (o(5)-gaps; o(5) is a function of pairs 0-5 only) have lengths 2 (91), 3 (27), 4 (9), summing to 299. Each
   6-window holds two o(6) changes, and these must be ≥ 2 steps apart, also across window boundaries. So the 6-windows average
   ≥ 4 steps, and the run of pairs 0-5 itself must be stretched from 299 to ≥ 510 steps.
+- Counting convention (Lead 02:20Z reconciliation): o(6) changes already at step 1 on HIT7, so the 7-windows are [1, 2), [2, 5), …,
+  [299, 300); 218 of the 255 have length 1 (gaps.py, fixed at this commit not to open a 0-length window when the first change is at
+  step 1). This equals L-COMP 12's n1_7 = 218 (guard_l6.windows). My 02:11Z «127 + 90 = 217» counted only gaps between consecutive
+  changes and missed the last window [299, 300) (length 1: after step 299 the run ends). 218 is right.
 - Exact obstruction to L8 §4 as written (PROVED by the counting above). No construction that keeps HIT7's trajectory of movers 0-11
   (with any change at levels ≥ 6) reaches F(7) = 510. At least 211 steps must be inserted into the run of pairs 0-5. At each
   inserted step a free lower mover must hold although under the same pair-0-5 state it moved in HIT7, so its chain must read a
@@ -61,6 +65,23 @@ Labels: PROVED (lane) / CONJECTURE / DATA / DEAD / READING. Model and notation a
   An (h + 1)-capped tower from an h-capped one re-times every capped level j ≥ 2 so that its wait profile takes the place of
   level j + 1's profile in the h-tower, and puts the new top level at (f 0, q 1). In the tight form (the binary counter with every
   first mover key-fired) q_j waits 2^(h−1−j) in an h-tower. SL41 and HIT7 are not tight: T 290 and 299 against the lower bound 254.
+
+## 3. The counter target is sched.py's sequential target; which alpha patterns are capped (DATA + READING)
+- The tight form of §1 is a binary counter. Every first mover is key-fired and q_l moves one step after the last move of the levels
+  above. That is l7/sched.py's sequential target, the one the L8 §2 helper searches (hsched*, hsat) were run on (Lead 02:13Z question:
+  yes, it is the same target). So the inductive question «level h + 1 from level h» is exactly: for which d is sched(h, α) realizable,
+  and how does the least d grow with h.
+- DATA (sched.py, all α ∈ {0, 1}^(h−1) for h = 2..5, plus α = (0, …, 0) for h = 6..8; unit = target; scope = the stored schedule):
+  - the target is capped (F(l) = 2^(l+2) − 2 for l < h) iff α_(h−2) = 1 (h ≥ 3): 2 of 2 at h = 3, 4 of 8 at h = 4, 8 of 16 at h = 5;
+  - with α_(h−2) = 0 it has F(h − 1) < cap and idle core steps (all-zero α: F(h − 1) = 12, 26, 56, 118, 244, 498 for h = 3..8, and
+    h − 2 idle steps). The loss comes from the initial nested windows (sched.py starts every pair joined at 1 with key 0).
+- Consequence for L8 §2. At h = 3 only α = (α₁, α₂) ∈ {(1, 0), (1, 1)} (strings «1,1,0», «1,1,1») are capped targets. The h = 3,
+  d = 4 «NONE in all four α» row therefore matters only for a110 and a111. Their status from STATUS_at_park.txt:
+  - a110: UNSAT by hsat, DRUP NOT VERIFIED in default mode;
+  - a111: UNSAT by 4 cubes, not DRUP-checked.
+  So «h = 3 needs d ≥ 5» is NOT verified (a101, the one DRUP-verified instance, has an uncapped target). The h3d5 runs now go
+  through sat_capped.sh (the 8 capped instances only: a110, a111 × gate cases 0-3); the a100/a101 runs of sat_all.sh were stopped
+  at 02:5xZ (no cube decided).
 
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All are about the IDEAL
