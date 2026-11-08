@@ -31,10 +31,12 @@ Labels: PROVED (lane) / CONJECTURE / DATA / DEAD / READING. Model and notation a
   HIT7's 6-windows (o(5)-gaps; o(5) is a function of pairs 0-5 only) have lengths 2 (91), 3 (27), 4 (9), summing to 299. Each
   6-window holds two o(6) changes, and these must be ≥ 2 steps apart, also across window boundaries. So the 6-windows average
   ≥ 4 steps, and the run of pairs 0-5 itself must be stretched from 299 to ≥ 510 steps.
-- Counting convention (Lead 02:20Z reconciliation): o(6) changes already at step 1 on HIT7, so the 7-windows are [1, 2), [2, 5), …,
-  [299, 300); 218 of the 255 have length 1 (gaps.py, fixed at this commit not to open a 0-length window when the first change is at
-  step 1). This equals L-COMP 12's n1_7 = 218 (guard_l6.windows). My 02:11Z «127 + 90 = 217» counted only gaps between consecutive
-  changes and missed the last window [299, 300) (length 1: after step 299 the run ends). 218 is right.
+- Counting convention (Lead 02:20Z reconciliation). On HIT7, o(6) flips already at step 1, so the first 7-window holds only s_0 and
+  no step: length 0. The 255 7-windows are therefore 1 of length 0, 218 of length 1 and 36 longer (gaps.py: hist (0, 1), (1, 218)).
+  A length-0 window admits no change of o(7), so it is a violation as well: 219 violations in all. L-COMP 12's n1_7 = 218 counts the
+  length-1 windows only, and both counts are right for what they count. A level-7 cap needs both removed: the first o(6) flip at a
+  step ≥ 3, and no length-1 window. My 02:11Z «127 + 90 = 217» counted only gaps between consecutive flips, missing the last window
+  [299, 300) and the empty first one.
 - Exact obstruction to L8 §4 as written (PROVED by the counting above). No construction that keeps HIT7's trajectory of movers 0-11
   (with any change at levels ≥ 6) reaches F(7) = 510. At least 211 steps must be inserted into the run of pairs 0-5. At each
   inserted step a free lower mover must hold although under the same pair-0-5 state it moved in HIT7, so its chain must read a
