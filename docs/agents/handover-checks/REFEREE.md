@@ -1,25 +1,28 @@
 # Handover check: REFEREE
 
-## successor 28 (2026-11-08T00:12Z by date -u; Opus 5.5, D15; predecessor successor 27, handover d4b39be0)
+## successor 29 (2026-11-08T05:24Z by date -u; Opus 5.5, D15; predecessor successor 28, handover 85947935)
 Measured from the repository at the time of writing, not recalled.
 
 ### 1. Branch, head, distance to trunk
-- Trap check: local claude/referee was STALE (1198 commits behind origin). `git fetch --unshallow`, fetch, checkout claude/referee,
-  `git merge --ff-only origin/claude/referee`: `git branch --show-current` = claude/referee; HEAD = origin/claude/referee = d4b39be0.
-- At d4b39be0: 2 ahead / 124 behind trunk claude/vibrant-johnson-nxvvxo 37a4855e (merge-base af752251).
-- Merged trunk 37a4855e with a normal merge 878faaf6: 3 ahead / 0 behind before this file's commit.
+- Trap check: local claude/referee checked out, `git merge --ff-only origin/claude/referee` = already up to date;
+  `git branch --show-current` = claude/referee; HEAD = origin/claude/referee = 85947935.
+- At 85947935: 7 ahead / 43 behind trunk claude/vibrant-johnson-nxvvxo 8f490d7a (merge-base 94062059).
+- Merged trunk 8f490d7a with a normal merge 40a22024: 8 ahead / 0 behind before this file's commit.
 
-### 2. Open work and next step of each
-- Inherited queue: none open (successor 27: P-TOWER-FUEL and P-N5-ASC complete; a later P-N5-ASC L-2 would get a byte test).
-- P-ACYC (L-SI 43), full independent first review, after «go». Frozen object claude/l-si e3ac4b06 (ancestor of origin/claude/l-si,
-  checked). docs/si/P-ACYC.md sha1 0e9edcfda3e3a68dee63ff01427d526b14c67bc4, 16,852 B; L-1 docs/si/P-ACYC-line-L1.txt sha1
-  bb12deec6fb0129b4ea9f5af7dd96d6302c5ca50, 2,085 B (both match the brief, measured with git show | sha1sum / wc -c).
-  Next: re-derive BETA-ACYC (Γ, Γ3), LAMBDA-CONST, ACYC-LIN, ACYC-XI; FIRST FALLBACK vs SPEC S4/S4c; premise quotes vs trunk
-  docs/RESULTS.md by script; §5 scope reading; replay §6 sets A/B/CONTROL with my own simulator in docs/referee/scratch/; DATA rule
-  clause by clause on L-1; TARGET.md diff. Report docs/referee/R-P-ACYC.md. docs/referee-2/ not read for this packet before my
-  verdict (ls docs/referee-2 | grep -i acyc: 0 files).
+### 2. Open work and next step of each (all after «go», in the Lead's order)
+- A. P-N5-ASC L-4 byte test (gates R121): claude/l-new a744677e (ancestor of origin/claude/l-new, checked),
+  docs/new/P-N5-ASC-line-L4.txt sha1 4017305a34eac21615ba8f172a9b899544d25659, 5,198 B (measured: git show | sha1sum / wc -c).
+  Next: rebuild L-3 + R5 with scratch/asc_l3.py and the R5 strings in R-P-N5-ASC.md §E, byte-compare, write §F.
+- A2. P-ACYC L-4 = L-3 (03453361) + R-G + R-B byte test: waiting for the SHA from the Lead (L-SI 45 writes it; predicted
+  sha1 85bb221f…, 3,080 B). Next: check each replacement vs successor 28's LC-1 text and REFEREE-2 G-1 / W-1; write R-P-ACYC.md §E.
+- B. P-N5-QUIET L-2 byte test: waiting for the Lead. Next: check every QT-L1..QT-L6 string (Form B accepted, so no fixed sha
+  prediction); write R-P-N5-QUIET.md §C.
+- C. P-N5-END (L-NEW 63) full independent first review: frozen claude/l-new 131b4c1c (ancestor, checked), docs/new/P-N5-END.md
+  sha1 5cae845b1da1a1c40b52e73da6edae3d6aadbf29, 22,967 B (measured). Next: re-derive E0-E4, TERM-XI, ENDGAME-3, ENDGAME-3-N5,
+  EXACT-L, END-T3; premise quotes by script; own-engine replay; DATA rule (line requirements, no L-1 yet); TARGET.md diff.
+  docs/referee-2/ not read for this packet before my verdict.
 
-### 3. docs/GAPS.md rows relevant to me (trunk 37a4855e)
+### 3. docs/GAPS.md rows relevant to me (trunk 8f490d7a)
 - REFEREE owns no row. Row the N5 packets feed into: G-N5-TIME (major, owner «L-NEW (L-LIT T22; referees later)», open).
 
 ### 4. Three owner rulings that most constrain me (verbatim, docs/DECISIONS.md), with DECISIONS-INDEX status
@@ -32,7 +35,7 @@ Measured from the repository at the time of writing, not recalled.
    > We have reset the weekly usage, so we can again work faster no?
 
 ### 5. One trap that bit this lane, and the check that prevents it
-- Trap (again this restart): stale local branch (1198 behind origin). Check: fetch, ff-only, `git branch --show-current` and
-  `git rev-parse HEAD origin/claude/referee` equal before any push.sh.
-- Trap (s26/s27): the DATA rule applies to my own fix texts, and RESULTS sub-entries are wrapped (single-line quote search gives a
-  false NONE). Check: every number in a replacement line comes from my own script first; quote search on joined lines (asc_quotes.py).
+- Trap (successor 28, three times): wrong time strings written from memory. Check: `D=$(date -u ...)` pasted into the text in the
+  same command (this file's time came that way).
+- Trap (s27/s28): stale local branch at restart. Check: fetch, ff-only, `git branch --show-current` and
+  `git rev-parse HEAD origin/claude/referee` equal before any push.sh (done above; equal at 85947935).
