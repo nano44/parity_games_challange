@@ -104,6 +104,36 @@ satisfying Lemmas 2, 3 at H; scope = the stored start)
   falls from 262 to 210, i.e. 0.83 F(6), not below 0.7 F(6). So no level-8 target was built. Status for OSC-ROOM″'s question
   «share bounded below 1»: below 1 yes (0.74 at h = 7, 0.66 at h = 6, both DATA). No share near H6's 0.66 found at h = 7. No law.
 
+## 5. ROOM_R2's level-8 target and fixed-rank exact questions (Lead 22:45Z decision (b); DATA, exact)
+- Target: slackt.py on rec/ROOM_R2_A190_d28.txt (55ecfc2e), H = 8: least bill 210 (= billfloor's bound), T′ 510, 192 idle steps in
+  191 gaps, F(0..7) = 2 6 14 30 62 126 254 510, slack 0. out/S8_R2_core.txt sha1 fd5b112c73fd16c9569aa43459e5cd4969b10f81 (tsat
+  format out/S8_R2_tsat.txt 7ad35167). Core gates of levels 0-6 are semantically equal to HIT7's and the bases' (same joined bits);
+  level 7 joined 0 as in core8. It agrees with core8 (c6e19673) on rows 0-20; the first differing row is 21.
+- Encoder: L-COMP 13's enc32.py, read-only copy l12/enc32_lcomp.py (from claude/l-comp b63119fc, sha1 a8c4f5e3). Question «W0-R»:
+  wiring and ranks of the base genome FIXED; signs, helper gates, helper starts and helper states free; core start = row 0; core
+  gates from the base. --prefix t: rows 0..t only. fscan.sh finds the first UNSAT prefix (CaDiCaL); drupcheck.py re-solves it with
+  Glucose4 + proof, runs l8/sat/drup.c, then deletes proof and CNF (CNF sha1 kept; same command regenerates it).
+- Bases (d 32): seed rec/LCOMP_seed_W0_d32.txt (L-COMP's W0 seed, sha1 c0b65c48), C4 l10/rec/L10_C4_final_score144_solved.txt
+  (42fef4dd), C10 l10/rec/L10_C10_osc_final_solved.txt (3ef36801), and SEED_R2 rec/SEED_R2_d32.txt (bb30e201: ROOM_R2 lifted to d 32
+  by l9/lift.py, then the same 28 entries changed as L-COMP's seed differs from HIT7_lift_d32: level-7 gates, top helpers' signs /
+  gates / starts).
+  | base | target | first UNSAT prefix t | DRUP (S8_R2 target) | single-mover drops that make it SAT |
+  | --- | --- | --- | --- | --- |
+  | seed | core8 | 5 (= L-COMP's) | (L-COMP: VERIFIED) | — |
+  | seed | S8_R2 | 5 | VERIFIED, 6,194 lemmas; CNF 9c32c5f6 | 11, 12, 13, 14, 15 |
+  | C4 | core8 / S8_R2 | 7 / 7 | VERIFIED, 25 lemmas; CNF 0a73a1d7 | 13 (f6) |
+  | C10 | core8 / S8_R2 | 7 / 7 (= L-COMP's) | VERIFIED, 0 lemmas (unit propagation); CNF 91937d79 | 11 (f5; = L-COMP's) |
+  | SEED_R2 | core8 / S8_R2 | 1 / 1 | VERIFIED, 367 lemmas; CNF 5be5839f | 12, 13 (q6, f6) |
+  Scope of every UNSAT: that base's wiring and ranks, the stated target's rows 0..t, enc32's model (R104 rules, validated by L-COMP
+  against fenc / sim6 / replay30). Nothing is claimed about other wirings or ranks. No SAT model at full length: no HIT.
+- Comparison core8 vs ROOM_R2: NO measurable difference. Every base dies at t ≤ 7, inside the 21 rows the two targets share, with
+  the same culprit. The lower floor (210 vs 262) concerns retriggers spread over the whole run; fixed-wiring bases built for HIT7 /
+  core8 fail at the start-up holds (rows 1-7: idle steps where pair 6 must wait) before any of that matters. SEED_R2 fails earlier
+  (t 1): ROOM_R2's own ranks move q6 / f6 at step 1, where the target holds them.
+- Reading. The fixed-rank tests confirm that the binding obstruction is in the first window (the f6 / f5 start-up holds of L10 §2f,
+  §3d), and it is the same for both targets. A comparison of the targets needs a base that realizes their common prefix (rows
+  0-20); none exists. So the floor reduction is untested by exact means. It is neither refuted nor supported.
+
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All are about the IDEAL
 model's step sequence (R104's definition) on 𝓛^R_d and its F-profile. Not M3, not a step-4 pass, not a TARGET.md claim.

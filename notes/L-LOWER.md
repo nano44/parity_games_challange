@@ -1,5 +1,35 @@
 # L-LOWER notebook
 
+## Successor 11 HANDOVER (2026-11-08 ~23:3xZ, date -u; parking after BOX L12 (b), Lead 22:45Z «then park with a handover»)
+### DONE (claude/l-lower; products docs/lower/L11-osc.md, docs/lower/L12-slack.md; tools experiments/lower/l11/, l12/)
+- a22adadd handover check (5/5). L11 (b6da086e; correction §7 88d30071 / 57c04e6d after L-RED R227, which upheld TOP-LOOP):
+  tight h = 3 targets UNSAT at d 4, DRUP VERIFIED; d 5 out of reach; TOP-LOOP PROVED (lane); no realized h = 4-7 tower is tight;
+  helpers shared across all levels in every realized tower. OSC-ROOM sharpened to OSC-ROOM′.
+- L12 §1-§3 (867f827f): Lemma BILL-FLOOR (PROVED, lane): the least-bill re-timing of HIT7 for level 8 = core8 (c6e19673) with
+  bill 262, so slack cannot help, and OSC-ROOM′ is DEAD for re-timings. OSC-ROOM″ = the bill tracks adjacent o(h−1) changes.
+- L12 §4 (3d72097c): Lemma ADJ-COUNT (PROVED, lane) A ≥ 2k − 1 − C. ROOM CLIMB (room.c, 6 × 85 min): floor 262 → 210
+  (0.83 F(6)), then a plateau. Frozen ROOM_R1 0d7d29e6, ROOM_R2 55ecfc2e, ROOM_R4 516857e3 (F(7) 252!), ROOM_R5 (d 32) e6435e21;
+  3 simulators agree on all of them.
+- L12 §5 (this push): ROOM_R2's level-8 target S8_R2 (fd5b112c, floor 210) vs core8 under L-COMP's enc32 W0-R fixed-rank questions.
+  Same first UNSAT step and culprit for seed (5; 11-15), C4 (7; f6) and C10 (7; f5); SEED_R2 (bb30e201) fails at 1 (q6 / f6).
+  The 4 UNSATs on S8_R2 are DRUP VERIFIED. The targets share rows 0-20 and every base dies by t 7, so there is no measurable difference.
+### IN FLIGHT: none (pgrep empty at park).
+### NEXT (successor)
+- The binding obstruction is the first window: the start-up holds of f6 / f5 (rows 1-7, common to core8 and S8_R2). Any
+  level-8 attempt must first realize rows 0-20 of either target. Candidate box: an exact prefix gadget (L-COMP's gadget.py /
+  osc.py with free wiring on a few helpers, T0 ≈ 21) on the SEED_R2 or seed base.
+- Alternatively: a climb scored on BOTH the floor and F(7) (ROOM_R4 has F(7) 252, HIT7 190).
+- Open labels: CONJECTURE OSC-ROOM″ (L12 §3); CONJECTURE STRETCH-AND-STACK (L10) still open; G-N5-TIME OPEN.
+### Things only I know (successor 11)
+- tsat.py (l11) builds hsat-type instances for ANY clamped core target; helper gates are SAT variables. Glucose4 decides about 30k
+  vars / 100k clauses in about 45 s, but stalls at about 70k vars (d 5, h 3), even on SAT instances.
+- pysat Glucose4 with_proof writes the proof to a temp file (~300 MB in 45 s; an hour fills the disk allowance). Cadical195 ignores
+  interrupt() (runs to the task limit). drup.c prints VERIFIED only on a final refutation.
+- room.c's score A equals 507 − C exactly on every best (ADJ-COUNT tight): it is really maximizing core steps C.
+- enc32 needs ~7 GB RAM for full T 510 at d 32; prefixes ≤ 40 are tiny (seconds). Base core gates must match the target's joined
+  bits (checked: HIT7, ROOM_R2 and the bases agree on levels 0-6; level 7 joined 0).
+- l6/tight.py shadows any tight.py on the import path (renamed mine to ttarget.py).
+
 ## Successor 11 (Opus 5.5): BOX L11, GO from the Lead 12:38Z 2026-11-08 (handover check a22adadd, score 5)
 ### Resume point (12:4xZ, date -u)
 - Product: docs/lower/L11-osc.md (to write); tools experiments/lower/l11/: tight.py (TIGHT H-capped core target from a capped
