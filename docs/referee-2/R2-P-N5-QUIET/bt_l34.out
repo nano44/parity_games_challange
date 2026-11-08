@@ -1,0 +1,16 @@
+== QUIET L-3: base 559cdffc fed89346 5131 B -> d9b5e610300927fd0e8c1ec8567ee1fb68758df7 5429 B
+  R-L: old in current 1, new in target 1
+  R-U: old in current 1, new in target 1
+  R-B: old in current 1, new in target 1
+  R-Q: old in current 1, new in target 1
+  R-T: old in current 1, new in target 1
+  R-G: old in current 1, new in target 1
+  target == base + pairs: True; parens 103 103; pipes 0; lines 1
+== QUIET L-4: base 87603d07 d9b5e610 5429 B -> 0809da259cc54e3cec1fdf455070620314d4e622 5433 B
+  R-B2: old in current 1, new in target 1
+  target == base + pairs: True; parens 103 103; pipes 0; lines 1
+== CHAIN L-4: base 219e3933 c484795c 8450 B -> a69c8aa96fb0b67c6c0a3f6d11670a0b57ba9331 9082 B
+  R-G3: old in current 1, new in target 0
+  R-W: old in current 1, new in target 1
+  R-B3: old in current 1, new in target 1
+  target == base + pairs: True; parens 174 174; pipes 0; lines 1
