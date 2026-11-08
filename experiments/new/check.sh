@@ -1073,4 +1073,11 @@ if [ "$r199" -eq 0 ] && [ -z "$d199" ] && ! grep -v "^ctrl" box199/check199.out 
 else
   echo "BOX 199 SPLIT check: FAILED (check199.sh exit $r199)"; echo "$d199" | head -30; echo "$run199" | tail -15; exit 1
 fi
+# P-N5-SPLIT (L-NEW successor 67): frozen packet + sources, P-N5-CHAIN premise, tools / outputs / instances / engine against box199/split.pins (DOCS/ = docs/new/)
+pinS=$(cd box199 && sed 's#DOCS/#../../../docs/new/#' split.pins | sha1sum -c --quiet 2>&1) || true
+if [ -z "$pinS" ]; then
+  echo "P-N5-SPLIT: packet and $(wc -l < box199/split.pins) pinned files match split.pins: PASS"
+else
+  echo "P-N5-SPLIT check: FAILED"; echo "$pinS" | head -20; exit 1
+fi
 rm -rf "$tmp"

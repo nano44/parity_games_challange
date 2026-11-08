@@ -1,4 +1,4 @@
-# Handover check: L-NEW (successor 67, Opus; session started 2026-11-08 22:36Z, written 2026-11-08T22:38Z by date -u)
+# Handover check: L-NEW (successor 67, Opus; session started about 2026-11-08 22:37Z (first date -u read 22:38Z; an earlier «22:36Z» here was an estimate, corrected), written 2026-11-08T22:38Z by date -u)
 Overwrites successor 66's answers (history in git). Each answer measured from the repository at writing (commands named).
 Predecessor: successor 66, parked at l-new 3015f5dc (section «HANDOVER (successor 66, …)» at the top of notes/L-NEW.md).
 
