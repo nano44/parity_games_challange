@@ -532,3 +532,597 @@ ck i 5309998 n 2655000 maxA 0 maxT3 2 hist {'0': 2655000} err 0 3244s
 ck i 5319998 n 2660000 maxA 0 maxT3 2 hist {'0': 2660000} err 0 3251s
 ck i 5329998 n 2665000 maxA 0 maxT3 2 hist {'0': 2665000} err 0 3258s
 ck i 5339998 n 2670000 maxA 0 maxT3 2 hist {'0': 2670000} err 0 3265s
+ck i 5349998 n 2675000 maxA 0 maxT3 2 hist {'0': 2675000} err 0 3272s
+ck i 5359998 n 2680000 maxA 0 maxT3 2 hist {'0': 2680000} err 0 3280s
+ck i 5369998 n 2685000 maxA 0 maxT3 2 hist {'0': 2685000} err 0 3286s
+ck i 5379998 n 2690000 maxA 0 maxT3 2 hist {'0': 2690000} err 0 3292s
+ck i 5389998 n 2695000 maxA 0 maxT3 2 hist {'0': 2695000} err 0 3298s
+ck i 5399998 n 2700000 maxA 0 maxT3 2 hist {'0': 2700000} err 0 3304s
+ck i 5409998 n 2705000 maxA 0 maxT3 2 hist {'0': 2705000} err 0 3311s
+ck i 5419998 n 2710000 maxA 0 maxT3 2 hist {'0': 2710000} err 0 3317s
+ck i 5429998 n 2715000 maxA 0 maxT3 2 hist {'0': 2715000} err 0 3323s
+ck i 5439998 n 2720000 maxA 0 maxT3 2 hist {'0': 2720000} err 0 3329s
+ck i 5449998 n 2725000 maxA 0 maxT3 2 hist {'0': 2725000} err 0 3335s
+ck i 5459998 n 2730000 maxA 0 maxT3 2 hist {'0': 2730000} err 0 3340s
+ck i 5469998 n 2735000 maxA 0 maxT3 2 hist {'0': 2735000} err 0 3346s
+ck i 5479998 n 2740000 maxA 0 maxT3 2 hist {'0': 2740000} err 0 3353s
+ck i 5489998 n 2745000 maxA 0 maxT3 2 hist {'0': 2745000} err 0 3359s
+ck i 5499998 n 2750000 maxA 0 maxT3 2 hist {'0': 2750000} err 0 3365s
+ck i 5509998 n 2755000 maxA 0 maxT3 2 hist {'0': 2755000} err 0 3372s
+ck i 5519998 n 2760000 maxA 0 maxT3 2 hist {'0': 2760000} err 0 3378s
+ck i 5529998 n 2765000 maxA 0 maxT3 2 hist {'0': 2765000} err 0 3384s
+ck i 5539998 n 2770000 maxA 0 maxT3 2 hist {'0': 2770000} err 0 3390s
+ck i 5549998 n 2775000 maxA 0 maxT3 2 hist {'0': 2775000} err 0 3396s
+ck i 5559998 n 2780000 maxA 0 maxT3 2 hist {'0': 2780000} err 0 3403s
+ck i 5569998 n 2785000 maxA 0 maxT3 2 hist {'0': 2785000} err 0 3409s
+ck i 5579998 n 2790000 maxA 0 maxT3 2 hist {'0': 2790000} err 0 3415s
+ck i 5589998 n 2795000 maxA 0 maxT3 2 hist {'0': 2795000} err 0 3421s
+ck i 5599998 n 2800000 maxA 0 maxT3 2 hist {'0': 2800000} err 0 3428s
+ck i 5609998 n 2805000 maxA 0 maxT3 2 hist {'0': 2805000} err 0 3434s
+ck i 5619998 n 2810000 maxA 0 maxT3 2 hist {'0': 2810000} err 0 3440s
+ck i 5629998 n 2815000 maxA 0 maxT3 2 hist {'0': 2815000} err 0 3446s
+ck i 5639998 n 2820000 maxA 0 maxT3 2 hist {'0': 2820000} err 0 3452s
+ck i 5649998 n 2825000 maxA 0 maxT3 2 hist {'0': 2825000} err 0 3458s
+ck i 5659998 n 2830000 maxA 0 maxT3 2 hist {'0': 2830000} err 0 3464s
+ck i 5669998 n 2835000 maxA 0 maxT3 2 hist {'0': 2835000} err 0 3470s
+ck i 5679998 n 2840000 maxA 0 maxT3 2 hist {'0': 2840000} err 0 3475s
+ck i 5689998 n 2845000 maxA 0 maxT3 2 hist {'0': 2845000} err 0 3481s
+ck i 5699998 n 2850000 maxA 0 maxT3 2 hist {'0': 2850000} err 0 3487s
+ck i 5709998 n 2855000 maxA 0 maxT3 2 hist {'0': 2855000} err 0 3493s
+ck i 5719998 n 2860000 maxA 0 maxT3 2 hist {'0': 2860000} err 0 3499s
+ck i 5729998 n 2865000 maxA 0 maxT3 2 hist {'0': 2865000} err 0 3505s
+ck i 5739998 n 2870000 maxA 0 maxT3 2 hist {'0': 2870000} err 0 3511s
+ck i 5749998 n 2875000 maxA 0 maxT3 2 hist {'0': 2875000} err 0 3517s
+ck i 5759998 n 2880000 maxA 0 maxT3 2 hist {'0': 2880000} err 0 3524s
+ck i 5769998 n 2885000 maxA 0 maxT3 2 hist {'0': 2885000} err 0 3530s
+ck i 5779998 n 2890000 maxA 0 maxT3 2 hist {'0': 2890000} err 0 3537s
+ck i 5789998 n 2895000 maxA 0 maxT3 2 hist {'0': 2895000} err 0 3543s
+ck i 5799998 n 2900000 maxA 0 maxT3 2 hist {'0': 2900000} err 0 3551s
+ck i 5809998 n 2905000 maxA 0 maxT3 2 hist {'0': 2905000} err 0 3557s
+ck i 5819998 n 2910000 maxA 0 maxT3 2 hist {'0': 2910000} err 0 3563s
+ck i 5829998 n 2915000 maxA 0 maxT3 2 hist {'0': 2915000} err 0 3570s
+ck i 5839998 n 2920000 maxA 0 maxT3 2 hist {'0': 2920000} err 0 3576s
+ck i 5849998 n 2925000 maxA 0 maxT3 2 hist {'0': 2925000} err 0 3583s
+ck i 5859998 n 2930000 maxA 0 maxT3 2 hist {'0': 2930000} err 0 3589s
+ck i 5869998 n 2935000 maxA 0 maxT3 2 hist {'0': 2935000} err 0 3596s
+ck i 5879998 n 2940000 maxA 0 maxT3 2 hist {'0': 2940000} err 0 3602s
+ck i 5889998 n 2945000 maxA 0 maxT3 2 hist {'0': 2945000} err 0 3609s
+ck i 5899998 n 2950000 maxA 0 maxT3 2 hist {'0': 2950000} err 0 3615s
+ck i 5909998 n 2955000 maxA 0 maxT3 2 hist {'0': 2955000} err 0 3621s
+ck i 5919998 n 2960000 maxA 0 maxT3 2 hist {'0': 2960000} err 0 3627s
+ck i 5929998 n 2965000 maxA 0 maxT3 2 hist {'0': 2965000} err 0 3633s
+ck i 5939998 n 2970000 maxA 0 maxT3 2 hist {'0': 2970000} err 0 3639s
+ck i 5949998 n 2975000 maxA 0 maxT3 2 hist {'0': 2975000} err 0 3645s
+ck i 5959998 n 2980000 maxA 0 maxT3 2 hist {'0': 2980000} err 0 3651s
+ck i 5969998 n 2985000 maxA 0 maxT3 2 hist {'0': 2985000} err 0 3657s
+ck i 5979998 n 2990000 maxA 0 maxT3 2 hist {'0': 2990000} err 0 3663s
+ck i 5989998 n 2995000 maxA 0 maxT3 2 hist {'0': 2995000} err 0 3669s
+ck i 5999998 n 3000000 maxA 0 maxT3 2 hist {'0': 3000000} err 0 3675s
+ck i 6009998 n 3005000 maxA 0 maxT3 2 hist {'0': 3005000} err 0 3680s
+ck i 6019998 n 3010000 maxA 0 maxT3 2 hist {'0': 3010000} err 0 3686s
+ck i 6029998 n 3015000 maxA 0 maxT3 2 hist {'0': 3015000} err 0 3693s
+ck i 6039998 n 3020000 maxA 0 maxT3 2 hist {'0': 3020000} err 0 3699s
+ck i 6049998 n 3025000 maxA 0 maxT3 2 hist {'0': 3025000} err 0 3705s
+ck i 6059998 n 3030000 maxA 0 maxT3 2 hist {'0': 3030000} err 0 3711s
+ck i 6069998 n 3035000 maxA 0 maxT3 2 hist {'0': 3035000} err 0 3717s
+ck i 6079998 n 3040000 maxA 0 maxT3 2 hist {'0': 3040000} err 0 3723s
+ck i 6089998 n 3045000 maxA 0 maxT3 2 hist {'0': 3045000} err 0 3729s
+ck i 6099998 n 3050000 maxA 0 maxT3 2 hist {'0': 3050000} err 0 3736s
+ck i 6109998 n 3055000 maxA 0 maxT3 2 hist {'0': 3055000} err 0 3742s
+ck i 6119998 n 3060000 maxA 0 maxT3 2 hist {'0': 3060000} err 0 3748s
+ck i 6129998 n 3065000 maxA 0 maxT3 2 hist {'0': 3065000} err 0 3754s
+ck i 6139998 n 3070000 maxA 0 maxT3 2 hist {'0': 3070000} err 0 3760s
+ck i 6149998 n 3075000 maxA 0 maxT3 2 hist {'0': 3075000} err 0 3766s
+ck i 6159998 n 3080000 maxA 0 maxT3 2 hist {'0': 3080000} err 0 3772s
+ck i 6169998 n 3085000 maxA 0 maxT3 2 hist {'0': 3085000} err 0 3778s
+ck i 6179998 n 3090000 maxA 0 maxT3 2 hist {'0': 3090000} err 0 3784s
+ck i 6189998 n 3095000 maxA 0 maxT3 2 hist {'0': 3095000} err 0 3790s
+ck i 6199998 n 3100000 maxA 0 maxT3 2 hist {'0': 3100000} err 0 3796s
+ck i 6209998 n 3105000 maxA 0 maxT3 2 hist {'0': 3105000} err 0 3801s
+ck i 6219998 n 3110000 maxA 0 maxT3 2 hist {'0': 3110000} err 0 3806s
+ck i 6229998 n 3115000 maxA 0 maxT3 2 hist {'0': 3115000} err 0 3813s
+ck i 6239998 n 3120000 maxA 0 maxT3 2 hist {'0': 3120000} err 0 3819s
+ck i 6249998 n 3125000 maxA 0 maxT3 2 hist {'0': 3125000} err 0 3825s
+ck i 6259998 n 3130000 maxA 0 maxT3 2 hist {'0': 3130000} err 0 3832s
+ck i 6269998 n 3135000 maxA 0 maxT3 2 hist {'0': 3135000} err 0 3839s
+ck i 6279998 n 3140000 maxA 0 maxT3 2 hist {'0': 3140000} err 0 3845s
+ck i 6289998 n 3145000 maxA 0 maxT3 2 hist {'0': 3145000} err 0 3851s
+ck i 6299998 n 3150000 maxA 0 maxT3 2 hist {'0': 3150000} err 0 3857s
+ck i 6309998 n 3155000 maxA 0 maxT3 2 hist {'0': 3155000} err 0 3863s
+ck i 6319998 n 3160000 maxA 0 maxT3 2 hist {'0': 3160000} err 0 3869s
+ck i 6329998 n 3165000 maxA 0 maxT3 2 hist {'0': 3165000} err 0 3875s
+ck i 6339998 n 3170000 maxA 0 maxT3 2 hist {'0': 3170000} err 0 3881s
+ck i 6349998 n 3175000 maxA 0 maxT3 2 hist {'0': 3175000} err 0 3887s
+ck i 6359998 n 3180000 maxA 0 maxT3 2 hist {'0': 3180000} err 0 3893s
+ck i 6369998 n 3185000 maxA 0 maxT3 2 hist {'0': 3185000} err 0 3898s
+ck i 6379998 n 3190000 maxA 0 maxT3 2 hist {'0': 3190000} err 0 3904s
+ck i 6389998 n 3195000 maxA 0 maxT3 2 hist {'0': 3195000} err 0 3910s
+ck i 6399998 n 3200000 maxA 0 maxT3 2 hist {'0': 3200000} err 0 3917s
+ck i 6409998 n 3205000 maxA 0 maxT3 2 hist {'0': 3205000} err 0 3923s
+ck i 6419998 n 3210000 maxA 0 maxT3 2 hist {'0': 3210000} err 0 3929s
+ck i 6429998 n 3215000 maxA 0 maxT3 2 hist {'0': 3215000} err 0 3935s
+ck i 6439998 n 3220000 maxA 0 maxT3 2 hist {'0': 3220000} err 0 3941s
+ck i 6449998 n 3225000 maxA 0 maxT3 2 hist {'0': 3225000} err 0 3947s
+ck i 6459998 n 3230000 maxA 0 maxT3 2 hist {'0': 3230000} err 0 3952s
+ck i 6469998 n 3235000 maxA 0 maxT3 2 hist {'0': 3235000} err 0 3958s
+ck i 6479998 n 3240000 maxA 0 maxT3 2 hist {'0': 3240000} err 0 3965s
+ck i 6489998 n 3245000 maxA 0 maxT3 2 hist {'0': 3245000} err 0 3972s
+ck i 6499998 n 3250000 maxA 0 maxT3 2 hist {'0': 3250000} err 0 3978s
+ck i 6509998 n 3255000 maxA 0 maxT3 2 hist {'0': 3255000} err 0 3985s
+ck i 6519998 n 3260000 maxA 0 maxT3 2 hist {'0': 3260000} err 0 3992s
+ck i 6529998 n 3265000 maxA 0 maxT3 2 hist {'0': 3265000} err 0 3999s
+ck i 6539998 n 3270000 maxA 0 maxT3 2 hist {'0': 3270000} err 0 4006s
+ck i 6549998 n 3275000 maxA 0 maxT3 2 hist {'0': 3275000} err 0 4013s
+ck i 6559998 n 3280000 maxA 0 maxT3 2 hist {'0': 3280000} err 0 4019s
+ck i 6569998 n 3285000 maxA 0 maxT3 2 hist {'0': 3285000} err 0 4025s
+ck i 6579998 n 3290000 maxA 0 maxT3 2 hist {'0': 3290000} err 0 4032s
+ck i 6589998 n 3295000 maxA 0 maxT3 2 hist {'0': 3295000} err 0 4038s
+ck i 6599998 n 3300000 maxA 0 maxT3 2 hist {'0': 3300000} err 0 4044s
+ck i 6609998 n 3305000 maxA 0 maxT3 2 hist {'0': 3305000} err 0 4051s
+ck i 6619998 n 3310000 maxA 0 maxT3 2 hist {'0': 3310000} err 0 4057s
+ck i 6629998 n 3315000 maxA 0 maxT3 2 hist {'0': 3315000} err 0 4063s
+ck i 6639998 n 3320000 maxA 0 maxT3 2 hist {'0': 3320000} err 0 4069s
+ck i 6649998 n 3325000 maxA 0 maxT3 2 hist {'0': 3325000} err 0 4075s
+ck i 6659998 n 3330000 maxA 0 maxT3 2 hist {'0': 3330000} err 0 4081s
+ck i 6669998 n 3335000 maxA 0 maxT3 2 hist {'0': 3335000} err 0 4087s
+ck i 6679998 n 3340000 maxA 0 maxT3 2 hist {'0': 3340000} err 0 4092s
+ck i 6689998 n 3345000 maxA 0 maxT3 2 hist {'0': 3345000} err 0 4098s
+ck i 6699998 n 3350000 maxA 0 maxT3 2 hist {'0': 3350000} err 0 4104s
+ck i 6709998 n 3355000 maxA 0 maxT3 2 hist {'0': 3355000} err 0 4110s
+ck i 6719998 n 3360000 maxA 0 maxT3 2 hist {'0': 3360000} err 0 4116s
+ck i 6729998 n 3365000 maxA 0 maxT3 2 hist {'0': 3365000} err 0 4122s
+ck i 6739998 n 3370000 maxA 0 maxT3 2 hist {'0': 3370000} err 0 4127s
+ck i 6749998 n 3375000 maxA 0 maxT3 2 hist {'0': 3375000} err 0 4133s
+ck i 6759998 n 3380000 maxA 0 maxT3 2 hist {'0': 3380000} err 0 4139s
+ck i 6769998 n 3385000 maxA 0 maxT3 2 hist {'0': 3385000} err 0 4145s
+ck i 6779998 n 3390000 maxA 0 maxT3 2 hist {'0': 3390000} err 0 4151s
+ck i 6789998 n 3395000 maxA 0 maxT3 2 hist {'0': 3395000} err 0 4156s
+ck i 6799998 n 3400000 maxA 0 maxT3 2 hist {'0': 3400000} err 0 4162s
+ck i 6809998 n 3405000 maxA 0 maxT3 2 hist {'0': 3405000} err 0 4167s
+ck i 6819998 n 3410000 maxA 0 maxT3 2 hist {'0': 3410000} err 0 4173s
+ck i 6829998 n 3415000 maxA 0 maxT3 2 hist {'0': 3415000} err 0 4180s
+ck i 6839998 n 3420000 maxA 0 maxT3 2 hist {'0': 3420000} err 0 4186s
+ck i 6849998 n 3425000 maxA 0 maxT3 2 hist {'0': 3425000} err 0 4192s
+ck i 6859998 n 3430000 maxA 0 maxT3 2 hist {'0': 3430000} err 0 4198s
+ck i 6869998 n 3435000 maxA 0 maxT3 2 hist {'0': 3435000} err 0 4204s
+ck i 6879998 n 3440000 maxA 0 maxT3 2 hist {'0': 3440000} err 0 4210s
+ck i 6889998 n 3445000 maxA 0 maxT3 2 hist {'0': 3445000} err 0 4215s
+ck i 6899998 n 3450000 maxA 0 maxT3 2 hist {'0': 3450000} err 0 4221s
+ck i 6909998 n 3455000 maxA 0 maxT3 2 hist {'0': 3455000} err 0 4227s
+ck i 6919998 n 3460000 maxA 0 maxT3 2 hist {'0': 3460000} err 0 4232s
+ck i 6929998 n 3465000 maxA 0 maxT3 2 hist {'0': 3465000} err 0 4238s
+ck i 6939998 n 3470000 maxA 0 maxT3 2 hist {'0': 3470000} err 0 4243s
+ck i 6949998 n 3475000 maxA 0 maxT3 2 hist {'0': 3475000} err 0 4248s
+ck i 6959998 n 3480000 maxA 0 maxT3 2 hist {'0': 3480000} err 0 4253s
+ck i 6969998 n 3485000 maxA 0 maxT3 2 hist {'0': 3485000} err 0 4258s
+ck i 6979998 n 3490000 maxA 0 maxT3 2 hist {'0': 3490000} err 0 4264s
+ck i 6989998 n 3495000 maxA 0 maxT3 2 hist {'0': 3495000} err 0 4271s
+ck i 6999998 n 3500000 maxA 0 maxT3 2 hist {'0': 3500000} err 0 4276s
+ck i 7009998 n 3505000 maxA 0 maxT3 2 hist {'0': 3505000} err 0 4282s
+ck i 7019998 n 3510000 maxA 0 maxT3 2 hist {'0': 3510000} err 0 4288s
+ck i 7029998 n 3515000 maxA 0 maxT3 2 hist {'0': 3515000} err 0 4294s
+ck i 7039998 n 3520000 maxA 0 maxT3 2 hist {'0': 3520000} err 0 4300s
+ck i 7049998 n 3525000 maxA 0 maxT3 2 hist {'0': 3525000} err 0 4305s
+ck i 7059998 n 3530000 maxA 0 maxT3 2 hist {'0': 3530000} err 0 4312s
+ck i 7069998 n 3535000 maxA 0 maxT3 2 hist {'0': 3535000} err 0 4318s
+ck i 7079998 n 3540000 maxA 0 maxT3 2 hist {'0': 3540000} err 0 4324s
+ck i 7089998 n 3545000 maxA 0 maxT3 2 hist {'0': 3545000} err 0 4330s
+ck i 7099998 n 3550000 maxA 0 maxT3 2 hist {'0': 3550000} err 0 4336s
+ck i 7109998 n 3555000 maxA 0 maxT3 2 hist {'0': 3555000} err 0 4341s
+ck i 7119998 n 3560000 maxA 0 maxT3 2 hist {'0': 3560000} err 0 4347s
+ck i 7129998 n 3565000 maxA 0 maxT3 2 hist {'0': 3565000} err 0 4353s
+ck i 7139998 n 3570000 maxA 0 maxT3 2 hist {'0': 3570000} err 0 4359s
+ck i 7149998 n 3575000 maxA 0 maxT3 2 hist {'0': 3575000} err 0 4365s
+ck i 7159998 n 3580000 maxA 0 maxT3 2 hist {'0': 3580000} err 0 4371s
+ck i 7169998 n 3585000 maxA 0 maxT3 2 hist {'0': 3585000} err 0 4377s
+ck i 7179998 n 3590000 maxA 0 maxT3 2 hist {'0': 3590000} err 0 4382s
+ck i 7189998 n 3595000 maxA 0 maxT3 2 hist {'0': 3595000} err 0 4387s
+ck i 7199998 n 3600000 maxA 0 maxT3 2 hist {'0': 3600000} err 0 4392s
+ck i 7209998 n 3605000 maxA 0 maxT3 2 hist {'0': 3605000} err 0 4397s
+ck i 7219998 n 3610000 maxA 0 maxT3 2 hist {'0': 3610000} err 0 4403s
+ck i 7229998 n 3615000 maxA 0 maxT3 2 hist {'0': 3615000} err 0 4409s
+ck i 7239998 n 3620000 maxA 0 maxT3 2 hist {'0': 3620000} err 0 4415s
+ck i 7249998 n 3625000 maxA 0 maxT3 2 hist {'0': 3625000} err 0 4421s
+ck i 7259998 n 3630000 maxA 0 maxT3 2 hist {'0': 3630000} err 0 4428s
+ck i 7269998 n 3635000 maxA 0 maxT3 2 hist {'0': 3635000} err 0 4434s
+ck i 7279998 n 3640000 maxA 0 maxT3 2 hist {'0': 3640000} err 0 4441s
+ck i 7289998 n 3645000 maxA 0 maxT3 2 hist {'0': 3645000} err 0 4447s
+ck i 7299998 n 3650000 maxA 0 maxT3 2 hist {'0': 3650000} err 0 4453s
+ck i 7309998 n 3655000 maxA 0 maxT3 2 hist {'0': 3655000} err 0 4459s
+ck i 7319998 n 3660000 maxA 0 maxT3 2 hist {'0': 3660000} err 0 4465s
+ck i 7329998 n 3665000 maxA 0 maxT3 2 hist {'0': 3665000} err 0 4471s
+ck i 7339998 n 3670000 maxA 0 maxT3 2 hist {'0': 3670000} err 0 4477s
+ck i 7349998 n 3675000 maxA 0 maxT3 2 hist {'0': 3675000} err 0 4483s
+ck i 7359998 n 3680000 maxA 0 maxT3 2 hist {'0': 3680000} err 0 4488s
+ck i 7369998 n 3685000 maxA 0 maxT3 2 hist {'0': 3685000} err 0 4494s
+ck i 7379998 n 3690000 maxA 0 maxT3 2 hist {'0': 3690000} err 0 4499s
+ck i 7389998 n 3695000 maxA 0 maxT3 2 hist {'0': 3695000} err 0 4505s
+ck i 7399998 n 3700000 maxA 0 maxT3 2 hist {'0': 3700000} err 0 4511s
+ck i 7409998 n 3705000 maxA 0 maxT3 2 hist {'0': 3705000} err 0 4517s
+ck i 7419998 n 3710000 maxA 0 maxT3 2 hist {'0': 3710000} err 0 4522s
+ck i 7429998 n 3715000 maxA 0 maxT3 2 hist {'0': 3715000} err 0 4527s
+ck i 7439998 n 3720000 maxA 0 maxT3 2 hist {'0': 3720000} err 0 4532s
+ck i 7449998 n 3725000 maxA 0 maxT3 2 hist {'0': 3725000} err 0 4537s
+ck i 7459998 n 3730000 maxA 0 maxT3 2 hist {'0': 3730000} err 0 4542s
+ck i 7469998 n 3735000 maxA 0 maxT3 2 hist {'0': 3735000} err 0 4548s
+ck i 7479998 n 3740000 maxA 0 maxT3 2 hist {'0': 3740000} err 0 4554s
+ck i 7489998 n 3745000 maxA 0 maxT3 2 hist {'0': 3745000} err 0 4560s
+ck i 7499998 n 3750000 maxA 0 maxT3 2 hist {'0': 3750000} err 0 4567s
+ck i 7509998 n 3755000 maxA 0 maxT3 2 hist {'0': 3755000} err 0 4573s
+ck i 7519998 n 3760000 maxA 0 maxT3 2 hist {'0': 3760000} err 0 4579s
+ck i 7529998 n 3765000 maxA 0 maxT3 2 hist {'0': 3765000} err 0 4585s
+ck i 7539998 n 3770000 maxA 0 maxT3 2 hist {'0': 3770000} err 0 4592s
+ck i 7549998 n 3775000 maxA 0 maxT3 2 hist {'0': 3775000} err 0 4598s
+ck i 7559998 n 3780000 maxA 0 maxT3 2 hist {'0': 3780000} err 0 4604s
+ck i 7569998 n 3785000 maxA 0 maxT3 2 hist {'0': 3785000} err 0 4610s
+ck i 7579998 n 3790000 maxA 0 maxT3 2 hist {'0': 3790000} err 0 4616s
+ck i 7589998 n 3795000 maxA 0 maxT3 2 hist {'0': 3795000} err 0 4622s
+ck i 7599998 n 3800000 maxA 0 maxT3 2 hist {'0': 3800000} err 0 4628s
+ck i 7609998 n 3805000 maxA 0 maxT3 2 hist {'0': 3805000} err 0 4634s
+ck i 7619998 n 3810000 maxA 0 maxT3 2 hist {'0': 3810000} err 0 4640s
+ck i 7629998 n 3815000 maxA 0 maxT3 2 hist {'0': 3815000} err 0 4646s
+ck i 7639998 n 3820000 maxA 0 maxT3 2 hist {'0': 3820000} err 0 4653s
+ck i 7649998 n 3825000 maxA 0 maxT3 2 hist {'0': 3825000} err 0 4659s
+ck i 7659998 n 3830000 maxA 0 maxT3 2 hist {'0': 3830000} err 0 4666s
+ck i 7669998 n 3835000 maxA 0 maxT3 2 hist {'0': 3835000} err 0 4673s
+ck i 7679998 n 3840000 maxA 0 maxT3 2 hist {'0': 3840000} err 0 4679s
+ck i 7689998 n 3845000 maxA 2 maxT3 2 hist {'0': 3844838, '2': 162} err 0 4686s
+ck i 7699998 n 3850000 maxA 2 maxT3 2 hist {'0': 3849424, '2': 576} err 0 4693s
+ck i 7709998 n 3855000 maxA 2 maxT3 2 hist {'0': 3854008, '2': 992} err 0 4699s
+ck i 7719998 n 3860000 maxA 2 maxT3 2 hist {'0': 3858848, '2': 1152} err 0 4706s
+ck i 7729998 n 3865000 maxA 2 maxT3 2 hist {'0': 3863848, '2': 1152} err 0 4712s
+ck i 7739998 n 3870000 maxA 2 maxT3 2 hist {'0': 3868848, '2': 1152} err 0 4718s
+ck i 7749998 n 3875000 maxA 2 maxT3 2 hist {'0': 3873848, '2': 1152} err 0 4724s
+ck i 7759998 n 3880000 maxA 2 maxT3 2 hist {'0': 3878848, '2': 1152} err 0 4730s
+ck i 7769998 n 3885000 maxA 2 maxT3 2 hist {'0': 3883848, '2': 1152} err 0 4736s
+ck i 7779998 n 3890000 maxA 2 maxT3 2 hist {'0': 3888848, '2': 1152} err 0 4743s
+ck i 7789998 n 3895000 maxA 2 maxT3 2 hist {'0': 3893848, '2': 1152} err 0 4749s
+ck i 7799998 n 3900000 maxA 2 maxT3 2 hist {'0': 3898848, '2': 1152} err 0 4756s
+ck i 7809998 n 3905000 maxA 2 maxT3 2 hist {'0': 3903848, '2': 1152} err 0 4762s
+ck i 7819998 n 3910000 maxA 2 maxT3 2 hist {'0': 3908848, '2': 1152} err 0 4768s
+ck i 7829998 n 3915000 maxA 2 maxT3 2 hist {'0': 3913848, '2': 1152} err 0 4774s
+ck i 7839998 n 3920000 maxA 2 maxT3 2 hist {'0': 3918848, '2': 1152} err 0 4780s
+ck i 7849998 n 3925000 maxA 2 maxT3 2 hist {'0': 3923848, '2': 1152} err 0 4787s
+ck i 7859998 n 3930000 maxA 2 maxT3 2 hist {'0': 3928848, '2': 1152} err 0 4793s
+ck i 7869998 n 3935000 maxA 2 maxT3 2 hist {'0': 3933848, '2': 1152} err 0 4799s
+ck i 7879998 n 3940000 maxA 2 maxT3 2 hist {'0': 3938848, '2': 1152} err 0 4806s
+ck i 7889998 n 3945000 maxA 2 maxT3 2 hist {'0': 3943848, '2': 1152} err 0 4812s
+ck i 7899998 n 3950000 maxA 2 maxT3 2 hist {'0': 3948848, '2': 1152} err 0 4819s
+ck i 7909998 n 3955000 maxA 2 maxT3 2 hist {'0': 3953848, '2': 1152} err 0 4825s
+ck i 7919998 n 3960000 maxA 2 maxT3 2 hist {'0': 3958848, '2': 1152} err 0 4831s
+ck i 7929998 n 3965000 maxA 2 maxT3 2 hist {'0': 3963848, '2': 1152} err 0 4838s
+ck i 7939998 n 3970000 maxA 2 maxT3 2 hist {'0': 3968640, '2': 1360} err 0 4845s
+ck i 7949998 n 3975000 maxA 2 maxT3 2 hist {'0': 3973220, '2': 1780} err 0 4851s
+ck i 7959998 n 3980000 maxA 2 maxT3 2 hist {'0': 3977804, '2': 2196} err 0 4858s
+ck i 7969998 n 3985000 maxA 2 maxT3 2 hist {'0': 3982696, '2': 2304} err 0 4864s
+ck i 7979998 n 3990000 maxA 2 maxT3 2 hist {'0': 3987696, '2': 2304} err 0 4871s
+ck i 7989998 n 3995000 maxA 2 maxT3 2 hist {'0': 3992696, '2': 2304} err 0 4878s
+ck i 7999998 n 4000000 maxA 2 maxT3 2 hist {'0': 3997696, '2': 2304} err 0 4885s
+ck i 8009998 n 4005000 maxA 2 maxT3 2 hist {'0': 4002696, '2': 2304} err 0 4891s
+ck i 8019998 n 4010000 maxA 2 maxT3 2 hist {'0': 4007696, '2': 2304} err 0 4898s
+ck i 8029998 n 4015000 maxA 2 maxT3 2 hist {'0': 4012696, '2': 2304} err 0 4904s
+ck i 8039998 n 4020000 maxA 2 maxT3 2 hist {'0': 4017696, '2': 2304} err 0 4911s
+ck i 8049998 n 4025000 maxA 2 maxT3 2 hist {'0': 4022696, '2': 2304} err 0 4917s
+ck i 8059998 n 4030000 maxA 2 maxT3 2 hist {'0': 4027696, '2': 2304} err 0 4924s
+ck i 8069998 n 4035000 maxA 2 maxT3 2 hist {'0': 4032696, '2': 2304} err 0 4930s
+ck i 8079998 n 4040000 maxA 2 maxT3 2 hist {'0': 4037696, '2': 2304} err 0 4937s
+ck i 8089998 n 4045000 maxA 2 maxT3 2 hist {'0': 4042696, '2': 2304} err 0 4943s
+ck i 8099998 n 4050000 maxA 2 maxT3 2 hist {'0': 4047696, '2': 2304} err 0 4950s
+ck i 8109998 n 4055000 maxA 2 maxT3 2 hist {'0': 4052696, '2': 2304} err 0 4956s
+ck i 8119998 n 4060000 maxA 2 maxT3 2 hist {'0': 4057696, '2': 2304} err 0 4963s
+ck i 8129998 n 4065000 maxA 2 maxT3 2 hist {'0': 4062666, '2': 2334} err 0 4969s
+ck i 8139998 n 4070000 maxA 2 maxT3 2 hist {'0': 4067457, '2': 2543} err 0 4976s
+ck i 8149998 n 4075000 maxA 2 maxT3 2 hist {'0': 4072250, '2': 2750} err 0 4984s
+ck i 8159998 n 4080000 maxA 2 maxT3 2 hist {'0': 4077042, '2': 2958} err 0 4991s
+ck i 8169998 n 4085000 maxA 2 maxT3 2 hist {'0': 4081832, '2': 3168} err 0 4998s
+ck i 8179998 n 4090000 maxA 2 maxT3 2 hist {'0': 4086622, '2': 3378} err 0 5005s
+ck i 8189998 n 4095000 maxA 2 maxT3 2 hist {'0': 4091462, '2': 3538} err 0 5012s
+ck i 8199998 n 4100000 maxA 2 maxT3 2 hist {'0': 4096304, '2': 3696} err 0 5018s
+ck i 8209998 n 4105000 maxA 2 maxT3 2 hist {'0': 4101184, '2': 3816} err 0 5024s
+ck i 8219998 n 4110000 maxA 2 maxT3 2 hist {'0': 4106160, '2': 3840} err 0 5031s
+ck i 8229998 n 4115000 maxA 2 maxT3 2 hist {'0': 4111160, '2': 3840} err 0 5036s
+ck i 8239998 n 4120000 maxA 2 maxT3 2 hist {'0': 4116160, '2': 3840} err 0 5043s
+ck i 8249998 n 4125000 maxA 2 maxT3 2 hist {'0': 4121160, '2': 3840} err 0 5048s
+ck i 8259998 n 4130000 maxA 2 maxT3 2 hist {'0': 4126160, '2': 3840} err 0 5055s
+ck i 8269998 n 4135000 maxA 2 maxT3 2 hist {'0': 4131035, '2': 3965} err 0 5061s
+ck i 8279998 n 4140000 maxA 2 maxT3 2 hist {'0': 4135872, '2': 4128} err 0 5066s
+ck i 8289998 n 4145000 maxA 2 maxT3 2 hist {'0': 4140632, '2': 4368} err 0 5072s
+ck i 8299998 n 4150000 maxA 2 maxT3 2 hist {'0': 4145584, '2': 4416} err 0 5078s
+ck i 8309998 n 4155000 maxA 2 maxT3 2 hist {'0': 4150584, '2': 4416} err 0 5084s
+ck i 8319998 n 4160000 maxA 2 maxT3 2 hist {'0': 4155584, '2': 4416} err 0 5090s
+ck i 8329998 n 4165000 maxA 2 maxT3 2 hist {'0': 4160584, '2': 4416} err 0 5096s
+ck i 8339998 n 4170000 maxA 2 maxT3 2 hist {'0': 4165584, '2': 4416} err 0 5102s
+ck i 8349998 n 4175000 maxA 2 maxT3 2 hist {'0': 4170584, '2': 4416} err 0 5107s
+ck i 8359998 n 4180000 maxA 2 maxT3 2 hist {'0': 4175303, '2': 4697} err 0 5113s
+ck i 8369998 n 4185000 maxA 2 maxT3 2 hist {'0': 4180152, '2': 4848} err 0 5119s
+ck i 8379998 n 4190000 maxA 2 maxT3 2 hist {'0': 4184936, '2': 5064} err 0 5125s
+ck i 8389998 n 4195000 maxA 2 maxT3 2 hist {'0': 4189720, '2': 5280} err 0 5131s
+ck i 8399998 n 4200000 maxA 2 maxT3 2 hist {'0': 4194536, '2': 5464} err 0 5137s
+ck i 8409998 n 4205000 maxA 2 maxT3 2 hist {'0': 4199216, '2': 5784} err 0 5144s
+ck i 8419998 n 4210000 maxA 2 maxT3 2 hist {'0': 4203927, '2': 6073} err 0 5150s
+ck i 8429998 n 4215000 maxA 2 maxT3 2 hist {'0': 4208596, '2': 6404} err 0 5156s
+ck i 8439998 n 4220000 maxA 2 maxT3 2 hist {'0': 4213408, '2': 6592} err 0 5162s
+ck i 8449998 n 4225000 maxA 2 maxT3 2 hist {'0': 4218181, '2': 6819} err 0 5168s
+ck i 8459998 n 4230000 maxA 2 maxT3 2 hist {'0': 4222960, '2': 7040} err 0 5174s
+ck i 8469998 n 4235000 maxA 2 maxT3 2 hist {'0': 4227960, '2': 7040} err 0 5179s
+ck i 8479998 n 4240000 maxA 2 maxT3 2 hist {'0': 4232960, '2': 7040} err 0 5185s
+ck i 8489998 n 4245000 maxA 2 maxT3 2 hist {'0': 4237960, '2': 7040} err 0 5191s
+ck i 8499998 n 4250000 maxA 2 maxT3 2 hist {'0': 4242960, '2': 7040} err 0 5197s
+ck i 8509998 n 4255000 maxA 2 maxT3 2 hist {'0': 4247960, '2': 7040} err 0 5202s
+ck i 8519998 n 4260000 maxA 2 maxT3 2 hist {'0': 4252768, '2': 7232} err 0 5208s
+ck i 8529998 n 4265000 maxA 2 maxT3 2 hist {'0': 4257336, '2': 7664} err 0 5214s
+ck i 8539998 n 4270000 maxA 2 maxT3 2 hist {'0': 4261904, '2': 8096} err 0 5220s
+ck i 8549998 n 4275000 maxA 2 maxT3 2 hist {'0': 4266808, '2': 8192} err 0 5225s
+ck i 8559998 n 4280000 maxA 2 maxT3 2 hist {'0': 4271808, '2': 8192} err 0 5231s
+ck i 8569998 n 4285000 maxA 2 maxT3 2 hist {'0': 4276808, '2': 8192} err 0 5237s
+ck i 8579998 n 4290000 maxA 2 maxT3 2 hist {'0': 4281808, '2': 8192} err 0 5242s
+ck i 8589998 n 4295000 maxA 2 maxT3 2 hist {'0': 4286808, '2': 8192} err 0 5247s
+ck i 8599998 n 4300000 maxA 2 maxT3 2 hist {'0': 4291808, '2': 8192} err 0 5252s
+ck i 8609998 n 4305000 maxA 2 maxT3 2 hist {'0': 4296808, '2': 8192} err 0 5258s
+ck i 8619998 n 4310000 maxA 2 maxT3 2 hist {'0': 4301808, '2': 8192} err 0 5264s
+ck i 8629998 n 4315000 maxA 2 maxT3 2 hist {'0': 4306721, '2': 8279} err 0 5269s
+ck i 8639998 n 4320000 maxA 2 maxT3 2 hist {'0': 4311376, '2': 8624} err 0 5275s
+ck i 8649998 n 4325000 maxA 2 maxT3 2 hist {'0': 4316088, '2': 8912} err 0 5282s
+ck i 8659998 n 4330000 maxA 2 maxT3 2 hist {'0': 4320944, '2': 9056} err 0 5287s
+ck i 8669998 n 4335000 maxA 2 maxT3 2 hist {'0': 4325944, '2': 9056} err 0 5293s
+ck i 8679998 n 4340000 maxA 2 maxT3 2 hist {'0': 4330944, '2': 9056} err 0 5299s
+ck i 8689998 n 4345000 maxA 2 maxT3 2 hist {'0': 4335604, '2': 9396} err 0 5305s
+ck i 8699998 n 4350000 maxA 2 maxT3 2 hist {'0': 4340172, '2': 9828} err 0 5311s
+ck i 8709998 n 4355000 maxA 2 maxT3 2 hist {'0': 4344760, '2': 10240} err 0 5317s
+ck i 8719998 n 4360000 maxA 2 maxT3 2 hist {'0': 4349616, '2': 10384} err 0 5323s
+ck i 8729998 n 4365000 maxA 2 maxT3 2 hist {'0': 4354328, '2': 10672} err 0 5329s
+ck i 8739998 n 4370000 maxA 2 maxT3 2 hist {'0': 4359132, '2': 10868} err 0 5335s
+ck i 8749998 n 4375000 maxA 2 maxT3 2 hist {'0': 4363797, '2': 11203} err 0 5341s
+ck i 8759998 n 4380000 maxA 2 maxT3 2 hist {'0': 4368528, '2': 11472} err 0 5348s
+ck i 8769998 n 4385000 maxA 2 maxT3 2 hist {'0': 4373240, '2': 11760} err 0 5354s
+ck i 8779998 n 4390000 maxA 2 maxT3 2 hist {'0': 4377944, '2': 12056} err 0 5360s
+ck i 8789998 n 4395000 maxA 2 maxT3 2 hist {'0': 4382784, '2': 12216} err 0 5366s
+ck i 8799998 n 4400000 maxA 2 maxT3 2 hist {'0': 4387496, '2': 12504} err 0 5373s
+ck i 8809998 n 4405000 maxA 2 maxT3 2 hist {'0': 4392247, '2': 12753} err 0 5379s
+ck i 8819998 n 4410000 maxA 2 maxT3 2 hist {'0': 4396848, '2': 13152} err 0 5385s
+ck i 8829998 n 4415000 maxA 2 maxT3 2 hist {'0': 4401848, '2': 13152} err 0 5391s
+ck i 8839998 n 4420000 maxA 2 maxT3 2 hist {'0': 4406848, '2': 13152} err 0 5396s
+ck i 8849998 n 4425000 maxA 2 maxT3 2 hist {'0': 4411768, '2': 13232} err 0 5402s
+ck i 8859998 n 4430000 maxA 2 maxT3 2 hist {'0': 4416576, '2': 13424} err 0 5408s
+ck i 8869998 n 4435000 maxA 2 maxT3 2 hist {'0': 4421343, '2': 13657} err 0 5414s
+ck i 8879998 n 4440000 maxA 2 maxT3 2 hist {'0': 4426162, '2': 13838} err 0 5420s
+ck i 8889998 n 4445000 maxA 2 maxT3 2 hist {'0': 4430968, '2': 14032} err 0 5427s
+ck i 8899998 n 4450000 maxA 2 maxT3 2 hist {'0': 4435767, '2': 14233} err 0 5433s
+ck i 8909998 n 4455000 maxA 2 maxT3 2 hist {'0': 4440464, '2': 14536} err 0 5439s
+ck i 8919998 n 4460000 maxA 2 maxT3 2 hist {'0': 4445104, '2': 14896} err 0 5445s
+ck i 8929998 n 4465000 maxA 2 maxT3 2 hist {'0': 4449800, '2': 15200} err 0 5451s
+ck i 8939998 n 4470000 maxA 2 maxT3 2 hist {'0': 4454695, '2': 15305} err 0 5457s
+ck i 8949998 n 4475000 maxA 2 maxT3 2 hist {'0': 4459601, '2': 15399} err 0 5463s
+ck i 8959998 n 4480000 maxA 2 maxT3 2 hist {'0': 4464520, '2': 15480} err 0 5469s
+ck i 8969998 n 4485000 maxA 2 maxT3 2 hist {'0': 4469520, '2': 15480} err 0 5476s
+ck i 8979998 n 4490000 maxA 2 maxT3 2 hist {'0': 4474520, '2': 15480} err 0 5482s
+ck i 8989998 n 4495000 maxA 2 maxT3 2 hist {'0': 4479520, '2': 15480} err 0 5488s
+ck i 8999998 n 4500000 maxA 2 maxT3 2 hist {'0': 4484520, '2': 15480} err 0 5494s
+ck i 9009998 n 4505000 maxA 2 maxT3 2 hist {'0': 4489520, '2': 15480} err 0 5501s
+ck i 9019998 n 4510000 maxA 2 maxT3 2 hist {'0': 4494520, '2': 15480} err 0 5507s
+ck i 9029998 n 4515000 maxA 2 maxT3 2 hist {'0': 4499520, '2': 15480} err 0 5513s
+ck i 9039998 n 4520000 maxA 2 maxT3 2 hist {'0': 4504520, '2': 15480} err 0 5520s
+ck i 9049998 n 4525000 maxA 2 maxT3 2 hist {'0': 4509520, '2': 15480} err 0 5526s
+ck i 9059998 n 4530000 maxA 2 maxT3 2 hist {'0': 4514520, '2': 15480} err 0 5533s
+ck i 9069998 n 4535000 maxA 2 maxT3 2 hist {'0': 4519520, '2': 15480} err 0 5540s
+ck i 9079998 n 4540000 maxA 2 maxT3 2 hist {'0': 4524520, '2': 15480} err 0 5546s
+ck i 9089998 n 4545000 maxA 2 maxT3 2 hist {'0': 4529520, '2': 15480} err 0 5552s
+ck i 9099998 n 4550000 maxA 2 maxT3 2 hist {'0': 4534520, '2': 15480} err 0 5558s
+ck i 9109998 n 4555000 maxA 2 maxT3 2 hist {'0': 4539520, '2': 15480} err 0 5564s
+ck i 9119998 n 4560000 maxA 2 maxT3 2 hist {'0': 4544520, '2': 15480} err 0 5571s
+ck i 9129998 n 4565000 maxA 2 maxT3 2 hist {'0': 4549520, '2': 15480} err 0 5577s
+ck i 9139998 n 4570000 maxA 2 maxT3 2 hist {'0': 4554520, '2': 15480} err 0 5584s
+ck i 9149998 n 4575000 maxA 2 maxT3 2 hist {'0': 4559520, '2': 15480} err 0 5591s
+ck i 9159998 n 4580000 maxA 2 maxT3 2 hist {'0': 4564520, '2': 15480} err 0 5597s
+ck i 9169998 n 4585000 maxA 2 maxT3 2 hist {'0': 4569520, '2': 15480} err 0 5603s
+ck i 9179998 n 4590000 maxA 2 maxT3 2 hist {'0': 4574520, '2': 15480} err 0 5609s
+ck i 9189998 n 4595000 maxA 2 maxT3 2 hist {'0': 4579520, '2': 15480} err 0 5615s
+ck i 9199998 n 4600000 maxA 2 maxT3 2 hist {'0': 4584520, '2': 15480} err 0 5622s
+ck i 9209998 n 4605000 maxA 2 maxT3 2 hist {'0': 4589520, '2': 15480} err 0 5627s
+ck i 9219998 n 4610000 maxA 2 maxT3 2 hist {'0': 4594520, '2': 15480} err 0 5634s
+ck i 9229998 n 4615000 maxA 2 maxT3 2 hist {'0': 4599520, '2': 15480} err 0 5640s
+ck i 9239998 n 4620000 maxA 2 maxT3 2 hist {'0': 4604520, '2': 15480} err 0 5647s
+ck i 9249998 n 4625000 maxA 2 maxT3 2 hist {'0': 4609520, '2': 15480} err 0 5653s
+ck i 9259998 n 4630000 maxA 2 maxT3 2 hist {'0': 4614520, '2': 15480} err 0 5659s
+ck i 9269998 n 4635000 maxA 2 maxT3 2 hist {'0': 4619520, '2': 15480} err 0 5665s
+ck i 9279998 n 4640000 maxA 2 maxT3 2 hist {'0': 4624520, '2': 15480} err 0 5671s
+ck i 9289998 n 4645000 maxA 2 maxT3 2 hist {'0': 4629520, '2': 15480} err 0 5677s
+ck i 9299998 n 4650000 maxA 2 maxT3 2 hist {'0': 4634520, '2': 15480} err 0 5683s
+ck i 9309998 n 4655000 maxA 2 maxT3 2 hist {'0': 4639520, '2': 15480} err 0 5689s
+ck i 9319998 n 4660000 maxA 2 maxT3 2 hist {'0': 4644520, '2': 15480} err 0 5696s
+ck i 9329998 n 4665000 maxA 2 maxT3 2 hist {'0': 4649520, '2': 15480} err 0 5701s
+ck i 9339998 n 4670000 maxA 2 maxT3 2 hist {'0': 4654520, '2': 15480} err 0 5706s
+ck i 9349998 n 4675000 maxA 2 maxT3 2 hist {'0': 4659520, '2': 15480} err 0 5712s
+ck i 9359998 n 4680000 maxA 2 maxT3 2 hist {'0': 4664520, '2': 15480} err 0 5718s
+ck i 9369998 n 4685000 maxA 2 maxT3 2 hist {'0': 4669520, '2': 15480} err 0 5723s
+ck i 9379998 n 4690000 maxA 2 maxT3 2 hist {'0': 4674520, '2': 15480} err 0 5730s
+ck i 9389998 n 4695000 maxA 2 maxT3 2 hist {'0': 4679520, '2': 15480} err 0 5737s
+ck i 9399998 n 4700000 maxA 2 maxT3 2 hist {'0': 4684520, '2': 15480} err 0 5744s
+ck i 9409998 n 4705000 maxA 2 maxT3 2 hist {'0': 4689520, '2': 15480} err 0 5750s
+ck i 9419998 n 4710000 maxA 2 maxT3 2 hist {'0': 4694520, '2': 15480} err 0 5756s
+ck i 9429998 n 4715000 maxA 2 maxT3 2 hist {'0': 4699520, '2': 15480} err 0 5761s
+ck i 9439998 n 4720000 maxA 2 maxT3 2 hist {'0': 4704520, '2': 15480} err 0 5767s
+ck i 9449998 n 4725000 maxA 2 maxT3 2 hist {'0': 4709520, '2': 15480} err 0 5773s
+ck i 9459998 n 4730000 maxA 2 maxT3 2 hist {'0': 4714520, '2': 15480} err 0 5780s
+ck i 9469998 n 4735000 maxA 2 maxT3 2 hist {'0': 4719520, '2': 15480} err 0 5786s
+ck i 9479998 n 4740000 maxA 2 maxT3 2 hist {'0': 4724520, '2': 15480} err 0 5793s
+ck i 9489998 n 4745000 maxA 2 maxT3 2 hist {'0': 4729520, '2': 15480} err 0 5799s
+ck i 9499998 n 4750000 maxA 2 maxT3 2 hist {'0': 4734520, '2': 15480} err 0 5806s
+ck i 9509998 n 4755000 maxA 2 maxT3 2 hist {'0': 4739520, '2': 15480} err 0 5812s
+ck i 9519998 n 4760000 maxA 2 maxT3 2 hist {'0': 4744520, '2': 15480} err 0 5818s
+ck i 9529998 n 4765000 maxA 2 maxT3 2 hist {'0': 4749520, '2': 15480} err 0 5825s
+ck i 9539998 n 4770000 maxA 2 maxT3 2 hist {'0': 4754520, '2': 15480} err 0 5831s
+ck i 9549998 n 4775000 maxA 2 maxT3 2 hist {'0': 4759520, '2': 15480} err 0 5838s
+ck i 9559998 n 4780000 maxA 2 maxT3 2 hist {'0': 4764520, '2': 15480} err 0 5845s
+ck i 9569998 n 4785000 maxA 2 maxT3 2 hist {'0': 4769520, '2': 15480} err 0 5851s
+ck i 9579998 n 4790000 maxA 2 maxT3 2 hist {'0': 4774520, '2': 15480} err 0 5857s
+ck i 9589998 n 4795000 maxA 2 maxT3 2 hist {'0': 4779520, '2': 15480} err 0 5863s
+ck i 9599998 n 4800000 maxA 2 maxT3 2 hist {'0': 4784520, '2': 15480} err 0 5869s
+ck i 9609998 n 4805000 maxA 2 maxT3 2 hist {'0': 4789520, '2': 15480} err 0 5875s
+ck i 9619998 n 4810000 maxA 2 maxT3 2 hist {'0': 4794520, '2': 15480} err 0 5882s
+ck i 9629998 n 4815000 maxA 2 maxT3 2 hist {'0': 4799520, '2': 15480} err 0 5889s
+ck i 9639998 n 4820000 maxA 2 maxT3 2 hist {'0': 4804520, '2': 15480} err 0 5895s
+ck i 9649998 n 4825000 maxA 2 maxT3 2 hist {'0': 4809520, '2': 15480} err 0 5902s
+ck i 9659998 n 4830000 maxA 2 maxT3 2 hist {'0': 4814520, '2': 15480} err 0 5908s
+ck i 9669998 n 4835000 maxA 2 maxT3 2 hist {'0': 4819520, '2': 15480} err 0 5915s
+ck i 9679998 n 4840000 maxA 2 maxT3 2 hist {'0': 4824520, '2': 15480} err 0 5920s
+ck i 9689998 n 4845000 maxA 2 maxT3 2 hist {'0': 4829520, '2': 15480} err 0 5927s
+ck i 9699998 n 4850000 maxA 2 maxT3 2 hist {'0': 4834520, '2': 15480} err 0 5933s
+ck i 9709998 n 4855000 maxA 2 maxT3 2 hist {'0': 4839520, '2': 15480} err 0 5940s
+ck i 9719998 n 4860000 maxA 2 maxT3 2 hist {'0': 4844520, '2': 15480} err 0 5947s
+ck i 9729998 n 4865000 maxA 2 maxT3 2 hist {'0': 4849520, '2': 15480} err 0 5953s
+ck i 9739998 n 4870000 maxA 2 maxT3 2 hist {'0': 4854520, '2': 15480} err 0 5960s
+ck i 9749998 n 4875000 maxA 2 maxT3 2 hist {'0': 4859520, '2': 15480} err 0 5966s
+ck i 9759998 n 4880000 maxA 2 maxT3 2 hist {'0': 4864520, '2': 15480} err 0 5974s
+ck i 9769998 n 4885000 maxA 2 maxT3 2 hist {'0': 4869520, '2': 15480} err 0 5981s
+ck i 9779998 n 4890000 maxA 2 maxT3 2 hist {'0': 4874520, '2': 15480} err 0 5988s
+ck i 9789998 n 4895000 maxA 2 maxT3 2 hist {'0': 4879520, '2': 15480} err 0 5995s
+ck i 9799998 n 4900000 maxA 2 maxT3 2 hist {'0': 4884520, '2': 15480} err 0 6001s
+ck i 9809998 n 4905000 maxA 2 maxT3 2 hist {'0': 4889520, '2': 15480} err 0 6008s
+ck i 9819998 n 4910000 maxA 2 maxT3 2 hist {'0': 4894520, '2': 15480} err 0 6014s
+ck i 9829998 n 4915000 maxA 2 maxT3 2 hist {'0': 4899520, '2': 15480} err 0 6021s
+ck i 9839998 n 4920000 maxA 2 maxT3 2 hist {'0': 4904520, '2': 15480} err 0 6027s
+ck i 9849998 n 4925000 maxA 2 maxT3 2 hist {'0': 4909520, '2': 15480} err 0 6034s
+ck i 9859998 n 4930000 maxA 2 maxT3 2 hist {'0': 4914520, '2': 15480} err 0 6040s
+ck i 9869998 n 4935000 maxA 2 maxT3 2 hist {'0': 4919520, '2': 15480} err 0 6046s
+ck i 9879998 n 4940000 maxA 2 maxT3 2 hist {'0': 4924520, '2': 15480} err 0 6053s
+ck i 9889998 n 4945000 maxA 2 maxT3 2 hist {'0': 4929520, '2': 15480} err 0 6059s
+ck i 9899998 n 4950000 maxA 2 maxT3 2 hist {'0': 4934520, '2': 15480} err 0 6065s
+ck i 9909998 n 4955000 maxA 2 maxT3 2 hist {'0': 4939520, '2': 15480} err 0 6072s
+ck i 9919998 n 4960000 maxA 2 maxT3 2 hist {'0': 4944520, '2': 15480} err 0 6079s
+ck i 9929998 n 4965000 maxA 2 maxT3 2 hist {'0': 4949520, '2': 15480} err 0 6085s
+ck i 9939998 n 4970000 maxA 2 maxT3 2 hist {'0': 4954520, '2': 15480} err 0 6091s
+ck i 9949998 n 4975000 maxA 2 maxT3 2 hist {'0': 4959520, '2': 15480} err 0 6098s
+ck i 9959998 n 4980000 maxA 2 maxT3 2 hist {'0': 4964520, '2': 15480} err 0 6105s
+ck i 9969998 n 4985000 maxA 2 maxT3 2 hist {'0': 4969520, '2': 15480} err 0 6111s
+ck i 9979998 n 4990000 maxA 2 maxT3 2 hist {'0': 4974520, '2': 15480} err 0 6117s
+ck i 9989998 n 4995000 maxA 2 maxT3 2 hist {'0': 4979520, '2': 15480} err 0 6124s
+ck i 9999998 n 5000000 maxA 2 maxT3 2 hist {'0': 4984520, '2': 15480} err 0 6130s
+ck i 10009998 n 5005000 maxA 2 maxT3 2 hist {'0': 4989520, '2': 15480} err 0 6137s
+ck i 10019998 n 5010000 maxA 2 maxT3 2 hist {'0': 4994520, '2': 15480} err 0 6143s
+ck i 10029998 n 5015000 maxA 2 maxT3 2 hist {'0': 4999520, '2': 15480} err 0 6149s
+ck i 10039998 n 5020000 maxA 2 maxT3 2 hist {'0': 5004520, '2': 15480} err 0 6156s
+ck i 10049998 n 5025000 maxA 2 maxT3 2 hist {'0': 5009520, '2': 15480} err 0 6162s
+ck i 10059998 n 5030000 maxA 2 maxT3 2 hist {'0': 5014520, '2': 15480} err 0 6169s
+ck i 10069998 n 5035000 maxA 2 maxT3 2 hist {'0': 5019520, '2': 15480} err 0 6176s
+ck i 10079998 n 5040000 maxA 2 maxT3 2 hist {'0': 5024520, '2': 15480} err 0 6183s
+ck i 10089998 n 5045000 maxA 2 maxT3 2 hist {'0': 5029520, '2': 15480} err 0 6191s
+ck i 10099998 n 5050000 maxA 2 maxT3 2 hist {'0': 5034520, '2': 15480} err 0 6197s
+ck i 10109998 n 5055000 maxA 2 maxT3 2 hist {'0': 5039520, '2': 15480} err 0 6205s
+ck i 10119998 n 5060000 maxA 2 maxT3 2 hist {'0': 5044520, '2': 15480} err 0 6212s
+ck i 10129998 n 5065000 maxA 2 maxT3 2 hist {'0': 5049520, '2': 15480} err 0 6219s
+ck i 10139998 n 5070000 maxA 2 maxT3 2 hist {'0': 5054520, '2': 15480} err 0 6225s
+ck i 10149998 n 5075000 maxA 2 maxT3 2 hist {'0': 5059520, '2': 15480} err 0 6232s
+ck i 10159998 n 5080000 maxA 2 maxT3 2 hist {'0': 5064520, '2': 15480} err 0 6239s
+ck i 10169998 n 5085000 maxA 2 maxT3 2 hist {'0': 5069520, '2': 15480} err 0 6246s
+ck i 10179998 n 5090000 maxA 2 maxT3 2 hist {'0': 5074520, '2': 15480} err 0 6253s
+ck i 10189998 n 5095000 maxA 2 maxT3 2 hist {'0': 5079520, '2': 15480} err 0 6260s
+ck i 10199998 n 5100000 maxA 2 maxT3 2 hist {'0': 5084520, '2': 15480} err 0 6267s
+ck i 10209998 n 5105000 maxA 2 maxT3 2 hist {'0': 5089520, '2': 15480} err 0 6273s
+ck i 10219998 n 5110000 maxA 2 maxT3 2 hist {'0': 5094520, '2': 15480} err 0 6280s
+ck i 10229998 n 5115000 maxA 2 maxT3 2 hist {'0': 5099520, '2': 15480} err 0 6286s
+ck i 10239998 n 5120000 maxA 2 maxT3 2 hist {'0': 5104520, '2': 15480} err 0 6292s
+ck i 10249998 n 5125000 maxA 2 maxT3 2 hist {'0': 5109520, '2': 15480} err 0 6299s
+ck i 10259998 n 5130000 maxA 2 maxT3 2 hist {'0': 5114520, '2': 15480} err 0 6306s
+ck i 10269998 n 5135000 maxA 2 maxT3 2 hist {'0': 5119520, '2': 15480} err 0 6312s
+ck i 10279998 n 5140000 maxA 2 maxT3 2 hist {'0': 5124520, '2': 15480} err 0 6320s
+ck i 10289998 n 5145000 maxA 2 maxT3 2 hist {'0': 5129520, '2': 15480} err 0 6326s
+ck i 10299998 n 5150000 maxA 2 maxT3 2 hist {'0': 5134520, '2': 15480} err 0 6333s
+ck i 10309998 n 5155000 maxA 2 maxT3 2 hist {'0': 5139520, '2': 15480} err 0 6340s
+ck i 10319998 n 5160000 maxA 2 maxT3 2 hist {'0': 5144520, '2': 15480} err 0 6347s
+ck i 10329998 n 5165000 maxA 2 maxT3 2 hist {'0': 5149520, '2': 15480} err 0 6354s
+ck i 10339998 n 5170000 maxA 2 maxT3 2 hist {'0': 5154520, '2': 15480} err 0 6361s
+ck i 10349998 n 5175000 maxA 2 maxT3 2 hist {'0': 5159520, '2': 15480} err 0 6367s
+ck i 10359998 n 5180000 maxA 2 maxT3 2 hist {'0': 5164520, '2': 15480} err 0 6374s
+ck i 10369998 n 5185000 maxA 2 maxT3 2 hist {'0': 5169520, '2': 15480} err 0 6381s
+ck i 10379998 n 5190000 maxA 2 maxT3 2 hist {'0': 5174520, '2': 15480} err 0 6388s
+ck i 10389998 n 5195000 maxA 2 maxT3 2 hist {'0': 5179520, '2': 15480} err 0 6395s
+ck i 10399998 n 5200000 maxA 2 maxT3 2 hist {'0': 5184520, '2': 15480} err 0 6402s
+ck i 10409998 n 5205000 maxA 2 maxT3 2 hist {'0': 5189520, '2': 15480} err 0 6409s
+ck i 10419998 n 5210000 maxA 2 maxT3 2 hist {'0': 5194520, '2': 15480} err 0 6417s
+ck i 10429998 n 5215000 maxA 2 maxT3 2 hist {'0': 5199520, '2': 15480} err 0 6425s
+ck i 10439998 n 5220000 maxA 2 maxT3 2 hist {'0': 5204520, '2': 15480} err 0 6434s
+ck i 10449998 n 5225000 maxA 2 maxT3 2 hist {'0': 5209520, '2': 15480} err 0 6441s
+ck i 10459998 n 5230000 maxA 2 maxT3 2 hist {'0': 5214520, '2': 15480} err 0 6448s
+ck i 10469998 n 5235000 maxA 2 maxT3 2 hist {'0': 5219520, '2': 15480} err 0 6456s
+ck i 10479998 n 5240000 maxA 2 maxT3 2 hist {'0': 5224520, '2': 15480} err 0 6463s
+ck i 10489998 n 5245000 maxA 2 maxT3 2 hist {'0': 5229520, '2': 15480} err 0 6471s
+ck i 10499998 n 5250000 maxA 2 maxT3 2 hist {'0': 5234520, '2': 15480} err 0 6477s
+ck i 10509998 n 5255000 maxA 2 maxT3 2 hist {'0': 5239520, '2': 15480} err 0 6485s
+ck i 10519998 n 5260000 maxA 2 maxT3 2 hist {'0': 5244520, '2': 15480} err 0 6492s
+ck i 10529998 n 5265000 maxA 2 maxT3 2 hist {'0': 5249520, '2': 15480} err 0 6499s
+ck i 10539998 n 5270000 maxA 2 maxT3 2 hist {'0': 5254520, '2': 15480} err 0 6505s
+ck i 10549998 n 5275000 maxA 2 maxT3 2 hist {'0': 5259520, '2': 15480} err 0 6512s
+ck i 10559998 n 5280000 maxA 2 maxT3 2 hist {'0': 5264520, '2': 15480} err 0 6520s
+ck i 10569998 n 5285000 maxA 2 maxT3 2 hist {'0': 5269520, '2': 15480} err 0 6527s
+ck i 10579998 n 5290000 maxA 2 maxT3 2 hist {'0': 5274520, '2': 15480} err 0 6534s
+ck i 10589998 n 5295000 maxA 2 maxT3 2 hist {'0': 5279520, '2': 15480} err 0 6542s
+ck i 10599998 n 5300000 maxA 2 maxT3 2 hist {'0': 5284520, '2': 15480} err 0 6549s
+ck i 10609998 n 5305000 maxA 2 maxT3 2 hist {'0': 5289520, '2': 15480} err 0 6556s
+ck i 10619998 n 5310000 maxA 2 maxT3 2 hist {'0': 5294520, '2': 15480} err 0 6563s
+ck i 10629998 n 5315000 maxA 2 maxT3 2 hist {'0': 5299520, '2': 15480} err 0 6570s
+ck i 10639998 n 5320000 maxA 2 maxT3 2 hist {'0': 5304520, '2': 15480} err 0 6578s
+ck i 10649998 n 5325000 maxA 2 maxT3 2 hist {'0': 5309520, '2': 15480} err 0 6586s
+ck i 10659998 n 5330000 maxA 2 maxT3 2 hist {'0': 5314520, '2': 15480} err 0 6594s
+ck i 10669998 n 5335000 maxA 2 maxT3 2 hist {'0': 5319520, '2': 15480} err 0 6601s
+ck i 10679998 n 5340000 maxA 2 maxT3 2 hist {'0': 5324520, '2': 15480} err 0 6609s
+ck i 10689998 n 5345000 maxA 2 maxT3 2 hist {'0': 5329520, '2': 15480} err 0 6616s
+ck i 10699998 n 5350000 maxA 2 maxT3 2 hist {'0': 5334520, '2': 15480} err 0 6623s
+ck i 10709998 n 5355000 maxA 2 maxT3 2 hist {'0': 5339520, '2': 15480} err 0 6630s
+ck i 10719998 n 5360000 maxA 2 maxT3 2 hist {'0': 5344520, '2': 15480} err 0 6636s
+ck i 10729998 n 5365000 maxA 2 maxT3 2 hist {'0': 5349520, '2': 15480} err 0 6643s
+ck i 10739998 n 5370000 maxA 2 maxT3 2 hist {'0': 5354520, '2': 15480} err 0 6650s
+ck i 10749998 n 5375000 maxA 2 maxT3 2 hist {'0': 5359520, '2': 15480} err 0 6657s
+ck i 10759998 n 5380000 maxA 2 maxT3 2 hist {'0': 5364520, '2': 15480} err 0 6665s
+ck i 10769998 n 5385000 maxA 2 maxT3 2 hist {'0': 5369520, '2': 15480} err 0 6673s
+ck i 10779998 n 5390000 maxA 2 maxT3 2 hist {'0': 5374520, '2': 15480} err 0 6679s
+ck i 10789998 n 5395000 maxA 2 maxT3 2 hist {'0': 5379520, '2': 15480} err 0 6686s
+ck i 10799998 n 5400000 maxA 2 maxT3 2 hist {'0': 5384520, '2': 15480} err 0 6694s
+ck i 10809998 n 5405000 maxA 2 maxT3 2 hist {'0': 5389520, '2': 15480} err 0 6701s
+ck i 10819998 n 5410000 maxA 2 maxT3 2 hist {'0': 5394520, '2': 15480} err 0 6708s
+ck i 10829998 n 5415000 maxA 2 maxT3 2 hist {'0': 5399520, '2': 15480} err 0 6715s
+ck i 10839998 n 5420000 maxA 2 maxT3 2 hist {'0': 5404520, '2': 15480} err 0 6722s
+ck i 10849998 n 5425000 maxA 2 maxT3 2 hist {'0': 5409520, '2': 15480} err 0 6728s
+ck i 10859998 n 5430000 maxA 2 maxT3 2 hist {'0': 5414520, '2': 15480} err 0 6735s
+ck i 10869998 n 5435000 maxA 2 maxT3 2 hist {'0': 5419520, '2': 15480} err 0 6741s
+ck i 10879998 n 5440000 maxA 2 maxT3 2 hist {'0': 5424520, '2': 15480} err 0 6747s
+ck i 10889998 n 5445000 maxA 2 maxT3 2 hist {'0': 5429520, '2': 15480} err 0 6754s
+ck i 10899998 n 5450000 maxA 2 maxT3 2 hist {'0': 5434520, '2': 15480} err 0 6761s
+ck i 10909998 n 5455000 maxA 2 maxT3 2 hist {'0': 5439520, '2': 15480} err 0 6769s
+ck i 10919998 n 5460000 maxA 2 maxT3 2 hist {'0': 5444520, '2': 15480} err 0 6776s
+ck i 10929998 n 5465000 maxA 2 maxT3 2 hist {'0': 5449520, '2': 15480} err 0 6783s
+ck i 10939998 n 5470000 maxA 2 maxT3 2 hist {'0': 5454520, '2': 15480} err 0 6790s
+ck i 10949998 n 5475000 maxA 2 maxT3 2 hist {'0': 5459520, '2': 15480} err 0 6797s
+ck i 10959998 n 5480000 maxA 2 maxT3 2 hist {'0': 5464520, '2': 15480} err 0 6804s
+ck i 10969998 n 5485000 maxA 2 maxT3 2 hist {'0': 5469520, '2': 15480} err 0 6811s
+ck i 10979998 n 5490000 maxA 2 maxT3 2 hist {'0': 5474520, '2': 15480} err 0 6818s
+ck i 10989998 n 5495000 maxA 2 maxT3 2 hist {'0': 5479520, '2': 15480} err 0 6825s
+ck i 10999998 n 5500000 maxA 2 maxT3 2 hist {'0': 5484520, '2': 15480} err 0 6832s
+ck i 11009998 n 5505000 maxA 2 maxT3 2 hist {'0': 5489520, '2': 15480} err 0 6839s
+ck i 11019998 n 5510000 maxA 2 maxT3 2 hist {'0': 5494520, '2': 15480} err 0 6846s
+ck i 11029998 n 5515000 maxA 2 maxT3 2 hist {'0': 5499520, '2': 15480} err 0 6852s
+ck i 11039998 n 5520000 maxA 2 maxT3 2 hist {'0': 5504520, '2': 15480} err 0 6859s
+ck i 11049998 n 5525000 maxA 2 maxT3 2 hist {'0': 5509520, '2': 15480} err 0 6866s
+ck i 11059998 n 5530000 maxA 2 maxT3 2 hist {'0': 5514520, '2': 15480} err 0 6872s
+ck i 11069998 n 5535000 maxA 2 maxT3 2 hist {'0': 5519520, '2': 15480} err 0 6879s
+ck i 11079998 n 5540000 maxA 2 maxT3 2 hist {'0': 5524520, '2': 15480} err 0 6886s
+ck i 11089998 n 5545000 maxA 2 maxT3 2 hist {'0': 5529520, '2': 15480} err 0 6893s
+ck i 11099998 n 5550000 maxA 2 maxT3 2 hist {'0': 5534520, '2': 15480} err 0 6899s
+ck i 11109998 n 5555000 maxA 2 maxT3 2 hist {'0': 5539520, '2': 15480} err 0 6905s
+ck i 11119998 n 5560000 maxA 2 maxT3 2 hist {'0': 5544520, '2': 15480} err 0 6912s
+ck i 11129998 n 5565000 maxA 2 maxT3 2 hist {'0': 5549520, '2': 15480} err 0 6918s
+ck i 11139998 n 5570000 maxA 2 maxT3 2 hist {'0': 5554520, '2': 15480} err 0 6924s
+ck i 11149998 n 5575000 maxA 2 maxT3 2 hist {'0': 5559520, '2': 15480} err 0 6930s
+ck i 11159998 n 5580000 maxA 2 maxT3 2 hist {'0': 5564520, '2': 15480} err 0 6936s
+ck i 11169998 n 5585000 maxA 2 maxT3 2 hist {'0': 5569520, '2': 15480} err 0 6943s
+ck i 11179998 n 5590000 maxA 2 maxT3 2 hist {'0': 5574520, '2': 15480} err 0 6949s
+ck i 11189998 n 5595000 maxA 2 maxT3 2 hist {'0': 5579520, '2': 15480} err 0 6955s
+ck i 11199998 n 5600000 maxA 2 maxT3 2 hist {'0': 5584520, '2': 15480} err 0 6961s
+ck i 11209998 n 5605000 maxA 2 maxT3 2 hist {'0': 5589520, '2': 15480} err 0 6966s
+ck i 11219998 n 5610000 maxA 2 maxT3 2 hist {'0': 5594520, '2': 15480} err 0 6972s
+ck i 11229998 n 5615000 maxA 2 maxT3 2 hist {'0': 5599520, '2': 15480} err 0 6979s
+ck i 11239998 n 5620000 maxA 2 maxT3 2 hist {'0': 5604520, '2': 15480} err 0 6985s
+ck i 11249998 n 5625000 maxA 2 maxT3 2 hist {'0': 5609520, '2': 15480} err 0 6992s
+ck i 11259998 n 5630000 maxA 2 maxT3 2 hist {'0': 5614520, '2': 15480} err 0 6998s
+ck i 11269998 n 5635000 maxA 2 maxT3 2 hist {'0': 5619520, '2': 15480} err 0 10s
+ck i 11279998 n 5640000 maxA 2 maxT3 2 hist {'0': 5624520, '2': 15480} err 0 16s
