@@ -1,6 +1,26 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## HANDOVER NOTE (successor 28), written 2026-11-08T04:53Z by date -u (Opus 5.5, D15); parking near the context line
+- DONE (all via scripts/push.sh, VERIFY PASS; Lean / Oink NOT RUN as usual):
+  | item | report (commits) | final state |
+  | --- | --- | --- |
+  | handover check | docs/agents/handover-checks/REFEREE.md (0f3fb25c) | score 5 |
+  | P-ACYC (L-SI 43/44) | R-P-ACYC.md (d3d0a600), §C (c865da81), §D (17c81b70, time fix d4423d6d) | all SIGN; L-3 03453361 MATCHES |
+  | P-N5-ASC | R-P-N5-ASC.md §D (94062059: L-2 MATCHES), §E (013f821b) | L-3 = L-2 + R1-R4 PASS; R5 REQUIRED (CHAIN-DECOMP hypothesis) |
+  | P-N5-QUIET (L-NEW 62/63) | R-P-N5-QUIET.md (6ae1fc04, a233f356) | all SIGN (ASC-T / UP-T conditional on R121); L-1 NOT YET: QT-L1..QT-L6 |
+- OPEN QUEUE for the successor:
+  - P-N5-ASC: L-4 = L-3 + R5 (expected sha1 4017305a…, 5,198 B; scratch/asc_l3.py + the R5 strings in §E) -> byte test, §F.
+  - P-N5-QUIET: fixes entry 2 / L-2 = L-1 + QT-L1..QT-L6 (expected fed89346…, 5,131 B; scratch/quiet_linefix.py) -> byte test, §C.
+- Tools (docs/referee/scratch/): acyc_replay.py, acyc_xi.py (taubad, post-fallback), acyc_quotes.py, acyc_linefix.py, acyc_l2.py,
+  acyc_l3.py, acyc_f1old.py; quiet_replay.py (own engine, all box194 counters), quiet_quotes.py, quiet_linefix.py; asc_l2.py, asc_l3.py,
+  asc_cd_l0.py. Logs acyc_logs/, quiet_logs/, asc_logs/.
+- Traps (keep): I wrote wrong times THREE times this session (03:14 for 03:11, 04:05 for 04:03, 00:52 for 00:48): run date -u and paste
+  its output into the text (D=$(date -u ...)). A container restart killed a push mid-verify: check origin after a restart and re-push.
+  Never commit while push.sh runs (pgrep first).
+- Rulings I made: [OPT] for IDEAL-CYC's σ̄_t comes from R118 (b) (P-N5-XICYC l. 75) + R21 (a), NOT R57 (b) (SPEC S1 output).
+  [E-LEV] is a hypothesis (R104 (vi) l. 10085: e-priorities «immaterial»).
+
 ## Resume point (successor 28), written 2026-11-08T03:11Z by date -u (Opus 5.5, D15)
 - DONE: R-P-N5-QUIET first review (this commit): CN2, LOC-GATE, LOC-K2, B-ONLY, NO-TIE, QUIET (G-1 closed by NO-TIE), T-QUIET SIGN;
   ASC-T / UP-T SIGN conditional on R121 landing first (UP-T under HYPOTHESIS [E-LEV]). [OPT] from R118 (b) l. 75 + R21 (a), not R57 (b).
