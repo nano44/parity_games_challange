@@ -306,3 +306,38 @@ its DATA clauses.
 - W-3: [E-LEV] stays a hypothesis.
 - D-1: the cited tool quiet194.py tests L + 1, and wfail counts steps, not windows. D-2: LOC-K2's DATA counts one conjunct.
 - The own-engine replay reproduces every lane count, with 0 violations including the proof-internal counters.
+
+## Addendum 1: comparison with REFEREE 28 (claude/referee 6ae1fc04, docs/referee/R-P-N5-QUIET.md; REFEREE-2 successor 33, 2026-11-08 06:14Z by date -u)
+Read only after my report was on origin (17a85958). The QT-L strings were read as data from its quiet_linefix.py (sha1 22170ca2…) by my
+R2-P-N5-QUIET/bt_overlap.py (out bt_overlap.out).
+- **Verdicts: full agreement.** All eight statements SIGN; UP-T under HYPOTHESIS [E-LEV]; ASC-T and UP-T after R121. The tie case of
+  (Q5) was a gap in the frozen text and is closed by NO-TIE. TARGET diff is clean, and L-1 is NOT YET.
+- **Same findings, same spans.** bt_overlap.py shows QT-L1 overlapping W-2, QT-L3 overlapping W-3 and QT-L4 overlapping W-1. No other
+  pair overlaps.
+  - QT-L1 meets W-2. Its source is R118's σ̄ through R118 (b)'s incorporation of P-N5-XICYC «(§3 l. 68-83)», whose l. 75 reads «σ̄_t is
+    optimal at every vertex at once ([VJ])». That line is inside the incorporated range, so it is a landed-text route. Mine adds the
+    definition itself (Friedmann §3, opened). Both reject R57 (b). I accept QT-L1 in place of W-2. Its «and RESULTS R21 (a)» is
+    corroboration (N5's σ̄_k on 𝒞^1O), which is harmless.
+  - QT-L3 meets W-3: same reading of R104 (vi), and [E-LEV] stays a hypothesis. I accept QT-L3 in place of W-3.
+  - QT-L4 meets W-1. «T bounds IDEAL-CYC iterations only; nothing is proved on Γ3 …; a Γ3 form of this proof (not given here) would
+    bound N5′-xi only up to its first fallback». The witnesses' parenthesis after it stays. I accept QT-L4 in place of W-1.
+  - REFEREE's Γ3 evidence (R118's DATA: the Γ3 run diverges at exact VJ ties, 29 of 1,300) and mine (T3 ≠ T on 7 of 2,000; the best
+    sets are equal at every divergence) agree.
+- **QT-L2 (F2) corrects my report.** My Premises section says «F2 is listed in packet §1 but not used by any proof I re-derived. L-1
+  correctly omits it.» That is wrong. (F-cls) compares classes of different cycle nodes by reward. «Distinct classes compare the same
+  way at all times» and the convexity of classes need distinct cycle nodes to have distinct rewards, and that is F2. I accept QT-L2.
+- **QT-L5 (generator parameters) and QT-L6 (CN2's unit):** agreed. QT-L6 states, in the line, the scope I accepted from the unit.
+- **Where we differ: my D-1 and D-2.** REFEREE marks the quiet194.py «L + 1» as «OK. Note» and LOC-K2's counter as «OK».
+  - I keep both as required under the DATA rule: the cited tool must compute the clause as worded.
+    - D-1: quiet194.py tests T > Q + (Q + 1)(L + 1), and wfail counts steps rather than windows.
+    - D-2: k2fail tests only σ̄_t(K2) = K1, while the clause also states Ω_t(K1) ◁ Ω_t(K2).
+  - The truth of the clauses is not in doubt. REFEREE's replay with the exact L, and mine, give wfail 0 and Tfail 0, and my k2b counter
+    is 0.
+  - So either fix is enough: the tool fix (D-1 (a); a second conjunct in k2fail) or my strings, which overlap no QT string.
+- **Combined line for L-NEW's fixes entry 2 / L-2** (bt_overlap.out):
+  - L-1 + QT-L1..QT-L6 = REFEREE's fed893462811ea10d0b99622dcbb31f7b50b6d47, 5,131 B (reproduced byte-exact).
+  - L-1 + QT-L1..QT-L6 + D-1 (b) + D-2: sha1 8f3230b079751b8b5e95ba0da68e45e9265b943c, 5,223 B, 98 «(» = 98 «)».
+  - L-1 + QT-L1..QT-L6 + D-2, with D-1 by tool fix (a): sha1 316b7e79b28c5270bd9d7ee91b1f748fad65b1c3, 5,179 B.
+  - If the tool fixes D-1 (a) and D-2 (second conjunct) are made and re-run, fed89346… matches for me as it stands.
+  - My W-1..W-3 strings are withdrawn in favour of QT-L4, QT-L1 and QT-L3, so as not to give L-NEW two strings for one span.
+- Verdicts unchanged (Opus 5.5, D1).
