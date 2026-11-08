@@ -1255,3 +1255,6 @@ echo "si (box 81: BRIDGE): PASS"
 # box 82 (CYCLIC TOWERS: HS2_d3 Xi-cycle scans, climbs, CAP-R; docs/si/box82-cyctower.md)
 bash box82/check82.sh
 echo "si (box 82: CYCLIC TOWERS): PASS"
+# box 83 (LADDER-R at h = 2..6: built and measured; Lemma LOCK-UP, Corollary LADDER-2; docs/si/box83-ladder.md)
+bash box83/check83.sh
+echo "si (box 83: LADDER-R): PASS"
