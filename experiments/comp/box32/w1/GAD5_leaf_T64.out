@@ -1,2 +1,4 @@
 GADGET NOREACH [13, 14, 15] base seed_leaf11_d32.txt ebb846af F [11, 56, 57, 58, 59] R0 ok [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] X13 [8, 9, 18, 60] cand sizes {22: 9, 23: 9, 112: 15, 113: 15, 114: 14, 115: 14, 116: 13, 117: 13, 118: 12, 119: 12}
 INFO {'d': 32, 'H': 8, 'T': 64, 'relevant': 62, 'Lmax': 30, 'options': 124, 'vars': 270736, 'clauses': 2479041, 'empty': False, 'nP': 2965, 'quad': 2756058, 'lazy': 0, 'build_s': 2.7}
+STOPPED by L-COMP 13 at 13:23Z: no answer after 90 min (2.48M clauses, T0 64): INCONCLUSIVE
+exit 143
