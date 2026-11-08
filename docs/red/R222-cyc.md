@@ -99,7 +99,7 @@ The bound in (b) is attained on real runs, so (b) cannot be improved by a consta
   for L-SI's hub-pair candidate.
 
 ## 5. A′_g = 0 (Lead 02:56Z: prove it or break it): PROVED-CONDITIONAL on [OPT], via R221 Lemma B-ONLY
-**Corollary RHO-CYC-0 (PROVED-CONDITIONAL on F1 and [OPT], lane; [OPT] is the standing premise of R57 (b), Lead reading).** In
+**Corollary RHO-CYC-0 (PROVED-CONDITIONAL on F1 and [OPT], lane; [OPT] as sourced in §6: R118 (b) via P-N5-XICYC l. 75).** In
 IDEAL-CYC(G), for every genome G and every gate g of level ≥ 1 whose Ξ-target x′ is a mover:
 - A′_g = 0, and ρ_g ≤ 1 + #changes of (Λ(x′), E(x′)) ≤ (M + 3)·F′_B(M);
 - B is the maximum number of ascents of seq_t(x′), and B ≤ U(G) under [E-LEV].
@@ -136,9 +136,13 @@ Premises, named once and cited by tag below:
 - [XICYC-a] R118 (a): Odd is unrestricted at gates and at K2 in IDEAL-CYC. LANDED.
 - [DEF] P-N5-XICYC [DEF] priorities: movers 0, gates 1, c_X 2, K2 3, K1 5, β ≥ 6, e-vertices above every β, c_W above those, K0 = top + 2,
   K3 = top + 3. Edges: e_g's only in-edge is from g, g's only in-edge is from its mover, K0 → K3 → K2 is frozen. In R104 / R118.
-- [OPT] the pointwise optimum: one σ̄_t is ⊴-minimal at every vertex at once. Lead reading 03:15Z: this is RESULTS R57 (b)'s standing
-  SPEC premise, quoted verbatim from trunk docs/RESULTS.md l. 2915: «that S1's procedure realises an optimal σ̄ is VJ00 §6 plus SPEC
-  conformance». Every packet using an item below must cite that clause and name it as the standing premise.
+- [OPT] the pointwise optimum: one σ̄_t is ⊴-minimal at every vertex at once. Source (Lead 03:37Z, after REFEREE 28's P-N5-QUIET review at
+  claude/referee 6ae1fc04; this CORRECTS the Lead's 03:15Z reading, which pointed to R57 (b)):
+  - RESULTS R118 (b), through its incorporated P-N5-XICYC l. 75 (opened at trunk, verbatim): «σ̄_t is optimal at every vertex at once
+    ([VJ])».
+  - RESULTS R21 (a) is a second source (Lead's pointer; I have not opened it).
+  - NOT R57 (b): 1E-N3 concerns SPEC's S1 output, not IDEAL-CYC's σ̄_t.
+  - Every packet using items 1, 2, 4, 6 or 7 below cites [OPT] this way.
 - [E-LEV] e-priorities increase with the level of the gate's mover. Not landed; a HYPOTHESIS wherever it is used.
 - Lane results used: E-MON, HUB-ASC-G, UP-B from P-N5-ASC (claude/l-new 95dc76d7 §3, §5, §6; both referees SIGN, landing as R121 per the
   Lead's brief); B-ONLY from R221-quiet.md §3.
@@ -167,7 +171,8 @@ Remarks for a packet writer:
 - DATA backing: §1-§2 of this file; R222-lockup.md §2-§3; R221-ladder.md §7-§8; R221-quiet.md §3. No referee has seen items 5-8.
 
 ## 7. Sources opened
-- trunk claude/vibrant-johnson-nxvvxo docs/RESULTS.md l. 2913-2916 (R57 (b) standing premise, verbatim), l. 2893 (R57 title).
+- trunk claude/vibrant-johnson-nxvvxo docs/new/P-N5-XICYC.md l. 73-76 ([OPT] source, verbatim); docs/RESULTS.md l. 2913-2916 (R57 (b), opened
+  and found NOT to be [OPT]'s source for IDEAL-CYC, per the Lead's 03:37Z correction).
 - claude/l-red docs/red/R221-quiet.md §1 ([OPT] status), §3 (Lemma B-ONLY).
 - claude/l-new 95dc76d7 docs/new/P-N5-ASC.md §1 (R118 (e) per-vertex form, [VJ] Π), §3 (E-MON), §5 (HUB-ASC-G), §6 (UP-B).
 - claude/l-red docs/red/R221-ladder.md §7 (RHO-SET, RHO-E, RHO-COUNT), experiments/red/r221/rho221.py (RET definition),

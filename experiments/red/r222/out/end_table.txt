@@ -1,0 +1,13 @@
+| family | genomes | N max | M max | runs (3 modes) | fail counters | max F (spec / xi / idx) | genomes with F not equal in all 3 modes | T = F + 2 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| rand | 300 | 15 | 45 | 900 | 0 | 5 / 11 / 4 | 255 | 900 / 900 |
+| esc | 300 | 15 | 45 | 900 | 0 | 4 / 6 / 4 | 211 | 900 / 900 |
+| noesc | 300 | 15 | 45 | 900 | 0 | 6 / 9 / 6 | 258 | 900 / 900 |
+| deep | 300 | 18 | 54 | 900 | 0 | 5 / 11 / 5 | 289 | 900 / 900 |
+| dense | 300 | 15 | 60 | 900 | 0 | 6 / 11 / 5 | 258 | 900 / 900 |
+| lvl0 | 300 | 19 | 76 | 900 | 0 | 7 / 12 / 5 | 272 | 900 / 900 |
+| late | 300 | 15 | 45 | 900 | 0 | 6 / 11 / 5 | 277 | 900 / 900 |
+| self | 300 | 15 | 45 | 900 | 0 | 5 / 12 / 5 | 245 | 900 / 900 |
+| wide | 300 | 9 | 54 | 900 | 0 | 6 / 10 / 5 | 259 | 900 / 900 |
+
+Total: 2700 genomes, 8100 runs, 0 with a failing counter; 2324 genomes have different F in different modes.
