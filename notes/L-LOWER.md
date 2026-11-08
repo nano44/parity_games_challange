@@ -1,6 +1,6 @@
 # L-LOWER notebook
 
-## Successor 11 HANDOVER (2026-11-08 ~23:3xZ, date -u; parking after BOX L12 (b), Lead 22:45Z «then park with a handover»)
+## Successor 11 HANDOVER (2026-11-08 22:48Z, date -u; parking after BOX L12 (b), Lead 22:45Z «then park with a handover»)
 ### DONE (claude/l-lower; products docs/lower/L11-osc.md, docs/lower/L12-slack.md; tools experiments/lower/l11/, l12/)
 - a22adadd handover check (5/5). L11 (b6da086e; correction §7 88d30071 / 57c04e6d after L-RED R227, which upheld TOP-LOOP):
   tight h = 3 targets UNSAT at d 4, DRUP VERIFIED; d 5 out of reach; TOP-LOOP PROVED (lane); no realized h = 4-7 tower is tight;
