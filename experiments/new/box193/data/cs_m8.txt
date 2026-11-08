@@ -1,0 +1,5 @@
+# CS(M = 8, A = 1) exact maximum (distinct hub chains), L-NEW successor 62, finished 2026-11-08 00:16Z by date -u.
+# Tool: dp193b.c sha1 f7ce8465a43ae80614f033784e67fb63f4b3072a; build gcc -O2 -fopenmp -o dp193b dp193b.c; run ./dp193b 8 1 CKPT (one slice, 4 threads, 22:35Z-00:16Z).
+# Unit: distinct hub chains (one run). Set: all runs of CS(8, 1) (every chain at most 1 ascent). Scope: abstract chain system (box 193 §3).
+M 8 A 1 forests 1454040 max distinct hub chains 126
+# A 1 sequence M 1..8: 2 4 8 16 29 50 82 126. The cubic (M^3 - 7M^2 + 28M - 32)/2 through M 3-7 predicts 128 at M 8: it FAILS (126 < 128).

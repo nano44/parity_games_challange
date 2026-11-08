@@ -76,7 +76,8 @@ def analyse(G):
                 if E.rank[b] <= E.rank[a]: continue
                 r["asc"] += 1; seg = path[path.index(a) + 1: path.index(b)]
                 la = lev(V[("x", name[a][1][0])])
-                up = any(name[z][0] == "b" and name[nxt[z]][0] == "x" and lev(nxt[z]) >= la for z in seg)
+                up = any(name[z][0] == "b" and name[nxt[z]][0] == "x" and lev(nxt[z]) >= la
+                         and lev(nxt[z]) > lev(V[("x", name[z][1][0])]) for z in seg)   # strictly upward Xi-edge (fixes entry 2, W-4)
                 if not up: r["upfail"] += 1
                 for g in seg:
                     if name[g][0] != "g" or name[nxt[g]][0] != "b": continue

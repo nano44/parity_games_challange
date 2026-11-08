@@ -65,3 +65,27 @@
 - check193.sh / check193.out: asc193.py's three unit fields; ug193.py on 13 instances; chain193.py M 6 and 7 at A 0. The check.sh block
   «BOX 193 ASC» greps the new rd2_d9 line.
 - asc.pins: re-pinned (changed: asc193.py, check193.sh, check193.out; added: the five box192 instances, this fixes file, line L-1).
+
+## Fixes entry 2 (L-NEW successor 62; Lead 00:15Z: «P-N5-ASC fix round 2 … Write fixes entry 2 (append-only) and line L-2 by script»)
+- Reports: REFEREE 27 «entry 1 CORRECT and L-1 MATCHES» (claude/referee d4b39be0); REFEREE-2 31 Addendum 2 (claude/referee-2 fcdc16b4,
+  docs/referee-2/R2-P-N5-ASC.md): entry 1 CORRECT, «L-1 NOT YET: W-3 and W-4 (DATA rule, wording or counter only; no statement
+  changes)». Nothing REFUSED. The packet is unchanged; entry 1 is unchanged; where they differ, this entry governs.
+- Line: L-1 (docs/new/P-N5-ASC-line-L1.txt) → L-2 (docs/new/P-N5-ASC-line-L2.txt), written by script. L-2 differs from L-1 by exactly
+  two strings, each replaced once: W-3 below, and the source tail «with fixes entry 1» → «with fixes entries 1-2».
+
+### W-3 (REFEREE-2): E-MON unit. ACCEPTED.
+- tmonunits counts every successor y of an e-vertex with Λ(y) fixed, c_W included (level-0 e's go to c_W): REFEREE-2 «Σ T = 229 of the
+  2,552». Entry 1 already says «W-target or c_W-successor y»; L-1 did not.
+- Old (once in L-1): «(consecutive state pair, W-target with Λ fixed) pairs»
+- New (in L-2): «(consecutive state pair, W-target or c_W with Λ fixed) pairs»
+
+### W-4 (REFEREE-2): UP-JUMP tested form. ACCEPTED, option (a).
+- asc193.py's upfail now also requires the Ξ-step to go STRICTLY up from the β's own mover: a β z on the segment counts only if its
+  Ξ-target nxt[z] is a mover with lev(nxt[z]) ≥ la AND lev(nxt[z]) > lev(z's own mover), as UP-JUMP asserts.
+- Re-run (check193.sh, 13 instances): upfail 0 in 1,956 ascents (the «asc» sum), so the set is unchanged and L-1's UP-JUMP clause
+  stands unchanged in L-2. check193.out is byte-identical (the printed fields did not change); only asc193.py's sha1 changes.
+- Second route (REFEREE-2's, not re-run here): full form «0 in 10,751 ascents of all vertices' plays» (r2asc.py,
+  docs/referee-2/R2-P-N5-ASC/r2asc_inst.out at claude/referee-2 533744a5).
+
+### Machine checks after this entry
+- asc.pins: asc193.py and this fixes file re-pinned; line L-2 added (35 rows). check.sh block «P-N5-ASC» unchanged (it reads asc.pins).

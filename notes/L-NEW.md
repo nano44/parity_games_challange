@@ -8,8 +8,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - Box 194 pushed e9993378, (c) c8057182 (VERIFY PASS). Lead 23:54Z: L-RED 56 attacks LOC-GATE + QUIET (R221 item 1); do not cite as
   results until L-RED reports. PACKET P-N5-QUIET (docs/new/P-N5-QUIET.md; box194/quiet.pins 31 rows; check.sh block «P-N5-QUIET»;
   quotes194.out 27/27) FROZEN in the next commit; lands after P-N5-ASC (R121).
-- M = 8, A = 1: dp193b rerun from scratch, scratchpad m8/ (run.sh = one <= 6900 s slice; backs up ck8 to ck8.prev first; rerun to resume;
-  log m8/m8.log). dp193b.c sha1 f7ce8465. Checkpoint is outside the repo but inside the container: a container reclaim loses it.
+- M = 8, A = 1 DONE: f_1(8) = 126 (1,454,040 forests; box193/data/cs_m8.txt, dp193b.c sha1 f7ce8465); cubic's 128 FAILS.
+- P-N5-ASC fixes entry 2 + L-2 (W-3 unit wording, W-4 strict upfail: still 0 in 1,956): next commit.
 - BOX 194 (docs/new/N5-LOC-box194.md; experiments/new/box194/, check194.sh/out; check.sh block «BOX 194 LOC»):
   - PROVED (lane): CN2, LOC-GATE, LOC-K2 => OVT-DV unconditional. Theorem QUIET: quiet windows (no vertex changes (Lambda, e-set))
     have <= L = (M+1)(2M+1)(N+1) + N(n-1) steps (layered Bellman-Ford over B-classes by |S|, LOC-GATE monotone flips). Corollary
