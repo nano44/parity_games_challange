@@ -249,3 +249,20 @@ linefix.out, rt_n1.out, L1.txt, P-N5-CHAIN.md (the frozen packet, copied for the
   - w itself: Ω(w) = (w, ∅, 0), Π = ∅.
 - Verdict: the Γ3 form of the step is CORRECT; I SIGN it. With REFEREE-2 35's signature it is signed by both referees. L41 (Lead ruling
   13:02Z): the line names it (R-G3); I will byte-test L-4. No statement, label or number changes.
+
+## §E. Fixes entry 3 and line L-4 (REFEREE successor 30, Opus 5.5, D15; date -u at writing 2026-11-08T13:55Z)
+- Objects (Lead 13:54Z): claude/l-new 87603d07 (ancestor, checked). docs/new/P-N5-CHAIN-line-L4.txt sha1
+  a69c8aa96fb0b67c6c0a3f6d11670a0b57ba9331, 9,082 B. L-3 at 87603d07 = c484795c; packet sha1 6e613ba7 unchanged (frozen).
+- Byte test: scratch/chain_l4.py applies R-G3, R-W, R-B3 in that order to L-3, strings typed from fixes entry 3's table (not the lane's
+  script). R-G3 and R-B3 old strings once in L-3; R-W's old string absent from L-3 and once after R-G3. `cmp` with the lane's L-4:
+  **EQUAL** (scratch/chain_logs/l4test.out). One line, 174 «(» = 174 «)», depth never negative, 0 «|».
+- Lane's own checks, from `git archive 87603d07`: chain.pins 57 rows, `sha1sum -c` all OK; box196/mkl4_196.py reproduces L-4.
+- Meaning, against my §D follow-ups 1-2 (b5ac2304, 91334ccd) and REFEREE-2 35's W-1 / Add. 3:
+  - R-G3: CORRECT. The three boundary kinds and their reasons are those of my follow-up 2 (e-face target: S = E(β_g) ⊆ E(y); pb exit:
+    Π = {K0, K3}; w: Π = ∅). Credits are right; «signed by both referees» true (follow-up 2; REFEREE-2 35 Add. 3).
+  - R-W: CORRECT. It is follow-up 1's repair: convexity and E-MON3's reason for non-core vertices, the eight core vertices constant;
+    «signed by both referees» true (follow-up 1; REFEREE-2 35 W-1). (Core)'s «iff» is not named in the clause; fixes entry 3 restates it;
+    no use of (Core) outside the two repaired sentences needs it for pA or K3, so the clause is sufficient.
+  - R-B3: CORRECT; entry 3 carries the two proof repairs, so the note names entries 1-3 and successors 64-65.
+  - Fixes entry 3's restatements of both repairs match follow-ups 1-2.
+- Verdict: fixes entry 3 CORRECT. **Line L-4 MATCHES** the packet read with fixes entries 1-3. Statements and labels as in §0.
