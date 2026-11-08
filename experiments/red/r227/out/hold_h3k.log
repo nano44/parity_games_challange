@@ -1,0 +1,3 @@
+NEW ((7, 14, 17), 'below', 0, 0, 'old', 'asc') N 125 M 252
+NEW ((7, 15, 17), 'below', 22, 0, 'old', 'asc') N 125 M 252
+runs 288 A hist [(4, 144), (7, 144)] err 0 BEST ((7, 15, 17), 'below', 22, 0, 'old', 'asc') ALT-H viol [0, 0, 0] H 8

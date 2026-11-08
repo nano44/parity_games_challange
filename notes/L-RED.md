@@ -64,7 +64,7 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   frozen; tight on CX4 (A 5, H 1). So a K-valued held High gives at most A 2K + 3 (linear ceiling; decides nothing about ALT-POLY).
 - Hold template hold227.py at h = 2: REPLACE A 3 (288), KEEP A ≤ 5 (288) < GROW7 7. Frozen r227/inst/HOLD2_n84, HOLD2K_n84; asc197 agrees.
 - Second carry carry2_227.py on CX4: 12,000 builds, A ≤ 5 (C2CX4_n23). blockcopy227 / selfgrow227: no gain.
-- Running at part-1 push: h = 3 hold (out/hold_h3*.log), GROW7 second carry (out/c2_g7_2712.log).
+- Part 1 pushed 2564c6fa. Part 2: h = 3 REPLACE A 4, KEEP A 7 = GROW7 (race first, tower entries after; HOLD3_n125, HOLD3K_n125); GROW7 second carry 8,000 no gain.
 - Worktree: <scratchpad>/wt197 = l-new f98e93ee (detached); run asc197 from inside it with --files <abs path>; remove at park.
 - Sources opened: l-new f98e93ee docs/new/N5-CORE-box197.md (§0 list, E-MON3 l. 23/67, ALT-EQUIV l. 189-234), asc197.py header (run).
 
