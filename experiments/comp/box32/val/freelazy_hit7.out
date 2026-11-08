@@ -1,0 +1,34 @@
+INFO {'d': 28, 'H': 7, 'T': 299, 'relevant': 56, 'Lmax': 27, 'options': 112, 'vars': 1443328, 'clauses': 5435571, 'empty': False, 'nP': 14773, 'quad': 0, 'lazy': 14773, 'build_s': 6.7}
+SOLVE it 1 -> SAT 2.6s
+  lazy: added 291050
+SOLVE it 2 -> SAT 0.4s
+  lazy: added 303027
+SOLVE it 3 -> SAT 43.6s
+  lazy: added 83200
+SOLVE it 4 -> SAT 7.0s
+  lazy: added 100952
+SOLVE it 5 -> SAT 63.2s
+  lazy: added 99198
+SOLVE it 6 -> SAT 38.8s
+  lazy: added 32199
+SOLVE it 7 -> SAT 168.7s
+  lazy: added 30139
+SOLVE it 8 -> SAT 65.2s
+  lazy: added 42938
+SOLVE it 9 -> SAT 112.1s
+  lazy: added 37767
+SOLVE it 10 -> SAT 144.1s
+  lazy: added 29502
+SOLVE it 11 -> SAT 113.8s
+  lazy: added 38401
+SOLVE it 12 -> SAT 129.0s
+  lazy: added 29796
+SOLVE it 13 -> SAT 374.5s
+  lazy: added 32636
+SOLVE it 14 -> SAT 95.9s
+  lazy: added 29165
+SOLVE it 15 -> SAT 120.0s
+  lazy: added 26701
+SOLVE it 16 -> SAT 312.5s
+  lazy: added 32765
+STOPPED by L-COMP 13 at 09:11:05Z after 16 rounds (~30 min, still ~30k violated order clauses per round); restarted as --lazy2

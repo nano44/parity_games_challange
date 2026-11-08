@@ -263,8 +263,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('genome'); ap.add_argument('target'); ap.add_argument('H', type=int)
     ap.add_argument('--fix', default=''); ap.add_argument('--solve', default='')
-    ap.add_argument('--cnf'); ap.add_argument('--out'); ap.add_argument('--lazy', action='store_true'); ap.add_argument('--relax', action='store_true')
+    ap.add_argument('--cnf'); ap.add_argument('--out'); ap.add_argument('--lazy', action='store_true'); ap.add_argument('--relax', action='store_true'); ap.add_argument('--lazy2', action='store_true')
     a = ap.parse_args()
+    if a.lazy2: a.lazy = True
     fix = set() if not a.fix else ({'ranks', 'signs', 'gates', 'starts'} if a.fix == 'all' else set(a.fix.split(',')))
     D = rdgen(a.genome); S, nc = rdtarget(a.target); assert nc == 2 * a.H
     sinks = []; sv = None; body = None
@@ -286,7 +287,7 @@ def main():
         os.remove(a.cnf + '.body'); print('CNF ->', a.cnf, flush=True)
     if a.solve:
         if E.empty: print('RESULT UNSAT (empty clause at build)'); return
-        lz = ctx['lazyc']; it = 0
+        lz = ctx['lazyc']; it = 0; done = set()
         while True:
             t1 = time.time(); r = sv.solve(); it += 1
             print(f'SOLVE it {it} -> {"SAT" if r else "UNSAT"} {time.time() - t1:.1f}s', flush=True)
@@ -297,9 +298,14 @@ def main():
             ordl = ctx['ordl']; nadd = 0
             for tau, dl in lz:
                 on = [e for e in tau if val(tau[e])]; D_ = [f for f in dl if val(dl[f])]
-                for e in on:
+                bad = any(f != e and not val(ordl(e, f)) for e in on for f in D_)
+                if not bad: continue
+                for e in (D_ if a.lazy2 else on):   # lazy2: the whole block over the realized difference set
                     for f in D_:
-                        if f != e and not val(ordl(e, f)):
+                        if f != e and (a.lazy2 or not val(ordl(e, f))):
+                            key = (tau[e], f)
+                            if key in done: continue
+                            done.add(key)
                             c = [-tau[e], -dl[f] if not isinstance(dl[f], bool) else None, ordl(e, f)]
                             sv.add_clause([l for l in c if l is not None and not isinstance(l, bool)]); nadd += 1
             if not nadd: break
