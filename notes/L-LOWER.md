@@ -1,27 +1,49 @@
 # L-LOWER notebook
 
-## Successor 10 (Opus 5.5): BOX L10, GO from the Lead 07:02Z 2026-11-08 (handover check 085a821b, score 5)
-### Resume point (10:2xZ, date -u)
-- Product docs/lower/L10-design.md §0-§2g; tools/data experiments/lower/l10/.
-- Item 1 DONE (§1, §1c): CONJECTURE STRETCH-AND-STACK; Lemma STRETCH (PROVED, lane). Minimal stretch of HIT7 for h = 8 is tight,
-  T' 510; retrigger bill 261. L-RED R224: Lemma STRETCH and the bill survive. The target print's first window was broken (τ ≥ 2 → 3)
-  and is fixed (re-frozen 90b3b0f9 = L-RED's target_fix data lines). R3 revised to R3' (PARITY-8).
-- Item 2 (§2): target build.core8 / out/core8_HIT7.txt (c6e19673): T 510, F(0..7) = 2 6 14 30 62 126 254 510.
-  - Lemma HELPERS-EVERYWHERE (PROVED, lane; §2c).
-  - f_j's required preference = 1 - o(j-1) (§2e).
-  - The exact-target search ann.c reaches 144 at best (rec/L10_C4_final_score144*.txt). Obstruction = the loop f6 → pairs 0-5 →
-    clock q7 → pair 6 ∋ f6: f6 is sacrificed with a free order, q7 with a forced order (C5 538).
-  - In C5, helper 18 avoids 13 and carries f6's need exactly (§2g). The frozen-gadget runs C7 / C8 (f6 → 18, 60) plateau at ~480.
-  - L-COMP 13's exact encoder tests my wirings (Lead relays; f6-rewire on C4 167: narrow UNSAT; on the C5 snapshot: running).
-- NOT achieved: an 8-capped genome. Not DEAD.
-- NEXT: the f6 gadget needs NEW helper wiring for 1 - o(5) AND a 13-free idle-step clock for pairs 0-5 (a helper oscillator driven
-  by o(7) timing). Wait for L-COMP's (c) gadget result. Item 3 (h3 d6 SAT) untouched.
+## Successor 10 HANDOVER (2026-11-08 11:55Z, date -u; parking at ~420k context, Lead 10:41Z «one more design round, then park»)
+### DONE (claude/l-lower; product docs/lower/L10-design.md §0-§3d; tools/data experiments/lower/l10/)
+- 085a821b handover check (score 5).
+- Item 1: §1 CONJECTURE STRETCH-AND-STACK (1802a93f) and Lemma STRETCH (PROVED, lane). DATA: HIT7's minimal stretch for h = 8 is
+  tight, T' 510, with a retrigger bill of 261. L-RED R224 confirmed STRETCH, T' and the bill, and found the first-window bug
+  (stretch.py τ ≥ 2 → 3). Fixed in 220bef55; the print was re-frozen (90b3b0f9 = L-RED target_fix data lines). R3 was revised to
+  R3' (PARITY-8).
+- Item 2 (§2): target out/core8_HIT7.txt (c6e19673): T 510, F(0..7) = 2 6 14 30 62 126 254 510 (an 8-capped core trajectory).
+  - Lemma HELPERS-EVERYWHERE (PROVED, lane; 3b7504d0): in every realization, every core mover 2..15 reads a helper.
+  - §2e (856ae081): every key-fired f_j must prefer «not my key» = 1 - o(j-1) (f7, f6 exact up to one initial step).
+  - Search ann.c (exact target; score 0 ⇔ exact realization; ~800 it/s): unconstrained best 144 (rec/L10_C4_final_score144*,
+    9e7b99d4). The obstruction is the loop f6 → 1 - o(5) carrier → pair-7 timing → pair 6 ∋ f6, in three variants: C4 (f6
+    sacrificed), C5 538 (q7 sacrificed), C8 477 (f6 → helper 18 frozen: f6 solved, q7 sacrificed).
+- Design round (§3): Lemma FUEL-DOUBLING (PROVED, lane; 7a921bf1), M(x) ≤ 2^|closure(x)|; 0 violations on HIT7 and SL41.
+  - CONJECTURE OSC-ROOM: the idle-step oscillator is the tower problem one level down. If it must be rebuilt per level, d grows
+    Fibonacci-like and T is polynomial in d; the linear DATA d 20/24/28 (one shared cascade) points the other way.
+  - C10 («pairs 0-5 reach none of 13, 14, 15»): score 127, the BEST (rec/L10_C10_osc_final*, 4296d8c6 / solved 3ef36801). The
+    loop is broken at pairs 6-7 by a counter-shaped helper oscillator (move counts 127, 64, 32, 15); the obstruction moves to f5,
+    now the global sink. L-COMP 13, exact (DRUP, scope = C10 wiring + ranks fixed): UNSAT from t 7, f5 the unique single-mover
+    culprit (claude/l-comp b4942bef).
+  - C11 (both cuts): 195 (rec/L10_C11_osc2_final*, 73ef3b55); f5 16 but f6 back at 48.
+- NOT achieved: an 8-capped genome at d 32. Not DEAD (heuristic search).
+### IN FLIGHT
+- None of mine (all ann runs ended; pgrep empty). L-COMP 13 is running the f5 gadget on the C10 base (fresh movers, NOREACH 11,
+  13, 14, 15): any SAT model comes through the Lead.
+### NEXT (successor)
+- Read L10 §2e-§3d first. The open design problem is the recursion. Each key-fired f_j needs a carrier of 1 - o(j-1) that does
+  not reach f_j, and the timing for the levels below must come from a helper cascade reaching neither f_j nor pair 7. Cutting at
+  level j re-creates the loop at j - 1 (C10 → f5; C11 both cuts → f6 again).
+- Options:
+  (a) build the cascade by hand as a SHARED helper tower (one cascade serving all levels, as HIT7's levels 7-27 do) and give the
+      search only the wiring frame;
+  (b) try to PROVE OSC-ROOM or its negation on small cases (h = 3, 4 tight targets with exact SAT; item 3 tools l8/hsat.py,
+      l9/gwhole.py);
+  (c) wait for L-COMP's f5-gadget result.
+- Item 3 (h3 d5/d6 SAT) untouched this box.
 ### Things only I know (successor 10)
-- ann.c (C, ~800 it/s) = anneal.py (Python, ~10 it/s), same score. Optional args: order constraint «X:y1,..» and frozen options
-  «m1,m2». The score is the violation count of a greedy decision list with errors; any score > 0 genome dies at its first violated
-  constraint (free runs T 2-5). Never report a score > 0 genome as a tower.
-- The stretched target is deterministic: stmap.target(D, 8) (after the τ ≥ 3 fix); build.core8 no longer prepends.
-- Bests and logs of the runs live in the scratchpad (C1-C8.txt / .log); the frozen ones are in l10/rec with sha1s in §2f.
+- ann.c builds with gcc -O2 -o $SP/ann ann.c -lm. Arguments: GENOME CORE OUT SEED SECONDS TEMP [X or X1+X2..:y1,..] [frozen
+  options or -] [second constraint X1+..:y1,..]. It resumes from OUT if OUT exists (copy a start genome to OUT first). Score 1<<30
+  = order-infeasible start; the first valid move is accepted.
+- A score > 0 genome is not a tower: run freely, it dies at its first violated constraint (T 2-5). Never report it as one.
+- stmap.target(D, 8) is the corrected stretch; build.core8 no longer prepends; out/core8_HIT7.txt is the search target.
+- viol.py (per-mover violations), carriers.py (single-mover carriers of a required preference), essential.py / minset.py
+  (reader tables), fuel.py (FUEL-DOUBLING check).
 
 ## Successor 9 HANDOVER (2026-11-08 ~05:0xZ, date -u; written near the park point)
 ### DONE (claude/l-lower; product docs/lower/L9-design.md §0-§4; tools/data experiments/lower/l9/)

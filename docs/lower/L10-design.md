@@ -272,6 +272,16 @@ movers in closure(x); acyclic wiring)
   the levels below must come from a helper tower that does not read the level being fixed.
 - Test running (C11, from C10, T 0.8, 40 min): add the second constraint «pairs 0-4 reach none of 11, 13, 14, 15».
 
+- Exact confirmation (L-COMP 13 via the Lead 11:53Z; claude/l-comp b4942bef; DRUP VERIFIED; scope exactly «C10's wiring and solved
+  ranks 3ef36801 fixed; signs, helper gates, starts and trajectories free; target core8 c6e19673»). UNSAT from t 7 (SAT through
+  rows 0..6). At prefix 7, dropping f5 (11) alone makes it SAT, and dropping any other single core mover does not. So f5's move
+  0 → 1 at t 7 is the unique single-mover culprit for that wiring and those ranks; nothing is claimed about other wirings.
+- C11 (from C10, T 0.8, 40 min; both constraints «0-11 reach none of 13, 14, 15» and «0-9 reach none of 11, 13, 14, 15»): 195.
+  Frozen: rec/L10_C11_osc2_final.txt, sha1 73ef3b554a80e9ed6efcd9906d84123992dc9a97; solved ranks
+  rec/L10_C11_osc2_final_solved.txt, sha1 c2e925f724a6baba63528bbb864064e3c2328c26; out/viol_C11_final.out.
+  f5 drops to 16, but f6 (13) is back at 48; 8 35, 6 24, q5 15, helper 28 15. With both cuts imposed, the search does not
+  find a helper system that serves f5 and f6 together (DATA, heuristic; not exhaustive).
+
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All are about the IDEAL
 model's step sequence (R104's definition) on 𝓛^R_d and its F-profile. Not M3, not a step-4 pass, not a TARGET.md claim.
