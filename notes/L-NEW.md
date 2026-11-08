@@ -15,6 +15,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   [E-LEV]), RE-COUNT, Theorem RE-EQUIV (T3 poly iff Rtop, the top re-entries, poly). D18 link: tops as Davenport–Schinzel sequences;
   bounded alternation order would give poly; BIN's ruler sequence has unbounded order. DATA maxalt 3,4,4,5 on TC2..TC5m: OPEN.
   Next: maxalt on a tower family of growing height (L-SI's generator, read only); Sharir–Agarwal not yet opened (needed before citing).
+  Addendum 1: CONJECTURE DS-TOPS (tops(v, I) order-s DS for a constant s; data consistent with s = 4) and Corollary DS-POLY (PROVED
+  conditional); tower family h 2..8 (box197/hfam, mkh197.py on L-SI two85 copy): max maxalt 2,4,5,4,4,4,4 while T3 13..80.
   Things only I know: asc197.py counts Rtop per (time, top); maxR counts all re-entries; sweep197.out ran with ROOT set from the scratchpad.
 
 ## HANDOVER (successor 64, PARKING 2026-11-08 09:12Z by date -u; Lead 09:13Z: «your next item is the HANDOVER … push, send me the SHA, then stop»)
@@ -3454,6 +3456,10 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   1-1-exchange paragraph (full PDF text read).
 - (succ. 38, box 89) T. Ralphs, IE411 Lecture 11 (Lehigh, coral.ise.lehigh.edu/~ted/files/ie411/lectures-python/Lecture11.pdf), slide 3 (PDF text read).
 - (succ. 40) L-LIT T61 (l-lit 1ad851ee, docs/lit/T61-order-charging.md §2.6, S5a data). L-LIT T60 (l-lit 54584c0c, docs/lit/T60-best-reply-flips.md §3.3, ORDER-DET / NO-REPEAT statements); L-SI box 53 (l-si aeb8c311, docs/si/N5-SBF-box53.md §2.1-§2.5, §3); P-N5-SETTLE §1-§2 (l-si a0970d36). [ABS] 2102.04922 and [GH] NOT opened (only T60's quotes; no theorem of theirs used).
+- (successor 65, 2026-11-08 11:25Z) S. Pettie, «Sharp Bounds on Davenport-Schinzel Sequences of Every Order», arXiv:1204.1086 v2:
+  §1 p.1 (order-s DS: repetition-free, no alternation of length s + 2), §1.1 p.2 (λ_s(n) := Ex(ababa…, n)), §1.2 p.3 (λ1 = n, λ2 = 2n − 1
+  [Davenport–Schinzel 1965]; Szemerédi 1973 λ_s(n) = O(n log* n) for every s ≥ 3; Hart–Sharir 1984 λ3 = Θ(nα(n))). Sharir–Agarwal 1995
+  NOT opened (not reachable). Used in box 197 Addendum 1 (CONJECTURE DS-TOPS, Corollary DS-POLY).
 ## Dead ends
 - (succ. 45, box 131) «Smallest index» as S4a's tie rule: false at even W-cycle nodes (483 / 666 ties; the rule there is the BFS key); index potential works only at odd cycle nodes.
 - (succ. 45, box 130) Rule-independent potential for FL runs (Xi, or (Xi, length) at tied W): exponential range, CDAG_n one-player single-switch chain 2^n - n - 1 (CDAG_6: 57 steps). A bound must use the S1 tie-break.

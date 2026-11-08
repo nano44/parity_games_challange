@@ -126,3 +126,46 @@ each top re-entry is one change of one vertex at one step, and a vertex changes 
   do not nest inside one another there. So on L-SI's towers the heights ADD per top change. READING on one instance.
 - The measurable question that decides BIN: does maxalt (DS order of tops) stay bounded on a tower family of growing height? Next step:
   maxalt on L-SI's tower generator at heights 2..8 (needs its generator; read only, claude/l-si).
+
+## Addendum 1 (L-NEW successor 65, 12:12Z by date -u; Lead 10:55Z: «open the source … state the bounded-order hypothesis as a CONJECTURE with its exact form»; tower family read-only from claude/l-si)
+### Source opened (replaces the «not opened» note of §4)
+- S. Pettie, «Sharp Bounds on Davenport-Schinzel Sequences of Every Order», arXiv:1204.1086 v2 (18 May 2013), opened 11:25Z-11:30Z:
+  - §1, p. 1: an order-s DS sequence is «a repetition-free sequence over the alphabet {1, …, n} that does not contain any alternating
+    subsequences of the form ··· a ··· b ··· a ··· b ··· with length s + 2»; λ_s(n) is the maximum length of one (§1.1, p. 2).
+  - §1.2, p. 3: Davenport and Schinzel (1965) «proved that λ_1(n) = n, λ_2(n) = 2n − 1»; Szemerédi (1973) showed «λ_s(n) = O(n log* n),
+    where the leading constant depends on s» (all s ≥ 3); Hart and Sharir (1984) settled λ_3(n) = Θ(nα(n)).
+- Sharir–Agarwal (CUP 1995) NOT opened (not reachable from this container); Pettie §1.2 is the cited source. λ_s(n) is non-decreasing
+  in n (a sequence over fewer letters is one over more).
+### CONJECTURE DS-TOPS (exact form)
+- For a vertex v of Γ3(G) and a Λ-interval I of v in HOW3(G) (§3), tops(v, I) := the sequence of the tops of the changes of E_t(v) in I,
+  in time order. It is repetition-free (§4).
+- **CONJECTURE DS-TOPS.** There is a constant s such that for every genome G satisfying [E-LEV], every vertex v of Γ3(G) and every
+  Λ-interval I of v, tops(v, I) contains no alternating subsequence x … y … x … y … (x ≠ y) of length s + 2; i.e. tops(v, I) is an
+  order-s Davenport–Schinzel sequence. The data (below) are consistent with s = 4 and with no smaller s.
+- **Corollary DS-POLY (PROVED, lane, CONDITIONAL on DS-TOPS(s) and on P-N5-CHAIN's premises).** D_I(v) = 1 + |tops(v, I)| ≤ 1 + λ_s(M),
+  so T3 ≤ (1 + n3·((2M + 3)(1 + λ_s(M)) − 1))·(L3 + 1), with λ_s(M) = O(M log* M) (Szemerédi, as above): polynomial in N + M.
+  Proof: D_I(v) = 1 + (number of changes) (RE-COUNT's proof); the tops sequence is order-s DS over at most M letters; then as in RE-EQUIV
+  with RE-COUNT's bound replaced. ∎
+- It excludes BIN: BIN's tops are the ruler sequence (the top of the change t − 1 → t is the lowest set bit of t), which contains the alternation
+  1 2 1 2 … 1 of length 2^(M−1) + 1 (M ≥ 2: item 1 is the top at odd t, item 2 at the 2^(M−2) values t ≡ 2 (mod 4), and an odd t lies
+  between any two of those).
+- What would kill it: one family of genomes (with [E-LEV]) whose maximum alternation in a tops sequence grows without bound.
+### DATA: the tower family (counter maxalt of asc197.py; unit: (genome, v, I), max over the genome; scope [E-LEV])
+- Set: L-SI box 85 two85.build (claude/l-si experiments/si/box85/two85.py + gen83.py, copied read-only into the scratchpad; check: cfg
+  TC5m rebuilds byte-equal to box196/inst_si85/TC5m.json), cfg {w ["L"], lw ["M+"], lup "M+", lexit "M+"} (TC5m's), heights h = 2..8,
+  three lane formulas per height (A: L = LL = (2, 5, 9, 14, 20, 27, 35, 44)[:h], LM_l = 6(l + 1); B: L_l = 3l + 1, LM_l = 5 + 4l, LL as A;
+  C: L, LM random, seed 1970 + h, LL as A); generator box197/mkh197.py (argument: the folder holding the copied two85.py, gen83.py), instances box197/hfam/
+  (21 genomes), output box197/hfam197.out (record; not re-run by check.sh).
+| h | maxalt A / B / C | T3 A / B / C | longest tops sequence A / B / C |
+  | --- | --- | --- | --- |
+  | 2 | 2 / 2 / 2 | 9 / 8 / 13 | 3 / 4 / 2 |
+  | 3 | 4 / 3 / 4 | 17 / 14 / 20 | 7 / 6 / 7 |
+  | 4 | 5 / 4 / 4 | 25 / 20 / 31 | 9 / 8 / 10 |
+  | 5 | 4 / 4 / 2 | 33 / 26 / 24 | 11 / 11 / 4 |
+  | 6 | 4 / 4 / 4 | 41 / 32 / 51 | 12 / 14 / 12 |
+  | 7 | 2 / 4 / 4 | 39 / 37 / 74 | 4 / 11 / 13 |
+  | 8 | 2 / 3 / 4 | 47 / 46 / 80 | 4 / 6 / 16 |
+- Every row: awA, awB, rootfail, dfail, lexdec 0 (§2, §3 counters).
+- Reading: maxalt does not grow past 5 on this family up to height 8 (T3 up to 80), while T3 grows about linearly. Weak support for
+  DS-TOPS with s = 4 on L-SI's towers; nothing about other families. L-SI's towers are the fleet's best designed counters on N5′-xi, so
+  this is the family where growth would have shown first. Every run is short; the data test the conjecture only at these sizes.
