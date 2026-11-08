@@ -1,0 +1,74 @@
+PRIV222 CLR_k4s10.json T 25 C 0 units 0 priv 0 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 CLR_k8s16.json T 28 C 0 units 1 priv 1 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 FPORT_n2.json T 14 C 0 units 0 priv 0 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 FPORT_n3.json T 16 C 0 units 0 priv 0 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 FPORT_n4.json T 18 C 0 units 0 priv 0 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 LEAP_k1.json T 2 C 0 units 3 priv 3 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 LEAP_k16.json T 33 C 0 units 33 priv 33 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 LEAP_k2.json T 5 C 0 units 5 priv 5 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 LEAP_k3.json T 7 C 0 units 7 priv 7 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 LEAP_k32.json T 65 C 0 units 65 priv 65 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 LEAP_k4.json T 9 C 0 units 9 priv 9 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 LEAP_k6.json T 13 C 0 units 13 priv 13 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 LEAP_k64.json T 129 C 0 units 129 priv 129 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 LEAP_k8.json T 17 C 0 units 17 priv 17 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 RS2.json T 10 C 0 units 3 priv 3 viol 0 maxpriv 3 maxnopriv 0 [] []
+PRIV222 RS2_L8M6.json T 17 C 0 units 3 priv 3 viol 0 maxpriv 3 maxnopriv 0 [] []
+PRIV222 RS3.json T 13 C 0 units 5 priv 5 viol 0 maxpriv 5 maxnopriv 0 [] []
+PRIV222 RSG_K4.json T 7 C 0 units 7 priv 7 viol 0 maxpriv 2 maxnopriv 0 [] []
+PRIV222 SW_k4s10.json T 19 C 1 units 0 priv 0 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 SW_k8s16.json T 22 C 5 units 2 priv 2 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 t1_n3_M2_s.json T 12 C 0 units 3 priv 3 viol 0 maxpriv 5 maxnopriv 0 [] []
+KeyError: 'N'
+PRIV222 t1_n4_M2_s.json T 14 C 0 units 4 priv 4 viol 0 maxpriv 5 maxnopriv 0 [] []
+KeyError: 'N'
+PRIV222 t1_n5_M2_H.json T 16 C 0 units 5 priv 5 viol 0 maxpriv 5 maxnopriv 0 [] []
+KeyError: 'N'
+PRIV222 t1_n5_M2_s.json T 16 C 0 units 5 priv 5 viol 0 maxpriv 5 maxnopriv 0 [] []
+KeyError: 'N'
+PRIV222 t1_n8_M2_H.json T 28 C 0 units 8 priv 8 viol 0 maxpriv 5 maxnopriv 0 [] []
+KeyError: 'N'
+PRIV222 t1_n8_M2_s.json T 22 C 0 units 8 priv 8 viol 0 maxpriv 5 maxnopriv 0 [] []
+KeyError: 'N'
+PRIV222 t2_n4_M2_s.json T 9 C 0 units 4 priv 1 viol 0 maxpriv 1 maxnopriv 5 [] [(2, 1, 0, 10, 5, 17)]
+KeyError: 'N'
+PRIV222 t2_n6_M0_P.json T 14 C 0 units 6 priv 1 viol 0 maxpriv 1 maxnopriv 1 [] [(2, 1, 0, 15, 1, 37)]
+KeyError: 'N'
+PRIV222 t2_n6_M2_P.json T 14 C 0 units 6 priv 1 viol 0 maxpriv 1 maxnopriv 1 [] [(2, 1, 0, 15, 1, 37)]
+KeyError: 'N'
+PRIV222 t2_n6_M2_s.json T 13 C 0 units 6 priv 1 viol 0 maxpriv 1 maxnopriv 5 [] [(2, 1, 0, 14, 5, 39)]
+KeyError: 'N'
+PRIV222 t3_n4_u0_C.json T 10 C 1 units 4 priv 4 viol 0 maxpriv 2 maxnopriv 0 [] []
+KeyError: 'N'
+PRIV222 t3_n6_u0_C.json T 14 C 1 units 6 priv 6 viol 0 maxpriv 2 maxnopriv 0 [] []
+KeyError: 'N'
+PRIV222 t4_n4_S.json T 4 C 2 units 4 priv 4 viol 0 maxpriv 0 maxnopriv 0 [] []
+KeyError: 'N'
+PRIV222 t4p_n4_S.json T 10 C 5 units 4 priv 4 viol 0 maxpriv 1 maxnopriv 0 [] []
+KeyError: 'N'
+PRIV222 t4p_n6_S.json T 14 C 9 units 6 priv 6 viol 0 maxpriv 1 maxnopriv 0 [] []
+KeyError: 'N'
+PRIV222 t4p_n6_s.json T 9 C 4 units 6 priv 5 viol 0 maxpriv 1 maxnopriv 0 [] []
+KeyError: 'N'
+PRIV222 NOUPC_1.json T 12 C 5 units 0 priv 0 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 NOUPC_2.json T 16 C 9 units 11 priv 9 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 NOUPC_3.json T 10 C 4 units 1 priv 1 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 rd2_d7.json T 23 C 4 units 0 priv 0 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 rd3_d4.json T 18 C 5 units 0 priv 0 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 NOUPC_1.json T 12 C 5 units 0 priv 0 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 NOUPC_2.json T 16 C 9 units 11 priv 9 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 NOUPC_3.json T 10 C 4 units 1 priv 1 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 SL_k16_s0.json T 1 C 0 units 16 priv 16 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 SL_k16_s1.json T 2 C 0 units 16 priv 16 viol 0 maxpriv 1 maxnopriv 0 [] []
+PRIV222 SL_k2_s0.json T 1 C 0 units 2 priv 2 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 SL_k2_s1.json T 2 C 0 units 2 priv 2 viol 0 maxpriv 1 maxnopriv 0 [] []
+PRIV222 SL_k32_s0.json T 1 C 0 units 32 priv 32 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 SL_k32_s1.json T 2 C 0 units 32 priv 32 viol 0 maxpriv 1 maxnopriv 0 [] []
+PRIV222 SL_k4_s0.json T 1 C 0 units 4 priv 4 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 SL_k4_s1.json T 2 C 0 units 4 priv 4 viol 0 maxpriv 1 maxnopriv 0 [] []
+PRIV222 SL_k8_s0.json T 1 C 0 units 8 priv 8 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 SL_k8_s1.json T 2 C 0 units 8 priv 8 viol 0 maxpriv 1 maxnopriv 0 [] []
+PRIV222 DEAD_SEG2P_d4_N8.json T 10 C 1 units 0 priv 0 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 DIV_2_493.json T 1 C 1 units 0 priv 0 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 DIV_2_583.json T 2 C 2 units 0 priv 0 viol 0 maxpriv 0 maxnopriv 0 [] []
+PRIV222 DIV_3_717.json T 8 C 6 units 2 priv 2 viol 0 maxpriv 0 maxnopriv 0 [] []
