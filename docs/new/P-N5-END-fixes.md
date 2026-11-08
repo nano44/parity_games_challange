@@ -71,3 +71,22 @@
   - LN-8: R16 (fixes entries 1-2); L-NEW successors 63-64 and credit L-RED 56: already in L-1.
   - EN-3: R5.
 - end.pins: this file re-pinned; L-2 and mkl2_195.py added. check.sh block «P-N5-END» unchanged.
+
+## Fixes entry 3 (L-NEW successor 65; line-only; written 10:18Z by date -u)
+- Sources: REFEREE-2 34 second review, claude/referee-2 9b3cc9b6, docs/referee-2/R2-P-N5-END.md «Line L-2» (+ Addendum 1 0f82f03b:
+  verdicts equal to REFEREE 29's); REFEREE 29 R-P-N5-END.md §C (claude/referee e4cb208a / 407f4a21) optional EL-1, EL-2. Both referees
+  SIGN every statement (END-T3 PROVED-CONDITIONAL on REACH3-CYC). No statement and no proof changes; the packet stays frozen.
+- Lead 09:52Z routed the round; Lead ruling 10:18Z: «P-N5-END L-3: take S1-S5, DROP S6» (a line-only fixes entry need not be named in
+  the source note).
+| item | from | kind | change in the line (old → new, each old string once in L-2) |
+| --- | --- | --- | --- |
+| S1 L-R1 | REFEREE-2 34 | REQUIRED | «so the K-config changes only at a fallback …» → «so the K-config leaves κ0 only at a fallback …» (E3 and E4 are S4a steps that change the K-config; ENDGAME-3's proof uses exactly this reading) |
+| S2 N-1 | REFEREE-2 34 | optional, taken | after SELFL_n3's «has L(G) = 1» insert «(IDEAL run read with B_s the set of β-ids on its eventually periodic X-chain; R104's IDEAL run is defined on IDEAL-ACYC)» |
+| S3 N-2 | REFEREE-2 34 | optional, taken | «ctrl2 e0fail 200 and e1fail 200 (unit: states)» → «ctrl2 e0fail 200 (unit: states) and e1fail 200 (unit: iterations before the first fallback)» |
+| S4 EL-1 | REFEREE 29 | optional, taken | «their transfer to the Γ3 run (equal runs at exact VJ ties) is NOT proved» → «their transfer to the Γ3 run is NOT proved (the Γ3 run can differ from the IDEAL-CYC run at exact VJ ties, R118's DATA)» (REFEREE 29's parenthesis; lane placement) |
+| S5 EL-2 | REFEREE 29 | optional, taken | «REFEREE 29 R-P-N5-END §4 (claude/referee e4cb208a)» → «REFEREE 29 R-P-N5-END §4 (A), (B) (claude/referee e4cb208a)» |
+### Line L-3 (written by script)
+- docs/new/P-N5-END-line-L3.txt = L-2 + S1-S5, by experiments/new/box195/mkl3_195.py (from the repo root): asserts the packet's sha1
+  (5cae845b…), L-2's sha1 (e8a8ac51…), each old string exactly once in L-2, one line, no «|», «(» = «)». Result: sha1
+  d6afe92ae0d2c0021743c99d2bd10f16cad27c73, 7,215 B, 105 «(» = 105 «)». L-2 kept (superseded).
+- end.pins: this file re-pinned; L-3 and mkl3_195.py added. check.sh block «P-N5-END» unchanged.

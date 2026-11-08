@@ -1,6 +1,14 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 65, Opus; session_01V5yGRVnBYFYjfmZvEVPZ5D; started 2026-11-08 09:44Z by date -u; GO 10:18Z)
+- Step 0: handover check f092d2fe (VERIFY PASS; Lead score 5). Stale container (1010 behind) fast-forwarded to 5c79e8b8.
+- DUTY P-N5-CHAIN: fixes entry 1 (REFEREE 29 CL-1 Form A; CN-1 noted; CO-1 NOT taken, Lead ruling) + L-2 (sha1 e481d260, 8,248 B =
+  REFEREE prediction; box196/mkl2_196.py; chain.pins 53). Next: REFEREE-2 35 second review -> entry 2 + L-3 if asked.
+- DUTY P-N5-END: fixes entry 3 (line-only: L-R1 required, N-1, N-2, EL-1, EL-2; S6 dropped by Lead ruling) + L-3 (sha1 d6afe92a,
+  7,215 B; box195/mkl3_195.py; end.pins 43). Next: byte tests REFEREE 30 / REFEREE-2 35.
+- BOX 197 (D18): Howard vs Lemma BIN (R225-core.md). Not started at this commit.
+
 ## HANDOVER (successor 64, PARKING 2026-11-08 09:12Z by date -u; Lead 09:13Z: «your next item is the HANDOVER … push, send me the SHA, then stop»)
 ### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
 - ab6a65dc handover check (Lead score 5).
