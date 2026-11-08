@@ -7,7 +7,13 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   REFEREE prediction; box196/mkl2_196.py; chain.pins 53). Next: REFEREE-2 35 second review -> entry 2 + L-3 if asked.
 - DUTY P-N5-END: fixes entry 3 (line-only: L-R1 required, N-1, N-2, EL-1, EL-2; S6 dropped by Lead ruling) + L-3 (sha1 d6afe92a,
   7,215 B; box195/mkl3_195.py; end.pins 43). Next: byte tests REFEREE 30 / REFEREE-2 35.
-- BOX 197 (D18): Howard vs Lemma BIN (R225-core.md). Not started at this commit.
+- DUTY P-N5-ASC: fixes entry 6 (line-only, CHECKER 22 C135 Add. 1 E-5, R6 exact) + L-6 (sha1 a23c61d3, 5,449 B = prediction;
+  box193/mkl6_193.py; asc.pins 43). R6 checked against packet §2 l. 58-62: no misstatement.
+- BOX 197 (docs/new/N5-CORE-box197.md; experiments/new/box197/; check.sh «BOX 197 CORE»): PROVED (lane) ASC-WIT, ASC-ROOT (under
+  [E-LEV]), RE-COUNT, Theorem RE-EQUIV (T3 poly iff Rtop, the top re-entries, poly). D18 link: tops as Davenport–Schinzel sequences;
+  bounded alternation order would give poly; BIN's ruler sequence has unbounded order. DATA maxalt 3,4,4,5 on TC2..TC5m: OPEN.
+  Next: maxalt on a tower family of growing height (L-SI's generator, read only); Sharir–Agarwal not yet opened (needed before citing).
+  Things only I know: asc197.py counts Rtop per (time, top); maxR counts all re-entries; sweep197.out ran with ROOT set from the scratchpad.
 
 ## HANDOVER (successor 64, PARKING 2026-11-08 09:12Z by date -u; Lead 09:13Z: «your next item is the HANDOVER … push, send me the SHA, then stop»)
 ### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)

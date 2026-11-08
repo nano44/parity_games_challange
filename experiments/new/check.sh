@@ -1049,4 +1049,12 @@ if [ -z "$pinC" ]; then
 else
   echo "P-N5-CHAIN check: FAILED"; echo "$pinC" | head -20; exit 1
 fi
+# BOX 197 CORE (L-NEW successor 65): ASC-WIT / ASC-ROOT / RE-COUNT counters on the Γ3 run (asc197.py), frozen output + controls
+r197=0; run197=$(cd box197 && bash check197.sh 2>&1) || r197=$?
+d197=$(diff <(printf '%s\n' "$run197") box197/check197.out 2>&1) || true
+if [ "$r197" -eq 0 ] && [ -z "$d197" ] && ! grep -v "^ctrl" box197/check197.out | grep -Eq "(awA|awB|lexdec|dfail|rootfail) [1-9]" && grep -q "^ctrl1 .*awA [1-9]" box197/check197.out && grep -q "^ctrl2 .*rootfail [1-9]" box197/check197.out && grep -q "^ctrl3 .*awB [1-9]" box197/check197.out && grep -q "^ctrl4 .*dfail [1-9]" box197/check197.out; then
+  echo "BOX 197 CORE: ASC-WIT / ASC-ROOT / RE-COUNT counters 0, controls fire = frozen: PASS"
+else
+  echo "BOX 197 CORE check: FAILED (check197.sh exit $r197)"; echo "$d197" | head -30; echo "$run197" | tail -15; exit 1
+fi
 rm -rf "$tmp"

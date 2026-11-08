@@ -30,7 +30,7 @@ b83785f6705f1e412e36609d26223981011c2358  ../box192/inst/cR_d2_w8_R22.json
 59b9c6670631af95d04718327563343233fb3f67  ../box192/inst/rd2_d10.json
 5af8c06c1732d37fd0d5d8890f36c118d948e037  ../box192/inst/rd3_d7.json
 be01b9519880a69a5c4537d87660ed9ecbff6853  ../box192/inst/rf_d5.json
-faa71a3209e7939b599edfc243b015559ad7e892  DOCS/P-N5-ASC-fixes.md
+0bab7a94bca3a5dcba2da8b002071c1edc43141c  DOCS/P-N5-ASC-fixes.md
 08cced78a214080dac3f8f07ebc900510e3f35ab  DOCS/P-N5-ASC-line-L1.txt
 f109cb69507efd863133a08a2e90096ad2acb7f5  DOCS/P-N5-ASC-line-L2.txt
 0012d6710983ec339be8f5d4e051a205cc9207ba  DOCS/P-N5-ASC-line-L3.txt
@@ -39,3 +39,5 @@ f109cb69507efd863133a08a2e90096ad2acb7f5  DOCS/P-N5-ASC-line-L2.txt
 8d282d4384e100cb3bbbacc0c11de0882f82dd47  mkl4_193.py
 fe4d3f902b6afde93384ebf625fa9bebcea0e1d0  DOCS/P-N5-ASC-line-L5.txt
 5e6cc24d26bb50cf58a12c8b029e638cf942ac74  mkl5_193.py
+a23c61d384036ce3fa771e27e175a8dbf2331658  DOCS/P-N5-ASC-line-L6.txt
+cba0cb2bdcea20ec15f7be5ac3ce583fb4ebfe33  mkl6_193.py

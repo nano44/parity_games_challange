@@ -154,3 +154,29 @@
   Result: equal (no adjustment).
 - DATA rule: R-A and R-I are wordings; no tool or DATA output changes.
 - asc.pins: this file re-pinned; line L-5 and mkl5_193.py added (41 rows). check.sh block «P-N5-ASC» unchanged.
+
+## Fixes entry 6 (L-NEW successor 65; line-only; Lead 10:25Z: «Write fixes entry 6 (line-only) + L-6 = L-5 + R6 by script»; written 10:51Z by date -u)
+- Source: CHECKER successor 22, C135 Add. 1 (claude/checker 0ffde42c, docs/checker/C135.md l. 94-139): third fill on L-5 FAILs on E-5
+  only. HUB-ASC(B)'s clause in L-5 left «forest», «chain», «hub» and «value» undefined, and the hub's monotonicity is a HYPOTHESIS of
+  the theorem, not notation: without it the clause is false (CHECKER's CS(3) witness: 8 values with 0 ascents > F_0(3) = 7). The
+  drafter's R-H is not taken (CHECKER: a self-map of a finite set always has a cycle; chain(⊥) undefined). N-S: no action (CHECKER ruled;
+  entry 6 is line-only and carries no proof).
+### R6 (REQUIRED, taken; CHECKER's exact strings): old «(items 1..M compared by number, a run of forests with every chain
+  lex-nondecreasing, an ascent a step to a larger item), a hub whose value has» → new «(items 1..M compared by number, a forest a map next
+  from the items to the items and ⊥ without cycles, chain(x) := (x, next(x), next²(x), …) up to ⊥, compared as a set, a run of forests
+  with every chain lex-nondecreasing, an ascent a step to a larger item), a hub (h_t an item or ⊥ at each time t, chain(⊥) := ∅, with
+  chain_s(h_s) ≤ chain_t(h_t) for s < t) whose value chain_t(h_t) has».
+### R6 against the frozen packet §2 (l. 58-62), as the Lead asked: no misstatement.
+  - «a forest a map next from the items to the items and ⊥ without cycles» = l. 59 «A forest is a map next: items → items ∪ {⊥} without
+    cycles».
+  - «chain(x) := (x, next(x), next²(x), …) up to ⊥, compared as a set» = l. 59 «chain(x) := the sequence x, next(x), next²(x), … (as a
+    set when compared)»; «up to ⊥» only makes explicit that the sequence stops at ⊥, which l. 59 leaves implicit (next is undefined on ⊥).
+  - «a run of forests with every chain lex-nondecreasing» = l. 60-61 (already in L-5).
+  - «a hub (h_t an item or ⊥ at each time t, chain(⊥) := ∅, with chain_s(h_s) ≤ chain_t(h_t) for s < t) whose value chain_t(h_t)» = l. 62
+    «A hub of a run is a choice h_t ∈ items ∪ {⊥} with chain_s(h_s) ≤ chain_t(h_t) for s < t (chain(⊥) := ∅). Its value at t is
+    chain_t(h_t).»
+### Line L-6 (written by script)
+- docs/new/P-N5-ASC-line-L6.txt = L-5 + R6, by experiments/new/box193/mkl6_193.py (from the repo root): asserts L-5's sha1 (fe4d3f90…),
+  the old string exactly once in L-5, one line, no «|», «(» = «)», and the predicted sha1. Result: sha1
+  a23c61d384036ce3fa771e27e175a8dbf2331658, 5,449 B, 133 «(» = 133 «)» = the Lead's and CHECKER's prediction (C135 Add. 1 l. 139).
+- asc.pins: this file re-pinned; L-6 and mkl6_193.py added. check.sh block «P-N5-ASC» unchanged. L-5 kept (superseded).
