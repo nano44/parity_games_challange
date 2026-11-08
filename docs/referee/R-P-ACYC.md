@@ -376,3 +376,35 @@ After my verdict (d3d0a600) I read REFEREE-2's items only as they are quoted in 
     accurate for the packet's content.
 - Verdict: L-4 MATCHES (L-3 + exactly R-G and R-B; both CORRECT in meaning). All statements of P-ACYC stay SIGN (ACYC-XI
   PROVED-CONDITIONAL, as before).
+
+## §F. Fixes entry 4 and line L-5 (CHECKER C136 R1-R3) (REFEREE successor 30, Opus 5.5, D15; date -u at writing 2026-11-08T16:44Z)
+- Objects (Lead 16:42Z): claude/l-si 358ede16 (ancestor of origin/claude/l-si, checked). docs/si/P-ACYC-line-L5.txt sha1
+  7a84e0944b0f33ce4d569604bec41d6e9236d82f, 3,321 B (git show | sha1sum, wc -c). L-4 at 358ede16 = 85bb221f; packet sha1 0e9edcfd
+  unchanged (= §1 l. 26).
+- Byte test: scratch/acyc_l5.py applies R1, R2, R3 in that order to L-4 with the strings typed from C136 §5 (claude/checker b2fe3440
+  l. 84-89; wrapped lines joined with one space), not from the lane's script. Each old string once in L-4. `cmp` with the lane's L-5:
+  **EQUAL** (scratch/acyc_logs/l5test.out). One line, 43 «(» = 43 «)», depth never negative, 0 «|».
+- Lane's own check: experiments/si/box81/fix4/check_fix4.sh from `git archive 358ede16`: rc 0, «P-ACYC fix4 checks: PASS».
+- R1 in meaning, against packet §1 l. 69 («σ̄ is an optimal counterstrategy: Ω_σ̄(v) ⊴ Ω_τ(v) for every Odd strategy τ and every v»):
+  - «pointwise optimal (at every vertex its play value is ⊴ the value under every Odd strategy …)» is exactly l. 69's sense: «at every
+    vertex» = «every v», «⊴ the value under every Odd strategy» = «⊴ Ω_τ(v) for every τ», with Odd minimising for Even. CORRECT.
+  - It is the sense BETA-ACYC's proof uses: the comparison at the gate g needs the inequality at g and at both faces' successors, i.e.
+    at more than one vertex, which only the pointwise sense gives (C136 E-1 and REFEREE-2 N-1 agree).
+  - Citation «RESULTS R57 (b), [1E-N3], as landed in R104»: right as a citation of the landed WORDING and of existence. R104's title (trunk
+    RESULTS l. 9864) reads the 1E-N3 premise (R57 (b)) «in two forms: S1's σ̄, and τ̄ on the dual game, are pointwise optima». So a
+    pointwise optimum exists and the term is landed usage; the clause is not vacuous. Note (no change asked): this cites the sense, not
+    the premise that gives IDEAL-CYC's σ̄ (successor 28's ruling: R118 (b) + R21 (a)); the clause defines a word, so the citation suffices.
+- R2 / R3 in meaning, against experiments/si/box81/pacyc81.py at 358ede16:
+  - Docstring l. 3-4: records the first fallback k1 «then on states 0..k1-1»; the loop (l. 27-30) appends a state only when the
+    iteration has no fallback flag and breaks at the first one, so the counted states are exactly 0, …, k1 − 1; l. 40 records T3 = k1 − 1.
+    By R118 (k) / (l) (packet l. 47-53) the first fallback is iteration T3 + 1, so «states 0, …, T3 before the first fallback» names
+    exactly the set counted. CORRECT.
+  - R3 (control): the control's Γ3 counts come from the same pacyc81.py (check81.sh l. 10 / 18 list the five Ξ-cyclic genomes), so the
+    same set. CORRECT.
+  - Edge (no change asked): if a run had no fallback within cap = 10^4, pacyc81.py would count all states and report k1 None; every
+    pinned genome has k1 set (C136: k1 equals pacyc81_towers.out), so the clause is exact on the pinned sets.
+- Fixes entry 4 is line-only: R1 brings the packet's own §1 l. 69 definition into the line, and R2 / R3 state the packet's own §6
+  set (l. 171, 180). No proof step is added and no tool or pinned output changes. So the source note need not name it (C134 N-S, as
+  CHECKER ruled in C136); not L41's case.
+- Verdict: fixes entry 4 CORRECT. **Line L-5 MATCHES** (L-4 + exactly R1-R3). Statements as signed (§0 and §C-§E).
+  docs/referee-2/ not read for this section.
