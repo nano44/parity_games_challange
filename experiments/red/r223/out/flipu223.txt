@@ -1,0 +1,19 @@
+POOLALT k 1 partitions 3 max(longest chain - (|A|+|B|+1)) = 0
+POOLALT k 2 partitions 9 max(longest chain - (|A|+|B|+1)) = 0
+POOLALT k 3 partitions 27 max(longest chain - (|A|+|B|+1)) = 0
+POOLALT k 4 partitions 81 max(longest chain - (|A|+|B|+1)) = 0
+POOLALT k 5 partitions 243 max(longest chain - (|A|+|B|+1)) = 0
+POOLALT k 6 partitions 729 max(longest chain - (|A|+|B|+1)) = 0
+FLIPU223 CL2_21.json {'units': 8, 'violU': 0, 'violE': 0, 'sharp': 2, 'tightU': 2, 'maxflips': 7, 'T': 23}
+FLIPU223 CL2_22.json {'units': 8, 'violU': 0, 'violE': 0, 'sharp': 2, 'tightU': 2, 'maxflips': 5, 'T': 28}
+FLIPU223 CL3_31.json {'units': 11, 'violU': 0, 'violE': 0, 'sharp': 3, 'tightU': 2, 'maxflips': 5, 'T': 15}
+FLIPU223 CL3_32.json {'units': 72, 'violU': 0, 'violE': 0, 'sharp': 6, 'tightU': 2, 'maxflips': 3, 'T': 24}
+FLIPU223 TC2.json {'units': 8, 'violU': 0, 'violE': 0, 'sharp': 2, 'tightU': 3, 'maxflips': 3, 'T': 12}
+FLIPU223 TC2d.json {'units': 16, 'violU': 0, 'violE': 0, 'sharp': 2, 'tightU': 3, 'maxflips': 1, 'T': 10}
+FLIPU223 TC3.json {'units': 12, 'violU': 0, 'violE': 0, 'sharp': 3, 'tightU': 3, 'maxflips': 3, 'T': 18}
+FLIPU223 TC3d.json {'units': 60, 'violU': 0, 'violE': 0, 'sharp': 2, 'tightU': 5, 'maxflips': 1, 'T': 14}
+FLIPU223 TC3m.json {'units': 12, 'violU': 0, 'violE': 0, 'sharp': 2, 'tightU': 3, 'maxflips': 5, 'T': 17}
+FLIPU223 TC4m.json {'units': 16, 'violU': 0, 'violE': 0, 'sharp': 3, 'tightU': 3, 'maxflips': 7, 'T': 37}
+FLIPU223 TC5m.json {'units': 20, 'violU': 0, 'violE': 0, 'sharp': 4, 'tightU': 3, 'maxflips': 7, 'T': 43}
+FLIPU223 rand 2245 2000 {'units': 13507, 'violU': 0, 'violE': 0, 'sharp': 200, 'tightU': 63, 'maxflips': 2, 'T': 12}
+FLIPU223 ret 2246 1000 {'units': 23387, 'violU': 0, 'violE': 0, 'sharp': 260, 'tightU': 199, 'maxflips': 2, 'T': 10}
