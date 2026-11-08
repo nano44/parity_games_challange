@@ -17,6 +17,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   Next: maxalt on a tower family of growing height (L-SI's generator, read only); Sharir–Agarwal not yet opened (needed before citing).
   Addendum 1: CONJECTURE DS-TOPS (tops(v, I) order-s DS for a constant s; data consistent with s = 4) and Corollary DS-POLY (PROVED
   conditional); tower family h 2..8 (box197/hfam, mkh197.py on L-SI two85 copy): max maxalt 2,4,5,4,4,4,4 while T3 13..80.
+- DUTY P-N5-QUIET round 3: fixes entry 3 (R-L, R-U, R-B, R-Q, R-T, R-G; R-G placed before «DATA, clause by clause», not inside
+  «(R118's DATA)») + L-3 (sha1 d9b5e610, 5,429 B; box194/mkl3_194.py; quiet.pins 40).
+  Addendum 2: Add. 1's «s = 4» WITHDRAWN (NK6_cl21 maxalt 6, relayed; verify when on origin claude/l-si box88/inst); Lemma PAIR-COUNT,
+  Theorem ALT-EQUIV (T3 poly iff max pairwise alternation A poly); CONJECTURE ALT-POLY = restatement in a two-letter form.
   Things only I know: asc197.py counts Rtop per (time, top); maxR counts all re-entries; sweep197.out ran with ROOT set from the scratchpad.
 
 ## HANDOVER (successor 64, PARKING 2026-11-08 09:12Z by date -u; Lead 09:13Z: «your next item is the HANDOVER … push, send me the SHA, then stop»)

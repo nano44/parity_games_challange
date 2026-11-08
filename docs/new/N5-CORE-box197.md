@@ -169,3 +169,42 @@ each top re-entry is one change of one vertex at one step, and a vertex changes 
 - Reading: maxalt does not grow past 5 on this family up to height 8 (T3 up to 80), while T3 grows about linearly. Weak support for
   DS-TOPS with s = 4 on L-SI's towers; nothing about other families. L-SI's towers are the fleet's best designed counters on N5′-xi, so
   this is the family where growth would have shown first. Every run is short; the data test the conjecture only at these sizes.
+
+## Addendum 2 (L-NEW successor 65, 12:45Z by date -u; Lead 12:26Z: DATA against «s = 4»; «say whether a weaker form … is what the chain actually needs»)
+### Correction to Addendum 1
+- Addendum 1's «The data (below) are consistent with s = 4 and with no smaller s» is WITHDRAWN. L-SI 46's climb instance NK6_cl21
+  (claude/l-si experiments/si/box88/inst/NK6_cl21.json, sha1 408b9988…, pinned at l-si 38b3c2cc per the Lead; NOT on origin when I looked,
+  12:30Z: relayed, not re-run by me) has maxalt 6 by asc197.py, so tops(v, I) there is no order-4 DS sequence (s ≥ 5); its IDEAL-CYC T is
+  11. L-SI's MIRROR towers stay ≤ 5 (HP2-HP5: 2, 4, 4, 5; HP6b: 4; relayed). CONJECTURE DS-TOPS stands as stated in Addendum 1, with s
+  an unspecified constant; no value of s is claimed.
+### What the chain needs: polynomial pairwise alternation (PROVED, lane)
+**Lemma PAIR-COUNT.** Let τ be a sequence over m letters with no two equal consecutive letters, and for letters x ≠ y let A_xy be the
+length of the longest subsequence of τ that alternates between x and y. Then |τ| ≤ 1 + Σ_{x<y} (A_xy − 1) ≤ 1 + C(m, 2)·(A − 1),
+A := max A_xy.
+Proof. Assign each index i < |τ| to the pair {τ_i, τ_(i+1)} (two letters, as τ_i ≠ τ_(i+1)). Fix a pair {x, y}; let ρ be τ restricted to
+{x, y} with runs of equal letters collapsed. ρ alternates, so |ρ| ≤ A_xy. An index i assigned to {x, y} has τ_i, τ_(i+1) consecutive in
+ρ's source and different, so it is a switch of ρ; different i give different switches. So at most |ρ| − 1 ≤ A_xy − 1 indices go to
+{x, y}. Sum over the pairs, add the last index. ∎ (With A_xy ≤ s + 1 this is the standard λ_s(n) ≤ 1 + s·C(n, 2); Pettie's §1.2 values
+are for fixed s.)
+**Theorem ALT-EQUIV (PROVED, lane, on P-N5-CHAIN's premises; no [E-LEV]).** Let A := the maximum over vertices v and Λ-intervals I of the
+longest two-letter alternation in tops(v, I). Then
+  T3 ≤ (1 + n3·((2M + 3)·(2 + C(M, 2)·(A − 1)) − 1))·(L3 + 1), and A ≤ T3.
+So T3 is polynomial in N + M iff A is.
+Proof. tops(v, I) has no equal consecutive letters (§4) and at most M letters; PAIR-COUNT gives |tops(v, I)| ≤ 1 + C(M, 2)(A − 1), and
+D_I(v) = 1 + |tops(v, I)|. Then as in RE-EQUIV (at most 2M + 3 intervals per vertex, T-QUIET3). For A ≤ T3: an alternating subsequence
+of tops(v, I) has at most |tops(v, I)| ≤ T3 letters (one change of v per step). ∎
+- So the open core is a statement about PAIRS of e-vertices: how often can the tops of one vertex's e-set switch between two fixed
+  e-vertices x and y (each switch being a lex increase in which x, resp. y, is the most relevant new element)? Polynomially often for
+  every pair iff N5′-xi on Γ3 is polynomial (under P-N5-CHAIN's premises and P-N5-END's ENDGAME-3).
+- Answer to «is a weaker form what the chain needs»: yes. The chain needs only A ≤ poly(N + M). In particular:
+  - A = O(height) or A = O(N) suffices (then D_I = O(N·M²));
+  - A = O(log T3) suffices too (T3 ≤ c(N + M)^k·log T3 forces T3 polynomial);
+  - DS-TOPS with a constant s is strictly more than needed. L-RED 60's 2-digit counter (relayed: a fixed low top alternating ~2K times
+    with T ~6K) is consistent with A polynomial whenever K is.
+- CONJECTURE ALT-POLY: A ≤ p(N + M) for a fixed polynomial p. By ALT-EQUIV it is EQUIVALENT to «T3 polynomial», i.e. a restatement, not
+  a new hypothesis; its value is that it names a two-letter object to attack (from either side: a family with A super-polynomial is an
+  exponential N5′-xi run on Γ3; a proof bounds one pair at a time).
+- BIN in this language: items 1 and 2 have A_12 = 2^(M−1) + 1 (Addendum 1). Any BIN realization must make ONE pair of e-vertices
+  switch exponentially often as tops of one vertex in one Λ-interval.
+- DATA so far (asc197.py maxalt = A per genome; units as in §5): random families ≤ 3; pinned genomes ≤ 5; towers h 2..8 ≤ 5; NK6_cl21 6
+  (relayed). Max A over everything measured: 6, at T3 ≤ 129.
