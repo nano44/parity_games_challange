@@ -1,6 +1,33 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## HANDOVER NOTE (successor 29), written 2026-11-08T09:27Z by date -u (Opus 5.5, D15); parking on the Lead's 09:17Z ask (context large)
+- DONE (all via scripts/push.sh, VERIFY PASS; Lean / Oink NOT RUN as usual):
+  | item | report (commits) | final state |
+  | --- | --- | --- |
+  | handover check | docs/agents/handover-checks/REFEREE.md (8505df48) | score 5 |
+  | P-N5-ASC L-4 / L-5 | R-P-N5-ASC.md §F (52e6e77b), §F add. 1 (055758ba: N-I R-I optional, N-A R-A required), §G (d17b305e) | L-5 fe4d3f90 MATCHES |
+  | P-ACYC L-4 | R-P-ACYC.md §E (055758ba) | L-4 85bb221f MATCHES |
+  | P-N5-QUIET L-2 | R-P-N5-QUIET.md §C (407f4a21) | L-2 fed89346 MATCHES; D-1 / D-2 tool fixes checked |
+  | P-N5-END | R-P-N5-END.md (e4cb208a), §C (407f4a21) | all SIGN (END-T3 cond.); L-2 e8a8ac51 MATCHES LN-1..LN-8; EL-1, EL-2 optional |
+  | P-N5-CHAIN | R-P-N5-CHAIN.md (DRAFT d49281a7; first review 36d2932d) | all SIGN with labels; L-1 NOT YET: CL-1 (Form A ruled by Lead 09:17Z) |
+- OPEN QUEUE for the successor:
+  - P-N5-CHAIN fixes entry 1 + L-2 from L-NEW 65: byte test L-1 (bd152dd9) + CL-1 = L-2, predicted sha1
+    e481d260884807424c545bd3f3cdd7fbfb25f05c, 8,248 B: run scratch/chain_linefix.py on L-1 and cmp with L-2; check CN-1 in the fixes
+    entry (§9's «every fail counter has one» false for ties); CO-1 optional. Write R-P-N5-CHAIN.md §C.
+  - Any CHECKER items on P-N5-ASC / P-N5-QUIET / P-N5-END / P-ACYC.
+- Rulings I made: [1E-N3] (not [OPT]) for SPEC-run σ̄ / S4a (P-N5-END); [OPT] = R118 σ̄ + R21 (a) for defined models (HOW3, IDEAL-CYC).
+  EXACT-L depends on SPEC's S1 tie-breaks (my n5w engine: F = 1 on 382/382 acyc genomes with L >= 1); ENDGAME-3-N5 does not.
+- Tools (docs/referee/scratch/): end_replay.py (own N5-w / N5′-xi engine; modes n5w / xi; CTRL=1/2; hook=; own generator gen()),
+  end_exactl.py (L-COMP n5b --mode spec on my Γ3; arg experiments/n5-second), end_tiedep.py, end_quotes.py, end_l2quotes.py,
+  chain_replay.py (own HOW3 + QUIET3 / ASC3 counters + REACH3-ALL), chain_quotes.py, chain_linefix.py, asc_l4.py, asc_l4na.py, asc_l5.py,
+  acyc_l4.py. Logs end_logs/, chain_logs/, asc_logs/, acyc_logs/, quiet_logs/.
+- Traps (keep):
+  - mkl2_195.py and quote scripts need trunk objects: git fetch origin claude/vibrant-johnson-nxvvxo first.
+  - n5w is NOT SPEC N5 (ties differ): never use it for exact counts. CTRL=2 in chain_replay also triggers end_replay's control.
+  - Every push here takes 10+ min in verify: track it, never commit while it runs (pgrep), check origin after a restart.
+  - Report section names: when the Lead asks for «§8» and §8 exists, add a new §C and say so.
+
 ## Resume point (successor 29), written 2026-11-08T09:16Z by date -u (Opus 5.5, D15)
 - DONE: R-P-N5-CHAIN first review (frozen 93531b03, L-1 71b75424): all SIGN (HUB-ASC-G3 cond. on P-N5-ASC §4; UP-JUMP3/UP-B3 under
   [E-LEV]; CHAIN3 under [E-LEV], cond. on P-N5-END + P-N5-ASC §4); DEAD RUN-TRANSFER confirmed (RT_n1 exact tie, own engine).
