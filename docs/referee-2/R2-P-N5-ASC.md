@@ -314,3 +314,30 @@ r2asc_inst_elevrev.out, r2asc_noup_elevrev.out (`r2asc.py FILES…`, `r2asc.py n
   - W-3 and W-4 **met** (W-4 by option (a));
   - **L-2 MATCHES** (byte test, the counter read against the lemma, the re-run, and the DATA rule clause by clause) (Opus 5.5, D1).
   - Statement verdicts unchanged: all SIGN.
+
+## Addendum 4: L-3 for CHECKER C135 (claude/l-new a2512364; REFEREE-2 successor 32, 2026-11-08 04:09Z by date -u)
+- **Object:** L-3 docs/new/P-N5-ASC-line-L3.txt 0012d671… (5,154 B, 1 line, 122 «(» = 122 «)», depth never negative, 0 «|», one « — »)
+  = CHECKER C135 §5's target (claude/checker 0942e8be); packet 9c9cb50d… unchanged; L-2 f109cb69… unchanged.
+- **Byte test** (own R2-P-N5-ASC/bt_l3.py, out bt_l3.out; the R1-R4 strings typed from C135 §5, wrapped lines joined by one space as
+  C135 says):
+  - each of R1-R4: old string once in L-2, 0 times in L-3, new string once in L-3;
+  - the rebuild L-2 + R1, R2, R3, R4 (in that order) = L-3 byte for byte (0012d671…), so nothing else changed.
+- **My strings still hold:**
+  - W-1's «under [E-LEV]»: 4 occurrences in L-2 and in L-3.
+  - W-3: new string once, old string 0 times.
+  - W-4's UP-JUMP clause: once (its counter is the strict one, Add. 3).
+- **R2-R4 read in meaning:**
+  - R1: the source note «L-NEW successors 61-62»: successor 62 wrote fixes entry 2 and L-2 ✓.
+  - R2: «the proof of record of HUB-ASC-G's B = 0 case (F′_0 = F_0, DESC-POLY on the whole interval) is referee-originated (REFEREE
+    R-P-N5-ASC §3 AS-1, restated in P-N5-ASC's fixes entry 1 AS-1), signed by both referees».
+    - True. My predecessor checked AS-1 independently in Add. 1 (l. 212: «F′_0 in §5 is DESC-POLY on the whole interval I … I agree.
+      I checked it now») and accepted its restatement in entry 1 in Add. 2 (l. 254) ✓.
+  - R3: «hence seq_t(v) = (f, seq_t(y_f))» is the packet's signed sentence (l. 81) verbatim.
+    - It follows from E_t(v) = {f} ∪ E_t(y_f) together with play order: f is the first e-vertex of v's play, and the rest of v's
+      play is y_f's play with the same cycle node.
+    - The forest «Reading» it replaces was not part of the signed lemma, so removing it from the signed clause is right ✓.
+  - R4: «seq_t(v) the e-vertices in Π_t(v) in play order, E_t(v) their set, an ascent of seq_t(v) a step to a more relevant element» =
+    packet §2 l. 52-55 (seq_t(v) «the e-vertices that lie in Π_t(v), in the order of» the play; an ascent «an index i with c_(i+1)
+    more relevant than c_i») ✓. With R4, UP-JUMP's and the DATA clauses' «ascent» are now defined in the line ✓.
+- **DATA rule on L-3:** R1-R4 add no DATA and change no count; every DATA clause is byte-equal to L-2's (Add. 3) ✓.
+- **Verdict: L-3 MATCHES** (Opus 5.5, D1). Statement verdicts unchanged: all SIGN.

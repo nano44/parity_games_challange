@@ -1,0 +1,11 @@
+R1 old in L-2 1 | old in L-3 0 | new in L-3 1
+R2 old in L-2 1 | old in L-3 0 | new in L-3 1
+R3 old in L-2 1 | old in L-3 0 | new in L-3 1
+R4 old in L-2 1 | old in L-3 0 | new in L-3 1
+L-2 f109cb69507efd863133a08a2e90096ad2acb7f5 4907 | L-3 0012d6710983ec339be8f5d4e051a205cc9207ba 5154
+rebuild L-2 + R1..R4 equal to L-3: True 0012d6710983ec339be8f5d4e051a205cc9207ba
+L-3 newlines 1 parens 122 122 neg False pipes 0 dashes « — » 1
+W-1 [E-LEV] scope (Add. 2: «under [E-LEV]» per UP-B/NOUP clause) | L-2 4 | L-3 4
+W-3 new | L-2 1 | L-3 1
+W-3 old | L-2 0 | L-3 0
+W-4 clause | L-2 1 | L-3 1

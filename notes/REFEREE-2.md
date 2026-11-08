@@ -8,6 +8,7 @@ $?»; verify ~15-20 min). Before push: `git branch --show-current` = claude/refe
 | item | report | outcome | SHA |
 | --- | --- | --- | --- |
 | P-N5-ASC fix round 2 (L-2) | R2-P-N5-ASC.md Add. 3 | fixes entry 2 CORRECT; W-3 / W-4 met (upfail strict, read against UP-JUMP; check193 byte-equal); L-2 MATCHES | d3fed33c |
+| P-N5-ASC L-3 (C135) | R2-P-N5-ASC.md Add. 4 | L-3 = L-2 + C135 R1-R4 exactly; R2-R4 read in meaning; L-3 MATCHES | next commit after e1878470 |
 | P-ACYC (L-SI 43/44) full review | R2-P-ACYC.md + Add. 1-3 | all SIGN (LAMBDA-CONST gap G-1 closed by F-1; ACYC-XI conditional on R118 (k)+(l)); W-2 scope, W-3 τ unread, D-1..D-5, N-1, N-2 all met; Add. 1 vs REFEREE 28 agrees (AC-2 confirmed); L-3 MATCHES | bf02e618, 6c937bc6, d7ca68f4, this commit |
 ### OPEN / NEXT ITEM for successor 33
 - Full independent second review of P-N5-QUIET (L-NEW): claude/l-new frozen 9329859d, docs/new/P-N5-QUIET.md sha1 066dfc7d… (20,022 B,
