@@ -5,3 +5,5 @@ start (8, 6, 2, -204) {'maxm': 2, 'nm': 5, 'C': 6, 'idfail': 0, 'T': 17, 'Dwt': 
 172 Dhib 13 sumD 15 nspl 3 Dwt 12 DwtJ 12 rw2 0 b0s 0 maxm 2 nm 1 C 4 idfail 0 T 17 N 65 M 191
 250 Dhib 14 sumD 17 nspl 3 Dwt 14 DwtJ 14 rw2 0 b0s 0 maxm 2 nm 4 C 4 idfail 0 T 17 N 73 M 220
 378 Dhib 14 sumD 17 nspl 3 Dwt 14 DwtJ 14 rw2 0 b0s 0 maxm 2 nm 59 C 6 idfail 0 T 17 N 82 M 251
+594 Dhib 15 sumD 26 nspl 2 Dwt 13 DwtJ 13 rw2 0 b0s 0 maxm 1 nm 464 C 4 idfail 0 T 16 N 99 M 301
+690 Dhib 16 sumD 28 nspl 2 Dwt 14 DwtJ 14 rw2 0 b0s 0 maxm 1 nm 452 C 4 idfail 0 T 17 N 99 M 301

@@ -1,1 +1,4 @@
 start (20, 3, 2, -364) {'maxm': 1, 'nm': 760, 'C': 3, 'idfail': 0, 'T': 22, 'Dwt': 20, 'DwtJ': 20, 'couples': 681, 'rw2': 0, 'rw2w': 0, 'b0s': 0, 'nspl': 2, 'Dhib': 20, 'sumD': 21} N 102 M 262
+408 Dhib 21 sumD 21 nspl 2 Dwt 21 DwtJ 21 rw2 0 b0s 0 maxm 1 nm 988 C 3 idfail 0 T 23 N 108 M 292
+430 Dhib 22 sumD 49 nspl 3 Dwt 22 DwtJ 22 rw2 0 b0s 0 maxm 2 nm 25 C 4 idfail 0 T 24 N 108 M 292
+442 Dhib 23 sumD 45 nspl 3 Dwt 23 DwtJ 23 rw2 0 b0s 0 maxm 1 nm 1250 C 3 idfail 0 T 25 N 108 M 292
