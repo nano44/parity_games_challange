@@ -22,8 +22,10 @@ R0 = rng(sys.argv[4]) if len(sys.argv) > 4 else list(range(12))
 G = rng(sys.argv[5]) if len(sys.argv) > 5 else list(range(56, 64))
 D = enc32.rdgen(base); S, nc = enc32.rdtarget(tp); H = nc // 2; xt = D['xt']; N = 2 * D['d']
 F = [13] + G; Fset = set(F)
-# movers reaching a free mover via fixed edges
-reach = set(Fset); ch = True
+# movers reaching a free mover (or a NOREACH mover, default 14, 15 = pair 7: Lead 10:41Z, the carrier must not take its timing
+# from pair 7) via fixed edges; gadget movers may point only to movers outside this set
+NOREACH = set(rng(os.environ.get('NOREACH', '14,15')))
+reach = set(Fset) | NOREACH; ch = True
 while ch:
     ch = False
     for m in range(2 * N):
@@ -39,7 +41,7 @@ freerank = sorted(cand)
 only = set(range(2 * H)) - ({13} if not os.environ.get('ALL') else set(range(2 * H)))
 enc32.SKIPCORE.clear(); enc32.SKIPCORE.update(only)
 info_c = {m: len(v) for m, v in cand.items()}
-print('GADGET base', os.path.basename(base), hashlib.sha1(open(base, 'rb').read()).hexdigest()[:8], 'F', F, 'R0 ok', [z for z in R0 if ok(z)],
+print('GADGET NOREACH', sorted(NOREACH), 'base', os.path.basename(base), hashlib.sha1(open(base, 'rb').read()).hexdigest()[:8], 'F', F, 'R0 ok', [z for z in R0 if ok(z)],
       'X13', X13, 'cand sizes', info_c, flush=True)
 sv = Solver(name='cadical195')
 t0 = time.time()
