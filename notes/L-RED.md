@@ -65,6 +65,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - Hold template hold227.py at h = 2: REPLACE A 3 (288), KEEP A ≤ 5 (288) < GROW7 7. Frozen r227/inst/HOLD2_n84, HOLD2K_n84; asc197 agrees.
 - Second carry carry2_227.py on CX4: 12,000 builds, A ≤ 5 (C2CX4_n23). blockcopy227 / selfgrow227: no gain.
 - Part 1 pushed 2564c6fa. Part 2: h = 3 REPLACE A 4, KEEP A 7 = GROW7 (race first, tower entries after; HOLD3_n125, HOLD3K_n125); GROW7 second carry 8,000 no gain.
+- Item 1 (Lead 16:40Z: L-NEW BOX 198, l-new fcba92fc) DONE: docs/red/R227-box198.md. PAIR-HIGH, RA-PATHS, C-EQUIV SURVIVE; ALT-H (iii) = PAIR-HIGH (b),
+  (ii) slightly stronger than (a); E-MON3 imported from P-N5-CHAIN. NEW: RA depth 4 on GROW7 / HOLD2K / HOLD3K (both engines). Depth alone
+  cheap (staircase, P = d + 1). Tools ra227.py, depthclimb227.py (ORDER=C scores C first). Worktree <scratchpad>/wt198 = fcba92fc.
 - Worktree: <scratchpad>/wt197 = l-new f98e93ee (detached); run asc197 from inside it with --files <abs path>; remove at park.
 - Sources opened: l-new f98e93ee docs/new/N5-CORE-box197.md (§0 list, E-MON3 l. 23/67, ALT-EQUIV l. 189-234), asc197.py header (run).
 
