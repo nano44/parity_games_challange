@@ -362,3 +362,27 @@ Proof: §2's proof with (t1, t2) := (t, t′). Every step uses only what follows
 - What a counter-family to C-WT must do (READING): make Dhi_y(wt(y), J), the number of distinct high parts above y of the one vertex wt(y),
   grow super-polynomially. That needs ascents after y (Z depth ≥ 2), which FW does not have.
 - Records regenerated: split199.out, zdag199.out (22 instances); check199.out unchanged.
+
+## Addendum 4 (L-NEW successor 66, 21:14Z by date -u; Lead 21:14Z: «PROVE RW-B0* … if RW-B0* resists, write exactly the missing step and stop»)
+Verdict: RW-B0* is NOT proved. Below is what is proved toward it, and the one missing step.
+- RW-B0* is not a property of a single y-top. ROUTE-LOW, the single-y-top form, is DEAD (A1.1). A proof must use both y-tops of the couple.
+- PROVED (A1.2 / A2.1 with any same-pair t < t′). If RW-WT* fails at a couple (S_t = S_t′, S := E(wt(y)) ∩ U_y), then all of the
+  following hold at once:
+  - (F1′) some f ∈ U_y lies on b's play at t′ before y;
+  - (F2′) at t′ − 1 the plays from a := u's successor and from b both pass f and coincide from f on, and that common suffix avoids y;
+  - (F3′) E_(t′−1)(a) ∩ U_y = E_(t′−1)(b) ∩ U_y (the sandwich), so Ω_(t′−1)(b) ▷ Ω_(t′−1)(a) is decided strictly BELOW y, by the parts of
+    the two plays before f: «u's return to b at t′ is LOW-REASONED»;
+  - (F4′) at t′ a second vertex u′, strictly between f and y on b's play, changes its successor, and it is u′, not u, that brings y.
+- THE MISSING STEP (to be proved, or killed by an instance): a same-pair return of u to b cannot be low-reasoned (F3′) while a vertex
+  after a high letter f brings y at the same step (F4′).
+  - Proving it gives RW-B0* (indeed RW-WT* directly). Then C-WT is unconditional on P-N5-CHAIN's premises:
+        C(y) ≤ 3M · max_J Dhi_y(wt(y), J).
+  - The ROUTELOW_n21 mechanism (A1.1) realizes (F2′) and (F4′) at an ISOLATED y-top. A kill must make the same happen at a second y-top
+    through the SAME pair, with (F3′).
+- Where a proof could start (READING, not done):
+  - At t (the earlier y-top) u also moved to b. If f was already on b's route at t, then (F3′) at t′ compares the same two pre-f segments
+    that u compared at t. But u left b in between because a′ became strictly better (STRICT), and the post-f parts have since changed
+    in the same way for both.
+  - A potential argument on the pre-f segments (their low parts are lex-monotone where Λ is fixed, E-MON3 at the segment's vertices) is
+    the natural tool. I did not complete it.
+- DATA unchanged: Bne_t1 = Bne_t2 = 0 and rw2fail = 0 on every instance and sample (A1.3, A2.2, Add. 3).

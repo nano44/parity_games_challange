@@ -1,6 +1,43 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## HANDOVER (successor 66, PARKING 2026-11-08 21:15Z by date -u; Lead 21:14Z: «Your one more step before parking: PROVE RW-B0* … if RW-B0* resists, write exactly the missing step and stop. Then park with a handover»)
+### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
+- 76b64c8c handover check (Lead score 5).
+- cde01dcb BOX 199 (docs/new/N5-SPLIT-box199.md; experiments/new/box199/; check.sh «BOX 199 SPLIT»).
+- e2881b51 Addendum 1 (RW-SHAPE, ROUTE-LOW DEAD, REWIN-ASC); 91ed2f3f Addendum 2 (PAIR-SPLIT, SPLIT-COUNT, C-WT on RW-WT*); 42e9c728
+  Addendum 3 (FW family: C-WT tight). Addendum 4 (RW-B0* missing step) + this handover: the park commit.
+- No duty was routed (R123-R125 CHECKER items: none open at park).
+### RESULTS (labels; nothing is a TARGET claim; G-N5-TIME OPEN; lane-proved items unrefereed)
+- PROVED (lane, only P-N5-CHAIN facts, R125 pending landing): SPLIT + TRANSFER; REWIN, REWIN-HI; PAIR-SPLIT (any two same-pair y-tops);
+  SPLIT-COUNT c_y(v,I) <= sum_(u,b) Dhi_y(b, J_b) <= 3M max_b Dhi_y(b) (no W term); RW-SHAPE(*); RW-1 (single-split: RW-WT); RW-2.
+  L-RED 61 attacked box 199 main text: all SURVIVE (l-red 1ea37d91). Addenda 2-4 routed to L-RED 62 (target: Dhi_y(wt(y)) growing).
+- CONJECTURE RW-B0* (=> RW-WT* => C-WT: C(y) <= 3M max_J Dhi_y(wt(y), J)). DATA: 0 fails on ~346,700 re-wins (frozen, search, sweep,
+  L-RED) and 6,771 same-pair couples. MISSING STEP (Add. 4): a same-pair return of u to b cannot be low-reasoned (decided below y on the
+  pre-f segments) while a vertex after a high route letter f brings y at the same Howard step.
+- DEAD: downward charge below y (CX4_n21); W-target charge for all re-entries (GROW7_n34); W-target bound (HOLD2K_n84); ROUTE-LOW
+  (ROUTELOW_n21, sha1 80f9b977); product-chain / Dilworth idea.
+- With HUB-ASC-G3 / UP-B3 (Γ3 form of R121): C <= 3M F'_U(M) on RW-WT*: no class beyond CHAIN3.
+### OPEN CORE, sharpest form (for successor 67)
+- On RW-WT*: T3 polynomial  <=  max over y, J of Dhi_y(wt(y), J) polynomial, i.e. the number of distinct high parts (letters above y)
+  of the ONE vertex wt(y) on one Λ-interval. Conversely C <= T3, so with C-EQUIV this is an equivalence up to the factor 3M.
+- FW (L-SI box 90) has Dhi = 1 (no ascents after y): it is tight for C-WT and harmless. A counter-family must create many high parts at
+  wt(y), i.e. ascents after y (ascent DAG Z depth >= 2), varying in time.
+### RECOMMENDED BOX 200 (successor 67)
+1. RW-B0*: the missing step of Add. 4 — prove «no low-reasoned same-pair re-win» (potential argument on the pre-f segments, both times),
+   or kill it: plant ROUTELOW_n21's double split at a SECOND y-top through the same pair (srch199.py with a re-win-targeted mutation).
+2. The core at one vertex: bound Dhi_y(wt(y), J) via a dynamic (per-Λ-interval) ascent DAG, not the static Z (zdag199.out is loose:
+   depth <= 7, paths <= 366 vs c <= 5). Use PAIR-SPLIT recursively at wt(y): its y'-tops for y' above y have their own split pairs.
+3. Packet: freeze BOX 197-199 lemmas as P-N5-SPLIT once L-RED 62 has attacked Addenda 2-4 (see park message for the statement list).
+### TOOLS
+- box199/split199.py (counters: must-0 list printed first; S199_CTRL 1-6); check199.sh/.out (~15 s); split199.out (22 instances);
+  srch199.py (random search; srch199_s8.log); zdag199.py/.out. inst/ 22 frozen genomes + SHA1SUMS.
+- Scratch (not needed): lane-genome sweep scripts in the scratchpad (sw/run.sh), results summarized in Add. 1-2.
+### Traps (successor 66)
+- Stale container 1020 behind: trap check first.
+- A first edit placed a block inside a loop body (UnboundLocalError): run the tool on one instance before any sweep.
+- Stop hooks complain about unpushed commits while push.sh runs: never start a second push.
+
 ## Resume point (successor 66, Opus; session_01V5yGRXNwrBFAEUN7Qy6Hz6; started 2026-11-08 17:14Z by date -u; GO 17:51Z)
 - Step 0: handover check 76b64c8c (VERIFY PASS; Lead score 5). Stale container (1020 behind) fast-forwarded to 60e68423.
 - DUTY: none routed (Lead 17:51Z: no CHECKER item on R123-R125 open; R122 third fill first).
