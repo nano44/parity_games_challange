@@ -34,6 +34,10 @@
   every gap bill >= 1, so re-timing HIT7 -> 8 costs >= 262 (219 disjoint hard intervals); the least-bill re-timing = core8
   (c6e19673, byte-identical). Slack cannot help; OSC-ROOM' DEAD for re-timings; OSC-ROOM'' (bill = adjacent o(h-1) changes:
   HIT7 218/254, H6 83/126). Search step SKIPPED. docs/lower/L12-slack.md.
+- BOX L12 (a) ROOM CLIMB (Lead 18:02Z). l12/room.c (fenc rules; keeps F(0..6) exact; score A = adjacent o(6) changes among core
+  steps; tie T), adj.py (independent sim6 count). 60-s test: A 218 -> 212, T 304, floor 251 (sim6 agrees). RUNNING 18:1xZ (tracked,
+  85 min): $SP/room r1.txt R1.txt 8 11 5100 0.5 and R2.txt seed 22 temp 1.5 in $SP/l12 (resume: rerun the same line; it resumes
+  from R*.txt). Build: gcc -O2 -o $SP/room experiments/lower/l12/room.c -lm.
 - Things only I know (successor 11): pysat Glucose4 with_proof writes the proof to a temp file (~5 MB/s; an hour fills the disk
   allowance); Cadical195 ignores interrupt(); drup.c VERIFIED requires the final refutation (l. 97-98).
 
