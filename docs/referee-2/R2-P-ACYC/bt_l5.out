@@ -1,0 +1,5 @@
+L-4 85bb221f19ca457655c954f570552bc0f4d8095d 3080 B; L-5 7a84e0944b0f33ce4d569604bec41d6e9236d82f 3321 B; parens 43 43 pipes 0 lines 1
+R1: old in L-4 1 / L-5 0; new in L-4 0 / L-5 1; both verbatim in C136 True
+R2: old in L-4 1 / L-5 0; new in L-4 0 / L-5 1; both verbatim in C136 True
+R3: old in L-4 1 / L-5 0; new in L-4 0 / L-5 1; both verbatim in C136 True
+L-5 == L-4 + R1 + R2 + R3: True
