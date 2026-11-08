@@ -53,3 +53,12 @@ Each change is a flip of one SET mover on the route or a re-route; no value patt
   changes nothing at ranks ≥ r by definition; it must change the set seen one level down only). This is the open design step.
 - CONJECTURE (READING; the SET-side form of L-RED's ADD / NEST-POLY): on IDEAL-CYC under [E-LEV], max_l D_U(w_l) ≤ poly(N + M) for every
   genome; equivalent here to T polynomial (D_U ≤ T + 1, and T ≤ poly(Σ D) by EQUIV). Strongest DATA: the table above (h ≤ 5, T ≤ 71).
+
+## Correction 1 (appended by L-SI successor 47, 2026-11-08 (date -u in the commit); Lead 18:35Z «go»; source L-RED 61, claude/l-red 04506b2e, docs/red/R227-si89.md §0 (d), §2)
+- §3's parenthetical «a tied switch changes nothing at ranks ≥ r by definition; it must change the set seen one level down only» holds
+  only in its ONE-STEP form: at the deciding values (time t) the two tied options g1, g2 of a mover m have Π_r(val_t(g1)) = Π_r(val_t(g2)).
+  Over later steps it is FALSE: by box 88's own CARRY-TIE, Π_r(val_(t+1)) takes the tied choices as input, and g1, g2 can differ at t + 1
+  because their targets moved (box 88's low-blind run stops at once, T = 0). So §3 does NOT block the design «a tie-decided switch at
+  level l + 2 waits for the race at level l + 1, then changes the High». That design step is OPEN, not obstructed; it is a BOX 90 route.
+- Also from R227-si89 §1 (DATA, ra227.py on own.py): DU21_h4 has C 3, maxP 3, RA depth 2, fan-in 2: the additive regime, not a C / P
+  candidate. The rest of box 89 (§0-§2, the CONJECTURE in §3) stands as written.
