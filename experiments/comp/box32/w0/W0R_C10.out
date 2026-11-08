@@ -1,0 +1,32 @@
+INFO {'d': 32, 'H': 8, 'T': 510, 'relevant': 64, 'Lmax': 31, 'options': 128, 'vars': 2235985, 'clauses': 23225340, 'empty': False, 'nP': 28705, 'quad': 31214630, 'lazy': 0, 'build_s': 24.3}
+SOLVE it 1 -> UNSAT 0.0s
+RESULT UNSAT
+prefix 2: RESULT SAT
+prefix 3: RESULT SAT
+prefix 4: RESULT SAT
+prefix 5: RESULT SAT
+prefix 6: RESULT SAT
+prefix 8: RESULT UNSAT
+prefix 12: RESULT UNSAT
+prefix 16: RESULT UNSAT
+prefix 24: RESULT UNSAT
+prefix 32: RESULT UNSAT
+prefix 64: RESULT UNSAT
+exit 0
+prefix 7: RESULT UNSAT
+prefix 7 skip 0: RESULT UNSAT
+prefix 7 skip 1: RESULT UNSAT
+prefix 7 skip 2: RESULT UNSAT
+prefix 7 skip 3: RESULT UNSAT
+prefix 7 skip 4: RESULT UNSAT
+prefix 7 skip 5: RESULT UNSAT
+prefix 7 skip 6: RESULT UNSAT
+prefix 7 skip 7: RESULT UNSAT
+prefix 7 skip 8: RESULT UNSAT
+prefix 7 skip 9: RESULT UNSAT
+prefix 7 skip 10: RESULT UNSAT
+prefix 7 skip 11: RESULT SAT
+prefix 7 skip 12: RESULT UNSAT
+prefix 7 skip 13: RESULT UNSAT
+prefix 7 skip 14: RESULT UNSAT
+prefix 7 skip 15: RESULT UNSAT

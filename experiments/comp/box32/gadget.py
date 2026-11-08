@@ -21,7 +21,10 @@ base, tp, outp = sys.argv[1], sys.argv[2], sys.argv[3]
 R0 = rng(sys.argv[4]) if len(sys.argv) > 4 else list(range(12))
 G = rng(sys.argv[5]) if len(sys.argv) > 5 else list(range(56, 64))
 D = enc32.rdgen(base); S, nc = enc32.rdtarget(tp); H = nc // 2; xt = D['xt']; N = 2 * D['d']
-F = [13] + G; Fset = set(F)
+X = int(os.environ.get('TARGETMOVER', '13'))      # the first mover served by the gadget (13 = f6; 11 = f5)
+PREFIX = int(os.environ.get('PREFIX', '-1'))
+if PREFIX >= 0: S = S[:PREFIX + 1]
+F = [X] + G; Fset = set(F)
 # movers reaching a free mover (or a NOREACH mover, default 14, 15 = pair 7: Lead 10:41Z, the carrier must not take its timing
 # from pair 7) via fixed edges; gadget movers may point only to movers outside this set
 NOREACH = set(rng(os.environ.get('NOREACH', '14,15')))
@@ -32,20 +35,20 @@ while ch:
         if m // 2 in Fset: continue
         if xt[m] in reach and m // 2 not in reach: reach.add(m // 2); ch = True
 ok = lambda z: z not in reach
-X13 = [z for z in (xt[26], xt[27], 18, 60) if z >= 0 and ok(z)]
+X13 = [z for z in (xt[2 * X], xt[2 * X + 1], 18, 60) if z >= 0 and ok(z)]
 cand = {}
-for k in (0, 1): cand[26 + k] = sorted(set([-1] + G + X13))
+for k in (0, 1): cand[2 * X + k] = sorted(set([-1] + G + X13))
 for i, g in enumerate(G):
     for k in (0, 1): cand[2 * g + k] = sorted(set([-1] + G[i + 1:] + [z for z in R0 if ok(z)]))
 freerank = sorted(cand)
-only = set(range(2 * H)) - ({13} if not os.environ.get('ALL') else set(range(2 * H)))
+only = set(range(2 * H)) - ({X} if not os.environ.get('ALL') else set(range(2 * H)))
 enc32.SKIPCORE.clear(); enc32.SKIPCORE.update(only)
 info_c = {m: len(v) for m, v in cand.items()}
 print('GADGET NOREACH', sorted(NOREACH), 'base', os.path.basename(base), hashlib.sha1(open(base, 'rb').read()).hexdigest()[:8], 'F', F, 'R0 ok', [z for z in R0 if ok(z)],
       'X13', X13, 'cand sizes', info_c, flush=True)
 sv = Solver(name='cadical195')
 t0 = time.time()
-E, info, ctx = enc32.build(D, S, H, {'ranks'}, sink=sv.add_clause, freerank=freerank, cand_in=cand)
+E, info, ctx = enc32.build(D, S, H, {'ranks'}, sink=sv.add_clause, freerank=freerank, cand_in=cand, fixpoint=PREFIX < 0)
 info['build_s'] = round(time.time() - t0, 1); print('INFO', info, flush=True)
 if E.empty: print('RESULT UNSAT (empty clause at build)'); sys.exit()
 t1 = time.time(); r = sv.solve(); print(f'SOLVE -> {"SAT" if r else "UNSAT"} {time.time() - t1:.1f}s', flush=True)

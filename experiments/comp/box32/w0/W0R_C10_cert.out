@@ -1,0 +1,11 @@
+INFO {'d': 32, 'H': 8, 'T': 510, 'relevant': 64, 'Lmax': 31, 'options': 128, 'vars': 2235985, 'clauses': 23225340, 'empty': False, 'nP': 28705, 'quad': 31214630, 'lazy': 0, 'build_s': 27.5}
+CNF -> /home/user/pf32/W0R_C10.cnf
+input /home/user/pf32/W0R_C10.cnf sha1 9d618cf12576647caab51fc091b7179c9b369ca3 vars 2235985 clauses 23225340 cube  glucose4 UNSAT 0.0 s proof /home/user/pf32/W0R_C10.proof sha1 da39a3ee5e6b4b0d3255bfef95601890afd80709 bytes 0
+input clauses 23225340, vars 2236947, top-level conflict after input: 1
+lemmas checked 0, deletion lines 0 (applied; clauses removed 0)
+s VERIFIED (0 lemmas RUP-checked)
+
+real	0m4.210s
+user	0m3.961s
+sys	0m0.203s
+exit 0
