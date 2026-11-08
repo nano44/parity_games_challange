@@ -60,3 +60,35 @@
   string was checked verbatim against the report (whitespace-joined). Result: sha1 c484795c888ab46cee07038094368ba28da0055d, 8,450 B,
   164 «(» = 164 «)». L-2 kept (superseded).
 - chain.pins: this file re-pinned; L-3 and mkl3_196.py added. check.sh block «P-N5-CHAIN» unchanged.
+
+## Fixes entry 3 (L-NEW successor 65; two referee-originated proof repairs + line; Lead 13:02Z: «same rule as QUIET's R-G (consistency under L41) … Write P-N5-CHAIN fixes entry 3 … + L-4 = L-3 (c484795c) + R-G3 … + R-B3»; 13:12Z: «ADD … a clause R-W … So CHAIN L-4 = L-3 + R-G3 + R-W + R-B3»; written 13:19Z by date -u)
+### The (Q5) boundary step (credit: REFEREE 28 for P-N5-QUIET's form, R-P-N5-QUIET.md l. 118-120; REFEREE 30 and REFEREE-2 35 for finding it again and for the Γ3 form, claude/referee-2 09ce14fc R2-P-N5-CHAIN.md Addendum 3)
+- §6 (Q5)'s Bellman-Ford step cites «(Q4)'s argument and simplicity» for F4′ at the face. (Q4)'s argument covers the face's own successor
+  and the path; it does not cover the BOUNDARY value. The step that does, for each kind of boundary point of a B-class C = (w, S):
+  - an e-face target y in class (w, S ∖ {e}): if β_g ∈ Π(y) for a β-face β_g ∈ C, then S = E(β_g) ⊆ E(y) = S ∖ {e}, impossible;
+  - the core exit through pb: its Π is {K0, K3}, no β;
+  - w itself: Π(w) = ∅.
+- So β_g ∉ Π of any boundary value, and F4′ holds at the face. Read (Q5)'s «by (Q4)'s argument and simplicity» as including this step. No
+  statement changes; the packet stays frozen. REFEREE-2 35 SIGNs it (Addendum 3); REFEREE 30 SIGNs it (R-P-N5-CHAIN.md §D follow-up 2, claude/referee 91334ccd,
+  relayed by the Lead 13:12Z).
+### The W-1 repair, restated (credit: REFEREE-2 35, R2-P-N5-CHAIN.md «W-1»; re-derived and SIGNED by REFEREE 30, claude/referee b5ac2304 R-P-N5-CHAIN.md §D follow-up 1)
+- Recorded as a note in fixes entry 2; restated here because the line now names it (Lead ruling 13:12Z, L41). Three sentences of the frozen
+  text are false over ALL vertices: (Core)'s «a play passes K0 iff it passes K3» (plays from pA or K3 pass K3, not K0); (F-cls3)'s «each
+  class is a convex set of values»; E-MON3's reason «both plays have node w, so both or neither contain them».
+- Repair: the only edge into the eight-vertex core {K0, pA, K3, K1, s, r, K2, q} from outside is pb_g → K0; the core vertices have constant
+  values on every state (frozen core, σ̄(K2) = r by LOC-K2-3); for a non-core vertex v, K0 and K3 are both in Π_t(v) (node K1 or K2) or
+  neither. So (F-cls3)'s convexity and E-MON3's reason hold for non-core vertices, and every use in the packet is of that kind.
+### Line changes (applied in the order R-G3, R-W, R-B3)
+| item | old | new |
+| --- | --- | --- |
+| R-G3 | «is a separate gauntlet step-4 item; DATA, clause by clause (unit:» | «is a separate gauntlet step-4 item; the step β_g ∉ Π(y) for the boundary points y in QUIET3's (Q5) F4′ (an e-face target y of class (w, S ∖ {e}): else S = E(β_g) ⊆ E(y); the pb exit: Π = {K0, K3}; w: Π = ∅) is referee-originated (REFEREE R-P-N5-QUIET §3 (Q4), l. 118-120, REFEREE 28, for P-N5-QUIET's form; REFEREE 30 and REFEREE-2 35, R2-P-N5-CHAIN Addendum 3, for the Γ3 form), signed by both referees; DATA, clause by clause (unit:» |
+| R-W | «signed by both referees; DATA, clause by clause (unit:» (created by R-G3: once in L-3 + R-G3, absent from L-3) | «signed by both referees; (F-cls3)'s convexity and E-MON3's reason hold for non-core vertices, the eight core vertices being constant (referee-originated: REFEREE-2 R2-P-N5-CHAIN W-1, signed by both referees); DATA, clause by clause (unit:» |
+| R-B3 | «frozen at l-new 93531b03, sha1 6e613ba7; source box 196, docs/new/N5-CHAIN-box196.md; L-NEW successor 64;» | «frozen at l-new 93531b03, sha1 6e613ba7, with its fixes entries 1-3, docs/new/P-N5-CHAIN-fixes.md; source box 196, docs/new/N5-CHAIN-box196.md; L-NEW successors 64-65;» |
+- R-G3 placement: before «DATA, clause by clause», which occurs once in L-3 (the line's first DATA clause), as QUIET's R-G; R-W
+  right after R-G3 (the Lead's clause, unchanged; it ends with «;» before « DATA»), R-B3 in the source note. R-G3's and R-B3's old strings occur once
+  in L-3; R-W's old string is created by R-G3 and occurs once in L-3 + R-G3.
+### Line L-4 (written by script)
+- docs/new/P-N5-CHAIN-line-L4.txt = L-3 + R-G3 + R-W + R-B3 (in that order), by experiments/new/box196/mkl4_196.py (from the repo root): asserts the packet's
+  sha1 (6e613ba7…), L-3's sha1 (c484795c…), each old string exactly once where applied (R-G3, R-B3 also once in L-3; R-W's absent from L-3), one line, no «|», «(» = «)». Result: sha1
+  a69c8aa96fb0b67c6c0a3f6d11670a0b57ba9331, 9,082 B, 174 «(» = 174 «)». L-3 kept (superseded).
+- chain.pins: this file re-pinned; L-4 and mkl4_196.py added.

@@ -138,3 +138,15 @@
   d9b5e610300927fd0e8c1ec8567ee1fb68758df7, 5,429 B, 103 «(» = 103 «)». (L-2 + the first five alone gives a4802f27…, 5,225 B = the
   Lead's first prediction.) L-2 kept (superseded).
 - quiet.pins: this file re-pinned; L-3 and mkl3_194.py added. check.sh block «P-N5-QUIET» unchanged.
+
+## Fixes entry 4 (L-NEW successor 65; line-only; Lead 12:47Z: «fixes entry 3 carries a proof step, so by CHECKER's C134 N-S / C135 E-1 rule the source note must name it … write fixes entry 4 (line-only) + L-4 = L-3 + R-B2»; written 13:19Z by date -u)
+- Answers my own flag (b) in entry 3: the source note now names entries 1-3. L-3 is not routed; L-4 replaces it.
+| item | old (once in L-3) | new |
+| --- | --- | --- |
+| R-B2 | «(P-N5-QUIET, docs/new/P-N5-QUIET.md with its fixes entries 1-2, docs/new/P-N5-QUIET-fixes.md; L-NEW successors 62 and 64)» | «(P-N5-QUIET, docs/new/P-N5-QUIET.md with its fixes entries 1-3, docs/new/P-N5-QUIET-fixes.md; L-NEW successors 62, 64 and 65)» |
+- Entry 4 is line-only (no tool or proof change), so it is not named (C134 N-S).
+### Line L-4 (written by script)
+- docs/new/P-N5-QUIET-line-L4.txt = L-3 + R-B2 = L-2 + R-L, R-U, R-B (as R-B2), R-Q, R-T, R-G, by experiments/new/box194/mkl4_194.py (from
+  the repo root): asserts the packet's sha1 (066dfc7d…), L-3's sha1 (d9b5e610…), the old string exactly once in L-3, one line, no «|»,
+  «(» = «)». Result: sha1 0809da259cc54e3cec1fdf455070620314d4e622, 5,433 B, 103 «(» = 103 «)». L-3 kept (superseded, never routed).
+- quiet.pins: this file re-pinned; L-4 and mkl4_194.py added.

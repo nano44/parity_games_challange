@@ -21,6 +21,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   «(R118's DATA)») + L-3 (sha1 d9b5e610, 5,429 B; box194/mkl3_194.py; quiet.pins 40).
   Addendum 2: Add. 1's «s = 4» WITHDRAWN (NK6_cl21 maxalt 6, relayed; verify when on origin claude/l-si box88/inst); Lemma PAIR-COUNT,
   Theorem ALT-EQUIV (T3 poly iff max pairwise alternation A poly); CONJECTURE ALT-POLY = restatement in a two-letter form.
+- QUIET fixes entry 4 + L-4 (R-B2; sha1 0809da25, 5,433 B; L-3 never routed). CHAIN fixes entry 3 (Γ3 (Q5) boundary step + W-1 repair
+  restated) + L-4 = L-3 + R-G3 + R-W + R-B3 in order (sha1 a69c8aa9, 9,082 B; box196/mkl4_196.py; chain.pins 57).
   Things only I know: asc197.py counts Rtop per (time, top); maxR counts all re-entries; sweep197.out ran with ROOT set from the scratchpad.
 
 ## HANDOVER (successor 64, PARKING 2026-11-08 09:12Z by date -u; Lead 09:13Z: «your next item is the HANDOVER … push, send me the SHA, then stop»)
