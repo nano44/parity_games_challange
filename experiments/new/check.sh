@@ -1017,4 +1017,13 @@ if [ -z "$pinQ" ]; then
 else
   echo "P-N5-QUIET check: FAILED"; echo "$pinQ" | head -20; exit 1
 fi
+# BOX 195 END (L-NEW successor 63): Lemmas E0-E4 / Theorems ENDGAME-3, ENDGAME-3-N5 (eg195.py), frozen output + negative controls
+# no silent exit: every failure path prints «BOX 195 END check: FAILED» with the exit code, the diff and the run's last lines
+r195=0; run195=$(cd box195 && bash check195.sh 2>&1) || r195=$?
+d195=$(diff <(printf '%s\n' "$run195") box195/check195.out 2>&1) || true
+if [ "$r195" -eq 0 ] && [ -z "$d195" ] && ! grep -v "^ctrl" box195/check195.out | grep -Eq "(e[0-4]fail|stopfail|finsbar|fintie|nofb|late|capped|lfail) [1-9]" && grep -q "^ctrl1 .*e2fail 100 e3fail 100 e4fail 100 stopfail 100 finsbar 100 fintie 100" box195/check195.out && grep -q "^ctrl2 .*e0fail 200 e1fail 200" box195/check195.out; then
+  echo "BOX 195 END: E0-E4 / ENDGAME-3 (xi and spec) 0 failures, controls fire = frozen: PASS"
+else
+  echo "BOX 195 END check: FAILED (check195.sh exit $r195; python $(python3 --version 2>&1))"; echo "$d195" | head -30; echo "$run195" | tail -15; exit 1
+fi
 rm -rf "$tmp"

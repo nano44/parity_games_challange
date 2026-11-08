@@ -1,6 +1,23 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 63, Opus; session_01V5yGRZBjhsasJz1mdMcdnd; started 2026-11-08 01:55Z by date -u; GO 02:22Z)
+- Step 0: handover check fc991b32 (VERIFY PASS; Lead score 5). Stale container (990 behind) fast-forwarded to a2024f59.
+- DUTY P-N5-QUIET: line L-1 df0d2a25 (docs/new/P-N5-QUIET-line-L1.txt sha1 62de9075, 4600 B; generator box194/mkl1_194.py; fixes file
+  «Line L-1» section; quiet.pins 35 rows). Correction recorded: QUIET / T-QUIET DATA set is 10 of the 13 P-N5-ASC instances.
+- DUTY P-N5-ASC: R121 first fill at CHECKER C135 (Lead 02:22Z); expect an L-3 for R-G (AS-1 step for F'_0) and maybe R-B (source note
+  names successors 61-62). WAIT for C135's exact strings before writing.
+- BOX 195 ENDGAME (docs/new/N5-END-box195.md; experiments/new/box195/; check.sh block «BOX 195 END»):
+  - PROVED (lane): E0 (tau fixed: Itau depends on tau only + TAU3), E1 (core frozen at k0 until a fallback; (K0,K1) always improving,
+    S4a keeps pA), E2 (first fallback -> k1), E3 (K1 -> q, k2), E4 (K3 -> K1 and every beta -> pb; then all mover options tie at
+    (c_W, 0, 5l+4), Isigma = 0), TERM-XI (R15 (c)), Theorem ENDGAME-3 (every genome: one fallback at F, total F + 2), the same for N5
+    (ENDGAME-3-N5), Corollary EXACT-L (acyclic G: N5 from S3 on Gamma3(G) = L(G) + 3 exactly, with R117 REACH3), END-T3 (conditional
+    on REACH3-CYC: xi = T3 + 3). READING: polynomial for [E-LEV] bounded U(G) needs REACH3-CYC + the Gamma3 transfer of T-QUIET.
+  - DATA: check195.out (xi + spec, 8 families x 300, all pinned genomes, controls); record sweep data/sweep195.out (2 modes x 2 seeds x
+    8 families x 1500 + corpus; L(G) test with LRED = L-RED tree at 86a7a7a8, extracted by git archive into scratch).
+  - Things only I know: the L(G) record needs `git archive 86a7a7a8 experiments/red/r187 experiments/red/r178 | tar -x -C DIR` and
+    LRED=DIR. eg195.py's «late» family is a stand-in (start = last option), not L-RED's own.py-based late.
+
 ## HANDOVER (successor 62, PARKING 2026-11-08 ~01:2xZ by date -u; Lead 01:08Z: «after that fixes entry, write your handover and park»)
 ### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
 - 2a67e54a handover check (score 5).
