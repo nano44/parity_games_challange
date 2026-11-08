@@ -236,3 +236,35 @@ docs/referee/scratch/: asc_quotes.py, asc_cs.py, asc_game.py; asc_logs/cs.log, g
   - Fixes entry 1 calls «the order of Γ(G) as built by … not in a landed line» R220's wording; it is not verbatim in R220-asc.md. It is
     not quoted in L-1, so no change is needed.
 - Verdict: fixes entry 1 CORRECT for AS-2, AS-3, AS-D1, AS-D2, AS-1 and AS-4. L-1 MATCHES. All statements stay SIGN.
+
+## §D. Fixes entry 2 and line L-2 (REFEREE successor 28, Opus 5.5, D15; date -u at writing 2026-11-08T01:07Z)
+- Objects: claude/l-new a5dcf9c6 (ancestor of origin/claude/l-new), read by `git show` / `git archive`:
+  - L-2 docs/new/P-N5-ASC-line-L2.txt: sha1 f109cb69507efd863133a08a2e90096ad2acb7f5 (EQUAL to the Lead's relay), 4,907 B, one line,
+    116 «(» = 116 «)»;
+  - L-1 is unchanged (08cced78…, 4,896 B); the packet is unchanged (9c9cb50d…);
+  - fixes docs/new/P-N5-ASC-fixes.md: 28cf8f9f…, 8,108 B; entry 1 unchanged, entry 2 appended.
+  - Since 19cc23e3 the only box193 changes are asc193.py (the W-4 test, two lines), asc.pins (re-pins, plus L-2) and a new
+    data/cs_m8.txt (not cited by L-2).
+- Byte test (scratch/asc_l2.py, asc_logs/l2_bytetest.out):
+  - «(consecutive state pair, W-target with Λ fixed) pairs» → «(consecutive state pair, W-target or c_W with Λ fixed) pairs» (W-3), and
+    «with fixes entry 1» → «with fixes entries 1-2».
+  - Each old string occurs once in L-1 and 0 times in L-2. Each new string occurs once in L-2.
+  - L-1 with exactly these two changes is byte-equal to L-2: sha1 f109cb69…, 4,907 B.
+- My AS-2 / AS-3 strings hold on L-2:
+  - «UP-JUMP, UP-B and NOUP under HYPOTHESIS [E-LEV]» and «(only for §6 UP-JUMP, UP-B and NOUP)» occur 1 / 1 times.
+  - The old forms occur 0 times.
+  - «under [E-LEV]» occurs 4 times, as in L-1.
+- W-3 in meaning: CORRECT.
+  - asc193.py's docstring (l. 7, l. 12) defines tmonunits over «W-target or c_W successor y». Entry 1 already said so.
+  - The count is unchanged: 2,552.
+- W-4 in meaning: CORRECT.
+  - UP-JUMP (packet l. 166-168) asserts a β whose Ξ-target is a mover «of level > the level of the mover it was entered from, and ≥ ℓ».
+  - The new test requires lev(nxt[z]) ≥ la AND lev(nxt[z]) > lev(z's own mover), where z's own mover is name[z][1][0] for z = β_(x,k).
+    That is exactly the lemma's condition: the mover a β is entered from is its own mover x.
+- Re-run of check193.sh on the a5dcf9c6 archive: exit 0. Its output is byte-equal to the committed check193.out
+  (asc_logs/check193_rerun_a5dcf9c6.out).
+  - My sums over the instance lines: asc 1,956, upfail 0, tmonunits 2,552, tmonfail 0, edomunits 1,892, decunits 24,818.
+  - The set and every count are unchanged, as the entry says.
+  - asc.pins has 35 rows, all matching (DOCS/ → docs/new/).
+- DATA rule: no clause changes except W-3's unit wording, which now matches the counter. MET.
+- Verdict: fixes entry 2 CORRECT (W-3, W-4). L-2 MATCHES, by the byte test and in meaning. All statements stay SIGN.
