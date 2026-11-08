@@ -35,6 +35,6 @@ for it in range(IT):
     if s2[:3] >= s[:3]:
         if s2[:3] > s[:3]:
             json.dump(Hh, open(f"out/dc{os.environ.get('ORDER', '')}_{CAP}_{seed}.json", "w"))
-            print(it, "depth", s2[0], "maxP", s2[1], "C", s2[2], "fanin", c2["fanin"], "A", c2["A"], "T", c2["T"], "N", Hh["N"], "M", len(Hh["br"]), flush=True)
+            print(it, "depth", c2["depth"], "maxP", c2["maxP"], "C", c2["C"], "fanin", c2["fanin"], "A", c2["A"], "T", c2["T"], "N", Hh["N"], "M", len(Hh["br"]), flush=True)
         G, s = Hh, s2
 print("FINAL cap", CAP, "score", s, "N", G["N"], "M", len(G["br"]), flush=True)

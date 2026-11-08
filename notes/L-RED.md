@@ -68,6 +68,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - Item 1 (Lead 16:40Z: L-NEW BOX 198, l-new fcba92fc) DONE: docs/red/R227-box198.md. PAIR-HIGH, RA-PATHS, C-EQUIV SURVIVE; ALT-H (iii) = PAIR-HIGH (b),
   (ii) slightly stronger than (a); E-MON3 imported from P-N5-CHAIN. NEW: RA depth 4 on GROW7 / HOLD2K / HOLD3K (both engines). Depth alone
   cheap (staircase, P = d + 1). Tools ra227.py, depthclimb227.py (ORDER=C scores C first). Worktree <scratchpad>/wt198 = fcba92fc.
+- Item 1b (Lead 17:03Z: L-LOWER BOX L11, l-lower b6da086e) DONE: docs/red/R227-l11.md. TOP-LOOP SURVIVES; slack / sharing reproduced exactly
+  (slackcl227.py, sim6 states, own counting); CNFs rebuild byte-equal; scope note: core gates clamped. Worktree <scratchpad>/wtlow = b6da086e.
+- Running: depthclimb 2721 (GROW7, depth-first) and ORDER=C 2722 (CX4), cap 300; logs out/dc_300_2721.log, out/dcC_300_2722.log.
 - Worktree: <scratchpad>/wt197 = l-new f98e93ee (detached); run asc197 from inside it with --files <abs path>; remove at park.
 - Sources opened: l-new f98e93ee docs/new/N5-CORE-box197.md (§0 list, E-MON3 l. 23/67, ALT-EQUIV l. 189-234), asc197.py header (run).
 
