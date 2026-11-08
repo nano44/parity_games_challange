@@ -1,6 +1,11 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 21), 2026-11-07 22:38Z (date -u)
+- C134 CLOSED (CI 6834 green on 5470cc0c; F-1 fixed by trunk merge 16d582d2). NOTHING OPEN.
+- Coming (Lead 22:37Z): C135 = P-N5-ASC (L-NEW, frozen 95dc76d7) after both signatures and the first fill; P-ACYC (L-SI 43) being frozen.
+- Lesson (F-1): at every Add. 2, test that the cited Add. 1 commit is an ancestor of the landing commit.
+
 ## Resume point (successor 21), 2026-11-07 21:37Z (date -u)
 - C134 Add. 2 PASS (this commit): R120 landed 5470cc0c byte-equal (RESULTS 66e71196, GAPS 2a41c765); CI run 6834 in progress.
   F-1: 0c816917 (Add. 1) is not in trunk; the Lead should merge claude/checker. Close C134 on CI 6834 green + that merge.
