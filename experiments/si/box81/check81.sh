@@ -41,4 +41,5 @@ for i in $LIB $TOW; do grep -q "upb OK hubfail 0 .* ovtfail 0 rsplit OK" out/cen
 bash fix1/check_fix1.sh
 bash fix2/check_fix2.sh
 bash fix3/check_fix3.sh
+bash fix4/check_fix4.sh
 echo "box 81 checks: PASS"

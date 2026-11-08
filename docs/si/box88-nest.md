@@ -2,13 +2,14 @@
 Written 2026-11-08 (date -u in the commit). Labels: PROVED (lane) / CONJECTURE / DATA (unit, set, scope, counter) / DEAD (instance) / READING.
 Nothing here is a TARGET.md claim. G-N5-TIME stays OPEN. N5′-xi stays a CANDIDATE (D1).
 Tools: experiments/si/box88/ (leap88.py census; climb88.py generic climb; climbp88.py MIRROR lane climb; tie88.py, blind88.py CARRY
-tests; check88.sh, wired). Inputs: the 26 frozen instances of boxes 84-86 (pinned there) and the instances frozen in box88/inst (pins.sha1).
+tests; nest88.py own N2 census; check88.sh ~4 min, wired; HP6b-8b census recorded, not re-run). Inputs: the 26 frozen instances of boxes 84-86 (pinned there) and the instances frozen in box88/inst (pins.sha1).
 Scope of every run: box81/ref idealcyc (IDEAL-CYC Howard, [E-LEV]), cap 3000.
 
 ## 0. Answer
-- FAILURE as a counter: no family found in which k (type-II flips per unit, leap87's counter) grows super-linearly with h. What grows
-  is a RELABELLING: on the MIRROR family the flips per unit stay ≤ 5 for every h (ev = 5 at h = 3, 4, 5 and the h = 6 builds), and k
-  rises only because type-I flips become type-II flips. On the 26 frozen instances ev ≤ |E_U| − 1 on every unit (my census, = L-RED
+- FAILURE as a counter: no family found in which k (type-II flips per unit, leap87's counter) grows super-linearly with h. On the
+  untuned MIRROR towers the flips per unit stay at 5 (h = 3-5 and HP6b-HP8b, h = 6-8), and k
+  rises only because type-I flips become type-II flips. Lane climbs raise the per-bit flips (tuned maxev 3 / 7 / 9 / 9 at h = 2-5, §5),
+  not super-linearly, and always within NEST-CHARGE. On the 26 frozen instances ev ≤ |E_U| − 1 on every unit (my census, = L-RED
   R225-leap §2). That is NOT a lemma: L-RED 60 killed «ev ≤ |E_U| − 1» in general (R226-race §3, witnesses SHARP_EU1 / SHARP_EU2) and
   proved Lemma SHARP (ev ≤ |E_U| − 1 + 2k + ε).
 - Exact obstruction (PROVED, lane, §2): **Corollary NEST-CHARGE**: on a LEAPFROG-ASC unit, ev ≤ 1 + da + db, where da, db count the strict
@@ -88,6 +89,8 @@ Unit / scope / counters as §1. «per-bit» = default mode (real bits).
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 26 frozen, per-bit (out/leap88.out) | 72 | 123 | 61 | 5 | 3 | 7 | 0 | 0 |
 | 26 frozen, ALL (out/leap88_all.out) | 156 | — | 98 | 5 | 3 | 7 | 0 | 0 |
+| HP6b / HP7b / HP8b, per-bit (out/leap88_slow.out; T 71 / 98 / 127) | 6 / 7 / 8 | 9 / 10 / 11 | 15 / 19 / 23 | 4 / 4 / 4 | 2 / 2 / 2 | 5 / 5 / 5 | 0 | 0 |
+| HP3t / HP4t / HP5t per-bit, NK6_cl21 / ND4_hp3 ALL (out/leap88_fast.out) | 3 / 4 / 5 / 5 / 5 | 8 / 10 / 8 / 6 / 6 | 3 / 10 / 15 / 6 / 5 | 3 / 7 / 7 / 6 / 4 | 2 / 4 / 2 / 3 / 4 | 7 / 9 / 9 / 7 / 5 | 0 | 0 |
 LOCKSTEP (per-bit; lowest real bit B1 of HP_mup; counters ev, k, depth, da, db, EU):
 | h | ev | k | depth | da | db | EU |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -95,10 +98,32 @@ LOCKSTEP (per-bit; lowest real bit B1 of HP_mup; counters ev, k, depth, da, db, 
 | 3 | 5 | 3 | 2 | 4 | 3 | 41 |
 | 4 | 5 | 4 | 2 | 7 | 6 | 99 |
 | 5 | 5 | 5 | 1 | 11 | 9 | 159 |
-CLIMBS: see §5 (filled at the end of the box).
+Switch census (out/nest88.out): N2 HP2-5_mup 0 / 1 / 5 / 11 (= L-RED 60), HP3t / HP4t / HP5t 1 / 6 / 13, switch-depth ≤ 2 everywhere here.
 
-## 5. Climbs
-(pending)
+## 5. Climbs (DATA; frozen bests in box88/inst, sha1 in pins.sha1)
+Unit = genome; scope as §1; counters leap88 (per-bit or ALL as named), nest88 (N2, depth), asc197 (maxalt, alternation LENGTH, §0).
+| climb | seed genome / cfg | iterations | best (frozen as) | T | maxk | maxev | maxdepth | N2 / switch-depth | maxalt |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| climb88 (ALL; climb225 mutations) seed 2881 | CL2_21 | 1500 | NK6_cl21 | 11 | 6 | 7 | 3 | 4 / 2 | 6 |
+| climb88 (ALL) seed 2882 | HP3_mup | 3000 | ND4_hp3 | 11 | 4 | 5 | 4 | 3 / 2 | 3 |
+| climbp88 (per-bit; MIRROR lanes) h = 3 seed 2883 | HP3_mup lanes | 300 | HP3t | 17 | 3 | 7 | 2 | 1 / 1 | 4 |
+| climbp88 h = 4 seed 2884 | HP4_mup lanes | 300 | HP4t | 24 | 7 | 9 | 4 | 6 / 2 | 5 |
+| climbp88 h = 5 seed 2885 | HP5_mup lanes | 150 | HP5t | 71 | 7 | 9 | 2 | 13 / 2 | 6 |
+| climbp88 h = 5 resume, seed 2895 | HP5t cfg | stopped at 14:05Z after ~70 min, no gain (only improvements are logged, so the iteration count is not known) | — (= HP5t) | 71 | 7 | 9 | 2 | — | — |
+| (h = 6 lane climb seed 2886 from extrapolated lanes) | doubled HP5 lanes | stopped at 12:19Z after ~45 min, no gain over its seed (iteration count not logged) | — | 56 | 3 | 3 | 1 | — | — |
+- No climbed genome violates NEST-CHARGE, E-MON or Claim C (chargefail / monofail / ascfail 0 on every scored genome; climb88 records
+  violations and found 0 in 4,500 mutants).
+- Fit: tuned per-bit maxev(h) = 3 / 7 / 9 / 9 at h = 2 / 3 / 4 / 5 (h = 2: HP2_mup); maxk(h) = 0 / 3 / 7 / 7. Neither is super-linear;
+  maxev is flat from h = 4 to 5. A binary counter needs bit 1 to flip ≥ 2^h − 1 times (31 at h = 5).
 
 ## 6. CONJECTURE TWO-COPY-RED, SET branch (box 88 form)
-(pending)
+- PROVED residue (lane): by NEST-CHARGE, the SET flips of a bit on a LEAPFROG-ASC unit are at most 1 + the strict increases of a_t and
+  b_t, i.e. charged to the U-projected e-set heights of its w and gates. So the SET branch follows from (b) «Σ_v D^tot_E polynomial»; it is
+  not an independent obstruction or route.
+- **CONJECTURE (READING, SET branch only, unchanged in content, now with the nesting counter named).** On IDEAL-CYC under [E-LEV], the type-II
+  flips of one SET bit within one LEAPFROG-ASC unit (leap88's k) are polynomially many in N + M; equivalently by NEST-CHARGE it suffices
+  that D_U,I at a bit's w and gates is. Strongest DATA: maxk ≤ 7 and maxev ≤ 9 on the 26 frozen instances, HP6b-HP8b and every climbed
+  genome (§4-§5); tuned MIRROR maxev 3 / 7 / 9 / 9 at h = 2-5; nesting depth (L-RED's counter) ≤ 4 (ND4_hp3, HP4t).
+- Not covered: non-SET switches (L-RED 60's NEST-POLY, of which this is the SET part), cycle-node changes, non-hub e-set changes.
+- DEAD in this box: the hope that SET-flip nesting gives a counter independent of hub heights (NEST-CHARGE). Instance: HP5t (lowest bit 9
+  flips, k 7, da 13, db 11).
