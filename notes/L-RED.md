@@ -76,6 +76,12 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   - Tool asc226.py on own.py. The EORD=rev control fires awA.
   - maxalt matches L-NEW on TC2-TC5m. Depth-2 builds stay at maxalt 5.
   - HP6x / HP7x are my lane extrapolation of pair84.py (HP5 regenerates byte-equal): maxalt 4, 4. They may not be faithful towers.
+- DS-TOPS (Lead 12:15Z):
+  - s = 4 DEAD (inst/DSALT6_n108, climb from CL2_21); s = 5 DEAD (inst/DSALT7_n108, maxalt 7, T 11). Both confirmed by L-NEW's asc197.py at
+    2f4167cd in a detached scratchpad worktree, removed after.
+  - Climb seed 2656 from DSALT7 (STOP 12): plateau (7, 9).
+  - HP6b-8b (L-SI lanes): maxalt 4, N2 17 / 23 / 29 (linear), depth 2.
+  - NK6_cl21 not yet on origin (not replayed).
 - Source opened: l-new 2f4167cd docs/new/N5-CORE-box197.md §0-§6, asc197.py (read, not run); P-N5-CHAIN l. 166, 223-224 (CYC, QUIET3, T-QUIET3);
   l-si box84 pair84.py / mkinst84.sh (copied to scratchpad, run with -I).
 
