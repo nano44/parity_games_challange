@@ -57,6 +57,35 @@ context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older note
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
 
+## Successor 60 RESUME POINT (2026-11-08 ~13:5xZ, date -u; ~340k context; NOT parked yet)
+- RESULTS (lane, unrefereed; all pushed or in the final push):
+  - R226-race.md:
+    - depth-2 race ADDS (DATA, weak);
+    - «events ≤ |E_U| − 1» DEAD (SHARP_EU1/EU2);
+    - Lemma SHARP PROVED (lane);
+    - CONJECTURE NEST-POLY (N2 = type-II switches; nest226.py).
+  - R226-core197.md:
+    - BOX 197 ASC-WIT / ASC-ROOT / RE-COUNT / RE-EQUIV SURVIVE;
+    - Addendum 2 PAIR-COUNT / ALT-EQUIV SURVIVE (W-2: A = 0 gives a negative bound, OFFUP_n4);
+    - DS-TOPS s ≤ 7 DEAD (DSALT6 / DSALT7 / DSALT9, A = 9 at N 416; all ✓ on L-NEW's asc197 at 2f4167cd);
+    - HP6b-8b byte-equal to L-SI's, A 4, N2 17 / 23 / 29;
+    - A vs size ≈ 0.9·log2(N + M) on climb maxima (§9).
+- OPEN / next step: the Lead's 13:28Z build. A long High (K values) over a replaying low race (A ~ 2K), then a NESTED carry with each digit's carry
+  staggered by the one below. Mechanism: GROW7 = CX4 + one extra option at x15 (a second low bonus e15.1). A ≈ 1 + 2·#(High values with a full
+  low replay). CX4's carry e8 fires when Even closes a cycle through g8's β-face (t 5).
+- Things only I know:
+  - Tools in experiments/red/r226/:
+    - altclimb226.py: env STOP; score (A, #tops).
+    - growclimb226.py: CAP on N + M; grow moves.
+    - asc226.py: BOX 197 census; EORD=rev is the control.
+    - sharp226.py and exshow226.py: exshow is GENERATED from leap225.census, with THR.
+    - compose226.py, nest226.py.
+  - Cross-engine check: git worktree add --detach <scratchpad>/wt197 2f4167cd; run experiments/new/box197/asc197.py --files <genome> from inside it;
+    worktree remove after.
+  - L-SI generator pair84.py, copied to <scratchpad>/si84 (lost on restart: git show origin/claude/l-si:experiments/si/box84/pair84.py + gen83.py).
+  - leap225.py's rand aggregate starts max-keys at 0 (do not trust its negative-capable maxima).
+  - A climb on a large seed (TC5m, N 416) takes ~5 s per mutation; 400 mutations ≈ 35-60 min.
+
 ## Successor 60 (Opus 5.5; from 2026-11-08 10:49Z, date -u) — R226 (docs/red/R226-race.md)
 - Trap check: local claude/l-red 49 behind; ff to 029e5d8b9. Handover check 29b6e1fe (VERIFY PASS), Lead 5/5, GO 11:14Z.
 - Item 1: no SHA yet (L-NEW 2f4167cd not on origin at 11:2xZ; L-SI 46 box 88 started).
