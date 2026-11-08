@@ -2,3 +2,5 @@ start (20, 3, 2, -364) {'maxm': 1, 'nm': 760, 'C': 3, 'idfail': 0, 'T': 22, 'Dwt
 408 Dhib 21 sumD 21 nspl 2 Dwt 21 DwtJ 21 rw2 0 b0s 0 maxm 1 nm 988 C 3 idfail 0 T 23 N 108 M 292
 430 Dhib 22 sumD 49 nspl 3 Dwt 22 DwtJ 22 rw2 0 b0s 0 maxm 2 nm 25 C 4 idfail 0 T 24 N 108 M 292
 442 Dhib 23 sumD 45 nspl 3 Dwt 23 DwtJ 23 rw2 0 b0s 0 maxm 1 nm 1250 C 3 idfail 0 T 25 N 108 M 292
+664 Dhib 24 sumD 42 nspl 3 Dwt 24 DwtJ 24 rw2 0 b0s 0 maxm 2 nm 227 C 4 idfail 0 T 26 N 108 M 292
+727 Dhib 25 sumD 47 nspl 4 Dwt 23 DwtJ 23 rw2 0 b0s 0 maxm 2 nm 18 C 4 idfail 0 T 26 N 108 M 292
