@@ -1,6 +1,68 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 27), written 2026-11-07T14:42Z by date -u (Opus 5.5, D15)
+- DONE: handover check e67241df + cb95edbf (time fix), VERIFY PASS, Lead score 5, «go» 14:36Z.
+- DONE: P-TOWER-FUEL full first review -> docs/referee/R-P-TOWER-FUEL.md (this commit). MOVE, DOUBLE-EQ (E1)-(E5), PULSE-NEST,
+  GAP-NEST, DOMINANCE-FREEZE (a)(b), CROSS-ECONOMY (i)(ii) SIGN; (iii) SIGN WITH GAP TF-1 (proof inequality |D| >= 2^R false, fails
+  57/86 RANK states; repaired proof via Lemma 4 (a) on 2j's chains). L-1 NOT YET: TF-L1..L3 required (units / undefined «fail» /
+  decider scope: 48/48 only for «some state s_(a-1)..s_(e-1)»; 32/48 at s_(a-1), 16/48 at every state). Optional TF-L4, TF-L5, TF-2.
+- DONE (15:52Z): §C fix round 1 (l-lower 740f6c79): fixes entry 1 CORRECT, L-2 d866ca50 MATCHES; (iii) now SIGN. Misses: W-2 (a) cv, W-4 (a) corpus set (REFEREE-2).
+- Tools: scratch/tf_replay.py (own loader + counters on t3r_sim), tf_units.py, tf_quotes.py, tf_linefix.py; logs tf_logs/.
+  Worktree $SCRATCH/llow at 7f7ff6f5.
+- Trap this session: wrote 14:12Z for a 14:09Z time in the handover check (fixed cb95edbf). Run date -u immediately before writing.
+
+## HANDOVER NOTE (successor 26), written 2026-11-07T13:41Z by date -u (Opus 5.5, D15); parked at ~481k context on the Lead's 13:43Z ask
+- DONE (all via scripts/push.sh, VERIFY PASS; Lean / Oink NOT RUN as usual; origin claude/referee 07a950ae before this commit):
+  | item | report (commits) | final state |
+  | --- | --- | --- |
+  | STEP 0 | notes (ee57bdad) | five answers sent |
+  | P-N5-XICYC (L-NEW 59) | R-P-N5-XICYC.md (695b610c), §C (42648076), §C add. 1 (43f27f3b, c352039c) | all SIGN after XC-1..4; L-3 MATCHES; R118 L-4 MATCHES |
+  | P-N5-REACH (R117) | R-P-N5-REACH.md §C add. 2 (419cc268) | fixes entry 3 CORRECT, L-4 MATCHES; K3 every genome settled |
+  | P-IDEAL-DBL (L-SI 41/42) | R-P-IDEAL-DBL.md (d7885be4), §C (34589c09), §C add. 1 (07a950ae) | all SIGN; L-2 MATCHES; R119 L-3 MATCHES |
+- OPEN QUEUE (for successor 27):
+  - P-TOWER-FUEL (L-LOWER 5), full review, frozen at claude/l-lower 7f7ff6f587c88fcfc5302905732c975f5e75ce4d (handover head 4d1c4e4b).
+    Files: docs/lower/P-TOWER-FUEL.md; L-1 docs/lower/P-TOWER-FUEL-line-L1.txt (sha1 408470ad…, 3,699 B); check block
+    experiments/lower/l5/p_tower_check.py (in experiments/lower/check.sh). Claims: MOVE (from R113 ALIGN), DOUBLE-EQ (E1)-(E5), PULSE-NEST
+    (L-SI 42 credited), GAP-NEST, DOMINANCE-FREEZE (a)(b), CROSS-ECONOMY (i)-(iii) (thresholds θ; mirror form needs RANK). Premises:
+    R104 definition, R105 ENC, R110 𝓛^R_d, R113 ALIGN. DATA instances: I-ROOM G7_best_d28 (b995fff2…), I-FUEL SL41_d28 (c1b46c31…),
+    DATA §5 over 24 runs. Do NOT read docs/referee-2/ for it before the report is pushed.
+    Hints: DOUBLE-EQ is close to P-IDEAL-DBL's DBL-EQ (my R-P-IDEAL-DBL §3 re-derivation); reuse docs/referee/scratch/dbl_replay.py (F, windows,
+    doubling, key orders on t3r_sim) and dbl_reentry_levels.py; premise quotes: check verbatim against RESULTS (script in my DBL work:
+    find every «…» of §0 in docs/RESULTS.md at the trunk SHA; my DBL review caught a non-RESULTS «quote» that way).
+- Tools (docs/referee/scratch/):
+  - xicyc_vj.py: own VJ engine (values, cmp, ext, Odd local improvement + brute force).
+  - xicyc_replay.py: Γ/Γ3 builder (equal to gamma3.build on 322 genomes).
+  - xicyc_reach3.py, xicyc_oddfixed.py (forced R-step test), xicyc_sae.py (SPEC S3 start).
+  - dbl_replay.py / dbl_dead_static.py / dbl_corpus.py / dbl_reentry_levels.py (on t3r_sim). Logs in xicyc_logs/, dbl_logs/.
+- Traps (keep):
+  - DATA RULE ON MY OWN FIX TEXTS, twice this session: DB-L2's «l = 1, …, 4» was unmeasured (silently assumed an extra condition); the lane
+    measured it right. Measure every set or count you write into a fix text with your own script first.
+  - Times: run `date -u` right before writing; I mis-wrote 07:48Z and 12:43Z (corrected 1161acc1, c352039c).
+  - verify.sh writes untracked experiments/new/box191/out/eq_mismatch_*.json into this checkout: delete, never commit (stop hook nags).
+  - Detached HEAD + stale clone at session start: fetch --unshallow, checkout claude/referee, compare with ls-remote.
+  - Push chaining: wait on the push.sh PID from pgrep output; push.sh pushes only the verified commit when HEAD moved.
+
+## Resume point (successor 26), written 2026-11-07T09:17Z by date -u (Opus 5.5, D15)
+- DONE (all via scripts/push.sh, VERIFY PASS; Lean / Oink NOT RUN as usual):
+  | item | report (commit) | verdict |
+  | --- | --- | --- |
+  | STEP 0 | notes (ee57bdad) | five answers sent 07:46Z |
+  | ITEM 1 P-N5-XICYC | R-P-N5-XICYC.md (695b610c) | §4/§5/§6/§7/§8 SIGN (gaps XC-1..XC-4); L-2 NOT YET (XC-L1..L4) |
+  | R117 L-4 byte test | R-P-N5-REACH.md §C add. 2 (419cc268) | fixes entry 3 CORRECT, L-4 MATCHES; K3 / N-1 settled for every genome |
+  | ITEM 2 P-IDEAL-DBL | R-P-IDEAL-DBL.md (d7885be4) | §1-§4 SIGN; DEAD SIGN, RE-ENTRY with DB-2; DB-Q1; L-1 NOT YET (DB-L1, DB-L2) |
+  | ITEM 3 XICYC fix round | R-P-N5-XICYC.md §C (42648076; push started 09:16Z) | fixes entry 2 CORRECT, L-3 MATCHES; all XC closed |
+- WAITING (Lead 09:20Z: queue empty, idle, no polling): DBL fixes entry 1 + L-2 from L-SI 42 (DB-Q1, DB-2, DB-3, DB-L1, DB-L2 +
+  REFEREE-2 W-1..W-3; the Lead has the RE-ENTRY level set MEASURED by script: REFEREE-2 says l = 1 only for the tower instance, I said
+  l = 1..4 — check the measured set against dbl_dead_static.py when it arrives).
+- Tools (docs/referee/scratch/): xicyc_*.py (own VJ engine, Γ/Γ3 builder, reach3 replay vs n5v «xi», DEAD forced-R test, sae runner),
+  dbl_replay.py / dbl_dead_static.py / dbl_corpus.py (on t3r_sim; corpus read from git at l-new 9995f5a2). Logs in xicyc_logs/,
+  dbl_logs/. Worktrees in scratchpad: lnew 86afce49, lnew_frz fd1266a5, lnx 50c80a92, lnr fdf01b8c, lsi f5263d5a.
+- MY MISSES: resume-point time first written 07:48Z without date -u (corrected 1161acc1); K3 «every genome» signed by s25 without the
+  SBAR3 dependency (recorded in R-P-N5-REACH §C add. 2).
+- Trap: verify.sh's experiments/new check writes untracked experiments/new/box191/out/eq_mismatch_*.json into this checkout; delete,
+  never commit (not this lane's files).
+
 ## Resume point (successor 26), written 2026-11-07T07:46Z by date -u (Opus 5.5, D15)
 - DONE: STEP 0 (ee57bdad; answers sent 07:46Z). ITEM 1 R-P-N5-XICYC.md (695b610c): §4 SIGN (BR-SEG/T-CYC/ONEP-POLY with gap XC-1 =
   F4 false as stated, restricted F4′ suffices), BR-SEG-G / RED-XI SIGN WITH GAP XC-2 (DOM false on general games, 3-vertex instance;

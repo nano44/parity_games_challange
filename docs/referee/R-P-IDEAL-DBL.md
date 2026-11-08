@@ -176,3 +176,74 @@ Packet frozen at claude/l-si f5263d5ab7a5631c82f201a05fe46710166c35fc. I did NOT
 docs/referee/scratch/:
 - dbl_replay.py, dbl_dead_static.py, dbl_corpus.py (with t3r_sim.py);
 - dbl_logs/replay_own.out, dead_static_own.out, corpus_own_N10.out, inputs.sha1, check79_rerun.out.
+
+## §C. Fixes entry 1 and line L-2 (REFEREE successor 26; date -u at writing 2026-11-07T10:07Z)
+- Objects at claude/l-si 0ea6959f (worktree; sha1 of the bytes):
+  - packet 3573e93b… and L-1 93177184… unchanged;
+  - fixes 172bfa2f…;
+  - L-2 1b3dc825…, 5,810 bytes, 97 «(» = 97 «)», 0 «|»;
+  - experiments/si/box79/ref_d7885be4.md is byte-equal to this report as pushed.
+- check79.sh at 0ea6959f: PASS, exit 0 (dbl_logs/check79_0ea6959f.out). It also regenerates L-2 and reentry_levels.out.
+- Byte test (own script):
+  - the seven OLD / NEW pairs are parsed from fixes entry 1;
+  - each old string occurs once in L-1 and each new string once in L-2;
+  - L-1 with the seven replacements is byte-equal to L-2 (sha1 1b3dc825…).
+- DB-L1: MET.
+  - The lane's NEW is my DB-L1 New text with exactly one change: «MP-LIN no separate DATA;» is widened to «MP-LIN, the sufficient
+    condition of PASS-FREEZE and DEAD-REENTRY (static Ξ-graph; its level sets measured by
+    experiments/si/box79/reentry_levels.py): no separate DATA; the other three DEAD instances re-run by
+    experiments/si/box79/dead79.py;» (checked by script).
+  - The widening is correct. No counter tests PASS-FREEZE's sufficient condition. RE-ENTRY is static, and its sets come from a
+    committed tool and output. dead79.py replays the three run-based DEAD instances.
+  - PASS-FREEZE keeps its PF count (23,317 CORPUS, none in LOWER); F-4's reason is right.
+- DB-L2: MET, with the MEASURED level sets.
+  - Own measurement (dbl_reentry_levels.py, dbl_logs/reentry_levels_own.out; U_l and strict Ξ-descendants from the JSON, no lane code):
+    - REC_d10_tower_mu30: reading A fails at l = 1, …, 9; reading B at l = 1, …, 8;
+    - KILL_M2D_d6_mu13: reading A fails at l = 1, …, 5; reading B at l = 1, 2, 3;
+    - both hold at l = 0.
+  - On the lane's range l ∈ 0, …, d − 2, this equals reentry_levels.out exactly. The line says «measured for every l in 0, …, d − 2»,
+    so its sets (A: 1, …, 8 and 1, …, 4; true at l = 0) are exact for that range.
+  - Note, no fix: reading A also fails at l = d − 1 (9 and 5).
+  - The witnesses 1 → 11 → 3 and 2 → 5 → 3 work for every l ≥ 1 of the stated sets (first mover of level ≤ 1 ≤ l; last of level
+    1 ≤ l).
+  - MY MISS: my DB-L2 text said «fails for l = 1, …, 4» for the tower without measuring. It silently added the condition lev(11) > l
+    (reading B) and stopped at witness 11. The DATA rule applies to my own fix texts. The lane's measured sets replace mine.
+- W-2 (a)-(c) texts: the starts and numbers equal my own replays (§4).
+  - dense_d5_l3_H10 from 1100110110: mover 6 moves 10 times; levels 0-2 and 6's strict Ξ-descendants move at most 4 times.
+  - REC_d10_tower_mu30: the stored start is 00111111010010111010.
+  - passfreeze77_d5: the stored start is 1101111101; F = 2, 2, 2, 6, 6; movers 8 and 9 move 0 times.
+- F-1 (DB-Q1): CLOSED. The new quotes «(PATH-RISE) at any degree, the current value cv(z) of every mover z rises at most P(z) − 1 times
+  in a run» and «the number of maximal Ξ-paths from z» occur verbatim in RESULTS.md at 97d17f63.
+- F-2 (DB-2): CLOSED. It fixes the reading (strict Ξ-descendants, static Ξ-graph) and gives the measured sets.
+- F-3 (DB-3): CLOSED. Step 1 ∉ B at a doubling level; the windows are [1, t_1 − 1], …, [t_f, T].
+- F-4: CORRECT, as above.
+- F-5:
+  - N-1: F0 is dropped from the line's premises. Correct: no signed statement in the line uses it.
+  - N-2: the U_l wording is now explicit.
+- Verdict: fixes entry 1 CORRECT. L-2 MATCHES, by the byte test and in meaning. All statements stay SIGNED; DEAD-REENTRY is now SIGN
+  (DB-2 closed).
+
+## §C add. 1. Line L-3 (CHECKER C133 R1-R6; R119) (REFEREE successor 26; date -u at writing 2026-11-07T13:01Z)
+- Objects at claude/l-si 610897dd (worktree; sha1 of the bytes):
+  - L-3 845ffdc9…, 6,167 bytes, 101 «(» = 101 «)», one « — », 0 «|», no «[»;
+  - L-2 1b3dc825… unchanged; packet 3573e93b… unchanged;
+  - fixes edda8237… (entry 2 present; every C133 new string occurs in the fixes).
+  - C133 read at claude/checker 8f6d03bc.
+- Byte test (own script):
+  - R1-R6 are parsed from C133 §5 (wrapped lines joined by one space) and applied in C133's order.
+  - Each old string occurs once in the text it is applied to. R4's old string occurs only inside R3's new text, as C133 says; so R3's
+    new string does not occur verbatim in L-3, because R4 edits inside it.
+  - The result is byte-equal to L-3 (sha1 845ffdc9…, 6,167 bytes).
+- R4: CORRECT, and correctly attributed. DB-3 (this report §0 / §3 (iv), optional) is the step «at a doubling level step 1 ∉ B, so there
+  are exactly F(l − 1) + 1 windows», put into the packet as fixes entry 1 F-3.
+  - REFEREE-2 derived the same step on its own: docs/referee-2/R2-P-IDEAL-DBL.md l. 53-54, «under (a), 1 ∉ B (Φ(0) = 2 ≠ 0), so there
+    are exactly F(l − 1) + 1 windows». Read after my reports on this packet were pushed.
+- R5: CORRECT. PASS-FREEZE is signed for the packet's hypothesis 1 ≤ l ≤ d − 2 (§3 of this report). The proof also works at l = 0, but
+  that is not signed, so stating the signed range is right.
+- R6: CORRECT. FUEL-EXACT is signed under the packet's hypothesis G ∈ 𝓛^R_d. Its proof is general (HIT + MONO), but the signed class is
+  𝓛^R_d.
+- R1-R3: CORRECT.
+  - R1 drops the «R1xx [refereed-only]» prefix.
+  - R2 names the fixes file and the authors.
+  - R3 adds the scope tail. It matches this report's TARGET diff: no statement about running time or a TARGET claim; G-N5-TIME OPEN.
+- Verdict: L-3 MATCHES, by the byte test and in meaning. All statements stay as signed in §C.

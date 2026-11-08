@@ -1,0 +1,45 @@
+rd2_d4.json N 8 T 11 C 3 R 8 p 0 flips 12 eqfail 0 Rnohead 1 flipnoh 1 xsz 3 monfail 0 Rnohead_t [9]
+rd2_d9.json N 18 T 21 C 3 R 18 p 0 flips 55 eqfail 0 Rnohead 9 flipnoh 15 xsz 7 monfail 0 Rnohead_t [11, 13, 14, 15, 17, 18, 19, 20, 21]
+rd3_d5.json N 10 T 18 C 1 R 16 p 1 flips 26 eqfail 0 Rnohead 2 flipnoh 3 xsz 7 monfail 0 Rnohead_t [12, 17]
+rf_d5.json N 10 T 11 C 2 R 9 p 0 flips 19 eqfail 0 Rnohead 3 flipnoh 5 xsz 4 monfail 0 Rnohead_t [5, 7, 8]
+rd2_d8.json N 16 R-depth max 5 C99 R1 R1 R1 R1 R1 R1 R1 R1 R1 R5 R1 R2 R1 R1 p1
+rd2_d9.json N 18 R-depth max 2 C99 C99 C99 R1 R1 R1 R1 R1 R1 R1 R2 R1 R2 R2 R2 R1 R2 R2 R2 R2 R2
+rd2_d4.json ties 0 flipsX 0 flipsM 23 maxXint 0 locfail 0
+rd2_d9.json ties 0 flipsX 3 flipsM 90 maxXint 1 locfail 0
+rd3_d5.json ties 0 flipsX 1 flipsM 29 maxXint 1 locfail 0
+rf_d5.json ties 0 flipsX 3 flipsM 25 maxXint 1 locfail 0
+rand count 100 seed 1: ties 0 flipsX 66 flipsM 321 maxXint 1 locfail 0
+general random games count 300 seed 1 n 12 maxdeg 3: sigma-steps 314, X1 fails 67; games with a p-run > n_E: 0; max p-run/n_E 0.40 at (160, 2, 5, 'pp')
+rd2_d9.json N 18 T 21 TRUNC-CHOICE ok 651 bad 0 (trunc-ties 516); max mover value changes 20
+rf_d5.json N 10 T 11 TRUNC-CHOICE ok 166 bad 0 (trunc-ties 136); max mover value changes 10
+rd2_d9.json [(('BRET', 'b'), 2), (('DISJ', 'b'), 21), (('DISJ', 'e'), 8), (('RET', 'e'), 24)]
+rf_d5.json [(('BRET', 'b'), 1), (('DISJ', 'b'), 4), (('DISJ', 'e'), 6), (('RET', 'e'), 8)]
+TOTAL [(('BRET', 'b'), 3), (('DISJ', 'b'), 25), (('DISJ', 'e'), 14), (('RET', 'e'), 32)]
+rd2_d9.json T 21 mover re-adoptions 72 (max per option 6); face returns 69 (max per face 5)
+rf_d5.json T 11 mover re-adoptions 22 (max per option 3); face returns 17 (max per face 5)
+n 20 nE 6 iterations 19 fallbacks 1
+1 p mono True strict True switches [(5, 12, 9)] improving True howard-best [False] own-cycle-node [False]
+2 p mono True strict False switches [(2, 15, 5)] improving True howard-best [True] own-cycle-node [True]
+3 p mono True strict True switches [(9, 8, 4)] improving True howard-best [False] own-cycle-node [False]
+4 p mono True strict True switches [(19, 15, 9)] improving True howard-best [False] own-cycle-node [False]
+5 p mono True strict True switches [(7, 1, 10)] improving True howard-best [False] own-cycle-node [False]
+6 p mono True strict True switches [(7, 10, 3)] improving True howard-best [True] own-cycle-node [False]
+7 p mono True strict True switches [(19, 9, 15)] improving True howard-best [False] own-cycle-node [False]
+8 p mono True strict True switches [(5, 9, 18), (9, 4, 14)] improving True howard-best [False, True] own-cycle-node [False, False]
+9 p mono True strict True switches [(8, 13, 6)] improving True howard-best [False] own-cycle-node [False]
+10 p mono True strict True switches [(8, 6, 16)] improving True howard-best [False] own-cycle-node [False]
+11 p mono True strict False switches [(2, 5, 8)] improving True howard-best [True] own-cycle-node [True]
+12 p mono True strict True switches [(19, 15, 17)] improving True howard-best [True] own-cycle-node [False]
+13 p mono True strict True switches [(5, 18, 0)] improving True howard-best [False] own-cycle-node [False]
+14 p mono True strict True switches [(5, 0, 9)] improving True howard-best [True] own-cycle-node [False]
+15 p mono True strict True switches [(8, 16, 17)] improving True howard-best [True] own-cycle-node [False]
+16 p mono True strict True switches [(9, 14, 8)] improving True howard-best [True] own-cycle-node [False]
+17 p mono True strict True switches [(19, 17, 9)] improving True howard-best [True] own-cycle-node [False]
+18 p mono True strict False switches [(2, 8, 5)] improving True howard-best [True] own-cycle-node [True]
+labels pppppppppppppppppp max p-run 18
+rf_d5.json RET flips 8 charged 5; max per switch 1; max per mover 2
+cR_d2_w8_R22.json RET flips 14 charged 11; max per switch 2; max per mover 5
+TOTAL RET 22 charged 16
+rf_d5.json {'eqD': 26, 'srcdec': 4, 'eqdec': 14, 'other': 8}
+TOTAL {'eqD': 26, 'srcdec': 4, 'eqdec': 14, 'other': 8}
+rd2_d9.json max VCYC-top changes per gate 8 max flips per gate 10 flips 93 flips without VCYC change 48

@@ -1,0 +1,73 @@
+== out/j/G7_d28.json 5
+type ((8, 0),)
+    10 : x2<Ξ 12<Ξ 11<Ξ 16<K(wait 2, pairs flipping [5, 6, 7, 8]) | pulse 2
+    4 : x2<Ξ 12<Ξ 11<Ξ 16<K(wait 2, pairs flipping [5, 6, 7, 8])(+1) | pulse 2
+    1 : x2<Ξ 12<Ξ 11<Ξ 43<Ξ 16<K(wait 3, pairs flipping [5, 6, 7]) | pulse 2
+    1 : x2<Ξ 12<Ξ 11<K(wait 1, pairs flipping [1, 4, 5, 6])(+2) | pulse 2
+type ((8, 1),)
+    8 : x2<Ξ 12<Ξ 11<K(wait 2, pairs flipping [4, 5, 6, 7])(+1)(+1) | pulse 2
+    5 : x2<Ξ 12<Ξ 11<K(wait 3, pairs flipping [4, 5, 6, 7])(+1)(+1) | pulse 2
+    1 : x2<Ξ 12<Ξ 11<K(wait 2, pairs flipping [1, 4, 5, 6])(+1)(+1) | pulse 2
+    1 : x2<Ξ 12<Ξ 11<K(wait 2, pairs flipping [4, 5, 6, 7])(+1) | pulse 2
+type ((9, 0),)
+    16 : x2<Ξ 12<Ξ 11<Ξ 9<Ξ 19<K(wait 1, pairs flipping [6, 7, 8, 9])(+1)(+1) | pulse 2
+type ((9, 1),)
+    8 : x2<Ξ 15<K(wait 1, pairs flipping [5, 6]) | pulse 1
+    7 : x2<Ξ 15<K(wait 1, pairs flipping [3, 5, 6]) | pulse 1
+type ()
+    1 : x2<Ξ 15<K(wait 1, pairs flipping [5, 6]) | pulse 1
+== ../l4/rec/H6_d24_F126.json 5
+type ((8, 0),)
+    7 : x2<Ξ 8<K(wait 4, pairs flipping [3, 4, 5, 6])(+1) | pulse 1
+    7 : x2<Ξ 8<K(wait 3, pairs flipping [3, 4, 5, 6])(+1) | pulse 1
+    1 : x2<Ξ 8<Ξ 18<K(wait 1, pairs flipping [5, 6, 7, 8])(+1) | pulse 1
+    1 : x2<Ξ 8<K(wait 4, pairs flipping [1, 3, 4, 5])(+1) | pulse 1
+type ((8, 1),)
+    7 : x2<Ξ 8<K(wait 5, pairs flipping [3, 4, 5, 6])(+1) | pulse 1
+    4 : x2<Ξ 8<K(wait 6, pairs flipping [3, 4, 5, 6])(+1) | pulse 1
+    2 : x2<Ξ 8<K(wait 7, pairs flipping [3, 4, 5, 6])(+2) | pulse 1
+    1 : x2<Ξ 8<K(wait 4, pairs flipping [3, 4, 5, 6])(+1) | pulse 1
+type ((9, 0),)
+    6 : x2<Ξ 11<Ξ 9<Ξ 14<Ξ 13<Ξ 6<Ξ 19<K(wait 4, pairs flipping [5, 6, 8])(+1) | pulse 1
+    4 : x2<Ξ 11<Ξ 9<Ξ 14<Ξ 13<Ξ 6<Ξ 24<K(wait 6, pairs flipping [10, 11])(+1) | pulse 1
+    2 : x2<Ξ 11<Ξ 9<Ξ 14<Ξ 13<Ξ 6<Ξ 23<K(wait 17, pairs flipping [10, 11, 12])(+1)(+1) | pulse 1
+    1 : x2<Ξ 11<Ξ 9<Ξ 14<Ξ 13<K(wait 1, pairs flipping [5, 6])(+1) | pulse 1
+type ((9, 1),)
+    2 : x2<Ξ 11<Ξ 9<Ξ 12<Ξ 7<Ξ 4<Ξ 25<K(wait 11, pairs flipping [5, 6, 7, 8])(+1) | pulse 1
+    2 : x2<Ξ 11<Ξ 9<Ξ 12<Ξ 7<Ξ 27<Ξ 24<K(wait 11, pairs flipping [5, 6, 7, 8])(+1) | pulse 1
+    2 : x2<Ξ 11<Ξ 9<Ξ 12<Ξ 7<Ξ 5<K(wait 5, pairs flipping [1, 2])(+1) | pulse 1
+    2 : x2<Ξ 11<Ξ 9<Ξ 12<Ξ 7<Ξ 4<Ξ 25<K(wait 16, pairs flipping [5, 6, 7, 8])(+1) | pulse 1
+type ()
+    1 : x2<Ξ 11(+3) | pulse 1
+== out/j/G7_d28.json 4
+type ((6, 0),)
+    8 : x2<Ξ 19<K(wait 1, pairs flipping [6, 7, 8, 9]) | pulse 4
+type ((6, 1),)
+    7 : x2<Ξ 19<K(wait 1, pairs flipping [6, 7, 8, 9]) | pulse 5
+type ((7, 0),)
+    8 : x2<Ξ 20<Ξ 14<K(wait 1, pairs flipping [6, 7, 8]) | pulse 3
+type ((7, 1),)
+    7 : x2<Ξ 20<Ξ 14<K(wait 1, pairs flipping [6, 7, 8]) | pulse 3
+type ()
+    1 : x2<Ξ 19<K(wait 1, pairs flipping [6, 7, 8, 9]) | pulse 5
+== ../l4/rec/H6_d24_F126.json 4
+type ((6, 0),)
+    4 : x2<Ξ 14<Ξ 13<Ξ 6<Ξ 24<K(wait 6, pairs flipping [10, 11]) | pulse 3
+    2 : x2<Ξ 14<Ξ 13<Ξ 6<Ξ 23<K(wait 17, pairs flipping [10, 11, 12])(+1) | pulse 3
+    1 : x2<Ξ 14<Ξ 13<Ξ 6<Ξ 23<K(wait 5, pairs flipping [10, 11, 12])(+1) | pulse 3
+    1 : x2<Ξ 14<Ξ 13<Ξ 6<Ξ 23<K(wait 19, pairs flipping [10, 11, 12])(+1) | pulse 3
+type ((6, 1),)
+    6 : x2<Ξ 14<Ξ 13<Ξ 6<Ξ 19<K(wait 4, pairs flipping [5, 6, 8]) | pulse 3
+    1 : x2<Ξ 14<Ξ 13<Ξ 33<Ξ 6<Ξ 19<K(wait 4, pairs flipping [5, 6, 8]) | pulse 4
+type ((7, 0),)
+    2 : x2<Ξ 12<Ξ 7<Ξ 4<Ξ 25<K(wait 11, pairs flipping [5, 6, 7, 8]) | pulse 2
+    2 : x2<Ξ 12<Ξ 7<Ξ 27<Ξ 24<K(wait 11, pairs flipping [5, 6, 7, 8]) | pulse 2
+    2 : x2<Ξ 12<Ξ 7<Ξ 4<Ξ 25<K(wait 16, pairs flipping [5, 6, 7, 8]) | pulse 2
+    1 : x2<Ξ 12<Ξ 7<Ξ 16<K(wait 6, pairs flipping [5, 6, 7]) | pulse 2
+type ((7, 1),)
+    2 : x2<Ξ 12<Ξ 7<Ξ 5<K(wait 5, pairs flipping [1, 2]) | pulse 2
+    1 : x2<Ξ 12<Ξ 7<Ξ 5<Ξ 31<K(wait 19, pairs flipping [13, 14]) | pulse 2
+    1 : x2<Ξ 12<Ξ 7<Ξ 5<Ξ 32<K(wait 47, pairs flipping [15])(+1) | pulse 2
+    1 : x2<Ξ 12<Ξ 7<Ξ 5<Ξ 1<Ξ 39<K(wait 100, pairs flipping [15, 16, 17, 18])(+2)(+1) | pulse 2
+type ()
+    1 : x2<Ξ 14<Ξ 13<K(wait 1, pairs flipping [5, 6]) | pulse 3

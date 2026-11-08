@@ -1,0 +1,11 @@
+M1 old once in L-1: yes; new count in L-2: 1
+M2 old once in L-1: yes; new count in L-2: 1
+M3 old once in L-1: yes; new count in L-2: 1
+M4 old once in L-1: yes; new count in L-2: 1
+M5 old once in L-1: yes; new count in L-2: 1
+M6 old once in L-1: yes; new count in L-2: 1
+M7 old once in L-1: yes; new count in L-2: 1
+L-1 + 7 pairs == L-2 (bytes): True | L-2 sha1 d866ca50b0a0372efd9e93a2db0410801b3ddc15 4586 bytes 4438 chars 80 ( 80 ) | count: 0
+mover 9 on option 1 at every pre-state s_(a-1)..s_(e-1): failing 48 / 48 good 17 / 79
+consecutive-move pairs of 12, 13: 188 with non-constant dec: 188
+decider-19 hits (state, member) by the Ξ-target of the deciding side: {('A=11', 's(11)=1', '19 on chain(11)'): 128}
