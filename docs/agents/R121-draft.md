@@ -1,37 +1,46 @@
 # Draft RESULTS R121 (Lead; first fill 2026-11-08T02:00:21Z by date -u (subagent) on P-N5-ASC line L-2, docs/new/P-N5-ASC-line-L2.txt, l-new a5dcf9c6, sha1 f109cb69507efd863133a08a2e90096ad2acb7f5 (draft sha1 04323afb, CHECKER C135 0942e8be: FAIL E-1..E-4); SECOND FILL 2026-11-08T06:04:48Z by date -u (subagent) on P-N5-ASC line L-4, docs/new/P-N5-ASC-line-L4.txt, l-new a744677e, sha1 4017305a34eac21615ba8f172a9b899544d25659; THIRD FILL 2026-11-08T08:26:44Z by date -u (subagent) on P-N5-ASC line L-5, docs/new/P-N5-ASC-line-L5.txt, l-new e28e962d, sha1 fe4d3f902b6afde93384ebf625fa9bebcea0e1d0; FOURTH FILL 2026-11-08T12:00:14Z by date -u (subagent) on P-N5-ASC line L-6, docs/new/P-N5-ASC-line-L6.txt, l-new 2f4167cd, sha1 a23c61d384036ce3fa771e27e175a8dbf2331658) — to CHECKER C135 Add. 2 — NOT LANDED; goes after R120 (LANDED at 5470cc0c), before Erratum E-1
 FOURTH FILL (2026-11-08T12:00:14Z by date -u, subagent; for CHECKER C135 Add. 2). Read at the origin heads of one fetch at
-2026-11-08T12:00:01Z-12:00:01Z (date -u before and after the fetch; git fetch of claude/l-new, claude/referee, claude/referee-2,
-claude/checker, claude/vibrant-johnson-nxvvxo; rc 0; fetch2.log; the same five branches fetched first at 2026-11-08T11:37:20Z-11:37:21Z
+2026-11-08T12:15:49Z-12:15:50Z (date -u before and after the fetch; git fetch of claude/l-new, claude/referee, claude/referee-2,
+claude/checker, claude/vibrant-johnson-nxvvxo; rc 0; fetch4.log; the same five branches fetched first at 2026-11-08T11:37:20Z-11:37:21Z
 and at 11:38:52Z, the second in fetch.log, claude/referee and claude/referee-2 once a minute from 11:44:19Z to 11:58:44Z while I waited
-for the two byte tests, poll.log, and at 11:58:37Z-11:58:41Z after the Lead's message that §H was on origin; I merged, committed and
-pushed nothing and edited docs/agents/R121-draft.md only): l-new 2f4167cd (2f4167cd6c87b3ca3c41144ff33765536f9ddb4a,
-2026-11-08T10:52:09Z, «L-NEW 65: P-N5-ASC fixes entry 6 + L-6 (CHECKER C135 Add. 1 R6); box 197 (ASC-WIT, ASC-ROOT, RE-COUNT, RE-EQUIV;
-DS-order DATA)», L-NEW successor 65, the branch head and the commit of record; against e28e962d the packet and L-1 to L-5 are equal, the
-fixes file is e28e962d's with entry 6 appended, and in experiments/new/box193 only asc.pins changed and mkl6_193.py is new (git diff;
-l6rel121d.py); its other commits after e28e962d change P-N5-CHAIN, P-N5-END, P-N5-QUIET, box194-box197, check.sh outside l. 988-1003,
-notes/L-NEW.md and handover files, git diff --name-only). referee 6c8d6956 (6c8d6956d500be70211100a1557da6f42e091a35,
-2026-11-08T11:26:43Z, «REFEREE successor 30: R-P-N5-ASC §H (L-6 a23c61d3 MATCHES = L-5 + R6; HL-1 optional)», the branch head; its
-parent 4434597c was the head at every fetch before 11:58:37Z, poll.log); docs/referee/R-P-N5-ASC.md there 413 lines, 36,739 bytes, sha1
-761a6795bc442a132e94da8ee9b61761007afbba; its l. 1-386 = d17b305e's file, by cmp; §H is l. 388-413. referee-2 0e5c7c37
-(0e5c7c37b567320d97621914b462c17d94cbfb53, 2026-11-08T11:05:52Z, the branch head at every fetch of this fill):
-docs/referee-2/R2-P-N5-ASC.md there = 388530af's file (404 lines, 34,707 bytes, sha1 a386e797a1e4f7ef4a82d81374c319b9359b0ca9), no
-Addendum 7 (the byte-test script R2-P-N5-ASC/bt_l6.py is on origin at 52d51575, «REFEREE-2 successor 35: resume point 1; …; P-N5-ASC L-6
-byte-test script», its verdict is not). checker 9ee82f6a (9ee82f6aafed5077ff47fb29b663a8caf362d0aa, 2026-11-08T10:05:25Z, «CHECKER
-successor 22: resume point (C135 Add. 1 FAIL E-5, R6)», the branch head; against 0ffde42c it changes notes/CHECKER.md only), so C135 is
-0ffde42c's (0ffde42c55825cc5fae932981eeef99d047ca842, 2026-11-08T10:05:13Z, «CHECKER C135 Add. 1: R121 third fill 1fa73568 on L-5 FAIL
-E-5 (hub/value/forest/chain undefined; …); exact R6, L-6 a23c61d3, UPDATE e975c303; N-S no action»): docs/checker/C135.md 144 lines,
-16,308 bytes, sha1 aeef46e5023b27cd3f6116c91d1e47b45fb62123; its l. 1-93 = 0942e8be's file, by cmp. 2f4167cd, 0ffde42c, 9ee82f6a,
-6c8d6956, 0e5c7c37 and 52d51575 are NOT ancestors of trunk fdc0f1e9 (the local HEAD and origin trunk), and neither are e28e962d,
-d17b305e, 388530af and 0942e8be (git merge-base --is-ancestor, sim121d.py). The Lead merges claude/l-new, claude/referee,
-claude/referee-2 and claude/checker into trunk before C135 Add. 2 (LEAD-STATE l. 2826, l. 2830); the landing simulation below runs on
-the current trunk all the same, and CHECKER runs its own ancestry test and landing simulation on the merged trunk at Add. 2 (C135 Add.
-1: «The ancestry test and the landing simulation will run on the merged trunk SHA the Lead sends (10:02Z).», l. 131-132).
-Trunk: local HEAD fdc0f1e9 (fdc0f1e9cff20275b6e7c2c20b4e61a0ddfcd8a5, 2026-11-08T11:14:47Z, «Lead: L-RED 60 roster/restart; L-SI 46 +
-L-RED 60 checks 5/5; log 10:33Z-11:16Z + resume point (…)»), = origin trunk at this fetch (at my first fetch, 11:37:20Z, origin trunk
-was its parent c6f9cc55, c6f9cc553f013a75370a707adf9eaa6698489bdd, 2026-11-08T10:37:12Z, «Lead: REFEREE 30, L-SI 46 roster/restart rows;
-checks 5/5 (…); log 10:00Z-10:33Z (C135 Add. 1 FAIL E-5 -> R6/L-6; …)»); the working tree is clean (git status --porcelain empty).
-docs/agents/R121-draft.md at HEAD and at origin trunk is the third fill, sha1 1fa73568e67187c08ede98afcc2d31eeb16c2e39 (committed at
-3906d411, 2026-11-08T08:44:14Z). RESULTS at fdc0f1e9 and at c6f9cc55: sha1 66e7119615efa5a0bb25b898e32b5b371c55c122; GAPS
+for the two byte tests, poll.log, at 11:58:37Z-11:58:41Z after the Lead's message that §H was on origin, and at 12:00:01Z (fetch2.log,
+the fetch of record of this fill before REFEREE-2's Addendum 7 was cited; draft c9fb8f5b) and 12:00:59Z-12:01:00Z (fetch3.log); the nine
+REFEREE-2 Addendum 7 citations were filled at 2026-11-08T12:17:23Z by date -u, after the Lead's message that Addendum 7 was on origin; I
+merged, committed and pushed nothing and edited docs/agents/R121-draft.md only): l-new 2f4167cd
+(2f4167cd6c87b3ca3c41144ff33765536f9ddb4a, 2026-11-08T10:52:09Z, «L-NEW 65: P-N5-ASC fixes entry 6 + L-6 (CHECKER C135 Add. 1 R6); box
+197 (ASC-WIT, ASC-ROOT, RE-COUNT, RE-EQUIV; DS-order DATA)», L-NEW successor 65, the commit of record; the branch head at this fetch is
+its child 219e3933 (219e39331b0de030ccedf0b1994cad58c490565e, 2026-11-08T11:37:53Z, «L-NEW 65: P-N5-CHAIN fixes entry 2 + L-3 (…)»),
+which changes no P-N5-ASC file, nothing in experiments/new/box193 and not check.sh (git diff); against e28e962d the packet and L-1 to
+L-5 are equal, the fixes file is e28e962d's with entry 6 appended, and in experiments/new/box193 only asc.pins changed and mkl6_193.py
+is new (git diff; l6rel121d.py); its other commits after e28e962d change P-N5-CHAIN, P-N5-END, P-N5-QUIET, box194-box197, check.sh
+outside l. 988-1003, notes/L-NEW.md and handover files, git diff --name-only). referee 6c8d6956
+(6c8d6956d500be70211100a1557da6f42e091a35, 2026-11-08T11:26:43Z, «REFEREE successor 30: R-P-N5-ASC §H (L-6 a23c61d3 MATCHES = L-5 + R6;
+HL-1 optional)», the branch head; its parent 4434597c was the head at every fetch before 11:58:37Z, poll.log);
+docs/referee/R-P-N5-ASC.md there 413 lines, 36,739 bytes, sha1 761a6795bc442a132e94da8ee9b61761007afbba; its l. 1-386 = d17b305e's file,
+by cmp; §H is l. 388-413. referee-2 762e98fd (762e98fde9a77166bef9b87bcb69572852c09e9b, 2026-11-08T11:36:02Z, «REFEREE-2 successor 35:
+P-N5-ASC L-6 byte test (Add. 7: MATCHES, R6 read against packet §2)», the branch head; its parent 0e5c7c37 was the head at every fetch
+up to 12:00:59Z-12:01:00Z, fetch3.log): docs/referee-2/R2-P-N5-ASC.md there 425 lines, 36,831 bytes, sha1
+b1f8db1eb21bf7874bb13c3338a1a23ba0c4a717; its l. 1-404 = 388530af's file, by cmp; Addendum 7 is l. 406-425 (its byte-test script
+R2-P-N5-ASC/bt_l6.py is from 52d51575, its output bt_l6.out from 762e98fd). checker 9ee82f6a (9ee82f6aafed5077ff47fb29b663a8caf362d0aa,
+2026-11-08T10:05:25Z, «CHECKER successor 22: resume point (C135 Add. 1 FAIL E-5, R6)», the branch head; against 0ffde42c it changes
+notes/CHECKER.md only), so C135 is 0ffde42c's (0ffde42c55825cc5fae932981eeef99d047ca842, 2026-11-08T10:05:13Z, «CHECKER C135 Add. 1:
+R121 third fill 1fa73568 on L-5 FAIL E-5 (hub/value/forest/chain undefined; …); exact R6, L-6 a23c61d3, UPDATE e975c303; N-S no
+action»): docs/checker/C135.md 144 lines, 16,308 bytes, sha1 aeef46e5023b27cd3f6116c91d1e47b45fb62123; its l. 1-93 = 0942e8be's file, by
+cmp. 2f4167cd, 0ffde42c, 9ee82f6a, 6c8d6956, 762e98fd, 0e5c7c37, 52d51575 and 219e3933 are NOT ancestors of the local trunk 567a53f3 or
+of origin trunk fdc0f1e9, and neither are e28e962d, d17b305e, 388530af and 0942e8be (git merge-base --is-ancestor, sim121d.py). The Lead
+merges claude/l-new, claude/referee, claude/referee-2 and claude/checker into trunk before C135 Add. 2 (LEAD-STATE l. 2826, l. 2830);
+the landing simulation below runs on the current trunk all the same, and CHECKER runs its own ancestry test and landing simulation on
+the merged trunk at Add. 2 (C135 Add. 1: «The ancestry test and the landing simulation will run on the merged trunk SHA the Lead sends
+(10:02Z).», l. 131-132).
+Trunk: local HEAD 567a53f3 (567a53f3df9297e6b6a141e007378185308fc8b3, 2026-11-08T12:03:02Z, «Lead: R121 fourth fill on P-N5-ASC L-6
+(c9fb8f5b; …); log 11:16Z-12:02Z (…)»), one commit ahead of origin trunk fdc0f1e9 (fdc0f1e9cff20275b6e7c2c20b4e61a0ddfcd8a5,
+2026-11-08T11:14:47Z, «Lead: L-RED 60 roster/restart; L-SI 46 + L-RED 60 checks 5/5; log 10:33Z-11:16Z + resume point (…)»; at my first
+fetch, 11:37:20Z, origin trunk was its parent c6f9cc55, c6f9cc553f013a75370a707adf9eaa6698489bdd, 2026-11-08T10:37:12Z, «Lead: REFEREE
+30, L-SI 46 roster/restart rows; checks 5/5 (…); log 10:00Z-10:33Z (C135 Add. 1 FAIL E-5 -> R6/L-6; …)»); the working tree has the
+Lead's uncommitted docs/NOW.md and docs/agents/LANE-RESTART.md, and RESULTS, GAPS and docs/agents/R121-draft.md equal HEAD (git diff
+--quiet). docs/agents/R121-draft.md at HEAD is this fill before the Addendum 7 citations, sha1 c9fb8f5b1412587bb2850d80d17f6265b1c39aba
+(committed at 567a53f3); at origin trunk it is the third fill, sha1 1fa73568e67187c08ede98afcc2d31eeb16c2e39 (committed at 3906d411,
+2026-11-08T08:44:14Z). RESULTS at 567a53f3, fdc0f1e9 and c6f9cc55: sha1 66e7119615efa5a0bb25b898e32b5b371c55c122; GAPS
 2a41c7654d4e9dedee7abc8591dfb792633bc2c9; both = the third fill's: nothing landed since. «### R120» l. 14114, «**Erratum E-1**» l.
 14320, GAPS l. 11 76 "|", its last UPDATE R120's (sim121d.py). «R121», «C135» and «P-N5-ASC» 0 times in RESULTS and in GAPS.
 New sources (read in full): CHECKER C135 Add. 1 (docs/checker/C135.md l. 94-144 at 0ffde42c); fixes entry 6 (docs/new/P-N5-ASC-fixes.md
@@ -40,7 +49,8 @@ by comparison); L-6 (2f4167cd, the file's only commit); experiments/new/box193/m
 cba0cb2bdcea20ec15f7be5ac3ce583fb4ebfe33); experiments/new/box193/asc.pins at 2f4167cd (43 rows, 2,554 bytes, sha1
 aced1453af1e1e37f8de163df1e7449347b51c9c; against e28e962d's: the fixes file re-pinned, L-6 and mkl6_193.py added);
 experiments/new/check.sh l. 988-1003 at 2f4167cd (byte-equal to e28e962d's); packet §2 l. 58-62 and §4 l. 109-118 again; REFEREE §H
-(docs/referee/R-P-N5-ASC.md l. 387-413 at 6c8d6956) and its scratch/asc_logs/l6test.out (read, not re-run); docs/agents/LEAD-STATE.md at
+(docs/referee/R-P-N5-ASC.md l. 387-413 at 6c8d6956) and its scratch/asc_logs/l6test.out (read, not re-run); REFEREE-2 Addendum 7
+(docs/referee-2/R2-P-N5-ASC.md l. 405-425 at 762e98fd) and its R2-P-N5-ASC/bt_l6.out (read, not re-run); docs/agents/LEAD-STATE.md at
 HEAD l. 2808 (09:19Z, C135 Add. 1 sent), l. 2820 (10:02Z), l. 2826 (10:25Z: «Routed R6 to L-NEW 65 (fixes entry 6 + L-6) first; then
 byte tests REFEREE 30 + REFEREE-2 35, fourth fill, merged trunk SHA -> C135 Add. 2.»), l. 2829-2830 and l. 2841.
 WHAT CHANGED SINCE THE THIRD FILL. CHECKER successor 22's C135 Add. 1 on the third fill (1fa73568, L-5): «**FAIL** (E-5; one exact
@@ -60,17 +70,21 @@ sweep, word diff, stale-phrase sweep, ancestry test, landing simulation (l. 130-
 65 («R6 (REQUIRED, taken; CHECKER's exact strings)», l. 164; read against packet §2 l. 58-62 by the lane, «no misstatement.», l. 169),
 and C135 Add. 1's predicted sha1s hold: L-6 a23c61d3… (5,449 bytes, l. 139) and its UPDATE e975c303… (5,479 bytes, l. 141). So N-H and
 N-S are closed (E-5 by R6; N-S by the ruling), and R-H and R-S lapse.
-BYTE TESTS OF L-6. REFEREE-2 successor 35, Addendum 7: not on origin at any fetch of this fill, up to the fetch of record
-(origin/claude/referee-2 0e5c7c37 throughout, poll.log); the commit the Lead's brief named for it is not in git here, so I do not cite
-it: <R2-A7>. REFEREE successor 30, §H (6c8d6956, 2026-11-08T11:26:43Z; heading «date -u at writing 2026-11-08T11:26Z», l. 388): R6's
-strings «typed from C135 Add. 1 (claude/checker 0ffde42c), not from the lane's script» (l. 392); «`cmp` with the lane's L-6: **EQUAL**
-(scratch/asc_logs/l6test.out)» (l. 393); «So L-6 = L-5 + exactly R6.» (l. 394); the lane's own checks from an archive of 2f4167cd (l.
-395-396); R6 in meaning against packet §2 l. 58-62, clause by clause, each «CORRECT» (l. 397-403); CHECKER's witness re-checked by hand,
-«E-5 is closed.» (l. 404-406); «Fixes entry 6 (docs/new/P-N5-ASC-fixes.md at 2f4167cd): CORRECT;» (l. 407); «OPTIONAL (not required;
-Lead and CHECKER decide): HL-1. The hub's «≤» in R6 is not labelled «lex».» (l. 408), «I do not require it.» (l. 410-411); «Verdict:
-**Line L-6 MATCHES** the packet read with fixes entries 1-6; R1-R5, R-A, R-I and R6 all CORRECT. All statements stay as in §0 / earlier
-sections.» (l. 412-413). HL-1 is recorded here as OPTIONAL and not applied: the Lead's ruling, in its message to this fill, is that HL-1
-is not taken; L-6, the entry's line and the UPDATE are without it.
+BYTE TESTS OF L-6. REFEREE-2 successor 35, Addendum 7 (762e98fd, 2026-11-08T11:36:02Z; heading «2026-11-08 11:26Z by date -u», l. 406):
+own R2-P-N5-ASC/bt_l6.py (out bt_l6.out), «written and run BEFORE L-6 existed, from L-5 (fe4d3f90…) and C135's R6 strings» (l. 411);
+«R6's old string is once in L-5 and 0 times in L-6. Its new string is 0 times in L-5 and once in L-6. **L-6 == L-5 + R6: True.** Nothing
+else changed.» (l. 412-413); R6 against packet §2 l. 58-62, clause by clause (l. 414-421), «Nothing beyond §2 is added.» (l. 421);
+«CHECKER's E-5 is right, and R6 closes it.» (l. 422-423); «Verdict: **L-6 MATCHES** (byte test, and in meaning against §2). Statement
+verdicts unchanged: all SIGN (HUB-ASC(B) and SKELETON as before). From my side R121 may land with L-6.» (l. 424-425). Addendum 7 raises
+no optional item. REFEREE successor 30, §H (6c8d6956, 2026-11-08T11:26:43Z; heading «date -u at writing 2026-11-08T11:26Z», l. 388):
+R6's strings «typed from C135 Add. 1 (claude/checker 0ffde42c), not from the lane's script» (l. 392); «`cmp` with the lane's L-6:
+**EQUAL** (scratch/asc_logs/l6test.out)» (l. 393); «So L-6 = L-5 + exactly R6.» (l. 394); the lane's own checks from an archive of
+2f4167cd (l. 395-396); R6 in meaning against packet §2 l. 58-62, clause by clause, each «CORRECT» (l. 397-403); CHECKER's witness
+re-checked by hand, «E-5 is closed.» (l. 404-406); «Fixes entry 6 (docs/new/P-N5-ASC-fixes.md at 2f4167cd): CORRECT;» (l. 407);
+«OPTIONAL (not required; Lead and CHECKER decide): HL-1. The hub's «≤» in R6 is not labelled «lex».» (l. 408), «I do not require it.»
+(l. 410-411); «Verdict: **Line L-6 MATCHES** the packet read with fixes entries 1-6; R1-R5, R-A, R-I and R6 all CORRECT. All statements
+stay as in §0 / earlier sections.» (l. 412-413). HL-1 is recorded here as OPTIONAL and not applied: the Lead's ruling, in its message to
+this fill, is that HL-1 is not taken; L-6, the entry's line and the UPDATE are without it.
 Checks run at this fill (scratch /tmp/claude-0/-home-user-parity-games-challange/43a29ffc-0674-5391-84c1-1d3918a14b5d/scratchpad/r121d;
 nothing written into the repository but this file). (a) l6rel121d.py: R6 parsed from fixes entry 6 (l. 164-168), from C135 Add. 1 (l.
 133-137) and from mkl6_193.py's string list: equal (True); the old string once in L-5 and 0 times in L-6, the new string 0 times in L-5
@@ -96,8 +110,8 @@ fill tokens, «2026-11-07» 0 times, « — » 0 times; = the direct build (True
 applied, the old string once there (True). Token diff L-6 → UPDATE: 11 hunks, 43 tokens out, 42 in, the 11 hunks of C135's G-U ruling,
 as on L-2 to L-5; L-5's UPDATE → L-6's: three hunks, 0 out, 49 in (R6). Appended after R120's UPDATE on GAPS l. 11 it keeps 76 "|",
 R121's last, the prefix byte-unchanged (True). (d) chk121d.py (title, block, UPDATE, tokens, pipes, stale grep, quote sweep), lp121d.py
-(line-precise quotes new at this fill), sim121d.py (landing simulation on fdc0f1e9, = c6f9cc55 for RESULTS and GAPS; the ancestry of the
-commits of record), rec121d.py (the kept sections byte-unchanged) and hex121d.py (hex ids): Addendum 4.
+(line-precise quotes new at this fill), sim121d.py (landing simulation on 567a53f3, = fdc0f1e9 and c6f9cc55 for RESULTS and GAPS; the
+ancestry of the commits of record), rec121d.py (the kept sections byte-unchanged) and hex121d.py (hex ids): Addendum 4.
 NOTES at this fill (for CHECKER; no line change proposed):
 - N-H and N-S: closed (above). The third fill's N-H paragraph and its R-H and R-S strings stay in the THIRD FILL section below as the
   record of draft 1fa73568; C135 Add. 1 l. 123-125 is the ruling on R-H, and R-H is not in L-6, the entry or the UPDATE.
@@ -115,7 +129,9 @@ NOTES at this fill (for CHECKER; no line change proposed):
   them. Fixes entry 6's «Lead 10:25Z» and «written 10:51Z by date -u» (l. 158) are before 2f4167cd (10:52:09Z); LEAD-STATE l. 2826 logs
   the routing at 10:25Z. REFEREE §H's heading «date -u at writing 2026-11-08T11:26Z» (l. 388) matches 6c8d6956 (11:26:43Z), but the
   commit was not on origin at my fetches from 11:37:20Z to 11:57:44Z and was at 11:58:37Z-11:58:41Z (my fetch after the Lead's message)
-  and 11:58:44Z (poll.log): a local commit time, pushed later (as D-9's 52e6e77b).
+  and 11:58:44Z (poll.log): a local commit time, pushed later (as D-9's 52e6e77b). REFEREE-2 Addendum 7's heading «2026-11-08 11:26Z by
+  date -u» (l. 406) is before 762e98fd (11:36:02Z), which was not on origin at my fetches up to 12:00:59Z-12:01:00Z (fetch3.log) and was
+  at 12:15:49Z-12:15:50Z (fetch4.log): a local commit time, pushed later.
 Changes at this fill, and nothing else: line 1 (the header: the FOURTH FILL clause added, and its target changed from C135 Add. 1 to
 C135 Add. 2); this section (new); the title (L-6); in the entry: Object (successors 61-65; the packet at 2f4167cd; six fixes entries;
 entry 6; L-6 the line of record; its line history L-1 to L-6; C135 Add. 1, REFEREE §H and REFEREE-2 Add. 7 on L-6), Claims signed (the
@@ -773,13 +789,17 @@ the procedure of G-U 988c1e7ade9ee9c4fbf3412bca696f926b1aab16 (5,156 bytes); R-R
   without the hub condition L-5's HUB-ASC(0) was false as worded; with R6 it is the packet's theorem. E-5 is closed.» (l. 405-406);
   «Fixes entry 6 (docs/new/P-N5-ASC-fixes.md at 2f4167cd): CORRECT;» (l. 407); «Verdict: **Line L-6 MATCHES** the packet read with fixes
   entries 1-6; R1-R5, R-A, R-I and R6 all CORRECT. All statements stay as in §0 / earlier sections.» (l. 412-413), «docs/referee-2/ not
-  read for this section.» (l. 413); with an optional HL-1 (l. 408-411; Honest limits (x)). REFEREE-2 successor 35's byte test of L-6
-  (Addendum 7): <R2-A7>.
+  read for this section.» (l. 413); with an optional HL-1 (l. 408-411; Honest limits (x)). REFEREE-2 successor 35 Addendum 7
+  (claude/referee-2 762e98fd, 2026-11-08T11:36:02Z; l. 406-425), own R2-P-N5-ASC/bt_l6.py, «written and run BEFORE L-6 existed, from L-5
+  (fe4d3f90…) and C135's R6 strings» (l. 411): «**L-6 == L-5 + R6: True.** Nothing else changed.» (l. 413); R6 read against packet §2 l.
+  58-62 clause by clause (l. 414-421), «Nothing beyond §2 is added.» (l. 421), «CHECKER's E-5 is right, and R6 closes it.» (l. 422-423);
+  «Verdict: **L-6 MATCHES** (byte test, and in meaning against §2). Statement verdicts unchanged: all SIGN (HUB-ASC(B) and SKELETON as
+  before).» (l. 424-425).
 - Claims signed (REFEREE successor 27, report 26b2b516 and §C d4b39be0, successor 28 §D 94062059 and §E 013f821b, successor 29 §F
   52e6e77b, §F addendum 1 055758ba and §G d17b305e, successor 30 §H 6c8d6956; REFEREE-2 successor 31, report 533744a5, Addendum 1
   c4166c8b and Addendum 2 fcdc16b4, successor 32 Addendum 3 d3fed33c and Addendum 4 98b9622b, successor 33 Addendum 5 caa26282 /
-  05eb5181 and Addendum 6 388530af, successor 35 Addendum 7 <R2-A7>). REFEREE's table («## 0. Verdicts», l. 5-17 of R-P-N5-ASC.md) reads
-  §1 premises «all LANDED; every quote verbatim (script)», Lemma E-MON «(with its E-DOM derivation from R104's priorities)», Lemma
+  05eb5181 and Addendum 6 388530af, successor 35 Addendum 7 762e98fd). REFEREE's table («## 0. Verdicts», l. 5-17 of R-P-N5-ASC.md)
+  reads §1 premises «all LANDED; every quote verbatim (script)», Lemma E-MON «(with its E-DOM derivation from R104's priorities)», Lemma
   CHAIN-DECOMP, Lemma SKELETON, Theorem HUB-ASC(B) «(B = 0: DESC-POLY), degree 5·2^B − 3» «SIGN», Corollary HUB-ASC-G «and the whole-run
   corollary» «SIGN (optional AS-1: the B = 0 case of F′ is DESC-POLY on the whole interval, not «word for word» per level)», Lemma
   UP-JUMP, Corollary UP-B, Corollary NOUP «each under [E-LEV]» «SIGN; AS-2 (required, text)», the scope sentence «CORRECT», §7 DATA
@@ -791,19 +811,19 @@ the procedure of G-U 988c1e7ade9ee9c4fbf3412bca696f926b1aab16 (5,156 bytes); R-R
   AS-3, AS-D1, AS-D2, AS-1 and AS-4»), REFEREE-2 Add. 2 l. 279 («W-1, W-2, D-1 (counts), D-2 and D-3 **met**; AS-1 and AS-4 taken
   correctly»), REFEREE-2 Add. 3 l. 314 («W-3 and W-4 **met** (W-4 by option (a))»), REFEREE §D l. 270. The line items, C135's E-1 to E-5
   and REFEREE's R5 and R-A, are closed by L-3 to L-6 (REFEREE §E l. 310, §F l. 334, §G l. 386, §H l. 412; REFEREE-2 Add. 6 l. 404, Add.
-  7 <R2-A7>). Second and third rounds change no verdict: REFEREE §C l. 238 and §D l. 270 «All statements stay SIGN.»; REFEREE-2 Add. 2
-  l. 281 «Statement verdicts are unchanged: all SIGN.» and Add. 3 l. 316 «Statement verdicts unchanged: all SIGN.». The line rounds L-3
-  to L-6 change no statement verdict either: REFEREE §E l. 312 «All statements of P-N5-ASC stay SIGN (the packet's form).», §F l. 334
-  and §G l. 386 («All statements of P-N5-ASC stay SIGN»); REFEREE-2 Add. 4 l. 343 «Statement verdicts unchanged: all SIGN.», Add. 5 l.
-  387 «All statement verdicts are unchanged: SIGN.» and Add. 6 l. 404; on L-6 REFEREE §H l. 412-413 («All statements stay as in §0 /
-  earlier sections.») and REFEREE-2 Add. 7 <R2-A7>. R5 corrects the line's wording of CHAIN-DECOMP's hypothesis, not the signed lemma
-  («The statement as signed (the packet's) is unaffected. The line misstates its hypothesis.», REFEREE §E l. 307). R-A and R-I are line
-  wordings as well: R-A states CS(M)'s order and its ascents in the line (REFEREE §F addendum 1 l. 353-362), and with R-I
-  «CHAIN-DECOMP's hypothesis in the line is exactly the packet's l. 80 «If seq_t(v) = (f, …)».» (§G l. 383). R6 is a line wording too:
-  it states CS(M)'s forests, chain(x), the hub with its condition and the hub's value in the line as packet §2 l. 59 and l. 62 define
-  them (C135 Add. 1 l. 126); the hub's condition is a hypothesis of HUB-ASC(B) in the signed packet (l. 62, used by the B = 0 proof, l.
-  115; C135 Add. 1 l. 115-116), so R6 states the signed theorem's hypothesis in the line and changes no signed statement. Nothing is
-  REFUSED.
+  7 l. 424). Second and third rounds change no verdict: REFEREE §C l. 238 and §D l. 270 «All statements stay SIGN.»; REFEREE-2 Add. 2 l.
+  281 «Statement verdicts are unchanged: all SIGN.» and Add. 3 l. 316 «Statement verdicts unchanged: all SIGN.». The line rounds L-3 to
+  L-6 change no statement verdict either: REFEREE §E l. 312 «All statements of P-N5-ASC stay SIGN (the packet's form).», §F l. 334 and
+  §G l. 386 («All statements of P-N5-ASC stay SIGN»); REFEREE-2 Add. 4 l. 343 «Statement verdicts unchanged: all SIGN.», Add. 5 l. 387
+  «All statement verdicts are unchanged: SIGN.» and Add. 6 l. 404; on L-6 REFEREE §H l. 412-413 («All statements stay as in §0 / earlier
+  sections.») and REFEREE-2 Add. 7 l. 424-425 («Statement verdicts unchanged: all SIGN (HUB-ASC(B) and SKELETON as before).»). R5
+  corrects the line's wording of CHAIN-DECOMP's hypothesis, not the signed lemma («The statement as signed (the packet's) is unaffected.
+  The line misstates its hypothesis.», REFEREE §E l. 307). R-A and R-I are line wordings as well: R-A states CS(M)'s order and its
+  ascents in the line (REFEREE §F addendum 1 l. 353-362), and with R-I «CHAIN-DECOMP's hypothesis in the line is exactly the packet's l.
+  80 «If seq_t(v) = (f, …)».» (§G l. 383). R6 is a line wording too: it states CS(M)'s forests, chain(x), the hub with its condition and
+  the hub's value in the line as packet §2 l. 59 and l. 62 define them (C135 Add. 1 l. 126); the hub's condition is a hypothesis of
+  HUB-ASC(B) in the signed packet (l. 62, used by the B = 0 proof, l. 115; C135 Add. 1 l. 115-116), so R6 states the signed theorem's
+  hypothesis in the line and changes no signed statement. Nothing is REFUSED.
   Setting: IDEAL-CYC(G) of R118 (a) on Γ(G) of R104, every genome G (Ξ-cycles allowed), values (Λ, Π, k) and ⊴ as in R118's premises; §4
   is abstract (the chain system CS(M)). Statements as signed (packet with fixes entries 1-2; entries 3-6 change the line only):
   (a) Definitions (§2 l. 51-63): seq_t(v) «the e-vertices that lie in Π_t(v), in the order of the play from v under (σ_t, σ̄_t)», E_t(v)
@@ -867,11 +887,11 @@ the procedure of G-U 988c1e7ade9ee9c4fbf3412bca696f926b1aab16 (5,156 bytes); R-R
   range), (e) «C ≤ n·(2M + 2).» (l. 13691) in its per-vertex form (Λ_t(v) takes at most 2M + 3 values, in increasing reward); the value
   (Λ, Π, k) and ⊴ of VJ00 §4.2 / Friedmann arXiv 1106.0778 §3, as in R118's premises; HYPOTHESIS [E-LEV] for UP-JUMP, UP-B and NOUP
   only. «Not used anywhere: [LOC], OVT-DV, IN-BOUND, any L-RED lane lemma, F4/F4′, F5, F6.» (packet l. 49). Both referees checked every
-  premise quote against RESULTS at 5470cc0c (REFEREE l. 36-45, asc_quotes.py; REFEREE-2 l. 27-34, r2q.py); RESULTS at trunk fdc0f1e9
-  (the local HEAD and origin trunk; sha1 66e7119615efa5a0bb25b898e32b5b371c55c122, = RESULTS at 5470cc0c, where R120 landed) has R104 at
-  l. 9864 and R118 at l. 13607 (my script: the R118 quote at l. 13691, R104's l. 10085 quote, the seven [DEF] quotes in R104's title).
-  E-MON uses F1 and [VJ]; CHAIN-DECOMP F3 and [DEF]; §5 F1, F2 and (e); §6 [DEF] and [E-LEV] (REFEREE l. 47-49). R1-R5, R-A, R-I and R6
-  change no premise.
+  premise quote against RESULTS at 5470cc0c (REFEREE l. 36-45, asc_quotes.py; REFEREE-2 l. 27-34, r2q.py); RESULTS at the local trunk
+  567a53f3 and at origin trunk fdc0f1e9 (sha1 66e7119615efa5a0bb25b898e32b5b371c55c122, = RESULTS at 5470cc0c, where R120 landed) has
+  R104 at l. 9864 and R118 at l. 13607 (my script: the R118 quote at l. 13691, R104's l. 10085 quote, the seven [DEF] quotes in R104's
+  title). E-MON uses F1 and [VJ]; CHAIN-DECOMP F3 and [DEF]; §5 F1, F2 and (e); §6 [DEF] and [E-LEV] (REFEREE l. 47-49). R1-R5, R-A, R-I
+  and R6 change no premise.
 - L41 and L43. The packet's proofs are L-NEW successor 61's (packet l. 2-4, «This packet carries every proof in full.»), with one
   referee-written step: the B = 0 case of HUB-ASC-G. The packet derives F′_B «word for word» from §4 per refined level (l. 160-161),
   which for B = 0 gives a factor M² + 3M + 1 over F_0; REFEREE wrote the argument that gives F′_0 = F_0 («It is DESC-POLY on the whole
@@ -961,9 +981,11 @@ the procedure of G-U 988c1e7ade9ee9c4fbf3412bca696f926b1aab16 (5,156 bytes); R-R
     lane wrote it (scratch/asc_l4na.py, asc_logs/l4_na.out, l. 363-365); R-I then removed the gloss from the line. CHECKER C135 Add. 1:
     on CS(3), a run of four forests with every chain lex-nondecreasing and a choice of item with no monotonicity condition give 8
     distinct values with 0 ascents, more than F_0(3) = 7 (l. 116-119); R6 puts the hub's condition into the line. REFEREE §H read R6
-    against packet §2 l. 58-62 clause by clause (l. 397-403) and re-checked CHECKER's CS(3) witness by hand (l. 404-406). <R2-A7>
+    against packet §2 l. 58-62 clause by clause (l. 397-403) and re-checked CHECKER's CS(3) witness by hand (l. 404-406). REFEREE-2 Add.
+    7 read R6 against packet §2 l. 58-62 clause by clause («Nothing beyond §2 is added.», l. 421) and corrected its predecessor's Add. 6
+    reading: «My predecessor's Add. 6 sentence that L-5 «defines the abstract system's terms» held for order and ascent only.» (l. 422).
 - Honest limits: (i) Nothing here bounds R, a run length or a running time; the step from D_E to R needs OVT-DV and CONJECTURE IN-BOUND,
-  neither in RESULTS («OVT-DV» and «IN-BOUND» 0 times in RESULTS and GAPS at fdc0f1e9). (ii) UP-JUMP, UP-B and NOUP hold only under
+  neither in RESULTS («OVT-DV» and «IN-BOUND» 0 times in RESULTS and GAPS at 567a53f3). (ii) UP-JUMP, UP-B and NOUP hold only under
   [E-LEV], which is in no landed entry: it is the order of the fleet's builder (box189/gamma3.py) and of R104's packet §3.1, and R104's
   own text leaves the order among e-priorities open (l. 10085); without it they are false (REFEREE-2's control; L-RED's NOUPC_1-3).
   (iii) F_B is far from tight (degree 5·2^B − 3 against the exact maxima; REFEREE-2 N-3) and super-polynomial if B grows like log M
@@ -1006,9 +1028,10 @@ the procedure of G-U 988c1e7ade9ee9c4fbf3412bca696f926b1aab16 (5,156 bytes); R-R
   byte-equal; REFEREE-2 Add. 3 l. 301-303, byte-equal) and their own engines (above). R1-R5, R-A and R-I add no DATA and change no count
   (REFEREE-2 Add. 4 l. 342, Add. 5 l. 385-386, Add. 6 l. 403; fixes l. 125, l. 139, l. 155; C135 Add. 1 l. 112: «R5, R-I, R-A change no
   DATA (fixes l. 139, 155).»); nor does R6 (fixes entry 6 «line-only», l. 158; in box193 2f4167cd changes asc.pins and adds mkl6_193.py
-  only, git diff e28e962d 2f4167cd). <R2-A7> Instances: experiments/new/box193/inst/{CLR_k8s16, FPORT_n2, FPORT_n3, LEAP_k8, RS2,
-  RS2_L8M6, RS3, RSG_K4}.json (L-RED R217's) and experiments/new/box192/inst/{cR_d2_w8_R22, rd2_d9, rd2_d10, rd3_d7, rf_d5}.json, each
-  pinned in asc.pins.
+  only, git diff e28e962d 2f4167cd). REFEREE-2 Add. 7: «Fixes entry 6 is line-only, with R6 (CHECKER 22, C135 Add. 1, claude/checker
+  0ffde42c l. 133-139) as its only change.» (l. 409-410). Instances: experiments/new/box193/inst/{CLR_k8s16, FPORT_n2, FPORT_n3,
+  LEAP_k8, RS2, RS2_L8M6, RS3, RSG_K4}.json (L-RED R217's) and experiments/new/box192/inst/{cR_d2_w8_R22, rd2_d9, rd2_d10, rd3_d7,
+  rf_d5}.json, each pinned in asc.pins.
 - Signatures: REFEREE docs/referee/R-P-N5-ASC.md: successor 27's report 26b2b51667d9ee3a0df318d127f844e6279b1d07 (2026-11-07T22:27:05Z;
   «Written from 2026-11-07T22:25Z (date -u); the header time of record is the commit time.»), «I did NOT read docs/referee-2/ for this
   report.» (l. 3), verdict table l. 5-17; §C d4b39be0e5589cba49d08df3ca185332519b8dd6 (2026-11-07T23:51:43Z; heading «date -u at writing
@@ -1041,7 +1064,9 @@ the procedure of G-U 988c1e7ade9ee9c4fbf3412bca696f926b1aab16 (5,156 bytes); R-R
   numbers corrected (70-71, 74-76)»), l. 345-387, «**Verdict: L-4 MATCHES** (Opus 5.5, D1). All statement verdicts are unchanged: SIGN.»
   (l. 387); successor 33's Addendum 6 388530af5e7b0f5cc585f976325fb27d18bcf902 (2026-11-08T07:47:22Z; heading «2026-11-08 07:47Z by date
   -u»), l. 389-404, «**Verdict: L-5 MATCHES** (Opus 5.5, D1). Statement verdicts unchanged: all SIGN.» (l. 404); successor 35's Addendum
-  7 <R2-A7>. Lane (claude/l-new): L-NEW successor 61, 95dc76d7 (packet FROZEN, asc.pins, check blocks); successor 62, 19cc23e3 (fixes
+  7 762e98fde9a77166bef9b87bcb69572852c09e9b (2026-11-08T11:36:02Z; heading «2026-11-08 11:26Z by date -u»), l. 406-425, «Verdict: **L-6
+  MATCHES** (byte test, and in meaning against §2). Statement verdicts unchanged: all SIGN (HUB-ASC(B) and SKELETON as before).» (l.
+  424-425). Lane (claude/l-new): L-NEW successor 61, 95dc76d7 (packet FROZEN, asc.pins, check blocks); successor 62, 19cc23e3 (fixes
   entry 1, L-1) and a5dcf9c6 (fixes entry 2, L-2); successor 63, a2512364 (fixes entry 3, L-3) and a744677e (fixes entry 4, L-4);
   successor 64, e28e962d (fixes entry 5, L-5); successor 65, 2f4167cd (fixes entry 6, L-6).
 - INDEPENDENCE: the packet's proofs are L-NEW's except the AS-1 step (L41 and L43, above); each referee re-derived every proof step
@@ -1055,10 +1080,11 @@ the procedure of G-U 988c1e7ade9ee9c4fbf3412bca696f926b1aab16 (5,156 bytes); R-R
   script. REFEREE 29 read REFEREE-2's N-1 only as the Lead quoted it («Not read: docs/referee-2/ beyond what the Lead quoted.», §F
   addendum 1 l. 337) and re-derived its condition (l. 344-345). Each referee byte-tested every line with its own script (REFEREE §C, §D
   scratch/asc_l2.py, §E scratch/asc_l3.py, §F scratch/asc_l4.py, §G scratch/asc_l5.py, §H scratch/asc_l6.py; REFEREE-2 Add. 2 bt_l1.py,
-  Add. 3 bt_l2.py, Add. 4 bt_l3.py, Add. 5 bt_l4.py, Add. 6 bt_l5.py, Add. 7 <R2-A7>) and read it in meaning. REFEREE-2 records its own
-  round-1 miss on W-4 («**My miss in round 1:** I had not read the counter and called this clause OK.», Add. 2 l. 267-268) and its Add.
-  4 miss on the CHAIN-DECOMP hypothesis («It did not compare the CHAIN-DECOMP hypothesis of L-1 to L-3 against packet l. 80. REFEREE 28
-  found the gap.», Add. 5 l. 382-383). L-RED R220 read neither referee file («Referee files not read.», R220 l. 2).
+  Add. 3 bt_l2.py, Add. 4 bt_l3.py, Add. 5 bt_l4.py, Add. 6 bt_l5.py, Add. 7 R2-P-N5-ASC/bt_l6.py) and read it in meaning. REFEREE-2
+  records its own round-1 miss on W-4 («**My miss in round 1:** I had not read the counter and called this clause OK.», Add. 2 l.
+  267-268) and its Add. 4 miss on the CHAIN-DECOMP hypothesis («It did not compare the CHAIN-DECOMP hypothesis of L-1 to L-3 against
+  packet l. 80. REFEREE 28 found the gap.», Add. 5 l. 382-383). L-RED R220 read neither referee file («Referee files not read.», R220 l.
+  2).
 - TARGET.md diff: TARGET.md §1 defines a parity game; IDEAL-CYC of R104 / R118 is a Howard run on the genome game Γ(G), and no statement
   of this entry bounds a running time, an iteration count or R; the bounded quantity D_E,I(v) counts distinct e-sets on one vertex's
   plays (packet §9: «This packet proves no algorithm polynomial.», «The quantity is not a running time.»; REFEREE §7 l. 191-192 «It is
@@ -1072,9 +1098,9 @@ the procedure of G-U 988c1e7ade9ee9c4fbf3412bca696f926b1aab16 (5,156 bytes); R-R
   G-N5-TIME: open.
 
 Proposed GAPS line-11 UPDATE (append-only), to go AFTER the last UPDATE on GAPS l. 11 at landing (R120's, «UPDATE 2026-11-07 21:05Z:
-RESULTS R120 (P-TOWER-FUEL; CHECKER C134 0c816917)», the last at trunk fdc0f1e9, the local HEAD and origin trunk), as a pure insertion
-with one separating space before the row's closing « |». BUILT FROM L-6 by upd121d.py (R118's procedure, which CHECKER C135 ruled
-applies: run121() unchanged, with R121's start «more relevant than w): », its five labels and its source prefix; controls R97-R116
+RESULTS R120 (P-TOWER-FUEL; CHECKER C134 0c816917)», the last at the local trunk 567a53f3 and at origin trunk fdc0f1e9), as a pure
+insertion with one separating space before the row's closing « |». BUILT FROM L-6 by upd121d.py (R118's procedure, which CHECKER C135
+ruled applies: run121() unchanged, with R121's start «more relevant than w): », its five labels and its source prefix; controls R97-R116
 rebuilt byte for byte and the R117-R120 controls as landed, each compared with GAPS l. 11, True ×24; on L-3 the same build gives C135
 §5's f545cba7c97eee853387a5efb617984538e27806, on L-4 d3a423302a45850e3400c0e15e14d7dfdd600508 and on L-5
 3571ef76373c0143e5611cc34289e73ef139fadc; sha1 e975c303470236f97b2c92a11507316e6edbc06a of the line without newline and unfilled, =
@@ -1296,78 +1322,78 @@ times.txt; tools/chk121c.py, chk_p1.out, chk_p2.out, chk_final.out; tools/lp121c
 tools/sim121c.py, sim_p1.out, sim_p2.out, sim_final.out; tools/rec121c.py, rec_p1.out, rec_p2.out, rec_final.out; tools/hex121c.py,
 hex_p2.out, hex_final.out; R121-draft.md).
 
-Addendum 4 (subagent, for the Lead; does not land; written 2026-11-08T12:01:22Z by date -u). (1) FOURTH FILL on line L-6 (l-new
-2f4167cd, sha1 a23c61d3…), to CHECKER C135 Add. 2. I edited docs/agents/R121-draft.md only; no merge, no commit and no push by me;
-scripts/verify.sh and scripts/push.sh not run; the Lead commits this file. Heads at the fetch of 2026-11-08T12:00:01Z: l-new 2f4167cd,
-referee 6c8d6956, referee-2 0e5c7c37, checker 9ee82f6a, trunk fdc0f1e9 (local HEAD = origin trunk). Re-fetch at
-2026-11-08T12:00:59Z-12:01:00Z (the same five branches; rc 0; fetch3.log): all five heads unchanged, local HEAD fdc0f1e9 unchanged, the
-working tree clean, RESULTS and GAPS equal HEAD (git diff --quiet); REFEREE-2 35's Addendum 7 still not on origin. (2) TITLE l. 660
-(d[659]) = "### R121 [refereed-only] " + L-6 without its newline + ", CHECKER PASS (docs/checker/C135.md, checker PENDING)", checked by
-script (chk121d.py): equal, byte for byte (True); the title minus that prefix and that tail is L-6's bytes without the newline (True);
-the only «### R» heading of this file; 5,411 characters, 5,527 bytes, sha1 of the heading line without its newline
-41bb2b8ddd243cc7f0713c51183cccff5d6eba2d; 134 «(» / 134 «)» (L-6's 133 and the fill's), depth never negative, 0 "|", «R1xx» 0,
-«[refereed-only]» once. (3) SHAPE. The entry block is l. 660-1072 (python slice d[659:1072], 413 lines), followed by a blank line
-(d[1072]); 0 "|" in it; «checker PENDING)» once in it (seven times in the file before this Addendum: the title, item (1) of the first
-fill's record l. 617, item (2) of the first fill's Addendum l. 1093, Addendum 2 (2), (3) l. 1162, 1166 and Addendum 3 (2), (3) l. 1231,
-1236). The GAPS preamble is l. 1074-1083 (d[1073:1083]); the UPDATE is l. 1084 (d[1083]), one line, sha1
-e975c303470236f97b2c92a11507316e6edbc06a without newline and unfilled (= upd121L6.txt, True), 5,479 bytes, one each of the three fill
-tokens, 0 "|". A landing script slices d[659:1072] for the entry and reads d[1083] for the UPDATE, with «R121», «C135», PREV = R120's
-block and UPDATE (landed, G-P). The FOURTH FILL section is l. 2-130; the THIRD FILL section l. 131-256, the SECOND FILL section l.
-257-389 and the first fill's record l. 390-658 with its blank l. 659 are draft 1fa73568's l. 2-530, byte-unchanged, directly before the
-title (rec121d.py, True); the first fill's Addendum, Addendum 2 and Addendum 3 with their blanks (l. 1086-1297) are 1fa73568's l.
-898-1109, byte-unchanged, directly after the UPDATE and a blank (True); line 1 is 1fa73568's line 1 with only the FOURTH FILL clause
-inserted and the target C135 Add. 1 changed to C135 Add. 2 (True). (4) TOKENS AND PLACEHOLDERS. Outside the UPDATE line the file has 32
-angle-bracket tokens before this Addendum (chk121d.py). PLACEHOLDERS: <R2-A7> 9 times, for REFEREE-2 successor 35's Addendum 7, which is
-not on origin: l. 65 (this fill's section, BYTE TESTS OF L-6) and, in the entry block, l. 777 (the RESULTS line is: the L-6 verdicts),
-l. 781 (Claims signed: the commit), l. 794 (Claims signed: the line items closed), l. 799 (Claims signed: statement verdicts on L-6), l.
-964 (Referee strengthening (iv)), l. 1009 (Data: R6 adds no DATA), l. 1044 (Signatures), l. 1058 (INDEPENDENCE: the byte-test script);
-each is to be replaced by Addendum 7's own words and line numbers once it is on origin. <R30-SH>: 0 times (REFEREE §H is on origin,
-6c8d6956, and cited verbatim). One R29-SF at l. 273 in the kept SECOND FILL section (history, resolved in the entry since the third
-fill). And 22 mentions of the three fill tokens (date, time, checker): l. 331 (SECOND FILL section), l. 605 (first fill's record), l.
-1082 (the GAPS preamble, as in every fill), l. 1100-1101, 1107, 1134 (first fill's Addendum), l. 1169-1170, 1182 (Addendum 2). This
-Addendum adds none but the two token names it quotes here. (5) WHAT IS LEFT: REFEREE-2 successor 35's Addendum 7 on origin, cited
-verbatim in place of the 9 <R2-A7> placeholders (a text pass on this file only: no line, title or UPDATE change unless Addendum 7 finds
-one); CHECKER C135 Add. 2 on this file (the fill checks and the items C135 Add. 1 did not run, l. 130-132); the Lead merges claude/l-new
-(2f4167cd or later), claude/referee, claude/referee-2 and claude/checker into trunk before Add. 2, then lands R121 after R120 with the
-three fill tokens of the UPDATE filled. (6) QUOTE SWEEP (chk121d.py: chk121c.py's rule, outermost guillemet quotes, nested ones inside
-them, split at «…», parts of 6+ characters, whitespace-normalised, NO docs/agents draft as a source; sources: the earlier fills'
-(r121/src, r121b/src, r121c/src and their outputs) plus, at 2f4167cd, the packet, fixes, L-1 to L-6, asc.pins, check.sh, the box193
-tools, check193.sh, check193.out and mkl3_193.py to mkl6_193.py; C135 at 0ffde42c and the checker head; REFEREE's and REFEREE-2's files
-at their origin heads (REFEREE's at 6c8d6956, with §H, and its scratch/asc_logs/l6test.out); at HEAD fdc0f1e9 RESULTS, GAPS, DECISIONS,
-DECISIONS-INDEX, LEAD-STATE, NOW, TARGET.md, CLAUDE.md; the subjects of the commits cited; my outputs (fetch.log, fetch2.log, blk.out,
-check193.rerun, l6rel121d.out, upd121d.out, upd121L6.txt, mkl3.out to mkl6.out)): on the draft before this Addendum, FOURTH FILL section
-79 quotes, 67 parts, 0 not found; THIRD FILL section 72 quotes, 54 parts, 0 not found; SECOND FILL section 80 quotes, 69 parts, 0 not
-found; first-fill record 191 quotes, 150 parts, 0 not found; title and body 317 quotes, 314 parts, 0 not found; GAPS preamble and UPDATE
-5 quotes, 4 parts, 0 not found; first-fill Addendum 42 quotes, 27 parts, 0 not found; Addendum 2 35 quotes, 19 parts, 0 not found;
-Addendum 3 32 quotes, 17 parts, 0 not found; whole file 853 quotes, 721 parts, 0 not found; negative control (a made-up quote) reported
-missing (True); the run on the final file is in chk_final.out. lp121d.py: 83 quotes and line references new at this fill (C135 l.
-94-144, fixes l. 125-182, packet l. 58-62 and l. 109-115, LEAD-STATE l. 2808-2841, check.sh l. 988-1003, REFEREE l. 388-413) each at its
-cited lines, 0 failed. hex121d.py: 106 hex ids in the new text (line 1's clause, the FOURTH FILL section, the entry, the preamble, the
-UPDATE and this Addendum), each a git object, a sha1 printed by my scripts or sha1sum, or already in draft 1fa73568; unverified: none
-(hex_final.out). The commit the Lead's brief named for REFEREE-2's Addendum 7 is not in git here and is not written in this file. (7)
-STALE STATUS (chk121d.py): in the entry block, the title's fill excepted, «pending», «will », «awaiting», «to come», «not landed»,
-«first fill», «second fill», «third fill» and «fourth fill» 0 times each (case-insensitive); «not yet» 4 times, all inside quotes of the
-referees' L-1 and L-3 verdicts (history); «R-G» once, inside the quote of LEAD-STATE l. 2729; «R-B», «R-R», «R-Q», «R-S», «R-H»,
-«6635b14e», «f545cba7», «d3a42330» and «3571ef76» 0 times. GAPS preamble and UPDATE: the same nine words 0 times each. Line 1 «NOT
-LANDED» once (R121 is not landed). Model names: «Opus» 12 times in the file before this Addendum, 10 in the entry block, all inside
-quoted referee verdicts. (8) LANDING SIMULATION (sim121d.py, which execs r121b/tools/sim121b.py unchanged, on in-memory copies of
-RESULTS 66e71196… and GAPS 2a41c765… at trunk fdc0f1e9, the local HEAD and origin trunk; run on the current trunk although 2f4167cd and
-the referee and checker commits are not yet merged into it, as asked; CHECKER re-runs it on the merged trunk): R121 a pure insertion
-directly before «**Erratum E-1**» (prefix byte-unchanged True, suffix byte-unchanged True; the inserted block = the draft's entry block,
-True); RESULTS 14,962 → 15,376 lines (+414); R118 l. 13,607, R119 l. 13,879, R120 l. 14,114, R121 at l. 14,320-14,732, blank l. 14,733,
-«**Erratum E-1**» to l. 14,734, E-2 14,747, Note E-3 14,775, Dead ends 14,806; order R110-R121, E-1, E-2, E-3, Dead ends: True; "|" in
-RESULTS unchanged (1,477); no "### R122" heading. GAPS: only l. 11 changes (True), the closing " |" replaced by " " + the filled UPDATE
-+ " |"; "|" on l. 11 76 → 76; «UPDATE 2026-» 55 → 55 plus one head with the simulation year 2099 after R120's (True); R121's UPDATE last
-(True); 23 → 23 lines. Ancestry (sim121d.py): 2f4167cd, 0ffde42c, 9ee82f6a, e28e962d, d17b305e, 388530af, 4434597c, 0e5c7c37, 6c8d6956
-and 52d51575 are not ancestors of HEAD or of origin trunk (False ×20). Fill values used only for the simulation: 2099-01-08, 00:00,
-0000000. (9) UPDATE: (c) of the FOURTH FILL section; upd121d.out has the controls and the 11 token hunks. (10) NOT VERIFIED / NOT DONE:
+Addendum 4 (subagent, for the Lead; does not land; written 2026-11-08T12:01:22Z by date -u; amended 2026-11-08T12:18:26Z by date -u,
+when REFEREE-2's Addendum 7 reached origin: its nine «<R2-A7>» placeholders replaced by verbatim citations, the fetch record, the trunk
+and this Addendum updated; draft c9fb8f5b before the amendment). (1) FOURTH FILL on line L-6 (l-new 2f4167cd, sha1 a23c61d3…), to
+CHECKER C135 Add. 2. I edited docs/agents/R121-draft.md only; no merge, no commit and no push by me; scripts/verify.sh and
+scripts/push.sh not run; the Lead commits this file. Heads at the fetch of 2026-11-08T12:15:49Z: l-new 219e3933 (the P-N5-ASC objects of
+2f4167cd), referee 6c8d6956, referee-2 762e98fd, checker 9ee82f6a, local trunk HEAD 567a53f3 (the Lead's commit of draft c9fb8f5b), one
+ahead of origin trunk fdc0f1e9; earlier fetches of this fill at 12:00:01Z (fetch2.log; referee-2 then 0e5c7c37) and 12:00:59Z
+(fetch3.log). Re-fetch at 2026-11-08T12:17:48Z-12:17:49Z (the same five branches; rc 0; fetch5.log): all five heads unchanged, local
+HEAD 567a53f3 unchanged; the working tree has the Lead's uncommitted docs/NOW.md and docs/agents/LANE-RESTART.md, and RESULTS, GAPS and
+docs/agents/R121-draft.md (before my write) equal HEAD (git diff --quiet). (2) TITLE l. 676 (d[675]) = "### R121 [refereed-only] " + L-6
+without its newline + ", CHECKER PASS (docs/checker/C135.md, checker PENDING)", checked by script (chk121d.py): equal, byte for byte
+(True); the title minus that prefix and that tail is L-6's bytes without the newline (True); the only «### R» heading of this file;
+5,411 characters, 5,527 bytes, sha1 of the heading line without its newline 41bb2b8ddd243cc7f0713c51183cccff5d6eba2d; 134 «(» / 134 «)»
+(L-6's 133 and the fill's), depth never negative, 0 "|", «R1xx» 0, «[refereed-only]» once. (3) SHAPE. The entry block is l. 676-1098
+(python slice d[675:1098], 423 lines), followed by a blank line (d[1098]); 0 "|" in it; «checker PENDING)» once in it (seven times in
+the file before this Addendum: the title, item (1) of the first fill's record l. 633, item (2) of the first fill's Addendum l. 1119,
+Addendum 2 (2), (3) l. 1188, 1192 and Addendum 3 (2), (3) l. 1257, 1262). The GAPS preamble is l. 1100-1109 (d[1099:1109]); the UPDATE
+is l. 1110 (d[1109]), one line, sha1 e975c303470236f97b2c92a11507316e6edbc06a without newline and unfilled (= upd121L6.txt, True), 5,479
+bytes, one each of the three fill tokens, 0 "|". A landing script slices d[675:1098] for the entry and reads d[1109] for the UPDATE,
+with «R121», «C135», PREV = R120's block and UPDATE (landed, G-P). The FOURTH FILL section is l. 2-146; the THIRD FILL section l.
+147-272, the SECOND FILL section l. 273-405 and the first fill's record l. 406-674 with its blank l. 675 are draft 1fa73568's l. 2-530,
+byte-unchanged, directly before the title (rec121d.py, True); the first fill's Addendum, Addendum 2 and Addendum 3 with their blanks (l.
+1112-1323) are 1fa73568's l. 898-1109, byte-unchanged, directly after the UPDATE and a blank (True); line 1 is 1fa73568's line 1 with
+only the FOURTH FILL clause inserted and the target C135 Add. 1 changed to C135 Add. 2 (True). (4) TOKENS AND PLACEHOLDERS. Outside the
+UPDATE line the file has 23 angle-bracket tokens before this Addendum (chk121d.py). PLACEHOLDERS: 0. The nine «<R2-A7>» of draft
+c9fb8f5b (l. 65 of this fill's section; in the entry the L-6 verdicts of «The RESULTS line is», Claims signed ×3, Referee strengthening
+(iv), Data, Signatures, INDEPENDENCE) are replaced by REFEREE-2 Addendum 7's own words and line numbers (762e98fd, l. 406-425);
+<R30-SH>: 0 (REFEREE §H, 6c8d6956, cited). One R29-SF at l. 289 in the kept SECOND FILL section (history, resolved in the entry since
+the third fill). And 22 mentions of the three fill tokens (date, time, checker): l. 347 (SECOND FILL section), l. 621 (first fill's
+record), l. 1108 (the GAPS preamble, as in every fill), l. 1126-1127, 1133, 1160 (first fill's Addendum), l. 1195-1196, 1208 (Addendum
+2). This Addendum adds none but the token names it quotes here. (5) WHAT IS LEFT: CHECKER C135 Add. 2 on this file (the fill checks and
+the items C135 Add. 1 did not run, l. 130-132); the Lead merges claude/l-new (2f4167cd or later), claude/referee, claude/referee-2 and
+claude/checker into trunk before Add. 2, then lands R121 after R120 with the three fill tokens of the UPDATE filled. (6) QUOTE SWEEP
+(chk121d.py: chk121c.py's rule, outermost guillemet quotes, nested ones inside them, split at «…», parts of 6+ characters,
+whitespace-normalised, NO docs/agents draft as a source; sources: the earlier fills' (r121/src, r121b/src, r121c/src and their outputs)
+plus, at 2f4167cd, the packet, fixes, L-1 to L-6, asc.pins, check.sh, the box193 tools, check193.sh, check193.out and mkl3_193.py to
+mkl6_193.py; C135 at 0ffde42c and the checker head; REFEREE's and REFEREE-2's files at their origin heads (REFEREE's at 6c8d6956, with
+§H, and its scratch/asc_logs/l6test.out; REFEREE-2's at 762e98fd, with Addendum 7, and its R2-P-N5-ASC/bt_l6.out); at HEAD fdc0f1e9
+RESULTS, GAPS, DECISIONS, DECISIONS-INDEX, LEAD-STATE, NOW, TARGET.md, CLAUDE.md; the subjects of the commits cited; my outputs
+(fetch.log, fetch2.log, blk.out, check193.rerun, l6rel121d.out, upd121d.out, upd121L6.txt, mkl3.out to mkl6.out)): on the draft before
+this Addendum, FOURTH FILL section 88 quotes, 77 parts, 0 not found; THIRD FILL section 72 quotes, 54 parts, 0 not found; SECOND FILL
+section 80 quotes, 69 parts, 0 not found; first-fill record 191 quotes, 150 parts, 0 not found; title and body 328 quotes, 326 parts, 0
+not found; GAPS preamble and UPDATE 5 quotes, 4 parts, 0 not found; first-fill Addendum 42 quotes, 27 parts, 0 not found; Addendum 2 35
+quotes, 19 parts, 0 not found; Addendum 3 32 quotes, 17 parts, 0 not found; whole file 873 quotes, 743 parts, 0 not found; negative
+control (a made-up quote) reported missing (True); the run on the final file is in chk_final.out. lp121d.py: 96 quotes and line
+references new at this fill (C135 l. 94-144, fixes l. 125-182, packet l. 58-62 and l. 109-115, LEAD-STATE l. 2808-2841, check.sh l.
+988-1003, REFEREE l. 388-413, REFEREE-2 l. 405-425) each at its cited lines, 0 failed. hex121d.py: 113 hex ids in the new text (line 1's
+clause, the FOURTH FILL section, the entry, the preamble, the UPDATE and this Addendum), each a git object, a sha1 printed by my scripts
+or sha1sum, or already in draft 1fa73568; unverified: none (hex_final.out). (7) STALE STATUS (chk121d.py): in the entry block, the
+title's fill excepted, «pending», «will », «awaiting», «to come», «not landed», «first fill», «second fill», «third fill» and «fourth
+fill» 0 times each (case-insensitive); «not yet» 4 times, all inside quotes of the referees' L-1 and L-3 verdicts (history); «R-G» once,
+inside the quote of LEAD-STATE l. 2729; «R-B», «R-R», «R-Q», «R-S», «R-H», «6635b14e», «f545cba7», «d3a42330» and «3571ef76» 0 times.
+GAPS preamble and UPDATE: the same nine words 0 times each. Line 1 «NOT LANDED» once (R121 is not landed). Model names: «Opus» 12 times
+in the file before this Addendum, 10 in the entry block, all inside quoted referee verdicts. (8) LANDING SIMULATION (sim121d.py, which
+execs r121b/tools/sim121b.py unchanged, on in-memory copies of RESULTS 66e71196… and GAPS 2a41c765… at the local trunk 567a53f3, equal
+at origin trunk fdc0f1e9; run on the current trunk although 2f4167cd and the referee and checker commits are not yet merged into it, as
+asked; CHECKER re-runs it on the merged trunk): R121 a pure insertion directly before «**Erratum E-1**» (prefix byte-unchanged True,
+suffix byte-unchanged True; the inserted block = the draft's entry block, True); RESULTS 14,962 → 15,386 lines (+424); R118 l. 13,607,
+R119 l. 13,879, R120 l. 14,114, R121 at l. 14,320-14,742, blank l. 14,743, «**Erratum E-1**» to l. 14,744, E-2 14,757, Note E-3 14,785,
+Dead ends 14,816; order R110-R121, E-1, E-2, E-3, Dead ends: True; "|" in RESULTS unchanged (1,477); no "### R122" heading. GAPS: only
+l. 11 changes (True), the closing " |" replaced by " " + the filled UPDATE + " |"; "|" on l. 11 76 → 76; «UPDATE 2026-» 55 → 55 plus one
+head with the simulation year 2099 after R120's (True); R121's UPDATE last (True); 23 → 23 lines. Ancestry (sim121d.py): 2f4167cd,
+0ffde42c, 9ee82f6a, e28e962d, d17b305e, 388530af, 4434597c, 0e5c7c37, 6c8d6956, 52d51575, 762e98fd and 219e3933 are not ancestors of the
+local HEAD 567a53f3 or of origin trunk fdc0f1e9 (False ×24). Fill values used only for the simulation: 2099-01-08, 00:00, 0000000. (9)
+UPDATE: (c) of the FOURTH FILL section; upd121d.out has the controls and the 11 token hunks. (10) NOT VERIFIED / NOT DONE:
 scripts/verify.sh and scripts/push.sh not run (not asked; check193.sh in full, the two P-N5-ASC check.sh blocks and mkl3_193.py to
 mkl6_193.py only, from a git archive of 2f4167cd; not the whole experiments/new/check.sh, so not the new BOX 197 block); the referees'
-tools not re-run (REFEREE's asc_l6.py, REFEREE-2's bt_l6.py; REFEREE's scratch/asc_logs/l6test.out read; REFEREE-2's Addendum 7 not
-available); CHECKER's scratch hub.py not on origin and not re-run (its CS(3) witness is quoted, not reproduced by me); R6 read against
-packet §2 l. 58-62 by me only as text (its strings are CHECKER's, the lane read it, the referees' readings are cited); no IDEAL-CYC
-engine of my own; the proofs not re-derived by me; VJ00 / Friedmann not opened (R118's landed premise); no Oink run (L-6 cites no Oink
-check); the ancestry test and landing simulation on the merged trunk not done (no merged trunk exists yet). (11) Scratch:
+tools not re-run (REFEREE's asc_l6.py, REFEREE-2's bt_l6.py; their outputs l6test.out and bt_l6.out read); CHECKER's scratch hub.py not
+on origin and not re-run (its CS(3) witness is quoted, not reproduced by me); R6 read against packet §2 l. 58-62 by me only as text (its
+strings are CHECKER's, the lane read it, the referees' readings are cited); no IDEAL-CYC engine of my own; the proofs not re-derived by
+me; VJ00 / Friedmann not opened (R118's landed premise); no Oink run (L-6 cites no Oink check); the ancestry test and landing simulation
+on the merged trunk not done (no merged trunk exists yet). (11) Scratch:
 /tmp/claude-0/-home-user-parity-games-challange/43a29ffc-0674-5391-84c1-1d3918a14b5d/scratchpad/r121d/ (fetch.log, fetch2.log, poll.sh,
 poll.log; src/ (L-5, L-6, the packet, fixes, asc.pins, check.sh and mkl6_193.py at 2f4167cd; C135.md at 0ffde42c;
 R121-draft-1fa73568.md, the third fill, not a quote source); arch/ = git archive of 2f4167cd (experiments, docs/new, scripts);
