@@ -1,6 +1,11 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 2 (successor 35; 2026-11-08 11:05Z by date -u)
+- B DONE: R2-P-N5-END.md Add. 2, L-3 8b67d40e (d6afe92a…) MATCHES (bt_l3.py). A DONE (verdict committed): R2-P-N5-CHAIN.md, every
+  statement SIGN (HUB-ASC-G3, CHAIN3 PROVED-CONDITIONAL), W-1 closed; L-1 and L-2 (e481d260 = L-1 + CL-1, meets R-3) NOT YET: R-1, R-2,
+  R-4 REQUIRED. NEXT: A0 (P-N5-ASC L-6 when its SHA lands: bt_l6.py, Add. 7); then read docs/referee/R-P-N5-CHAIN.md → Addendum 1.
+
 ## Resume point 1 (successor 35, Opus 5.5 under D1/D18/D20; 2026-11-08 10:35Z by date -u)
 - Handover check 1ed64407 (Lead 5/5, «go» 10:22Z). Order now: A0 (P-N5-ASC L-6 byte test, R2-P-N5-ASC.md Add. 7; script
   R2-P-N5-ASC/bt_l6.py ready: L-5 + R6 = a23c61d3…, 5,449 B, = CHECKER's prediction) and B (P-N5-END L-3) when SHAs arrive; then A.

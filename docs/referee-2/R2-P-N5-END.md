@@ -239,3 +239,25 @@ comparison as an Addendum.
   (unit: runs), late 0 (unit: iterations after F + 2)»), and I checked them against eg195.py l. 56-90.
 - Net for routing: both referees SIGN every statement. The line needs L-R1 (one old/new string, in Line L-2 above); N-1 and N-2 are
   optional. With L-R1, L-3 = L-2 + L-R1 (+ N-1, N-2 at the lane's choice) is the line I will byte-test.
+
+## Addendum 2: byte test of line L-3 (REFEREE-2 successor 35, Opus 5.5, D1; 2026-11-08 10:54Z by date -u)
+- Object: claude/l-new 8b67d40e6020d03d4eea18bf4c697a5193a709f7 (Lead 10:54Z). docs/new/P-N5-END-line-L3.txt, sha1
+  d6afe92ae0d2c0021743c99d2bd10f16cad27c73, 7,215 B, one line, 105 «(» = 105 «)», no «|». 2fcee038 (L-2) is an ancestor. Fixes entry 3
+  (line-only) lists S1-S5, and the Lead ruled 10:18Z «take S1-S5, DROP S6».
+- Own script R2-P-N5-END/bt_l3.py (out bt_l3.out) applies the five referee strings to L-2 (e8a8ac51…). It takes L-R1, N-1 and N-2 from
+  this report's «Line L-2» at 9b3cc9b6, and EL-1 and EL-2 from REFEREE 29's R-P-N5-END.md §C at claude/referee 407f4a21 l. 212-215.
+  Results:
+  - Each old string occurs exactly once in L-2 and 0 times in L-3. Each new string occurs 0 times in L-2 and exactly once in L-3. Each
+    referee-side piece is verbatim in its referee's text.
+  - **L-3 == L-2 + S1-S5: True.** Nothing else changed.
+- The lane's mkl3_195.py, on a git archive of 8b67d40e, rebuilds L-3 byte-equal (d6afe92a…). box195/end.pins: 43/43 match (L-3 and
+  mkl3_195.py added).
+- Meaning:
+  - S1 is L-R1 verbatim (REQUIRED, now met).
+  - S2 and S3 are N-1 and N-2 verbatim.
+  - S4 places REFEREE 29's EL-1 parenthesis after «is NOT proved». The meaning is unchanged: the transfer is not proved, and the reason is
+    stated.
+  - S5 is EL-2 verbatim.
+  - No statement, label, premise, scope or DATA number changes.
+- Verdict: **L-3 MATCHES.** All P-N5-END statement verdicts are unchanged: every row SIGN, END-T3 PROVED-CONDITIONAL on REACH3-CYC (R118
+  (k), itself PROVED-CONDITIONAL on [REACH-L]). From my side P-N5-END may land with L-3.
