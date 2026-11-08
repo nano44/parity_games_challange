@@ -1,15 +1,27 @@
 # L-LOWER notebook
 
 ## Successor 10 (Opus 5.5): BOX L10, GO from the Lead 07:02Z 2026-11-08 (handover check 085a821b, score 5)
-### Resume point (07:1xZ, date -u)
-- Product docs/lower/L10-design.md; tools/data experiments/lower/l10/ (stretch.py, stmap.py, need.py, trig.py).
-- Item 1 written (§1): CONJECTURE STRETCH-AND-STACK. Lemma STRETCH (PROVED, lane): idle steps for pairs 0..h-1 keep caps 0..h-1.
-  DATA: HIT7's minimal stretch for h = 8 is T' = 510 exactly (Lemma 3 bound), 219 idle steps = second steps of 7-windows; retrigger
-  bill 261 events (q6 127, q5 63, f5 24, q4 23, ...). Rule: the new q7 moves at every idle step; o(7) flips there; key-fired level >= 8
-  movers + selectors retrigger the lower movers.
-- NEXT: item 2, realize the target at d 32 (clamp + ranksolve on the stretched target; per-event selector routes).
+### Resume point (10:2xZ, date -u)
+- Product docs/lower/L10-design.md §0-§2g; tools/data experiments/lower/l10/.
+- Item 1 DONE (§1, §1c): CONJECTURE STRETCH-AND-STACK; Lemma STRETCH (PROVED, lane). Minimal stretch of HIT7 for h = 8 is tight,
+  T' 510; retrigger bill 261. L-RED R224: Lemma STRETCH and the bill survive. The target print's first window was broken (τ ≥ 2 → 3)
+  and is fixed (re-frozen 90b3b0f9 = L-RED's target_fix data lines). R3 revised to R3' (PARITY-8).
+- Item 2 (§2): target build.core8 / out/core8_HIT7.txt (c6e19673): T 510, F(0..7) = 2 6 14 30 62 126 254 510.
+  - Lemma HELPERS-EVERYWHERE (PROVED, lane; §2c).
+  - f_j's required preference = 1 - o(j-1) (§2e).
+  - The exact-target search ann.c reaches 144 at best (rec/L10_C4_final_score144*.txt). Obstruction = the loop f6 → pairs 0-5 →
+    clock q7 → pair 6 ∋ f6: f6 is sacrificed with a free order, q7 with a forced order (C5 538).
+  - In C5, helper 18 avoids 13 and carries f6's need exactly (§2g). The frozen-gadget runs C7 / C8 (f6 → 18, 60) plateau at ~480.
+  - L-COMP 13's exact encoder tests my wirings (Lead relays; f6-rewire on C4 167: narrow UNSAT; on the C5 snapshot: running).
+- NOT achieved: an 8-capped genome. Not DEAD.
+- NEXT: the f6 gadget needs NEW helper wiring for 1 - o(5) AND a 13-free idle-step clock for pairs 0-5 (a helper oscillator driven
+  by o(7) timing). Wait for L-COMP's (c) gadget result. Item 3 (h3 d6 SAT) untouched.
 ### Things only I know (successor 10)
-- The stretched target is a deterministic function of HIT7 (stmap.target(D, 8)); out/target_HIT7_H8.txt is its frozen print.
+- ann.c (C, ~800 it/s) = anneal.py (Python, ~10 it/s), same score. Optional args: order constraint «X:y1,..» and frozen options
+  «m1,m2». The score is the violation count of a greedy decision list with errors; any score > 0 genome dies at its first violated
+  constraint (free runs T 2-5). Never report a score > 0 genome as a tower.
+- The stretched target is deterministic: stmap.target(D, 8) (after the τ ≥ 3 fix); build.core8 no longer prepends.
+- Bests and logs of the runs live in the scratchpad (C1-C8.txt / .log); the frozen ones are in l10/rec with sha1s in §2f.
 
 ## Successor 9 HANDOVER (2026-11-08 ~05:0xZ, date -u; written near the park point)
 ### DONE (claude/l-lower; product docs/lower/L9-design.md §0-§4; tools/data experiments/lower/l9/)
