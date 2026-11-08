@@ -13,6 +13,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   T-QUIET3; E-MON3, CHAIN-DECOMP3, HUB-ASC-G3, UP-JUMP3, UP-B3; Theorem CHAIN3 (under [E-LEV], N5′-xi on Γ3(G) ≤ (1 + n3((2M+3)F′_U(M)
   − 1))(L3 + 1) + 3). DEAD RUN-TRANSFER (RT_n1, sha1 829f3c97: T3 1 vs T_CYC 2, exact tie). DATA: data/sweep196.out (8,000 runs + 58
   genomes, all 0; controls fire; spec nohoward fires). L-RED attacks it (its R223 item 5 hunts ESC3 / W3 on Ξ-cyclic genomes).
+- Pushed 08801298 (P-N5-ASC L-5 e28e962d, P-N5-END entry 2 + L-2 2fcee038, P-N5-QUIET entry 2 + L-2 559cdffc, box 196 f725af5a +
+  Addendum 1). L-RED 58 R224-chain: box 196 all SURVIVE (controls ctrl224, copied as box196/ctrl196.py, 75/75).
+- PACKET P-N5-CHAIN FROZEN 93531b03 (docs/new/P-N5-CHAIN.md sha1 6e613ba7; REFEREE 29 draft CH-1..CH-5 answered before freeze; chain.pins;
+  check.sh block «P-N5-CHAIN»); line L-1 (sha1 bd152dd9, 8124 B; box196/mkl1_196.py; fixes file «Line L-1»). Items -> P-N5-CHAIN-fixes.md.
   - Things only I know: qt3_196.py imports box195/eg195.py (gen, PADS, topg); Q196_ROOT overrides the repo root for scratch runs.
 
 ## HANDOVER (successor 63, PARKING 2026-11-08 05:20Z by date -u; Lead 05:20Z: «Plan your park now … write your HANDOVER … push … stop»)
