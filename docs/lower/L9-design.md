@@ -42,6 +42,26 @@ Labels: PROVED (lane) / CONJECTURE / DATA / DEAD / READING. Model and notation a
   pair 6, L8 §1g). The 8th needs the same two stages, with a larger ROOM deficit: 322 violations at j = 4-6, against 87 at j = 4-5
   for H6 → 7.
 
+## 2. Delay maps: how each capped level waits (DATA; delays.py; unit = move of a mover of pairs 1-6; set = all moves; scope = stored start)
+- wait w := t − (the last step ≤ t at which the mover's key c_l changed). So w = 0 means key-fired, and w ≥ 1 means the mover held
+  while free and its preference turned at step t − 1 (PULSE-TRIGGER). Full tables: out/delays_HIT7_SL41_H6.out.
+  | genome (caps) | top capped level: f, q | one below: f, q | two below: the two members |
+  | --- | --- | --- | --- |
+  | H6 (6) | level 5: 11 {0: 31, 1: 32}, 10 {1: 31, 2: 32} | level 4: 8 {0: 30, 3: 1}, 9 {2: 15, 3: 14, 4: 1, 6: 1} | level 3: 7 {1: 11, …}, 6 {6: 7, 7: 4, …} |
+  | SL41 (6, room for 7) | level 5: 11 {0: 31, 1: 31, 3: 1}, 10 {2: 31, 3: 31, 5: 1} | level 4: 8 {0: 8, 1: 15, 2: 7, 6: 1}, 9 {4: 15, 5: 8, 8: 7, 12: 1} | level 3: 7 {0: 11, …}, 6 {6: 7, 8: 4, …} |
+  | HIT7 (7) | level 6: 13 {0: 126, 1: 1}, 12 {1: 126, 2: 1} | level 5: 11 {0: 15, 1: 47, 5: 1}, 10 {2: 15, 3: 47, 7: 1} | level 4: 8 {0: 8, 1: 15, 4: 7, 9: 1}, 9 {4: 15, 5: 8, 8: 7, 13: 1} |
+- READING. Going from 6 to 7 caps (H6 → SL41 → HIT7), the waits of each lower level moved toward those of the level below it in the
+  smaller tower. In H6 the top capped level (5) has q waiting 1-2; in HIT7 level 5 has q waiting 2-3 and the new top level (6) has
+  q waiting 1. SL41, the ROOM stage, already had level 5 at 2-3: the lower levels were re-timed before level 6 was fuelled.
+- What 8 caps need (PROVED: Lemmas 2, 3 with h = 8; f key-fired assumed for the reading): at level 6, q waits ≥ 2 in all 127 6-windows
+  (HIT7: 1), and the pair-5 move that closes a 6-window comes ≥ 2 steps after q₆ (HIT7: 1 in 90 windows). At level 5, PULSE ≥ 3 in
+  all 63 windows (HIT7: 2) and GAP ≥ 3 (HIT7: 2 in 27). At level 4, PULSE ≥ 4 (HIT7: 3 in 15). Each extra unit of wait needs a
+  trigger: a mover of the waiting mover's closure that changes at the step before its move.
+- CONJECTURE SHIFT (lane; DATA = the three genomes above, two transitions, one of them H6 → HIT7 through SL41; not a mechanism).
+  An (h + 1)-capped tower from an h-capped one re-times every capped level j ≥ 2 so that its wait profile takes the place of
+  level j + 1's profile in the h-tower, and puts the new top level at (f 0, q 1). In the tight form (the binary counter with every
+  first mover key-fired) q_j waits 2^(h−1−j) in an h-tower. SL41 and HIT7 are not tight: T 290 and 299 against the lower bound 254.
+
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All are about the IDEAL
 model's step sequence on 𝓛^R_d and its F-profile. Not M3, not a step-4 pass, not a TARGET.md claim.

@@ -4,3 +4,5 @@ cube 1 UNSAT 301s
 cube 2 UNSAT 922s
 cube 3 UNSAT 291s
 h3d5_a110_g0 vars 81362 clauses 270082 conditions 124 cubes 16 already decided 0
+h3d4_a111_gx vars 44205 clauses 144271 conditions 125 cubes 4 already decided 4
+h3d5_a110_g0 vars 81362 clauses 270082 conditions 124 cubes 16 already decided 0
