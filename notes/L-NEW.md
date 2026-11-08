@@ -16,6 +16,12 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
     and y unchanged.
   - Verdict: the combination gives NOTHING polynomial (a localized RA-PATHS recursion); needs (S4) W poly, (S5) split pairs bounded, a path bound.
   - DATA: max c_y ≤ 5, W ≤ 3, split pairs ≤ 3 on 11 instances (incl. DU21_h4 c 3).
+- BOX 199 Addendum 1 (Lead 18:50Z «RW-WT FIRST»): ROUTE-LOW DEAD (ROUTELOW_n21 sha1 80f9b977, double split in one Howard step);
+  Lemma RW-SHAPE PROVED (RW-WT failure needs a high route letter f and a second split after f); Corollary RW-1 (single-split re-wins:
+  RW-WT proved) and RW-2 (RW-B0 => RW-WT). CONJECTURE RW-B0: Bne 0 on 4,498 frozen re-wins + 315,065 search re-wins (srch199 seed 8) +
+  L-RED 2,994. Corollary REWIN-ASC (conditional on RW-WT, [E-LEV]): R_y <= 3M(F'_U(M) - 1): no new class (CHAIN3 covers bounded U);
+  S5 trivial (SPL <= 3M); open: W_y (S4) and, for U unbounded, the high-part values of wt(y).
+  Running: lane-genome sweep (scratchpad sw/run.sh, resumable, tracked bs8eyvcu1; out/ one file per genome). Next: (S4) on L-RED's wc 86 genome.
   Things only I know: split199.py prints the must-be-0 counters first, then «|», then the descriptive ones; ex-tuples are raw vertex
   indices (names via gamma3.build's V). Full sweep ~75 s; check199.sh ~10 s. Scratch copy in the scratchpad b199/ (not needed).
 

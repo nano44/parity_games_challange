@@ -159,3 +159,101 @@ Proof.
 - (S4): the non-re-win re-entries are where y re-enters under a new prefix (GROW7 pattern). A lemma there would have to use the prefix
   letter's own Λ-interval. That is the next game restriction to try.
 - L-RED / L-SI: a family with growing W_y or growing numbers of split pairs per (v, y) would be the first real pressure on REWIN-COUNT.
+
+## Addendum 1 (L-NEW successor 66, 19:05Z by date -u; Lead 18:50Z: «RW-WT FIRST … then write exactly what RW-WT + REWIN-COUNT + R121 give … then (S4)»; Lead 19:00Z relays L-RED 61 R227-box199 (claude/l-red 1ea37d91): box 199 SURVIVES, RW-WT not broken on its own engine, rw 0 on 2,994 re-wins / 19 genomes)
+Verdict on RW-WT: NOT proved in general, NOT killed. PROVED for every re-win whose t2-step is single-split (Corollary RW-1, 2,000 of the
+4,498 re-wins on the frozen set). In general it is reduced to one CONJECTURE, RW-B0, with three-source DATA. A stronger form, ROUTE-LOW (all
+y-tops), is DEAD.
+
+### A1.1 ROUTE-LOW (DEAD)
+- Statement tried: at every y-top of (v, I) with split u, no letter of U_y lies on v's new play between u and y. If true it would give RW-WT
+  at once (§2 (c): E(b) ∩ U_y would be E(wt(y)) ∩ U_y).
+- DEAD. Counter ytopB_ne (unit: y-top; must be 0): 65 on experiments/new/box199/inst/ROUTELOW_n21.json (sha1 80f9b977; N 21, M 38;
+  CX4_n21 plus 3 random options, srch199.py seed 7 sample 429). Also 8 on DSALT9_n416, a natural climb.
+  - First case: v = x0, t = 2, y = e(11,0), split u = gate (10,0).
+    - The play at t − 1 is x0 x10 x18 x13 e(13,0) x2 …; at t it is x0 x10 e(10,0) x17 x13 e(13,0) x2 x11 e(11,0) x20.
+    - The high letter e(13,0) lies on the new route.
+  - Mechanism: TWO splits in one Howard step (movers 2, 5, 7, 8, 18 switch at t).
+    - The gate flip at (10,0) re-routes the play, which re-merges at x13 before e(13,0).
+    - The switch at x2, after e(13,0), is what brings y.
+  - In all 21 + 5 search hits, the failures are at y-tops that are NOT re-wins (Bne below is 0).
+
+### A1.2 Lemma RW-SHAPE (PROVED, lane; premises as §2)
+Take a re-win (t1 < t2 through (u, b), a := u's successor at t2 − 1, m := wt(y)). Write E_s(b) ∩ U_y = B_s ⊔ S_s, with B_s the U_y-letters
+of b's play at s before y and S_s := E_s(m) ∩ U_y. If S_t1 = S_t2 (RW-WT fails at this re-win), then:
+(i) B_t2 ≠ ∅;
+(ii) for every f ∈ B_t2, some vertex of b's play at t2 strictly between f and y has a different successor at t2 − 1 (a SECOND split, after f).
+Proof.
+- (i): S is constant on [t1, t2]: Λ(m) = w there, and E-MON3 holds at m. By §2 (c), B_t2 ⊔ S >lex B_t1 ⊔ S, so the top of the difference
+  is in B_t2.
+- (ii), the sandwich:
+  - Ω_(t2−1)(a) ◁ Ω_(t2−1)(b) (§2 (b)) and Ω_(t2−1)(b) ⊴ Ω_t2(b) (F1). All three have Λ = w.
+  - So, as in §2 (c), the three e-sets compare lexicographically on U_y.
+  - E_(t2−1)(a) ∩ U_y = E_t2(b) ∩ U_y, since the top at v at t2 is y (§2 (c), last step).
+  - A lex-sandwiched set agrees with the two equal ends on U_y. [If it differed from the lower end, its most relevant difference d in U_y
+    would be in it; the upper end agrees with the lower end on U_y, so it would differ from the upper end first at d, with d in the middle
+    set: middle > upper, a contradiction.]
+  - So f ∈ E_(t2−1)(a) ∩ E_(t2−1)(b). The plays from a and from b at t2 − 1 both pass f, and from f on they are the same path (positional
+    strategies, same state).
+- (ii), the second split:
+  - That common path does not contain y, because y ∉ E_(t2−1)(a).
+  - At t2, y lies after f on b's play. So the play from f at t2 − 1 and the play from f at t2 differ.
+  - Their first split is a vertex strictly after f and before y with a changed successor (Lemma SPLIT (i)). ∎
+- Corollary RW-1 (PROVED). RW-WT holds at every re-win at which the only vertex of v's play before y whose successor changes at t2 is u
+  ("single-split"). Such a vertex would have to lie on b's play after f, which is part of v's play. Counter rw_single (unit: re-win):
+  these re-wins are proved, not sampled.
+- Corollary RW-2 (PROVED). RW-B0 ⇒ RW-WT. RW-B0: at every re-win, B_t1 = B_t2 = ∅, i.e. b's route to y carries no U_y-letter.
+  (B_t2 = ∅ already contradicts (i).)
+
+### A1.3 CONJECTURE RW-B0 (DATA, three sources)
+- Frozen set (box199/inst, 12 genomes incl. ROUTELOW_n21; split199.out):
+  - Counters Bne_t1 and Bne_t2 (unit: re-win; must be 0) are 0 / 0 on 4,498 re-wins, of which 2,000 single-split (RW-1, proved) and 2,498
+    multi-split. rwfail 0.
+  - Control ctrl6 (Bne counted always) fires: 219 / 219 on CX4_n21.
+- Random search, experiments/new/box199/srch199.py (unit: re-win; set: 4,000 genomes; scope: Γ3 engine up to the first fallback, cap
+  3000 steps):
+  - Sampling: 60 % are a base with 1-3 random options (bases CX4_n21, C2CX4_n23, GROW7_n34); 40 % are fresh random genomes (levels ≤ 3,
+    4-12 movers, 1-3 options each).
+  - Seed 8 (log srch199_s8.log, FINAL line): 315,065 re-wins, Bne_t1 0, Bne_t2 0, rwfail 0, rhfail 0, every SPLIT counter 0; ytopB_ne in
+    21 genomes.
+  - The committed srch199.py (importing split199) reproduces the scratch run's line «200 {…}» byte for byte. A seed-7 run (about 430
+    genomes, stopped to add the Bne counters) also has rwfail 0.
+- L-RED 61, independent engine (own.py, Γ without pads), relayed by the Lead 19:00Z: rw 0 on 2,994 re-wins / 19 genomes, plus a
+  falsification climb (rw 0 at iteration 178). I have not opened 1ea37d91 yet.
+- Sweep of all 286 distinct lane genomes (claude/l-red and claude/l-si inst dirs, box196/197 copies): running (tracked). 24 done at
+  19:00Z, all must-be-0 counters 0. A later addendum completes it.
+- Weight: strong DATA, no proof. The missing step is exactly RW-SHAPE's double split at a re-win: u returns to b at the same step at
+  which a vertex after a high route letter f brings y.
+
+### A1.4 What RW-WT + REWIN-COUNT + R121 give (the Lead's question)
+- Corollary REWIN-ASC (PROVED CONDITIONAL on RW-WT; under HYPOTHESIS [E-LEV]; N5′-xi from S3 on Γ3(G) up to the first fallback;
+  premises P-N5-CHAIN, R125 pending landing, incl. HUB-ASC-G3 and UP-B3, its Γ3 form of R121's HUB-ASC-G and UP-B; R121 itself is on
+  IDEAL-CYC).
+  - For every (v, I, y): R_y(v, I) ≤ SPL_y(v, I) · (F′_(U(G))(M) − 1) ≤ 3M · (F′_(U(G))(M) − 1). Here R_y := the re-wins of y,
+    SPL_y := the distinct split pairs (u, b), and F′_B(M) := (M² + 3M + 1)(1 + M·F′_(B−1)(M)²), F′_0(M) := 1 + M(M + 1)/2 (P-N5-ASC §4).
+  - Hence c_y(v, I) ≤ 1 + W_y(v, I) + 3M · (F′_(U(G))(M) − 1).
+  - Proof.
+    - Fix (u, b). Under RW-WT each of its re-wins changes E(m) ∩ U_y, m = wt(y), at a time where Λ(m) = w. So R_ub ≤ D_E,J(m) − 1,
+      J := m's Λ-interval containing the span.
+    - By UP-B3, seq_t(m) has ≤ U(G) ascents at every t. By HUB-ASC-G3, D_E,J(m) ≤ F′_(U(G))(M_w) ≤ F′_(U(G))(M).
+    - A split pair is an edge leaving a mover (to its pad, M of them) or a gate (to a face, 2M), so SPL_y ≤ 3M. Sum over (u, b);
+      REWIN-COUNT. ∎
+- So (S5) is TRIVIAL: SPL ≤ 3M, polynomial. Box 199 §3 listed it as open; that was wrong, and is corrected here.
+- What the bound buys:
+  - For U(G) ≤ B fixed the re-win term is polynomial. But T3 is already polynomial in that class by Theorem CHAIN3 (box 196; under [E-LEV],
+    CONDITIONAL on P-N5-END and P-N5-ASC §4), so REWIN-ASC adds NO new class.
+  - For U(G) unbounded, F′_U is doubly exponential in U: no bound.
+  - The open terms after RW-WT:
+    - W_y, the non-re-win re-entries (S4), in every class;
+    - the re-win term itself, when U is unbounded, i.e. the high-part values of the one vertex wt(y).
+  - A per-letter gain over HUB-ASC-G3 would need D_E restricted to U_y at wt(y) to be polynomial: that is the hub problem again, at a
+    lower vertex. READING: RW-WT localizes the re-win charge to a fixed vertex, which is the form a landed result can bite on, but the
+    landed bound bites only for bounded U.
+
+### A1.5 Next: (S4)
+- Test case: L-RED 61's C-climb genome with wc (= W summed) 86 at N + M 307, to be frozen at its next commit. Its re-entries with a
+  changed split pair are the GROW7 prefix pattern (§3): y is expelled by a letter before it, and re-enters under it by another route.
+- Plan: per such re-entry, measure whether the new prefix letter's own Λ-interval or e-set changed (a charge to the PREFIX letter z, z ≻ y,
+  before y).
+- Tools: experiments/new/box199/split199.py (new counters Bne_t1, Bne_t2, rw_single, rw_multi, ytopB_ne; control 6) and srch199.py; record
+  split199.out, check199.out, srch199_s8.log.

@@ -13,6 +13,9 @@ where the plays at t-1 and t leave by different edges. Counters (unit: one chang
   dnfail   : rewin where Om(b) did not rise strictly from t1 to t2-1                                         [0: Lemma REWIN]
   rhfail   : rewin where E_t2(b) cap U_y is not lex-larger than E_t1(b) cap U_y                              [0: Lemma REWIN-HI]
   rwfail   : rewin where E(m) cap U_y takes one value on [t1, t2]                                           [0 on data: CONJECTURE RW-WT]
+  Bne_t1/2 : rewin where b's play at t1 / t2 has a letter of U_y before y                                    [0 on data: CONJECTURE RW-B0]
+  rw_single/rw_multi : rewin whose t2-step changes one / several successors on v's play before y (single: RW-WT PROVED, Lemma RW-SHAPE)
+  ytopB_ne : y-top whose new route from the split u to y has a letter of U_y                                  [ROUTE-LOW; DEAD: ROUTELOW_n21]
   wlamfail : Lambda_t1(m) or Lambda_t2(m) differs from w                                                    [0: m is on v's play]
   wcfail   : re-entry (any) where E(m) cap U_y takes one value on [t1, t2]                                  [W-target charge for all re-entries]
   wbfail   : (v, I, y) with c_y > #values of E(m) cap U_y on [first, last y-top]                            [W-target bound]
@@ -22,7 +25,7 @@ where the plays at t-1 and t leave by different edges. Counters (unit: one chang
   maxc, maxW (non-rewin re-entries), maxSPL (distinct (u, b)): per (v, I, y), maxima over the genome.
 Usage: split199.py G.json ...  (ROOT: repo root, default from this file's place).
 Controls (S199_CTRL): 1 Howard direction reversed (hwfail fires); 2 W-target bound with 1 value (wbfail fires); 3 REWIN strict rise on
-[t1, t1] (dnfail fires); 4 U_y := empty (rhfail, rwfail, wcfail fire); 5 gate test negated (gtfail fires)."""
+[t1, t1] (dnfail fires); 4 U_y := empty (rhfail, rwfail, wcfail fire); 5 gate test negated (gtfail fires); 6 Bne counted always (Bne_t1, Bne_t2 fire)."""
 import sys, os, json, collections
 ROOT = os.environ.get("ROOT") or os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", ".."))
 os.environ.setdefault("EG195_ROOT", ROOT)
@@ -87,6 +90,8 @@ def run(G, cap=20000):
                     elif g.owner[u] == 0: cl = "route"
                     else: cl = "routeO"
                     c["ytop_" + cl] += 1; ytops[y].append((u_t, u, new))
+                    hy = sum(E.bit[f] for f in evs if E.rank[f] > E.rank[y])
+                    if any(E.bit[f] & hy for f in P1[i:P1.index(y)]): c["ytopB_ne"] += 1; c.setdefault("rlex", (v, y, u_t, u))
             for y, L in ytops.items():
                 hiy = sum(E.bit[f] for f in evs if E.rank[f] > E.rank[y]) if CTRL != "4" else 0; m = g.succ[y][0]
                 if L:
@@ -111,6 +116,11 @@ def run(G, cap=20000):
                     if (u1, b1) != (u2, b2): continue
                     c["rewin"] += 1
                     if len(hm) < 2: c["rwfail"] += 1
+                    for tq in (t1, t2):           # RW-B0: no letter of U_y on b's play before y
+                        P = play(tq, b1); P = P[:P.index(y)]
+                        c["Bne_t" + ("1" if tq == t1 else "2")] += any(E.bit[f] & hiy for f in P) if CTRL != "6" else True
+                    P2 = play(t2, v); ns = sum(nx(t2, q) != nx(t2 - 1, q) for q in P2[:P2.index(y)])
+                    c["rw_single" if ns == 1 else "rw_multi"] += 1
                     kl = lambda msk: sorted((E.rank[f] for f in evs if msk & E.bit[f]), reverse=True)
                     if not kl(H[t2][1][b1][1] & hiy) > kl(H[t1][1][b1][1] & hiy): c["rhfail"] += 1
                     c["rewin_" + ("mover" if g.owner[u1] == 0 else "gate")] += 1
@@ -142,6 +152,6 @@ if __name__ == "__main__":
         G = json.load(open(fn)); G = G.get("genome", G) if isinstance(G, dict) else G
         if not (isinstance(G, dict) and "opts" in G and "start" in G): print(os.path.basename(fn), "skipped"); continue
         T, c = run(G)
-        F = ("playfail", "kindfail", "hwfail", "gtfail", "trfail", "dnfail", "rhfail", "rwfail", "wlamfail", "wcfail", "wbfail", "dn_nobelow_all", "premono_no")
+        F = ("playfail", "kindfail", "hwfail", "gtfail", "trfail", "dnfail", "rhfail", "rwfail", "Bne_t1", "Bne_t2", "wlamfail", "wcfail", "wbfail", "dn_nobelow_all", "premono_no")
         print(os.path.basename(fn), "T3", T, " ".join(f"{k} {c[k]}" for k in F), "|", " ".join(f"{k} {c[k]}" for k in sorted(c) if k not in F and not k.endswith("ex")),
-              *[f"{k} {c[k]}" for k in ("wcex", "nbex", "pmex") if k in c], flush=True)
+              *[f"{k} {c[k]}" for k in ("wcex", "nbex", "pmex", "rlex") if k in c], flush=True)
