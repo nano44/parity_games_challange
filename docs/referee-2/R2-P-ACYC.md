@@ -294,3 +294,60 @@ Read only after this report was on origin (bf02e618). No verdict of mine changes
   - AC-L1, AC-L2, AC-L3 do not overlap my strings.
   - So REFEREE's expected L-2 sha1 c8ed32a8… will change by W-3 (either fix).
   - Spans and counts of all six old strings in L-1, with the single overlap (W-3/D-1 ⊃ AC-L4), by script: R2-P-ACYC/overlap.out.
+
+## Addendum 2: fix round 1 / L-2 (claude/l-si 01a68edc; REFEREE-2 successor 32, 2026-11-08 02:38Z by date -u)
+- **Object** (sha1 at 01a68edc54e64030d3e623694c58ce0c99f4f363, equal to the Lead's relay 02:37Z):
+  - fixes docs/si/P-ACYC-fixes.md dd3d4546… (10,104 B, entry 1);
+  - L-2 docs/si/P-ACYC-line-L2.txt 3a3096a4… (2,741 B, 1 line, 38 «(» = 38 «)», depth never negative, 0 «|»);
+  - packet 0e9edcfd… and L-1 bb12deec… unchanged.
+- **Re-run:** check81.sh on `git archive 01a68edc` (98 s; it now also calls fix1/check_fix1.sh): «P-ACYC fix1 checks: PASS», «box 81
+  checks: PASS», exit 0 (lane_check81_01a68edc.out).
+  - check_fix1.sh re-runs pacyc81t and tn81, rebuilds L-2 by mkL2.py and entry 1 by mkfix1.py, and compares both byte for byte.
+- **Byte test** (own script R2-P-ACYC/bt_l2.py, out bt_l2.out):
+  - My two L-1 strings: each old string occurs once in L-1 and 0 times in L-2, and each new string occurs once in L-2.
+    - W-3 (a) + D-1, the combined string of Add. 1, which contains AC-L4.
+    - D-2 = AC-L5, with the D-3 insertion.
+  - Independent rebuild: L-1 + REFEREE's exact AC-L1..AC-L3 strings (read as data from claude/referee acyc_linefix.py) + my two
+    strings gives sha1 3a3096a4…, 2,741 B, EQUAL to L-2. The word diff L-1 → L-2 shows no change outside these five replacements.
+  - Packet replacements of entry 1: all 11 «Old» strings occur exactly once in the frozen packet (whitespace normalised).
+  - N-1's quote «S1's σ̄, and τ̄ on the dual game, are pointwise optima» is verbatim in trunk RESULTS (R104 l. 9864 among 3 hits).
+- **Entry 1, item by item.**
+  - F-1 (W-1 = LC-1): my text verbatim, plus the ACYC-LIN K2 line ✓. This closes G-1, so LAMBDA-CONST is now **SIGN**.
+  - F-2 (AC-2): REFEREE's text. tn81.out agrees with my r2_TN.out (N = 1: T = N on 10 of 16 runs; max T/N 0.8 over N ≥ 2) ✓.
+  - F-3 (W-2 (a)-(c) with AC-3): (b) and (c) ✓, with «C + R» taken.
+    - (a) ✓ in substance. **N-2 (recommended, packet text):** the parenthesis «not on N5′-xi's mover phase (its first N + 1
+      iterations)» equates the mover phase with the first N + 1 iterations.
+      - The mover phase is T3 ≤ N iterations, and the first fallback comes by iteration N + 1. When T3 < N − 1, the first N + 1
+        iterations also hold post-fallback ones; on B, T3 = 9 at N = 40.
+      - Better: «(at most N iterations; its first fallback comes by iteration N + 1)».
+  - F-4 (W-2 (d) = AC-4) ✓.
+  - F-5 (W-3 fix (a), D-1, AC-L4): fix1/pacyc81t.py = box81/pacyc81.py with exactly my two diffs. diff against my scratch copy:
+    only the docstring and the path line (fix1/ is one directory down) ✓.
+    - Its outputs equal mine: taubad 0 on 768 / 44 / 59 states; every other total equal to the frozen outputs ✓.
+    - The §6 unit «not standard (σ off the movers and τ); genomes with no fallback» ✓.
+  - F-6 (D-2 = AC-L5, D-3) ✓. The control counts 59 / 121 / 15 / 25 are in both lane outputs and in my r2acyc_control_levorder.out.
+  - F-7 (AC-L1..AC-L3 verbatim; N-1 in the packet only, so AC-L1 stays byte-exact) ✓.
+  - F-8 (D-4): output committed; 2 iterations after the first fallback on 300 / 300, 4 / 4 and 5 / 5 (= my lane_pacyc81_full_run.out
+    for A and B) ✓.
+  - F-9 (AC-5, AC-6) ✓. AC-6's «Γ(G′) = Γ(G)» is about Γ only, where the start enters no priority; on Γ3 the m-pads' priorities do
+    depend on the start, but AC-6 is said of IDEAL-CYC on Γ.
+- **DATA rule on L-2, clause by clause.**
+  - AC-L1 / AC-L2 premise strings ✓.
+  - AC-L3: «each run from the genome's stored start (IDEAL-CYC) or from S3 (Γ3)» = lemma81's idealcyc.run(G) and pacyc81's S3 ✓. The
+    two «no separate DATA» entries are honest ✓.
+  - Control clause ✓.
+  - **D-5 (required, one string).** The Γ3 clause names its tool as «(pacyc81.py)», but the new clause «states that are not standard (σ
+    off the movers and τ) 0» is tested only by fix1/pacyc81t.py. pacyc81.py is unchanged and still counts σ only: its «nonstd» is the
+    old counter.
+    - So the cited tool does not test the clause: the same trap as W-3, moved from the counter to the citation. The DATA itself is
+      right (taubad 0).
+    - Old (once in L-2): «along N5′-xi on Γ3 from S3 (pacyc81.py),»
+    - New: «along N5′-xi on Γ3 from S3 (pacyc81.py; the τ part of «standard» by fix1/pacyc81t.py),»
+    - Or with plain words instead of the inner guillemets: «(pacyc81.py; τ by fix1/pacyc81t.py),».
+  - «genomes with no fallback 0»: pacyc81 and pacyc81t both print nofallback 0 ✓.
+- **Verdict:**
+  - fixes entry 1 **CORRECT** (N-2 recommended);
+  - W-1, W-2, W-3, D-1, D-2, D-3, D-4 and N-1 **met**;
+  - statements: BETA-ACYC, LAMBDA-CONST (gap closed by F-1), ACYC-LIN **SIGN**; ACYC-XI **SIGN**, PROVED-CONDITIONAL on R118 (k) + (l);
+  - **L-2 does NOT yet match: D-5** (the τ clause's tool citation; one string) (Opus 5.5, D1). With D-5 applied as above, L-2 matches;
+    no other change is needed.
