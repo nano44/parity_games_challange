@@ -1,0 +1,4 @@
+INFO {'d': 28, 'H': 7, 'T': 299, 'relevant': 56, 'Lmax': 27, 'options': 112, 'vars': 1437112, 'clauses': 14888503, 'empty': False, 'nP': 14773, 'quad': 19817544, 'lazy': 0, 'build_s': 17.4}
+SOLVE it 1 -> SAT 60.9s
+RESULT SAT
+decoded -> val/rfix_hit7_dec.txt 329a9528f49fa425f4e7b4aa0ab7e3ea636c33e6

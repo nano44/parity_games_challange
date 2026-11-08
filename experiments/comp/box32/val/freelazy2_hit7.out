@@ -1,0 +1,8 @@
+INFO {'d': 28, 'H': 7, 'T': 299, 'relevant': 56, 'Lmax': 27, 'options': 112, 'vars': 1443328, 'clauses': 5435571, 'empty': False, 'nP': 14773, 'quad': 0, 'lazy': 14773, 'build_s': 6.5}
+SOLVE it 1 -> SAT 2.6s
+  lazy: added 1115238
+SOLVE it 2 -> SAT 46.2s
+  lazy: added 646654
+SOLVE it 3 -> SAT 422.6s
+  lazy: added 634862
+STOPPED by L-COMP 13 at 09:26:27Z after 3 rounds (~640k order clauses added per round, ~7 min/round)

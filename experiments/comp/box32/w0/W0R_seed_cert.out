@@ -1,0 +1,6 @@
+INFO {'d': 32, 'H': 8, 'T': 510, 'relevant': 56, 'Lmax': 27, 'options': 112, 'vars': 2114119, 'clauses': 21576581, 'empty': False, 'nP': 24617, 'quad': 28528654, 'lazy': 0, 'build_s': 23.6}
+CNF -> /home/user/pf32/W0R_seed.cnf
+3024beba1b973849e9aa21b163e5c25b0961b46b  /home/user/pf32/W0R_seed.cnf
+input /home/user/pf32/W0R_seed.cnf sha1 3024beba1b973849e9aa21b163e5c25b0961b46b vars 2114119 clauses 21576581 cube  glucose4 UNSAT 4.1 s proof /home/user/pf32/W0R_seed.proof sha1 8b86224e033375484fe7d8cca23f33f36c46b49a bytes 111826402
+/bin/bash: line 1: /usr/bin/time: No such file or directory
+exit 127

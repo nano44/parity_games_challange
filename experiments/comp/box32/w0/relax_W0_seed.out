@@ -1,0 +1,242 @@
+INFO {'d': 32, 'H': 8, 'T': 510, 'relevant': 56, 'Lmax': 27, 'options': 112, 'vars': 1058753, 'clauses': 3795730, 'empty': False, 'nP': 4177, 'quad': 0, 'lazy': 4177, 'build_s': 5.0}
+SOLVE it 1 -> SAT 0.2s
+  lazy: added 78314
+SOLVE it 2 -> SAT 0.2s
+  lazy: added 4185
+SOLVE it 3 -> SAT 24.8s
+  lazy: added 34359
+SOLVE it 4 -> SAT 8.3s
+  lazy: added 52212
+SOLVE it 5 -> SAT 9.7s
+  lazy: added 47183
+SOLVE it 6 -> SAT 10.7s
+  lazy: added 15790
+SOLVE it 7 -> SAT 9.7s
+  lazy: added 18679
+SOLVE it 8 -> SAT 3.8s
+  lazy: added 20225
+SOLVE it 9 -> SAT 32.2s
+  lazy: added 19339
+SOLVE it 10 -> SAT 36.6s
+  lazy: added 18388
+SOLVE it 11 -> SAT 15.5s
+  lazy: added 17857
+SOLVE it 12 -> SAT 31.3s
+  lazy: added 13386
+SOLVE it 13 -> SAT 28.1s
+  lazy: added 16068
+SOLVE it 14 -> SAT 15.7s
+  lazy: added 15787
+SOLVE it 15 -> SAT 34.5s
+  lazy: added 14376
+SOLVE it 16 -> SAT 37.3s
+  lazy: added 20807
+SOLVE it 17 -> SAT 9.0s
+  lazy: added 20579
+SOLVE it 18 -> SAT 31.2s
+  lazy: added 15125
+SOLVE it 19 -> SAT 25.2s
+  lazy: added 14963
+SOLVE it 20 -> SAT 15.6s
+  lazy: added 15832
+SOLVE it 21 -> SAT 18.1s
+  lazy: added 12310
+SOLVE it 22 -> SAT 24.2s
+  lazy: added 14794
+SOLVE it 23 -> SAT 17.6s
+  lazy: added 15477
+SOLVE it 24 -> SAT 83.7s
+  lazy: added 18482
+SOLVE it 25 -> SAT 10.4s
+  lazy: added 15913
+SOLVE it 26 -> SAT 13.6s
+  lazy: added 12460
+SOLVE it 27 -> SAT 24.6s
+  lazy: added 13079
+SOLVE it 28 -> SAT 20.8s
+  lazy: added 12913
+SOLVE it 29 -> SAT 23.8s
+  lazy: added 14087
+SOLVE it 30 -> SAT 15.3s
+  lazy: added 13061
+SOLVE it 31 -> SAT 13.6s
+  lazy: added 12584
+SOLVE it 32 -> SAT 14.9s
+  lazy: added 11301
+SOLVE it 33 -> SAT 100.5s
+  lazy: added 8776
+SOLVE it 34 -> SAT 12.0s
+  lazy: added 13500
+SOLVE it 35 -> SAT 16.7s
+  lazy: added 12783
+SOLVE it 36 -> SAT 26.0s
+  lazy: added 10811
+SOLVE it 37 -> SAT 27.1s
+  lazy: added 9888
+SOLVE it 38 -> SAT 12.9s
+  lazy: added 10526
+SOLVE it 39 -> SAT 11.6s
+  lazy: added 13869
+SOLVE it 40 -> SAT 11.7s
+  lazy: added 11156
+SOLVE it 41 -> SAT 13.5s
+  lazy: added 12630
+SOLVE it 42 -> SAT 14.4s
+  lazy: added 12678
+SOLVE it 43 -> SAT 39.7s
+  lazy: added 10632
+SOLVE it 44 -> SAT 18.3s
+  lazy: added 9353
+SOLVE it 45 -> SAT 14.7s
+  lazy: added 10427
+SOLVE it 46 -> SAT 13.2s
+  lazy: added 9789
+SOLVE it 47 -> SAT 10.7s
+  lazy: added 9085
+SOLVE it 48 -> SAT 13.7s
+  lazy: added 9155
+SOLVE it 49 -> SAT 11.2s
+  lazy: added 10009
+SOLVE it 50 -> SAT 25.7s
+  lazy: added 10079
+SOLVE it 51 -> SAT 24.2s
+  lazy: added 8282
+SOLVE it 52 -> SAT 13.0s
+  lazy: added 9173
+SOLVE it 53 -> SAT 13.8s
+  lazy: added 8736
+SOLVE it 54 -> SAT 12.3s
+  lazy: added 8332
+SOLVE it 55 -> SAT 14.5s
+  lazy: added 6983
+SOLVE it 56 -> SAT 13.7s
+  lazy: added 9155
+SOLVE it 57 -> SAT 10.8s
+  lazy: added 6713
+SOLVE it 58 -> SAT 23.8s
+  lazy: added 6556
+SOLVE it 59 -> SAT 4.8s
+  lazy: added 6707
+SOLVE it 60 -> SAT 18.6s
+  lazy: added 7948
+SOLVE it 61 -> SAT 14.8s
+  lazy: added 5622
+SOLVE it 62 -> SAT 69.8s
+  lazy: added 16672
+SOLVE it 63 -> SAT 21.8s
+  lazy: added 6225
+SOLVE it 64 -> SAT 14.0s
+  lazy: added 8125
+SOLVE it 65 -> SAT 9.7s
+  lazy: added 6628
+SOLVE it 66 -> SAT 13.1s
+  lazy: added 6243
+SOLVE it 67 -> SAT 11.1s
+  lazy: added 6911
+SOLVE it 68 -> SAT 23.9s
+  lazy: added 6574
+SOLVE it 69 -> SAT 12.3s
+  lazy: added 5093
+SOLVE it 70 -> SAT 12.2s
+  lazy: added 6201
+SOLVE it 71 -> SAT 13.0s
+  lazy: added 5963
+SOLVE it 72 -> SAT 25.3s
+  lazy: added 8490
+SOLVE it 73 -> SAT 4.4s
+  lazy: added 6247
+SOLVE it 74 -> SAT 16.2s
+  lazy: added 5093
+SOLVE it 75 -> SAT 6.4s
+  lazy: added 4836
+SOLVE it 76 -> SAT 18.7s
+  lazy: added 5961
+SOLVE it 77 -> SAT 17.8s
+  lazy: added 8200
+SOLVE it 78 -> SAT 13.7s
+  lazy: added 9690
+SOLVE it 79 -> SAT 3.7s
+  lazy: added 8221
+SOLVE it 80 -> SAT 14.6s
+  lazy: added 4091
+SOLVE it 81 -> SAT 5.0s
+  lazy: added 6795
+SOLVE it 82 -> SAT 15.5s
+  lazy: added 4799
+SOLVE it 83 -> SAT 4.8s
+  lazy: added 4543
+SOLVE it 84 -> SAT 30.8s
+  lazy: added 6936
+SOLVE it 85 -> SAT 3.2s
+  lazy: added 5885
+SOLVE it 86 -> SAT 4.0s
+  lazy: added 4104
+SOLVE it 87 -> SAT 5.2s
+  lazy: added 8675
+SOLVE it 88 -> SAT 12.6s
+  lazy: added 3612
+SOLVE it 89 -> SAT 22.2s
+  lazy: added 3832
+SOLVE it 90 -> SAT 4.3s
+  lazy: added 3205
+SOLVE it 91 -> SAT 13.4s
+  lazy: added 3710
+SOLVE it 92 -> SAT 12.1s
+  lazy: added 5545
+SOLVE it 93 -> SAT 12.0s
+  lazy: added 3974
+SOLVE it 94 -> SAT 8.6s
+  lazy: added 5736
+SOLVE it 95 -> SAT 13.1s
+  lazy: added 5869
+SOLVE it 96 -> SAT 12.1s
+  lazy: added 3630
+SOLVE it 97 -> SAT 13.9s
+  lazy: added 5665
+SOLVE it 98 -> SAT 5.4s
+  lazy: added 3552
+SOLVE it 99 -> SAT 13.9s
+  lazy: added 4051
+SOLVE it 100 -> SAT 5.3s
+  lazy: added 4255
+SOLVE it 101 -> SAT 13.3s
+  lazy: added 3666
+SOLVE it 102 -> SAT 21.4s
+  lazy: added 3415
+SOLVE it 103 -> SAT 24.3s
+  lazy: added 4397
+SOLVE it 104 -> SAT 17.8s
+  lazy: added 3994
+SOLVE it 105 -> SAT 4.8s
+  lazy: added 3010
+SOLVE it 106 -> SAT 5.9s
+  lazy: added 2873
+SOLVE it 107 -> SAT 5.9s
+  lazy: added 4793
+SOLVE it 108 -> SAT 6.7s
+  lazy: added 5199
+SOLVE it 109 -> SAT 13.9s
+  lazy: added 2988
+SOLVE it 110 -> SAT 5.1s
+  lazy: added 2172
+SOLVE it 111 -> SAT 14.6s
+  lazy: added 3385
+SOLVE it 112 -> SAT 3.5s
+  lazy: added 2536
+SOLVE it 113 -> SAT 4.7s
+  lazy: added 3265
+SOLVE it 114 -> SAT 4.1s
+  lazy: added 2858
+SOLVE it 115 -> SAT 3.7s
+  lazy: added 2816
+SOLVE it 116 -> SAT 3.6s
+  lazy: added 2984
+SOLVE it 117 -> SAT 5.1s
+  lazy: added 4357
+SOLVE it 118 -> SAT 4.1s
+  lazy: added 2617
+SOLVE it 119 -> SAT 4.0s
+  lazy: added 2899
+SOLVE it 120 -> SAT 9.3s
+  lazy: added 3976
+STOPPED by L-COMP 13 at 09:27:19Z (Lead 09:28Z: a final SAT of the relaxation refutes nothing); SAT at every round up to 120

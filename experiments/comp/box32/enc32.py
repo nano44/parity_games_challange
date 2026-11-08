@@ -27,6 +27,7 @@ Usage: enc32.py GENOME TARGET H [--fix all|ranks,signs,gates,starts] [--solve ca
 --relax: helper transitions dropped (helper states free per step); a sound relaxation: its UNSAT implies the full UNSAT.
 TARGET: first line "rows ncore", then one bit string per step (t = 0..T) for movers 0..ncore-1 (ncore = 2H)."""
 import sys, os, argparse, time, hashlib
+SKIPCORE = set(int(v) for v in os.environ.get('SKIPCORE', '').split(',') if v)   # diagnostics only
 
 class Enc:
     def __init__(s, sink=None):
@@ -97,15 +98,29 @@ def rdtarget(p):
     rows, nc = int(L[0]), int(L[1]); S = [[int(ch) for ch in L[2 + i]] for i in range(rows)]
     assert all(len(r) == nc for r in S); return S, nc
 
-def build(D, S, H, fix=(), lazy=False, sink=None, relax=False):
+def build(D, S, H, fix=(), lazy=False, sink=None, relax=False, thresh=False, fixpoint=True, freeopts=(), freerank=()):
     d = D['d']; N = 2 * d; xt = D['xt']; g = D['gate']; T = len(S) - 1; NC = 2 * H
     assert len(S[0]) == NC
+    freeopts = set(freeopts); freerank = set(freerank)
+    # W1: free targets of the options in freeopts (one owner mover); candidates = -1 and every mover z != owner that does not
+    # reach the owner through FIXED edges (so every choice is acyclic: the owner's options are its only free edges)
+    cand = {}
+    if freeopts:
+        owners = {m // 2 for m in freeopts}; assert len(owners) == 1, 'W1: free options of one mover only'
+        x0 = owners.pop(); reach_x0 = {x0}; ch = True
+        while ch:
+            ch = False
+            for m in range(2 * N):
+                if m in freeopts: continue
+                if xt[m] in reach_x0 and m // 2 not in reach_x0: reach_x0.add(m // 2); ch = True
+        for m in freeopts: cand[m] = [-1] + [z for z in range(N) if z not in reach_x0]
     # static reach (options) from option m
     memo = {}
     def ro(m):
         if m in memo: return memo[m]
-        y = xt[m]; r = {m}
-        if y >= 0: r |= ro(2 * y) | ro(2 * y + 1)
+        r = {m}
+        for y in (cand[m] if m in cand else [xt[m]]):
+            if y >= 0: r |= ro(2 * y) | ro(2 * y + 1)
         memo[m] = frozenset(r); return memo[m]
     # acyclic check
     sys.setrecursionlimit(100000)
@@ -115,6 +130,7 @@ def build(D, S, H, fix=(), lazy=False, sink=None, relax=False):
         if vis[x] == 1: return False
         vis[x] = 1
         for k in (0, 1):
+            if 2 * x + k in cand: continue
             y = xt[2 * x + k]
             if y >= 0 and not dfs(y): return False
         vis[x] = 2; return True
@@ -137,11 +153,40 @@ def build(D, S, H, fix=(), lazy=False, sink=None, relax=False):
     fixed = set(fix)
     # ranks: ord(e,f) literal = rank e > rank f
     ordv = {}
+    fr_u = {}; fr_w = {}
+    fixed_sorted = sorted((m for m in range(2 * N) if m not in freerank), key=lambda m: D['br'][m])
+    fidx = {m: i for i, m in enumerate(fixed_sorted)}
     def ordl(e, f):
+        if 'ranks' in fixed and (e in freerank or f in freerank):
+            if e in freerank and f in freerank: return fr_w[(e, f)] if (e, f) in fr_w else -fr_w[(f, e)]
+            if e in freerank: return fr_u[e][fidx[f]]          # e above fixed f
+            return -fr_u[f][fidx[e]]
         if 'ranks' in fixed: return D['br'][e] > D['br'][f]
         if e < f: return ordv[(e, f)]
         return -ordv[(f, e)]
-    if 'ranks' not in fixed:
+    if freerank:   # FREERANK: insert positions of these options into the fixed order (unary; u[k] = above the k-th fixed)
+        assert 'ranks' in fixed
+        for e in freerank:
+            fr_u[e] = [E.new() for _ in fixed_sorted]
+            for k in range(len(fixed_sorted) - 1): E.add([-fr_u[e][k + 1], fr_u[e][k]])
+        fl = sorted(freerank)
+        for i, e in enumerate(fl):
+            for f in fl[i + 1:]:
+                w = E.new(); fr_w[(e, f)] = w
+                for k in range(len(fixed_sorted)):
+                    E.add([-fr_u[e][k], fr_u[f][k], w]); E.add([fr_u[e][k], -fr_u[f][k], -w])
+    K = max(1, (len(opts) - 1).bit_length()); rb = {}
+    if thresh and 'ranks' not in fixed:
+        # THRESHOLD mode: rank = K-bit integer per option, all different; per site a threshold theta with
+        # d_f -> r_f <= theta and tau_e -> r_e == theta (linear in |U| per site instead of |U|^2)
+        for e in opts: rb[e] = [E.new() for _ in range(K)]          # MSB first
+        for i, e in enumerate(opts):
+            for f in opts[i + 1:]:
+                ds = []
+                for k in range(K):
+                    ds.append(E.XOR(rb[e][k], rb[f][k]))
+                E.add(ds)
+    if 'ranks' not in fixed and not thresh:
         for i, e in enumerate(opts):
             for f in opts[i + 1:]: ordv[(e, f)] = E.new()
         n = len(opts)           # a tournament with no 3-cycle is a strict total order: forbid both 3-cycles of each triple
@@ -151,6 +196,13 @@ def build(D, S, H, fix=(), lazy=False, sink=None, relax=False):
                     a, b, c = opts[i], opts[j], opts[k]
                     E.add([-ordl(a, b), -ordl(b, c), -ordl(c, a)]); E.add([-ordl(a, c), -ordl(c, b), -ordl(b, a)])
     pos = {m: ((D['bp'][m] == 0) if 'signs' in fixed else E.new()) for m in opts}
+    Wv = {}
+    for m in cand:   # one-hot target choice
+        for z in cand[m]: Wv[(m, z)] = E.new()
+        E.add([Wv[(m, z)] for z in cand[m]])
+        cl = cand[m]
+        for i in range(len(cl)):
+            for j in range(i + 1, len(cl)): E.add([-Wv[(m, cl[i])], -Wv[(m, cl[j])]])
     # helper gate bits
     Gb = {}
     for l in range(H, Lmax + 1):
@@ -178,20 +230,21 @@ def build(D, S, H, fix=(), lazy=False, sink=None, relax=False):
             o[l] = ol; c = ol
         return o
     O = [okeys(st[t]) for t in range(T + 2)]
-    for t in range(T + 1):         # transition S_t -> S_(t+1) (t = T: fixed point)
+    for t in range(T + 1 if fixpoint else T):   # transition S_t -> S_(t+1) (t = T: fixed point, unless a prefix run)
         s = st[t]; ns = st[t + 1]; on = O[t + 1]
         # chain membership at s: Q[y][e] = option e on chain starting at mover y (using s[y])
         Q = {}
         def q(y, e):
             if (y, e) in Q: return Q[(y, e)]
-            def r(m):
-                if m == e: return True
-                z = xt[m]
-                if z < 0 or e not in (ro(2 * z) | ro(2 * z + 1)): return False
-                return q(z, e)
-            v = E.MUX(s[y], r(2 * y + 1), r(2 * y)); Q[(y, e)] = v; return v
+            v = E.MUX(s[y], inopt(2 * y + 1, e), inopt(2 * y, e)); Q[(y, e)] = v; return v
         def inopt(m, e):
             if m == e: return True
+            if m in cand:
+                acc = False
+                for z in cand[m]:
+                    if z < 0 or e not in (ro(2 * z) | ro(2 * z + 1)): continue
+                    acc = E.OR(acc, E.AND(Wv[(m, z)], q(z, e)))
+                return acc
             z = xt[m]
             if z < 0 or e not in (ro(2 * z) | ro(2 * z + 1)): return False
             return q(z, e)
@@ -207,6 +260,7 @@ def build(D, S, H, fix=(), lazy=False, sink=None, relax=False):
                 if not free:
                     if s[x] != ns[x]: raise SystemExit(f'target moves blocked mover {x} at t {t + 1}')
                     continue
+                if x in SKIPCORE: continue   # diagnostics only: drop this core mover's preference constraints
                 # level 0 rule: flips iff pref != s: ns = pref when free; same for level >= 1
             if relax and x >= NC: continue   # RELAX: helper states free at every step (sound relaxation: UNSAT -> UNSAT)
             if free is False:
@@ -223,9 +277,24 @@ def build(D, S, H, fix=(), lazy=False, sink=None, relax=False):
                 E.add([-tau[e], E.neg(inB[e]), E.neg(pos[e]), P]); E.add([-tau[e], E.neg(inB[e]), pos[e], -P])
                 E.add([-tau[e], E.neg(inA[e]), pos[e], P]); E.add([-tau[e], E.neg(inA[e]), E.neg(pos[e]), -P])
                 if lazy and 'ranks' not in fixed: continue
+                if thresh and 'ranks' not in fixed: continue
                 for f in Uc:
                     if f == e: continue
                     E.add([-tau[e], E.neg(dl[f]), ordl(e, f)]); nquad += 1
+            if thresh and 'ranks' not in fixed:
+                th = [E.new() for _ in range(K)]
+                for e in Uc:
+                    for k in range(K):
+                        E.add([-tau[e], -rb[e][k], th[k]]); E.add([-tau[e], rb[e][k], -th[k]])
+                for f in Uc:   # d_f -> r_f <= th : forbid the first differing bit being r=1, th=0
+                    prev = dl[f]
+                    for k in range(K):
+                        E.add([E.neg(prev), -rb[f][k], th[k]])
+                        if k == K - 1: break
+                        pk = E.new()   # pk forced true when prev and bit k equal
+                        E.add([E.neg(prev), -rb[f][k], -th[k], pk]); E.add([E.neg(prev), rb[f][k], th[k], pk])
+                        prev = pk
+                    nquad += 1
             if lazy and 'ranks' not in fixed: lazyc.append((tau, dl))   # CEGAR: order clauses added when a model violates them
             # ns = free ? P : s
             if free is True: E.EQ(ns[x], P)
@@ -234,7 +303,7 @@ def build(D, S, H, fix=(), lazy=False, sink=None, relax=False):
             E.add([E.XOR(s[x], ns[x]) for x in R if x >= NC])
     info = dict(d=d, H=H, T=T, relevant=len(R), Lmax=Lmax, options=len(opts), vars=E.nv, clauses=E.ncl, empty=E.empty, nP=nP, quad=nquad,
                 lazy=len(lazyc))
-    return E, info, dict(R=R, opts=opts, ordl=ordl, pos=pos, Gb=Gb, st=st, Lmax=Lmax, lazyc=lazyc)
+    return E, info, dict(Wv=Wv, cand=cand, freerank=freerank, fr_u=fr_u, fixed_sorted=fixed_sorted, rb=rb, R=R, opts=opts, ordl=ordl, pos=pos, Gb=Gb, st=st, Lmax=Lmax, lazyc=lazyc)
 
 def decode(D, M, ctx, H):
     """model (set of true literals) -> genome text dict. Dropped movers: xt kept, ranks below all scoped, starts as in D."""
@@ -242,15 +311,36 @@ def decode(D, M, ctx, H):
     E = dict(D); E = {k: (list(v) if isinstance(v, list) else v) for k, v in D.items()}
     opts = ctx['opts']; d = D['d']; N = 2 * d
     # ranks: sort scoped options by number of options they beat
-    wins = {e: sum(1 for f in opts if f != e and val(ctx['ordl'](e, f))) for e in opts}
-    order = sorted(opts, key=lambda e: wins[e])           # ascending
-    assert len(set(wins.values())) == len(opts), 'order not total/strict'
-    rest = [m for m in range(2 * N) if m not in set(opts)]
-    br = [0] * (2 * N)
-    for i, m in enumerate(rest): br[m] = i
-    for i, m in enumerate(order): br[m] = len(rest) + i
-    E['br'] = br
-    E['bp'] = [(0 if val(ctx['pos'][m]) else 1) if m in ctx['pos'] else D['bp'][m] for m in range(2 * N)]
+    if ctx['cand']:
+        E['xt'] = list(D['xt'])
+        for m, cl in ctx['cand'].items():
+            ch = [z for z in cl if val(ctx['Wv'][(m, z)])]; assert len(ch) == 1; E['xt'][m] = ch[0]
+    if ctx['freerank']:
+        fs = ctx['fixed_sorted']; slots = {}
+        for e in ctx['freerank']: slots[e] = sum(1 for u in ctx['fr_u'][e] if val(u))   # number of fixed below e
+        seq = []
+        for i in range(len(fs) + 1):
+            here = [e for e in ctx['freerank'] if slots[e] == i]
+            here.sort(key=lambda e: sum(1 for f in ctx['freerank'] if f != e and val(ctx['ordl'](e, f))))
+            seq += here
+            if i < len(fs): seq.append(fs[i])
+        E['br'] = [0] * (2 * N)
+        for r_, m in enumerate(seq): E['br'][m] = r_
+        E['bp'] = [(0 if val(ctx['pos'][m]) else 1) if m in ctx['pos'] else D['bp'][m] for m in range(2 * N)]
+        wins = None
+    elif ctx['rb']:
+        wins = {e: sum(int(val(b)) << (len(ctx['rb'][e]) - 1 - k) for k, b in enumerate(ctx['rb'][e])) for e in opts}
+    else:
+        wins = {e: sum(1 for f in opts if f != e and val(ctx['ordl'](e, f))) for e in opts}
+    if wins is not None:
+        order = sorted(opts, key=lambda e: wins[e])           # ascending
+        assert len(set(wins.values())) == len(opts), 'order not total/strict'
+        rest = [m for m in range(2 * N) if m not in set(opts)]
+        br = [0] * (2 * N)
+        for i, m in enumerate(rest): br[m] = i
+        for i, m in enumerate(order): br[m] = len(rest) + i
+        E['br'] = br
+        E['bp'] = [(0 if val(ctx['pos'][m]) else 1) if m in ctx['pos'] else D['bp'][m] for m in range(2 * N)]
     gt = list(D['gate'])
     for (l, a), lit in ctx['Gb'].items():
         hi, lo = (4 * l + a, 4 * l + 2 + a) if val(lit) else (4 * l + 2 + a, 4 * l + a)
@@ -263,11 +353,13 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('genome'); ap.add_argument('target'); ap.add_argument('H', type=int)
     ap.add_argument('--fix', default=''); ap.add_argument('--solve', default='')
-    ap.add_argument('--cnf'); ap.add_argument('--out'); ap.add_argument('--lazy', action='store_true'); ap.add_argument('--relax', action='store_true'); ap.add_argument('--lazy2', action='store_true')
+    ap.add_argument('--cnf'); ap.add_argument('--out'); ap.add_argument('--lazy', action='store_true'); ap.add_argument('--relax', action='store_true'); ap.add_argument('--lazy2', action='store_true'); ap.add_argument('--thresh', action='store_true'); ap.add_argument('--prefix', type=int, default=-1); ap.add_argument('--freeopts', default=''); ap.add_argument('--freerank', default=''); ap.add_argument('--only', default='')
     a = ap.parse_args()
     if a.lazy2: a.lazy = True
+    if a.only: SKIPCORE.update(set(range(2 * a.H)) - set(int(v) for v in a.only.split(',')))   # keep only these core movers' constraints (sub-problem)
     fix = set() if not a.fix else ({'ranks', 'signs', 'gates', 'starts'} if a.fix == 'all' else set(a.fix.split(',')))
     D = rdgen(a.genome); S, nc = rdtarget(a.target); assert nc == 2 * a.H
+    if a.prefix >= 0: S = S[:a.prefix + 1]   # PREFIX: core rows t = 0..prefix only, no fixed point at the end
     sinks = []; sv = None; body = None
     if a.solve:
         from pysat.solvers import Solver
@@ -276,7 +368,7 @@ def main():
         body = open(a.cnf + '.body', 'w'); sinks.append(lambda c: body.write(' '.join(map(str, c)) + ' 0\n'))
     def sink(c):
         for f in sinks: f(c)
-    t0 = time.time(); E, info, ctx = build(D, S, a.H, fix, a.lazy, sink, a.relax)
+    t0 = time.time(); E, info, ctx = build(D, S, a.H, fix, a.lazy, sink, a.relax, a.thresh, a.prefix < 0, [int(v) for v in a.freeopts.split(',') if v], [int(v) for v in a.freerank.split(',') if v])
     info['build_s'] = round(time.time() - t0, 1); print('INFO', info, flush=True)
     if a.cnf:
         body.close(); nstored = sum(1 for _ in open(a.cnf + '.body'))

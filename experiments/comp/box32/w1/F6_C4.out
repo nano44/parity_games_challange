@@ -1,0 +1,4 @@
+INFO {'d': 32, 'H': 8, 'T': 510, 'relevant': 64, 'Lmax': 31, 'options': 128, 'vars': 3126828, 'clauses': 37878739, 'empty': False, 'nP': 24657, 'quad': 52641522, 'lazy': 0, 'build_s': 46.6}
+SOLVE it 1 -> UNSAT 5.4s
+RESULT UNSAT
+exit 0

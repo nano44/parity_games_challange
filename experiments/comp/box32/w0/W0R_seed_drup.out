@@ -1,0 +1,8 @@
+input clauses 21576581, vars 2114710, top-level conflict after input: 0
+lemmas checked 885, deletion lines 4697158 (applied; clauses removed 4697158)
+s VERIFIED (885 lemmas RUP-checked)
+
+real	0m15.719s
+user	0m14.471s
+sys	0m1.068s
+exit 0
