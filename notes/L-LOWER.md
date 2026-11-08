@@ -19,6 +19,15 @@
   both solvers). Options: cube h3d5 with Glucose (hsat_run.py uses CaDiCaL; a Glucose variant is not written), symmetry breaking in
   hsat, or h = 3 at d = 6 (more freedom may be easier SAT).
 - SAT h3d4 old item done; old h3d4 a100/a101 are uncapped targets (irrelevant).
+### h3d5 results at park (Lead 05:15Z babysit task; appended 06:3xZ date -u)
+- DATA (unit = instance; set = the capped sched targets a110 / a111 x gate cases g0-g3, 8 instances; scope = pysat Glucose4,
+  whole instance, 1,800 s limit, l9/gwhole.py; files l9/out/sat/h3d5_*.g4.res, gK.log):
+  TIMEOUT 6: a110 g0 (1,801 s), g1 (1,800 s), g2 (1,800 s); a111 g0 (1,800 s), g1 (1,803 s), g2 (1,800 s).
+  NO RESULT 2: a110 g3, a111 g3, started 05:56Z, killed ~06:26Z by the 2-hour limit of the tracked task, with no .res line.
+  SAT 0, UNSAT 0, so there was no DRUP check to run and no model to freeze. h = 3 at d = 5 stays OPEN.
+- Nothing is running at park (both workers ended; pgrep empty).
+- Resume: `cd experiments/lower/l9; python3 gwhole.py 3 5 1,1,0 3 1800 $SP/sat` (and 1,1,1 3). The two g3 instances never got a
+  full run; a longer limit is needed for the other six (TIMEOUT is re-run on relaunch).
 ### Things only I know (successor 9)
 - fenc build: gcc -O2 -o $SP/fenc experiments/lower/l9/fenc.c. drup: gcc -O2 -o $SP/drup experiments/lower/l8/sat/drup.c.
 - sched.py with alpha_(h-2) = 0 is uncapped and has idle core steps; never search it.

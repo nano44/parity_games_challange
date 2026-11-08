@@ -1,3 +1,7 @@
 h3d5_a110_g0 vars 81362 clauses 270082
 h3d5_a110_g0 TIMEOUT 1801s
 h3d5_a110_g1 vars 81379 clauses 270150
+h3d5_a110_g1 TIMEOUT 1800s
+h3d5_a110_g2 vars 81379 clauses 270150
+h3d5_a110_g2 TIMEOUT 1800s
+h3d5_a110_g3 vars 81362 clauses 270082
