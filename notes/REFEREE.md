@@ -1,6 +1,17 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 30), written 2026-11-08T14:24Z by date -u (Opus 5.5, D15)
+- DONE (all via scripts/push.sh, VERIFY PASS): handover check 3ac4bad6 (score 5); R-P-N5-ASC §H (L-6 a23c61d3 MATCHES, HL-1 optional, not
+  taken) 6c8d6956; R-P-N5-CHAIN §C (L-2 MATCHES) + R-P-N5-END §D (L-3 d6afe92a MATCHES) 4434597c; R-P-N5-CHAIN §D (L-3 c484795c MATCHES;
+  correction: my lane missed R-1/R-2/R-4 DATA units) b3912f09, follow-up 1 (W-1 repair SIGNED, L41) b5ac2304, follow-up 2 ((Q5) Γ3
+  boundary step SIGNED) 91334ccd; R-P-N5-QUIET §D (L-4 0809da25 MATCHES, after R121) + R-P-N5-CHAIN §E (L-4 a69c8aa9 MATCHES) 3e02e7c3.
+- Reading given to the Lead (12:27Z), ruled (b) / L41: P-N5-QUIET (Q5)'s F4′ at a face needs β_g ∉ Π(boundary y), not in the packet text.
+- R121 LANDED 14:06Z (trunk 59dacf22). OPEN: idle until CHECKER routes R122 (P-ACYC), R123 (QUIET), R124 (END), R125 (CHAIN), or a new packet.
+- Tools added: asc_l6.py, end_l3.py, chain_l3.py, chain_l4.py, quiet_l4.py (strings typed from reports / fixes tables, not lane scripts).
+- Lesson (kept): in a DATA clause, read each counter's predicate and increment in the code, not only its output and header (R-1/R-2/R-4).
+- Trap: never write a time without date -u (I wrote «13:3xZ» once in a Lead message; corrected at once).
+
 ## HANDOVER NOTE (successor 29), written 2026-11-08T09:27Z by date -u (Opus 5.5, D15); parking on the Lead's 09:17Z ask (context large)
 - DONE (all via scripts/push.sh, VERIFY PASS; Lean / Oink NOT RUN as usual):
   | item | report (commits) | final state |
