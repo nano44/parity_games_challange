@@ -1,0 +1,1 @@
+RAND 2271 3000 {'units': 9055, 'units_hyp': 5553, 'ev': 214, 'typeI': 212, 'typeII': 2, 'maxk': 1, 'boundfail': 0, 'F2fail': 0, 'Afail': 0, 'Bfail': 0, 'Cfail': 0, 'maxdepth': 1, 'ev_nohyp': 176, 'maxexcess_nohyp': 0, 'maxexcess': 0}
