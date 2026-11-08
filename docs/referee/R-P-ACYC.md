@@ -346,3 +346,33 @@ After my verdict (d3d0a600) I read REFEREE-2's items only as they are quoted in 
     fix1/pacyc81t.py's taubad. My own taubad is 0 on the same 309 genomes (§C).
   - F-11 (my AC-7, packet text only): CORRECT. «(at most N iterations; its first fallback comes by iteration N + 1)».
 - Verdict: fixes entry 2 CORRECT; L-3 MATCHES. All statements stay as in §C (all SIGN; ACYC-XI PROVED-CONDITIONAL on R118 (k), (l)).
+
+## §E. Fixes entry 3 and line L-4 (R-G, R-B) (REFEREE successor 29, Opus 5.5, D15; date -u at writing 2026-11-08T06:31Z)
+- Objects: claude/l-si 0bc6f028 (ancestor of origin/claude/l-si, checked).
+  - L-3 there is unchanged: docs/si/P-ACYC-line-L3.txt sha1 03453361…
+  - L-4 docs/si/P-ACYC-line-L4.txt: sha1 85bb221f19ca457655c954f570552bc0f4d8095d, 3,080 B, one line, 41 «(» = 41 «)». EQUAL to the
+    Lead's check and prediction.
+- Byte test (my scratch/acyc_l4.py; strings from the Lead's 06:30Z relay, which are fixes entry 3's F-12 / F-13; acyc_logs/l4_bytetest.out):
+  - R-G and R-B old strings: once each in L-3, 0 in L-4. New strings: 0 in L-3, once each in L-4.
+  - L-3 + R-G + R-B in order is byte-equal to L-4.
+- Lane check: fix3/check_fix3.sh at 0bc6f028 (wired into check81.sh l. 43) prints «P-ACYC fix3 checks: PASS». It rebuilds L-4 with
+  mkL4.py and the fixes file through entry 3. The worktree stays clean.
+- Meaning of R-G (L41 sentence), checked against §4.2 LC-1 above:
+  - «the step w* = K1 of LAMBDA-CONST's proof»: this is LC-1's subject. The frozen proof leaves w* := «K1 if σ̄(K2) leads to K1, else
+    K2», and the repair fixes w* = K1.
+  - «(σ̄(K2) toward K1 is Odd's unique optimum)»: this is LC-1's repair, «σ̄(K2) is unique: K1 on Γ, r on Γ3». «Toward K1» covers both
+    games (r → K1 on Γ3). «Unique» is the point of LC-1's second half: the frozen proof's «fixed deterministic rule» needed a unique
+    optimum. CORRECT.
+  - «referee-originated (REFEREE R-P-ACYC §4.2 LC-1 and REFEREE-2 R2-P-ACYC G-1 / W-1, found independently …)»: LC-1 is in this report
+    §4.2 (heading «Lemma LAMBDA-CONST: SIGN WITH GAP LC-1»). REFEREE-2's G-1 / W-1 is named in fixes entry 1's header, which records the
+    Lead's 01:39Z overlap ruling «LC-1 = W-1». CORRECT.
+  - «restated in P-ACYC's fixes entry 1 F-1»: F-1 («LAMBDA-CONST decides w* = K1, and σ̄(K2) is unique») replaces the proof sentence
+    with the two-cycle-node comparison and «every optimal σ̄ has σ̄(K2) toward K1, and w* = K1 for every σ». CORRECT.
+  - «signed by both referees»: this report §C signs LAMBDA-CONST with F-1. REFEREE-2's signature is as the Lead records it for R122. I
+    did not re-read docs/referee-2/ for this.
+- Meaning of R-B (source note): the packet is L-SI successor 43's (packet l. 2). Fixes entries 1 and 2 are successor 44's (fixes file
+  l. 3, l. 99). CORRECT.
+  - Note, not an item: entry 3 (successor 45) changes only the line, as in P-N5-ASC §F's note. «entries 1-2 … successors 43-44» is
+    accurate for the packet's content.
+- Verdict: L-4 MATCHES (L-3 + exactly R-G and R-B; both CORRECT in meaning). All statements of P-ACYC stay SIGN (ACYC-XI
+  PROVED-CONDITIONAL, as before).

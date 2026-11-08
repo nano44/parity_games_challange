@@ -332,3 +332,37 @@ docs/referee/scratch/: asc_quotes.py, asc_cs.py, asc_game.py; asc_logs/cs.log, g
   (successor 63) change only the line, not the packet's statements, so the note is not false. A later line may name «fixes entries
   1-4; L-NEW successors 61-63».
 - Verdict: L-4 MATCHES (L-3 + exactly R5; R5 CORRECT). The line now matches the packet. All statements of P-N5-ASC stay SIGN.
+
+### §F addendum 1: notes N-I and N-A from the R121 second fill (REFEREE successor 29; date -u at writing 2026-11-08T06:30Z)
+Asked by the Lead (06:10Z) so that CHECKER does not have to rule. Not read: docs/referee-2/ beyond what the Lead quoted.
+- N-I (R5's «i.e.» gloss).
+  - Packet l. 52 defines seq_t(v) as «the e-vertices that lie in Π_t(v), in the order of the play»; the lemma's hypothesis (l. 80) is
+    seq_t(v) = (f, …).
+  - (⇐) If the first e-vertex on v's play is f and f ∈ Π_t(v), then f is the first e-vertex of Π_t(v) in play order: seq_t(v) = (f, …).
+  - (⇒) fails only if an earlier e-vertex e0 on v's play is outside Π_t(v). Then e0 lies on the cycle, or before the cycle node and
+    less relevant than it. Either way the cycle node is at least as relevant as an e-vertex. The cycle cannot be c_W's loop or lie
+    in the closed core, since then no e-vertex is in Π_t(v) and seq_t(v) is empty. So Λ_t(v) is an e-vertex. This is REFEREE-2's
+    condition, re-derived.
+  - What R5 meant: an unpacking of the packet's hypothesis, written to exclude the level-0 case of §E. It was not checked as an
+    equivalence in the corner case «Λ_t(v) is an e-vertex». The «i.e.» therefore overstates in that corner (0 plays of 71,430 there,
+    per the Lead's quote of REFEREE-2 33).
+  - No statement is false. The formal hypothesis «seq_t(v) = (f, …)» comes first and is the packet's. If the gloss is read as the
+    hypothesis instead, it is narrower (by ⇐), so the lemma still holds.
+  - Verdict: R-I OPTIONAL. Recommended, since a new line is needed anyway for R-A. Strings as the Lead gave them: old «(f, …), i.e.
+    the first e-vertex on v's play is f and f ∈ Π_t(v), then» → new «(f, …), then» (old string once in L-4).
+- N-A (ascents in CS(M)).
+  - The line's Theorem HUB-ASC(B) counts «ascents» of a hub's value in CS(M) and needs «every chain lex-nondecreasing». Both need an
+    order on CS(M)'s items.
+  - L-4 gives no order on «items 1..M» and defines an ascent only «of seq_t(v) a step to a more relevant element». Relevance is not
+    defined for numbers. The packet has both: l. 55 («An ascent of a sequence (c_1, …, c_p) of distinct items is an index i with
+    c_(i+1) more relevant than c_i») and l. 58 («items 1..M, compared by number («rank»)»).
+  - A signed statement in the line uses an undefined term. As with TF-L2 (P-TOWER-FUEL, undefined «fail»), this is REQUIRED.
+  - Verdict: R-A REQUIRED, with the Lead's strings: old «(items 1..M, a run of forests with every chain lex-nondecreasing)» → new
+    «(items 1..M compared by number, a run of forests with every chain lex-nondecreasing, an ascent a step to a larger item)» (old
+    string once in L-4).
+- Predicted lines (scratch/asc_l4na.py, asc_logs/l4_na.out; parentheses balanced in each):
+  - L-4 + R-A: sha1 eaff3343fa07decba94802bca0a46d97e8efcbf7, 5,252 B.
+  - L-4 + R-A + R-I (either order): sha1 fe4d3f902b6afde93384ebf625fa9bebcea0e1d0, 5,192 B.
+  - L-4 + R-I alone: a51e0e89…, 5,138 B (EQUAL to the Lead's figure; not sufficient).
+- Revised verdict on L-4: MATCHES with R-A required (R-I optional). L-4 = L-3 + exactly R5 still holds. All statements of P-N5-ASC
+  stay SIGN.
