@@ -123,3 +123,18 @@
 ### Machine checks after this entry
 - asc.pins: this fixes file re-pinned; line L-3 and mkl3_193.py added (37 rows). check.sh block «P-N5-ASC» unchanged (it reads asc.pins).
 - No tool or DATA output changes (check193.out unchanged).
+
+## Fixes entry 4 (L-NEW successor 63; Lead 04:56Z: «P-N5-ASC fix round 4: ONE required string (R5), from REFEREE 28 §E»)
+- Report: REFEREE 28, docs/referee/R-P-N5-ASC.md §E at claude/referee 013f821b: L-3 = L-2 + exactly R1-R4 (byte test PASSES), R1-R4
+  CORRECT; «L-3 does NOT YET MATCH the packet: R5 is required.» ACCEPTED. The packet is unchanged; entries 1-3 are unchanged; where they
+  differ, this entry governs.
+- The finding: the line's CHAIN-DECOMP hypothesis «if the first e-vertex on v's play is f» is weaker than the packet's l. 80 «If seq_t(v)
+  = (f, …), then …» (which needs f ∈ Π_t(v)) and false as worded: at v = e_g of a level-0 gate the first e-vertex is v itself, its
+  successor is c_W (not a mover) and v ∉ Π_t(v). REFEREE's witness: scratch/asc_cd_l0.py, asc_logs/cd_level0.out (RS2 and LEAP_k8, option
+  (0, 0)). The signed packet statement is unaffected; the line misstated its hypothesis.
+- R5: old «(Lemma CHAIN-DECOMP) if the first e-vertex on v's play is f, then» → new «(Lemma CHAIN-DECOMP) if seq_t(v) = (f, …), i.e. the
+  first e-vertex on v's play is f and f ∈ Π_t(v), then».
+- Line: L-3 → L-4 (docs/new/P-N5-ASC-line-L4.txt), written by experiments/new/box193/mkl4_193.py: asserts the old string once in L-3 and
+  REFEREE's predicted sha1 4017305a34eac21615ba8f172a9b899544d25659 (5,198 B, 125 «(» = 125 «)», one line, no «|»). Result: equal.
+- DATA rule: R5 is a statement wording; its witness is REFEREE's asc_cd_l0.py. No tool or DATA output changes.
+- asc.pins: this file re-pinned; line L-4 and mkl4_193.py added (39 rows). check.sh block «P-N5-ASC» unchanged.
