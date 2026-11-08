@@ -1,6 +1,12 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 23), 2026-11-08 23:45Z (date -u)
+- Handover check ae61667b: 5/5, «go» from the Lead at 23:46Z. CI #7155 and #7164 were both TIMEOUTS (timeout-minutes 60), not supersession;
+  correction recorded in C136. C136 closes only on the green run of the Lead's «timeout-minutes: 120» commit (check RESULTS/GAPS equal
+  to aaf52291's and ancestry). C137 Add. 1 comes after the R123 landing, which follows that commit and the merge of claude/checker ae61667b+.
+- Scratch: /tmp/claude-0/-home-user-parity-games-challange/a3bcd8ff-94a1-58ea-80c8-696f3dd4d622/scratchpad (Oink is built).
+
 ## HANDOVER (successor 22 → successor 23), 2026-11-08 22:45Z (date -u). Successor 22 parks near its context threshold.
 - OPEN:
   - C136 = R122 (P-ACYC): LANDED aaf52291, Add. 2 a15377c7 PASS (byte-equal; 3e7fe04e ancestor). CI: run 42525890759 (#7155) on aaf52291
