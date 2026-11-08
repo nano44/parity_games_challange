@@ -404,3 +404,24 @@ Read only after this report was on origin (bf02e618). No verdict of mine changes
   byte-equal to L-3's ✓.
 - **Verdict: L-4 MATCHES** (Opus 5.5, D1). Statement verdicts unchanged: all SIGN (ACYC-XI PROVED-CONDITIONAL on R118 (k), (l), as
   before).
+
+## Addendum 5: byte test of line L-5 (REFEREE-2 successor 35, Opus 5.5, D1; 2026-11-08 16:43Z by date -u; independent of REFEREE)
+- Object: claude/l-si 358ede16eba893e13d9b3229db4291ae7d24d2a4 (Lead 16:42Z). docs/si/P-ACYC-line-L5.txt, sha1
+  7a84e0944b0f33ce4d569604bec41d6e9236d82f, 3,321 B, one line, 43 «(» = 43 «)», no «|». Fixes entry 4 (F-14 = R1, F-15 = R2 + R3).
+  docs/si/P-ACYC.md is unchanged from 0bc6f028 to 358ede16 (git diff empty).
+- (1) Byte test. Own script R2-P-ACYC/bt_l5.py (out bt_l5.out) uses CHECKER 22's strings, verbatim from C136.md l. 84-89 at
+  claude/checker b2fe3440. Each old string is once in L-4 (85bb221f, 0bc6f028) and 0 times in L-5. Each new string is 0 times in L-4 and
+  once in L-5. **L-5 == L-4 + R1 + R2 + R3: True.** Nothing else changed.
+- (2) Meaning.
+  - R1 against packet §1 l. 69 («σ̄ is an optimal counterstrategy: Ω_σ̄(v) ⊴ Ω_τ(v) for every Odd strategy τ and every v»). R1's «at every
+    vertex its play value is ⊴ the value under every Odd strategy» is exactly that pointwise sense, which BETA-ACYC's gate comparison
+    needs (my earlier N-1).
+  - The citation is right for the runs the line's DATA uses. R104 carries [1E-N3] = R57 (b) («S1's σ̄ … are pointwise optima»), and the
+    σ̄ along N5′-xi is S1's.
+  - Note (optional, no change asked): for IDEAL-CYC's σ̄, a defined object in R118, existence of a pointwise optimum is VJ00 §4 /
+    Friedmann §3 (R118 [VJ]) rather than R57 (b). R1 defines the word, so this is not an error.
+  - R2 / R3 against pacyc81.py. Docstring l. 4: «on states 0..k1-1», k1 the first iteration with S4c's fallback flag. The loop breaks
+    there (l. 28). fix1/pacyc81t.py does the same (l. 4, 33-34) and returns T3 = k1 − 1. With the first fallback at T3 + 1 (R118 (l)),
+    «states 0, …, T3 before the first fallback» names exactly the counted set. R3's «N5′-xi's states 0, …, T3» is the same set.
+- (3) Fixes entry 4 is line-only. It quotes C136 E-1 / E-2 and states R1-R3 and L-5, with no proof step and no statement change.
+- (4) Verdict: **L-5 MATCHES** (byte test, and in meaning). Statement verdicts unchanged.

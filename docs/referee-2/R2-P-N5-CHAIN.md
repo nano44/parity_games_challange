@@ -281,3 +281,49 @@ My verdicts rest on my own derivations above and on my own engine. I did not rea
   - Their CO-1 (optional, not taken by Lead ruling): I have no view against it.
 - Different sets, same outcome: theirs 2,061 runs (1,580 Ξ-cyclic, 61 pinned files), mine 6,069 (69 pinned runs + 6,000 own). Every
   counter is 0 on both, and the maxima are equal (T3 129, W 32).
+
+## Addendum 2: byte test of line L-3 (REFEREE-2 successor 35, Opus 5.5, D1; 2026-11-08 12:15Z by date -u)
+- Object: claude/l-new 219e39331b0de030ccedf0b1994cad58c490565e (Lead 12:14Z). docs/new/P-N5-CHAIN-line-L3.txt, sha1
+  c484795c888ab46cee07038094368ba28da0055d, 8,450 B, one line, 164 «(» = 164 «)», no «|». 8b67d40e (L-2) is an ancestor. The packet is
+  unchanged (6e613ba7). Fixes entry 2 is line-only. The Lead ruled 11:38Z: strings, not tool fixes; N-1 taken, N-2 not.
+- Own script R2-P-N5-CHAIN/bt_l3.py (out bt_l3.out), with the strings taken from this report at 0e5c7c37. Each old string (R-1, R-2, R-4,
+  N-1) is once in L-2 and 0 times in L-3. Each new string is 0 times in L-2 and once in L-3. Both strings of each pair are verbatim in my
+  report. **L-3 == L-2 + R-1 + R-2 + R-4 + N-1: True.** Nothing else changed.
+- mkl3_196.py rebuilds L-3 byte-equal on a git archive of 219e3933. chain.pins: 55/55 match.
+- Fixes entry 2's W-1 note states my repair correctly, including its use for box 197's ASC-WIT (c) (pe_g1 and pβ_g1 are non-core pads). N-2
+  not taken is acceptable: my t3def is 0 and is on record here.
+- Verdict: **L-3 MATCHES.** Statement verdicts unchanged. From my side P-N5-CHAIN may land with L-3, after P-N5-END and R121 (CHAIN3 and
+  HUB-ASC-G3 are PROVED-CONDITIONAL on them).
+
+## Addendum 3: the boundary step in (Q5) (REFEREE-2 successor 35; 2026-11-08 12:21Z by date -u)
+- REFEREE 28's P-N5-QUIET step (see R2-P-N5-QUIET.md Add. 3) is also needed in this packet's (Q5). The Bellman-Ford F4′ at a β-face
+  needs β ∉ Π of the BOUNDARY value. My Re-derivation above covered only the path and Ω_t(z).
+- It holds on Γ3, for each kind of boundary point:
+  - e-face boundary y in (w, S ∖ {e}): β ∈ Π(y) would give S = E(β) ⊆ E(y).
+  - core exit through pb: Π = {K0, K3}.
+  - w itself: Π = ∅.
+- SIGN. Verdicts and L-3 MATCHES unchanged. An optional line clause naming the step is at the Lead's choice.
+
+## Addendum 4: byte test of line L-4 (REFEREE-2 successor 35, Opus 5.5, D1; 2026-11-08 13:55Z by date -u)
+- Object: claude/l-new 87603d07 (Lead 13:54Z). docs/new/P-N5-CHAIN-line-L4.txt, sha1 a69c8aa96fb0b67c6c0a3f6d11670a0b57ba9331, 9,082 B,
+  one line, 174 «(» = 174 «)», no «|». Fixes entry 3 is line-only.
+- Own script R2-P-N5-QUIET/bt_l34.py (out bt_l34.out). It reads mkl4_196.py's list by ast, applies it to L-3 (c484795c, 219e3933) in
+  order, and finds each old string once at its turn. R-W's old string is created by R-G3, as the generator states. **L-4 == L-3 + R-G3,
+  R-W, R-B3: True.**
+- Meaning:
+  - R-G3 states my Add. 3 step correctly: an e-face target y of class (w, S ∖ {e}) (else S = E(β_g) ⊆ E(y)); the pb exit, Π = {K0,
+    K3}; w, Π = ∅.
+  - R-W states my W-1 repair correctly: (F-cls3)'s convexity and E-MON3's reason hold for non-core vertices, and the eight core vertices
+    are constant.
+  - R-B3 names fixes entries 1-3 and successors 64-65. Right.
+  - **Attribution caveat:** R-G3's Γ3 form and R-W say «signed by both referees». At claude/referee 6c8d6956 (my fetch at 13:55Z),
+    docs/referee/R-P-N5-CHAIN.md has no REFEREE section that signs W-1 or the Γ3 boundary step (§C covers L-2 only). Both clauses
+    become true when REFEREE 30's signature is on origin. Until then, my side is signed (Add. 1, Add. 3).
+- Verdict: **L-4 MATCHES** (byte test, and in meaning). It is to land only after REFEREE 30's signature of W-1 and of the Γ3 step is on
+  origin, or the two «signed by both referees» clauses are reworded. Statement verdicts unchanged.
+
+## Addendum 5: attribution caveat closed (REFEREE-2 successor 35; 2026-11-08 14:25Z by date -u)
+- Re-fetched claude/referee at 3e02e7c3. b5ac2304, 91334ccd and 3e02e7c3 are ancestors. R-P-N5-CHAIN.md §D follow-up 1 (l. 203-) re-derives
+  W-1 and signs it. §D follow-up 2 (l. 237-250) signs the Γ3 (Q5) boundary step: «I SIGN it. With REFEREE-2 35's signature it is signed
+  by both referees.» §E (l. 253-) finds L-4 MATCHES. So both «signed by both referees» clauses of L-4 are true. **Caveat closed: L-4
+  MATCHES without condition.**
