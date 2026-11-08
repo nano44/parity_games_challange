@@ -208,3 +208,27 @@ of tops(v, I) has at most |tops(v, I)| ≤ T3 letters (one change of v per step)
   switch exponentially often as tops of one vertex in one Λ-interval.
 - DATA so far (asc197.py maxalt = A per genome; units as in §5): random families ≤ 3; pinned genomes ≤ 5; towers h 2..8 ≤ 5; NK6_cl21 6
   (relayed). Max A over everything measured: 6, at T3 ≤ 129.
+
+## Addendum 3 (L-NEW successor 65, 14:50Z by date -u; L-RED 60 R226-core197 §5-§8, claude/l-red 677b4edb, relayed by the Lead 13:28Z)
+- L-RED 60 verdicts (relayed; R226 not re-read here): PAIR-COUNT SURVIVES; ALT-EQUIV SURVIVES for A ≥ 1; W-2 and a counter slip (below);
+  DS-TOPS with s ≤ 5 DEAD.
+### W-2 (taken): the bounds for A = 0
+- If no tops sequence has a letter (instance OFFUP_n4, L-RED 60: M 6, maxtops 0), A = 0 and ALT-EQUIV's bound 2 + C(M, 2)·(A − 1) is
+  negative for M ≥ 3. The cause is PAIR-COUNT's sum over ALL pairs: a pair of letters that do not both occur has A_xy ≤ 1 and adds
+  A_xy − 1 ≤ 0. Corrected statements (the proofs are unchanged: only pairs that receive an index count, and those have A_xy ≥ 2):
+  - **Lemma PAIR-COUNT (corrected).** |τ| ≤ 1 + Σ_{x<y} max(0, A_xy − 1) ≤ 1 + C(m, 2)·max(0, A − 1).
+  - **Theorem ALT-EQUIV (corrected).** With A := max(1, the maximum over v and I of the longest two-letter alternation in tops(v, I)),
+    T3 ≤ (1 + n3·((2M + 3)·(2 + C(M, 2)·(A − 1)) − 1))·(L3 + 1), and A ≤ max(1, T3). T3 is polynomial in N + M iff A is.
+### Counter slip in asc197.py (fixed)
+- maxalt printed 0 for a tops sequence with one letter, where the longest alternation is 1 by definition. Fixed: «al = 1 if tops else 0»
+  (one letter: 1; empty: 0). maxalt was only a record (no PASS/FAIL test reads it), and every value ≥ 2 is unchanged.
+- Re-run with the fixed tool (scratchpad, ROOT set; output box197/sweep197_fix.out, which supersedes sweep197.out and hfam197.out as the
+  record): check197.sh output byte-equal to the pinned check197.out (no re-pin needed). Against the old record (sweep197.out followed by hfam197.out),
+  7 rows change, each only in maxalt, 0 → 1: DEAD_SEG2P_d4_N8, cyc2_d7, cyc_d3, cyc_d4, cyc_d7, cyc_d8, rd3_d3 (one-letter tops sequences);
+  every other field of every row is equal, and every lemma counter is still 0 with the controls firing.
+### DS-TOPS
+- DS-TOPS with s ≤ 5 is DEAD: L-RED 60's DSALT7_n108 (N 108, M 206, T 11) has A = 7, so some tops sequence there is no order-5 DS
+  sequence (relayed; not re-run here). With NK6_cl21 (A = 6, Addendum 2) the measured A on built instances is now 7, both short runs
+  (T 11). DS-TOPS stays stated with an unspecified constant s; I hold no value of s and give the conjecture little weight.
+- L-SI's designed towers stay at A ≤ 5 (HP8b: A 4 at T 127, relayed). The two climbed instances with the largest A have small T, so in the
+  data A does not track T: consistent with ALT-POLY, which is a restatement of G-N5-TIME on Γ3 (Addendum 2) and the form the chain needs.

@@ -23,6 +23,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   Theorem ALT-EQUIV (T3 poly iff max pairwise alternation A poly); CONJECTURE ALT-POLY = restatement in a two-letter form.
 - QUIET fixes entry 4 + L-4 (R-B2; sha1 0809da25, 5,433 B; L-3 never routed). CHAIN fixes entry 3 (Γ3 (Q5) boundary step + W-1 repair
   restated) + L-4 = L-3 + R-G3 + R-W + R-B3 in order (sha1 a69c8aa9, 9,082 B; box196/mkl4_196.py; chain.pins 57).
+  Addendum 3 (L-RED 60 R226): W-2 fixed (PAIR-COUNT max(0, A_xy − 1), ALT-EQUIV A := max(1, ·)); asc197 maxalt one-letter fix, re-run
+  sweep197_fix.out (7 rows maxalt 0 → 1, nothing else); DS-TOPS s ≤ 5 DEAD (DSALT7_n108 A 7, relayed).
   Things only I know: asc197.py counts Rtop per (time, top); maxR counts all re-entries; sweep197.out ran with ROOT set from the scratchpad.
 
 ## HANDOVER (successor 64, PARKING 2026-11-08 09:12Z by date -u; Lead 09:13Z: «your next item is the HANDOVER … push, send me the SHA, then stop»)

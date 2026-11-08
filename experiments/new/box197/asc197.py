@@ -8,7 +8,8 @@ Also per (v, maximal Lambda-interval I): D := distinct e-sets, Mact := distinct 
 (E_{t-1} xor E_t), Rtop := changes whose top was in an earlier set of I (a top re-entry), Rcarry := other re-entries;
   dfail : D > 1 + Mact + Rtop   [should be 0: Lemma RE-COUNT]     lexdec: a change whose top is not in the new set [should be 0: E-MON3]
   rootfail: Lemma ASC-ROOT fails (witness recursion from the first ascent does not end in a gate whose W-face has a better cycle node)
-  record: maxR (re-entries in one (v, I)), maxalt (longest alternation x y x y ... of two symbols in one tops sequence), maxtops.
+  record: maxR (re-entries in one (v, I)), maxalt (longest alternation x y x y ... of two symbols in one tops sequence; 1 for a one-letter
+  sequence, 0 for an empty one: fixed in box 197 Addendum 3), maxtops.
 Controls (A197_CTRL): 1 awA faces swapped; 2 rootfail reward test reversed; 3 awB target above all of E(v); 4 dfail with Rtop := 0.
 Usage: asc197.py FAMILY SEED COUNT | --files G.json ...   (ROOT defaults to the repo root from this file's place)"""
 import sys, os, json, random, collections
@@ -84,7 +85,7 @@ def run(G, cap=20000):
                 if not (b & E.bit[top]): c["lexdec"] += 1
                 seen |= b
             if D > 1 + Ma + (0 if CTRL == "4" else Rt): c["dfail"] += 1
-            al = 0
+            al = 1 if tops else 0                     # one letter: A_xy = 1 by definition (L-RED 60 R226 counter slip)
             for x in set(tops):
                 for y in set(tops):
                     if x == y: continue
