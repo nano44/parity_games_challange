@@ -1,0 +1,16 @@
+it 0 best (-99, 0, 0) N 2
+it 200 best (-1, 0, 4) N 2
+it 400 best (-1, 0, 4) N 2
+it 600 best (-1, 0, 4) N 2
+it 800 best (-1, 0, 4) N 2
+it 1000 best (-1, 0, 4) N 2
+it 1200 best (-1, 0, 4) N 2
+it 1400 best (-1, 0, 4) N 2
+it 1600 best (-1, 0, 4) N 2
+it 1800 best (-1, 0, 4) N 2
+it 2000 best (-1, 0, 4) N 2
+it 2200 best (-1, 0, 4) N 2
+it 2400 best (-1, 0, 4) N 2
+it 2600 best (-1, 0, 4) N 2
+it 2800 best (-1, 0, 4) N 2
+FINAL seed 22 best (−min slack, max non-PRIV flips, T) (-1, 0, 4) np 4 violnp 0

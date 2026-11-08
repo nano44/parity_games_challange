@@ -16,6 +16,7 @@ lock83.py, meas83.py and L-SI's runners are not run and not imported.
 | «each bit moves at most 3 times per Λ-interval» (§2 Consequence) | SLIP in wording, harmless | true for the bit's VALUE (SET status). False for σ(B_l): B_6 of LR6_exitup changes option 18 times (§2) |
 | LADDER-R is DEAD as a counter (§0) | SURVIVES | follows from LADDER-2 plus R118 (e) |
 | «(c) the hub pair is the only open way out» (§0, §4 READING) | SHARPENED | Lemma PRIV-FLIP (§3, PROVED lane): the hub pair is also polynomial under [E-LEV] with bounded U(G), UNLESS a play from the bit's own options returns to the bit |
+| L-SI 44 CONJECTURE (box84 §4): PRIV-FLIP's bound without PRIV | PROVED (lane) | Lemma FLIP (§4): same bound, no PRIV, no β-parity; DATA 0 violations incl. L-SI's CY gadgets and adversarial climbs |
 
 No hypothesis is used without being stated. I checked these candidates; each one is either stated or not needed:
 - E-MON's premise: P-N5-ASC §3 states it for ANY vertex with a constant cycle node. LOCK-UP assumes constant cycle nodes on I.
@@ -150,7 +151,92 @@ DATA for PRIV-FLIP (priv222.py; unit: (B, SET-type S, Λ-interval with Λ(B) ∈
   t1_* hubs of R218); out/priv_inst.txt. 16 files there are not genomes and were skipped (KeyError 'N').
 - The bound is far from tight on this data. The data only shows that the inequality held. The proof is §3.
 
-## 4. Not done (named)
+## 4. Lemma FLIP: PRIV-FLIP's bound WITHOUT PRIV (Lead 04:00Z: L-SI 44's CONJECTURE, claude/l-si 83d49640 docs/si/box84-hubpair.md §4)
+Target: L-SI's CONJECTURE «[PRIV-FLIP's] bound holds for every SET-type option when Λ(B) ∈ {K1, K2}». L-SI's evidence was 4 CYC gadgets
+and 4 climbs; L-SI called it weak. L-SI's Lemma LIVE-BREAK (same note) is the obstacle a counterexample would have to get around.
+
+Verdict: PROVED (lane, unrefereed). There is no counterexample to freeze. PRIV was never needed, and neither is β_S's parity. The
+proof below replaces §3's.
+
+**Lemma FLIP (PROVED, lane; premises: F1 / E-MON, Odd's optimal response, Howard best switch with ties kept, [DEF]).**
+Setting:
+- Runs of IDEAL-CYC(G) for any genome G. B is a mover. S is a SET-type option of B: Ξ-target B itself, any β-parity. Its gate is g_S, its
+  e-vertex e_S, its β-vertex b_S (single edge b_S → B), and w is the successor of e_S.
+- I is an interval of states on which Λ(B) = λ ∈ {K1, K2}, and Λ(w) and Λ(g_o) are constant for every option o ≠ S.
+- No condition on where any play goes: plays from w or from the g_o may pass B.
+
+Claim: #{t : t, t + 1 ∈ I, [σ_t(B) = S] ≠ [σ_(t+1)(B) = S]} ≤ 1 + (D_E,I(w) − 1) + Σ_(o ≠ S) (D_E,I(g_o) − 1).
+
+Define P_t := [Λ(w) = λ, and for every o ≠ S: reward(Λ(g_o)) < reward(λ), or (Λ(g_o) = λ and {e_S} ∪ E_t(w) >lex E_t(g_o))].
+On I the cycle nodes in P are constant, so P_t can change only where E(w) or some E(g_o) changes.
+
+Proof.
+- (1) If σ_t(B) = S, then Odd takes e at g_S, w's play does not pass B, Λ(w) = λ, and Ω_t(g_S) has cycle node λ and e-set
+  {e_S} ∪ E_t(w).
+  - Odd taking β would make B's play the cycle B g_S b_S, with node b_S (priority ≥ 6). But b_S ≠ λ.
+  - So B's play is B g_S e_S followed by w's play.
+  - If w's play passed B, B's play would be a cycle through e_S. Its node would be at least as relevant as e_S, so it could not be K1
+    or K2.
+  - Hence Λ(w) = Λ(B) = λ, and e_S, which is more relevant than λ, lies in Π. g_S (priority 1) does not.
+- (2) If σ_t(B) ≠ S, then no play passes g_S: its only in-edge is from B. So e_S ∉ E_t(v) for every vertex v ≠ e_S.
+- (3) Comparisons. Take two values with cycle node λ and different e-sets. The most relevant vertex of their Π-difference is an
+  e-vertex: every vertex more relevant than an e is c_W, K0 or K3; c_W is never in a Π; K0 and K3 lie on both plays or on neither
+  (E-MON's proof, P-N5-ASC §3). So such values are ordered by their e-sets in lex order.
+- (4) on → off forces ¬P_t.
+  - Let σ_t(B) = S and P_t hold. By (1), Ω_t(g_S) has node λ and e-set {e_S} ∪ E_t(w).
+  - Every o ≠ S has either a node of lower reward (strictly worse), or node λ and a lex-smaller e-set (strictly worse, by (3)).
+  - So S is the unique best option, and Howard keeps it: σ_(t+1)(B) = S.
+- (5) off → on forces P_t. Let σ_t(B) ≠ S and σ_(t+1)(B) = S, with t, t + 1 ∈ I, and suppose ¬P_t.
+  - (i) Λ(w) ≠ λ. At t + 1, (1) gives Λ_(t+1)(w) = λ, against the constancy of Λ(w) on I.
+  - (ii) Some o has reward(Λ(g_o)) > reward(λ). e_S's play is e_S followed by w's play; it cannot return to e_S, by (2). So the e-face
+    of g_S has node Λ(w) = λ. Odd minimises at g_S, so Ω_t(g_S) ⊴ (e-face) ◁ Ω_t(g_o), and Howard does not choose S.
+  - (iii) Some o has Λ(g_o) = λ and E_t(g_o) ≥lex {e_S} ∪ E_t(w). By (2), e_S ∉ E_t(g_o), so the two sets differ and «>» holds.
+    The e-face has node λ and e-set {e_S} ∪ E_t(w): w's play may pass B here, but it never passes e_S, by (2). By (3),
+    Ω_t(g_S) ⊴ (e-face) ◁ Ω_t(g_o), and Howard does not choose S.
+- (6) By (4) and (5), the status [σ(B) = S] switches on only at a state where P holds, and off only at a state where P fails. So
+  between two consecutive changes of P_t it changes at most once.
+  - P_t changes only where E(w) or some E(g_o) changes.
+  - By E-MON (each of these vertices has a constant cycle node on I), each of those e-sets moves only upward in lex order, so it
+    changes at most D_E,I(v) − 1 times. ∎
+
+Where PRIV was hiding in §3, and why it is not needed:
+- §3 used PRIV to make e_S private, and to make the values of w and g_o independent of σ(B).
+  - Privacy comes for free. When B is on S, (1) shows w's play cannot return to B. When B is off S, (2) shows nothing passes g_S.
+  - Independence is not needed. P_t is defined from the ACTUAL e-sets at t, whatever σ(B) does to them, and E-MON still makes each of
+    them monotone.
+- When g_o's play does return to B, a flip of B changes E(g_o) as well. That change is charged to D_E,I(g_o), and HUB-ASC-G bounds
+  D_E,I(g_o) for every vertex.
+- L-SI's LIVE-BREAK is consistent with this. A returning route of B's CURRENT option is broken by Odd, so it enters only as a hidden
+  value, which is exactly the role of E_t(g_o) in P_t.
+
+**Corollary FLIP-POLY (PROVED, lane).**
+- If every seq_t(v) for v ∈ {w} ∪ {g_o} has at most B ascents, the flips of [σ(B) = S] on such an I number at most
+  1 + deg(B)·(F′_B(M) − 1) (HUB-ASC-G).
+- By R118 (e), each of the deg(B) + 1 vertices B, w and g_o (o ≠ S) changes its cycle node at most 2M + 2 times, so the run splits
+  into at most (deg(B) + 1)(2M + 2) + 1 such intervals, plus one flip per boundary.
+- Under [E-LEV], B ≤ U(G) (UP-B). So, on the part of the run where Λ(B) ∈ {K1, K2}, every SET-type option of every mover flips
+  polynomially often in N + M when U(G) = O(1).
+- No PRIV, no LADDER structure and no [OPT] are needed. B-ONLY / [OPT] are needed only to drop «Λ(B) ∈ {K1, K2}»: by B-ONLY, Λ(B) is
+  then a β, K1, K2 or c_X, and (1) needs λ ≠ b_S. That extension is not claimed here.
+
+Consequence (READING):
+- Under [E-LEV] with U(G) = O(1), no mover's SET option can be an exponential counter bit within polynomially many Λ-intervals, whatever
+  routes return to the bit.
+- An exponential SET counter on IDEAL-CYC therefore needs unbounded U(G), the open region of P-N5-ASC. This closes branch (c′) of §3's
+  consequence: the returning play no longer helps.
+- It says nothing about non-SET options or about P-steps: switches decided by β's when e-sets are equal.
+
+DATA (priv222.py now also checks non-PRIV units: violnp = units with flips > bound, npslack = min(bound − flips); climb222.py):
+- L-SI's gadgets, frozen copies in experiments/red/r222/inst/ (sha1 in inst/SHA1SUMS, from `git show 83d49640:<path> | sha1sum`):
+  - CY2_lr, CY2_hp, CY3_hp, CY4_hp: violnp 0, npslack 5 / 5 / 7 / 13, max non-PRIV flips 3.
+  - climb_s11-s14: violnp 0, npslack 0-1.
+- Structured «ret» family (priv222.rgen_ret: every mover has a SET option, the other Ξ-targets point down or sideways so routes climb
+  back): 500 genomes, 167 non-PRIV units, violnp 0. These rarely flip.
+- Adversarial climbs (climb222.py, seeds 21-24, 3,000 iterations each; score = (−min slack over non-PRIV units, max non-PRIV flips, T);
+  out/climb222_2*.txt, best genomes out/climb222_best_*.json): violnp 0 in all four. Best min slack 1 / 1 / 0 / 1: seed 23 attains the bound on
+  a non-PRIV unit. Max non-PRIV flips 1. As L-SI found, random cyclic genomes rarely flip, so this DATA is weak; the proof carries the result.
+
+## 5. Not done (named)
 - N5′-xi on Γ3 for the box 83 instances, with my own tools or Oink n5v / n5b: NOT RUN.
   - Oink is not built in this container, and the R221 worktrees are gone.
   - L-SI's table reports 1 fallback and T + 3 iterations, consistent with CONJECTURE ENDGAME-3.
@@ -158,7 +244,8 @@ DATA for PRIV-FLIP (priv222.py; unit: (B, SET-type S, Λ-interval with Λ(B) ∈
     matters.
 - No referee has seen PRIV-FLIP.
 
-## 5. Sources opened
+## 6. Sources opened
+- claude/l-si 83d49640 docs/si/box84-hubpair.md §2b, §4 (LIVE-BREAK, the CONJECTURE, CY gadgets).
 - claude/l-si 2a44b7d6: docs/si/box83-ladder.md (all), experiments/si/box83/ladder83.py (class definition; e / β keys).
 - claude/l-new 95dc76d7: docs/new/P-N5-ASC.md §1-§3 (E-MON, CHAIN-DECOMP, [DEF] priority facts), §5 (HUB-ASC-G), §6 (UP-JUMP, UP-B,
   NOUP).

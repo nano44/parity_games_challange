@@ -158,6 +158,7 @@ Premises, named once and cited by tag below:
 | 7 | PRIV-FLIP | SET-type option S of mover B on a Λ-interval I with Λ(B) ∈ {K1, K2} and PRIV (no play from S's W-target or from B's other gates passes B): #changes of [σ(B) = S] ≤ 1 + Σ_{v ∈ {w} ∪ {g_o}} (D_E,I(v) − 1) | [F1], Odd optimal, E-MON, [DEF], Howard best switch | R222-lockup.md §3 | PROVED (lane) |
 | 8 | PRIV-POLY | 7 + HUB-ASC-G / UP-B: per Λ-interval ≤ 1 + deg(B)(F′_B(M) − 1); over the run polynomial for bounded U(G) under [E-LEV] | 7, HUB-ASC-G, UP-B, [R118e] | R222-lockup.md §3 | PROVED (lane) |
 | 9 | (DEAD) | «a RET start by a τ-flip with a closed loop changes Λ(g)» | — | this file §1 | DEAD: inst/CS_11_526.json (sha1 047bd550…), CS_11_1399.json (5ec8880b…) |
+| 10 | FLIP (supersedes 7) | 7's bound WITHOUT PRIV and for any β-parity of S: #changes of [σ(B) = S] ≤ 1 + (D_E,I(w) − 1) + Σ_(o ≠ S) (D_E,I(g_o) − 1) on intervals with Λ(B) ∈ {K1, K2} and Λ(w), Λ(g_o) constant | [F1], Odd optimal, E-MON, [DEF], Howard best switch | R222-lockup.md §4 | PROVED (lane) |
 
 Remarks for a packet writer:
 - Item 7's Λ(B) ∈ {K1, K2}: B-ONLY (1) allows a β or c_X as cycle node too. Item 7's proof needs only that λ is less relevant than β_S,
@@ -166,8 +167,8 @@ Remarks for a packet writer:
 - Items 4 and 6 bound RET STRETCHES. Item 2 says every face flip is a strict ⊴-comparison. Neither bounds Howard's iteration count by
   itself: GATE-POLY (R219) still needs ΣH_g (H_g = 0 by 1, R221-quiet.md §3) and the P-step accounting (box 194 QUIET / T-QUIET,
   SURVIVES).
-- Item 7 is the only one about Even's choices. It does not cover a bit whose own option's play returns to it (PRIV fails). That case is
-  OPEN, and it is where an exponential SET counter would have to live under bounded U(G).
+- Items 7 / 10 are the only ones about Even's choices. Item 10 (FLIP) drops PRIV: a bit whose own option's play returns to it is covered.
+  An exponential SET counter therefore needs unbounded U(G), or Λ(B) ∉ {K1, K2}. Not covered: non-SET options, and β-decided switches.
 - DATA backing: §1-§2 of this file; R222-lockup.md §2-§3; R221-ladder.md §7-§8; R221-quiet.md §3. No referee has seen items 5-8.
 
 ## 7. Sources opened
