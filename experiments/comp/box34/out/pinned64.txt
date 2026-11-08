@@ -60,3 +60,6 @@ TIMEOUT box197/hfam/H7A.json 600 s
 OK box197/hfam/H7B.json own T3 37 maxalt 4 | fix 37 4 | old 37 4
 TIMEOUT box197/hfam/H7C.json 600 s
 TIMEOUT box197/hfam/H8A.json 600 s
+TIMEOUT box197/hfam/H8B.json 600 s
+TIMEOUT box197/hfam/H8C.json 600 s
+DONE 58 OK, 0 MISMATCH, 6 TIMEOUT, 0 REF-ERR
