@@ -1,0 +1,7 @@
+start (12, 2, 1, -265) {'maxm': 1, 'nm': 56, 'C': 2, 'idfail': 0, 'T': 13, 'Dwt': 12, 'DwtJ': 12, 'couples': 27, 'rw2': 0, 'rw2w': 0, 'b0s': 0, 'nspl': 2} N 84 M 181
+11 Dwt 13 DwtJ 13 rw2 0 b0s 0 maxm 1 nm 5 C 2 idfail 0 T 13 N 85 M 184
+71 Dwt 14 DwtJ 14 rw2 0 b0s 0 maxm 1 nm 289 C 2 idfail 0 T 15 N 87 M 201
+125 Dwt 15 DwtJ 15 rw2 0 b0s 0 maxm 1 nm 238 C 2 idfail 0 T 15 N 89 M 212
+145 Dwt 19 DwtJ 19 rw2 0 b0s 0 maxm 1 nm 480 C 2 idfail 0 T 19 N 93 M 223
+215 Dwt 19 DwtJ 19 rw2 0 b0s 0 maxm 1 nm 661 C 3 idfail 0 T 21 N 97 M 239
+303 Dwt 20 DwtJ 20 rw2 0 b0s 0 maxm 1 nm 760 C 3 idfail 0 T 22 N 102 M 262

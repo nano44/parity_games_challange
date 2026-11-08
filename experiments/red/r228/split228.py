@@ -16,6 +16,8 @@ Per (v, I, y) with c_y >= 1 tops:
   spl3m: #split pairs > 3M;   nspl = max #split pairs per (v, I, y);  C = max c_y.
   Dwt  := max over (v, I, y) of Dhi_y(wt(y), J), J = wt(y)'s maximal Lambda-interval holding y's first top (the open core of Add. 2 A2.4);
   DwtJ := the same over ALL Lambda-intervals J of wt(y) for every letter y that is a top somewhere (context, not a claim).
+  Dhib := max over (v, I, y, (u, b)) of Dhi_y(b, J_b) (SPLIT-COUNT's summand; Lead 21:37Z climb target; a PER-TUPLE MAXIMUM);
+  sumD := max over (v, I, y) of the SPLIT-COUNT sum  sum_(u,b) Dhi_y(b, J_b) (per-triple maximum).
 Units: couple (dn2, rh2, rw2, rw2w, b0s), triple (v, I, y) (sp, spw, jbfail, spl3m); couples = #same-pair couples; all counters are TOTALS,
 C / nspl / Dwt / DwtJ are per-unit MAXIMA. Control CTRL=uy (U_y := empty set): rh2 must fire on every couple.
 Usage: split228.py G.json ...   (census(G, cap) for climbs)"""
@@ -47,7 +49,7 @@ def census(G, cap=3000):
         d = A ^ B
         return bool(d) and max(d, key=lambda e: rk[e]) in A
     c = collections.Counter(T=T)
-    for k in ("couples", "dn2", "rh2", "rw2", "rw2w", "b0s", "sp", "spw", "jbfail", "spl3m", "C", "nspl", "Dwt", "DwtJ"): c[k] = 0
+    for k in ("couples", "dn2", "rh2", "rw2", "rw2w", "b0s", "sp", "spw", "jbfail", "spl3m", "C", "nspl", "Dwt", "DwtJ", "Dhib", "sumD"): c[k] = 0
     topletters = set()
     for v in range(n):
         t = 0
@@ -74,7 +76,7 @@ def census(G, cap=3000):
                 for (uu, b), L in grp.items():
                     ja, jb = interval(b, L[0])
                     if any(not (ja <= i <= jb) for i in L): c["jbfail"] += 1
-                    s_sp += len({Uy(E(s, b)) for s in range(ja, jb + 1)})
+                    dh = len({Uy(E(s, b)) for s in range(ja, jb + 1)}); s_sp += dh; c["Dhib"] = max(c["Dhib"], dh)
                     s_spw += len({Uy(E(s, wty)) for s in range(L[0], L[-1] + 1)})
                     for x in range(len(L)):
                         for w_ in range(x + 1, len(L)):
@@ -92,7 +94,7 @@ def census(G, cap=3000):
                             for tt in (t1, t2):
                                 pb = play(tt, b); pre = pb[:pb.index(y)] if y in pb else pb
                                 if any(e in evs and rk[e] > rk[y] for e in pre): c["b0s"] += 1; break
-                c["sp"] += len(ts) > s_sp; c["spw"] += len(ts) > s_spw
+                c["sumD"] = max(c["sumD"], s_sp); c["sp"] += len(ts) > s_sp; c["spw"] += len(ts) > s_spw
                 ja, jb = interval(wty, ts[0])
                 c["Dwt"] = max(c["Dwt"], len({Uy(E(s, wty)) for s in range(ja, jb + 1)}))
     for y in topletters:
@@ -101,7 +103,7 @@ def census(G, cap=3000):
             a, b = interval(wty, s)
             c["DwtJ"] = max(c["DwtJ"], len({frozenset(e for e in E(r, wty) if rk[e] > rk[y]) for r in range(a, b + 1)})); s = b + 1
     return c
-K = ("T", "couples", "dn2", "rh2", "rw2", "rw2w", "b0s", "sp", "spw", "jbfail", "spl3m", "C", "nspl", "Dwt", "DwtJ")
+K = ("T", "couples", "dn2", "rh2", "rw2", "rw2w", "b0s", "sp", "spw", "jbfail", "spl3m", "C", "nspl", "Dwt", "DwtJ", "Dhib", "sumD")
 if __name__ == "__main__":
     print("instance N+M", " ".join(K))
     for f in sys.argv[1:]:
