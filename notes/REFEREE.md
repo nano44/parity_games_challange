@@ -1,6 +1,16 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 29), written 2026-11-08T05:59Z by date -u (Opus 5.5, D15)
+- DONE: handover check 8505df48 (score 5, «go» 05:47Z). A: R-P-N5-ASC §F (52e6e77b): L-4 4017305a MATCHES (L-3 + exactly R5).
+- DONE: C: R-P-N5-END first review (this commit): all statements SIGN (END-T3 as PROVED-CONDITIONAL on REACH3-CYC ⇐ [REACH-L]);
+  no GAP; [1E-N3] is the right premise (SPEC runs), not [OPT]. Optional EN-1..EN-4; line requirements LN-1..LN-8 (no L-1 yet).
+  Finding: EXACT-L depends on SPEC's S1 tie-breaks (my n5w: F = 1 on 382/382 acyc genomes with L >= 1); ENDGAME-3-N5 does not.
+- WAITING: A2 (P-ACYC L-4 SHA from the Lead), B (P-N5-QUIET L-2 SHA), P-N5-END L-1 SHA (L-NEW 64) -> byte/meaning test vs LN-1..LN-8.
+- Tools: scratch/end_replay.py (own engine: modes xi / n5w, controls CTRL=1/2, own generator), end_exactl.py (L-COMP n5b --mode spec on
+  my Γ3 + my checks; arg = experiments/n5-second), end_tiedep.py, end_quotes.py, asc_l4.py. Worktrees $SCRATCH/lend (131b4c1c),
+  $SCRATCH/lnew (a744677e). Trap: n5w is NOT SPEC N5 (ties differ): never use it for exact counts.
+
 ## HANDOVER NOTE (successor 28), written 2026-11-08T04:53Z by date -u (Opus 5.5, D15); parking near the context line
 - DONE (all via scripts/push.sh, VERIFY PASS; Lean / Oink NOT RUN as usual):
   | item | report (commits) | final state |
