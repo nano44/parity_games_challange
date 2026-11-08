@@ -214,6 +214,48 @@ movers in closure(x); acyclic wiring)
   timing for f6's carrier (and for pairs 0-5) that reaches neither 13 nor pair 7, i.e. helpers keyed through o(7) whose
   preferences are fuelled from below in the DAG.
 
+## 3. The helper oscillator (design round, Lead 10:41Z): fuel lemma, requirement, CONJECTURE OSC-ROOM
+### 3a. Lemma FUEL-DOUBLING (PROVED, lane; R104 movement rule, R105 ENC, acyclicity)
+- Statement. Let x be any mover, and t < t′ two consecutive moves of x. Then some mover of closure(x) moves at a step in [t, t′ − 1].
+  Hence M(x) ≤ 1 + (number of moves of closure(x)), and M(x) ≤ 2^|closure(x)|.
+- Proof. A move of x at t (level ≥ 1: free and pref = c(t) ≠ s_(t−1)(x); level 0: pref = ¬s_(t−1)(x) and the gate allows) gives
+  s_t(x) = pref_x(S_(t−1)). The next move at t′ needs pref_x(S_(t′−1)) ≠ s_(t′−1)(x) = s_t(x) = pref_x(S_(t−1)). pref_x depends
+  only on the states of closure(x) (x ∉ closure(x)), so a closure mover changes between S_(t−1) and S_(t′−1), i.e. moves at a step
+  in [t, t′ − 1]. The intervals of different gaps are disjoint, which gives the first bound. Order closure(x) as a DAG,
+  y_1, …, y_k (closure(y_i) ⊆ {y_1, …, y_(i−1)}). Induction gives M(y_i) ≤ 2^(i−1), so M(x) ≤ 1 + Σ 2^(i−1) = 2^k. ∎
+- DATA check (l10/fuel.py; unit = gap between consecutive moves of a mover; set = all movers; scope = stored start): HIT7 0
+  violations, SL41 0. On HIT7 the busiest movers (127 moves) have closures of 30-32 movers, far above log2 127 = 7.
+- Consequence. A mover that moves m times has a down-closed helper DAG below it of size ≥ log2 m, whose moves sum to ≥ m − 1. In
+  that sense a «free running» oscillator does not exist: every oscillation is paid for by moves lower in the DAG.
+### 3b. What the oscillator must supply (DATA; l10/need.py variant; unit = idle step; set = the 219 bill-carrying idle steps)
+- 123 idle steps carry a retrigger of a mover of pairs 1-5 (movers 2-11); 96 carry only pair-6 retriggers. If pairs 0-5 may reach
+  none of 13, 14, 15 (the cut that §2f-§2g point to), then at each of these 123 steps a helper of W changes. Here W = the
+  down-closed set of helpers that pairs 0-5 read, which reaches none of 13, 14, 15. By FUEL-DOUBLING, W then holds a DAG chain
+  of ≥ log2 123 ≈ 7 helpers, with ≥ 122 moves below its top.
+- Its timing can only come from keys. A W-helper of level L moves only to c_L = o(L − 1). For L = 8 this is the parity clock:
+  o(7)(S_t) = t mod 2 for t ≥ 1 (L-RED PARITY-8), so it can rise only at odd steps and fall only at even ones. For L ≥ 9, c_L
+  depends on o(7) and on the states of the helper pairs 8..L − 1. So a W-helper that changes at a prescribed sub-sequence of the
+  even steps, in both directions, needs a key whose value alternates along that sub-sequence. That key is o(L − 1) of the helper
+  levels below it: a counter-like pattern carried by the helper levels' own o-cascade.
+- Test running (C9 T 1.5, C10 T 0.8, 50 min each, from seed ad9a39d4; ann.c order constraint «13+14+15 : 0..11»): pairs 0-5 may
+  reach none of 13, 14, 15, while f6, q6 and pair 7 are free. A low score with pairs 0-5 unviolated would exhibit W.
+### 3c. CONJECTURE OSC-ROOM (lane; READING-level support only)
+- Statement. In any realization of the level-8 target, pairs 0-5 must read q7 or pair 6 (W = ∅ is not enough), OR the W of 3b
+  forms a tower on the helper levels: its pairs' o-values carry a binary-counter pattern with windows of length ≥ 2 (its own
+  ROOM). In words: the oscillator that STRETCH-AND-STACK needs is the tower problem one level down.
+- Why it is plausible: FUEL-DOUBLING forces the doubling DAG, the key rule forces the direction pattern into the helper levels'
+  o-cascade (3b), and in HIT7 the levels above the capped ones carry exactly such a decaying cascade (F(7..16) = 190 95 64 48 32
+  24 33 33 65 32, DATA, L8 §1g).
+- What it would mean for STRETCH-AND-STACK. Suppose each new capped level needs an oscillator tower of height ~ h − c inside
+  fresh helper levels. Then d(h + 1) ≥ d(h) + d(h − c), which is Fibonacci-like growth, and T = 2^h would be only POLYNOMIAL in
+  d (exponent log 2 / log φ ≈ 1.44 if c = 1). Against this: the DATA d = 20, 24, 28 for 5, 6, 7 caps (linear), where one helper
+  cascade is SHARED by all capped levels. So the sharper open question is whether ONE helper cascade can keep serving every
+  capped level as h grows (linear d, exponential T) or must be rebuilt per level. Neither is proved; this is the place a proof of
+  N5-polynomiality-on-towers or of an exponential tower family would have to decide.
+- Sub-problem for L-COMP 13's exact encoder (offered through the Lead). Isolated W: clamp pairs 0-7 to the target. Allow helpers
+  of levels 8-31 that reach none of 13, 14, 15, and require pairs 0-5 to read only W. Decide SAT / UNSAT for the first T₀ steps
+  (T₀ = 40, 80, …). An UNSAT with DRUP is a prefix obstruction for this cut: pairs 0-5 must then read pair 6 or 7.
+
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All are about the IDEAL
 model's step sequence (R104's definition) on 𝓛^R_d and its F-profile. Not M3, not a step-4 pass, not a TARGET.md claim.
