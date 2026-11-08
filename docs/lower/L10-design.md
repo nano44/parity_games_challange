@@ -182,6 +182,16 @@ movers in closure(x); acyclic wiring)
   for pairs 0-5 that does not reach 13. That means a helper oscillator driven only by the key timing o(7) (which flips every
   step): a hidden helper counter below the core in the DAG order. Not built.
 
+- Final bests (runs ended 09:2x-09:33Z; unit = violated constraint; scope = the exact target; both files carry level-7 joined-0 gates):
+  - C4: 144. rec/L10_C4_final_score144.txt, sha1 9e7b99d40e199dac6cf262f491d6d0a8f16ab417; solved ranks
+    rec/L10_C4_final_score144_solved.txt, sha1 42fef4dd0aa98242653858acff192878e90a2d5f. Violations: f6 (13) 64, 8 35, 4 10, 6/7 8,
+    f5 (11) 7, ≤ 4 elsewhere. Free run T 4, caps 0.
+  - C5 (order-constrained): 538. rec/L10_C5_order_final.txt, sha1 0cf9a48ef18151c74ba92cdbb11902e663338b58; solved ranks
+    rec/L10_C5_order_final_solved.txt, sha1 b0997bc7248fd8c761ee7e27b5bea0fb99fd1c37. Violations: q7 (14) 250, q5 62, q4 53, f6 49,
+    f5 40. Free run T 2, caps 0.
+  - C1 ended at 169; C6 (T 0.5 from C4 at 09:00Z) at 151.
+  - The obstruction is unchanged: f6 is sacrificed when the order is free, and q7 when the order is forced.
+
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All are about the IDEAL
 model's step sequence (R104's definition) on 𝓛^R_d and its F-profile. Not M3, not a step-4 pass, not a TARGET.md claim.
