@@ -1,1 +1,2 @@
 INFO {'d': 32, 'H': 8, 'T': 510, 'relevant': 64, 'Lmax': 31, 'options': 128, 'vars': 6550960, 'clauses': 42456624, 'empty': False, 'nP': 24657, 'quad': 43648544, 'lazy': 0, 'build_s': 52.9}
+STOPPED by L-COMP 13 at 10:57Z: no answer after 58 min (42.5M clauses): INCONCLUSIVE

@@ -309,7 +309,7 @@ def build(D, S, H, fix=(), lazy=False, sink=None, relax=False, thresh=False, fix
 
 def decode(D, M, ctx, H):
     """model (set of true literals) -> genome text dict. Dropped movers: xt kept, ranks below all scoped, starts as in D."""
-    val = lambda l: (l if isinstance(l, bool) else (l in M))
+    val = lambda l: (l if isinstance(l, bool) else ((l in M) if l > 0 else (-l not in M)))
     E = dict(D); E = {k: (list(v) if isinstance(v, list) else v) for k, v in D.items()}
     opts = ctx['opts']; d = D['d']; N = 2 * d
     # ranks: sort scoped options by number of options they beat
