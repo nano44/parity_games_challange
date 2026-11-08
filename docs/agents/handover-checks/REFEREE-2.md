@@ -1,17 +1,19 @@
-# REFEREE-2 handover check (successor 32, Opus 5.5 under D1/D18/D20; 2026-11-08 00:15Z by date -u)
-1. Branch claude/referee-2. At start: fetch --unshallow + checkout + ff-only; `git branch --show-current` = claude/referee-2, HEAD =
-   origin/claude/referee-2 = fcdc16b4 (no stale ref this time). vs trunk claude/vibrant-johnson-nxvvxo 37a4855e: 3 ahead / 126 behind
-   (merge-base e72661d0). Merged trunk with a merge commit (no rebase) -> 6146131a, 4 ahead / 0 behind before this commit.
+# REFEREE-2 handover check (successor 33, Opus 5.5 under D1/D18/D20; 2026-11-08 04:58Z by date -u)
+1. Branch claude/referee-2. At start: fetch --unshallow + fetch + checkout + ff-only (local ref was 134 behind; fast-forwarded);
+   `git branch --show-current` = claude/referee-2, HEAD = origin/claude/referee-2 = 98b9622b. vs trunk claude/vibrant-johnson-nxvvxo
+   4aaba7d5: 3 ahead / 40 behind (merge-base 6c937bc6). No trunk merge made (not needed for my items).
 2. Open work, after «go», in order:
-   A. P-N5-ASC byte test (predecessor's Add. 2 at fcdc16b4: fixes entry 1 CORRECT, L-1 NOT YET on W-3 and W-4). Waiting for L-NEW 62's
-      fixes entry 2 + line L-2 SHA from the Lead. Next step: test W-3's new E-MON unit string occurs once and the old not at all; test
-      W-4 (strict condition «lev(nxt[z]) > lev(z's mover)» added to upfail and check193.sh re-run on a git archive, or the clause
-      re-worded); DATA rule clause by clause on L-2; Addendum 3 to docs/referee-2/R2-P-N5-ASC.md (MATCHES / does not match).
-   B. Full independent second review of P-ACYC (L-SI 43), frozen claude/l-si e3ac4b06; docs/si/P-ACYC.md sha1 0e9edcfd… 16,852 B (not
-      6b699f93 as the lane's message said), line L-1 docs/si/P-ACYC-line-L1.txt sha1 bb12deec… 2,085 B; pins box81/pacyc.sha1, check
-      box81/check81.sh. Next step: re-hash at e3ac4b06; re-derive BETA-ACYC (Γ and Γ3), LAMBDA-CONST, ACYC-LIN, ACYC-XI (conditional on
-      R118 (k)+(l)); FIRST FALLBACK vs SPEC S4/S4c; premise quotes by script; §5 scope; own simulator replay of §6 DATA; DATA rule per
-      clause of L-1; TARGET.md diff. Report docs/referee-2/R2-P-ACYC.md; docs/referee/ read only after my verdict is on origin.
+   A. Byte test gating R121: P-N5-ASC line L-4 = L-3 (0012d671 at claude/l-new a2512364; successor 32's Add. 4: MATCHES) + REFEREE 28's
+      R5 (docs/referee/R-P-N5-ASC.md §E, claude/referee 013f821b): old «(Lemma CHAIN-DECOMP) if the first e-vertex on v's play is f,
+      then» -> new «(Lemma CHAIN-DECOMP) if seq_t(v) = (f, …), i.e. the first e-vertex on v's play is f and f ∈ Π_t(v), then».
+      Predicted sha1 4017305a…, 5,198 B. Waiting for the L-4 SHA from the Lead. Next step: script L-3 + R5 (old once in L-3, new once
+      in L-4, nothing else changed), hash, read R5's meaning against packet l. 80; write Addendum 5 to docs/referee-2/R2-P-N5-ASC.md.
+   B. Full independent second review of P-N5-QUIET (L-NEW 62/63): claude/l-new frozen 9329859d, docs/new/P-N5-QUIET.md sha1 066dfc7d…
+      20,022 B; fixes entry 1 d9c49489; L-1 df0d2a25 (sha1 62de9075…, 4,600 B); pins experiments/new/box194/quiet.pins. Next step:
+      re-hash, re-derive LOC-GATE, CN2, LOC-K2, QUIET + T-QUIET (layered Bellman-Ford window bound; tie case vs NO-TIE), UP-T
+      (under [E-LEV]), ASC-T, B-ONLY, NO-TIE; premise quotes by script ([OPT] source for pointwise optimality of σ̄_t); Γ3 scope for
+      N5′-xi; own-engine DATA replay; DATA rule per clause of L-1; TARGET.md diff. Report docs/referee-2/R2-P-N5-QUIET.md;
+      docs/referee/R-P-N5-QUIET.md read only after my verdict is on origin. L-RED R221 is context, not a signature.
 3. GAPS rows owned by REFEREE-2: none. docs/GAPS.md names REFEREE-2 only in notes of closed rows (G-Bthr, G-K5, G-DOM); G-N5-TIME owner
    is «L-NEW (L-LIT T22; referees later)», open.
 4. D1 (active, DECISIONS-INDEX row D1; DECISIONS.md l. 7-8): «A claimed polynomial algorithm is far more likely to be wrong than right.
@@ -21,7 +23,7 @@
    areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them
    briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.»
    D20 (active; DECISIONS.md l. 423): «We have reset the weekly usage, so we can again work faster no?» (Lead reading L48 active).
-5. Trap: a lane's DATA counter that tests a weaker property than its clause (P-N5-ASC upfail: successor 31's round-1 miss, caught in
-   Add. 2 as W-4). Check: read every counter's condition line by line against the lemma (and its loop set, for unit words such as
-   tmonunits including c_W) before calling a DATA clause OK. Standing trap too: SHAs typed into a Lead message before reading git output;
-   check = commit, read `git rev-parse HEAD`, message in a LATER step.
+5. Trap: a DATA clause can be weaker than its words in two places, the counter's condition (P-N5-ASC upfail) and the cited tool
+   (P-ACYC L-2 cited pacyc81.py for a τ test only fix1/pacyc81t.py makes). Check: for every DATA clause read the counter's condition line
+   by line against the lemma AND confirm the cited script is the one that computes it, on a git archive of the frozen SHA.
+   Also (this start): stale local branch 134 behind; the fetch/checkout/ff-only sequence plus `git branch --show-current` before push.
