@@ -252,3 +252,45 @@ Nothing is REFUSED. No statement bounds N5′-xi's total iterations or N5's; G-N
 - lane_check81_e3ac4b06.out (lane check PASS). pacyc81_tau_counter.diff with lane_pacyc81_plus_tau_counter.out (W-3).
   pacyc81_full_run.diff with lane_pacyc81_full_run.out (D-4). r2_after_fallback.out.
 - r2acyc_set{A,B,R2}.out, r2acyc_control.out, and the same under *_levorder.out.
+
+## Addendum 1: comparison with REFEREE 28 (claude/referee a9d4e44e, docs/referee/R-P-ACYC.md; REFEREE-2 successor 32, 2026-11-08 01:20Z by date -u)
+Read only after this report was on origin (bf02e618). No verdict of mine changes.
+- **Agreement.**
+  - BETA-ACYC: SIGN by both.
+  - LAMBDA-CONST: both find the same gap: REFEREE's LC-1 is my G-1. The repair is the same line (K1 beats K2 for Odd, so w* = K1; K2-r).
+  - REFEREE also marks ACYC-LIN and ACYC-XI «WITH GAP LC-1 (inherited)». I signed both, using G-1's line in the proof (§ ACYC-LIN
+    above: «σ̄(K2) is toward K1 in every state (G-1's line)»). Once W-1 / LC-1 is in a fixes entry, the two readings coincide: all
+    SIGN, ACYC-XI conditional.
+  - Scope: REFEREE's AC-3 and AC-4 are my W-2 (c)/(a) and (d). My W-2 (b) («not on N5′-xi» in §5's fourth bullet) is the same
+    over-reach in one more sentence.
+  - L-1: REFEREE's AC-L4 is my D-1 (no-fallback). AC-L5 is my D-2 (control clause).
+  - Premises, FIRST FALLBACK, TARGET diff: same findings. The 29 «» strings are counted the same way (27 premise quotes + brief +
+    TARGET).
+- **REFEREE items I did not have; I agree with each.**
+  - AC-2 (packet l. 133, «The bound is attained: T_CYC = N on some genomes of §6's set A (max T/N = 1.0)»): true only at N = 1.
+    - My own data agrees (r2_TN.out): set A has T = N on 10 runs, all with N = 1, and max T/N over N ≥ 2 = 0.8 (N 5, T 4).
+    - My §ACYC-LIN line «my max T/N = 1.000 on set A and on my own set R2» is literally true but has the same blind spot. On my set R2,
+      T = N occurs at N 1 (9 runs) and once at N 2, and max T/N over N ≥ 2 is 1.0 (N 2, T 2).
+    - So AC-2's new string could add «(and at N = 2 in REFEREE-2's set R2)». Optional.
+  - AC-L1 (SPEC S4/S4c named among L-1's premises), AC-L2 ((k)'s premises incl. K2-r and [1E-N3]), AC-L3 (runs' start / scope;
+    no-DATA entries for BETA-ACYC's no-e clause and ACYC-LIN from other starts): sound. My random frozen-frame states (Grand / G3rand:
+    6,000 + 6,000 states, notbeta / lamfail 0) can serve as a Form-B citation for «other mover states» on BETA-ACYC and LAMBDA-CONST.
+  - AC-5, AC-6 (optional): fine.
+- **My items REFEREE did not have.**
+  - W-3: pacyc81's «non-standard» counter reads σ only, while R118 (k)'s standard state fixes τ too. REFEREE's own acyc_xi measures
+    standard states independently, but its L-1 table accepts L-1's «non-standard states 0» clause as OK. My counter finds the DATA
+    true.
+  - D-3, D-4, N-1: as in the report.
+- **Composing the two sets of L-1 strings (for L-SI; overlaps checked).**
+  - My W-3/D-1 old string «σ̄ off the β-face 0, non-standard states 0, genomes with first fallback after iteration N + 1 0;» CONTAINS
+    REFEREE's AC-L4 old string «genomes with first fallback after iteration N + 1 0;». Apply ONE replacement on my longer old string,
+    with new (fix (b)): «σ̄ off the β-face 0, states whose σ differs from S3's start off the movers 0, genomes with no fallback 0,
+    genomes with first fallback after iteration N + 1 0 (k = T3 + 1 is R118 (k)'s own clause, and N5's L(G) is R117's: no separate
+    DATA);».
+    - With fix (a) (τ test added to pacyc81 and re-run), write «states that are not standard (σ off the movers and τ) 0» instead of
+      the σ-only phrase.
+  - My D-2 and REFEREE's AC-L5 have the SAME old string. I accept AC-L5's new string in place of mine. D-3 stays recommended: add «;
+    e-priorities ordered by (lev, gate index), as in ref gamma3.build» before «)».
+  - AC-L1, AC-L2, AC-L3 do not overlap my strings.
+  - So REFEREE's expected L-2 sha1 c8ed32a8… will change by W-3 (either fix).
+  - Spans and counts of all six old strings in L-1, with the single overlap (W-3/D-1 ⊃ AC-L4), by script: R2-P-ACYC/overlap.out.
