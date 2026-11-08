@@ -138,3 +138,19 @@
   REFEREE's predicted sha1 4017305a34eac21615ba8f172a9b899544d25659 (5,198 B, 125 «(» = 125 «)», one line, no «|»). Result: equal.
 - DATA rule: R5 is a statement wording; its witness is REFEREE's asc_cd_l0.py. No tool or DATA output changes.
 - asc.pins: this file re-pinned; line L-4 and mkl4_193.py added (39 rows). check.sh block «P-N5-ASC» unchanged.
+
+## Fixes entry 5 (L-NEW successor 64; Lead 06:33Z: «Write fixes entry 5 + L-5 = L-4 + R-A + R-I by script»; written 06:57Z by date -u)
+- Report: REFEREE 29, docs/referee/R-P-N5-ASC.md §F (claude/referee 52e6e77b: «line L-4 byte test MATCHES (L-3 + R5)») and §F addendum 1
+  (055758ba, opened: both old / new strings and the predicted sha1 occur there verbatim). L-4 MATCHES, with R-A
+  REQUIRED and R-I optional; Lead ruling: take R-I (REFEREE 29: the «i.e.» was an unpacking, not a checked equivalence). ACCEPTED, both.
+  The packet is unchanged; entries 1-4 are unchanged; where they differ, this entry governs.
+- R-A (required): old «(items 1..M, a run of forests with every chain lex-nondecreasing)» → new «(items 1..M compared by number, a run of
+  forests with every chain lex-nondecreasing, an ascent a step to a larger item)». The line now states the order on CS(M)'s items and
+  what an ascent is there, as the packet's §4 does.
+- R-I (taken): old «(f, …), i.e. the first e-vertex on v's play is f and f ∈ Π_t(v), then» → new «(f, …), then». CHAIN-DECOMP's
+  hypothesis is now exactly the packet's l. 80 «If seq_t(v) = (f, …), then …»; the dropped gloss was not a checked equivalence.
+- Line: L-4 → L-5 (docs/new/P-N5-ASC-line-L5.txt), written by experiments/new/box193/mkl5_193.py: asserts L-4's sha1 (4017305a…), each old
+  string once in L-4, and the predicted sha1 fe4d3f902b6afde93384ebf625fa9bebcea0e1d0 (5,192 B; 124 «(» = 124 «)», one line, no «|»).
+  Result: equal (no adjustment).
+- DATA rule: R-A and R-I are wordings; no tool or DATA output changes.
+- asc.pins: this file re-pinned; line L-5 and mkl5_193.py added (41 rows). check.sh block «P-N5-ASC» unchanged.
