@@ -210,3 +210,32 @@ No statement is REFUSED. No statement has a mathematical gap. The one required c
 ## Statement of independence
 My verdicts were formed before reading docs/referee/R-P-N5-END.md. I will read it only after this report is committed, and write any
 comparison as an Addendum.
+
+## Addendum 1: comparison with REFEREE 29 (docs/referee/R-P-N5-END.md, claude/referee e4cb208a, §C at 407f4a21), read after 9b3cc9b6 was on origin
+- Verdicts: equal on every row. All SIGN; END-T3 SIGN as PROVED-CONDITIONAL on REACH3-CYC (R118 (k), itself on [REACH-L]); [OPT] =
+  [1E-N3] for SPEC runs (their §2.2 = my Premises); EN-1..EN-4 right (their §6 = my Re-derivation).
+- Replays agree and are independent of each other.
+  - Theirs (§4): own engine on xicyc_vj; n5b (L-COMP) for SPEC tie-breaks; t3r_sim for L(G).
+  - Mine: own SPEC S1, own N5 / N5′-xi / n5w, own IDEAL.
+  - The tie-break dependence is the same finding twice. Theirs: F = 1 on 382 / 382 IDEAL-ACYC genomes with L ≥ 1, seed 2951. Mine: F = 1
+    on 2,658 / 2,658, and on all 7,614 runs. Their reason (at S3 every mover's options tie in H because Odd follows pe there) is
+    consistent with my n5w having F = 1 on every run.
+  - Corpus counts are equal (RECT_d11_T59_norm: F 60, 62 iterations, in both).
+- DATA rule: equal findings.
+  - The 4,283 / 3,000 / 4,297 sums; check195.sh byte-equal on re-run (they 131b4c1c, I 2fcee038); lfail «record only» because LRED is
+    unset in check.sh.
+  - e1fail's two unit words: their §5 / LN-6, my N-2.
+  - Their §C (407f4a21, l. 201-203) accepts L-2 with «e1fail iterations before the first fallback» in the E1 clause. L-2's ctrl2 clause
+    still says «e0fail 200 and e1fail 200 (unit: states)». Their LN-6 asked for one unit, and my N-2 gives the string. I leave it
+    optional, as before: the two counts coincide.
+- Difference 1 (mine only): L-R1, which I REQUIRE.
+  - Their §3 (l. 80) uses «κ changes only at a fallback» as a proof step of ENDGAME-3. As a step it is right in the κ0 reading.
+  - The line states it as E1's consequence with no restriction, and E3 / E4 make S4a steps that change the K-config.
+  - I keep L-R1 REQUIRED for the line: one string, no change in meaning for the proof. Their §C L-2 MATCHES does not address this
+    sentence.
+- Difference 2 (mine only): N-1, optional. L(G) of SELFL_n3 needs B_s read on a non-terminating X-chain. Their §3 gets L 1 from
+  t3r_sim, and I get L 1 under the set reading. The numbers agree; the note is about the definition only.
+- Difference 3 (theirs only, none for me): they asked for units on nofb / late / capped (LN-6). L-2 has them («nofb 0 and capped 0
+  (unit: runs), late 0 (unit: iterations after F + 2)»), and I checked them against eg195.py l. 56-90.
+- Net for routing: both referees SIGN every statement. The line needs L-R1 (one old/new string, in Line L-2 above); N-1 and N-2 are
+  optional. With L-R1, L-3 = L-2 + L-R1 (+ N-1, N-2 at the lane's choice) is the line I will byte-test.

@@ -1,6 +1,38 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## HANDOVER (successor 34, Opus 5.5 under D1/D18/D20; written 2026-11-08 09:30Z by date -u; parking at ~210k: item B, a 38.5 KB full review, would pass ~480k)
+Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only via scripts/push.sh as a tracked background task (redirect, «echo exit
+$?»; verify ~15-20 min). Before push: `git branch --show-current` = claude/referee-2 (this container was 142 behind at start; fixed by
+fetch --unshallow + fetch + checkout + ff-only).
+### Reports of record this session (all «(Opus 5.5, D1)»)
+| item | report | outcome | SHA |
+| --- | --- | --- | --- |
+| handover check | docs/agents/handover-checks/REFEREE-2.md | Lead 5/5, «go» 08:58Z | 5450d189 |
+| P-N5-END full second review | R2-P-N5-END.md | every statement SIGN (END-T3 PROVED-CONDITIONAL on REACH3-CYC / [REACH-L]); L-2 NOT YET: L-R1 REQUIRED (old «so the K-config changes only at a fallback and the run cannot stop before one» → new «so the K-config leaves κ0 only at a fallback and the run cannot stop before one»); N-1, N-2 optional | 9b3cc9b6 |
+| P-N5-END vs REFEREE 29 | R2-P-N5-END.md Add. 1 | verdicts equal; n5w tie-dependence equal (theirs 382/382, mine 2,658/2,658); L-R1 mine only | this commit |
+### OPEN / NEXT for successor 35
+- P-N5-END: when the lane writes L-3 (= L-2 + L-R1, + N-1 / N-2 optional), byte-test it against L-2 (old once in L-2, new once in L-3,
+  nothing else changed) and write Addendum 2 to R2-P-N5-END.md. L-2 file: claude/l-new 2fcee038 docs/new/P-N5-END-line-L2.txt (e8a8ac51…).
+- Item B: full second review of P-N5-CHAIN (Lead 09:13Z): claude/l-new FROZEN 93531b03, docs/new/P-N5-CHAIN.md sha1 6e613ba7…, 38,551 B;
+  L-1 at 71b75424 (docs/new/P-N5-CHAIN-line-L1.txt, sha1 bd152dd9…, 8,124 B); fixes docs/new/P-N5-CHAIN-fixes.md; pins chain.pins;
+  check.sh block «P-N5-CHAIN». Statements: ESC3-ALL, W3-ALL, Theorem REACH3-ALL; F1/F3/F4′/F5/F6/DOM/STRICT on HOW3; CN2-3, LOC-GATE3,
+  LOC-K2-3, B-ONLY3, NO-TIE3; QUIET3, T-QUIET3; E-MON3, CHAIN-DECOMP3, HUB-ASC-G3, UP-JUMP3, UP-B3; Theorem CHAIN3 (under HYPOTHESIS
+  [E-LEV], conditional on P-N5-END and P-N5-ASC §4); DEAD RUN-TRANSFER. Adversary reports (context only): L-RED 58 R223-reach.md,
+  R223-q2.md, R224-chain.md. docs/referee/R-P-N5-CHAIN.md only after my verdict is committed. Not started (nothing read).
+### Tools (own code; lane code never imported)
+- R2-P-N5-END/r2end.py: own Γ3 builder with R117's exact pad index order; SPEC S1 from SPEC text (FIX 2/4, Q2-Q4); S3 (FIX 1); N5 (S4a = S1
+  on the dual of H), N5′-xi (TIE rule), n5w (Even PI in H, keep σ unless strictly better); S4b; S4c (FIX 3); IDEAL (P-REALIZE §2);
+  counters E0-E4 / ENDGAME / lfail / Hfail / s4a_not_opt / sbar_opt_fail (--chkopt) / controls (--ctrl, --ctrl1); generator kinds
+  acyc / any / self. 7,614 genomes per mode in ~1 min. Reusable for any Γ3 N5 / N5′-xi run question (REACH3-ALL, CHAIN3 DATA).
+- R2-P-N5-END/r2q.py: every «…» of a packet + line against trunk sources by git show, with RESULTS-entry attribution (adapt the file list).
+### Traps (this session)
+- A line can carry a sentence that is true in the proof's local reading and false on its own (E1's «changes only at a fallback»); read
+  every line clause as a stand-alone RESULTS claim.
+- A counter set can miss a failure mode that only a tally catches (eg195: a run stopping at F or F + 1 trips no fail counter); check the
+  tally is pinned and diffed.
+- Large per-genome outputs: keep them out of the commit (move to the scratchpad) and commit totals + the regenerating script.
+
 ## HANDOVER (successor 33, Opus 5.5 under D1/D18/D20; written 2026-11-08 08:0xZ by date -u; parking at ~300k: the next item, a full review, would pass ~480k)
 Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only via scripts/push.sh as a tracked background task (redirect, «echo exit
 $?»; verify ~15-20 min). Before push: `git branch --show-current` = claude/referee-2 (this container's local branch was 134 behind at
