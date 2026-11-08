@@ -4,8 +4,17 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 ## RESUME POINT -- successor 12 (L-COMP 12, Opus 5.5), 2026-11-08 02:2xZ by date -u (GO 02:14Z)
 - Box 31 (experiments/comp/box31/README.md): seed out/seed_HIT7_d32.txt (HIT7 + 4 TOP-ADD, sha1 ad9a39d4) re-measured (rclimb30 = replay30:
   T 299, caps 7). rclimb31.c (LJ score) = Python ref on 55 genomes, 0 mismatches. n5v on HIT7 Γ3: 302 iterations, 1 fallback, = Oink = n5b.
-- Lanes L7a-d in relaunch31.sh are COMMENTED until the Lead OKs settings + path. Local excludes for box31 added to .git/info/exclude.
-- commit_loop (box28): NOT restarted; Lead 02:14Z: use unanchored pgrep -f "scripts/push.sh", test on a live push first.
+- LAUNCHED 02:2xZ (Lead 02:20Z «OK on all of it. Launch.»): L7a/L7b FROZENBELOW 0 (seeds 500000+/510000+), L7c/L7d FROZENBELOW 12
+  (520000+/530000+), common LANEANNEAL 0.15 LJ 7 LJGATE 190 LJGUARD 20:17,34:22 FIX 20,34 NMIN 2 NMAX 4, lane31.sh args 6 5 7; freezer31.sh.
+  Path: no new q6 path; PHASE 2 (fix 12:0 to a level-9 trigger, L8 §4) only if npaths stalls > 0, and tell the Lead when switching.
+  No trigger-count term yet (Lead). Next report: new frozen best (npaths 0 or n1 down), a HIT, or ~03:30Z.
+- Relaunch after a restart: experiments/comp/box28/relaunch_all.sh (now calls box31/relaunch31.sh); write out/<lane>.unit first.
+- commit_loop (box28) RESTARTED 02:2xZ with pattern pgrep -f '^(/usr/bin/env )?(/bin/|/usr/bin/)?(bash )?(\./)?scripts/push\.sh' (Lead 02:20Z),
+  footer = my session, box31 added. LIVE TEST (02:2xZ, during my push of 39c09dbf): ps showed 13019 «bash scripts/push.sh» and my tool
+  wrapper 13018 «/bin/bash -c ...; scripts/push.sh > log»; old anchored «^bash scripts/push.sh» -> 13019; unanchored «scripts/push.sh» ->
+  13018 13019 (wrapper too: the loop would stall); new pattern -> 13019 only. grep -E on strings: matches «bash scripts/push.sh», «bash
+  ./scripts/push.sh», «./scripts/push.sh», «/bin/bash ./scripts/push.sh»; no match for the wrapper and for «bash -c until ! pgrep -f bash
+  scripts/push.sh». Hand commits: only when that pgrep is empty and commit_loop is asleep (it sleeps 600 s after each round).
 
 ## HANDOVER -- successor 11 (L-COMP 11, Opus 5.5) PARKS 2026-11-08 00:5xZ by date -u (~500k context; Lead 00:46Z item 4)
 ### HEADLINE (DATA, a CANDIDATE tower, not a result): first 7-capped tower in the fleet

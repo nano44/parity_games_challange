@@ -22,4 +22,5 @@ up diskguard setsid nohup ./diskguard.sh < /dev/null > /dev/null 2>&1
 # 19:2xZ: final sweep (re-runs every non-VERIFIED piece, incl. c0s1p2/c0s1p4 lost by q2stop2.sh) after all three shards exit
 # DONE 23:33Z (query 2 complete, log/lsi_q2_cert.txt): up q2s setsid nohup ./q2sweep.sh < /dev/null > log/q2sweep.run 2>&1
 up commit setsid nohup ./commit_loop.sh < /dev/null > /dev/null 2>&1
-../box30/relaunch30.sh   # BOX 30 climb lanes (Lead 07:12Z)
+../box30/relaunch30.sh   # BOX 30 climb lanes (Lead 07:12Z; all STOPPED at L-COMP 11's park)
+../box31/relaunch31.sh   # BOX 31 level-7 climb lanes L7a-d + freezer31 (L-COMP 12, Lead 02:20Z)

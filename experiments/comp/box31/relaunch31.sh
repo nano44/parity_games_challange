@@ -7,9 +7,9 @@ upa() { n=$1; shift; f=out/.pid_$n; [ -f $f ] && kill -0 $(cat $f) 2>/dev/null &
 upf() { f=out/.pid_freezer31; [ -f $f ] && kill -0 $(cat $f) 2>/dev/null && { echo "freezer31 running"; return; }
   setsid nohup ./freezer31.sh > out/freezer31.nohup 2>&1 < /dev/null & echo $! > $f; echo "freezer31 started pid $(cat $f)"; }
 C="LANEANNEAL=0.15 LJ=7 LJGATE=190 LJGUARD=20:17,34:22 FIX=20,34 NMIN=2 NMAX=4"
-# NOT YET LAUNCHED (waiting for the Lead's OK on settings + path, L-COMP 12 02:2xZ):
-#ENVX="$C FROZENBELOW=0"  upa L7a L7a out/seed_HIT7_d32.txt 500000 6 5 7
-#ENVX="$C FROZENBELOW=0"  upa L7b L7b out/seed_HIT7_d32.txt 510000 6 5 7
-#ENVX="$C FROZENBELOW=12" upa L7c L7c out/seed_HIT7_d32.txt 520000 6 5 7
-#ENVX="$C FROZENBELOW=12" upa L7d L7d out/seed_HIT7_d32.txt 530000 6 5 7
-#upf
+# LAUNCHED 02:2xZ 2026-11-08 (Lead 02:20Z: settings + path approved; phase 2 path only if npaths stalls > 0, on notice):
+ENVX="$C FROZENBELOW=0"  upa L7a L7a out/seed_HIT7_d32.txt 500000 6 5 7
+ENVX="$C FROZENBELOW=0"  upa L7b L7b out/seed_HIT7_d32.txt 510000 6 5 7
+ENVX="$C FROZENBELOW=12" upa L7c L7c out/seed_HIT7_d32.txt 520000 6 5 7
+ENVX="$C FROZENBELOW=12" upa L7d L7d out/seed_HIT7_d32.txt 530000 6 5 7
+upf
