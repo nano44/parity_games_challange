@@ -1,0 +1,5 @@
+HIT7_d28.json {'N': 56, 'M': 112, 'n': 398, 'U': 43, 'T': 8, 'SD': 398, 'SD1': 0, 'maxD': 1, 'maxv': ('x', 0), 'SDm': 56, 'asc': 0}
+
+real	0m0.347s
+user	0m0.331s
+sys	0m0.004s
