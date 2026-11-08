@@ -1,0 +1,2 @@
+# mclimb228 maxm>=3 freezes: noise once RA-MULT is dead (MW seeds have maxm = n)
+out/mkill_*.json
