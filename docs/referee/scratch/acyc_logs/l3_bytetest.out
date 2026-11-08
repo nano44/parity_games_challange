@@ -1,0 +1,8 @@
+D-5 old in L-2: 1 | new in L-3: 1 | old in L-3: 0
+L-2 + D-5 == L-3: True ('03453361fead881493e2d2786b869f1c63158c4c', 2765) | L-3 ('03453361fead881493e2d2786b869f1c63158c4c', 2765)
+AC-L1 new in L-3: 1 | old in L-3: 0
+AC-L2 new in L-3: 1 | old in L-3: 0
+AC-L3 new in L-3: 1 | old in L-3: 0
+AC-L4 new in L-3: 1 | old in L-3: 0
+AC-L5 new in L-3: 1 | old in L-3: 0
+parens L-3 38 38

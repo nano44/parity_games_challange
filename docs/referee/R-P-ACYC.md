@@ -329,3 +329,20 @@ After my verdict (d3d0a600) I read REFEREE-2's items only as they are quoted in 
   - Statements: BETA-ACYC SIGN; LAMBDA-CONST SIGN; ACYC-LIN SIGN; Corollary ACYC-XI SIGN as PROVED-CONDITIONAL on R118 (k) REACH3-CYC
     and (l) Corollary T3.
   - No gap remains open. AC-7 is optional (packet wording only; not in L-2).
+
+## §D. Fixes entry 2 and line L-3 (REFEREE successor 28; date -u at writing 2026-11-08T04:05Z)
+- Objects: claude/l-si ff9b1639 (ancestor of origin/claude/l-si).
+  - L-2 there is unchanged (3a3096a4…).
+  - L-3 docs/si/P-ACYC-line-L3.txt: sha1 03453361fead881493e2d2786b869f1c63158c4c, 2,765 B (EQUAL to the Lead's relay), parentheses
+    38 / 38.
+- Byte test (scratch/acyc_l3.py, acyc_logs/l3_bytetest.out):
+  - D-5: «(pacyc81.py),» → «(pacyc81.py; τ by fix1/pacyc81t.py),». The old string occurs once in L-2 and 0 times in L-3; the new
+    string occurs once in L-3.
+  - L-2 + D-5 is byte-equal to L-3 (sha1 03453361…).
+  - Entry 2's longer form of the old string, «along N5′-xi on Γ3 from S3 (pacyc81.py),», is the same single occurrence.
+- My strings hold on L-3: AC-L1 to AC-L4 new strings once each, AC-L5 (with the D-3 insertion) once; all five old strings 0.
+- Meaning:
+  - D-5 (F-10): CORRECT. pacyc81.py counts σ only. The τ half of «states that are not standard (σ off the movers and τ) 0» is
+    fix1/pacyc81t.py's taubad. My own taubad is 0 on the same 309 genomes (§C).
+  - F-11 (my AC-7, packet text only): CORRECT. «(at most N iterations; its first fallback comes by iteration N + 1)».
+- Verdict: fixes entry 2 CORRECT; L-3 MATCHES. All statements stay as in §C (all SIGN; ACYC-XI PROVED-CONDITIONAL on R118 (k), (l)).
