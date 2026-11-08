@@ -131,7 +131,7 @@ scope = helper-only wiring paths from the core, as tsat.py's `disj`)
   bill of ≥ 262, and the least-bill one is core8 itself (sha1 c6e19673). Slack (T′ > 510) cannot lower the bill. So §5's
   OSC-ROOM′ and its «next step» are DEAD as stated. The §3-§4 DATA stand; the revised reading is CONJECTURE OSC-ROOM″ (L12 §3).
 
-## 7. Correction (2026-11-08 17:4xZ, date -u; L-RED 61 R227 on claude/l-red 67a110b2, relayed by the Lead 17:26Z)
+## 7. Correction (2026-11-08 17:29Z, date -u; L-RED 61 R227 on claude/l-red 67a110b2, relayed by the Lead 17:26Z)
 - (1) Scope of the §1 / §1a UNSATs: the core STATES and the core GATE VALUES are fixed. The gates are the target file's `gate` line,
   taken from the base genome: HS2_d3 for TT3_HS2 (levels 0-1) and HIT7 for TT3_HIT7, plus joined value 0 for the added level 2.
   The UNSATs hold for those core gates only; other core gate values are not covered.
