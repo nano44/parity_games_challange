@@ -1,0 +1,7 @@
+start (8, 6, 2, -204) {'maxm': 2, 'nm': 5, 'C': 6, 'idfail': 0, 'T': 17, 'Dwt': 8, 'DwtJ': 8, 'couples': 205, 'rw2': 0, 'rw2w': 0, 'b0s': 0, 'nspl': 2, 'Dhib': 8, 'sumD': 16} N 54 M 150
+2 Dhib 10 sumD 20 nspl 3 Dwt 10 DwtJ 10 rw2 0 b0s 0 maxm 2 nm 1 C 5 idfail 0 T 18 N 54 M 150
+33 Dhib 11 sumD 22 nspl 2 Dwt 11 DwtJ 11 rw2 0 b0s 0 maxm 2 nm 40 C 5 idfail 0 T 17 N 54 M 157
+103 Dhib 12 sumD 24 nspl 4 Dwt 12 DwtJ 12 rw2 0 b0s 0 maxm 2 nm 92 C 6 idfail 0 T 17 N 58 M 169
+172 Dhib 13 sumD 15 nspl 3 Dwt 12 DwtJ 12 rw2 0 b0s 0 maxm 2 nm 1 C 4 idfail 0 T 17 N 65 M 191
+250 Dhib 14 sumD 17 nspl 3 Dwt 14 DwtJ 14 rw2 0 b0s 0 maxm 2 nm 4 C 4 idfail 0 T 17 N 73 M 220
+378 Dhib 14 sumD 17 nspl 3 Dwt 14 DwtJ 14 rw2 0 b0s 0 maxm 2 nm 59 C 6 idfail 0 T 17 N 82 M 251
