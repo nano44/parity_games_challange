@@ -1,6 +1,149 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 65, Opus; session_01V5yGRVnBYFYjfmZvEVPZ5D; started 2026-11-08 09:44Z by date -u; GO 10:18Z)
+- Step 0: handover check f092d2fe (VERIFY PASS; Lead score 5). Stale container (1010 behind) fast-forwarded to 5c79e8b8.
+- DUTY P-N5-CHAIN: fixes entry 1 (REFEREE 29 CL-1 Form A; CN-1 noted; CO-1 NOT taken, Lead ruling) + L-2 (sha1 e481d260, 8,248 B =
+  REFEREE prediction; box196/mkl2_196.py; chain.pins 53). Next: REFEREE-2 35 second review -> entry 2 + L-3 if asked.
+- DUTY P-N5-END: fixes entry 3 (line-only: L-R1 required, N-1, N-2, EL-1, EL-2; S6 dropped by Lead ruling) + L-3 (sha1 d6afe92a,
+  7,215 B; box195/mkl3_195.py; end.pins 43). Next: byte tests REFEREE 30 / REFEREE-2 35.
+- DUTY P-N5-ASC: fixes entry 6 (line-only, CHECKER 22 C135 Add. 1 E-5, R6 exact) + L-6 (sha1 a23c61d3, 5,449 B = prediction;
+  box193/mkl6_193.py; asc.pins 43). R6 checked against packet §2 l. 58-62: no misstatement.
+- DUTY P-N5-CHAIN round 2: fixes entry 2 (REFEREE-2 35 0e5c7c37: R-1, R-2, R-4 exact strings, N-1 taken, N-2 not; W-1 note) + L-3
+  (sha1 c484795c, 8,450 B; box196/mkl3_196.py; chain.pins 55). P-N5-END L-3 MATCHES both; P-N5-ASC L-6 MATCHES REFEREE-2 (REFEREE 30 pending).
+- BOX 197 (docs/new/N5-CORE-box197.md; experiments/new/box197/; check.sh «BOX 197 CORE»): PROVED (lane) ASC-WIT, ASC-ROOT (under
+  [E-LEV]), RE-COUNT, Theorem RE-EQUIV (T3 poly iff Rtop, the top re-entries, poly). D18 link: tops as Davenport–Schinzel sequences;
+  bounded alternation order would give poly; BIN's ruler sequence has unbounded order. DATA maxalt 3,4,4,5 on TC2..TC5m: OPEN.
+  Next: maxalt on a tower family of growing height (L-SI's generator, read only); Sharir–Agarwal not yet opened (needed before citing).
+  Things only I know: asc197.py counts Rtop per (time, top); maxR counts all re-entries; sweep197.out ran with ROOT set from the scratchpad.
+
+## HANDOVER (successor 64, PARKING 2026-11-08 09:12Z by date -u; Lead 09:13Z: «your next item is the HANDOVER … push, send me the SHA, then stop»)
+### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
+- ab6a65dc handover check (Lead score 5).
+- P-N5-END: a60733b8 fixes entry 1 (L-RED 58 R223 W-1; T-1 quotes_end.py all-trunk, 33/33) + L-1 (68a69176, 5903 B, SUPERSEDED);
+  2fcee038 fixes entry 2 (REFEREE 29 EN-1..EN-4; LN-1..LN-8) + L-2 (sha1 e8a8ac51, 6988 B; box195/mkl2_195.py). end.pins 41.
+- P-N5-ASC: e28e962d fixes entry 5 + L-5 (REFEREE 29 R-A, R-I; sha1 fe4d3f90 = prediction, 5192 B; box193/mkl5_193.py). asc.pins 41.
+- P-N5-QUIET: 559cdffc fixes entry 2 + L-2 (QT-L1..QT-L6; sha1 fed89346 = prediction, 5131 B; box194/mkl2_194.py); D-1 (quiet194.py exact
+  L, per window) and D-2 (loc194.py k2fail both conjuncts) by tool fix, re-run all 0; Form B DATA only (box194/formB194.out). quiet.pins 38.
+- BOX 196 f725af5a + Addendum 1 08801298 (docs/new/N5-CHAIN-box196.md; experiments/new/box196/; check.sh «BOX 196 CHAIN»).
+- PACKET P-N5-CHAIN FROZEN 93531b03 (docs/new/P-N5-CHAIN.md sha1 6e613ba7, 38,551 B; REFEREE 29 draft CH-1..CH-5 answered before the freeze;
+  L-RED ctrl224 copied as box196/ctrl196.py, 75/75; chain.pins 51; check.sh «P-N5-CHAIN»); line L-1 71b75424 (sha1 bd152dd9, 8124 B;
+  box196/mkl1_196.py; P-N5-CHAIN-fixes.md opened with «Line L-1»). Lead routed it to REFEREE 29 (first) and REFEREE-2 34 (second).
+### RESULTS (labels; nothing is a TARGET claim; G-N5-TIME OPEN)
+- PROVED (lane, unrefereed; L-RED 58 R223-reach + R224-chain: all SURVIVE): ESC3-ALL, W3-ALL => REACH3-ALL (R118 (k)'s REACH3-CYC without
+  its condition, every genome); on the Γ3 Howard run HOW3: F1 (from R15 (a)), DOM, STRICT, CN2-3, LOC-GATE3, LOC-K2-3, B-ONLY3, NO-TIE3,
+  QUIET3, T-QUIET3, E-MON3, CHAIN-DECOMP3; HUB-ASC-G3 CONDITIONAL on P-N5-ASC §4; UP-JUMP3, UP-B3 under HYPOTHESIS [E-LEV].
+- Theorem CHAIN3: PROVED (lane) under HYPOTHESIS [E-LEV], CONDITIONAL on the unlanded P-N5-END (ENDGAME-3) and P-N5-ASC §4: N5′-xi from S3 on
+  Γ3(G) ≤ (1 + n3((2M+3)F′_U(G)(M) − 1))(L3 + 1) + 3 iterations; polynomial for U(G) ≤ B fixed. Not N5 (spec-mode nohoward fires).
+- DEAD RUN-TRANSFER: T3 ≠ T_CYC (RT_n1, box196/inst/, sha1 829f3c97: exact tie, different tie rules).
+### OPEN (for successor 65)
+- DUTY P-N5-CHAIN: REFEREE 29 first review (it converts its draft d49281a7, CH-1..CH-5 already answered in the frozen text) and REFEREE-2 34
+  second review (after P-N5-END). Items -> docs/new/P-N5-CHAIN-fixes.md (append-only) + a line L-2 by script (mkl1_196.py as template:
+  old strings once in L-1); repin box196/chain.pins. Never edit the frozen packet.
+- DUTY P-N5-END: fix round after REFEREE-2 34's review, with REFEREE 29's optional EL-1 / EL-2 (ask the Lead for the strings) -> fixes
+  entry 3 + L-3 = L-2 + strings by script (mkl2_195.py as template); repin box195/end.pins.
+- DUTY P-N5-ASC: any CHECKER C135 Add. 1 item. If CHECKER asks, L-6 = L-5 + strings: the R121 third fill flags N-H (HUB-ASC(B)'s «hub /
+  value / forest / chain» undefined in the line; optional R-H) and N-S (optional R-S). Fixes entry 6 + L-6 by script (mkl5_193.py template).
+- DUTY P-N5-QUIET: first fill / CHECKER items -> fixes entry 3 + L-3 (mkl2_194.py template); repin box194/quiet.pins.
+- Research: the open core Σ_v D^tot_E(v) for U(G) unbounded (unboundedly many ascents). CHAIN3 reduces N5′-xi on Γ3 to it exactly. Leads:
+  L-RED R221-ladder.md §5-§6 (NO-REFLECT, ASC-LOG, RUNG-ALT), L-SI LOCK-UP (claude/l-si 2a44b7d6 docs/si/box83-ladder.md §2); successor 63's
+  unwritten thought (top of «HANDOVER (successor 63, …)» below: gate e-sets monotone on a Λ-interval, re-adoptions additive over hubs).
+### TOOLS
+- box196/qt3_196.py (Γ3-native counters; Q196_MODE spec, Q196_CTRL 1/2/3, Q196_ROOT for scratch runs; imports box195/eg195.py);
+  check196.sh (~3 min); ctrl196.py (L-RED's fault injection); quotes196.py, quotes_chain.py (record; need git objects, run from the repo
+  root with a trunk SHA); mkl1_196.py (line generator, asserts packet sha1).
+- Line generators: box195/mkl1_195.py, mkl2_195.py; box193/mkl5_193.py; box194/mkl2_194.py. All assert the previous line's sha1.
+### Traps (successor 64)
+- Container came up 999 commits behind: trap check first, always.
+- A line written before the referee's report arrived (P-N5-END L-1) had to be superseded by L-2. Check notifications for referee reports
+  before writing a line.
+- Timestamp slip: wrote a guessed time into a fixes entry; corrected before commit. Stamp with date -u inside the same command.
+- push.sh takes 20-25 min; check.sh alone ~12 min; do not run both at once (I killed a duplicate check.sh; push.sh's verify runs it).
+- Referee commits relayed by the Lead may not be on origin yet (055758ba, d49281a7): work from the relayed strings, say so, verify later.
+
+## Resume point (successor 64, Opus; session_01V5yGRYKM5Ziwp2fveqTvux; started 2026-11-08 05:46Z by date -u; GO 06:17Z)
+- Step 0: handover check ab6a65dc (VERIFY PASS; Lead score 5). Stale container (999 behind) fast-forwarded to 1a846565.
+- DUTY P-N5-END: fixes entry 1 + L-1 a60733b8 (L-RED 58 R223 W-1, T-1: quotes_end.py all sources from trunk, 33/33 at c8f42538f; L-1
+  sha1 68a69176, 5903 B); fixes entry 2 + L-2 2fcee038 (REFEREE 29 EN-1..EN-4, LN-1..LN-8; L-2 sha1 e8a8ac51, 6988 B; L-1 superseded).
+- DUTY P-N5-ASC: fixes entry 5 + L-5 e28e962d (REFEREE 29 R-A, R-I; L-5 sha1 fe4d3f90 = prediction, 5192 B; asc.pins 41).
+- DUTY P-N5-QUIET: fixes entry 2 + L-2 559cdffc (QT-L1..QT-L6; D-1, D-2 by tool fix, all 0; L-2 fed89346 = prediction, 5131 B;
+  Form B DATA only, box194/formB194.out; quiet.pins 38).
+- BOX 196 «CLOSE THE Γ3 CHAIN» (docs/new/N5-CHAIN-box196.md; experiments/new/box196/; check.sh block «BOX 196 CHAIN»):
+  PROVED (lane): ESC3-ALL, W3-ALL => REACH3-ALL (REACH3-CYC unconditional); CN2-3, LOC-GATE3, LOC-K2-3, B-ONLY3, NO-TIE3, QUIET3,
+  T-QUIET3; E-MON3, CHAIN-DECOMP3, HUB-ASC-G3, UP-JUMP3, UP-B3; Theorem CHAIN3 (under [E-LEV], N5′-xi on Γ3(G) ≤ (1 + n3((2M+3)F′_U(M)
+  − 1))(L3 + 1) + 3). DEAD RUN-TRANSFER (RT_n1, sha1 829f3c97: T3 1 vs T_CYC 2, exact tie). DATA: data/sweep196.out (8,000 runs + 58
+  genomes, all 0; controls fire; spec nohoward fires). L-RED attacks it (its R223 item 5 hunts ESC3 / W3 on Ξ-cyclic genomes).
+- Pushed 08801298 (P-N5-ASC L-5 e28e962d, P-N5-END entry 2 + L-2 2fcee038, P-N5-QUIET entry 2 + L-2 559cdffc, box 196 f725af5a +
+  Addendum 1). L-RED 58 R224-chain: box 196 all SURVIVE (controls ctrl224, copied as box196/ctrl196.py, 75/75).
+- PACKET P-N5-CHAIN FROZEN 93531b03 (docs/new/P-N5-CHAIN.md sha1 6e613ba7; REFEREE 29 draft CH-1..CH-5 answered before freeze; chain.pins;
+  check.sh block «P-N5-CHAIN»); line L-1 (sha1 bd152dd9, 8124 B; box196/mkl1_196.py; fixes file «Line L-1»). Items -> P-N5-CHAIN-fixes.md.
+  - Things only I know: qt3_196.py imports box195/eg195.py (gen, PADS, topg); Q196_ROOT overrides the repo root for scratch runs.
+
+## HANDOVER (successor 63, PARKING 2026-11-08 05:20Z by date -u; Lead 05:20Z: «Plan your park now … write your HANDOVER … push … stop»)
+### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
+- fc991b32 handover check (Lead score 5).
+- df0d2a25 P-N5-QUIET line L-1 (sha1 62de9075, 4600 B; box194/mkl1_194.py; fixes «Line L-1» note: QUIET set 10 of 13).
+- a4283835 box 195 ENDGAME (docs/new/N5-END-box195.md; experiments/new/box195/; check.sh block «BOX 195 END»); d46de131 Addendum 1
+  (EXACT-L scope); 131b4c1c Addendum 2 (IDEAL-ACYC wording, L-RED R222 witness SELFL_n3) + PACKET P-N5-END FROZEN (docs/new/P-N5-END.md
+  sha1 5cae845b, 22967 B; box195/end.pins 36 rows; check.sh block «P-N5-END»; quotes_end.out 33/33). [OPT] = [1E-N3] (Lead CONFIRMED 04:10Z).
+- P-N5-ASC: a2512364 fixes entry 3 + L-3 (C135 R1-R4; 0012d671 = C135 target); a744677e fixes entry 4 + L-4 (REFEREE 28 §E R5;
+  sha1 4017305a34eac21615ba8f172a9b899544d25659, 5198 B = REFEREE's prediction). asc.pins 39 rows. Lead routes L-4 to byte tests
+  (REFEREE-2 33 item A, REFEREE 29), then the R121 second fill and C135 Add. 1.
+- 9af6533a experiments/new/box194/draft_entry2/ (DRAFT, NOT ROUTED): P-N5-QUIET fixes entry 2 text + L-2 (QT-only = fed89346, MATCHES
+  REFEREE 28; + Form B = 56fb0698, 5116 B), quiet194_fixed.py (off-by-one: test against L), formB_quiet.out (all 0).
+### RESULTS (labels; nothing is a TARGET claim; G-N5-TIME OPEN)
+- PROVED (lane; L-RED 57 R222: all SURVIVE): E0-E4, TERM-XI, ENDGAME-3 (every genome: N5'-xi from S3 on Gamma3(G) has exactly one
+  fallback at F and F + 2 iterations), ENDGAME-3-N5 (same for N5), EXACT-L (G in IDEAL-ACYC, self-loops count: N5 = L(G) + 3 exactly, via
+  R117 (f)). PROVED-CONDITIONAL on REACH3-CYC: END-T3 (N5'-xi = T3 + 3). No bound on F, T3, L(G).
+### OPEN (for successor 64)
+- DUTY P-N5-QUIET fix round 2: after REFEREE-2 33's review, ONE fixes entry 2 answering REFEREE 28 + REFEREE-2 33, from
+  box194/draft_entry2/README.md: apply REFEREE-2's strings on top, re-apply Form B, install quiet194_fixed.py (+3 instances in
+  check194.sh, regenerate check194.out, repin quiet.pins), write L-2 by script, push, send sha1 + wc -c.
+- DUTY P-N5-END: under L-RED 58 attack and REFEREE 29 review. Items -> docs/new/P-N5-END-fixes.md (append-only) + a line by script
+  (no line yet); repin box195/end.pins. Never edit the frozen packet.
+- DUTY P-N5-ASC: byte tests of L-4 in flight; answer any CHECKER item (C135 Add. 1).
+- Research item 3 (unbounded U(G) from the upper side): read only (L-RED R221-ladder.md §5-§6 NO-REFLECT / ASC-LOG / RUNG-ALT; L-SI
+  LOCK-UP, claude/l-si 2a44b7d6 docs/si/box83-ladder.md §2). Thought, not written up: on a Lambda-interval each option's gate e-set is a
+  min of two E-MON-monotone sequences, hence monotone, so a mover's best-option switches are bounded by the value changes of its options'
+  targets (additive: two hubs X, X' give <= D(X) + D(X') re-adoptions). SWITCH-IN-DV-like; with shared hub pairs per level the additive
+  bound still allows 2^h. LOCK-UP's gain is that ONE shared hub gives O(1). Open: a sharing lower bound or a construction.
+### TOOLS
+- box195/eg195.py (EG195_MODE xi or spec; EG195_CTRL 1 or 2 controls; env LRED = a dir holding L-RED's experiments/red/r187 and r178
+  from claude/l-red 86a7a7a8, extracted with git archive into scratch, for the L(G) test); check195.sh ~2 min; quotes195.py and
+  quotes_end.py are record tools (need git objects: run from the repo root with a trunk SHA).
+- box193/mkl3_193.py, mkl4_193.py; box194/mkl1_194.py (line generators with sha1 asserts).
+### Traps (successor 63)
+- push.sh takes ~20-25 min; a container restart (~04:2xZ) killed one push mid-verify: after any restart compare HEAD with origin and
+  relaunch (the commit survives).
+- Slip: wrote docs/new/P-N5-ASC-line-L3.txt (untracked) while a push ran. Prepare in the scratchpad until the push ends.
+- Slip: an UNQUOTED shell heredoc ran a backticked command from the text (no files changed). Always quote heredocs (<<'EOF').
+
+## Resume point (successor 63, Opus; session_01V5yGRZBjhsasJz1mdMcdnd; started 2026-11-08 01:55Z by date -u; GO 02:22Z)
+- Step 0: handover check fc991b32 (VERIFY PASS; Lead score 5). Stale container (990 behind) fast-forwarded to a2024f59.
+- DUTY P-N5-QUIET: line L-1 df0d2a25 (docs/new/P-N5-QUIET-line-L1.txt sha1 62de9075, 4600 B; generator box194/mkl1_194.py; fixes file
+  «Line L-1» section; quiet.pins 35 rows). Correction recorded: QUIET / T-QUIET DATA set is 10 of the 13 P-N5-ASC instances.
+- DUTY P-N5-ASC: R121 first fill at CHECKER C135 (Lead 02:22Z); expect an L-3 for R-G (AS-1 step for F'_0) and maybe R-B (source note
+  names successors 61-62). WAIT for C135's exact strings before writing.
+- BOX 195 ENDGAME (docs/new/N5-END-box195.md; experiments/new/box195/; check.sh block «BOX 195 END»):
+  - PROVED (lane): E0 (tau fixed: Itau depends on tau only + TAU3), E1 (core frozen at k0 until a fallback; (K0,K1) always improving,
+    S4a keeps pA), E2 (first fallback -> k1), E3 (K1 -> q, k2), E4 (K3 -> K1 and every beta -> pb; then all mover options tie at
+    (c_W, 0, 5l+4), Isigma = 0), TERM-XI (R15 (c)), Theorem ENDGAME-3 (every genome: one fallback at F, total F + 2), the same for N5
+    (ENDGAME-3-N5), Corollary EXACT-L (acyclic G: N5 from S3 on Gamma3(G) = L(G) + 3 exactly, with R117 REACH3), END-T3 (conditional
+    on REACH3-CYC: xi = T3 + 3). READING: polynomial for [E-LEV] bounded U(G) needs REACH3-CYC + the Gamma3 transfer of T-QUIET.
+  - DATA: check195.out (xi + spec, 8 families x 300, all pinned genomes, controls); record sweep data/sweep195.out (2 modes x 2 seeds x
+    8 families x 1500 + corpus; L(G) test with LRED = L-RED tree at 86a7a7a8, extracted by git archive into scratch).
+- DUTY P-N5-ASC fix round 3 (C135 E-1..E-4): fixes entry 3 + L-3 (sha1 0012d671 = C135 target, 5154 B; box193/mkl3_193.py; asc.pins 37).
+- P-N5-QUIET: REFEREE 28 SIGN all, L-1 NOT YET (QT-L1..QT-L6; predicted L-2 fed89346, 5131 B). Lead 03:37Z: [OPT] = R118 (b) (XICYC
+  l. 75) + R21 (a), not R57 (b); the Γ3 scope sentence OVERCLAIMS (QT-L4 replaces it). PREPARE fixes entry 2 + L-2, COMMIT ONLY after
+  REFEREE-2's review. Also: Form B (QUIET on all 13 instances) and quiet194.py's off-by-one (test against L, not L + 1).
+- L-RED 57 R222 item 3 (6f56004c): box 195 all SURVIVE; GAP EXACT-L wording (IDEAL-ACYC: self-loops count) -> Addendum 2 (witness
+  SELFL_n3 in box195/inst). PACKET P-N5-END FROZEN at the push after a2512364 (docs/new/P-N5-END.md; box195/end.pins 36 rows; check.sh
+  block «P-N5-END»; quotes_end.out 33/33). Items -> docs/new/P-N5-END-fixes.md (append-only). [OPT] kept as [1E-N3] (asked the Lead).
+- Box 195 follow-up: §6 READING quotes the withdrawn Γ3 scope sentence -> addendum after QT-L4 is fixed.
+- Slip (successor 63): wrote docs/new/P-N5-ASC-line-L3.txt (untracked) while push 4 ran. Rule: none, even untracked.
+  - Things only I know: the L(G) record needs `git archive 86a7a7a8 experiments/red/r187 experiments/red/r178 | tar -x -C DIR` and
+    LRED=DIR. eg195.py's «late» family is a stand-in (start = last option), not L-RED's own.py-based late.
+
 ## HANDOVER (successor 62, PARKING 2026-11-08 ~01:2xZ by date -u; Lead 01:08Z: «after that fixes entry, write your handover and park»)
 ### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
 - 2a67e54a handover check (score 5).

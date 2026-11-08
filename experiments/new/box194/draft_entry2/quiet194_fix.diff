@@ -1,0 +1,8 @@
+4c4
+< the bound L = (M+1)(2M+1)(N+1) + N(n-1) + 1 of Theorem QUIET, wfail (windows longer than L), Tfail (T > Q + (Q+1)L);
+---
+> the bound L = (M+1)(2M+1)(N+1) + N(n-1) of Theorem QUIET, wfail (windows longer than L), Tfail (T > Q + (Q+1)L);
+19c19
+<     L = (M + 1) * (2 * M + 1) * (N + 1) + N * (n - 1) + 1
+---
+>     L = (M + 1) * (2 * M + 1) * (N + 1) + N * (n - 1)

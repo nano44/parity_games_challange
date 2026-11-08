@@ -1,19 +1,22 @@
-# REFEREE-2 handover check (successor 32, Opus 5.5 under D1/D18/D20; 2026-11-08 00:15Z by date -u)
-1. Branch claude/referee-2. At start: fetch --unshallow + checkout + ff-only; `git branch --show-current` = claude/referee-2, HEAD =
-   origin/claude/referee-2 = fcdc16b4 (no stale ref this time). vs trunk claude/vibrant-johnson-nxvvxo 37a4855e: 3 ahead / 126 behind
-   (merge-base e72661d0). Merged trunk with a merge commit (no rebase) -> 6146131a, 4 ahead / 0 behind before this commit.
-2. Open work, after «go», in order:
-   A. P-N5-ASC byte test (predecessor's Add. 2 at fcdc16b4: fixes entry 1 CORRECT, L-1 NOT YET on W-3 and W-4). Waiting for L-NEW 62's
-      fixes entry 2 + line L-2 SHA from the Lead. Next step: test W-3's new E-MON unit string occurs once and the old not at all; test
-      W-4 (strict condition «lev(nxt[z]) > lev(z's mover)» added to upfail and check193.sh re-run on a git archive, or the clause
-      re-worded); DATA rule clause by clause on L-2; Addendum 3 to docs/referee-2/R2-P-N5-ASC.md (MATCHES / does not match).
-   B. Full independent second review of P-ACYC (L-SI 43), frozen claude/l-si e3ac4b06; docs/si/P-ACYC.md sha1 0e9edcfd… 16,852 B (not
-      6b699f93 as the lane's message said), line L-1 docs/si/P-ACYC-line-L1.txt sha1 bb12deec… 2,085 B; pins box81/pacyc.sha1, check
-      box81/check81.sh. Next step: re-hash at e3ac4b06; re-derive BETA-ACYC (Γ and Γ3), LAMBDA-CONST, ACYC-LIN, ACYC-XI (conditional on
-      R118 (k)+(l)); FIRST FALLBACK vs SPEC S4/S4c; premise quotes by script; §5 scope; own simulator replay of §6 DATA; DATA rule per
-      clause of L-1; TARGET.md diff. Report docs/referee-2/R2-P-ACYC.md; docs/referee/ read only after my verdict is on origin.
-3. GAPS rows owned by REFEREE-2: none. docs/GAPS.md names REFEREE-2 only in notes of closed rows (G-Bthr, G-K5, G-DOM); G-N5-TIME owner
-   is «L-NEW (L-LIT T22; referees later)», open.
+# REFEREE-2 handover check (successor 35, Opus 5.5 under D1/D18/D20; 2026-11-08 09:51Z by date -u)
+1. Branch claude/referee-2. At start: fetch --unshallow + fetch + checkout + ff-only (local ref was 145 behind; fast-forwarded);
+   `git branch --show-current` = claude/referee-2, HEAD = origin/claude/referee-2 = 0f82f03b. vs trunk claude/vibrant-johnson-nxvvxo
+   3906d411: 14 ahead / 49 behind (merge-base 6c937bc6). No trunk merge made (not needed for my items).
+2. Open work, after «go», in order (B first when its SHA arrives, it gates P-N5-END's landing):
+   B. Byte test of P-N5-END line L-3 (= L-2 e8a8ac51 at 2fcee038 + required L-R1, + optional N-1 / N-2 and REFEREE 29's EL-1 / EL-2):
+      when the Lead sends the SHA, check each old string once in L-2, each new string once in L-3, nothing else changed; write
+      R2-P-N5-END.md Addendum 2. Waiting for the SHA.
+   A. Full independent second review of P-N5-CHAIN (L-NEW 64): claude/l-new FROZEN 93531b03, docs/new/P-N5-CHAIN.md sha1 6e613ba7…,
+      38,551 B; L-1 at 71b75424 (docs/new/P-N5-CHAIN-line-L1.txt, sha1 bd152dd9…, 8,124 B); L-2 (fixes entry 1, REFEREE 29's CL-1)
+      byte-tested when sent; fixes docs/new/P-N5-CHAIN-fixes.md; pins chain.pins; check.sh block «P-N5-CHAIN». Statements ESC3-ALL,
+      W3-ALL, REACH3-ALL; F1/F3/F4′/F5/F6/DOM/STRICT on HOW3; CN2-3, LOC-GATE3, LOC-K2-3, B-ONLY3, NO-TIE3; QUIET3, T-QUIET3; E-MON3,
+      CHAIN-DECOMP3, HUB-ASC-G3, UP-JUMP3, UP-B3 ([E-LEV]); Theorem CHAIN3 ([E-LEV], conditional on P-N5-END and P-N5-ASC §4); DEAD
+      RUN-TRANSFER. Next step: re-hash on a git archive of 93531b03; re-derive every proof; premise quotes by script (r2q.py adapted);
+      own-engine replay (r2end.py / r2quiet.py); DATA rule clause by clause on the line; TARGET.md diff. Report
+      docs/referee-2/R2-P-N5-CHAIN.md; docs/referee/R-P-N5-CHAIN.md read only after my verdict is committed. L-RED 58 R223-reach.md,
+      R223-q2.md, R224-chain.md are context, not signatures. Not started.
+3. GAPS rows owned by REFEREE-2: none. docs/GAPS.md (trunk 3906d411) open rows: GAP-A, GAP-C, G-S5-6, G-NEST, G-N1-LB, G-N5-TIME (owner
+   «L-NEW (L-LIT T22; referees later)», open); REFEREE-2 appears only in notes of closed rows.
 4. D1 (active, DECISIONS-INDEX row D1; DECISIONS.md l. 7-8): «A claimed polynomial algorithm is far more likely to be wrong than right.
    Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.» «Never downgrade the referee to save
    money.»
@@ -21,7 +24,7 @@
    areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them
    briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.»
    D20 (active; DECISIONS.md l. 423): «We have reset the weekly usage, so we can again work faster no?» (Lead reading L48 active).
-5. Trap: a lane's DATA counter that tests a weaker property than its clause (P-N5-ASC upfail: successor 31's round-1 miss, caught in
-   Add. 2 as W-4). Check: read every counter's condition line by line against the lemma (and its loop set, for unit words such as
-   tmonunits including c_W) before calling a DATA clause OK. Standing trap too: SHAs typed into a Lead message before reading git output;
-   check = commit, read `git rev-parse HEAD`, message in a LATER step.
+5. Trap: a line sentence true in the proof's local reading and false on its own (P-N5-END E1's «changes only at a fallback», fixed by
+   L-R1). Check: read every line clause as a stand-alone RESULTS claim, and for every DATA clause read the counter's condition,
+   constants and loop units against the lemma on a git archive of the frozen SHA. Also (this start, again): stale local branch 145
+   behind; fetch/checkout/ff-only plus `git branch --show-current` before every push.

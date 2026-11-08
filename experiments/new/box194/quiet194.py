@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Box 194: Theorem QUIET data. class_t(v) := (Lambda_t(v), e-part of Pi_t(v)). A step t -> t+1 is LOUD if some vertex changes class,
 else QUIET. A quiet window = a maximal run of consecutive quiet steps. Per run: T, Q (loud steps), W (longest quiet window, in steps),
-the bound L = (M+1)(2M+1)(N+1) + N(n-1) + 1 of Theorem QUIET, wfail (windows longer than L), Tfail (T > Q + (Q+1)L);
+the bound L = (M+1)(2M+1)(N+1) + N(n-1) of Theorem QUIET, wfail (quiet WINDOWS longer than L, each counted once), Tfail (T > Q + (Q+1)L);
 crossflip: sigma-bar flips at a gate on a quiet step whose two faces are in different classes at both states (QUIET's proof: 0);
 DEtot: max over vertices of the number of distinct classes; sumDE: sum over vertices of (distinct classes - 1) >= Q.
 Usage: quiet194.py FILES.json | rand COUNT SEED | climb d w D seed iters OUT.json (hill-climb W, then W/N; box191 climb191.mut). Imports relative to this file."""
@@ -16,7 +16,7 @@ def analyse(G):
     for v in range(h.n):
         if name[v][0] == "e": ES |= 1 << E.rank[v]
     N = G["N"]; M = sum(len(o) for o in G["opts"]); n = h.n; T = len(ev) - 1
-    L = (M + 1) * (2 * M + 1) * (N + 1) + N * (n - 1) + 1
+    L = (M + 1) * (2 * M + 1) * (N + 1) + N * (n - 1)
     cls = [[(vs[v][0], vs[v][1] & ES) for v in range(n)] for vs, sb in ev]
     gates = [(v, name[v][1]) for v in range(n) if h.owner[v] == 1 and name[v][0] == "g"]
     r = dict(N=N, M=M, n=n, T=T, Q=0, W=0, L=L, wfail=0, Tfail=0, crossflip=0, DEtot=0, sumDE=0)
@@ -25,7 +25,7 @@ def analyse(G):
         if cls[t] != cls[t - 1]:
             r["Q"] += 1; cur = 0; continue
         cur += 1; r["W"] = max(r["W"], cur)
-        if cur > L: r["wfail"] += 1
+        if cur == L + 1: r["wfail"] += 1                      # once per window (P-N5-QUIET fixes entry 2, D-1)
         for g, q in gates:
             if ev[t][1][g] != ev[t - 1][1][g]:
                 e, b = V[("e", q)], V[("b", q)]

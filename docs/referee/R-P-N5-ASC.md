@@ -268,3 +268,146 @@ docs/referee/scratch/: asc_quotes.py, asc_cs.py, asc_game.py; asc_logs/cs.log, g
   - asc.pins has 35 rows, all matching (DOCS/ → docs/new/).
 - DATA rule: no clause changes except W-3's unit wording, which now matches the counter. MET.
 - Verdict: fixes entry 2 CORRECT (W-3, W-4). L-2 MATCHES, by the byte test and in meaning. All statements stay SIGN.
+
+## §E. Line L-3 (CHECKER C135 R1-R4) (REFEREE successor 28, Opus 5.5, D15; date -u at writing 2026-11-08T04:09Z)
+- Objects: claude/l-new a2512364 (ancestor of origin/claude/l-new).
+  - L-2 there is unchanged (f109cb69…).
+  - L-3 docs/new/P-N5-ASC-line-L3.txt: sha1 0012d6710983ec339be8f5d4e051a205cc9207ba, 5,154 B (EQUAL to the relay and to C135 §5's
+    target), 122 «(» = 122 «)».
+- Byte test (scratch/asc_l3.py; R1-R4 copied from C135 §5 at claude/checker 0942e8be, wrapped lines joined by one space;
+  asc_logs/l3_bytetest.out):
+  - Each old string occurs once in L-2 and 0 times in L-3. Each new string occurs once in L-3.
+  - L-2 + R1..R4 in order is byte-equal to L-3.
+- My AS-2 / AS-3 strings hold on L-3: 1 / 1 / 4, old forms 0.
+- Meaning:
+  - R1 (source note «successors 61-62»): CORRECT. Fixes entries 1-2 are successor 62's.
+  - R2 (AS-1): CORRECT. I read it as the author lane.
+    - REFEREE R-P-N5-ASC §3 l. 117-119 (AS-1) says that F′_0 is DESC-POLY on the whole interval I, not «word for word» per refined
+      level, «because τ(x) is monotone on x's active interval and x is active at both times of each change it is blamed for».
+    - Fixes entry 1 «AS-1 … TAKEN» restates it as the proof of record.
+    - REFEREE-2 checked it independently (R2-P-N5-ASC l. 212-214: «I agree. I checked it now … F′_0 = F_0 holds»).
+    - So «referee-originated …, signed by both referees» is accurate.
+  - R3 («hence seq_t(v) = (f, seq_t(y_f))»): CORRECT. It is the packet's own second sentence of CHAIN-DECOMP (l. 81: «Hence seq_t(v) =
+    (f, seq_t(y_f)).»): v's play after f is y_f's play, with the same Λ.
+  - R4 (definitions): CORRECT. It is the packet's l. 52-55 («seq_t(v) := the e-vertices that lie in Π_t(v), in the order of the play»;
+    «An ascent of a sequence … is an index i with c_(i+1) more relevant than c_i»).
+- NEW FINDING (R5, required; missed by REFEREE 27 and REFEREE-2 on L-1 and L-2, and not in C135): CHAIN-DECOMP's HYPOTHESIS in the line
+  is weaker than the packet's, and false as worded.
+  - The line (L-1 to L-3, unchanged by R1-R4) says «(Lemma CHAIN-DECOMP) if the first e-vertex on v's play is f, then f's successor y_f
+    is a mover with Λ_t(y_f) = Λ_t(v) and …».
+  - The packet's lemma (l. 80) says «If seq_t(v) = (f, …), then …», which needs f ∈ Π_t(v).
+  - Instance: v = e_g for any level-0 gate g. The first e-vertex on v's play is v itself, its successor is c_W, which is not a mover, and
+    Λ_t(v) = c_W, so v ∉ Π_t(v). The line's clause fails, while the packet's lemma does not apply (seq_t(v) is empty).
+  - Shown on RS2 (option (0, 0)) and LEAP_k8 (option (0, 0)) with my own builder and engine (scratch/asc_cd_l0.py,
+    asc_logs/cd_level0.out). It holds in every genome that has a level-0 mover.
+  - R5: old «(Lemma CHAIN-DECOMP) if the first e-vertex on v's play is f, then»
+    new «(Lemma CHAIN-DECOMP) if seq_t(v) = (f, …), i.e. the first e-vertex on v's play is f and f ∈ Π_t(v), then»
+  - The old string occurs once in L-3. L-3 + R5: sha1 4017305a34eac21615ba8f172a9b899544d25659, 5,198 B, 125 «(» = 125 «)»
+    (asc_logs/l3_r5.out).
+  - The statement as signed (the packet's) is unaffected. The line misstates its hypothesis. DATA rule: R5 is a statement wording; its
+    witness is asc_cd_l0.py.
+- Verdict:
+  - L-3 = L-2 + exactly R1-R4 (byte test PASSES). R1-R4 are CORRECT in meaning.
+  - L-3 does NOT YET MATCH the packet: R5 is required.
+  - All statements of P-N5-ASC stay SIGN (the packet's form).
+
+## §F. Line L-4 (R5) (REFEREE successor 29, Opus 5.5, D15; date -u at writing 2026-11-08T05:47Z)
+- Objects: claude/l-new a744677e (ancestor of origin/claude/l-new, checked).
+  - L-3 there is unchanged: docs/new/P-N5-ASC-line-L3.txt sha1 0012d671… (byte-equal to L-3 at a2512364).
+  - L-4 docs/new/P-N5-ASC-line-L4.txt: sha1 4017305a34eac21615ba8f172a9b899544d25659, 5,198 B, one line, 125 «(» = 125 «)».
+    EQUAL to the Lead's check and to successor 28's prediction in §E.
+- Byte test (my own script scratch/asc_l4.py; R5 strings copied from §E; asc_logs/l4_bytetest.out):
+  - R5 old string: 1 in L-3, 0 in L-4. R5 new string: 0 in L-3, 1 in L-4.
+  - L-3 + R5 is byte-equal to L-4.
+  - R1-R4 new strings and my AS-2 / AS-3 strings still hold on L-4 (1 each).
+- Lane script: experiments/new/box193/mkl4_193.py re-run from the repo root at a744677e rewrites L-4 byte-identically (git status clean).
+- Pins: experiments/new/box193/asc.pins at a744677e, 39 rows, all match (sha1sum -c with DOCS/ = ../../../docs/new/). New rows: the
+  fixes file (entry 4), L-4 and mkl4_193.py.
+- Meaning:
+  - Fixes entry 4 states R5 as in §E and accepts it; it changes no packet text, tool or DATA output. CORRECT.
+  - In context, L-4 now reads «(Lemma CHAIN-DECOMP) if seq_t(v) = (f, …), i.e. the first e-vertex on v's play is f and f ∈ Π_t(v), then
+    f's successor y_f is a mover with Λ_t(y_f) = Λ_t(v) and E_t(v) = {f} ∪ E_t(y_f), hence seq_t(v) = (f, seq_t(y_f))». This is the
+    packet's l. 80-81 hypothesis and conclusion. The level-0 instance of §E (v = e_g, seq_t(v) empty) no longer falls under it.
+- Optional (AS-L5, not required): the source note still reads «with fixes entries 1-2 … L-NEW successors 61-62». Entries 3-4
+  (successor 63) change only the line, not the packet's statements, so the note is not false. A later line may name «fixes entries
+  1-4; L-NEW successors 61-63».
+- Verdict: L-4 MATCHES (L-3 + exactly R5; R5 CORRECT). The line now matches the packet. All statements of P-N5-ASC stay SIGN.
+
+### §F addendum 1: notes N-I and N-A from the R121 second fill (REFEREE successor 29; date -u at writing 2026-11-08T06:30Z)
+Asked by the Lead (06:10Z) so that CHECKER does not have to rule. Not read: docs/referee-2/ beyond what the Lead quoted.
+- N-I (R5's «i.e.» gloss).
+  - Packet l. 52 defines seq_t(v) as «the e-vertices that lie in Π_t(v), in the order of the play»; the lemma's hypothesis (l. 80) is
+    seq_t(v) = (f, …).
+  - (⇐) If the first e-vertex on v's play is f and f ∈ Π_t(v), then f is the first e-vertex of Π_t(v) in play order: seq_t(v) = (f, …).
+  - (⇒) fails only if an earlier e-vertex e0 on v's play is outside Π_t(v). Then e0 lies on the cycle, or before the cycle node and
+    less relevant than it. Either way the cycle node is at least as relevant as an e-vertex. The cycle cannot be c_W's loop or lie
+    in the closed core, since then no e-vertex is in Π_t(v) and seq_t(v) is empty. So Λ_t(v) is an e-vertex. This is REFEREE-2's
+    condition, re-derived.
+  - What R5 meant: an unpacking of the packet's hypothesis, written to exclude the level-0 case of §E. It was not checked as an
+    equivalence in the corner case «Λ_t(v) is an e-vertex». The «i.e.» therefore overstates in that corner (0 plays of 71,430 there,
+    per the Lead's quote of REFEREE-2 33).
+  - No statement is false. The formal hypothesis «seq_t(v) = (f, …)» comes first and is the packet's. If the gloss is read as the
+    hypothesis instead, it is narrower (by ⇐), so the lemma still holds.
+  - Verdict: R-I OPTIONAL. Recommended, since a new line is needed anyway for R-A. Strings as the Lead gave them: old «(f, …), i.e.
+    the first e-vertex on v's play is f and f ∈ Π_t(v), then» → new «(f, …), then» (old string once in L-4).
+- N-A (ascents in CS(M)).
+  - The line's Theorem HUB-ASC(B) counts «ascents» of a hub's value in CS(M) and needs «every chain lex-nondecreasing». Both need an
+    order on CS(M)'s items.
+  - L-4 gives no order on «items 1..M» and defines an ascent only «of seq_t(v) a step to a more relevant element». Relevance is not
+    defined for numbers. The packet has both: l. 55 («An ascent of a sequence (c_1, …, c_p) of distinct items is an index i with
+    c_(i+1) more relevant than c_i») and l. 58 («items 1..M, compared by number («rank»)»).
+  - A signed statement in the line uses an undefined term. As with TF-L2 (P-TOWER-FUEL, undefined «fail»), this is REQUIRED.
+  - Verdict: R-A REQUIRED, with the Lead's strings: old «(items 1..M, a run of forests with every chain lex-nondecreasing)» → new
+    «(items 1..M compared by number, a run of forests with every chain lex-nondecreasing, an ascent a step to a larger item)» (old
+    string once in L-4).
+- Predicted lines (scratch/asc_l4na.py, asc_logs/l4_na.out; parentheses balanced in each):
+  - L-4 + R-A: sha1 eaff3343fa07decba94802bca0a46d97e8efcbf7, 5,252 B.
+  - L-4 + R-A + R-I (either order): sha1 fe4d3f902b6afde93384ebf625fa9bebcea0e1d0, 5,192 B.
+  - L-4 + R-I alone: a51e0e89…, 5,138 B (EQUAL to the Lead's figure; not sufficient).
+- Revised verdict on L-4: MATCHES with R-A required (R-I optional). L-4 = L-3 + exactly R5 still holds. All statements of P-N5-ASC
+  stay SIGN.
+
+## §G. Line L-5 (R-A, R-I) (REFEREE successor 29, Opus 5.5, D15; date -u at writing 2026-11-08T07:47Z)
+- Objects: claude/l-new e28e962d (ancestor of origin/claude/l-new, checked).
+  - L-4 there is unchanged (byte-equal to my asc_logs/L4.txt, 4017305a…).
+  - L-5 docs/new/P-N5-ASC-line-L5.txt: sha1 fe4d3f902b6afde93384ebf625fa9bebcea0e1d0, 5,192 B, one line, 124 «(» = 124 «)». EQUAL to
+    my prediction in §F addendum 1 and to the Lead's check.
+- Byte test (scratch/asc_l5.py; strings of §F addendum 1; asc_logs/l5_bytetest.out):
+  - R-A and R-I old strings: once each in L-4, 0 in L-5. New strings: 0 in L-4, once each in L-5.
+  - L-4 + R-A + R-I is byte-equal to L-5.
+- Lane: mkl5_193.py re-run at e28e962d rewrites L-5 identically (worktree clean). asc.pins: 41 rows, all match.
+- Fixes entry 5 states R-A (required) and R-I (taken by Lead ruling) as in §F addendum 1. CORRECT.
+  - Note, not an item: it says the line now states the order «as the packet's §4 does». The definitions are in the packet's §2
+    (l. 55, l. 58). Harmless.
+- Meaning:
+  - With R-I, CHAIN-DECOMP's hypothesis in the line is exactly the packet's l. 80 «If seq_t(v) = (f, …)».
+  - With R-A, CS(M)'s items are ordered, so «lex-nondecreasing» and «ascent» in HUB-ASC(B) are defined, as the packet's l. 55 / l. 58
+    define them.
+- Verdict: L-5 MATCHES the packet. All statements of P-N5-ASC stay SIGN (UP-JUMP / UP-B / NOUP under [E-LEV], as before).
+
+## §H. Line L-6 (CHECKER C135 Add. 1 R6) (REFEREE successor 30, Opus 5.5, D15; date -u at writing 2026-11-08T11:26Z)
+- Objects (Lead 11:26Z): claude/l-new 2f4167cd (ancestor of origin/claude/l-new, checked). docs/new/P-N5-ASC-line-L6.txt sha1
+  a23c61d384036ce3fa771e27e175a8dbf2331658, 5,449 B. L-5 at 2f4167cd unchanged (fe4d3f90). Packet unchanged: sha1 9c9cb50d at 2f4167cd
+  = at e28e962d (frozen).
+- Byte test: scratch/asc_l6.py, R6's old / new strings typed from C135 Add. 1 (claude/checker 0ffde42c), not from the lane's script, on
+  L-5. Old string once in L-5. `cmp` with the lane's L-6: **EQUAL** (scratch/asc_logs/l6test.out). One line, 133 «(» = 133 «)», depth
+  never negative, 0 «|». So L-6 = L-5 + exactly R6.
+- Lane's own checks, from `git archive 2f4167cd`: asc.pins 43 rows, `sha1sum -c` all OK; box193/mkl6_193.py prints «R6 old once,
+  applied; sha1 a23c61d3… 5449 bytes; parens 133 133».
+- R6 in meaning, against the frozen packet §2 (l. 58-62), clause by clause:
+  - «a forest a map next from the items to the items and ⊥ without cycles» = l. 59 «A forest is a map next: items → items ∪ {⊥} without
+    cycles». CORRECT (and fixes the drafter's R-H defect: the codomain contains ⊥, so acyclic maps exist).
+  - «chain(x) := (x, next(x), next²(x), …) up to ⊥, compared as a set» = l. 59. «up to ⊥» only makes the stop explicit. CORRECT.
+  - «a hub (h_t an item or ⊥ at each time t, chain(⊥) := ∅, with chain_s(h_s) ≤ chain_t(h_t) for s < t) whose value chain_t(h_t)» =
+    l. 62 word for word in meaning. CORRECT. The monotonicity is now stated as the hub's defining condition, i.e. as a hypothesis of
+    HUB-ASC(B); it is what the B = 0 proof's first step uses («every lex-monotone sequence of sets is strictly increasing at each change»).
+  - CHECKER's witness re-checked by hand: in the CS(3) run of four forests (⊥,⊥,⊥), (⊥,⊥,3→1), (⊥,⊥,3→2), (⊥,2→1,3→2), a choice with
+    no monotonicity reaches the 8 descending values ∅, (1), (2), (2,1), (3), (3,1), (3,2), (3,2,1) > F_0(3) = 1 + 3·4/2 = 7. So without
+    the hub condition L-5's HUB-ASC(0) was false as worded; with R6 it is the packet's theorem. E-5 is closed.
+- Fixes entry 6 (docs/new/P-N5-ASC-fixes.md at 2f4167cd): CORRECT; its clause-by-clause comparison is the same as mine.
+- OPTIONAL (not required; Lead and CHECKER decide): HL-1. The hub's «≤» in R6 is not labelled «lex». The run clause beside it says
+  «lex-nondecreasing», and the line orders sets lexicographically elsewhere, so the reading is fixed by context. A label
+  («chain_s(h_s) ≤ chain_t(h_t) (lex) for s < t», as packet l. 60 writes for runs) would be exact. Taking it costs a line round; I do
+  not require it.
+- Verdict: **Line L-6 MATCHES** the packet read with fixes entries 1-6; R1-R5, R-A, R-I and R6 all CORRECT. All statements stay as in
+  §0 / earlier sections. docs/referee-2/ not read for this section.

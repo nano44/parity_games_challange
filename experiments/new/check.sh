@@ -1017,4 +1017,44 @@ if [ -z "$pinQ" ]; then
 else
   echo "P-N5-QUIET check: FAILED"; echo "$pinQ" | head -20; exit 1
 fi
+# BOX 195 END (L-NEW successor 63): Lemmas E0-E4 / Theorems ENDGAME-3, ENDGAME-3-N5 (eg195.py), frozen output + negative controls
+# no silent exit: every failure path prints «BOX 195 END check: FAILED» with the exit code, the diff and the run's last lines
+r195=0; run195=$(cd box195 && bash check195.sh 2>&1) || r195=$?
+d195=$(diff <(printf '%s\n' "$run195") box195/check195.out 2>&1) || true
+if [ "$r195" -eq 0 ] && [ -z "$d195" ] && ! grep -v "^ctrl" box195/check195.out | grep -Eq "(e[0-4]fail|stopfail|finsbar|fintie|nofb|late|capped|lfail) [1-9]" && grep -q "^ctrl1 .*e2fail 100 e3fail 100 e4fail 100 stopfail 100 finsbar 100 fintie 100" box195/check195.out && grep -q "^ctrl2 .*e0fail 200 e1fail 200" box195/check195.out; then
+  echo "BOX 195 END: E0-E4 / ENDGAME-3 (xi and spec) 0 failures, controls fire = frozen: PASS"
+else
+  echo "BOX 195 END check: FAILED (check195.sh exit $r195; python $(python3 --version 2>&1))"; echo "$d195" | head -30; echo "$run195" | tail -15; exit 1
+fi
+# P-N5-END (L-NEW successor 63): frozen packet + cited tools / instances / outputs against box195/end.pins (DOCS/ = docs/new/)
+pinE=$(cd box195 && sed 's#DOCS/#../../../docs/new/#' end.pins | sha1sum -c --quiet 2>&1) || true
+if [ -z "$pinE" ]; then
+  echo "P-N5-END: packet and $(wc -l < box195/end.pins) pinned files match end.pins: PASS"
+else
+  echo "P-N5-END check: FAILED"; echo "$pinE" | head -20; exit 1
+fi
+# BOX 196 CHAIN (L-NEW successor 64): QUIET3 / T-QUIET3 / REACH3-ALL / UP-B3 counters on the Γ3 run (qt3_196.py), frozen output + controls
+# no silent exit: every failure path prints «BOX 196 CHAIN check: FAILED» with the exit code, the diff and the run's last lines
+r196=0; run196=$(cd box196 && bash check196.sh 2>&1) || r196=$?
+d196=$(diff <(printf '%s\n' "$run196") box196/check196.out 2>&1) || true
+if [ "$r196" -eq 0 ] && [ -z "$d196" ] && ! grep -Ev "^(ctrl|spec)" box196/check196.out | grep -Eq "(nonstd|nohoward|cnlow|locfail|ties|bonly|k2fail|wfail|crossflip|Tfail|upfail|emon) [1-9]" && grep -q "^ctrl1 .*wfail [1-9].*Tfail [1-9][0-9]* upfail [1-9]" box196/check196.out && grep -q "^ctrl2 .*locfail [1-9]" box196/check196.out && grep -q "^ctrl3 .*bonly [1-9]" box196/check196.out && grep -q "^spec .*nohoward [1-9]" box196/check196.out; then
+  echo "BOX 196 CHAIN: Γ3-native QUIET3 / REACH3-ALL / UP-B3 counters 0, controls and spec-mode nohoward fire = frozen: PASS"
+else
+  echo "BOX 196 CHAIN check: FAILED (check196.sh exit $r196; python $(python3 --version 2>&1))"; echo "$d196" | head -30; echo "$run196" | tail -15; exit 1
+fi
+# P-N5-CHAIN (L-NEW successor 64): frozen packet + cited tools / instances / outputs against box196/chain.pins (DOCS/ = docs/new/)
+pinC=$(cd box196 && sed 's#DOCS/#../../../docs/new/#' chain.pins | sha1sum -c --quiet 2>&1) || true
+if [ -z "$pinC" ]; then
+  echo "P-N5-CHAIN: packet and $(wc -l < box196/chain.pins) pinned files match chain.pins: PASS"
+else
+  echo "P-N5-CHAIN check: FAILED"; echo "$pinC" | head -20; exit 1
+fi
+# BOX 197 CORE (L-NEW successor 65): ASC-WIT / ASC-ROOT / RE-COUNT counters on the Γ3 run (asc197.py), frozen output + controls
+r197=0; run197=$(cd box197 && bash check197.sh 2>&1) || r197=$?
+d197=$(diff <(printf '%s\n' "$run197") box197/check197.out 2>&1) || true
+if [ "$r197" -eq 0 ] && [ -z "$d197" ] && ! grep -v "^ctrl" box197/check197.out | grep -Eq "(awA|awB|lexdec|dfail|rootfail) [1-9]" && grep -q "^ctrl1 .*awA [1-9]" box197/check197.out && grep -q "^ctrl2 .*rootfail [1-9]" box197/check197.out && grep -q "^ctrl3 .*awB [1-9]" box197/check197.out && grep -q "^ctrl4 .*dfail [1-9]" box197/check197.out; then
+  echo "BOX 197 CORE: ASC-WIT / ASC-ROOT / RE-COUNT counters 0, controls fire = frozen: PASS"
+else
+  echo "BOX 197 CORE check: FAILED (check197.sh exit $r197)"; echo "$d197" | head -30; echo "$run197" | tail -15; exit 1
+fi
 rm -rf "$tmp"

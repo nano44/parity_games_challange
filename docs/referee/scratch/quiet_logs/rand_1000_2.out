@@ -1,0 +1,5 @@
+TOTAL rand 1000 genomes: states 3522 cnlow 0 k2fail 0 gst 68549 ties 0 locfail 0 bpairs 236134 bfail 0 crossflip 0 wfail 0 Tfail 0 howardties 37 T 2522 | max {'T': 8, 'W': 4, 'WoverN': 1.0}
+
+real	0m1.034s
+user	0m1.020s
+sys	0m0.008s

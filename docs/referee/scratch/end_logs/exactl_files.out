@@ -1,0 +1,16 @@
+  SELFL_n3.json not-acyclic L None F 1 iters 3 {} 
+  A_d4_W2_k2.json IDEAL-ACYC L 9 F 10 iters 12 {} 
+  A_d4_W3_k3.json IDEAL-ACYC L 15 F 16 iters 18 {} 
+  A_d5_W2_k3.json IDEAL-ACYC L 13 F 14 iters 16 {} 
+  A_d6_W2_k2.json IDEAL-ACYC L 11 F 12 iters 14 {} 
+  KILL_M2D_d6_mu13_norm.json IDEAL-ACYC L 13 F 14 iters 16 {} 
+  KILL_M2D_d8_mu21_norm.json IDEAL-ACYC L 24 F 25 iters 27 {} 
+  RECT_d11_T59_norm.json IDEAL-ACYC L 59 F 60 iters 62 {} 
+  REC_d10_mu32_norm.json IDEAL-ACYC L 33 F 34 iters 36 {} 
+  REC_d10_tower_mu30_norm.json IDEAL-ACYC L 35 F 36 iters 38 {} 
+  REC_d11_mu40_norm.json IDEAL-ACYC L 44 F 45 iters 47 {} 
+  REC_d12_mu42_norm.json IDEAL-ACYC L 48 F 49 iters 51 {} 
+  REC_d7_mu17_norm.json IDEAL-ACYC L 17 F 18 iters 20 {} 
+  REC_d8_mu24_norm.json IDEAL-ACYC L 25 F 26 iters 28 {} 
+  REC_d9_mu29_norm.json IDEAL-ACYC L 31 F 32 iters 34 {} 
+n5b-spec files 15: runs 15 | tau 0 nfb 0 nofb 0 k0 0 k1 0 k2 0 k3 0 total 0 pb 0 | start != my S3 0 | maxF 60 | IDEAL-ACYC 14 lfail 0 maxL 59

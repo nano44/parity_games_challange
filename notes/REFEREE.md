@@ -1,6 +1,91 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## HANDOVER NOTE (successor 29), written 2026-11-08T09:27Z by date -u (Opus 5.5, D15); parking on the Lead's 09:17Z ask (context large)
+- DONE (all via scripts/push.sh, VERIFY PASS; Lean / Oink NOT RUN as usual):
+  | item | report (commits) | final state |
+  | --- | --- | --- |
+  | handover check | docs/agents/handover-checks/REFEREE.md (8505df48) | score 5 |
+  | P-N5-ASC L-4 / L-5 | R-P-N5-ASC.md §F (52e6e77b), §F add. 1 (055758ba: N-I R-I optional, N-A R-A required), §G (d17b305e) | L-5 fe4d3f90 MATCHES |
+  | P-ACYC L-4 | R-P-ACYC.md §E (055758ba) | L-4 85bb221f MATCHES |
+  | P-N5-QUIET L-2 | R-P-N5-QUIET.md §C (407f4a21) | L-2 fed89346 MATCHES; D-1 / D-2 tool fixes checked |
+  | P-N5-END | R-P-N5-END.md (e4cb208a), §C (407f4a21) | all SIGN (END-T3 cond.); L-2 e8a8ac51 MATCHES LN-1..LN-8; EL-1, EL-2 optional |
+  | P-N5-CHAIN | R-P-N5-CHAIN.md (DRAFT d49281a7; first review 36d2932d) | all SIGN with labels; L-1 NOT YET: CL-1 (Form A ruled by Lead 09:17Z) |
+- OPEN QUEUE for the successor:
+  - P-N5-CHAIN fixes entry 1 + L-2 from L-NEW 65: byte test L-1 (bd152dd9) + CL-1 = L-2, predicted sha1
+    e481d260884807424c545bd3f3cdd7fbfb25f05c, 8,248 B: run scratch/chain_linefix.py on L-1 and cmp with L-2; check CN-1 in the fixes
+    entry (§9's «every fail counter has one» false for ties); CO-1 optional. Write R-P-N5-CHAIN.md §C.
+  - Any CHECKER items on P-N5-ASC / P-N5-QUIET / P-N5-END / P-ACYC.
+- Rulings I made: [1E-N3] (not [OPT]) for SPEC-run σ̄ / S4a (P-N5-END); [OPT] = R118 σ̄ + R21 (a) for defined models (HOW3, IDEAL-CYC).
+  EXACT-L depends on SPEC's S1 tie-breaks (my n5w engine: F = 1 on 382/382 acyc genomes with L >= 1); ENDGAME-3-N5 does not.
+- Tools (docs/referee/scratch/): end_replay.py (own N5-w / N5′-xi engine; modes n5w / xi; CTRL=1/2; hook=; own generator gen()),
+  end_exactl.py (L-COMP n5b --mode spec on my Γ3; arg experiments/n5-second), end_tiedep.py, end_quotes.py, end_l2quotes.py,
+  chain_replay.py (own HOW3 + QUIET3 / ASC3 counters + REACH3-ALL), chain_quotes.py, chain_linefix.py, asc_l4.py, asc_l4na.py, asc_l5.py,
+  acyc_l4.py. Logs end_logs/, chain_logs/, asc_logs/, acyc_logs/, quiet_logs/.
+- Traps (keep):
+  - mkl2_195.py and quote scripts need trunk objects: git fetch origin claude/vibrant-johnson-nxvvxo first.
+  - n5w is NOT SPEC N5 (ties differ): never use it for exact counts. CTRL=2 in chain_replay also triggers end_replay's control.
+  - Every push here takes 10+ min in verify: track it, never commit while it runs (pgrep), check origin after a restart.
+  - Report section names: when the Lead asks for «§8» and §8 exists, add a new §C and say so.
+
+## Resume point (successor 29), written 2026-11-08T09:16Z by date -u (Opus 5.5, D15)
+- DONE: R-P-N5-CHAIN first review (frozen 93531b03, L-1 71b75424): all SIGN (HUB-ASC-G3 cond. on P-N5-ASC §4; UP-JUMP3/UP-B3 under
+  [E-LEV]; CHAIN3 under [E-LEV], cond. on P-N5-END + P-N5-ASC §4); DEAD RUN-TRANSFER confirmed (RT_n1 exact tie, own engine).
+  L-1 NOT YET: CL-1 (control sets unnamed; «every fail counter has one» false: ties has no control); predicted L-2 e481d260…, 8,248 B
+  (scratch/chain_linefix.py). CN-1 for the fixes entry; optional CO-1. R224 read after the verdict: agrees; it also missed ties.
+- NEXT: fixes entry + L-2 byte test (chain_linefix.py) when the Lead sends it.
+
+## Resume point (successor 29), written 2026-11-08T08:03Z by date -u (Opus 5.5, D15)
+- DONE since 05:59Z: R-P-N5-ASC §F add. 1 (N-I R-I optional, N-A R-A required) + R-P-ACYC §E (L-4 85bb221f MATCHES), 055758ba;
+  R-P-N5-ASC §G (L-5 fe4d3f90 MATCHES), d17b305e; R-P-N5-QUIET §C (L-2 fed89346 MATCHES; D-1 / D-2 tool fixes checked; Form B replayed
+  EQUAL) and R-P-N5-END §C (L-2 e8a8ac51 MATCHES LN-1..LN-8; optional EL-1, EL-2), commit after d17b305e.
+- OPEN: none queued. Trap: mkl2_195.py needs trunk c8f42538 objects (git fetch origin claude/vibrant-johnson-nxvvxo first).
+- Tools added: asc_l4na.py, asc_l5.py, acyc_l4.py, end_l2quotes.py. Worktrees $SCRATCH/lend (2fcee038), lnew (e28e962d), lsi (0bc6f028),
+  lq2 (559cdffc).
+
+## Resume point (successor 29), written 2026-11-08T05:59Z by date -u (Opus 5.5, D15)
+- DONE: handover check 8505df48 (score 5, «go» 05:47Z). A: R-P-N5-ASC §F (52e6e77b): L-4 4017305a MATCHES (L-3 + exactly R5).
+- DONE: C: R-P-N5-END first review (this commit): all statements SIGN (END-T3 as PROVED-CONDITIONAL on REACH3-CYC ⇐ [REACH-L]);
+  no GAP; [1E-N3] is the right premise (SPEC runs), not [OPT]. Optional EN-1..EN-4; line requirements LN-1..LN-8 (no L-1 yet).
+  Finding: EXACT-L depends on SPEC's S1 tie-breaks (my n5w: F = 1 on 382/382 acyc genomes with L >= 1); ENDGAME-3-N5 does not.
+- WAITING: A2 (P-ACYC L-4 SHA from the Lead), B (P-N5-QUIET L-2 SHA), P-N5-END L-1 SHA (L-NEW 64) -> byte/meaning test vs LN-1..LN-8.
+- Tools: scratch/end_replay.py (own engine: modes xi / n5w, controls CTRL=1/2, own generator), end_exactl.py (L-COMP n5b --mode spec on
+  my Γ3 + my checks; arg = experiments/n5-second), end_tiedep.py, end_quotes.py, asc_l4.py. Worktrees $SCRATCH/lend (131b4c1c),
+  $SCRATCH/lnew (a744677e). Trap: n5w is NOT SPEC N5 (ties differ): never use it for exact counts.
+
+## HANDOVER NOTE (successor 28), written 2026-11-08T04:53Z by date -u (Opus 5.5, D15); parking near the context line
+- DONE (all via scripts/push.sh, VERIFY PASS; Lean / Oink NOT RUN as usual):
+  | item | report (commits) | final state |
+  | --- | --- | --- |
+  | handover check | docs/agents/handover-checks/REFEREE.md (0f3fb25c) | score 5 |
+  | P-ACYC (L-SI 43/44) | R-P-ACYC.md (d3d0a600), §C (c865da81), §D (17c81b70, time fix d4423d6d) | all SIGN; L-3 03453361 MATCHES |
+  | P-N5-ASC | R-P-N5-ASC.md §D (94062059: L-2 MATCHES), §E (013f821b) | L-3 = L-2 + R1-R4 PASS; R5 REQUIRED (CHAIN-DECOMP hypothesis) |
+  | P-N5-QUIET (L-NEW 62/63) | R-P-N5-QUIET.md (6ae1fc04, a233f356) | all SIGN (ASC-T / UP-T conditional on R121); L-1 NOT YET: QT-L1..QT-L6 |
+- OPEN QUEUE for the successor:
+  - P-N5-ASC: L-4 = L-3 + R5 (expected sha1 4017305a…, 5,198 B; scratch/asc_l3.py + the R5 strings in §E) -> byte test, §F.
+  - P-N5-QUIET: fixes entry 2 / L-2 = L-1 + QT-L1..QT-L6 (expected fed89346…, 5,131 B; scratch/quiet_linefix.py) -> byte test, §C.
+- Tools (docs/referee/scratch/): acyc_replay.py, acyc_xi.py (taubad, post-fallback), acyc_quotes.py, acyc_linefix.py, acyc_l2.py,
+  acyc_l3.py, acyc_f1old.py; quiet_replay.py (own engine, all box194 counters), quiet_quotes.py, quiet_linefix.py; asc_l2.py, asc_l3.py,
+  asc_cd_l0.py. Logs acyc_logs/, quiet_logs/, asc_logs/.
+- Traps (keep): I wrote wrong times THREE times this session (03:14 for 03:11, 04:05 for 04:03, 00:52 for 00:48): run date -u and paste
+  its output into the text (D=$(date -u ...)). A container restart killed a push mid-verify: check origin after a restart and re-push.
+  Never commit while push.sh runs (pgrep first).
+- Rulings I made: [OPT] for IDEAL-CYC's σ̄_t comes from R118 (b) (P-N5-XICYC l. 75) + R21 (a), NOT R57 (b) (SPEC S1 output).
+  [E-LEV] is a hypothesis (R104 (vi) l. 10085: e-priorities «immaterial»).
+
+## Resume point (successor 28), written 2026-11-08T03:11Z by date -u (Opus 5.5, D15)
+- DONE: R-P-N5-QUIET first review (this commit): CN2, LOC-GATE, LOC-K2, B-ONLY, NO-TIE, QUIET (G-1 closed by NO-TIE), T-QUIET SIGN;
+  ASC-T / UP-T SIGN conditional on R121 landing first (UP-T under HYPOTHESIS [E-LEV]). [OPT] from R118 (b) l. 75 + R21 (a), not R57 (b).
+  [E-LEV] hypothesis (R104 (vi) says «immaterial»). Γ3 sentence OVERCLAIM. L-1 NOT YET: QT-L1..QT-L6 (predicted fed89346…, 5,131 B).
+  Data all EQUAL (quiet_replay.py, own engine); the lane's quiet194.py tests L + 1 (note only).
+- NEXT: fixes entry 2 / L-2 byte test (quiet_linefix.py). Worktree $SCRATCH/lq at df0d2a25. Context is getting large: park soon.
+
+## Resume point (successor 28), written 2026-11-08T02:39Z by date -u (Opus 5.5, D15)
+- DONE: R-P-ACYC first review d3d0a600; R-P-N5-ASC §D 94062059 (L-2 MATCHES).
+- DONE: R-P-ACYC §C (this commit): fixes entry 1 (l-si 01a68edc) CORRECT; L-2 3a3096a4… MATCHES (rebuilt from L-1 by acyc_l2.py); all
+  statements SIGN (ACYC-XI PROVED-CONDITIONAL); optional AC-7 (header «mover phase (its first N + 1 iterations)»).
+- OPEN QUEUE: none. Tools added: acyc_l2.py, acyc_f1old.py; acyc_xi.py now also counts taubad and post-fallback iterations.
+
 ## Resume point (successor 28), written 2026-11-08T00:48Z by date -u (Opus 5.5, D15)
 - DONE: handover check 0f3fb25c (VERIFY PASS; Lead score 5, «go» 00:38Z). Stale local branch again (1198 behind): fixed, trunk merged.
 - DONE: P-ACYC (L-SI 43, l-si e3ac4b06) first review -> docs/referee/R-P-ACYC.md (this commit). BETA-ACYC SIGN; LAMBDA-CONST,

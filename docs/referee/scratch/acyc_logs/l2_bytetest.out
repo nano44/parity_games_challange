@@ -1,0 +1,13 @@
+(1) L-1 + AC-L1..AC-L5 = ('c8ed32a8424ac126f0280c897962cca139ce6d79', 2638) (predicted c8ed32a8…, 2638)
+old once in L-1: 1 | new in L-2: 1 | the order ⊴ and σ̄ of R118 [VJ]):
+old once in L-1: 1 | new in L-2: 1 | PROVED-CONDITIONAL on R118's REACH3-CYC, whose premises RESU
+old once in L-1: 1 | new in L-2: 1 | L6Z_KILL238_d28 (44 states), σ̄ off the β-face in 0 (state, 
+old once in L-1: 1 | new in L-2: 1 | σ̄ off the β-face 0, non-standard states 0, genomes with fir
+old once in L-1: 1 | new in L-2: 1 | control, five Ξ-cyclic genomes: σ̄ off the β-face 121, C 15,
+(2) rebuilt == L-2: True ('3a3096a45df6ca22e8099ca4e1a9ac1779c1321e', 2741) | L-2 ('3a3096a45df6ca22e8099ca4e1a9ac1779c1321e', 2741)
+(3) AC-L1 new (whole) in L-2: 1 | old in L-2: 0
+(3) AC-L2 new (whole) in L-2: 1 | old in L-2: 0
+(3) AC-L3 new (whole) in L-2: 1 | old in L-2: 0
+(3) AC-L4 new (whole) in L-2: 1 | old in L-2: 0
+(3) AC-L5 new (whole) in L-2: 0 | old in L-2: 0
+parens L-2 38 38
