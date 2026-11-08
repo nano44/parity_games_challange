@@ -1,0 +1,14 @@
+# cmp34 N 0 M 0 count 12 seed 0 elev True files True
+OK /tmp/claude-0/-home-user-parity-games-challange/b9578394-478d-5690-bc2f-41d4c0845a6c/scratchpad/lnewfix/experiments/new/box196/inst_si85/CL2_21.json own T3 23 maxalt 5 | fix 23 5 | old 23 5
+OK /tmp/claude-0/-home-user-parity-games-challange/b9578394-478d-5690-bc2f-41d4c0845a6c/scratchpad/lnewfix/experiments/new/box196/inst_si85/CL2_22.json own T3 28 maxalt 5 | fix 28 5 | old 28 5
+OK /tmp/claude-0/-home-user-parity-games-challange/b9578394-478d-5690-bc2f-41d4c0845a6c/scratchpad/lnewfix/experiments/new/box196/inst_si85/CL3_31.json own T3 15 maxalt 3 | fix 15 3 | old 15 3
+OK /tmp/claude-0/-home-user-parity-games-challange/b9578394-478d-5690-bc2f-41d4c0845a6c/scratchpad/lnewfix/experiments/new/box196/inst_si85/CL3_32.json own T3 24 maxalt 2 | fix 24 2 | old 24 2
+OK /tmp/claude-0/-home-user-parity-games-challange/b9578394-478d-5690-bc2f-41d4c0845a6c/scratchpad/lnewfix/experiments/new/box196/inst_si85/TC2.json own T3 12 maxalt 3 | fix 12 3 | old 12 3
+OK /tmp/claude-0/-home-user-parity-games-challange/b9578394-478d-5690-bc2f-41d4c0845a6c/scratchpad/lnewfix/experiments/new/box196/inst_si85/TC2d.json own T3 10 maxalt 2 | fix 10 2 | old 10 2
+OK /tmp/claude-0/-home-user-parity-games-challange/b9578394-478d-5690-bc2f-41d4c0845a6c/scratchpad/lnewfix/experiments/new/box196/inst_si85/TC3.json own T3 18 maxalt 4 | fix 18 4 | old 18 4
+OK /tmp/claude-0/-home-user-parity-games-challange/b9578394-478d-5690-bc2f-41d4c0845a6c/scratchpad/lnewfix/experiments/new/box196/inst_si85/TC3d.json own T3 14 maxalt 2 | fix 14 2 | old 14 2
+OK /tmp/claude-0/-home-user-parity-games-challange/b9578394-478d-5690-bc2f-41d4c0845a6c/scratchpad/lnewfix/experiments/new/box196/inst_si85/TC3m.json own T3 17 maxalt 3 | fix 17 3 | old 17 3
+OK /tmp/claude-0/-home-user-parity-games-challange/b9578394-478d-5690-bc2f-41d4c0845a6c/scratchpad/lnewfix/experiments/new/box196/inst_si85/TC4m.json own T3 37 maxalt 4 | fix 37 4 | old 37 4
+OK /tmp/claude-0/-home-user-parity-games-challange/b9578394-478d-5690-bc2f-41d4c0845a6c/scratchpad/lnewfix/experiments/new/box196/inst_si85/TC5m.json own T3 43 maxalt 5 | fix 43 5 | old 43 5
+OK /tmp/claude-0/-home-user-parity-games-challange/b9578394-478d-5690-bc2f-41d4c0845a6c/scratchpad/lnewfix/experiments/new/box196/inst/RT_n1.json own T3 1 maxalt 0 | fix 1 0 | old 1 0
+SUMMARY N 0 M 0 count 12 seed 0 elev True mismatches {'game': 0, 'T3fix': 0, 'Afix': 0, 'T3old': 0, 'Aold': 0, 'err': 0} T3hist {1: 1, 10: 1, 12: 1, 14: 1, 15: 1, 17: 1, 18: 1, 23: 1, 24: 1, 28: 1, 37: 1, 43: 1} maxalt_hist(fixed) {0: 1, 2: 3, 3: 3, 4: 2, 5: 3}
