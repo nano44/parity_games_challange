@@ -1,0 +1,15 @@
+A_d4_W2_k2.json N 8 M 16 n 130 acyc 1 iters 12 F 10 L 9 stuck
+A_d4_W3_k3.json N 12 M 36 n 274 acyc 1 iters 18 F 16 L 15 stuck
+A_d5_W2_k3.json N 10 M 30 n 230 acyc 1 iters 16 F 14 L 13 stuck
+A_d6_W2_k2.json N 12 M 24 n 190 acyc 1 iters 14 F 12 L 11 stuck
+KILL_M2D_d6_mu13_norm.json N 12 M 24 n 190 acyc 1 iters 16 F 14 L 13 stuck
+KILL_M2D_d8_mu21_norm.json N 16 M 32 n 250 acyc 1 iters 27 F 25 L 24 stuck
+RECT_d11_T59_norm.json N 22 M 44 n 340 acyc 1 iters 62 F 60 L 59 stuck
+REC_d10_mu32_norm.json N 20 M 40 n 310 acyc 1 iters 36 F 34 L 33 stuck
+REC_d10_tower_mu30_norm.json N 20 M 40 n 310 acyc 1 iters 38 F 36 L 35 stuck
+REC_d11_mu40_norm.json N 22 M 44 n 340 acyc 1 iters 47 F 45 L 44 stuck
+REC_d12_mu42_norm.json N 24 M 48 n 370 acyc 1 iters 51 F 49 L 48 stuck
+REC_d7_mu17_norm.json N 14 M 28 n 220 acyc 1 iters 20 F 18 L 17 stuck
+REC_d8_mu24_norm.json N 16 M 32 n 250 acyc 1 iters 28 F 26 L 25 stuck
+REC_d9_mu29_norm.json N 18 M 36 n 280 acyc 1 iters 34 F 32 L 31 stuck
+TOTAL mode spec eorder lev: runs 14 states 433 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 finsbar 0 fintie 0 nofb 0 multifb 0 late 0 totfail 0 capped 0 oddfb 0 Hfail 0 s4a_not_opt 0 xi_emptytie 0 sbar_opt_fail 0 acyc 14 lfail 0 F1 0 s1_selfcons 0 Lmax 59
