@@ -1,0 +1,5 @@
+L-5 sha1 fe4d3f902b6afde93384ebf625fa9bebcea0e1d0 5192 B
+old in L-5: 1  new in L-5: 0
+expected L-6 sha1 a23c61d384036ce3fa771e27e175a8dbf2331658 5449 B parens 133 133 pipes 0
+L-6 sha1 a23c61d384036ce3fa771e27e175a8dbf2331658 5449 B; old in L-6: 0  new in L-6: 1
+L-6 == L-5 + R6: True

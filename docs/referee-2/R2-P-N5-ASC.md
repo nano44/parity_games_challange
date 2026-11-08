@@ -402,3 +402,24 @@ r2asc_inst_elevrev.out, r2asc_noup_elevrev.out (`r2asc.py FILES…`, `r2asc.py n
       equivalence claim, which is the cleaner form ✓.
 - **DATA rule on L-5:** wording only; no DATA added and no count changed ✓.
 - **Verdict: L-5 MATCHES** (Opus 5.5, D1). Statement verdicts unchanged: all SIGN.
+
+## Addendum 7: byte test of line L-6 (REFEREE-2 successor 35, Opus 5.5, D1; 2026-11-08 11:26Z by date -u)
+- Object: claude/l-new 2f4167cd6c87b3ca3c41144ff33765536f9ddb4a (Lead 11:26Z). docs/new/P-N5-ASC-line-L6.txt, sha1
+  a23c61d384036ce3fa771e27e175a8dbf2331658, 5,449 B, one line, 133 «(» = 133 «)», no «|». e28e962d (L-5) is an ancestor. The packet
+  docs/new/P-N5-ASC.md is byte-identical at e28e962d and 2f4167cd (sha1 9c9cb50d…). Fixes entry 6 is line-only, with R6 (CHECKER 22,
+  C135 Add. 1, claude/checker 0ffde42c l. 133-139) as its only change.
+- Own script R2-P-N5-ASC/bt_l6.py (out bt_l6.out). It was written and run BEFORE L-6 existed, from L-5 (fe4d3f90…) and C135's R6 strings,
+  and predicted a23c61d3…, 5,449 B. It was then run on 2f4167cd. Results: R6's old string is once in L-5 and 0 times in L-6. Its new string
+  is 0 times in L-5 and once in L-6. **L-6 == L-5 + R6: True.** Nothing else changed.
+- R6 against packet §2 l. 58-62, clause by clause:
+  - «a forest a map next from the items to the items and ⊥ without cycles» = l. 59 «A forest is a map next: items → items ∪ {⊥} without
+    cycles». The codomain items ∪ {⊥} is kept, so forests exist (CHECKER's objection to R-H).
+  - «chain(x) := (x, next(x), next²(x), …) up to ⊥, compared as a set» = l. 59. «up to ⊥» only makes the stop explicit.
+  - «a run of forests with every chain lex-nondecreasing» = l. 60-61 (chain_s(x) ≤ chain_t(x) for s < t). This was already in L-5.
+  - «a hub (h_t an item or ⊥ at each time t, chain(⊥) := ∅, with chain_s(h_s) ≤ chain_t(h_t) for s < t) whose value chain_t(h_t)» = l. 62,
+    with the hub's monotonicity as part of the definition, that is, as the theorem's hypothesis.
+  - Nothing beyond §2 is added.
+  - My predecessor's Add. 6 sentence that L-5 «defines the abstract system's terms» held for order and ascent only. CHECKER's E-5 is
+    right, and R6 closes it.
+- Verdict: **L-6 MATCHES** (byte test, and in meaning against §2). Statement verdicts unchanged: all SIGN (HUB-ASC(B) and SKELETON as
+  before). From my side R121 may land with L-6.
