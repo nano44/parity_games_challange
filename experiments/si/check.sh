@@ -1270,3 +1270,5 @@ bash box86/check86.sh
 
 # box 87 (Lemma LEAPFROG-ASC: shared-e leapfrogs need ascents; census on boxes 84-86; docs/si/box87-leapfrog.md)
 bash box87/check87.sh
+# box 88 (NEST-CHARGE: type-II nesting charged to e-set heights; leap88 census per-bit + ALL; docs/si/box88-nest.md)
+bash box88/check88.sh
