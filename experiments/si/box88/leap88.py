@@ -52,7 +52,7 @@ def census(G, nm=None, allset=False, cap=3000):
             lam = rows[t0s][3][movers[x]]
             if lam not in K12: continue
             eS = V[("e", (x, S))]; r0 = rank(eS); EU = sum(1 for v in ev if rank(v) >= r0)
-            nev = k = af = 0; heads = set(); evs = []; ab = []
+            nev = k = af = f2 = 0; heads = set(); evs = []; ab = []
             for u in seg:
                 if u + 1 >= t: break
                 s, cur, sb, lm = rows[u]
@@ -72,16 +72,18 @@ def census(G, nm=None, allset=False, cap=3000):
                     sg = seq(g); Bs = {v for v in sg if rank(v) >= r0}
                     if best is None or K(Bs, rank) > K(best[1], rank): best = (sg, Bs)
                 if best is None: continue
-                nev += 1; sg, Bs = best; d = A ^ Bs; z = max(d, key=rank); Hd = [v for v in A & Bs if rank(v) > rank(z)]
+                sg, Bs = best; d = A ^ Bs
+                if not d: f2 += 1; continue      # a_t = b_t at an event: F2 fails (PRIV / NODE not met); not counted as an event
+                nev += 1; z = max(d, key=rank); Hd = [v for v in A & Bs if rank(v) > rank(z)]
                 on = rows[u + 1][0][x] == S
                 if Hd:
                     k += 1; heads.add(min(Hd, key=rank)); pl = sw if z in A else sg; i = pl.index(z)
                     af += not any(rank(v) > rank(z) for v in pl[i + 1:])
                 evs.append((u, "ON" if on else "OFF", "II" if Hd else "I", rank(z), len(Hd)))
             da = sum(ab[i][0] != ab[i - 1][0] for i in range(1, len(ab))); db = sum(ab[i][1] != ab[i - 1][1] for i in range(1, len(ab)))
-            mono = sum(ab[i][0] < ab[i - 1][0] or ab[i][1] < ab[i - 1][1] for i in range(1, len(ab)))
+            mono = sum(ab[i][0] < ab[i - 1][0] or (ab[i][1] is not None and ab[i - 1][1] is not None and ab[i][1] < ab[i - 1][1]) for i in range(1, len(ab)))
             if nev:
-                units.append({"da": da, "db": db, "chargefail": int(nev > 1 + da + db), "monofail": mono, "x": x, "S": S, "I": (t0s, t), "ev": nev, "EU": EU, "k": k, "depth": len(heads), "excess": nev - EU,
+                units.append({"f2fail": f2, "da": da, "db": db, "chargefail": int(nev > 1 + da + db), "monofail": mono, "x": x, "S": S, "I": (t0s, t), "ev": nev, "EU": EU, "k": k, "depth": len(heads), "excess": nev - EU,
                               "ascfail": af, "boundfail": int(nev > EU + 2 * k + 1), "events": evs})
     return units, len(st) - 1
 def summary(units):
@@ -96,6 +98,7 @@ if __name__ == "__main__":
     for f in sys.argv[2:]:
         G = json.load(open(f)); nf = f[:-5] + ".names.json"; nm = json.load(open(nf)) if os.path.exists(nf) else None
         U, T = census(G, nm, allset); s = summary(U)
-        print(os.path.basename(f), "T", T, " ".join(f"{a} {b}" for a, b in s.items()))
+        f2 = sum(u["f2fail"] for u in U)        # events with a_t = b_t (F2's hypotheses not met); printed only when nonzero
+        print(os.path.basename(f), "T", T, " ".join(f"{a} {b}" for a, b in s.items()) + (f" f2fail {f2}" if f2 else ""))
         if os.environ.get("VERB") == "1":
             for u in U: print("  ", {a: b for a, b in u.items() if a != "events"}, u["events"])

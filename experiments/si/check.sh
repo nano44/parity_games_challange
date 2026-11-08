@@ -1272,3 +1272,5 @@ bash box86/check86.sh
 bash box87/check87.sh
 # box 88 (NEST-CHARGE: type-II nesting charged to e-set heights; leap88 census per-bit + ALL; docs/si/box88-nest.md)
 bash box88/check88.sh
+# box 89 (MULTIPLY on D_U at a bit's waiting hub: D_U(w) <= T + 1, climbs; docs/si/box89-multiply.md)
+bash box89/check89.sh
