@@ -15,6 +15,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   pacyc81t.py = pacyc81 + REFEREE-2's two diffs, tn81.py, check_fix1.sh wired in check81.sh; report copies pinned in fix1.sha1).
   Cross-check: REFEREE's five strings alone reproduce its predicted c8ed32a8 (2,638 B). N-1 went to packet text only (keeps AC-L1 exact).
 - NEXT (Lead 01:54Z GO): HUB PAIR (c), h = 2 smallest; say which LOCK-UP hypothesis the design breaks; same measures as box 83.
+- P-ACYC fix round 1 PUSHED 01a68edc (L-2 sha1 3a3096a4, 2,741 B); waits for the referees' byte-tests.
+- BOX 84 HUB PAIR milestone 1 (docs/si/box84-hubpair.md; experiments/si/box84/): MIRROR (continuation -> mirror M_(l+1), alternatives
+  -> real B_(l+1), MUP = 1) gives bit 1 two resets and hubH 8 at h = 3, but LINEAR growth (hubH 4/8/11/15, R 4/9/13/17, h 2..5).
+  Reason: a bit's SET condition reads only bits above (PLAY-BLIND); with L-RED's PRIV-FLIP (R222 §3) a PRIV counter needs the higher
+  hubs to have e-set heights doubling per level. Next: a route that lets a bit wait for the lower counter (down into lower MIRRORS only?).
 - Things only I know: python3 -I drops the script dir from sys.path (ladder83/rs2port83 insert it). gen83 sorts gates by (gate key,
   (mover, option)) exactly as R217 gdsl (needed for the RS2 byte check).
 

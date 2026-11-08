@@ -132,7 +132,8 @@ Proof.
   - A later re-adoption needs SET_l ▷ the current option, whose e-set contains top(E(X)). So at the deciding state SET_l's
     continuation reaches X e-free: w ∈ A. By (iii), w ∈ A at the adoption state too, and LOCK-UP locks it.
 - So: at most two adoptions, at most one reset. ∎
-- Consequence: under LADDER-R, each bit moves at most 3 times per Λ-interval. Λ changes are C-steps; R118 (e) gives C ≤ n(2M + 2).
+- Consequence: under LADDER-R, each bit's VALUE [σ(B_l) = SET_l] changes at most 3 times per Λ-interval. (Correction after L-RED R222
+  §0, claude/l-red 3d9e788d: σ(B_l) itself can change more often while it walks its lane; B_6 of LR6_exitup changes option 18 times.) Λ changes are C-steps; R118 (e) gives C ≤ n(2M + 2).
   So the counter cannot double, at any h: DEAD as an exponential counter. The SET-gate flips (R) are not bounded by the corollary;
   R is DATA in §3.
 

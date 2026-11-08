@@ -1258,3 +1258,6 @@ echo "si (box 82: CYCLIC TOWERS): PASS"
 # box 83 (LADDER-R at h = 2..6: built and measured; Lemma LOCK-UP, Corollary LADDER-2; docs/si/box83-ladder.md)
 bash box83/check83.sh
 echo "si (box 83: LADDER-R): PASS"
+# box 84 (HUB PAIR «MIRROR» milestone 1: breaks LOCK-UP's single-target hypothesis; linear, not doubling; docs/si/box84-hubpair.md)
+bash box84/check84.sh
+echo "si (box 84: HUB PAIR): PASS"

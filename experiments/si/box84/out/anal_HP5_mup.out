@@ -1,0 +1,3 @@
+HP5_mup.json N 301 T 43 labels pppRRppppppppppppppppppRpRRRRRRppppRRRRRRRR R 17 C 0
+  GF [0, 5, 10, 10, 6, 2, 0] RF [0, 5, 7, 7, 4, 2, 0] MV [128, 9, 18, 18, 13, 60, 0] KF [0, 0, 0, 0, 0, 0, 0] U 152 maxasc 4 hist {0: 81886, 1: 5720, 2: 1605, 3: 321, 4: 8} maxDE 15
+  Xi-cycles (movers, level): [[(6, 1)], [(12, 2)], [(2, 2)], [(15, 5)], [(5, 5)], [(8, 3)], [(14, 4)], [(4, 4)], [(1, 1)], [(7, 2)], [(10, 5)], [(0, 0)]] count 15
