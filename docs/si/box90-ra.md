@@ -27,6 +27,11 @@ pair198.py, and my mult90.py on each of the two engines.
 - The right per-pair quantity (PROVED, lane, trivial): m(y, z) := #gaps between consecutive y-tops whose most relevant top is z. Then
   c_y − 1 = Σ_z m(y, z) and m(y, z) ≤ c_z, so «m polynomial» ⟺ «C polynomial» ⟺ (C-EQUIV) «T3 polynomial»; with m ≤ K constant,
   C ≤ 1 + K·M. BIN needs m(y, z) = c_z; FW has m ≡ 1. CONJECTURE RA-MULT(K) and its DATA: §4.
+- Milestone 2 (§6, Lead 19:58Z approval): maxm GROWS. Family MW(n): m(y, z) = n, C = 2n + 1, A = 2n + 2, fan-in n + 1, T3 = 6n + 7,
+  N + M = 29n + 29 (n = 4, 8, 16, 32; two engines, all fails 0). CONJECTURE RA-MULT(K) for constant K is DEAD; C reaches ≈ T3 / 3 with
+  T3 linear. This does NOT touch G-N5-TIME (m ≤ c_z ≤ T3, C ≤ T3).
+- Net READING of box 90: P, m and C can each be driven to their trivial ceilings on real N5′-xi runs (P exponential, m and C linear in T3)
+  while T3 stays linear in N + M. So none of the box 198 counters separates; a bound must charge C to TIME, i.e. the open core is T3 itself.
 - Obstruction to making C grow in this design (READING, §5): every u_j runs its window once; y re-enters under z a second time only if
   z's own W-continuation u_z changes again with a top above y, i.e. a counter at u_z: the PAIR-HIGH recursion itself. No new lemma.
 
@@ -75,7 +80,8 @@ gen90.py d k: u_j has delay lanes to q_(j−k), …, q_(j−1) (lane to q_(j−i
   constant). By §0, RA-MULT(K) gives C ≤ 1 + K·M and so (C-EQUIV) T3 polynomial. RA-MULT with K := poly(N + M) is EQUIVALENT to the
   open core; only a constant (or slowly growing) K is a real game restriction. I give it the weight of the data below and no more.
 - DATA (mult90.py own; unit (v, I, y, z); set: the frozen genomes of L-RED r224-r227/inst, L-NEW box196/inst_si85, box197/hfam, box198/inst,
-  L-SI box84-89/inst; scope own.py, cap 3000): see out/corpus90.out (filled when the census finishes; maxm so far ≤ 2, on CX4_n21).
+  L-SI box84-89/inst; scope own.py, cap 3000): out/corpus90.out. maxm ≤ 2 on all of them (2 on CX4, CC2, D2R, DG3, GROW7/8, C2CX4,
+  HOLD3K), fails 0. The census was taken before the MW design (§6), which refutes RA-MULT(K) for every constant K.
 - What RA-MULT forbids is exactly BIN's nesting: y replaying under each re-entry of the same higher z. A proof would have to show that a
   letter z that re-enters v's set cannot bring back the same lower letter y twice, i.e. a «no replay under one letter» lemma.
 
@@ -85,3 +91,23 @@ gen90.py d k: u_j has delay lanes to q_(j−k), …, q_(j−1) (lane to q_(j−i
 - A second re-arming by the same z (m(y, z) = 2) needs z to re-enter v's set with y returning after it, i.e. z's W-continuation u_z to
   change again with a top above y, i.e. u_z itself to run a counter. That is PAIR-HIGH's recursion one level down; the FW design gives
   no handle on it. No new obstruction lemma; the open design step is the same as box 89's (a High that waits for the low race), now at u_z.
+
+## 6. MW(n): the per-pair multiplicity grows (milestone 2; DATA, two engines)
+Design (genm90.py n L; L = 2): high letters h_1 ≺ … ≺ h_n arrive by the clock of §2 every L + 4 states (W-target a dead sink D). A low
+letter z ≺ h_1 (level-1 qz, Ξ-target the Even-winning loop W, so Odd always exits by e_z) has W-target u, with an X-option and a delay
+lane of length L to each qh_k. v and R choose among the qh_k and qz; R also has the race option to Q (the least relevant letter y, W-target
+hv → v, Ξ-target R: CX4's x18 / x10 / x17 race). Run (trace, own and g3 identical), stage k: R → qh_k (top h_k, y and z leave), R → Q
+(top y), v and R → qz once u's lane reaches h_k (top z, y leaves), R → Q (top y). So y re-enters under each of z's n entries.
+| instance (sha1: inst/SHA1SUMS) | n | N + M | T3 | C | maxP | RA depth | fan-in | A | maxm | fails (own; g3) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| MW4_2 | 4 | 145 | 31 | 9 | 10 | 3 | 5 | 10 | 4 | 0; 0 |
+| MW8_2 | 8 | 261 | 55 | 17 | 18 | 3 | 9 | 18 | 8 | 0; 0 |
+| MW16_2 | 16 | 493 | 103 | 33 | 34 | 3 | 17 | 34 | 16 | 0; 0 |
+| MW32_2 | 32 | 957 | 199 | 65 | 66 | 3 | 33 | 66 | 32 | 0; 0 |
+- Counters as in §2 (mult90 on own and g3; ra227; pair198), out/mw90.out. Fit (exact on 4 rows): maxm = n, C = 2n + 1, A = 2n + 2,
+  T3 = 6n + 7, N + M = 29n + 29.
+- DEAD: CONJECTURE RA-MULT(K) for every constant K (§4). Also «A ≤ constant», «fan-in ≤ constant» (A 66, fan-in 33 at N + M 957).
+- Not a candidate: T3 linear. m ≤ c_z ≤ T3, so maxm growth cannot touch G-N5-TIME (Lead 19:58Z). The target that matters is C growing
+  super-polynomially in N + M, which forces T3 to. A race multiplies changes at ONE vertex, not steps: stacking races needs the spacing to
+  double per level (R must see each change two steps apart), so C ∝ T3 on every race stack (READING; same as box 89 §3's feed-forward
+  doubling).

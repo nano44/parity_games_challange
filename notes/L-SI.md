@@ -9,7 +9,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   DATA (own.py + L-NEW g3 engine, plus ra227 + pair198, all equal): FW(d, 2) on N5'-xi from S3: P = F_(d+2) − 1, depth d, C 3, A 4,
   T3 = 3d + 5, N + M = 52d − 45 (d 4/8/12/16). Window FW(d, k): C = k + 1, A = 2k, fan-in k. DEAD: polynomial P bounds, (S2), RA-LOG.
   Identity c_y − 1 = Σ_z m(y, z) (m = per-pair re-arm multiplicity); CONJECTURE RA-MULT(K) (m ≤ K ⇒ C ≤ 1 + K·M). Corpus maxm ≤ 2 (own,
-  59 genomes; CX4, GROW7/8, HOLD3K, CC2, D2R, DG3, C2CX4 at 2); two-engine corpus run in flight (scratch corpus2.out).
+  81 genomes; CX4, GROW7/8, HOLD3K, CC2, D2R, DG3, C2CX4 at 2). Milestone 2: MW(n) (genm90.py) m = n, C 2n + 1, A 2n + 2, T3 6n + 7:
+  RA-MULT(K) DEAD. g3 corpus census still running (scratch corpus2.out); out/corpus90.out is own only.
 - Things only I know: run90.sh needs `git -C <toplevel> archive` (pathspecs are cwd-relative). pair198 piped into `head -1` raises
   BrokenPipe noise (use sed -n 1p). pair198 on N + M ≈ 2200 (FW8_6) takes > 10 min: keep two-engine rows at k ≤ 4. gen90's β-rank sort
   depends on lane tag names (regenerate, never hand-edit; check90 byte-compares).

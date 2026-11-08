@@ -1,0 +1,18 @@
+engine own instance N+M T C maxP depth fanin A maxm idfail rafail lexdec
+own MW4_2.json 145 31 9 10 3 5 10 4 0 0 0
+own MW8_2.json 261 55 17 18 3 9 18 8 0 0 0
+own MW16_2.json 493 103 33 34 3 17 34 16 0 0 0
+own MW32_2.json 957 199 65 66 3 33 66 32 0 0 0
+engine g3 instance N+M T C maxP depth fanin A maxm idfail rafail lexdec
+g3 MW4_2.json 145 31 9 10 3 5 10 4 0 0 0
+g3 MW8_2.json 261 55 17 18 3 9 18 8 0 0 0
+g3 MW16_2.json 493 103 33 34 3 17 34 16 0 0 0
+g3 MW32_2.json 957 199 65 66 3 33 66 32 0 0 0
+MW4_2.json 31 9 10 3 5 10 0 0 0 0 0 0
+MW4_2.json T3 31 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 9 maxP 10 maxDep 3 maxRA 5 tight 18 A 10 at ('x', 46) states 0-31
+MW8_2.json 55 17 18 3 9 18 0 0 0 0 0 0
+MW8_2.json T3 55 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 17 maxP 18 maxDep 3 maxRA 9 tight 18 A 18 at ('x', 82) states 0-55
+MW16_2.json 103 33 34 3 17 34 0 0 0 0 0 0
+MW16_2.json T3 103 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 33 maxP 34 maxDep 3 maxRA 17 tight 18 A 34 at ('x', 154) states 0-103
+MW32_2.json 199 65 66 3 33 66 0 0 0 0 0 0
+MW32_2.json T3 199 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 65 maxP 66 maxDep 3 maxRA 33 tight 18 A 66 at ('x', 298) states 0-199
