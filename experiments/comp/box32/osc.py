@@ -9,16 +9,18 @@ Constraints: at each t < T0 every pair 0-5 mover that is free at S_t moves exact
 helpers follow the R104 rule. Core gates (levels 0-7) from the base genome (o(7) is read from the clamped rows).
 Movers outside M ∪ {12..15} are not modelled: nothing in M reads them, and they sit above M's levels except 12-15, so they never
 change o(l) for a level of M (o(l) reads pairs 0..l only) -- except levels 8.. read o(7), which the clamp fixes.
-Usage: osc.py BASE TARGET K T0 OUTPREFIX [--cnf F]   (BASE: genome whose core gates are used; TARGET core8 rows)"""
+Generalized (--H, default 8): lower pairs 0..H-3 constrained, pairs H-2, H-1 clamped, helpers 2H..2H+K-1.
+Usage: osc.py BASE TARGET K T0 OUTPREFIX [--cnf F] [--H H]   (BASE: genome whose core gates are used; TARGET core8 rows)"""
 import sys, os, time, hashlib, argparse
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from enc32 import Enc, rdgen, wrgen, rdtarget
 ap = argparse.ArgumentParser(); ap.add_argument('base'); ap.add_argument('target'); ap.add_argument('K', type=int)
-ap.add_argument('T0', type=int); ap.add_argument('out'); ap.add_argument('--cnf'); a = ap.parse_args()
-D = rdgen(a.base); S, NC = rdtarget(a.target); g = D['gate']; d = D['d']; N = 2 * d; K = a.K; T0 = a.T0
-assert NC == 16 and K % 2 == 0 and 16 + K <= N
-M = list(range(12)) + list(range(16, 16 + K)); Ms = set(M); OP = [2 * x + k for x in M for k in (0, 1)]
-Lmax = (16 + K - 1) // 2
+ap.add_argument('T0', type=int); ap.add_argument('out'); ap.add_argument('--cnf'); ap.add_argument('--H', type=int, default=8); a = ap.parse_args()
+D = rdgen(a.base); S, NC = rdtarget(a.target); g = D['gate']; d = D['d']; N = 2 * d; K = a.K; T0 = a.T0; H = a.H
+LOW = 2 * H - 4                      # movers of the lower pairs 0..H-3 (constrained); pairs H-2, H-1 clamped; helpers from 2H
+assert NC == 2 * H and K % 2 == 0 and 2 * H + K <= N and H >= 3
+M = list(range(LOW)) + list(range(2 * H, 2 * H + K)); Ms = set(M); OP = [2 * x + k for x in M for k in (0, 1)]
+Lmax = (2 * H + K - 1) // 2
 sinks = []; body = None
 from pysat.solvers import Solver
 sv = Solver(name='cadical195'); sinks.append(sv.add_clause)
@@ -57,20 +59,20 @@ for i in range(len(OP)):
             x, y, z = OP[i], OP[j], OP[k]
             E.add([-ordl(x, y), -ordl(y, z), -ordl(z, x)]); E.add([-ordl(x, z), -ordl(z, y), -ordl(y, x)])
 pos = {m: E.new() for m in OP}
-Gb = {(l, b): E.new() for l in range(8, Lmax + 1) for b in (0, 1)}
+Gb = {(l, b): E.new() for l in range(H, Lmax + 1) for b in (0, 1)}
 # states
 st = []
 for t in range(T0 + 1):
     row = {}
-    for x in range(16): row[x] = bool(S[t][x])
-    for x in M[12:]: row[x] = E.new()
+    for x in range(NC): row[x] = bool(S[t][x])
+    for x in M[LOW:]: row[x] = E.new()
     st.append(row)
 def okeys(row):
     o = {}; c = None
     for l in range(Lmax + 1):
         a_, b_ = row[2 * l], row[2 * l + 1]
         if l == 0: ol = g[0 + int(a_)] > g[2 + int(b_)]
-        elif l < 8: ol = (a_ != c) if a_ != b_ else (g[4 * l + int(a_)] > g[4 * l + 2 + int(a_)])
+        elif l < H: ol = (a_ != c) if a_ != b_ else (g[4 * l + int(a_)] > g[4 * l + 2 + int(a_)])
         else: ol = E.MUX(E.XOR(a_, b_), E.XOR(a_, c), E.MUX(a_, Gb[(l, 1)], Gb[(l, 0)]))
         o[l] = ol; c = ol
     return o
@@ -97,7 +99,7 @@ for t in range(T0):
     for x in M:
         l = x // 2
         free = (g[2 * x + 1 - int(s[x])] < g[2 * x + int(s[x])]) if l == 0 else E.XOR(s[x], on[l - 1])
-        if x < 12:
+        if x < LOW:
             if not free:
                 if s[x] != ns[x]: raise SystemExit(f'target moves blocked mover {x} at t {t + 1}')
                 continue
@@ -130,7 +132,7 @@ G = {k: (list(v) if isinstance(v, list) else v) for k, v in D.items()}
 for m in range(2 * N):
     if m // 2 in Ms:
         ch = [z for z, v in W[m].items() if val(v)]; assert len(ch) == 1; G['xt'][m] = ch[0]
-    elif m // 2 >= 16: G['xt'][m] = -1                      # unmodelled helpers: exits, unread
+    elif m // 2 >= 2 * H: G['xt'][m] = -1                      # unmodelled helpers: exits, unread
 wins = {e: sum(1 for f in OP if f != e and val(ordl(e, f))) for e in OP}; assert len(set(wins.values())) == len(OP)
 rest = [m for m in range(2 * N) if m not in set(OP)]
 G['br'] = [0] * (2 * N)
@@ -142,5 +144,5 @@ for (l, b), lit in Gb.items():
     hi, lo = (4 * l + b, 4 * l + 2 + b) if val(lit) else (4 * l + 2 + b, 4 * l + b)
     pr = sorted([gt[hi], gt[lo]]); gt[hi], gt[lo] = pr[1], pr[0]
 G['gate'] = gt
-G['start'] = [int(S[0][x]) if x < 16 else (int(val(st[0][x])) if x in Ms else D['start'][x]) for x in range(N)]
+G['start'] = [int(S[0][x]) if x < NC else (int(val(st[0][x])) if x in Ms else D['start'][x]) for x in range(N)]
 wrgen(G, a.out + '_dec.txt'); print('RESULT SAT decoded ->', a.out + '_dec.txt', hashlib.sha1(open(a.out + '_dec.txt', 'rb').read()).hexdigest())
