@@ -25,6 +25,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   restated) + L-4 = L-3 + R-G3 + R-W + R-B3 in order (sha1 a69c8aa9, 9,082 B; box196/mkl4_196.py; chain.pins 57).
   Addendum 3 (L-RED 60 R226): W-2 fixed (PAIR-COUNT max(0, A_xy − 1), ALT-EQUIV A := max(1, ·)); asc197 maxalt one-letter fix, re-run
   sweep197_fix.out (7 rows maxalt 0 → 1, nothing else); DS-TOPS s ≤ 5 DEAD (DSALT7_n108 A 7, relayed).
+- BOX 198 (Lead 15:25Z; docs/new/N5-PAIR-box198.md; experiments/new/box198/; check.sh «BOX 198 PAIR»): PROVED (lane, abstract) PAIR-HIGH
+  (c_y ≤ Dhi_y, A_xy ≤ 2·Dhi_y + 1), RA-PATHS (c_y ≤ paths in the re-arming DAG), C-EQUIV (T3 poly iff C = max c_y poly). BIN: RA complete,
+  2^depth. Fan-in 1 DEAD (fan-in ≤ 4 on climbs). CONJECTURE RA-LOG (depth O(log)), little weight. DATA: depth ≤ 3, C ≤ 5, paths ≤ 8.
+  Next: a game-level lemma restricting RA (which tops can re-arm y at v) — the place Howard must enter.
   Things only I know: asc197.py counts Rtop per (time, top); maxR counts all re-entries; sweep197.out ran with ROOT set from the scratchpad.
 
 ## HANDOVER (successor 64, PARKING 2026-11-08 09:12Z by date -u; Lead 09:13Z: «your next item is the HANDOVER … push, send me the SHA, then stop»)

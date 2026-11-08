@@ -1,0 +1,38 @@
+NK6_cl21.json T3 11 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 4 maxP 6 maxDep 3 maxRA 3 tight 8 A 6 at ('x', 3) states 0-11
+   letters (option, level, c, Dhi), most relevant first: [((6, 19), 2, 1, 1), ((4, 6), 2, 1, 2), ((8, 17), 2, 3, 3), ((3, 4), 1, 4, 6)]
+DSALT6_n108.json T3 21 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 4 maxP 6 maxDep 3 maxRA 3 tight 13 A 6 at ('x', 3) states 0-21
+   letters (option, level, c, Dhi), most relevant first: [((6, 19), 2, 1, 1), ((4, 6), 2, 1, 2), ((8, 17), 2, 3, 3), ((3, 4), 1, 4, 6)]
+DSALT7_n108.json T3 11 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 4 maxP 6 maxDep 3 maxRA 3 tight 8 A 7 at ('x', 3) states 0-11
+   letters (option, level, c, Dhi), most relevant first: [((6, 19), 2, 1, 1), ((4, 6), 2, 1, 2), ((8, 17), 2, 3, 3), ((3, 4), 1, 4, 6)]
+DSALT9_n416.json T3 30 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 5 maxP 8 maxDep 3 maxRA 4 tight 0 A 9 at ('g', (17, 6)) states 0-30
+   letters (option, level, c, Dhi), most relevant first: [((15, 35), 5, 1, 1), ((10, 23), 5, 1, 2), ((14, 21), 4, 2, 3), ((9, 18), 4, 3, 5), ((13, 18), 3, 3, 8), ((8, 13), 3, 4, 11), ((17, 6), 2, 5, 15)]
+CL2_21.json T3 23 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 4 maxP 5 maxDep 3 maxRA 3 tight 0 A 5 at ('x', 3) states 0-23
+   letters (option, level, c, Dhi), most relevant first: [((6, 19), 2, 1, 1), ((4, 6), 2, 1, 2), ((8, 17), 2, 2, 3), ((3, 4), 1, 4, 5)]
+CL2_22.json T3 28 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 3 maxP 4 maxDep 3 maxRA 2 tight 29 A 5 at ('x', 3) states 0-28
+   letters (option, level, c, Dhi), most relevant first: [((6, 20), 2, 1, 1), ((4, 9), 2, 2, 2), ((3, 8), 1, 3, 4), ((7, 9), 1, 1, 7)]
+CL3_31.json T3 15 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 2 maxP 2 maxDep 2 maxRA 1 tight 0 A 3 at ('x', 4) states 0-15
+   letters (option, level, c, Dhi), most relevant first: [((9, 8), 3, 1, 1), ((6, 4), 3, 1, 2), ((8, 4), 2, 1, 3), ((5, 11), 2, 1, 4), ((10, 2), 2, 1, 5), ((4, 2), 1, 2, 6)]
+CL3_32.json T3 24 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 1 maxP 1 maxDep 1 maxRA 0 tight 0 A 2 at ('x', 4) states 0-6
+   letters (option, level, c, Dhi), most relevant first: [((9, 3), 3, 1, 1), ((8, 7), 2, 1, 2), ((4, 2), 1, 1, 3)]
+TC2.json T3 12 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 2 maxP 2 maxDep 2 maxRA 1 tight 0 A 3 at ('x', 3) states 0-12
+   letters (option, level, c, Dhi), most relevant first: [((6, 9), 2, 1, 1), ((4, 5), 2, 1, 2), ((8, 7), 2, 1, 3), ((3, 2), 1, 1, 4), ((7, 3), 1, 2, 5)]
+TC2d.json T3 10 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 1 maxP 1 maxDep 1 maxRA 0 tight 0 A 2 at ('x', 3) states 0-6
+   letters (option, level, c, Dhi), most relevant first: [((3, 2), 1, 1, 1), ((7, 3), 1, 1, 2)]
+TC3.json T3 18 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 2 maxP 2 maxDep 2 maxRA 1 tight 0 A 4 at ('x', 5) states 0-18
+   letters (option, level, c, Dhi), most relevant first: [((9, 13), 3, 1, 1), ((6, 7), 3, 1, 2), ((12, 10), 3, 1, 3), ((5, 4), 2, 2, 4), ((11, 6), 2, 2, 6)]
+TC3d.json T3 14 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 1 maxP 1 maxDep 1 maxRA 0 tight 0 A 2 at ('x', 4) states 0-4
+   letters (option, level, c, Dhi), most relevant first: [((8, 7), 2, 1, 1), ((4, 2), 1, 1, 2)]
+TC3m.json T3 17 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 2 maxP 2 maxDep 2 maxRA 1 tight 0 A 3 at ('x', 4) states 0-17
+   letters (option, level, c, Dhi), most relevant first: [((9, 13), 3, 1, 1), ((6, 7), 3, 1, 2), ((12, 10), 3, 1, 3), ((8, 7), 2, 2, 4), ((5, 4), 2, 1, 6), ((4, 2), 1, 1, 7)]
+TC4m.json T3 37 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 2 maxP 2 maxDep 2 maxRA 1 tight 0 A 4 at ('x', 5) states 0-37
+   letters (option, level, c, Dhi), most relevant first: [((12, 31), 4, 1, 1), ((8, 20), 4, 1, 2), ((11, 11), 3, 2, 3), ((7, 10), 3, 1, 5), ((10, 8), 2, 2, 6), ((6, 4), 2, 2, 8), ((5, 2), 1, 1, 10)]
+TC5m.json T3 43 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 3 maxP 3 maxDep 2 maxRA 2 tight 0 A 5 at ('x', 6) states 0-43
+   letters (option, level, c, Dhi), most relevant first: [((15, 35), 5, 1, 1), ((10, 23), 5, 1, 2), ((14, 21), 4, 2, 3), ((9, 18), 4, 1, 5), ((13, 18), 3, 2, 6), ((8, 13), 3, 2, 8), ((12, 6), 2, 2, 10), ((7, 5), 2, 3, 12)]
+H8C.json T3 80 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 2 maxP 2 maxDep 2 maxRA 1 tight 0 A 4 at ('x', 10) states 0-80
+   letters (option, level, c, Dhi), most relevant first: [((24, 66), 8, 1, 1), ((16, 44), 8, 1, 2), ((23, 58), 7, 2, 3), ((15, 42), 7, 2, 5), ((22, 52), 6, 1, 7), ((14, 26), 6, 1, 8), ((21, 32), 5, 1, 9), ((13, 24), 5, 1, 10), ((20, 31), 4, 1, 11), ((12, 21), 4, 1, 12), ((19, 15), 3, 1, 13), ((11, 16), 3, 1, 14), ((10, 6), 2, 1, 15)]
+H6C.json T3 51 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 2 maxP 2 maxDep 2 maxRA 1 tight 0 A 4 at ('x', 8) states 0-51
+   letters (option, level, c, Dhi), most relevant first: [((18, 41), 6, 1, 1), ((12, 31), 6, 1, 2), ((17, 39), 5, 2, 3), ((11, 16), 5, 2, 5), ((16, 35), 4, 1, 7), ((10, 15), 4, 1, 8), ((15, 23), 3, 1, 9), ((9, 13), 3, 1, 10), ((8, 5), 2, 1, 11)]
+LEAP_k64.json T3 129 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 2 maxP 2 maxDep 2 maxRA 1 tight 6 A 3 at ('x', 257) states 0-129
+   letters (option, level, c, Dhi), most relevant first: [((128, 0), 1, 1, 1), ((255, 0), 1, 2, 2), ((253, 0), 1, 1, 4), ((251, 0), 1, 1, 5), ((249, 0), 1, 1, 6), ((247, 0), 1, 1, 7), ((245, 0), 1, 1, 8), ((243, 0), 1, 1, 9), ((241, 0), 1, 1, 10), ((239, 0), 1, 1, 11), ((237, 0), 1, 1, 12), ((235, 0), 1, 1, 13), ((233, 0), 1, 1, 14), ((231, 0), 1, 1, 15), ((229, 0), 1, 1, 16), ((227, 0), 1, 1, 17), ((225, 0), 1, 1, 18), ((223, 0), 1, 1, 19), ((221, 0), 1, 1, 20), ((219, 0), 1, 1, 21), ((217, 0), 1, 1, 22), ((215, 0), 1, 1, 23), ((213, 0), 1, 1, 24), ((211, 0), 1, 1, 25), ((209, 0), 1, 1, 26), ((207, 0), 1, 1, 27), ((205, 0), 1, 1, 28), ((203, 0), 1, 1, 29), ((201, 0), 1, 1, 30), ((199, 0), 1, 1, 31), ((197, 0), 1, 1, 32), ((195, 0), 1, 1, 33), ((193, 0), 1, 1, 34), ((191, 0), 1, 1, 35), ((189, 0), 1, 1, 36), ((187, 0), 1, 1, 37), ((185, 0), 1, 1, 38), ((183, 0), 1, 1, 39), ((181, 0), 1, 1, 40), ((179, 0), 1, 1, 41), ((177, 0), 1, 1, 42), ((175, 0), 1, 1, 43), ((173, 0), 1, 1, 44), ((171, 0), 1, 1, 45), ((169, 0), 1, 1, 46), ((167, 0), 1, 1, 47), ((165, 0), 1, 1, 48), ((163, 0), 1, 1, 49), ((161, 0), 1, 1, 50), ((159, 0), 1, 1, 51), ((157, 0), 1, 1, 52), ((155, 0), 1, 1, 53), ((153, 0), 1, 1, 54), ((151, 0), 1, 1, 55), ((149, 0), 1, 1, 56), ((147, 0), 1, 1, 57), ((145, 0), 1, 1, 58), ((143, 0), 1, 1, 59), ((141, 0), 1, 1, 60), ((139, 0), 1, 1, 61), ((137, 0), 1, 1, 62), ((135, 0), 1, 1, 63), ((133, 0), 1, 1, 64), ((131, 0), 1, 1, 65)]
+rd2_d9.json T3 21 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 3 maxP 3 maxDep 2 maxRA 2 tight 0 A 5 at ('x', 0) states 3-21
+   letters (option, level, c, Dhi), most relevant first: [((16, 1), 8, 1, 1), ((17, 1), 8, 1, 2), ((16, 0), 8, 1, 3), ((11, 1), 5, 2, 4), ((11, 0), 5, 3, 6), ((9, 1), 4, 1, 9), ((9, 0), 4, 2, 10), ((4, 0), 2, 3, 12)]
