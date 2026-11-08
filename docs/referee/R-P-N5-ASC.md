@@ -384,3 +384,30 @@ Asked by the Lead (06:10Z) so that CHECKER does not have to rule. Not read: docs
   - With R-A, CS(M)'s items are ordered, so «lex-nondecreasing» and «ascent» in HUB-ASC(B) are defined, as the packet's l. 55 / l. 58
     define them.
 - Verdict: L-5 MATCHES the packet. All statements of P-N5-ASC stay SIGN (UP-JUMP / UP-B / NOUP under [E-LEV], as before).
+
+## §H. Line L-6 (CHECKER C135 Add. 1 R6) (REFEREE successor 30, Opus 5.5, D15; date -u at writing 2026-11-08T11:26Z)
+- Objects (Lead 11:26Z): claude/l-new 2f4167cd (ancestor of origin/claude/l-new, checked). docs/new/P-N5-ASC-line-L6.txt sha1
+  a23c61d384036ce3fa771e27e175a8dbf2331658, 5,449 B. L-5 at 2f4167cd unchanged (fe4d3f90). Packet unchanged: sha1 9c9cb50d at 2f4167cd
+  = at e28e962d (frozen).
+- Byte test: scratch/asc_l6.py, R6's old / new strings typed from C135 Add. 1 (claude/checker 0ffde42c), not from the lane's script, on
+  L-5. Old string once in L-5. `cmp` with the lane's L-6: **EQUAL** (scratch/asc_logs/l6test.out). One line, 133 «(» = 133 «)», depth
+  never negative, 0 «|». So L-6 = L-5 + exactly R6.
+- Lane's own checks, from `git archive 2f4167cd`: asc.pins 43 rows, `sha1sum -c` all OK; box193/mkl6_193.py prints «R6 old once,
+  applied; sha1 a23c61d3… 5449 bytes; parens 133 133».
+- R6 in meaning, against the frozen packet §2 (l. 58-62), clause by clause:
+  - «a forest a map next from the items to the items and ⊥ without cycles» = l. 59 «A forest is a map next: items → items ∪ {⊥} without
+    cycles». CORRECT (and fixes the drafter's R-H defect: the codomain contains ⊥, so acyclic maps exist).
+  - «chain(x) := (x, next(x), next²(x), …) up to ⊥, compared as a set» = l. 59. «up to ⊥» only makes the stop explicit. CORRECT.
+  - «a hub (h_t an item or ⊥ at each time t, chain(⊥) := ∅, with chain_s(h_s) ≤ chain_t(h_t) for s < t) whose value chain_t(h_t)» =
+    l. 62 word for word in meaning. CORRECT. The monotonicity is now stated as the hub's defining condition, i.e. as a hypothesis of
+    HUB-ASC(B); it is what the B = 0 proof's first step uses («every lex-monotone sequence of sets is strictly increasing at each change»).
+  - CHECKER's witness re-checked by hand: in the CS(3) run of four forests (⊥,⊥,⊥), (⊥,⊥,3→1), (⊥,⊥,3→2), (⊥,2→1,3→2), a choice with
+    no monotonicity reaches the 8 descending values ∅, (1), (2), (2,1), (3), (3,1), (3,2), (3,2,1) > F_0(3) = 1 + 3·4/2 = 7. So without
+    the hub condition L-5's HUB-ASC(0) was false as worded; with R6 it is the packet's theorem. E-5 is closed.
+- Fixes entry 6 (docs/new/P-N5-ASC-fixes.md at 2f4167cd): CORRECT; its clause-by-clause comparison is the same as mine.
+- OPTIONAL (not required; Lead and CHECKER decide): HL-1. The hub's «≤» in R6 is not labelled «lex». The run clause beside it says
+  «lex-nondecreasing», and the line orders sets lexicographically elsewhere, so the reading is fixed by context. A label
+  («chain_s(h_s) ≤ chain_t(h_t) (lex) for s < t», as packet l. 60 writes for runs) would be exact. Taking it costs a line round; I do
+  not require it.
+- Verdict: **Line L-6 MATCHES** the packet read with fixes entries 1-6; R1-R5, R-A, R-I and R6 all CORRECT. All statements stay as in
+  §0 / earlier sections. docs/referee-2/ not read for this section.
