@@ -64,6 +64,41 @@ satisfying Lemmas 2, 3 at H; scope = the stored start)
   e.g. by climbing HIT7's levels 0-6 for room while keeping 7 caps (a «room climb»: objective = adjacent-change share, constraint =
   caps 7); (b) accept bill 262 on core8 and test exactly, with fixed ranks, the helper clocks that serve it (L-COMP's encoders).
 
+## 4. ROOM CLIMB (Lead 18:02Z choice (a); DATA unless labelled)
+- Lemma ADJ-COUNT (PROVED, lane; counting). Let a capped run have C core steps (a mover of pairs 0..h − 1 moves) and k changes of
+  o(h − 1), all at core steps (o(h − 1) depends only on pairs 0..h − 1). Of the k − 1 gaps between consecutive changes, each
+  non-adjacent one holds ≥ 1 of the C − k core steps without a change. So A = #adjacent pairs ≥ 2k − 1 − C. Also
+  C ≤ M_core = total moves of pairs 0..h − 1, and M_core = 2·Σ_(l<h) (2^(l+1) − 1) = 494 at h = 7 (pair l: 2^(l+1) − 1 moves per mover) in both HIT7 and the climbed
+  genomes (R113 MOVES with equality, measured). Hence at h = 7: A ≥ 507 − C ≥ 13. Lowering A means spreading the core moves
+  over more steps (fewer simultaneous core moves). ∎
+- Tool: l12/room.c (l9/fenc.c's ENC rules; a mutation is kept only if F(0..6) = 2 6 14 30 62 126 254 exactly; score A; tie-break
+  smaller T; simulated annealing). adj.py is an independent Python count (sim6); billfloor.py gives the floor.
+- Runs (unit = genome; scope = HIT7 6a3b274d's neighbourhood under room.c's moves, d 28; 85 min each, ~1,200 it/s, ~28% of the
+  mutations keep 7 caps):
+  | run | start | temp | best A | T | C | share A/k | bill floor (H = 8) | floor / F(6) | frozen (sha1) |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | (HIT7) | — | — | 218 | 299 | 289 | 0.858 | 262 | 1.03 | 6a3b274d |
+  | R1 | HIT7 | 0.5 | 187 | 331 | 320 | 0.736 | 214 | 0.84 | rec/ROOM_R1_A187_d28.txt 0d7d29e6 |
+  | R2 | HIT7 | 1.5 | 190 | 317 | 317 | 0.748 | 210 | 0.83 | rec/ROOM_R2_A190_d28.txt 55ecfc2e |
+  | R3 | R1 | 0.7 | 187 (no gain) | 331 | 320 | 0.736 | 214 | 0.84 | = R1 |
+  | R4 | R2 | 1.0 | 189 | 331 | 327 | 0.744 | 217 | 0.85 | rec/ROOM_R4_A189_d28.txt 516857e3 |
+  Every best meets ADJ-COUNT with equality (A = 507 − C). sim6, fenc and L-COMP's replay30 (read-only copy, l12/README-lcomp.txt)
+  agree on R1 and R2: 7 caps, T 331 / 317, F(0..6) exact.
+- Share A/k against size (DATA; unit = o(h − 1) change; scope = stored start of each genome):
+  | genome | caps h | d | N + M = 6d | k = F(h − 1) | A | share | floor (H = h + 1) / F(h − 1) |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | HS2_d3 | 2 | 3 | 18 | 6 | 5 | 0.83 | 1.00 |
+  | REC_d10_tower | 4 | 10 | 60 | 30 | 27 | 0.90 | 1.07 |
+  | H5_d20 | 5 | 20 | 120 | 62 | 59 | 0.95 | 0.97 |
+  | H6_d24 | 6 | 24 | 144 | 126 | 83 | 0.66 | 0.70 |
+  | HIT7 | 7 | 28 | 168 | 254 | 218 | 0.86 | 1.03 |
+  | ROOM_R1 | 7 | 28 | 168 | 254 | 187 | 0.74 | 0.84 |
+- Reading. The climb lowers the floor from 262 to 210-214 (−19%) and then plateaus in two rounds. That is above the 0.7·F(6) ≈ 178
+  threshold, so no level-8 target was built from it. H6 shows a share of 0.66 is reachable at h = 6, but the h = 7 climbs here
+  stall at 0.74. Not a bound: ADJ-COUNT allows A down to 13.
+- Round 3 (running at the time of writing): R5 from HIT7_lift_d32 (d 32, 4 extra helper levels: does depth buy room?), R6 from R3 at
+  temp 2.5.
+
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All are about the IDEAL
 model's step sequence (R104's definition) on 𝓛^R_d and its F-profile. Not M3, not a step-4 pass, not a TARGET.md claim.

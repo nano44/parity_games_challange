@@ -41,6 +41,9 @@
 - 19:3xZ round 1 ended: R1 (T 0.5) best A 187 T 331, floor 214 (0.84 F(6)); R2 (T 1.5) A 190 T 317, floor 210 (0.83). Frozen
   l12/rec/ROOM_R1_A187_d28.txt 0d7d29e6, ROOM_R2_A190_d28.txt 55ecfc2e; sim6 = fenc = replay30 (L-COMP copy) on both (7 caps).
   Round 2 RUNNING (tracked, 85 min): R3 (from R1, seed 33, T 0.7), R4 (from R2, seed 44, T 1.0) in $SP/l12.
+- 20:5xZ round 2: R3 no gain (187), R4 189 (floor 217; frozen 516857e3). Plateau share 0.74, floor 0.84 F(6) > 0.7: no level-8
+  target built. Lemma ADJ-COUNT (A >= 2k-1-C, C <= 494 moves) in L12 §4. Round 3 RUNNING (tracked, 85 min, $SP/l12): R5 from
+  l9/rec/HIT7_lift_d32 (d 32), R6 from R3 temp 2.5.
 - Things only I know (successor 11): pysat Glucose4 with_proof writes the proof to a temp file (~5 MB/s; an hour fills the disk
   allowance); Cadical195 ignores interrupt(); drup.c VERIFIED requires the final refutation (l. 97-98).
 
