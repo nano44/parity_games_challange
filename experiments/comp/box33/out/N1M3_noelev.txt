@@ -1,0 +1,4 @@
+ck i 4999 n 5000 maxA 0 maxT3 2 hist {'0': 5000} err 0 4s
+SUMMARY N 1 M 3 shard 0/1 elev False sample 0 n 6912 maxA 0 maxT3 2 hist {'0': 6912} capped 0 err 0
+ARGMAX_A {"N": 1, "lev": [0], "opts": [[[-1, -1, 0], [-1, -1, 1], [-1, -1, 2]]], "gate": [[0, 1, 2]], "br": [0, 1, 2], "bp": [0, 0, 0], "start": [0]}
+ARGMAX_T3 {"N": 1, "lev": [0], "opts": [[[-1, -1, 0], [-1, -1, 1], [-1, 0, 2]]], "gate": [[0, 1, 2]], "br": [0, 2, 1], "bp": [0, 0, 0], "start": [0]}

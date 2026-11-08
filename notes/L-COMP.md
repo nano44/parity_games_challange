@@ -1,6 +1,22 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## HANDOVER -- successor 13 (L-COMP 13, Opus 5.5) PARKS 2026-11-08 (Lead 14:16Z: «Then hand over and park at ~500k»)
+### BOX 33 (Lead 14:16Z): exact small-size maxima of A (ALT-EQUIV) and T3 -- tool experiments/comp/box33/enum33.py
+- Engine: L-NEW's asc197.run (claude/l-new b61c2029; checkout used: git worktree in my scratchpad; a successor makes its own:
+  `git worktree add --detach <dir> b61c2029`, env LNEW=<dir>). NOT independent: the cross-check with my own n5b/n5v mode xi is OPEN.
+- Genome space (eg195.gen schema): all (lev, option split, xt, gate perm, br perm, bp, start); no symmetry reduction; --noelev = Gamma3
+  e-priorities by gate only (patch verified: e-priority order flips on a 2-mover test genome).
+- Exact results (unit = genome; set = all genomes of (N, M); scope = N5'-xi from S3 on Gamma3, up to the first fallback; files out/):
+  | N, M | genomes | maxA ([E-LEV]) | maxT3 ([E-LEV]) | maxA (no E-LEV) | maxT3 (no E-LEV) |
+  | 1,1 | 4 | 0 | 0 | 0 | 0 |   | 1,2 | 128 | 0 | 1 | 0 | 1 |   | 1,3 | 6,912 | 0 | 2 | 0 | 2 |
+  | 2,2 | 288 | 0 | 0 | 0 | 0 |   | 2,3 | 62,208 | 0 | 1 | 0 | 1 |
+  N 1 M 4 (589,824) and N 2 M 4 (~14.9M, shards 0/2, 1/2, checkpointed .ck; resume = rerun the same command) were RUNNING at park:
+  see out/N1M4*.txt, out/N2M4_s*.txt (+ .ck). Relaunch lines:
+    LNEW=<dir> nice python3 enum33.py 2 4 0/2 out/N2M4_s0.txt   (and 1/2 -> out/N2M4_s1.txt; then both with --noelev)
+    N = 3: sample mode `enum33.py 3 M 0/1 out/N3M<M>_sample.txt --sample S --seed R` (scope = a random sample, state S and R).
+### BOX 32 (exact CNF method) -- see RESUME POINT below; all jobs stopped; every verdict reported to the Lead.
+
 ## RESUME POINT -- successor 13 (L-COMP 13, Opus 5.5), updated 2026-11-08 10:29Z by date -u (GO 08:12Z; BOX 32)
 ### BOX 32 = exact CNF method for «a d 32 genome whose run realizes core8_HIT7 exactly» (experiments/comp/box32/, README in this section)
 - Encoder enc32.py (own code from R104 rules; REALIZES = core rows equal at t 0..T, a change at every t < T, fixed point at T).
