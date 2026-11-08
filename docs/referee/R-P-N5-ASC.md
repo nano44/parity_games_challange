@@ -366,3 +366,21 @@ Asked by the Lead (06:10Z) so that CHECKER does not have to rule. Not read: docs
   - L-4 + R-I alone: a51e0e89…, 5,138 B (EQUAL to the Lead's figure; not sufficient).
 - Revised verdict on L-4: MATCHES with R-A required (R-I optional). L-4 = L-3 + exactly R5 still holds. All statements of P-N5-ASC
   stay SIGN.
+
+## §G. Line L-5 (R-A, R-I) (REFEREE successor 29, Opus 5.5, D15; date -u at writing 2026-11-08T07:47Z)
+- Objects: claude/l-new e28e962d (ancestor of origin/claude/l-new, checked).
+  - L-4 there is unchanged (byte-equal to my asc_logs/L4.txt, 4017305a…).
+  - L-5 docs/new/P-N5-ASC-line-L5.txt: sha1 fe4d3f902b6afde93384ebf625fa9bebcea0e1d0, 5,192 B, one line, 124 «(» = 124 «)». EQUAL to
+    my prediction in §F addendum 1 and to the Lead's check.
+- Byte test (scratch/asc_l5.py; strings of §F addendum 1; asc_logs/l5_bytetest.out):
+  - R-A and R-I old strings: once each in L-4, 0 in L-5. New strings: 0 in L-4, once each in L-5.
+  - L-4 + R-A + R-I is byte-equal to L-5.
+- Lane: mkl5_193.py re-run at e28e962d rewrites L-5 identically (worktree clean). asc.pins: 41 rows, all match.
+- Fixes entry 5 states R-A (required) and R-I (taken by Lead ruling) as in §F addendum 1. CORRECT.
+  - Note, not an item: it says the line now states the order «as the packet's §4 does». The definitions are in the packet's §2
+    (l. 55, l. 58). Harmless.
+- Meaning:
+  - With R-I, CHAIN-DECOMP's hypothesis in the line is exactly the packet's l. 80 «If seq_t(v) = (f, …)».
+  - With R-A, CS(M)'s items are ordered, so «lex-nondecreasing» and «ascent» in HUB-ASC(B) are defined, as the packet's l. 55 / l. 58
+    define them.
+- Verdict: L-5 MATCHES the packet. All statements of P-N5-ASC stay SIGN (UP-JUMP / UP-B / NOUP under [E-LEV], as before).
