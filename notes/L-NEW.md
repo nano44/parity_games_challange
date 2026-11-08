@@ -1,6 +1,88 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 66, Opus; session_01V5yGRXNwrBFAEUN7Qy6Hz6; started 2026-11-08 17:14Z by date -u; GO 17:51Z)
+- Step 0: handover check 76b64c8c (VERIFY PASS; Lead score 5). Stale container (1020 behind) fast-forwarded to 60e68423.
+- DUTY: none routed (Lead 17:51Z: no CHECKER item on R123-R125 open; R122 third fill first).
+- BOX 199 (docs/new/N5-SPLIT-box199.md; experiments/new/box199/; check.sh «BOX 199 SPLIT»):
+  - PROVED (lane, P-N5-CHAIN facts only): Lemma SPLIT (every change at v is a change at its split vertex u: a Howard switch at a mover,
+    or a face flip at a gate; same Λ, same symmetric difference). Lemma REWIN / REWIN-HI: a re-win of y through the same (u, b) forces
+    E_t2(b) ∩ U_y >lex E_t1(b) ∩ U_y, key step Ω_(t2−1)(a) ▷ Ω_t1(b), mover and gate cases. Corollary REWIN-COUNT: c_y(v) ≤ 1 + W + Σ_(u,b)
+    (Dhi_y(b) − 1).
+  - DEAD: the briefed downward charge «paid by a class change below y» (CX4_n21, 192 of 219 re-wins; all 11 instances). W-target charge
+    for all re-entries (GROW7_n34, 18: y re-enters under a new prefix letter e(10,0)). W-target bound (HOLD2K_n84, 18). D18 product-chain
+    (Dilworth) idea: Pre not monotone (GROW7 18, GROW8 14, HOLD3K 18, DU21_h4 165), and no gain even where it holds.
+  - CONJECTURE RW-WT (rwfail 0 in 4,460 re-wins): at a re-win the change above y sits in E(wt(y)). Missing step: route letters between b
+    and y unchanged.
+  - Verdict: the combination gives NOTHING polynomial (a localized RA-PATHS recursion); needs (S4) W poly, (S5) split pairs bounded, a path bound.
+  - DATA: max c_y ≤ 5, W ≤ 3, split pairs ≤ 3 on 11 instances (incl. DU21_h4 c 3).
+- BOX 199 Addendum 1 (Lead 18:50Z «RW-WT FIRST»): ROUTE-LOW DEAD (ROUTELOW_n21 sha1 80f9b977, double split in one Howard step);
+  Lemma RW-SHAPE PROVED (RW-WT failure needs a high route letter f and a second split after f); Corollary RW-1 (single-split re-wins:
+  RW-WT proved) and RW-2 (RW-B0 => RW-WT). CONJECTURE RW-B0: Bne 0 on 4,498 frozen re-wins + 315,065 search re-wins (srch199 seed 8) +
+  L-RED 2,994. Corollary REWIN-ASC (conditional on RW-WT, [E-LEV]): R_y <= 3M(F'_U(M) - 1): no new class (CHAIN3 covers bounded U);
+  S5 trivial (SPL <= 3M); open: W_y (S4) and, for U unbounded, the high-part values of wt(y).
+  Running: lane-genome sweep (scratchpad sw/run.sh, resumable, tracked bs8eyvcu1; out/ one file per genome). Next: (S4) on L-RED's wc 86 genome.
+- BOX 199 Addendum 2: Lemma PAIR-SPLIT PROVED (REWIN-HI for ANY two same-pair y-tops) -> SPLIT-COUNT c_y <= sum_(u,b) Dhi_y(b): (S4) unnecessary.
+  CONJECTURE RW-WT* (rw2fail 0 on 6,771 couples) -> C-WT: C(y) <= 3M max Dhi_y(wt(y)); open core = high parts of ONE vertex wt(y).
+  Static ascent DAG Z loose (depth <= 7, paths <= 366 vs c <= 5; zdag199.out). W-cases W86/W14/W68 frozen in box199/inst, all lemma counters 0.
+- BOX 199 Addendum 3 (L-SI BOX 90 FW family, l-si 4ded1e8d): all lemma counters 0 on FW4_2..FW16_2; no re-wins, c_y = #split pairs = k+1,
+  Z depth 1: C-WT tight (C <= SPL), Fibonacci P invisible to SPLIT-COUNT. A C-WT counter-family needs Dhi_y(wt(y)) large (ascents after y).
+  Things only I know: split199.py prints the must-be-0 counters first, then «|», then the descriptive ones; ex-tuples are raw vertex
+  indices (names via gamma3.build's V). Full sweep ~75 s; check199.sh ~10 s. Scratch copy in the scratchpad b199/ (not needed).
+
+## HANDOVER (successor 65, PARKING 2026-11-08 16:39Z by date -u; Lead 16:40Z: «Yes, PARK now: write the handover … Commit, push with scripts/push.sh, confirm nothing running, and send me the handover SHA»)
+### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
+- f092d2fe handover check (Lead score 5).
+- P-N5-CHAIN: 8b67d40e fixes entry 1 + L-2 (CL-1; sha1 e481d260, 8,248 B); 219e3933 fixes entry 2 + L-3 (REFEREE-2 35 R-1, R-2, R-4, N-1;
+  W-1 note; c484795c, 8,450 B); 87603d07 fixes entry 3 + L-4 = L-3 + R-G3 + R-W + R-B3 IN ORDER (Γ3 (Q5) boundary step, W-1 restated;
+  a69c8aa9, 9,082 B). chain.pins 57. Generators box196/mkl2_196.py, mkl3_196.py, mkl4_196.py.
+- P-N5-END: 8b67d40e fixes entry 3 + L-3 (L-R1, N-1, N-2, EL-1, EL-2; d6afe92a, 7,215 B; MATCHES both referees). end.pins 43; box195/mkl3_195.py.
+- P-N5-ASC: 2f4167cd fixes entry 6 + L-6 (CHECKER C135 Add. 1 R6; a23c61d3, 5,449 B = prediction; MATCHES REFEREE-2, REFEREE 30 pending).
+  asc.pins 43; box193/mkl6_193.py.
+- P-N5-QUIET: b61c2029 fixes entry 3 + L-3 (d9b5e610, NEVER ROUTED); 87603d07 fixes entry 4 + L-4 (R-B2; 0809da25, 5,433 B) = L-2 + R-L,
+  R-U, R-B2, R-Q, R-T, R-G (R-G before «DATA, clause by clause», not inside «(R118's DATA)»). quiet.pins 42; box194/mkl3_194.py, mkl4_194.py.
+- BOX 197 (docs/new/N5-CORE-box197.md + Addenda 1-3; experiments/new/box197/; check.sh «BOX 197 CORE»): 2f4167cd, 7a0e6175, b61c2029, f98e93ee.
+- BOX 198 (docs/new/N5-PAIR-box198.md; experiments/new/box198/; check.sh «BOX 198 PAIR»): fcba92fc.
+### RESULTS (labels; nothing is a TARGET claim; G-N5-TIME OPEN; all lane-proved items unrefereed unless said)
+- PROVED (lane, under [E-LEV], P-N5-CHAIN premises): ASC-WIT, ASC-ROOT (box 197 §2): an ascent of seq_t(v) exists only while Odd avoids, at a
+  gate below, a W-face with a strictly better cycle node. Static (any σ), not a bound.
+- PROVED (lane, P-N5-CHAIN premises, no [E-LEV]): RE-COUNT, RE-EQUIV (T3 poly iff top re-entries Rtop poly); PAIR-COUNT, ALT-EQUIV (corrected
+  in Add. 3: max(0, A_xy − 1), A := max(1, ·); T3 poly iff A poly); C-EQUIV (box 198: T3 poly iff C := max c_y poly).
+- PROVED (lane, abstract, E-MON3 only; hold in CS(M)): PAIR-HIGH (c_y ≤ Dhi_y; A_xy ≤ 2·Dhi_y + 1; Dhi_y = 1 + Σ_(z above y) c_z),
+  RA-PATHS (c_y ≤ #paths from y in the re-arming DAG RA). BIN makes both tight (RA complete, 2^depth). L-RED 61's ALT-H (claude/l-red
+  2564c6fa, R227-hold.md) looks like PAIR-HIGH (b); L-RED compares.
+- PROVED (lane) CONDITIONAL on CONJECTURE DS-TOPS(s): DS-POLY. CONJECTURE DS-TOPS (constant DS order of tops): s ≤ 5 DEAD (DSALT7_n108 A 7;
+  NK6_cl21 A 6); little weight. CONJECTURE ALT-POLY = restatement of G-N5-TIME on Γ3. CONJECTURE RA-LOG (RA-depth O(log(N + M))): little
+  weight; with fan-in ≤ k const it would give polynomial, alone quasi-polynomial. Fan-in 1 (single «High» per letter) DEAD as a property
+  (fan-in 3 NK6_cl21, 4 DSALT9_n416).
+- DATA: lemma counters 0 everywhere; RA depth ≤ 3, C ≤ 5, paths ≤ 8, A ≤ 9 (DSALT9, L-RED); designed towers A ≤ 5, depth 2, while T3 grows
+  to 80-129. L-RED 60: A ≈ 0.9·log2(N + M) on climbs (weak).
+### OPEN (for successor 66)
+- Duties: none pending at park. Byte tests in flight: CHAIN L-4 and QUIET L-4 (both referees), ASC L-6 (REFEREE 30). If a referee or
+  CHECKER sends items: fixes entry N+1 + next line by script from the latest generator (each asserts the previous line's sha1), repin.
+  CHAIN L-4 and QUIET L-4 say «signed by both referees» for the referee-originated steps: if a referee does not sign, that clause changes.
+- BOX 199 (recommended): a GAME lemma restricting RA, i.e. which tops can re-arm a letter y = e_(x,k) at v. Suggested route:
+  - A y-top at v needs, after it, v's play to pass x with σ(x) = k and Odd on pe at y's gate; a re-arm by z ∈ RA(y) re-routes v's play
+    through z's gate. Find the mover u on v's play where the route splits (u's choice switches between a z-route and a y-route).
+  - Howard enters here: u switches only to a strictly ⊴-better successor and keeps a best current one (F1, DOM, STRICT; the Ξσ tie only
+    among exact ties). The y-route can win back at u only after its value rises, i.e. after a class change BELOW y (at y's W-target or at a
+    gate on the y-route). Try to prove a DOWNWARD charge «each re-win of y at u is paid by a class change of a vertex on the y-route below
+    y», to combine with PAIR-HIGH's UPWARD charge. Two-sided charges are what the abstract model lacks.
+  - Refuting RA-LOG: a nested replaying counter (L-RED 60 R226 §9's «the High itself a replaying counter»): each level's low counter
+    replays under every value of the next level; RA-depth growing linearly in the height kills RA-LOG; a family with fan-in growing kills
+    (S2). Build from L-SI's two85 towers (box197/mkh197.py, read-only copy of claude/l-si experiments/si/box85/two85.py + gen83.py).
+### TOOLS (pins; sha1 first 12)
+- box197: asc197.py 479e35a29693 (counters awA/awB/rootfail/dfail/lexdec, maxalt fixed in Add. 3), check197.sh ab5a6770ab6d, check197.out
+  cabe92c5eba8, sweep197_fix.out 04b140b336a6 (the record), mkh197.py 60e4c5b82009 (argument: folder with two85.py, gen83.py), hfam/ (21 genomes).
+- box198: pair198.py e6bfbfa8eaef (ph1fail/ph2fail/rafail/rpfail; maxC/maxP/maxDep/maxRA/A), check198.sh b8267cc791d0, check198.out
+  c899d7c4afa3, pair198.out a0bf9494f3b6, inst/ (NK6_cl21, DSALT6/7/9 copies).
+- Usage: python3 -I experiments/new/box198/pair198.py G.json … (ROOT defaults from the file's place); dump197.py G.json [TOP] prints e-set words.
+### Traps (successor 65)
+- I launched one sweep with a bare «&» (untracked); killed and relaunched tracked. Use run_in_background always.
+- Line syntax: «immediately before the first DATA» landed inside «(R118's DATA)»: check where an insertion lands before writing it.
+- A line clause «signed by both referees» can be written before the second signature: say so in the fixes entry.
+- Container came up 1010 commits behind: trap check first.
+
 ## Resume point (successor 65, Opus; session_01V5yGRVnBYFYjfmZvEVPZ5D; started 2026-11-08 09:44Z by date -u; GO 10:18Z)
 - Step 0: handover check f092d2fe (VERIFY PASS; Lead score 5). Stale container (1010 behind) fast-forwarded to 5c79e8b8.
 - DUTY P-N5-CHAIN: fixes entry 1 (REFEREE 29 CL-1 Form A; CN-1 noted; CO-1 NOT taken, Lead ruling) + L-2 (sha1 e481d260, 8,248 B =
@@ -15,6 +97,20 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   [E-LEV]), RE-COUNT, Theorem RE-EQUIV (T3 poly iff Rtop, the top re-entries, poly). D18 link: tops as Davenport–Schinzel sequences;
   bounded alternation order would give poly; BIN's ruler sequence has unbounded order. DATA maxalt 3,4,4,5 on TC2..TC5m: OPEN.
   Next: maxalt on a tower family of growing height (L-SI's generator, read only); Sharir–Agarwal not yet opened (needed before citing).
+  Addendum 1: CONJECTURE DS-TOPS (tops(v, I) order-s DS for a constant s; data consistent with s = 4) and Corollary DS-POLY (PROVED
+  conditional); tower family h 2..8 (box197/hfam, mkh197.py on L-SI two85 copy): max maxalt 2,4,5,4,4,4,4 while T3 13..80.
+- DUTY P-N5-QUIET round 3: fixes entry 3 (R-L, R-U, R-B, R-Q, R-T, R-G; R-G placed before «DATA, clause by clause», not inside
+  «(R118's DATA)») + L-3 (sha1 d9b5e610, 5,429 B; box194/mkl3_194.py; quiet.pins 40).
+  Addendum 2: Add. 1's «s = 4» WITHDRAWN (NK6_cl21 maxalt 6, relayed; verify when on origin claude/l-si box88/inst); Lemma PAIR-COUNT,
+  Theorem ALT-EQUIV (T3 poly iff max pairwise alternation A poly); CONJECTURE ALT-POLY = restatement in a two-letter form.
+- QUIET fixes entry 4 + L-4 (R-B2; sha1 0809da25, 5,433 B; L-3 never routed). CHAIN fixes entry 3 (Γ3 (Q5) boundary step + W-1 repair
+  restated) + L-4 = L-3 + R-G3 + R-W + R-B3 in order (sha1 a69c8aa9, 9,082 B; box196/mkl4_196.py; chain.pins 57).
+  Addendum 3 (L-RED 60 R226): W-2 fixed (PAIR-COUNT max(0, A_xy − 1), ALT-EQUIV A := max(1, ·)); asc197 maxalt one-letter fix, re-run
+  sweep197_fix.out (7 rows maxalt 0 → 1, nothing else); DS-TOPS s ≤ 5 DEAD (DSALT7_n108 A 7, relayed).
+- BOX 198 (Lead 15:25Z; docs/new/N5-PAIR-box198.md; experiments/new/box198/; check.sh «BOX 198 PAIR»): PROVED (lane, abstract) PAIR-HIGH
+  (c_y ≤ Dhi_y, A_xy ≤ 2·Dhi_y + 1), RA-PATHS (c_y ≤ paths in the re-arming DAG), C-EQUIV (T3 poly iff C = max c_y poly). BIN: RA complete,
+  2^depth. Fan-in 1 DEAD (fan-in ≤ 4 on climbs). CONJECTURE RA-LOG (depth O(log)), little weight. DATA: depth ≤ 3, C ≤ 5, paths ≤ 8.
+  Next: a game-level lemma restricting RA (which tops can re-arm y at v) — the place Howard must enter.
   Things only I know: asc197.py counts Rtop per (time, top); maxR counts all re-entries; sweep197.out ran with ROOT set from the scratchpad.
 
 ## HANDOVER (successor 64, PARKING 2026-11-08 09:12Z by date -u; Lead 09:13Z: «your next item is the HANDOVER … push, send me the SHA, then stop»)
@@ -2121,6 +2217,15 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   DATA: correct on 1,038 library + families + hard families; SF ≈ ½ N5; runquad 264 → 2, topfix 7N + 43; switchbestexp N=10 619 vs 89, SBC 97.
   Open count SBC (CONJECTURE SF-POLY OPEN).
 
+## Dead ends (successor 66, box 199; docs/new/N5-SPLIT-box199.md §3-§4)
+- DOWNWARD charge «each re-win of y at u is paid by a class change (Λ or letters less relevant than y) of a vertex on the y-route»: DEAD,
+  experiments/new/box199/inst/CX4_n21.json (sha1 ef29debb): 192 of 219 re-wins have none; first v = x0, y = e(10,0), t 4 → 6, u = x0.
+  Obstruction: REWIN-HI, the forced change is ABOVE y (at b).
+- W-target charge for every re-entry: DEAD, box199/inst/GROW7_n34.json (42bbd562), 18; v = x10, y = e(15,1), t 4 → 6, E(x0) constant.
+  Obstruction: y is expelled and re-armed by a PREFIX letter (e(10,0), before y on the play), the split pair changes.
+- W-target bound c_y(v) ≤ #values of E(wt(y)) ∩ U_y: DEAD, box199/inst/HOLD2K_n84.json (423a4a88), 18.
+- Product-chain bound (Pre and Suf both monotone): DEAD, GROW7_n34 18, GROW8_n53 (57758f40) 14, HOLD3K_n125 (2c3e610b) 18, DU21_h4 (48da0ccb) 165.
+
 ## Dead ends (successor 59, box 191; docs/new/N5-XICYC-box191.md §2.1)
 - SEG-2P «in TWO-player IDEAL-CYC every run of steps with all VJ cycle nodes fixed has <= N steps»: DEAD, experiments/new/box191/inst/
   DEAD_SEG2P_d4_N8.json (9 > 8), DEAD_SEG2P_d7_N14.json (15 > 14), DEAD_SEG2P_d9_N18.json (21 > 18). Obstruction: Odd's best response
@@ -3454,7 +3559,15 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   1-1-exchange paragraph (full PDF text read).
 - (succ. 38, box 89) T. Ralphs, IE411 Lecture 11 (Lehigh, coral.ise.lehigh.edu/~ted/files/ie411/lectures-python/Lecture11.pdf), slide 3 (PDF text read).
 - (succ. 40) L-LIT T61 (l-lit 1ad851ee, docs/lit/T61-order-charging.md §2.6, S5a data). L-LIT T60 (l-lit 54584c0c, docs/lit/T60-best-reply-flips.md §3.3, ORDER-DET / NO-REPEAT statements); L-SI box 53 (l-si aeb8c311, docs/si/N5-SBF-box53.md §2.1-§2.5, §3); P-N5-SETTLE §1-§2 (l-si a0970d36). [ABS] 2102.04922 and [GH] NOT opened (only T60's quotes; no theorem of theirs used).
+- (successor 65, 2026-11-08 11:25Z) S. Pettie, «Sharp Bounds on Davenport-Schinzel Sequences of Every Order», arXiv:1204.1086 v2:
+  §1 p.1 (order-s DS: repetition-free, no alternation of length s + 2), §1.1 p.2 (λ_s(n) := Ex(ababa…, n)), §1.2 p.3 (λ1 = n, λ2 = 2n − 1
+  [Davenport–Schinzel 1965]; Szemerédi 1973 λ_s(n) = O(n log* n) for every s ≥ 3; Hart–Sharir 1984 λ3 = Θ(nα(n))). Sharir–Agarwal 1995
+  NOT opened (not reachable). Used in box 197 Addendum 1 (CONJECTURE DS-TOPS, Corollary DS-POLY).
 ## Dead ends
+- (successor 65, box 197 Add. 1-3) CONJECTURE DS-TOPS with s ≤ 5: DEAD on DSALT7_n108 (claude/l-red r226, A = 7; relayed) and s ≤ 4 on
+  NK6_cl21 (A = 6). Obstruction: climbed instances reach alternation 6-7 at T 11.
+- (successor 65, box 198) Fan-in 1 of the re-arming DAG (one «High» per letter, which would give C ≤ M): false on NK6_cl21 (fan-in 3) and
+  DSALT9_n416 (fan-in 4), box198/pair198.out.
 - (succ. 45, box 131) «Smallest index» as S4a's tie rule: false at even W-cycle nodes (483 / 666 ties; the rule there is the BFS key); index potential works only at odd cycle nodes.
 - (succ. 45, box 130) Rule-independent potential for FL runs (Xi, or (Xi, length) at tied W): exponential range, CDAG_n one-player single-switch chain 2^n - n - 1 (CDAG_6: 57 steps). A bound must use the S1 tie-break.
 - (succ. 45, box 129) Recursion over gate depth for W-strict moves: no base. Vertex charge graph cyclic (topfix_n10 window [6,64]: eleven 3-vertex mutual-payment SCCs, e.g. {120,121,122}); move-level chain depth 52 (time depth).
