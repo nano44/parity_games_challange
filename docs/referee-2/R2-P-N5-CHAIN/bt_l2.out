@@ -1,0 +1,10 @@
+L-1 bd152dd9c71ea47dbc7fa6655a9a18a87908781a 8124 B;  L-2 e481d260884807424c545bd3f3cdd7fbfb25f05c 8248 B; parens 160 160 pipes 0 lines 1
+changed region in L-1 [ 6622 6793 ) vs L-2 [ 6622 6917 )
+L-1 side: has one): ctrl1 (L3 := 0, U(G) := −1) wfail 32, Tfail 22, upfail 26,477 in 50 runs; ctrl2 (order reversed) locfail 3,320; ctrl3 (no excluded vertex) bonly 2,269; spec mode
+L-2 side: except ties, NO-TIE3's counter, which has none): ctrl1 (L3 := 0, U(G) := −1) wfail 32, Tfail 22, upfail 26,477; ctrl2 (order reversed) locfail 3,320; ctrl3 (no excluded vertex) bonly 2,269 (each control on 50 runs, family rand, seed 1963, check196.out); spec mode, seed 1963 (data/sweep196.out),
+outside the region equal: True
+R-1 old string count in L-2: 1
+R-2 old string count in L-2: 1
+R-3 old string count in L-2: 0
+R-4 old string count in L-2: 1
+N-1 old string count in L-2: 1

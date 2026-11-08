@@ -1,0 +1,4 @@
+NOUP random genomes 300 seed 33 Xi-cyclic 121 CTRL -
+CTRL - CDEC 0 CDEC_units 3590 EDOM 0 EDOM_units 300 EMON 0 EMON_units 9669 GLOSS 0 GLOSS_units 3590 HUBG 0 HUBG_units 10880 LAMX 0 LAMX_units 20549 OLDHYP_concl_fails 1819 OLDHYP_notinPi 1819 OLDHYP_units 5409 UPB 0 UPB_units 20549
+INFO maxDE 3 maxDE_B0 3 maxU 0 maxasc 0 noup_maxasc 0 noup_plays 20549 plays_cycnode_e 0 runs 300 states 577
+exit 0
