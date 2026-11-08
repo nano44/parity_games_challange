@@ -1,5 +1,17 @@
 # L-LOWER notebook
 
+## Successor 11 (Opus 5.5): BOX L11, GO from the Lead 12:38Z 2026-11-08 (handover check a22adadd, score 5)
+### Resume point (12:4xZ, date -u)
+- Product: docs/lower/L11-osc.md (to write); tools experiments/lower/l11/: tight.py (TIGHT H-capped core target from a capped
+  (H-1)-genome = small-H build.core8), tsat.py (hsat.py encoding for any clamped core target; helper gates as SAT variables, so one
+  instance covers all gate cases; sharing modes disj / shared:J1,J2 / noread). Validated: HS2_d3's own core run T 6: d 2 UNSAT
+  (DRUP VERIFIED, 252 lemmas), d 3 SAT, sim6 replay exact.
+- Targets (out/, sha1): TT3_HS2 7db3f03d (T 14), TT3_HIT7 792a6d52 (T 14), TT4_HIT7 4452f39b (T 31); F tight in all.
+- TT3_HS2 and TT3_HIT7 at d 4: UNSAT (Glucose4, 45 s each); DRUP check pending (proofs ~300 MB in $SP/l11).
+- Running (tracked tasks, $SP/l11/*.log): TT3_HS2 d 5 none, TT3_HIT7 d 5 none (Glucose4, 3,600 s limit). Re-run on restart:
+  `cd experiments/lower/l11; python3 tsat.py out/TT3_HS2.txt 5 none g4 3600 $SP/l11/TT3_HS2_d5_none`.
+- Plan: d_min of the tight targets for h = 3 (and h = 4 if feasible); at d_min compare modes none / disj / shared.
+
 ## Successor 10 HANDOVER (2026-11-08 11:55Z, date -u; parking at ~420k context, Lead 10:41Z «one more design round, then park»)
 ### DONE (claude/l-lower; product docs/lower/L10-design.md §0-§3d; tools/data experiments/lower/l10/)
 - 085a821b handover check (score 5).
