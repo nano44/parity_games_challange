@@ -1065,4 +1065,12 @@ if [ "$r198" -eq 0 ] && [ -z "$d198" ] && ! grep -v "^ctrl" box198/check198.out 
 else
   echo "BOX 198 PAIR check: FAILED (check198.sh exit $r198)"; echo "$d198" | head -30; echo "$run198" | tail -15; exit 1
 fi
+# BOX 199 SPLIT (L-NEW successor 66): SPLIT / REWIN / REWIN-HI counters (split199.py), DEAD witnesses, frozen output + controls
+r199=0; run199=$(cd box199 && bash check199.sh 2>&1) || r199=$?
+d199=$(diff <(printf '%s\n' "$run199") box199/check199.out 2>&1) || true
+if [ "$r199" -eq 0 ] && [ -z "$d199" ] && ! grep -v "^ctrl" box199/check199.out | grep -Eq "(playfail|kindfail|hwfail|gtfail|trfail|dnfail|rhfail|rwfail|wlamfail) [1-9]" && grep -q "^GROW7_n34.json .*wcfail 18 " box199/check199.out && grep -q "^CX4_n21.json .*dn_nobelow_all [1-9]" box199/check199.out && grep -q "^ctrl1 .*hwfail [1-9]" box199/check199.out && grep -q "^ctrl2 .*wbfail [1-9]" box199/check199.out && grep -q "^ctrl3 .*dnfail [1-9]" box199/check199.out && grep -q "^ctrl4 .*rhfail [1-9]" box199/check199.out && grep -q "^ctrl5 .*gtfail [1-9]" box199/check199.out; then
+  echo "BOX 199 SPLIT: SPLIT / REWIN / REWIN-HI counters 0, DEAD witnesses present, controls fire = frozen: PASS"
+else
+  echo "BOX 199 SPLIT check: FAILED (check199.sh exit $r199)"; echo "$d199" | head -30; echo "$run199" | tail -15; exit 1
+fi
 rm -rf "$tmp"

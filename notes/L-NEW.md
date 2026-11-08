@@ -1,6 +1,24 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 66, Opus; session_01V5yGRXNwrBFAEUN7Qy6Hz6; started 2026-11-08 17:14Z by date -u; GO 17:51Z)
+- Step 0: handover check 76b64c8c (VERIFY PASS; Lead score 5). Stale container (1020 behind) fast-forwarded to 60e68423.
+- DUTY: none routed (Lead 17:51Z: no CHECKER item on R123-R125 open; R122 third fill first).
+- BOX 199 (docs/new/N5-SPLIT-box199.md; experiments/new/box199/; check.sh «BOX 199 SPLIT»):
+  - PROVED (lane, P-N5-CHAIN facts only): Lemma SPLIT (every change at v is a change at its split vertex u: a Howard switch at a mover,
+    or a face flip at a gate; same Λ, same symmetric difference). Lemma REWIN / REWIN-HI: a re-win of y through the same (u, b) forces
+    E_t2(b) ∩ U_y >lex E_t1(b) ∩ U_y, key step Ω_(t2−1)(a) ▷ Ω_t1(b), mover and gate cases. Corollary REWIN-COUNT: c_y(v) ≤ 1 + W + Σ_(u,b)
+    (Dhi_y(b) − 1).
+  - DEAD: the briefed downward charge «paid by a class change below y» (CX4_n21, 192 of 219 re-wins; all 11 instances). W-target charge
+    for all re-entries (GROW7_n34, 18: y re-enters under a new prefix letter e(10,0)). W-target bound (HOLD2K_n84, 18). D18 product-chain
+    (Dilworth) idea: Pre not monotone (GROW7 18, GROW8 14, HOLD3K 18, DU21_h4 165), and no gain even where it holds.
+  - CONJECTURE RW-WT (rwfail 0 in 4,460 re-wins): at a re-win the change above y sits in E(wt(y)). Missing step: route letters between b
+    and y unchanged.
+  - Verdict: the combination gives NOTHING polynomial (a localized RA-PATHS recursion); needs (S4) W poly, (S5) split pairs bounded, a path bound.
+  - DATA: max c_y ≤ 5, W ≤ 3, split pairs ≤ 3 on 11 instances (incl. DU21_h4 c 3).
+  Things only I know: split199.py prints the must-be-0 counters first, then «|», then the descriptive ones; ex-tuples are raw vertex
+  indices (names via gamma3.build's V). Full sweep ~75 s; check199.sh ~10 s. Scratch copy in the scratchpad b199/ (not needed).
+
 ## HANDOVER (successor 65, PARKING 2026-11-08 16:39Z by date -u; Lead 16:40Z: «Yes, PARK now: write the handover … Commit, push with scripts/push.sh, confirm nothing running, and send me the handover SHA»)
 ### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
 - f092d2fe handover check (Lead score 5).
@@ -2187,6 +2205,15 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   (b), (c); length < 2(n + m)(n² − n + 1 + SBC)). DEAD: NOFB (n3all_maxph_0), W-frame twin N5-SFW cycles (theta_thf16, period 10; 49/413).
   DATA: correct on 1,038 library + families + hard families; SF ≈ ½ N5; runquad 264 → 2, topfix 7N + 43; switchbestexp N=10 619 vs 89, SBC 97.
   Open count SBC (CONJECTURE SF-POLY OPEN).
+
+## Dead ends (successor 66, box 199; docs/new/N5-SPLIT-box199.md §3-§4)
+- DOWNWARD charge «each re-win of y at u is paid by a class change (Λ or letters less relevant than y) of a vertex on the y-route»: DEAD,
+  experiments/new/box199/inst/CX4_n21.json (sha1 ef29debb): 192 of 219 re-wins have none; first v = x0, y = e(10,0), t 4 → 6, u = x0.
+  Obstruction: REWIN-HI, the forced change is ABOVE y (at b).
+- W-target charge for every re-entry: DEAD, box199/inst/GROW7_n34.json (42bbd562), 18; v = x10, y = e(15,1), t 4 → 6, E(x0) constant.
+  Obstruction: y is expelled and re-armed by a PREFIX letter (e(10,0), before y on the play), the split pair changes.
+- W-target bound c_y(v) ≤ #values of E(wt(y)) ∩ U_y: DEAD, box199/inst/HOLD2K_n84.json (423a4a88), 18.
+- Product-chain bound (Pre and Suf both monotone): DEAD, GROW7_n34 18, GROW8_n53 (57758f40) 14, HOLD3K_n125 (2c3e610b) 18, DU21_h4 (48da0ccb) 165.
 
 ## Dead ends (successor 59, box 191; docs/new/N5-XICYC-box191.md §2.1)
 - SEG-2P «in TWO-player IDEAL-CYC every run of steps with all VJ cycle nodes fixed has <= N steps»: DEAD, experiments/new/box191/inst/
