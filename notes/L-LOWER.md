@@ -1,5 +1,36 @@
 # L-LOWER notebook
 
+## Successor 8 HANDOVER (2026-11-08 ~01:2xZ, context near park point)
+### DONE (claude/l-lower; product docs/lower/L8-design.md §1-§4; tools/data experiments/lower/l8/)
+- f7c315e5 handover check (score 5). 5158ba4e round 1: HS2_d3 (h 2 at d 3, needs α₁ = 0; sha1 8ddebddc…), HS2a11_d4; hsched/hsched2
+  exact helper search; h = 3 d = 4 NONE (4 α); ONE-READ XOR PROVED (lane, §3; value proof, any weights); l8check.py in check.sh.
+- RC-PLATEAU: stated test inverted (§1); Lead 21:19Z reading quoted: stays CONJECTURE; «RC-free ⇒ ≤ 222» refuted by KILL238.
+- 69d7005a item 0: KILL230/238 (§1c): E5 63/63; 16 = 8 × 2 untriggered (8,0) 00-windows; 10:0 → 17:0 → 22 trigger; revert 122/110.
+- da105498 §1d mirror by hand: 0 of 4,675 single re-points (ranksolve, helpers by current rules).
+- c6a8980f §1e F240-F248 frozen; F248: 17-gadget disarmed by helper 51 (key o(24) silent before t 138). §1f (6248e6a4): re-phase
+  needs o(23) to cycle (WINDOW-CAP lemma), not local. §1g (this commit): HIT7 (sha1 6a3b274d…, caps 7) xcheck'd vs box150 (0/0);
+  mechanism: 17 re-wired 17:1 → 34 → 23 (level-11 SELECTOR) → 19 (key-fired level-9 helper) in 00 windows / → 11 in 11 windows; not
+  the 51 route. d per level 20/24/28.
+- SAT: hsat.py (own CNF, validated vs exhaustive), hsat_run.py + sat_all.sh (resumable cubes, out/sat/*.res). h3d4 α101 DRUP VERIFIED;
+  α100, α110 NOT VERIFIED in default drup mode (deletions); IGNDEL=1 re-check of α100 stopped at park, no verdict. h3d4 α111 UNSAT by 4 cubes (unchecked).
+### IN FLIGHT: none. All jobs STOPPED at park (Lead 01:19Z). Status per instance: experiments/lower/l8/out/sat/STATUS_at_park.txt
+  (h3d4: all 4 alpha UNSAT by SAT, only a101 DRUP-verified; h3d5: 0 cubes decided). Resume the cubes: `cd experiments/lower/l8;
+  ./sat_all.sh K 3 > out/sat/workerK.log` for K = 0, 1, 2 as tracked tasks (decided cubes skipped). drup: gcc -O2 -o $SP/drup
+  experiments/lower/l8/sat/drup.c; try IGNDEL=1 when default mode fails, report both.
+### NEXT (successor)
+- (b) Lead 00:46Z / 01:19Z: build level 8 at d 32 by hand from the recipe in docs/lower/L8-design.md §4 (τ level 9 on q₆'s chain,
+  σ level 12 selector, ρ level 10 key-fired helper; HIT7 has PULSE_6 = 1 in all 127 6-windows). Also: the inductive rule. Measure whether H6 (l4/rec/H6_d24_F126.txt, lifted) → HIT7 is an operation (L5 §1 method);
+  design level 8 at d 32 using the §1g selector pattern (q₆'s trigger: a key-fired mover on q₆'s chain whose input a fast context
+  mover selects); decide with ranksolve / fev; xcheck vs box150 Gen (recipe below).
+- SAT: collect h = 3 d = 5 cube results; DRUP-check UNSAT cubes (try IGNDEL=1 when default fails; report both).
+### Things only I know (successor 8)
+- git ls-tree from a subdirectory lists relative paths: run L-COMP fetches from the repo root.
+- hsched2/hsched3 explode at d ≥ 4-5 (wiring DFS), use hsat.py. mirror.py's target needs +2 steps per block; runclamp uses CURRENT ranks.
+- Once I started push.sh with `&` by mistake (killed at once, nothing pushed): always tracked run_in_background.
+- xcheck: git archive origin/claude/l-new experiments/new/box150 experiments/new/box139 experiments/new/box187 | tar -x -C $SP/lnew
+  (repo root); python3 ../l3/txt2json.py G.txt $SP/name; LNEW=$SP/lnew python3 -I ../l3/xcheck.py $SP/name_dNN.json (from l8/).
+
+
 ## Successor 8 (Opus 5.5) — BOX L8, GO from Lead 21:13Z 2026-11-07 (handover check f7c315e5, score 5)
 ### Resume point (23:0xZ)
 - Product: docs/lower/L8-design.md; tools/data experiments/lower/l8/ (l8check.py in check.sh). Pushed: 5158ba4e (round 1), 69d7005a

@@ -1,0 +1,11 @@
+# SAT status at L-LOWER 8's park (2026-11-08 01:2xZ, date -u). Cubes per instance = 2^(2(d - h)) (helper start bits).
+# All jobs stopped at park (sat_all.sh workers, hsat_run.py, drup). Resume: `./sat_all.sh K 3 > out/sat/workerK.log` for K = 0, 1, 2
+# (decided cubes are skipped); CNF/proof files per UNSAT cube in sat/ (gitignored, lost with the container).
+h2d3_a11_gx  (test instance): 4 of 4 cubes UNSAT  -> UNSAT (agrees with hsched / hsched2 / hsat whole instance)
+h3d4_a111_gx: 4 of 4 cubes UNSAT -> UNSAT (solver result; cube proofs not DRUP-checked)
+h3d4 alpha 100 / 101 / 110: UNSAT by hsat.py whole-instance runs (out/sat/h3d4_whole_instances.txt).
+   DRUP (sat/drup.c = L-COMP box27 drup.c, sha1 2d4b8eab): a101 s VERIFIED (2,430,348 lemmas RUP-checked);
+   a100 and a110 «s NOT VERIFIED: lemma 2292746 / 1882046 is not RUP» in default mode (deletion lines applied);
+   a100 IGNDEL=1 re-check stopped at park before finishing (no verdict).
+h3d5, all 4 alpha x 4 gate cases (16 instances, 16 cubes each): 0 cubes decided (each worker was inside its first 1,500 s cube when
+   the container restarted at ~00:15Z, and again at the park). UNDECIDED.

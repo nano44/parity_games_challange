@@ -1,0 +1,1 @@
+hit7_d28.json T 299 muZ 127 ... RUNS 1 SIM-MISMATCH 0 MOVESCHECK {'RX': 0, 'AGA': 0, 'AGB': 0, 'AGC': 0, 'SWA': 0, 'SWB': 0, 'SWC': 0, 'SWD': 0, 'SWE': 0, 'WPD': 0} (L-NEW box150 Gen at claude/l-new 9329859d; l3/txt2json.py + l3/xcheck.py)

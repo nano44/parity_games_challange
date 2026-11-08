@@ -150,6 +150,32 @@ Nothing here is a result in the sense of CLAUDE.md; G-N5-TIME stays OPEN. Not a 
   for 51) must cycle at least twice before t = 138, ideally once per 00 window.
 - Not run: ranksolve on a re-designed first half (no consistent target was constructed).
 
+## 1g. HIT7: the 7-capped tower (L-COMP 11, Lead 00:46Z), dissected (DATA; scope = stored start)
+- Source: claude/l-comp 709e57a0 experiments/comp/box30/out/L6_HIT7_F254_d28.txt, frozen l8/rec/LCOMP_L6_HIT7_F254_d28.txt, sha1
+  6a3b274d3af4d0d8f057f82c8f2919c84b7dd446 (= relayed); and L6_FRZ_F250_D_l6u.txt, sha1 bebf369533a1d21d5740379536ef48dca5592d51.
+  sim6 and fev agree: HIT7 d 28, T 299, F 2 6 14 30 62 126 254 190 95 …, seven capped levels; F250 T 291, F(6) 250. guard 'noreturn' ok
+  on both (q₅ = 10, npaths(q₅, pair 6) = 0; HIT7 caps 7). E5: q₅ = 10 in 63 of 63 5-windows. xcheck vs L-NEW box150 Gen (claude/l-new
+  9329859d): RUNS 1, SIM-MISMATCH 0, every MOVESCHECK counter 0 (out/xcheck_HIT7.out).
+- Diff vs F248 (kill_dissect_HIT7.out; unit = option / mover): movers 0-11 unchanged; xt 49 options (pair 6: 1, ≥ 14: 48), br 83, bp 41,
+  gates 24 movers, starts 14 movers. Path 10:0 → 17 kept.
+- What closed 44 / 79 / 114 (gadget_HIT7.out, trig17_HIT7.out; unit = (8, 0) 5-window; set = all 16): every one has PULSE_5 = 2 with
+  trigger mover 17 (level 8) moving at u₁ + 1. 17's options are re-wired: 17:0 → 22, 17:1 → 34 (F248: 17:1 → 51). At u₁ + 1 the decider
+  of 17 in all 8 «00» windows (o(8) = o(9) = 0) is option (19, 1) rank 78: chain 17:1 = 17:1 → 34:1 → 23:0 → 19:1 → …; in the 8 «11»
+  windows chain 17:1 = 17:1 → 34:1 → 23:1 → 11:0 → … (the F248 read of f₅). Mover 23 (level 11) is a CONTEXT SELECTOR: its state picks
+  which input 17 reads. Mover 19 (level 9) is key-fired at u₁ in every 00 window (o(8) changes at u₁ there), so 17 reads a mover that
+  moves at u₁ in every window, with no slow-helper arming: helper 51 changes once in the whole run (step 1), and o(24) once (step 299).
+  So it is NOT the §1e 51-reset route.
+- F250 (trig17_F250.out) is the intermediate: 17:1 → 51, 51:1 → 34 (re-pointed from 11); window 82 closed through 51's state, 45 and 118
+  still open (decider (51, 1) rank 60).
+- What the 7th capped level needed beyond the 6th (READING, from SL41 → KILL238 → F248 → HIT7, all with movers 0-11 fixed after
+  KILL238's 10:0 → 17): a level-≥ 7 trigger of q₅ at u₁ + 1 in every inner 5-window (GUARD, L7 §2), supplied by ONE mover (17, level 8)
+  on q₅'s chain, key-fired at u₁ + 1, whose decisive input is selected by a fast context mover (23, level 11) between f₅ (11) in the
+  11 phase and a key-fired level-9 helper (19) in the 00 phase. This is the multiplexer form of §3's remark (ii): ONE-READ XOR forbids
+  a two-input reader, and the realized trigger is a three-input selector.
+- (b) d per capped level: H5 d 20, H6 d 24, HIT7 d 28 (DATA, three points: +4 per level). HIT7 descends from SL41 (d 28), which descends
+  from G7_best and H6 lifted to d 28 (L4 / L5); L5 §1 showed H5 → H6 is not an operation under the ladder symmetries (target-level
+  multisets differ at 23 of 24 levels). Whether H6 → HIT7 is an operation is not measured here; a level-8 design at d 32 was not started.
+
 ## 2. Item 1: the sequential schedule with helpers, decided exactly (DATA; unit = (h, d, α) case; scope = the sequential target)
 | h | d | α (α_1, …) | helper levels | result | outputs |
 | --- | --- | --- | --- | --- | --- |
@@ -203,6 +229,30 @@ Nothing here is a result in the sense of CLAUDE.md; G-N5-TIME stays OPEN. Not a 
   0 of 84,000.
 - Consequence for CONTEXT-COUPLING (READING): condition (i) holds unconditionally, so the split detector of a doubling pair needs a
   third varying input (a context mover) on its chain; whether that context must come from below (condition (ii)) is still open.
+
+## 4. The SELECTOR RULE as a design recipe for level 8 at d 32 (Lead 01:19Z; READING / CONJECTURE, not built)
+- Requirement (PROVED part, lane: WINDOW-CAP + PULSE-TRIGGER, L7 §2, shifted by one level). An 8th capped level needs F(7) = 2·255:
+  every 7-window must have length ≥ 2, so in every 6-window in which both pair-6 members move (all 127 in HIT7) PULSE_6 = u₂ − u₁ ≥ 2,
+  and by PULSE-TRIGGER some mover of closure(q₆) moves at u₂ − 1 > u₁. DATA (HIT7; unit = 6-window; set = its 127): f₆ = 13, q₆ = 12
+  in all 127, PULSE_6 = 1 in all 127. So level 8 needs a trigger of q₆ = 12 at u₁ + 1 in all 127 6-windows (in HIT7: in none).
+  If the tower is to stay «RC-free» one level up (no Ξ-path q₆ → pair 7), that trigger must have level ≥ 8 (GUARD shifted).
+- Recipe (READING, the HIT7 pattern of §1g shifted one level up; in HIT7 the doubled pair is 6 and the triggered reader is q₅,
+  j = 5: τ = 17 at level j + 3 = 8, ρ = 19 at level j + 4 = 9, σ = 23 at level j + 6 = 11; for level 8, j = 6):
+  (1) trigger τ: a mover of level j + 3 = 9 (movers 18/19) on q₆'s chain (q₆:k → τ, as 10:0 → 17), KEY-fired at u₁ + 1 of each
+      6-window: its key o(8) must change at u₁ + 1 (in HIT7, 17's key o(7) changes at u₁ + 1);
+  (2) τ's decisive input is chosen by a CONTEXT SELECTOR σ of level j + 6 = 12 (movers 24/25) whose state differs between the two
+      phases of the parent windows (in HIT7: o(8) o(9) = 00 / 11);
+  (3) in one phase σ routes τ's chain to f₆ = 13 (which moves at u₁); in the other to a KEY-FIRED helper ρ of level j + 4 = 10
+      (movers 20/21) that moves at u₁ in exactly that phase (in HIT7, 19's key o(8) changes at u₁ in the 00 windows).
+  ONE-READ XOR (§3, PROVED) is why (2) is needed: τ's preference must follow a phase-dependent function of two movers, which no
+  two-input reader realizes; the selector is the third input.
+- Build plan (for the successor): start from HIT7 lifted to d 32 (4 inert pairs on top, as H5_lift / H6 lift were built), keep movers
+  0-13; pick τ, σ, ρ per the recipe among movers ≥ 16 (re-pointing their options only); target trajectory: HIT7's run for movers 0-13
+  plus the pair-7 doubling schedule with PULSE_6 = 2 (+1 step per 6-window, so the lower pairs must wait: §1d's need (i)); complete
+  helpers by clamp.runclamp; decide with ranksolve; when infeasible, the own-infeasible movers name what else must change (§1d). The
+  stretched schedule makes T ≈ 299 + 127 or more. Check caps with sim6 + fev; xcheck vs box150 Gen.
+- What is NOT claimed: that this recipe can be realized at d 32 (CONJECTURE: yes, with the same +4 levels per capped level as
+  H5 → H6 → HIT7); nothing asymptotic.
 
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class; all are about the IDEAL

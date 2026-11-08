@@ -1,0 +1,19 @@
+reference LCOMP_L6_FRZ_F248_D_l6v.txt
+== LCOMP_L6_FRZ_F250_D_l6u.txt T 291 F(5..7) [126, 250, 188]
+  E5: second mover of pair 5 over 5-windows with two staggered moves: {10: 63} | window kinds: {'two staggered': 63}
+  failing 6-windows by (profile, length, parent 5-window opener, parent PULSE_5): count
+    ((13,), 1, ((8, 0),), 1) 2
+    ((13,), 3, ((8, 0),), 1) 2
+  chain 11:1 at s_0 (first 8): [(79, 11, 1), (87, 9, 1), (77, 54, 1), (83, 44, 0), (56, 16, 1), (96, 7, 1), (7, 26, 1), (84, 24, 1)]
+  diff xt: 49 options {'12-13': 1, '>=14': 48} 
+  diff br: 87 options {'12-13': 4, '>=14': 83} 
+  diff bp: 39 options {'12-13': 2, '>=14': 37} 
+  diff gate movers Counter({'>=14': 12}) start movers Counter({'>=14': 14}) []
+== LCOMP_L6_HIT7_F254_d28.txt T 299 F(5..7) [126, 254, 190]
+  E5: second mover of pair 5 over 5-windows with two staggered moves: {10: 63} | window kinds: {'two staggered': 63}
+  failing 6-windows by (profile, length, parent 5-window opener, parent PULSE_5): count
+  chain 11:1 at s_0 (first 8): [(79, 11, 1), (87, 9, 1), (74, 54, 0), (73, 18, 0), (96, 7, 1), (65, 26, 1), (64, 24, 1), (27, 25, 0)]
+  diff xt: 49 options {'12-13': 1, '>=14': 48} 
+  diff br: 83 options {'12-13': 4, '>=14': 79} 
+  diff bp: 41 options {'12-13': 2, '>=14': 39} 
+  diff gate movers Counter({'>=14': 24}) start movers Counter({'>=14': 14}) []
