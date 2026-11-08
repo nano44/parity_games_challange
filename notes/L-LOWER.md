@@ -1,5 +1,29 @@
 # L-LOWER notebook
 
+## Successor 9 HANDOVER (2026-11-08 ~05:0xZ, date -u; written near the park point)
+### DONE (claude/l-lower; product docs/lower/L9-design.md §0-§4; tools/data experiments/lower/l9/)
+- dd962007 handover check (score 5). 8f717610 §0-§1: L8 §4 recipe insufficient. P-TOWER-FUEL Lemmas 2, 3 at h = 8 give 322 room
+  violations on HIT7 (j 4-6) and T ≥ 510 against 299, so pairs 0-5 must be re-timed (ROOM, then FUEL; Lead logged it).
+  fenc.c is the exact second simulator from d 32 on: fev.c overflows at rank 127 (F(31) wrong on HIT7_lift_d32).
+- 9b8fd3c9 §2: delay maps (H6, SL41, HIT7), CONJECTURE SHIFT. 8acc29d3 / ef041881 §3: the counter target = sched.py, capped iff
+  alpha_(h-2) = 1; level-7 window count on HIT7 is 219 (1 empty + 218 length-1; L-COMP's n1_7 = 218).
+- 2e2c6a4a §4: UPPER-BLIND, PHASE-DAG (PROVED, lane); they do NOT prove that helpers are needed.
+- e198d0b6: h = 3 d = 4 capped sched targets (a110, a111) DRUP-VERIFIED UNSAT via Glucose4 (out/sat/h3d4_capped_verified.txt).
+  CaDiCaL/pysat proofs are incomplete (no UP-derivable final empty clause): use l9/resolve2.py (Glucose4) for proofs.
+### IN FLIGHT (die on restart; resumable per instance)
+- l9/gwhole_h3d5.sh K 2 1800 $SP/sat, K = 0, 1 (logs l9/out/sat/gK.log, results *.g4.res). a110 g0 and a111 g0 TIMEOUT at 1,800 s.
+  The 6 others are pending or running. A TIMEOUT is re-run on relaunch (only SAT/UNSAT are skipped): consider a longer limit only if
+  restarts allow.
+### NEXT (successor)
+- Lead decision (a) 02:46Z: small exact gadgets toward a clean inductive G_h. h = 3 needs d ≥ 5 (VERIFIED); d = 5 open (hard for
+  both solvers). Options: cube h3d5 with Glucose (hsat_run.py uses CaDiCaL; a Glucose variant is not written), symmetry breaking in
+  hsat, or h = 3 at d = 6 (more freedom may be easier SAT).
+- SAT h3d4 old item done; old h3d4 a100/a101 are uncapped targets (irrelevant).
+### Things only I know (successor 9)
+- fenc build: gcc -O2 -o $SP/fenc experiments/lower/l9/fenc.c. drup: gcc -O2 -o $SP/drup experiments/lower/l8/sat/drup.c.
+- sched.py with alpha_(h-2) = 0 is uncapped and has idle core steps; never search it.
+- Pushes take 20-40 min when SAT jobs share the CPUs; never commit while push.sh runs (the stop hook nags; ignore it until exit).
+
 ## Successor 9 (Opus 5.5): BOX L9, GO from the Lead 02:06Z 2026-11-08 (handover check dd962007, score 5)
 ### Resume point (02:2xZ)
 - Product: docs/lower/L9-design.md; tools/data in experiments/lower/l9/.
