@@ -321,3 +321,11 @@ ck i 3199998 n 1600000 maxA 0 maxT3 2 hist {'0': 1600000} err 0 1909s
 ck i 3209998 n 1605000 maxA 0 maxT3 2 hist {'0': 1605000} err 0 1915s
 ck i 3219998 n 1610000 maxA 0 maxT3 2 hist {'0': 1610000} err 0 1921s
 ck i 3229998 n 1615000 maxA 0 maxT3 2 hist {'0': 1615000} err 0 1928s
+ck i 3239998 n 1620000 maxA 0 maxT3 2 hist {'0': 1620000} err 0 1934s
+ck i 3249998 n 1625000 maxA 0 maxT3 2 hist {'0': 1625000} err 0 1940s
+ck i 3259998 n 1630000 maxA 0 maxT3 2 hist {'0': 1630000} err 0 1946s
+ck i 3269998 n 1635000 maxA 0 maxT3 2 hist {'0': 1635000} err 0 1952s
+ck i 3279998 n 1640000 maxA 0 maxT3 2 hist {'0': 1640000} err 0 1959s
+ck i 3289998 n 1645000 maxA 0 maxT3 2 hist {'0': 1645000} err 0 1965s
+ck i 3299998 n 1650000 maxA 0 maxT3 2 hist {'0': 1650000} err 0 1972s
+ck i 3309998 n 1655000 maxA 0 maxT3 2 hist {'0': 1655000} err 0 1979s
