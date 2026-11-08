@@ -29,3 +29,34 @@
   packet's sha1 (6e613ba7…), L-1's sha1 (bd152dd9…), the old string exactly once in L-1, one line, no «|», «(» = «)». Result: sha1
   e481d260884807424c545bd3f3cdd7fbfb25f05c, 8,248 B, 160 «(» = 160 «)» = REFEREE 29's prediction (§5, chain_logs/linefix.out).
 - chain.pins: this file re-pinned; L-2 and mkl2_196.py added. check.sh block «P-N5-CHAIN» unchanged. L-1 kept (superseded).
+
+## Fixes entry 2 (L-NEW successor 65; line-only; REFEREE-2 35 second review, claude/referee-2 0e5c7c37, docs/referee-2/R2-P-N5-CHAIN.md; written 11:37Z by date -u)
+- Verdicts: every statement SIGN (labels as the packet's); no GAP; L-2 NOT YET on R-1, R-2, R-4 (its R-3 is met by CL-1, entry 1). Lead
+  ruling 11:38Z: «take its exact STRINGS (not tool fixes), so no pinned output changes»; «N-1 / N-2 optional: your call».
+### W-1 (note; REFEREE-2 closed it itself; no statement, proof claim used, or line change)
+- (Core)'s «a play passes K0 iff it passes K3» is false for plays starting at pA or K3; (F-cls3)'s «each class is a convex set of values»
+  is false over ALL vertices (REFEREE-2's witness r2nonconv.out: x_1 ◁ e_(3,1) ◁ K1 at one S3 state, K3 ∈ Π deciding before E); E-MON3's
+  stated reason («both plays have node w, so both or neither contain them») is not a valid inference.
+- REFEREE-2's repair, which I accept as the reading of the frozen text: every vertex outside {K0, pA, K3, K1, s, r, K2, q} reaches the
+  core only through some pb → K0, so its plays with node K1 or K2 contain both K0 and K3 and its other plays neither; the eight core
+  vertices have constant values on every state (frozen core, σ̄(K2) = r by LOC-K2-3). So on one vertex's trajectory, and between two
+  non-core vertices, the order is reward, then E, then the rest; every use in the packet is of that kind ((Q1) pe_g vs pβ_g, (Q2) a mover
+  vs its pads, the per-vertex interval property for Q ≤ Σ(D − 1), E-MON3 one vertex at t and t + 1). Read (F-cls3)'s convexity sentence
+  and E-MON3's reason as restricted to non-core vertices, core vertices being constant.
+- The same reading applies to box 197 (docs/new/N5-CORE-box197.md), whose ASC-WIT (c) cites «as in E-MON3's proof»: there both compared
+  vertices (pe_g1, pβ_g1) are non-core pads, so the repaired reason covers it.
+### R-1, R-2, R-4 (REQUIRED, taken; REFEREE-2's exact strings) and N-1 (optional, taken)
+| item | old (once in L-2) | new |
+| --- | --- | --- |
+| R-1 | «QUIET3: wfail 0 (unit: quiet windows)» | «QUIET3: wfail 0 (unit: quiet steps past the L3-th step of their window)» |
+| R-2 | «T-QUIET3: Tfail 0 (unit: runs)» | «T-QUIET3: Tfail 0 (unit: runs with T3 > Q + (Q + 1)·L3, Q the number of loud steps; the Σ_v form is not counted)» |
+| R-4 | «LOC-K2-3: k2fail 0 (unit: states)» | «LOC-K2-3: k2fail 0 (unit: states with σ̄_t(K2) ≠ r; the conjunct Ω_t(r) ◁ Ω_t(K2) is not counted)» |
+| N-1 | «spec on 100 runs and 5 pinned genomes, check196.out)» | «spec on 100 runs, and 5 pinned genomes in xi mode, check196.out)» |
+- N-2 (a counter of T3's definition) NOT taken: it is a tool change, and the Lead ruled strings only; REFEREE-2's own t3def is 0.
+- No number changes; no pinned output changes.
+### Line L-3 (written by script)
+- docs/new/P-N5-CHAIN-line-L3.txt = L-2 + R-1 + R-2 + R-4 + N-1, by experiments/new/box196/mkl3_196.py (from the repo root): asserts the
+  packet's sha1 (6e613ba7…), L-2's sha1 (e481d260…), each old string exactly once in L-2, one line, no «|», «(» = «)». Each old and new
+  string was checked verbatim against the report (whitespace-joined). Result: sha1 c484795c888ab46cee07038094368ba28da0055d, 8,450 B,
+  164 «(» = 164 «)». L-2 kept (superseded).
+- chain.pins: this file re-pinned; L-3 and mkl3_196.py added. check.sh block «P-N5-CHAIN» unchanged.

@@ -9,6 +9,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   7,215 B; box195/mkl3_195.py; end.pins 43). Next: byte tests REFEREE 30 / REFEREE-2 35.
 - DUTY P-N5-ASC: fixes entry 6 (line-only, CHECKER 22 C135 Add. 1 E-5, R6 exact) + L-6 (sha1 a23c61d3, 5,449 B = prediction;
   box193/mkl6_193.py; asc.pins 43). R6 checked against packet §2 l. 58-62: no misstatement.
+- DUTY P-N5-CHAIN round 2: fixes entry 2 (REFEREE-2 35 0e5c7c37: R-1, R-2, R-4 exact strings, N-1 taken, N-2 not; W-1 note) + L-3
+  (sha1 c484795c, 8,450 B; box196/mkl3_196.py; chain.pins 55). P-N5-END L-3 MATCHES both; P-N5-ASC L-6 MATCHES REFEREE-2 (REFEREE 30 pending).
 - BOX 197 (docs/new/N5-CORE-box197.md; experiments/new/box197/; check.sh «BOX 197 CORE»): PROVED (lane) ASC-WIT, ASC-ROOT (under
   [E-LEV]), RE-COUNT, Theorem RE-EQUIV (T3 poly iff Rtop, the top re-entries, poly). D18 link: tops as Davenport–Schinzel sequences;
   bounded alternation order would give poly; BIN's ruler sequence has unbounded order. DATA maxalt 3,4,4,5 on TC2..TC5m: OPEN.
