@@ -10,6 +10,7 @@ For consecutive y-tops t1 < t2 of (v, I): re-win iff the split pair (u, new) is 
   wc (RW-WT asked for every re-entry, not only re-wins): same test on non-re-win re-entries;
   nobelow (BOX 199 §3 DEAD downward charge): re-wins where no vertex q of b's play at t2 has Lambda_t1(q) != Lambda_(t2-1)(q) or a change of
       its e-letters less relevant than y on [t1, t2-1];  wb (BOX 199 wbfail): (v, I, y) with c_y > #values of E(wt(y)) ∩ U_y on the y-tops' span;
+  maxW = max over (v, I, y) of W_y(v, I) (non-re-win re-entries: BOX 199 REWIN-COUNT's W); maxc = max c_y;
   zb: a re-win whose most relevant changed letter above y (between E_t1(b) and E_t2(b)) is on b's play BEFORE y at t2.
 Usage: rwwt227.py G.json ..."""
 import sys, os, json
@@ -29,7 +30,7 @@ def census(G, cap=3000):
     def lexgt(A, B):            # A >lex B (e-vertices are even: more relevant top in A wins)
         d = A ^ B
         return bool(d) and max(d, key=lambda e: rk[e]) in A
-    c = dict(nobelow=0, wb=0, changes=0, kind=0, trA=0, trD=0, hw=0, gt=0, reent=0, rewin=0, dn=0, rh=0, rw=0, wc=0, zb=0, T=T)
+    c = dict(maxW=0, maxc=0, nobelow=0, wb=0, changes=0, kind=0, trA=0, trD=0, hw=0, gt=0, reent=0, rewin=0, dn=0, rh=0, rw=0, wc=0, zb=0, T=T)
     for v in range(n):
         t = 0
         while t <= T:
@@ -58,6 +59,8 @@ def census(G, cap=3000):
                 Uy = lambda S: frozenset(e for e in S if rk[e] > rk[y])
                 Ly = lambda S: frozenset(e for e in S if rk[e] < rk[y])
                 if len(ts) > len({Uy(E(s, wty)) for s in range(ts[0], ts[-1] + 1)}): c["wb"] += 1
+                Wy = sum(1 for t1, t2 in zip(ts, ts[1:]) if split[t1] != split[t2])
+                c["maxW"] = max(c["maxW"], Wy); c["maxc"] = max(c["maxc"], len(ts))
                 for t1, t2 in zip(ts, ts[1:]):
                     c["reent"] += 1
                     vals_wt = {Uy(E(s, wty)) for s in range(t1, t2 + 1)}
@@ -76,7 +79,7 @@ def census(G, cap=3000):
             t = u_ + 1
     return c
 if __name__ == "__main__":
-    K = ("T", "nobelow", "wb", "changes", "kind", "trA", "trD", "hw", "gt", "reent", "rewin", "dn", "rh", "rw", "wc", "zb")
+    K = ("T", "maxc", "maxW", "nobelow", "wb", "changes", "kind", "trA", "trD", "hw", "gt", "reent", "rewin", "dn", "rh", "rw", "wc", "zb")
     print("instance", " ".join(K))
     for f in sys.argv[1:]:
         c = census(json.load(open(f))); print(os.path.basename(f), " ".join(str(c[k]) for k in K), flush=True)

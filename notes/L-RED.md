@@ -76,6 +76,8 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - Item 1d (Lead 18:50Z: L-NEW 66 BOX 199, l-new cde01dcb) docs/red/R227-box199.md: SPLIT / REWIN / REWIN-HI / REWIN-COUNT SURVIVE; RW-WT
   not broken (rw 0 on 2,994 re-wins, 19 genomes; rwwt227.py); DEAD claims reproduced (nobelow 70, wc 10, wb 10). RW falsification climb
   ORDER=RW 2725 running (out/dcRW_250_2725.log). dc 2723 (cap 600) STOPPED at 18:5xZ: no gain.
+- 19:33Z CORRECTION (R227-box199 §6): wc is a total; per-(v, I, y) maxW ≤ 3, maxc ≤ 5 everywhere. Frozen W86_n77 / W14_n75 / W68_n66 (ba6ac84c).
+  W climb 2726 (total wc, reached 206 at N + M 400) STOPPED; MW climb 2727 (score maxW, maxc, wc; cap 400; from W14) running.
 - Running: depthclimb 2721 (GROW7, depth-first) and ORDER=C 2722 (CX4), cap 300; logs out/dc_300_2721.log, out/dcC_300_2722.log.
 - Worktree: <scratchpad>/wt197 = l-new f98e93ee (detached); run asc197 from inside it with --files <abs path>; remove at park.
 - Sources opened: l-new f98e93ee docs/new/N5-CORE-box197.md (§0 list, E-MON3 l. 23/67, ALT-EQUIV l. 189-234), asc197.py header (run).
