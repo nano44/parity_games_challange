@@ -369,9 +369,9 @@ r2asc_inst_elevrev.out, r2asc_noup_elevrev.out (`r2asc.py FILES…`, `r2asc.py n
     e-vertex. The argument:
     - Suppose seq_t(v) = (f, …) and an e-vertex g ∉ Π_t(v) comes before f. Then g lies on the prefix and is less relevant than
       w := Λ_t(v), while f is more relevant than w.
-    - By [DEF] (E-MON's proof, packet l. 66-67), w is then an e-vertex, c_W, K0 or K3.
+    - By [DEF] (E-MON's proof, packet l. 70-71), w is then an e-vertex, c_W, K0 or K3.
     - w ≠ c_W, because c_W tops every other priority and f is more relevant than w.
-    - K0 and K3 are never cycle nodes (packet l. 68-71).
+    - K0 and K3 are never cycle nodes (packet l. 74-76).
     - So w is an e-vertex.
     - Measured: 0 plays with an e-vertex as cycle node among the 50,881 plays of the pinned instances and the 20,549 plays of the random
       genomes. The direct counter GLOSS («first e-vertex on the play ≠ first element of seq_t(v)») is 0 in 24,818 and 0 in 3,590.
