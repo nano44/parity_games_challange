@@ -150,6 +150,31 @@ movers in closure(x); acyclic wiring)
 - Test running: C5 is the same search with the order constraint «movers 0-11, 14, 15 must not reach 13» (ann.c optional argument).
   So f6 may read pairs 0-5 and q7 / f7, and the clock and the pair-6 information must come through helpers.
 
+### 2f. Item 2 outcome so far: no 8-capped genome; the exact obstruction (DATA; 08:4xZ, date -u)
+- Search result (unit = violated constraint; set = the constraints of the clamped full trajectory, about 11,000-13,000 depending on
+  the helper runs; scope = the exact target out/core8_HIT7.txt):
+  - unconstrained runs from seed ad9a39d4: C1 (T 1.5) 1286 → 169; C2 (T 3) → 210 (stopped 08:0xZ); C3 (T 6) → 344 (stopped);
+    C4 (T 0.7, from C1's 07:58Z best) → 167;
+  - order-constrained C5 («0-11, 14, 15 must not reach 13») → 554, far worse.
+  - The plateau since ~08:20Z is ~167-170 in every unconstrained run.
+- Frozen best: rec/L10_C4_best_score167.txt, sha1 b550bc4a1d67ace2c0b60d371bdc3222e4f69870. With gsolve's ranks it is
+  rec/L10_C4_best_score167_solved.txt, sha1 57454ff800ee4d396da1a5fc9127433dd724dac4.
+  Violations by mover (out/viol_C4_best.out): 13 (f6) 64, 8 35, 11 (f5) 31, 4 10, 6 8, 7 8, ≤ 3 elsewhere; 9, 10, 12, 14, 15 at 0.
+- What a non-zero score means: the solved genome run freely (sim6; fenc agrees, T 5) leaves the target at the first violated
+  constraint. Here that is step 3, movers 13 and 15; the run dies at T 5 with caps 0. The score measures distance to an exact
+  realization; it does not give a partial tower.
+- THE OBSTRUCTION, measured (target lines 0-8, unit = state):
+  - Pair 6 starts at 11 with key o(5) = 0, so f6 is free from step 1. In HIT7 it moved at step 1.
+  - The two idle steps that R224's correction prepends (needed so the first 7-window has two steps) make f6 HOLD at steps 1-2
+    and move at step 3. That needs a trigger at step 2, a mover on f6's chain that changes at step 2 (q7 moves there).
+  - Everywhere else f6 must prefer «not my key» (= 1 − o(5); 2e). Every mover that carries that signal in the runs (helpers 16-19
+    in C1) reads 13.
+  - So f6 needs, below itself in the DAG: (i) a one-shot step-2 trigger and (ii) a copy of 1 − o(5). Neither may depend on f6. Every
+    unconstrained run gives up instead: f6 becomes a sink with a constant preference (64 = all its 0 → 1 moves violated). Forcing
+    the order (C5) leaves the rest of the tower without the information it needs (score 554).
+- Status: the level-8 build at d 32 is NOT achieved (DATA, this search); not DEAD (a heuristic search, not exhaustive).
+  CONJECTURE STRETCH-AND-STACK stays open. The exact sub-problem the next attempt must solve is the f6 gadget above.
+
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All are about the IDEAL
 model's step sequence (R104's definition) on 𝓛^R_d and its F-profile. Not M3, not a step-4 pass, not a TARGET.md claim.
