@@ -21,6 +21,17 @@
 - TT3_HS2 prefix 7 at d 4 UNSAT (g4 307 s); d 5 TIMEOUT 800 s.
 - Running 16:2xZ: slack variants out/sv/TT3_HS2_s<k>.txt (row k duplicated, T 15) at d 4, two workers ($SP/l11/sv/sv<k>.log).
 - l11/tight.py renamed ttarget.py (l6/tight.py shadows it on the import path).
+- 16:3xZ RESULTS (product docs/lower/L11-osc.md §1-§5):
+  - TT3_HS2 / TT3_HIT7 at d 4 UNSAT, DRUP VERIFIED (251,384 / 257,409 lemmas; CNF sha1 bceb3e86 / 3f18a265). 14 one-slack variants
+    UNSAT at d 4 (solver only). T2_HS2self mode disj SAT at d 3 (h 2: per-level ownership costs nothing at the least d).
+  - Exact SAT does not reach d 5 at h 3 (Glucose4 3,600 s TIMEOUT; CaDiCaL ~7,000 s; even the SAT side stalls: T2_HS2a11self d 4,
+    realized by HS2a11_d4, no model in 600 s). DEAD (method): annk from the empty genome at h = 3 (fails on realizable RC3_REC10).
+  - PROVED (lane) TOP-LOOP on the tight h = 3 targets. DATA: realized towers h >= 3 are never tight; TOP-ONLY change points 53-75% in
+    tight targets (core8 262 / 494) vs 6-41% in REC10/H5/H6/HIT7; clients.py: HIT7 has 6 moving helpers read by all 7 levels.
+  - Verdict: OSC-ROOM SHARPENED to CONJECTURE OSC-ROOM' (the recursion is a property of the tight re-timing); no evidence for
+    super-linear d. NEXT: a non-minimal (slack) re-timing of HIT7 for level 8, slack placed at core8's TOP-ONLY points.
+- Things only I know (successor 11): pysat Glucose4 with_proof writes the proof to a temp file (~5 MB/s; an hour fills the disk
+  allowance); Cadical195 ignores interrupt(); drup.c VERIFIED requires the final refutation (l. 97-98).
 
 ## Successor 10 HANDOVER (2026-11-08 11:55Z, date -u; parking at ~420k context, Lead 10:41Z «one more design round, then park»)
 ### DONE (claude/l-lower; product docs/lower/L10-design.md §0-§3d; tools/data experiments/lower/l10/)
