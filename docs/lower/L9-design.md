@@ -85,6 +85,29 @@ Labels: PROVED (lane) / CONJECTURE / DATA / DEAD / READING. Model and notation a
   through sat_capped.sh (the 8 capped instances only: a110, a111 × gate cases 0-3); the a100/a101 runs of sat_all.sh were stopped
   at 02:5xZ (no cube decided).
 
+## 4. The phase argument for the counter target (Lead 02:46Z decision (a))
+- Setting: a realization of a capped sched(h, α) target (§3). Pairs 0..h−1 follow the target (f_l = 2l + 1, q_l = 2l, joined gate
+  value 0); helpers are the movers of levels ≥ h.
+- Lemma UPPER-BLIND (PROVED, lane; sched.py's job/init recursion, R104 keys). At every move pre-state of q_l (l ≥ 1), the core movers
+  above level l are in the same state: pair l + 1 is joined at 1 and every pair k ≥ l + 2 is joined at 0.
+  Proof. In sched.py q_l moves at e₁ + 1, where e₁ is the end of job(l + 1, ·). That job ends with every pair above l joined at its
+  key (each job moves q_k to c_k after the jobs above it end). At that pre-state pair l is split, so c_(l+1) = o(l) = 1. Each pair
+  k ≥ l + 1 is joined, so o(k) = 0 (joined gate value) and c_(k+1) = 0. ∎
+  DATA check (phase.py → out/phase_sched.out; unit = two consecutive moves of one mover; set = all q_l of the capped targets
+  h = 3 (two α), 4 (two α), 5, 6, 7): 0 pairs with any difference above l.
+  For key-fired first movers (α_l = 0) the same holds at their move pre-states, except in windows touched by sched.py's initial
+  nesting (DATA: 14 of 307 consecutive move pairs differ above l, all at the start; e.g. h 5, l 2, moves 15 and 25).
+- Lemma PHASE-DAG (PROVED, lane; Lemma 4 (b) of P-TOWER-FUEL, UPPER-BLIND, acyclicity). In such a realization, take l ≥ 1 and two
+  consecutive moves of q_l. dec(q_l) differs at their pre-states, so closure(q_l) contains a mover whose state differs there, and by
+  UPPER-BLIND that mover is f_l, a core mover below level l, or a helper. If α_l = 0 the same holds for f_l (outside the initial
+  windows), with q_l in place of f_l. Since the wiring is acyclic, f_l ∉ closure(q_l) or q_l ∉ closure(f_l). So for at least one
+  member of each doubling pair, the alternation of its preference is witnessed only by movers below level l or by helpers. The pair's
+  own phase c_l = o(l − 1) = [q_(l−1) ≠ f_(l−1)] is an XOR of two lower movers (when pair l − 1 has a key-fired f), which no
+  two-input reader computes (ONE-READ XOR, L8 §3).
+- What this does NOT give. It does not prove that helpers are needed: lower core movers do differ between consecutive move
+  pre-states in every case (DATA, same file, column «below»), and a three-input reader can be a selector. The exhaustive h = 2,
+  d = 2 result (L7 §7: 0 of 5,941 wirings) is still the only proof that helpers are needed, and only at h = 2.
+
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All are about the IDEAL
 model's step sequence on 𝓛^R_d and its F-profile. Not M3, not a step-4 pass, not a TARGET.md claim.
