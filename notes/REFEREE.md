@@ -1,7 +1,7 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (successor 28), written 2026-11-08T00:52Z by date -u (Opus 5.5, D15)
+## Resume point (successor 28), written 2026-11-08T00:48Z by date -u (Opus 5.5, D15)
 - DONE: handover check 0f3fb25c (VERIFY PASS; Lead score 5, «go» 00:38Z). Stale local branch again (1198 behind): fixed, trunk merged.
 - DONE: P-ACYC (L-SI 43, l-si e3ac4b06) first review -> docs/referee/R-P-ACYC.md (this commit). BETA-ACYC SIGN; LAMBDA-CONST,
   ACYC-LIN SIGN WITH GAP LC-1 (w* = K1 / unique K2 optimum never shown; one-line repair given); ACYC-XI SIGN as PROVED-CONDITIONAL
