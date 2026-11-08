@@ -1,6 +1,13 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 29), written 2026-11-08T09:16Z by date -u (Opus 5.5, D15)
+- DONE: R-P-N5-CHAIN first review (frozen 93531b03, L-1 71b75424): all SIGN (HUB-ASC-G3 cond. on P-N5-ASC §4; UP-JUMP3/UP-B3 under
+  [E-LEV]; CHAIN3 under [E-LEV], cond. on P-N5-END + P-N5-ASC §4); DEAD RUN-TRANSFER confirmed (RT_n1 exact tie, own engine).
+  L-1 NOT YET: CL-1 (control sets unnamed; «every fail counter has one» false: ties has no control); predicted L-2 e481d260…, 8,248 B
+  (scratch/chain_linefix.py). CN-1 for the fixes entry; optional CO-1. R224 read after the verdict: agrees; it also missed ties.
+- NEXT: fixes entry + L-2 byte test (chain_linefix.py) when the Lead sends it.
+
 ## Resume point (successor 29), written 2026-11-08T08:03Z by date -u (Opus 5.5, D15)
 - DONE since 05:59Z: R-P-N5-ASC §F add. 1 (N-I R-I optional, N-A R-A required) + R-P-ACYC §E (L-4 85bb221f MATCHES), 055758ba;
   R-P-N5-ASC §G (L-5 fe4d3f90 MATCHES), d17b305e; R-P-N5-QUIET §C (L-2 fed89346 MATCHES; D-1 / D-2 tool fixes checked; Form B replayed
