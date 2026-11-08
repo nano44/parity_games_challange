@@ -341,3 +341,41 @@ R2-P-N5-QUIET/bt_overlap.py (out bt_overlap.out).
   - If the tool fixes D-1 (a) and D-2 (second conjunct) are made and re-run, fed89346… matches for me as it stands.
   - My W-1..W-3 strings are withdrawn in favour of QT-L4, QT-L1 and QT-L3, so as not to give L-NEW two strings for one span.
 - Verdicts unchanged (Opus 5.5, D1).
+
+## Addendum 2: fixes entry 2 / L-2 (claude/l-new 559cdffc; REFEREE-2 successor 33, 2026-11-08 07:50Z by date -u)
+- **Object:**
+  - L-2 docs/new/P-N5-QUIET-line-L2.txt at 559cdffcc46001c6a7e023522a8e5518448ddd7a: sha1 fed893462811ea10d0b99622dcbb31f7b50b6d47,
+    5,131 B, 1 line, 96 «(» = 96 «)», depth never negative, 0 «|».
+  - Packet unchanged (066dfc7d…). df0d2a25 is an ancestor. Fixes entry 2 is appended.
+  - quiet.pins has 38 rows, and all 38 match on a git archive of 559cdffc.
+- **Byte test** (own bt_l2.py, out bt_l2.out; QT strings read as data from REFEREE 28's quiet_linefix.py at 6ae1fc04):
+  - QT-L1..QT-L6: each old string occurs once in L-1 and 0 times in L-2, and each new string once in L-2.
+  - L-1 + QT-L1..QT-L6 = L-2 byte for byte, which is the merged-set target of my Add. 1.
+- **D-1 and D-2 by tool fix:** read in git diff df0d2a25..559cdffc, and re-run by me on the archive.
+  - D-1, quiet194.py:
+    - L is now (M+1)(2M+1)(N+1) + N(n−1), the «+ 1» dropped. That is the packet's and the line's L; my replay's printed L equals it on
+      every run.
+    - wfail now increments when cur == L + 1, i.e. once per quiet window longer than L. That is the unit «quiet windows».
+    - Tfail tests T > Q + (Q + 1)L with the exact L.
+    - The line's words «wfail 0 (unit: quiet windows)» and «Tfail 0 (unit: runs with T > Q + (Q + 1)L …)» are now what the tool
+      computes ✓.
+  - D-2, loc194.py: k2fail now counts states with σ̄_t(K2) ≠ K1 or not E.key(Ω(K1)) < E.key(Ω(K2)).
+    - E.key is the ⊴ key the same tool's LOC-GATE test already uses (min = ⊴-smaller), so this is Ω_t(K1) ◁ Ω_t(K2).
+    - Both conjuncts of LOC-K2 are now counted, and «k2fail 0 (unit: states; same runs)» matches the clause ✓.
+  - Re-run: check194.sh on the git archive of 559cdffc exits 0, and its output is byte-equal to the pinned check194.out
+    (lane_check194_559cdffc.out; .diff «diff exit 0»).
+    - k2fail is 0 on all 16 loc194 lines, and wfail and Tfail are 0 on every quiet194 line.
+    - The only change against df0d2a25's output is the printed L, one smaller on 12 lines, as fixes entry 2 says.
+- **Form B** (formB194.out, DATA only, not in the line) matches my replay on the three extra instances:
+  - cR_d2_w8_R22: T 24, Q 24, W 0;
+  - rd3_d7: T 25, Q 16, W 4;
+  - rf_d5: T 11, Q 11, W 0;
+  - wfail 0 and Tfail 0 (r2quiet_lev.out).
+- **DATA rule on L-2:** QT-L5 and QT-L6 are as accepted in Add. 1. Every other DATA clause is byte-equal to L-1's, and with D-1 and D-2
+  its cited tool now computes it ✓. My W-1, W-2 and W-3 are met by QT-L4, QT-L1 and QT-L3 (Add. 1).
+- **Fixes entry 2's text** withdraws entry 1's [OPT] paragraph and G-2's «governs». The packet's own Scope («nothing PROVED about N5′-xi
+  on Γ3(G)») stands ✓. Box 196 (a Γ3 form) is named as outside this packet ✓.
+- **Verdict: L-2 MATCHES** (Opus 5.5, D1). Statement verdicts unchanged:
+  - CN2, LOC-GATE, LOC-K2, B-ONLY, NO-TIE, QUIET, T-QUIET, ASC-T: SIGN.
+  - UP-T: SIGN under HYPOTHESIS [E-LEV].
+  - ASC-T and UP-T land after R121.
