@@ -239,3 +239,26 @@ transfer») and to prove the counting lemmas on the run that is actually execute
 are convex blocks of a total preorder that every vertex climbs monotonically (F1), so a run is a walk in a product of chains with
 bounded-length plateaus (QUIET3); the open core is the HEIGHT of that product along the run (Σ_v D^tot_E(v)), which [E-LEV] + bounded
 U(G) controls through P-N5-ASC's chain systems.
+
+## Addendum 1 (L-NEW successor 64, 07:12Z by date -u): L-RED 58 R223 item 5, and F1 / DOM / STRICT on the Γ3 run without R118 (b)
+- L-RED 58, docs/red/R223-reach.md at claude/l-red 71133de5 (opened): «Verdict: SURVIVES (no Ξ-cyclic counterexample)» for ESC3, W3 and
+  R118 (k) with N5′-xi from S3 (its counters, cited, not re-run: 43,816 exhaustive N ≤ 2 Ξ-cyclic genomes, 5,000 random N 3-4 and 2,000
+  N 5-6, every fail counter 0; its control MODE=spec fires; its own Γ3 builder equals box189's gamma3 on all N ≤ 2 genomes). Its reading
+  agrees with §2: ESC3's and W3's proofs follow pe-plays and W-edges only. Its §3 transfer checklist for QUIET on Γ3 is the table at the
+  end of §3 here; one item differs and is taken below.
+- F1, DOM and STRICT on HOW3(G), proved without R118 (b) (R223-reach §3: «F1 and STRICT: from R15 (a) and «movers are never cycle
+  nodes» (PAD (b)), instead of R118 (b)»). Replaces C4's citation of R118 (l) for these three facts; the rest of C4 (F3, F4′) is [VJ]'s
+  value definition with [OPT], game-free.
+  - F1. A Howard step switches exactly the movers whose new successor is strictly better (ties keep the current one), one switch per
+    vertex: a non-empty unambiguous set I of improvements of σ_t (VJ00 §4.4). RESULTS R15 (a) («for any non-empty unambiguous set I of
+    improvements of σ (VJ00 §4.4), Ωσ ⊴ Ω_{Switch_I(σ)}») gives Ω_t ⊴ Ω_(t+1) pointwise. R15's Object is SPEC on any game with SPEC's
+    injective ranks, so Γ3's repeated pad priorities are covered (R223-end §1).
+  - F6 on Γ3: no mover is the cycle node of its own play (CN2-3: movers have Ω 0, every cycle through a mover passes a gate, a face pad
+    and a face of Ω ≥ 6). So F3 applies at every mover: Ω_t(x) = ext(x, Ω_t(σ_t(x))).
+  - F5 (Howard on Γ3): σ_(t+1)(x) is ⊴-best among x's successors under Ω_t, and strictly better than σ_t(x) when it differs (REACH3-ALL:
+    N5′-xi takes the Ξσ-best element of A(x) ∋ every strictly better successor; ties keep σ_t(x) since A(x) = {σ_t(x)} when nothing is
+    strictly better).
+  - DOM and STRICT: P-N5-XICYC §4's two-line proofs from F1, F3, F4, F5, F6, with these Γ3 versions; nothing else is used.
+- Lead 07:04Z / R223-reach §3's other «re-prove» items, each already in §2-§4: the frozen core and the β-successors in (F-E) ((F-E3),
+  standard states by REACH3-ALL); LOC-K2 (LOC-K2-3); Q4 (R117 K3 + the standard-state invariant = REACH3-ALL / ESC3-ALL); L with n3 in
+  Q3 / Q6 (QUIET3). No statement of §1-§5 changes.
