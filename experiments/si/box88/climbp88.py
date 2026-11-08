@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """L-SI box 88: hill-climb over the MIRROR family's lane lengths (box84/pair84.py, MUP = 1) at fixed h. Score (lex) = (maxk, maxev,
 maxdepth) of leap88.census on the real bits (default mode, as leap87). Seeds: the frozen HP_mup lane lengths extended by doubling.
-Usage: climbp88.py BOX81DIR h SEED ITERS OUTDIR"""
+Usage: climbp88.py BOX81DIR h SEED ITERS OUTDIR [START.cfg]  (START.cfg = {"L": [...], "LM": [...]} to resume a climb)"""
 import sys, os, json, random, tempfile
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path[:0] = [HERE, os.path.join(HERE, "..", "box84")]
 import leap88, pair84
@@ -20,7 +20,7 @@ def score(c):
     try: U, T = leap88.census(G, nm)
     except Exception: return (-1, 0, 0), None, None
     s = leap88.summary(U); s["T"] = T; return (s["maxk"], s["maxev"], s["maxdepth"]), s, (G, nm)
-c = seed_cfg(); best, m, gn = score(c); print("seed", c, best, m, flush=True)
+c = json.load(open(sys.argv[6])) if len(sys.argv) > 6 else seed_cfg(); best, m, gn = score(c); print("seed", c, best, m, flush=True)
 for it in range(IT):
     d = mutate(c); sc, mm, gg = score(d)
     if sc >= best:

@@ -8,8 +8,9 @@ Scope of every run: box81/ref idealcyc (IDEAL-CYC Howard, [E-LEV]), cap 3000.
 ## 0. Answer
 - FAILURE as a counter: no family found in which k (type-II flips per unit, leap87's counter) grows super-linearly with h. What grows
   is a RELABELLING: on the MIRROR family the flips per unit stay ≤ 5 for every h (ev = 5 at h = 3, 4, 5 and the h = 6 builds), and k
-  rises only because type-I flips become type-II flips. The 2k term of LEAPFROG-ASC is never used (L-RED R225-leap §2, confirmed here
-  by an independent census: ev ≤ |E_U| − 1 on every unit).
+  rises only because type-I flips become type-II flips. On the 26 frozen instances ev ≤ |E_U| − 1 on every unit (my census, = L-RED
+  R225-leap §2). That is NOT a lemma: L-RED 60 killed «ev ≤ |E_U| − 1» in general (R226-race §3, witnesses SHARP_EU1 / SHARP_EU2) and
+  proved Lemma SHARP (ev ≤ |E_U| − 1 + 2k + ε).
 - Exact obstruction (PROVED, lane, §2): **Corollary NEST-CHARGE**: on a LEAPFROG-ASC unit, ev ≤ 1 + da + db, where da, db count the strict
   increases of a_t, b_t on I. So k ≤ ev ≤ 1 + (D_U,I(w) − 1) + Σ_(o ≠ S) (D_U,I(g_o) − 1), and the nesting depth (L-RED's counter, §1) ≤ k.
   This is box 85's FLIP-U read as a bound on NESTING, not a new lemma: nesting of type-II flips cannot exceed the U-projected e-set
@@ -23,8 +24,11 @@ Scope of every run: box81/ref idealcyc (IDEAL-CYC Howard, [E-LEV]), cap 3000.
   only through Π_r-tied choices at Howard switches. DATA: such tie decisions happen at EVERY step on HP3 / TC3m / CL2_21, and the
   low-blind run stops at once (T = 0). So CARRY-TIE is true but vacuous on these families: the absence of a carry is NOT explained by a
   lack of ties. Recorded so that nobody uses it as the obstruction.
-- maxalt (L-NEW 65 box 197, asc197.py): NOT RUN. The commit 2f4167cd named by the Lead is not on origin/claude/l-new at my fetches
-  (head 8b67d40e at 11:2xZ), so asc197.py is not available here.
+- maxalt (L-NEW 65 box 197, asc197.py at claude/l-new 2f4167cd, run read-only from a scratch extract, --files; out/asc197_run.out):
+  HP2-5_mup 2 / 4 / 4 / 5, HP6b 4, CL2_21 5, TC5m 5, ND4_hp3 3, and the climb best NK6_cl21 6, the first instance above 5. COUNTING (asc197.py
+  l. 87-95): per (v, maximal Λ-interval I), the sequence of tops; for each ordered pair x ≠ y, the greedy length (number of TERMS) of
+  the longest subsequence x, y, x, y, …; maxalt = the max. It is an alternation LENGTH, not the Davenport–Schinzel order s: order s forbids
+  length s + 2, so maxalt 6 means s ≥ 5 on NK6_cl21 (L-NEW's «s = 4» = maxalt 5). DATA only; no DS source opened by me.
 
 ## 1. Counters (exact, so that L-RED 60's depth-2 race can be compared)
 leap88.census, unit = (mover x, SET option S, maximal interval I with every cycle node constant and Λ(x) ∈ {K1, K2}); events = steps
@@ -36,6 +40,11 @@ box 87 §2; H_t := {v ∈ a_t ∩ b_t : v more relevant than z_t}.
   (E-MON + PROJ-MON predict 0); chargefail := #units with ev > 1 + da + db (NEST-CHARGE predicts 0).
 - Option sets: default = the real bits' SET options (names file, as leap87); ALL=1 = every option whose Ξ-target is its own mover (as
   L-RED's leap225, without its PRIV / NODE filter).
+- Switch census (nest88.py, my own implementation of L-RED 60's N2 / depth, R226-race §4, claude/l-red d08e317a; nest226.py not used):
+  a SWITCH compares the NEW option with the OLD one at every mover with ≥ 2 options; N2 = #type-II switches; depth = max over (x, maximal
+  Λ(x)-interval) of #distinct heads. On HP2-5_mup it gives L-RED's row exactly (switches 34 / 77 / 177 / 246, type I 34 / 76 / 172 / 235,
+  N2 0 / 1 / 5 / 11, max type II per (x, I) 0 / 1 / 2 / 4, depth 0 / 1 / 2 / 2). Comparison: leap88's k compares S with the BEST other
+  option (b_t), N2 compares new with old; k (ALL, summed) 0 / 4 / 11 / 20 ≥ N2 on HP2-5.
 - Cross-check: default mode gives leap87's units / type I / type II / maxk on all 26 instances (out/leap88.out vs box87/out/leap87.out);
   ALL mode gives L-RED's HP row exactly (units 3 / 5 / 7 / 9, type II 0 / 4 / 11 / 20, maxk 0 / 3 / 4 / 5, maxdepth 0 / 2 / 3 / 3) and 156
   units on the 26 (L-RED: 158 on 27 = these + CX4_n21's 2). Two implementations agree.
