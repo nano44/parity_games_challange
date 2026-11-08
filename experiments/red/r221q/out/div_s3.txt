@@ -1,0 +1,5 @@
+DIV genome 52 N 4 own T 2 idealcyc T 2 same-traj True n5v xi 7 fb 1
+DIV genome 717 N 12 own T 8 idealcyc T 8 same-traj True n5v xi 7 fb 1
+DIV genome 765 N 12 own T 7 idealcyc T 7 same-traj True n5v xi 7 fb 1
+DIV genome 921 N 4 own T 5 idealcyc T 5 same-traj True n5v xi 7 fb 1
+seed 3 genomes 1000: n5v xi != T+3 or trajectory mismatch in 4; trajectory mismatches own vs idealcyc 0

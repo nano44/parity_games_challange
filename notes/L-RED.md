@@ -65,6 +65,10 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - Milestone 1 pushed b862bc9b1 (VERIFY PASS). Milestone 2 (23:3xZ): Lemma RHO-E PROVED (F1; [BELOW]); GAP-RETURN superseded;
   Corollary RHO-COUNT ρ_g ≤ (2M+3)F′_B(M) + A_g; rho221.py endpoint check (76 gaps, 0 viol., A_g 0). Batches 2-3 done. Lead 23:06Z: L-SI box 82
   = same object (Odd counter on Ξ-cyclic genome); do not duplicate R-climbs; L-SI R-climbs are the baseline.
+- Item 1 (Lead 23:54Z): docs/red/R221-quiet.md vs L-NEW box 194 @ e9993378 (sha1 83814ef6…): LOC-GATE / LOC-K2 / CN2 / QUIET / T-QUIET /
+  UP-T (under [E-LEV]) / ASC-T SURVIVE; IN-BOUND DEAD confirmed; (d) GAP (Γ3 only until first fallback, REACH3-CYC conditional; DIV_2_493,
+  DIV_2_583, DIV_3_717 change movers after the fallback). NEW Lemma B-ONLY (Odd's all-β strategy ⇒ Λ never an e / c_W): no gate ties,
+  QUIET's tie GAP closed, H_g = A_g = 0. Tools experiments/red/r221q/ (brute221 enumerates all Odd strategies).
 - Running (tracked tasks; resumable: each job skips if out/<name>.done): experiments/red/r221/go2.sh (ascent climbs), go3.sh (SCORE=reent),
   go4.sh (SCORE=rho, adversarial vs RHO-SET/RHO-E). Relaunch: `experiments/red/r221/goN.sh > experiments/red/r221/out/goN.txt 2>&1`.
 - Things only I know: wit221's first version counted v = e_g itself (gate not on the play) and showed fake «EST_bad»; fixed (skip seq[i] == v).

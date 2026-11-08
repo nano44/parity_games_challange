@@ -1,0 +1,1 @@
+rand seed 11 {'states': 4459, 'pairs': 28380, 'optfail': 0, 'valfail': 0, 'locfail': 0, 'k2fail': 0, 'cnlow': 0, 'ties': 0, 'tiediff': 0, 'genomes': 3000}

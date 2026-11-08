@@ -1,0 +1,7 @@
+own IDEAL-CYC trajectory: [(0, 0), (0, 1)]
+0 (0, 0) start
+1 (0, 2)  Is 
+2 (0, 1)  Is 
+3 (0, 1) fb Is 
+4 (0, 1)  Is 
+5 (1, 1)  Is 
