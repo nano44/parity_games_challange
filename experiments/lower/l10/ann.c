@@ -3,7 +3,8 @@
    in which movers 0..K-1 are clamped to the target (core file) and helpers follow the genome's rules (sim6 / R104).
    Score 0 = the exact greedy (l7/ranksolve.py) succeeds; the final genome is re-checked in Python (ranksolve + sim6).
    Preferences by ENC: top option of chain(x,0) xor chain(x,1) by rank (128-bit masks), no big integers.
-   Usage: ann GENOME.txt CORE.txt OUT SEED SECONDS TEMP   (resumes from OUT if it exists)
+   Usage: ann GENOME.txt CORE.txt OUT SEED SECONDS TEMP [X:y1,y2,...]   (resumes from OUT if it exists)
+   Optional order constraint: no mover y_i may reach mover X by Xi-edges (closure); enforced on every move and repaired at start.
    Build: gcc -O2 -o ann ann.c -lm */
 #include <stdio.h>
 #include <stdlib.h>
@@ -128,7 +129,13 @@ int gsolve(void) {
   for (int m = 0; m < NO; m++) if (left[m]) { gbr[m] = rank--; gbp[m] = bp[m]; }
   return viol;
 }
-int score(void) { if (!topo()) return 1 << 30; simulate(); return gsolve(); }
+int nrX = -1; unsigned long long nrMask = 0;
+int reaches(int y, int X) { /* DFS over options */
+  static int st[MAXN], seen[MAXN]; int sp = 0; memset(seen, 0, sizeof seen); st[sp++] = y; seen[y] = 1;
+  while (sp) { int z = st[--sp]; for (int k = 0; k < 2; k++) { int w = xt[2 * z + k]; if (w < 0) continue; if (w == X) return 1; if (!seen[w]) { seen[w] = 1; st[sp++] = w; } } }
+  return 0; }
+int order_ok(void) { if (nrX < 0) return 1; for (int y = 0; y < N; y++) if ((nrMask >> y) & 1ULL && reaches(y, nrX)) return 0; return 1; }
+int score(void) { if (!topo() || !order_ok()) return 1 << 30; simulate(); return gsolve(); }
 /* genome copy */
 typedef struct { int xt[MAXO], br[MAXO], bp[MAXO], gate[4 * 32], start[MAXN]; } G;
 void save(G *g) { memcpy(g->xt, xt, sizeof xt); memcpy(g->br, br, sizeof br); memcpy(g->bp, bp, sizeof bp); memcpy(g->gate, gate, sizeof gate); memcpy(g->start, start, sizeof start); }
@@ -150,6 +157,13 @@ int main(int argc, char **argv) {
   FILE *cf = fopen(argv[2], "r"); int n1; if (fscanf(cf, "%d %d", &n1, &K) != 2) return 4; T = n1 - 1;
   for (int t = 0; t <= T; t++) { char buf[128]; if (fscanf(cf, "%127s", buf) != 1) return 4; for (int x = 0; x < K; x++) core[t][x] = buf[x] - '0'; }
   fclose(cf);
+  if (argc > 7) { char *q = argv[7]; nrX = atoi(q); q = strchr(q, ':') + 1;
+    while (*q) { nrMask |= 1ULL << atoi(q); while (*q && *q != ',') q++; if (*q == ',') q++; }
+    /* repair: cut options that make a constrained mover reach X (set them to exit) until the order holds */
+    for (int pass = 0; pass < 200 && !order_ok(); pass++)
+      for (int y = 0; y < N; y++) if ((nrMask >> y) & 1ULL) for (int k = 0; k < 2; k++) { int w = xt[2 * y + k];
+        if (w >= 0) { int old = w; xt[2 * y + k] = -1; if (!reaches(y, nrX)) { xt[2 * y + k] = old; if (reaches(old, nrX) || old == nrX) xt[2 * y + k] = -1; } } }
+    printf("order constraint X %d mask %llx ok %d\n", nrX, nrMask, order_ok()); }
   rs ^= (unsigned long long)atoll(argv[4]) * 2654435761ULL; double secs = atof(argv[5]), temp = atof(argv[6]);
   int cur = score(), best = cur; G g, bestg; save(&g); save(&bestg); long it = 0, acc = 0; time_t t0 = time(0), last = t0;
   printf("start score %d constraints %d\n", cur, nc); fflush(stdout);

@@ -127,6 +127,28 @@ movers in closure(x); acyclic wiring)
   constraint) and on a C-saved genome (825 = 825). Seed = L-COMP's seed_HIT7_d32 (frozen rec/seed_HIT7_d32.txt, sha1 ad9a39d4).
   Core target file out/core8_HIT7.txt (sha1 c6e19673cbda12ba2ec8f7e70da4436cab8ed922).
 
+### 2e. What the key-fired first movers must compute, and where the search stalls (DATA + READING; 08:0xZ, date -u)
+- DATA (unit = free pre-state of the mover; set = all of them; scope = the target build.core8): the required preference of f_j
+  equals 1 − o(j − 1) at the pre-state (i.e. «leave the current key») at:
+  | mover | 15 (f7) | 13 (f6) | 11 (f5) | 9 | 8 | 7 | 6 | 5 | 4 | 3 | 2 |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | agree / free | 254 / 255 | 128 / 129 | 44 / 139 | 261 / 322 | 67 / 112 | 90 / 105 | 271 / 300 | 112 / 115 | 269 / 282 | 365 / 370 | 226 / 229 |
+  So f7 and f6 are exactly «not my key» except at one initial step each (step 1 for f7, step 3 for f6: a hold inherited from HIT7's
+  first window). In HIT7's lower levels the first mover of a pair is not always the odd one; the table lists the raw movers.
+- READING. o(j − 1) is a nested XOR over pairs 0..j − 1 (split: [q ≠ key], joined: the gate value). A chain realizes it only as a
+  branching program with selectors (ONE-READ XOR), which needs copies of the lower movers' states. Together with 2b this gives the
+  dependency loop the search keeps hitting: f6 needs pairs 0..5 (or q6 and q7, through the one initial hold); pairs 0..5 need q7
+  (essential, 2b); q7 needs f7 or pair 6; f7 needs q7 or pair 6; pair 6 contains f6. Helpers must cut this loop, and a helper
+  that carries the clock or the pair-6 phase without reading 13 can get its timing only from keys (o(7) flips every step).
+- DATA (search; unit = violated constraint; scope = the exact target; runs from seed ad9a39d4). C1 (T 1.5): 1286 → 180 at 07:58Z.
+  Movers 9, 10, 12, 14, 15 at 0 violations; the rest is on f6 (64 = all 63 moves 0 → 1 plus 1), f5 (11) 32, f4 (8) 35, 4 19,
+  others ≤ 8. In C1 helper 18 carries f6's required preference at all 128 free pre-states, and 16, 17, 19 at 127. But all four
+  read 13, so f6 cannot read them (every re-pointing of f6 to them is cyclic). The search instead made f6 a near-sink with a
+  constant preference. In C4 (cold restart from C1) f6's options both exit, every other mover reaches 13, and f6 has nothing left
+  to read. This is the local optimum: f6 is sacrificed.
+- Test running: C5 is the same search with the order constraint «movers 0-11, 14, 15 must not reach 13» (ann.c optional argument).
+  So f6 may read pairs 0-5 and q7 / f7, and the clock and the pair-6 information must come through helpers.
+
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All are about the IDEAL
 model's step sequence (R104's definition) on 𝓛^R_d and its F-profile. Not M3, not a step-4 pass, not a TARGET.md claim.
