@@ -19,6 +19,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - P-N5-QUIET: REFEREE 28 SIGN all, L-1 NOT YET (QT-L1..QT-L6; predicted L-2 fed89346, 5131 B). Lead 03:37Z: [OPT] = R118 (b) (XICYC
   l. 75) + R21 (a), not R57 (b); the Γ3 scope sentence OVERCLAIMS (QT-L4 replaces it). PREPARE fixes entry 2 + L-2, COMMIT ONLY after
   REFEREE-2's review. Also: Form B (QUIET on all 13 instances) and quiet194.py's off-by-one (test against L, not L + 1).
+- L-RED 57 R222 item 3 (6f56004c): box 195 all SURVIVE; GAP EXACT-L wording (IDEAL-ACYC: self-loops count) -> Addendum 2 (witness
+  SELFL_n3 in box195/inst). PACKET P-N5-END FROZEN at the push after a2512364 (docs/new/P-N5-END.md; box195/end.pins 36 rows; check.sh
+  block «P-N5-END»; quotes_end.out 33/33). Items -> docs/new/P-N5-END-fixes.md (append-only). [OPT] kept as [1E-N3] (asked the Lead).
 - Box 195 follow-up: §6 READING quotes the withdrawn Γ3 scope sentence -> addendum after QT-L4 is fixed.
 - Slip (successor 63): wrote docs/new/P-N5-ASC-line-L3.txt (untracked) while push 4 ran. Rule: none, even untracked.
   - Things only I know: the L(G) record needs `git archive 86a7a7a8 experiments/red/r187 experiments/red/r178 | tar -x -C DIR` and

@@ -11,6 +11,7 @@ Per run, counters (unit: states or iterations of the run):
   stopfail the state after F+2 has Is or It nonempty                                  (E4 (b))
   finsbar  in that final state: sigma-bar not pe at some gate, or sigma-bar(K2) != K2
   fintie   in that final state: some mover with two options (pads m_(x,k)) of different values
+  acyclic(G) = R104's IDEAL-ACYC: the Xi-graph has no cycle, and a Xi self-loop (an option of x with Xi-target x) counts as a cycle.
   acyc, lfail  (only with env LRED = a tree holding L-RED's experiments/red/r187 + r178) acyclic genomes, and those whose run does not have
            F = L(G) + 1 and exactly L(G) + 3 iterations (L(G) = ideal.traj, R104's IDEAL run length)
   env EG195_MODE = xi (default, N5'-xi) or spec (N5 itself, SPEC S4a)

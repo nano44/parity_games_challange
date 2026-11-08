@@ -1026,4 +1026,11 @@ if [ "$r195" -eq 0 ] && [ -z "$d195" ] && ! grep -v "^ctrl" box195/check195.out 
 else
   echo "BOX 195 END check: FAILED (check195.sh exit $r195; python $(python3 --version 2>&1))"; echo "$d195" | head -30; echo "$run195" | tail -15; exit 1
 fi
+# P-N5-END (L-NEW successor 63): frozen packet + cited tools / instances / outputs against box195/end.pins (DOCS/ = docs/new/)
+pinE=$(cd box195 && sed 's#DOCS/#../../../docs/new/#' end.pins | sha1sum -c --quiet 2>&1) || true
+if [ -z "$pinE" ]; then
+  echo "P-N5-END: packet and $(wc -l < box195/end.pins) pinned files match end.pins: PASS"
+else
+  echo "P-N5-END check: FAILED"; echo "$pinE" | head -20; exit 1
+fi
 rm -rf "$tmp"

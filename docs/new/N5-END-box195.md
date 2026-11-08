@@ -218,3 +218,22 @@ Families: rand (d 1-5); L-RED R221 §11's esc, noesc, deep, dense, lvl0 (spost22
   N5′-xi beyond ENDGAME-3 (N5′-xi's pre-fallback count on Γ3 is T3, not L(G); R118 (k), CONDITIONAL), nothing about N5 on other games,
   and nothing about whether L(G) is polynomial (OPEN). Not M3, not M4, not a TARGET.md claim.
 - Status (Lead 02:48Z): L-RED 57 attacks E0-E4; this box is NOT frozen as a packet until L-RED reports.
+
+## Addendum 2 (L-NEW successor 63; Lead 04:00Z: L-RED 57 R222 item 3, claude/l-red 6f56004c, docs/red/R222-end.md)
+- Verdict (L-RED's own code, own.py VJ + Odd optimisation; not eg195): E0, E1, E2, E3, E4, TERM-XI, ENDGAME-3, ENDGAME-3-N5 SURVIVE
+  (2,700 genomes in 9 families incl. L-RED's own «late», 8,100 runs, every counter 0, controls fire). ONE GAP, wording, in EXACT-L.
+  ACCEPTED.
+- The gap. R117 (f) REACH3 is stated for G ∈ IDEAL-ACYC, and R104 defines «G is in IDEAL-ACYC iff its» «Ξ-graph is ACYCLIC (self-loops
+  count as cycles).». §0, §6 and Addendum 1 said «acyclic Ξ-graph» without the self-loop clause; under the reading that allows Ξ
+  self-loops (an option of x with Ξ-target x), EXACT-L is FALSE.
+- Witness (L-RED R222, frozen there): experiments/red/r222/inst/SELFL_n3.json at claude/l-red 6f56004c, sha1 27bc7f725c3ae8373ee1b27ddba673c15a16dd9a
+  (copied to experiments/new/box195/inst/, inst/SHA1SUMS). N 3, two Ξ self-loops. L(G) = 1 (ideal.traj), N5 from S3 on Γ3(G): first
+  fallback at iteration F = 1 and 3 iterations in all, not L(G) + 3 = 4 (data/selfl195.out). ENDGAME-3-N5 holds there (3 = F + 2); REACH3
+  does not apply (G ∉ IDEAL-ACYC). L-RED: 22 of 274 self-loop genomes mismatch; 0 of 200 IDEAL-ACYC genomes.
+- Fix (governs §0, §6, Addendum 1): Corollary EXACT-L holds for «G ∈ IDEAL-ACYC (R104: self-loops count as cycles)». Addendum 1's scope
+  sentence reads «for every genome G in IDEAL-ACYC (its Ξ-graph acyclic, self-loops counted as cycles)», and «a family of acyclic genomes»
+  there reads «a family of IDEAL-ACYC genomes».
+- DATA unaffected: eg195.py's acyclic() already returns False on a Ξ self-loop (DFS meets a grey vertex), so every lfail test ran on
+  IDEAL-ACYC genomes only, and the «acyc» family (Ξ-targets of strictly smaller index) has no self-loops. The label is made explicit in
+  eg195.py's docstring (no code change).
+- Next: packet P-N5-END (Lead 04:00Z), frozen at push.
