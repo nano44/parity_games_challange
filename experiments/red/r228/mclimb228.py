@@ -10,7 +10,8 @@ Freezes every strict (maxm, C) gain to out/mc_<CAP>_<SEED>.json, and any maxm >=
 Env ORDER=DWT (Lead 21:14Z, the sharpest open-core target): score = (Dwt, C, maxm, -size) with Dwt = split228's Dhi_y(wt(y), J) maximum;
 freezes any genome with a split228 lemma / conjecture fail (dn2, rh2, rw2, b0s, sp, spw, jbfail) to out/skill_<SEED>.json.
 Env ORDER=DHIB (Lead 21:37Z): score = (Dhib, C, nspl, -size), Dhib = split228's max Dhi_y(b, J_b) over (v, I, y, (u, b)); Dwt recorded only;
-same kill freeze as DWT. Resumable: RESUME=<frozen json>. Usage: mclimb228.py SEED CAP ITER START.json | mclimb228.py --census G.json ..."""
+same kill freeze as DWT. Env ORDER=CT (Lead 23:22Z, cap scaling): score = (C, T, maxm, -size), own census only (C = per-(v, I, y) max c_y,
+T = steps of the run). Resumable: RESUME=<frozen json>. Usage: mclimb228.py SEED CAP ITER START.json | mclimb228.py --census G.json ..."""
 import sys, os, json, random, copy, collections
 H = os.path.dirname(os.path.abspath(__file__)); sys.path[:0] = [H, os.path.join(H, "..", "r226"), os.path.join(H, "..", "r225"), os.path.join(H, "..", "r221")]
 import own
@@ -46,6 +47,7 @@ seed, CAP, IT, SG = int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), sys.ar
 ORDER = os.environ.get("ORDER", "")
 def score(G):
     c = census(G)
+    if ORDER == "CT": return (c["C"], c["T"], c["maxm"], -size(G)), c
     if ORDER in ("DWT", "DHIB"):
         import split228; d = split228.census(G, 600)
         for k in ("Dwt", "DwtJ", "couples", "rw2", "rw2w", "b0s", "nspl", "Dhib", "sumD"): c[k] = d[k]
