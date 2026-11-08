@@ -11,6 +11,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   (persistence via E-MON) + Corollary LADDER-2 (<= 2 adoptions, <= 1 reset per bit per Lambda-interval). Escapes: Lambda change,
   access (K5), or a hub pair (alternatives and continuation into DIFFERENT higher movers; R218 §4 / RUNG-ALT) = open.
 - N5'-xi on Gamma3 = T + 3, 1 fallback (ENDGAME-3 consistent) on all 6 frozen instances. Oink regions NOT RUN (Oink not built here).
+- P-ACYC fix round 1 (Lead 01:22Z / 01:39Z / 02:10Z): fixes entry 1 + L-2 by script (experiments/si/box81/fix1/: mkfix1.py, mkL2.py,
+  pacyc81t.py = pacyc81 + REFEREE-2's two diffs, tn81.py, check_fix1.sh wired in check81.sh; report copies pinned in fix1.sha1).
+  Cross-check: REFEREE's five strings alone reproduce its predicted c8ed32a8 (2,638 B). N-1 went to packet text only (keeps AC-L1 exact).
+- NEXT (Lead 01:54Z GO): HUB PAIR (c), h = 2 smallest; say which LOCK-UP hypothesis the design breaks; same measures as box 83.
 - Things only I know: python3 -I drops the script dir from sys.path (ladder83/rs2port83 insert it). gen83 sorts gates by (gate key,
   (mover, option)) exactly as R217 gdsl (needed for the RS2 byte check).
 
