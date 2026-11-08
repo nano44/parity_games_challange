@@ -81,7 +81,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     2f4167cd in a detached scratchpad worktree, removed after.
   - Climb seed 2656 from DSALT7 (STOP 12): plateau (7, 9).
   - HP6b-8b (L-SI lanes): maxalt 4, N2 17 / 23 / 29 (linear), depth 2.
-  - NK6_cl21 not yet on origin (not replayed).
+  - NK6_cl21 replayed: maxalt 6, T 11.
+  - HP6b-8b are byte-equal to L-SI box 88.
+  - Addendum 2 (b61c2029): PAIR-COUNT and ALT-EQUIV SURVIVE for A ≥ 1. W-2: A = 0 makes the bound negative (OFFUP_n4).
 - Source opened: l-new 2f4167cd docs/new/N5-CORE-box197.md §0-§6, asc197.py (read, not run); P-N5-CHAIN l. 166, 223-224 (CYC, QUIET3, T-QUIET3);
   l-si box84 pair84.py / mkinst84.sh (copied to scratchpad, run with -I).
 
