@@ -5,7 +5,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - Step 0: handover check 2a67e54a (VERIFY PASS; Lead score 5). Stale container (982 behind) fast-forwarded to 95dc76d7.
 - DUTY P-N5-ASC: fixes entry 1 + line L-1 (docs/new/P-N5-ASC-fixes.md, P-N5-ASC-line-L1.txt) for REFEREE 27 (26b2b516), REFEREE-2 31
   (533744a5, Add. 1 c4166c8b), L-RED R220 (68a1f609): W-1/AS-2/AS-3, W-2/AS-D2, D-1/AS-D1, D-2, D-3, AS-1, AS-4. asc.pins 34 rows.
-- Box 194 pushed e9993378 (VERIFY PASS).
+- Box 194 pushed e9993378, (c) c8057182 (VERIFY PASS). Lead 23:54Z: L-RED 56 attacks LOC-GATE + QUIET (R221 item 1); do not cite as
+  results until L-RED reports. PACKET P-N5-QUIET (docs/new/P-N5-QUIET.md; box194/quiet.pins 31 rows; check.sh block «P-N5-QUIET»;
+  quotes194.out 27/27) FROZEN in the next commit; lands after P-N5-ASC (R121).
 - M = 8, A = 1: dp193b rerun from scratch, scratchpad m8/ (run.sh = one <= 6900 s slice; backs up ck8 to ck8.prev first; rerun to resume;
   log m8/m8.log). dp193b.c sha1 f7ce8465. Checkpoint is outside the repo but inside the container: a container reclaim loses it.
 - BOX 194 (docs/new/N5-LOC-box194.md; experiments/new/box194/, check194.sh/out; check.sh block «BOX 194 LOC»):

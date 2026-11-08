@@ -1010,4 +1010,11 @@ if [ "$r194" -eq 0 ] && [ -z "$d194" ] && grep -q "^LEAP_k64.json T 129 cnlow 0 
 else
   echo "BOX 194 LOC check: FAILED (check194.sh exit $r194; python $(python3 --version 2>&1))"; echo "$d194" | head -30; echo "$run194" | tail -15; exit 1
 fi
+# P-N5-QUIET (L-NEW successor 62): frozen packet + cited tools / instances against box194/quiet.pins (DOCS/ = docs/new/)
+pinQ=$(cd box194 && sed 's#DOCS/#../../../docs/new/#' quiet.pins | sha1sum -c --quiet 2>&1) || true
+if [ -z "$pinQ" ]; then
+  echo "P-N5-QUIET: packet and $(wc -l < box194/quiet.pins) pinned files match quiet.pins: PASS"
+else
+  echo "P-N5-QUIET check: FAILED"; echo "$pinQ" | head -20; exit 1
+fi
 rm -rf "$tmp"
