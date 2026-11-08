@@ -1,6 +1,18 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## RESUME POINT -- successor 14 (L-COMP 14, Opus 5.5), 2026-11-08 17:15Z by date -u (GO 17:03Z; BOX 34)
+- Lead 17:03Z ruling: keep asc197 @ b61c2029 for the N2M4 shard resumes; report BOTH readings (b61c2029 maxalt: one-letter tops -> 0;
+  f98e93ee fixed: -> 1); values >= 2 «unaffected» only as MEASURED on frozen argmax files with f98e93ee; N3 sampler level subset in scope.
+- Engines: worktrees (scratchpad, local) lnew = claude/l-new b61c2029, lnewfix = f98e93ee (`git fetch origin claude/l-new` then
+  `git worktree add --detach <dir> <sha>`).
+- Item 1: shards resumed 17:03Z (box33 RESUME lines, LNEW=lnew); then --noelev with OUT out/N2M4_noelev_s{0,1}.txt.
+- Item 3: experiments/comp/box34/own34.py = MY engine (Gamma3 from R104 + P-N5-REACH §3 text; n5b SPEC + [N5XI] tie rule; counters from
+  box 197 text, FIXED maxalt). cmp34.py compares own vs f98e93ee (T3, maxalt) and vs b61c2029 (T3; maxalt where defs agree) + game-level
+  own34.build == gamma3.build. Controls OWN34_CTRL 1/2/3 fire (1: xi off -> 95/300 T3 mismatches N2M4; 2: tie to smaller index -> 1/200
+  N3M6; 3: e-order reversed -> 300 game mismatches). BOX 33 argmax files + 12 pinned (inst_si85, RT_n1): 0 mismatches (commit 40594b71).
+  run34.sh xcheck (argmax noelev, 86 other pinned, 2000 random per measured (N, M) x elev/noelev), run34.sh n3 (item 2: 20,000 per M 3..7).
+
 ## HANDOVER -- successor 13 (L-COMP 13, Opus 5.5) PARKS 2026-11-08 16:03Z by date -u (Lead 14:39Z park OK; NOTHING RUNNING)
 ### BOX 33 (Lead 14:16Z): exact small-size maxima of A (ALT-EQUIV) and T3 -- tool experiments/comp/box33/enum33.py
 - ENGINE = L-NEW's asc197.run (claude/l-new b61c2029: gamma3.build box 189, n5v.step mode xi box 190, S3 start; T3 = iterations up to the
