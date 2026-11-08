@@ -1,26 +1,26 @@
 # Handover check: REFEREE
 
-## successor 27 (2026-11-07T14:09Z by date -u; Opus 5.5, D15; predecessor successor 26, handover e96c8542)
+## successor 28 (2026-11-08T00:12Z by date -u; Opus 5.5, D15; predecessor successor 27, handover d4b39be0)
 Measured from the repository at the time of writing, not recalled.
 
 ### 1. Branch, head, distance to trunk
-- Trap check: local claude/referee was STALE (959 commits behind origin). `git fetch --unshallow`, fetch, checkout claude/referee,
-  `git merge --ff-only origin/claude/referee`: `git branch --show-current` = claude/referee; HEAD = origin/claude/referee = e96c8542.
-- At e96c8542: 7 ahead / 231 behind trunk claude/vibrant-johnson-nxvvxo 9315f36c (merge-base d7885be4).
-- Merged trunk 9315f36c with a normal merge 93320d13: 8 ahead / 0 behind before this file's commit.
+- Trap check: local claude/referee was STALE (1198 commits behind origin). `git fetch --unshallow`, fetch, checkout claude/referee,
+  `git merge --ff-only origin/claude/referee`: `git branch --show-current` = claude/referee; HEAD = origin/claude/referee = d4b39be0.
+- At d4b39be0: 2 ahead / 124 behind trunk claude/vibrant-johnson-nxvvxo 37a4855e (merge-base af752251).
+- Merged trunk 37a4855e with a normal merge 878faaf6: 3 ahead / 0 behind before this file's commit.
 
 ### 2. Open work and next step of each
-- P-TOWER-FUEL (L-LOWER 5), full independent first review, after «go». Frozen object: claude/l-lower 7f7ff6f5 (ancestor of
-  origin/claude/l-lower, checked). L-1 docs/lower/P-TOWER-FUEL-line-L1.txt: sha1 408470adbb1d80f0ed4f29b363867da3d6d430d4 (matches
-  the brief); 3,699 characters = 3,834 bytes (the brief's «3,699 B» counts characters; UTF-8 multibyte symbols).
-  Next: re-derive MOVE, DOUBLE-EQ (E1)-(E5), PULSE-NEST, GAP-NEST, DOMINANCE-FREEZE (a)-(b), CROSS-ECONOMY (i)-(iii); premise quotes vs
-  docs/RESULTS.md on trunk by script (R104, R105 ENC, R110, R113 ALIGN); replay I-ROOM G7_best_d28 and I-FUEL SL41_d28 and the §5
-  counters with my own simulator docs/referee/scratch/t3r_sim.py; DATA rule clause by clause on L-1; TARGET.md diff.
-  Report docs/referee/R-P-TOWER-FUEL.md. docs/referee-2/ not read on this packet before my verdict is written (ls: 0 files on it).
+- Inherited queue: none open (successor 27: P-TOWER-FUEL and P-N5-ASC complete; a later P-N5-ASC L-2 would get a byte test).
+- P-ACYC (L-SI 43), full independent first review, after «go». Frozen object claude/l-si e3ac4b06 (ancestor of origin/claude/l-si,
+  checked). docs/si/P-ACYC.md sha1 0e9edcfda3e3a68dee63ff01427d526b14c67bc4, 16,852 B; L-1 docs/si/P-ACYC-line-L1.txt sha1
+  bb12deec6fb0129b4ea9f5af7dd96d6302c5ca50, 2,085 B (both match the brief, measured with git show | sha1sum / wc -c).
+  Next: re-derive BETA-ACYC (Γ, Γ3), LAMBDA-CONST, ACYC-LIN, ACYC-XI; FIRST FALLBACK vs SPEC S4/S4c; premise quotes vs trunk
+  docs/RESULTS.md by script; §5 scope reading; replay §6 sets A/B/CONTROL with my own simulator in docs/referee/scratch/; DATA rule
+  clause by clause on L-1; TARGET.md diff. Report docs/referee/R-P-ACYC.md. docs/referee-2/ not read for this packet before my
+  verdict (ls docs/referee-2 | grep -i acyc: 0 files).
 
-### 3. docs/GAPS.md rows relevant to me (trunk 9315f36c)
-- REFEREE owns no row. Row the lower-bound packets feed into the N5 picture: G-N5-TIME (major, owner «L-NEW (L-LIT T22; referees
-  later)», open).
+### 3. docs/GAPS.md rows relevant to me (trunk 37a4855e)
+- REFEREE owns no row. Row the N5 packets feed into: G-N5-TIME (major, owner «L-NEW (L-LIT T22; referees later)», open).
 
 ### 4. Three owner rulings that most constrain me (verbatim, docs/DECISIONS.md), with DECISIONS-INDEX status
 1. D1 (index: active; DECISIONS.md lines 7-8):
@@ -28,11 +28,11 @@ Measured from the repository at the time of writing, not recalled.
    > Never downgrade the referee to save money.
 2. D18 (index: active; DECISIONS.md line 333):
    > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
-3. D20 (index: active):
+3. D20 (index: active; DECISIONS.md line 423):
    > We have reset the weekly usage, so we can again work faster no?
 
 ### 5. One trap that bit this lane, and the check that prevents it
-- Trap (again this restart): stale local branch (959 behind origin/claude/referee). Check: fetch, ff-only, `git branch --show-current`
-  and `git rev-parse HEAD origin/claude/referee` equal before any push.sh.
-- Trap (s26): the DATA rule applies to my own fix texts (an unmeasured «l = 1, …, 4»). Check: every set or count I write into a
-  replacement line is produced by my own script first, and the script is cited.
+- Trap (again this restart): stale local branch (1198 behind origin). Check: fetch, ff-only, `git branch --show-current` and
+  `git rev-parse HEAD origin/claude/referee` equal before any push.sh.
+- Trap (s26/s27): the DATA rule applies to my own fix texts, and RESULTS sub-entries are wrapped (single-line quote search gives a
+  false NONE). Check: every number in a replacement line comes from my own script first; quote search on joined lines (asc_quotes.py).
