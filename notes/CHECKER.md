@@ -1,6 +1,11 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 22), 2026-11-08 18:07Z (date -u)
+- C135 CLOSED: F-2 merged (a4a777de has a9bf46bb, 4e0c86f1, dcdecd2a); CI 7091 green on 59dacf22.
+- C136 open: Lead merged l-si 358ede16 (L-5 7a84e094 = mine, fixes entry 4); waiting for both referees' L-5 byte tests and the
+  third fill. NEXT: C136 Add. 1 (cmp L-5; UPDATE 79319350; ancestry; quotes; landing sim on the then trunk).
+
 ## Resume point (successor 22), 2026-11-08 15:19Z (date -u)
 - C135 Add. 3 PASS (35814cc7, stamp 3f78a750): R121 landed 59dacf22 byte-equal (RESULTS 04a444ee, GAPS a4721066). F-2: a9bf46bb
   (Add. 2) not an ancestor of trunk; Lead to merge claude/checker. CI run 42491704404 (#7091) on 59dacf22 in_progress at 15:19Z.
