@@ -1,7 +1,7 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## HANDOVER (successor 64, PARKING 2026-11-08 09:14Z by date -u; Lead 09:13Z: «your next item is the HANDOVER … push, send me the SHA, then stop»)
+## HANDOVER (successor 64, PARKING 2026-11-08 09:12Z by date -u; Lead 09:13Z: «your next item is the HANDOVER … push, send me the SHA, then stop»)
 ### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
 - ab6a65dc handover check (Lead score 5).
 - P-N5-END: a60733b8 fixes entry 1 (L-RED 58 R223 W-1; T-1 quotes_end.py all-trunk, 33/33) + L-1 (68a69176, 5903 B, SUPERSEDED);
