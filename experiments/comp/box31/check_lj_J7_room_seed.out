@@ -1,0 +1,44 @@
+seed_HIT7_d32.txt C score 7089478192002990190 T 299 sv 105 | ref (7, 1, -105, -218, -8, 299, 190) caps 7 q 12 | OK
+mut00.txt C score -200107999960000 T 4 sv 2 | ref (0, 0, -2, -1, -8, 4, 0) caps 0 q 12 | OK
+mut01.txt C score 7089478192002990190 T 299 sv 105 | ref (7, 1, -105, -218, -8, 299, 190) caps 7 q 12 | OK
+mut02.txt C score -400807999829992 T 17 sv 4 | ref (0, 0, -4, -8, -8, 17, 8) caps 0 q 12 | OK
+mut03.txt C score -200107999960000 T 4 sv 2 | ref (0, 0, -2, -1, -8, 4, 0) caps 0 q 12 | OK
+mut04.txt C score -300207999980000 T 2 sv 3 | ref (0, 0, -3, -2, -8, 2, 0) caps 0 q 12 | OK
+mut05.txt C score 6089478292002980190 T 298 sv 105 | ref (6, 1, -105, -217, -8, 298, 190) caps 6 q 12 | OK
+mut06.txt C score -2405207999249954 T 75 sv 24 | ref (0, 0, -24, -52, -8, 75, 46) caps 0 q 12 | OK
+mut07.txt C score -500008999889997 T 11 sv 5 | ref (0, 0, -5, 0, -9, 11, 3) caps 0 q 12 | OK
+mut08.txt C score -200107999990000 T 1 sv 2 | ref (0, 0, -2, -1, -8, 1, 0) caps 0 q 12 | OK
+mut09.txt C score -1000807999809993 T 19 sv 10 | ref (0, 0, -10, -8, -8, 19, 7) caps 0 q 12 | OK
+mut10.txt C score -500207999899998 T 10 sv 5 | ref (0, 0, -5, -2, -8, 10, 2) caps 0 q 12 | OK
+mut11.txt C score -200107999990000 T 1 sv 2 | ref (0, 0, -2, -1, -8, 1, 0) caps 0 q 12 | OK
+mut12.txt C score -300707999859993 T 14 sv 3 | ref (0, 0, -3, -7, -8, 14, 7) caps 0 q 12 | OK
+mut13.txt C score -1703607999499969 T 50 sv 17 | ref (0, 0, -17, -36, -8, 50, 31) caps 0 q 12 | OK
+mut14.txt C score -1002507999629978 T 37 sv 10 | ref (0, 0, -10, -25, -8, 37, 22) caps 0 q 12 | OK
+mut15.txt C score 7089478192002990190 T 299 sv 105 | ref (7, 1, -105, -218, -8, 299, 190) caps 7 q 12 | OK
+mut16.txt C score -5210407998539907 T 146 sv 52 | ref (0, 0, -52, -104, -8, 146, 93) caps 0 q 12 | OK
+mut17.txt C score -401207999829990 T 17 sv 4 | ref (0, 0, -4, -12, -8, 17, 10) caps 0 q 12 | OK
+mut18.txt C score -300607999889995 T 11 sv 3 | ref (0, 0, -3, -6, -8, 11, 5) caps 0 q 12 | OK
+mut19.txt C score -5110807998509906 T 149 sv 51 | ref (0, 0, -51, -108, -8, 149, 94) caps 0 q 12 | OK
+files 21 mismatches 0
+seed_HIT7_d32.txt C score 7089478192002990190 T 299 sv 105 | ref (7, 1, -105, -218, -8, 299, 190) caps 7 q 12 | OK
+mut00.txt C score -1000000000000000000 T 10 lj None | ref guard/cyclic | OK
+mut01.txt C score -500506999869996 T 13 sv 5 | ref (0, 0, -5, -5, -7, 13, 4) caps 0 q 12 | OK
+mut02.txt C score -300407999879997 T 12 sv 3 | ref (0, 0, -3, -4, -8, 12, 3) caps 0 q 12 | OK
+mut03.txt C score -400206999889998 T 11 sv 4 | ref (0, 0, -4, -2, -7, 11, 2) caps 0 q 12 | OK
+mut04.txt C score 7089478192002990190 T 299 sv 105 | ref (7, 1, -105, -218, -8, 299, 190) caps 7 q 12 | OK
+mut05.txt C score -800003999809996 T 19 sv 8 | ref (0, 0, -8, 0, -4, 19, 4) caps 0 q 12 | OK
+mut06.txt C score -200005999970000 T 3 sv 2 | ref (0, 0, -2, 0, -6, 3, 0) caps 0 q 12 | OK
+mut07.txt C score -200106999990000 T 1 sv 2 | ref (0, 0, -2, -1, -7, 1, 0) caps 0 q 12 | OK
+mut08.txt C score -600207999819998 T 18 sv 6 | ref (0, 0, -6, -2, -8, 18, 2) caps 0 q 12 | OK
+mut09.txt C score 7089478192002990190 T 299 sv 105 | ref (7, 1, -105, -218, -8, 299, 190) caps 7 q 12 | OK
+mut10.txt C score -1000000000000000000 T 13 lj None | ref guard/cyclic | OK
+mut11.txt C score -200107999950000 T 5 sv 2 | ref (0, 0, -2, -1, -8, 5, 0) caps 0 q 12 | OK
+mut12.txt C score 7089478192002990190 T 299 sv 105 | ref (7, 1, -105, -218, -8, 299, 190) caps 7 q 12 | OK
+mut13.txt C score -400305999899997 T 10 sv 4 | ref (0, 0, -4, -3, -6, 10, 3) caps 0 q 12 | OK
+mut14.txt C score -400207999909998 T 9 sv 4 | ref (0, 0, -4, -2, -8, 9, 2) caps 0 q 12 | OK
+mut15.txt C score -1000000000000000000 T 10 lj None | ref guard/cyclic | OK
+mut16.txt C score -100107999950000 T 5 sv 1 | ref (0, 0, -1, -1, -8, 5, 0) caps 0 q 12 | OK
+mut17.txt C score -300207999919999 T 8 sv 3 | ref (0, 0, -3, -2, -8, 8, 1) caps 0 q 12 | OK
+mut18.txt C score -400003999909998 T 9 sv 4 | ref (0, 0, -4, 0, -4, 9, 2) caps 0 q 12 | OK
+mut19.txt C score -1002507999629978 T 37 sv 10 | ref (0, 0, -10, -25, -8, 37, 22) caps 0 q 12 | OK
+files 21 mismatches 0
