@@ -80,7 +80,7 @@ def h_opt(prio, own, succ_H, keep, warm):
     st, val = Hd.best_reply(fixed, warm)
     return st, val, Hd
 
-def run(G, mode, cap=20000):
+def run(G, mode, cap=20000, hook=None):
     prio, own, fs, sig0, movers, idx, succ = build(G, True); n = len(prio); g = Game(prio, own, succ)
     start, amb = s3_start(prio, own, succ)
     sbuild = [sig0.get(v) for v in range(n)]
@@ -149,6 +149,7 @@ def run(G, mode, cap=20000):
                         if cc > 0 or (cc == 0 and w > b): b = w
                     tn[v] = b
             c["evenfb"] += bool(Is)
+        if hook: hook(sig, tau, val, Is, sn, tn, fb, idx, movers, succ, g)
         fbs.append(fb); Kout.append(K(sn)); it += 1
         sig, tau = sn, tn
     else:
