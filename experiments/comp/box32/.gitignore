@@ -1,0 +1,6 @@
+bin/
+*.cnf
+*.cnf.body
+*.proof
+__pycache__/
+val/mut_hit7/
