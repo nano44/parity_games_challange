@@ -1,0 +1,11 @@
+# hsat.py whole-instance runs (no cubes), 2026-11-08 ~00:0xZ, copied from the tracked task output before the container restart;
+# DRUP proofs in sat/h3d4_a*.proof (gitignored), check results in sat/h3d4_a*.drup when run. a111 lost in the restart (re-run as cubes).
+h 3 d 4 alpha [1, 0, 0] gate case () T 13 vars 26292 clauses 87160 conditions 74 build 0.0s
+RESULT UNSAT 314.9s
+proof lines 4605845
+h 3 d 4 alpha [1, 0, 1] gate case () T 19 vars 37492 clauses 122868 conditions 106 build 0.1s
+RESULT UNSAT 411.9s
+proof lines 4867816
+h 3 d 4 alpha [1, 1, 0] gate case () T 16 vars 32634 clauses 107380 conditions 92 build 0.1s
+RESULT UNSAT 291.4s
+proof lines 3779877
