@@ -3,6 +3,7 @@
 Sigma_v (D^tot_E(v) - 1) (sig225.sig). By Lemma EQUIV (R225 §1) T and SD1 are polynomially equivalent, so T is the score.
 Mutations as R221 ladclimb (Xi-target -> any mover or X, upward and cyclic allowed; W-target; beta rank swap / parity flip; gate swap;
 start). Seed: random genome, levels 0..d-1, w movers per level, D options; or a JSON genome (mode file:PATH).
+Env SCORE=X: score = (max additive excess X, max D per Lambda-interval, max low resets) (comp225.comp).
 Usage: climb225.py SEED MODE(rnd|file:PATH) d w D ITER OUT.json"""
 import sys, os, random, json, copy
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -20,6 +21,11 @@ def rnd(d, w, D):
     br = list(range(M)); rng.shuffle(br)
     return {"N": N, "lev": lev, "opts": opts, "gate": gate, "br": br, "bp": [rng.randrange(2) for _ in range(M)], "start": [rng.randrange(D) for _ in range(N)]}
 def score(G):
+    if os.environ.get("SCORE") == "X":     # composition test: (additive excess X, hub height D, max low resets)
+        import comp225
+        try: c = comp225.comp(G, cap=3000)
+        except Exception: return (-1, 0, 0), None
+        return (c["best"]["X"], c["maxD"], c["maxRES"]), c
     try: r, _ = sig225.sig(G, cap=3000)
     except Exception: return (-1, 0), None
     return (r["T"], r["SD1"]), r

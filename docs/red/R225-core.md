@@ -79,3 +79,39 @@ next_t(x) := min{y ∈ S_t : y > x} (⊥ if none), h_t := min S_t. Then (next_t)
 - Next: (i) more seeds / N and fit best T against N (12 / 15 / 18); (ii) a designed family on BIN's forest («route to the next set
   bit», bits = SET options forcing Odd onto e) whose bit reset avoids L-SI's ACCESS-LATCH. A reset must come from an overtaking copy
   route (LEAPFROG), so the design question is POOL-ALT's pool-size cap.
+
+## 5. Composition test: does a hub's height MULTIPLY or ADD its segments' heights? (Lead 09:31Z: «name exactly what add means»)
+Definitions (comp225.py; IDEAL-CYC Howard by own.py, [E-LEV]). Fix a vertex v and a maximal interval I with Λ_t(v) constant.
+- seq_t(v) = (c_1, …, c_p). a := the first ascent index (c_(a+1) more relevant than c_a), else a := p.
+- Low_t := {c_1, …, c_a}; High_t := {c_(a+1), …, c_p}. These are SKELETON's R(s) / chain(y) split at the first ascent (P-N5-ASC §4).
+- D := #distinct seq-sets on I, Hn := #distinct High_t, Ln := #distinct Low_t.
+- X := D − (Hn + Ln − 1), the ADDITIVE EXCESS. RES := #steps inside I with Low_t <lex Low_(t−1) (low resets).
+- Facts: D ≤ Hn·Ln always. X ≤ 0 unless Low or High returns to an EARLIER value after leaving it: if neither repeats non-consecutively,
+  every new pair brings a new Low or a new High.
+**CONJECTURE ADD(c) (the precise form asked for).** There is an absolute constant c such that X ≤ c for every genome, every v and
+every Λ-interval I.
+- What it would buy: inside HUB-ASC's proof (P-N5-ASC §4) it would replace the product F_(B−1)(M)·F_(B−1)(M) by a sum.
+- What it would NOT buy by itself: the level factor (M² + M + 1) and the sum over entry nodes y still multiply at each ascent, so
+  F_B ≤ (M² + M + 1)(1 + 2M·F_(B−1) + c) is still exponential in B.
+- A polynomial bound in n alone would need ADD plus a global count (each chain(y) charged once across hubs). That is NOT claimed.
+DATA (unit: (genome, v, I); scope own.py; counter comp225; max X over the set):
+| set | max X | at (D, Hn, Ln) | max D per I | max RES |
+| --- | --- | --- | --- | --- |
+| LEAP_k4 / LEAP_k8 (R217) | 1 / 1 | (6, 2, 4) / (10, 2, 8) | 10 / 18 | 4 / 8 |
+| T-climb bests c12 / c15 / c18 (§4) | 0 | — | 3 | 1 |
+| L-SI box 86 LT3_1_0, CB3_61; box 85 TC3m | 0 | — | 6 / 7 / 8 | 1 / 1 / 2 |
+| X-climb from LEAP_k4 (SCORE=X, 2500 iterations, seed 2261) → frozen inst/CX4_n21.json (sha1 ef29debbc3f8e0ed2fa43aac2e0814c74849ec2e) | 4 | (11, 6, 2) | 11 | 5 |
+| X-climb random 4 × 3 × 3 (seed 2262; stopped at ~2400 of 4000 to keep ≤ 2 jobs) | 1 | (13, 3, 10) | 13 | 3 |
+So ADD(c) needs c ≥ 4. Whether X grows with N decides between ADD(c) and DEAD; the climbs in §6 test that.
+- Mechanism of CX4_n21 (READING from the play trace, out/cx4_show.txt):
+  - The hub e15.0 has D = 11 = T + 1. Its Low part is {e15} or {e15, e10}, alternating at EVERY step. Its High part takes 6 values, each
+    held for 2 steps.
+  - The level-0 router x0 races two routes into the same High chain: via x9 (β) and via x10, whose gate gives e10 (Odd takes e).
+  - The x10 route carries the bonus e10 but sees each High improvement one step later. So every High value gives two hub values,
+    without e10 and then with e10: a factor-2 multiplication per High value.
+  - It needs the High source to change at most once per 2 steps. Here x17, the W-target of e10, changes only at the odd steps 1, 3, 5, 7, 9.
+  - No play from the High part returns to the router (no feedback), and the depth is 1.
+- READING (the obstacle to iterating): a race with r staggered routes multiplies by r only if the High part holds each value for r
+  steps. At the next level up the same race needs a High that is r² times slower. In feed-forward (Ξ-acyclic on the hub's plays)
+  Howard all levels move at once, so a slow High must come from a long delay path, i.e. size linear in the product. Feedback through
+  Ξ-cycles (a carry from the low race back into the High chain) is the only other source of slowness. This agrees with ACYC-LIN.

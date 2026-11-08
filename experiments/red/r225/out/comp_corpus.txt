@@ -1,0 +1,8 @@
+LEAP_k4.json {'N': 21, 'T': 9, 'maxD': 10, 'maxRES': 4, 'npos': 3, 'best': {'X': 1, 'D': 6, 'Hn': 2, 'Ln': 4, 'RES': 1, 'v': ('x', 17)}}
+LEAP_k8.json {'N': 37, 'T': 17, 'maxD': 18, 'maxRES': 8, 'npos': 3, 'best': {'X': 1, 'D': 10, 'Hn': 2, 'Ln': 8, 'RES': 1, 'v': ('x', 33)}}
+c12_2251.json {'N': 12, 'T': 18, 'maxD': 3, 'maxRES': 1, 'npos': 0, 'best': {'X': 0, 'D': 3, 'Hn': 1, 'Ln': 3, 'RES': 0, 'v': ('x', 0)}}
+c15_2252.json {'N': 15, 'T': 19, 'maxD': 3, 'maxRES': 1, 'npos': 0, 'best': {'X': 0, 'D': 3, 'Hn': 2, 'Ln': 2, 'RES': 0, 'v': 'e'}}
+c18_2253.json {'N': 18, 'T': 20, 'maxD': 3, 'maxRES': 1, 'npos': 0, 'best': {'X': 0, 'D': 3, 'Hn': 1, 'Ln': 3, 'RES': 0, 'v': ('x', 0)}}
+LT3_1_0.json {'N': 102, 'T': 15, 'maxD': 6, 'maxRES': 1, 'npos': 0, 'best': {'X': 0, 'D': 6, 'Hn': 5, 'Ln': 2, 'RES': 0, 'v': 'g'}}
+CB3_61.json {'N': 110, 'T': 17, 'maxD': 7, 'maxRES': 1, 'npos': 0, 'best': {'X': 0, 'D': 7, 'Hn': 4, 'Ln': 4, 'RES': 1, 'v': ('x', 4)}}
+TC3m.json {'N': 118, 'T': 17, 'maxD': 8, 'maxRES': 2, 'npos': 0, 'best': {'X': 0, 'D': 6, 'Hn': 2, 'Ln': 5, 'RES': 1, 'v': ('x', 5)}}

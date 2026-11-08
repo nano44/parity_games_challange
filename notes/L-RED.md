@@ -70,6 +70,10 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   (in-edges through m / pe pads); W-1 LEAPFROG needs «t, t+1 ∈ I» (witness inst/OFFUP_n4.json dd6a1221…); latch hypothesis fails at all 16 OFFs
   (L-SI counts 14 at bits only); random 3,000: 319 OFFs, 235 cross / 56 pass / 28 over / 0 none. Tool latch225.py.
 - Note: Λ = K1 at exits is right (K1 priority 5 is ODD; Odd prefers K1 over K2).
+- Item 2 composition test (Lead 09:31Z): comp225.py (additive excess X = D − (Hn + Ln − 1), split at the first ascent), show225.py (trace),
+  climb225.py SCORE=X. CONJECTURE ADD(c) stated in R225-core §5; needs c ≥ 4: inst/CX4_n21.json (ef29debb…), a factor-2 race (router x0, bonus
+  e10, slow High). Corrected: ADD alone does NOT give poly (level / entry factors remain). Climbs cx_cx4_2263 (from CX4) and cx_leap8_2264
+  test whether X grows with N.
 - Things only I know: climbs c12_2251 / c15_2252 run as tracked tasks (out/*.log, best genome out/*.json); Oink NOT built here.
 
 ## Successor 58 HANDOVER (2026-11-08 ~08:2xZ, date -u; ~430k context; PARKED)
