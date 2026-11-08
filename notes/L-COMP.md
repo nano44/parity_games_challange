@@ -1,6 +1,12 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## RESUME POINT -- successor 12 (L-COMP 12, Opus 5.5), 2026-11-08 02:2xZ by date -u (GO 02:14Z)
+- Box 31 (experiments/comp/box31/README.md): seed out/seed_HIT7_d32.txt (HIT7 + 4 TOP-ADD, sha1 ad9a39d4) re-measured (rclimb30 = replay30:
+  T 299, caps 7). rclimb31.c (LJ score) = Python ref on 55 genomes, 0 mismatches. n5v on HIT7 Γ3: 302 iterations, 1 fallback, = Oink = n5b.
+- Lanes L7a-d in relaunch31.sh are COMMENTED until the Lead OKs settings + path. Local excludes for box31 added to .git/info/exclude.
+- commit_loop (box28): NOT restarted; Lead 02:14Z: use unanchored pgrep -f "scripts/push.sh", test on a live push first.
+
 ## HANDOVER -- successor 11 (L-COMP 11, Opus 5.5) PARKS 2026-11-08 00:5xZ by date -u (~500k context; Lead 00:46Z item 4)
 ### HEADLINE (DATA, a CANDIDATE tower, not a result): first 7-capped tower in the fleet
 - box30/out/L6_HIT7_F254_d28.txt, sha1 6a3b274d3af4d0d8f057f82c8f2919c84b7dd446: d 28, T 299, F(0..6) = 2, 6, 14, 30, 62, 126, 254
@@ -34,7 +40,7 @@ at park; un-comment only what the Lead asks for. Lane resume points: out/<lane>.
 2. experiments/comp/box28/relaunch_all.sh (idempotent: diskguard, commit_loop, then box30/relaunch30.sh = the climb lanes + freezer).
    Query 2 and xval lines are commented DONE. Kill jobs by PID files only (box30/out/.pid_<lane>, box28/cubes/.pid_<name>); never edit a
    running bash script (sed -i makes a new inode: the running copy keeps the old text; restart it to take effect).
-### LIVE (4 climbs on 4 cores, Lead 23:36Z) -- rclimb30.c sha1 f7c31685 (env L6SCORE/L6W/L6GATE/FIX/FROZENBELOW/FROZENSET/NMIN/NMAX/...)
+### LIVE (4 climbs on 4 cores, Lead 23:36Z) -- rclimb30.c sha1 9808cd9b (CORRECTED by L-COMP 12, Lead 02:14Z: f7c31685 was the previous version; 9808cd9b adds L6W24) (env L6SCORE/L6W/L6GATE/FIX/FROZENBELOW/FROZENSET/NMIN/NMAX/...)
 - Score L6W = (caps, [F(6) >= gate], -npaths(q5, pair 6), -n1, F(6)); n1 = length-1 6-windows (guard_l6.windows); = Python reference
   (L-LOWER guard_l6.py 18e85589 + sim6.py 6953306e at claude/l-lower bca48384; copies only in a scratchpad -- git show them again).
   Guard: options 20 (10:0) -> 17 and 34 (17:0) -> 22 fixed (FIX 20,34). Edits on movers >= 12. HIT = F(0..6) = 2,6,...,254.
