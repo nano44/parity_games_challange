@@ -65,6 +65,10 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   standard states 0..T3, fallback at T3 + 1, all 0 on the 7 FW rows (fwprem228.py, controls fire). RA-LOG / (S2) were measured ON Γ3
   from S3 by L-SI's g3, so they stay DEAD as game statements. Scope: FW is Ξ-cyclic (W self-loop), so it is covered by R118 REACH3-CYC
   (conditional), not R117 REACH3. Re-targeting W to X kills the clock (T3 1).
+- Item 1 (Lead 21:14Z: l-new 91ed2f3f / 42e9c728, box 199 Add. 2-3): docs/red/R228-box199.md. PAIR-SPLIT / SPLIT-COUNT / RW-SHAPE*
+  SURVIVE («consecutive» unused, line by line; 3M = mover + gate edges, valid on standard states). RW-WT* (strong) / RW-B0* not broken:
+  split228.py, 4,822 same-pair couples, 25 genomes, all fails 0. C-WT loose: Dwt 18 with C ≤ 5 (DU21_h4, DSALT9). NEW: C6G8_n54 C = 6
+  (two engines), frozen r228/inst. Climb ORDER=DWT seed 2803 (HOLD2_n84) running; maxm climbs 2801 / 2802 stopped (maxm 2).
 - Item 3 RUNNING: mclimb228.py (own m-census, score (maxm, C, nm, -size)), seeds 2801 (GROW8) / 2802 (CX4), cap 400; logs r228/out/mc_400_*.log.
   Baseline census (unit: per-(v, I, y, z) max): maxm 2 on CX4, GROW7, GROW8, B0M569, C2CX4, HOLD3K, W14, W86; 1 on FW4_2, HOLD2(K), HOLD3, W68.
 - Abstract note: m(y, z) ≥ 3 needs BIN-like nesting with ≥ 4 letters (ruler 1 2 1 3 1 2 1 4 1 2 1 has m(1, 2) = 3). In the game, by

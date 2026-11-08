@@ -7,6 +7,8 @@
   C = max over (v, I, y) of c_y (per-triple maximum); idfail (unit (v, I, y)): c_y - 1 != sum_z m(y, z); T = steps of the run.
 Score = (maxm, C, nm, -size), size N + M <= CAP. Moves: sharp226.mutate and the GROW moves of depthclimb227 (copied).
 Freezes every strict (maxm, C) gain to out/mc_<CAP>_<SEED>.json, and any maxm >= 3 genome also to out/mkill_<SEED>_<maxm>.json.
+Env ORDER=DWT (Lead 21:14Z, the sharpest open-core target): score = (Dwt, C, maxm, -size) with Dwt = split228's Dhi_y(wt(y), J) maximum;
+freezes any genome with a split228 lemma / conjecture fail (dn2, rh2, rw2, b0s, sp, spw, jbfail) to out/skill_<SEED>.json.
 Resumable: RESUME=<frozen json>. Usage: mclimb228.py SEED CAP ITER START.json | mclimb228.py --census G.json ..."""
 import sys, os, json, random, copy, collections
 H = os.path.dirname(os.path.abspath(__file__)); sys.path[:0] = [H, os.path.join(H, "..", "r226"), os.path.join(H, "..", "r225"), os.path.join(H, "..", "r221")]
@@ -40,7 +42,15 @@ if sys.argv[1] == "--census":
 from sharp226 import mutate
 from compose226 import add_opt, check
 seed, CAP, IT, SG = int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), sys.argv[4]; rng = random.Random(seed)
-def score(G): c = census(G); return (c["maxm"], c["C"], c["nm"], -size(G)), c
+ORDER = os.environ.get("ORDER", "")
+def score(G):
+    c = census(G)
+    if ORDER == "DWT":
+        import split228; d = split228.census(G, 600)
+        for k in ("Dwt", "DwtJ", "couples", "rw2", "rw2w", "b0s", "nspl"): c[k] = d[k]
+        if any(d[k] for k in ("dn2", "rh2", "rw2", "b0s", "sp", "spw", "jbfail")): json.dump(G, open(f"{H}/out/skill_{seed}.json", "w"))
+        return (d["Dwt"], d["C"], c["maxm"], -size(G)), c
+    return (c["maxm"], c["C"], c["nm"], -size(G)), c
 def grow(G):
     G = copy.deepcopy(G); N = G["N"]; M = len(G["br"])
     if rng.random() < 0.6:
@@ -60,8 +70,8 @@ for it in range(IT):
     except Exception: continue
     if s2[:3] >= s[:3]:
         if s2[:2] > s[:2]:
-            json.dump(Hh, open(f"{H}/out/mc_{CAP}_{seed}.json", "w"))
+            json.dump(Hh, open(f"{H}/out/mc{ORDER}_{CAP}_{seed}.json", "w"))
             if c2["maxm"] >= 3: json.dump(Hh, open(f"{H}/out/mkill_{seed}_{c2['maxm']}.json", "w"))
-            print(it, "maxm", c2["maxm"], "nm", c2["nm"], "C", c2["C"], "idfail", c2["idfail"], "T", c2["T"], "N", Hh["N"], "M", len(Hh["br"]), flush=True)
+            print(it, "Dwt", c2.get("Dwt"), "DwtJ", c2.get("DwtJ"), "rw2", c2.get("rw2"), "b0s", c2.get("b0s"), "maxm", c2["maxm"], "nm", c2["nm"], "C", c2["C"], "idfail", c2["idfail"], "T", c2["T"], "N", Hh["N"], "M", len(Hh["br"]), flush=True)
         G, s = Hh, s2
 print("FINAL cap", CAP, "score", s, "N", G["N"], "M", len(G["br"]), flush=True)
