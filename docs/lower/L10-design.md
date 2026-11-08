@@ -256,6 +256,22 @@ movers in closure(x); acyclic wiring)
   of levels 8-31 that reach none of 13, 14, 15, and require pairs 0-5 to read only W. Decide SAT / UNSAT for the first T₀ steps
   (T₀ = 40, 80, …). An UNSAT with DRUP is a prefix obstruction for this cut: pairs 0-5 must then read pair 6 or 7.
 
+### 3d. The oscillator test: the loop breaks at pairs 6-7 and reappears one level down (DATA; runs ended 11:35Z)
+- C9 (T 1.5) → 300, C10 (T 0.8) → 127 (unit = violated constraint; scope = the exact target; order «pairs 0-5 reach none of
+  13, 14, 15»). C10 is the BEST score of the box: lower than the unconstrained 144.
+  Frozen: rec/L10_C10_osc_final.txt, sha1 4296d8c60288dabf784c5498d962e709a0d8c39e; solved ranks
+  rec/L10_C10_osc_final_solved.txt, sha1 3ef3680198ba6ef428294823e05fbadadcf76591; out/viol_C10_final.out.
+- In C10, movers 10 (q5), 12 (q6), 13 (f6), 14 (q7) and 15 (f7) have 0 violations: the §2f-§2g loop is broken. The rest: f5
+  (11) 48, 4 23, 6 22, 9 8, helper 33 8, ≤ 4 elsewhere.
+- A helper cascade appeared: helpers 16, 19, 20, 22-27, 30 move 63-65 times each, 28 127 times, 32 32 times, 33 15 times. It
+  carries the idle-step timing for pairs 0-5 without reaching 13, 14, 15: a W as in 3b, with halving move counts (127, 64, 32,
+  15), i.e. a counter-shaped helper oscillator (DATA for the shape OSC-ROOM predicts; not a proof of the conjecture).
+- The obstruction moved ONE LEVEL DOWN. f5 is now the global sink: its options both exit, and all 63 other movers reach 11, so
+  nothing is left for it to read. It is the f6 situation of 2f with j = 5: f5 must prefer «not my key» = 1 − o(4) (2e). READING:
+  each cut of the loop at level j re-creates it at level j − 1. That is the recursion OSC-ROOM states in words: the timing for
+  the levels below must come from a helper tower that does not read the level being fixed.
+- Test running (C11, from C10, T 0.8, 40 min): add the second constraint «pairs 0-4 reach none of 11, 13, 14, 15».
+
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All are about the IDEAL
 model's step sequence (R104's definition) on 𝓛^R_d and its F-profile. Not M3, not a step-4 pass, not a TARGET.md claim.
