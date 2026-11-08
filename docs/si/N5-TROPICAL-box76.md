@@ -254,3 +254,44 @@ polynomial bound; MOVES-2D and G-N5-TIME stay OPEN.
 - READING (consequence for S(h)): a cap on doubling levels cannot come from flip counts alone. Keys pass through frozen pairs losslessly
   (PASS-FREEZE); the scarce resource is Ξ-value change of the fuel (FUEL-NEED), whose movers must also obey AND-GATE (π = c at the
   move). The quantity to bound is the number of rises of the fuel targets per unit of key activity reaching them. OPEN; no conjecture.
+
+## 11. Box 77, fourth pass (Lead 02:50Z: FUEL-RECURSION over Ξ-down-closures)
+- Target (Lead): for a set D of movers closed downward and U the upward-fuel targets of D: (i) moves(D) ≤ g(levels(D))·(1 + R(U)); (ii)
+  R(U) ≤ moves of the movers on U's chains; (iii) those movers lie outside D (ACYC-SPLIT); iterate.
+- (i) holds with a POLYNOMIAL g (PROVED, lane, conditional on FEEDBACK (b), L-LOWER lane, not landed): for D_l := the movers of levels
+  ≤ l and E_l as in FEEDBACK, Σ_(x ∈ D_l) moves(x) ≤ 2 + 2l·2l·(1 + |E_l|) ≤ 4l(l + 1)(1 + |E_l|). Proof: level 0 movers move ≤ 1 (R113
+  F0); a mover of level j, 1 ≤ j ≤ l, moves ≤ 2j(1 + |E_j|) by FEEDBACK (b), and E_j ⊆ E_l (Up_j ⊆ Up_l). ∎ So g is not 2^levels; the
+  exponential, if any, must come from |E_l|.
+- (ii) holds: |E_l| ≤ Σ_(y ∈ U_l) R(y) (MONO) and R(y) = #{t : Mv_t meets y's old chain} (HIT), so |E_l| ≤ |U_l|·#{t : some mover on a
+  chain of U_l moves}, |U_l| ≤ 4(l + 1). (PROVED, lane.)
+- (iii) is FALSE: DEAD «the movers on the chains of the fuel targets of D_l lie outside D_l» (RE-ENTRY), instances (reentry77.py,
+  static Ξ-graph; reentry77.out):
+  - REC_d10_tower_mu30 (sha1 cc94dc9c…), l = 1..4: the fuel target 11 (level 5) has an option with Ξ-target 3 (level 1): 11 → 3; l = 5,
+    6: 16 → 14 → 3.
+  - KILL_M2D_d6_mu13 (sha1 5301c716…), l = 1: 5 → 3 (5 is level 2, a fuel target of level 1; 3 is level 1); l = 2: 8 → 7 → 2.
+  - ACYC-SPLIT only forbids reaching the movers that point to the fuel target (and their Ξ-ancestors), not the rest of D.
+- And even where (iii) holds (no re-entry), the iteration does not close: the movers on U_l's chains are at levels > l, and their keys
+  read the levels ≤ l (keys depend on all lower levels; PASS-FREEZE shows flips pass up losslessly), so their moves are bounded only in
+  terms of D_l's activity again. The ingredients give T ≤ N(1 + |E|) (FEEDBACK (a)) with |E| ≤ |Up|·T: circular. No product over nested
+  closures follows, so no polynomial bound and no 2^Ω(d) lower bound follow from these ingredients.
+- READING (the structural answer for this model, as far as the current lemmas go): the coupling is two-way — Ξ-fuel goes upward-then-
+  back-down (re-entry allowed), keys go upward losslessly — so there is no one-way interface between level blocks along which a nested
+  recursion could run. A recursion needs a quantity that an upper block can receive from a lower one only in bounded amounts per unit of
+  its own activity; neither flips (PASS-FREEZE) nor fuel chains (RE-ENTRY) are such a quantity. OPEN; no conjecture.
+
+## 12. Box 78 (Lead 03:13Z: RE-ENTRANT fuel loop; interface quantity)
+- Coordinated rewire (DATA): in REC_d10_tower_mu30, re-pointing mover 4's option 0 (fuel 9) to any other legal target and mover 9 onto
+  (6, 7) / (7, 6), over starts and parities of 9, collapses the run (best F = 0 2 2 6 9 4 1 1 0 0): the tower's fuel is holistic.
+- |E_l| saturates (DATA, fuelE78.out): on all ten records |E_l| ≥ 0.77·T for l ≥ 2 (e.g. REC_d12_mu42: 48 of T = 48), so FUEL (i)
+  (§11) carries no information beyond T there: the fuel changes at almost every step.
+- Landed potentials as an interface (DATA, pot78.out, rank78.out): none bounds fuel changes per unit of lower activity.
+  - R105 RANK: the maximum RANK (π a Kahn order) grows with d on the records: 3 (d 6), 4-6 (d 7-10), 7 (d 11, 12); RANK-BOUND then gives
+    Σ_(j ≤ 7) C(N, j) − 1, not a fixed polynomial.
+  - R114 PHIK-DESCENT: Φ_K(s_0) is near its exponential ceiling (REC_d10_tower: 3,914 of 2^(d+2) − 2d − 4 = 4,072); R105 EXACT-ENERGY:
+    E(s_0) ≈ 0.72·(2^N − 1). Both fall by ≥ 1 per step (checked), with exponential slack; both are global, not per level block.
+- Searches (DATA, box78/climb78.py; logs box78/runs/): simulated annealing, re-entrant Ξ-targets allowed (any acyclic re-target),
+  smooth score Σ_(l ≤ 4) min(F(l), 2^(l+2) − 2) + T/100, TEMP0 3, 1,500,000 moves per seed: seeds 11-13 from REC_d10_tower_mu30 + 2
+  frozen top pairs (d 12), seeds 14-15 from climb77_d10_T45. Earlier lexicographic runs: 5 × 60,000. RESULT: no state better than
+  the seeds was found in any run (F(4) stays 23; T stays 35 / 45). The seeds are local optima of this neighbourhood; this is not a cap.
+- Outcome of box 78: no height-5 tower (F(4) = 62) was built; the exact obstruction was not identified either. What is measured: the
+  fuel changes at almost every step (|E_l| ≈ T), and the tower's fuel cannot be re-routed by local changes (the rewire collapses). OPEN.

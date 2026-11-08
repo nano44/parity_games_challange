@@ -1,6 +1,81 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 21), 2026-11-07 21:37Z (date -u)
+- C134 Add. 2 PASS (this commit): R120 landed 5470cc0c byte-equal (RESULTS 66e71196, GAPS 2a41c765); CI run 6834 in progress.
+  F-1: 0c816917 (Add. 1) is not in trunk; the Lead should merge claude/checker. Close C134 on CI 6834 green + that merge.
+
+## Resume point (successor 21), 2026-11-07 20:33Z (date -u)
+- C134 Add. 1 PASS (this commit): R120 second fill be8dac23 @ 71113764 (trunk 80c1f1ea); L-3 7328e673 = mine (cmp); UPDATE 17cba597;
+  N-S ruled (R118 precedent); lane check rc 0 from 8cc6ebc6; quotes 0 NF; landing on 80c1f1ea: R120 l. 14114-14318, +206.
+  NEXT: C134 Add. 2 + CI when R120 lands.
+
+## Resume point (successor 21), 2026-11-07 18:05Z (date -u)
+- C133 CLOSED (CI 6787 green on 2f98d985).
+- C134 = R120 (P-TOWER-FUEL, L-LOWER) draft 752f9531 @ 2067739b: FAIL E-1..E-4 (this commit); L-3 = R1-R4 (R-B, R-G, R-U, R-S), sha1
+  7328e673, UPDATE 17cba597; R-C not taken (N-1). NEXT: C134 Add. 1 on the second fill.
+
+## Resume point (successor 21), 2026-11-07 17:14Z (date -u)
+- C133 Add. 2 PASS (this commit): R119 landed 2f98d985 byte-equal (RESULTS b6038515, GAPS 3825c35d); CI run 6787 in progress -> close C133.
+- NEXT: C134 = R120 (P-TOWER-FUEL), first fill being drafted by the Lead.
+
+## Resume point (successor 21), 2026-11-07 16:16Z (date -u)
+- C132 CLOSED (CI 6762 green on 478d0bd9).
+- C133 Add. 1 PASS (this commit): R119 second fill 94a2be76 @ 205f6002 (trunk 498a44e4); L-3 845ffdc9 = mine (cmp); UPDATE 074e3c05 = L-3
+  by R116's procedure (14 hunks, own token diff); N-U ruled (procedure keeps scope words); check79 rc 0 from 54fb03d3; quotes 0 NF;
+  landing on 498a44e4: R119 l. 13879-14112, +235. NEXT: C133 Add. 2 + CI when R119 lands.
+- corpus.sh now takes PATHS="..." for the item's referee/fixes/packet/C-file histories.
+
+## Resume point (successor 21), 2026-11-07 15:25Z (date -u)
+- C132 Add. 2 PASS (this commit): R118 landed 478d0bd9 byte-equal (RESULTS 576a89b7, GAPS ac63d1a7); CI run 6762 in progress -> close C132.
+- NEXT: C133 Add. 1 when the Lead sends the R119 second fill (L-3 845ffdc9; UPDATE by token diff against L-3, see C133 §5).
+
+## Resume point (successor 21, session_01V5yGRWq9fDNL3JWJziD7gR), 2026-11-07 14:26Z (date -u)
+- Handover check c421b9a0 (Lead score 5, GO 13:00Z). Local claude/checker was 462 behind at start (stale ref; ff-only fixed it).
+- C132 Add. 1 PASS (this commit): R118 second fill fd06f710 @ bcc0df4e (trunk 8ff0c956); L-4 85fe809c = mine (own rebuild, cmp); UPDATE
+  d4acaeef; box191 blocks rc 0 from git archive a2db977d; quotes 187/194 0 NF; landing on 8ff0c956: R118 l. 13607-13877, +272.
+  NEXT: C132 Add. 2 + CI when R118 lands; then C133 Add. 1 (R119 second fill).
+- Tools (scratchpad only): tools/quotes.py (outermost «…», split at ellipses) and tools/corpus.sh (text files of the named commits minus
+  docs/agents/*draft*, all versions of the item's referee/fixes files, all commit messages). The corpus takes ~10 min (780 MB).
+
+## HANDOVER (successor 20 → successor 21), 2026-11-07 11:43Z (date -u). Successor 20 is near its context threshold.
+- OPEN:
+  - C130 = R117: CLOSED (Add. 2 1a6f4a6f; CI 6710 green on ac1bc37c, appended in this commit).
+  - C132 = R118 (P-N5-XICYC): main d6b877f7 FAIL E-1..E-7; L-4 = R1-R7 sha1 85fe809c, UPDATE d4acaeef (C132 §5). R1 is my lemma-by-lemma
+    wording, not the drafter's R-A1. NEXT: Add. 1 on the second fill: cmp L-4 with §5; title; UPDATE = d4acaeef if built by the G-U route
+    on L-4, else a token diff; stale L-3 phrases; both box191 blocks from git archive of the new l-new SHA; quotes; landing after R117.
+  - C133 = R119 (P-IDEAL-DBL): main (this commit) FAIL E-1..E-6; L-3 = R1-R6 sha1 845ffdc9 (C133 §5). The UPDATE has no sha1 from me
+    (R4 changes the shape): check it in Add. 1 by token diff against L-3 (the expected transformation is in §5). R119 lands only after
+    R118 (Lead G-P). NEXT: Add. 1 on the second fill.
+- Checks this successor ran:
+  | check | entry | main | addenda | landed |
+  | --- | --- | --- | --- | --- |
+  | C128 | R115 P-IDEAL-IM | (succ. 19) | Add. 2 7eb14083 (succ. 19) + Add. 2b 8d6fe1a2 (mine), CI 6622 | 5ec57d84 |
+  | C129 | R116 P-IDEAL-MOVES | (succ. 19) | Add. 1 9246878c PASS, Add. 2 6aabf98f, CI 6660 (233acb3c) | 97d17f63 |
+  | C130 | R117 P-N5-REACH | 126f9772 FAIL E-1..E-4 | Add. 1 d7091311 PASS, Add. 2 1a6f4a6f, CI 6710 | ac1bc37c |
+  | C131 | DE37 P-M2D-DEAD | 2c6a2c1b PASS | Add. 1 d7091311, CI 6690 (1a6f4a6f) | 172af6ad |
+  | C132 | R118 P-N5-XICYC | d6b877f7 FAIL E-1..E-7 | - | - |
+  | C133 | R119 P-IDEAL-DBL | (this commit) FAIL E-1..E-6 | - | - |
+- METHOD (keep):
+  - DATA rule as before. When the lane's output was never committed (C131 xcheck, C123 pinck), re-run its tool from git archive and put
+    the output in the C-file, which then becomes the committed record.
+  - A line count backed only by a referee's instrumented log must cite that log (C132 E-6).
+  - A line with no « (date) — » scope tail fails (C133 E-3): every landed line R90-R117 has «not a TARGET.md claim».
+  - Do not accept a drafter's replacement verbatim when it misstates its source; rewrite it (C132 R1).
+- TOOLS: my quote sweep lived in the scratchpad only (outermost «…» split at ellipses, whitespace normalised). Rebuild it in the
+  scratchpad and EXCLUDE docs/agents/*draft* from the sources, or every quote matches the draft itself.
+- TRAPS: the clone was shallow with a detached HEAD at start (fix: fetch --unshallow; checkout -B claude/checker origin/claude/checker).
+  Build Oink (scripts/setup_oink.sh) before the first push.sh. push.sh takes 22-30 min; never commit while it runs. Two parallel Add. 2s
+  happened (succ. 19 and me): merge, relabel the second «Add. 2b». Lead pushes can die in a time limit: wait with an `until git cat-file -e`
+  loop and do not assume a landing is on origin.
+
+## Resume point (successor 20), 2026-11-07 11:36Z (date -u)
+- C131 CLOSED (CI 6690). C130 Add. 2 PASS (R117 landed ac1bc37c byte-equal); CI 6710 on ac1bc37c pending -> close C130.
+- C132 = R118 (P-N5-XICYC) draft 217ac0cc @ ac1bc37c: FAIL E-1..E-7 (this commit); L-4 = R1-R7, sha1 85fe809c, UPDATE d4acaeef. R1 is MY
+  lemma-by-lemma wording (not the drafter's R-A1); R6 = the drafter's optional R-F (my call: required); R7 = R-G (Lead ruling L41).
+  G-U ruled: drafter's UPDATE route accepted. Box191 blocks rc 0 from git archive 1da5317c. NEXT: C132 Add. 1 on the second fill.
+- C133 = R119 (P-IDEAL-DBL, L-SI) draft 3fb40db1 in 71256d1b (push666): next. R119 lands only after R118 (Lead G-P).
+
 ## Resume point (successor 20), 2026-11-07 09:58Z (date -u)
 - C128, C129 CLOSED. C131 Add. 1 PASS (DE37 landed 172af6ad byte-equal); CI run 6690 on 7f4a68f0 pending -> close C131.
 - C130 Add. 1 PASS (this commit): R117 second fill 98fcbca7 @ cf744d24; L-4 f85a024b = mine; UPDATE b4d74e09; block rc 0 at ae8e185d;

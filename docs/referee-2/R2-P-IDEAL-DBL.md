@@ -134,3 +134,52 @@ and R ≥ moves), ALT-MIN (a)-(d), TOWER-NEED.
 r2dbl.py (FILE ... | corpus ROOT | dead ROOT_SI) / r2dbl_corpus.out, r2dbl_lower.out, r2dbl_extra.out, r2dbl_dead.out, r2dead4.out;
 bt_dbl.py / bt_dbl.out. Re-run from the repo root: `python3 docs/referee-2/R2-P-IDEAL-DBL/r2dbl.py corpus experiments/new` (39 s); the
 box76 / box79 instance paths are relative to a `git archive f5263d5a`.
+
+## Addendum 1: fix round 1 / L-2 (claude/l-si 0ea6959f; REFEREE-2 successor 30, 2026-11-07 10:0xZ by date -u)
+- Object (sha1 at 0ea6959f, equal to the Lead's relay 10:07Z): docs/si/P-IDEAL-DBL-fixes.md 172bfa2f… (8,797 B, entry 1); L-2
+  docs/si/P-IDEAL-DBL-line-L2.txt 1b3dc825… (5,810 B); packet 3573e93b… and L-1 93177184… unchanged. I read REFEREE's items only as the
+  fixes file quotes them, after my report (2b425bb6) was on origin.
+- Byte test (own script R2-P-IDEAL-DBL/bt_l2.py, output bt_l2.out; the seven OLD / NEW pairs read by script from the fixes file): each old
+  string once in L-1, each new once in L-2; L-1 with all seven == L-2 byte for byte (sha1 1b3dc825…, 5,810 B, 1 line, 97 «(» = 97 «)»,
+  depth never negative, 0 «|») ✓. W-2 (a), (b), (c): NEW is my text verbatim ✓.
+- **W-1 closed** (F-1): the new §0 quote «(PATH-RISE) at any degree, the current value cv(z) of every mover z rises at most P(z) − 1 times in
+  a run» is a verbatim substring of landed R113 (trunk 97d17f63) ✓, with R113's scope «on acyclic Ξ-graphs» stated.
+- **DEAD-REENTRY (Lead ruling 3; DB-L2 + my W-2 (d) + N-3)** — level sets checked with my own code (r2reentry.out; U_l = Ξ-targets of
+  upward options of movers of level ≤ l, strict Ξ-descendants along any option, every l in 0..d − 2):
+  - REC_d10_tower_mu30: false for l = 1, …, 8 (reading A, as worded) and for l = 1, …, 8 (reading B, y ∈ U_l of level > l); true for l = 0.
+  - KILL_M2D_d6_mu13: false for l = 1, …, 4 (A) and l = 1, …, 3 (B); true for l = 0.
+  - Equal to the lane's reentry_levels.out as quoted in F-2 ✓. The witnesses hold on the whole sets: 11 ∈ U_l for every l ≥ 0 (target of
+    mover 1, level 0) and 3 has level 1 ≤ l; 5 ∈ U_l for every l ≥ 1 (target of mover 2, level 1) ✓.
+  - **My N-3 was incomplete**: it named only l = 1 (the report) and my 08:5xZ message to the Lead said «killed at l = 1 only», which
+    is wrong: the same witnesses kill every l ≥ 1 up to d − 2. F-2's correction is right; I withdraw «only».
+  - L-2's new DEAD-REENTRY text (reading A, both sets, both witnesses, «true for l = 0 on both») matches the data ✓.
+- **DATA clause (Lead ruling 2: DB-L1's text as base, my W-3's no-DATA items and the dead79.py pointer added)**, judged in meaning:
+  every count equals dblcheck.out / dblcheck_neg2.out (my W-3 numbers and my own corpus run: 63,223 runs, 140,395 steps, 4,534 / 12
+  doubling); units per counter as in dblcheck.py (l. 8-21) ✓; the added scope «every genome of degree 2 and width 2 (so HIT and ALT-MIN,
+  stated at any degree, are tested only there)» is true of both scopes ✓; «TOWER-NEED's bounds on P and R … its moves clause through
+  DBL-EQ (b)» is what counter TN does ✓; the controls (ALTb_T 112,372 / 43, ALTc_T 7,085 / 13, HIT under NEG=2 238,546) are dblcheck's ✓;
+  PASS-FREEZE's 23,317 counts the conclusion and «the sufficient condition … no separate DATA» is the rest of my W-3 ✓ (F-4). My W-3 is
+  met in substance.
+- N-1 (F0 dropped from the premise list) ✓; N-2 («higher level than that mover») ✓. F-3 (DB-3: step 1 is not an l-b-step at a doubling
+  level) agrees with my own §«Proofs» remark ✓.
+- Verdict: fixes entry 1 **CORRECT**; W-1, W-2 (a)-(d), W-3 **met**; **L-2 MATCHES** the packet with fixes entry 1, in bytes and in meaning
+  (Opus 5.5, D1). Statement verdicts unchanged (all SIGN).
+
+## Addendum 2: L-3 for CHECKER C133 (claude/l-si 610897dd; REFEREE-2 successor 30, 2026-11-07 13:0xZ by date -u)
+- Object (sha1 at 610897dd, equal to the Lead's relay 13:02Z): L-3 docs/si/P-IDEAL-DBL-line-L3.txt 845ffdc9… (6,167 B); fixes edda8237…
+  (entry 2 appended); L-2 1b3dc825… and the packet unchanged. Source of R1-R6: docs/checker/C133.md §5 at claude/checker 8f6d03bc.
+- Byte test (own script R2-P-IDEAL-DBL/bt_l3.py with C133 §5's strings, applied in order; output bt_l3.out): R1, R2, R3, R5, R6's old
+  strings once in L-2, R4's once in the text after R3 (inside R3's new text, as C133 says); L-2 + R1..R6 == L-3 byte for byte, sha1
+  845ffdc9f0306d5db4bdb41d613588b219545838, 6,167 B (= C133's prediction); 1 line, 101 «(» = 101 «)», depth never negative, 0 «|», one
+  « — », no «[» ✓.
+- Meaning:
+  - R5: «for 1 ≤ l ≤ d − 2» is PASS-FREEZE's hypothesis in the packet (§2) and the range I signed ✓.
+  - R6: «on 𝓛^R_d» is FUEL-EXACT's hypothesis (§3: «G ∈ 𝓛^R_d, Ξ-acyclic»), the class I signed (its proof would also run at any degree
+    through HIT, but that is not what was stated or signed) ✓.
+  - R4: DB-3's step (at a doubling level Φ(s_0) = 2 ≠ 0 = Φ before every l-b-step, so step 1 is not an l-b-step and there are F(l − 1) + 1
+    windows) is in my report's §«Proofs», DBL-EQ (iv): «under (a), 1 ∉ B (Φ(0) = 2 ≠ 0), so there are exactly F(l − 1) + 1 windows»,
+    written and pushed (2b425bb6) before I read any REFEREE text. «found independently by REFEREE-2» is true ✓.
+  - R3: the new scope tail is the packet's §7 TARGET diff («Each is about the step sequence of R104's IDEAL model (MP-LIN about max-plus
+    recursions). None is an M3/M4 claim, a gauntlet step, or a polynomial bound. G-N5-TIME stays OPEN.») ✓. R1 (no label in the line), R2
+    (source note with fixes entry 1, successors 41-42) ✓.
+- Verdict: entry 2 **CORRECT**; **L-3 MATCHES** the packet with fixes entries 1-2, in bytes and in meaning (Opus 5.5, D1). Statements all SIGN.

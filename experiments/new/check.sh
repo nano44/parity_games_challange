@@ -971,9 +971,18 @@ else
 fi
 # P-N5-XICYC (box 191, L-NEW successor 59): sha1 pins (packet, line L-1, tools, check191.out, instances); the run itself is block BOX 191
 pin191=$(cd ../.. && sha1sum -c --quiet experiments/new/box191/xicyc.pins && echo PINS OK; sha1sum experiments/new/box191/xicyc.pins)
-if grep -qxF "PINS OK" <<<"$pin191" && grep -q "^c77781e04e68f06c4028fefbcf99db8d10b4f3bb  experiments/new/box191/xicyc.pins$" <<<"$pin191"; then
-  echo "P-N5-XICYC: pins (xicyc.pins c77781e0: packet 149e2414, line L-1 d6f77b12, fixes a83e54d2, line L-2 857d21c8, line L-3 1690b6ad, level0_191.py, data outputs, sae_6/7, check191.out d07c2f0c, tools, 17 instance files): PASS"
+if grep -qxF "PINS OK" <<<"$pin191" && grep -q "^df6f47994d849914819d5475a37d5f52540ed438  experiments/new/box191/xicyc.pins$" <<<"$pin191"; then
+  echo "P-N5-XICYC: pins (xicyc.pins df6f4799: packet 149e2414, line L-1 d6f77b12, fixes 90d0f09d, line L-2 857d21c8, line L-3 1690b6ad, line L-4 85fe809c, level0_191.py, data outputs, sae_6/7, check191.out d07c2f0c, tools, 17 instance files): PASS"
 else
   echo "P-N5-XICYC check: FAILED"; echo "$pin191"; exit 1
+fi
+# BOX 192 R-POT (L-NEW successor 60): data behind DEAD FLIP-H / HEAD-STEP / EXCH-1, EQ-FLIP and X-GATE checks, SEG-T sample
+# no silent exit: every failure path prints «BOX 192 R-POT check: FAILED» with the exit code, the diff and the run's last lines
+r192=0; run192=$(cd box192 && bash check192.sh 2>&1) || r192=$?
+d192=$(diff <(printf '%s\n' "$run192") box192/check192.out 2>&1) || true
+if [ "$r192" -eq 0 ] && [ -z "$d192" ] && grep -q "^rd2_d9.json N 18 T 21 C 3 R 18 p 0 flips 55 eqfail 0 Rnohead 9 flipnoh 15 xsz 7 " box192/check192.out; then
+  echo "BOX 192 R-POT: EQ-FLIP 0 failures, X-GATE <= 1 flip per interval, DEAD FLIP-H / HEAD-STEP / EXCH-1 instances (rd2_d9), SEG-T sample = frozen: PASS"
+else
+  echo "BOX 192 R-POT check: FAILED (check192.sh exit $r192; python $(python3 --version 2>&1))"; echo "$d192" | head -30; echo "$run192" | tail -15; exit 1
 fi
 rm -rf "$tmp"

@@ -1,0 +1,6 @@
+H5_d20_F62.txt caps 5 j2(capped):q1=3 npaths=8 j3(capped):q2=4 npaths=15 j4(capped):q3=6 npaths=0 j5:q4=9 npaths=1
+H6_d24_F126.txt caps 6 j2(capped):q1=3 npaths=1 j3(capped):q2=4 npaths=1 j4(capped):q3=6 npaths=0 j5(capped):q4=9 npaths=0 j6:q5=10 npaths=8
+SL41_d28.txt caps 6 j2(capped):q1=3 npaths=0 j3(capped):q2=4 npaths=1 j4(capped):q3=6 npaths=1 j5(capped):q4=9 npaths=0 j6:q5=10 npaths=1
+G7_best_d28.txt caps 6 j2(capped):q1=3 npaths=12 j3(capped):q2=4 npaths=1 j4(capped):q3=6 npaths=1 j5(capped):q4=9 npaths=0 j6:q5=10 npaths=1
+snap.txt caps 6 j2(capped):q1=3 npaths=35 j3(capped):q2=4 npaths=0 j4(capped):q3=6 npaths=0 j5(capped):q4=9 npaths=1 j6:q5=10 npaths=1
+w1.txt caps 6 j2(capped):q1=3 npaths=0 j3(capped):q2=4 npaths=28 j4(capped):q3=6 npaths=0 j5(capped):q4=9 npaths=0 j6:q5=10 npaths=1

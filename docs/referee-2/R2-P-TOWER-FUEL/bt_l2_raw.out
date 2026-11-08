@@ -1,0 +1,138 @@
+L-2 sha1 d866ca50b0a0372efd9e93a2db0410801b3ddc15 4586 B 4438 chars 1 newline(s) 80 «(» 80 «)» min depth 0 0 «|»
+--- segment 1 insert L-1 [242:242] -> L-2 [242:249]
+  context: …TS R113's ALIGN only, with its notation c_l, γ_l, flip, F(l)⟦
+  OLD: «»
+  NEW: « and cv»
+--- segment 2 insert L-1 [2067:2067] -> L-2 [2074:2076]
+  context: … states the largest rank in the symmetric difference of the ⟦
+  OLD: «»
+  NEW: «Ξ-»
+--- segment 3 insert L-1 [2071:2071] -> L-2 [2080:2103]
+  context: …tes the largest rank in the symmetric difference of the chai⟦
+  OLD: «»
+  NEW: «ns of the current optio»
+--- segment 4 insert L-1 [2287:2287] -> L-2 [2319:2382]
+  context: … levels 0-5 capped, F(6) = 222) violates PULSE, GAP ≥ 7 − j ⟦
+  OLD: «»
+  NEW: «at levels j = 1, …, 5 (unit = j-window; set = all 119 of them) »
+--- segment 5 insert L-1 [2312:2312] -> L-2 [2407:2468]
+  context: …= 222) violates PULSE, GAP ≥ 7 − j only at level 5, 30 times⟦
+  OLD: «»
+  NEW: « (unit = (5-window, PULSE or GAP); in 16 of its 63 5-windows)»
+--- segment 6 insert L-1 [2598:2598] -> L-2 [2754:2784]
+  context: …SE, GAP ≥ 7 − j at levels 1-5 while 48 of its 127 6-windows ⟦
+  OLD: «»
+  NEW: «do not have exactly one move o»
+--- segment 7 insert L-1 [2599:2599] -> L-2 [2785:2802]
+  context: …E, GAP ≥ 7 − j at levels 1-5 while 48 of its 127 6-windows f⟦
+  OLD: «»
+  NEW: « each member of p»
+--- segment 8 replace L-1 [2601:2602] -> L-2 [2804:2829]
+  context: … GAP ≥ 7 − j at levels 1-5 while 48 of its 127 6-windows fai⟦
+  OLD: «l»
+  NEW: «r 6 (the movers 12 and 13»
+--- segment 9 insert L-1 [2603:2603] -> L-2 [2830:2863]
+  context: …AP ≥ 7 − j at levels 1-5 while 48 of its 127 6-windows fail,⟦
+  OLD: «»
+  NEW: « crossed onto movers 22, 11), and»
+--- segment 10 delete L-1 [2615:2621] -> L-2 [2875:2875]
+  context: …t levels 1-5 while 48 of its 127 6-windows fail, in each of ⟦
+  OLD: «which »
+  NEW: «»
+--- segment 11 delete L-1 [2624:2629] -> L-2 [2878:2878]
+  context: …1-5 while 48 of its 127 6-windows fail, in each of which the⟦
+  OLD: « cros»
+  NEW: «»
+--- segment 12 insert L-1 [2631:2631] -> L-2 [2880:2887]
+  context: …le 48 of its 127 6-windows fail, in each of which the crosse⟦
+  OLD: «»
+  NEW: « 48 win»
+--- segment 13 replace L-1 [2632:2641] -> L-2 [2888:2890]
+  context: …e 48 of its 127 6-windows fail, in each of which the crossed⟦
+  OLD: « pair 6 i»
+  NEW: «ow»
+--- segment 14 replace L-1 [2643:2644] -> L-2 [2892:2896]
+  context: … 127 6-windows fail, in each of which the crossed pair 6 is ⟦
+  OLD: «d»
+  NEW: «[a, »
+--- segment 15 replace L-1 [2645:2653] -> L-2 [2897:2898]
+  context: …27 6-windows fail, in each of which the crossed pair 6 is de⟦
+  OLD: «cided by»
+  NEW: «]»
+--- segment 16 insert L-1 [2683:2683] -> L-2 [2928:2936]
+  context: …e crossed pair 6 is decided by the option (9, 1) of rank 87 ⟦
+  OLD: «»
+  NEW: «is dec_s»
+--- segment 17 insert L-1 [2684:2684] -> L-2 [2937:3017]
+  context: … crossed pair 6 is decided by the option (9, 1) of rank 87 (⟦
+  OLD: «»
+  NEW: «12) or dec_s(13) at some state s among s_(a−1), …, s_(e−1) (at every such state »
+--- segment 18 insert L-1 [2687:2687] -> L-2 [3020:3035]
+  context: …ossed pair 6 is decided by the option (9, 1) of rank 87 (in ⟦
+  OLD: «»
+  NEW: «16 of them; at »
+--- segment 19 insert L-1 [2689:2689] -> L-2 [3037:3050]
+  context: …sed pair 6 is decided by the option (9, 1) of rank 87 (in no⟦
+  OLD: «»
+  NEW: « such state i»
+--- segment 20 replace L-1 [2690:2691] -> L-2 [3051:3055]
+  context: …ed pair 6 is decided by the option (9, 1) of rank 87 (in non⟦
+  OLD: «e»
+  NEW: « any»
+--- segment 21 insert L-1 [3240:3240] -> L-2 [3604:3723]
+  context: …s/lower/l5/p_tower_check.py on 24 runs from the stored start⟦
+  OLD: «»
+  NEW: « (the 15 genomes experiments/lower/l3/kill/*.json, the 7 genomes experiments/lower/l4/rec/*.json and the two instances)»
+--- segment 22 insert L-1 [3254:3254] -> L-2 [3737:3743]
+  context: …ower_check.py on 24 runs from the stored start, 62 doubling ⟦
+  OLD: «»
+  NEW: «(run, »
+--- segment 23 insert L-1 [3259:3259] -> L-2 [3748:3754]
+  context: …check.py on 24 runs from the stored start, 62 doubling level⟦
+  OLD: «»
+  NEW: «) pair»
+--- segment 24 insert L-1 [3299:3299] -> L-2 [3794:3968]
+  context: …t, 62 doubling levels, 757 j-windows: DOUBLE-EQ 0 violations⟦
+  OLD: «»
+  NEW: « (its first two clauses on 7,069 (step, doubling level) units, its third on the 757 j-windows, its fourth on the 62 doubling (run, level) pairs, 61 of them with F(j − 1) ≥ 1)»
+--- segment 25 replace L-1 [3424:3431] -> L-2 [4093:4098]
+  context: … window pairs, attained on 12; DOMINANCE-FREEZE 0 on 65,885 ⟦
+  OLD: «equal-d»
+  NEW: «(cons»
+--- segment 26 insert L-1 [3433:3433] -> L-2 [4100:4102]
+  context: …airs, attained on 12; DOMINANCE-FREEZE 0 on 65,885 equal-dec⟦
+  OLD: «»
+  NEW: «ut»
+--- segment 27 replace L-1 [3434:3435] -> L-2 [4103:4104]
+  context: …irs, attained on 12; DOMINANCE-FREEZE 0 on 65,885 equal-deci⟦
+  OLD: «d»
+  NEW: «v»
+--- segment 28 replace L-1 [3436:3438] -> L-2 [4105:4106]
+  context: …s, attained on 12; DOMINANCE-FREEZE 0 on 65,885 equal-decide⟦
+  OLD: «r »
+  NEW: «-»
+--- segment 29 insert L-1 [3447:3447] -> L-2 [4115:4148]
+  context: … on 12; DOMINANCE-FREEZE 0 on 65,885 equal-decider state pai⟦
+  OLD: «»
+  NEW: «r, mover) units with equal decide»
+--- segment 30 insert L-1 [3463:3463] -> L-2 [4164:4200]
+  context: …E-FREEZE 0 on 65,885 equal-decider state pairs and on 1,390 ⟦
+  OLD: «»
+  NEW: «(member of a doubling pair, pair of »
+--- segment 31 replace L-1 [3474:3475] -> L-2 [4211:4212]
+  context: …on 65,885 equal-decider state pairs and on 1,390 consecutive⟦
+  OLD: «-»
+  NEW: « »
+--- segment 32 insert L-1 [3479:3479] -> L-2 [4216:4218]
+  context: …,885 equal-decider state pairs and on 1,390 consecutive-move⟦
+  OLD: «»
+  NEW: «s)»
+--- segment 33 replace L-1 [3480:3482] -> L-2 [4219:4221]
+  context: …885 equal-decider state pairs and on 1,390 consecutive-move ⟦
+  OLD: «pa»
+  NEW: «un»
+--- segment 34 replace L-1 [3483:3484] -> L-2 [4222:4223]
+  context: … equal-decider state pairs and on 1,390 consecutive-move pai⟦
+  OLD: «r»
+  NEW: «t»
+segments 34
