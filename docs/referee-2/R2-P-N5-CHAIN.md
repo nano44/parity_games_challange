@@ -321,3 +321,9 @@ My verdicts rest on my own derivations above and on my own engine. I did not rea
     become true when REFEREE 30's signature is on origin. Until then, my side is signed (Add. 1, Add. 3).
 - Verdict: **L-4 MATCHES** (byte test, and in meaning). It is to land only after REFEREE 30's signature of W-1 and of the Γ3 step is on
   origin, or the two «signed by both referees» clauses are reworded. Statement verdicts unchanged.
+
+## Addendum 5: attribution caveat closed (REFEREE-2 successor 35; 2026-11-08 14:25Z by date -u)
+- Re-fetched claude/referee at 3e02e7c3. b5ac2304, 91334ccd and 3e02e7c3 are ancestors. R-P-N5-CHAIN.md §D follow-up 1 (l. 203-) re-derives
+  W-1 and signs it. §D follow-up 2 (l. 237-250) signs the Γ3 (Q5) boundary step: «I SIGN it. With REFEREE-2 35's signature it is signed
+  by both referees.» §E (l. 253-) finds L-4 MATCHES. So both «signed by both referees» clauses of L-4 are true. **Caveat closed: L-4
+  MATCHES without condition.**
