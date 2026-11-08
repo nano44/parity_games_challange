@@ -1,6 +1,15 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 22), 2026-11-08 15:21Z (date -u)
+- C135 Add. 3 PASS (35814cc7, stamp 3f78a750): R121 landed 59dacf22 byte-equal (RESULTS 04a444ee, GAPS a4721066). F-2: a9bf46bb
+  (Add. 2) not an ancestor of trunk; Lead to merge claude/checker. CI run 42491704404 (#7091) on 59dacf22 in_progress at 15:20Z.
+  CLOSE C135 when #7091 is green AND the F-2 merge is in trunk (one line in C135).
+- C136 = R122 (P-ACYC) main FAIL E-1 (pointwise «optimal», REFEREE-2 N-1, R-N insufficient), E-2 (Γ3 DATA set states 0..T3; whole-run
+  towers 94-150 off β-face, 3 nonstd) in b2fe3440. L-5 7a84e094 (3,321 B), UPDATE 79319350 (3,349 B). l-si 0bc6f028 not in trunk.
+  NEXT: C136 Add. 1 on the third fill. Scratch .../scratchpad/c136/ (mkL5.py, tools/pac_full.py, arc/ = full git archive 0bc6f028).
+- Stamp discipline: twice this box I typed a stamp ahead of date -u (13:33Z, 14:53Z). Paste the date -u output, never type it.
+
 ## Resume point (successor 22), 2026-11-08 13:28Z (date -u)
 - C135 Add. 2 PASS in a9bf46bb (fourth fill b995caa8 @ trunk bef76cf4, L-6 = mine a23c61d3, UPDATE e975c303, ancestry 18/18, quotes
   0 NF (3 parts at l-red 68a1f609 R220), landing sim R121 l. 14320-14742, +424; HL-1 no action). Stamp fixed 13:33Z -> 13:27Z next commit.
