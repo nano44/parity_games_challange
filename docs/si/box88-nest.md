@@ -2,7 +2,7 @@
 Written 2026-11-08 (date -u in the commit). Labels: PROVED (lane) / CONJECTURE / DATA (unit, set, scope, counter) / DEAD (instance) / READING.
 Nothing here is a TARGET.md claim. G-N5-TIME stays OPEN. N5′-xi stays a CANDIDATE (D1).
 Tools: experiments/si/box88/ (leap88.py census; climb88.py generic climb; climbp88.py MIRROR lane climb; tie88.py, blind88.py CARRY
-tests; check88.sh, wired). Inputs: the 26 frozen instances of boxes 84-86 (pinned there) and the instances frozen in box88/inst (pins.sha1).
+tests; nest88.py own N2 census; check88.sh ~4 min, wired; HP6b-8b census recorded, not re-run). Inputs: the 26 frozen instances of boxes 84-86 (pinned there) and the instances frozen in box88/inst (pins.sha1).
 Scope of every run: box81/ref idealcyc (IDEAL-CYC Howard, [E-LEV]), cap 3000.
 
 ## 0. Answer
@@ -89,6 +89,8 @@ Unit / scope / counters as §1. «per-bit» = default mode (real bits).
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 26 frozen, per-bit (out/leap88.out) | 72 | 123 | 61 | 5 | 3 | 7 | 0 | 0 |
 | 26 frozen, ALL (out/leap88_all.out) | 156 | — | 98 | 5 | 3 | 7 | 0 | 0 |
+| HP6b / HP7b / HP8b, per-bit (out/leap88_slow.out; T 71 / 98 / 127) | 6 / 7 / 8 | 9 / 10 / 11 | 15 / 19 / 23 | 4 / 4 / 4 | 2 / 2 / 2 | 5 / 5 / 5 | 0 | 0 |
+| HP3t / HP4t / HP5t per-bit, NK6_cl21 / ND4_hp3 ALL (out/leap88_fast.out) | 3 / 4 / 5 / 5 / 5 | 8 / 10 / 8 / 6 / 6 | 3 / 10 / 15 / 6 / 5 | 3 / 7 / 7 / 6 / 4 | 2 / 4 / 2 / 3 / 4 | 7 / 9 / 9 / 7 / 5 | 0 | 0 |
 LOCKSTEP (per-bit; lowest real bit B1 of HP_mup; counters ev, k, depth, da, db, EU):
 | h | ev | k | depth | da | db | EU |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -96,14 +98,14 @@ LOCKSTEP (per-bit; lowest real bit B1 of HP_mup; counters ev, k, depth, da, db, 
 | 3 | 5 | 3 | 2 | 4 | 3 | 41 |
 | 4 | 5 | 4 | 2 | 7 | 6 | 99 |
 | 5 | 5 | 5 | 1 | 11 | 9 | 159 |
-CLIMBS: see §5 (filled at the end of the box).
+Switch census (out/nest88.out): N2 HP2-5_mup 0 / 1 / 5 / 11 (= L-RED 60), HP3t / HP4t / HP5t 1 / 6 / 13, switch-depth ≤ 2 everywhere here.
 
 ## 5. Climbs (DATA; frozen bests in box88/inst, sha1 in pins.sha1)
 Unit = genome; scope as §1; counters leap88 (per-bit or ALL as named), nest88 (N2, depth), asc197 (maxalt, alternation LENGTH, §0).
 | climb | seed genome / cfg | iterations | best (frozen as) | T | maxk | maxev | maxdepth | N2 / switch-depth | maxalt |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| climb88 (ALL; climb225 mutations) seed 2881 | CL2_21 | 1500 | NK6_cl21 | 11 | 6 | 7 | 3 | — | 6 |
-| climb88 (ALL) seed 2882 | HP3_mup | 3000 | ND4_hp3 | 11 | 4 | 5 | 4 | — | 3 |
+| climb88 (ALL; climb225 mutations) seed 2881 | CL2_21 | 1500 | NK6_cl21 | 11 | 6 | 7 | 3 | 4 / 2 | 6 |
+| climb88 (ALL) seed 2882 | HP3_mup | 3000 | ND4_hp3 | 11 | 4 | 5 | 4 | 3 / 2 | 3 |
 | climbp88 (per-bit; MIRROR lanes) h = 3 seed 2883 | HP3_mup lanes | 300 | HP3t | 17 | 3 | 7 | 2 | 1 / 1 | 4 |
 | climbp88 h = 4 seed 2884 | HP4_mup lanes | 300 | HP4t | 24 | 7 | 9 | 4 | 6 / 2 | 5 |
 | climbp88 h = 5 seed 2885 | HP5_mup lanes | 150 | HP5t | 71 | 7 | 9 | 2 | 13 / 2 | 6 |
