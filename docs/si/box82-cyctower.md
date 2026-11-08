@@ -108,3 +108,49 @@ Corollaries:
    LADDER item first (the Lead has routed the reduction there).
 2. A lemma bounding R per level by the activity one level up (the obstruction side), if the gadget fails in a way that generalises.
 3. Hand best_R_d5_s3 to L-NEW as a RECUR(2) test instance (frozen in experiments/si/box82/out/climbR/, pins.sha1).
+
+## 5. Step 4.1, the hand gadget: design constraints and a first target (Lead GO 00:25Z; written at ~395k context, before parking)
+Goal (Lead): a counter where one R-step at level l + 1 re-arms two R-steps at level l, under N5′-xi (Howard on IDEAL-CYC / Γ3).
+L-RED 56's LADDER item moves here. L-RED attacks any candidate.
+
+### 5.1 What any such gadget must satisfy (each item from a named landed or lane result)
+- (K1) CAP-R (§1, PROVED lane): h doubling levels need R ≥ 2^(h+1)/(N + 1) − C − 1, so R itself must double per level. The re-arm must be
+  an R-step (σ̄ change), not a C-step: C ≤ n(2M + 2) (R118 (e)).
+- (K2) Ξ-cycles are necessary (P-ACYC ACYC-LIN: R = 0 on Ξ-acyclic genomes). Level-0 gates never help (R118 (h) LEVEL0). So the lowest
+  bit sits at level ≥ 1.
+- (K3) e-set height must be super-polynomial for some vertex. Via OVT-DV, any super-polynomial R_mov needs super-polynomially many values
+  at some gate face (L-RED R217 §2, PROVED-CONDITIONAL on [LOC]). If L-NEW's QUIET survives L-RED 56, it needs super-polynomially many
+  e-set changes. So some hub v must walk through super-polynomially many e-sets inside one Λ-interval.
+- (K4) By HUB-ASC-G / UP-B (box 193 A4, PROVED lane), that hub's plays need ω(1) ascents, each through its own strictly upward Ξ-edge.
+  The only known abstract run that does this is ASC-EXP (box 193 §3): the hub chain is the binary expansion of t, visited LOWEST SET
+  BIT FIRST, climbing.
+- (K5) LEAK-ARCH (L-RED R217 §11, PROVED under H1-H3): a lowest-first hub (H1) plus access options from lower set bits to higher open
+  bits (H2) whose access plays carry no e (H3) leaks: a set bit resets prematurely.
+  - Violating H3 cannot help: an e on the access route lies on the access side B′, which only strengthens the access option (E-DOM).
+  - So the gadget must violate H2: NO access options. A higher bit is set by something other than a lower bit's access move.
+- (K6) CHAIN-SHIELD (R217 §12, PROVED-CONDITIONAL on [LOC]): a bit whose escape continuation is chained into a higher bit's mover cannot
+  reset to that bit's access. And RS3 (DEAD as a counter) shows the converse problem: after a carry the lower bit re-sets with no
+  delay. So a re-arm needs the lower bit's continuation lane to be UNCHAINED by the carry and re-discovered: its exits must see the
+  carry before its chain does.
+
+### 5.2 Design proposal LADDER-R (not built, not tested)
+Idea: let the carry itself be the upward Ξ-edge of the hub play, so that no access options exist (K5). Then make the re-discovery of
+the lower lane an R-step event (K1) at two gates of level l.
+- Bits: one gate pair per level l ≥ 1 (K2): SET gate S_l (e-face e_l, with e_1 < e_2 < … by level, E-DOM order) and a Ξ-face whose β
+  leads UP to the mover of level l + 1 (an upward Ξ-edge; U(G) = number of levels, so UP-B allows ascents up to h).
+- The hub play is the ASC-EXP pattern (K4): from the lowest set bit, β-faces climb to the next set bit's mover. A carry at level l + 1
+  changes the Ξ-target that the level-l bits' β-faces lead to (the "unchaining" of K6), because the level-(l + 1) mover changes option.
+- Re-arm (target of the first test): when level l + 1 changes (one R-step: σ̄ at S_(l+1) flips), the two gates of level l must each flip
+  twice before level l + 1 flips again. This is the Lead's «one R-step at level l + 1 re-arms two R-steps at level l».
+- Delay: each level-l bit needs a delay lane (RS2-style e-free deceleration lane, R217 §11), so that its two flips happen at different
+  steps (HIDE-BUSY: a hidden SET switches at every step, so the delay is a value count).
+- Exits of the lane must point to the level-(l + 1) mover (not to a shared hub s: that is H1+H2), so that the carry is visible to the
+  exits before the chain (K6).
+
+### 5.3 First test (h = 2), measurable with the existing tools
+1. Build LADDER-R for h = 2 (levels 1, 2 plus level 0 W-targets) by hand as a genome JSON (box 193 format). Expect N ≈ 10-20.
+2. Run census81.py (R, labels, ascents, e-set height per Λ), anal82.py (per-level GF / RF), real81.py (Γ3 = Howard), xchk81.py.
+3. Success criterion at h = 2: RF(1) ≥ 2·RF(2) + 2 along the run, with hub e-set height ≥ 4 in one Λ-interval and no premature reset
+   (no R-step at level 1 between two level-2 flips that is not caused by a level-2 flip).
+4. Record the exact obstruction if it fails (which gate, which state, which lemma: CHAIN-SHIELD, HIDE-BUSY, LEAK-ARCH, E-DOM-CHOICE).
+5. If it succeeds at h = 2, go to h = 3 and hand it to L-RED (via the Lead) before claiming anything.
