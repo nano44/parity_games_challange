@@ -1,4 +1,133 @@
-# Draft RESULTS R121 (Lead; first fill 2026-11-08T02:00:21Z by date -u (subagent) on P-N5-ASC line L-2, docs/new/P-N5-ASC-line-L2.txt, l-new a5dcf9c6, sha1 f109cb69507efd863133a08a2e90096ad2acb7f5 (draft sha1 04323afb, CHECKER C135 0942e8be: FAIL E-1..E-4); SECOND FILL 2026-11-08T06:04:48Z by date -u (subagent) on P-N5-ASC line L-4, docs/new/P-N5-ASC-line-L4.txt, l-new a744677e, sha1 4017305a34eac21615ba8f172a9b899544d25659; THIRD FILL 2026-11-08T08:26:44Z by date -u (subagent) on P-N5-ASC line L-5, docs/new/P-N5-ASC-line-L5.txt, l-new e28e962d, sha1 fe4d3f902b6afde93384ebf625fa9bebcea0e1d0) — to CHECKER C135 Add. 1 — NOT LANDED; goes after R120 (LANDED at 5470cc0c), before Erratum E-1
+# Draft RESULTS R121 (Lead; first fill 2026-11-08T02:00:21Z by date -u (subagent) on P-N5-ASC line L-2, docs/new/P-N5-ASC-line-L2.txt, l-new a5dcf9c6, sha1 f109cb69507efd863133a08a2e90096ad2acb7f5 (draft sha1 04323afb, CHECKER C135 0942e8be: FAIL E-1..E-4); SECOND FILL 2026-11-08T06:04:48Z by date -u (subagent) on P-N5-ASC line L-4, docs/new/P-N5-ASC-line-L4.txt, l-new a744677e, sha1 4017305a34eac21615ba8f172a9b899544d25659; THIRD FILL 2026-11-08T08:26:44Z by date -u (subagent) on P-N5-ASC line L-5, docs/new/P-N5-ASC-line-L5.txt, l-new e28e962d, sha1 fe4d3f902b6afde93384ebf625fa9bebcea0e1d0; FOURTH FILL 2026-11-08T12:00:14Z by date -u (subagent) on P-N5-ASC line L-6, docs/new/P-N5-ASC-line-L6.txt, l-new 2f4167cd, sha1 a23c61d384036ce3fa771e27e175a8dbf2331658) — to CHECKER C135 Add. 2 — NOT LANDED; goes after R120 (LANDED at 5470cc0c), before Erratum E-1
+FOURTH FILL (2026-11-08T12:00:14Z by date -u, subagent; for CHECKER C135 Add. 2). Read at the origin heads of one fetch at
+2026-11-08T12:00:01Z-12:00:01Z (date -u before and after the fetch; git fetch of claude/l-new, claude/referee, claude/referee-2,
+claude/checker, claude/vibrant-johnson-nxvvxo; rc 0; fetch2.log; the same five branches fetched first at 2026-11-08T11:37:20Z-11:37:21Z
+and at 11:38:52Z, the second in fetch.log, claude/referee and claude/referee-2 once a minute from 11:44:19Z to 11:58:44Z while I waited
+for the two byte tests, poll.log, and at 11:58:37Z-11:58:41Z after the Lead's message that §H was on origin; I merged, committed and
+pushed nothing and edited docs/agents/R121-draft.md only): l-new 2f4167cd (2f4167cd6c87b3ca3c41144ff33765536f9ddb4a,
+2026-11-08T10:52:09Z, «L-NEW 65: P-N5-ASC fixes entry 6 + L-6 (CHECKER C135 Add. 1 R6); box 197 (ASC-WIT, ASC-ROOT, RE-COUNT, RE-EQUIV;
+DS-order DATA)», L-NEW successor 65, the branch head and the commit of record; against e28e962d the packet and L-1 to L-5 are equal, the
+fixes file is e28e962d's with entry 6 appended, and in experiments/new/box193 only asc.pins changed and mkl6_193.py is new (git diff;
+l6rel121d.py); its other commits after e28e962d change P-N5-CHAIN, P-N5-END, P-N5-QUIET, box194-box197, check.sh outside l. 988-1003,
+notes/L-NEW.md and handover files, git diff --name-only). referee 6c8d6956 (6c8d6956d500be70211100a1557da6f42e091a35,
+2026-11-08T11:26:43Z, «REFEREE successor 30: R-P-N5-ASC §H (L-6 a23c61d3 MATCHES = L-5 + R6; HL-1 optional)», the branch head; its
+parent 4434597c was the head at every fetch before 11:58:37Z, poll.log); docs/referee/R-P-N5-ASC.md there 413 lines, 36,739 bytes, sha1
+761a6795bc442a132e94da8ee9b61761007afbba; its l. 1-386 = d17b305e's file, by cmp; §H is l. 388-413. referee-2 0e5c7c37
+(0e5c7c37b567320d97621914b462c17d94cbfb53, 2026-11-08T11:05:52Z, the branch head at every fetch of this fill):
+docs/referee-2/R2-P-N5-ASC.md there = 388530af's file (404 lines, 34,707 bytes, sha1 a386e797a1e4f7ef4a82d81374c319b9359b0ca9), no
+Addendum 7 (the byte-test script R2-P-N5-ASC/bt_l6.py is on origin at 52d51575, «REFEREE-2 successor 35: resume point 1; …; P-N5-ASC L-6
+byte-test script», its verdict is not). checker 9ee82f6a (9ee82f6aafed5077ff47fb29b663a8caf362d0aa, 2026-11-08T10:05:25Z, «CHECKER
+successor 22: resume point (C135 Add. 1 FAIL E-5, R6)», the branch head; against 0ffde42c it changes notes/CHECKER.md only), so C135 is
+0ffde42c's (0ffde42c55825cc5fae932981eeef99d047ca842, 2026-11-08T10:05:13Z, «CHECKER C135 Add. 1: R121 third fill 1fa73568 on L-5 FAIL
+E-5 (hub/value/forest/chain undefined; …); exact R6, L-6 a23c61d3, UPDATE e975c303; N-S no action»): docs/checker/C135.md 144 lines,
+16,308 bytes, sha1 aeef46e5023b27cd3f6116c91d1e47b45fb62123; its l. 1-93 = 0942e8be's file, by cmp. 2f4167cd, 0ffde42c, 9ee82f6a,
+6c8d6956, 0e5c7c37 and 52d51575 are NOT ancestors of trunk fdc0f1e9 (the local HEAD and origin trunk), and neither are e28e962d,
+d17b305e, 388530af and 0942e8be (git merge-base --is-ancestor, sim121d.py). The Lead merges claude/l-new, claude/referee,
+claude/referee-2 and claude/checker into trunk before C135 Add. 2 (LEAD-STATE l. 2826, l. 2830); the landing simulation below runs on
+the current trunk all the same, and CHECKER runs its own ancestry test and landing simulation on the merged trunk at Add. 2 (C135 Add.
+1: «The ancestry test and the landing simulation will run on the merged trunk SHA the Lead sends (10:02Z).», l. 131-132).
+Trunk: local HEAD fdc0f1e9 (fdc0f1e9cff20275b6e7c2c20b4e61a0ddfcd8a5, 2026-11-08T11:14:47Z, «Lead: L-RED 60 roster/restart; L-SI 46 +
+L-RED 60 checks 5/5; log 10:33Z-11:16Z + resume point (…)»), = origin trunk at this fetch (at my first fetch, 11:37:20Z, origin trunk
+was its parent c6f9cc55, c6f9cc553f013a75370a707adf9eaa6698489bdd, 2026-11-08T10:37:12Z, «Lead: REFEREE 30, L-SI 46 roster/restart rows;
+checks 5/5 (…); log 10:00Z-10:33Z (C135 Add. 1 FAIL E-5 -> R6/L-6; …)»); the working tree is clean (git status --porcelain empty).
+docs/agents/R121-draft.md at HEAD and at origin trunk is the third fill, sha1 1fa73568e67187c08ede98afcc2d31eeb16c2e39 (committed at
+3906d411, 2026-11-08T08:44:14Z). RESULTS at fdc0f1e9 and at c6f9cc55: sha1 66e7119615efa5a0bb25b898e32b5b371c55c122; GAPS
+2a41c7654d4e9dedee7abc8591dfb792633bc2c9; both = the third fill's: nothing landed since. «### R120» l. 14114, «**Erratum E-1**» l.
+14320, GAPS l. 11 76 "|", its last UPDATE R120's (sim121d.py). «R121», «C135» and «P-N5-ASC» 0 times in RESULTS and in GAPS.
+New sources (read in full): CHECKER C135 Add. 1 (docs/checker/C135.md l. 94-144 at 0ffde42c); fixes entry 6 (docs/new/P-N5-ASC-fixes.md
+l. 157-182 at 2f4167cd; the file 182 lines, 17,302 bytes, sha1 0bab7a94bca3a5dcba2da8b002071c1edc43141c; its l. 1-156 = e28e962d's file,
+by comparison); L-6 (2f4167cd, the file's only commit); experiments/new/box193/mkl6_193.py (19 lines, 1,756 bytes, sha1
+cba0cb2bdcea20ec15f7be5ac3ce583fb4ebfe33); experiments/new/box193/asc.pins at 2f4167cd (43 rows, 2,554 bytes, sha1
+aced1453af1e1e37f8de163df1e7449347b51c9c; against e28e962d's: the fixes file re-pinned, L-6 and mkl6_193.py added);
+experiments/new/check.sh l. 988-1003 at 2f4167cd (byte-equal to e28e962d's); packet §2 l. 58-62 and §4 l. 109-118 again; REFEREE §H
+(docs/referee/R-P-N5-ASC.md l. 387-413 at 6c8d6956) and its scratch/asc_logs/l6test.out (read, not re-run); docs/agents/LEAD-STATE.md at
+HEAD l. 2808 (09:19Z, C135 Add. 1 sent), l. 2820 (10:02Z), l. 2826 (10:25Z: «Routed R6 to L-NEW 65 (fixes entry 6 + L-6) first; then
+byte tests REFEREE 30 + REFEREE-2 35, fourth fill, merged trunk SHA -> C135 Add. 2.»), l. 2829-2830 and l. 2841.
+WHAT CHANGED SINCE THE THIRD FILL. CHECKER successor 22's C135 Add. 1 on the third fill (1fa73568, L-5): «**FAIL** (E-5; one exact
+replacement R6)» (l. 94). E-5 is the third fill's own note N-H, made REQUIRED: «L-5 defines neither a forest, chain(x), a hub nor a
+hub's value (packet §2 l. 59-62).» (l. 114-115); «The hub's defining condition, chain_s(h_s) ≤ chain_t(h_t) for s < t, is a HYPOTHESIS
+of the theorem, not notation: it is what the B = 0 proof uses (l. 115). Without it the clause is false.» (l. 115-116); witness (its
+scratch hub.py, l. 116-119): on CS(3) a run of four forests with every chain lex-nondecreasing and a choice h_t ∈ {⊥, 1, 2, 3} with no
+monotonicity condition give 8 distinct values, all descending, against «F_0(3) = 7. So the line's HUB-ASC(0), read with «hub» = «a
+choice of item», fails.» (l. 119). It did not take the R-H I proposed, for two defects that I accept as stated: «(1) «a forest a map
+next on the items without cycles»: a map from a finite set into itself always has a cycle, so no forest exists. The packet's next maps
+into items ∪ {⊥}. (2) The hub may be ⊥, but R-H does not define chain(⊥). The packet sets chain(⊥) := ∅.» (l. 123-125). Its fix is R6
+(l. 133-137): «It defines what the packet defines and nothing more. Its hub condition is the packet's l. 62.» (l. 126). N-S: «**N-S,
+ruled: no action.**» (l. 127), «The same holds for the line-only entry 6 that R6 needs. The drafter's optional R-S is not taken.» (l.
+128-129). Its other findings on the third fill: R1-R5, R-A and R-I CORRECT (l. 142); title, entry slice, «PENDING» count and UPDATE as
+the third fill had them (l. 107-110); the two check.sh blocks rc 0 from an archive of e28e962d (l. 111-112); not run at Add. 1: quote
+sweep, word diff, stale-phrase sweep, ancestry test, landing simulation (l. 130-132). L-6 = L-5 + R6, fixes entry 6 by L-NEW successor
+65 («R6 (REQUIRED, taken; CHECKER's exact strings)», l. 164; read against packet §2 l. 58-62 by the lane, «no misstatement.», l. 169),
+and C135 Add. 1's predicted sha1s hold: L-6 a23c61d3… (5,449 bytes, l. 139) and its UPDATE e975c303… (5,479 bytes, l. 141). So N-H and
+N-S are closed (E-5 by R6; N-S by the ruling), and R-H and R-S lapse.
+BYTE TESTS OF L-6. REFEREE-2 successor 35, Addendum 7: not on origin at any fetch of this fill, up to the fetch of record
+(origin/claude/referee-2 0e5c7c37 throughout, poll.log); the commit the Lead's brief named for it is not in git here, so I do not cite
+it: <R2-A7>. REFEREE successor 30, §H (6c8d6956, 2026-11-08T11:26:43Z; heading «date -u at writing 2026-11-08T11:26Z», l. 388): R6's
+strings «typed from C135 Add. 1 (claude/checker 0ffde42c), not from the lane's script» (l. 392); «`cmp` with the lane's L-6: **EQUAL**
+(scratch/asc_logs/l6test.out)» (l. 393); «So L-6 = L-5 + exactly R6.» (l. 394); the lane's own checks from an archive of 2f4167cd (l.
+395-396); R6 in meaning against packet §2 l. 58-62, clause by clause, each «CORRECT» (l. 397-403); CHECKER's witness re-checked by hand,
+«E-5 is closed.» (l. 404-406); «Fixes entry 6 (docs/new/P-N5-ASC-fixes.md at 2f4167cd): CORRECT;» (l. 407); «OPTIONAL (not required;
+Lead and CHECKER decide): HL-1. The hub's «≤» in R6 is not labelled «lex».» (l. 408), «I do not require it.» (l. 410-411); «Verdict:
+**Line L-6 MATCHES** the packet read with fixes entries 1-6; R1-R5, R-A, R-I and R6 all CORRECT. All statements stay as in §0 / earlier
+sections.» (l. 412-413). HL-1 is recorded here as OPTIONAL and not applied: the Lead's ruling, in its message to this fill, is that HL-1
+is not taken; L-6, the entry's line and the UPDATE are without it.
+Checks run at this fill (scratch /tmp/claude-0/-home-user-parity-games-challange/43a29ffc-0674-5391-84c1-1d3918a14b5d/scratchpad/r121d;
+nothing written into the repository but this file). (a) l6rel121d.py: R6 parsed from fixes entry 6 (l. 164-168), from C135 Add. 1 (l.
+133-137) and from mkl6_193.py's string list: equal (True); the old string once in L-5 and 0 times in L-6, the new string 0 times in L-5
+and once in L-6; L-5 + R6 = L-6 (True); L-1 to L-5 at 2f4167cd byte-equal to e28e962d's (True ×5); the packet at 2f4167cd = e28e962d's =
+the frozen 9c9cb50d… (True); fixes l. 1-156 at 2f4167cd = the file at e28e962d (True); check.sh l. 988-1003 at 2f4167cd = e28e962d's
+(True). L-6 = a23c61d384036ce3fa771e27e175a8dbf2331658, 5,449 bytes, one line with its newline, 5,333 characters, 914 tokens, 133 «(» /
+133 «)», depth never negative, final depth 0, 0 "|", one « — », «[» 11 times, «under [E-LEV]» 4 times, «R1xx» 0, «gauntlet» 0, «not a
+step-4 pass» once, «G-N5-TIME stays OPEN» once, «i.e.» 0, «⊥» 4 times, «chain_t(h_t)» twice; token diff L-5 → L-6 three hunks, 0 tokens
+out, 49 in, all inside R6: «forest a map next from the items to the items and ⊥ without cycles, chain(x) := (x, next(x), next²(x), …) up
+to ⊥, compared as a set, a» inserted after «compared by number, a», «(h_t an item or ⊥ at each time t, chain(⊥) := ∅, with chain_s(h_s)
+≤ chain_t(h_t) for s < t)» after «a hub», «chain_t(h_t)» after «whose value». (b) From a git archive of 2f4167cd (experiments, docs/new,
+scripts): check193.sh 2026-11-08T11:39:22Z-11:40:07Z by date -u, rc 0, 71 output lines, byte-equal to the committed check193.out (cmp;
+sha1 d4fb21644db639435806886bb6c709add84d9ded, unchanged since a5dcf9c6); then the two check.sh blocks «BOX 193 ASC» and «P-N5-ASC»
+(check.sh l. 988-1003 at 2f4167cd, copied into a script and run from experiments/new of the archive, the script byte-equal to the third
+fill's blocks.sh), 2026-11-08T11:40:07Z-11:40:51Z, rc 0, «BOX 193 ASC: … = frozen: PASS» and «P-N5-ASC: packet and 43 pinned files match
+asc.pins: PASS»; then mkl3_193.py (on C135 from 0942e8be), mkl4_193.py, mkl5_193.py and mkl6_193.py in the archive, rc 0 each, output
+cmp-equal to L-3, L-4, L-5 and L-6 at 2f4167cd. (c) upd121d.py: r121/tools/upd121.py l. 1-69 exec'd unchanged, as upd121b.py and
+upd121c.py did (its file write not executed): the controls R97-R116 rebuilt from their lines and compared with GAPS l. 11 byte for byte,
+and R117-R120 as landed, all True ×24; the L-2 UPDATE 6635b14e… reproduced; run121() unchanged on L-3: f545cba7… (True), on L-4:
+d3a42330… (True), on L-5: 3571ef76… (= the third fill's UPDATE line d[895], True), on L-6: sha1 e975c303470236f97b2c92a11507316e6edbc06a
+(no newline, unfilled), 5,479 bytes, 5,365 characters, 913 tokens, 133 «(» / 133 «)», depth never negative, 0 "|", one each of the three
+fill tokens, «2026-11-07» 0 times, « — » 0 times; = the direct build (True), = C135 Add. 1's prediction (True), = 3571ef76… with R6
+applied, the old string once there (True). Token diff L-6 → UPDATE: 11 hunks, 43 tokens out, 42 in, the 11 hunks of C135's G-U ruling,
+as on L-2 to L-5; L-5's UPDATE → L-6's: three hunks, 0 out, 49 in (R6). Appended after R120's UPDATE on GAPS l. 11 it keeps 76 "|",
+R121's last, the prefix byte-unchanged (True). (d) chk121d.py (title, block, UPDATE, tokens, pipes, stale grep, quote sweep), lp121d.py
+(line-precise quotes new at this fill), sim121d.py (landing simulation on fdc0f1e9, = c6f9cc55 for RESULTS and GAPS; the ancestry of the
+commits of record), rec121d.py (the kept sections byte-unchanged) and hex121d.py (hex ids): Addendum 4.
+NOTES at this fill (for CHECKER; no line change proposed):
+- N-H and N-S: closed (above). The third fill's N-H paragraph and its R-H and R-S strings stay in the THIRD FILL section below as the
+  record of draft 1fa73568; C135 Add. 1 l. 123-125 is the ruling on R-H, and R-H is not in L-6, the entry or the UPDATE.
+- N-L, THE HUB'S «≤» (note). In L-6 the hub's condition reads «chain_s(h_s) ≤ chain_t(h_t)» with «≤» not labelled; the only order on
+  chains the line names is «every chain lex-nondecreasing», and «compared as a set» says what is compared. The packet writes the same
+  unlabelled «≤» in the hub's definition (l. 62) and labels the run's order «(lex)» (l. 61). REFEREE §H raises the same point as its
+  OPTIONAL HL-1 (l. 408-411), citing «as packet l. 60 writes for runs» (l. 410); the label «(lex)» is on packet l. 61, the second line
+  of the run's sentence (l. 60-61). The Lead's ruling: not taken. I propose nothing.
+- N-U, «up to ⊥» (note). R6 says «chain(x) := (x, next(x), next²(x), …) up to ⊥»; packet l. 59 has no «up to ⊥». Fixes entry 6: ««up to
+  ⊥» only makes explicit that the sequence stops at ⊥, which l. 59 leaves implicit (next is undefined on ⊥).» (l. 173). The string is
+  CHECKER's own (C135 Add. 1 l. 133-137); no new claim.
+- G-U: R118's procedure, as C135 ruled; on L-6 it gives C135 Add. 1's predicted UPDATE (c) above.
+- D-11, STAMPS (history, no verdict affected). C135 Add. 1's heading «(2026-11-08 10:04Z by date -u, CHECKER successor 22)» (l. 94) is
+  before its commit 0ffde42c (10:05:13Z); it cites «Lead brief 09:19Z and «go» 10:02Z» (l. 95), as LEAD-STATE l. 2808 and l. 2820 log
+  them. Fixes entry 6's «Lead 10:25Z» and «written 10:51Z by date -u» (l. 158) are before 2f4167cd (10:52:09Z); LEAD-STATE l. 2826 logs
+  the routing at 10:25Z. REFEREE §H's heading «date -u at writing 2026-11-08T11:26Z» (l. 388) matches 6c8d6956 (11:26:43Z), but the
+  commit was not on origin at my fetches from 11:37:20Z to 11:57:44Z and was at 11:58:37Z-11:58:41Z (my fetch after the Lead's message)
+  and 11:58:44Z (poll.log): a local commit time, pushed later (as D-9's 52e6e77b).
+Changes at this fill, and nothing else: line 1 (the header: the FOURTH FILL clause added, and its target changed from C135 Add. 1 to
+C135 Add. 2); this section (new); the title (L-6); in the entry: Object (successors 61-65; the packet at 2f4167cd; six fixes entries;
+entry 6; L-6 the line of record; its line history L-1 to L-6; C135 Add. 1, REFEREE §H and REFEREE-2 Add. 7 on L-6), Claims signed (the
+rounds; the line items closed; R6 as a wording), Setting, (a) and (e), The RESULTS line (L-6; its clauses), Premise (the trunk; R6), L41
+and L43 (L-6), Fixes (header, entry-6 bullet, closing bullet), Not signed (C135 Add. 1's witness), Referee strengthening (iv), Honest
+limits (i), (viii) and (x), Data (2f4167cd; asc.pins 43 rows; the re-run of this fill; C135 Add. 1's re-run; R6 adds no DATA),
+Signatures (§H, Add. 7, successor 65's commit), INDEPENDENCE (R6; the byte-test scripts), TARGET.md diff (L-6; R6); the GAPS preamble
+and the UPDATE (rebuilt from L-6); Addendum 4 (new, at the end). The THIRD FILL section (from "THIRD FILL (2026-11-08T08:26:44Z" to its
+last line), the SECOND FILL section, the FIRST FILL record, the first fill's Addendum, Addendum 2 and Addendum 3 are kept byte-unchanged
+(rec121d.py): where they call L-5, L-4 or L-2 the title or the line of record, carry or describe the R29-SF token, propose R-H or R-S,
+call N-H a note, or give their line numbers, counts, slices and UPDATE sha1s (6635b14e…, d3a42330…, 3571ef76…), they describe drafts
+04323afb, 823d15c3 and 1fa73568; the entry block now follows L-6.
 THIRD FILL (2026-11-08T08:26:44Z by date -u, subagent; for CHECKER C135 Add. 1). Read at the origin heads of one fetch at
 2026-11-08T08:13:01Z-08:13:02Z (date -u before and after the fetch; git fetch of claude/l-new, claude/referee, claude/referee-2,
 claude/checker, claude/vibrant-johnson-nxvvxo; rc 0; I merged, committed and pushed nothing and edited docs/agents/R121-draft.md only):
@@ -528,10 +657,10 @@ the procedure of G-U 988c1e7ade9ee9c4fbf3412bca696f926b1aab16 (5,156 bytes); R-R
   fcdc16b4 → d3fed33c. L-RED: 68a1f609 (R220). CHECKER: docs/checker/ ends at C134.
 (14) DEAD-ENDS ROWS: NONE (no statement killed; the [E-LEV] necessity is a scope fact of a hypothesis, recorded in the scope tail).
 
-### R121 [refereed-only] The e-set height of one vertex on IDEAL-CYC is polynomial when its plays have boundedly many ascents (HUB-ASC-G), in particular, under the e-priority hypothesis [E-LEV], on genomes with boundedly many upward Ξ-edges (UP-B) (premises: RESULTS R104's definitions of the genome and of Γ(G) only; RESULTS R118 (a) IDEAL-CYC(G), (b) F1, F2, F3 and (e) «C ≤ n·(2M + 2).» in its per-vertex form (Λ_t(v) takes at most 2M + 3 values, in increasing reward); VJ00 §4.2 / Friedmann arXiv 1106.0778 §3 for the value (Λ, Π, k) and its order ⊴; HYPOTHESIS [E-LEV] (only for §6 UP-JUMP, UP-B and NOUP): lev(x) < lev(x′) implies pr(e_(x,k)) < pr(e_(x′,k′)), the order of Γ(G) as built by experiments/new/box189/gamma3.py (and of R104's packet §3.1), not in a landed line; not used: [LOC], OVT-DV, IN-BOUND, any L-RED lane lemma, F4/F4′, F5, F6), with seq_t(v) the e-vertices in Π_t(v) in play order, E_t(v) their set, an ascent of seq_t(v) a step to a more relevant element, sets of e-vertices compared lexicographically by their most relevant differing element, and D_E,I(v) the number of distinct E_t(v) on an interval I of states with Λ_t(v) = w fixed (M_w := the number of e-vertices more relevant than w): (Lemma E-MON) if Λ_t(v) = Λ_(t+1)(v) then E_t(v) ≤ E_(t+1)(v); (Lemma CHAIN-DECOMP) if seq_t(v) = (f, …), then f's successor y_f is a mover with Λ_t(y_f) = Λ_t(v) and E_t(v) = {f} ∪ E_t(y_f), hence seq_t(v) = (f, seq_t(y_f)); (Lemma SKELETON and Theorem HUB-ASC(B)) in the abstract chain system CS(M) (items 1..M compared by number, a run of forests with every chain lex-nondecreasing, an ascent a step to a larger item), a hub whose value has at most B ascents at every time takes at most F_B(M) distinct values, F_0(M) = 1 + M(M + 1)/2 (DESC-POLY), F_B(M) = (M² + M + 1)(1 + M·F_(B−1)(M)²), a polynomial of degree 5·2^B − 3 for fixed B; (Corollary HUB-ASC-G) for every genome G, every vertex v and every interval I with Λ_t(v) = w, if seq_t(v) has at most B ascents for every t ∈ I then D_E,I(v) ≤ F′_B(M_w), F′_0 = F_0 (DESC-POLY on the whole interval), F′_B(M) = (M² + 3M + 1)(1 + M·F′_(B−1)(M)²), and over the whole run the number D_E(v) of distinct (Λ_t(v), E_t(v)) is at most (2M + 3)·F′_B(M); (Lemma UP-JUMP, Corollary UP-B, Corollary NOUP; UP-JUMP, UP-B and NOUP under HYPOTHESIS [E-LEV]) an ascent of seq_t(v) needs a Ξ-edge from a mover to a mover of strictly higher level, so under [E-LEV] every seq_t(v) has at most U(G) ascents (U(G) := the number of options whose Ξ-target has a higher level) and D_E(v) ≤ (2M + 3)·F′_(U(G))(M); under [E-LEV], if U(G) = 0 then every seq_t(v) is descending and D_E(v) ≤ (2M + 3)(1 + M(M + 1)/2) (2026-11-07) — this bounds the e-set height D_E,I(v) only, NOT R and NOT any running time: the step from D_E to R needs OVT-DV ([LOC], L-RED R217 §2) and CONJECTURE IN-BOUND (box 192 Addendum 9), neither landed; [E-LEV] is NECESSARY for UP-JUMP, UP-B and NOUP: with the e-priorities in decreasing level order (still R104's shape) NOUP fails on 209 of 21,116 plays of U(G) = 0 genomes, up to 2 ascents (REFEREE-2 control CTRL=elevrev, docs/referee-2/R2-P-N5-ASC.md at claude/referee-2 533744a5), and L-RED's frozen NOUPC_1 / 2 / 3 have U(G) = 0 and max ascents 2 / 3 / 4 under the e-order (−level, gate) (witness NOUPC_1, t 0, v 10; claude/l-red 68a1f609, experiments/red/r220/inst/, .pg sha1 82e41194…, 7ea66452…, 94db68d5…; one route only); §3-§5 do not use [E-LEV]; the proof of record of HUB-ASC-G's B = 0 case (F′_0 = F_0, DESC-POLY on the whole interval) is referee-originated (REFEREE R-P-N5-ASC §3 AS-1, restated in P-N5-ASC's fixes entry 1 AS-1), signed by both referees; DATA, clause by clause (scope IDEAL-CYC unless abstract; tools in experiments/new/box193/, run by check193.sh): E-DOM part of E-MON's proof: violations 0 in 1,892 vertices, E-MON (TAIL-MON form): violations 0 in 2,552 (consecutive state pair, W-target or c_W with Λ fixed) pairs, CHAIN-DECOMP: violations 0 in 24,818 (state, vertex) pairs with a nonempty e-sequence, UP-JUMP: violations 0 in 1,956 ascents of movers' plays with Λ below every e (asc193.py; set: the 13 instances, 8 L-RED R217 instances in inst/ and 5 in box192/inst/, all pinned in asc.pins); UP-B under [E-LEV]: max ascents ≤ U(G) on all 13 instances (unit: max ascents over (state, vertex) plays; ug193.py); NOUP under [E-LEV]: 300 random genomes with no strictly upward Ξ-edge, 179 Ξ-cyclic, max ascents 0, max D_E per Λ-interval 3 (noup193.py 300 1); HUB-ASC(B), only the hub constrained: B 0 max 11 at M 4 (= F_0), B 1 max 16 at M 4 and 29 at M 5 (unit: distinct hub values; set: all runs of CS(M); abstract; hubasc193.py); SKELETON: violations 0 on all forests of CS(4) and CS(5) (skel193.py); tightness of B = 0: F_0 attained for M 1-7 (2, 4, 7, 11, 16, 22, 29; chain193.py, M 6 and 7 re-run by check193.sh); no separate DATA for HUB-ASC(B) with B ≥ 2, HUB-ASC-G's constants, the whole-run corollary and UP-B's D_E bound; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim (P-N5-ASC, docs/new/P-N5-ASC.md with fixes entries 1-2, docs/new/P-N5-ASC-fixes.md; L-NEW successors 61-62), CHECKER PASS (docs/checker/C135.md, checker PENDING)
-- Object (L-NEW successors 61-64, D1 / D14 / D18, box 193; frozen, unchanged during review): packet P-N5-ASC, docs/new/P-N5-ASC.md, sha1
+### R121 [refereed-only] The e-set height of one vertex on IDEAL-CYC is polynomial when its plays have boundedly many ascents (HUB-ASC-G), in particular, under the e-priority hypothesis [E-LEV], on genomes with boundedly many upward Ξ-edges (UP-B) (premises: RESULTS R104's definitions of the genome and of Γ(G) only; RESULTS R118 (a) IDEAL-CYC(G), (b) F1, F2, F3 and (e) «C ≤ n·(2M + 2).» in its per-vertex form (Λ_t(v) takes at most 2M + 3 values, in increasing reward); VJ00 §4.2 / Friedmann arXiv 1106.0778 §3 for the value (Λ, Π, k) and its order ⊴; HYPOTHESIS [E-LEV] (only for §6 UP-JUMP, UP-B and NOUP): lev(x) < lev(x′) implies pr(e_(x,k)) < pr(e_(x′,k′)), the order of Γ(G) as built by experiments/new/box189/gamma3.py (and of R104's packet §3.1), not in a landed line; not used: [LOC], OVT-DV, IN-BOUND, any L-RED lane lemma, F4/F4′, F5, F6), with seq_t(v) the e-vertices in Π_t(v) in play order, E_t(v) their set, an ascent of seq_t(v) a step to a more relevant element, sets of e-vertices compared lexicographically by their most relevant differing element, and D_E,I(v) the number of distinct E_t(v) on an interval I of states with Λ_t(v) = w fixed (M_w := the number of e-vertices more relevant than w): (Lemma E-MON) if Λ_t(v) = Λ_(t+1)(v) then E_t(v) ≤ E_(t+1)(v); (Lemma CHAIN-DECOMP) if seq_t(v) = (f, …), then f's successor y_f is a mover with Λ_t(y_f) = Λ_t(v) and E_t(v) = {f} ∪ E_t(y_f), hence seq_t(v) = (f, seq_t(y_f)); (Lemma SKELETON and Theorem HUB-ASC(B)) in the abstract chain system CS(M) (items 1..M compared by number, a forest a map next from the items to the items and ⊥ without cycles, chain(x) := (x, next(x), next²(x), …) up to ⊥, compared as a set, a run of forests with every chain lex-nondecreasing, an ascent a step to a larger item), a hub (h_t an item or ⊥ at each time t, chain(⊥) := ∅, with chain_s(h_s) ≤ chain_t(h_t) for s < t) whose value chain_t(h_t) has at most B ascents at every time takes at most F_B(M) distinct values, F_0(M) = 1 + M(M + 1)/2 (DESC-POLY), F_B(M) = (M² + M + 1)(1 + M·F_(B−1)(M)²), a polynomial of degree 5·2^B − 3 for fixed B; (Corollary HUB-ASC-G) for every genome G, every vertex v and every interval I with Λ_t(v) = w, if seq_t(v) has at most B ascents for every t ∈ I then D_E,I(v) ≤ F′_B(M_w), F′_0 = F_0 (DESC-POLY on the whole interval), F′_B(M) = (M² + 3M + 1)(1 + M·F′_(B−1)(M)²), and over the whole run the number D_E(v) of distinct (Λ_t(v), E_t(v)) is at most (2M + 3)·F′_B(M); (Lemma UP-JUMP, Corollary UP-B, Corollary NOUP; UP-JUMP, UP-B and NOUP under HYPOTHESIS [E-LEV]) an ascent of seq_t(v) needs a Ξ-edge from a mover to a mover of strictly higher level, so under [E-LEV] every seq_t(v) has at most U(G) ascents (U(G) := the number of options whose Ξ-target has a higher level) and D_E(v) ≤ (2M + 3)·F′_(U(G))(M); under [E-LEV], if U(G) = 0 then every seq_t(v) is descending and D_E(v) ≤ (2M + 3)(1 + M(M + 1)/2) (2026-11-07) — this bounds the e-set height D_E,I(v) only, NOT R and NOT any running time: the step from D_E to R needs OVT-DV ([LOC], L-RED R217 §2) and CONJECTURE IN-BOUND (box 192 Addendum 9), neither landed; [E-LEV] is NECESSARY for UP-JUMP, UP-B and NOUP: with the e-priorities in decreasing level order (still R104's shape) NOUP fails on 209 of 21,116 plays of U(G) = 0 genomes, up to 2 ascents (REFEREE-2 control CTRL=elevrev, docs/referee-2/R2-P-N5-ASC.md at claude/referee-2 533744a5), and L-RED's frozen NOUPC_1 / 2 / 3 have U(G) = 0 and max ascents 2 / 3 / 4 under the e-order (−level, gate) (witness NOUPC_1, t 0, v 10; claude/l-red 68a1f609, experiments/red/r220/inst/, .pg sha1 82e41194…, 7ea66452…, 94db68d5…; one route only); §3-§5 do not use [E-LEV]; the proof of record of HUB-ASC-G's B = 0 case (F′_0 = F_0, DESC-POLY on the whole interval) is referee-originated (REFEREE R-P-N5-ASC §3 AS-1, restated in P-N5-ASC's fixes entry 1 AS-1), signed by both referees; DATA, clause by clause (scope IDEAL-CYC unless abstract; tools in experiments/new/box193/, run by check193.sh): E-DOM part of E-MON's proof: violations 0 in 1,892 vertices, E-MON (TAIL-MON form): violations 0 in 2,552 (consecutive state pair, W-target or c_W with Λ fixed) pairs, CHAIN-DECOMP: violations 0 in 24,818 (state, vertex) pairs with a nonempty e-sequence, UP-JUMP: violations 0 in 1,956 ascents of movers' plays with Λ below every e (asc193.py; set: the 13 instances, 8 L-RED R217 instances in inst/ and 5 in box192/inst/, all pinned in asc.pins); UP-B under [E-LEV]: max ascents ≤ U(G) on all 13 instances (unit: max ascents over (state, vertex) plays; ug193.py); NOUP under [E-LEV]: 300 random genomes with no strictly upward Ξ-edge, 179 Ξ-cyclic, max ascents 0, max D_E per Λ-interval 3 (noup193.py 300 1); HUB-ASC(B), only the hub constrained: B 0 max 11 at M 4 (= F_0), B 1 max 16 at M 4 and 29 at M 5 (unit: distinct hub values; set: all runs of CS(M); abstract; hubasc193.py); SKELETON: violations 0 on all forests of CS(4) and CS(5) (skel193.py); tightness of B = 0: F_0 attained for M 1-7 (2, 4, 7, 11, 16, 22, 29; chain193.py, M 6 and 7 re-run by check193.sh); no separate DATA for HUB-ASC(B) with B ≥ 2, HUB-ASC-G's constants, the whole-run corollary and UP-B's D_E bound; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim (P-N5-ASC, docs/new/P-N5-ASC.md with fixes entries 1-2, docs/new/P-N5-ASC-fixes.md; L-NEW successors 61-62), CHECKER PASS (docs/checker/C135.md, checker PENDING)
+- Object (L-NEW successors 61-65, D1 / D14 / D18, box 193; frozen, unchanged during review): packet P-N5-ASC, docs/new/P-N5-ASC.md, sha1
   9c9cb50d89e8bba3232ca2790ddbf95f85580af6, 225 lines, 19,345 bytes (l-new 95dc76d7, 2026-11-07T21:45:00Z, the file's only commit;
-  identical at 19cc23e3, a5dcf9c6, a2512364, a744677e, e28e962d and the l-new head 08801298). Both referees measured it (REFEREE l. 24
+  identical at 19cc23e3, a5dcf9c6, a2512364, a744677e, e28e962d and the l-new head 2f4167cd). Both referees measured it (REFEREE l. 24
   «docs/new/P-N5-ASC.md sha1 9c9cb50d89e8bba3232ca2790ddbf95f85580af6 (EQUAL to the Lead's relay), 19,345 bytes»; REFEREE-2 l. 5
   «docs/new/P-N5-ASC.md 9c9cb50d89e8bba3232ca2790ddbf95f85580af6 (19,345 B) = the Lead's relay.»). Labels (l. 5): «PROVED (L-NEW 61,
   unrefereed) / HYPOTHESIS (stated in the theorem) / DATA / READING (not to sign).». To sign (l. 13-21): §2 definitions; §3 Lemma E-MON,
@@ -539,11 +668,12 @@ the procedure of G-U 988c1e7ade9ee9c4fbf3412bca696f926b1aab16 (5,156 bytes); R-R
   UP-B, Corollary NOUP; §7-§9 «DATA / READING (not to sign)». The packet's own scope (l. 6, l. 9-11): «This packet is NOT a TARGET.md
   claim and NOT M3. It does not decide G-N5-TIME. N5′-xi stays a CANDIDATE.» and «It bounds the e-set height D_E,I(v), the number of
   distinct sets of e-vertices on v's plays while v's cycle node is fixed, and NOT R and NOT any running time».
-  Fixes: docs/new/P-N5-ASC-fixes.md, append-only, five entries, entries 1-2 by L-NEW successor 62, entries 3-4 by L-NEW successor 63 and
-  entry 5 by L-NEW successor 64 (e28e962d: 156 lines, 14,458 bytes, sha1 faa71a3209e7939b599edfc243b015559ad7e892; its l. 1-140 are the
-  file at a744677e, sha1 9fb85374b6555e9e2858004fa33ef9d09b2c39aa, 12,728 bytes, its l. 1-91 the file at a5dcf9c6, sha1
-  28cf8f9f3231aedd53a079ec5e810200ab16075f, 8,108 bytes, and its l. 1-125 the file at a2512364, sha1
-  bd379c52352cbf6a72b7a53d6723c4f927d78977, 11,085 bytes, by script; byte-equal at the l-new head 08801298). Entry 1 (19cc23e3,
+  Fixes: docs/new/P-N5-ASC-fixes.md, append-only, six entries, entries 1-2 by L-NEW successor 62, entries 3-4 by L-NEW successor 63,
+  entry 5 by L-NEW successor 64 and entry 6 by L-NEW successor 65 (2f4167cd: 182 lines, 17,302 bytes, sha1
+  0bab7a94bca3a5dcba2da8b002071c1edc43141c; its l. 1-156 are the file at e28e962d, sha1 faa71a3209e7939b599edfc243b015559ad7e892, 14,458
+  bytes, its l. 1-140 the file at a744677e, sha1 9fb85374b6555e9e2858004fa33ef9d09b2c39aa, 12,728 bytes, its l. 1-91 the file at
+  a5dcf9c6, sha1 28cf8f9f3231aedd53a079ec5e810200ab16075f, 8,108 bytes, and its l. 1-125 the file at a2512364, sha1
+  bd379c52352cbf6a72b7a53d6723c4f927d78977, 11,085 bytes, by script; 2f4167cd is the l-new head). Entry 1 (19cc23e3,
   2026-11-07T23:23:53Z, l. 1-67; the file then 67 lines, 5,973 bytes, sha1 68139c3e3dc170d6aaaf95a2fe6c683a52834f12): W-1 = AS-2 + AS-3
   + R220's scope item ([E-LEV] for NOUP too; three packet strings), W-2 = AS-D2 (five box192 instances pinned), D-1 = AS-D1 (unit
   counts), D-2 (ug193.py on all 13 instances), D-3 (M 7 tightness re-run), AS-1 (F′_0 = F_0, DESC-POLY on the whole interval; wording
@@ -554,21 +684,23 @@ the procedure of G-U 988c1e7ade9ee9c4fbf3412bca696f926b1aab16 (5,156 bytes); R-R
   experiments/new/box193/mkl3_193.py from C135 §5. Entry 4 (a744677e, 2026-11-08T04:54:26Z, l. 127-140): REFEREE successor 28's R5 (§E),
   «ACCEPTED.» (l. 129), line L-4 written by experiments/new/box193/mkl4_193.py. Entry 5 (e28e962d, 2026-11-08T06:57:53Z, l. 142-156):
   REFEREE successor 29's R-A (required) and R-I (optional, taken by the Lead's ruling), from §F addendum 1, «ACCEPTED, both.» (l. 145),
-  line L-5 written by experiments/new/box193/mkl5_193.py. Entry 1 carries the AS-1 argument for HUB-ASC-G's B = 0 case (see L41 and
-  L43); entries 2-5 carry no proof, and entries 3-5 change the line only («No tool or DATA output changes», l. 125 and l. 139; «no tool
-  or DATA output changes.», l. 155).
-  The RESULTS line is L-5, fe4d3f902b6afde93384ebf625fa9bebcea0e1d0 (docs/new/P-N5-ASC-line-L5.txt, l-new e28e962d,
-  2026-11-08T06:57:53Z, the file's only commit; 5,192 bytes; byte-equal at the l-new head 08801298). The title is L-5 verbatim, with
-  nothing inserted and nothing stripped (its date parenthesis «(2026-11-07)», its scope tail and its source note are the line's own; the
-  source note names the packet with its fixes entries 1-2 and «L-NEW successors 61-62», see Honest limits (viii)). L-5's parentheses
-  balance (124 «(» / 124 «)»). Line history: L-1 (08cced78a214080dac3f8f07ebc900510e3f35ab, 4,896 bytes, 19cc23e3, fixes entry 1, the
-  first line, written by script with every entry-1 string applied); L-2 (f109cb69507efd863133a08a2e90096ad2acb7f5, 4,907 bytes,
-  a5dcf9c6, fixes entry 2: L-1 with exactly two strings replaced once each, «(consecutive state pair, W-target with Λ fixed) pairs» →
-  «(consecutive state pair, W-target or c_W with Λ fixed) pairs» (W-3) and «with fixes entry 1» → «with fixes entries 1-2» (the source
-  tail)); L-3 (0012d6710983ec339be8f5d4e051a205cc9207ba, 5,154 bytes, a2512364, fixes entry 3: L-2 with CHECKER C135 §5's R1-R4 applied
-  in that order, each old string once: R1 «; L-NEW successor 61)» → «; L-NEW successors 61-62)» (E-1, the source note); R2 inserts «the
-  proof of record of HUB-ASC-G's B = 0 case (F′_0 = F_0, DESC-POLY on the whole interval) is referee-originated (REFEREE R-P-N5-ASC §3
-  AS-1, restated in P-N5-ASC's fixes entry 1 AS-1), signed by both referees» after «§3-§5 do not use [E-LEV];» (E-2, L41); R3 «so the
+  line L-5 written by experiments/new/box193/mkl5_193.py. Entry 6 (2f4167cd, 2026-11-08T10:52:09Z, l. 158-182): CHECKER successor 22's
+  R6 from C135 Add. 1 (E-5), «R6 (REQUIRED, taken; CHECKER's exact strings)» (l. 164), line L-6 written by
+  experiments/new/box193/mkl6_193.py. Entry 1 carries the AS-1 argument for HUB-ASC-G's B = 0 case (see L41 and L43); entries 2-6 carry
+  no proof, and entries 3-6 change the line only («No tool or DATA output changes», l. 125 and l. 139; «no tool or DATA output
+  changes.», l. 155; entry 6 «line-only» in its heading, l. 158, and «entry 6 is line-only and carries no proof», l. 163).
+  The RESULTS line is L-6, a23c61d384036ce3fa771e27e175a8dbf2331658 (docs/new/P-N5-ASC-line-L6.txt, l-new 2f4167cd,
+  2026-11-08T10:52:09Z, the file's only commit and the l-new head; 5,449 bytes). The title is L-6 verbatim, with nothing inserted and
+  nothing stripped (its date parenthesis «(2026-11-07)», its scope tail and its source note are the line's own; the source note names
+  the packet with its fixes entries 1-2 and «L-NEW successors 61-62», see Honest limits (viii)). L-6's parentheses balance (133 «(» /
+  133 «)»). Line history: L-1 (08cced78a214080dac3f8f07ebc900510e3f35ab, 4,896 bytes, 19cc23e3, fixes entry 1, the first line, written
+  by script with every entry-1 string applied); L-2 (f109cb69507efd863133a08a2e90096ad2acb7f5, 4,907 bytes, a5dcf9c6, fixes entry 2: L-1
+  with exactly two strings replaced once each, «(consecutive state pair, W-target with Λ fixed) pairs» → «(consecutive state pair,
+  W-target or c_W with Λ fixed) pairs» (W-3) and «with fixes entry 1» → «with fixes entries 1-2» (the source tail)); L-3
+  (0012d6710983ec339be8f5d4e051a205cc9207ba, 5,154 bytes, a2512364, fixes entry 3: L-2 with CHECKER C135 §5's R1-R4 applied in that
+  order, each old string once: R1 «; L-NEW successor 61)» → «; L-NEW successors 61-62)» (E-1, the source note); R2 inserts «the proof of
+  record of HUB-ASC-G's B = 0 case (F′_0 = F_0, DESC-POLY on the whole interval) is referee-originated (REFEREE R-P-N5-ASC §3 AS-1,
+  restated in P-N5-ASC's fixes entry 1 AS-1), signed by both referees» after «§3-§5 do not use [E-LEV];» (E-2, L41); R3 «so the
   e-vertices of one Λ-class form one forest whose paths are the sequences seq_t(v)» → «hence seq_t(v) = (f, seq_t(y_f))» (E-3, the
   READING out of the signed clause); R4 «with E_t(v) the set of e-vertices in Π_t(v),» → «with seq_t(v) the e-vertices in Π_t(v) in play
   order, E_t(v) their set, an ascent of seq_t(v) a step to a more relevant element,» (E-4, the two terms defined)); L-4
@@ -578,21 +710,28 @@ the procedure of G-U 988c1e7ade9ee9c4fbf3412bca696f926b1aab16 (5,156 bytes); R-R
   R-A and R-I applied once each, R-A «(items 1..M, a run of forests with every chain lex-nondecreasing)» → «(items 1..M compared by
   number, a run of forests with every chain lex-nondecreasing, an ascent a step to a larger item)» (CS(M)'s order and its ascents, as
   packet §2 l. 55 and l. 58 define them), R-I «(f, …), i.e. the first e-vertex on v's play is f and f ∈ Π_t(v), then» → «(f, …), then»
-  (CHAIN-DECOMP's hypothesis exactly as packet l. 80)). L-1 + the two entry-2 strings = L-2, L-2 + R1..R4 = L-3, L-3 + R5 = L-4, L-4 +
-  R-A + R-I = L-5 (by script, True ×4; token diff L-3 → L-4 two hunks, one token out, ten in, both inside R5; L-4 → L-5 three hunks, 15
-  tokens out, 13 in, one inside R-I and two inside R-A). L-1: REFEREE «Verdict: fixes entry 1 CORRECT for AS-2, AS-3, AS-D1, AS-D2, AS-1
-  and AS-4. L-1 MATCHES. All statements stay SIGN.» (d4b39be0 §C l. 238); REFEREE-2 «**L-1 NOT YET: W-3 and W-4** (DATA rule, wording or
-  counter only; no statement changes) (Opus 5.5, D1).» (fcdc16b4 Add. 2 l. 280). L-2 MATCHES at both referees, each after its own byte
-  test: REFEREE successor 28 (94062059, 2026-11-08T01:11:46Z) §D l. 248-252 («Each old string occurs once in L-1 and 0 times in L-2.
-  Each new string occurs once in L-2.»; «L-1 with exactly these two changes is byte-equal to L-2: sha1 f109cb69…, 4,907 B.»), l. 257-263
-  (W-3 and W-4 in meaning: «W-3 in meaning: CORRECT.»; «W-4 in meaning: CORRECT.»; «That is exactly the lemma's condition: the mover a β
-  is entered from is its own mover x.»), l. 270 «Verdict: fixes entry 2 CORRECT (W-3, W-4). L-2 MATCHES, by the byte test and in
-  meaning. All statements stay SIGN.»; REFEREE-2 successor 32 (d3fed33c, 2026-11-08T01:19:51Z) Addendum 3 l. 289-293 (own bt_l2.py:
-  «Word diff L-1 → L-2: exactly «or c_W» inserted, and «entry 1,» → «entries 1-2,» (the source tail); nothing else ✓»), l. 294-305 (W-4
-  read against the lemma: «This is UP-JUMP's statement verbatim»), l. 312-316 «fixes entry 2 **CORRECT**;» … «**L-2 MATCHES** (byte
-  test, the counter read against the lemma, the re-run, and the DATA rule clause by clause) (Opus 5.5, D1).» … «Statement verdicts
-  unchanged: all SIGN.». L-3: CHECKER C135 (0942e8be, 2026-11-08T03:04:02Z) wrote its four replacements («L-3 with R1-R4 (my script):
-  sha1 0012d6710983ec339be8f5d4e051a205cc9207ba with its newline (5,154 bytes)», l. 78); REFEREE successor 28 §E (013f821b,
+  (CHAIN-DECOMP's hypothesis exactly as packet l. 80)); L-6 (a23c61d384036ce3fa771e27e175a8dbf2331658, 5,449 bytes, 2f4167cd, fixes
+  entry 6: L-5 with CHECKER C135 Add. 1's R6 applied once, «(items 1..M compared by number, a run of forests with every chain
+  lex-nondecreasing, an ascent a step to a larger item), a hub whose value has» → «(items 1..M compared by number, a forest a map next
+  from the items to the items and ⊥ without cycles, chain(x) := (x, next(x), next²(x), …) up to ⊥, compared as a set, a run of forests
+  with every chain lex-nondecreasing, an ascent a step to a larger item), a hub (h_t an item or ⊥ at each time t, chain(⊥) := ∅, with
+  chain_s(h_s) ≤ chain_t(h_t) for s < t) whose value chain_t(h_t) has» (CS(M)'s forests, chain(x), the hub with its condition and its
+  value, as packet §2 l. 59 and l. 62 define them)). L-1 + the two entry-2 strings = L-2, L-2 + R1..R4 = L-3, L-3 + R5 = L-4, L-4 + R-A
+  + R-I = L-5, L-5 + R6 = L-6 (by script, True ×5; token diff L-3 → L-4 two hunks, one token out, ten in, both inside R5; L-4 → L-5
+  three hunks, 15 tokens out, 13 in, one inside R-I and two inside R-A; L-5 → L-6 three hunks, 0 tokens out, 49 in, all inside R6). L-1:
+  REFEREE «Verdict: fixes entry 1 CORRECT for AS-2, AS-3, AS-D1, AS-D2, AS-1 and AS-4. L-1 MATCHES. All statements stay SIGN.» (d4b39be0
+  §C l. 238); REFEREE-2 «**L-1 NOT YET: W-3 and W-4** (DATA rule, wording or counter only; no statement changes) (Opus 5.5, D1).»
+  (fcdc16b4 Add. 2 l. 280). L-2 MATCHES at both referees, each after its own byte test: REFEREE successor 28 (94062059,
+  2026-11-08T01:11:46Z) §D l. 248-252 («Each old string occurs once in L-1 and 0 times in L-2. Each new string occurs once in L-2.»;
+  «L-1 with exactly these two changes is byte-equal to L-2: sha1 f109cb69…, 4,907 B.»), l. 257-263 (W-3 and W-4 in meaning: «W-3 in
+  meaning: CORRECT.»; «W-4 in meaning: CORRECT.»; «That is exactly the lemma's condition: the mover a β is entered from is its own mover
+  x.»), l. 270 «Verdict: fixes entry 2 CORRECT (W-3, W-4). L-2 MATCHES, by the byte test and in meaning. All statements stay SIGN.»;
+  REFEREE-2 successor 32 (d3fed33c, 2026-11-08T01:19:51Z) Addendum 3 l. 289-293 (own bt_l2.py: «Word diff L-1 → L-2: exactly «or c_W»
+  inserted, and «entry 1,» → «entries 1-2,» (the source tail); nothing else ✓»), l. 294-305 (W-4 read against the lemma: «This is
+  UP-JUMP's statement verbatim»), l. 312-316 «fixes entry 2 **CORRECT**;» … «**L-2 MATCHES** (byte test, the counter read against the
+  lemma, the re-run, and the DATA rule clause by clause) (Opus 5.5, D1).» … «Statement verdicts unchanged: all SIGN.». L-3: CHECKER C135
+  (0942e8be, 2026-11-08T03:04:02Z) wrote its four replacements («L-3 with R1-R4 (my script): sha1
+  0012d6710983ec339be8f5d4e051a205cc9207ba with its newline (5,154 bytes)», l. 78); REFEREE successor 28 §E (013f821b,
   2026-11-08T04:24:28Z; l. 272-312), own scratch/asc_l3.py: «L-2 + R1..R4 in order is byte-equal to L-3.» (l. 280), R1-R4 read in
   meaning (l. 282-293), and a new finding on the CHAIN-DECOMP clause, which R1-R4 did not touch: «The line (L-1 to L-3, unchanged by
   R1-R4) says «(Lemma CHAIN-DECOMP) if the first e-vertex on v's play is f, then f's successor y_f is a mover with Λ_t(y_f) = Λ_t(v) and
@@ -620,37 +759,60 @@ the procedure of G-U 988c1e7ade9ee9c4fbf3412bca696f926b1aab16 (5,156 bytes); R-R
   SIGN (UP-JUMP / UP-B / NOUP under [E-LEV], as before).» (l. 386); REFEREE-2 successor 33 Addendum 6 (388530af, 2026-11-08T07:47:22Z;
   l. 389-404), own bt_l5.py: «The rebuild L-4 + R-A + R-I is fe4d3f90…, 5,192 B, which is L-5 byte for byte, so nothing else changed.»
   (l. 394), «My Add. 5 N-1 (the converse of the gloss needs a non-e cycle node; true on all data) lapses with the gloss.» (l. 401),
-  «**Verdict: L-5 MATCHES** (Opus 5.5, D1). Statement verdicts unchanged: all SIGN.» (l. 404).
+  «**Verdict: L-5 MATCHES** (Opus 5.5, D1). Statement verdicts unchanged: all SIGN.» (l. 404). L-6: CHECKER successor 22, C135 Add. 1
+  (claude/checker 0ffde42c, 2026-11-08T10:05:13Z; docs/checker/C135.md l. 94-144), on draft 1fa73568 (L-5): «**E-5 (N-H; the C135 E-4 /
+  REFEREE 29 N-A class). REQUIRED.**» (l. 113), «L-5 defines neither a forest, chain(x), a hub nor a hub's value (packet §2 l. 59-62).»
+  (l. 114-115), «The hub's defining condition, chain_s(h_s) ≤ chain_t(h_t) for s < t, is a HYPOTHESIS of the theorem, not notation» (l.
+  115), «Without it the clause is false.» (l. 116), with a witness on CS(3) (its scratch hub.py; «F_0(3) = 7. So the line's HUB-ASC(0),
+  read with «hub» = «a choice of item», fails.», l. 119); its exact R6 (l. 133-137), «It defines what the packet defines and nothing
+  more. Its hub condition is the packet's l. 62.» (l. 126), and «L-6 = L-5 + R6 (my script): sha1
+  a23c61d384036ce3fa771e27e175a8dbf2331658 with its newline, 5,449 B» (l. 139); «R1-R5, R-A and R-I are CORRECT.» (l. 142). L-6: REFEREE
+  successor 30 §H (claude/referee 6c8d6956, 2026-11-08T11:26:43Z; l. 388-413), own scratch/asc_l6.py, R6's strings «typed from C135 Add.
+  1 (claude/checker 0ffde42c), not from the lane's script» (l. 392): «`cmp` with the lane's L-6: **EQUAL**» (l. 393), «So L-6 = L-5 +
+  exactly R6.» (l. 394); R6 read against packet §2 l. 58-62 clause by clause (l. 397-403), and CHECKER's witness re-checked by hand: «So
+  without the hub condition L-5's HUB-ASC(0) was false as worded; with R6 it is the packet's theorem. E-5 is closed.» (l. 405-406);
+  «Fixes entry 6 (docs/new/P-N5-ASC-fixes.md at 2f4167cd): CORRECT;» (l. 407); «Verdict: **Line L-6 MATCHES** the packet read with fixes
+  entries 1-6; R1-R5, R-A, R-I and R6 all CORRECT. All statements stay as in §0 / earlier sections.» (l. 412-413), «docs/referee-2/ not
+  read for this section.» (l. 413); with an optional HL-1 (l. 408-411; Honest limits (x)). REFEREE-2 successor 35's byte test of L-6
+  (Addendum 7): <R2-A7>.
 - Claims signed (REFEREE successor 27, report 26b2b516 and §C d4b39be0, successor 28 §D 94062059 and §E 013f821b, successor 29 §F
-  52e6e77b, §F addendum 1 055758ba and §G d17b305e; REFEREE-2 successor 31, report 533744a5, Addendum 1 c4166c8b and Addendum 2
-  fcdc16b4, successor 32 Addendum 3 d3fed33c and Addendum 4 98b9622b, successor 33 Addendum 5 caa26282 / 05eb5181 and Addendum 6
-  388530af). REFEREE's table («## 0. Verdicts», l. 5-17 of R-P-N5-ASC.md) reads §1 premises «all LANDED; every quote verbatim (script)»,
-  Lemma E-MON «(with its E-DOM derivation from R104's priorities)», Lemma CHAIN-DECOMP, Lemma SKELETON, Theorem HUB-ASC(B) «(B = 0:
-  DESC-POLY), degree 5·2^B − 3» «SIGN», Corollary HUB-ASC-G «and the whole-run corollary» «SIGN (optional AS-1: the B = 0 case of F′ is
-  DESC-POLY on the whole interval, not «word for word» per level)», Lemma UP-JUMP, Corollary UP-B, Corollary NOUP «each under [E-LEV]»
-  «SIGN; AS-2 (required, text)», the scope sentence «CORRECT», §7 DATA «every replayed number EQUAL (own code)» with AS-D1, AS-D2, §9
-  «CLEAN». REFEREE-2's table («## Verdicts», l. 11-24 of R2-P-N5-ASC.md) reads every statement row of §3-§6 «**SIGN** (Opus 5.5, D1)»,
-  W-1 and W-2 required (scope strings, pins), §7 «reproduced by my own code; D-1..D-3 for the line», §9 «✓», and «Nothing is REFUSED.
-  Nothing here bounds R or a running time; G-N5-TIME stays OPEN; N5′-xi stays a CANDIDATE.» (l. 25). No statement was signed WITH GAP at
-  either referee; every required item (AS-2, AS-3, AS-D1, AS-D2; W-1, W-2, D-1, D-2, D-3; then W-3, W-4) was text, pins or DATA wording,
-  and each is closed: REFEREE §C l. 238 (entry 1 «CORRECT for AS-2, AS-3, AS-D1, AS-D2, AS-1 and AS-4»), REFEREE-2 Add. 2 l. 279 («W-1,
-  W-2, D-1 (counts), D-2 and D-3 **met**; AS-1 and AS-4 taken correctly»), REFEREE-2 Add. 3 l. 314 («W-3 and W-4 **met** (W-4 by option
-  (a))»), REFEREE §D l. 270. The line items, C135's E-1 to E-4 and REFEREE's R5 and R-A, are closed by L-3, L-4 and L-5 (REFEREE §E l.
-  310, §F l. 334, §G l. 386; REFEREE-2 Add. 6 l. 404). Second and third rounds change no verdict: REFEREE §C l. 238 and §D l. 270 «All
-  statements stay SIGN.»; REFEREE-2 Add. 2 l. 281 «Statement verdicts are unchanged: all SIGN.» and Add. 3 l. 316 «Statement verdicts
-  unchanged: all SIGN.». The line rounds L-3 to L-5 change no statement verdict either: REFEREE §E l. 312 «All statements of P-N5-ASC
-  stay SIGN (the packet's form).», §F l. 334 and §G l. 386 («All statements of P-N5-ASC stay SIGN»); REFEREE-2 Add. 4 l. 343 «Statement
-  verdicts unchanged: all SIGN.», Add. 5 l. 387 «All statement verdicts are unchanged: SIGN.» and Add. 6 l. 404. R5 corrects the line's
-  wording of CHAIN-DECOMP's hypothesis, not the signed lemma («The statement as signed (the packet's) is unaffected. The line misstates
-  its hypothesis.», REFEREE §E l. 307). R-A and R-I are line wordings as well: R-A states CS(M)'s order and its ascents in the line
-  (REFEREE §F addendum 1 l. 353-362), and with R-I «CHAIN-DECOMP's hypothesis in the line is exactly the packet's l. 80 «If seq_t(v) =
-  (f, …)».» (§G l. 383). Nothing is REFUSED.
+  52e6e77b, §F addendum 1 055758ba and §G d17b305e, successor 30 §H 6c8d6956; REFEREE-2 successor 31, report 533744a5, Addendum 1
+  c4166c8b and Addendum 2 fcdc16b4, successor 32 Addendum 3 d3fed33c and Addendum 4 98b9622b, successor 33 Addendum 5 caa26282 /
+  05eb5181 and Addendum 6 388530af, successor 35 Addendum 7 <R2-A7>). REFEREE's table («## 0. Verdicts», l. 5-17 of R-P-N5-ASC.md) reads
+  §1 premises «all LANDED; every quote verbatim (script)», Lemma E-MON «(with its E-DOM derivation from R104's priorities)», Lemma
+  CHAIN-DECOMP, Lemma SKELETON, Theorem HUB-ASC(B) «(B = 0: DESC-POLY), degree 5·2^B − 3» «SIGN», Corollary HUB-ASC-G «and the whole-run
+  corollary» «SIGN (optional AS-1: the B = 0 case of F′ is DESC-POLY on the whole interval, not «word for word» per level)», Lemma
+  UP-JUMP, Corollary UP-B, Corollary NOUP «each under [E-LEV]» «SIGN; AS-2 (required, text)», the scope sentence «CORRECT», §7 DATA
+  «every replayed number EQUAL (own code)» with AS-D1, AS-D2, §9 «CLEAN». REFEREE-2's table («## Verdicts», l. 11-24 of R2-P-N5-ASC.md)
+  reads every statement row of §3-§6 «**SIGN** (Opus 5.5, D1)», W-1 and W-2 required (scope strings, pins), §7 «reproduced by my own
+  code; D-1..D-3 for the line», §9 «✓», and «Nothing is REFUSED. Nothing here bounds R or a running time; G-N5-TIME stays OPEN; N5′-xi
+  stays a CANDIDATE.» (l. 25). No statement was signed WITH GAP at either referee; every required item (AS-2, AS-3, AS-D1, AS-D2; W-1,
+  W-2, D-1, D-2, D-3; then W-3, W-4) was text, pins or DATA wording, and each is closed: REFEREE §C l. 238 (entry 1 «CORRECT for AS-2,
+  AS-3, AS-D1, AS-D2, AS-1 and AS-4»), REFEREE-2 Add. 2 l. 279 («W-1, W-2, D-1 (counts), D-2 and D-3 **met**; AS-1 and AS-4 taken
+  correctly»), REFEREE-2 Add. 3 l. 314 («W-3 and W-4 **met** (W-4 by option (a))»), REFEREE §D l. 270. The line items, C135's E-1 to E-5
+  and REFEREE's R5 and R-A, are closed by L-3 to L-6 (REFEREE §E l. 310, §F l. 334, §G l. 386, §H l. 412; REFEREE-2 Add. 6 l. 404, Add.
+  7 <R2-A7>). Second and third rounds change no verdict: REFEREE §C l. 238 and §D l. 270 «All statements stay SIGN.»; REFEREE-2 Add. 2
+  l. 281 «Statement verdicts are unchanged: all SIGN.» and Add. 3 l. 316 «Statement verdicts unchanged: all SIGN.». The line rounds L-3
+  to L-6 change no statement verdict either: REFEREE §E l. 312 «All statements of P-N5-ASC stay SIGN (the packet's form).», §F l. 334
+  and §G l. 386 («All statements of P-N5-ASC stay SIGN»); REFEREE-2 Add. 4 l. 343 «Statement verdicts unchanged: all SIGN.», Add. 5 l.
+  387 «All statement verdicts are unchanged: SIGN.» and Add. 6 l. 404; on L-6 REFEREE §H l. 412-413 («All statements stay as in §0 /
+  earlier sections.») and REFEREE-2 Add. 7 <R2-A7>. R5 corrects the line's wording of CHAIN-DECOMP's hypothesis, not the signed lemma
+  («The statement as signed (the packet's) is unaffected. The line misstates its hypothesis.», REFEREE §E l. 307). R-A and R-I are line
+  wordings as well: R-A states CS(M)'s order and its ascents in the line (REFEREE §F addendum 1 l. 353-362), and with R-I
+  «CHAIN-DECOMP's hypothesis in the line is exactly the packet's l. 80 «If seq_t(v) = (f, …)».» (§G l. 383). R6 is a line wording too:
+  it states CS(M)'s forests, chain(x), the hub with its condition and the hub's value in the line as packet §2 l. 59 and l. 62 define
+  them (C135 Add. 1 l. 126); the hub's condition is a hypothesis of HUB-ASC(B) in the signed packet (l. 62, used by the B = 0 proof, l.
+  115; C135 Add. 1 l. 115-116), so R6 states the signed theorem's hypothesis in the line and changes no signed statement. Nothing is
+  REFUSED.
   Setting: IDEAL-CYC(G) of R118 (a) on Γ(G) of R104, every genome G (Ξ-cycles allowed), values (Λ, Π, k) and ⊴ as in R118's premises; §4
-  is abstract (the chain system CS(M)). Statements as signed (packet with fixes entries 1-2; entries 3-5 change the line only):
+  is abstract (the chain system CS(M)). Statements as signed (packet with fixes entries 1-2; entries 3-6 change the line only):
   (a) Definitions (§2 l. 51-63): seq_t(v) «the e-vertices that lie in Π_t(v), in the order of the play from v under (σ_t, σ̄_t)», E_t(v)
     their set; lex order on sets of e-vertices; ascents («An ascent of a sequence (c_1, …, c_p) of distinct items is an index i with
-    c_(i+1) more relevant than c_i.», l. 55); U_w, M_w, D_E,I(v); CS(M) («items 1..M, compared by number («rank»)», l. 58), forests,
-    runs, hubs; the whole-run D_E(v) defined by fixes entry 1 AS-4 («the number D_E(v) of distinct (Λ_t(v), E_t(v))», l. 59).
+    c_(i+1) more relevant than c_i.», l. 55); U_w, M_w, D_E,I(v); CS(M) («items 1..M, compared by number («rank»)», l. 58), forests and
+    chains («A forest is a map next: items → items ∪ {⊥} without cycles. chain(x) := the sequence x, next(x), next²(x), … (as a set when
+    compared).», l. 59), runs (l. 60-61), hubs and their values («A hub of a run is a choice h_t ∈ items ∪ {⊥} with chain_s(h_s) ≤
+    chain_t(h_t) for s < t (chain(⊥) := ∅). Its value at t is chain_t(h_t).», l. 62); the whole-run D_E(v) defined by fixes entry 1 AS-4
+    («the number D_E(v) of distinct (Λ_t(v), E_t(v))», l. 59).
   (b) Lemma E-MON (§3 l. 66-78) [IDEAL-CYC, every genome]: «If Λ_t(v) = Λ_(t+1)(v), then E_t(v) ≤ E_(t+1)(v).»; its proof contains the
     E-DOM step from R104's priorities («Every vertex more relevant than some e-vertex is an e-vertex, c_W, K0 or K3, by [DEF]», l. 70).
     REFEREE SIGN (l. 9), REFEREE-2 SIGN (l. 15).
@@ -667,8 +829,11 @@ the procedure of G-U 988c1e7ade9ee9c4fbf3412bca696f926b1aab16 (5,156 bytes); R-R
   (e) Theorem HUB-ASC(B) (§4 l. 109-147) [any run of CS(M) with a hub]: «In any run of CS(M) with a hub whose value has at most B
     ascents at every time, the hub takes at most F_B(M) distinct values.» with F_0(M) := 1 + M(M + 1)/2 (B = 0: DESC-POLY), F_B(M) :=
     (M² + M + 1)(1 + M·F_(B−1)(M)²), «For fixed B, F_B is a polynomial in M of degree 5·2^B − 3.»; the line gives CS(M)'s order and its
-    ascents («items 1..M compared by number», «an ascent a step to a larger item», R-A) as §2 l. 55 and l. 58 define them. REFEREE SIGN
-    (l. 12), REFEREE-2 SIGN (l. 18).
+    ascents («items 1..M compared by number», «an ascent a step to a larger item», R-A) as §2 l. 55 and l. 58 define them, and its
+    forests, chain(x), the hub with its condition and the hub's value («a forest a map next from the items to the items and ⊥ without
+    cycles», «chain(x) := (x, next(x), next²(x), …) up to ⊥, compared as a set», «a hub (h_t an item or ⊥ at each time t, chain(⊥) := ∅,
+    with chain_s(h_s) ≤ chain_t(h_t) for s < t) whose value chain_t(h_t)», R6) as §2 l. 59 and l. 62 define them. REFEREE SIGN (l. 12),
+    REFEREE-2 SIGN (l. 18).
   (f) Corollary HUB-ASC-G (§5 l. 150-163) [every genome G, every vertex v and every interval I of states with Λ_t(v) = w]: «If seq_t(v)
     has at most B ascents for every t ∈ I, then D_E,I(v) ≤ F′_B(M_w).», F′_0 := 1 + M(M + 1)/2 (= F_0; by fixes entry 1 AS-1 «DESC-POLY
     on the whole interval», l. 54-56), F′_B(M) := (M² + 3M + 1)(1 + M·F′_(B−1)(M)²), «No hypothesis is made on any other vertex's
@@ -681,18 +846,20 @@ the procedure of G-U 988c1e7ade9ee9c4fbf3412bca696f926b1aab16 (5,156 bytes); R-R
   (h) Hypothesis [E-LEV] (§1 l. 46-48, as fixed by entry 1 W-1): «lev(x) < lev(x′) implies pr(e_(x,k)) < pr(e_(x′,k′))»; a hypothesis
     of UP-JUMP, UP-B and NOUP only, not in a landed R-id; §3-§5 do not use it (REFEREE l. 53-55; REFEREE-2 l. 40-41, its CTRL=elevrev
     control: §3-§5 counters stay 0; L-RED R220 §4).
-- The RESULTS line (L-5, the title): «The e-set height of one vertex on IDEAL-CYC is polynomial when its plays have boundedly many
+- The RESULTS line (L-6, the title): «The e-set height of one vertex on IDEAL-CYC is polynomial when its plays have boundedly many
   ascents (HUB-ASC-G), in particular, under the e-priority hypothesis [E-LEV], on genomes with boundedly many upward Ξ-edges (UP-B)» …
   «(2026-11-07) — this bounds the e-set height D_E,I(v) only, NOT R and NOT any running time:» … «G-N5-TIME stays OPEN; not M3, not a
   step-4 pass, not a TARGET.md claim (P-N5-ASC, docs/new/P-N5-ASC.md with fixes entries 1-2, docs/new/P-N5-ASC-fixes.md; L-NEW
   successors 61-62)». Its clauses: the notation = (a) in part (seq_t(v), E_t(v), ascents of seq_t(v), the lex order, D_E,I(v), M_w; U_w
-  is the packet's), with (a)'s CS(M) order and ascents in the HUB-ASC(B) clause; E-MON = (b); CHAIN-DECOMP = (c) in its signed form,
-  hypothesis «if seq_t(v) = (f, …), then» and second sentence «hence seq_t(v) = (f, seq_t(y_f))», without the Reading; SKELETON and
-  HUB-ASC(B) = (d), (e) (SKELETON named, not stated; «items 1..M compared by number», «an ascent a step to a larger item»); HUB-ASC-G =
-  (f) with the whole-run corollary; UP-JUMP, UP-B, NOUP = (g) under (h); the scope tail = packet l. 9-11 with the [E-LEV] necessity
-  clause (W-1's measured evidence: REFEREE-2's CTRL=elevrev, L-RED R220's NOUPC_1-3), «§3-§5 do not use [E-LEV]» and the L41 sentence on
-  HUB-ASC-G's B = 0 case (L41 and L43, below); DATA clause by clause, inline («DATA, clause by clause (scope IDEAL-CYC unless abstract;
-  tools in experiments/new/box193/, run by check193.sh):» …); the source note.
+  is the packet's), with (a)'s CS(M) order, ascents, forests, chains, hub and hub value in the HUB-ASC(B) clause; E-MON = (b);
+  CHAIN-DECOMP = (c) in its signed form, hypothesis «if seq_t(v) = (f, …), then» and second sentence «hence seq_t(v) = (f, seq_t(y_f))»,
+  without the Reading; SKELETON and HUB-ASC(B) = (d), (e) (SKELETON named, not stated; «items 1..M compared by number», «an ascent a
+  step to a larger item», «a forest a map next from the items to the items and ⊥ without cycles», «a hub (h_t an item or ⊥ at each time
+  t, chain(⊥) := ∅, with chain_s(h_s) ≤ chain_t(h_t) for s < t) whose value chain_t(h_t) has»); HUB-ASC-G = (f) with the whole-run
+  corollary; UP-JUMP, UP-B, NOUP = (g) under (h); the scope tail = packet l. 9-11 with the [E-LEV] necessity clause (W-1's measured
+  evidence: REFEREE-2's CTRL=elevrev, L-RED R220's NOUPC_1-3), «§3-§5 do not use [E-LEV]» and the L41 sentence on HUB-ASC-G's B = 0 case
+  (L41 and L43, below); DATA clause by clause, inline («DATA, clause by clause (scope IDEAL-CYC unless abstract; tools in
+  experiments/new/box193/, run by check193.sh):» …); the source note.
 - Premise: RESULTS R104's definitions of the genome and of Γ(G) only (packet [DEF], seven quotes verbatim in R104's title, l. 9864; «the
   exact e-priorities to packet §3.1», l. 10085), no R104 theorem; RESULTS R118 (a) IDEAL-CYC(G) (l. 13677: «The game is Γ(G) with every
   Even vertex that is not a mover frozen at its start successor. Odd is unrestricted (gates and K2).»), (b) F1, F2, F3 («(b) Facts F1-F6
@@ -700,19 +867,19 @@ the procedure of G-U 988c1e7ade9ee9c4fbf3412bca696f926b1aab16 (5,156 bytes); R-R
   range), (e) «C ≤ n·(2M + 2).» (l. 13691) in its per-vertex form (Λ_t(v) takes at most 2M + 3 values, in increasing reward); the value
   (Λ, Π, k) and ⊴ of VJ00 §4.2 / Friedmann arXiv 1106.0778 §3, as in R118's premises; HYPOTHESIS [E-LEV] for UP-JUMP, UP-B and NOUP
   only. «Not used anywhere: [LOC], OVT-DV, IN-BOUND, any L-RED lane lemma, F4/F4′, F5, F6.» (packet l. 49). Both referees checked every
-  premise quote against RESULTS at 5470cc0c (REFEREE l. 36-45, asc_quotes.py; REFEREE-2 l. 27-34, r2q.py); RESULTS at the local trunk
-  55e5456d and at origin trunk a1decf9a (sha1 66e7119615efa5a0bb25b898e32b5b371c55c122, = RESULTS at 5470cc0c, where R120 landed) has
-  R104 at l. 9864 and R118 at l. 13607 (my script: the R118 quote at l. 13691, R104's l. 10085 quote, the seven [DEF] quotes in R104's
-  title). E-MON uses F1 and [VJ]; CHAIN-DECOMP F3 and [DEF]; §5 F1, F2 and (e); §6 [DEF] and [E-LEV] (REFEREE l. 47-49). R1-R5, R-A and
-  R-I change no premise.
+  premise quote against RESULTS at 5470cc0c (REFEREE l. 36-45, asc_quotes.py; REFEREE-2 l. 27-34, r2q.py); RESULTS at trunk fdc0f1e9
+  (the local HEAD and origin trunk; sha1 66e7119615efa5a0bb25b898e32b5b371c55c122, = RESULTS at 5470cc0c, where R120 landed) has R104 at
+  l. 9864 and R118 at l. 13607 (my script: the R118 quote at l. 13691, R104's l. 10085 quote, the seven [DEF] quotes in R104's title).
+  E-MON uses F1 and [VJ]; CHAIN-DECOMP F3 and [DEF]; §5 F1, F2 and (e); §6 [DEF] and [E-LEV] (REFEREE l. 47-49). R1-R5, R-A, R-I and R6
+  change no premise.
 - L41 and L43. The packet's proofs are L-NEW successor 61's (packet l. 2-4, «This packet carries every proof in full.»), with one
   referee-written step: the B = 0 case of HUB-ASC-G. The packet derives F′_B «word for word» from §4 per refined level (l. 160-161),
   which for B = 0 gives a factor M² + 3M + 1 over F_0; REFEREE wrote the argument that gives F′_0 = F_0 («It is DESC-POLY on the whole
   interval I, which works because τ(x) is monotone on x's active interval and x is active at both times of each change it is blamed
   for.», report l. 117-119, optional AS-1); fixes entry 1 restates it («τ(x) is monotone on x's active interval, and x is active at both
-  times of each change it is blamed for.», l. 55-56) and L-5 says «F′_0 = F_0 (DESC-POLY on the whole interval)». The Lead ruled that
+  times of each change it is blamed for.», l. 55-56) and L-6 says «F′_0 = F_0 (DESC-POLY on the whole interval)». The Lead ruled that
   L41 (DECISIONS l. 355-358) applies («The Lead ruled that L41 applies.», CHECKER C135 l. 26-27; «L41 applies to G-7 (R121 R-G)»,
-  LEAD-STATE l. 2729), and L-5's scope tail carries the sentence C135 wrote (R2): «the proof of record of HUB-ASC-G's B = 0 case (F′_0 =
+  LEAD-STATE l. 2729), and L-6's scope tail carries the sentence C135 wrote (R2): «the proof of record of HUB-ASC-G's B = 0 case (F′_0 =
   F_0, DESC-POLY on the whole interval) is referee-originated (REFEREE R-P-N5-ASC §3 AS-1, restated in P-N5-ASC's fixes entry 1 AS-1),
   signed by both referees». The two signatures: REFEREE, the author, signs it («AS-1, AS-4: taken.», §C l. 215; «Verdict: fixes entry 1
   CORRECT for AS-2, AS-3, AS-D1, AS-D2, AS-1 and AS-4. L-1 MATCHES. All statements stay SIGN.», l. 238; on R2: «R2 (AS-1): CORRECT. I
@@ -726,12 +893,13 @@ the procedure of G-U 988c1e7ade9ee9c4fbf3412bca696f926b1aab16 (5,156 bytes); R-R
   beyond its explicit polynomial; the [E-LEV] necessity clause is DATA of others (a control and a lane's frozen instances), not DEAD; no
   statement is killed.
 - Fixes (docs/new/P-N5-ASC-fixes.md, append-only; entries 1-2 by L-NEW successor 62, entries 3-4 by L-NEW successor 63, entry 5 by L-NEW
-  successor 64; entry 1 at 19cc23e3, l. 1-67, under «Lead 22:41Z, 22:46Z, 22:48Z: «GO, fixes entry 1, now. One entry»» (l. 3); entry 2
-  at a5dcf9c6, l. 69-91, under «Lead 00:15Z: «P-N5-ASC fix round 2 … Write fixes entry 2 (append-only) and line L-2 by script»» (l. 69);
-  entry 3 at a2512364, l. 93-125, under «Lead 03:30Z: «P-N5-ASC fix round 3, from CHECKER 21 C135 … Write fixes entry 3 (append-only)
-  and docs/new/P-N5-ASC-line-L3.txt by script»» (l. 93); entry 4 at a744677e, l. 127-140, under «Lead 04:56Z: «P-N5-ASC fix round 4: ONE
-  required string (R5), from REFEREE 28 §E»» (l. 127); entry 5 at e28e962d, l. 142-156, under «Lead 06:33Z: «Write fixes entry 5 + L-5 =
-  L-4 + R-A + R-I by script»» (l. 142)):
+  successor 64, entry 6 by L-NEW successor 65; entry 1 at 19cc23e3, l. 1-67, under «Lead 22:41Z, 22:46Z, 22:48Z: «GO, fixes entry 1,
+  now. One entry»» (l. 3); entry 2 at a5dcf9c6, l. 69-91, under «Lead 00:15Z: «P-N5-ASC fix round 2 … Write fixes entry 2 (append-only)
+  and line L-2 by script»» (l. 69); entry 3 at a2512364, l. 93-125, under «Lead 03:30Z: «P-N5-ASC fix round 3, from CHECKER 21 C135 …
+  Write fixes entry 3 (append-only) and docs/new/P-N5-ASC-line-L3.txt by script»» (l. 93); entry 4 at a744677e, l. 127-140, under «Lead
+  04:56Z: «P-N5-ASC fix round 4: ONE required string (R5), from REFEREE 28 §E»» (l. 127); entry 5 at e28e962d, l. 142-156, under «Lead
+  06:33Z: «Write fixes entry 5 + L-5 = L-4 + R-A + R-I by script»» (l. 142); entry 6 at 2f4167cd, l. 158-182, under «Lead 10:25Z: «Write
+  fixes entry 6 (line-only) + L-6 = L-5 + R6 by script»» (l. 158)):
   - W-1 (REFEREE-2) = AS-2 + AS-3 (REFEREE) + R220's scope item: three packet strings («(only for §6 UP-JUMP, UP-B and NOUP)», the table
     string, the title string «in particular, under the e-priority hypothesis [E-LEV], on genomes with boundedly many upward Ξ-edges
     (UP-B)»); every UP-B / NOUP clause of the line carries «under [E-LEV]» (4 times in L-4, by script); the scope sentence kept.
@@ -756,13 +924,20 @@ the procedure of G-U 988c1e7ade9ee9c4fbf3412bca696f926b1aab16 (5,156 bytes); R-R
     sha1, each old string once in L-4 and the predicted sha1 fe4d3f90… (fixes l. 152-154); «DATA rule: R-A and R-I are wordings; no tool
     or DATA output changes.» (l. 155); asc.pins 41 rows (l. 156). Its R-A sentence ends «as the packet's §4 does» (l. 149); the two
     definitions are in §2 (l. 55, l. 58; REFEREE §G l. 380-381: «Harmless.»).
+  - Entry 6: CHECKER C135 Add. 1's E-5 and its exact R6 («R6 (REQUIRED, taken; CHECKER's exact strings)», l. 164); R6 read against the
+    frozen packet by the lane («R6 against the frozen packet §2 (l. 58-62), as the Lead asked: no misstatement.», l. 169), clause by
+    clause against l. 59-62 (l. 170-177), with «up to ⊥» read as making explicit what l. 59 leaves implicit (««up to ⊥» only makes
+    explicit that the sequence stops at ⊥, which l. 59 leaves implicit (next is undefined on ⊥).», l. 173); «N-S: no action (CHECKER
+    ruled; entry 6 is line-only and carries no proof).» (l. 162-163); L-6 by mkl6_193.py, which asserts L-5's sha1, the old string
+    exactly once in L-5 and the predicted sha1 a23c61d3… (l. 179-181); asc.pins re-pinned with L-6 and mkl6_193.py added, «check.sh
+    block «P-N5-ASC» unchanged.» (l. 182); asc.pins 43 rows (my count).
   - No statement of the packet changes; entry 1 changes the [E-LEV] scope words, pins, unit counts and the F′_0 sentence; entry 2
-    changes one unit string and one counter condition; entries 3-5 change seven strings of the line and the pins.
+    changes one unit string and one counter condition; entries 3-6 change eight strings of the line and the pins.
 - Not signed: packet §7-§9 (DATA, machine checks, TARGET diff and limits), the «Context, not a clause» row (l. 208), the packet's
   Reading after CHAIN-DECOMP (l. 89-90; a proof step of HUB-ASC-G, see (c)), the L-RED R220 adversary data and REFEREE-2's control (DATA
   of others, cited in the scope tail as evidence for [E-LEV]'s necessity), REFEREE's asc_cd_l0.py witness and REFEREE-2's r2cd5.py
-  counters (referee data on the old line wording), box 193's other lane items (ASC-GATE, ASC-EXP, DEAD RMON-2, the CS(M, A) values),
-  BOX 194 (P-N5-QUIET, separate packet).
+  counters (referee data on the old line wording), CHECKER C135 Add. 1's CS(3) witness (its scratch hub.py; checker data on L-5's
+  wording), box 193's other lane items (ASC-GATE, ASC-EXP, DEAD RMON-2, the CS(M, A) values), BOX 194 (P-N5-QUIET, separate packet).
 - Referee strengthening (NOT part of this entry; referee checks):
   (i) REFEREE: own asc_quotes.py, asc_cs.py, asc_game.py («IDEAL-CYC replay on successor 26's own VJ engine xicyc_vj.py and Γ builder
     xicyc_replay.py, written from R104's text», l. 31): the CS(M) maxima for M 1-5 at B 0 and B 1 equal to §7 (l. 132-142); RSG_K4,
@@ -776,16 +951,19 @@ the procedure of G-U 988c1e7ade9ee9c4fbf3412bca696f926b1aab16 (5,156 bytes); R-R
   (iii) L-RED successor 55, R220 (claude/l-red 68a1f609, docs/red/R220-asc.md; an adversary, not a signature): «No BROKEN, no GAP.» (l.
     17); exhaustive CS(M) M ≤ 5, B 0-3 (§1); HUB-ASC-G on 58 runs under both e-orders, 0 violations (§2); «Finding (scope, not a kill):
     [E-LEV] is necessary for UP-JUMP, UP-B and NOUP.» (l. 54).
-  (iv) The L-3 to L-5 rounds. REFEREE §E: the old CHAIN-DECOMP hypothesis fails at level-0 e-vertices, shown on RS2 and LEAP_k8 with its
+  (iv) The L-3 to L-6 rounds. REFEREE §E: the old CHAIN-DECOMP hypothesis fails at level-0 e-vertices, shown on RS2 and LEAP_k8 with its
     own builder and engine (scratch/asc_cd_l0.py, asc_logs/cd_level0.out; «It holds in every genome that has a level-0 mover.», l. 302).
     REFEREE-2 Add. 5: own counters in R2-P-N5-ASC/r2cd5.py (outputs r2cd5_inst.out on the 13 pinned instances from a git archive of
     a744677e, r2cd5_noup.out on 300 own random genomes, seed 33): «This confirms REFEREE 28's R5 witness independently. CDEC 0 of 24,818
     reproduces the lane's CHAIN-DECOMP count exactly.» (l. 364); the converse of the «i.e.»: «Measured: 0 plays with an e-vertex as
     cycle node among the 50,881 plays of the pinned instances and the 20,549 plays of the random genomes.» (l. 376-377). REFEREE §F
     addendum 1 re-derived that condition («This is REFEREE-2's condition, re-derived.», l. 344-345) and predicted L-5's sha1 before the
-    lane wrote it (scratch/asc_l4na.py, asc_logs/l4_na.out, l. 363-365); R-I then removed the gloss from the line.
+    lane wrote it (scratch/asc_l4na.py, asc_logs/l4_na.out, l. 363-365); R-I then removed the gloss from the line. CHECKER C135 Add. 1:
+    on CS(3), a run of four forests with every chain lex-nondecreasing and a choice of item with no monotonicity condition give 8
+    distinct values with 0 ascents, more than F_0(3) = 7 (l. 116-119); R6 puts the hub's condition into the line. REFEREE §H read R6
+    against packet §2 l. 58-62 clause by clause (l. 397-403) and re-checked CHECKER's CS(3) witness by hand (l. 404-406). <R2-A7>
 - Honest limits: (i) Nothing here bounds R, a run length or a running time; the step from D_E to R needs OVT-DV and CONJECTURE IN-BOUND,
-  neither in RESULTS («OVT-DV» and «IN-BOUND» 0 times in RESULTS and GAPS at 55e5456d). (ii) UP-JUMP, UP-B and NOUP hold only under
+  neither in RESULTS («OVT-DV» and «IN-BOUND» 0 times in RESULTS and GAPS at fdc0f1e9). (ii) UP-JUMP, UP-B and NOUP hold only under
   [E-LEV], which is in no landed entry: it is the order of the fleet's builder (box189/gamma3.py) and of R104's packet §3.1, and R104's
   own text leaves the order among e-priorities open (l. 10085); without it they are false (REFEREE-2's control; L-RED's NOUPC_1-3).
   (iii) F_B is far from tight (degree 5·2^B − 3 against the exact maxima; REFEREE-2 N-3) and super-polynomial if B grows like log M
@@ -797,35 +975,40 @@ the procedure of G-U 988c1e7ade9ee9c4fbf3412bca696f926b1aab16 (5,156 bytes); R-R
   «DESC-POLY», «UP-JUMP», «UP-B», «NOUP», «E-DOM», «TAIL-MON», «[E-LEV]» are new to RESULTS («E-MON» occurs there only inside
   «SETTLE-MON» and «VALUE-MONO»); «U(G)» occurs once in R105's body for another quantity; «R217» in the line is an L-RED round label
   (docs/red/), not a RESULTS label. (viii) The source note names fixes entries 1-2 and «L-NEW successors 61-62», the authors of the
-  packet and of the proof-bearing entry 1; the line-only entries 3-5 and their authors, successors 63 and 64, are not named (CHECKER
+  packet and of the proof-bearing entry 1; the line-only entries 3-6 and their authors, successors 63 to 65, are not named (CHECKER
   C134's N-S ruling, as C135 E-1 states it: «the note names the authors of proof-bearing text; a line-only entry need not be named», l.
-  22-23; R118's and R120's landed notes likewise); REFEREE §F's optional AS-L5 («A later line may name «fixes entries 1-4; L-NEW
-  successors 61-63».», l. 332-333) was not taken. (ix) Literature: VJ00 §4.2 and Friedmann arXiv 1106.0778 §3, as cited by R118
-  (landed); no novelty is claimed. (x) CHAIN-DECOMP's hypothesis in the line is the packet's «seq_t(v) = (f, …)» alone: L-4's gloss «the
-  first e-vertex on v's play is f and f ∈ Π_t(v)», whose converse can fail only if an e-vertex is v's cycle node (REFEREE-2 Add. 5 l.
-  368-375; REFEREE §F addendum 1 l. 342-345) and which no measured play contradicts (REFEREE-2 Add. 5 l. 376-377), is not in L-5 (R-I).
-  «Ascent» has one meaning per domain in the line: a step to a more relevant element of seq_t(v) (R4) and a step to a larger item in
-  CS(M) (R-A), packet l. 55 read with l. 58. A hub, its value and a chain of CS(M) are named in the line and defined in packet §2 (l.
-  59-62), not in the line.
-- Data (DATA, not proof): experiments/new/box193/ at l-new e28e962d, run by check193.sh (asc193.py, ug193.py, noup193.py, hubasc193.py,
+  22-23; C135 Add. 1 for entry 6: «The same holds for the line-only entry 6 that R6 needs.», l. 128-129; R118's and R120's landed notes
+  likewise); REFEREE §F's optional AS-L5 («A later line may name «fixes entries 1-4; L-NEW successors 61-63».», l. 332-333) was not
+  taken. (ix) Literature: VJ00 §4.2 and Friedmann arXiv 1106.0778 §3, as cited by R118 (landed); no novelty is claimed. (x)
+  CHAIN-DECOMP's hypothesis in the line is the packet's «seq_t(v) = (f, …)» alone: L-4's gloss «the first e-vertex on v's play is f and
+  f ∈ Π_t(v)», whose converse can fail only if an e-vertex is v's cycle node (REFEREE-2 Add. 5 l. 368-375; REFEREE §F addendum 1 l.
+  342-345) and which no measured play contradicts (REFEREE-2 Add. 5 l. 376-377), is not in L-5 or L-6 (R-I). «Ascent» has one meaning
+  per domain in the line: a step to a more relevant element of seq_t(v) (R4) and a step to a larger item in CS(M) (R-A), packet l. 55
+  read with l. 58. A forest, chain(x), a hub with its condition and the hub's value are defined in the line as packet §2 l. 59 and l. 62
+  define them (R6); the line's «up to ⊥» states that a chain stops at ⊥, which packet l. 59 leaves implicit (fixes l. 173). REFEREE §H's
+  OPTIONAL HL-1: «The hub's «≤» in R6 is not labelled «lex».» (l. 408), «so the reading is fixed by context.» (l. 409), «I do not
+  require it.» (l. 410-411); not taken (the Lead's ruling), so L-6 has no «(lex)» there.
+- Data (DATA, not proof): experiments/new/box193/ at l-new 2f4167cd, run by check193.sh (asc193.py, ug193.py, noup193.py, hubasc193.py,
   skel193.py, chain193.py and the rest; IDEAL-CYC by box191/idealcyc.py on box189/gamma3.py), its output committed as check193.out (sha1
-  d4fb21644db639435806886bb6c709add84d9ded, 71 lines; unchanged since a5dcf9c6: from a5dcf9c6 to e28e962d the only box193 changes are
-  asc.pins and the new mkl3_193.py, mkl4_193.py and mkl5_193.py, git diff); wired into experiments/new/check.sh as blocks «BOX 193 ASC»
-  (l. 988-996: the diff against check193.out and three grep lines) and «P-N5-ASC» (l. 997-1003: the 41 rows of asc.pins, sha1
-  65ed9023b9594de13858d26f3c52bc6863465bcd, the packet, the fixes file, L-1 to L-5, the tools, mkl3_193.py, mkl4_193.py, mkl5_193.py and
-  the 13 instances), run by scripts/verify.sh; both blocks byte-equal at a5dcf9c6, a744677e and e28e962d. Re-run from a git archive of
-  e28e962d (experiments, docs/new, scripts): check193.sh 2026-11-08T08:15:53Z-08:16:39Z, rc 0, 71 lines, byte-equal to check193.out; the
-  two check.sh blocks 2026-11-08T08:16:45Z-08:17:28Z, rc 0, «BOX 193 ASC: … = frozen: PASS» and «P-N5-ASC: packet and 41 pinned files
-  match asc.pins: PASS»; mkl3_193.py (C135 from 0942e8be), mkl4_193.py and mkl5_193.py re-run there, rc 0, output cmp-equal to L-3, L-4
-  and L-5. CHECKER C135 re-ran the two blocks from a git archive of df0d2a25 (02:48:22Z-02:49:02Z, rc 0, l. 47-50). Sums over the 13
-  instance lines (my script): edomunits 1,892, tmonunits 2,552, decunits 24,818, asc 1,956, edomfail, tmonfail, decfail, upfail, gfail
-  0; ug193.py 13 lines, max ascents ≤ U(G) on each; NOUP «genomes 300 seed 1: Xi-cyclic 179; max ascents 0»; HUB-ASC 11 (M 4, B 0), 16
-  (M 4, B 1), 29 (M 5, B 1); SKELETON 125 and 1,296 forests, 0 violations; CS(M, A 0) 2, 4, 7, 11, 16, 22, 29 for M 1-7 (= F_0). Both
-  referees re-ran check193.sh at a5dcf9c6 (REFEREE §D l. 264-268, byte-equal; REFEREE-2 Add. 3 l. 301-303, byte-equal) and their own
-  engines (above). R1-R5, R-A and R-I add no DATA and change no count (REFEREE-2 Add. 4 l. 342, Add. 5 l. 385-386, Add. 6 l. 403; fixes
-  l. 125, l. 139, l. 155). Instances: experiments/new/box193/inst/{CLR_k8s16, FPORT_n2, FPORT_n3, LEAP_k8, RS2, RS2_L8M6, RS3,
-  RSG_K4}.json (L-RED R217's) and experiments/new/box192/inst/{cR_d2_w8_R22, rd2_d9, rd2_d10, rd3_d7, rf_d5}.json, each pinned in
-  asc.pins.
+  d4fb21644db639435806886bb6c709add84d9ded, 71 lines; unchanged since a5dcf9c6: from a5dcf9c6 to 2f4167cd the only box193 changes are
+  asc.pins and the new mkl3_193.py, mkl4_193.py, mkl5_193.py and mkl6_193.py, git diff); wired into experiments/new/check.sh as blocks
+  «BOX 193 ASC» (l. 988-996: the diff against check193.out and three grep lines) and «P-N5-ASC» (l. 997-1003: the 43 rows of asc.pins,
+  sha1 aced1453af1e1e37f8de163df1e7449347b51c9c, the packet, the fixes file, L-1 to L-6, the tools, mkl3_193.py to mkl6_193.py and the
+  13 instances), run by scripts/verify.sh; both blocks byte-equal at a5dcf9c6, a744677e, e28e962d and 2f4167cd. Re-run from a git
+  archive of 2f4167cd (experiments, docs/new, scripts): check193.sh 2026-11-08T11:39:22Z-11:40:07Z, rc 0, 71 lines, byte-equal to
+  check193.out; the two check.sh blocks 2026-11-08T11:40:07Z-11:40:51Z, rc 0, «BOX 193 ASC: … = frozen: PASS» and «P-N5-ASC: packet and
+  43 pinned files match asc.pins: PASS»; mkl3_193.py (C135 from 0942e8be) to mkl6_193.py re-run there, rc 0, output cmp-equal to L-3 to
+  L-6. CHECKER C135 re-ran the two blocks from a git archive of df0d2a25 (02:48:22Z-02:49:02Z, rc 0, l. 47-50) and, at Add. 1, of
+  e28e962d (10:03:51Z-10:04:25Z, rc 0, l. 111-112). Sums over the 13 instance lines (my script): edomunits 1,892, tmonunits 2,552,
+  decunits 24,818, asc 1,956, edomfail, tmonfail, decfail, upfail, gfail 0; ug193.py 13 lines, max ascents ≤ U(G) on each; NOUP «genomes
+  300 seed 1: Xi-cyclic 179; max ascents 0»; HUB-ASC 11 (M 4, B 0), 16 (M 4, B 1), 29 (M 5, B 1); SKELETON 125 and 1,296 forests, 0
+  violations; CS(M, A 0) 2, 4, 7, 11, 16, 22, 29 for M 1-7 (= F_0). Both referees re-ran check193.sh at a5dcf9c6 (REFEREE §D l. 264-268,
+  byte-equal; REFEREE-2 Add. 3 l. 301-303, byte-equal) and their own engines (above). R1-R5, R-A and R-I add no DATA and change no count
+  (REFEREE-2 Add. 4 l. 342, Add. 5 l. 385-386, Add. 6 l. 403; fixes l. 125, l. 139, l. 155; C135 Add. 1 l. 112: «R5, R-I, R-A change no
+  DATA (fixes l. 139, 155).»); nor does R6 (fixes entry 6 «line-only», l. 158; in box193 2f4167cd changes asc.pins and adds mkl6_193.py
+  only, git diff e28e962d 2f4167cd). <R2-A7> Instances: experiments/new/box193/inst/{CLR_k8s16, FPORT_n2, FPORT_n3, LEAP_k8, RS2,
+  RS2_L8M6, RS3, RSG_K4}.json (L-RED R217's) and experiments/new/box192/inst/{cR_d2_w8_R22, rd2_d9, rd2_d10, rd3_d7, rf_d5}.json, each
+  pinned in asc.pins.
 - Signatures: REFEREE docs/referee/R-P-N5-ASC.md: successor 27's report 26b2b51667d9ee3a0df318d127f844e6279b1d07 (2026-11-07T22:27:05Z;
   «Written from 2026-11-07T22:25Z (date -u); the header time of record is the commit time.»), «I did NOT read docs/referee-2/ for this
   report.» (l. 3), verdict table l. 5-17; §C d4b39be0e5589cba49d08df3ca185332519b8dd6 (2026-11-07T23:51:43Z; heading «date -u at writing
@@ -841,59 +1024,64 @@ the procedure of G-U 988c1e7ade9ee9c4fbf3412bca696f926b1aab16 (5,156 bytes); R-R
   «date -u at writing 2026-11-08T06:30Z»), l. 336-368, «Revised verdict on L-4: MATCHES with R-A required (R-I optional).» (l. 367);
   successor 29's §G d17b305eacb25a824c287c2f4d2aded59c79a1e6 (2026-11-08T07:47:39Z; heading «date -u at writing 2026-11-08T07:47Z»), l.
   370-386, «Verdict: L-5 MATCHES the packet. All statements of P-N5-ASC stay SIGN (UP-JUMP / UP-B / NOUP under [E-LEV], as before).» (l.
-  386). REFEREE-2 docs/referee-2/R2-P-N5-ASC.md: successor 31's report 533744a51d23c45d7d6107041eef4dee29129253 (2026-11-07T22:17:18Z),
-  «Independent: docs/referee/ not read on this item.» (l. 2), verdict table l. 11-25; Addendum 1
-  c4166c8b49ffbace7ec09bd2edb5c6d9189b7f67 (2026-11-07T22:47:01Z), l. 192-230, «**Order.** Read only now: my report (533744a5) was on
-  origin before I opened it (Lead 22:48Z). REFEREE did not read mine.» (l. 193), «**Verdict.** The two reports agree.» (l. 224);
-  Addendum 2 fcdc16b45ea2086ae307137036bacbcfc8d36a23 (2026-11-07T23:52:10Z), l. 232-281, «fixes entry 1 **CORRECT**;» (l. 278);
-  successor 32's Addendum 3 d3fed33cbe4694c3961e563e42cf438258697a9e (2026-11-08T01:19:51Z; heading «2026-11-08 01:08Z by date -u»), l.
-  283-316, «**L-2 MATCHES** (byte test, the counter read against the lemma, the re-run, and the DATA rule clause by clause) (Opus 5.5,
-  D1).» (l. 315), «Statement verdicts unchanged: all SIGN.» (l. 316); successor 32's Addendum 4 98b9622b99e0dfd16353c68572a74c9ee8eb7c8f
-  (2026-11-08T04:30:58Z; heading «2026-11-08 04:09Z by date -u»), l. 318-343, «**Verdict: L-3 MATCHES** (Opus 5.5, D1). Statement
-  verdicts unchanged: all SIGN.» (l. 343), corrected by Addendum 5 (l. 382-384); successor 33's Addendum 5
-  caa262828941b73116bb018351cfd605a1f04b95 (2026-11-08T05:25:44Z; heading «2026-11-08 05:25Z by date -u»; its packet line numbers
-  corrected at 05eb5181e0af63723a038279cefe7582fe3d9846, 2026-11-08T05:25:54Z, «REFEREE-2 R2-P-N5-ASC Add. 5: packet line numbers
-  corrected (70-71, 74-76)»), l. 345-387, «**Verdict: L-4 MATCHES** (Opus 5.5, D1). All statement verdicts are unchanged: SIGN.» (l.
-  387); successor 33's Addendum 6 388530af5e7b0f5cc585f976325fb27d18bcf902 (2026-11-08T07:47:22Z; heading «2026-11-08 07:47Z by date
-  -u»), l. 389-404, «**Verdict: L-5 MATCHES** (Opus 5.5, D1). Statement verdicts unchanged: all SIGN.» (l. 404). Lane (claude/l-new):
-  L-NEW successor 61, 95dc76d7 (packet FROZEN, asc.pins, check blocks); successor 62, 19cc23e3 (fixes entry 1, L-1) and a5dcf9c6 (fixes
-  entry 2, L-2); successor 63, a2512364 (fixes entry 3, L-3) and a744677e (fixes entry 4, L-4); successor 64, e28e962d (fixes entry 5,
-  L-5).
+  386); successor 30's §H 6c8d6956d500be70211100a1557da6f42e091a35 (2026-11-08T11:26:43Z; heading «date -u at writing
+  2026-11-08T11:26Z»), l. 388-413, «Verdict: **Line L-6 MATCHES** the packet read with fixes entries 1-6; R1-R5, R-A, R-I and R6 all
+  CORRECT. All statements stay as in §0 / earlier sections.» (l. 412-413). REFEREE-2 docs/referee-2/R2-P-N5-ASC.md: successor 31's
+  report 533744a51d23c45d7d6107041eef4dee29129253 (2026-11-07T22:17:18Z), «Independent: docs/referee/ not read on this item.» (l. 2),
+  verdict table l. 11-25; Addendum 1 c4166c8b49ffbace7ec09bd2edb5c6d9189b7f67 (2026-11-07T22:47:01Z), l. 192-230, «**Order.** Read only
+  now: my report (533744a5) was on origin before I opened it (Lead 22:48Z). REFEREE did not read mine.» (l. 193), «**Verdict.** The two
+  reports agree.» (l. 224); Addendum 2 fcdc16b45ea2086ae307137036bacbcfc8d36a23 (2026-11-07T23:52:10Z), l. 232-281, «fixes entry 1
+  **CORRECT**;» (l. 278); successor 32's Addendum 3 d3fed33cbe4694c3961e563e42cf438258697a9e (2026-11-08T01:19:51Z; heading «2026-11-08
+  01:08Z by date -u»), l. 283-316, «**L-2 MATCHES** (byte test, the counter read against the lemma, the re-run, and the DATA rule clause
+  by clause) (Opus 5.5, D1).» (l. 315), «Statement verdicts unchanged: all SIGN.» (l. 316); successor 32's Addendum 4
+  98b9622b99e0dfd16353c68572a74c9ee8eb7c8f (2026-11-08T04:30:58Z; heading «2026-11-08 04:09Z by date -u»), l. 318-343, «**Verdict: L-3
+  MATCHES** (Opus 5.5, D1). Statement verdicts unchanged: all SIGN.» (l. 343), corrected by Addendum 5 (l. 382-384); successor 33's
+  Addendum 5 caa262828941b73116bb018351cfd605a1f04b95 (2026-11-08T05:25:44Z; heading «2026-11-08 05:25Z by date -u»; its packet line
+  numbers corrected at 05eb5181e0af63723a038279cefe7582fe3d9846, 2026-11-08T05:25:54Z, «REFEREE-2 R2-P-N5-ASC Add. 5: packet line
+  numbers corrected (70-71, 74-76)»), l. 345-387, «**Verdict: L-4 MATCHES** (Opus 5.5, D1). All statement verdicts are unchanged: SIGN.»
+  (l. 387); successor 33's Addendum 6 388530af5e7b0f5cc585f976325fb27d18bcf902 (2026-11-08T07:47:22Z; heading «2026-11-08 07:47Z by date
+  -u»), l. 389-404, «**Verdict: L-5 MATCHES** (Opus 5.5, D1). Statement verdicts unchanged: all SIGN.» (l. 404); successor 35's Addendum
+  7 <R2-A7>. Lane (claude/l-new): L-NEW successor 61, 95dc76d7 (packet FROZEN, asc.pins, check blocks); successor 62, 19cc23e3 (fixes
+  entry 1, L-1) and a5dcf9c6 (fixes entry 2, L-2); successor 63, a2512364 (fixes entry 3, L-3) and a744677e (fixes entry 4, L-4);
+  successor 64, e28e962d (fixes entry 5, L-5); successor 65, 2f4167cd (fixes entry 6, L-6).
 - INDEPENDENCE: the packet's proofs are L-NEW's except the AS-1 step (L41 and L43, above); each referee re-derived every proof step
   (REFEREE «## 3. Proofs (each step re-derived)»; REFEREE-2 «## Proofs (own re-derivation)») and replayed the statements on its own code
   (REFEREE: asc_cs.py, asc_game.py on its own VJ engine and Γ builder; REFEREE-2: r2hub.py, r2asc.py on its own builder; «Lane code was
   run only, never read for my checks or imported.», REFEREE-2 l. 8). Each referee wrote its first report without reading the other's
   (REFEREE l. 3; REFEREE-2 l. 2); REFEREE-2 compared afterwards (Add. 1, «**Verdicts: identical.**», l. 194). The L-1 and L-2 wording is
   the lane's under the Lead's routing (fixes l. 3, l. 69); L-3's four replacements are CHECKER C135's (§5), L-4's one replacement is
-  REFEREE's R5 (§E), and L-5's two are R-A and R-I, the Lead's strings as REFEREE 29 ruled on them (§F addendum 1 l. 351-352, l.
-  360-362: R-A required, R-I optional and taken by the Lead), each applied by the lane's script. REFEREE 29 read REFEREE-2's N-1 only as
-  the Lead quoted it («Not read: docs/referee-2/ beyond what the Lead quoted.», §F addendum 1 l. 337) and re-derived its condition (l.
-  344-345). Each referee byte-tested every line with its own script (REFEREE §C, §D scratch/asc_l2.py, §E scratch/asc_l3.py, §F
-  scratch/asc_l4.py, §G scratch/asc_l5.py; REFEREE-2 Add. 2 bt_l1.py, Add. 3 bt_l2.py, Add. 4 bt_l3.py, Add. 5 bt_l4.py, Add. 6
-  bt_l5.py) and read it in meaning. REFEREE-2 records its own round-1 miss on W-4 («**My miss in round 1:** I had not read the counter
-  and called this clause OK.», Add. 2 l. 267-268) and its Add. 4 miss on the CHAIN-DECOMP hypothesis («It did not compare the
-  CHAIN-DECOMP hypothesis of L-1 to L-3 against packet l. 80. REFEREE 28 found the gap.», Add. 5 l. 382-383). L-RED R220 read neither
-  referee file («Referee files not read.», R220 l. 2).
+  REFEREE's R5 (§E), L-5's two are R-A and R-I, the Lead's strings as REFEREE 29 ruled on them (§F addendum 1 l. 351-352, l. 360-362:
+  R-A required, R-I optional and taken by the Lead), and L-6's one is CHECKER C135 Add. 1's R6 (l. 133-137), each applied by the lane's
+  script. REFEREE 29 read REFEREE-2's N-1 only as the Lead quoted it («Not read: docs/referee-2/ beyond what the Lead quoted.», §F
+  addendum 1 l. 337) and re-derived its condition (l. 344-345). Each referee byte-tested every line with its own script (REFEREE §C, §D
+  scratch/asc_l2.py, §E scratch/asc_l3.py, §F scratch/asc_l4.py, §G scratch/asc_l5.py, §H scratch/asc_l6.py; REFEREE-2 Add. 2 bt_l1.py,
+  Add. 3 bt_l2.py, Add. 4 bt_l3.py, Add. 5 bt_l4.py, Add. 6 bt_l5.py, Add. 7 <R2-A7>) and read it in meaning. REFEREE-2 records its own
+  round-1 miss on W-4 («**My miss in round 1:** I had not read the counter and called this clause OK.», Add. 2 l. 267-268) and its Add.
+  4 miss on the CHAIN-DECOMP hypothesis («It did not compare the CHAIN-DECOMP hypothesis of L-1 to L-3 against packet l. 80. REFEREE 28
+  found the gap.», Add. 5 l. 382-383). L-RED R220 read neither referee file («Referee files not read.», R220 l. 2).
 - TARGET.md diff: TARGET.md §1 defines a parity game; IDEAL-CYC of R104 / R118 is a Howard run on the genome game Γ(G), and no statement
   of this entry bounds a running time, an iteration count or R; the bounded quantity D_E,I(v) counts distinct e-sets on one vertex's
   plays (packet §9: «This packet proves no algorithm polynomial.», «The quantity is not a running time.»; REFEREE §7 l. 191-192 «It is
   not M3 (§7 e needs a precise theorem in TARGET vocabulary). CLEAN.»; REFEREE-2 l. 175-176 «D_E,I(v) is a count of distinct e-sets in
   IDEAL-CYC runs of R104 / R118 genomes, not a running time (TARGET.md §2-§4); not M3/M4, not a gauntlet step ✓.»). «M» is R104's number
   of options / e-vertices, not TARGET.md's m (REFEREE l. 193). It is not an algorithm claim, so TARGET.md §5's gauntlet does not apply,
-  and it is not a step-4 pass. L-5 carries «G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim» and «this bounds the
+  and it is not a step-4 pass. L-6 carries «G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim» and «this bounds the
   e-set height D_E,I(v) only, NOT R and NOT any running time» (by script), as L-2 did when C135 passed its TARGET.md diff (l. 64-65); of
-  R1-R5, R-A and R-I only R2 touches the scope tail, adding the L41 sentence; R-A and R-I re-word the HUB-ASC(B) and CHAIN-DECOMP
-  clauses, and neither clause mentions a winning region or a running time. GAPS G-N5-TIME: open.
+  R1-R5, R-A, R-I and R6 only R2 touches the scope tail, adding the L41 sentence; R-A, R-I and R6 re-word the HUB-ASC(B) and
+  CHAIN-DECOMP clauses (R6 the abstract CS(M) of HUB-ASC(B) only), and neither clause mentions a winning region or a running time. GAPS
+  G-N5-TIME: open.
 
 Proposed GAPS line-11 UPDATE (append-only), to go AFTER the last UPDATE on GAPS l. 11 at landing (R120's, «UPDATE 2026-11-07 21:05Z:
-RESULTS R120 (P-TOWER-FUEL; CHECKER C134 0c816917)», the last at the local trunk 55e5456d and at origin trunk a1decf9a), as a pure
-insertion with one separating space before the row's closing « |». BUILT FROM L-5 by upd121c.py (R118's procedure, which CHECKER C135
-ruled applies: run121() unchanged, with R121's start «more relevant than w): », its five labels and its source prefix; controls R97-R116
+RESULTS R120 (P-TOWER-FUEL; CHECKER C134 0c816917)», the last at trunk fdc0f1e9, the local HEAD and origin trunk), as a pure insertion
+with one separating space before the row's closing « |». BUILT FROM L-6 by upd121d.py (R118's procedure, which CHECKER C135 ruled
+applies: run121() unchanged, with R121's start «more relevant than w): », its five labels and its source prefix; controls R97-R116
 rebuilt byte for byte and the R117-R120 controls as landed, each compared with GAPS l. 11, True ×24; on L-3 the same build gives C135
-§5's f545cba7c97eee853387a5efb617984538e27806 and on L-4 d3a423302a45850e3400c0e15e14d7dfdd600508; sha1
-3571ef76373c0143e5611cc34289e73ef139fadc of the line without newline and unfilled, = d3a42330… with R-I and R-A applied). <DATE>,
-<HH:MM> and <checker> are the landing date, time and the C135 commit, all filled at landing:
-UPDATE <DATE> <HH:MM>Z: RESULTS R121 (P-N5-ASC; CHECKER C135 <checker>) [refereed-only] LANDED: The e-set height of one vertex on IDEAL-CYC is polynomial when its plays have boundedly many ascents (HUB-ASC-G), in particular, under the e-priority hypothesis [E-LEV], on genomes with boundedly many upward Ξ-edges (UP-B) (premises: RESULTS R104's definitions of the genome and of Γ(G) only; RESULTS R118 (a) IDEAL-CYC(G), (b) F1, F2, F3 and (e) «C ≤ n·(2M + 2).» in its per-vertex form (Λ_t(v) takes at most 2M + 3 values, in increasing reward); VJ00 §4.2 / Friedmann arXiv 1106.0778 §3 for the value (Λ, Π, k) and its order ⊴; HYPOTHESIS [E-LEV] (only for §6 UP-JUMP, UP-B and NOUP): lev(x) < lev(x′) implies pr(e_(x,k)) < pr(e_(x′,k′)), the order of Γ(G) as built by experiments/new/box189/gamma3.py (and of R104's packet §3.1), not in a landed line; not used: [LOC], OVT-DV, IN-BOUND, any L-RED lane lemma, F4/F4′, F5, F6), with seq_t(v) the e-vertices in Π_t(v) in play order, E_t(v) their set, an ascent of seq_t(v) a step to a more relevant element, sets of e-vertices compared lexicographically by their most relevant differing element, and D_E,I(v) the number of distinct E_t(v) on an interval I of states with Λ_t(v) = w fixed (M_w := the number of e-vertices more relevant than w): if Λ_t(v) = Λ_(t+1)(v) then E_t(v) ≤ E_(t+1)(v) (Lemma E-MON); if seq_t(v) = (f, …), then f's successor y_f is a mover with Λ_t(y_f) = Λ_t(v) and E_t(v) = {f} ∪ E_t(y_f), hence seq_t(v) = (f, seq_t(y_f)) (Lemma CHAIN-DECOMP); in the abstract chain system CS(M) (items 1..M compared by number, a run of forests with every chain lex-nondecreasing, an ascent a step to a larger item), a hub whose value has at most B ascents at every time takes at most F_B(M) distinct values, F_0(M) = 1 + M(M + 1)/2 (DESC-POLY), F_B(M) = (M² + M + 1)(1 + M·F_(B−1)(M)²), a polynomial of degree 5·2^B − 3 for fixed B (Lemma SKELETON and Theorem HUB-ASC(B)); for every genome G, every vertex v and every interval I with Λ_t(v) = w, if seq_t(v) has at most B ascents for every t ∈ I then D_E,I(v) ≤ F′_B(M_w), F′_0 = F_0 (DESC-POLY on the whole interval), F′_B(M) = (M² + 3M + 1)(1 + M·F′_(B−1)(M)²), and over the whole run the number D_E(v) of distinct (Λ_t(v), E_t(v)) is at most (2M + 3)·F′_B(M) (Corollary HUB-ASC-G); an ascent of seq_t(v) needs a Ξ-edge from a mover to a mover of strictly higher level, so under [E-LEV] every seq_t(v) has at most U(G) ascents (U(G) := the number of options whose Ξ-target has a higher level) and D_E(v) ≤ (2M + 3)·F′_(U(G))(M); under [E-LEV], if U(G) = 0 then every seq_t(v) is descending and D_E(v) ≤ (2M + 3)(1 + M(M + 1)/2) (Lemma UP-JUMP, Corollary UP-B, Corollary NOUP; UP-JUMP, UP-B and NOUP under HYPOTHESIS [E-LEV]): this bounds the e-set height D_E,I(v) only, NOT R and NOT any running time: the step from D_E to R needs OVT-DV ([LOC], L-RED R217 §2) and CONJECTURE IN-BOUND (box 192 Addendum 9), neither landed; [E-LEV] is NECESSARY for UP-JUMP, UP-B and NOUP: with the e-priorities in decreasing level order (still R104's shape) NOUP fails on 209 of 21,116 plays of U(G) = 0 genomes, up to 2 ascents (REFEREE-2 control CTRL=elevrev, docs/referee-2/R2-P-N5-ASC.md at claude/referee-2 533744a5), and L-RED's frozen NOUPC_1 / 2 / 3 have U(G) = 0 and max ascents 2 / 3 / 4 under the e-order (−level, gate) (witness NOUPC_1, t 0, v 10; claude/l-red 68a1f609, experiments/red/r220/inst/, .pg sha1 82e41194…, 7ea66452…, 94db68d5…; one route only); §3-§5 do not use [E-LEV]; the proof of record of HUB-ASC-G's B = 0 case (F′_0 = F_0, DESC-POLY on the whole interval) is referee-originated (REFEREE R-P-N5-ASC §3 AS-1, restated in P-N5-ASC's fixes entry 1 AS-1), signed by both referees; DATA, clause by clause (scope IDEAL-CYC unless abstract; tools in experiments/new/box193/, run by check193.sh): E-DOM part of E-MON's proof: violations 0 in 1,892 vertices, E-MON (TAIL-MON form): violations 0 in 2,552 (consecutive state pair, W-target or c_W with Λ fixed) pairs, CHAIN-DECOMP: violations 0 in 24,818 (state, vertex) pairs with a nonempty e-sequence, UP-JUMP: violations 0 in 1,956 ascents of movers' plays with Λ below every e (asc193.py; set: the 13 instances, 8 L-RED R217 instances in inst/ and 5 in box192/inst/, all pinned in asc.pins); UP-B under [E-LEV]: max ascents ≤ U(G) on all 13 instances (unit: max ascents over (state, vertex) plays; ug193.py); NOUP under [E-LEV]: 300 random genomes with no strictly upward Ξ-edge, 179 Ξ-cyclic, max ascents 0, max D_E per Λ-interval 3 (noup193.py 300 1); HUB-ASC(B), only the hub constrained: B 0 max 11 at M 4 (= F_0), B 1 max 16 at M 4 and 29 at M 5 (unit: distinct hub values; set: all runs of CS(M); abstract; hubasc193.py); SKELETON: violations 0 on all forests of CS(4) and CS(5) (skel193.py); tightness of B = 0: F_0 attained for M 1-7 (2, 4, 7, 11, 16, 22, 29; chain193.py, M 6 and 7 re-run by check193.sh); no separate DATA for HUB-ASC(B) with B ≥ 2, HUB-ASC-G's constants, the whole-run corollary and UP-B's D_E bound (P-N5-ASC, docs/new/P-N5-ASC.md with fixes entries 1-2, docs/new/P-N5-ASC-fixes.md; L-NEW successors 61-62). G-N5-TIME stays open.
+§5's f545cba7c97eee853387a5efb617984538e27806, on L-4 d3a423302a45850e3400c0e15e14d7dfdd600508 and on L-5
+3571ef76373c0143e5611cc34289e73ef139fadc; sha1 e975c303470236f97b2c92a11507316e6edbc06a of the line without newline and unfilled, =
+3571ef76… with R6 applied, = C135 Add. 1's «UPDATE = 3571ef76 + R6 (no newline, unfilled): sha1
+e975c303470236f97b2c92a11507316e6edbc06a, 5,479 B»). <DATE>, <HH:MM> and <checker> are the landing date, time and the C135 commit, all
+filled at landing:
+UPDATE <DATE> <HH:MM>Z: RESULTS R121 (P-N5-ASC; CHECKER C135 <checker>) [refereed-only] LANDED: The e-set height of one vertex on IDEAL-CYC is polynomial when its plays have boundedly many ascents (HUB-ASC-G), in particular, under the e-priority hypothesis [E-LEV], on genomes with boundedly many upward Ξ-edges (UP-B) (premises: RESULTS R104's definitions of the genome and of Γ(G) only; RESULTS R118 (a) IDEAL-CYC(G), (b) F1, F2, F3 and (e) «C ≤ n·(2M + 2).» in its per-vertex form (Λ_t(v) takes at most 2M + 3 values, in increasing reward); VJ00 §4.2 / Friedmann arXiv 1106.0778 §3 for the value (Λ, Π, k) and its order ⊴; HYPOTHESIS [E-LEV] (only for §6 UP-JUMP, UP-B and NOUP): lev(x) < lev(x′) implies pr(e_(x,k)) < pr(e_(x′,k′)), the order of Γ(G) as built by experiments/new/box189/gamma3.py (and of R104's packet §3.1), not in a landed line; not used: [LOC], OVT-DV, IN-BOUND, any L-RED lane lemma, F4/F4′, F5, F6), with seq_t(v) the e-vertices in Π_t(v) in play order, E_t(v) their set, an ascent of seq_t(v) a step to a more relevant element, sets of e-vertices compared lexicographically by their most relevant differing element, and D_E,I(v) the number of distinct E_t(v) on an interval I of states with Λ_t(v) = w fixed (M_w := the number of e-vertices more relevant than w): if Λ_t(v) = Λ_(t+1)(v) then E_t(v) ≤ E_(t+1)(v) (Lemma E-MON); if seq_t(v) = (f, …), then f's successor y_f is a mover with Λ_t(y_f) = Λ_t(v) and E_t(v) = {f} ∪ E_t(y_f), hence seq_t(v) = (f, seq_t(y_f)) (Lemma CHAIN-DECOMP); in the abstract chain system CS(M) (items 1..M compared by number, a forest a map next from the items to the items and ⊥ without cycles, chain(x) := (x, next(x), next²(x), …) up to ⊥, compared as a set, a run of forests with every chain lex-nondecreasing, an ascent a step to a larger item), a hub (h_t an item or ⊥ at each time t, chain(⊥) := ∅, with chain_s(h_s) ≤ chain_t(h_t) for s < t) whose value chain_t(h_t) has at most B ascents at every time takes at most F_B(M) distinct values, F_0(M) = 1 + M(M + 1)/2 (DESC-POLY), F_B(M) = (M² + M + 1)(1 + M·F_(B−1)(M)²), a polynomial of degree 5·2^B − 3 for fixed B (Lemma SKELETON and Theorem HUB-ASC(B)); for every genome G, every vertex v and every interval I with Λ_t(v) = w, if seq_t(v) has at most B ascents for every t ∈ I then D_E,I(v) ≤ F′_B(M_w), F′_0 = F_0 (DESC-POLY on the whole interval), F′_B(M) = (M² + 3M + 1)(1 + M·F′_(B−1)(M)²), and over the whole run the number D_E(v) of distinct (Λ_t(v), E_t(v)) is at most (2M + 3)·F′_B(M) (Corollary HUB-ASC-G); an ascent of seq_t(v) needs a Ξ-edge from a mover to a mover of strictly higher level, so under [E-LEV] every seq_t(v) has at most U(G) ascents (U(G) := the number of options whose Ξ-target has a higher level) and D_E(v) ≤ (2M + 3)·F′_(U(G))(M); under [E-LEV], if U(G) = 0 then every seq_t(v) is descending and D_E(v) ≤ (2M + 3)(1 + M(M + 1)/2) (Lemma UP-JUMP, Corollary UP-B, Corollary NOUP; UP-JUMP, UP-B and NOUP under HYPOTHESIS [E-LEV]): this bounds the e-set height D_E,I(v) only, NOT R and NOT any running time: the step from D_E to R needs OVT-DV ([LOC], L-RED R217 §2) and CONJECTURE IN-BOUND (box 192 Addendum 9), neither landed; [E-LEV] is NECESSARY for UP-JUMP, UP-B and NOUP: with the e-priorities in decreasing level order (still R104's shape) NOUP fails on 209 of 21,116 plays of U(G) = 0 genomes, up to 2 ascents (REFEREE-2 control CTRL=elevrev, docs/referee-2/R2-P-N5-ASC.md at claude/referee-2 533744a5), and L-RED's frozen NOUPC_1 / 2 / 3 have U(G) = 0 and max ascents 2 / 3 / 4 under the e-order (−level, gate) (witness NOUPC_1, t 0, v 10; claude/l-red 68a1f609, experiments/red/r220/inst/, .pg sha1 82e41194…, 7ea66452…, 94db68d5…; one route only); §3-§5 do not use [E-LEV]; the proof of record of HUB-ASC-G's B = 0 case (F′_0 = F_0, DESC-POLY on the whole interval) is referee-originated (REFEREE R-P-N5-ASC §3 AS-1, restated in P-N5-ASC's fixes entry 1 AS-1), signed by both referees; DATA, clause by clause (scope IDEAL-CYC unless abstract; tools in experiments/new/box193/, run by check193.sh): E-DOM part of E-MON's proof: violations 0 in 1,892 vertices, E-MON (TAIL-MON form): violations 0 in 2,552 (consecutive state pair, W-target or c_W with Λ fixed) pairs, CHAIN-DECOMP: violations 0 in 24,818 (state, vertex) pairs with a nonempty e-sequence, UP-JUMP: violations 0 in 1,956 ascents of movers' plays with Λ below every e (asc193.py; set: the 13 instances, 8 L-RED R217 instances in inst/ and 5 in box192/inst/, all pinned in asc.pins); UP-B under [E-LEV]: max ascents ≤ U(G) on all 13 instances (unit: max ascents over (state, vertex) plays; ug193.py); NOUP under [E-LEV]: 300 random genomes with no strictly upward Ξ-edge, 179 Ξ-cyclic, max ascents 0, max D_E per Λ-interval 3 (noup193.py 300 1); HUB-ASC(B), only the hub constrained: B 0 max 11 at M 4 (= F_0), B 1 max 16 at M 4 and 29 at M 5 (unit: distinct hub values; set: all runs of CS(M); abstract; hubasc193.py); SKELETON: violations 0 on all forests of CS(4) and CS(5) (skel193.py); tightness of B = 0: F_0 attained for M 1-7 (2, 4, 7, 11, 16, 22, 29; chain193.py, M 6 and 7 re-run by check193.sh); no separate DATA for HUB-ASC(B) with B ≥ 2, HUB-ASC-G's constants, the whole-run corollary and UP-B's D_E bound (P-N5-ASC, docs/new/P-N5-ASC.md with fixes entries 1-2, docs/new/P-N5-ASC-fixes.md; L-NEW successors 61-62). G-N5-TIME stays open.
 
 Addendum (subagent, for the Lead; does not land; written 2026-11-08T02:02:20Z by date -u). (1) FIRST FILL on line L-2 (l-new a5dcf9c6, sha1
 f109cb69…), to CHECKER C135. I edited docs/agents/R121-draft.md only; no merge, no commit and no push by me; the Lead commits this file.
@@ -1107,3 +1295,84 @@ tools/body121c.py, parts/ (thirdfill.src, preamble.src, body.txt, addendum3.src)
 times.txt; tools/chk121c.py, chk_p1.out, chk_p2.out, chk_final.out; tools/lp121c.py, lp_p1.out, lp_p2.out, lp_final.out;
 tools/sim121c.py, sim_p1.out, sim_p2.out, sim_final.out; tools/rec121c.py, rec_p1.out, rec_p2.out, rec_final.out; tools/hex121c.py,
 hex_p2.out, hex_final.out; R121-draft.md).
+
+Addendum 4 (subagent, for the Lead; does not land; written 2026-11-08T12:01:22Z by date -u). (1) FOURTH FILL on line L-6 (l-new
+2f4167cd, sha1 a23c61d3…), to CHECKER C135 Add. 2. I edited docs/agents/R121-draft.md only; no merge, no commit and no push by me;
+scripts/verify.sh and scripts/push.sh not run; the Lead commits this file. Heads at the fetch of 2026-11-08T12:00:01Z: l-new 2f4167cd,
+referee 6c8d6956, referee-2 0e5c7c37, checker 9ee82f6a, trunk fdc0f1e9 (local HEAD = origin trunk). Re-fetch at
+2026-11-08T12:00:59Z-12:01:00Z (the same five branches; rc 0; fetch3.log): all five heads unchanged, local HEAD fdc0f1e9 unchanged, the
+working tree clean, RESULTS and GAPS equal HEAD (git diff --quiet); REFEREE-2 35's Addendum 7 still not on origin. (2) TITLE l. 660
+(d[659]) = "### R121 [refereed-only] " + L-6 without its newline + ", CHECKER PASS (docs/checker/C135.md, checker PENDING)", checked by
+script (chk121d.py): equal, byte for byte (True); the title minus that prefix and that tail is L-6's bytes without the newline (True);
+the only «### R» heading of this file; 5,411 characters, 5,527 bytes, sha1 of the heading line without its newline
+41bb2b8ddd243cc7f0713c51183cccff5d6eba2d; 134 «(» / 134 «)» (L-6's 133 and the fill's), depth never negative, 0 "|", «R1xx» 0,
+«[refereed-only]» once. (3) SHAPE. The entry block is l. 660-1072 (python slice d[659:1072], 413 lines), followed by a blank line
+(d[1072]); 0 "|" in it; «checker PENDING)» once in it (seven times in the file before this Addendum: the title, item (1) of the first
+fill's record l. 617, item (2) of the first fill's Addendum l. 1093, Addendum 2 (2), (3) l. 1162, 1166 and Addendum 3 (2), (3) l. 1231,
+1236). The GAPS preamble is l. 1074-1083 (d[1073:1083]); the UPDATE is l. 1084 (d[1083]), one line, sha1
+e975c303470236f97b2c92a11507316e6edbc06a without newline and unfilled (= upd121L6.txt, True), 5,479 bytes, one each of the three fill
+tokens, 0 "|". A landing script slices d[659:1072] for the entry and reads d[1083] for the UPDATE, with «R121», «C135», PREV = R120's
+block and UPDATE (landed, G-P). The FOURTH FILL section is l. 2-130; the THIRD FILL section l. 131-256, the SECOND FILL section l.
+257-389 and the first fill's record l. 390-658 with its blank l. 659 are draft 1fa73568's l. 2-530, byte-unchanged, directly before the
+title (rec121d.py, True); the first fill's Addendum, Addendum 2 and Addendum 3 with their blanks (l. 1086-1297) are 1fa73568's l.
+898-1109, byte-unchanged, directly after the UPDATE and a blank (True); line 1 is 1fa73568's line 1 with only the FOURTH FILL clause
+inserted and the target C135 Add. 1 changed to C135 Add. 2 (True). (4) TOKENS AND PLACEHOLDERS. Outside the UPDATE line the file has 32
+angle-bracket tokens before this Addendum (chk121d.py). PLACEHOLDERS: <R2-A7> 9 times, for REFEREE-2 successor 35's Addendum 7, which is
+not on origin: l. 65 (this fill's section, BYTE TESTS OF L-6) and, in the entry block, l. 777 (the RESULTS line is: the L-6 verdicts),
+l. 781 (Claims signed: the commit), l. 794 (Claims signed: the line items closed), l. 799 (Claims signed: statement verdicts on L-6), l.
+964 (Referee strengthening (iv)), l. 1009 (Data: R6 adds no DATA), l. 1044 (Signatures), l. 1058 (INDEPENDENCE: the byte-test script);
+each is to be replaced by Addendum 7's own words and line numbers once it is on origin. <R30-SH>: 0 times (REFEREE §H is on origin,
+6c8d6956, and cited verbatim). One R29-SF at l. 273 in the kept SECOND FILL section (history, resolved in the entry since the third
+fill). And 22 mentions of the three fill tokens (date, time, checker): l. 331 (SECOND FILL section), l. 605 (first fill's record), l.
+1082 (the GAPS preamble, as in every fill), l. 1100-1101, 1107, 1134 (first fill's Addendum), l. 1169-1170, 1182 (Addendum 2). This
+Addendum adds none but the two token names it quotes here. (5) WHAT IS LEFT: REFEREE-2 successor 35's Addendum 7 on origin, cited
+verbatim in place of the 9 <R2-A7> placeholders (a text pass on this file only: no line, title or UPDATE change unless Addendum 7 finds
+one); CHECKER C135 Add. 2 on this file (the fill checks and the items C135 Add. 1 did not run, l. 130-132); the Lead merges claude/l-new
+(2f4167cd or later), claude/referee, claude/referee-2 and claude/checker into trunk before Add. 2, then lands R121 after R120 with the
+three fill tokens of the UPDATE filled. (6) QUOTE SWEEP (chk121d.py: chk121c.py's rule, outermost guillemet quotes, nested ones inside
+them, split at «…», parts of 6+ characters, whitespace-normalised, NO docs/agents draft as a source; sources: the earlier fills'
+(r121/src, r121b/src, r121c/src and their outputs) plus, at 2f4167cd, the packet, fixes, L-1 to L-6, asc.pins, check.sh, the box193
+tools, check193.sh, check193.out and mkl3_193.py to mkl6_193.py; C135 at 0ffde42c and the checker head; REFEREE's and REFEREE-2's files
+at their origin heads (REFEREE's at 6c8d6956, with §H, and its scratch/asc_logs/l6test.out); at HEAD fdc0f1e9 RESULTS, GAPS, DECISIONS,
+DECISIONS-INDEX, LEAD-STATE, NOW, TARGET.md, CLAUDE.md; the subjects of the commits cited; my outputs (fetch.log, fetch2.log, blk.out,
+check193.rerun, l6rel121d.out, upd121d.out, upd121L6.txt, mkl3.out to mkl6.out)): on the draft before this Addendum, FOURTH FILL section
+79 quotes, 67 parts, 0 not found; THIRD FILL section 72 quotes, 54 parts, 0 not found; SECOND FILL section 80 quotes, 69 parts, 0 not
+found; first-fill record 191 quotes, 150 parts, 0 not found; title and body 317 quotes, 314 parts, 0 not found; GAPS preamble and UPDATE
+5 quotes, 4 parts, 0 not found; first-fill Addendum 42 quotes, 27 parts, 0 not found; Addendum 2 35 quotes, 19 parts, 0 not found;
+Addendum 3 32 quotes, 17 parts, 0 not found; whole file 853 quotes, 721 parts, 0 not found; negative control (a made-up quote) reported
+missing (True); the run on the final file is in chk_final.out. lp121d.py: 83 quotes and line references new at this fill (C135 l.
+94-144, fixes l. 125-182, packet l. 58-62 and l. 109-115, LEAD-STATE l. 2808-2841, check.sh l. 988-1003, REFEREE l. 388-413) each at its
+cited lines, 0 failed. hex121d.py: 106 hex ids in the new text (line 1's clause, the FOURTH FILL section, the entry, the preamble, the
+UPDATE and this Addendum), each a git object, a sha1 printed by my scripts or sha1sum, or already in draft 1fa73568; unverified: none
+(hex_final.out). The commit the Lead's brief named for REFEREE-2's Addendum 7 is not in git here and is not written in this file. (7)
+STALE STATUS (chk121d.py): in the entry block, the title's fill excepted, «pending», «will », «awaiting», «to come», «not landed»,
+«first fill», «second fill», «third fill» and «fourth fill» 0 times each (case-insensitive); «not yet» 4 times, all inside quotes of the
+referees' L-1 and L-3 verdicts (history); «R-G» once, inside the quote of LEAD-STATE l. 2729; «R-B», «R-R», «R-Q», «R-S», «R-H»,
+«6635b14e», «f545cba7», «d3a42330» and «3571ef76» 0 times. GAPS preamble and UPDATE: the same nine words 0 times each. Line 1 «NOT
+LANDED» once (R121 is not landed). Model names: «Opus» 12 times in the file before this Addendum, 10 in the entry block, all inside
+quoted referee verdicts. (8) LANDING SIMULATION (sim121d.py, which execs r121b/tools/sim121b.py unchanged, on in-memory copies of
+RESULTS 66e71196… and GAPS 2a41c765… at trunk fdc0f1e9, the local HEAD and origin trunk; run on the current trunk although 2f4167cd and
+the referee and checker commits are not yet merged into it, as asked; CHECKER re-runs it on the merged trunk): R121 a pure insertion
+directly before «**Erratum E-1**» (prefix byte-unchanged True, suffix byte-unchanged True; the inserted block = the draft's entry block,
+True); RESULTS 14,962 → 15,376 lines (+414); R118 l. 13,607, R119 l. 13,879, R120 l. 14,114, R121 at l. 14,320-14,732, blank l. 14,733,
+«**Erratum E-1**» to l. 14,734, E-2 14,747, Note E-3 14,775, Dead ends 14,806; order R110-R121, E-1, E-2, E-3, Dead ends: True; "|" in
+RESULTS unchanged (1,477); no "### R122" heading. GAPS: only l. 11 changes (True), the closing " |" replaced by " " + the filled UPDATE
++ " |"; "|" on l. 11 76 → 76; «UPDATE 2026-» 55 → 55 plus one head with the simulation year 2099 after R120's (True); R121's UPDATE last
+(True); 23 → 23 lines. Ancestry (sim121d.py): 2f4167cd, 0ffde42c, 9ee82f6a, e28e962d, d17b305e, 388530af, 4434597c, 0e5c7c37, 6c8d6956
+and 52d51575 are not ancestors of HEAD or of origin trunk (False ×20). Fill values used only for the simulation: 2099-01-08, 00:00,
+0000000. (9) UPDATE: (c) of the FOURTH FILL section; upd121d.out has the controls and the 11 token hunks. (10) NOT VERIFIED / NOT DONE:
+scripts/verify.sh and scripts/push.sh not run (not asked; check193.sh in full, the two P-N5-ASC check.sh blocks and mkl3_193.py to
+mkl6_193.py only, from a git archive of 2f4167cd; not the whole experiments/new/check.sh, so not the new BOX 197 block); the referees'
+tools not re-run (REFEREE's asc_l6.py, REFEREE-2's bt_l6.py; REFEREE's scratch/asc_logs/l6test.out read; REFEREE-2's Addendum 7 not
+available); CHECKER's scratch hub.py not on origin and not re-run (its CS(3) witness is quoted, not reproduced by me); R6 read against
+packet §2 l. 58-62 by me only as text (its strings are CHECKER's, the lane read it, the referees' readings are cited); no IDEAL-CYC
+engine of my own; the proofs not re-derived by me; VJ00 / Friedmann not opened (R118's landed premise); no Oink run (L-6 cites no Oink
+check); the ancestry test and landing simulation on the merged trunk not done (no merged trunk exists yet). (11) Scratch:
+/tmp/claude-0/-home-user-parity-games-challange/43a29ffc-0674-5391-84c1-1d3918a14b5d/scratchpad/r121d/ (fetch.log, fetch2.log, poll.sh,
+poll.log; src/ (L-5, L-6, the packet, fixes, asc.pins, check.sh and mkl6_193.py at 2f4167cd; C135.md at 0ffde42c;
+R121-draft-1fa73568.md, the third fill, not a quote source); arch/ = git archive of 2f4167cd (experiments, docs/new, scripts);
+run_tests.sh, check193.start, check193.end, check193.rc, check193.rerun, blocks.sh, blk.start, blk.end, blk.rc, blk.out;
+C135_0942e8be.md, mkl3.out to mkl6.out; tools/l6rel121d.py, l6rel121d.out; tools/upd121d.py, upd121d.out, upd121L6.txt;
+tools/body121d.py, parts/ (fourthfill.src, preamble.src, body.txt, fills.json, addendum4.src); tools/assemble121d.py, filltime.txt,
+addtime.txt, times.txt; tools/chk121d.py, chk_p1.out, chk_final.out; tools/lp121d.py, lp_final.out; tools/sim121d.py, sim_final.out;
+tools/rec121d.py, rec_final.out; tools/hex121d.py, hex_final.out; R121-draft.md).
