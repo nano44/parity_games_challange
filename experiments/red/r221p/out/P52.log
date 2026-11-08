@@ -1,0 +1,8 @@
+4 (1, 2, 1, 9) {'N': 10, 'U': 10, 'asc': 1, 'DE': 2, 'reent': 0, 'T': 6, 'C': 3, 'R': 2, 'p': 1, 'maxflip': 2, 'n': 160, 'xi': 9, 'fb': 1, 'fb_sigma': 1, 'phases': [6, 2], 'Mpre': 6, 'Mpost': 1, 'tpost': 0}
+37 (1, 2, 1, 10) {'N': 10, 'U': 11, 'asc': 2, 'DE': 3, 'reent': 0, 'T': 7, 'C': 3, 'R': 1, 'p': 3, 'maxflip': 2, 'n': 160, 'xi': 10, 'fb': 1, 'fb_sigma': 1, 'phases': [7, 2], 'Mpre': 7, 'Mpost': 1, 'tpost': 0}
+45 (1, 2, 2, 10) {'N': 10, 'U': 11, 'asc': 2, 'DE': 2, 'reent': 0, 'T': 7, 'C': 3, 'R': 1, 'p': 3, 'maxflip': 2, 'n': 160, 'xi': 10, 'fb': 1, 'fb_sigma': 1, 'phases': [7, 2], 'Mpre': 7, 'Mpost': 2, 'tpost': 0}
+147 (1, 2, 2, 11) {'N': 10, 'U': 10, 'asc': 1, 'DE': 3, 'reent': 0, 'T': 8, 'C': 4, 'R': 2, 'p': 2, 'maxflip': 2, 'n': 160, 'xi': 11, 'fb': 1, 'fb_sigma': 1, 'phases': [8, 2], 'Mpre': 8, 'Mpost': 2, 'tpost': 0}
+167 (1, 2, 2, 13) {'N': 10, 'U': 10, 'asc': 1, 'DE': 5, 'reent': 1, 'T': 10, 'C': 5, 'R': 2, 'p': 3, 'maxflip': 2, 'n': 160, 'xi': 13, 'fb': 1, 'fb_sigma': 1, 'phases': [10, 2], 'Mpre': 10, 'Mpost': 2, 'tpost': 0}
+421 (1, 2, 2, 14) {'N': 10, 'U': 9, 'asc': 1, 'DE': 5, 'reent': 1, 'T': 11, 'C': 4, 'R': 4, 'p': 3, 'maxflip': 4, 'n': 160, 'xi': 14, 'fb': 1, 'fb_sigma': 1, 'phases': [11, 2], 'Mpre': 11, 'Mpost': 2, 'tpost': 0}
+489 (1, 2, 2, 15) {'N': 10, 'U': 9, 'asc': 2, 'DE': 5, 'reent': 1, 'T': 12, 'C': 4, 'R': 4, 'p': 4, 'maxflip': 4, 'n': 160, 'xi': 15, 'fb': 1, 'fb_sigma': 1, 'phases': [12, 2], 'Mpre': 12, 'Mpost': 2, 'tpost': 0}
+final (1, 2, 2, 15)

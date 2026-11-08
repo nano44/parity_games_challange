@@ -69,6 +69,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   UP-T (under [E-LEV]) / ASC-T SURVIVE; IN-BOUND DEAD confirmed; (d) GAP (Γ3 only until first fallback, REACH3-CYC conditional; DIV_2_493,
   DIV_2_583, DIV_3_717 change movers after the fallback). NEW Lemma B-ONLY (Odd's all-β strategy ⇒ Λ never an e / c_W): no gate ties,
   QUIET's tie GAP closed, H_g = A_g = 0. Tools experiments/red/r221q/ (brute221 enumerates all Odd strategies).
+- 00:3xZ Lead: [OPT] = standing SPEC premise of R57 (b) (Lead reading). Next (a) POST-FALLBACK: R221-quiet.md §10: 3,137 runs, always 1
+  fallback + exactly 3 iterations (K0→K1, K1→q, sweep); CONJECTURE ENDGAME-3 (proof from SPEC S4a/S4c not written). Then (b) CYC-type ρ.
+  Tools experiments/red/r221p/ (post221.py, rpost221.py, gop.sh SCORE=post).
 - Running (tracked tasks; resumable: each job skips if out/<name>.done): experiments/red/r221/go2.sh (ascent climbs), go3.sh (SCORE=reent),
   go4.sh (SCORE=rho, adversarial vs RHO-SET/RHO-E). Relaunch: `experiments/red/r221/goN.sh > experiments/red/r221/out/goN.txt 2>&1`.
 - Things only I know: wit221's first version counted v = e_g itself (gate not on the play) and showed fake «EST_bad»; fixed (skip seq[i] == v).

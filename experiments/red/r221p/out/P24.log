@@ -1,0 +1,13 @@
+4 (1, 2, 1, 5) {'N': 8, 'U': 4, 'asc': 0, 'DE': 1, 'reent': 0, 'T': 2, 'C': 0, 'R': 0, 'p': 2, 'maxflip': 0, 'n': 130, 'xi': 5, 'fb': 1, 'fb_sigma': 1, 'phases': [2, 2], 'Mpre': 2, 'Mpost': 1, 'tpost': 0}
+21 (1, 2, 1, 6) {'N': 8, 'U': 4, 'asc': 0, 'DE': 1, 'reent': 0, 'T': 3, 'C': 3, 'R': 0, 'p': 0, 'maxflip': 0, 'n': 130, 'xi': 6, 'fb': 1, 'fb_sigma': 1, 'phases': [3, 2], 'Mpre': 3, 'Mpost': 1, 'tpost': 0}
+43 (1, 2, 1, 7) {'N': 8, 'U': 4, 'asc': 0, 'DE': 1, 'reent': 0, 'T': 4, 'C': 3, 'R': 0, 'p': 1, 'maxflip': 0, 'n': 130, 'xi': 7, 'fb': 1, 'fb_sigma': 1, 'phases': [4, 2], 'Mpre': 4, 'Mpost': 1, 'tpost': 0}
+45 (1, 2, 1, 8) {'N': 8, 'U': 4, 'asc': 0, 'DE': 1, 'reent': 0, 'T': 5, 'C': 3, 'R': 0, 'p': 2, 'maxflip': 2, 'n': 130, 'xi': 8, 'fb': 1, 'fb_sigma': 1, 'phases': [5, 2], 'Mpre': 5, 'Mpost': 1, 'tpost': 0}
+89 (1, 2, 1, 9) {'N': 8, 'U': 3, 'asc': 0, 'DE': 1, 'reent': 0, 'T': 6, 'C': 3, 'R': 0, 'p': 3, 'maxflip': 2, 'n': 130, 'xi': 9, 'fb': 1, 'fb_sigma': 1, 'phases': [6, 2], 'Mpre': 6, 'Mpost': 1, 'tpost': 0}
+196 (1, 2, 1, 10) {'N': 8, 'U': 4, 'asc': 1, 'DE': 1, 'reent': 0, 'T': 7, 'C': 4, 'R': 0, 'p': 3, 'maxflip': 2, 'n': 130, 'xi': 10, 'fb': 1, 'fb_sigma': 1, 'phases': [7, 2], 'Mpre': 7, 'Mpost': 1, 'tpost': 0}
+266 (1, 2, 1, 11) {'N': 8, 'U': 4, 'asc': 1, 'DE': 2, 'reent': 0, 'T': 8, 'C': 4, 'R': 1, 'p': 3, 'maxflip': 2, 'n': 130, 'xi': 11, 'fb': 1, 'fb_sigma': 1, 'phases': [8, 2], 'Mpre': 8, 'Mpost': 1, 'tpost': 0}
+330 (1, 2, 2, 5) {'N': 8, 'U': 3, 'asc': 0, 'DE': 2, 'reent': 0, 'T': 2, 'C': 1, 'R': 1, 'p': 0, 'maxflip': 1, 'n': 130, 'xi': 5, 'fb': 1, 'fb_sigma': 1, 'phases': [2, 2], 'Mpre': 2, 'Mpost': 2, 'tpost': 0}
+341 (1, 2, 2, 8) {'N': 8, 'U': 4, 'asc': 1, 'DE': 3, 'reent': 0, 'T': 5, 'C': 3, 'R': 1, 'p': 1, 'maxflip': 2, 'n': 130, 'xi': 8, 'fb': 1, 'fb_sigma': 1, 'phases': [5, 2], 'Mpre': 5, 'Mpost': 2, 'tpost': 0}
+452 (1, 2, 2, 9) {'N': 8, 'U': 4, 'asc': 1, 'DE': 3, 'reent': 0, 'T': 6, 'C': 3, 'R': 1, 'p': 2, 'maxflip': 2, 'n': 130, 'xi': 9, 'fb': 1, 'fb_sigma': 1, 'phases': [6, 2], 'Mpre': 6, 'Mpost': 2, 'tpost': 0}
+523 (1, 2, 2, 10) {'N': 8, 'U': 3, 'asc': 1, 'DE': 3, 'reent': 0, 'T': 7, 'C': 4, 'R': 1, 'p': 2, 'maxflip': 2, 'n': 130, 'xi': 10, 'fb': 1, 'fb_sigma': 1, 'phases': [7, 2], 'Mpre': 7, 'Mpost': 2, 'tpost': 0}
+538 (1, 2, 2, 11) {'N': 8, 'U': 3, 'asc': 1, 'DE': 2, 'reent': 0, 'T': 8, 'C': 4, 'R': 1, 'p': 3, 'maxflip': 2, 'n': 130, 'xi': 11, 'fb': 1, 'fb_sigma': 1, 'phases': [8, 2], 'Mpre': 8, 'Mpost': 2, 'tpost': 0}
+final (1, 2, 2, 11)

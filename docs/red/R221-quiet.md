@@ -140,3 +140,28 @@ P-N5-QUIET can be frozen on LOC-GATE, LOC-K2, CN2, QUIET, T-QUIET, UP-T (under [
 2. Optionally drop the N(n − 1) term of L.
 3. Limit the scope to IDEAL-CYC; the Γ3 / N5′-xi reading per §7.
 4. Name [OPT]'s landing as a Lead reading.
+
+## 10. POST-FALLBACK (Lead 00:36Z, next target (a)): one fallback, then exactly 3 iterations (DATA; CONJECTURE ENDGAME-3)
+Tools: experiments/red/r221p/ (post221.py logs every iteration of N5′-xi = box 190 n5v.step mode xi on Γ3(G) = box 189 gamma3.build(G,
+all pads); rpost221.py random genomes; ladclimb.py SCORE=post). Phases = maximal runs of iterations between fallbacks.
+- DATA. Unit: N5′-xi runs on Γ3. Set: 3,000 random Ξ-cyclic genomes (brute221.rgen; seeds 1, 2; d 1-5, width 1-3, degree 2-3) plus 137 runs
+  of the §4 corpus and R221 climbs. Counter: (#fallbacks, iterations after the first fallback incl. it, mover changes among them).
+  Every run: exactly 1 fallback, exactly 3 iterations from it to the end; mover changes 0 / 1 / 2 in 567 / 2,486 / 84 runs (random:
+  558 / 2,362 / 80; corpus 9 / 124 / 4). τ never changes after the fallback (0 in all runs). Files r221p/out/rpost_{1,2}.txt,
+  out/post_corpus.txt.
+- Adversarial climbs (gop.sh; score = (#fallbacks, post-fallback iterations, post mover changes, xi); 700 iterations; N 8-10; 4 runs):
+  best (1, 2 + fallback = 3, 2) in every run. No second fallback and no longer endgame was found.
+- Mechanism (traces of rd3_d4, post_1_44, post_1_13; READING):
+  - The fallback (S4c) applies σ-switches K0 → K1, sometimes with β → pad-to-K0 switches.
+  - Next iteration: K1 → q, which closes the core cycle K0 K1 q with top K0 (even, top + 2), plus 0-1 mover switches.
+  - Last iteration: every Even vertex that can reach the core does so (β → pad, movers, K3). Then neither side has an improving
+    switch; Even wins all but one vertex (rd3_d4: 157 of 158).
+  - So K0 → K1, improving from the start, is held back by S4a's arena step until the movers converge. The fallback releases it, and
+    the game is then decided in two steps.
+- CONJECTURE ENDGAME-3. On Γ3(G) for every genome G, N5′-xi has exactly one fallback, and terminates exactly 2 iterations after it. If it
+  holds, N5′-xi's total iteration count on Γ3 = (pre-fallback iterations T3) + 3. With REACH3-CYC (CONDITIONAL) and T-QUIET / UP-T
+  (box 194, SURVIVES), that count is polynomial for [E-LEV] genomes with bounded U(G).
+- Not proved: a proof needs SPEC S4a / S4c's arena semantics at the core (why the arena step never applies K0 → K1 while some mover
+  improves, and why the Even-top core cycle ends the game in one best-response step). Next step if the Lead wants it: write ENDGAME-3's
+  proof from SPEC's text (docs/new/N5-ssi-global.md) with the K-gadget of R117.
+- Instances: the 80 random genomes with 2 post-fallback mover changes are in r221p/out/post_*.json (not frozen as kills; no kill).
