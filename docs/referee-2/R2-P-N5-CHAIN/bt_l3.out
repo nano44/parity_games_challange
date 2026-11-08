@@ -1,0 +1,6 @@
+L-2 e481d260884807424c545bd3f3cdd7fbfb25f05c 8248 B;  L-3 c484795c888ab46cee07038094368ba28da0055d 8450 B; parens 164 164 pipes 0 lines 1
+R-1: old in L-2 1 / L-3 0; new in L-2 0 / L-3 1; old and new verbatim in my report True
+R-2: old in L-2 1 / L-3 0; new in L-2 0 / L-3 1; old and new verbatim in my report True
+R-4: old in L-2 1 / L-3 0; new in L-2 0 / L-3 1; old and new verbatim in my report True
+N-1: old in L-2 1 / L-3 0; new in L-2 0 / L-3 1; old and new verbatim in my report True
+L-3 == L-2 + R-1 + R-2 + R-4 + N-1: True
