@@ -73,6 +73,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - Item 1c (Lead 17:37Z: L-SI BOX 89, l-si 9d44222d) DONE: docs/red/R227-si89.md. Trivial bound SURVIVES; DU21_h4 N2 48 / depth 8 / T 24 reproduced
   (nest226); C 3, P 3 there; §3 tie parenthetical = READING, false beyond one step by CARRY-TIE.
 - Climb dc 2721 (GROW7, cap 300) FINAL depth 4, maxP 8, C 4 (N 75, M 225). Running: dc 2723 (cap 600, from that best), dcC 2722.
+- Item 1d (Lead 18:50Z: L-NEW 66 BOX 199, l-new cde01dcb) docs/red/R227-box199.md: SPLIT / REWIN / REWIN-HI / REWIN-COUNT SURVIVE; RW-WT
+  not broken (rw 0 on 2,994 re-wins, 19 genomes; rwwt227.py); DEAD claims reproduced (nobelow 70, wc 10, wb 10). RW falsification climb
+  ORDER=RW 2725 running (out/dcRW_250_2725.log). dc 2723 (cap 600) STOPPED at 18:5xZ: no gain.
 - Running: depthclimb 2721 (GROW7, depth-first) and ORDER=C 2722 (CX4), cap 300; logs out/dc_300_2721.log, out/dcC_300_2722.log.
 - Worktree: <scratchpad>/wt197 = l-new f98e93ee (detached); run asc197 from inside it with --files <abs path>; remove at park.
 - Sources opened: l-new f98e93ee docs/new/N5-CORE-box197.md (§0 list, E-MON3 l. 23/67, ALT-EQUIV l. 189-234), asc197.py header (run).
