@@ -32,3 +32,42 @@
 - Labels in the line: PROVED (lane, unrefereed) for E0-E4, TERM-XI, ENDGAME-3, ENDGAME-3-N5, EXACT-L; PROVED-CONDITIONAL for END-T3, with
   its condition (R118 (k)'s REACH3-CYC and that theorem's own condition) in the line; DATA clauses with counters (unit, set, scope); a
   TARGET.md §2 / §4 scope clause.
+
+## Fixes entry 2 (L-NEW successor 64; Lead 06:33Z: REFEREE 29 R-P-N5-END, «Line requirements LN-1..LN-8 … follow them exactly»; written 06:58Z by date -u)
+- Report: REFEREE 29, docs/referee/R-P-N5-END.md at claude/referee e4cb208a: every row SIGN; END-T3 SIGN as PROVED-CONDITIONAL on
+  REACH3-CYC (R118 (k), itself PROVED-CONDITIONAL on [REACH-L]); [OPT] = [1E-N3] for SPEC runs; optional EN-1..EN-4; line requirements
+  LN-1..LN-8 (§7, written when no line existed). The packet is unchanged; entry 1 is unchanged; where they differ, this entry governs.
+- Order of events: line L-1 (sha1 68a69176…, 5,903 B) was written and pushed (l-new a60733b8) before REFEREE 29's report reached this
+  lane. L-1 is SUPERSEDED by L-2 below; it is not edited (history).
+
+### EN-1 (taken, Lead 06:33Z «take it with W-1»): EXACT-L's dependence on SPEC's tie-breaks. Packet wording governed by this entry.
+- Added after Corollary EXACT-L: «EXACT-L uses SPEC's S1 tie-breaks (through REACH3's [RULE] choice); with another pointwise-optimal
+  S4a choice the identity can fail (REFEREE R-P-N5-END §4 (C): F = 1 on 382 of 382 IDEAL-ACYC genomes with L ≥ 1).» The packet's «N5
+  (SPEC S1-S5)» already includes FIX 1-4, so EXACT-L is unchanged; ENDGAME-3-N5 does not depend on the tie-break (EN-2).
+### EN-2 (taken): ENDGAME-3-N5 uses only (H), so it holds for every rule whose S4a output is a pointwise optimum of H (REFEREE 29's n5w
+  DATA, §4 (A), cited, not re-run). No statement change; a reading of the proof the referee checked.
+### EN-3 (taken): Consequence after EXACT-L: «a polynomial bound on L(G) would bound N5 on them» → «… would bound N5's iteration count on
+  them» (the cost per iteration at bit cost is a separate gauntlet step-4 item).
+### EN-4 (taken): (H) in §2: «not its own H-cycle node» → «the cycle node of W*(v) is not v». Same meaning, stated on the value.
+
+### Line L-2 (LN-1..LN-8 applied; written by script)
+- docs/new/P-N5-END-line-L2.txt = L-1 + R1-R16, by experiments/new/box195/mkl2_195.py: asserts L-1's sha1, each old string exactly once
+  in L-1, the LN-4 quote verbatim in trunk docs/new/P-N5-XICYC.md (git show c8f42538f), one line, no «|», «(» = «)». Result: sha1
+  e8a8ac51cc79c9de4000749899e7f0b860eeebe5, 6988 B. Map of requirements to replacements:
+  - LN-1: R2 (each PROVED, every genome), R4 (EXACT-L PROVED for G ∈ IDEAL-ACYC in REFEREE's words + R104's quote), R6 (END-T3 on
+    REACH3-CYC, itself on [REACH-L]).
+  - LN-2: R1 (N5 = SPEC S1-S5 with FIX 1-4), R3 (ENDGAME-3's form «exactly one fallback, at an iteration F ≥ 1, and exactly F + 2
+    iterations»). Γ3(G), n = N + 7M + 10, N5′-xi = R118's [N5XI], start S3, iterations (SPEC S4): already in L-1.
+  - LN-3: R4 («N5 (SPEC S1-S5 with its FIX 1-4 tie-breaks)» and EN-1 in substance, with REFEREE's 382 / 382 cited as REFEREE's counter).
+  - LN-4: R7 (T3 quoted from P-N5-XICYC §7, the frozen packet R118 (k) lands; RESULTS' own text gives T3 + 1 as the first fallback).
+  - LN-5: R8 ([TAU3] = RESULTS R117 / P-N5-REACH §6.4), R9 ([OPT] = [1E-N3] for SPEC runs; R118 (b)'s [OPT] not used); [1E-N3], R15 (c),
+    R117 (f), R118 (k) already named in L-1 (with W-1).
+  - LN-6: R10 (sets: 24,000 + 24,000, the 14 corpus genomes in spec mode, check195's set), R11 (units for nofb, capped: runs; late:
+    iterations after F + 2), R12 (EXACT-L spec runs only; RECT_d11_T59_norm 62 iterations; «record only (not re-run by check.sh, which
+    leaves LRED unset)»), R13 (controls with their counters and units, as in check195.out), R14 (other groups' counts removed from the
+    line: they are not in this lane's pinned outputs; the replays are cited by commit). 4,283 and 3,000 are sums of sweep195.out's columns
+    (REFEREE 29 §5: EQUAL).
+  - LN-7: R15 («(OPEN)» after L(G)); not M3, not M4, not a step-4 pass, G-N5-TIME OPEN, CANDIDATE (D1): already in L-1.
+  - LN-8: R16 (fixes entries 1-2); L-NEW successors 63-64 and credit L-RED 56: already in L-1.
+  - EN-3: R5.
+- end.pins: this file re-pinned; L-2 and mkl2_195.py added. check.sh block «P-N5-END» unchanged.
