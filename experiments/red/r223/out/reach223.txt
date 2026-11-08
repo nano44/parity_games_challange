@@ -1,0 +1,3 @@
+REACH223 rand-N3-4-seed2241 mode xi genomes 5000 build 0 esc 0 fbx 0 how 0 nofb 0 nstd 0 start 0 ties 226 w3 0
+REACH223 rand-N5-6-seed2242 mode xi genomes 2000 build 0 esc 0 fbx 0 how 0 nofb 0 nstd 0 start 0 ties 116 w3 0
+REACH223 exhaustive-N<=2-cyclic mode xi genomes 43816 build 0 esc 0 fbx 0 how 0 nofb 0 nstd 0 start 0 ties 0 w3 0
