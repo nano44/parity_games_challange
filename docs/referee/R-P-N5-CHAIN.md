@@ -171,3 +171,31 @@ linefix.out, rt_n1.out, L1.txt, P-N5-CHAIN.md (the frozen packet, copied for the
   labels; HUB-ASC-G3 conditional on P-N5-ASC §4 / R121; UP-JUMP3, UP-B3, CHAIN3 under [E-LEV]; CHAIN3 also conditional on P-N5-END and
   P-N5-ASC §4; DEAD RUN-TRANSFER confirmed). §6 TARGET.md diff unchanged (L-2 changes a DATA clause only).
 - docs/referee-2/ not read for this section.
+
+## §D. Fixes entry 2 and line L-3; correction of §5 / §C (REFEREE successor 30, Opus 5.5, D15; date -u at writing 2026-11-08T12:14Z)
+- Objects (Lead 12:14Z): claude/l-new 219e3933 (ancestor of origin/claude/l-new, checked). docs/new/P-N5-CHAIN-line-L3.txt sha1
+  c484795c888ab46cee07038094368ba28da0055d, 8,450 B. L-2 at 219e3933 = e481d260; packet sha1 6e613ba7 unchanged (frozen).
+- Byte test: scratch/chain_l3.py applies REFEREE-2 35's R-1, R-2, R-4 and optional N-1 (docs/referee-2/R2-P-N5-CHAIN.md at
+  claude/referee-2 0e5c7c37 l. 212-222; strings typed from that report) to L-2; each old string once in L-2. `cmp` with the lane's
+  L-3: **EQUAL** (scratch/chain_logs/l3test.out). One line, 164 «(» = 164 «)», depth never negative, 0 «|». (My 12:04Z prediction
+  771dfaeb… / 8,438 B was without N-1, which the lane also took.)
+- Lane's own checks, from `git archive 219e3933`: chain.pins 55 rows, `sha1sum -c` all OK; box196/mkl3_196.py prints «R-1, R-2, R-4,
+  N-1 old once each, applied; sha1 c484795c… 8450 bytes; parens 164 164».
+- **Correction of my lane's earlier verdicts (successor 29's §5 DATA review; my §C «L-2 MATCHES», 4434597c).** We checked the DATA
+  clauses' numbers but not each counter's unit and predicate against the code. REFEREE-2 35's three findings hold in the lane's code
+  (experiments/new/box196/qt3_196.py at 8b67d40e, read by me):
+  - R-1: l. 86-87 `cur += 1 … if cur > L3: c["wfail"] += 1` counts quiet STEPS past the L3-th, not windows (its own header l. 13 says
+    «[windows]»). The new unit is the code's.
+  - R-2: l. 90 `if T3 > Q + (Q + 1) * L3: c["Tfail"] += 1` tests the Q-form only; the Σ_v form (which also needs Q ≤ Σ_v (D − 1)) has no
+    counter. The new unit says so.
+  - R-4: l. 60 `if sb[K2] != r: c["k2fail"] += 1` counts only the first conjunct of LOC-K2-3. The new unit says the second is not counted.
+  - N-1: l. 28 `MODE = os.environ.get("Q196_MODE", "xi")`, and check196.sh l. 8 runs the 5 files without Q196_MODE: they run in xi mode.
+    CORRECT.
+  - Every count in these clauses is 0, so no number and no statement changes; only the DATA wording was wrong. Lesson kept in my
+    notebook: in a DATA clause, read the counter's predicate and increment in the code, not only its output and header.
+- W-1 (REFEREE-2's proof-wording finding, recorded as a note in fixes entry 2: (Core)'s «passes K0 iff it passes K3» and (F-cls3)'s
+  convexity false over all vertices; E-MON3's stated reason invalid as an inference; repair: restrict to non-core vertices, the eight
+  core vertices being constant): my lane's §3 did not catch it either. I have NOT re-derived the repair in this section. My §0
+  signatures on statements whose proofs use (F-cls3) / E-MON3 stand only on the repaired reading, which REFEREE-2 checked and the lane
+  accepted; an independent check by me is open (NEEDS).
+- Verdict: fixes entry 2 CORRECT as to R-1, R-2, R-4, N-1. **Line L-3 MATCHES** the packet read with fixes entries 1-2.

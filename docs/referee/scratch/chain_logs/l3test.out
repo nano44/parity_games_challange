@@ -1,0 +1,8 @@
+R-1 old in L-2 1
+R-2 old in L-2 1
+R-4 old in L-2 1
+N-1 old in L-2 1
+parens 164 164 min depth 0 | newlines 1 | bars 0 | predicted L-3 sha1 c484795c888ab46cee07038094368ba28da0055d 8450 B
+c484795c888ab46cee07038094368ba28da0055d  chainL3.txt
+8450
+cmp L-3 (claude/l-new 219e3933) vs rebuild: EQUAL
