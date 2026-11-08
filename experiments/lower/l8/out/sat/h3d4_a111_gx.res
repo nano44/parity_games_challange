@@ -1,0 +1,2 @@
+cube 0 UNSAT 826s 00:43Z
+cube 1 UNSAT 301s 00:49Z
