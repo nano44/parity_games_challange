@@ -1261,3 +1261,6 @@ echo "si (box 83: LADDER-R): PASS"
 # box 84 (HUB PAIR «MIRROR» milestone 1: breaks LOCK-UP's single-target hypothesis; linear, not doubling; docs/si/box84-hubpair.md)
 bash box84/check84.sh
 echo "si (box 84: HUB PAIR): PASS"
+
+# box 85 (TWO COPIES PER LEVEL: DEAD as a counter; Lemma FLIP-U, Corollary LOW-NULL, Lemma POOL-ALT; docs/si/box85-twocopies.md)
+bash box85/check85.sh

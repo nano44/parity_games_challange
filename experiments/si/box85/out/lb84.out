@@ -1,0 +1,11 @@
+CL2_21.json checked 46 LOWER-BLIND mispredictions 0 steps with lower e's present 1
+CL2_22.json checked 63 LOWER-BLIND mispredictions 0 steps with lower e's present 30
+CL3_31.json checked 29 LOWER-BLIND mispredictions 0 steps with lower e's present 11
+CL3_32.json checked 33 LOWER-BLIND mispredictions 0 steps with lower e's present 1
+TC2.json checked 25 LOWER-BLIND mispredictions 0 steps with lower e's present 7
+TC2d.json checked 8 LOWER-BLIND mispredictions 0 steps with lower e's present 2
+TC3.json checked 69 LOWER-BLIND mispredictions 0 steps with lower e's present 17
+TC3d.json checked 7 LOWER-BLIND mispredictions 0 steps with lower e's present 0
+TC3m.json checked 68 LOWER-BLIND mispredictions 0 steps with lower e's present 21
+TC4m.json checked 268 LOWER-BLIND mispredictions 0 steps with lower e's present 91
+TC5m.json checked 419 LOWER-BLIND mispredictions 0 steps with lower e's present 140

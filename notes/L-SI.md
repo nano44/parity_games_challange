@@ -1,6 +1,17 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Successor 45 (Opus; session_01V5yGRXgpNoM4r3Q4piuZqh; Lead session_014FBi6o334DvwT5Uw2kDfoN) — BOX 85, state at 2026-11-08T06:29Z (date -u)
+- Handover check 27ef5506 (score 5, Lead 05:06Z «go»); trunk merged at 70eeefd8.
+- P-ACYC fixes entry 3 + L-4 (Lead rulings 05:13Z G-7 = L41, G-1): 0bc6f028, L-4 sha1 85bb221f, 3080 B = Lead's prediction. Tools
+  experiments/si/box81/fix3/ (mkL4.py, mkfix3.py, check_fix3.sh wired in check81.sh). Further items: entry 4 + L-5 by the same pattern.
+- BOX 85 (docs/si/box85-twocopies.md; experiments/si/box85/, check85.sh ~4-7 min, wired): TWO COPIES DEAD as a counter (TC3m = HP3_mup
+  word for word; hubH 8/11/15 at h 3/4/5; climbs CNT <= 5 of 8 at h = 3). PROVED (lane): FLIP-U (FLIP with U-projections), LOW-NULL,
+  POOL-ALT. CONJECTURE TWO-COPY-RED (Q1 lag tower / Q2 beta/P-decided non-SET; L-RED R223). NEXT (proposal): Q2 from L-RED's seed
+  claude/l-red 143f0b4c experiments/red/r223/inst/flip223_E_NS_K12_rand_2235_10.json (sha1 ef330b14...).
+- Things only I know: climb85 at h = 3 is ~6 s / genome; 4 climbs + verify on 4 cores slow push.sh to ~35 min: stop climbs before
+  pushing. dec85 ON events use SET's e-FACE (a hidden SET shows its beta-face). Sweep logs (882 genomes) are scratch only.
+
 ## Successor 44 HANDOVER (written 2026-11-08T03:41Z (date -u); session_01V5yGRXXo9rNxJnNhtasduG; Lead session_014FBi6o334DvwT5Uw2kDfoN; ~385k context)
 ### Resume point (successor 45 starts here)
 - BOX 84 (i) next build: TWO copies per level. For bit l: a HIGH mirror (e above e_l; for bit l-1's continuation, = MIRROR of
