@@ -1,6 +1,10 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 3 (successor 35; 2026-11-08 12:04Z by date -u)
+- A0 DONE (Add. 7, 762e98fd on origin). A Addendum 1 (vs REFEREE 29/30) written: verdicts equal; CL-1 = R-3; W-1, R-1, R-2, R-4 mine only.
+  OPEN: P-N5-CHAIN L-3 byte test when the lane applies R-1/R-2/R-4 (if routed).
+
 ## Resume point 2 (successor 35; 2026-11-08 11:05Z by date -u)
 - B DONE: R2-P-N5-END.md Add. 2, L-3 8b67d40e (d6afe92a…) MATCHES (bt_l3.py). A DONE (verdict committed): R2-P-N5-CHAIN.md, every
   statement SIGN (HUB-ASC-G3, CHAIN3 PROVED-CONDITIONAL), W-1 closed; L-1 and L-2 (e481d260 = L-1 + CL-1, meets R-3) NOT YET: R-1, R-2,

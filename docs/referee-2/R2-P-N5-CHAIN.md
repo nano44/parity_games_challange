@@ -261,3 +261,23 @@ clauses say (the DATA rule).
 
 ## Statement of independence
 My verdicts rest on my own derivations above and on my own engine. I did not read docs/referee/R-P-N5-CHAIN.md or L-RED 58's reports.
+
+## Addendum 1: comparison with REFEREE 29 / 30 (docs/referee/R-P-N5-CHAIN.md at claude/referee 4434597c, first review 36d2932d, §C 4434597c), read after 0e5c7c37 was on origin (2026-11-08 11:37Z by date -u)
+- Statement verdicts: EQUAL on every row. Both of us SIGN ESC3-ALL … UP-B3. Both SIGN HUB-ASC-G3 as conditional on P-N5-ASC §4, UP-JUMP3
+  and UP-B3 under [E-LEV], and CHAIN3 with its label. Both CONFIRM DEAD RUN-TRANSFER, with an exact tie at state 0 on each own engine.
+- Line: CL-1 (theirs) = my R-3. Both of us found that ties has no firing control. REFEREE 30's §C and my L-2 section agree that L-2 =
+  L-1 + exactly CL-1.
+- Mine only:
+  - W-1. REFEREE 29 §3 reads (Core) «K0, K3 both or neither» and E-MON3 as CORRECT. I keep W-1 as written. The sentences are false over
+    all vertices (r2nonconv.out). Every use holds per vertex or between non-core vertices, so no verdict changes on either side.
+  - R-1 (wfail counts steps, not windows), R-2 (Tfail tests the Q-form, while the line states the Σ-form) and R-4 (k2fail tests one
+    conjunct). REFEREE 29 §5 marks «REACH3-ALL ... UP-B3 counters 0 with units: OK». Their own replay counts T-QUIET3's Σ-form (tqfail),
+    and they note it «is not cited as a fail counter», but they do not ask for the line to say so. I keep all three as REQUIRED. Each is a
+    stated unit or a stated condition that the cited script does not compute. That is the same class as P-N5-QUIET's D-1 and D-2, which
+    both referees required then. I leave it to the Lead to route them.
+- Theirs only:
+  - The lane's check196.sh re-run byte-identical (their §4 (D)). I did not re-run it; I re-summed sweep196.out instead.
+  - Their observation that CTRL=2 also moves their xi engine off S3.
+  - Their CO-1 (optional, not taken by Lead ruling): I have no view against it.
+- Different sets, same outcome: theirs 2,061 runs (1,580 Ξ-cyclic, 61 pinned files), mine 6,069 (69 pinned runs + 6,000 own). Every
+  counter is 0 on both, and the maxima are equal (T3 129, W 32).
