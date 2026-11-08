@@ -124,7 +124,11 @@ static long ljscore(int T, int J){
       if(n==2 && mt[0]!=mt[1]) q=mx[1]; }
     int prev=1; n1=0; for(int t=1;t<=T;t++) if(O[t][J-1]!=O[t-1][J-1]){ if(t-prev==1) n1++; prev=t; } if(T+1-prev==1) n1++; }
   if(n1<0) n1=999; LJQ=q; LJN1=n1; int src = q>=0? q : 2*J-2; tj0=2*J; tj1=2*J+1; memset(npj_done,0,sizeof npj_done); long long np=0;
-  { int a=xt[2*src], b=xt[2*src+1]; if(a>=0) np+=npj_f(a); if(b>=0 && b!=a) np+=npj_f(b); } LJNP=np;
+  { int a=xt[2*src], b=xt[2*src+1]; if(a>=0) np+=npj_f(a); if(b>=0 && b!=a) np+=npj_f(b); }
+  if(getenv("LJNPMAX")){ /* L-COMP 12 (Lead 03:43Z): q6 can switch between 2J-2 and 2J-1; np = max over BOTH movers of pair J-1 of their
+       npaths into pair J (role-free). */ long long m=0; for(int s2=2*J-2;s2<=2*J-1;s2++){ long long r=0; memset(npj_done,0,sizeof npj_done);
+      int a=xt[2*s2], b=xt[2*s2+1]; if(a>=0) r+=npj_f(a); if(b>=0 && b!=a) r+=npj_f(b); if(r>m) m=r; } np=m; }
+  LJNP=np;
   int g = F[J] >= (getenv("LJGATE")? atoi(getenv("LJGATE")) : 0);
   long long npc = np>999? 999 : np; long n1c = n1>999? 999 : n1; long Tc = T>99999? 99999 : T; long Fc = F[J]>9999? 9999 : F[J];
   if(getenv("LJSLACK")){ /* L-COMP 12 (Lead 02:46Z, L-LOWER 9 L9-design: P-TOWER-FUEL at h = H): sv = sum over j in LJSLACKJ (default
@@ -135,7 +139,15 @@ static long ljscore(int T, int J){
     long long npc2 = np>99? 99 : np; long svc = sv>999? 999 : sv;
     return (long)caps*1000000000000000000L + (long)g*100000000000000000L - npc2*1000000000000000L - svc*1000000000000L - n1c*1000000000L + Tc*10000L + Fc; }
   return (long)caps*100000000000000000L + (long)g*10000000000000000L - npc*10000000000000L - n1c*10000000000L + Tc*10000L + Fc; }
+/* L-COMP 12 (Lead 03:31Z, phase-2 test (b)): env LJNOREAD="t:x1,x2,.." -> nr = number of movers x_i whose Xi-closure (both options,
+   any depth) reaches mover t (= x_i in guard_l6.upstream(D, [t])); score = ljscore - nr*1e18 (nr first in the order). Not combinable
+   with LJSLACK (encoding range). LJNR holds the last nr (written to OUT as lj_nr). */
+static int LJNR=-1; static int nr_vis[MAXN];
+static int reach(int x, int t){ if(x==t) return 1; if(nr_vis[x]) return 0; nr_vis[x]=1; for(int k=0;k<2;k++){ int y=xt[2*x+k]; if(y>=0 && reach(y,t)) return 1; } return 0; }
 static long score(int *T){ run(T); if(SCT) return *T;
+  if(getenv("LJ") && getenv("LJNOREAD")){ char*p=strdup(getenv("LJNOREAD")); int t=atoi(p), nr=0; char*q=strchr(p,':');
+    if(q) for(char*u=strtok(q+1,",");u;u=strtok(NULL,",")){ memset(nr_vis,0,sizeof nr_vis); nr+=reach(atoi(u),t); } free(p); LJNR=nr;
+    return ljscore(*T, atoi(getenv("LJ"))) - (long)nr*1000000000000000000L; }
   if(getenv("LJ")) return ljscore(*T, atoi(getenv("LJ")));
   if(getenv("L6SCORE")) return l6score(*T);
   if(getenv("GUARD") && LV>=1){ int g=atoi(getenv("GUARD")); long pen=0; for(int l=1;l<=g;l++){ int df=2*F[l-1]+2-F[l]; if(F[0]!=2) df+=4; pen += df<0?-df:df; } if(pen) return -100000L*pen + F[LV]; }
@@ -149,7 +161,7 @@ static void rd(const char*fn){ FILE*f=fopen(fn,"r"); char w[64]; while(fscanf(f,
 static void wr(const char*fn, long sc, int T){ FILE*f=fopen(fn,"w"); fprintf(f,"d %d\nxt",d); for(int i=0;i<2*N;i++)fprintf(f," %d",xt[i]);
   fprintf(f,"\nbr"); for(int i=0;i<2*N;i++)fprintf(f," %d",br[i]); fprintf(f,"\nbp"); for(int i=0;i<2*N;i++)fprintf(f," %d",bp[i]);
   fprintf(f,"\ngate"); for(int i=0;i<2*N;i++)fprintf(f," %d",gate[i]); fprintf(f,"\nstart"); for(int i=0;i<N;i++)fprintf(f," %d",st[i]);
-  fprintf(f,"\n# score %ld T %d F",sc,T); for(int l=0;l<d;l++)fprintf(f," %d",F[l]); fprintf(f," moves"); for(int x=0;x<N;x++)fprintf(f," %d",MV[x]); if(SLV>=0) fprintf(f," slack_viol %d good91 %d",SLV,SLG); if(L6CAPS>=0) fprintf(f," l6_caps %d l6_q5 %d l6_npaths %lld",L6CAPS,L6Q5,L6NP); if(L6NS>=0) fprintf(f," l6_len1w6 %d",L6NS); if(L6C24>=0) fprintf(f," l6_c24 %d",L6C24); if(LJCAPS>=0) fprintf(f," lj_J %s lj_caps %d lj_q %d lj_npaths %lld lj_n1 %d",getenv("LJ"),LJCAPS,LJQ,LJNP,LJN1); if(LJSV>=0) fprintf(f," lj_sv %d",LJSV); fprintf(f,"\n"); fclose(f); }
+  fprintf(f,"\n# score %ld T %d F",sc,T); for(int l=0;l<d;l++)fprintf(f," %d",F[l]); fprintf(f," moves"); for(int x=0;x<N;x++)fprintf(f," %d",MV[x]); if(SLV>=0) fprintf(f," slack_viol %d good91 %d",SLV,SLG); if(L6CAPS>=0) fprintf(f," l6_caps %d l6_q5 %d l6_npaths %lld",L6CAPS,L6Q5,L6NP); if(L6NS>=0) fprintf(f," l6_len1w6 %d",L6NS); if(L6C24>=0) fprintf(f," l6_c24 %d",L6C24); if(LJCAPS>=0) fprintf(f," lj_J %s lj_caps %d lj_q %d lj_npaths %lld lj_n1 %d",getenv("LJ"),LJCAPS,LJQ,LJNP,LJN1); if(LJSV>=0) fprintf(f," lj_sv %d",LJSV); if(LJNR>=0) fprintf(f," lj_nr %d",LJNR); fprintf(f,"\n"); fclose(f); }
 int main(int argc,char**argv){ rd(argv[1]); rs+=atol(argv[2])*7919; long iters=atol(argv[3]);
   if(getenv("LV")) LV=atoi(getenv("LV")); if(getenv("SCORE")&&!strcmp(getenv("SCORE"),"T")) SCT=1; if(getenv("CHAIN")) SCH=atoi(getenv("CHAIN"));
   int nomut[MAXN]={0}; int FB = getenv("FROZENBELOW")? atoi(getenv("FROZENBELOW")) : 0; /* movers < FB: no field mutated */

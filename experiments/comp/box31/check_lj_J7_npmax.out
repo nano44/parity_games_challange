@@ -1,0 +1,160 @@
+seed_HIT7_d32.txt C score 699917820002990190 T 299 lj ('7', '12', '8', '218') | ref (7, 0, -8, -218, 299, 190) caps 7 q 12 | OK
+mut00.txt C score 699917820002990190 T 299 lj ('7', '12', '8', '218') | ref (7, 0, -8, -218, 299, 190) caps 7 q 12 | OK
+mut01.txt C score -80249999629978 T 37 lj ('0', '12', '8', '25') | ref (0, 0, -8, -25, 37, 22) caps 0 q 12 | OK
+mut02.txt C score -80029999889997 T 11 lj ('0', '12', '8', '3') | ref (0, 0, -8, -3, 11, 3) caps 0 q 12 | OK
+mut03.txt C score 699917820002990190 T 299 lj ('7', '12', '8', '218') | ref (7, 0, -8, -218, 299, 190) caps 7 q 12 | OK
+mut04.txt C score 699917820002990190 T 299 lj ('7', '12', '8', '218') | ref (7, 0, -8, -218, 299, 190) caps 7 q 12 | OK
+mut05.txt C score -80019999980000 T 2 lj ('0', '12', '8', '2') | ref (0, 0, -8, -2, 2, 0) caps 0 q 12 | OK
+mut06.txt C score -80049999879995 T 12 lj ('0', '12', '8', '5') | ref (0, 0, -8, -5, 12, 5) caps 0 q 12 | OK
+mut07.txt C score -81079998469904 T 153 lj ('0', '12', '8', '108') | ref (0, 0, -8, -108, 153, 96) caps 0 q 12 | OK
+mut08.txt C score -80009999960000 T 4 lj ('0', '12', '8', '1') | ref (0, 0, -8, -1, 4, 0) caps 0 q 12 | OK
+mut09.txt C score -80039999909998 T 9 lj ('0', '12', '8', '4') | ref (0, 0, -8, -4, 9, 2) caps 0 q 12 | OK
+mut10.txt C score -80359999499969 T 50 lj ('0', '12', '8', '36') | ref (0, 0, -8, -36, 50, 31) caps 0 q 12 | OK
+mut11.txt C score 699917820002990190 T 299 lj ('7', '12', '8', '218') | ref (7, 0, -8, -218, 299, 190) caps 7 q 12 | OK
+mut12.txt C score -80049999859995 T 14 lj ('0', '12', '8', '5') | ref (0, 0, -8, -5, 14, 5) caps 0 q 12 | OK
+mut13.txt C score -80109999799990 T 20 lj ('0', '12', '8', '11') | ref (0, 0, -8, -11, 20, 10) caps 0 q 12 | OK
+mut14.txt C score -79999999980000 T 2 lj ('0', '-1', '8', '0') | ref (0, 0, -8, 0, 2, 0) caps 0 q 12 | OK
+mut15.txt C score -80009999970000 T 3 lj ('0', '-1', '8', '1') | ref (0, 0, -8, -1, 3, 0) caps 0 q 12 | OK
+mut16.txt C score -80059999889995 T 11 lj ('0', '12', '8', '6') | ref (0, 0, -8, -6, 11, 5) caps 0 q 12 | OK
+mut17.txt C score -80009999990000 T 1 lj ('0', '-1', '8', '1') | ref (0, 0, -8, -1, 1, 0) caps 0 q 12 | OK
+mut18.txt C score -80119999829990 T 17 lj ('0', '12', '8', '12') | ref (0, 0, -8, -12, 17, 10) caps 0 q 12 | OK
+mut19.txt C score -80019999980000 T 2 lj ('0', '12', '8', '2') | ref (0, 0, -8, -2, 2, 0) caps 0 q 12 | OK
+files 21 mismatches 0
+seed_HIT7_d32.txt C score 709917820002990190 T 299 lj ('7', '12', '8', '218') | ref (7, 1, -8, -218, 299, 190) caps 7 q 12 | OK
+mut00.txt C score 709917820002990190 T 299 lj ('7', '12', '8', '218') | ref (7, 1, -8, -218, 299, 190) caps 7 q 12 | OK
+mut01.txt C score -79999999970000 T 3 lj ('0', '-1', '8', '0') | ref (0, 0, -8, 0, 3, 0) caps 0 q 12 | OK
+mut02.txt C score -80059999889995 T 11 lj ('0', '12', '8', '6') | ref (0, 0, -8, -6, 11, 5) caps 0 q 12 | OK
+mut03.txt C score -79999999949999 T 5 lj ('0', '-1', '8', '0') | ref (0, 0, -8, 0, 5, 1) caps 0 q 12 | OK
+mut04.txt C score -80099999849992 T 15 lj ('0', '12', '8', '10') | ref (0, 0, -8, -10, 15, 8) caps 0 q 12 | OK
+mut05.txt C score -80059999889995 T 11 lj ('0', '12', '8', '6') | ref (0, 0, -8, -6, 11, 5) caps 0 q 12 | OK
+mut06.txt C score 709917820002990190 T 299 lj ('7', '12', '8', '218') | ref (7, 1, -8, -218, 299, 190) caps 7 q 12 | OK
+mut07.txt C score -80049999879996 T 12 lj ('0', '12', '8', '5') | ref (0, 0, -8, -5, 12, 4) caps 0 q 12 | OK
+mut08.txt C score -80519999249954 T 75 lj ('0', '12', '8', '52') | ref (0, 0, -8, -52, 75, 46) caps 0 q 12 | OK
+mut09.txt C score -40009999990000 T 1 lj ('0', '-1', '4', '1') | ref (0, 0, -4, -1, 1, 0) caps 0 q 12 | OK
+mut10.txt C score 709917820002990190 T 299 lj ('7', '12', '8', '218') | ref (7, 1, -8, -218, 299, 190) caps 7 q 12 | OK
+mut11.txt C score 709917820002990190 T 299 lj ('7', '12', '8', '218') | ref (7, 1, -8, -218, 299, 190) caps 7 q 12 | OK
+mut12.txt C score -60009999960000 T 4 lj ('0', '12', '6', '1') | ref (0, 0, -6, -1, 4, 0) caps 0 q 12 | OK
+mut13.txt C score -40009999990000 T 1 lj ('0', '-1', '4', '1') | ref (0, 0, -4, -1, 1, 0) caps 0 q 12 | OK
+mut14.txt C score -80049999869995 T 13 lj ('0', '12', '8', '5') | ref (0, 0, -8, -5, 13, 5) caps 0 q 12 | OK
+mut15.txt C score -80059999889996 T 11 lj ('0', '12', '8', '6') | ref (0, 0, -8, -6, 11, 4) caps 0 q 12 | OK
+mut16.txt C score -80019999889999 T 11 lj ('0', '12', '8', '2') | ref (0, 0, -8, -2, 11, 1) caps 0 q 12 | OK
+mut17.txt C score -80009999970000 T 3 lj ('0', '12', '8', '1') | ref (0, 0, -8, -1, 3, 0) caps 0 q 12 | OK
+mut18.txt C score 709917820002990190 T 299 lj ('7', '12', '8', '218') | ref (7, 1, -8, -218, 299, 190) caps 7 q 12 | OK
+mut19.txt C score 709917820002990190 T 299 lj ('7', '12', '8', '218') | ref (7, 1, -8, -218, 299, 190) caps 7 q 12 | OK
+files 21 mismatches 0
+L6_FRZ_F240_D_l6w.txt C score 609908050002860176 T 286 lj ('6', '12', '9', '195') | ref (6, 1, -9, -195, 286, 176) caps 6 q 12 | OK
+L6_FRZ_F242_D_l6w.txt C score 609937990002920174 T 292 lj ('6', '12', '6', '201') | ref (6, 1, -6, -201, 292, 174) caps 6 q 12 | OK
+L6_FRZ_F244_D_l6v.txt C score 609917940002850180 T 285 lj ('6', '12', '8', '206') | ref (6, 1, -8, -206, 285, 180) caps 6 q 12 | OK
+L6_FRZ_F246_D_l6v.txt C score 609877880002870184 T 287 lj ('6', '12', '12', '212') | ref (6, 1, -12, -212, 287, 184) caps 6 q 12 | OK
+L6_FRZ_F248_D_l6v.txt C score 609897860002840184 T 284 lj ('6', '12', '10', '214') | ref (6, 1, -10, -214, 284, 184) caps 6 q 12 | OK
+L6_FRZ_F250_D_l6u.txt C score 609837870002910188 T 291 lj ('6', '12', '16', '213') | ref (6, 1, -16, -213, 291, 188) caps 6 q 12 | OK
+L6_FRZ_F254_D_l6u.txt C score 709917820002990190 T 299 lj ('7', '12', '8', '218') | ref (7, 1, -8, -218, 299, 190) caps 7 q 12 | OK
+Traceback (most recent call last):
+  File "/home/user/parity_games_challange/experiments/comp/box31/check_lj.py", line 46, in <module>
+    print(f"files {len(files)} mismatches {bad}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+L7_FRZ_K7099178600030_L7b.txt C score 709917860003030192 T 303 lj ('7', '12', '8', '214') | ref (7, 1, -8, -214, 303, 192) caps 7 q 12 | OK
+Traceback (most recent call last):
+  File "/home/user/parity_games_challange/experiments/comp/box31/check_lj.py", line 46, in <module>
+    print(f"files {len(files)} mismatches {bad}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+L7_FRZ_K7099178700030_L7c.txt C score 709917870003040190 T 304 lj ('7', '12', '8', '213') | ref (7, 1, -8, -213, 304, 190) caps 7 q 12 | OK
+L7_FRZ_K7099279900038_L7c.txt C score 709927990003800192 T 380 lj ('7', '12', '7', '201') | ref (7, 1, -7, -201, 380, 192) caps 7 q 12 | OK
+L7_FRZ_K7099280300036_L7a.txt C score 709928030003630192 T 363 lj ('7', '12', '7', '197') | ref (7, 1, -7, -197, 363, 192) caps 7 q 12 | OK
+L7_FRZ_K7099280300039_L7a.txt C score 709928030003910192 T 391 lj ('7', '12', '7', '197') | ref (7, 1, -7, -197, 391, 192) caps 7 q 12 | OK
+L7_FRZ_K7099280700038_L7d.txt C score 709928070003800192 T 380 lj ('7', '12', '7', '193') | ref (7, 1, -7, -193, 380, 192) caps 7 q 12 | OK
+L7_FRZ_K7099280800040_L7c.txt C score 709928080004040192 T 404 lj ('7', '12', '7', '192') | ref (7, 1, -7, -192, 404, 192) caps 7 q 12 | OK
+L7_FRZ_K7099281000040_L7c.txt C score 709928100004060192 T 406 lj ('7', '12', '7', '190') | ref (7, 1, -7, -190, 406, 192) caps 7 q 12 | OK
+Traceback (most recent call last):
+  File "/home/user/parity_games_challange/experiments/comp/box31/check_lj.py", line 46, in <module>
+    print(f"files {len(files)} mismatches {bad}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+L7_FRZ_K7099281000041_L7c.txt C score 709928100004130192 T 413 lj ('7', '12', '7', '190') | ref (7, 1, -7, -190, 413, 192) caps 7 q 12 | OK
+L7_FRZ_K7099281600041_L7a.txt C score 709928160004190192 T 419 lj ('7', '12', '7', '184') | ref (7, 1, -7, -184, 419, 192) caps 7 q 12 | OK
+L7_FRZ_K7099281700039_L7d.txt C score 709928170003940192 T 394 lj ('7', '12', '7', '183') | ref (7, 1, -7, -183, 394, 192) caps 7 q 12 | OK
+L7_FRZ_K7099281900042_L7a.txt C score 709928190004280192 T 428 lj ('7', '12', '7', '181') | ref (7, 1, -7, -181, 428, 192) caps 7 q 12 | OK
+L7_FRZ_K7099281900043_L7a.txt C score 709928190004340192 T 434 lj ('7', '12', '7', '181') | ref (7, 1, -7, -181, 434, 192) caps 7 q 12 | OK
+L7_FRZ_K7099282100040_L7d.txt C score 709928210004090192 T 409 lj ('7', '12', '7', '179') | ref (7, 1, -7, -179, 409, 192) caps 7 q 12 | OK
+L7_FRZ_K7099282100041_L7d.txt C score 709928210004100192 T 410 lj ('7', '12', '7', '179') | ref (7, 1, -7, -179, 410, 192) caps 7 q 12 | OK
+L7_FRZ_K7099282300045_L7a.txt C score 709928230004500192 T 450 lj ('7', '12', '7', '177') | ref (7, 1, -7, -177, 450, 192) caps 7 q 12 | OK
+L7_FRZ_K7099282400039_L7b.txt C score 709928240003950192 T 395 lj ('7', '12', '7', '176') | ref (7, 1, -7, -176, 395, 192) caps 7 q 12 | OK
+Traceback (most recent call last):
+  File "/home/user/parity_games_challange/experiments/comp/box31/check_lj.py", line 46, in <module>
+    print(f"files {len(files)} mismatches {bad}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+L7_FRZ_K7099282400040_L7b.txt C score 709928240004010192 T 401 lj ('7', '12', '7', '176') | ref (7, 1, -7, -176, 401, 192) caps 7 q 12 | OK
+L7_FRZ_K7099282600039_L7b.txt C score 709928260003980192 T 398 lj ('7', '12', '7', '174') | ref (7, 1, -7, -174, 398, 192) caps 7 q 12 | OK
+L7_FRZ_K7099283000041_L7b.txt C score 709928300004120192 T 412 lj ('7', '12', '7', '170') | ref (7, 1, -7, -170, 412, 192) caps 7 q 12 | OK
+L7_FRZ_K7099283100043_L7a.txt C score 709928310004370192 T 437 lj ('7', '12', '7', '169') | ref (7, 1, -7, -169, 437, 192) caps 7 q 12 | OK
+L7_FRZ_K7099283100044_L7a.txt C score 709928310004400192 T 440 lj ('7', '12', '7', '169') | ref (7, 1, -7, -169, 440, 192) caps 7 q 12 | OK
+L7_FRZ_K7099283200044_L7a.txt C score 709928320004450192 T 445 lj ('7', '12', '7', '168') | ref (7, 1, -7, -168, 445, 192) caps 7 q 12 | OK
+L7_FRZ_K7099382400040_L7b.txt C score 709938240004050192 T 405 lj ('7', '12', '6', '176') | ref (7, 1, -6, -176, 405, 192) caps 7 q 12 | OK
+Traceback (most recent call last):
+  File "/home/user/parity_games_challange/experiments/comp/box31/check_lj.py", line 46, in <module>
+    print(f"files {len(files)} mismatches {bad}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+L7_FRZ_K7099382400041_L7b.txt C score 709938240004110192 T 411 lj ('7', '12', '6', '176') | ref (7, 1, -6, -176, 411, 192) caps 7 q 12 | OK
+L7_FRZ_K7099382400042_L7b.txt C score 709938240004260192 T 426 lj ('7', '12', '6', '176') | ref (7, 1, -6, -176, 426, 192) caps 7 q 12 | OK
+L7_FRZ_K7099382500043_L7b.txt C score 709938250004300192 T 430 lj ('7', '12', '6', '175') | ref (7, 1, -6, -175, 430, 192) caps 7 q 12 | OK
+Traceback (most recent call last):
+  File "/home/user/parity_games_challange/experiments/comp/box31/check_lj.py", line 46, in <module>
+    print(f"files {len(files)} mismatches {bad}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+L7_FRZ_K7099382600043_L7b.txt C score 709938260004330192 T 433 lj ('7', '12', '6', '174') | ref (7, 1, -6, -174, 433, 192) caps 7 q 12 | OK
+L7_FRZ_K7099382600044_L7b.txt C score 709938260004420192 T 442 lj ('7', '12', '6', '174') | ref (7, 1, -6, -174, 442, 192) caps 7 q 12 | OK
+Traceback (most recent call last):
+  File "/home/user/parity_games_challange/experiments/comp/box31/check_lj.py", line 46, in <module>
+    print(f"files {len(files)} mismatches {bad}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+L7_FRZ_K7099382600045_L7b.txt C score 709938260004500192 T 450 lj ('7', '12', '6', '174') | ref (7, 1, -6, -174, 450, 192) caps 7 q 12 | OK
+-1_base.txt C score 210000000001040006 T 104 lj ('2', '12', '0', '0') | ref (2, 1, 0, 0, 104, 6) caps 2 q 12 | OK
+18_base.txt C score 209970000000910004 T 91 lj ('2', '-1', '3', '0') | ref (2, 1, -3, 0, 91, 4) caps 2 q 12 | OK
+Traceback (most recent call last):
+  File "/home/user/parity_games_challange/experiments/comp/box31/check_lj.py", line 46, in <module>
+    print(f"files {len(files)} mismatches {bad}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+21_base.txt C score 210000000001030006 T 103 lj ('2', '12', '0', '0') | ref (2, 1, 0, 0, 103, 6) caps 2 q 12 | OK
+26_base.txt C score 209950000001050007 T 105 lj ('2', '13', '5', '0') | ref (2, 1, -5, 0, 105, 7) caps 2 q 13 | OK
+34_base.txt C score 210000000000970006 T 97 lj ('2', '-1', '0', '0') | ref (2, 1, 0, 0, 97, 6) caps 2 q 12 | OK
+38_base.txt C score 210000000001090005 T 109 lj ('2', '12', '0', '0') | ref (2, 1, 0, 0, 109, 5) caps 2 q 12 | OK
+-1_NR.txt C score 209590000000930007 T 93 lj ('2', '-1', '41', '0') | ref (2, 1, -41, 0, 93, 7) caps 2 q 12 | OK
+Traceback (most recent call last):
+  File "/home/user/parity_games_challange/experiments/comp/box31/check_lj.py", line 46, in <module>
+    print(f"files {len(files)} mismatches {bad}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+18_NR.txt C score 210000000000950004 T 95 lj ('2', '13', '0', '0') | ref (2, 1, 0, 0, 95, 4) caps 2 q 13 | OK
+21_NR.txt C score 110000000001040005 T 104 lj ('1', '-1', '0', '0') | ref (1, 1, 0, 0, 104, 5) caps 1 q 12 | OK
+26_NR.txt C score 110000000000990003 T 99 lj ('1', '13', '0', '0') | ref (1, 1, 0, 0, 99, 3) caps 1 q 13 | OK
+34_NR.txt C score 110000000001000007 T 100 lj ('1', '13', '0', '0') | ref (1, 1, 0, 0, 100, 7) caps 1 q 13 | OK
+38_NR.txt C score 210000000001040006 T 104 lj ('2', '12', '0', '0') | ref (2, 1, 0, 0, 104, 6) caps 2 q 12 | OK
+seed_HIT7_d32.txt C score 7091894782002990190 T 299 sv 105 | ref (7, 1, -8, -105, -218, 299, 190) caps 7 q 12 | OK
+mut00.txt C score -8002999999980000 T 2 sv 3 | ref (0, 0, -8, -3, 0, 2, 0) caps 0 q 12 | OK
+mut01.txt C score -8002000999970000 T 3 sv 2 | ref (0, 0, -8, -2, -1, 3, 0) caps 0 q 12 | OK
+mut02.txt C score 7091894782002990190 T 299 sv 105 | ref (7, 1, -8, -105, -218, 299, 190) caps 7 q 12 | OK
+mut03.txt C score 7091894782002990190 T 299 sv 105 | ref (7, 1, -8, -105, -218, 299, 190) caps 7 q 12 | OK
+mut04.txt C score -8002004999919997 T 8 sv 2 | ref (0, 0, -8, -2, -5, 8, 3) caps 0 q 12 | OK
+mut05.txt C score -8003004999899996 T 10 sv 3 | ref (0, 0, -8, -3, -5, 10, 4) caps 0 q 12 | OK
+mut06.txt C score -8002000999990000 T 1 sv 2 | ref (0, 0, -8, -2, -1, 1, 0) caps 0 q 12 | OK
+mut07.txt C score -8003005999889993 T 11 sv 3 | ref (0, 0, -8, -3, -6, 11, 7) caps 0 q 12 | OK
+mut08.txt C score -8001000999950000 T 5 sv 1 | ref (0, 0, -8, -1, -1, 5, 0) caps 0 q 12 | OK
+mut09.txt C score -8002000999970000 T 3 sv 2 | ref (0, 0, -8, -2, -1, 3, 0) caps 0 q 12 | OK
+mut10.txt C score 7091894782002990190 T 299 sv 105 | ref (7, 1, -8, -105, -218, 299, 190) caps 7 q 12 | OK
+mut11.txt C score -8003003999859996 T 14 sv 3 | ref (0, 0, -8, -3, -4, 14, 4) caps 0 q 12 | OK
+mut12.txt C score -8024052999259954 T 74 sv 24 | ref (0, 0, -8, -24, -53, 74, 46) caps 0 q 12 | OK
+mut13.txt C score -8001999999980000 T 2 sv 2 | ref (0, 0, -8, -2, 0, 2, 0) caps 0 q 12 | OK
+mut14.txt C score -8002001999959996 T 4 sv 2 | ref (0, 0, -8, -2, -2, 4, 4) caps 0 q 12 | OK
+mut15.txt C score -8001000999950000 T 5 sv 1 | ref (0, 0, -8, -1, -1, 5, 0) caps 0 q 12 | OK
+mut16.txt C score -8010008999719987 T 28 sv 10 | ref (0, 0, -8, -10, -9, 28, 13) caps 0 q 12 | OK
+mut17.txt C score 6091894783002980190 T 298 sv 105 | ref (6, 1, -8, -105, -217, 298, 190) caps 6 q 12 | OK
+mut18.txt C score 7091894782002990190 T 299 sv 105 | ref (7, 1, -8, -105, -218, 299, 190) caps 7 q 12 | OK
+mut19.txt C score -8004009999849992 T 15 sv 4 | ref (0, 0, -8, -4, -10, 15, 8) caps 0 q 12 | OK
+files 21 mismatches 0

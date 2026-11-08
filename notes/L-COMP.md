@@ -1,17 +1,36 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## RESUME POINT -- successor 12 (L-COMP 12, Opus 5.5), 2026-11-08 02:2xZ by date -u (GO 02:14Z)
-- Box 31 (experiments/comp/box31/README.md): seed out/seed_HIT7_d32.txt (HIT7 + 4 TOP-ADD, sha1 ad9a39d4) re-measured (rclimb30 = replay30:
-  T 299, caps 7). rclimb31.c (LJ score) = Python ref on 55 genomes, 0 mismatches. n5v on HIT7 Γ3: 302 iterations, 1 fallback, = Oink = n5b.
-- LAUNCHED 02:2xZ (Lead 02:20Z «OK on all of it. Launch.»): L7a/L7b FROZENBELOW 0 (seeds 500000+/510000+), L7c/L7d FROZENBELOW 12
-  (520000+/530000+), common LANEANNEAL 0.15 LJ 7 LJGATE 190 LJGUARD 20:17,34:22 FIX 20,34 NMIN 2 NMAX 4, lane31.sh args 6 5 7; freezer31.sh.
-  Path: no new q6 path; PHASE 2 (fix 12:0 to a level-9 trigger, L8 §4) only if npaths stalls > 0, and tell the Lead when switching.
-  No trigger-count term yet (Lead). Next report: new frozen best (npaths 0 or n1 down), a HIT, or ~03:30Z.
-- 02:25Z container restart: lanes resumed at unit 1 from their partial unit-0 bests (logged). 02:5xZ: LJSLACK term (rclimb31.c 863750a7,
-  ref 51618da1, 69 genomes 0 mismatches); freezer per-lane max. Lead 02:53Z OK: at the NEXT restart L7c = FB 8 + LJSLACK 8, L7d = FB 12 +
-  LJSLACK 8 (already written in relaunch31.sh; takes effect only when those lanes are (re)started).
-- Relaunch after a restart: experiments/comp/box28/relaunch_all.sh (now calls box31/relaunch31.sh); write out/<lane>.unit first.
+## RESUME POINT -- successor 12 (L-COMP 12, Opus 5.5), updated 2026-11-08 03:4xZ by date -u (GO 02:14Z) -- HANDOVER-READY
+### RELAUNCH (container restarts every ~40 min; a new container needs steps 1-3)
+1. New container only: scripts/setup_oink.sh (verify.sh needs Oink). Re-add to .git/info/exclude (local only; else commit_loop commits
+   binaries): experiments/comp/box28/{frup,cubes/,log/*.out,log/*.run}; experiments/comp/box30/{bin/,out/.pid_*,out/*.unit,out/*_u[0-9]*.txt,
+   out/*_u[0-9]*.run,out/.zseen}; experiments/comp/box31/{bin/,out/.pid_*,out/*.unit,out/*_u[0-9]*.txt,out/*_u[0-9]*.run,out/*.nohup,mut_check*/}.
+2. Lanes L7a-d: if out/<lane>_u<k>.txt of the unit in flight exists and scores above out/<lane>_best.txt, copy it to _best (as at 02:25Z:
+   partial unit best kept; log a line «INTERRUPTED by container restart» in out/<lane>.log). Write out/<lane>.unit = last unit in
+   out/<lane>.log + 1 (box31/out/, local files).
+3. experiments/comp/box28/relaunch_all.sh (idempotent): diskguard, commit_loop, box30/relaunch30.sh (all lines stopped), box31/relaunch31.sh
+   (L7a-d + freezer31; builds bin/rclimb31 if missing; fenc for checks: gcc -O2 -o box31/bin/fenc box31/l-lower/l9/fenc.c). Verify each
+   PID file names a live process (ps -o args= -p $(cat out/.pid_X)); a just-killed process can still answer kill -0 for a moment.
+4. Re-arm the monitor (FROZEN npaths < 6, HITS, dead lanes, commit_loop «push exit»).
+### LANES (box31/README.md; rclimb31.c 46c1746c; ref ref_lj.py 53b22e78; checks check_lj*.out, check_nr.out: 0 mismatches)
+- Common C = LANEANNEAL 0.15 LJ 7 LJGATE 190 LJGUARD 20:17,34:22 FIX 20,34 NMIN 2 NMAX 4; lane31.sh args 6 5 7; seed out/seed_HIT7_d32.txt.
+  L7a FB 0 (500000+), L7b FB 0 (510000+): baseline, unchanged. L7c, L7d: relaunch31.sh ALREADY has the Lead-approved switch (02:53Z, 03:43Z):
+  L7c = FB 8 + LJSLACK 8 + LJNPMAX 1, L7d = FB 12 + LJSLACK 8 + LJNPMAX 1; it takes effect at their next (re)start (score scale changes;
+  freezer31 keeps a per-lane max).
+- Score options in rclimb31 (all off = the launched score, bit-identical): LJSLACK=H (slack j 4,5 term), LJNOREAD=t:x.. (readers of t),
+  LJNPMAX=1 (npaths = max over movers 12, 13, role-free; Lead 03:43Z, because q6 can switch to 13).
+- Phase 2 (fix q6's options to level 9): one-edit test (phase2_test.out) and two-edit + short-climb test (b) (phase2b_sum.out): NEGATIVE,
+  caps <= 2. Lead 03:43Z: (a) no phase-2 lane for now.
+- Next report to the Lead: frozen best with npaths < 6, n1 well down, or T >= 510; a HIT; or ~05:00Z. A HIT -> Lead at once (genome, sha1,
+  F, T, rclimb31 + replay30 + sim6 + fenc), then Γ3 end to end (box29 pipeline: replay30 JSON -> l-new norm.py -> writepg.py; n5b run29.py,
+  n5v box31/n5v/check_n5v.py, Oink check29.py).
+### DONE (DATA): seed re-measured; n5v on HIT7 Γ3 = 302 = n5b, = Oink; slack counts 15/90/217 = L-LOWER slack.py; commit_loop pattern
+  '^(/usr/bin/env )?(/bin/|/usr/bin/)?(bash )?(\./)?scripts/push\.sh' (live test below); pushes 12dd20ff, 7c7d104e, beb1deec.
+### Things only I know (successor 12)
+- fenc (L-LOWER 9) is the exact d <= 64 engine; l5/fev.c overflows at d >= 32 (Lead 02:46Z): never use fev at d 32.
+- slack j 6 (217 on the seed) != n1_7 (218): two counters. lj_npaths before LJNPMAX follows q6 = roles(6)[1], which can be 13 or none.
+- Movers 0-3 read 12 (upstream(12) ∋ 0..3) in every L7 genome so far: any edit of 12's options breaks level 0.
 - commit_loop (box28) RESTARTED 02:2xZ with pattern pgrep -f '^(/usr/bin/env )?(/bin/|/usr/bin/)?(bash )?(\./)?scripts/push\.sh' (Lead 02:20Z),
   footer = my session, box31 added. LIVE TEST (02:2xZ, during my push of 39c09dbf): ps showed 13019 «bash scripts/push.sh» and my tool
   wrapper 13018 «/bin/bash -c ...; scripts/push.sh > log»; old anchored «^bash scripts/push.sh» -> 13019; unanchored «scripts/push.sh» ->

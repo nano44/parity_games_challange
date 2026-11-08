@@ -1,0 +1,5 @@
+base: T 433 caps 7 F(0..8) [2, 6, 14, 30, 62, 126, 254, 192, 106] (cap values [2, 6, 14, 30, 62, 126, 254, 510, 1022]) first-broken-level 7 q6 12 npaths(12->14,15) 6 n1_7 174 | replay30+fenc agree True
+opt24_13to18: T 1 caps 0 F(0..8) [0, 0, 0, 0, 0, 0, 0, 0, 1] (cap values [2, 6, 14, 30, 62, 126, 254, 510, 1022]) first-broken-level 0 q6 None npaths(12->14,15) 2 n1_7 1 | replay30+fenc agree True | npaths(18->14,15) 0
+opt24_13to19: T 7 caps 0 F(0..8) [0, 0, 0, 0, 0, 2, 3, 2, 1] (cap values [2, 6, 14, 30, 62, 126, 254, 510, 1022]) first-broken-level 0 q6 12 npaths(12->14,15) 4 n1_7 3 | replay30+fenc agree True | npaths(19->14,15) 2
+opt25_11to18: T 6 caps 0 F(0..8) [0, 0, 0, 0, 0, 1, 2, 2, 1] (cap values [2, 6, 14, 30, 62, 126, 254, 510, 1022]) first-broken-level 0 q6 12 npaths(12->14,15) 4 n1_7 1 | replay30+fenc agree True | npaths(18->14,15) 0
+opt25_11to19: T 6 caps 0 F(0..8) [0, 0, 0, 0, 0, 1, 2, 2, 1] (cap values [2, 6, 14, 30, 62, 126, 254, 510, 1022]) first-broken-level 0 q6 12 npaths(12->14,15) 6 n1_7 1 | replay30+fenc agree True | npaths(19->14,15) 2

@@ -1,0 +1,12 @@
+y -1 base: start T 8 caps 0 npaths 0 up(0..3)∋12 [0, 1, 2, 3] -> climbed T 104 caps 2 F(0..7) [2, 6, 5, 9, 9, 4, 5, 6] npaths 0 up(0..3)∋12 [] xt24 18 xt25 -1 | replay30+fenc agree True
+y -1 NR: start T 8 caps 0 npaths 0 up(0..3)∋12 [0, 1, 2, 3] -> climbed T 93 caps 2 F(0..7) [2, 6, 5, 7, 8, 7, 7, 7] npaths 0 up(0..3)∋12 [] xt24 18 xt25 -1 | replay30+fenc agree True
+y 18 base: start T 1 caps 0 npaths 0 up(0..3)∋12 [0, 1, 2, 3] -> climbed T 91 caps 2 F(0..7) [2, 6, 8, 5, 4, 5, 5, 4] npaths 0 up(0..3)∋12 [0, 1, 2] xt24 18 xt25 18 | replay30+fenc agree True
+y 18 NR: start T 1 caps 0 npaths 0 up(0..3)∋12 [0, 1, 2, 3] -> climbed T 95 caps 2 F(0..7) [2, 6, 5, 5, 5, 4, 3, 4] npaths 0 up(0..3)∋12 [] xt24 18 xt25 18 | replay30+fenc agree True
+y 21 base: start T 1 caps 0 npaths 0 up(0..3)∋12 [0, 1, 2, 3] -> climbed T 103 caps 2 F(0..7) [2, 6, 7, 7, 3, 4, 6, 6] npaths 0 up(0..3)∋12 [0, 1, 2, 3] xt24 18 xt25 21 | replay30+fenc agree True
+y 21 NR: start T 1 caps 0 npaths 0 up(0..3)∋12 [0, 1, 2, 3] -> climbed T 104 caps 1 F(0..7) [2, 3, 6, 7, 6, 6, 6, 5] npaths 0 up(0..3)∋12 [] xt24 18 xt25 21 | replay30+fenc agree True
+y 26 base: start T 1 caps 0 npaths 0 up(0..3)∋12 [0, 1, 2, 3] -> climbed T 105 caps 2 F(0..7) [2, 6, 8, 7, 6, 4, 5, 7] npaths 5 up(0..3)∋12 [] xt24 18 xt25 26 | replay30+fenc agree True
+y 26 NR: start T 1 caps 0 npaths 0 up(0..3)∋12 [0, 1, 2, 3] -> climbed T 99 caps 1 F(0..7) [2, 2, 6, 7, 7, 5, 3, 3] npaths 0 up(0..3)∋12 [] xt24 18 xt25 26 | replay30+fenc agree True
+y 34 base: start T 1 caps 0 npaths 0 up(0..3)∋12 [0, 1, 2, 3] -> climbed T 97 caps 2 F(0..7) [2, 6, 4, 4, 4, 5, 6, 6] npaths 0 up(0..3)∋12 [0, 1] xt24 18 xt25 34 | replay30+fenc agree True
+y 34 NR: start T 1 caps 0 npaths 0 up(0..3)∋12 [0, 1, 2, 3] -> climbed T 100 caps 1 F(0..7) [2, 2, 3, 6, 5, 8, 5, 7] npaths 0 up(0..3)∋12 [] xt24 18 xt25 34 | replay30+fenc agree True
+y 38 base: start T 8 caps 0 npaths 0 up(0..3)∋12 [0, 1, 2, 3] -> climbed T 109 caps 2 F(0..7) [2, 6, 7, 3, 4, 5, 6, 5] npaths 0 up(0..3)∋12 [1, 2, 3] xt24 18 xt25 38 | replay30+fenc agree True
+y 38 NR: start T 8 caps 0 npaths 0 up(0..3)∋12 [0, 1, 2, 3] -> climbed T 104 caps 2 F(0..7) [2, 6, 4, 3, 4, 4, 4, 6] npaths 0 up(0..3)∋12 [] xt24 18 xt25 38 | replay30+fenc agree True
