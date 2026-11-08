@@ -23,3 +23,8 @@ restart 21 best (C, A, maxm, T3) [1, 2, 0, 6] global [1, 2, 0, 8] hits 0 35s
 restart 22 best (C, A, maxm, T3) [1, 2, 0, 6] global [1, 2, 0, 8] hits 0 39s
 restart 23 best (C, A, maxm, T3) [1, 2, 0, 7] global [1, 2, 0, 8] hits 0 44s
 restart 24 best (C, A, maxm, T3) [1, 2, 0, 6] global [1, 2, 0, 8] hits 0 36s
+restart 25 best (C, A, maxm, T3) [1, 2, 0, 6] global [1, 2, 0, 8] hits 0 38s
+restart 26 best (C, A, maxm, T3) [1, 2, 0, 6] global [1, 2, 0, 8] hits 0 37s
+restart 27 best (C, A, maxm, T3) [1, 2, 0, 7] global [1, 2, 0, 8] hits 0 40s
+restart 28 best (C, A, maxm, T3) [1, 2, 0, 6] global [1, 2, 0, 8] hits 0 40s
+restart 29 best (C, A, maxm, T3) [1, 2, 0, 5] global [1, 2, 0, 8] hits 0 31s

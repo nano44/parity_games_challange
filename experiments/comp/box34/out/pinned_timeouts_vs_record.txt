@@ -2,3 +2,4 @@ H6C own: 'T3': 51 'maxalt': 4 'maxtops': 12  | rec: maxalt 4 maxtops 12 max T3 5
 H7A own: 'T3': 39 'maxalt': 2 'maxtops': 4  | rec: maxalt 2 maxtops 4 max T3 39 
 H7C own: 'T3': 74 'maxalt': 4 'maxtops': 13  | rec: maxalt 4 maxtops 13 max T3 74 
 H8A own: 'T3': 47 'maxalt': 2 'maxtops': 4  | rec: maxalt 2 maxtops 4 max T3 47 
+H8B own: 'T3': 46 'maxalt': 3 'maxtops': 6  | rec: maxalt 3 maxtops 6 max T3 46 
