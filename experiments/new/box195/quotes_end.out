@@ -31,4 +31,4 @@ OK   RESULTS ≺ is a strict partial order on strategies and every non-empty swi
 OK   RESULTS/REACH Let G ∈ IDEAL-ACYC with IDEAL run s_0 → s_1 → … → s_L, L = L(G). Then the N5 run of Γ3(G) FROM S3 ha
 OK   RESULTS N5′-xi from S3 on Γ3(G) visits only standard states and makes Howard steps at the movers until its f
 OK   RESULTS Theorem REACH3-CYC, CONDITIONAL on P-N5-REACH's S3-START, PAD, K3, TAU3, ESC3, W3 for every genome
-quotes 33 missing 0 (trunk 51eb65348)
+quotes 33 missing 0 (every source from trunk c8f42538f)

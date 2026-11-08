@@ -6,8 +6,8 @@ b7bd693744fdec2aa993f2133c22cbe724933ff0  DOCS/P-N5-REACH.md
 100c3c6f03b3297ee48508a27debdd5c3bfafab6  eg195.py
 f4676b1738d194e51875235832876b7d861be084  check195.sh
 b5441bb8cb2e5066c8e2f1365c70bf2e7958564e  check195.out
-3750e9d81592de9164acba0a926639946ea56613  quotes_end.py
-3b190e09bec17db67edd1a3dc30a67f0f2b6d8e3  quotes_end.out
+b1a865c8fd70bdd1776d60c807dd777520263243  quotes_end.py
+eaf87b6eacae955ca7491fa46458645b1360790b  quotes_end.out
 dc71a441d8b8be59400a97e152e7c74ca7491f44  quotes195.py
 e50c1ff5dc994b381c6fe3ebaef2a31145825afd  quotes195.out
 289f6f23647b8aa703b98bf0adf50f8c04787800  data/sweep195.out
@@ -34,3 +34,6 @@ cbfbea75f4118e3d1c4d48726352a6c30af576e0  ../box189/corpus/REC_d12_mu42_norm.jso
 cf2aedf8341d797a1e142a8b8fe6a5c6eade62ce  ../box189/corpus/REC_d7_mu17_norm.json
 446f201d2845d7b85d453b8a3b992e416b2f8971  ../box189/corpus/REC_d8_mu24_norm.json
 8f3f2be13111a67d32ff1d5b0b3544600771c73d  ../box189/corpus/REC_d9_mu29_norm.json
+a508aec15785bbd403cad0c75b3c068b1c22fe39  DOCS/P-N5-END-fixes.md
+68a691764c57ef16bb8a8c294925954a3c71fb1b  DOCS/P-N5-END-line-L1.txt
+d60e56cc07b321adbdc8129d6663002405b2a589  mkl1_195.py
