@@ -58,6 +58,52 @@ Given a capped G_h (levels 0..h − 1 exact) at d with run S, build G_(h+1) at d
 - What would refute it at h = 8 (the level-8 build, item 2): a retrigger event whose mover has no admissible selector route
   (ranksolve infeasibility core on the clamped target) that persists under every re-wiring of the levels ≥ 8.
 
+## 2. The level-8 target at d 32, and what any realization must contain (item 2; PROVED parts + DATA)
+### 2a. The target
+- build.core8 (DATA, re-measured; unit = step; scope = derived from HIT7, sha1 6a3b274d): §1's stretched core with ONE idle step
+  prepended and the last tail step cut. Without that step the first 7-window holds only step 1, and pair 7 cannot move twice in it.
+  Then pair 7 is added: f7 = 15 moves to c7 = o(6) at the first step of every 7-window, and q7 = 14 at the second step. The gates
+  of level 7 are set to joined value 0 (1028 1029 1030 1031; the seed's 1029 1031 1028 1030 has joined value 1).
+  Result: T = 510; o(6) changes at 3, 5, …, 509 and o(7) at every step; F(0..7) = 2 6 14 30 62 126 254 510, an 8-capped core
+  trajectory, tight (T = 2·255).
+- q7's required preference at its free pre-states equals o(6) at that pre-state in 509 of 510 (the miss is step 1), and f7's
+  equals 1 − o(6) in 254 of 255 (DATA; unit = free pre-state of the mover; scope = the target).
+### 2b. Reader tables (DATA; readers.py, minset.py, essential.py → out/essential_H8.out; unit = free pre-state of the mover, initial
+step dropped; set = all of them; scope = the target, core = movers 0..15)
+- y is ESSENTIAL for x if the states of all core movers except x and y do not determine x's required preference. Every x of
+  2..15 has its required preference determined by all core states. Essential sets:
+  | x | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 (q6) | 13 (f6) | 14 (q7) | 15 (f7) |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | essential | 3 | 1 2 14 | 2 5 7 14 | 14 | 4 5 7 14 | 6 | 14 | 6 7 8 14 | 8 11 14 | 10 14 | 13 14 15 | 12 14 | none | none |
+- For 14: every determining core set contains 15 or both 12 and 13 (all core except {15, 12}, resp. {15, 13}, do not determine);
+  the only consistent single reader is 15, and the pair (12, 13) is XOR. For 15: symmetrically 14, or both 12 and 13.
+  No pair of core movers determines 9, 10, 11, 12 (minset.py: 12 needs 3 = {13, 14, 15}; 9, 10 none up to 4).
+### 2c. Lemma HELPERS-EVERYWHERE (PROVED, lane; from the tables of 2b, R104 / R105: pref_x is a function of the states of the
+movers in closure(x); acyclic wiring)
+- Statement. In every realization of the level-8 target (any d, wiring, ranks, signs, gates and helper behaviour), the closure of
+  EVERY mover 2..15 contains a helper (a mover of level ≥ 8).
+- Proof. Let H = core movers whose closure contains a helper. If x ∉ H, closure(x) ⊆ core, so every essential y of x lies in
+  closure(x), and y ∉ H (closure(y) ⊆ closure(x)).
+  (1) 12 ∈ H: else 13 ∈ closure(12) and 13 ∉ H, so 12 ∈ closure(13), a cycle.
+  (2) 14 ∈ H: else closure(14) ⊆ core holds a determining set: 15, or 12 and 13; 12 is excluded by (1), so 15 ∈ closure(14)
+  and 15 ∉ H; then closure(15) holds 14 (a cycle) or 12 (excluded by (1)).
+  (3) 15 ∈ H: closure(15) ⊆ core would hold 14 or 12, both in H.
+  (4) 14 is essential for 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, so these are in H; 2 (essential 3) and 7 (essential 6) follow. ∎
+- Reading. q7 is the clock: it is the only core mover that changes at the idle steps, so every mover that must act differently at an
+  idle step and the step after it needs q7 in its closure; q7 itself cannot read the phase from pair 6 without a third input. This
+  extends L7 §7 («helpers needed», h = 2, d = 2 only) to the level-8 target. It does NOT say how many helpers, or at which levels.
+
+### 2d. The exact-target search (method; running at the time of writing)
+- Score of a d 32 genome: movers 0..15 are clamped to the target, and the helpers follow the genome's rules (l7/clamp.runclamp). All
+  constraints of the full trajectory (l7/ranksolve.constraints) are collected, and l10/gsolve.py (a greedy decision list that
+  tolerates errors) counts the violations. Score 0 ⇔ the exact greedy (ranksolve, complete for this form) succeeds ⇔ the genome
+  with the solved ranks REPRODUCES the target, so it has 8 caps by construction (re-checked by sim6 + fenc before any report).
+  Ranks and signs are solved, not mutated; the search is over wiring, helper gates and helper starts (plus rank swaps for the helper
+  dynamics). Unlike L-COMP's LJ climbs, the target is fixed and exact (tight, T 510).
+- ann.c: a C port (128-bit chain masks, ENC). It agrees with anneal.py on the seed (score 1286, 7,351 constraints; unit =
+  constraint) and on a C-saved genome (825 = 825). Seed = L-COMP's seed_HIT7_d32 (frozen rec/seed_HIT7_d32.txt, sha1 ad9a39d4).
+  Core target file out/core8_HIT7.txt (sha1 c6e19673cbda12ba2ec8f7e70da4436cab8ed922).
+
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All are about the IDEAL
 model's step sequence (R104's definition) on 𝓛^R_d and its F-profile. Not M3, not a step-4 pass, not a TARGET.md claim.
