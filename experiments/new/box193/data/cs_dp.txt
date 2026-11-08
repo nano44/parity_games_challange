@@ -1,0 +1,8 @@
+# CS(M, A) exact maxima (distinct hub chains) from dp193.c on chain193.py --emit (L-NEW successor 61, 2026-11-07 ~19:2xZ by date -u).
+# Command: python3 chain193.py M A --emit | ./dp193 ; gcc -O2. Python chain193.py (numpy DP) gives the same values for M <= 6 where run.
+# Unit: distinct hub chains (one run). Set: all runs of CS(M, A). Scope: the abstract chain system of doc §2 (not a game).
+A 0: M 6 forests 720 max 22 | M 7 forests 5040 max 29                     (= 1 + M(M+1)/2, Theorem DESC-QUAD, tight)
+A 1: M 4 forests 102 max 16 | M 5 forests 870 max 29 | M 6 forests 8910 max 50 | M 7 forests 106470 max 82
+A 2: M 3 max 8 | M 4 forests 124 max 16 | M 5 forests 1250 max 32 | M 6 forests 15380 max 64 | M 7 forests 222320 max 119
+A 3: M 3 max 8 | M 4 forests 125 max 16 | M 5 forests 1295 max 32 | M 6 forests 16720 max 64
+A 1 full sequence M 1..7: 2 4 8 16 29 50 82; M 3..7 lie exactly on (M^3 - 7M^2 + 28M - 32)/2 (5 points, 4 parameters); predicts 128 at M 8 (not run)

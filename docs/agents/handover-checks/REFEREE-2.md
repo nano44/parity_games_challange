@@ -1,16 +1,18 @@
-# REFEREE-2 handover check (successor 31, Opus 5.5 under D1/D18/D20; 2026-11-07 14:13Z by date -u)
-1. Branch claude/referee-2. At start the local ref was stale (cf5157fe, 1,030 behind origin); fetch --unshallow + ff-only to
-   origin/claude/referee-2 65df9f94 (HEAD = origin, `git branch --show-current` = claude/referee-2). vs trunk
-   claude/vibrant-johnson-nxvvxo 9315f36c: 6 ahead / 259 behind (merge-base 7891ba32). Merged trunk with a merge commit (no rebase)
-   -> 82f61753, 7 ahead / 0 behind before this commit.
-2. Open work: one item, routed after «go»: full independent review of P-TOWER-FUEL (L-LOWER 5), frozen at claude/l-lower 7f7ff6f5;
-   docs/lower/P-TOWER-FUEL.md, line L-1 docs/lower/P-TOWER-FUEL-line-L1.txt (sha1 408470ad…, 3,699 B), check block
-   experiments/lower/l5/p_tower_check.py. Next step: re-hash both files at 7f7ff6f5; quote-check every premise (R104, R105 ENC, R110,
-   R113 ALIGN) byte-exact against trunk docs/RESULTS.md by script; re-derive MOVE, DOUBLE-EQ (E1)-(E5), PULSE-NEST, GAP-NEST,
-   DOMINANCE-FREEZE (a)-(b), CROSS-ECONOMY (i)-(iii); replay I-ROOM G7_best_d28 and I-FUEL SL41_d28 and the §5 counters with my own
-   r2moves.py R104 simulator; DATA rule per clause of L-1; TARGET.md diff. Report docs/referee-2/R2-P-TOWER-FUEL.md. docs/referee/ is
-   not read for this packet until my verdict is written. Nothing else open (successor 30 handover: «No other open item»).
-3. GAPS rows owned by REFEREE-2: none. docs/GAPS.md names REFEREE-2 only in notes of other rows (G-Bthr, G-K5 closed); G-N5-TIME owner
+# REFEREE-2 handover check (successor 32, Opus 5.5 under D1/D18/D20; 2026-11-08 00:15Z by date -u)
+1. Branch claude/referee-2. At start: fetch --unshallow + checkout + ff-only; `git branch --show-current` = claude/referee-2, HEAD =
+   origin/claude/referee-2 = fcdc16b4 (no stale ref this time). vs trunk claude/vibrant-johnson-nxvvxo 37a4855e: 3 ahead / 126 behind
+   (merge-base e72661d0). Merged trunk with a merge commit (no rebase) -> 6146131a, 4 ahead / 0 behind before this commit.
+2. Open work, after «go», in order:
+   A. P-N5-ASC byte test (predecessor's Add. 2 at fcdc16b4: fixes entry 1 CORRECT, L-1 NOT YET on W-3 and W-4). Waiting for L-NEW 62's
+      fixes entry 2 + line L-2 SHA from the Lead. Next step: test W-3's new E-MON unit string occurs once and the old not at all; test
+      W-4 (strict condition «lev(nxt[z]) > lev(z's mover)» added to upfail and check193.sh re-run on a git archive, or the clause
+      re-worded); DATA rule clause by clause on L-2; Addendum 3 to docs/referee-2/R2-P-N5-ASC.md (MATCHES / does not match).
+   B. Full independent second review of P-ACYC (L-SI 43), frozen claude/l-si e3ac4b06; docs/si/P-ACYC.md sha1 0e9edcfd… 16,852 B (not
+      6b699f93 as the lane's message said), line L-1 docs/si/P-ACYC-line-L1.txt sha1 bb12deec… 2,085 B; pins box81/pacyc.sha1, check
+      box81/check81.sh. Next step: re-hash at e3ac4b06; re-derive BETA-ACYC (Γ and Γ3), LAMBDA-CONST, ACYC-LIN, ACYC-XI (conditional on
+      R118 (k)+(l)); FIRST FALLBACK vs SPEC S4/S4c; premise quotes by script; §5 scope; own simulator replay of §6 DATA; DATA rule per
+      clause of L-1; TARGET.md diff. Report docs/referee-2/R2-P-ACYC.md; docs/referee/ read only after my verdict is on origin.
+3. GAPS rows owned by REFEREE-2: none. docs/GAPS.md names REFEREE-2 only in notes of closed rows (G-Bthr, G-K5, G-DOM); G-N5-TIME owner
    is «L-NEW (L-LIT T22; referees later)», open.
 4. D1 (active, DECISIONS-INDEX row D1; DECISIONS.md l. 7-8): «A claimed polynomial algorithm is far more likely to be wrong than right.
    Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.» «Never downgrade the referee to save
@@ -19,7 +21,7 @@
    areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them
    briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.»
    D20 (active; DECISIONS.md l. 423): «We have reset the weekly usage, so we can again work faster no?» (Lead reading L48 active).
-5. Trap: SHAs typed into a Lead message before reading them from git output (successor 30: 3c1d24ab, 9e3a7fae, 76a6af5c invented), and a
-   detached/stale local branch at container start (push.sh exit 128 after VERIFY PASS). Check: `git branch --show-current` prints
-   claude/referee-2 before every push; commit, read `git rev-parse HEAD` output, and message the Lead in a LATER step, never in the same
-   batch as the commit. Also: every «only» claim measured on every level before it is written (successor 30 N-3).
+5. Trap: a lane's DATA counter that tests a weaker property than its clause (P-N5-ASC upfail: successor 31's round-1 miss, caught in
+   Add. 2 as W-4). Check: read every counter's condition line by line against the lemma (and its loop set, for unit words such as
+   tmonunits including c_W) before calling a DATA clause OK. Standing trap too: SHAs typed into a Lead message before reading git output;
+   check = commit, read `git rev-parse HEAD`, message in a LATER step.

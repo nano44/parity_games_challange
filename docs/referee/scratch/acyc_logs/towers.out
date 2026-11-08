@@ -1,0 +1,7 @@
+H5_d20_F62.json N 40 acyclic True G T 9 notbeta 0 nonstrict 0 lamfail 0 C 0 R 0 states 10 eplay 0 brutechecked 0 brutefail 0 T_gt_N 0 T_eq_N 0 gamma3-howard==gamma-howard True G3 T 9 notbeta 0 nonstrict 0 lamfail 0 C 0 R 0 states 10 eplay 0 brutechecked 0 brutefail 0 T_gt_N 0 T_eq_N 0
+H6_d24_F126.json N 48 acyclic True G T 12 notbeta 0 nonstrict 0 lamfail 0 C 0 R 0 states 13 eplay 0 brutechecked 0 brutefail 0 T_gt_N 0 T_eq_N 0 gamma3-howard==gamma-howard True G3 T 12 notbeta 0 nonstrict 0 lamfail 0 C 0 R 0 states 13 eplay 0 brutechecked 0 brutefail 0 T_gt_N 0 T_eq_N 0
+SL41_d28.json N 56 acyclic True G T 10 notbeta 0 nonstrict 0 lamfail 0 C 0 R 0 states 11 eplay 0 brutechecked 0 brutefail 0 T_gt_N 0 T_eq_N 0 gamma3-howard==gamma-howard True G3 T 10 notbeta 0 nonstrict 0 lamfail 0 C 0 R 0 states 11 eplay 0 brutechecked 0 brutefail 0 T_gt_N 0 T_eq_N 0
+L6Z_KILL238_d28.json N 56 acyclic True G T 9 notbeta 0 nonstrict 0 lamfail 0 C 0 R 0 states 10 eplay 0 brutechecked 0 brutefail 0 T_gt_N 0 T_eq_N 0 gamma3-howard==gamma-howard True G3 T 9 notbeta 0 nonstrict 0 lamfail 0 C 0 R 0 states 10 eplay 0 brutechecked 0 brutefail 0 T_gt_N 0 T_eq_N 0
+TOTAL files H5_d20_F62.json H6_d24_F126.json SL41_d28.json L6Z_KILL238_d28.json genomes 4 acyclic 4
+G T 40 notbeta 0 nonstrict 0 lamfail 0 C 0 R 0 states 44 eplay 0 brutechecked 0 brutefail 0 T_gt_N 0 T_eq_N 0 maxT/N 0.25 N of runs with T = N: []
+G3 howard_equal 4 T 40 notbeta 0 nonstrict 0 lamfail 0 C 0 R 0 states 44 eplay 0 brutechecked 0 brutefail 0 T_gt_N 0 T_eq_N 0 maxT/N 0.25 N of runs with T = N: []

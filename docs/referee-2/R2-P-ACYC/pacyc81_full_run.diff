@@ -1,0 +1,34 @@
+23c23
+<     states = [list(sigma)]; k1 = None; it = 0
+---
+>     states = [list(sigma)]; taus = [list(tau)]; k1 = None; it = 0
+28,29c28,30
+<         if fb: k1 = it; break
+<         states.append(list(sigma))
+---
+>         if fb and k1 is None: k1 = it
+>         if k1 is None: states.append(list(sigma)); taus.append(list(tau))
+>         continue
+40c41,44
+<     return dict(N=N, k1=k1, T3=(k1 - 1) if k1 else None, iters=it, notbeta=notb, nonstd=nonstd, C=lamchg, R=sbchg)
+---
+>     K2 = V[("K", 2)]; pe = [V[("pe", (x, k))] for x in range(N) for k in range(len(G["opts"][x]))]
+>     gts = [V[("g", (x, k))] for x in range(N) for k in range(len(G["opts"][x]))]
+>     taubad = sum(1 for t in taus if t[K2] != K2 or any(t[gq] != pq for gq, pq in zip(gts, pe)))
+>     return dict(taubad=taubad, N=N, k1=k1, T3=(k1 - 1) if k1 else None, iters=it, notbeta=notb, nonstd=nonstd, C=lamchg, R=sbchg)
+45c49
+<     tot = dict(genomes=0, states=0, nofallback=0, notbeta=0, nonstd=0, C=0, R=0, bigT=0, maxT3_over_N=0.0)
+---
+>     tot = dict(taubad=0, genomes=0, states=0, nofallback=0, notbeta=0, nonstd=0, C=0, R=0, bigT=0, maxT3_over_N=0.0)
+51a56
+>     import collections; after = collections.Counter()
+53c58
+<         r = one(G); tot["genomes"] += 1
+---
+>         r = one(G); tot["genomes"] += 1; after[r["iters"] - (r["k1"] or 0)] += 1
+56c61
+<         for k in ("notbeta", "nonstd", "C", "R"): tot[k] += r[k]
+---
+>         for k in ("notbeta", "nonstd", "C", "R", "taubad"): tot[k] += r[k]
+57a63
+>     print("iterations after the first fallback (value: genomes):", dict(sorted(after.items())))

@@ -1,0 +1,60 @@
+CLR_k8s16.json N 53 T 28 M 99 edomfail 0 decfail 0 tmonfail 0 ascstates 1631 maxasc 2 maxDE 15 asc 297 upfail 0 gates 3038 ci 2829 con 133 chi 76 gfail 0
+FPORT_n2.json N 54 T 14 M 92 edomfail 0 decfail 0 tmonfail 0 ascstates 918 maxasc 1 maxDE 4 asc 208 upfail 0 gates 1872 ci 1872 con 0 chi 0 gfail 0
+FPORT_n3.json N 76 T 16 M 133 edomfail 0 decfail 0 tmonfail 0 ascstates 2002 maxasc 2 maxDE 4 asc 816 upfail 0 gates 7344 ci 7344 con 0 chi 0 gfail 0
+LEAP_k8.json N 37 T 17 M 67 edomfail 0 decfail 0 tmonfail 0 ascstates 1010 maxasc 2 maxDE 18 asc 208 upfail 0 gates 1338 ci 1338 con 0 chi 0 gfail 0
+RS2.json N 18 T 10 M 30 edomfail 0 decfail 0 tmonfail 0 ascstates 5 maxasc 1 maxDE 4 asc 1 upfail 0 gates 3 ci 3 con 0 chi 0 gfail 0
+RS2_L8M6.json N 29 T 17 M 52 edomfail 0 decfail 0 tmonfail 0 ascstates 5 maxasc 1 maxDE 4 asc 1 upfail 0 gates 6 ci 6 con 0 chi 0 gfail 0
+RS3.json N 38 T 13 M 67 edomfail 0 decfail 0 tmonfail 0 ascstates 38 maxasc 2 maxDE 7 asc 10 upfail 0 gates 21 ci 21 con 0 chi 0 gfail 0
+RSG_K4.json N 14 T 7 M 23 edomfail 0 decfail 0 tmonfail 0 ascstates 164 maxasc 1 maxDE 7 asc 30 upfail 0 gates 70 ci 70 con 0 chi 0 gfail 0
+cR_d2_w8_R22.json N 16 T 24 M 32 edomfail 0 decfail 0 tmonfail 0 ascstates 424 maxasc 3 maxDE 11 asc 61 upfail 0 gates 117 ci 65 con 47 chi 5 gfail 0
+rd2_d9.json N 18 T 21 M 36 edomfail 0 decfail 0 tmonfail 0 ascstates 1053 maxasc 3 maxDE 18 asc 180 upfail 0 gates 448 ci 147 con 263 chi 38 gfail 0
+rd2_d10.json N 20 T 26 M 40 edomfail 0 decfail 0 tmonfail 0 ascstates 502 maxasc 2 maxDE 5 asc 60 upfail 0 gates 103 ci 21 con 82 chi 0 gfail 0
+rd3_d7.json N 14 T 25 M 37 edomfail 0 decfail 0 tmonfail 0 ascstates 428 maxasc 2 maxDE 12 asc 52 upfail 0 gates 159 ci 0 con 153 chi 6 gfail 0
+rf_d5.json N 10 T 11 M 20 edomfail 0 decfail 0 tmonfail 0 ascstates 246 maxasc 2 maxDE 8 asc 32 upfail 0 gates 32 ci 25 con 7 chi 0 gfail 0
+CS(M 1, A 0): max distinct hub chains 2; 2^M 2; 1 + M(M+1)/2 2
+CS(M 2, A 0): max distinct hub chains 4; 2^M 4; 1 + M(M+1)/2 4
+CS(M 3, A 0): max distinct hub chains 7; 2^M 8; 1 + M(M+1)/2 7
+CS(M 4, A 0): max distinct hub chains 11; 2^M 16; 1 + M(M+1)/2 11
+CS(M 1, A 1): max distinct hub chains 2; 2^M 2; 1 + M(M+1)/2 2
+CS(M 2, A 1): max distinct hub chains 4; 2^M 4; 1 + M(M+1)/2 4
+CS(M 3, A 1): max distinct hub chains 8; 2^M 8; 1 + M(M+1)/2 7
+CS(M 4, A 1): max distinct hub chains 16; 2^M 16; 1 + M(M+1)/2 11
+CS(M 1, A 99): max distinct hub chains 2; 2^M 2; 1 + M(M+1)/2 2
+CS(M 2, A 99): max distinct hub chains 4; 2^M 4; 1 + M(M+1)/2 4
+CS(M 3, A 99): max distinct hub chains 8; 2^M 8; 1 + M(M+1)/2 7
+CS(M 4, A 99): max distinct hub chains 16; 2^M 16; 1 + M(M+1)/2 11
+CS(M 5, A 0): max distinct hub chains 16; 2^M 32; 1 + M(M+1)/2 16
+CS(M 5, A 1): max distinct hub chains 29; 2^M 32; 1 + M(M+1)/2 16
+ASC-EXP M 1 OK 2 2
+ASC-EXP M 2 OK 4 4
+ASC-EXP M 3 OK 8 8
+ASC-EXP M 4 OK 16 16
+ASC-EXP M 5 OK 32 32
+ASC-EXP M 6 OK 64 64
+ASC-EXP M 7 OK 128 128
+ASC-EXP M 8 OK 256 256
+ASC-EXP M 9 OK 512 512
+ASC-EXP M 10 OK 1024 1024
+NOUP genomes 300 seed 1: Xi-cyclic 179; max ascents 0; decfail 0; tmonfail 0; max D_E per Lambda 3; min slack to 1+M(M+1)/2 3
+PTR-MON-HI M 3: pointer changes with unchanged high part 31, decreasing 4
+  witness: x 3; chains before {1: [1], 2: [2], 3: [3, 2]}; after {1: [1, 2], 2: [2], 3: [3, 1, 2]}
+FIXTOP M 5 A 1: max distinct hub chains with hub top fixed at T: T1 1 T2 2 T3 4 T4 8 T5 16
+RECUR CS(M 4, A 0): level keys 120; max distinct hub chains inside one level 1
+RECUR CS(M 4, A 1): level keys 308; max distinct hub chains inside one level 7
+RECUR CS(M 5, A 1): level keys 2612; max distinct hub chains inside one level 11
+RECUR CS(M 4, A 2): level keys 308; max distinct hub chains inside one level 8
+RECUR CS(M 5, A 2): level keys 2612; max distinct hub chains inside one level 16
+SKELETON CS(M 4, A 99): forests 125, violations 0
+SKELETON CS(M 5, A 99): forests 1296, violations 0
+LOW-SHAPE CS(M 5, 1): forests 870, violations 0
+RMON-2 M 5: (same-level pair, low item) checks 10242, decreases 5
+  witness: w 1; chains before {1: [1, 2, 5, 4], 2: [2, 5, 4], 3: [3, 4], 4: [4], 5: [5, 4]}; after {1: [1, 5, 3, 4], 2: [2, 1, 5, 3, 4], 3: [3, 4], 4: [4], 5: [5, 3, 4]}
+M 5 A 1 K 2: k-level keys 4659, max hub chains inside one k-level 7
+M 5 A 2 K 2: k-level keys 5977, max hub chains inside one k-level 8
+HUB-ASC CS(M 4, hub <= 0 ascents): max distinct hub chains 11; bound F_0 11; 2^M 16
+HUB-ASC CS(M 4, hub <= 1 ascents): max distinct hub chains 16; bound F_1 10185; 2^M 16
+HUB-ASC CS(M 5, hub <= 1 ascents): max distinct hub chains 29; bound F_1 39711; 2^M 32
+RSG_K4.json U(G) 1 max ascents 1 OK
+RS3.json U(G) 6 max ascents 2 OK
+rd2_d9.json U(G) 20 max ascents 3 OK
+cR_d2_w8_R22.json U(G) 9 max ascents 3 OK
