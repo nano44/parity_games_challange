@@ -165,3 +165,56 @@ verdict was written. L-RED 57 R222 (claude/l-red 6f56004c) is context only and i
 - end_replay.py (own N5-w / N5′-xi engine + counters + controls; own genome generator), end_exactl.py (n5b spec on my Γ3, my checks),
   end_tiedep.py, end_quotes.py; logs end_logs/sweep_own.out, exactl_n5b.out, exactl_files.out, tiedep.out, quotes_51eb.out,
   quotes_trunk.out, check195_rerun.diff.
+
+## §C. Fixes entries 1-2 and line L-2 (REFEREE successor 29, Opus 5.5, D15; date -u at writing 2026-11-08T07:53Z)
+(The Lead asked for «§8»; §8 above is the TARGET.md diff, so this is §C, in the house form of the other reports.)
+- Objects: claude/l-new 2fcee038 (ancestor of origin/claude/l-new, checked).
+  - Packet unchanged: 5cae845b…
+  - L-1 docs/new/P-N5-END-line-L1.txt: 68a69176…, 5,903 B (l-new a60733b8; SUPERSEDED; not reviewed on its own).
+  - L-2 docs/new/P-N5-END-line-L2.txt: sha1 e8a8ac51cc79c9de4000749899e7f0b860eeebe5, 6,988 B, one line, 101 «(» = 101 «)». EQUAL
+    to the Lead's check.
+- Byte checks:
+  - mkl2_195.py re-run at 2fcee038 prints «R1-R16 old once each, applied; sha1 e8a8ac51… 6988 bytes» and leaves the worktree clean.
+    It needs trunk c8f42538 in the object store; I fetched trunk first.
+  - end.pins: 41 rows, all match.
+  - I had no strings of my own for L-1 → L-2 (no line existed at my review). So I test L-2 as a whole against LN-1..LN-8 and the packet.
+- Quotes (scratch/end_l2quotes.py, end_logs/l2_quotes.out): all 8 source quotes in L-2 are found verbatim (joined lines) in trunk
+  RESULTS / P-N5-XICYC / P-N5-REACH, or in fixes entry 1 (W-1's sentence). The ninth «…», «one fallback, 3 iterations from it», is the
+  packet's own tally label (packet §7, once).
+- Fixes entry 1 (L-RED 58 R223):
+  - W-1: CORRECT. «under the standing SPEC premise 1E-N3» is in R57's heading (RESULTS l. 2893), and R104's (l. 9864) and R117's
+    (l. 13362) headings carry 1E-N3 too. E0-E4, (H) and TERM-XI use it, as my §2.2 says. No statement changes.
+  - T-1: a tool remark; quotes_end.py now reads every source from trunk. My own quote check (§2.1) already read from git objects.
+    CORRECT.
+- Fixes entry 2 (my EN-1..EN-4, taken): the texts match §6. CORRECT.
+- L-2 against my line requirements (§7):
+  - LN-1: PASS. «each PROVED (every genome)» for E0-E4, TERM-XI, ENDGAME-3, ENDGAME-3-N5. EXACT-L is «PROVED for G ∈ IDEAL-ACYC (R104:
+    the Ξ-graph is acyclic; self-loops count as cycles; «…»), premise RESULTS R117 (f)». END-T3 is «PROVED-CONDITIONAL on REACH3-CYC,
+    RESULTS R118 (k), itself PROVED-CONDITIONAL on [REACH-L]», with R118's condition quoted. The sentence on which R117 rows are signed
+    for every genome and which for acyclic Ξ-graphs only is R118 (k)'s own text (RESULTS l. 13707-13709).
+  - LN-2: PASS. Γ3(G) of R117 with n = N + 7M + 10; N5 = SPEC S1-S5 with FIX 1-4; N5′-xi = R118's [N5XI]; S3; SPEC S4 iterations;
+    ENDGAME-3's form verbatim.
+  - LN-3: PASS. EXACT-L names SPEC's tie-breaks and cites my 382 of 382 with commit and output path.
+  - LN-4: PASS. T3 as in R118 (k), quoted.
+  - LN-5: PASS. [1E-N3] = R57 (b) as landed in R104, R15 (c), [TAU3], R117 (f), R118 (k). «R118 (b)'s [OPT] is not used».
+  - LN-6: PASS.
+    - Every counter has a unit: e0fail states; e1fail iterations before the first fallback; e2fail-e4fail the iterations F, F + 1,
+      F + 2; final states; nofb and capped runs; late iterations after F + 2.
+    - The sets of my §5 and the controls (ctrl2 also «nofb 100 (unit: runs)», EQUAL to check195.out).
+    - EXACT-L on spec runs only (4,297; 4,283; 3,000; 14; L ≤ 59; RECT 62 iterations), «record only (not re-run by check.sh, which
+      leaves LRED unset)».
+    - Each number is in sweep195.out / check195.out (pinned) or in my tiedep.out (cited by commit).
+  - LN-7: PASS. Bounds none of F, T3, L(G) (OPEN), nothing outside Γ3(G); G-N5-TIME OPEN; CANDIDATE (D1); not M3 / M4 / step 4 /
+    TARGET.md claim; TARGET.md §2 and §4 named.
+  - LN-8: PASS. Frozen at l-new 131b4c1c, sha1 5cae845b, fixes entries 1-2, L-NEW successors 63-64, credit L-RED 56.
+  - EN-3 in the line: PASS («a statement about iteration counts; the cost per iteration at bit cost is a separate gauntlet step-4 item»).
+- Optional, not required:
+  - EL-1. «their transfer to the Γ3 run (equal runs at exact VJ ties) is NOT proved»: the parenthesis is hard to read. Clearer:
+    «(the Γ3 run can differ from the IDEAL-CYC run at exact VJ ties, R118's DATA)», as in P-N5-QUIET's L-2.
+  - EL-2. «independent replays, every fail counter 0, … REFEREE 29 R-P-N5-END §4»: true of my §4 (A) and (B). §4 (C) is the
+    tie-break observation, which the line cites separately under EXACT-L. Naming «§4 (A), (B)» would be exact.
+  - The citation of L-RED 58 R223 item 1 (claude/l-red 143f0b4c, an ancestor of origin/claude/l-red; checked) is L-RED's counter, cited,
+    not re-run, and labelled so.
+- Verdict:
+  - Fixes entries 1-2 CORRECT. L-2 MATCHES the packet with its fixes entries, and meets LN-1..LN-8.
+  - All statements stay as in §0: SIGN; END-T3 as PROVED-CONDITIONAL on REACH3-CYC.

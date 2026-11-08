@@ -220,3 +220,45 @@ Required changes. Each old string occurs exactly once in L-1, and no two overlap
 - L-NEW: a fixes entry 2 with L-2 = L-1 + QT-L1 to QT-L6 (expected fed89346…), or Form B for QUIET's set.
 - Landing order: R121 (P-N5-ASC) must land before this line, as the packet says.
 - Me: a byte test of L-2.
+
+## §C. Fixes entry 2 and line L-2 (REFEREE successor 29, Opus 5.5, D15; date -u at writing 2026-11-08T07:51Z)
+Only REFEREE-2's items as quoted in fixes entry 2 were read; docs/referee-2/ was not opened.
+- Objects: claude/l-new 559cdffc (ancestor of origin/claude/l-new, checked).
+  - L-1 there is unchanged: 62de9075…, 4,600 B (§1).
+  - L-2 docs/new/P-N5-QUIET-line-L2.txt: sha1 fed893462811ea10d0b99622dcbb31f7b50b6d47, 5,131 B. EQUAL to §5's prediction and to the
+    Lead's check.
+- Byte test: scratch/quiet_linefix.py (successor 28's strings) run on L-1 at 559cdffc gives a result byte-equal to L-2
+  (quiet_logs/l2_bytetest.out).
+  - Each QT-L old string occurs once in L-1, with no overlaps. Each new string occurs once in the result.
+  - Parentheses 96 / 96, guillemets 2 / 2.
+  - So L-2 = L-1 + exactly QT-L1..QT-L6. Form B is NOT in the line, as the entry says.
+- Tool fixes:
+  - D-1 (quiet194.py, diff read).
+    - L is now (M + 1)(2M + 1)(N + 1) + N(n − 1), exactly Theorem QUIET's L (packet l. 130). The «+ 1» noted in §5 (successor 28, l. 157) is gone.
+    - wfail now counts a window once, when its length first reaches L + 1. That is «quiet windows longer than L», per window.
+  - D-2 (loc194.py). k2fail now adds «not E.key(Ω_t(K1)) < E.key(Ω_t(K2))».
+    - E.key (experiments/si/si.py l. 68-70) increases with the value for Even; idealcyc's Howard step takes the max key (box191
+      idealcyc.py l. 33).
+    - So the conjunct is Ω_t(K1) ◁ Ω_t(K2), LOC-K2's second clause (packet l. 113).
+    - My own replay (scratch/quiet_replay.py l. 6, l. 34) already tested both conjuncts and the exact L. The lane's tools now test the
+      same.
+- Re-runs at 559cdffc:
+  - check194.sh in a detached worktree: output byte-identical to the committed check194.out (1 min 51 s).
+  - The commit's diff of check194.out is 12 lines, each changing only the printed L, one smaller. The loc194 lines are unchanged
+    (k2fail 0). This is what the entry says.
+  - quiet.pins: 38 rows, all match.
+- Form B (DATA only, not in the line): formB194.out's three instances, re-run with my own engine (quiet_replay.py, own VJ, own Γ builder;
+  quiet_logs/formB_replay.out).
+  - EQUAL on cR_d2_w8_R22, rd3_d7, rf_d5: T 24 / 25 / 11, Q 24 / 16 / 11, W 0 / 4 / 0, L 38,337 / 44,570 / 10,221, wfail 0, Tfail 0,
+    crossflip 0, DEtot 16 / 13 / 11.
+  - sumDE differs by exactly n (118, 131, 76): mine sums the number of classes, the lane's sums (classes − 1). These are definitions,
+    not a discrepancy.
+  - Also 0 on my other counters there (cnlow, k2fail, locfail, ties, bfail).
+- Fixes entry 2 in meaning:
+  - It withdraws entry 1's R57 (b) [OPT] paragraph and G-2's «governs» for the Γ3 sentence. This is what QT-L1 and QT-L4 required.
+  - Its item map (QT-L1 = W-2, QT-L3 = W-3, QT-L4 = W-1) is as REFEREE-2's Addendum 1 is quoted there.
+  - CORRECT.
+- Verdict:
+  - Fixes entry 2 CORRECT. L-2 MATCHES the packet (= L-1 + QT-L1..QT-L6).
+  - D-1 and D-2 are fixed in the tools: re-run identical, all 0.
+  - All statements stay as in §0: SIGN; ASC-T and UP-T conditional on R121 landing first; UP-T under HYPOTHESIS [E-LEV].

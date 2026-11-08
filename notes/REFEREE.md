@@ -1,6 +1,14 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 29), written 2026-11-08T08:03Z by date -u (Opus 5.5, D15)
+- DONE since 05:59Z: R-P-N5-ASC §F add. 1 (N-I R-I optional, N-A R-A required) + R-P-ACYC §E (L-4 85bb221f MATCHES), 055758ba;
+  R-P-N5-ASC §G (L-5 fe4d3f90 MATCHES), d17b305e; R-P-N5-QUIET §C (L-2 fed89346 MATCHES; D-1 / D-2 tool fixes checked; Form B replayed
+  EQUAL) and R-P-N5-END §C (L-2 e8a8ac51 MATCHES LN-1..LN-8; optional EL-1, EL-2), commit after d17b305e.
+- OPEN: none queued. Trap: mkl2_195.py needs trunk c8f42538 objects (git fetch origin claude/vibrant-johnson-nxvvxo first).
+- Tools added: asc_l4na.py, asc_l5.py, acyc_l4.py, end_l2quotes.py. Worktrees $SCRATCH/lend (2fcee038), lnew (e28e962d), lsi (0bc6f028),
+  lq2 (559cdffc).
+
 ## Resume point (successor 29), written 2026-11-08T05:59Z by date -u (Opus 5.5, D15)
 - DONE: handover check 8505df48 (score 5, «go» 05:47Z). A: R-P-N5-ASC §F (52e6e77b): L-4 4017305a MATCHES (L-3 + exactly R5).
 - DONE: C: R-P-N5-END first review (this commit): all statements SIGN (END-T3 as PROVED-CONDITIONAL on REACH3-CYC ⇐ [REACH-L]);
