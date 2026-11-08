@@ -1,0 +1,26 @@
+ -1 base  unmutated                    fenc 1 sim6 1 enc32 1 T 299/299/299 F0..6 = [2, 6, 14, 30, 62, 126, 254] OK 
+  0 rank  swap br 44 101               fenc 0 sim6 0 enc32 0 T 30/30/30 F0..6 = [0, 0, 0, 2, 5, 10, 20] OK 
+  1 sign  flip bp 23                   fenc 0 sim6 0 enc32 0 T 15/15/15 F0..6 = [0, 0, 0, 0, 2, 5, 12] OK 
+  2 start flip start 41                fenc 1 sim6 1 enc32 1 T 299/299/299 F0..6 = [2, 6, 14, 30, 62, 126, 254] OK 
+  3 gate  swap gate 69 71              fenc 0 sim6 0 enc32 0 T 14/14/14 F0..6 = [0, 0, 1, 0, 1, 4, 10] OK 
+  4 wire  xt[72] 40 -> 1               fenc 0 sim6 0 enc32 0 T 14/14/14 F0..6 = [0, 0, 1, 0, 1, 4, 10] OK 
+  5 rank  swap br 93 97                fenc 0 sim6 0 enc32 0 T 150/150/150 F0..6 = [0, 2, 6, 14, 30, 62, 126] OK 
+  6 sign  flip bp 103                  fenc 1 sim6 1 enc32 1 T 299/299/299 F0..6 = [2, 6, 14, 30, 62, 126, 254] OK 
+  7 start flip start 47                fenc 1 sim6 1 enc32 1 T 299/299/299 F0..6 = [2, 6, 14, 30, 62, 126, 254] OK 
+  8 gate  swap gate 93 95              fenc 0 sim6 0 enc32 0 T 37/37/37 F0..6 = [0, 0, 0, 2, 6, 14, 30] OK 
+  9 wire  xt[1] 1 -> 40                fenc 0 sim6 0 enc32 0 T 151/151/151 F0..6 = [0, 2, 6, 14, 30, 62, 126] OK 
+ 10 rank  swap br 63 48                fenc 0 sim6 0 enc32 0 T 13/13/13 F0..6 = [0, 0, 0, 0, 2, 4, 10] OK 
+ 11 sign  flip bp 30                   fenc 0 sim6 0 enc32 0 T 33/33/33 F0..6 = [0, 0, 0, 2, 6, 14, 26] OK 
+ 12 start flip start 15                fenc 1 sim6 1 enc32 1 T 299/299/299 F0..6 = [2, 6, 14, 30, 62, 126, 254] OK 
+ 13 gate  swap gate 64 66              fenc 1 sim6 1 enc32 1 T 299/299/299 F0..6 = [2, 6, 14, 30, 62, 126, 254] OK 
+ 14 wire  xt[3] -1 -> 45               fenc 0 sim6 0 enc32 0 T 151/151/151 F0..6 = [2, 2, 6, 14, 30, 62, 126] OK 
+ 15 rank  swap br 72 50                fenc 1 sim6 1 enc32 1 T 299/299/299 F0..6 = [2, 6, 14, 30, 62, 126, 254] OK 
+ 16 sign  flip bp 86                   fenc 1 sim6 1 enc32 1 T 299/299/299 F0..6 = [2, 6, 14, 30, 62, 126, 254] OK 
+ 17 start flip start 30                fenc 0 sim6 0 enc32 0 T 1/1/1 F0..6 = [0, 0, 0, 0, 0, 0, 1] OK 
+ 18 gate  swap gate 36 38              fenc 0 sim6 0 enc32 0 T 2/2/2 F0..6 = [0, 0, 0, 0, 0, 0, 2] OK 
+ 19 wire  xt[83] 16 -> 18              fenc 1 sim6 1 enc32 1 T 299/299/299 F0..6 = [2, 6, 14, 30, 62, 126, 254] OK 
+ 20 rank  swap br 23 69                fenc 0 sim6 0 enc32 0 T 10/10/10 F0..6 = [0, 0, 0, 0, 2, 2, 4] OK 
+ 21 sign  flip bp 110                  fenc 1 sim6 1 enc32 1 T 299/299/299 F0..6 = [2, 6, 14, 30, 62, 126, 254] OK 
+ 22 start flip start 21                fenc 0 sim6 0 enc32 0 T 3/3/3 F0..6 = [0, 0, 0, 0, 0, 1, 2] OK 
+ 23 gate  swap gate 88 90              fenc 1 sim6 1 enc32 1 T 299/299/299 F0..6 = [2, 6, 14, 30, 62, 126, 254] OK 
+SUMMARY mutants 24 (+ base): realize 11, reject 14, mismatches 0

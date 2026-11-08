@@ -222,11 +222,11 @@ def build(D, S, H, fix=(), lazy=False, sink=None, relax=False):
                 E.add([-tau[e], dl[e]])
                 E.add([-tau[e], E.neg(inB[e]), E.neg(pos[e]), P]); E.add([-tau[e], E.neg(inB[e]), pos[e], -P])
                 E.add([-tau[e], E.neg(inA[e]), pos[e], P]); E.add([-tau[e], E.neg(inA[e]), E.neg(pos[e]), -P])
+                if lazy and 'ranks' not in fixed: continue
                 for f in Uc:
                     if f == e: continue
-                    c = [-tau[e], E.neg(dl[f]), ordl(e, f)]
-                    if lazy and 'ranks' not in fixed: lazyc.append(c)
-                    else: E.add(c); nquad += 1
+                    E.add([-tau[e], E.neg(dl[f]), ordl(e, f)]); nquad += 1
+            if lazy and 'ranks' not in fixed: lazyc.append((tau, dl))   # CEGAR: order clauses added when a model violates them
             # ns = free ? P : s
             if free is True: E.EQ(ns[x], P)
             else: E.EQ(ns[x], E.MUX(free, P, s[x]))
@@ -294,10 +294,16 @@ def main():
             M = set(l for l in sv.get_model() if l > 0)
             if not lz: break
             val = lambda l: (l if isinstance(l, bool) else ((l in M) if l > 0 else (-l not in M)))
-            viol = [c for c in lz if not any(val(l) for l in c)]
-            if not viol: break
-            for c in viol: sv.add_clause([l for l in c if not isinstance(l, bool)])
-            print(f'  lazy: added {len(viol)}', flush=True)
+            ordl = ctx['ordl']; nadd = 0
+            for tau, dl in lz:
+                on = [e for e in tau if val(tau[e])]; D_ = [f for f in dl if val(dl[f])]
+                for e in on:
+                    for f in D_:
+                        if f != e and not val(ordl(e, f)):
+                            c = [-tau[e], -dl[f] if not isinstance(dl[f], bool) else None, ordl(e, f)]
+                            sv.add_clause([l for l in c if l is not None and not isinstance(l, bool)]); nadd += 1
+            if not nadd: break
+            print(f'  lazy: added {nadd}', flush=True)
         G = decode(D, M, ctx, a.H)
         print('RESULT SAT')
         if a.out: wrgen(G, a.out); print('decoded ->', a.out, hashlib.sha1(open(a.out, 'rb').read()).hexdigest())

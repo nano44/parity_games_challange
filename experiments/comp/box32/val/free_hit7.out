@@ -1,1 +1,2 @@
 INFO {'d': 28, 'H': 7, 'T': 299, 'relevant': 56, 'Lmax': 27, 'options': 112, 'vars': 1443328, 'clauses': 25253115, 'empty': False, 'nP': 14773, 'quad': 19817544, 'lazy': 0, 'build_s': 25.2}
+STOPPED by L-COMP 13 at 08:53:36Z: no answer after ~38 min (full order clauses, 25.3M); lazy mode used instead

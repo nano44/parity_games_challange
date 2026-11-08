@@ -1,0 +1,3 @@
+INFO {'d': 32, 'H': 8, 'T': 510, 'relevant': 56, 'Lmax': 27, 'options': 112, 'vars': 2120335, 'clauses': 7768094, 'empty': False, 'nP': 24617, 'quad': 0, 'lazy': 24617, 'build_s': 6.2}
+INFO {'d': 32, 'H': 8, 'T': 510, 'relevant': 56, 'Lmax': 27, 'options': 112, 'vars': 2120335, 'clauses': 36296748, 'empty': False, 'nP': 24617, 'quad': 28528654, 'lazy': 0, 'build_s': 19.1}
+INFO {'d': 32, 'H': 8, 'T': 510, 'relevant': 56, 'Lmax': 27, 'options': 112, 'vars': 1058753, 'clauses': 3795730, 'empty': False, 'nP': 4177, 'quad': 0, 'lazy': 4177, 'build_s': 2.9}
