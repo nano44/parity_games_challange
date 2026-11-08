@@ -88,3 +88,14 @@ type-II leapfrogs, each with an ascending compared play (LEAPFROG-ASC).
 **CONJECTURE (READING, SET-counter branch only).** On IDEAL-CYC under [E-LEV], type-II leapfrogs of one SET bit within one interval
 are polynomially many in N + M. Strongest DATA: maxk ≤ 5 on the 26 frozen instances of boxes 84-86 (h ≤ 5); no climb so far found a
 counter (CNT ≤ 5 of 8 at h = 3). Not covered: cycle-node changes, non-hub e-set changes, non-SET options beyond P-QUIET.
+
+## 6. Addendum: L-RED 59 on box 86 (claude/l-red 65ffc396, docs/red/R225-lag.md; Lead 09:31Z)
+- SAME-E-MERGE, ACCESS-LATCH and LEAPFROG SURVIVE.
+- Γ3 wording (box 86 §1): «gamma3.py: succ[x] = the gates of x» is true only without pads (gamma3.py l. 45). On Γ3 the edges into g and
+  e come through the pads: x → m_(x,k) → g → pe_g → e. Each of m, g, pe, e has in-degree 1 (L-RED gives the table per vertex class), so
+  SAME-E-MERGE and Claim C (§2) hold on Γ3 unchanged.
+- Event convention: in LEAPFROG and here, an event is a step t → t + 1 with BOTH t and t + 1 in I (FLIP's convention). Read with only
+  t ∈ I, a third kind of OFF exists: another option reaches a node of higher reward, so B leaves λ with no e-set overtaking (witness
+  L-RED inst/OFFUP_n4.json, sha1 dd6a1221…). Those OFFs end the interval and are bounded by the Λ(B) changes (≤ 2M + 3). LEAPFROG-ASC
+  (§2) is stated per interval with (NODE) and both endpoints in I, so it is not affected; the run total adds one per interval boundary.
+- Counts: L-RED counts 16 OFFs on the 11 box 86 instances over EVERY SET-type option; latch86 counts 14 over the real bits' SET only.
