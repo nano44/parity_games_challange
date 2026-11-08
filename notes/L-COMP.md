@@ -1,6 +1,33 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## RESUME POINT -- successor 13 (L-COMP 13, Opus 5.5), updated 2026-11-08 10:29Z by date -u (GO 08:12Z; BOX 32)
+### BOX 32 = exact CNF method for «a d 32 genome whose run realizes core8_HIT7 exactly» (experiments/comp/box32/, README in this section)
+- Encoder enc32.py (own code from R104 rules; REALIZES = core rows equal at t 0..T, a change at every t < T, fixed point at T).
+  Free: rank order (tournament, or --lazy/--lazy2 CEGAR, or --thresh 7-bit), signs, helper gate bits, helper starts, helper states.
+  Fixed: wiring (W0) except --freeopts (one owner, acyclic candidates) / gadget.py cand lists; core gates; core start.
+  Options: --fix ranks[,signs,gates,starts|all], --freerank (unary insertion of chosen options into the fixed order), --only X
+  (keep only these core movers' constraints = sub-problem), --prefix N (rows 0..N, no fixed point), --relax (helpers free per step;
+  sound relaxation), SKIPCORE env (diagnostics). Clauses stream into the solver (sink); --cnf writes DIMACS.
+- Validation (val/): checker mode accepts HIT7 on its own 7-level target; 54 mutants, 0 mismatches fenc / sim6 / enc32 (30 rejected,
+  24 realize), replay30 T/F equal (mutcheck_hit7*.out). Ranks-fixed free solve on HIT7 SAT 61 s, decode replays exactly (rfix_hit7*).
+  W1 test (26,27 rewired + insertion ranks) SAT, decode realizes (w1test_hit7_dec.txt).
+- FINDING: free ranks out of reach: HIT7 known-SAT not solved in 38 min (full), 30 min (lazy), 7 min/round (lazy2), 30 min (thresh).
+- R-tier verdicts (all DRUP VERIFIED with Glucose proof + box27 drup.c; CNF/proofs in /home/user/pf32, local only):
+  (i) seed W0-R UNSAT (885 lemmas), earliest prefix t 5, needs movers 11-15; (ii) C4 W0-R UNSAT (top-level), prefix t 3;
+  (iii) F6 on C4 (only 13's constraints, f6 rewired over {-1, 2, 42, 49} only, insertion ranks) UNSAT (711 lemmas), prefix t 11.
+- RUNNING at 10:3xZ: F6 W1 on C5 final (l-lower bb6a95bd, _solved b0997bc7; f6 cand 59) = w1/F6_C5f.out (no answer at 30 min).
+- NEXT: gadget.py (c) on the seed base ALONE (OOM when run with another 40M build): fresh helpers 56-63 rewired, inputs pairs 0-5 movers
+  2,3,4,5,7,8,9,10,11, f6 extras 11,18,19; SAT -> clampcheck.py (independent clamped replay) + Lead at once (goes to L-LOWER 10).
+  Then (a): wider insertion ranks for the F6 test. MEMORY: one ~40M-clause job at a time (7 GB RSS each; 15 GB box).
+- Lead rulings this box: 08:12Z go + W0 first, DRUP every UNSAT, ≤ 2 heavy jobs ≤ 90 min; 08:44Z plan OK, read l-lower directly;
+  09:28Z R tiers OK, thresh retry OK; 09:49Z (c) first, (a) second, SAT in (c) to L-LOWER via Lead; 09:50Z C5-final W1-f6-R first.
+### Things only I know (successor 13)
+- In C4 every mover but 2, 42, 49 reaches 13; in C5 final pairs 0-5 read helpers 56-63 (only 2, 5, 7 admissible gadget inputs).
+- /usr/bin/time is not installed; dimproof.py (box27) streams Glucose's proof file; drup.c on 280 MB proofs takes ~35 s.
+- A background Bash call that times out at 600 s is auto-stopped after 30 min: launch long jobs with run_in_background from the start.
+
+
 ## HANDOVER -- successor 12 (L-COMP 12, Opus 5.5) PARKS 2026-11-08 07:1xZ by date -u (Lead 05:59Z park order; ~450k context)
 ### STATE AT PARK: ALL JOBS STOPPED (L7br, L7cr, freezer31, commit_loop, diskguard, monitors). Nothing runs. Everything is DATA.
 ### HEADLINE: box 31 (eight capped levels, cap F(7) = 510, d 32) -- NO HIT; every scoring order plateaued (table below).
