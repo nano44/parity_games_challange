@@ -20,6 +20,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   -> real B_(l+1), MUP = 1) gives bit 1 two resets and hubH 8 at h = 3, but LINEAR growth (hubH 4/8/11/15, R 4/9/13/17, h 2..5).
   Reason: a bit's SET condition reads only bits above (PLAY-BLIND); with L-RED's PRIV-FLIP (R222 §3) a PRIV counter needs the higher
   hubs to have e-set heights doubling per level. Next: a route that lets a bit wait for the lower counter (down into lower MIRRORS only?).
+- BOX 84 milestone 2 (ii) DEAD: even-top CYC option (PRIV broken) -> Lemma LIVE-BREAK (Odd breaks the returning cycle whenever B is
+  on it), so PRIV failure is only a hidden value = one more digit value; hubH unchanged at h 3/4. PRIV-FLIP bound never exceeded on
+  non-PRIV units (CONJECTURE). Next: (i) mirror hubs that count (check PLAY-BLIND: a downward route into lower MIRRORS only).
+  Climbs must be tracked tasks (I slipped once with a detached `&` and killed it at once).
 - Things only I know: python3 -I drops the script dir from sys.path (ladder83/rs2port83 insert it). gen83 sorts gates by (gate key,
   (mover, option)) exactly as R217 gdsl (needed for the RS2 byte check).
 

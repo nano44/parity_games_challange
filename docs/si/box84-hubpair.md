@@ -93,3 +93,42 @@ in box83-ladder.md §3 (RF, hubH, SumD = Σ_v D^tot_E(v), bits, premature resets
   PLAY-BLIND that needs a route from B_l down into the lower bits, without H1's access leak. Candidate: the downward route enters only
   the lower MIRRORS (which lag), never a real bit's gate. LEAK-ARCH's H1 is about the real hub route, so this may avoid its proof; R218
   §4's branch (c) cycle must be checked first. Not built.
+
+## 4. Milestone 2 (ii): PRIV broken by an EVEN-top cycle (Lead 03:04Z; written 2026-11-08T03:07Z, date -u)
+Tools: experiments/si/box84/m2/ (cyc84.py adds a CYC option to a bit; priv84.py = my own count of L-RED's PRIV-FLIP quantities;
+climb84.py adversarial climb; check_m2.sh, called by check84.sh).
+- Design (cyc84.py): bit B gets an option CYC.
+  - Its β is even and above every other β (TOP). It goes to a level-0 helper c whose one option leads back to B. So when Odd keeps
+    β, the play from CYC's gate returns to B through an even-top route, and PRIV fails by construction.
+  - Its e-face goes to a new mover y one level down, with β → B_(l+1) (live: Odd CAN break the cycle).
+  - The gate index is below or above every level-l gate.
+- **Lemma LIVE-BREAK (PROVED, lane; one line, the argument of LOCK-UP (i)).** On an interval with every cycle node constant and
+  Λ(B) ∈ {K1, K2}: if σ_t(B) = o and the β-route of o's gate returns to B, then Odd takes the e-face at some gate of that route at t.
+  Otherwise B's play is the returning cycle, whose cycle node is its most relevant vertex; that vertex is a β, not K1 or K2.
+  So a returning route is never on a current play of B, and PRIV fails only in the HIDDEN value of o (its gate's β-face while B sits
+  elsewhere).
+- DATA (unit: one Howard run; scope: idealcyc; counters as §2 plus priv84: per (B, SET option, Λ-interval) flips of [σ(B) = S] minus
+  PRIV-FLIP's bound, «excess»):
+
+| instance | base + CYC on | T | R | RF (levels 0..h) | hubH | excess max (PRIV units / non-PRIV units) |
+| --- | --- | --- | --- | --- | --- | --- |
+| CY2_lr | LR2_exitup; B1 | 9 | 6 | 0 6 1 | 6 | 0 / −5 |
+| CY2_hp | HP2_mup; B1 | 11 | 6 | 0 6 2 | 6 | 0 / −5 |
+| CY3_hp | HP3_mup; B1, B2 | 17 | 12 | 0 7 8 2 | 8 | 0 / −7 |
+| CY4_hp | HP4_mup; B1, B2, B3 | 37 | 17 | 0 7 9 8 2 | 11 | 0 / −13 |
+- At h = 2, CY2_lr meets the box 83 §5.3 criterion formally: RF(1) = 6 ≥ 2·1 + 2, hubH 6 ≥ 4, no premature reset. But the mechanism
+  is not a re-arm.
+  - CYC is a second e at level 1, below e_SET, so bit 1 becomes a 3-valued digit. The hub walks ∅ < {CYC} < {SET} < {e_B2} <
+    {CYC, e_B2} < {SET, e_B2}, i.e. 3 × 2 values.
+  - At h = 3 and 4, hubH stays 8 and 11, exactly MIRROR's. CYC adds R (12 vs 9, 17 vs 13) but no recursion.
+- PRIV-FLIP's bound is attained (excess 0) on every PRIV unit of LR3_exitup and HP3-HP5_mup. It is never exceeded on non-PRIV units:
+  max excess −5 … −13 on the CYC gadgets.
+- Adversarial climbs (climb84.py, seeds 11-14, 1,500 iterations each; rand191 genomes, d × w = 2×2, 3×2, 2×3, 3×3, every mover given
+  a SET-type option; score = (max excess over non-PRIV units, their max flips, T); out/climb_s*.log): best excess −1, −1, 0, −1, and
+  max flips of a non-PRIV unit ≤ 1. Weak evidence: random cyclic genomes rarely flip a SET option at all.
+- **(ii) is DEAD at h = 2 (as a recursion).** Exact obstruction: LIVE-BREAK. A returning even-top route is never Λ while Λ(B) ∈ {K1, K2},
+  so it acts only as one more hidden value (one more digit value per CYC option), not as a re-arm. A dead CYC gate (no live e-face)
+  would make the cycle Λ(B) when adopted: a C-step (READING: F1 then keeps B at that even cycle).
+  Instance: CY2_lr (and CY3_hp, CY4_hp for the h-growth).
+- Not proved: a version of PRIV-FLIP for non-PRIV units. CONJECTURE (DATA above: 0 exceedances in 4 gadgets + 4 climbs): its bound
+  holds for every SET-type option when Λ(B) ∈ {K1, K2}.

@@ -1,0 +1,21 @@
+CY3_hp.json N 81 M 144 n 519 T 17 R 12 C 0 labels RRpRRppRRRRppRRRR
+  RF [0, 7, 8, 2, 0] GF [0, 8, 9, 2, 0] bits(B3..B1) 000 000 010 010 010 011 011 011 111 101 100 100 100 100 100 110 110 111
+  premature resets at [] hubH 8 SumD 833 maxD 8
+  t 0 hub -
+  t 1 hub B1.CYC/B2.CYC
+  t 2 hub B1.CYC/B2.SET
+  t 3 hub B1.CYC/B2.SET
+  t 4 hub B1.CYC/B2.SET
+  t 5 hub B1.SET/M2.SET
+  t 6 hub B1.SET/M2.SET
+  t 7 hub B1.SET/M2.SET
+  t 8 hub B1.SET/M2.SET
+  t 9 hub B1.SET/M2.SET
+  t 10 hub B2.CYC/B3.SET
+  t 11 hub B1.CYC/B2.CYC/B3.SET
+  t 12 hub B1.CYC/B2.CYC/B3.SET
+  t 13 hub B1.CYC/B2.CYC/B3.SET
+  t 14 hub B1.CYC/B2.CYC/B3.SET
+  t 15 hub B1.CYC/B2.SET/M3.SET
+  t 16 hub B1.CYC/B2.SET/M3.SET
+  t 17 hub B1.SET/M2.SET/M3.SET

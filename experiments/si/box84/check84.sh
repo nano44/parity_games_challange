@@ -20,4 +20,5 @@ for i in HP2_mup HP3_mup HP4_mup; do
   grep -q "game SAME states SAME .* valuediffs 0 hist SAME .* labels SAME" out/xchk_$i.out
 done
 rm -rf "$t"
+bash m2/check_m2.sh
 echo "box 84 checks: PASS"
