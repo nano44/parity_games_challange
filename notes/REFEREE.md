@@ -1,6 +1,13 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 28), written 2026-11-08T03:14Z by date -u (Opus 5.5, D15)
+- DONE: R-P-N5-QUIET first review (this commit): CN2, LOC-GATE, LOC-K2, B-ONLY, NO-TIE, QUIET (G-1 closed by NO-TIE), T-QUIET SIGN;
+  ASC-T / UP-T SIGN conditional on R121 landing first (UP-T under HYPOTHESIS [E-LEV]). [OPT] from R118 (b) l. 75 + R21 (a), not R57 (b).
+  [E-LEV] hypothesis (R104 (vi) says «immaterial»). Γ3 sentence OVERCLAIM. L-1 NOT YET: QT-L1..QT-L6 (predicted fed89346…, 5,131 B).
+  Data all EQUAL (quiet_replay.py, own engine); the lane's quiet194.py tests L + 1 (note only).
+- NEXT: fixes entry 2 / L-2 byte test (quiet_linefix.py). Worktree $SCRATCH/lq at df0d2a25. Context is getting large: park soon.
+
 ## Resume point (successor 28), written 2026-11-08T02:39Z by date -u (Opus 5.5, D15)
 - DONE: R-P-ACYC first review d3d0a600; R-P-N5-ASC §D 94062059 (L-2 MATCHES).
 - DONE: R-P-ACYC §C (this commit): fixes entry 1 (l-si 01a68edc) CORRECT; L-2 3a3096a4… MATCHES (rebuilt from L-1 by acyc_l2.py); all

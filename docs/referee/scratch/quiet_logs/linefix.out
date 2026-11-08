@@ -1,0 +1,14 @@
+QT-L1 old occurs 1 at 1811
+QT-L2 old occurs 1 at 1668
+QT-L3 old occurs 1 at 2211
+QT-L4 old occurs 1 at 2631
+QT-L5 old occurs 1 at 3274
+QT-L6 old occurs 1 at 3487
+QT-L1 new occurs in result 1
+QT-L2 new occurs in result 1
+QT-L3 new occurs in result 1
+QT-L4 new occurs in result 1
+QT-L5 new occurs in result 1
+QT-L6 new occurs in result 1
+L-1 parens 85 85 guillemets 3 3 | predicted L-2 parens 96 96 guillemets 2 2
+predicted line: sha1 fed893462811ea10d0b99622dcbb31f7b50b6d47 5131 bytes; L-1: 62de90753d764c99f9b10e6f201d155f8b4ec79c 4600 bytes

@@ -1,0 +1,6 @@
+LEAP_k64.json T 129 states 130 cnlow 0 k2fail 0 gst 66950 ties 0 locfail 0 bpairs 185380 bfail 0 Q 129 W 0 crossflip 0 howardties 0 L 139855623 wfail 0 Tfail 0 DEtot 130 sumDE 3480 N 261
+TOTAL files 1 genomes: states 130 cnlow 0 k2fail 0 gst 66950 ties 0 locfail 0 bpairs 185380 bfail 0 crossflip 0 wfail 0 Tfail 0 howardties 0 T 129 | max {'T': 129, 'W': 0, 'WoverN': 0.0}
+
+real	0m1.248s
+user	0m1.208s
+sys	0m0.023s
