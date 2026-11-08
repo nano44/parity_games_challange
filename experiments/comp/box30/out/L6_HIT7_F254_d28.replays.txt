@@ -1,0 +1,9 @@
+# Replays of out/L6_HIT7_F254_d28.txt (sha1 6a3b274d3af4d0d8f057f82c8f2919c84b7dd446), 2026-11-08T00:44:00Z, L-COMP 11. DATA.
+## rclimb30 (box30/rclimb30.c sha1 9808cd9bdb888aa6ed41331f30b91cdcc193a0f7), iters 0, LV 6 L6SCORE 1:
+# score 6000000254 T 299 F 2 6 14 30 62 126 254 190 95 64 48 32 24 33 33 65 32 16 8 4 3 4 3 3 1 0 0 1 moves 1 1 3 3 7 7 15 15 31 31 63 63 127 127 32 33 31 62 31 96 32 16 47 16 8 8 9 8 15 16 32 32 7 17 0 16 8 8 3 4 3 1 3 1 3 0 3 3 1 2 0 1 0 0 1 0 l6_caps 6 l6_q5 10 l6_npaths 0
+## replay30.py (box27/sim.py):
+L6_HIT7_F254_d28.txt: replay (box27/sim.py) d 28 T 299 stop stuck F 2 6 14 30 62 126 254 190 95 64 48 32 24 33 33 65 32 16 8 4 3 4 3 3 1 0 0 1
+## L-LOWER sim6.py (sha1 6953306ee61eb7b4956baf0e5b5c7ad2872fd139, claude/l-lower bca48384) and guard_l6.py (sha1 18e855896186c083b92930c546bf45213d322543):
+out/L6_HIT7_F254_d28.txt T 299 caps 7 F 2 6 14 30 62 126 254 190 95 64 48 32 24 33 33 65 32 16 8 4 3 4 3 3 1 0 0 1
+out/L6_HIT7_F254_d28.txt mode noreturn ok True {'caps': 7, 'F6': 254, 'q5': 10, 'npaths_q5_to_pair6': 0}
+caps 7 F(l) = 2^(l+2)-2 for l=0..6: True n1 0 roles5 (11, 10) roles6 (13, 12) xt[20], xt[34] 17 22

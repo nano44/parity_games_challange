@@ -1,0 +1,1 @@
+HIT7_d28_F254: game sha1 8a3604858593d7c14f6742e78e89dc2794273cb8 n 850 | oink 8fbf0a7 --zlk --verify exit 0 «[    0.00] verifying solution... / [    0.00] solution verified (738 strategies). / [    0.00] verification took 0.000016 sec.» | n5b regions == oink zlk: True | harness verify.py on n5b strategies: OK

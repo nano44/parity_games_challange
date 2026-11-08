@@ -44,20 +44,20 @@ upa() { n=$1; shift; f=out/.pid_$n; [ -f $f ] && kill -0 $(cat $f) 2>/dev/null &
 # -npaths, -#length-1 6-windows, F6) = caps*1e12 + g*1e11 - npaths*1e8 - n1*1e4 + F6 (= Python reference on REC238/230, SL41, 20 mutants);
 # guard: 10:0 -> 17 and 17:0 -> 22 kept (FIX=20,34: never re-targeted; a genome without them scores -1e15); no REPT; edits on movers >= 12;
 # NMIN 2 / NMAX 4; ANNEAL 0.15. Seeds 400000+. REC238: n1 = 8 (windows at steps 10, 45, 80, 115, 152, 188, 223, 258).
-ENVX="LANEANNEAL=0.15 L6SCORE=1 L6W=1 L6GATE=238 FIX=20,34 FROZENBELOW=12 NMIN=2 NMAX=4" upa D_l6w D_l6w out/L6Z_KILL238_d28.txt 400000 6 5 6
+# PARKED 00:5xZ 11-08 (L-COMP 11): ENVX="LANEANNEAL=0.15 L6SCORE=1 L6W=1 L6GATE=238 FIX=20,34 FROZENBELOW=12 NMIN=2 NMAX=4" upa D_l6w D_l6w out/L6Z_KILL238_d28.txt 400000 6 5 6
 # 21:4xZ: query-2 redo finished (one q2 worker left) -> freed core: D_l6w2 = D_l6w's exact settings, second seed stream 405000+
 # 21:5xZ (Lead 21:46Z, L-LOWER 8 69d7005a: mirror trigger needs lower pairs 2-4 + helpers): D_l6w2 edits EVERY mover except pair 5
 # (FROZENBELOW 0, FROZENSET 10,11: no field of 10 / 11 changes; gate swaps of level 5 skipped), NMIN 2 / NMAX 6; FIX 20,34; L6W score.
 # STOPPED 23:3xZ (Lead 23:36Z; resume in out/D_l6w2.log): ENVX="LANEANNEAL=0.15 L6SCORE=1 L6W=1 L6GATE=238 FIX=20,34 FROZENBELOW=0 FROZENSET=10,11 NMIN=2 NMAX=6" upa D_l6w2 D_l6w2 out/L6Z_KILL238_d28.txt 405000 6 5 6
 # 22:3xZ (Lead 22:31Z): D_l6v = L6W score, gate 240, from out/L6_FRZ_F240_D_l6w.txt (sha1 3c5ccc70; F(6) 240, n1 4), FIX 20,34, movers >= 12,
 # NMIN 2 / NMAX 4, ANNEAL 0.15; seeds 410000+.
-ENVX="LANEANNEAL=0.15 L6SCORE=1 L6W=1 L6GATE=240 FIX=20,34 FROZENBELOW=12 NMIN=2 NMAX=4" upa D_l6v D_l6v out/L6_FRZ_F240_D_l6w.txt 410000 6 5 6
+# PARKED 00:5xZ 11-08 (L-COMP 11): ENVX="LANEANNEAL=0.15 L6SCORE=1 L6W=1 L6GATE=240 FIX=20,34 FROZENBELOW=12 NMIN=2 NMAX=4" upa D_l6v D_l6v out/L6_FRZ_F240_D_l6w.txt 410000 6 5 6
 # 23:3xZ: query 2 COMPLETE (box28/log/lsi_q2_cert.txt) -> its 2 cores: D_l6u / D_l6u2 = D_l6v's settings from out/L6_FRZ_F248_D_l6v.txt
 # (sha1 ba061180; F(6) 248, n1 3), gate 248; seeds 415000+ / 420000+.
-ENVX="LANEANNEAL=0.15 L6SCORE=1 L6W=1 L6GATE=248 FIX=20,34 FROZENBELOW=12 NMIN=2 NMAX=4" upa D_l6u D_l6u out/L6_FRZ_F248_D_l6v.txt 415000 6 5 6
+# PARKED 00:5xZ 11-08 (L-COMP 11): ENVX="LANEANNEAL=0.15 L6SCORE=1 L6W=1 L6GATE=248 FIX=20,34 FROZENBELOW=12 NMIN=2 NMAX=4" upa D_l6u D_l6u out/L6_FRZ_F248_D_l6v.txt 415000 6 5 6
 # STOPPED 23:5xZ (Lead 23:48Z; resume in out/D_l6u2.log): ENVX="LANEANNEAL=0.15 L6SCORE=1 L6W=1 L6GATE=248 FIX=20,34 FROZENBELOW=12 NMIN=2 NMAX=4" upa D_l6u2 D_l6u2 out/L6_FRZ_F248_D_l6v.txt 420000 6 5 6
 # 23:5xZ (Lead 23:48Z, L-LOWER 8 c6a8980f L8-design §1e): D_l6x from L6_FRZ_F248 (sha1 ba061180): L6W score + c24 (env L6W24=138: number of
 # steps t in 1..137 with o(24) changed), order (caps, [F6>=248], -npaths, -n1, c24, F6) = caps*1e13 + g*1e12 - npaths*1e9 - n1*1e6 + c24*1e3
 # + F6 (= Python reference on F248, F246, 20 mutants, cutoffs 138 and 400). FIX 20,34, movers >= 12, NMIN 2 / NMAX 4. Seeds 425000+.
-ENVX="LANEANNEAL=0.15 L6SCORE=1 L6W=1 L6GATE=248 L6W24=138 FIX=20,34 FROZENBELOW=12 NMIN=2 NMAX=4" upa D_l6x D_l6x out/L6_FRZ_F248_D_l6v.txt 425000 6 5 6
-f=out/.pid_freezer; if [ -f $f ] && kill -0 $(cat $f) 2>/dev/null; then echo "freezer running"; else setsid nohup ./freezer.sh < /dev/null > /dev/null 2>&1 & sleep 1; pgrep -f "^/bin/bash ./freezer.sh" > $f; echo "freezer launched $(cat $f)"; fi
+# PARKED 00:5xZ 11-08 (L-COMP 11): ENVX="LANEANNEAL=0.15 L6SCORE=1 L6W=1 L6GATE=248 L6W24=138 FIX=20,34 FROZENBELOW=12 NMIN=2 NMAX=4" upa D_l6x D_l6x out/L6_FRZ_F248_D_l6v.txt 425000 6 5 6
+# PARKED 00:5xZ 11-08: f=out/.pid_freezer; if [ -f $f ] && kill -0 $(cat $f) 2>/dev/null; then echo "freezer running"; else setsid nohup ./freezer.sh < /dev/null > /dev/null 2>&1 & sleep 1; pgrep -f "^/bin/bash ./freezer.sh" > $f; echo "freezer launched $(cat $f)"; fi

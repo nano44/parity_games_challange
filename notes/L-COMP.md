@@ -1,6 +1,30 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## HANDOVER -- successor 11 (L-COMP 11, Opus 5.5) PARKS 2026-11-08 00:5xZ by date -u (~500k context; Lead 00:46Z item 4)
+### HEADLINE (DATA, a CANDIDATE tower, not a result): first 7-capped tower in the fleet
+- box30/out/L6_HIT7_F254_d28.txt, sha1 6a3b274d3af4d0d8f057f82c8f2919c84b7dd446: d 28, T 299, F(0..6) = 2, 6, 14, 30, 62, 126, 254
+  (F 2 6 14 30 62 126 254 190 95 64 48 32 24 33 33 65 32 16 8 4 3 4 3 3 1 0 0 1); npaths(q5, pair 6) 0, n1 0; vs SL41 only core change
+  10:0 55 -> 17. Lane D_l6u seed 415003 (L6W score, gate 248, from L6_FRZ_F248). Replays: rclimb30, replay30, sim6 (caps 7), guard_l6
+  noreturn ok -- record box30/out/L6_HIT7_F254_d28.replays.txt. Path of bests: 238 (REC238) -> 240 ... 248 (n1 3) -> 250 (n1 2) -> 254.
+- End to end (box29/README.md section HIT7): Γ3 .pg sha1 8a360485 (n 850); my n5b SPEC: 302 iterations = L + 3 (L = T = 299), one
+  fallback at transition 300, one FL run [0, 299]; Oink zlk --verify OK, regions equal, verify.py OK. n5v (L-RED) NOT run on it.
+### STATE AT PARK: ALL JOBS STOPPED (climbs, freezer, commit_loop, diskguard). Nothing runs. Query 2 and xval_d3 are COMPLETE.
+### NEXT (Lead 00:46Z item 3, for the successor): 8 capped levels (cap F(7) = 510) at d 32 -- plan, NOT started
+1. Seed: L6_HIT7_F254_d28.txt + 4 TOP-ADD (box30/l-lower/lift.py IN 4 OUT; earlier D_d32 seeds were made the same way) -> d 32 (rclimb30
+   is 192-bit: no overflow at d 32). Re-measure the lifted seed with rclimb30 + replay30 (+ sim6) before climbing: F(0..6) must stay exact.
+2. Score: GUARD levels 0-6 exact, then the n1-style term at level 7 = number of length-1 7-windows (windows of level 7 cut at the flips of
+   o(6), as guard_l6.windows(S, O, 7)), then F(7). rclimb30's L6W code is hard-wired to level 6 (O[t][5] cuts, F[6], gate on F[6],
+   q5/roles(5), npaths to {12, 13}, FIX 20,34): generalise it to a level J (env L6J=7: cuts at o(J-1), F[J], roles(J-1) movers 2J-2, 2J-1,
+   npaths to {2J, 2J+1}) and CHECK the C score against a Python reference (guard_l6.windows(S, O, 7), sim6) on the seed + 20 mutants first.
+3. RC-free constraint at level 7: npaths(q6, pair 7) = 0, q6 = the SECOND mover of pair 6 (roles(D, S, O, 6); on HIT7 roles(6) = (13, 12),
+   so q6 = 12). Path analogue (my definition, to confirm with the Lead): q5's working path was 10:0 -> 17 (a level-8 mover) -> 22; for
+   level 7 keep the HIT7 path FIXED (FIX 20,34) and do NOT fix a new one at first; record which level->=9 mover q6's options reach.
+4. Two seed streams per setting, 4 lanes on 4 cores; freezer.sh + watcher as for L6 (HIT = F(0..7) = 2..510). Report settings + code sha1
+   to the Lead before launch.
+### Relaunch of what existed (if ever needed): box28/relaunch_all.sh -> box30/relaunch30.sh. Every L6 lane line in relaunch30.sh was STOPPED
+at park; un-comment only what the Lead asks for. Lane resume points: out/<lane>.log (last unit + 1).
+
 ## RESUME POINT -- successor 11 (L-COMP 11, Opus 5.5), updated 2026-11-07 23:3xZ by date -u (handover-ready; GO was 11:02Z)
 ### RELAUNCH (after a restart or in a new container)
 1. New container only: scripts/setup_oink.sh (verify.sh needs Oink); re-add local excludes to .git/info/exclude:

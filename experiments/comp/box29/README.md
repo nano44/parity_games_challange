@@ -31,3 +31,13 @@ L-COMP successor 10, 2026-11-07 (date -u in the commits).
 - L-NEW's n5bxi.py (claude/l-new 066cd543, sha1 6731655a, unmodified copy in l-new/; it subclasses my n5b and changes one rule), xi29.py,
   out/xi29.txt: DBL4 12 iterations / 1 fallback, RECF4 12 / 1, H5 12 / 1, H6 15 / 1; winning regions = Oink zlk on all four.
   = L-RED's reported 12 / 12 / 12 / 15. Note: n5bxi is L-NEW's own second implementation run here, not a third independent one.
+
+## HIT7 (L-COMP 11, Lead 00:46Z 2026-11-08): N5 end-to-end on Γ3 of the first 7-capped tower (DATA)
+- Genome: box30/out/L6_HIT7_F254_d28.txt (sha1 6a3b274d; F(0..6) = 2..254, T 299) -> replay30.py JSON hit7/HIT7_d28_F254.json -> L-NEW
+  norm.py -> writepg.py (copies in l-new/, run from a scratch mirror at experiments/new/box189 with experiments/harness linked; the same
+  pipeline regenerates inst/H6_d24_F126_g3.pg byte-identical) -> hit7/HIT7_d28_F254_g3.pg = inst/HIT7_d28_F254_g3.pg, sha1 8a360485
+  (n 850, 232 priorities, max 457); Γ0 (no pads) hit7/HIT7_d28_F254_g0.pg sha1 3fac56bd.
+- run29.py (MY n5b, SPEC, start S3): iterations 302 = L(G) + 3 with L(G) = T = 299; one fallback, at transition 300 = L + 1; one FL run
+  [0, 299] = 299 (= L); max |P| 22, max dist 140, max bits 240; 39.6 s. Same REACH3 shape as H5 / H6 / RECF4 / DBL4 above.
+- check29.py: Oink 8fbf0a7 --zlk --verify exit 0 «solution verified»; n5b regions == Oink zlk; harness verify.py on n5b's strategies OK.
+- Not run: L-RED's n5v (second engine) on this game.
