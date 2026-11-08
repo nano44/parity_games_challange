@@ -310,3 +310,25 @@ docs/referee/scratch/: asc_quotes.py, asc_cs.py, asc_game.py; asc_logs/cs.log, g
   - L-3 = L-2 + exactly R1-R4 (byte test PASSES). R1-R4 are CORRECT in meaning.
   - L-3 does NOT YET MATCH the packet: R5 is required.
   - All statements of P-N5-ASC stay SIGN (the packet's form).
+
+## §F. Line L-4 (R5) (REFEREE successor 29, Opus 5.5, D15; date -u at writing 2026-11-08T05:47Z)
+- Objects: claude/l-new a744677e (ancestor of origin/claude/l-new, checked).
+  - L-3 there is unchanged: docs/new/P-N5-ASC-line-L3.txt sha1 0012d671… (byte-equal to L-3 at a2512364).
+  - L-4 docs/new/P-N5-ASC-line-L4.txt: sha1 4017305a34eac21615ba8f172a9b899544d25659, 5,198 B, one line, 125 «(» = 125 «)».
+    EQUAL to the Lead's check and to successor 28's prediction in §E.
+- Byte test (my own script scratch/asc_l4.py; R5 strings copied from §E; asc_logs/l4_bytetest.out):
+  - R5 old string: 1 in L-3, 0 in L-4. R5 new string: 0 in L-3, 1 in L-4.
+  - L-3 + R5 is byte-equal to L-4.
+  - R1-R4 new strings and my AS-2 / AS-3 strings still hold on L-4 (1 each).
+- Lane script: experiments/new/box193/mkl4_193.py re-run from the repo root at a744677e rewrites L-4 byte-identically (git status clean).
+- Pins: experiments/new/box193/asc.pins at a744677e, 39 rows, all match (sha1sum -c with DOCS/ = ../../../docs/new/). New rows: the
+  fixes file (entry 4), L-4 and mkl4_193.py.
+- Meaning:
+  - Fixes entry 4 states R5 as in §E and accepts it; it changes no packet text, tool or DATA output. CORRECT.
+  - In context, L-4 now reads «(Lemma CHAIN-DECOMP) if seq_t(v) = (f, …), i.e. the first e-vertex on v's play is f and f ∈ Π_t(v), then
+    f's successor y_f is a mover with Λ_t(y_f) = Λ_t(v) and E_t(v) = {f} ∪ E_t(y_f), hence seq_t(v) = (f, seq_t(y_f))». This is the
+    packet's l. 80-81 hypothesis and conclusion. The level-0 instance of §E (v = e_g, seq_t(v) empty) no longer falls under it.
+- Optional (AS-L5, not required): the source note still reads «with fixes entries 1-2 … L-NEW successors 61-62». Entries 3-4
+  (successor 63) change only the line, not the packet's statements, so the note is not false. A later line may name «fixes entries
+  1-4; L-NEW successors 61-63».
+- Verdict: L-4 MATCHES (L-3 + exactly R5; R5 CORRECT). The line now matches the packet. All statements of P-N5-ASC stay SIGN.
