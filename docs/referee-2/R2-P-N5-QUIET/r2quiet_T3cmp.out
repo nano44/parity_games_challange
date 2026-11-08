@@ -1,0 +1,18 @@
+rd3_d4.json T3_gt_T 0 T3_ne_T 0 genomes 1 maxT 18 maxT3 18
+RS2_L32M6.json T3_gt_T 0 T3_ne_T 0 genomes 1 maxT 41 maxT3 41
+CLR_k8s16.json T3_gt_T 0 T3_ne_T 0 genomes 1 maxT 28 maxT3 28
+FPORT_n2.json T3_gt_T 0 T3_ne_T 0 genomes 1 maxT 14 maxT3 14
+FPORT_n3.json T3_gt_T 0 T3_ne_T 0 genomes 1 maxT 16 maxT3 16
+LEAP_k8.json T3_gt_T 0 T3_ne_T 0 genomes 1 maxT 17 maxT3 17
+RS2.json T3_gt_T 0 T3_ne_T 0 genomes 1 maxT 10 maxT3 10
+RS2_L8M6.json T3_gt_T 0 T3_ne_T 0 genomes 1 maxT 17 maxT3 17
+RS3.json T3_gt_T 0 T3_ne_T 0 genomes 1 maxT 13 maxT3 13
+RSG_K4.json T3_gt_T 0 T3_ne_T 0 genomes 1 maxT 7 maxT3 7
+cR_d2_w8_R22.json T3_gt_T 0 T3_ne_T 0 genomes 1 maxT 24 maxT3 24
+rd2_d9.json T3_gt_T 0 T3_ne_T 0 genomes 1 maxT 21 maxT3 21
+rd2_d10.json T3_gt_T 0 T3_ne_T 0 genomes 1 maxT 26 maxT3 26
+rd3_d7.json T3_gt_T 0 T3_ne_T 0 genomes 1 maxT 25 maxT3 25
+rf_d5.json T3_gt_T 0 T3_ne_T 0 genomes 1 maxT 11 maxT3 11
+rand191_s2.jsonl T3_gt_T 0 T3_ne_T 3 genomes 1000 maxT 8 maxT3 8
+own_s33.jsonl T3_gt_T 3 T3_ne_T 4 genomes 1000 maxT 9 maxT3 9
+exit 0

@@ -1,6 +1,25 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 1 (successor 33, Opus 5.5 under D1/D18/D20; 2026-11-08 05:4xZ by date -u)
+- Handover check e1c63bb5 (VERIFY PASS; Lead 5/5, «go» 05:24Z). Branch was 134 behind locally; fetch + checkout + ff-only fixed it.
+- Item A done: R2-P-N5-ASC.md Add. 5. L-4 (l-new a744677e, sha1 4017305a…, 5,198 B) = L-3 + REFEREE 28 R5 byte for byte (bt_l4.py);
+  MATCHES. Own counters (r2cd5.py): the old hypothesis is false on 8,284 / 33,102 plays; GLOSS 0, no e-vertex cycle node (N-1).
+  Correction recorded: Add. 4's «L-3 MATCHES» missed R5. Commits caa26282 + 05eb5181; push started 05:2xZ.
+- Item A2 (P-ACYC L-4 = L-3 + R-G + R-B, predicted 85bb221f…, 3,080 B; cite check of my predecessor's G-1 / W-1) WAITS for L-SI 45's SHA
+  from the Lead. Then R2-P-ACYC.md Add. 4.
+- Item B: R2-P-N5-QUIET.md written (not yet committed at this note). All 8 statements SIGN (UP-T under [E-LEV]). L-1 NOT YET:
+  - W-1: the Γ3 sentence over-claims;
+  - W-2: [OPT] source = R118 setting + Friedmann §3 (opened, PDF sha1 a63a9293; τ′ prints as «τ 0» in pdftotext);
+  - W-3: [E-LEV] stays a hypothesis;
+  - D-1: quiet194 L + 1, and wfail counts steps;
+  - D-2: k2fail tests one conjunct only.
+  - Tools: R2-P-N5-QUIET/r2quiet.py (on R2-P-ACYC/r2acyc.py; --gamma3, cmp), r2t3div.py, r2bestset.py, r2qq.py, bt_strings.py,
+    dump_rand191.py. Data sets are not committed: rand191 seed 2 (sha1 3ee6f09a…) via dump_rand191.py, own (ffdff1e9…) via
+    `r2quiet.py gen 1000 33`.
+  - NEXT after push: read docs/referee/R-P-N5-QUIET.md (REFEREE 28) and write the comparison Addendum 1; check its QT-L1..L6 spans
+    against mine by script.
+
 ## HANDOVER (successor 32, Opus 5.5 under D1/D18/D20; written 2026-11-08 04:0xZ by date -u; parking at ~345k: the next item, a full review, would pass ~480k)
 Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only via scripts/push.sh as a tracked background task (redirect, «echo exit
 $?»; verify ~15-20 min). Before push: `git branch --show-current` = claude/referee-2 (this container was clean at start).
