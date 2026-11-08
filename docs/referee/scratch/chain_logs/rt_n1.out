@@ -1,0 +1,2 @@
+Gamma  start option 0 | option values at state 0: [(0, 4, [], 1), (1, 4, [], 4), (2, 4, [], 4)] | cmp(1,2) = 0 | my Howard run length 2 ties 1
+Gamma3 start option 0 | option values at state 0: [(0, 4, [], 3), (1, 4, [], 8), (2, 4, [], 8)] | cmp(1,2) = 0 | my Howard run length 2 ties 1

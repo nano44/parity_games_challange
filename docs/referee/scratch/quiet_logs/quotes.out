@@ -1,0 +1,63 @@
+=== P-N5-QUIET.md
+RESULTS NONE | files NONE | GO, freeze packet P-N5-QUIET (LOC-GATE, CN2, LOC-K2, QUIET, T-QUIET, UP-T, ASC-T)
+RESULTS ['R118'] | files ['ACYC'] | §4 applies on Γ3
+RESULTS NONE | files NONE | the first fallback of N5′-xi on Γ3(G) from S3, i.e. the least iteration k at which SPEC S4c applies, comes at k = T3 + 1
+RESULTS ['R104'] | files ['ASC', 'ACYC'] | Even movers of priority 0; Odd gates of priority 1 with a W-face e and a Ξ-face β
+RESULTS ['R104'] | files ['ASC', 'ACYC'] | β of priority 6 + 2·rank + parity with edges to the Ξ-target and to u, or to u alone
+RESULTS ['R104'] | files ['ASC', 'ACYC'] | e of even priority above every β with one edge to the W-target or to the top even self-loop c_W
+RESULTS ['R104'] | files ['ASC', 'ACYC'] | an unused even self-loop of priority 2; c_W's priority top is the least even number at least 2 above every other priorit
+RESULTS ['R104'] | files ['ASC', 'ACYC'] | a closed core u = K0 (Even, top + 2) → {K1, K3}, K1 (Even, 5) → {K0, K1}, K2 (Odd, 3) → {K1, K2}, K3 (Even, top + 3) → {
+RESULTS ['R104'] | files ['ASC', 'ACYC'] | with start σ = the genome start at movers, β → its Ξ-target (u when the target is X), K0 → K3, K1 → K1, K3 → K2
+RESULTS NONE | files ['XICYC'] | movers (Even, priority 0) → gates (Odd, priority 1) → {e-face e_g, β-face β_g}
+RESULTS ['R118'] | files ['ACYC'] | VJ00 §4.2 / Friedmann arXiv 1106.0778 §3 for the order ⊴ on values (Λ, Π, k)
+RESULTS ['R118'] | files ['XICYC', 'ASC', 'ACYC'] | The game is Γ(G) with every Even vertex that is not a mover frozen at its start successor. Odd is unrestricted (gates an
+RESULTS ['R118'] | files ['XICYC', 'ACYC'] | every mover x goes to a successor of ⊴-largest Ω_t value, and keeps σ_t(x) if σ_t(x) is such a successor
+RESULTS ['R118'] | files ['ACYC'] | T_CYC := the number of steps to the first state where no mover has a strictly better successor
+RESULTS ['R118'] | files ['ASC'] | Facts F1-F6 (§3 l. 68-83) with F4 REPLACED by F4′
+RESULTS NONE | files ['XICYC', 'ASC'] | Ω_t ⊴ Ω_(t+1) pointwise, for every step t.
+RESULTS NONE | files ['XICYC', 'ASC'] | Ω_t(v) = ext(v, Ω_t(nx_t(v)))
+RESULTS NONE | files ['XICYC', 'ASC'] | ext(v, (Λ, Π, k)) := (Λ, Π ∪ {v if v is more relevant than Λ}, k + 1)
+RESULTS ['R118'] | files NONE | if v ∉ Π(A) ∪ Π(B), then A ⊴ B ⇒ ext(v, A) ⊴ ext(v, B), and A ◁ B ⇒ ext(v, A) ◁ ext(v, B).
+RESULTS ['R118'] | files ['XICYC'] | For every mover x, step t and successor y of x: Ω_(t+1)(x) ⊵ ext(x, Ω_t(y)).
+RESULTS ['R118'] | files ['XICYC'] | If σ_(t+1)(x) ≠ σ_t(x), then Ω_(t+1)(x) ▷ Ω_t(x).
+RESULTS ['R118'] | files ['XICYC', 'ASC'] | C ≤ n·(2M + 2).
+RESULTS ['R118'] | files ['ASC'] | (each vertex's Λ moves only to a vertex of strictly larger reward among at most 2M + 3 possible cycle nodes)
+RESULTS NONE | files ['XICYC'] | first the reward of Λ (an even priority p gives +p, an odd one −p, with priorities made injective by rank); then Π, deci
+RESULTS ['R118'] | files ['ASC'] | (§3 l. 68-83)
+RESULTS NONE | files ['XICYC'] | σ̄_t is optimal at every vertex at once ([VJ])
+RESULTS ['R21'] | files NONE | (Odd's best reply σ̄_k is pointwise optimal in G_{σ_k})
+RESULTS NONE | files ['ASC'] | D_E(v) ≤ (2M + 3)·F′_B(M)
+RESULTS ['R104'] | files NONE | leaves the β-vertex order and the exact e-priorities to packet §3.1
+RESULTS NONE | files ['REALIZE'] | Ω(e_g) := eb + 2·i, eb := the least even number > bmax, i := the position of g in the order by (lev(owner), gate index)
+RESULTS NONE | files NONE | with no tie, σ̄_t(g) is the face of ⊴-smaller value
+RESULTS NONE | files NONE | BOX 194 LOC
+RESULTS NONE | files NONE | P-N5-QUIET
+RESULTS NONE | files NONE | quotes 27 missing 0 (trunk bf6ced60)
+quotes 34, found 28, not found 6
+=== P-N5-QUIET-fixes.md
+RESULTS NONE | files NONE | G_C changes at most 2M times
+RESULTS NONE | files NONE | a sub-window ends only at a flip, which needs a β-face change
+RESULTS ['R118'] | files NONE | any fixed deterministic choice
+RESULTS NONE | files NONE | β-face at every gate, K1 at K2
+RESULTS ['R104'] | files ['ASC', 'ACYC'] | e of even priority above every β
+RESULTS NONE | files NONE | flips at most twice … (to a tie, then to e)
+RESULTS NONE | files NONE | at most once (β to e)
+RESULTS NONE | files NONE | cycle node of priority ≥ 2
+RESULTS NONE | files NONE | 359,866 pairs, 0 with Λ at or above an e-vertex; 0 gate ties
+RESULTS NONE | files NONE | DATA added
+RESULTS NONE | files NONE | nothing PROVED about N5′-xi on Γ3(G)
+RESULTS NONE | files NONE | T bounds IDEAL-CYC iterations; on Γ3 this bounds N5′-xi only up to its first fallback, and only under REACH3-CYC; nothin
+RESULTS ['R57', 'R85', 'R87', 'R88', 'R102', 'R103', 'R104'] | files NONE | that S1's procedure realises an optimal σ̄ is VJ00 §6 plus SPEC conformance
+RESULTS ['R104', 'R118'] | files NONE | used in two forms: S1's σ̄, and τ̄ on the dual game, are pointwise optima
+RESULTS ['R57', 'R102', 'R103', 'R104'] | files NONE | that S1's procedure realises an optimal σ̄ is VJ00 §6 plus SPEC conformance, and the code's match to SPEC is DATA (R15 G
+RESULTS ['R21'] | files NONE | (Odd's best reply σ̄_k is pointwise optimal in G_{σ_k})
+RESULTS NONE | files NONE | BOX 194 LOC
+RESULTS NONE | files NONE | write P-N5-QUIET's line L-1 by script
+RESULTS ['R1', 'R3', 'R5', 'R7', 'R9', 'R11', 'R12', 'R13', 'R14', 'R15', 'R16', 'R18', 'R19', 'R21', 'R22', 'R24', 'R26', 'R27', 'R29', 'R30', 'R31', 'R34', 'R38', 'R44', 'R45', 'R46', 'R48', 'R50', 'R51', 'R52', 'R53', 'R54', 'R55', 'R56', 'R57', 'R58', 'R60', 'R61', 'R63', 'R64', 'R65', 'R66', 'R67', 'R68', 'R69', 'R70', 'R71', 'R72', 'R73', 'R74', 'R75', 'R76', 'R78', 'R79', 'R80', 'R81', 'R82', 'R83', 'R85', 'R86', 'R87', 'R88', 'R89', 'R90', 'R91', 'R92', 'R93', 'R94', 'R95', 'R96', 'R97', 'R98', 'R99', 'R100', 'R101', 'R102', 'R103', 'R104', 'R120'] | files ['XICYC', 'REALIZE', 'ASC', 'ACYC', 'TARGET'] | |
+RESULTS ['R3', 'R7', 'R9', 'R12', 'R15', 'R16', 'R19', 'R22', 'R24', 'R30', 'R31', 'R34', 'R35', 'R36', 'R46', 'R60', 'R61', 'R68', 'R69', 'R75', 'R78', 'R80', 'R81', 'R82', 'R83', 'R84', 'R86', 'R87', 'R88', 'R89', 'R90', 'R91', 'R93', 'R94', 'R95', 'R97', 'R98', 'R99', 'R100', 'R104', 'R105', 'R106', 'R109', 'R111', 'R112', 'R113', 'R114', 'R115', 'R116', 'R117', 'R118', 'R119', 'R120'] | files ['XICYC', 'REALIZE', 'ASC', 'ACYC'] | strictly
+quotes 20, found 8, not found 12
+=== P-N5-QUIET-line-L1.txt
+RESULTS ['R57', 'R85', 'R87', 'R88', 'R102', 'R103', 'R104'] | files NONE | that S1's procedure realises an optimal σ̄ is VJ00 §6 plus SPEC conformance
+RESULTS ['R104', 'R118'] | files NONE | used in two forms: S1's σ̄, and τ̄ on the dual game, are pointwise optima
+RESULTS NONE | files NONE | T bounds IDEAL-CYC iterations; on Γ3 this bounds N5′-xi only up to its first fallback, and only under REACH3-CYC; nothin
+quotes 3, found 2, not found 1

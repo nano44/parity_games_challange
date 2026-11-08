@@ -1,0 +1,13 @@
+R1 old in L-2: 1 (in X now: 1 ) | new in L-3: 1 | old in L-3: 0
+R2 old in L-2: 1 (in X now: 1 ) | new in L-3: 1 | old in L-3: 0
+R3 old in L-2: 1 (in X now: 1 ) | new in L-3: 1 | old in L-3: 0
+R4 old in L-2: 1 (in X now: 1 ) | new in L-3: 1 | old in L-3: 0
+L-2 + R1..R4 == L-3: True ('0012d6710983ec339be8f5d4e051a205cc9207ba', 5154) | L-3 ('0012d6710983ec339be8f5d4e051a205cc9207ba', 5154)
+L-3 1 | UP-JUMP, UP-B and NOUP under HYPOTHESIS [E-LEV]
+L-3 1 | (only for §6 UP-JUMP, UP-B and NOUP)
+L-3 0 | UP-JUMP and UP-B under HYPOTHESIS [E-LEV]
+L-3 0 | (only for §6 UP-JUMP and UP-B)
+L-3 4 | under [E-LEV]
+CTX: d lexicographically by their most relevant differing element, and D_E,I(v) the number of distinct E_t(v) on an interval I of states with Λ_t(v) = w fixed (M_w := the number of e-vertices more relevant than w): (Lemma E-MON) if Λ_t(v) = Λ_(t+1)(v) then E_t(v) ≤ E_(t+1)(v); (Lemma CHAIN-DECOMP) if the first e-vertex on v's play is f, then f's successor y_f is a mover with Λ_t(y_f) = Λ_t(v) and E_t(v) = {f} ∪ E_t(y_f), hence seq_t(v) = (f, seq_t(y_f)); (Lemma SKELETON and Theorem HUB-ASC(B)) in the abstract chain system CS(M) (items 1..M, a run of forests with every chain lex-
+CTX: 0778 §3 for the value (Λ, Π, k) and its order ⊴; HYPOTHESIS [E-LEV] (only for §6 UP-JUMP, UP-B and NOUP): lev(x) < lev(x′) implies pr(e_(x,k)) < pr(e_(x′,k′)), the order of Γ(G) as built by experiments/new/box189/gamma3.py (and of R104's packet §3.1), not in a landed line; not used: [LOC], OVT-DV, IN-BOUND, any L-RED lane lemma, F4/F4′, F5, F6), with seq_t(v) the e-vertices in Π_t(v) in play order, E_t(v) their set, an ascent of seq_t(v) a step to a more relevant element, sets of e-vertices compared lexicographically by their most relevant differing element, and D_E,I(v) th
+parens 122 122

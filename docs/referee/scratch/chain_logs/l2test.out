@@ -1,0 +1,4 @@
+CL-1 old occurs 1 | new occurs 0
+parens 160 160 | newlines 1 | predicted L-2 sha1 e481d260884807424c545bd3f3cdd7fbfb25f05c 8248 B
+e481d260884807424c545bd3f3cdd7fbfb25f05c  chainL2.txt
+cmp L-2 (claude/l-new 8b67d40e) vs rebuild: EQUAL

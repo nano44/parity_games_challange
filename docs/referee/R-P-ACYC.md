@@ -271,3 +271,108 @@ All Ξ-acyclicity labels were checked with my own DFS: A 300 / 300 acyclic, B 4 
     AC-L1 to AC-L5.
   - Optional: AC-5, AC-6.
 - Me: a byte test of L-2 and a check of the fixes entry.
+
+## §C. Fixes entry 1 and line L-2 (REFEREE successor 28; date -u at writing 2026-11-08T02:37Z)
+After my verdict (d3d0a600) I read REFEREE-2's items only as they are quoted in the fixes entry and byte-copied in fix1/.
+- Objects: claude/l-si 01a68edc (ancestor of origin/claude/l-si), read by `git show` / `git archive`:
+  - packet docs/si/P-ACYC.md 0e9edcfd…, 16,852 B, and L-1 bb12deec…, both unchanged;
+  - docs/si/P-ACYC-fixes.md dd3d4546…, 10,104 B (entry 1);
+  - L-2 docs/si/P-ACYC-line-L2.txt 3a3096a45df6ca22e8099ca4e1a9ac1779c1321e, 2,741 B (EQUAL to the Lead's relay), parentheses 38 / 38.
+  - fix1/ref_d3d0a600.md is byte-equal to my report at d3d0a600 (cmp).
+- Byte test (scratch/acyc_l2.py, which reads my strings from acyc_linefix.py; acyc_logs/l2_bytetest.out):
+  - L-1 + my AC-L1..AC-L5 = c8ed32a8…, 2,638 B, my prediction. This is EQUAL to the lane's statement.
+  - I rebuilt L-2 from L-1 with five replacements, each old string once in L-1:
+    - AC-L1, AC-L2, AC-L3 verbatim;
+    - REFEREE-2's longer old string «σ̄ off the β-face 0, non-standard states 0, genomes with first fallback after iteration N + 1 0;»
+      (which contains my AC-L4 old string) → «σ̄ off the β-face 0, states that are not standard (σ off the movers and τ) 0, » + my AC-L4
+      new string;
+    - my AC-L5 new string with REFEREE-2's D-3 insertion «; e-priorities ordered by (lev, gate index), as in ref gamma3.build» before
+      its first «)».
+  - The result is byte-equal to L-2 (sha1 3a3096a4…, 2,741 B).
+  - My strings in L-2:
+    - AC-L1, AC-L2, AC-L3 and AC-L4 new strings occur once each, whole (AC-L4 as the tail of the combined string).
+    - AC-L5's new string occurs with the D-3 insertion only, as intended.
+    - All five old strings occur 0 times.
+- Packet-text items: every «Old» of entry 1 occurs once in the frozen packet (scratch/acyc_f1old.py, acyc_logs/f1_old.out: 11 of 11).
+  - F-1 (LC-1): CORRECT.
+    - The new proof step decides K2 by the cycle nodes K1 (5) and K2 (3), concludes that the optimum is unique toward K1 (r on Γ3) and
+      that w* = K1, and says why «w* for every other vertex» needs it.
+    - ACYC-LIN's R = 0 now cites «the unique optimal choice».
+    - LC-1 is CLOSED for LAMBDA-CONST, ACYC-LIN and ACYC-XI.
+  - F-2 (AC-2): my text, verbatim. tn81.out agrees with my agen_TN.out (10 at N = 1; 0.800 at N 5).
+  - F-3 (AC-3, reconciled with REFEREE-2): CORRECT.
+    - «C + R» is more exact than my «R». (l)'s bound is in C and R, and both are 0 on acyclic genomes by ACYC-LIN.
+    - Every overreach I named is removed.
+    - AC-7 (optional): (a)'s «N5′-xi's mover phase (its first N + 1 iterations)» counts the fallback iteration into the mover phase. By
+      §4 the mover phase has at most N iterations, and the first fallback is iteration T3 + 1 ≤ N + 1. Better: «(at most N iterations;
+      the first fallback comes at iteration ≤ N + 1)».
+  - F-4 (AC-4): CORRECT.
+  - F-5 (τ in the standard-state counter, «no fallback»): CORRECT.
+    - My own counter (acyc_xi.py, extended): taubad = states 0..k1−1 whose τ differs from the standard τ (pe_g at every gate, K2 → K2).
+    - Result: 0 on A (768 states), B (44) and the control (59); s3startdiff, nonstd and nofb are 0 on all 309 genomes
+      (acyc_logs/xi_*_r1.out).
+  - F-6 (AC-L5 + D-3): CORRECT. My builder orders the e's by (level, gate), and its control counts 121 / 15 / 25 on 59 states are
+    EQUAL to the lane's.
+  - F-7 (N-1, packet only): the quote «S1's σ̄, and τ̄ on the dual game, are pointwise optima» is verbatim in trunk RESULTS (l. 9864,
+    R104; also l. 9977, 13742).
+  - F-8 (D-4): CORRECT. My count of iterations after the first fallback to the S5 stop (N5′-xi = L-NEW n5v) is 2 on 300 / 300, 4 / 4
+    and 5 / 5.
+  - F-9 (AC-5, AC-6): my texts, verbatim.
+- DATA rule on L-2, clause by clause:
+  - the AC-L1..AC-L5 clauses as checked in §5;
+  - the new «states that are not standard (σ off the movers and τ) 0», which matches pacyc81t's nonstd + taubad (unit states, sets A,
+    B, scope states 0..k1−1) and my taubad;
+  - the D-3 insertion is not a count.
+  - MET.
+- check81.sh at 01a68edc (git archive, includes fix1/check_fix1.sh): exit 0, «P-ACYC fix1 checks: PASS», «box 81 checks: PASS» (acyc_logs/check81_rerun_01a68edc.out).
+- Verdict: fixes entry 1 CORRECT. L-2 MATCHES, by the byte test and in meaning.
+  - Statements: BETA-ACYC SIGN; LAMBDA-CONST SIGN; ACYC-LIN SIGN; Corollary ACYC-XI SIGN as PROVED-CONDITIONAL on R118 (k) REACH3-CYC
+    and (l) Corollary T3.
+  - No gap remains open. AC-7 is optional (packet wording only; not in L-2).
+
+## §D. Fixes entry 2 and line L-3 (REFEREE successor 28; date -u at writing 2026-11-08T04:03Z)
+- Objects: claude/l-si ff9b1639 (ancestor of origin/claude/l-si).
+  - L-2 there is unchanged (3a3096a4…).
+  - L-3 docs/si/P-ACYC-line-L3.txt: sha1 03453361fead881493e2d2786b869f1c63158c4c, 2,765 B (EQUAL to the Lead's relay), parentheses
+    38 / 38.
+- Byte test (scratch/acyc_l3.py, acyc_logs/l3_bytetest.out):
+  - D-5: «(pacyc81.py),» → «(pacyc81.py; τ by fix1/pacyc81t.py),». The old string occurs once in L-2 and 0 times in L-3; the new
+    string occurs once in L-3.
+  - L-2 + D-5 is byte-equal to L-3 (sha1 03453361…).
+  - Entry 2's longer form of the old string, «along N5′-xi on Γ3 from S3 (pacyc81.py),», is the same single occurrence.
+- My strings hold on L-3: AC-L1 to AC-L4 new strings once each, AC-L5 (with the D-3 insertion) once; all five old strings 0.
+- Meaning:
+  - D-5 (F-10): CORRECT. pacyc81.py counts σ only. The τ half of «states that are not standard (σ off the movers and τ) 0» is
+    fix1/pacyc81t.py's taubad. My own taubad is 0 on the same 309 genomes (§C).
+  - F-11 (my AC-7, packet text only): CORRECT. «(at most N iterations; its first fallback comes by iteration N + 1)».
+- Verdict: fixes entry 2 CORRECT; L-3 MATCHES. All statements stay as in §C (all SIGN; ACYC-XI PROVED-CONDITIONAL on R118 (k), (l)).
+
+## §E. Fixes entry 3 and line L-4 (R-G, R-B) (REFEREE successor 29, Opus 5.5, D15; date -u at writing 2026-11-08T06:31Z)
+- Objects: claude/l-si 0bc6f028 (ancestor of origin/claude/l-si, checked).
+  - L-3 there is unchanged: docs/si/P-ACYC-line-L3.txt sha1 03453361…
+  - L-4 docs/si/P-ACYC-line-L4.txt: sha1 85bb221f19ca457655c954f570552bc0f4d8095d, 3,080 B, one line, 41 «(» = 41 «)». EQUAL to the
+    Lead's check and prediction.
+- Byte test (my scratch/acyc_l4.py; strings from the Lead's 06:30Z relay, which are fixes entry 3's F-12 / F-13; acyc_logs/l4_bytetest.out):
+  - R-G and R-B old strings: once each in L-3, 0 in L-4. New strings: 0 in L-3, once each in L-4.
+  - L-3 + R-G + R-B in order is byte-equal to L-4.
+- Lane check: fix3/check_fix3.sh at 0bc6f028 (wired into check81.sh l. 43) prints «P-ACYC fix3 checks: PASS». It rebuilds L-4 with
+  mkL4.py and the fixes file through entry 3. The worktree stays clean.
+- Meaning of R-G (L41 sentence), checked against §4.2 LC-1 above:
+  - «the step w* = K1 of LAMBDA-CONST's proof»: this is LC-1's subject. The frozen proof leaves w* := «K1 if σ̄(K2) leads to K1, else
+    K2», and the repair fixes w* = K1.
+  - «(σ̄(K2) toward K1 is Odd's unique optimum)»: this is LC-1's repair, «σ̄(K2) is unique: K1 on Γ, r on Γ3». «Toward K1» covers both
+    games (r → K1 on Γ3). «Unique» is the point of LC-1's second half: the frozen proof's «fixed deterministic rule» needed a unique
+    optimum. CORRECT.
+  - «referee-originated (REFEREE R-P-ACYC §4.2 LC-1 and REFEREE-2 R2-P-ACYC G-1 / W-1, found independently …)»: LC-1 is in this report
+    §4.2 (heading «Lemma LAMBDA-CONST: SIGN WITH GAP LC-1»). REFEREE-2's G-1 / W-1 is named in fixes entry 1's header, which records the
+    Lead's 01:39Z overlap ruling «LC-1 = W-1». CORRECT.
+  - «restated in P-ACYC's fixes entry 1 F-1»: F-1 («LAMBDA-CONST decides w* = K1, and σ̄(K2) is unique») replaces the proof sentence
+    with the two-cycle-node comparison and «every optimal σ̄ has σ̄(K2) toward K1, and w* = K1 for every σ». CORRECT.
+  - «signed by both referees»: this report §C signs LAMBDA-CONST with F-1. REFEREE-2's signature is as the Lead records it for R122. I
+    did not re-read docs/referee-2/ for this.
+- Meaning of R-B (source note): the packet is L-SI successor 43's (packet l. 2). Fixes entries 1 and 2 are successor 44's (fixes file
+  l. 3, l. 99). CORRECT.
+  - Note, not an item: entry 3 (successor 45) changes only the line, as in P-N5-ASC §F's note. «entries 1-2 … successors 43-44» is
+    accurate for the packet's content.
+- Verdict: L-4 MATCHES (L-3 + exactly R-G and R-B; both CORRECT in meaning). All statements of P-ACYC stay SIGN (ACYC-XI
+  PROVED-CONDITIONAL, as before).

@@ -1,0 +1,6 @@
+R-I old in L-4: 1 new in L-4: 0
+R-A old in L-4: 1 new in L-4: 0
+L-4         ('4017305a34eac21615ba8f172a9b899544d25659', 5198, 125, 125)
+L-4 + R-I   ('a51e0e899e5ba6ebbb0a53ca54f3dc865eccb6a5', 5138, 124, 124)
+L-4 + R-A   ('eaff3343fa07decba94802bca0a46d97e8efcbf7', 5252, 125, 125)
+L-4 + R-A + R-I ('fe4d3f902b6afde93384ebf625fa9bebcea0e1d0', 5192, 124, 124)

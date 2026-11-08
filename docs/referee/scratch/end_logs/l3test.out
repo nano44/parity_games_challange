@@ -1,0 +1,8 @@
+S1 old in L-2 1
+S2 old in L-2 1
+S3 old in L-2 1
+S4 old in L-2 1
+S5 old in L-2 1
+parens 105 105 min depth 0 | newlines 1 | bars 0 | predicted L-3 sha1 d6afe92ae0d2c0021743c99d2bd10f16cad27c73 7215 B
+d6afe92ae0d2c0021743c99d2bd10f16cad27c73  endL3.txt
+cmp L-3 (claude/l-new 8b67d40e) vs rebuild: EQUAL
