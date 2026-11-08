@@ -192,6 +192,15 @@ movers in closure(x); acyclic wiring)
   - C1 ended at 169; C6 (T 0.5 from C4 at 09:00Z) at 151.
   - The obstruction is unchanged: f6 is sacrificed when the order is free, and q7 when the order is forced.
 
+### 2g. A 13-free carrier for f6, and the frozen-gadget search (DATA; 09:4xZ, date -u)
+- In C5's final genome, 59 movers do not reach 13. Helper 18 is one of them, and its state equals f6's required preference at all
+  126 of f6's free pre-states after step 3 (pref = s18; unit = free pre-state; scope = the clamped C5 run). In C4's final genome
+  only mover 36 avoids 13, and nothing there determines f6's need. L-COMP 13 (via the Lead 09:49Z) reached the same conclusion:
+  on C4, no rewiring of f6 alone works; UNSAT DRUP-verified, scoped to that wiring and those ranks.
+- Hand edit: f6:0 → 18, f6:1 → 60 (= the target of 18's option 1). Then f6's decider is 18:1 when s18 = 1, and 18's own decider
+  when s18 = 0. On C5 it raises the score from 538 to 739 (other movers' chains pass through f6). C7 / C8 continue from it with f6's
+  two options frozen (ann.c 8th argument «26,27») and only «18 must not reach 13» enforced, so q7 may read 13 again.
+
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All are about the IDEAL
 model's step sequence (R104's definition) on 𝓛^R_d and its F-profile. Not M3, not a step-4 pass, not a TARGET.md claim.

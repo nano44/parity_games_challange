@@ -4,6 +4,7 @@
    Score 0 = the exact greedy (l7/ranksolve.py) succeeds; the final genome is re-checked in Python (ranksolve + sim6).
    Preferences by ENC: top option of chain(x,0) xor chain(x,1) by rank (128-bit masks), no big integers.
    Usage: ann GENOME.txt CORE.txt OUT SEED SECONDS TEMP [X:y1,y2,...]   (resumes from OUT if it exists)
+   Optional 8th argument: comma list of option indices whose targets are never re-pointed (a hand-wired gadget).
    Optional order constraint: no mover y_i may reach mover X by Xi-edges (closure); enforced on every move and repaired at start.
    Build: gcc -O2 -o ann ann.c -lm */
 #include <stdio.h>
@@ -140,10 +141,11 @@ int score(void) { if (!topo() || !order_ok()) return 1 << 30; simulate(); return
 typedef struct { int xt[MAXO], br[MAXO], bp[MAXO], gate[4 * 32], start[MAXN]; } G;
 void save(G *g) { memcpy(g->xt, xt, sizeof xt); memcpy(g->br, br, sizeof br); memcpy(g->bp, bp, sizeof bp); memcpy(g->gate, gate, sizeof gate); memcpy(g->start, start, sizeof start); }
 void load(G *g) { memcpy(xt, g->xt, sizeof xt); memcpy(br, g->br, sizeof br); memcpy(bp, g->bp, sizeof bp); memcpy(gate, g->gate, sizeof gate); memcpy(start, g->start, sizeof start); }
+unsigned char frozen[MAXO];
 void mutate(void) {
   double r = urand();
   if (r < 0.55) { for (int k = 0; k < 20; k++) { int m = rnd() % NO, x = m / 2, y = (int)(rnd() % (N + 1)) - 1;
-      if (y == x) continue; int old = xt[m]; xt[m] = y; if (topo()) return; xt[m] = old; } return; }
+      if (y == x || frozen[m]) continue; int old = xt[m]; xt[m] = y; if (topo()) return; xt[m] = old; } return; }
   if (r < 0.75) { int a = rnd() % NO, b = rnd() % NO, t = br[a]; br[a] = br[b]; br[b] = t; return; }
   if (r < 0.85) { bp[rnd() % NO] ^= 1; return; }
   if (r < 0.93) { int l = 8 + rnd() % (d - 8); for (int i = 3; i > 0; i--) { int j = rnd() % (i + 1), t = gate[4 * l + i]; gate[4 * l + i] = gate[4 * l + j]; gate[4 * l + j] = t; } return; }
@@ -164,6 +166,7 @@ int main(int argc, char **argv) {
       for (int y = 0; y < N; y++) if ((nrMask >> y) & 1ULL) for (int k = 0; k < 2; k++) { int w = xt[2 * y + k];
         if (w >= 0) { int old = w; xt[2 * y + k] = -1; if (!reaches(y, nrX)) { xt[2 * y + k] = old; if (reaches(old, nrX) || old == nrX) xt[2 * y + k] = -1; } } }
     printf("order constraint X %d mask %llx ok %d\n", nrX, nrMask, order_ok()); }
+  if (argc > 8) { char *q = argv[8]; while (*q) { frozen[atoi(q)] = 1; while (*q && *q != ',') q++; if (*q == ',') q++; } }
   rs ^= (unsigned long long)atoll(argv[4]) * 2654435761ULL; double secs = atof(argv[5]), temp = atof(argv[6]);
   int cur = score(), best = cur; G g, bestg; save(&g); save(&bestg); long it = 0, acc = 0; time_t t0 = time(0), last = t0;
   printf("start score %d constraints %d\n", cur, nc); fflush(stdout);
