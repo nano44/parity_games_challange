@@ -1,0 +1,2 @@
+EXACTL223 exhaustive N<=2 acyclic genomes 5000 mismatches 0 maxL 2
+EXACTL223 random-topological-order seed 2233 genomes 3000 mismatches 0 maxL 4

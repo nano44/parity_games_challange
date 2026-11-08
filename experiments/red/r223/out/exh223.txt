@@ -1,0 +1,2 @@
+EXH genomes 48816 bad 0 maxF spec 3 xi 3 idx 3
+N3 seed 2232 genomes 30000 bad 0 maxF spec 4 xi 6 idx 4

@@ -1,0 +1,23 @@
+VIOL ('E', 'NS', 'K12') (0, 1, 0, 3, 2, 1) flip223_E_NS_K12_rand_2235_10.json
+VIOL ('E', 'NS', 'beta') (6, 0, 3, 6, 2, 1) flip223_E_NS_beta_rand_2235_98.json
+FLIP223 rand seed 2235 genomes 2000 maxT 13 switches E-decided 7226 P-decided 10836
+  NS    K12    units  21217 maxflips   3 violE    63 violP     0
+  NS    beta   units  76654 maxflips   3 violE    80 violP     0
+  NS    bo     units   2555 maxflips   0 violE     0 violP     0
+  SETe  K12    units    883 maxflips   2 violE     0 violP     0
+  SETe  beta   units   3372 maxflips   1 violE     0 violP     0
+  SETe  bo     units   2398 maxflips   0 violE     0 violP     0
+  SETo  K12    units   1326 maxflips   0 violE     0 violP     0
+  SETo  beta   units   4009 maxflips   1 violE     0 violP     0
+  SETo  bo     units   1074 maxflips   0 violE     0 violP     0
+VIOL ('E', 'NS', 'beta') (1, 1, 0, 3, 2, 1) flip223_E_NS_beta_ret_2236_725.json
+FLIP223 ret seed 2236 genomes 1000 maxT 9 switches E-decided 4272 P-decided 3739
+  NS    K12    units   5107 maxflips   1 violE     0 violP     0
+  NS    beta   units  37448 maxflips   3 violE     2 violP     0
+  NS    bo     units    495 maxflips   0 violE     0 violP     0
+  SETe  K12    units   2619 maxflips   1 violE     0 violP     0
+  SETe  beta   units  15355 maxflips   2 violE     0 violP     0
+  SETe  bo     units   6001 maxflips   0 violE     0 violP     0
+  SETo  K12    units    113 maxflips   0 violE     0 violP     0
+  SETo  beta   units   1039 maxflips   0 violE     0 violP     0
+  SETo  bo     units    138 maxflips   0 violE     0 violP     0
