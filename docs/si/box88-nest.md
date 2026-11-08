@@ -107,7 +107,8 @@ Unit = genome; scope as §1; counters leap88 (per-bit or ALL as named), nest88 (
 | climbp88 (per-bit; MIRROR lanes) h = 3 seed 2883 | HP3_mup lanes | 300 | HP3t | 17 | 3 | 7 | 2 | 1 / 1 | 4 |
 | climbp88 h = 4 seed 2884 | HP4_mup lanes | 300 | HP4t | 24 | 7 | 9 | 4 | 6 / 2 | 5 |
 | climbp88 h = 5 seed 2885 | HP5_mup lanes | 150 | HP5t | 71 | 7 | 9 | 2 | 13 / 2 | 6 |
-H5H6_PENDING
+| climbp88 h = 5 resume, seed 2895 | HP5t cfg | stopped at 14:05Z after ~70 min, no gain (only improvements are logged, so the iteration count is not known) | — (= HP5t) | 71 | 7 | 9 | 2 | — | — |
+| (h = 6 lane climb seed 2886 from extrapolated lanes) | doubled HP5 lanes | stopped at 12:19Z after ~45 min, no gain over its seed (iteration count not logged) | — | 56 | 3 | 3 | 1 | — | — |
 - No climbed genome violates NEST-CHARGE, E-MON or Claim C (chargefail / monofail / ascfail 0 on every scored genome; climb88 records
   violations and found 0 in 4,500 mutants).
 - Fit: tuned per-bit maxev(h) = 3 / 7 / 9 / 9 at h = 2 / 3 / 4 / 5 (h = 2: HP2_mup); maxk(h) = 0 / 3 / 7 / 7. Neither is super-linear;
