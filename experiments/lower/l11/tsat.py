@@ -8,7 +8,7 @@ per option: exit or another mover), a strict order on movers (acyclic), helper s
 Sharing constraints (BOX L11): HR(x, y) = «x reaches helper y by a path whose inner movers are helpers»; client(j, y) = OR over the
 two movers x of core pair j of HR(x, y). Mode 'disj': no helper is a client of two different core levels (each level owns its
 helpers). Mode 'shared:J1,J2': every helper read by level J2 is also read by level J1 (one shared cascade). Mode 'none'.
-Also 'noread:X:Y1+Y2' (mover X must not reach movers Y.. in the full wiring, any path).
+Env PREFIX=T0: only rows 0..T0 of the target. Also 'noread:X:Y1+Y2' (mover X must not reach movers Y.. in the full wiring, any path).
 CLI: tsat.py TARGET d MODE solver(g4|c195) tlimit_s OUTPREFIX  -> appends a result line to OUTPREFIX.res; UNSAT: CNF + proof
 (Glucose4) written to OUTPREFIX.cnf / .proof; SAT: decoded genome (sim6-replayed) to OUTPREFIX.genome."""
 import sys, os, itertools, time, threading
@@ -189,7 +189,9 @@ def decode(model, B):
     return {'d': B['d'], 'xt': xt, 'br': br, 'bp': bp, 'gate': gate, 'start': list(S[0])}, S
 if __name__ == '__main__':
     tgt, d, mode, sv, tl, outp = sys.argv[1], int(sys.argv[2]), sys.argv[3], sys.argv[4], float(sys.argv[5]), sys.argv[6]
-    LS, cg = rdtarget(tgt); t0 = time.time(); B = build(LS, cg, d, mode); c = B['c']
+    LS, cg = rdtarget(tgt)
+    if os.environ.get('PREFIX'): LS = LS[:int(os.environ['PREFIX']) + 1]
+    t0 = time.time(); B = build(LS, cg, d, mode); c = B['c']
     print('target', tgt, 'h', B['h'], 'd', d, 'mode', mode, 'T', B['T'], 'vars', c.n, 'clauses', len(c.cl), f'build {time.time()-t0:.0f}s', flush=True)
     if sv == 'g4':
         from pysat.solvers import Glucose4; s = Glucose4(bootstrap_with=c.cl, with_proof=True)
