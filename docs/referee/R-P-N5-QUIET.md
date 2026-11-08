@@ -262,3 +262,23 @@ Only REFEREE-2's items as quoted in fixes entry 2 were read; docs/referee-2/ was
   - Fixes entry 2 CORRECT. L-2 MATCHES the packet (= L-1 + QT-L1..QT-L6).
   - D-1 and D-2 are fixed in the tools: re-run identical, all 0.
   - All statements stay as in §0: SIGN; ASC-T and UP-T conditional on R121 landing first; UP-T under HYPOTHESIS [E-LEV].
+
+## §D. Fixes entries 3-4 and line L-4 (REFEREE successor 30, Opus 5.5, D15; date -u at writing 2026-11-08T13:55Z)
+- Objects (Lead 13:54Z): claude/l-new 87603d07 (ancestor of origin/claude/l-new, checked). docs/new/P-N5-QUIET-line-L4.txt sha1
+  0809da259cc54e3cec1fdf455070620314d4e622, 5,433 B. L-2 at 87603d07 = fed89346; packet sha1 066dfc7d unchanged (frozen). L-3
+  (d9b5e610) superseded, never routed.
+- Byte test: scratch/quiet_l4.py applies R-L, R-U, R-B2, R-Q, R-T, R-G to L-2 with strings typed from the tables of fixes entries 3-4
+  (R-U's «…» filled from L-2's own text between the table's fixed ends), not from the lane's scripts. Each old string once in L-2.
+  `cmp` with the lane's L-4: **EQUAL** (scratch/quiet_logs/l4test.out). One line, 103 «(» = 103 «)», depth never negative, 0 «|».
+- Lane's own checks, from `git archive 87603d07`: quiet.pins 42 rows, `sha1sum -c` all OK; box194/mkl4_194.py reproduces L-4.
+- Meaning:
+  - R-G: CORRECT. It is the step of my §3 (Q4) l. 118-120 (REFEREE 28), as I read it for the Lead (12:27Z: (b), narrow) and as the Lead
+    ruled (12:24Z, L41); its parenthesis «else E(y) ⊇ S, against y's class» is the argument. «signed by both referees»: true (REFEREE 28
+    in §3; REFEREE-2 35, R2-P-N5-QUIET.md Add. 3, claude/referee-2 09ce14fc). Fixes entry 3's «R-G repair» states it correctly, and its
+    note on placement (before «DATA, clause by clause», not inside «(R118's DATA)») is right.
+  - R-B2: CORRECT; entry 3 carries a proof step, so the note names entries 1-3 and successors 62, 64, 65.
+  - R-Q: CORRECT, given that R121 lands first: R121's line L-6 (a23c61d3) defines «seq_t(v)» and «an ascent of seq_t(v)».
+  - R-L (drops «to land first»): CORRECT only as a landing-time sentence. At trunk bef76cf4 (fetched at writing) R121 is NOT yet in RESULTS; so this
+    line must land after R121, which is already the landing order (R-P-N5-QUIET §0: ASC-T / UP-T conditional on R121). Note for the Lead.
+  - R-U, R-T: CORRECT (status words in order, M4 sentence unchanged in meaning; Q defined, T_CYC named).
+- Verdict: fixes entries 3-4 CORRECT. **Line L-4 MATCHES** the packet read with fixes entries 1-4, provided it lands after R121.

@@ -171,3 +171,98 @@ linefix.out, rt_n1.out, L1.txt, P-N5-CHAIN.md (the frozen packet, copied for the
   labels; HUB-ASC-G3 conditional on P-N5-ASC §4 / R121; UP-JUMP3, UP-B3, CHAIN3 under [E-LEV]; CHAIN3 also conditional on P-N5-END and
   P-N5-ASC §4; DEAD RUN-TRANSFER confirmed). §6 TARGET.md diff unchanged (L-2 changes a DATA clause only).
 - docs/referee-2/ not read for this section.
+
+## §D. Fixes entry 2 and line L-3; correction of §5 / §C (REFEREE successor 30, Opus 5.5, D15; date -u at writing 2026-11-08T12:14Z)
+- Objects (Lead 12:14Z): claude/l-new 219e3933 (ancestor of origin/claude/l-new, checked). docs/new/P-N5-CHAIN-line-L3.txt sha1
+  c484795c888ab46cee07038094368ba28da0055d, 8,450 B. L-2 at 219e3933 = e481d260; packet sha1 6e613ba7 unchanged (frozen).
+- Byte test: scratch/chain_l3.py applies REFEREE-2 35's R-1, R-2, R-4 and optional N-1 (docs/referee-2/R2-P-N5-CHAIN.md at
+  claude/referee-2 0e5c7c37 l. 212-222; strings typed from that report) to L-2; each old string once in L-2. `cmp` with the lane's
+  L-3: **EQUAL** (scratch/chain_logs/l3test.out). One line, 164 «(» = 164 «)», depth never negative, 0 «|». (My 12:04Z prediction
+  771dfaeb… / 8,438 B was without N-1, which the lane also took.)
+- Lane's own checks, from `git archive 219e3933`: chain.pins 55 rows, `sha1sum -c` all OK; box196/mkl3_196.py prints «R-1, R-2, R-4,
+  N-1 old once each, applied; sha1 c484795c… 8450 bytes; parens 164 164».
+- **Correction of my lane's earlier verdicts (successor 29's §5 DATA review; my §C «L-2 MATCHES», 4434597c).** We checked the DATA
+  clauses' numbers but not each counter's unit and predicate against the code. REFEREE-2 35's three findings hold in the lane's code
+  (experiments/new/box196/qt3_196.py at 8b67d40e, read by me):
+  - R-1: l. 86-87 `cur += 1 … if cur > L3: c["wfail"] += 1` counts quiet STEPS past the L3-th, not windows (its own header l. 13 says
+    «[windows]»). The new unit is the code's.
+  - R-2: l. 90 `if T3 > Q + (Q + 1) * L3: c["Tfail"] += 1` tests the Q-form only; the Σ_v form (which also needs Q ≤ Σ_v (D − 1)) has no
+    counter. The new unit says so.
+  - R-4: l. 60 `if sb[K2] != r: c["k2fail"] += 1` counts only the first conjunct of LOC-K2-3. The new unit says the second is not counted.
+  - N-1: l. 28 `MODE = os.environ.get("Q196_MODE", "xi")`, and check196.sh l. 8 runs the 5 files without Q196_MODE: they run in xi mode.
+    CORRECT.
+  - Every count in these clauses is 0, so no number and no statement changes; only the DATA wording was wrong. Lesson kept in my
+    notebook: in a DATA clause, read the counter's predicate and increment in the code, not only its output and header.
+- W-1 (REFEREE-2's proof-wording finding, recorded as a note in fixes entry 2: (Core)'s «passes K0 iff it passes K3» and (F-cls3)'s
+  convexity false over all vertices; E-MON3's stated reason invalid as an inference; repair: restrict to non-core vertices, the eight
+  core vertices being constant): my lane's §3 did not catch it either. I have NOT re-derived the repair in this section. My §0
+  signatures on statements whose proofs use (F-cls3) / E-MON3 stand only on the repaired reading, which REFEREE-2 checked and the lane
+  accepted; an independent check by me is open (NEEDS).
+- Verdict: fixes entry 2 CORRECT as to R-1, R-2, R-4, N-1. **Line L-3 MATCHES** the packet read with fixes entries 1-2.
+
+### §D follow-up: W-1 re-derived (REFEREE successor 30; date -u at writing 2026-11-08T12:43Z; Lead 12:24Z asked; no runs, reading only)
+- Sources: packet frozen 6e613ba7 (text at claude/l-new 8b67d40e: (Core) l. 97-99, (F-cls3) l. 218-221, (Q1)-(Q4) l. 226-240, E-MON3
+  l. 262-266, Lemma LOC-K2-3's proof l. 198); [DEF] / [G3] quotes l. 42-49; REFEREE-2 35, R2-P-N5-CHAIN.md «W-1» (claude/referee-2
+  0e5c7c37 l. 132-148). Its r2nonconv.out not re-run; its witness checked by hand below.
+- The defect is real.
+  - (Core)'s «a play passes K0 iff it passes K3»: K3's only in-edge is from pA and pA's only from K0 (l. 98), so a play starting at pA or
+    K3 passes K3 and not K0. True for every other start (K0 → pA → K3 frozen), i.e. «iff» holds for plays not starting at pA, K3.
+  - (F-cls3)'s convexity over all vertices: false. Hand check of REFEREE-2's witness with [DEF]'s priorities (K3 = top + 3, odd, the most
+    relevant vertex; K0 = top + 2, even; e even above every β): x_1 (Λ K1, Π {β, K0, K3}) ◁ e_(3,1) (Λ K1, Π {β, e, K0, K3}): Δ = {e},
+    even, in the later set. e_(3,1) ◁ K1 (Λ K1, Π ∅): the top of Δ is K3, odd, in e_(3,1)'s set. x_1 and K1 have class (K1, ∅), e_(3,1)
+    has (K1, {e}): a class that is not convex. The cause: core vertices K1, s, r, K2 have node K1 without K0 / K3 in Π.
+  - E-MON3's reason «both plays have node w, so both or neither contain them» does not follow from (Core) for v ∈ {pA, K3}.
+- The repair holds (my derivation).
+  - Core in-edges, from [DEF] l. 46 and [G3] l. 48 with the pads: K0 ← q, pb_g's; pA ← K0; K3 ← pA; K1 ← K0, s, r, K3; s ← K1; r ← K2;
+    K2 ← K3, K2; q ← K1. The only edge from outside {K0, pA, K3, K1, s, r, K2, q} into it is pb_g → K0.
+  - Core vertices: every out-edge choice inside the core is fixed on the states in question (K0 → pA, pA → K3, K3 → K2, K1 → s, s → K1,
+    r → K1, q → K0 forced or frozen by (Core); σ̄(K2) = r by LOC-K2-3, signed). So each of the eight has the same play, hence the same
+    value, at every state (l. 198 computes three of them).
+  - A non-core vertex v: its play either never enters the core (then K0, K3 ∉ Π) or enters by pb_g → K0 → pA → K3 → K2 → r → K1 → s → K1
+    (node K1; K0, K3 both more relevant than K1 (priority 5), so both in Π). So for non-core v, {K0, K3} ∩ Π_t(v) is ∅ or {K0, K3} and is a
+    function of Λ_t(v) alone (both iff Λ = K1; K2 cannot be the node of a non-core play under σ̄(K2) = r). Hence on non-core values the order
+    is reward(Λ), then E, then the rest: classes of non-core values are convex.
+  - Uses, each covered: (Q1) compares pe_g, pβ_g (pads, non-core). (Q2) a mover, its pad and its gate (non-core). The per-vertex
+    interval property: a non-core vertex's values are ⊴-monotone (F1) and its classes convex, so each class is one interval; a core vertex
+    is constant (one class). So Q ≤ Σ_v (D^tot_E(v) − 1). (Q3)-(Q5) compare values of plays from non-core class-C vertices, plus constant
+    boundary values. E-MON3: for non-core v the K-layer is fixed by the equal node w, so K0, K3 are not in Π_t(v) Δ Π_(t+1)(v); for core v
+    the two plays are equal. The claim of E-MON3 and every statement stay as signed.
+- Verdict: REFEREE-2's W-1 repair is CORRECT and SUFFICIENT; I sign it. Is it L41's case? Yes, by the same standard as the Lead's (Q4)
+  ruling 12:24Z: two sentences of the frozen text ((F-cls3)'s convexity, E-MON3's reason) are false as written, and the proof needs the
+  case split (non-core / core-constant), which the packet's text does not make, though every fact it uses is in the packet ((Core) l.
+  97-99, LOC-K2-3, l. 198). The step is referee-originated (REFEREE-2 35) and now signed by both referees (REFEREE-2 35, R2-P-N5-CHAIN.md
+  W-1; this section). The line should name it in one clause, e.g. «(F-cls3)'s convexity and E-MON3's reason hold for non-core vertices;
+  the eight core vertices are constant (W-1, REFEREE-2 35, both referees)». No statement, label or number changes.
+
+### §D follow-up 2: the (Q5) boundary step on Γ3 (REFEREE successor 30; date -u at writing 2026-11-08T13:10Z; Lead 13:02Z; no runs)
+- The omission is real here too, as in P-N5-QUIET (Lead ruling 12:24Z, (b)). (Q5) (frozen text l. 247-249) says «F4′ (… the face is in
+  neither Π, by (Q4)'s argument and simplicity)». F4′ at the face β_g compares continuation values; on the last segment one of them is a
+  boundary value. (Q4)'s argument (l. 234-235) is the cycle argument for β_g ∉ Π(z), z the face's own frozen successor; it does not give
+  β_g ∉ Π of an outside boundary value, and simplicity covers only the path. My lane's first review (§3) did not catch it.
+- Γ3 form (REFEREE-2 35, R2-P-N5-CHAIN.md Add. 3, claude/referee-2 09ce14fc), re-derived; every boundary kind of (Q4) l. 236-238:
+  - e-face boundary: pe_g → e_g → y with y in the B-class (w, S ∖ {e_g}). If y's play passed β_g ∈ C, then by memorylessness it contains
+    β_g's play, with the same cycle and node w, so Π(y) ⊇ Π(β_g) and E(y) ⊇ E(β_g) = S, contradicting E(y) = S ∖ {e_g}. So β_g ∉ Π(y).
+    (pe_g, the face pads and the gate are in no Π by CN2-3, so they add nothing.)
+  - core exit β → pb → K0 → pA → K3 → K2 → r → K1 → s → K1 (constant, σ̄(K2) = r by LOC-K2-3): node K1 (priority 5); on the play only K0
+    (top + 2) and K3 (top + 3) are more relevant than K1 (pb, pA, r, s pads of priority ≤ 2; K2 priority 3), so Π = {K0, K3} ∌ β_g. This
+    agrees with my W-1 derivation (follow-up 1).
+  - w itself: Ω(w) = (w, ∅, 0), Π = ∅.
+- Verdict: the Γ3 form of the step is CORRECT; I SIGN it. With REFEREE-2 35's signature it is signed by both referees. L41 (Lead ruling
+  13:02Z): the line names it (R-G3); I will byte-test L-4. No statement, label or number changes.
+
+## §E. Fixes entry 3 and line L-4 (REFEREE successor 30, Opus 5.5, D15; date -u at writing 2026-11-08T13:55Z)
+- Objects (Lead 13:54Z): claude/l-new 87603d07 (ancestor, checked). docs/new/P-N5-CHAIN-line-L4.txt sha1
+  a69c8aa96fb0b67c6c0a3f6d11670a0b57ba9331, 9,082 B. L-3 at 87603d07 = c484795c; packet sha1 6e613ba7 unchanged (frozen).
+- Byte test: scratch/chain_l4.py applies R-G3, R-W, R-B3 in that order to L-3, strings typed from fixes entry 3's table (not the lane's
+  script). R-G3 and R-B3 old strings once in L-3; R-W's old string absent from L-3 and once after R-G3. `cmp` with the lane's L-4:
+  **EQUAL** (scratch/chain_logs/l4test.out). One line, 174 «(» = 174 «)», depth never negative, 0 «|».
+- Lane's own checks, from `git archive 87603d07`: chain.pins 57 rows, `sha1sum -c` all OK; box196/mkl4_196.py reproduces L-4.
+- Meaning, against my §D follow-ups 1-2 (b5ac2304, 91334ccd) and REFEREE-2 35's W-1 / Add. 3:
+  - R-G3: CORRECT. The three boundary kinds and their reasons are those of my follow-up 2 (e-face target: S = E(β_g) ⊆ E(y); pb exit:
+    Π = {K0, K3}; w: Π = ∅). Credits are right; «signed by both referees» true (follow-up 2; REFEREE-2 35 Add. 3).
+  - R-W: CORRECT. It is follow-up 1's repair: convexity and E-MON3's reason for non-core vertices, the eight core vertices constant;
+    «signed by both referees» true (follow-up 1; REFEREE-2 35 W-1). (Core)'s «iff» is not named in the clause; fixes entry 3 restates it;
+    no use of (Core) outside the two repaired sentences needs it for pA or K3, so the clause is sufficient.
+  - R-B3: CORRECT; entry 3 carries the two proof repairs, so the note names entries 1-3 and successors 64-65.
+  - Fixes entry 3's restatements of both repairs match follow-ups 1-2.
+- Verdict: fixes entry 3 CORRECT. **Line L-4 MATCHES** the packet read with fixes entries 1-3. Statements and labels as in §0.

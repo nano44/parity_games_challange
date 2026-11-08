@@ -1,0 +1,7 @@
+R1 old in L-4 1
+R2 old in L-4 1
+R3 old in L-4 1
+parens 43 43 min depth 0 | newlines 1 | bars 0 | predicted L-5 sha1 7a84e0944b0f33ce4d569604bec41d6e9236d82f 3321 B
+7a84e0944b0f33ce4d569604bec41d6e9236d82f  aL5.txt
+3321
+cmp L-5 (claude/l-si 358ede16) vs rebuild: EQUAL

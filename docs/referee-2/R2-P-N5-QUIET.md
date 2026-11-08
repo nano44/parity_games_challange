@@ -379,3 +379,51 @@ R2-P-N5-QUIET/bt_overlap.py (out bt_overlap.out).
   - CN2, LOC-GATE, LOC-K2, B-ONLY, NO-TIE, QUIET, T-QUIET, ASC-T: SIGN.
   - UP-T: SIGN under HYPOTHESIS [E-LEV].
   - ASC-T and UP-T land after R121.
+
+## Addendum 3: REFEREE 28's boundary step in (Q4) / (Q5) (REFEREE-2 successor 35, Opus 5.5, D1; 2026-11-08 12:21Z by date -u)
+- Asked (Lead 12:25Z, L41 case, gates R123): REFEREE 28's R-P-N5-QUIET.md §3 (Q4) (claude/referee 407f4a21 l. 118-120) adds «A boundary
+  W-target y in class (w, S ∖ {e}) never has a C-vertex β in Π(y)». Do I SIGN it, and did this report's (Q5) (l. 130-131) cover it?
+- Where it is needed. In (Q5)'s Bellman-Ford step, take a simple G_C-path x = x_1 → g_1 → β_1 → x_2 → … → x_h → g_h → (e-face) → y. Its
+  value is P(x_1) := ext-chain(x_1, g_1, β_1, …, Ω(y)). The induction compares Ω_(t)(x_2) with P(x_2) under ext(β_1, ·), by F4′. F4′ needs
+  β_1 ∉ Π(Ω_t(x_2)) ∪ Π(P(x_2)).
+  - Π(P(x_2)) is (the path vertices after β_1 that are more relevant than w) ∪ Π(Ω(y)).
+  - Simplicity keeps β_1 out of the first part.
+  - «(Q4)'s argument» (β_g ∉ Π(z), z its frozen successor) keeps β_1 out of Π(Ω_t(x_2)).
+  - Neither keeps β_1 out of Π(Ω(y)), the boundary value. That is exactly REFEREE 28's step.
+  The same holds for every β on the path, and for the last e-face, where e_g ∉ E(y) is (Q4)'s second bullet.
+- The step, re-derived. Suppose β ∈ C (class (w, S)) and β ∈ Π(y).
+  - Then β is on y's play prefix: Π holds prefix vertices only.
+  - So β's play is a suffix of y's play with the same node w, and Π(β) ⊆ Π(y).
+  - So S = E(β) ⊆ E(y) = S ∖ {e}. This is impossible, since e ∈ S.
+  The other boundary points are also safe. The exit β → u has a value whose Π holds only core vertices. w itself has Π = ∅. **SIGN.** No
+  statement changes, and QUIET's proof is complete with it.
+- Did this report's (Q5) cover it? **No, not explicitly.** l. 130-131 say «The face is in neither Π: not on the simple sub-path, and not
+  in Π(z) by (Q4)'s argument». That covers the path part and Ω_t(z), not Π of the boundary value inside P(z). So REFEREE 30 is right that
+  the cited «(Q4)'s argument» does not give it. The step is true (above). My signature of QUIET stands with this step made explicit. I
+  have no objection to L-NEW's line clause naming it. I will byte-test L-3 when it is sent.
+- The same omission is in P-N5-CHAIN (Q5) («the face is in neither Π, by (Q4)'s argument and simplicity»), and in my own CHAIN
+  re-derivation (R2-P-N5-CHAIN.md, «The face β is in no Π of either compared value: on z's play it would close a cycle through β, and the
+  path is simple»). The same repair holds on Γ3 word for word.
+  - The e-face boundary y is in (w, S ∖ {e}), so β ∈ Π(y) gives S ⊆ S ∖ {e}.
+  - The exit pb → K0 has Π = {K0, K3}.
+  - w itself has Π = ∅.
+  - pe and pβ pads are in no Π (CN2-3).
+  It is recorded in R2-P-N5-CHAIN.md Addendum 3. CHAIN's verdicts stand. If the Lead wants CHAIN's line to name the step as well, I will
+  byte-test that too.
+
+## Addendum 4: byte tests of lines L-3 and L-4 (REFEREE-2 successor 35, Opus 5.5, D1; 2026-11-08 13:55Z by date -u)
+- Object: claude/l-new 87603d07f946a880595dabeff2eef068e3493c72 (Lead 13:54Z). L-3 (d9b5e610…, 5,429 B, fixes entry 3) and L-4
+  (docs/new/P-N5-QUIET-line-L4.txt, sha1 0809da259cc54e3cec1fdf455070620314d4e622, 5,433 B, fixes entry 4).
+- Own script R2-P-N5-QUIET/bt_l34.py (out bt_l34.out). It reads the (key, old, new) lists from the lane's mkl3_194.py and mkl4_194.py by
+  ast literal parsing, without executing lane code. It then applies them in order to L-2 (fed89346, at 559cdffc), and then to L-3.
+  - Each old string is once in the line it is applied to.
+  - **L-3 == L-2 + R-L, R-U, R-B, R-Q, R-T, R-G: True. L-4 == L-3 + R-B2: True.**
+  - One line each, 103 «(» = 103 «)», no «|».
+- Meaning:
+  - R-G states the boundary step I signed in Add. 3 correctly: «β_g ∉ Π(y) for boundary targets y in (Q5)'s F4′ (else E(y) ⊇ S,
+    against y's class)». Its attribution to REFEREE 28 (R-P-N5-QUIET §3 (Q4), l. 118-120) is right. «signed by both referees» holds:
+    REFEREE 28's report, and this file's Add. 3.
+  - R-T now states Tfail's real condition (T_CYC > Q + (Q + 1)L, Q the loud steps). That meets the DATA rule. Optional: add «the Σ_v
+    form is not counted», as in P-N5-CHAIN's R-2, since the line states T-QUIET in the Σ-form.
+  - R-L, R-U, R-Q and R-B / R-B2 are wording only, and each is faithful to the packet and fixes entries 1-3.
+- Verdict: **L-3 and L-4 MATCH.** Statement verdicts unchanged (all SIGN, with the boundary step explicit).
