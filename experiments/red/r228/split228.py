@@ -81,7 +81,13 @@ def census(G, cap=3000):
                             t1, t2 = L[x], L[w_]; a = nx[t2 - 1][uu]; c["couples"] += 1
                             if not vj.cmp(out[t2 - 1][1][a], out[t1][1][b]) > 0: c["dn2"] += 1
                             if not lexgt(Uy(E(t2, b)), Uy(E(t1, b))): c["rh2"] += 1
-                            if Uy(E(t1, wty)) == Uy(E(t2, wty)): c["rw2"] += 1
+                            if Uy(E(t1, wty)) == Uy(E(t2, wty)):
+                                c["rw2"] += 1
+                                if "wit" not in c:
+                                    pb = play(t2, b); pre = [e for e in (pb[:pb.index(y)] if y in pb else pb) if e in evs and rk[e] > rk[y]]
+                                    c["wit"] = dict(v=v, I=(t, u_), y=y, t=t1, t2=t2, u=uu, b=b, a=a, wt=wty, Ewt=sorted(Uy(E(t1, wty))),
+                                                    Eb_t=sorted(Uy(E(t1, b))), Eb_t2=sorted(Uy(E(t2, b))), Ub_before_y_t2=pre,
+                                                    tops=[(i, z) for i, z in tops])
                             if len({Uy(E(s, wty)) for s in range(t1, t2 + 1)}) < 2: c["rw2w"] += 1
                             for tt in (t1, t2):
                                 pb = play(tt, b); pre = pb[:pb.index(y)] if y in pb else pb
@@ -101,3 +107,4 @@ if __name__ == "__main__":
     for f in sys.argv[1:]:
         G = json.load(open(f)); G = G.get("genome", G); c = census(G)
         print(os.path.basename(f), G["N"] + sum(len(o) for o in G["opts"]), " ".join(str(c[k]) for k in K), flush=True)
+        if "wit" in c: print("  first rw2 witness (own.py vertex ids):", c["wit"], flush=True)

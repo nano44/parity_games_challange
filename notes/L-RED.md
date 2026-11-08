@@ -69,6 +69,7 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   SURVIVE («consecutive» unused, line by line; 3M = mover + gate edges, valid on standard states). RW-WT* (strong) / RW-B0* not broken:
   split228.py, 4,822 same-pair couples, 25 genomes, all fails 0. C-WT loose: Dwt 18 with C ≤ 5 (DU21_h4, DSALT9). NEW: C6G8_n54 C = 6
   (two engines), frozen r228/inst. Climb ORDER=DWT seed 2803 (HOLD2_n84) running; maxm climbs 2801 / 2802 stopped (maxm 2).
+- 21:26Z: RWX_n95 (sha1 da8b3a30) kills RW-WT / RW-WT* / RW-B0 / RW-B0* on L-NEW split199 (rwfail 31, rw2fail 31, Bne_t2 31) and on my split228 (rw2 17); proved lemmas 0. R228-box199 Addendum A.
 - Item 3 RUNNING: mclimb228.py (own m-census, score (maxm, C, nm, -size)), seeds 2801 (GROW8) / 2802 (CX4), cap 400; logs r228/out/mc_400_*.log.
   Baseline census (unit: per-(v, I, y, z) max): maxm 2 on CX4, GROW7, GROW8, B0M569, C2CX4, HOLD3K, W14, W86; 1 on FW4_2, HOLD2(K), HOLD3, W68.
 - Abstract note: m(y, z) ≥ 3 needs BIN-like nesting with ≥ 4 letters (ruler 1 2 1 3 1 2 1 4 1 2 1 has m(1, 2) = 3). In the game, by

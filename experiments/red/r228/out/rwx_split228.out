@@ -1,0 +1,3 @@
+instance N+M T couples dn2 rh2 rw2 rw2w b0s sp spw jbfail spl3m C nspl Dwt DwtJ
+RWX_n95.json 328 12 17 0 0 17 17 17 0 17 0 0 2 2 7 7
+  first rw2 witness (own.py vertex ids): {'v': 17, 'I': (13, 12), 'y': 764, 't': 3, 't2': 6, 'u': 17, 'b': 240, 'a': 248, 'wt': 20, 'Ewt': [], 'Eb_t': [], 'Eb_t2': [647], 'Ub_before_y_t2': [647], 'tops': [(2, 730), (3, 764), (4, 777), (5, 647), (6, 764), (7, 772)]}
