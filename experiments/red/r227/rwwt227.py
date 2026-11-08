@@ -11,6 +11,8 @@ For consecutive y-tops t1 < t2 of (v, I): re-win iff the split pair (u, new) is 
   nobelow (BOX 199 §3 DEAD downward charge): re-wins where no vertex q of b's play at t2 has Lambda_t1(q) != Lambda_(t2-1)(q) or a change of
       its e-letters less relevant than y on [t1, t2-1];  wb (BOX 199 wbfail): (v, I, y) with c_y > #values of E(wt(y)) ∩ U_y on the y-tops' span;
   maxW = max over (v, I, y) of W_y(v, I) (non-re-win re-entries: BOX 199 REWIN-COUNT's W); maxc = max c_y;
+  bne1 / bne2 (BOX 199 Add. 1 CONJECTURE RW-B0): re-wins where b's play at t1 / t2 holds a U_y-letter before y; single: re-wins whose t2
+      step changes the successor of exactly one vertex of v's play before y (RW-1, proved);
   zb: a re-win whose most relevant changed letter above y (between E_t1(b) and E_t2(b)) is on b's play BEFORE y at t2.
 Usage: rwwt227.py G.json ..."""
 import sys, os, json
@@ -30,7 +32,7 @@ def census(G, cap=3000):
     def lexgt(A, B):            # A >lex B (e-vertices are even: more relevant top in A wins)
         d = A ^ B
         return bool(d) and max(d, key=lambda e: rk[e]) in A
-    c = dict(maxW=0, maxc=0, nobelow=0, wb=0, changes=0, kind=0, trA=0, trD=0, hw=0, gt=0, reent=0, rewin=0, dn=0, rh=0, rw=0, wc=0, zb=0, T=T)
+    c = dict(bne1=0, bne2=0, single=0, maxW=0, maxc=0, nobelow=0, wb=0, changes=0, kind=0, trA=0, trD=0, hw=0, gt=0, reent=0, rewin=0, dn=0, rh=0, rw=0, wc=0, zb=0, T=T)
     for v in range(n):
         t = 0
         while t <= T:
@@ -71,6 +73,11 @@ def census(G, cap=3000):
                                    for q in play(t2, b)): c["nobelow"] += 1
                         if not lexgt(Uy(E(t2, b)), Uy(E(t1, b))): c["rh"] += 1
                         if len(vals_wt) < 2: c["rw"] += 1
+                        for tt, key in ((t1, "bne1"), (t2, "bne2")):
+                            pb = play(tt, b); pre = pb[:pb.index(y)] if y in pb else pb
+                            if any(e in evs and rk[e] > rk[y] for e in pre): c[key] += 1
+                        pv = play(t2, v); prev = pv[:pv.index(y)] if y in pv else pv
+                        if sum(1 for q in prev if nx[t2][q] != nx[t2 - 1][q]) == 1: c["single"] += 1
                         d = Uy(E(t2, b)) ^ Uy(E(t1, b))
                         if d:
                             zz = max(d, key=lambda e: rk[e]); pb = play(t2, b)
@@ -79,7 +86,7 @@ def census(G, cap=3000):
             t = u_ + 1
     return c
 if __name__ == "__main__":
-    K = ("T", "maxc", "maxW", "nobelow", "wb", "changes", "kind", "trA", "trD", "hw", "gt", "reent", "rewin", "dn", "rh", "rw", "wc", "zb")
+    K = ("T", "bne1", "bne2", "single", "maxc", "maxW", "nobelow", "wb", "changes", "kind", "trA", "trD", "hw", "gt", "reent", "rewin", "dn", "rh", "rw", "wc", "zb")
     print("instance", " ".join(K))
     for f in sys.argv[1:]:
         c = census(json.load(open(f))); print(os.path.basename(f), " ".join(str(c[k]) for k in K), flush=True)

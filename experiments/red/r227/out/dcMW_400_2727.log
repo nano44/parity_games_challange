@@ -1,0 +1,2 @@
+start (3, 4, 14, -300) {'fanin': -1, 'A': -1, 'T': 13} N 75 M 225
+285 rw 0 wc 15 maxW 3 maxc 4 depth -1 maxP -1 C -1 fanin -1 A -1 T 14 N 99 M 301

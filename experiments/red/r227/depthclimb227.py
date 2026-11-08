@@ -3,7 +3,7 @@
 Score = (depth, maxP, C, -size) from ra227.census (depth = longest RA-chain in letters, maxP = max paths, C = max c_y); size N + M <= CAP.
 Moves: sharp226.mutate (rewire / ranks / start) and the GROW moves of growclimb226 (add an option; add a level-0/1 mover reached by a new option).
 Freezes every strict (depth, maxP, C) gain to out/dc_<CAP>_<SEED>.json and logs (depth, maxP, C, fanin, A, T, N, M).
-Env ORDER=MW scores (maxW, maxc, wc). Env ORDER=W scores (wc, -size). Env ORDER=RW scores (rw, wc, rewin) from rwwt227 and freezes any rw > 0 genome to out/rwkill_<SEED>.json. Env ORDER=C scores (C, maxP, depth) instead (the C-EQUIV target). Resumable: RESUME=out/dc_<CAP>_<SEED>.json restarts from the frozen best. Usage: depthclimb227.py SEED CAP ITER START.json"""
+Env ORDER=B0 scores (bne1 + bne2 + rw, multi-split re-wins) and freezes any kill to out/b0kill_<SEED>.json. Env ORDER=MW scores (maxW, maxc, wc). Env ORDER=W scores (wc, -size). Env ORDER=RW scores (rw, wc, rewin) from rwwt227 and freezes any rw > 0 genome to out/rwkill_<SEED>.json. Env ORDER=C scores (C, maxP, depth) instead (the C-EQUIV target). Resumable: RESUME=out/dc_<CAP>_<SEED>.json restarts from the frozen best. Usage: depthclimb227.py SEED CAP ITER START.json"""
 import sys, os, json, random, copy
 H = os.path.dirname(os.path.abspath(__file__)); sys.path[:0] = [H, os.path.join(H, "..", "r226"), os.path.join(H, "..", "r225"), os.path.join(H, "..", "r221")]
 from sharp226 import mutate
@@ -12,6 +12,11 @@ from ra227 import census
 seed, CAP, IT, SG = int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), sys.argv[4]; rng = random.Random(seed)
 size = lambda G: G["N"] + sum(len(o) for o in G["opts"])
 def score(G):
+    if os.environ.get("ORDER") == "B0":         # falsification of BOX 199 Add. 1 CONJECTURE RW-B0: maximize bne, then multi-split re-wins
+        import rwwt227; c = rwwt227.census(G, 600)
+        for k in ("depth", "maxP", "C", "fanin", "A"): c.setdefault(k, -1)
+        if c["bne1"] + c["bne2"] + c["rw"] > 0: json.dump(G, open(f"out/b0kill_{seed}.json", "w"))
+        return (c["bne1"] + c["bne2"] + c["rw"], c["rewin"] - c["single"], -size(G), 0), c
     if os.environ.get("ORDER") == "MW":         # per-letter W (BOX 199 REWIN-COUNT's W_y(v, I)): maximize maxW, then maxc, then total wc
         import rwwt227; c = rwwt227.census(G, 600)
         for k in ("depth", "maxP", "C", "fanin", "A"): c.setdefault(k, -1)
