@@ -89,3 +89,37 @@
 
 ### Machine checks after this entry
 - asc.pins: asc193.py and this fixes file re-pinned; line L-2 added (35 rows). check.sh block «P-N5-ASC» unchanged (it reads asc.pins).
+
+## Fixes entry 3 (L-NEW successor 63; Lead 03:30Z: «P-N5-ASC fix round 3, from CHECKER 21 C135 … Write fixes entry 3 (append-only) and docs/new/P-N5-ASC-line-L3.txt by script»)
+- Report: CHECKER 21 C135 (claude/checker 0942e8be, docs/checker/C135.md): FAIL E-1 to E-4, «No statement, proof, definition or DATA
+  figure changes; E-3 narrows one clause to its signed form.» All four ACCEPTED as written. The packet is unchanged; entries 1-2 are
+  unchanged; where they differ, this entry governs.
+- Line: L-2 (docs/new/P-N5-ASC-line-L2.txt) → L-3 (docs/new/P-N5-ASC-line-L3.txt), written by experiments/new/box193/mkl3_193.py from
+  C135 §5 byte-for-byte (`git show 0942e8be:docs/checker/C135.md`; wrapped lines joined with one space, as C135 §5 says). The script
+  asserts that each old string occurs exactly once in L-2, applies R1-R4 in order, and asserts L-3's sha1 = 0012d6710983ec339be8f5d4e051a205cc9207ba
+  (5,154 bytes, one line, 122 «(» / 122 «)», no «|»), C135's target. Result: equal.
+
+### E-1 / R1 (R-B): source note. ACCEPTED.
+- Old: «; L-NEW successor 61)» → New: «; L-NEW successors 61-62)». Entry 1 (AS-1, AS-4, W-1, unit counts) and entry 2 are successor 62's.
+
+### E-2 / R2 (R-G, L41, Lead ruling): HUB-ASC-G's B = 0 constant. ACCEPTED.
+- Old: «; §3-§5 do not use [E-LEV]; DATA, clause by clause» → New: «; §3-§5 do not use [E-LEV]; the proof of record of HUB-ASC-G's B = 0 case
+  (F′_0 = F_0, DESC-POLY on the whole interval) is referee-originated (REFEREE R-P-N5-ASC §3 AS-1, restated in P-N5-ASC's fixes entry 1
+  AS-1), signed by both referees; DATA, clause by clause».
+- Reason (C135 E-2): the packet's «§4's proof applies word for word» (l. 160) gives a factor M² + 3M + 1 at B = 0; F′_0 = F_0 is AS-1's
+  argument (entry 1 AS-1).
+
+### E-3 / R3 (R-R): the READING inside CHAIN-DECOMP's clause. ACCEPTED.
+- Old: «so the e-vertices of one Λ-class form one forest whose paths are the sequences seq_t(v)» → New: «hence seq_t(v) = (f, seq_t(y_f))»,
+  the lemma's own signed sentence (packet l. 81 «Hence seq_t(v) = (f, seq_t(y_f)).»). The forest reading (packet l. 89-90) stays in the
+  entry body as a proof step of HUB-ASC-G; it is not a line clause.
+
+### E-4 / R4 (R-Q): seq_t(v) and «ascent» defined in the line. ACCEPTED.
+- Old: «with E_t(v) the set of e-vertices in Π_t(v),» → New: «with seq_t(v) the e-vertices in Π_t(v) in play order, E_t(v) their set, an
+  ascent of seq_t(v) a step to a more relevant element,». Packet l. 52-55: «seq_t(v) := the e-vertices that lie in Π_t(v), in the order
+  of the play from v under (σ_t, σ̄_t)»; «An ascent of a sequence (c_1, …, c_p) of distinct items is an index i with c_(i+1) more relevant
+  than c_i.»
+
+### Machine checks after this entry
+- asc.pins: this fixes file re-pinned; line L-3 and mkl3_193.py added (37 rows). check.sh block «P-N5-ASC» unchanged (it reads asc.pins).
+- No tool or DATA output changes (check193.out unchanged).

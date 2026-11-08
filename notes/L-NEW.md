@@ -15,6 +15,12 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
     on REACH3-CYC: xi = T3 + 3). READING: polynomial for [E-LEV] bounded U(G) needs REACH3-CYC + the Gamma3 transfer of T-QUIET.
   - DATA: check195.out (xi + spec, 8 families x 300, all pinned genomes, controls); record sweep data/sweep195.out (2 modes x 2 seeds x
     8 families x 1500 + corpus; L(G) test with LRED = L-RED tree at 86a7a7a8, extracted by git archive into scratch).
+- DUTY P-N5-ASC fix round 3 (C135 E-1..E-4): fixes entry 3 + L-3 (sha1 0012d671 = C135 target, 5154 B; box193/mkl3_193.py; asc.pins 37).
+- P-N5-QUIET: REFEREE 28 SIGN all, L-1 NOT YET (QT-L1..QT-L6; predicted L-2 fed89346, 5131 B). Lead 03:37Z: [OPT] = R118 (b) (XICYC
+  l. 75) + R21 (a), not R57 (b); the Γ3 scope sentence OVERCLAIMS (QT-L4 replaces it). PREPARE fixes entry 2 + L-2, COMMIT ONLY after
+  REFEREE-2's review. Also: Form B (QUIET on all 13 instances) and quiet194.py's off-by-one (test against L, not L + 1).
+- Box 195 follow-up: §6 READING quotes the withdrawn Γ3 scope sentence -> addendum after QT-L4 is fixed.
+- Slip (successor 63): wrote docs/new/P-N5-ASC-line-L3.txt (untracked) while push 4 ran. Rule: none, even untracked.
   - Things only I know: the L(G) record needs `git archive 86a7a7a8 experiments/red/r187 experiments/red/r178 | tar -x -C DIR` and
     LRED=DIR. eg195.py's «late» family is a stand-in (start = last option), not L-RED's own.py-based late.
 
