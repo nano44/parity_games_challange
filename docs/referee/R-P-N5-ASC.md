@@ -268,3 +268,45 @@ docs/referee/scratch/: asc_quotes.py, asc_cs.py, asc_game.py; asc_logs/cs.log, g
   - asc.pins has 35 rows, all matching (DOCS/ → docs/new/).
 - DATA rule: no clause changes except W-3's unit wording, which now matches the counter. MET.
 - Verdict: fixes entry 2 CORRECT (W-3, W-4). L-2 MATCHES, by the byte test and in meaning. All statements stay SIGN.
+
+## §E. Line L-3 (CHECKER C135 R1-R4) (REFEREE successor 28, Opus 5.5, D15; date -u at writing 2026-11-08T04:09Z)
+- Objects: claude/l-new a2512364 (ancestor of origin/claude/l-new).
+  - L-2 there is unchanged (f109cb69…).
+  - L-3 docs/new/P-N5-ASC-line-L3.txt: sha1 0012d6710983ec339be8f5d4e051a205cc9207ba, 5,154 B (EQUAL to the relay and to C135 §5's
+    target), 122 «(» = 122 «)».
+- Byte test (scratch/asc_l3.py; R1-R4 copied from C135 §5 at claude/checker 0942e8be, wrapped lines joined by one space;
+  asc_logs/l3_bytetest.out):
+  - Each old string occurs once in L-2 and 0 times in L-3. Each new string occurs once in L-3.
+  - L-2 + R1..R4 in order is byte-equal to L-3.
+- My AS-2 / AS-3 strings hold on L-3: 1 / 1 / 4, old forms 0.
+- Meaning:
+  - R1 (source note «successors 61-62»): CORRECT. Fixes entries 1-2 are successor 62's.
+  - R2 (AS-1): CORRECT. I read it as the author lane.
+    - REFEREE R-P-N5-ASC §3 l. 117-119 (AS-1) says that F′_0 is DESC-POLY on the whole interval I, not «word for word» per refined
+      level, «because τ(x) is monotone on x's active interval and x is active at both times of each change it is blamed for».
+    - Fixes entry 1 «AS-1 … TAKEN» restates it as the proof of record.
+    - REFEREE-2 checked it independently (R2-P-N5-ASC l. 212-214: «I agree. I checked it now … F′_0 = F_0 holds»).
+    - So «referee-originated …, signed by both referees» is accurate.
+  - R3 («hence seq_t(v) = (f, seq_t(y_f))»): CORRECT. It is the packet's own second sentence of CHAIN-DECOMP (l. 81: «Hence seq_t(v) =
+    (f, seq_t(y_f)).»): v's play after f is y_f's play, with the same Λ.
+  - R4 (definitions): CORRECT. It is the packet's l. 52-55 («seq_t(v) := the e-vertices that lie in Π_t(v), in the order of the play»;
+    «An ascent of a sequence … is an index i with c_(i+1) more relevant than c_i»).
+- NEW FINDING (R5, required; missed by REFEREE 27 and REFEREE-2 on L-1 and L-2, and not in C135): CHAIN-DECOMP's HYPOTHESIS in the line
+  is weaker than the packet's, and false as worded.
+  - The line (L-1 to L-3, unchanged by R1-R4) says «(Lemma CHAIN-DECOMP) if the first e-vertex on v's play is f, then f's successor y_f
+    is a mover with Λ_t(y_f) = Λ_t(v) and …».
+  - The packet's lemma (l. 80) says «If seq_t(v) = (f, …), then …», which needs f ∈ Π_t(v).
+  - Instance: v = e_g for any level-0 gate g. The first e-vertex on v's play is v itself, its successor is c_W, which is not a mover, and
+    Λ_t(v) = c_W, so v ∉ Π_t(v). The line's clause fails, while the packet's lemma does not apply (seq_t(v) is empty).
+  - Shown on RS2 (option (0, 0)) and LEAP_k8 (option (0, 0)) with my own builder and engine (scratch/asc_cd_l0.py,
+    asc_logs/cd_level0.out). It holds in every genome that has a level-0 mover.
+  - R5: old «(Lemma CHAIN-DECOMP) if the first e-vertex on v's play is f, then»
+    new «(Lemma CHAIN-DECOMP) if seq_t(v) = (f, …), i.e. the first e-vertex on v's play is f and f ∈ Π_t(v), then»
+  - The old string occurs once in L-3. L-3 + R5: sha1 4017305a34eac21615ba8f172a9b899544d25659, 5,198 B, 125 «(» = 125 «)»
+    (asc_logs/l3_r5.out).
+  - The statement as signed (the packet's) is unaffected. The line misstates its hypothesis. DATA rule: R5 is a statement wording; its
+    witness is asc_cd_l0.py.
+- Verdict:
+  - L-3 = L-2 + exactly R1-R4 (byte test PASSES). R1-R4 are CORRECT in meaning.
+  - L-3 does NOT YET MATCH the packet: R5 is required.
+  - All statements of P-N5-ASC stay SIGN (the packet's form).
