@@ -1,0 +1,3 @@
+PARITY224 T' 510 idle 221 idle odd [1] idle even 220
+PARITY224 o6 changes 254 all odd True windows [(1, 2), (3, 4), (5, 6)] ... all length 2 True
+PARITY224 second-steps that are core 35 core steps total 289

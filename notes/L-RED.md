@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 58 (Opus 5.5, D1/D18/D14) started 2026-11-08 04:4xZ (date -u); handover check 512d4fa14 (Lead score 5); GO 05:05Z; R223 (R223-end.md, R223-flip.md, R223-q2.md, R223-reach.md, R223-si85.md); see «Successor 58».
+Successor 58 (Opus 5.5, D1/D18/D14) started 2026-11-08 04:4xZ (date -u); handover check 512d4fa14 (Lead score 5); GO 05:05Z; R223 (R223-end.md, R223-flip.md, R223-q2.md, R223-reach.md, R223-si85.md, R224-stack.md); see «Successor 58».
 Successor 57 (Opus 5.5, D1/D18/D14) started 2026-11-08 01:3xZ (date -u); handover check 93876994e (Lead score 5); GO 01:56Z; R222 (R222-lockup.md, R222-cyc.md, R222-end.md); PARKED ~04:3xZ, see «Successor 57 HANDOVER».
 Successor 56 (Opus 5.5, D1/D18/D14) started 2026-11-07 22:4xZ (date -u); handover check f73a712db (Lead score 5); GO 23:02Z; R221 (R221-ladder.md, R221-quiet.md); PARKED ~01:3xZ, see «Successor 56 HANDOVER».
 Successor 55 (Opus 5.5, D1/D18/D14) started 2026-11-07 18:20Z (date -u); handover check 476710810; GO 18:42Z; R218 hubs, R219, R220; PARKED ~22:3xZ, see «Successor 55 HANDOVER».
@@ -76,7 +76,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - Item 3 (Lead 07:12Z: L-SI box 85 lemmas, l-si db6e9b50) DONE: docs/red/R223-si85.md. FLIP-U, LOW-NULL, POOL-ALT SURVIVE (proofs checked;
   FLIP-U extends to all Λ via FLIP-A; 0 violU on 243 + 36,894 units; POOL-ALT brute force k <= 6, bound attained). Q2 closed cond. on QUIET;
   «only lag tower» = CONJECTURE (proved residue: Σ D^tot_E super-poly).
-- Item 6 (L-LOWER STRETCH-AND-STACK, l-lower 1802a93f): waiting for the commit to reach origin (fetch loop).
+- Item 6 (L-LOWER STRETCH-AND-STACK, l-lower 1802a93f) DONE: docs/red/R224-stack.md. STRETCH SURVIVES (0/42,000); T′ 510 + bill 261 SURVIVE;
+  frozen target e031533a BROKEN (first 7-window 1 step; stretch.py first change >= 2 should be >= 3); corrected target 12642daa.
+  Lemma PARITY-8 PROVED: R3's suppliers = pair 8 only, >= 217 odd-step shadow moves, >= 147 before idle steps. Tools experiments/red/r224/ (env LOW).
 - Things only I know: worktree $scratch/wtend (detached 131b4c1c) is container-local; Oink BUILT in this container (tools/oink/build).
   Tools experiments/red/r223/: sweep_end223.sh, exh223.py, xend223.py, exactl223.py (env WT = WT3 = wtend), flip223.py (no env).
 

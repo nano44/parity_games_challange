@@ -1,0 +1,6 @@
+VARIANT fix: T 299 core steps 289 E3-mismatches 0 T' 510 idle 221 gaps-with-idle 219 first-o6-change 3 7-windows 255 length-hist [(2, 255)] windows<2 0 first-window 2 last-window 2
+  bill: gaps 219 |M| hist [(1, 177), (2, 42)] events 261 per mover [(3, 3), (4, 7), (5, 2), (6, 7), (8, 4), (9, 23), (10, 63), (11, 24), (12, 127), (13, 1)]
+  free-and-holding per mover [(2, 97), (3, 155), (4, 117), (5, 44), (6, 118), (7, 37), (8, 27), (9, 101), (10, 89), (11, 2), (12, 1)]
+VARIANT lower: T 299 core steps 289 E3-mismatches 0 T' 509 idle 220 gaps-with-idle 219 first-o6-change 2 7-windows 255 length-hist [(1, 1), (2, 254)] windows<2 1 first-window 1 last-window 2
+  bill: gaps 219 |M| hist [(1, 177), (2, 42)] events 261 per mover [(3, 3), (4, 7), (5, 2), (6, 7), (8, 4), (9, 23), (10, 63), (11, 24), (12, 127), (13, 1)]
+  free-and-holding per mover [(2, 97), (3, 155), (4, 117), (5, 44), (6, 118), (7, 37), (8, 27), (9, 101), (10, 89), (11, 2), (12, 1)]

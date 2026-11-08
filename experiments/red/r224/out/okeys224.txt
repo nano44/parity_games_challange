@@ -1,0 +1,2 @@
+OKEYS224 states 300 levels 28 draws 42000 o_l changed 0
+OKEYS224 target target_fix.txt steps 510 F(0..6) [2, 6, 14, 30, 62, 126, 254]
