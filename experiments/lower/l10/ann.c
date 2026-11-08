@@ -4,7 +4,8 @@
    Score 0 = the exact greedy (l7/ranksolve.py) succeeds; the final genome is re-checked in Python (ranksolve + sim6).
    Preferences by ENC: top option of chain(x,0) xor chain(x,1) by rank (128-bit masks), no big integers.
    Usage: ann GENOME.txt CORE.txt OUT SEED SECONDS TEMP [X:y1,y2,...]   (resumes from OUT if it exists)
-   Optional 8th argument: comma list of option indices whose targets are never re-pointed (a hand-wired gadget).
+   Optional 9th argument: a second order constraint «X1+X2+..:y1,y2,..» (X part always a set; must hold at the start).
+   Optional 8th argument (or '-' for none): comma list of option indices whose targets are never re-pointed (a hand-wired gadget).
    Optional order constraint: no mover y_i may reach mover X (or any of X1+X2+..) by Xi-edges (closure); enforced on every move and repaired at start.
    Build: gcc -O2 -o ann ann.c -lm */
 #include <stdio.h>
@@ -130,12 +131,16 @@ int gsolve(void) {
   for (int m = 0; m < NO; m++) if (left[m]) { gbr[m] = rank--; gbp[m] = bp[m]; }
   return viol;
 }
-int nrX = -1; unsigned long long nrMask = 0, nrXmask = 0;
+int nrX = -1; unsigned long long nrMask = 0, nrXmask = 0, nr2Mask = 0, nr2Xmask = 0;
 int reaches(int y, int X) { /* DFS over options */
   static int st[MAXN], seen[MAXN]; int sp = 0; memset(seen, 0, sizeof seen); st[sp++] = y; seen[y] = 1;
   while (sp) { int z = st[--sp]; for (int k = 0; k < 2; k++) { int w = xt[2 * z + k]; if (w < 0) continue; if (X >= 0 ? w == X : ((nrXmask >> w) & 1ULL)) return 1; if (!seen[w]) { seen[w] = 1; st[sp++] = w; } } }
   return 0; }
-int order_ok(void) { if (!nrMask) return 1; for (int y = 0; y < N; y++) if ((nrMask >> y) & 1ULL && reaches(y, nrX)) return 0; return 1; }
+int reaches2(int y) { static int st[MAXN], seen[MAXN]; int sp = 0; memset(seen, 0, sizeof seen); st[sp++] = y; seen[y] = 1;
+  while (sp) { int z = st[--sp]; for (int k = 0; k < 2; k++) { int w = xt[2 * z + k]; if (w < 0) continue; if ((nr2Xmask >> w) & 1ULL) return 1; if (!seen[w]) { seen[w] = 1; st[sp++] = w; } } }
+  return 0; }
+int order2_ok(void) { for (int y = 0; y < N; y++) if ((nr2Mask >> y) & 1ULL && reaches2(y)) return 0; return 1; }
+int order_ok(void) { if (nr2Mask && !order2_ok()) return 0; if (!nrMask) return 1; for (int y = 0; y < N; y++) if ((nrMask >> y) & 1ULL && reaches(y, nrX)) return 0; return 1; }
 int score(void) { if (!topo() || !order_ok()) return 1 << 30; simulate(); return gsolve(); }
 /* genome copy */
 typedef struct { int xt[MAXO], br[MAXO], bp[MAXO], gate[4 * 32], start[MAXN]; } G;
@@ -170,7 +175,10 @@ int main(int argc, char **argv) {
       for (int y = 0; y < N; y++) if ((nrMask >> y) & 1ULL) for (int k = 0; k < 2; k++) { int w = xt[2 * y + k];
         if (w >= 0) { int bad = (nrX >= 0 ? w == nrX : ((nrXmask >> w) & 1ULL)) || reaches(w, nrX); if (bad) xt[2 * y + k] = -1; } }
     printf("order constraint X %d mask %llx ok %d\n", nrX, nrMask, order_ok()); }
-  if (argc > 8) { char *q = argv[8]; while (*q) { frozen[atoi(q)] = 1; while (*q && *q != ',') q++; if (*q == ',') q++; } }
+  if (argc > 9) { char *q = argv[9]; while (*q != ':') { nr2Xmask |= 1ULL << atoi(q); while (*q != '+' && *q != ':') q++; if (*q == '+') q++; }
+    q++; while (*q) { nr2Mask |= 1ULL << atoi(q); while (*q && *q != ',') q++; if (*q == ',') q++; }
+    printf("second order constraint Xmask %llx mask %llx ok %d\n", nr2Xmask, nr2Mask, order2_ok()); }
+  if (argc > 8 && argv[8][0] != '-') { char *q = argv[8]; while (*q) { frozen[atoi(q)] = 1; while (*q && *q != ',') q++; if (*q == ',') q++; } }
   rs ^= (unsigned long long)atoll(argv[4]) * 2654435761ULL; double secs = atof(argv[5]), temp = atof(argv[6]);
   int cur = score(), best = cur; G g, bestg; save(&g); save(&bestg); long it = 0, acc = 0; time_t t0 = time(0), last = t0;
   printf("start score %d constraints %d\n", cur, nc); fflush(stdout);
