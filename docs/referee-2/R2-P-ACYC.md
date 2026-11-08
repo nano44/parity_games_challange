@@ -351,3 +351,24 @@ Read only after this report was on origin (bf02e618). No verdict of mine changes
   - statements: BETA-ACYC, LAMBDA-CONST (gap closed by F-1), ACYC-LIN **SIGN**; ACYC-XI **SIGN**, PROVED-CONDITIONAL on R118 (k) + (l);
   - **L-2 does NOT yet match: D-5** (the τ clause's tool citation; one string) (Opus 5.5, D1). With D-5 applied as above, L-2 matches;
     no other change is needed.
+
+## Addendum 3: fix round 2 / L-3 (claude/l-si ff9b1639; REFEREE-2 successor 32, 2026-11-08 04:06Z by date -u)
+- **Object** (sha1 at ff9b16396129de30cca6d10a67285c3ed558d14a, equal to the Lead's relay 04:04Z):
+  - L-3 docs/si/P-ACYC-line-L3.txt 03453361… (2,765 B, 1 line, 38 «(» = 38 «)», depth never negative, 0 «|»);
+  - fixes c782b15b… (11,487 B; entry 2 appended, entry 1 byte-unchanged: the 01a68edc file is a prefix);
+  - packet 0e9edcfd…, L-1 and L-2 unchanged.
+- **Byte test** (own R2-P-ACYC/bt_l3.py, out bt_l3.out):
+  - D-5's old string «along N5′-xi on Γ3 from S3 (pacyc81.py),» occurs once in L-2 and 0 times in L-3.
+  - The new string «along N5′-xi on Γ3 from S3 (pacyc81.py; τ by fix1/pacyc81t.py),» occurs once in L-3.
+  - Rebuild L-2 + D-5 = L-3 byte for byte (03453361…). Nothing else changed.
+- **Re-run:** check81.sh on `git archive ff9b1639` (110 s): «P-ACYC fix1 checks: PASS», «P-ACYC fix2 checks: PASS», «box 81 checks:
+  PASS», exit 0 (lane_check81_ff9b1639.out).
+- **Entry 2:**
+  - F-10 = D-5 ✓.
+  - F-11 = my N-2 verbatim, applied to F-3 (a)'s header text («(at most N iterations; its first fallback comes by iteration N + 1)») ✓.
+- **DATA rule on L-3:** the Γ3 clause now names both tools. pacyc81.py covers σ off the β-face, σ off the movers, no fallback and the
+  first fallback after N + 1. fix1/pacyc81t.py covers τ (taubad 0). Every other clause is as in L-2 (Add. 2) ✓.
+- **Verdict:**
+  - fixes entry 2 **CORRECT**;
+  - **L-3 MATCHES** (Opus 5.5, D1);
+  - statements: BETA-ACYC, LAMBDA-CONST, ACYC-LIN **SIGN**; ACYC-XI **SIGN**, PROVED-CONDITIONAL on R118 (k) + (l); nothing REFUSED.

@@ -1,6 +1,33 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## HANDOVER (successor 32, Opus 5.5 under D1/D18/D20; written 2026-11-08 04:0xZ by date -u; parking at ~345k: the next item, a full review, would pass ~480k)
+Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only via scripts/push.sh as a tracked background task (redirect, «echo exit
+$?»; verify ~15-20 min). Before push: `git branch --show-current` = claude/referee-2 (this container was clean at start).
+### Reports of record this session (all «(Opus 5.5, D1)»; every SHA on origin)
+| item | report | outcome | SHA |
+| --- | --- | --- | --- |
+| P-N5-ASC fix round 2 (L-2) | R2-P-N5-ASC.md Add. 3 | fixes entry 2 CORRECT; W-3 / W-4 met (upfail strict, read against UP-JUMP; check193 byte-equal); L-2 MATCHES | d3fed33c |
+| P-ACYC (L-SI 43/44) full review | R2-P-ACYC.md + Add. 1-3 | all SIGN (LAMBDA-CONST gap G-1 closed by F-1; ACYC-XI conditional on R118 (k)+(l)); W-2 scope, W-3 τ unread, D-1..D-5, N-1, N-2 all met; Add. 1 vs REFEREE 28 agrees (AC-2 confirmed); L-3 MATCHES | bf02e618, 6c937bc6, d7ca68f4, this commit |
+### OPEN / NEXT ITEM for successor 33
+- Full independent second review of P-N5-QUIET (L-NEW): claude/l-new frozen 9329859d, docs/new/P-N5-QUIET.md sha1 066dfc7d… (20,022 B,
+  199 lines); fixes entry 1 at d9c49489; L-1 at df0d2a25 (sha1 62de9075…, 4,600 B; Lead 04:04Z, not yet measured by me). Statements:
+  LOC-GATE, CN2, LOC-K2, QUIET + T-QUIET, UP-T, ASC-T, B-ONLY, NO-TIE. Re-derive; premise quotes by script; own-engine DATA replay;
+  DATA rule on L-1 (read every counter's condition AND its cited tool against the clause); TARGET diff. docs/referee/R-P-N5-QUIET.md
+  (REFEREE 28) only after my verdict is on origin.
+### Tools (own code; lane code never imported)
+- R2-P-ACYC/r2acyc.py: own Γ(G)/Γ3(G) builder from R104/R117 text (--eorder gate|lev: R104 leaves the e-priority order open; L-NEW's
+  gamma3 uses (lev, gate)), own VJ valuation + order, Odd optimum by PI from two starts + brute force over all Odd strategies (M ≤ 9),
+  own Howard; counters notbeta/nonstrict/lamfail/w*/C/R/T. r2gen.py (own Ξ-acyclic generator). Reusable for any IDEAL-CYC / Γ3 Odd-side
+  question (σ̄, Λ maps). It does NOT implement N5′-xi or SPEC S1; for N5 runs I used the lane runner on a git archive with ONE added
+  counter (diffs on record) — say so when citing.
+### Traps (this session)
+- A DATA clause can be weaker than its words in TWO places: the counter's condition (P-N5-ASC upfail, P-ACYC «standard» read σ only) and
+  the cited TOOL (P-ACYC L-2 cited pacyc81.py for a τ test only fix1/pacyc81t.py makes). Check both.
+- Unstated construction choices move control counts (R104's e-priority order: 111/15/20 vs 121/15/25). Rebuild with the lane's choice
+  before calling a count mismatch.
+- Two referees' L-strings can overlap; test spans by script before routing (R2-P-ACYC/overlap.out).
+
 ## Resume point 2 (successor 32; 2026-11-08 01:2xZ by date -u)
 - R2-P-ACYC on origin bf02e618 (VERIFY PASS). Item A done: R2-P-N5-ASC.md Addendum 3 (l-new a5dcf9c6, L-2 f109cb69): fixes entry 2
   CORRECT, W-3/W-4 met (W-4 option (a): upfail strict, read against UP-JUMP; check193.sh on archive byte-equal, upfail 0 in 1,956),
