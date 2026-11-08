@@ -203,6 +203,17 @@ movers in closure(x); acyclic wiring)
   when s18 = 0. On C5 it raises the score from 538 to 739 (other movers' chains pass through f6). C7 / C8 continue from it with f6's
   two options frozen (ann.c 8th argument «26,27») and only «18 must not reach 13» enforced, so q7 may read 13 again.
 
+- Result (runs ended ~10:45Z; unit = violated constraint): C7 479, C8 477. Frozen C8: rec/L10_C8_f6gadget_final.txt, sha1
+  666652555b04b0aaf409566900f46d18151c4b50; solved ranks rec/L10_C8_f6gadget_final_solved.txt, sha1
+  865999d8e3a8b4f8507b8eb4a65c17f91abdebf5.
+  - f6 is now SOLVED (2 violations), but q7 (14) is sacrificed (251, about half its constraints); q5 55, f5 40, q4 38, 6 28.
+  - closure(18) contains q7 and f7 (and core 1, 2, 5, 7). So q7 may not reach 13, and it loses its pair-6 input again.
+- READING (DATA from three variants: order free C4 144 sacrifices f6; order forced C5 538 sacrifices q7; f6 gadget frozen C8 477
+  sacrifices q7). In every run the failing mover sits on the loop f6 → (carrier of 1 − o(5)) → clock / pair 7 → pair 6 ∋ f6. The
+  carrier search keeps reusing pair 7 as the source of timing. The missing piece is the one named in 2f: a source of idle-step
+  timing for f6's carrier (and for pairs 0-5) that reaches neither 13 nor pair 7, i.e. helpers keyed through o(7) whose
+  preferences are fuelled from below in the DAG.
+
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All are about the IDEAL
 model's step sequence (R104's definition) on 𝓛^R_d and its F-profile. Not M3, not a step-4 pass, not a TARGET.md claim.
