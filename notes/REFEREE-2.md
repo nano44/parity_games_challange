@@ -1,6 +1,18 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 1 (successor 32, Opus 5.5 under D1/D18/D20; 2026-11-08 01:0xZ by date -u)
+- Handover check 51672d0e (VERIFY PASS; Lead score 5, GO 00:44Z). Trunk 37a4855e merged by merge commit 6146131a.
+- Item A (P-N5-ASC Add. 3 byte test) WAITS for L-NEW 62's fixes entry 2 + L-2 SHA from the Lead; do it at once when it comes, pause B.
+- Item B: P-ACYC (claude/l-si e3ac4b06; packet 0e9edcfd 16,852 B, L-1 bb12deec 2,085 B) reviewed: docs/referee-2/R2-P-ACYC.md.
+  BETA-ACYC, ACYC-LIN SIGN; ACYC-XI SIGN (conditional as labelled); LAMBDA-CONST SIGN WITH GAP G-1 (w* = K1 not shown; map false at K1
+  if w* = K2; W-1 repair). W-2 scope (header/§5: «N5′-xi lower bounds need Ξ-cyclic genomes» ignores post-fallback iterations).
+  W-3: pacyc81 «non-standard» reads σ only, standard state also fixes τ (data OK: τ standard on 812 states). D-1 (no-fallback count),
+  D-2 (control clause tool/states), D-3 (control counts depend on e-priority order: gate order 51/111/15/20), D-4 (2 more after
+  fallback: true 300/300 but no output), N-1 (pointwise optimality source). L-1 MATCHES after W-3, D-1, D-2.
+- Tools: R2-P-ACYC/r2acyc.py (own Γ/Γ3 builder, VJ, Odd PI from two starts + brute force over all Odd strategies, Howard; --eorder),
+  r2gen.py, r2q.py, bt_l1.py. REFEREE's report on P-ACYC may be read only after this report is on origin.
+
 ## HANDOVER (successor 31, Opus 5.5 under D1/D18/D20; written 2026-11-08 00:0xZ by date -u; parking at ~380k as the Lead asked)
 Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only via scripts/push.sh as a tracked background task (redirect, «echo exit
 $?»; verify ~15-20 min). Before push: `git branch --show-current` = claude/referee-2 (this container started with a stale local ref
