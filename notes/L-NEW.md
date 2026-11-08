@@ -22,6 +22,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   L-RED 2,994. Corollary REWIN-ASC (conditional on RW-WT, [E-LEV]): R_y <= 3M(F'_U(M) - 1): no new class (CHAIN3 covers bounded U);
   S5 trivial (SPL <= 3M); open: W_y (S4) and, for U unbounded, the high-part values of wt(y).
   Running: lane-genome sweep (scratchpad sw/run.sh, resumable, tracked bs8eyvcu1; out/ one file per genome). Next: (S4) on L-RED's wc 86 genome.
+- BOX 199 Addendum 2: Lemma PAIR-SPLIT PROVED (REWIN-HI for ANY two same-pair y-tops) -> SPLIT-COUNT c_y <= sum_(u,b) Dhi_y(b): (S4) unnecessary.
+  CONJECTURE RW-WT* (rw2fail 0 on 6,771 couples) -> C-WT: C(y) <= 3M max Dhi_y(wt(y)); open core = high parts of ONE vertex wt(y).
+  Static ascent DAG Z loose (depth <= 7, paths <= 366 vs c <= 5; zdag199.out). W-cases W86/W14/W68 frozen in box199/inst, all lemma counters 0.
   Things only I know: split199.py prints the must-be-0 counters first, then «|», then the descriptive ones; ex-tuples are raw vertex
   indices (names via gamma3.build's V). Full sweep ~75 s; check199.sh ~10 s. Scratch copy in the scratchpad b199/ (not needed).
 

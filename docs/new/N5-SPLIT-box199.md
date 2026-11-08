@@ -257,3 +257,78 @@ Proof.
   before y).
 - Tools: experiments/new/box199/split199.py (new counters Bne_t1, Bne_t2, rw_single, rw_multi, ytopB_ne; control 6) and srch199.py; record
   split199.out, check199.out, srch199_s8.log.
+
+## Addendum 2 (L-NEW successor 66, 19:48Z by date -u; the (S4) step; L-RED 61 test cases claude/l-red ba6ac84c; Lead 19:34Z: «wc» is a total, per-letter W ≤ 3)
+Answer: (S4) is UNNECESSARY.
+- REWIN-HI and RW-SHAPE never use that the two y-tops are consecutive. Restated for any two y-tops through the same split pair, they bound
+  c_y with NO W term (Lemma PAIR-SPLIT, Corollary SPLIT-COUNT, both PROVED).
+- With the all-pairs form of RW-WT (CONJECTURE RW-WT*), every y-top of every (v, I) charges to the one vertex wt(y).
+- What remains open is a recursion over an «ascent DAG». On data that DAG is much larger than the real counts.
+
+### A2.1 Lemma PAIR-SPLIT (PROVED, lane; premises as §2)
+Let t < t′ be ANY two y-tops of (v, I) whose splits (§1) are the same pair (u, b), and let a := u's successor at t′ − 1 (a ≠ b, since u
+moves to b at t′). Then:
+- (a′) Ω_(t′−1)(a) ▷ Ω_t(b);
+- (b′) Ω_(t′−1)(b) ▷ Ω_t(b);
+- (c′) E_t′(b) ∩ U_y >lex E_t(b) ∩ U_y.
+Proof: §2's proof with (t1, t2) := (t, t′). Every step uses only what follows, and none uses that no y-top lies in between:
+- σ_t(u) = b ≠ σ_(t′−1)(u), which gives a first departure s ∈ (t, t′ − 1]; for a gate, its two faces and Odd's choice at t;
+- y ∈ E_t(b), y ∉ E_(t′−1)(a), and the top y at t′. ∎
+- Corollary SPLIT-COUNT (PROVED). For each pair (u, b), the values E(b) ∩ U_y at the y-tops through it are pairwise distinct (c′). They
+  lie in one Λ-interval J_b of b, since Λ(b) = w at each of them (F1, F2). Hence
+      c_y(v, I) ≤ Σ_((u,b) ∈ SPL_y(v,I)) Dhi_y(b, J_b) ≤ 3M · max_b Dhi_y(b, J_b),
+  with no W term: (S4) is not needed. The price is the factor SPL ≤ 3M and the move from v to the b's. In the abstract model this is no
+  better than PAIR-HIGH.
+- Corollary RW-SHAPE* (PROVED, same proof as A1.2 with any same-pair t < t′). If E(wt(y)) ∩ U_y is equal at t and t′, then b's play at t′
+  has a U_y-letter f before y, and a second split after f at t′.
+  - So RW-B0* (no U_y-letter on b's route at same-pair y-tops) ⇒ RW-WT*.
+  - And RW-WT* holds at every same-pair couple whose t′-step is single-split.
+
+### A2.2 CONJECTURE RW-WT* and what it gives
+- RW-WT*: for any two y-tops of (v, I) through the same split pair, E(wt(y)) ∩ U_y differs.
+- Corollary C-WT (PROVED CONDITIONAL on RW-WT*):
+      c_y(v, I) ≤ Σ_(u,b) #values of E(wt(y)) ∩ U_y on the span of its y-tops ≤ 3M · Dhi_y(wt(y), J),
+  J the Λ-interval of wt(y) (Λ(wt(y)) = w at every y-top, counter wlamfail 0). Hence C(y) := max_(v,I) c_y ≤ 3M · max_J Dhi_y(wt(y), J).
+- Unrolled with PAIR-HIGH at wt(y): C(y) ≤ 3M · (1 + Σ_(z ∈ Z(y)) C(z)). Here Z(y) := the letters z ≻ y that lie in E_t(wt(y)) at some
+  state (the «ascent DAG»; under [E-LEV] each edge needs an upward Ξ-edge on a play after y, by UP-JUMP3).
+- With HUB-ASC-G3 / UP-B3 (R125 pending; the Γ3 form of R121), under [E-LEV]: C ≤ 3M · F′_(U(G))(M), and T3 via C-EQUIV.
+  - That is polynomial for U(G) bounded, which CHAIN3 already covers: still no new class.
+  - It replaces REWIN-ASC (A1.4) by a bound on all of c_y, with no W term.
+- DATA (split199.py; unit: same-pair couple / (v, I, y); set: 15 instances = box199/inst incl. the L-RED W-cases; scope as §5):
+  - rh2fail (PAIR-SPLIT) 0, rw2fail (RW-WT*) 0 on 6,771 same-pair couples; spfail (SPLIT-COUNT) 0, spwfail (C-WT's first inequality) 0.
+  - Control ctrl4 (U_y := ∅): rh2fail 313, rw2fail 313, spfail 161, spwfail 161 on CX4_n21.
+- DATA (zdag199.py; unit: genome; static Z over the whole run, all Λ): the ascent DAG is much larger than the real counts. Real
+  max c_y is 2-5 everywhere.
+| instance | letters | Z depth | Z fan-out | max paths P_Z |
+| --- | --- | --- | --- | --- |
+| CX4_n21 | 35 | 4 | 4 | 12 |
+| GROW7_n34 | 86 | 6 | 6 | 32 |
+| GROW8_n53 | 147 | 7 | 9 | 112 |
+| HOLD3K_n125 | 252 | 6 | 8 | 47 |
+| DSALT9_n416 | 801 | 6 | 9 | 90 |
+| DU21_h4 | 419 | 5 | 19 | 366 |
+| W68_n66 | 184 | 7 | 8 | 62 |
+| W86_n77 | 230 | 6 | 10 | 102 |
+  (all 15 rows in experiments/new/box199/zdag199.out.) So the static recursion, like RA-PATHS, is loose by one to two orders on these
+  short runs. A useful bound must use the Λ-intervals and the time order, not the static DAG.
+
+### A2.3 The W-cases on the padded engine (Lead's request, «report both counts»)
+| instance (sha1) | N | M | T3 | re-entries | re-wins | non-re-win (Σ W) | max W_y | max c_y | max (u,b) | wcfail | lemma counters |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| W86_n77 (d99b0b7e) | 77 | 230 | 19 | 913 | 478 | 435 | 2 | 5 | 2 | 159 | all 0 |
+| W14_n75 (f22ae7d7) | 75 | 225 | 13 | 538 | 258 | 280 | 3 | 4 | 3 | 26 | all 0 |
+| W68_n66 (6a8463f8) | 66 | 184 | 8 | 169 | 20 | 149 | 1 | 2 | 2 | 127 | all 0 |
+- L-RED's own.py (Γ without pads) counts, relayed: W86 re-entries 493, re-wins 257, wc 86; W68 re-entries 91, re-wins 11, wc 68 (wc is L-RED's own total, relayed as such; I have not reconciled it with re-entries − re-wins). The padded Γ3 has
+  more vertices v, hence more (v, I, y) triples. Per letter the two engines agree in shape: max W_y ≤ 3, max c_y ≤ 5.
+- Copies: box199/inst/W86_n77.json, W14_n75.json, W68_n66.json (from claude/l-red ba6ac84c experiments/red/r227/inst; sha1 = its SHA1SUMS).
+- Sweep record (Addendum 1 §A1.3, completed). All 286 distinct lane genomes; 281 finished in 600 s, every must-be-0 counter 0, Bne 0,
+  rwfail 0 on 23,350 re-wins. The 5 timed out: H7C, H8A, H8C, HP7b_mup, HP8b_mup.
+
+### A2.4 Status after box 199 (labels)
+- PROVED (lane, P-N5-CHAIN facts only): SPLIT, TRANSFER, REWIN, REWIN-HI, PAIR-SPLIT, SPLIT-COUNT, RW-SHAPE(*), RW-1, RW-2.
+- CONJECTURE: RW-B0 / RW-B0* (⇒ RW-WT / RW-WT*). DATA: about 346,700 re-wins over four sources (5,254 frozen + 315,065 search + 23,350 sweep + 2,994 L-RED), 0 fails.
+- DEAD: downward charge below y (CX4_n21); W-target charge for all re-entries (GROW7_n34); W-target bound (HOLD2K_n84); ROUTE-LOW
+  (ROUTELOW_n21); the product-chain idea (§4).
+- OPEN core, in its sharpest form here: max_J Dhi_y(wt(y), J), the number of distinct high parts above y of ONE vertex wt(y).
+  - Polynomial in N + M would give C polynomial (C-WT), hence T3 polynomial (C-EQUIV), on RW-WT*.
+  - It is again a hub problem, at the lower vertex wt(y), for the letters above y.

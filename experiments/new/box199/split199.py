@@ -16,6 +16,11 @@ where the plays at t-1 and t leave by different edges. Counters (unit: one chang
   Bne_t1/2 : rewin where b's play at t1 / t2 has a letter of U_y before y                                    [0 on data: CONJECTURE RW-B0]
   rw_single/rw_multi : rewin whose t2-step changes one / several successors on v's play before y (single: RW-WT PROVED, Lemma RW-SHAPE)
   ytopB_ne : y-top whose new route from the split u to y has a letter of U_y                                  [ROUTE-LOW; DEAD: ROUTELOW_n21]
+  samepair : pairs of (not necessarily consecutive) y-tops of (v, I) with the same split pair (u, b)
+  rh2fail  : samepair with E_t'(b) cap U_y not lex-larger than E_t(b) cap U_y                              [0: Lemma PAIR-SPLIT (Add. 2)]
+  rw2fail  : samepair with E_t(m) cap U_y = E_t'(m) cap U_y                                                 [0 on data: CONJECTURE RW-WT*]
+  spfail   : (v, I, y) with c_y > sum over (u, b) of #values of E(b) cap U_y at its y-tops                  [0: Corollary SPLIT-COUNT]
+  spwfail  : (v, I, y) with c_y > sum over (u, b) of #values of E(m) cap U_y on its span                   [0 on data: SPLIT-COUNT under RW-WT*]
   wlamfail : Lambda_t1(m) or Lambda_t2(m) differs from w                                                    [0: m is on v's play]
   wcfail   : re-entry (any) where E(m) cap U_y takes one value on [t1, t2]                                  [W-target charge for all re-entries]
   wbfail   : (v, I, y) with c_y > #values of E(m) cap U_y on [first, last y-top]                            [W-target bound]
@@ -107,6 +112,20 @@ def run(G, cap=20000):
                     c["wtight"] += len(L) == dm >= 2
                 nw = sum((p1[1], p1[2]) != (p2[1], p2[2]) for p1, p2 in zip(L, L[1:])); c["maxW"] = max(c["maxW"], nw)
                 c["maxSPL"] = max(c["maxSPL"], len({(p[1], p[2]) for p in L})); c["maxc"] = max(c["maxc"], len(L))
+                kl = lambda msk: sorted((E.rank[f] for f in evs if msk & E.bit[f]), reverse=True)
+                byp = collections.defaultdict(list)
+                for (tq, uq, bq) in L: byp[(uq, bq)].append(tq)
+                bnd = bndw = 0
+                for (uq, bq), ts in byp.items():
+                    for i1 in range(len(ts)):
+                        for i2 in range(i1 + 1, len(ts)):
+                            ta, tb_ = ts[i1], ts[i2]; c["samepair"] += 1
+                            if not kl(H[tb_][1][bq][1] & hiy) > kl(H[ta][1][bq][1] & hiy): c["rh2fail"] += 1
+                            if (H[ta][1][m][1] & hiy) == (H[tb_][1][m][1] & hiy): c["rw2fail"] += 1
+                    bnd += len({H[q][1][bq][1] & hiy for q in ts})
+                    bndw += len({H[q][1][m][1] & hiy for q in range(ts[0], ts[-1] + 1)})
+                if len(L) > bnd: c["spfail"] += 1
+                if len(L) > bndw: c["spwfail"] += 1
                 for (t1, u1, b1), (t2, u2, b2) in zip(L, L[1:]):
                     c["reentry"] += 1
                     if H[t1][1][m][0] != w or H[t2][1][m][0] != w: c["wlamfail"] += 1
@@ -152,6 +171,6 @@ if __name__ == "__main__":
         G = json.load(open(fn)); G = G.get("genome", G) if isinstance(G, dict) else G
         if not (isinstance(G, dict) and "opts" in G and "start" in G): print(os.path.basename(fn), "skipped"); continue
         T, c = run(G)
-        F = ("playfail", "kindfail", "hwfail", "gtfail", "trfail", "dnfail", "rhfail", "rwfail", "Bne_t1", "Bne_t2", "wlamfail", "wcfail", "wbfail", "dn_nobelow_all", "premono_no")
+        F = ("playfail", "kindfail", "hwfail", "gtfail", "trfail", "dnfail", "rhfail", "rwfail", "Bne_t1", "Bne_t2", "rh2fail", "rw2fail", "spfail", "spwfail", "wlamfail", "wcfail", "wbfail", "dn_nobelow_all", "premono_no")
         print(os.path.basename(fn), "T3", T, " ".join(f"{k} {c[k]}" for k in F), "|", " ".join(f"{k} {c[k]}" for k in sorted(c) if k not in F and not k.endswith("ex")),
               *[f"{k} {c[k]}" for k in ("wcex", "nbex", "pmex", "rlex") if k in c], flush=True)

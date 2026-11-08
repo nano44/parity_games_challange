@@ -1068,8 +1068,8 @@ fi
 # BOX 199 SPLIT (L-NEW successor 66): SPLIT / REWIN / REWIN-HI counters (split199.py), DEAD witnesses, frozen output + controls
 r199=0; run199=$(cd box199 && bash check199.sh 2>&1) || r199=$?
 d199=$(diff <(printf '%s\n' "$run199") box199/check199.out 2>&1) || true
-if [ "$r199" -eq 0 ] && [ -z "$d199" ] && ! grep -v "^ctrl" box199/check199.out | grep -Eq "(playfail|kindfail|hwfail|gtfail|trfail|dnfail|rhfail|rwfail|Bne_t1|Bne_t2|wlamfail) [1-9]" && grep -q "^GROW7_n34.json .*wcfail 18 " box199/check199.out && grep -q "^CX4_n21.json .*dn_nobelow_all [1-9]" box199/check199.out && grep -q "^ctrl1 .*hwfail [1-9]" box199/check199.out && grep -q "^ctrl2 .*wbfail [1-9]" box199/check199.out && grep -q "^ctrl3 .*dnfail [1-9]" box199/check199.out && grep -q "^ctrl4 .*rhfail [1-9]" box199/check199.out && grep -q "^ctrl5 .*gtfail [1-9]" box199/check199.out && grep -q "^ctrl6 .*Bne_t2 [1-9]" box199/check199.out && grep -q "^ROUTELOW_n21.json .*ytopB_ne [1-9]" box199/check199.out; then
-  echo "BOX 199 SPLIT: SPLIT / REWIN / REWIN-HI / RW-B0 counters 0, DEAD witnesses present, controls fire = frozen: PASS"
+if [ "$r199" -eq 0 ] && [ -z "$d199" ] && ! grep -v "^ctrl" box199/check199.out | grep -Eq "(playfail|kindfail|hwfail|gtfail|trfail|dnfail|rhfail|rwfail|Bne_t1|Bne_t2|rh2fail|rw2fail|spfail|spwfail|wlamfail) [1-9]" && grep -q "^GROW7_n34.json .*wcfail 18 " box199/check199.out && grep -q "^CX4_n21.json .*dn_nobelow_all [1-9]" box199/check199.out && grep -q "^ctrl1 .*hwfail [1-9]" box199/check199.out && grep -q "^ctrl2 .*wbfail [1-9]" box199/check199.out && grep -q "^ctrl3 .*dnfail [1-9]" box199/check199.out && grep -q "^ctrl4 .*rhfail [1-9].*rh2fail [1-9].*spfail [1-9]" box199/check199.out && grep -q "^ctrl5 .*gtfail [1-9]" box199/check199.out && grep -q "^ctrl6 .*Bne_t2 [1-9]" box199/check199.out && grep -q "^ROUTELOW_n21.json .*ytopB_ne [1-9]" box199/check199.out; then
+  echo "BOX 199 SPLIT: SPLIT / REWIN / REWIN-HI / RW-B0 / PAIR-SPLIT counters 0, DEAD witnesses present, controls fire = frozen: PASS"
 else
   echo "BOX 199 SPLIT check: FAILED (check199.sh exit $r199)"; echo "$d199" | head -30; echo "$run199" | tail -15; exit 1
 fi
