@@ -10,6 +10,7 @@ C="LANEANNEAL=0.15 LJ=7 LJGATE=190 LJGUARD=20:17,34:22 FIX=20,34 NMIN=2 NMAX=4"
 # LAUNCHED 02:2xZ 2026-11-08 (Lead 02:20Z: settings + path approved; phase 2 path only if npaths stalls > 0, on notice):
 ENVX="$C FROZENBELOW=0"  upa L7a L7a out/seed_HIT7_d32.txt 500000 6 5 7
 ENVX="$C FROZENBELOW=0"  upa L7b L7b out/seed_HIT7_d32.txt 510000 6 5 7
-ENVX="$C FROZENBELOW=12" upa L7c L7c out/seed_HIT7_d32.txt 520000 6 5 7
-ENVX="$C FROZENBELOW=12" upa L7d L7d out/seed_HIT7_d32.txt 530000 6 5 7
+# Lead 02:53Z: from the next (re)start L7c = FROZENBELOW 8 + LJSLACK 8, L7d = FROZENBELOW 12 + LJSLACK 8 (slack j 4,5 at H 8); L7a/L7b baseline
+ENVX="$C FROZENBELOW=8 LJSLACK=8" upa L7c L7c out/seed_HIT7_d32.txt 520000 6 5 7
+ENVX="$C FROZENBELOW=12 LJSLACK=8" upa L7d L7d out/seed_HIT7_d32.txt 530000 6 5 7
 upf

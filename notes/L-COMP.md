@@ -8,6 +8,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   (520000+/530000+), common LANEANNEAL 0.15 LJ 7 LJGATE 190 LJGUARD 20:17,34:22 FIX 20,34 NMIN 2 NMAX 4, lane31.sh args 6 5 7; freezer31.sh.
   Path: no new q6 path; PHASE 2 (fix 12:0 to a level-9 trigger, L8 §4) only if npaths stalls > 0, and tell the Lead when switching.
   No trigger-count term yet (Lead). Next report: new frozen best (npaths 0 or n1 down), a HIT, or ~03:30Z.
+- 02:25Z container restart: lanes resumed at unit 1 from their partial unit-0 bests (logged). 02:5xZ: LJSLACK term (rclimb31.c 863750a7,
+  ref 51618da1, 69 genomes 0 mismatches); freezer per-lane max. Lead 02:53Z OK: at the NEXT restart L7c = FB 8 + LJSLACK 8, L7d = FB 12 +
+  LJSLACK 8 (already written in relaunch31.sh; takes effect only when those lanes are (re)started).
 - Relaunch after a restart: experiments/comp/box28/relaunch_all.sh (now calls box31/relaunch31.sh); write out/<lane>.unit first.
 - commit_loop (box28) RESTARTED 02:2xZ with pattern pgrep -f '^(/usr/bin/env )?(/bin/|/usr/bin/)?(bash )?(\./)?scripts/push\.sh' (Lead 02:20Z),
   footer = my session, box31 added. LIVE TEST (02:2xZ, during my push of 39c09dbf): ps showed 13019 «bash scripts/push.sh» and my tool
