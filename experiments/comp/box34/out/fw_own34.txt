@@ -1,0 +1,11 @@
+inst_fw/FW4_2.json {'T3': 17, 'fallback': True, 'n': 821, 'maxalt': 4, 'maxtops': 9, 'C': 3, 'maxm': 1, 'maxP': 7, 'depthV': 4, 'fanout': 2, 'fanin': 2, 'idfail': 0, 'rpfail': 0}
+inst_fw/FW8_2.json {'T3': 29, 'fallback': True, 'n': 1869, 'maxalt': 4, 'maxtops': 21, 'C': 3, 'maxm': 1, 'maxP': 54, 'depthV': 8, 'fanout': 2, 'fanin': 2, 'idfail': 0, 'rpfail': 0}
+inst_fw/FW12_2.json {'T3': 41, 'fallback': True, 'n': 2917, 'maxalt': 4, 'maxtops': 33, 'C': 3, 'maxm': 1, 'maxP': 376, 'depthV': 12, 'fanout': 2, 'fanin': 2, 'idfail': 0, 'rpfail': 0}
+inst_fw/FW16_2.json {'T3': 53, 'fallback': True, 'n': 3965, 'maxalt': 4, 'maxtops': 45, 'C': 3, 'maxm': 1, 'maxP': 2583, 'depthV': 16, 'fanout': 2, 'fanin': 2, 'idfail': 0, 'rpfail': 0}
+inst_fw/FW6_3.json {'T3': 30, 'fallback': True, 'n': 2371, 'maxalt': 6, 'maxtops': 18, 'C': 4, 'maxm': 1, 'maxP': 28, 'depthV': 6, 'fanout': 3, 'fanin': 3, 'idfail': 0, 'rpfail': 0}
+inst_fw/FW6_4.json {'T3': 37, 'fallback': True, 'n': 3615, 'maxalt': 8, 'maxtops': 20, 'C': 5, 'maxm': 1, 'maxP': 31, 'depthV': 6, 'fanout': 4, 'fanin': 4, 'idfail': 0, 'rpfail': 0}
+inst_fw/FW8_4.json {'T3': 47, 'fallback': True, 'n': 5667, 'maxalt': 8, 'maxtops': 30, 'C': 5, 'maxm': 1, 'maxP': 116, 'depthV': 8, 'fanout': 4, 'fanin': 4, 'idfail': 0, 'rpfail': 0}
+
+real	3m26.578s
+user	3m24.098s
+sys	0m0.422s

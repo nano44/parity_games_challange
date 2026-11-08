@@ -152,27 +152,52 @@ def ext(si, v, val):
     return (L, P | {v} if si.rel(v, L) > 0 else P, k + 1)
 
 
-def counters(res):
+def counters(res, extra=False):
+    """maxalt (fixed), maxtops; with extra: C = max c_y, maxm = max m(y, z), RA DAG measures (box 198 §1-§2, L-SI box 90 §0):
+    c_y = #changes in I with top y; RA(y) = letters that are the most relevant top strictly between two consecutive y-tops;
+    m(y, z) = #gaps between consecutive y-tops whose most relevant top is z; P(y) = 1 + sum_{z in RA(y)} P(z) (paths from y);
+    depthV = most letters on an RA path; fanout = max |RA(y)|; fanin = max #{y : z in RA(y)}. Maxima over (v, I)."""
     g, V, vals = res["g"], res["V"], res["vals"]
     evs = {V[k] for k in V if isinstance(k, tuple) and k[0] == "e"}
     rel = lambda u: (g.prio[u], u)
-    maxalt = 0; maxtops = 0
+    out = dict(maxalt=0, maxtops=0, C=0, maxm=0, maxP=0, depthV=0, fanout=0, fanin=0, idfail=0, rpfail=0)
+    def close(tops):
+        out["maxtops"] = max(out["maxtops"], len(tops))
+        if not tops: return
+        out["maxalt"] = max(out["maxalt"], alt(tops))
+        if not extra: return
+        pos = {}
+        for i, y in enumerate(tops): pos.setdefault(y, []).append(i)
+        RA = {y: set() for y in pos}; m = {}
+        for y, ps in pos.items():
+            out["C"] = max(out["C"], len(ps))
+            for a, b in zip(ps, ps[1:]):
+                z = max(tops[a + 1:b], key=rel); RA[y].add(z); m[(y, z)] = m.get((y, z), 0) + 1
+            if len(ps) - 1 != sum(c for (yy, z), c in m.items() if yy == y): out["idfail"] += 1
+        if m: out["maxm"] = max(out["maxm"], max(m.values()))
+        P = {}; D = {}
+        for y in sorted(pos, key=rel, reverse=True):          # RA edges point up (more relevant): do the top letters first
+            assert all(rel(z) > rel(y) for z in RA[y]), "RA edge not upward"
+            P[y] = 1 + sum(P[z] for z in RA[y]); D[y] = 1 + max([D[z] for z in RA[y]], default=0)
+            if len(pos[y]) > P[y]: out["rpfail"] += 1
+        out["maxP"] = max(out["maxP"], max(P.values())); out["depthV"] = max(out["depthV"], max(D.values()))
+        out["fanout"] = max(out["fanout"], max(len(r) for r in RA.values()))
+        fi = {}
+        for y in RA:
+            for z in RA[y]: fi[z] = fi.get(z, 0) + 1
+        if fi: out["fanin"] = max(out["fanin"], max(fi.values()))
     for v in range(g.n):
         prevL = None; prevE = None; tops = []
-        def close():
-            nonlocal maxalt, maxtops
-            maxtops = max(maxtops, len(tops))
-            if tops: maxalt = max(maxalt, alt(tops))
         for vs in vals:
-            L, P, _ = vs[v]; E = frozenset(u for u in P if u in evs)
+            L, P_, _ = vs[v]; E = frozenset(u for u in P_ if u in evs)
             if L != prevL:
-                if prevL is not None: close()
+                if prevL is not None: close(tops)
                 tops = []
             elif E != prevE:
                 tops.append(max(E ^ prevE, key=rel))
             prevL, prevE = L, E
-        close()
-    return maxalt, maxtops
+        close(tops)
+    return out
 
 
 def alt(tops):
@@ -187,12 +212,12 @@ def alt(tops):
     return best
 
 
-def measure(G, elev=True):
-    r = run(G, elev); A, mt = counters(r)
-    return dict(T3=r["T3"], maxalt=A, maxtops=mt, fallback=r["fallback"], n=r["g"].n)
+def measure(G, elev=True, extra=False):
+    r = run(G, elev); c = counters(r, extra)
+    return dict(T3=r["T3"], fallback=r["fallback"], n=r["g"].n, **c)
 
 
 if __name__ == "__main__":
-    elev = "--noelev" not in sys.argv
+    elev = "--noelev" not in sys.argv; extra = "--extra" in sys.argv
     for f in [a for a in sys.argv[1:] if not a.startswith("--")]:
-        print(f, measure(json.load(open(f)), elev), flush=True)
+        print(f, measure(json.load(open(f)), elev, extra), flush=True)
