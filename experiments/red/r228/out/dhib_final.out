@@ -1,0 +1,4 @@
+instance N+M T couples dn2 rh2 rw2 rw2w b0s sp spw jbfail spl3m C nspl Dwt DwtJ Dhib sumD
+DHIB26_2804.json 400 28 1096 0 0 0 0 0 0 0 0 0 4 3 25 25 26 45
+DHIB18_2805.json 400 19 361 0 0 0 0 0 0 0 0 0 4 4 14 14 18 30
+DHIB26_2804.json T3 28 playfail 0 kindfail 0 hwfail 0 gtfail 0 trfail 0 dnfail 0 rhfail 0 rwfail 0 Bne_t1 0 Bne_t2 0 rh2fail 0 rw2fail 0 spfail 0 spwfail 0 wlamfail 0 wcfail 13 wbfail 13 dn_nobelow_all 69 premono_no 0 | changes 9482 dn_nobelow 71 dn_ywt 1653 dnhi 1653 maxSPL 3 maxW 3 maxc 4 oddsplit_g 2220 premono_yes 2031 reentry 2516 rewin 1653 rewin_gate 379 rewin_mover 1274 rw_multi 1223 rw_si

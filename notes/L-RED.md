@@ -71,7 +71,8 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   (two engines), frozen r228/inst. Climb ORDER=DWT seed 2803 (HOLD2_n84) running; maxm climbs 2801 / 2802 stopped (maxm 2).
 - 21:26Z: RWX_n95 (sha1 da8b3a30) kills RW-WT / RW-WT* / RW-B0 / RW-B0* on L-NEW split199 (rwfail 31, rw2fail 31, Bne_t2 31) and on my split228 (rw2 17); proved lemmas 0. R228-box199 Addendum A.
 - 21:45Z: 68639e7a on origin. MW (l-si 2d0344d3) reproduced (maxm n, C 2n+1); C-WT no fail on MW (nspl 1, Dwt C+1). Climb switched to ORDER=DHIB (seeds 2804 DWT20_2803, 2805 C6G8_n54); DWT 2803 stopped at Dwt 20.
-- Item 3 RUNNING: mclimb228.py (own m-census, score (maxm, C, nm, -size)), seeds 2801 (GROW8) / 2802 (CX4), cap 400; logs r228/out/mc_400_*.log.
+- 22:57Z: DHIB climbs 2804 / 2805 STOPPED at cap (Dhib 26 / 18, C 4; two engines 0 fails on DHIB26). Addendum C. Box R228 items 1-3 done; waiting for routing.
+- Item 3 (was RUNNING): mclimb228.py (own m-census, score (maxm, C, nm, -size)), seeds 2801 (GROW8) / 2802 (CX4), cap 400; logs r228/out/mc_400_*.log.
   Baseline census (unit: per-(v, I, y, z) max): maxm 2 on CX4, GROW7, GROW8, B0M569, C2CX4, HOLD3K, W14, W86; 1 on FW4_2, HOLD2(K), HOLD3, W68.
 - Abstract note: m(y, z) ≥ 3 needs BIN-like nesting with ≥ 4 letters (ruler 1 2 1 3 1 2 1 4 1 2 1 has m(1, 2) = 3). In the game, by
   CHAIN-DECOMP and E-MON3 at u_z, z's continuation must lose y and regain it, i.e. a new Λ-interval at u_z or a counter at u_z (box 90 §5).
