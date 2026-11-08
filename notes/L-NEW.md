@@ -25,6 +25,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - BOX 199 Addendum 2: Lemma PAIR-SPLIT PROVED (REWIN-HI for ANY two same-pair y-tops) -> SPLIT-COUNT c_y <= sum_(u,b) Dhi_y(b): (S4) unnecessary.
   CONJECTURE RW-WT* (rw2fail 0 on 6,771 couples) -> C-WT: C(y) <= 3M max Dhi_y(wt(y)); open core = high parts of ONE vertex wt(y).
   Static ascent DAG Z loose (depth <= 7, paths <= 366 vs c <= 5; zdag199.out). W-cases W86/W14/W68 frozen in box199/inst, all lemma counters 0.
+- BOX 199 Addendum 3 (L-SI BOX 90 FW family, l-si 4ded1e8d): all lemma counters 0 on FW4_2..FW16_2; no re-wins, c_y = #split pairs = k+1,
+  Z depth 1: C-WT tight (C <= SPL), Fibonacci P invisible to SPLIT-COUNT. A C-WT counter-family needs Dhi_y(wt(y)) large (ascents after y).
   Things only I know: split199.py prints the must-be-0 counters first, then «|», then the descriptive ones; ex-tuples are raw vertex
   indices (names via gamma3.build's V). Full sweep ~75 s; check199.sh ~10 s. Scratch copy in the scratchpad b199/ (not needed).
 

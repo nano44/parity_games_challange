@@ -332,3 +332,33 @@ Proof: §2's proof with (t1, t2) := (t, t′). Every step uses only what follows
 - OPEN core, in its sharpest form here: max_J Dhi_y(wt(y), J), the number of distinct high parts above y of ONE vertex wt(y).
   - Polynomial in N + M would give C polynomial (C-WT), hence T3 polynomial (C-EQUIV), on RW-WT*.
   - It is again a hub problem, at the lower vertex wt(y), for the letters above y.
+
+## Addendum 3 (L-NEW successor 66, 20:23Z by date -u; Lead 19:58Z relays L-SI 47 BOX 90, claude/l-si 4ded1e8d: FW staircase family, RA-LOG and (S2) DEAD, «test Addendum 2's bound on FW4_2 / FW6_4 / FW8_4»)
+- FW does not threaten Addendum 2's C bounds. Its large P comes entirely from distinct split pairs, of which there are at most 3M. The
+  RW-WT* charge is trivial there.
+- DATA (split199.py and zdag199.py; unit: (v, I, y) for the maxima, same-pair couple for rh2fail / rw2fail; set: the 7 FW instances of
+  claude/l-si experiments/si/box90/inst, sha1 = its SHA1SUMS, copies in box199/inst; scope: N5′-xi from S3 on Γ3, up to the first
+  fallback).
+  - Every lemma counter is 0: playfail, kindfail, hwfail, gtfail, trfail, dnfail, rhfail, rwfail, Bne, rh2fail, rw2fail, spfail, spwfail.
+  - T3 = 3d + 5 is reproduced.
+| instance (sha1) | d, k | T3 | re-entries | re-wins | max c_y | max W_y | max (u,b) per (v, I, y) | Z depth / max P_Z |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| FW4_2 (e583d437) | 4, 2 | 17 | 5 | 0 | 3 | 2 | 3 | 1 / 1 |
+| FW6_3 (5c9090c1) | 6, 3 | 30 | 12 | 0 | 4 | 3 | 4 | 1 / 1 |
+| FW6_4 (cc7e713c) | 6, 4 | 37 | 14 | 0 | 5 | 4 | 5 | 1 / 1 |
+| FW8_2 (108a63cf) | 8, 2 | 29 | 13 | 0 | 3 | 2 | 3 | 1 / 1 |
+| FW8_4 (3b81a63c) | 8, 4 | 47 | 22 | 0 | 5 | 4 | 5 | 1 / 1 |
+| FW12_2 (f8801013) | 12, 2 | 41 | 21 | 0 | 3 | 2 | 3 | 1 / 1 |
+| FW16_2 (94df42b7) | 16, 2 | 53 | 29 | 0 | 3 | 2 | 3 | 1 / 1 |
+- READING:
+  - On FW every y-top of a letter comes through a NEW split pair: no re-wins, and c_y = #split pairs = k + 1.
+  - No letter above y ever lies on wt(y)'s plays (Z depth 1), so Dhi_y(wt(y), J) = 1.
+  - Hence C-WT (A2.2) reads C ≤ SPL · 1 ≤ 3M, and is TIGHT here: max c_y = max SPL. SPLIT-COUNT likewise: each pair contributes 1.
+  - The Fibonacci growth of P (RA paths) is invisible to these bounds. RA counts paths over the letters; SPLIT-COUNT counts split pairs
+    (edges) times high-part values at the b's. That is the step from box 198's P (exponential on FW, so (S3) is false) to a C bound.
+  - FW(d, k) gives C = k + 1 ≤ M: linear, not polynomial-breaking. The C-WT bound 3M · Dhi_y(wt(y)) has room for it.
+- Consistent with L-SI's per-pair multiplicity m(y, z) ≤ 2 (relayed; CONJECTURE RA-MULT(K)): in SPLIT-COUNT's terms, a large c_y needs
+  many split pairs or many high-part values at wt(y), not a deep RA.
+- What a counter-family to C-WT must do (READING): make Dhi_y(wt(y), J), the number of distinct high parts above y of the one vertex wt(y),
+  grow super-polynomially. That needs ascents after y (Z depth ≥ 2), which FW does not have.
+- Records regenerated: split199.out, zdag199.out (22 instances); check199.out unchanged.
