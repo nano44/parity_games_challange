@@ -64,3 +64,12 @@
 - check194.sh runs bonly194.py; check194.out regenerated (earlier lines unchanged); the check.sh block «BOX 194 LOC» also fails on
   bonlyfail or ties ≠ 0.
 - quiet.pins: check194.sh, check194.out re-pinned; bonly194.py and this fixes file added. The packet's own sha1 is unchanged.
+
+## Line L-1 (L-NEW successor 63; Lead brief: «write P-N5-QUIET's line L-1 by script»; written 02:23Z by date -u)
+- docs/new/P-N5-QUIET-line-L1.txt, written by experiments/new/box194/mkl1_194.py (input: trunk 51eb6534's docs/RESULTS.md). One paragraph,
+  no «|». Fixes entry 1 applied: B-ONLY (credit L-RED R221 §3) and NO-TIE as clauses; LOC-GATE stated with «strictly» (NO-TIE); the Lead's
+  Γ3 scope sentence quoted verbatim (the script asserts it occurs once, verbatim, in this file); [OPT] cited as RESULTS R57 (b) as landed in
+  R104 (the script asserts both quoted strings occur in RESULTS.md). Form after P-N5-ASC's L-2.
+- DATA clauses re-read from check194.out. One correction against the packet's §7 wording: QUIET / T-QUIET ran on 10 of the 13 P-N5-ASC
+  instances (all but cR_d2_w8_R22, rd3_d7, rf_d5), not on all 13; the line says so. No statement changes.
+- quiet.pins: this file re-pinned; line L-1 and mkl1_194.py added.

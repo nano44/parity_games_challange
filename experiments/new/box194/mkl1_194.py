@@ -1,0 +1,43 @@
+#!/usr/bin/env python3
+# P-N5-QUIET line L-1 generator (L-NEW successor 63). Run from the repo root: python3 experiments/new/box194/mkl1_194.py RESULTS_COPY
+# RESULTS_COPY = git show 51eb6534:docs/RESULTS.md (trunk at writing). Asserts the verbatim quotes, no «|», one line.
+import sys
+fx = open("docs/new/P-N5-QUIET-fixes.md", encoding="utf-8").read()
+pk = open("docs/new/P-N5-QUIET.md", encoding="utf-8").read()
+res = open(sys.argv[1], encoding="utf-8").read()
+SCOPE = "T bounds IDEAL-CYC iterations; on Γ3 this bounds N5′-xi only up to its first fallback, and only under REACH3-CYC; nothing is claimed about post-fallback iterations, N5′-xi's total count, N5 or general games"
+fxflat = " ".join(fx.split())
+assert fxflat.count("«" + SCOPE + "»") == 1, "scope sentence not verbatim in fixes"
+OPT1 = "that S1's procedure realises an optimal σ̄ is VJ00 §6 plus SPEC conformance"
+OPT2 = "used in two forms: S1's σ̄, and τ̄ on the dual game, are pointwise optima"
+for q in (OPT1, OPT2): assert q in res, q
+L = ("In IDEAL-CYC(G) (RESULTS R118 (a): Γ(G) with every non-mover Even vertex frozen at R104's start, Odd unrestricted, Howard steps at the movers), "
+"for every genome G: (Lemma CN2) the cycle node of every play under every positional pair has priority ≥ 2, so no gate or mover is a cycle node or in a set Π; "
+"(Lemma B-ONLY, credit L-RED R221 §3, re-derived in fixes entry 1) at every state t and every vertex v other than c_W and the e-vertices whose successor is c_W, Λ_t(v) is less relevant than every e-vertex; "
+"(Corollary NO-TIE) at every state and gate g, Ω_t(e_g) ≠ Ω_t(β_g); "
+"(Lemma LOC-GATE) at every state t and gate g, Odd's optimal counterstrategy σ̄_t chooses the face of strictly ⊴-smaller value; "
+"(Lemma LOC-K2) σ̄_t(K2) = K1 and Ω_t(K1) ◁ Ω_t(K2) at every state; "
+"(Theorem QUIET) with class_t(v) := (Λ_t(v), E_t(v)), E_t(v) the e-vertices of Π_t(v), a step loud if some vertex changes class and quiet otherwise, every maximal window of quiet steps has at most L := (M + 1)(2M + 1)(N + 1) + N(n − 1) steps, n = N + 3M + 6; "
+"(Corollary T-QUIET) T_CYC ≤ (1 + Σ_v (D^tot_E(v) − 1))·(L + 1), D^tot_E(v) the number of distinct classes of v over the run; "
+"(Corollary ASC-T) if every seq_t(v) has at most B ascents for every vertex v, T_CYC ≤ (1 + n·((2M + 3)·F′_B(M) − 1))·(L + 1) with F′_B of RESULTS R121 (P-N5-ASC, to land first); "
+"(Corollary UP-T, under HYPOTHESIS [E-LEV]: lev(x) < lev(x′) implies pr(e_(x,k)) < pr(e_(x′,k′))) the same bound with B = U(G), the number of options whose Ξ-target has a higher level, so T_CYC is polynomial in N + M for genomes with U(G) ≤ B, B fixed "
+"(premises: RESULTS R104's definitions of the genome and of Γ(G) only; RESULTS R118 (a), (b) F1, F3 and F4′'s stated clause, (c) DOM and STRICT, (e); VJ00 §4.2 / Friedmann arXiv 1106.0778 §3 for the value (Λ, Π, k) and its order ⊴; "
+"[OPT] = RESULTS R57 (b)'s standing SPEC premise as landed in R104 («" + OPT1 + "», «" + OPT2 + "»; Lead reading 00:36Z that this covers IDEAL-CYC's σ̄_t, for the referees), optionally RESULTS R21 (a); "
+"for ASC-T and UP-T only, RESULTS R121's HUB-ASC-G whole-run form and UP-B; [E-LEV] is R104 (vi)'s packet §3.1 order (docs/red/P-N5-REALIZE.md l. 88) by Lead reading 23:54Z, else a hypothesis; "
+"not used: [LOC], OVT-DV, IN-BOUND, F4 as printed, F5, F6, any L-RED lane lemma; QUIET, T-QUIET, B-ONLY and NO-TIE use neither [E-LEV] nor R121) (2026-11-08) — "
+"this bounds T_CYC only, in one restricted model; for Σ_v D^tot_E(v) with U(G) unbounded and unboundedly many ascents nothing is claimed (OPEN); "
+"«" + SCOPE + "» (witnesses that the restriction is needed: L-RED R221 §7 DIV_2_493, DIV_2_583, DIV_3_717, claude/l-red d49b9f0c, experiments/red/r221q/inst/SHA1SUMS, where N5′-xi on Γ3 changes movers after its first fallback); "
+"DATA, clause by clause (scope IDEAL-CYC, box191 idealcyc via box192 rpot192; tools in experiments/new/box194/, run by check194.sh; set S: L-RED's rd3_d4 and RS2_L32M6 and LEAP_k64 (box194/inst/), the 13 P-N5-ASC instances, 1,000 random genomes rand191.rgen seed 2): "
+"LOC-GATE: locfail 0 in 149,859 (gate, state) pairs (LEAP_k64, rd3_d4, the 13 instances, the 1,000 random genomes; loc194.py); "
+"LOC-K2: k2fail 0 (unit: states; same runs); CN2: cnlow 0 (unit: (state, vertex) pairs; same runs); "
+"B-ONLY: bonlyfail 0 in 297,192 (state, vertex) pairs, NO-TIE: ties 0 in 89,125 (state, gate) pairs (rd3_d4, RS2_L32M6, the 13 instances, the 1,000 random genomes; bonly194.py); "
+"QUIET: wfail 0 (unit: quiet windows) and crossflip 0 (unit: σ̄ flips on quiet steps at gates whose faces are in different classes), longest window W ≤ N on every run (max W/N 1.0 on the 1,000 random genomes; quiet194.py; rd3_d4, RS2_L32M6, 10 of the 13 instances (all but cR_d2_w8_R22, rd3_d7, rf_d5), the 1,000 random genomes); "
+"T-QUIET: Tfail 0 (unit: runs with T > Q + (Q + 1)L; same set as QUIET); "
+"no separate DATA for ASC-T and UP-T (R121's UP-B / HUB-ASC-G plus T-QUIET); "
+"G-N5-TIME stays OPEN; TARGET.md §2 (M4) asks for an algorithm polynomial on every parity game and §4 says a bound on a restricted class is not M4: "
+"not M3, not M4, not a step-4 pass, not a TARGET.md claim "
+"(P-N5-QUIET, docs/new/P-N5-QUIET.md with fixes entry 1, docs/new/P-N5-QUIET-fixes.md; L-NEW successor 62)")
+assert "|" not in L and "\n" not in L
+assert L.count("«" + SCOPE + "»") == 1
+open("docs/new/P-N5-QUIET-line-L1.txt", "w", encoding="utf-8").write(L + "\n")
+print("ok", len(L.encode()))
