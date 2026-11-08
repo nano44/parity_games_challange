@@ -1042,4 +1042,11 @@ if [ "$r196" -eq 0 ] && [ -z "$d196" ] && ! grep -Ev "^(ctrl|spec)" box196/check
 else
   echo "BOX 196 CHAIN check: FAILED (check196.sh exit $r196; python $(python3 --version 2>&1))"; echo "$d196" | head -30; echo "$run196" | tail -15; exit 1
 fi
+# P-N5-CHAIN (L-NEW successor 64): frozen packet + cited tools / instances / outputs against box196/chain.pins (DOCS/ = docs/new/)
+pinC=$(cd box196 && sed 's#DOCS/#../../../docs/new/#' chain.pins | sha1sum -c --quiet 2>&1) || true
+if [ -z "$pinC" ]; then
+  echo "P-N5-CHAIN: packet and $(wc -l < box196/chain.pins) pinned files match chain.pins: PASS"
+else
+  echo "P-N5-CHAIN check: FAILED"; echo "$pinC" | head -20; exit 1
+fi
 rm -rf "$tmp"
