@@ -40,4 +40,5 @@ grep -q "notbeta 0 nonstrict 0 C 0 R 0 T_gt_N 0" out/lemma81_towers.out
 for i in $LIB $TOW; do grep -q "upb OK hubfail 0 .* ovtfail 0 rsplit OK" out/census_$i.out; done
 bash fix1/check_fix1.sh
 bash fix2/check_fix2.sh
+bash fix3/check_fix3.sh
 echo "box 81 checks: PASS"
