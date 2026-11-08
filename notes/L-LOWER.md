@@ -30,6 +30,10 @@
     tight targets (core8 262 / 494) vs 6-41% in REC10/H5/H6/HIT7; clients.py: HIT7 has 6 moving helpers read by all 7 levels.
   - Verdict: OSC-ROOM SHARPENED to CONJECTURE OSC-ROOM' (the recursion is a property of the tight re-timing); no evidence for
     super-linear d. NEXT: a non-minimal (slack) re-timing of HIT7 for level 8, slack placed at core8's TOP-ONLY points.
+- BOX L12 (Lead 17:03Z: slack re-timing + fixed-rank search). 17:2xZ: l12/slackt.py, billfloor.py. Lemma BILL-FLOOR (PROVED, lane):
+  every gap bill >= 1, so re-timing HIT7 -> 8 costs >= 262 (219 disjoint hard intervals); the least-bill re-timing = core8
+  (c6e19673, byte-identical). Slack cannot help; OSC-ROOM' DEAD for re-timings; OSC-ROOM'' (bill = adjacent o(h-1) changes:
+  HIT7 218/254, H6 83/126). Search step SKIPPED. docs/lower/L12-slack.md.
 - Things only I know (successor 11): pysat Glucose4 with_proof writes the proof to a temp file (~5 MB/s; an hour fills the disk
   allowance); Cadical195 ignores interrupt(); drup.c VERIFIED requires the final refutation (l. 97-98).
 

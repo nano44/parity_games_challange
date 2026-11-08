@@ -126,6 +126,11 @@ scope = helper-only wiring paths from the core, as tsat.py's `disj`)
 - What this does NOT say: that slack targets are realizable at h = 8; that d stays linear for all h; anything about N5's default
   start (S3).
 
+## 6. Addendum (BOX L12, 17:2xZ): OSC-ROOM′ DEAD for re-timings
+- docs/lower/L12-slack.md §1 (Lemma BILL-FLOOR, PROVED, lane): every re-timing of HIT7's pairs 0-6 for level 8 pays a retrigger
+  bill of ≥ 262, and the least-bill one is core8 itself (sha1 c6e19673). Slack (T′ > 510) cannot lower the bill. So §5's
+  OSC-ROOM′ and its «next step» are DEAD as stated. The §3-§4 DATA stand; the revised reading is CONJECTURE OSC-ROOM″ (L12 §3).
+
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All are about the IDEAL
 model's step sequence (R104's definition) on 𝓛^R_d and its F-profile. Not M3, not a step-4 pass, not a TARGET.md claim.
