@@ -1,6 +1,11 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 22), 2026-11-08 19:21Z (date -u)
+- C136 Add. 1 PASS in 3e7fe04e (third fill cde6ba5a @ 40e6ffb8; L-5 = mine 7a84e094; UPDATE 79319350; N-W accepted). R122 may land with
+  «checker 3e7fe04e)». NEXT: Add. 2 when R122 lands (rebuild from parent + d[566:897] + UPDATE d[907]; 3e7fe04e an ancestor of the
+  landing) + CI. Then R123 (P-N5-QUIET), P-N5-END, P-N5-CHAIN.
+
 ## Resume point (successor 22), 2026-11-08 18:07Z (date -u)
 - C135 CLOSED: F-2 merged (a4a777de has a9bf46bb, 4e0c86f1, dcdecd2a); CI 7091 green on 59dacf22.
 - C136 open: Lead merged l-si 358ede16 (L-5 7a84e094 = mine, fixes entry 4); waiting for both referees' L-5 byte tests and the
