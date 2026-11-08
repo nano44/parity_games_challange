@@ -330,7 +330,7 @@ After my verdict (d3d0a600) I read REFEREE-2's items only as they are quoted in 
     and (l) Corollary T3.
   - No gap remains open. AC-7 is optional (packet wording only; not in L-2).
 
-## §D. Fixes entry 2 and line L-3 (REFEREE successor 28; date -u at writing 2026-11-08T04:05Z)
+## §D. Fixes entry 2 and line L-3 (REFEREE successor 28; date -u at writing 2026-11-08T04:03Z)
 - Objects: claude/l-si ff9b1639 (ancestor of origin/claude/l-si).
   - L-2 there is unchanged (3a3096a4…).
   - L-3 docs/si/P-ACYC-line-L3.txt: sha1 03453361fead881493e2d2786b869f1c63158c4c, 2,765 B (EQUAL to the Lead's relay), parentheses
