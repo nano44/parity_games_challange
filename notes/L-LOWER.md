@@ -12,6 +12,9 @@
 - 02:5xZ: sched.py targets are capped iff alpha_(h-2) = 1; sat_all.sh's a100/a101 are uncapped -> stopped; sat_capped.sh (8 capped
   h3d5 instances) runs as 3 tracked workers (logs out/sat/capK.log); h3d4 a110 proof regenerated in $SP/sat for IGNDEL=1 DRUP.
   Lead 02:13Z approved the counter-target redirect.
+- 04:0xZ: L9 §4 UPPER-BLIND / PHASE-DAG pushed 2e2c6a4a. h3d4 a110 re-solved UNSAT; DRUP (both modes): all lemmas RUP, final
+  empty clause NOT UP-derivable -> proof incomplete (pysat), NOT VERIFIED; Glucose4 cross-check via l9/resolve2.py running
+  (out in $SP/sat/h3d4_a110.g4.*). h3d5 capped cubes: sat_capped.sh 3 workers (out/sat/capK.log, .res files).
 ### Things only I know (successor 9)
 - sched.py with alpha [1, 0, 0] has an idle core step (h 3, t 2 → 3): helpers must move there or the run ends.
 - fenc build: gcc -O2 -o $SP/fenc experiments/lower/l9/fenc.c (scratchpad).
