@@ -96,8 +96,13 @@ satisfying Lemmas 2, 3 at H; scope = the stored start)
 - Reading. The climb lowers the floor from 262 to 210-214 (−19%) and then plateaus in two rounds. That is above the 0.7·F(6) ≈ 178
   threshold, so no level-8 target was built from it. H6 shows a share of 0.66 is reachable at h = 6, but the h = 7 climbs here
   stall at 0.74. Not a bound: ADJ-COUNT allows A down to 13.
-- Round 3 (running at the time of writing): R5 from HIT7_lift_d32 (d 32, 4 extra helper levels: does depth buy room?), R6 from R3 at
-  temp 2.5.
+- Round 3 (ended 22:20Z, date -u): R5 from l9/rec/HIT7_lift_d32 (d 32, N + M 192; 4 more helper levels): best A 198, T 320,
+  C 309, share 0.780, floor 227 (0.89 F(6)); frozen rec/ROOM_R5_d32.txt e6435e21 (sim6, fenc, replay30 agree: 7 caps, T 320).
+  R6 (from R3, temp 2.5): no gain (187). Depth did not buy room within this budget (DATA, one run).
+- Side DATA (sim6 = fenc = replay30): ROOM_R4 has F(7) = 252 (HIT7: 190; an eighth cap needs 510). The climb never scored level 7.
+- Outcome of (a): the adjacency share falls from 0.86 to 0.74 at d 28 and plateaus over 3 rounds (6 runs, ~8.5 CPU-h). The floor
+  falls from 262 to 210, i.e. 0.83 F(6), not below 0.7 F(6). So no level-8 target was built. Status for OSC-ROOM″'s question
+  «share bounded below 1»: below 1 yes (0.74 at h = 7, 0.66 at h = 6, both DATA). No share near H6's 0.66 found at h = 7. No law.
 
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All are about the IDEAL

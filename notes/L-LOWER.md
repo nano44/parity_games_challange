@@ -44,6 +44,8 @@
 - 20:5xZ round 2: R3 no gain (187), R4 189 (floor 217; frozen 516857e3). Plateau share 0.74, floor 0.84 F(6) > 0.7: no level-8
   target built. Lemma ADJ-COUNT (A >= 2k-1-C, C <= 494 moves) in L12 §4. Round 3 RUNNING (tracked, 85 min, $SP/l12): R5 from
   l9/rec/HIT7_lift_d32 (d 32), R6 from R3 temp 2.5.
+- 22:20Z round 3 ended: R5 (d 32) A 198, floor 227 (frozen e6435e21); R6 no gain. ROOM CLIMB outcome: floor 262 -> 210 (0.83 F(6)),
+  plateau; no level-8 target built. R4 has F(7) = 252 (side finding). Nothing running.
 - Things only I know (successor 11): pysat Glucose4 with_proof writes the proof to a temp file (~5 MB/s; an hour fills the disk
   allowance); Cadical195 ignores interrupt(); drup.c VERIFIED requires the final refutation (l. 97-98).
 
