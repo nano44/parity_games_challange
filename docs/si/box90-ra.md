@@ -32,6 +32,10 @@ pair198.py, and my mult90.py on each of the two engines.
   T3 linear. This does NOT touch G-N5-TIME (m ≤ c_z ≤ T3, C ≤ T3).
 - Net READING of box 90: P, m and C can each be driven to their trivial ceilings on real N5′-xi runs (P exponential, m and C linear in T3)
   while T3 stays linear in N + M. So none of the box 198 counters separates; a bound must charge C to TIME, i.e. the open core is T3 itself.
+- Milestone 3, route (ii) (§7, Lead 21:27Z): the WAITING-HIGH chain WC(n) is DEAD. T3 = 4 for n = 4, 8, 16 (two engines): the High does
+  not wait, it CASCADES (every h_k unlocks at once, letters accumulate, C = 1). Obstruction: the trigger sits on the High's own
+  W-continuation, so the unlocking play carries h_(k−1) and Lemma SUPERSET keeps it; no reset, no replay. Dhi_y(wt(y)) (L-NEW 66 C-WT):
+  1 on FW, 2n + 2 on MW (= C + 1, linear), 2 on WC: the waiting High that would make it grow super-linearly is NOT built.
 - Obstruction to making C grow in this design (READING, §5): every u_j runs its window once; y re-enters under z a second time only if
   z's own W-continuation u_z changes again with a top above y, i.e. a counter at u_z: the PAIR-HIGH recursion itself. No new lemma.
 
@@ -111,3 +115,33 @@ hv → v, Ξ-target R: CX4's x18 / x10 / x17 race). Run (trace, own and g3 ident
   super-polynomially in N + M, which forces T3 to. A race multiplies changes at ONE vertex, not steps: stacking races needs the spacing to
   double per level (R must see each change two steps apart), so C ∝ T3 on every race stack (READING; same as box 89 §3's feed-forward
   doubling).
+
+## 7. Route (ii): a High that waits for the low race (milestone 3; Lead 21:27Z)
+Design WC(n, L) (genw90.py): high letters h_1 ≺ … ≺ h_n with NO clock. h_1 is free (β → W). For k ≥ 2 the β-face of qh_k points to v, and
+the W-target D_(k−1) of h_(k−1) (Even: → X, or → qh_k) leads into qh_k. Intended: h_k unlocks (Odd's e-exit forced, because the β-face
+closes a cycle through v carrying e(h_(k−1)), Even-winning) only when v's own play runs through h_(k−1): the High waits for v. The low
+letter z (qz, W-target u with delay lanes of length L to every qh_k) is the low race to be replayed under each h_k.
+| instance (sha1: inst/SHA1SUMS) | n | N + M | T3 | C | maxP | A | maxm | Dhi_y(wt(y)) | fails (own; g3) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| WC4_2 | 4 | 60 | 4 | 1 | 1 | 2 | 0 | 2 | 0; 0 |
+| WC8_2 | 8 | 112 | 4 | 1 | 1 | 2 | 0 | 2 | 0; 0 |
+| WC16_2 | 16 | 216 | 4 | 1 | 1 | 2 | 0 | 2 | 0; 0 |
+- DATA (mult90 own / g3, ra227, pair198; out/wc90.out; all equal, all fails 0). Trace (WC4): at state 1 every D_k points on and v's set is
+  {h_1, …, h_n} ∪ …: all letters unlock in ONE step, and z then joins once. DEAD as a waiting High (instances frozen).
+- Lemma SUPERSET (PROVED, lane, elementary): let two plays from v agree from their first visit of qh_(k) on, and let one of them carry, in its
+  prefix, the e-vertex e(h_(k−1)) in addition, all other prefix differences being less relevant than h_(k−1). Then the one carrying h_(k−1)
+  is strictly better for Even (the symmetric difference is topped by the even e(h_(k−1)), above every β). Hence once a play from v passes
+  h_(k−1) and continues into h_k, v never moves to a route that has h_k without h_(k−1) unless something above h_(k−1) is gained: h_(k−1) is
+  never expelled by h_k, so letters below it never replay under h_k. ∎
+- Exact obstruction of this design: the trigger of h_k is on h_(k−1)'s W-continuation (D_(k−1) → qh_k), and W-targets are fixed, so EVERY
+  play through h_(k−1) carries the trigger. The unlocking play has h_(k−1) before h_k (SUPERSET: no reset), and the next trigger fires on the
+  same play one vertex later (cascade: Howard switches all D's at once). Also used: Odd's exit at a one-option mover is POSITIONAL (it
+  depends only on the values at its two successors, not on the route a play arrived by), so a trigger cannot see «fresh» versus «old» routes.
+- What a working waiting High would need (READING, for L-NEW 66 and L-RED 62): a trigger for h_k that is NOT on any route that carries
+  h_(k−1), e.g. on the β-face of qh_k into the low race's own vertex u (Even-winning only while u's lane is at h_(k−1)), AND an Even route
+  to h_k that avoids h_(k−1) and still beats every route through both. By SUPERSET the second needs a letter above h_(k−1) on the avoiding
+  route that the old route lacks: the reset itself must be paid for by a higher letter, which is PAIR-HIGH's recursion again. I did not get
+  past this point; it is the open design step of route (ii).
+- Dhi_y(wt(y), J) (L-NEW 66 C-WT, claude/l-new 91ed2f3f; mult90 DWT=1, two engines, out/dwt90.out; unit (y, J), max over the genome):
+  FW 1 on all 7 (the W-targets u_j see no high change above their letters), MW 2n + 2 = C + 1 (the race letter's W-target hv → v sees v's
+  whole high part), WC 2. So C-WT's quantity grows only where C does; a super-linear Dhi_y(wt(y)) is not produced by any design here.

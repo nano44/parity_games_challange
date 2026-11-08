@@ -4,11 +4,23 @@ Per (v, maximal Lambda-interval I): tops (most relevant e of each change of E_t(
 y-tops whose most relevant top is z (so RA(y) = {z : m(y, z) >= 1}, c_y - 1 = sum_z m(y, z)); P(y) = 1 + sum_{z in RA(y)} P(z) (box 198
 RA-PATHS); depth = longest RA chain (letters); fan-in = max |RA(y)|; A = longest alternation of two letters.
 Counters (unit (v, I, y)): idfail (c_y - 1 != sum_z m(y, z)), rafail (an RA letter not above y), lexdec (unit change: top not in the new set).
-Records: T, C = max c_y, maxP, depth, fanin, A, maxm = max m(y, z).
+Records: T, C = max c_y, maxP, depth, fanin, A, maxm = max m(y, z); dwt = max over letters y with a mover W-target wt(y) and over the
+Lambda-intervals J of wt(y) of #distinct values of E_t(wt(y)) ∩ U_y (L-NEW 66's Dhi_y(wt(y), J), claude/l-new 91ed2f3f C-WT), U_y the
+e-vertices more relevant than y; ylet = the letter (option) attaining dwt.
 Engines (read-only, pinned; see pins.txt): own = L-RED R221 own.py (IDEAL-CYC Howard, G's start), dir in $OWN_DIR;
 g3 = L-NEW's Gamma3 N5'-xi engine from S3 (gamma3 / n5v / n5x / eg195 as box 198 uses them), tree root in $ROOT.
 Usage: mult90.py own|g3 G.json ..."""
 import sys, os, json, collections
+def dwt(G, ivsets, ev_of, xv_of, rank):
+    best = (0, None)
+    for x in range(G["N"]):
+        for k, (wt, _, _) in enumerate(G["opts"][x]):
+            if wt < 0: continue
+            y = ev_of[(x, k)]
+            for Es in ivsets[xv_of[wt]]:
+                d = len({frozenset(e for e in E if rank[e] > rank[y]) for E in Es})
+                if d > best[0]: best = (d, (x, k))
+    return best
 def census(tops_per_vi, rank, T):
     c = collections.Counter(T=T)
     for tops, newsets in tops_per_vi:
@@ -35,14 +47,15 @@ def census(tops_per_vi, rank, T):
                 c["A"] = max(c["A"], n)
         c["A"] = max(c["A"], 1)
     return c
+IVSETS = {}
 def intervals(T, lam, eset, n):
-    out = []
+    out = []; IVSETS.clear()
     for v in range(n):
         t = 0
         while t <= T:
             u = t
             while u + 1 <= T and lam(u + 1, v) == lam(t, v): u += 1
-            Es = [eset(i, v) for i in range(t, u + 1)]; tops = []; news = []
+            Es = [eset(i, v) for i in range(t, u + 1)]; tops = []; news = []; IVSETS.setdefault(v, []).append(Es)
             for a, b in zip(Es, Es[1:]):
                 if a != b: d = a ^ b; tops.append(d); news.append(b)
             out.append((tops, news)); t = u + 1
@@ -53,7 +66,8 @@ def run_own(G):
     T = len(out) - 1
     iv = intervals(T, lambda t, v: out[t][1][v][0], lambda t, v: frozenset(e for e in out[t][1][v][1] if e in evs), n)
     iv = [([max(d, key=lambda e: rk[e]) for d in tops], news) for tops, news in iv]
-    return census(iv, rk, T)
+    c = census(iv, rk, T); c["dwt"], c["ylet"] = dwt(G, IVSETS, {q: V[("e", q)] for q in O}, {x: V[("x", x)] for x in range(G["N"])}, rk)
+    return c
 def run_g3(G):
     R = os.environ["ROOT"]; os.environ.setdefault("EG195_ROOT", R)
     sys.path[:0] = [os.path.join(R, p) for p in ("experiments/new/box195", "experiments/new/box191", "experiments/new/box189",
@@ -73,11 +87,14 @@ def run_g3(G):
         x = hist[t][v][1] & ES; return frozenset(f for b, f in bit.items() if x & b)
     iv = intervals(T, lambda t, v: hist[t][v][0], es, n)
     iv = [([max(d, key=lambda e: E.rank[e]) for d in tops], news) for tops, news in iv]
-    return census(iv, E.rank, T)
+    c = census(iv, E.rank, T)
+    c["dwt"], c["ylet"] = dwt(G, IVSETS, {q: V[("e", q)] for x in range(G["N"]) for q in [(x, k) for k in range(len(G["opts"][x]))]},
+                              {x: V[("x", x)] for x in range(G["N"])}, E.rank)
+    return c
 if __name__ == "__main__":
-    eng = sys.argv[1]; K = ("T", "C", "maxP", "depth", "fanin", "A", "maxm", "idfail", "rafail", "lexdec")
+    eng = sys.argv[1]; K = ("T", "C", "maxP", "depth", "fanin", "A", "maxm", "idfail", "rafail", "lexdec") + (("dwt", "ylet") if os.environ.get("DWT") else ())
     print("engine", eng, "instance N+M", " ".join(K))
     for f in sys.argv[2:]:
         G = json.load(open(f)); G = G.get("genome", G)
         c = (run_own if eng == "own" else run_g3)(G)
-        print(eng, os.path.basename(f), G["N"] + sum(len(o) for o in G["opts"]), " ".join(str(c[k]) for k in K), flush=True)
+        print(eng, os.path.basename(f), G["N"] + sum(len(o) for o in G["opts"]), " ".join(str(c[k]).replace(" ", "") for k in K), flush=True)

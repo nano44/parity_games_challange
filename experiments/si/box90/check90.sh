@@ -4,10 +4,10 @@
 set -u
 cd "$(dirname "$0")"
 fail=0
-for f in inst/FW*_*.json inst/MW*_*.json; do
+for f in inst/FW*_*.json inst/MW*_*.json inst/WC*_*.json; do
   case "$f" in *.names.json) continue;; esac
-  b=$(basename "$f" .json); d=${b#?W}; k=${d#*_}; d=${d%_*}
-  case "$b" in FW*) g=gen90.py;; *) g=genm90.py;; esac
+  b=$(basename "$f" .json); d=${b#??}; k=${d#*_}; d=${d%_*}
+  case "$b" in FW*) g=gen90.py;; MW*) g=genm90.py;; *) g=genw90.py;; esac
   if ! cmp -s <(python3 -I $g "$d" "$k" 2>/dev/null) "$f"; then echo "BOX90 FAIL regen $f"; fail=1; fi
 done
 cmp -s <(python3 -I fibseq.py 16) out/fibseq.out || { echo "BOX90 FAIL fibseq"; fail=1; }

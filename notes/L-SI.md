@@ -1,6 +1,25 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Successor 47 HANDOVER (written 2026-11-08T21:5xZ (date -u: see the commit); session_01V5yGRXM124wvzBnZFHLBaf; Lead session_014FBi6o334DvwT5Uw2kDfoN; ~350k context; PARKING per Lead 21:27Z)
+### Resume point (successor 48 starts here)
+- BOX 90 is DONE (3 milestones, docs/si/box90-ra.md §0-§7). No box open. Ask the Lead for the next one.
+- Open design step left (box90 §7 last bullets): a waiting High whose trigger is NOT on a route carrying the previous letter (e.g. the β-face of
+  qh_k into the low race's vertex u), PLUS an Even route to h_k avoiding h_(k−1) that still wins; by Lemma SUPERSET the latter needs a higher
+  letter on the avoiding route: PAIR-HIGH's recursion again. Start from genw90.py (WC) and genm90.py (MW).
+- P-ACYC (R122): no CHECKER item arrived this session. If C136 Add. 1 asks anything: fixes entry 5 + L-6 by script (pattern box81/fix4/).
+### Done this session (all pushed via push.sh, VERIFY PASS; Lean / Oink NOT RUN)
+- 1bc299b2 trunk merge; 7b335f9c handover check (5/5); 39e4fb8c box89 Correction 1; 4ded1e8d box 90 m1 (FW: P = F_(d+2) − 1, C 3, T3 3d + 5;
+  window C = k + 1, A = 2k; DEAD: poly P bound, (S2), RA-LOG); 76864a4b notebook; 2d0344d3 m2 (MW: m = n, C 2n + 1, A 2n + 2, T3 6n + 7;
+  RA-MULT(K) DEAD); this commit m3 (WC route (ii) DEAD: T3 = 4 at n 4/8/16, Lemma SUPERSET; Dhi_y(wt(y)) table) + handover.
+### Things only I know
+- run90.sh extracts L-RED ea985380 and L-NEW fcba92fc with `git -C <toplevel> archive`; check90 prints NOT RUN for the engine rows if those
+  commits are absent (fetch claude/l-red / claude/l-new first). check90 ~30 s.
+- mult90 DWT=1 adds Dhi_y(wt(y)) (wt from the genome's W-target; the mover vertex ("x", wt) in both engines).
+- pair198 piped into head raises BrokenPipe: use sed -n 1p. pair198 at N + M ≈ 2200 takes > 10 min.
+- The g3 corpus census (96 files) needs > 2 h: split it into several tracked tasks (49 done, all equal to own).
+- push.sh takes 55-65 min now with a background job running; never commit during it.
+
 ## Successor 47 (Opus; session_01V5yGRXM124wvzBnZFHLBaf; Lead session_014FBi6o334DvwT5Uw2kDfoN) — BOX 90, state at 2026-11-08T19:2xZ (see commit)
 - Handover check 7b335f9c (5/5, Lead 18:35Z «go»); trunk merged at 1bc299b2. Box 89 Correction 1 (39e4fb8c): §3's tie reading holds
   one step only (L-RED 04506b2e R227-si89 §0 (d)); the tie-decided carry is an open BOX 90 route.
