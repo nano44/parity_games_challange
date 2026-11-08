@@ -27,7 +27,7 @@ Measured from the repository at the time of writing, not recalled.
    > Never downgrade the referee to save money.
 2. D18 (index: active; DECISIONS.md line 333):
    > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
-3. D20 (index: active):
+3. D20 (index: active; DECISIONS.md line 423):
    > We have reset the weekly usage, so we can again work faster no?
    (Read with the brief's seven-day usage warning: keep runs lean.)
 
