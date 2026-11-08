@@ -199,3 +199,37 @@ linefix.out, rt_n1.out, L1.txt, P-N5-CHAIN.md (the frozen packet, copied for the
   signatures on statements whose proofs use (F-cls3) / E-MON3 stand only on the repaired reading, which REFEREE-2 checked and the lane
   accepted; an independent check by me is open (NEEDS).
 - Verdict: fixes entry 2 CORRECT as to R-1, R-2, R-4, N-1. **Line L-3 MATCHES** the packet read with fixes entries 1-2.
+
+### §D follow-up: W-1 re-derived (REFEREE successor 30; date -u at writing 2026-11-08T12:43Z; Lead 12:24Z asked; no runs, reading only)
+- Sources: packet frozen 6e613ba7 (text at claude/l-new 8b67d40e: (Core) l. 97-99, (F-cls3) l. 218-221, (Q1)-(Q4) l. 226-240, E-MON3
+  l. 262-266, Lemma LOC-K2-3's proof l. 198); [DEF] / [G3] quotes l. 42-49; REFEREE-2 35, R2-P-N5-CHAIN.md «W-1» (claude/referee-2
+  0e5c7c37 l. 132-148). Its r2nonconv.out not re-run; its witness checked by hand below.
+- The defect is real.
+  - (Core)'s «a play passes K0 iff it passes K3»: K3's only in-edge is from pA and pA's only from K0 (l. 98), so a play starting at pA or
+    K3 passes K3 and not K0. True for every other start (K0 → pA → K3 frozen), i.e. «iff» holds for plays not starting at pA, K3.
+  - (F-cls3)'s convexity over all vertices: false. Hand check of REFEREE-2's witness with [DEF]'s priorities (K3 = top + 3, odd, the most
+    relevant vertex; K0 = top + 2, even; e even above every β): x_1 (Λ K1, Π {β, K0, K3}) ◁ e_(3,1) (Λ K1, Π {β, e, K0, K3}): Δ = {e},
+    even, in the later set. e_(3,1) ◁ K1 (Λ K1, Π ∅): the top of Δ is K3, odd, in e_(3,1)'s set. x_1 and K1 have class (K1, ∅), e_(3,1)
+    has (K1, {e}): a class that is not convex. The cause: core vertices K1, s, r, K2 have node K1 without K0 / K3 in Π.
+  - E-MON3's reason «both plays have node w, so both or neither contain them» does not follow from (Core) for v ∈ {pA, K3}.
+- The repair holds (my derivation).
+  - Core in-edges, from [DEF] l. 46 and [G3] l. 48 with the pads: K0 ← q, pb_g's; pA ← K0; K3 ← pA; K1 ← K0, s, r, K3; s ← K1; r ← K2;
+    K2 ← K3, K2; q ← K1. The only edge from outside {K0, pA, K3, K1, s, r, K2, q} into it is pb_g → K0.
+  - Core vertices: every out-edge choice inside the core is fixed on the states in question (K0 → pA, pA → K3, K3 → K2, K1 → s, s → K1,
+    r → K1, q → K0 forced or frozen by (Core); σ̄(K2) = r by LOC-K2-3, signed). So each of the eight has the same play, hence the same
+    value, at every state (l. 198 computes three of them).
+  - A non-core vertex v: its play either never enters the core (then K0, K3 ∉ Π) or enters by pb_g → K0 → pA → K3 → K2 → r → K1 → s → K1
+    (node K1; K0, K3 both more relevant than K1 (priority 5), so both in Π). So for non-core v, {K0, K3} ∩ Π_t(v) is ∅ or {K0, K3} and is a
+    function of Λ_t(v) alone (both iff Λ = K1; K2 cannot be the node of a non-core play under σ̄(K2) = r). Hence on non-core values the order
+    is reward(Λ), then E, then the rest: classes of non-core values are convex.
+  - Uses, each covered: (Q1) compares pe_g, pβ_g (pads, non-core). (Q2) a mover, its pad and its gate (non-core). The per-vertex
+    interval property: a non-core vertex's values are ⊴-monotone (F1) and its classes convex, so each class is one interval; a core vertex
+    is constant (one class). So Q ≤ Σ_v (D^tot_E(v) − 1). (Q3)-(Q5) compare values of plays from non-core class-C vertices, plus constant
+    boundary values. E-MON3: for non-core v the K-layer is fixed by the equal node w, so K0, K3 are not in Π_t(v) Δ Π_(t+1)(v); for core v
+    the two plays are equal. The claim of E-MON3 and every statement stay as signed.
+- Verdict: REFEREE-2's W-1 repair is CORRECT and SUFFICIENT; I sign it. Is it L41's case? Yes, by the same standard as the Lead's (Q4)
+  ruling 12:24Z: two sentences of the frozen text ((F-cls3)'s convexity, E-MON3's reason) are false as written, and the proof needs the
+  case split (non-core / core-constant), which the packet's text does not make, though every fact it uses is in the packet ((Core) l.
+  97-99, LOC-K2-3, l. 198). The step is referee-originated (REFEREE-2 35) and now signed by both referees (REFEREE-2 35, R2-P-N5-CHAIN.md
+  W-1; this section). The line should name it in one clause, e.g. «(F-cls3)'s convexity and E-MON3's reason hold for non-core vertices;
+  the eight core vertices are constant (W-1, REFEREE-2 35, both referees)». No statement, label or number changes.
