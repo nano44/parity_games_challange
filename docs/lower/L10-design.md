@@ -175,6 +175,13 @@ movers in closure(x); acyclic wiring)
 - Status: the level-8 build at d 32 is NOT achieved (DATA, this search); not DEAD (a heuristic search, not exhaustive).
   CONJECTURE STRETCH-AND-STACK stays open. The exact sub-problem the next attempt must solve is the f6 gadget above.
 
+- C5 dissected at 08:39Z (rec/L10_C5_order_snap0839.txt, sha1 362b793820e80be72f5e12ba36138a2ec4a7cd87; out/viol_C5_snap0839.out;
+  score 553; unit = violated constraint). Here q7 (14) is the one sacrificed: 252 violations, about half its constraints, because
+  q7 needs o(6) and may not reach 13. f6 drops to 41; q5 86, q4 52, f5 40. So the loop f6 → pairs 0-5 → clock q7 → pair 6 ∋ f6
+  (2e) is where every run fails: cutting it at any link sacrifices the mover at the cut. READING: a cut needs an idle-step clock
+  for pairs 0-5 that does not reach 13. That means a helper oscillator driven only by the key timing o(7) (which flips every
+  step): a hidden helper counter below the core in the DAG order. Not built.
+
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All are about the IDEAL
 model's step sequence (R104's definition) on 𝓛^R_d and its F-profile. Not M3, not a step-4 pass, not a TARGET.md claim.
