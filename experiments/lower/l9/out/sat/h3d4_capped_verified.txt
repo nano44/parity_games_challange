@@ -1,0 +1,11 @@
+# L-LOWER 9 (2026-11-08 04:5xZ date -u): h = 3, d = 4, the two CAPPED sched targets (alpha 1,1,0 and 1,1,1), whole instances
+# CNF from l8/hsat.py build(3, 4, alpha, ()); solver pysat Glucose4 (l9/resolve2.py); proof checked by l8/sat/drup.c (default mode).
+# CNF and proof files are in the scratchpad only (not committed); CNF sha1 given so they can be rebuilt and compared.
+== h3d4_a110 cnf sha1 d03ba0d8e6a11d8fb3326d7bf3836fb38ef8e0a2
+RESULT UNSAT 50.3s
+proof lines 469890 last 0
+s VERIFIED (253740 lemmas RUP-checked)
+== h3d4_a111 cnf sha1 f227dcbe4790676037f7e0a5d2e0cf5813241792
+RESULT UNSAT 67.3s
+proof lines 549105 last 0
+s VERIFIED (295106 lemmas RUP-checked)

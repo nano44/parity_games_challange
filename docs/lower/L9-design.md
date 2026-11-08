@@ -81,9 +81,14 @@ Labels: PROVED (lane) / CONJECTURE / DATA / DEAD / READING. Model and notation a
   d = 4 «NONE in all four α» row therefore matters only for a110 and a111. Their status from STATUS_at_park.txt:
   - a110: UNSAT by hsat, DRUP NOT VERIFIED in default mode;
   - a111: UNSAT by 4 cubes, not DRUP-checked.
-  So «h = 3 needs d ≥ 5» is NOT verified (a101, the one DRUP-verified instance, has an uncapped target). The h3d5 runs now go
-  through sat_capped.sh (the 8 capped instances only: a110, a111 × gate cases 0-3); the a100/a101 runs of sat_all.sh were stopped
-  at 02:5xZ (no cube decided).
+  Update 04:5xZ: both capped d = 4 instances are now DRUP-VERIFIED UNSAT by a second solver (out/sat/h3d4_capped_verified.txt; CNF
+  from l8/hsat.py build, sha1 d03ba0d8… (a110), f227dcbe… (a111); pysat Glucose4 via resolve2.py, 50 s / 67 s; l8/sat/drup.c default
+  mode: 253,740 / 295,106 lemmas RUP-checked, «s VERIFIED»). The earlier CaDiCaL proof of a110 checked every added lemma, but its
+  final empty clause was not UP-derivable: the proof as returned by pysat was incomplete, not wrong.
+  So: no capped sched target with h = 3 is realizable at d = 4, i.e. with one helper pair. This is PROVED (lane) modulo the hsat
+  encoding, which L8 §2 validated against the exhaustive hsched / hsched2 searches.
+  h = 3 at d = 5: CaDiCaL cubes (1,500 s each) never finished between restarts. They were replaced at 04:3xZ by whole-instance Glucose4
+  runs (l9/gwhole.py, gwhole_h3d5.sh; 1,800 s limit; results in out/sat/*.g4.res).
 
 ## 4. The phase argument for the counter target (Lead 02:46Z decision (a))
 - Setting: a realization of a capped sched(h, α) target (§3). Pairs 0..h−1 follow the target (f_l = 2l + 1, q_l = 2l, joined gate
