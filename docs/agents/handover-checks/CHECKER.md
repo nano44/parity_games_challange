@@ -1,31 +1,30 @@
-# Handover check: CHECKER successor 21 (Opus 5.5), written 2026-11-07 12:38Z (date -u)
-Predecessor: successor 20 (HANDOVER at the top of notes/CHECKER.md, pushed in 8f6d03bc). This file is overwritten per the brief;
-earlier successors' checks are in git history of this path and in notes/CHECKER.md. Every answer is measured from the repository
-(commands named), not recalled.
+# Handover check: CHECKER successor 22 (Opus 5.5), written 2026-11-08 09:42Z (date -u)
+Predecessor: successor 21 (Resume point 09:22Z and HANDOVER 03:51Z at the top of notes/CHECKER.md, pushed in c8a2bc05). This file is
+overwritten per the brief; earlier successors' checks are in git history of this path and in notes/CHECKER.md. Every answer is
+measured from the repository (commands named), not recalled.
 
 ### 1. Branch, head, ahead/behind trunk
-- Branch claude/checker (`git branch --show-current`). HEAD = local ref = origin/claude/checker = `git ls-remote` = 8f6d03bc.
-- STALE-CLONE TRAP HIT at start: the container's local claude/checker ref was a71d11ff, 462 commits behind origin; `git fetch
-  --unshallow` + `git fetch origin claude/checker claude/vibrant-johnson-nxvvxo` + `git merge --ff-only origin/claude/checker` fixed it.
-- Against trunk claude/vibrant-johnson-nxvvxo @ b922fc2a (`git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo`):
-  3 ahead (1a6f4a6f C130 Add. 2, d6b877f7 C132 main, 8f6d03bc C133 main + handover), 660 behind (178 first-parent);
-  merge-base d7091311 (C130 Add. 1 / C131 Add. 1).
+- Branch claude/checker (`git branch --show-current`). HEAD = local ref = origin/claude/checker = `git ls-remote origin claude/checker`
+  = c8a2bc05. Trap check run first (fetch --unshallow, fetch both branches, checkout, merge --ff-only): already up to date, no stale ref.
+- Against trunk claude/vibrant-johnson-nxvvxo @ 3906d411 (`git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo`):
+  3 ahead (0942e8be C135 main, fa8add12 handover, c8a2bc05 resume point), 839 behind (238 first-parent); merge-base d38a2194.
 
 ### 2. Open work and the next step of each
-- C132 = R118 (P-N5-XICYC, L-NEW): main d6b877f7 FAIL E-1..E-7; exact L-4 = R1-R7, sha1 85fe809c, UPDATE d4acaeef (C132 §5).
-  Waiting: L-NEW 60 writes fixes entry 3 + L-4, both referees byte-test, Lead second fill. NEXT: C132 Add. 1 on the second fill
-  (cmp L-4 with §5; title; UPDATE = d4acaeef if built by the G-U route, else token diff; stale L-3 phrases; both box191 blocks re-run
-  from git archive of the new l-new SHA; quote sweep; landing simulation after R117), then Add. 2 (rebuild from parent + checked
-  block, byte-compare) and close on the landing commit's green CI.
-- C133 = R119 (P-IDEAL-DBL, L-SI): main 8f6d03bc FAIL E-1..E-6; exact L-3 = R1-R6, sha1 845ffdc9 (C133 §5); the UPDATE has no sha1
-  (R4 changes its shape): check by token diff against L-3. Waiting: L-SI 42 fixes entry 2 + L-3, referees byte-test, second fill.
-  NEXT: C133 Add. 1, then Add. 2 + CI. R119 lands only after R118 (Lead ruling: RESULTS ids land in increasing order).
-- Trunk at b922fc2a has no second fill for either yet (last Lead commits 10:30Z R118 first fill, 11:04Z R119 first fill).
-- C130 (R117) and C131 (DE37) CLOSED by successor 20 (CI 6710, 6690).
+- C135 = R121 (P-N5-ASC, L-NEW): main 0942e8be FAIL E-1..E-4 (L-3 0012d671, UPDATE f545cba7). The THIRD fill is on trunk:
+  3906d411:docs/agents/R121-draft.md sha1 1fa73568e67187c08ede98afcc2d31eeb16c2e39 (measured); line L-5 at claude/l-new e28e962d,
+  docs/new/P-N5-ASC-line-L5.txt, sha1 fe4d3f902b6afde93384ebf625fa9bebcea0e1d0, 5,192 B (measured). e28e962d is NOT an ancestor of
+  trunk 3906d411 (`git merge-base --is-ancestor`): to be named in Add. 1 as a merge landing needs, unless the Lead merges it first.
+  NEXT: C135 Add. 1 = predecessor's to-do (1)-(5): premise ancestry; cmp L-3 with §5, then L-3 → L-4 → L-5 in meaning (R5, R-A, R-I)
+  with the referees' byte tests (REFEREE 29 §F 52e6e77b / §F add. 1 055758ba / §G d17b305e; REFEREE-2 33 Add. 5 05eb5181 / Add. 6
+  388530af); rule N-H (HUB-ASC(B): «hub», «value», «forest», «chain» undefined in the line; C135 E-4 rule) and N-S (C134 N-S); title,
+  block, UPDATE by token diff, word diff vs the second fill, stale phrases, box 193 blocks from git archive, quote sweep, landing
+  simulation after R120. Then Add. 2 (rebuild from parent + checked block; Add. 1 premise commits ancestors of the landing) + CI.
+- Next: C136 = R122 (P-ACYC, second fill docs/agents/R122-draft.md sha1 2cd7cfd0 on L-4 85bb221f; flags G-4, N-S). Later R123
+  (P-N5-QUIET), P-N5-END, P-N5-CHAIN.
 
 ### 3. GAPS rows owned
-None. `grep -n -i checker docs/GAPS.md` at trunk b922fc2a: l. 6 (GAP-A, owner L-ALG), l. 11 (G-N5-TIME, owner L-NEW), l. 16
-(G-N5-TERM, owner L-NEW, closed); CHECKER appears there only as re-runner / landing checker (e.g. «CHECKER C130 d7091311»).
+None. `git show origin/claude/vibrant-johnson-nxvvxo:docs/GAPS.md | grep -n -i checker`: l. 6 (GAP-A, owner L-ALG), l. 11 (G-N5-TIME,
+owner L-NEW), l. 16 (G-N5-TERM, owner L-NEW, closed); CHECKER appears only as landing checker / re-runner in other lanes' rows.
 
 ### 4. Three owner rulings, verbatim, with status (trunk docs/DECISIONS-INDEX.md)
 - D1 (DECISIONS.md l. 7-8; index l. 5 «active»): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every
@@ -37,7 +36,7 @@ None. `grep -n -i checker docs/GAPS.md` at trunk b922fc2a: l. 6 (GAP-A, owner L-
 - D20 (index l. 42 «active»): «We have reset the weekly usage, so we can again work faster no?» (Lead reading L48: full pace.)
 
 ### 5. One trap and the check that prevents it
-Stale / shallow clone with a stale local branch ref (bit again here: 462 behind). Check: fetch --unshallow, fetch both branches,
-checkout + ff-only, then compare `git branch --show-current`, HEAD and `git ls-remote origin claude/checker` before any work and again
-before push.sh; `git cat-file -e` on every SHA a brief cites (wait with an `until` loop for in-flight pushes). Also: Oink is not built
-in a fresh container: scripts/setup_oink.sh started 12:38Z, before the first push.sh, or the smoke step is NOT RUN.
+Stale / shallow clone with a stale local branch ref (bit successors 19-21; not this time). Check: fetch --unshallow, fetch both
+branches, checkout + ff-only, then compare `git branch --show-current`, HEAD and `git ls-remote origin claude/checker` before any work
+and again before push.sh; `git cat-file -e` on every SHA a brief cites (e28e962d needed `git fetch origin claude/l-new` first). Also:
+Oink is not built in a fresh container: scripts/setup_oink.sh started 09:42Z, before the first push.sh, or the smoke step is NOT RUN.
