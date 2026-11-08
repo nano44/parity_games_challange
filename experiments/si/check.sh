@@ -1264,3 +1264,6 @@ echo "si (box 84: HUB PAIR): PASS"
 
 # box 85 (TWO COPIES PER LEVEL: DEAD as a counter; Lemma FLIP-U, Corollary LOW-NULL, Lemma POOL-ALT; docs/si/box85-twocopies.md)
 bash box85/check85.sh
+
+# box 86 (Q1 LAG TOWER: DEAD as a counter at h = 2, 3; Lemmas SAME-E-MERGE, ACCESS-LATCH, LEAPFROG; docs/si/box86-lagtower.md)
+bash box86/check86.sh

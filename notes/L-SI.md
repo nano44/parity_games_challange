@@ -9,6 +9,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   word for word; hubH 8/11/15 at h 3/4/5; climbs CNT <= 5 of 8 at h = 3). PROVED (lane): FLIP-U (FLIP with U-projections), LOW-NULL,
   POOL-ALT. CONJECTURE TWO-COPY-RED (Q1 lag tower / Q2 beta/P-decided non-SET; L-RED R223). NEXT (proposal): Q2 from L-RED's seed
   claude/l-red 143f0b4c experiments/red/r223/inst/flip223_E_NS_K12_rand_2235_10.json (sha1 ef330b14...).
+- BOX 86 (2026-11-08T07:26Z; Lead 07:12Z: Q2 closed by L-RED R223-q2 P-QUIET, no hole found by me): Q1 LAG TOWER DEAD at h = 2, 3
+  (docs/si/box86-lagtower.md; experiments/si/box86/, check86.sh ~1 min, wired). PROVED (lane): SAME-E-MERGE, ACCESS-LATCH, LEAPFROG.
+  Merged waiting hub latches the bit; climbs drop the merge (CNT 5 of 8 at h = 3). CONJECTURE TWO-COPY-RED box 86 form (leapfrog).
+  NEXT (proposal): a potential for POOL-ALT's shared-e case (pre-merge prefix, merge point), i.e. try to PROVE the leapfrog bound.
 - Things only I know: climb85 at h = 3 is ~6 s / genome; 4 climbs + verify on 4 cores slow push.sh to ~35 min: stop climbs before
   pushing. dec85 ON events use SET's e-FACE (a hidden SET shows its beta-face). Sweep logs (882 genomes) are scratch only.
 
