@@ -131,6 +131,19 @@ scope = helper-only wiring paths from the core, as tsat.py's `disj`)
   bill of ≥ 262, and the least-bill one is core8 itself (sha1 c6e19673). Slack (T′ > 510) cannot lower the bill. So §5's
   OSC-ROOM′ and its «next step» are DEAD as stated. The §3-§4 DATA stand; the revised reading is CONJECTURE OSC-ROOM″ (L12 §3).
 
+## 7. Correction (2026-11-08 17:4xZ, date -u; L-RED 61 R227 on claude/l-red 67a110b2, relayed by the Lead 17:26Z)
+- (1) Scope of the §1 / §1a UNSATs: the core STATES and the core GATE VALUES are fixed. The gates are the target file's `gate` line,
+  taken from the base genome: HS2_d3 for TT3_HS2 (levels 0-1) and HIT7 for TT3_HIT7, plus joined value 0 for the added level 2.
+  The UNSATs hold for those core gates only; other core gate values are not covered.
+- (2) «No realized tower with h ≥ 3 is tight» (§3, §5) covers the realized towers measured: h = 4 (REC10), 5 (H5), 6 (H6),
+  7 (HIT7). The set contains no realized h = 3 tower.
+- (3) DRUP re-check: the proofs (~300 MB each) were deleted after the check (disk trap). They regenerate from the deterministic
+  CNFs (§1a sha1s) with `PREFIX= python3 experiments/lower/l11/tsat.py experiments/lower/l11/out/TT3_HS2.txt 4 none g4 900 OUT`
+  (Glucose4 writes OUT.cnf and OUT.proof on UNSAT), then `gcc -O2 -o drup experiments/lower/l8/sat/drup.c; ./drup OUT.cnf
+  OUT.proof`. Outputs at the check: TT3_HS2 «s VERIFIED (251384 lemmas RUP-checked)», TT3_HIT7 «s VERIFIED (257409 lemmas
+  RUP-checked)». Proof sha1 at the check: cfcce337… (TT3_HS2), 5bf48379… (TT3_HIT7). A regenerated proof may differ byte-wise if
+  the solver build differs; the CNF sha1 is the anchor.
+
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All are about the IDEAL
 model's step sequence (R104's definition) on 𝓛^R_d and its F-profile. Not M3, not a step-4 pass, not a TARGET.md claim.
