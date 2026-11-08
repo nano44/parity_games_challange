@@ -1,0 +1,9 @@
+T 299
+o(0): F 2 windows of level 1: 3 gaps hist [(15, 1), (135, 1), (149, 1)] len<2: 0
+o(1): F 6 windows of level 2: 7 gaps hist [(8, 1), (37, 2), (38, 2), (67, 1), (74, 1)] len<2: 0
+o(2): F 14 windows of level 3: 15 gaps hist [(7, 3), (17, 4), (21, 4), (30, 3), (36, 1)] len<2: 0
+o(3): F 30 windows of level 4: 31 gaps hist [(5, 7), (9, 4), (10, 12), (13, 7), (17, 1)] len<2: 0
+o(4): F 62 windows of level 5: 63 gaps hist [(3, 15), (4, 8), (5, 20), (6, 19), (8, 1)] len<2: 0
+o(5): F 126 windows of level 6: 127 gaps hist [(2, 91), (3, 27), (4, 9)] len<2: 0
+o(6): F 254 windows of level 7: 255 gaps hist [(0, 1), (1, 218), (2, 27), (3, 9)] len<2: 219
+o(7): F 190 windows of level 8: 191 gaps hist [(1, 124), (2, 43), (3, 8), (4, 15), (5, 1)] len<2: 124

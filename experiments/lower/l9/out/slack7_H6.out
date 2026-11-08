@@ -1,0 +1,6 @@
+T 209
+j 1 need 6: windows 3 not-two-moves 0 PULSE<need 0 GAP<need 0 | PULSE [(21, 1), (26, 2)] GAP [(27, 1), (34, 1)]
+j 2 need 5: windows 7 not-two-moves 0 PULSE<need 0 GAP<need 0 | PULSE [(7, 3), (12, 4)] GAP [(15, 2), (16, 1), (19, 2), (20, 1)]
+j 3 need 4: windows 15 not-two-moves 0 PULSE<need 0 GAP<need 0 | PULSE [(5, 7), (6, 8)] GAP [(7, 6), (8, 5), (9, 2), (10, 1)]
+j 4 need 3: windows 31 not-two-moves 0 PULSE<need 15 GAP<need 0 | PULSE [(2, 15), (3, 15), (4, 1)] GAP [(3, 8), (4, 15), (5, 4), (6, 2), (7, 1)]
+j 5 need 2: windows 63 not-two-moves 0 PULSE<need 63 GAP<need 9 | PULSE [(1, 63)] GAP [(1, 9), (2, 30), (3, 19), (4, 3), (5, 1)]
