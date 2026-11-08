@@ -1274,3 +1274,5 @@ bash box87/check87.sh
 bash box88/check88.sh
 # box 89 (MULTIPLY on D_U at a bit's waiting hub: D_U(w) <= T + 1, climbs; docs/si/box89-multiply.md)
 bash box89/check89.sh
+# box 90 (FW staircase: P exponential with C 3 on N5'-xi runs; window k: C = k + 1; docs/si/box90-ra.md)
+bash box90/check90.sh
