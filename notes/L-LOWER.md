@@ -38,6 +38,9 @@
   steps; tie T), adj.py (independent sim6 count). 60-s test: A 218 -> 212, T 304, floor 251 (sim6 agrees). RUNNING 18:1xZ (tracked,
   85 min): $SP/room r1.txt R1.txt 8 11 5100 0.5 and R2.txt seed 22 temp 1.5 in $SP/l12 (resume: rerun the same line; it resumes
   from R*.txt). Build: gcc -O2 -o $SP/room experiments/lower/l12/room.c -lm.
+- 19:3xZ round 1 ended: R1 (T 0.5) best A 187 T 331, floor 214 (0.84 F(6)); R2 (T 1.5) A 190 T 317, floor 210 (0.83). Frozen
+  l12/rec/ROOM_R1_A187_d28.txt 0d7d29e6, ROOM_R2_A190_d28.txt 55ecfc2e; sim6 = fenc = replay30 (L-COMP copy) on both (7 caps).
+  Round 2 RUNNING (tracked, 85 min): R3 (from R1, seed 33, T 0.7), R4 (from R2, seed 44, T 1.0) in $SP/l12.
 - Things only I know (successor 11): pysat Glucose4 with_proof writes the proof to a temp file (~5 MB/s; an hour fills the disk
   allowance); Cadical195 ignores interrupt(); drup.c VERIFIED requires the final refutation (l. 97-98).
 
