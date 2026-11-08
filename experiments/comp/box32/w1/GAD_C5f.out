@@ -1,0 +1,2 @@
+GADGET base L10_C5_order_final_solved.txt b0997bc7 F [13, 56, 57, 58, 59, 60, 61, 62, 63] R0 ok [2, 5, 7] X13 [] cand sizes {26: 9, 27: 9, 112: 11, 113: 11, 114: 10, 115: 10, 116: 9, 117: 9, 118: 8, 119: 8, 120: 7, 121: 7, 122: 6, 123: 6, 124: 5, 125: 5, 126: 4, 127: 4}
+STOPPED by L-COMP 13 at 10:00:52Z: C5 final wiring leaves only movers 2, 5, 7 of pairs 0-5 as admissible gadget inputs (the rest reach the free movers 56-63 or 13); moved to the seed base

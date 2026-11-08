@@ -1,0 +1,2 @@
+INFO {'d': 32, 'H': 8, 'T': 510, 'relevant': 64, 'Lmax': 31, 'options': 128, 'vars': 7093961, 'clauses': 40473901, 'empty': False, 'nP': 24657, 'quad': 36305214, 'lazy': 0, 'build_s': 51.8}
+STOPPED by L-COMP 13 at 09:59:13Z: superseded by C5 final (Lead 09:50Z)

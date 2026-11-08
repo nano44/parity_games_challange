@@ -1,0 +1,12 @@
+INFO {'d': 32, 'H': 8, 'T': 510, 'relevant': 64, 'Lmax': 31, 'options': 128, 'vars': 3126828, 'clauses': 37878739, 'empty': False, 'nP': 24657, 'quad': 52641522, 'lazy': 0, 'build_s': 43.8}
+CNF -> /home/user/pf32/F6_C4.cnf
+7c8bd0d68a441c214a7fee86b1d7958d2ad314ae  /home/user/pf32/F6_C4.cnf
+input /home/user/pf32/F6_C4.cnf sha1 7c8bd0d68a441c214a7fee86b1d7958d2ad314ae vars 3126828 clauses 37878739 cube  glucose4 UNSAT 7.9 s proof /home/user/pf32/F6_C4.proof sha1 eeb4d6e12d41820a2bc465e4888afa9f2cd9e14e bytes 282716732
+input clauses 37878739, vars 3127082, top-level conflict after input: 0
+lemmas checked 711, deletion lines 12389542 (applied; clauses removed 12389542)
+s VERIFIED (711 lemmas RUP-checked)
+
+real	0m35.258s
+user	0m32.915s
+sys	0m2.077s
+exit 0

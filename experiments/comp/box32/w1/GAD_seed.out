@@ -1,0 +1,3 @@
+GADGET base seed_W0_d32.txt c0b65c48 F [13, 56, 57, 58, 59, 60, 61, 62, 63] R0 ok [2, 3, 4, 5, 7, 8, 9, 10, 11] X13 [11, 19, 18] cand sizes {26: 12, 27: 12, 112: 17, 113: 17, 114: 16, 115: 16, 116: 15, 117: 15, 118: 14, 119: 14, 120: 13, 121: 13, 122: 12, 123: 12, 124: 11, 125: 11, 126: 10, 127: 10}
+exit 137
+KILLED by the kernel (out of memory, exit 137) at ~10:07Z: two ~40M-clause builds ran at once; to be re-run alone

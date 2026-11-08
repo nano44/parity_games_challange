@@ -98,14 +98,16 @@ def rdtarget(p):
     rows, nc = int(L[0]), int(L[1]); S = [[int(ch) for ch in L[2 + i]] for i in range(rows)]
     assert all(len(r) == nc for r in S); return S, nc
 
-def build(D, S, H, fix=(), lazy=False, sink=None, relax=False, thresh=False, fixpoint=True, freeopts=(), freerank=()):
+def build(D, S, H, fix=(), lazy=False, sink=None, relax=False, thresh=False, fixpoint=True, freeopts=(), freerank=(), cand_in=None):
     d = D['d']; N = 2 * d; xt = D['xt']; g = D['gate']; T = len(S) - 1; NC = 2 * H
     assert len(S[0]) == NC
     freeopts = set(freeopts); freerank = set(freerank)
     # W1: free targets of the options in freeopts (one owner mover); candidates = -1 and every mover z != owner that does not
     # reach the owner through FIXED edges (so every choice is acyclic: the owner's options are its only free edges)
     cand = {}
-    if freeopts:
+    if cand_in:   # explicit candidate lists (caller guarantees acyclicity; re-checked below for every choice by order)
+        cand = {m: list(v) for m, v in cand_in.items()}; freeopts = set(cand)
+    elif freeopts:
         owners = {m // 2 for m in freeopts}; assert len(owners) == 1, 'W1: free options of one mover only'
         x0 = owners.pop(); reach_x0 = {x0}; ch = True
         while ch:

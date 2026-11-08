@@ -1,0 +1,1 @@
+INFO {'d': 32, 'H': 8, 'T': 510, 'relevant': 64, 'Lmax': 31, 'options': 128, 'vars': 6550960, 'clauses': 42456624, 'empty': False, 'nP': 24657, 'quad': 43648544, 'lazy': 0, 'build_s': 52.9}

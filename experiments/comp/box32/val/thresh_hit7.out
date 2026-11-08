@@ -1,0 +1,2 @@
+INFO {'d': 28, 'H': 7, 'T': 299, 'relevant': 56, 'Lmax': 27, 'options': 112, 'vars': 4478631, 'clauses': 21075961, 'empty': False, 'nP': 14773, 'quad': 482302, 'lazy': 0, 'build_s': 19.0}
+STOPPED by L-COMP 13 at 09:59:13Z: no answer after ~30 min (threshold ranks, 21.1M clauses)
