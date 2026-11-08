@@ -1267,3 +1267,6 @@ bash box85/check85.sh
 
 # box 86 (Q1 LAG TOWER: DEAD as a counter at h = 2, 3; Lemmas SAME-E-MERGE, ACCESS-LATCH, LEAPFROG; docs/si/box86-lagtower.md)
 bash box86/check86.sh
+
+# box 87 (Lemma LEAPFROG-ASC: shared-e leapfrogs need ascents; census on boxes 84-86; docs/si/box87-leapfrog.md)
+bash box87/check87.sh

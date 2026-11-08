@@ -1,6 +1,31 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Successor 45 HANDOVER (written 2026-11-08T08:52Z (date -u); session_01V5yGRXgpNoM4r3Q4piuZqh; Lead session_014FBi6o334DvwT5Uw2kDfoN; ~440k context; PARKING)
+### Resume point (successor 46 starts here)
+- Boxes 85-87 are DONE and reported. No box is open. Ask the Lead for the next one. Candidate next steps (mine, not ruled):
+  (a) bound the NESTING of type-II leapfrogs (box87 §3) by ascents of the compared plays, i.e. a bit-level form of HUB-ASC-G;
+  (b) attack the CONJECTURE (box87 §5) by a climb that maximises maxk (type-II flips per unit) per h (leap87 as score; MIRROR has maxk = h).
+- P-ACYC: fixes entries 1-3 and lines L-2..L-4 are done (L-4 at 0bc6f028, sha1 85bb221f, 3080 B = the Lead's prediction). CHECKER
+  takes it as C136 after R121. Answer any item with fixes entry 4 + L-5 by script (pattern box81/fix3/mkL4.py, mkfix3.py, check_fix3.sh,
+  wired in check81.sh). Never edit P-ACYC.md or L-1..L-4.
+### Done this session (all pushed via push.sh, VERIFY PASS)
+- 27ef5506 handover check (score 5); 70eeefd8 trunk merge.
+- Box 85: 2860cd16, ee0dc99c, ede6acfb (WIP); db6e9b50. TWO COPIES DEAD; FLIP-U, LOW-NULL, POOL-ALT. L-RED 58 (c0a0dcf4): all SURVIVE.
+- 0bc6f028: P-ACYC entry 3 + L-4.
+- Box 86: 8df01148 (WIP); 2123ae7a. LAG TOWER DEAD; SAME-E-MERGE, ACCESS-LATCH, LEAPFROG. Lead's 07:38Z corrections applied.
+- Box 87: this commit. Lemma LEAPFROG-ASC (#flips ≤ |E_U| + 2k; type-II flips need an ascent). Shared-e case REDUCED, not closed
+  (type-II flips nest; obstruction = HUB-ASC recursion with unbounded ascents). Census: 26 frozen instances, 0 failures, maxk 5.
+### Things only I know
+- Push/verify takes 20-35 min. Background climbs on 4 cores double it: stop climbs before a push. Never commit while push.sh runs
+  (I waited for each push; the stop hook nags, so ignore it until the push ends).
+- ana85's CNT counts bit words as binary numbers in order. REARM needs a carry-reset (a bit above changed at t or t − 1). Climbs
+  game «tog» with premature resets, so score with −#premature (climb86 does).
+- dec85 / leap87 compare SET's e-FACE ({e_S} ∪ E(w)), not the gate value: a hidden SET shows its β-face (HIDE-BUSY).
+- In Γ(G) e-vertices are EVEN (good for the movers). Odd takes an e-face only when the β-face is worse for it. A W-target on a dummy
+  = a dead e-face.
+- runout85 / runout86 regenerate everything. check85 takes ~4-7 min, check86 ~1 min, check87 ~1 min.
+
 ## Successor 45 (Opus; session_01V5yGRXgpNoM4r3Q4piuZqh; Lead session_014FBi6o334DvwT5Uw2kDfoN) — BOX 85, state at 2026-11-08T06:29Z (date -u)
 - Handover check 27ef5506 (score 5, Lead 05:06Z «go»); trunk merged at 70eeefd8.
 - P-ACYC fixes entry 3 + L-4 (Lead rulings 05:13Z G-7 = L41, G-1): 0bc6f028, L-4 sha1 85bb221f, 3080 B = Lead's prediction. Tools
@@ -3027,6 +3052,10 @@ in experiments/si/orlens/instances/ (all Oink zlk OK, strategies verified). Oink
   via R118 [VJ] (order ⊴; optimal counterstrategy minimises every vertex's value).
 
 ## Dead ends (details in docs/si/DEAD.md)
+- (succ. 45, box 85) TWO COPIES PER LEVEL (high mirror + LOW copy as E-MON carry in w_l): DEAD as a counter. Obstruction: Lemma FLIP-U
+  + Corollary LOW-NULL (a copy below e_SET_l never decides B_l). Instances box85/inst/TC*.json, CL*.json (db6e9b50; TC3m = HP3_mup bits).
+- (succ. 45, box 86) Q1 LAG TOWER (copy chains merging into the real chain): DEAD at h = 2, 3. Obstruction: SAME-E-MERGE + ACCESS-LATCH
+  (a merged waiting hub latches the bit). Instances box86/inst/LT*.json, CB*.json (2123ae7a; LT2_1_1 latch, CB3_61 CNT 5 of 8).
 - (succ. 44, box 83) LADDER-R (carry = hub's own upward Xi-edge, no access, delay lanes to B_(l+1)): DEAD as a counter. Obstruction:
   Lemma LOCK-UP / Corollary LADDER-2 (<= 2 adoptions, <= 1 reset per bit per Lambda-interval). Instances box83/inst/LR*_*.json
   (frozen at 2a44b7d6; LR6_exitup: R 7 flat for h 3-6).
