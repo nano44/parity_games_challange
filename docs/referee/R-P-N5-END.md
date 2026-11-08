@@ -218,3 +218,29 @@ verdict was written. L-RED 57 R222 (claude/l-red 6f56004c) is context only and i
 - Verdict:
   - Fixes entries 1-2 CORRECT. L-2 MATCHES the packet with its fixes entries, and meets LN-1..LN-8.
   - All statements stay as in §0: SIGN; END-T3 as PROVED-CONDITIONAL on REACH3-CYC.
+
+## §D. Fixes entry 3 and line L-3 (REFEREE successor 30, Opus 5.5, D15; date -u at writing 2026-11-08T10:54Z)
+- Objects (Lead 10:54Z): claude/l-new 8b67d40e (ancestor of origin/claude/l-new, checked). docs/new/P-N5-END-line-L3.txt sha1
+  d6afe92ae0d2c0021743c99d2bd10f16cad27c73, 7,215 B. Packet unchanged: sha1 5cae845b at 8b67d40e (frozen).
+- Byte test: scratch/end_l3.py applies S1-S5 to L-2 (e8a8ac51, 2fcee038) with strings typed from the referee reports (REFEREE-2 34
+  R2-P-N5-END.md «Line L-2», claude/referee-2 9b3cc9b6; this file §C EL-1 / EL-2), not from the lane's script. Each old string occurs
+  once in L-2. `cmp` with the lane's L-3: **EQUAL** (scratch/end_logs/l3test.out). One line, 105 «(» = 105 «)», depth never negative,
+  0 «|». So L-3 = L-2 + exactly S1-S5.
+- Lane's own checks, from `git archive 8b67d40e`: end.pins 43 rows, `sha1sum -c` all OK; box195/mkl3_195.py prints «S1-S5 old once
+  each, applied; sha1 d6afe92a… 7215 bytes; parens 105 105».
+- Meaning, string by string:
+  - S1 (L-R1, REQUIRED by REFEREE-2 34): CORRECT. E1 says that at κ0 the only improving core edge is (K0, K1) and every S4a step keeps κ0;
+    by induction from the start state (which has κ0), the K-config leaves κ0 only at a fallback, and the run cannot stop at κ0 since
+    (K0, K1) improves. The old «changes only at a fallback» was false as a whole-run sentence once E3 / E4 (S4a steps after F) change it.
+    ENDGAME-3's proof (my §3) uses exactly the new reading; no proof changes.
+  - S2 (N-1): CORRECT. SELFL_n3 is not IDEAL-ACYC (two Ξ self-loops), and R104's IDEAL run is defined on IDEAL-ACYC; the inserted
+    parenthesis states the reading under which L(G) = 1 (my §4 (B): t3r_sim also gives L 1; REFEREE-2's set reading gives 1).
+  - S3 (N-2): CORRECT; it gives e1fail the unit that §C (LN-6) accepted for the E1 clause. Counts unchanged (200, 200).
+  - S4 (EL-1): CORRECT. RESULTS R118 (trunk l. 13830) records «random 297/300 + 3 exact-VJ-tie divergences» for the realized run vs the
+    IDEAL-CYC run, the DATA the new parenthesis cites. The claim «transfer … is NOT proved» is unchanged.
+  - S5 (EL-2): CORRECT. My §4 (A) and (B) are the replays with every fail counter 0; §4 (C) is the tie-break observation, cited
+    separately under EXACT-L.
+  - S6 dropped by Lead ruling (10:18Z, quoted in the entry): no string of mine depends on it.
+- Verdict: fixes entry 3 CORRECT. **Line L-3 MATCHES** the packet read with fixes entries 1-3 and still meets LN-1..LN-8 (S1-S5 touch
+  no label, scope, premise or TARGET clause). All statements stay as in §0: SIGN; END-T3 PROVED-CONDITIONAL on REACH3-CYC.
+- docs/referee-2/R2-P-N5-END.md was read (after successor 29's verdict, as its §C allowed) only for the S1-S3 strings.

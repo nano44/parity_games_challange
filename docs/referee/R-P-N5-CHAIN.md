@@ -152,3 +152,22 @@ HUB-ASC-G3) depend on landed RESULTS only (R15, R57, R104, R117, R118, R21) and 
 ## 9. Tools and outputs (committed, docs/referee/scratch/)
 chain_replay.py, chain_quotes.py, chain_linefix.py, end_replay.py (hook); chain_logs/: sweep.out, quotes_sec1.out, quotes_L1.out,
 linefix.out, rt_n1.out, L1.txt, P-N5-CHAIN.md (the frozen packet, copied for the quote script), check196_rerun.out.
+
+## §C. Fixes entry 1 and line L-2 (REFEREE successor 30, Opus 5.5, D15; date -u at writing 2026-11-08T10:54Z)
+- Objects (Lead 10:54Z): claude/l-new 8b67d40e (ancestor of origin/claude/l-new, checked). docs/new/P-N5-CHAIN-line-L2.txt sha1
+  e481d260884807424c545bd3f3cdd7fbfb25f05c, 8,248 B (git show | sha1sum, wc -c). Packet unchanged: sha1 6e613ba7 at 8b67d40e (frozen).
+- Byte test: scratch/chain_linefix.py (successor 29's CL-1 Form A strings, §5) on L-1 bd152dd9 (71b75424) rebuilds L-2; `cmp` with the
+  lane's L-2: **EQUAL** (scratch/chain_logs/l2test.out). One line, 160 «(» = 160 «)». So L-2 = L-1 + exactly CL-1; no other byte moved.
+- Lane's own checks, from `git archive 8b67d40e`: chain.pins 53 rows, `sha1sum -c` all OK; box196/mkl2_196.py prints «ok 8248
+  e481d260… parens 160 160».
+- Fixes entry 1 (docs/new/P-N5-CHAIN-fixes.md at 8b67d40e), item by item:
+  - CL-1 taken in Form A, my predecessor's exact strings: CORRECT. No number changes (checked: the new string adds only the control set
+    and spec set names; every count in the clause is the same digit string as in L-1).
+  - CN-1: CORRECT. The packet's §9 (l. 322 of the frozen text) says «each fail counter of §5-§7 has a firing control», false for ties
+    in the same way as L-1's clause; the entry reads it with the ties exception, names NO-TIE3 as PROVED (Corollary, §5) and changes no
+    statement or proof. That is the reading R-P-N5-CHAIN.md §5 asked for.
+  - CO-1 not taken (Lead ruling 10:18Z, quoted in the entry): acceptable; I marked it optional («not false»).
+- Verdict: fixes entry 1 CORRECT. **Line L-2 MATCHES** the packet read with fixes entry 1. All statements stay as in §0 (SIGN with their
+  labels; HUB-ASC-G3 conditional on P-N5-ASC §4 / R121; UP-JUMP3, UP-B3, CHAIN3 under [E-LEV]; CHAIN3 also conditional on P-N5-END and
+  P-N5-ASC §4; DEAD RUN-TRANSFER confirmed). §6 TARGET.md diff unchanged (L-2 changes a DATA clause only).
+- docs/referee-2/ not read for this section.
