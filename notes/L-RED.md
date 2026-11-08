@@ -68,6 +68,7 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   ρ_g ≤ 1 + #changes (Λ(x′), E(x′)) + A′_g ≤ (2M+3)F′_B(M) + A′_g (x′ = Ξ-target; covers SET gates too). No loop-value premise.
   DATA 0 violations on 5,072 random + 952 corpus gates; bound attained. «C-starts ≤ Λ(g) changes» FALSE (out/cyc_Cs_11_*.json).
   Tool experiments/red/r222/cyc222.py (SETTOO=1 includes SET gates). Open: A′_g / A_g; mover-level flips when PRIV fails.
+- 02:56Z Lead: prove A′_g = 0. DONE: Corollary RHO-CYC-0 (R222-cyc.md §5): B-ONLY ⇒ Λ(x′) below every e ⇒ A′_g = 0; ρ_g ≤ (M+3)F′_B(M) (PROVED-COND F1 + [OPT]).
 - NEXT: item 3 (ENDGAME-3 proof) when the Lead sends the SHA; L-SI hub-pair candidate when sent (PRIV-FLIP / RHO-CYC first).
 
 ## Successor 56 HANDOVER (2026-11-08 ~01:3xZ, date -u; ~430k context; PARKED)

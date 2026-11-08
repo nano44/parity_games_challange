@@ -98,7 +98,34 @@ The bound in (b) is attained on real runs, so (b) cannot be improved by a consta
 - Whether it escapes at the mover level (bit flips of x when PRIV fails) is OPEN. That is the next question, and the natural target
   for L-SI's hub-pair candidate.
 
+## 5. A′_g = 0 (Lead 02:56Z: prove it or break it): PROVED-CONDITIONAL on [OPT], via R221 Lemma B-ONLY
+**Corollary RHO-CYC-0 (PROVED-CONDITIONAL on F1 and [OPT], lane; [OPT] is the standing premise of R57 (b), Lead reading).** In
+IDEAL-CYC(G), for every genome G and every gate g of level ≥ 1 whose Ξ-target x′ is a mover:
+- A′_g = 0, and ρ_g ≤ 1 + #changes of (Λ(x′), E(x′)) ≤ (M + 3)·F′_B(M);
+- B is the maximum number of ascents of seq_t(x′), and B ≤ U(G) under [E-LEV].
+
+Proof.
+- x′ is a mover: not c_W, and not an e-vertex.
+- So by B-ONLY (R221-quiet.md §3, PROVED lane, from [OPT] and [XICYC-a]), Λ_t(x′) is a β-vertex, K1, K2 or c_X at every state t.
+- Each of these is less relevant than every e-vertex ([DEF]: e-vertices lie above every β, K1 = 5, K2 = 3, c_X = 2).
+- So [BELOW]_t holds at every t, and A′_g = 0 by definition.
+- B-ONLY also says Λ(x′) ranges over at most M + 3 values (the β's, K1, K2, c_X). R118 (e)'s monotonicity makes these changes strictly
+  rising in reward, so there are at most M + 2 of them.
+- Insert both facts into RHO-CYC (b), (c): 1 + (M + 2) + (M + 3)(F′_B(M) − 1) ≤ (M + 3)·F′_B(M). ∎
+
+Remarks:
+- If the Ξ-target is −1 (u = K0), the β-play enters the closed core and never returns to g. Such a gate has no RET, so it is not counted.
+- This is the same step R221-quiet.md §3 used for RHO-COUNT's A_g (= 0). Hence, for IDEAL-CYC under [OPT]: Σρ_g over ALL gates of
+  level ≥ 1 is at most M·(M + 3)·F′_U(G)(M) under [E-LEV]. That is polynomial for U(G) = O(1), with NO open A-premise left in the
+  gate-flip accounting.
+- What this does NOT cover:
+  - N5′-xi on Γ3 itself: its mover phase equals Howard on IDEAL-CYC only before the first fallback (R118 (d), REACH3-CYC CONDITIONAL).
+  - Unbounded U(G).
+  - Mover-level flips when PRIV fails (R222-lockup.md §3).
+- DATA (§2): A′ = 0 on all 6,024 gates measured. That agrees with the proof; it adds nothing to it.
+
 ## 4. Sources opened
+- claude/l-red docs/red/R221-quiet.md §1 ([OPT] status), §3 (Lemma B-ONLY).
 - claude/l-new 95dc76d7 docs/new/P-N5-ASC.md §1 (R118 (e) per-vertex form, [VJ] Π), §3 (E-MON), §5 (HUB-ASC-G), §6 (UP-B).
 - claude/l-red docs/red/R221-ladder.md §7 (RHO-SET, RHO-E, RHO-COUNT), experiments/red/r221/rho221.py (RET definition),
   experiments/red/r221q/brute221.py (rgen).
