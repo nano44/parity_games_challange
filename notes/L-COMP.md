@@ -22,6 +22,22 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   Then (a): wider insertion ranks for the F6 test. MEMORY: one ~40M-clause job at a time (7 GB RSS each; 15 GB box).
 - Lead rulings this box: 08:12Z go + W0 first, DRUP every UNSAT, ≤ 2 heavy jobs ≤ 90 min; 08:44Z plan OK, read l-lower directly;
   09:28Z R tiers OK, thresh retry OK; 09:49Z (c) first, (a) second, SAT in (c) to L-LOWER via Lead; 09:50Z C5-final W1-f6-R first.
+### METHOD FINDING (DATA, timings; CaDiCaL 1.9.5 via pysat, 4 cores, one job each)
+| instance | free parameters | clauses | verdict / time |
+| --- | --- | --- | --- |
+| HIT7 d 28 checker (all fixed) | none | 14.0M | SAT, build 22 s + solve < 1 s |
+| HIT7 d 28 ranks fixed | signs, gates, starts, helper states | 14.9M | SAT 61 s (decode replays) |
+| HIT7 d 28 ranks free, full order | + ranks | 25.3M | no answer 38 min |
+| HIT7 d 28 ranks free, lazy / lazy2 / thresh | + ranks | 5.4M / - / 21.1M | no answer 30 min / 7 min per round / 30 min |
+| seed d 32 W0-R | signs, gates, starts, states | 21.6M | UNSAT 19 s (drup 885 lemmas) |
+| C4 / C10 W0-R | same | 39.3M / 23.2M | UNSAT 0 s (top-level) |
+| F6 on C4 (f6 rewired over 3, insertion ranks) | + 2 options | 37.9M | UNSAT 5 s (drup 711 lemmas) |
+| F6 on C5 final (f6 over 59) | + 2 options | 42.5M | no answer 58 min |
+| gadget (c) seed (8 movers, insertion ranks 18 options) | | 47.4M | no answer 36 min |
+| OSC K 4 T0 10 (free wiring + free ranks, 32 options) | all | 0.82M | SAT 408 s (clamp replay OK) |
+| OSC K 8 T0 20 (40 options) | all | 3.19M | no answer 89 min |
+Reading: fixed-rank questions decide in seconds (UNSATs often by unit propagation); free ranks (tournament) or wide insertion ranks
+make CaDiCaL stall already at a few million clauses. Use exact SAT for fixed-rank / narrow-insertion checks; free ranks only at tiny size.
 ### Things only I know (successor 13)
 - In C4 every mover but 2, 42, 49 reaches 13; in C5 final pairs 0-5 read helpers 56-63 (only 2, 5, 7 admissible gadget inputs).
 - /usr/bin/time is not installed; dimproof.py (box27) streams Glucose's proof file; drup.c on 280 MB proofs takes ~35 s.
