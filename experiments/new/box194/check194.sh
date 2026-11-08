@@ -17,3 +17,6 @@ python3 quiet194.py rand 1000 2
 python3 in194.py inst/RS2_L2M6.json inst/RS2_L4M6.json ../box193/inst/RS2_L8M6.json inst/RS2_L16M6.json inst/RS2_L32M6.json
 python3 in194.py inst/LEAP_k64.json inst/rd3_d4.json ../box193/inst/*.json ../box192/inst/rd2_d9.json
 python3 in194.py rand 300 5
+python3 bonly194.py inst/rd3_d4.json inst/RS2_L32M6.json ../box193/inst/*.json ../box192/inst/cR_d2_w8_R22.json ../box192/inst/rd2_d9.json \
+  ../box192/inst/rd2_d10.json ../box192/inst/rd3_d7.json ../box192/inst/rf_d5.json
+python3 bonly194.py rand 1000 2

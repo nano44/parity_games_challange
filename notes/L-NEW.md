@@ -9,7 +9,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   results until L-RED reports. PACKET P-N5-QUIET (docs/new/P-N5-QUIET.md; box194/quiet.pins 31 rows; check.sh block «P-N5-QUIET»;
   quotes194.out 27/27) FROZEN in the next commit; lands after P-N5-ASC (R121).
 - M = 8, A = 1 DONE: f_1(8) = 126 (1,454,040 forests; box193/data/cs_m8.txt, dp193b.c sha1 f7ce8465); cubic's 128 FAILS.
-- P-N5-ASC fixes entry 2 + L-2 (W-3 unit wording, W-4 strict upfail: still 0 in 1,956): next commit.
+- P-N5-ASC fixes entry 2 + L-2 pushed a5dcf9c6 (L-2 sha1 f109cb69, 4907 B). P-N5-QUIET fixes entry 1 (R221: B-ONLY + NO-TIE,
+  Gamma3 scope sentence, [OPT] = R57 (b)): next commit.
 - BOX 194 (docs/new/N5-LOC-box194.md; experiments/new/box194/, check194.sh/out; check.sh block «BOX 194 LOC»):
   - PROVED (lane): CN2, LOC-GATE, LOC-K2 => OVT-DV unconditional. Theorem QUIET: quiet windows (no vertex changes (Lambda, e-set))
     have <= L = (M+1)(2M+1)(N+1) + N(n-1) steps (layered Bellman-Ford over B-classes by |S|, LOC-GATE monotone flips). Corollary

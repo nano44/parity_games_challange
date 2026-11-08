@@ -1005,7 +1005,7 @@ fi
 # no silent exit: every failure path prints «BOX 194 LOC check: FAILED» with the exit code, the diff and the run's last lines
 r194=0; run194=$(cd box194 && bash check194.sh 2>&1) || r194=$?
 d194=$(diff <(printf '%s\n' "$run194") box194/check194.out 2>&1) || true
-if [ "$r194" -eq 0 ] && [ -z "$d194" ] && grep -q "^LEAP_k64.json T 129 cnlow 0 k2fail 0 gatestates 66950 ties 0 locfail 0 intervals 515 flips 128 ovtfail 0 efail 0 bfail 0 maxF 128 tight 0$" box194/check194.out && grep -q "^RS2_L32M6.json T 41 n 527 IN 33 INk 0 INb 33 INB 34 who ('x', 74)$" box194/check194.out && ! grep -Eq "(locfail|ovtfail|efail|bfail|cnlow|k2fail|wfail|Tfail|crossflip) [1-9]" box194/check194.out; then
+if [ "$r194" -eq 0 ] && [ -z "$d194" ] && grep -q "^LEAP_k64.json T 129 cnlow 0 k2fail 0 gatestates 66950 ties 0 locfail 0 intervals 515 flips 128 ovtfail 0 efail 0 bfail 0 maxF 128 tight 0$" box194/check194.out && grep -q "^RS2_L32M6.json T 41 n 527 IN 33 INk 0 INb 33 INB 34 who ('x', 74)$" box194/check194.out && ! grep -Eq "(locfail|ovtfail|efail|bfail|cnlow|k2fail|wfail|Tfail|crossflip|bonlyfail|ties) [1-9]" box194/check194.out; then
   echo "BOX 194 LOC: LOC-GATE / LOC-K2 / CN2 / OVT-DV / QUIET 0 failures, DEAD constant IN-BOUND (RS2_L32M6 IN 33) = frozen: PASS"
 else
   echo "BOX 194 LOC check: FAILED (check194.sh exit $r194; python $(python3 --version 2>&1))"; echo "$d194" | head -30; echo "$run194" | tail -15; exit 1
