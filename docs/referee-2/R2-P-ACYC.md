@@ -372,3 +372,35 @@ Read only after this report was on origin (bf02e618). No verdict of mine changes
   - fixes entry 2 **CORRECT**;
   - **L-3 MATCHES** (Opus 5.5, D1);
   - statements: BETA-ACYC, LAMBDA-CONST, ACYC-LIN **SIGN**; ACYC-XI **SIGN**, PROVED-CONDITIONAL on R118 (k) + (l); nothing REFUSED.
+
+## Addendum 4: L-4 = L-3 + R-G + R-B (claude/l-si 0bc6f028; REFEREE-2 successor 33, 2026-11-08 06:30Z by date -u)
+- **Object:** docs/si/P-ACYC-line-L4.txt at 0bc6f0285c6fc042ebd446883b817fb38960cb08: sha1 85bb221f19ca457655c954f570552bc0f4d8095d,
+  3,080 B, 1 line, 41 «(» = 41 «)», depth never negative, 0 «|». ff9b1639 is an ancestor. Fixes entry 3 (F-12 = R-G, F-13 = R-B) is
+  in docs/si/P-ACYC-fixes.md, and the builder is experiments/si/box81/fix3/mkL4.py.
+- **Byte test** (own R2-P-ACYC/bt_l4.py, out bt_l4.out; strings typed from the Lead's 05:24Z message):
+  - R-G and R-B: each old string occurs once in L-3 and 0 times in L-4; each new string 0 times in L-3 and once in L-4.
+  - The rebuild L-3 + R-G + R-B is 85bb221f…, 3,080 B, which is L-4 byte for byte, so nothing else changed.
+  - My predecessor's strings (W-3, D-1, D-2, D-5) are therefore byte-equal to L-3's.
+- **R-G's citation of my predecessor's G-1 / W-1: correct.**
+  - G-1 (this report l. 84-92) is the gap «The proof never decides w*», with the one-line repair: K2's choices end in the K1 loop
+    (cycle node K1, odd, priority 5) or in K2's own loop (K2, odd, priority 3), «so every optimal σ̄ has σ̄(K2) toward K1 (K1 on Γ, r on
+    Γ3), and w* = K1». W-1 (l. 93-99) is the required string carrying it.
+  - REFEREE's report, claude/referee R-P-ACYC.md, has «### 4.2 Lemma LAMBDA-CONST: SIGN WITH GAP LC-1» (l. 118), so «§4.2 LC-1» is
+    right.
+  - Add. 1 (l. 260) recorded «REFEREE's LC-1 is my G-1. The repair is the same line», so «found independently» is right.
+  - Add. 3 (l. 315) recorded «F-1 (W-1 = LC-1): my text verbatim … This closes G-1, so LAMBDA-CONST is now SIGN», so «restated in
+    P-ACYC's fixes entry 1 F-1» and «signed by both referees» are right.
+- **«σ̄(K2) toward K1 is Odd's unique optimum»: correct**, read as Odd's choice at K2.
+  - The two choices give the cycle nodes K1 (reward −5) and K2 (reward −3). The difference is strict, so every pointwise-optimal σ̄
+    takes K1 at K2 (on Γ3 the pad r, then K1; K2's loop has no pad). No tie rule is involved.
+  - This is W-1's «every optimal σ̄ has σ̄(K2) toward K1» together with REFEREE's uniqueness point (R-P-ACYC l. 128-132, «Hence σ̄(K2) is
+    unique: K1 on Γ, r on Γ3»), which F-1 combined.
+  - It does not claim σ̄ is unique elsewhere. At the gates uniqueness is BETA-ACYC's consequence, which is a separate point and is not
+    in R-G.
+  - Data: my predecessor's counter wstar_not_K1 = 0 in every state (r2acyc_*.out).
+- **R-B:** «with its fixes entries 1-2, docs/si/P-ACYC-fixes.md; L-SI successors 43-44» names every fixes entry that changes packet
+  text and their authors. Entry 3 changes only the line, so omitting it is consistent with the Lead's G-1 ruling ✓.
+- **DATA rule on L-4:** R-G and R-B are source and credit wording. They add no DATA and change no count, and every DATA clause is
+  byte-equal to L-3's ✓.
+- **Verdict: L-4 MATCHES** (Opus 5.5, D1). Statement verdicts unchanged: all SIGN (ACYC-XI PROVED-CONDITIONAL on R118 (k), (l), as
+  before).

@@ -1,0 +1,5 @@
+L-3 03453361fead881493e2d2786b869f1c63158c4c 2765 | L-4 85bb221f19ca457655c954f570552bc0f4d8095d 3080
+R-G old in L-3 1 | old in L-4 0 | new in L-3 0 | new in L-4 1
+R-B old in L-3 1 | old in L-4 0 | new in L-3 0 | new in L-4 1
+rebuild L-3 + R-G + R-B equal to L-4: True 85bb221f19ca457655c954f570552bc0f4d8095d 3080
+L-4 newlines 1 parens 41 41 neg False pipes 0
