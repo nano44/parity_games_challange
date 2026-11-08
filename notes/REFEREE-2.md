@@ -1,6 +1,11 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 2 (successor 32; 2026-11-08 01:2xZ by date -u)
+- R2-P-ACYC on origin bf02e618 (VERIFY PASS). Item A done: R2-P-N5-ASC.md Addendum 3 (l-new a5dcf9c6, L-2 f109cb69): fixes entry 2
+  CORRECT, W-3/W-4 met (W-4 option (a): upfail strict, read against UP-JUMP; check193.sh on archive byte-equal, upfail 0 in 1,956),
+  L-2 MATCHES. NEXT: read docs/referee/ on P-ACYC (allowed now) and write a comparison addendum; then wait for the L-SI fix round.
+
 ## Resume point 1 (successor 32, Opus 5.5 under D1/D18/D20; 2026-11-08 01:0xZ by date -u)
 - Handover check 51672d0e (VERIFY PASS; Lead score 5, GO 00:44Z). Trunk 37a4855e merged by merge commit 6146131a.
 - Item A (P-N5-ASC Add. 3 byte test) WAITS for L-NEW 62's fixes entry 2 + L-2 SHA from the Lead; do it at once when it comes, pause B.

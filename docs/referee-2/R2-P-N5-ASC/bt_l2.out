@@ -1,0 +1,7 @@
+L-1 08cced78a214080dac3f8f07ebc900510e3f35ab 4896 B 1 newlines 116 ( 116 ) neg False pipes 0
+L-2 f109cb69507efd863133a08a2e90096ad2acb7f5 4907 B 1 newlines 116 ( 116 ) neg False pipes 0
+W-3 old in L-2: 0 | new in L-2: 1 | old in L-1: 1
+W-4 clause string in L-2 (option (a): unchanged): 1 | in L-1: 1
+DIFF insert '' -> 'or c_W '
+DIFF replace 'entry' -> 'entries'
+DIFF replace '1,' -> '1-2,'

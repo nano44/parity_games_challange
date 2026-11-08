@@ -279,3 +279,38 @@ r2asc_inst_elevrev.out, r2asc_noup_elevrev.out (`r2asc.py FILES…`, `r2asc.py n
   - W-1, W-2, D-1 (counts), D-2 and D-3 **met**; AS-1 and AS-4 taken correctly;
   - **L-1 NOT YET: W-3 and W-4** (DATA rule, wording or counter only; no statement changes) (Opus 5.5, D1).
   - Statement verdicts are unchanged: all SIGN.
+
+## Addendum 3: fix round 2 / L-2 (claude/l-new a5dcf9c6; REFEREE-2 successor 32, 2026-11-08 01:08Z by date -u)
+- **Object** (sha1 at a5dcf9c642d191aa95b0bbab08a97b180ce88925, equal to the Lead's relay 01:08Z):
+  - L-2 docs/new/P-N5-ASC-line-L2.txt f109cb69… (4,907 B, 1 line, 116 «(» = 116 «)», depth never negative, 0 «|»);
+  - packet 9c9cb50d… unchanged; L-1 08cced78… unchanged; fixes docs/new/P-N5-ASC-fixes.md 28cf8f9f… (entry 2 appended);
+  - asc.pins: 35 rows (asc193.py and the fixes file re-pinned; L-2 added), all 35 OK by `sha1sum -c --strict` on `git archive a5dcf9c6`
+    (DOCS/ → docs/new/, as check193.sh l. 998 does).
+- **Byte test** (own script R2-P-N5-ASC/bt_l2.py, out bt_l2.out):
+  - W-3: the new string «(consecutive state pair, W-target or c_W with Λ fixed) pairs» occurs once in L-2; the old string «(consecutive
+    state pair, W-target with Λ fixed) pairs» occurs 0 times in L-2 (once in L-1) ✓.
+  - Word diff L-1 → L-2: exactly «or c_W» inserted, and «entry 1,» → «entries 1-2,» (the source tail); nothing else ✓ (= the Lead's
+    word diff and fixes entry 2's own account).
+- **W-4, option (a)**, read against the lemma (asc193.py l. 79-80 at a5dcf9c6, git diff 19cc23e3..a5dcf9c6: one line changed):
+  - upfail now needs, for some β z on the segment between a and b, that its Ξ-target nxt[z] is a mover with «lev(nxt[z]) >= la and
+    lev(nxt[z]) > lev(V[("x", name[z][1][0])])».
+  - name[z][1][0] is the mover x of the option (x, k) of z = β_(x,k). The only edge into β_(x,k) is from its gate, whose mover is x, so x
+    is «the mover it was entered from». la is lev of a's mover = ℓ.
+  - This is UP-JUMP's statement verbatim: «a β-vertex whose Ξ-target is a mover of level > the level of the mover it was entered from,
+    and ≥ ℓ» ✓. The unit (ascents in movers' plays with Λ below every e) is unchanged, stated, and already accepted (Add. 2).
+  - Re-run: check193.sh on `git archive a5dcf9c6` (43 s), exit 0, output BYTE-EQUAL to the committed check193.out
+    (lane_check193_a5dcf9c6.out). Sums over the 13 instance lines: upfail 0 in asc 1,956; tmonfail 0 in tmonunits 2,552; decfail 0 in
+    decunits 24,818; edomfail 0 in edomunits 1,892 (all as in Add. 2) ✓.
+  - So L-1's UP-JUMP clause «violations 0 in 1,956 ascents …», unchanged in L-2, now cites a counter that tests the clause ✓. The second
+    route (my predecessor's r2asc.py, 0 in 10,751) is cited as REFEREE-2's and «not re-run here» ✓.
+- **DATA rule on L-2, clause by clause.** L-2 = L-1 + the two strings above.
+  - Add. 2 found every other clause of L-1 matching its counter. Unchanged clauses keep that verdict.
+  - E-MON: unit «W-target or c_W with Λ fixed» = tmonunits' loop set («v in W.values()», W = each e's only successor, W-target mover or
+    c_W) ✓.
+  - UP-JUMP: counter = clause (above) ✓.
+  - Source tail «with fixes entries 1-2» ✓.
+- **Verdict:**
+  - fixes entry 2 **CORRECT**;
+  - W-3 and W-4 **met** (W-4 by option (a));
+  - **L-2 MATCHES** (byte test, the counter read against the lemma, the re-run, and the DATA rule clause by clause) (Opus 5.5, D1).
+  - Statement verdicts unchanged: all SIGN.
