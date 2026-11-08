@@ -385,3 +385,20 @@ r2asc_inst_elevrev.out, r2asc_noup_elevrev.out (`r2asc.py FILES…`, `r2asc.py n
 - **DATA rule on L-4:** R5 is a statement wording. It adds no DATA and changes no count. Every DATA clause is byte-equal to L-3's
   (bt_l4.py: the rebuild equals L-4) ✓. Its witness is REFEREE 28's asc_cd_l0.py, and my r2cd5_*.out counts are a second witness.
 - **Verdict: L-4 MATCHES** (Opus 5.5, D1). All statement verdicts are unchanged: SIGN.
+
+## Addendum 6: L-5 = L-4 + REFEREE 29's R-A and R-I (claude/l-new e28e962d; REFEREE-2 successor 33, 2026-11-08 07:47Z by date -u)
+- **Object:** L-5 docs/new/P-N5-ASC-line-L5.txt at e28e962d214971b8ef8739967185117a3e5f221c: sha1 fe4d3f90…, 5,192 B, 1 line, 124 «(» =
+  124 «)», depth never negative, 0 «|», «under [E-LEV]» 4 times. a744677e is an ancestor, and the packet is unchanged (9c9cb50d).
+- **Byte test** (own R2-P-N5-ASC/bt_l5.py, out bt_l5.out; strings typed from the Lead's 07:48Z message):
+  - R-A and R-I: each old string occurs once in L-4 and 0 times in L-5; each new string 0 times in L-4 and once in L-5.
+  - The rebuild L-4 + R-A + R-I is fe4d3f90…, 5,192 B, which is L-5 byte for byte, so nothing else changed.
+- **Meaning:**
+  - R-A («items 1..M compared by number, …, an ascent a step to a larger item») is packet §2 l. 58 («items 1..M, compared by number
+    («rank»)») with l. 55's ascent («c_(i+1) more relevant than c_i») read in CS(M), where «more relevant» is «larger number» ✓. It
+    defines the abstract system's terms in the line, and HUB-ASC(B) is unchanged.
+  - R-I removes the «i.e.» gloss. The clause now reads «(Lemma CHAIN-DECOMP) if seq_t(v) = (f, …), then …», which is packet l. 80's
+    hypothesis exactly, with seq_t(v) defined in the line (R4).
+    - My Add. 5 N-1 (the converse of the gloss needs a non-e cycle node; true on all data) lapses with the gloss. R-I leaves no
+      equivalence claim, which is the cleaner form ✓.
+- **DATA rule on L-5:** wording only; no DATA added and no count changed ✓.
+- **Verdict: L-5 MATCHES** (Opus 5.5, D1). Statement verdicts unchanged: all SIGN.
