@@ -331,3 +331,82 @@ to the switch that completed the return route. It is not proved, and it would ne
 - Status of the open core after A1-A7: R (R-steps) on Γ3-Howard is NOT proved polynomial. Proved (lane): EQ-FLIP, MERGE, RET/BRET; X-GATE
   and R-SPLIT [LOC]; DOM-T. Dead: FLIP-H, HEAD-STEP, EXCH-1, L♮/M♮ models, SEG-T, CHARGE-RET, SRC-DEC, VCYC-STEP. Per-gate flips stay
   ≤ 10 in all data (L-RED §53.2: per-gate overtakes ≤ 15 on 37 instances), so CONJECTURE OVT-POLY is unrefuted.
+
+## Addendum 8: erratum on DOM-T (withdrawn as stated); DEAD TIE-PERSIST
+- Erratum (§1, §5). §1 lists «F4 ext monotone». F4 is FALSE in general: P-N5-XICYC fixes entry 2, XC-1 = W-1, replaced it by F4′ (ext is
+  monotone when v lies in neither Π). §5's proof of DOM-T uses F4 twice, at x on general games. The referees showed that plain DOM is
+  false on general games (XC-2 = G-1). So **DOM-T is WITHDRAWN as PROVED.**
+  - What is proved (lane), F4′-safe. Take x a TIE vertex of a non-fallback σ-step k → k+1, with Λ_(k+1)(x) ≠ x, and y ∈ TIE_k(x). If x
+    ∉ Π(Ω_k(y)) and x ∉ Π(Ω_k(σ_(k+1)(x))), then Ω_(k+1)(x) ⊵ ext(x, Ω_k(y)).
+  - Proof: §5's three steps, with F4′ in place of F4. x ∉ Π(Ω_(k+1)(σ_(k+1)(x))) holds because that value is x's own play after its first
+    step and x is not its cycle node. ∎
+  - EQ-FLIP, MERGE, X-GATE and R-SPLIT do not use F4 and are unaffected.
+- BR-SEG-T (PROVED-CONDITIONAL, lane). The segment bound for N5′-xi's σ-steps follows from TIE-PERSIST by REFEREE's F4′-safe route
+  (P-N5-XICYC fixes entry 2). STRICT-G uses only that the switch is improving, which holds for every N5′-xi switch. PATH-G's Even case
+  needs «σ_t(z_0) is Ω_(t−1)-best among a set containing z_1», which TIE-PERSIST supplies (σ_t(z_0) is the Ω-best of TIE_(t−1)(z_0) ∋ z_1).
+  - TIE-PERSIST(window [a, b], switched x at b): every Even z on x's final play π before its cycle node is a TIE vertex, and
+    σ_b(z) ∈ TIE_k(z), at every step k of the window.
+  - Conclusion under TIE-PERSIST and H0 at the final switch: the window has at most n_E steps.
+- **DEAD TIE-PERSIST.** Killed by inst/DEAD_SEGT_n20.json, window of σ-steps 3-10.
+  - All switches in steps 3-10 are TIE-rule switches, and none switches its own cycle node. This was classified by replaying n5v's
+    step: «TIE» means |A(v)| ≥ 2, v not its own H-cycle node, TIE(v) ≠ ∅.
+  - The window has 8 > n_E = 6 p-steps, so by BR-SEG-T TIE-PERSIST must fail there.
+  - Direct check, tiep192.py inst/DEAD_SEGT_n20.json 3 10:
+    - the switched vertex is 8, with final play 8, 16, 0, 18, 15, 12, 7, 3, 10, 1 → cycle node 2;
+    - 13 failures over the steps of the window, e.g. «k 3: z 8 edge to 16 not in TIE_k(z) = [13]» and «k 7: z 7 not a TIE vertex».
+    - Unit: (Even z on π, step k) pairs. Set: that window. Scope: N5′-xi on general games.
+- Obstruction: TIE(v) ⊆ {σ(v)} ∪ Iσ(v). An edge that N5′-xi adopts at the end of a window is typically not improving, hence not in TIE,
+  earlier in the window. Here 8 → 16 is in no earlier TIE set. Howard's DOM ranges over all successors; any restricted-choice rule loses
+  that, and this instance shows the loss.
+- Consequence for RED-XI on general games: the X1 route (Howard-faithful σ-steps) is still the only reduction. The TIE route is dead in
+  its natural form. The Γ3 route (X1 holds there by REACH3-CYC, R117/R118) is unaffected.
+
+## Addendum 9: erratum on MERGE's side line (L-RED 54, R217 §7); value counts under E-DOM (DATA)
+- Erratum (§2 MERGE). The closing side line «e_g ∈ A′ always» is FALSE in the RET case. There m = e_g (the β-play runs back through g
+  and e_g), so A′ = ∅, by A1.1's own definition. Correct statement: «e_g ∈ A′ unless m = e_g (RET), where A′ = ∅».
+  - MERGE's statement and proof, MERGE-CHOICE, EQ-FLIP, X-GATE, R-SPLIT and A1.1 do not use the side line. A1.1 treats RET separately.
+    The only uses are READINGS: §2's reading after MERGE, and §4's «What remains», which presumes e_g on the e-side. Read both with the
+    RET case split. Thanks to L-RED 54, which corrected its TOP-DEC the same way.
+- OVT-DV (L-RED 54, R217 §2), checked here line by line: correct. One citation needs changing: «D(e_g) ≤ D(y) + 1 because ext is
+  injective (F4)». F4 is false in general (XC-1), but the bound needs no injectivity: the image of a set of D(y) values under ext(e_g, ·)
+  has at most D(y) elements.
+- E-DOM (L-RED 54, from R104 [DEF] eb = bmax + 1: every e lies above every β; only c_W, K0, K3 lie above an e). DATA on whether values
+  move through e-level events.
+  - Per vertex v, define:
+    - D(v): distinct values;
+    - D_E(v): distinct (cycle node, e-part of Π) pairs;
+    - IN(v): the most value changes of v inside one stretch with (cycle node, e-part) constant.
+  - Results (dv192.py):
+
+| instance | T | max mover D | max mover D_E | max IN (any vertex) |
+| --- | --- | --- | --- | --- |
+| rd2_d9 | 21 | 21 | 21 | 2 |
+| rd2_d10 | 26 | 18 | 16 | 3 |
+| rd3_d7 | 25 | 19 | 13 | 3 |
+| cR_d2_w8_R22 | 24 | 16 | 16 | 2 |
+| rf_d5 | 11 | 11 | 11 | 1 |
+
+  - So values move almost only through e-part changes: D(v) ≤ (IN + 1)·D_E(v) with IN ≤ 3 in this data.
+  - CONJECTURE IN-BOUND: IN(v) ≤ c (a constant, or polynomial) on IDEAL-CYC. Then OVT-DV gives OVT-POLY ⇐ «D_E(v) polynomial».
+  - That target is the number of distinct sets of e-vertices on v's play, a lex-monotone walk over subsets of the e's (R95 k-prefix
+    form). By E-DOM it is the top layer of the value. It is still not bounded here; D_E ≤ T + 1 trivially.
+  - Unit: values / changes per vertex. Set: the five instances listed. Scope: IDEAL-CYC.
+
+## Addendum 10: the lexicographic order on e-sets (L-RED 54 suggestion, R217 §11); what it can and cannot give
+- PROVED (lane, immediate). Under E-DOM, while Λ(v) is fixed, the e-part of Π_t(v) is ⊴-non-decreasing in the set order: a larger set
+  is better iff the most relevant e of the symmetric difference lies in it (all e's even). Reason: by E-DOM the e-part is the top layer
+  of the value below c_W, K0, K3, which are common to equal-Λ values; truncation of a lexicographic order is monotone (F1). This is RESULTS
+  R95 PREFIX-MON (k = the number of e's), read on IDEAL-CYC.
+- So D_E(v) ≤ 1 + (the height of the e-set order restricted to the e-sets v's plays can carry), per interval of fixed Λ(v).
+- The order on ALL subsets of the M e-vertices has height 2^M − 1, so monotonicity alone gives nothing polynomial:
+  - L-RED's RS2 (a 2-bit increment {b0} → {b1} → {b1, b0} under E-DOM, verified 4 ways) is a monotone step of exactly this order;
+  - a binary counter is a monotone walk in it.
+- A polynomial bound must therefore come from which e-sets are REALISABLE in sequence on one vertex's plays. Equivalently: can the
+  counter extend past 2 bits under E-DOM? That is L-RED's open third-bit question (LEAK-ARCH covers Friedmann's architecture H1-H3 only).
+- READING (not proved): the levels structure (an e at level ℓ leads to its fixed W-target at level ℓ − 1; going up again needs a Ξ-jump
+  through a β) bounds the e's on one play only by the number of gates, so it does not cut the height by itself.
+  - The candidate cut is E-DOM-CHOICE + LEAK-ARCH: a higher e entering B′ forces Odd's choice regardless of β's, which is what kills
+    delayed carries.
+  - A proof would need «no three bits», in some form, for every architecture, not only H1-H3.
+- Status unchanged: R on Γ3-Howard NOT proved polynomial. Open core = «D_E(v) polynomial» (realisable-e-set height) + CONJECTURE
+  IN-BOUND.

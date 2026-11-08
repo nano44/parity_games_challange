@@ -1,0 +1,28 @@
+OK   RESULTS/ASC Even movers of priority 0; Odd gates of priority 1 with a W-face e and a Ξ-face β
+OK   RESULTS/ASC β of priority 6 + 2·rank + parity with edges to the Ξ-target and to u, or to u alone
+OK   RESULTS/ASC e of even priority above every β with one edge to the W-target or to the top even self-loop c_W
+OK   RESULTS/ASC an unused even self-loop of priority 2; c_W's priority top is the least even number at least 2 above
+OK   RESULTS/ASC a closed core u = K0 (Even, top + 2) → {K1, K3}, K1 (Even, 5) → {K0, K1}, K2 (Odd, 3) → {K1, K2}, K3
+OK   RESULTS/ASC with start σ = the genome start at movers, β → its Ξ-target (u when the target is X), K0 → K3, K1 → 
+OK   XICYC movers (Even, priority 0) → gates (Odd, priority 1) → {e-face e_g, β-face β_g}
+OK   RESULTS VJ00 §4.2 / Friedmann arXiv 1106.0778 §3 for the order ⊴ on values (Λ, Π, k)
+OK   RESULTS/XICYC/ASC The game is Γ(G) with every Even vertex that is not a mover frozen at its start successor. Odd is un
+OK   RESULTS/XICYC every mover x goes to a successor of ⊴-largest Ω_t value, and keeps σ_t(x) if σ_t(x) is such a succe
+OK   RESULTS T_CYC := the number of steps to the first state where no mover has a strictly better successor
+OK   RESULTS/ASC Facts F1-F6 (§3 l. 68-83) with F4 REPLACED by F4′
+OK   XICYC/ASC Ω_t ⊴ Ω_(t+1) pointwise, for every step t.
+OK   XICYC/ASC Ω_t(v) = ext(v, Ω_t(nx_t(v)))
+OK   XICYC/ASC ext(v, (Λ, Π, k)) := (Λ, Π ∪ {v if v is more relevant than Λ}, k + 1)
+OK   RESULTS if v ∉ Π(A) ∪ Π(B), then A ⊴ B ⇒ ext(v, A) ⊴ ext(v, B), and A ◁ B ⇒ ext(v, A) ◁ ext(v, B).
+OK   RESULTS/XICYC For every mover x, step t and successor y of x: Ω_(t+1)(x) ⊵ ext(x, Ω_t(y)).
+OK   RESULTS/XICYC If σ_(t+1)(x) ≠ σ_t(x), then Ω_(t+1)(x) ▷ Ω_t(x).
+OK   RESULTS/XICYC/ASC C ≤ n·(2M + 2).
+OK   RESULTS/ASC (each vertex's Λ moves only to a vertex of strictly larger reward among at most 2M + 3 possible cycl
+OK   XICYC first the reward of Λ (an even priority p gives +p, an odd one −p, with priorities made injective by
+OK   RESULTS/ASC (§3 l. 68-83)
+OK   XICYC σ̄_t is optimal at every vertex at once ([VJ])
+OK   RESULTS (Odd's best reply σ̄_k is pointwise optimal in G_{σ_k})
+OK   ASC D_E(v) ≤ (2M + 3)·F′_B(M)
+OK   RESULTS leaves the β-vertex order and the exact e-priorities to packet §3.1
+OK   REALIZE Ω(e_g) := eb + 2·i, eb := the least even number > bmax, i := the position of g in the order by (lev(
+quotes 27 missing 0 (trunk bf6ced60)

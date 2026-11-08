@@ -985,4 +985,36 @@ if [ "$r192" -eq 0 ] && [ -z "$d192" ] && grep -q "^rd2_d9.json N 18 T 21 C 3 R 
 else
   echo "BOX 192 R-POT check: FAILED (check192.sh exit $r192; python $(python3 --version 2>&1))"; echo "$d192" | head -30; echo "$run192" | tail -15; exit 1
 fi
+# BOX 193 ASC (L-NEW successor 61): CHAIN-DECOMP / TAIL-MON / E-DOM / UP-JUMP / ASC-GATE data, CS(M, A) exact values M <= 5, ASC-EXP, NOUP
+# no silent exit: every failure path prints «BOX 193 ASC check: FAILED» with the exit code, the diff and the run's last lines
+r193=0; run193=$(cd box193 && bash check193.sh 2>&1) || r193=$?
+d193=$(diff <(printf '%s\n' "$run193") box193/check193.out 2>&1) || true
+if [ "$r193" -eq 0 ] && [ -z "$d193" ] && grep -q "^rd2_d9.json N 18 T 21 M 36 edomfail 0 decfail 0 tmonfail 0 ascstates 1053 maxasc 3 maxDE 18 asc 180 upfail 0 gates 448 ci 147 con 263 chi 38 gfail 0 edomunits 93 decunits 2154 tmonunits 291$" box193/check193.out && grep -q "^CS(M 7, A 0): max distinct hub chains 29;" box193/check193.out && grep -q "^CS(M 5, A 1): max distinct hub chains 29;" box193/check193.out; then
+  echo "BOX 193 ASC: CHAIN-DECOMP / TAIL-MON / UP-JUMP / ASC-GATE 0 failures, CS(M <= 5) exact values, ASC-EXP M <= 10, NOUP 0 ascents = frozen: PASS"
+else
+  echo "BOX 193 ASC check: FAILED (check193.sh exit $r193; python $(python3 --version 2>&1))"; echo "$d193" | head -30; echo "$run193" | tail -15; exit 1
+fi
+# P-N5-ASC (L-NEW successor 61; fixes entry 1 + line L-1, successor 62): frozen packet, fixes, L-1, cited tools / instances against box193/asc.pins (DOCS/ = docs/new/)
+pinA=$(cd box193 && sed 's#DOCS/#../../../docs/new/#' asc.pins | sha1sum -c --quiet 2>&1) || true
+if [ -z "$pinA" ]; then
+  echo "P-N5-ASC: packet and $(wc -l < box193/asc.pins) pinned files match asc.pins: PASS"
+else
+  echo "P-N5-ASC check: FAILED"; echo "$pinA" | head -20; exit 1
+fi
+# BOX 194 LOC (L-NEW successor 62): LOC-GATE / LOC-K2 / CN2 / OVT-DV (loc194.py), Theorem QUIET (quiet194.py), DEAD constant IN-BOUND (in194.py)
+# no silent exit: every failure path prints «BOX 194 LOC check: FAILED» with the exit code, the diff and the run's last lines
+r194=0; run194=$(cd box194 && bash check194.sh 2>&1) || r194=$?
+d194=$(diff <(printf '%s\n' "$run194") box194/check194.out 2>&1) || true
+if [ "$r194" -eq 0 ] && [ -z "$d194" ] && grep -q "^LEAP_k64.json T 129 cnlow 0 k2fail 0 gatestates 66950 ties 0 locfail 0 intervals 515 flips 128 ovtfail 0 efail 0 bfail 0 maxF 128 tight 0$" box194/check194.out && grep -q "^RS2_L32M6.json T 41 n 527 IN 33 INk 0 INb 33 INB 34 who ('x', 74)$" box194/check194.out && ! grep -Eq "(locfail|ovtfail|efail|bfail|cnlow|k2fail|wfail|Tfail|crossflip|bonlyfail|ties) [1-9]" box194/check194.out; then
+  echo "BOX 194 LOC: LOC-GATE / LOC-K2 / CN2 / OVT-DV / QUIET 0 failures, DEAD constant IN-BOUND (RS2_L32M6 IN 33) = frozen: PASS"
+else
+  echo "BOX 194 LOC check: FAILED (check194.sh exit $r194; python $(python3 --version 2>&1))"; echo "$d194" | head -30; echo "$run194" | tail -15; exit 1
+fi
+# P-N5-QUIET (L-NEW successor 62): frozen packet + cited tools / instances against box194/quiet.pins (DOCS/ = docs/new/)
+pinQ=$(cd box194 && sed 's#DOCS/#../../../docs/new/#' quiet.pins | sha1sum -c --quiet 2>&1) || true
+if [ -z "$pinQ" ]; then
+  echo "P-N5-QUIET: packet and $(wc -l < box194/quiet.pins) pinned files match quiet.pins: PASS"
+else
+  echo "P-N5-QUIET check: FAILED"; echo "$pinQ" | head -20; exit 1
+fi
 rm -rf "$tmp"

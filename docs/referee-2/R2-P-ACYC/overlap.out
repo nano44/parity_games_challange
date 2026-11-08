@@ -1,0 +1,7 @@
+R2 W-3/D-1 count 1 span (1831, 1927)
+R2 D-2 = AC-L5 count 1 span (1928, 1993)
+AC-L1 count 1 span (259, 292)
+AC-L2 count 1 span (832, 936)
+AC-L3 count 1 span (1656, 1784)
+AC-L4 count 1 span (1875, 1927)
+OVERLAP R2 W-3/D-1 AC-L4

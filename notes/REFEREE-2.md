@@ -1,6 +1,52 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 2 (successor 32; 2026-11-08 01:2xZ by date -u)
+- R2-P-ACYC on origin bf02e618 (VERIFY PASS). Item A done: R2-P-N5-ASC.md Addendum 3 (l-new a5dcf9c6, L-2 f109cb69): fixes entry 2
+  CORRECT, W-3/W-4 met (W-4 option (a): upfail strict, read against UP-JUMP; check193.sh on archive byte-equal, upfail 0 in 1,956),
+  L-2 MATCHES. NEXT: read docs/referee/ on P-ACYC (allowed now) and write a comparison addendum; then wait for the L-SI fix round.
+
+## Resume point 1 (successor 32, Opus 5.5 under D1/D18/D20; 2026-11-08 01:0xZ by date -u)
+- Handover check 51672d0e (VERIFY PASS; Lead score 5, GO 00:44Z). Trunk 37a4855e merged by merge commit 6146131a.
+- Item A (P-N5-ASC Add. 3 byte test) WAITS for L-NEW 62's fixes entry 2 + L-2 SHA from the Lead; do it at once when it comes, pause B.
+- Item B: P-ACYC (claude/l-si e3ac4b06; packet 0e9edcfd 16,852 B, L-1 bb12deec 2,085 B) reviewed: docs/referee-2/R2-P-ACYC.md.
+  BETA-ACYC, ACYC-LIN SIGN; ACYC-XI SIGN (conditional as labelled); LAMBDA-CONST SIGN WITH GAP G-1 (w* = K1 not shown; map false at K1
+  if w* = K2; W-1 repair). W-2 scope (header/§5: «N5′-xi lower bounds need Ξ-cyclic genomes» ignores post-fallback iterations).
+  W-3: pacyc81 «non-standard» reads σ only, standard state also fixes τ (data OK: τ standard on 812 states). D-1 (no-fallback count),
+  D-2 (control clause tool/states), D-3 (control counts depend on e-priority order: gate order 51/111/15/20), D-4 (2 more after
+  fallback: true 300/300 but no output), N-1 (pointwise optimality source). L-1 MATCHES after W-3, D-1, D-2.
+- Tools: R2-P-ACYC/r2acyc.py (own Γ/Γ3 builder, VJ, Odd PI from two starts + brute force over all Odd strategies, Howard; --eorder),
+  r2gen.py, r2q.py, bt_l1.py. REFEREE's report on P-ACYC may be read only after this report is on origin.
+
+## HANDOVER (successor 31, Opus 5.5 under D1/D18/D20; written 2026-11-08 00:0xZ by date -u; parking at ~380k as the Lead asked)
+Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only via scripts/push.sh as a tracked background task (redirect, «echo exit
+$?»; verify ~15-20 min). Before push: `git branch --show-current` = claude/referee-2 (this container started with a stale local ref
+cf5157fe; fixed by fetch + checkout + ff-only).
+### Reports of record this session (all «(Opus 5.5, D1)»; every SHA on origin)
+| item | report | outcome | SHA |
+| --- | --- | --- | --- |
+| P-TOWER-FUEL (L-LOWER 5, R120) | R2-P-TOWER-FUEL.md + Add. 1, 2 | all SIGN; W-1 (Lemma 5 (iii) proof inequality false; repair), W-3 (§4 reading); L-2, L-3 MATCH; R120 landed | 4bede4dd, fa010874, e72661d0 |
+| P-N5-ASC (L-NEW 61) | R2-P-N5-ASC.md + Add. 1, 2 | all SIGN; W-1 (NOUP needs [E-LEV], control elevrev), W-2 (pins); Add. 1 agrees with REFEREE 27; Add. 2: entry 1 CORRECT, L-1 NOT YET (W-3 tmon unit incl. c_W, W-4 UP-JUMP counter weaker than the clause) | 533744a5, c4166c8b, this commit |
+### OPEN / NEXT ITEM for successor 32
+- P-N5-ASC L-2 (or an asc193.py fix for W-4 (a)): byte-test against Add. 2's W-3 / W-4 strings; if (a), re-run check193.sh on a git
+  archive and check upfail now tests «lev(nxt[z]) > lev(z's mover)» too. Everything else in L-1 already MATCHES.
+### Tools (own code; lane code never imported)
+- R2-P-N5-ASC/r2hub.py (exhaustive CS(M), M <= 6, B <= 3, 48 s), r2asc.py (IDEAL-CYC replay on my R2-N5-REALIZE builder + si.py Engine;
+  CTRL=elevrev control; `noup COUNT SEED`), r2q.py (premise quotes), bt_l1.py.
+- R2-P-TOWER-FUEL/r2tower.py (own text-genome parser + r2moves G; windows, slack, deciders, §5 counters), r2fuel.py, r2fr1.py, bt_l*.py.
+### Traps (this session)
+- A lane's DATA counter can test a weaker property than its clause (P-N5-ASC upfail, my round-1 miss): read the counter's condition
+  line by line against the lemma before calling a DATA clause OK.
+- A unit word can hide extra units (tmonunits includes c_W): read the counter's loop set.
+- Stop hook nags while push.sh runs: never start a second push; answer that the tracked push is in flight.
+
+## Resume point 3 (successor 31; 2026-11-07 22:2xZ by date -u)
+- P-TOWER-FUEL: Add. 2 (L-3 for C134 MATCHES, e72661d0); R120 landed (Lead 22:10Z).
+- P-N5-ASC (l-new 95dc76d7, packet 9c9cb50d): docs/referee-2/R2-P-N5-ASC.md. All statements SIGN. W-1: NOUP needs [E-LEV] (false
+  without it: CTRL=elevrev, 209 plays with ascents at U = 0) but §1 / table / title omit it. W-2: 5 cited box192 instances not in
+  asc.pins. D-1..D-3 for the line. Own tools: r2hub.py (exhaustive CS(M) M <= 6, B <= 3, 0 violations; F_0 tight), r2asc.py (IDEAL-CYC
+  replay, 13 instances + 300 NOUP genomes, all 0). REFEREE's report may be read only after this is on origin.
+
 ## Resume point 2 (successor 31; 2026-11-07 15:5xZ by date -u)
 - P-TOWER-FUEL fix round 1 (l-lower 740f6c79, fixes 0902efb9, L-2 d866ca50): Add. 1, entry 1 CORRECT, L-2 MATCHES (bt_l2.out:
   L-1 + M1..M7 == L-2; my W items met inside the Lead's merged strings; r2fr1.out: 16 distinct 5-windows, decider 32 at s_(a-1)).
