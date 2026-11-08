@@ -64,7 +64,11 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - Tools experiments/red/r222/: lock222.py, sweep222.py (needs WTSI83 = worktree of claude/l-si 2a44b7d6 for ladder83.build only),
   priv222.py (rand mode uses ../r221q/brute221.rgen). Instances inst/ = 6 L-SI copies, sha1 in inst/SHA1SUMS (match L-SI's table).
 - Things only I know: worktree $scratch/wtsi83 (detached 2a44b7d6) is container-local. Oink not built in this container yet.
-- NEXT: item 1 CYC-type RET gates: PRIV-FLIP's failure case is the target (a play from a bit's option returning to the bit).
+- Item 1 DONE (lane): docs/red/R222-cyc.md. Lemma RHO-CYC (PROVED-COND F1, like RHO-SET): RET_t ⇔ e_g ∈ Π_t(x′) under [BELOW], so
+  ρ_g ≤ 1 + #changes (Λ(x′), E(x′)) + A′_g ≤ (2M+3)F′_B(M) + A′_g (x′ = Ξ-target; covers SET gates too). No loop-value premise.
+  DATA 0 violations on 5,072 random + 952 corpus gates; bound attained. «C-starts ≤ Λ(g) changes» FALSE (out/cyc_Cs_11_*.json).
+  Tool experiments/red/r222/cyc222.py (SETTOO=1 includes SET gates). Open: A′_g / A_g; mover-level flips when PRIV fails.
+- NEXT: item 3 (ENDGAME-3 proof) when the Lead sends the SHA; L-SI hub-pair candidate when sent (PRIV-FLIP / RHO-CYC first).
 
 ## Successor 56 HANDOVER (2026-11-08 ~01:3xZ, date -u; ~430k context; PARKED)
 - RESULTS (lane, unrefereed; nothing running):

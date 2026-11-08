@@ -1,0 +1,99 @@
+CYC222 CLR_k4s10.json T 25 cycgates 3 sumrho 5 maxrho 2 at (16, 0) (A 0 B 2 C 0 Cs 0 lam 0 DEy 2) totA 0 rviol 0 ing 0 Ap 0 maxslack 8 minslack 2 totB 5 totC 0 totCs 0 maxB 2
+CYC222 CLR_k8s16.json T 28 cycgates 5 sumrho 7 maxrho 2 at (28, 0) (A 0 B 2 C 0 Cs 0 lam 0 DEy 5) totA 0 rviol 0 ing 0 Ap 0 maxslack 10 minslack 5 totB 7 totC 0 totCs 0 maxB 2
+CYC222 FPORT_n2.json T 14 cycgates 3 sumrho 3 maxrho 1 at (5, 0) (A 0 B 1 C 0 Cs 0 lam 0 DEy 1) totA 2 rviol 0 ing 0 Ap 0 maxslack 3 minslack 2 totB 1 totC 0 totCs 0 maxB 1
+CYC222 FPORT_n3.json T 16 cycgates 5 sumrho 5 maxrho 1 at (5, 0) (A 0 B 1 C 0 Cs 0 lam 0 DEy 2) totA 3 rviol 0 ing 0 Ap 0 maxslack 3 minslack 2 totB 2 totC 0 totCs 0 maxB 1
+CYC222 FPORT_n4.json T 18 cycgates 7 sumrho 7 maxrho 1 at (5, 0) (A 0 B 1 C 0 Cs 0 lam 0 DEy 2) totA 4 rviol 0 ing 0 Ap 0 maxslack 3 minslack 2 totB 3 totC 0 totCs 0 maxB 1
+CYC222 LEAP_k1.json T 2 cycgates 0
+CYC222 LEAP_k16.json T 33 cycgates 0
+CYC222 LEAP_k2.json T 5 cycgates 0
+CYC222 LEAP_k3.json T 7 cycgates 0
+CYC222 LEAP_k32.json T 65 cycgates 0
+CYC222 LEAP_k4.json T 9 cycgates 0
+CYC222 LEAP_k6.json T 13 cycgates 0
+CYC222 LEAP_k64.json T 129 cycgates 0
+CYC222 LEAP_k8.json T 17 cycgates 0
+CYC222 RS2.json T 10 cycgates 0
+CYC222 RS2_L8M6.json T 17 cycgates 0
+CYC222 RS3.json T 13 cycgates 0
+CYC222 RSG_K4.json T 7 cycgates 0
+CYC222 SW_k4s10.json T 19 cycgates 6 sumrho 11 maxrho 4 at (26, 0) (A 0 B 4 C 0 Cs 0 lam 1 DEy 7) totA 0 rviol 0 ing 0 Ap 0 maxslack 11 minslack 5 totB 11 totC 0 totCs 0 maxB 4
+CYC222 SW_k8s16.json T 22 cycgates 10 sumrho 19 maxrho 5 at (35, 0) (A 0 B 5 C 0 Cs 0 lam 4 DEy 14) totA 0 rviol 0 ing 0 Ap 0 maxslack 16 minslack 7 totB 19 totC 0 totCs 0 maxB 5
+CYC222 t1_n3_M2_s.json T 12 cycgates 3 sumrho 3 maxrho 1 at (22, 0) (A 0 B 1 C 0 Cs 0 lam 0 DEy 1) totA 0 rviol 0 ing 0 Ap 0 maxslack 8 minslack 3 totB 3 totC 0 totCs 0 maxB 1
+CYC222 t1_n4_M2_s.json T 14 cycgates 3 sumrho 3 maxrho 1 at (28, 0) (A 0 B 1 C 0 Cs 0 lam 0 DEy 1) totA 0 rviol 0 ing 0 Ap 0 maxslack 8 minslack 3 totB 3 totC 0 totCs 0 maxB 1
+CYC222 t1_n5_M2_H.json T 16 cycgates 5 sumrho 5 maxrho 1 at (34, 0) (A 0 B 1 C 0 Cs 0 lam 0 DEy 1) totA 0 rviol 0 ing 0 Ap 0 maxslack 11 minslack 6 totB 5 totC 0 totCs 0 maxB 1
+CYC222 t1_n5_M2_s.json T 16 cycgates 3 sumrho 3 maxrho 1 at (34, 0) (A 0 B 1 C 0 Cs 0 lam 0 DEy 1) totA 0 rviol 0 ing 0 Ap 0 maxslack 9 minslack 3 totB 3 totC 0 totCs 0 maxB 1
+CYC222 t1_n8_M2_H.json T 28 cycgates 8 sumrho 8 maxrho 1 at (52, 0) (A 0 B 1 C 0 Cs 0 lam 0 DEy 1) totA 0 rviol 0 ing 0 Ap 0 maxslack 20 minslack 9 totB 8 totC 0 totCs 0 maxB 1
+CYC222 t1_n8_M2_s.json T 22 cycgates 3 sumrho 3 maxrho 1 at (52, 0) (A 0 B 1 C 0 Cs 0 lam 0 DEy 1) totA 0 rviol 0 ing 0 Ap 0 maxslack 12 minslack 3 totB 3 totC 0 totCs 0 maxB 1
+CYC222 t2_n4_M2_s.json T 9 cycgates 3 sumrho 3 maxrho 1 at (13, 0) (A 0 B 1 C 0 Cs 0 lam 0 DEy 1) totA 0 rviol 0 ing 0 Ap 0 maxslack 7 minslack 4 totB 3 totC 0 totCs 0 maxB 1
+CYC222 t2_n6_M0_P.json T 14 cycgates 15 sumrho 15 maxrho 1 at (14, 0) (A 0 B 1 C 0 Cs 0 lam 0 DEy 1) totA 0 rviol 0 ing 0 Ap 0 maxslack 7 minslack 6 totB 15 totC 0 totCs 0 maxB 1
+CYC222 t2_n6_M2_P.json T 14 cycgates 15 sumrho 15 maxrho 1 at (14, 0) (A 0 B 1 C 0 Cs 0 lam 0 DEy 1) totA 0 rviol 0 ing 0 Ap 0 maxslack 7 minslack 6 totB 15 totC 0 totCs 0 maxB 1
+CYC222 t2_n6_M2_s.json T 13 cycgates 5 sumrho 5 maxrho 1 at (24, 0) (A 0 B 1 C 0 Cs 0 lam 0 DEy 1) totA 0 rviol 0 ing 0 Ap 0 maxslack 9 minslack 4 totB 5 totC 0 totCs 0 maxB 1
+CYC222 t3_n4_u0_C.json T 10 cycgates 0
+CYC222 t3_n6_u0_C.json T 14 cycgates 0
+CYC222 t4_n4_S.json T 4 cycgates 0
+CYC222 t4p_n4_S.json T 10 cycgates 0
+CYC222 t4p_n6_S.json T 14 cycgates 0
+CYC222 t4p_n6_s.json T 9 cycgates 0
+CYC222 NOUPC_1.json T 12 cycgates 2 sumrho 3 maxrho 2 at (3, 1) (A 1 B 1 C 0 Cs 0 lam 4 DEy 1) totA 1 rviol 0 ing 0 Ap 0 maxslack 5 minslack 4 totB 2 totC 0 totCs 0 maxB 1
+CYC222 NOUPC_2.json T 16 cycgates 0
+CYC222 NOUPC_3.json T 10 cycgates 0
+CYC222 rd2_d7.json T 23 cycgates 9 sumrho 13 maxrho 3 at (7, 0) (A 0 B 3 C 0 Cs 0 lam 4 DEy 6) totA 3 rviol 0 ing 0 Ap 0 maxslack 12 minslack 8 totB 9 totC 0 totCs 0 maxB 3
+CYC222 rd3_d4.json T 18 cycgates 5 sumrho 8 maxrho 2 at (2, 1) (A 0 B 2 C 0 Cs 0 lam 5 DEy 4) totA 0 rviol 0 ing 0 Ap 0 maxslack 8 minslack 6 totB 7 totC 0 totCs 0 maxB 2
+CYC222 NOUPC_1.json T 12 cycgates 2 sumrho 3 maxrho 2 at (3, 1) (A 1 B 1 C 0 Cs 0 lam 4 DEy 1) totA 1 rviol 0 ing 0 Ap 0 maxslack 5 minslack 4 totB 2 totC 0 totCs 0 maxB 1
+CYC222 NOUPC_2.json T 16 cycgates 0
+CYC222 NOUPC_3.json T 10 cycgates 0
+CYC222 SL_k16_s0.json T 1 cycgates 0
+CYC222 SL_k16_s1.json T 2 cycgates 0
+CYC222 SL_k2_s0.json T 1 cycgates 0
+CYC222 SL_k2_s1.json T 2 cycgates 0
+CYC222 SL_k32_s0.json T 1 cycgates 0
+CYC222 SL_k32_s1.json T 2 cycgates 0
+CYC222 SL_k4_s0.json T 1 cycgates 0
+CYC222 SL_k4_s1.json T 2 cycgates 0
+CYC222 SL_k8_s0.json T 1 cycgates 0
+CYC222 SL_k8_s1.json T 2 cycgates 0
+CYC222 E22.json T 10 cycgates 1 sumrho 1 maxrho 1 at (7, 1) (A 1 B 0 C 0 Cs 0 lam 3 DEy 1) totA 1 rviol 0 ing 0 Ap 0 maxslack 4 minslack 4 totB 0 totC 0 totCs 0 maxB 0
+CYC222 E24.json T 12 cycgates 4 sumrho 7 maxrho 4 at (10, 0) (A 3 B 0 C 0 Cs 0 lam 3 DEy 4) totA 3 rviol 0 ing 0 Ap 0 maxslack 10 minslack 5 totB 3 totC 0 totCs 0 maxB 1
+CYC222 E28.json T 19 cycgates 4 sumrho 6 maxrho 2 at (11, 0) (A 0 B 2 C 0 Cs 0 lam 3 DEy 4) totA 0 rviol 0 ing 0 Ap 0 maxslack 10 minslack 6 totB 5 totC 0 totCs 0 maxB 2
+CYC222 E32.json T 20 cycgates 10 sumrho 19 maxrho 5 at (5, 0) (A 3 B 1 C 0 Cs 0 lam 7 DEy 5) totA 9 rviol 0 ing 0 Ap 0 maxslack 13 minslack 9 totB 7 totC 0 totCs 0 maxB 2
+CYC222 E33.json T 16 cycgates 6 sumrho 7 maxrho 2 at (9, 0) (A 0 B 1 C 0 Cs 0 lam 9 DEy 7) totA 2 rviol 0 ing 0 Ap 0 maxslack 12 minslack 7 totB 4 totC 0 totCs 0 maxB 1
+CYC222 E34.json T 21 cycgates 8 sumrho 15 maxrho 3 at (9, 1) (A 1 B 2 C 0 Cs 0 lam 9 DEy 6) totA 5 rviol 0 ing 0 Ap 0 maxslack 16 minslack 11 totB 10 totC 0 totCs 0 maxB 2
+CYC222 E43.json T 18 cycgates 12 sumrho 17 maxrho 2 at (5, 0) (A 0 B 2 C 0 Cs 0 lam 3 DEy 10) totA 7 rviol 0 ing 0 Ap 0 maxslack 13 minslack 4 totB 10 totC 0 totCs 0 maxB 2
+CYC222 EL6.json T 17 cycgates 5 sumrho 8 maxrho 2 at (2, 1) (A 1 B 0 C 0 Cs 0 lam 5 DEy 7) totA 3 rviol 0 ing 0 Ap 0 maxslack 11 minslack 4 totB 4 totC 0 totCs 0 maxB 2
+CYC222 H23.json T 7 cycgates 1 sumrho 2 maxrho 2 at (4, 1) (A 0 B 1 C 0 Cs 0 lam 3 DEy 1) totA 0 rviol 0 ing 0 Ap 0 maxslack 4 minslack 4 totB 1 totC 0 totCs 0 maxB 1
+CYC222 H25.json T 12 cycgates 4 sumrho 7 maxrho 3 at (5, 1) (A 0 B 2 C 0 Cs 0 lam 7 DEy 4) totA 3 rviol 0 ing 0 Ap 0 maxslack 10 minslack 6 totB 3 totC 0 totCs 0 maxB 2
+CYC222 H26.json T 12 cycgates 3 sumrho 3 maxrho 1 at (6, 1) (A 1 B 0 C 0 Cs 0 lam 4 DEy 5) totA 1 rviol 0 ing 0 Ap 0 maxslack 8 minslack 7 totB 1 totC 0 totCs 0 maxB 1
+CYC222 H33.json T 12 cycgates 3 sumrho 5 maxrho 2 at (3, 1) (A 0 B 1 C 0 Cs 0 lam 5 DEy 1) totA 3 rviol 0 ing 0 Ap 0 maxslack 9 minslack 6 totB 1 totC 0 totCs 0 maxB 1
+CYC222 H333.json T 19 cycgates 3 sumrho 5 maxrho 2 at (5, 2) (A 1 B 1 C 0 Cs 0 lam 10 DEy 4) totA 4 rviol 0 ing 0 Ap 0 maxslack 13 minslack 7 totB 1 totC 0 totCs 0 maxB 1
+CYC222 H34.json T 13 cycgates 4 sumrho 7 maxrho 3 at (8, 1) (A 1 B 0 C 1 Cs 0 lam 6 DEy 5) totA 2 rviol 0 ing 0 Ap 0 maxslack 12 minslack 4 totB 2 totC 1 totCs 0 maxB 1
+CYC222 H43.json T 13 cycgates 5 sumrho 8 maxrho 4 at (5, 1) (A 0 B 4 C 0 Cs 0 lam 5 DEy 5) totA 0 rviol 0 ing 0 Ap 0 maxslack 8 minslack 5 totB 8 totC 0 totCs 0 maxB 4
+CYC222 H44.json T 21 cycgates 11 sumrho 14 maxrho 2 at (5, 0) (A 1 B 1 C 0 Cs 0 lam 11 DEy 11) totA 4 rviol 0 ing 0 Ap 0 maxslack 19 minslack 13 totB 10 totC 0 totCs 0 maxB 2
+CYC222 L10K5.json T 20 cycgates 8 sumrho 11 maxrho 3 at (9, 0) (A 2 B 1 C 0 Cs 0 lam 5 DEy 5) totA 4 rviol 0 ing 0 Ap 0 maxslack 14 minslack 8 totB 7 totC 0 totCs 0 maxB 1
+CYC222 L12K6.json T 23 cycgates 12 sumrho 14 maxrho 2 at (1, 0) (A 1 B 1 C 0 Cs 0 lam 6 DEy 4) totA 3 rviol 0 ing 0 Ap 0 maxslack 13 minslack 8 totB 11 totC 0 totCs 0 maxB 2
+CYC222 L4K3.json T 12 cycgates 5 sumrho 6 maxrho 2 at (1, 0) (A 1 B 1 C 0 Cs 0 lam 5 DEy 4) totA 3 rviol 0 ing 0 Ap 0 maxslack 9 minslack 5 totB 3 totC 0 totCs 0 maxB 1
+CYC222 L6K4.json T 11 cycgates 6 sumrho 9 maxrho 2 at (0, 0) (A 1 B 1 C 0 Cs 0 lam 0 DEy 7) totA 1 rviol 0 ing 0 Ap 0 maxslack 7 minslack 5 totB 8 totC 0 totCs 0 maxB 2
+CYC222 L8K5.json T 12 cycgates 7 sumrho 9 maxrho 2 at (0, 1) (A 0 B 2 C 0 Cs 0 lam 2 DEy 5) totA 1 rviol 0 ing 0 Ap 0 maxslack 8 minslack 6 totB 7 totC 0 totCs 0 maxB 2
+CYC222 R102K6.json T 26 cycgates 15 sumrho 24 maxrho 7 at (2, 0) (A 4 B 3 C 0 Cs 0 lam 7 DEy 10) totA 8 rviol 0 ing 0 Ap 0 maxslack 17 minslack 9 totB 12 totC 0 totCs 0 maxB 3
+CYC222 R33K3.json T 11 cycgates 5 sumrho 6 maxrho 2 at (4, 0) (A 1 B 1 C 0 Cs 0 lam 3 DEy 5) totA 2 rviol 0 ing 0 Ap 0 maxslack 6 minslack 4 totB 4 totC 0 totCs 0 maxB 1
+CYC222 R43K4.json T 13 cycgates 6 sumrho 8 maxrho 2 at (3, 0) (A 2 B 0 C 0 Cs 0 lam 4 DEy 1) totA 4 rviol 0 ing 0 Ap 0 maxslack 8 minslack 7 totB 4 totC 0 totCs 0 maxB 1
+CYC222 R44K4.json T 14 cycgates 10 sumrho 10 maxrho 1 at (4, 1) (A 1 B 0 C 0 Cs 0 lam 4 DEy 3) totA 4 rviol 0 ing 0 Ap 0 maxslack 9 minslack 6 totB 5 totC 0 totCs 0 maxB 1
+CYC222 R53K3b.json T 16 cycgates 9 sumrho 11 maxrho 2 at (11, 1) (A 0 B 2 C 0 Cs 0 lam 3 DEy 7) totA 3 rviol 0 ing 0 Ap 0 maxslack 14 minslack 7 totB 7 totC 0 totCs 0 maxB 2
+CYC222 R53K5.json T 15 cycgates 10 sumrho 12 maxrho 3 at (7, 1) (A 3 B 0 C 0 Cs 0 lam 1 DEy 11) totA 7 rviol 0 ing 0 Ap 0 maxslack 9 minslack 3 totB 5 totC 0 totCs 0 maxB 1
+CYC222 R62K5.json T 16 cycgates 11 sumrho 16 maxrho 3 at (4, 0) (A 2 B 1 C 0 Cs 0 lam 5 DEy 8) totA 5 rviol 0 ing 0 Ap 0 maxslack 13 minslack 6 totB 9 totC 0 totCs 0 maxB 2
+CYC222 R63K5.json T 28 cycgates 14 sumrho 19 maxrho 3 at (14, 0) (A 0 B 3 C 0 Cs 0 lam 4 DEy 4) totA 4 rviol 0 ing 0 Ap 0 maxslack 18 minslack 6 totB 15 totC 0 totCs 0 maxB 3
+CYC222 R83K6.json T 25 cycgates 13 sumrho 19 maxrho 3 at (5, 0) (A 0 B 3 C 0 Cs 0 lam 10 DEy 10) totA 8 rviol 0 ing 0 Ap 0 maxslack 16 minslack 12 totB 11 totC 0 totCs 0 maxB 3
+CYC222 lad_2.json T 0 cycgates 1 sumrho 1 maxrho 1 at (0, 0) (A 0 B 0 C 0 Cs 0 lam 0 DEy 1) totA 0 rviol 0 ing 0 Ap 0 maxslack 0 minslack 0 totB 0 totC 0 totCs 0 maxB 0
+CYC222 lad_3.json T 0 cycgates 0
+CYC222 lad_4.json T 0 cycgates 1 sumrho 1 maxrho 1 at (0, 0) (A 0 B 0 C 0 Cs 0 lam 0 DEy 1) totA 0 rviol 0 ing 0 Ap 0 maxslack 0 minslack 0 totB 0 totC 0 totCs 0 maxB 0
+CYC222 lad_6.json T 0 cycgates 1 sumrho 1 maxrho 1 at (0, 0) (A 0 B 0 C 0 Cs 0 lam 0 DEy 1) totA 0 rviol 0 ing 0 Ap 0 maxslack 0 minslack 0 totB 0 totC 0 totCs 0 maxB 0
+CYC222 lad_8.json T 0 cycgates 1 sumrho 1 maxrho 1 at (0, 0) (A 0 B 0 C 0 Cs 0 lam 0 DEy 1) totA 0 rviol 0 ing 0 Ap 0 maxslack 0 minslack 0 totB 0 totC 0 totCs 0 maxB 0
+CYC222 DEAD_SEG2P_d4_N8.json T 10 cycgates 1 sumrho 1 maxrho 1 at (3, 1) (A 1 B 0 C 0 Cs 0 lam 1 DEy 1) totA 1 rviol 0 ing 0 Ap 0 maxslack 2 minslack 2 totB 0 totC 0 totCs 0 maxB 0
+CYC222 DIV_2_493.json T 1 cycgates 0
+CYC222 DIV_2_583.json T 2 cycgates 0
+CYC222 DIV_3_717.json T 8 cycgates 1 sumrho 1 maxrho 1 at (4, 1) (A 1 B 0 C 0 Cs 0 lam 4 DEy 1) totA 1 rviol 0 ing 0 Ap 0 maxslack 6 minslack 6 totB 0 totC 0 totCs 0 maxB 0
+CYC222 LR2_chainup.json T 9 cycgates 0
+CYC222 LR2_exitup.json T 8 cycgates 0
+CYC222 LR2_none.json T 6 cycgates 0
+CYC222 LR3_chainup.json T 12 cycgates 0
+CYC222 LR3_exitup.json T 11 cycgates 0
+CYC222 LR6_exitup.json T 20 cycgates 0

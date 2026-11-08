@@ -4,3 +4,5 @@ aa9ae7a5149a707c49098bca177626dbaea5abe3  LR2_exitup.json (claude/l-si 2a44b7d6:
 8868cdea2d2d830cfa4150cdab8c4ffb5184df75  LR3_exitup.json (claude/l-si 2a44b7d6:experiments/si/box83/inst/LR3_exitup.json)
 ad76dc14bae953c3b633b9084e43f2a0667014fa  LR3_chainup.json (claude/l-si 2a44b7d6:experiments/si/box83/inst/LR3_chainup.json)
 15b96ca3bc6972c85957d6a4ec1b7ae77826aff7  LR6_exitup.json (claude/l-si 2a44b7d6:experiments/si/box83/inst/LR6_exitup.json)
+047bd550d6b68cc488d12a7d39588fee61d626e9  CS_11_526.json (cyc222.py rand 11, genome 526; Cs case)
+5ec8880b98a7f00b54bd0418d0911166c6a06f71  CS_11_1399.json (cyc222.py rand 11, genome 1399; Cs case)

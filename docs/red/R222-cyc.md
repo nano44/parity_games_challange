@@ -1,0 +1,104 @@
+# R222 item 1: ρ at CYC-type RET gates (L-RED successor 57)
+Lead box R222 item 1 (brief; order after item 2 per Lead 01:54Z). Question: at CYC-type RET gates (Ξ-loops longer than a self-loop) the
+β-loop value is not fixed, so R221 RHO-SET (a) does not transfer. Bound ρ_g there, or build a family where it grows.
+Labels: PROVED (lane, unrefereed) / PROVED-CONDITIONAL (named premise) / CONJECTURE / DATA (unit, set, scope, counter) / DEAD (instance).
+Nothing here is a TARGET.md claim. G-N5-TIME stays OPEN. N5′-xi stays a CANDIDATE (D1).
+Tools: experiments/red/r222/cyc222.py on own.py (R217's independent IDEAL-CYC run). Outputs: experiments/red/r222/out/cyc_*.txt.
+
+## 0. Answer
+- BOUNDED, in the same form as R221 RHO-COUNT, with the W-target y replaced by the Ξ-target x′ (Lemma RHO-CYC, §2, PROVED-CONDITIONAL on
+  F1 and Odd's optimal response, as RHO-SET is). The β-loop's value never enters the proof.
+- ρ_g ≤ 1 + #changes of (Λ(x′), E(x′)) over the run + A′_g ≤ (2M + 3)·F′_B(M) + A′_g.
+  - B = the maximum number of ascents of x′'s plays. B ≤ U(G) under [E-LEV] (P-N5-ASC UP-B).
+  - A′_g = #RET starts at which Λ_t(x′) is not less relevant than e_g. This is the CYC analogue of RHO-COUNT's A_g, and DATA gives 0
+    everywhere.
+- So Σρ_g over ALL gates of level ≥ 1, SET and CYC alike, is polynomial when U(G) = O(1) and ΣA′_g is polynomial.
+- The CYC part of GATE-POLY's premise «Σρ_g polynomial» (R219, wording kept: «U(G) = O(1) ⇒ polynomial before the first fallback IF
+  Σρ_g and ΣH_g are polynomial») now rests on the same open item as the SET part, the A-count. No growing family exists below that
+  bound; one would need unbounded U(G) or A′ ≠ 0.
+- The RET-start anatomy (§1) shows that RHO-SET (a)'s failure mode is real but rare. A τ-flip with the loop closed can start a RET
+  stretch at a CYC gate (15 / 430 in the corpus), and twice the gate's own cycle node did not change. So «C-starts ≤ changes of Λ(g)»
+  is FALSE (§1). RHO-CYC does not need it.
+
+## 1. Anatomy of RET starts at CYC gates (DATA)
+Setting: g = gate of option k of x, lev(x) ≥ 1, Ξ-target x′ ≠ x, β-vertex b with the single edge b → x′. RET_t ⇔ τ_t(g) = e and the play
+from b passes g (R221 rho221.py's definition). A RET start t ≥ 1 is of type:
+- A: σ_(t−1)(x) ≠ k (adoption of k at x).
+- B: σ_(t−1)(x) = k, but the play from b did not pass g at t − 1 (the loop closes).
+- C: σ_(t−1)(x) = k and the loop was closed at t − 1, so τ_(t−1)(g) = β (a τ-flip with a closed loop; impossible at SET gates by
+  RHO-SET (a)).
+- Cs: a C start with Λ_(t−1)(g) = Λ_t(g).
+
+Unit: RET starts at CYC gates. Scope: own.py. Files: out/cyc_inst.txt, out/cyc_inst_set.txt (both via cyc222.py).
+| set | CYC gates with RET | A | B | C | Cs | max ρ_g |
+| --- | --- | --- | --- | --- | --- | --- |
+| L-RED frozen instances r21*/inst, r22*/inst + R221 climbs r221/out (99 genome files) | 341 | 120 | 309 | 1 | 0 | 7 (R102K6, r221/out) |
+| random Ξ-cyclic, brute221.rgen seeds 1, 2 (4,000 genomes) | 1,874 | 688 | 590 | 25 | 0 | 3 |
+| random, seeds 11, 12, SET gates included (4,000 genomes) | 3,198 (SET + CYC) | 1,319 | 643 | 14 | 2 | 3 |
+
+The two Cs cases are CYC gates (g = option 1 of mover 7). Frozen as experiments/red/r222/inst/CS_11_526.json and CS_11_1399.json (N 16,
+d 4; sha1 in inst/SHA1SUMS).
+
+## 2. Lemma RHO-CYC (PROVED-CONDITIONAL on F1 and Odd's optimal response, lane; new)
+Let g, x, k, x′, b be as in §1. Here x′ = x is allowed, so this covers SET gates too.
+- [BELOW]_t: Λ_t(x′) is less relevant than e_g.
+- A′_g := #{t ≥ 1 : t is a RET start and [BELOW]_t fails}.
+- ρ_g := #maximal RET stretches.
+
+(a) e_g ∈ Π_t(x′) implies RET_t. Conversely, RET_t together with [BELOW]_t implies e_g ∈ Π_t(x′).
+
+(b) ρ_g ≤ 1 + #{t ≥ 1 : (Λ_t(x′), E_t(x′)) ≠ (Λ_(t−1)(x′), E_(t−1)(x′))} + A′_g.
+
+(c) Hence ρ_g ≤ (2M + 3)·F′_B(M) + A′_g, where B is the maximum number of ascents of seq_t(x′) over the run. Under [E-LEV], B ≤ U(G).
+
+Proof.
+- (a)
+  - In Γ(G), e_g's only in-edge is from g, and g's only in-edge is from x ([DEF]).
+  - The play from b is b followed by the play from x′. So «the play from b passes g» ⇔ «the play from x′ passes g» (b ≠ g).
+  - A play passes e_g iff it passes g while Odd takes e there.
+  - If e_g ∈ Π_t(x′), then x′'s play passes g with τ_t(g) = e, which is RET_t.
+  - Conversely, under RET_t, x′'s play passes g and then e_g. A play vertex more relevant than its cycle node lies in Π: vertices of the
+    cycle other than Λ are less relevant than Λ, P-N5-ASC [VJ]. Under [BELOW]_t, e_g is more relevant than Λ_t(x′), so e_g ∈ Π_t(x′).
+- (b)
+  - Let t ≥ 1 be a RET start with [BELOW]_t.
+  - By (a), e_g ∈ Π_t(x′). Also ¬RET_(t−1), so by (a) e_g ∉ Π_(t−1)(x′).
+  - So either Λ(x′) changes at t, or Λ(x′) stays the same and E(x′) gains e_g, an e-vertex. Either way the pair changes at t.
+  - Distinct starts are distinct times t. Add at most 1 for a stretch that contains t = 0, and A′_g for the starts without [BELOW].
+- (c)
+  - By R118 (e) (per-vertex form, quoted in P-N5-ASC §1), Λ(x′) changes at most 2M + 2 times.
+  - On each interval I with Λ(x′) constant, E(x′) is lex non-decreasing (E-MON). So it changes at most D_E,I(x′) − 1 times, and
+    D_E,I(x′) ≤ F′_B(M) by Corollary HUB-ASC-G.
+  - Summing over the ≤ 2M + 3 intervals gives (2M + 2) + (2M + 3)(F′_B(M) − 1) + 1 ≤ (2M + 3)·F′_B(M).
+  - Under [E-LEV], UP-B gives B ≤ U(G). ∎
+
+Remarks:
+- No property of the β-loop is used. The loop can grow, shrink, open, close, or switch its top. Every RET start is still paid for by x′
+  gaining e_g.
+- For SET gates (x′ = x), (b) reads ρ_g ≤ 1 + #changes of (Λ(x), E(x)) + A′_g. That is a second bound, next to RHO-COUNT's version with y.
+- A′_g needs x′'s cycle node to be an e-vertex at least as relevant as e_g, or c_W (K0 / K3 are never cycle nodes). In words: the
+  W-side of g ends in a cycle above e_g. That is the same shape as RHO-COUNT's A_g. No bound on it is proved here.
+
+DATA for RHO-CYC (cyc222.py: rviol = #gates with ρ_g > 1 + chg + A′; ing = #(t, g) with [BELOW]_t and RET_t ≠ [e_g ∈ Π_t(x′)];
+unit: gates of level ≥ 1 with a RET; set and scope as in §1):
+| set | gates | Σρ_g | rviol | ing | A′ | gates with slack 0 |
+| --- | --- | --- | --- | --- | --- | --- |
+| frozen + climbs, CYC only (out/cyc_inst.txt) | 341 | 458 | 0 | 0 | 0 | the bound is attained in 4 files |
+| frozen + climbs, SET and CYC (out/cyc_inst_set.txt) | 952 | 1,221 | 0 | 0 | 0 | attained in 28 files |
+| random seeds 1, 2, 11, 12 (8,000 genomes) | 5,072 | | 0 | 0 | 0 | |
+
+The bound in (b) is attained on real runs, so (b) cannot be improved by a constant factor in general.
+
+## 3. Where this leaves Σρ (READING)
+- SET gates: RHO-COUNT (y) and RHO-CYC (x′ = x). CYC gates: RHO-CYC (x′). Both are polynomial for U(G) = O(1), given ΣA_g and ΣA′_g.
+- The A-counts remain the open premise: RET starts where the gate's W-side or Ξ-side ends in a cycle above e_g.
+- Item 2 (R222-lockup.md §3) reached the same place from the other side. Under bounded U(G), a SET bit can flip often only through Λ
+  changes, or through a play that returns to the bit (PRIV fails).
+- A CYC gate IS such a returning play. RHO-CYC says its RET stretches are still paid for by the Ξ-target's e-set changes. So the
+  returning play does not escape the e-set accounting at the gate level.
+- Whether it escapes at the mover level (bit flips of x when PRIV fails) is OPEN. That is the next question, and the natural target
+  for L-SI's hub-pair candidate.
+
+## 4. Sources opened
+- claude/l-new 95dc76d7 docs/new/P-N5-ASC.md §1 (R118 (e) per-vertex form, [VJ] Π), §3 (E-MON), §5 (HUB-ASC-G), §6 (UP-B).
+- claude/l-red docs/red/R221-ladder.md §7 (RHO-SET, RHO-E, RHO-COUNT), experiments/red/r221/rho221.py (RET definition),
+  experiments/red/r221q/brute221.py (rgen).
