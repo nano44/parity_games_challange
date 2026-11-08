@@ -1,0 +1,2 @@
+H6_d24_F126.json mode spec start stated idealT 209 moverphase_eq_ideal 1 T3_eq_idealT 1 iters 212 fallbacks 1 T3 209 howardT 12 moverphase_eq_howard 0 full_eq_howard 0 distinct_mover_states 213
+H6_d24_F126.json mode xi start stated idealT 209 moverphase_eq_ideal 0 T3_eq_idealT 0 iters 15 fallbacks 1 T3 12 howardT 12 moverphase_eq_howard 1 full_eq_howard 1 distinct_mover_states 14

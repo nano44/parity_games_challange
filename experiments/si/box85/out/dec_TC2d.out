@@ -1,0 +1,4 @@
+t 1 B1 ON  z B1.SET(1) side SET rel own
+t 5 B2 ON  z B2.SET(2) side SET rel own
+t 6 B1 OFF z B2.SET(2) side other rel above
+TC2d.json summary B1off:above=1 B1on:own=1 B2on:own=1

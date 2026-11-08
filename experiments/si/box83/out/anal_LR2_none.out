@@ -1,0 +1,3 @@
+LR2_none.json N 21 T 6 labels pRpppR R 2 C 0
+  GF [0, 1, 1, 0] RF [0, 1, 1, 0] MV [6, 2, 6, 0] KF [0, 0, 0, 0] U 10 maxasc 1 hist {0: 875, 1: 7} maxDE 3
+  Xi-cycles (movers, level): [[(2, 2)], [(4, 2)], [(1, 1)], [(0, 0)], [(3, 1)]] count 5

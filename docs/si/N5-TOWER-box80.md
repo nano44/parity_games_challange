@@ -123,6 +123,36 @@ DATA / READING. Not a TARGET.md claim; no statement bounds T polynomially; G-N5-
   pclimb.c seed 2, H 7, from H6 + 4 frozen top levels, d 28): T 312, F 2 6 14 30 62 126 222 223 …; levels 0-5 capped and the PULSE-NEST
   requirement for 7 capped levels already met (pair 4 pulses 3-5, pair 5 pulses 2-3), but F(6) = 222 < 254. The stretch STRETCH-NEED
   asks for is reachable while keeping six capped levels; the seventh is not reached.
+- Why the snapshot stops at F(6) = 222 (experiments/si/box80/lvl6_80.py → lvl6_80.out; DATA). In 111 of the 127 6-windows each
+  member of the pair 6 moves once. In the other 16 (window indices ≡ 4 mod 8) neither moves: π never reaches c there, and the next
+  window then starts already on c. Each such window loses 2 flips, so F(6) = 254 − 2·16 = 222 exactly. All 16 have LENGTH 1. They are
+  one-step gaps between consecutive pulses of the pair 5, at a step where the pair 4's b-step lets the next first mover of the pair 5
+  move at once. PULSE-NEST's second clause (every j-window has length ≥ k + 2) forbids them for 7 capped levels. The climb's score
+  counted only pulses (u_2 − u_1), not the gap windows, so it could not see this obstruction. pclimb.c now has WIN=1 (every j-window of
+  length ≥ H − j + 1 for j = 1..H − 1); on the snapshot it scores exactly these 16 deficits. Climbs with WIN=1 run from the snapshot.
+- With the window score (WIN=1), two independent climbs reach window deficit 0 and still have F(6) = 222. One of them is
+  experiments/si/box80/out/climb_w1_P0.json (sha1 622f68e5783e16eddc47e6b46d2bc65071af88cd; d 28, T 281, F 2 6 14 30 62 126 222 190 94 …; lvl6_w1.out).
+  - The same 16 windows (index ≡ 4 mod 8) are skipped. They now have length 2, but π of the pair 6 never reaches c in them (no fuel).
+  - Phase (DATA): the lost moves are exactly in the pair-4 pulse that falls while the pair 3 is TOGETHER (outside its pulse).
+    There the middle 6-window gets no move and its two neighbours one each. While the pair 3 is split, every 6-window gets both moves.
+  - READING: the pair 6's fuel reaches it only through chains that pass the split pair 3. A 7th capped level needs a fuel path for
+    the pair 6 that is live in the pair-4 pulses inside the pair-3 gaps. That is a concrete design target, not yet met.
+- SECOND-INSTANCE TEST of L-LOWER's DOMINANCE-FREEZE observation (Lead 15:14Z; L-LOWER: on SL41_d28, sha1 c1b46c31, 48 of 127
+  6-windows fail, each decided by ONE parked lower-tower β, option (9, 1), rank 87; Lemma 4 DOMINANCE-FREEZE in docs/lower/P-TOWER-FUEL.md
+  at claude/l-lower 740f6c79). Own code experiments/si/box80/decider80.py → decider80.out; the decider is the option of largest rank in
+  the symmetric difference of the two option paths, owner and rank only, no parity. FAILING window = some member of the pair 6 does
+  not move exactly once. Results:
+  - climb_s2_snapshot (2a3bde93): 48 of 127 6-windows fail, in 64 (window, member) units.
+    - 48 units: the decider is the parked (13, 1), the option 1 of the pair-6 member 13 itself, rank 69. Alone in 32 units; in 16
+      units a higher-rank parked β also appears at some states: (7, 0) of level 3, or (25, 0), (26, 1), (32, 0), (51, 0), (28, 0).
+    - The other 16 units (member 12): the deciders are (12, 1) / (13, 1), and their owners move in the window.
+  - climb_w1_P0: 48 of 127 fail. The decider is (23, 1), a level-11 block mover, rank 58, parked, in every unit (with a second parked
+    β at some states).
+  - READING: three independent genomes (L-LOWER's SL41_d28 and these two) fail in exactly 48 of 127 6-windows. In each, a single PARKED
+    β dominates the pair-6 comparison, as DOMINANCE-FREEZE (b) predicts. But the parked β's owner differs: a lower-tower member (9, 1)
+    in SL41, the pair-6 member's own option in the snapshot, a block mover at level 11 in w1. Same obstruction shape, different owner.
+    This is evidence that the block is structural (some β of rank above every live β of the comparison stays parked through a
+    pulse-phase that recurs every 8 windows), not tied to the lower tower. Not proved.
 - Closures: every Z_j of H5 and of H6 (j = 0..6) is the whole genome (40 resp. 48 movers).
 
 ## 6. Question (b): a lower bound on the levels per capped level — what is and is not proved

@@ -1,0 +1,2 @@
+HP3_mup.json mode xi start S3 iters 20 fallbacks 1 T3 17 howardT 17 moverphase_eq_howard 1 full_eq_howard 1 distinct_mover_states 19
+HP3_mup.json mode spec start S3 iters 4 fallbacks 1 T3 1 howardT 17 moverphase_eq_howard 0 full_eq_howard 0 distinct_mover_states 5

@@ -1,0 +1,13 @@
+LR2_chainup.json N 27 M 43 n 162 T 9 R 4 C 0 labels pRpppRpRR
+  RF [0, 3, 1, 0] GF [0, 3, 1, 0] bits(B2..B1) 00 00 01 01 01 01 11 10 10 11
+  premature resets at [] hubH 4 SumD 200 maxD 4
+  t 0 hub -
+  t 1 hub -
+  t 2 hub B1.SET/X1.x
+  t 3 hub B1.SET/X1.x
+  t 4 hub B1.SET/X1.x
+  t 5 hub B1.SET/X1.x
+  t 6 hub B1.SET/X1.x
+  t 7 hub B2.SET/X2.x
+  t 8 hub B2.SET/X2.x
+  t 9 hub B1.SET/B2.SET/X2.x

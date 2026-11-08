@@ -1,0 +1,8 @@
+t 1 B1 ON  z B1.SET(1) side SET rel own
+t 3 B2 ON  z B2.SET(2) side SET rel own
+t 4 B1 OFF z B2.SET(2) side other rel above
+t 10 B1 ON  z C1_3.SET(3) side SET rel above
+t 12 B3 ON  z B3.SET(3) side SET rel own
+t 13 B2 OFF z B3.SET(3) side other rel above
+t 14 B1 OFF z B3.SET(3) side other rel above
+CB3_62.json summary B1off:above=2 B1on:above=1 B1on:own=1 B2off:above=1 B2on:own=1 B3on:own=1
