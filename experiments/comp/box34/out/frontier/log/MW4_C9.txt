@@ -1,0 +1,22 @@
+# shrink34 seed seeds/MW4_2.json key C9 rng 41 start N+M 145 round 0
+kept o N+M 144 C 9 C 9 maxm 4 T3 31 6s
+kept o N+M 143 C 9 C 9 maxm 4 T3 30 8s
+kept o N+M 142 C 9 C 9 maxm 4 T3 30 13s
+kept m N+M 139 C 9 C 9 maxm 4 T3 30 22s
+kept o N+M 138 C 9 C 9 maxm 4 T3 29 24s
+kept o N+M 137 C 9 C 9 maxm 4 T3 28 37s
+kept o N+M 136 C 9 C 9 maxm 4 T3 27 38s
+kept o N+M 135 C 9 C 9 maxm 4 T3 27 48s
+kept o N+M 134 C 9 C 9 maxm 4 T3 26 54s
+kept o N+M 133 C 9 C 9 maxm 4 T3 26 55s
+kept o N+M 132 C 9 C 9 maxm 4 T3 25 55s
+kept o N+M 131 C 9 C 9 maxm 4 T3 25 57s
+kept o N+M 130 C 9 C 9 maxm 4 T3 24 63s
+kept o N+M 129 C 9 C 9 maxm 4 T3 23 70s
+kept o N+M 128 C 9 C 9 maxm 4 T3 22 76s
+kept o N+M 127 C 9 C 9 maxm 4 T3 21 77s
+kept o N+M 126 C 9 C 9 maxm 4 T3 20 80s
+kept o N+M 125 C 9 C 9 maxm 4 T3 19 97s
+kept o N+M 124 C 9 C 9 maxm 4 T3 18 98s
+kept m N+M 122 C 9 C 9 maxm 4 T3 18 131s
+FINAL C9 N 46 M 76 N+M 122 measure {'T3': 18, 'fallback': True, 'n': 588, 'maxalt': 10, 'maxtops': 18, 'C': 9, 'maxm': 4, 'maxP': 10, 'depthV': 3, 'fanout': 5, 'fanin': 2, 'idfail': 0, 'rpfail': 0} frozen /home/user/parity_games_challange/experiments/comp/box34/out/frontier/C9_NM122_737fdada.json
