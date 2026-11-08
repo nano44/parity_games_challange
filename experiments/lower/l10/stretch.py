@@ -3,7 +3,8 @@
 and give original step t a new time tau(t), strictly increasing (tau(0) = 0). Constraints (P-TOWER-FUEL Lemmas 2, 3 at H caps,
 j = 1..H-2): in every j-window with two pair-j moves u1 < u2: tau(u2) - tau(u1) >= H - j (PULSE); for consecutive such windows:
 tau(u1+) - tau(u2) >= H - j (GAP); and the level-(H-1) windows: consecutive changes of o(H-2) at least 2 apart in tau, first one
-at tau >= 2... (we use: all o(H-2) changes >= 2 apart, first >= 2, last <= T' - 2). Minimal tau = longest path (difference
+the first at tau >= 3 and the last window two steps long (every level-(H-1) window holds >= 2 steps;
+fix after L-RED R224: the first bound was 2, which left the first window one step long). Minimal tau = longest path (difference
 constraints, all forward). Prints T', inserted steps per original gap histogram. Usage: stretch.py GENOME.txt H"""
 import sys, os
 from collections import Counter, defaultdict
@@ -22,13 +23,13 @@ def stretch(S, O, H):
                     b = W[i + 1][2][0]; need[(mv[1], b)] = max(need[(mv[1], b)], k)
     ch = [t for t in range(1, T + 1) if O[t][H - 2] != O[t - 1][H - 2]]
     for a, b in zip(ch, ch[1:]): need[(a, b)] = max(need[(a, b)], 2)
-    if ch: need[(0, ch[0])] = max(need[(0, ch[0])], 2)
+    if ch: need[(0, ch[0])] = max(need[(0, ch[0])], 3)
     inc = defaultdict(list)
     for (a, b), k in need.items(): inc[b].append((a, k))
     tau = [0] * (T + 1)
     for t in range(1, T + 1):
         tau[t] = max([tau[t - 1] + 1] + [tau[a] + k for a, k in inc[t]])
-    Tp = tau[T] + (2 if ch and ch[-1] == T else 0)
+    Tp = max(tau[T], tau[ch[-1]] + 1) if ch else tau[T]
     return tau, Tp, need
 if __name__ == '__main__':
     D = rd(sys.argv[1]); H = int(sys.argv[2]); S, O = run(D); T = len(S) - 1

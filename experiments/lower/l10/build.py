@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """L-LOWER 10 (item 2): the level-8 target at d 32 and the exact clamp + ranksolve test.
-core8(D28, H=8): the stretched core target of pairs 0..6 (stmap.target) with ONE idle step prepended and the last tail step cut,
-so o(6) changes at 3, 5, ..., 509 and T = 510; plus pair 7: f7 = 15 moves to c7 = o(6) at the first step of every 7-window
+core8(D28, H=8): the stretched core target of pairs 0..6 (stmap.target, first o(6) change at tau >= 3 since the R224 fix of
+stretch.py; before that fix core8 prepended one idle step and cut the last tail step, which gives the same target), so o(6)
+changes at 3, 5, ..., 509 and T = 510; plus pair 7: f7 = 15 moves to c7 = o(6) at the first step of every 7-window
 (step 1 for the first window), q7 = 14 at the second step. Start of pair 7: joined at 1 - c7(0).
 test(D, CT): helpers (movers >= 16) follow D's rules with movers 0..15 clamped to CT (l7/clamp.runclamp); the full trajectory's
 constraints (l7/ranksolve.constraints) are solved for ranks/signs; returns (feasible, genome or core)."""
@@ -15,7 +16,7 @@ from clamp import runclamp
 from ranksolve import constraints, solve
 def core8(D28, H=8):
     Sc, Oc, idle = target(D28, H)
-    Sc = [Sc[0]] + Sc[:-1]; Oc = [Oc[0]] + Oc[:-1]; T = len(Sc) - 1
+    T = len(Sc) - 1
     c7 = [o[6] for o in Oc]; out = []; f = q = 1 - c7[0]; last = 0
     pend = None
     for t in range(T + 1):
