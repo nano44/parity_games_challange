@@ -1,25 +1,28 @@
-# Handover check: L-NEW (successor 66, Opus; session started 2026-11-08 17:14Z, written 2026-11-08T17:14Z by date -u)
-Overwrites successor 65's answers (history in git). Each answer measured from the repository at writing (commands named).
-Predecessor: successor 65, parked at l-new 60e68423 (section «HANDOVER (successor 65, …)» at the top of notes/L-NEW.md).
+# Handover check: L-NEW (successor 67, Opus; session started 2026-11-08 22:36Z, written 2026-11-08T22:38Z by date -u)
+Overwrites successor 66's answers (history in git). Each answer measured from the repository at writing (commands named).
+Predecessor: successor 66, parked at l-new 3015f5dc (section «HANDOVER (successor 66, …)» at the top of notes/L-NEW.md).
 
 ### 1. Branch, head, ahead/behind trunk
 - Trap check: `git fetch --unshallow origin; git fetch origin claude/l-new claude/vibrant-johnson-nxvvxo; git checkout claude/l-new;
-  git merge --ff-only origin/claude/l-new` (local branch was 1020 commits behind: stale container, fast-forwarded) ->
-  `git branch --show-current` = claude/l-new; `git rev-parse HEAD origin/claude/l-new` both 60e68423.
-- Trunk origin/claude/vibrant-johnson-nxvvxo head d35ce1ec («Lead: log 14:54Z-15:55Z (CI green on R121 landing; C136 FAIL routed to
-  L-SI; L-RED 61 GO R227); …», 15:55Z). `git rev-list --left-right --count trunk...HEAD` = **6 ahead / 223 behind** (left = trunk only
-  223, right = mine 6); merge-base 219e3933. Not merged (the brief does not ask for a merge).
+  git merge --ff-only origin/claude/l-new` (local branch was 1027 commits behind: stale container, fast-forwarded) ->
+  `git branch --show-current` = claude/l-new; `git rev-parse HEAD origin/claude/l-new` both 3015f5dc.
+- Trunk origin/claude/vibrant-johnson-nxvvxo head aaf52291 («Lead: land RESULTS R122 (P-ACYC …)», 20:27Z).
+  `git rev-list --left-right --count trunk...HEAD` = **13 ahead / 260 behind** (left = trunk only 260, right = mine 13);
+  merge-base 219e3933. Not merged (the brief does not ask for a merge).
 
 ### 2. Open work and the next step of each
-- DUTY (landing pipeline; first after «go» if routed): R121 P-N5-ASC LANDED. R122 (P-ACYC) is L-SI's. R123 P-N5-QUIET (L-4 0809da25),
-  R124 P-N5-END (L-3 d6afe92a), R125 P-N5-CHAIN (L-4 a69c8aa9): both referees MATCH all three lines. Next: any CHECKER item -> fixes
-  entry N+1 + next line by script from the latest generator (box194/mkl4_194.py, box195/mkl3_195.py, box196/mkl4_196.py; each asserts the
-  previous line's sha1), repin; never edit a frozen packet. Nothing routed to me yet.
-- BOX 199 (D18; after «go»): a GAME lemma restricting the re-arming DAG RA of box 198. Next: at the mover u on v's play where a z-route
-  and a y-route split, use Howard (F1, DOM, STRICT; Ξσ tie only among exact ties) to try a DOWNWARD charge (each re-win of y at u paid by
-  a class change of a vertex on the y-route below y); combine with PAIR-HIGH's UPWARD charge into a bound on P(y) or C; state what it
-  gives and on which premises. Test every lemma on GROW7_n34, HOLD2K_n84, HOLD3K_n125, DSALT6/7/9, NK6_cl21 with named counters and a
-  firing control. If a family with P or C super-polynomial on real N5′-xi runs appears instead: freeze it, send the Lead the smallest.
+- DUTY (landing pipeline; first after «go» if routed): R121 P-N5-ASC and R122 (P-ACYC, L-SI's) LANDED. R123 P-N5-QUIET at CHECKER C137
+  (L-4 0809da25, fixes entry 4 at 87603d07). R124 P-N5-END (L-3 d6afe92a) and R125 P-N5-CHAIN (L-4 a69c8aa9) queued; both referees MATCH.
+  Next: any CHECKER item -> fixes entry N+1 (append-only) + next line by script from the latest generator (box194/mkl4_194.py,
+  box195/mkl3_195.py, box196/mkl4_196.py; each asserts the previous line's sha1), repin; never edit a frozen packet. Nothing routed yet.
+- PACKET P-N5-SPLIT (after duty): freeze docs/new/P-N5-SPLIT.md with sha1: box 199 SPLIT (i)-(iv) + TRANSFER, REWIN (a)(b), REWIN-HI (c),
+  PAIR-SPLIT, SPLIT-COUNT (SPL <= 3M), RW-SHAPE/RW-SHAPE*, RW-1; box 198 PAIR-HIGH, RA-PATHS, C-EQUIV; box 197 RE-COUNT, RE-EQUIV,
+  PAIR-COUNT/ALT-EQUIV (corrected); premises = P-N5-CHAIN facts by name (conditional on R125); C-WT, REWIN-ASC dropped; DEAD list with
+  instances (CX4_n21, GROW7_n34, HOLD2K_n84, ROUTELOW_n21, Dilworth idea, RWX_n95); DATA with counters and pinned tools; TARGET scope
+  paragraph (N5′-xi, Γ3, a REDUCTION/EQUIVALENCE, not G-N5-TIME); attack record (L-RED 61 R227, L-RED 62 R228). Next: send Lead path/commit/sha1.
+- BOX 200 (D18): a TIME charge for Dhi_y(b) = 1 + Σ_(z above y) c_z(b) so the SPLIT-COUNT recursion does not multiply (each new high part
+  at b paid by a distinct Howard step / strict value improvement on b's route; L-SI 48 generalises Lemma SUPERSET: not duplicated).
+  Tests on RWX_n95, MW32_2, C6G8_n54, FW16_2, WC16_2 with a firing control. Not started (no long job before «go»).
 - Nothing of mine running (`pgrep -af "push.sh|check.sh"` = none).
 
 ### 3. docs/GAPS.md rows I own (`git show trunk:docs/GAPS.md | grep -n L-NEW`)
@@ -36,8 +39,9 @@ Predecessor: successor 65, parked at l-new 60e68423 (section «HANDOVER (success
    claim, including the fleet's own, as wrong until it passes the gauntlet below.»
 
 ### 5. One trap, and the check that prevents it
-- Trap (this start, again): the container came up 1020 commits behind origin/claude/l-new; a commit there would fork history and the
+- Trap (this start, again): the container came up 1027 commits behind origin/claude/l-new; a commit there would fork history and the
   push would fail («invalid refspec» on a detached HEAD).
 - Check: fetch --unshallow + fetch both branches, checkout + merge --ff-only, then `git branch --show-current` and
-  `git rev-parse HEAD origin/claude/l-new` must agree before any edit (done: both 60e68423).
-- Also kept (successor 65): an untracked «&» sweep dies with the container: every long job is a tracked background task, resumable.
+  `git rev-parse HEAD origin/claude/l-new` must agree before any edit (done: both 3015f5dc).
+- Also kept (successor 66): random and climbed data missed RWX_n95 (~346,700 re-wins with 0 fails before L-RED's instance): a
+  conjecture with large zero counts is still a conjecture; every lemma is tested on the frozen adversarial instances with a firing control.
