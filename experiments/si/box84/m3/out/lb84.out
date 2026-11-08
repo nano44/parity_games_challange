@@ -1,0 +1,12 @@
+LR3_exitup.json checked 16 LOWER-BLIND mispredictions 0 steps with lower e's present 0
+LR6_exitup.json checked 79 LOWER-BLIND mispredictions 0 steps with lower e's present 0
+HP3_mup.json checked 39 LOWER-BLIND mispredictions 0 steps with lower e's present 0
+HP4_mup.json checked 158 LOWER-BLIND mispredictions 0 steps with lower e's present 0
+HP5_mup.json checked 260 LOWER-BLIND mispredictions 0 steps with lower e's present 0
+CY3_hp.json checked 31 LOWER-BLIND mispredictions 0 steps with lower e's present 12
+CY4_hp.json checked 120 LOWER-BLIND mispredictions 0 steps with lower e's present 59
+RS2.json checked 20 LOWER-BLIND mispredictions 0 steps with lower e's present 6
+RS2_L8M6.json checked 34 LOWER-BLIND mispredictions 0 steps with lower e's present 10
+RSG_K4.json checked 42 LOWER-BLIND mispredictions 0 steps with lower e's present 6
+LO2_priv.json checked 22 LOWER-BLIND mispredictions 0 steps with lower e's present 8
+LO2_nopriv.json checked 4 LOWER-BLIND mispredictions 0 steps with lower e's present 1

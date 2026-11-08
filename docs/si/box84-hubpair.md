@@ -132,3 +132,57 @@ climb84.py adversarial climb; check_m2.sh, called by check84.sh).
   Instance: CY2_lr (and CY3_hp, CY4_hp for the h-growth).
 - Not proved: a version of PRIV-FLIP for non-PRIV units. CONJECTURE (DATA above: 0 exceedances in 4 gadgets + 4 climbs): its bound
   holds for every SET-type option when Λ(B) ∈ {K1, K2}.
+
+## 5. Milestone 3 (i): can a bit WAIT for the lower count? (Lead 03:39Z; written 2026-11-08T03:41Z, date -u)
+Tools: experiments/si/box84/m3/ (low84.py smallest test; lb84.py machine check of LOWER-BLIND; check_m3.sh, called by check84.sh).
+### 5.1 On paper (the Lead's key question first)
+- E-MON (P-N5-ASC §3) applied to a lower-reading hub v: on a Λ-interval, if E_t(v) loses e's at t + 1 (lower bits reset at a carry),
+  then E_(t+1)(v) gains an e more relevant than every e it lost (lex order = numeric order of the 0/1 word, R221 NO-REFLECT).
+  - So a hub that reads the lower count must also read, at every carry that clears it, a more relevant «carry» e.
+  - For the hub through which bit l waits, that is an e of level ≥ l (or of level l above every cleared one): bit l's own e (PRIV
+    fails), the e of a copy of bit l, or a higher e.
+  - E-MON does NOT forbid both heights doubling. The lower hub can be a full bottom-up counter view, as ASC-EXP is. But it forces the
+    lower hub to carry bit l's state. Under PRIV that state must come from a copy.
+- **Lemma LOWER-BLIND (KEEP form) (PROVED, lane).** Let S = (w, Ξ-target B, even β) be a SET-type option of B, on an interval where every
+  cycle node is constant and Λ(B) ∈ {K1, K2}. Assume PRIV at t and σ_t(B) = S. Then σ_(t+1)(B) = S iff U(S) >lex U(g_o) for every other
+  option o whose gate has cycle node Λ(B). Here U(·) := the e-vertices of the play that are at least as relevant as e_S, and
+  U(S) = {e_S} ∪ U(w). Under [E-LEV] these are e's of level ≥ lev(B). So a SET bit's RESET is never decided by lower-level e's.
+  Proof.
+  - Odd takes e at g_S (LOCK-UP (i) / PRIV-FLIP (a)), so S's value has e-set {e_S} ∪ E(w).
+  - e_S is private (PRIV), so for each o the symmetric difference of the e-sets contains e_S. Its most relevant element z is therefore
+    at least as relevant as e_S, and it is the most relevant element of U(S) Δ U(g_o).
+  - With equal cycle nodes, z decides (PRIV-FLIP's facts: only e's, c_W, K0, K3 lie above an e, and those agree), and ties are
+    impossible. Howard keeps S iff S ▷ every option. Options with another cycle node cannot be chosen inside the interval. ∎
+  - The ADOPTION form is FALSE. A hidden S shows its β-face (HIDE-BUSY), so adopting S also needs B's current option to beat the
+    others, and lower e's can decide that. lb84 run on adoption steps too (scratch): 67 / 259 (HP4_mup), 58 / 250 (CY4_hp), 9 / 51
+    (RS2_L8M6) and 5 / 49 (RSG_K4) mispredictions.
+- Consequence for a counter (READING): resets come only from above, which a binary counter needs anyway. The WAITING has to happen
+  at adoption, and the waiting hub must carry a level-l «carry» e (E-MON).
+### 5.2 Smallest test (low84.py): B2 waits on bit 1 through a lower mirror
+- Base HP2_mup (§1). A level-1 mirror M1 copies B1's rule: UP and SET continuation → M2; an RS2 lane exiting to M2 (PRIV kept) or to
+  B2 (PRIV broken); its mirror e lies above e_B1. B2 gets an option LOW (β → M1, dead e-face).
+
+| instance | M1 lane exits | T | R | C | bits (B2 B1) | premature resets | sha1 (.json) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| LO2_priv | M2 (PRIV) | 12 | 4 | 0 | 00 01 10 … 10 01 00 | 1 (t 11) | 6f3c27f813233782ad760b821677c9bc8c968c65 |
+| LO2_nopriv | B2 (PRIV fails) | 10 | 3 | 1 | 00 01 10 10 00 … | 1 (t 5) | 2ad3c7e3f782fed8afdafa4c9bca4a8fd53f09ef |
+- LO2_priv: B2 does NOT wait for B1. LOW's play climbs M1 → M2, and M2's mirror e lies above e_B2. So when M2 sets, LOW ▷ SET_B2 and
+  B2 resets with no carry. The run ends at 00. This is a premature reset by B2's OWN mirror.
+- LO2_nopriv: the LOW route returns to B2, and the bits die at 00 with a C-step. This is R218's H1-CYCLE picture.
+- Exact obstruction (SELF-MIRROR DICHOTOMY; READING from LOWER-BLIND plus the test). The carry e that E-MON forces into B_l's waiting
+  hub is either
+  - more relevant than e_SET_l: then by LOWER-BLIND it decides B_l's KEEP, and B_l resets whenever its copy sets (LO2_priv); or
+  - B_l's own e: PRIV fails, and the route is hidden-only (LIVE-BREAK) or a cycle (LO2_nopriv).
+- Not tested, and not excluded by anything proved: the third option, a copy of bit l whose e lies at level l but BELOW e_SET_l. It is
+  invisible to B_l's KEEP (LOWER-BLIND) yet still more relevant than every lower e, so it can serve as E-MON's carry. That needs TWO
+  copies per level: one above e_l for the lower bit's continuation (MIRROR), one below e_l for B_l's own waiting hub.
+- DATA, LOWER-BLIND (keep form), lb84.py:
+  - Unit: steps t → t + 1 inside a constant-cycle-node interval with σ_t(B) = S, PRIV at t, Λ(B) ∈ {K1, K2}.
+  - Set: LR3_exitup, LR6_exitup, HP3-HP5_mup, CY3_hp, CY4_hp, RS2, RS2_L8M6, RSG_K4, LO2_priv, LO2_nopriv. Scope: idealcyc.
+  - 825 steps, 0 mispredictions; on 102 of them lower e's are present (out/lb84.out).
+### 5.3 Where the counter question stands after box 84 (READING; the Lead's requested reduction, with its one open case)
+- Under PRIV and constant Λ, a SET bit resets only on changes of the upper parts of its options' plays (LOWER-BLIND). Its flips are
+  bounded by the e-set heights of those plays (PRIV-FLIP).
+- Breaking PRIV with a returning route gives hidden values only (LIVE-BREAK) or Even-won cycles (E-CYCLE / H1-CYCLE).
+- So a counter needs Λ changes, or hubs with unboundedly many ascents whose heights double per level. The one construction not yet
+  excluded is the two-copies-per-level design of §5.2 (the low copy). That is the next build, for my successor.

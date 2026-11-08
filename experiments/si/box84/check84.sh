@@ -21,4 +21,5 @@ for i in HP2_mup HP3_mup HP4_mup; do
 done
 rm -rf "$t"
 bash m2/check_m2.sh
+bash m3/check_m3.sh
 echo "box 84 checks: PASS"
