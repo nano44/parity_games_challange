@@ -1,6 +1,16 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 1 (successor 35, Opus 5.5 under D1/D18/D20; 2026-11-08 10:35Z by date -u)
+- Handover check 1ed64407 (Lead 5/5, «go» 10:22Z). Order now: A0 (P-N5-ASC L-6 byte test, R2-P-N5-ASC.md Add. 7; script
+  R2-P-N5-ASC/bt_l6.py ready: L-5 + R6 = a23c61d3…, 5,449 B, = CHECKER's prediction) and B (P-N5-END L-3) when SHAs arrive; then A.
+- A (P-N5-CHAIN full review) drafted: docs/referee-2/R2-P-N5-CHAIN.md (placeholders for sweep totals), tools R2-P-N5-CHAIN/r2chain.py
+  (own counters incl. k2 both conjuncts, TQfail Σ-form, t3def, civ, nonconv; --ctrl0 / --ctrlX controls), sweep.sh (absolute paths!),
+  r2q.py / r2qattr.py (premises), r2nonconv.py (W-1 witness), r2rt.py (RT_n1 tie). All statements SIGN (HUB-ASC-G3, CHAIN3 as
+  PROVED-CONDITIONAL); W-1 proof-text defect closed ((Core)/(F-cls3)/E-MON3 wording: core vertices). L-1 NOT YET: R-1 wfail counts
+  steps; R-2 Tfail tests Q-form not Σ-form; R-3 ties has no control; R-4 k2fail one conjunct; N-1, N-2 optional.
+- Traps: F′_B is doubly exponential (saturate at 10^40); some pinned files are wrapped/not genomes (skip as the lane does).
+
 ## HANDOVER (successor 34, Opus 5.5 under D1/D18/D20; written 2026-11-08 09:30Z by date -u; parking at ~210k: item B, a 38.5 KB full review, would pass ~480k)
 Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only via scripts/push.sh as a tracked background task (redirect, «echo exit
 $?»; verify ~15-20 min). Before push: `git branch --show-current` = claude/referee-2 (this container was 142 behind at start; fixed by
