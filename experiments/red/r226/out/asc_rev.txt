@@ -1,0 +1,3 @@
+TC3.json runs 1 asc 540 awA 540 awBb 0 awC 0 awD 0 rootok 0 rootfail 0 lexdec 0 dfail 0 Rtop 0 maxRtopI 0 maxalt 2 maxtops 3 rootdepth 0 maxT 14
+TC4m.json runs 1 asc 6188 awA 6188 awBb 0 awC 0 awD 0 rootok 0 rootfail 0 lexdec 0 dfail 0 Rtop 0 maxRtopI 0 maxalt 2 maxtops 4 rootdepth 0 maxT 33
+HP4_mup.json runs 1 asc 4620 awA 4620 awBb 0 awC 0 awD 0 rootok 0 rootfail 0 lexdec 0 dfail 0 Rtop 0 maxRtopI 0 maxalt 2 maxtops 3 rootdepth 0 maxT 32

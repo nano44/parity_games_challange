@@ -17,7 +17,7 @@ Frozen instances: experiments/red/r226/inst/ (sha1 in inst/SHA1SUMS).
 | «events ≤ \|E_U\| − 1» in every LEAPFROG-ASC unit | FALSE. Frozen witnesses SHARP_EU1 (\|E_U\| = 1, one event) and SHARP_EU2 (3 movers, \|E_U\| = 2, two events) (§3) | DEAD |
 | The correct sharpening | Lemma SHARP: #events ≤ \|E_U\| − 1 + 2k + ε, where ε = 1 iff the first event has M = e_S. Tight on SHARP_EU1 / EU2 (§3) | PROVED (lane), from box 87's (F2), Claim A, the counting step and PRIV |
 | The unified conjecture | CONJECTURE NEST-POLY, stated in §4 (quantity, bound, scope) | CONJECTURE |
-| maxalt (L-NEW BOX 197) next to X, D, T | NOT RUN: asc197.py is not on origin (claude/l-new head 8b67d40e6 at 11:2xZ; 2f4167cd not fetched) | — |
+| maxalt (L-NEW BOX 197) next to X, D, T | 5 on CX4_n21 and on every depth-2 build (CC2_n42, D2R_n23, DG3_n23). It does not grow with depth. Measured with my own re-implementation, asc226.py, which matches L-NEW's values on TC2-TC5m (R226-core197 §3-§4) | DATA |
 | Trap found in my predecessor's random row | leap225.py's `rand` aggregate starts max-keys at 0. So R225-leap §2's random «maxexcess 0» was an artifact. The true value is 0 too, but for a real reason (§3). | fix noted (no edit to R225 files) |
 
 ## 1. What CX4_n21's slow High is (READING from traces: vals226.py, trace226.py)
@@ -129,7 +129,7 @@ DATA (nest226.py; unit = genome; scope own.py, cap 3000; out/nest_frozen.txt):
 | T-climb bests c12 / c15 / c18 (R225 §4) | 18 / 19 / 20 | 18 / 20 / 21 | all | 0 | 0 | 0 |
 | X-climb best cx_leap8_2264 | 17 | 34 | 20 | 14 | 7 | 1 |
 | CX4_n21 / CC2_n42 / D2R_n23 / DG3_n23 | 10 / 15 / 12 / 11 | 26 / 50 / 34 / 39 | 20 / 38 / 24 / 29 | 6 / 12 / 10 / 10 | 4 / 4 / 5 / 4 | 3 / 3 / 3 / 3 |
-- N2 grows with h on L-SI's mirror family (0, 1, 5, 11 at h 2-5, while T grows 11 → 43). This growth is what
+- N2 grows with h on L-SI's mirror family (0, 1, 5, 11 at h 2-5, while T grows 11 → 43). My extrapolated HP6x / HP7x (lane lengths mine, not L-SI's; inst/HP6x_mup, HP7x_mup) give N2 10 / 13, depth 1, T 51 / 59. They may not be faithful towers (R226-core197 §4). This growth is what
   must be polynomial. The four HP points cannot tell a polynomial from an exponential. The next measurement is HP6 / HP7, which L-SI can build.
 - The depth-2 builds add type-II switches (6 → 10-12) without raising the depth (3).
 
@@ -142,4 +142,4 @@ DATA (nest226.py; unit = genome; scope own.py, cap 3000; out/nest_frozen.txt):
 - A DESIGNED third digit on x17's counter. The carry must drop e8 from every low route when e_h enters, so x2 needs a second switch. This is the
   one build that could still show MULTIPLY.
 - HP6 / HP7 (L-SI) through nest226.py: does N2 grow polynomially in h?
-- maxalt (asc197.py) on CX4_n21, CC2_n42, D2R_n23, DG3_n23 once L-NEW's 2f4167cd is on origin.
+- maxalt: done (R226-core197 §4).

@@ -1,0 +1,1 @@
+rand 2641 runs 1500 asc 9738 awA 0 awBb 0 awC 0 awD 0 rootok 9437 rootfail 0 lexdec 0 dfail 0 Rtop 27 maxRtopI 1 maxalt 3 maxtops 4 rootdepth 3 maxT 14

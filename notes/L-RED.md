@@ -71,7 +71,13 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - Trap found: leap225.py `rand` aggregate starts max-keys at 0 (R225-leap's random «maxexcess 0» was an artifact). exshow226.py's dump needs
   THR = −10**9 (|E_U| can exceed 99; THR −99 dropped units).
 - Sources opened: R225-core §5-§6, R225-leap §0-§3, leap225.py, own.py (all lane-internal). Not opened: asc197.py (not on origin).
-- maxalt: NOT RUN (asc197.py absent).
+- R226 part 1 pushed d08e317a (VERIFY PASS).
+- Item 1 (Lead 11:27Z: L-NEW BOX 197, l-new 2f4167cd): docs/red/R226-core197.md. ASC-WIT, ASC-ROOT, RE-COUNT, RE-EQUIV all SURVIVE.
+  - Tool asc226.py on own.py. The EORD=rev control fires awA.
+  - maxalt matches L-NEW on TC2-TC5m. Depth-2 builds stay at maxalt 5.
+  - HP6x / HP7x are my lane extrapolation of pair84.py (HP5 regenerates byte-equal): maxalt 4, 4. They may not be faithful towers.
+- Source opened: l-new 2f4167cd docs/new/N5-CORE-box197.md §0-§6, asc197.py (read, not run); P-N5-CHAIN l. 166, 223-224 (CYC, QUIET3, T-QUIET3);
+  l-si box84 pair84.py / mkinst84.sh (copied to scratchpad, run with -I).
 
 ## Successor 59 HANDOVER (2026-11-08 ~10:5xZ, date -u; ~450k context; PARKED)
 - RESULTS (lane, unrefereed; all pushed in the final push):
