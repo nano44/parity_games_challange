@@ -1,0 +1,11 @@
+CB2_63.json {'states': 9, 'on': 10, 'off': 1, 'cross': 0, 'pas': 0, 'over': 1, 'high': 0, 'none': 0, 'hyp': 10, 'latchviol': 0, 'onev': 4, 'onviol': 0, 'mergeviol': 0, 'indeg1_G': True, 'indeg1_G3': True}
+CB3_61.json {'states': 18, 'on': 48, 'off': 3, 'cross': 0, 'pas': 0, 'over': 3, 'high': 0, 'none': 0, 'hyp': 48, 'latchviol': 0, 'onev': 7, 'onviol': 0, 'mergeviol': 0, 'indeg1_G': True, 'indeg1_G3': True}
+CB3_62.json {'states': 16, 'on': 39, 'off': 3, 'cross': 0, 'pas': 0, 'over': 3, 'high': 0, 'none': 0, 'hyp': 39, 'latchviol': 0, 'onev': 7, 'onviol': 0, 'mergeviol': 0, 'indeg1_G': True, 'indeg1_G3': True}
+LT2_1_0.json {'states': 11, 'on': 9, 'off': 1, 'cross': 0, 'pas': 0, 'over': 1, 'high': 0, 'none': 0, 'hyp': 9, 'latchviol': 0, 'onev': 4, 'onviol': 0, 'mergeviol': 0, 'indeg1_G': True, 'indeg1_G3': True}
+LT2_1_1.json {'states': 11, 'on': 14, 'off': 0, 'cross': 0, 'pas': 0, 'over': 0, 'high': 0, 'none': 0, 'hyp': 14, 'latchviol': 0, 'onev': 3, 'onviol': 0, 'mergeviol': 0, 'indeg1_G': True, 'indeg1_G3': True}
+LT2_m1_0.json {'states': 10, 'on': 7, 'off': 1, 'cross': 0, 'pas': 0, 'over': 1, 'high': 0, 'none': 0, 'hyp': 7, 'latchviol': 0, 'onev': 3, 'onviol': 0, 'mergeviol': 0, 'indeg1_G': True, 'indeg1_G3': True}
+LT2_m1_1.json {'states': 10, 'on': 11, 'off': 0, 'cross': 0, 'pas': 0, 'over': 0, 'high': 0, 'none': 0, 'hyp': 11, 'latchviol': 0, 'onev': 3, 'onviol': 0, 'mergeviol': 0, 'indeg1_G': True, 'indeg1_G3': True}
+LT3_1_0.json {'states': 16, 'on': 39, 'off': 3, 'cross': 0, 'pas': 0, 'over': 3, 'high': 0, 'none': 0, 'hyp': 39, 'latchviol': 0, 'onev': 8, 'onviol': 0, 'mergeviol': 0, 'indeg1_G': True, 'indeg1_G3': True}
+LT3_1_1.json {'states': 16, 'on': 44, 'off': 2, 'cross': 0, 'pas': 0, 'over': 2, 'high': 0, 'none': 0, 'hyp': 44, 'latchviol': 0, 'onev': 8, 'onviol': 0, 'mergeviol': 0, 'indeg1_G': True, 'indeg1_G3': True}
+LT3_m1_0.json {'states': 14, 'on': 26, 'off': 2, 'cross': 0, 'pas': 0, 'over': 2, 'high': 0, 'none': 0, 'hyp': 26, 'latchviol': 0, 'onev': 7, 'onviol': 0, 'mergeviol': 0, 'indeg1_G': True, 'indeg1_G3': True}
+LT3_m1_1.json {'states': 14, 'on': 36, 'off': 0, 'cross': 0, 'pas': 0, 'over': 0, 'high': 0, 'none': 0, 'hyp': 36, 'latchviol': 0, 'onev': 6, 'onviol': 0, 'mergeviol': 0, 'indeg1_G': True, 'indeg1_G3': True}

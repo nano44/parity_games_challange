@@ -66,6 +66,10 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - Tools experiments/red/r225/: sig225.py (Σ D^tot_E on own.py IDEAL-CYC), bin225.py, lad2json.py (sim6 W-convention), climb225.py (score T).
 - Sources opened: P-N5-ASC (trunk) §1-§9; box 196 §0, §3-§5 (l-new 08801298); P-N5-QUIET l. 121 (D^tot_E def); L-SI box86-lagtower.md §0-§2
   (l-si 2123ae7a); L-LOWER L10-design.md §0 (l-lower), sim6.py (okeys, run); REFEREE-2 R2-P-N5-ASC.md l. 117, 171.
+- Item 1 (Lead 08:47Z: L-SI box 86, l-si 2123ae7a) DONE: docs/red/R225-lag.md. SAME-E-MERGE / ACCESS-LATCH / LEAPFROG SURVIVE; Γ3 wording slip
+  (in-edges through m / pe pads); W-1 LEAPFROG needs «t, t+1 ∈ I» (witness inst/OFFUP_n4.json dd6a1221…); latch hypothesis fails at all 16 OFFs
+  (L-SI counts 14 at bits only); random 3,000: 319 OFFs, 235 cross / 56 pass / 28 over / 0 none. Tool latch225.py.
+- Note: Λ = K1 at exits is right (K1 priority 5 is ODD; Odd prefers K1 over K2).
 - Things only I know: climbs c12_2251 / c15_2252 run as tracked tasks (out/*.log, best genome out/*.json); Oink NOT built here.
 
 ## Successor 58 HANDOVER (2026-11-08 ~08:2xZ, date -u; ~430k context; PARKED)

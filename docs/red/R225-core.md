@@ -73,6 +73,9 @@ next_t(x) := min{y ∈ S_t : y > x} (⊥ if none), h_t := min S_t. Then (next_t)
 - Values at 08:5xZ (unit: best genome so far; scope own.py IDEAL-CYC, cap 3000 steps): N 12: T 17, Σ(D−1) 1004, max D 16, U 9, max
   ascents 1. N 15: T 16, Σ(D−1) 1222, U 9, max ascents 2.
 - For comparison (R221 §3, other scores): R63K5 N 18 T 28; L-SI box 86 climbs CB3_61 / CB3_62.
-- Next: (i) let the climbs finish and fit best T against N (12 / 15 / 18); (ii) a designed family on BIN's forest («route to the next set
+- FINAL (09:0xZ; out/c12_2251.*, c15_2252.*, c18_2253.*): N 12: T 18, Σ(D−1) 1073, U 8, max ascents 2 (4000 iterations); N 15:
+  T 19, Σ(D−1) 1258, U 9, max ascents 2 (3000); N 18: T 20, Σ(D−1) 1912, U 12, max ascents 3 (STOPPED at iteration ~2460 to free CPU for
+  item 1). Best T grows by about 1 per 3 movers here: no sign of super-linear growth (DATA, weak: three climbs, one seed each).
+- Next: (i) more seeds / N and fit best T against N (12 / 15 / 18); (ii) a designed family on BIN's forest («route to the next set
   bit», bits = SET options forcing Odd onto e) whose bit reset avoids L-SI's ACCESS-LATCH. A reset must come from an overtaking copy
   route (LEAPFROG), so the design question is POOL-ALT's pool-size cap.

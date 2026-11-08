@@ -1,0 +1,1 @@
+RAND 2254 3000 {'states': 10754, 'on': 1697, 'off': 319, 'cross': 235, 'pas': 56, 'over': 28, 'high': 0, 'none': 0, 'hyp': 776, 'latchviol': 0, 'onev': 325, 'onviol': 0, 'mergeviol': 0, 'indeg1_G_false': 0, 'indeg1_G3_false': 0}
