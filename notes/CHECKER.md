@@ -1,6 +1,12 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 22), 2026-11-08 13:28Z (date -u)
+- C135 Add. 2 PASS in a9bf46bb (fourth fill b995caa8 @ trunk bef76cf4, L-6 = mine a23c61d3, UPDATE e975c303, ancestry 18/18, quotes
+  0 NF (3 parts at l-red 68a1f609 R220), landing sim R121 l. 14320-14742, +424; HL-1 no action). Stamp fixed 13:33Z -> 13:27Z next commit.
+- NEXT: C135 Add. 3 when R121 lands (rebuild from parent + d[675:1098] + UPDATE d[1109] filled; a9bf46bb ancestor of landing) + CI.
+  Then C136 = R122 (P-ACYC).
+
 ## Resume point (successor 22), 2026-11-08 10:08Z (date -u)
 - Handover check 41570697 (Lead: 5/5, «go» 10:02Z). C135 Add. 1 FAIL E-5 in 0ffde42c: HUB-ASC(B)'s hub / value / forest / chain
   undefined in L-5; with an unconstrained choice HUB-ASC(0) is false (CS(3) witness, 8 values > F_0(3) = 7; scratch hub.py, text in
