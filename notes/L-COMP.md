@@ -1,20 +1,32 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## HANDOVER -- successor 13 (L-COMP 13, Opus 5.5) PARKS 2026-11-08 (Lead 14:16Z: «Then hand over and park at ~500k»)
+## HANDOVER -- successor 13 (L-COMP 13, Opus 5.5) PARKS 2026-11-08 16:03Z by date -u (Lead 14:39Z park OK; NOTHING RUNNING)
 ### BOX 33 (Lead 14:16Z): exact small-size maxima of A (ALT-EQUIV) and T3 -- tool experiments/comp/box33/enum33.py
-- Engine: L-NEW's asc197.run (claude/l-new b61c2029; checkout used: git worktree in my scratchpad; a successor makes its own:
-  `git worktree add --detach <dir> b61c2029`, env LNEW=<dir>). NOT independent: the cross-check with my own n5b/n5v mode xi is OPEN.
-- Genome space (eg195.gen schema): all (lev, option split, xt, gate perm, br perm, bp, start); no symmetry reduction; --noelev = Gamma3
-  e-priorities by gate only (patch verified: e-priority order flips on a 2-mover test genome).
-- Exact results (unit = genome; set = all genomes of (N, M); scope = N5'-xi from S3 on Gamma3, up to the first fallback; files out/):
-  | N, M | genomes | maxA ([E-LEV]) | maxT3 ([E-LEV]) | maxA (no E-LEV) | maxT3 (no E-LEV) |
-  | 1,1 | 4 | 0 | 0 | 0 | 0 |   | 1,2 | 128 | 0 | 1 | 0 | 1 |   | 1,3 | 6,912 | 0 | 2 | 0 | 2 |
-  | 2,2 | 288 | 0 | 0 | 0 | 0 |   | 2,3 | 62,208 | 0 | 1 | 0 | 1 |
-  N 1 M 4 (589,824) and N 2 M 4 (~14.9M, shards 0/2, 1/2, checkpointed .ck; resume = rerun the same command) were RUNNING at park:
-  see out/N1M4*.txt, out/N2M4_s*.txt (+ .ck). Relaunch lines:
-    LNEW=<dir> nice python3 enum33.py 2 4 0/2 out/N2M4_s0.txt   (and 1/2 -> out/N2M4_s1.txt; then both with --noelev)
-    N = 3: sample mode `enum33.py 3 M 0/1 out/N3M<M>_sample.txt --sample S --seed R` (scope = a random sample, state S and R).
+- ENGINE = L-NEW's asc197.run (claude/l-new b61c2029: gamma3.build box 189, n5v.step mode xi box 190, S3 start; T3 = iterations up to the
+  first fallback, as asc197 counts). NOT an independent engine. The cross-check with my own N5'-xi engine (n5b/n5v mode xi) is OPEN.
+- Genome space = eg195.gen schema, ALL genomes of (N, M), no symmetry reduction (levels, option split >= 1 per mover, xt in {-1} + movers,
+  gate perm, br perm, bp, start). --noelev = Gamma3 e-priorities by gate only (patch verified: e-priority order flips on a test genome).
+- A = 0 below says ONLY that at these tiny sizes no tops sequence has two alternating letters; it says nothing about larger N, M.
+- Results (unit = genome; set = all genomes of (N, M) unless marked; scope = N5'-xi from S3 on Gamma3 up to the first fallback):
+  | N, M | genomes | A_max [E-LEV] | T3_max [E-LEV] | A_max no E-LEV | T3_max no E-LEV |
+  | --- | --- | --- | --- | --- | --- |
+  | 1, 1 | 4 | 0 | 0 | 0 | 0 |
+  | 1, 2 | 128 | 0 | 1 | 0 | 1 |
+  | 1, 3 | 6,912 | 0 | 2 | 0 | 2 |
+  | 1, 4 | 589,824 | 0 | 3 | 0 | 3 |
+  | 2, 2 | 288 | 0 | 0 | 0 | 0 |
+  | 2, 3 | 62,208 | 0 | 1 | 0 | 1 |
+  | 2, 4 | 10.35M of ~14.9M (PARTIAL: shard 0 5,260,000, shard 1 5,090,000) | 2 (30,432 genomes with A = 2) | 2 | not run | not run |
+  Argmax files (out/): ARGMAX_T3_N1M4.json 58b46be4, ARGMAX_T3_N2M3.json 0d459ac3, ARGMAX_A_N2M4_s0.json d0a2b91a, ARGMAX_A_N2M4_s1.json
+  2f94da6b (both A = 2: lev (0,1), mover 0 one exit option, mover 1 three options with xt -1/1).
+- RESUME (successor): `git worktree add --detach <dir> b61c2029` (any checkout of claude/l-new at b61c2029), then in experiments/comp/box33:
+    LNEW=<dir> timeout 5100 nice python3 enum33.py 2 4 0/2 out/N2M4_s0.txt     (resumes from out/N2M4_s0.txt.ck, committed)
+    LNEW=<dir> timeout 5100 nice python3 enum33.py 2 4 1/2 out/N2M4_s1.txt     (from out/N2M4_s1.txt.ck)
+  each shard needs ~25-30 more min; then the same two lines with --noelev and new OUT names; then N = 3 by sample:
+    LNEW=<dir> nice python3 enum33.py 3 <M> 0/1 out/N3M<M>_sample.txt --sample <S> --seed <R>   (state S, R as the scope).
+  The .ck files are gitignored (out/*.ck) except the committed N2M4 ones: add new ones with `git add -f` before parking.
+- Other work for the successor: the independent-engine cross-check of asc197's T3/maxalt on a sample (Lead 14:16Z).
 ### BOX 32 (exact CNF method) -- see RESUME POINT below; all jobs stopped; every verdict reported to the Lead.
 
 ## RESUME POINT -- successor 13 (L-COMP 13, Opus 5.5), updated 2026-11-08 10:29Z by date -u (GO 08:12Z; BOX 32)
