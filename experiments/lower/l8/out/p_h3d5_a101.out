@@ -1,0 +1,2 @@
+h 3 d 5 alpha [1, 0, 1] lower T 19 pure helpers
+STOPPED by L-LOWER 8 at 23:50Z before completion (siblings a100, a110 ended TIMEOUT with 150 of 151 undecided); superseded by the SAT encoding hsat.py

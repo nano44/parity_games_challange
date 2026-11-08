@@ -136,6 +136,20 @@ Nothing here is a result in the sense of CLAUDE.md; G-N5-TIME stays OPEN. Not a 
 - Correction of §1d's READING (i) by this data: the lower pairs 2-4 «see the delay» in F248 through helpers in their closure (pairs
   0-4 are unchanged from KILL238), so need (i) is met by edits on movers ≥ 12 alone; the single-edit negative of §1d stands.
 
+## 1f. Re-phasing the gadget by hand (Lead 23:48Z (a)): not a local edit (DATA + PROVED step; scope = F248)
+- Upper keys of F248 (unit = step; set = its 284): o(19) first changes at 103, o(20) at 108, o(21) at 115, o(22) at 118, o(23) and
+  o(24) at 138 (they change at the same 8 steps), o(25) at 10, then 144-260. The first half [9, 103) is fuel-free at levels 19-24.
+- The open windows differ from their closed siblings (same o(0..14)) in o(23)/o(24) and in movers 0, 1 (pair 0's phase) and helpers
+  48, 50, 51 (+ 43-45 at 43; + 41, 42 at 113). Going back 1-44 steps, the helper states (movers ≥ 14) of open block and sibling never
+  agree (minimum 1-2 differing movers), and at the block ends they differ in 14, 18, 48 (+ 41-45). So a transplant of the gadget's
+  pattern has no consistent boundary: the two halves of the run are in different slow-helper phases.
+- Lemma (PROVED, lane; WINDOW-CAP, L7 §2). Over any interval on which c_l = o(l − 1) is constant, o(l) changes at most twice. Hence
+  3 resets of helper 51 in [9, 138) (6 changes of its key o(24)) need o(23) to change at least twice there; F248 has o(23) constant on
+  [0, 138). So a repair needs new fuel at level 23 at least, and (o(23) ≡ o(24) in F248) at the levels feeding it: a re-design of
+  the helper levels ≈ 19-24 in the first half, not a re-point. That is what a climb must change: o(23) (or a substitute arming key
+  for 51) must cycle at least twice before t = 138, ideally once per 00 window.
+- Not run: ranksolve on a re-designed first half (no consistent target was constructed).
+
 ## 2. Item 1: the sequential schedule with helpers, decided exactly (DATA; unit = (h, d, α) case; scope = the sequential target)
 | h | d | α (α_1, …) | helper levels | result | outputs |
 | --- | --- | --- | --- | --- | --- |
