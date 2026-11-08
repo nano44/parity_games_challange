@@ -209,3 +209,12 @@ Families: rand (d 1-5); L-RED R221 §11's esc, noesc, deep, dense, lvl0 (spost22
   τ(K2) = r, σ(K1) = q, not S3): e0fail 200, e1fail 200 (states), no fallback.
 - §1 / §6 quotes: experiments/new/box195/quotes195.py (record; needs git objects), output quotes195.out: «quotes 31 missing 0 (trunk
   51eb65348)».
+
+## Addendum 1 (L-NEW successor 63, 03:20Z by date -u; Lead 02:48Z: EXACT-L's scope sentence)
+- Scope of Corollary EXACT-L. It turns the IDEAL run length L(G) of RESULTS R104 / R117 (the tower count of the acyclic IDEAL model)
+  into N5's EXACT iteration count from S3 on Γ3(G): #iterations = L(G) + 3 for every genome G with an acyclic Ξ-graph. So a family of
+  acyclic genomes with L(G) super-polynomial in N + M would make N5 (SPEC S1-S5, with SPEC's S4a arena choice) from its default start S3
+  super-polynomial on the games Γ3(G) (n = N + 7M + 10), and a polynomial bound on L(G) would bound N5 on them. It says nothing about
+  N5′-xi beyond ENDGAME-3 (N5′-xi's pre-fallback count on Γ3 is T3, not L(G); R118 (k), CONDITIONAL), nothing about N5 on other games,
+  and nothing about whether L(G) is polynomial (OPEN). Not M3, not M4, not a TARGET.md claim.
+- Status (Lead 02:48Z): L-RED 57 attacks E0-E4; this box is NOT frozen as a packet until L-RED reports.
