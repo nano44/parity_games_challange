@@ -124,7 +124,50 @@ Remarks:
   - Mover-level flips when PRIV fails (R222-lockup.md §3).
 - DATA (§2): A′ = 0 on all 6,024 gates measured. That agrees with the proof; it adds nothing to it.
 
-## 4. Sources opened
+## 6. Consolidated lemma list for the gate / bit accounting (Lead 03:15Z: packet-ready form)
+Scope of every item: runs of IDEAL-CYC(G) for an arbitrary genome G (RESULTS R104 format, Γ(G) as P-N5-XICYC [DEF]). Howard at the movers
+(best option, ties keep the current one). Odd's counterstrategy σ̄_t is optimal. Values [VJ] (Λ, Π, k).
+Nothing here is about N5′-xi on Γ3 beyond the first fallback. G-N5-TIME stays OPEN.
+
+Premises, named once and cited by tag below:
+- [F1] R118 (b) Fact F1: Ω_t(v) ⊴ Ω_(t+1)(v) for every vertex v. LANDED.
+- [R118e] R118 (e): «C ≤ n·(2M + 2)», with its reason «(each vertex's Λ moves only to a vertex of strictly larger reward among at most
+  2M + 3 possible cycle nodes)». Used in the per-vertex form. LANDED.
+- [XICYC-a] R118 (a): Odd is unrestricted at gates and at K2 in IDEAL-CYC. LANDED.
+- [DEF] P-N5-XICYC [DEF] priorities: movers 0, gates 1, c_X 2, K2 3, K1 5, β ≥ 6, e-vertices above every β, c_W above those, K0 = top + 2,
+  K3 = top + 3. Edges: e_g's only in-edge is from g, g's only in-edge is from its mover, K0 → K3 → K2 is frozen. In R104 / R118.
+- [OPT] the pointwise optimum: one σ̄_t is ⊴-minimal at every vertex at once. Lead reading 03:15Z: this is RESULTS R57 (b)'s standing
+  SPEC premise, quoted verbatim from trunk docs/RESULTS.md l. 2915: «that S1's procedure realises an optimal σ̄ is VJ00 §6 plus SPEC
+  conformance». Every packet using an item below must cite that clause and name it as the standing premise.
+- [E-LEV] e-priorities increase with the level of the gate's mover. Not landed; a HYPOTHESIS wherever it is used.
+- Lane results used: E-MON, HUB-ASC-G, UP-B from P-N5-ASC (claude/l-new 95dc76d7 §3, §5, §6; both referees SIGN, landing as R121 per the
+  Lead's brief); B-ONLY from R221-quiet.md §3.
+
+| # | name | statement (short) | premises | where | status |
+| --- | --- | --- | --- | --- | --- |
+| 1 | B-ONLY | for every v ≠ c_W, and every v that is not an e-vertex with W-target c_W: Λ_t(v) ∈ {β's, K1, K2, c_X}, below every e-vertex; Λ_t(v) takes ≤ M + 3 values | [OPT], [XICYC-a], [DEF] | R221-quiet.md §3 | PROVED (lane) |
+| 2 | no gate ties | Ω_t(e_g) ≠ Ω_t(β_g) at every gate and every state | 1 | R221-quiet.md §3 | PROVED (lane) |
+| 3 | RHO-SET | at a SET gate a RET stretch after the first starts with an adoption; ρ_g ≤ D(y) | [F1], Odd optimal | R221-ladder.md §7 | PROVED-COND (lane) |
+| 4 | RHO-E / RHO-COUNT | SET gate: ρ_g ≤ 1 + #changes (Λ(y), E(y)) + A_g ≤ (2M + 3)F′_B(M) + A_g; A_g = 0 by 1 | [F1], E-MON, HUB-ASC-G, 1 | R221-ladder.md §7, R221-quiet.md §3 | PROVED-COND (lane) |
+| 5 | RHO-CYC | ANY gate of level ≥ 1 whose Ξ-target x′ is a mover: (a) RET_t ⇔ e_g ∈ Π_t(x′) under [BELOW]_t; (b) ρ_g ≤ 1 + #changes (Λ(x′), E(x′)) + A′_g | [F1], [R118e], E-MON, HUB-ASC-G, [DEF] | this file §2 | PROVED-COND (lane) |
+| 6 | RHO-CYC-0 | A′_g = 0, ρ_g ≤ (M + 3)·F′_B(M) with B = max ascents of x′'s plays; Σρ_g ≤ M(M + 3)F′_U(G)(M) under [E-LEV] | 5, 1, UP-B | this file §5 | PROVED-COND (lane; [F1] + [OPT]) |
+| 7 | PRIV-FLIP | SET-type option S of mover B on a Λ-interval I with Λ(B) ∈ {K1, K2} and PRIV (no play from S's W-target or from B's other gates passes B): #changes of [σ(B) = S] ≤ 1 + Σ_{v ∈ {w} ∪ {g_o}} (D_E,I(v) − 1) | [F1], Odd optimal, E-MON, [DEF], Howard best switch | R222-lockup.md §3 | PROVED (lane) |
+| 8 | PRIV-POLY | 7 + HUB-ASC-G / UP-B: per Λ-interval ≤ 1 + deg(B)(F′_B(M) − 1); over the run polynomial for bounded U(G) under [E-LEV] | 7, HUB-ASC-G, UP-B, [R118e] | R222-lockup.md §3 | PROVED (lane) |
+| 9 | (DEAD) | «a RET start by a τ-flip with a closed loop changes Λ(g)» | — | this file §1 | DEAD: inst/CS_11_526.json (sha1 047bd550…), CS_11_1399.json (5ec8880b…) |
+
+Remarks for a packet writer:
+- Item 7's Λ(B) ∈ {K1, K2}: B-ONLY (1) allows a β or c_X as cycle node too. Item 7's proof needs only that λ is less relevant than β_S,
+  and that g_S and B are not in Π. That holds for c_X (2) as well. For λ = a β-vertex it fails when β_S is less relevant than λ. So do
+  not widen the hypothesis without that check.
+- Items 4 and 6 bound RET STRETCHES. Item 2 says every face flip is a strict ⊴-comparison. Neither bounds Howard's iteration count by
+  itself: GATE-POLY (R219) still needs ΣH_g (H_g = 0 by 1, R221-quiet.md §3) and the P-step accounting (box 194 QUIET / T-QUIET,
+  SURVIVES).
+- Item 7 is the only one about Even's choices. It does not cover a bit whose own option's play returns to it (PRIV fails). That case is
+  OPEN, and it is where an exponential SET counter would have to live under bounded U(G).
+- DATA backing: §1-§2 of this file; R222-lockup.md §2-§3; R221-ladder.md §7-§8; R221-quiet.md §3. No referee has seen items 5-8.
+
+## 7. Sources opened
+- trunk claude/vibrant-johnson-nxvvxo docs/RESULTS.md l. 2913-2916 (R57 (b) standing premise, verbatim), l. 2893 (R57 title).
 - claude/l-red docs/red/R221-quiet.md §1 ([OPT] status), §3 (Lemma B-ONLY).
 - claude/l-new 95dc76d7 docs/new/P-N5-ASC.md §1 (R118 (e) per-vertex form, [VJ] Π), §3 (E-MON), §5 (HUB-ASC-G), §6 (UP-B).
 - claude/l-red docs/red/R221-ladder.md §7 (RHO-SET, RHO-E, RHO-COUNT), experiments/red/r221/rho221.py (RET definition),
