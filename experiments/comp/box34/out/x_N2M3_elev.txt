@@ -1,0 +1,4 @@
+# cmp34 N 2 M 3 count 2000 seed 3423 elev True files False
+ARGMAX_maxalt 1 s21 {"N": 2, "lev": [0, 1], "opts": [[[-1, 0, 0]], [[0, -1, 1], [0, 1, 2]]], "gate": [[0], [2, 1]], "br": [1, 2, 0], "bp": [1, 0, 1], "start": [0, 1]}
+ARGMAX_T3 1 s1 {"N": 2, "lev": [0, 1], "opts": [[[-1, 1, 0], [-1, 0, 1]], [[0, 0, 2]]], "gate": [[0, 1], [2]], "br": [1, 0, 2], "bp": [0, 1, 1], "start": [0, 0]}
+SUMMARY N 2 M 3 count 2000 seed 3423 elev True mismatches {'game': 0, 'T3fix': 0, 'Afix': 0, 'T3old': 0, 'Aold': 0, 'err': 0} T3hist {0: 1021, 1: 979} maxalt_hist(fixed) {0: 1938, 1: 62} maxalt_hist(old b61c2029) {0: 2000}

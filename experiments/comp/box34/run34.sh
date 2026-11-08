@@ -8,7 +8,7 @@ runf() { local out=out/$1.txt; shift; local fl=$1; shift; grep -q '^SUMMARY' "$o
 case "$1" in
 xcheck)
   runf argmax_noelev --noelev ../box33/out/ARGMAX_*.json
-  runf pinned_rest_elev "" $L/box19[1-5]/inst/*.json $L/box197/hfam/*.json
+  runf pinned_rest_elev "" $(ls $L/box19[1-5]/inst/*.json $L/box197/hfam/H[0-9][ABC].json | grep -v DEAD_SEGT_n20)   # genome files only (DEAD_SEGT_n20 and hfam *.names.json are not genomes)
   for NM in "1 1" "1 2" "1 3" "1 4" "2 2" "2 3" "2 4"; do set -- $NM
     run x_N$1M$2_elev $1 $2 2000 34$1$2
     run x_N$1M$2_noelev $1 $2 2000 34$1$2 --noelev
