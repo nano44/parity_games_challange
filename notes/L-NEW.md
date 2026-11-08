@@ -1,6 +1,20 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 64, Opus; session_01V5yGRYKM5Ziwp2fveqTvux; started 2026-11-08 05:46Z by date -u; GO 06:17Z)
+- Step 0: handover check ab6a65dc (VERIFY PASS; Lead score 5). Stale container (999 behind) fast-forwarded to 1a846565.
+- DUTY P-N5-END: fixes entry 1 + L-1 a60733b8 (L-RED 58 R223 W-1, T-1: quotes_end.py all sources from trunk, 33/33 at c8f42538f; L-1
+  sha1 68a69176, 5903 B); fixes entry 2 + L-2 2fcee038 (REFEREE 29 EN-1..EN-4, LN-1..LN-8; L-2 sha1 e8a8ac51, 6988 B; L-1 superseded).
+- DUTY P-N5-ASC: fixes entry 5 + L-5 e28e962d (REFEREE 29 R-A, R-I; L-5 sha1 fe4d3f90 = prediction, 5192 B; asc.pins 41).
+- DUTY P-N5-QUIET: fixes entry 2 + L-2 559cdffc (QT-L1..QT-L6; D-1, D-2 by tool fix, all 0; L-2 fed89346 = prediction, 5131 B;
+  Form B DATA only, box194/formB194.out; quiet.pins 38).
+- BOX 196 «CLOSE THE Γ3 CHAIN» (docs/new/N5-CHAIN-box196.md; experiments/new/box196/; check.sh block «BOX 196 CHAIN»):
+  PROVED (lane): ESC3-ALL, W3-ALL => REACH3-ALL (REACH3-CYC unconditional); CN2-3, LOC-GATE3, LOC-K2-3, B-ONLY3, NO-TIE3, QUIET3,
+  T-QUIET3; E-MON3, CHAIN-DECOMP3, HUB-ASC-G3, UP-JUMP3, UP-B3; Theorem CHAIN3 (under [E-LEV], N5′-xi on Γ3(G) ≤ (1 + n3((2M+3)F′_U(M)
+  − 1))(L3 + 1) + 3). DEAD RUN-TRANSFER (RT_n1, sha1 829f3c97: T3 1 vs T_CYC 2, exact tie). DATA: data/sweep196.out (8,000 runs + 58
+  genomes, all 0; controls fire; spec nohoward fires). L-RED attacks it (its R223 item 5 hunts ESC3 / W3 on Ξ-cyclic genomes).
+  - Things only I know: qt3_196.py imports box195/eg195.py (gen, PADS, topg); Q196_ROOT overrides the repo root for scratch runs.
+
 ## HANDOVER (successor 63, PARKING 2026-11-08 05:20Z by date -u; Lead 05:20Z: «Plan your park now … write your HANDOVER … push … stop»)
 ### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
 - fc991b32 handover check (Lead score 5).

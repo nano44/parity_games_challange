@@ -1033,4 +1033,13 @@ if [ -z "$pinE" ]; then
 else
   echo "P-N5-END check: FAILED"; echo "$pinE" | head -20; exit 1
 fi
+# BOX 196 CHAIN (L-NEW successor 64): QUIET3 / T-QUIET3 / REACH3-ALL / UP-B3 counters on the Γ3 run (qt3_196.py), frozen output + controls
+# no silent exit: every failure path prints «BOX 196 CHAIN check: FAILED» with the exit code, the diff and the run's last lines
+r196=0; run196=$(cd box196 && bash check196.sh 2>&1) || r196=$?
+d196=$(diff <(printf '%s\n' "$run196") box196/check196.out 2>&1) || true
+if [ "$r196" -eq 0 ] && [ -z "$d196" ] && ! grep -Ev "^(ctrl|spec)" box196/check196.out | grep -Eq "(nonstd|nohoward|cnlow|locfail|ties|bonly|k2fail|wfail|crossflip|Tfail|upfail|emon) [1-9]" && grep -q "^ctrl1 .*wfail [1-9].*Tfail [1-9][0-9]* upfail [1-9]" box196/check196.out && grep -q "^ctrl2 .*locfail [1-9]" box196/check196.out && grep -q "^ctrl3 .*bonly [1-9]" box196/check196.out && grep -q "^spec .*nohoward [1-9]" box196/check196.out; then
+  echo "BOX 196 CHAIN: Γ3-native QUIET3 / REACH3-ALL / UP-B3 counters 0, controls and spec-mode nohoward fire = frozen: PASS"
+else
+  echo "BOX 196 CHAIN check: FAILED (check196.sh exit $r196; python $(python3 --version 2>&1))"; echo "$d196" | head -30; echo "$run196" | tail -15; exit 1
+fi
 rm -rf "$tmp"
