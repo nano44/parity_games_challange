@@ -115,3 +115,15 @@ So ADD(c) needs c ≥ 4. Whether X grows with N decides between ADD(c) and DEAD;
   steps. At the next level up the same race needs a High that is r² times slower. In feed-forward (Ξ-acyclic on the hub's plays)
   Howard all levels move at once, so a slow High must come from a long delay path, i.e. size linear in the product. Feedback through
   Ξ-cycles (a carry from the low race back into the High chain) is the only other source of slowness. This agrees with ACYC-LIN.
+
+## 6. Does X grow with N? (DATA, weak; 09:4xZ)
+| climb (SCORE=X) | seed genome | N | iterations | final X | (D, Hn, Ln) | max D per I |
+| --- | --- | --- | --- | --- | --- | --- |
+| cx_cx4_2263 | CX4_n21 | 21 | 4000 | 4 (no strict gain) | (11, 6, 2) | 11 |
+| cx_leap8_2264 | LEAP_k8 (R217) | 37 | 1500 | 1 (no strict gain) | (10, 2, 8) | 18 |
+- No growth of X was found beyond 4. Weak: two climbs, one seed each, and the mutations rewire single options only.
+- What would kill ADD(c), by the READING of §5 (not built): a race router with r staggered routes in front of a High source that holds each
+  of its K values for r steps. Then X = (r − 1)(K − 1), and T ≥ rK stays polynomial, so killing ADD(c) would not refute (b).
+- The question that matters for (a) is nesting: whether a High that is slow BECAUSE it is itself a race output can be built (depth 2).
+  CX4_n21 has depth 1: its slow High (x17 at odd steps) is not a race output.
+- STATUS: CONJECTURE ADD(c), c ≥ 4 by CX4_n21. Open whether c is constant. A depth-2 race is the next build.
