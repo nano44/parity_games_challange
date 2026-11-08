@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """L-LOWER 11 (BOX L11): exact SAT for a CLAMPED core target with free helper pairs (hsat.py's encoding, l8, generalised).
-Core = pairs 0..h-1, states fixed to a target file (tight.py output: 'gate' line with 4h core gate values, then one state row per
+Core = pairs 0..h-1, states fixed to a target file (ttarget.py output: 'gate' line with 4h core gate values, then one state row per
 step). Helpers = pairs h..d-1: any trajectory allowed by the R104 movement rule, any start; helper gates (levels h..d-2) are SAT
 VARIABLES (joined value for a = 0, 1), so one instance covers every gate case of hsat.py. Unknowns as in hsat.py: wiring (one-hot
 per option: exit or another mover), a strict order on movers (acyclic), helper states and keys, a strict total order on options

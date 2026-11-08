@@ -11,6 +11,16 @@
 - Running (tracked tasks, $SP/l11/*.log): TT3_HS2 d 5 none, TT3_HIT7 d 5 none (Glucose4, 3,600 s limit). Re-run on restart:
   `cd experiments/lower/l11; python3 tsat.py out/TT3_HS2.txt 5 none g4 3600 $SP/l11/TT3_HS2_d5_none`.
 - Plan: d_min of the tight targets for h = 3 (and h = 4 if feasible); at d_min compare modes none / disj / shared.
+- 13:41Z: TT3 d 5 Glucose4 TIMEOUT 3,600 s (both); the proof logging filled the disk allowance (ENOSPC at the end). TRAP: never
+  run long Glucose jobs with_proof; CaDiCaL195 ignores the pysat interrupt (ran to the 2-h task limit: d 5 and d 6 undecided).
+- 15:4xZ: annk.c (ann.c with the gate mutation for helper levels K/2..d-1), mkstart.py, viol.py. CALIBRATION: annk from scratch fails
+  on RC3_REC10 (REC_d10_tower's own pairs 0-2 core, realized by REC10 at d 10): best 12 / 13 at d 6 / 10. So annealer stalls are no
+  evidence at small h; viol.py scores REC10 and HS2_d3 at 0 on their own cores (scorer correct).
+- Known towers are never tight for h >= 3 (slack = steps where o(h-1) does not change): REC10 h 4 5/35, H5 74/136, H6 83/209, HIT7
+  45/299; HS2_d3 (h 2) 0/6. L10's core8 IS tight (T' 510 = F(7)).
+- TT3_HS2 prefix 7 at d 4 UNSAT (g4 307 s); d 5 TIMEOUT 800 s.
+- Running 16:2xZ: slack variants out/sv/TT3_HS2_s<k>.txt (row k duplicated, T 15) at d 4, two workers ($SP/l11/sv/sv<k>.log).
+- l11/tight.py renamed ttarget.py (l6/tight.py shadows it on the import path).
 
 ## Successor 10 HANDOVER (2026-11-08 11:55Z, date -u; parking at ~420k context, Lead 10:41Z «one more design round, then park»)
 ### DONE (claude/l-lower; product docs/lower/L10-design.md §0-§3d; tools/data experiments/lower/l10/)
