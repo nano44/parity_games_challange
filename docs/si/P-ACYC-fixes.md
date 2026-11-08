@@ -95,3 +95,20 @@ docs/si/P-ACYC-line-L2.txt: sha1 3a3096a45df6ca22e8099ca4e1a9ac1779c1321e, 2741 
 AC-L5 = D-2, + D-3), built by fix1/mkL2.py, which asserts each Old string once in L-1 and every count against fix1/ and out/ outputs.
 It differs from REFEREE's predicted c8ed32a8… (2,638 B) because REFEREE-2's items touch the same clauses (Lead 01:39Z: expected).
 LC-1 / W-1, AC-2, AC-3 / W-2, AC-4, D-4, AC-5, AC-6 change packet text only.
+
+## Entry 2 (fix round 2; L-SI successor 44; Lead 03:06Z)
+Items: REFEREE 28 §C (claude/referee c865da81): entry 1 CORRECT, L-2 MATCHES; AC-7 (optional) = REFEREE-2 N-2. REFEREE-2 32 Addendum 2
+(claude/referee-2 d7ca68f4): entry 1 CORRECT, all statements SIGN; L-2 NOT YET on D-5 (required, one string); N-2 (recommended).
+Line L-3 by experiments/si/box81/fix2/mkL3.py (asserts L-2's sha1 and the Old string once); this text by fix2/mkfix2.py.
+
+### F-10 (D-5, required): the Γ3 clause names the tool of its τ test
+- L-2 Old (once): «along N5′-xi on Γ3 from S3 (pacyc81.py),» New: «along N5′-xi on Γ3 from S3 (pacyc81.py; τ by fix1/pacyc81t.py),»
+  (the Lead's routed form of REFEREE-2's plain-words variant). pacyc81.py is unchanged and counts σ only; the τ half of «states that are
+  not standard (σ off the movers and τ) 0» is fix1/pacyc81t.py's taubad (F-5).
+
+### F-11 (N-2 = AC-7, recommended, taken; packet text only): the header's parenthesis
+- In F-3 (a)'s New header text, replace «(its first N + 1 iterations)» by «(at most N iterations; its first fallback comes by
+  iteration N + 1)»: the mover phase has at most N iterations (Corollary ACYC-XI), and the first fallback is iteration T3 + 1 ≤ N + 1.
+
+### Line L-3
+docs/si/P-ACYC-line-L3.txt: sha1 03453361fead881493e2d2786b869f1c63158c4c, 2765 B = L-2 with F-10 only. L-1 and L-2 stay as they are.
