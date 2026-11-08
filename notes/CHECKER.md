@@ -1,6 +1,11 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 21), 2026-11-08 03:04Z (date -u)
+- C135 = R121 (P-N5-ASC, L-NEW) draft 04323afb @ 5b8c84dc: FAIL E-1..E-4 (this commit); L-3 = R1-R4 (R-B, R-G, R-R, R-Q), sha1
+  0012d671, UPDATE f545cba7. NEXT: C135 Add. 1 on the second fill.
+- Tools: tools/quotes2.py (mmap on a tr-normalised corpus) replaces quotes.py; the 920 MB corpus killed the old one.
+
 ## Resume point (successor 21), 2026-11-07 22:38Z (date -u)
 - C134 CLOSED (CI 6834 green on 5470cc0c; F-1 fixed by trunk merge 16d582d2). NOTHING OPEN.
 - Coming (Lead 22:37Z): C135 = P-N5-ASC (L-NEW, frozen 95dc76d7) after both signatures and the first fill; P-ACYC (L-SI 43) being frozen.
