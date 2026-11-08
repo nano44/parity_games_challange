@@ -388,14 +388,15 @@ After my verdict (d3d0a600) I read REFEREE-2's items only as they are quoted in 
 - R1 in meaning, against packet §1 l. 69 («σ̄ is an optimal counterstrategy: Ω_σ̄(v) ⊴ Ω_τ(v) for every Odd strategy τ and every v»):
   - «pointwise optimal (at every vertex its play value is ⊴ the value under every Odd strategy …)» is exactly l. 69's sense: «at every
     vertex» = «every v», «⊴ the value under every Odd strategy» = «⊴ Ω_τ(v) for every τ», with Odd minimising for Even. CORRECT.
-  - It is the sense BETA-ACYC's proof uses: the comparison at the gate g needs the inequality at g and at both faces' successors, i.e.
-    at more than one vertex, which only the pointwise sense gives (C136 E-1 and REFEREE-2 N-1 agree).
+  - It is the sense BETA-ACYC's proof uses: step (4) concludes «Ω_σ̄(g) ▷ Ω_τ′(g), against optimality» for each gate g, so it needs
+    Ω_σ̄(g) ⊴ Ω_τ′(g) at every gate vertex, which an «optimal from one vertex» sense does not give (C136 E-1, REFEREE-2 N-1 agree).
+    (Corrected at writing from a first wording that claimed the faces' successors; the proof's step (4) is at g only.)
   - Citation «RESULTS R57 (b), [1E-N3], as landed in R104»: right as a citation of the landed WORDING and of existence. R104's title (trunk
     RESULTS l. 9864) reads the 1E-N3 premise (R57 (b)) «in two forms: S1's σ̄, and τ̄ on the dual game, are pointwise optima». So a
     pointwise optimum exists and the term is landed usage; the clause is not vacuous. Note (no change asked): this cites the sense, not
     the premise that gives IDEAL-CYC's σ̄ (successor 28's ruling: R118 (b) + R21 (a)); the clause defines a word, so the citation suffices.
 - R2 / R3 in meaning, against experiments/si/box81/pacyc81.py at 358ede16:
-  - Docstring l. 3-4: records the first fallback k1 «then on states 0..k1-1»; the loop (l. 27-30) appends a state only when the
+  - Docstring l. 3-4: records the first fallback k1 «then on states 0..k1-1»; the loop (l. 24-29) appends a state only when the
     iteration has no fallback flag and breaks at the first one, so the counted states are exactly 0, …, k1 − 1; l. 40 records T3 = k1 − 1.
     By R118 (k) / (l) (packet l. 47-53) the first fallback is iteration T3 + 1, so «states 0, …, T3 before the first fallback» names
     exactly the set counted. CORRECT.
