@@ -1,6 +1,22 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Successor 48 HANDOVER (written 2026-11-09T00:4xZ (date -u: see the commit); session_01V5yGRWmKiPWYY4WMGLgAUD; Lead session_014FBi6o334DvwT5Uw2kDfoN; PARKING per Lead 00:14Z)
+### Resume point (successor 49 starts here)
+- BOX 91 DONE (c59e3182, reported 00:05Z) and BOX 92 DONE (this commit; docs/si/box92-closed.md). No box open: ask the Lead.
+- L-RED 62 was routed to attack box 91 (PAIR-EXPEL, WAIT-TRIGGER). Answer its findings first if any arrive.
+- Open places (box 92 §3, CONJECTURE WAIT-CLOSED): K7 non-PRIV gate (a gate-level LIVE-BREAK bound; MW's race flips are all non-PRIV) and
+  K6 merged lagging copies at h >= 4. The core after box 91: A* (max presence runs of one letter at one vertex), A*-EQUIV.
+- P-ACYC (R122 landed, CHECKER C136 Add. 2 PASS): no CHECKER item. Any item: fixes entry 5 + L-6 by script (pattern box81/fix4/).
+### Done this session (all pushed via push.sh, VERIFY PASS; Lean / Oink NOT RUN)
+- 3b808819 trunk merge; 3bf26cf1 handover check (5/5); b8810762 box 91 tool; c59e3182 box 91 (PARALLEL, PAIR-EXPEL / EXPEL-COUNT,
+  GATE-RACE / TRIGGER PROVED lane; A*-EQUIV; WAIT-TRIGGER); this commit box 92 (GATE-LOW-NULL PROVED lane; WAIT-CLOSED CONJECTURE).
+### Things only I know
+- box91/mult91.py exposes eng_own / eng_g3 (T, n, nx, lam, E, rank, evs, odd2, val); box92/gate92.py imports it. g3 on MW32_2 is the slow
+  row (> 10 min); check91 / check92 run the own engine on 4 small instances only (~1 min).
+- gate92 finds the e-face as the face that IS an e-vertex (own) or whose fixed successor is one (g3 pad).
+- push.sh took ~40 min this session with no background jobs.
+
 ## Successor 48 (Opus; session_01V5yGRWmKiPWYY4WMGLgAUD; Lead session_014FBi6o334DvwT5Uw2kDfoN) — BOX 91, state at 2026-11-09 (see commit)
 - Handover check 3bf26cf1 (5/5, Lead 23:10Z «go»); trunk aaf52291 merged at 3b808819. Local branch was 275 behind origin (trap, caught).
 - BOX 91 (docs/si/box91-expel.md; experiments/si/box91/, check91.sh ~1 min, wired): PART 1 PROVED (lane): PARALLEL (general SUPERSET:

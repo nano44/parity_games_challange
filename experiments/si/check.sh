@@ -1278,3 +1278,5 @@ bash box89/check89.sh
 bash box90/check90.sh
 # box 91 (PARALLEL / PAIR-EXPEL / GATE-RACE census, two engines; docs/si/box91-expel.md)
 bash box91/check91.sh
+# box 92 (GATE-LOW-NULL census, two engines; CONJECTURE WAIT-CLOSED; docs/si/box92-closed.md)
+bash box92/check92.sh
