@@ -10,6 +10,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - (b') FRONTIER (Lead 23:34Z; shrink34.py greedy deletion, frontier34.sh chains, best34.py table; out/frontier/ + SHA1SUMS; logs in
   out/frontier/log): min N + M (upper bounds) C2 33, C3 45, C4 50, C5 63, C6 75, C7 105, C8 112, C9 122, C10 164, C11 172, C12 176;
   maxm 2 50, 3 106, 4 121. Final 13 genomes: asc197 (T3, maxalt) + pair198 (maxC) = own34 (out/frontier_final_2eng.txt). maxm: own34 only.
+- BOX 32 SAT replay (Lead 02:54Z, L-LOWER 12: enc32 --freerank lacks transitivity among options sharing an insertion slot): rfix,
+  W1 test (enc32 --freerank, affected) and OSC K4 T10 decodes re-replayed (experiments/comp/box32/val/replay35.txt): all realize their
+  targets (fenc + sim6 + replay30 + enc32 --fix all; OSC by clampcheck). No artefact, NO CORRECTION to BOX 32's SAT lines.
 - Things only I know: asc197 > 10 min on hfam towers (H6C-H8C); own34 ~0.5 s per N + M 100 genome, minutes on n ~ 5,000. cmp34 compares
   T3 + maxalt only; for C use pair198 (ROOT=<lnew198> python3 -I .../box198/pair198.py G.json). Never launch push with «&» (slip 23:1xZ).
 

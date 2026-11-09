@@ -1,0 +1,9 @@
+# L-COMP 14 box 35 (Lead 02:54Z, L-LOWER 12 finding: enc32 --freerank has no transitivity among free options sharing an insertion slot,
+# so a SAT model may carry a cyclic order; only SAT answers need a replay). Every BOX 32 SAT answer, decoded genome replayed:
+# (box 32 SAT list from notes/L-COMP.md successor-13 sections: rfix (ranks FIXED, control), W1 test (enc32 --freerank = affected),
+#  OSC K4 T0 10 (osc.py, free ranks as a tournament with 3-cycle bans; separate encoder). The other free-rank runs (free, lazy, lazy2,
+#  thresh, F6 C5f, GAD) never returned SAT.)
+rfix_hit7_dec.txt (sha1 329a9528) vs val/target_HIT7_H7.txt H 7, mutcheck.py 0 mutants: fenc 1 sim6 1 enc32(--fix all) 1, T 299/299/299, F0..6 = [2, 6, 14, 30, 62, 126, 254] OK
+w1test_hit7_dec.txt (sha1 13d030c4) vs val/target_HIT7_H7.txt H 7, mutcheck.py 0 mutants: fenc 1 sim6 1 enc32(--fix all) 1, T 299/299/299, F0..6 = [2, 6, 14, 30, 62, 126, 254] OK
+osc/test_K4_T10_dec.txt (sha1 29bc3a2e) vs osc/core8_T10.txt H 8, clampcheck.py (independent clamped replay, pairs 6-7 = movers 12-15 clamped): movers 0-11 follow the target through T 10 (12/12); fixed point at T for unclamped movers: True
+VERDICT: no BOX 32 SAT answer is a cyclic-order artefact; all three decoded genomes realize their targets under independent replay. No correction.
