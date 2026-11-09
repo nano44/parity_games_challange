@@ -18,5 +18,6 @@ if git cat-file -e 4b309716^{commit} 2>/dev/null; then
 else
   echo "BOX96 NOT RUN engine rows (pinned commit 4b309716 absent)"
 fi
+python3 -I -B pk/quotesB3.py ../../.. > /dev/null || { echo "BOX96 FAIL packet quotes"; fail=1; }
 [ $fail = 0 ] && echo "BOX96 checks: PASS"
 exit $fail

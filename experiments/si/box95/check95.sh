@@ -3,3 +3,4 @@
 set -u
 cd "$(dirname "$0")"
 bash fix1/check_fix1.sh || { echo "BOX95 FAIL fix1"; exit 1; }
+bash fix2/check_fix2.sh || { echo "BOX95 FAIL fix2"; exit 1; }

@@ -82,3 +82,35 @@ line L-1 (docs/si/P-N5-GATE-line-L1.txt) by fix1/mkL1.py, its premise quotes che
 - docs/si/P-N5-GATE-line-L1.txt: the proposed RESULTS-entry text with this entry applied; one paragraph, no «|»; model RESULTS R123.
   sha1 a44647db487dcd5193d11ff83f80006b3533dac4, 9541 bytes (wc -c). Premises: landed R-ids (R104, R117, R118, R121, R123) with quotes checked verbatim against trunk's
   docs/RESULTS.md by fix1/quotesL1.py; P-N5-CHAIN (R125) and P-N5-SPLIT named as PENDING packets.
+
+## Entry 2 (fix round 2; L-SI successor 50; Lead ruling 2026-11-09 09:24Z (a): the IDEAL-CYC PROVISO only)
+Item: the proviso «D's play avoids e_o» of §3.4 (b), (c) and WAIT-QUIET, on IDEAL-CYC. Γ3 is NOT changed here: B-ONLY on Γ3 (box 96's
+Lemma B-ONLY3) goes to a separate packet P-N5-BONLY3 after L-RED 64's attack (ruling (b)). Strings: this text by
+experiments/si/box95/fix2/mkfix2.py (quotes asserted verbatim once, in L-RED's text and in the frozen packet); L-2 by fix2/mkL2.py.
+
+### F2-1 (PROVISO on IDEAL-CYC): cited, and derived independently
+- Cited: L-RED 63, claude/l-red 2730ab90, docs/red/R229-box93.md Addendum B (byte copy experiments/si/box95/fix2/ref_R229-box93_2730ab90.md,
+  sha1 in fix2/fix2.sha1): «**Lemma PROVISO (PROVED, L-RED lane; premises: landed R123 B-ONLY; [DEF]: e_o's only successor is its W-target D, or c_W).** On IDEAL-CYC(G), for every genome, every gate o and every state t, D's play does not pass e_o.»
+- Independent derivation (L-SI box 96 §1, docs/si/box96-bonly3.md at claude/l-si 6ee19b24, written before L-RED's text was on origin;
+  the same argument). D := e_o's successor (RESULTS R104: e has one edge, to the W-target or to c_W). If D = c_W, P_t(D) is c_W's
+  loop. Otherwise D is a mover; if e_o ∈ P_t(D), the vertex after e_o is D, the play's first vertex, so the play closes there and its
+  cycle is the whole play, which carries e_o; then Λ_t(D) is e_o or more relevant. RESULTS R123 Lemma B-ONLY («at every state t and
+  every vertex v other than c_W and the e-vertices whose successor is c_W, Λ_t(v) is less relevant than every e-vertex») at the
+  mover D says the opposite. ∎
+- Shared premise: RESULTS R123 B-ONLY is the one premise of both G1's IDEAL-CYC clause (entry 1: K10 empty) and PROVISO.
+- Effect on the frozen text (IDEAL-CYC only; no statement is weakened; Γ3 unchanged):
+  - §3.4 «(b) At every t with e_o ∉ P_(t−1)(D) ∪ P_t(D): Ω_t(p_e) ≠ Ω_(t−1)(p_e) ⟺ Ω_t(D) ≠ Ω_(t−1)(D).»: on IDEAL-CYC the hypothesis holds at every t, so S(p_e) = S(D) for every gate over the whole run (both values
+    constant when D = c_W).
+  - §3.4 «(c) If D's play avoids e_o over the run:» and «Lemma WAIT-QUIET (= (a) + (b)). A gate whose e-face continuation D changes value at most K times while its play avoids e_o»: on IDEAL-CYC the proviso is always met; read them there with it deleted.
+  - §3.4 «- The proviso «D's play avoids e_o» was never violated on any measured instance (L-RED 63: dpass 0 on 29 instances).» New, after it: «On IDEAL-CYC it holds at every state (Lemma PROVISO, L-RED 63, claude/l-red 2730ab90 R229-box93
+    Addendum B; premise RESULTS R123 B-ONLY). On Γ3 it remains a hypothesis of (b), (c) and WAIT-QUIET in this packet.»
+  - §1 premises: RESULTS R123 B-ONLY is now used on IDEAL-CYC (it is already in §1's landed list, «R123 (LOC-GATE, NO-TIE, B-ONLY, …)»).
+- DATA: L-RED 63's dpass 0 on 29 instances (own engine; R229-box93 §2, fa4e50fe; and its 2000-iteration DP climb, Addendum A); L-SI
+  box 96's dpass 0 (unit (gate, state); 19 instances: box 91's 11, box 93's 8; 307,737 pairs per engine; own and g3, rows identical;
+  experiments/si/box96/out/own96.out, g396.out); control CTRL=anti (Odd non-optimal: e-face at o, β-face elsewhere; own engine) fires
+  on 14 of 19 (out/ctrl96.out).
+
+### Line L-2
+- docs/si/P-N5-GATE-line-L2.txt = L-1 with three replacements (fix2/mkL2.py, each Old asserted once in L-1): the proviso clause (IDEAL-CYC
+  PROVISO stated, with its proof in one sentence; Γ3 a hypothesis), PROVISO's DATA clause, «fixes entries 1-2». sha1 c0f2007d84afab1e00ef41e24ba8f5f064468cc5, 10295
+  bytes (wc -c). L-1 stays as written (a44647db…, 9,541 bytes).
