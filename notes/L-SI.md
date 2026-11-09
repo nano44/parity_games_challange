@@ -10,6 +10,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   (C 2). K6 at h = 4, 5: CNT 2, DEAD (DATA). WAIT-CLOSED stays a CONJECTURE at the C level. Two engines identical on every row.
 - Next (if the Lead asks): relG = 0 on non-PRIV-before relocks is DATA only (proof open); a bound on min_f nl_f per gate at k = 1 is the
   K1-FLIP(2) step.
+- BOX 94 (Lead 04:57Z; docs/si/box94-nest.md; experiments/si/box94/, check94.sh ~5 s, wired): nested MW (gennest94: LINK u/R/D/Dz/zR/v/vQ,
+  REV, SCALE, OFFJ, DBL doubler levels) at H = 2, 3, n = 4, 8: ch, gate flips, C, T3 ADD or COPY, never multiply (two engines identical; 126
+  point own sweep). MW's doubling at gate Q is a one-step ECHO, S(g_Q) = S(v) ∪ (S(v) + 1). PROVED (lane): SAME-SUFFIX (common-suffix
+  faces / options: constant choice; doubler levels copy), STEP-BOUND (ch ≤ T3). Box 93 Addendum 1 pushed at 86dd7e02.
 ### Things only I know
 - Editing run93.sh while it ran broke the g3 half (bash reads scripts incrementally): never edit a running script; rerun.
 - k6/run_k6.sh (ana85 / dec85 / lemma tools at h = 5) takes ~15 min; k6eng.sh (mult91 own + g3 on the towers) ~3 min.

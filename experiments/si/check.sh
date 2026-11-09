@@ -1282,3 +1282,5 @@ bash box91/check91.sh
 bash box92/check92.sh
 # box 93 (K7: NP-SHAPE / E-FACE-PAYS census, two engines; K6 lag towers at h = 4, 5; docs/si/box93-k7k6.md)
 bash box93/check93.sh
+# box 94 (nested MW / doubler counters: ADD, not multiply; SAME-SUFFIX; docs/si/box94-nest.md)
+bash box94/check94.sh
