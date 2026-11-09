@@ -3,3 +3,4 @@ kept o N+M 175 C 11 C 11 maxm 3 T3 23 1s
 kept o N+M 174 C 11 C 11 maxm 3 T3 23 14s
 kept o N+M 173 C 11 C 11 maxm 3 T3 22 19s
 kept o N+M 172 C 11 C 11 maxm 3 T3 22 52s
+FINAL C11 N 67 M 105 N+M 172 measure {'T3': 22, 'fallback': True, 'n': 812, 'maxalt': 8, 'maxtops': 22, 'C': 11, 'maxm': 3, 'maxP': 12, 'depthV': 3, 'fanout': 8, 'fanin': 2, 'idfail': 0, 'rpfail': 0} frozen /home/user/parity_games_challange/experiments/comp/box34/out/frontier/C11_NM172_93225ff6.json

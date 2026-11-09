@@ -1,0 +1,25 @@
+# shrink34 seed /home/user/parity_games_challange/experiments/comp/box34/out/frontier/C11_NM172_93225ff6.json key C9 rng 61 start N+M 172 round 0
+kept m N+M 170 C 9 C 9 maxm 3 T3 20 1s
+kept o N+M 169 C 9 C 9 maxm 3 T3 18 2s
+kept o N+M 168 C 9 C 9 maxm 3 T3 18 7s
+kept o N+M 167 C 9 C 9 maxm 3 T3 18 11s
+kept o N+M 166 C 9 C 9 maxm 3 T3 18 13s
+kept o N+M 165 C 9 C 9 maxm 3 T3 18 16s
+kept m N+M 163 C 9 C 9 maxm 3 T3 18 24s
+kept o N+M 162 C 9 C 9 maxm 3 T3 18 26s
+kept m N+M 160 C 9 C 9 maxm 3 T3 18 33s
+kept m N+M 158 C 9 C 9 maxm 3 T3 18 35s
+kept m N+M 155 C 9 C 9 maxm 3 T3 18 38s
+kept m N+M 153 C 9 C 9 maxm 3 T3 18 39s
+kept m N+M 151 C 9 C 9 maxm 3 T3 18 41s
+kept m N+M 149 C 9 C 9 maxm 3 T3 18 50s
+kept m N+M 147 C 9 C 9 maxm 3 T3 18 56s
+kept m N+M 145 C 9 C 9 maxm 3 T3 18 66s
+kept m N+M 143 C 9 C 9 maxm 3 T3 18 69s
+kept m N+M 141 C 9 C 9 maxm 3 T3 18 71s
+kept m N+M 139 C 9 C 9 maxm 3 T3 18 77s
+kept o N+M 138 C 9 C 9 maxm 3 T3 18 96s
+kept m N+M 136 C 9 C 9 maxm 3 T3 18 117s
+kept m N+M 134 C 9 C 9 maxm 3 T3 18 139s
+kept m N+M 132 C 9 C 9 maxm 3 T3 18 152s
+FINAL C9 N 51 M 81 N+M 132 measure {'T3': 18, 'fallback': True, 'n': 628, 'maxalt': 8, 'maxtops': 18, 'C': 9, 'maxm': 3, 'maxP': 10, 'depthV': 3, 'fanout': 6, 'fanin': 2, 'idfail': 0, 'rpfail': 0} frozen /home/user/parity_games_challange/experiments/comp/box34/out/frontier/C9_NM132_3af69fa5.json
