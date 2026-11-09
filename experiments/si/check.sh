@@ -1286,3 +1286,5 @@ bash box93/check93.sh
 bash box94/check94.sh
 # box 95 (P-N5-GATE fixes entry 1 + line L-1; docs/si/P-N5-GATE-fixes.md)
 bash box95/check95.sh
+# box 96 (PROVISO on IDEAL-CYC, B-ONLY3 on Gamma3: d96 two engines; docs/si/box96-bonly3.md)
+bash box96/check96.sh
