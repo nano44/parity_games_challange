@@ -71,6 +71,28 @@ Entry = first UNSAT prefix t (rows 0..t-1 realizable). Solve times grow fast at 
   core mover's chains pass through f5 into the gadget. q6 (R_q6(21) = 5) then sees the gadget's changes, and the exact culprits at
   t 17 are {f5, q6}. This is an interaction of timing, not a fuel bound. Not proved.
 
+## 3. Helper sets other than the top movers on C10 (Lead 02:54Z choice (b)); Lemma C10-ISOLATION
+- Fact (DATA, exact; experiments/lower/l13/isol.py). In C10 (3ef36801) every mover other than f5 reaches f5 through fixed option
+  edges, and both of f5's options exit (−1). So the only inputs an f5 gadget can read are the members of G itself and the movers
+  that reach f5 only through G (their edges to G become free).
+- Single-helper sweep (sweep1.sh, pgad3; G = {h} for every helper mover h = 16..63, ascending prefixes; out/sweep1_C10_X11*.txt):
+  first UNSAT prefix 6: {18}; 7: {16, 17, 21, 30, 56, 59}; 9: {22, 23, 25, 27}; 11: {19, 32}; 13: {20, 24, 26};
+  14: {28, 33, 34, 39, 45}; 15: the other 27 (29, 31, 35-38, 40-44, 46-55, 57, 58, 60-63). No helper reaches row 15.
+  All 48 first UNSATs are DRUP VERIFIED (out/drup_k1.txt; CNF sha1 per line). Rewiring a cascade helper (16-27) costs rows,
+  because its base role in C10's oscillator is lost.
+- Pair sweep (sweep2.sh, pgad3; G = {h1, h2} for all 1,128 pairs of helper movers 16..63; prefix 17 only): 1,128 / 1,128 UNSAT
+  (CaDiCaL, max 4.5 s each, out/sweep2_C10_X11_P17.txt). DRUP of all 1,128: out/drup_pairs.txt (see the count at the end of §3).
+- Top sets k = 3, 4 (§1): first UNSAT 17 (k 3 DRUP VERIFIED; k 4 solver only, 2,407 s).
+- Lemma C10-ISOLATION (PROVED, lane, by DRUP-verified exhaustive SAT, once the pair DRUP count below is complete). Scope: C10's
+  wiring and ranks (3ef36801) fixed, except the options of f5 and of a helper set G. Those options take free targets from pgad3's
+  candidate lists (§0), with insertion ranks. Signs, helper gates, starts and states are free. Target core8 rows 0..17. Then:
+  (i) no G with |G| = 1 realizes rows 0..15; (ii) no G with |G| = 2 realizes rows 0..17; (iii) the top sets of size 3, 4 do not
+  realize rows 0..17. Rows 0..16 ARE realizable with |G| = 2 (frozen PG_C10_X11_k2_t16, §1). So on C10 the first infeasible row
+  is 17 for every helper set of size ≤ 2. Not claimed for |G| ≥ 3 outside the top sets, for other candidate rules, or for other bases.
+- Reading. (i) is also explained by PREF-FUEL when closure(f5) has one member (§2). (ii)-(iii) are not counting bounds. The binding
+  pair at 17 is f5 / q6 (culprits, §1). This is evidence that the f5 obstruction on C10 is structural: C10 routes every core chain
+  through f5, so any gadget that feeds f5 also feeds q6. It is not evidence about d(h) by itself (CONJECTURE OSC-ROOM″ unchanged).
+
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All statements are about
 the IDEAL model's step sequence (R104's definition) on 𝓛^R_d and core target rows. Not M3, not a gauntlet step-4 pass, and not a
