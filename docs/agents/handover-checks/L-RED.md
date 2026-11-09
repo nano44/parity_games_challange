@@ -1,34 +1,33 @@
-# Handover check: L-RED successor 63 (Opus 5.5, D1/D18/D14; LANE-RESTART step 3; written 2026-11-09T03:13Z by date -u)
-Every answer is measured from the repository (commands named), not recalled. Predecessor: successor 62, handover =
-notes/L-RED.md «Successor 62 HANDOVER» (l. 62) at l-red bfe7692e8.
+# Handover check: L-RED successor 64 (Opus 5.5, D1/D18/D14; LANE-RESTART step 3; written 2026-11-09T09:11Z by date -u)
+Every answer is measured from the repository (commands named), not recalled. Predecessor: successor 63, handover =
+notes/L-RED.md «Successor 63 HANDOVER» (l. 63) at l-red 4760ba267.
 
 ## 1. Branch, head, distance to trunk
 - Trap check run first: `git fetch --unshallow origin; git fetch origin claude/l-red claude/vibrant-johnson-nxvvxo;
-  git checkout claude/l-red; git merge --ff-only origin/claude/l-red` (local branch was 94 behind; fast-forwarded).
-- `git branch --show-current` = claude/l-red; `git rev-parse HEAD origin/claude/l-red` -> both bfe7692e836a971adcf66011db5e23b2730fd88f.
-- Trunk claude/vibrant-johnson-nxvvxo = a773c562b (committed 2026-11-09T01:59:41Z).
-  `git rev-list --left-right --count origin/claude/vibrant-johnson-nxvvxo...HEAD` -> 1089 108, i.e. 108 ahead / 1089 behind
+  git checkout claude/l-red; git merge --ff-only origin/claude/l-red` (local branch was 116 behind; fast-forwarded).
+- `git branch --show-current` = claude/l-red; `git rev-parse HEAD origin/claude/l-red` -> both 4760ba2675b6e8f6e8f856331e7107d4c9e580ed.
+- Trunk claude/vibrant-johnson-nxvvxo = 98e1c8bee (committed 2026-11-09T07:27:06Z).
+  `git rev-list --left-right --count origin/claude/vibrant-johnson-nxvvxo...HEAD` -> 1118 130, i.e. 130 ahead / 1118 behind
   (left = trunk-only); merge-base c2d1e88ee. Trunk not merged in (not needed for this lane's files).
 
 ## 2. Open work and the next step of each
 - Nothing running: new container (`pgrep -af "push.sh|climb|own.py"`: none); `git worktree list` = main only; scratchpad empty
-  (predecessor's lnew / si90 / mw archives lost; rebuild with git archive); tools/oink/build absent (scripts/setup_oink.sh before any Oink route).
-- Box R229 (after «go»):
-  1. ADVERSARY on L-SI 48 BOX 92 (claude/l-si d962efdb): Lemma GATE-LOW-NULL and CONJECTURE WAIT-CLOSED killer table K1-K9.
-     Next step: read docs/si/box92-closed.md at d962efdb; check GATE-LOW-NULL's premises / PRIV condition / case analysis line by line;
-     for each killer row K1-K9 check the cited statement is PROVED and applies to the class as stated; then counter-side attack on the
-     open rows K7 (non-PRIV gate) and K6 (lagging merged copy, h ≥ 4): add a PRIV / gate-class counter to the r228 census tools
-     (self228.py / split228.py) and climb for a K7 / K6 instance with C or R growing.
-  2. ADVERSARY on L-NEW 67 BOX 202 (Ξ-feedback number k; T3 ≤ (N + M)^O(k)?, k = 1 first): waits for the Lead's SHA.
-     Next step: read it; test on MW8_2 (k = 2) and k = 1 genomes; record k (seg228.py) for every frozen best.
-  3. OWN: a k = 1 genome with R or C growing in N + M. Next step: add a k = 1 constraint (min FVS of the Ξ-graph via seg228.py) to
-     mclimb228.py as a filter, climb ORDER=CT under k = 1 at caps 200 / 400; freeze bests; if bounded, report with frozen instances.
-- Open from predecessors: CONJECTURE RA-MULT(K) (L-SI) unbroken at maxm 2 beyond MW (MW itself kills RA-MULT); cap-scaling C = R ≈ (2/29)(N + M).
+  (predecessor's lnew / si / new archives lost; rebuild with git archive); tools/oink/build absent (scripts/setup_oink.sh before any Oink route).
+- Box R230 (after «go»):
+  1. COUNTER SIDE OF B-ONLY ON Γ3 (pads). Next step: rebuild the L-NEW g3 engine tree (git archive l-new fcba92fc, mult91.eng_g3 pattern;
+     fvs202 / gflip202 at fa17fdf6), write experiments/red/r230 census: for every Γ3 state of the r229 / r228 instances and climb bests, flag
+     a cycle carrying an e-vertex or a mover Λ at/above an e-vertex, split by exact-VJ-tie vs non-tie; then a climb (nclimb229 pattern)
+     scoring B-ONLY violations. Any violation: freeze (inst/ + sha1) and message the Lead at once. A B-ONLY-on-Γ3 proof from L-SI 50 (BOX 96)
+     preempts: attack premises by R-id, every case.
+  2. ADVERSARY on any above-linear point from L-COMP 16 (BOX 37) / L-NEW: waits for routing. Next step: re-measure on two engines
+     (cls229 / e93_229 / hgt229 + own.py / L-NEW fvs202), freeze, call genuine growth vs size artefact.
+  3. ADVERSARY on L-LOWER 13 BOX L14 sink-cascade lemma: waits for routing. Next step: check its «reaches none» acyclicity step.
+- Pending fix rounds to re-read when routed: L-SI 50 (P-N5-GATE G1-G6, R229-box94 Add. A), L-NEW 68 (P-N5-QN G1-G3, R229-box203 Add. B).
 
-## 3. docs/GAPS.md rows I own (trunk a773c562b)
+## 3. docs/GAPS.md rows I own (trunk 98e1c8bee)
 - G-NEST (major, «L-RED (attacks + proof attempts); L-ALG successor if any», open; l. 9).
 - L-RED attacks: GAP-A (blocker, open; l. 6), GAP-C (blocker, open; l. 7), G-STR (major, closed; l. 22), G-DOM (major, closed; l. 23).
-- R229 works against G-N5-TIME (major, owner «L-NEW (L-LIT T22; referees later)», open; l. 11) under D1/D18.
+- R230 works against G-N5-TIME (major, owner «L-NEW (L-LIT T22; referees later)», open; l. 11) under D1/D18.
 
 ## 4. Three owner rulings (verbatim; status from trunk docs/DECISIONS-INDEX.md)
 - D1 «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own,
@@ -39,6 +38,7 @@ notes/L-RED.md «Successor 62 HANDOVER» (l. 62) at l-red bfe7692e8.
 - D14 «You know it can also test prveiously not tested approaches, it can come up with it own as well» (active, index l. 22)
 
 ## 5. One trap that bit this lane, and the check
-- Committing while a push runs (successor 61, c482e0d8: an empty task-output file read as «push finished»). Harmless because push.sh
-  pushes only the verified SHA, but forbidden. Check: `pgrep -af "bash scripts/push.sh"` right before EVERY commit and every push.
-- Stale local branch at start (this session: 94 behind). Check: trap-check commands above, HEAD == origin/claude/l-red before work.
+- Stale local branch at start (this session: 116 behind). Check: trap-check commands above, HEAD == origin/claude/l-red before work.
+- Committing while a push runs (successor 61, c482e0d8). Check: `pgrep -af "bash scripts/push.sh"` right before EVERY commit and push.
+- Scope trap for R230: R123 B-ONLY is landed for IDEAL-CYC only; any Γ3 claim must not cite it. Check: every Γ3 statement in R230 names
+  its class (IDEAL-CYC vs Γ3) and its engine (eng_g3 vs IDEAL-CYC engine).
