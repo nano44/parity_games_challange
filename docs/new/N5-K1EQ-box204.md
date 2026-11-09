@@ -86,3 +86,8 @@ or e_g ∈ E(wt)), dfail (unit gate: D^tot(e_g) ≠ D^tot(wt(g))), bfail (unit (
   feedback cycle either fixed (M1) or toggling (M2). Kill side: a k = 1 family whose W-targets' e-sets rise super-polynomially often.
 - No packet from this box yet: FACE-TARGET and EQ are short consequences of P-N5-QN's premises; they can join P-N5-QN's fix round as a
   remark if the referees ask, or a later packet.
+
+### 3.3 Addendum (appended at park, date -u in the commit): the MWR8 climbs, final
+- From MWR8_2 (N 84), stopped at park: seed 32 best 34 flips at one gate (1,325 iterations; frozen inst/K1F34_n84.json, sha1 in
+  inst/SHA1SUMS; FACE-TARGET counters 0, out/k1eq204_K1F34.out), seed 31 best 33 (1,275 iterations); logs out/aclimb_mwr8_s31.log,
+  out/aclimb_mwr8_s32.log. With K1F21_n48 (21 at N 48): ≈ 0.4·N at both sizes. Two sizes, local climbs: nothing asymptotic.
