@@ -1,0 +1,2 @@
+0 CNT 1 REARM 0 tog [2, 2, 2, 1] N+M 882 cfg {"h": 4, "L": [2, 4, 5, 14], "a": 2, "b": 4, "c": 2, "cpos": -1, "wreal": 0, "merge": 0, "cexit": "C"}
+6 CNT 1 REARM 1 tog [4, 4, 1, 1] N+M 738 cfg {"h": 4, "L": [2, 4, 1, 14], "a": 1, "b": 4, "c": 2, "cpos": 1, "wreal": 0, "merge": 0, "cexit": "C"}
