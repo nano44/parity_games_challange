@@ -1,0 +1,11 @@
+gen37_n2.json N+M 87 MINE {'T': 19, 'Dmov': 11, 'Dface': 11, 'Dminface': 6, 'maxflip': 10} LNEW {'T': 19, 'Dmov': 11, 'Dface': 11, 'Dminface': 6, 'maxflip': 10} per-mover D^tot mismatches 0 MATCH
+gen37_n3.json N+M 116 MINE {'T': 25, 'Dmov': 15, 'Dface': 15, 'Dminface': 8, 'maxflip': 14} LNEW {'T': 25, 'Dmov': 15, 'Dface': 15, 'Dminface': 8, 'maxflip': 14} per-mover D^tot mismatches 0 MATCH
+gen37_n4.json N+M 145 MINE {'T': 31, 'Dmov': 19, 'Dface': 19, 'Dminface': 10, 'maxflip': 18} LNEW {'T': 31, 'Dmov': 19, 'Dface': 19, 'Dminface': 10, 'maxflip': 18} per-mover D^tot mismatches 0 MATCH
+gen37_n5.json N+M 174 MINE {'T': 37, 'Dmov': 23, 'Dface': 23, 'Dminface': 12, 'maxflip': 22} LNEW {'T': 37, 'Dmov': 23, 'Dface': 23, 'Dminface': 12, 'maxflip': 22} per-mover D^tot mismatches 0 MATCH
+gen37_n6.json N+M 203 MINE {'T': 43, 'Dmov': 27, 'Dface': 27, 'Dminface': 14, 'maxflip': 26} LNEW {'T': 43, 'Dmov': 27, 'Dface': 27, 'Dminface': 14, 'maxflip': 26} per-mover D^tot mismatches 0 MATCH
+gen37_n7.json N+M 232 MINE {'T': 49, 'Dmov': 31, 'Dface': 31, 'Dminface': 16, 'maxflip': 30} LNEW {'T': 49, 'Dmov': 31, 'Dface': 31, 'Dminface': 16, 'maxflip': 30} per-mover D^tot mismatches 0 MATCH
+gen37_n8.json N+M 261 MINE {'T': 55, 'Dmov': 35, 'Dface': 35, 'Dminface': 18, 'maxflip': 34} LNEW {'T': 55, 'Dmov': 35, 'Dface': 35, 'Dminface': 18, 'maxflip': 34} per-mover D^tot mismatches 0 MATCH
+K1F34_n84.json N+M 261 MINE {'T': 52, 'Dmov': 35, 'Dface': 35, 'Dminface': 18, 'maxflip': 34} LNEW {'T': 52, 'Dmov': 35, 'Dface': 35, 'Dminface': 18, 'maxflip': 34} per-mover D^tot mismatches 0 MATCH
+MWR4_2.json N+M 145 MINE {'T': 30, 'Dmov': 10, 'Dface': 10, 'Dminface': 10, 'maxflip': 9} LNEW {'T': 30, 'Dmov': 10, 'Dface': 10, 'Dminface': 10, 'maxflip': 9} per-mover D^tot mismatches 0 MATCH
+MWR8_2.json N+M 261 MINE {'T': 54, 'Dmov': 18, 'Dface': 18, 'Dminface': 18, 'maxflip': 17} LNEW {'T': 54, 'Dmov': 18, 'Dface': 18, 'Dminface': 18, 'maxflip': 17} per-mover D^tot mismatches 0 MATCH
+genomes 10 mismatching genomes 0

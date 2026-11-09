@@ -1,0 +1,8 @@
+rand1341.json N+M 16 MINE {'T': 1, 'Dmov': 2, 'Dface': 2, 'Dminface': 2, 'maxflip': 1} LNEW {'T': 1, 'Dmov': 2, 'Dface': 2, 'Dminface': 2, 'maxflip': 1} per-mover D^tot mismatches 0 MATCH
+rand1594.json N+M 10 MINE {'T': 5, 'Dmov': 5, 'Dface': 5, 'Dminface': 3, 'maxflip': 2} LNEW {'T': 5, 'Dmov': 5, 'Dface': 5, 'Dminface': 3, 'maxflip': 2} per-mover D^tot mismatches 0 MATCH
+rand1792.json N+M 8 MINE {'T': 4, 'Dmov': 4, 'Dface': 4, 'Dminface': 3, 'maxflip': 2} LNEW {'T': 4, 'Dmov': 4, 'Dface': 4, 'Dminface': 3, 'maxflip': 2} per-mover D^tot mismatches 0 MATCH
+rand351.json N+M 17 MINE {'T': 4, 'Dmov': 5, 'Dface': 5, 'Dminface': 5, 'maxflip': 2} LNEW {'T': 4, 'Dmov': 5, 'Dface': 5, 'Dminface': 5, 'maxflip': 2} per-mover D^tot mismatches 0 MATCH
+rand500.json N+M 8 MINE {'T': 2, 'Dmov': 3, 'Dface': 3, 'Dminface': 1, 'maxflip': 0} LNEW {'T': 2, 'Dmov': 3, 'Dface': 3, 'Dminface': 1, 'maxflip': 0} per-mover D^tot mismatches 0 MATCH
+rand703.json N+M 14 MINE {'T': 1, 'Dmov': 2, 'Dface': 2, 'Dminface': 2, 'maxflip': 1} LNEW {'T': 1, 'Dmov': 2, 'Dface': 2, 'Dminface': 2, 'maxflip': 1} per-mover D^tot mismatches 0 MATCH
+rand797.json N+M 18 MINE {'T': 2, 'Dmov': 3, 'Dface': 3, 'Dminface': 2, 'maxflip': 1} LNEW {'T': 2, 'Dmov': 3, 'Dface': 3, 'Dminface': 2, 'maxflip': 1} per-mover D^tot mismatches 0 MATCH
+genomes 7 mismatching genomes 0
