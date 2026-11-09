@@ -1,0 +1,13 @@
+instance N+M T k maxL lfail asc
+ST4_k1.json 18 0 1 2 0 3
+ST8_k1.json 34 0 1 2 0 7
+K1F21_n48.json 145 31 1 1 0 3
+MWR4_2.json 145 30 1 1 0 2
+MWR8_2.json 261 54 1 1 0 2
+K1C16_n400.json 400 51 1 1 0 3
+LC32_a13d9661.json 275 49 1 1 0 2
+MW8_2.json 261 55 2 2 0 2
+WC4_2.json 60 4 2 2 0 4
+WC16_2.json 216 4 2 2 0 16
+CT27_cap400.json 400 79 >=5,<=15 3 0 4
+NDb2_4.json 288 31 3 2 0 2
