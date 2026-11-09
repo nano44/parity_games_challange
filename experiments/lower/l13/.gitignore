@@ -1,2 +1,4 @@
 out/*_t*_dec.txt
 out/*.log
+out/sw_*
+out/pp_*
