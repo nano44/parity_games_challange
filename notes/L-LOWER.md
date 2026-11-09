@@ -1,5 +1,18 @@
 # L-LOWER notebook
 
+## Successor 13 (Opus 5.5): BOX L14, GO from the Lead 08:33Z 2026-11-09 (handover check 7a8ca8cc, score 5)
+### Resume point (09:0xZ 2026-11-09, date -u)
+- Item 1 written: docs/lower/L14-sink.md §0-§3. PROVED (lane): SINK-AVOID (acyclicity of the Ξ-graph of the rewiring; base
+  property A_B(x, G)); SINK-FLOOR (c = 1 with PREF-FUEL); KEY-DELAY and CAUSE (proofs written; DATA 0 violations, l14/cause.py);
+  C11-TIMING (h43 must move at step 13, o(20) held on rows 1..12, a pair 8..20 helper moves at 12 or 13). The c·j part stops at
+  the key channel (§3); CONJECTURE KEY-ROOM. Lead 08:33Z: CAUSE / KEY-DELAY count as lane lemmas only with written proofs (§2 has
+  them).
+- Item 2 (C12): ann3 from C11 (seed 12, 2,100 s, T 0.8; constraints «8+11+13+14+15:0-7», «11+13+14+15:8,9», «13+14+15:10,11»),
+  output experiments/lower/l14/run/C12_ann.txt (resumes from it), log C12_ann.log. Then rsolve.py → solved, freeze (rec/ + sha1),
+  global sink (isol), single-helper sweep (l13/sweep1.sh with pgad3, XS = the sink), DRUP (l13/pdrup.py, PGAD=pgad3.py).
+- Tools: experiments/lower/l14/ (ddb647db): rsolve.py (reproduces C11 solved c2e925f7), ann3.c, mincut.py, cause.py.
+  Build: gcc -O2 -o $SP/ann3 l14/ann3.c -lm; fenc, drup as in L13.
+
 ## Successor 12 HANDOVER (written 2026-11-09 06:3xZ, date -u; finalized at park; BOX L13 choices (b) and (a) done)
 ### DONE (claude/l-lower; product docs/lower/L13-prefix.md §0-§4, §9; tools experiments/lower/l13/)
 - 1b78759c handover check (score 5). Tools 3955c3e2 (pgad.py, scan.sh), 4011978d (transitivity fix, CHECK, prefcheck, pdrup).
