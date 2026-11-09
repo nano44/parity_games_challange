@@ -1,3 +1,4 @@
+Successor 64 (Opus 5.5, D1/D18/D14) started 2026-11-09 09:10Z (date -u); handover check 98d73defd (Lead 5/5); GO 09:27Z; R230 (R230-bonly3.md): B-ONLY3 SURVIVES, G1-G5; see «Successor 64».
 Successor 63 (Opus 5.5, D1/D18/D14) started 2026-11-09 03:12Z (date -u); handover check 8c69e76e (Lead 5/5); GO 03:33Z; R229 (R229-box92, -box202, -box93, -box203, -box94, -minh); HANDOVER 08:32Z (Lead park order 08:32Z); see «Successor 63 HANDOVER».
 Successor 62 (Opus 5.5, D1/D18/D14) started 2026-11-08 20:3xZ (date -u); handover check 25a47520 (Lead score 5); GO 21:01Z; R228 (R228-fw, -box199, -box91, -box200); HANDOVER ~01:5xZ, PARKED ~03:1xZ (Lead park order 02:43Z); see «Successor 62 HANDOVER».
 Successor 61 (Opus 5.5, D1/D18/D14) started 2026-11-08 15:2xZ (date -u); handover check 0670a4347 (Lead score 5); GO 15:52Z; R227 (R227-hold.md); see «Successor 61»; PARKED ~19:5xZ, see «Successor 61 HANDOVER».
@@ -3323,3 +3324,14 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
     times). Select pids with awk on exact argv fields: $2=="python3" && $3=="<script path>".
   - Speed: kl2fast runs at about 27k pivots/s at n 45-55. 4 cores, 16 GB; 4-5 jobs were fine this box.
   - date -u was behind my own sense of elapsed time all box: always stamp with date -u (the Lead flagged a "12:2xZ" stamp).
+
+## Successor 64 (Opus 5.5; from 2026-11-09 09:10Z, date -u) — R230
+- Trap check: local claude/l-red 116 behind; ff to 4760ba267. Handover check 98d73defd (VERIFY PASS), Lead 5/5, GO 09:27Z with item 1 =
+  attack L-SI 50 Lemma B-ONLY3 (l-si 6ee19b24, docs/si/box96-bonly3.md f90e872d; push landed ~10:05Z).
+- docs/red/R230-bonly3.md: B-ONLY3 SURVIVES (every case; 8/8 quotes verbatim; struct230.py 0 fails on 524 genomes); G1 [OPT] cite,
+  G2 post-fallback scope, G3 pad-face transport Λ(pe)=Λ(e), G4 «level-0 e» wording, G5 d96 run-dependent exception closure.
+- Census bonly3_230.py: in-frame 0 (19M pairs, 1,473 tie states, 7,453 std xi states), brute 0 diff, early non-std 0 (1,500 genomes).
+  Out of frame (post first fallback) B-ONLY3's conclusion FAILS: witness r229/inst/MWR4_2 (856d369b) states 32-33, Λ = c_W.
+- Tools: experiments/red/r230/ (bonly3_230.py, struct230.py); env LNEW = git archive l-new fcba92fc (experiments/new/box189 box190 box21
+  box191 experiments/new/*.py experiments/si/si.py experiments/harness) into the scratchpad.
+- Open: climb on [STD3] (early non-std) not run (targets R118 (k) / R125; Lead to route). Items 2, 3 wait for routing.
