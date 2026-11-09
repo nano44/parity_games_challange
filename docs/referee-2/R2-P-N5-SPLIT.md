@@ -80,3 +80,73 @@ box 5 = TARGET.md diff, line requirements, verdict table.
   - (iv) t − 1, t ∈ I, so Λ_(t−1)(v) = Λ_t(v) = w, and (PL) gives Λ_s(u) = w. The prefixes before u are equal, so A_(t−1) = A_t, and the
     symmetric differences of v and u are equal: the same top. Correct.
 - DATA (my engine, box 4): entfail, playfail, prefail, kindfail, hwfail, gtfail, trfail are 0 on 66,335 changes of the 28 pinned runs.
+
+## Re-derivation, §3-§4 (box 2)
+- Lemma REWIN, set-up. At t2 the split is u, and b = nx_t2(u) is its new successor, so a := nx_(t2−1)(u) ≠ b. If t2 = t1 + 1 then
+  nx_(t2−1)(u) = nx_t1(u) = b, which is impossible. So t1 < t2 − 1.
+- (a), u a mover. σ_t1(u) = b ≠ a = σ_(t2−1)(u), so a first s ∈ (t1, t2 − 1] with σ_s(u) ≠ σ_(s−1)(u) = b exists. u is never a cycle node
+  (F6), so F3 gives Ω_r(u) = ext(u, Ω_r(σ_r(u))) at every r. The chain:
+  - Ω_(t2−1)(u) ⊵ Ω_s(u) (F1);
+  - Ω_s(u) ▷ Ω_(s−1)(u) (STRICT);
+  - Ω_(s−1)(u) = ext(u, Ω_(s−1)(b)) ⊵ ext(u, Ω_t1(b)) (F1 at b, s − 1 ≥ t1; F4′ with u in no Π, CN2-3).
+  So ext(u, Ω_(t2−1)(a)) ▷ ext(u, Ω_t1(b)). If Ω_(t2−1)(a) ⊴ Ω_t1(b), F4′ would give ext ⊴ ext. ⊴ is total, so Ω_(t2−1)(a) ▷ Ω_t1(b).
+  Correct.
+- (a), u a gate. u's two successors are its face pads, so a is the other face. At t1 Odd plays b, so Ω_t1(b) ◁ Ω_t1(a) (LOC-GATE3,
+  NO-TIE3). F1 at a gives Ω_(t2−1)(a) ⊵ Ω_t1(a). Correct.
+- (b) At t2, u moves from a to b. Mover: F5. Gate: Odd played a at t2 − 1, so a is the strictly smaller face. Then (a). Correct.
+- (c)
+  - Λ_t1(b) = Λ_(t2−1)(a) = w, by (PL) on v's plays at t1 and t2 − 1 (u lies on both, by §2 at t1 and at t2).
+  - y ∈ E_t1(b): y ∈ E_t1(v) ∖ E_(t1−1)(v). The prefix A before u is common to t1 − 1 and t1, so y ∈ E_t1(u) = E_t1(b) (u is not an
+    e-vertex). y ∉ E_(t2−1)(a), because y ∉ E_(t2−1)(v) ⊇ E_(t2−1)(a).
+  - Suppose no U_y-letter lies in E_t1(b) Δ E_(t2−1)(a). Then y is its most relevant e-letter. b and a are non-core pads with node w,
+    so by (LEX-Λ) (W-1: valid here) z = y. y is even and in Π_t1(b), so Ω_t1(b) ▷ Ω_(t2−1)(a), against (a). So the most relevant
+    difference z is in U_y, and by (a) it lies in E_(t2−1)(a). Restricted to U_y, the most relevant difference is still z. Correct.
+  - The top at t2 is y, so nothing in U_y changes at v: E_(t2−1)(v) ∩ U_y = E_t2(v) ∩ U_y. Both sides split as A′ ⊔ (successor part)
+    with the same A′ (§2 (iv) at t2). Cancelling A′ ∩ U_y gives E_(t2−1)(a) ∩ U_y = E_t2(b) ∩ U_y. Correct.
+- Corollary REWIN-COUNT.
+  - Λ(b) = w at both ends of a re-win. Λ(b) only rises in reward (F1, F2), so it is w on the whole span, inside one Λ-interval J_b.
+  - On J_b, E-MON3 makes E(b) lex-nondecreasing. Restriction to U_y keeps that: if the most relevant difference is outside U_y, the
+    restrictions are equal. So, with (c), R_ub ≤ Dhi_y(b, J_b) − 1.
+  - Each of the c_y − 1 consecutive couples is either one of the W couples with different pairs or a re-win. Correct.
+- Lemma PAIR-SPLIT. I re-read §3's proof with (t1, t2) := (t, t′) and with y-tops of y strictly between t and t′ allowed.
+  - Each step uses only: nx_t(u) = b ≠ nx_(t′−1)(u) (this gives s in the mover case and the faces in the gate case); y ∈ E_t(b); y ∉
+    E_(t′−1)(a); and the top y at t′.
+  - None of these needs consecutiveness. A y-top at t″ ∈ (t, t′) through another pair changes nothing used. (a′), (b′), (c′) are
+    correct as stated.
+  - (b′)'s second half, Ω_(t′−1)(b) ▷ Ω_t(b), is (b)'s chain Ω_(t′−1)(b) ▷ Ω_(t′−1)(a) ▷ Ω_t(b). Correct.
+- Corollary SPLIT-COUNT.
+  - Each y-top has one split pair (§2). The tops of one pair lie in one J_b (as in REWIN-COUNT). By (c′) their values E(b) ∩ U_y strictly
+    increase, so they are pairwise distinct values from J_b: at most Dhi_y(b, J_b) tops per pair.
+  - |SPL| ≤ 3M:
+    - u is a mover or a gate (§2 (i)). Its successors in Γ3 are pads ([G3]): m_(x,k), one per option (M in all), and pe_g, pβ_g (2M in
+      all).
+    - Each such pad has a single in-edge, so b determines u.
+  - c_y ≤ Σ_pairs Dhi_y(b, J_b) ≤ 3M · max Dhi. Correct.
+  - Two pairs with the same b would have the same u, so «Σ over pairs» = «Σ over b». J_b is well defined per pair.
+- Lemma RW-SHAPE (and RW-SHAPE*), t < t′ same-pair tops (any).
+  - Decomposition.
+    - y ∈ Π_s(b) at s = t (shown in (c)) and at s = t′ (the same argument at t′).
+    - y is an e-vertex with one successor, frozen. m = wt(y) is a mover: m ≠ c_W, else the node would be c_W, above y.
+    - By (PL) on b's play, E_s(b) = (letters before y) ⊔ {y} ⊔ E_s(m). Intersect with U_y (y ∉ U_y). Correct.
+  - (i) Λ(m) = w at t and at t′ (m is on v's play), so Λ(m) = w on [t, t′] (F1, F2), and S is lex-nondecreasing there (E-MON3,
+    restricted). If S_t = S_t′, (c′) says B_t′ ⊔ S >lex B_t ⊔ S. The most relevant difference lies in B_t′ Δ B_t, on the larger side,
+    so B_t′ ≠ ∅. Correct.
+  - (ii) Sandwich. The three values all have node w:
+    - Ω_(t′−1)(a) ◁ Ω_(t′−1)(b) ((b′));
+    - Ω_(t′−1)(b) ⊴ Ω_t′(b) (F1);
+    - Λ_(t′−1)(b) = w, because t ≤ t′ − 1 ≤ t′.
+    For non-core values with one node, (LEX-Λ) makes «value ↦ E ∩ U_y» weakly monotone. The two ends agree on U_y ((c)'s last step at t′).
+    So the middle agrees too: E_(t′−1)(b) ∩ U_y = E_t′(b) ∩ U_y.
+  - Take f ∈ B_t′. Then f ∈ E_(t′−1)(a) ∩ E_(t′−1)(b).
+    - The plays from a and from b at t′ − 1 both pass f and coincide from f on.
+    - y is an e-vertex more relevant than w. So if y were on the play from a it would be in Π, and it is not (y ∉ E_(t′−1)(a)). So the
+      common suffix from f avoids y.
+  - At t′, y follows f on b's play. So the plays from f at t′ − 1 and at t′ differ. f has one successor, so the first departure is
+    strictly after f, and it comes before y. That departure is a mover or gate whose choice changed (§2 (i)). Correct.
+- Corollary RW-1. b's play at t′ is the part of v's play after u. v's play is simple up to y, so u does not recur before y, and the
+  departure from (ii) is a second vertex before y on v's play whose successor changes. A single-split t′-step therefore forces
+  S_t ≠ S_t′. Correct.
+- DATA (my engine, box 4): every same-pair couple (47,758 on the 28 pinned runs; 7,880 of them re-wins) has abfail, psa, psb, psc 0
+  (rw_psa, rw_psb, rw_psc 0 on the re-wins). lamb, lamm, spfail (with Dhi over ALL of J_b), spl3M, rcfail, decfail, rws1, rws2, rw1fail
+  are 0. Seq (couples with S_t = S_t′) is 31, all on RWX_n95, all multi-split. That is exactly where (i) and (ii) are not vacuous, and
+  there rws1 = rws2 = 0.
