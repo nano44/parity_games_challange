@@ -93,11 +93,20 @@ def census(G, tag):
         ms = nm
     res["T_how"] = len(seen) - 1
     if XI:
-        gp = pg.parse(topg(gm)); st, fb, _ = n5v.run(gp, "xi", cap=20000); res["xi_iter"] = len(st) - 1; res["xi_fb"] = fb
-        movers = set(range(N)); mpad = {V[("m", q)] for q in O}
+        gp = pg.parse(topg(gm)); E1, Ed1 = n5v.Engine(gp), n5v.Engine(n5v.dual(gp))
+        s, t = n5v.n5x.start_pair(gp, E1, Ed1, None); st = [(tuple(s), tuple(t))]; fbs = []
+        while len(st) <= 20000:
+            r = n5v.step(gp, E1, Ed1, s, t, "xi")
+            if r is None: break
+            s, t, _, _, fb = r; st.append((tuple(s), tuple(t))); fbs.append(fb)
+        ffb = next((i + 1 for i, f in enumerate(fbs) if f), len(st))   # index of the state reached by the first fallback
+        res["xi_iter"] = len(st) - 1; res["xi_fb"] = sum(fbs); res["xi_ffb"] = ffb
+        movers = set(range(N)); mpad = {V[("m", q)] for q in O}; early = 0
         for i, (s, t) in enumerate(st):
             std = all(s[v] == base[v] for v in range(n) if gm.owner[v] == 0 and v not in movers) and all(s[x] in mpad for x in range(N))
+            if not std and i < ffb: early += 1                         # [STD3] failure before the first fallback
             score(list(s), "XI-STD" if std else "XI-NSTD", ("xi", i))
+        res["early_nstd"] = dict(states=early)
     print(tag, "N", N, "M", len(O), json.dumps(res, separators=(",", ":")), flush=True)
     for f in first: print("VIOLATION", tag, f, flush=True)
     return res
@@ -125,7 +134,7 @@ if __name__ == "__main__":
         for i in range(int(sys.argv[3])):
             d = rng.randint(1, 4); w = rng.randint(1, 3); G = rgen(rng, d, w, rng.choice([2, 3]))
             r = census(G, f"rand{sys.argv[2]}_{i}"); add(r)
-            if r["FRAME-X"]["viol"] + r["HOWARD"]["viol"] + r["XI-STD"]["viol"] + r["brute"]["diff"] or r["XI-NSTD"]["viol"]:
+            if r["FRAME-X"]["viol"] + r["HOWARD"]["viol"] + r["XI-STD"]["viol"] + r["brute"]["diff"] + r.get("early_nstd", {}).get("states", 0):
                 os.makedirs(outdir, exist_ok=True); json.dump(G, open(os.path.join(outdir, f"b3_{sys.argv[2]}_{i}.json"), "w"))
     else:
         for f in sys.argv[1:]:
