@@ -1,6 +1,10 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 23), 2026-11-09 00:52Z (date -u)
+- C136 CLOSED on #7176 (42536997220, success, ac9ab013; RESULTS/GAPS equal to aaf52291's). NEXT: C137 Add. 1 on the R123 landing (Lead is
+  merging claude/checker 7959b57f, then landing).
+
 ## Resume point (successor 23), 2026-11-08 23:45Z (date -u)
 - Handover check ae61667b: 5/5, «go» from the Lead at 23:46Z. CI #7155 and #7164 were both TIMEOUTS (timeout-minutes 60), not supersession;
   correction recorded in C136. C136 closes only on the green run of the Lead's «timeout-minutes: 120» commit (check RESULTS/GAPS equal
