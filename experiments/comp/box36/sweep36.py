@@ -6,12 +6,13 @@ Per k (unit: genome; scope: N5'-xi from S3 on Gamma3 up to the first fallback, [
   maxkfx = max of flips(g) - 2(lamch(g) + 1) (K1-FLIP(2) margin; > 0 = violation; + argmax), maxflip, maxT3, c2fail = #genomes with
   some gate violating K1-FLIP(2), hist of (flips, lamch) at the ratio-argmax gate of each genome.
 Checkpoint: one JSON line per finished (lev, D, xts) block in OUT.ck; a restart skips finished blocks. SHARD k/K takes blocks i = k mod K.
-Usage: sweep36.py N M k/K OUT"""
+Usage: [ENGINE=c] [ALLK=1 FAST36_BINDIR=bin/next] sweep36.py N M k/K OUT"""
 import sys, os, json, time, collections
 H = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, H)
 import gen36
 N, M = int(sys.argv[1]), int(sys.argv[2]); sk, sK = map(int, sys.argv[3].split("/")); OUT = sys.argv[4]
 ENGINE = os.environ.get("ENGINE", "py")
+ALLK = os.environ.get("ALLK") == "1"     # item 3: run k = 0 blocks too (C counter needs every genome); needs ENGINE=c, FAST36_BINDIR=bin/next
 if ENGINE == "py":
     import own36
     def run_block(lev, D, xts):
@@ -63,14 +64,14 @@ if __name__ == "__main__":
         if i in done: d = done[i]
         else:
             k = gen36.xi_k(N, D, xts)
-            if k == 0: d = dict(i=i, k=0, n=gen36.blocksize(D, M))
+            if k == 0 and not ALLK: d = dict(i=i, k=0, n=gen36.blocksize(D, M))
             else:
                 if ENGINE == "py": B = {}; merge(B, k, run_block(lev, D, xts), list(lev), list(D), list(xts)); stt = B.get(str(k), new_stats())
                 else: stt = run_block(lev, D, xts)
                 d = dict(i=i, k=k, n=gen36.blocksize(D, M), st=stt)
             d.update(lev=list(lev), D=list(D), xts=list(xts)); f.write(json.dumps(d) + "\n"); f.flush()
             print(f"block {i} k {d['k']} n {d['n']} {time.time() - t0:.0f}s", flush=True)
-        if d["k"] == 0: k0 += d["n"]; continue
+        if d["k"] == 0 and "st" not in d: k0 += d["n"]; continue
         combine(S, d["k"], d["st"])
     summ = dict(N=N, M=M, shard=f"{sk}/{sK}", engine=ENGINE, k0_genomes_not_run=k0, per_k=S)
     json.dump(summ, open(OUT, "w"), indent=1)

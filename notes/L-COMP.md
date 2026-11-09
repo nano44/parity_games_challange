@@ -18,9 +18,12 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 ### Results so far
 - (b) MWR4_2/8_2/16_2 (l-red 406ef2fd), own36 (third engine): T3 30/54/102, C 5/9/17, R 5/9/17, F 13/25/49, maxflip 9/17/33 at gate (qz, 0)
   with lamch 0, kfx 7/15/31, k 1 = L-RED R229 §2 on every column (out/mwr_own36.out); fast36 equal on T3/flips/lamch.
-- (c) exhaustive table: out/table36_part1.jsonl (N + M <= 6; max ratio <= 1 at every (N, M, k); maxflip 2 at N2M4 only with lamch >= 1).
-- RUNNING: N1M5 (73.7M) and N3M4 (56.6M) sweeps, ENGINE=c, resumable from out/sweep/N1M5.json.ck, N3M4.json.ck (relaunch the same line).
-- NEXT: N4M4 (46M); then item 3 (C >= 2 frontier) needs a C counter for C in fast36 (not written yet).
+- (c) exhaustive table: out/table36_part1.jsonl + part2 (all k >= 1 genomes of N1M1-5, N2M2-4, N3M3-4, N4M4; N + M <= 8): max ratio
+  <= 1 at every (N, M, k), K1-FLIP(2) violations 0, maxflip 2 (N2M4 only, lamch >= 1). N = M has T3 0 (one option per mover).
+- Item 3: fast36 C counter (bin/next build; cval36.py: 0 mismatches vs own34 C/T3 on 1,075 genomes incl. 71 frontier C 2-12, MWR C 17).
+  ALLK sweeps (every block, k = 0 too) out/csweep: N2M3 maxC 1, N3M3 maxC 0 (= BOX 35), N1M4 maxC 0 (ctable36.py).
+  RUNNING (05:0xZ): csweep N1M5 and N3M4 (ALLK=1 ENGINE=c FAST36_BINDIR=bin/next sweep36.py N M 0/1 out/csweep/N<N>M<M>.json; resumable).
+- NEXT: ask Lead about (2,5) (4.48e9 genomes, ~25 CPU-h, 1,944 blocks resumable). bin/next -> bin after the csweeps (same flips code).
 
 ## HANDOVER -- successor 14 (L-COMP 14, Opus 5.5) PARKS 2026-11-09 03:29Z by date -u (Lead 02:14Z: BOX 35 last before park). NOTHING RUNNING.
 ### Where things are (all DATA; scope of every number: N5'-xi from S3 on Gamma3 up to the first fallback, unit = genome unless stated)

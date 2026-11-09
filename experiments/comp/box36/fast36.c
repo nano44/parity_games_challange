@@ -263,7 +263,11 @@ static void build(const Genome *G, Game *g) {
 }
 
 /* ---------------- run (own34.run) + census (own36) ---------------- */
-typedef struct { int T3, fb, capped, flips[MMAX], lamch[MMAX]; } Res;
+typedef struct { int T3, fb, capped, C, flips[MMAX], lamch[MMAX]; } Res;
+/* C (own34.counters 'C', box 198 §1): for every vertex v and maximal interval of states with Lambda_t(v) constant, c_y = #changes of
+   E_t(v) = e-vertices of P_t(v) whose top (most relevant vertex of the symmetric difference) is y; C = max c_y over (v, interval, y). */
+static int *ccnt = NULL, ccap = 0, ej[NMAX];
+static BS emask;
 static int CAP = 20000;
 static Val vs[NMAX], vt[NMAX], Wst[NMAX], prev_vs[NMAX], tmpv[NMAX];
 static void run(const Genome *Gn, Res *R) {
@@ -272,6 +276,10 @@ static void run(const Genome *Gn, Res *R) {
     int sigma[NMAX], tau[NMAX], sig2[NMAX], tau2[NMAX], sbar[NMAX], prev_sbar[NMAX], ch[NMAX], dummy[NMAX];
     initial_best_reward(&g, sigma); initial_best_reward(&d, tau);
     for (int q = 0; q < M; q++) { R->flips[q] = 0; R->lamch[q] = 0; }
+    R->C = 0; bz(&emask);
+    for (int q = 0; q < M; q++) { bset(&emask, rk[Ve[q]]); ej[rk[Ve[q]]] = q; }
+    if (ccap < n * M) { ccap = n * M; ccnt = realloc(ccnt, sizeof(int) * ccap); }
+    memset(ccnt, 0, sizeof(int) * n * M);
     int it = 0; R->capped = 0;
     static BS A[NMAX], Is[NMAX], It[NMAX];
     for (;;) {
@@ -281,6 +289,13 @@ static void run(const Genome *Gn, Res *R) {
             int gv = Vg[q], pe = Vpe[q], pb = VpB[q];
             R->flips[q] += prev_sbar[gv] != sbar[gv];
             R->lamch[q] += (prev_vs[pe].L != vs[pe].L) || (prev_vs[pb].L != vs[pb].L);
+        }
+        if (it > 0) for (int v = 0; v < n; v++) {
+            if (prev_vs[v].L != vs[v].L) { memset(ccnt + v * M, 0, sizeof(int) * M); continue; }
+            BS a = band(prev_vs[v].P, emask), b = band(vs[v].P, emask);
+            if (beq(&a, &b)) continue;
+            BS x = bxor(a, b); int y = bhi(&x), c = ++ccnt[v * M + ej[y]];
+            if (c > R->C) R->C = c;
         }
         memcpy(prev_vs, vs, sizeof(Val) * n); memcpy(prev_sbar, sbar, sizeof(int) * n);
         int anyI = 0, anyT = 0;
@@ -364,7 +379,7 @@ int main(int argc, char **argv) {
     if (getenv("FAST36_CTRL")) CTRL = atoi(getenv("FAST36_CTRL"));
     if (argc >= 2 && !strcmp(argv[1], "one")) {
         Genome G; read_one(&G); Res R; run(&G, &R);
-        printf("T3 %d fb %d capped %d\n", R.T3, R.fb, R.capped);
+        printf("T3 %d fb %d capped %d C %d\n", R.T3, R.fb, R.capped, R.C);
         for (int q = 0; q < G.M; q++) printf("gate %d %d %d %d\n", G.own[q], G.kof[q], R.flips[q], R.lamch[q]);
         return 0;
     }
@@ -384,7 +399,7 @@ int main(int argc, char **argv) {
         int rA = -1, rL = 0; /* maxratio = rA / (rL + 1); -1 initial */
         int ra_inner[4][MMAX], ra_gate = 0, ra_f = 0, ra_l = 0, ra_T = 0, ka_inner[4][MMAX], ka_gate = 0, ka_f = 0, ka_l = 0, ka_T = 0;
         static long hist[512][512]; memset(hist, 0, sizeof hist); int hmaxf = 0, hmaxl = 0;
-        int ncap = 0;
+        int ncap = 0, maxC = -1; long nC2 = 0, Chist[64] = {0}; int ca_inner[4][MMAX], ca_T = 0;
         for (int i = 0; i < M; i++) gate[i] = i;
         do {
             for (int i = 0; i < M; i++) br[i] = i;
@@ -414,6 +429,8 @@ int main(int argc, char **argv) {
                             havekfx = 1; maxkfx = kfx; ka_gate = ak; ka_f = kf; ka_l = kl; ka_T = R.T3;
                             memcpy(ka_inner[0], gate, sizeof gate); memcpy(ka_inner[1], br, sizeof br); memcpy(ka_inner[2], bp, sizeof bp); memcpy(ka_inner[3], st, sizeof st);
                         }
+                        if (R.C > maxC) { maxC = R.C; ca_T = R.T3; memcpy(ca_inner[0], gate, sizeof gate); memcpy(ca_inner[1], br, sizeof br); memcpy(ca_inner[2], bp, sizeof bp); memcpy(ca_inner[3], st, sizeof st); }
+                        nC2 += R.C >= 2; Chist[R.C < 63 ? R.C : 63]++;
                         if (mf > maxflip) maxflip = mf;
                         if (R.T3 > maxT3) maxT3 = R.T3;
                         c2fail += kfx > 0;
@@ -432,6 +449,11 @@ int main(int argc, char **argv) {
         printf("\"maxkfx\": %d, \"kfx_arg\": {\"inner\": [", maxkfx);
         pr_list(ka_inner[0], M); printf(", "); pr_list(ka_inner[1], M); printf(", "); pr_list(ka_inner[2], M); printf(", "); pr_list(ka_inner[3], N);
         printf("], \"gate\": [%d, %d], \"flips\": %d, \"lamch\": %d, \"T3\": %d}, ", G.own[ka_gate], G.kof[ka_gate], ka_f, ka_l, ka_T);
+        printf("\"maxC\": %d, \"nC2\": %ld, \"C_arg\": {\"inner\": [", maxC, nC2);
+        pr_list(ca_inner[0], M); printf(", "); pr_list(ca_inner[1], M); printf(", "); pr_list(ca_inner[2], M); printf(", "); pr_list(ca_inner[3], N);
+        printf("], \"T3\": %d}, \"Chist\": {", ca_T);
+        { int fz = 1; for (int c = 0; c < 64; c++) if (Chist[c]) { printf(fz ? "\"%d\": %ld" : ", \"%d\": %ld", c, Chist[c]); fz = 0; } }
+        printf("}, ");
         printf("\"maxflip\": %d, \"maxT3\": %d, \"c2fail\": %ld, \"capped\": %d, \"hist\": {", maxflip, maxT3, c2fail, ncap);
         int first = 1;
         for (int f = 0; f <= hmaxf; f++) for (int l = 0; l <= hmaxl; l++) if (hist[f][l]) { printf(first ? "\"%d,%d\": %ld" : ", \"%d,%d\": %ld", f, l, hist[f][l]); first = 0; }

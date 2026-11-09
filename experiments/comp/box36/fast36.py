@@ -28,7 +28,7 @@ def one(G, noelev=False):
 
 
 def run_block(N, lev, D, xts, M):
-    exe = os.path.join(H, "bin", "fast36_w1")
+    exe = os.path.join(H, os.environ.get("FAST36_BINDIR", "bin"), "fast36_w1")
     args = [exe, "block", str(N), str(M)] + [str(a) for a in lev] + [str(a) for a in D] + [str(a) for a in xts]
     d = json.loads(subprocess.run(args, capture_output=True, text=True, check=True).stdout)
     assert d.pop("capped") == 0, "capped run in block"
