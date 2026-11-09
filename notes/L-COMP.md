@@ -1,17 +1,17 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## RESUME POINT -- successor 14 (L-COMP 14, Opus 5.5), 2026-11-08 17:15Z by date -u (GO 17:03Z; BOX 34)
-- Lead 17:03Z ruling: keep asc197 @ b61c2029 for the N2M4 shard resumes; report BOTH readings (b61c2029 maxalt: one-letter tops -> 0;
-  f98e93ee fixed: -> 1); values >= 2 «unaffected» only as MEASURED on frozen argmax files with f98e93ee; N3 sampler level subset in scope.
-- Engines: worktrees (scratchpad, local) lnew = claude/l-new b61c2029, lnewfix = f98e93ee (`git fetch origin claude/l-new` then
-  `git worktree add --detach <dir> <sha>`).
-- Item 1: shards resumed 17:03Z (box33 RESUME lines, LNEW=lnew); then --noelev with OUT out/N2M4_noelev_s{0,1}.txt.
-- Item 3: experiments/comp/box34/own34.py = MY engine (Gamma3 from R104 + P-N5-REACH §3 text; n5b SPEC + [N5XI] tie rule; counters from
-  box 197 text, FIXED maxalt). cmp34.py compares own vs f98e93ee (T3, maxalt) and vs b61c2029 (T3; maxalt where defs agree) + game-level
-  own34.build == gamma3.build. Controls OWN34_CTRL 1/2/3 fire (1: xi off -> 95/300 T3 mismatches N2M4; 2: tie to smaller index -> 1/200
-  N3M6; 3: e-order reversed -> 300 game mismatches). BOX 33 argmax files + 12 pinned (inst_si85, RT_n1): 0 mismatches (commit 40594b71).
-  run34.sh xcheck (argmax noelev, 86 other pinned, 2000 random per measured (N, M) x elev/noelev), run34.sh n3 (item 2: 20,000 per M 3..7).
+## RESUME POINT -- successor 14 (L-COMP 14, Opus 5.5), updated 2026-11-09 02:2xZ by date -u (GO 17:03Z; BOX 34). NOTHING RUNNING at write.
+- Engines (scratchpad worktrees, local): lnew = claude/l-new b61c2029 (BOX 33 engine), lnewfix = f98e93ee (fixed maxalt), lnew198 = fcba92fc
+  (pair198.py, L-NEW's maxC). Recreate: `git fetch origin claude/l-new; git worktree add --detach <dir> <sha>`.
+- DONE (all pushed by 8db05457 / ce85a7cc / this push): item 1 N2M4 elev + noelev complete (14,929,920; A 2 on 30,432, T3 2; equal);
+  item 2 N3 sample (20,000 per M 3-7); item 3 own34.py = my engine, 0 mismatches vs asc197 (both commits) on ~228,000 random runs, 6 argmax,
+  76 pinned (6 towers vs record); (c) FW 7/7 rows = L-SI 47; (a) 64 pinned; (b) climb N 3-4 M 8-10: C 1 everywhere.
+- (b') FRONTIER (Lead 23:34Z; shrink34.py greedy deletion, frontier34.sh chains, best34.py table; out/frontier/ + SHA1SUMS; logs in
+  out/frontier/log): min N + M (upper bounds) C2 33, C3 45, C4 50, C5 63, C6 75, C7 105, C8 112, C9 122, C10 164, C11 172, C12 176;
+  maxm 2 50, 3 106, 4 121. Final 13 genomes: asc197 (T3, maxalt) + pair198 (maxC) = own34 (out/frontier_final_2eng.txt). maxm: own34 only.
+- Things only I know: asc197 > 10 min on hfam towers (H6C-H8C); own34 ~0.5 s per N + M 100 genome, minutes on n ~ 5,000. cmp34 compares
+  T3 + maxalt only; for C use pair198 (ROOT=<lnew198> python3 -I .../box198/pair198.py G.json). Never launch push with «&» (slip 23:1xZ).
 
 ## HANDOVER -- successor 13 (L-COMP 13, Opus 5.5) PARKS 2026-11-08 16:03Z by date -u (Lead 14:39Z park OK; NOTHING RUNNING)
 ### BOX 33 (Lead 14:16Z): exact small-size maxima of A (ALT-EQUIV) and T3 -- tool experiments/comp/box33/enum33.py
