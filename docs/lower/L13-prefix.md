@@ -93,6 +93,26 @@ Entry = first UNSAT prefix t (rows 0..t-1 realizable). Solve times grow fast at 
   pair at 17 is f5 / q6 (culprits, §1). This is evidence that the f5 obstruction on C10 is structural: C10 routes every core chain
   through f5, so any gadget that feeds f5 also feeds q6. It is not evidence about d(h) by itself (CONJECTURE OSC-ROOM″ unchanged).
 
+## 4. Choice (a): a base whose core chains do not all pass through f5 — C11 (Lead 05:18Z)
+- Base: C11 = experiments/lower/l10/rec/L10_C11_osc2_final_solved.txt, sha1 c2e925f724a6baba63528bbb864064e3c2328c26 (L10 §3d). It is C10's
+  oscillator run with both order cuts, «pairs 0-5 reach none of 13, 14, 15» and «pairs 0-4 reach none of 11, 13, 14, 15».
+- Reach (DATA, isol.py): 38 movers do not reach f5 (pairs 0-4 and 28 helpers), so an f5 gadget has real inputs (R0 non-empty). f5's
+  own options read 1 and 44. q6 still reaches f5. q4 (8) is now the global sink: only movers 1 and 43 avoid it, and q4's two options
+  point exactly to them. Fixed-rank base (no gadget): first UNSAT 7, as for every base.
+- PREF-FUEL data on C11's core gates: R_q4(21) = 1 (the one change is between the free pre-states 12 and 13, so closure(q4) must
+  change at step 12 → 13); R_f6(21) = 5.
+- Results (first UNSAT prefix; DATA, exact; pgad3):
+  | XS | G | result |
+  | --- | --- | --- |
+  | 11 | top k 1, 2 | 14, 14 (culprit at k 1, t 14: {8} = q4 alone) |
+  | 11 | every single helper h = 16..63 (48) | UNSAT at 14 for all 48 (sweep at prefix 14 only; out/sweep1_C11_X11_P14.txt); DRUP: §4 end |
+  | 11 | every pair (1,128) | at prefix 14: see out/sweep2_C11_X11_P14.txt; count at §4 end |
+  | 8, 11 (q4 + f5) | top k 1, 2 | k 1: 14 (372 s); k 2: §4 end |
+  Partial ascending sweep (stopped as too slow; out/sweep1_C11_X11_{a,b}.txt): first UNSAT 14 for 16, 41, 42, 44, 45; 11 for 40, 43.
+- Reading. The C11 cut removes the f5 / q6 interaction, but the first infeasible row moves DOWN, from 17 (C10) to 14, and the
+  culprit moves one level down, to q4. This is the recursion L10 §3d described in the search data, now on exact instances: cutting
+  the loop at level j (f5 no longer a sink) creates a sink at level j − 1 (q4), and the sink fails at its first required change.
+
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All statements are about
 the IDEAL model's step sequence (R104's definition) on 𝓛^R_d and core target rows. Not M3, not a gauntlet step-4 pass, and not a
