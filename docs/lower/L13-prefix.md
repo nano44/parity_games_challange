@@ -81,9 +81,9 @@ Entry = first UNSAT prefix t (rows 0..t-1 realizable). Solve times grow fast at 
   All 48 first UNSATs are DRUP VERIFIED (out/drup_k1.txt; CNF sha1 per line). Rewiring a cascade helper (16-27) costs rows,
   because its base role in C10's oscillator is lost.
 - Pair sweep (sweep2.sh, pgad3; G = {h1, h2} for all 1,128 pairs of helper movers 16..63; prefix 17 only): 1,128 / 1,128 UNSAT
-  (CaDiCaL, max 4.5 s each, out/sweep2_C10_X11_P17.txt). DRUP of all 1,128: out/drup_pairs.txt (see the count at the end of §3).
+  (CaDiCaL, max 4.5 s each, out/sweep2_C10_X11_P17.txt). All 1,128 DRUP VERIFIED (out/drup_pairs.txt, one line per pair with CNF sha1).
 - Top sets k = 3, 4 (§1): first UNSAT 17 (k 3 DRUP VERIFIED; k 4 solver only, 2,407 s).
-- Lemma C10-ISOLATION (PROVED, lane, by DRUP-verified exhaustive SAT, once the pair DRUP count below is complete). Scope: C10's
+- Lemma C10-ISOLATION (PROVED, lane, for (i)-(ii) and (iii) at k 3: DRUP-verified exhaustive SAT; (iii) at k 4 is solver only). Scope: C10's
   wiring and ranks (3ef36801) fixed, except the options of f5 and of a helper set G. Those options take free targets from pgad3's
   candidate lists (§0), with insertion ranks. Signs, helper gates, starts and states are free. Target core8 rows 0..17. Then:
   (i) no G with |G| = 1 realizes rows 0..15; (ii) no G with |G| = 2 realizes rows 0..17; (iii) the top sets of size 3, 4 do not

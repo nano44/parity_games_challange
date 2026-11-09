@@ -15,9 +15,11 @@
 - Results (first UNSAT prefix t; base without gadget: 7; target core8; G = top k movers 64-k..63; DATA, exact SAT):
   C10 X11 (v2): k 1: 15, k 2: 17, k 3: 17, k 4: 17 (solves 0 s / 3 s / 92 s / 2,407 s). Culprits: k 1 t 15 {11}; k 2 t 17 {11, 12}.
   C4 X13 (v2): k 1: 9, k 2: 11; k 3 running (v1 k 3: 9, not nested). C10 X11,12: v2 k 1: 7, k 2: 9 (q6 loses its own targets); v3 k 1: 15.
-- Running (tracked; logs l13/out/*.log): scan.sh C4 13 k 3-5; scan3.sh C10 11,12 k 1-3; pdrup of the cited UNSATs -> out/drup.txt.
-  Relaunch: cd experiments/lower/l13; ./scan.sh ../l10/rec/L10_C4_final_score144_solved.txt ../l10/out/core8_HIT7.txt 13 3 5 21 out/scan_C4_X13.txt 0-63 3000
-  ./scan3.sh ../l10/rec/L10_C10_osc_final_solved.txt ../l10/out/core8_HIT7.txt 11,12 1 3 21 out/scan3_C10_X11_12.txt 0-63 3000
+- 02:54Z Lead choice (b): non-top helper sets on C10. DONE: all 48 single helpers (best first UNSAT 15; 48 DRUP VERIFIED) and all
+  1,128 pairs (UNSAT at 17; 1,128 DRUP VERIFIED). Lemma PREF-FUEL (PROVED, lane; L13 §2) and Lemma C10-ISOLATION (PROVED, lane,
+  scope L13 §3). C4 k 3 = 9 (v2, not nested); C4 / C5 scans stopped at the Lead's choice. Nothing running.
+- NEXT (proposal): (a) a base whose core chains do NOT all pass through f5 (C5-like order constraint plus C10's oscillator), so an f5
+  gadget does not feed q6; (b) state the f5 / q6 interaction at t 17 exactly (which q6 preference the gadget breaks).
 - TRAP: editing scan.sh while a scan runs (bash reads scripts incrementally): copy to a new file instead (scan3.sh).
 
 ## Successor 11 HANDOVER (2026-11-08 22:48Z, date -u; parking after BOX L12 (b), Lead 22:45Z «then park with a handover»)
