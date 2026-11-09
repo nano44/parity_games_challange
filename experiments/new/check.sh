@@ -1057,4 +1057,20 @@ if [ "$r197" -eq 0 ] && [ -z "$d197" ] && ! grep -v "^ctrl" box197/check197.out 
 else
   echo "BOX 197 CORE check: FAILED (check197.sh exit $r197)"; echo "$d197" | head -30; echo "$run197" | tail -15; exit 1
 fi
+# BOX 198 PAIR (L-NEW successor 65): PAIR-HIGH / RA-PATHS counters (pair198.py), frozen output + controls
+r198=0; run198=$(cd box198 && bash check198.sh 2>&1) || r198=$?
+d198=$(diff <(printf '%s\n' "$run198") box198/check198.out 2>&1) || true
+if [ "$r198" -eq 0 ] && [ -z "$d198" ] && ! grep -v "^ctrl" box198/check198.out | grep -Eq "(ph1fail|ph2fail|rafail|rpfail) [1-9]" && grep -q "^ctrl1 .*ph1fail [1-9]" box198/check198.out && grep -q "^ctrl2 .*rpfail [1-9]" box198/check198.out; then
+  echo "BOX 198 PAIR: PAIR-HIGH / RA-PATHS counters 0, controls fire = frozen: PASS"
+else
+  echo "BOX 198 PAIR check: FAILED (check198.sh exit $r198)"; echo "$d198" | head -30; echo "$run198" | tail -15; exit 1
+fi
+# BOX 199 SPLIT (L-NEW successor 66): SPLIT / REWIN / REWIN-HI counters (split199.py), DEAD witnesses, frozen output + controls
+r199=0; run199=$(cd box199 && bash check199.sh 2>&1) || r199=$?
+d199=$(diff <(printf '%s\n' "$run199") box199/check199.out 2>&1) || true
+if [ "$r199" -eq 0 ] && [ -z "$d199" ] && ! grep -v "^ctrl" box199/check199.out | grep -Eq "(playfail|kindfail|hwfail|gtfail|trfail|dnfail|rhfail|rwfail|Bne_t1|Bne_t2|rh2fail|rw2fail|spfail|spwfail|wlamfail) [1-9]" && grep -q "^GROW7_n34.json .*wcfail 18 " box199/check199.out && grep -q "^CX4_n21.json .*dn_nobelow_all [1-9]" box199/check199.out && grep -q "^ctrl1 .*hwfail [1-9]" box199/check199.out && grep -q "^ctrl2 .*wbfail [1-9]" box199/check199.out && grep -q "^ctrl3 .*dnfail [1-9]" box199/check199.out && grep -q "^ctrl4 .*rhfail [1-9].*rh2fail [1-9].*spfail [1-9]" box199/check199.out && grep -q "^ctrl5 .*gtfail [1-9]" box199/check199.out && grep -q "^ctrl6 .*Bne_t2 [1-9]" box199/check199.out && grep -q "^ROUTELOW_n21.json .*ytopB_ne [1-9]" box199/check199.out; then
+  echo "BOX 199 SPLIT: SPLIT / REWIN / REWIN-HI / RW-B0 / PAIR-SPLIT counters 0, DEAD witnesses present, controls fire = frozen: PASS"
+else
+  echo "BOX 199 SPLIT check: FAILED (check199.sh exit $r199)"; echo "$d199" | head -30; echo "$run199" | tail -15; exit 1
+fi
 rm -rf "$tmp"

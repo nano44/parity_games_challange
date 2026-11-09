@@ -108,3 +108,45 @@
 - Superseded: experiments/new/box194/draft_entry2/ (NOT ROUTED draft of successor 63) is history only; its L2_QT_only.txt equals L-2.
 - quiet.pins: loc194.py, quiet194.py, check194.out and this file re-pinned; line L-2, mkl2_194.py and formB194.out added. check.sh block
   «BOX 194 LOC» unchanged (its grep lines still hold).
+
+## Fixes entry 3 (L-NEW successor 65; line strings + one referee-originated proof step (R-G); Lead 12:21Z: «P-N5-QUIET fix round 3 (pre-CHECKER, to save a C137 round) … write fixes entry 3 + L-3 = L-2 (fed89346) + these five, by script»; 12:25Z: «ADD … a sixth change, R-G»; written 12:45Z by date -u)
+- Source: Lead rulings 12:21Z (R-L, R-U, R-B, R-Q, R-T), each by a CHECKER precedent (cited by the Lead, not re-read here), and 12:24Z
+  (R-G, Lead reading L41). No statement or DATA number changes; the packet stays frozen (docs/new/P-N5-QUIET.md, sha1 066dfc7d…).
+| item | precedent | old (once in L-2) | new |
+| --- | --- | --- | --- |
+| R-L | C118 E-1 / C132 E-1 (stale status) | «with F′_B of RESULTS R121 (P-N5-ASC, to land first);» | «with F′_B of RESULTS R121 (P-N5-ASC);» |
+| R-U | C133 E-3 / C134 E-3 (status words) | «; G-N5-TIME stays OPEN; TARGET.md §2 (M4) asks … is not M4: not M3, not M4, not a step-4 pass, not a TARGET.md claim (P-N5-QUIET» | «; TARGET.md §2 (M4) asks … is not M4, so this is not M4; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim (P-N5-QUIET» |
+| R-B | source note (entry 2 carries the D-1 / D-2 TOOL fixes, so it is not line-only) | «(P-N5-QUIET, docs/new/P-N5-QUIET.md with fixes entry 1, docs/new/P-N5-QUIET-fixes.md; L-NEW successor 62)» | «(P-N5-QUIET, docs/new/P-N5-QUIET.md with its fixes entries 1-2, docs/new/P-N5-QUIET-fixes.md; L-NEW successors 62 and 64)» |
+| R-Q | C135 E-4 (undefined terms) | «(Corollary ASC-T) if every seq_t(v) has at most B ascents for every vertex v,» | «(Corollary ASC-T) with seq_t(v) and its ascents as in RESULTS R121, if every seq_t(v) has at most B ascents for every vertex v,» |
+| R-T | Q undefined in a DATA unit | «T-QUIET: Tfail 0 (unit: runs with T > Q + (Q + 1)L; same set as QUIET)» | «T-QUIET: Tfail 0 (unit: runs with T_CYC > Q + (Q + 1)L, Q the number of loud steps; same set as QUIET)» |
+| R-G | L41; REFEREE 30's reading (message 12:27Z) of REFEREE 28's step | «changes movers after its first fallback); DATA, clause by clause (scope IDEAL-CYC» | «changes movers after its first fallback); the step β_g ∉ Π(y) for boundary targets y in (Q5)'s F4′ (else E(y) ⊇ S, against y's class) is referee-originated (REFEREE R-P-N5-QUIET §3 (Q4), l. 118-120, REFEREE 28), signed by both referees; DATA, clause by clause (scope IDEAL-CYC» |
+### R-G repair (proof step; credit REFEREE 28, found again by REFEREE 30)
+- (Q5) l. 155-156 cites «(Q4)'s argument» for F4′ at the face; that argument (l. 141, a cycle argument for the face's own successor) does
+  not cover a BOUNDARY target y (l. 143-145). The step that does (REFEREE 28, claude/referee docs/referee/R-P-N5-QUIET.md l. 118-120): if
+  y's play passed β_g ∈ C, memorylessness gives E(y) ⊇ E(β_g) = S, contradicting y's class (w, S ∖ {e}); so β_g ∉ Π(y), and F4′ holds at
+  the face for the boundary value too. Read (Q5)'s «by (Q4)'s argument and simplicity» as including this step. No statement changes.
+- Placement: the Lead asked for the clause «immediately before the line's first «DATA»». The first «DATA» in L-2 is inside «(R118's
+  DATA)», where an insertion would break the parenthesis; the clause is inserted before «DATA, clause by clause», the first DATA clause.
+  Wording of the clause: the Lead's, unchanged. «signed by both referees»: REFEREE 28 / 30 sign; REFEREE-2 35 signs in parallel (Lead
+  12:25Z); if REFEREE-2 35 does not sign, this clause changes.
+- Full strings: as in experiments/new/box194/mkl3_194.py (R-U abbreviated above with «…»; the script holds them verbatim).
+- Source note (R-B, as ruled): names entries 1-2. Entry 3 carries R-G's proof step, but that step is referee-originated and the line
+  credits it in its own clause; whether the note should also name entry 3 is CHECKER's ruling (flagged to the Lead).
+### Line L-3 (written by script)
+- docs/new/P-N5-QUIET-line-L3.txt = L-2 + R-L, R-U, R-B, R-Q, R-T, R-G, by experiments/new/box194/mkl3_194.py (from the repo root): asserts the
+  packet's sha1 (066dfc7d…), L-2's sha1 (fed89346…), each old string exactly once in L-2, one line, no «|», «(» = «)». Result: sha1
+  d9b5e610300927fd0e8c1ec8567ee1fb68758df7, 5,429 B, 103 «(» = 103 «)». (L-2 + the first five alone gives a4802f27…, 5,225 B = the
+  Lead's first prediction.) L-2 kept (superseded).
+- quiet.pins: this file re-pinned; L-3 and mkl3_194.py added. check.sh block «P-N5-QUIET» unchanged.
+
+## Fixes entry 4 (L-NEW successor 65; line-only; Lead 12:47Z: «fixes entry 3 carries a proof step, so by CHECKER's C134 N-S / C135 E-1 rule the source note must name it … write fixes entry 4 (line-only) + L-4 = L-3 + R-B2»; written 13:19Z by date -u)
+- Answers my own flag (b) in entry 3: the source note now names entries 1-3. L-3 is not routed; L-4 replaces it.
+| item | old (once in L-3) | new |
+| --- | --- | --- |
+| R-B2 | «(P-N5-QUIET, docs/new/P-N5-QUIET.md with its fixes entries 1-2, docs/new/P-N5-QUIET-fixes.md; L-NEW successors 62 and 64)» | «(P-N5-QUIET, docs/new/P-N5-QUIET.md with its fixes entries 1-3, docs/new/P-N5-QUIET-fixes.md; L-NEW successors 62, 64 and 65)» |
+- Entry 4 is line-only (no tool or proof change), so it is not named (C134 N-S).
+### Line L-4 (written by script)
+- docs/new/P-N5-QUIET-line-L4.txt = L-3 + R-B2 = L-2 + R-L, R-U, R-B (as R-B2), R-Q, R-T, R-G, by experiments/new/box194/mkl4_194.py (from
+  the repo root): asserts the packet's sha1 (066dfc7d…), L-3's sha1 (d9b5e610…), the old string exactly once in L-3, one line, no «|»,
+  «(» = «)». Result: sha1 0809da259cc54e3cec1fdf455070620314d4e622, 5,433 B, 103 «(» = 103 «)». L-3 kept (superseded, never routed).
+- quiet.pins: this file re-pinned; L-4 and mkl4_194.py added.

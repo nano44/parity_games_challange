@@ -126,3 +126,109 @@ each top re-entry is one change of one vertex at one step, and a vertex changes 
   do not nest inside one another there. So on L-SI's towers the heights ADD per top change. READING on one instance.
 - The measurable question that decides BIN: does maxalt (DS order of tops) stay bounded on a tower family of growing height? Next step:
   maxalt on L-SI's tower generator at heights 2..8 (needs its generator; read only, claude/l-si).
+
+## Addendum 1 (L-NEW successor 65, 12:12Z by date -u; Lead 10:55Z: «open the source … state the bounded-order hypothesis as a CONJECTURE with its exact form»; tower family read-only from claude/l-si)
+### Source opened (replaces the «not opened» note of §4)
+- S. Pettie, «Sharp Bounds on Davenport-Schinzel Sequences of Every Order», arXiv:1204.1086 v2 (18 May 2013), opened 11:25Z-11:30Z:
+  - §1, p. 1: an order-s DS sequence is «a repetition-free sequence over the alphabet {1, …, n} that does not contain any alternating
+    subsequences of the form ··· a ··· b ··· a ··· b ··· with length s + 2»; λ_s(n) is the maximum length of one (§1.1, p. 2).
+  - §1.2, p. 3: Davenport and Schinzel (1965) «proved that λ_1(n) = n, λ_2(n) = 2n − 1»; Szemerédi (1973) showed «λ_s(n) = O(n log* n),
+    where the leading constant depends on s» (all s ≥ 3); Hart and Sharir (1984) settled λ_3(n) = Θ(nα(n)).
+- Sharir–Agarwal (CUP 1995) NOT opened (not reachable from this container); Pettie §1.2 is the cited source. λ_s(n) is non-decreasing
+  in n (a sequence over fewer letters is one over more).
+### CONJECTURE DS-TOPS (exact form)
+- For a vertex v of Γ3(G) and a Λ-interval I of v in HOW3(G) (§3), tops(v, I) := the sequence of the tops of the changes of E_t(v) in I,
+  in time order. It is repetition-free (§4).
+- **CONJECTURE DS-TOPS.** There is a constant s such that for every genome G satisfying [E-LEV], every vertex v of Γ3(G) and every
+  Λ-interval I of v, tops(v, I) contains no alternating subsequence x … y … x … y … (x ≠ y) of length s + 2; i.e. tops(v, I) is an
+  order-s Davenport–Schinzel sequence. The data (below) are consistent with s = 4 and with no smaller s.
+- **Corollary DS-POLY (PROVED, lane, CONDITIONAL on DS-TOPS(s) and on P-N5-CHAIN's premises).** D_I(v) = 1 + |tops(v, I)| ≤ 1 + λ_s(M),
+  so T3 ≤ (1 + n3·((2M + 3)(1 + λ_s(M)) − 1))·(L3 + 1), with λ_s(M) = O(M log* M) (Szemerédi, as above): polynomial in N + M.
+  Proof: D_I(v) = 1 + (number of changes) (RE-COUNT's proof); the tops sequence is order-s DS over at most M letters; then as in RE-EQUIV
+  with RE-COUNT's bound replaced. ∎
+- It excludes BIN: BIN's tops are the ruler sequence (the top of the change t − 1 → t is the lowest set bit of t), which contains the alternation
+  1 2 1 2 … 1 of length 2^(M−1) + 1 (M ≥ 2: item 1 is the top at odd t, item 2 at the 2^(M−2) values t ≡ 2 (mod 4), and an odd t lies
+  between any two of those).
+- What would kill it: one family of genomes (with [E-LEV]) whose maximum alternation in a tops sequence grows without bound.
+### DATA: the tower family (counter maxalt of asc197.py; unit: (genome, v, I), max over the genome; scope [E-LEV])
+- Set: L-SI box 85 two85.build (claude/l-si experiments/si/box85/two85.py + gen83.py, copied read-only into the scratchpad; check: cfg
+  TC5m rebuilds byte-equal to box196/inst_si85/TC5m.json), cfg {w ["L"], lw ["M+"], lup "M+", lexit "M+"} (TC5m's), heights h = 2..8,
+  three lane formulas per height (A: L = LL = (2, 5, 9, 14, 20, 27, 35, 44)[:h], LM_l = 6(l + 1); B: L_l = 3l + 1, LM_l = 5 + 4l, LL as A;
+  C: L, LM random, seed 1970 + h, LL as A); generator box197/mkh197.py (argument: the folder holding the copied two85.py, gen83.py), instances box197/hfam/
+  (21 genomes), output box197/hfam197.out (record; not re-run by check.sh).
+| h | maxalt A / B / C | T3 A / B / C | longest tops sequence A / B / C |
+  | --- | --- | --- | --- |
+  | 2 | 2 / 2 / 2 | 9 / 8 / 13 | 3 / 4 / 2 |
+  | 3 | 4 / 3 / 4 | 17 / 14 / 20 | 7 / 6 / 7 |
+  | 4 | 5 / 4 / 4 | 25 / 20 / 31 | 9 / 8 / 10 |
+  | 5 | 4 / 4 / 2 | 33 / 26 / 24 | 11 / 11 / 4 |
+  | 6 | 4 / 4 / 4 | 41 / 32 / 51 | 12 / 14 / 12 |
+  | 7 | 2 / 4 / 4 | 39 / 37 / 74 | 4 / 11 / 13 |
+  | 8 | 2 / 3 / 4 | 47 / 46 / 80 | 4 / 6 / 16 |
+- Every row: awA, awB, rootfail, dfail, lexdec 0 (§2, §3 counters).
+- Reading: maxalt does not grow past 5 on this family up to height 8 (T3 up to 80), while T3 grows about linearly. Weak support for
+  DS-TOPS with s = 4 on L-SI's towers; nothing about other families. L-SI's towers are the fleet's best designed counters on N5′-xi, so
+  this is the family where growth would have shown first. Every run is short; the data test the conjecture only at these sizes.
+
+## Addendum 2 (L-NEW successor 65, 12:45Z by date -u; Lead 12:26Z: DATA against «s = 4»; «say whether a weaker form … is what the chain actually needs»)
+### Correction to Addendum 1
+- Addendum 1's «The data (below) are consistent with s = 4 and with no smaller s» is WITHDRAWN. L-SI 46's climb instance NK6_cl21
+  (claude/l-si experiments/si/box88/inst/NK6_cl21.json, sha1 408b9988…, pinned at l-si 38b3c2cc per the Lead; NOT on origin when I looked,
+  12:30Z: relayed, not re-run by me) has maxalt 6 by asc197.py, so tops(v, I) there is no order-4 DS sequence (s ≥ 5); its IDEAL-CYC T is
+  11. L-SI's MIRROR towers stay ≤ 5 (HP2-HP5: 2, 4, 4, 5; HP6b: 4; relayed). CONJECTURE DS-TOPS stands as stated in Addendum 1, with s
+  an unspecified constant; no value of s is claimed.
+### What the chain needs: polynomial pairwise alternation (PROVED, lane)
+**Lemma PAIR-COUNT.** Let τ be a sequence over m letters with no two equal consecutive letters, and for letters x ≠ y let A_xy be the
+length of the longest subsequence of τ that alternates between x and y. Then |τ| ≤ 1 + Σ_{x<y} (A_xy − 1) ≤ 1 + C(m, 2)·(A − 1),
+A := max A_xy.
+Proof. Assign each index i < |τ| to the pair {τ_i, τ_(i+1)} (two letters, as τ_i ≠ τ_(i+1)). Fix a pair {x, y}; let ρ be τ restricted to
+{x, y} with runs of equal letters collapsed. ρ alternates, so |ρ| ≤ A_xy. An index i assigned to {x, y} has τ_i, τ_(i+1) consecutive in
+ρ's source and different, so it is a switch of ρ; different i give different switches. So at most |ρ| − 1 ≤ A_xy − 1 indices go to
+{x, y}. Sum over the pairs, add the last index. ∎ (With A_xy ≤ s + 1 this is the standard λ_s(n) ≤ 1 + s·C(n, 2); Pettie's §1.2 values
+are for fixed s.)
+**Theorem ALT-EQUIV (PROVED, lane, on P-N5-CHAIN's premises; no [E-LEV]).** Let A := the maximum over vertices v and Λ-intervals I of the
+longest two-letter alternation in tops(v, I). Then
+  T3 ≤ (1 + n3·((2M + 3)·(2 + C(M, 2)·(A − 1)) − 1))·(L3 + 1), and A ≤ T3.
+So T3 is polynomial in N + M iff A is.
+Proof. tops(v, I) has no equal consecutive letters (§4) and at most M letters; PAIR-COUNT gives |tops(v, I)| ≤ 1 + C(M, 2)(A − 1), and
+D_I(v) = 1 + |tops(v, I)|. Then as in RE-EQUIV (at most 2M + 3 intervals per vertex, T-QUIET3). For A ≤ T3: an alternating subsequence
+of tops(v, I) has at most |tops(v, I)| ≤ T3 letters (one change of v per step). ∎
+- So the open core is a statement about PAIRS of e-vertices: how often can the tops of one vertex's e-set switch between two fixed
+  e-vertices x and y (each switch being a lex increase in which x, resp. y, is the most relevant new element)? Polynomially often for
+  every pair iff N5′-xi on Γ3 is polynomial (under P-N5-CHAIN's premises and P-N5-END's ENDGAME-3).
+- Answer to «is a weaker form what the chain needs»: yes. The chain needs only A ≤ poly(N + M). In particular:
+  - A = O(height) or A = O(N) suffices (then D_I = O(N·M²));
+  - A = O(log T3) suffices too (T3 ≤ c(N + M)^k·log T3 forces T3 polynomial);
+  - DS-TOPS with a constant s is strictly more than needed. L-RED 60's 2-digit counter (relayed: a fixed low top alternating ~2K times
+    with T ~6K) is consistent with A polynomial whenever K is.
+- CONJECTURE ALT-POLY: A ≤ p(N + M) for a fixed polynomial p. By ALT-EQUIV it is EQUIVALENT to «T3 polynomial», i.e. a restatement, not
+  a new hypothesis; its value is that it names a two-letter object to attack (from either side: a family with A super-polynomial is an
+  exponential N5′-xi run on Γ3; a proof bounds one pair at a time).
+- BIN in this language: items 1 and 2 have A_12 = 2^(M−1) + 1 (Addendum 1). Any BIN realization must make ONE pair of e-vertices
+  switch exponentially often as tops of one vertex in one Λ-interval.
+- DATA so far (asc197.py maxalt = A per genome; units as in §5): random families ≤ 3; pinned genomes ≤ 5; towers h 2..8 ≤ 5; NK6_cl21 6
+  (relayed). Max A over everything measured: 6, at T3 ≤ 129.
+
+## Addendum 3 (L-NEW successor 65, 14:50Z by date -u; L-RED 60 R226-core197 §5-§8, claude/l-red 677b4edb, relayed by the Lead 13:28Z)
+- L-RED 60 verdicts (relayed; R226 not re-read here): PAIR-COUNT SURVIVES; ALT-EQUIV SURVIVES for A ≥ 1; W-2 and a counter slip (below);
+  DS-TOPS with s ≤ 5 DEAD.
+### W-2 (taken): the bounds for A = 0
+- If no tops sequence has a letter (instance OFFUP_n4, L-RED 60: M 6, maxtops 0), A = 0 and ALT-EQUIV's bound 2 + C(M, 2)·(A − 1) is
+  negative for M ≥ 3. The cause is PAIR-COUNT's sum over ALL pairs: a pair of letters that do not both occur has A_xy ≤ 1 and adds
+  A_xy − 1 ≤ 0. Corrected statements (the proofs are unchanged: only pairs that receive an index count, and those have A_xy ≥ 2):
+  - **Lemma PAIR-COUNT (corrected).** |τ| ≤ 1 + Σ_{x<y} max(0, A_xy − 1) ≤ 1 + C(m, 2)·max(0, A − 1).
+  - **Theorem ALT-EQUIV (corrected).** With A := max(1, the maximum over v and I of the longest two-letter alternation in tops(v, I)),
+    T3 ≤ (1 + n3·((2M + 3)·(2 + C(M, 2)·(A − 1)) − 1))·(L3 + 1), and A ≤ max(1, T3). T3 is polynomial in N + M iff A is.
+### Counter slip in asc197.py (fixed)
+- maxalt printed 0 for a tops sequence with one letter, where the longest alternation is 1 by definition. Fixed: «al = 1 if tops else 0»
+  (one letter: 1; empty: 0). maxalt was only a record (no PASS/FAIL test reads it), and every value ≥ 2 is unchanged.
+- Re-run with the fixed tool (scratchpad, ROOT set; output box197/sweep197_fix.out, which supersedes sweep197.out and hfam197.out as the
+  record): check197.sh output byte-equal to the pinned check197.out (no re-pin needed). Against the old record (sweep197.out followed by hfam197.out),
+  7 rows change, each only in maxalt, 0 → 1: DEAD_SEG2P_d4_N8, cyc2_d7, cyc_d3, cyc_d4, cyc_d7, cyc_d8, rd3_d3 (one-letter tops sequences);
+  every other field of every row is equal, and every lemma counter is still 0 with the controls firing.
+### DS-TOPS
+- DS-TOPS with s ≤ 5 is DEAD: L-RED 60's DSALT7_n108 (N 108, M 206, T 11) has A = 7, so some tops sequence there is no order-5 DS
+  sequence (relayed; not re-run here). With NK6_cl21 (A = 6, Addendum 2) the measured A on built instances is now 7, both short runs
+  (T 11). DS-TOPS stays stated with an unspecified constant s; I hold no value of s and give the conjecture little weight.
+- L-SI's designed towers stay at A ≤ 5 (HP8b: A 4 at T 127, relayed). The two climbed instances with the largest A have small T, so in the
+  data A does not track T: consistent with ALT-POLY, which is a restatement of G-N5-TIME on Γ3 (Addendum 2) and the form the chain needs.

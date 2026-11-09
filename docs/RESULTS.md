@@ -15073,6 +15073,301 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   open. N5′-xi stays a CANDIDATE (REFEREE-2 l. 233: «Under D1, N5′-xi stays a CANDIDATE: this packet rules out slow mover phases on
   Ξ-acyclic genomes only.»).
 
+### R123 [refereed-only] In IDEAL-CYC(G) (RESULTS R118 (a): Γ(G) with every non-mover Even vertex frozen at R104's start, Odd unrestricted, Howard steps at the movers), for every genome G: (Lemma CN2) the cycle node of every play under every positional pair has priority ≥ 2, so no gate or mover is a cycle node or in a set Π; (Lemma B-ONLY, credit L-RED R221 §3, re-derived in fixes entry 1) at every state t and every vertex v other than c_W and the e-vertices whose successor is c_W, Λ_t(v) is less relevant than every e-vertex; (Corollary NO-TIE) at every state and gate g, Ω_t(e_g) ≠ Ω_t(β_g); (Lemma LOC-GATE) at every state t and gate g, Odd's optimal counterstrategy σ̄_t chooses the face of strictly ⊴-smaller value; (Lemma LOC-K2) σ̄_t(K2) = K1 and Ω_t(K1) ◁ Ω_t(K2) at every state; (Theorem QUIET) with class_t(v) := (Λ_t(v), E_t(v)), E_t(v) the e-vertices of Π_t(v), a step loud if some vertex changes class and quiet otherwise, every maximal window of quiet steps has at most L := (M + 1)(2M + 1)(N + 1) + N(n − 1) steps, n = N + 3M + 6; (Corollary T-QUIET) T_CYC ≤ (1 + Σ_v (D^tot_E(v) − 1))·(L + 1), D^tot_E(v) the number of distinct classes of v over the run; (Corollary ASC-T) with seq_t(v) and its ascents as in RESULTS R121, if every seq_t(v) has at most B ascents for every vertex v, T_CYC ≤ (1 + n·((2M + 3)·F′_B(M) − 1))·(L + 1) with F′_B of RESULTS R121 (P-N5-ASC); (Corollary UP-T, under HYPOTHESIS [E-LEV]: lev(x) < lev(x′) implies pr(e_(x,k)) < pr(e_(x′,k′))) the same bound with B = U(G), the number of options whose Ξ-target has a higher level, so T_CYC is polynomial in N + M for genomes with U(G) ≤ B, B fixed (premises: RESULTS R104's definitions of the genome and of Γ(G) only; RESULTS R118 (a), (b) F1, F2, F3 and F4′'s stated clause, (c) DOM and STRICT, (e); VJ00 §4.2 / Friedmann arXiv 1106.0778 §3 for the value (Λ, Π, k) and its order ⊴; [OPT] (σ̄_t is optimal at every vertex at once against σ_t) = RESULTS R118's σ̄, Odd's optimal counterstrategy for the order ⊴, as used in R118 (b) (F3's proof in the frozen P-N5-XICYC §3, l. 75: «σ̄_t is optimal at every vertex at once ([VJ])»), and RESULTS R21 (a) («(Odd's best reply σ̄_k is pointwise optimal in G_{σ_k})»); RESULTS R57 (b) concerns the output of SPEC's S1 procedure and is not used; for ASC-T and UP-T only, RESULTS R121's HUB-ASC-G whole-run form and UP-B; [E-LEV] is a hypothesis (the e-priorities of R104's packet §3.1, docs/red/P-N5-REALIZE.md l. 88, satisfy it, but R104 (vi) leaves them to that packet as immaterial to its own results, so R104's line does not fix them); not used: [LOC], OVT-DV, IN-BOUND, F4 as printed, F5, F6, any L-RED lane lemma; QUIET, T-QUIET, B-ONLY and NO-TIE use neither [E-LEV] nor R121) (2026-11-08) — this bounds T_CYC only, in one restricted model; for Σ_v D^tot_E(v) with U(G) unbounded and unboundedly many ascents nothing is claimed (OPEN); T bounds IDEAL-CYC iterations only; nothing is proved on Γ3: by RESULTS R118 (k) and (l), under REACH3-CYC's premises, N5′-xi from S3 on Γ3(G) makes Howard steps on Γ3 up to its first fallback, a run that can differ from the IDEAL-CYC run at exact VJ ties (R118's DATA), and a Γ3 form of this proof (not given here) would bound N5′-xi only up to its first fallback; nothing is claimed about post-fallback iterations, N5′-xi's total count, N5 or general games (witnesses that the restriction is needed: L-RED R221 §7 DIV_2_493, DIV_2_583, DIV_3_717, claude/l-red d49b9f0c, experiments/red/r221q/inst/SHA1SUMS, where N5′-xi on Γ3 changes movers after its first fallback); the step β_g ∉ Π(y) for boundary targets y in (Q5)'s F4′ (else E(y) ⊇ S, against y's class) is referee-originated (REFEREE R-P-N5-QUIET §3 (Q4), l. 118-120, REFEREE 28), signed by both referees; DATA, clause by clause (scope IDEAL-CYC, box191 idealcyc via box192 rpot192; tools in experiments/new/box194/, run by check194.sh; set S: L-RED's rd3_d4 and RS2_L32M6 and LEAP_k64 (box194/inst/), the 13 P-N5-ASC instances, 1,000 random genomes rand191.rgen seed 2, d 1-6, w 1-3, degree 2-3): LOC-GATE: locfail 0 in 149,859 (gate, state) pairs (LEAP_k64, rd3_d4, the 13 instances, the 1,000 random genomes; loc194.py); LOC-K2: k2fail 0 (unit: states; same runs); CN2: cnlow 0 (unit: (state, vertex) pairs under (σ_t, σ̄_t); other positional pairs: no separate DATA; same runs); B-ONLY: bonlyfail 0 in 297,192 (state, vertex) pairs, NO-TIE: ties 0 in 89,125 (state, gate) pairs (rd3_d4, RS2_L32M6, the 13 instances, the 1,000 random genomes; bonly194.py); QUIET: wfail 0 (unit: quiet windows) and crossflip 0 (unit: σ̄ flips on quiet steps at gates whose faces are in different classes), longest window W ≤ N on every run (max W/N 1.0 on the 1,000 random genomes; quiet194.py; rd3_d4, RS2_L32M6, 10 of the 13 instances (all but cR_d2_w8_R22, rd3_d7, rf_d5), the 1,000 random genomes); T-QUIET: Tfail 0 (unit: runs with T_CYC > Q + (Q + 1)L, Q the number of loud steps; same set as QUIET); no separate DATA for ASC-T and UP-T (R121's UP-B / HUB-ASC-G plus T-QUIET); TARGET.md §2 (M4) asks for an algorithm polynomial on every parity game and §4 says a bound on a restricted class is not M4, so this is not M4; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim (P-N5-QUIET, docs/new/P-N5-QUIET.md with its fixes entries 1-3, docs/new/P-N5-QUIET-fixes.md; L-NEW successors 62, 64 and 65), CHECKER PASS (docs/checker/C137.md, checker 3479ecb0)
+- Object (L-NEW successors 62-65, D1 / D14 / D18, box 194; frozen, unchanged during review): packet P-N5-QUIET, docs/new/P-N5-QUIET.md,
+  sha1 066dfc7d5a03b983a126ffc6866a13046b5e9724, 199 lines, 20,022 bytes (l-new 9329859d, 2026-11-08T00:14:29Z, the file's only commit;
+  identical at d9c49489, df0d2a25, 559cdffc, 2f4167cd, b61c2029, 87603d07 and 91ed2f3f, the l-new head; pinned in
+  experiments/new/box194/quiet.pins). Both referees measured it (REFEREE l. 27 «docs/new/P-N5-QUIET.md: sha1
+  066dfc7d5a03b983a126ffc6866a13046b5e9724, 20,022 B (EQUAL to the brief, and equal at 9329859d).»; REFEREE-2 l. 9 «Packet
+  docs/new/P-N5-QUIET.md at 9329859d: sha1 066dfc7d5a03b983a126ffc6866a13046b5e9724, 20,022 B (= the brief).»). Labels (l. 5): «PROVED
+  (L-NEW 62, unrefereed) / HYPOTHESIS (stated in the statement) / DATA / READING (not to sign).». To sign (l. 26-35): §2 Lemma CN2; §3
+  Lemmas LOC-GATE and LOC-K2; §4 Theorem QUIET and Corollary T-QUIET; §5 Corollary UP-T («under HYPOTHESIS [E-LEV]; premise P-N5-ASC (R121
+  when landed)») and Corollary ASC-T; §6 READING; §7-§9 DATA / READING. The packet's own scope (l. 6): «This packet is NOT a TARGET.md
+  claim, NOT M3 and NOT M4. It does not decide G-N5-TIME. N5′-xi stays a CANDIDATE.».
+  Fixes: docs/new/P-N5-QUIET-fixes.md, append-only, four entries (87603d07: 152 lines, 17,582 bytes, sha1
+  cd3581f722d5f803ca9f661042b7e2bbf4d5d6dc, unchanged at 91ed2f3f; its first 16,292 bytes are the file at b61c2029, 140 lines, sha1
+  9a9ae29cda44dc1ee636dbc94767e06c27497a1e, and its first 11,791 bytes the file at 559cdffc, 110 lines, sha1
+  e86e6dd86a55b3adf9fc11185cc65409fcc5f5fa; its first 7,721 bytes are the file at df0d2a25 and its first 6,775 bytes entry 1's file at
+  d9c49489, by cmp). Entry 1 (d9c49489, L-NEW successor 62, l. 3-66): G-1 (L-RED R221 §3, the (Q5) tie case) closed by Lemma B-ONLY
+  («credit: L-RED R221 §3; proof re-derived here», l. 8) and Corollary NO-TIE, with their proofs (l. 11-29) and the consequences for (Q5)
+  and (Q3) («no statement changes», l. 30-35); G-2 (R221 §7) the Γ3 sentence (l. 39-48); the [OPT] source (l. 50-55); DATA added,
+  bonly194.py (l. 57-61). The «Line L-1» note (L-NEW successor 63, l. 68-75): L-1 by mkl1_194.py; «QUIET / T-QUIET ran on 10 of the 13
+  P-N5-ASC instances (all but cR_d2_w8_R22, rd3_d7, rf_d5), not on all 13; the line says so. No statement changes.» (l. 73-74). Entry 2
+  (559cdffc, L-NEW successor 64, l. 77-110): QT-L1..QT-L6 (line strings; QT-L1 withdraws entry 1's [OPT] paragraph, l. 86-88; QT-L4
+  withdraws G-2's «governs», l. 91-94), D-1 and D-2 by tool fix («No line string.», l. 99, l. 101), line L-2, Form B (DATA only, l.
+  105-107). «The packet is unchanged; where entry 1 and this entry differ, this entry governs.» (l. 82-83). Entry 3 (b61c2029, L-NEW
+  successor 65, l. 112-140): «line strings + one referee-originated proof step (R-G)» (l. 112), R-L, R-U, R-B, R-Q and R-T («No statement
+  or DATA number changes», l. 114) and R-G with its «R-G repair (proof step; credit REFEREE 28, found again by REFEREE 30)» (l. 123-127),
+  line L-3 (l. 135-140). Entry 4 (87603d07, successor 65, l. 142-152): R-B2 (l. 146) and line L-4 (l. 148-151); «Entry 4 is line-only (no
+  tool or proof change), so it is not named (C134 N-S).» (l. 147). Entry 1 carries the proofs of B-ONLY and NO-TIE and the repaired (Q5)
+  count; entry 2 carries no proof (it carries the D-1 / D-2 tool fixes); entry 3 carries the boundary step of (Q5), REFEREE 28's (L41);
+  entry 4 carries no proof.
+  The RESULTS line is L-4, 0809da259cc54e3cec1fdf455070620314d4e622 (docs/new/P-N5-QUIET-line-L4.txt, l-new 87603d07,
+  2026-11-08T13:19:30Z, the file's only commit; 5,433 bytes). The title is L-4 verbatim, with nothing inserted and nothing stripped (its
+  date parenthesis «(2026-11-08)», its scope tail and its source note are the line's own). L-4's parentheses balance (103 «(» / 103 «)»).
+  Line history: L-1 (62de90753d764c99f9b10e6f201d155f8b4ec79c, 4,600 bytes, df0d2a25, fixes entry 1 applied by mkl1_194.py); L-2
+  (fed89346, 559cdffc, fixes entry 2: L-1 with QT-L1..QT-L6, each old string once in L-1, no overlap, by mkl2_194.py, which asserts L-1's
+  sha1 and the predicted sha1; strings «copied verbatim from REFEREE 28's quiet_linefix.py», fixes l. 84). L-1: REFEREE «NOT YET: QT-L1 to
+  QT-L6 required» (l. 22); REFEREE-2 «NOT YET» with «W-1 (Γ3 over-claim), W-2 ([OPT] source), W-3 ([E-LEV] reading), D-1, D-2 (DATA rule);
+  strings below» (l. 32), then «My W-1..W-3 strings are withdrawn in favour of QT-L4, QT-L1 and QT-L3, so as not to give L-NEW two strings
+  for one span.» (Add. 1 l. 342) and «If the tool fixes D-1 (a) and D-2 (second conjunct) are made and re-run, fed89346… matches for me as
+  it stands.» (l. 341). L-2 MATCHES at both referees, each after its own byte test: REFEREE successor 29 (407f4a21, 2026-11-08T08:09:56Z)
+  §C l. 230-234 («Byte test: scratch/quiet_linefix.py (successor 28's strings) run on L-1 at 559cdffc gives a result byte-equal to L-2»;
+  «So L-2 = L-1 + exactly QT-L1..QT-L6. Form B is NOT in the line, as the entry says.»), l. 236-249 (D-1 and D-2 read in the diff and
+  re-run: «check194.sh in a detached worktree: output byte-identical to the committed check194.out»), l. 261-264 «Fixes entry 2 CORRECT.
+  L-2 MATCHES the packet (= L-1 + QT-L1..QT-L6).» … «All statements stay as in §0: SIGN; ASC-T and UP-T conditional on R121 landing first;
+  UP-T under HYPOTHESIS [E-LEV].»; REFEREE-2 successor 33 (f699a724, 2026-11-08T08:12:19Z) Addendum 2 l. 351-353 («L-1 + QT-L1..QT-L6 =
+  L-2 byte for byte, which is the merged-set target of my Add. 1.»), l. 354-368 (D-1, D-2 read in git diff df0d2a25..559cdffc and re-run
+  on the archive: «check194.sh on the git archive of 559cdffc exits 0, and its output is byte-equal to the pinned check194.out»), l.
+  378-381 «**Verdict: L-2 MATCHES** (Opus 5.5, D1).» … «ASC-T and UP-T land after R121.». L-3 (d9b5e610300927fd0e8c1ec8567ee1fb68758df7,
+  5,429 bytes, b61c2029, fixes entry 3: L-2 with R-L, R-U, R-B, R-Q, R-T and R-G, each old string once in L-2, by mkl3_194.py; «L-3 is not
+  routed; L-4 replaces it.», fixes l. 143) and L-4 (0809da25, 87603d07, fixes entry 4: L-3 with R-B2, by mkl4_194.py, which asserts the
+  packet's and L-3's sha1). R-L, R-U, R-B, R-Q and R-T are the drafter's proposals, taken by the Lead (fixes l. 112-113, «Lead rulings
+  12:21Z»); R-G is the Lead's clause for REFEREE 28's step (L41; «Wording of the clause: the Lead's, unchanged.», fixes l. 130), placed
+  before «DATA, clause by clause» (l. 128-129); R-B2 is the Lead's 12:47Z ruling (l. 142). L-4 MATCHES at both referees, each after its
+  own byte test: REFEREE successor 30 (3e02e7c3, 2026-11-08T13:55:51Z) §D l. 270-272 («`cmp` with the lane's L-4: **EQUAL**»), l. 274-283
+  (each change read in meaning), l. 284 «Verdict: fixes entries 3-4 CORRECT. **Line L-4 MATCHES** the packet read with fixes entries 1-4,
+  provided it lands after R121.»; REFEREE-2 successor 35 (96d8a3fd, 2026-11-08T13:55:42Z) Addendum 4 l. 417-421 («**L-3 == L-2 + R-L, R-U,
+  R-B, R-Q, R-T, R-G: True. L-4 == L-3 + R-B2: True.**»), l. 422-428 (meaning), l. 429 «Verdict: **L-3 and L-4 MATCH.** Statement verdicts
+  unchanged (all SIGN, with the boundary step explicit).». R121 is landed (59dacf22), so REFEREE's proviso holds.
+- Claims signed (REFEREE successor 28: report 6ae1fc04 (= a233f356); successor 29: §C 407f4a21; successor 30: §D 3e02e7c3; REFEREE-2
+  successor 33: report 17a85958, Addendum 1 11a7a911, Addendum 2 f699a724; successor 35: Addendum 3 09ce14fc, Addendum 4 96d8a3fd).
+  REFEREE's table («## 0. Verdicts», l. 6-23 of R-P-N5-QUIET.md) reads Lemma CN2 «SIGN», Lemma LOC-GATE «SIGN (with [OPT] taken from
+  R118's σ̄, §2 below)», Lemma LOC-K2 «SIGN», Lemma B-ONLY «SIGN», Corollary NO-TIE «SIGN», Theorem QUIET «SIGN. As frozen, the (Q5) tie
+  case was a gap (G-1, «flips at most twice … to a tie»). NO-TIE closes it, and the stated L stays valid», Corollary T-QUIET «SIGN»,
+  Corollary ASC-T «SIGN, conditional on P-N5-ASC landing first as R121 with the quoted HUB-ASC-G whole-run form (its L-2 states it for
+  every vertex)», Corollary UP-T «SIGN under HYPOTHESIS [E-LEV], conditional as ASC-T, plus UP-B», premises [OPT] «ACCEPTED, but from
+  R118's σ̄ (R118 (b) l. 75) and R21 (a), NOT from R57 (b) → QT-L1» and [E-LEV] «a HYPOTHESIS. The Lead's incorporation path is not
+  accepted: R104 (vi) calls the e-priorities «immaterial» → QT-L3», the Γ3 sentence «OVERCLAIM as worded → QT-L4», §7 DATA «every replayed
+  number EQUAL (own engine), plus the 3 instances the lane did not run for QUIET», §9 «CLEAN». REFEREE-2's table («## Verdicts (Opus 5.5,
+  D1)», l. 20-32 of R2-P-N5-QUIET.md) reads CN2, LOC-GATE, LOC-K2, B-ONLY, NO-TIE, QUIET, T-QUIET, ASC-T «SIGN» and UP-T «SIGN, under
+  HYPOTHESIS [E-LEV]», with «No statement is REFUSED. No statement has a mathematical gap. Every required change is to the line's scope or
+  premise wording or to its DATA clauses.» (l. 34-35); QUIET's note «layered Bellman-Ford window bound re-derived; with NO-TIE the true
+  bound is smaller, and L as stated stays valid» (l. 28), T-QUIET's «holds for every Howard run (any tie rule among new ⊴-best
+  successors)» (l. 29). The joint gap map: two items, both in the FROZEN text of QUIET's proof. (1) The (Q5) tie case (L-RED R221 §3 as
+  quoted in fixes entry 1 G-1; REFEREE «That was a real gap in the frozen text. NO-TIE removes ties at every gate and state, so it is
+  CLOSED.», l. 131-132; REFEREE-2 «The tie case of (Q5) is closed by NO-TIE, and the Bellman-Ford window bound holds.», l. 301), closed by
+  fixes entry 1 before either referee read the packet. (2) The boundary step of (Q5)'s Bellman-Ford induction (F4′ at a β-face needs the
+  face outside Π of the boundary value; the frozen «by (Q4)'s argument and simplicity», packet l. 155-156, does not give it): written by
+  REFEREE 28 in its first report (§3 (Q4) l. 118-120, «It holds.»), read for the Lead by REFEREE 30 as a step the proof needs and ruled
+  L41's case by the Lead (12:25Z), checked and signed by REFEREE-2 35 (Add. 3: «Did this report's (Q5) cover it? **No, not explicitly.**»,
+  l. 400; «So REFEREE 30 is right that the cited «(Q4)'s argument» does not give it.», l. 401-402; «**SIGN.** No statement changes, and
+  QUIET's proof is complete with it.», l. 398-399), restated in fixes entry 3 (R-G repair, l. 123-127) and named in L-4's scope tail (L41
+  and L43, below). No other gap at either referee («No statement has a mathematical gap.», REFEREE-2 l. 34, its first report; REFEREE's
+  other findings are premise, scope and DATA wording); open gaps: none. Every required item (QT-L1..QT-L6; W-1, W-2, W-3, D-1, D-2) was
+  premise, scope or DATA wording, and each is closed: REFEREE §C l. 261-264, REFEREE-2 Add. 1 l. 342 (W-1..W-3 withdrawn for QT-L4, QT-L1,
+  QT-L3) and Add. 2 l. 354-375 (D-1, D-2 by tool fix). L-4's six changes (fixes entries 3-4) are line wording and the named step; both
+  referees read each of them CORRECT (REFEREE §D l. 274-284; REFEREE-2 Add. 4 l. 422-429). Nothing is REFUSED.
+  Setting: IDEAL-CYC(G) of R118 (a) on Γ(G) of R104, for every genome G (Γ(G) with every non-mover Even vertex frozen at R104's start, Odd
+  unrestricted at the gates and K2, Howard steps at the movers); values (Λ, Π, k), ⊴ and σ̄_t as in R118's premises; [OPT]: σ̄_t optimal
+  at every vertex at once against σ_t (R118's σ̄, as used in R118 (b), with R21 (a); REFEREE §2 l. 49-56, REFEREE-2 l. 46-54). Statements
+  as signed (packet with fixes entries 1-4; entries 2-4 change no statement):
+  (a) Lemma CN2 (§2 l. 80-81) [every genome, every positional pair]: «For every genome G, every positional pair of IDEAL-CYC(G) and every
+    vertex v, the cycle node of v's play has priority ≥ 2. So no gate (priority 1) and no mover (priority 0) is ever a cycle node, and no
+    gate or mover is ever in a set Π.». REFEREE SIGN (l. 9), REFEREE-2 SIGN (l. 23).
+  (b) Lemma B-ONLY (fixes entry 1 l. 11-12; L-RED R221 §3, re-derived) [every genome, every state of IDEAL-CYC]: «In IDEAL-CYC(G), for
+    every genome G, every state t and every vertex v other than c_W and the e-vertices whose successor is c_W, Λ_t(v) is less relevant
+    than every e-vertex (it is a β-vertex, K1, K2 or the unused loop).». REFEREE SIGN (l. 12), REFEREE-2 SIGN (l. 26).
+  (c) Corollary NO-TIE (fixes entry 1 l. 26): «At every state and every gate g, Ω_t(e_g) ≠ Ω_t(β_g). So LOC-GATE applies at every gate and
+    state.». REFEREE SIGN (l. 13), REFEREE-2 SIGN (l. 27).
+  (d) Lemma LOC-GATE (§3 l. 89-90) [every genome, every state]: «Let G be any genome, t a state of a run of IDEAL-CYC(G), g a gate, a :=
+    σ̄_t(g), b := its other face, Ω := Ω_t. If Ω(a) ≠ Ω(b), then Ω(a) ◁ Ω(b).»; with NO-TIE the chosen face is the strictly ⊴-smaller one
+    at every gate and state (the line's form). REFEREE SIGN (l. 10), REFEREE-2 SIGN (l. 24).
+  (e) Lemma LOC-K2 (§3 l. 113): «At every state σ̄_t(K2) = K1 and Ω_t(K1) ◁ Ω_t(K2).». REFEREE SIGN (l. 11), REFEREE-2 SIGN (l. 25).
+  (f) Theorem QUIET (§4 l. 119-122, 130, with fixes entry 1's (Q5) / (Q3) consequences) [every genome]: with class_t(v) := (Λ_t(v),
+    E_t(v)), loud and quiet steps and quiet windows as defined (l. 119-120), «Every quiet window has at most L := (M + 1)(2M + 1)(N + 1) +
+    N(n − 1) steps (n = N + 3M + 6).»; with NO-TIE, «(Q5): «flips at most twice … (to a tie, then to e)» becomes «at most once (β to e)»;
+    G_C changes at most M times; at most M + 1 sub-windows; the stated L stays a valid (larger) bound.» (fixes l. 31-32). With the
+    boundary step of fixes entry 3 (R-G repair: «Read (Q5)'s «by (Q4)'s argument and simplicity» as including this step. No statement
+    changes.», fixes l. 127). REFEREE SIGN (l. 14; the step §3 l. 118-120), REFEREE-2 SIGN (l. 28; the step Add. 3 l. 398-399).
+  (g) Corollary T-QUIET (§4 l. 131): «T ≤ Q + (Q + 1)·L ≤ (1 + Σ_v (D^tot_E(v) − 1))·(L + 1).», D^tot_E(v) «the number of distinct classes
+    of v over the run» (l. 121). The line states the second bound. REFEREE SIGN (l. 15), REFEREE-2 SIGN (l. 29).
+  (h) Corollary ASC-T (§5 l. 170-171) [premise RESULTS R121]: «If for every vertex v every seq_t(v) has at most B ascents, T ≤ (1 + n·((2M
+    + 3)·F′_B(M) − 1))·(L + 1).». REFEREE SIGN, conditional on R121 (l. 16, §3 l. 136; §D l. 284: «provided it lands after R121»);
+    REFEREE-2 SIGN (l. 30, l. 142-146).
+  (i) Corollary UP-T (§5 l. 165-166) [under HYPOTHESIS [E-LEV]; premise RESULTS R121]: «For every genome G, T ≤ (1 + n·((2M +
+    3)·F′_(U(G))(M) − 1))·(L + 1), with F′ as in P-N5-ASC §5. For genomes with U(G) ≤ B, B fixed, this is a polynomial in N + M.». REFEREE
+    SIGN under HYPOTHESIS [E-LEV], conditional as ASC-T, plus UP-B (l. 17, §3 l. 137); REFEREE-2 SIGN, under HYPOTHESIS [E-LEV] (l. 31).
+- The RESULTS line (L-4, the title): «In IDEAL-CYC(G) (RESULTS R118 (a): Γ(G) with every non-mover Even vertex frozen at R104's start, Odd
+  unrestricted, Howard steps at the movers), for every genome G:» … «(premises: RESULTS R104's definitions of the genome and of Γ(G)
+  only;» … «(2026-11-08) — this bounds T_CYC only, in one restricted model;» … «DATA, clause by clause (scope IDEAL-CYC, box191 idealcyc
+  via box192 rpot192;» … «(P-N5-QUIET, docs/new/P-N5-QUIET.md with its fixes entries 1-3, docs/new/P-N5-QUIET-fixes.md; L-NEW successors
+  62, 64 and 65)». Its clauses: the setting (R118 (a)); CN2 = (a); B-ONLY = (b) without its gloss; NO-TIE = (c); LOC-GATE = (d) in its
+  strict form; LOC-K2 = (e); QUIET = (f) with its definitions inline; T-QUIET = (g), its second bound; ASC-T = (h), with «seq_t(v) and its
+  ascents as in RESULTS R121» (R-Q); UP-T = (i) with [E-LEV] stated in the label; the premises parenthesis (R104, R118 (a), (b) F1, F2, F3
+  and F4′'s stated clause, (c) DOM and STRICT, (e); VJ00 / Friedmann for the value order; [OPT] as R118's σ̄ with R21 (a); R121 for ASC-T
+  and UP-T only; [E-LEV] a hypothesis; what is not used); the scope tail (T_CYC only, in one restricted model; the OPEN case; nothing
+  proved on Γ3, with L-RED's DIV witnesses; the referee-originated boundary step, R-G); DATA clause by clause, inline (each count against
+  its counter: loc194.py, bonly194.py, quiet194.py and check194.out; T-QUIET's unit with T_CYC and Q defined, R-T); the TARGET sentence
+  with «so this is not M4», then «G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim» (R-U); the source note (fixes
+  entries 1-3, successors 62, 64 and 65; R-B2).
+- Premise: RESULTS R104's definitions of the genome and of Γ(G) only (packet §1 [DEF], l. 38-47; six quotes verbatim in R104, l. 9864), no
+  R104 theorem; RESULTS R118 (a) IDEAL-CYC(G), the Howard step and T_CYC (l. 13677-13681), (b) F1, F2, F3 and F4′'s stated clause («if v ∉
+  Π(A) ∪ Π(B), then A ⊴ B ⇒ ext(v, A) ⊴ ext(v, B), and A ◁ B ⇒ ext(v, A) ◁ ext(v, B).», l. 13682-13683), (c) DOM and STRICT (l.
+  13686-13687), (e) CYC-COUNT («C ≤ n·(2M + 2).», l. 13691); R118's value order ⊴ (VJ00 §4.2 / Friedmann arXiv 1106.0778 §3, R118's
+  premises); [OPT] (σ̄_t is optimal at every vertex at once against σ_t) as R118's σ̄, through R118 (b)'s incorporation of the frozen
+  P-N5-XICYC «(§3 l. 68-83)» (l. 75: «σ̄_t is optimal at every vertex at once ([VJ])»), and RESULTS R21 (a) (l. 933); RESULTS R57 (b) is
+  named as not used. For ASC-T and UP-T only, RESULTS R121 (P-N5-ASC): its Corollary HUB-ASC-G's whole-run form («over the whole run the
+  number D_E(v) of distinct (Λ_t(v), E_t(v)) is at most (2M + 3)·F′_B(M)») and Corollary UP-B («under [E-LEV] every seq_t(v) has at most
+  U(G) ascents»), as stated in RESULTS R121 (LANDED at 59dacf22, 2026-11-08T14:06:41Z; «### R121» l. 14320 at aaf52291, its title L-6,
+  docs/new/P-N5-ASC-line-L6.txt, l-new 2f4167cd, sha1 a23c61d384036ce3fa771e27e175a8dbf2331658, verbatim, then «, CHECKER PASS
+  (docs/checker/C135.md, checker a9bf46bb)»), with F′_B, seq_t(v) and «an ascent of seq_t(v)» as defined there (L-4: «with seq_t(v) and
+  its ascents as in RESULTS R121», R-Q). ASC-T and UP-T rest on R121, and this entry lands only after R121 (REFEREE «Landing order: R121
+  (P-N5-ASC) must land before this line, as the packet says.», l. 221; REFEREE-2 «ASC-T and UP-T are signed with R121 as a premise. They
+  land only after it.», l. 45; REFEREE §D: «provided it lands after R121», l. 284); R121 is landed, and L-4 no longer says «to land first»
+  (R-L). HYPOTHESIS [E-LEV] (UP-T only): «lev(x) < lev(x′) implies pr(e_(x,k)) < pr(e_(x′,k′))», stated in the line, as R121 states UP-B
+  under it. «Not used: [LOC] (LOC-GATE proves it), OVT-DV, IN-BOUND, F4 as printed, F4′'s extra clause of the XICYC fixes file, F5, F6,
+  BR-SEG, PATH, any L-RED lane lemma. QUIET and T-QUIET do not use [E-LEV] or [ASC].» (packet l. 76-77). Both referees checked every
+  premise quote by script against RESULTS sha1 66e71196… (REFEREE §2 l. 39-48; REFEREE-2 l. 38-43: «Each one is verbatim
+  (whitespace-normalised) in trunk docs/RESULTS.md, the frozen P-N5-XICYC.md (fd1266a5, sha1 149e2414, the object of R118), the frozen
+  docs/red/P-N5-REALIZE.md (e609c5d2, sha1 067f06b6, the object of R104) or the packet itself. Missing: 0.»), which equals RESULTS at
+  origin trunk fdc0f1e9 and local HEAD 567a53f3; RESULTS at aaf52291 (sha1 2eca04ea9b6301e9120a554d09edf9fc494e0bdd, 15,718 lines) is that
+  file with l. 14320-15075 inserted (R121's and R122's blocks with their blank lines) and nothing else (by script), so every premise line
+  cited here (l. 933, 9864, 10083-10086, 13607-13692) is unchanged.
+- L41 and L43. The packet's proofs are L-NEW successor 62's («This packet carries every proof in full.», l. 4); B-ONLY is L-RED's lemma
+  (L-RED 56, R221 §3), re-derived by L-NEW in fixes entry 1 («credit: L-RED R221 §3; proof re-derived here», l. 8) and credited in the
+  line («(Lemma B-ONLY, credit L-RED R221 §3, re-derived in fixes entry 1)»); L-RED is an adversary lane, not a referee, and both referees
+  signed B-ONLY on its re-derived proof (REFEREE §3 l. 92-99; REFEREE-2 l. 102-109). REFEREE's §3 adds one step in QUIET's (Q4) / (Q5),
+  for the boundary value of a Bellman-Ford path («A boundary W-target y in class (w, S ∖ {e}) never has a C-vertex β in Π(y). If y's play
+  passed β_g ∈ C, then E(y) ⊇ E(β_g) = S, which is impossible.», l. 118-119), and signs QUIET with it («It holds.», l. 120); REFEREE-2's
+  first re-derivation does not state that case (l. 129-131). The Lead ruled L41 (DECISIONS l. 355-358) for that step: «Lead ruling: L41
+  APPLIES -> R-G clause added to QUIET L-3 (L-NEW 65, six changes); REFEREE-2 35 to sign the step» (LEAD-STATE l. 2860, 12:25Z, after
+  REFEREE 30's reading «(b) referee-originated step the proof needs»). The other referee checked and signed it: REFEREE-2 35, Addendum 3
+  (09ce14fc), re-derives the step (l. 394-397) and «**SIGN.** No statement changes, and QUIET's proof is complete with it.» (l. 398-399).
+  L-4's scope tail says so: «the step β_g ∉ Π(y) for boundary targets y in (Q5)'s F4′ (else E(y) ⊇ S, against y's class) is
+  referee-originated (REFEREE R-P-N5-QUIET §3 (Q4), l. 118-120, REFEREE 28), signed by both referees» (R-G, once in L-4); both referees
+  read that sentence as correct at L-4 (REFEREE §D: «R-G: CORRECT. It is the step of my §3 (Q4) l. 118-120 (REFEREE 28)», l. 275;
+  REFEREE-2 Add. 4: «Its attribution to REFEREE 28 (R-P-N5-QUIET §3 (Q4), l. 118-120) is right. «signed by both referees» holds», l.
+  424-425). The joint gap map (Claims signed): the tie case, closed by entry 1, and this step, closed by REFEREE 28's text with both
+  signatures; open gaps: none. Fixes entry 3 restates the step as the lane's record of it («credit REFEREE 28, found again by REFEREE 30»,
+  l. 123), so the source note names entry 3 (R-B2, the Lead's 12:47Z ruling: «fixes entry 3 carries a proof step, so by CHECKER's C134 N-S
+  / C135 E-1 rule the source note must name it», fixes l. 142). L-4's «l. 118-120» is REFEREE's file at 6ae1fc04, 407f4a21 and ae980555
+  alike (its l. 1-222 unchanged, by cmp). L43: every statement is exact or an explicit bound (L, T_CYC ≤ (1 + Σ_v (D^tot_E(v) − 1))·(L +
+  1), the ASC-T and UP-T bounds), on a restricted model; no statement is killed.
+- Fixes (docs/new/P-N5-QUIET-fixes.md, append-only; entry 1 by L-NEW successor 62 at d9c49489, l. 3-66, under «Lead 00:36Z: L-RED 56 R221
+  items 1-2 and the [OPT] reading» (l. 3); the «Line L-1» note by successor 63 at df0d2a25, l. 68-75; entry 2 by successor 64 at 559cdffc,
+  l. 77-110, under «Lead 06:39Z» (l. 77); entry 3 by successor 65 at b61c2029, l. 112-140, under «Lead 12:21Z» and «12:25Z» (l. 112);
+  entry 4 by successor 65 at 87603d07, l. 142-152, under «Lead 12:47Z» (l. 142)):
+  - Entry 1 G-1 (R221 §3, the (Q5) tie case): Lemma B-ONLY and Corollary NO-TIE with proofs (l. 11-29); (Q5) «at most once (β to e)», at
+    most M + 1 sub-windows, (Q3) vacuous, «L stays a valid bound as stated» (l. 31-34); L-RED's DATA quoted (l. 36-37).
+  - Entry 1 G-2 (R221 §7): the Γ3 sentence and L-RED's DIV witnesses DIV_2_493, DIV_2_583, DIV_3_717 (l. 39-48); the sentence's «governs»
+    withdrawn by entry 2 (QT-L4), the witnesses kept.
+  - Entry 1 [OPT] source (Lead reading 00:36Z, R57 (b)): withdrawn by entry 2 (QT-L1, l. 86-88).
+  - Entry 1 DATA added: bonly194.py, «B-ONLY: bonlyfail 0 in 297,192 (state, vertex) pairs» and «NO-TIE: ties 0 in 89,125 (state, gate)
+    pairs» (l. 58-59).
+  - «Line L-1» note: L-1 by mkl1_194.py; QUIET's DATA set 10 of the 13 instances (l. 73-74).
+  - Entry 2: QT-L1 ([OPT] = R118's σ̄ as used in R118 (b), with R21 (a); «R57 (b) concerns SPEC's S1 output and is not used», l. 86-88),
+    QT-L2 (F2 in the premise list, l. 89), QT-L3 ([E-LEV] a HYPOTHESIS, l. 90), QT-L4 (the Γ3 sentence, l. 91-94), QT-L5 (the random set's
+    parameters), QT-L6 (CN2's DATA scope) (l. 95); D-1 (quiet194.py: the exact L, wfail per window; «the only diff is each printed L one
+    smaller (12 lines). No line string.», l. 96-99); D-2 (loc194.py: k2fail counts both conjuncts of LOC-K2, l. 100-101); line L-2 (l.
+    102-104); Form B (l. 105-107); quiet.pins re-pinned (l. 109-110).
+  - Entry 3 (Lead 12:21Z and 12:25Z, «pre-CHECKER, to save a C137 round», l. 112): R-L («to land first» dropped), R-U (the landed status
+    words after «so this is not M4»), R-B (the note names entries 1-2), R-Q (seq_t(v) and its ascents as in R121), R-T (T_CYC and Q in
+    T-QUIET's unit), each with the precedent the Lead cited (l. 117-121); R-G, the L41 clause, «Wording of the clause: the Lead's,
+    unchanged.» (l. 130), placed before «DATA, clause by clause» (l. 128-129); the R-G repair (l. 123-127); line L-3 by mkl3_194.py (l.
+    135-140), never routed.
+  - Entry 4 (Lead 12:47Z; line-only): R-B2, the note names entries 1-3 and successors 62, 64 and 65 (l. 146); line L-4 by mkl4_194.py,
+    «sha1 0809da259cc54e3cec1fdf455070620314d4e622, 5,433 B, 103 «(» = 103 «)»» (l. 151); quiet.pins re-pinned (l. 152).
+  - Entry 1 adds two lemmas (B-ONLY, NO-TIE) and changes QUIET's proof counts, not its statement; entry 2 changes premise, scope and DATA
+    wording in the line and two counters in the tools, and no statement or proof; entry 3 changes six line strings and records the
+    referee-originated boundary step of QUIET's proof (R-G), and no statement; entry 4 changes one line string (R-B2).
+- Not signed: packet §6 (READING: OVT-DV without [LOC]), §7 (DATA), §8 (machine checks), §9 (TARGET diff), the packet's Scope READINGs;
+  Form B (formB194.out); box 194's OVT-DV / IN-BOUND counters and in194.py; REFEREE-2's Γ3 data and own random set (referee data).
+- Referee strengthening (NOT part of this entry; referee checks):
+  (i) REFEREE: own quiet_replay.py on successor 26's own VJ engine xicyc_vj.py and Γ builder (l. 31-34): every §7 count EQUAL (§6 l.
+    204-211), B-ONLY 297,192 pairs and NO-TIE 89,125 gate-states EQUAL, «37 Howard ties in 2,522 steps, totals still equal» (l. 211);
+    QUIET with the exact L (§5 l. 157); Form B on its own engine, EQUAL (§C l. 250-256).
+  (ii) REFEREE-2: own r2quiet.py (builder, VJ order, Odd policy iteration from two starts and brute force from its R2-P-ACYC/r2acyc.py;
+    Howard and every counter written from the packet's text; l. 184-192): violations 0 for CN2, LOC-GATE, ties, LOC-K2 (both conjuncts),
+    B-ONLY, σ̄ start-dependence, brute (724 + 692 states), crossflip, q2a, q2b, backflip, multiflip, wfail with the exact L, Tfail, TQfail
+    and «Q > Σ(D − 1)» (l. 190-192), on the 15 named instances, LEAP_k64, the lane's rand191 set and its own 1,000 genomes; the same with
+    the e-order by gate index (l. 198-199); cn2rand «0 in 2,256,980 (random positional (σ, τ) pair, vertex) units» (l. 83); its Γ3 data
+    (l. 162-173).
+- Honest limits: (i) Every statement is about T_CYC, the number of Howard steps of IDEAL-CYC(G) from R104's start (Γ(G) with the
+  non-movers frozen); nothing is proved on Γ3(G), about N5′-xi, about N5, or about general parity games, and nothing bounds a running time
+  or a bit cost. (ii) T-QUIET moves the question to Σ_v D^tot_E(v); for genomes with U(G) unbounded and unboundedly many ascents nothing
+  is claimed (OPEN). (iii) ASC-T and UP-T rest on RESULTS R121 (HUB-ASC-G's whole-run form and UP-B), and UP-T also on HYPOTHESIS [E-LEV],
+  which is not part of R104's landed definition (REFEREE §2 l. 57-63; REFEREE-2 l. 64-72) and is necessary for UP-B (R121's line: «[E-LEV]
+  is NECESSARY for UP-JUMP, UP-B and NOUP»). (iv) L is far from tight (W ≤ 32 against L ≥ 8,333 on the named instances; REFEREE-2 N-3, l.
+  286-287), and F′_B has degree 5·2^B − 3 in M, super-polynomial when B grows like log M (packet §9 l. 199). (v) The DATA units are
+  narrower than some statements: CN2's counter covers (σ_t, σ̄_t) pairs only (the line says so), LOC-GATE's and B-ONLY's the computed
+  σ̄_t, and T-QUIET's counter tests T_CYC ≤ Q + (Q + 1)L (the packet's first bound; the line says so, R-T), not the Σ_v form (REFEREE-2's
+  optional «the Σ_v form is not counted», Add. 4 l. 426-427, not taken: LEAD-STATE l. 2888); QUIET ran on 10 of the 13 P-N5-ASC instances
+  (Form B, DATA only, covers the other three). (vi) All DATA are runs of implementations (box191 idealcyc via box192 rpot192; the
+  referees' own engines) on the named sets. (vii) Names: «CN2», «LOC-GATE», «LOC-K2», «B-ONLY», «NO-TIE», «QUIET», «T-QUIET», «ASC-T»,
+  «UP-T» are new to RESULTS. (viii) The source note names the packet, its fixes entries 1-3 and L-NEW successors 62, 64 and 65: entry 1
+  carries B-ONLY's and NO-TIE's proofs, entry 2 the D-1 / D-2 tool fixes (the Lead's R-B: «entry 2 has tool fixes, not line-only»,
+  LEAD-STATE l. 2858), entry 3 the R-G step (R-B2); the «Line L-1» note (successor 63) and entry 4 (successor 65, line-only, fixes l. 147)
+  are not named (C134 N-S). (ix) Literature: VJ00 §4.2 and Friedmann arXiv 1106.0778 §3, as cited by R118 (landed; REFEREE-2 opened
+  Friedmann §3, l. 49-53); no novelty is claimed. (x) QUIET's frozen proof cites «(Q4)'s argument» where the boundary step is needed; with
+  REFEREE 28's step, signed by both referees, it is complete (REFEREE-2 Add. 3 l. 398-399), and the line says that the step is
+  referee-originated (L41).
+- Data (DATA, not proof): experiments/new/box194/ at l-new 87603d07 (= 559cdffc's but for mkl3_194.py, mkl4_194.py and quiet.pins, 42
+  rows; unchanged to 91ed2f3f, git diff), run by check194.sh (loc194.py on LEAP_k64, rd3_d4, the 13 instances and 1,000 random genomes;
+  quiet194.py on rd3_d4, RS2_L32M6, box193's 8 instances, rd2_d9, rd2_d10 and the random set; bonly194.py on rd3_d4, RS2_L32M6, the 13 and
+  the random set; in194.py, not cited), its frozen output check194.out; called from the check.sh blocks «BOX 194 LOC» and «P-N5-QUIET»
+  (experiments/new/check.sh l. 1004-1019), run by scripts/verify.sh. Re-run by the drafter from a git archive of 559cdffc (experiments,
+  docs, scripts): the two blocks 2026-11-08T11:57:15Z-12:00:20Z, rc 0, «BOX 194 LOC: LOC-GATE / LOC-K2 / CN2 / OVT-DV / QUIET 0 failures,
+  DEAD constant IN-BOUND (RS2_L32M6 IN 33) = frozen: PASS» and «P-N5-QUIET: packet and 38 pinned files match quiet.pins: PASS»; and from a
+  git archive of 87603d07 (the two blocks byte-equal there): 2026-11-08T20:33:31Z-20:36:39Z, rc 0, the same first line and «P-N5-QUIET:
+  packet and 42 pinned files match quiet.pins: PASS». Frozen totals: LOC-GATE gate-states 66,950 (LEAP_k64, T 129) + 380 (rd3_d4) + 13,980
+  (13 instances) + 68,549 (random, «rand count 1000 seed 2») = 149,859, locfail 0, ties 0, cnlow 0, k2fail 0 on all 16 loc194 lines;
+  B-ONLY pairs 1,273 + 17,430 + 42,355 + 236,134 = 297,192, bonlyfail 0, NO-TIE gate-states 380 + 6,216 + 13,980 + 68,549 = 89,125, ties
+  0; QUIET / T-QUIET on 12 named runs (T 7-41, Q 6-28, W 0-32, L 8,333 to 3,492,236) and the random set («wfail 0 Tfail 0 crossflip 0 maxW
+  4 maxT 8 maxWoverN 1.0»), wfail 0, Tfail 0, crossflip 0 everywhere; Form B (formB194.out): cR_d2_w8_R22 W 0 (N 16), rd3_d7 W 4 (N 14),
+  rf_d5 W 0 (N 10), wfail 0, Tfail 0, crossflip 0. Both referees re-ran check194.sh (REFEREE at 559cdffc, §C l. 246; REFEREE-2 at
+  df0d2a25, l. 203-204, and at 559cdffc, Add. 2 l. 365-366) and their own engines (above); REFEREE 30 checked the 42 pins and mkl4_194.py
+  from a git archive of 87603d07 («quiet.pins 42 rows, `sha1sum -c` all OK; box194/mkl4_194.py reproduces L-4.», §D l. 273). Instances:
+  experiments/new/box194/inst/ (LEAP_k64, rd3_d4 from claude/l-red d1a11af6; RS2_L{2,4,16,32}M6 by L-RED's rs2.py; SHA1SUMS), box193/inst/
+  (8) and box192/inst/ (5), all pinned in quiet.pins; the random set is generated (rand191.rgen, seed 2).
+- Signatures: REFEREE docs/referee/R-P-N5-QUIET.md: successor 28's report 6ae1fc0425916503194ae5e3270886d972929dee (2026-11-08T03:11:05Z;
+  byte-equal at a233f35606c28b5e8168cb21a9b83b8b23342e9c, 03:11:09Z; «Written from 2026-11-08T03:10Z (date -u). The header time of record
+  is the commit time.»), «I did NOT read docs/referee-2/ for this report.» (l. 3), verdict table l. 6-23; successor 29's §C
+  407f4a2158f2570dc98a2c865ae30b9cef88575c (2026-11-08T08:09:56Z; heading «REFEREE successor 29, Opus 5.5, D15; date -u at writing
+  2026-11-08T07:51Z»), «Only REFEREE-2's items as quoted in fixes entry 2 were read; docs/referee-2/ was not opened.» (l. 225), l.
+  224-264, «Fixes entry 2 CORRECT. L-2 MATCHES the packet (= L-1 + QT-L1..QT-L6).» (l. 262). REFEREE-2 docs/referee-2/R2-P-N5-QUIET.md:
+  successor 33's report 17a859580549209b508c8f84ccfb7bb85770db17 (2026-11-08T05:49:41Z; «Written 2026-11-08 by date -u (times in the
+  commit).»), «Independent: docs/referee/R-P-N5-QUIET.md (REFEREE 28) NOT read before this report is on origin.» (l. 2-3), verdict table
+  l. 20-32; Addendum 1 11a7a911a5b988939d58b943148710383542c29d (2026-11-08T06:14:50Z; heading «REFEREE-2 successor 33, 2026-11-08 06:14Z
+  by date -u»), l. 310-343, «Read only after my report was on origin (17a85958).» (l. 311), «Verdicts unchanged (Opus 5.5, D1).» (l. 343);
+  Addendum 2 f699a7245ccb46f8b82d9e3b155b8727c115a7a7 (2026-11-08T08:12:19Z; heading «REFEREE-2 successor 33, 2026-11-08 07:50Z by date
+  -u»), l. 345-381, «**Verdict: L-2 MATCHES** (Opus 5.5, D1).» (l. 378). REFEREE successor 30's §D
+  3e02e7c33f2b79b06204a86b37421ce4eb593c43 (2026-11-08T13:55:51Z; heading «REFEREE successor 30, Opus 5.5, D15; date -u at writing
+  2026-11-08T13:55Z»), l. 266-284, «Verdict: fixes entries 3-4 CORRECT. **Line L-4 MATCHES** the packet read with fixes entries 1-4,
+  provided it lands after R121.» (l. 284); the file at the referee head ae980555 is 3e02e7c3's (284 lines, sha1
+  f34e5430089c9935500f4983a752a7d51fd3c487). REFEREE-2 successor 35's Addendum 3 09ce14fc1183615c884a8a96c4468ee2b79280a0
+  (2026-11-08T12:32:12Z; heading «REFEREE-2 successor 35, Opus 5.5, D1; 2026-11-08 12:21Z by date -u»), l. 383-412, «**SIGN.** No
+  statement changes, and QUIET's proof is complete with it.» (l. 398-399); Addendum 4 96d8a3fd2e69e994fc9498ecfc255fc01be19dd5
+  (2026-11-08T13:55:42Z; heading «REFEREE-2 successor 35, Opus 5.5, D1; 2026-11-08 13:55Z by date -u»), l. 414-429, «Verdict: **L-3 and
+  L-4 MATCH.** Statement verdicts unchanged (all SIGN, with the boundary step explicit).» (l. 429); the file at the referee-2 head
+  c1e71a25 is 96d8a3fd's (429 lines, sha1 c4baf6d8c95b26db836196bd5e6759234bbc51aa). Lane (claude/l-new): L-NEW successor 62, 9329859d
+  (packet FROZEN) and d9c49489 (fixes entry 1); successor 63, df0d2a25 (L-1); successor 64, 559cdffc (fixes entry 2, L-2); successor 65,
+  b61c2029 (fixes entry 3, L-3) and 87603d07 (fixes entry 4, L-4).
+- INDEPENDENCE: the packet's proofs are L-NEW's, B-ONLY's is L-NEW's re-derivation of L-RED's lemma (L41 and L43, above); each referee
+  re-derived every proof step (REFEREE «## 3. Proofs (task 1; each step re-derived)»; REFEREE-2 «## Proofs (own re-derivation)») and
+  replayed the DATA on its own code (REFEREE: quiet_replay.py on its own VJ engine and builder, rand191.rgen «imported only as the set's
+  definition», l. 34; REFEREE-2: r2quiet.py, «no si.py, pg.py, gamma3, idealcyc or box19x code», l. 184-185). Each referee wrote its first
+  report without reading the other's (REFEREE l. 3; REFEREE-2 l. 2-3); REFEREE-2 compared afterwards (Add. 1); REFEREE 29 read REFEREE-2's
+  items only as quoted in fixes entry 2 (§C l. 225). L-RED R221 was context only at both («L-RED R221 (claude/l-red d49b9f0c) is context
+  only; I used it only as quoted in fixes entry 1.», REFEREE l. 4; REFEREE-2 l. 3-4). One disclosure at REFEREE-2: before its Γ3 verdict
+  it saw a trunk subject line («I did not read that commit's text.», l. 5). The L-2 wording is REFEREE's QT-L strings (REFEREE-2's
+  W-1..W-3 withdrawn in their favour), applied by the lane by script under the Lead's 06:39Z routing; each referee byte-tested L-2 with
+  its own script (REFEREE §C quiet_linefix.py; REFEREE-2 Add. 2 bt_l2.py) and read entry 2 in meaning. At L-4: R-L, R-U, R-B, R-Q and R-T
+  are the drafter's proposals, R-G the Lead's clause for REFEREE 28's step, R-B2 the Lead's; REFEREE 30 byte-tested L-4 «with strings
+  typed from the tables of fixes entries 3-4 … not from the lane's scripts» (§D l. 270-271); REFEREE-2 35's bt_l34.py «reads the (key,
+  old, new) lists from the lane's mkl3_194.py and mkl4_194.py by ast literal parsing, without executing lane code» (Add. 4 l. 417-418), so
+  it tests the lane's application of the lane's strings; both read each change in meaning. REFEREE-2's Add. 3 answers the Lead's question
+  on REFEREE 28's step, which it quotes (l. 384-385), and REFEREE 30's §D names REFEREE-2's Add. 3 as the second signature (l. 276-277);
+  both first reports stay independent (above).
+- TARGET.md diff: TARGET.md §2 (M4) asks for one algorithm, polynomial on EVERY parity game, that outputs (W_E, W_O); every statement here
+  bounds one count, T_CYC, the Howard steps of IDEAL-CYC(G) on R104 genomes, a restricted model, and UP-T / ASC-T are polynomial only
+  under a hypothesis on the genome ([E-LEV] with U(G) bounded) or on its runs (bounded ascents) (TARGET.md §4: «Polynomial only on a
+  restricted class …»; packet §9 l. 195-199; REFEREE §7 l. 213-217: «Not M3, not a step-4 pass. G-N5-TIME stays OPEN. N5′-xi stays a
+  CANDIDATE (D1).»; REFEREE-2 l. 289-297: «§3: the values (Λ, Π, k) are n-bit objects, and no unit-cost big integer is used.»). It is not
+  an algorithm claim on every game, so TARGET.md §5's gauntlet does not apply, and it is not a step-4 pass. L-4 carries «so this is not
+  M4», «G-N5-TIME stays OPEN» and «not M3, not a step-4 pass, not a TARGET.md claim», in that order (R-U; by script). GAPS G-N5-TIME:
+  open.
+
 **Erratum E-1** (not a result; 2026-11-01 05:28Z by date -u; Lead; corpus counts in RESULTS R97-R100):
 - What is wrong: the DATA-of-record sentences that say «1,132 games» for the L-SI box 50b / box 53 corpus (sbcg.lst 719 lines + alt_all.lst
   413 lines) count RUNS, not games. Measured by CHECKER (C111 N-7, claude/checker d53e1d4f) at trunk 68d50c8f: experiments/si/anc58/

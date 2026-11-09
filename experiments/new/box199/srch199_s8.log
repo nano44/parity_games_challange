@@ -1,0 +1,42 @@
+0 {'Bne_t1': 0, 'Bne_t2': 0, 'ytopB_ne': 0, 'rwfail': 0, 'rhfail': 0, 'dnfail': 0, 'hwfail': 0, 'gtfail': 0, 'trfail': 0, 'kindfail': 0, 'playfail': 0, 'runs': 1, 'rewin': 0, 'ytops': 555}
+73 HIT ytopB_ne 18 N 34 M 88 T3 16 hits/ytopB_ne_8_73.json
+200 {'Bne_t1': 0, 'Bne_t2': 0, 'ytopB_ne': 1, 'rwfail': 0, 'rhfail': 0, 'dnfail': 0, 'hwfail': 0, 'gtfail': 0, 'trfail': 0, 'kindfail': 0, 'playfail': 0, 'runs': 201, 'rewin': 14270, 'ytops': 93964}
+400 {'Bne_t1': 0, 'Bne_t2': 0, 'ytopB_ne': 1, 'rwfail': 0, 'rhfail': 0, 'dnfail': 0, 'hwfail': 0, 'gtfail': 0, 'trfail': 0, 'kindfail': 0, 'playfail': 0, 'runs': 401, 'rewin': 32632, 'ytops': 198805}
+414 HIT ytopB_ne 92 N 23 M 41 T3 7 hits/ytopB_ne_8_414.json
+486 HIT ytopB_ne 21 N 34 M 89 T3 7 hits/ytopB_ne_8_486.json
+600 {'Bne_t1': 0, 'Bne_t2': 0, 'ytopB_ne': 3, 'rwfail': 0, 'rhfail': 0, 'dnfail': 0, 'hwfail': 0, 'gtfail': 0, 'trfail': 0, 'kindfail': 0, 'playfail': 0, 'runs': 601, 'rewin': 50504, 'ytops': 309492}
+601 HIT ytopB_ne 72 N 21 M 38 T3 8 hits/ytopB_ne_8_601.json
+663 HIT ytopB_ne 138 N 34 M 88 T3 7 hits/ytopB_ne_8_663.json
+800 {'Bne_t1': 0, 'Bne_t2': 0, 'ytopB_ne': 5, 'rwfail': 0, 'rhfail': 0, 'dnfail': 0, 'hwfail': 0, 'gtfail': 0, 'trfail': 0, 'kindfail': 0, 'playfail': 0, 'runs': 801, 'rewin': 65137, 'ytops': 394792}
+867 HIT ytopB_ne 18 N 34 M 88 T3 17 hits/ytopB_ne_8_867.json
+939 HIT ytopB_ne 21 N 34 M 89 T3 11 hits/ytopB_ne_8_939.json
+1000 {'Bne_t1': 0, 'Bne_t2': 0, 'ytopB_ne': 7, 'rwfail': 0, 'rhfail': 0, 'dnfail': 0, 'hwfail': 0, 'gtfail': 0, 'trfail': 0, 'kindfail': 0, 'playfail': 0, 'runs': 1001, 'rewin': 79114, 'ytops': 474845}
+1200 {'Bne_t1': 0, 'Bne_t2': 0, 'ytopB_ne': 7, 'rwfail': 0, 'rhfail': 0, 'dnfail': 0, 'hwfail': 0, 'gtfail': 0, 'trfail': 0, 'kindfail': 0, 'playfail': 0, 'runs': 1201, 'rewin': 97436, 'ytops': 581869}
+1386 HIT ytopB_ne 18 N 34 M 87 T3 16 hits/ytopB_ne_8_1386.json
+1400 {'Bne_t1': 0, 'Bne_t2': 0, 'ytopB_ne': 8, 'rwfail': 0, 'rhfail': 0, 'dnfail': 0, 'hwfail': 0, 'gtfail': 0, 'trfail': 0, 'kindfail': 0, 'playfail': 0, 'runs': 1401, 'rewin': 113991, 'ytops': 689743}
+1586 HIT ytopB_ne 18 N 34 M 87 T3 11 hits/ytopB_ne_8_1586.json
+1600 {'Bne_t1': 0, 'Bne_t2': 0, 'ytopB_ne': 9, 'rwfail': 0, 'rhfail': 0, 'dnfail': 0, 'hwfail': 0, 'gtfail': 0, 'trfail': 0, 'kindfail': 0, 'playfail': 0, 'runs': 1601, 'rewin': 127962, 'ytops': 776738}
+1763 HIT ytopB_ne 226 N 34 M 89 T3 16 hits/ytopB_ne_8_1763.json
+1764 HIT ytopB_ne 88 N 23 M 41 T3 11 hits/ytopB_ne_8_1764.json
+1800 {'Bne_t1': 0, 'Bne_t2': 0, 'ytopB_ne': 11, 'rwfail': 0, 'rhfail': 0, 'dnfail': 0, 'hwfail': 0, 'gtfail': 0, 'trfail': 0, 'kindfail': 0, 'playfail': 0, 'runs': 1801, 'rewin': 145308, 'ytops': 877792}
+2000 {'Bne_t1': 0, 'Bne_t2': 0, 'ytopB_ne': 11, 'rwfail': 0, 'rhfail': 0, 'dnfail': 0, 'hwfail': 0, 'gtfail': 0, 'trfail': 0, 'kindfail': 0, 'playfail': 0, 'runs': 2001, 'rewin': 159645, 'ytops': 968969}
+2147 HIT ytopB_ne 7 N 34 M 88 T3 16 hits/ytopB_ne_8_2147.json
+2200 {'Bne_t1': 0, 'Bne_t2': 0, 'ytopB_ne': 12, 'rwfail': 0, 'rhfail': 0, 'dnfail': 0, 'hwfail': 0, 'gtfail': 0, 'trfail': 0, 'kindfail': 0, 'playfail': 0, 'runs': 2201, 'rewin': 175476, 'ytops': 1071170}
+2400 {'Bne_t1': 0, 'Bne_t2': 0, 'ytopB_ne': 12, 'rwfail': 0, 'rhfail': 0, 'dnfail': 0, 'hwfail': 0, 'gtfail': 0, 'trfail': 0, 'kindfail': 0, 'playfail': 0, 'runs': 2401, 'rewin': 190623, 'ytops': 1173447}
+2550 HIT ytopB_ne 18 N 34 M 87 T3 11 hits/ytopB_ne_8_2550.json
+2600 {'Bne_t1': 0, 'Bne_t2': 0, 'ytopB_ne': 13, 'rwfail': 0, 'rhfail': 0, 'dnfail': 0, 'hwfail': 0, 'gtfail': 0, 'trfail': 0, 'kindfail': 0, 'playfail': 0, 'runs': 2601, 'rewin': 205153, 'ytops': 1277144}
+2793 HIT ytopB_ne 86 N 23 M 40 T3 11 hits/ytopB_ne_8_2793.json
+2800 {'Bne_t1': 0, 'Bne_t2': 0, 'ytopB_ne': 14, 'rwfail': 0, 'rhfail': 0, 'dnfail': 0, 'hwfail': 0, 'gtfail': 0, 'trfail': 0, 'kindfail': 0, 'playfail': 0, 'runs': 2801, 'rewin': 221913, 'ytops': 1377361}
+2832 HIT ytopB_ne 18 N 34 M 87 T3 11 hits/ytopB_ne_8_2832.json
+2958 HIT ytopB_ne 88 N 23 M 40 T3 8 hits/ytopB_ne_8_2958.json
+3000 {'Bne_t1': 0, 'Bne_t2': 0, 'ytopB_ne': 16, 'rwfail': 0, 'rhfail': 0, 'dnfail': 0, 'hwfail': 0, 'gtfail': 0, 'trfail': 0, 'kindfail': 0, 'playfail': 0, 'runs': 3001, 'rewin': 236832, 'ytops': 1466209}
+3018 HIT ytopB_ne 21 N 34 M 89 T3 10 hits/ytopB_ne_8_3018.json
+3200 {'Bne_t1': 0, 'Bne_t2': 0, 'ytopB_ne': 17, 'rwfail': 0, 'rhfail': 0, 'dnfail': 0, 'hwfail': 0, 'gtfail': 0, 'trfail': 0, 'kindfail': 0, 'playfail': 0, 'runs': 3201, 'rewin': 255675, 'ytops': 1569745}
+3400 {'Bne_t1': 0, 'Bne_t2': 0, 'ytopB_ne': 17, 'rwfail': 0, 'rhfail': 0, 'dnfail': 0, 'hwfail': 0, 'gtfail': 0, 'trfail': 0, 'kindfail': 0, 'playfail': 0, 'runs': 3401, 'rewin': 270526, 'ytops': 1665282}
+3600 {'Bne_t1': 0, 'Bne_t2': 0, 'ytopB_ne': 17, 'rwfail': 0, 'rhfail': 0, 'dnfail': 0, 'hwfail': 0, 'gtfail': 0, 'trfail': 0, 'kindfail': 0, 'playfail': 0, 'runs': 3601, 'rewin': 287697, 'ytops': 1766028}
+3630 HIT ytopB_ne 18 N 34 M 88 T3 11 hits/ytopB_ne_8_3630.json
+3684 HIT ytopB_ne 18 N 34 M 89 T3 11 hits/ytopB_ne_8_3684.json
+3800 {'Bne_t1': 0, 'Bne_t2': 0, 'ytopB_ne': 19, 'rwfail': 0, 'rhfail': 0, 'dnfail': 0, 'hwfail': 0, 'gtfail': 0, 'trfail': 0, 'kindfail': 0, 'playfail': 0, 'runs': 3801, 'rewin': 302864, 'ytops': 1853182}
+3925 HIT ytopB_ne 43 N 23 M 41 T3 6 hits/ytopB_ne_8_3925.json
+3962 HIT ytopB_ne 86 N 23 M 39 T3 6 hits/ytopB_ne_8_3962.json
+FINAL {'Bne_t1': 0, 'Bne_t2': 0, 'ytopB_ne': 21, 'rwfail': 0, 'rhfail': 0, 'dnfail': 0, 'hwfail': 0, 'gtfail': 0, 'trfail': 0, 'kindfail': 0, 'playfail': 0, 'runs': 4000, 'rewin': 315065, 'ytops': 1934117}

@@ -46,10 +46,12 @@ b2880b8187d475021a175410dc0edf5534fa69c0  ../box189/corpus/A_d4_W2_k2.json
 cf2aedf8341d797a1e142a8b8fe6a5c6eade62ce  ../box189/corpus/REC_d7_mu17_norm.json
 5d7c07cc298222d05fbbbe92adeb25a510d6ab50  ../box189/corpus/KILL_M2D_d6_mu13_norm.json
 dbbe3f3d109c65f962df920618808181824bc93f  ../box189/corpus/A_d5_W2_k3.json
-cd36b9053c21435df8adcc526690c3aab0707efa  DOCS/P-N5-CHAIN-fixes.md
+e823ca09db0b61368841f831d2ae5dd13161acc9  DOCS/P-N5-CHAIN-fixes.md
 bd152dd9c71ea47dbc7fa6655a9a18a87908781a  DOCS/P-N5-CHAIN-line-L1.txt
 5d5bee9af429ccc4e4ac749df1e9b9bde4177c92  mkl1_196.py
 e481d260884807424c545bd3f3cdd7fbfb25f05c  DOCS/P-N5-CHAIN-line-L2.txt
 11c93f192c5946ac1b44c2b911d561e3ad2fe978  mkl2_196.py
 c484795c888ab46cee07038094368ba28da0055d  DOCS/P-N5-CHAIN-line-L3.txt
 68b853b6324dc635bddd222bfee31cebef4a0779  mkl3_196.py
+a69c8aa96fb0b67c6c0a3f6d11670a0b57ba9331  DOCS/P-N5-CHAIN-line-L4.txt
+dfaa5c212790340591478d2041fe87da811ab643  mkl4_196.py
