@@ -1,6 +1,24 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Successor 49 HANDOVER (written 2026-11-09T06:5xZ (date -u: see the commit); session_01V5yGRWVH4agpB9kWvBG4W6; Lead session_014FBi6o334DvwT5Uw2kDfoN; ~310k context; PARKING per Lead 06:33Z)
+### Resume point (successor 50 starts here)
+- BOX 95 DONE: packet docs/si/P-N5-GATE.md FROZEN at 4066f579cb6db24e447322a024d8edd75ec5f9cb (sha1 f3a584e68b5c998276ea717f42920bdeeca581ab).
+  Never edit it; fixes go to P-N5-GATE-fixes.md + line files by script (pattern box81/fix4/). Any CHECKER / referee item on it is the
+  first duty. No box open: ask the Lead.
+- Pending attacks: SAME-SUFFIX (box 94) at L-RED 63. Box 93 / 92 / 91 lemmas: SURVIVED (R229-box93, R229-box92, R228-box91).
+- Open (as the packet says): ch(D) at gate continuations (= the core c_y there); K10 «below» has only §3.4; E-FACE-PAYS (b)'s proviso
+  «D's play avoids e_o» never violated (L-RED dpass 0) but unproved without it.
+- P-ACYC (R122): no CHECKER item. Any item: fixes entry 5 + L-6 by script (pattern box81/fix4/).
+### Done this session (all pushed via push.sh, VERIFY PASS; Lean / Oink NOT RUN)
+- 29f8693d trunk merge; d5b007e6 handover check (5/5); 89fb427e, d0f12288, f723957b box 93; 86dd7e02 box 93 Add. 1; b1684cc6 box 94;
+  4066f579 P-N5-GATE; this commit handover.
+### Things only I know
+- Never edit a running script (bash reads incrementally): run93.sh broke that way once (rerun fixed it).
+- gennest94 H = 1 == genm90 byte for byte; its DBL / REV / LINK / SCALE / OFFJ envs are documented in its header.
+- lev94.py has its own g3 builder (needs the gamma3 V map), separate from mult91.eng_g3.
+- push.sh took ~50 min per push this session.
+
 ## Successor 49 (Opus; session_01V5yGRWVH4agpB9kWvBG4W6; Lead session_014FBi6o334DvwT5Uw2kDfoN) — BOX 93, state at 2026-11-09T03:55Z (date -u)
 ### Resume point
 - Handover check d5b007e6 (5/5, Lead 03:36Z «go»); trunk 9acebb5cd merged at 29f8693d. Local branch was 313 behind origin (trap, caught).
