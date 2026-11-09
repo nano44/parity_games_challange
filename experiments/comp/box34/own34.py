@@ -98,16 +98,16 @@ def run(G, elev=True, cap=20000, check_start=True):
         s0, t0 = standard(G, V, g)
         assert all(sigma[v] == s0[v] for v in range(n) if g.owner[v] == EVEN), "S3 != standard state (sigma)"
         assert all(tau[v] == t0[v] for v in range(n) if g.owner[v] == ODD), "S3 != standard state (tau)"
-    vals = []; it = 0
+    vals = []; sigs = []; taus = []; it = 0
     while True:
         vs = SG.evaluate(sigma); vt = SD.evaluate(tau)
-        vals.append(vs)
+        vals.append(vs); sigs.append(tuple(sigma)); taus.append(tuple(tau))
         Is = {v: [w for w in SG.succ[v] if SG.nvo(vs[sigma[v]], vs[w]) < 0] for v in range(n) if sigma[v] != -1}
         Is = {v: w for v, w in Is.items() if w}
         It = {v: [w for w in SD.succ[v] if SD.nvo(vt[tau[v]], vt[w]) < 0] for v in range(n) if tau[v] != -1}
         It = {v: w for v, w in It.items() if w}
         if not Is and not It:
-            return dict(T3=it, fallback=False, vals=vals, g=g, V=V)          # stopped without a fallback (not expected: ENDGAME-3)
+            return dict(T3=it, fallback=False, vals=vals, sigs=sigs, taus=taus, g=g, V=V)          # stopped without a fallback (not expected: ENDGAME-3)
         # S4a (SPEC) + [N5XI]
         if Is:
             A = [None] * n
@@ -140,10 +140,10 @@ def run(G, elev=True, cap=20000, check_start=True):
         else:
             tau2 = list(tau)
         if sig2 == sigma and tau2 == tau:
-            return dict(T3=it, fallback=True, vals=vals, g=g, V=V)           # first fallback at iteration it + 1
+            return dict(T3=it, fallback=True, vals=vals, sigs=sigs, taus=taus, g=g, V=V)           # first fallback at iteration it + 1
         it += 1
         if it >= cap:
-            return dict(T3=it, fallback=False, capped=True, vals=vals, g=g, V=V)
+            return dict(T3=it, fallback=False, capped=True, vals=vals, sigs=sigs, taus=taus, g=g, V=V)
         sigma, tau = sig2, tau2
 
 

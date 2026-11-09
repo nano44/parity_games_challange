@@ -1,0 +1,17 @@
+block 0 k 0 n 36864 0s
+block 1 k 1 n 36864 1s
+block 2 k 1 n 36864 1s
+block 3 k 1 n 36864 2s
+block 4 k 1 n 36864 2s
+block 5 k 1 n 36864 3s
+block 6 k 1 n 36864 3s
+block 7 k 1 n 36864 4s
+block 8 k 1 n 36864 5s
+block 9 k 1 n 36864 5s
+block 10 k 1 n 36864 6s
+block 11 k 1 n 36864 7s
+block 12 k 1 n 36864 7s
+block 13 k 1 n 36864 8s
+block 14 k 1 n 36864 8s
+block 15 k 1 n 36864 9s
+SUMMARY N 1 M 4 k 1 genomes 552960 maxratio 0 maxkfx -2 maxflip 0 maxT3 3 c2fail 0 ratio_arg {"inner": [[0, 1, 2, 3], [0, 1, 2, 3], [0, 0, 0, 0], [0]], "gate": [0, 0], "flips": 0, "lamch": 0, "T3": 1, "lev": [0], "D": [4], "xts": [-1, -1, -1, 0]}

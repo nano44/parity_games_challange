@@ -1,0 +1,3 @@
+{'lnew_compared': 250, 'genomes': 250, 'T3sum': 608, 'maxT3': 8, 'maxflip': 5, 'flipping_gates': 1042, 'capped_or_nofb': 0, 'skipped_k': 182}
+{'lnew_compared': 500, 'genomes': 500, 'T3sum': 1203, 'maxT3': 8, 'maxflip': 5, 'flipping_gates': 2051, 'capped_or_nofb': 0, 'skipped_k': 413}
+FINAL B2 500 3603 {'lnew_compared': 500, 'genomes': 500, 'T3sum': 1203, 'maxT3': 8, 'maxflip': 5, 'flipping_gates': 2051, 'capped_or_nofb': 0, 'skipped_k': 413}

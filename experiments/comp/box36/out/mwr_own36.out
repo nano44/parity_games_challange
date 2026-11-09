@@ -1,0 +1,8 @@
+MWR4_2.json N+M 145 k 1 {'T3': 30, 'fallback': True, 'n': 737, 'maxflip': 9, 'ratio': 9.0, 'ratio_gate': [34, 0], 'ratio_flips': 9, 'ratio_lamch': 0, 'kfx': 7, 'k1fail': 1, 'k1c2fail': 1, 'totflips': 13, 'F': 13, 'R': 5, 'C': 5}
+MWR8_2.json N+M 261 k 1 {'T3': 54, 'fallback': True, 'n': 1333, 'maxflip': 17, 'ratio': 17.0, 'ratio_gate': [62, 0], 'ratio_flips': 17, 'ratio_lamch': 0, 'kfx': 15, 'k1fail': 1, 'k1c2fail': 1, 'totflips': 25, 'F': 25, 'R': 9, 'C': 9}
+MWR16_2.json N+M 493 k 1 {'T3': 102, 'fallback': True, 'n': 2525, 'maxflip': 33, 'ratio': 33.0, 'ratio_gate': [118, 0], 'ratio_flips': 33, 'ratio_lamch': 0, 'kfx': 31, 'k1fail': 1, 'k1c2fail': 1, 'totflips': 49, 'F': 49, 'R': 17, 'C': 17}
+k1fail_202.json N+M 60 k 1 {'T3': 4, 'fallback': True, 'n': 340, 'maxflip': 2, 'ratio': 2.0, 'ratio_gate': [4, 0], 'ratio_flips': 2, 'ratio_lamch': 0, 'kfx': 0, 'k1fail': 1, 'k1c2fail': 0, 'totflips': 3, 'F': 2, 'R': 2, 'C': 1}
+
+real	1m21.174s
+user	1m20.355s
+sys	0m0.102s

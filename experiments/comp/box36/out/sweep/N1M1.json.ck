@@ -1,0 +1,2 @@
+{"i": 0, "k": 0, "n": 2, "lev": [0], "D": [1], "xts": [-1]}
+{"i": 1, "k": 1, "n": 2, "st": {"genomes": 2, "maxratio": 0.0, "ratio_arg": {"lev": [0], "D": [1], "xts": [0], "inner": [[0], [0], [0], [0]], "gate": [0, 0], "flips": 0, "lamch": 0, "T3": 0}, "maxkfx": -2, "kfx_arg": {"lev": [0], "D": [1], "xts": [0], "inner": [[0], [0], [0], [0]], "gate": [0, 0], "flips": 0, "lamch": 0, "T3": 0}, "maxflip": 0, "maxT3": 0, "c2fail": 0, "hist": {"0,0": 2}}, "lev": [0], "D": [1], "xts": [0]}

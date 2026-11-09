@@ -1,6 +1,27 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## RESUME POINT -- successor 15 (L-COMP 15, Opus 5.5), BOX 36 (GO Lead 04:30Z; item 2 retargeted Lead 04:14Z), written 04:44Z by date -u
+### Tools (experiments/comp/box36/; all DATA; scope of every number: N5'-xi from S3 on Gamma3 up to the first fallback, [E-LEV])
+- own36.py: per-gate census on own34's run (own34.run now also returns sigs/taus): flips(g) (sigma-bar = SpecSI.evaluate_choice Odd
+  choice), lamch(g) (Lambda change at pe_g or pB_g), ratio = flips/(lamch+1), kfx = flips - 2(lamch+1), F, R (box 200's returns), C;
+  k = own brute-force FVS of the Xi-graph (KCAP 3).
+- fast36.c (bin/fast36_w{1,8,16,48}: gcc -O2 -DW=<w> -o bin/fast36_w<w> fast36.c; bin/ NOT committed): C port of own34 + own36 census.
+  Modes «one» (genome text from fast36.gtext) and «block N M lev D xts» (all inner genomes of a gen36 block, stats as sweep36.merge).
+  FAST36_CTRL=1 = [N5XI] off (control), FAST36_NOELEV=1.
+- VALIDATION (val36.py; LNEW = claude/l-new fa17fdf6 worktree): set A 2,000 (gen36 space N 1-2, M 3-6, seed 3601), B1 2,000 (k1srch202.mk
+  k = 1, seed 3602), B2 500 (k = 2, seed 3603): 0 MISMATCHES in all four comparisons (fast36 vs own36 T3/fb/every gate (flips, lamch);
+  vs asc197 T3; vs k1srch202.census T3/maxflip/k1fail/k1c2fail; own kfvs vs fvs202 k). Control FAST36_CTRL=1: 72/100 mismatch.
+  blockcmp36.py: C block stats = Python (own36) block stats on every k >= 1 block of N1M2, N1M3, N2M2, N2M3 (57,024 genomes, 0 bad blocks).
+- gen36.py = enum33/exact35 genome space (any N; wt = first mover of level - 1); sweep36.py N M k/K OUT (ENGINE=c|py; resumable .ck per
+  block); table36.py *.ck -> table + argmax genomes frozen to out/argmax (+ SHA1SUMS), each re-run in own36 AND C (agree flag).
+### Results so far
+- (b) MWR4_2/8_2/16_2 (l-red 406ef2fd), own36 (third engine): T3 30/54/102, C 5/9/17, R 5/9/17, F 13/25/49, maxflip 9/17/33 at gate (qz, 0)
+  with lamch 0, kfx 7/15/31, k 1 = L-RED R229 §2 on every column (out/mwr_own36.out); fast36 equal on T3/flips/lamch.
+- (c) exhaustive table: out/table36_part1.jsonl (N + M <= 6; max ratio <= 1 at every (N, M, k); maxflip 2 at N2M4 only with lamch >= 1).
+- RUNNING: N1M5 (73.7M) and N3M4 (56.6M) sweeps, ENGINE=c, resumable from out/sweep/N1M5.json.ck, N3M4.json.ck (relaunch the same line).
+- NEXT: N4M4 (46M); then item 3 (C >= 2 frontier) needs a C counter for C in fast36 (not written yet).
+
 ## HANDOVER -- successor 14 (L-COMP 14, Opus 5.5) PARKS 2026-11-09 03:29Z by date -u (Lead 02:14Z: BOX 35 last before park). NOTHING RUNNING.
 ### Where things are (all DATA; scope of every number: N5'-xi from S3 on Gamma3 up to the first fallback, unit = genome unless stated)
 - Engines: own34.py (experiments/comp/box34) = MY independent engine (Gamma3 from R104 + P-N5-REACH §3 text; n5b SPEC + [N5XI] tie rule;

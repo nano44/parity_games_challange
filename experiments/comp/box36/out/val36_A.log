@@ -1,0 +1,9 @@
+{'lnew_compared': 250, 'genomes': 250, 'T3sum': 246, 'maxT3': 3, 'maxflip': 2, 'flipping_gates': 24, 'capped_or_nofb': 0}
+{'lnew_compared': 500, 'genomes': 500, 'T3sum': 477, 'maxT3': 3, 'maxflip': 2, 'flipping_gates': 37, 'capped_or_nofb': 0}
+{'lnew_compared': 750, 'genomes': 750, 'T3sum': 710, 'maxT3': 3, 'maxflip': 2, 'flipping_gates': 49, 'capped_or_nofb': 0}
+{'lnew_compared': 1000, 'genomes': 1000, 'T3sum': 956, 'maxT3': 3, 'maxflip': 2, 'flipping_gates': 74, 'capped_or_nofb': 0}
+{'lnew_compared': 1250, 'genomes': 1250, 'T3sum': 1186, 'maxT3': 3, 'maxflip': 2, 'flipping_gates': 87, 'capped_or_nofb': 0}
+{'lnew_compared': 1500, 'genomes': 1500, 'T3sum': 1432, 'maxT3': 3, 'maxflip': 2, 'flipping_gates': 113, 'capped_or_nofb': 0}
+{'lnew_compared': 1750, 'genomes': 1750, 'T3sum': 1671, 'maxT3': 3, 'maxflip': 2, 'flipping_gates': 135, 'capped_or_nofb': 0}
+{'lnew_compared': 2000, 'genomes': 2000, 'T3sum': 1901, 'maxT3': 3, 'maxflip': 2, 'flipping_gates': 147, 'capped_or_nofb': 0}
+FINAL A 2000 3601 {'lnew_compared': 2000, 'genomes': 2000, 'T3sum': 1901, 'maxT3': 3, 'maxflip': 2, 'flipping_gates': 147, 'capped_or_nofb': 0}

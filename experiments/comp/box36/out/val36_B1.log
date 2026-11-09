@@ -1,0 +1,9 @@
+{'lnew_compared': 250, 'genomes': 250, 'T3sum': 507, 'maxT3': 5, 'maxflip': 3, 'flipping_gates': 638, 'capped_or_nofb': 0, 'skipped_k': 64}
+{'lnew_compared': 500, 'genomes': 500, 'T3sum': 1018, 'maxT3': 6, 'maxflip': 3, 'flipping_gates': 1174, 'capped_or_nofb': 0, 'skipped_k': 104}
+{'lnew_compared': 750, 'genomes': 750, 'T3sum': 1519, 'maxT3': 6, 'maxflip': 3, 'flipping_gates': 1712, 'capped_or_nofb': 0, 'skipped_k': 155}
+{'lnew_compared': 1000, 'genomes': 1000, 'T3sum': 2012, 'maxT3': 6, 'maxflip': 3, 'flipping_gates': 2299, 'capped_or_nofb': 0, 'skipped_k': 217}
+{'lnew_compared': 1250, 'genomes': 1250, 'T3sum': 2502, 'maxT3': 6, 'maxflip': 3, 'flipping_gates': 2838, 'capped_or_nofb': 0, 'skipped_k': 267}
+{'lnew_compared': 1500, 'genomes': 1500, 'T3sum': 2997, 'maxT3': 6, 'maxflip': 3, 'flipping_gates': 3321, 'capped_or_nofb': 0, 'skipped_k': 307}
+{'lnew_compared': 1750, 'genomes': 1750, 'T3sum': 3495, 'maxT3': 6, 'maxflip': 3, 'flipping_gates': 3874, 'capped_or_nofb': 0, 'skipped_k': 358}
+{'lnew_compared': 2000, 'genomes': 2000, 'T3sum': 4049, 'maxT3': 6, 'maxflip': 3, 'flipping_gates': 4569, 'capped_or_nofb': 0, 'skipped_k': 412}
+FINAL B1 2000 3602 {'lnew_compared': 2000, 'genomes': 2000, 'T3sum': 4049, 'maxT3': 6, 'maxflip': 3, 'flipping_gates': 4569, 'capped_or_nofb': 0, 'skipped_k': 412}
