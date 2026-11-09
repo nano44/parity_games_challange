@@ -1,0 +1,5 @@
+L10_C11_osc2_final_solved XS 11 G 40  last_SAT 10  UNSAT_at 11
+L10_C11_osc2_final_solved XS 11 G 41  last_SAT 13  UNSAT_at 14
+L10_C11_osc2_final_solved XS 11 G 42  last_SAT 13  UNSAT_at 14
+L10_C11_osc2_final_solved XS 11 G 43  last_SAT 10  UNSAT_at 11
+L10_C11_osc2_final_solved XS 11 G 44  last_SAT 13  UNSAT_at 14
