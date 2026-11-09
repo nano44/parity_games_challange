@@ -70,6 +70,10 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   W's role given to R; k 1; gate (qz, 0) flips 2n + 1, lamch 0; two engines incl. L-NEW's gflip202 / fvs202). C = R = n + 1, T3 = 6n + 6:
   a k = 1 family with C growing (linear). K1-POLY: its Γ3 bound is REACH3-CYC, CONDITIONAL for Ξ-cyclic genomes (unlisted condition).
 - Running at 03:44Z: lag229.py h ≤ 6 sweep (scratch genomes), nclimb229 ORDER=NP 2901 (cap 400). Next: lagclimb229 h = 4 cfg climb; K1C climb.
+- 04:57Z Lead: BOX 93 (l-si f723957b) routed. docs/red/R229-box93.md: NP-SHAPE / E-FACE-PAYS / WAIT-QUIET SURVIVE (e93_229.py, 29 rows,
+  all must-be-0 counters 0; dexact exact form of dfail). NEW Lemma REL-G (PROVED, lane): no relock with UP_(t-1) is gamma-paid -> closes box 93's
+  non-PRIV-before case. Proviso «D avoids e_o» never exercised (dpass 0); DP climb 2904 running. K1C climb best K1C16_n400 (k 1, C = R = 16).
+  K7 NP climb 2901: mnp 50 -> 51 (no gain). LAG h = 6 done, h = 4 cfg climb CNT 2 / REARM 2. Addendum 86dd7e02 (K10) not yet read.
 - Scratch (lost on restart; rebuild with git archive): si92 (d962efdb box91/92/86/85/84), lred (4b309716 r221), lnew (fcba92fc), new202 (fa17fdf6).
 
 ## Successor 62 HANDOVER (2026-11-09 ~01:5xZ, date -u; context large; written while the cap-800 climb runs)
