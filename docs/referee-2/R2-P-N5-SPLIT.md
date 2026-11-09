@@ -215,3 +215,127 @@ box 5 = TARGET.md diff, line requirements, verdict table.
 - DATA (my engine, box 4): ph_a, ph_b, ph_c, rafail, rpfail, rptfail, recfail, dmon, pcfail, bdfail are 0 on the 28 pinned runs (every
   (v, I), every pair of letters, every gap). ASC-WIT (awa, awb, awc, awd, awmv) and ASC-ROOT (rootfail, a witness gate searched over ALL
   gates) are 0 on 113,238 ascents. The pinned instances satisfy [E-LEV]: my builder orders e-priorities by (lev, gate).
+
+## DEAD list and DATA replay on my own engine (box 4)
+### Tool
+- R2-P-N5-SPLIT/r2split.py:
+  - Engine: REFEREE-2's own R2-P-N5-END/r2end.py (Γ3 builder, SPEC S1, VJ values and order, S3), with the N5′-xi stepping loop of
+    R2-P-N5-CHAIN/r2chain.py, copied so that every pre-fallback state is kept.
+  - No lane, L-RED, REFEREE or L-SI code.
+  - Counters are written from the packet's text, one per proof step. Their units and conditions are in the tool's doc string.
+  - Drivers: sweep.sh (random genomes, first controls) and sweep2.sh (controls after a tool fix, mutations); absolute paths.
+- Instances: box199/inst of a git archive of 399cda07, all 28 genome files (pins verified).
+- Own random genomes: r2end.gen, 3,000 «any» (seed 2), 2,000 «self» (seed 3), 2,000 «acyc» (seed 4).
+- Own mutations: r2split.mutate, 300 each around CX4_n21, C2CX4_n23, ROUTELOW_n21, NK6_cl21, GROW7_n34, MW4_2, FW4_2, FW6_4 (seeds 11-18).
+### Pinned runs (pinned.out)
+- Every must-0 counter is 0 on all 28 runs: entfail, playfail, prefail, kindfail, hwfail, gtfail, trfail, abfail, psa, psb, psc (and
+  rw_psa, rw_psb, rw_psc), lamb, lamm, spfail, spl3M, rcfail, decfail, rws1, rws2, rw1fail, ph_a, ph_b, ph_c, rafail, rpfail, rptfail,
+  recfail, dmon, pcfail, bdfail, awa, awb, awc, awd, awmv, rootfail.
+- Coverage: 66,335 changes (= y-tops), 47,758 same-pair couples (7,880 re-wins), 113,238 ascents, max T3 199.
+- Equal to the lane's split199.out on every instance, in 12 fields: T3, changes, max c_y, max split pairs, W, re-wins, and D1-D6's
+  counters (dn_nobelow_all, wcfail, wbfail, ytopB_ne, premono_no, rwfail). Script output: «compared 28 diffs 0».
+  - Two engines (the lane's box 189/190 and mine) give the same runs. Howard's tie rule is the free part, and it agrees on these 28.
+### Random genomes and mutations
+- Random genomes (gen.out): 7,000 runs, 65,045 changes, every must-0 counter 0. They are small (max T3 8, max c_y 1), so they test §2, §6
+  and §7, but they produce no same-pair couple.
+- Mutations (mut.out): MUT-RESULT
+### Controls (CX4_n21, RWX_n95, FW6_4 unless said)
+- ctrl_neg.out, ctrl_neg_gen.out (every condition negated): every must-0 counter fires except playfail and prefail. Those two check how
+  the plays are walked (definitions), not a lemma; the packet's playfail likewise has no control.
+- ctrl_U0.out (U_y := ∅): psc 344, rw_psc 250, spfail 192, rcfail 192, rws1 344, rw1fail 188, ph_a 443, ph_b 198, rafail 538 fire.
+- ctrl_how.out (Howard order reversed in hwfail): hwfail 4,113. Of these, 444 are on CX4_n21, the packet's ctrl1 count.
+- ctrl_root.out (rootfail demands lev(g*) < 0): rootfail 4,797.
+### DEAD list (§8), re-run with the packet's units on my engine
+- D1 (downward charge), CX4_n21:
+  - d1 = 192 of 219 re-wins: no vertex of P_t2(b) changes Λ or an e-letter less relevant than y between t1 and t2 − 1.
+  - The packet's first instance is one of them: v = x0, y = e(10,0), t1 4, t2 6, u = x0, b = m_(0,0).
+  - DEAD confirmed.
+- D2 (W-target charge for all re-entries), GROW7_n34: d2 = 18. First: v = x10, y = e(15,1), wt(y) = x0, t 4 → 6 (= §8). DEAD
+  confirmed.
+- D3 (W-target bound), HOLD2K_n84: d3 = 18 (v, I, y). DEAD confirmed.
+- D4 (ROUTE-LOW), ROUTELOW_n21: d4 = 65 y-tops. First: v = x0, state 2, y = e(11,0), split u = gate (10,0) (= §8: «gate (10,0)
+  re-routes»). DEAD confirmed.
+- D5 (product chain: Pre lex-monotone at y-tops):
+  - d5 = 18 on GROW7_n34, 14 on GROW8_n53, 18 on HOLD3K_n125, 165 on DU21_h4: Pre is not lex-nondecreasing.
+  - DEAD confirmed. The remark «where it holds #Pre + #Suf − 1 ≤ Dhi_y(v)» is an aside; I did not test it, and it is not needed for the
+    kill.
+- D6 (RW-WT, RW-WT*, RW-B0, RW-B0*), RWX_n95:
+  - d6 = 31 re-wins have E(wt(y)) ∩ U_y constant on [t1, t2], all 31 multi-split (RW-1 consistent). These
+    are the 31 couples with S_t = S_t′ (Seq); rws1 and rws2 are 0 on them.
+  - First: v = u = x17, b = m_(17,1), y = e(8,0), wt(y) = x20, t 3, t′ 6. E(wt(y)) ∩ U_y = ∅ at both. E(b) ∩ U_y goes ∅ → {e(40,9)}, and
+    e(40,9) lies before y on b's play.
+  - In my builder's numbering y = 764 and e(40,9) = 647, the packet's ids. x17 = 17 and x20 = 20 also agree. b is 1648 in my numbering;
+    the packet's 240 is L-RED's id, from another builder.
+  - DEAD confirmed.
+- D7 (fan-in 1 of RA; RA-LOG / bounded multiplicity):
+  - max |RA(y)| is 3 on NK6_cl21 and 4 on DSALT9_n416 (= §8), and 33 on MW32_2.
+  - The longest RA chain (counting y) on FW4/8/12/16_2 is 4 / 8 / 12 / 16: linear in the family parameter.
+  - «fan-in 1» is DEAD. RA-LOG's DATA is linear depth on FW: reproduced. The multiplicity m(y, z) = n on MW is L-SI's census. I did not
+    compute it; it is cited DATA of another lane and not a premise.
+### Maxima (record, = §9.1 and fixes n1)
+- Max c_y: 6 on C6G8_n54, 65 = 2·32 + 1 on MW32_2.
+- Max split pairs: 5 on FW6_4 and FW8_4. Max W: 4.
+- These are records on the 28 frozen instances only (fixes n1). L-RED's MW mutants (C 12, C 26) are relayed by the lane and not re-run by
+  me.
+
+## TARGET.md diff (box 5)
+- TARGET.md §2 (M4) asks for an algorithm polynomial on every parity game. §4 l. 31 says «Polynomial only on a restricted class» is not
+  M4. §5 step 4 asks for running-time proofs.
+- SPLIT proves no running-time bound, and it claims none. Its theorems are of three kinds:
+  - structural lemmas on one run (HOW3(G): N5′-xi from S3 on Γ3(G) until its first fallback, via P-N5-CHAIN's REACH3-ALL);
+  - equivalences on that run: T3 polynomial ⇔ Rtop ⇔ A ⇔ C polynomial;
+  - one reduction in one direction: C polynomial ⇐ max over y, b, J of Dhi_y(b, J) polynomial (SPLIT-COUNT, factor 3M).
+- Neither side of any equivalence is proved polynomial, so the packet decides nothing about G-N5-TIME (docs/GAPS.md: open, major,
+  L-NEW).
+- Not M3, not M4, not a gauntlet step-4 pass, not a TARGET.md claim. Even a later bound from it would be about Γ3(G) only, a restricted
+  class (§4), until connected to N5 on all games. N5′-xi stays a CANDIDATE (D1).
+- The packet's §10 says exactly this. Arithmetic is on counts of states and vertices only; no big-number arithmetic enters (TARGET.md §3
+  is not engaged).
+
+## For the line (when written; exact strings)
+- R-1 (REQUIRED, from W-1).
+  - The line must not contain «a play passes K0 iff it passes K3 iff its cycle node is in the closed core».
+  - If it names (LEX-Λ) or its reason, it must use «(LEX-Λ), used only for non-core vertices (pads of movers and gates; P-N5-CHAIN fixes
+    entry 3, R-W)».
+  - If it credits the repair, it must use «referee-originated: REFEREE-2 R2-P-N5-SPLIT W-1».
+- R-2 (REQUIRED). Every statement must be stated as «CONDITIONAL on RESULTS R125 (P-N5-CHAIN)». If R125 lands with a changed text, the
+  premise names must be re-diffed against it.
+- R-3 (REQUIRED). ASC-WIT and ASC-ROOT must carry «under HYPOTHESIS [E-LEV]». No other row may carry [E-LEV], since none uses it.
+- R-4 (REQUIRED, scope).
+  - The line must name the run as «HOW3(G), i.e. N5′-xi from S3 on Γ3(G) until its first fallback».
+  - It must state SPLIT-COUNT's direction as a reduction («C polynomial ⇐ max over y, b, J of Dhi_y(b, J) polynomial»), not as an
+    equivalence.
+  - It must keep «G-N5-TIME stays OPEN».
+- R-5 (REQUIRED if the line has a DATA clause; the DATA rule). Each must-0 counter must be named with the unit and condition of §9.1, as
+  split199.py computes them:
+  - spfail in its lower-bound form (Dhi_y(b, J_b) replaced by the number of distinct values at the pair's own y-tops);
+  - rh2fail over all same-pair couples t < t′;
+  - playfail, kindfail, trfail, wlamfail as definition checks without a firing control;
+  - the max c_y clause with its set, «the 28 frozen instances» (fixes n1).
+  I will read split199.py line by line against the clause at the byte test.
+- N-1 (optional). (PL): «the e-letters of Π_s(v) strictly before u».
+- N-2 (optional). Premise lists: §2's row add [DEF]; §7's row add (E-DOM), (Core), [DEF].
+
+## Verdicts (Opus 5.5, D1) (box 5; every row CONDITIONAL on R125 = P-N5-CHAIN as signed)
+| statement | verdict | note |
+| --- | --- | --- |
+| Lemma SPLIT (i)-(iv), incl. TRANSFER | SIGN | every genome; HOW3(G) |
+| Lemma REWIN (a)(b), Lemma REWIN-HI (c) | SIGN | (c) uses (LEX-Λ) at pads only: W-1 closed |
+| Corollary REWIN-COUNT | SIGN | superseded by SPLIT-COUNT, as the packet says |
+| Lemma PAIR-SPLIT (a′)(b′)(c′) | SIGN | «consecutive» unused, checked step by step |
+| Corollary SPLIT-COUNT (SPL ≤ 3M) | SIGN | pads have one in-edge: b determines u |
+| Lemma RW-SHAPE, RW-SHAPE*; Corollary RW-1 | SIGN | (ii)'s sandwich at pads: W-1 closed |
+| Lemma PAIR-HIGH (a)(b)(c); Lemma RA-PATHS | SIGN | abstract (E-MON3 only) |
+| Lemma RE-COUNT; Theorem RE-EQUIV | SIGN | |
+| Lemma PAIR-COUNT (corrected); Theorem ALT-EQUIV (corrected) | SIGN | A := max(1, ·) form |
+| Corollary C-EQUIV | SIGN | |
+| Lemmas ASC-WIT, ASC-ROOT | SIGN | under HYPOTHESIS [E-LEV] |
+| DEAD D1-D7 | SIGN (dead) | D1-D6 re-run on my engine with the packet's units, first witnesses equal; D7's fan-in and FW depth re-run; MW multiplicity is cited L-SI DATA, not re-run |
+| W-1 ((LEX-Λ)'s reason, §1) | closed here | a proof-text defect: false over all pairs, true for non-core pairs, and every use is at pads; the conclusion holds for all pairs |
+
+No statement is REFUSED, and no gap is left open in any signed proof. W-1 is a sentence of §1's proof text, closed above. The line needs
+R-1 to R-4, and R-5 if it has DATA.
+
+## Statement of independence
+My verdicts rest on my own derivations above and on my own engine. I did not read docs/referee/ for this packet, nor L-RED's R227 / R228
+/ R229 reports. I read the lane's split199.py (doc string and the DEAD-counter lines) only to fix the units of §8's counters.
