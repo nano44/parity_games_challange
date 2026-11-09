@@ -1,0 +1,23 @@
+# shrink34 seed seeds/MW4_2.json key m4 rng 46 start N+M 145 round 0
+kept o N+M 144 maxm 4 C 9 maxm 4 T3 30 1s
+kept o N+M 143 maxm 4 C 9 maxm 4 T3 29 2s
+kept o N+M 142 maxm 4 C 9 maxm 4 T3 28 5s
+kept o N+M 141 maxm 4 C 9 maxm 4 T3 27 7s
+kept m N+M 138 maxm 4 C 9 maxm 4 T3 27 10s
+kept o N+M 137 maxm 4 C 9 maxm 4 T3 26 11s
+kept o N+M 136 maxm 4 C 9 maxm 4 T3 25 11s
+kept o N+M 135 maxm 4 C 9 maxm 4 T3 24 15s
+kept o N+M 134 maxm 4 C 9 maxm 4 T3 24 21s
+kept o N+M 133 maxm 4 C 9 maxm 4 T3 23 22s
+kept o N+M 132 maxm 4 C 9 maxm 4 T3 22 27s
+kept o N+M 131 maxm 4 C 9 maxm 4 T3 21 30s
+kept o N+M 130 maxm 4 C 9 maxm 4 T3 21 31s
+kept o N+M 129 maxm 4 C 9 maxm 4 T3 20 34s
+kept o N+M 128 maxm 4 C 9 maxm 4 T3 19 35s
+kept o N+M 127 maxm 4 C 9 maxm 4 T3 19 39s
+kept o N+M 126 maxm 4 C 9 maxm 4 T3 19 40s
+kept m N+M 124 maxm 4 C 9 maxm 4 T3 19 46s
+kept o N+M 123 maxm 4 C 8 maxm 4 T3 18 64s
+kept o N+M 122 maxm 4 C 8 maxm 4 T3 18 91s
+kept o N+M 121 maxm 4 C 8 maxm 4 T3 17 97s
+FINAL m4 N 46 M 75 N+M 121 measure {'T3': 17, 'fallback': True, 'n': 581, 'maxalt': 10, 'maxtops': 17, 'C': 8, 'maxm': 4, 'maxP': 9, 'depthV': 3, 'fanout': 4, 'fanin': 2, 'idfail': 0, 'rpfail': 0} frozen /home/user/parity_games_challange/experiments/comp/box34/out/frontier/m4_NM121_d45d7aaa.json

@@ -1,0 +1,24 @@
+# shrink34 seed /home/user/parity_games_challange/experiments/comp/box34/out/frontier/C4_NM85_9a25cce1.json key C3 rng 44 start N+M 85 round 0
+kept o N+M 84 C 3 C 3 maxm 1 T3 6 0s
+kept o N+M 83 C 3 C 3 maxm 1 T3 6 0s
+kept m N+M 81 C 3 C 3 maxm 1 T3 6 1s
+kept m N+M 79 C 3 C 3 maxm 1 T3 6 1s
+kept m N+M 76 C 3 C 3 maxm 1 T3 6 1s
+kept o N+M 75 C 3 C 3 maxm 1 T3 6 1s
+kept m N+M 73 C 3 C 3 maxm 1 T3 6 1s
+kept m N+M 71 C 3 C 3 maxm 1 T3 6 2s
+kept m N+M 69 C 3 C 3 maxm 1 T3 6 2s
+kept o N+M 68 C 3 C 3 maxm 1 T3 6 2s
+kept o N+M 67 C 3 C 3 maxm 1 T3 6 2s
+kept m N+M 65 C 3 C 3 maxm 1 T3 6 2s
+kept m N+M 63 C 3 C 3 maxm 1 T3 6 3s
+kept m N+M 61 C 3 C 3 maxm 1 T3 6 3s
+kept m N+M 59 C 3 C 3 maxm 1 T3 6 3s
+kept m N+M 57 C 3 C 3 maxm 1 T3 6 4s
+kept m N+M 55 C 3 C 3 maxm 1 T3 6 4s
+kept m N+M 53 C 3 C 3 maxm 1 T3 6 4s
+kept m N+M 51 C 3 C 3 maxm 1 T3 6 5s
+kept m N+M 49 C 3 C 3 maxm 1 T3 6 5s
+kept m N+M 47 C 3 C 3 maxm 1 T3 6 6s
+kept m N+M 45 C 3 C 3 maxm 1 T3 6 6s
+FINAL C3 N 19 M 26 N+M 45 measure {'T3': 6, 'fallback': True, 'n': 211, 'maxalt': 4, 'maxtops': 6, 'C': 3, 'maxm': 1, 'maxP': 4, 'depthV': 3, 'fanout': 2, 'fanin': 2, 'idfail': 0, 'rpfail': 0} frozen /home/user/parity_games_challange/experiments/comp/box34/out/frontier/C3_NM45_8a702944.json

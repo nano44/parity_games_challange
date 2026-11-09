@@ -1,0 +1,19 @@
+# shrink34 seed /home/user/parity_games_challange/experiments/comp/box34/out/frontier/m3_NM106_ea6c4f63.json key m2 rng 46 start N+M 106 round 0
+kept m N+M 104 maxm 2 C 4 maxm 2 T3 8 0s
+kept o N+M 103 maxm 2 C 4 maxm 2 T3 8 0s
+kept o N+M 102 maxm 2 C 4 maxm 2 T3 8 2s
+kept o N+M 101 maxm 2 C 4 maxm 2 T3 8 2s
+kept o N+M 100 maxm 2 C 4 maxm 2 T3 8 3s
+kept m N+M 98 maxm 2 C 4 maxm 2 T3 8 3s
+kept o N+M 97 maxm 2 C 4 maxm 2 T3 8 5s
+kept o N+M 96 maxm 2 C 4 maxm 2 T3 8 5s
+kept m N+M 94 maxm 2 C 4 maxm 2 T3 8 6s
+kept m N+M 92 maxm 2 C 4 maxm 2 T3 8 8s
+kept m N+M 90 maxm 2 C 4 maxm 2 T3 8 9s
+kept m N+M 88 maxm 2 C 4 maxm 2 T3 8 10s
+kept m N+M 86 maxm 2 C 4 maxm 2 T3 8 11s
+kept o N+M 85 maxm 2 C 4 maxm 2 T3 8 12s
+kept m N+M 83 maxm 2 C 4 maxm 2 T3 8 12s
+kept m N+M 81 maxm 2 C 4 maxm 2 T3 8 13s
+kept m N+M 79 maxm 2 C 4 maxm 2 T3 8 4s
+FINAL m2 N 33 M 46 N+M 79 measure {'T3': 8, 'fallback': True, 'n': 365, 'maxalt': 5, 'maxtops': 8, 'C': 4, 'maxm': 2, 'maxP': 4, 'depthV': 3, 'fanout': 2, 'fanin': 2, 'idfail': 0, 'rpfail': 0} frozen /home/user/parity_games_challange/experiments/comp/box34/out/frontier/m2_NM79_04cd1cbf.json
