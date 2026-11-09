@@ -16,3 +16,11 @@ OK C6_NM75_72a89f5f.json own T3 12 maxalt 5 | fix 12 5 | old 12 5
 PAIR198 C6_NM75_72a89f5f.json C6_NM75_72a89f5f.json T3 12 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 6 maxP 6 maxDep 3 maxRA 3 tight 63 A 5 at ('x', 8) states 1-12 | own C 6 maxm 2 T3 12
 OK C7_NM105_4438ea3e.json own T3 13 maxalt 5 | fix 13 5 | old 13 5
 PAIR198 C7_NM105_4438ea3e.json C7_NM105_4438ea3e.json T3 13 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 7 maxP 7 maxDep 3 maxRA 5 tight 10 A 5 at ('x', 40) states 0-13 | own C 7 maxm 2 T3 13
+OK C8_NM112_8c4c784f.json own T3 16 maxalt 8 | fix 16 8 | old 16 8
+PAIR198 C8_NM112_8c4c784f.json C8_NM112_8c4c784f.json T3 16 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 8 maxP 9 maxDep 3 maxRA 5 tight 0 A 8 at ('x', 41) states 0-16 | own C 8 maxm 3 T3 16
+OK C9_NM122_6224f959.json own T3 18 maxalt 10 | fix 18 10 | old 18 10
+PAIR198 C9_NM122_6224f959.json C9_NM122_6224f959.json T3 18 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 9 maxP 10 maxDep 3 maxRA 5 tight 18 A 10 at ('x', 44) states 0-18 | own C 9 maxm 4 T3 18
+OK m3_NM106_ea6c4f63.json own T3 12 maxalt 7 | fix 12 7 | old 12 7
+PAIR198 m3_NM106_ea6c4f63.json m3_NM106_ea6c4f63.json T3 12 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 6 maxP 6 maxDep 3 maxRA 3 tight 0 A 7 at ('x', 41) states 0-12 | own C 6 maxm 3 T3 12
+OK m4_NM121_d45d7aaa.json own T3 17 maxalt 10 | fix 17 10 | old 17 10
+PAIR198 m4_NM121_d45d7aaa.json m4_NM121_d45d7aaa.json T3 17 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 8 maxP 9 maxDep 3 maxRA 4 tight 18 A 10 at ('x', 44) states 0-17 | own C 8 maxm 4 T3 17
