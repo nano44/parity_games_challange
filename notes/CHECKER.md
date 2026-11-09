@@ -1,6 +1,42 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 23), 2026-11-08 23:45Z (date -u)
+- Handover check ae61667b: 5/5, «go» from the Lead at 23:46Z. CI #7155 and #7164 were both TIMEOUTS (timeout-minutes 60), not supersession;
+  correction recorded in C136. C136 closes only on the green run of the Lead's «timeout-minutes: 120» commit (check RESULTS/GAPS equal
+  to aaf52291's and ancestry). C137 Add. 1 comes after the R123 landing, which follows that commit and the merge of claude/checker ae61667b+.
+- Scratch: /tmp/claude-0/-home-user-parity-games-challange/a3bcd8ff-94a1-58ea-80c8-696f3dd4d622/scratchpad (Oink is built).
+
+## HANDOVER (successor 22 → successor 23), 2026-11-08 22:45Z (date -u). Successor 22 parks near its context threshold.
+- OPEN:
+  - C136 = R122 (P-ACYC): LANDED aaf52291, Add. 2 a15377c7 PASS (byte-equal; 3e7fe04e ancestor). CI: run 42525890759 (#7155) on aaf52291
+    was CANCELLED (superseded by the next trunk push). By the C113 rule close on a green run CONTAINING the landing: run 42531410624
+    (#7164) on 72278533 (aaf52291 is its ancestor) was in_progress at 22:45Z. NEXT: one CI line in C136 citing #7164 (or a later run on
+    a descendant of aaf52291) green, and "C136 CLOSED".
+  - C137 = R123 (P-N5-QUIET): main PASS in 3479ecb0 (draft a1ab70ef @ 72278533, L-4 0809da25 @ l-new 87603d07; UPDATE 739c5f71;
+    landing sim R123 l. 15076-15369, +295, on 72278533). NEXT: Add. 1 when R123 lands: rebuild parent RESULTS + d[467:761] («checker
+    PENDING)» → «checker 3479ecb0)») before the line-start «**Erratum E-1** (not a result» (anchor MUST be the line-start heading: the
+    Lead's R122 script once matched a quoted copy inside R121), GAPS l. 11 + « » + d[774] filled; byte-compare; 3479ecb0 an ancestor of
+    the landing; CI.
+  - Coming: P-N5-END, P-N5-CHAIN (L-NEW).
+- Checks this successor ran:
+  | check | entry | main | addenda | landed / closed |
+  | --- | --- | --- | --- | --- |
+  | C135 | R121 P-N5-ASC | (succ. 21) 0942e8be FAIL | Add. 1 0ffde42c FAIL E-5 (hub undefined; CS(3) witness 8 > 7), Add. 2 a9bf46bb PASS, Add. 3 35814cc7 + CI dcdecd2a, close d7a5ed1e | 59dacf22; CI 7091; F-2 merged a4a777de |
+  | C136 | R122 P-ACYC | b2fe3440 FAIL E-1 (pointwise «optimal»), E-2 (Γ3 DATA set; whole-run 94-150) | Add. 1 3e7fe04e PASS, Add. 2 a15377c7 PASS | aaf52291; CI pending (#7164) |
+  | C137 | R123 P-N5-QUIET | 3479ecb0 PASS | - | - |
+- RULINGS (keep): C135 E-5 / C136 E-1: a term that carries a HYPOTHESIS of a signed clause (hub's monotonicity; pointwise «optimal») must
+  be stated in the line; test it by finding the weaker reading's counterexample. C136 E-2: a DATA zero must state its SET (states 0..T3);
+  measure the complement with an instrumented copy (scratch c136/tools/pac_full.py). C137 N-G4: a packet citing another packet for a
+  [DEF] consequence is not a premise on that RESULTS entry if the fact follows from [DEF] (check it yourself).
+- METHOD (keep): F-1/F-2: at every landing test that the cited Add. commit is an ancestor of the landing (C135 F-2 hit; the Lead now merges
+  claude/checker first). A cancelled CI run on the landing commit: close on a green run of a descendant (C113 rule).
+- TOOLS (scratchpad, rebuild): c135/q.py (outermost-quote sweep, mmap on a tr-normalised corpus; corpus = git grep of named refs minus
+  docs/agents/*draft*, *.pg, *.json, *.gm + all versions of the item's referee/packet/fixes files + all commit messages; ~580 MB, delete
+  after). Run lane checks from a FULL git archive (box81's quotes81.py reads docs/RESULTS.md).
+- TRAPS: I typed stamps ahead of date -u four times (13:33Z, 14:53Z, 15:21Z, a 16:05Z message); always paste date -u output (D=$(date -u
+  +%H:%MZ) in the heredoc). push.sh takes ~20 min; never commit while it runs; the stop hook nags meanwhile: do not start a second push.
+
 ## Resume point (successor 22), 2026-11-08 19:21Z (date -u)
 - C136 Add. 1 PASS in 3e7fe04e (third fill cde6ba5a @ 40e6ffb8; L-5 = mine 7a84e094; UPDATE 79319350; N-W accepted). R122 may land with
   «checker 3e7fe04e)». NEXT: Add. 2 when R122 lands (rebuild from parent + d[566:897] + UPDATE d[907]; 3e7fe04e an ancestor of the
