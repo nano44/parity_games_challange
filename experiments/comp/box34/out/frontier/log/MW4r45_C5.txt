@@ -1,0 +1,7 @@
+# shrink34 seed /home/user/parity_games_challange/experiments/comp/box34/out/frontier/C6_NM98_97d23542.json key C5 rng 45 start N+M 98 round 0
+kept o N+M 97 C 5 C 5 maxm 2 T3 11 1s
+kept o N+M 96 C 5 C 5 maxm 2 T3 11 1s
+kept o N+M 95 C 5 C 5 maxm 2 T3 10 2s
+kept o N+M 94 C 5 C 5 maxm 2 T3 10 4s
+kept m N+M 92 C 5 C 5 maxm 2 T3 10 8s
+FINAL C5 N 39 M 53 N+M 92 measure {'T3': 10, 'fallback': True, 'n': 420, 'maxalt': 6, 'maxtops': 10, 'C': 5, 'maxm': 2, 'maxP': 6, 'depthV': 3, 'fanout': 3, 'fanin': 2, 'idfail': 0, 'rpfail': 0} frozen /home/user/parity_games_challange/experiments/comp/box34/out/frontier/C5_NM92_16e10770.json

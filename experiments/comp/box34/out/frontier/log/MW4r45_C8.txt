@@ -1,0 +1,8 @@
+# shrink34 seed /home/user/parity_games_challange/experiments/comp/box34/out/frontier/C9_NM122_a1bf35bb.json key C8 rng 45 start N+M 122 round 0
+kept o N+M 121 C 8 C 8 maxm 3 T3 18 1s
+kept o N+M 120 C 8 C 8 maxm 3 T3 17 3s
+kept m N+M 118 C 8 C 8 maxm 3 T3 17 4s
+kept o N+M 117 C 8 C 8 maxm 3 T3 17 11s
+kept o N+M 116 C 8 C 8 maxm 3 T3 16 17s
+kept m N+M 114 C 8 C 8 maxm 3 T3 16 33s
+FINAL C8 N 44 M 70 N+M 114 measure {'T3': 16, 'fallback': True, 'n': 544, 'maxalt': 8, 'maxtops': 16, 'C': 8, 'maxm': 3, 'maxP': 9, 'depthV': 3, 'fanout': 5, 'fanin': 2, 'idfail': 0, 'rpfail': 0} frozen /home/user/parity_games_challange/experiments/comp/box34/out/frontier/C8_NM114_56fecf17.json

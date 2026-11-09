@@ -1,0 +1,1 @@
+# shrink34 seed /home/user/parity_games_challange/experiments/comp/box34/out/frontier/C9_NM122_737fdada.json key C9 rng 61 start N+M 122 round 0

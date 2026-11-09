@@ -1,0 +1,5 @@
+# shrink34 seed /home/user/parity_games_challange/experiments/comp/box34/out/frontier/C12_NM176_0009119c.json key C11 rng 47 start N+M 176 round 0
+kept o N+M 175 C 11 C 11 maxm 3 T3 23 1s
+kept o N+M 174 C 11 C 11 maxm 3 T3 23 14s
+kept o N+M 173 C 11 C 11 maxm 3 T3 22 19s
+kept o N+M 172 C 11 C 11 maxm 3 T3 22 52s

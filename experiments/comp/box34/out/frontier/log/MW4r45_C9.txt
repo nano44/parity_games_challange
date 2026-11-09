@@ -20,3 +20,4 @@ kept o N+M 126 C 9 C 9 maxm 4 T3 19 71s
 kept o N+M 125 C 9 C 9 maxm 4 T3 19 72s
 kept o N+M 124 C 9 C 9 maxm 4 T3 18 88s
 kept m N+M 122 C 9 C 9 maxm 4 T3 18 120s
+FINAL C9 N 46 M 76 N+M 122 measure {'T3': 18, 'fallback': True, 'n': 588, 'maxalt': 10, 'maxtops': 18, 'C': 9, 'maxm': 4, 'maxP': 10, 'depthV': 3, 'fanout': 5, 'fanin': 2, 'idfail': 0, 'rpfail': 0} frozen /home/user/parity_games_challange/experiments/comp/box34/out/frontier/C9_NM122_a1bf35bb.json
