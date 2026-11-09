@@ -54,6 +54,17 @@ try:
     E, info, ctx = enc32.build(D, S, H, {'ranks'}, sink=sink, freerank=freerank, cand_in=cand, fixpoint=False)
 except SystemExit as e:
     print('RESULT UNSAT (blocked at build:', e, ')'); sys.exit()
+# FIX (L-LOWER 13): enc32's --freerank leaves the order among free options in the SAME insertion slot unconstrained (no
+# transitivity), so a model may use a cyclic order that decode() cannot realize (found on C4 k 1 prefix 10: SAT, decoded genome
+# rejected by enc32 --fix all at prefix 3). Ban both 3-cycles of every triple of free options. A sound strengthening: UNSAT
+# verdicts without it remain valid (the unfixed encoding is a relaxation); SAT models with it decode to a strict total order.
+fl = sorted(freerank); ordl = ctx['ordl']; ntr = 0
+for i in range(len(fl)):
+    for j in range(i + 1, len(fl)):
+        for k in range(j + 1, len(fl)):
+            a, b, c = fl[i], fl[j], fl[k]
+            sink([-ordl(a, b), -ordl(b, c), -ordl(c, a)]); sink([-ordl(a, c), -ordl(c, b), -ordl(b, a)]); ntr += 2
+info['transitivity_clauses'] = ntr
 info['build_s'] = round(time.time() - t0, 1); print('INFO', info, flush=True)
 if cnfp:
     with open(cnfp, 'w') as f:
@@ -67,3 +78,12 @@ if not r: print('RESULT UNSAT'); sys.exit()
 M = set(l for l in sv.get_model() if l > 0)
 Gn = enc32.decode(D, M, ctx, H); enc32.wrgen(Gn, outp + '_dec.txt')
 print('RESULT SAT decoded ->', outp + '_dec.txt', hashlib.sha1(open(outp + '_dec.txt', 'rb').read()).hexdigest())
+# self-check: the decoded genome, everything fixed (enc32 checker mode), must realize the same prefix
+from pysat.solvers import Solver as _S
+cv = _S(name='cadical195')
+try:
+    E2, _, _ = enc32.build(Gn, S, H, {'ranks', 'signs', 'gates', 'starts'}, sink=cv.add_clause, fixpoint=False)
+    ok2 = (not E2.empty) and cv.solve()
+except SystemExit as e:
+    ok2 = False
+print('CHECK decoded genome, all fixed, prefix', PREFIX, '->', 'SAT (consistent)' if ok2 else 'UNSAT (DECODE MISMATCH)')

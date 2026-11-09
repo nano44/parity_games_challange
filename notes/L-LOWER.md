@@ -1,5 +1,18 @@
 # L-LOWER notebook
 
+## Successor 12 (Opus 5.5): BOX L13, GO from the Lead 23:50Z 2026-11-08 (handover check 1b78759c, score 5)
+### Resume point (00:1xZ 2026-11-09, date -u)
+- Tools experiments/lower/l13/ (committed 3955c3e2 + fixes): pgad.py (prefix gadget: free wiring on culprit core movers XS + helpers
+  G = top k movers, insertion ranks, all core constraints, prefix, no fixed point; self-check CHECK = decoded genome in enc32 checker
+  mode), scan.sh (k = KMIN..KMAX, ascending prefixes to the first UNSAT; resumable), prefcheck.py (sim6 + fenc rows followed),
+  pdrup.py (Glucose4 proof + l8/sat/drup.c, deletes proof + CNF). Build: gcc -O2 -o $SP/fenc ../l9/fenc.c; gcc -O2 -o $SP/drup ../l8/sat/drup.c.
+- FINDING (encoder): enc32 --freerank (insertion ranks) has NO transitivity among free options in the same slot; a SAT model can
+  carry a cyclic order (C4 k 1 prefix 10: SAT, decoded genome rejected by enc32 --fix all at prefix 3). pgad.py adds the 3-cycle
+  bans (sound strengthening). UNSATs of the unfixed encoding stay valid; its SATs (also L-COMP gadget.py's) need the replay check.
+- Running (tracked, $SP-free; logs l13/out/scan_*.log): scan.sh C10 X 11 k 1-8 P 21; C4 X 13 k 1-8 P 21. Relaunch: same lines
+  (see l13/out/*.log names): ./scan.sh ../l10/rec/L10_C10_osc_final_solved.txt ../l10/out/core8_HIT7.txt 11 1 8 21 out/scan_C10_X11.txt 0-63 3000
+- Results so far (first UNSAT prefix; base without gadget 7 for both): C4 X13 k 1: 9, k 2: 11; C10 X11 k 1: 15, k 2: 17. DRUP VERIFIED C4 k1 prefix 10 (cnf 2ebbefd0).
+
 ## Successor 11 HANDOVER (2026-11-08 22:48Z, date -u; parking after BOX L12 (b), Lead 22:45Z «then park with a handover»)
 ### DONE (claude/l-lower; products docs/lower/L11-osc.md, docs/lower/L12-slack.md; tools experiments/lower/l11/, l12/)
 - a22adadd handover check (5/5). L11 (b6da086e; correction §7 88d30071 / 57c04e6d after L-RED R227, which upheld TOP-LOOP):

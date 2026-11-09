@@ -1,17 +1,21 @@
 #!/bin/bash
-# L-LOWER 13: helper-count scan of pgad.py. Usage: scan.sh BASE TARGET XS KMAX P OUT [R0]
-# For k = 1..KMAX, G = movers 64-k..63; prefix P; if UNSAT, ascending prefixes 1..P for the first UNSAT t. Resumable: skips lines in OUT.
-B=$1; C=$2; XS=$3; KM=$4; P=$5; OUT=$6; R0=${7:-0-63}; cd "$(dirname "$0")"; mkdir -p out
-for k in $(seq 1 $KM); do
-  G="$((64-k))-63"; tag="$(basename $B .txt) XS $XS k $k G $G R0 $R0 prefix $P"
+# L-LOWER 13: helper-count scan of pgad.py. Usage: scan.sh BASE TARGET XS KMIN KMAX P OUT [R0] [TLIM]
+# For k = KMIN..KMAX, G = movers 64-k..63: ascending prefixes t = 1..P until the first UNSAT (or a NO_ANSWER after TLIM s, default
+# 3600). One line per k: last SAT prefix, first UNSAT prefix (or the undecided one). The decoded model of the last SAT prefix is kept
+# in out/<base>_X<XS>_k<k>_dec.txt. Resumable: a k with a line in OUT is skipped.
+B=$1; C=$2; XS=$3; K0=$4; KM=$5; P=$6; OUT=$7; R0=${8:-0-63}; TL=${9:-3600}; cd "$(dirname "$0")"; mkdir -p out
+for k in $(seq $K0 $KM); do
+  G="$((64-k))-63"; tag="$(basename $B .txt) $(basename $C .txt) XS $XS k $k G $G R0 $R0 P $P"
   grep -qF "$tag " $OUT 2>/dev/null && continue
-  r=$(timeout 5400 python3 pgad.py $B $C $P $XS $G out/$(basename $B .txt)_X${XS//,/_}_k$k $R0 2>&1 | grep RESULT | tail -1)
-  ft=-
-  case "$r" in *UNSAT*)
-    for t in $(seq 1 $P); do
-      q=$(timeout 5400 python3 pgad.py $B $C $t $XS $G /dev/null $R0 2>&1 | grep RESULT | tail -1)
-      case "$q" in *UNSAT*) ft=$t; break;; esac
-    done;;
-  esac
-  echo "$tag  ${r:-NO_ANSWER}  first_UNSAT_t $ft" >> $OUT
+  last=0; res="ALL_SAT"; pre=out/$(basename $B .txt)_$(basename $C .txt)_X${XS//,/_}_k$k
+  for t in $(seq 1 $P); do
+    q=$(timeout $TL python3 pgad.py $B $C $t $XS $G ${pre}_t$t $R0 2>&1 | grep -E "RESULT|SOLVE|CHECK" | tr '\n' ' ')
+    case "$q" in
+      *MISMATCH*) res="DECODE_MISMATCH_at $t"; break;;
+      *UNSAT*) res="UNSAT_at $t ($q)"; break;;
+      *"RESULT SAT"*) last=$t; [ -f ${pre}_t$((t-1))_dec.txt ] && rm -f ${pre}_t$((t-1))_dec.txt;;
+      *) res="NO_ANSWER_at $t (limit $TL s)"; break;;
+    esac
+  done
+  echo "$tag  last_SAT $last  $res  $(date -u +%H:%MZ)" >> $OUT
 done
