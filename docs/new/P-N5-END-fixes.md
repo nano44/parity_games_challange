@@ -90,3 +90,25 @@
   (5cae845b…), L-2's sha1 (e8a8ac51…), each old string exactly once in L-2, one line, no «|», «(» = «)». Result: sha1
   d6afe92ae0d2c0021743c99d2bd10f16cad27c73, 7,215 B, 105 «(» = 105 «)». L-2 kept (superseded).
 - end.pins: this file re-pinned; L-3 and mkl3_195.py added. check.sh block «P-N5-END» unchanged.
+
+## Fixes entry 4 (L-NEW successor 68; LINE-ONLY; written 04:46Z by date -u)
+- Source: CHECKER 23 C138 (landing check of R124 on the first fill, line L-3), claude/checker 46905772, docs/checker/C138.md §2 (verdict
+  «**FAIL** on two line-only items (E-1, E-2); the mathematics, DATA, tools and placement PASS») and §4 (exact replacements); routed by the
+  Lead 04:46Z («DUTY NOW … E-1 … → R-U … E-2 … → R-T0»). No statement, label, hypothesis, premise, proof or DATA number changes; the
+  packet stays frozen (docs/new/P-N5-END.md, sha1 5cae845b…).
+- C138 E-1 (quoted): «L-3's tail reads «G-N5-TIME stays OPEN, N5′-xi stays a CANDIDATE (D1); TARGET.md §2 (M4) asks … is not M4: not M3,
+  not M4, not a step-4 pass, not a TARGET.md claim (P-N5-END». The meaning is right (every required status word is there), but the form is
+  neither the landed «; not M3, not a step-4 pass, not a TARGET.md claim» of R90-R122 nor R123's landed «… is not M4, so this is not M4;
+  G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim».» Fix: R-U.
+- C138 E-2 (quoted): «ENDGAME-3's clause ends «iterations 1, …, F − 1 being S4a steps with K-config κ0 and τ0»; «τ0» occurs once in L-3
+  and is defined nowhere in the line … Fix: R-T0 (§4). «S3's τ» is defined by the line's «from SPEC's default start S3» (SPEC S3 / FIX 1).»
+| item | from | kind | change in the line (old → new, each old string once in L-3; applied in this order) |
+| --- | --- | --- | --- |
+| R-U | C138 E-1 | REQUIRED | «; G-N5-TIME stays OPEN, N5′-xi stays a CANDIDATE (D1); TARGET.md §2 (M4) asks for an algorithm polynomial on every parity game and §4 says a bound on a restricted class is not M4: not M3, not M4, not a step-4 pass, not a TARGET.md claim (P-N5-END» → «; N5′-xi stays a CANDIDATE (D1); TARGET.md §2 (M4) asks for an algorithm polynomial on every parity game and §4 says a bound on a restricted class is not M4, so this is not M4; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim (P-N5-END» |
+| R-T0 | C138 E-2 | REQUIRED | «iterations 1, …, F − 1 being S4a steps with K-config κ0 and τ0;» → «iterations 1, …, F − 1 being S4a steps with K-config κ0 and S3's τ;» |
+### Line L-4 (written by script)
+- docs/new/P-N5-END-line-L4.txt = L-3 + R-U, then R-T0, by experiments/new/box195/mkl4_195.py (from the repo root): asserts the packet's
+  sha1 (5cae845b…), L-3's sha1 (d6afe92a…), each old string exactly once, one line, no «|», «(» = «)», no «τ0», and CHECKER's expected
+  result. Result: sha1 5f88c2971718522027ae267754814c6ba401b829, 7,230 B, 105 «(» = 105 «)», 0 «|», 0 «τ0» — equal to C138 §4's
+  independently derived L-4. L-3 kept (superseded).
+- end.pins: this file re-pinned; L-4 and mkl4_195.py added. check.sh block «P-N5-END» also asserts L-4's sha1 by name.
