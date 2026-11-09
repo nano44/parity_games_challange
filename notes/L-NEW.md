@@ -13,6 +13,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   - DATA: sumS ≤ 2·C on 8 instances; DHIB26 sumS 8 vs sumD 45; MW32 R 65 (one edge, linear). Controls 4/4 fire.
   - D18: lex value = total reward with weights ±2^rank; HMZ (arXiv 1008.0530, abstract only) bounds R only with a constant discount; no
     transfer. CONJECTURE ELIM-Λ stated = restatement of G-N5-TIME (no weight).
+  - FIXES ENTRY 1 to P-N5-SPLIT: 63515442 (n1 taken: §9.1 C clause restated with its set; n2 no change). Lead routed both to L-RED 62.
+- N5-CORE-forms (14babccb): seven equivalent forms (T3, Rtop, A, C, Dmax, A*, R) with constants; C ≤ A* ≤ 1 + M·C proved there.
+- BOX 201 (docs/new/N5-SUB-box201.md; experiments/new/box201 rarg/seg + outputs): subclass bound for R STALLS. Obstruction: R's argmax is a
+  GATE (MW32 gate (298,0) 65 flips); σ̄ changes at ≥ 85 % of steps; CONJECTURE SEG-H (const (σ̄, Λ) intervals ≤ N + 1; data ≤ 3) gives
+  T3 ≤ (F + L + 1)(N + 2) but F ≈ T3. Candidate parameter (unmeasured): Ξ feedback number k. Kill side left to L-RED 62 / L-SI 48.
   - Things only I know: self200.py's S is computed at EVERY vertex with ≥ 2 successors (movers, gates; K2 and β never switch here); the full
     8-instance sweep takes ~4 min (MW32_2, DHIB26 dominate); check200.sh ~10 s.
 

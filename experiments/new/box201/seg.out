@@ -1,0 +1,8 @@
+C6G8_n54.json T3 17 N 54 sbsteps F 16 lamsteps 2 breaks 16 maxquiet(sb,lam) 1 maxrun_no_sb 1 segfail 0
+CX4_n21.json T3 10 N 21 sbsteps F 10 lamsteps 1 breaks 10 maxquiet(sb,lam) 0 maxrun_no_sb 0 segfail 0
+DHIB18_2805.json T3 19 N 99 sbsteps F 18 lamsteps 2 breaks 18 maxquiet(sb,lam) 1 maxrun_no_sb 1 segfail 0
+DHIB26_2804.json T3 28 N 108 sbsteps F 27 lamsteps 1 breaks 27 maxquiet(sb,lam) 1 maxrun_no_sb 1 segfail 0
+FW16_2.json T3 53 N 259 sbsteps F 16 lamsteps 52 breaks 52 maxquiet(sb,lam) 1 maxrun_no_sb 4 segfail 0
+MW32_2.json T3 199 N 300 sbsteps F 162 lamsteps 196 breaks 198 maxquiet(sb,lam) 1 maxrun_no_sb 5 segfail 0
+RWX_n95.json T3 12 N 95 sbsteps F 11 lamsteps 2 breaks 11 maxquiet(sb,lam) 1 maxrun_no_sb 1 segfail 0
+WC16_2.json T3 4 N 68 sbsteps F 1 lamsteps 0 breaks 1 maxquiet(sb,lam) 3 maxrun_no_sb 3 segfail 0
