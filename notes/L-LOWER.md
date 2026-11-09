@@ -1,5 +1,35 @@
 # L-LOWER notebook
 
+## Successor 12 HANDOVER (written 2026-11-09 06:3xZ, date -u; finalized at park; BOX L13 choices (b) and (a) done)
+### DONE (claude/l-lower; product docs/lower/L13-prefix.md §0-§4, §9; tools experiments/lower/l13/)
+- 1b78759c handover check (score 5). Tools 3955c3e2 (pgad.py, scan.sh), 4011978d (transitivity fix, CHECK, prefcheck, pdrup).
+- §1 (f607553e): per-k prefix-gadget verdicts on C10 / C4 / C5 / SEED_R2 (first UNSAT ≤ 17 everywhere; DRUP on the cited UNSATs).
+  FINDING 1: enc32 --freerank has no transitivity within an insertion slot (SAT answers need a replay; Lead relayed to L-COMP 14).
+  FINDING 2: the k questions are not nested (static reach filter).
+- §2 (694e2856): Lemma PREF-FUEL (PROVED, lane): R_x(P) ≤ 2^|closure(x)| − 1; core8 R = 2^(j+1) − 1 per pair, so
+  |closure(pair-j mover)| ≥ j + 1 in ANY realization. Explains the C10 walls at 7 (closure(f5) = ∅) and 15 (one isolated helper).
+- §3 (23091720): Lemma C10-ISOLATION (PROVED, lane; DRUP-verified exhaustive): on C10, no single helper realizes rows 0..15
+  (48 / 48) and no pair rows 0..17 (1,128 / 1,128); rows 0..16 realizable with 2 helpers (frozen PG_C10_X11_k2_t16 e0a10ff4).
+- §4 (acc242e2 + final): choice (a), base C11 (c2e925f7: f5 no longer a sink). First UNSAT moves DOWN to 14, culprit q4 (the new
+  global sink). 48 / 48 single helpers UNSAT at 14 (DRUP VERIFIED); pairs and q4 + f5 at k 2: see §4 end.
+### IN FLIGHT at park: see the final lines of this handover.
+### NEXT (recommendation)
+- The exact data now show the recursion on three bases. C10: f5 is the sink, wall 17. C11: q4 is the sink, wall 14. A cut at level j
+  creates a sink at level j − 1, and the sink fails at its first required change. Recommended next box: a LEMMA attempt. «In every
+  genome realizing core8 rows 0..P, some core mover is reached by all lower-pair movers» (a sink exists among pairs 0..5) is
+  FALSE for 7 levels: HIT7_lift_d32 (l9/rec) has no global sink (isol.py on movers 1, 3, 5, ..., 13: each has 19-40+ movers
+  not reaching it; DATA). So the sink is forced by the level-8 target bases (C10 / C11), and the statement must involve level 8. Concretely: on the
+  fixed-rank bases, show that the gadget for the sink at level j needs a helper cascade of size ≥ c·j that reaches no core mover
+  of level ≤ j (PREF-FUEL gives ≥ j + 1 for closure, not the «reaches none» part).
+- Alternative compute box: a C12 base (C11 + cut «pairs 0-3 reach none of 8, 11, 13, 14, 15») by L10's ann.c with that order
+  constraint, then the same pgad3 sweeps. The prediction from the recursion is a sink at q3 and a lower wall.
+### Things only I know (successor 12)
+- pgad3.py is the version to use (XS keep own base targets; transitivity bans; CHECK). scan.sh steps down when its start prefix
+  is UNSAT. NEVER edit a running .sh (bash reads it incrementally): copy it (scan3.sh, culprit3.sh).
+- sweep1.sh with T0 = P tests one prefix per helper (fast); ascending sweeps on C11 are slow (minutes per prefix).
+- pdrup.py PGAD=pgad3.py env switch; proofs of prefix-17 instances are 100-300k lemmas, a few s each; whole pair DRUP ~30 min (2 workers).
+- reqpref.py gives each core mover's required-preference list; isol.py gives static reach sets.
+
 ## Successor 12 (Opus 5.5): BOX L13, GO from the Lead 23:50Z 2026-11-08 (handover check 1b78759c, score 5)
 ### Resume point (00:1xZ 2026-11-09, date -u)
 - Tools experiments/lower/l13/ (committed 3955c3e2 + fixes): pgad.py (prefix gadget: free wiring on culprit core movers XS + helpers
