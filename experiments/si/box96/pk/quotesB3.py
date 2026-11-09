@@ -14,6 +14,7 @@ Q = [
  ("R118", "visits only standard states and makes Howard steps at the movers until its first fallback"),
  ("R122", "every Even strategy that agrees with the stated start off the movers (transported through the pads on Γ3)"),
  ("R122", "an optimal counterstrategy being pointwise optimal (at every vertex its play value is ⊴ the value under every Odd strategy; RESULTS R57 (b), [1E-N3], as landed in R104)"),
+ ("R123", "[OPT] (σ̄_t is optimal at every vertex at once against σ_t) = RESULTS R118's σ̄, Odd's optimal counterstrategy for the order ⊴, as used in R118 (b)"),
  ("R123", "at every state t and every vertex v other than c_W and the e-vertices whose successor is c_W, Λ_t(v) is less relevant than every e-vertex"),
  ("CHAIN", "For every genome G, the N5′-xi run from S3 on Γ3(G) visits only standard states and its mover parts form a run of HOW3(G) (tie rule: Ξσ-best, then SPEC's choice, then the larger index) until its first fallback, at iteration T3 + 1."),
 ]

@@ -1,13 +1,17 @@
-# Packet P-N5-BONLY3 (DRAFT, NOT FROZEN): B-ONLY on Γ3 with its pads, and the three caveats it removes
+# Packet P-N5-BONLY3 (FROZEN at the commit that adds this line): B-ONLY on Γ3 with its pads, and the three caveats it removes
 L-SI successor 50 (Opus 5.5), D18 / D14 / D1; Lead ruling 2026-11-09 09:24Z (b): «a NEW small packet, P-N5-BONLY3, frozen only after
 L-RED 64 has attacked it». Lane record: docs/si/box96-bonly3.md (claude/l-si 6ee19b24). Labels: PROVED (L-SI lane, unrefereed) /
 PROVED-CONDITIONAL (on a named HYPOTHESIS) / DATA / READING (not to sign). Not a TARGET.md claim; not M3 or M4; not a gauntlet step;
 G-N5-TIME stays OPEN. Every premise quote below is checked verbatim by experiments/si/box96/pk/quotesB3.py.
+Attack before freezing: L-RED 64, claude/l-red a7f06ebd, docs/red/R230-bonly3.md (sha1 0e7cc364…): SURVIVES, no proof gap (quotes
+verbatim; structural premises checked on built Γ3, 0 fails on 524 genomes; every step of the proof and corollaries correct; pad
+exception list complete); five small fixes G1-G5, no statement change, all applied in this text (marked «fix G1» … «fix G5»).
+Counter side: claude/l-red 328a6fe2 (R230 census). Lead ruling 2026-11-09 10:26Z: apply G1-G5, then freeze.
 
 ## To sign, and what is not to sign
 | § | statement | label | premises (§1) |
 | --- | --- | --- | --- |
-| §2 | Lemma B-ONLY3 | PROVED | [DEF], [DEF3], [FRAME3], [VJ], [OPT] |
+| §2 | Lemma B-ONLY3 | PROVED | [DEF], [DEF3], [FRAME3], [VJ], [OPT] (R123's form) |
 | §2 | Corollaries NO-E-CYCLE3, PROVISO3, LAM-UP3 | PROVED | B-ONLY3, [DEF], [DEF3] |
 | §3 | Corollary RUN3 (the four on N5′-xi's run, up to its first fallback) | PROVED-CONDITIONAL on HYPOTHESIS [STD3] | B-ONLY3 and its corollaries, [STD3] |
 | §4-§5 | caveats removed, DATA, controls | READING / DATA | |
@@ -29,8 +33,9 @@ G-N5-TIME stays OPEN. Every premise quote below is checked verbatim by experimen
   in [FRAME3] nothing inside the core leads back to K0, and K3's only in-edge is from K0 (through pA).
 - [VJ] RESULTS R118's premise «VJ00 §4.2 / Friedmann arXiv 1106.0778 §3 for the order ⊴ on values (Λ, Π, k)»: the reward of the cycle
   node is compared first (an even priority p gives +p, an odd one −p, priorities injective by rank).
-- [OPT] σ̄ is an optimal counterstrategy to σ, as landed R122 uses it: «an optimal counterstrategy being pointwise optimal (at every
-  vertex its play value is ⊴ the value under every Odd strategy; RESULTS R57 (b), [1E-N3], as landed in R104)».
+- [OPT] σ̄ is pointwise ⊴-optimal against σ (its value at every vertex is ⊴ the value under every Odd strategy), as RESULTS R123
+  lists it: «[OPT] (σ̄_t is optimal at every vertex at once against σ_t) = RESULTS R118's σ̄, Odd's optimal counterstrategy for the order
+  ⊴, as used in R118 (b)». The lemma uses nothing else about σ̄. (R57 (b) / [1E-N3] is used only in §3, for N5′-xi's σ̄; fix G1.)
 - Model: on Γ(G) the same statement is landed RESULTS R123 B-ONLY («at every state t and every vertex v other than c_W and the e-vertices
   whose successor is c_W, Λ_t(v) is less relevant than every e-vertex»); this packet is its Γ3 transcription. No L-RED lane lemma is a
   premise.
@@ -60,6 +65,8 @@ NO-E-CYCLE3. ∎
 **Corollary LAM-UP3.** In [FRAME3], for every gate o: if Λ(pe_o) = Λ(pβ_o) then e_o is more relevant than Λ(pe_o).
 Proof. pβ_o is not an exception, so Λ(pβ_o) ≠ c_W (B-ONLY3). If e_o's successor is c_W, Λ(pe_o) = c_W ≠ Λ(pβ_o). Otherwise pe_o is not
 an exception and Λ(pe_o) is less relevant than e_o (B-ONLY3). ∎
+- Wording (fix G4): this packet says «e-vertex whose successor is c_W» throughout; these are exactly the e-vertices of level-0 options
+  (P-N5-REALIZE l. 89: «single edge to wt(g), or to c_W if lev = 0»), which box 96's notes call «level-0 e».
 - The exception list differs from R123's by the pe pads of the e-vertices with successor c_W only (their plays are pad, e, c_W: no
   choice). No other pad has a forced route to c_W, and pads (priority ≤ 2) are never more relevant than an e-vertex.
 
@@ -73,6 +80,12 @@ T3 + 1) and not after, are in [FRAME3], and each σ̄_t is an optimal counterstr
 - Pending form (P-N5-CHAIN DEPENDENCE): P-N5-CHAIN (L-NEW, frozen claude/l-new 93531b03, landing as R125) §3 Theorem REACH3-ALL: «For every
   genome G, the N5′-xi run from S3 on Γ3(G) visits only standard states and its mover parts form a run of HOW3(G) (tie rule: Ξσ-best,
   then SPEC's choice, then the larger index) until its first fallback, at iteration T3 + 1.» When R125 lands, [STD3] is a landed premise.
+- [OPT] for N5′-xi's σ̄_t (fix G1): N5′-xi's σ̄ is the output of SPEC's S1 procedure; that it is pointwise optimal is the landed
+  premise R122 cites as «an optimal counterstrategy being pointwise optimal (at every vertex its play value is ⊴ the value under every
+  Odd strategy; RESULTS R57 (b), [1E-N3], as landed in R104)», part of [STD3]'s second half.
+- Scope (fix G2): B-ONLY3 says nothing about N5′-xi's states after its first fallback; there its conclusion fails (L-RED 64, R230,
+  MWR4_2 sha1 856d369b…, states 32-33; below). For a Ξ-cyclic G, [STD3] is R118 (k), which is CONDITIONAL, and R125 (P-N5-CHAIN) is
+  pending.
 **Corollary RUN3.** Under [STD3], at every state t ≤ T3 of N5′-xi's run on Γ3(G) from S3 (up to the first fallback only): B-ONLY3,
 NO-E-CYCLE3, PROVISO3 and LAM-UP3 hold for (σ_t, σ̄_t). ∎ (Each is a statement about one pair in [FRAME3].)
 - The frame is NEEDED (DATA, L-RED 64, claude/l-red 328a6fe2, experiments/red/r230/out/inst.out, bonly3_230.py): after the first
@@ -83,6 +96,9 @@ NO-E-CYCLE3, PROVISO3 and LAM-UP3 hold for (σ_t, σ̄_t). ∎ (Each is a statem
 
 ## 4. Caveats removed (READING; P-N5-GATE stays frozen)
 Under [STD3], in P-N5-GATE (claude/l-si 4066f579, with fixes entries 1-2) on Γ3:
+- Face transport (fix G3): P-N5-GATE's K10 / LAM / UP are read on the gate faces, on Γ3 the pads pe_o and pβ_o. For every single-successor
+  vertex v, Λ(v) = Λ(succ v): v's play is v followed by succ(v)'s play, and if v is on the cycle it is the same cycle. So Λ(pe_o) = Λ(e_o)
+  and Λ(pβ_o) = Λ(β_o), and LAM-UP3 (stated on pe_o, pβ_o) is the form P-N5-GATE's LAM and UP use.
 - G1's Γ3 clause (fixes entry 1: «On Γ3 that step needs B-ONLY on Γ3, which is not among this packet's premises»): K10 is empty on Γ3 by
   LAM-UP3.
 - E-FACE-PAYS (b), (c) on Γ3: the proviso «D's play avoids e_o» holds at every state by PROVISO3, so S(p_e) = S(D) and relocks ≤ ch_D,
@@ -96,7 +112,10 @@ On IDEAL-CYC the same three need no hypothesis: landed R123 B-ONLY (P-N5-GATE fi
   g3 = L-NEW's Γ3 N5′-xi from S3 (to the first fallback or the cap 20000). d96.py counters (TOTALS, must be 0): dpass (unit (gate, t)):
   e_o on P_t(D); lamD ((gate, t), D ≠ c_W): Λ_t(D) at least as relevant as e_o; bonly ((t, v), v not an exception): Λ_t(v) at least as
   relevant as the least e-vertex; sfail (gate): S(p_e) ≠ S(D); relD / unlD (gate): relocks > ch_D / unlocks > 1 + ch_D. All 0 on 19
-  instances, both engines, rows identical (883 states, 307,737 (gate, state) pairs per engine).
+  instances, both engines, rows identical (883 states, 307,737 (gate, state) pairs per engine). Exceptions in d96.py (fix G5): c_W, the
+  e-vertices with successor c_W, closed under «single-successor non-e, non-gate vertices whose successor (collected over the run) is
+  an exception». By [DEF3] the only vertices with an exception as successor are those e-vertices' pe pads (and c_W itself), so the
+  closure equals the stated list and the DATA is unaffected; L-RED 64's bonly3_230.py uses the static list and also finds 0 in frame.
 - Controls: CTRL=anti (Odd non-optimal: e-face at o, β-face at every other gate; own engine): aptpass > 0 on 14 of 19 (648). CTRL=nopad
   (the pad exceptions dropped): bonly 175 / 1,512 / 45 / 2,821 on g3 for WC4_2, C6G8_n54, k1fail_202, MWR4_2, 0 on own: the pad clause is
   needed.
