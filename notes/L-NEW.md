@@ -26,6 +26,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   - PACKET P-N5-QN FROZEN (Lead 06:53Z order): docs/new/P-N5-QN.md = GATE-CLASS, GATE-FLIP, QUIET-N, (k+1)-Λ on landed R104 / R118 /
     R121 / R123 only (24 quotes by box203/quotesqn.py at trunk b8408b39, 0 missing); DEAD D1-D3; box203/qn.pins (56 rows), check.sh
     «P-N5-QN». Fixes go to docs/new/P-N5-QN-fixes.md (append-only) and must be added to qn.pins. Referees after R125 / P-N5-SPLIT.
+  - P-N5-QN routed to both referees (Lead 07:34Z); I own its fix rounds (DUTY first; fixes file docs/new/P-N5-QN-fixes.md + qn.pins).
+  - BOX 204 (docs/new/N5-K1EQ-box204.md; experiments/new/box204/ k1eq204.py, check204.sh/.out, out/, inst/B400_r32 copy; check.sh
+    «BOX 204 K1EQ»): Lemma FACE-TARGET (faces carry W-/Ξ-target movers' classes) and Theorem EQ (T_CYC poly ⟺ D_mov poly), PROVED lane:
+    the k = 1 face question = T_CYC polynomial at k = 1. Mechanisms M1 (MWR: clock, cycle set fixed) / M2 (climbed: cycle-set toggles).
+    MWR8 flip climbs (scratch acf8, seeds 31/32, 2,500 iterations) still running at commit: best 34 at N 84.
   - PACKET CANDIDATE (Lead 05:27Z): QUIET-N is a clean sharpening of LANDED R123 T-QUIET (window L → N, T_CYC ≤ Q + (Q + 1)N), with
     GATE-CLASS as its lemma, on landed premises only; small packet later (P-N5-GATECLASS?), after L-RED 63's attack.
   - Things only I know: gfc203.py on IDEAL-CYC is ~4 s for MWR8; the 57-genome corpus sweep ~40+ min (scratch sw4 loop, one .out per

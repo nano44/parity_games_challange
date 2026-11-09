@@ -1108,4 +1108,12 @@ if [ -z "$pinQ" ]; then
 else
   echo "P-N5-QN check: FAILED"; echo "$pinQ" | head -20; exit 1
 fi
+# BOX 204 K1EQ (L-NEW successor 68): Lemma FACE-TARGET counters (k1eq204.py), frozen output + controls
+r204=0; run204=$(cd box204 && bash check204.sh 2>&1) || r204=$?
+d204=$(diff <(printf '%s\n' "$run204") box204/check204.out 2>&1) || true
+if [ "$r204" -eq 0 ] && [ -z "$d204" ] && ! grep -v "^ctrl" box204/check204.out | grep -Eq "(wfail|dfail|bfail) [1-9]" && grep -q "'wfail': 0, 'dfail': 0, 'bfail': 0" box204/check204.out && grep -q "^ctrl1 .*wfail [1-9]" box204/check204.out && grep -q "^ctrl2 .*bfail [1-9]" box204/check204.out && (cd box204/inst && sha1sum -c --quiet SHA1SUMS); then
+  echo "BOX 204 K1EQ: FACE-TARGET counters 0, controls fire = frozen: PASS"
+else
+  echo "BOX 204 K1EQ check: FAILED (check204.sh exit $r204)"; echo "$d204" | head -30; echo "$run204" | tail -15; exit 1
+fi
 rm -rf "$tmp"
