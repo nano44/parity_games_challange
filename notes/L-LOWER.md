@@ -9,9 +9,16 @@
 - FINDING (encoder): enc32 --freerank (insertion ranks) has NO transitivity among free options in the same slot; a SAT model can
   carry a cyclic order (C4 k 1 prefix 10: SAT, decoded genome rejected by enc32 --fix all at prefix 3). pgad.py adds the 3-cycle
   bans (sound strengthening). UNSATs of the unfixed encoding stay valid; its SATs (also L-COMP gadget.py's) need the replay check.
-- Running (tracked, $SP-free; logs l13/out/scan_*.log): scan.sh C10 X 11 k 1-8 P 21; C4 X 13 k 1-8 P 21. Relaunch: same lines
-  (see l13/out/*.log names): ./scan.sh ../l10/rec/L10_C10_osc_final_solved.txt ../l10/out/core8_HIT7.txt 11 1 8 21 out/scan_C10_X11.txt 0-63 3000
-- Results so far (first UNSAT prefix; base without gadget 7 for both): C4 X13 k 1: 9, k 2: 11; C10 X11 k 1: 15, k 2: 17. DRUP VERIFIED C4 k1 prefix 10 (cnf 2ebbefd0).
+- v2 (pgad.py): helpers keep their own base target when acyclic. v3 (pgad3.py / scan3.sh): culprits XS also keep their own base
+  targets unfiltered (always acyclic). The k questions are NOT nested (the static reach filter removes candidates as G grows; C4 k 3
+  UNSAT at 10 while k 2 SAT at 10): scan.sh now steps down when its start prefix is UNSAT.
+- Results (first UNSAT prefix t; base without gadget: 7; target core8; G = top k movers 64-k..63; DATA, exact SAT):
+  C10 X11 (v2): k 1: 15, k 2: 17, k 3: 17, k 4: 17 (solves 0 s / 3 s / 92 s / 2,407 s). Culprits: k 1 t 15 {11}; k 2 t 17 {11, 12}.
+  C4 X13 (v2): k 1: 9, k 2: 11; k 3 running (v1 k 3: 9, not nested). C10 X11,12: v2 k 1: 7, k 2: 9 (q6 loses its own targets); v3 k 1: 15.
+- Running (tracked; logs l13/out/*.log): scan.sh C4 13 k 3-5; scan3.sh C10 11,12 k 1-3; pdrup of the cited UNSATs -> out/drup.txt.
+  Relaunch: cd experiments/lower/l13; ./scan.sh ../l10/rec/L10_C4_final_score144_solved.txt ../l10/out/core8_HIT7.txt 13 3 5 21 out/scan_C4_X13.txt 0-63 3000
+  ./scan3.sh ../l10/rec/L10_C10_osc_final_solved.txt ../l10/out/core8_HIT7.txt 11,12 1 3 21 out/scan3_C10_X11_12.txt 0-63 3000
+- TRAP: editing scan.sh while a scan runs (bash reads scripts incrementally): copy to a new file instead (scan3.sh).
 
 ## Successor 11 HANDOVER (2026-11-08 22:48Z, date -u; parking after BOX L12 (b), Lead 22:45Z «then park with a handover»)
 ### DONE (claude/l-lower; products docs/lower/L11-osc.md, docs/lower/L12-slack.md; tools experiments/lower/l11/, l12/)
