@@ -1,1 +1,2 @@
 start (0, 0, 0, -60) {'mnp': 2, 'np': 3, 'up': 0, 'lam': 0, 'gln': 0, 'T': 4, 'C': 0} N 15 M 45
+FINAL cap 200 score (0, 0, 0, -200) N 43 M 157

@@ -74,6 +74,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   all must-be-0 counters 0; dexact exact form of dfail). NEW Lemma REL-G (PROVED, lane): no relock with UP_(t-1) is gamma-paid -> closes box 93's
   non-PRIV-before case. Proviso «D avoids e_o» never exercised (dpass 0); DP climb 2904 running. K1C climb best K1C16_n400 (k 1, C = R = 16).
   K7 NP climb 2901: mnp 50 -> 51 (no gain). LAG h = 6 done, h = 4 cfg climb CNT 2 / REARM 2. Addendum 86dd7e02 (K10) not yet read.
+- 05:27Z Lead: BOX 203 (l-new 25e040ee). docs/red/R229-box203.md: GATE-CLASS / GATE-FLIP / QUIET-N SURVIVE (cls229.py, 29 rows, all 0;
+  premises checked vs landed R118 / R123). NEW Lemma CLASS-PAYS + Corollary GATE-FLIP-MIN (PROVED, lane): flips <= 2 min(cc(e), cc(beta)) + 1,
+  exact on MWR. SELF-CORRECTION: K10 «below» is vacuous on IDEAL-CYC by landed B-ONLY (R229-box92 Add. A). DP climb: dpass never > 0.
 - Scratch (lost on restart; rebuild with git archive): si92 (d962efdb box91/92/86/85/84), lred (4b309716 r221), lnew (fcba92fc), new202 (fa17fdf6).
 
 ## Successor 62 HANDOVER (2026-11-09 ~01:5xZ, date -u; context large; written while the cap-800 climb runs)
