@@ -1,0 +1,3 @@
+L10_C10_osc_final_solved core8_HIT7 XS 11 k 1 G 63-63 R0 0-63 P 21  last_SAT 14  UNSAT_at 15 (SOLVE -> UNSAT 0.0s RESULT UNSAT )  00:04Z
+L10_C10_osc_final_solved core8_HIT7 XS 11 k 2 G 62-63 R0 0-63 P 21  last_SAT 16  UNSAT_at 17 (SOLVE -> UNSAT 2.8s RESULT UNSAT )  00:06Z
+L10_C10_osc_final_solved core8_HIT7 XS 11 k 3 G 61-63 R0 0-63 P 21  last_SAT 16  UNSAT_at 17 (SOLVE -> UNSAT 89.8s RESULT UNSAT )  00:14Z

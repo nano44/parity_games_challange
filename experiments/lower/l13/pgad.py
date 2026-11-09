@@ -37,8 +37,10 @@ cand = {}
 for x in XS:
     own = [z for z in (xt[2 * x], xt[2 * x + 1]) if z >= 0 and ok(z)]
     for k in (0, 1): cand[2 * x + k] = sorted(set([-1] + G + own))
-for i, g in enumerate(G):
-    for k in (0, 1): cand[2 * g + k] = sorted(set([-1] + G[i + 1:] + [z for z in R0 if ok(z)]))
+for i, g in enumerate(G):   # v2: a helper also keeps its own base target when acyclic (so the k+1 question contains the k one)
+    for k in (0, 1):
+        own = [xt[2 * g + k]] if xt[2 * g + k] >= 0 and (ok(xt[2 * g + k]) or xt[2 * g + k] in G[i + 1:]) else []
+        cand[2 * g + k] = sorted(set([-1] + G[i + 1:] + [z for z in R0 if ok(z)] + own))
 freerank = sorted(cand)
 enc32.SKIPCORE.clear(); enc32.SKIPCORE.update(rng(os.environ.get('SKIP', '')))
 print('PGAD base', os.path.basename(base), hashlib.sha1(open(base, 'rb').read()).hexdigest()[:8], 'target', os.path.basename(tp),
