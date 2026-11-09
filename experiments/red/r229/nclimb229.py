@@ -7,6 +7,8 @@ ORDER=K1 (item 3, L-NEW BOX 202 K1-FLIP(2)): only genomes whose Ξ-graph has min
   score = (fx, C, T, -size), fx = max over gates g of flips(g) - 2 (lamch(g) + 1), lamch(g) = #steps at which Λ changes at e_g or b_g (box 202's lamch; own engine, whole run);
   fx > 0 is a K1-FLIP(2) failure -> frozen to out/k1kill_<SEED>.json.
 ORDER=K1C: k <= 1 filter, score = (C, T, fx, -size).
+ORDER=MINH (Lead 05:51Z): score = (max over gates of min(cc(e_g), cc(b_g)), flips at that gate, C, -size); cc = class-change steps
+  (L-RED CLASS-PAYS: flips(g) <= 2 min(cc) + 1).
 ORDER=DP (BOX 93): score = (bad, dbreak, dpass, -size) from e93_229.census (bad = sum of its must-be-0 counters; dbreak = gates with
   unlocks > 1 + ch_D; dpass = gates whose D-play passes e_q); bad or dbreak > 0 -> frozen to out/dkill_<SEED>.json.
 Freezes every strict gain on the first two score entries to out/nc<ORDER>_<CAP>_<SEED>.json. Resumable: RESUME=<json>.
@@ -27,7 +29,22 @@ def kfx(G, cap=600):
         lc = sum(out[t][1][pe][0] != out[t - 1][1][pe][0] or out[t][1][pb][0] != out[t - 1][1][pb][0] for t in range(1, len(out)))
         if f - 2 * (lc + 1) > best: best, arg = f - 2 * (lc + 1), (q, f, lc)
     return best, arg
+def minh(G, cap=600):
+    """per gate m(g) = min(cc(e_g), cc(b_g)), cc = #steps with a class (Λ, E) change; returns (max_g m(g), flips at that gate, args)."""
+    out, V, O, _ = own.run(G, cap); T = len(out) - 1; evs = {V[("e", q)] for q in O}
+    cls = lambda t, v: (out[t][1][v][0], frozenset(f for f in out[t][1][v][1] if f in evs))
+    best = (-1, -1, None)
+    for q in O:
+        g, a, b = V[("g", q)], V[("e", q)], V[("b", q)]
+        ca = sum(cls(t, a) != cls(t - 1, a) for t in range(1, T + 1)); cb = sum(cls(t, b) != cls(t - 1, b) for t in range(1, T + 1))
+        fl = sum(out[t][2][g] != out[t - 1][2][g] for t in range(1, T + 1))
+        if (min(ca, cb), fl) > best[:2]: best = (min(ca, cb), fl, (q, ca, cb))
+    return best
 def score(G, seed):
+    if ORDER == "MINH":
+        m, fl, arg = minh(G); c = gate229.census(G, 600); c["minh"], c["mhflip"], c["arg"] = m, fl, arg
+        if c["gln"] or c["predfail"] or c["below"]: json.dump(G, open(f"{H}/out/gkill_{seed}.json", "w"))
+        return (m, fl, c["C"], -size(G)), c
     if ORDER == "DP":
         import e93_229
         c = e93_229.census(G, 600); c.update(mnp=c["mfl"], np=c["np_rel"] + c["np_unl"], up=0, lam=0, gln=0, C=0, predfail=0, below=0)
@@ -69,7 +86,7 @@ if __name__ == "__main__":
         if s2[:3] >= s[:3]:
             if s2[:KG] > s[:KG]:
                 json.dump(Hh, open(f"{H}/out/nc{ORDER}_{CAP}_{seed}.json", "w"))
-                print(it, s2, {k: c2[k] for k in ("mnp", "np", "up", "lam", "gln", "predfail", "below", "T", "C") + (("fx", "k", "arg") if "fx" in c2 else ())},
+                print(it, s2, {k: c2[k] for k in ("mnp", "np", "up", "lam", "gln", "predfail", "below", "T", "C") + (("fx", "k", "arg") if "fx" in c2 else ()) + (("minh", "mhflip", "arg") if "minh" in c2 else ())},
                       "N", Hh["N"], "M", len(Hh["br"]), flush=True)
             G, s = Hh, s2
     print("FINAL cap", CAP, "score", s, "N", G["N"], "M", len(G["br"]), flush=True)
