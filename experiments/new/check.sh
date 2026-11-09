@@ -1100,4 +1100,12 @@ if [ "$r203" -eq 0 ] && [ -z "$d203" ] && ! grep -v "^ctrl" box203/check203.out 
 else
   echo "BOX 203 FLIP check: FAILED (check203.sh exit $r203)"; echo "$d203" | head -30; echo "$run203" | tail -15; exit 1
 fi
+# P-N5-QN (L-NEW successor 68): frozen packet + source note, quote check, tools / outputs / instances / engine against box203/qn.pins (DOCS/ = docs/new/)
+pinQ=$(cd box203 && sed 's#DOCS/#../../../docs/new/#' qn.pins | sha1sum -c --quiet 2>&1) || true
+grep -q "^quotes 24 missing 0 " box203/quotesqn.out || pinQ="$pinQ quotesqn.out: not «quotes 24 missing 0»"
+if [ -z "$pinQ" ]; then
+  echo "P-N5-QN: packet and $(wc -l < box203/qn.pins) pinned files match qn.pins, quotes 24 missing 0: PASS"
+else
+  echo "P-N5-QN check: FAILED"; echo "$pinQ" | head -20; exit 1
+fi
 rm -rf "$tmp"

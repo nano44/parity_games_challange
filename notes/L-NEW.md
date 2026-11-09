@@ -23,6 +23,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   - PUSHED 764a8f86 (part 2). Then §5.3: CORRECTION (the «≤ k + 1» ascent pattern was read on a partial table; WC (k 2) has n ascents);
     K1C16_n400 (L-RED 63) and my climb best K1F21_n48 (21 flips at N 48, k 1) frozen; L-RED 63's CLASS-PAYS (min form) credited.
     Trap (mine, this box): a data sentence written before the sweep finished; the last rows killed it. Write DATA sentences from full outputs.
+  - PACKET P-N5-QN FROZEN (Lead 06:53Z order): docs/new/P-N5-QN.md = GATE-CLASS, GATE-FLIP, QUIET-N, (k+1)-Λ on landed R104 / R118 /
+    R121 / R123 only (24 quotes by box203/quotesqn.py at trunk b8408b39, 0 missing); DEAD D1-D3; box203/qn.pins (56 rows), check.sh
+    «P-N5-QN». Fixes go to docs/new/P-N5-QN-fixes.md (append-only) and must be added to qn.pins. Referees after R125 / P-N5-SPLIT.
   - PACKET CANDIDATE (Lead 05:27Z): QUIET-N is a clean sharpening of LANDED R123 T-QUIET (window L → N, T_CYC ≤ Q + (Q + 1)N), with
     GATE-CLASS as its lemma, on landed premises only; small packet later (P-N5-GATECLASS?), after L-RED 63's attack.
   - Things only I know: gfc203.py on IDEAL-CYC is ~4 s for MWR8; the 57-genome corpus sweep ~40+ min (scratch sw4 loop, one .out per
