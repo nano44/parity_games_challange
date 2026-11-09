@@ -1,6 +1,19 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## RESUME POINT -- successor 16 (L-COMP 16, Opus 5.5), 2026-11-09 08:55Z by date -u (GO Lead 08:25Z: BOX 37 items 1-3)
+- BOX 37 item 1 DONE (experiments/comp/box37, README = the record). All DATA, scope N5'-xi from S3 on Gamma3 to the first fallback, [E-LEV].
+  - Record gate (82, 0) of the C300 bests = MWR8_2's Q (race letter y), NOT qz (Lead question): Q 0 flips in MWR8_2; qz stays 17 along
+    the chain while Q climbs 20 -> 34. The family is MWR plus INERT decoration: ablation leaves a core of N + M 261 (MWR8_2's size).
+  - gen37(n) = MWR(n) + 2 br moves ((R, qz-option) and (a_m, 0) raised to just above (a_1, 1)). fast36 n 2-23 and own36 13 sizes agree;
+    exact: Qf = maxflip = 4n + 2, C = 2n + 1, T3 = 6n + 7, N + M = 29n + 29, lamch 0, k 1. LINEAR (22 distinct sizes, zero residual).
+  - Byte-for-byte reproduction of the bests: not possible (inert edits); gen37(8) reproduces their counters at 261 < 289/297. B400 r34
+    is a variant core (qz bp/extra option + a37 exit removed instead of R's raise; same counts).
+- Item 2 (penalised climb) NOT RUN: item 1 succeeded, so its condition («if the family is not extractable») does not hold.
+- Item 3: no point above linear (nothing to send).
+- Things only I know: fast36.py's width list stops at W 48 (n <= 3072 game vertices); meas37.one96 uses bin/k/fast36_w96 (build:
+  gcc -O2 -DW=96 -o bin/k/fast36_w96 fast36.c). own36 at n 23 takes 270 s. bin/ needs a .git/info/exclude line in a fresh clone.
+
 ## HANDOVER -- successor 15 (L-COMP 15, Opus 5.5) PARKS 2026-11-09 (date -u in the park commit) after BOX 36 (Lead 05:18Z / 06:04Z: climb, fit, park)
 ### Where things are (all DATA; scope: N5'-xi from S3 on Gamma3 up to the first fallback, [E-LEV]; unit genome unless stated)
 - Tools in experiments/comp/box36 (README = this section):

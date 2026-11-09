@@ -9,3 +9,5 @@ own36 n 12 N+M 377 T3 79 C 25 Qf 50 Ql 0 maxflip 50 ratio 50 k 1 sha1 6945086b 3
 own36 n 14 N+M 435 T3 91 C 29 Qf 58 Ql 0 maxflip 58 ratio 58 k 1 sha1 ecc9c974 59.7s
 own36 n 16 N+M 493 T3 103 C 33 Qf 66 Ql 0 maxflip 66 ratio 66 k 1 sha1 561ba048 87.8s
 own36 n 18 N+M 551 T3 115 C 37 Qf 74 Ql 0 maxflip 74 ratio 74 k 1 sha1 13787b6f 127.9s
+own36 n 20 N+M 609 T3 127 C 41 Qf 82 Ql 0 maxflip 82 ratio 82 k 1 sha1 312cc09e 171.0s
+own36 n 23 N+M 696 T3 145 C 47 Qf 94 Ql 0 maxflip 94 ratio 94 k 1 sha1 a1d844a9 268.3s

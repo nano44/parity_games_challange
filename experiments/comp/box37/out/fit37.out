@@ -1,0 +1,10 @@
+distinct sizes: 22 n = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+Qf       = 4*n + 2  max residual 0
+maxflip  = 4*n + 2  max residual 0
+C        = 2*n + 1  max residual 0
+T3       = 6*n + 7  max residual 0
+N+M      = 29*n + 29  max residual 0
+Qf       vs N+M: p = 1.066 +- 0.005 (all 22), p = 1.028 +- 0.001 (upper 11); ratio at max n 0.1351
+maxflip  vs N+M: p = 1.066 +- 0.005 (all 22), p = 1.028 +- 0.001 (upper 11); ratio at max n 0.1351
+C        vs N+M: p = 1.066 +- 0.005 (all 22), p = 1.028 +- 0.001 (upper 11); ratio at max n 0.0675
+T3       vs N+M: p = 0.980 +- 0.001 (all 22), p = 0.991 +- 0.000 (upper 11); ratio at max n 0.2083
