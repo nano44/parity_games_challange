@@ -20,6 +20,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
     DEAD «ascents ≤ k + 1» (staircase ST(m), k = 1, m − 1 ascents; inst/ST4_k1, ST8_k1; stair203.py) — R121/R123's ascent route cannot
     give k = 1. Face class height at k = 1: OPEN. Flip climbs from MWR4 (aclimb203.py AC_OBJ=flip AC_START AC_FREE) reach 18 flips at
     N 48, k 1 (= MW4's 4n + 2 at k 2).
+  - PUSHED 764a8f86 (part 2). Then §5.3: CORRECTION (the «≤ k + 1» ascent pattern was read on a partial table; WC (k 2) has n ascents);
+    K1C16_n400 (L-RED 63) and my climb best K1F21_n48 (21 flips at N 48, k 1) frozen; L-RED 63's CLASS-PAYS (min form) credited.
+    Trap (mine, this box): a data sentence written before the sweep finished; the last rows killed it. Write DATA sentences from full outputs.
   - PACKET CANDIDATE (Lead 05:27Z): QUIET-N is a clean sharpening of LANDED R123 T-QUIET (window L → N, T_CYC ≤ Q + (Q + 1)N), with
     GATE-CLASS as its lemma, on landed premises only; small packet later (P-N5-GATECLASS?), after L-RED 63's attack.
   - Things only I know: gfc203.py on IDEAL-CYC is ~4 s for MWR8; the 57-genome corpus sweep ~40+ min (scratch sw4 loop, one .out per

@@ -206,3 +206,24 @@ form a cycle of Ξ_σ, and Z is determined by it. Ξ_σ has out-degree ≤ 1, so
   upward edges. The play is in one state (T = 0: one option per mover), so ST(m) kills the ascent bound, not a class-height bound.
 - Consequence: at k = 1, R121's HUB-ASC-G gives D^tot only through a bound on ascents that k does not provide; any proof of polynomial
   face class height at k = 1 must use the run (which classes a face actually visits), not a per-state play shape.
+### 5.3 Correction and additions (appended 06:14Z by date -u, after 764a8f86)
+- CORRECTION to §5.2's first bullet: «The pattern looked solid on data … all ≤ k + 1» was written on a PARTIAL corpus table (38 genomes,
+  through MW26_2). The full table (out2/asc203_corpus.out, 56 genomes) already contradicts «ascents ≤ k + 1»: L-SI's cascade family WC
+  (k = 2) has max ascents 4 / 8 / 16 at WC4_2 / WC8_2 / WC16_2 (= n; T = 4). So the conjecture was dead on the fleet's frozen corpus
+  before the staircase, at k = 2. Histogram of max ascents over the 56 genomes: 0 (7), 1 (1), 2 (28), 3 (11), 4 (6), 5 (1), 8 (1), 16 (1).
+  The k = 1 kill stands (ST(m)), and is now also on real runs (next bullet).
+- k = 1 runs with more than 2 ascents (out2/gfc203_k1extra.out): L-RED 63's K1C16_n400 (claude/l-red fa4e50fe, experiments/red/r229/inst,
+  sha1 99da972a; copy inst/K1C16_n400.json): k 1, T 51, C 0, 3 ascents; and my climb best K1F21_n48 (inst/K1F21_n48.json, sha1 2e7460da;
+  aclimb203.py AC_OBJ=flip AC_START=MWR4_2 AC_FREE=1 seed 21, 2,500 iterations, out2/aclimb203_flip_s21.log; seed 22 reached the same
+  21, out2/aclimb203_flip_s22.log): k 1, T 31, C 0, 3 ascents.
+- Credit and sharpening: L-RED 63 (claude/l-red fa4e50fe, docs/red/R229-box93.md, relayed by the Lead 05:29Z) — Lemma REL-G (L-RED lane)
+  with landed R123 B-ONLY gives CLASS-PAYS: flips(g) ≤ 2·min(D^tot(e_g) − 1, D^tot(β_g) − 1) + 1, sharper than GATE-FLIP's sum and exact
+  on MWR (2n + 1). Not re-derived here. So the k = 1 target is the SMALLER face's class height.
+- DATA on the k = 1 gates with the most flips (gfc203; IDEAL-CYC; unit gate; every must-0 counter 0 on both rows):
+| genome | N | T | C | flips (lamch) | D^tot (e, β) | GATE-FLIP bound | CLASS-PAYS bound |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| MWR4_2 / MWR8_2 / MWR16_2 | 48 / 84 / 156 | 30 / 54 / 102 | 0 | 9 / 17 / 33 (0) | (n + 1, 2n + 2) | 3n + 1 | 2n + 1 (exact) |
+| K1F21_n48 (climb from MWR4_2) | 48 | 31 | 0 | 21 (0) | (12, 22) | 32 | 23 |
+| K1C16_n400 (L-RED 63) | 113 | 51 | 0 | 31 (0) | (22, 37) | 57 | 43 |
+  At the size of MWR4 (N 48) a k = 1 gate can flip 21 times (MWR4: 9; MW4 at k = 2: 18). Every count stays within CLASS-PAYS; no data
+  shows the smaller face's class height super-linear in N + M. (k = 1 class height: OPEN.)
