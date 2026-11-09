@@ -7,3 +7,7 @@ BEST BEST_B400_r26_C13_6cd993af.json N+M 268 k 1 score [26.0, 13, 54] {"T3": 54,
 BEST BEST_B400_r28_C14_b52f889e.json N+M 273 k 1 score [28.0, 14, 54] {"T3": 54, "fb": 1, "C": 14, "gate": [82, 0], "flips": 28, "lamch": 0, "face": [17, 0, 31, 0], "lsifail": []} own36_agree True t 05:56:44Z
 BEST BEST_B400_r32_C16_be86b87f.json N+M 273 k 1 score [32.0, 16, 48] {"T3": 48, "fb": 1, "C": 16, "gate": [82, 0], "flips": 32, "lamch": 0, "face": [17, 0, 33, 0], "lsifail": []} own36_agree True t 05:56:58Z
 BEST BEST_B400_r32_C16_a13d9661.json N+M 275 k 1 score [32.0, 16, 49] {"T3": 49, "fb": 1, "C": 16, "gate": [82, 0], "flips": 32, "lamch": 0, "face": [17, 0, 33, 0], "lsifail": []} own36_agree True t 05:57:33Z
+BEST BEST_B400_r34_C17_245f11c4.json N+M 278 k 1 score [34.0, 17, 48] {"T3": 48, "fb": 1, "C": 17, "gate": [82, 0], "flips": 34, "lamch": 0, "face": [17, 0, 34, 0], "lsifail": []} own36_agree True t 06:00:35Z
+BEST BEST_B400_r34_C17_1694d52f.json N+M 297 k 1 score [34.0, 17, 50] {"T3": 50, "fb": 1, "C": 17, "gate": [82, 0], "flips": 34, "lamch": 0, "face": [17, 0, 34, 0], "lsifail": []} own36_agree True t 06:05:58Z
+restart 1 seed MWR8_2.json best [34.0, 17, 50] {"T3": 50, "fb": 1, "C": 17, "gate": [82, 0], "flips": 34, "lamch": 0, "face": [17, 0, 34, 0], "lsifail": []} global [34.0, 17, 50] evals 1360 1061s
+restart 2 seed MWR8_2.json best [32.0, 16, 46] {"T3": 46, "fb": 1, "C": 16, "gate": [82, 0], "flips": 32, "lamch": 0, "face": [18, 0, 34, 0], "lsifail": []} global [34.0, 17, 50] evals 2035 914s

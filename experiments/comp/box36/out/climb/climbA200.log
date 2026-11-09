@@ -19,3 +19,5 @@ BEST BEST_A200_r16_C8_fc9ff4a1.json N+M 168 k 1 score [16.0, 8, 30] {"T3": 30, "
 BEST BEST_A200_r16_C8_9b06186f.json N+M 200 k 1 score [16.0, 8, 31] {"T3": 31, "fb": 1, "C": 8, "gate": [46, 0], "flips": 16, "lamch": 0, "face": [14, 0, 18, 0], "lsifail": []} own36_agree True t 05:51:04Z
 restart 4 seed MWR4_2.json best [16.0, 8, 31] {"T3": 31, "fb": 1, "C": 8, "gate": [46, 0], "flips": 16, "lamch": 0, "face": [14, 0, 18, 0], "lsifail": []} global [16.0, 8, 31] evals 11378 699s
 restart 5 seed k1fail_202.json best [7.0, 2, 15] {"T3": 15, "fb": 1, "C": 2, "gate": [12, 1], "flips": 7, "lamch": 0, "face": [9, 0, 10, 0], "lsifail": []} global [16.0, 8, 31] evals 13765 261s
+restart 6 seed ARG_ratio_N2M4_k1.json best [3.0, 1, 9] {"T3": 9, "fb": 1, "C": 1, "gate": [6, 0], "flips": 3, "lamch": 0, "face": [4, 0, 4, 0], "lsifail": []} global [16.0, 8, 31] evals 16213 35s
+restart 7 seed ARG_ratio_N3M4_k1.json best [8.0, 2, 15] {"T3": 15, "fb": 1, "C": 2, "gate": [13, 1], "flips": 8, "lamch": 0, "face": [10, 0, 12, 0], "lsifail": []} global [16.0, 8, 31] evals 18626 134s

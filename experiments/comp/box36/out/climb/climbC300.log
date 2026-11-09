@@ -1,0 +1,4 @@
+BEST BEST_C300_r17_C9_107a60e0.json N+M 263 k 1 score [17.0, 9, 54] {"T3": 54, "fb": 1, "C": 9, "gate": [62, 0], "flips": 17, "lamch": 0, "face": [8, 0, 17, 0], "lsifail": []} own36_agree True t 06:10:15Z
+BEST BEST_C300_r20_C10_a8a74706.json N+M 281 k 1 score [20.0, 10, 55] {"T3": 55, "fb": 1, "C": 10, "gate": [82, 0], "flips": 20, "lamch": 0, "face": [18, 0, 28, 0], "lsifail": []} own36_agree True t 06:20:24Z
+BEST BEST_C300_r24_C12_4230338c.json N+M 281 k 1 score [24.0, 12, 54] {"T3": 54, "fb": 1, "C": 12, "gate": [82, 0], "flips": 24, "lamch": 0, "face": [18, 0, 30, 0], "lsifail": []} own36_agree True t 06:21:07Z
+BEST BEST_C300_r28_C14_2b4ecf4f.json N+M 281 k 1 score [28.0, 14, 54] {"T3": 54, "fb": 1, "C": 14, "gate": [82, 0], "flips": 28, "lamch": 0, "face": [18, 0, 31, 0], "lsifail": []} own36_agree True t 06:21:35Z
