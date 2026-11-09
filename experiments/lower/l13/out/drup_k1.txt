@@ -1,0 +1,3 @@
+pdrup pgad3.py ../l10/rec/L10_C10_osc_final_solved.txt ../l10/out/core8_HIT7.txt 7 11 16 SKIP  | cnf sha1 d22415da462b76f369b886ea51f49ffd9b517056 clauses 259356 lemmas 56628 | drup: s VERIFIED (63 lemmas RUP-checked)
+pdrup pgad3.py ../l10/rec/L10_C10_osc_final_solved.txt ../l10/out/core8_HIT7.txt 7 11 17 SKIP  | cnf sha1 62b863b1ad7801fe8cbaa6308fe34e4c6e70c288 clauses 333784 lemmas 81157 | drup: s VERIFIED (74 lemmas RUP-checked)
+pdrup pgad3.py ../l10/rec/L10_C10_osc_final_solved.txt ../l10/out/core8_HIT7.txt 6 11 18 SKIP  | cnf sha1 79486aad3d9f36319f0d27aa050b5b062beeae9c clauses 295997 lemmas 99819 | drup: s VERIFIED (14434 lemmas RUP-checked)

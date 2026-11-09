@@ -7,7 +7,7 @@ drup, wd = sys.argv[1], sys.argv[2]; args = sys.argv[3:]
 here = os.path.dirname(os.path.abspath(__file__))
 cnf = os.path.join(wd, 'pd_' + '_'.join(os.path.basename(a).replace('.txt', '') for a in args).replace(',', '-') + '.cnf')
 p = args[:5] + ['/dev/null'] + args[5:]
-subprocess.run([sys.executable, os.path.join(here, 'pgad.py')] + p, check=True, stdout=subprocess.DEVNULL, env=dict(os.environ, CNF=cnf))
+subprocess.run([sys.executable, os.path.join(here, os.environ.get('PGAD', 'pgad.py'))] + p, check=True, stdout=subprocess.DEVNULL, env=dict(os.environ, CNF=cnf))
 sha = hashlib.sha1(open(cnf, 'rb').read()).hexdigest()
 from pysat.formula import CNF
 from pysat.solvers import Glucose4
@@ -16,6 +16,6 @@ if r: print('pdrup', ' '.join(args), 'SAT (not UNSAT!)'); os.remove(cnf); sys.ex
 pf = cnf + '.proof'; P = s.get_proof()
 with open(pf, 'w') as f: f.writelines(l + '\n' for l in P)
 out = subprocess.run([drup, cnf, pf], capture_output=True, text=True).stdout.strip().splitlines()
-print('pdrup', ' '.join(args), 'SKIP', os.environ.get('SKIP', ''), '| cnf sha1', sha, 'clauses', len(F.clauses), 'lemmas', len(P),
+print('pdrup', os.environ.get('PGAD', 'pgad.py'), ' '.join(args), 'SKIP', os.environ.get('SKIP', ''), '| cnf sha1', sha, 'clauses', len(F.clauses), 'lemmas', len(P),
       '| drup:', out[-1] if out else 'NO OUTPUT')
 os.remove(pf); os.remove(cnf)
