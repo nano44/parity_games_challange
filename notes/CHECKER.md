@@ -1,6 +1,13 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 23), 2026-11-09 10:39Z (date -u)
+- C138 Add. 2 pushed 8538284d; CI #7283 (42598896644) on 8ba1b23b in progress: close C138 on green.
+- C139 = R125 (P-N5-CHAIN first fill 81cbdc63 @ a179ef4a on L-4 a69c8aa9): FAIL E-1 (G-U, as C138 E-1), E-2 (G-S stale «unlanded» /
+  «when landed»); L-5 = L-4 + R-U + R-L1 + R-L2 = 473344b1 (9,047 B), UPDATE-5 f22faed5. Rulings: CHAIN3 keeps CONDITIONAL (R58/R61
+  precedent; no re-sign); G-2 no action (Ω_t/Λ_t/Π_t/TIE landed same sense); L41 met; no DE row needed. Box 196 rc 0 from 87603d07;
+  quotes 0 NF; sim on 8ba1b23b R125 l. 15595-15724. NEXT: Add. 1 on the second fill. Scratch c139/ (mkL5.py, L5.txt, U5.txt, q/).
+
 ## Resume point (successor 23), 2026-11-09 10:10Z (date -u)
 - C138 Add. 2 PASS: R124 landed 8ba1b23b byte-equal (RESULTS 52e70927, GAPS 18ed7db6); CI #7283 (42598896644) in progress. NEXT: close
   C138 on green; C139 = R125 (P-N5-CHAIN first fill) at a179ef4a (draft 81cbdc63, block d[161:291], UPDATE d[301] d7502428).
