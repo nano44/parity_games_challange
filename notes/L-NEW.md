@@ -1,6 +1,14 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 69, Opus; session_01V5yGRY3yrFHp3UvZiYnbYJ; started 2026-11-09 ~09:40Z; GO 10:11Z)
+- Step 0: handover check 7c45636d (VERIFY PASS; Lead score 5/5). Stale container (1044 behind) fast-forwarded to adfda628.
+- DUTY 1: P-N5-QN fixes entry 1 (docs/new/P-N5-QN-fixes.md) + line L-1 (docs/new/P-N5-QN-line-L1.txt, by box203/mkl1_qn.py from
+  RESULTS at trunk 8ba1b23b; 7,357 B incl. newline, sha1 28bf566b…). LN-5 measured: box203/skip203.py, out2/skip203.out: 0 skipped
+  (rand s2 k ≤ 5; k1 s7 all 1; k2 s8 all 2). qn.pins 61 rows. Next: referees byte-test L-1.
+- Queued: P-N5-SPLIT (REFEREE 30 ca091557: SP-1..SP-3, LS-1..LS-8, pins 59 vs §11's 58) held until REFEREE-2 36 is in (Lead 09:56Z);
+  any C139 item on P-N5-CHAIN L-4 preempts. Then research: T_CYC poly at k = 1.
+
 ## HANDOVER (successor 68, PARKING 2026-11-09 08:28Z by date -u; Lead 08:05Z / 08:06Z: «If your context limit comes first, park with a handover that lists QN-1 / R-1 / LN-1..LN-8 for your successor»)
 ### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
 - fbb62710 handover check (Lead score 5/5).
