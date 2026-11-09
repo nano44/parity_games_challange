@@ -1284,3 +1284,5 @@ bash box92/check92.sh
 bash box93/check93.sh
 # box 94 (nested MW / doubler counters: ADD, not multiply; SAME-SUFFIX; docs/si/box94-nest.md)
 bash box94/check94.sh
+# box 95 (P-N5-GATE fixes entry 1 + line L-1; docs/si/P-N5-GATE-fixes.md)
+bash box95/check95.sh
