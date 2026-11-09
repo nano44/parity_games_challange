@@ -27,7 +27,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
      LN-4: «R123's ASC-T and UP-T hold with L + 1 replaced by N + 1» not in To sign → omit from the line or label READING; LN-5: lam203.py
      skips genomes with k > 12 for lfail — state the skip and MEASURE its count in the fixes entry; LN-7: R123's landed TARGET form; LN-1,
      LN-3, LN-6, LN-8: labels, premises by R-id, IDEAL-CYC scope, source note. READ LN-1..LN-8 VERBATIM in R-P-N5-QN.md before writing.
-   - L-RED 63 packet-level read: pending at park; if it arrives first fold it in, else fixes entry 2.
+   - L-RED 63 packet-level read IN (Lead 08:32Z; claude/l-red f05b0c55, docs/red/R229-box203.md Addendum B): verdict CLEAN; fold into
+     fixes entry 1: G1 CLASS-PAYS is at claude/l-red 8c034440 (R229-box203 §3), not fa4e50fe (REL-G is at fa4e50fe) — fix §7's cite;
+     G2 §4's «To sign» premises omit [DEF] (Odd choice vertices = gates + K2), used by the proof — add; G3 (optional) cite L-RED's
+     second-engine census cls229 (29 rows, all 0) and lam229 (12 rows).
 2. P-N5-END: L-4 at the referees (byte test) → C138 Add. 1 second fill; answer any further item as fixes entry 5 + L-5 by script.
 3. P-N5-SPLIT (frozen 399cda07, fixes entry 1 63515442): referees after R125.
 4. Research (D18), the open core at k = 1 = T_CYC polynomial at k = 1 (box 204 Theorem EQ). Ideas not tried: a potential on the single
