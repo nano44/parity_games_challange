@@ -2,3 +2,5 @@
 kept m N+M 73 C 5 C 5 maxm 2 T3 10 0s
 kept o N+M 72 C 5 C 5 maxm 2 T3 10 1s
 kept o N+M 71 C 5 C 5 maxm 2 T3 10 1s
+kept m N+M 69 C 5 C 5 maxm 2 T3 10 6s
+kept m N+M 67 C 5 C 5 maxm 2 T3 10 8s
