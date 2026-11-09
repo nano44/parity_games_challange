@@ -244,3 +244,25 @@ verdict was written. L-RED 57 R222 (claude/l-red 6f56004c) is context only and i
 - Verdict: fixes entry 3 CORRECT. **Line L-3 MATCHES** the packet read with fixes entries 1-3 and still meets LN-1..LN-8 (S1-S5 touch
   no label, scope, premise or TARGET clause). All statements stay as in §0: SIGN; END-T3 PROVED-CONDITIONAL on REACH3-CYC.
 - docs/referee-2/R2-P-N5-END.md was read (after successor 29's verdict, as its §C allowed) only for the S1-S3 strings.
+
+## §E. Fixes entry 4 and line L-4 (CHECKER 23 C138 R-U, R-T0) (REFEREE successor 30, Opus 5.5, D15; date -u at writing 2026-11-09T05:27Z)
+- Objects (Lead 05:27Z): claude/l-new b7faeebe (ancestor of origin/claude/l-new, checked). docs/new/P-N5-END-line-L4.txt sha1
+  5f88c2971718522027ae267754814c6ba401b829, 7,230 B. L-3 at b7faeebe = d6afe92a; packet sha1 5cae845b unchanged (frozen).
+- Byte test: scratch/end_l4.py applies R-U, then R-T0, to L-3 with the strings typed from C138 §4 (claude/checker 46905772; wrapped lines
+  joined with one space), not from the lane's script. Each old string once in L-3. `cmp` with the lane's L-4: **EQUAL**
+  (scratch/end_logs/l4test.out). One line, 105 «(» = 105 «)», depth never negative, 0 «|», 0 «τ0».
+- Lane's own checks, from `git archive b7faeebe`: end.pins 45 rows, `sha1sum -c` all OK; box195/mkl4_195.py prints «R-U, R-T0 old once
+  each, applied; sha1 5f88c297… 7230 bytes; parens 105 105 ; tau0 0».
+- R-T0 in meaning (it lands in ENDGAME-3's signed clause):
+  - The packet defines τ0 as S3's τ: l. 90-91 «(S) S3's pair ([G3] S3-START, or FIX 1 directly): κ0; …; τ0 := pe_g at every gate g and
+    K2 → K2». E0 (l. 100) «Every state of the run has τ = τ0»; E1-E4 and ENDGAME-3's proof (l. 178-180, «iterations 1, …, F − 1 are S4a
+    iterations with K-config κ0 and τ0») use exactly that object. The line says the runs start «from SPEC's default start S3», so «S3's τ»
+    names τ0 in the line's own terms, for both N5′-xi and N5 (same S3). CORRECT; no change of meaning.
+- R-U in meaning: every status word kept (CANDIDATE (D1), G-N5-TIME OPEN, not M3, not M4, not a step-4 pass, not a TARGET.md claim), in
+  the landed form of R123 («is not M4, so this is not M4; G-N5-TIME stays OPEN; not M3, …»), the same change I checked for P-N5-QUIET
+  (R-P-N5-QUIET.md §D). The labels before the tail are untouched: «END-T3, PROVED-CONDITIONAL on REACH3-CYC, RESULTS R118 (k), itself
+  PROVED-CONDITIONAL on [REACH-L]» is in L-4 byte-for-byte as in L-3. CORRECT.
+- Fixes entry 4 is line-only: R-U reorders status words; R-T0 replaces a symbol by its packet definition. No proof step, tool or pinned
+  output changes, so the source note need not name it (C134 N-S); not L41's case.
+- Verdict: fixes entry 4 CORRECT. **Line L-4 MATCHES** (L-3 + exactly R-U and R-T0). Statements as signed (§0; END-T3 PROVED-CONDITIONAL
+  on REACH3-CYC). docs/referee-2/ not read for this section.
