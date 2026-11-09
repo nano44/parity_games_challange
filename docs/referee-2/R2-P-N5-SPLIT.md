@@ -150,3 +150,68 @@ box 5 = TARGET.md diff, line requirements, verdict table.
   (rw_psa, rw_psb, rw_psc 0 on the re-wins). lamb, lamm, spfail (with Dhi over ALL of J_b), spl3M, rcfail, decfail, rws1, rws2, rw1fail
   are 0. Seq (couples with S_t = S_t′) is 31, all on RWX_n95, all multi-split. That is exactly where (i) and (ii) are not vacuous, and
   there rws1 = rws2 = 0.
+
+## Re-derivation, §5-§7 (box 3)
+- Lemma PAIR-HIGH (abstract: one lex-increasing sequence of sets; strict at each change, by E-MON3).
+  - (c) At a change with top z, z enters and nothing more relevant than z changes. If z ∈ U_y, the restriction to U_y changes, and it
+    rises (z enters). If z ∉ U_y, every letter of U_y is above z, so the restriction is unchanged. The restricted values strictly increase,
+    so Dhi_y = 1 + Σ_(z∈U_y) c_z. Correct.
+  - (a) Between consecutive y-tops, y leaves at some change. Its top z enters while y leaves, so z ≠ y and z is above y: z ∈ U_y. A y-top
+    leaves U_y unchanged. So the restriction takes a new value strictly between consecutive y-tops, and values never return: c_y ≤ Dhi_y.
+    Correct.
+  - (b) An x/y alternation of length L has at least ⌊L/2⌋ y's, so ⌊L/2⌋ ≤ Dhi_y, and L ≤ 2·Dhi_y + 1. Correct.
+- Lemma RA-PATHS.
+  - Each gap between consecutive y-tops holds a top in U_y (as in (a)). The most relevant top of the gap is z ∈ RA(y) ⊆ U_y, so RA is a
+    DAG pointing up.
+  - Each gap contributes one top of its z, and the gaps are disjoint. So c_y − 1 ≤ Σ_(z∈RA(y)) c_z.
+  - Induction from the most relevant letter down gives c_y ≤ P(y). Correct (also for c_y = 0).
+- Lemma RE-COUNT. E-MON3 makes the sets of I pairwise distinct, so D_I = 1 + #changes. A change that is not a re-entry has a top in no
+  E_s(v), s ∈ I, s ≤ t − 1. At t − 1 that holds because the top enters. So it is the top's first entry into ⋃_I E. At most Mact_I(v) such
+  changes. Correct.
+- Theorem RE-EQUIV.
+  - Classes in different Λ-intervals differ in Λ, and each node gives one interval (F1, F2). So D^tot_E(v) = Σ_I D_I(v)
+    ≤ (2M + 3)(1 + M) + Σ_I Rtop_I(v) (Mact ≤ M; CYC).
+  - T-QUIET3 then gives the bound as stated:
+    1 + Σ_v (D^tot_E(v) − 1) ≤ 1 + n3·((2M + 3)(M + 1) − 1) + Rtop.
+  - Rtop ≤ n3·T3, because each vertex has at most one change per step. L3 and n3 are polynomial in N + M, so «T3 polynomial ⇔ Rtop
+    polynomial». Correct.
+- Lemma PAIR-COUNT (corrected).
+  - Index i < |τ| goes to the pair {τ_i, τ_(i+1)}; the two letters differ.
+  - For the pair {x, y}, the indices assigned to it are distinct letter changes of τ restricted to {x, y}. These are distinct switches of
+    ρ (runs collapsed), so there are at most |ρ| − 1 ≤ A_xy − 1 of them, and none if only one letter occurs.
+  - Summing: |τ| − 1 ≤ Σ max(0, A_xy − 1). The second inequality is trivial, and m ≤ 1 gives |τ| ≤ 1. Correct.
+  - The correction (max(0, ·), A ≥ 1) answers the A = 0 case.
+- Theorem ALT-EQUIV (corrected).
+  - tops(v, I) has no equal neighbours: a y-top makes y enter, and a second y-top needs y to leave first, at a change whose top is not y.
+  - D_I = 1 + |tops| ≤ 2 + C(M, 2)·(A − 1). Then sum over the ≤ 2M + 3 intervals and apply T-QUIET3: the bound is exactly as stated.
+  - A ≤ max(1, T3), since an alternation has at most |tops(v, I)| ≤ T3 letters. Correct.
+- Corollary C-EQUIV. |tops| = Σ_y c_y ≤ Mact·C ≤ M·C. Then as in RE-EQUIV, and C ≤ max(1, T3). Correct.
+- Lemma ASC-WIT (under [E-LEV]).
+  - SPLIT's form «f more relevant than f′ ⇒ lev(f) ≥ lev(f′)» is the contrapositive of [E-LEV] for e-vertices. Relevance on e-vertices
+    is priority order, and e-priorities are distinct.
+  - Set-up. By CHAIN-DECOMP3, y = succ(c_i) is a mover, and by [DEF] its level is lev(c_i) − 1. The play runs c_i → y → m → g1, with g1
+    the gate of σ_t(y).
+  - (a) If σ̄_t(g1) = pe, the play reaches e_(g1). e_(g1) is above w (B-ONLY3; v is no exception, since it has an ascent), so it is in
+    Π. No e-vertex lies between c_i and it, so it is c_(i+1). But lev(e_(g1)) = lev(c_i) − 1, so by [E-LEV] it is less relevant than c_i:
+    no ascent. Correct.
+  - (b) LOC-GATE3 with NO-TIE3. Correct.
+  - (c) pβ_(g1) is on v's play after c_1, …, c_i, so E_t(pβ) = {c_(i+1), …, c_p} and Λ = w ((PL)). If Λ(pe) = w, (LEX-Λ) (pads: W-1
+    valid) and (b) put the most relevant difference on pe's side. If c_(i+1) ∉ E(pe), that difference is at least as relevant as
+    c_(i+1). Correct.
+  - (d) Different nodes are decided by reward, and rewards are distinct (F2). Correct.
+- Lemma ASC-ROOT. Strong induction on ℓ = lev(c_i).
+  - Case (d): g* = g1, with lev(g1) = ℓ − 1.
+  - Otherwise Λ(pe_(g1)) = w.
+    - lev(g1) = 0 would give pe → e_(g1) → c_W, node c_W ≠ w. (w is below the e's, since E_t(v) ≠ ∅ and only K0, K3 are above c_W.)
+      So lev(g1) ≥ 1.
+    - seq_t(pe_(g1)) starts with e_(g1). By (c) it holds a letter at least as relevant as c_(i+1). c_(i+1) is above c_i, and c_i is above
+      e_(g1) ([E-LEV], the levels differ). So that letter is above e_(g1): an ascent.
+    - Up to its first ascent the sequence descends, so the ascent starts at level ≤ ℓ − 1 ([E-LEV]). The induction gives g* with
+      lev(g*) < ℓ − 1, the face conditions, and a reward above Λ(pe_(g1)) = w = Λ_t(v).
+  - Base ℓ = 0 is vacuous: a level-0 c_i points to c_W. Correct.
+- N-2 (premise lists, optional): the «To sign» row for §7 omits (LEX-Λ)'s own premises ((E-DOM), (Core), [DEF]) and [DEF]'s level
+  structure. The row for §2 omits [DEF] (Odd vertices). Both are used and both are P-N5-CHAIN premises, so nothing outside the stated
+  premise set enters.
+- DATA (my engine, box 4): ph_a, ph_b, ph_c, rafail, rpfail, rptfail, recfail, dmon, pcfail, bdfail are 0 on the 28 pinned runs (every
+  (v, I), every pair of letters, every gap). ASC-WIT (awa, awb, awc, awd, awmv) and ASC-ROOT (rootfail, a witness gate searched over ALL
+  gates) are 0 on 113,238 ascents. The pinned instances satisfy [E-LEV]: my builder orders e-priorities by (lev, gate).
