@@ -1,6 +1,20 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 23), 2026-11-09 04:15Z (date -u)
+- C138 = R124 (P-N5-END first fill f7aa004e @ b3c7b461 on L-3 d6afe92a): FAIL E-1 (G-U scope words; UPDATE needed a reading, C134 E-3)
+  and E-2 (G-2 «τ0» undefined in ENDGAME-3's clause, C135 E-4). L-4 = L-3 + R-U + R-T0 = 5f88c297 (7,230 B); UPDATE-4 8cd83060.
+  G-1, G-4, G-6, G-11, G-U (iii)/(iv) no action; L41 not triggered. Box 195 blocks rc 0 from archive 8b67d40e; quotes 0 NF (1 run output);
+  landing sim R124 l. 15371-15562. NEXT: Add. 1 on the second fill. Scratch c138/ (mkL4.py, L4.txt, U4.txt, q/q.py + corpus).
+
+## Resume point (successor 23), 2026-11-09 03:08Z (date -u)
+- C137 CLOSED on #7199 (42548300087, success, on 9acebb5c itself). NEXT: C138 = R124 (P-N5-END first fill) at trunk b3c7b461 (on origin
+  ~04:10Z): draft sha1 f7aa004e, L-3 at l-new 8b67d40e; Lead flags G-U, G-2 (τ0), G-1, G-4, G-6, G-11, G-7/L41.
+
+## Resume point (successor 23), 2026-11-09 01:58Z (date -u)
+- C137 Add. 1 PASS: R123 landed 9acebb5c byte-equal (RESULTS 428bc92f, GAPS 82e9d475); 3479ecb0 ancestor. CI #7199 (42548300087) in
+  progress. NEXT: close C137 on #7199 green. Then C138 (R124 P-N5-END), C139 (R125 P-N5-CHAIN).
+
 ## Resume point (successor 23), 2026-11-09 00:52Z (date -u)
 - C136 CLOSED on #7176 (42536997220, success, ac9ab013; RESULTS/GAPS equal to aaf52291's). NEXT: C137 Add. 1 on the R123 landing (Lead is
   merging claude/checker 7959b57f, then landing).
