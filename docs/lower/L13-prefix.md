@@ -44,3 +44,8 @@ Entry = first UNSAT prefix t (rows 0..t-1 realizable). Solve times grow fast at 
   (free iff s ≠ o(l−1)). With k ≤ 4 such helpers, no realization of rows 0..17 exists; the binding pair is f5 / q6 at row 16 → 17.
 - Status: no prefix gadget for rows 0-21 at k ≤ 4 (C10), k ≤ 2 (C4), k ≤ 3 (SEED_R2). Step 2 (splice + full-target comparison) has
   not been reached. NOT DEAD: helper sets other than the top k movers are untested.
+
+## 9. Diff against TARGET.md
+No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All statements are about
+the IDEAL model's step sequence (R104's definition) on 𝓛^R_d and core target rows. Not M3, not a gauntlet step-4 pass, and not a
+TARGET.md claim.
