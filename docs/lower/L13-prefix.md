@@ -105,13 +105,20 @@ Entry = first UNSAT prefix t (rows 0..t-1 realizable). Solve times grow fast at 
   | XS | G | result |
   | --- | --- | --- |
   | 11 | top k 1, 2 | 14, 14 (culprit at k 1, t 14: {8} = q4 alone) |
-  | 11 | every single helper h = 16..63 (48) | UNSAT at 14 for all 48 (sweep at prefix 14 only; out/sweep1_C11_X11_P14.txt); DRUP: §4 end |
-  | 11 | every pair (1,128) | at prefix 14: see out/sweep2_C11_X11_P14.txt; count at §4 end |
-  | 8, 11 (q4 + f5) | top k 1, 2 | k 1: 14 (372 s); k 2: §4 end |
+  | 11 | every single helper h = 16..63 (48) | UNSAT at 14 for all 48 (sweep at prefix 14 only; out/sweep1_C11_X11_P14.txt); 48 / 48 DRUP VERIFIED (out/drup_C11_k1.txt) |
+  | 11 | every pair (1,128) | UNSAT at 14 for all 1,128 (out/sweep2_C11_X11_P14.txt); 1,128 / 1,128 DRUP VERIFIED (out/drup_C11_pairs.txt) |
+  | 8, 11 (q4 + f5) | top k 1, 2 | k 1: 14 (372 s); k 2: SAT through 13, NO ANSWER at 14 (3,000 s limit) |
   Partial ascending sweep (stopped as too slow; out/sweep1_C11_X11_{a,b}.txt): first UNSAT 14 for 16, 41, 42, 44, 45; 11 for 40, 43.
 - Reading. The C11 cut removes the f5 / q6 interaction, but the first infeasible row moves DOWN, from 17 (C10) to 14, and the
   culprit moves one level down, to q4. This is the recursion L10 §3d described in the search data, now on exact instances: cutting
   the loop at level j (f5 no longer a sink) creates a sink at level j − 1 (q4), and the sink fails at its first required change.
+- Lemma C11-WALL (PROVED, lane; DRUP-verified exhaustive SAT). Scope: C11's wiring and ranks (c2e925f7) fixed except the options of
+  f5 and a helper set G (pgad3 candidates, insertion ranks); signs, gates, starts and states free; target core8. No G with |G| ≤ 2
+  realizes rows 0..14. Rows 0..13 are realizable (top k 1, 2: SAT through 13, CHECK consistent). So on C11 the first infeasible
+  row is exactly 14 for every helper set of size ≤ 2. Rewiring q4 as well (XS 8, 11) gives 14 at k 1 and is undecided at k 2.
+- Verdict for (a): it walls at 14 ≤ 17, with the culprit q4. Stated exactly above; stop (Lead 05:18Z).
+- DATA for comparison: HIT7_lift_d32 (7 levels) has no global sink among its core movers (isol.py on movers 1, 3, ..., 13).
+  The sinks f5 (C10) and q4 (C11) belong to the level-8 search bases, not to every tower.
 
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All statements are about

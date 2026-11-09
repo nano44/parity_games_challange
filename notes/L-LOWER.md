@@ -10,9 +10,10 @@
   |closure(pair-j mover)| ≥ j + 1 in ANY realization. Explains the C10 walls at 7 (closure(f5) = ∅) and 15 (one isolated helper).
 - §3 (23091720): Lemma C10-ISOLATION (PROVED, lane; DRUP-verified exhaustive): on C10, no single helper realizes rows 0..15
   (48 / 48) and no pair rows 0..17 (1,128 / 1,128); rows 0..16 realizable with 2 helpers (frozen PG_C10_X11_k2_t16 e0a10ff4).
-- §4 (acc242e2 + final): choice (a), base C11 (c2e925f7: f5 no longer a sink). First UNSAT moves DOWN to 14, culprit q4 (the new
-  global sink). 48 / 48 single helpers UNSAT at 14 (DRUP VERIFIED); pairs and q4 + f5 at k 2: see §4 end.
-### IN FLIGHT at park: see the final lines of this handover.
+- §4: choice (a), base C11 (c2e925f7: f5 no longer a sink). Lemma C11-WALL (PROVED, lane): no helper set of size ≤ 2 realizes
+  rows 0..14 (48 + 1,128 DRUP VERIFIED); rows 0..13 realizable. The culprit is q4, the new global sink. q4 + f5 rewired: k 1 = 14,
+  k 2 undecided (3,000 s).
+### IN FLIGHT at park: none (pgrep empty).
 ### NEXT (recommendation)
 - The exact data now show the recursion on three bases. C10: f5 is the sink, wall 17. C11: q4 is the sink, wall 14. A cut at level j
   creates a sink at level j − 1, and the sink fails at its first required change. Recommended next box: a LEMMA attempt. «In every
