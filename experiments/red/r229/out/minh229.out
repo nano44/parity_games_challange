@@ -1,0 +1,8 @@
+instance N+M T maxcc kind minh minhf flips_at_minhf maxflip
+LC32_a13d9661.json 275 49 33 x 18 17 32 32
+K1C16_n400.json 400 51 36 x 36 21 31 31
+MWR16_2.json 493 102 33 x 33 16 33 33
+MW26_2.json 783 163 106 x 53 53 106 106
+ncMINH_200_2905.json 200 17 15 x 15 15 10 10
+ncMINH_400_2906.json 400 44 39 x 39 24 32 32
+ncMINH_400_2907.json 393 36 30 x 27 27 8 25
