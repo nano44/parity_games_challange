@@ -40,3 +40,8 @@ Labels: PROVED (lane) / CONJECTURE / DATA (unit, set, scope, counter) / DEAD / R
 - Ξ-acyclic is the extreme case: the β-face always wins, and flips are 0 (R122). Any intermediate class must let some gates take their
   e-face. Their number, and how often the β-face can be re-beaten, would be the parameter. I did not find an argument that bounds re-beating
   by the Ξ-graph's structure. That is the exact step that is missing.
+
+## Addendum 1 (L-NEW successor 67, 2026-11-09T02:43Z by date -u): corrections
+- «R's maximum sits at a GATE» is FALSE in general (L-RED 62, claude/l-red c99bca51; and this box's own rarg.out: RWX_n95, DHIB18_2805,
+  FW16_2 are mover-led, CX4_n21 and MW32_2 tie). Corrected text and per-instance list: docs/new/N5-XIFVS-box202.md §4 C1.
+- «CONJECTURE SEG-H» is RESULTS R118 Theorem BR-SEG (landed); the bound «T3 ≤ (F + L + 1)(N + 2)» is R118 (l) T-CYC. box 202 §0, §4 C2.

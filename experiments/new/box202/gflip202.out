@@ -1,0 +1,10 @@
+FW4_2.json k 1 T3 17 k1fail 0 | maxflip 1 at ('g', (17, 0)) lamch 1 faceLambdas 2 totflips 4 flipgates 4
+C2_NM33_38377e9c.json k 1 T3 3 k1fail 0 | maxflip 1 at ('g', (9, 0)) lamch 1 faceLambdas 2 totflips 1 flipgates 1
+MW4_2.json k 2 T3 31 k1fail 1 | maxflip 18 at ('g', (46, 0)) lamch 0 faceLambdas 1 totflips 22 flipgates 5
+C3_NM45_8a702944.json k 2 T3 6 k1fail 1 | maxflip 6 at ('g', (17, 0)) lamch 0 faceLambdas 1 totflips 7 flipgates 2
+WC4_2.json k 2 T3 4 k1fail 0 | maxflip 1 at ('g', (4, 0)) lamch 0 faceLambdas 1 totflips 3 flipgates 3
+CX4_n21.json k 4 T3 10 k1fail 3 | maxflip 7 at ('g', (10, 0)) lamch 0 faceLambdas 1 totflips 15 flipgates 5
+k1fail_202.json k 1 T3 4 k1fail 1 | maxflip 2 at ('g', (4, 0)) lamch 0 faceLambdas 1 totflips 3 flipgates 2
+MW8_2.json k 2 T3 55 k1fail 1 | maxflip 34 at ('g', (82, 0)) lamch 0 faceLambdas 1 totflips 42 flipgates 9
+MW16_2.json k 2 T3 103 k1fail 1 | maxflip 66 at ('g', (154, 0)) lamch 0 faceLambdas 1 totflips 82 flipgates 17
+FW16_2.json k 1 T3 53 k1fail 0 | maxflip 1 at ('g', (53, 0)) lamch 1 faceLambdas 2 totflips 16 flipgates 16

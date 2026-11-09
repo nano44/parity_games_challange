@@ -18,6 +18,12 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - BOX 201 (docs/new/N5-SUB-box201.md; experiments/new/box201 rarg/seg + outputs): subclass bound for R STALLS. Obstruction: R's argmax is a
   GATE (MW32 gate (298,0) 65 flips); σ̄ changes at ≥ 85 % of steps; CONJECTURE SEG-H (const (σ̄, Λ) intervals ≤ N + 1; data ≤ 3) gives
   T3 ≤ (F + L + 1)(N + 2) but F ≈ T3. Candidate parameter (unmeasured): Ξ feedback number k. Kill side left to L-RED 62 / L-SI 48.
+- BOX 202 (docs/new/N5-XIFVS-box202.md; experiments/new/box202: fvs202 / gflip202 / k1srch202, outputs, inst/ 53 corpus + k1fail_202):
+  k := min FVS of R104's Ξ-graph, measured on 53 genomes. Bounded k does not bound C (MW k 2, C 2n + 1; frontier C-family k ≤ 2).
+  CORRECTION: box 201's SEG-H = LANDED R118 BR-SEG / T-CYC (missed). Box 201's «R at a gate» FALSE in general (addenda appended to
+  box 201 and core-forms). k = 1 NOT proved: K1-FLIP DEAD (k1fail_202.json, 2 flips at lamch 0); CONJECTURE K1-FLIP(2) 0 fails on
+  20,000 random k = 1 genomes (tiny); Corollary K1-POLY (PROVED, conditional on a per-gate flip bound, via R118 (l)); K1-FLIP(c) DEAD at
+  k = 2 on MW (4n + 2 flips at one gate, lamch 0). Obstruction: BETA-ACYC step (3) fails at odd f-cycles (better for Odd than w*).
   - Things only I know: self200.py's S is computed at EVERY vertex with ≥ 2 successors (movers, gates; K2 and β never switch here); the full
     8-instance sweep takes ~4 min (MW32_2, DHIB26 dominate); check200.sh ~10 s.
 

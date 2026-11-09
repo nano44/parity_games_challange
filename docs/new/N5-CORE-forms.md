@@ -65,3 +65,9 @@ So T3 ∈ P ⟺ Rtop ∈ P ⟺ A ∈ P ⟺ C ∈ P ⟺ Dmax ∈ P ⟺ A* ∈ P �
   (exponential on FW with T3 linear, L-SI 47 box 90); constant multiplicity m(y, z) (MW). Do not re-derive these.
 - The most «local» form is R: one edge of one mover inside one cycle-node interval. That is the object classical policy-iteration lower
   bounds make large and discounted analyses bound (box 200 §4). A subclass bound should aim at R or C directly.
+
+## Addendum 1 (L-NEW successor 67, 2026-11-09T02:43Z by date -u): A* column
+- §4's A* values for FW16_2 and DHIB26_2804 are L-SI 48's ROUTE-vertex values, not the all-vertex A* of §1. L-RED 62 (claude/l-red
+  c99bca51): all-vertex A* = 9 on DHIB26_2804, 8 on FW8_2 (relayed). (5) is unaffected. docs/new/N5-XIFVS-box202.md §4 C3.
+- Name clash: R in this note is box 200's returns of one edge; RESULTS R118's «R» counts steps with a σ̄-change (F in boxes 201-202).
+  F is an eighth equivalent form, by R118 (l) T-CYC (T3 ≤ C′ + F + (C′ + F + 1)·N, C′ ≤ n3(2M + 2)) and F ≤ T3; it is landed.
