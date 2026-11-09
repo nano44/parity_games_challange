@@ -14,3 +14,9 @@ fast36 n 14 N+M 435 T3 91 C 29 Qf 58 Ql 0 maxflip 58 ratio 58 k 1 sha1 ecc9c974 
 fast36 n 15 N+M 464 T3 97 C 31 Qf 62 Ql 0 maxflip 62 ratio 62 k 1 sha1 def3f5c2 8.4s
 fast36 n 16 N+M 493 T3 103 C 33 Qf 66 Ql 0 maxflip 66 ratio 66 k 1 sha1 561ba048 10.0s
 fast36 n 17 N+M 522 T3 109 C 35 Qf 70 Ql 0 maxflip 70 ratio 70 k 1 sha1 baf905ff 11.9s
+fast36 n 18 N+M 551 T3 115 C 37 Qf 74 Ql 0 maxflip 74 ratio 74 k 1 sha1 13787b6f 26.3s
+fast36 n 19 N+M 580 T3 121 C 39 Qf 78 Ql 0 maxflip 78 ratio 78 k 1 sha1 47e7c102 30.9s
+fast36 n 20 N+M 609 T3 127 C 41 Qf 82 Ql 0 maxflip 82 ratio 82 k 1 sha1 312cc09e 35.6s
+fast36 n 21 N+M 638 T3 133 C 43 Qf 86 Ql 0 maxflip 86 ratio 86 k 1 sha1 7868a14e 42.6s
+fast36 n 22 N+M 667 T3 139 C 45 Qf 90 Ql 0 maxflip 90 ratio 90 k 1 sha1 9c046b6f 47.1s
+fast36 n 23 N+M 696 T3 145 C 47 Qf 94 Ql 0 maxflip 94 ratio 94 k 1 sha1 a1d844a9 54.6s
