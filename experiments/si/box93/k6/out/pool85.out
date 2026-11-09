@@ -1,0 +1,8 @@
+LT4_1_0.json B1:ON2/pa6/pb5/sh3 B2:ON1/pa4/pb3/sh1 B3:ON2/pa2/pb1/sh0 B4:ON1/pa1/pb0/sh0 POOL-ALT violations 0
+LT4_1_1.json B1:ON2/pa8/pb5/sh5 B2:ON2/pa5/pb3/sh3 B3:ON1/pa3/pb1/sh1 B4:ON1/pa1/pb0/sh0 POOL-ALT violations 0
+LT4_m1_0.json B1:ON1/pa5/pb4/sh2 B2:ON2/pa3/pb2/sh1 B3:ON1/pa2/pb1/sh0 B4:ON1/pa1/pb0/sh0 POOL-ALT violations 0
+LT4_m1_1.json B1:ON1/pa4/pb3/sh3 B2:ON1/pa3/pb2/sh2 B3:ON1/pa2/pb1/sh1 B4:ON1/pa1/pb0/sh0 POOL-ALT violations 0
+LT5_1_0.json B1:ON1/pa7/pb6/sh4 B2:ON2/pa5/pb4/sh2 B3:ON1/pa4/pb2/sh0 B4:ON1/pa2/pb1/sh0 B5:ON1/pa1/pb0/sh0 POOL-ALT violations 0
+LT5_1_1.json B1:ON3/pa10/pb7/sh6 B2:ON2/pa7/pb4/sh4 B3:ON2/pa4/pb2/sh2 B4:ON1/pa2/pb1/sh0 B5:ON1/pa1/pb0/sh0 POOL-ALT violations 0
+LT5_m1_0.json B1:ON2/pa9/pb6/sh3 B2:ON1/pa6/pb5/sh3 B3:ON2/pa3/pb3/sh1 B4:ON1/pa2/pb1/sh0 B5:ON1/pa1/pb0/sh0 POOL-ALT violations 0
+LT5_m1_1.json B1:ON2/pa10/pb8/sh8 B2:ON1/pa8/pb5/sh5 B3:ON2/pa5/pb3/sh3 B4:ON2/pa3/pb1/sh1 B5:ON1/pa1/pb0/sh0 POOL-ALT violations 0

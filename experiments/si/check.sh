@@ -1280,3 +1280,5 @@ bash box90/check90.sh
 bash box91/check91.sh
 # box 92 (GATE-LOW-NULL census, two engines; CONJECTURE WAIT-CLOSED; docs/si/box92-closed.md)
 bash box92/check92.sh
+# box 93 (K7: NP-SHAPE / E-FACE-PAYS census, two engines; K6 lag towers at h = 4, 5; docs/si/box93-k7k6.md)
+bash box93/check93.sh

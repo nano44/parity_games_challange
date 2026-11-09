@@ -1,0 +1,8 @@
+LT4_1_0.json units 10 priv 10 maxex_priv 0 maxex_nopriv None maxfl_priv 5 maxfl_nopriv 0 T 19
+LT4_1_1.json units 10 priv 10 maxex_priv 0 maxex_nopriv None maxfl_priv 5 maxfl_nopriv 0 T 19
+LT4_m1_0.json units 10 priv 10 maxex_priv 0 maxex_nopriv None maxfl_priv 3 maxfl_nopriv 0 T 17
+LT4_m1_1.json units 10 priv 10 maxex_priv 0 maxex_nopriv None maxfl_priv 1 maxfl_nopriv 0 T 17
+LT5_1_0.json units 15 priv 15 maxex_priv 0 maxex_nopriv None maxfl_priv 5 maxfl_nopriv 0 T 23
+LT5_1_1.json units 15 priv 15 maxex_priv 0 maxex_nopriv None maxfl_priv 5 maxfl_nopriv 0 T 23
+LT5_m1_0.json units 15 priv 15 maxex_priv 0 maxex_nopriv None maxfl_priv 3 maxfl_nopriv 0 T 21
+LT5_m1_1.json units 15 priv 15 maxex_priv 0 maxex_nopriv None maxfl_priv 5 maxfl_nopriv 0 T 22

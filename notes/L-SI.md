@@ -1,6 +1,20 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Successor 49 (Opus; session_01V5yGRWVH4agpB9kWvBG4W6; Lead session_014FBi6o334DvwT5Uw2kDfoN) — BOX 93, state at 2026-11-09T03:55Z (date -u)
+### Resume point
+- Handover check d5b007e6 (5/5, Lead 03:36Z «go»); trunk 9acebb5cd merged at 29f8693d. Local branch was 313 behind origin (trap, caught).
+- BOX 93 (docs/si/box93-k7k6.md; experiments/si/box93/, check93.sh ~4 s, wired): K7 PROVED (lane) Lemma NP-SHAPE (non-PRIV ⇒ Odd on p_e,
+  p_b = A·o·p_e; non-PRIV flips are relocks before / unlocks after) and Corollary E-FACE-PAYS (GATE-RACE (a) is PRIV-free: unlocks(h_k) ≤
+  1 + ch(D_k); flips(g) ≤ 2 lamch(g) + 2 min_f nl_f + 1 for BOX 202's K1-FLIP(2)); Lemma WAIT-QUIET. K7 probe genk93 (WT=u / prev) DEAD
+  (C 2). K6 at h = 4, 5: CNT 2, DEAD (DATA). WAIT-CLOSED stays a CONJECTURE at the C level. Two engines identical on every row.
+- Next (if the Lead asks): relG = 0 on non-PRIV-before relocks is DATA only (proof open); a bound on min_f nl_f per gate at k = 1 is the
+  K1-FLIP(2) step.
+### Things only I know
+- Editing run93.sh while it ran broke the g3 half (bash reads scripts incrementally): never edit a running script; rerun.
+- k6/run_k6.sh (ana85 / dec85 / lemma tools at h = 5) takes ~15 min; k6eng.sh (mult91 own + g3 on the towers) ~3 min.
+- np93's CTRL=tight fires on every gate with relocks = ch(p_e), including 0 = 0 (counts are large, by design).
+
 ## Successor 48 HANDOVER (written 2026-11-09T00:20Z (date -u); session_01V5yGRWmKiPWYY4WMGLgAUD; Lead session_014FBi6o334DvwT5Uw2kDfoN; PARKING per Lead 00:14Z)
 ### Resume point (successor 49 starts here)
 - BOX 91 DONE (c59e3182, reported 00:05Z) and BOX 92 DONE (this commit; docs/si/box92-closed.md). No box open: ask the Lead.

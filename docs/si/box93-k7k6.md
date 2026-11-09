@@ -29,8 +29,8 @@ check93.sh, wired). Engines: own = L-RED R221 own.py (claude/l-red 4b309716); g3
   nl_f := the non-Λ value changes of face f. So K1-FLIP(2) holds at every gate with a face whose value changes only at Λ-changes, and a
   K1-FLIP(2) failure needs non-Λ changes on BOTH faces (DATA: k1both = k1c2 on every row). At k = 1 the open step is exactly a bound
   on min_f nl_f per gate (§2 (d)). This does not prove K1-FLIP(2).
-- K6 (lagging merged copy) at h = 4 and 5: DEAD on DATA (§5): CNT 2 on all 4 + 4 towers, re-arms ≤ 1; the latch holds (ACCESS-LATCH,
-  0 violations); SAME-E-MERGE and ACCESS-LATCH are height-free PROVED statements (box 86), so the h ≤ 3 obstruction is general wherever
+- K6 (lagging merged copy) at h = 4 and 5: DEAD on DATA (§5): CNT 2 on all 4 + 4 towers (T3 17-23, C ≤ 2, both engines), re-arms ≤ 1;
+  ACCESS-LATCH 0 violations (every OFF of B1 has w off its real option); SAME-E-MERGE and ACCESS-LATCH are height-free PROVED statements (box 86), so the h ≤ 3 obstruction is general wherever
   ACCESS-LATCH's hypothesis holds; the residue is LEAPFROG with shared e's (POOL-ALT's open case, box 86 §4), unchanged.
 - WAIT-CLOSED (§6): restated with K7 and K6 rows updated. It is still a CONJECTURE for C; the per-gate part is a lemma.
 
@@ -119,13 +119,24 @@ dfail 0 (E-FACE-PAYS (b), proxy); k1both = k1c2 on every row (E-FACE-PAYS (d)).
 
 ## 5. K6 at h = 4, 5 (lag86.py cfg extended; k6/cfg L = [1, 3, 6, 10] (h = 4), [1, 3, 6, 10, 15] (h = 5); a 2, b 2, c 1, merge 1,
 ## cexit C; cpos ±1, wreal 0/1; measured with box 84-86's tools on box 81's IDEAL-CYC reference; k6/out)
-| instance | cfg (h; cpos; wreal) | T | R | tog (B1..Bh) | CNT (of 2^h) | REARM | premature | hubH | OFF / on real / latch-viol. |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-ROWSK6
-- Lemma checks (k6/out; TOTALS over the 8 towers): FLIP-U / FLIP (flipu85) EXCU, LOWER-BLIND keep (lb84) EXCLB, PRIV-FLIP (priv84)
-  EXCPF, POOL-ALT (pool85) EXCPA, ACCESS-LATCH at OFF steps (latch86) EXCAL.
-- Second engine (mult91 own / g3 on the same genomes; C per (v, I, y), T3): TWOENG
-- DEAD at h = 4, 5 (DATA): the count does not grow with h (CNT 2 at h = 2..5); with wreal = 1 bit 1 latches as at h ≤ 3.
+| instance | cfg (h; cpos; wreal) | N + M | T | R | tog (B1..Bh) | CNT (of 2^h) | REARM | premature | hubH | OFF / on real / latch-viol. | T3 / C (own = g3) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| LT4_1_0 | 4; +1; 0 | 654 | 19 | 12 | 3 2 3 1 | 2 (of 16) | 1 | none | 7 | 3 / 0 / 0 | 19 / 2 |
+| LT4_1_1 | 4; +1; 1 | 657 | 19 | 12 | 3 3 1 1 | 2 (of 16) | 0 | 6, 15 | 10 | 2 / 0 / 0 | 19 / 2 |
+| LT4_m1_0 | 4; −1; 0 | 654 | 17 | 7 | 1 3 2 1 | 2 (of 16) | 0 | none | 5 | 2 / 0 / 0 | 17 / 1 |
+| LT4_m1_1 | 4; −1; 1 | 657 | 17 | 6 | 1 1 1 1 | 2 (of 16) | 0 | none | 4 | 0 / 0 / 0 | 17 / 1 |
+| LT5_1_0 | 5; +1; 0 | 1243 | 23 | 13 | 2 3 2 1 1 | 2 (of 32) | 0 | 16 | 5 | 3 / 0 / 0 | 23 / 2 |
+| LT5_1_1 | 5; +1; 1 | 1247 | 23 | 13 | 5 3 3 1 1 | 2 (of 32) | 1 | 6, 20 | 12 | 4 / 0 / 0 | 23 / 2 |
+| LT5_m1_0 | 5; −1; 0 | 1243 | 21 | 9 | 3 1 3 2 1 | 2 (of 32) | 1 | none | 8 | 3 / 0 / 0 | 21 / 2 |
+| LT5_m1_1 | 5; −1; 1 | 1247 | 22 | 9 | 3 1 3 3 1 | 2 (of 32) | 1 | none | 9 | 3 / 0 / 0 | 22 / 2 |
+- Lemma checks (k6/out; TOTALS over the 8 towers): FLIP-U / FLIP (flipu85) exU 0 exE 0 (100 units), LOWER-BLIND keep (lb84) 0 mispredictions on 1118 steps, PRIV-FLIP (priv84)
+  maxex_priv 0 (every unit PRIV), POOL-ALT (pool85) 0 violations, ACCESS-LATCH at OFF steps (latch86) 0 violations on 20 OFF steps, none with w on its real option.
+- Second engine (mult91 own / g3 on the same genomes; C per (v, I, y), per-tuple maximum; T3 = Howard steps): the two engines give IDENTICAL
+  rows (out/k6_own.out, out/k6_g3.out), T3 equal to the IDEAL-CYC T above, C ≤ 2.
+- DEAD at h = 4, 5 (DATA): the count does not grow with h (CNT 2 on all 8; re-arms ≤ 1; box 86 hand towers: CNT ≤ 4 at h = 2, ≤ 3 at h = 3). With
+  wreal = 1, bit 1 latches at h = 4 with cpos −1 (LT4_m1_1: 0 OFF); the other wreal = 1 towers do have OFFs of B1 (premature resets at
+  LT4_1_1, LT5_1_1; 3 OFFs at LT5_m1_1), but at EVERY OFF w is not on its real option (latch86: «on real» 0), i.e. ACCESS-LATCH
+  hypothesis fails there (as at h ≤ 3: box 86 latch86 0 of 14). CNT stays 2, so the OFFs do not build a count.
 - General part (PROVED, box 86, no height in the statements): SAME-E-MERGE (a merged copy shares the real chain's e's from the merge
   mover on) and ACCESS-LATCH (a merged waiting hub keeps its SET option while no other option is lex-above w). So at every h a merged
   lagging copy latches unless another option of B_l overtakes w strictly (LEAPFROG). That residue is box 86 §4's open case (leapfrogs
