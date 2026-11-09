@@ -9,3 +9,13 @@ BEST BEST_A200_r14_C7_66d90297.json N+M 200 k 1 score [14.0, 7, 33] {"T3": 33, "
 BEST BEST_A200_r14_C8_7c49a052.json N+M 200 k 1 score [14.0, 8, 33] {"T3": 33, "fb": 1, "C": 8, "gate": [46, 0], "flips": 14, "lamch": 0, "face": [8, 0, 14, 0], "lsifail": []} own36_agree True t 05:26:41Z
 BEST BEST_A200_r14_C8_7db01744.json N+M 199 k 1 score [14.0, 8, 34] {"T3": 34, "fb": 1, "C": 8, "gate": [46, 0], "flips": 14, "lamch": 0, "face": [8, 0, 14, 0], "lsifail": []} own36_agree True t 05:31:00Z
 BEST BEST_A200_r15_C8_562b32c5.json N+M 200 k 1 score [15.0, 8, 35] {"T3": 35, "fb": 1, "C": 8, "gate": [46, 0], "flips": 15, "lamch": 0, "face": [7, 0, 16, 0], "lsifail": []} own36_agree True t 05:32:28Z
+restart 0 seed MWR4_2.json best [15.0, 8, 35] {"T3": 35, "fb": 1, "C": 8, "gate": [46, 0], "flips": 15, "lamch": 0, "face": [7, 0, 16, 0], "lsifail": []} global [15.0, 8, 35] evals 2153 836s
+restart 1 seed k1fail_202.json best [4.0, 2, 9] {"T3": 9, "fb": 1, "C": 2, "gate": [9, 2], "flips": 4, "lamch": 0, "face": [5, 0, 3, 0], "lsifail": []} global [15.0, 8, 35] evals 4351 256s
+restart 2 seed ARG_ratio_N2M4_k1.json best [4.0, 1, 15] {"T3": 15, "fb": 1, "C": 1, "gate": [8, 3], "flips": 4, "lamch": 0, "face": [9, 0, 5, 0], "lsifail": []} global [15.0, 8, 35] evals 6743 59s
+restart 3 seed ARG_ratio_N3M4_k1.json best [5.0, 3, 13] {"T3": 13, "fb": 1, "C": 3, "gate": [10, 2], "flips": 5, "lamch": 0, "face": [4, 0, 10, 0], "lsifail": []} global [15.0, 8, 35] evals 9137 86s
+BEST BEST_A200_r16_C7_4fc23b2c.json N+M 155 k 1 score [16.0, 7, 28] {"T3": 28, "fb": 1, "C": 7, "gate": [46, 0], "flips": 16, "lamch": 0, "face": [9, 0, 16, 0], "lsifail": []} own36_agree True t 05:42:31Z
+BEST BEST_A200_r16_C8_6a1beb80.json N+M 157 k 1 score [16.0, 8, 28] {"T3": 28, "fb": 1, "C": 8, "gate": [46, 0], "flips": 16, "lamch": 0, "face": [9, 0, 17, 0], "lsifail": []} own36_agree True t 05:42:36Z
+BEST BEST_A200_r16_C8_fc9ff4a1.json N+M 168 k 1 score [16.0, 8, 30] {"T3": 30, "fb": 1, "C": 8, "gate": [46, 0], "flips": 16, "lamch": 0, "face": [14, 0, 17, 0], "lsifail": []} own36_agree True t 05:42:59Z
+BEST BEST_A200_r16_C8_9b06186f.json N+M 200 k 1 score [16.0, 8, 31] {"T3": 31, "fb": 1, "C": 8, "gate": [46, 0], "flips": 16, "lamch": 0, "face": [14, 0, 18, 0], "lsifail": []} own36_agree True t 05:51:04Z
+restart 4 seed MWR4_2.json best [16.0, 8, 31] {"T3": 31, "fb": 1, "C": 8, "gate": [46, 0], "flips": 16, "lamch": 0, "face": [14, 0, 18, 0], "lsifail": []} global [16.0, 8, 31] evals 11378 699s
+restart 5 seed k1fail_202.json best [7.0, 2, 15] {"T3": 15, "fb": 1, "C": 2, "gate": [12, 1], "flips": 7, "lamch": 0, "face": [9, 0, 10, 0], "lsifail": []} global [16.0, 8, 31] evals 13765 261s

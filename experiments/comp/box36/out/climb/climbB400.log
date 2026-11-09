@@ -1,1 +1,9 @@
 BEST BEST_B400_r17_C9_3c09b5ec.json N+M 261 k 1 score [17.0, 9, 54] {"T3": 54, "fb": 1, "C": 9, "gate": [62, 0], "flips": 17, "lamch": 0, "face": [8, 0, 17, 0], "lsifail": []} own36_agree True t 05:32:38Z
+BEST BEST_B400_r17_C9_bfbc7392.json N+M 310 k 1 score [17.0, 9, 55] {"T3": 55, "fb": 1, "C": 9, "gate": [62, 0], "flips": 17, "lamch": 0, "face": [11, 0, 20, 0], "lsifail": []} own36_agree True t 05:50:09Z
+restart 0 seed MWR8_2.json best [17.0, 9, 55] {"T3": 55, "fb": 1, "C": 9, "gate": [62, 0], "flips": 17, "lamch": 0, "face": [11, 0, 20, 0], "lsifail": []} global [17.0, 9, 55] evals 678 1120s
+BEST BEST_B400_r18_C9_4b05fdf6.json N+M 265 k 1 score [18.0, 9, 55] {"T3": 55, "fb": 1, "C": 9, "gate": [82, 0], "flips": 18, "lamch": 0, "face": [17, 0, 26, 0], "lsifail": []} own36_agree True t 05:53:29Z
+BEST BEST_B400_r20_C10_b37a363e.json N+M 268 k 1 score [20.0, 10, 55] {"T3": 55, "fb": 1, "C": 10, "gate": [82, 0], "flips": 20, "lamch": 0, "face": [17, 0, 27, 0], "lsifail": []} own36_agree True t 05:54:49Z
+BEST BEST_B400_r26_C13_6cd993af.json N+M 268 k 1 score [26.0, 13, 54] {"T3": 54, "fb": 1, "C": 13, "gate": [82, 0], "flips": 26, "lamch": 0, "face": [17, 0, 30, 0], "lsifail": []} own36_agree True t 05:55:35Z
+BEST BEST_B400_r28_C14_b52f889e.json N+M 273 k 1 score [28.0, 14, 54] {"T3": 54, "fb": 1, "C": 14, "gate": [82, 0], "flips": 28, "lamch": 0, "face": [17, 0, 31, 0], "lsifail": []} own36_agree True t 05:56:44Z
+BEST BEST_B400_r32_C16_be86b87f.json N+M 273 k 1 score [32.0, 16, 48] {"T3": 48, "fb": 1, "C": 16, "gate": [82, 0], "flips": 32, "lamch": 0, "face": [17, 0, 33, 0], "lsifail": []} own36_agree True t 05:56:58Z
+BEST BEST_B400_r32_C16_a13d9661.json N+M 275 k 1 score [32.0, 16, 49] {"T3": 49, "fb": 1, "C": 16, "gate": [82, 0], "flips": 32, "lamch": 0, "face": [17, 0, 33, 0], "lsifail": []} own36_agree True t 05:57:33Z
