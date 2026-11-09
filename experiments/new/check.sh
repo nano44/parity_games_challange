@@ -1028,6 +1028,9 @@ else
 fi
 # P-N5-END (L-NEW successor 63): frozen packet + cited tools / instances / outputs against box195/end.pins (DOCS/ = docs/new/)
 pinE=$(cd box195 && sed 's#DOCS/#../../../docs/new/#' end.pins | sha1sum -c --quiet 2>&1) || true
+# fixes entry 4 (C138 E-1, E-2): line L-4 = L-3 + R-U + R-T0 must be CHECKER's 5f88c297… (7,230 B)
+l4E=$(sha1sum < ../../docs/new/P-N5-END-line-L4.txt | cut -c1-40); l4B=$(wc -c < ../../docs/new/P-N5-END-line-L4.txt)
+[ "$l4E" = "5f88c2971718522027ae267754814c6ba401b829" ] && [ "$l4B" -eq 7230 ] || pinE="L-4: sha1 $l4E, $l4B B (expected 5f88c297…, 7230 B)"
 if [ -z "$pinE" ]; then
   echo "P-N5-END: packet and $(wc -l < box195/end.pins) pinned files match end.pins: PASS"
 else
@@ -1068,9 +1071,33 @@ fi
 # BOX 199 SPLIT (L-NEW successor 66): SPLIT / REWIN / REWIN-HI counters (split199.py), DEAD witnesses, frozen output + controls
 r199=0; run199=$(cd box199 && bash check199.sh 2>&1) || r199=$?
 d199=$(diff <(printf '%s\n' "$run199") box199/check199.out 2>&1) || true
-if [ "$r199" -eq 0 ] && [ -z "$d199" ] && ! grep -v "^ctrl" box199/check199.out | grep -Eq "(playfail|kindfail|hwfail|gtfail|trfail|dnfail|rhfail|rwfail|Bne_t1|Bne_t2|rh2fail|rw2fail|spfail|spwfail|wlamfail) [1-9]" && grep -q "^GROW7_n34.json .*wcfail 18 " box199/check199.out && grep -q "^CX4_n21.json .*dn_nobelow_all [1-9]" box199/check199.out && grep -q "^ctrl1 .*hwfail [1-9]" box199/check199.out && grep -q "^ctrl2 .*wbfail [1-9]" box199/check199.out && grep -q "^ctrl3 .*dnfail [1-9]" box199/check199.out && grep -q "^ctrl4 .*rhfail [1-9].*rh2fail [1-9].*spfail [1-9]" box199/check199.out && grep -q "^ctrl5 .*gtfail [1-9]" box199/check199.out && grep -q "^ctrl6 .*Bne_t2 [1-9]" box199/check199.out && grep -q "^ROUTELOW_n21.json .*ytopB_ne [1-9]" box199/check199.out; then
-  echo "BOX 199 SPLIT: SPLIT / REWIN / REWIN-HI / RW-B0 / PAIR-SPLIT counters 0, DEAD witnesses present, controls fire = frozen: PASS"
+if [ "$r199" -eq 0 ] && [ -z "$d199" ] && ! grep -v "^ctrl" box199/check199.out | grep -Eq "(playfail|kindfail|hwfail|gtfail|trfail|dnfail|rhfail|rh2fail|spfail|rw1fail|wlamfail) [1-9]" && grep -q "^GROW7_n34.json .*wcfail 18 " box199/check199.out && grep -q "^CX4_n21.json .*dn_nobelow_all [1-9]" box199/check199.out && grep -q "^ctrl1 .*hwfail [1-9]" box199/check199.out && grep -q "^ctrl2 .*wbfail [1-9]" box199/check199.out && grep -q "^ctrl3 .*dnfail [1-9]" box199/check199.out && grep -q "^ctrl4 .*rhfail [1-9].*rh2fail [1-9].*spfail [1-9]" box199/check199.out && grep -q "^ctrl5 .*gtfail [1-9]" box199/check199.out && grep -q "^ctrl6 .*Bne_t2 [1-9]" box199/check199.out && grep -q "^ROUTELOW_n21.json .*ytopB_ne [1-9]" box199/check199.out && grep -q "^RWX_n95.json .*rwfail [1-9]" box199/check199.out; then
+  echo "BOX 199 SPLIT: SPLIT / REWIN / REWIN-HI / PAIR-SPLIT / SPLIT-COUNT / RW-1 counters 0, DEAD witnesses present, controls fire = frozen: PASS"
 else
   echo "BOX 199 SPLIT check: FAILED (check199.sh exit $r199)"; echo "$d199" | head -30; echo "$run199" | tail -15; exit 1
+fi
+# P-N5-SPLIT (L-NEW successor 67): frozen packet + sources, P-N5-CHAIN premise, tools / outputs / instances / engine against box199/split.pins (DOCS/ = docs/new/)
+pinS=$(cd box199 && sed 's#DOCS/#../../../docs/new/#' split.pins | sha1sum -c --quiet 2>&1) || true
+if [ -z "$pinS" ]; then
+  echo "P-N5-SPLIT: packet and $(wc -l < box199/split.pins) pinned files match split.pins: PASS"
+else
+  echo "P-N5-SPLIT check: FAILED"; echo "$pinS" | head -20; exit 1
+fi
+# BOX 200 SELF (L-NEW successor 67): SELF / TIME-CHARGE / LEAP counters (self200.py), frozen output + controls
+r200=0; run200=$(cd box200 && bash check200.sh 2>&1) || r200=$?
+d200=$(diff <(printf '%s\n' "$run200") box200/check200.out 2>&1) || true
+if [ "$r200" -eq 0 ] && [ -z "$d200" ] && ! grep -v "^ctrl" box200/check200.out | grep -Eq "(selffail|tcfail|swfail|leapfail) [1-9]" && grep -q "^ctrl1 .*selffail [1-9].*tcfail [1-9]" box200/check200.out && grep -q "^ctrl2 .*selffail [1-9]" box200/check200.out && grep -q "^ctrl3 .*swfail [1-9]" box200/check200.out && grep -q "^ctrl4 .*leapfail [1-9]" box200/check200.out && (cd box200/inst && sha1sum -c --quiet SHA1SUMS); then
+  echo "BOX 200 SELF: SELF / TIME-CHARGE / LEAP counters 0, controls fire = frozen: PASS"
+else
+  echo "BOX 200 SELF check: FAILED (check200.sh exit $r200)"; echo "$d200" | head -30; echo "$run200" | tail -15; exit 1
+fi
+# BOX 203 FLIP (L-NEW successor 68): GATE-CLASS / GATE-FLIP / QUIET-N counters on IDEAL-CYC (gfc203.py, rnd203.py); part 2: (k+1)-Lambda
+# (lam203.py) and the DEAD ascent bound (asc203.py on the staircase ST8: 7 ascents at k = 1); frozen output + controls
+r203=0; run203=$(cd box203 && bash check203.sh 2>&1) || r203=$?
+d203=$(diff <(printf '%s\n' "$run203") box203/check203.out 2>&1) || true
+if [ "$r203" -eq 0 ] && [ -z "$d203" ] && ! grep -v "^ctrl" box203/check203.out | grep -Eq "(odd|vfail|glnfail|emon|hfail|hefail|tieflip|lfail|gfail|qflip|qfail|Tfail) [1-9]" && grep -q "^ctrl1 .*glnfail [1-9]" box203/check203.out && grep -q "^ctrl2 .*hefail [1-9]" box203/check203.out && grep -q "^ctrl3 .*lfail [1-9]" box203/check203.out && ! grep -v "^ctrl" box203/check203.out | grep -q "'lfail': [1-9]" && grep -q "^ctrl4 .*'lfail': [1-9]" box203/check203.out && grep -q "^ST8_k1.json k 1 .*maxasc 7" box203/check203.out && [ "$(grep -c . box203/check203.out)" -eq 17 ] && (cd box203/inst && sha1sum -c --quiet SHA1SUMS); then
+  echo "BOX 203 FLIP: GATE-CLASS / GATE-FLIP / QUIET-N / (k+1)-Lambda counters 0, ST8 ascent witness, controls fire = frozen: PASS"
+else
+  echo "BOX 203 FLIP check: FAILED (check203.sh exit $r203)"; echo "$d203" | head -30; echo "$run203" | tail -15; exit 1
 fi
 rm -rf "$tmp"

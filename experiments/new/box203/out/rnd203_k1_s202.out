@@ -1,0 +1,1 @@
+k1 seed 202 genomes 5000 odd 0 vfail 0 glnfail 0 emon 0 hfail 0 hefail 0 tieflip 0 lfail 0 gfail 0 qflip 0 qfail 0 Tfail 0 | max {'maxflip': 4, 'maxDE': 5, 'T': 8, 'maxquiet': 5}

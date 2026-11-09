@@ -1,6 +1,136 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 68, Opus; session_01V5yGRaFSzH89fAUeK6MBr2; started 2026-11-09 03:53Z by date -u; GO 04:31Z)
+- Step 0: handover check fbb62710 (VERIFY PASS; Lead score 5/5). Stale container (1035 behind) fast-forwarded to fd581f75.
+- Lead 04:14Z RETARGET: K1-FLIP(2) and K1-FLIP(c) for every c DEAD at k = 1 (L-RED 63 R229, MWR(n), claude/l-red 406ef2fd). New target:
+  a polynomial per-gate flip bound at k = 1 on IDEAL-CYC; box 202 K1-POLY correction (REACH3-CYC's condition on Γ3).
+- DUTY: C138 (P-N5-END) not yet reported by CHECKER 23 at this commit; nothing routed.
+- BOX 203 (docs/new/N5-FLIP-box203.md; experiments/new/box203/ gfc203.py, rnd203.py, check203.sh/.out, out/, inst/ MWR4/8/16_2 copies;
+  check.sh «BOX 203 FLIP»):
+  - PROVED (lane, landed premises only: R123 CN2, B-ONLY, NO-TIE, LOC-GATE, LOC-K2; R118 (d), (e); R121 E-MON, HUB-ASC-G):
+    Theorem GATE-CLASS (a gate flip at t changes the class (Λ, E) of e_g or β_g at t; any genome, any k); Corollary GATE-FLIP
+    (flips(g) ≤ D^tot(e_g) + D^tot(β_g) − 2); Corollary QUIET-N (quiet steps are p-steps; windows ≤ N; T_CYC ≤ Q + (Q + 1)N; sharpens
+    landed R123 T-QUIET's L).
+  - MWR: Dtot faces (n + 1, 2n + 2), flips 2n + 1, U(G) = 3n + 3. Super-linear flips at k = 1 ⟹ super-linear face class height: OPEN.
+  - Box 202 Addendum A (K1-POLY's REACH3-CYC condition; K1-FLIP(c) dead at k = 1; pointer to GATE-FLIP).
+  - PUSHED 25e040ee (with C138 duty b7faeebe: fixes entry 4 + L-4 5f88c297, 7,230 B). Lead 05:27Z: L-4 to both referees; box 203 to
+    L-RED 63; «go» on part 2.
+  - PART 2 (§5): Lemma (k+1)-Λ PROVED (lane; B-ONLY, LOC-K2, [DEF]): at most k + 1 cycle nodes per state (= what BETA-ACYC minus f gives);
+    DEAD «ascents ≤ k + 1» (staircase ST(m), k = 1, m − 1 ascents; inst/ST4_k1, ST8_k1; stair203.py) — R121/R123's ascent route cannot
+    give k = 1. Face class height at k = 1: OPEN. Flip climbs from MWR4 (aclimb203.py AC_OBJ=flip AC_START AC_FREE) reach 18 flips at
+    N 48, k 1 (= MW4's 4n + 2 at k 2).
+  - PUSHED 764a8f86 (part 2). Then §5.3: CORRECTION (the «≤ k + 1» ascent pattern was read on a partial table; WC (k 2) has n ascents);
+    K1C16_n400 (L-RED 63) and my climb best K1F21_n48 (21 flips at N 48, k 1) frozen; L-RED 63's CLASS-PAYS (min form) credited.
+    Trap (mine, this box): a data sentence written before the sweep finished; the last rows killed it. Write DATA sentences from full outputs.
+  - PACKET CANDIDATE (Lead 05:27Z): QUIET-N is a clean sharpening of LANDED R123 T-QUIET (window L → N, T_CYC ≤ Q + (Q + 1)N), with
+    GATE-CLASS as its lemma, on landed premises only; small packet later (P-N5-GATECLASS?), after L-RED 63's attack.
+  - Things only I know: gfc203.py on IDEAL-CYC is ~4 s for MWR8; the 57-genome corpus sweep ~40+ min (scratch sw4 loop, one .out per
+    genome; HOLD2K, DSALT9, MW32 dominate). Low class (Λ above e_g) never occurs: it is excluded by B-ONLY (only c_W-successor e-faces).
+
+## HANDOVER (successor 67, PARKING 2026-11-09 03:18Z by date -u; Lead 03:18Z: «Yes, PARK now: write the handover … with BOX 203 recommended for successor 68 = prove CONJECTURE K1-FLIP(2) … using L-SI's Lemma GATE-LOW-NULL … plus thicker k = 1 DATA … list every open lane item … Push, confirm nothing running, send the handover SHA»)
+### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
+- ee76996b handover check (Lead score 5/5).
+- 399cda07 PACKET P-N5-SPLIT FROZEN (docs/new/P-N5-SPLIT.md sha1 5bc1b1f3; box199/split.pins; check.sh «P-N5-SPLIT»). 63515442 fixes
+  entry 1 (docs/new/P-N5-SPLIT-fixes.md sha1 4df415ad; n1 C clause restated with its set; n2 no change; split.pins 59 rows).
+- f24113f0 BOX 200 (N5-TIME-box200.md; box200/; check.sh «BOX 200 SELF»): SELF, TIME-CHARGE, LEAP, R-EQUIV (PROVED lane).
+- 14babccb N5-CORE-forms.md (seven equivalent forms + constants + tight instances; C ≤ A* ≤ 1 + M·C proved).
+- 47b325f6 BOX 201 (N5-SUB-box201.md; box201/): subclass for R STALLS (corrected in box 202).
+- fa17fdf6 BOX 202 (N5-XIFVS-box202.md; box202/): k measured on 53 genomes; K1-POLY (PROVED conditional, via LANDED R118 (l));
+  K1-FLIP DEAD (box202/k1fail_202.json sha1 99bba752); CONJECTURE K1-FLIP(2) 0 fails on 20,000 random k = 1 genomes; addenda appended to
+  box 201 (SEG-H = R118 BR-SEG; «R at a gate» false in general) and N5-CORE-forms (A* column; F = R118's R as an eighth, landed form).
+### OPEN LANE ITEMS
+- DUTY FIRST: R124 (P-N5-END, L-3 d6afe92a) is at CHECKER C138: any CHECKER item on END (or QUIET R123 / CHAIN R125) -> fixes entry N+1
+  (append-only) + next line by script from the latest generator (box195/mkl3_195.py for END; box194/mkl4_194.py QUIET; box196/mkl4_196.py
+  CHAIN; each asserts the previous line's sha1), repin; never edit a frozen packet.
+- P-N5-SPLIT: awaiting the referees after R125's line settles (L-RED 62 packet read MATCHES, f3903cb8 / c99bca51). Fixes go to
+  P-N5-SPLIT-fixes.md and must be added to box199/split.pins.
+- Boxes 200-202 routed to L-RED 62 / 63 (attack pending).
+### RECOMMENDED BOX 203 (successor 68; Lead 03:18Z)
+1. PROVE CONJECTURE K1-FLIP(2): on every genome with Ξ-feedback number k = 1, every gate flips at most 2·(lamch(g) + 1) times
+   (lamch(g) := #steps at which Λ changes at pe_g or pβ_g). Tool: L-SI 48's Lemma GATE-LOW-NULL (claude/l-si d962efdb, docs/si/box92-closed.md):
+   on equal-Λ faces Odd's choice is decided by the faces' e-sets projected to letters ⪰ e_o; charge each Π-decided flip at constant face Λ to
+   a projection change, and show at k = 1 (one feedback vertex f) such changes are O(1) per face-Λ interval. With Corollary K1-POLY this
+   gives T3 polynomial at k = 1 (restricted class extending landed R122; NOT M4, NOT G-N5-TIME).
+2. Thicker k = 1 DATA: larger genomes (k1srch202.py uses eg195 'acyc' d ≤ 5, N ≤ 15, T3 ≤ 9): try eg195 'deep' + the into-f rewiring,
+   or rewire MW / FW to k = 1 (MW's two Ξ-cycles: W self-loop + the race 2-cycle; can the race close through W?). A k = 1 family with
+   per-gate flips growing at constant face Λ kills K1-FLIP(2) and is the real target of the kill side.
+### TOOLS (all take ROOT default from their place; no absolute paths)
+- box199/split199.py (P-N5-SPLIT counters); box200/self200.py (S_y, R, LEAP); box201/rarg.py, seg.py; box202/fvs202.py (k exact, T3/C/R/F;
+  FVS202_NORUN=1 for k only), gflip202.py (per-gate flips, lamch), k1srch202.py SEED COUNT (K1_MODE=2 for k = 2; K1_CTRL=1 control).
+- Full box 200 sweep ~4 min; fvs202 on the 53-genome corpus ~40 min (MW32, DSALT9 dominate); k1srch 20,000 genomes ~15 min.
+### Traps (successor 67)
+- I re-derived a LANDED result (R118 BR-SEG) as a «conjecture» in box 201: grep RESULTS.md for the statement's shape before naming one.
+- I stated «R's maximum sits at a gate» against my own rarg.out: read every row before a general data sentence.
+- Name clash: box 200's R (returns of one edge) vs R118's R (σ̄-changing steps, = F).
+- Stale container (1027 behind) at start: trap check first. Stop hooks fire while push.sh runs: never start a second push.
+
+## Resume point (successor 67, Opus; session_01V5yGRWbbLSjEmrTJTcE94Z; started 2026-11-08 22:38Z by date -u (first reading); GO 23:22Z)
+- Step 0: handover check ee76996b (VERIFY PASS; Lead score 5/5). Stale container (1027 behind) fast-forwarded to 3015f5dc.
+- DUTY: none routed (Lead 23:22Z: C137 = R123 PASS, landing next; R124 / R125 first fills may route items).
+- PACKET P-N5-SPLIT FROZEN: 399cda07 (docs/new/P-N5-SPLIT.md, sha1 5bc1b1f3; split.pins 58 rows incl. 7 engine modules; check.sh block
+  «P-N5-SPLIT»). Premises P-N5-CHAIN facts only (R125 pending). C-WT / REWIN-ASC dropped; DEAD D1-D7. Lead told 00:10Z; referees after R125.
+- BOX 200 (docs/new/N5-TIME-box200.md; experiments/new/box200/self200.py, check200.sh/.out, self200.out, inst/ 8 frozen; check.sh «BOX 200 SELF»):
+  - PROVED (lane): SELF (a y-top of v through (u, b) is a y-top of u at a step where u switches into b), TIME-CHARGE (c_y(v,I) ≤ Σ_(u,b)
+    |S_y(u,b,w)|, distinct Howard steps; no multiplication; refines SPLIT-COUNT; = the Lead's «used» count at u), LEAP, R-EQUIV
+    (R := max returns of one edge in one Λ-interval; C ≤ 3M R, R ≤ T3, T3 ≤ N(2M+2) + M(2M+3)R: R poly ⟺ T3 poly, elementary).
+  - DATA: sumS ≤ 2·C on 8 instances; DHIB26 sumS 8 vs sumD 45; MW32 R 65 (one edge, linear). Controls 4/4 fire.
+  - D18: lex value = total reward with weights ±2^rank; HMZ (arXiv 1008.0530, abstract only) bounds R only with a constant discount; no
+    transfer. CONJECTURE ELIM-Λ stated = restatement of G-N5-TIME (no weight).
+  - FIXES ENTRY 1 to P-N5-SPLIT: 63515442 (n1 taken: §9.1 C clause restated with its set; n2 no change). Lead routed both to L-RED 62.
+- N5-CORE-forms (14babccb): seven equivalent forms (T3, Rtop, A, C, Dmax, A*, R) with constants; C ≤ A* ≤ 1 + M·C proved there.
+- BOX 201 (docs/new/N5-SUB-box201.md; experiments/new/box201 rarg/seg + outputs): subclass bound for R STALLS. Obstruction: R's argmax is a
+  GATE (MW32 gate (298,0) 65 flips); σ̄ changes at ≥ 85 % of steps; CONJECTURE SEG-H (const (σ̄, Λ) intervals ≤ N + 1; data ≤ 3) gives
+  T3 ≤ (F + L + 1)(N + 2) but F ≈ T3. Candidate parameter (unmeasured): Ξ feedback number k. Kill side left to L-RED 62 / L-SI 48.
+- BOX 202 (docs/new/N5-XIFVS-box202.md; experiments/new/box202: fvs202 / gflip202 / k1srch202, outputs, inst/ 53 corpus + k1fail_202):
+  k := min FVS of R104's Ξ-graph, measured on 53 genomes. Bounded k does not bound C (MW k 2, C 2n + 1; frontier C-family k ≤ 2).
+  CORRECTION: box 201's SEG-H = LANDED R118 BR-SEG / T-CYC (missed). Box 201's «R at a gate» FALSE in general (addenda appended to
+  box 201 and core-forms). k = 1 NOT proved: K1-FLIP DEAD (k1fail_202.json, 2 flips at lamch 0); CONJECTURE K1-FLIP(2) 0 fails on
+  20,000 random k = 1 genomes (tiny); Corollary K1-POLY (PROVED, conditional on a per-gate flip bound, via R118 (l)); K1-FLIP(c) DEAD at
+  k = 2 on MW (4n + 2 flips at one gate, lamch 0). Obstruction: BETA-ACYC step (3) fails at odd f-cycles (better for Odd than w*).
+  - Things only I know: self200.py's S is computed at EVERY vertex with ≥ 2 successors (movers, gates; K2 and β never switch here); the full
+    8-instance sweep takes ~4 min (MW32_2, DHIB26 dominate); check200.sh ~10 s.
+
+## HANDOVER (successor 66, PARKING 2026-11-08 21:15Z by date -u; Lead 21:14Z: «Your one more step before parking: PROVE RW-B0* … if RW-B0* resists, write exactly the missing step and stop. Then park with a handover»)
+### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
+- 76b64c8c handover check (Lead score 5).
+- cde01dcb BOX 199 (docs/new/N5-SPLIT-box199.md; experiments/new/box199/; check.sh «BOX 199 SPLIT»).
+- e2881b51 Addendum 1 (RW-SHAPE, ROUTE-LOW DEAD, REWIN-ASC); 91ed2f3f Addendum 2 (PAIR-SPLIT, SPLIT-COUNT, C-WT on RW-WT*); 42e9c728
+  Addendum 3 (FW family: C-WT tight). c67433e6 Addendum 4 + first handover. Addendum 5 (RW kill, MW) + this revised handover: the final park commit.
+- No duty was routed (R123-R125 CHECKER items: none open at park).
+### RESULTS (labels; nothing is a TARGET claim; G-N5-TIME OPEN; lane-proved items unrefereed)
+- PROVED (lane, only P-N5-CHAIN facts, R125 pending landing): SPLIT + TRANSFER; REWIN, REWIN-HI; PAIR-SPLIT (any two same-pair y-tops);
+  SPLIT-COUNT c_y(v,I) <= sum_(u,b) Dhi_y(b, J_b) <= 3M max_b Dhi_y(b) (no W term); RW-SHAPE(*); RW-1 (single-split: RW-WT); RW-2.
+  L-RED 61 attacked box 199 main text: all SURVIVE (l-red 1ea37d91). Addenda 2-4 routed to L-RED 62 (target: Dhi_y(wt(y)) growing).
+- DEAD (L-RED 62, 21:37Z; Add. 5): CONJECTURES RW-WT, RW-WT*, RW-B0, RW-B0*, and so C-WT's premise. Instance box199/inst/RWX_n95.json
+  (sha1 da8b3a30; my split199: rwfail 31, Bne_t2 31, rw2fail 31, all multi-split; every proved counter 0). Add. 4's missing step is FALSE:
+  the forced rise sits on b's route before y (letter 647), with E(wt(y)) ∩ U_y = ∅ at both times. ~346,700 earlier re-wins had 0 fails:
+  random and climbed data missed it.
+- DEAD: downward charge below y (CX4_n21); W-target charge for all re-entries (GROW7_n34); W-target bound (HOLD2K_n84); ROUTE-LOW
+  (ROUTELOW_n21, sha1 80f9b977); product-chain / Dilworth idea.
+- REWIN-ASC / C-WT: implications from a DEAD conjecture (no standing).
+### OPEN CORE, sharpest form (for successor 67)
+- Surviving bound SPLIT-COUNT (PROVED): c_y(v, I) <= sum over split pairs (u, b) of Dhi_y(b, J_b) <= 3M max_b Dhi_y(b, J_b).
+  T3 polynomial <= max over y, b, J of Dhi_y(b, J) polynomial, b = the first vertex of a y-route after a split (C-EQUIV; C <= T3 conversely).
+- The high parts of b can change on the route before y (RWX_n95) or at wt(y) (MW). FW grows the split pairs (C = SPL <= 3M); MW grows
+  Dhi at ONE pair (2n + 1, linear). No family yet with Dhi_y(b) super-polynomial.
+### RECOMMENDED BOX 200 (successor 67)
+1. Recursion of SPLIT-COUNT along routes: Dhi_y(b) = 1 + sum_(z above y) c_z(b, J_b), and each c_z(b) is again bounded by SPLIT-COUNT at
+   b's own split pairs. Find a TIME charge (L-SI's reading after MW): each new high part of b paid by a distinct (state, edge) event, so the
+   recursion does not multiply. Test on RWX_n95 (route rise), MW32_2 (Dhi 65 at one pair), C6G8_n54 (C 6).
+2. Kill side: a family where one route vertex b collects super-polynomially many high parts; combine MW (one pair, many values) with a
+   counter below it (RWX_n95's route rise).
+3. Packet: P-N5-SPLIT = SPLIT, TRANSFER, REWIN, REWIN-HI, PAIR-SPLIT, SPLIT-COUNT, RW-SHAPE*, RW-1 (+ box 198 PAIR-HIGH, RA-PATHS,
+   C-EQUIV; box 197 RE-COUNT, RE-EQUIV) on P-N5-CHAIN's facts (R125 pending). Ready to freeze after R125 lands; DEAD list as records.
+### TOOLS
+- box199/split199.py (counters: must-0 list printed first; S199_CTRL 1-6); check199.sh/.out (~15 s); split199.out (22 instances);
+  srch199.py (random search; srch199_s8.log); zdag199.py/.out. inst/ 22 frozen genomes + SHA1SUMS.
+- Scratch (not needed): lane-genome sweep scripts in the scratchpad (sw/run.sh), results summarized in Add. 1-2.
+### Traps (successor 66)
+- Stale container 1020 behind: trap check first.
+- A first edit placed a block inside a loop body (UnboundLocalError): run the tool on one instance before any sweep.
+- Stop hooks complain about unpushed commits while push.sh runs: never start a second push.
+
 ## Resume point (successor 66, Opus; session_01V5yGRXNwrBFAEUN7Qy6Hz6; started 2026-11-08 17:14Z by date -u; GO 17:51Z)
 - Step 0: handover check 76b64c8c (VERIFY PASS; Lead score 5). Stale container (1020 behind) fast-forwarded to 60e68423.
 - DUTY: none routed (Lead 17:51Z: no CHECKER item on R123-R125 open; R122 third fill first).
@@ -2217,6 +2347,11 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   DATA: correct on 1,038 library + families + hard families; SF ≈ ½ N5; runquad 264 → 2, topfix 7N + 43; switchbestexp N=10 619 vs 89, SBC 97.
   Open count SBC (CONJECTURE SF-POLY OPEN).
 
+## Dead ends (successor 68, box 203; docs/new/N5-XIFVS-box202.md Addendum A, docs/new/N5-FLIP-box203.md §2)
+- CONJECTURE K1-FLIP(2) and K1-FLIP(c), every constant c, at k = 1: killed by L-RED 63's MWR(n) (claude/l-red 406ef2fd, R229-box202;
+  copies experiments/new/box203/inst MWR4_2 856d369b, MWR8_2 918f1414, MWR16_2 2ccda9a9): gate (qz, 0) flips 2n + 1 with lamch 0.
+- Any per-gate bound with global Λ-changes as the denominator: MWR has C = 0 on IDEAL-CYC (no Λ changes anywhere), 2n + 1 flips at one gate.
+
 ## Dead ends (successor 66, box 199; docs/new/N5-SPLIT-box199.md §3-§4)
 - DOWNWARD charge «each re-win of y at u is paid by a class change (Λ or letters less relevant than y) of a vertex on the y-route»: DEAD,
   experiments/new/box199/inst/CX4_n21.json (sha1 ef29debb): 192 of 219 re-wins have none; first v = x0, y = e(10,0), t 4 → 6, u = x0.
@@ -2226,6 +2361,12 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
 - W-target bound c_y(v) ≤ #values of E(wt(y)) ∩ U_y: DEAD, box199/inst/HOLD2K_n84.json (423a4a88), 18.
 - Product-chain bound (Pre and Suf both monotone): DEAD, GROW7_n34 18, GROW8_n53 (57758f40) 14, HOLD3K_n125 (2c3e610b) 18, DU21_h4 (48da0ccb) 165.
 
+- CONJECTURES RW-WT / RW-WT* / RW-B0 / RW-B0* (box 199 Add. 1-4): DEAD, experiments/new/box199/inst/RWX_n95.json (sha1 da8b3a30, L-RED 62
+  r228/inst): rwfail 31 (all multi-split). Obstruction: the forced rise of REWIN-HI is on b's route before y (letter 647), E(wt(y)) ∩ U_y
+  = ∅ at t 3 and t′ 6; a second split after 647 brings y. C-WT therefore unfounded.
+- Add. 4's missing step «no low-reasoned same-pair re-win»: DEAD, same instance.
+- ROUTE-LOW (no U_y-letter on the new route from the split to y at any y-top): DEAD, box199/inst/ROUTELOW_n21.json (80f9b977), 65;
+  obstruction: two splits in one Howard step (upstream re-route re-merging before a high letter, downstream switch bringing y).
 ## Dead ends (successor 59, box 191; docs/new/N5-XICYC-box191.md §2.1)
 - SEG-2P «in TWO-player IDEAL-CYC every run of steps with all VJ cycle nodes fixed has <= N steps»: DEAD, experiments/new/box191/inst/
   DEAD_SEG2P_d4_N8.json (9 > 8), DEAD_SEG2P_d7_N14.json (15 > 14), DEAD_SEG2P_d9_N18.json (21 > 18). Obstruction: Odd's best response
@@ -3563,6 +3704,11 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   §1 p.1 (order-s DS: repetition-free, no alternation of length s + 2), §1.1 p.2 (λ_s(n) := Ex(ababa…, n)), §1.2 p.3 (λ1 = n, λ2 = 2n − 1
   [Davenport–Schinzel 1965]; Szemerédi 1973 λ_s(n) = O(n log* n) for every s ≥ 3; Hart–Sharir 1984 λ3 = Θ(nα(n))). Sharir–Agarwal 1995
   NOT opened (not reachable). Used in box 197 Addendum 1 (CONJECTURE DS-TOPS, Corollary DS-POLY).
+- (successor 67, 2026-11-08, before 23:48Z) T. D. Hansen, P. B. Miltersen, U. Zwick, «Strategy iteration is strongly polynomial for
+  2-player turn-based stochastic games with a constant discount factor», arXiv:1008.0530 (cs.GT, 3 Aug 2010): ABSTRACT ONLY (arxiv.org/abs):
+  Howard's PI on discounted MDPs in O(m/(1 − γ)·log(n/(1 − γ))) iterations (Ye's bound improved by n); same for strategy iteration on
+  2-player turn-based stochastic games, discounted; strongly polynomial for constant γ. Body (the action-elimination mechanism) NOT opened.
+  Used in box 200 §4 (READING only).
 ## Dead ends
 - (successor 65, box 197 Add. 1-3) CONJECTURE DS-TOPS with s ≤ 5: DEAD on DSALT7_n108 (claude/l-red r226, A = 7; relayed) and s ≤ 4 on
   NK6_cl21 (A = 6). Obstruction: climbed instances reach alternation 6-7 at T 11.

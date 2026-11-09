@@ -1,0 +1,1 @@
+rand seed 2 ctrl 0 {'genomes': 1000, 'lfail': 0, 'maxL': 3}

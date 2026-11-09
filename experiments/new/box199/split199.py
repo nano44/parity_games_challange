@@ -12,15 +12,16 @@ where the plays at t-1 and t leave by different edges. Counters (unit: one chang
   rewin    : re-entry with the same split u and the same new successor b at u (rewin_mover / rewin_gate by the kind of u)
   dnfail   : rewin where Om(b) did not rise strictly from t1 to t2-1                                         [0: Lemma REWIN]
   rhfail   : rewin where E_t2(b) cap U_y is not lex-larger than E_t1(b) cap U_y                              [0: Lemma REWIN-HI]
-  rwfail   : rewin where E(m) cap U_y takes one value on [t1, t2]                                           [0 on data: CONJECTURE RW-WT]
-  Bne_t1/2 : rewin where b's play at t1 / t2 has a letter of U_y before y                                    [0 on data: CONJECTURE RW-B0]
+  rwfail   : rewin where E(m) cap U_y takes one value on [t1, t2]                                           [CONJECTURE RW-WT: DEAD, RWX_n95 (Add. 5)]
+  Bne_t1/2 : rewin where b's play at t1 / t2 has a letter of U_y before y                                    [CONJECTURE RW-B0: DEAD, RWX_n95]
+  rw1fail  : single-split rewin violating RW-WT                                                           [0: Corollary RW-1]
   rw_single/rw_multi : rewin whose t2-step changes one / several successors on v's play before y (single: RW-WT PROVED, Lemma RW-SHAPE)
   ytopB_ne : y-top whose new route from the split u to y has a letter of U_y                                  [ROUTE-LOW; DEAD: ROUTELOW_n21]
   samepair : pairs of (not necessarily consecutive) y-tops of (v, I) with the same split pair (u, b)
   rh2fail  : samepair with E_t'(b) cap U_y not lex-larger than E_t(b) cap U_y                              [0: Lemma PAIR-SPLIT (Add. 2)]
-  rw2fail  : samepair with E_t(m) cap U_y = E_t'(m) cap U_y                                                 [0 on data: CONJECTURE RW-WT*]
+  rw2fail  : samepair with E_t(m) cap U_y = E_t'(m) cap U_y                                                 [CONJECTURE RW-WT*: DEAD, RWX_n95]
   spfail   : (v, I, y) with c_y > sum over (u, b) of #values of E(b) cap U_y at its y-tops                  [0: Corollary SPLIT-COUNT]
-  spwfail  : (v, I, y) with c_y > sum over (u, b) of #values of E(m) cap U_y on its span                   [0 on data: SPLIT-COUNT under RW-WT*]
+  spwfail  : (v, I, y) with c_y > sum over (u, b) of #values of E(m) cap U_y on its span                   [C-WT's first inequality: DEAD, RWX_n95]
   wlamfail : Lambda_t1(m) or Lambda_t2(m) differs from w                                                    [0: m is on v's play]
   wcfail   : re-entry (any) where E(m) cap U_y takes one value on [t1, t2]                                  [W-target charge for all re-entries]
   wbfail   : (v, I, y) with c_y > #values of E(m) cap U_y on [first, last y-top]                            [W-target bound]
@@ -140,6 +141,7 @@ def run(G, cap=20000):
                         c["Bne_t" + ("1" if tq == t1 else "2")] += any(E.bit[f] & hiy for f in P) if CTRL != "6" else True
                     P2 = play(t2, v); ns = sum(nx(t2, q) != nx(t2 - 1, q) for q in P2[:P2.index(y)])
                     c["rw_single" if ns == 1 else "rw_multi"] += 1
+                    if ns == 1 and len(hm) < 2: c["rw1fail"] += 1          # Corollary RW-1: RW-WT at single-split re-wins
                     kl = lambda msk: sorted((E.rank[f] for f in evs if msk & E.bit[f]), reverse=True)
                     if not kl(H[t2][1][b1][1] & hiy) > kl(H[t1][1][b1][1] & hiy): c["rhfail"] += 1
                     c["rewin_" + ("mover" if g.owner[u1] == 0 else "gate")] += 1
@@ -171,6 +173,6 @@ if __name__ == "__main__":
         G = json.load(open(fn)); G = G.get("genome", G) if isinstance(G, dict) else G
         if not (isinstance(G, dict) and "opts" in G and "start" in G): print(os.path.basename(fn), "skipped"); continue
         T, c = run(G)
-        F = ("playfail", "kindfail", "hwfail", "gtfail", "trfail", "dnfail", "rhfail", "rwfail", "Bne_t1", "Bne_t2", "rh2fail", "rw2fail", "spfail", "spwfail", "wlamfail", "wcfail", "wbfail", "dn_nobelow_all", "premono_no")
+        F = ("playfail", "kindfail", "hwfail", "gtfail", "trfail", "dnfail", "rhfail", "rh2fail", "spfail", "rw1fail", "rwfail", "Bne_t1", "Bne_t2", "rw2fail", "spwfail", "wlamfail", "wcfail", "wbfail", "dn_nobelow_all", "premono_no")
         print(os.path.basename(fn), "T3", T, " ".join(f"{k} {c[k]}" for k in F), "|", " ".join(f"{k} {c[k]}" for k in sorted(c) if k not in F and not k.endswith("ex")),
               *[f"{k} {c[k]}" for k in ("wcex", "nbex", "pmex", "rlex") if k in c], flush=True)

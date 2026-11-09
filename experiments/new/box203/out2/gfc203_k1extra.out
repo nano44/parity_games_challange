@@ -1,0 +1,6 @@
+K1C16_n400.json ideal odd 0 vfail 0 glnfail 0 emon 0 hfail 0 hefail 0 tieflip 0 lfail 0 gfail 0 qflip 0 qfail 0 Tfail 0 | T 51 C 0 U 50 maxflip 31 at (82, 0) lamch 0 Dtot(e,b) (22, 37) split {'np': 27, 'priv': 4} maxnp 27 maxpriv 5 maxlow 0 kx 29 ties 0 maxDE 37 maxfI 31 Q 48 maxquiet 1 N 113 slack 3
+K1F21_n48.json ideal odd 0 vfail 0 glnfail 0 emon 0 hfail 0 hefail 0 tieflip 0 lfail 0 gfail 0 qflip 0 qfail 0 Tfail 0 | T 31 C 0 U 17 maxflip 21 at (46, 0) lamch 0 Dtot(e,b) (12, 22) split {'np': 21} maxnp 21 maxpriv 5 maxlow 0 kx 19 ties 0 maxDE 22 maxfI 21 Q 30 maxquiet 1 N 48 slack 6
+K1C16_n400.json k 1 U 50 T 51 maxasc 3 maxasc_faces 3 maxasc_viaF 1
+K1F21_n48.json k 1 U 17 T 31 maxasc 3 maxasc_faces 3 maxasc_viaF 1
+K1C16_n400.json ctrl 0 k 1 maxL 1 lfail 0 T 51
+K1F21_n48.json ctrl 0 k 1 maxL 1 lfail 0 T 31
