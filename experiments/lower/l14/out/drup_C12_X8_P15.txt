@@ -1,0 +1,3 @@
+XS 8 G 16 prefix 15 | pdrup pgad3.py ../l14/rec/L14_C12_final_solved.txt ../l10/out/core8_HIT7.txt 15 8 16 SKIP  | cnf sha1 80d3b9751b003696e119d23c3cf9333c7aa4d041 clauses 1171290 lemmas 980513 | drup: s VERIFIED (218742 lemmas RUP-checked)
+XS 8 G 40 prefix 15 | pdrup pgad3.py ../l14/rec/L14_C12_final_solved.txt ../l10/out/core8_HIT7.txt 15 8 40 SKIP  | cnf sha1 c4ab17c58803b037e20117b93289a77fdd90a6c8 clauses 1309113 lemmas 1063005 | drup: s VERIFIED (296769 lemmas RUP-checked)
+XS 8 G 17 prefix 15 | pdrup pgad3.py ../l14/rec/L14_C12_final_solved.txt ../l10/out/core8_HIT7.txt 15 8 17 SKIP  | cnf sha1 881997593f138ac6fbffd147346edcdfbc5c98ba clauses 1372810 lemmas 1126370 | drup: s VERIFIED (217944 lemmas RUP-checked)
