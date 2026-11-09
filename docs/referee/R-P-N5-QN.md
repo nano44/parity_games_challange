@@ -115,3 +115,35 @@ No GAP. No statement is refused. TARGET.md diff CLEAN (§6).
 
 ## 8. Tools and outputs (committed, docs/referee/scratch/)
 qn_replay.py, qn_dead.py, qn_quotes.py; qn_logs/: sweep.out, dead.out, quotes.out.
+
+## §C. Fixes entry 1 and line L-1 (REFEREE successor 30, Opus 5.5, D15; date -u at writing 2026-11-09T10:42Z)
+- Objects (Lead 10:41Z): claude/l-new 02a928a3 (ancestor of origin/claude/l-new, checked). docs/new/P-N5-QN-line-L1.txt sha1
+  28bf566bdf95d0708b3b80303bfa7311c8d5d8b1, 7,357 B, one line, 140 «(» = 140 «)», 0 «|». Packet sha1 97254bd2 unchanged (frozen).
+- Reproduction: from `git archive 02a928a3`, box203/mkl1_qn.py on RESULTS at trunk 8ba1b23b (R124 landed) asserts its inputs and
+  rewrites L-1 byte-identically (cmp: SAME; sha1 28bf566b). qn.pins 61 rows, `sha1sum -c` all OK.
+- Against my line requirements (§7), on the bytes:
+  - LN-1: GATE-CLASS, GATE-FLIP (a), (b), QUIET-N, (k+1)-Λ as in the packet; GATE-FLIP (b)'s U(G) form «under HYPOTHESIS [E-LEV]», with
+    [E-LEV]'s definition as R121 lands it («lev(x) < lev(x′) implies pr(e_(x,k)) < pr(e_(x′,k′))», checked in trunk RESULTS); DEAD D1-D3
+    with instances and sha1s equal to those I re-measured (§4). D1 now defines lamch(g) (Λ changes at e_g or β_g), consistent with my C = 0
+    check. PASS.
+  - LN-2 / QN-1: «the most relevant vertex of the Γ-cycle through its movers, their chosen gates and β-faces» (one value per Ξ_σ-cycle,
+    plus K1): exactly my QN-1 correction. PASS.
+  - LN-3: premises by R-id only (R104 definitions; R118 (a), (d) BR-SEG, (e) with its stated reason, the order ⊴ and labels C / R / p; R121
+    E-MON, and HUB-ASC-G whole-run form / UP-B for (b) only; R123 CN2, B-ONLY, NO-TIE, LOC-GATE, LOC-K2); «not used: any lane packet, …,
+    any P-N5-CHAIN fact». PASS.
+  - LN-4: «R123's ASC-T and UP-T hold with L + 1 replaced by N + 1» is absent from L-1 (grep: «ASC-T» 0 times); fixes entry 1 l. 38-39 keeps
+    it as a READING. PASS.
+  - LN-5: units as the code computes them (§5); lam203's skip is stated with its count: «lam203.py skips genomes with k > 12, and none of
+    these 4,000 was skipped (unit: genomes; skip203.py, out2/skip203.out: k ≤ 5 on every genome)»; out2/skip203.out at 02a928a3 reads
+    skipped_k_gt_12 0 on all three sets, max k 5 (rand), 1, 2. PASS.
+  - LN-6: IDEAL-CYC only; Γ3 counts «DATA only, nothing claimed»; the Γ3 sentence is a correct reading of R118 (k), (l) «under
+    REACH3-CYC's premises» and names the exact-VJ-tie divergence. PASS.
+  - LN-7: TARGET tail «… is not M4, so this is not M4; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim» = R123 /
+    R124 landed form (mkl1_qn.py asserts it against RESULTS). PASS.
+  - LN-8: source note names the frozen packet (l-new e252182d, sha1 97254bd2) with fixes entry 1, L-NEW 68-69, and the related lane
+    statements as «not premises». PASS.
+  - The citation of my replay («REFEREE 30 R-P-N5-QN §4 (claude/referee 452800c5; 1,500 runs and 8 pinned files)») is accurate.
+- Fixes entry 1: QN-1 taken in one governing sentence; LN-4 as a READING; DSALT6's window 10 (lane engine) vs 11 (REFEREE-2's engine), both
+  ≤ N and explained by R118 (a)'s free tie rule: CORRECT (QUIET-N's bound is tie-rule independent).
+- Verdict: fixes entry 1 CORRECT. **Line L-1 MATCHES** the packet read with fixes entry 1 and meets LN-1..LN-8. Statements as §0 (all
+  SIGN). docs/referee-2/ read only for the strings fixes entry 1 cites.
