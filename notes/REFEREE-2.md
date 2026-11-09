@@ -1,6 +1,48 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## HANDOVER (successor 35, Opus 5.5 under D1/D18/D20; written 2026-11-09 09:24Z by date -u; parking: context large after 4 reviews + 9 byte tests; the next item, P-N5-SPLIT (31 KB, ~15 statements), would pass ~480k)
+Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only via scripts/push.sh as a tracked background task (redirect, «echo exit
+$?»; verify ~15-25 min). Before push: `git branch --show-current` = claude/referee-2 (this container was 145 behind at start; fixed by
+fetch --unshallow + fetch + checkout + ff-only).
+### Reports of record this session (all «(Opus 5.5, D1)»; every SHA on origin)
+| item | report | outcome | SHA |
+| --- | --- | --- | --- |
+| handover check | handover-checks/REFEREE-2.md | Lead 5/5 | 1ed64407 |
+| P-N5-CHAIN full review | R2-P-N5-CHAIN.md | all SIGN (HUB-ASC-G3, CHAIN3 PROVED-CONDITIONAL); W-1 (core-vertex wording) closed; L-1/L-2 NOT YET: R-1 wfail steps, R-2 Tfail Q-form, R-3 ties no control (= CL-1), R-4 k2fail one conjunct | 0e5c7c37 |
+| CHAIN Add. 1-5 | vs REFEREE 29/30 equal; L-3 MATCHES; (Q5) boundary step signed (Add. 3); L-4 MATCHES; caveat closed (REFEREE 30 b5ac2304, 91334ccd) | 25f7752b, 09ce14fc, 96d8a3fd, 3c5264e0 |
+| P-N5-END L-3, L-4 | R2-P-N5-END.md Add. 2, 3 | MATCH (S3's τ = packet τ0) | 0e5c7c37, 63a3cf87 |
+| P-N5-ASC L-6 | R2-P-N5-ASC.md Add. 7 | MATCHES (R6 vs §2 l. 58-62) | 762e98fd |
+| P-N5-QUIET (Q4) step; L-3/L-4 | R2-P-N5-QUIET.md Add. 3, 4 | step SIGN (predecessor's (Q5) did not cover it); L-3, L-4 MATCH | 09ce14fc, 96d8a3fd |
+| P-ACYC L-5 | R2-P-ACYC.md Add. 5 | MATCHES (R1 pointwise; R2/R3 states 0..T3) | c1e71a25 |
+| P-N5-QN full review | R2-P-N5-QN.md | GATE-CLASS, GATE-FLIP, QUIET-N SIGN; (k+1)-Λ SIGN WITH W-1 (values misnamed as movers); DEAD D1-D3 confirmed; line needs R-1 | 5d4f06c2 |
+### OPEN / NEXT for successor 36
+- FIRST when sent: P-N5-QN fixes + line L-1 (L-NEW 69). Byte-test; check R-1 ((k+1)-Λ values: «K1, and for each cycle of the functional
+  graph Ξ_σ on the movers, x → xt(x, σ_t(x)), the most relevant vertex of the Γ-cycle through its movers, their chosen gates and β-faces»);
+  GATE-FLIP (b) keeps «under HYPOTHESIS [E-LEV]»; DATA rule on gfc203.py / lam203.py line by line (unit, condition, constants). Then read
+  docs/referee/ for QN (none at 371954993) → R2-P-N5-QN.md Addendum 1.
+- Then: full independent second review of P-N5-SPLIT (Lead 09:24Z): claude/l-new FROZEN 399cda07, docs/new/P-N5-SPLIT.md sha1
+  5bc1b1f390ed81683fe5c93008c7ea0b338fe735 (30,949 B, 275 lines); fixes entry 1 at 63515442 (L-RED 62 DATA notes); split.pins 59 rows;
+  check.sh «P-N5-SPLIT». Statements: SPLIT + TRANSFER, REWIN, REWIN-HI, PAIR-SPLIT, SPLIT-COUNT (SPL ≤ 3M), RW-SHAPE(*), RW-1, PAIR-HIGH,
+  RA-PATHS, C-EQUIV, RE-COUNT, RE-EQUIV, PAIR-COUNT / ALT-EQUIV (corrected); ASC-WIT / ASC-ROOT under [E-LEV]; DEAD D1-D7. Premises:
+  P-N5-CHAIN facts only (R125 pending, so every statement CONDITIONAL on R125); quote each against CHAIN's signed text verbatim. No
+  docs/referee/ before the verdict. NOT STARTED (only hash checked).
+### Tools (own code; lane code never imported)
+- R2-P-N5-CHAIN/r2chain.py (on R2-P-N5-END/r2end.py: Γ3, SPEC S1, S3, N5′-xi): per-state counters for REACH3 / CN2-3 / LOC-GATE3 / NO-TIE3 /
+  LOC-K2-3 / B-ONLY3 / F1 / DOM / STRICT / E-MON3 / CHAIN-DECOMP3 / UP-B3 / QUIET3 windows / T-QUIET3 (both forms) / t3def / civ / CHAIN3
+  bound (F′ saturated 10^40) / nonconv; --ctrl0, --ctrlX controls. Reusable for any Γ3 xi-run question (P-N5-SPLIT's DATA).
+- R2-P-N5-QN/r2qn.py (on R2-P-ACYC/r2acyc.py, IDEAL-CYC on Γ): gate flips, classes, quiet windows, exact Ξ-feedback k (brute force,
+  skipped for N > 30 and k > 3), Λ-value identification; --ctrl.
+- Byte-test pattern: bt_*.py reading the lane generator's (key, old, new) list by ast.literal_eval (never executing lane code), or the
+  referee/checker strings verbatim; each old once in the line it is applied to, new once in the target, target == base + pairs.
+### Traps (this session)
+- r2acyc names c_X «unused» (not «cX»): exclusion sets must use V["unused"].
+- F′_B is doubly exponential in B: saturate before comparing.
+- Some pinned «*.json» are not genomes («.names.json», DEAD_SEGT_n20): skip as the lane tools do.
+- Relative paths in background tasks break when the shell cwd moves: use absolute paths.
+- A line's «signed by both referees» must be checked on the other referee's branch on origin before a MATCH is unconditional.
+- Fixes entries can quote the other referee's verdicts; disclose, and cite the commit that shows your findings predate the reading.
+
 ## Resume point 3 (successor 35; 2026-11-08 12:04Z by date -u)
 - A0 DONE (Add. 7, 762e98fd on origin). A Addendum 1 (vs REFEREE 29/30) written: verdicts equal; CL-1 = R-3; W-1, R-1, R-2, R-4 mine only.
   OPEN: P-N5-CHAIN L-3 byte test when the lane applies R-1/R-2/R-4 (if routed).
