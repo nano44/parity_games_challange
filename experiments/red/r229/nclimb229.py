@@ -7,6 +7,8 @@ ORDER=K1 (item 3, L-NEW BOX 202 K1-FLIP(2)): only genomes whose Ξ-graph has min
   score = (fx, C, T, -size), fx = max over gates g of flips(g) - 2 (lamch(g) + 1), lamch(g) = #steps at which Λ changes at e_g or b_g (box 202's lamch; own engine, whole run);
   fx > 0 is a K1-FLIP(2) failure -> frozen to out/k1kill_<SEED>.json.
 ORDER=K1C: k <= 1 filter, score = (C, T, fx, -size).
+ORDER=DP (BOX 93): score = (bad, dbreak, dpass, -size) from e93_229.census (bad = sum of its must-be-0 counters; dbreak = gates with
+  unlocks > 1 + ch_D; dpass = gates whose D-play passes e_q); bad or dbreak > 0 -> frozen to out/dkill_<SEED>.json.
 Freezes every strict gain on the first two score entries to out/nc<ORDER>_<CAP>_<SEED>.json. Resumable: RESUME=<json>.
 Usage: nclimb229.py SEED CAP ITER START.json"""
 import sys, os, json, random, copy, collections
@@ -15,7 +17,7 @@ H = os.path.dirname(os.path.abspath(__file__)); sys.path[:0] = [H, os.path.join(
 import own, gate229
 from sharp226 import mutate
 from compose226 import add_opt, check
-ORDER = os.environ.get("ORDER", "NP")
+ORDER = os.environ.get("ORDER", "NP"); KG = 3 if ORDER == "DP" else 2   # score prefix whose strict gain is frozen / printed
 size = lambda G: G["N"] + sum(len(o) for o in G["opts"])
 def kfx(G, cap=600):
     """per-gate flips(g) - 2 (lamch(g) + 1), maximum over gates; flips = changes of Odd's choice at g (all steps, ties included); lamch = steps with a Λ-change at e_g or b_g."""
@@ -26,6 +28,12 @@ def kfx(G, cap=600):
         if f - 2 * (lc + 1) > best: best, arg = f - 2 * (lc + 1), (q, f, lc)
     return best, arg
 def score(G, seed):
+    if ORDER == "DP":
+        import e93_229
+        c = e93_229.census(G, 600); c.update(mnp=c["mfl"], np=c["np_rel"] + c["np_unl"], up=0, lam=0, gln=0, C=0, predfail=0, below=0)
+        bad = sum(c[k] for k in ("npside", "npsub", "npboth", "npkind", "relfail", "unlfail", "dexact", "kbfail", "relGup"))
+        if bad or c["dbreak"]: json.dump(G, open(f"{H}/out/dkill_{seed}.json", "w"))
+        return (bad, c["dbreak"], c["dpass"], -size(G)), c
     if ORDER in ("K1", "K1C"):
         import seg228
         k = seg228.fvs(G)
@@ -59,7 +67,7 @@ if __name__ == "__main__":
         except Exception: continue
         if s2 is None: continue
         if s2[:3] >= s[:3]:
-            if s2[:2] > s[:2]:
+            if s2[:KG] > s[:KG]:
                 json.dump(Hh, open(f"{H}/out/nc{ORDER}_{CAP}_{seed}.json", "w"))
                 print(it, s2, {k: c2[k] for k in ("mnp", "np", "up", "lam", "gln", "predfail", "below", "T", "C") + (("fx", "k", "arg") if "fx" in c2 else ())},
                       "N", Hh["N"], "M", len(Hh["br"]), flush=True)
