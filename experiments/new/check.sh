@@ -1080,4 +1080,12 @@ if [ -z "$pinS" ]; then
 else
   echo "P-N5-SPLIT check: FAILED"; echo "$pinS" | head -20; exit 1
 fi
+# BOX 200 SELF (L-NEW successor 67): SELF / TIME-CHARGE / LEAP counters (self200.py), frozen output + controls
+r200=0; run200=$(cd box200 && bash check200.sh 2>&1) || r200=$?
+d200=$(diff <(printf '%s\n' "$run200") box200/check200.out 2>&1) || true
+if [ "$r200" -eq 0 ] && [ -z "$d200" ] && ! grep -v "^ctrl" box200/check200.out | grep -Eq "(selffail|tcfail|swfail|leapfail) [1-9]" && grep -q "^ctrl1 .*selffail [1-9].*tcfail [1-9]" box200/check200.out && grep -q "^ctrl2 .*selffail [1-9]" box200/check200.out && grep -q "^ctrl3 .*swfail [1-9]" box200/check200.out && grep -q "^ctrl4 .*leapfail [1-9]" box200/check200.out && (cd box200/inst && sha1sum -c --quiet SHA1SUMS); then
+  echo "BOX 200 SELF: SELF / TIME-CHARGE / LEAP counters 0, controls fire = frozen: PASS"
+else
+  echo "BOX 200 SELF check: FAILED (check200.sh exit $r200)"; echo "$d200" | head -30; echo "$run200" | tail -15; exit 1
+fi
 rm -rf "$tmp"

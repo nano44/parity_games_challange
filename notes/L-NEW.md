@@ -1,6 +1,21 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 67, Opus; session_01V5yGRWbbLSjEmrTJTcE94Z; started 2026-11-08 22:38Z by date -u (first reading); GO 23:22Z)
+- Step 0: handover check ee76996b (VERIFY PASS; Lead score 5/5). Stale container (1027 behind) fast-forwarded to 3015f5dc.
+- DUTY: none routed (Lead 23:22Z: C137 = R123 PASS, landing next; R124 / R125 first fills may route items).
+- PACKET P-N5-SPLIT FROZEN: 399cda07 (docs/new/P-N5-SPLIT.md, sha1 5bc1b1f3; split.pins 58 rows incl. 7 engine modules; check.sh block
+  «P-N5-SPLIT»). Premises P-N5-CHAIN facts only (R125 pending). C-WT / REWIN-ASC dropped; DEAD D1-D7. Lead told 00:10Z; referees after R125.
+- BOX 200 (docs/new/N5-TIME-box200.md; experiments/new/box200/self200.py, check200.sh/.out, self200.out, inst/ 8 frozen; check.sh «BOX 200 SELF»):
+  - PROVED (lane): SELF (a y-top of v through (u, b) is a y-top of u at a step where u switches into b), TIME-CHARGE (c_y(v,I) ≤ Σ_(u,b)
+    |S_y(u,b,w)|, distinct Howard steps; no multiplication; refines SPLIT-COUNT; = the Lead's «used» count at u), LEAP, R-EQUIV
+    (R := max returns of one edge in one Λ-interval; C ≤ 3M R, R ≤ T3, T3 ≤ N(2M+2) + M(2M+3)R: R poly ⟺ T3 poly, elementary).
+  - DATA: sumS ≤ 2·C on 8 instances; DHIB26 sumS 8 vs sumD 45; MW32 R 65 (one edge, linear). Controls 4/4 fire.
+  - D18: lex value = total reward with weights ±2^rank; HMZ (arXiv 1008.0530, abstract only) bounds R only with a constant discount; no
+    transfer. CONJECTURE ELIM-Λ stated = restatement of G-N5-TIME (no weight).
+  - Things only I know: self200.py's S is computed at EVERY vertex with ≥ 2 successors (movers, gates; K2 and β never switch here); the full
+    8-instance sweep takes ~4 min (MW32_2, DHIB26 dominate); check200.sh ~10 s.
+
 ## HANDOVER (successor 66, PARKING 2026-11-08 21:15Z by date -u; Lead 21:14Z: «Your one more step before parking: PROVE RW-B0* … if RW-B0* resists, write exactly the missing step and stop. Then park with a handover»)
 ### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
 - 76b64c8c handover check (Lead score 5).
@@ -3609,6 +3624,11 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   §1 p.1 (order-s DS: repetition-free, no alternation of length s + 2), §1.1 p.2 (λ_s(n) := Ex(ababa…, n)), §1.2 p.3 (λ1 = n, λ2 = 2n − 1
   [Davenport–Schinzel 1965]; Szemerédi 1973 λ_s(n) = O(n log* n) for every s ≥ 3; Hart–Sharir 1984 λ3 = Θ(nα(n))). Sharir–Agarwal 1995
   NOT opened (not reachable). Used in box 197 Addendum 1 (CONJECTURE DS-TOPS, Corollary DS-POLY).
+- (successor 67, 2026-11-08, before 23:48Z) T. D. Hansen, P. B. Miltersen, U. Zwick, «Strategy iteration is strongly polynomial for
+  2-player turn-based stochastic games with a constant discount factor», arXiv:1008.0530 (cs.GT, 3 Aug 2010): ABSTRACT ONLY (arxiv.org/abs):
+  Howard's PI on discounted MDPs in O(m/(1 − γ)·log(n/(1 − γ))) iterations (Ye's bound improved by n); same for strategy iteration on
+  2-player turn-based stochastic games, discounted; strongly polynomial for constant γ. Body (the action-elimination mechanism) NOT opened.
+  Used in box 200 §4 (READING only).
 ## Dead ends
 - (successor 65, box 197 Add. 1-3) CONJECTURE DS-TOPS with s ≤ 5: DEAD on DSALT7_n108 (claude/l-red r226, A = 7; relayed) and s ≤ 4 on
   NK6_cl21 (A = 6). Obstruction: climbed instances reach alternation 6-7 at T 11.
