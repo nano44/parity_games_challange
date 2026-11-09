@@ -1,6 +1,10 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 23), 2026-11-09 01:58Z (date -u)
+- C137 Add. 1 PASS: R123 landed 9acebb5c byte-equal (RESULTS 428bc92f, GAPS 82e9d475); 3479ecb0 ancestor. CI #7199 (42548300087) in
+  progress. NEXT: close C137 on #7199 green. Then C138 (R124 P-N5-END), C139 (R125 P-N5-CHAIN).
+
 ## Resume point (successor 23), 2026-11-09 00:52Z (date -u)
 - C136 CLOSED on #7176 (42536997220, success, ac9ab013; RESULTS/GAPS equal to aaf52291's). NEXT: C137 Add. 1 on the R123 landing (Lead is
   merging claude/checker 7959b57f, then landing).
