@@ -94,6 +94,8 @@ Tools: experiments/lower/l14/ (README.md). Target core8 = experiments/lower/l10/
   clamped run, l10/build.fulltraj; counter = rows 0..19): o(20) = 1 on all of them, h43 never moves, and the only helper that moves
   at step 13 is 17 (pair 8). So C11's helper cascade does not deliver the release; L13's pgad3 questions (f5 and ≤ 2 helpers
   rewired) cannot change h43's release time except through the states of pairs 8..20, and they do not.
+  The channel is real, not only a gap in the argument: on C12 (§4) the same first required change of q4 IS met, by a private
+  helper (h41, level 20) whose closure is static and whose key o(19) holds for 12 rows and flips at row 13 (DATA, replayed model).
 - Status. Item 1 is CLOSED with c = 1 (SINK-FLOOR) and OPEN beyond it. The open part is exactly: a lower bound on the number of
   helper-pair movers needed to realize a prescribed release pattern of o(L−1) (KEY-DELAY demands), i.e. the tower problem on the
   helper levels, which is CONJECTURE OSC-ROOM of L10 §3c in a sharper form:
@@ -104,6 +106,44 @@ Tools: experiments/lower/l14/ (README.md). Target core8 = experiments/lower/l10/
 - What this does NOT exclude. Other bases (HIT7-like bases with no sink, §4 of L13), other towers, other targets than core8, helper
   sets at or above κ (§1), and N5 in general: none of §1-§3 bounds an N5 run on any game. All statements are about the IDEAL
   step sequence of genomes against core8 rows.
+
+## 4. Item 2: the falsifier C12 (DATA, exact SAT; pgad3 of L13 §0; target core8)
+- Base. C12 := ann3 (l14/ann3.c = L10 ann.c + a third order constraint) from C11's unsolved genome (L10_C11_osc2_final.txt,
+  73ef3b55), seed 12, 2,100 s, T 0.8, with three cuts: «pairs 0-3 (movers 0-7) reach none of 8, 11, 13, 14, 15» (the new one,
+  repaired at the start), «8, 9 reach none of 11, 13, 14, 15» and «10, 11 reach none of 13, 14, 15» (C11's two, restricted to the
+  movers the new cut does not cover). Score 137 (unit = violated constraint of the exact target; C11: 195, C10: 127).
+  Frozen: experiments/lower/l14/rec/L14_C12_final.txt sha1 37dddff66d69caf5f7f21be5167a98e1ba19395d; ranks solved by l14/rsolve.py
+  (which reproduces C11's solved file bit for bit): L14_C12_final_solved.txt sha1 c58041d5a6dca62efe1ad8f4a342514e0f354cd8 (commit eaf68e67).
+- Global sink (DATA, exact; l14/sinks.py, out/sinks_C12.txt; counter = movers not reaching X). The cut closed pairs 0-2 into a
+  cluster: q0 is missed only by its own target 48, f0 by 2, pair 1 by 5, pair 2 by 7 movers. These movers' first moves in core8 are
+  at steps 61-281 (R = 0 on rows 0..30, l13/reqpref.py), so they bind nothing early. q3 (6) is NOT a sink (13 movers do not reach it); the
+  predicted «sink at q3» did not appear. q4 now reads only pairs 0-3 and helpers 41, 44, 48 (closure(q4) = {0, …, 7, 41, 44, 48}),
+  and pairs 0-3 do not move before step 30, so q4's first required change (pre-state 13) must come from 41, 44 or 48: the C11-TIMING
+  situation again, with three private helpers instead of one.
+- Walls (first UNSAT prefix; G = {63} unless stated; culprits = single core-mover drops that make the UNSAT SAT, l13/culprit3.sh):
+  | XS | first UNSAT | rows 0..t−1 realized, replayed (sim6 = fenc, rows followed) | culprits at the wall |
+  | --- | --- | --- | --- |
+  | 6 (q3) | 14 | 0..13 (d1704b4e) | {8, 13} (q4, f6) |
+  | 8 (q4) | 15 | 0..14 (db57ea57) | {8, 11} (q4, f5) |
+  | 11 (f5), the C11-WALL question | 15 | 0..14 (a3bd361d) | not run (top-1 solve 442 s) |
+  Replays: l13/prefcheck.py on the decoded genomes (l13/out/L14_C12_final_solved_core8_HIT7_X{6_k1_t13, 8_k1_t14, 11_k1_t14}_dec.txt;
+  sha1 as listed). pgad3's CHECK (decoded genome, everything fixed) was SAT for each.
+- Single-helper sweep, XS = 8 (q4), prefix 15 (l13/sweep1.sh, T0 = P = 15; out/sweep1_C12_X8_P15.txt): UNSAT for all 48
+  helpers h = 16..63 (CaDiCaL). DRUP: DRUP_RESULT (l14/drupsweep.sh → l13/pdrup.py with pgad3, Glucose4 proof + l8/sat/drup.c;
+  out/drup_C12_X8_P15.txt, one line per helper with CNF sha1; proofs and CNFs deleted after the check).
+- Lemma C12-WALL-1 (PROVED, lane, given the DRUP line above; scope: C12's wiring and ranks (c58041d5) fixed except the options of
+  q4 (8) and of ONE helper h, pgad3 candidate lists, insertion ranks; signs, helper gates, starts and states free; target core8):
+  no single helper realizes rows 0..15; rows 0..14 are realizable (h = 63, replayed). Not claimed for |G| ≥ 2 or other XS.
+- Verdict. The READING predicted a sink at q3 and a wall below 14. On C12 there is no q3 sink, and the C11-WALL question (XS f5,
+  one helper) realizes rows 0..14 (replayed), where C11 is UNSAT at 14 for every helper set of size ≤ 2. By the Lead's criterion
+  («a C12 wall at or above 14 refutes the READING») the READING «a cut at level j creates a sink at level j − 1 with a lower wall»
+  is REFUTED on this instance (DATA). What C12 shows instead is §3's key channel at work. In the XS-f5 model, q4's private helper
+  h41 (level 20, closure = pairs 0-2 and 44, 48, all static) is blocked on rows 0..12 by o(19) = 1, released when o(19) flips at
+  row 13, and moves at step 13; q4 then changes at 14 (sim6 run; o(19) on rows 0..14 = 111111111111100). The XS-q4 model does the
+  same with h63 (level 31, o(30) = 0 on rows 0..12, 1 at 13). This is CAUSE (ii)-(iii) realized: the first required change of the
+  former sink is timed through a helper key, by the helper pairs below it, and not by its Ξ-closure.
+  The walls remain low (15): the next binding pair is q4 / f5 at row 15 (f5's second required change, pre-state 14). Not DEAD:
+  helper sets of size ≥ 2 on C12 untested.
 
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All statements are about

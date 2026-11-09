@@ -1,0 +1,1 @@
+L14_C12_final_solved core8_HIT7 XS 11 k 1 G 63-63 R0 0-63 P 30  last_SAT 14  UNSAT_at 15 (SOLVE -> UNSAT 442.3s RESULT UNSAT )  10:00Z

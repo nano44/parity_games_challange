@@ -10,6 +10,10 @@
 - Item 2 (C12): ann3 from C11 (seed 12, 2,100 s, T 0.8; constraints «8+11+13+14+15:0-7», «11+13+14+15:8,9», «13+14+15:10,11»),
   output experiments/lower/l14/run/C12_ann.txt (resumes from it), log C12_ann.log. Then rsolve.py → solved, freeze (rec/ + sha1),
   global sink (isol), single-helper sweep (l13/sweep1.sh with pgad3, XS = the sink), DRUP (l13/pdrup.py, PGAD=pgad3.py).
+- Item 2 results (10:3xZ): C12 frozen eaf68e67 (L14_C12_final 37dddff6, solved c58041d5, score 137). No q3 sink (q0 / pairs 0-2
+  cluster is the reach sink, R = 0 early). Walls (top-1 helper 63): XS 6 → 14 (culprits 8, 13); XS 8 → 15 (culprits 8, 11);
+  XS 11 → 15 (rows 0..14 SAT, replayed a3bd361d; C11 is UNSAT at 14 there) ⇒ READING refuted (Lead criterion). Sweep XS 8 P 15:
+  48 / 48 UNSAT; DRUP running (l14/drupsweep.sh → out/drup_C12_X8_P15.txt, resumable). Key channel seen: h41 released by o(19).
 - Tools: experiments/lower/l14/ (ddb647db): rsolve.py (reproduces C11 solved c2e925f7), ann3.c, mincut.py, cause.py.
   Build: gcc -O2 -o $SP/ann3 l14/ann3.c -lm; fenc, drup as in L13.
 
