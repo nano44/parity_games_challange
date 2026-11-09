@@ -12,6 +12,8 @@ if git cat-file -e 4b309716^{commit} 2>/dev/null; then
   got=$(python3 -I gate92.py own $I/WC4_2.json $I/MW8_2.json $I/C6G8_n54.json $I/RWX_n95.json | grep -v '^engine')
   want=$(grep -E '^own (WC4_2|MW8_2|C6G8_n54|RWX_n95)\.json' out/own92.out)
   [ "$got" = "$want" ] || { echo "BOX92 FAIL own rows"; echo "$got"; fail=1; }
+  ga=$(python3 -I astar92.py own $I/FW8_2.json $I/MW8_2.json $I/C6G8_n54.json | grep -v '^engine')
+  [ "$ga" = "$(grep -E '^own (FW8_2|MW8_2|C6G8_n54)\.json' out/astar92_own.out)" ] || { echo "BOX92 FAIL astar rows"; echo "$ga"; fail=1; }
   g=$(CTRL=low python3 -I gate92.py own $I/C6G8_n54.json | grep -v '^engine' | sed 's/^own/ctrl=low own/')
   [ "$g" = "$(grep -E '^ctrl=low own C6G8_n54\.json' out/ctrl92.out)" ] || { echo "BOX92 FAIL control"; fail=1; }
 else

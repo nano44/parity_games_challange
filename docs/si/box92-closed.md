@@ -102,3 +102,25 @@ lowflip (flips at those steps; must be 0); decfail, glnfail (must be 0).
 - READING: the hand-built families (FW, MW, WC) flip gates only by Λ (clock) or non-PRIV routes, never by the upper projection; the climbed
   genomes do use upper-projection flips (41-107), but their counts stay small (A* ≤ 6, box 91). The low parts change hundreds of times
   without flipping a gate: the lower race is invisible to the gates above it, as the lemma says.
+
+## Addendum 1 (appended 2026-11-09, date -u in the commit; L-RED 62 R228-box91 findings F1, F2, relayed by the Lead 00:25Z)
+### A1.1 (γ) at a second vertex: a LENGTH-ONLY trigger (F2; the design the Lead asked to try first)
+- Design question: a second vertex u2 whose switch changes h_k's β-face play only in its length or in low (non-e) vertices, timed to the race
+  at u, so that h_k unlocks without any letter (case (γ) of box 91 TRIGGER).
+- Lemma GATE-LOW-NULL (b) (§1) excludes it on every PRIV step with e_(h_k) above Λ, and the proof covers (γ) directly: Odd's choice is a
+  function of the two projections π(E(p_e)), π(E(p_b)), and a length-only or low-vertex change leaves both unchanged, so the gate does not
+  flip. With equal Λ that is every step of the waiting design in which h_k's β-face does not return through qh_k.
+- What is left: (γ) on a non-PRIV gate (the β-route returns through qh_k; §2), i.e. class K7, and (γ) where e_(h_k) lies below Λ (then
+  h_k is in no e-set above Λ, so it is not a letter of any counted high part: no counter). So (γ)-at-a-second-vertex adds no new open
+  class; it is K7 again. I did not build it: on PRIV steps it cannot fire by a PROVED lemma, and its non-PRIV form is K7's open case.
+- DATA: box 91 counter fl_len (flips whose left face changed only below every e-letter; unit: flip, TOTAL) = 0 on all 11 instances, both
+  engines; box 92 glnfail 0 (it counts (γ) flips on LAM ∧ PRIV steps as failures too).
+- Row added to §3's table: | K9 length-only trigger at a second vertex | a change of the β-face below every e-letter | GATE-LOW-NULL (b) on
+  PRIV steps; non-PRIV ⇒ K7 | PROVED (lane) on PRIV; K7 otherwise |. CONJECTURE WAIT-CLOSED's scope now includes K9.
+### A1.2 A*_all (F1)
+- Box 91's «maxa» is A*_route (route vertices only); the corollary's A* is A*_all (all vertices). Tool experiments/si/box92/astar92.py
+  (unit (v, I, z); per-tuple MAXIMUM; cfail = #(v, I, y) with c_y > a_y, must be 0). Records out/astar92_own.out, out/astar92_g3.out (both
+  engines IDENTICAL). Table and restated claims: box 91 Correction 1.
+- Effect on WAIT-CLOSED: the conjecture is stated for A*, C, T3; with A* := A*_all it must read «A*_all super-linear» for the counter's
+  growth — but A*_all ≥ C can grow linearly with C bounded (FW: A*_all = d, C = 3), so the meaningful targets stay C and T3; A*_all is
+  listed as an upper quantity only.

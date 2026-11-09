@@ -155,3 +155,37 @@ not lie on any route carrying h_(k−1). Then:
 - L-NEW 67 charges the ENTRIES (tops) at b to time. Box 91 charges the EXPULSIONS to split pairs (PAIR-EXPEL) and isolates the replay count
   A* (presences of one letter at one vertex), with the parallel-segment geometry (PARALLEL) and the gate race (GATE-RACE). The two meet
   in Dhi_y(b) − 1 = Σ_(z ≻ y) c_z(b) ≤ Σ_z a_z(b): a bound on A* is a bound on every c_z(b), not conversely.
+
+## Correction 1 (appended 2026-11-09, date -u in the commit; L-RED 62 R228-box91, claude/l-red f3903cb8, relayed by the Lead 00:25Z: box 91 SURVIVES; findings F1, F2)
+Pushed text above is not rewritten; this correction governs where they differ.
+- Verdict relayed: PARALLEL, PAIR-EXPEL, EXPEL-COUNT, GATE-RACE, TRIGGER, A*-EQUIV all SURVIVE on L-RED's own census (expel228.py, 19,436
+  same-pair couples, 0 fails, control fires). I have not re-run L-RED's tool; its numbers are relayed as such.
+- (F1) A* LABELLING. Corollary A*-EQUIV's A* is the maximum of a_z(b, J) over ALL vertices b, all Λ-intervals J of b and all letters z
+  (needed for «C ≤ A*, take b = v»). The DATA column «maxa» of §4 and the counts quoted in §0, §4 («A* ≤ 6 off MW», «A* = n + 1 on MW(n)»,
+  «A* 0-1 on FW / WC») are a different, smaller quantity: the maximum over the ROUTE vertices b (successors b of split pairs (u, b), at
+  the tuples (b, J_b, y) that SPLIT-COUNT sums over), restricted to letters above y. Rename it A*_route. Restated DATA, with the
+  corollary's quantity A*_all (experiments/si/box92/astar92.py; unit (v, I, z), per-tuple MAXIMUM over all vertices; both engines, see
+  box 92 §5):
+  | instance | C | A*_route (box 91 «maxa») | A*_all |
+  | --- | --- | --- | --- |
+  | WC4_2 / WC16_2 | 1 / 1 | 1 / 1 | 1 / 1 |
+  | FW8_2 / FW16_2 | 3 / 3 | 0 / 0 | 8 / 16 |
+  | MW8_2 / MW32_2 | 17 / 65 | 9 / 33 | 18 / 66 |
+  | C6G8_n54 | 6 | 3 | 6 |
+  | RWX_n95 | 2 | 2 | 2 |
+  | DWT20_2803 | 3 | 2 | 5 |
+  | DHIB26_2804 | 4 | 6 | 9 |
+  | DHIB18_2805 | 4 | 5 | 6 |
+  - So A*_all = 2n + 2 on MW(n) (= C + 1) and A*_all = d on FW(d, 2) with C = 3: A*_all can be large while C stays bounded, as A*-EQUIV
+    allows (C ≤ A*_all, not conversely). cfail (a tuple with c_y > a_y; must be 0) = 0. Corrected statements: «A*_all ≤ 9 on the climb
+    bests and RWX / C6G8», «A*_all = 2n + 2 on MW(n)», «A*_all = d on FW(d, 2)». The READING of §4 («Dhib large from many letters each
+    entering a few times») holds with A*_route; the claim that MW is the only family where the count grows is FALSE for A*_all (FW grows).
+  - The bound Dhi_y(b) ≤ 1 + M·A* in A*-EQUIV may use A*_route for the route vertices b (that is where SPLIT-COUNT evaluates Dhi), so
+    C ≤ 3M·(1 + M·A*_route) also holds; C ≤ A*_all needs A*_all. Both directions of the equivalence stand with A* := A*_all.
+- (F2) WAIT-TRIGGER and TRIGGER's case (γ). §5's Consequence paragraph dropped case (γ) of Corollary TRIGGER (the β-face's value changes
+  below every e-letter: play length / low vertices only). Inside the stated design class (a trigger keyed to u's switch reaching the
+  β-face through u's own play) (γ) via u is impossible, since u's switch into qh_(k−1) changes the β-face's e-set (case (β)), so the
+  corollary stands as stated. But «the waiting-High class is obstructed» covers only that class. A LENGTH-ONLY trigger at a SECOND vertex
+  is not excluded by any box 91 lemma. Box 92 takes it first: on PRIV steps with e_h above Λ it is excluded by box 92's Lemma
+  GATE-LOW-NULL (b) (a length-only change leaves both projections unchanged, so the gate cannot flip); the remaining room is the
+  non-PRIV gate (box 92 class K7).
