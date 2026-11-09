@@ -261,3 +261,18 @@ comparison as an Addendum.
   - No statement, label, premise, scope or DATA number changes.
 - Verdict: **L-3 MATCHES.** All P-N5-END statement verdicts are unchanged: every row SIGN, END-T3 PROVED-CONDITIONAL on REACH3-CYC (R118
   (k), itself PROVED-CONDITIONAL on [REACH-L]). From my side P-N5-END may land with L-3.
+
+## Addendum 3: byte test of line L-4 (REFEREE-2 successor 35, Opus 5.5, D1; 2026-11-09 05:27Z by date -u; independent of REFEREE)
+- Object: claude/l-new b7faeebe (Lead 05:27Z). docs/new/P-N5-END-line-L4.txt, sha1 5f88c2971718522027ae267754814c6ba401b829, 7,230 B, one
+  line, 105 «(» = 105 «)», no «|», «τ0» 0 times. Fixes entry 4. The packet is unchanged from 8b67d40e (git diff empty).
+- (1) Byte test. Own script R2-P-N5-END/bt_l4.py (out bt_l4.out) uses CHECKER 23's strings, verbatim from C138 §4 at claude/checker
+  46905772. R-U is applied first, then R-T0. Each old string is once in the current line and 0 times in L-4. Each new string is 0 times in
+  L-3 and once in L-4. **L-4 == L-3 + R-U + R-T0: True.** Nothing else changed.
+- (2) Meaning.
+  - R-T0 is in ENDGAME-3's signed clause. The packet §2 (S) (l. 90) defines «S3's pair ([G3] S3-START, or FIX 1 directly): κ0; …; τ0 :=
+    pe_g at every gate and K2 → K2». So τ0 is S3's τ by definition, and landed R117 S3-START / P-N5-REACH §3 give the same standard τ
+    («τ(g) = pe_g at every gate, τ(K2) = K2»). «S3's τ» is exactly the proof's object, and E0 says it never changes before the end.
+  - R-U is scope wording only: the same status words in the landed R123 order. END-T3's labels are untouched: «PROVED-CONDITIONAL» and
+    «REACH3-CYC» each occur 2 times in L-3 and in L-4.
+- (3) Fixes entry 4 is line-only. It quotes C138 E-1 / E-2 and states R-U, R-T0 and L-4, with no proof step and no statement change.
+- (4) Verdict: **L-4 MATCHES** (byte test, and in meaning). Statement verdicts unchanged.
