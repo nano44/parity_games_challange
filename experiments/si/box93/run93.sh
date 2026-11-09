@@ -22,3 +22,6 @@ K6=$(ls k6/inst/*.json | grep -v names)
 python3 -I ../box91/mult91.py own $K6 > out/k6_own.out || exit 1
 python3 -I ../box91/mult91.py g3 $K6 > out/k6_g3.out || exit 1
 echo DONE-K6
+# L-RED's MWR(n) (claude/l-red 406ef2fd r229/inst, frozen copies in inst/): np93 on both engines (Addendum 1 A1.3)
+python3 -I np93.py own inst/MWR4_2.json inst/MWR8_2.json inst/MWR16_2.json > out/mwr93_own.out || exit 1
+python3 -I np93.py g3 inst/MWR4_2.json inst/MWR8_2.json inst/MWR16_2.json > out/mwr93_g3.out || exit 1

@@ -153,3 +153,27 @@ dfail 0 (E-FACE-PAYS (b), proxy); k1both = k1c2 on every row (E-FACE-PAYS (d)).
 - CONJECTURE WAIT-CLOSED (C-level) stays a CONJECTURE: bounding C needs more than gate flips (letters re-enter plays by route changes
   too), and the class «continuation changes often» is the core itself (c_y at D_k), not a waiting design. No family with C super-linear
   in N + M was found; nothing to freeze as a counterexample candidate.
+
+## Addendum 1 (appended 2026-11-09, date -u in the commit; L-RED 63 R229-box92 / R229-box202, claude/l-red 406ef2fd, relayed by the Lead 04:14Z)
+Pushed text above is not rewritten; this addendum governs where they differ.
+- Relayed verdict: GATE-LOW-NULL SURVIVES (L-RED's own census, 20 instances). Findings used here: (i) box 92's K3 / K4 / K9 «PROVED» hold
+  only on LAM ∧ PRIV ∧ UP steps (UP: e_o above the common Λ); the rest is K1 ∪ K7 ∪ an unnamed case «below» (LAM ∧ PRIV, e_o not above
+  Λ); (ii) K8 is a polynomial factor on IDEAL-CYC and a READING on Γ3; (iii) K1 is linear per gate, O(M·n) summed. I have not re-run
+  L-RED's gate229.py; its numbers are relayed as such.
+### A1.1 The «below» case is K10, and E-FACE-PAYS covers it
+- Row added to WAIT-CLOSED (§6): | K10 below | a flip on LAM ∧ PRIV steps with e_o not above Λ (non-e vertices may decide) | no
+  GATE-LOW-NULL; E-FACE-PAYS (§2) applies (it has no PRIV and no UP premise) | per gate PROVED: unlocks ≤ 1 + ch(p_e); DATA 0 flips
+  (L-RED, 20 instances) |.
+- So the per-gate statement WAIT-QUIET (§6) covers every trigger class K1-K10 at once: GATE-RACE (a) needs only F1 and Odd's ◁-choice.
+  What stays open is the C-level CONJECTURE, as stated in §6; K1-K10 differ only in how the β-face pays, and the e-face pays in all.
+### A1.2 K6: my h = 4, 5 rows equal L-RED's
+- L-RED's lag229 (own code; all 16 cfgs at h = 4, 5, 6; out/lag229_h2_6.out) and my k6 rows (box 86's own tools; the merge 1, cexit C
+  half of those cfgs) agree on every column both report: N + M, T, C, CNT, REARM and tog (8 of 8 rows). K6 DEAD at h = 4, 5 is now two
+  independent measurements; h = 6 and other cfg laws: L-RED only.
+### A1.3 MWR(n) (L-RED's k = 1 family; frozen copies inst/MWR4_2, MWR8_2, MWR16_2, sha1 = L-RED's r229/inst/SHA1SUMS)
+- np93 on both engines (IDENTICAL rows; out/mwr93_own.out, out/mwr93_g3.out; unit gate, whole run): all must-be-0 counters 0. The max-flip
+  gate flips 2n + 1 (9 / 17 / 33 at n = 4 / 8 / 16) with lam 0 on both faces; relocks n = ch(p_e) = ch(D) = n (all relE: e-set changes
+  of the e-face continuation); unlocks n + 1 = 1 + ch(p_e), all PRIV (np_unl 0). E-FACE-PAYS (a), (b) and (d) are TIGHT on MWR at every n.
+- What it gives for BOX 202 (READING on a PROVED bound): at k = 1, flips(g) ≤ 2·min_f ch_f + 1 is exact on MWR, and the growth is the e-face
+  continuation's e-set changes (n). So K1-FLIP(c) fails for every c exactly because one gate's e-face continuation sees n letter entries;
+  a k = 1 bound must bound ch(D) at gate continuations, i.e. c_y at those vertices: the core again, with no k-specific slack left.
