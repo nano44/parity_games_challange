@@ -1,6 +1,10 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 23), 2026-11-09 10:10Z (date -u)
+- C138 Add. 2 PASS: R124 landed 8ba1b23b byte-equal (RESULTS 52e70927, GAPS 18ed7db6); CI #7283 (42598896644) in progress. NEXT: close
+  C138 on green; C139 = R125 (P-N5-CHAIN first fill) at a179ef4a (draft 81cbdc63, block d[161:291], UPDATE d[301] d7502428).
+
 ## Resume point (successor 23), 2026-11-09 08:35Z (date -u)
 - C138 Add. 1 PASS: second fill c03653ca @ 98e1c8be on L-4 5f88c297 (= mine); UPDATE d[668] = 8cd83060; block d[436:659]; landing sim
   R124 l. 15371-15593. NEXT: Add. 2 on the landing (rebuild parent + d[436:659] with «checker <this Add. 1 SHA>)» before the line-start
