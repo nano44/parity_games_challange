@@ -1,0 +1,6 @@
+NP3_4.json T 31 L1 |S(v)| 9 |S(gQ)| 18 echo 1 gQ-E 0 E-gQ 0; L2 |S(v)| 9 |S(gQ)| 18 echo 1 gQ-E 0 E-gQ 0; L3 |S(v)| 9 |S(gQ)| 18 echo 1 gQ-E 0 E-gQ 0
+NSQ3_4.json T 271 L1 |S(v)| 9 |S(gQ)| 18 echo 1 gQ-E 0 E-gQ 0; L2 |S(v)| 13 |S(gQ)| 22 echo 0 gQ-E 0 E-gQ 4; L3 |S(v)| 17 |S(gQ)| 26 echo 0 gQ-E 0 E-gQ 8
+ND2_4.json T 31 L1 |S(v)| 9 |S(gQ)| 18 echo 1 gQ-E 0 E-gQ 0; L2 |S(v)| 17 |S(gQ)| 18 echo 0 gQ-E 0 E-gQ 7
+NDb2_4.json T 31 L1 |S(v)| 9 |S(gQ)| 18 echo 1 gQ-E 0 E-gQ 0; L2 |S(v)| 13 |S(gQ)| 18 echo 0 gQ-E 0 E-gQ 4
+NDbr3_8.json T 55 L1 |S(v)| 17 |S(gQ)| 34 echo 1 gQ-E 0 E-gQ 0; L2 |S(v)| 17 |S(gQ)| 34 echo 1 gQ-E 0 E-gQ 0; L3 |S(v)| 21 |S(gQ)| 34 echo 0 gQ-E 0 E-gQ 4
+MWR8_2.json T 54 L1 |S(v)| 17 |S(gQ)| 17 echo 0 gQ-E 0 E-gQ 16

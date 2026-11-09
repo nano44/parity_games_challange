@@ -77,6 +77,10 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - 05:27Z Lead: BOX 203 (l-new 25e040ee). docs/red/R229-box203.md: GATE-CLASS / GATE-FLIP / QUIET-N SURVIVE (cls229.py, 29 rows, all 0;
   premises checked vs landed R118 / R123). NEW Lemma CLASS-PAYS + Corollary GATE-FLIP-MIN (PROVED, lane): flips <= 2 min(cc(e), cc(beta)) + 1,
   exact on MWR. SELF-CORRECTION: K10 «below» is vacuous on IDEAL-CYC by landed B-ONLY (R229-box92 Add. A). DP climb: dpass never > 0.
+- 05:51Z Lead: item 6 = min-face-height climb (nclimb ORDER=MINH; hgt229.py). cap 200 best minh 15 / flips 10 / T 17 (Gamma3 same); cap 400
+  from K1C16 (2906) and from L-COMP LC32 (2907, l-comp 0eb92268 a13d9661) running. Class height <= T (one change per step): minh is the core.
+- 06:33Z Lead: BOX 94 (l-si b1684cc6). docs/red/R229-box94.md: SAME-SUFFIX / STEP-BOUND / echo SURVIVE; inclusion S(gQ) in S(v) u (S(v)+1) on 14
+  levels; NEW non-common-suffix nesting (gennest229 LINK=Db / Dbr) DEAD: = one MW(n). Next: P-N5-GATE packet read when routed.
 - Scratch (lost on restart; rebuild with git archive): si92 (d962efdb box91/92/86/85/84), lred (4b309716 r221), lnew (fcba92fc), new202 (fa17fdf6).
 
 ## Successor 62 HANDOVER (2026-11-09 ~01:5xZ, date -u; context large; written while the cap-800 climb runs)

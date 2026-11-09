@@ -1,0 +1,13 @@
+instance N+M T maxcc kind minh minhf flips_at_minhf maxflip
+ND2_4.json 288 31 18 x 17 17 18 18
+ND2_8.json 520 55 38 x 33 33 34 34
+ND3_4.json 431 31 18 x 17 17 18 18
+ND3_8.json 779 55 38 x 33 33 34 34
+NDb2_4.json 288 31 18 x 13 13 18 18
+NDb2_8.json 520 55 34 x 25 25 34 34
+NDb3_4.json 431 31 18 x 13 13 18 18
+NDb3_8.json 779 55 34 x 25 25 34 34
+NDbr2_4.json 288 31 18 x 9 9 18 18
+NDbr2_8.json 520 55 34 x 17 17 34 34
+NDbr3_4.json 431 31 18 x 11 11 18 18
+NDbr3_8.json 779 55 34 x 21 21 34 34
