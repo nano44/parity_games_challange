@@ -1,0 +1,25 @@
+R104	Even movers of priority 0; Odd gates of priority 1 with a W-face e and a Ξ-face β
+R104	β of priority 6 + 2·rank + parity with edges to the Ξ-target and to u, or to u alone
+R104	e of even priority above every β with one edge to the W-target or to the top even self-loop c_W
+R104	an unused even self-loop of priority 2; c_W's priority top is the least even number at least 2 above
+R104	a closed core u = K0 (Even, top + 2) → {K1, K3}, K1 (Even, 5) → {K0, K1}, K2 (Odd, 3) → {K1, K2}, K3
+R104	with start σ = the genome start at movers, β → its Ξ-target (u when the target is X), K0 → K3, K1 → 
+XICYC	movers (Even, priority 0) → gates (Odd, priority 1) → {e-face e_g, β-face β_g}
+R118	VJ00 §4.2 / Friedmann arXiv 1106.0778 §3 for the order ⊴ on values (Λ, Π, k)
+R118	labelled C if some vertex's cycle node Λ changes, else R if Odd's optimal counterstrategy σ̄ (any fi
+R118,R121	The game is Γ(G) with every Even vertex that is not a mover frozen at its start successor. Odd is un
+R118	every maximal run of p-steps has at most N steps
+R118	each vertex's Λ moves only to a vertex of strictly larger reward among at most 2M + 3 possible cycle
+R118	T_CYC ≤ C + R + (C + R + 1)·N
+R121	(Lemma E-MON) if Λ_t(v) = Λ_(t+1)(v) then E_t(v) ≤ E_(t+1)(v)
+R121,R123	over the whole run the number D_E(v) of distinct (Λ_t(v), E_t(v)) is at most (2M + 3)·F′_B(M)
+R121	so under [E-LEV] every seq_t(v) has at most U(G) ascents (U(G) := the number of options whose Ξ-targ
+R123	(Lemma CN2) the cycle node of every play under every positional pair has priority ≥ 2, so no gate or
+R123	at every state t and every vertex v other than c_W and the e-vertices whose successor is c_W, Λ_t(v)
+R123	(Corollary NO-TIE) at every state and gate g, Ω_t(e_g) ≠ Ω_t(β_g)
+R123	(Lemma LOC-GATE) at every state t and gate g, Odd's optimal counterstrategy σ̄_t chooses the face of
+R123	(Lemma LOC-K2) σ̄_t(K2) = K1 and Ω_t(K1) ◁ Ω_t(K2) at every state
+R123	with class_t(v) := (Λ_t(v), E_t(v)), E_t(v) the e-vertices of Π_t(v), a step loud if some vertex cha
+R123	every maximal window of quiet steps has at most L := (M + 1)(2M + 1)(N + 1) + N(n − 1) steps, n = N 
+R123	(Corollary T-QUIET) T_CYC ≤ (1 + Σ_v (D^tot_E(v) − 1))·(L + 1), D^tot_E(v) the number of distinct cl
+quotes 24 missing 0; landed R104/R118/R121/R123: ['R104', 'R118', 'R121', 'R123']  (trunk 547985a10)
