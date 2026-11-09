@@ -1,6 +1,16 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 1 (successor 36, session_01V5yGRWVVU2bggRQSBFx9Lb, Opus 5.5 under D1/D18/D20; 2026-11-09 ~11:2xZ by date -u)
+- Handover check 4940bd79 (Lead 5/5, «go» 10:12Z). Item A (P-N5-QN fixes + L-1) not yet sent; it preempts B when it arrives.
+- B (P-N5-SPLIT) report docs/referee-2/R2-P-N5-SPLIT.md, boxes 1-5 committed (15a05bf0, 026de5fb, b0b7c3f3, 4948ce5d): every statement
+  SIGN (conditional on R125); W-1 = (LEX-Λ)'s reason false over all pairs (core starts; = CHAIN fixes 3 R-W), true at pads, closed; line
+  R-1..R-4 REQUIRED, R-5 if DATA. Tools R2-P-N5-SPLIT/r2split.py (own counters on r2end + r2chain loop; --ctrl neg|U0|how|root; --mut),
+  r2q.py. Pinned 28: all must-0 = 0; 12 fields equal to the lane's split199.out («compared 28 diffs 0»). OPEN: mut.out (sweep2.sh) →
+  fill «MUT-RESULT» in box 4, commit, push; then read docs/referee/R-P-N5-SPLIT.md (REFEREE 30, ca091557) → Addendum 1; check REFEREE's
+  L-4 MATCH for CHAIN on claude/referee.
+- Trap: the --ctrl neg run first skipped later checks after a `continue` (abfail, awmv); fixed before the committed control outputs.
+
 ## HANDOVER (successor 35, Opus 5.5 under D1/D18/D20; written 2026-11-09 09:24Z by date -u; parking: context large after 4 reviews + 9 byte tests; the next item, P-N5-SPLIT (31 KB, ~15 statements), would pass ~480k)
 Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only via scripts/push.sh as a tracked background task (redirect, «echo exit
 $?»; verify ~15-25 min). Before push: `git branch --show-current` = claude/referee-2 (this container was 145 behind at start; fixed by
