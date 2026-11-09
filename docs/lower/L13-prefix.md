@@ -45,6 +45,32 @@ Entry = first UNSAT prefix t (rows 0..t-1 realizable). Solve times grow fast at 
 - Status: no prefix gadget for rows 0-21 at k ≤ 4 (C10), k ≤ 2 (C4), k ≤ 3 (SEED_R2). Step 2 (splice + full-target comparison) has
   not been reached. NOT DEAD: helper sets other than the top k movers are untested.
 
+## 2. Lemma PREF-FUEL and the walls at k = 0, 1 (PROVED, lane; R104 rules, R105 ENC, acyclicity)
+- Definition. For a core mover x and target rows 0..P, the required-preference sequence is the list of pairs (t, ns_(t+1)(x)) over
+  the steps t < P at which x is FREE. Freedom is read from the target rows and the core gates: level l ≥ 1, s_t(x) ≠ o_(l−1) of
+  row t+1; level 0, the gate rule. At a free step, R104 sets ns(x) = pref_x(S_t), so in any realization pref_x(S_t) must equal the
+  listed value. R_x(P) = the number of changes between consecutive entries of the list (experiments/lower/l13/reqpref.py).
+- Lemma PREF-FUEL. In any genome (any wiring, ranks, signs, gates, starts) whose run realizes target rows 0..P,
+  R_x(P) ≤ (number of moves of closure(x) in steps 0..P−1) ≤ 2^|closure(x)| − 1.
+- Proof. Take consecutive list entries (t1, a), (t2, b) with a ≠ b. pref_x(S_t1) = a ≠ b = pref_x(S_t2). pref_x depends only on the
+  states of closure(x) (x ∉ closure(x); R105), so some closure mover changes between S_t1 and S_t2, i.e. it moves at a step in
+  [t1, t2 − 1]. These intervals are disjoint for different changes, which gives the first inequality. FUEL-DOUBLING (L10 §3a)
+  orders closure(x) as a DAG y_1..y_k with M(y_i) ≤ 2^(i−1), so the closure moves at most Σ 2^(i−1) = 2^k − 1 times. ∎
+- DATA (unit = change; set = the 16 core movers; scope = core8 c6e19673 with C10's core gates, which equal HIT7's on levels 0-6):
+  R over the full target = 1, 1, 3, 3, 7, 7, 15, 15, 31, 31, 63, 63, 127, 127, 255, 254 for movers 0..15. Hence:
+  COROLLARY (PROVED, lane). Every realization of core8 has |closure(x)| ≥ j + 1 for each mover x of pair j ≤ 6, and ≥ 8 for pair 7.
+  This is a universal floor, far below the realized closures (HIT7: 30-32 for the busiest movers, L10 §3a).
+- Application to the prefix (f5 = 11 on core8). Its list is (0..5, 0), (6, 1), (13, 1), (14, 0), (20, 0), so R_f5(7) = 1 and
+  R_f5(15) = 2. Two consequences:
+  - With both of f5's options exiting (C10's own wiring), closure(f5) = ∅ and rows 0..7 are infeasible for ANY other wiring and
+    ranks. This explains L-COMP's C10 UNSAT at 7 with the unique culprit f5.
+  - With closure(f5) of size 1 (a single isolated helper, e.g. any h whose candidate list holds only exits), rows 0..15 are
+    infeasible. This matches the exact sweep (§3).
+  Through row 21, R_f5 = 2, so counting allows |closure(f5)| = 2. The plateau at 17 for k = 2-4 is therefore NOT a counting
+  obstruction. READING: f5's closure must change at exactly steps 5 → 6 and 13 → 14 (consecutive list entries), and in C10 every
+  core mover's chains pass through f5 into the gadget. q6 (R_q6(21) = 5) then sees the gadget's changes, and the exact culprits at
+  t 17 are {f5, q6}. This is an interaction of timing, not a fuel bound. Not proved.
+
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All statements are about
 the IDEAL model's step sequence (R104's definition) on 𝓛^R_d and core target rows. Not M3, not a gauntlet step-4 pass, and not a
