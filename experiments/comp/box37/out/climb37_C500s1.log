@@ -1,0 +1,1 @@
+BEST BEST_C500s1_D51_NM377_bd3533eb.json score [0.135279, 51, 79] {"T3": 79, "fb": 1, "C": 25, "Dmov": 51, "Dmov_x": 77, "NM": 377, "maxflip": 50} ideal37 {"T": 79, "Dmov": 51, "Dmov_x": 119, "Dface": 51, "Dminface": 26, "maxflip": 50, "flipgate": [118, 0]} agree True t 09:35:08Z
