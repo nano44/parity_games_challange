@@ -14,6 +14,14 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
     landed R123 T-QUIET's L).
   - MWR: Dtot faces (n + 1, 2n + 2), flips 2n + 1, U(G) = 3n + 3. Super-linear flips at k = 1 ⟹ super-linear face class height: OPEN.
   - Box 202 Addendum A (K1-POLY's REACH3-CYC condition; K1-FLIP(c) dead at k = 1; pointer to GATE-FLIP).
+  - PUSHED 25e040ee (with C138 duty b7faeebe: fixes entry 4 + L-4 5f88c297, 7,230 B). Lead 05:27Z: L-4 to both referees; box 203 to
+    L-RED 63; «go» on part 2.
+  - PART 2 (§5): Lemma (k+1)-Λ PROVED (lane; B-ONLY, LOC-K2, [DEF]): at most k + 1 cycle nodes per state (= what BETA-ACYC minus f gives);
+    DEAD «ascents ≤ k + 1» (staircase ST(m), k = 1, m − 1 ascents; inst/ST4_k1, ST8_k1; stair203.py) — R121/R123's ascent route cannot
+    give k = 1. Face class height at k = 1: OPEN. Flip climbs from MWR4 (aclimb203.py AC_OBJ=flip AC_START AC_FREE) reach 18 flips at
+    N 48, k 1 (= MW4's 4n + 2 at k 2).
+  - PACKET CANDIDATE (Lead 05:27Z): QUIET-N is a clean sharpening of LANDED R123 T-QUIET (window L → N, T_CYC ≤ Q + (Q + 1)N), with
+    GATE-CLASS as its lemma, on landed premises only; small packet later (P-N5-GATECLASS?), after L-RED 63's attack.
   - Things only I know: gfc203.py on IDEAL-CYC is ~4 s for MWR8; the 57-genome corpus sweep ~40+ min (scratch sw4 loop, one .out per
     genome; HOLD2K, DSALT9, MW32 dominate). Low class (Λ above e_g) never occurs: it is excluded by B-ONLY (only c_W-successor e-faces).
 

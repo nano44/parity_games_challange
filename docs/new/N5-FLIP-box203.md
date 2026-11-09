@@ -156,3 +156,53 @@ min over all flipping gates of (bound − flips) (0 = the bound is attained at s
 - The open core is now one quantity at two vertices: the class height of a gate's faces. At k = 1 a kill needs a face whose e-set takes
   super-linearly many values (R121's ascents); a proof needs a bound on D^tot at k = 1 with U(G) unbounded. MWR's β-face climbs 2n + 2
   classes through 3n + 3 upward Ξ-edges.
+
+## 5. Part 2 (Lead 05:27Z «go»): does k = 1 force the face class height polynomial? (written after the Lead's 05:27Z message, completed 05:35Z by date -u)
+Lead 05:27Z: «whether k = 1 forces the face class height (ch(D) / D^tot at gate faces) polynomial via BETA-ACYC on the Ξ-graph minus the
+single feedback vertex f — on IDEAL-CYC first; add the cross-reference to L-SI 49's E-FACE-PAYS.»
+### 5.0 Verdict
+- NOT PROVED, and the natural route is DEAD. What BETA-ACYC's argument gives at k = 1 is a bound on the cycle nodes (Lemma (k+1)-Λ,
+  PROVED), not on the e-sets. The e-set route of landed R121 / R123 (HUB-ASC-G, ASC-T) needs boundedly many ascents per play, and k = 1
+  does NOT bound ascents: the staircase ST(m) (k = 1) has a play with m − 1 ascents (DEAD: «ascents ≤ k + 1», §5.2). So at k = 1 the face
+  class height, and with it GATE-FLIP's bound and T_CYC (QUIET-N), is OPEN; no k = 1 family with super-linear class height is known
+  (MWR: linear), and no proof route through ascents exists.
+- Cross-reference: L-SI 49 (claude/l-si f723957b, docs/si/box93-k7k6.md §1-§2, + Add. 1 86dd7e02; lane-proved on Γ3 with LOC-GATE3 /
+  NO-TIE3): Lemma NP-SHAPE («a non-PRIV state of gate o has Odd on the e-face p_e, and p_b's play = A · o · (p_e's play)») and Corollary
+  E-FACE-PAYS («relocks(o) ≤ ch(p_e), unlocks(o) ≤ 1 + ch(p_e)»; flips(g) ≤ 2·min_f ch_f + 1 ≤ 2·lamch(g) + 2·min_f nl_f + 1). Case 2b
+  of GATE-CLASS (§1) is NP-SHAPE's first half on IDEAL-CYC. The two bounds are incomparable: E-FACE-PAYS charges BOTH directions to ONE
+  face (min) but counts every value change ch_f; GATE-FLIP charges each flip to whichever face changes but counts only (Λ, E)-changes.
+  Both reduce the per-gate question at k = 1 to the same open quantity: how often a gate face's value (class) changes.
+### 5.1 Lemma (k+1)-Λ (PROVED, lane; IDEAL-CYC, every genome; premises [DEF], R123 B-ONLY and LOC-K2)
+At every state t, the cycle nodes Λ_t(v), over all vertices v other than c_W, c_X and the e-vertices whose successor is c_W, take at
+most k + 1 values: K1, and the most relevant vertex of each cycle of the functional graph Ξ_σ on the movers (x → xt(x, σ_t(x)), options
+with an X target omitted); Ξ_σ has at most k cycles. In particular at k = 1: Λ_t(v) ∈ {K1, c_t} with c_t the top of the unique cycle of
+Ξ_σ through the feedback vertex, if there is one.
+Proof. Let Z be the cycle of v's play (under σ_t, σ̄_t) and w its most relevant vertex. By B-ONLY w is less relevant than every e-vertex,
+so Z has no e-vertex, and Z ≠ {c_W}. If Z meets the core: the play enters the core only at K0 (the β's escape target), and the frozen
+edges K0 → K3 → K2 with σ̄(K2) = K1 (LOC-K2) and K1 → K1 lead to the K1 self-loop: w = K1. c_X has no in-edge from another vertex ([DEF]:
+an unused self-loop). Otherwise Z consists of movers, gates and β's: a mover x on Z is followed by its gate (x, σ_t(x)), that gate by
+its β-face (no e-vertex on Z), that β by its frozen successor xt(x, σ_t(x)) (a mover; an X target would lead to K0). So the movers of Z
+form a cycle of Ξ_σ, and Z is determined by it. Ξ_σ has out-degree ≤ 1, so its cycles are vertex-disjoint; each is a cycle of the
+Ξ-graph and so meets every feedback vertex set; a minimum one has k elements, so there are at most k cycles. ∎
+- This is what «BETA-ACYC on the Ξ-graph minus f» yields: BETA-ACYC's step (3) («a cycle with no e- and no K-vertex is a cycle of the
+  Ξ-graph») now leaves at most k cycles instead of none. It controls Λ (at most k + 1 values per state; at k = 1 two), but not E: MWR
+  has Λ ≡ K1 on every vertex and state (C = 0) and still 2n + 2 classes at one face.
+- DATA (lam203.py; unit: states; counter lfail = states with more than k + 1 values, TOTAL; maxL = max values per state):
+  out2/lam203_k1_s7.out 2,000 k = 1 genomes (k1srch202.mk, seed 7): lfail 0, maxL 2; out2/lam203_k2_s8.out 1,000 k = 2 genomes (seed 8):
+  lfail 0, maxL 3; out2/lam203_rand_s2.out 1,000 rand191 genomes (d 1-6, w 1-3, degree 2-3, seed 2): lfail 0, maxL 3. Control
+  LAM_CTRL=1 (bound k): lfail 3,492 on the k = 1 set (fires).
+### 5.2 DEAD: «at k = 1 (more generally, k), every e-sequence has at most k + 1 ascents» (would have given T_CYC polynomial at k = 1 by R123 ASC-T)
+- The pattern looked solid on data (asc203.py; unit: max ascents of seq_t(v) over states and vertices, per genome):
+  out2/asc203_k1.out 3,000 k = 1 genomes (seed 202): max 1; out2/asc203_k2.out 1,500 k = 2 genomes (seed 203): max 2; out2/asc203_rand.out
+  1,000 rand191 genomes: max 3, histogram by k with max ascents ≤ k + 1 in every row; out2/asc203_corpus.out (corpus; PARTIAL at this
+  commit: the first 38 genomes in file order, through MW26_2; the rest in a later commit): C-frontier 2, CT27 4, DHIB26 5, MW 2, all ≤ k + 1;
+  MWR4_2 2 (check203.out); climbs (aclimb203.py, objective (max ascents, face ascents, T), k = 1 kept): 4 climbs of
+  1,275-17,800 iterations from generated k = 1 genomes (N 4-16) stayed at 1 ascent (out2/aclimb203_gen.out; stopped by me after ST(m) killed the target).
+- Killed by construction: STAIRCASE ST(m) (stair203.py; frozen inst/ST4_k1.json sha1 3fa71a98, inst/ST8_k1.json sha1 9dbf71f4): movers
+  x_i (level i, e-face to y_(i−1), β to the escape), y_j (level j, β-face Ξ-edge up to x_(j+2)), f (Ξ self-loop, odd β of top β-rank).
+  The Ξ-graph's only cycle is f's self-loop: k = 1. Odd's play from x_1 reaches f's odd β-cycle (better for Odd than K1) only through
+  every e-face of x_1, …, x_m: e(x_1) < e(x_2) < … < e(x_m) under [E-LEV], m − 1 ascents (asc203: ST4 3, ST8 7; ST3 2, ST5 4).
+  Exact obstruction: an ascent needs only an upward Ξ-edge (R121 UP-JUMP), and upward Ξ-edges can be acyclic; k counts Ξ-cycles, not
+  upward edges. The play is in one state (T = 0: one option per mover), so ST(m) kills the ascent bound, not a class-height bound.
+- Consequence: at k = 1, R121's HUB-ASC-G gives D^tot only through a bound on ascents that k does not provide; any proof of polynomial
+  face class height at k = 1 must use the run (which classes a face actually visits), not a per-state play shape.

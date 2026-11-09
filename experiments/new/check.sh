@@ -1091,11 +1091,12 @@ if [ "$r200" -eq 0 ] && [ -z "$d200" ] && ! grep -v "^ctrl" box200/check200.out 
 else
   echo "BOX 200 SELF check: FAILED (check200.sh exit $r200)"; echo "$d200" | head -30; echo "$run200" | tail -15; exit 1
 fi
-# BOX 203 FLIP (L-NEW successor 68): GATE-CLASS / GATE-FLIP / QUIET-N counters on IDEAL-CYC (gfc203.py, rnd203.py), frozen output + controls
+# BOX 203 FLIP (L-NEW successor 68): GATE-CLASS / GATE-FLIP / QUIET-N counters on IDEAL-CYC (gfc203.py, rnd203.py); part 2: (k+1)-Lambda
+# (lam203.py) and the DEAD ascent bound (asc203.py on the staircase ST8: 7 ascents at k = 1); frozen output + controls
 r203=0; run203=$(cd box203 && bash check203.sh 2>&1) || r203=$?
 d203=$(diff <(printf '%s\n' "$run203") box203/check203.out 2>&1) || true
-if [ "$r203" -eq 0 ] && [ -z "$d203" ] && ! grep -v "^ctrl" box203/check203.out | grep -Eq "(odd|vfail|glnfail|emon|hfail|hefail|tieflip|lfail|gfail|qflip|qfail|Tfail) [1-9]" && grep -q "^ctrl1 .*glnfail [1-9]" box203/check203.out && grep -q "^ctrl2 .*hefail [1-9]" box203/check203.out && grep -q "^ctrl3 .*lfail [1-9]" box203/check203.out && [ "$(grep -c . box203/check203.out)" -eq 9 ] && (cd box203/inst && sha1sum -c --quiet SHA1SUMS); then
-  echo "BOX 203 FLIP: GATE-CLASS / GATE-FLIP / QUIET-N counters 0, controls fire = frozen: PASS"
+if [ "$r203" -eq 0 ] && [ -z "$d203" ] && ! grep -v "^ctrl" box203/check203.out | grep -Eq "(odd|vfail|glnfail|emon|hfail|hefail|tieflip|lfail|gfail|qflip|qfail|Tfail) [1-9]" && grep -q "^ctrl1 .*glnfail [1-9]" box203/check203.out && grep -q "^ctrl2 .*hefail [1-9]" box203/check203.out && grep -q "^ctrl3 .*lfail [1-9]" box203/check203.out && ! grep -v "^ctrl" box203/check203.out | grep -q "'lfail': [1-9]" && grep -q "^ctrl4 .*'lfail': [1-9]" box203/check203.out && grep -q "^ST8_k1.json k 1 .*maxasc 7" box203/check203.out && [ "$(grep -c . box203/check203.out)" -eq 17 ] && (cd box203/inst && sha1sum -c --quiet SHA1SUMS); then
+  echo "BOX 203 FLIP: GATE-CLASS / GATE-FLIP / QUIET-N / (k+1)-Lambda counters 0, ST8 ascent witness, controls fire = frozen: PASS"
 else
   echo "BOX 203 FLIP check: FAILED (check203.sh exit $r203)"; echo "$d203" | head -30; echo "$run203" | tail -15; exit 1
 fi
