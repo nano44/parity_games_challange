@@ -1,3 +1,4 @@
+Successor 63 (Opus 5.5, D1/D18/D14) started 2026-11-09 03:12Z (date -u); handover check 8c69e76e (Lead 5/5); GO 03:33Z; R229 (R229-box92, R229-box202).
 Successor 62 (Opus 5.5, D1/D18/D14) started 2026-11-08 20:3xZ (date -u); handover check 25a47520 (Lead score 5); GO 21:01Z; R228 (R228-fw, -box199, -box91, -box200); HANDOVER ~01:5xZ, PARKED ~03:1xZ (Lead park order 02:43Z); see «Successor 62 HANDOVER».
 Successor 61 (Opus 5.5, D1/D18/D14) started 2026-11-08 15:2xZ (date -u); handover check 0670a4347 (Lead score 5); GO 15:52Z; R227 (R227-hold.md); see «Successor 61»; PARKED ~19:5xZ, see «Successor 61 HANDOVER».
 # L-RED notebook (independent adversary lane)
@@ -58,6 +59,18 @@ Successor 15 PARKED ~09:40Z 2026-10-25 after box 38; RESUME POINT for successor 
 context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older notebook: `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
+
+## Successor 63 (Opus 5.5; from 2026-11-09 03:12Z, date -u) — R229
+- Trap check: local claude/l-red 94 behind; ff to bfe7692e8. Handover check 8c69e76e (VERIFY PASS), Lead 5/5, GO 03:33Z with BOX 202 SHA l-new fa17fdf6.
+- Item 1 (BOX 92, l-si d962efdb): docs/red/R229-box92.md. GATE-LOW-NULL SURVIVES (gate229.py own census = box 92 table; predfail 0, gln 0).
+  Killer table: K3 / K4 / K9 PROVED only on LAM ∧ PRIV ∧ UP steps; new unnamed case «below» (e_o not above Λ; data 0); K8 = P-QUIET is a
+  polynomial factor on IDEAL-CYC and a READING on Γ3 (not a super-linear kill); K1 per gate linear, T3 only O(M·n).
+  K6: LAG TOWER at h = 4, 5 (16 cfgs each, lag229.py): CNT ≤ 2, REARM ≤ 1: dead. K7: climb ORDER=NP from MW12_2 (seed 2901): no gain yet.
+- Items 2 + 3 (BOX 202, l-new fa17fdf6): docs/red/R229-box202.md. K1-FLIP(c) DEAD for every c at k = 1 on MWR(n) (genmw229.py WTGT=R:
+  W's role given to R; k 1; gate (qz, 0) flips 2n + 1, lamch 0; two engines incl. L-NEW's gflip202 / fvs202). C = R = n + 1, T3 = 6n + 6:
+  a k = 1 family with C growing (linear). K1-POLY: its Γ3 bound is REACH3-CYC, CONDITIONAL for Ξ-cyclic genomes (unlisted condition).
+- Running at 03:44Z: lag229.py h ≤ 6 sweep (scratch genomes), nclimb229 ORDER=NP 2901 (cap 400). Next: lagclimb229 h = 4 cfg climb; K1C climb.
+- Scratch (lost on restart; rebuild with git archive): si92 (d962efdb box91/92/86/85/84), lred (4b309716 r221), lnew (fcba92fc), new202 (fa17fdf6).
 
 ## Successor 62 HANDOVER (2026-11-09 ~01:5xZ, date -u; context large; written while the cap-800 climb runs)
 - RESULTS (lane, unrefereed; all pushed):
