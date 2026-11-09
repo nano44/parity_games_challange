@@ -15368,6 +15368,230 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   M4», «G-N5-TIME stays OPEN» and «not M3, not a step-4 pass, not a TARGET.md claim», in that order (R-U; by script). GAPS G-N5-TIME:
   open.
 
+### R124 [refereed-only] On Γ3(G) of RESULTS R117 (Γ(G) of R104 with 4M + 4 single-successor Even pads of priority ≤ 2, n = N + 7M + 10), for N5 (SPEC S1-S5 with FIX 1-4) and N5′-xi (RESULTS R118's [N5XI], SPEC with box 190's S4a tie rule) from SPEC's default start S3, iterations counted as in SPEC S4, for every genome G, each PROVED (every genome): (Lemma E0) τ never changes and Iτ = ∅ at every state; (Lemma E1) at every state with the core K-config κ0 = (σ(K0), σ(K1), σ(K3)) = (pA, s, K2) the only improving core edge is (K0, K1) and every S4a step keeps κ0, so the K-config leaves κ0 only at a fallback and the run cannot stop before one; (Lemma E2) the first fallback, at iteration F ≥ 1, is an Even fallback with result K-config κ1 = (K1, s, K2); (Lemma E3) from κ1 the next iteration is an S4a step to κ2 = (K1, q, K2); (Lemma E4) from κ2 the next iteration is an S4a step to σ* with K-config κ3 = (K1, q, K1) and σ*(β_g) = pb_g at every gate g, and Iσ* = ∅ whatever σ* is at the movers; (Lemma TERM-XI) both runs terminate; (Theorem ENDGAME-3, Theorem ENDGAME-3-N5) N5′-xi, and N5, from S3 on Γ3(G) have exactly one fallback, at an iteration F ≥ 1, and exactly F + 2 iterations, iterations 1, …, F − 1 being S4a steps with K-config κ0 and S3's τ; (Corollary EXACT-L, PROVED for G ∈ IDEAL-ACYC (R104: the Ξ-graph is acyclic; self-loops count as cycles; «Ξ-graph is ACYCLIC (self-loops count as cycles)»), premise RESULTS R117 (f); it uses SPEC's S1 tie-breaks, through REACH3's [RULE] choice: with another pointwise-optimal S4a choice the identity can fail, F = 1 on 382 of 382 IDEAL-ACYC genomes with L ≥ 1, REFEREE 29's counter, R-P-N5-END §4 (C), claude/referee e4cb208a, docs/referee/scratch/end_logs/tiedep.out, cited, not re-run) N5 (SPEC S1-S5 with its FIX 1-4 tie-breaks) from S3 on Γ3(G) makes exactly L(G) + 3 iterations, L(G) the length of G's IDEAL run, so on {Γ3(G) : G ∈ IDEAL-ACYC} N5's iteration count is polynomial in n iff L(G) is polynomial in N + M (a statement about iteration counts; the cost per iteration at bit cost is a separate gauntlet step-4 item); (Corollary END-T3, PROVED-CONDITIONAL on REACH3-CYC, RESULTS R118 (k), itself PROVED-CONDITIONAL on [REACH-L]: «CONDITIONAL on P-N5-REACH's S3-START, PAD, K3, TAU3, ESC3, W3 for every genome», and of these RESULTS R117 signs S3-START, PAD, K3 and TAU3 for every genome but ESC3 and W3 for acyclic Ξ-graphs only) if REACH3-CYC holds for G, N5′-xi from S3 on Γ3(G) makes exactly T3 + 3 iterations, with T3 as in R118 (k) (P-N5-XICYC §7: «T3 is the first state at which no mover has a strictly better successor in Γ3»), T3 + 1 being the first fallback (premises, all under the standing SPEC premise 1E-N3 of RESULTS R57 / R104 / R117 (fixes entry 1, W-1: «Hypotheses of every row: under the standing SPEC premise 1E-N3 (RESULTS R57 (b)), as in RESULTS R104 / R117.»): RESULTS R104's definitions of the genome, of Γ(G), of IDEAL-ACYC and of the start pair only; RESULTS R117's definition of Γ3 and pad priorities (P-N5-REACH §3), Lemma S3-START and, for E0, [TAU3] (RESULTS R117 / P-N5-REACH §6.4: «In the standard state, Iτ = ∅, so S4b leaves τ unchanged.», signed for every genome per R118: «RESULTS R117's entry signs S3-START, PAD, K3 and TAU3 for every genome»); [1E-N3] = RESULTS R57 (b) as landed in R104 («used in two forms: S1's σ̄, and τ̄ on the dual game, are pointwise optima; and S4a's σ_new»…, a pointwise optimum of the S4a arena before S4c), used for σ̄ and for S4a's σ_new inside SPEC runs (REFEREE 29 rules [OPT] = [1E-N3] for SPEC runs; R118 (b)'s [OPT] is not used); RESULTS R15 (c) («every non-empty switch of improvements goes strictly up in ≺») for TERM-XI; RESULTS R117 (f) for EXACT-L only; RESULTS R118 (k) for END-T3 only; the SPEC text docs/new/N5-ssi-global.md S1-S5 with FIX 1 and FIX 3; not used: ESC3, W3, KEY3, SBAR3, PLAY3, PAD (b)-(c), R118 (b)'s [OPT], any P-N5-QUIET or box 194 lemma, any L-RED lane lemma) (2026-11-08) — this gives the exact END of two runs on one family of games and, for IDEAL-ACYC genomes, an identity between N5's count and L(G); it bounds none of F, T3, L(G) (OPEN), and nothing outside Γ3(G); EXACT-L is false without IDEAL-ACYC's self-loop clause: L-RED 57's SELFL_n3 (N 3, two Ξ self-loops; experiments/new/box195/inst/SELFL_n3.json, sha1 27bc7f72…) has L(G) = 1 (IDEAL run read with B_s the set of β-ids on its eventually periodic X-chain; R104's IDEAL run is defined on IDEAL-ACYC) and N5 makes 3 iterations (F = 1); END-T3 gives no bound on T3: P-N5-QUIET's QUIET / T-QUIET bound IDEAL-CYC's T_CYC on Γ(G), and their transfer to the Γ3 run is NOT proved (the Γ3 run can differ from the IDEAL-CYC run at exact VJ ties, R118's DATA); DATA, clause by clause (unit: runs of N5′-xi (EG195_MODE xi) or N5 (spec) from S3 on Γ3(G) built by box189/gamma3.py, stepped by box190/n5v.py; tool experiments/new/box195/eg195.py, run by check195.sh; set: 8 families (rand d 1-5; L-RED R221 §11's esc, noesc, deep, dense, lvl0, transcribed; late, a stand-in with start = each mover's last option; acyc) × 1,500 × seeds 1951, 1952, 24,000 runs per mode, 48,000 in all (data/sweep195.out), plus the 14 R117 corpus genomes in spec mode (sweep195.out); and check195.out (re-run by check.sh): 8 families × 300, seed 1953, per mode, plus every pinned genome of box189 and box191-box194; all pinned in box195/end.pins): E0: e0fail 0 (unit: states); E1: e1fail 0 (unit: iterations before the first fallback); E2, E3, E4 (a): e2fail, e3fail, e4fail 0 (unit: the iterations F, F + 1, F + 2); E4 (b): stopfail 0, finsbar 0, fintie 0 (unit: final states); ENDGAME-3, ENDGAME-3-N5: nofb 0 and capped 0 (unit: runs), late 0 (unit: iterations after F + 2), every run «one fallback, 3 iterations from it»; EXACT-L: lfail 0 (unit: IDEAL-ACYC genomes with F ≠ L(G) + 1 or total ≠ L(G) + 3) on 4,297 genomes, spec runs only (4,283 random IDEAL-ACYC ones in the spec rows of sweep195.out, 3,000 of them from acyc, and the 14 corpus genomes; L(G) up to 59, RECT_d11_T59_norm, 62 iterations; L(G) by L-RED's ideal.traj at claude/l-red 86a7a7a8, record only (not re-run by check.sh, which leaves LRED unset)); controls fire (check195.out: ctrl1 e2fail, e3fail, e4fail, stopfail, finsbar, fintie 100 each in 100 runs; ctrl2 e0fail 200 (unit: states) and e1fail 200 (unit: iterations before the first fallback), nofb 100 (unit: runs)); independent replays, every fail counter 0, their counters in their own pinned outputs, cited, not re-run: L-RED 57 R222 item 3 (claude/l-red 6f56004c), L-RED 58 R223 item 1 (claude/l-red 143f0b4c), REFEREE 29 R-P-N5-END §4 (A), (B) (claude/referee e4cb208a); no separate DATA for TERM-XI and END-T3; N5′-xi stays a CANDIDATE (D1); TARGET.md §2 (M4) asks for an algorithm polynomial on every parity game and §4 says a bound on a restricted class is not M4, so this is not M4; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim (P-N5-END, docs/new/P-N5-END.md, frozen at l-new 131b4c1c, sha1 5cae845b, with fixes entries 1-2, docs/new/P-N5-END-fixes.md; L-NEW successors 63-64; credit: ENDGAME-3 conjecture, E0-E4 skeleton and family generator L-RED 56, R221 §10-§11), CHECKER PASS (docs/checker/C138.md, checker 5b9f4af8)
+- Object (L-NEW successors 63-65 and 68, D1 / D14 / D18, box 195; frozen, unchanged during review): packet P-N5-END, docs/new/P-N5-END.md,
+  sha1 5cae845b1da1a1c40b52e73da6edae3d6aadbf29, 228 lines, 22,967 bytes (l-new 131b4c1c, 2026-11-08T04:10:38Z, the file's only commit;
+  identical at a60733b8, 2fcee038, 8b67d40e, b7faeebe and the l-new head 25e040ee; pinned in experiments/new/box195/end.pins). Both referees
+  measured it (REFEREE «docs/new/P-N5-END.md sha1 5cae845b1da1a1c40b52e73da6edae3d6aadbf29, 22,967 B»; REFEREE-2 «Packet
+  docs/new/P-N5-END.md at 131b4c1c: sha1 5cae845b1da1a1c40b52e73da6edae3d6aadbf29, 22,967 B, 228 lines (= the brief)»). Freeze: «FREEZE
+  packet P-N5-END: E0-E4, TERM-XI, ENDGAME-3, ENDGAME-3-N5, EXACT-L (IDEAL-ACYC), and END-T3 marked conditional on REACH3-CYC» (l. 2-3).
+  Labels (l. 7): «PROVED (L-NEW 63, unrefereed) / PROVED-CONDITIONAL / READING (not to sign) / DATA». To sign (l. 20-29): §3 Lemma E0; §4
+  Lemma E1; §5 Lemmas E2, E3, E4; §6 Lemma TERM-XI, Theorems ENDGAME-3 and ENDGAME-3-N5 (every genome), Corollary EXACT-L (G ∈ IDEAL-ACYC,
+  self-loops count as cycles; premise R117 (f)) and Corollary END-T3 (PROVED-CONDITIONAL on REACH3-CYC, RESULTS R118 (k), CONDITIONAL
+  there); §7-§9 DATA / READING. The packet's own scope (l. 8): «This packet is NOT a TARGET.md claim, NOT M3 and NOT M4. It does not decide
+  G-N5-TIME.». Credit (l. 5-6): L-RED 57 R222 item 3 attacked it («all SURVIVE»); «Credit: the conjecture ENDGAME-3, the skeleton E0-E4 and
+  the family generator are L-RED 56's (R221 §10-§11).».
+- Fixes: docs/new/P-N5-END-fixes.md, append-only (b7faeebe: 114 lines, 12,917 bytes, sha1 0a0cf11505a1b811ee3383fab3d1228328b6e097; its
+  first 10,024 bytes are the file at 8b67d40e, its first 7,670 bytes the file at 2fcee038 and its first 3,570 bytes the file at a60733b8, by
+  prefix test). Entry 1 (a60733b8, L-NEW successor 64, l. 3-26): W-1 (the standing SPEC premise 1E-N3 on every «To sign» row: «Hypotheses of
+  every row: under the standing SPEC premise 1E-N3 (RESULTS R57 (b)), as in RESULTS R104 / R117.») and T-1 (quotes_end.py reads every source
+  from trunk; «quotes 33 missing 0 (every source from trunk c8f42538f)»); «The packet is unchanged; where this entry and the packet differ,
+  this entry governs.». The «Line L-1» note (l. 28-34). Entry 2 (2fcee038, successor 64, l. 36-73; Lead 06:33Z): EN-1 (EXACT-L's tie-break
+  dependence, l. 43-46), EN-2 (ENDGAME-3-N5 for every pointwise-optimal S4a rule, l. 47-48), EN-3 («… would bound N5's iteration count on
+  them», l. 49-50), EN-4 ((H) on the value, l. 51); «Line L-2» = L-1 + R1-R16 (l. 53-73). Entry 3 (8b67d40e, successor 65, l. 75-92;
+  line-only): S1 L-R1 (REQUIRED, REFEREE-2 34), S2 N-1, S3 N-2 (REFEREE-2 34), S4 EL-1, S5 EL-2 (REFEREE 29); «P-N5-END L-3: take S1-S5,
+  DROP S6»; «Line L-3» = L-2 + S1-S5 by mkl3_195.py («sha1 d6afe92ae0d2c0021743c99d2bd10f16cad27c73, 7,215 B, 105 «(» = 105 «)»»). Entry 4
+  (b7faeebe, successor 68, l. 94-114; «LINE-ONLY»): R-U (C138 E-1) and R-T0 (C138 E-2), C138 §4's strings (l. 107-108); «No statement,
+  label, hypothesis, premise, proof or DATA number changes; the packet stays frozen»; «Line L-4» = L-3 + R-U, then R-T0, by mkl4_195.py
+  («Result: sha1 5f88c2971718522027ae267754814c6ba401b829, 7,230 B, 105 «(» = 105 «)»», l. 111-112).
+- The RESULTS line is L-4, 5f88c2971718522027ae267754814c6ba401b829 (docs/new/P-N5-END-line-L4.txt, l-new b7faeebe, 2026-11-09T04:48:50Z,
+  the file's only commit; 7,230 bytes). The title is L-4 verbatim, with nothing inserted and nothing stripped (its date parenthesis
+  «(2026-11-08)», its scope tail and its source note are the line's own). L-4's parentheses balance (105 «(» / 105 «)»). Line history: L-1
+  (68a69176, a60733b8, W-1 applied, superseded before review), L-2 (e8a8ac51, 2fcee038, L-1 + R1-R16 for REFEREE 29's LN-1..LN-8 and EN-3),
+  L-3 (d6afe92a, 8b67d40e, L-2 + S1-S5, each old string once in L-2, by mkl3_195.py, which asserts the packet's, L-2's and the result's
+  sha1), L-4 (5f88c297, b7faeebe, L-3 + R-U, then R-T0, CHECKER C138's strings for its E-1 and E-2, each old string once in L-3, by
+  mkl4_195.py, which asserts the packet's and L-3's sha1, no «τ0», and CHECKER's expected sha1 and size). REFEREE: L-2 MATCHES (§C,
+  407f4a21: «Fixes entries 1-2 CORRECT. L-2 MATCHES the packet with its fixes entries, and meets LN-1..LN-8.», l. 218-220); L-3 MATCHES (§D,
+  4434597c, l. 225-228: «`cmp` with the lane's L-3: **EQUAL** (scratch/end_logs/l3test.out)»; l. 244-245: «**Line L-3 MATCHES** the packet
+  read with fixes entries 1-3 and still meets LN-1..LN-8 (S1-S5 touch no label, scope, premise or TARGET clause). All statements stay as in
+  §0: SIGN; END-T3 PROVED-CONDITIONAL on REACH3-CYC.»); L-4 MATCHES (§E, 37195499, l. 252-253: «`cmp` with the lane's L-4: **EQUAL**
+  (scratch/end_logs/l4test.out)»; l. 267-268: «Verdict: fixes entry 4 CORRECT. **Line L-4 MATCHES** (L-3 + exactly R-U and R-T0). Statements
+  as signed (§0; END-T3 PROVED-CONDITIONAL on REACH3-CYC).»). REFEREE-2: L-2 NOT YET (9b3cc9b6, l. 33, «one REQUIRED change (L-R1: E1's
+  «changes only at a fallback» is false as written once E3 / E4 run)») for L-R1; L-3 MATCHES (Add. 2, 0e5c7c37, l. 247-252: «**L-3 == L-2 +
+  S1-S5: True.** Nothing else changed.»; l. 262-263: «Verdict: **L-3 MATCHES.** All P-N5-END statement verdicts are unchanged: every row
+  SIGN, END-T3 PROVED-CONDITIONAL on REACH3-CYC (R118 (k), itself PROVED-CONDITIONAL on [REACH-L]). From my side P-N5-END may land with
+  L-3.»); L-4 MATCHES (Add. 3, 63a3cf87, l. 270: «**L-4 == L-3 + R-U + R-T0: True.** Nothing else changed.»; l. 278: «(4) Verdict: **L-4
+  MATCHES** (byte test, and in meaning). Statement verdicts unchanged.»).
+- Claims signed (REFEREE successor 29: report e4cb208a, §C 407f4a21; successor 30: §D 4434597c, §E 37195499; REFEREE-2 successor 34: report
+  9b3cc9b6, Addendum 1 0f82f03b; successor 35: Addendum 2 0e5c7c37, Addendum 3 63a3cf87). REFEREE's table («## 0. Verdicts», l. 5-15 of
+  R-P-N5-END.md) reads E0, E1 with its Corollary, E2, E3, E4 (a), (b), TERM-XI, ENDGAME-3 / ENDGAME-3-N5 «SIGN», EXACT-L «SIGN (scope note
+  EN-1: SPEC's tie-breaks)» and END-T3 «SIGN as PROVED-CONDITIONAL on REACH3-CYC (R118 (k), itself PROVED-CONDITIONAL on [REACH-L])», with
+  «No GAP. No required change to the frozen packet's mathematics.» (l. 16). REFEREE-2's table («## Verdicts (Opus 5.5, D1)», l. 20-33 of
+  R2-P-N5-END.md) reads «SIGN» on E0 (note «under 1E-N3 (W-1, fixes entry 1), as every row»), E1 (note «its Corollary holds before the first
+  fallback only (L-R1)»), E2, E3, E4 (a), (b), TERM-XI, ENDGAME-3, ENDGAME-3-N5 (note «holds for every pointwise-optimal S4a rule (EN-2): my
+  n5w data») and EXACT-L (note «G ∈ IDEAL-ACYC; premise R117 (f); holds under SPEC's S1 tie-breaks (EN-1), FALSE for another
+  pointwise-optimal S4a rule (my n5w data)»), and END-T3 «SIGN as PROVED-CONDITIONAL», with «No statement is REFUSED. No statement has a
+  mathematical gap. The one required change is to the line's wording of E1's consequence.» (l. 35). Both re-signed after the line rounds:
+  REFEREE «All statements stay as in §0: SIGN; END-T3 as PROVED-CONDITIONAL on REACH3-CYC.» (l. 220) and l. 244-245 (above); REFEREE-2 Add.
+  1 «Net for routing: both referees SIGN every statement.» (l. 240) and Add. 2 l. 262-263 (above); at L-4, REFEREE §E l. 267-268 and
+  REFEREE-2 Add. 3 l. 278 (above). The CONDITIONAL statement is END-T3: PROVED-CONDITIONAL on REACH3-CYC, RESULTS R118 (k), itself
+  PROVED-CONDITIONAL on [REACH-L]; the line states the condition as both referees signed it (below, (i)). The joint gap map: EMPTY. REFEREE
+  «No GAP.» (l. 16); REFEREE-2 «No statement has a mathematical gap.» (l. 35). The one REQUIRED item at either referee, L-R1, is line
+  wording (closed by S1, both MATCH); the optional items EN-1..EN-4 (fixes entry 2), N-1, N-2, EL-1, EL-2 (entry 3) were taken; CHECKER
+  C138's E-1 and E-2 (line-only) are taken in L-4 (R-U, R-T0, entry 4), and both referees MATCH it. Nothing is REFUSED.
+- Setting: Γ3(G) of RESULTS R117 (b) for every genome G of R104; N5 = SPEC S1-S5 with FIX 1-4, N5′-xi = R118's [N5XI] (SPEC with box 190's
+  S4a tie rule), both from SPEC's default start S3; iterations as in SPEC S4; σ̄ and S4a's σ_new pointwise optima by [1E-N3] (R57 (b) as
+  landed in R104), which both referees rule is the premise here, not R118 (b)'s [OPT] (REFEREE §2.2 «[1E-N3] is the right premise here
+  (§2.2).»; REFEREE-2 «[OPT] = [1E-N3] for SPEC runs: right.»). Statements as signed (packet with fixes entries 1-4; entries 3 and 4 are
+  line-only):
+  (a) Lemma E0 (§3 l. 99-103) [every genome, under 1E-N3]: «Every state of the run has τ = τ0, and Iτ = ∅ there.». REFEREE SIGN (l. 8),
+    REFEREE-2 SIGN (l. 23).
+  (b) Lemma E1 (§4 l. 105-118) [every genome, under 1E-N3]: «In every state with K-config κ0 and τ0: (a) Iσ ∩ (edges out of K0, K1, K3) =
+    {(K0, K1)}; (b) every S4a σ_new (N5 or N5′-xi) has K-config κ0.»; with its Corollary read as REFEREE-2's L-R1 (the line: «the K-config
+    leaves κ0 only at a fallback and the run cannot stop before one»). REFEREE SIGN (l. 9), REFEREE-2 SIGN (l. 24).
+  (c) Lemma E2 (§5 l. 121-124): «If iteration F is the first fallback, its input state has κ0 and τ0, it is an Even fallback, and its result
+    has K-config κ1 and τ0.». REFEREE SIGN (l. 10), REFEREE-2 SIGN (l. 25).
+  (d) Lemma E3 (§5 l. 126-137): «From every state with K-config κ1 and τ0 (any σ at movers and β's), the next iteration is an S4a iteration
+    (not a fallback) whose result has K-config κ2.». REFEREE SIGN (l. 10), REFEREE-2 SIGN (l. 26).
+  (e) Lemma E4 (§5 l. 139-168): from every state with K-config κ2 and τ0, «(a) the next iteration is an S4a iteration whose result σ* has
+    K-config κ3 and σ*(β_g) = pb_g at every β_g;» and «(b) at σ*, Iσ* = ∅ (whatever σ* is at the movers), so with E0 the run stops (S5).».
+    REFEREE SIGN (l. 10), REFEREE-2 SIGN (l. 27).
+  (f) Lemma TERM-XI (§6 l. 171-175): «The N5′-xi run and the N5 run from S3 on Γ3(G) terminate.». REFEREE SIGN (l. 11), REFEREE-2 SIGN (l.
+    28).
+  (g) Theorem ENDGAME-3 (§6 l. 177-181) [every genome]: «For every genome G, N5′-xi from S3 on Γ3(G) has exactly one fallback, at an
+    iteration F ≥ 1, and makes exactly F + 2 iterations; iterations 1, …, F − 1 are S4a iterations with K-config κ0 and τ0.»; Theorem
+    ENDGAME-3-N5 (l. 182): «The same for N5 (SPEC S4a).». REFEREE SIGN (l. 12), REFEREE-2 SIGN (l. 29-30). The line says «S3's τ» for the
+    packet's τ0 (R-T0, C138 E-2; packet §2 (S): «τ0 := pe_g at every gate g and K2 → K2», l. 90-91), as both referees read it (REFEREE §E l.
+    256-260; REFEREE-2 Add. 3 l. 272-274).
+  (h) Corollary EXACT-L (§6 l. 184-192, with EN-1 of fixes entry 2) [G ∈ IDEAL-ACYC; premise R117 (f)]: «For every genome G ∈ IDEAL-ACYC
+    (R104: its Ξ-graph is acyclic, self-loops count as cycles), N5 from S3 on Γ3(G) makes exactly L(G) + 3 iterations.»; «EXACT-L uses
+    SPEC's S1 tie-breaks (through REACH3's [RULE] choice); with another pointwise-optimal S4a choice the identity can fail». REFEREE SIGN
+    (l. 13), REFEREE-2 SIGN (l. 31).
+  (i) Corollary END-T3 (§6 l. 194-195) [PROVED-CONDITIONAL on REACH3-CYC, R118 (k), itself PROVED-CONDITIONAL on [REACH-L]]: «For every
+    genome, if [R3C] holds then N5′-xi from S3 on Γ3(G) makes exactly T3 + 3 iterations.». REFEREE SIGN as PROVED-CONDITIONAL (l. 14,
+    «CORRECT as a conditional.», l. 84), REFEREE-2 SIGN as PROVED-CONDITIONAL (l. 32). The line states the condition in END-T3's label,
+    «(Corollary END-T3, PROVED-CONDITIONAL on REACH3-CYC, RESULTS R118 (k), itself PROVED-CONDITIONAL on [REACH-L]:» … «if REACH3-CYC holds
+    for G, N5′-xi from S3 on Γ3(G) makes exactly T3 + 3 iterations», as REFEREE's LN-1 asked («END-T3 PROVED-CONDITIONAL on REACH3-CYC
+    (RESULTS R118 (k), itself PROVED-CONDITIONAL on [REACH-L])», l. 140-141) and as REFEREE §C found it («The sentence on which R117 rows
+    are signed for every genome and which for acyclic Ξ-graphs only is R118 (k)'s own text», l. 193-194).
+- The RESULTS line (L-4, the title): «On Γ3(G) of RESULTS R117 (Γ(G) of R104 with 4M + 4 single-successor Even pads of priority ≤ 2, n = N +
+  7M + 10),» … «for every genome G, each PROVED (every genome):» … «(premises, all under the standing SPEC premise 1E-N3 of RESULTS R57 /
+  R104 / R117» … «(2026-11-08) — this gives the exact END of two runs on one family of games» … «DATA, clause by clause» … «(P-N5-END,
+  docs/new/P-N5-END.md, frozen at l-new 131b4c1c, sha1 5cae845b, with fixes entries 1-2». Its clauses: the setting (Γ3, N5, N5′-xi, S3, SPEC
+  S4); E0 = (a); E1 = (b) in L-R1's form; E2 = (c); E3 = (d); E4 = (e); TERM-XI = (f); ENDGAME-3 and ENDGAME-3-N5 = (g), its S4a iterations
+  «with K-config κ0 and S3's τ» (R-T0); EXACT-L = (h) with EN-1 and REFEREE 29's counter in its label, and the Consequence as an
+  iteration-count statement (EN-3); END-T3 = (i) with its condition in its label and T3 quoted; the premises parenthesis (1E-N3 on every
+  row, W-1; R104, R117, [TAU3], [1E-N3], R15 (c), R117 (f), R118 (k), SPEC; what is not used); the scope tail (the exact END; no bound on F,
+  T3, L(G); SELFL_n3 for the self-loop clause; no transfer of P-N5-QUIET to Γ3); DATA clause by clause, inline (each count against eg195.py,
+  sweep195.out and check195.out); the TARGET sentence and the status words in R123's landed form (R-U: «… is not M4, so this is not M4;
+  G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim»); the source note.
+- Premise: as G-4 of the fill record, all landed or SPEC text: RESULTS R104's definitions of the genome, of Γ(G), of IDEAL-ACYC (l. 9910)
+  and of the start pair, no R104 theorem; RESULTS R117 (b) Γ3(G) and its pads [every genome] (l. 13425-13430), (c) Lemma S3-START [every
+  genome] (l. 13431-13433), (e) TAU3 [every genome] (l. 13438), (f) Theorem REACH3 [IDEAL-ACYC] (l. 13445-13452; EXACT-L only); RESULTS R118
+  (k) Theorem REACH3-CYC [every genome; PROVED-CONDITIONAL on [REACH-L]] (l. 13704-13712; END-T3 only), with its title's condition sentence
+  (l. 13607); [1E-N3] = RESULTS R57 (b) as landed in R104 (l. 9864) and R117 (l. 13362); RESULTS R15 (c) (l. 636-638; TERM-XI); SPEC S1-S5
+  with FIX 1 and FIX 3 (docs/new/N5-ssi-global.md). Not used (packet l. 80-81): «ESC3, W3, KEY3, SBAR3, PLAY3, PAD (b)-(c) (pads are handled
+  directly in §2), R118 (b)'s [OPT], any box 194 / P-N5-QUIET lemma, any L-RED lemma». Both referees checked every premise quote by script
+  against trunk (REFEREE §2.1: «all 33 quotes found, same status on both»; REFEREE-2 «53 quotes, 44 in trunk sources, 9 self-quotes, 0
+  missing»).
+- L41 and L43. The packet's proofs are L-NEW successor 63's («This packet carries every proof in full.», l. 4); E0-E4's skeleton and the
+  ENDGAME-3 conjecture are L-RED 56's, credited in the line («credit: ENDGAME-3 conjecture, E0-E4 skeleton and family generator L-RED 56,
+  R221 §10-§11»); L-RED is an adversary lane, not a referee. No fixes entry carries referee-written proof text: entry 2's EN-1..EN-4 are
+  REFEREE's scope, reading and wording items (EN-4 restates (H) on the value, «Same meaning, stated on the value.»), entry 3's S1-S5 and
+  entry 4's R-U and R-T0 are line strings. Each referee re-derived every step (REFEREE «## 3. Proofs, each step re-derived»; REFEREE-2 «##
+  Re-derivation (every step redone by hand; values (c, P, ℓ) in the SPEC order)»). L-4's scope tail names no referee-originated step
+  («referee» 0 times in L-4 outside «REFEREE 29»); L41 (DECISIONS l. 355-360) does not apply: CHECKER C138 «**G-7 / L41: not triggered.** No
+  proof step is referee-originated» (l. 47), and REFEREE §E on entry 4: «not L41's case» (l. 266). L43: every statement is exact (E0-E4,
+  ENDGAME-3: one fallback, F + 2 iterations; EXACT-L: L(G) + 3) or a conditional identity (END-T3: T3 + 3); no statement is killed.
+- Fixes (docs/new/P-N5-END-fixes.md, append-only; entry 1 by L-NEW successor 64 at a60733b8, l. 3-26, under «Lead 05:56Z: L-RED 58 R223
+  items W-1 and T-1» (l. 3); the «Line L-1» note, l. 28-34; entry 2 by successor 64 at 2fcee038, l. 36-73, under «Lead 06:33Z» (l. 36);
+  entry 3 by successor 65 at 8b67d40e, l. 75-92, line-only; entry 4 by successor 68 at b7faeebe, l. 94-114, line-only):
+  - Entry 1 W-1 (R223 §1): the standing SPEC premise 1E-N3 on every row of «To sign» (l. 10-16); «No statement and no proof changes.» (l.
+    16).
+  - Entry 1 T-1: quotes_end.py reads every source by `git show TRUNK:path`, asserts the packet's sha1; re-run «quotes 33 missing 0» (l.
+    18-26).
+  - Entry 2 EN-1: the tie-break sentence after EXACT-L, with REFEREE 29's «F = 1 on 382 of 382» (l. 43-46); «ENDGAME-3-N5 does not depend on
+    the tie-break (EN-2)» (l. 46).
+  - Entry 2 EN-2: ENDGAME-3-N5 for every rule whose S4a output is a pointwise optimum of H (l. 47-48). EN-3: «bound N5» → «bound N5's
+    iteration count» (l. 49-50). EN-4: (H) on the value (l. 51).
+  - Entry 2 «Line L-2»: L-1 + R1-R16 by mkl2_195.py, the map LN-1..LN-8 → R1-R16 (l. 53-73).
+  - Entry 3 S1-S5 (l. 81-87): S1 L-R1 (REQUIRED, REFEREE-2 34), S2 N-1, S3 N-2, S4 EL-1, S5 EL-2; «Line L-3» (l. 88-92). S6 (naming entry 3
+    in the source note) dropped by the Lead (10:18Z).
+  - Entry 4 (C138 E-1, E-2; l. 94-114, «L-NEW successor 68; LINE-ONLY»): R-U, the status words in R123's landed form (C138 E-1); R-T0, «τ0»
+    → «S3's τ» in ENDGAME-3's clause (C138 E-2); «No statement, label, hypothesis, premise, proof or DATA number changes; the packet stays
+    frozen» (l. 97-98); «Line L-4» (l. 109-114), with end.pins re-pinned (45 rows).
+  - No entry changes a statement or a proof of the packet; entry 2's EN-4 restates a proof fact in the same meaning, and entry 3's S1
+    narrows the line's wording of E1's consequence to the reading the proofs use, and entry 4's R-T0 names the packet's τ0 in the line's own
+    terms (S3's τ).
+- Not signed: packet §7 (DATA), §8 (machine checks), §9 (TARGET diff and limits), the READING after END-T3 (l. 196); the L-RED replays
+  (cited); REFEREE-2's gate-order and n5w DATA (referee data).
+- Referee strengthening (NOT part of this entry; referee checks):
+  (i) REFEREE: own engine (scratch/end_replay.py on its xicyc_vj.VJ; its own Γ3 builder and FIX-1 start), modes xi and n5w, 3,060 runs per
+    mode, every counter 0, controls fire (§4 (A), l. 89-94); EXACT-L and ENDGAME-3-N5 under SPEC's tie-breaks with L-COMP's n5b.py on its Γ3
+    and t3r_sim for L(G): the 14 corpus genomes, 1,500 own runs (341 IDEAL-ACYC, lfail 0), SELFL_n3 (§4 (B), l. 95-100); EN-1's «382 with L
+    ≥ 1: EXACT-L fails on all 382» (§4 (C), l. 101-103); check195.sh re-run byte-identical (§4 (D), l. 107).
+  (ii) REFEREE-2: own r2end.py (own Γ3 builder, SPEC S1 from SPEC's text, N5, N5′-xi, n5w, IDEAL by P-N5-REALIZE §2; l. 112-115) on 7,614
+    genomes per mode, 3,751 IDEAL-ACYC: «e0fail, e1fail, e2fail, e3fail, e4fail, finsbar, fintie, nofb, multifb, late, totfail, capped,
+    oddfb and Hfail are 0 in every mode» (l. 122); EXACT-L lfail 0 (l. 127); n5w F = 1 on all 7,614 runs and EXACT-L failing on exactly the
+    2,658 IDEAL-ACYC genomes with L ≥ 1 (l. 133-135); 1E-N3 spot check sbar_opt_fail 0 (l. 138-139); controls fire (l. 140-143); r2q.py
+    quotes (l. 206).
+- Honest limits: (i) Every statement is about two runs, N5 and N5′-xi from S3, on the games Γ3(G); nothing is claimed on other games, other
+  starts or general parity games, and nothing bounds a running time or a bit cost (EXACT-L's Consequence is about iteration counts; the cost
+  per iteration is a separate gauntlet step-4 item). (ii) Nothing bounds F, T3 or L(G): ENDGAME-3 says only that the run ends two iterations
+  after its single fallback; L(G) stays OPEN. (iii) EXACT-L uses SPEC's S1 tie-breaks (through REACH3's [RULE] choice) and fails for another
+  pointwise-optimal S4a rule (REFEREE 29: 382 of 382; REFEREE-2: 2,658 of 2,658); it is false without IDEAL-ACYC's self-loop clause
+  (SELFL_n3: L(G) 1 under the set reading of N-1, N5 3 iterations). (iv) END-T3 is PROVED-CONDITIONAL on REACH3-CYC (R118 (k)), whose
+  [REACH-L] premises R117 signs for every genome only in part (S3-START, PAD, K3, TAU3; ESC3 and W3 for acyclic Ξ-graphs only); it gives no
+  bound on T3, and P-N5-QUIET's T_CYC bounds (RESULTS R123) are on Γ(G), not on the Γ3 run. (v) DATA are runs of the lane's implementation
+  (box189 gamma3, box190 n5v, box195 eg195) and the referees' own engines on the named sets; lfail is record only (LRED unset in check.sh),
+  and the clause «one fallback, 3 iterations from it» rests on the tally. (vi) Names: «TERM-XI», «ENDGAME-3», «ENDGAME-3-N5», «EXACT-L»,
+  «END-T3» and the lemma labels E0-E4 are new to RESULTS (G-6). (vii) The source note names the packet, fixes entries 1-2 and L-NEW
+  successors 63-64; entries 3 (successor 65) and 4 (successor 68) are line-only. (viii) Literature: none beyond R15's VJ00 §4.4; no novelty
+  is claimed.
+- Data (DATA, not proof): experiments/new/box195/ at l-new 8b67d40e (its tools, outputs and data unchanged to 25e040ee; b7faeebe adds
+  mkl4_195.py and re-pins end.pins, 45 rows), eg195.py run by check195.sh (8 families × 300, seed 1953, per mode, plus every pinned genome
+  of box189 and box191-box194; two controls), its frozen output check195.out (138 lines); the record sweep data/sweep195.out (8 families ×
+  1,500 × seeds 1951, 1952 per mode, 24,000 runs per mode, plus the 14 corpus genomes in spec mode) and data/selfl195.out; called from the
+  check.sh blocks «BOX 195 END» and «P-N5-END» (experiments/new/check.sh l. 1020-1035 at 8b67d40e, l. 1020-1038 at 25e040ee, where
+  «P-N5-END» also asserts L-4's sha1 and size), run by scripts/verify.sh. Re-run by the drafter from a full git archive of 25e040ee: the two
+  blocks 2026-11-09T06:07:47Z-2026-11-09T06:11:12Z, rc 0, «BOX 195 END: E0-E4 / ENDGAME-3 (xi and spec) 0 failures, controls fire = frozen:
+  PASS» and «P-N5-END: packet and 45 pinned files match end.pins: PASS»; with one byte appended to L-4 the «P-N5-END» block prints «P-N5-END
+  check: FAILED», rc 1 (negative control). The same blocks at 8b67d40e: rc 0 at 2026-11-09T02:03:20Z-2026-11-09T02:06:53Z (drafter, 43
+  pinned files) and by CHECKER C138 (§5 l. 75-77: «03:35:51Z-03:38:55Z, rc 0»). REFEREE §E checked the 45 pins and re-ran mkl4_195.py from
+  git archive b7faeebe: «end.pins 45 rows, `sha1sum -c` all OK» (l. 254-255). Frozen totals (by script): sweep 24,000 xi + 24,000 spec runs,
+  every fail counter 0, every tally «one fallback, 3 iterations from it»; EXACT-L lfail 0 on 4,297 genomes (4,283 random IDEAL-ACYC in the
+  spec rows, 3,000 of them from acyc, + 14 corpus), RECT_d11_T59_norm 62 iterations; ctrl1 e2fail, e3fail, e4fail, stopfail, finsbar, fintie
+  100 of 100; ctrl2 e0fail 200, e1fail 200, nofb 100. Both referees re-ran check195.sh (REFEREE at 131b4c1c, «output byte-identical to
+  check195.out (138 lines, 2 min 13 s)»; REFEREE-2 at 2fcee038, «check195.sh exit 0, output byte-equal to check195.out») and their own
+  engines (above).
+- Signatures: REFEREE docs/referee/R-P-N5-END.md: successor 29's report e4cb208a (e4cb208abe3c2bc5519fe87266cc71dec4458dab,
+  2026-11-08T06:09:15Z) (heading «REFEREE successor 29 (Opus 5.5, D15). date -u at writing 2026-11-08T05:58Z.»), «Independent:
+  docs/referee-2/ not read for this packet before this verdict was written.» (l. 2-3), verdict table l. 5-19; successor 29's §C 407f4a21
+  (407f4a2158f2570dc98a2c865ae30b9cef88575c, 2026-11-08T08:09:56Z) (l. 169-220; heading «REFEREE successor 29, Opus 5.5, D15; date -u at
+  writing 2026-11-08T07:53Z»), L-2 verdict l. 218-220; successor 30's §D 4434597c (4434597c947e8bca85792c10d49a1069b9a795ac,
+  2026-11-08T10:54:53Z) (l. 222-246; heading «REFEREE successor 30, Opus 5.5, D15; date -u at writing 2026-11-08T10:54Z»), «**Line L-3
+  MATCHES**» (l. 244); successor 30's §E 37195499 (3719549937af51513003a071861220929e23f196, 2026-11-09T05:27:35Z) (l. 248-268; heading
+  «REFEREE successor 30, Opus 5.5, D15; date -u at writing 2026-11-09T05:27Z»), «**Line L-4 MATCHES**» (l. 267). REFEREE-2
+  docs/referee-2/R2-P-N5-END.md: successor 34's report 9b3cc9b6 (9b3cc9b6fd2aae5946cec5e232fd9cb241987a47, 2026-11-08T09:10:47Z)
+  («Independent: docs/referee/R-P-N5-END.md (REFEREE 29) NOT read before this report is committed.», l. 2-3), verdict table l. 20-35;
+  Addendum 1 0f82f03b (0f82f03b0e66a4e175a710d19aad37e813fff430, 2026-11-08T09:30:50Z) (l. 214-241), «read after 9b3cc9b6 was on origin» (l.
+  214); successor 35's Addendum 2 0e5c7c37 (0e5c7c37b567320d97621914b462c17d94cbfb53, 2026-11-08T11:05:52Z) (l. 243-263; heading «REFEREE-2
+  successor 35, Opus 5.5, D1; 2026-11-08 10:54Z by date -u»), «**L-3 MATCHES.**» (l. 262); successor 35's Addendum 3 63a3cf87
+  (63a3cf87c0ea0faa106fddef23d421bbe5c8ec90, 2026-11-09T05:27:17Z) (l. 265-278; heading «REFEREE-2 successor 35, Opus 5.5, D1; 2026-11-09
+  05:27Z by date -u; independent of REFEREE»), «**L-4 MATCHES**» (l. 278). Lane (claude/l-new): L-NEW successor 63, 131b4c1c (packet
+  FROZEN); successor 64, a60733b8 (fixes entry 1, L-1) and 2fcee038 (fixes entry 2, L-2); successor 65, 8b67d40e (fixes entry 3, L-3);
+  successor 68, b7faeebe (fixes entry 4, L-4).
+- INDEPENDENCE: the packet's proofs are L-NEW's (L41 and L43, above); each referee re-derived every step and replayed the DATA on its own
+  code (REFEREE: end_replay.py on its own VJ engine and builder, «no lane code», l. 89; REFEREE-2: «Own code throughout (no lane, L-RED or
+  REFEREE module)», l. 113). Each referee wrote its first report without reading the other's (REFEREE l. 2-3; REFEREE-2 l. 2-3); REFEREE-2
+  compared afterwards (Add. 1); REFEREE 29's §C and 30's §D read REFEREE-2's strings only as quoted or for S1-S3
+  («docs/referee-2/R2-P-N5-END.md was read (after successor 29's verdict, as its §C allowed) only for the S1-S3 strings.», l. 246).
+  Disclosure at REFEREE-2: «the fixes file (entry 2) and line L-2 quote REFEREE 29's verdicts in outline» (l. 4-5). L-RED R222 / R223 were
+  context only at both (REFEREE l. 3; REFEREE-2 l. 3-4). The L-3 wording is the referees' strings (L-R1, N-1, N-2 from REFEREE-2; EL-1, EL-2
+  from REFEREE), applied by the lane by script under the Lead's 10:18Z routing; each referee byte-tested L-3 with its own script (REFEREE §D
+  end_l3.py; REFEREE-2 Add. 2 bt_l3.py) and read S1-S5 in meaning. L-4's two new strings are CHECKER C138's (§4), applied by the lane by
+  script (mkl4_195.py); each referee byte-tested L-4 from C138's text, not from the lane's script (REFEREE §E end_l4.py, «with the strings
+  typed from C138 §4 (claude/checker 46905772; wrapped lines joined with one space), not from the lane's script», l. 251-252; REFEREE-2 Add.
+  3 bt_l4.py, «uses CHECKER 23's strings, verbatim from C138 §4 at claude/checker 46905772», l. 268-269), and read R-U and R-T0 in meaning;
+  REFEREE §E: «docs/referee-2/ not read for this section.» (l. 268); REFEREE-2 Add. 3 is headed «independent of REFEREE» (l. 265).
+- TARGET.md diff: TARGET.md §2 (M4) asks for one algorithm, polynomial on EVERY parity game, that outputs (W_E, W_O); every statement here
+  is an exact count of iterations of two runs on the family {Γ3(G)}, or an identity between N5's count and L(G) on IDEAL-ACYC genomes, or a
+  conditional identity; none bounds a count on general games (TARGET.md §4: «Polynomial only on a restricted class»; packet §9 l. 225-228;
+  REFEREE §8 «it is a statement about iteration counts (EN-3)»; REFEREE-2 «Not M3, not M4, not a step-4 pass; G-N5-TIME stays OPEN.
+  Right.»). It is not an algorithm claim on every game, so TARGET.md §5's gauntlet does not apply, and it is not a step-4 pass. L-4 carries
+  «N5′-xi stays a CANDIDATE (D1)» and «is not M4, so this is not M4; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md
+  claim», each once (by script; R123's landed form, R-U, C138 E-1). GAPS G-N5-TIME: open.
+
 **Erratum E-1** (not a result; 2026-11-01 05:28Z by date -u; Lead; corpus counts in RESULTS R97-R100):
 - What is wrong: the DATA-of-record sentences that say «1,132 games» for the L-SI box 50b / box 53 corpus (sbcg.lst 719 lines + alt_all.lst
   413 lines) count RUNS, not games. Measured by CHECKER (C111 N-7, claude/checker d53e1d4f) at trunk 68d50c8f: experiments/si/anc58/
