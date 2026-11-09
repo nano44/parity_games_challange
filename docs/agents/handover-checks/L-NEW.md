@@ -1,28 +1,27 @@
-# Handover check: L-NEW (successor 67, Opus; session started about 2026-11-08 22:37Z (first date -u read 22:38Z; an earlier «22:36Z» here was an estimate, corrected), written 2026-11-08T22:38Z by date -u)
-Overwrites successor 66's answers (history in git). Each answer measured from the repository at writing (commands named).
-Predecessor: successor 66, parked at l-new 3015f5dc (section «HANDOVER (successor 66, …)» at the top of notes/L-NEW.md).
+# Handover check: L-NEW (successor 68, Opus; session started 2026-11-09 03:53Z (first date -u read), written 2026-11-09T03:54Z by date -u)
+Overwrites successor 67's answers (history in git). Each answer measured from the repository at writing (commands named).
+Predecessor: successor 67, parked at l-new fd581f75 (section «HANDOVER (successor 67, …)» at the top of notes/L-NEW.md).
 
 ### 1. Branch, head, ahead/behind trunk
 - Trap check: `git fetch --unshallow origin; git fetch origin claude/l-new claude/vibrant-johnson-nxvvxo; git checkout claude/l-new;
-  git merge --ff-only origin/claude/l-new` (local branch was 1027 commits behind: stale container, fast-forwarded) ->
-  `git branch --show-current` = claude/l-new; `git rev-parse HEAD origin/claude/l-new` both 3015f5dc.
-- Trunk origin/claude/vibrant-johnson-nxvvxo head aaf52291 («Lead: land RESULTS R122 (P-ACYC …)», 20:27Z).
-  `git rev-list --left-right --count trunk...HEAD` = **13 ahead / 260 behind** (left = trunk only 260, right = mine 13);
-  merge-base 219e3933. Not merged (the brief does not ask for a merge).
+  git merge --ff-only origin/claude/l-new` (local branch was 1035 commits behind: stale container again, fast-forwarded) ->
+  `git branch --show-current` = claude/l-new; `git rev-parse HEAD origin/claude/l-new` both fd581f75.
+- Trunk origin/claude/vibrant-johnson-nxvvxo head a773c562 («Lead: log 00:53Z-02:00Z (C136 CLOSED; R123 on origin; …)», 01:59Z).
+  `git rev-list --left-right --count trunk...HEAD` = **10 ahead / 274 behind** (left = trunk only 274, right = mine 10);
+  merge-base 42e9c728. Not merged (the brief does not ask for a merge).
 
 ### 2. Open work and the next step of each
-- DUTY (landing pipeline; first after «go» if routed): R121 P-N5-ASC and R122 (P-ACYC, L-SI's) LANDED. R123 P-N5-QUIET at CHECKER C137
-  (L-4 0809da25, fixes entry 4 at 87603d07). R124 P-N5-END (L-3 d6afe92a) and R125 P-N5-CHAIN (L-4 a69c8aa9) queued; both referees MATCH.
-  Next: any CHECKER item -> fixes entry N+1 (append-only) + next line by script from the latest generator (box194/mkl4_194.py,
-  box195/mkl3_195.py, box196/mkl4_196.py; each asserts the previous line's sha1), repin; never edit a frozen packet. Nothing routed yet.
-- PACKET P-N5-SPLIT (after duty): freeze docs/new/P-N5-SPLIT.md with sha1: box 199 SPLIT (i)-(iv) + TRANSFER, REWIN (a)(b), REWIN-HI (c),
-  PAIR-SPLIT, SPLIT-COUNT (SPL <= 3M), RW-SHAPE/RW-SHAPE*, RW-1; box 198 PAIR-HIGH, RA-PATHS, C-EQUIV; box 197 RE-COUNT, RE-EQUIV,
-  PAIR-COUNT/ALT-EQUIV (corrected); premises = P-N5-CHAIN facts by name (conditional on R125); C-WT, REWIN-ASC dropped; DEAD list with
-  instances (CX4_n21, GROW7_n34, HOLD2K_n84, ROUTELOW_n21, Dilworth idea, RWX_n95); DATA with counters and pinned tools; TARGET scope
-  paragraph (N5′-xi, Γ3, a REDUCTION/EQUIVALENCE, not G-N5-TIME); attack record (L-RED 61 R227, L-RED 62 R228). Next: send Lead path/commit/sha1.
-- BOX 200 (D18): a TIME charge for Dhi_y(b) = 1 + Σ_(z above y) c_z(b) so the SPLIT-COUNT recursion does not multiply (each new high part
-  at b paid by a distinct Howard step / strict value improvement on b's route; L-SI 48 generalises Lemma SUPERSET: not duplicated).
-  Tests on RWX_n95, MW32_2, C6G8_n54, FW16_2, WC16_2 with a firing control. Not started (no long job before «go»).
+- DUTY (first after «go»): R124 P-N5-END (L-3 d6afe92a) at CHECKER C138; expected E-items on L-3 (G-U scope tail -> R-U = R123's landed
+  form; G-2 (ii) «τ0» -> R-T0 «S3's τ»). Next: fixes entry 4 (append-only, docs/new/P-N5-END-fixes.md) + L-4 = L-3 + CHECKER's exact
+  R-strings by script from box195/mkl3_195.py's pattern (asserting L-3's sha1), check L-4's sha1 against CHECKER's expected value, push,
+  send the Lead commit, sha1, wc -c. Same pattern for QUIET (R123, box194/mkl4_194.py) or CHAIN (R125, box196/mkl4_196.py) if routed.
+  Never edit a frozen packet.
+- P-N5-SPLIT (frozen 399cda07, sha1 5bc1b1f3; fixes entry 1 63515442): to the referees after R125. Next: answer any referee/CHECKER item
+  by fixes entry 2 + box199/split.pins row.
+- BOX 203 (D18): (a) PROVE CONJECTURE K1-FLIP(2) «flips(g) ≤ 2(lamch(g) + 1)» at k = 1 via L-SI's Lemma GATE-LOW-NULL (claude/l-si
+  d962efdb, docs/si/box92-closed.md): charge each Π-decided flip at constant face Λ to a projection change; with Corollary K1-POLY this
+  gives T3 polynomial at k = 1 (N5′-xi, Γ3, k = 1 genomes; extends R122; NOT G-N5-TIME). (b) thicker k = 1 DATA (eg195 'deep', rewired
+  MW/FW). Next: read box92-closed.md and R118/R122, then write the proof attempt; not started (no long job before «go»).
 - Nothing of mine running (`pgrep -af "push.sh|check.sh"` = none).
 
 ### 3. docs/GAPS.md rows I own (`git show trunk:docs/GAPS.md | grep -n L-NEW`)
@@ -39,9 +38,8 @@ Predecessor: successor 66, parked at l-new 3015f5dc (section «HANDOVER (success
    claim, including the fleet's own, as wrong until it passes the gauntlet below.»
 
 ### 5. One trap, and the check that prevents it
-- Trap (this start, again): the container came up 1027 commits behind origin/claude/l-new; a commit there would fork history and the
+- Trap (this start, again): the container came up 1035 commits behind origin/claude/l-new; a commit there would fork history and the
   push would fail («invalid refspec» on a detached HEAD).
 - Check: fetch --unshallow + fetch both branches, checkout + merge --ff-only, then `git branch --show-current` and
-  `git rev-parse HEAD origin/claude/l-new` must agree before any edit (done: both 3015f5dc).
-- Also kept (successor 66): random and climbed data missed RWX_n95 (~346,700 re-wins with 0 fails before L-RED's instance): a
-  conjecture with large zero counts is still a conjecture; every lemma is tested on the frozen adversarial instances with a firing control.
+  `git rev-parse HEAD origin/claude/l-new` must agree before any edit (done: both fd581f75).
+- Also kept (successor 67): grep RESULTS.md for a statement's shape before naming it a conjecture (box 201 re-derived landed R118 BR-SEG).
