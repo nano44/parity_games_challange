@@ -1,0 +1,13 @@
+rand seed 2032 x300 lfail 0 gfail 0 qflip 0 qnotp 0 qfail 0 Tfail 0 Qfail 0 c1fail 0 lamfail 0 gtie 0 ctrlE 103 ctrlK 202 runs 300 kmax 6 T 7 flips 447 maxflip 4
+deep seed 2032 x300 lfail 0 gfail 0 qflip 0 qnotp 0 qfail 0 Tfail 0 Qfail 0 c1fail 0 lamfail 0 gtie 0 ctrlE 249 ctrlK 76 runs 300 kmax 7 T 9 flips 1290 maxflip 4
+wide seed 2032 x300 lfail 0 gfail 0 qflip 0 qnotp 0 qfail 0 Tfail 0 Qfail 0 c1fail 0 lamfail 0 gtie 0 ctrlE 110 ctrlK 202 runs 300 kmax 5 T 6 flips 488 maxflip 4
+acyc seed 2032 x300 lfail 0 gfail 0 qflip 0 qnotp 0 qfail 0 Tfail 0 Qfail 0 c1fail 0 lamfail 0 gtie 0 ctrlE 0 ctrlK 607 runs 300 kmax 0 T 4 flips 0 maxflip 0
+selfl seed 2032 x300 lfail 0 gfail 0 qflip 0 qnotp 0 qfail 0 Tfail 0 Qfail 0 c1fail 0 lamfail 0 gtie 0 ctrlE 131 ctrlK 142 runs 300 kmax 6 T 7 flips 680 maxflip 4
+MWR4_2.json lfail 0 gfail 0 qflip 0 qnotp 0 qfail 0 Tfail 0 Qfail 0 c1fail 0 lamfail 0 gtie 0 ctrlE 9 ctrlK 0 runs 1 kmax 1 T 30 flips 13 maxflip 9
+MWR8_2.json lfail 0 gfail 0 qflip 0 qnotp 0 qfail 0 Tfail 0 Qfail 0 c1fail 0 lamfail 0 gtie 0 ctrlE 17 ctrlK 0 runs 1 kmax 1 T 54 flips 25 maxflip 17
+MWR16_2.json lfail 0 gfail 0 qflip 0 qnotp 0 qfail 0 Tfail 0 Qfail 0 c1fail 0 lamfail 0 gtie 0 ctrlE 33 ctrlK 0 runs 1 kmax 1 T 102 flips 49 maxflip 33
+K1F21_n48.json lfail 0 gfail 0 qflip 0 qnotp 0 qfail 0 Tfail 0 Qfail 0 c1fail 0 lamfail 0 gtie 0 ctrlE 22 ctrlK 0 runs 1 kmax 1 T 31 flips 40 maxflip 21
+K1C16_n400.json lfail 0 gfail 0 qflip 0 qnotp 0 qfail 0 Tfail 0 Qfail 0 c1fail 0 lamfail 0 gtie 0 ctrlE 70 ctrlK 0 runs 1 kmax 1 T 51 flips 125 maxflip 31
+k1fail_202.json lfail 0 gfail 0 qflip 0 qnotp 0 qfail 0 Tfail 0 Qfail 0 c1fail 0 lamfail 0 gtie 0 ctrlE 2 ctrlK 0 runs 1 kmax 1 T 4 flips 3 maxflip 2
+ST4_k1.json lfail 0 gfail 0 qflip 0 qnotp 0 qfail 0 Tfail 0 Qfail 0 c1fail 0 lamfail 0 gtie 0 ctrlE 0 ctrlK 1 runs 1 kmax 1 T 0 flips 0 maxflip 0
+ST8_k1.json lfail 0 gfail 0 qflip 0 qnotp 0 qfail 0 Tfail 0 Qfail 0 c1fail 0 lamfail 0 gtie 0 ctrlE 0 ctrlK 1 runs 1 kmax 1 T 0 flips 0 maxflip 0
