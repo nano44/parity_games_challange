@@ -4,3 +4,4 @@ kept o N+M 72 C 5 C 5 maxm 2 T3 10 1s
 kept o N+M 71 C 5 C 5 maxm 2 T3 10 1s
 kept m N+M 69 C 5 C 5 maxm 2 T3 10 6s
 kept m N+M 67 C 5 C 5 maxm 2 T3 10 8s
+FINAL C5 N 26 M 41 N+M 67 measure {'T3': 10, 'fallback': True, 'n': 323, 'maxalt': 5, 'maxtops': 10, 'C': 5, 'maxm': 2, 'maxP': 6, 'depthV': 3, 'fanout': 3, 'fanin': 3, 'idfail': 0, 'rpfail': 0} frozen /home/user/parity_games_challange/experiments/comp/box34/out/frontier/C5_NM67_a77332c9.json
