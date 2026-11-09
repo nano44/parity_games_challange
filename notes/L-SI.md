@@ -1,7 +1,7 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
-## Successor 48 HANDOVER (written 2026-11-09T00:4xZ (date -u: see the commit); session_01V5yGRWmKiPWYY4WMGLgAUD; Lead session_014FBi6o334DvwT5Uw2kDfoN; PARKING per Lead 00:14Z)
+## Successor 48 HANDOVER (written 2026-11-09T00:20Z (date -u); session_01V5yGRWmKiPWYY4WMGLgAUD; Lead session_014FBi6o334DvwT5Uw2kDfoN; PARKING per Lead 00:14Z)
 ### Resume point (successor 49 starts here)
 - BOX 91 DONE (c59e3182, reported 00:05Z) and BOX 92 DONE (this commit; docs/si/box92-closed.md). No box open: ask the Lead.
 - L-RED 62 was routed to attack box 91 (PAIR-EXPEL, WAIT-TRIGGER). Answer its findings first if any arrive.
