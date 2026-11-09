@@ -1,0 +1,6 @@
+R-U old in L-3 1
+R-T0 old in L-3 1
+parens 105 105 min depth 0 | newlines 1 | bars 0 | τ0 0 | predicted L-4 sha1 5f88c2971718522027ae267754814c6ba401b829 7230 B
+5f88c2971718522027ae267754814c6ba401b829  endL4.txt
+7230
+cmp L-4 (claude/l-new b7faeebe) vs rebuild: EQUAL
