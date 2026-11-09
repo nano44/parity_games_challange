@@ -4,3 +4,4 @@ kept o N+M 104 C 6 C 6 maxm 2 T3 13 6s
 kept o N+M 103 C 6 C 6 maxm 2 T3 12 7s
 kept o N+M 102 C 6 C 6 maxm 2 T3 12 10s
 kept m N+M 100 C 6 C 6 maxm 2 T3 12 16s
+FINAL C6 N 41 M 59 N+M 100 measure {'T3': 12, 'fallback': True, 'n': 464, 'maxalt': 6, 'maxtops': 12, 'C': 6, 'maxm': 2, 'maxP': 7, 'depthV': 3, 'fanout': 4, 'fanin': 2, 'idfail': 0, 'rpfail': 0} frozen /home/user/parity_games_challange/experiments/comp/box34/out/frontier/C6_NM100_8afdd750.json

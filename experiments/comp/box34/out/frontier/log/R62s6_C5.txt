@@ -1,0 +1,4 @@
+# shrink34 seed /home/user/parity_games_challange/experiments/comp/box34/out/frontier/C6_NM75_72a89f5f.json key C5 rng 62 start N+M 75 round 0
+kept m N+M 73 C 5 C 5 maxm 2 T3 10 0s
+kept o N+M 72 C 5 C 5 maxm 2 T3 10 1s
+kept o N+M 71 C 5 C 5 maxm 2 T3 10 1s

@@ -1,0 +1,2 @@
+# shrink34 seed /home/user/parity_games_challange/experiments/comp/box34/out/frontier/C5_NM63_7ae531ad.json key C5 rng 61 start N+M 63 round 0
+FINAL C5 N 24 M 39 N+M 63 measure {'T3': 11, 'fallback': True, 'n': 307, 'maxalt': 5, 'maxtops': 10, 'C': 5, 'maxm': 2, 'maxP': 6, 'depthV': 3, 'fanout': 3, 'fanin': 3, 'idfail': 0, 'rpfail': 0} frozen /home/user/parity_games_challange/experiments/comp/box34/out/frontier/C5_NM63_7ae531ad.json
