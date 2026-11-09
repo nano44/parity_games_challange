@@ -1,7 +1,34 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## RESUME POINT -- successor 14 (L-COMP 14, Opus 5.5), updated 2026-11-09 02:2xZ by date -u (GO 17:03Z; BOX 34). NOTHING RUNNING at write.
+## HANDOVER -- successor 14 (L-COMP 14, Opus 5.5) PARKS 2026-11-09 03:29Z by date -u (Lead 02:14Z: BOX 35 last before park). NOTHING RUNNING.
+### Where things are (all DATA; scope of every number: N5'-xi from S3 on Gamma3 up to the first fallback, unit = genome unless stated)
+- Engines: own34.py (experiments/comp/box34) = MY independent engine (Gamma3 from R104 + P-N5-REACH §3 text; n5b SPEC + [N5XI] tie rule;
+  counters T3, maxalt (fixed), C, maxm, maxP, RA depth, fan-in/out). Second engines: L-NEW asc197 @ b61c2029 (BOX 33 counter) and @ f98e93ee
+  (fixed maxalt) via ref34.py/cmp34.py (compare T3 + maxalt + game build); for C: L-NEW pair198.py @ fcba92fc. maxm has NO second counter.
+  Worktrees are local in the scratchpad: recreate with `git fetch origin claude/l-new; git worktree add --detach <dir> <sha>`.
+- BOX 33/34 item 1: N2M4 [E-LEV] and --noelev both COMPLETE: 14,929,920 genomes, A_max 2 on 30,432, T3_max 2 (identical). Full BOX 33 table
+  two-engine (own34 agrees on all argmax files + 2,000 random per (N, M)).
+- Item 2: N3 sample 20,000 per M 3..7 (seeds 3433-3437; out/n3_*): A_max 2 (M >= 5), T3_max 5 (M 7).
+- Item 3: own34 vs asc197: 0 mismatches on ~228,000 random runs, 6 argmax, 64 pinned (58 live, 6 hfam towers vs L-NEW's recorded values).
+- (c) FW family (L-SI 47, 7 files): own34 = L-SI's table on every column (third engine).
+- (b) climb34 N 3-4, M 8-10: best C 1 (no repeated top) everywhere.
+- (b') INVERSE FRONTIER (shrink34 greedy deletion; best34.py): upper bounds min N + M for C >= 2..12: 33, 45, 50, 63, 75, 105, 112, 122, 164,
+  172, 176; maxm 2/3/4: 50/106/121. 13 frontier genomes two-engine (asc197 T3 + maxalt; pair198 maxC). out/frontier/SHA1SUMS.
+- BOX 35 (2) EXACT «C >= 2 below N + M 33» (exact35.py), scope of the «none found»:
+  (i) all genomes of (N, M) in {(1,1..4), (2,2..4)} (BOX 33 exhaustive A_max <= 2; C >= 2 implies A >= 3); (ii) all 73,728 genomes of
+  (3, 3): C 0; (iii) every genome within <= 3 deletions (exact35 nbr moves) of the frontier genomes C2_NM33 x2, NM35, NM37 x2, NM38, and
+  <= 2 deletions of NM40 (depth 3 stopped: ~10^6 genomes): no genome with C >= 2 and N + M < 33 (hits only at 35, 36).
+  NOT covered: any other genome with N + M <= 32 (e.g. (1,5), (3,4), (2,5) exhaustive are 10^7-10^9 genomes). So C >= 2 below 33 is OPEN.
+- BOX 35 (BOX 32 replay, Lead 02:54Z): rfix, W1 test, OSC decodes realize (box32/val/replay35.txt): no correction.
+- BOX 35 (1) (L-LOWER 12 SAT replay + N5 end to end): NOT started (no model routed before park). Tools: box32/mutcheck.py (fenc + sim6 +
+  replay30 + enc32 checker; fenc binary: gcc -O2 -o box32/bin/fenc box31/l-lower/l9/fenc.c), box29 pipeline for Gamma3 end to end.
+### Things only I know (successor 14)
+- cmp34 compares T3 + maxalt only; asc197 > 10 min on hfam towers; own34 ~0.5 s at N + M 100, minutes at n ~ 5,000.
+- Deletion neighbourhoods explode with mover count of mover-deletion choices (NM40: 21k at depth 2).
+- I once launched a push with «&» (killed before it pushed; disclosed). Always run push.sh as a tracked background task.
+
+## RESUME POINT -- successor 14 (superseded by the handover above)
 - Engines (scratchpad worktrees, local): lnew = claude/l-new b61c2029 (BOX 33 engine), lnewfix = f98e93ee (fixed maxalt), lnew198 = fcba92fc
   (pair198.py, L-NEW's maxC). Recreate: `git fetch origin claude/l-new; git worktree add --detach <dir> <sha>`.
 - DONE (all pushed by 8db05457 / ce85a7cc / this push): item 1 N2M4 elev + noelev complete (14,929,920; A 2 on 30,432, T3 2; equal);

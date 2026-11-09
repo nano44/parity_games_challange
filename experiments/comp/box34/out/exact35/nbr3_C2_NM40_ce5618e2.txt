@@ -1,3 +1,4 @@
 # nbr out/frontier/C2_NM40_ce5618e2.json N+M 40 C 2 K 3
 depth 1 distinct 295 with C>=2 0 smallest N+M with C>=2 None 4s
 depth 2 distinct 21056 with C>=2 0 smallest N+M with C>=2 None 234s
+STOPPED at depth 3 by L-COMP 14 (03:06Z, CPU budget: depth 3 ~10^6 genomes); scope for this seed = depth <= 2 (21,351 distinct genomes, 0 with C>=2)
