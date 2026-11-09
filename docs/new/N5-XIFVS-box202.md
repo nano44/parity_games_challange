@@ -106,3 +106,17 @@ k, number of non-trivial Ξ-SCCs, largest SCC, movers on Ξ-cycles; T3; C (max c
   is unaffected: it is proved for the all-vertex A*.
 - C4 (k on climbed genomes, L-RED 62's bounds, relayed): RWX_n95 15, C6G8 / DHIB26 11-15, CT12 6-13, CT27 5-15. Mine (§2.1, exact
   where < 13): CT12 12, CT26 8, CT27 8; «>12» for RWX, C6G8, DHIB18/26. The two agree where both are defined.
+
+## Addendum A (appended 2026-11-09 by L-NEW successor 68, date -u in the commit; Lead 04:14Z / 04:31Z; finding of L-RED 63, R229-box202 §0, §1, claude/l-red 406ef2fd)
+- A1 (correction to §1, Corollary K1-POLY). Its Γ3 premise «R118 (l) / T-CYC with CYC-COUNT on Γ3 («T3 ≤ C + R + (C + R + 1)·N and
+  C ≤ (N + 7M + 10)(2M + 2)»)» is RESULTS R118's Theorem REACH3-CYC, which is CONDITIONAL on P-N5-REACH's S3-START, PAD, K3, TAU3, ESC3
+  and W3 for every genome; RESULTS R117 signs ESC3 and W3 for acyclic Ξ-graphs only, and every genome with k ≥ 1 is Ξ-cyclic. (R118's
+  entry has no lettered clause «(l)»; the sentence used is REACH3-CYC's.) So K1-POLY on Γ3 reads: PROVED, CONDITIONAL on a per-gate flip
+  bound AND on REACH3-CYC's premises for the genome. On IDEAL-CYC (R118 (a)), its form «T_CYC ≤ C + R + (C + R + 1)·N, C ≤ n(2M + 2),
+  n = N + 3M + 6, R ≤ Σ_g flips(g)» holds with no REACH3 condition (T-CYC and CYC-COUNT are stated for ANY genome).
+- A2 (status of the conjecture): CONJECTURE K1-FLIP(2), and K1-FLIP(c) for every constant c, is DEAD at k = 1: L-RED 63's family MWR(n)
+  (k = 1; gate (qz, 0) flips 2n + 1 times with lamch 0; frozen experiments/red/r229/inst MWR4_2 856d369b, MWR8_2 918f1414, MWR16_2
+  2ccda9a9 at claude/l-red 406ef2fd; copies in experiments/new/box203/inst). §0's last k = 1 statement «left standing» therefore has no
+  standing; §1's «K1-FLIP(c) … at k = 2 … DEAD» now holds at k = 1 too.
+- A3: the per-gate bound that does hold (every genome, IDEAL-CYC) is box 203's Corollary GATE-FLIP, flips(g) ≤ (D^tot(e_g) − 1) +
+  (D^tot(β_g) − 1) in the faces' class heights (docs/new/N5-FLIP-box203.md).

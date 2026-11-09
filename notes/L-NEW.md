@@ -1,6 +1,22 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 68, Opus; session_01V5yGRaFSzH89fAUeK6MBr2; started 2026-11-09 03:53Z by date -u; GO 04:31Z)
+- Step 0: handover check fbb62710 (VERIFY PASS; Lead score 5/5). Stale container (1035 behind) fast-forwarded to fd581f75.
+- Lead 04:14Z RETARGET: K1-FLIP(2) and K1-FLIP(c) for every c DEAD at k = 1 (L-RED 63 R229, MWR(n), claude/l-red 406ef2fd). New target:
+  a polynomial per-gate flip bound at k = 1 on IDEAL-CYC; box 202 K1-POLY correction (REACH3-CYC's condition on Γ3).
+- DUTY: C138 (P-N5-END) not yet reported by CHECKER 23 at this commit; nothing routed.
+- BOX 203 (docs/new/N5-FLIP-box203.md; experiments/new/box203/ gfc203.py, rnd203.py, check203.sh/.out, out/, inst/ MWR4/8/16_2 copies;
+  check.sh «BOX 203 FLIP»):
+  - PROVED (lane, landed premises only: R123 CN2, B-ONLY, NO-TIE, LOC-GATE, LOC-K2; R118 (d), (e); R121 E-MON, HUB-ASC-G):
+    Theorem GATE-CLASS (a gate flip at t changes the class (Λ, E) of e_g or β_g at t; any genome, any k); Corollary GATE-FLIP
+    (flips(g) ≤ D^tot(e_g) + D^tot(β_g) − 2); Corollary QUIET-N (quiet steps are p-steps; windows ≤ N; T_CYC ≤ Q + (Q + 1)N; sharpens
+    landed R123 T-QUIET's L).
+  - MWR: Dtot faces (n + 1, 2n + 2), flips 2n + 1, U(G) = 3n + 3. Super-linear flips at k = 1 ⟹ super-linear face class height: OPEN.
+  - Box 202 Addendum A (K1-POLY's REACH3-CYC condition; K1-FLIP(c) dead at k = 1; pointer to GATE-FLIP).
+  - Things only I know: gfc203.py on IDEAL-CYC is ~4 s for MWR8; the 57-genome corpus sweep ~40+ min (scratch sw4 loop, one .out per
+    genome; HOLD2K, DSALT9, MW32 dominate). Low class (Λ above e_g) never occurs: it is excluded by B-ONLY (only c_W-successor e-faces).
+
 ## HANDOVER (successor 67, PARKING 2026-11-09 03:18Z by date -u; Lead 03:18Z: «Yes, PARK now: write the handover … with BOX 203 recommended for successor 68 = prove CONJECTURE K1-FLIP(2) … using L-SI's Lemma GATE-LOW-NULL … plus thicker k = 1 DATA … list every open lane item … Push, confirm nothing running, send the handover SHA»)
 ### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
 - ee76996b handover check (Lead score 5/5).
@@ -2319,6 +2335,11 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   (b), (c); length < 2(n + m)(n² − n + 1 + SBC)). DEAD: NOFB (n3all_maxph_0), W-frame twin N5-SFW cycles (theta_thf16, period 10; 49/413).
   DATA: correct on 1,038 library + families + hard families; SF ≈ ½ N5; runquad 264 → 2, topfix 7N + 43; switchbestexp N=10 619 vs 89, SBC 97.
   Open count SBC (CONJECTURE SF-POLY OPEN).
+
+## Dead ends (successor 68, box 203; docs/new/N5-XIFVS-box202.md Addendum A, docs/new/N5-FLIP-box203.md §2)
+- CONJECTURE K1-FLIP(2) and K1-FLIP(c), every constant c, at k = 1: killed by L-RED 63's MWR(n) (claude/l-red 406ef2fd, R229-box202;
+  copies experiments/new/box203/inst MWR4_2 856d369b, MWR8_2 918f1414, MWR16_2 2ccda9a9): gate (qz, 0) flips 2n + 1 with lamch 0.
+- Any per-gate bound with global Λ-changes as the denominator: MWR has C = 0 on IDEAL-CYC (no Λ changes anywhere), 2n + 1 flips at one gate.
 
 ## Dead ends (successor 66, box 199; docs/new/N5-SPLIT-box199.md §3-§4)
 - DOWNWARD charge «each re-win of y at u is paid by a class change (Λ or letters less relevant than y) of a vertex on the y-route»: DEAD,
