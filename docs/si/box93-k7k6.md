@@ -83,7 +83,21 @@ Must-be-0 (TOTALS, both engines, all 15 rows): npside 0, npsub 0, npboth 0, npki
 dfail 0 (E-FACE-PAYS (b), proxy); k1both = k1c2 on every row (E-FACE-PAYS (d)).
 | instance | N + M | gates | flips | np_rel | np_unl | k1c2 | relL / relE / relG | mx: flips, ch_pe, ch_pb, ch_D | mx: lam / ech / gam of p_e |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-ROWS93
+| WC4_2 | 60 | 40 | 3 | 0 | 3 | 0 | 0 / 0 / 0 | 1, 1, 2, 1 | 0 / 1 / 0 |
+| WC16_2 | 216 | 148 | 15 | 0 | 15 | 0 | 0 / 0 / 0 | 1, 1, 2, 1 | 0 / 1 / 0 |
+| FW8_2 | 371 | 248 | 8 | 0 | 0 | 0 | 0 / 0 / 0 | 1, 0, 1, 0 | 0 / 0 / 0 |
+| FW16_2 | 787 | 528 | 16 | 0 | 0 | 0 | 0 / 0 / 0 | 1, 0, 1, 0 | 0 / 0 / 0 |
+| MW8_2 | 261 | 177 | 42 | 17 | 17 | 1 | 0 / 17 / 0 | 34, 17, 34, 17 | 0 / 17 / 0 |
+| MW32_2 | 957 | 657 | 162 | 65 | 65 | 1 | 0 / 65 / 0 | 130, 65, 130, 65 | 0 / 65 / 0 |
+| C6G8_n54 | 204 | 150 | 73 | 4 | 10 | 1 | 11 / 20 / 0 | 11, 9, 12, 9 | 1 / 7 / 1 |
+| RWX_n95 | 328 | 233 | 69 | 1 | 6 | 4 | 4 / 22 / 0 | 3, 4, 6, 4 | 0 / 4 / 0 |
+| DWT20_2803 | 364 | 262 | 79 | 3 | 23 | 4 | 1 / 23 / 0 | 6, 21, 20, 21 | 1 / 19 / 1 |
+| DHIB26_2804 | 400 | 292 | 148 | 7 | 34 | 22 | 0 / 51 / 0 | 15, 24, 23, 24 | 0 / 24 / 0 |
+| DHIB18_2805 | 400 | 301 | 158 | 7 | 21 | 1 | 27 / 42 / 0 | 10, 13, 16, 13 | 1 / 12 / 0 |
+| k1fail_202 | 60 | 45 | 3 | 1 | 2 | 0 | 0 / 1 / 0 | 2, 2, 2, 2 | 0 / 1 / 1 |
+| Ku_8 | 261 | 177 | 7 | 2 | 2 | 0 | 2 / 2 / 0 | 4, 4, 6, 4 | 1 / 2 / 1 |
+| Ku_16 | 493 | 337 | 7 | 2 | 2 | 0 | 2 / 2 / 0 | 4, 4, 6, 4 | 1 / 2 / 1 |
+| Kprev_8 | 261 | 177 | 7 | 2 | 2 | 0 | 2 / 2 / 0 | 4, 4, 6, 4 | 1 / 2 / 1 |
 - Both engines give IDENTICAL rows on every column (own93.out, g393.out).
 - Controls (own; out/ctrl93.out): CTRL=swap (faces exchanged in relfail) relfail 4 on C6G8_n54 (0 on MW8_2: there the β-face changes more);
   CTRL=tight (bound lowered by 1) relfail 176 / 92, unlfail 8 / 5 on MW8_2 / C6G8_n54 (it also counts every gate with 0 relocks).

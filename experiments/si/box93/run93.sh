@@ -17,3 +17,8 @@ python3 -I ../box91/mult91.py own inst/Ku_4.json inst/Ku_8.json inst/Ku_16.json 
 python3 -I np93.py g3 $L > out/g393.out || exit 1
 python3 -I ../box91/mult91.py g3 inst/Ku_4.json inst/Ku_8.json inst/Ku_16.json inst/Kprev_8.json > out/probe93_g3.out || exit 1
 echo DONE
+# K6 towers (h = 4, 5) on both engines: T3, C (mult91)
+K6=$(ls k6/inst/*.json | grep -v names)
+python3 -I ../box91/mult91.py own $K6 > out/k6_own.out || exit 1
+python3 -I ../box91/mult91.py g3 $K6 > out/k6_g3.out || exit 1
+echo DONE-K6
