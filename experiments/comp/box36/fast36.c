@@ -263,7 +263,9 @@ static void build(const Genome *G, Game *g) {
 }
 
 /* ---------------- run (own34.run) + census (own36) ---------------- */
-typedef struct { int T3, fb, capped, C, flips[MMAX], lamch[MMAX]; } Res;
+typedef struct { int T3, fb, capped, C, flips[MMAX], lamch[MMAX], chpe[MMAX], chpb[MMAX], lpe[MMAX], lpb[MMAX]; } Res;
+/* ch_f = #t with Omega_t(f) != Omega_(t-1)(f) (full value), lam_f = #t with Lambda change at f, f in {pe_g, pB_g}; nl_f = ch_f - lam_f
+   (L-SI box 93 (d), claude/l-si f723957b docs/si/box93-k7k6.md §2 (d)). */
 /* C (own34.counters 'C', box 198 §1): for every vertex v and maximal interval of states with Lambda_t(v) constant, c_y = #changes of
    E_t(v) = e-vertices of P_t(v) whose top (most relevant vertex of the symmetric difference) is y; C = max c_y over (v, interval, y). */
 static int *ccnt = NULL, ccap = 0, ej[NMAX];
@@ -275,7 +277,7 @@ static void run(const Genome *Gn, Res *R) {
     build(Gn, &g); n = g.n; mkdual(&g, &d, NULL);
     int sigma[NMAX], tau[NMAX], sig2[NMAX], tau2[NMAX], sbar[NMAX], prev_sbar[NMAX], ch[NMAX], dummy[NMAX];
     initial_best_reward(&g, sigma); initial_best_reward(&d, tau);
-    for (int q = 0; q < M; q++) { R->flips[q] = 0; R->lamch[q] = 0; }
+    for (int q = 0; q < M; q++) { R->flips[q] = 0; R->lamch[q] = 0; R->chpe[q] = R->chpb[q] = R->lpe[q] = R->lpb[q] = 0; }
     R->C = 0; bz(&emask);
     for (int q = 0; q < M; q++) { bset(&emask, rk[Ve[q]]); ej[rk[Ve[q]]] = q; }
     if (ccap < n * M) { ccap = n * M; ccnt = realloc(ccnt, sizeof(int) * ccap); }
@@ -289,6 +291,9 @@ static void run(const Genome *Gn, Res *R) {
             int gv = Vg[q], pe = Vpe[q], pb = VpB[q];
             R->flips[q] += prev_sbar[gv] != sbar[gv];
             R->lamch[q] += (prev_vs[pe].L != vs[pe].L) || (prev_vs[pb].L != vs[pb].L);
+            R->lpe[q] += prev_vs[pe].L != vs[pe].L; R->lpb[q] += prev_vs[pb].L != vs[pb].L;
+            R->chpe[q] += !(prev_vs[pe].L == vs[pe].L && prev_vs[pe].k == vs[pe].k && beq(&prev_vs[pe].P, &vs[pe].P));
+            R->chpb[q] += !(prev_vs[pb].L == vs[pb].L && prev_vs[pb].k == vs[pb].k && beq(&prev_vs[pb].P, &vs[pb].P));
         }
         if (it > 0) for (int v = 0; v < n; v++) {
             if (prev_vs[v].L != vs[v].L) { memset(ccnt + v * M, 0, sizeof(int) * M); continue; }
@@ -380,7 +385,7 @@ int main(int argc, char **argv) {
     if (argc >= 2 && !strcmp(argv[1], "one")) {
         Genome G; read_one(&G); Res R; run(&G, &R);
         printf("T3 %d fb %d capped %d C %d\n", R.T3, R.fb, R.capped, R.C);
-        for (int q = 0; q < G.M; q++) printf("gate %d %d %d %d\n", G.own[q], G.kof[q], R.flips[q], R.lamch[q]);
+        for (int q = 0; q < G.M; q++) printf("gate %d %d %d %d %d %d %d %d\n", G.own[q], G.kof[q], R.flips[q], R.lamch[q], R.chpe[q], R.lpe[q], R.chpb[q], R.lpb[q]);
         return 0;
     }
     if (argc >= 2 && !strcmp(argv[1], "block")) {

@@ -13,17 +13,23 @@ def gtext(G):
     return "\n".join(L) + "\n"
 
 
-def one(G, noelev=False):
+FACES = True; FACE = {}
+
+
+def one(G, noelev=False, bindir=None):
+    FACE.clear()
     n = G["N"] + 8 * sum(len(o) for o in G["opts"]) + 10
     w = next(w for w in (1, 8, 16, 48) if n <= 64 * w)
-    exe = os.path.join(H, "bin", f"fast36_w{w}")
+    exe = os.path.join(H, bindir or os.environ.get("FAST36_ONEDIR", "bin"), f"fast36_w{w}")
     env = dict(os.environ); env.pop("FAST36_NOELEV", None)
     if noelev: env["FAST36_NOELEV"] = "1"
     out = subprocess.run([exe, "one"], input=gtext(G), capture_output=True, text=True, env=env, check=True).stdout.split("\n")
     h = out[0].split(); T3, fb = int(h[1]), int(h[3]); rows = []
+    global LASTC; LASTC = int(h[7]) if len(h) > 7 else None
     for line in out[1:]:
         if line.startswith("gate"):
-            _, x, k, f, l = line.split(); rows.append(((int(x), int(k)), int(f), int(l)))
+            z = line.split(); rows.append(((int(z[1]), int(z[2])), int(z[3]), int(z[4])))
+            if FACES: FACE[(int(z[1]), int(z[2]))] = tuple(map(int, z[5:9]))   # chpe, lampe, chpb, lampb
     return T3, fb, sorted(rows)
 
 

@@ -17,6 +17,7 @@ sys.path.insert(0, os.path.join(H, "..", "box34"))
 import own34
 from n5b import SpecSI
 KCAP = int(os.environ.get("KCAP", "3"))
+FACE = {}   # gate -> (ch_pe, lam_pe, ch_pB, lam_pB) of the last census (L-SI box 93 (d) counters)
 
 
 def xiadj(G):
@@ -61,6 +62,8 @@ def census(G, elev=True, counters=True, cap=20000):
         fl = sum(sbar[t - 1][gv] != sbar[t][gv] for t in range(1, T + 1))
         lc = sum(vals[t - 1][pe][0] != vals[t][pe][0] or vals[t - 1][pb][0] != vals[t][pb][0] for t in range(1, T + 1))
         rows.append((q, fl, lc))
+        FACE[q] = tuple(sum(f(t) for t in range(1, T + 1)) for f in (lambda t: vals[t - 1][pe] != vals[t][pe], lambda t: vals[t - 1][pe][0] != vals[t][pe][0],
+                                                                       lambda t: vals[t - 1][pb] != vals[t][pb], lambda t: vals[t - 1][pb][0] != vals[t][pb][0]))
     out = dict(T3=T, fallback=r["fallback"], n=n)
     if rows:
         am = max(rows, key=lambda z: (z[1] / (z[2] + 1), z[1]))

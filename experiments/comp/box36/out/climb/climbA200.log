@@ -1,0 +1,11 @@
+BEST BEST_A200_r9_C5_b8abab32.json N+M 144 k 1 score [9.0, 5, 30] {"T3": 30, "fb": 1, "C": 5, "gate": [34, 0], "flips": 9, "lamch": 0, "face": [4, 0, 9, 0], "lsifail": []} own36_agree True t 05:21:46Z
+BEST BEST_A200_r10_C5_182dd703.json N+M 158 k 1 score [10.0, 5, 30] {"T3": 30, "fb": 1, "C": 5, "gate": [46, 0], "flips": 10, "lamch": 0, "face": [12, 0, 16, 0], "lsifail": []} own36_agree True t 05:22:05Z
+BEST BEST_A200_r10_C5_d8dc3c75.json N+M 160 k 1 score [10.0, 5, 31] {"T3": 31, "fb": 1, "C": 5, "gate": [46, 0], "flips": 10, "lamch": 0, "face": [14, 0, 18, 0], "lsifail": []} own36_agree True t 05:22:08Z
+BEST BEST_A200_r10_C6_1e9014f5.json N+M 164 k 1 score [10.0, 6, 31] {"T3": 31, "fb": 1, "C": 6, "gate": [46, 0], "flips": 10, "lamch": 0, "face": [13, 0, 18, 0], "lsifail": []} own36_agree True t 05:22:16Z
+BEST BEST_A200_r14_C5_d6d5c3c6.json N+M 164 k 1 score [14.0, 5, 32] {"T3": 32, "fb": 1, "C": 5, "gate": [46, 0], "flips": 14, "lamch": 0, "face": [11, 0, 15, 0], "lsifail": []} own36_agree True t 05:22:21Z
+BEST BEST_A200_r14_C6_184156cf.json N+M 165 k 1 score [14.0, 6, 32] {"T3": 32, "fb": 1, "C": 6, "gate": [46, 0], "flips": 14, "lamch": 0, "face": [10, 0, 15, 0], "lsifail": []} own36_agree True t 05:22:27Z
+BEST BEST_A200_r14_C7_cb0ab17c.json N+M 182 k 1 score [14.0, 7, 32] {"T3": 32, "fb": 1, "C": 7, "gate": [46, 0], "flips": 14, "lamch": 0, "face": [9, 0, 15, 0], "lsifail": []} own36_agree True t 05:22:54Z
+BEST BEST_A200_r14_C7_66d90297.json N+M 200 k 1 score [14.0, 7, 33] {"T3": 33, "fb": 1, "C": 7, "gate": [46, 0], "flips": 14, "lamch": 0, "face": [8, 0, 14, 0], "lsifail": []} own36_agree True t 05:25:23Z
+BEST BEST_A200_r14_C8_7c49a052.json N+M 200 k 1 score [14.0, 8, 33] {"T3": 33, "fb": 1, "C": 8, "gate": [46, 0], "flips": 14, "lamch": 0, "face": [8, 0, 14, 0], "lsifail": []} own36_agree True t 05:26:41Z
+BEST BEST_A200_r14_C8_7db01744.json N+M 199 k 1 score [14.0, 8, 34] {"T3": 34, "fb": 1, "C": 8, "gate": [46, 0], "flips": 14, "lamch": 0, "face": [8, 0, 14, 0], "lsifail": []} own36_agree True t 05:31:00Z
+BEST BEST_A200_r15_C8_562b32c5.json N+M 200 k 1 score [15.0, 8, 35] {"T3": 35, "fb": 1, "C": 8, "gate": [46, 0], "flips": 15, "lamch": 0, "face": [7, 0, 16, 0], "lsifail": []} own36_agree True t 05:32:28Z
