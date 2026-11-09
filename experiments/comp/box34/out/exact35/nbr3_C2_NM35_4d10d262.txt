@@ -1,0 +1,5 @@
+# nbr out/frontier/C2_NM35_4d10d262.json N+M 35 C 2 K 3
+depth 1 distinct 154 with C>=2 0 smallest N+M with C>=2 None 2s
+depth 2 distinct 3653 with C>=2 0 smallest N+M with C>=2 None 46s
+depth 3 distinct 35997 with C>=2 0 smallest N+M with C>=2 None 420s
+SUMMARY nbr K 3 total distinct 39804 with C>=2 0

@@ -1,0 +1,5 @@
+# nbr out/frontier/C2_NM33_a01b1108.json N+M 33 C 2 K 3
+depth 1 distinct 43 with C>=2 0 smallest N+M with C>=2 None 0s
+depth 2 distinct 673 with C>=2 0 smallest N+M with C>=2 None 5s
+depth 3 distinct 5241 with C>=2 0 smallest N+M with C>=2 None 41s
+SUMMARY nbr K 3 total distinct 5957 with C>=2 0
