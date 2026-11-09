@@ -11,3 +11,7 @@ BEST BEST_B400_r34_C17_245f11c4.json N+M 278 k 1 score [34.0, 17, 48] {"T3": 48,
 BEST BEST_B400_r34_C17_1694d52f.json N+M 297 k 1 score [34.0, 17, 50] {"T3": 50, "fb": 1, "C": 17, "gate": [82, 0], "flips": 34, "lamch": 0, "face": [17, 0, 34, 0], "lsifail": []} own36_agree True t 06:05:58Z
 restart 1 seed MWR8_2.json best [34.0, 17, 50] {"T3": 50, "fb": 1, "C": 17, "gate": [82, 0], "flips": 34, "lamch": 0, "face": [17, 0, 34, 0], "lsifail": []} global [34.0, 17, 50] evals 1360 1061s
 restart 2 seed MWR8_2.json best [32.0, 16, 46] {"T3": 46, "fb": 1, "C": 16, "gate": [82, 0], "flips": 32, "lamch": 0, "face": [18, 0, 34, 0], "lsifail": []} global [34.0, 17, 50] evals 2035 914s
+restart 3 seed MWR8_2.json best [17.0, 11, 51] {"T3": 51, "fb": 1, "C": 11, "gate": [62, 0], "flips": 17, "lamch": 0, "face": [10, 0, 24, 0], "lsifail": []} global [34.0, 17, 50] evals 2754 1077s
+restart 4 seed MWR8_2.json best [17.0, 9, 54] {"T3": 54, "fb": 1, "C": 9, "gate": [62, 0], "flips": 17, "lamch": 0, "face": [8, 0, 17, 0], "lsifail": []} global [34.0, 17, 50] evals 3445 1136s
+restart 5 seed MWR8_2.json best [17.0, 9, 55] {"T3": 55, "fb": 1, "C": 9, "gate": [62, 0], "flips": 17, "lamch": 0, "face": [9, 0, 19, 0], "lsifail": []} global [34.0, 17, 50] evals 4121 1058s
+SUMMARY B400 cap 400 restarts 6 steps 800 seed 3606 best [34.0, 17, 50] BEST_B400_r34_C17_1694d52f.json evals 4121 lsifail 0

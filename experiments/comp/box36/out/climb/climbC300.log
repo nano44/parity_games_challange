@@ -2,3 +2,10 @@ BEST BEST_C300_r17_C9_107a60e0.json N+M 263 k 1 score [17.0, 9, 54] {"T3": 54, "
 BEST BEST_C300_r20_C10_a8a74706.json N+M 281 k 1 score [20.0, 10, 55] {"T3": 55, "fb": 1, "C": 10, "gate": [82, 0], "flips": 20, "lamch": 0, "face": [18, 0, 28, 0], "lsifail": []} own36_agree True t 06:20:24Z
 BEST BEST_C300_r24_C12_4230338c.json N+M 281 k 1 score [24.0, 12, 54] {"T3": 54, "fb": 1, "C": 12, "gate": [82, 0], "flips": 24, "lamch": 0, "face": [18, 0, 30, 0], "lsifail": []} own36_agree True t 06:21:07Z
 BEST BEST_C300_r28_C14_2b4ecf4f.json N+M 281 k 1 score [28.0, 14, 54] {"T3": 54, "fb": 1, "C": 14, "gate": [82, 0], "flips": 28, "lamch": 0, "face": [18, 0, 31, 0], "lsifail": []} own36_agree True t 06:21:35Z
+BEST BEST_C300_r32_C16_2ed48015.json N+M 286 k 1 score [32.0, 16, 48] {"T3": 48, "fb": 1, "C": 16, "gate": [82, 0], "flips": 32, "lamch": 0, "face": [18, 0, 34, 0], "lsifail": []} own36_agree True t 06:24:44Z
+BEST BEST_C300_r34_C17_30d4ea76.json N+M 289 k 1 score [34.0, 17, 48] {"T3": 48, "fb": 1, "C": 17, "gate": [82, 0], "flips": 34, "lamch": 0, "face": [18, 0, 35, 0], "lsifail": []} own36_agree True t 06:25:55Z
+restart 0 seed MWR8_2.json best [34.0, 17, 48] {"T3": 48, "fb": 1, "C": 17, "gate": [82, 0], "flips": 34, "lamch": 0, "face": [18, 0, 35, 0], "lsifail": []} global [34.0, 17, 48] evals 694 1116s
+restart 1 seed MWR4_2.json best [13.0, 7, 32] {"T3": 32, "fb": 1, "C": 7, "gate": [46, 0], "flips": 13, "lamch": 0, "face": [13, 0, 20, 0], "lsifail": []} global [34.0, 17, 48] evals 1379 69s
+restart 2 seed MWR8_2.json best [17.0, 9, 54] {"T3": 54, "fb": 1, "C": 9, "gate": [62, 0], "flips": 17, "lamch": 0, "face": [8, 0, 17, 0], "lsifail": []} global [34.0, 17, 48] evals 2077 1063s
+restart 3 seed MWR4_2.json best [16.0, 8, 26] {"T3": 26, "fb": 1, "C": 8, "gate": [46, 0], "flips": 16, "lamch": 0, "face": [9, 0, 17, 0], "lsifail": []} global [34.0, 17, 48] evals 2770 55s
+SUMMARY C300 cap 300 restarts 4 steps 800 seed 3607 best [34.0, 17, 48] BEST_C300_r34_C17_30d4ea76.json evals 2770 lsifail 0

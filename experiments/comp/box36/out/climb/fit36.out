@@ -1,0 +1,15 @@
+{"src": "climb A200 (cap 200)", "NM": 200, "flips": 16.0, "C": 8, "T3": 31, "file": "BEST_A200_r16_C8_9b06186f.json"}
+{"src": "climb C300 (cap 300)", "NM": 289, "flips": 34.0, "C": 17, "T3": 48, "file": "BEST_C300_r34_C17_30d4ea76.json"}
+{"src": "climb B400 (cap 400)", "NM": 297, "flips": 34.0, "C": 17, "T3": 50, "file": "BEST_B400_r34_C17_1694d52f.json"}
+{"src": "MWR4_2", "NM": 145, "flips": 9.0, "C": 5, "T3": 30}
+{"src": "MWR8_2", "NM": 261, "flips": 17.0, "C": 9, "T3": 54}
+{"src": "MWR16_2", "NM": 493, "flips": 33.0, "C": 17, "T3": 102}
+climb bests: y = a·x: a = 0.1092 ± 0.0100, residuals [-5.84, 2.44, 1.56]
+climb bests: y = a + b·x: a = -22.43, b = 0.1925 ± 0.0143, residuals [-0.07, 0.8, -0.74]
+climb bests: y = c·x^p: p = 1.967 ± 0.122, c = 0.0004776
+MWR: y = a·x: a = 0.0663 ± 0.0009, residuals [-0.61, -0.29, 0.33]
+MWR: y = a + b·x: a = -1.00, b = 0.0690 ± 0.0000, residuals [0.0, 0.0, 0.0]
+MWR: y = c·x^p: p = 1.061 ± 0.011, c = 0.04591
+climb + MWR (upper envelope check): y = a·x: a = 0.0830 ± 0.0102, residuals [-0.6, 10.02, 9.35, -3.03, -4.66, -7.91]
+climb + MWR (upper envelope check): y = a + b·x: a = 4.07, b = 0.0704 ± 0.0308, residuals [-2.15, 9.59, 9.03, -5.28, -5.44, -5.76]
+climb + MWR (upper envelope check): y = c·x^p: p = 1.143 ± 0.342, c = 0.03676

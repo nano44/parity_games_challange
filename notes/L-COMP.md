@@ -1,29 +1,38 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## RESUME POINT -- successor 15 (L-COMP 15, Opus 5.5), BOX 36 (GO Lead 04:30Z; item 2 retargeted Lead 04:14Z), written 04:44Z by date -u
-### Tools (experiments/comp/box36/; all DATA; scope of every number: N5'-xi from S3 on Gamma3 up to the first fallback, [E-LEV])
-- own36.py: per-gate census on own34's run (own34.run now also returns sigs/taus): flips(g) (sigma-bar = SpecSI.evaluate_choice Odd
-  choice), lamch(g) (Lambda change at pe_g or pB_g), ratio = flips/(lamch+1), kfx = flips - 2(lamch+1), F, R (box 200's returns), C;
-  k = own brute-force FVS of the Xi-graph (KCAP 3).
-- fast36.c (bin/fast36_w{1,8,16,48}: gcc -O2 -DW=<w> -o bin/fast36_w<w> fast36.c; bin/ NOT committed): C port of own34 + own36 census.
-  Modes «one» (genome text from fast36.gtext) and «block N M lev D xts» (all inner genomes of a gen36 block, stats as sweep36.merge).
-  FAST36_CTRL=1 = [N5XI] off (control), FAST36_NOELEV=1.
-- VALIDATION (val36.py; LNEW = claude/l-new fa17fdf6 worktree): set A 2,000 (gen36 space N 1-2, M 3-6, seed 3601), B1 2,000 (k1srch202.mk
-  k = 1, seed 3602), B2 500 (k = 2, seed 3603): 0 MISMATCHES in all four comparisons (fast36 vs own36 T3/fb/every gate (flips, lamch);
-  vs asc197 T3; vs k1srch202.census T3/maxflip/k1fail/k1c2fail; own kfvs vs fvs202 k). Control FAST36_CTRL=1: 72/100 mismatch.
-  blockcmp36.py: C block stats = Python (own36) block stats on every k >= 1 block of N1M2, N1M3, N2M2, N2M3 (57,024 genomes, 0 bad blocks).
-- gen36.py = enum33/exact35 genome space (any N; wt = first mover of level - 1); sweep36.py N M k/K OUT (ENGINE=c|py; resumable .ck per
-  block); table36.py *.ck -> table + argmax genomes frozen to out/argmax (+ SHA1SUMS), each re-run in own36 AND C (agree flag).
-### Results so far
-- (b) MWR4_2/8_2/16_2 (l-red 406ef2fd), own36 (third engine): T3 30/54/102, C 5/9/17, R 5/9/17, F 13/25/49, maxflip 9/17/33 at gate (qz, 0)
-  with lamch 0, kfx 7/15/31, k 1 = L-RED R229 §2 on every column (out/mwr_own36.out); fast36 equal on T3/flips/lamch.
-- (c) exhaustive table: out/table36_part1.jsonl + part2 (all k >= 1 genomes of N1M1-5, N2M2-4, N3M3-4, N4M4; N + M <= 8): max ratio
-  <= 1 at every (N, M, k), K1-FLIP(2) violations 0, maxflip 2 (N2M4 only, lamch >= 1). N = M has T3 0 (one option per mover).
-- Item 3: fast36 C counter (bin/next build; cval36.py: 0 mismatches vs own34 C/T3 on 1,075 genomes incl. 71 frontier C 2-12, MWR C 17).
-  ALLK sweeps (every block, k = 0 too) out/csweep: N2M3 maxC 1, N3M3 maxC 0 (= BOX 35), N1M4 maxC 0 (ctable36.py).
-  RUNNING (05:0xZ): csweep N1M5 and N3M4 (ALLK=1 ENGINE=c FAST36_BINDIR=bin/next sweep36.py N M 0/1 out/csweep/N<N>M<M>.json; resumable).
-- NEXT: ask Lead about (2,5) (4.48e9 genomes, ~25 CPU-h, 1,944 blocks resumable). bin/next -> bin after the csweeps (same flips code).
+## HANDOVER -- successor 15 (L-COMP 15, Opus 5.5) PARKS 2026-11-09 (date -u in the park commit) after BOX 36 (Lead 05:18Z / 06:04Z: climb, fit, park)
+### Where things are (all DATA; scope: N5'-xi from S3 on Gamma3 up to the first fallback, [E-LEV]; unit genome unless stated)
+- Tools in experiments/comp/box36 (README = this section):
+  own36.py (per-gate census on own34; own34.run keeps sigs/taus; FACE = (ch_pe, lam_pe, ch_pB, lam_pB); kfvs brute force);
+  fast36.c (C port of own34 + census + C counter + face counters; build: gcc -O2 -DW=<1|8|16|48> -o bin/<dir>/fast36_w<w> fast36.c,
+  bin/ is NOT committed (.git/info/exclude): bin = flips-only build used by the sweeps, bin/next = + C counter, bin/k = + faces; all
+  three are the same source at successive edits, the final source builds all of them); fast36.py (glue: one(), run_block());
+  gen36.py (box 33/35 genome space, any N), sweep36.py (exhaustive, resumable per block; ALLK=1 for C), table36.py, ctable36.py,
+  val36.py / blockcmp36.py / cval36.py (validation), climb36.py (k = 1 climb), fit36.py (3-point fit).
+- VALIDATION: fast36 vs own36 / asc197 / k1srch202 / fvs202 on 4,500 genomes (A 2,000, B1 2,000, B2 500): 0 mismatches; control
+  FAST36_CTRL=1 fires 72/100; block stats = Python on 57,024 genomes; C counter 0 mismatches vs own34 on 1,075 (71 frontier, MWR).
+- (b) MWR4/8/16_2 third engine: = L-RED R229 on every column (out/mwr_own36.out).
+- (c) EXHAUSTIVE k >= 1, N + M <= 8 (N1M1-5, N2M2-4, N3M3-4, N4M4; out/table36_part{1,2}.jsonl, argmax out/argmax + SHA1SUMS):
+  max flips/(lamch+1) = 1 wherever a gate flips (0 at N = 1 and N = M); K1-FLIP(2) violations 0; maxflip 2 (N2M4, lamch >= 1).
+- Item 3 EXACT C (ALLK, every genome): (1,4) 0, (1,5) 0 [73.7M], (2,3) 1, (3,3) 0 (= BOX 35), (3,4) 1 [56.6M] (out/csweep). C >= 2
+  below N + M 33 stays OPEN outside these sets ((2,4) has none by BOX 33's exhaustive A <= 2, since C >= 2 needs A >= 3; (2,5) not run, Lead no-go).
+- CLIMB (k = 1, score (max_g flips/(lamch+1), C, T3); L-SI box 93 (d) bound checked on every eval: LSIFAIL 0):
+  A200 (cap 200, 8 restarts x 3000, stopped by me for the 2-job limit): 16 at N + M 200 (BEST_A200_r16_C8_9b06186f).
+  C300 (cap 300, 4 x 800): 34 at 289 (BEST_C300_r34_C17_30d4ea76). B400 (cap 400, 6 x 800): 34 at 297 (BEST_B400_r34_C17_1694d52f).
+  r32 (275, a13d9661, routed by the Lead to L-RED 63 / L-NEW 68) and both r34: fast36 = own36 = L-NEW gflip202 (out/climb/gflip202_*.out).
+  All bests: gate flips with lamch 0, flips ~ 2C, L-SI bound flips <= 2 min ch_f + 1 tight or near-tight.
+  FIT (fit36.py, out/climb/fit36.out): MWR exactly linear (2n + 1, p 1.06); climb points p 1.97 +- 0.12 from 3 points of which two
+  are at the same size and the cap-400 climb never used its room: NOT identified. Reading: the climb reaches MWR(16)'s per-gate count
+  (34 vs 33) at N + M ~290 instead of 493; growth law OPEN.
+- B400 final (6 restarts, 4,121 evals): only restarts 1 and 2 left 17 (to 34 and 32); 4 of 6 stayed at MWR8_2's 17. C300 restart 0
+  climbed 17 -> 20 -> 24 -> 28 -> 32 -> 34 while N + M rose 263 -> 281 -> 281 -> 281 -> 286 -> 289 (+2 C per accepted edit at near-constant
+  size). NOTHING RUNS at park.
+### Things only I know (successor 15)
+- fast36 speed: ~10-20 us per small genome; MWR4_2 0.09 s, MWR8_2 1.5 s (n 1,333; W 48 build): the cap-400 climb is eval-bound.
+- Monitors on tail -F of the climb logs delivered nothing here; poll the logs at wake-ups instead.
+- Not checked: whether gate (82, 0) of the r32/r34 bests descends from MWR8_2's qz (62) (ADD-mover shifts indices); open.
+- verify.sh takes ~20 min while two heavy jobs run; never commit during a push (hook nags; ignore until the push ends).
 
 ## HANDOVER -- successor 14 (L-COMP 14, Opus 5.5) PARKS 2026-11-09 03:29Z by date -u (Lead 02:14Z: BOX 35 last before park). NOTHING RUNNING.
 ### Where things are (all DATA; scope of every number: N5'-xi from S3 on Gamma3 up to the first fallback, unit = genome unless stated)
