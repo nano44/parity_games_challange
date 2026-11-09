@@ -1,6 +1,11 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 23), 2026-11-09 08:35Z (date -u)
+- C138 Add. 1 PASS: second fill c03653ca @ 98e1c8be on L-4 5f88c297 (= mine); UPDATE d[668] = 8cd83060; block d[436:659]; landing sim
+  R124 l. 15371-15593. NEXT: Add. 2 on the landing (rebuild parent + d[436:659] with «checker <this Add. 1 SHA>)» before the line-start
+  «**Erratum E-1** (not a result», GAPS l. 11 + d[668] filled) + CI. Then C139 (R125 P-N5-CHAIN).
+
 ## Resume point (successor 23), 2026-11-09 04:15Z (date -u)
 - C138 = R124 (P-N5-END first fill f7aa004e @ b3c7b461 on L-3 d6afe92a): FAIL E-1 (G-U scope words; UPDATE needed a reading, C134 E-3)
   and E-2 (G-2 «τ0» undefined in ENDGAME-3's clause, C135 E-4). L-4 = L-3 + R-U + R-T0 = 5f88c297 (7,230 B); UPDATE-4 8cd83060.
