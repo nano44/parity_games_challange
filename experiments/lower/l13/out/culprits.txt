@@ -1,2 +1,4 @@
 L10_C10_osc_final_solved core8_HIT7 XS 11 G 62-63 prefix 17  single-mover drops giving SAT: 11 12
 L10_C10_osc_final_solved core8_HIT7 XS 11 G 63-63 prefix 15  single-mover drops giving SAT: 11
+SEED_R2_d32 S8_R2_core XS 12,13 G 62-63 prefix 8  single-mover drops giving SAT: 1 8 9 11 14
+L10_C10_osc_final_solved core8_HIT7 XS 11,12 G 62-63 prefix 17  single-mover drops giving SAT: 11 12

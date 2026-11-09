@@ -1,3 +1,5 @@
 pdrup ../l10/rec/L10_C10_osc_final_solved.txt ../l10/out/core8_HIT7.txt 15 11 63-63 SKIP  | cnf sha1 8da97a4f7bbf5e2d9d5862d8da722d03796d19d4 clauses 732082 lemmas 161521 | drup: s VERIFIED (126 lemmas RUP-checked)
 pdrup ../l10/rec/L10_C10_osc_final_solved.txt ../l10/out/core8_HIT7.txt 17 11 62-63 SKIP  | cnf sha1 e6ab2851ee7aa526666b09d223dfe82b81cec4a5 clauses 947840 lemmas 221284 | drup: s VERIFIED (6280 lemmas RUP-checked)
 pdrup ../l10/rec/L10_C4_final_score144_solved.txt ../l10/out/core8_HIT7.txt 9 13 63-63 SKIP  | cnf sha1 0d4b5bb698148cfe744ead3dd4b231c40e3b079d clauses 791715 lemmas 289480 | drup: s VERIFIED (68224 lemmas RUP-checked)
+pdrup ../l10/rec/L10_C4_final_score144_solved.txt ../l10/out/core8_HIT7.txt 11 13 62-63 SKIP  | cnf sha1 136b787ba73ff77a42ae12a037252e47772c31b5 clauses 829624 lemmas 556926 | drup: s VERIFIED (216427 lemmas RUP-checked)
+pdrup ../l10/rec/L10_C10_osc_final_solved.txt ../l10/out/core8_HIT7.txt 17 11 61-63 SKIP  | cnf sha1 d244dcb25a53c3ca14cb75ad47bf12fdbe3b12ef clauses 1045677 lemmas 1900572 | drup: s VERIFIED (845863 lemmas RUP-checked)
