@@ -1100,4 +1100,28 @@ if [ "$r203" -eq 0 ] && [ -z "$d203" ] && ! grep -v "^ctrl" box203/check203.out 
 else
   echo "BOX 203 FLIP check: FAILED (check203.sh exit $r203)"; echo "$d203" | head -30; echo "$run203" | tail -15; exit 1
 fi
+# P-N5-QN (L-NEW successor 68): frozen packet + source note, quote check, tools / outputs / instances / engine against box203/qn.pins (DOCS/ = docs/new/)
+pinQ=$(cd box203 && sed 's#DOCS/#../../../docs/new/#' qn.pins | sha1sum -c --quiet 2>&1) || true
+grep -q "^quotes 24 missing 0 " box203/quotesqn.out || pinQ="$pinQ quotesqn.out: not «quotes 24 missing 0»"
+if [ -z "$pinQ" ]; then
+  echo "P-N5-QN: packet and $(wc -l < box203/qn.pins) pinned files match qn.pins, quotes 24 missing 0: PASS"
+else
+  echo "P-N5-QN check: FAILED"; echo "$pinQ" | head -20; exit 1
+fi
+# BOX 204 K1EQ (L-NEW successor 68): Lemma FACE-TARGET counters (k1eq204.py), frozen output + controls
+r204=0; run204=$(cd box204 && bash check204.sh 2>&1) || r204=$?
+d204=$(diff <(printf '%s\n' "$run204") box204/check204.out 2>&1) || true
+if [ "$r204" -eq 0 ] && [ -z "$d204" ] && ! grep -v "^ctrl" box204/check204.out | grep -Eq "(wfail|dfail|bfail) [1-9]" && grep -q "'wfail': 0, 'dfail': 0, 'bfail': 0" box204/check204.out && grep -q "^ctrl1 .*wfail [1-9]" box204/check204.out && grep -q "^ctrl2 .*bfail [1-9]" box204/check204.out && (cd box204/inst && sha1sum -c --quiet SHA1SUMS); then
+  echo "BOX 204 K1EQ: FACE-TARGET counters 0, controls fire = frozen: PASS"
+else
+  echo "BOX 204 K1EQ check: FAILED (check204.sh exit $r204)"; echo "$d204" | head -30; echo "$run204" | tail -15; exit 1
+fi
+# BOX 205 BETA-LOC (L-NEW successor 69): Lemma BETA-LOC counters (betaloc205.py), frozen output + control + naive DEAD witness
+r205=0; run205=$(cd box205 && bash check205.sh 2>&1) || r205=$?
+d205=$(diff <(printf '%s\n' "$run205") box205/check205.out 2>&1) || true
+if [ "$r205" -eq 0 ] && [ -z "$d205" ] && ! grep -v "^ctrl1" box205/check205.out | grep -Eq "'(bfail|nfail)': [1-9]" && grep -q "^ctrl1 .*'bfail': [1-9]" box205/check205.out && grep -q "^naive_k1_s71.json .*'naive': [1-9]" box205/check205.out && (cd box205/inst && sha1sum -c --quiet SHA1SUMS); then
+  echo "BOX 205 BETA-LOC: bfail / nfail 0, control fires, naive witness fires = frozen: PASS"
+else
+  echo "BOX 205 BETA-LOC check: FAILED (check205.sh exit $r205)"; echo "$d205" | head -30; echo "$run205" | tail -15; exit 1
+fi
 rm -rf "$tmp"

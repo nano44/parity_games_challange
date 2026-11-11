@@ -1,0 +1,6 @@
+MWR4_2.json ctrl 0 {'acyc_steps': 0, 'bfail': 0, 'flips': 13, 'naive': 0, 'nfail': 0, 'prem': 2008}
+k1fail_202.json ctrl 0 {'acyc_steps': 0, 'bfail': 0, 'flips': 3, 'naive': 0, 'nfail': 0, 'prem': 150}
+naive_k1_s71.json ctrl 0 {'acyc_steps': 2, 'bfail': 0, 'flips': 3, 'naive': 3, 'nfail': 0, 'prem': 60}
+k1 seed 75 ctrl 0 {'acyc_steps': 36, 'bfail': 0, 'flips': 309, 'genomes': 100, 'naive': 60, 'nfail': 0, 'prem': 3177}
+rand seed 76 ctrl 0 {'acyc_steps': 43, 'bfail': 0, 'flips': 265, 'genomes': 100, 'naive': 62, 'nfail': 0, 'prem': 2652}
+ctrl1 k1 seed 75 ctrl 1 {'acyc_steps': 36, 'bfail': 63, 'flips': 309, 'genomes': 100, 'naive': 60, 'nfail': 0, 'prem': 3251}

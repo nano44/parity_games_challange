@@ -1,0 +1,1 @@
+rand seed 73 ctrl 0 {'acyc_steps': 416, 'bfail': 0, 'flips': 3135, 'genomes': 1000, 'naive': 864, 'nfail': 0, 'prem': 30022}
