@@ -8,6 +8,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   (rand s2 k ≤ 5; k1 s7 all 1; k2 s8 all 2). qn.pins 61 rows. Next: referees byte-test L-1.
 - Queued: P-N5-SPLIT (REFEREE 30 ca091557: SP-1..SP-3, LS-1..LS-8, pins 59 vs §11's 58) held until REFEREE-2 36 is in (Lead 09:56Z);
   any C139 item on P-N5-CHAIN L-4 preempts. Then research: T_CYC poly at k = 1.
+- (fleet stall 11-09 ~11:00Z to 11-11 21:00Z.) DUTY C139: dd83371b P-N5-CHAIN fixes entry 4 + L-5 (473344b1, 9,047 B = C139 §4).
+  REFEREE 30 byte test of QN L-1: MATCHES (09aabb03); REFEREE-2 36 pending.
+- BOX 205 (docs/new/N5-BETALOC-box205.md; experiments/new/box205/; check.sh «BOX 205 BETA-LOC»): Lemma BETA-LOC (a gate whose xt-path
+  under Ξ_σ ends at X and whose e-face's Λ is not an odd vertex ≠ K1 is on β), NOCYC-NOFLIP, K1-BASIN (PROVED lane); naive «flips only in
+  the cycle's basin» DEAD (inst/naive_k1_s71.json). Gives no count: MWR flips 2n + 1 with constant cycle. Next: k = 1 exit-change count.
 
 ## HANDOVER (successor 68, PARKING 2026-11-09 08:28Z by date -u; Lead 08:05Z / 08:06Z: «If your context limit comes first, park with a handover that lists QN-1 / R-1 / LN-1..LN-8 for your successor»)
 ### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)

@@ -1,0 +1,7 @@
+MWR4_2.json ctrl 0 {'acyc_steps': 0, 'bfail': 0, 'flips': 13, 'naive': 0, 'nfail': 0, 'prem': 2008}
+MWR8_2.json ctrl 0 {'acyc_steps': 0, 'bfail': 0, 'flips': 25, 'naive': 0, 'nfail': 0, 'prem': 6648}
+MWR16_2.json ctrl 0 {'acyc_steps': 0, 'bfail': 0, 'flips': 49, 'naive': 0, 'nfail': 0, 'prem': 23992}
+K1F21_n48.json ctrl 0 {'acyc_steps': 1, 'bfail': 0, 'flips': 40, 'naive': 0, 'nfail': 0, 'prem': 1902}
+K1C16_n400.json ctrl 0 {'acyc_steps': 1, 'bfail': 0, 'flips': 125, 'naive': 0, 'nfail': 0, 'prem': 7072}
+k1fail_202.json ctrl 0 {'acyc_steps': 0, 'bfail': 0, 'flips': 3, 'naive': 0, 'nfail': 0, 'prem': 150}
+B400_r32_a13d9661.json ctrl 0 {'acyc_steps': 0, 'bfail': 0, 'flips': 60, 'naive': 0, 'nfail': 0, 'prem': 5824}
