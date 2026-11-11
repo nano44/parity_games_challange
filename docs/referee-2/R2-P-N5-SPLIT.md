@@ -349,3 +349,36 @@ R-1 to R-4, and R-5 if it has DATA.
 ## Statement of independence
 My verdicts rest on my own derivations above and on my own engine. I did not read docs/referee/ for this packet, nor L-RED's R227 / R228
 / R229 reports. I read the lane's split199.py (doc string and the DEAD-counter lines) only to fix the units of §8's counters.
+
+## Addendum 1 (REFEREE-2 successor 36; written after my verdict, committed in 991296c9 and boxes 1-5 on origin): REFEREE 30's R-P-N5-SPLIT.md (claude/referee ca091557)
+- Verdicts: equal on every row.
+  - Both referees SIGN every statement, CONDITIONAL on R125, with ASC-WIT / ASC-ROOT under HYPOTHESIS [E-LEV]. Neither finds a GAP or
+    refuses anything.
+  - REFEREE labels REWIN / REWIN-HI / REWIN-COUNT, PAIR-SPLIT / SPLIT-COUNT, RW-SHAPE(*) / RW-1 and ASC-WIT (c) «SIGN WITH SP-1». I
+    label them SIGN with W-1 closed. These are the same finding and the same repair, under different labels.
+- SP-1 (REFEREE) = my W-1, found independently. Both name the same sentence of (LEX-Λ), the same counterexample class (plays from pA or K3),
+  the same repair (non-core vertices; P-N5-CHAIN's W-1 repair) and the same list of uses (all at pads).
+  - I add one thing REFEREE does not state: the CONCLUSION of (LEX-Λ) («larger value ⇒ lex-larger e-set») holds for all pairs. This is a
+    strengthening, not a disagreement.
+  - Line strings: REFEREE's LS-2, «(LEX-Λ) is applied only to non-core vertices (pads), where P-N5-CHAIN's W-1 repair holds», meets my
+    R-1. Either string suffices for me. My R-1's first clause still applies: the line must not restate the false sentence.
+- SP-2 (REFEREE, citation, REQUIRED in the line): I did not find this, and I AGREE.
+  - Checked on the bytes: R125's line (L-4 a69c8aa9 and L-5 473344b1) names none of F2, (Core), (E-DOM), [G3], [DEF], (R), (P). SPLIT
+    uses all of them as «P-N5-CHAIN facts».
+  - My review checked them against P-N5-CHAIN's frozen text (sha1 6e613ba7), where all are defined (r2q.py: 30 anchors). My predecessor
+    signed F2 and CYC «as used» in R2-P-N5-CHAIN. So the mathematics stands. The line must cite them as P-N5-CHAIN's frozen text (or their
+    landed sources: [DEF] R104, [G3] R117, [OPT] R118 (b) + R21 (a)), with (Core) in the W-1 repaired reading, and not as facts of R125's
+    line.
+  - I adopt it as my R-6 (REQUIRED).
+- SP-3 (REFEREE, optional) = my N-1 ((PL): «the e-letters of Π_s(v) strictly before u»).
+- Other line items: LS-1 = my R-2 + R-3; LS-4 / LS-6 = my R-4; LS-5 = my R-5; LS-7 (landed tail) and LS-8 (source note) I agree with. My
+  N-2 (premise lists in «To sign») is mine only and optional.
+- DATA: the two replays are independent, and both are all-zero.
+  - REFEREE: own engine, 28 pinned instances + 800 random; DEAD D1, D2, D4, D5, D6 from the lane's check199.sh re-run; D3 and D7 not
+    re-run.
+  - Mine: own engine, 28 pinned + 7,000 random + 2,200 mutants (307,718 couples, 2,149 with S_t = S_t′); D1-D7 re-run with my own code,
+    first witnesses equal.
+  - So D3 (HOLD2K_n84 18) and D7's fan-in (NK6_cl21 3, DSALT9_n416 4) and FW depth are now re-run by one referee on independent code.
+  - Records equal: MW32_2 c_y 65, T3 199; C6G8_n54 6; FW6_4 / FW8_4 5 pairs.
+- Result: P-N5-SPLIT has two referee signatures on every statement, CONDITIONAL on R125. The line needs R-1 (= LS-2), R-2 to R-5, and R-6
+  (= SP-2).
