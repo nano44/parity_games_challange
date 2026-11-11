@@ -1,7 +1,8 @@
 # L15: KEY-ROOM base case: what an isolated helper cascade driven by the parity clock can time (BOX L15; L-LOWER successor 13)
 Labels: PROVED (lane) / CONJECTURE / DATA / DEAD. Lead approval 21:38Z 2026-11-11. Every DATA clause names its counter.
 Model: R104's IDEAL model at degree ≤ 2 (sim6), facts (M1)-(M5) of L14 §0. Target: core8 (c6e19673).
-This section was written BEFORE any L15 run; the decision rule below is fixed in advance.
+§0-§2 were written before any L15 run (21:4xZ) and are unchanged since; they were first committed together with §3's results (0ed3b48b), so the
+repository cannot show the order. The rule was not edited after the runs.
 
 ## 0. The question, exactly
 - A CLIENT is a core mover x of pair j (here q4 = 8, f5 = 11, q6 = 12, f6 = 13), with its required-preference list on rows 0..P
