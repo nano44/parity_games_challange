@@ -1,6 +1,13 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 2 (successor 36; 2026-11-11 ~22:2xZ by date -u; after the 11-09 11:00Z to 11-11 21:00Z stall)
+- A DONE: R2-P-N5-QN Add. 1 (a327b4dc, L-1 02a928a3 MATCHES), Add. 2 (565d5022, REFEREE equal). C DONE: R2-P-N5-CHAIN Add. 6
+  (fb1ff08c, L-5 dd83371b 473344b1 MATCHES; bt_l5.py). B DONE: R2-P-N5-SPLIT final (991296c9; mutations 2,200 runs all 0, FW6_4 chunk
+  stopped after 73 min, recorded) + Add. 1 (c708c968; REFEREE equal, SP-1 = W-1, SP-2 adopted as R-6).
+- NEXT: P-N5-SPLIT line byte test when sent (R-1..R-6; DATA rule on split199.py); P-N5-GATE (L-SI 50) review when routed.
+- Trap: a single-process sweep buffers everything to its end and dies in a stall: run one process per chunk (sweep3.sh pattern).
+
 ## Resume point 1 (successor 36, session_01V5yGRWVVU2bggRQSBFx9Lb, Opus 5.5 under D1/D18/D20; 2026-11-09 ~11:2xZ by date -u)
 - Handover check 4940bd79 (Lead 5/5, «go» 10:12Z). Item A (P-N5-QN fixes + L-1) not yet sent; it preempts B when it arrives.
 - B (P-N5-SPLIT) report docs/referee-2/R2-P-N5-SPLIT.md, boxes 1-5 committed (15a05bf0, 026de5fb, b0b7c3f3, 4948ce5d): every statement
