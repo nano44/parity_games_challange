@@ -1249,3 +1249,26 @@ echo "si (box 79: P-IDEAL-DBL frozen): PASS"
 # box 80 (TOWER proof side: PULSE-NEST, ZONE, INSERT-PASS, STRETCH-NEED; docs/si/N5-TOWER-box80.md)
 bash box80/check80.sh
 echo "si (box 80: TOWER stretch): PASS"
+# box 81 (BRIDGE: ascent census on IDEAL-CYC / Gamma3; BETA-ACYC, ACYC-LIN; xcheck; docs/si/box81-bridge.md)
+bash box81/check81.sh
+echo "si (box 81: BRIDGE): PASS"
+# box 82 (CYCLIC TOWERS: HS2_d3 Xi-cycle scans, climbs, CAP-R; docs/si/box82-cyctower.md)
+bash box82/check82.sh
+echo "si (box 82: CYCLIC TOWERS): PASS"
+# box 83 (LADDER-R at h = 2..6: built and measured; Lemma LOCK-UP, Corollary LADDER-2; docs/si/box83-ladder.md)
+bash box83/check83.sh
+echo "si (box 83: LADDER-R): PASS"
+# box 84 (HUB PAIR «MIRROR» milestone 1: breaks LOCK-UP's single-target hypothesis; linear, not doubling; docs/si/box84-hubpair.md)
+bash box84/check84.sh
+echo "si (box 84: HUB PAIR): PASS"
+
+# box 85 (TWO COPIES PER LEVEL: DEAD as a counter; Lemma FLIP-U, Corollary LOW-NULL, Lemma POOL-ALT; docs/si/box85-twocopies.md)
+bash box85/check85.sh
+
+# box 86 (Q1 LAG TOWER: DEAD as a counter at h = 2, 3; Lemmas SAME-E-MERGE, ACCESS-LATCH, LEAPFROG; docs/si/box86-lagtower.md)
+bash box86/check86.sh
+
+# box 87 (Lemma LEAPFROG-ASC: shared-e leapfrogs need ascents; census on boxes 84-86; docs/si/box87-leapfrog.md)
+bash box87/check87.sh
+# box 88 (NEST-CHARGE: type-II nesting charged to e-set heights; leap88 census per-bit + ALL; docs/si/box88-nest.md)
+bash box88/check88.sh

@@ -1,0 +1,33 @@
+start (0, 0, 2, 5) C 0
+iter 1 score (0, 0, 2, 6) C 0
+iter 6 score (0, 0, 2, 8) C 0
+iter 20 score (0, 2, 2, 8) C 0
+iter 22 score (1, 2, 0, 4) C 0
+iter 74 score (1, 2, 2, 4) C 2
+iter 122 score (1, 2, 2, 5) C 2
+iter 136 score (1, 2, 2, 6) C 2
+iter 145 score (1, 3, 2, 5) C 2
+iter 170 score (1, 3, 2, 6) C 2
+iter 194 score (1, 3, 2, 7) C 2
+iter 215 score (1, 3, 2, 8) C 2
+iter 274 score (1, 5, 2, 8) C 3
+iter 286 score (1, 6, 2, 9) C 4
+iter 292 score (2, 4, 2, 8) C 3
+iter 306 score (2, 6, 2, 8) C 3
+iter 527 score (2, 6, 3, 8) C 2
+iter 634 score (2, 6, 3, 9) C 2
+iter 689 score (2, 7, 3, 9) C 2
+iter 942 score (2, 8, 3, 10) C 1
+iter 1528 score (2, 8, 3, 11) C 2
+iter 1574 score (2, 9, 3, 11) C 2
+iter 1602 score (2, 9, 3, 12) C 3
+iter 1900 score (2, 9, 3, 13) C 3
+iter 2034 score (2, 9, 3, 15) C 4
+iter 2126 score (2, 10, 3, 15) C 4
+iter 2301 score (2, 10, 4, 13) C 5
+iter 2451 score (2, 10, 4, 14) C 5
+iter 3459 score (2, 11, 4, 14) C 5
+iter 7994 score (2, 11, 5, 13) C 5
+iter 9261 score (2, 11, 5, 14) C 5
+iter 15325 score (2, 11, 5, 15) C 4
+final d 6 seed 2 OBJ kf score (2, 11, 5, 15)

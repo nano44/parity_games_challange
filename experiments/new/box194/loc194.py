@@ -3,7 +3,7 @@
 Per gate g and state t: LOC-GATE (no tie => sigma-bar_t(g) is the <=-least face); ties counted.
 Per gate and maximal tie-free interval I of consecutive states: F (sigma-bar flips at g inside I) <= 2*min(D_I(e_g), D_I(beta_g)) - 1
 (when F >= 1); D_I(e_g) <= D_I(y_g) + 1 (y_g = e_g's frozen successor); D_I(beta_g) <= D_I(x_g) + 1 (x_g = beta_g's frozen successor).
-Also: cnlow = (state, vertex) pairs whose cycle node has priority < 2 (CN2); k2fail = states with sigma-bar(K2) != K1.
+Also: cnlow = (state, vertex) pairs whose cycle node has priority < 2 (CN2); k2fail = states with sigma-bar(K2) != K1 or not Omega(K1) < Omega(K2) (both conjuncts of LOC-K2; P-N5-QUIET fixes entry 2, D-2).
 Usage: loc194.py FILES.json | rand COUNT SEED. Imports: box192/rpot192.py (and through it box189-191), relative to this file."""
 import sys, os, json, random
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, os.path.join(HERE, "..", "box192"))
@@ -18,7 +18,7 @@ def analyse(G):
     r = dict(T=len(ev) - 1, cnlow=0, k2fail=0, gatestates=0, ties=0, locfail=0, intervals=0, flips=0, ovtfail=0, efail=0, bfail=0, maxF=0, tight=0)
     for vs, sb in ev:
         r["cnlow"] += sum(1 for v in range(h.n) if h.prio[vs[v][0]] < 2)
-        if sb[k2] != k1: r["k2fail"] += 1
+        if sb[k2] != k1 or not E.key(vs[k1]) < E.key(vs[k2]): r["k2fail"] += 1
     for g, q in gates:
         e, b = V[("e", q)], V[("b", q)]; y, x = s0[e], s0[b]
         runs, cur = [], []

@@ -1,0 +1,6 @@
+L-3 d6afe92ae0d2c0021743c99d2bd10f16cad27c73 7215 B; L-4 5f88c2971718522027ae267754814c6ba401b829 7230 B; parens 105 105 pipes 0 lines 1 τ0 0
+R-U: old in current 1 / L-4 0; new in L-3 0 / L-4 1; both verbatim in C138 True
+R-T0: old in current 1 / L-4 0; new in L-3 0 / L-4 1; both verbatim in C138 True
+L-4 == L-3 + R-U + R-T0: True
+«PROVED-CONDITIONAL» in L-3 2, in L-4 2
+«REACH3-CYC» in L-3 2, in L-4 2

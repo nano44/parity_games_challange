@@ -89,3 +89,94 @@
 
 ### Machine checks after this entry
 - asc.pins: asc193.py and this fixes file re-pinned; line L-2 added (35 rows). check.sh block «P-N5-ASC» unchanged (it reads asc.pins).
+
+## Fixes entry 3 (L-NEW successor 63; Lead 03:30Z: «P-N5-ASC fix round 3, from CHECKER 21 C135 … Write fixes entry 3 (append-only) and docs/new/P-N5-ASC-line-L3.txt by script»)
+- Report: CHECKER 21 C135 (claude/checker 0942e8be, docs/checker/C135.md): FAIL E-1 to E-4, «No statement, proof, definition or DATA
+  figure changes; E-3 narrows one clause to its signed form.» All four ACCEPTED as written. The packet is unchanged; entries 1-2 are
+  unchanged; where they differ, this entry governs.
+- Line: L-2 (docs/new/P-N5-ASC-line-L2.txt) → L-3 (docs/new/P-N5-ASC-line-L3.txt), written by experiments/new/box193/mkl3_193.py from
+  C135 §5 byte-for-byte (`git show 0942e8be:docs/checker/C135.md`; wrapped lines joined with one space, as C135 §5 says). The script
+  asserts that each old string occurs exactly once in L-2, applies R1-R4 in order, and asserts L-3's sha1 = 0012d6710983ec339be8f5d4e051a205cc9207ba
+  (5,154 bytes, one line, 122 «(» / 122 «)», no «|»), C135's target. Result: equal.
+
+### E-1 / R1 (R-B): source note. ACCEPTED.
+- Old: «; L-NEW successor 61)» → New: «; L-NEW successors 61-62)». Entry 1 (AS-1, AS-4, W-1, unit counts) and entry 2 are successor 62's.
+
+### E-2 / R2 (R-G, L41, Lead ruling): HUB-ASC-G's B = 0 constant. ACCEPTED.
+- Old: «; §3-§5 do not use [E-LEV]; DATA, clause by clause» → New: «; §3-§5 do not use [E-LEV]; the proof of record of HUB-ASC-G's B = 0 case
+  (F′_0 = F_0, DESC-POLY on the whole interval) is referee-originated (REFEREE R-P-N5-ASC §3 AS-1, restated in P-N5-ASC's fixes entry 1
+  AS-1), signed by both referees; DATA, clause by clause».
+- Reason (C135 E-2): the packet's «§4's proof applies word for word» (l. 160) gives a factor M² + 3M + 1 at B = 0; F′_0 = F_0 is AS-1's
+  argument (entry 1 AS-1).
+
+### E-3 / R3 (R-R): the READING inside CHAIN-DECOMP's clause. ACCEPTED.
+- Old: «so the e-vertices of one Λ-class form one forest whose paths are the sequences seq_t(v)» → New: «hence seq_t(v) = (f, seq_t(y_f))»,
+  the lemma's own signed sentence (packet l. 81 «Hence seq_t(v) = (f, seq_t(y_f)).»). The forest reading (packet l. 89-90) stays in the
+  entry body as a proof step of HUB-ASC-G; it is not a line clause.
+
+### E-4 / R4 (R-Q): seq_t(v) and «ascent» defined in the line. ACCEPTED.
+- Old: «with E_t(v) the set of e-vertices in Π_t(v),» → New: «with seq_t(v) the e-vertices in Π_t(v) in play order, E_t(v) their set, an
+  ascent of seq_t(v) a step to a more relevant element,». Packet l. 52-55: «seq_t(v) := the e-vertices that lie in Π_t(v), in the order
+  of the play from v under (σ_t, σ̄_t)»; «An ascent of a sequence (c_1, …, c_p) of distinct items is an index i with c_(i+1) more relevant
+  than c_i.»
+
+### Machine checks after this entry
+- asc.pins: this fixes file re-pinned; line L-3 and mkl3_193.py added (37 rows). check.sh block «P-N5-ASC» unchanged (it reads asc.pins).
+- No tool or DATA output changes (check193.out unchanged).
+
+## Fixes entry 4 (L-NEW successor 63; Lead 04:56Z: «P-N5-ASC fix round 4: ONE required string (R5), from REFEREE 28 §E»)
+- Report: REFEREE 28, docs/referee/R-P-N5-ASC.md §E at claude/referee 013f821b: L-3 = L-2 + exactly R1-R4 (byte test PASSES), R1-R4
+  CORRECT; «L-3 does NOT YET MATCH the packet: R5 is required.» ACCEPTED. The packet is unchanged; entries 1-3 are unchanged; where they
+  differ, this entry governs.
+- The finding: the line's CHAIN-DECOMP hypothesis «if the first e-vertex on v's play is f» is weaker than the packet's l. 80 «If seq_t(v)
+  = (f, …), then …» (which needs f ∈ Π_t(v)) and false as worded: at v = e_g of a level-0 gate the first e-vertex is v itself, its
+  successor is c_W (not a mover) and v ∉ Π_t(v). REFEREE's witness: scratch/asc_cd_l0.py, asc_logs/cd_level0.out (RS2 and LEAP_k8, option
+  (0, 0)). The signed packet statement is unaffected; the line misstated its hypothesis.
+- R5: old «(Lemma CHAIN-DECOMP) if the first e-vertex on v's play is f, then» → new «(Lemma CHAIN-DECOMP) if seq_t(v) = (f, …), i.e. the
+  first e-vertex on v's play is f and f ∈ Π_t(v), then».
+- Line: L-3 → L-4 (docs/new/P-N5-ASC-line-L4.txt), written by experiments/new/box193/mkl4_193.py: asserts the old string once in L-3 and
+  REFEREE's predicted sha1 4017305a34eac21615ba8f172a9b899544d25659 (5,198 B, 125 «(» = 125 «)», one line, no «|»). Result: equal.
+- DATA rule: R5 is a statement wording; its witness is REFEREE's asc_cd_l0.py. No tool or DATA output changes.
+- asc.pins: this file re-pinned; line L-4 and mkl4_193.py added (39 rows). check.sh block «P-N5-ASC» unchanged.
+
+## Fixes entry 5 (L-NEW successor 64; Lead 06:33Z: «Write fixes entry 5 + L-5 = L-4 + R-A + R-I by script»; written 06:57Z by date -u)
+- Report: REFEREE 29, docs/referee/R-P-N5-ASC.md §F (claude/referee 52e6e77b: «line L-4 byte test MATCHES (L-3 + R5)») and §F addendum 1
+  (055758ba, opened: both old / new strings and the predicted sha1 occur there verbatim). L-4 MATCHES, with R-A
+  REQUIRED and R-I optional; Lead ruling: take R-I (REFEREE 29: the «i.e.» was an unpacking, not a checked equivalence). ACCEPTED, both.
+  The packet is unchanged; entries 1-4 are unchanged; where they differ, this entry governs.
+- R-A (required): old «(items 1..M, a run of forests with every chain lex-nondecreasing)» → new «(items 1..M compared by number, a run of
+  forests with every chain lex-nondecreasing, an ascent a step to a larger item)». The line now states the order on CS(M)'s items and
+  what an ascent is there, as the packet's §4 does.
+- R-I (taken): old «(f, …), i.e. the first e-vertex on v's play is f and f ∈ Π_t(v), then» → new «(f, …), then». CHAIN-DECOMP's
+  hypothesis is now exactly the packet's l. 80 «If seq_t(v) = (f, …), then …»; the dropped gloss was not a checked equivalence.
+- Line: L-4 → L-5 (docs/new/P-N5-ASC-line-L5.txt), written by experiments/new/box193/mkl5_193.py: asserts L-4's sha1 (4017305a…), each old
+  string once in L-4, and the predicted sha1 fe4d3f902b6afde93384ebf625fa9bebcea0e1d0 (5,192 B; 124 «(» = 124 «)», one line, no «|»).
+  Result: equal (no adjustment).
+- DATA rule: R-A and R-I are wordings; no tool or DATA output changes.
+- asc.pins: this file re-pinned; line L-5 and mkl5_193.py added (41 rows). check.sh block «P-N5-ASC» unchanged.
+
+## Fixes entry 6 (L-NEW successor 65; line-only; Lead 10:25Z: «Write fixes entry 6 (line-only) + L-6 = L-5 + R6 by script»; written 10:51Z by date -u)
+- Source: CHECKER successor 22, C135 Add. 1 (claude/checker 0ffde42c, docs/checker/C135.md l. 94-139): third fill on L-5 FAILs on E-5
+  only. HUB-ASC(B)'s clause in L-5 left «forest», «chain», «hub» and «value» undefined, and the hub's monotonicity is a HYPOTHESIS of
+  the theorem, not notation: without it the clause is false (CHECKER's CS(3) witness: 8 values with 0 ascents > F_0(3) = 7). The
+  drafter's R-H is not taken (CHECKER: a self-map of a finite set always has a cycle; chain(⊥) undefined). N-S: no action (CHECKER ruled;
+  entry 6 is line-only and carries no proof).
+### R6 (REQUIRED, taken; CHECKER's exact strings): old «(items 1..M compared by number, a run of forests with every chain
+  lex-nondecreasing, an ascent a step to a larger item), a hub whose value has» → new «(items 1..M compared by number, a forest a map next
+  from the items to the items and ⊥ without cycles, chain(x) := (x, next(x), next²(x), …) up to ⊥, compared as a set, a run of forests
+  with every chain lex-nondecreasing, an ascent a step to a larger item), a hub (h_t an item or ⊥ at each time t, chain(⊥) := ∅, with
+  chain_s(h_s) ≤ chain_t(h_t) for s < t) whose value chain_t(h_t) has».
+### R6 against the frozen packet §2 (l. 58-62), as the Lead asked: no misstatement.
+  - «a forest a map next from the items to the items and ⊥ without cycles» = l. 59 «A forest is a map next: items → items ∪ {⊥} without
+    cycles».
+  - «chain(x) := (x, next(x), next²(x), …) up to ⊥, compared as a set» = l. 59 «chain(x) := the sequence x, next(x), next²(x), … (as a
+    set when compared)»; «up to ⊥» only makes explicit that the sequence stops at ⊥, which l. 59 leaves implicit (next is undefined on ⊥).
+  - «a run of forests with every chain lex-nondecreasing» = l. 60-61 (already in L-5).
+  - «a hub (h_t an item or ⊥ at each time t, chain(⊥) := ∅, with chain_s(h_s) ≤ chain_t(h_t) for s < t) whose value chain_t(h_t)» = l. 62
+    «A hub of a run is a choice h_t ∈ items ∪ {⊥} with chain_s(h_s) ≤ chain_t(h_t) for s < t (chain(⊥) := ∅). Its value at t is
+    chain_t(h_t).»
+### Line L-6 (written by script)
+- docs/new/P-N5-ASC-line-L6.txt = L-5 + R6, by experiments/new/box193/mkl6_193.py (from the repo root): asserts L-5's sha1 (fe4d3f90…),
+  the old string exactly once in L-5, one line, no «|», «(» = «)», and the predicted sha1. Result: sha1
+  a23c61d384036ce3fa771e27e175a8dbf2331658, 5,449 B, 133 «(» = 133 «)» = the Lead's and CHECKER's prediction (C135 Add. 1 l. 139).
+- asc.pins: this file re-pinned; L-6 and mkl6_193.py added. check.sh block «P-N5-ASC» unchanged. L-5 kept (superseded).

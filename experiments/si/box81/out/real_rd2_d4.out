@@ -1,0 +1,2 @@
+rd2_d4.json mode xi start S3 iters 14 fallbacks 1 T3 11 howardT 11 moverphase_eq_howard 1 full_eq_howard 1 distinct_mover_states 13
+rd2_d4.json mode spec start S3 iters 7 fallbacks 1 T3 4 howardT 11 moverphase_eq_howard 0 full_eq_howard 0 distinct_mover_states 8

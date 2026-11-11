@@ -1,4 +1,124 @@
-# Draft RESULTS R122 (Lead; first fill 2026-11-08T05:11:16Z by date -u (subagent) on P-ACYC line L-3, docs/si/P-ACYC-line-L3.txt, l-si ff9b1639, sha1 03453361fead881493e2d2786b869f1c63158c4c (draft sha1 0fa23b17); SECOND FILL 2026-11-08T06:50:03Z by date -u (subagent) on P-ACYC line L-4, docs/si/P-ACYC-line-L4.txt, l-si 0bc6f028, sha1 85bb221f19ca457655c954f570552bc0f4d8095d) — to CHECKER C136 — NOT LANDED; goes after R121 (not landed; second-fill draft docs/agents/R121-draft.md, sha1 823d15c3, to CHECKER C135 Add. 1), before Erratum E-1
+# Draft RESULTS R122 (Lead; first fill 2026-11-08T05:11:16Z by date -u (subagent) on P-ACYC line L-3, docs/si/P-ACYC-line-L3.txt, l-si ff9b1639, sha1 03453361fead881493e2d2786b869f1c63158c4c (draft sha1 0fa23b17); SECOND FILL 2026-11-08T06:50:03Z by date -u (subagent) on P-ACYC line L-4, docs/si/P-ACYC-line-L4.txt, l-si 0bc6f028, sha1 85bb221f19ca457655c954f570552bc0f4d8095d (draft sha1 2cd7cfd0, CHECKER C136 b2fe3440: FAIL E-1, E-2); THIRD FILL 2026-11-08T17:20:12Z by date -u (subagent) on P-ACYC line L-5, docs/si/P-ACYC-line-L5.txt, l-si 358ede16, sha1 7a84e0944b0f33ce4d569604bec41d6e9236d82f) — to CHECKER C136 Add. 1 — NOT LANDED; goes after R121 (LANDED at 59dacf22), before Erratum E-1 — LANDED in RESULTS 2026-11-08 20:27Z (CHECKER C136 3e7fe04e PASS), after R121, before Erratum E-1
+THIRD FILL (2026-11-08T17:20:12Z by date -u, subagent; for CHECKER C136 Add. 1). Read at the origin heads of one fetch at
+2026-11-08T17:14:25Z-17:14:26Z (date -u before and after the fetch; git fetch of claude/l-si, claude/referee, claude/referee-2 and
+claude/checker, not of the trunk, whose push by the Lead was running; rc 0; I merged, committed and pushed nothing, wrote nothing into the
+repository and built this file in the scratchpad by fill3.py): l-si 358ede16 (358ede16eba893e13d9b3229db4291ae7d24d2a4,
+2026-11-08T15:55:24Z, «L-SI P-ACYC fixes entry 4 + line L-5 (CHECKER C136 E-1, E-2: R1-R3, line-only; L-5 sha1 7a84e094 = CHECKER's)»,
+L-SI successor 46, the branch head and the commit of record; git diff --name-only 0bc6f028 358ede16 on the packet, the fixes file, the
+line files and experiments/si/box81 names only docs/si/P-ACYC-fixes.md, docs/si/P-ACYC-line-L5.txt, experiments/si/box81/check81.sh and
+experiments/si/box81/fix4/ (check_fix4.sh, mkL5.py, mkfix4.py); the packet and L-1 to L-4 are byte-equal at both). referee ae980555
+(ae9805556a1feee09de9a95d2043607d591374bf, 2026-11-08T16:44:42Z, «REFEREE successor 30: R-P-ACYC §F: R1 proof-use sentence corrected to
+step (4) at every gate; pacyc81.py line numbers», the branch head): docs/referee/R-P-ACYC.md there 411 lines, 33,314 bytes, sha1
+5b8d737583b5267f6ac27c8882a105f91352c726; its l. 1-378 = 055758ba's file, by cmp; §F (l. 380-411) was first committed at 5b2aa604
+(5b2aa6044357856caefdc8f5ed165b7629ddc00f, 2026-11-08T16:44:19Z, «REFEREE successor 30: R-P-ACYC §F (L-5 7a84e094 MATCHES; R1 = packet §1
+l. 69 sense; R2/R3 = pacyc81.py set; entry 4 line-only)»; the file 410 lines, 33,146 bytes, sha1
+da3e5d143c13811388bd267cc4f0ff804c39180a), and ae980555 changes only R1's proof-use sentence (two lines become three, l. 391-393 at
+ae980555) and the loop's line numbers in the R2 / R3 reading (l. 399: «(l. 27-30)» becomes «(l. 24-29)»), git diff; the verdict line is
+the same text at both. referee-2 c1e71a25 (c1e71a25596ff01554a1bd7390d7f8b0380a97d6, 2026-11-08T16:43:45Z, «REFEREE-2 successor 35: P-ACYC
+L-5 MATCHES (Add. 5: R1-R3 byte test, R1 pointwise sense, R2/R3 set = states 0..T3)», the branch head): docs/referee-2/R2-P-ACYC.md there
+427 lines, 39,268 bytes, sha1 f4475c670a865ff0f4b529ba0ff43f15aca684bf; its first 37,109 bytes = 79430e80's file, by cmp; Addendum 5 is l.
+408-427, with R2-P-ACYC/bt_l5.py and bt_l5.out. checker dcdecd2a (dcdecd2a9b977d11db7a0dbc84f016961b09c279, 2026-11-08T15:43:57Z, «CHECKER
+C135: CI line (run 7091 green on 59dacf22); close pending only the F-2 merge of claude/checker», the branch head): docs/checker/C136.md
+there is b2fe3440's file (b2fe34407619498954471c019228282c35bc03a5, 2026-11-08T15:18:43Z; 103 lines, 10,011 bytes, sha1
+01e3fe8454d8d0cd2faf964085a8f619085f6f57; git diff --quiet), with no Add. 1. 358ede16, b2fe3440, dcdecd2a, 0bc6f028, 055758ba and 79430e80
+are ancestors of the local trunk a4a777de (git merge-base --is-ancestor); 5b2aa604, ae980555 and c1e71a25 are NOT ancestors of a4a777de or
+of the trunk's remote-tracking ref d35ce1ec. claude/l-si 358ede16 and claude/checker dcdecd2a are merged at a4a777de (91a80111, 7cc51436).
+The Lead merges claude/referee (ae980555 or later) and claude/referee-2 (c1e71a25 or later) before landing.
+Trunk: local HEAD a4a777de (a4a777de95c128e0f3799cf6d9a1899554bc2e5d, 2026-11-08T17:00:41Z, «Lead: log 16:03Z-17:00Z (L-COMP 14 created;
+BOX 198 routed + SURVIVES at L-RED; P-ACYC L-5 to referees); NOW + LANE-RESTART rows for L-COMP 14», being pushed by the Lead during this
+fill); it carries the merges 91a80111 («Lead: merge claude/l-si into trunk (P-ACYC fixes entry 4 + L-5 358ede16, premise of R122 third
+fill)», its parent) and 7cc51436 («Lead: merge claude/checker into trunk (C135 Add. 3 + CI line; F-2: a9bf46bb ancestry)», the parent of
+91a80111). The trunk's remote-tracking ref, not re-fetched by me, is d35ce1ec. docs/agents/R122-draft.md at a4a777de is the second fill,
+sha1 2cd7cfd03c58c01653d665c657a2ff71826e2df3 (committed at a1decf9a, 2026-11-08T07:30:27Z; fill3.py asserts it). R121 LANDED at 59dacf22
+(2026-11-08T14:06:41Z): RESULTS R121 l. 14320-14742, GAPS l. 11 «UPDATE 2026-11-08 14:06Z: RESULTS R121 (P-N5-ASC; CHECKER C135
+a9bf46bb)». RESULTS at a4a777de: sha1 04a444ee05569591d3b44c981e35af1b33cf37b5, 15,386 lines, = 59dacf22's (git diff --quiet), = RESULTS
+66e7119615efa5a0bb25b898e32b5b371c55c122 (the file both referees checked their premise quotes against) with R121's block and its blank
+line inserted at l. 14320-14743 and nothing else (by script); «**Erratum E-1**» l. 14744, «**Erratum E-2**» l. 14757, «**Note E-3**» l.
+14785, «## Dead ends (kept;» l. 14816. GAPS at a4a777de: sha1 a47210669a534c5ba9c1dbf2be2919080cfcfe68, 23 lines, l. 11 76 "|", 56 «UPDATE
+2026-», the last R121's. «R122», «C136», «P-ACYC», «BETA-ACYC», «LAMBDA-CONST», «ACYC-LIN» and «ACYC-XI» occur 0 times in RESULTS and in
+GAPS (by script).
+New sources (read in full): docs/checker/C136.md at b2fe3440; fixes entry 4 (docs/si/P-ACYC-fixes.md l. 138-163 at 358ede16; the file 163
+lines, 15,987 bytes, sha1 165355113b7b12c40856ecc2c4a06ef296609fdd; its first 13,468 bytes = 0bc6f028's file, by cmp); L-5 (358ede16, the
+file's only commit); experiments/si/box81/fix4/mkL5.py, mkfix4.py and check_fix4.sh, and check81.sh's new line l. 44 «bash
+fix4/check_fix4.sh»; experiments/si/box81/pacyc81.py l. 1-40 at 358ede16 (the counted set, for R2 and R3); REFEREE §F (l. 380-411 at
+ae980555) and its scratch/acyc_l5.py and acyc_logs/l5test.out at 5b2aa604 (read, not re-run); REFEREE-2 Addendum 5 (l. 408-427 at
+c1e71a25) and its R2-P-ACYC/bt_l5.py and bt_l5.out (read, not re-run); docs/agents/LEAD-STATE.md at a4a777de l. 2896-2898 (15:43Z-15:55Z:
+C136 FAIL; R1-R3 routed to L-SI 46 at 15:52Z) and l. 2903 (16:42Z: L-5 routed to REFEREE 30 and REFEREE-2 35).
+WHAT CHANGED SINCE THE SECOND FILL. CHECKER C136 (b2fe3440) FAILED the second fill (draft 2cd7cfd0 at trunk 59dacf22): «Verdict: FAIL
+(E-1, E-2; one L-5 with three replacements, §5)» (l. 16), «No statement, proof or DATA figure changes.» (l. 18). E-1 is the second fill's
+G-4 (REFEREE-2's N-1), ruled REQUIRED: «By the rule that closed C135 (a term that carries a hypothesis of a signed clause must be stated
+in the line), this is a FAIL.» (l. 27); the second fill's optional R-N does not fix it («R-N says that σ̄ is pointwise optimal, but the
+lemma quantifies over EVERY optimal counterstrategy, not over σ̄.», l. 28-29), so R-N is not taken and R1 defines the word. E-2 is new, a
+DATA set: «pacyc81.py counts on states 0..k1−1 only (its docstring l. 4; l. 28 breaks at the first fallback).» (l. 33), «The line drops
+it.» (l. 35), «Read on the whole run, the zeros are FALSE.» (l. 36); R2 and R3 state the set. C136 ruled the second fill's other notes:
+N-S «no action» (l. 47; «R-S not taken.», l. 48), G-2 «no action» (l. 50), G-U «R118's procedure applies, as in C135.» (l. 52), premises
+landed (l. 56-58). L-5 = L-4 + R1 + R2 + R3 (fixes entry 4, L-SI successor 46; F-14 = R1, F-15 = R2 + R3), sha1 7a84e094… and 3,321 bytes,
+as C136 §5 gave (l. 90-91). Both referees MATCH L-5: REFEREE successor 30, «Verdict: fixes entry 4 CORRECT. **Line L-5 MATCHES** (L-4 +
+exactly R1-R3). Statements as signed (§0 and §C-§E).» (§F l. 410 at ae980555); REFEREE-2 successor 35, «(4) Verdict: **L-5 MATCHES** (byte
+test, and in meaning). Statement verdicts unchanged.» (Add. 5 l. 427 at c1e71a25). Both read entry 4 as line-only (REFEREE §F l. 407-409;
+REFEREE-2 Add. 5 l. 426). The UPDATE is the second fill's with R1-R3 applied, 79319350… as C136 §5 gave (l. 92). C136's instructions for
+this fill («Third fill: the title from L-5; the UPDATE as above; both referees' L-5 verdicts.», l. 93) are met below; «Merge claude/l-si.»
+(l. 94) is done at a4a777de (91a80111).
+Checks run at this fill (scratch /tmp/claude-0/-home-user-parity-games-challange/43a29ffc-0674-5391-84c1-1d3918a14b5d/scratchpad/r122c;
+nothing written into the repository). (a) l5rel122c.py: R1, R2 and R3 parsed from C136 l. 84-89 (wrapped lines joined with one space) =
+fixes entry 4's F-14 and F-15 strings (l. 151-158) = fix4/mkL5.py's tuples (True ×3); each old string once in L-4 and 0 times in L-5, each
+new string 0 times in L-4 and once in L-5; L-4 + R1 + R2 + R3 = L-5 (True). L-5 = 7a84e0944b0f33ce4d569604bec41d6e9236d82f, 3,321 bytes,
+one line with its newline, 3,261 characters, 554 tokens, 43 «(» / 43 «)», depth never negative, final depth 0, 0 "|", one « — »,
+«gauntlet» 0, «not a step-4 pass» once, «referee-originated» once, «R57 (b)» once; token diff L-4 → L-5 three hunks (4 tokens out, 46 in),
+the three replacements. fix4/mkL5.py re-run from the archive of 358ede16: rc 0, output = L-5. The packet (0e9edcfd…) and L-1 to L-4 at
+358ede16 = at 0bc6f028 (True). (b) check81.sh from a git archive of 358ede16 (experiments, docs, scripts), 2026-11-08T17:17:38Z-17:19:44Z
+by date -u, rc 0, output «P-ACYC fix1 checks: PASS», «P-ACYC fix2 checks: PASS», «P-ACYC fix3 checks: PASS», «P-ACYC fix4 checks: PASS»,
+«box 81 checks: PASS» (it checks the pins, re-runs every frozen output of box 81, rebuilds L-2 to L-5 and the four fixes entries and
+compares them byte for byte, and checks L-5's sha1 against C136's). (c) upd122c.py: the second fill's UPDATE d[728]
+(425d10fe5ca0223568b5fb2f29bea4858307dc43, the sha1 of the line without newline) with R1, R2, R3 applied, each old string once in it: sha1
+793193506cd6e4ca67ebb88235a75f70b72f7808 without newline (= C136 §5's, True), 3,349 bytes, 3,291 characters, 553 tokens, 43 «(» / 43 «)»,
+0 "|", one each of the three fill tokens, «2026-11-07» 0 times, « — » 0 times; cross-checked by a standalone re-implementation of
+run122()'s direct build (R118's procedure): on L-4 it gives d[728] (True, the control), on L-5 the same 79319350… (True). Token diff L-5 →
+UPDATE: 11 hunks, 51 tokens out, 50 in, the 11 hunks of the second fill and of C136's G-U reading. On GAPS l. 11 at a4a777de, R121's
+UPDATE is the last (True); R122's filled UPDATE appended after it keeps 76 "|", R122's last, the prefix byte-unchanged (True). (d)
+chk122c.py (title, block, UPDATE, pipes, the fill token, parentheses, stale grep, quote sweep), lp122c.py (line-precise quotes new at this
+fill), sim122c.py (landing simulation on a4a777de), rec122c.py (the kept sections byte-unchanged) and hex122c.py (every hex id new at this
+fill is a git object or a sha1 measured at this fill): Addendum 3.
+NOTES at this fill (for CHECKER; no line change proposed):
+- N-C, R1'S CITATION (both referees' notes, no change asked). REFEREE §F: «Note (no change asked): this cites the sense, not the premise
+  that gives IDEAL-CYC's σ̄ (successor 28's ruling: R118 (b) + R21 (a)); the clause defines a word, so the citation suffices.» (l.
+  396-397). REFEREE-2 Add. 5: «Note (optional, no change asked): for IDEAL-CYC's σ̄, a defined object in R118, existence of a pointwise
+  optimum is VJ00 §4 / Friedmann §3 (R118 [VJ]) rather than R57 (b). R1 defines the word, so this is not an error.» (l. 421-422). The
+  entry's Honest limits (ix) records it. Premise route of R1's new label: «### R57» is l. 2893 of RESULTS at a4a777de (landed), «R57 (b)»
+  occurs 36 times there, and [1E-N3]'s pointwise form is R104's title (l. 9864: «S1's σ̄, and τ̄ on the dual game, are pointwise optima»);
+  the R-labels of L-5 are R104, R117, R118, R15 and R57, all landed (by script).
+- N-E, THE EDGE OF R2 / R3'S SET (REFEREE's note, no change asked): «if a run had no fallback within cap = 10^4, pacyc81.py would count
+  all states and report k1 None; every pinned genome has k1 set (C136: k1 equals pacyc81_towers.out), so the clause is exact on the pinned
+  sets.» (§F l. 405-406). The line's «genomes with no fallback 0» says that no pinned genome is in that case.
+- N-W, THE WHOLE-RUN COUNTS (new entry text, for CHECKER's ruling). Honest limits (v) of the entry now records C136's measured whole-run
+  counts on the four towers (C136 §3 l. 36-45: σ̄ off the β-face 94, 121, 138, 150; non-standard states 3 each), the reason for R2 and R3.
+  They are CHECKER's data from an instrumented copy of pacyc81.py outside the archive, not lane or referee data, and the entry makes no
+  statement about the states after the first fallback. CHECKER may rule whether the entry keeps that sentence; if not, Honest limits (v)
+  returns to the second fill's text and nothing else changes.
+- N-S AT L-5. The source note still names «fixes entries 1-2» and «L-SI successors 43-44»; entries 3 and 4 (successors 45 and 46) are
+  line-only. C136 ruled N-S «no action» for entry 3 and for «the line-only entry R1-R3» (l. 47-48); REFEREE §F: «So the source note need
+  not name it (C134 N-S, as CHECKER ruled in C136); not L41's case.» (l. 408-409); REFEREE-2 Add. 5: «(3) Fixes entry 4 is line-only.» (l.
+  426). Honest limits (viii) records it.
+- D-10, STAMPS (history, no verdict affected). Fixes entry 4's heading «routed by the Lead 15:52Z» (l. 138) is LEAD-STATE l. 2897's stamp;
+  358ede16 was committed at 15:55:24Z. LEAD-STATE l. 2903 logs 358ede16 and the routing of L-5 to both referees under «16:42Z».
+  REFEREE-2's Add. 5 heading reads «16:43Z» (commit 16:43:45Z); REFEREE's §F heading reads «16:44Z» (commits 16:44:19Z and 16:44:42Z):
+  each stamp at or before its commit.
+- D-11, REFEREE §F's FIRST WORDING (history). At 5b2aa604 §F said that BETA-ACYC's comparison needs the inequality at the gate and at both
+  faces' successors; ae980555 corrects it to the gate only («(Corrected at writing from a first wording that claimed the faces'
+  successors; the proof's step (4) is at g only.)», l. 393). The verdict is the same at both commits (5b2aa604 l. 409, ae980555 l. 410).
+  The entry cites ae980555's file.
+Changes at this fill, and nothing else: line 1 (the header: the second fill's draft sha1 and C136 verdict, the THIRD FILL clause, and R121
+now LANDED); this section (new); the title (L-5: R1, R2, R3); in the entry: Object (successors 43-46; the packet at 358ede16; four fixes
+entries; L-5 the line of record; line history L-1 to L-5; the L-5 rounds, REFEREE §F and REFEREE-2 Addendum 5), Claims signed (the L-5
+rounds; entry 4 changes three line strings only), Setting and (b) (the pointwise sense, now in the line), The RESULTS line (L-5; R1's
+premise clause; the Γ3 set), Premise (R57 (b) and [1E-N3] for R1; RESULTS at a4a777de), L41 and L43 (L-5's scope tail), Fixes (header,
+entry-4 bullet, closing bullet), Honest limits (v), (viii) and (ix), Data (358ede16; the re-run of this fill; REFEREE's check_fix4.sh run
+and C136's re-run), Signatures (§F, Addendum 5, successor 46's commit), INDEPENDENCE (L-5's strings and byte tests), TARGET.md diff (L-5);
+the GAPS preamble and the UPDATE (= the second fill's with R1-R3); Addendum 3 (new, at the end). The SECOND FILL section (from "SECOND
+FILL (2026-11-08T06:50:03Z" to its last line), the FIRST FILL record, the first fill's Addendum and Addendum 2 are kept byte-unchanged
+(rec122c.py): where they call L-4 or L-3 the title or the line of record, raise G-4 (N-1), N-S, G-2 or G-U for CHECKER, propose R-N or
+R-S, or give their line numbers, counts, slices and UPDATE sha1s (a9274893…, 425d10fe…), they describe drafts 0fa23b17 and 2cd7cfd0; C136
+ruled at 15:18Z, and the entry block now follows L-5.
 SECOND FILL (2026-11-08T06:50:03Z by date -u, subagent; for CHECKER C136). Read at the origin heads of one fetch at
 2026-11-08T06:39:15Z-06:39:16Z by date -u (git fetch of claude/l-si, claude/referee, claude/referee-2, claude/checker,
 claude/vibrant-johnson-nxvvxo; rc 0; I merged, committed and pushed nothing and edited docs/agents/R122-draft.md only): l-si 0bc6f028
@@ -444,19 +564,20 @@ script; L-3 with R-G then R-B: sha1 85bb221f19ca457655c954f570552bc0f4d8095d wit
   d4423d6d. REFEREE-2: bf02e618 → 6c937bc6 → d7ca68f4 → e1878470. CHECKER: docs/checker/ ends at C135.
 (14) DEAD-ENDS ROWS: NONE (no statement killed; AC-2's «attained» correction is packet text, not a statement).
 
-### R122 [refereed-only] Odd never leaves the β-face on Ξ-acyclic genomes (premises: R104's definitions of the genome, the Ξ-graph, Γ(G) and its start only; R117's definition of Γ3(G) only; R118 (a) definitions, (d) BR-SEG, and for the corollary (k) REACH3-CYC with (l) Corollary T3; the order ⊴ and σ̄ of R118 [VJ]; for the corollary's iterations and fallback, SPEC S4 and S4c, RESULTS R15's object): (Lemma BETA-ACYC) for every genome G whose Ξ-graph is acyclic, on Γ(G) or Γ3(G), and every Even strategy that agrees with the stated start off the movers (transported through the pads on Γ3), every optimal counterstrategy of Odd takes the β-face at every gate, and no play from a non-e vertex contains an e-vertex; (Lemma LAMBDA-CONST) every vertex's cycle node is then independent of the movers' choices; hence (Theorem ACYC-LIN) the Howard run of IDEAL-CYC(G) from any mover state has C = 0, R = 0 and T_CYC ≤ N; and (Corollary ACYC-XI, PROVED-CONDITIONAL on R118's REACH3-CYC, whose [REACH-L] premises RESULTS R117's entry signs for acyclic Ξ-graphs, with Lemma K2-r and [1E-N3] as listed in R118 (k)) the first fallback of N5′-xi on Γ3(G) from S3, i.e. the least iteration k at which SPEC S4c applies, comes at k = T3 + 1 ≤ N + 1 (2026-11-07) — so on the whole domain of the tower route N5′-xi's mover phase is linear in N, while N5 with SPEC's S4a tie rule realises L(G) there (R117); nothing is claimed about iterations after the first fallback, about Ξ-cyclic genomes, or about the running time of N5 or N5′-xi (no bound on R for Ξ-cyclic genomes; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim); the step w* = K1 of LAMBDA-CONST's proof (σ̄(K2) toward K1 is Odd's unique optimum) is referee-originated (REFEREE R-P-ACYC §4.2 LC-1 and REFEREE-2 R2-P-ACYC G-1 / W-1, found independently, restated in P-ACYC's fixes entry 1 F-1), signed by both referees; DATA (experiments/si/box81, check81.sh): on 300 random Ξ-acyclic genomes (lemma81.agen, d 1-6, w 1-3, degree 2-3, seed 7; 768 states) and the four tower genomes H5_d20_F62, H6_d24_F126, SL41_d28, L6Z_KILL238_d28 (44 states), each run from the genome's stored start (IDEAL-CYC) or from S3 (Γ3), σ̄ off the β-face in 0 (state, gate) pairs (BETA-ACYC's no-e-vertex clause: no separate DATA), C 0, R 0, runs with T_CYC > N 0 (lemma81.py, IDEAL-CYC; ACYC-LIN from other mover states: no separate DATA) and, along N5′-xi on Γ3 from S3 (pacyc81.py; τ by fix1/pacyc81t.py), σ̄ off the β-face 0, states that are not standard (σ off the movers and τ) 0, genomes with no fallback 0, genomes with first fallback after iteration N + 1 0 (k = T3 + 1 is R118 (k)'s own clause, and N5's L(G) is R117's: no separate DATA); control, five Ξ-cyclic genomes rd2_d3, rd2_d4, rd3_d3, rf_d4, RS2 (59 states; the same counts on IDEAL-CYC and along N5′-xi on Γ3; e-priorities ordered by (lev, gate index), as in ref gamma3.build): σ̄ off the β-face in 121 (state, gate) pairs, C 15, R 25 (P-ACYC, docs/si/P-ACYC.md with its fixes entries 1-2, docs/si/P-ACYC-fixes.md; L-SI successors 43-44), CHECKER PASS (docs/checker/C136.md, checker PENDING)
-- Object (L-SI successors 43-45, D18 / D14 / D1, box 81; frozen, unchanged during review): packet P-ACYC, docs/si/P-ACYC.md, sha1
+### R122 [refereed-only] Odd never leaves the β-face on Ξ-acyclic genomes (premises: R104's definitions of the genome, the Ξ-graph, Γ(G) and its start only; R117's definition of Γ3(G) only; R118 (a) definitions, (d) BR-SEG, and for the corollary (k) REACH3-CYC with (l) Corollary T3; the order ⊴ and σ̄ of R118 [VJ], an optimal counterstrategy being pointwise optimal (at every vertex its play value is ⊴ the value under every Odd strategy; RESULTS R57 (b), [1E-N3], as landed in R104); for the corollary's iterations and fallback, SPEC S4 and S4c, RESULTS R15's object): (Lemma BETA-ACYC) for every genome G whose Ξ-graph is acyclic, on Γ(G) or Γ3(G), and every Even strategy that agrees with the stated start off the movers (transported through the pads on Γ3), every optimal counterstrategy of Odd takes the β-face at every gate, and no play from a non-e vertex contains an e-vertex; (Lemma LAMBDA-CONST) every vertex's cycle node is then independent of the movers' choices; hence (Theorem ACYC-LIN) the Howard run of IDEAL-CYC(G) from any mover state has C = 0, R = 0 and T_CYC ≤ N; and (Corollary ACYC-XI, PROVED-CONDITIONAL on R118's REACH3-CYC, whose [REACH-L] premises RESULTS R117's entry signs for acyclic Ξ-graphs, with Lemma K2-r and [1E-N3] as listed in R118 (k)) the first fallback of N5′-xi on Γ3(G) from S3, i.e. the least iteration k at which SPEC S4c applies, comes at k = T3 + 1 ≤ N + 1 (2026-11-07) — so on the whole domain of the tower route N5′-xi's mover phase is linear in N, while N5 with SPEC's S4a tie rule realises L(G) there (R117); nothing is claimed about iterations after the first fallback, about Ξ-cyclic genomes, or about the running time of N5 or N5′-xi (no bound on R for Ξ-cyclic genomes; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim); the step w* = K1 of LAMBDA-CONST's proof (σ̄(K2) toward K1 is Odd's unique optimum) is referee-originated (REFEREE R-P-ACYC §4.2 LC-1 and REFEREE-2 R2-P-ACYC G-1 / W-1, found independently, restated in P-ACYC's fixes entry 1 F-1), signed by both referees; DATA (experiments/si/box81, check81.sh): on 300 random Ξ-acyclic genomes (lemma81.agen, d 1-6, w 1-3, degree 2-3, seed 7; 768 states) and the four tower genomes H5_d20_F62, H6_d24_F126, SL41_d28, L6Z_KILL238_d28 (44 states), each run from the genome's stored start (IDEAL-CYC) or from S3 (Γ3), σ̄ off the β-face in 0 (state, gate) pairs (BETA-ACYC's no-e-vertex clause: no separate DATA), C 0, R 0, runs with T_CYC > N 0 (lemma81.py, IDEAL-CYC; ACYC-LIN from other mover states: no separate DATA) and, along N5′-xi on Γ3 from S3, on its states 0, …, T3 before the first fallback (pacyc81.py; τ by fix1/pacyc81t.py), σ̄ off the β-face 0, states that are not standard (σ off the movers and τ) 0, genomes with no fallback 0, genomes with first fallback after iteration N + 1 0 (k = T3 + 1 is R118 (k)'s own clause, and N5's L(G) is R117's: no separate DATA); control, five Ξ-cyclic genomes rd2_d3, rd2_d4, rd3_d3, rf_d4, RS2 (59 states; the same counts on IDEAL-CYC and on N5′-xi's states 0, …, T3 on Γ3; e-priorities ordered by (lev, gate index), as in ref gamma3.build): σ̄ off the β-face in 121 (state, gate) pairs, C 15, R 25 (P-ACYC, docs/si/P-ACYC.md with its fixes entries 1-2, docs/si/P-ACYC-fixes.md; L-SI successors 43-44), CHECKER PASS (docs/checker/C136.md, checker PENDING)
+- Object (L-SI successors 43-46, D18 / D14 / D1, box 81; frozen, unchanged during review): packet P-ACYC, docs/si/P-ACYC.md, sha1
   0e9edcfda3e3a68dee63ff01427d526b14c67bc4, 193 lines, 16,852 bytes (l-si e3ac4b06, 2026-11-07T22:38:10Z, the file's only commit;
-  identical at 01a68edc, ff9b1639 and 0bc6f028, the l-si head; pinned in experiments/si/box81/pacyc.sha1). Both referees measured it
-  (REFEREE l. 26-27 «docs/si/P-ACYC.md: sha1 0e9edcfda3e3a68dee63ff01427d526b14c67bc4, 16,852 B» … «This EQUALS the brief.»; REFEREE-2 l.
-  6 «docs/si/P-ACYC.md 0e9edcfda3e3a68dee63ff01427d526b14c67bc4 (16,852 B), as pinned in experiments/si/box81/pacyc.sha1.»). Labels (l.
-  4-5): «PROVED (L-SI 43, unrefereed) / PROVED-CONDITIONAL (on named landed premises) / DATA / READING (not to sign).». To sign (l.
-  13-20): §2 Lemma BETA-ACYC (on Γ(G) and on Γ3(G)), Lemma LAMBDA-CONST; §3 Theorem ACYC-LIN; §4 Corollary ACYC-XI, «PROVED-CONDITIONAL on
-  R118 (k) REACH3-CYC with (l) Corollary T3»; §5-§6 «definitions / DATA / READING (not to sign)». The packet's own scope (l. 5): «Not a
-  TARGET.md claim; not M3; not a gauntlet step; G-N5-TIME stays OPEN.».
-  Fixes: docs/si/P-ACYC-fixes.md, append-only, three entries, entries 1-2 by L-SI successor 44 and entry 3 by L-SI successor 45 (0bc6f028:
-  136 lines, 13,468 bytes, sha1 ae03871f8eb064a5a4c8d99063dbef8e88264a73; its first 11,487 bytes are the file at ff9b1639, entries 1-2,
-  sha1 c782b15ba07ef921a54963ab198c8ae73129a67f, and its first 10,104 bytes are entry 1's file, by cmp). Entry 1 (01a68edc,
+  identical at 01a68edc, ff9b1639, 0bc6f028 and 358ede16, the l-si head; pinned in experiments/si/box81/pacyc.sha1). Both referees
+  measured it (REFEREE l. 26-27 «docs/si/P-ACYC.md: sha1 0e9edcfda3e3a68dee63ff01427d526b14c67bc4, 16,852 B» … «This EQUALS the brief.»;
+  REFEREE-2 l. 6 «docs/si/P-ACYC.md 0e9edcfda3e3a68dee63ff01427d526b14c67bc4 (16,852 B), as pinned in experiments/si/box81/pacyc.sha1.»).
+  Labels (l. 4-5): «PROVED (L-SI 43, unrefereed) / PROVED-CONDITIONAL (on named landed premises) / DATA / READING (not to sign).». To sign
+  (l. 13-20): §2 Lemma BETA-ACYC (on Γ(G) and on Γ3(G)), Lemma LAMBDA-CONST; §3 Theorem ACYC-LIN; §4 Corollary ACYC-XI,
+  «PROVED-CONDITIONAL on R118 (k) REACH3-CYC with (l) Corollary T3»; §5-§6 «definitions / DATA / READING (not to sign)». The packet's own
+  scope (l. 5): «Not a TARGET.md claim; not M3; not a gauntlet step; G-N5-TIME stays OPEN.».
+  Fixes: docs/si/P-ACYC-fixes.md, append-only, four entries, entries 1-2 by L-SI successor 44, entry 3 by L-SI successor 45 and entry 4 by
+  L-SI successor 46 (358ede16: 163 lines, 15,987 bytes, sha1 165355113b7b12c40856ecc2c4a06ef296609fdd; its first 13,468 bytes are the file
+  at 0bc6f028, entries 1-3, 136 lines, sha1 ae03871f8eb064a5a4c8d99063dbef8e88264a73; its first 11,487 bytes are the file at ff9b1639,
+  entries 1-2, sha1 c782b15ba07ef921a54963ab198c8ae73129a67f, and its first 10,104 bytes are entry 1's file, by cmp). Entry 1 (01a68edc,
   2026-11-08T02:10:34Z; the file then 97 lines, 10,104 bytes, sha1 dd3d4546f12f11b9fd4848c5ab13739ac814fb5d): F-1 = LC-1 = W-1
   (LAMBDA-CONST: w* = K1, σ̄(K2) unique; ACYC-LIN's K2 step), F-2 = AC-2 («attained» corrected), F-3 = AC-3 = W-2 (a)-(c) (scope
   sentences), F-4 = AC-4 = W-2 (d), F-5 = W-3 (a) + D-1 + AC-L4 (the τ counter, «no fallback»), F-6 = AC-L5 = D-2 + D-3 (the control
@@ -464,12 +585,14 @@ script; L-3 with R-G then R-B: sha1 85bb221f19ca457655c954f570552bc0f4d8095d wit
   l. 99-114): F-10 = D-5 (the Γ3 clause names fix1/pacyc81t.py), F-11 = N-2 = AC-7 (packet header only), line L-3. Entry 3 (0bc6f028,
   2026-11-08T05:54:32Z, l. 116-136): F-12, the Lead's G-7 ruling under L41 (the line names the referee-originated w* = K1 step), and F-13,
   the Lead's G-1 ruling (the source note names fixes entries 1-2 and L-SI successors 43-44), line L-4; «G-4 is left to CHECKER.» (l. 120).
-  «LC-1 / W-1, AC-2, AC-3 / W-2, AC-4, D-4, AC-5, AC-6 change packet text only.» (l. 97). Entry 1 carries the w* = K1 step of
-  LAMBDA-CONST's proof (see L41 and L43) and AC-6; entries 2 and 3 carry no proof.
-  The RESULTS line is L-4, 85bb221f19ca457655c954f570552bc0f4d8095d (docs/si/P-ACYC-line-L4.txt, l-si 0bc6f028, 2026-11-08T05:54:32Z, the
-  file's only commit; 3,080 bytes; the l-si head). The title is L-4 verbatim, with nothing inserted and nothing stripped (its date
-  parenthesis «(2026-11-07)», its scope tail with the referee-originated step, and its source note are the line's own). L-4's parentheses
-  balance (41 «(» / 41 «)»). Line history: L-1 (bb12deec6fb0129b4ea9f5af7dd96d6302c5ca50, 2,085 bytes, e3ac4b06, the freeze); L-2
+  Entry 4 (358ede16, 2026-11-08T15:55:24Z, l. 138-163): F-14 = R1 (CHECKER C136 E-1: the pointwise sense of «optimal» stated in the line)
+  and F-15 = R2 + R3 (C136 E-2: the set of the Γ3 counts stated in the line), C136's exact strings (§5 l. 84-89), line L-5; «The packet
+  P-ACYC.md and lines L-1 to L-4 are not edited.» (l. 141). «LC-1 / W-1, AC-2, AC-3 / W-2, AC-4, D-4, AC-5, AC-6 change packet text only.»
+  (l. 97). Entry 1 carries the w* = K1 step of LAMBDA-CONST's proof (see L41 and L43) and AC-6; entries 2, 3 and 4 carry no proof.
+  The RESULTS line is L-5, 7a84e0944b0f33ce4d569604bec41d6e9236d82f (docs/si/P-ACYC-line-L5.txt, l-si 358ede16, 2026-11-08T15:55:24Z, the
+  file's only commit; 3,321 bytes; the l-si head). The title is L-5 verbatim, with nothing inserted and nothing stripped (its date
+  parenthesis «(2026-11-07)», its scope tail with the referee-originated step, and its source note are the line's own). L-5's parentheses
+  balance (43 «(» / 43 «)»). Line history: L-1 (bb12deec6fb0129b4ea9f5af7dd96d6302c5ca50, 2,085 bytes, e3ac4b06, the freeze); L-2
   (3a3096a4, 01a68edc, fixes entry 1: L-1 with five replacements, AC-L1, AC-L2, AC-L3 verbatim, REFEREE-2's W-3 (a) + D-1 string
   containing AC-L4 as one, AC-L5 with D-3's insertion); L-3 (03453361, ff9b1639, fixes entry 2: L-2 with D-5 only, «along N5′-xi on Γ3
   from S3 (pacyc81.py),» → «along N5′-xi on Γ3 from S3 (pacyc81.py; τ by fix1/pacyc81t.py),»); L-4 (85bb221f, 0bc6f028, fixes entry 3: L-3
@@ -477,67 +600,87 @@ script; L-3 with R-G then R-B: sha1 85bb221f19ca457655c954f570552bc0f4d8095d wit
   Odd's unique optimum) is referee-originated (REFEREE R-P-ACYC §4.2 LC-1 and REFEREE-2 R2-P-ACYC G-1 / W-1, found independently, restated
   in P-ACYC's fixes entry 1 F-1), signed by both referees;» into the scope tail before «DATA (experiments/si/box81, check81.sh):», and
   F-13 replaces «(P-ACYC, docs/si/P-ACYC.md; L-SI successor 43)» by «(P-ACYC, docs/si/P-ACYC.md with its fixes entries 1-2,
-  docs/si/P-ACYC-fixes.md; L-SI successors 43-44)»). L-2 + D-5 is L-3 (my script, True; REFEREE by its own scratch/acyc_l3.py, §D l.
-  338-342; REFEREE-2 by its own bt_l3.py, Add. 3 l. 360-363). L-3 + F-12 + F-13 is L-4 (by script, True; the lane's fix3/mkL4.py, which
-  asserts L-3's sha1, re-run from a git archive of 0bc6f028: output cmp-equal to L-4; fix3/check_fix3.sh makes the same cmp inside
-  check81.sh). L-1: REFEREE «NOT YET: AC-L1 to AC-L5 required (premises; DATA scope, units and sets)» (l. 17, the L-1 row); REFEREE-2
-  «**MATCHES after W-3 and D-1, D-2**; W-1 and W-2 are packet text, not line text» (l. 26). L-2: REFEREE «Verdict: fixes entry 1 CORRECT.
-  L-2 MATCHES, by the byte test and in meaning.» (§C l. 328); REFEREE-2 «**L-2 does NOT yet match: D-5** (the τ clause's tool citation;
-  one string) (Opus 5.5, D1).» (Add. 2 l. 352). L-3 MATCHES at both referees, each after its own byte test: REFEREE successor 28
-  (17c81b70, 2026-11-08T04:03:49Z; heading time fixed at d4423d6d) §D l. 338-342 («The old string occurs once in L-2 and 0 times in L-3;
-  the new string occurs once in L-3.»; «L-2 + D-5 is byte-equal to L-3 (sha1 03453361…).»), l. 345-346 («D-5 (F-10): CORRECT. pacyc81.py
-  counts σ only. The τ half of «states that are not standard (σ off the movers and τ) 0» is fix1/pacyc81t.py's taubad.»), l. 348 «Verdict:
-  fixes entry 2 CORRECT; L-3 MATCHES. All statements stay as in §C (all SIGN; ACYC-XI PROVED-CONDITIONAL on R118 (k), (l)).»; REFEREE-2
-  successor 32 (e1878470, 2026-11-08T04:06:09Z) Addendum 3 l. 360-363 («Rebuild L-2 + D-5 = L-3 byte for byte (03453361…). Nothing else
-  changed.»), l. 364-365 (its re-run of check81.sh on a git archive of ff9b1639, «box 81 checks: PASS», exit 0), l. 369-370 (the DATA rule
-  on L-3), l. 371-374 «fixes entry 2 **CORRECT**;» … «**L-3 MATCHES** (Opus 5.5, D1);» … «statements: BETA-ACYC, LAMBDA-CONST, ACYC-LIN
-  **SIGN**; ACYC-XI **SIGN**, PROVED-CONDITIONAL on R118 (k) + (l); nothing REFUSED.». L-4: REFEREE successor 29 (055758ba,
-  2026-11-08T06:31:48Z) §E l. 349-378, own scratch/acyc_l4.py: «R-G and R-B old strings: once each in L-3, 0 in L-4. New strings: 0 in
-  L-3, once each in L-4.», «L-3 + R-G + R-B in order is byte-equal to L-4.» (l. 356-357), F-12 and F-13 read in meaning (l. 360-376),
-  «Verdict: L-4 MATCHES (L-3 + exactly R-G and R-B; both CORRECT in meaning). All statements of P-ACYC stay SIGN (ACYC-XI
+  docs/si/P-ACYC-fixes.md; L-SI successors 43-44)»); L-5 (7a84e094, 358ede16, fixes entry 4: L-4 with CHECKER C136's R1, R2 and R3 in that
+  order, each old string once in the running line; R1 (F-14) replaces «the order ⊴ and σ̄ of R118 [VJ];» by «the order ⊴ and σ̄ of R118
+  [VJ], an optimal counterstrategy being pointwise optimal (at every vertex its play value is ⊴ the value under every Odd strategy;
+  RESULTS R57 (b), [1E-N3], as landed in R104);», R2 (F-15) puts «, on its states 0, …, T3 before the first fallback» after «along N5′-xi
+  on Γ3 from S3» in the Γ3 DATA clause, and R3 (F-15) replaces «the same counts on IDEAL-CYC and along N5′-xi on Γ3;» by «the same counts
+  on IDEAL-CYC and on N5′-xi's states 0, …, T3 on Γ3;» in the control). L-2 + D-5 is L-3 (my script, True; REFEREE by its own
+  scratch/acyc_l3.py, §D l. 338-342; REFEREE-2 by its own bt_l3.py, Add. 3 l. 360-363). L-3 + F-12 + F-13 is L-4 (by script, True; the
+  lane's fix3/mkL4.py, which asserts L-3's sha1, re-run from a git archive of 0bc6f028: output cmp-equal to L-4; fix3/check_fix3.sh makes
+  the same cmp inside check81.sh). L-4 + R1 + R2 + R3 is L-5 (by script, True; the lane's fix4/mkL5.py, which asserts L-4's sha1 and each
+  old string once, re-run from a git archive of 358ede16: output cmp-equal to L-5; fix4/check_fix4.sh makes the same cmp inside check81.sh
+  and checks L-5's sha1 against C136's). L-1: REFEREE «NOT YET: AC-L1 to AC-L5 required (premises; DATA scope, units and sets)» (l. 17,
+  the L-1 row); REFEREE-2 «**MATCHES after W-3 and D-1, D-2**; W-1 and W-2 are packet text, not line text» (l. 26). L-2: REFEREE «Verdict:
+  fixes entry 1 CORRECT. L-2 MATCHES, by the byte test and in meaning.» (§C l. 328); REFEREE-2 «**L-2 does NOT yet match: D-5** (the τ
+  clause's tool citation; one string) (Opus 5.5, D1).» (Add. 2 l. 352). L-3 MATCHES at both referees, each after its own byte test:
+  REFEREE successor 28 (17c81b70, 2026-11-08T04:03:49Z; heading time fixed at d4423d6d) §D l. 338-342 («The old string occurs once in L-2
+  and 0 times in L-3; the new string occurs once in L-3.»; «L-2 + D-5 is byte-equal to L-3 (sha1 03453361…).»), l. 345-346 («D-5 (F-10):
+  CORRECT. pacyc81.py counts σ only. The τ half of «states that are not standard (σ off the movers and τ) 0» is fix1/pacyc81t.py's
+  taubad.»), l. 348 «Verdict: fixes entry 2 CORRECT; L-3 MATCHES. All statements stay as in §C (all SIGN; ACYC-XI PROVED-CONDITIONAL on
+  R118 (k), (l)).»; REFEREE-2 successor 32 (e1878470, 2026-11-08T04:06:09Z) Addendum 3 l. 360-363 («Rebuild L-2 + D-5 = L-3 byte for byte
+  (03453361…). Nothing else changed.»), l. 364-365 (its re-run of check81.sh on a git archive of ff9b1639, «box 81 checks: PASS», exit 0),
+  l. 369-370 (the DATA rule on L-3), l. 371-374 «fixes entry 2 **CORRECT**;» … «**L-3 MATCHES** (Opus 5.5, D1);» … «statements: BETA-ACYC,
+  LAMBDA-CONST, ACYC-LIN **SIGN**; ACYC-XI **SIGN**, PROVED-CONDITIONAL on R118 (k) + (l); nothing REFUSED.». L-4: REFEREE successor 29
+  (055758ba, 2026-11-08T06:31:48Z) §E l. 349-378, own scratch/acyc_l4.py: «R-G and R-B old strings: once each in L-3, 0 in L-4. New
+  strings: 0 in L-3, once each in L-4.», «L-3 + R-G + R-B in order is byte-equal to L-4.» (l. 356-357), F-12 and F-13 read in meaning (l.
+  360-376), «Verdict: L-4 MATCHES (L-3 + exactly R-G and R-B; both CORRECT in meaning). All statements of P-ACYC stay SIGN (ACYC-XI
   PROVED-CONDITIONAL, as before).» (l. 377-378). REFEREE-2 successor 33 (79430e80, 2026-11-08T06:38:24Z) Addendum 4 l. 376-406, own
   bt_l4.py: «R-G and R-B: each old string occurs once in L-3 and 0 times in L-4; each new string 0 times in L-3 and once in L-4.», «The
   rebuild L-3 + R-G + R-B is 85bb221f…, 3,080 B, which is L-4 byte for byte, so nothing else changed.» (l. 381-382), F-12 and F-13 read in
   meaning (l. 384-402), «**Verdict: L-4 MATCHES** (Opus 5.5, D1). Statement verdicts unchanged: all SIGN (ACYC-XI PROVED-CONDITIONAL on
-  R118 (k), (l), as before).» (l. 405-406).
+  R118 (k), (l), as before).» (l. 405-406). L-5: REFEREE successor 30 (5b2aa604, 2026-11-08T16:44:19Z; R1's proof-use sentence and
+  pacyc81.py's line numbers corrected at ae980555, 16:44:42Z) §F l. 380-411, own scratch/acyc_l5.py with the strings «typed from C136 §5
+  (claude/checker b2fe3440 l. 84-89; wrapped lines joined with one space), not from the lane's script» (l. 384-385): «Each old string once
+  in L-4.», «`cmp` with the lane's L-5: **EQUAL**» (l. 385-386), R1 read against packet §1 l. 69 and R2 / R3 against pacyc81.py (l.
+  388-406), «Verdict: fixes entry 4 CORRECT. **Line L-5 MATCHES** (L-4 + exactly R1-R3). Statements as signed (§0 and §C-§E).» (l. 410).
+  REFEREE-2 successor 35 (c1e71a25, 2026-11-08T16:43:45Z) Addendum 5 l. 408-427, own bt_l5.py with «CHECKER 22's strings, verbatim from
+  C136.md l. 84-89 at claude/checker b2fe3440» (l. 412-413): «**L-5 == L-4 + R1 + R2 + R3: True.** Nothing else changed.» (l. 414), R1 and
+  R2 / R3 read in meaning (l. 415-425), «(4) Verdict: **L-5 MATCHES** (byte test, and in meaning). Statement verdicts unchanged.» (l.
+  427).
 - Claims signed (REFEREE successor 28: report a9d4e44e (= d3d0a600), §C c865da81, §D 17c81b70 / d4423d6d; successor 29: §E 055758ba;
-  REFEREE-2 successor 32: report bf02e618, Addendum 1 6c937bc6, Addendum 2 d7ca68f4, Addendum 3 e1878470; successor 33: Addendum 4
-  79430e80). REFEREE's table («## 0. Verdicts», l. 5-18 of R-P-ACYC.md) reads §0 premises «all LANDED on trunk 37a4855e; every quote
-  verbatim and in the entry it names (script)», §1 facts and FROZEN FRAME «CORRECT (re-derived from R104's and R117's quoted text)», FIRST
-  FALLBACK «CORRECT against SPEC S4 / S4c (optional AC-5)», Lemma BETA-ACYC on Γ(G) and on Γ3(G) «SIGN», Lemma LAMBDA-CONST «SIGN WITH GAP
-  LC-1 (the proof never fixes w* = K1; with w* = K2 the statement would be false at K1; repair below)», Theorem ACYC-LIN «SIGN WITH GAP
-  LC-1 (R = 0 at K2 rests on «a fixed deterministic rule», which needs a unique optimum; repair below). Required data wording AC-2»,
-  Corollary ACYC-XI «SIGN as PROVED-CONDITIONAL on R118 (k) and (l), WITH GAP LC-1 (inherited; on Γ3 it can also be closed by (k)'s own
-  Lemma K2-r)», §5 READING «header Scope sentence and §5's last bullet OVERREACH (AC-3, required text); AC-4 (required, minor)», §6 DATA
-  «every replayed count EQUAL (own engine); check81.sh re-run PASS», §7 «CLEAN»; and «LC-1 is a proof gap with a one-line repair. No
-  conclusion changes.» (l. 20). REFEREE-2's table («## Verdicts», l. 13-26 of R2-P-ACYC.md) reads Lemma BETA-ACYC «**SIGN** (Opus 5.5,
-  D1)», Lemma LAMBDA-CONST «**SIGN WITH GAP** (Opus 5.5, D1): G-1, the proof never shows w* = K1, and the map is false at K1 (and s on Γ3)
-  unless w* = K1; my one-line repair closes the gap (W-1, required)», Theorem ACYC-LIN «**SIGN** (Opus 5.5, D1)», Corollary ACYC-XI
-  «**SIGN** (Opus 5.5, D1), conditional as labelled», the scope sentence and READING over-reach (W-2), §6 «every count reproduced exactly
-  (own simulator, plus lane runners on a git archive); W-3 (the «non-standard» counter tests σ only), D-1 to D-4», §0 «✓ all LANDED on
-  trunk; 27 of 27 premise quotes verbatim by script», §7 «✓», and «Nothing is REFUSED. No statement bounds N5′-xi's total iterations or
-  N5's; G-N5-TIME stays OPEN.» (l. 27). The one SIGN WITH GAP (LC-1 = G-1, with ACYC-LIN and ACYC-XI inheriting it at REFEREE) is closed
-  by fixes entry 1 F-1 at both referees: REFEREE §C l. 297-301 («F-1 (LC-1): CORRECT.»; «LC-1 is CLOSED for LAMBDA-CONST, ACYC-LIN and
-  ACYC-XI.»), REFEREE-2 Add. 2 l. 315 («F-1 (W-1 = LC-1): my text verbatim, plus the ACYC-LIN K2 line ✓. This closes G-1, so LAMBDA-CONST
-  is now **SIGN**.»). Every other required item (AC-2, AC-3, AC-4, AC-L1..AC-L5; W-2, W-3, D-1, D-2; then D-5) was packet text, line text
-  or DATA wording, and each is closed: REFEREE §C l. 328-331 («Statements: BETA-ACYC SIGN; LAMBDA-CONST SIGN; ACYC-LIN SIGN; Corollary
-  ACYC-XI SIGN as PROVED-CONDITIONAL on R118 (k) REACH3-CYC and (l) Corollary T3.»; «No gap remains open. AC-7 is optional (packet wording
-  only; not in L-2).»), REFEREE-2 Add. 2 l. 350-351 («W-1, W-2, W-3, D-1, D-2, D-3, D-4 and N-1 **met**;»), REFEREE §D l. 348, REFEREE-2
-  Add. 3 l. 372-374. No SIGN WITH GAP remains open. Nothing is REFUSED. The line round L-4 (fixes entry 3) changes two line strings and no
-  statement, proof or DATA (fixes l. 116-136; REFEREE §E l. 377-378: «All statements of P-ACYC stay SIGN (ACYC-XI PROVED-CONDITIONAL, as
-  before).»; REFEREE-2 Add. 4 l. 405-406: «Statement verdicts unchanged: all SIGN (ACYC-XI PROVED-CONDITIONAL on R118 (k), (l), as
-  before).»).
+  successor 30: §F 5b2aa604 / ae980555; REFEREE-2 successor 32: report bf02e618, Addendum 1 6c937bc6, Addendum 2 d7ca68f4, Addendum 3
+  e1878470; successor 33: Addendum 4 79430e80; successor 35: Addendum 5 c1e71a25). REFEREE's table («## 0. Verdicts», l. 5-18 of
+  R-P-ACYC.md) reads §0 premises «all LANDED on trunk 37a4855e; every quote verbatim and in the entry it names (script)», §1 facts and
+  FROZEN FRAME «CORRECT (re-derived from R104's and R117's quoted text)», FIRST FALLBACK «CORRECT against SPEC S4 / S4c (optional AC-5)»,
+  Lemma BETA-ACYC on Γ(G) and on Γ3(G) «SIGN», Lemma LAMBDA-CONST «SIGN WITH GAP LC-1 (the proof never fixes w* = K1; with w* = K2 the
+  statement would be false at K1; repair below)», Theorem ACYC-LIN «SIGN WITH GAP LC-1 (R = 0 at K2 rests on «a fixed deterministic rule»,
+  which needs a unique optimum; repair below). Required data wording AC-2», Corollary ACYC-XI «SIGN as PROVED-CONDITIONAL on R118 (k) and
+  (l), WITH GAP LC-1 (inherited; on Γ3 it can also be closed by (k)'s own Lemma K2-r)», §5 READING «header Scope sentence and §5's last
+  bullet OVERREACH (AC-3, required text); AC-4 (required, minor)», §6 DATA «every replayed count EQUAL (own engine); check81.sh re-run
+  PASS», §7 «CLEAN»; and «LC-1 is a proof gap with a one-line repair. No conclusion changes.» (l. 20). REFEREE-2's table («## Verdicts»,
+  l. 13-26 of R2-P-ACYC.md) reads Lemma BETA-ACYC «**SIGN** (Opus 5.5, D1)», Lemma LAMBDA-CONST «**SIGN WITH GAP** (Opus 5.5, D1): G-1,
+  the proof never shows w* = K1, and the map is false at K1 (and s on Γ3) unless w* = K1; my one-line repair closes the gap (W-1,
+  required)», Theorem ACYC-LIN «**SIGN** (Opus 5.5, D1)», Corollary ACYC-XI «**SIGN** (Opus 5.5, D1), conditional as labelled», the scope
+  sentence and READING over-reach (W-2), §6 «every count reproduced exactly (own simulator, plus lane runners on a git archive); W-3 (the
+  «non-standard» counter tests σ only), D-1 to D-4», §0 «✓ all LANDED on trunk; 27 of 27 premise quotes verbatim by script», §7 «✓», and
+  «Nothing is REFUSED. No statement bounds N5′-xi's total iterations or N5's; G-N5-TIME stays OPEN.» (l. 27). The one SIGN WITH GAP (LC-1
+  = G-1, with ACYC-LIN and ACYC-XI inheriting it at REFEREE) is closed by fixes entry 1 F-1 at both referees: REFEREE §C l. 297-301 («F-1
+  (LC-1): CORRECT.»; «LC-1 is CLOSED for LAMBDA-CONST, ACYC-LIN and ACYC-XI.»), REFEREE-2 Add. 2 l. 315 («F-1 (W-1 = LC-1): my text
+  verbatim, plus the ACYC-LIN K2 line ✓. This closes G-1, so LAMBDA-CONST is now **SIGN**.»). Every other required item (AC-2, AC-3, AC-4,
+  AC-L1..AC-L5; W-2, W-3, D-1, D-2; then D-5) was packet text, line text or DATA wording, and each is closed: REFEREE §C l. 328-331
+  («Statements: BETA-ACYC SIGN; LAMBDA-CONST SIGN; ACYC-LIN SIGN; Corollary ACYC-XI SIGN as PROVED-CONDITIONAL on R118 (k) REACH3-CYC and
+  (l) Corollary T3.»; «No gap remains open. AC-7 is optional (packet wording only; not in L-2).»), REFEREE-2 Add. 2 l. 350-351 («W-1, W-2,
+  W-3, D-1, D-2, D-3, D-4 and N-1 **met**;»), REFEREE §D l. 348, REFEREE-2 Add. 3 l. 372-374. No SIGN WITH GAP remains open. Nothing is
+  REFUSED. The line round L-4 (fixes entry 3) changes two line strings and no statement, proof or DATA (fixes l. 116-136; REFEREE §E l.
+  377-378: «All statements of P-ACYC stay SIGN (ACYC-XI PROVED-CONDITIONAL, as before).»; REFEREE-2 Add. 4 l. 405-406: «Statement verdicts
+  unchanged: all SIGN (ACYC-XI PROVED-CONDITIONAL on R118 (k), (l), as before).»). The line round L-5 (fixes entry 4, CHECKER C136's
+  R1-R3) changes three line strings and no statement, proof or DATA figure (C136: «No statement, proof or DATA figure changes.», l. 18;
+  REFEREE §F l. 410: «Statements as signed (§0 and §C-§E).»; REFEREE-2 Add. 5 l. 427: «Statement verdicts unchanged.»): R1 states in the
+  line the sense of «optimal» that packet §1 l. 69 defines and BETA-ACYC's proof uses (C136 E-1, REFEREE-2 N-1), and R2 and R3 state the
+  set on which pacyc81.py counts (C136 E-2).
   Setting: IDEAL-CYC(G) of R118 (a) on Γ(G) of R104, and N5′-xi on Γ3(G) of R117 from S3 (R118 (j), (k)), for every genome G whose Ξ-graph
   is acyclic; values (Λ, Π, k), ⊴ and σ̄ as in R118's premises; σ̄ pointwise optimal (packet §1 l. 69-70, with F-7's source RESULTS R57
-  (b) [1E-N3] as landed in R104). Statements as signed (packet with fixes entries 1-2; entry 3 changes the line only):
+  (b) [1E-N3] as landed in R104; L-5 states this sense of «optimal» in its premises, R1). Statements as signed (packet with fixes entries
+  1-2; entries 3 and 4 change the line only):
   (a) Definitions (§1 l. 61-82): Ξ-ACYCLIC «the Ξ-graph has no directed cycle»; the FROZEN FRAME (σ agrees with the stated start at every
     Even vertex other than the movers, transported through the pads on Γ3; Odd = the gates and K2 is free); the facts [RANK], [CORE], [cX]
     (checked CORRECT by REFEREE l. 69-80 and REFEREE-2 l. 16); FIRST FALLBACK (the least k at which S4c applies; F-9 AC-5: «is the k-th
     iteration of SPEC S4 (one pass with Iσ ∪ Iτ ≠ ∅),»).
   (b) Lemma BETA-ACYC (§2 l. 85-87) [Ξ-acyclic G, H ∈ {Γ(G), Γ3(G)}, σ in the frozen frame]: «Then σ̄ chooses the β-face at every gate g:
     β_g on Γ(G), pβ_g on Γ3(G). Under (σ, σ̄), no play from a vertex other than an e-vertex (or a pad pe_g) contains an e-vertex.», for
-    «σ̄ any optimal counterstrategy to σ»; the β-face is strictly better for Odd (REFEREE l. 111; REFEREE-2 l. 81), so EVERY optimal σ̄
-    takes it. REFEREE SIGN (l. 11), REFEREE-2 SIGN (l. 18).
+    «σ̄ any optimal counterstrategy to σ», optimal in the pointwise sense of packet §1 l. 69 (L-5's R1); the β-face is strictly better for
+    Odd (REFEREE l. 111; REFEREE-2 l. 81), so EVERY optimal σ̄ takes it. REFEREE SIGN (l. 11), REFEREE-2 SIGN (l. 18).
   (c) Lemma LAMBDA-CONST (§2 l. 114-119, repaired by F-1) [the hypotheses of BETA-ACYC]: «Under the hypotheses of BETA-ACYC, Λ(v) does not
     depend on σ.»: c_W for c_W and for the e-vertices of level-0 options (and their pe pads), the unused loop for itself, w* for every
     other vertex, and (F-1) «w* = K1 for every σ in the frozen frame.»; the proof's new step (F-1, fixes l. 13-17): «The odd cycle node
@@ -553,27 +696,36 @@ script; L-3 with R-G then R-B: sha1 85bb221f19ca457655c954f570552bc0f4d8095d wit
     has at most N iterations.»; «Not claimed:» the iterations after the first fallback and the correctness of the output. REFEREE SIGN
     as PROVED-CONDITIONAL WITH GAP LC-1 (inherited) (l. 14), then SIGN (§C l. 329-330); REFEREE-2 SIGN, conditional as labelled (l. 21,
     Add. 2 l. 351).
-- The RESULTS line (L-4, the title): «Odd never leaves the β-face on Ξ-acyclic genomes (premises: R104's definitions of the genome, the
-  Ξ-graph, Γ(G) and its start only;» … «(2026-11-07) — so on the whole domain of the tower route N5′-xi's mover phase is linear in N,» …
-  «(no bound on R for Ξ-cyclic genomes; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim); the step w* = K1 of
-  LAMBDA-CONST's proof (σ̄(K2) toward K1 is Odd's unique optimum) is referee-originated» … «signed by both referees; DATA
-  (experiments/si/box81, check81.sh):» … «(P-ACYC, docs/si/P-ACYC.md with its fixes entries 1-2, docs/si/P-ACYC-fixes.md; L-SI successors
-  43-44)». Its clauses: the premises (R104, R117, R118 (a), (d), (k), (l), [VJ], SPEC S4 and S4c as R15's object); BETA-ACYC = (b) with
-  the frozen frame of (a) stated inline; LAMBDA-CONST = (c) in the form «every vertex's cycle node is then independent of the movers'
-  choices» (the map and w* = K1 are in the entry, not in the line); ACYC-LIN = (d); ACYC-XI = (e) with the first-fallback definition
-  inline and its condition named in the label; the scope tail (ACYC-XI read on the tower route's domain with R117's L(G), what is not
-  claimed, and the referee-originated step of L41 and L43); DATA clause by clause, inline (each count against its counter: lemma81.py,
-  pacyc81.py, fix1/pacyc81t.py and their frozen outputs); the source note.
+- The RESULTS line (L-5, the title): «Odd never leaves the β-face on Ξ-acyclic genomes (premises: R104's definitions of the genome, the
+  Ξ-graph, Γ(G) and its start only;» … «the order ⊴ and σ̄ of R118 [VJ], an optimal counterstrategy being pointwise optimal (at every
+  vertex its play value is ⊴ the value under every Odd strategy; RESULTS R57 (b), [1E-N3], as landed in R104);» … «(2026-11-07) — so on
+  the whole domain of the tower route N5′-xi's mover phase is linear in N,» … «(no bound on R for Ξ-cyclic genomes; G-N5-TIME stays OPEN;
+  not M3, not a step-4 pass, not a TARGET.md claim); the step w* = K1 of LAMBDA-CONST's proof (σ̄(K2) toward K1 is Odd's unique optimum)
+  is referee-originated» … «signed by both referees; DATA (experiments/si/box81, check81.sh):» … «along N5′-xi on Γ3 from S3, on its
+  states 0, …, T3 before the first fallback» … «(P-ACYC, docs/si/P-ACYC.md with its fixes entries 1-2, docs/si/P-ACYC-fixes.md; L-SI
+  successors 43-44)». Its clauses: the premises (R104, R117, R118 (a), (d), (k), (l), [VJ] with the pointwise sense of «optimal» from R57
+  (b) and [1E-N3] as landed in R104, SPEC S4 and S4c as R15's object); BETA-ACYC = (b) with the frozen frame of (a) stated inline;
+  LAMBDA-CONST = (c) in the form «every vertex's cycle node is then independent of the movers' choices» (the map and w* = K1 are in the
+  entry, not in the line); ACYC-LIN = (d); ACYC-XI = (e) with the first-fallback definition inline and its condition named in the label;
+  the scope tail (ACYC-XI read on the tower route's domain with R117's L(G), what is not claimed, and the referee-originated step of L41
+  and L43); DATA clause by clause, inline (each count against its counter: lemma81.py, pacyc81.py, fix1/pacyc81t.py and their frozen
+  outputs; the Γ3 counts, and the control's, on N5′-xi's states 0, …, T3, the set pacyc81.py counts, docstring l. 4, loop l. 24-29); the
+  source note.
 - Premise: RESULTS R104's definitions of the genome, the Ξ-graph, Γ(G) and its start only (packet §0 l. 23-33, four quotes verbatim in
   R104's title, l. 9864), no R104 theorem; RESULTS R117's definition of Γ3(G) only (l. 34-36; R117 l. 13362), no R117 theorem except
   through R118 (k); RESULTS R118 (a) IDEAL-CYC(G), the Howard step, T_CYC and the labels C, R, p (l. 13677-13681), (d) BR-SEG (l. 13689:
   «If Λ and σ̄ are constant on the states a, a+1, …, a+j+1 and the step a+j → a+j+1 changes σ, then j ≤ N − 1.»), and for the corollary
   (k) REACH3-CYC (l. 13704-13715) and (l) Corollary T3 (l. 13716-13719: «the first fallback of N5′-xi on Γ3(G) comes at iteration T3 +
-  1.»); R118's value order ⊴ and σ̄ (VJ00 §4.2 / Friedmann arXiv 1106.0778 §3, R118's premises); SPEC S4 and S4c
-  (docs/new/N5-ssi-global.md l. 50, 56-57; RESULTS R15's object, R15 l. 624). «Not used: every theorem of R104 and R117; R118 (b), (c),
-  (e)-(j) except the definitions quoted; every lane note.» (packet l. 59). Both referees checked every premise quote against RESULTS at
-  37a4855e (REFEREE l. 46-61, acyc_quotes.py; REFEREE-2 l. 29-40, r2q.py), which equals RESULTS at the trunk commits c9591e35, 616941eb
-  and 36c183f8 (sha1 66e7119615efa5a0bb25b898e32b5b371c55c122, git diff --quiet; R104 l. 9864, R117 l. 13362, R118 l. 13607 at each). The
+  1.»); R118's value order ⊴ and σ̄ (VJ00 §4.2 / Friedmann arXiv 1106.0778 §3, R118's premises), with «optimal» in the pointwise sense
+  cited from RESULTS R57 (b) and [1E-N3] as landed in R104 (R57 l. 2893; R104's title, l. 9864: «S1's σ̄, and τ̄ on the dual game, are
+  pointwise optima»), for the word's sense and the existence of a pointwise optimum only (both referees read R1's citation: REFEREE §F l.
+  394-397, REFEREE-2 Add. 5 l. 419-422); SPEC S4 and S4c (docs/new/N5-ssi-global.md l. 50, 56-57; RESULTS R15's object, R15 l. 624). «Not
+  used: every theorem of R104 and R117; R118 (b), (c), (e)-(j) except the definitions quoted; every lane note.» (packet l. 59). Both
+  referees checked every premise quote against RESULTS at 37a4855e (REFEREE l. 46-61, acyc_quotes.py; REFEREE-2 l. 29-40, r2q.py), which
+  equals RESULTS at the trunk commits c9591e35, 616941eb and 36c183f8 (sha1 66e7119615efa5a0bb25b898e32b5b371c55c122, git diff --quiet;
+  R104 l. 9864, R117 l. 13362, R118 l. 13607 at each); RESULTS at the local trunk a4a777de (sha1 04a444ee05569591d3b44c981e35af1b33cf37b5,
+  15,386 lines, = 59dacf22's, where R121 landed) is that file with R121's block and its blank line (l. 14320-14743) inserted and nothing
+  else (by script), so every premise stands at the same line (R15 l. 624, R57 l. 2893, R104 l. 9864, R117 l. 13362, R118 l. 13607). The
   corollary's condition: R118 (k) is PROVED-CONDITIONAL on [REACH-L], which R117's entry signs for IDEAL-ACYC, the Ξ-acyclic case (R118 l.
   13707-13709), with Lemma K2-r (R118's entry, referee-originated there and signed by both referees) and [1E-N3] (RESULTS R57 (b) as
   landed in R104); REFEREE-2 l. 37-38: «So on the packet's domain, the only conditions left on (k) are R117's lemmas as signed in its
@@ -589,8 +741,8 @@ script; L-3 with R-G then R-B: sha1 85bb221f19ca457655c954f570552bc0f4d8095d wit
   landed Lemma K2-r in substance (REFEREE l. 134: «This is R118 (g)'s O-1 sentence and Lemma K2-r. The repair re-proves it, so no new
   premise is needed.»). The Lead ruled that L41 (DECISIONS l. 355-358) applies («Lead rulings: G-7 L41 APPLIES (w* = K1 required referee
   repair, both SIGN WITH GAP; R119 precedent)», LEAD-STATE l. 2754; fixes entry 3: «G-7 = L41 applies (the w* = K1 step of LAMBDA-CONST's
-  proof is a REQUIRED referee-originated repair», l. 118), and L-4's scope tail carries the sentence (F-12): «the step w* = K1 of
-  LAMBDA-CONST's proof (σ̄(K2) toward K1 is Odd's unique optimum) is referee-originated (REFEREE R-P-ACYC §4.2 LC-1 and REFEREE-2
+  proof is a REQUIRED referee-originated repair», l. 118), and the scope tail of L-4 and of L-5 carries the sentence (F-12): «the step w*
+  = K1 of LAMBDA-CONST's proof (σ̄(K2) toward K1 is Odd's unique optimum) is referee-originated (REFEREE R-P-ACYC §4.2 LC-1 and REFEREE-2
   R2-P-ACYC G-1 / W-1, found independently, restated in P-ACYC's fixes entry 1 F-1), signed by both referees». REFEREE §E read that
   sentence part by part against §4.2 LC-1 and found each part «CORRECT» (l. 360-370); on «signed by both referees» it writes «this report
   §C signs LAMBDA-CONST with F-1. REFEREE-2's signature is as the Lead records it for R122. I did not re-read docs/referee-2/ for this.»
@@ -609,9 +761,10 @@ script; L-3 with R-G then R-B: sha1 85bb221f19ca457655c954f570552bc0f4d8095d wit
   L41's case («G-7 (ii) AC-6 NOT L41», LEAD-STATE l. 2754; «AC-6 (F-9) is not L41's case», fixes l. 119): both referees read the
   unrepaired proof as complete for every start mover state, by R118 (d). L43: every statement is exact (C = R = 0, T_CYC ≤ N, k = T3 + 1 ≤
   N + 1), on a restricted class; no statement is killed.
-- Fixes (docs/si/P-ACYC-fixes.md, append-only; entries 1-2 by L-SI successor 44, entry 3 by L-SI successor 45; entry 1 at 01a68edc, l.
-  3-97, under «Lead 01:22Z and 01:39Z» (l. 3); entry 2 at ff9b1639, l. 99-114, under «Lead 03:06Z» (l. 99); entry 3 at 0bc6f028, l.
-  116-136, under «ruled in by the Lead 05:13Z» (l. 116)):
+- Fixes (docs/si/P-ACYC-fixes.md, append-only; entries 1-2 by L-SI successor 44, entry 3 by L-SI successor 45, entry 4 by L-SI successor
+  46; entry 1 at 01a68edc, l. 3-97, under «Lead 01:22Z and 01:39Z» (l. 3); entry 2 at ff9b1639, l. 99-114, under «Lead 03:06Z» (l. 99);
+  entry 3 at 0bc6f028, l. 116-136, under «ruled in by the Lead 05:13Z» (l. 116); entry 4 at 358ede16, l. 138-163, under «routed by the
+  Lead 15:52Z» (l. 138)):
   - F-1 = LC-1 = W-1 (required): LAMBDA-CONST's «w* does not depend on σ.» → «w* = K1 for every σ in the frozen frame.»; the K2 step of
     its proof (REFEREE-2's text); ACYC-LIN's «at K2 the same choice (LAMBDA-CONST's proof).» → «at K2 the unique optimal choice, toward K1
     (K1 on Γ, r on Γ3; LAMBDA-CONST's proof as repaired in F-1).»; «The last proof sentence («Under a fixed deterministic rule it is the
@@ -630,9 +783,15 @@ script; L-3 with R-G then R-B: sha1 85bb221f19ca457655c954f570552bc0f4d8095d wit
     L-SI successors 43-44)» (l. 131-133); line L-4 by fix3/mkL4.py («asserts L-3's sha1 and each Old string once, R-G first, then R-B», l.
     121), compared byte for byte with docs/si/P-ACYC-line-L4.txt by fix3/check_fix3.sh, which check81.sh runs; G-4 left to CHECKER (l.
     120).
+  - Entry 4 (CHECKER C136 E-1 and E-2, both required; «line-only», l. 138): F-14 = R1, «the order ⊴ and σ̄ of R118 [VJ];» → «the order ⊴
+    and σ̄ of R118 [VJ], an optimal counterstrategy being pointwise optimal (at every vertex its play value is ⊴ the value under every Odd
+    strategy; RESULTS R57 (b), [1E-N3], as landed in R104);» (l. 150-152); F-15 = R2 and R3, the Γ3 DATA clause and the control's Γ3
+    counts on «states 0, …, T3» (l. 154-158); line L-5 by fix4/mkL5.py («asserts L-4's sha1 and each Old string once; R1, R2, R3 in that
+    order», l. 140), compared byte for byte with docs/si/P-ACYC-line-L5.txt and with C136's sha1 by fix4/check_fix4.sh, which check81.sh
+    runs (l. 44).
   - Entry 1 changes LAMBDA-CONST's statement wording (w* = K1) and the proofs of LAMBDA-CONST and ACYC-LIN; every other item is packet
     text (READING, a remark after ∎, §6 units), line text or DATA output; entry 2 changes one line string and one READING sentence; entry
-    3 changes two line strings and nothing else.
+    3 changes two line strings and nothing else; entry 4 changes three line strings (R1-R3) and nothing else.
 - Not signed: packet §5 (READING), §6 (DATA), §7 (TARGET diff), the scope sentence of the header; box 81's bridge material
   (docs/si/box81-bridge.md, census81.py, real81.py, xchk81.py); REFEREE-2's set R2 and random-σ data and REFEREE's random-start data
   (referee data).
@@ -653,31 +812,43 @@ script; L-3 with R-G then R-B: sha1 85bb221f19ca457655c954f570552bc0f4d8095d wit
   with Lemma K2-r and [1E-N3]. (iv) T_CYC ≤ N is not tight for N ≥ 2 on set A (max T_CYC / N 0.8 at N 5; T = N only at N = 1); REFEREE's
   data suggest T_CYC ≤ d + 1 (DATA, no claim). (v) The DATA units are narrower than the statements: σ̄ off the β-face tests the computed
   σ̄ (not every optimal one), C 0 tests Λ along runs (not every σ), runs start from the stored start or S3 (ACYC-LIN from other starts: no
-  separate DATA); the wider counts are referee data. (vi) All DATA are runs of implementations (the lane's byte copies of L-NEW's
-  idealcyc.py, gamma3.py, si.py, n5v.py; the referees' own engines, one N5′-xi implementation only) on 300 + 4 + 5 genomes. (vii) Names:
-  «BETA-ACYC», «LAMBDA-CONST», «ACYC-LIN», «ACYC-XI» are new to RESULTS («ACYC» occurs there inside «IDEAL-ACYC»). (viii) The source note
-  names the packet, its fixes entries 1-2 and L-SI successors 43-44; fixes entry 3 (L-SI successor 45) changes two line strings only and
-  is not named, by the rule «a line-only entry need not be named» (CHECKER C135 l. 22-23); REFEREE §E: «Note, not an item: entry 3
-  (successor 45) changes only the line» (l. 375); REFEREE-2 Add. 4: «Entry 3 changes only the line, so omitting it is consistent with the
-  Lead's G-1 ruling ✓.» (l. 402). (ix) BETA-ACYC's proof needs pointwise optimality; L-4 cites σ̄ as R118's, and its landed pointwise
-  source ([1E-N3], RESULTS R57 (b) as landed in R104) is named in L-4 for the corollary only; the Setting above and the packet's §1 (l.
-  69-70) state σ̄ pointwise, and F-7 put N-1 into the packet text only (fixes l. 79). (x) Literature: VJ00 §4.2 and Friedmann arXiv
+  separate DATA); the wider counts are referee data. The Γ3 counts are taken on N5′-xi's states 0, …, T3 before the first fallback only
+  (pacyc81.py breaks at the first fallback); read on the whole run they are not 0: CHECKER C136 measured, with an instrumented copy of
+  pacyc81.py whose break was removed, on the four towers to N5′-xi's end, σ̄ off the β-face 94, 121, 138 and 150 and non-standard states 3
+  each (C136 §3 l. 36-45); no statement is made about the states after the first fallback. (vi) All DATA are runs of implementations (the
+  lane's byte copies of L-NEW's idealcyc.py, gamma3.py, si.py, n5v.py; the referees' own engines, one N5′-xi implementation only) on 300 +
+  4 + 5 genomes. (vii) Names: «BETA-ACYC», «LAMBDA-CONST», «ACYC-LIN», «ACYC-XI» are new to RESULTS («ACYC» occurs there inside
+  «IDEAL-ACYC»). (viii) The source note names the packet, its fixes entries 1-2 and L-SI successors 43-44; fixes entries 3 and 4 (L-SI
+  successors 45 and 46) change line strings only and are not named, by the rule «a line-only entry need not be named» (CHECKER C135 l.
+  22-23); REFEREE §E: «Note, not an item: entry 3 (successor 45) changes only the line» (l. 375); REFEREE-2 Add. 4: «Entry 3 changes only
+  the line, so omitting it is consistent with the Lead's G-1 ruling ✓.» (l. 402). For entry 4: CHECKER C136 «N-S, ruled: no action», «and
+  so will the line-only entry R1-R3 need. R-S not taken.» (l. 47-48); REFEREE §F: «So the source note need not name it (C134 N-S, as
+  CHECKER ruled in C136); not L41's case.» (l. 408-409); REFEREE-2 Add. 5: «(3) Fixes entry 4 is line-only.» (l. 426). (ix) BETA-ACYC's
+  proof needs pointwise optimality (CHECKER C136 E-1; REFEREE-2 N-1); L-5 states that sense in its premises (R1), citing RESULTS R57 (b)
+  and [1E-N3] as landed in R104 for the word and for the existence of a pointwise optimum; both referees note, with no change asked, that
+  this cites the sense, not the premise that gives IDEAL-CYC's σ̄ (REFEREE §F l. 396-397: «the clause defines a word, so the citation
+  suffices.»; REFEREE-2 Add. 5 l. 421-422: «R1 defines the word, so this is not an error.»). (x) Literature: VJ00 §4.2 and Friedmann arXiv
   1106.0778 §3, as cited by R118 (landed); no novelty is claimed.
-- Data (DATA, not proof): experiments/si/box81/ at l-si 0bc6f028 (from ff9b1639 to 0bc6f028 the only box81 changes are fix3/, with
-  mkL4.py, mkfix3.py and check_fix3.sh, and one check81.sh line that runs check_fix3.sh, git diff; no tool, instance or frozen output
+- Data (DATA, not proof): experiments/si/box81/ at l-si 358ede16 (from ff9b1639 to 0bc6f028 the only box81 changes are fix3/, with
+  mkL4.py, mkfix3.py and check_fix3.sh, and one check81.sh line that runs check_fix3.sh, and from 0bc6f028 to 358ede16 fix4/, with
+  mkL5.py, mkfix4.py and check_fix4.sh, and one check81.sh line that runs check_fix4.sh, git diff; no tool, instance or frozen output
   changes), run by check81.sh (lemma81.py on IDEAL-CYC, pacyc81.py and fix1/pacyc81t.py on Γ3 with N5′-xi, quotes81.py, tn81.py; the
   runners in box81/ref/ are byte copies of claude/l-new 9cdb7209's, pinned in ref.sha1), its frozen outputs in out/ and fix1/; called from
   experiments/si/check.sh, run by scripts/verify.sh. Re-run by the drafter from a git archive of ff9b1639 (experiments, docs, scripts):
   check81.sh 2026-11-08T04:57:59Z-04:59:56Z, rc 0, «P-ACYC fix1 checks: PASS», «P-ACYC fix2 checks: PASS», «box 81 checks: PASS»; and from
   a git archive of 0bc6f028: 2026-11-08T06:41:07Z-06:43:18Z, rc 0, the same three lines and «P-ACYC fix3 checks: PASS» (L-4 and fixes
-  entry 3 rebuilt and compared byte for byte). Frozen totals: lemma81 agen 300 7 «genomes 300 tried 300 states 768 notbeta 0 nonstrict 0 C
-  0 R 0 T_gt_N 0 maxT_over_N 1.0»; towers «genomes 4 tried 0 states 44 notbeta 0 nonstrict 0 C 0 R 0 T_gt_N 0 maxT_over_N 0.25»; pacyc81
-  300 7 «genomes 300 states 768 nofallback 0 notbeta 0 nonstd 0 C 0 R 0 bigT 0 maxT3_over_N 1.0»; towers «genomes 4 states 44 nofallback 0
-  notbeta 0 nonstd 0 C 0 R 0 bigT 0 maxT3_over_N 0.25» (k1 10, 13, 11, 10 for N 40, 48, 56, 56); pacyc81t taubad 0 on all three sets;
-  control (lemma81 rgen and pacyc81) 59 states, notbeta 121, C 15, R 25. Both referees re-ran check81.sh (REFEREE at e3ac4b06, l. 30-31,
-  and at 01a68edc, §C l. 327; REFEREE-2 at e3ac4b06, l. 9-10, at 01a68edc, Add. 2 l. 303-304, and at ff9b1639, Add. 3 l. 364-365) and
-  their own engines (above). Instances: experiments/si/box81/inst/{H5_d20_F62, H6_d24_F126, SL41_d28, L6Z_KILL238_d28}.json (set B) and
-  {rd2_d3, rd2_d4, rd3_d3, rf_d4, RS2}.json (control), pinned in inst.sha1; set A is generated (lemma81.agen, seed 7).
+  entry 3 rebuilt and compared byte for byte); and from a git archive of 358ede16: 2026-11-08T17:17:38Z-17:19:44Z, rc 0, the same four
+  lines and «P-ACYC fix4 checks: PASS» (L-5 and fixes entry 4 rebuilt and compared byte for byte, L-5's sha1 checked against C136's).
+  Frozen totals: lemma81 agen 300 7 «genomes 300 tried 300 states 768 notbeta 0 nonstrict 0 C 0 R 0 T_gt_N 0 maxT_over_N 1.0»; towers
+  «genomes 4 tried 0 states 44 notbeta 0 nonstrict 0 C 0 R 0 T_gt_N 0 maxT_over_N 0.25»; pacyc81 300 7 «genomes 300 states 768 nofallback
+  0 notbeta 0 nonstd 0 C 0 R 0 bigT 0 maxT3_over_N 1.0»; towers «genomes 4 states 44 nofallback 0 notbeta 0 nonstd 0 C 0 R 0 bigT 0
+  maxT3_over_N 0.25» (k1 10, 13, 11, 10 for N 40, 48, 56, 56; pacyc81.py counts on states 0, …, k1 − 1, i.e. 0, …, T3, docstring l. 4,
+  loop l. 24-29); pacyc81t taubad 0 on all three sets; control (lemma81 rgen and pacyc81) 59 states, notbeta 121, C 15, R 25. Both
+  referees re-ran check81.sh (REFEREE at e3ac4b06, l. 30-31, and at 01a68edc, §C l. 327; REFEREE-2 at e3ac4b06, l. 9-10, at 01a68edc, Add.
+  2 l. 303-304, and at ff9b1639, Add. 3 l. 364-365) and their own engines (above). REFEREE ran fix4/check_fix4.sh from a git archive of
+  358ede16 (§F l. 387, rc 0), and CHECKER C136 re-ran check81.sh from a full git archive of 0bc6f028 (§4 l. 61-62, rc 0). Instances:
+  experiments/si/box81/inst/{H5_d20_F62, H6_d24_F126, SL41_d28, L6Z_KILL238_d28}.json (set B) and {rd2_d3, rd2_d4, rd3_d3, rf_d4,
+  RS2}.json (control), pinned in inst.sha1; set A is generated (lemma81.agen, seed 7).
 - Signatures: REFEREE docs/referee/R-P-ACYC.md: successor 28's report a9d4e44e1b421fb2215a4489e95ea4a6bf02c1f5 (2026-11-08T00:48:22Z;
   byte-equal at d3d0a600372b897a03cba23a96e9028cb5e99875, 00:48:27Z; «Written from 2026-11-08T00:47Z (date -u). The header time of record
   is the commit time.»), «I did NOT read docs/referee-2/ for this report.» (l. 3), verdict table l. 5-18; §C
@@ -687,17 +858,22 @@ script; L-3 with R-G then R-B: sha1 85bb221f19ca457655c954f570552bc0f4d8095d wit
   (04:03:53Z; «date -u at writing 2026-11-08T04:03Z»), l. 333-348, «Verdict: fixes entry 2 CORRECT; L-3 MATCHES. All statements stay as in
   §C (all SIGN; ACYC-XI PROVED-CONDITIONAL on R118 (k), (l)).» (l. 348); successor 29's §E 055758ba570fa9c9a08f92cd73aea00a1c4ff6c3
   (2026-11-08T06:31:48Z; heading «date -u at writing 2026-11-08T06:31Z»), l. 349-378, «Verdict: L-4 MATCHES (L-3 + exactly R-G and R-B;
-  both CORRECT in meaning).» (l. 377). REFEREE-2 docs/referee-2/R2-P-ACYC.md: successor 32's report
-  bf02e61888453d86f93d4fcce5207d446ce9a378 (2026-11-08T00:55:23Z; «2026-11-08 from 00:45Z (date -u)»), «Independent: docs/referee/ not
-  read on this item before this report is on origin.» (l. 2-3), verdict table l. 13-27; Addendum 1
-  6c937bc6e3af08a68530b01d7b5639c5ec7de25c (2026-11-08T01:44:31Z), l. 256-296, «Read only after this report was on origin (bf02e618). No
-  verdict of mine changes.» (l. 257); Addendum 2 d7ca68f42d1afc1db557be734f4fe96e17f05a29 (2026-11-08T02:38:33Z), l. 298-353, «fixes entry
-  1 **CORRECT** (N-2 recommended);» (l. 349); Addendum 3 e187847085de9c572e016edab37dd0a7e18faf78 (2026-11-08T04:06:09Z; heading
-  «2026-11-08 04:06Z by date -u»), l. 355-374, «**L-3 MATCHES** (Opus 5.5, D1);» (l. 373), «statements: BETA-ACYC, LAMBDA-CONST, ACYC-LIN
-  **SIGN**; ACYC-XI **SIGN**, PROVED-CONDITIONAL on R118 (k) + (l); nothing REFUSED.» (l. 374); successor 33's Addendum 4
-  79430e80429c5aaa6b645f2bf0db13da65162275 (2026-11-08T06:38:24Z; heading «REFEREE-2 successor 33, 2026-11-08 06:30Z by date -u»), l.
-  376-406, «**Verdict: L-4 MATCHES** (Opus 5.5, D1).» (l. 405). Lane (claude/l-si): L-SI successor 43, e3ac4b06 (packet FROZEN, L-1);
-  successor 44, 01a68edc (fixes entry 1, L-2) and ff9b1639 (fixes entry 2, L-3); successor 45, 0bc6f028 (fixes entry 3, L-4).
+  both CORRECT in meaning).» (l. 377); successor 30's §F 5b2aa6044357856caefdc8f5ed165b7629ddc00f (2026-11-08T16:44:19Z; heading «date -u
+  at writing 2026-11-08T16:44Z»), with R1's proof-use sentence and pacyc81.py's line numbers corrected at
+  ae9805556a1feee09de9a95d2043607d591374bf (16:44:42Z), l. 380-411, «Verdict: fixes entry 4 CORRECT. **Line L-5 MATCHES** (L-4 + exactly
+  R1-R3).» (l. 410). REFEREE-2 docs/referee-2/R2-P-ACYC.md: successor 32's report bf02e61888453d86f93d4fcce5207d446ce9a378
+  (2026-11-08T00:55:23Z; «2026-11-08 from 00:45Z (date -u)»), «Independent: docs/referee/ not read on this item before this report is on
+  origin.» (l. 2-3), verdict table l. 13-27; Addendum 1 6c937bc6e3af08a68530b01d7b5639c5ec7de25c (2026-11-08T01:44:31Z), l. 256-296, «Read
+  only after this report was on origin (bf02e618). No verdict of mine changes.» (l. 257); Addendum 2
+  d7ca68f42d1afc1db557be734f4fe96e17f05a29 (2026-11-08T02:38:33Z), l. 298-353, «fixes entry 1 **CORRECT** (N-2 recommended);» (l. 349);
+  Addendum 3 e187847085de9c572e016edab37dd0a7e18faf78 (2026-11-08T04:06:09Z; heading «2026-11-08 04:06Z by date -u»), l. 355-374, «**L-3
+  MATCHES** (Opus 5.5, D1);» (l. 373), «statements: BETA-ACYC, LAMBDA-CONST, ACYC-LIN **SIGN**; ACYC-XI **SIGN**, PROVED-CONDITIONAL on
+  R118 (k) + (l); nothing REFUSED.» (l. 374); successor 33's Addendum 4 79430e80429c5aaa6b645f2bf0db13da65162275 (2026-11-08T06:38:24Z;
+  heading «REFEREE-2 successor 33, 2026-11-08 06:30Z by date -u»), l. 376-406, «**Verdict: L-4 MATCHES** (Opus 5.5, D1).» (l. 405);
+  successor 35's Addendum 5 c1e71a25596ff01554a1bd7390d7f8b0380a97d6 (2026-11-08T16:43:45Z; heading «2026-11-08 16:43Z by date -u;
+  independent of REFEREE»), l. 408-427, «(4) Verdict: **L-5 MATCHES** (byte test, and in meaning). Statement verdicts unchanged.» (l.
+  427). Lane (claude/l-si): L-SI successor 43, e3ac4b06 (packet FROZEN, L-1); successor 44, 01a68edc (fixes entry 1, L-2) and ff9b1639
+  (fixes entry 2, L-3); successor 45, 0bc6f028 (fixes entry 3, L-4); successor 46, 358ede16 (fixes entry 4, L-5).
 - INDEPENDENCE: the packet's proofs are L-SI's except the w* = K1 step (L41 and L43, above), which both referees wrote independently; each
   referee re-derived every proof step (REFEREE «## 4. Proofs (task 1; each step re-derived)»; REFEREE-2 «## Proofs (own re-derivation)»)
   and replayed the DATA on its own code (REFEREE: acyc_replay.py on its own VJ engine and builder, the lane's n5v.py for N5′-xi only;
@@ -706,27 +882,30 @@ script; L-3 with R-G then R-B: sha1 85bb221f19ca457655c954f570552bc0f4d8095d wit
   they are quoted in the fixes entry and byte-copied in fix1/» (§C l. 276). The L-2 and L-3 wording is the lane's under the Lead's routing
   (fixes l. 3, l. 99), from the referees' exact strings; each referee byte-tested it with its own script (REFEREE §C scratch/acyc_l2.py,
   §D scratch/acyc_l3.py; REFEREE-2 Add. 2 bt_l2.py, Add. 3 bt_l3.py) and read it in meaning. L-4's two strings are the Lead's rulings of
-  05:13Z on the drafter's proposals (fixes l. 116-121), applied by the lane by script; both referees' byte tests of L-4 are under
-  Signatures.
+  05:13Z on the drafter's proposals (fixes l. 116-121), applied by the lane by script; L-5's three strings are CHECKER C136's R1-R3 (§5 l.
+  84-89), applied by the lane by script (fix4/mkL5.py; fixes l. 138-163), and each referee byte-tested L-5 with the strings typed from
+  C136, not from the lane's script (REFEREE §F l. 384-386; REFEREE-2 Add. 5 l. 412-414), REFEREE-2 «independent of REFEREE» (l. 408) and
+  REFEREE «docs/referee-2/ not read for this section.» (§F l. 411); both referees' byte tests of L-4 and L-5 are under Signatures.
 - TARGET.md diff: TARGET.md §2 asks for an algorithm polynomial on EVERY parity game that outputs (W_E, W_O); every statement here is
   about Howard steps on IDEAL-CYC(G), or N5′-xi's mover phase on Γ3(G), for Ξ-acyclic genome games, a restricted class (TARGET.md §4:
   «Polynomial only on a restricted class …»; packet §7 l. 189-193; REFEREE §8 l. 258-264: «No iteration total, no bit cost (§3) and no
   output correctness is claimed. Not M3, not a gauntlet step (§5). G-N5-TIME stays OPEN.»; REFEREE-2 l. 226-233). It is not an algorithm
-  claim on every game, so TARGET.md §5's gauntlet does not apply, and it is not a step-4 pass. L-4 carries «G-N5-TIME stays OPEN; not M3,
-  not a step-4 pass, not a TARGET.md claim» (by script); of F-12 and F-13 only F-12 touches the scope tail, adding the L41 sentence. GAPS
-  G-N5-TIME: open. N5′-xi stays a CANDIDATE (REFEREE-2 l. 233: «Under D1, N5′-xi stays a CANDIDATE: this packet rules out slow mover
-  phases on Ξ-acyclic genomes only.»).
+  claim on every game, so TARGET.md §5's gauntlet does not apply, and it is not a step-4 pass. L-5 carries «G-N5-TIME stays OPEN; not M3,
+  not a step-4 pass, not a TARGET.md claim» (by script); of F-12 and F-13 only F-12 touches the scope tail, adding the L41 sentence, and
+  R1-R3 (F-14, F-15) touch the premises and two DATA clauses only (CHECKER C136 §4 l. 79-80: TARGET.md diff PASS on L-4). GAPS G-N5-TIME:
+  open. N5′-xi stays a CANDIDATE (REFEREE-2 l. 233: «Under D1, N5′-xi stays a CANDIDATE: this packet rules out slow mover phases on
+  Ξ-acyclic genomes only.»).
 
-Proposed GAPS line-11 UPDATE (append-only), to go AFTER the last UPDATE on GAPS l. 11 at landing (R121's when R121 lands first, as routed;
-R120's, «UPDATE 2026-11-07 21:05Z: RESULTS R120 (P-TOWER-FUEL; CHECKER C134 0c816917)», is the last at the trunk commits c9591e35,
-616941eb and 36c183f8), as a pure insertion with one separating space before the row's closing « |». BUILT FROM L-4 by upd122b.py (R118's
-procedure, run118()'s steps as run122(), with R122's start «RESULTS R15's object): », its four labels and its source prefix; controls
-R97-R116 rebuilt byte for byte and the R117-R120 controls as landed, each compared with GAPS l. 11, True ×24; the R121 controls (R121's
-draft UPDATEs on L-2 and L-4) True; on L-3 the same build gives a92748935ead9054b1029880e863e4c97268e9bd; sha1
-425d10fe5ca0223568b5fb2f29bea4858307dc43 of the line without newline and unfilled, = a9274893… with F-13 applied and F-12's sentence
-inserted after «(no bound on R for Ξ-cyclic genomes)», where the procedure leaves the scope words). <DATE>, <HH:MM> and <checker> are the
-landing date, time and the C136 commit, all filled at landing:
-UPDATE <DATE> <HH:MM>Z: RESULTS R122 (P-ACYC; CHECKER C136 <checker>) [refereed-only] LANDED: Odd never leaves the β-face on Ξ-acyclic genomes (premises: R104's definitions of the genome, the Ξ-graph, Γ(G) and its start only; R117's definition of Γ3(G) only; R118 (a) definitions, (d) BR-SEG, and for the corollary (k) REACH3-CYC with (l) Corollary T3; the order ⊴ and σ̄ of R118 [VJ]; for the corollary's iterations and fallback, SPEC S4 and S4c, RESULTS R15's object): for every genome G whose Ξ-graph is acyclic, on Γ(G) or Γ3(G), and every Even strategy that agrees with the stated start off the movers (transported through the pads on Γ3), every optimal counterstrategy of Odd takes the β-face at every gate, and no play from a non-e vertex contains an e-vertex (Lemma BETA-ACYC); every vertex's cycle node is then independent of the movers' choices (Lemma LAMBDA-CONST); hence the Howard run of IDEAL-CYC(G) from any mover state has C = 0, R = 0 and T_CYC ≤ N (Theorem ACYC-LIN); and the first fallback of N5′-xi on Γ3(G) from S3, i.e. the least iteration k at which SPEC S4c applies, comes at k = T3 + 1 ≤ N + 1 (Corollary ACYC-XI, PROVED-CONDITIONAL on R118's REACH3-CYC, whose [REACH-L] premises RESULTS R117's entry signs for acyclic Ξ-graphs, with Lemma K2-r and [1E-N3] as listed in R118 (k)): so on the whole domain of the tower route N5′-xi's mover phase is linear in N, while N5 with SPEC's S4a tie rule realises L(G) there (R117); nothing is claimed about iterations after the first fallback, about Ξ-cyclic genomes, or about the running time of N5 or N5′-xi (no bound on R for Ξ-cyclic genomes); the step w* = K1 of LAMBDA-CONST's proof (σ̄(K2) toward K1 is Odd's unique optimum) is referee-originated (REFEREE R-P-ACYC §4.2 LC-1 and REFEREE-2 R2-P-ACYC G-1 / W-1, found independently, restated in P-ACYC's fixes entry 1 F-1), signed by both referees; DATA (experiments/si/box81, check81.sh): on 300 random Ξ-acyclic genomes (lemma81.agen, d 1-6, w 1-3, degree 2-3, seed 7; 768 states) and the four tower genomes H5_d20_F62, H6_d24_F126, SL41_d28, L6Z_KILL238_d28 (44 states), each run from the genome's stored start (IDEAL-CYC) or from S3 (Γ3), σ̄ off the β-face in 0 (state, gate) pairs (BETA-ACYC's no-e-vertex clause: no separate DATA), C 0, R 0, runs with T_CYC > N 0 (lemma81.py, IDEAL-CYC; ACYC-LIN from other mover states: no separate DATA) and, along N5′-xi on Γ3 from S3 (pacyc81.py; τ by fix1/pacyc81t.py), σ̄ off the β-face 0, states that are not standard (σ off the movers and τ) 0, genomes with no fallback 0, genomes with first fallback after iteration N + 1 0 (k = T3 + 1 is R118 (k)'s own clause, and N5's L(G) is R117's: no separate DATA); control, five Ξ-cyclic genomes rd2_d3, rd2_d4, rd3_d3, rf_d4, RS2 (59 states; the same counts on IDEAL-CYC and along N5′-xi on Γ3; e-priorities ordered by (lev, gate index), as in ref gamma3.build): σ̄ off the β-face in 121 (state, gate) pairs, C 15, R 25 (P-ACYC, docs/si/P-ACYC.md with its fixes entries 1-2, docs/si/P-ACYC-fixes.md; L-SI successors 43-44). G-N5-TIME stays open.
+Proposed GAPS line-11 UPDATE (append-only), to go AFTER the last UPDATE on GAPS l. 11 at landing (R121's, «UPDATE 2026-11-08 14:06Z:
+RESULTS R121 (P-N5-ASC; CHECKER C135 a9bf46bb)», is the last at 59dacf22, where R121 landed, and at the local trunk a4a777de), as a pure
+insertion with one separating space before the row's closing « |». BUILT FROM L-5: the UPDATE of draft 2cd7cfd0 (d[728]; sha1
+425d10fe5ca0223568b5fb2f29bea4858307dc43 of the line without newline and unfilled, built from L-4 by upd122b.py: R118's procedure,
+run118()'s steps as run122(), with R122's start «RESULTS R15's object): », its four labels and its source prefix; controls R97-R120 True
+×24 and the R121 draft controls True in that draft) with CHECKER C136's R1, R2 and R3 applied, each old string once in it (C136 §3:
+«R1-R3's old strings occur once each in L-4 and in the UPDATE.»); sha1 793193506cd6e4ca67ebb88235a75f70b72f7808 of the line without
+newline and unfilled, = C136 §5's and = run122()'s direct build from L-5 (upd122c.py). <DATE>, <HH:MM> and <checker> are the landing date,
+time and the C136 commit, all filled at landing:
+UPDATE <DATE> <HH:MM>Z: RESULTS R122 (P-ACYC; CHECKER C136 <checker>) [refereed-only] LANDED: Odd never leaves the β-face on Ξ-acyclic genomes (premises: R104's definitions of the genome, the Ξ-graph, Γ(G) and its start only; R117's definition of Γ3(G) only; R118 (a) definitions, (d) BR-SEG, and for the corollary (k) REACH3-CYC with (l) Corollary T3; the order ⊴ and σ̄ of R118 [VJ], an optimal counterstrategy being pointwise optimal (at every vertex its play value is ⊴ the value under every Odd strategy; RESULTS R57 (b), [1E-N3], as landed in R104); for the corollary's iterations and fallback, SPEC S4 and S4c, RESULTS R15's object): for every genome G whose Ξ-graph is acyclic, on Γ(G) or Γ3(G), and every Even strategy that agrees with the stated start off the movers (transported through the pads on Γ3), every optimal counterstrategy of Odd takes the β-face at every gate, and no play from a non-e vertex contains an e-vertex (Lemma BETA-ACYC); every vertex's cycle node is then independent of the movers' choices (Lemma LAMBDA-CONST); hence the Howard run of IDEAL-CYC(G) from any mover state has C = 0, R = 0 and T_CYC ≤ N (Theorem ACYC-LIN); and the first fallback of N5′-xi on Γ3(G) from S3, i.e. the least iteration k at which SPEC S4c applies, comes at k = T3 + 1 ≤ N + 1 (Corollary ACYC-XI, PROVED-CONDITIONAL on R118's REACH3-CYC, whose [REACH-L] premises RESULTS R117's entry signs for acyclic Ξ-graphs, with Lemma K2-r and [1E-N3] as listed in R118 (k)): so on the whole domain of the tower route N5′-xi's mover phase is linear in N, while N5 with SPEC's S4a tie rule realises L(G) there (R117); nothing is claimed about iterations after the first fallback, about Ξ-cyclic genomes, or about the running time of N5 or N5′-xi (no bound on R for Ξ-cyclic genomes); the step w* = K1 of LAMBDA-CONST's proof (σ̄(K2) toward K1 is Odd's unique optimum) is referee-originated (REFEREE R-P-ACYC §4.2 LC-1 and REFEREE-2 R2-P-ACYC G-1 / W-1, found independently, restated in P-ACYC's fixes entry 1 F-1), signed by both referees; DATA (experiments/si/box81, check81.sh): on 300 random Ξ-acyclic genomes (lemma81.agen, d 1-6, w 1-3, degree 2-3, seed 7; 768 states) and the four tower genomes H5_d20_F62, H6_d24_F126, SL41_d28, L6Z_KILL238_d28 (44 states), each run from the genome's stored start (IDEAL-CYC) or from S3 (Γ3), σ̄ off the β-face in 0 (state, gate) pairs (BETA-ACYC's no-e-vertex clause: no separate DATA), C 0, R 0, runs with T_CYC > N 0 (lemma81.py, IDEAL-CYC; ACYC-LIN from other mover states: no separate DATA) and, along N5′-xi on Γ3 from S3, on its states 0, …, T3 before the first fallback (pacyc81.py; τ by fix1/pacyc81t.py), σ̄ off the β-face 0, states that are not standard (σ off the movers and τ) 0, genomes with no fallback 0, genomes with first fallback after iteration N + 1 0 (k = T3 + 1 is R118 (k)'s own clause, and N5's L(G) is R117's: no separate DATA); control, five Ξ-cyclic genomes rd2_d3, rd2_d4, rd3_d3, rf_d4, RS2 (59 states; the same counts on IDEAL-CYC and on N5′-xi's states 0, …, T3 on Γ3; e-priorities ordered by (lev, gate index), as in ref gamma3.build): σ̄ off the β-face in 121 (state, gate) pairs, C 15, R 25 (P-ACYC, docs/si/P-ACYC.md with its fixes entries 1-2, docs/si/P-ACYC-fixes.md; L-SI successors 43-44). G-N5-TIME stays open.
 
 Addendum (subagent, for the Lead; does not land; written 2026-11-08T05:11:22Z by date -u). (1) FIRST FILL on line L-3 (l-si ff9b1639,
 sha1 03453361…), to CHECKER C136. I edited docs/agents/R122-draft.md only; no merge, no commit and no push by me; the Lead commits this
@@ -871,3 +1050,73 @@ assemble122b.py, parts/ (header.txt, secondfill.txt, entry.txt, preamble.txt, ad
 chk_p3.out, chk_final.out; tools/lp122b.py, lp_p1.out, lp_final.out; tools/sim122b.py, sim_p1.out, sim_p2.out, sim_p3.out, sim_final.out;
 tools/rec122b.py, rec_final.out; filltime.txt, addtime.txt; draft_p1.md, draft_p2.md, draft_p3.md, R122-draft-2133f5ac.md (the draft
 before the Add. 4 fill), R122-draft.md).
+
+Addendum 3 (subagent, for the Lead; does not land; written 2026-11-08T17:33:13Z by date -u). (1) THIRD FILL on line L-5 (l-si 358ede16,
+sha1 7a84e094…), to CHECKER C136 Add. 1. I built this file in the scratchpad only
+(/tmp/claude-0/-home-user-parity-games-challange/43a29ffc-0674-5391-84c1-1d3918a14b5d/scratchpad/r122c/R122-draft.md, by fill3.py from the
+draft at the local trunk a4a777de); I edited nothing in the repository, merged, committed and pushed nothing, and ran neither
+scripts/verify.sh nor scripts/push.sh; the Lead commits this file as docs/agents/R122-draft.md. Heads at the fetch of
+2026-11-08T17:14:25Z: l-si 358ede16, referee ae980555, referee-2 c1e71a25, checker dcdecd2a; local trunk HEAD a4a777de (being pushed); the
+trunk's remote-tracking ref d35ce1ec (not fetched by me). Re-fetch at 2026-11-08T17:32:07Z-17:32:08Z (the same four branches; rc 0): all
+four heads unchanged; local HEAD a4a777de unchanged, the working tree clean (git status --short empty). (2) TITLE l. 567 (d[566]) = "###
+R122 [refereed-only] " + L-5 without its newline + ", CHECKER PASS (docs/checker/C136.md, checker PENDING)", checked by script
+(chk122c.py): equal, byte for byte (True); the title minus that prefix and that tail is L-5's bytes without the newline (True); the only
+«### R» heading of this file; 3,339 characters, 3,399 bytes, sha1 of the heading line without its newline
+52c7e4287223cc4d2a44cb8458df91ae5143591d; 44 «(» / 44 «)» (L-5's 43 and the fill's), depth never negative, 0 "|", «R1xx» 0,
+«[refereed-only]» once. (3) SHAPE. The entry block is l. 567-897 (python slice d[566:897], 331 lines; the second fill's was d[446:718],
+272 lines), followed by a blank line (d[897]); 0 "|" in it; «PENDING» once in it (the title's fill); parentheses in the block 587 «(» /
+585 «)», the same surplus of two as the second fill's block (507 / 505), from quoted fragments outside the title (the title balances); no
+continuation line starts like a list marker; longest line but the title 138 characters. The GAPS preamble is l. 899-907 (d[898:907]); the
+UPDATE is l. 908 (d[907]), one line, sha1 793193506cd6e4ca67ebb88235a75f70b72f7808 without newline and unfilled
+(02b28fac7c0d5510b0384869508c0dcafd575c0d with a newline), = upd122L5.txt (True), 3,349 bytes, 43 «(» / 43 «)», one each of «<DATE>»,
+«<HH:MM>», «<checker>», 0 "|". A landing script slices d[566:897] for the entry and reads d[907] for the UPDATE, with «R122», «C136», PREV
+= R121's block and UPDATE (landed). The THIRD FILL section is l. 2-121; l. 122-566 (the SECOND FILL section, the FIRST FILL record and its
+blank line) are 2cd7cfd0's l. 2-446, byte-unchanged, directly before the title (rec122c.py, True); l. 909-1052 (blank, the first fill's
+Addendum, blank, Addendum 2) are 2cd7cfd0's l. 730-873, byte-unchanged, directly after the UPDATE (True); line 1 is 2cd7cfd0's line 1 with
+only its tail after «sha1 85bb221f19ca457655c954f570552bc0f4d8095d» replaced (True). (4) TOKENS. In the new text (line 1, the THIRD FILL
+section, the entry block, the preamble and the UPDATE) the only angle-bracket tokens are the three fill tokens, twice each (the preamble's
+mention and the UPDATE); this Addendum names them only in (2), (3) and (5). (5) WHAT IS LEFT: CHECKER C136 Add. 1 on this file (the THIRD
+FILL section's notes N-C, N-E, N-W, N-S and D-10, D-11; N-W is new entry text in Honest limits (v), for CHECKER's ruling); the Lead merges
+claude/referee (ae980555 or later) and claude/referee-2 (c1e71a25 or later) before landing (claude/l-si 358ede16 and claude/checker
+dcdecd2a are merged at a4a777de), then lands R122 after R121 with <DATE>, <HH:MM> and <checker> filled. (6) QUOTE SWEEP (chk122c.py:
+chk122b.py's rule, outermost guillemet quotes, nested ones inside them, split at «…», parts of 6+ characters, whitespace-normalised, NO
+docs/agents draft as a source; sources: the first and second fills' (r122/src, r122b/src, the box 81 archives of ff9b1639 and 0bc6f028,
+REFEREE's file at 055758ba, REFEREE-2's at 79430e80, trunk files at c9591e35, C135 and notes/CHECKER.md at fa8add12, SPEC, their outputs)
+plus C136 at b2fe3440; the packet, fixes, L-4 and L-5 at 358ede16 and box 81 from its archive (pacyc81.py, check81.sh, fix1-fix4 tools);
+REFEREE's file at 5b2aa604 and ae980555 with acyc_l5.py and l5test.out; REFEREE-2's at c1e71a25 with bt_l5.py and bt_l5.out; RESULTS,
+GAPS, LEAD-STATE, NOW, DECISIONS and TARGET.md at a4a777de; the subjects of the commits cited; my outputs check81.out, l5rel122c.out,
+upd122c.out, upd122L5.txt): on the draft before this Addendum, line 1 and the THIRD FILL section 73 quotes, 65 parts, 0 not found; SECOND
+FILL section 81 quotes, 65 parts, 0 not found; first-fill record 213 quotes, 183 parts, 0 not found; title and body 223 quotes, 223 parts,
+0 not found; GAPS preamble and UPDATE 4 quotes, 3 parts, 0 not found; first-fill Addendum 47 quotes, 28 parts, 0 not found; Addendum 2 38
+quotes, 22 parts, 0 not found; whole file 679 quotes, 589 parts, 0 not found; negative control (a made-up quote) reported missing (True);
+the run on the final file is in chk_final.out. lp122c.py: 92 quotes and line references new at this fill (C136 l. 2-94, fixes l. 138-163,
+REFEREE l. 380-411 at ae980555 and l. 391-409 at 5b2aa604, REFEREE-2 l. 408-427, packet l. 69-70, RESULTS l. 624-14816 and GAPS l. 11 at
+a4a777de, LEAD-STATE l. 2896-2903, pacyc81.py l. 4-40, check81.sh l. 44) each at its cited lines, 0 failed. hex122c.py: 80 hex ids in the
+new text before this Addendum (line 1, the THIRD FILL section, the entry, the preamble and the UPDATE): 51 git objects, 20 sha1s measured
+at this fill (files, lines and drafts; hex_final.out lists them), 9 already in draft 2cd7cfd0, 0 unresolved. (7) STALE STATUS (chk122c.py,
+case-insensitive): in the entry block, the title's fill excepted, «pending», «awaiting», «to come», «not landed», «first fill», «second
+fill», «third fill» and «this fill» 0 times each; «will » once, inside the quote of C136 l. 48 («and so will the line-only entry R1-R3
+need.»); «not yet» twice, inside the referees' L-1 and L-2 verdicts (history); «candidate» twice, in the TARGET.md diff (unchanged); «R-B»
+7 and «R-G» 8 times, all inside quotes (as in the second fill); «R-N» 0; «R-S» 4 times, three inside «BR-SEG» and one inside the quote of
+C136 l. 48; «425d10fe» and «79319350» 0 times. GAPS preamble and UPDATE: the same words 0 times each. Line 1 «NOT LANDED» once (R122 is
+not landed). Model names: «Opus» 10 times in the entry block, all inside quoted referee verdicts. (8) LANDING SIMULATION (sim122c.py, on
+in-memory copies of RESULTS 04a444ee… and GAPS a4721066… at the local trunk a4a777de, = 59dacf22's): R122's d[566:897] + a blank line
+inserted directly before «**Erratum E-1**», after R121's block (l. 14320-14742) and its blank line, a pure insertion (prefix and suffix
+byte-unchanged, the inserted block = the draft's, True); RESULTS 15,386 → 15,718 lines (+332); R118 l. 13,607, R119 l. 13,879, R120 l.
+14,114, R121 l. 14,320, R122 at l. 14,744-15,074, blank l. 15,075, «**Erratum E-1**» to l. 15,076, E-2 15,089, Note E-3 15,117, Dead ends
+15,148; order R110-R122, E-1, E-2, E-3, Dead ends: True; "|" in RESULTS 1,477 → 1,477. GAPS: only l. 11 changes (True), the closing " |"
+replaced by " " + R122's filled UPDATE + " |"; "|" on l. 11 76 → 76; «UPDATE 2026-» 56 → 56 plus one head with the simulation year 2099
+after R121's (True); R122's UPDATE last (True); 23 → 23 lines. Fill values used only for the simulation: 2099-01-09, 00:00, 1111111. (9)
+UPDATE: (c) of the THIRD FILL section; upd122c.out has the control, the three replacements and the 11 token hunks. (10) NOT VERIFIED / NOT
+DONE: scripts/verify.sh and scripts/push.sh not run (not asked; box81/check81.sh only, from a git archive of 358ede16; not the whole
+experiments/si/check.sh); the referees' scripts acyc_l5.py and bt_l5.py read, not re-run (their logs read); upd122b.py's chain of GAPS
+controls (R97-R120 rebuilt, R121 draft controls) not re-run, and no control for R121's landed UPDATE built: the UPDATE is the second
+fill's d[728] with R1-R3, cross-checked by a standalone direct build, as above; C136's whole-run counts (Honest limits (v)) not reproduced
+by me, cited as C136's; R1 read in meaning only through both referees' readings and against packet §1 l. 69-70 (a text check), R2 / R3
+against pacyc81.py l. 4 and l. 24-29; the proofs not re-derived by me; no Oink run (L-5 cites no Oink check). (11) Scratch:
+/tmp/claude-0/-home-user-parity-games-challange/43a29ffc-0674-5391-84c1-1d3918a14b5d/scratchpad/r122c/ (filltime.txt, fetch.time; src/
+(C136.md, the packet, fixes, L-4, L-5 at 358ede16; ref_5b2aa604.md, ref_ae980555.md, ref2_c1e71a25.md); draft2.md, the second fill, not a
+quote source; arch/ = git archive of 358ede16 (experiments, docs, scripts), run.start, run.end, check81.rc, check81.out;
+tools/l5rel122c.py, l5rel122c.out; tools/upd122c.py, upd122c.out, upd122L5.txt; parts/ (thirdfill.src, preamble.src, addendum3.src);
+fill3.py, addtime.txt; tools/chk122c.py, chk_p1.out, chk_final.out; tools/lp122c.py, lp_final.out; tools/sim122c.py, sim_final.out;
+tools/rec122c.py, rec_final.out; tools/hex122c.py, hex_final.out; report.txt; R122-draft.md).

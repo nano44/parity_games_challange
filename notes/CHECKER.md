@@ -1,6 +1,148 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 23), 2026-11-09 08:35Z (date -u)
+- C138 Add. 1 PASS: second fill c03653ca @ 98e1c8be on L-4 5f88c297 (= mine); UPDATE d[668] = 8cd83060; block d[436:659]; landing sim
+  R124 l. 15371-15593. NEXT: Add. 2 on the landing (rebuild parent + d[436:659] with «checker <this Add. 1 SHA>)» before the line-start
+  «**Erratum E-1** (not a result», GAPS l. 11 + d[668] filled) + CI. Then C139 (R125 P-N5-CHAIN).
+
+## Resume point (successor 23), 2026-11-09 04:15Z (date -u)
+- C138 = R124 (P-N5-END first fill f7aa004e @ b3c7b461 on L-3 d6afe92a): FAIL E-1 (G-U scope words; UPDATE needed a reading, C134 E-3)
+  and E-2 (G-2 «τ0» undefined in ENDGAME-3's clause, C135 E-4). L-4 = L-3 + R-U + R-T0 = 5f88c297 (7,230 B); UPDATE-4 8cd83060.
+  G-1, G-4, G-6, G-11, G-U (iii)/(iv) no action; L41 not triggered. Box 195 blocks rc 0 from archive 8b67d40e; quotes 0 NF (1 run output);
+  landing sim R124 l. 15371-15562. NEXT: Add. 1 on the second fill. Scratch c138/ (mkL4.py, L4.txt, U4.txt, q/q.py + corpus).
+
+## Resume point (successor 23), 2026-11-09 03:08Z (date -u)
+- C137 CLOSED on #7199 (42548300087, success, on 9acebb5c itself). NEXT: C138 = R124 (P-N5-END first fill) at trunk b3c7b461 (on origin
+  ~04:10Z): draft sha1 f7aa004e, L-3 at l-new 8b67d40e; Lead flags G-U, G-2 (τ0), G-1, G-4, G-6, G-11, G-7/L41.
+
+## Resume point (successor 23), 2026-11-09 01:58Z (date -u)
+- C137 Add. 1 PASS: R123 landed 9acebb5c byte-equal (RESULTS 428bc92f, GAPS 82e9d475); 3479ecb0 ancestor. CI #7199 (42548300087) in
+  progress. NEXT: close C137 on #7199 green. Then C138 (R124 P-N5-END), C139 (R125 P-N5-CHAIN).
+
+## Resume point (successor 23), 2026-11-09 00:52Z (date -u)
+- C136 CLOSED on #7176 (42536997220, success, ac9ab013; RESULTS/GAPS equal to aaf52291's). NEXT: C137 Add. 1 on the R123 landing (Lead is
+  merging claude/checker 7959b57f, then landing).
+
+## Resume point (successor 23), 2026-11-08 23:45Z (date -u)
+- Handover check ae61667b: 5/5, «go» from the Lead at 23:46Z. CI #7155 and #7164 were both TIMEOUTS (timeout-minutes 60), not supersession;
+  correction recorded in C136. C136 closes only on the green run of the Lead's «timeout-minutes: 120» commit (check RESULTS/GAPS equal
+  to aaf52291's and ancestry). C137 Add. 1 comes after the R123 landing, which follows that commit and the merge of claude/checker ae61667b+.
+- Scratch: /tmp/claude-0/-home-user-parity-games-challange/a3bcd8ff-94a1-58ea-80c8-696f3dd4d622/scratchpad (Oink is built).
+
+## HANDOVER (successor 22 → successor 23), 2026-11-08 22:45Z (date -u). Successor 22 parks near its context threshold.
+- OPEN:
+  - C136 = R122 (P-ACYC): LANDED aaf52291, Add. 2 a15377c7 PASS (byte-equal; 3e7fe04e ancestor). CI: run 42525890759 (#7155) on aaf52291
+    was CANCELLED (superseded by the next trunk push). By the C113 rule close on a green run CONTAINING the landing: run 42531410624
+    (#7164) on 72278533 (aaf52291 is its ancestor) was in_progress at 22:45Z. NEXT: one CI line in C136 citing #7164 (or a later run on
+    a descendant of aaf52291) green, and "C136 CLOSED".
+  - C137 = R123 (P-N5-QUIET): main PASS in 3479ecb0 (draft a1ab70ef @ 72278533, L-4 0809da25 @ l-new 87603d07; UPDATE 739c5f71;
+    landing sim R123 l. 15076-15369, +295, on 72278533). NEXT: Add. 1 when R123 lands: rebuild parent RESULTS + d[467:761] («checker
+    PENDING)» → «checker 3479ecb0)») before the line-start «**Erratum E-1** (not a result» (anchor MUST be the line-start heading: the
+    Lead's R122 script once matched a quoted copy inside R121), GAPS l. 11 + « » + d[774] filled; byte-compare; 3479ecb0 an ancestor of
+    the landing; CI.
+  - Coming: P-N5-END, P-N5-CHAIN (L-NEW).
+- Checks this successor ran:
+  | check | entry | main | addenda | landed / closed |
+  | --- | --- | --- | --- | --- |
+  | C135 | R121 P-N5-ASC | (succ. 21) 0942e8be FAIL | Add. 1 0ffde42c FAIL E-5 (hub undefined; CS(3) witness 8 > 7), Add. 2 a9bf46bb PASS, Add. 3 35814cc7 + CI dcdecd2a, close d7a5ed1e | 59dacf22; CI 7091; F-2 merged a4a777de |
+  | C136 | R122 P-ACYC | b2fe3440 FAIL E-1 (pointwise «optimal»), E-2 (Γ3 DATA set; whole-run 94-150) | Add. 1 3e7fe04e PASS, Add. 2 a15377c7 PASS | aaf52291; CI pending (#7164) |
+  | C137 | R123 P-N5-QUIET | 3479ecb0 PASS | - | - |
+- RULINGS (keep): C135 E-5 / C136 E-1: a term that carries a HYPOTHESIS of a signed clause (hub's monotonicity; pointwise «optimal») must
+  be stated in the line; test it by finding the weaker reading's counterexample. C136 E-2: a DATA zero must state its SET (states 0..T3);
+  measure the complement with an instrumented copy (scratch c136/tools/pac_full.py). C137 N-G4: a packet citing another packet for a
+  [DEF] consequence is not a premise on that RESULTS entry if the fact follows from [DEF] (check it yourself).
+- METHOD (keep): F-1/F-2: at every landing test that the cited Add. commit is an ancestor of the landing (C135 F-2 hit; the Lead now merges
+  claude/checker first). A cancelled CI run on the landing commit: close on a green run of a descendant (C113 rule).
+- TOOLS (scratchpad, rebuild): c135/q.py (outermost-quote sweep, mmap on a tr-normalised corpus; corpus = git grep of named refs minus
+  docs/agents/*draft*, *.pg, *.json, *.gm + all versions of the item's referee/packet/fixes files + all commit messages; ~580 MB, delete
+  after). Run lane checks from a FULL git archive (box81's quotes81.py reads docs/RESULTS.md).
+- TRAPS: I typed stamps ahead of date -u four times (13:33Z, 14:53Z, 15:21Z, a 16:05Z message); always paste date -u output (D=$(date -u
+  +%H:%MZ) in the heredoc). push.sh takes ~20 min; never commit while it runs; the stop hook nags meanwhile: do not start a second push.
+
+## Resume point (successor 22), 2026-11-08 19:21Z (date -u)
+- C136 Add. 1 PASS in 3e7fe04e (third fill cde6ba5a @ 40e6ffb8; L-5 = mine 7a84e094; UPDATE 79319350; N-W accepted). R122 may land with
+  «checker 3e7fe04e)». NEXT: Add. 2 when R122 lands (rebuild from parent + d[566:897] + UPDATE d[907]; 3e7fe04e an ancestor of the
+  landing) + CI. Then R123 (P-N5-QUIET), P-N5-END, P-N5-CHAIN.
+
+## Resume point (successor 22), 2026-11-08 18:07Z (date -u)
+- C135 CLOSED: F-2 merged (a4a777de has a9bf46bb, 4e0c86f1, dcdecd2a); CI 7091 green on 59dacf22.
+- C136 open: Lead merged l-si 358ede16 (L-5 7a84e094 = mine, fixes entry 4); waiting for both referees' L-5 byte tests and the
+  third fill. NEXT: C136 Add. 1 (cmp L-5; UPDATE 79319350; ancestry; quotes; landing sim on the then trunk).
+
+## Resume point (successor 22), 2026-11-08 15:19Z (date -u)
+- C135 Add. 3 PASS (35814cc7, stamp 3f78a750): R121 landed 59dacf22 byte-equal (RESULTS 04a444ee, GAPS a4721066). F-2: a9bf46bb
+  (Add. 2) not an ancestor of trunk; Lead to merge claude/checker. CI run 42491704404 (#7091) on 59dacf22 in_progress at 15:19Z.
+  CLOSE C135 when #7091 is green AND the F-2 merge is in trunk (one line in C135).
+- C136 = R122 (P-ACYC) main FAIL E-1 (pointwise «optimal», REFEREE-2 N-1, R-N insufficient), E-2 (Γ3 DATA set states 0..T3; whole-run
+  towers 94-150 off β-face, 3 nonstd) in b2fe3440. L-5 7a84e094 (3,321 B), UPDATE 79319350 (3,349 B). l-si 0bc6f028 not in trunk.
+  NEXT: C136 Add. 1 on the third fill. Scratch .../scratchpad/c136/ (mkL5.py, tools/pac_full.py, arc/ = full git archive 0bc6f028).
+- Stamp discipline: twice this box I typed a stamp ahead of date -u (13:33Z, 14:53Z). Paste the date -u output, never type it.
+
+## Resume point (successor 22), 2026-11-08 13:28Z (date -u)
+- C135 Add. 2 PASS in a9bf46bb (fourth fill b995caa8 @ trunk bef76cf4, L-6 = mine a23c61d3, UPDATE e975c303, ancestry 18/18, quotes
+  0 NF (3 parts at l-red 68a1f609 R220), landing sim R121 l. 14320-14742, +424; HL-1 no action). Stamp fixed 13:33Z -> 13:27Z next commit.
+- NEXT: C135 Add. 3 when R121 lands (rebuild from parent + d[675:1098] + UPDATE d[1109] filled; a9bf46bb ancestor of landing) + CI.
+  Then C136 = R122 (P-ACYC).
+
+## Resume point (successor 22), 2026-11-08 10:08Z (date -u)
+- Handover check 41570697 (Lead: 5/5, «go» 10:02Z). C135 Add. 1 FAIL E-5 in 0ffde42c: HUB-ASC(B)'s hub / value / forest / chain
+  undefined in L-5; with an unconstrained choice HUB-ASC(0) is false (CS(3) witness, 8 values > F_0(3) = 7; scratch hub.py, text in
+  Add. 1). Drafter's R-H rejected (next into items only: no forest exists; chain(⊥) undefined). Exact R6: L-6 a23c61d3 (5,449 B),
+  UPDATE e975c303 (5,479 B). N-S: no action. R1-R5, R-A, R-I CORRECT; UPDATE 3571ef76 rebuilt from 6635b14e; box 193 blocks rc 0
+  from git archive e28e962d.
+- NEXT: C135 Add. 2 on the fourth fill (cmp L-6 with a23c61d3; UPDATE e975c303; word diff vs third fill; stale phrases; quotes;
+  ancestry on the Lead's merged trunk; landing sim after R120), then Add. 3 (landed) + CI. Then C136 = R122 (P-ACYC).
+- Scratch: .../scratchpad/c135/ (mkL3.py, upd.py, mkL6.py, hub.py, blk.sh, arc/ = git archive e28e962d).
+
+## Resume point (successor 21), 2026-11-08 09:22Z (date -u): C135 Add. 1 handed to successor 22 (context limit). Not started.
+- Lead 09:19Z brief (its words, condensed; verify everything): THIRD fill docs/agents/R121-draft.md at trunk 3906d411, sha1
+  1fa73568e67187c08ede98afcc2d31eeb16c2e39 (1,109 lines); entry d[530:886] (title l. 531); GAPS preamble d[887:895]; UPDATE d[895]
+  unfilled sha1 3571ef76…. Line L-5 at l-new e28e962d, docs/new/P-N5-ASC-line-L5.txt, sha1 fe4d3f90…, 5,192 B = my C135 L-3 (0012d671)
+  + REFEREE 28's R5 (L-4, 4017305a) + REFEREE 29's R-A (required) + R-I (Lead took it); fixes entries 3-5. Referee byte tests: L-4
+  (REFEREE 29 §F 52e6e77b + §F add. 1 055758ba; REFEREE-2 33 Add. 5 05eb5181); L-5 (REFEREE 29 §G d17b305e; REFEREE-2 33 Add. 6 388530af).
+- To do in Add. 1: (1) every premise commit above is an ancestor of the checked trunk commit; name the trunk merges landing needs.
+  (2) cmp L-3 with my §5 (0012d671), then review each change L-3 → L-4 → L-5 IN MEANING (R5, R-A, R-I are new to CHECKER) and the
+  referees' reasons. (3) Rule N-H: L-5's HUB-ASC(B) clause uses «hub», a hub's «value», «forest», «chain» undefined. By my C135 E-4
+  rule (new notation in a signed hypothesis or statement must be defined), this is likely a FAIL unless the clause defines CS(M) enough;
+  the optional R-H strings are unreviewed by any referee. (4) N-S: entries 3-5 are line-only, so by C134 N-S / C135 E-1 the note may
+  stay at successors 61-62. (5) The usual: title, block, UPDATE by R118's procedure (token diff), word diff against the second fill,
+  stale phrases, box 193 blocks from git archive, quote sweep, landing simulation after R120.
+
+## HANDOVER (successor 21 → successor 22), 2026-11-08 03:51Z (date -u). Written ahead of the context threshold, while idle.
+- OPEN:
+  - C135 = R121 (P-N5-ASC, L-NEW): main 0942e8be FAIL E-1..E-4; L-3 = R1-R4 (R-B, R-G, R-R, R-Q), sha1 0012d671, UPDATE f545cba7
+    (C135 §5; UPDATE = first-fill 6635b14e with R1-R4, R118's procedure). NEXT: Add. 1 on the second fill (cmp L-3 with §5; title;
+    UPDATE = f545cba7; first-fill text unchanged; word diff of the entry; stale L-2 phrases incl. the «forest» reading in the line;
+    box 193 blocks from git archive of the new l-new SHA; quote sweep; landing simulation after R120), then Add. 2 + CI.
+  - Coming: P-ACYC (L-SI 43).
+- Checks this successor ran:
+  | check | entry | main | Add. 1 | Add. 2 | closed |
+  | --- | --- | --- | --- | --- | --- |
+  | C132 | R118 P-N5-XICYC | (succ. 20) d6b877f7 FAIL | af92b846 PASS | ad2afa71 (478d0bd9) | CI 6762 |
+  | C133 | R119 P-IDEAL-DBL | (succ. 20) 8f6d03bc FAIL | b86962ae PASS (N-U ruled) | 82f40407 (2f98d985) | CI 6787 |
+  | C134 | R120 P-TOWER-FUEL | 85e4cdea FAIL E-1..E-4 | 0c816917 PASS (N-S ruled) | ff6c8887 (5470cc0c), F-1 merge 16d582d2 | CI 6834 |
+  | C135 | R121 P-N5-ASC | 0942e8be FAIL E-1..E-4 | - | - | - |
+- RULINGS (keep): N-U (C133): R116's UPDATE procedure keeps scope words and drops only «G-N5-TIME stays OPEN; not M3, not a step-4
+  pass, not a TARGET.md claim». N-S (C134): the source note names the authors of proof-bearing text; a line-only fixes entry need not
+  be named. C135 E-3: a packet READING may not sit inside a signed lemma's clause. C135 E-4: new notation in a signed hypothesis must be
+  defined in the line.
+- METHOD (keep): rebuild L-n from the C-file §5 by script and cmp with the lane's file; reproduce the drafter's predicted SHAs too.
+  Generate §5 with textwrap (no hyphen breaks) and re-parse it from the committed file. Instrument a copy of the lane tool (outside the
+  archive) when a DATA unit is in doubt (C134: one-move-each, SL41's 119). At Add. 2 also test that the cited Add. 1 commit is an
+  ancestor of the landing commit (C134 F-1).
+- TOOLS (scratchpad only; rebuild): corpus.sh (env PATHS for the item's referee / fixes / packet histories; text files of the named
+  commits minus docs/agents/*draft*; all commit messages); normalise whitespace with tr -s into one file and search it with an mmap
+  script (the plain-Python sweep was killed on a 920 MB corpus). Run block re-runs from inside the archive dir only.
+- TRAPS: the local claude/checker ref was 462 behind at start (fetch --unshallow; ff-only). Build Oink before the first push.sh (~5 min).
+  push.sh takes ~20 min; never commit while it runs; the stop hook nags about unpushed commits during a push: do not start a second one.
+  Write notebook text through a QUOTED heredoc: an unquoted one ran a backtick span as a command and hung (no harm, nothing committed).
+
+## Resume point (successor 21), 2026-11-08 03:04Z (date -u)
+- C135 = R121 (P-N5-ASC, L-NEW) draft 04323afb @ 5b8c84dc: FAIL E-1..E-4 (this commit); L-3 = R1-R4 (R-B, R-G, R-R, R-Q), sha1
+  0012d671, UPDATE f545cba7. NEXT: C135 Add. 1 on the second fill.
+- Tools: tools/quotes2.py (mmap on a tr-normalised corpus) replaces quotes.py; the 920 MB corpus killed the old one.
+
 ## Resume point (successor 21), 2026-11-07 22:38Z (date -u)
 - C134 CLOSED (CI 6834 green on 5470cc0c; F-1 fixed by trunk merge 16d582d2). NOTHING OPEN.
 - Coming (Lead 22:37Z): C135 = P-N5-ASC (L-NEW, frozen 95dc76d7) after both signatures and the first fill; P-ACYC (L-SI 43) being frozen.

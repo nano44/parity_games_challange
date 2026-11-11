@@ -1,0 +1,11 @@
+CL2_21.json units 5 priv 5 maxex_priv 0 maxex_nopriv None maxfl_priv 7 maxfl_nopriv 0 T 23
+CL2_22.json units 5 priv 5 maxex_priv 0 maxex_nopriv None maxfl_priv 5 maxfl_nopriv 0 T 28
+CL3_31.json units 7 priv 5 maxex_priv 0 maxex_nopriv -3 maxfl_priv 5 maxfl_nopriv 3 T 15
+CL3_32.json units 21 priv 20 maxex_priv 0 maxex_nopriv -5 maxfl_priv 1 maxfl_nopriv 3 T 24
+TC2.json units 5 priv 5 maxex_priv 0 maxex_nopriv None maxfl_priv 3 maxfl_nopriv 0 T 12
+TC2d.json units 7 priv 5 maxex_priv 0 maxex_nopriv -1 maxfl_priv 1 maxfl_nopriv 1 T 10
+TC3.json units 8 priv 8 maxex_priv 0 maxex_nopriv None maxfl_priv 3 maxfl_nopriv 0 T 18
+TC3d.json units 22 priv 20 maxex_priv 0 maxex_nopriv -2 maxfl_priv 1 maxfl_nopriv 1 T 14
+TC3m.json units 8 priv 8 maxex_priv 0 maxex_nopriv None maxfl_priv 5 maxfl_nopriv 0 T 17
+TC4m.json units 11 priv 11 maxex_priv 0 maxex_nopriv None maxfl_priv 7 maxfl_nopriv 0 T 37
+TC5m.json units 14 priv 14 maxex_priv 0 maxex_nopriv None maxfl_priv 7 maxfl_nopriv 0 T 43

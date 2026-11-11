@@ -1,0 +1,15 @@
+LR3_exitup.json N 45 M 78 n 285 T 11 R 7 C 0 labels pRpRRRppRRR
+  RF [0, 3, 3, 1, 0] GF [0, 3, 3, 1, 0] bits(B3..B1) 000 000 001 001 011 010 011 011 011 111 101 111
+  premature resets at [] hubH 6 SumD 433 maxD 6
+  t 0 hub -
+  t 1 hub -
+  t 2 hub B1.SET
+  t 3 hub B1.SET
+  t 4 hub B1.SET
+  t 5 hub B2.SET
+  t 6 hub B1.SET/B2.SET
+  t 7 hub B1.SET/B2.SET
+  t 8 hub B1.SET/B2.SET
+  t 9 hub B1.SET/B2.SET
+  t 10 hub B1.SET/B3.SET
+  t 11 hub B1.SET/B2.SET/B3.SET

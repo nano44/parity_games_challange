@@ -1,0 +1,24 @@
+t 3 B2 ON  z B2.SET(2) side SET rel own
+t 3 B3 ON  z B3.SET(3) side SET rel own
+t 3 B4 ON  z B4.SET(4) side SET rel own
+t 4 B1 ON  z M4.SET(4) side SET rel above
+t 4 B2 OFF z B3.SET(3) side other rel above
+t 4 B3 OFF z B4.SET(4) side other rel above
+t 5 B2 ON  z M4.SET(4) side SET rel above
+t 5 B3 ON  z M4.SET(4) side SET rel above
+t 23 B5 ON  z B5.SET(5) side SET rel own
+t 24 B4 OFF z B5.SET(5) side other rel above
+t 25 B3 OFF z B5.SET(5) side other rel above
+t 26 B3 ON  z B3.SET(3) side SET rel own
+t 27 B2 OFF z B3.SET(3) side other rel above
+t 28 B2 ON  z M3.SET(3) side SET rel above
+t 29 B1 OFF z B2.SET(2) side other rel above
+t 30 B1 ON  z M2.SET(2) side SET rel above
+t 36 B4 ON  z M5.SET(5) side SET rel above
+t 37 B3 OFF z B4.SET(4) side other rel above
+t 38 B3 ON  z M4.SET(4) side SET rel above
+t 39 B2 OFF z B3.SET(3) side other rel above
+t 40 B2 ON  z M3.SET(3) side SET rel above
+t 41 B1 OFF z B2.SET(2) side other rel above
+t 42 B1 ON  z M2.SET(2) side SET rel above
+TC5m.json summary B1off:above=2 B1on:above=3 B2off:above=3 B2on:above=3 B2on:own=1 B3off:above=3 B3on:above=2 B3on:own=2 B4off:above=1 B4on:above=1 B4on:own=1 B5on:own=1

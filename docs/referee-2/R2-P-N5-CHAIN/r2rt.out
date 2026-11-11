@@ -1,0 +1,4 @@
+option 0: m pad 31, value (Λ ('b', (0, 0)), Π [], k 3); chosen at state 0: True
+option 1: m pad 30, value (Λ ('b', (0, 0)), Π [], k 8); chosen at state 0: False
+option 2: m pad 29, value (Λ ('b', (0, 0)), Π [], k 8); chosen at state 0: False
+options 1, 2 equal: True ; both strictly above option 0: True

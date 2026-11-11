@@ -314,3 +314,112 @@ r2asc_inst_elevrev.out, r2asc_noup_elevrev.out (`r2asc.py FILES…`, `r2asc.py n
   - W-3 and W-4 **met** (W-4 by option (a));
   - **L-2 MATCHES** (byte test, the counter read against the lemma, the re-run, and the DATA rule clause by clause) (Opus 5.5, D1).
   - Statement verdicts unchanged: all SIGN.
+
+## Addendum 4: L-3 for CHECKER C135 (claude/l-new a2512364; REFEREE-2 successor 32, 2026-11-08 04:09Z by date -u)
+- **Object:** L-3 docs/new/P-N5-ASC-line-L3.txt 0012d671… (5,154 B, 1 line, 122 «(» = 122 «)», depth never negative, 0 «|», one « — »)
+  = CHECKER C135 §5's target (claude/checker 0942e8be); packet 9c9cb50d… unchanged; L-2 f109cb69… unchanged.
+- **Byte test** (own R2-P-N5-ASC/bt_l3.py, out bt_l3.out; the R1-R4 strings typed from C135 §5, wrapped lines joined by one space as
+  C135 says):
+  - each of R1-R4: old string once in L-2, 0 times in L-3, new string once in L-3;
+  - the rebuild L-2 + R1, R2, R3, R4 (in that order) = L-3 byte for byte (0012d671…), so nothing else changed.
+- **My strings still hold:**
+  - W-1's «under [E-LEV]»: 4 occurrences in L-2 and in L-3.
+  - W-3: new string once, old string 0 times.
+  - W-4's UP-JUMP clause: once (its counter is the strict one, Add. 3).
+- **R2-R4 read in meaning:**
+  - R1: the source note «L-NEW successors 61-62»: successor 62 wrote fixes entry 2 and L-2 ✓.
+  - R2: «the proof of record of HUB-ASC-G's B = 0 case (F′_0 = F_0, DESC-POLY on the whole interval) is referee-originated (REFEREE
+    R-P-N5-ASC §3 AS-1, restated in P-N5-ASC's fixes entry 1 AS-1), signed by both referees».
+    - True. My predecessor checked AS-1 independently in Add. 1 (l. 212: «F′_0 in §5 is DESC-POLY on the whole interval I … I agree.
+      I checked it now») and accepted its restatement in entry 1 in Add. 2 (l. 254) ✓.
+  - R3: «hence seq_t(v) = (f, seq_t(y_f))» is the packet's signed sentence (l. 81) verbatim.
+    - It follows from E_t(v) = {f} ∪ E_t(y_f) together with play order: f is the first e-vertex of v's play, and the rest of v's
+      play is y_f's play with the same cycle node.
+    - The forest «Reading» it replaces was not part of the signed lemma, so removing it from the signed clause is right ✓.
+  - R4: «seq_t(v) the e-vertices in Π_t(v) in play order, E_t(v) their set, an ascent of seq_t(v) a step to a more relevant element» =
+    packet §2 l. 52-55 (seq_t(v) «the e-vertices that lie in Π_t(v), in the order of» the play; an ascent «an index i with c_(i+1)
+    more relevant than c_i») ✓. With R4, UP-JUMP's and the DATA clauses' «ascent» are now defined in the line ✓.
+- **DATA rule on L-3:** R1-R4 add no DATA and change no count; every DATA clause is byte-equal to L-2's (Add. 3) ✓.
+- **Verdict: L-3 MATCHES** (Opus 5.5, D1). Statement verdicts unchanged: all SIGN.
+
+## Addendum 5: L-4 = L-3 + REFEREE 28's R5 (claude/l-new a744677e; REFEREE-2 successor 33, 2026-11-08 05:25Z by date -u)
+- **Object:** L-4 docs/new/P-N5-ASC-line-L4.txt at a744677e: sha1 4017305a34eac21615ba8f172a9b899544d25659, 5,198 B, 1 line,
+  125 «(» = 125 «)», depth never negative, 0 «|», one « — », «under [E-LEV]» 4 times. a2512364 is an ancestor of a744677e.
+  - Packet docs/new/P-N5-ASC.md unchanged: 9c9cb50d…, 19,345 B.
+  - The only box193 changes are in asc.pins: the fixes file is re-pinned, and L-4 and mkl4_193.py are added.
+- **Byte test** (own R2-P-N5-ASC/bt_l4.py, out bt_l4.out; strings typed from REFEREE 28 §E, claude/referee 013f821b, l. 303-304):
+  - R5's old string occurs once in L-3 and 0 times in L-4.
+  - R5's new string occurs 0 times in L-3 and once in L-4.
+  - Rebuilding L-3 + R5 gives 4017305a…, 5,198 B, which is L-4 byte for byte («L-4 == L-3 + R5: True»). Nothing else changed.
+- **R5 read in meaning against packet l. 80** («**Lemma CHAIN-DECOMP.** If seq_t(v) = (f, …), then …»):
+  - R5's finding is right: the old wording is false.
+    - The old line hypothesis, «the first e-vertex on v's play is f», does not give f ∈ Π_t(v).
+    - Example: v's play reaches an e-vertex f whose successor is c_W. Then Λ_t(v) = c_W, which is more relevant than f, so f ∉ Π_t(v).
+      Also y_f = c_W is not a mover, so the old conclusion fails.
+    - Measured with own counters, added to a copy of my predecessor's replay. The copy is R2-P-N5-ASC/r2cd5.py; only the counters are
+      new. Outputs: r2cd5_inst.out (13 pinned instances, from a git archive of a744677e) and r2cd5_noup.out (300 own random genomes, seed 33).
+    - On the pinned instances: of 33,102 (state, vertex) plays with some e-vertex, 8,284 have their first e-vertex ∉ Π_t(v), and the
+      old conclusion fails on all 8,284 (OLDHYP_notinPi = OLDHYP_concl_fails = 8,284).
+    - On the random genomes: 1,819 of 5,409, with the same equality.
+    - This confirms REFEREE 28's R5 witness independently. CDEC 0 of 24,818 reproduces the lane's CHAIN-DECOMP count exactly.
+  - The new hypothesis's conjunction («first e-vertex on v's play is f and f ∈ Π_t(v)») implies the packet's «seq_t(v) = (f, …)» on
+    every game. f lies in Π_t(v) and no e-vertex comes before it, so f is the first element of seq_t(v). So L-4's lemma, read with
+    the conjunction, is the packet's lemma or a special case of it, and it is true.
+  - **N-1 (note, no change required):** the «i.e.» also asserts the converse. The converse can fail only when the cycle node is an
+    e-vertex. The argument:
+    - Suppose seq_t(v) = (f, …) and an e-vertex g ∉ Π_t(v) comes before f. Then g lies on the prefix and is less relevant than
+      w := Λ_t(v), while f is more relevant than w.
+    - By [DEF] (E-MON's proof, packet l. 70-71), w is then an e-vertex, c_W, K0 or K3.
+    - w ≠ c_W, because c_W tops every other priority and f is more relevant than w.
+    - K0 and K3 are never cycle nodes (packet l. 74-76).
+    - So w is an e-vertex.
+    - Measured: 0 plays with an e-vertex as cycle node among the 50,881 plays of the pinned instances and the 20,549 plays of the random
+      genomes. The direct counter GLOSS («first e-vertex on the play ≠ first element of seq_t(v)») is 0 in 24,818 and 0 in 3,590.
+    - So on all data the «i.e.» is an exact restatement. It does not weaken the signed clause, which carries the packet's
+      «seq_t(v) = (f, …)» first.
+    - My predecessor's Add. 4, reading R3, used the same gloss («f is the first e-vertex of v's play»). It is true under the
+      same proviso.
+- **Correction to Add. 4:** «L-3 MATCHES» in Add. 4 was a miss. Add. 4 checked R1-R4 and the W strings. It did not compare the
+  CHAIN-DECOMP hypothesis of L-1 to L-3 against packet l. 80. REFEREE 28 found the gap. I agree with R5 and with its verdict that L-3
+  did not yet match.
+- **DATA rule on L-4:** R5 is a statement wording. It adds no DATA and changes no count. Every DATA clause is byte-equal to L-3's
+  (bt_l4.py: the rebuild equals L-4) ✓. Its witness is REFEREE 28's asc_cd_l0.py, and my r2cd5_*.out counts are a second witness.
+- **Verdict: L-4 MATCHES** (Opus 5.5, D1). All statement verdicts are unchanged: SIGN.
+
+## Addendum 6: L-5 = L-4 + REFEREE 29's R-A and R-I (claude/l-new e28e962d; REFEREE-2 successor 33, 2026-11-08 07:47Z by date -u)
+- **Object:** L-5 docs/new/P-N5-ASC-line-L5.txt at e28e962d214971b8ef8739967185117a3e5f221c: sha1 fe4d3f90…, 5,192 B, 1 line, 124 «(» =
+  124 «)», depth never negative, 0 «|», «under [E-LEV]» 4 times. a744677e is an ancestor, and the packet is unchanged (9c9cb50d).
+- **Byte test** (own R2-P-N5-ASC/bt_l5.py, out bt_l5.out; strings typed from the Lead's 07:48Z message):
+  - R-A and R-I: each old string occurs once in L-4 and 0 times in L-5; each new string 0 times in L-4 and once in L-5.
+  - The rebuild L-4 + R-A + R-I is fe4d3f90…, 5,192 B, which is L-5 byte for byte, so nothing else changed.
+- **Meaning:**
+  - R-A («items 1..M compared by number, …, an ascent a step to a larger item») is packet §2 l. 58 («items 1..M, compared by number
+    («rank»)») with l. 55's ascent («c_(i+1) more relevant than c_i») read in CS(M), where «more relevant» is «larger number» ✓. It
+    defines the abstract system's terms in the line, and HUB-ASC(B) is unchanged.
+  - R-I removes the «i.e.» gloss. The clause now reads «(Lemma CHAIN-DECOMP) if seq_t(v) = (f, …), then …», which is packet l. 80's
+    hypothesis exactly, with seq_t(v) defined in the line (R4).
+    - My Add. 5 N-1 (the converse of the gloss needs a non-e cycle node; true on all data) lapses with the gloss. R-I leaves no
+      equivalence claim, which is the cleaner form ✓.
+- **DATA rule on L-5:** wording only; no DATA added and no count changed ✓.
+- **Verdict: L-5 MATCHES** (Opus 5.5, D1). Statement verdicts unchanged: all SIGN.
+
+## Addendum 7: byte test of line L-6 (REFEREE-2 successor 35, Opus 5.5, D1; 2026-11-08 11:26Z by date -u)
+- Object: claude/l-new 2f4167cd6c87b3ca3c41144ff33765536f9ddb4a (Lead 11:26Z). docs/new/P-N5-ASC-line-L6.txt, sha1
+  a23c61d384036ce3fa771e27e175a8dbf2331658, 5,449 B, one line, 133 «(» = 133 «)», no «|». e28e962d (L-5) is an ancestor. The packet
+  docs/new/P-N5-ASC.md is byte-identical at e28e962d and 2f4167cd (sha1 9c9cb50d…). Fixes entry 6 is line-only, with R6 (CHECKER 22,
+  C135 Add. 1, claude/checker 0ffde42c l. 133-139) as its only change.
+- Own script R2-P-N5-ASC/bt_l6.py (out bt_l6.out). It was written and run BEFORE L-6 existed, from L-5 (fe4d3f90…) and C135's R6 strings,
+  and predicted a23c61d3…, 5,449 B. It was then run on 2f4167cd. Results: R6's old string is once in L-5 and 0 times in L-6. Its new string
+  is 0 times in L-5 and once in L-6. **L-6 == L-5 + R6: True.** Nothing else changed.
+- R6 against packet §2 l. 58-62, clause by clause:
+  - «a forest a map next from the items to the items and ⊥ without cycles» = l. 59 «A forest is a map next: items → items ∪ {⊥} without
+    cycles». The codomain items ∪ {⊥} is kept, so forests exist (CHECKER's objection to R-H).
+  - «chain(x) := (x, next(x), next²(x), …) up to ⊥, compared as a set» = l. 59. «up to ⊥» only makes the stop explicit.
+  - «a run of forests with every chain lex-nondecreasing» = l. 60-61 (chain_s(x) ≤ chain_t(x) for s < t). This was already in L-5.
+  - «a hub (h_t an item or ⊥ at each time t, chain(⊥) := ∅, with chain_s(h_s) ≤ chain_t(h_t) for s < t) whose value chain_t(h_t)» = l. 62,
+    with the hub's monotonicity as part of the definition, that is, as the theorem's hypothesis.
+  - Nothing beyond §2 is added.
+  - My predecessor's Add. 6 sentence that L-5 «defines the abstract system's terms» held for order and ascent only. CHECKER's E-5 is
+    right, and R6 closes it.
+- Verdict: **L-6 MATCHES** (byte test, and in meaning against §2). Statement verdicts unchanged: all SIGN (HUB-ASC(B) and SKELETON as
+  before). From my side R121 may land with L-6.

@@ -1,0 +1,9 @@
+HP2_mup.json T 11 switches 34 reward 0 typeI 34 N2 0 maxII 0 depth 0
+HP3_mup.json T 17 switches 77 reward 0 typeI 76 N2 1 maxII 1 depth 1
+HP4_mup.json T 37 switches 177 reward 0 typeI 172 N2 5 maxII 2 depth 2
+HP5_mup.json T 43 switches 246 reward 0 typeI 235 N2 11 maxII 4 depth 2
+HP3t.json T 17 switches 75 reward 0 typeI 74 N2 1 maxII 1 depth 1
+HP4t.json T 24 switches 142 reward 0 typeI 136 N2 6 maxII 3 depth 2
+HP5t.json T 71 switches 261 reward 0 typeI 248 N2 13 maxII 5 depth 2
+NK6_cl21.json T 11 switches 80 reward 0 typeI 76 N2 4 maxII 2 depth 2
+ND4_hp3.json T 11 switches 59 reward 0 typeI 56 N2 3 maxII 2 depth 2

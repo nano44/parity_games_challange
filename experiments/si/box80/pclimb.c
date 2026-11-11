@@ -7,7 +7,9 @@
      P     = sum_{j=1}^{H-2} sum_{j-windows} max(0, (H - j) - pulse)          (PULSE-NEST deficits for H capped levels)
      score = -100000 guard - PW * P + 64 F(LV) + min(T, 63)
    Usage: pclimb in.txt seed iters ; env H, PW (default 16), ANNEAL (temperature), OUT, FROZENBELOW (movers < 2*FB not mutated),
-   MUT (comma list: only these movers mutated). */
+   MUT (comma list: only these movers mutated), WIN=1 (also count j-window lengths below H - j + 1, j = 1..H-1: PULSE-NEST's
+   second clause, which covers the gaps between pulses as well).
+   Exactness: values are __int128; ranks must stay <= ~125 (d <= 31 for the j2t.py lifts); a 4-level lift of a d-28 genome overflows. */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -62,9 +64,18 @@ static long pulsedef(int j, int need){
     int u[4], n = 0; while (mi < nmv[j] && mvstep[j][mi] < z){ if (mvstep[j][mi] >= a && n < 4) u[n++] = mvstep[j][mi]; mi++; }
     int pl = n == 2 ? u[1] - u[0] : 0; if (pl < need) P += need - pl; (void)wb; }
   return P; }
+/* window-length deficits of level j (j >= 1): every j-window must have length >= need (PULSE-NEST's second clause) */
+static long windef(int j, int need){
+  long P = 0;
+  for (int k = 0; k <= nb[j-1]; k++){
+    int a = k == 0 ? 1 : bstep[j-1][k-1], z = k == nb[j-1] ? T + 1 : bstep[j-1][k];
+    if (z - a < need) P += need - (z - a); }
+  return P; }
+static int WIN = 0;
 static long score(int *g, long *P){
   run(); long gd = 4L*abs(F[0] - 2); for (int l = 1; l <= H - 2; l++) gd += labs((long)F[l] - 2L*F[l-1] - 2);
   long p = 0; for (int j = 1; j <= H - 2; j++) p += pulsedef(j, H - j);
+  if (WIN) for (int j = 1; j <= H - 1; j++) p += windef(j, H - j + 1);
   *g = (int)gd; *P = p; int LV = H - 1;
   return -100000L*gd - (long)PW*p + 64L*F[LV] + (T < 63 ? T : 63); }
 static void rd(const char *fn){ FILE *f = fopen(fn, "r"); char w[64]; if (!f){ perror(fn); exit(1); }
@@ -82,7 +93,7 @@ static void wr(const char *fn, long sc){ FILE *f = fopen(fn, "w"); fprintf(f, "d
 int main(int argc, char **argv){
   if (argc < 4){ fprintf(stderr, "usage\n"); return 1; }
   rd(argv[1]); rs += (unsigned long long)atol(argv[2]) * 7919ULL; long iters = atol(argv[3]);
-  if (getenv("H")) H = atoi(getenv("H")); if (getenv("PW")) PW = atoi(getenv("PW"));
+  if (getenv("H")) H = atoi(getenv("H")); if (getenv("WIN")) WIN = atoi(getenv("WIN")); if (getenv("PW")) PW = atoi(getenv("PW"));
   int FB = getenv("FROZENBELOW") ? atoi(getenv("FROZENBELOW")) : 0;
   int mutl[MAXN], nmut = 0;   /* MUT="x1,x2,...": only these movers' fields are mutated (ranks: swapped with any option) */
   if (getenv("MUT")){ char *p = strdup(getenv("MUT")); for (char *t = strtok(p, ","); t; t = strtok(NULL, ",")) mutl[nmut++] = atoi(t); }
