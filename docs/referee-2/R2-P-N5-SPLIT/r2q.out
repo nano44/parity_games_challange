@@ -1,0 +1,71 @@
+== anchors (name: found, CHAIN section, SPLIT's section)
+HOW3(G): OK §2 (SPLIT: §2)
+T3: OK §2 (SPLIT: §2)
+n3: OK §2 (SPLIT: §2)
+[OPT]: OK §1 (SPLIT: §1)
+[G3]: OK §1 (SPLIT: §1)
+[DEF]: OK §1 (SPLIT: §1)
+(R): OK §2 (SPLIT: §2)
+(P): OK §2 (SPLIT: §2)
+(E-DOM): OK §2 (SPLIT: §2)
+(Core): OK §2 (SPLIT: §2)
+F1: OK §4 (SPLIT: §4)
+F2: OK §4 (SPLIT: §4)
+F3: OK §4 (SPLIT: §4)
+F4′: OK §4 (SPLIT: §4)
+F5: OK §4 (SPLIT: §4)
+F6: OK §4 (SPLIT: §4)
+DOM: OK §4 (SPLIT: §4)
+STRICT: OK §4 (SPLIT: §4)
+CYC: OK §4 (SPLIT: §4)
+CN2-3: OK §5 (SPLIT: §5)
+LOC-GATE3: OK §5 (SPLIT: §5)
+LOC-K2-3: OK §5 (SPLIT: §5)
+B-ONLY3: OK §5 (SPLIT: §5)
+NO-TIE3: OK §5 (SPLIT: §5)
+T-QUIET3: OK §6 (SPLIT: §6)
+L3: OK §6 (SPLIT: §6)
+E-MON3: OK §7 (SPLIT: §7)
+CHAIN-DECOMP3: OK §7 (SPLIT: §7)
+[E-LEV]: OK §1 (SPLIT: §1)
+seq/E/lex: OK §7 (SPLIT: §7)
+== restated contents (SPLIT side / CHAIN side found verbatim, whitespace collapsed)
+OK  SPLIT True CHAIN True: By F1 and F2, Λ_t(v) changes only to a vertex of strictly larger rewar
+OK  SPLIT True CHAIN True: by CYC there are at most 2M + 3
+OK  SPLIT True CHAIN True: Vertices more relevant than an e-vertex are e-vertices, c_W, K0, K3 (E
+OK  SPLIT True CHAIN True: c_W is in no Π
+OK  SPLIT True CHAIN True: e-priorities are even, [DEF]
+OK  SPLIT True CHAIN True: Non-mover Even vertices and pads have one successor in HOW3 (F6, [G3])
+OK  SPLIT True CHAIN True: σ̄_s(K2) = r at every state (LOC-K2-3)
+OK  SPLIT True CHAIN True: F5: σ_t(u) is ⊴-best under Ω_(t−1) and strictly better than σ_(t−1)(u)
+OK  SPLIT True CHAIN True: LOC-GATE3: Odd's chosen face is the ◁-smaller one where the values dif
+OK  SPLIT True CHAIN True: NO-TIE3: they never tie
+OK  SPLIT True CHAIN True: F1 (Ω_(t−1)(new) ⊴ Ω_t(new))
+OK  SPLIT True CHAIN True: By F3 and F6, Ω_r(u) = ext(u, Ω_r(σ_r(u))) at every r
+OK  SPLIT True CHAIN True: Ω_s(u) (F1) ▷ Ω_(s−1)(u) (STRICT)
+OK  SPLIT True CHAIN True: F4′ gives X ⊴ Y ⇒ ext X ⊴ ext Y
+OK  SPLIT True CHAIN True: u is in no Π, CN2-3
+OK  SPLIT True CHAIN True: On J_b, E(b) ∩ U_y is lex-nondecreasing (E-MON3)
+OK  SPLIT True CHAIN True: Mover edges go to the M pads m_(x,k), one per option; gate edges go to
+OK  SPLIT True CHAIN True: Sum D^tot_E(v) − 1 over the n3 vertices and apply T-QUIET3
+OK  SPLIT True CHAIN True: Under [E-LEV], f more relevant than f′ implies lev(f) ≥ lev(f′)
+OK  SPLIT True CHAIN True: y is a mover of level lev(c_i) − 1 (CHAIN-DECOMP3)
+OK  SPLIT True CHAIN True: e_(g1), which is more relevant than w (B-ONLY3)
+OK  SPLIT True CHAIN True: distinct vertices have distinct rewards (F2)
+OK  SPLIT True CHAIN True: K0 and K3 lie on both plays or on neither, since a play passes K0 iff 
+== «…» quotes of SPLIT looked up in CHAIN, CHAIN fixes, L-4, TARGET.md, SPLIT's own fixes
+FOUND go
+NOT-IN-SOURCES FREEZE PACKET P-N5-SPLIT …
+premises named exactly (P-N5-CHAIN facts by name, conditional on R125; no other R-i
+NOT-IN-SOURCES T3 polynomial
+NOT-IN-SOURCES each re-win of y at u is paid by a class change of a vertex on the y-route below y
+NOT-IN-SOURCES High
+FOUND |
+FOUND consecutive
+NOT-IN-SOURCES BOX 199 SPLIT
+NOT-IN-SOURCES BOX 198 PAIR
+NOT-IN-SOURCES BOX 197 CORE
+FOUND P-N5-SPLIT
+anchors+pairs misses: 0; quotes: 11
+CHAIN fixes/L-4: True (Core)'s «a play passes K0 iff it passes K3» (plays from pA or K3 pass K3, not K
+CHAIN fixes/L-4: True (F-cls3)'s convexity and E-MON3's reason hold for non-core vertices

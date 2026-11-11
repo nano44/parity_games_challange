@@ -327,3 +327,32 @@ My verdicts rest on my own derivations above and on my own engine. I did not rea
   W-1 and signs it. §D follow-up 2 (l. 237-250) signs the Γ3 (Q5) boundary step: «I SIGN it. With REFEREE-2 35's signature it is signed
   by both referees.» §E (l. 253-) finds L-4 MATCHES. So both «signed by both referees» clauses of L-4 are true. **Caveat closed: L-4
   MATCHES without condition.**
+
+## Addendum 6: byte test of line L-5 (REFEREE-2 successor 36, Opus 5.5, D1; 2026-11-11 by date -u). L-5 MATCHES
+- Object (Lead 21:34Z):
+  - claude/l-new dd83371b, docs/new/P-N5-CHAIN-line-L5.txt: sha1 473344b1149d4b44d87bdb917607b618d05d57ce, 9,047 B, one line.
+  - Fixes entry 4, line-only: docs/new/P-N5-CHAIN-fixes.md, sha1 7b620ce2…. It answers CHECKER C139's E-1 and E-2.
+  - The packet is unchanged: sha1 6e613ba7…, frozen at 93531b03.
+- Own script R2-P-N5-CHAIN/bt_l5.py (out bt_l5.out). It parses the three (old, new) pairs from fixes entry 4's «Line changes» bullets (R-U,
+  R-L1, R-L2) and applies them to L-4 (a69c8aa9, 9,082 B; my Addendum 4) in that order. It does not run the lane generator.
+  - Each old string occurs exactly once in the line it is applied to. No new string is present before its change, and each is present
+    once after it.
+  - L-4 + R-U + R-L1 + R-L2 = L-5 byte for byte (sha1 473344b1, 9,047 B). This also equals C139 §4's expected sha1, as the Lead and the
+    fixes entry state.
+  - L-5 has one line, no «|», 175 «(» = 175 «)», and none of «unlanded», «not landed», «when landed», «to land».
+- Meaning, checked on trunk 8ba1b23b's RESULTS:
+  - R-U: the tail now reads «…, so this is not M4; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim». This is the
+    landed R123 / R124 form, which occurs verbatim in RESULTS. «N5′-xi stays a CANDIDATE (D1)» is kept. No status changes.
+  - R-L1: CHAIN3 is still «PROVED under HYPOTHESIS [E-LEV] and CONDITIONAL on P-N5-END's Theorem ENDGAME-3 (RESULTS R124) and P-N5-ASC §4
+    (its abstract core and F′; RESULTS R121)».
+    - ### R124 is landed and carries Theorem ENDGAME-3 of P-N5-END (exactly one fallback, at an iteration F ≥ 1, and F + 2 iterations),
+      the [END] premise of my review.
+    - ### R121 is landed and carries P-N5-ASC's Lemma SKELETON, Theorem HUB-ASC(B) and F′_B(M) := (M² + 3M + 1)(1 + M·F′_(B−1)(M)²).
+    - Only the status words change. The theorem, its hypothesis, its bound and its label are as I signed them. The Lead / CHECKER ruling
+      (CHAIN3 keeps «CONDITIONAL», with the premises named by R-id) is followed.
+  - R-L2: the premise sentence names «RESULTS R124's Theorem ENDGAME-3 (P-N5-END) for CHAIN3, RESULTS R121's game-free abstract core CS(M)
+    (Lemma SKELETON, Theorem HUB-ASC(B); P-N5-ASC §4) and its constants F′_B for HUB-ASC-G3 and CHAIN3». These are the same premises,
+    now landed. HUB-ASC-G3's «CONDITIONAL on P-N5-ASC §4» elsewhere in the line is untouched and still true (R121 is that §4).
+- My earlier requirements are not disturbed. R-1, R-2, R-4 and R-3/CL-1 were met at L-3 / L-4 (Addenda 2, 4). The W-1 clause (R-W) and the
+  (Q5) step (R-G3) are unchanged in L-5, and the three changes touch only the scope tail and the two status sentences.
+- Verdict: L-5 MATCHES (fixes entry 4 CORRECT). Nothing REQUIRED is open on my side.
