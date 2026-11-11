@@ -266,3 +266,24 @@ linefix.out, rt_n1.out, L1.txt, P-N5-CHAIN.md (the frozen packet, copied for the
   - R-B3: CORRECT; entry 3 carries the two proof repairs, so the note names entries 1-3 and successors 64-65.
   - Fixes entry 3's restatements of both repairs match follow-ups 1-2.
 - Verdict: fixes entry 3 CORRECT. **Line L-4 MATCHES** the packet read with fixes entries 1-3. Statements and labels as in §0.
+
+## §F. Fixes entry 4 and line L-5 (CHECKER C139 R-U, R-L1, R-L2) (REFEREE successor 30, Opus 5.5, D15; date -u at writing 2026-11-11T21:35Z)
+- Objects (Lead 21:34Z): claude/l-new dd83371b (ancestor of origin/claude/l-new, checked). docs/new/P-N5-CHAIN-line-L5.txt sha1
+  473344b1149d4b44d87bdb917607b618d05d57ce, 9,047 B. L-4 at dd83371b = a69c8aa9; packet sha1 6e613ba7 unchanged (frozen).
+- Byte test: scratch/chain_l5.py applies R-U, R-L1, R-L2 in that order to L-4 with the strings typed from C139 §4 (claude/checker
+  389d19f8; wrapped lines joined with one space), not from the lane's script. Each old string once in L-4. `cmp` with the lane's L-5:
+  **EQUAL** (scratch/chain_logs/l5test.out). One line, 175 «(» = 175 «)», depth never negative, 0 «|», 0 of «unlanded» / «not landed» /
+  «when landed» / «to land». My prediction (committed 2d25e4db before the lane's L-5 existed) was the same sha1.
+- Meaning:
+  - R-U: status words in the landed R123 / R124 form, as I checked for P-N5-QUIET §D and P-N5-END §E. CORRECT.
+  - R-L1 (CHAIN3's label parenthesis): «CONDITIONAL on P-N5-END's Theorem ENDGAME-3 (RESULTS R124) and P-N5-ASC §4 (its abstract core and
+    F′; RESULTS R121)». Trunk RESULTS (fetched 2026-11-11): R124 (l. 15371) contains «Theorem ENDGAME-3 … [every genome]»; R121 (l. 14320)
+    contains «Lemma SKELETON and Theorem HUB-ASC(B)» in CS(M) and F′_B. Both are landed, so «unlanded» was false and the new citation is
+    exact. The label keeps «CONDITIONAL» (C139 §3 (i)); that is still true: CHAIN3's proof uses exactly these two results (my first review
+    §0). CORRECT.
+  - R-L2 (premise list): «RESULTS R124's Theorem ENDGAME-3 (P-N5-END) for CHAIN3, RESULTS R121's game-free abstract core CS(M) (Lemma
+    SKELETON, Theorem HUB-ASC(B); P-N5-ASC §4) and its constants F′_B for HUB-ASC-G3 and CHAIN3»: the same two results, by their landed
+    names, for the same statements as in L-4. No premise added or dropped. CORRECT.
+- Fixes entry 4 is line-only: R-U reorders status words; R-L1 and R-L2 replace stale status words by landed R-ids. No statement, label,
+  hypothesis, proof step or DATA number changes; not L41's case.
+- Verdict: fixes entry 4 CORRECT. **Line L-5 MATCHES** (L-4 + exactly R-U, R-L1, R-L2). Statements as signed (§0, §D follow-ups 1-2).

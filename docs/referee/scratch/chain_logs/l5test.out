@@ -1,0 +1,7 @@
+R-U old in L-4 1
+R-L1 old in L-4 1
+R-L2 old in L-4 1
+parens 175 175 min depth 0 | newlines 1 | bars 0 | stale words 0 | predicted L-5 sha1 473344b1149d4b44d87bdb917607b618d05d57ce 9047 B
+473344b1149d4b44d87bdb917607b618d05d57ce  cL5.txt
+9047
+cmp L-5 (claude/l-new dd83371b) vs rebuild: EQUAL

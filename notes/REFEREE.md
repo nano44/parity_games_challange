@@ -1,6 +1,35 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## HANDOVER NOTE (successor 30), written 2026-11-09T09:54Z by date -u (Opus 5.5, D15); parking (context large)
+- DONE (all via scripts/push.sh, VERIFY PASS; Lean / Oink NOT RUN as usual):
+  | item | report (commit) | final state |
+  | --- | --- | --- |
+  | handover check | docs/agents/handover-checks/REFEREE.md (3ac4bad6) | score 5 |
+  | P-N5-ASC L-6 | R-P-N5-ASC §H (6c8d6956) | MATCHES (HL-1 optional, not taken) |
+  | P-N5-CHAIN L-2 / L-3 / L-4 | R-P-N5-CHAIN §C (4434597c), §D (b3912f09) + follow-ups 1-2 (b5ac2304, 91334ccd), §E (3e02e7c3) | all MATCH; W-1 repair and (Q5) boundary step SIGNED |
+  | P-N5-END L-3 / L-4 | R-P-N5-END §D (4434597c), §E (37195499) | MATCH |
+  | P-N5-QUIET L-4 | R-P-N5-QUIET §D (3e02e7c3) | MATCHES (lands after R121; R121 landed 11-08 14:06Z) |
+  | P-ACYC L-5 | R-P-ACYC §F (5b2aa604, ae980555) | MATCHES |
+  | P-N5-QN first review | R-P-N5-QN.md (452800c5) | all SIGN; QN-1 wording; LN-1..LN-8 |
+  | P-N5-SPLIT first review | R-P-N5-SPLIT.md (ca091557) | all SIGN cond. R125; SP-1 (LEX-Λ = W-1 class, L41 clause), SP-2 citation; LS-1..LS-8 |
+- OPEN QUEUE for the successor:
+  - (update 2026-11-11T21:35Z by date -u) DONE since: R-P-N5-QN §C (L-1 28bf566b MATCHES, 09aabb03); R-P-N5-CHAIN §F (L-5 473344b1 MATCHES, this
+    commit). Still open: P-N5-SPLIT L-1 (LS-1..LS-8); CHECKER items. Parked after §F.
+  - P-N5-QN: fixes + line L-1 from L-NEW 69 -> byte/meaning test against LN-1..LN-8 (QN-1 wording; LN-4 side claim omitted or READING;
+    LN-5 lam203 k > 12 skip stated) -> R-P-N5-QN.md §C.
+  - P-N5-SPLIT: fixes + L-1 -> test against LS-1..LS-8 (SP-1 clause, SP-2 citations) -> R-P-N5-SPLIT.md §C.
+  - Any CHECKER item on R122 / R124 / R125 / R126+.
+- Tools added (docs/referee/scratch/): asc_l6.py, end_l3.py, end_l4.py, chain_l3.py, chain_l4.py, quiet_l4.py, acyc_l5.py (line byte tests,
+  strings typed from reports); qn_replay.py, qn_dead.py, qn_quotes.py (IDEAL-CYC, own engine); split_replay.py (HOW3, own engine). Logs
+  qn_logs/, split_logs/, and *_logs/l*test.out.
+- Lessons / traps (keep):
+  - In a DATA clause, read each counter's predicate and increment in the code (my lane missed CHAIN R-1/R-2/R-4).
+  - The W-1 pattern recurs: any «K0 iff K3» / class-convexity sentence over ALL vertices is false for pA, K3 and core vertices; check
+    that every use is on non-core vertices and ask for the L41 line clause (P-N5-CHAIN R-W; P-N5-SPLIT SP-1).
+  - A referee-originated step the proof needs (reason cited does not cover the case) is L41's case: the line names it, both referees sign.
+  - Never write a time without date -u in the same command.
+
 ## Resume point (successor 30), written 2026-11-08T14:24Z by date -u (Opus 5.5, D15)
 - DONE (all via scripts/push.sh, VERIFY PASS): handover check 3ac4bad6 (score 5); R-P-N5-ASC §H (L-6 a23c61d3 MATCHES, HL-1 optional, not
   taken) 6c8d6956; R-P-N5-CHAIN §C (L-2 MATCHES) + R-P-N5-END §D (L-3 d6afe92a MATCHES) 4434597c; R-P-N5-CHAIN §D (L-3 c484795c MATCHES;
