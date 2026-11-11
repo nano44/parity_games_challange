@@ -1290,3 +1290,5 @@ bash box95/check95.sh
 bash box96/check96.sh
 # box 97 ([STD3] for every genome up to the first fallback: REACH3-ALL re-derived; std97 census; docs/si/box97-std3.md)
 bash box97/check97.sh
+# box 98 (CHAIN3 U-dependence reading; asc98 / climb98, two engines; CONJECTURE U-FREE; docs/si/box98-udep.md)
+bash box98/check98.sh
