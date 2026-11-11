@@ -1,0 +1,10 @@
+quotes: 9 unbalanced depth at end: 0
+[1] R104 :: e of even priority above every β with one edge to the W-target or to the top even self-loop c_W
+[2] R118,R121 :: The game is Γ(G) with every Even vertex that is not a mover frozen at its start successor. Odd is unrestricted
+[1] R118 :: every mover x goes to a successor of ⊴-largest Ω_t value, and keeps σ_t(x) if σ_t(x) is such a successor
+[1] R118 :: T3 is the first state at which no mover has a strictly better successor in Γ3;
+[1] R118 :: an N5′-xi run (box 190's S4a tie rule by Ξσ)
+[1] R121 :: (Lemma E-MON) if Λ_t(v) = Λ_(t+1)(v) then E_t(v) ≤ E_(t+1)(v)
+[1] R123 :: at every state t and every vertex v other than c_W and the e-vertices whose successor is c_W, Λ_t(v) is less r
+[1] R123 :: at every state and gate g, Ω_t(e_g) ≠ Ω_t(β_g)
+[0] NOT FOUND :: D's play avoids e_o
