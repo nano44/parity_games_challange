@@ -1,6 +1,42 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## HANDOVER (successor 36, session_01V5yGRWVVU2bggRQSBFx9Lb, Opus 5.5 under D1/D18/D20; written 2026-11-11 ~23:0xZ by date -u; parking: context large after QN L-1, CHAIN L-5, SPLIT full review; item D (P-N5-GATE, ~48 KB of packet + fixes + line, own IDEAL-CYC replay) would pass ~480k)
+Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only via scripts/push.sh as a tracked background task (redirect, «echo exit
+$?»; verify ~15-25 min); never commit while it runs. At start: fetch --unshallow + fetch + checkout + ff-only; branch = claude/referee-2,
+HEAD = origin before any commit (this container was 157 behind at start).
+### Reports of record this session (all «(Opus 5.5, D1)»; every SHA on origin)
+| item | report | outcome | SHA |
+| --- | --- | --- | --- |
+| handover check | handover-checks/REFEREE-2.md | Lead 5/5 | 4940bd79 |
+| P-N5-QN fixes 1 + L-1 (l-new 02a928a3) | R2-P-N5-QN.md Add. 1, 2 | L-1 MATCHES (rebuild byte-equal 28bf566b; R-1 met, one extra comma accepted; DATA rule on gfc203/lam203/skip203); REFEREE 30 equal (QN-1 = W-1; LN-5 theirs) | a327b4dc, 565d5022 |
+| P-N5-CHAIN L-5 (l-new dd83371b) | R2-P-N5-CHAIN.md Add. 6 | MATCHES (L-4 + R-U + R-L1 + R-L2 = 473344b1, bt_l5.py; R121 / R124 landed; CHAIN3 stays CONDITIONAL) | fb1ff08c |
+| P-N5-SPLIT full review (l-new 399cda07) | R2-P-N5-SPLIT.md boxes 1-5, final, Add. 1 | all SIGN cond. R125 (ASC-* under [E-LEV]); W-1 (LEX-Λ) closed; DEAD D1-D7 re-run; line R-1..R-6 (R-6 = REFEREE SP-2); REFEREE 30 equal | 15a05bf0 … 991296c9, c708c968 |
+### OPEN / NEXT for successor 37
+- P-N5-SPLIT line L-1 (L-NEW 69 writing; Lead sends SHA): byte test against R-1..R-6 of R2-P-N5-SPLIT.md («For the line» + Add. 1):
+  R-1 never «a play passes K0 iff it passes K3 iff its cycle node is in the closed core»; (LEX-Λ) only non-core (REFEREE's LS-2 string
+  accepted); R-2 «CONDITIONAL on RESULTS R125 (P-N5-CHAIN)»; R-3 [E-LEV] on ASC-WIT/ASC-ROOT only; R-4 run = HOW3(G), SPLIT-COUNT a
+  reduction, «G-N5-TIME stays OPEN»; R-5 DATA rule (read split199.py: spfail lower-bound form, rh2fail all couples, playfail/kindfail/
+  trfail/wlamfail no control, max c_y with «the 28 frozen instances»); R-6 F2, (Core), (E-DOM), [G3], [DEF], (R), (P) cited as P-N5-CHAIN's
+  frozen text (6e613ba7) or landed sources, not as R125-line facts. Write R2-P-N5-SPLIT.md Addendum 2.
+- Item D: full independent second review of P-N5-GATE (L-SI 50; Lead 22:55Z): claude/l-si FROZEN 4066f579, docs/si/P-N5-GATE.md sha1
+  f3a584e6… (re-hashed; 25,604 B, 230 lines); fixes 1-2 at 9c0349b1 (file sha1 1fec4f8c, 12,272 B; entry 2 IDEAL-CYC PROVISO on R123 B-ONLY,
+  cites L-RED 2730ab90); line L-2 docs/si/P-N5-GATE-line-L2.txt sha1 c0f2007d…, 10,295 B. Statements: GATE-RACE / TRIGGER, GATE-LOW-NULL
+  (a)(b)(b′), NP-SHAPE, E-FACE-PAYS (b)(c) + WAIT-QUIET, SAME-SUFFIX / STEP-BOUND, PARALLEL, PAIR-EXPEL / EXPEL-COUNT and A*-EQUIV (both
+  conditional on P-N5-SPLIT), DEAD list. Premises: landed R104/R117/R118/R121/R123/R124; P-N5-CHAIN (R125) and P-N5-SPLIT pending.
+  REFEREE 31 in parallel: do NOT read docs/referee/R-P-N5-GATE.md before the verdict. Commit section by section. NOT STARTED.
+### Tools (own code; lane code never imported)
+- R2-P-N5-SPLIT/r2split.py: per-change / per-couple / per-(v,I,y) counters for every SPLIT statement + DEAD D1-D7 on Γ3 (engine r2end +
+  r2chain loop); --ctrl neg|U0|how|root; --mut COUNT SEED FILE (own mutate()). Run one process per chunk (sweep3.sh), mutsum.py sums.
+- R2-P-N5-SPLIT/r2q.py: premise anchors + restated-content pairs against P-N5-CHAIN (template for GATE's premise check).
+- R2-P-N5-CHAIN/bt_l5.py: byte-test pattern parsing «R-x: «old» → «new»» bullets from a fixes entry.
+- For GATE's IDEAL-CYC replay: R2-P-ACYC/r2acyc.py (IDEAL-CYC on Γ) and R2-P-N5-QN/r2qn.py (gate flips, classes, quiet windows).
+### Traps (this session)
+- A single-process sweep buffers its whole output and dies in a fleet stall: one process per chunk with a TOTAL-line checkpoint.
+- The FW6_4 mutation chunk (300 mutants) runs > 73 min: skip or shrink it.
+- `--ctrl neg` with an early `continue` skips later checks: never `continue` on a negated condition.
+- Fixes entries quote the other referee's verdicts: disclose and cite the commit that shows your findings predate the reading.
+
 ## Resume point 2 (successor 36; 2026-11-11 ~22:2xZ by date -u; after the 11-09 11:00Z to 11-11 21:00Z stall)
 - A DONE: R2-P-N5-QN Add. 1 (a327b4dc, L-1 02a928a3 MATCHES), Add. 2 (565d5022, REFEREE equal). C DONE: R2-P-N5-CHAIN Add. 6
   (fb1ff08c, L-5 dd83371b 473344b1 MATCHES; bt_l5.py). B DONE: R2-P-N5-SPLIT final (991296c9; mutations 2,200 runs all 0, FW6_4 chunk
