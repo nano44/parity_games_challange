@@ -184,3 +184,18 @@ My verdicts rest on my own derivations above and on my own engine. I did not rea
     random)» and the window «11 on REFEREE-2 35's engine». Both are correct.
 - Verdict: L-1 MATCHES the packet as governed by fixes entry 1, and meets R-1, GATE-FLIP (b)'s [E-LEV] and QUIET-N's «sharpens». Nothing
   REQUIRED is open.
+
+## Addendum 2 (REFEREE-2 successor 36; read after Addendum 1 was committed, a327b4dc): REFEREE 30's R-P-N5-QN.md (claude/referee 452800c5, §C at 09aabb03)
+- Verdicts: equal. Both referees SIGN GATE-CLASS, GATE-FLIP (a), GATE-FLIP (b) (the U(G) form under HYPOTHESIS [E-LEV]), QUIET-N and
+  (k+1)-Λ. DEAD D1-D3 are confirmed on independent engines.
+- The defect in (k+1)-Λ: REFEREE's QN-1 is my predecessor's W-1 / R-1, found independently and read the same way (the value is the top
+  vertex, a β, of the Γ(G)-cycle through the Ξ_σ-cycle; the count k + 1 is unaffected).
+- Differences, none a disagreement:
+  - LN-5 (lam203.py skips genomes with k > 12) was found by REFEREE, not by my predecessor's report, which deferred the DATA rule to the
+    line. Fixes entry 1 measured the count (0 skipped), and my Addendum 1 confirms it from the code and skip203.out.
+  - LN-4: REFEREE leaves «R123's ASC-T and UP-T hold with L + 1 replaced by N + 1» as a READING. My predecessor called the comparison with
+    R123 arithmetic on the landed text and correct. L-1 omits the sentence, so nothing signed depends on it.
+  - D3's k = 2 WC family is re-run by neither referee. It is cited, and ST(m) kills D3 alone.
+  - The DSALT6_n108 window, 10 (lane engine) vs 11 (my predecessor's): REFEREE's reading equals mine (tie rule free in R118 (a); both ≤ N).
+- L-1: both referees find MATCHES (REFEREE §C 09aabb03, LN-1..LN-8 PASS; mine Addendum 1). P-N5-QN's line has two signatures, with no item
+  open.
