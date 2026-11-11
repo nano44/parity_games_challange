@@ -117,3 +117,33 @@
 19653 score (0, 0, 637, 32) N 64 M 125 states 32
 19784 score (0, 0, 654, 33) N 64 M 125 states 33
 END evals 20000 best (0, 0, 654, 33) fails 0
+20031 score (0, 0, 655, 33) N 64 M 125 states 33
+21025 score (0, 0, 678, 34) N 64 M 124 states 34
+21271 score (0, 0, 681, 34) N 64 M 124 states 34
+21406 score (0, 0, 682, 34) N 64 M 124 states 34
+21419 score (0, 0, 683, 34) N 64 M 124 states 34
+21568 score (0, 0, 684, 34) N 64 M 124 states 34
+21607 score (0, 0, 685, 34) N 64 M 125 states 34
+21780 score (0, 0, 686, 34) N 64 M 125 states 34
+21903 score (0, 0, 687, 34) N 64 M 125 states 34
+22011 score (0, 0, 688, 34) N 64 M 126 states 34
+22300 score (0, 0, 689, 34) N 64 M 126 states 34
+22554 score (0, 0, 690, 34) N 64 M 127 states 34
+23166 score (0, 0, 691, 34) N 64 M 127 states 34
+23345 score (0, 0, 692, 34) N 64 M 127 states 34
+23459 score (0, 0, 721, 34) N 64 M 127 states 34
+23467 score (0, 0, 722, 34) N 64 M 127 states 34
+24231 score (0, 0, 723, 34) N 64 M 128 states 34
+24278 score (0, 0, 725, 34) N 64 M 127 states 34
+24534 score (0, 0, 726, 34) N 64 M 127 states 34
+25204 score (0, 0, 727, 34) N 64 M 128 states 34
+25357 score (0, 0, 728, 34) N 64 M 128 states 34
+25710 score (0, 0, 751, 34) N 64 M 127 states 34
+26179 score (0, 0, 753, 34) N 64 M 127 states 34
+26273 score (0, 0, 754, 34) N 64 M 127 states 34
+27308 score (0, 0, 755, 34) N 64 M 128 states 34
+27803 score (0, 0, 775, 35) N 64 M 128 states 35
+27901 score (0, 0, 776, 35) N 64 M 129 states 35
+28535 score (0, 0, 777, 35) N 64 M 128 states 35
+29507 score (0, 0, 778, 35) N 64 M 127 states 35
+END evals 30000 best (0, 0, 778, 35) fails 0
