@@ -14,6 +14,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   | P-N5-QN first review | R-P-N5-QN.md (452800c5) | all SIGN; QN-1 wording; LN-1..LN-8 |
   | P-N5-SPLIT first review | R-P-N5-SPLIT.md (ca091557) | all SIGN cond. R125; SP-1 (LEX-Λ = W-1 class, L41 clause), SP-2 citation; LS-1..LS-8 |
 - OPEN QUEUE for the successor:
+  - (update 2026-11-11T21:35Z by date -u) DONE since: R-P-N5-QN §C (L-1 28bf566b MATCHES, 09aabb03); R-P-N5-CHAIN §F (L-5 473344b1 MATCHES, this
+    commit). Still open: P-N5-SPLIT L-1 (LS-1..LS-8); CHECKER items. Parked after §F.
   - P-N5-QN: fixes + line L-1 from L-NEW 69 -> byte/meaning test against LN-1..LN-8 (QN-1 wording; LN-4 side claim omitted or READING;
     LN-5 lam203 k > 12 skip stated) -> R-P-N5-QN.md §C.
   - P-N5-SPLIT: fixes + L-1 -> test against LS-1..LS-8 (SP-1 clause, SP-2 citations) -> R-P-N5-SPLIT.md §C.
