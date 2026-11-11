@@ -23,3 +23,5 @@ BEST BEST_C700s1_D38_NM246_d34d709d.json score [0.154472, 38, 44] {"T3": 44, "fb
 BEST BEST_C700s1_D38_NM245_9d67cfc8.json score [0.155102, 38, 43] {"T3": 43, "fb": 1, "C": 16, "Dmov": 38, "Dmov_x": 82, "NM": 245, "maxflip": 36} ideal37 {"T": 43, "Dmov": 38, "Dmov_x": 82, "Dface": 38, "Dminface": 22, "maxflip": 36, "flipgate": [82, 0]} agree True t 11:34:12Z
 BEST BEST_C700s1_D39_NM245_251d3def.json score [0.159184, 39, 41] {"T3": 41, "fb": 1, "C": 17, "Dmov": 39, "Dmov_x": 82, "NM": 245, "maxflip": 34} ideal37 {"T": 41, "Dmov": 39, "Dmov_x": 82, "Dface": 39, "Dminface": 22, "maxflip": 34, "flipgate": [82, 0]} agree True t 11:34:22Z
 BEST BEST_C700s1_D39_NM244_649e054f.json score [0.159836, 39, 41] {"T3": 41, "fb": 1, "C": 17, "Dmov": 39, "Dmov_x": 82, "NM": 244, "maxflip": 34} ideal37 {"T": 41, "Dmov": 39, "Dmov_x": 82, "Dface": 39, "Dminface": 22, "maxflip": 34, "flipgate": [82, 0]} agree True t 11:34:34Z
+restart 3 seed K1F34_n84.json end [0.159836, 39, 41] {"T3": 41, "fb": 1, "C": 17, "Dmov": 39, "Dmov_x": 82, "NM": 244, "maxflip": 34} global [0.159836, 39, 41] evals 1362 6s
+DONE
