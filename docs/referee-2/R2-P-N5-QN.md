@@ -138,3 +138,49 @@ No statement is REFUSED. W-1 is a wording defect in (k+1)-Λ's statement, not in
 
 ## Statement of independence
 My verdicts rest on my own derivations above and on my own engine. I did not read docs/referee/ for this packet, nor L-RED 63's reports.
+
+## Addendum 1 (REFEREE-2 successor 36, Opus 5.5, D1; 2026-11-11 by date -u): fixes entry 1 + line L-1 at claude/l-new 02a928a3. L-1 MATCHES
+- Object:
+  - docs/new/P-N5-QN-line-L1.txt at 02a928a3: sha1 28bf566bdf95d0708b3b80303bfa7311c8d5d8b1, 7,357 B (= the Lead's), one line, no «|».
+  - docs/new/P-N5-QN-fixes.md: sha1 b8f8a1a905c261c1f76bc3dc2a62bc37fa744bbc, entry 1.
+  - The packet is unchanged: sha1 97254bd2…, the frozen one. e252182d is an ancestor of 02a928a3.
+- Disclosure. Fixes entry 1 quotes REFEREE 30's findings (QN-1, LN-1..LN-8) in outline. My report (5d4f06c2) was committed before that
+  entry existed. I read REFEREE's report only after this addendum's verdict (Addendum 2).
+- Rebuild and pins.
+  - On a git archive of 02a928a3, the lane generator box203/mkl1_qn.py, run with trunk 8ba1b23b's RESULTS as its argument, exits 0 and
+    rebuilds L-1 byte-equal (28bf566b…). Before running it I read it: it only reads files and writes the line inside the archive.
+  - Its assertions hold: the packet sha1; the governing sentence once in the fixes; R123's scope sentence and R124's TARGET tail verbatim
+    in RESULTS; the skip counts.
+  - box203/qn.pins: 61 rows. The check.sh «P-N5-QN» sed gives `sha1sum -c --quiet` exit 0. quotesqn.out reads «quotes 24 missing 0».
+- Statements, line against the packet (+ fixes entry 1, which governs):
+  - GATE-CLASS, GATE-FLIP (a), QUIET-N and DEAD D1-D3: same content as §2-§4 and §6. D3 lists the ST and WC instances. K1C16_n400 and
+    K1F21_n48 are omitted, which is fine: ST suffices.
+  - k's definition equals (D5). GATE-FLIP (b) carries «under HYPOTHESIS [E-LEV] (lev(x) < lev(x′) implies pr(e_(x,k)) < pr(e_(x′,k′))) B
+    = U(G) … may be taken»: my requirement is met.
+  - QUIET-N carries «sharpens RESULTS R123 Theorem QUIET / Corollary T-QUIET: window L → N» and «T_CYC ≤ Q + (Q + 1)·N»: met.
+- R-1 ((k+1)-Λ, REQUIRED): MET. The line has «K1, and, for each cycle of the functional graph Ξ_σ on the movers, x → xt(x, σ_t(x)), the
+  most relevant vertex of the Γ-cycle through its movers, their chosen gates and β-faces; Ξ_σ has at most k cycles». My required string
+  had «K1, and for each»; the line has one extra comma, «K1, and, for each». The meaning is identical. I accept it.
+  - N-a (optional, no change needed): «options whose Ξ-target is X omitted» sits in k's definition of the Ξ-graph. Ξ_σ is a subgraph of
+    it, so the omission carries over, as in §5.
+- DATA rule. I read gfc203.py (153 lines), lam203.py (39) and skip203.py (21) line by line against each clause.
+  - lfail: for every gate and step with σ̄_(t−1)(g) ≠ σ̄_t(g), neither face's (Λ, Π ∩ e-vertices) changes. Unit: flips. = the line.
+  - gfail: per gate, flips > Dtot(a) + Dtot(b) − 2, with Dtot the distinct classes over the run. Unit: gates. = the line.
+  - qflip: per quiet step (no vertex changes class), σ̄ changes at some Odd vertex. qfail: per run, longest quiet run > N (G["N"]).
+    Tfail: per run, T > Q + (Q + 1)·N. All = the line.
+  - GFC_CTRL=3 restricts lfail to the e-face. Cap 20,000 states (hist_ideal). Both = the line.
+  - lam203 lfail: states where the number of distinct Λ over v ∉ {c_W, c_X, e-vertices with successor c_W} exceeds k + 1. k = fvs202.kfvs,
+    and the count is skipped when k is not an int (k > 12). LAM_CTRL=1 uses bound k. = the line.
+  - skip203 replays lam203 --rand's stream without the run. Its output reads 0 skipped on all three sets, with k ∈ {0, …, 5} / {1} / {2}.
+    The line's «k ≤ 5 on every genome» is right.
+  - Outputs, read on the archive:
+    - out/gfc203_corpus.out: 57 rows, every must-0 counter 0 (my script). DSALT6_n108 has «maxquiet 10 N 108».
+    - out/rnd203_rand_s2.out: 1,000 genomes; out/rnd203_k1_s202.out: 5,000. Both all 0.
+    - out2/gfc203_k1extra.out: K1C16_n400 and K1F21_n48 all 0, maxflip 31 (22, 37) and 21 (12, 22).
+    - out2/lam203_k1_s7.out 2,000, lam203_k2_s8.out 1,000, lam203_rand_s2.out 1,000: lfail 0. lam203_k1_s7_ctrl.out: lfail 3,492.
+    - check203.out: ctrl3 MWR4_2 lfail 9; MWR4_2 maxflip 9 (5, 10).
+  - Every DATA number in L-1 equals its output file.
+  - The line also cites my predecessor's replay as «REFEREE-2 35 R2-P-N5-QN (claude/referee-2 5d4f06c2; 61 pinned genome runs and 6,000
+    random)» and the window «11 on REFEREE-2 35's engine». Both are correct.
+- Verdict: L-1 MATCHES the packet as governed by fixes entry 1, and meets R-1, GATE-FLIP (b)'s [E-LEV] and QUIET-N's «sharpens». Nothing
+  REQUIRED is open.
