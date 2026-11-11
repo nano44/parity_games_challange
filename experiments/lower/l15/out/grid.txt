@@ -1,0 +1,10 @@
+P 16 clients 8 (free pre-states, changes R) {8: (14, 1)} | k1:UNSAT k2:UNSAT k3:SAT
+P 16 clients 11 (free pre-states, changes R) {11: (9, 2)} | k1:UNSAT k2:UNSAT k3:SAT
+P 16 clients 12 (free pre-states, changes R) {12: (13, 3)} | k1:UNSAT k2:UNSAT k3:SAT
+P 16 clients 13 (free pre-states, changes R) {13: (6, 4)} | k1:UNSAT k2:SAT
+P 16 clients 8,11,12,13 (free pre-states, changes R) {8: (14, 1), 11: (9, 2), 12: (13, 3), 13: (6, 4)} | k1:UNSAT k2:UNSAT k3:SAT
+P 32 clients 8 (free pre-states, changes R) {8: (16, 2)} | k1:UNSAT k2:UNSAT k3:UNSAT k4:SAT
+P 32 clients 11 (free pre-states, changes R) {11: (13, 4)} | k1:UNSAT k2:UNSAT k3:SAT
+P 32 clients 12 (free pre-states, changes R) {12: (25, 7)} | k1:UNSAT k2:UNSAT k3:UNSAT k4:SAT
+P 32 clients 13 (free pre-states, changes R) {13: (10, 8)} | k1:UNSAT k2:UNSAT k3:UNSAT k4:SAT
+P 32 clients 8,11,12,13 (free pre-states, changes R) {8: (16, 2), 11: (13, 4), 12: (25, 7), 13: (10, 8)} | k1:UNSAT k2:UNSAT k3:UNSAT k4:SAT
