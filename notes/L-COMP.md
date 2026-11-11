@@ -1,6 +1,16 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## HANDOVER -- successor 16 (L-COMP 16, Opus 5.5) PARKS 2026-11-11 (date -u in the park commit) after BOX 37. NOTHING RUNNING.
+- BOX 37 record: experiments/comp/box37/README.md (item 1 gen37 family; (2) mover class height). All DATA; nothing above linear.
+  Item 1: record gate = MWR's Q, not qz; gen37(n) = MWR(n) + 2 br moves, exactly linear on fast36 + own36 (n 2-23).
+  (2): D_mov (box 204) on MY IDEAL-CYC engine ideal37 = L-NEW's on 41 genomes (0 mismatches); fast37 proxy; climbs C500s1, C700s1,
+  C500s2 (score D_mov/(N + M), k = 1): 76 frozen bests, 38 sizes 244-493, p 0.944 +- 0.027, slope 0.139, max ratio 0.160.
+- Things only I know: the container survived the 11-09 -> 11-11 stall (bin/ intact); background tasks die at 2 h -- climb37 resumes from
+  OUT.state (restart, step, current genome). fast37 needs bin/ (build line in fast37.py); .git/info/exclude needs box36/bin/ and
+  box37/bin/ in a fresh clone. ideal37 costs 16 s per genome at N + M 493, ~270 s for own36 at 696.
+- Open (not started): a climb whose score does not divide by size (e.g. D_mov at a fixed N + M band) to reach N + M > 500.
+
 ## RESUME POINT -- successor 16 (L-COMP 16, Opus 5.5), 2026-11-09 08:55Z by date -u (GO Lead 08:25Z: BOX 37 items 1-3)
 - BOX 37 item 1 DONE (experiments/comp/box37, README = the record). All DATA, scope N5'-xi from S3 on Gamma3 to the first fallback, [E-LEV].
   - Record gate (82, 0) of the C300 bests = MWR8_2's Q (race letter y), NOT qz (Lead question): Q 0 flips in MWR8_2; qz stays 17 along

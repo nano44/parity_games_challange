@@ -1,0 +1,11 @@
+points 76 fast37 != ideal37: 0
+distinct sizes 38 range 244 - 493
+envelope log-log: p = 0.944 +- 0.027
+envelope linear: D_mov = 0.1392*(N+M) + 3.50 (slope SE 0.0044), max residual 4.12
+max D_mov per 50-wide size bin (N+M, D_mov, ratio, genome):
+  [200,250) 244 39 0.1598 BEST_C500s1_D39_NM244_649e054f.json
+  [250,300) 250 37 0.1480 BEST_C500s1_D37_NM250_5fbf8253.json
+  [350,400) 360 57 0.1583 BEST_C500s2_D57_NM360_9568e9db.json
+  [450,500) 486 74 0.1523 BEST_C700s1_D74_NM486_7e0192fa.json
+max ratio 0.1598 (244, 39, 39, 'BEST_C500s1_D39_NM244_649e054f.json')
+gen37(n) for comparison: D_mov = 4n + 3, N + M = 29n + 29 -> ratio -> 4/29 = 0.1379
