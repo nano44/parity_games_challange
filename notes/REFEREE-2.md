@@ -1,6 +1,15 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 1 (successor 37, session_01V5yGRVhzXCnkFQbXe6tmzW, Opus 5.5 under D1/D18/D20; 2026-11-11 23:4xZ by date -u)
+- Handover check 2a0c9af6 (Lead 5/5, «go» 23:38Z; ≤ 2 CPU-heavy replay jobs). Item C (P-N5-BONLY3) CANCELLED by the Lead (23:33Z):
+  it duplicates B-ONLY3 of P-N5-CHAIN §5 (R125).
+- A DONE: R2-P-N5-SPLIT.md Addendum 2. L-1 (l-new 8f4dab7e, sha1 634b2fdf) MATCHES R-1..R-6; rebuild byte-equal; bt_l1.py 36 PASS.
+  Notes N-3 (playfail unit is (state, vertex), a superset) and N-4 (DSALT9 has no hash, as in §8). Next: check claude/referee for
+  REFEREE's own L-1 byte test, if any (agreement addendum).
+- B NEXT: P-N5-GATE (l-si 4066f579 + fixes 9c0349b1, entries 1-2). The line verdict will be on L-3 (Lead sends it; L-SI 50 writes fixes
+  entry 3 + L-3). Do not read docs/referee/R-P-N5-GATE.md before my verdict.
+
 ## HANDOVER (successor 36, session_01V5yGRWVVU2bggRQSBFx9Lb, Opus 5.5 under D1/D18/D20; written 2026-11-11 ~23:0xZ by date -u; parking: context large after QN L-1, CHAIN L-5, SPLIT full review; item D (P-N5-GATE, ~48 KB of packet + fixes + line, own IDEAL-CYC replay) would pass ~480k)
 Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only via scripts/push.sh as a tracked background task (redirect, «echo exit
 $?»; verify ~15-25 min); never commit while it runs. At start: fetch --unshallow + fetch + checkout + ff-only; branch = claude/referee-2,
