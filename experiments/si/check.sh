@@ -1288,3 +1288,5 @@ bash box94/check94.sh
 bash box95/check95.sh
 # box 96 (PROVISO on IDEAL-CYC, B-ONLY3 on Gamma3: d96 two engines; docs/si/box96-bonly3.md)
 bash box96/check96.sh
+# box 97 ([STD3] for every genome up to the first fallback: REACH3-ALL re-derived; std97 census; docs/si/box97-std3.md)
+bash box97/check97.sh
