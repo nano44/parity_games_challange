@@ -77,3 +77,49 @@ naive (unit: flips at which xt(g)'s Ξ_σ-path ends at X at both t − 1 and t: 
 - DEAD: the naive «flips only where xt's path enters the cycle», with the instance above.
 - OPEN: T_CYC polynomial at k = 1 (= max mover class height polynomial at k = 1, box 204 Theorem EQ). BETA-LOC reduces where flips can
   happen; it does not count them.
+
+## Addendum A (L-NEW successor 69; L-RED 64's attack R230, claude/l-red 7b54f257, docs/red/R230-betaloc.md; G1-G5 relayed by the Lead 23:59Z 2026-11-11; written 2026-11-12 by date -u)
+- L-RED 64's verdict (cited, not re-run here): BETA-LOC SURVIVES on IDEAL-CYC; the mathematics of NOCYC-NOFLIP and K1-BASIN survives;
+  second engine 0 failures on 3,000 random genomes, 4 pinned instances and a 100k-evaluation climb; its control fires 4,079 times.
+- This addendum governs §0-§4 where they differ. No statement changes; the labels of NOCYC-NOFLIP and K1-BASIN stay PROVED (lane), now on
+  LANDED premises only (G1 below).
+
+### G1. NOCYC-NOFLIP and K1-BASIN no longer rest on P-N5-QN (unlanded): the case list is proved here from landed premises.
+- Lemma CN-LIST (PROVED, lane; premises [DEF], R123 B-ONLY, LOC-K2, R118 (a)). At every state s and every vertex v other than c_W, c_X and
+  the e-vertices whose successor is c_W, Λ_s(v) is K1 or the most relevant vertex of a Γ-cycle through a cycle of Ξ_σs (through its movers,
+  their chosen gates and β-faces).
+  Proof. Let Z be the cycle of v's play under (σ_s, σ̄_s), w = Λ_s(v) its most relevant vertex. By B-ONLY w is less relevant than every
+  e-vertex, so Z has no e-vertex, and Z is not c_W's loop. If Z meets the core: the core is entered from outside only at u = K0 (the β's
+  escape edge, [DEF]); K0 → K3 → K2 are frozen (R118 (a)), σ̄_s(K2) = K1 (LOC-K2), K1 → K1 is frozen; so Z is K1's loop and w = K1. Z is not
+  c_X's loop (c_X has no in-edge from another vertex, [DEF], and v ≠ c_X). Otherwise Z consists of movers, gates and β's (Γ(G) has no
+  other vertices); on Z a mover x is followed by its gate (x, σ_s(x)), the gate by its β-face (no e-vertex on Z), the β by its frozen
+  successor, which is the Ξ-target xt(x, σ_s(x)) (a target X would lead to K0, into the core). So the movers of Z form a cycle of Ξ_σs. ∎
+- This is the case list in the proof of P-N5-QN's Lemma (k+1)-Λ, re-proved here; P-N5-QN is no longer a premise of box 205. The count
+  «at most k cycles» (used only in K1-BASIN): Ξ_σs has out-degree ≤ 1, so its cycles are vertex-disjoint, each meets every set of movers
+  meeting all Ξ-graph cycles, so there are at most k of them. Elementary; no premise.
+- §0 and §2 read: NOCYC-NOFLIP and K1-BASIN PROVED (lane) from BETA-LOC and Lemma CN-LIST; premises landed (below). §4's sentence
+  «Premises landed except (k+1)-Λ's case list» is replaced by «premises landed».
+
+### G2. Scope.
+- Every statement of box 205 is about IDEAL-CYC(G) (RESULTS R118 (a)), every genome. Nothing is said about Γ3(G) or N5′-xi. A Γ3 form would
+  need B-ONLY3, LOC-GATE3 and LOC-K2-3 (landed in R125), the all-β route P0 rebuilt through the pads, and [STD3]; it is not given here.
+
+### G3. Premises, quoted (RESULTS at trunk 8ba1b23b; checked by experiments/new/box205/quotes205.py, output quotes205.out)
+- R118 (a): «The game is Γ(G) with every Even vertex that is not a mover frozen at its start successor. Odd is unrestricted (gates and K2).»
+- R118, order: «VJ00 §4.2 / Friedmann arXiv 1106.0778 §3 for the order ⊴ on values (Λ, Π, k)».
+- R123 [OPT]: «[OPT] (σ̄_t is optimal at every vertex at once against σ_t)».
+- R123 B-ONLY: «at every state t and every vertex v other than c_W and the e-vertices whose successor is c_W, Λ_t(v) is less relevant than
+  every e-vertex».
+- R123 LOC-GATE: «(Lemma LOC-GATE) at every state t and gate g, Odd's optimal counterstrategy σ̄_t chooses the face of strictly ⊴-smaller
+  value».
+- R123 LOC-K2: «(Lemma LOC-K2) σ̄_t(K2) = K1 and Ω_t(K1) ◁ Ω_t(K2) at every state».
+- [DEF]: RESULTS R104's definitions of the genome and of Γ(G) only, in the six quotes of P-N5-QN §1 (quote-checked there,
+  box203/quotesqn.out: 24 quotes, 0 missing); readings D2 (E-DOM), D3 (core entry at K0) and D4 (c_X) as there.
+### G4. Why the all-β play P0 is simple (BETA-LOC's proof, first bullet).
+- The movers x_1, …, x_m of the Ξ_σs-path from xt(g) are distinct by (i) (the path ends at X without repeating a mover), so the gates
+  (x_i, σ_s(x_i)) and their β's are distinct. β_g itself is not repeated: if g's owner x is some x_i, then σ_s(x) ≠ j, since otherwise the
+  path would continue x → xt(x, j) = xt(g) = x_1 and repeat x_1, against (i); so (x_i, σ_s(x_i)) ≠ g. So P0's vertices before K0 are
+  distinct and the stated Odd positional strategy produces P0.
+### G5. Independent engine.
+- L-RED 64, R230-betaloc (claude/l-red 7b54f257, docs/red/R230-betaloc.md): BETA-LOC on its own engine, 0 failures on 3,000 random
+  genomes, 4 pinned instances and a 100k-evaluation climb; control fires 4,079 times (cited, not re-run here).
