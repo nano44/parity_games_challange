@@ -3335,3 +3335,11 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
 - Tools: experiments/red/r230/ (bonly3_230.py, struct230.py); env LNEW = git archive l-new fcba92fc (experiments/new/box189 box190 box21
   box191 experiments/new/*.py experiments/si/si.py experiments/harness) into the scratchpad.
 - Open: climb on [STD3] (early non-std) not run (targets R118 (k) / R125; Lead to route). Items 2, 3 wait for routing.
+- R230 item 4 (Lead 22:00Z): BOX 205 (l-new 1478886e) BETA-LOC SURVIVES on IDEAL-CYC; NOCYC-NOFLIP / K1-BASIN conditional on
+  unlanded P-N5-QN (k+1)-Λ (G1); G1-G5 in docs/red/R230-betaloc.md (c6be5222f). betaloc230.py (own engine): 0 fails on 3,000 random
+  genomes; climb P 100k evals 0 fails. [STD3] climbs A/B/C 190k evals 0 fails (54ebb51ae, 4d202ad44, f76b5cd51).
+- LESSON (Lead 23:34Z; L-RED 63's G1 in R229-box94 Add. A was false, REFEREE 31 GT-1): B-ONLY on Γ3 IS in P-N5-CHAIN 93531b03 §5 l. 201
+  (with LOC-GATE3, LOC-K2-3), so P-N5-BONLY3 was a duplicate (withdrawn); R230's attack stands as an independent confirmation. Before
+  writing «X is not in packet P», grep P's FROZEN text. My R230-betaloc G2 repeated the slip (fixed in its Addendum A).
+- Trap: a wait loop `until ! pgrep -f "bash scripts/push.sh"` inside a command that itself contains that string matches itself and
+  never ends. Wait on the push task's output file instead.

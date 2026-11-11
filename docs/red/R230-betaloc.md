@@ -77,10 +77,17 @@ Counters (unit (gate, state) pairs unless named):
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | naive_k1_s71, MWR4_2, MWR8_2, K1C16_n400 (4) | 142 | 15,788 | 0 | 0 | 0 | 3 | 166 | 3 | 0 |
 | rand seed 2310 (3,000; d 1-6, w 1-3, degree 2-3, Ξ-cyclic allowed) | 11,652 | 53,631 | 0 | 0 | 0 | 4,079 | 18,947 | 362 | 3,633 |
-| climb P (seed 2309, from naive_k1_s71, N ≤ 16, deg ≤ 3; score (bfail + nfail + kfail, ctrl, flips)) | see out/climbblP.out | | 0 | 0 | 0 | best 346 | | | |
-- The control fires (4,079 random pairs; climb best 346 in one genome), so the counters can see e-face pairs off the premise; premise
+| climb P (seed 2309, from naive_k1_s71, N ≤ 16, deg ≤ 3; 100,000 evals; score (bfail + nfail + kfail, ctrl, flips)) | best: 40 flips | | 0 | 0 | 0 | best 433 | | | |
+- The control fires (4,079 random pairs; climb best 433 in one genome), so the counters can see e-face pairs off the premise; premise
   (ii) is what keeps them at 0.
 
 ## 4. Sources opened
 docs/RESULTS.md R118 (a), R122, R123 (trunk 98e1c8bee); l-new 1478886e docs/new/N5-BETALOC-box205.md, docs/new/P-N5-QN.md §1 (l. 43-44),
 §5 (l. 122-131), experiments/new/box205/inst/naive_k1_s71.json + SHA1SUMS; L-RED r221q/own.py (engine).
+
+## Addendum A (2026-11-11T23:39Z, date -u): correction to G2 (Lead 23:34Z lesson)
+G2 says «LOC-GATE and LOC-K2 on Γ3 (not landed)» and lists B-ONLY3 as if it were separate. Checked by grep against the frozen
+P-N5-CHAIN (claude/l-new 93531b03, docs/new/P-N5-CHAIN.md): l. 30 «| §5 | Lemmas CN2-3, LOC-GATE3, LOC-K2-3, B-ONLY3; Corollary NO-TIE3 |
+PROVED | every genome |», and l. 201 Lemma B-ONLY3. These are signed by both referees and carried in R125 (at CHECKER C139); they are not
+landed yet. So G2's Γ3 list should read: «B-ONLY3, LOC-GATE3, LOC-K2-3 (P-N5-CHAIN §5, R125 pending); P0 rebuilt through the pads;
+[STD3] up to the first fallback». Climb P is complete (100,000 evals, 0 fails; table above updated).
