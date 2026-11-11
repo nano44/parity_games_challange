@@ -1,0 +1,9 @@
+mut_C2CX4_n23.out runs 300 changes 206796 couples 72308 rewins 54462 Seq 0 ascents 236506 d6 0 d6m 0 maxC 5 maxSPL 3 maxT3 12 | must-0 nonzero: none
+mut_CX4_n21.out runs 300 changes 166060 couples 54995 rewins 39516 Seq 0 ascents 204151 d6 0 d6m 0 maxC 5 maxSPL 3 maxT3 11 | must-0 nonzero: none
+mut_FW4_2.out runs 300 changes 83535 couples 0 rewins 0 Seq 0 ascents 0 d6 0 d6m 0 maxC 3 maxSPL 3 maxT3 23 | must-0 nonzero: none
+mut_GROW7_n34.out runs 300 changes 406888 couples 53372 rewins 45572 Seq 0 ascents 592013 d6 0 d6m 0 maxC 5 maxSPL 2 maxT3 14 | must-0 nonzero: none
+mut_MW4_2.out runs 300 changes 102475 couples 106499 rewins 32892 Seq 0 ascents 181025 d6 0 d6m 0 maxC 9 maxSPL 3 maxT3 31 | must-0 nonzero: none
+mut_NK6_cl21.out runs 300 changes 65133 couples 10922 rewins 6618 Seq 0 ascents 50720 d6 0 d6m 0 maxC 4 maxSPL 2 maxT3 12 | must-0 nonzero: none
+mut_ROUTELOW_n21.out runs 300 changes 179239 couples 7392 rewins 7330 Seq 0 ascents 123099 d6 0 d6m 0 maxC 4 maxSPL 2 maxT3 11 | must-0 nonzero: none
+mut_RWX_n95.out runs 100 changes 256152 couples 2230 rewins 2230 Seq 2149 ascents 581283 d6 2149 d6m 2149 maxC 2 maxSPL 2 maxT3 15 | must-0 nonzero: none
+SUM runs 2200 changes 1466278 couples 307718 rewins 188620 Seq 2149 ascents 1968797 d6 2149 d6m 2149 maxC 9 maxSPL 3 maxT3 31 | must-0 total: 0

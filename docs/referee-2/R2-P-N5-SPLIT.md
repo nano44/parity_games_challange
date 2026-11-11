@@ -238,7 +238,17 @@ box 5 = TARGET.md diff, line requirements, verdict table.
 ### Random genomes and mutations
 - Random genomes (gen.out): 7,000 runs, 65,045 changes, every must-0 counter 0. They are small (max T3 8, max c_y 1), so they test §2, §6
   and §7, but they produce no same-pair couple.
-- Mutations (mut.out): MUT-RESULT
+- Mutations (sweep3.sh, mut_*.out, summed by mutsum.py into mutsum.out). Base instances and run counts:
+  - 300 mutants each of CX4_n21, C2CX4_n23, ROUTELOW_n21, NK6_cl21, GROW7_n34, MW4_2 and FW4_2;
+  - 100 mutants of RWX_n95 (seed 19). I added these on 11-11, because RWX_n95 is the only pinned run with S_t = S_t′ couples.
+- Coverage: 2,200 runs, 1,466,278 changes, 307,718 same-pair couples (188,620 re-wins), 2,149 couples with S_t = S_t′ (all on RWX mutants,
+  all multi-split: d6 = d6m = 2,149), 1,968,797 ascents. Every must-0 counter is 0.
+- So RW-SHAPE (i), (ii) and RW-1 are tested non-vacuously on 2,149 couples, not only on RWX_n95's 31.
+- Not completed: the ninth chunk planned in sweep2.sh, 300 mutants of FW6_4 (seed 18).
+  - Its first single-process run died in the 11-09 fleet stall.
+  - Its restart ran 73 minutes without finishing, and I stopped it on 11-11.
+  - FW6_4 itself is in the pinned set, and FW4_2's 300 mutants are done. FW4_2's mutants have no same-pair couples: FW's y-tops use
+    different pairs.
 ### Controls (CX4_n21, RWX_n95, FW6_4 unless said)
 - ctrl_neg.out, ctrl_neg_gen.out (every condition negated): every must-0 counter fires except playfail and prefail. Those two check how
   the plays are walked (definitions), not a lemma; the packet's playfail likewise has no control.
