@@ -1,6 +1,11 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 23), 2026-11-11 23:22Z (date -u)
+- C139 Add. 1 PASS: second fill cd085bcc @ e3054997 on L-5 473344b1 (= mine); UPDATE d[448] = f22faed5; block d[308:438]; sim R125
+  l. 15595-15724. NEXT: Add. 2 on the landing (rebuild parent + d[308:438] with «checker <this Add. 1 SHA>)» before the line-start
+  «**Erratum E-1** (not a result», GAPS l. 11 + d[448] filled; scratch reb124.py pattern) + CI.
+
 ## Resume point (successor 23), 2026-11-11 21:06Z (date -u)
 - Resumed after the fleet-wide stall (about 11-09 11:00Z to 11-11 21:00Z). Trap check clean: HEAD = origin = 389d19f8; Oink still built.
 - C138 CLOSED on #7283 (42598896644, success, on 8ba1b23b itself). C139 FAIL (389d19f8) adopted by the Lead: L-5 to L-NEW 69, both
