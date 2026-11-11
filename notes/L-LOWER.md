@@ -1,7 +1,14 @@
 # L-LOWER notebook
 
 ## Successor 13 (Opus 5.5): BOX L14, GO from the Lead 08:33Z 2026-11-09 (handover check 7a8ca8cc, score 5)
-### Resume point (09:0xZ 2026-11-09, date -u)
+### Resume point (21:1xZ 2026-11-11, date -u; after the fleet-wide weekly-limit stall 11-09 ~11:00Z to 11-11 21:00Z)
+- Lead 21:10Z: finish DRUP of the 48 row-15 UNSATs; §4 as a result; item 3 (one invariant behind 17 / 14 / 15?; next box).
+- DRUP: 18 / 48 VERIFIED before the stall (16-32, 40; commit 9c264f79); restarted 33-39,41-51 and 52-63 (two drupsweep.sh
+  workers, resumable; logs in $SP/run). ~5 min per helper.
+- §4 rewritten as RESULT (READING refuted on C12, instance c58041d5); §5 item 3: no static invariant (24 tight changes, 3
+  core-timed; l14/tight.py); the sink lemma has lost its target; proposed L15 = KEY-ROOM base case (isolated k-pair helper
+  cascade driven by the parity clock; exact SAT on release patterns).
+### Earlier resume point (09:0xZ 2026-11-09, date -u)
 - Item 1 written: docs/lower/L14-sink.md §0-§3. PROVED (lane): SINK-AVOID (acyclicity of the Ξ-graph of the rewiring; base
   property A_B(x, G)); SINK-FLOOR (c = 1 with PREF-FUEL); KEY-DELAY and CAUSE (proofs written; DATA 0 violations, l14/cause.py);
   C11-TIMING (h43 must move at step 13, o(20) held on rows 1..12, a pair 8..20 helper moves at 12 or 13). The c·j part stops at

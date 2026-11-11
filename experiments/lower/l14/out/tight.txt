@@ -1,0 +1,13 @@
+L10_C10_osc_final_solved.txt 8 tight [13] core-timed [13]
+L10_C10_osc_final_solved.txt 11 tight [6, 14] core-timed []
+L10_C10_osc_final_solved.txt 12 tight [4, 8, 12, 16] core-timed []
+L10_C10_osc_final_solved.txt 13 tight [2] core-timed []
+L10_C11_osc2_final_solved.txt 8 tight [13] core-timed []
+L10_C11_osc2_final_solved.txt 11 tight [6, 14] core-timed [14]
+L10_C11_osc2_final_solved.txt 12 tight [4, 8, 12, 16] core-timed []
+L10_C11_osc2_final_solved.txt 13 tight [2] core-timed []
+L14_C12_final_solved.txt 8 tight [13] core-timed []
+L14_C12_final_solved.txt 11 tight [6, 14] core-timed [14]
+L14_C12_final_solved.txt 12 tight [4, 8, 12, 16] core-timed []
+L14_C12_final_solved.txt 13 tight [2] core-timed []
+total tight 24 core-timed 3

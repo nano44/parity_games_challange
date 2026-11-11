@@ -134,16 +134,50 @@ Tools: experiments/lower/l14/ (README.md). Target core8 = experiments/lower/l10/
 - Lemma C12-WALL-1 (PROVED, lane, given the DRUP line above; scope: C12's wiring and ranks (c58041d5) fixed except the options of
   q4 (8) and of ONE helper h, pgad3 candidate lists, insertion ranks; signs, helper gates, starts and states free; target core8):
   no single helper realizes rows 0..15; rows 0..14 are realizable (h = 63, replayed). Not claimed for |G| ≥ 2 or other XS.
-- Verdict. The READING predicted a sink at q3 and a wall below 14. On C12 there is no q3 sink, and the C11-WALL question (XS f5,
-  one helper) realizes rows 0..14 (replayed), where C11 is UNSAT at 14 for every helper set of size ≤ 2. By the Lead's criterion
-  («a C12 wall at or above 14 refutes the READING») the READING «a cut at level j creates a sink at level j − 1 with a lower wall»
-  is REFUTED on this instance (DATA). What C12 shows instead is §3's key channel at work. In the XS-f5 model, q4's private helper
-  h41 (level 20, closure = pairs 0-2 and 44, 48, all static) is blocked on rows 0..12 by o(19) = 1, released when o(19) flips at
-  row 13, and moves at step 13; q4 then changes at 14 (sim6 run; o(19) on rows 0..14 = 111111111111100). The XS-q4 model does the
-  same with h63 (level 31, o(30) = 0 on rows 0..12, 1 at 13). This is CAUSE (ii)-(iii) realized: the first required change of the
-  former sink is timed through a helper key, by the helper pairs below it, and not by its Ξ-closure.
-  The walls remain low (15): the next binding pair is q4 / f5 at row 15 (f5's second required change, pre-state 14). Not DEAD:
-  helper sets of size ≥ 2 on C12 untested.
+- RESULT (DATA, exact, replayed; instance frozen: C12 solved c58041d5, commit eaf68e67). The refuted statement, verbatim from the
+  L13 handover (notes, successor 12 NEXT) and the Lead's BOX L14 brief: READING «a cut at level j creates a sink at level j − 1,
+  which fails at its first required change», with the prediction for C12 «a sink at q3 and a lower wall» and the Lead's test «a C12
+  wall at or above 14 refutes the READING». On C12:
+  (1) no sink at q3: q3 (6) is not reached by 13 movers; the reach sinks are q0 / f0 / pairs 1-2, which have no required change
+      before row 30 (out/sinks_C12.txt, l13/reqpref.py);
+  (2) the C11-WALL question (XS f5, one helper, here h = 63) realizes rows 0..14 on C12 (replayed, sim6 = fenc, decoded genome sha1
+      a3bd361d), where on C11 every helper set of size ≤ 2 is UNSAT at 14 (L13 §4, DRUP); the first UNSAT row there is 15;
+  (3) with XS q4 the wall is 15 for EVERY single helper (Lemma C12-WALL-1), with XS q3 it is 14 (top helper).
+  So the wall did not move down; it moved up by one at XS f5. The READING is REFUTED on C12 (one instance; the statement is refuted
+  as a general rule, not shown false on every base).
+- Mechanism (DATA, sim6 runs of the replayed models). In the XS-f5 model, q4's private helper h41 (level 20, closure = pairs 0-2
+  and 44, 48, all static before step 30) is blocked on rows 0..12 by o(19) = 1, released when o(19) flips at row 13, and moves at
+  step 13; q4 then changes at 14 (o(19) on rows 0..14: 111111111111100). The XS-q4 model does the same with h63 (level 31, o(30)
+  = 0 on rows 0..12, 1 at 13). This is CAUSE (ii)-(iii) realized: the former sink's first required change is timed through a
+  helper key by the helper pairs below it, not by its Ξ-closure. The binding pair at 15 is q4 / f5 (f5's second required change,
+  pre-state 14, is timed in C12 by q4's own move at step 14: q4 ∈ closure(f5)). Not DEAD: helper sets of size ≥ 2 on C12 untested.
+
+## 5. Item 3 (Lead 21:10Z 11-11): is there one invariant behind the walls 17 / 14 / 15?
+- What the walls have in common (DATA, exact; l13/reqpref.py on each base's core gates, which agree on movers 8, 11, 12, 13 rows
+  0..18; counter = free pre-states). Every wall sits at a TIGHT required change of a culprit: two consecutive free pre-states c−1, c
+  with different required values, so by PREF-FUEL's proof a closure mover must move at exactly step c, and the wall is c + 1:
+  C10 17 = q6 at c 16 (q6's tight changes 4, 8, 12, 16); C11 14 = q4 at 13; C12 15 = f5 at 14 (XS q4), 14 = q4 at 13 (XS q3).
+  Tight changes are everywhere, though (q6 at 4, 8, 12; f6 at 2; f5 at 6 are met on every base), so «tight» alone predicts nothing.
+- Is the deciding property «a core mover of closure(x) moves at step c» (core-timed) versus «helper-timed»? No (DATA, exact;
+  counter = tight changes of movers 8, 11, 12, 13 on rows 0..18, one list per base; l14/tight.py → out/tight.txt; closures from the
+  frozen wirings): 24 tight changes (8 per base), 3 core-timed (C10 q4 at 13 by q6; C11 and C12 f5 at 14 by q4). The met ones are
+  mostly helper-timed (q6 at 4, 8, 12 on every base). The failed ones split both ways: C11 q4 at 13 is helper-timed, C12 f5 at 14
+  (XS q4) is core-timed by q4, and C10 q6 at 16 is helper-timed.
+- So the honest answer is: no single static invariant of the three bases explains the three walls. What is common is a dynamic
+  fact, proved in §2-§3: each tight change must be supplied at its exact step, either by a Ξ-closure move one step earlier or by a
+  key release (KEY-DELAY), and the wall is the first tight change that the fixed part of the base plus ≤ 2 rewired helpers cannot
+  supply. That is a restatement of what the SAT instances decide, not a quantity one can read off the base.
+- Consequence for item 1. The sink-cascade lemma has lost its target. Its premise («the obstruction is a sink at level j, and the
+  cure creates one at j − 1») is refuted by C12, and the timing it was meant to bound is supplied through helper keys, which
+  Ξ-reach does not see. What survives as lane results: SINK-AVOID, SINK-FLOOR (c = 1), KEY-DELAY, CAUSE, C11-TIMING, C12-WALL-1.
+- Proposed next box (L15, KEY-ROOM base case; D18 «connecting ideas from areas … not usually studied together»: the helper
+  o-cascade is a cellular automaton / ripple counter driven by a parity clock). Exact question, small and SAT-decidable: an
+  ISOLATED helper system of k pairs (levels 8..7+k, Ξ-edges only among themselves, any ranks, signs, gates, starts) driven only by
+  o(7) = t mod 2. Which release patterns of o(7+k) (hold r rows, flip, hold r′ rows, …) can it produce, and what is the least k for
+  R prescribed tight changes at core8's spacings? If R tight changes need Ω(R) or Ω(log R) private pairs, KEY-ROOM (§3) has its
+  base case and the tower cost per capped level can be stated; if one shared cascade serves all patterns (as HIT7 suggests), the
+  per-level-rebuild picture behind OSC-ROOM is DEAD and the lane should go back to building the shared cascade by hand (L10 option (a)).
+  Cost: k ≤ 4 pairs, horizons ≤ 64 rows, exact SAT in seconds-minutes; no annealing.
 
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All statements are about
