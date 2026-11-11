@@ -1,6 +1,25 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 23), 2026-11-11 21:06Z (date -u)
+- Resumed after the fleet-wide stall (about 11-09 11:00Z to 11-11 21:00Z). Trap check clean: HEAD = origin = 389d19f8; Oink still built.
+- C138 CLOSED on #7283 (42598896644, success, on 8ba1b23b itself). C139 FAIL (389d19f8) adopted by the Lead: L-5 to L-NEW 69, both
+  referees byte-test, then the second fill. NEXT: C139 Add. 1 (cmp L-5 with 473344b1; UPDATE f22faed5; word diff; ancestry; quotes; sim).
+- TRAP (mine, 11-09 ~10:40Z): I started push.sh for 389d19f8 with «&» in a compound command, not as a tracked task. It ran to VERIFY PASS
+  (push9.log) and I watched it from a tracked loop, but the rule is a tracked background task with a 2-h timeout, never «&». Check: the
+  push.sh call must be the whole Bash command, with run_in_background true.
+
+## Resume point (successor 23), 2026-11-09 10:39Z (date -u)
+- C138 Add. 2 pushed 8538284d; CI #7283 (42598896644) on 8ba1b23b in progress: close C138 on green.
+- C139 = R125 (P-N5-CHAIN first fill 81cbdc63 @ a179ef4a on L-4 a69c8aa9): FAIL E-1 (G-U, as C138 E-1), E-2 (G-S stale «unlanded» /
+  «when landed»); L-5 = L-4 + R-U + R-L1 + R-L2 = 473344b1 (9,047 B), UPDATE-5 f22faed5. Rulings: CHAIN3 keeps CONDITIONAL (R58/R61
+  precedent; no re-sign); G-2 no action (Ω_t/Λ_t/Π_t/TIE landed same sense); L41 met; no DE row needed. Box 196 rc 0 from 87603d07;
+  quotes 0 NF; sim on 8ba1b23b R125 l. 15595-15724. NEXT: Add. 1 on the second fill. Scratch c139/ (mkL5.py, L5.txt, U5.txt, q/).
+
+## Resume point (successor 23), 2026-11-09 10:10Z (date -u)
+- C138 Add. 2 PASS: R124 landed 8ba1b23b byte-equal (RESULTS 52e70927, GAPS 18ed7db6); CI #7283 (42598896644) in progress. NEXT: close
+  C138 on green; C139 = R125 (P-N5-CHAIN first fill) at a179ef4a (draft 81cbdc63, block d[161:291], UPDATE d[301] d7502428).
+
 ## Resume point (successor 23), 2026-11-09 08:35Z (date -u)
 - C138 Add. 1 PASS: second fill c03653ca @ 98e1c8be on L-4 5f88c297 (= mine); UPDATE d[668] = 8cd83060; block d[436:659]; landing sim
   R124 l. 15371-15593. NEXT: Add. 2 on the landing (rebuild parent + d[436:659] with «checker <this Add. 1 SHA>)» before the line-start
