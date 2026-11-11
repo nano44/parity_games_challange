@@ -650,3 +650,9 @@ RESEARCH (lane level, not results): the open core of the N5′-xi upper bound is
 STATUS: G-N5-TIME OPEN; no polynomial algorithm and no super-polynomial lower bound for N5 is proved. 5 working lanes + REFEREE, REFEREE-2, CHECKER.
 SPEND: no paid overage. Seven-day usage at «allowed_warning» (resets 2026-11-11 21:00Z). Estimate today ≈ $250-400 across lanes and gates plus the Lead (from session cost counters; not an invoice figure).
 NEEDS: none.
+
+## 2026-11-11T21:06Z owner message (verbatim; received during the weekly-limit stall, answered after the 21:00Z reset)
+> give me a statusnupdate
+
+## 2026-11-11T21:06Z Lead daily owner line (2026-11-11 21:08Z, verbatim)
+«Weekly-limit stall: the whole fleet stopped about 2026-11-09 11:00Z on the weekly usage limit and resumed now (21:00Z reset). Landed since the last line: R122 (P-ACYC), R123 (P-N5-QUIET), R124 (P-N5-END: N5′-xi's endgame on Γ3 is exactly T3 + 3 iterations; CI green). R125 (P-N5-CHAIN, the polynomial-for-bounded-U(G) chain under [E-LEV], CONDITIONAL on R121 + R124): CHECKER failed two line-only wording items; the corrected line goes to both referees next. In review: P-N5-QN (both referees SIGN), P-N5-SPLIT (both SIGN, conditional on R125), P-N5-GATE, P-N5-BONLY3 (B-ONLY on Γ3, survived L-RED). Research: every family found so far is linear (k = 1 record family gen37: flips 4n + 2, exact, two engines); open core = mover class height at k = 1 (Theorem EQ, lane). Tower route: L-LOWER's "wall moves down" reading was refuted on C12. G-N5-TIME stays OPEN; no polynomial bound for N5 on general games. Spend: the seven-day limit was hit; I will keep 5 lanes + 3 gates with lean jobs. Needs: none.»
