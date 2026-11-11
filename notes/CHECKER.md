@@ -1,6 +1,14 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 23), 2026-11-11 21:06Z (date -u)
+- Resumed after the fleet-wide stall (about 11-09 11:00Z to 11-11 21:00Z). Trap check clean: HEAD = origin = 389d19f8; Oink still built.
+- C138 CLOSED on #7283 (42598896644, success, on 8ba1b23b itself). C139 FAIL (389d19f8) adopted by the Lead: L-5 to L-NEW 69, both
+  referees byte-test, then the second fill. NEXT: C139 Add. 1 (cmp L-5 with 473344b1; UPDATE f22faed5; word diff; ancestry; quotes; sim).
+- TRAP (mine, 11-09 ~10:40Z): I started push.sh for 389d19f8 with «&» in a compound command, not as a tracked task. It ran to VERIFY PASS
+  (push9.log) and I watched it from a tracked loop, but the rule is a tracked background task with a 2-h timeout, never «&». Check: the
+  push.sh call must be the whole Bash command, with run_in_background true.
+
 ## Resume point (successor 23), 2026-11-09 10:39Z (date -u)
 - C138 Add. 2 pushed 8538284d; CI #7283 (42598896644) on 8ba1b23b in progress: close C138 on green.
 - C139 = R125 (P-N5-CHAIN first fill 81cbdc63 @ a179ef4a on L-4 a69c8aa9): FAIL E-1 (G-U, as C138 E-1), E-2 (G-S stale «unlanded» /
