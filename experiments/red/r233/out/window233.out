@@ -1,0 +1,12 @@
+CFI3_n48.json N 48 M 97 k 1 {'T': 24, 'R': 29, 'DR': 3, 'lam_max': 11, 'window': (4, 18), 'cint': 4, 'flipint': 3}
+RINT_n48.json N 48 M 97 k 1 {'T': 24, 'R': 29, 'DR': 2, 'lam_max': 22, 'window': (2, 24), 'cint': 7, 'flipint': 3}
+MWR8_2.json N 84 M 177 k 1 {'T': 54, 'R': 83, 'DR': 18, 'lam_max': 8, 'window': (1, 8), 'cint': 2, 'flipint': 2}
+CWRR8_n.json N 91 M 219 k 1 {'T': 52, 'R': 83, 'DR': 3, 'lam_max': 43, 'window': (9, 52), 'cint': 2, 'flipint': 1}
+K1L10_n48.json N 48 M 97 k 1 {'T': 31, 'R': 28, 'DR': 15, 'lam_max': 7, 'window': (9, 15), 'cint': 2, 'flipint': 2}
+LONG_16.json N 64 M 129 k 1 {'T': 32, 'R': 29, 'DR': 3, 'lam_max': 17, 'window': (4, 26), 'cint': 3, 'flipint': 3}
+LONG_32.json N 80 M 161 k 1 {'T': 48, 'R': 29, 'DR': 3, 'lam_max': 33, 'window': (4, 42), 'cint': 3, 'flipint': 3}
+LONG_8.json N 56 M 113 k 1 {'T': 24, 'R': 29, 'DR': 3, 'lam_max': 9, 'window': (4, 18), 'cint': 3, 'flipint': 3}
+NEST_16.json N 64 M 130 k 1 {'T': 21, 'R': 29, 'DR': 2, 'lam_max': 17, 'window': (3, 21), 'cint': 2, 'flipint': 2}
+NEST_32.json N 80 M 162 k 1 {'T': 37, 'R': 29, 'DR': 2, 'lam_max': 33, 'window': (3, 37), 'cint': 2, 'flipint': 2}
+NEST_4.json N 52 M 106 k 1 {'T': 9, 'R': 29, 'DR': 2, 'lam_max': 5, 'window': (3, 9), 'cint': 2, 'flipint': 2}
+NEST_8.json N 56 M 114 k 1 {'T': 13, 'R': 29, 'DR': 2, 'lam_max': 9, 'window': (3, 13), 'cint': 2, 'flipint': 2}
