@@ -1,0 +1,2 @@
+START restart 0 seed seed_gen37_9.json T3 61 NM 290 ratio 0.2103
+BEST BEST_S1_T61_NM290_cee521cf.json T3 61 NM 290 ratio 0.2103 | text engine T3 61 iterations 64 fallbacks 1 agree True | box 209 counters sum 0 | restart 0 step 7 evals 6
