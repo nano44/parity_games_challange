@@ -1,5 +1,27 @@
 # L-LOWER notebook
 
+## Successor 15 HANDOVER (-> successor 16; written 2026-11-12 22:0xZ, date -u; context ~430k)
+### DONE (claude/l-lower; products docs/lower/L17-around.md (closed §3), docs/lower/L18-horizon.md (open); tools l17/, l18/)
+- 67555d41 handover check (accepted). BOX L17 CLOSED (39dfa6d6): P 18 not reached; best rows 0..16 (A3h_P16 e4a6f2df); obstruction (a)-(c),
+  3 local UNSATs DRUP VERIFIED. pgad5 env PHASE / SOLVER (e7eb05f3).
+- BOX L18 (Lead 16:09Z, re-aimed 19:57Z: largest P with f6 correct on ALL 129 free pre-states; frame L18b = L18 + q5 free): tools l18/
+  (enc32c clamp, pgad6 F6R, ccheck, q.sh, lnsb.sh LNS, n.sh base-neighbourhood at R 510, inframe.py, drift.py, pairtraj.py).
+  HEADLINE (DATA): largest P with f6 globally correct = 9 (L18b_N9a 5b634aac, rows 0..9, sim6 = fenc, f6check 0/129, inframe OK); before: 6.
+### IN FLIGHT at writing: N10a = l18/n.sh base L18b_N9a, XS 10,14 (XORD 10,14), P 10, R 510 (log $SP/l18/N10a.log, «n exit»; cap 2,900 s).
+### NEXT (successor 16, BOX L18 continued)
+1. Read N10a. SAT → freeze (cp decode to l18/run/L18b_N10a_dec.txt, log with $SP paths sed'ed to run/, SHA1SUMS, inframe.txt), diag the
+   next failing row, next P with clients = the failing movers among {8,10,11,12,14,15} (XORD from the design's reach order: script in
+   this notebook's 21:4xZ entry). UNSAT / no answer → try other client pairs at that P; stop after 3 consecutive capped / UNSAT at one P.
+2. Every UNSAT cited: DRUP (l13/pdrup.py with PGAD=../l18/pgad6.py and env F6R/XALL/XORD/FIXC; R 510 proofs may be huge — prefer small).
+3. Update L18 §4 table; report P per milestone to the Lead.
+### Things only I know (successor 15)
+- One R 510 job at a time (5-8 GB); n.sh caps memory at 13 GB (ulimit -v) so an OOM kills the job, not the container. LNS at R 510 does NOT
+  fit (it builds the full frame); use n.sh (base = design) instead.
+- CaDiCaL ignores set_phases here; use assumptions (LNS) or base-neighbourhood questions.
+- pgad6 «free» set in n.sh: XS clients' wiring + insertion ranks, ALL signs (except FIXC), helper gates (except FIXC's level), helper starts.
+- Traps this session: bare «&» on a push (19:38Z, completed OK) and 3 jobs overlapping ~10 min (a batch still running). Container restarts
+  (~20:2xZ) killed one LNS batch; worker restarts twice; scratchpad survived each time.
+
 ## Successor 15: BOX L18 (Lead 16:09Z): f6 full horizon inside the search, q6 free, sweep P from 13, hinted + unhinted, 2,900 s per task
 ### Resume point (17:1xZ 2026-11-12, date -u; after a worker restart ~16:50Z, nothing lost: scratchpad survived, no job was running)
 - Tools l18/ (README): enc32c (clamp), pgad6 (F6R), ccheck (validated), q.sh (one question per task; logs in $SP/l18/TAG.log, «q exit»).
@@ -19,6 +41,17 @@
   {12,14,15}+gates and gates,starts LNS-UNSAT. C9b P 9 R 64 all-XS+gates no answer 900 s; 2nd question killed by container restart 20:2xZ.
   Overrun: H7b was still running when C9b + H7c started (3 jobs for ~10 min). drift.py: f6's chains pass through clients (A2_solved: 8 via
   35; P7R64_dec: 11 via 28->32): rewiring a client rewrites f6's chain; at rows 122/130 the decisive option becomes f6's own option 27.
+- Lead 19:57Z: FRAME L18b = L18 + q5 (10) free (named; XORD 8,11,10,12,15,14); target = largest P with f6 correct on ALL 129 free
+  pre-states (P 6 so far); climb from P 7 by LNS; stop = 3 consecutive capped / LNS-UNSAT at one P; report drift row per P.
+- L18b: P 9 R 64 around C8 {10,12,14,15}+gates SAT (L18b_C9 9c5767d5, rows 0..10, f6 18/129 first 122). P 7 R 256 around H7 {10,11}+gates
+  SAT (L18b_H7 6e363295, rows 0..7, f6 15/129 first 394). P 11 around L18b_C9: 3 LNS-UNSAT → climb stop at P 11 (L18b). Pushed f7715189.
+- pairsilence.txt: every P>=7 design's f6 errors start 4-12 rows after the f6 pair (16,17) stops changing (silences 102/118/134 → 289;
+  L18b_H7 last change 390 → errors from 394). A2_solved: pair changes once (row 2), f6 correct: A2 does NOT use the pair for f6.
+- L18b P 7 R 510 LNS around L18b_H7: died at the 13 GB ulimit while building (107 s; logged as no answer). FIX: base-neighbourhood question
+  (n.sh): BASE = the hint design itself, XS = few clients, other ranks fixed at build: R 510 = 50M clauses, 5.3 GB.
+- HEADLINE 21:17Z: n.sh base L18b_H7, XS 10,11, P 7, R 510: SAT 929 s → L18b_N510_dec 13ea6547: rows 0..8 (sim6 = fenc, T 10), f6check
+  0 / 129 on rows 0..510, inframe OK vs A2_solved. Largest P with f6 globally correct = 8 (was 6). Pushed 14fee147, reported 21:35Z.
+- Running 21:2xZ: N9a = n.sh base L18b_N510, XS 10,12 (XORD 10,12), P 9, R 510 ($SP/l18/N9a.log, «n exit»).
 
 ## Successor 15 (Opus 5.5): BOX L17, GO from the Lead 10:09Z 2026-11-12 (handover check 67555d41, accepted)
 ### Resume point (10:1xZ 2026-11-12, date -u)
