@@ -1,0 +1,26 @@
+opt 0 -> 1 even 0
+opt 1 -> 1 even 1
+opt 2 -> e11 even 0
+opt 3 -> exit even 0
+opt 4 -> 0 even 1
+opt 5 -> e10 even 0
+rank_order_ascending f89 f83 f70 f66 f59 f57 f47 f40 f20 f17 f15 f10 f19 f58 1 f23 f22 f21 0 4 2 5 f56 f16 f8 f5 f3 f1 f82 3
+gate 0 0
+start 01
+row 0 01
+row 1 11
+row 2 10
+row 3 10
+row 4 10
+row 5 10
+row 6 10
+row 7 10
+row 8 10
+row 9 10
+row 10 10
+row 11 10
+row 12 10
+row 13 10
+row 14 10
+row 15 10
+row 16 10

@@ -1,0 +1,42 @@
+opt 0 -> e46 even 0
+opt 1 -> 1 even 0
+opt 2 -> e48 even 0
+opt 3 -> e34 even 0
+opt 4 -> 1 even 0
+opt 5 -> 0 even 1
+rank_order_ascending f119 f117 f111 f110 f108 f105 f97 0 f92 f89 f87 f83 f79 f78 f75 f73 f70 f69 f68 f67 f66 f59 f57 f51 f47 f40 f35 f32 f20 f17 f15 f14 f10 3 f7 5 4 f19 f58 f18 f23 f22 f21 1 f56 f46 f16 f13 f8 2 f5 f3 f1 f93 f116 f33 f82 f41 f74 f86 f34 f61 f96 f123
+gate 1 1
+start 00
+row 0 00
+row 1 00
+row 2 00
+row 3 00
+row 4 01
+row 5 01
+row 6 01
+row 7 01
+row 8 01
+row 9 01
+row 10 01
+row 11 01
+row 12 01
+row 13 01
+row 14 01
+row 15 01
+row 16 01
+row 17 01
+row 18 01
+row 19 01
+row 20 01
+row 21 01
+row 22 01
+row 23 01
+row 24 01
+row 25 01
+row 26 01
+row 27 01
+row 28 01
+row 29 01
+row 30 01
+row 31 01
+row 32 01
