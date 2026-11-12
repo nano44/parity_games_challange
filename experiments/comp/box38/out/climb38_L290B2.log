@@ -1,3 +1,4 @@
 BEST BEST_L290B2_D1_T58_U0_NM290_4bdff043.json score [58, 1] {"U": 0, "T3": 58, "fb": 1, "C": 0, "Dmov": 1, "Dmov_x": 0, "NM": 290, "maxflip": 0} ideal37 {"Dmov": 1, "skipped": 1} agree True t 03:10:30Z
 BEST BEST_L290B2_D4_T58_U2_NM299_183a6cd2.json score [58, 4] {"U": 2, "T3": 58, "fb": 1, "C": 1, "Dmov": 4, "Dmov_x": 60, "NM": 299, "maxflip": 2} ideal37 {"Dmov": 4, "skipped": 1} agree True t 03:17:07Z
 BEST BEST_L290B2_D4_T60_U2_NM300_86cf8f18.json score [60, 4] {"U": 2, "T3": 60, "fb": 1, "C": 1, "Dmov": 4, "Dmov_x": 60, "NM": 300, "maxflip": 2} ideal37 {"Dmov": 4, "skipped": 1} agree True t 03:19:26Z
+restart 0 seed gen37_n9_U0.json end [60, 4] {"U": 2, "T3": 60, "fb": 1, "C": 1, "Dmov": 4, "Dmov_x": 64, "NM": 300, "maxflip": 2} global [60, 4] evals 631 1129s
