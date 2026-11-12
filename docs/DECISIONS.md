@@ -483,3 +483,12 @@ Lead reading L53 (2026-11-12 19:57Z by date -u; on D21, L51, L52):
     «rejected» would stop the whole fleet until 2026-11-18 21:00Z.
 (3) A session stopped by the limit mid-work has no handover: its successor resumes from the notebook, origin, and the Lead's brief,
     and redoes any result that was not on origin.
+
+## D22 (2026-11-12, owner: answer relayed by OWNER-DESK, logged on claude/owner-desk docs/owner-desk/LOG.md «2026-11-12T12:51Z owner message»)
+Question (Lead, 12:10Z, D1 approval for a new attack lane): «To spend more usefully, I propose one more lane, L-RED-B, a second
+adversary on Fable 5.2 xhigh against L-NEW 72's new CANDIDATE (a polynomial bound at k = 1 on IDEAL-CYC, the biggest claim of the
+week). Under D1, a new attack lane needs your «yes».»
+Owner (verbatim): «yes»
+Effect: L-RED-B (files docs/red-b/, experiments/red-b/; CLAUDE.md line added a9699c30) created 12:52Z. Recorded late (20:10Z) after
+L-RED-B successor 3 found the ruling missing from this file; the lane's existence rested on it from 12:52Z. Under L53 its successors run
+on Opus 5.5 until the Fable reset.
