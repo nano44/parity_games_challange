@@ -1,0 +1,1 @@
+exhgen nC 2 nP 3 | MUST0: all 0 | H_nonempty=315875 H_proper=135375 H_runs=676875 Tmax=3 Tsum=170693 games=361000 lagstates=205265 locopt_strategies=535553 nonstalls=204414 odd_strategies=797023 plateaus=851 plateaus_OF1=835 platmax=1 replies=531693 runs=361000 stalls=851

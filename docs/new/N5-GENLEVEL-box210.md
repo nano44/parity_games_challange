@@ -316,3 +316,49 @@ change some value truncated at θ; the first entry is the top priority, where no
 - Where I would attack: (G-K4) case 2 (the play of y returns to g); (G-K3) when v is its own cycle node; (GL3)'s use of «determined by
   z and the class of w» for a vertex of H; the premise [OPT] for arbitrary games (it is a [VJ] premise, as in R118 (i)); the engine's
   reply of Odd (an Odd-side iteration to local optimality; cross-checked against si.Engine on every file of §5, not proved here).
+
+## Addendum A (L-NEW successor 72; written 2026-11-12 after the push of 7e793af1: two sentences of the body CORRECTED, one citation corrected, one remark relabelled, a brute-force check of every even up-set; no lemma changes)
+The body is unchanged above this line. **SCOPE LINE and LABEL as above.** A second reviewer agent (started by this session, fresh
+context, read-only on the repository; not a fleet referee; it changes no label) read §1-§4 and attacked them by computation. Its verdict:
+no mathematical error found in G-CLASS, GEN-LEVEL, GEN-PLATEAU or Theorem OF; four defects of wording or citation, corrected here.
+### A1. Corrections
+- (1) WRONG AS WORDED, §0 «Boxes 208 and 209 are this theorem for Γ(G) and Γ3(G), where (OF) is their step (P4)» and §4 «Boxes 208
+  and 209 as instances». Γ(G) and Γ3(G) are not in split form, and their class uses the e-vertices, which are NOT an even up-set: K3
+  (odd), K0 and c_W lie above them. Boxes 208 / 209 are ANALOGUES of Theorem OF, with their own proofs of the class facts (the core is
+  handled there by a separate clause) and with (P4) in the place of (OF). Corrected reading: Theorem OF is the split-form analogue of
+  boxes 208 / 209; neither implies the other. §7's last bullet («It isolates what they use») is to be read the same way.
+- [Q] (2) CITATION CORRECTED, §1. The spelled-out form of [OPT] is not from landed R118 (the body's words): the string is in landed R122's premise
+  clause, and it continues: «an optimal counterstrategy being pointwise optimal (at every vertex its play value is ⊴ the value under
+  every Odd strategy; RESULTS R57 (b), [1E-N3], as landed in R104)». So [OPT] is here what it is everywhere in the fleet: the standing
+  SPEC premise 1E-N3 (R57 (b)). It is a premise of every statement of this box.
+- (3) RELABELLED, §8's bullet «N5 itself». It stands under «Not claimed» but asserts that (G-K1)-(G-K4), (GL1), (GL3) hold along N5's
+  σ-sequence. Label: READING + DATA, not a statement. The reading: by SPEC S4a (docs/new/N5-ssi-global.md) σ_new(v) is σ(v) or the
+  head of an improving edge of Iσ, and S4c's fallback switches improving edges, one per vertex; so every change of σ is a set of
+  improvements to which R15 (a) applies. That reading of the SPEC is mine and unrefereed. The DATA is §5 (d).
+- (4) GAP IN THE DATA, §5: the lemma is stated for every even up-set H, and §5 tests only H = the whole top even block and H = ∅.
+  Closed by A2.
+### A2. Brute force, every even up-set, every reference state (brute210.py; run210b.sh; outputs out/brute210_*.out)
+brute210.py is the reviewer agent's checker, taken into the lane: its own valuation; Odd's reply found by enumerating ALL positional Odd
+strategies (so it does not assume, as gen210.py's engine does, that a locally optimal reply is optimal; it reports NO_POINTWISE_MIN if
+no pointwise minimum exists); its own Howard run; F1, [OPT], (G-K1)-(G-K5), (GL1), (GL3), (GL4), (GL5), (GP1)-(GP4) and the «switch in
+Y» step of Theorem OF, for every even up-set H and every reference state b. Unit: (H, run) pairs; scope: every vertex.
+| set (file in out/) | runs | (H, run) pairs | must-0 counters | descriptive |
+| --- | --- | --- | --- | --- |
+| every split of every 3-vertex game, every start strategy (exhaustive) (brute210_exh3.out) | 54872 | 102885 | 0 | Odd strategies enumerated 173137, replies 92569, max T 3, stalls 777, plateaus 777 (longest 1) |
+| every general split-form game with 2 choice and 3 priority vertices, every start strategy (exhaustive) (brute210_exhgen23.out) | 361000 | 676875 | 0 | Odd strategies enumerated 797023, replies 531693, max T 3, stalls 851, plateaus 851 (longest 1) |
+| random: rsplit seed 2131 cnt 20000 n0 5 d 6 deg 3 (brute210_rand.out) | 20000 | 47304 | 0 | Odd strategies enumerated 217482, replies 35908, max T 5, stalls 626, plateaus 614 (longest 2) |
+| random: rsplit seed 2132 cnt 10000 n0 6 d 8 deg 3 (brute210_rand.out) | 10000 | 23594 | 0 | Odd strategies enumerated 174364, replies 19337, max T 4, stalls 439, plateaus 425 (longest 2) |
+| random: rgen seed 2133 cnt 20000 nC 4 nP 5 d 6 (brute210_rand.out) | 20000 | 47362 | 0 | Odd strategies enumerated 144070, replies 32548, max T 4, stalls 124, plateaus 122 (longest 2) |
+| random: rgen seed 2134 cnt 10000 nC 5 nP 7 d 8 (brute210_rand.out) | 10000 | 24439 | 0 | Odd strategies enumerated 116994, replies 17420, max T 4, stalls 84, plateaus 83 (longest 2) |
+| CONTROL CTRL=H (H not an up-set): rsplit seed 2135 cnt 3000 n0 5 d 6 deg 3 (brute210_ctrl.out) | 3000 | 2071 | fires: K1 28 K2 507 K4 22 K5 35 L1fall 1 L1stall 1 L3 1 L4odd 1 L4even 19 L5set 1 P3 36 | Odd strategies enumerated 31867, replies 5372, max T 4, stalls 29, plateaus 28 (longest 1) |
+| CONTROL CTRL=Hodd (H of both parities): rsplit seed 2136 cnt 3000 n0 5 d 6 deg 3 (brute210_ctrl.out) | 3000 | 5341 | fires: K1 434 K2 3397 K4 771 K5 959 L1fall 36 L1stall 18 L1rise 12 L4even 37 P1 2 P3 54 OFswitchY 13 | Odd strategies enumerated 32432, replies 5422, max T 5, stalls 80, plateaus 62 (longest 1) |
+| CONTROL CTRL=nosplit (game not split): rsplit seed 2137 cnt 3000 n0 5 d 6 deg 3 (brute210_ctrl.out) | 3000 | 3909 | fires: L5 233 L5set 1399 | Odd strategies enumerated 32173, replies 5377, max T 5, stalls 78, plateaus 78 (longest 1) |
+- No NO_POINTWISE_MIN in any set: a pointwise minimum of Odd existed in every state enumerated. The controls CTRL=H and CTRL=Hodd fire
+  on the class facts; CTRL=nosplit fires only the counting clauses (L5, L5set) on this set, so it is a weak control here (gen210.py's
+  GEN_CTRL=3 fires K4 and K5 on unsplit games, §5 (b)).
+- Not in the lane, so not DATA: the reviewer's larger exhaustive set (every general split-form game with 3 choice and 3 priority
+  vertices, 11,852,352 runs, reported 0), its comparison of gen210.py's reply of Odd with brute force (73,000 games, reported equal),
+  and its re-run of §5 (a) / (c) on seven family files with its own engine (reported equal to the tables).
+### A3. What the reviewer did not check (its own list)
+VJ00 itself; BR-SEG-G by computation; §5's tables (b), (d), (e) and §6; the N5 reading of (3); the numeric bound of Theorem OF (no run
+comes near it). Its exhaustive and random games are tiny (T ≤ 6, plateaus ≤ 2): long plateaus are tested only by §5 (a) and (c).

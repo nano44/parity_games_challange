@@ -31,4 +31,5 @@ quote "N5′-xi's FL run on Γ3(G) is polynomial in N + M for every ge" lines [1
 quote 'R is polynomial along these Howard runs' lines [13718] found True
 quote 'it bounds none of F, T3, L(G) (OPEN)' lines [15371] found True
 quote 'says nothing about N5 (whose pre-fallback run on Ξ-cyclic ge' lines [15595] found True
-quotes 33 missing 0 trunk 471aba45214c9b4009332ef1d498dd5dbc42f3cb
+quote 'an optimal counterstrategy being pointwise optimal (at every' lines [14744, 14782, 14877] found True
+quotes 34 missing 0 trunk 471aba45214c9b4009332ef1d498dd5dbc42f3cb

@@ -1176,4 +1176,12 @@ if [ "$r210" -eq 0 ] && [ -z "$d210" ] && ! grep "^gen210" box210/check210.out |
 else
   echo "BOX 210 GEN-LEVEL check: FAILED (check210.sh exit $r210)"; echo "$d210" | head -30; echo "$run210" | tail -15; exit 1
 fi
+# BOX 210 ADD-A (L-NEW successor 72): brute210.py (Odd's reply by brute force, every even up-set H, every reference state): check set all 0, two controls fire, frozen exhaustive and random outputs all 0
+r210b=0; run210b=$(cd box210 && bash check210b.sh 2>&1) || r210b=$?
+d210b=$(diff <(printf '%s\n' "$run210b") box210/check210b.out 2>&1) || true
+if [ "$r210b" -eq 0 ] && [ -z "$d210b" ] && [ "$(grep -v '^ctrl' box210/check210b.out | grep -c 'MUST0: all 0')" -eq 2 ] && grep -q "^ctrlH .*K2=[1-9]" box210/check210b.out && grep -q "^ctrlHodd .*K5=[1-9]" box210/check210b.out && [ "$(cat box210/out/brute210_exh3.out box210/out/brute210_exhgen23.out box210/out/brute210_rand.out | grep -c 'MUST0: all 0')" -eq 6 ] && ! cat box210/out/brute210_exh3.out box210/out/brute210_exhgen23.out box210/out/brute210_rand.out | grep -q "FIRST\|NO_POINTWISE" && grep -q "K5=[1-9]" box210/out/brute210_ctrl.out; then
+  echo "BOX 210 ADD-A: brute210 (brute-force reply, every even up-set, every reference state) all 0 on the check set and the frozen outputs, controls fire: PASS"
+else
+  echo "BOX 210 ADD-A check: FAILED (check210b.sh exit $r210b)"; echo "$d210b" | head -30; echo "$run210b" | tail -15; exit 1
+fi
 rm -rf "$tmp"

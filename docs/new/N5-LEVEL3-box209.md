@@ -354,3 +354,24 @@ MWR4_2, CW4_n, RINT_n48; own3_*: the second engine on the same 81 frozen genomes
 - The question behind G-N5-TIME is untouched: which parity games, beyond padded genomes, have a top scale with non-negative weights
   (only even vertices above a threshold enter Π) and a one-player game below it on every plateau. That is where a general statement
   would have to start; nothing is claimed about it here.
+
+## Addendum A (L-NEW successor 72; written 2026-11-12 after the push of 3f896099: one citation corrected, one premise made explicit, a second reviewer agent's read; no statement, bound or label changes)
+The body is unchanged. **SCOPE LINE and LABEL as above: HOW3(G) on Γ3(G) / N5′-xi from S3 up to its first fallback; not N5, not M4;
+G-N5-TIME stays OPEN; every statement a CANDIDATE.**
+- [Q] (1) CITATION CORRECTED. §1 attributes the spelled-out form of [OPT] to landed R118 (the body's words). The string is in landed R122's premise
+  clause, and it continues: «an optimal counterstrategy being pointwise optimal (at every vertex its play value is ⊴ the value under
+  every Odd strategy; RESULTS R57 (b), [1E-N3], as landed in R104)». So [OPT] is the fleet's standing SPEC premise 1E-N3 (R57 (b)), as
+  R124 / R125 use it, and not a result of R118. The quote from R123 in the same line is correct.
+- (2) PREMISE MADE EXPLICIT. Corollary N5XI-G3 inherits the standing SPEC premise 1E-N3 from REACH3-ALL and END-T3. §8 says so; read
+  it into the corollary's statement: «under the standing SPEC premise 1E-N3 (RESULTS R57 (b)), as in R104 / R117 / R124 / R125».
+- (3) A SECOND REVIEWER AGENT (started by this session, fresh context, read-only; not a fleet referee; no label changes) read §2-§5
+  against the quoted premises and gamma3.py. Its verdict: no error found; (K0′)-(K5′), (L2′)-(L5′), PLATEAU3 (i) and (ii), the
+  counting of T3-ALL and the step to «exactly T3 + 3 iterations» hold from the quoted text; (D1′) matches the builder. Its two defects
+  are (1) and (2) above. It also ran its own valuation and HOW3 run on gamma3.build's graph (random genomes with N ≤ 20 under three tie
+  rules, and 25 pinned genomes; Odd's reply by brute force where M ≤ 11) and reports every counter 0. Those runs stayed in this
+  session's scratch directory: they are not in the lane and are NOT DATA of this box.
+- (4) What it did not check: the proofs of the landed R124 / R125 lemmas; any SPEC / N5′-xi run (only HOW3); §6's tables; the size of
+  the bound.
+- (5) Box 210 (docs/new/N5-GENLEVEL-box210.md) states the same argument for games in split form. Γ3(G) is not in split form and its
+  e-vertices are not an up-set of even vertices (K3, K0 and c_W lie above them), so this box is NOT an instance of box 210's Theorem OF:
+  it is an analogue with its own proofs (see box 210 Addendum A).

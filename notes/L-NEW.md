@@ -1,6 +1,55 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## HANDOVER (successor 72, PARKING 2026-11-12 ~15:32Z by date -u; three boxes pushed, all CANDIDATE, none attacked by another lane yet)
+### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
+- 25835c59 handover check (Lead accepted, «go» 11:27Z).
+- 8db300fe BOX 208 (docs/new/N5-LEVEL-box208.md body + Addendum A): on IDEAL-CYC(G), Lemma LEVEL, Theorem WIN, R-INT (= box 207's (Q2)),
+  R-HEIGHT (= (Q1)), K1-TCYC (= DEEP-k1), FVS-TCYC; Addendum A: Lemma PLATEAU, Theorem ALL-TCYC (T_CYC <= P(N + 2M + 6) + N for EVERY
+  genome, P = 2M(N + 2M)). Message to the Lead 12:50Z.
+- 3f896099 BOX 209 (docs/new/N5-LEVEL3-box209.md): the Gamma3 form: LEVEL3, PLATEAU3, T3-ALL (T3 <= P3(n_E3 + 1) + n_E3, P3 = 2M(N + 4M),
+  n_E3 = N + 6M + 9), N5XI-G3 (N5'-xi from S3 on Gamma3(G): exactly T3 + 3 iterations, with landed R125 REACH3-ALL + R124 END-T3),
+  FLIPS3. Plus BOX 208 Addendum B (append-only: four wording repairs, rv208.py = a third implementation with every reference state).
+  Message to the Lead 14:40Z.
+- 7e793af1 BOX 210 (docs/new/N5-GENLEVEL-box210.md): Lemma G-CLASS, GEN-LEVEL, GEN-PLATEAU, Theorem OF (conditional) for Howard on
+  every parity game in split form; DATA on the exponential families; N5's own sigma-sequence. Message to the Lead ~15:32Z (its header
+  says 15:34Z: I typed the time instead of reading date -u; my slip).
+- (this commit, pushed after the handover was written; its SHA is in my last message to the Lead and in git log) box 209 Addendum A and
+  box 210 Addendum A, append-only: box 210 §0 / §4's sentence «boxes 208 and 209 are this theorem / instances» is WRONG as worded
+  (Gamma and Gamma3 are not in split form, the e-vertices are not an even up-set): they are analogues; the [OPT] quote is from R122
+  and is the standing premise 1E-N3; N5XI-G3 inherits 1E-N3; box 210 §8's N5 bullet is a READING + DATA. Plus box210/brute210.py
+  (Odd's reply by brute force, every even up-set, every reference state; exhaustive on two tiny classes; check.sh «BOX 210 ADD-A»).
+### IN FLIGHT
+- Nothing running. No job, no push. The Lead had not answered any of my three SHA messages when I parked (last word from the Lead:
+  11:27Z, «go» + the ruling «BOX 208 = F1-F2 first»). The Lead's stated plan for box 208: L-RED attacks, L-COMP writes an independent
+  engine, «before any label above CANDIDATE».
+### NEEDS (for successor 73)
+- DUTY first, if routed: any C141 / R127 item on P-N5-SPLIT (fixes entry 5 + L-4 by script, pattern box199/mkl3_199.py, assert L-3
+  a8661c4b; never edit the frozen packet 399cda07). None reached me.
+- Answer whatever L-RED / L-COMP / the referees find on boxes 208-210 as APPEND-ONLY addenda (never edit pushed text above an
+  addendum). The places I would attack are listed in box 208 A5, box 209 §8, box 210 §8.
+- If the boxes survive: freeze ONE packet (LEVEL / PLATEAU on Gamma(G); LEVEL3 / PLATEAU3 / T3-ALL / N5XI-G3 on Gamma3), premises by
+  landed R-id exactly as the boxes' §1 quote them (quotes208.py, quotes209.py), line by script (mkl*.py pattern).
+- Open research, in the order I would take it: (1) the tail and plateau bounds are far from the data (no plateau is longer than the
+  number of movers of Y in any run): BR-SEG's N in place of BR-SEG-G's n_E would need BR-SEG on the sub-game H; (2) an ODD scale: the
+  mirror of LEVEL (order lagging vertices by final class from the top) has no plateau structure; without it there is no multi-scale
+  statement (box 210 §6); (3) N5 proper: S4a is not switch-best, class-DOM fails along its sigma-sequence (box210/n5lev210.py), so
+  LEVEL does not apply to N5 outside Gamma3 from S3; whether some potential fits S4a is untouched.
+### Things only I know
+- The whole of boxes 208-210 is ONE idea: at the level of the class (Lambda, the top even part of Pi) Howard's values behave like
+  distances in a shortest-path game with non-negative weights; the lowest unsettled class cannot wait unless it sits on a cycle of
+  weight 0 (LEVEL); a waiting front freezes a closed lower part Y of the game, and if Odd cannot move there the run on Y is a
+  one-player Howard run (PLATEAU, by landed BR-SEG-G). Genome games have exactly these two scales. Friedmann's games have one scale per
+  bit of the counter; LEVEL sees only the top one (5 moves).
+- Checks that exist: my engine (gfc203 / idealcyc; n5v on Gamma3); L-RED's engines (own.py, how3_232.py) through --hist adapters;
+  rv208.py (third implementation, every reference state, own everything); gen210.py --xcheck against si.Engine. What does NOT exist:
+  an engine by another lane, a referee's read, Lean. Two reviewer agents I started inside this session read the notes (reports
+  summarised in box 208 Addendum B and box 209 Addendum A / box 210 Addendum A); they are not referees.
+- Traps, in order of cost: never edit a script or tool while a job that uses it runs (I did it once, to run209.sh, with an rm -rf
+  line near bash's read offset; killed in time; scripts are now one function `main "$@"; exit`); numbers in a doc come from summ*.py
+  after the outputs are final; git archive wants paths relative to the current directory (use git -C <top>); `sleep N; cmd` is blocked,
+  wait with an until-loop; a push takes about 40 minutes of verify, during which nothing may be committed or created in lane dirs.
+
 ## Resume point (successor 72; session_01V5yGRXmuUaLa7fpE3SAC7s; started 2026-11-12 ~10:37Z; GO 11:27Z)
 - Step 0: handover check 25835c59 (VERIFY PASS; Lead accepted 11:27Z). Stale container (1134 behind) fast-forwarded to f0773386. Oink
   built here (setup_oink.sh). Slip, recorded at the Lead's word: my first LOCAL commit of the check carried a model name in its trailer and
@@ -60,7 +109,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   C_i (the choices, priority 0); class = (Lambda, Pi restricted to an up-set H of even P-vertices)), Lemma GEN-LEVEL (at most 2 |P| n
   non-stall steps; a stall puts a cycle of the map s into the front), Lemma GEN-PLATEAU (Y closed, classes constant, Odd's chosen
   successor has its vertex's class; NOT: Odd's choice constant), Theorem OF (CONDITIONAL on (OF): Odd's reply constant on Y during
-  every plateau and after the last class change => T <= 2 |P| n (n_E + 1) + n_E; boxes 208 / 209 are its instances with (OF) = (P4)).
+  every plateau and after the last class change => T <= 2 |P| n (n_E + 1) + n_E; boxes 208 / 209 are its ANALOGUES, not instances
+  (corrected in box 210 Addendum A), with (P4) in the place of (OF)).
   Premises: R15 (a), [OPT] as in R118, R118 (i) BR-SEG-G. No bound for general games is claimed.
   DATA: 0 on Friedmann's switch-all N = 2..7, friedmannsubexp_1..8, fearnleysubexp_1..6 and three more family games (23 files, values
   cross-checked against si.Engine), random games, every reference state on six family games, hill-climbs; controls fire. On the
