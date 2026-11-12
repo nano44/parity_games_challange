@@ -531,3 +531,56 @@ is R2-P-N5-GATE/r2gate.py, on REFEREE-2's own engines.
   - A*-EQUIV (i) on both runs.
 - I have not read REFEREE's own L-3 byte test, if one exists. A «signed by both» MATCH is unconditional only after checking it on
   claude/referee (my handover's second trap).
+
+## Addendum 3 (REFEREE-2 successor 37; 2026-11-12 by date -u): byte test of fixes entry 4 + line L-4 (claude/l-si 676b6a1c)
+- Object (re-hashed from `git show 676b6a1c:…`):
+  - L-4: docs/si/P-N5-GATE-line-L4.txt, sha1 6bfde78ef050b47f43527875256c65a205869e77, 12,562 B. One line, no «|», 230 «(» = 230 «)».
+  - Fixes: sha1 8009e018, 28,767 B. The diff ef14451f..676b6a1c removes no line: entry 4 is appended.
+  - The packet (f3a584e6) and L-3 (b60495b2) are unchanged.
+- Diff L-3 → L-4 (word level): exactly six regions, all named by entry 4.
+  - LT-1, two strings:
+    - «C-EQUIV of P-N5-SPLIT (L-NEW, frozen … 5bc1b1f3);» → «C-EQUIV of RESULTS R127 (P-N5-SPLIT; L-NEW, frozen … 5bc1b1f3; landing
+      order R126 = P-N5-QN, R127 = P-N5-SPLIT, then this entry);»
+    - «PROVED-CONDITIONAL on P-N5-SPLIT's» → «PROVED-CONDITIONAL on RESULTS R127 (P-N5-SPLIT)'s».
+  - GL-1 and GL-2 delete RA-MULT, the polynomial RA-path bound and K1-FLIP(c) from the DEAD clause.
+  - GL-3 inserts them as «DATA, not DEAD (asymptotic statements, finitely many instances; L43): …».
+  - «fixes entries 1-3» → «1-4».
+  - There is no other change.
+- Banned strings of Addendum 2 are still absent. «RA-MULT», «K1-FLIP(c)», «a polynomial bound on the RA path count» and «pending packet»
+  are absent too.
+- Meaning.
+  - LT-1.
+    - R126 and R127 are NOT yet on trunk: at b3d7294c, RESULTS has «### R125» and no R126 / R127.
+    - So «RESULTS R127 (P-N5-SPLIT; …)» is a forward reference. It is made under the Lead's landing-order ruling (02:57Z), which the line
+      states in so many words.
+    - A*-EQUIV (ii), (iii) keep their CONDITIONAL label, now on R127. That is correct as long as P-N5-SPLIT lands as R127 before this
+      entry. CHECKER must confirm R127 = P-N5-SPLIT at this entry's landing (entry 4 F4-1 says so).
+    - I accept this form. If the order changes, the R-id must be re-diffed.
+  - GL-1..GL-3 (L43).
+    - The three moved rows each refute an asymptotic statement on finitely many instances. Moving them to DATA with their numbers is right,
+      and it is the same correction I made to my predecessor's QN §6 (R2-P-N5-QN Addendum 3).
+    - The DATA numbers agree with my replay where I re-ran them. MWR4/8/16_2 have per-gate flips 9 / 17 / 33 at lamch 0 on both engines
+      (mwr_lamch.out). MW8_2 has C = 17 = 2n + 1, and FW8_2 has C = 3 (pinned_p1.out). MW32_2's and FW16_2's numbers, and the RA path count
+      P = F_(d+2) − 1, are cited, not re-run (2.10).
+    - «refutes a constant multiplicity only below 32» is right: m = n reaches 32 on MW32_2. «refutes c·(lamch + 1) only for c ≤ 32» is
+      right: 33 flips at lamch 0.
+    - The construction rows (WC, K6, K7, nesting, Db / Dbr) stay DEAD. Each says a named construction fails to grow, which a finite
+      instance can show. I agree.
+- Verdict: L-4 (676b6a1c, sha1 6bfde78e) MATCHES. L-3's match carries over unchanged, and the two new items (LT-1 under the landing-order
+  ruling, GT-10 / L43) are correct in bytes and in meaning.
+  - Open condition, unchanged: P-N5-SPLIT must land as R127 before this entry. Until then the line's «RESULTS R127» is not yet true on
+    trunk.
+- I read REFEREE 31's §I / §J only as quoted in entry 4. I have not opened claude/referee fbc4d865 for this test.
+
+## Addendum 4 (REFEREE-2 successor 37; 2026-11-12 by date -u): spot replay of two cited-only DATA numbers (Lead 05:37Z, optional)
+- Instances, from l-si 9c0349b1 box91/inst, re-hashed: MW32_2 (sha1 445031d1, N 300, M 657) and FW16_2 (sha1 94df42b7, N 259, M 528).
+- These were NOT RUN in 2.9 because of the Γ3 engine's cost.
+- Run: the IDEAL-CYC engine only (r2gate.py --eng cyc), with every check and no size cap. Output: R2-P-N5-GATE/spot_mw32_fw16_cyc.out.
+  The Γ3 engine is still not run on them.
+- Results. Every must-0 counter is 0 on both, and dpass is 0.
+  - MW32_2: T 199, C = 65 = 2n + 1 (n = 32), A*_all 66, max per-gate flips 130 = 4n + 2 with lamch 0. 90,092 SAME-SUFFIX windows and
+    11,360 same-pair expulsion couples.
+  - FW16_2: T 53, C = 3, A*_all 16. 24,386 SAME-SUFFIX windows.
+- So two of L-4's numbers are now re-run on IDEAL-CYC by me: «C = 2n + 1 on MW8_2, MW32_2» and «C = 3 on FW8_2, FW16_2».
+- Still cited, not re-run: the re-arm multiplicity m = n, the RA path count P = F_(d+2) − 1, and Γ3 on these two instances. No verdict
+  changes.
