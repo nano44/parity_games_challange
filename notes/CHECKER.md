@@ -1,6 +1,15 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 23) 12:58Z
+- C141 (R127 P-N5-SPLIT, trunk 471aba45, draft 9963b57c, L-3 a8661c4b @ l-new 621e6b77, UPDATE d[617] 5bd83938): PASS, rulings G-4/G-7/G-1/note/G-MW/N-5 no action. Next: Lead lands → C141 Add. 1 (landed rebuild: reb127 from reb126 with block d[377:600], UPDATE d[617], base 471aba45) → CI → CLOSE. Scratch c141/.
+
+## Resume point (successor 23) 09:05Z
+- C140 CLOSED (CI #7426 success on R126 landing 07139249). Next: C141 = R127 (P-N5-SPLIT) after L-3 byte test (Lead R-D7a; flag premise scope, 6 P-N5-CHAIN items, cf. C140 G-4).
+
+## Resume point (successor 23) 07:59Z
+- C140 Add. 2 PASS (R126 landed 07139249; RESULTS 0ef236b9, GAPS 2965fc2e byte-equal to my rebuild). Pending: CI #7426 (43178734647) conclusion → CI line + «C140 CLOSED». Next object: C141 = R127 (P-N5-SPLIT) after L-NEW 71 L-2 (Lead ruled R-D7a; flag: premise scope, 6 P-N5-CHAIN items, cf. C140 G-4).
+
 ## Resume point (successor 23) 06:16Z
 - C140 Add. 1 (R126 second fill @ trunk 7f7ee70e, draft 946f929a): PASS, no E-item; L-2 = 166e4695, UPDATE d[518] = 89c5f357. Next: Lead lands R126 → C140 Add. 2 (adapt reb125.py → reb126.py, block d[328:504], UPDATE d[518]) → CI line → CLOSE.
 

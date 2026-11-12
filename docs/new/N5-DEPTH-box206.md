@@ -268,3 +268,59 @@ vertices; K2's successor is K1 at every state (LOC-K2). So p is a mover (σ chan
   design for it.
 - Block climb, final (one lean job, stopped for the park): climb206.py CL_OBJ=block seed 8 from K1F21_n48, 7,050 iterations: Dtop 26
   at b = 6, T 33 (frozen inst/BLKX26_n48.json; log out/climb206_block_s8.log; cwmeas206: D_mov 26). Still within T + 1.
+
+## Addendum E (L-NEW successor 71; Lead 05:45Z: «DUTY FIRST, as one append-only addendum: box 206 Addendum E … Two items from L-RED 65»; written 2026-11-12 by date -u)
+Answers L-RED 65's two items on box 206: (E1) claude/l-red 2b234291, docs/red/R231-box206.md §1 «GAP (wording only, no effect on any
+bound)»; (E2) claude/l-red 2c5e558b, docs/red/R231-cwr.md §2-§3. The body and Addenda A-D are unchanged; this addendum governs them where
+they differ. Tools: experiments/new/box206/quotes206E.py, ediag206.py; outputs box206/out/quotes206E.out, out/ediag206_*.out.
+### E1. LOUD-SPLIT's premise list: R118 (a) added (wording; no bound changes)
+- L-RED's item (verbatim): «GAP (wording only, no effect on any bound): LOUD-SPLIT's own premise list (§2 header) does not name R118 (a);
+  it is the setting line.» AGREED. The box header names the setting («Setting: IDEAL-CYC(G) (RESULTS R118 (a))»), but Theorem LOUD-SPLIT's
+  own premise list (§0 and §2) does not, and its proof uses it: the states counted are states of an IDEAL-CYC run (E-MON, QUIET and the
+  per-vertex R118 (e) are statements about such runs), and (iii) charges a change to a vertex whose class is defined on that game.
+- Corrected premise list (governs §0 and §2): Theorem LOUD-SPLIT (PROVED, lane; premises **RESULTS R118 (a)** (the IDEAL-CYC setting),
+  R121 E-MON, the per-vertex form of R118 (e) as stated in R121's line, R123 QUIET).
+- Quoted premise (by script: quotes206E.py b3d7294c, out/quotes206E.out; trunk docs/RESULTS.md at b3d7294c; 2 quotes, 0 missing): R118's
+  RESULTS line (l. 13607): «IDEAL-CYC(G) := Γ(G) of ANY genome G (Ξ-cycles allowed) with every non-mover Even vertex frozen at R104's
+  start and Howard steps at the N movers»; R118 (a) as signed (l. 13677-13678): «The game is Γ(G) with every Even vertex that is not a
+  mover frozen at its start successor. Odd is unrestricted (gates and K2).»
+- Other box 206 statements with the same omission (checked statement by statement):
+  - Lemma DEPTH-COUNT (§0, §1, §5: «premise R121 E-MON; no hypothesis»): SAME OMISSION. Its proof uses only E-MON, but E-MON is a
+    statement about IDEAL-CYC states, so the setting is a premise. Corrected: premises **RESULTS R118 (a)**, R121 E-MON. «No hypothesis»
+    keeps its meaning (no condition on the genome or on the run).
+  - Lemma DIV (Addendum A2): NOT affected; its premise list names R118 (a). Corollary DIV-LOUD inherits DIV's list plus LOUD-SPLIT's,
+    so it now carries R118 (a) both ways.
+  - §2 «Mover form» (via box 204 Theorem EQ): a remark, whose premises are EQ's (P-N5-QN's, which include R118 T-CYC on IDEAL-CYC): no
+    separate list in box 206; NOT affected.
+  - Addenda B-D: DATA and READINGs only; no premise lists.
+- No number, bound or label changes.
+### E2. DEAD CWR: corrected obstruction (L-RED's mechanism CONFIRMED on my own trace)
+- L-RED's finding (R231-cwr §2, verbatim): «the number of states at which the play from e_qh_k, with qh_k's gate forced onto its e-face and
+  every other vertex on the state's strategy pair, returns to e_qh_k is 0 for every k, on CWRR8 and on CW8.»
+- My check (ediag206.py: my engine, box203 gfc203.hist_ideal / box191 idealcyc; per state of the IDEAL-CYC run; qh_3 = mover 56, c_3 =
+  mover 86, R = 83, Q = 82; out/ediag206_CWRR8_qh3.out, out/ediag206_CW8_qh3.out, and CWRR4 / CWRR16 / CWRQ8 / CW4 at qh_3).
+  DATA, counter CLOSE (unit: states; set CWRR4_n, CWRR8_n, CWRR16_n, CWRQ8_n, CW4_n, CW8_n; scope: qh_3's gate; definition = L-RED's,
+  quoted above): **0 at every state of every genome** (29 / 53 / 101 / 53 / 31 / 60 states). So the Γ-cycle qh_k → e_qh_k → c_k → … →
+  R → … → qh_k of Addendum D exists as a cycle of the graph Γ but never closes under the strategy pairs that are played.
+- The trace on CWRR8_n (out/ediag206_CWRR8_qh3.out):
+  - t = 1: c_3 switches to the re-arm option (Ξ-target R = 83) and keeps it to the end (L-RED: «by t = 5»; consistent).
+  - t = 9: Q's gate flips to the β-face, and from t = 9 on Λ(R) = Λ(Q) = Λ(c_3) = vertex 477 = β_(R,0) (option 0 of R, Ξ-target Q),
+    priority 218, EVEN (counter raceTop, unit states: Λ(R) is the β-vertex of R's chosen option with even priority: 44 of 53 states,
+    t = 9 … 52; first at t = 9 also on CWRR4, CWRR16, CWRQ8; 0 on CW4 and CW8, where Λ(R) = K1 at every state and Q's gate keeps
+    the e-face). L-RED: «From t ≈ 10, at Q's gate Odd takes the β-face»; consistent.
+  - qh_3's two faces: e-face (Λ priority, |E|) = (5, 3) at t = 1-8 and (218, 1) from t = 9; β-face (5, 0) until t = 19 and (218, 0)
+    from t = 20. Odd takes the β-face at every state (the e-face only adds e-vertices to E, which favours Even). |E| counts e-vertices
+    only; L-RED's «|Π| 2» counts all vertices of Π: the same comparison.
+- Where my Addendum D reading differs: at NO state. Addendum D's sentence «The re-arm edge c_k → R closes a Γ-cycle … THROUGH the e-vertex
+  e_qh_k. On IDEAL-CYC, Odd never takes such an e-face» and its READING «this is R123 B-ONLY's mechanism» are WITHDRAWN: the cycle never
+  closes (CLOSE 0), and the collapse is explained by the race cycle. Corrected obstruction (L-RED's, confirmed): **the re-arm route
+  makes every exit of the race component lead back into R; at t = 9 Odd closes the race cycle R → Q → R at Q's gate (β-face), whose top
+  β_(R,0) (priority 218) is even; every re-armed carry's play ends in that cycle, so all movers share one class from there on and
+  D_mov = 3.** The DEAD label on CWR(n) stands (Addendum D's table unchanged; L-RED reproduced it, R231-cwr §1).
+- L-RED's single-target re-arm sweep, cited as DATA (claude/l-red 2c5e558b, experiments/red/r231/rearm231.py, out/rearm231_n4.out,
+  out/rearm231_n8.out; not re-run here): unit genomes; set: CW(n) plus one re-arm option per c_k with Ξ-target t, for EVERY mover t of
+  MWR(n) (51 genomes at n = 4, 91 at n = 8; even β, before X); scope movers; counters k, D_mov, T: k = 1 for every t; D_mov ≤ CW's (12 at
+  n = 4, 38 at n = 8) and T ≤ CW's (30, 59) for every t; race-component targets R, Q, v, hv give D_mov 3, u and qz give D_mov 4; lane and
+  sink targets leave CW unchanged or lower it. No target beats CW.
+- OPEN (L-RED's shape, kept as stated): «A re-armed carry at k = 1 would need re-arming that sees the race's state without giving Odd's
+  race exits a route back into R. Not found; open.»
