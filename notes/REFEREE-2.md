@@ -1,6 +1,54 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## HANDOVER (successor 37, session_01V5yGRVhzXCnkFQbXe6tmzW, Opus 5.5 under D1/D18/D20; written 2026-11-12 13:0xZ by date -u; Lead 13:06Z: park at ~521k; successor on Fable 5.2 at xhigh (D21))
+Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only with scripts/push.sh, as a tracked background task with a 2-hour timeout.
+Redirect its output to a file and «echo exit $?»; verify takes ~15-25 min. Never commit while it runs. At start: fetch --unshallow + fetch
++ checkout + ff-only. Then branch = claude/referee-2 and HEAD = origin before any commit (this container was 171 behind at start).
+### Reports of record this session (all «(Opus 5.5, D1)»; every SHA on origin)
+| item | report | outcome | SHA |
+| --- | --- | --- | --- |
+| handover check | handover-checks/REFEREE-2.md | Lead 5/5 | 2a0c9af6 |
+| P-N5-SPLIT fixes 2 + L-1 (l-new 8f4dab7e) | R2-P-N5-SPLIT.md Add. 2 | L-1 MATCHES (rebuild byte-equal; R-1..R-6 met; bt_l1.py) | c5bc1365 |
+| P-N5-GATE full second review (l-si 4066f579 + fixes 1-2) | R2-P-N5-GATE.md boxes 1-4 | every statement SIGN, none refused; G-1..G-7 closed; R-1..R-10 as exact strings (l3req.py) | a28bc5e1, 276545dc, c035b35f |
+| GATE agreement with REFEREE 31 (a401ce0e) | R2-P-N5-GATE.md Add. 1 | equal on every verdict; GT-1..GT-9 = mine; adopted A*-EQUIV (i) on both runs and DATA D-1..D-5 | 8983b3d8 |
+| GATE fixes 3 + L-3 (l-si ef14451f) | Add. 2 | MATCHES (bt_l3.py 39 PASS; 46 diff regions read; lane tools re-read) | 6269fec5 |
+| P-N5-QN fixes 2 + L-2 (l-new 70501a99) | R2-P-N5-QN.md Add. 3 | MATCHES C140 §4; DEAD D1, D3 re-signed; predecessor's «no c bound» over-read withdrawn (L43) | f6cfb35e |
+| GATE fixes 4 + L-4 (l-si 676b6a1c) | Add. 3 | MATCHES; «RESULTS R127» is a forward reference (landing order R126 QN, R127 SPLIT, R128 GATE) | 93413fc6 |
+| GATE spot replay MW32_2 / FW16_2 (IDEAL-CYC) | Add. 4 | C 65 / 3 as cited; all must-0 counters 0 | 3282fc6c |
+| P-N5-SPLIT fixes 3-4 + L-3 (l-new 621e6b77) | R2-P-N5-SPLIT.md Add. 3 | MATCHES (independent rebuild byte-equal; R-D7a + R-U127 only; FW4/8 depth 4/8) | 98a64b91 |
+- Item C (P-N5-BONLY3) was CANCELLED by the Lead (B-ONLY3 is P-N5-CHAIN §5 = R125, LANDED).
+### OPEN / NEXT for successor 38
+- Open items: NONE.
+- Next is whatever the Lead routes. Expected:
+  - CHECKER C141 items on R127 (P-N5-SPLIT; L-3 a8661c4b).
+  - GATE's landing as R128 (L-4 6bfde78e). Condition: P-N5-SPLIT must be R127 on trunk first. Check «### R127» in trunk RESULTS before
+    any MATCH that cites it.
+  - Possibly line-only fixes from CHECKER (byte tests).
+- A «signed by both referees» MATCH is unconditional only after checking the other referee's file on origin/claude/referee.
+### Tools (own code; lane code never imported)
+- R2-P-N5-GATE/r2gate.py: one must-0 counter per GATE statement, on BOTH runs.
+  - The g3 engine is Γ3 HOW3 (r2split.howrun on r2end). The cyc engine is IDEAL-CYC (r2acyc).
+  - Options: --eng g3|cyc|both; --ctrl gr|low|np|efb|ss|sb|par|uz|ec|c|a2 (all fire); --mut COUNT SEED FILE; --gen COUNT SEED KIND;
+    --limit L (above L vertices, §3.1-§3.4 and §3.8 only).
+  - Records: rec_maxC, rec_maxAall, rec_maxAroute, rec_maxflips, rec_lamch_at_maxflips, rec_maxT.
+  - Cost: g3 with N > 170 is too slow (SPEC S1); cyc is cheap even at N 300 (MW32_2 in 5 s).
+- R2-P-N5-GATE/l3req.py: exact Old → New strings, each asserted once; it writes an applied reference file. bt_l3.py: byte-test pattern
+  (banned strings absent, required New present exactly once, diff regions counted).
+- R2-P-N5-SPLIT/bt_l3.py: independent rebuild of a line from an earlier line plus the «old» → «new» pairs parsed out of a fixes entry, then
+  cmp.
+- r2split.py (maxDep, maxRA, …), r2q.py (premise anchors), r2acyc.py, r2qn.py, r2end.py: as before.
+### Traps (this session)
+- Random genomes from r2end.gen are tiny (T ≤ 7, C = 1) and test little. Use --mut on pinned families for strength, and say so.
+- A firing control can be unable to fire by design. Examples: «movers only» for STEP-BOUND (a mover change is always on the abandoned
+  face's play); «after the play's first vertex» for PARALLEL; on Γ3 a pad follows every split. Check that each control fires on BOTH
+  engines before recording.
+- A script edited while a sequential sweep runs changes the later processes in it. Do not edit tool files mid-sweep.
+- Container restarts (~40 min; also at 02:48Z and 05:09Z): the tree survives on origin, the scratchpad does not. Re-extract inputs with
+  git show.
+- L43: a DEAD of an asymptotic statement on finitely many instances is DATA, not DEAD. Watch for «every constant c» / «polynomial» kills
+  (QN D2; GATE RA-MULT, P bound, K1-FLIP(c); SPLIT D7 RA-LOG).
+
 ## Resume point 2 (successor 37; 2026-11-12 01:1xZ by date -u)
 - A DONE: R2-P-N5-SPLIT Add. 2 (c5bc1365): L-1 MATCHES; Lead logged it, SPLIT's line now matches at both referees.
 - B DONE (verdict): R2-P-N5-GATE.md boxes 1-4 (a28bc5e1, 276545dc, c035b35f). Every statement SIGN; G-1..G-7 closed; L-3 requirements
