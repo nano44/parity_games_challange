@@ -3376,3 +3376,16 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
   `cd experiments/red/r230; LNEW=<dir> NMAX=44 DMAX=20 RESUME=1 python3 climbel230.py odo 2317 1500 inst/odo_dom_ylow_k16_m16.json`
   (RESUME=1 loads bestel_odo.json and continues at eval 725; the rng restarts from seed 2317, so the mutation stream differs from an
   uninterrupted run). No job is running at park.
+
+## Successor 65 (Opus 5.5; from 2026-11-12 03:56Z, date -u) — R231
+- Trap check: local claude/l-red 139 behind; ff to 908d135be. Handover check 10f2248d (VERIFY PASS), Lead 5/5, GO 04:13Z.
+- Item 0 (BLKX23, Lead 04:03Z + correction 04:05Z): docs/red/R231-blkx.md (de418fbf). Own engine (r221q/own.py) = L-NEW on every number
+  (T 28, k 1, D_mov 23, Dtop 23, sequence); high part one-hot + one nesting path 41 -> 42 -> 33 (blkplay231.py).
+- Item 1 (BOX 206 + CW(n), Lead 04:13Z): docs/red/R231-box206.md. DEPTH-COUNT, LOUD-SPLIT, DIV, DIV-LOUD SURVIVE (case by case; premises
+  quoted from trunk RESULTS by grep). dep231.py must-0 counters 0 everywhere; L-NEW's histograms / DIV counts equal. CW(n): own builder
+  carry231.py JSON-equal to L-NEW's CW4/8/16; CW32 own build: T 225, D_mov 202 (linear). NEW: Q_(>1) = 2/7/14/29 on CW(n) (one deep
+  loud step per depth 2..n-2): Q_(>c) unbounded at k = 1, linear.
+- Climbs (climb231.py, own engine, k kept 1, N <= 64): B (Q_(>1) from K1L10) 0 gain in 2,975 evals, stopped; A (D_mov from BLKX23) see note §4.
+- Tools in experiments/red/r231: blk231 (T, k, Dtop, D_mov, block seq), blkmap231, blkplay231, dep231 (BOX 206 counters + rgen),
+  cw231 (CW measures + ascents), carry231 (CW builder), climb231. MWR(n): r229/genmw229.py WTGT=R n 2. No LNEW env needed.
+- Costs: own.py is fast to N+M ~ 650 (CW16: 37 s for cw231); CW32 (N+M 1,515): cw231 9 min, dep231 ~9 min.
