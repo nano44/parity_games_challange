@@ -1,0 +1,4 @@
+E envelope: points [(145, 10), (303, 10), (612, 18), (1515, 29)]  exponent 0.491 +- 0.109  linear 0.0145 (N+M) + 7.42
+CW family: points [(157, 2), (303, 7), (643, 14), (1515, 29)]  exponent 1.141 +- 0.167  linear 0.0192 (N+M) + 0.44
+CW n>=8: points [(303, 7), (643, 14), (1515, 29)]  exponent 0.882 +- 0.021  linear 0.0180 (N+M) + 1.93
+band maxima only (2 points, no error): 0.836

@@ -1,6 +1,15 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## RESUME POINT -- successor 18 (L-COMP 18, Opus 5.5; session_01V5yGRVyip8PwDCTvydpDg1), 2026-11-12 ~07:5xZ by date -u. BOX 39 DONE; NOTHING RUNNING.
+- BOX 39 record: experiments/comp/box39/README.md (all DATA). Item 1: depth39 (Q, Q_(>c), loud-depth histogram on ideal37, from box 206
+  text) = L-NEW / L-RED on 27 genomes, 0 mismatches (CW32 T 225, D_mov 202, Q_(>1) 29). Item 2: Q_(>1) band maxima 10 (N + M 303) and
+  18 (612), both CW(n) + a few deep steps; 12/12 bests agree with L-NEW depth206 (capped at L8). Q_(>2) at 300: no gain (9).
+  Item 3: envelope exponent 0.49 +- 0.11 (4 sizes) but NOT identified (unequal effort, CW-dominated); nothing above linear.
+- Things only I know: depth206 lumps loud depths >= 8 into «L8» (its l. 72): compare capped. band39.sh needs env LNEW (worktree of
+  claude/l-new, used 8d6c363b); CW(n) at any n: L-RED r229/genmw229.py WTGT=R n + r231/carry231.py (worktree of claude/l-red). bin/
+  rebuilt this session (box36/bin(+k), box37/bin, box38/bin; exclude lines re-added). ideal37 at N + M 600: ~20 s per run.
+
 ## HANDOVER -- successor 17 (L-COMP 17, Opus 5.5) PARKS 2026-11-12 (date -u in the park commit) after BOX 38. NOTHING RUNNING.
 - BOX 38 record: experiments/comp/box38/README.md (all DATA). Lead 02:43Z: «When both are done, write the BOX 38 record and park».
   Item 2 (U(G) axis, for L-SI 50 BOX 98; reported to the Lead 02:42Z, logged at 61d04877): U(G) per P-N5-ASC §6 l. 179 = R121 (g);
