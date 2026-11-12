@@ -19,3 +19,4 @@
 - FRAME L18b (Lead 19:57Z, named frame change) = L18 + q5 (mover 10) free: XS 8,10,11,12,14,15, XORD 8 < 11 < 10 < 12 < 15 < 14 (reach order
   of A2_solved's wiring; also consistent with the C8 and H7 decodes). lnsb.sh with env XSL=8,10,11,12,14,15 XORDL=8,11,10,12,15,14.
   Results under L18b are tagged «L18b» in logs and docs, never mixed with L18 rows.
+- inframe.py: checks a genome lies in a pgad5/6 frame on a base (run/inframe.txt: every decode vs A2_solved under L18b).

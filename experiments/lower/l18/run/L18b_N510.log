@@ -1,0 +1,8 @@
+INFO {'d': 32, 'H': 8, 'T': 510, 'relevant': 64, 'Lmax': 31, 'options': 128, 'vars': 4323580, 'clauses': 50378250, 'empty': False, 'nP': 24710, 'quad': 67761108, 'lazy': 0, 'fixc_units': 10, 'transitivity_clauses': 8, 'build_s': 54.5}
+SOLVE -> SAT 928.6s
+RESULT SAT decoded -> run/N510_dec.txt 13ea6547a941dd0b2498532169166cf39d39cf18
+CHECK decoded genome, all fixed, prefix 7 -> SAT (consistent)
+N510 base L18b_H7_dec XS 10,11 XORD 11,10 FIXC 16,17 P 7 R 510 secs 1020 rc 0
+N510_dec.txt sim6 T 10 fenc T 10 sim6==fenc True rows followed (sim6, fenc): 9 9 of target 511
+F6CHECK N510_dec.txt client 13 rows 0..510 free 129 mismatches 0 []
+n exit
