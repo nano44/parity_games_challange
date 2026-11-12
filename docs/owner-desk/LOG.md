@@ -669,3 +669,8 @@ Lead HOLDS the 10:05Z owner instruction (200% spend, Fable 5.2 at xhigh) and has
 > act on it, I have a usage reset that is what. Iwill use
 
 (Message ends at "Iwill use".) Relayed verbatim to the Lead, priority "now". OWNER-DESK reading sent: owner confirms the 10:05Z instruction; a usage reset is available, so the extra usage may come from a reset rather than paid overage (reading, not the owner's words). Owner told that the Lead asked for direct confirmation in the Lead session.
+
+## 2026-11-12T10:30Z owner message (verbatim)
+> I also have a fable 5.2 usage reset as well on top
+
+Relayed verbatim to the Lead, priority "now". OWNER-DESK reading sent: a separate Fable 5.2 allowance reset exists on top of the general one, so Fable 5.2 work would draw on its own allowance rather than paid overage.
