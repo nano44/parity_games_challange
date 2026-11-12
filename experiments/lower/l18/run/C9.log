@@ -1,0 +1,4 @@
+C9_P9R64_12-14-15_gates P 9 R 64 LNS 12,14,15 FREE gates: RESULT LNS-UNSAT (this neighbourhood only; NOT a frame verdict)  secs 159
+C9_P9R64_8-11-12-14-15_ P 9 R 64 LNS 8,11,12,14,15 FREE : RESULT LNS-UNSAT (this neighbourhood only; NOT a frame verdict)  secs 112
+C9_P9R64_8-11_gates-starts P 9 R 64 LNS 8,11 FREE gates,starts: RESULT LNS-UNSAT (this neighbourhood only; NOT a frame verdict)  secs 108
+lnsb exit

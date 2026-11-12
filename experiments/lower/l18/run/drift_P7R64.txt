@@ -1,0 +1,10 @@
+== l17/run/A2_solved.txt
+row 106 chain0 movers [13, 16, 34, 50, 27, 35, 6, 5, 3, 1] chain1 movers [13, 17, 37, 10, 28, 32, 31, 57, 35, 6, 5, 3, 1] top opt 62 of mover 31 in B | helper states 01000111011 [16, 17, 27, 28, 31, 32, 34, 35, 37, 50, 57]
+row 114 chain0 movers [13, 16, 34, 35, 8, 7, 5, 3, 1] chain1 movers [13, 17, 37, 10, 50, 27, 35, 8, 7, 5, 3, 1] top opt 54 of mover 27 in B | helper states 0100001 [16, 17, 27, 34, 35, 37, 50]
+row 122 chain0 movers [13, 16, 34, 50, 27, 35, 8, 7, 5, 3, 1] chain1 movers [13, 17, 37, 10, 28, 32, 31, 57, 35, 8, 7, 5, 3, 1] top opt 62 of mover 31 in B | helper states 01000110011 [16, 17, 27, 28, 31, 32, 34, 35, 37, 50, 57]
+row 130 chain0 movers [13, 16, 34, 35, 8, 9, 6, 4, 3, 1] chain1 movers [13, 17, 37, 10, 50, 27, 35, 8, 9, 6, 4, 3, 1] top opt 54 of mover 27 in B | helper states 0100001 [16, 17, 27, 34, 35, 37, 50]
+== l18/run/P7R64_dec.txt
+row 106 chain0 movers [13, 16, 34, 50, 27, 35, 6, 5, 3, 1] chain1 movers [13, 17, 37, 10, 28, 32, 11, 58, 1] top opt 71 of mover 35 in A | helper states 0100011011 [16, 17, 27, 28, 32, 34, 35, 37, 50, 58]
+row 114 chain0 movers [13, 16, 41, 28, 32, 11, 30] chain1 movers [13, 17, 37, 10, 50, 27, 35, 6, 4, 3, 1] top opt 22 of mover 11 in A | helper states 1100101011 [16, 17, 27, 28, 30, 32, 35, 37, 41, 50]
+row 122 chain0 movers [13, 16, 34, 50, 27, 28, 32, 11, 58, 1] chain1 movers [13, 17, 37, 10, 28, 32, 11, 58, 1] top opt 27 of mover 13 in B | helper states 011001011 [16, 17, 27, 28, 32, 34, 37, 50, 58]
+row 130 chain0 movers [13, 16, 34, 50, 27, 28, 32, 11, 30] chain1 movers [13, 17, 37, 10, 50, 27, 28, 32, 11, 30] top opt 27 of mover 13 in B | helper states 011010101 [16, 17, 27, 28, 30, 32, 34, 37, 50]

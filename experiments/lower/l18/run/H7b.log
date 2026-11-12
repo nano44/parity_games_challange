@@ -1,0 +1,4 @@
+H7b_P7R160_8-11-12-14-15_ P 7 R 160 LNS 8,11,12,14,15 FREE : NO_ANSWER secs 700
+H7b_P7R160_12-14-15_gates P 7 R 160 LNS 12,14,15 FREE gates: RESULT LNS-UNSAT (this neighbourhood only; NOT a frame verdict)  secs 343
+H7b_P7R160_8-11_gates-starts P 7 R 160 LNS 8,11 FREE gates,starts: NO_ANSWER secs 700
+lnsb exit

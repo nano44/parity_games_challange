@@ -10,6 +10,15 @@
   UNSAT 165 s, {8,11} UNSAT 69 s, all XS UNSAT 73 s (gates/starts assumed): local only.
 - 18:28Z FULL P 7 R 64 (no hint): SAT 384 s, P7R64_dec 187aba91 follows rows 0..7 (sim6 = fenc), f6check first mismatch 122 (44/129).
   Running: P 7 R 130 (refine), P 10 R 64 (climb). Frozen so far l18/run/ (SHA1SUMS).
+- 19:17Z P 7 R 130 full and P 10 R 64 full: NO ANSWER 2,900 s. LNS (lnsb.sh): H7 P 7 R 130 all-XS SAT (350449ba, f6 to 138); C8 P 8 R 64
+  {12,14,15}+gates SAT (3b86b22a, rows 0..8, f6 to 114). C9 (P 9 R 64 around C8): 3 neighbourhoods LNS-UNSAT. H7b P 7 R 160 all-XS: no answer 700 s.
+  diag C8 row 9: movers 10 (q5, NOT in XS), 12, 13, 15 deviate. Asked the Lead 19:55Z: widen XS by 10? stop-rule target at P 13?
+- TRAP REPEAT (19:38Z): push 42967bb3 launched with a bare «&» (not tracked). It completed (VERIFY PASS, push exit 0), watched by a
+  tracked wait. Check stays: every push = run_in_background task with log + «push exit».
+- 19:5xZ-20:1xZ: H7b (P 7 R 160 around H7): all-XS no answer 700 s, {12,14,15}+gates LNS-UNSAT, {8,11}+gates,starts no answer. H7c (R 146):
+  {12,14,15}+gates and gates,starts LNS-UNSAT. C9b P 9 R 64 all-XS+gates no answer 900 s; 2nd question killed by container restart 20:2xZ.
+  Overrun: H7b was still running when C9b + H7c started (3 jobs for ~10 min). drift.py: f6's chains pass through clients (A2_solved: 8 via
+  35; P7R64_dec: 11 via 28->32): rewiring a client rewrites f6's chain; at rows 122/130 the decisive option becomes f6's own option 27.
 
 ## Successor 15 (Opus 5.5): BOX L17, GO from the Lead 10:09Z 2026-11-12 (handover check 67555d41, accepted)
 ### Resume point (10:1xZ 2026-11-12, date -u)

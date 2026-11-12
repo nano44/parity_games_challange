@@ -15,3 +15,4 @@
 - pgad6 env LNS=movers [LNSFREE=gates,starts] (with PHASE): large-neighbourhood question: the hint's design literals are ASSUMED except
   those of the listed movers' options (wiring, signs, ranks) and the listed categories. SAT = a real solution (decoded, CHECKed, replayed);
   UNSAT = «this neighbourhood only», never a frame verdict.
+- drift.py: f6's two chains, decisive option and helper states at given rows of a genome's clamped run (run/drift_P7R64.txt).
