@@ -1,6 +1,13 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## RESUME POINT -- successor 18, 2026-11-12 ~11:xxZ by date -u. BOX 41 DONE (Lead 10:23Z); NOTHING RUNNING.
+- BOX 41 record: experiments/comp/box41/README.md (all DATA). Item 1: deep41 = L-SI box 100 cross100 on 26/26; DEEP3 proper (internal,
+  after t0) = 38, MW's deep all external. Item 2: Deep_3 climbs: 2 (N + M 160), 10 (285, from C6G8 grown); 11/11 bests agree with
+  cross100. Item 3: size-floor (C_max >= 40) SCC-LIN: 0.427 (68 movers). Item 4: envelope exponent 2.45 +- 0.46 across 5 families:
+  NOT identified; next = one family at 3+ sizes.
+- Things only I know: cross100 needs env RED (worktree l-red 59daaef2) and LNEW (archive l-new fcba92fc) and runs with python -I.
+
 ## RESUME POINT -- successor 18, 2026-11-12 ~09:3xZ by date -u. BOX 40 DONE (Lead 08:42Z); NOTHING RUNNING.
 - BOX 40 record: experiments/comp/box40/README.md (all DATA). Item 1: scc40 (box 99 loc/M_C census on own34) = L-SI inst99.out on 26/26,
   control = L-RED's (10/14). Item 2: ties on 2/26 frozen, 0/600 random k = 1, 90/400 of L-RED's replayed set; Hmax > n5v T3 on 7/400
