@@ -52,11 +52,43 @@ Measure, for P ∈ {16, 32, 64}: k*_i := k*({i}, P) for each client i ∈ {q4, f
   | --- | --- | --- | --- | --- | --- | --- |
   | 16 | 3 (R 1) | 3 (R 2) | 3 (R 3) | 2 (R 4) | 3 | 1, 1, 1, 2 |
   | 32 | 4 (R 2) | 3 (R 4) | 4 (R 7) | 4 (R 8) | 4 | 1, 2, 2, 2 |
-  | 64 | PENDING | | | | | |
 - DRUP (out/kdrup.txt; kdrup.py = kr.py CNF + Glucose4 proof + l8/sat/drup.c; proof and CNF deleted, CNF sha1 kept): the largest
-  UNSAT k of every P 16 line is s VERIFIED (5 / 5). P 32: KDRUP32.
+  UNSAT k of every P 16 line is s VERIFIED (5 / 5). P 32: q4 k 3 (4,767,894 lemmas), f5 k 2, q6 k 3 (4,690,783) s VERIFIED; the shared
+  set's k 3 is VERIFIED at P 30 (1,779,454 lemmas; UNSAT at P 30 implies UNSAT at P 32: a run separating rows 0..32 separates
+  rows 0..30); f6 k 3 P 32: Glucose gave no answer within 2,900 s, so that line is CaDiCaL-only (232 s). Smallest UNSAT horizon at
+  k 3 (out/minP_k3.txt): q4 32, q6 30, f6 32, all four 30. P 64 was not run (k ≤ 4 cannot reach it and the P 32 lines already need 4).
 - Monotonicity (PROVED, lane): a k-pair system that separates gives a (k+1)-pair system that separates (a top pair whose movers never
   move: better = own state; keys below are unchanged by M4), so «k UNSAT» implies «k−1 UNSAT» and the first SAT is k*.
+
+## 4. Exact model and verdict under the rule of §2
+- Exact runs (ekr.py; replay sim15.py, integer ENC values; frozen in experiments/lower/l15/out/):
+  | question | result | file (sha1) |
+  | --- | --- | --- |
+  | q4 alone, k 3, P 16 | SAT, replay separation OK | E_k3_P16_q4.txt (b8d68675) |
+  | all four, k 3, P 16 | SAT (208 s), replay separation OK, helper moves 4 4 2 3 1 3 | E_k3_P16_shared.txt (0c6c4793) |
+  | all four, k 4, P 32 | NO ANSWER (2,900 s cap; 159,921 vars, 600,896 clauses) | ekr_k4_P32_shared.log |
+  So the relaxed k* is attained in the exact model wherever the exact solver answered (q4 P 16; all four P 16).
+- Rule (A) (one replayed shared cascade with k ≤ max_i k*_i + 1 serves all four at the LARGEST P tested): met at P 16 (k 3 = max_i
+  k*_i, exact, replayed); NOT decided at P 32 (exact solver hit the cap). Rule (B) (shared UNSAT at max_i k*_i + 1, gap not
+  shrinking): NOT met; the relaxed gap k*_S − max_i k*_i is 0 at P 16 and at P 32. Rule (C): k*_i is ABOVE the fuel floor and the
+  excess grows with P (P 16: 3, 3, 3, 2 against floors 1, 1, 1, 2; P 32: 4, 3, 4, 4 against 1, 2, 2, 2).
+- VERDICT (by the rule as written): INCONCLUSIVE between (A) and (B), because (A) needs the largest P and the exact P 32 run gave
+  no answer. Evidence (DATA): every measured point is on the (A) side (gap 0 relaxed at P 16 and 32; exact shared = max at P 16),
+  and none on the (B) side. (C) holds: timing costs more than fuel.
+- What the numbers say (DATA + READING). A private cascade driven only by the parity clock needs about log2(P) − 1 pairs to time
+  events up to row P (k* = 3 at P 16, 4 at P 32, for the hardest client), however few changes the client has (q4: ONE change, at
+  row 13, needs 3 pairs; the fuel floor is 1 mover). The cascade is a clock that must count to the event time, and a clock that
+  counts to P serves every client with events before P (shared = max). Read against OSC-ROOM: the per-level REBUILD picture gets no
+  support here; the per-HORIZON cost (≈ log2 P pairs ≈ the number of capped levels, since T ≈ 2^levels) is real but is paid ONCE
+  by a shared cascade. That is the HIT7 picture (one shared helper cascade, linear d), not the Fibonacci one of L10 §3c.
+- PROVED (lane), scope «private cascade on levels 8..7+k driven by o(7) alone, client lists from core8 rows 0..P, core gates as
+  core8»: no cascade of k ≤ 2 pairs serves q4, f5 or q6 on rows 0..16, none of k ≤ 3 serves q4 or q6 on rows 0..32 or all four on
+  rows 0..30 (relaxed K, DRUP VERIFIED; brute force agrees at k ≤ 2). f6 k ≤ 3 on rows 0..32: solver only.
+  CONJECTURE KEY-CLOCK: a private cascade must have ≥ log2(P) − c pairs to separate a client with a tight change near row P.
+  DATA for P ≤ 32 only.
+- Recommendation (not a decision). Per §2's rule the lane returns to L10 option (a) only on (A); with INCONCLUSIVE, the cheapest
+  decider is the exact shared run at P 32 with symmetry breaking or an incremental encoding (or P 24, where the relaxed k* is
+  still 3 or 4), or the Lead may rule that P 16 plus the relaxed P 32 suffices for (A).
 
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All statements are about

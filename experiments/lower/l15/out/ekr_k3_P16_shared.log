@@ -1,0 +1,20 @@
+EKR K 3 P 16 clients [8, 11, 12, 13] vars 36679 clauses 135604
+RESULT SAT 208.2s
+decoded -> /tmp/claude-0/-home-user-parity-games-challange/4d00aad6-39fe-5322-ab8b-17d3ac95748b/scratchpad/E_k3_P16_shared.txt
+0 011001
+1 111000
+2 101100
+3 111100
+4 010100
+5 010110
+6 010011
+7 011011
+8 001011
+9 101011
+10 101010
+11 101010
+12 101110
+13 111110
+14 011110
+15 011110
+16 011110
