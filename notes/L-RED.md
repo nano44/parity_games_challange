@@ -3343,3 +3343,7 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
   writing «X is not in packet P», grep P's FROZEN text. My R230-betaloc G2 repeated the slip (fixed in its Addendum A).
 - Trap: a wait loop `until ! pgrep -f "bash scripts/push.sh"` inside a command that itself contains that string matches itself and
   never ends. Wait on the push task's output file instead.
+
+### Successor 64, item 5 (2026-11-12T02:05Z): [E-LEV] counter side DONE -> docs/red/R230-elev.md
+- Climbs c12/c24/c48 at U = 2, inv > 0: best T3 23/31/39; fb 1, total = T3 + 3, nstd 0 everywhere. No super-linear growth. Frozen in
+  experiments/red/r230/inst/elev_best_c*.json. Proof-side need for [E-LEV] stays OPEN (R121 shows UP-JUMP needs it).

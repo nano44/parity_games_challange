@@ -10,3 +10,5 @@ start {'N': 12, 'M': 36, 'U': 2, 'inv': 290, 'T3': 10, 'total': 13, 'fb': 1, 'ns
 9738 score (20, 23) {'N': 12, 'M': 35, 'U': 2, 'inv': 192, 'T3': 20, 'total': 23, 'fb': 1, 'nstd': 0, 'capped': False}
 9975 score (21, 24) {'N': 12, 'M': 35, 'U': 2, 'inv': 174, 'T3': 21, 'total': 24, 'fb': 1, 'nstd': 0, 'capped': False}
 11754 score (22, 25) {'N': 12, 'M': 35, 'U': 2, 'inv': 226, 'T3': 22, 'total': 25, 'fb': 1, 'nstd': 0, 'capped': False}
+20833 score (23, 26) {'N': 12, 'M': 35, 'U': 2, 'inv': 192, 'T3': 23, 'total': 26, 'fb': 1, 'nstd': 0, 'capped': False}
+END evals 30000 best (23, 26) rejected 1556 fails 0

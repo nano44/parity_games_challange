@@ -7,3 +7,4 @@ start {'N': 48, 'M': 97, 'U': 2, 'inv': 130, 'T3': 30, 'total': 33, 'fb': 1, 'ns
 9177 score (36, 39) {'N': 48, 'M': 87, 'U': 2, 'inv': 339, 'T3': 36, 'total': 39, 'fb': 1, 'nstd': 0, 'capped': False}
 9813 score (37, 40) {'N': 48, 'M': 89, 'U': 2, 'inv': 224, 'T3': 37, 'total': 40, 'fb': 1, 'nstd': 0, 'capped': False}
 17172 score (39, 42) {'N': 48, 'M': 88, 'U': 2, 'inv': 278, 'T3': 39, 'total': 42, 'fb': 1, 'nstd': 0, 'capped': False}
+END evals 20000 best (39, 42) rejected 253 fails 0
