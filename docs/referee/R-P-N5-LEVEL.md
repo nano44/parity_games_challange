@@ -144,3 +144,95 @@ REFEREE successor 34 (D1; the Lead's «go» 20:04Z, item B). Date -u at writing 
 - Note N-4: the class order's totality does not need B-ONLY (reward is a rank, injective on vertices); the packet's extra argument
   (distinct priorities of the possible cycle nodes) is what makes the tools' «reward = priority of Λ» a faithful encoding. No gap.
 
+## 3. Replay with my lane's own code (no lane code; written from box 208's statements, which the packet's statements equal or weaken)
+- Tool: scratch/box208_replay.py (my lane, successor 32; own Γ(G) builder and IDEAL-CYC Howard run xicyc_replay.howard, own VJ engine
+  xicyc_vj, generator end_replay.gen; 36 must-be-0 counters k1 … tb, units in its header; controls c_k4, c_k5, ch1-ch5, c_S, c_Y). It
+  tests (K2) on pairs of values (the packet's triple form is used only in (K5), whose counter k5 is the conclusion) and the (P5) / (P7)
+  objects with H built and valued on its own (p5v, p5h). Re-run by me now, new seeds (driver scratch/box208_logs/s34_run.sh; logs
+  box208_logs/s34_*.out):
+  | set | genomes | 36 must-be-0 counters | descriptive |
+  | --- | --- | --- | --- |
+  | gen rand 3410 / deep 3410 / wide 3410 / acyc 3410 / selfl 3410 | 5 × 2,000 | all 0 | max T 8 / 9 / 7 / 4 / 9 |
+  | gen rand 3401 | 300 | all 0 | max T 7 |
+  | files: the packet's frozen genomes (box202-207 inst, the three DEAD_SEG2P of R118 (m); from `git archive 1e6df499`) | 82 | all 0 | max T 199, max Φ values 199, plateaus 75 (longest 13) |
+  | mut 3420 (≤ 6 mutations) of MWR4_2 and CW4_n (the two bases of the longest plateaus in §11) | 600 | all 0 | max T 33, plateaus 75 (longest 27) |
+  Controls fire on every set with stalls (c_k4, c_k5, ch1-ch5, c_S, c_Y > 0; ch3v 0 as designed). Runtime 2 min 33 s in all.
+- What this does and does not show: DATA, short runs (T ≤ 199); it tests every step of the proofs state by state on these runs and not
+  the constants. A plateau of 27 steps among my mutants is one step longer than the packet's «no plateau longer than 26 steps» for the
+  lane's sets; it is far below N + 2M + 5 there and changes nothing (that clause is about the lane's sets).
+
+## 4. DATA rule (L43; «every DATA clause names its counter»), clause by clause, against the frozen outputs (scratch/level_data.py, mine; log level_logs/data.out)
+1. §11 level208.py: the 16 counters are named with units in the tool's header (pinned 40828775…) and in §11. My parser: sum 0 on
+   level208_records (25), level208_corpus (53), the seven random sets (2,000 + 6 × 500 = 5,000), the eight mut208 sets (8 × 250 = 2,000),
+   own208_records / own208_corpus (25 / 53; T equal to the first engine's on 78 of 78, my comparison); the g3 sets 0 (DATA, Γ3, not
+   claimed). Controls: level208_ctrl1 fires winstall 7, 1 (2 of 4 genomes), ctrl1_rand winstall + wbeta 50, ctrl2 198. MEETS.
+2. §11 plat208.py: p1, pclos, p2, p3, p4, p5 named with units; sum 0 on records 25, corpus 53, rand 6 × 600 = 3,600, mut 2 × 600 =
+   1,200 (my parser reads the «genomes» / «samples» fields); control fires (pclos 210, p5 1). MEETS.
+3. §11 rv208.py: «49 must-0 counters» named in rv208.py's header (pinned 7916cdf0…; I counted 49 names); the output prints a counter
+   only when it is not 0, and no VIOLATION line. My parser: no must-0 name with a non-zero value in rv208_frozen (81), rv208_mut (480),
+   rv208_rand (3,300); the control prints 13 of them non-zero. MEETS in the packet; in the line the 49 names are given by reference to
+   the tool only (LO-1, optional).
+4. §9 G_N: counter k5 with its unit and set, cited from L-COMP 19 BOX 43 (claude/l-comp a6cce717, README.md sha1 db74c155…, equal to the
+   packet's pin prefix). I opened that README's item 1 (b): G_1 «none: all 23 are 0», G_2 k5 = 38, «N = 2, step 5 → 6: (K5) fails at the
+   mover g2 and its successor f2», run lengths 8 … 2,294, q 3 … 80, longest plateau 2 … 574: as the packet says. In the packet MEETS; in
+   the line the counter is called «the counter of (K5)», without its name or file (LT-2).
+5. «No run tests the constants» (§11 head; PR-4): my parser gives most Φ values **199 on MW32_2** (level208_corpus.out; N 300, M 657,
+   P = 2·657·(300 + 1,314) = **2,120,796**) and longest plateau **26** (level208.py platmax on mut208_MWR4_2_s2086.out; rv208.py platmax
+   on the CW4_n rows of rv208_mut_s2094.out); plat208's maxlen is at most 25. The packet's §11 says so with the instance; **the line's
+   clause names no instance, tool, unit or file** («at most 199 values of Φ in a run, where P = 2,120,796, and no plateau longer than 26
+   steps»). Landed R127's line gives the form for the same kind of clause («every run is short (T3 ≤ 199; unit: states of the HOW3 run,
+   max over the 28 frozen instances, split199.out T3; 199 on MW32_2)»). REQUIRED: LT-1.
+6. Independent replays: «every fail counter 0, their counters in their own outputs, cited, not re-run» — the landed form of R126 / R127
+   («… in their own pinned outputs, cited, not re-run»). MEETS (precedent); nothing asked.
+7. Every other number in the line is a count of genomes / runs of the sets above; each checked in items 1-3.
+
+## 5. Line L-1 against «To sign»
+- Statements: each clause of L-1 is the packet's statement or a weaker summary of it, with the same quantifiers and scope: (K1)-(K5)
+  (K3 without (b), (e); K4 without the face clause), LEVEL ((L1), (L4) without σ̄_t(g_i) = β_(g_i), (L5) without the (α) refinement; (L2),
+  (L3) omitted), WIN, R-INT (without the loud-prefix clause), R-HEIGHT, K1-TCYC, FVS-TCYC, PLATEAU, ALL-TCYC. Nothing in L-1 says more
+  than a signed statement. The «Consequences» bullet of ALL-TCYC (a «To sign» row) is not in L-1 (LO-2, optional: without it the landed
+  line does not record the bound on R118's R or on D^tot, which the packet's §13 names as what a signed ALL-TCYC would change).
+- Premise sentence: matches «To sign» and §1; the claim «the class facts, LEVEL, WIN, R-INT, R-HEIGHT, K1-TCYC and FVS-TCYC use neither
+  PLATEAU nor F1, [OPT], (D1) or BR-SEG-G» is true of the packet's proofs (F1 and [OPT] are used only in (P6); (D1) only in (P4); landed
+  lemmas carry their own premises).
+- Scope tail: «Howard all-switch with Even, the maximiser, improving, switch-best with keep-if-best», «single-switch rules and other
+  rules are not covered», the genome-only steps named, «nothing is proved on Γ3, for N5′-xi, for N5 or for other games», not M4 / M3,
+  not a step-4 pass, G-N5-TIME OPEN: both Lead caveats (ALL-SWITCH only; MAXIMISER improves) are in the statement. L41 credit for the
+  (P6) step to REFEREE 32 with L-RED-B's independent G-1: present.
+- REQUIRED (strings; each old string occurs exactly once in L-1, checked by scratch/level_l1fix.py; apply in this order; log
+  level_logs/l1fix.out):
+  - LT-1 (L43, §4 item 5): «no run tests the constants: at most 199 values of Φ in a run, where P = 2,120,796, and no plateau longer
+    than 26 steps» → «no run tests the constants: at most 199 values of Φ in a run (unit: values of Φ with reference b = T;
+    level208.py's phivals, largest over the level208.py sets above; 199 on MW32_2, out/level208_corpus.out, where P = 2,120,796) and no
+    plateau longer than 26 steps (unit: steps; level208.py's platmax and rv208.py's platmax, largest over the sets above; 26 on mutants
+    of MWR4_2, out/mut208_MWR4_2_s2086.out, and of CW4_n, out/rv208_mut_s2094.out)»
+  - LT-2 (L43, §4 item 4): «the counter of (K5) is 0 on G_1 and first fires on G_2 at the step 5 → 6» → «L-COMP's counter k5 of (K5)
+    (experiments/comp/box43/README.md item 1 (b), column k5) is 0 on G_1 and first fires on G_2 at the step 5 → 6»
+  - LT-3 (Lean citation form, §7): «L-FORMAL's lane-level Lean theorems Genome.k1, Genome.k2, Genome.k3, Genome.k5, level_count, plateau
+    and brsegG (claude/l-formal f74d38a4)» → «L-FORMAL's theorems PG.Genome.k1, PG.Genome.k2, PG.Genome.k3, PG.Genome.k5,
+    PG.level_count, PG.plateau and PG.brsegG, Lean-checked (lane) on L-FORMAL's transcription, not through CHECKER (claude/l-formal
+    f74d38a4)»
+  - Whitespace: each string is one line; one space wherever this file wraps a line inside a string. Result of my script on L-1:
+    sha1 **389645a2a646522a8fb57f05dba4458695ac74f2**, 7,706 B, one line, 0 «|», 89 «(» = 89 «)». A lane-built L-2 by script may
+    differ from it only by the lane's own optional changes, which then need a byte test.
+- OPTIONAL (the Lead's call): LO-1, after «the 49 must-0 counters of rv208.py»: add «(named in its header; a counter that is 0 is not
+  printed)». LO-2: add ALL-TCYC's «Consequences» (R, Q and D^tot(v) − 1 are at most P(N + 2M + 6) + N) to the ALL-TCYC clause.
+- Verdict on L-1: **does NOT match yet**: LT-1..LT-3 required; no statement changes.
+
+## 6. TARGET.md diff: CLEAN
+- The packet's [Q TARGET] quotes (§2 M4; §4's first bullet) occur verbatim in TARGET.md (§1.2). No statement is about W_E / W_O or an
+  algorithm for parity games; every statement is a count of steps of one improvement rule on IDEAL-CYC(G) for genomes. TARGET.md §4
+  («Polynomial only on a restricted class …») applies; not M4, not presented as M3 (§7e's novelty check not done, as the packet says),
+  not a step-4 pass, G-N5-TIME OPEN. The line's TARGET sentence says the same. Nothing to change.
+
+## 7. Lean citations
+- The packet cites Lean only as lane-level and never as a premise: §3 (Genome.k1, k2, k3, k5), §4 (level_count), §7 (brsegG, plateau),
+  each «Lean-checked (lane)» with claude/l-formal f74d38a4, and the INDEX's «K4Statement … NOT PROVED» is reported. I checked at f74d38a4
+  (`git grep`): theorem k1, k5 (GenomeK15.lean, namespace PG.Genome), k2 (GenomeK2.lean), k3 (GenomeK3.lean), level_count
+  (LevelCount.lean), plateau (Plateau.lean), brsegG (Corollaries.lean l. 108); INDEX.md l. 42 «K4Statement (GenomeClass) | NOT PROVED»;
+  no line with sorry / admit / axiom in lean/ at f74d38a4. My lane's referee build of f74d38a4 (successor 33; logs
+  scratch/box209_logs/lean_*.out; NOT CHECKER's exact-commit run): «Build completed successfully (3179 jobs).», and PG.Genome.k1, k2,
+  k3, k5, PG.level_count, PG.plateau, PG.brsegG each «depends on axioms: [propext, Classical.choice, Quot.sound]». So the citations
+  are accurate as «Lean-checked (lane)»; the line's wording is fixed by LT-3. The packet's body writes «Genome.k1» for PG.Genome.k1
+  (note N-5; body text, not landing text).
+
