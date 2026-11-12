@@ -52,11 +52,27 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   same sub-game argument with Y = everything, because (P4)'s equal-class case needs only B-ONLY3 (a face pbeta_g never has Lambda = c_W)
   and the in-edges of e_g; (c) the two engines share the builder gamma3.py, so the second engine is independent for values and runs
   only; (d) LEVEL needs nothing about the order of the e-priorities, which is why [E-LEV] drops out.
-- Idea parked, NOT claimed anywhere (for a later box if the Lead wants it): after splitting every vertex into a priority vertex and a
-  choice vertex of priority 0, choice vertices are in no set Pi, so DOM and (K4) should hold in any parity game (NOT checked), and LEVEL
-  would go through for the class (Lambda, Pi restricted to the even vertices above the largest odd priority). What fails in general is PLATEAU: on a plateau Odd may still flip inside Y, so the
-  lower scale is a two-player game again; and an odd top scale has negative weights. So a general statement would have to start from
-  «non-negative top scale + one-player lower scale on plateaus», or use the dual run for odd scales (N5 is symmetric). Untested.
+- PUSHED 3f896099 (box 209 + box 208 Addendum B; VERIFY PASS 14:39Z); message to the Lead 14:40Z (delivered). Still no answer from
+  the Lead since 11:27Z when box 210 was written; I told the Lead I would write it unless told otherwise.
+- BOX 210 (docs/new/N5-GENLEVEL-box210.md; experiments/new/box210/: gen210.py, climb210.py, n5lev210.py, scale210.py, summ210.py,
+  quotes210.py, run210.sh A-G, check210.sh / .out, out/; check.sh «BOX 210 GEN-LEVEL»): the parked idea, done. CANDIDATES: Lemma G-CLASS
+  (the five class facts on every Howard run of every parity game in SPLIT FORM: each vertex i -> P_i (one successor, priority + 2) ->
+  C_i (the choices, priority 0); class = (Lambda, Pi restricted to an up-set H of even P-vertices)), Lemma GEN-LEVEL (at most 2 |P| n
+  non-stall steps; a stall puts a cycle of the map s into the front), Lemma GEN-PLATEAU (Y closed, classes constant, Odd's chosen
+  successor has its vertex's class; NOT: Odd's choice constant), Theorem OF (CONDITIONAL on (OF): Odd's reply constant on Y during
+  every plateau and after the last class change => T <= 2 |P| n (n_E + 1) + n_E; boxes 208 / 209 are its instances with (OF) = (P4)).
+  Premises: R15 (a), [OPT] as in R118, R118 (i) BR-SEG-G. No bound for general games is claimed.
+  DATA: 0 on Friedmann's switch-all N = 2..7, friedmannsubexp_1..8, fearnleysubexp_1..6 and three more family games (23 files, values
+  cross-checked against si.Engine), random games, every reference state on six family games, hill-climbs; controls fire. On the
+  exponential families: non-stall steps 5 / 3 / 3 whatever the size; ONE plateau and ONE tail of about T/2 each; Odd flips inside
+  them, so (OF) fails there. Scale profile (scale210.py): loud steps per priority threshold double per block: a binary counter with
+  one scale per bit. N5's own sigma-sequence (n5lev210.py): K1, K3, K4, L1, L3 are 0, K5 (class-DOM) and L4 fire: S4a is not
+  switch-best, so the lemma reaches N5'-xi only where its steps are Howard steps.
+  Things only I know: (a) (G-K5) needs no ext / F4': class_(t+1)(x) = class_(t+1)(y') >= class_t(y') >= class_t(y) by F1 and COARSE;
+  (b) (G-K4)'s second case (the play of the other successor returns to g) needs no [OPT], only that H is even; (c) for an ODD scale
+  the mirror argument (order lagging vertices by FINAL class, from the top) settles one vertex per step but freezes nothing, so there
+  is no plateau structure: that is the missing piece for a multi-scale statement, and even with it the bound would be
+  n^(O(number of scales)); (d) the hill-climbs find only short runs (T <= 18): the hard evidence is the family table.
 - Traps (successor 72): (4) I edited run209.sh while a job was still reading it, in spite of trap (2). The edit added an rm -rf line
   near the offset bash would resume from; I killed the job before it got there and nothing was lost. Run scripts are now one function
   (main "$@"; exit) so bash has read all of the file before running, and I do not edit a script or tool while a job that uses it runs.
@@ -2636,6 +2652,11 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   experiments/new/box189/gamma3.py (the pads); claude/l-red 707c0e82 experiments/red/r232/how3_232.py, r230/elev230.py, r230/bonly3_230.py
   (headers and the engine loop); claude/l-si d8945c4a docs/si/box101-lamgap.md (DEEP3 lines), box102-deep3.md (§0). NO external source
   opened; nothing in boxes 208-209 cites one.
+- (successor 72, 2026-11-12, box 210) Opened, all inside the fleet: docs/new/N5-ssi-global.md SPEC S1-S5 (l. 24-66); experiments/new/n5.py
+  (the loop, l. 19-62); experiments/new/box191/brseg_gen191.py (Howard on general games, the best-reward start) and check191.out (sae
+  T values); trunk 471aba45 RESULTS R118's line (BR-SEG-G, the switchallexp DATA), R57's and R15's titles; the .pg files of
+  experiments/new/box191/inst, experiments/n5-box21/instances, experiments/si/instances (read by the tools, sha1 in
+  box210/out/gen210_instances.sha1). NO external source opened: the box says so, and claims no novelty.
 ## Dead ends (successor 68, box 203; docs/new/N5-XIFVS-box202.md Addendum A, docs/new/N5-FLIP-box203.md §2)
 - CONJECTURE K1-FLIP(2) and K1-FLIP(c), every constant c, at k = 1: killed by L-RED 63's MWR(n) (claude/l-red 406ef2fd, R229-box202;
   copies experiments/new/box203/inst MWR4_2 856d369b, MWR8_2 918f1414, MWR16_2 2ccda9a9): gate (qz, 0) flips 2n + 1 with lamch 0.

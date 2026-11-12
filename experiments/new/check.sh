@@ -1167,4 +1167,13 @@ if [ "$r209" -eq 0 ] && [ -z "$d209" ] && ! grep -v "^ctrl" box209/check209.out 
 else
   echo "BOX 209 LEVEL3 check: FAILED (check209.sh exit $r209)"; echo "$d209" | head -30; echo "$run209" | tail -15; exit 1
 fi
+# BOX 210 GEN-LEVEL (L-NEW successor 72): CANDIDATES Lemma G-CLASS / GEN-LEVEL / GEN-PLATEAU for Howard on split-form parity games: must-0 counters on the check set, three controls fire, frozen outputs unchanged and all 0, cross-check OK, quotes found
+r210=0; run210=$(cd box210 && bash check210.sh 2>&1) || r210=$?
+d210=$(diff <(printf '%s\n' "$run210") box210/check210.out 2>&1) || true
+m210='\b(F1|K1|K3|K4|K5|L1|L3|L3m|L4|L4c|L5|P1|P2|P3|P4w) [1-9]'
+if [ "$r210" -eq 0 ] && [ -z "$d210" ] && ! grep "^gen210" box210/check210.out | grep -Eq "$m210" && grep -Eq "^ctrl1 .*\bL3 [1-9].*\bL4 [1-9]" box210/check210.out && grep -Eq "^ctrl2 .*\bK5 [1-9]" box210/check210.out && grep -Eq "^ctrl3 .*\bK4 [1-9].*\bK5 [1-9]" box210/check210.out && ! cat box210/out/gen210_families.out box210/out/gen210_rand.out box210/out/gen210_allb.out box210/out/climb210.out | grep -Eq "$m210" && [ "$(grep -c '^gen210 pg' box210/out/gen210_families.out)" -eq 23 ] && [ "$(grep -c ' OK$' box210/out/gen210_xcheck.out)" -eq 23 ] && grep -Eq "ctrl 1 .*\bL4 [1-9]" box210/out/gen210_ctrl.out && grep -Eq "ctrl 2 .*\bK5 [1-9]" box210/out/gen210_ctrl.out && grep -Eq "ctrl 3 .*\bK5 [1-9]" box210/out/gen210_ctrl.out && ! grep "^n5lev" box210/out/n5lev210.out | grep -Eq '\b(F1|K1|K3|K4|L1|L3|L3m) [1-9]' && grep "^n5lev rand" box210/out/n5lev210.out | grep -Eq '\bK5 [1-9]' && grep -q "missing 0 " box210/out/quotes210.out && (cd box210/out && sha1sum -c --quiet SHA1SUMS); then
+  echo "BOX 210 GEN-LEVEL: G-CLASS / GEN-LEVEL / GEN-PLATEAU must-0 counters 0 (check set and frozen outputs), controls fire, cross-check OK: PASS"
+else
+  echo "BOX 210 GEN-LEVEL check: FAILED (check210.sh exit $r210)"; echo "$d210" | head -30; echo "$run210" | tail -15; exit 1
+fi
 rm -rf "$tmp"
