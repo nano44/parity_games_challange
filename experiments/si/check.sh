@@ -1292,3 +1292,5 @@ bash box96/check96.sh
 bash box97/check97.sh
 # box 98 (CHAIN3 U-dependence reading; asc98 / climb98, two engines; CONJECTURE U-FREE; docs/si/box98-udep.md)
 bash box98/check98.sh
+# box 99 (U-FREE proof side: Lemma SCC-RED, CAP; CONJECTURE SCC-LIN; scc99 census; docs/si/box99-ufree.md)
+bash box99/check99.sh
