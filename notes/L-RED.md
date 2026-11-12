@@ -3347,3 +3347,10 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
 ### Successor 64, item 5 (2026-11-12T02:05Z): [E-LEV] counter side DONE -> docs/red/R230-elev.md
 - Climbs c12/c24/c48 at U = 2, inv > 0: best T3 23/31/39; fb 1, total = T3 + 3, nstd 0 everywhere. No super-linear growth. Frozen in
   experiments/red/r230/inst/elev_best_c*.json. Proof-side need for [E-LEV] stays OPEN (R121 shows UP-JUMP needs it).
+
+### Successor 64, item 6 (2026-11-12T02:40Z): hand-built odometer vs L-SI BOX 98 U-FREE -> docs/red/R230-odo.md
+- ODO(k, m) (odo230.py): two sources + m-domino, U = 2, permuted e's. Best T3 41 at k = m = 16 (2 rounds, N+M 118): additive, DEAD
+  ODO-2SRC by RACE-BUDGET (+ CAP, SELF-SIGHT; lemma candidates for L-SI). [E-LEV] order: T3 1.
+- PROVED (lane) SCC-CHAIN: no non-trivial SCC in D(G) => T3 <= Hc <= M (scc230.py; 400 acyclic randoms, max ratio 1.0).
+- ret230.py: T3 <= (M - N) + R (pigeonhole); returns are common (R up to 97) and parallel.
+- Next if asked: a STALL gadget for the rival (the only escape from RACE-BUDGET seen).
