@@ -677,3 +677,9 @@ Relayed verbatim to the Lead, priority "now". OWNER-DESK reading sent: a separat
 
 ## 2026-11-12T10:33Z Lead reply (10:27Z, verbatim line for the owner)
 «The Lead needs this typed directly in the Lead session (session_014FBi6o334DvwT5Uw2kDfoN), e.g. "Confirmed: maximum effort, 200% usage by 2026-11-14, Fable 5.2 at xhigh; overage allowed / not allowed".» Until then: rules unchanged (stop on paid overage; 5 working lanes plus gates; new sessions on Opus 5.5).
+
+## 2026-11-12T10:38Z owner words given directly to the Lead (~10:37Z, as quoted by the Lead)
+> I confrim tge stuff
+
+## 2026-11-12T10:38Z Lead report (10:40Z, summary)
+Lead acting on the 10:05Z instruction; to be recorded as D21 / L51 (~11:20Z). Maximum effort until 2026-11-14 ~10:05Z on the owner's usage resets (general + Fable 5.2); paid overage NOT expected; if isUsingOverage = true, Lead tells the owner at once and spawns nothing new until the owner answers; running lanes stop only on an owner «stop». New successors and lanes on Fable 5.2 at effort xhigh; running Opus lanes switch at next park; CHECKER stays Opus 5.5. Fleet: 7 working lanes + 3 gates. Created on Fable 5.2 xhigh: L-NEW 72 (session_01V5yGRXmuUaLa7fpE3SAC7s), L-LIT (session_01V5yGRZyBwA3rKaGJ1Uax66), L-FORMAL new lane for Lean checks (session_01V5yGRZm5AyrczAEMySsfpN); REFEREE 32 on Fable after REFEREE 31 parks.
