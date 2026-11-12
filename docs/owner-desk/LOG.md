@@ -688,3 +688,7 @@ Lead acting on the 10:05Z instruction; to be recorded as D21 / L51 (~11:20Z). Ma
 > so is it workign well now with the update? Are we utilising the usage?
 
 Answered from get_session (12:03Z): L-NEW 72 and L-FORMAL running on claude-fable-5-2 xhigh (cost ~$20 and ~$7 since ~10:37Z); Lead on opus-5-5 high, five-hour limit "allowed", isUsingOverage false; trunk last push 10:23Z (Lead push 471aba45 in progress). Relayed to the Lead with a request for a utilisation figure against the D21 target.
+
+## 2026-11-12T12:07Z Lead owner line (12:10Z, verbatim)
+«Yes, it is working, and D21 is in force. 10 sessions are running: 7 research lanes (L-NEW 72, L-FORMAL and L-LIT on Fable 5.2 xhigh; L-SI 51, L-RED 66, L-COMP 18 and L-LOWER 15 on Opus, each switching to Fable 5.2 at its next park, two of them within the hour) plus 3 gates (REFEREE 32 on Fable 5.2 xhigh; REFEREE-2 37 and CHECKER on Opus). No overage, and the five-hour limit reads «allowed». I cannot see an allowance percentage, so I cannot say whether we are on pace for 200%. To spend more usefully, I propose one more lane, L-RED-B, a second adversary on Fable 5.2 xhigh against L-NEW 72's new CANDIDATE (a polynomial bound at k = 1 on IDEAL-CYC, the biggest claim of the week). Under D1, a new attack lane needs your «yes».»
+Open owner question (Lead, D1): yes/no to new lane L-RED-B.
