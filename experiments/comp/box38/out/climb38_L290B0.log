@@ -5,3 +5,5 @@ BEST BEST_L290B0_D4_T60_U0_NM300_3c26cc83.json score [60, 4] {"U": 0, "T3": 60, 
 restart 0 seed gen37_n9_U0.json end [60, 4] {"U": 0, "T3": 60, "fb": 1, "C": 1, "Dmov": 4, "Dmov_x": 95, "NM": 300, "maxflip": 2} global [60, 4] evals 621 1012s
 restart 1 seed gen37_n9_U0.json end [59, 2] {"U": 0, "T3": 59, "fb": 1, "C": 1, "Dmov": 2, "Dmov_x": 68, "NM": 300, "maxflip": 1} global [60, 4] evals 1262 1083s
 restart 2 seed gen37_n9_U0.json end [58, 4] {"U": 0, "T3": 58, "fb": 1, "C": 1, "Dmov": 4, "Dmov_x": 61, "NM": 300, "maxflip": 2} global [60, 4] evals 1898 946s
+restart 3 seed gen37_n9_U0.json end [58, 4] {"U": 0, "T3": 58, "fb": 1, "C": 1, "Dmov": 4, "Dmov_x": 96, "NM": 300, "maxflip": 2} global [60, 4] evals 2542 1005s
+DONE
