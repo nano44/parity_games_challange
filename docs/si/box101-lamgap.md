@@ -346,3 +346,24 @@ written; the replacement string below is the Lead's relay and must be re-copied 
 - N-1: box 100's TWO-CROSS is P-N5-GATE §3.1 GATE-RACE (a), (b), signed and landing as R128 (this lane's own packet). Cite the R-id once
   it lands; until then TWO-CROSS is «= signed GATE-RACE (a), (b)», not a new lemma.
 - Optional, taken: RESTRICT-C at a = 0 needs no m-pad clause (G′'s start is G's start on Reach(C)). For a > 0 the clause stays, as in D.2.
+
+## Addendum F (L-SI successor 52, 2026-11-12T17:09:20Z (date -u); append-only): REFEREE 32's replacement for RESTRICT-C (iv), copied verbatim from the report
+Source: claude/referee ff9b16f6 docs/referee/R-restrictC-preread.md §4.4 («(iv): GAP W-1 (exact, wording)»), l. 126-128; on origin now.
+Addendum E carried the Lead's relay of this string. The byte copy is experiments/si/box101/restrictC_iv_ff9b16f6.txt (the output of
+`git show ff9b16f6:docs/referee/R-restrictC-preread.md | sed -n '126,128p'`; 415 bytes, sha1 a76a8eab7afcf25458ae849737056af3a9f14229); check101.sh checks its
+sha1 and that its three lines stand below unchanged.
+- The replacement for (iv) of D.2, verbatim (three lines of the report):
+  «(iv) Hence, if σ̄ and Λ are constant on V_R over the states b, b + 1, …, b + j + 1 (b ≥ a) and the step b + j → b + j + 1 switches a
+  mover of Reach(C), then j ≤ N′ − 1, with N′ = |Reach(C)| ≤ N: at most N′ consecutive steps that switch a mover of Reach(C) keep σ̄ and
+  Λ constant on V_R. (A step that switches no mover of Reach(C) ends G′'s run; nothing on V_R changes after it.)»
+- Against Addendum E's string («if σ̄ and Λ are constant on V_R over states b..b+j+1 and the step b+j → b+j+1 switches a mover of
+  Reach(C), then j ≤ N′ − 1»): the report's text has «(b ≥ a)» and two more clauses, «with N′ = |Reach(C)| ≤ N: at most N′ consecutive
+  steps that switch a mover of Reach(C) keep σ̄ and Λ constant on V_R» and «(A step that switches no mover of Reach(C) ends G′'s run;
+  nothing on V_R changes after it.)». No mathematical difference: Addendum E's form is the report's first clause. From here on (iv) is
+  the report's string.
+- Also in the report and not yet recorded here: §4.5, «from its start S3(G′)» in D.2 (iii) should read «from G′'s standard state»
+  (SPEC's S3 is not used; S3-START on G′ would need R117 there); the bound is N′ = |Reach(C)|, not N_C (D.3's row B′ already says
+  Gap(C) ≤ N). §4.4's last bullet: the parenthesis «(the core's Λ and σ̄ are constant: R118's K2-r)» in D.2 (iv) is true and not needed.
+- Status in the light of box 104 (docs/si/box104-map.md): RESTRICT-C and the routes of D.3 are statements about HOW3 on R104's genomes
+  (E-DOM). Box 104 §3-§5 concern games outside that family and change nothing in them; they change what the routes can be worth for
+  M4 (box 104 §2, link L3).
