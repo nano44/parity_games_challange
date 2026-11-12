@@ -1,0 +1,18 @@
+CW8_n
+qh1 (mover 54, opt 0): e-face states 39 / 60; states with a play e_g -> ... -> e_g (gate forced to e) 0
+qh2 (mover 55, opt 0): e-face states 31 / 60; states with a play e_g -> ... -> e_g (gate forced to e) 0
+qh3 (mover 56, opt 0): e-face states 27 / 60; states with a play e_g -> ... -> e_g (gate forced to e) 0
+qh4 (mover 57, opt 0): e-face states 24 / 60; states with a play e_g -> ... -> e_g (gate forced to e) 0
+qh5 (mover 58, opt 0): e-face states 21 / 60; states with a play e_g -> ... -> e_g (gate forced to e) 0
+qh6 (mover 59, opt 0): e-face states 18 / 60; states with a play e_g -> ... -> e_g (gate forced to e) 0
+qh7 (mover 60, opt 0): e-face states 14 / 60; states with a play e_g -> ... -> e_g (gate forced to e) 0
+qh8 (mover 61, opt 0): e-face states 9 / 60; states with a play e_g -> ... -> e_g (gate forced to e) 0
+CWRR8_n
+qh1 (mover 54, opt 0): e-face states 0 / 53; states with a play e_g -> ... -> e_g (gate forced to e) 0
+qh2 (mover 55, opt 0): e-face states 0 / 53; states with a play e_g -> ... -> e_g (gate forced to e) 0
+qh3 (mover 56, opt 0): e-face states 0 / 53; states with a play e_g -> ... -> e_g (gate forced to e) 0
+qh4 (mover 57, opt 0): e-face states 0 / 53; states with a play e_g -> ... -> e_g (gate forced to e) 0
+qh5 (mover 58, opt 0): e-face states 0 / 53; states with a play e_g -> ... -> e_g (gate forced to e) 0
+qh6 (mover 59, opt 0): e-face states 0 / 53; states with a play e_g -> ... -> e_g (gate forced to e) 0
+qh7 (mover 60, opt 0): e-face states 0 / 53; states with a play e_g -> ... -> e_g (gate forced to e) 0
+qh8 (mover 61, opt 0): e-face states 3 / 53; states with a play e_g -> ... -> e_g (gate forced to e) 0
