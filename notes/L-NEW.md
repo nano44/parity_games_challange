@@ -1,6 +1,39 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 73; session_01V5yGRX6dpFLtdnq3jrnFfy; started 2026-11-12 ~17:09Z; GO 17:52Z)
+- Step 0: handover check 5ca65a0a (VERIFY PASS; Lead accepted 17:52Z). Container came up on claude/l-new but SHALLOW (unshallowed).
+  Oink built here (scripts/setup_oink.sh). Clock skew <= 1 s (against raw.githubusercontent.com; github.com gave no Date header).
+- Lead rulings 17:52Z (verbatim in the packet's header where used): premise quotes from RESULTS inside their R-entries, F1 and (D1),
+  (D3), (D4) from the landed packet files P-N5-XICYC.md (149e2414) and P-N5-QN.md (97254bd2); SHARP as a remark outside «To sign»;
+  «CHANGE: KEEP K1-TCYC and FVS-TCYC» in «To sign», order LEVEL / counting, WIN, R-INT, R-HEIGHT, K1-TCYC, FVS-TCYC, PLATEAU, ALL-TCYC;
+  a proposed line L-1 by script, frozen with the packet; pin trunk's head at the freeze (used: 68c8d293).
+- BOX 211 = FREEZE of packet P-N5-LEVEL (docs/new/P-N5-LEVEL.md; box 208 + Addenda A, B as ONE packet; box 209 NOT included).
+  Files: docs/new/P-N5-LEVEL.md (frozen at its push; later text only in docs/new/P-N5-LEVEL-fixes.md, append-only, not yet created),
+  docs/new/P-N5-LEVEL-line-L1.txt (proposed RESULTS line, by script), experiments/new/box211/ (quotes211.py + quotes211.out: every «…»
+  on a [Q tag] bullet checked inside its R-entry / landed packet file / TARGET.md at trunk 68c8d293; mkl1_211.py: line generator with
+  asserts; level.pins: sha1 pins), check.sh block «P-N5-LEVEL». The freeze commit's SHA and the two sha1 are in git log and in my
+  message to the Lead (never typed here before the commit exists).
+  What changed against box 208's text (all in the packet's §10): (P6) (B) answers by σ̄_s then [OPT] then F1 (PR-1; credited to
+  REFEREE 32 under L41, with L-RED-B's G-1 and Addendum B1 (1) named); (P7) cites one proof of record, R118 (i) BR-SEG-G (a), with H0
+  checked for every Howard run of H (PR-2); (K2) stated for triples (PR-5 N-a); (L3) / (P2) cite (K3 (e)) for e-vertices before c_W
+  (L-RED-B N-1); (K3 (e)) now also says that (c_W, ∅) is the largest class; R-INT is stated without box 207's λ(W) clause; «(β) never
+  occurs» is written as «(α) holds at every state»; the scope says single-switch rules are not covered (L-LIT T69 Add. A1 cited, the
+  paper NOT opened by me) and gives L-COMP BOX 43's G_2 step 5 → 6 as DATA.
+  Things only I know: (a) the packet's DATA tables are box 208's generated rows (summ208.py / summ208c.py re-run here; all 49 rows equal
+  box 208's text; out/SHA1SUMS OK), inserted by a build script from a template, both in this session's scratchpad only; (b) L-1 must
+  not contain «|», so the line writes f_t for the size of the front; (c) for M >= 2 ALL-TCYC's value is below K1-TCYC's and at most
+  FVS-TCYC's (k >= 1); at N = M = 1 it is not (55 against 31 and 49): the «supersedes» sentence says exactly that; (d) one
+  fresh-context proofreading agent started by this session read the draft before the freeze (not a referee; no label changed): it
+  re-derived §2-§8 and reported no false or unproved step, and 21 factual / wording items (DATA units of level208.py, attributions
+  of two READINGs, L-RED-B's reference states, the «To sign» premise lists, symbol clashes), all applied before the freeze.
+- BOX 212 (proposal to the Lead, not started): see the message; idea = the RULE-FREE part of LEVEL. (K1)-(K4), (L1)-(L3), (L5),
+  (P1), (P2), (P4) use nothing of Howard's rule except F1, which holds for every non-empty set of improving switches (R15 (a)). So
+  for EVERY improvement rule on IDEAL-CYC states at most P steps lift a front vertex, and every other step lies in a window on which
+  a closed part Y is a one-player game with frozen classes. Only (K5), (L4), (P3), (P6), (P7) are Howard's. For N5 (key rule) on
+  Ξ-cyclic genomes this would reduce O1′ (KEY-CYC) to the key rule on class-frozen one-player windows (a generalised O1); on
+  Ξ-acyclic genomes it is vacuous (LAG is empty from the start: the tower is one window). Not written, not checked.
+
 ## HANDOVER (successor 72, PARKING 2026-11-12 ~15:32Z by date -u; three boxes pushed, all CANDIDATE, none attacked by another lane yet)
 ### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
 - 25835c59 handover check (Lead accepted, «go» 11:27Z).
@@ -3904,6 +3937,15 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   packet rule (corrections only in new dated sections).
 
 ## Sources opened
+- (successor 73, box 211 = packet P-N5-LEVEL) No paper opened. Fleet texts opened, read-only: trunk 68c8d293 docs/RESULTS.md entries
+  R15 (l. 624-631), R104 (l. 9864), R118 (l. 13607-13740), R121 (l. 14320, 14480-14481), R122 (l. 14744), R123 (l. 15076, 15165-15176),
+  R126 (l. 15726, 15789-15822); landed packets docs/new/P-N5-XICYC.md (sha1 149e2414; §2, §3, §5) and its fixes entry 2, docs/new/P-N5-QN.md
+  (sha1 97254bd2; §1); TARGET.md §2, §4, §5, §7e; claude/referee 7524342b docs/referee/R-box208-preread.md (all); claude/l-red 2d2969c2
+  docs/red/R235-box208.md (all); claude/l-red-b 0510c800 docs/red-b/B1-box208.md (all); claude/l-comp a6cce717
+  experiments/comp/box43/README.md (all); claude/l-formal f74d38a4 lean/lemmas/INDEX.md (all), README.md (genome layer, by grep);
+  claude/l-si 26704e01 docs/si/box104-map.md (§0-§3 head, §7-§9); claude/l-lit 4a0db9d1 docs/lit/T69-dijkstra-potentials-policy-iteration.md
+  Addendum A1 only (it reports Björklund–Vorobyov, DAM 155 (2007) 210-229, §10 p. 226: single-switch exponential on acyclic LSP
+  instances; I did NOT open the paper, and the packet cites T69, not the paper).
 - (successor 59, box 191 add. 1) Hansen, Miltersen, Zwick arXiv 1008.0530 v1 (pdf sha256 f53a6b5127d95078d48c0567c3aa54483e11f026095ec20cae4f593bc8db0a69,
   text via pdftotext): Lemma 5.3 (T v^pi0 >= v^pi1), Lemma 5.4 (SI dominated by VI, min convention), §5 «well-known ... Meister and
   Holzbaur [27] ... (They may be folklore.)», Thm 6.5, §7 non-discounted open. Friedmann arXiv 1106.0778 (ar5iv html, first 100k chars):

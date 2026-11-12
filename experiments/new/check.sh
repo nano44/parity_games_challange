@@ -1184,4 +1184,13 @@ if [ "$r210b" -eq 0 ] && [ -z "$d210b" ] && [ "$(grep -v '^ctrl' box210/check210
 else
   echo "BOX 210 ADD-A check: FAILED (check210b.sh exit $r210b)"; echo "$d210b" | head -30; echo "$run210b" | tail -15; exit 1
 fi
+# P-N5-LEVEL (L-NEW successor 73): frozen packet + source note + proposed line L-1, the two landed packet files quoted in its section 1, the quote check, and box 208's tools / outputs / instances / engine against box211/level.pins (DOCS/ = docs/new/)
+pinL=$(cd box211 && sed 's#DOCS/#../../../docs/new/#' level.pins | sha1sum -c --quiet 2>&1) || true
+tail -1 box211/quotes211.out | grep -q "^quotes 44 missing 0 (trunk 68c8d29339d5945efe6878a7e4cfc9d6a1611d48)$" || pinL="$pinL quotes211.out: last line is not «quotes 44 missing 0 (trunk 68c8d293...)»"
+grep -q "  DOCS/P-N5-LEVEL-line-L1.txt$" box211/level.pins && grep -q "  DOCS/P-N5-LEVEL.md$" box211/level.pins || pinL="$pinL level.pins: packet or line L-1 not pinned"
+if [ -z "$pinL" ]; then
+  echo "P-N5-LEVEL: packet, line L-1 and $(wc -l < box211/level.pins) pinned files match level.pins, quotes 44 missing 0: PASS"
+else
+  echo "P-N5-LEVEL check: FAILED"; echo "$pinL" | head -20; exit 1
+fi
 rm -rf "$tmp"
