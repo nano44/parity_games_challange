@@ -57,6 +57,16 @@ CONDITIONAL on F1 = landed RESULTS R15 (a).
 | RF-A: the rule-free remnant of (K5), asked for by the Lead 19:05Z («for the NEW gate y′ = σ_(t+1)(x), class_t(y′) ≤ class_(t+1)(x)»), accepted 19:13Z; named point: it is stated for every mover, moved or not («a harmless generalisation», Lead) | ImpK5NewStatement (GenomeImpStatement) | Genome.imp_k5_new (GenomeImp) | none |
 | every Howard run is a run under an improvement rule (so each rule-free row contains its Howard form) | (theorem only) | Genome.IdealCycRun.toImp (GenomeImp) | none |
 | WHERE THE RULE ENTERS (read off the proofs; logged by the Lead 19:05Z as DATA for box 212): `howard` is used by (K5), `plateau_g` ((P3), (P5), (P6), (P7)), `quiet`, `all_tcyc`, `all_tcyc_sharp`, `run_exists`; it is NOT used by (K1) beyond F1, (K2)-(K4), (L2), (L3), (L5), (P4) `gate_const`, or the count of non-stall steps. So the rule enters only at the stalls | | | |
+| Γ3(G) of RESULTS R117 (P-N5-REACH §3) and Γ3*(G*) of L-SI box 104 §4: DEFINITIONS, accepted by the Lead 22:22Z with deviations (a)-(e) | Gamma3.lean (definitions) | (none) | |
+| R117 Lemma PAD (a), (b): no pad is a cycle node or in a P-set; the cycle node has Ω ≥ 3 unless it is c_X | PadStatement (Gamma3Statement); PROPOSED | NOT PROVED | |
+| Γ inside Γ3 (indices, priorities, owners unchanged; pads on edges) | Gamma3OldStatement (Gamma3Statement); PROPOSED | NOT PROVED | |
+| n = N + 7M + 10; idx3 a bijection onto 0..n − 1 under WF | Gamma3CardStatement (Gamma3Statement); PROPOSED | NOT PROVED | |
+
+DATA beside the Γ3 rows (check/gamma3check.py; unit: vertex): against experiments/new/box189/gamma3.py, the 14 genomes of
+experiments/new/box189/corpus and the 11 of experiments/new/box191/inst, 25 genomes, 5,834 vertices: nfail, miss, priofail, ownfail,
+succfail, startfail, prfail all 0; Γ3* against L-SI's build_free (transcription match 1, 11 lines, claude/l-si 3417f6c1) with random
+carriers ≥ 6, seeds 1, 2, 3, the same 25 genomes, 5,834 vertices per seed: all 0. Control GAMMA3_CTRL=1, both modes: priofail 1,492,
+succfail 1,492, startfail 2,238, prfail 1,492. Outputs check/out/gamma3check*.out.
 
 DATA beside the genome rows (check/genomecheck.py: Lean's `idx`, `prio`, `isOdd`, `E`, `start0`, `pr` evaluated on a genome file against
 experiments/red/r187/stab.py build(G, 0, kgad=True, esc=True) and si.py's p′; unit: vertex): experiments/new/box191/inst, 11 genomes, 1,018

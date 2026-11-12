@@ -42,7 +42,18 @@
     check/mkmanifest.py (the formatter; inputs: the generator's output, the build log, the Axioms.lean output). To regenerate: from
     lean/lemmas, `lake env lean check/manifest.lean > m.out`, then `python3 check/mkmanifest.py m.out build.log axioms.out <time> >
     MANIFEST.md` (build.log: a `rm -rf .lake/build && lake build` log with start/end/exit lines; axioms.out: `lake env lean Axioms.lean`).
-  - Then: what CHECKER rules on the Lean rows; box 212's RF-B in Lean when L-NEW 74 states it; Γ3 in Lean, definitions first.
+  - c8963698 (MANIFEST) on origin: push.sh exit 0 at 22:50:31Z, VERIFY PASS. Lead 22:00Z: Weights finding and the eight helper
+    modules go into CHECKER item C143 as their own lines; «Next for you: Γ3 in Lean, definitions first … RF-B waits until L-NEW 74
+    states it on paper.»
+  - Γ3 (this commit): PGLemmas/Gamma3.lean, DEFINITIONS, ACCEPTED by the Lead 22:22Z «with deviations (a)-(e) as you named them»
+    (his required sentence on the per-pad priorities is in the header); check/gamma3check.py with outputs check/out/gamma3check*.out
+    (r104: 25 genomes, 5,834 vertices, 7 counters 0; free, seeds 1-3: all 0, transcription match 1; controls fire).
+    PGLemmas/Gamma3Statement.lean: `PadStatement`, `Gamma3OldStatement`, `Gamma3CardStatement`, STATEMENTS ONLY, PROPOSED (Lead
+    22:22Z: «Proposed theorems (i) Γ inside Γ3, (ii) the vertex count, (iii) PAD: approved, Statements first. PAD comes first among
+    them»). NEXT: the Lead's diff of those three; then prove PAD (plan: a cycle through any non-core vertex passes a gate's face β or e
+    (Ω ≥ 3 by hypothesis) or c_W (top3 ≥ 4); core cycles pass K0, K1 or K3, or are K2's loop (Ω 3); c_X has no in-edge but its loop, so
+    lam = c_X only for v = c_X with plen 0; p' orders by Ω first), then (i), (ii).
+  - Then: what CHECKER rules on the Lean rows (C143); box 212's RF-B in Lean when L-NEW 74 states it.
 - SUCCESSOR 2 (session_01V5yGRaQYgCY9vD9mnoWrPb, started 2026-11-12T17:10Z; this block is the resume point, the blocks below it are the
   predecessor's and stay as history). Handover check 8fb3dd6c is on origin (push.sh exit 0 at 18:00:32Z). Lead 17:22Z: all five answers
   match, «go». Lead's rulings of 17:22Z, verbatim. Item (0): «(a) Mirror frozen / legal / howard / moves EXACTLY as defined, along

@@ -1,0 +1,26 @@
+A_d4_W2_k2.json: N 8 M 16 n 130 nfail 0 miss 0 priofail 32 ownfail 0 succfail 32 startfail 48 prfail 32
+A_d4_W3_k3.json: N 12 M 36 n 274 nfail 0 miss 0 priofail 72 ownfail 0 succfail 72 startfail 108 prfail 72
+A_d5_W2_k3.json: N 10 M 30 n 230 nfail 0 miss 0 priofail 60 ownfail 0 succfail 60 startfail 90 prfail 60
+A_d6_W2_k2.json: N 12 M 24 n 190 nfail 0 miss 0 priofail 48 ownfail 0 succfail 48 startfail 72 prfail 48
+KILL_M2D_d6_mu13_norm.json: N 12 M 24 n 190 nfail 0 miss 0 priofail 48 ownfail 0 succfail 48 startfail 72 prfail 48
+KILL_M2D_d8_mu21_norm.json: N 16 M 32 n 250 nfail 0 miss 0 priofail 64 ownfail 0 succfail 64 startfail 96 prfail 64
+RECT_d11_T59_norm.json: N 22 M 44 n 340 nfail 0 miss 0 priofail 88 ownfail 0 succfail 88 startfail 132 prfail 88
+REC_d10_mu32_norm.json: N 20 M 40 n 310 nfail 0 miss 0 priofail 80 ownfail 0 succfail 80 startfail 120 prfail 80
+REC_d10_tower_mu30_norm.json: N 20 M 40 n 310 nfail 0 miss 0 priofail 80 ownfail 0 succfail 80 startfail 120 prfail 80
+REC_d11_mu40_norm.json: N 22 M 44 n 340 nfail 0 miss 0 priofail 88 ownfail 0 succfail 88 startfail 132 prfail 88
+REC_d12_mu42_norm.json: N 24 M 48 n 370 nfail 0 miss 0 priofail 96 ownfail 0 succfail 96 startfail 144 prfail 96
+REC_d7_mu17_norm.json: N 14 M 28 n 220 nfail 0 miss 0 priofail 56 ownfail 0 succfail 56 startfail 84 prfail 56
+REC_d8_mu24_norm.json: N 16 M 32 n 250 nfail 0 miss 0 priofail 64 ownfail 0 succfail 64 startfail 96 prfail 64
+REC_d9_mu29_norm.json: N 18 M 36 n 280 nfail 0 miss 0 priofail 72 ownfail 0 succfail 72 startfail 108 prfail 72
+DEAD_SEG2P_d4_N8.json: N 8 M 16 n 130 nfail 0 miss 0 priofail 32 ownfail 0 succfail 32 startfail 48 prfail 32
+DEAD_SEG2P_d7_N14.json: N 14 M 28 n 220 nfail 0 miss 0 priofail 56 ownfail 0 succfail 56 startfail 84 prfail 56
+DEAD_SEG2P_d9_N18.json: N 18 M 36 n 280 nfail 0 miss 0 priofail 72 ownfail 0 succfail 72 startfail 108 prfail 72
+cyc2_d7.json: N 14 M 28 n 220 nfail 0 miss 0 priofail 56 ownfail 0 succfail 56 startfail 84 prfail 56
+cyc2_d8.json: N 16 M 32 n 250 nfail 0 miss 0 priofail 64 ownfail 0 succfail 64 startfail 96 prfail 64
+cyc_d3.json: N 6 M 12 n 100 nfail 0 miss 0 priofail 24 ownfail 0 succfail 24 startfail 36 prfail 24
+cyc_d4.json: N 8 M 16 n 130 nfail 0 miss 0 priofail 32 ownfail 0 succfail 32 startfail 48 prfail 32
+cyc_d5.json: N 10 M 20 n 160 nfail 0 miss 0 priofail 40 ownfail 0 succfail 40 startfail 60 prfail 40
+cyc_d6.json: N 12 M 24 n 190 nfail 0 miss 0 priofail 48 ownfail 0 succfail 48 startfail 72 prfail 48
+cyc_d7.json: N 14 M 28 n 220 nfail 0 miss 0 priofail 56 ownfail 0 succfail 56 startfail 84 prfail 56
+cyc_d8.json: N 16 M 32 n 250 nfail 0 miss 0 priofail 64 ownfail 0 succfail 64 startfail 96 prfail 64
+gamma3check mode r104 seed - ctrl 1: genomes 25 vertices 5834 nfail 0 miss 0 priofail 1492 ownfail 0 succfail 1492 startfail 2238 prfail 1492

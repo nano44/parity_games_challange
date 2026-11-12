@@ -51,3 +51,5 @@ import PGLemmas.GenomeRun
 import PGLemmas.GenomeExample
 import PGLemmas.GenomeImpStatement
 import PGLemmas.GenomeImp
+import PGLemmas.Gamma3
+import PGLemmas.Gamma3Statement

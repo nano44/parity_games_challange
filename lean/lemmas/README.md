@@ -215,6 +215,13 @@ Allowed axioms: propext, Classical.choice, Quot.sound. No sorry, no admit, no ne
                             choice is a `HowardAt` step), `runSeq`, `run_prefix`.
 - PGLemmas/GenomeExample.lean  `Genome.tiny` (one mover, two options, 13 vertices), `tiny_wf`, `tiny_better`, `tiny_run` (a run of
                             length 1 from the start); `setLt_insert_of_lt`, `ext_ext_lt`, `core_closed`.
+- PGLemmas/Gamma3.lean      DEFINITIONS ONLY (accepted by the Lead 22:22Z, deviations (a)-(e) in its header): the S3-padded game Γ3(G)
+                            of RESULTS R117 (= P-N5-REACH §3) and its free-priority form Γ3*(G*) of L-SI box 104 §4 as ONE definition
+                            with the carrier priorities as a parameter (`Carrier`, `r104`, `Carrier.WF`); `Vertex3`, `idx3`, `prio3`,
+                            `top3`, `pr3`, `isOdd3`, `V0_3`, `E3`, the standard state `std3 s`, `start3`. Per-pad priorities fixed by
+                            experiments/new/box189/gamma3.py (R117's text: ≤ 2), DATA-checked (check/gamma3check.py).
+- PGLemmas/Gamma3Statement.lean  STATEMENTS ONLY, PROPOSED to the Lead, none proved: `PadStatement` (R117's Lemma PAD (a), (b)),
+                            `Gamma3OldStatement` (Γ inside Γ3), `Gamma3CardStatement` (n = N + 7M + 10); deviations in its header.
 - PGLemmas.lean             the library root (imports).
 - Axioms.lean               `#print axioms` of every theorem above.
 - INDEX.md                  lane text ↔ Lean statement ↔ Lean theorem, with the premise each statement keeps.
@@ -226,6 +233,14 @@ Allowed axioms: propext, Classical.choice, Quot.sound. No sorry, no admit, no ne
                             si.py's p′ = 2·rank + parity. Counters nfail / miss / priofail / ownfail / succfail / startfail / prfail
                             must be 0; GEN_CTRL=1 (the indices of e_g and β_g swapped in the reference) must fire. Needs lean/lemmas built.
                             `python3 -I lean/lemmas/check/genomecheck.py experiments/new/box191/inst/*.json` (about 40 s).
+- check/gamma3check.py      DATA, not Lean: evaluates `idx3`, `prio3`, `isOdd3`, `E3`, `start3`, `pr3` of Gamma3.lean on a genome file
+                            and compares them, vertex by vertex, with experiments/new/box189/gamma3.py build(G, {"K","pe","pb","m"})
+                            (mode r104, π = r104) or with L-SI's free104.py build_free, transcribed in the tool (GAMMA3_MODE=free,
+                            random carriers ≥ 6 by GAMMA3_SEED; FREE104_SRC=<free104.py> checks the transcription line for line).
+                            Counters nfail (also n = N + 7M + 10) / miss / priofail / ownfail / succfail / startfail / prfail must be 0;
+                            GAMMA3_CTRL=1 (pe_g and pβ_g swapped in the reference) must fire. Frozen outputs: check/out/gamma3check*.out.
+                            `python3 -I lean/lemmas/check/gamma3check.py experiments/new/box189/corpus/*.json
+                            experiments/new/box191/inst/*.json` (about 3 min per mode).
 - check/idealcheck.py       DATA, not Lean: evaluates the five fields of `Genome.IdealCycRun` (frozen, legal, opt, howard, moves) and
                             `FromStart`, `Stopped`, as Genome.lean states them, on the run of the fleet's engine
                             (experiments/new/box191/idealcyc.py with experiments/si/si.py; σ̄_t = si.py's counterstrategy). `opt` is
