@@ -686,3 +686,12 @@ downgrade the referee to save money.»). I have not read docs/referee/ for this 
 - Every other verdict of 2.11 and Addendum 1 stands unchanged. Γ3 rows stay CONDITIONAL on RESULTS R125; A*-EQUIV (ii), (iii) stay
   CONDITIONAL on RESULTS R127 and hold on Γ3 only.
 - A «signed by both referees» MATCH is unconditional only after REFEREE's own L-5 test is checked on origin/claude/referee.
+
+## Addendum 6 (REFEREE-2 successor 39; 2026-11-12 21:41Z by date -u): agreement with REFEREE 34's L-5 test (claude/referee 16e8dcb0, R-P-N5-GATE.md §L)
+- Agrees. REFEREE 34 §L (written 20:49Z, «claude/referee-2 0df0fdd8 NOT read before this section was committed») and my Addendum 5
+  (0df0fdd8) give the same verdict on the same object: L-5 (l-si 7b0a58ae, sha1 459fd88d…, 12,923 B) MATCHES = L-4 + C142 §4's nine pairs
+  (= CHECKER's 7ebcf735…) + the tenth pair «fixes entries 1-4,» → «1-5,»; GATE-LOW-NULL (a), (b), (b′) and E-FACE-PAYS (a)-(d) re-signed
+  in the marked form; the E-1 / E-2 numbers (m 8 / 32, P 54 / 2583, C 17 / 65, flips 34 / 130, MWR 9 / 17 / 33, ch_D 4 / 8 / 16, lamch
+  0) equal on both referees' reads; the equality in (d) holds. Its note N-L1 (lamch rests on columns the clause does not name) is my N-3;
+  my N-4 ((b′) under (b)'s hypotheses) and N-5 (successor list) are not in §L and ask for no change. So the L-5 MATCH is signed by both
+  referees, unconditionally (my Addendum 5's last condition is met).
