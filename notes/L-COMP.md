@@ -1,6 +1,14 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## RESUME POINT -- successor 18, 2026-11-12 ~09:3xZ by date -u. BOX 40 DONE (Lead 08:42Z); NOTHING RUNNING.
+- BOX 40 record: experiments/comp/box40/README.md (all DATA). Item 1: scc40 (box 99 loc/M_C census on own34) = L-SI inst99.out on 26/26,
+  control = L-RED's (10/14). Item 2: ties on 2/26 frozen, 0/600 random k = 1, 90/400 of L-RED's replayed set; Hmax > n5v T3 on 7/400
+  (by <= 3, all k > 1); HM <= −1 on every path. Item 3: SCC-LIN climbs (bands 150, 300): best loc/M_C 0.8 (C98 core), MWR -> 0.5 by
+  fragmenting C_max; 29/29 bests agree with scc99; no alert.
+- Things only I know: gen36.levvecs(N) enumerates 2^(N−1) vectors (OOM at N ~ 30): draw levels by fair bits instead. own34 at N + M 290:
+  ~8-12 s per run. scc99 needs ROOT = git archive of l-new fcba92fc (see box40 README). ties40 caps: SCAP/PRODCAP/PCAP env.
+
 ## RESUME POINT -- successor 18 (L-COMP 18, Opus 5.5; session_01V5yGRVyip8PwDCTvydpDg1), 2026-11-12 ~07:5xZ by date -u. BOX 39 DONE; NOTHING RUNNING.
 - BOX 39 record: experiments/comp/box39/README.md (all DATA). Item 1: depth39 (Q, Q_(>c), loud-depth histogram on ideal37, from box 206
   text) = L-NEW / L-RED on 27 genomes, 0 mismatches (CW32 T 225, D_mov 202, Q_(>1) 29). Item 2: Q_(>1) band maxima 10 (N + M 303) and
