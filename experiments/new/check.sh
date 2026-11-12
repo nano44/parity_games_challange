@@ -1188,8 +1188,11 @@ fi
 pinL=$(cd box211 && sed 's#DOCS/#../../../docs/new/#' level.pins | sha1sum -c --quiet 2>&1) || true
 tail -1 box211/quotes211.out | grep -q "^quotes 44 missing 0 (trunk 68c8d29339d5945efe6878a7e4cfc9d6a1611d48)$" || pinL="$pinL quotes211.out: last line is not «quotes 44 missing 0 (trunk 68c8d293...)»"
 grep -q "  DOCS/P-N5-LEVEL-line-L1.txt$" box211/level.pins && grep -q "  DOCS/P-N5-LEVEL.md$" box211/level.pins || pinL="$pinL level.pins: packet or line L-1 not pinned"
+# fixes entry 1 (L-NEW successor 74): the fixes file and line L-2 pinned; mkl2_211.out (L-1 + LT-1..LT-3 = REFEREE 34's 389645a2, then R-1, R-2, LO-1) ends with L-2's sha1
+grep -q "  DOCS/P-N5-LEVEL-line-L2.txt$" box211/level.pins && grep -q "  DOCS/P-N5-LEVEL-fixes.md$" box211/level.pins || pinL="$pinL level.pins: fixes file or line L-2 not pinned"
+grep -q "^L-1 + LT-1..LT-3: sha1 389645a2a646522a8fb57f05dba4458695ac74f2 " box211/mkl2_211.out && tail -1 box211/mkl2_211.out | grep -q "^L-2 written: sha1 $(sha1sum < ../../docs/new/P-N5-LEVEL-line-L2.txt | cut -c1-40) " || pinL="$pinL mkl2_211.out: does not show REFEREE 34's L-1' or does not end with L-2's sha1"
 if [ -z "$pinL" ]; then
-  echo "P-N5-LEVEL: packet, line L-1 and $(wc -l < box211/level.pins) pinned files match level.pins, quotes 44 missing 0: PASS"
+  echo "P-N5-LEVEL: packet, lines L-1 and L-2, fixes file and $(wc -l < box211/level.pins) pinned files match level.pins, quotes 44 missing 0, L-2 built by mkl2_211.py: PASS"
 else
   echo "P-N5-LEVEL check: FAILED"; echo "$pinL" | head -20; exit 1
 fi
