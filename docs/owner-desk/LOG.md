@@ -692,3 +692,6 @@ Answered from get_session (12:03Z): L-NEW 72 and L-FORMAL running on claude-fabl
 ## 2026-11-12T12:07Z Lead owner line (12:10Z, verbatim)
 «Yes, it is working, and D21 is in force. 10 sessions are running: 7 research lanes (L-NEW 72, L-FORMAL and L-LIT on Fable 5.2 xhigh; L-SI 51, L-RED 66, L-COMP 18 and L-LOWER 15 on Opus, each switching to Fable 5.2 at its next park, two of them within the hour) plus 3 gates (REFEREE 32 on Fable 5.2 xhigh; REFEREE-2 37 and CHECKER on Opus). No overage, and the five-hour limit reads «allowed». I cannot see an allowance percentage, so I cannot say whether we are on pace for 200%. To spend more usefully, I propose one more lane, L-RED-B, a second adversary on Fable 5.2 xhigh against L-NEW 72's new CANDIDATE (a polynomial bound at k = 1 on IDEAL-CYC, the biggest claim of the week). Under D1, a new attack lane needs your «yes».»
 Open owner question (Lead, D1): yes/no to new lane L-RED-B.
+
+## 2026-11-12T12:44Z Lead owner line (12:46Z, verbatim)
+«The Fable 5.2 sessions now report a seven-day usage WARNING (rate_limit_info: seven_day «allowed_warning», resets 2026-11-18 21:00Z). Paid overage is still false. If your Fable reset has not been applied yet, Fable sessions may soon be refused. I keep creating Fable successors and will fall back to Opus for new sessions if a Fable call is rejected.»
