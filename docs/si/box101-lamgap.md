@@ -188,3 +188,71 @@ Source: L-RED 66, docs/red/R234-lamgap.md (relayed by the Lead 10:15Z; SHA to fo
 | DEEP3 | CONJECTURE; L-RED 66 attacks the kill side; box 102 reduces it to MOVER-DEEP3 |
 
 - The conclusion is unchanged: polynomial T3 ⇐ CONJECTURE DEEP3, through lane lemmas that are unrefereed except the landed rows.
+
+## Addendum C (L-SI successor 51, 2026-11-12T11:05Z (date -u); append-only): landed R118 already covers WINDOW + LAM-GAP's role; the chain shortened; Zhong–Ye
+Lead 11:05Z (F1, F2, from L-LIT's T35 / T65 read-in, claude/l-lit 627402e7). Quotes below are from trunk 071392490 docs/RESULTS.md (grep
+by script) and from arXiv 2609.40147v2 (opened here: pdftotext of the arXiv PDF).
+
+### C.1 (F1) What is landed
+- R118 (c) Lemma PATH: «Ω_t(z_0) ⊵ val(π) along a simple path π of the fixed-σ̄ graph to a fixed cycle node, once t − a ≥ μ(π)
+  (Bellman-Ford induction).» It is the same induction as LAM-GAP's claim (L).
+- R118 (d) Theorem BR-SEG [every genome, IDEAL-CYC]: «If Λ and σ̄ are constant on the states a, a+1, …, a+j+1 and the step a+j → a+j+1
+  changes σ, then j ≤ N − 1. Hence every maximal run of consecutive p-steps has at most N steps.»
+- R118 (i) Theorem BR-SEG-G [any parity game, Howard from any σ_0, under H0]: «H0: every step t → t+1 switches some Even x with
+  Λ_t(x) ≠ x and Λ_(t+1)(x) ≠ x.»; «(a) every maximal run of p-steps has at most n_E steps;», «(b) C ≤ n(n − 1);», «(c) T ≤ C + R +
+  (C + R + 1)·n_E.»
+- R118 (l) Corollary T3 [as REACH3-CYC; R125 discharges that condition]: on Γ3 «T3 ≤ C + R + (C + R + 1)·N, with C ≤ n3·(2M + 2) and
+  n3 = N + 7M + 10;», and «N5′-xi's FL run on Γ3(G) is polynomial in N + M for every genome» ⇔ «R is polynomial along these Howard
+  runs». Here R := the steps at which Odd's σ̄ changes.
+- R118's line also records «σ̄(K2) = r proved for every genome» (Lemma K2-r), so on Γ3 R counts only steps with a gate flip.
+
+### C.2 What LAM-GAP adds, and what it does not
+- LAM-GAP / SHARP is a ONE-PLAYER statement without H0: a vertex that is its own cycle node may switch (§2 (E) handles it). It counts |Ch|
+  (the vertices with a choice; SHARP: ≤ |Ch|) instead of N or n_E. Neither difference matters on Γ3: every HOW3 step switches movers
+  only, and no mover is ever a cycle node (R125 CN2-3), so H0 holds.
+- For the chain, WINDOW + LAM-GAP's role (bounding the Λ-and-σ̄-constant stretches) is COVERED BY LANDED R118 (d) / (l). It applies
+  directly to the whole HOW3 run, so the per-SCC one-player games G_C[φ], and with them W1, are not needed. The chain table should cite
+  R118 (l) there. LAM-GAP stays a lane lemma of independent interest (one-player, no H0); for the chain it is superseded.
+- What the lane adds that is NOT landed: a bound on R. R118 (l) states it OPEN («no bound on R is claimed (OPEN)», R118's line).
+
+### C.3 The shortened chain: Theorem R-SPLIT (PROVED, lane) and CONJECTURE DEEP3-G
+- Theorem R-SPLIT. On HOW3 (Γ3, every genome), for every c ≥ 0:
+  R ≤ Σ_gates flips(g) ≤ 2M·(n3 − 1 + n3(S_c(n3) − 1) + n3(n3 − 1)S′_c(n3)) + Deep^G_c,
+  where Deep^G_c := the gate flips over the whole run that TWO-CROSS charges to a change of depth > c.
+  Proof:
+  - R counts steps with some gate flip (K2-r), so R ≤ Σ_g flips(g).
+  - TWO-CROSS (box 100 §2) charges each flip injectively to a change of the face Odd leaves at the same step.
+  - Per face, DEPTH-COUNT3 with D1's fix (box 100 Add. A) bounds the charged changes that are Λ changes (≤ n3 − 1) or have depth ≤ c
+    (≤ n3(S_c − 1) + n3(n3 − 1)S′_c). The rest are counted by Deep^G_c. There are 2M faces. ∎
+- With R118 (l): T3 ≤ C + R + (C + R + 1)·N, so T3 is polynomial in N + M on a family if, for some fixed c, Deep^G_c is.
+- CONJECTURE DEEP3-G: for some fixed c, Deep^G_c is polynomial in N + M on every genome.
+  - DATA (box 100 cross100, depth > 3, all gates, whole run): 0 on 400 random genomes; 79 in total on the 26 instances. MW8_2 / MW32_2
+    have 8 / 32 (= n; ext gates before t0), so it is linear on that family; DHIB26_2804 has 24.
+  - DEEP3-G is the Γ3 / gate form of L-NEW 70's CONJECTURE DEEP-k1 (box 206 LOUD-SPLIT on IDEAL-CYC has the same shape: T polynomial iff
+    Q_(>c) polynomial).
+- Relation to the per-SCC route (box 99-102): DEEP3 (internal gates, after t0) plus SCC-RED is a second sufficient condition. It is
+  weaker in what it asks of flips (ext gates and pre-t0 flips are free) but uses more lane lemmas. Both end in a CONJECTURE.
+- Updated chain, shortest form: R125 REACH3-ALL / R124 END-T3 (landed) → R118 (l) Corollary T3 (landed) → TWO-CROSS (lane, SURVIVES
+  L-RED 66) → DEPTH-COUNT3 + D1 fix (lane) → CONJECTURE DEEP3-G.
+
+### C.4 (F2) Hansen's conjecture: claimed refuted by an unrefereed preprint
+- §1 above called Hansen 2012 Conj. 6.1.1 OPEN. Correction: OPEN, but claimed refuted by an unrefereed preprint.
+  arXiv 2609.40147v2 (Zhong, Ye, «Policy Iteration Is Not Strongly Polynomial for Deterministic Markov Decision Processes: The Price of
+  Algorithmic Anarchy», v1 30 Sep 2026, v2 13 Oct 2026).
+  - Theorem 6.1 (p. 23): «There is a family of deterministic average-reward MDPs with N states and at most four actions per state, on
+    which Howard's policy iteration performs at least exp(Ω(N)) iterations from a specified initial policy before any state attains its
+    optimal gain.»
+  - p. 23-24: «It also refutes the conjecture that Howard's policy iteration terminates within M iterations on every deterministic
+    average-reward MDP with M state–action pairs or, equivalently, on every weighted directed graph with M edges (Hansen, 2012,
+    Conjecture 6.1.1; Asadi et al., 2025, Conjecture 3.1).»
+  - Not checked here; not a source for any claim of this lane beyond «it is claimed».
+- Why an exponential mean-payoff family does not give long Howard runs under VJ (PROVED part, then READING):
+  - PROVED (lane): under the VJ valuation, Howard on ANY one-player game makes at most (n(n − 1) + 1)(|Ch| + 1) iterations. Each
+    vertex's Λ changes at most n − 1 times (values monotone, R15 (a)), and between Λ changes SHARP bounds the window by |Ch|. On
+    two-player games R118 (i) BR-SEG-G gives the same shape with R added.
+  - The exponential family's iterations all happen «before any state attains its optimal gain». They are gain updates. In mean payoff a
+    gain is a cycle MEAN, and the family's many gain improvements are possible because cycle means take exponentially many values. In VJ
+    the «gain» is Λ, the cycle's top VERTEX: at most n values per vertex, each reached at most once.
+  - READING: a mean-payoff Howard run is not a VJ Howard run. Encoding priorities as weights (−n)^p makes the optimal cycles agree, but
+    Howard's intermediate choices compare means and biases, not (Λ, Π, len). So Zhong–Ye's lower bound neither transfers to VJ nor
+    contradicts LAM-GAP / SHARP.
