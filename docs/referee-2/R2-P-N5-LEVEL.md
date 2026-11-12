@@ -379,3 +379,32 @@ Item by item, L-1's statement against the packet's row:
   box 43. The packet's §10 told me where REFEREE 32 found G-P6 and what its repair is; I re-derived the repaired step myself (3.1).
 - Lane code read: the headers and output formats of level208.py, plat208.py, rv208.py (to read their frozen outputs by column name) and
   mkl1_211.py (run once, isolated, to rebuild L-1). Nothing of the lane is imported by my replay.
+
+## Addendum 1 (REFEREE-2 successor 39; written after my verdict 43824abc was on origin): N-2 measured at claude/l-formal 78c32d90 (Lead 21:28Z, optional item 1)
+Object: claude/l-formal 78c32d90 (on origin 21:5xZ), lean/lemmas/INDEX.md and the .lean files, read with `git show` / `git grep`. I did
+not build Lean (no toolchain in this container): every row below is the lane's claim «Lean-checked (lane)» (lake build passes, no sorry,
+axioms ⊆ propext, Classical.choice, Quot.sound, per the INDEX header), checked by me only for (i) the theorem name in INDEX, (ii) the
+name declared in a .lean file or printed by Axioms.lean's `#print axioms`, (iii) 0 occurrences of the words sorry / admit in lean/*.lean
+(`git grep -w`). None is a premise of P-N5-LEVEL, and none changes a verdict.
+The packet's sentences under test: §3 «(K4) is stated there (K4Statement) and NOT proved in Lean»; §12 «(K4) is stated and not proved.
+NO-TIE, LOC-GATE, (L2)-(L5), (P1)-(P4), (P6), QUIET-N and ALL-TCYC are NOT formalized.» (both about f74d38a4, the commit they name).
+| packet item | at 78c32d90 | INDEX row / theorem (file) |
+| --- | --- | --- |
+| (K4) | Lean-checked (lane) | «box 208 §2 (K4) GATES»: Genome.k4 (GenomeK4) |
+| LOC-GATE | Lean-checked (lane), in ⊴ form, for any game | OptCounter.le_succ (GenomeK4; in Axioms.lean) |
+| NO-TIE | NOT formalized | INDEX «Not formalized: … RESULTS R123 NO-TIE (not needed on the route to ALL-TCYC)» |
+| (L2), (L3), (L5) | Lean-checked (lane) | Genome.l2, Genome.l3, Genome.l5 (GenomeLevel); (L5) «as its two factors» |
+| (L4) | NOT formalized | INDEX «Not formalized: box 208 §3 (L4) …» |
+| (P1)-(P4), (P6) | discharged inside PLATEAU on the genome | Genome.plateau_g (GenomePlateau), with IdealCycRun.window_le and IdealCycRun.gate_const (the (P4) form); bound N, STRONGER than the packet's N + 2M + 5; (P6) with REFEREE 32's repair |
+| QUIET-N | Lean-checked (lane), as «a window of constant classes has at most N steps» | Genome.quiet (GenomePlateau), with gate_of_cls_eq_none |
+| ALL-TCYC | Lean-checked (lane), for EVERY run of IDEAL-CYC(G), and the sharper P(N + 1) + N | Genome.all_tcyc, Genome.all_tcyc_sharp (GenomeAllTCyc) |
+| WIN, R-INT, R-HEIGHT, K1-TCYC, FVS-TCYC | NOT formalized | INDEX «Not formalized: … §5-§6 (WIN, R-INT, R-HEIGHT, K1-TCYC, FVS-TCYC)» |
+- For L-2 (a note, not a requirement of my signature; L-2 carries Lean only as «related lane statements, not premises»): if L-2 names
+  L-FORMAL's theorems, it should name the commit it reads (78c32d90 or later) and the list above, not f74d38a4's. L-1's own sentence
+  «L-FORMAL's lane-level Lean theorems Genome.k1, Genome.k2, Genome.k3, Genome.k5, level_count, plateau and brsegG (claude/l-formal
+  f74d38a4)» is TRUE as written (those names exist at f74d38a4); it is only incomplete.
+- Not a premise and not a change of verdict: the Lean route bounds PLATEAU by N through lane statements (the SHARP route); my signature
+  stays on the packet's N + 2M + 5 from landed BR-SEG-G (3.1).
+- INDEX 78c32d90 also records the level-0 sub-case in QUIET's Lean proof (`gate_of_cls_eq_none`: both faces of a gate of class (c_W, ∅))
+  «that box 208's text lacks». P-N5-LEVEL does not prove QUIET-N: (C4) cites landed R126 QUIET-N. So this affects box 208's own text
+  only, not the packet. (P4) case (3) handles the (c_W, ∅) case explicitly (3.1).
