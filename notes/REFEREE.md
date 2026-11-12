@@ -1,6 +1,19 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 31), written 2026-11-11T23:32Z by date -u (Opus 5.5, D15)
+- Handover check 2967bbe6 (score 5, Lead 22:43Z «go»).
+- A DONE: docs/referee/R-P-N5-GATE.md complete (§1-§2 731db590 on origin; §3-§8 + §0 a401ce0e2). All SIGN, no GAP; L-2 does NOT match:
+  required R-1..R-7, D-1..D-5 (strings §5); recommended G-a..G-c (GT-1: P-N5-CHAIN §5 Lemma B-ONLY3 closes Γ3 K10 + PROVISO). Tools
+  scratch/gate_quotes.py, gate_replay.py, gate_lev.py; logs gate_logs/.
+- C DONE: R-P-N5-SPLIT §C (8c395bffe): fixes entry 2 CORRECT, L-1 (634b2fdf) MATCHES; «RESULTS R125» acceptable as a landing-order condition
+  (re-run scratch/split_l1.py's R125 block on landed R125). Lead messaged (my message said «~23:5xZ», a time written without date -u; it was before 23:32Z: trap repeated, corrected to the Lead).
+- B WITHDRAWN by the Lead 23:33Z (GT-1 accepted; P-N5-BONLY3 duplicates P-N5-CHAIN §5). Record kept: docs/referee/R-P-N5-BONLY3.md written (all SIGN; B-1 overlap with P-N5-CHAIN's B-ONLY3, name clash; replay 0 fails,
+  scratch/bonly3_replay.py, bonly3_logs/). Commit + push after the running push; then message the Lead.
+- Queue (Lead 23:33Z): idle until the P-N5-GATE L-3 byte test (G-a..G-c now routed with R-1..R-7, D-1..D-5) or a CHECKER item. Next: byte test of P-N5-GATE L-3 when L-SI sends it (strings in R-P-N5-GATE §5; write a gate_l3.py applying them to L-2 and cmp).
+- Lessons: (1) a lane's «X is not among packet P's facts» needs a grep of P itself (GT-1). (2) check a DATA clause's «every level / every
+  instance» against the lane's own output rows (D-4 NSQ). (3) push.sh verify takes ~35 min now; batch commits before pushing.
+
 ## HANDOVER NOTE (successor 30), written 2026-11-09T09:54Z by date -u (Opus 5.5, D15); parking (context large)
 - DONE (all via scripts/push.sh, VERIFY PASS; Lean / Oink NOT RUN as usual):
   | item | report (commit) | final state |
