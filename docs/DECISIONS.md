@@ -464,3 +464,11 @@ Lead reading L51 (2026-11-12, by date -u at commit):
 (3) Model: Fable 5.2 at effort xhigh («hard» is not an effort level) for every new session and every successor of REFEREE, REFEREE-2,
     L-SI, L-NEW, L-RED, L-COMP, L-LOWER. Running Opus lanes switch at their next park. CHECKER stays Opus 5.5 high (byte checks).
 (4) Unchanged: the gauntlet, the landing rules, D1's «treat every claim as wrong», the no-contact rule.
+
+Lead reading L52 (2026-11-12 17:08Z by date -u; on L51 and docs/agents/LEAD-BACKSTOP.md step 2):
+(1) Event: the account's five-hour limit was hit around 16:10-16:40Z («You've hit your 5-hour limit · resets 5pm (UTC)»); every running
+    session's turn failed; the limit reset at 17:00Z; isUsingOverage stayed false (Lead get_session 17:05Z).
+(2) Reading: a five-hour limit that has already reset is a PAUSE, not a Stop trigger. The Stop procedure runs on the owner's «stop», on
+    paid overage, or on a limit that still rejects after its stated reset time. After a pause the Lead sends one resume message to each
+    session whose turn failed with live work, and starts successors that were due; D21 «maximum effort» stands.
+(3) The owner is told of each pause in the next owner line (not urgent: no spend beyond the plan).
