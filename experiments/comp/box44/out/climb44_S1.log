@@ -11,3 +11,7 @@ BEST BEST_S1_T65_NM286_6ee992d2.json T3 65 NM 286 ratio 0.2273 | text engine T3 
 BEST BEST_S1_T65_NM285_bea3c331.json T3 65 NM 285 ratio 0.2281 | text engine T3 65 iterations 68 fallbacks 1 agree True | box 209 counters sum 0 | restart 0 step 465 evals 445
 END restart 0: current T3 65 NM 285 ratio 0.2281; best so far [65, 285]; evals 478
 START restart 1 seed seed_MWR_10.json T3 66 NM 319 ratio 0.2069
+END restart 1: current T3 67 NM 308 ratio 0.2175; best so far [65, 285]; evals 948
+START restart 2 seed seed_gen37_9.json T3 61 NM 290 ratio 0.2103
+END restart 2: current T3 61 NM 283 ratio 0.2155; best so far [65, 285]; evals 1429
+START restart 3 seed seed_MWR_10.json T3 66 NM 319 ratio 0.2069
