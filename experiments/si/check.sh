@@ -1300,3 +1300,5 @@ bash box100/check100.sh
 bash box101/check101.sh
 # box 102 (DEEP3 proof side: CORE-ABOVE, PROPAGATE, DEEP3 <= MOVER-DEEP3; deep102 counters; docs/si/box102-deep3.md)
 bash box102/check102.sh
+# box 103 (MOVER-DEEP3 at k = 1: GAIN-COUNT, NOLOSS-k1 counters; docs/si/box103-moverdeep.md)
+bash box103/check103.sh

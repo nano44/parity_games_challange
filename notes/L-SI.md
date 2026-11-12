@@ -23,6 +23,12 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
     mover's z and e-depth, + 1 for its own e); hence DEEP3 ⇐ MOVER-DEEP3 (mover form of DEEP-k1, lossy).
   - DATA: Deep^e_1 = 38 on the 26 (DHIB26 24, DWT 9, C6G8 3, DHIB18 2), 0 on 400 random; MWR 0 at every n.
   - Next: the SOURCE potential argument (box 102 §4), or whatever the Lead routes.
+- BOX 103 (docs/si/box103-moverdeep.md; experiments/si/box103):
+  - GAIN-COUNT PROVED (lane); MOVER-DEEP3 ⇐ CONJECTURE NOLOSS (deep lossy + deep E-unchanged changes); NOLOSS-k1 DATA: 0 at k = 1.
+  - DEAD: «e-depth ≤ 1 at k = 1» (WC16_2).
+  - Next: check L-NEW 72's box 208 Lemma LEVEL on Γ3 when the Lead sends its SHA; own route = tree paths to R (box 103 §4).
+- Clock: this container's date -u ran about 2-3 h behind the Lead's stamps all session (Lead 12:08Z: note it once). Stamps in docs are as
+  printed; order by commits.
 ### Sources opened (successor 51)
 - arXiv 2506.12254v1 full text (Asadi–Chatterjee–de Raaij): abstract «the best known upper bound is exponential»; Conjecture 3.1 =
   Hansen 2012 Conj. 6.1.1 (Howard on DMDP ≤ #edges iterations, OPEN); Theorem 3.2; §1 on Hansen–Zwick 2010 (m − n + 1 iterations, weights
