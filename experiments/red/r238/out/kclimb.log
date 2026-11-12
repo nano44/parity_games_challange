@@ -1,2 +1,6 @@
 Thu Nov 12 21:04:59 UTC 2026
 KCLIMB238 ka END: evals 25000 cur [0, 19] best [0, 19] | s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 | sum L* 243910 max |V| 413 L* histogram {'0': 370, '1': 1220, '2': 1118, '3': 975, '4': 1345, '5': 1123, '6': 1195, '7': 1756, '8': 1052, '9': 919, '10': 1955, '11': 1447, '12': 3429, '13': 1023, '14': 1762, '15': 384, '16': 1088, '17': 213, '18': 862, '19': 1763} | cands 0 second-simulator kills 0 of 0 | ctrl 0 | 1268 s
+Thu Nov 12 22:21:10 UTC 2026
+KCLIMB238 kb END: evals 25000 cur [0, 21] best [0, 21] | s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 | sum L* 326718 max |V| 470 L* histogram {'0': 214, '1': 984, '2': 785, '3': 980, '4': 911, '5': 834, '6': 718, '7': 524, '8': 666, '9': 820, '10': 828, '11': 904, '12': 991, '13': 1333, '14': 755, '15': 742, '16': 990, '17': 1959, '18': 1188, '19': 4567, '20': 3146, '21': 160} | cands 0 second-simulator kills 0 of 0 | ctrl 0 | 1773 s
+exit 0
+Thu Nov 12 22:50:43 UTC 2026

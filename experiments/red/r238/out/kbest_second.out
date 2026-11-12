@@ -1,0 +1,4 @@
+KBEST ka sha1 e2433d1e3af5f96d42e0059cb795a24a4ec1eb64 N 10 levels 4 |V| 160 | own (key238 + n5s237): {'s3fail': 0, 'keyfail': 0, 'endfail': 0, 'wrong': 0, 'keymono': 0} L* 19 its 22 F1 20 fb 1 | second (key105 + n5v): {'keymono': 0, 'valmono': 0, 's3fail': 0, 'keyfail': 0, 'endfail': 0, 'wrong': 0} L* 19 | KEY states equal: True
+KBEST kb sha1 222287153b02007ac7bbfa7978a8b55213438dd9 N 17 levels 10 |V| 279 | own (key238 + n5s237): {'s3fail': 0, 'keyfail': 0, 'endfail': 0, 'wrong': 0, 'keymono': 0} L* 21 its 24 F1 22 fb 1 | second (key105 + n5v): {'keymono': 0, 'valmono': 0, 's3fail': 0, 'keyfail': 0, 'endfail': 0, 'wrong': 0} L* 21 | KEY states equal: True
+DEPTHBOUND ka: levels 4 widths [1, 3, 3, 3] Delta 3 bound prod(1 + w_l (Delta - 1)) - 1 = 1028 | L* 19 | L* <= bound: True
+DEPTHBOUND kb: levels 10 widths [2, 2, 2, 2, 2, 1, 2, 2, 1, 1] Delta 3 bound prod(1 + w_l (Delta - 1)) - 1 = 2109374 | L* 21 | L* <= bound: True
