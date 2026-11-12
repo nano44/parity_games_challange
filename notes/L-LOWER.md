@@ -1,5 +1,49 @@
 # L-LOWER notebook
 
+## Successor 13 HANDOVER (written 2026-11-12 03:41Z, date -u; PARK on Lead 03:42Z instruction)
+### DONE (claude/l-lower; products docs/lower/L14-sink.md, docs/lower/L15-keyroom.md; tools experiments/lower/l14/, l15/)
+- 7a8ca8cc handover check (score 5). ddb647db prep tools (rsolve, ann3, mincut, cause).
+- L14 (b1147fcf, 7426bdb4, 395d7948, ad1632ca): PROVED (lane): SINK-AVOID (acyclicity of the rewiring's Ξ-graph, base property
+  A_B(x, G)), SINK-FLOOR (c = 1 with PREF-FUEL), KEY-DELAY and CAUSE (written proofs, §2; 0 violations on HIT7_lift_d32 1,101
+  moves + 2 PG gadgets), C11-TIMING (h43 must move at step 13, o(20) held rows 1..12), C12-WALL-1 (C12 c58041d5, XS q4, every
+  single helper UNSAT at row 15, 48 / 48 DRUP VERIFIED). C12 base frozen eaf68e67 (L14_C12_final 37dddff6, solved c58041d5).
+  RESULT: the READING «a cut at level j creates a sink at level j − 1 with a lower wall» REFUTED on C12 (no q3 sink; XS f5 one
+  helper realizes rows 0..14, replayed a3bd361d, where C11 is UNSAT at 14). §5: no static invariant behind walls 17 / 14 / 15
+  (24 tight changes, 3 core-timed, l14/tight.py); the sink-cascade lemma has no target left.
+- L15 (0ed3b48b … be29f9ea): KEY-ROOM base case. Relaxed k* (private cascade driven by o(7) only): P 16 = 3/3/3/2 (q4/f5/q6/f6),
+  shared 3; P 32 = 4/3/4/4, shared 4; DRUP VERIFIED except f6 k 3 P 32 (solver only). Exact shared k 3 P 16 SAT + replay
+  (l15/out/E_k3_P16_shared.txt 0c6c4793). Exact shared k 4 P 32 and the Lead's decider k 3 P 24: NO ANSWER (2,900 s).
+  FINAL: INCONCLUSIVE by the pre-set rule; all data on the (A) side; (C) timing costs more than fuel. CONJECTURE KEY-CLOCK:
+  ≈ log2 P − c private pairs to time a tight change near row P, shared across clients.
+### IN FLIGHT at park: none (pgrep empty; one CPU job at a time since Lead 02:38Z).
+### NEXT: BOX L16 for successor 14 (Lead 03:42Z scope, quoted as given)
+- «BOX L16, hand-built shared cascade on the C12 base (c58041d5), sized by KEY-CLOCK (≈ log2 P − c pairs).»
+- «Target: realize core8 rows 0..P for P ≥ 18, i.e. beyond every wall seen (17 / 14 / 15). Milestones are P = 18, 21 and 24, each
+  replayed (sim6 = fenc) and frozen.» «Stretch goal: the full core8 horizon» = T 510 (core8_HIT7 c6e19673, 8-capped, L10 §2a).
+- «Budget: ≤ 2 CPU jobs; each SAT run ≤ 2,900 s; DRUP on every cited UNSAT.» «Stop rule: if no hand-built cascade passes P = 18
+  after the designs your notes list, write the exact obstruction as the box result.»
+- Designs to try, in order (my list; each ends in pgad3-style fixed-rank questions on C12 + the cascade, replayed):
+  (D1) Graft the exact shared cascade E_k3_P16_shared (3 pairs; its xt / rank / even / gate / start in l15 units) onto C12 helper
+       levels 8-10 (movers 16-21) with q4, f5, q6, f6 re-wired to read it; then pgad3 with XS = {8, 11, 12, 13} restricted to
+       cascade targets. Expected first wall ≥ 17 (the cascade separates through row 16 only).
+  (D2) Same with a 4-pair cascade from kr.py's relaxed P 32 model, made exact by ekr.py with the trajectory FIXED to the relaxed
+       one (much smaller SAT than the free P 32 run that timed out) or by l7/ranksolve on that trajectory with a chosen wiring.
+  (D3) HIT7's own helper cascade (levels 7-27, counter-shaped, halving move counts; L10 §3a, §3d) as the shared clock: copy the
+       helper block of HIT7_lift_d32 (l9/rec) onto C12's helper levels, keep C12's core wiring, and let pgad3 rewire only the
+       four clients' options into it.
+  The binding question at each milestone: which client's tight change fails first (l14/tight.py lists them; P 18 needs q6 at 16
+  and f5 at 14 and q4 at 13, all three at once).
+### Things only I know (successor 13)
+- kr.py (relaxed, sound for UNSAT) / ekr.py (exact) / sim15.py (replay) / brute.py, brute2.c (encoder checks) / kdrup.py (DRUP) /
+  grid.sh (k* grid); all take the client lists from l13/reqpref.py with C10's core gates (= C11 / C12 on rows ≤ 32).
+- k* is monotone in k (an idle top pair) and in P (UNSAT at P′ implies UNSAT at P ≥ P′): DRUP the smallest UNSAT horizon.
+- CaDiCaL proofs from pysat are NOT checkable by l8/sat/drup.c (RAT steps: «lemma … is not RUP»): use Glucose4 (kdrup / pdrup).
+  Glucose proofs reach GBs at P 32 (1.7 GB seen): keep the work dir in the scratchpad and delete after each check.
+- Wait loops on `pgrep -f "bash scripts/push.sh"` match their own command line and never end: poll the task output file for a
+  marker («push exit») instead. Pausing a DRUP worker for a push loses the helper in flight; let jobs finish, then push.
+- Keep long-running append logs OUT of the repo (scratch copy, merge at the end): the stop hook fires on every uncommitted line.
+- ann3.c call for the C12 cuts: "8+11+13+14+15:0,1,2,3,4,5,6,7" - "11+13+14+15:8,9" "13+14+15:10,11" (first one repaired).
+
 ## Successor 13 (Opus 5.5): BOX L14, GO from the Lead 08:33Z 2026-11-09 (handover check 7a8ca8cc, score 5)
 ### Resume point (02:1xZ 2026-11-12, date -u): BOX L15 (Lead 21:38Z approval)
 - L15 written: docs/lower/L15-keyroom.md §0-§4. Relaxed k*: P 16 = 3/3/3/2, shared 3; P 32 = 4/3/4/4, shared 4 (fuel floors 1-2).
