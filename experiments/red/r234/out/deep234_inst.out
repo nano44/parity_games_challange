@@ -1,0 +1,27 @@
+C6G8_n54.json {'N': 54, 'M': 150, 'T3': 17, 'deepC': 3, 'deepC_max': 3, 'intC': 64, 'alldeep': 3, 'dmaxC': 4, 'top': [((10, 0), 2), ((12, 0), 1)]}
+C98_2_2_3.json {'N': 4, 'M': 10, 'T3': 8, 'deepC': 0, 'deepC_max': 0, 'intC': 0, 'alldeep': 0, 'dmaxC': -1, 'top': []}
+C98_2_3_3.json {'N': 6, 'M': 14, 'T3': 8, 'deepC': 0, 'deepC_max': 0, 'intC': 4, 'alldeep': 0, 'dmaxC': 2, 'top': []}
+C98_3_3_3.json {'N': 9, 'M': 22, 'T3': 12, 'deepC': 0, 'deepC_max': 0, 'intC': 20, 'alldeep': 0, 'dmaxC': 2, 'top': []}
+C98_3_4_3.json {'N': 12, 'M': 29, 'T3': 12, 'deepC': 0, 'deepC_max': 0, 'intC': 20, 'alldeep': 0, 'dmaxC': 2, 'top': []}
+C98_4_4_3.json {'N': 16, 'M': 40, 'T3': 16, 'deepC': 0, 'deepC_max': 0, 'intC': 29, 'alldeep': 0, 'dmaxC': 2, 'top': []}
+C98_4_5_3.json {'N': 20, 'M': 52, 'T3': 19, 'deepC': 0, 'deepC_max': 0, 'intC': 83, 'alldeep': 0, 'dmaxC': 2, 'top': []}
+C98_5_5_3.json {'N': 25, 'M': 59, 'T3': 15, 'deepC': 0, 'deepC_max': 0, 'intC': 54, 'alldeep': 0, 'dmaxC': 2, 'top': []}
+DHIB18_2805.json {'N': 99, 'M': 301, 'T3': 19, 'deepC': 2, 'deepC_max': 2, 'intC': 142, 'alldeep': 2, 'dmaxC': 4, 'top': [((12, 0), 2)]}
+DHIB26_2804.json {'N': 108, 'M': 292, 'T3': 28, 'deepC': 24, 'deepC_max': 24, 'intC': 129, 'alldeep': 24, 'dmaxC': 6, 'top': [((10, 0), 7), ((75, 1), 3), ((10, 1), 2)]}
+DWT20_2803.json {'N': 102, 'M': 262, 'T3': 22, 'deepC': 9, 'deepC_max': 9, 'intC': 76, 'alldeep': 9, 'dmaxC': 4, 'top': [((10, 0), 2), ((10, 1), 1), ((75, 1), 1)]}
+FW16_2.json {'N': 259, 'M': 528, 'T3': 53, 'deepC': 0, 'deepC_max': 0, 'intC': 0, 'alldeep': 0, 'dmaxC': -1, 'top': []}
+FW8_2.json {'N': 123, 'M': 248, 'T3': 29, 'deepC': 0, 'deepC_max': 0, 'intC': 0, 'alldeep': 0, 'dmaxC': -1, 'top': []}
+Kprev_8.json {'N': 84, 'M': 177, 'T3': 52, 'deepC': 0, 'deepC_max': 0, 'intC': 0, 'alldeep': 1, 'dmaxC': -1, 'top': []}
+Ku_16.json {'N': 156, 'M': 337, 'T3': 100, 'deepC': 0, 'deepC_max': 0, 'intC': 0, 'alldeep': 0, 'dmaxC': -1, 'top': []}
+Ku_4.json {'N': 48, 'M': 97, 'T3': 28, 'deepC': 0, 'deepC_max': 0, 'intC': 0, 'alldeep': 0, 'dmaxC': -1, 'top': []}
+Ku_8.json {'N': 84, 'M': 177, 'T3': 52, 'deepC': 0, 'deepC_max': 0, 'intC': 0, 'alldeep': 0, 'dmaxC': -1, 'top': []}
+MW32_2.json {'N': 300, 'M': 657, 'T3': 199, 'deepC': 0, 'deepC_max': 0, 'intC': 0, 'alldeep': 32, 'dmaxC': -1, 'top': []}
+MW8_2.json {'N': 84, 'M': 177, 'T3': 55, 'deepC': 0, 'deepC_max': 0, 'intC': 0, 'alldeep': 8, 'dmaxC': -1, 'top': []}
+MWR16_2.json {'N': 156, 'M': 337, 'T3': 102, 'deepC': 0, 'deepC_max': 0, 'intC': 33, 'alldeep': 0, 'dmaxC': 3, 'top': []}
+MWR4_2.json {'N': 48, 'M': 97, 'T3': 30, 'deepC': 0, 'deepC_max': 0, 'intC': 9, 'alldeep': 0, 'dmaxC': 3, 'top': []}
+MWR8_2.json {'N': 84, 'M': 177, 'T3': 54, 'deepC': 0, 'deepC_max': 0, 'intC': 17, 'alldeep': 0, 'dmaxC': 3, 'top': []}
+RWX_n95.json {'N': 95, 'M': 233, 'T3': 12, 'deepC': 0, 'deepC_max': 0, 'intC': 60, 'alldeep': 0, 'dmaxC': 3, 'top': []}
+WC16_2.json {'N': 68, 'M': 148, 'T3': 4, 'deepC': 0, 'deepC_max': 0, 'intC': 14, 'alldeep': 0, 'dmaxC': 2, 'top': []}
+WC4_2.json {'N': 20, 'M': 40, 'T3': 4, 'deepC': 0, 'deepC_max': 0, 'intC': 2, 'alldeep': 0, 'dmaxC': 2, 'top': []}
+k1fail_202.json {'N': 15, 'M': 45, 'T3': 4, 'deepC': 0, 'deepC_max': 0, 'intC': 1, 'alldeep': 0, 'dmaxC': 2, 'top': []}
+TOTAL {'n': 26, 'deepC': 38, 'intC': 757, 'alldeep': 79, 'deepC_max': 24}
