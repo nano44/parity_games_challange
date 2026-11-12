@@ -41,6 +41,15 @@
     pr ↦ pr + 1 (`val_shift`: same values; `Val.lt_shift`: reversed order); `underProgAt_of_opt` (if switching u to w does not lower
     the value of u, the edge u → w is under-progressive: else dual (M) makes the value of u unchanged, and (P1) + strict F4′, or the
     empty path set after a cycle node, contradict); `optCounter_exists` by a pointwise-minimal valuation among finitely many strategies.
+  - 2026-11-12T13:09Z: DATA (unit: vertex value / pair of values / (Odd strategy, vertex); set: random games n ≤ 8, 3 random Even strategies
+    each; tool lean/lemmas/check/crosscheck.py, a Python transcription of Defs.lean, NOT the Lean code): seed 1, 2,000 games: values
+    29,823 valdiff 0; pairs 171,723 orddiff 0; optchecks 127,356 optfail 0. Seed 2, 2,000 games: values 30,141 valdiff 0; pairs
+    175,539 orddiff 0; optchecks 122,214 optfail 0. Control CTRL=1 (plen read one too long), seed 1, 300 games: valdiff 4,464 of
+    4,464 (fires). Reading: the definitions as written denote si.py's valuation and order, and si.py's σ̄ is an `OptCounter`.
+  - lean/lemmas/INDEX.md: the table lane text ↔ Lean statement ↔ Lean theorem ↔ remaining premise.
+  - 2026-11-12T13:22Z: fresh `git clone --depth 1 --branch claude/l-formal` of origin (HEAD 4b376da457ddb2aed895c56f101c5a86d233f766), then
+    in lean/lemmas `lake exe cache get` (exit 0), `lake build` (exit 0, «Build completed successfully (3149 jobs)», 0 warnings),
+    `lake env lean Axioms.lean` (exit 0, 13 theorems, axioms ⊆ the allowed three), grep sorry / admit / axiom: nothing. 101 s in all.
   - PGLemmas/Example.lean: `Example.window_example` (4 vertices, Ch = {1}, a window 0..1: the hypotheses hold together and b − a = |Ch|).
   - PGLemmas/VJ00.lean: `vj00Le_iff` (VJ00 §4.2's order as printed = `Val.le` on play values), `val_proper` (every val is a play value).
 - How the SHARP proof goes in Lean (LamGap.lean), for whoever edits it:

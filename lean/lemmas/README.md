@@ -33,6 +33,10 @@ Allowed axioms: propext, Classical.choice, Quot.sound. No sorry, no admit, no ne
 - PGLemmas/VJ00.lean        VJ00 §4.2's order as printed (`vj00Le`) equals `Val.le` on play values (`vj00Le_iff`, `val_proper`).
 - PGLemmas.lean             the library root (imports).
 - Axioms.lean               `#print axioms` of every theorem above.
+- INDEX.md                  lane text ↔ Lean statement ↔ Lean theorem, with the premise each statement keeps.
+- check/crosscheck.py       DATA, not Lean: a line-by-line Python transcription of Defs.lean (and of `OptCounter`) compared with the
+                            fleet's engine experiments/si/si.py on random games. Counters valdiff / orddiff / optfail must be 0.
+                            `python3 -I lean/lemmas/check/crosscheck.py 1 2000 8` (from the repository root; about 3 s).
 
 ## Build and check (from the repository root; about 2 minutes and 10G of disk on a fresh machine)
 ```
