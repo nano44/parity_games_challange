@@ -9,10 +9,10 @@ S1-S5 with FIX 1-4) from its default start S3 on the games Γ3*(G*) of box 104 �
 any other game.**
 D1 (owner, verbatim): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the
 fleet's own, as wrong until it passes the gauntlet below.»
-This commit is the LEMMA SECTION (§0-§3; Lead 18:06Z: «push the lemma section on its own»). Tools in it: experiments/si/box105/
+This file was first pushed as the LEMMA SECTION (§0-§3; Lead 18:06Z: «push the lemma section on its own»); §4 D1 added by successor 53. Tools in it: experiments/si/box105/
 quotes105.py (the [Q] strings at their sources and in this file) and check105.sh; «BOX 105» in experiments/si/check.sh. The files
 key105.py (the direct simulator of KEY(G*)), ladder105.py, chain105.py and run105.sh are committed as tools only, WITHOUT outputs,
-and check105.sh does not run them; all DATA (§4) follows in later commits; no number of this box is in this commit.
+and check105.sh did not run them at that commit; D1's outputs and §4 came with successor 53's commit, D2 / D3 follow later.
 
 ## 0. What this box is for, and what stands after its first sections
 - O2 (box 104 §8, KEY-FREE): is the first fallback F* of N5 from S3 on Γ3*(G*) polynomial in N + M for every free genome G*? It is
@@ -107,10 +107,55 @@ key_(s_(t−1))(y), and let C_ℓ be the number of steps at which some mover of 
   the ladder shape: L-RED's ladderbf.py (claude/l-red 707c0e82, experiments/red/r177) computes the longest such chain; the DATA
   commit reports its numbers next to 3^d − 1. Whether sets that come from VALUES can come near it is O2.
 
-## 4. DATA (not in this commit)
-- D1 (key105.py, the direct simulator of KEY(G*), against N5 on the validated set), D2 (small shapes, free against E-DOM) and D3
-  (climb) follow in later commits. Until KEY-MODEL is refereed every such number carries the label «KEY(G*), equal to N5's run on the
-  validated set only» (Lead 17:27Z, 18:06Z).
+## 4. DATA: D1 (key105.py, the direct simulator of KEY(G*), against N5 from S3; run105.sh, outputs experiments/si/box105/out/)
+Label of every number below (Lead 17:27Z, 18:06Z): «KEY(G*), equal to N5's run on the validated set only» — until KEY-MODEL (§2) is
+refereed, a KEY(G*) count is a statement about N5 only on the genomes listed here, where it was compared state by state. Run:
+`bash experiments/si/box105/run105.sh` (L-SI successor 53, finished 2026-11-12T20:57Z by date -u; engines n5v.py mode spec at claude/l-new
+fcba92fc and box 104's free104.py / freereach104.py, read-only). The lines below are the tool's output lines, inserted by script.
+- Counters (key105.py header): keymono (unit (step, mover): the mover's key under the new state is lexicographically larger than under
+  the old state, or the mover moved and its key did not strictly decrease: KEY-MONO*), valmono (unit (step, vertex of Γ3*): a valuation
+  decreased); validation, unit genomes: s3fail (S3's pair is not the standard state of the start), keyfail (some state 0..L* of the N5
+  run does not carry KEY's state at the movers, or the first fallback is not at L* + 1), endfail (fallbacks ≠ 1 or iterations ≠ L* + 3),
+  wrong (regions ≠ harness Zielonka). Control CTRL=1: keys read under the OLD state (keyfail must fire).
+- Random FREE genomes (box 104's freereach104.rand_free; SEED, COUNT, depth ≤ DMAX, movers per level ≤ WMAX, degree ≤ DEGMAX):
+  «KEY105 rand seed 1051 genomes 2000 d<=4 w<=3 deg<=3: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | max L* 4 sum L* 1485 max |V| 217»
+  «KEY105 rand seed 1052 genomes 1000 d<=6 w<=4 deg<=3: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | max L* 4 sum L* 1008 max |V| 332»
+  «KEY105 rand seed 1053 genomes 1000 d<=8 w<=2 deg<=2: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | max L* 3 sum L* 523 max |V| 208»
+- Control (fires: keyfail 14, endfail 8 of 200):
+  «KEY105 rand seed 1051 genomes 200 d<=4 w<=3 deg<=3 CTRL 1: s3fail 0 keyfail 14 endfail 8 wrong 0 keymono 0 valmono 0 | max L* 4 sum L* 158 max |V| 182»
+- The lane's frozen R104 genomes with R104's own (E-DOM) priorities (box 91, box 93, box 98 instances; one SKIPPED by design: box
+  93's Kprev_8 has an option whose W-target is not one level down, so it is not a genome in R104's sense and KEY is not defined on it):
+  «KEY105 json WC4_2.json (E-DOM priorities) N 20 M 40 |V| 310: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 2»
+  «KEY105 json WC16_2.json (E-DOM priorities) N 68 M 148 |V| 1114: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 2»
+  «KEY105 json FW8_2.json (E-DOM priorities) N 123 M 248 |V| 1869: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 28»
+  «KEY105 json FW16_2.json (E-DOM priorities) N 259 M 528 |V| 3965: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 52»
+  «KEY105 json MW8_2.json (E-DOM priorities) N 84 M 177 |V| 1333: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 52»
+  «KEY105 json MW32_2.json (E-DOM priorities) N 300 M 657 |V| 4909: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 196»
+  «KEY105 json C6G8_n54.json (E-DOM priorities) N 54 M 150 |V| 1114: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 3»
+  «KEY105 json RWX_n95.json (E-DOM priorities) N 95 M 233 |V| 1736: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 3»
+  «KEY105 json DWT20_2803.json (E-DOM priorities) N 102 M 262 |V| 1946: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 2»
+  «KEY105 json DHIB26_2804.json (E-DOM priorities) N 108 M 292 |V| 2162: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 3»
+  «KEY105 json DHIB18_2805.json (E-DOM priorities) N 99 M 301 |V| 2216: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 3»
+  «KEY105 json Kprev_8.json: SKIPPED, not a genome in R104's sense (some W-target is not one level down), so KEY(G*) is not defined»
+  «KEY105 json Ku_16.json (E-DOM priorities) N 156 M 337 |V| 2525: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 100»
+  «KEY105 json Ku_4.json (E-DOM priorities) N 48 M 97 |V| 737: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 28»
+  «KEY105 json Ku_8.json (E-DOM priorities) N 84 M 177 |V| 1333: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 52»
+  «KEY105 json MWR16_2.json (E-DOM priorities) N 156 M 337 |V| 2525: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 100»
+  «KEY105 json MWR4_2.json (E-DOM priorities) N 48 M 97 |V| 737: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 28»
+  «KEY105 json MWR8_2.json (E-DOM priorities) N 84 M 177 |V| 1333: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 52»
+  «KEY105 json k1fail_202.json (E-DOM priorities) N 15 M 45 |V| 340: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 1»
+  «KEY105 json C98_2_2_3.json (E-DOM priorities) N 4 M 10 |V| 84: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 1»
+  «KEY105 json C98_2_3_3.json (E-DOM priorities) N 6 M 14 |V| 114: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 4»
+  «KEY105 json C98_3_3_3.json (E-DOM priorities) N 9 M 22 |V| 173: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 1»
+  «KEY105 json C98_3_4_3.json (E-DOM priorities) N 12 M 29 |V| 225: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 0»
+  «KEY105 json C98_4_4_3.json (E-DOM priorities) N 16 M 40 |V| 306: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 1»
+  «KEY105 json C98_4_5_3.json (E-DOM priorities) N 20 M 52 |V| 394: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 2»
+  «KEY105 json C98_5_5_3.json (E-DOM priorities) N 25 M 59 |V| 448: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 2»
+- Summary: all six must-0 counters are 0 on 4,000 random free genomes (max L* 4) and on 25 frozen E-DOM genomes (L* from 0 to 196,
+  the largest on MW32_2.json with |V| = 4909); the control fires. So key105.py agrees with N5 state by state on these genomes (L* + 3 = N5's
+  iterations, first fallback at L* + 1, regions correct) and KEY-MONO* (keymono 0) and the valuation monotonicity (valmono 0) on them.
+  It is DATA: it bounds nothing. The random free genomes are small (L* ≤ 4); the long runs (L* 52-196) are the lane's frozen E-DOM instances (families
+  FW, MW, MWR, Ku), i.e. R104 genomes, not free ones. D2 (search for long free runs against the ceiling) follows in a later commit.
 
 ## 5. Questions, and what is not done
 - LAG* (how many steps a level-ℓ mover can be behind level ℓ − 1; the tower's doubling needs it): not stated yet.

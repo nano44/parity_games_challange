@@ -106,5 +106,11 @@ fi
 if [ -f out/climb104.out ]; then
   [ "$(grep -c "^CLIMB104 alg spec mode .* best iterations [0-9]*$" out/climb104.out)" = 18 ] && ! grep -q FAILED out/climb104.out || bad "climb rows"
 fi
+# (17) Addendum C (REFEREE 33's pre-read carried in; addC104.py), when present: 23 items found at their pinned sources (frozen
+#   out/addC104.out), and each stands in docs/si/box104-map.md (addC104.py doc reads out/addC104.json; no git)
+if [ -f out/addC104.out ]; then
+  [ "$(grep -c "^ADDC104 [A-Za-z0-9-]* OK " out/addC104.out)" = 23 ] && [ "$(wc -l < out/addC104.out)" = 23 ] || bad "addendum C quotes at source"
+  python3 -I addC104.py doc ../../../docs/si/box104-map.md > /dev/null || bad "addendum C quotes in the doc"
+fi
 [ $fail = 0 ] && echo "BOX104 checks: PASS"
 exit $fail

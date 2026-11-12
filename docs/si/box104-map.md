@@ -699,3 +699,260 @@ WRAP freezes τ at faces that all end in c_W, so S4a's arena is flat and only th
   which is what the bits of [F11] §8's counter do. This says why I do not see a one-player copy of that counter; it bounds nothing.
 - For the kill side: a counterexample family to GLO-1P, or a two-player family whose Odd replies fixed faces can copy and on which the policy
   is super-polynomial, would make N5 super-polynomial (through Wg). [F11]'s H_n is not such a family (B.1: its stubborn cycles).
+
+## Addendum C (L-SI successor 53, 2026-11-12T20:51:21Z (date -u); append-only, §0-§10 and Addenda A, B unchanged): REFEREE 33's pre-read of Lemma WRAP carried into the text — W-1 to W-4, Claim NT with its proof (closes (X-TIE)), F-1 to F-3; Statement XI-EXP restated
+Source: REFEREE successor 33, «R-WRAP-preread» (PRE-READ, NOT A SIGNATURE), claude/referee e44ce56b docs/referee/R-WRAP-preread.md, with its
+Addendum 1 at claude/referee 90703a81 (the n = 8 row). Lead 18:27Z and the brief of successor 53: carry W-1, W-2, W-3, W-4, Claim NT with
+its proof (credit REFEREE 33, L41), F-1, F-2, F-3 into the text, strings copied by script. Method: every «…» in C.1-C.7 that is introduced
+by [R33] or [R15] / [RULE] is printed into this file by experiments/si/box104/addC104.py from the byte copy (`git show SHA:PATH`; the
+text between two anchors, line breaks joined); nothing of it is retyped. out/addC104.out lists the 23 items with their sha1;
+check104.sh (17) re-checks that each stands in this file. The REFEREE's text is a pre-read: it signs nothing; under L41 Claim NT counts
+only when this lane has written it (C.6) and the other referee has checked it independently.
+Labels as in the box: PROVED (lane, unrefereed) / CONDITIONAL / DATA / READING. SCOPE LINE unchanged: nothing here is a TARGET.md claim,
+M3 or M4; G-N5-TIME stays OPEN; N5′-xi is a candidate under attack, N5 is not hit (WRAP (v), Remark 3).
+
+### C.1 The pre-read's verdict (quoted)
+- [R33]
+  «**YES, and the item can be CLOSED in its second form («no tie occurs on the run»), for every n ≥ 1**, by a three-line argument from
+  the paper's own Lemma 5.1 and Lemma 6.7 (§3.2, Claim NT). The argument is mine, so it is not signed by this report (L41): L-SI
+  writes it into the text, the other referee checks it independently.»
+- [R33]
+  «No FALSE statement found; no instance against any step. Own replay (§5): 18 must-be-0 counters (the box's six and twelve of mine),
+  all 0 on every set; every counter has a firing control; my engine reproduces the lane's N5′-xi iteration counts on Friedmann's game
+  from my own transcription of the PDF and on the lane's frozen instances.»
+- [R33]
+  «What this read does NOT establish: that N5′-xi is super-polynomial as a refereed statement. It says that I re-derived every step of
+  WRAP on my own, found no hole, and that the tie item has a short proof. WRAP has had one day of scrutiny and one referee's read; D1
+  stands for a kill as for a bound. G-N5-TIME stays OPEN and is untouched: it is about N5, and WRAP (v) with Remark 3 says N5 is fast
+  on these wrappers.»
+
+### C.2 W-1: the pe-free sentence of (W4) — Correction C-1 (wording)
+- [R33]
+  «Note W-1 (wording, required for a packet). The sentence «Under σ a pe-free play from a vertex outside the core runs along the
+  6-edge paths from vertex of H to vertex of H forever» is false as written for the starting vertices pe_(v,w), pe_o, pb_(a,w) and c_W
+  (their plays go to c_W or into the core whatever Odd does). The proof applies it to gates, vertices of H and pads m only, where it
+  holds. Say «from a vertex of H, a gate, a valve, or a pad m, pβ, x_i, y».»
+- Correction C-1 (lane; read it into §3 (W4), and the packet carries it). The sentence of (W4)'s proof «Under σ a pe-free play from a
+  vertex outside the core runs along the 6-edge paths …» is REPLACED by: «Under σ, a pe-free play that starts at a vertex of H, a gate,
+  a valve, or a pad m, pβ, x_i or y runs along the 6-edge paths from vertex of H to vertex of H forever (every valve goes to y), so it
+  never meets c_W or the core, and its cycle node is a vertex of H (W1), of rank below c_W.» Check of the replacement, start by start
+  (the standard state: σ(v) = m at v ∈ V_E, σ(b) = y; a pe-free Odd strategy plays pβ at a gate and x1 at o ∈ V_O): a vertex of H goes
+  to a pad m (Even) or to x1 (Odd); m → g; a gate → pβ → b; x1 → x2 → x3 → b; a valve b → y → w ∈ V. Every one of these enters a
+  6-edge path and reaches a vertex of H without meeting pe, pe_o, pb, c_W or the core; from there the same holds again. The excluded
+  starts pe_(v,w), pe_o, pb_(a,w), c_W lead to c_W or into the core whatever Odd does. Where (W4) uses the sentence: (a) at a gate and
+  at o ∈ V_O (a vertex of H), (b) at v ∈ V, (c) at a pad m: all inside the corrected range. Nothing else of (W4) changes.
+
+### C.3 W-2: the index order of the new vertices — Correction C-2 (definition; scope of every N5 column)
+- [R33]
+  «W-2 (required): the Definition says only «the new vertices are indexed after V». Statements (i)-(v) hold for every index order of
+  the new vertices (no step uses one; my PERM = 1 sets, §5). The NUMBERS for N5 do depend on it: on W^L_n in my order N5 makes 3
+  iterations (F = 1) for n = 1, …, 6; on the lane's frozen WL_1, …, WL_4 (wrap104.py's order; same vertex and edge counts and the same
+  2-step signature multisets as mine, scratch/wrap_cmp.py) my engine gives 6 iterations (F = 4), the lane's column «N5 (spec) on
+  W^L_n: 6». Both agree with (v) and Remark 3 (the key is an index sequence). The box should fix the order in the Definition, or say
+  that its N5 columns are for wrap104.py's order. N5′-xi's counts are the same in both orders on these games, as (iii) and Claim NT
+  say; on a game H with exact ties (iii)'s Howard run can depend on the order through «SPEC's choice, then the larger index».»
+- Correction C-2 (lane; read it into §3's Definition). The new vertices of W(H, s0) are indexed after V in wrap104.py's `new()` order
+  (the order of the frozen instances of inst/): first c_W, K0, K1, K2, K3, pA, s, q, r; then, for v = 0, 1, …, n − 1 in H's index order
+  and for each successor w of v in the order of H's successor list as the tool reads it: if v ∈ V_E, the seven vertices pb_(v,w),
+  y_(v,w), b_(v,w), pβ_(v,w), pe_(v,w), g_(v,w), m_(v,w); if v ∈ V_O, the six vertices pb_(v,w), y_(v,w), b_(v,w), x3_(v,w), x2_(v,w),
+  x1_(v,w), and after v's last edge the pad pe_v. (wrap104.py's `wrap()`, lines 43-58 at this commit; L-COMP 20 read the same order off
+  the isomorphism of its own build with the 11 frozen files and then rebuilt all 11 byte-identically: claude/l-comp aa863db5,
+  experiments/comp/box44/README.md §1.1, «ORDER=lsi».)
+- Statements (i)-(v) hold for EVERY order of the new vertices (no step of the proof uses one; REFEREE's PERM 1 sets). The COUNTS of N5
+  do not: N5 picks inside TIE(v) = A(v) by its root-first key, an index sequence (Remark 3). Scope sentence, to be read wherever an N5
+  column appears in this box (§0 item 3 «N5 itself takes 3 to 7 iterations», §3's DATA «ALG=spec», §5.2, Addenda A.2, B): every N5
+  count is for the vertex order of the tool that built the game (wrap104.py's order above for W(H, s0); guide104.py's and glo104.py's
+  for the guided wrappers of A.2 and B) and is a property of (H, s0, that order), not of (H, s0) alone. DATA on the three builds of
+  W(G^L_n, ι): N5 makes 6 iterations in this order for n = 1, …, 6 (out/wrap_lmcs_spec.out «F 4 iterations 6»; the frozen
+  WL_1, …, WL_4 among them), 3 in REFEREE 33's order
+  (n = 1, …, 6) and 4 in L-COMP 20's own order (n = 1, …, 6), 6 again on L-COMP's byte-identical rebuild in this order; on W_n, L-COMP's
+  two orders and REFEREE's engine on the frozen files all give 3, 4, 5, 6, 7 (n = 2, …, 6). Every one of these is consistent with (v) and Remark 3.
+- N5′-xi's counts on the family rows W_n and W^L_n are the same in every order measured (REFEREE: random order PERM 1, n ≤ 5; L-COMP:
+  its own order, n ≤ 8; F_n was rebuilt by L-COMP in the frozen order only): no tie event occurs on those runs (Claim NT, C.6, proves it for W^L_n). On random H with exact value ties the
+  Howard run of (iii) can depend on the order through its last clause («SPEC's choice, then the larger index»); L-COMP 20 measured it on
+  the 300 frozen random games: reversed order 9 of 300 rows differ, shuffled 12, «smaller index» 3; every difference is a tie of
+  Howard's rule (both runs choose ⊴-best successors by H's own valuation) and WRAP's counters stay 0 in every variant.
+
+### C.4 W-3: the premises to name — Correction C-3 (header of Lemma WRAP and of Remark 3)
+- [R33]
+  «W-3 (required): premises to name. R15 (c) / (d) (the Howard run of H is finite; N5 terminates, so a first fallback exists in (v));
+  [RULE] for Remark 3. 1E-N3 is used on W (P1, P2) and on H (Ω^H_s is the pointwise minimum).»
+- Correction C-3 (lane; read it into the header of Lemma WRAP). Lemma WRAP is PROVED (lane) under: [1E-N3] (RESULTS R57 (b), as in §3,
+  used on W in its two forms and on H: Ω^H_s is the pointwise minimum over Odd's strategies of H); [R15c] and [R15d] (RESULTS R15 (c),
+  (d)); Remark 3 also under [RULE] (RESULTS R104's premise). The four landed texts, copied:
+  - [R15] (a), used in C.6: «(a) Lemma A: for any non-empty unambiguous set I of improvements of σ (VJ00 §4.4), Ωσ ⊴ Ω_{Switch_I(σ)}.»
+  - [R15] (c): «(c) Theorem: with φ(σ) = Σ_{v ∈ M⊕, Λσ(v) = v} ε(v)·k_σ(σ(v)) (ε = +1 on R−, −1 on R+) and σ ≺ σ⁺ iff Ωσ ◁ Ωσ⁺ or (Ωσ
+    = Ωσ⁺ and φ(σ) < φ(σ⁺)), ≺ is a strict partial order on strategies and every non-empty switch of improvements goes strictly up in
+    ≺. Consequence: no strategy repeats in any VJ00 strategy-improvement run with any non-empty selection rule; φ is an integer with
+    |φ| ≤ n(n−1).»
+  - [R15] (d): «(d) N5: every iteration applies Switch_I with ∅ ≠ I ⊆ Iσ to Even's σ (on G) and/or with ∅ ≠ I ⊆ Iτ to Odd's τ (on
+    G^d), and changes at least one of them (S4a/S4b, or the S4c fallback, a switch-all); Iσ depends on σ alone (Ωσ is against ⊖'s
+    optimal reply, not against τ). Hence no (σ, τ) state repeats and N5 terminates within h(≺_G) + h(≺_{G^d}) iterations; at most
+    4n(n−1) consecutive N5 iterations leave both Ωσ and Ωτ unchanged (two potentials φ, φ^d).»
+  - [RULE], R104's premise clause: «with RESULTS R24 (a) Lemma R and R24 (b)'s choice rule (TB proof steps 1, 3-5; fixes §2.3) with
+    RESULTS R103's bridge B, whose proof uses no 𝒞^1O hypothesis (Lead reading L46 and its amendment), applied at every Even vertex
+    that is not its own W′-cycle node, non-movers included (RESULTS R103's (R1) ruling)»
+- Where each enters. (iii): every Howard step of H switches each moving Even vertex to one strictly better successor, so it is
+  Switch_I(s) for a non-empty unambiguous set I of improvements of s in H; by [R15c] no strategy of H repeats, and H has finitely many
+  strategies, so the Howard run of H from s0 ends: T exists (the sentence «T is finite» that the proof used without a name). (iv): the
+  first fallback of N5′-xi is placed at T + 1 by (iii), so (iv) needs no further premise. (v): by [R15d] the N5 run on W terminates;
+  it cannot stop while the K-config is κ0 (Iσ ∋ (K0, K1), (W6) / K3 (b)), and the K-config changes only at a fallback (E1), so a first
+  fallback F exists. Remark 3: SPEC's pick inside TIE(v) is the key-least option by [RULE]; without [RULE] Remark 3's bound is not
+  claimed (WRAP (i)-(v) do not use it).
+
+### C.5 W-4: the core and endgame proofs on W in full (for the packet)
+- [R33]
+  «W-4 (for a packet): (W3) and (W8) say that K3, K2-r and E1-E4 «hold verbatim». The landed statements are about Γ3(G); a packet
+  carries these proofs on W in full (they are short: §2.3, §2.8), with «valve» and «pe-play» defined for W.»
+- The packet P-N5-WRAP (DUTY 3 of this lane, after this addendum) carries K3 (a)-(d), Lemma K2-r and E0-E4 as proofs ON W, with «valve»,
+  «pe-play» and the K-configs defined for W, each step re-derived (the landed texts about Γ3(G) serve as templates only). Until then
+  the words «hold verbatim» in (W3) and (W8) are pointers to templates, not proofs about W; REFEREE 33's §2.3 and §2.8 re-derived them
+  on W and found no gap.
+
+### C.6 Claim NT: no tie on Friedmann's run (REFEREE-originated, L41: credit REFEREE successor 33, R-WRAP-preread §3.2); (X-TIE) closed
+- The REFEREE's argument, quoted:
+  - [R33]
+    «(T-1) WRAP's H-policy is a policy with the I^loc property, on every game. Define I(s) := the H-part of S4a′'s result at the
+    standard state of s (§2.4-§2.7 hold at every standard state, reachable or not). It is a map on S_0(H); every v goes to a ⊴_s-best
+    successor (the property); (1) holds (the new successor is not worse than the old); (2) holds (if some v has a strictly better
+    successor it moves to a strictly better one). The tie rule is one admissible choice among best successors.»
+  - [R33]
+    «(T-2) **Claim NT (no tie on a 1-sink game; mine).** Let G with ι be a 1-sink game in [F11] §5's sense, with sink x, and σ a
+    player-0 strategy with Ξ_ι ⊴ Ξ_σ. Then Ξ_σ(u) ≠ Ξ_σ(u′) for all nodes u ≠ u′. Proof. By Sink Seeking (p. 8) every Ξ_σ(u) has cycle
+    component x; every other node is more relevant than x (Sink Existence), so the cycle is x's loop and the path component of Ξ_σ(u)
+    is the set of ALL nodes of the play from u before x, u itself included (the paper's own remark, p. 8: «the path-length component
+    equals the cardinality of the path component»). Ξ_σ(x) = (x, ∅, 0) differs from every other value. If u, u′ ≠ x had equal values,
+    u′ would lie on u's play and u on u′'s play; plays are positional, so u's play would return to u before reaching x: a cycle
+    without x, against Sink Seeking. ∎»
+  - [R33]
+    «(T-3) G_n with ι_(G_n) is a 1-sink game: [F11] Lemma 6.7 with Lemma 5.1 (p. 17, p. 8). I re-read both proofs. 6.7 (1): under
+    τ(e_i) = h_i the edges of Table 4 allow no cycle but x's loop (s → f_j or x; r → g_j or x; f, e, h, k, g only move to k, x or a g
+    of higher index; t, a, c, d only reach s, r, e or lower t's); 6.7 (2) and 5.1 as written. Neither uses the six priorities that
+    differ between Table 4 and Figure 4.»
+  - [R33]
+    «(T-4) Every strategy σ of an improvement run from ι has Ξ_ι ⊴ Ξ_σ ([F11] Theorem 3.2; in the fleet, landed R15 (a)). By Claim NT
+    no two successors of a node tie at any state of the run, so the property of §3.1 determines I^loc(σ) uniquely there: every policy
+    with the property, WRAP's included, produces the same run from ι_(G_n), which is therefore the run Theorem 6.14 speaks of. No
+    reading of the proofs of Lemmas 6.2-6.13 is needed (Addendum A's route), and the lane's tie rule is never invoked on G_n.»
+  - [R33]
+    «So (X-TIE) holds in its second form, «no tie occurs on the run», for every n ≥ 1, with premises [F11] Lemma 5.1, Lemma 6.7,
+    Theorem 3.2 / R15 (a) and Claim NT. The same argument covers both priority versions (ranks by (Ω, index) are injective in SPEC).»
+  - [R33]
+    «DATA for it (scratch/wrap_f11.py, my transcription of Table 4 / Figure 4 / ι from the PDF; Howard by H's own valuation on my
+    engine): at every state of the run, sinkseek (a node whose cycle component is not x) 0, eqval (pairs of distinct nodes with equal
+    values; the strong form of Claim NT) 0, tie (Even nodes with two best successors) 0, for n = 1, …, 10 with Figure 4's priorities
+    and n = 1, …, 8 with Table 4's as printed (§5.3).»
+  - [R33]
+    «Status. Claim NT and (T-4) are referee-originated: under L41 they count only when the lane has written them and the other referee
+    has checked them independently. I would sign them.»
+- Sources, opened by this lane (successor 53) before writing: arXiv 1106.0778v2, 618,145 B, pdf sha256
+  46c96f44775aa2b07cad20912cb325b177e38c94cb2e40297df66b6047679611 (the box's «46c96f44775aa2b0…»); p. 5 and p. 8 read as rendered
+  pages, §3-§6.4 as pdftotext. [F11] p. 5: the order ⪯ on node valuations (cycle node by reward; then the path sets by the most relevant
+  node of the symmetric difference; then the length, «e < f and u ∈ V⊖» or «e > f and u ∈ V⊕»), optimal counterstrategy τσ and
+  Ξσ : v ↦ ϑ_(σ,τσ,v); Ξ ◁ Ξ′ iff Ξ(v) ⪯ Ξ′(v) for all v and Ξ ≠ Ξ′. p. 8 (§5): a 1-sink game (G with ι_G) has «Sink Existence: there
+  is a node v* (called the 1-sink of G) with v*Ev* and Ω(v*) = 1 reachable from all nodes; also, there is no other node w with Ω(w) ≤
+  Ω(v*)» and «Sink Seeking: for each player 0 strategy σ with Ξ_ιG ⊴ Ξσ and each node w it holds that the cycle component of Ξσ(w)
+  equals v*» (subscripts written flat here; the relation in Sink Seeking is ⊴ on the rendered page); Lemma 5.1 (p. 8): with Sink
+  Existence, G is a 1-sink game iff G is completely won by player 1 and the cycle component of Ξ_ιG(w) is v* for every w. p. 17:
+  «Lemma 6.7. Let n > 0. (1) The game Gn is completely won by player 1. (2) x is the 1-sink of Gn and the cycle component of ΞιGn (w)
+  equals x for all w.», followed by «By Lemma 5.1 it follows that Gn is a 1-sink game».
+- **Claim NT (PROVED, lane writing of a REFEREE-originated proof; unrefereed).** Let G be a parity game with injective Ω and initial
+  strategy ι such that (G, ι) is a 1-sink game with sink x ([F11] §5). For every player-0 strategy σ with Ξ_ι ⊴ Ξσ and all nodes
+  u ≠ u′: Ξσ(u) ≠ Ξσ(u′). Hence at such a σ every node v of player 0 has exactly one ⪯σ-best successor.
+  Proof. Fix τ := τσ; for every node u, Ξσ(u) is the valuation of the (σ, τ)-play from u, a positional play u = v_1, v_2, …, v_k
+  followed by a cycle, with v_1, …, v_k pairwise distinct and not on the cycle. By Sink Seeking the cycle component (the most relevant
+  node of the cycle) is x. Every node other than x is more relevant than x (Sink Existence: no other node w has Ω(w) ≤ Ω(x)), so the
+  cycle is x's loop alone, and the path component of Ξσ(u) is the set {v_1, …, v_k} of ALL nodes before x (p. 8's own remark that the
+  length equals the cardinality of the path component). So Ξσ(x) = (x, ∅, 0), while for u ≠ x the path component contains u and is not
+  empty: Ξσ(x) ≠ Ξσ(u). Let u ≠ u′ be nodes other than x with Ξσ(u) = Ξσ(u′). Then u′ ∈ {v_1, …, v_k}, say u′ = v_j with j ≥ 2 (v_1 = u ≠
+  u′). The (σ, τ)-play from u′ is the suffix v_j, …, v_k, x, x, … of u's play (both strategies are positional), and it does not contain
+  u = v_1 (the v_i are pairwise distinct and x ≠ u). So u is not in the path component of Ξσ(u′) = Ξσ(u), which contains u: a
+  contradiction. For the second sentence: the order ⪯ of p. 5 is total on node valuations, so the successors of v, having pairwise
+  distinct valuations, have exactly one ⪯σ-maximum. ∎
+- **Corollary NT-RUN (CONDITIONAL on (X-WRAP) = Lemma WRAP being refereed; premises [F11] Lemma 5.1, Lemma 6.7, [R15] (a), Claim NT).**
+  For every n ≥ 1 let G^L_n carry Figure 4's injective priorities (READING F-1, C.7). Then the H-parts s_0 = ι, s_1, …, s_T of the N5′-xi
+  run on W^L_n = W(G^L_n, ι) (WRAP (iii)) are the run of the strategy improvement algorithm with the I^loc-policy on G^L_n from ι, for
+  EVERY policy with [F11] §4's defining property; in particular T is the number of improvement steps of Theorem 6.14.
+  Proof. By Lemma 6.7 with Lemma 5.1, (G^L_n, ι) is a 1-sink game (the proofs use the graph, the owners and Ω(x) = 1 only; REFEREE (T-3)
+  re-read them; Figure 4's priorities change none of these). Each step s_t → s_(t+1) moves every moving Even vertex to a strictly better
+  successor (WRAP (iii), (W4) (d)), so s_(t+1) = Switch_I(s_t) for a non-empty unambiguous set of improvements and [R15] (a) gives
+  Ξ_(s_t) ⊴ Ξ_(s_(t+1)) pointwise; by transitivity Ξ_ι ⊴ Ξ_(s_t) for every t (the relation of Sink Seeking). SPEC S1's values and order
+  on H are [F11] §3's node valuations and order (REFEREE §3.1; Ω injective, so SPEC's rank by (Ω, index) is Ω's order). By Claim NT
+  every Even node v has a unique best successor b_t(v) at s_t; a Howard step sets s_(t+1)(v) = b_t(v) at every v (a vertex without a
+  strictly better successor already sits on its unique best one), which is the only value a policy with the property «w ⪯σ I(σ)(v)
+  for every w ∈ vE» can take. So s_(t+1) = I^loc(s_t) for every such policy, and the run stops at the first non-improvable s_T, as the
+  algorithm does. N5′-xi's tie rule is never invoked on these runs. ∎
+- Status: (X-TIE) of §6 is CLOSED in its second form («no tie occurs on the run»), for every n ≥ 1, by Claim NT and Corollary NT-RUN,
+  pending REFEREE-2's independent check (L41). The reading of the proofs of [F11] Lemmas 6.2-6.13 (Addendum A's route) is no longer
+  needed. DATA (consistent, not a proof): tie events 0 on Howard's run of G^L_n for n ≤ 8 in this lane (wrap104.py; both priority
+  versions for n ≤ 6), n ≤ 8 at L-COMP 20, eqval 0 (the strong form of Claim NT) for n ≤ 10 at REFEREE 33.
+
+### C.7 F-1, F-2, F-3: what «Theorem 6.14, as published» carries; Statement XI-EXP restated
+- [R33]
+  «F-1 (the game; READING, stated by the box, confirmed here). Table 4 (p. 15) prints d_i 4i + 1, e_i 4i + 2, g_i 4i + 4, k_i 8n + 4i
+  + 7, f_i 8n + 4i + 9, h_i 8n + 4i + 10. Then Ω(g_n) = Ω(a_1) = 4n + 4, against p. 3's injectivity, and the highest priority is 12n +
+  10, against Fact 6.1's «12·n + 8 as highest priority» on the same page. Figure 4 (p. 16, G_3) shows d 3, 7, 11; e 4, 8, 12; g 6, 10,
+  14; k 33, 37, 41; f 35, 39, 43; h 36, 40, 44, i.e. each of the six formulas minus 2; Figure 3 / Table 3 (p. 13, «p′_1 = 3 and p_1 =
+  33») agree with Figure 4. So the game of Theorem 6.14 is the Figure-4 game on the reading that Table 4 carries a misprint; XI-EXP
+  must keep saying so (it does, §5.1 and §6).»
+- [R33]
+  «F-2 (the count). The paper proves its phase lemmas under a stated restriction (p. 17-18): «we will assume that b is different from
+  0_n and that the two highest bits in b are zero and remain zero, i.e. we will only use the first n − 2 bits for counting. Note
+  however, that every bit works as intended in the counter.» Lemma 6.13 gives k ≥ 4 steps per increment. So the bound 2^n is the
+  theorem «as published»; what the written lemmas give line by line is of the order 4·2^(n−2) minus a constant. XI-EXP's «2^n + 3»
+  inherits exactly this. For «not polynomial» any 2^Ω(n) suffices. DATA: T = 9·2^n − 10 for n = 1, …, 10 (my run), above 2^n.»
+- [R33]
+  «F-3 (wording). XI-EXP is exact: at least 2^n + 3 iterations on 10.5n² + 152.5n + 48 vertices. In the number of vertices this is
+  2^Ω(√|W|): super-polynomial. §0 item 3's «exponential wherever Howard's is» should read «in n» or «super-polynomial» here.»
+- **STATEMENT XI-EXP, restated (CONDITIONAL on (X-WRAP) and Claim NT being signed by two referees; replaces §6's statement and its item
+  (X-TIE); not refereed; no «proved» wording applies).** Let G^L_n be [F11]'s game G_n with Figure 4's injective priorities, on the
+  READING (F-1) that Table 4's six priority formulas carry a misprint, and W^L_n := W(G^L_n, ι) (§3, index order C-2). For every n ≥ 1,
+  N5′-xi from S3 makes exactly T_n + 3 iterations on W^L_n, where T_n is the number of improvement steps of the I^loc-policy on G^L_n
+  from ι (Corollary NT-RUN with WRAP (iv)). With [F11] Theorem 6.14 as published, T_n ≥ 2^n. The form to use (F-2, F-3): **N5′-xi needs
+  2^Ω(n) iterations on a parity game with O(n²) vertices** (|W^L_n| = 10.5n² + 152.5n + 48 = 211, 395, …, 1,940 at n = 1, …, 8), i.e.
+  2^Ω(√|W|) iterations: super-polynomial in the number of vertices; «exponential» is in n only. F-2 in one line: «2^n» is the theorem as
+  stated, while the paper's written phase lemmas are proved for counter states b ≠ 0_n whose two top bits stay zero and give, line by line, a
+  count of order 4·2^(n−2) minus a constant; either is 2^Ω(n), which is all «not polynomial» needs.
+- Premises of the restated statement: (X-WRAP) Lemma WRAP (§3 with Corrections C-1, C-2, C-3; packet P-N5-WRAP with the proofs on W in
+  full, C.5); Claim NT and Corollary NT-RUN (C.6); (X-F11) [F11] Theorem 6.14, a published theorem cited as such, with F-1 and F-2
+  stated next to it. Consequence, if it stands: «N5′-xi makes polynomially many iterations on every parity game» is false; N5′-xi is
+  not an M4 candidate (Lead rulings 14:36Z (c), 15:19Z, as recorded in §0). It says nothing against N5 (WRAP (v); Remark 3 under [RULE]:
+  F ≤ m_E − |V_E| + 1 on every W(H, s0)), and nothing about boxes 208 / 209 on genome games.
+- §0 item 3's sentence «So N5′-xi's iteration count is exponential wherever Howard's is» is to be read as: «on W(H, s0), a game with
+  n + 7·m_E + 6·m_O + n_O + 9 vertices, N5′-xi's iteration count is Howard's on H plus 3; on Friedmann's G_n this is 2^Ω(n) iterations
+  on O(n²) vertices, i.e. 2^Ω(√|W|)».
+- DATA with units (each from a named file; no new run in this addendum): iterations of N5′-xi from S3 on W^L_n, n = 1, …, 8: 11, 29, 65,
+  137, 281, 569, 1,145, 2,297 (this lane: out/wrap_lmcs_xi.out n ≤ 6, out/wrap_long.out n = 7, 8; L-COMP 20 BOX 44: the same eight on its
+  own builder and engine; REFEREE 33: the same eight on its own transcription of the PDF and its own engine). REFEREE 33's n = 8 row:
+- [R33] «So on my wrapper of my transcription of G_8 the iteration count is above the number of vertices, as in the lane's Addendum
+  A.1 row (2,297 iterations on 1,940 vertices), with one fallback and all 18 counters 0.»
+
+### C.8 Independent DATA now on record (cited from their own commits; for the packet's DATA section)
+- L-RED successor 66, R236 (claude/l-red 0037d948, docs/red/R236-fn.md): F_n CONFIRMED on L-RED's own N5′-xi engine n5x236: 33, 73,
+  153, 313, 633, 1,246, 2,489 iterations (n = 2, …, 8) = Howard T + 3, one fallback each, regions equal to the harness Zielonka; F_n
+  differs from the E-DOM build only in priorities. R237 (1) (claude/l-red 5eca1c32, notes/L-RED.md): WRAP's six counters 0 on n5x236 on
+  the 300 frozen random games (14 rows T ± 1, all ties of H at state 1), on W(G_n, ι) n = 1, …, 4 in both priority versions (11 / 29 /
+  65 / 137) and on W(switchallexp_2, _3) (33 / 73); control fires (nohoward 660). Independence wording, L-RED's own: «up to SPEC's
+  cycle-node and S4b tie rules».
+- L-COMP successor 20, BOX 44 items 1-2 (claude/l-comp aa863db5, experiments/comp/box44/README.md): builder, VJ evaluator, Howard run
+  and counters written from §3's text; the 11 frozen W files byte-identical to its build in the frozen order, F_2, …, F_8 rebuilt
+  byte-identical from their decoded free genomes; nine must-0 counters 0 on the 300 random games, W_n (n = 2, …, 8), W(G_n, ι) (n = 1,
+  …, 8, both priority versions to n = 6) and F_n (n = 2, …, 8); no tie rule acts on any family row; every count difference on random
+  games is a tie of Howard's rule (C.3).
+- REFEREE successor 33 (claude/referee e44ce56b, 90703a81): 18 must-be-0 counters 0 on 523,721 runs (random, exhaustive on 1-3 vertices,
+  Friedmann's G_n from its own transcription), every counter with a firing control (nine controls), T_n = 9·2^n − 10 for n ≤ 10,
+  wrapper rows n ≤ 8 (C.1, C.7).
+
+### C.9 For the packet (the pre-read's list, quoted) and what this addendum does not do
+- [R33]
+  «PW-1 (required): W-1, W-2, W-3 fixed in the text; W-4 (proofs on W in full). - PW-2 (required): (X-TIE) replaced by Claim NT with
+  its premises ([F11] Lemma 5.1, Lemma 6.7, Theorem 3.2 or R15 (a)), written by the lane; XI-EXP then conditional only on the
+  referees' signatures of WRAP and Claim NT, with [F11] Theorem 6.14 as a cited published theorem and F-1, F-2 stated next to it. -
+  PW-3 (required): DATA clauses with units as the tools compute them; the N5 columns tied to an index order (W-2); the lane's tools
+  were not opened by me, so the DATA rule is still to do. - PW-4 (the Lead's call): whether FREE-REACH (§4) and the F_n rows go into
+  the same packet; they are not needed for XI-EXP.»
+- Met here: PW-1's W-1, W-2, W-3 (C.2-C.4); PW-2 (C.6, C.7). For the packet: W-4 (C.5), PW-3 (DATA clauses with units as the tools
+  compute them; the index order on every N5 column), PW-4 (the Lead's call on FREE-REACH / F_n).
+- Not done here: no new run; §0-§10 and Addenda A, B are unchanged (Corrections C-1 to C-3 are read into them, not edited in); Claim NT
+  is not signed by anyone; WRAP is not refereed; G-N5-TIME stays OPEN.
+
