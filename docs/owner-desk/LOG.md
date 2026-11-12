@@ -695,3 +695,8 @@ Open owner question (Lead, D1): yes/no to new lane L-RED-B.
 
 ## 2026-11-12T12:44Z Lead owner line (12:46Z, verbatim)
 «The Fable 5.2 sessions now report a seven-day usage WARNING (rate_limit_info: seven_day «allowed_warning», resets 2026-11-18 21:00Z). Paid overage is still false. If your Fable reset has not been applied yet, Fable sessions may soon be refused. I keep creating Fable successors and will fall back to Opus for new sessions if a Fable call is rejected.»
+
+## 2026-11-12T12:51Z owner message (verbatim; answer to the Lead's 12:10Z L-RED-B proposal)
+> yes
+
+Relayed verbatim to the Lead, priority "now".
