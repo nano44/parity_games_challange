@@ -1,1 +1,6 @@
 BEST BEST_L290B-1_D1_T58_U0_NM290_4bdff043.json score [58, 1] {"U": 0, "T3": 58, "fb": 1, "C": 0, "Dmov": 1, "Dmov_x": 0, "NM": 290, "maxflip": 0} ideal37 {"Dmov": 1, "skipped": 1} agree True t 04:19:47Z
+BEST BEST_L290B-1_D4_T58_U2_NM299_183a6cd2.json score [58, 4] {"U": 2, "T3": 58, "fb": 1, "C": 1, "Dmov": 4, "Dmov_x": 60, "NM": 299, "maxflip": 2} ideal37 {"Dmov": 4, "skipped": 1} agree True t 04:26:22Z
+BEST BEST_L290B-1_D4_T60_U2_NM300_86cf8f18.json score [60, 4] {"U": 2, "T3": 60, "fb": 1, "C": 1, "Dmov": 4, "Dmov_x": 60, "NM": 300, "maxflip": 2} ideal37 {"Dmov": 4, "skipped": 1} agree True t 04:28:46Z
+BEST BEST_L290B-1_D5_T60_U3_NM300_7befe3fe.json score [60, 5] {"U": 3, "T3": 60, "fb": 1, "C": 1, "Dmov": 5, "Dmov_x": 69, "NM": 300, "maxflip": 2} ideal37 {"Dmov": 5, "skipped": 1} agree True t 04:30:31Z
+BEST BEST_L290B-1_D6_T60_U3_NM300_3a0d3156.json score [60, 6] {"U": 3, "T3": 60, "fb": 1, "C": 1, "Dmov": 6, "Dmov_x": 95, "NM": 300, "maxflip": 2} ideal37 {"Dmov": 6, "skipped": 1} agree True t 04:31:23Z
+restart 0 seed gen37_n9_U0.json end [60, 6] {"U": 4, "T3": 60, "fb": 1, "C": 1, "Dmov": 6, "Dmov_x": 95, "NM": 300, "maxflip": 2} global [60, 6] evals 638 1146s
