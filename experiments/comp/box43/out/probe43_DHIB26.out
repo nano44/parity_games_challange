@@ -1,0 +1,23 @@
+T3 28
+gate (10, 0) wt 17 xt 18: faces per state: bbeebebbebeeebebebbebeeeeeeee
+   t  1 leaves pB depth 2 | Λ K1 -> K1 | Π_t: K3 K0 e13.0 b10.0 b2.0 b18.5 | Π_t+1: K3 K0 e105.1 e75.1 e8.0 e10.0 b102.0 b48.0 b10.0
+   t  3 leaves pe depth 2 | Λ K1 -> K1 | Π_t: K3 K0 e94.0 e10.0 b81.4 b39.0 b69.0 b17.7 | Π_t+1: K3 K0 e15.0 e8.0 e10.0 b18.4 b16.3 b76.1 b20.0
+   t  4 leaves pB depth 2 | Λ K1 -> K1 | Π_t: K3 K0 e15.0 e8.0 b18.4 b16.3 b10.0 b20.0 b1.2 | Π_t+1: K3 K0 e38.5 e46.1 e75.1 e10.0 b10.0 b25.3 b45.0
+   t  5 leaves pe depth 3 | Λ K1 -> K1 | Π_t: K3 K0 e38.5 e46.1 e75.1 e10.0 b25.3 b45.0 b104.0 | Π_t+1: K3 K0 e38.5 e12.3 e46.1 e10.0 b18.4 b76.1 b45.0
+   t  7 leaves pB depth 5 | Λ K1 -> K1 | Π_t: K3 K0 e38.5 e12.3 e46.1 b18.4 b10.0 b45.0 b104.0 | Π_t+1: K3 K0 e38.5 e12.3 e46.1 e75.1 e10.0 b106.0 b10.0
+   t  8 leaves pe depth 4 | Λ K1 -> K1 | Π_t: K3 K0 e38.5 e12.3 e46.1 e75.1 e10.0 b106.0 b25.0 | Π_t+1: K3 K0 e38.5 e12.3 e10.1 e46.1 e10.0 b76.1 b45.0
+   t  9 leaves pB depth 3 | Λ K1 -> K1 | Π_t: K3 K0 e38.5 e12.3 e10.1 e46.1 b10.0 b45.0 b104.0 | Π_t+1: K3 K0 e38.5 e76.1 e12.3 e46.1 e10.0 b106.0 b10.0
+   t 12 leaves pe depth 4 | Λ K1 -> K1 | Π_t: K3 K0 e40.9 e13.0 e92.0 e10.0 b2.1 b104.0 b17.10 | Π_t+1: K3 K0 e40.9 e13.0 e12.3 e92.0 e10.0 b18.4 b75.1
+   t 13 leaves pB depth 3 | Λ K1 -> K1 | Π_t: K3 K0 e40.9 e13.0 e12.3 e92.0 b18.4 b38.3 b10.0 | Π_t+1: K3 K0 e40.9 e15.0 e13.0 e92.0 b18.4 b28.1 b10.0
+   t 14 leaves pe depth 3 | Λ K1 -> K1 | Π_t: K3 K0 e40.9 e105.1 e13.0 e75.1 e92.0 e10.0 b48.1 | Π_t+1: K3 K0 e40.9 e15.0 e13.0 e92.0 e10.0 b18.4 b28.1
+   t 15 leaves pB depth 3 | Λ K1 -> K1 | Π_t: K3 K0 e40.9 e15.0 e13.0 e92.0 b18.4 b28.1 b10.0 | Π_t+1: K3 K0 e40.9 e38.5 e13.0 e75.1 e92.0 e10.0 b106.0
+   t 16 leaves pe depth 5 | Λ K1 -> K1 | Π_t: K3 K0 e40.9 e38.5 e13.0 e75.1 e92.0 e10.0 b106.0 | Π_t+1: K3 K0 e40.9 e38.5 e13.0 e12.3 e92.0 e10.0 b18.4
+   t 18 leaves pB depth 6 | Λ K1 -> K1 | Π_t: K3 K0 e40.9 e38.5 e13.0 e12.3 e92.0 b18.4 b5.0 | Π_t+1: K3 K0 e40.9 e38.5 e13.0 e12.3 e75.1 e92.0 e10.0
+   t 19 leaves pe depth 6 | Λ K1 -> K1 | Π_t: K3 K0 e40.9 e38.5 e13.0 e12.3 e75.1 e92.0 e10.0 | Π_t+1: K3 K0 e40.9 e38.5 e13.0 e12.3 e10.1 e92.0 e10.0
+   t 20 leaves pB depth 4 | Λ K1 -> K1 | Π_t: K3 K0 e40.9 e38.5 e13.0 e12.3 e10.1 e92.0 b5.0 | Π_t+1: K3 K0 e40.9 e38.5 e76.1 e13.0 e12.3 e92.0 e10.0
+mover 10 lev 1 options [(17, 18), (0, 78), (20, 101)] | option per state: 00001010010001010100100000000
+mover 17 lev 0 options [(-1, 74), (-1, 75), (-1, 76), (-1, 77), (-1, 78), (-1, 79), (-1, 80), (-1, 81), (-1, 82), (-1, 83), (-1, 40)] | option per state: 03172122122aa1121221223456799
+mover 18 lev 0 options [(-1, 10), (-1, 32), (-1, 14), (-1, 54), (-1, 22), (-1, 13), (-1, 22)] | option per state: 45004044000004440440000000000
+mover 40 lev 2 options [(35, 39), (35, 58), (35, 59), (35, 60), (35, 61), (35, 62), (35, 63), (35, 64), (35, 65), (13, 40), (16, 19)] | option per state: a7823456789999999999999999999
+mover 38 lev 2 options [(35, 39), (35, 48), (35, 49), (21, 50), (35, 51), (46, 38)] | option per state: 04255555555533255555555555555
+mover 12 lev 1 options [(27, 15), (6, 69), (30, 33), (45, 81)] | option per state: 20300333333333003333333333333

@@ -1,24 +1,38 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## RESUME POINT -- successor 19 (L-COMP 19; session_01V5yGRY8iNCAZqwL8HSCXM2), 2026-11-12 13:57Z by date -u. BOX 43 item 1 DONE; items 2-3 open.
-- «go» for BOX 43: Lead 13:17Z (handover check 3f8d27af accepted; item 1 first). Record: experiments/comp/box43/README.md (all DATA).
+## HANDOVER -- successor 19 (L-COMP 19; session_01V5yGRY8iNCAZqwL8HSCXM2) PARKS 2026-11-12 (date -u in the park commit) after BOX 43. NOTHING RUNNING.
+- «go» for BOX 43: Lead 13:17Z (handover check 3f8d27af accepted). Record: experiments/comp/box43/README.md (all DATA). Pushes: item 1
+  at 90874f76; items 2-3 + this handover in the park commit.
 - Item 1 (box 208, claude/l-new 8db300fe, on MY engine ideal37): (a) L-NEW's 16 LEVEL counters + 6 plateau counters on my history: 0 on
   25 records + 53 corpus (lines identical to its frozen files) + 57 of my frozen genomes; MY 23 counters (lev43.py, from the text): 0 on
-  137 frozen runs, 3,300 random, 1,350 mutants; controls fire. (c) T_CYC / ALL-TCYC bound ≤ 5.6e-04 everywhere (constants untested).
+  137 frozen runs, 3,300 random, 1,350 mutants; controls fire. (c) T_CYC / ALL-TCYC bound <= 5.6e-04 everywhere (constants untested).
   (b) lift to Howard on G_N / switchallexp: first failure (K5) at N = 2, state 5 (g2, f2), z = f2 odd above the escape h1: the failing
-  step is (K2) COARSE, the property E-DOM; on G_N Φ takes only (N + 1)² − 1 values, the exponential is in the plateaus (9·2^(N−2) − 2):
-  Lemma PLATEAU is what G_N defeats. Two engines (n5b / si.py) agree on every value.
-- Item 2 started: trace43.py on DHIB26_2804 (out/trace43_DHIB26.out): 24 deep internal flips at 13 gates; repeater gate (10, 0) 7 flips
-  (two rounds t 7-8 and 18-19 at depths 5/4 then 6/6); cascade gates (76..83, 1) one flip each at t 20-26, fed by mover 17's options.
-  Next: per-flip Π tops of gate (10, 0), a growth rule (lengthen the cascade / add rounds), >= 4 sizes, two engines, fit.
-- Things only I know: second-engine trees are ARCHIVES in the scratchpad (lost on a new container): eng/lsi100 (l-si 23d39400), eng/red
-  (l-red 59daaef2 experiments/), eng/lnew (l-new fcba92fc), eng/lnew208 (l-new 8db300fe), eng/llit (l-lit a19fff23); rebuild with
-  `git archive <sha> <paths> | tar -x -C <dir>` (no worktrees needed). cross100: RED=eng/red LNEW=eng/lnew CMAX=3 python3 -I
-  eng/lsi100/experiments/si/box100/cross100.py inst <abs path>. A push takes ~25 min (verify runs every lane's check.sh): batch commits.
-  T66's G_N table has a priority collision (g_n = a_1 = 4n + 4); lev43.lmcs indexes vertices by sorted name like L-LIT's.
-- Slips: first local handover-check commit carried a model name (never pushed; redone with reset --soft, Lead 13:17Z: acceptable); one
-  job started with a bare «&» (killed within a minute, restarted as a tracked task).
+  step is (K2) COARSE, the property E-DOM; on G_N Phi takes only (N + 1)^2 − 1 values, the exponential is in the plateaus
+  (9·2^(N−2) − 2): Lemma PLATEAU is what G_N defeats. Two engines (n5b / si.py) agree on every value.
+- Item 2 (DHIB line): trace = repeater gate (10, 0) (7 deep flips, a staircase nest of top e-vertices), cascade gates (76..83, 1), hub
+  18. Clone families D18(k), D10(k), D80(k) (clone42's rule on DHIB26_2804): Deep_3 = 24 + 17k / 24 + 9k / 24 + k exactly, N + M up to
+  1,168; per-gate max 7, dmaxInt 6, T3 28 constant; two engines agree on 13/13 points. Linear; nothing faster.
+- Item 3 (one gate): tail43.py, TAIL_h(G) = sink Ξ-targets retargeted to a chain of one-option movers with even Ξ self-loops (Odd must
+  escape through each): the run is unchanged (7 genomes: T3, sigma, Odd's choices equal) and every Λ-quiet K1-flip gets depth + h or
+  more, so Deep_3(TAIL_2(G)) = QF_K1(G) (all Λ-quiet internal flips after t0) exactly on the 7. TMWR(n) = TAIL_2(MWR(n)): ONE gate with
+  2n + 1 deep flips (n 4-48, N + M 153-1429; second engine: maxfl 2n + 1, whole-run deep 3n + 1, dmax 5). READING sent to the Lead: the
+  depth cut-off of DEEP3 does no work on a tail-closed class; DEEP3 is as strong as «quiet internal flips polynomial».
+- Open (not started): (a) a depth notion TAIL cannot inflate (e.g. depth among the e-vertices not common to both faces) and its count
+  on the frozen sets; (b) the per-gate quiet-flip maximum beyond linear (BOX 36/37 found linear only); (c) L-NEW's --hist form of
+  plat208.py, if published: re-run run43a.sh (my wrapper plathist43.py calls its function unchanged).
+- Things only I know: second-engine trees are ARCHIVES in the scratchpad (lost on a new container): eng/lsi100 (l-si 23d39400
+  experiments/si experiments/harness), eng/red (l-red 59daaef2 experiments/red experiments/harness experiments/hard-families
+  experiments/n5-second), eng/lnew (l-new fcba92fc experiments/new experiments/si/si.py experiments/harness), eng/lnew208 (l-new 8db300fe,
+  same paths + n5-second, hard-families, docs/new/N5-LEVEL-box208.md), eng/llit (l-lit a19fff23 docs/lit/T66-*.py experiments/si/si.py
+  experiments/harness experiments/hard-families); rebuild each with `git archive <sha> <paths> | tar -x -C <dir>` (no worktrees needed).
+  cross100: RED=eng/red LNEW=eng/lnew CMAX=3 python3 -I eng/lsi100/experiments/si/box100/cross100.py inst <abs path> (how3_232 needs
+  ~8 min at N + M 1,170 with 800 gates). own34 / deep41: ~20 s at N + M 400, ~3 min at 1,100. A push takes ~25 min (verify runs every
+  lane's check.sh): batch commits. T66's G_N table has a priority collision (g_n = a_1 = 4n + 4); lev43.lmcs indexes vertices by sorted
+  name like L-LIT's. Genome movers need NOT be ordered by level (MWR is not). bin/ (fast36/37/38) and Oink were never rebuilt this
+  session (not needed). Do not rewrite a bash script while a job runs it.
+- Slips (disclosed to the Lead): first local handover-check commit carried a model name (never pushed; redone with reset --soft; Lead
+  13:17Z: acceptable); one job started with a bare «&» (killed within a minute, restarted as a tracked task).
 
 ## HANDOVER -- successor 18 (L-COMP 18, Opus 5.5; session_01V5yGRVyip8PwDCTvydpDg1) PARKS 2026-11-12 (date -u in the park commit) after BOX 42. NOTHING RUNNING.
 - Boxes done this session (records = the READMEs; all DATA): BOX 39 (box39: Q_(>c) counter = L-NEW/L-RED; Q_(>1) climbs 10 @303, 18 @612;

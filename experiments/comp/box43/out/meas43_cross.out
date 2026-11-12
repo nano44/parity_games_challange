@@ -1,0 +1,13 @@
+DHIB26_k0.json T3 28 {'dmax': 6, 'deep': 24, 'qflip': 145, 'qint': 138, 'gates': 292, 'unm': 0, 'sumf': 0, 'minf': 0, 'tie': 0, 'multi': 31, 'tight': 0, 'maxfl': 15}
+D18_k4.json T3 28 {'dmax': 6, 'deep': 92, 'qflip': 349, 'qint': 342, 'gates': 376, 'unm': 0, 'sumf': 0, 'minf': 0, 'tie': 0, 'multi': 71, 'tight': 0, 'maxfl': 15}
+D18_k8.json T3 28 {'dmax': 6, 'deep': 160, 'qflip': 553, 'qint': 546, 'gates': 460, 'unm': 0, 'sumf': 0, 'minf': 0, 'tie': 0, 'multi': 111, 'tight': 0, 'maxfl': 15}
+D10_k16.json T3 28 {'dmax': 6, 'deep': 168, 'qflip': 497, 'qint': 490, 'gates': 372, 'unm': 0, 'sumf': 0, 'minf': 0, 'tie': 0, 'multi': 79, 'tight': 0, 'maxfl': 15}
+D18_k16.json T3 28 {'dmax': 6, 'deep': 296, 'qflip': 961, 'qint': 954, 'gates': 628, 'unm': 0, 'sumf': 0, 'minf': 0, 'tie': 0, 'multi': 191, 'tight': 0, 'maxfl': 15}
+D80_k16.json T3 28 {'dmax': 6, 'deep': 40, 'qflip': 209, 'qint': 202, 'gates': 356, 'unm': 0, 'sumf': 0, 'minf': 0, 'tie': 0, 'multi': 47, 'tight': 0, 'maxfl': 15}
+D10_k32.json T3 28 {'dmax': 6, 'deep': 312, 'qflip': 849, 'qint': 842, 'gates': 452, 'unm': 0, 'sumf': 0, 'minf': 0, 'tie': 0, 'multi': 127, 'tight': 0, 'maxfl': 15}
+D18_k32.json T3 28 {'dmax': 6, 'deep': 568, 'qflip': 1777, 'qint': 1770, 'gates': 964, 'unm': 0, 'sumf': 0, 'minf': 0, 'tie': 0, 'multi': 351, 'tight': 0, 'maxfl': 15}
+D80_k32.json T3 28 {'dmax': 6, 'deep': 56, 'qflip': 273, 'qint': 266, 'gates': 420, 'unm': 0, 'sumf': 0, 'minf': 0, 'tie': 0, 'multi': 63, 'tight': 0, 'maxfl': 15}
+D10_k64.json T3 28 {'dmax': 6, 'deep': 600, 'qflip': 1553, 'qint': 1546, 'gates': 612, 'unm': 0, 'sumf': 0, 'minf': 0, 'tie': 0, 'multi': 223, 'tight': 0, 'maxfl': 15}
+D80_k64.json T3 28 {'dmax': 6, 'deep': 88, 'qflip': 401, 'qint': 394, 'gates': 548, 'unm': 0, 'sumf': 0, 'minf': 0, 'tie': 0, 'multi': 95, 'tight': 0, 'maxfl': 15}
+D10_k128.json T3 28 {'dmax': 6, 'deep': 1176, 'qflip': 2961, 'qint': 2954, 'gates': 932, 'unm': 0, 'sumf': 0, 'minf': 0, 'tie': 0, 'multi': 415, 'tight': 0, 'maxfl': 15}
+D80_k128.json T3 28 {'dmax': 6, 'deep': 152, 'qflip': 657, 'qint': 650, 'gates': 804, 'unm': 0, 'sumf': 0, 'minf': 0, 'tie': 0, 'multi': 159, 'tight': 0, 'maxfl': 15}

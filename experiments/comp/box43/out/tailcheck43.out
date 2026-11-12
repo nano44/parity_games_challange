@@ -1,0 +1,7 @@
+MWR8_2.json h 2 N+M 261 -> 269 T3 54 54 seqdiff 0 taudiff 0 | G: internal flips after t0 17 quietK1 17 quietOther 0 deep(>3) 0 | TAIL: same flips True shift min 2 max 2 deep(>3) 17 per-gate max 17 at gate (62, 0)
+MWR16_2.json h 2 N+M 493 -> 501 T3 102 102 seqdiff 0 taudiff 0 | G: internal flips after t0 33 quietK1 33 quietOther 0 deep(>3) 0 | TAIL: same flips True shift min 2 max 2 deep(>3) 33 per-gate max 33 at gate (118, 0)
+C6G8_n54.json h 2 N+M 204 -> 212 T3 17 17 seqdiff 0 taudiff 0 | G: internal flips after t0 64 quietK1 51 quietOther 0 deep(>3) 3 | TAIL: same flips True shift min 2 max 2 deep(>3) 51 per-gate max 11 at gate (10, 0)
+BEST_C300_r34_C17_30d4ea76.json h 2 N+M 289 -> 307 T3 48 48 seqdiff 0 taudiff 0 | G: internal flips after t0 55 quietK1 55 quietOther 0 deep(>3) 14 | TAIL: same flips True shift min 7 max 7 deep(>3) 55 per-gate max 34 at gate (82, 0)
+DHIB26_2804.json h 2 N+M 400 -> 412 T3 28 28 seqdiff 0 taudiff 0 | G: internal flips after t0 129 quietK1 129 quietOther 0 deep(>3) 24 | TAIL: same flips True shift min 3 max 4 deep(>3) 129 per-gate max 15 at gate (10, 0)
+RWX_n95.json h 2 N+M 328 -> 340 T3 12 12 seqdiff 0 taudiff 0 | G: internal flips after t0 60 quietK1 56 quietOther 0 deep(>3) 0 | TAIL: same flips True shift min 3 max 4 deep(>3) 56 per-gate max 3 at gate (21, 0)
+MWR4_2.json h 2 N+M 145 -> 153 T3 30 30 seqdiff 0 taudiff 0 | G: internal flips after t0 9 quietK1 9 quietOther 0 deep(>3) 0 | TAIL: same flips True shift min 2 max 2 deep(>3) 9 per-gate max 9 at gate (34, 0)
