@@ -47,6 +47,7 @@ def odo(k, m):
 if __name__ == "__main__":
     k, m = int(sys.argv[1]), int(sys.argv[2]); G, nm = odo(k, m)
     if len(sys.argv) > 3 and sys.argv[3] == "EORD=lev": G.pop("ekey")
+    if os.environ.get("SAVE"): json.dump(G, open(os.environ["SAVE"], "w"))
     import ret230
     r = ret230.run(G); c = measure(G)
     print(f"ODO k {k} m {m}: N {c['N']} M {c['M']} U {c['U']} inv {c['inv']} T3 {c['T3']} total {c['total']} fb {c['fb']} nstd {c['nstd']} returns {r['R']}")
@@ -54,4 +55,3 @@ if __name__ == "__main__":
     for t, s in enumerate(seq):
         sw = sum(1 for x in range(G["N"]) if t and s[x] != seq[t - 1][x])
         print(t, "h", s[h], "S", s[S], "z", "".join("P" if s[z] == 0 else "Q" for z in zs), "switches", sw)
-    json.dump(G, open(os.environ.get("SAVE", "/dev/null"), "w"))

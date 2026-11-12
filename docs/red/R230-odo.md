@@ -78,7 +78,7 @@ Counters per genome: one run of N5′-xi from S3 on Γ3(G), states 0 … first f
 | base | 3 | 8 | 20 | 32 | 2 | 2 | 5 | 1 | 0 | 0 | both sources jump at once; the chain never moves (all z stay on Q) |
 | base, [E-LEV] order (EORD=lev, DOM, YLOW) | 3 | 8 | 20 | 32 | 2 | 1 | 4 | 1 | 0 | 0 | nothing moves |
 | DOM (X_1 un-gated; e_Q > e_P) | 3 | 8 | 20 | 32 | 2 | 2 | 5 | 1 | 0 | 0 | the rival climbs to its top first; no domino |
-| DOM + YLOW (rival items below the hub's) | 3 / 8 / 16 | 8 | 20 | 32 / 42 / 58 | 2 | 10 / 15 / 23 | T3 + 3 | 1 | 0 | 0 | ONE domino of m steps, then the hub climbs its options one per iteration |
+| DOM + YLOW (rival items below the hub's) | 1 / 3 / 8 / 16 | 8 | 20 | 28 / 32 / 42 / 58 | 2 | 8 / 10 / 15 / 23 | T3 + 3 | 1 | 0 | 0 | ONE domino of m steps, then the hub climbs its options one per iteration |
 | DOM + YLOW | 8 | 16 | 36 | 66 | 2 | 23 | 26 | 1 | 0 | 0 | as above |
 | DOM + YLOW | 16 | 16 | 36 | 82 | 2 | 41 | 44 | 1 | 0 | 20 | TWO rounds (below) |
 
