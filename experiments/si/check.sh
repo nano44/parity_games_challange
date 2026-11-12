@@ -1311,3 +1311,5 @@ bash box104/check104.sh
 bash box105/check105.sh
 # packet P-N5-WRAP (dead-end packet for N5'-xi: Lemma WRAP on W, Claim NT, XI-EXP CONDITIONAL; quotes, instance sha1, DATA lines, frozen sha1; docs/si/P-N5-WRAP.md)
 bash pwrap/checkW.sh
+# box 106 (exact d = 2 maximum of KEY on the free ladder: layer 1 skeleton enumeration; docs/si/box106-exact2.md)
+bash box106/check106.sh
