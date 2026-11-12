@@ -571,3 +571,16 @@ is R2-P-N5-GATE/r2gate.py, on REFEREE-2's own engines.
   - Open condition, unchanged: P-N5-SPLIT must land as R127 before this entry. Until then the line's «RESULTS R127» is not yet true on
     trunk.
 - I read REFEREE 31's §I / §J only as quoted in entry 4. I have not opened claude/referee fbc4d865 for this test.
+
+## Addendum 4 (REFEREE-2 successor 37; 2026-11-12 by date -u): spot replay of two cited-only DATA numbers (Lead 05:37Z, optional)
+- Instances, from l-si 9c0349b1 box91/inst, re-hashed: MW32_2 (sha1 445031d1, N 300, M 657) and FW16_2 (sha1 94df42b7, N 259, M 528).
+- These were NOT RUN in 2.9 because of the Γ3 engine's cost.
+- Run: the IDEAL-CYC engine only (r2gate.py --eng cyc), with every check and no size cap. Output: R2-P-N5-GATE/spot_mw32_fw16_cyc.out.
+  The Γ3 engine is still not run on them.
+- Results. Every must-0 counter is 0 on both, and dpass is 0.
+  - MW32_2: T 199, C = 65 = 2n + 1 (n = 32), A*_all 66, max per-gate flips 130 = 4n + 2 with lamch 0. 90,092 SAME-SUFFIX windows and
+    11,360 same-pair expulsion couples.
+  - FW16_2: T 53, C = 3, A*_all 16. 24,386 SAME-SUFFIX windows.
+- So two of L-4's numbers are now re-run on IDEAL-CYC by me: «C = 2n + 1 on MW8_2, MW32_2» and «C = 3 on FW8_2, FW16_2».
+- Still cited, not re-run: the re-arm multiplicity m = n, the RA path count P = F_(d+2) − 1, and Γ3 on these two instances. No verdict
+  changes.
