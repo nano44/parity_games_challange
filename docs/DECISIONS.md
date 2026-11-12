@@ -472,3 +472,14 @@ Lead reading L52 (2026-11-12 17:08Z by date -u; on L51 and docs/agents/LEAD-BACK
     paid overage, or on a limit that still rejects after its stated reset time. After a pause the Lead sends one resume message to each
     session whose turn failed with live work, and starts successors that were due; D21 «maximum effort» stands.
 (3) The owner is told of each pause in the next owner line (not urgent: no spend beyond the plan).
+
+Lead reading L53 (2026-11-12 19:57Z by date -u; on D21, L51, L52):
+(1) Event: the Fable 5.2 weekly limit is reached (rate_limit_info rateLimitType «seven_day_overage_included», status «rejected»,
+    resets 2026-11-18 21:00Z; post-turn «You've reached your Fable limit»); every Fable session stopped about 19:38Z; isUsingOverage
+    false. Opus 5.5 sessions run (seven_day «allowed_warning»).
+(2) Reading: D21's «use fable 5.2 … where it seems fitting» cannot apply while Fable rejects; successors and new sessions use Opus
+    5.5 (effort high) until the Fable reset. No usage credits are bought (spend is the owner's decision). The fleet stays at D21's
+    maximum effort to 2026-11-14 10:05Z. The owner is told at once (via OWNER-DESK, 19:57Z), including the risk that an Opus weekly
+    «rejected» would stop the whole fleet until 2026-11-18 21:00Z.
+(3) A session stopped by the limit mid-work has no handover: its successor resumes from the notebook, origin, and the Lead's brief,
+    and redoes any result that was not on origin.
