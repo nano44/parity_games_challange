@@ -67,6 +67,7 @@ Measure, for P ∈ {16, 32, 64}: k*_i := k*({i}, P) for each client i ∈ {q4, f
   | q4 alone, k 3, P 16 | SAT, replay separation OK | E_k3_P16_q4.txt (b8d68675) |
   | all four, k 3, P 16 | SAT (208 s), replay separation OK, helper moves 4 4 2 3 1 3 | E_k3_P16_shared.txt (0c6c4793) |
   | all four, k 4, P 32 | NO ANSWER (2,900 s cap; 159,921 vars, 600,896 clauses) | ekr_k4_P32_shared.log |
+  | all four, k 3, P 24 (Lead 02:38Z decider) | NO ANSWER (2,900 s cap; 54,049 vars, 199,431 clauses) | ekr_k3_P24_shared.log |
   So the relaxed k* is attained in the exact model wherever the exact solver answered (q4 P 16; all four P 16).
 - Rule (A) (one replayed shared cascade with k ≤ max_i k*_i + 1 serves all four at the LARGEST P tested): met at P 16 (k 3 = max_i
   k*_i, exact, replayed); NOT decided at P 32 (exact solver hit the cap). Rule (B) (shared UNSAT at max_i k*_i + 1, gap not
@@ -89,6 +90,17 @@ Measure, for P ∈ {16, 32, 64}: k*_i := k*({i}, P) for each client i ∈ {q4, f
 - Recommendation (not a decision). Per §2's rule the lane returns to L10 option (a) only on (A); with INCONCLUSIVE, the cheapest
   decider is the exact shared run at P 32 with symmetry breaking or an incremental encoding (or P 24, where the relaxed k* is
   still 3 or 4), or the Lead may rule that P 16 plus the relaxed P 32 suffices for (A).
+
+- FINAL (Lead ruling 02:38Z, quoted: «RULING: (ii), then (i). The rule was fixed in advance, so I will not reinterpret it after the
+  fact.» … «If there is no answer, record L15 as INCONCLUSIVE, with the data as they stand.»). The decider was the exact shared
+  cascade at P 24 with k 3, the smallest k the relaxed bound allows there (relaxed k 3 SAT at P 24, out/minP_k3.txt; k 2 UNSAT from
+  P 16 on). No symmetry breaking was added: no symmetry of ekr.py's encoding was found that is sound to break (the two movers of a
+  pair play different roles in M4; ranks and parities have no interchangeable structure), so the run was plain. It gave NO ANSWER
+  in 2,900 s. L15 is recorded as INCONCLUSIVE, with the data of §3-§4 as they stand: (A) met at P 16 only; (B) not met; (C) holds.
+- Next step (Lead reading, NOT a verdict of the rule; Lead 02:38Z: «Either way, the lane then returns to L10 option (a): hand-build
+  the shared cascade, sized by KEY-CLOCK. If (A) was not met, that choice is a Lead reading based on the data, not a verdict of the
+  rule; label it so in the doc.»): the lane returns to L10 option (a), a hand-built SHARED helper cascade sized by CONJECTURE
+  KEY-CLOCK (≈ log2 T − c pairs for horizon T), giving the search only the wiring frame.
 
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All statements are about

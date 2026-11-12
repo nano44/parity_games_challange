@@ -6,6 +6,8 @@
   DRUP: all P 16 lines, P 32 q4/f5/q6, shared at P 30 VERIFIED; f6 k 3 P 32 solver-only. Exact: shared k 3 P 16 SAT + replay
   (E_k3_P16_shared 0c6c4793); shared k 4 P 32 no answer (2,900 s). Verdict INCONCLUSIVE by the rule; all data on the (A) side.
 - C12 DRUP: 48 / 48 VERIFIED (merged into l14/out/drup_C12_X8_P15.txt); C12-WALL-1 PROVED (lane).
+- Lead 02:38Z ruling: one decider (exact shared, P 24, k 3): NO ANSWER in 2,900 s → L15 INCONCLUSIVE (final). Next (Lead
+  reading, not the rule's verdict): L10 option (a), hand-built shared cascade sized by KEY-CLOCK. Keep ≤ 2 CPU jobs incl. pushes.
 - Traps found: wait loops `pgrep -f "bash scripts/push.sh"` match their own command line (never end): poll the task output file
   instead. Pausing the C12 worker for a push loses the helper in flight (41 lost twice).
 ### Resume point (21:1xZ 2026-11-11, date -u; after the fleet-wide weekly-limit stall 11-09 ~11:00Z to 11-11 21:00Z)
