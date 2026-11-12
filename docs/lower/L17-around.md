@@ -29,6 +29,13 @@ Model: R104's IDEAL model at degree ≤ 2 (sim6; fenc for replays). Target core8
 ## 2. Search runs (filled in as they end)
 - A1: l14/ann3.c from C12 + the P 510 design (l17/run/A1_start.txt), frozen options 26, 27 (f6) and 32-35 (the pair), C12's three cuts,
   seed 17, 2,700 s, T 0.8. Start score 1,106 (unit = violated constraint of the full target; C12's own run started at 284, ended 137).
+  End: best 489 (A1.txt 77fc18ff; ranks re-solved by l14/rsolve.py → A1_solved.txt 087269f5). ann3 re-solves ALL ranks, so the design's ranks are
+  not kept: f6 mismatches 7 / 18 free pre-states on rows 0..64 of A1's clamped run (l16/f6check.py). Exact prefix (l13/sweep1.sh, pgad3, XS 8,
+  G {63}): UNSAT already at prefix 2 (solver only). A1: DEAD start (frozen wiring without frozen ranks breaks f6 at row 2).
+- A2: same, from B2 (C12 + the o(8)-keeping P 32 design, l17/run/A2_start.txt a6c646f6), seed 18. Start 909, end best 161 (A2.txt d9aa4f7e).
+  Exact prefix NOT measured (session parked at the Lead's 09:04Z instruction; successor's first step).
+- Reading of the stop rule used here: a «run» is one capped search plus its exact prefix measurement; three consecutive runs that do not pass
+  P 18 end the box with the obstruction. Count so far: A1 failed (prefix < 2); A2 pending measurement.
 
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All statements are about the IDEAL
