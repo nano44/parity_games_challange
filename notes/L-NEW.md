@@ -13,6 +13,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   frozen CFI3_n48 d55b20b8, RINT_n48 35b48913.
 - d0a7d351 DUTY R-D7a: P-N5-SPLIT fixes entry 3 + L-2 (d8888d0b, 9,521 B). 621e6b77 DUTY R-U127: fixes entry 4 + L-3 (a8661c4b, 9,796 B);
   split.pins 65 rows; check.sh asserts L-3. Lead routes L-3 to both referees (byte test).
+- (this push) BOX 207 Addendum C: PAID label line «PROVED (lane), under L-RED attack; scope IDEAL-CYC on Γ(G) only (Γ3 OPEN)» (Lead 09:19Z
+  accepted PROVED lane); wkind207.py DATA: in-window flips at kind-N (chained) gates on long windows (CFI3 9/10, RINT 8/8, K1L10 3/3), at B1
+  gates on short ones (MWR8 8/8, CW8 3/3, BLKX26 5/5).
 - b72411cf + 0ea262a0 BOX 207 Addenda A + B: Lemma PAID (CANDIDATE per Lead rule, proof in full, premises quoted 16/0 at 07139249): at
   k = 1 every e-face Odd takes is DIRECT (a face play meets R) or chained via next(g) = gate of the first e on β_g's play, E(e_·) strictly
   lex-rising, to a DIRECT one. Ξ-acyclic case = BETA-ACYC. paid207.py counters 0 (13 records + 1,000 random), control fires.
@@ -20,8 +23,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 1. DUTY: P-N5-SPLIT L-3 at the referees (byte test), then R127 fill: answer items as fixes entry 5 + L-4 by script (pattern
    box199/mkl3_199.py, assert L-3 a8661c4b). P-N5-QN = R126 LANDED (trunk 07139249).
 2. Lead to rule PAID's label (CANDIDATE → PROVED lane?). L-RED 65 / L-COMP 18 cross-check CFI3_n48, RINT_n48, K1L10, B400 (box 207).
-3. Research (D18): DEEP-k1 ⟺ (Q1) ∧ R-INT. Next: (Q2) lives in PAID's chains — scratch DATA: in-window flips at gates with neither face
-   through R (CFI3 8/10, RINT 6/8, K1L10 3/3). Try: bound flips of chained gates inside a window via the rising E(e_·) along chains (each
+3. Research (D18), FIRST ITEM for the successor (Lead 09:19Z): (Q2) through PAID's chains (box 207 Addendum C table: in-window flips at
+   kind-N gates on long windows). Try: bound flips of chained gates inside a window via the rising E(e_·) along chains (each
    flip of a chained gate g toggles E(e_g) vs E(e_next(g)); with R's class fixed, is the chain's top DIRECT gate frozen?). Tool idea: a
    window-kind counter (scratch wkind.py logic: kinds BB / B1 / N per gate at t − 1, t).
 ### TOOLS (box207): rlocal207.py (R-windows: DR, cint, λ_max, flipint, Rint, deepnoR, efail, pR; RL_CTRL), window207.py (per-step flip

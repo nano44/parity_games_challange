@@ -242,3 +242,32 @@ distinct; there are M gates, so a DIRECT gate is reached after at most M − 1 s
   lexicographic order on 0/1 vectors indexed by a linear order). So a sequence E_t(e_(g_0)) < E_t(e_(g_1)) < … has pairwise distinct terms,
   the chain's gates are pairwise distinct, and it has at most M terms. No other premise enters Step 4.
 - Quote check rerun: quotes207.py at trunk 07139249 (out/quotes207.out).
+
+## Addendum C (L-NEW successor 71; Lead 09:19Z: «PROVED (lane) is accepted … until its verdict, write «PROVED (lane), under L-RED attack»; scope: state in the label line whether PAID is on IDEAL-CYC or Γ3 … Commit [the chain DATA], with its counter (unit, set, scope), before you park»; written 2026-11-12 by date -u)
+- LABEL LINE (governs Addenda A and B): **Lemma PAID — PROVED (lane), under L-RED attack (L-RED 65); scope: IDEAL-CYC(G) of RESULTS R118 (a)
+  on Γ(G) only, every genome with Ξ-feedback number 1 (Remark A2 (1): any k, with a feedback vertex set).** Not claimed on Γ3(G) (R117) or
+  on N5′-xi's run: the proof uses Γ(G)'s edges directly (an e-vertex's only successor is its W-target or c_W, β's frozen successor is its
+  Ξ-target or u, (D1) e_g's only in-edge from g) and the IDEAL-CYC premises R123 B-ONLY, LOC-GATE, LOC-K2 and R118 (h) LEVEL0; on Γ3 the
+  faces are entered through the pads pe_g / pβ_g and the premises are R125's B-ONLY3, LOC-GATE3, LOC-K2-3, for which A2 has not been
+  rewritten. A Γ3 version is plausible (the pads have priority ≤ 2 and single successors) but is OPEN.
+- DATA, where the flips sit relative to R (tool experiments/new/box207/wkind207.py; out/wkind207.out). Counter: unit gate flips (pairs
+  (t, g) with σ̄_(t−1)(g) ≠ σ̄_t(g)); scope every gate; split by WHERE («in»: class(R) does not change at t, i.e. inside an R-window; «end»:
+  it does) and by the gate's KIND at t − 1 and at t (BB / B1 / N: both / exactly one / neither of the two face plays passes R; by PAID a
+  gate at its e-face of kind N is a chained gate); inN := in-window flips with kind N at t − 1 or t; set: the 8 genomes below (k = 1;
+  R = the first feedback vertex).
+  | genome | flips | in-window | inN | in-window by kind |
+  | --- | --- | --- | --- | --- |
+  | CFI3_n48 | 12 | 10 | 9 | N>N 8, N>B1 1, B1>B1 1 |
+  | RINT_n48 | 9 | 8 | 8 | N>N 6, N>B1 2 |
+  | K1L10_n48 | 22 | 3 | 3 | N>N 3 |
+  | K1L7_n48 | 30 | 3 | 1 | N>N 1, B1>B1 2 |
+  | BLKX26_n48 | 44 | 5 | 0 | B1>B1 5 |
+  | MWR8_2 | 25 | 8 | 0 | B1>B1 8 |
+  | CW8_n | 119 | 3 | 0 | B1>B1 3 |
+  | B400_r32 | 60 | 8 | 2 | B1>B1 6, N>B1 2 |
+- READING (for the successor's first item, (Q2) through PAID's chains): where windows are LONG (the climbed CFI3_n48, RINT_n48, and K1L10's
+  end phase) almost every in-window flip is at a gate of kind N, i.e. on PAID's chains; where windows are short (MWR(n), CW(n), BLKX26) the
+  few in-window flips are at gates with exactly one face through R (B1: the qz-gate pattern of MWR, box 207 §3 D2). So R-INT has two
+  parts: B1 flips inside a window (bounded per window on every set here: ≤ 8) and chained flips (the long part). The successor's target:
+  a bound on chained flips inside one window, using A1 (iii) (E(e_·) strictly rises along a chain) with R's class fixed. The earlier scratch
+  count «CFI3 8/10, RINT 6/8» counted N>N only; this table is the committed form.
