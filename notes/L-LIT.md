@@ -14,8 +14,17 @@ merged into this branch (Lead's word): read NOW / DECISIONS / GAPS / RESULTS wit
   agrees with L-RED 54's DEAD port (R217 §7). On G_N itself: C 0, TWO-CROSS charge fails 0 times, Deep_c exponential (c = 3: 0, 0, 1, 6,
   22, 64, 163, 382 for N 1-8; T = 9·2^N − 10). So DEEP3's proof must use E-DOM. No embedding, no literature kill of DEEP3 / U-FREE.
 - T67: docs/lit/T67-n5-route-summary.md (one page for the Lead: verdict table, chain options A / B′ / B, the DEEP3 test).
-IN FLIGHT: none. OPEN LEADS (only on a Lead question): E-DOM test of the Zadeh / Cunningham / ranking families; an independent engine for
-  T66 §5.1's flip and depth counters; Vöge's thesis (the proof behind VJ00 Prop. 7.4) if a copy appears.
+- T66 Addendum A: docs/lit/T66-depth-xcheck.py (independent brute-force engine) reproduces §5.1's [F11] table for N 1-8 exactly.
+- T66 Addendum B (T68 item 3, partial): E-DOM read off the papers' tables. Zadeh game (arXiv 1911.01074 Table 3.1): fails at every cycle
+  center (escapes s_(i,j) of priority 8 / 10 below all odd g_i = 2i + 9). Cunningham game (arXiv 1305.3944 Fig. 2): g_(i′) = 2i′ + 7 odd
+  above h_i = 2i + 8 for i′ > i. Ranking / symmetric / Mei families NOT checked.
+- T68 (Lead 11:46Z): item 1 = Addendum A (done). Item 2 WAITS for L-NEW 72's box 208 tool (not on origin at 11:54Z; the Lead sends the
+  SHA): run its must-0 counters on G_N ([F11] Table 4 via T66-depth-check.py's lmcs()) and on switchallexp, report the first failing
+  counter and step at the smallest N and the genome property that step needs. Item 3 = Addendum B (partial).
+- Lead reading 11:24Z on the LAM-GAP link: B′ primary (landed R118 (d) + (l) + R125 (c), (e) + restriction lemma RESTRICT-C, to be
+  refereed), B kept (L-FORMAL formalizes LAM-GAP / SHARP), A fallback (needs DEEP3-all).
+IN FLIGHT: T68 item 2 (blocked on the tool). OPEN LEADS (only on a Lead question): E-DOM test of the ranking / symmetric / Mei families;
+  Vöge's thesis (the proof behind VJ00 Prop. 7.4) if a copy appears.
 NEEDS: none from the owner (optional library: Vöge thesis 2000, Hansen thesis 2012, Hansen–Zwick ISAAC 2010, Madani AAAI 2002).
 
 ## Previous resume point (HANDOVER, T64, 2026-11-01 ~03:15Z by date -u; predecessor session; PARKED after T64)
@@ -644,6 +653,9 @@ NEEDS: none from the owner.
   claude/l-red f77a0eef R217-ovt.md §7-§12; claude/l-new 9cdb7209 N5-ASC-box193.md §0-§1; trunk docs/red/P-N5-REALIZE.md §3.1.
   DATA: docs/lit/T66-depth-check.py (engine experiments/si/si.py), runs lmcs 1-8, lics 2-7, edom × 5 families at N 3.
   NOT OPENED: FHZ SODA / STOC 2011; [F09] Fig. 7 (image); Zadeh / Cunningham / ranking family papers were not re-opened.
+
+- T68 (2026-11-12). OPENED (scratchpad t68): Disser–Friedmann–Hopp arXiv 1911.01074 v2 (ba3242140c0832ac; Table 3.1 and Fig. 3.2, PDF
+  p.7); Avis–Friedmann arXiv 1305.3944 v1 (d1fafb8b5d0b822c; Fig. 2, PDF p.12). Both opened before for T37; re-opened for the priorities.
 
 ## Dead ends
 - T66 (2026-11-12): a literature test of DEEP3 / U-FREE on Γ3 does not exist. Obstruction: E-DOM (every escape e even and above every β;

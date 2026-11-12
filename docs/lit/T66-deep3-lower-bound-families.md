@@ -160,3 +160,28 @@ priority; listed: odd priorities above pr(esc))
   4. On G_N itself the chain's other links hold and Deep_c is exponential for each fixed c (DATA N ≤ 8). DEEP3's proof must use E-DOM.
 - NEEDS: Lead: (a) pass finding 4 to L-SI box 102 (proof side) as a test: run each step of a DEEP3 proof on G_N. (b) If wanted, L-RED
   can re-run §5.1's counters with its own engine (one engine here). Nothing for the owner.
+
+## Addendum A (2026-11-12, date -u in the commit; append-only, §0-§7 unchanged): §5.1's counters re-counted by an independent engine
+- Tool: docs/lit/T66-depth-xcheck.py. No code from experiments/si/si.py. Own value computation (cycle node, Π, length); Odd's optimal
+  counterstrategy by BRUTE FORCE over all 2^N choice vectors at e_1 … e_N, the pointwise minimum asserted to exist and to be unique at
+  every state; own Howard step. Only the game table (function lmcs, [F11] Table 4) is shared with T66-depth-check.py.
+- Result (DATA; unit: Howard run of G_N from ι_(G_N)): for N = 1 … 8 at c = 3 and N = 3 … 7 at c = 9, every counter of §5.1's table
+  (T, C, flips, deep, max depth, unm, flips of e_1) is reproduced exactly. Commands: `python3 -I docs/lit/T66-depth-xcheck.py 1 8 3`
+  and `… 3 7 9` (a few minutes at N = 8).
+- So §5.1's «Limits» line is superseded for the [F11] rows: two engines agree. The switchallexp row still has one engine for flips and
+  depth (its T is cross-checked against R118's DATA).
+
+## Addendum B (2026-11-12, date -u in the commit; append-only): E-DOM read off the Zadeh and Cunningham games' own tables (Lead T68 item 3)
+No generator and no run: the priorities are read from the papers' tables (PROVED-in-source for the tables; READING for the E-DOM test).
+- Disser, Friedmann, Hopp, «An exponential lower bound for Zadeh's pivot rule», arXiv 1911.01074 v2, Table 3.1 and Fig. 3.2 (PDF p.7),
+  the sink game S_n. The Odd vertices with a choice are the cycle centers F_(i,j): successors «d_(i,j,0), d_(i,j,1), s_(i,j)», priority
+  «6 − 2·j». Their only even successor is the escape s_(i,j), priority «10 − 2·j» (8 or 10), which continues to h_(i,j) («2i + 10») or
+  b_1. The selectors g_i have priority «2i + 9» (odd), so every g_i with i ≥ 1 lies above every escape s_(i,j), and g_(i′) lies above
+  h_(i,j) for i′ > i. E-DOM fails at EVERY cycle center. The gates are also ternary (two cycle faces), not binary.
+- Avis, Friedmann, «An exponential lower bound for Cunningham's rule», arXiv 1305.3944 v1, Fig. 2 (PDF p.12), the game G_n. The Odd
+  vertices with a choice are the F_i: successors «h_i, d_(i>1), e_i», priority 6. Escape h_i, priority «2·i + 8» (even), then a_(i+1).
+  The g_i have priority «2·i + 7» (odd), so g_(i′) lies above h_i for every i′ > i. E-DOM fails at every F_i except the top one: the
+  same pattern as [F11]'s f_j, k_j above h_i.
+- Both families defeat single-switch, history-based rules, not Howard (§4), so they were never tests of HOW3. The point here is only
+  that the «odd selector above lower escapes» pattern is common to every construction checked: [F09], [F11] §6, the four PGSolver ports
+  of §5.2, Zadeh, Cunningham. Not checked: Disser–Loho–Maat–Mosis (ranking rules), van Dijk–Loho–Maat (symmetric), Mei.
