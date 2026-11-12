@@ -393,3 +393,20 @@ Line L-2: does NOT match; required R-1..R-7, D-1..D-5 (§5); recommended G-a..G-
 - Also in the growth DATA clause, «MWR(n): flips 2n + 1 = 2·ch_D + 1 with lamch 0» and «MW(n): C = 2n + 1, flips 4n + 2» are family
   formulas read off finitely many n; as DATA they are acceptable only as numbers on the named instances (optional: «on n = 4, 8, 16» /
   «on n = 8, 32»).
+
+## §K. Fixes entry 4 and line L-4 (REFEREE successor 31, Opus 5.5, D15; date -u at writing 2026-11-12T05:09Z; Lead 05:09Z byte test)
+- Objects: claude/l-si 676b6a1c (ancestor of origin/claude/l-si, checked). docs/si/P-N5-GATE-line-L4.txt sha1
+  6bfde78ef050b47f43527875256c65a205869e77, 12,562 B; fixes entries 1-4 sha1 8009e0183159a1134f426ab2ee9a01e5b690eb52; L-3 at 676b6a1c
+  b60495b2… (unchanged); packet f3a584e6… (frozen, unchanged).
+- Byte test (scratch/gate_l4.py; log gate_logs/l4test.out): L-3 + LT-1 in the Lead's landing-order form (two strings, typed from fixes
+  entry 4 and the Lead's 05:09Z message) + GL-1, GL-2, GL-3 (parsed from MY §J in this file, not from the lane's byte copy) + «fixes
+  entries 1-3» → «1-4»; each Old once in L-3. Result sha1 6bfde78e…, 12,562 B; `cmp` with the lane's L-4: **EQUAL**. Nothing else
+  changed. One line, 0 «|», 230 «(» = 230 «)»; «RA-MULT», «K1-FLIP(c)», «a polynomial bound on the RA path count», «pending»: 0 each.
+- Meaning: LT-1 as ruled by the Lead (02:52Z): «RESULTS R127 (P-N5-SPLIT; …; landing order R126 = P-N5-QN, R127 = P-N5-SPLIT, then this
+  entry)», and A*-EQUIV still labelled «PROVED-CONDITIONAL on RESULTS R127 (P-N5-SPLIT)'s SPLIT-COUNT and C-EQUIV». ACCEPTABLE: it is the
+  same landing-order condition I accepted for P-N5-SPLIT's «RESULTS R125» (R-P-N5-SPLIT §C); the CHECKER confirms at this entry's landing
+  that R127 is P-N5-SPLIT with SPLIT-COUNT and C-EQUIV, else L-4 is regenerated. My own LT-1 New («the pending packet … not landed») is
+  superseded by that ruling, as fixes entry 4 records. GL-1..GL-3: my strings, verbatim (GT-10 / L43). Fixes entry 4's §5 relabelling of
+  the three rows to DATA, and the construction rows staying DEAD (the Lead, 03:00Z), match §J.
+- Verdict: fixes entry 4 CORRECT. **Line L-4 MATCHES** (L-3 + exactly LT-1, GL-1..GL-3 and the entry count). Statements and labels as in
+  §0 and §I: every statement SIGN; the Γ3 rows on LANDED R125; A*-EQUIV (ii), (iii) CONDITIONAL on R127 (P-N5-SPLIT).

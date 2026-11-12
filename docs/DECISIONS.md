@@ -447,3 +447,28 @@ Lead reading L50 (2026-11-07 01:42Z by date -u; MOVES-2D killed; landing scope o
 (3) The growth of T^R(d) is the open question. L-LOWER's REC_d10_tower attains R113's per-level doubling on 4 consecutive levels.
     A family doing so on linearly many levels would, by RESULTS R104 Corollary REAL-IDEAL, make FL-POLY false. Nothing landed changes;
     G-N5-TIME stays OPEN.
+
+## D21 (2026-11-12, owner: instruction relayed by OWNER-DESK 10:05Z, confirmed by the owner directly in the Lead session ~10:37Z)
+Relayed text (OWNER-DESK, verbatim): «Okay, I want maximum effort. I want to use 200% usage in 3 days. There is fable 5.2 as well, use that too in dpeth everywhere where it seems fitting, use fable 5.2 at hard or xhigh. SO yes, 200% uage under 2 days.»
+Relayed follow-ups (OWNER-DESK, verbatim): «act on it, I have a usage reset that is what. Iwill use» and «I also have a fable 5.2 usage reset as well on top».
+Direct confirmation in the Lead session (verbatim): «I confrim tge stuff»
+
+Lead reading L51 (2026-11-12, by date -u at commit):
+(1) Effort and spend: maximum effort until 2026-11-14 10:05Z, drawing on the owner's usage resets (general and Fable 5.2). Paid overage is
+    not expected. If get_session shows isUsingOverage = true, the Lead tells the owner at once and spawns nothing new until the owner
+    answers; running lanes are stopped only on the owner's «stop» (this replaces, for this window, the automatic Stop on paid overage of
+    D1 / D7 / L47 / L48; a «rejected» limit still pauses).
+(2) Sessions (D17 + D21): 7 working lanes + 3 gates (CHECKER, REFEREE, REFEREE-2), plus OWNER-DESK and WATCHDOG. New: L-FORMAL (Lean
+    check of the elementary lane lemmas: LAM-GAP / SHARP, ONE-CROSS) and L-LIT (sources for LAM-GAP's novelty and a DEEP3 check
+    against known strategy-improvement lower bounds). Both are verification / literature roles, not attack lanes (D1).
+(3) Model: Fable 5.2 at effort xhigh («hard» is not an effort level) for every new session and every successor of REFEREE, REFEREE-2,
+    L-SI, L-NEW, L-RED, L-COMP, L-LOWER. Running Opus lanes switch at their next park. CHECKER stays Opus 5.5 high (byte checks).
+(4) Unchanged: the gauntlet, the landing rules, D1's «treat every claim as wrong», the no-contact rule.
+
+Lead reading L52 (2026-11-12 17:08Z by date -u; on L51 and docs/agents/LEAD-BACKSTOP.md step 2):
+(1) Event: the account's five-hour limit was hit around 16:10-16:40Z («You've hit your 5-hour limit · resets 5pm (UTC)»); every running
+    session's turn failed; the limit reset at 17:00Z; isUsingOverage stayed false (Lead get_session 17:05Z).
+(2) Reading: a five-hour limit that has already reset is a PAUSE, not a Stop trigger. The Stop procedure runs on the owner's «stop», on
+    paid overage, or on a limit that still rejects after its stated reset time. After a pause the Lead sends one resume message to each
+    session whose turn failed with live work, and starts successors that were due; D21 «maximum effort» stands.
+(3) The owner is told of each pause in the next owner line (not urgent: no spend beyond the plan).

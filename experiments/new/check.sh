@@ -1076,10 +1076,10 @@ if [ "$r199" -eq 0 ] && [ -z "$d199" ] && ! grep -v "^ctrl" box199/check199.out 
 else
   echo "BOX 199 SPLIT check: FAILED (check199.sh exit $r199)"; echo "$d199" | head -30; echo "$run199" | tail -15; exit 1
 fi
-# P-N5-SPLIT (L-NEW successor 67): frozen packet + sources, P-N5-CHAIN premise, tools / outputs / instances / engine against box199/split.pins (DOCS/ = docs/new/)
+# P-N5-SPLIT (L-NEW successor 67; L-3 assert successor 71, R-D7a + R-U127): frozen packet + sources, P-N5-CHAIN premise, tools / outputs / instances / engine against box199/split.pins (DOCS/ = docs/new/)
 pinS=$(cd box199 && sed 's#DOCS/#../../../docs/new/#' split.pins | sha1sum -c --quiet 2>&1) || true
-if [ -z "$pinS" ]; then
-  echo "P-N5-SPLIT: packet and $(wc -l < box199/split.pins) pinned files match split.pins: PASS"
+if [ -z "$pinS" ] && grep -q "^a8661c4b7998aafc02299c43dfe4e2c6320f73ee  DOCS/P-N5-SPLIT-line-L3.txt$" box199/split.pins; then
+  echo "P-N5-SPLIT: packet and $(wc -l < box199/split.pins) pinned files match split.pins, line L-3 a8661c4b pinned: PASS"
 else
   echo "P-N5-SPLIT check: FAILED"; echo "$pinS" | head -20; exit 1
 fi
@@ -1124,12 +1124,20 @@ if [ "$r205" -eq 0 ] && [ -z "$d205" ] && ! grep -v "^ctrl1" box205/check205.out
 else
   echo "BOX 205 BETA-LOC check: FAILED (check205.sh exit $r205)"; echo "$d205" | head -30; echo "$run205" | tail -15; exit 1
 fi
-# BOX 206 DEPTH (L-NEW successor 70): change-depth counters (depth206.py), Lemma DIV (div206.py), controls, LD-ASC DEAD witness (ascdepth206.py)
+# BOX 206 DEPTH (L-NEW successor 70): change-depth counters (depth206.py), Lemma DIV (div206.py), controls, LD-ASC DEAD witness (ascdepth206.py); Addendum E: CWR race-cycle trap (ediag206.py)
 r206=0; run206=$(cd box206 && bash check206.sh 2>&1) || r206=$?
 d206=$(diff <(printf '%s\n' "$run206") box206/check206.out 2>&1) || true
-if [ "$r206" -eq 0 ] && [ -z "$d206" ] && ! grep -v "^ctrl" box206/check206.out | grep -Eq "(elfall|topfall|pfail|cfail|ufail|nop|lamp|symp|dep|kind) [1-9]" && grep -q "^ctrl3 .*symp [1-9].*kind [1-9]" box206/check206.out && grep -q "^ctrl1 .*elfall [1-9].*ufail [1-9]" box206/check206.out && grep -q "^K1F34_n84.json ctrl 0 .*ldfail 1 " box206/check206.out && grep -q "^ctrl2 .*ldfail [1-9]" box206/check206.out && grep -q "^WC8_2.json ctrl 0 movers .*maxdepth 8 " box206/check206.out && grep -q "^BLKX23_n48.json .*'excess': 1," box206/check206.out && (cd box206/inst && sha1sum -c --quiet SHA1SUMS); then
+if [ "$r206" -eq 0 ] && [ -z "$d206" ] && ! grep -v "^ctrl" box206/check206.out | grep -Eq "(elfall|topfall|pfail|cfail|ufail|nop|lamp|symp|dep|kind) [1-9]" && grep -q "^ctrl3 .*symp [1-9].*kind [1-9]" box206/check206.out && grep -q "^ctrl1 .*elfall [1-9].*ufail [1-9]" box206/check206.out && grep -q "^K1F34_n84.json ctrl 0 .*ldfail 1 " box206/check206.out && grep -q "^ctrl2 .*ldfail [1-9]" box206/check206.out && grep -q "^WC8_2.json ctrl 0 movers .*maxdepth 8 " box206/check206.out && grep -q "^BLKX23_n48.json .*'excess': 1," box206/check206.out && grep -q "^ediag CWRR4 TOTALS closed 0 raceTop 20 states 29" box206/check206.out && (cd box206/inst && sha1sum -c --quiet SHA1SUMS); then
   echo "BOX 206 DEPTH: depth and DIV counters 0, controls fire, DEAD witnesses (WC8_2 depth 8, K1F34 LD-ASC, BLKX23 BLOCK-DESC) = frozen: PASS"
 else
   echo "BOX 206 DEPTH check: FAILED (check206.sh exit $r206)"; echo "$d206" | head -30; echo "$run206" | tail -15; exit 1
+fi
+# BOX 207 RLOCAL (L-NEW successor 71): R-LOCAL and PAID (Addendum A) must-0 counters, DEAD race-flip charges (K1L10 deepnoR 5, B400_r32 step 43), control
+r207=0; run207=$(cd box207 && bash check207.sh 2>&1) || r207=$?
+d207=$(diff <(printf '%s\n' "$run207") box207/check207.out 2>&1) || true
+if [ "$r207" -eq 0 ] && [ -z "$d207" ] && ! grep -v "^ctrl" box207/check207.out | grep -Eq "(rrep|ifail|qfail|nonext|notK1|notE|lexfail|nochain) [1-9]" && grep -q "^ctrl .*rrep [1-9].*ifail [1-9].*qfail [1-9]" box207/check207.out && grep -q "^ctrlpaid .*lexfail [1-9].*nochain [1-9]" box207/check207.out && grep -q "^paid K1L10_n48.json .*maxchain 2 " box207/check207.out && grep -q "^K1L10_n48.json .*deepnoR 5 " box207/check207.out && grep -q "^B400 43 NO-Rchange (62, 1)e" box207/check207.out && (cd box207/inst && sha1sum -c --quiet SHA1SUMS); then
+  echo "BOX 207 RLOCAL: R-LOCAL and PAID counters 0, controls fire, DEAD charges (K1L10 deepnoR 5, B400_r32 step 43) = frozen: PASS"
+else
+  echo "BOX 207 RLOCAL check: FAILED (check207.sh exit $r207)"; echo "$d207" | head -30; echo "$run207" | tail -15; exit 1
 fi
 rm -rf "$tmp"

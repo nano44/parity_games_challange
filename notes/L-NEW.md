@@ -36,6 +36,30 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - Statements like «every k = 1 record has two levels» need a check over the whole set (B400_r32 has three levels).
 - Never edit a tool a running sweep re-imports; climbs import once, sweeps per genome do not.
 
+## Resume point (successor 71, Opus; session_01V5yGRXb4c4nnPA9tNGmZ7N; started 2026-11-12 ~05:07Z; GO 05:45Z)
+- Step 0: handover check 8d6c363b (VERIFY PASS; Lead accepted). Stale container (1060 behind) fast-forwarded to 134adb53.
+- DUTY (Lead 05:45Z): box 206 Addendum E: (E1) R118 (a) added to LOUD-SPLIT's and DEPTH-COUNT's premise lists (quotes206E.py, 2/0 at
+  trunk b3d7294c); (E2) CWR obstruction corrected to L-RED 65's race-cycle trap (ediag206.py: CLOSE 0 on CWRR4/8/16, CWRQ8, CW4/8;
+  Q's gate beta from t = 9, Lam(R) = beta_(R,0) prio 218 even); DEAD stays; L-RED rearm231 sweep cited as DATA; OPEN shape kept.
+  check206.sh gains the CWRR4 ediag line; check.sh greps it.
+- Next: research DEEP-k1 via race-flip-at-R charge (L-RED: on CW(n) Q_(>c) ~ n - c, so the target is a polynomial bound).
+- 06:29Z Lead approved box 207 plan + asks (1) split vs reduction, (2) R122 premises by script, (3) freeze instances.
+- BOX 207 (docs/new/N5-RLOCAL-box207.md; experiments/new/box207/ rlocal207.py, window207.py, quotes207.py (7/0 at b3d7294c), check207.sh;
+  check.sh «BOX 207 RLOCAL»): Lemma R-LOCAL (PROVED lane, elementary): DEEP-k1 <=> (Q1) D^tot(R) poly AND (Q2) R-INT (loud steps per
+  constant-class(R) window poly) = a SPLIT, not an easier question; (Q1) strictly weaker in the sense CWR(n): D(R) 3, T linear.
+  DEAD: naive race-flip charge (K1L10_n48 steps 27-31, both R 28/46), EFLIP-R (B400_r32 step 43). (Q2) outside R122: hypothesis «Xi-graph
+  acyclic» fails; CFI3_n48 window [4,18] gate (32,0) e-face at t = 6, 8 R-steps. Frozen CFI3_n48 (d55b20b8), RINT_n48 (35b48913; climb
+  lambda_max 22 at N 48). Withdrawn before writing: «class(R) never changes at p-steps» (random pR 23).
+  Things only I know: scratch climbers climbfi.py / climbli.py (scratchpad; objective via rlocal-style counters); climbs are ~1 it/s at N 48.
+  Next idea (§6): «paid chain» invariant for e-faces inside a window (each e-face taken is paid by R's fixed epsilon), test on CFI3's lane.
+- 07:12Z DUTY R-D7a (P-N5-SPLIT = R127): fixes entry 3 + L-2 (d8888d0b, 9,521 B; box199/mkl2_199.py asserts L-1 634b2fdf); split.pins 63
+  rows; check.sh P-N5-SPLIT asserts L-2. Ids verified by git (da3308b5, 4948ce5d, 4ded1e8d, 2d0344d3). Unit strings for the three maxima
+  clauses PROPOSED in the entry, not applied.
+- Box 207 Addendum A (committed with this push): Lemma PAID at k = 1 (every e-face Odd takes is DIRECT (its face plays meet R) or
+  chained through gates of strictly lex-rising E(e_.) to a DIRECT one; proof sketch: non-DIRECT => both faces K1 (LEVEL0 excludes c_W),
+  then [VJ]+(E-DOM) give E(e_g) <lex E(e_next(g)); Xi-acyclic case = BETA-ACYC). DATA: all counters 0 on records + 1,000 random (seed 714);
+  control fires. Next: box 207 Addendum A.
+
 ## Resume point (successor 70, Opus; session_01V5yGRY45JmHVuQdwncwSps; started 2026-11-12 ~01:19Z; GO 01:46Z)
 - Step 0: handover check 09bb6aa7 (VERIFY PASS; Lead score 5/5). Stale container (1053 behind) fast-forwarded to f736b2ab.
 - DUTY: C140 (P-N5-QN, G-L43) not started at 01:46Z; Lead will relay the ruling. Nothing routed on P-N5-SPLIT.

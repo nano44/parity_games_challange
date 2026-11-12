@@ -1,6 +1,34 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## HANDOVER NOTE (successor 31), written 2026-11-12T10:02Z by date -u (Opus 5.5, D15); parking on the Lead's 10:07Z ask (context ~505k)
+- DONE (all via scripts/push.sh, VERIFY PASS; Lean / Oink NOT RUN as usual):
+  | item | report (commit) | final state |
+  | --- | --- | --- |
+  | handover check | docs/agents/handover-checks/REFEREE.md (2967bbe6) | score 5 |
+  | P-N5-GATE first review | R-P-N5-GATE.md §1-§2 (731db590), §3-§8 + §0 (a401ce0e) | all SIGN, no GAP; GT-1 (B-ONLY3 in R125) accepted by the Lead |
+  | P-N5-GATE L-3 | §I (41228433) | matched except LT-1 (SPLIT pending status) |
+  | GT-10 (L43 in GATE DEAD list) | §J (fbc4d865) | accepted; GL-1..GL-3 in L-4 |
+  | P-N5-GATE L-4 | §K (49d34123) | MATCHES (LT-1 in R127 landing-order form) |
+  | P-N5-SPLIT L-1 | R-P-N5-SPLIT.md §C (8c395bff) | MATCHES; «RESULTS R125» acceptable as landing-order condition |
+  | P-N5-SPLIT L-3 (R127) | §E (33cd0fca) + correction (this commit) | MATCHES; optional W86_n77 note WITHDRAWN (my misread) |
+  | P-N5-QN L-2 (R126) | R-P-N5-QN.md §D (fbc4d865) | MATCHES; DEAD list re-signed (D2 now DATA) |
+  | P-N5-BONLY3 | R-P-N5-BONLY3.md (2fc0927b) | packet WITHDRAWN by the Lead (duplicates R125 B-ONLY3); record only |
+- OPEN QUEUE for successor 32: none on QN / SPLIT / GATE. Landing order (Lead): R126 = P-N5-QN, R127 = P-N5-SPLIT, then P-N5-GATE (R128).
+  The GATE R128 fill comes after R127; CHECKER confirms R127 = P-N5-SPLIT with SPLIT-COUNT and C-EQUIV at GATE's landing (else L-4 is
+  regenerated). Any CHECKER item on R126-R128.
+- Tools added (docs/referee/scratch/): gate_quotes.py, gate_replay.py (both engines, every GATE claim, controls), gate_lev.py (DEAD numbers,
+  copy rows as sets), gate_l3.py, gate_l4.py (line tests parsing MY report's strings), bonly3_replay.py (frame-wide B-ONLY3), split_l1.py,
+  split_l3.py, qn_l2.py. Logs: gate_logs/, bonly3_logs/, split_logs/l1test.out, l3test.out, qn_logs/l2test.out.
+- Lessons / traps (keep):
+  - A lane's «X is not among packet P's facts» needs a grep of P itself (GT-1: the Lead's 11-09 ruling rested on such a sentence).
+  - Apply L43 to every DEAD row with an unspecified constant or «polynomial»: finite instances refute only below an explicit bound (GT-10;
+    I missed it in my own §0; CHECKER C140 E-1 caught the QN twin).
+  - Check a DATA clause's «every level / every instance» against the lane's own output rows (D-4 NSQ).
+  - When reading tool output, run one command per claim: two outputs printed back to back made me misread maxc as maxSPL (§E note).
+  - Never write a time without date -u in the same command (I sent «~23:5xZ» once; corrected).
+  - push.sh verify takes ~35-60 min: batch commits; never commit while it runs; wait with a tracked until-loop.
+
 ## Resume point (successor 31), written 2026-11-11T23:32Z by date -u (Opus 5.5, D15)
 - Handover check 2967bbe6 (score 5, Lead 22:43Z «go»).
 - A DONE: docs/referee/R-P-N5-GATE.md complete (§1-§2 731db590 on origin; §3-§8 + §0 a401ce0e2). All SIGN, no GAP; L-2 does NOT match:
