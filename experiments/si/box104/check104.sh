@@ -9,6 +9,8 @@
 #   controls; (7) two engines AGREE+CORRECT at n = 2..5; (8) state for state: mism 0 at n = 2..6, control fires; (9) Lemma FREE-REACH
 #   counters 0 on random free genomes, controls fire; (10) F_n is outside E-DOM, the E-DOM build is inside.
 # (11) instance sha1; (12) quotes: 0 FAIL at the sources, and every quoted string stands in docs/si/box104-map.md.
+# Addenda (each checked when its output is present): replay209sum.py (box 209's counters on the lane's 26 instances; box 103
+#   Addendum B); (13) guide104.py rows; (14) climb104.py rows.
 set -u
 cd "$(dirname "$0")"
 fail=0
@@ -73,5 +75,18 @@ grep -q "CTRL 2: .* fbwrong 100 endwrong 100 " out/freereach_ctrl.out || bad "fr
 grep -q "^QUOTES104 total [0-9]* fail 0$" out/quotes104.out || bad "quotes at source"
 python3 -I quotes104.py doc ../../../docs/si/box104-map.md > /dev/null || bad "quotes in the doc"
 if [ -f out/replay209_level.out ]; then python3 -I replay209sum.py > /dev/null || bad "replay209 counters"; fi
+# (13) Addendum A probe (guide104.py), when present: 24 rows, each S3 standard, tau frozen, 1 fallback, correct; the listed counts
+if [ -f out/guide104.out ]; then
+  [ "$(grep -c "^GUIDE104 .* S3 standard True | .* fallbacks 1 .* tau changes 0 .* | correct True$" out/guide104.out)" = 24 ] && [ "$(wc -l < out/guide104.out)" = 24 ] || bad "guide rows"
+  [ "$(grep -c " core high .* valve moves 0 " out/guide104.out)" = 21 ] || bad "guide valves"
+  [ "$(grep "^GUIDE104 alg spec core high hn " out/guide104.out | sed 's/.*| iterations \([0-9]*\) .*/\1/' | tr '\n' ' ')" = "14 37 65 99 139 185 " ] || bad "guide hn counts"
+  [ "$(grep "^GUIDE104 alg spec core high lmcs " out/guide104.out | sed 's/.*| iterations \([0-9]*\) .*/\1/' | tr '\n' ' ')" = "6 8 9 11 13 " ] || bad "guide lmcs counts"
+  [ "$(grep "^GUIDE104 alg spec core high fried " out/guide104.out | sed 's/.*| iterations \([0-9]*\) .*/\1/' | tr '\n' ' ')" = "10 10 12 14 " ] || bad "guide fried counts"
+  [ "$(grep -c "^GUIDE104 alg spec core low hn .* valve moves [1-9]" out/guide104.out)" = 3 ] || bad "guide core-low control"
+fi
+# (14) O2 probe (climb104.py), when present: 18 climbs, none failed
+if [ -f out/climb104.out ]; then
+  [ "$(grep -c "^CLIMB104 alg spec mode .* best iterations [0-9]*$" out/climb104.out)" = 18 ] && ! grep -q FAILED out/climb104.out || bad "climb rows"
+fi
 [ $fail = 0 ] && echo "BOX104 checks: PASS"
 exit $fail

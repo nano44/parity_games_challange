@@ -524,3 +524,99 @@ The open links, in the order in which a kill or a proof would meet them:
   (function lmcs, read against Table 4).
 - Relayed by the Lead, NOT opened by me (cited as relayed in §8.1): L-LIT T70 Addendum A (claude/l-lit 9ae31ec3); L-COMP 19 box 43 item 3
   (claude/l-comp ae0f65c3).
+
+## Addendum A (L-SI successor 52, 2026-11-12T17:08:02Z (date -u); append-only, §0-§10 unchanged): the long rows of the wrapped games; two probes of N5 (guided wrapper; free genomes) (DATA)
+### A.1 The long rows
+`LONG=1 bash runw104.sh` (out/wrap_long.out; about 10 min on one core; check104.sh (5)). Units, counters and engines as in §5.2.
+- N5′-xi from S3 at n = 7, 8 (on each row: the six must-0 counters of §3 are 0, iterations − T = 3, one fallback):
+  - W^L_7 (1,630 vertices): Howard T = 1,142 with 0 tie events, 1,145 iterations. W^L_8 (1,940 vertices): T = 2,294 with 0 tie events,
+    2,297 iterations. Figure 4's priorities; the table4 version was not run at n = 7, 8.
+  - W_7 (1,822 vertices): T = 1,243, 1,246 iterations. W_8 (2,073 vertices): T = 2,486, 2,489 iterations: the counts of F_7, F_8.
+- Two engines at n = 5 (n5v.py mode xi against n5bxi.py): W^L_5: 281 and 281 iterations; W_5: 313 and 313; one fallback each; the
+  regions are equal and equal harness Zielonka's; harness verify.check: 0 errors on both outputs («AGREE+CORRECT»).
+- The tables of §5.2 with these rows (summ104.py; «not run» is now final for this box):
+| n | \|G_n\| | T(G_n): Howard on G_n | \|V(W_n)\| | N5′-xi on W_n: iterations, fallbacks | \|V(F_n)\| | N5′-xi on F_n: iterations, fallbacks | engine 2 on W_n / on F_n: iterations, verdict | F_n state for state: mism | N5′-xi on the E-DOM build of comp(G_n) | N5 (spec) on W_n / F_n |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2 | 35 | 30 | 567 | 33, 1 | 708 | 33, 1 | 33, AGREE+CORRECT / 33, AGREE+CORRECT | 0 of 682 | 17 | 3 / 5 |
+| 3 | 49 | 70 | 818 | 73, 1 | 1,017 | 73, 1 | 73, AGREE+CORRECT / 73, AGREE+CORRECT | 0 of 2,201 | 19 | 4 / 5 |
+| 4 | 63 | 150 | 1,069 | 153, 1 | 1,326 | 153, 1 | 153, AGREE+CORRECT / 153, AGREE+CORRECT | 0 of 6,040 | 21 | 5 / 5 |
+| 5 | 77 | 310 | 1,320 | 313, 1 | 1,635 | 313, 1 | 313, AGREE+CORRECT / 313, AGREE+CORRECT | 0 of 15,239 | 23 | 6 / 5 |
+| 6 | 91 | 630 | 1,571 | 633, 1 | 1,944 | 633, 1 | not run / not run | 0 of 36,598 | 25 | 7 / 6 |
+| 7 | 105 | 1,243 | 1,822 | 1,246, 1 | 2,253 | 1,246, 1 | not run / not run | not run | not run | not run / not run |
+| 8 | 119 | 2,486 | 2,073 | 2,489, 1 | 2,562 | 2,489, 1 | not run / not run | not run | not run | not run / not run |
+
+| n | \|G^L_n\|, edges | T: Howard on G^L_n from ι (tie events) | 2^n | \|V(W^L_n)\| | N5′-xi on W^L_n, fig4: iterations, fallbacks | the same, table4 | engine 2 (fig4): iterations, verdict | N5 (spec) on W^L_n |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | 14, 27 | 8 (0) | 2 | 211 | 11, 1 | 11, 1 | 11, AGREE+CORRECT | 6 |
+| 2 | 24, 52 | 26 (0) | 4 | 395 | 29, 1 | 29, 1 | 29, AGREE+CORRECT | 6 |
+| 3 | 34, 80 | 62 (0) | 8 | 600 | 65, 1 | 65, 1 | 65, AGREE+CORRECT | 6 |
+| 4 | 44, 111 | 134 (0) | 16 | 826 | 137, 1 | 137, 1 | 137, AGREE+CORRECT | 6 |
+| 5 | 54, 145 | 278 (0) | 32 | 1,073 | 281, 1 | 281, 1 | 281, AGREE+CORRECT | 6 |
+| 6 | 64, 182 | 566 (0) | 64 | 1,341 | 569, 1 | 569, 1 | not run | 6 |
+| 7 | 74, 222 | 1,142 (0) | 128 | 1,630 | 1,145, 1 | not run | not run | not run |
+| 8 | 84, 265 | 2,294 (0) | 256 | 1,940 | 2,297, 1 | not run | not run | not run |
+- What changes in §0, §5.2, §6: for W_n and W^L_n (fig4), «n ≤ 6» now reads n ≤ 8; two engines agree at n ≤ 5 on W_n, W^L_n and F_n.
+  T = 9·2^n − 10 on all eight rows of G^L_n; tie events 0 on its Howard run for n ≤ 8.
+- On W^L_8 the iteration count is above the number of vertices: 2,297 against 1,940 (W^L_7: 1,145 against 1,630). Local exponents
+  log(it_(n+1) / it_n) / log(|V|_(n+1) / |V|_n) on W^L_n, n = 1, …, 7: 1.55, 1.93, 2.33, 2.75, 3.16, 3.58, 4.00.
+- (X-TIE), a reading of the opened text; the item stays OPEN. [F11] §4 gives the locally optimizing policy by the property quoted in
+  §6 and states no tie-break; its Lemmas 6.2, 6.6 and 6.8-6.13 are stated for σ′ = I^loc(σ). So (X-TIE) is the statement «the proofs
+  of the lemmas behind Theorem 6.14 use only that property»: then the theorem holds for every policy with the property, and WRAP's
+  run has it at each of its states (every Even vertex of H takes a ⊴-best successor). I have read those lemmas' statements, not their
+  proofs. For L-LIT or a referee; on the eight rows run here no tie occurs, so every such policy gives the same run.
+
+### A.2 Probe: N5 itself on a GUIDED wrapper (DATA; no kill; OPEN question GUIDE-RULE)
+WRAP freezes τ at faces that all end in c_W, so S4a's arena is flat and only the tie rule acts; that is why it hits N5′-xi and not N5
+(§3 Remark 3). The probe asks what N5 does when the frozen faces lead back into the game.
+- The game Wg(H, s0, ρ0) (guide104.py; ρ0 a positional Odd strategy of H). As W(H, s0), with two changes. (1) The S3-face of a gate
+  g_(v,w) is a path pg (Ω 1), u1, u2 (Ω 0) to w itself; every o ∈ V_O gets, in place of pe_o, a path z1 (Ω 1), z2, …, z5 (Ω 0) to ρ0(o);
+  β-faces and the other edges of o pass a valve as before; there is no c_W. On either face an edge of H is a path of 6 edges.
+  (2) The core's K2 < K1 (odd) are placed ABOVE every vertex of H (K2 the least odd number above them, K1 = K2 + 2, K0 = K2 + 3,
+  K3 = K2 + 4), so that a valve's exit is not Ξσ-improving before the core flips.
+- READING (not proved; the counters below are its DATA): before its first fallback the run keeps τ at these faces (Iτ = ∅: every
+  other Odd edge passes a valve, where Even's reply to τ exits to K0's cycle), the valves at y, and Iσ at v ∈ V_E is the set of
+  edges that are improving in H. S4a's arena is then the ONE-player game «H with Odd fixed at ρ0, Even restricted to its current and
+  its improving edges», and N5's step is Even's optimal strategy there: a best response to a fixed Odd strategy inside the
+  improvement arena. For N5′-xi the step is the same wherever the arena has no tie.
+- General remark (lane; one line from a published theorem): along any run with τ constant and Iτ = ∅, τ is an optimal Odd strategy
+  of the whole game from the first state on (a strategy without an improving edge is optimal: [F11] Theorem 3.3, from VJ00, applied
+  to the dual game), while σ is not optimal as long as Iσ ≠ ∅. So on such runs N5's S4a is «Even's best response, inside the
+  improvement arena, to an optimal strategy of Odd». On R104's genome games and on W the edge that σ lacks to the end is in the
+  core ((K0, K1) ∈ Iσ in every standard state), and the first fallback takes it (ENDGAME).
+- DATA (rung104.sh; out/guide104.out; 24 rows; unit: one run from S3; ρ0 = Odd's optimal counterstrategy to s0 in H). On every row:
+  S3 standard True (S3's pair is s0, the guide faces, ρ0, y, the core's standard config), τ changes 0 before the first fallback,
+  1 fallback, regions = harness Zielonka. On the 21 rows with the core above H: valve moves 0 before the first fallback.
+  - H = H_n, the paper's family for the GLOBALLY optimizing policy ([F11] §8.4; L-COMP's hn.py at claude/l-new fcba92fc, mode fig,
+    start ι): N5 makes 14, 37, 65, 99, 139, 185 iterations at n = 1, 2, 3, 4, 5, 6 (first differences 23, 28, 34, 40, 46; second differences
+    5, 6, 6, 6): quadratic on these rows. For comparison, not rerun here: L-COMP's box 16 README (same commit) reports 22,
+    28, 34, 40 iterations of N5 from S3 on H_n itself at n = 3, …, 6 and 107, 235, 491, 1003 steps of the globally optimizing policy.
+  - H = G^L_n (the family of §5, ι): 6, 8, 9, 11, 13 at n = 1, 2, 3, 4, 5. H = PGSolver's switchallexp_n: 10, 10, 12, 14 at n = 2, 3, 4, 5.
+  - N5′-xi on Wg (hn n = 1, 2, 3; G^L_n n = 1, 2, 3): the same counts as N5.
+  - Control of change (2), CORE=low (K1 = 5, K2 = 3) on hn n = 1, 2, 3: valve moves 11, 24, 30 before the first fallback (the valves leave
+    y, as expected when the core's cycles are better for Even than H's sink), iterations 14, 28, 34.
+- Result: no exponential growth on these three families in this shape; nothing asymptotic is claimed. The guided wrapper makes N5
+  slower than on H_n itself (quadratic against linear on the rows above) and so is a new adversary shape for N5.
+- OPEN (GUIDE-RULE; a kill question for N5, next to O2): is there a family (H_n, s0, ρ0), or a wrapper whose frozen faces lead into
+  any other one-player structure, on which «Even's best response to the fixed faces inside the improvement arena» runs
+  super-polynomially? Any such family is a family of parity games on which N5 from S3 is super-polynomial. What an attacker has:
+  the improving sets come from an arbitrary two-player game H; the fixed faces may lead to any vertex whose Ξσ-value is never
+  below the β-face's (else Odd would use the face in Ξσ and H's values change). What works against the attacker: (a) against the
+  fixed faces the value of every vertex is non-decreasing from step to step before the first fallback (σ lies inside the arena and
+  σ_new is the arena's pointwise optimum), so a long run needs a long increasing chain of these values, or many tie steps; (b) a
+  fixed face cannot copy an Odd reply that depends on several Even choices: in H_n the only Odd vertices with two successors are
+  the e_i (→ d1_i or h_i; ρ0(e_i) = d1_i on every row), Odd's true reply leaves to h_i when the stubborn cycle d1_i, d2_i, d3_i, e_i
+  ([F11] §8.2) is closed, and on Wg(H_n) a closed cycle is instead an Even win of the arena.
+
+### A.3 Probe for O2 (KEY-FREE): a weak head-to-head search (DATA; no separation)
+- runc104.sh (climb104.py; out/climb104.out; about 40 min on one core): 18 hill climbs = 3 shapes × seeds 1, 2, 3 × {free, edom}, 3,000
+  steps each. Score: iterations of N5 (n5v.py mode spec) from S3 on the Γ3-shaped game. Mode free: the 2M carriers (β's and e's) in
+  any order; mode edom: R104's priorities. Same shape, seed, number of steps and mutations, except the priority move (§8, O2).
+| shape: levels × movers per level, options | N, M, \|V\| | free: best iterations (seeds 1, 2, 3) | edom: best iterations (seeds 1, 2, 3) |
+| --- | --- | --- | --- |
+| 4 × 3, 3 | 12, 36, 274 | 18, 17, 18 | 17, 17, 15 |
+| 6 × 2, 3 | 12, 36, 274 | 17, 14, 14 | 18, 18, 20 |
+| 8 × 2, 2 | 16, 32, 250 | 16, 18, 14 | 18, 18, 18 |
+- Largest count found: free 18, edom 20. At these sizes this search finds no free genome on which N5 runs longer than on the best
+  E-DOM genome it finds. A weak search (unit: one climb; 18 climbs); nothing asymptotic; O2 stays OPEN. For scale: NOW's M4 row (quoted
+  in §8, O1) has a CANDIDATE tower with F(6) = 254 at d = 28 under E-DOM, far above what a blind climb reaches; a search that starts
+  from that tower and frees its carrier priorities is the natural next probe (not done here).
