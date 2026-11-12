@@ -1294,3 +1294,5 @@ bash box97/check97.sh
 bash box98/check98.sh
 # box 99 (U-FREE proof side: Lemma SCC-RED, CAP; CONJECTURE SCC-LIN; scc99 census; docs/si/box99-ufree.md)
 bash box99/check99.sh
+# box 100 (SCC-LIN inside one SCC: TWO-CROSS, DEPTH-COUNT3, WINDOW; LAM-GAP / DEEP3 conjectures; docs/si/box100-scclin.md)
+bash box100/check100.sh
