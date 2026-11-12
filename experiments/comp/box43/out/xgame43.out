@@ -1,0 +1,14 @@
+lmcs N 1 n 14 T 8 | si.py T 8 seqdiff 0 valdiff 0 taudiff 0 | table = L-LIT lmcs: True
+lmcs N 2 n 24 T 26 | si.py T 26 seqdiff 0 valdiff 0 taudiff 0 | table = L-LIT lmcs: True
+lmcs N 3 n 34 T 62 | si.py T 62 seqdiff 0 valdiff 0 taudiff 0 | table = L-LIT lmcs: True
+lmcs N 4 n 44 T 134 | si.py T 134 seqdiff 0 valdiff 0 taudiff 0 | table = L-LIT lmcs: True
+lmcs N 5 n 54 T 278 | si.py T 278 seqdiff 0 valdiff 0 taudiff 0 | table = L-LIT lmcs: True
+lmcs N 6 n 64 T 566 | si.py T 566 seqdiff 0 valdiff 0 taudiff 0 | table = L-LIT lmcs: True
+lmcs N 7 n 74 T 1142 | si.py T 1142 seqdiff 0 valdiff 0 taudiff 0 | table = L-LIT lmcs: True
+lmcs N 8 n 84 T 2294 | si.py T 2294 seqdiff 0 valdiff 0 taudiff 0 | table = L-LIT lmcs: True
+switchall N 2 n 35 T 30 | si.py T 30 seqdiff 0 valdiff 0 taudiff 0 | 
+switchall N 3 n 49 T 70 | si.py T 70 seqdiff 0 valdiff 0 taudiff 0 | 
+switchall N 4 n 63 T 150 | si.py T 150 seqdiff 0 valdiff 0 taudiff 0 | 
+switchall N 5 n 77 T 310 | si.py T 310 seqdiff 0 valdiff 0 taudiff 0 | 
+switchall N 6 n 91 T 630 | si.py T 630 seqdiff 0 valdiff 0 taudiff 0 | 
+switchall N 7 n 105 T 1243 | si.py T 1243 seqdiff 0 valdiff 0 taudiff 0 | 

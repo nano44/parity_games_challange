@@ -1,0 +1,55 @@
+switchall N 2 game n 35 | mono 0 k3c 0 k3d 0 k4 0 k5 38 l1sub 0 l1phi 0 phifall 0 l2 0 l3 0 l3val 0 l4 7 c2 0 c4 0 qfail 0 plat 0 p1 0 p2 0 p3 8 p4 0 p6 7 p7 1 tcyc 0 | T 30 q 12 phivals 12 stalls 13 plateaus 3 platmax 7 bprime 25 tail 5 | bounds P 3325 plat 23 tail 22 T 79822
+   FIRST k5 at state 6: mover l1: class at t+1 (-1, 0) < class at t of successor k1 (-1, 1)
+   FIRST l4 at state 7: stall, no cycle of the stall map inside FRONT (|FRONT| 4, m (-1, 0)): ['l1', 'z0', 'v0', 'r1']
+   FIRST p3 at state 7: plateau [7, 14], mover l1 ∈ Y, successor k1 of higher class
+   FIRST p6 at state 7: plateau [7, 14]: no mover of Y switches at step 7
+   FIRST p7 at state 7: plateau [7, 14] longer than #Even vertices of Y
+switchall N 3 game n 49 | mono 0 k3c 0 k3d 0 k4 0 k5 269 l1sub 0 l1phi 0 phifall 0 l2 0 l3 0 l3val 0 l4 30 c2 0 c4 0 qfail 0 plat 0 p1 0 p2 0 p3 106 p4 0 p6 30 p7 1 tcyc 0 | T 70 q 23 phivals 23 stalls 40 plateaus 6 platmax 16 bprime 63 tail 7 | bounds P 6713 plat 32 tail 31 T 221560
+   FIRST k5 at state 6: mover l1: class at t+1 (-1, 0) < class at t of successor k1 (-1, 1)
+   FIRST l4 at state 7: stall, no cycle of the stall map inside FRONT (|FRONT| 8, m (-1, 0)): ['l1', 'l2', 'z0', 'v0', 'v1', 'r1']
+   FIRST p3 at state 7: plateau [7, 14], mover l1 ∈ Y, successor k1 of higher class
+   FIRST p6 at state 7: plateau [7, 14]: no mover of Y switches at step 7
+   FIRST p7 at state 18: plateau [18, 34] longer than #Even vertices of Y
+switchall N 4 game n 63 | mono 8 k3c 0 k3d 0 k4 2 k5 1016 l1sub 0 l1phi 2 phifall 2 l2 0 l3 0 l3val 0 l4 90 c2 0 c4 0 qfail 0 plat 0 p1 0 p2 0 p3 417 p4 0 p6 90 p7 3 tcyc 0 | T 150 q 39 phivals 39 stalls 104 plateaus 10 platmax 36 bprime 141 tail 9 | bounds P 11277 plat 41 tail 40 T 473674
+   FIRST mono at state 78: k0: (-1, 9) -> (-1, 8)
+   FIRST k4 at state 78: gate h0: class (-1, 9), faces [('e0', (-1, 8)), ('m0', (-1, 9))]
+   FIRST k5 at state 6: mover l1: class at t+1 (-1, 0) < class at t of successor k1 (-1, 1)
+   FIRST l1phi at state 78: stall, but LAG/FRONT/Φ changes: Φ ((-1, 8), -45) -> ((-1, 8), -49)
+   FIRST phifall at state 78: Φ ((-1, 8), -45) -> ((-1, 8), -49)
+   FIRST l4 at state 7: stall, no cycle of the stall map inside FRONT (|FRONT| 12, m (-1, 0)): ['l1', 'l2', 'l3', 'z0', 'v0', 'v1']
+   FIRST p3 at state 7: plateau [7, 14], mover l1 ∈ Y, successor k1 of higher class
+   FIRST p6 at state 7: plateau [7, 14]: no mover of Y switches at step 7
+   FIRST p7 at state 18: plateau [18, 34] longer than #Even vertices of Y
+switchall N 5 game n 77 | mono 46 k3c 0 k3d 0 k4 10 k5 3053 l1sub 0 l1phi 5 phifall 5 l2 0 l3 0 l3val 0 l4 227 c2 0 c4 0 qfail 0 plat 1 p1 0 p2 0 p3 1204 p4 0 p6 227 p7 6 tcyc 0 | T 310 q 59 phivals 59 stalls 245 plateaus 15 platmax 76 bprime 299 tail 11 | bounds P 17017 plat 50 tail 49 T 867916
+   FIRST mono at state 78: k0: (-1, 9) -> (-1, 8)
+   FIRST k4 at state 78: gate h0: class (-1, 9), faces [('e0', (-1, 8)), ('m0', (-1, 9))]
+   FIRST k5 at state 6: mover l1: class at t+1 (-1, 0) < class at t of successor k1 (-1, 1)
+   FIRST l1phi at state 158: stall, but LAG/FRONT/Φ changes: Φ ((-1, 16), -52) -> ((-1, 16), -58)
+   FIRST phifall at state 158: Φ ((-1, 16), -52) -> ((-1, 16), -58)
+   FIRST l4 at state 7: stall, no cycle of the stall map inside FRONT (|FRONT| 16, m (-1, 0)): ['l1', 'l2', 'l3', 'l4', 'z0', 'v0']
+   FIRST plat at state 78: plateau [78, 154] of 76 steps > 50
+   FIRST p3 at state 7: plateau [7, 14], mover l1 ∈ Y, successor k1 of higher class
+   FIRST p6 at state 7: plateau [7, 14]: no mover of Y switches at step 7
+   FIRST p7 at state 18: plateau [18, 34] longer than #Even vertices of Y
+switchall N 6 game n 91 | mono 158 k3c 0 k3d 0 k4 32 k5 8170 l1sub 0 l1phi 9 phifall 9 l2 0 l3 0 l3val 0 l4 521 c2 0 c4 0 qfail 0 plat 3 p1 0 p2 0 p3 3010 p4 0 p6 521 p7 6 tcyc 0 | T 630 q 83 phivals 83 stalls 543 plateaus 20 platmax 156 bprime 617 tail 13 | bounds P 23933 plat 59 tail 58 T 1436038
+   FIRST mono at state 78: k0: (-1, 9) -> (-1, 8)
+   FIRST k4 at state 78: gate h0: class (-1, 9), faces [('e0', (-1, 8)), ('m0', (-1, 9))]
+   FIRST k5 at state 6: mover l1: class at t+1 (-1, 0) < class at t of successor k1 (-1, 1)
+   FIRST l1phi at state 318: stall, but LAG/FRONT/Φ changes: Φ ((-1, 32), -59) -> ((-1, 32), -65)
+   FIRST phifall at state 318: Φ ((-1, 32), -59) -> ((-1, 32), -65)
+   FIRST l4 at state 7: stall, no cycle of the stall map inside FRONT (|FRONT| 20, m (-1, 0)): ['l1', 'l2', 'l3', 'l4', 'l5', 'z0']
+   FIRST plat at state 78: plateau [78, 154] of 76 steps > 59
+   FIRST p3 at state 7: plateau [7, 14], mover l1 ∈ Y, successor k1 of higher class
+   FIRST p6 at state 7: plateau [7, 14]: no mover of Y switches at step 7
+   FIRST p7 at state 38: plateau [38, 74] longer than #Even vertices of Y
+switchall N 7 game n 105 | mono 431 k3c 0 k3d 0 k4 84 k5 20114 l1sub 0 l1phi 14 phifall 14 l2 0 l3 0 l3val 0 l4 1106 c2 0 c4 0 qfail 0 plat 6 p1 0 p2 0 p3 6675 p4 0 p6 1106 p7 10 tcyc 0 | T 1243 q 109 phivals 109 stalls 1133 plateaus 24 platmax 316 bprime 1228 tail 15 | bounds P 32025 plat 68 tail 67 T 2209792
+   FIRST mono at state 78: k0: (-1, 9) -> (-1, 8)
+   FIRST k4 at state 78: gate h0: class (-1, 9), faces [('e0', (-1, 8)), ('m0', (-1, 9))]
+   FIRST k5 at state 6: mover l1: class at t+1 (-1, 0) < class at t of successor k1 (-1, 1)
+   FIRST l1phi at state 638: stall, but LAG/FRONT/Φ changes: Φ ((-1, 64), -66) -> ((-1, 64), -72)
+   FIRST phifall at state 638: Φ ((-1, 64), -66) -> ((-1, 64), -72)
+   FIRST l4 at state 7: stall, no cycle of the stall map inside FRONT (|FRONT| 24, m (-1, 0)): ['l1', 'l2', 'l3', 'l4', 'l5', 'l6']
+   FIRST plat at state 78: plateau [78, 154] of 76 steps > 68
+   FIRST p3 at state 7: plateau [7, 14], mover l1 ∈ Y, successor k1 of higher class
+   FIRST p6 at state 7: plateau [7, 14]: no mover of Y switches at step 7
+   FIRST p7 at state 38: plateau [38, 74] longer than #Even vertices of Y

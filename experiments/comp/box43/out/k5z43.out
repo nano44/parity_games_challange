@@ -1,0 +1,13 @@
+lmcs N 2 T 26 | k5 38 domfail 0 zodd 38 zmov 0 zeven 0 zesc 0 zlow 0 | z by name: f 38
+lmcs N 3 T 62 | k5 328 domfail 0 zodd 328 zmov 0 zeven 0 zesc 0 zlow 0 | z by name: f 328
+lmcs N 4 T 134 | k5 1406 domfail 0 zodd 1406 zmov 0 zeven 0 zesc 0 zlow 0 | z by name: f 1406
+lmcs N 5 T 278 | k5 4686 domfail 0 zodd 4686 zmov 0 zeven 0 zesc 0 zlow 0 | z by name: f 4686
+lmcs N 6 T 566 | k5 13752 domfail 0 zodd 13752 zmov 0 zeven 0 zesc 0 zlow 0 | z by name: f 13752
+lmcs N 7 T 1142 | k5 37428 domfail 0 zodd 37428 zmov 0 zeven 0 zesc 0 zlow 0 | z by name: f 37428
+lmcs N 8 T 2294 | k5 96962 domfail 0 zodd 96962 zmov 0 zeven 0 zesc 0 zlow 0 | z by name: f 96962
+switchall N 2 T 30 | k5 38 domfail 0 zodd 38 zmov 0 zeven 0 zesc 0 zlow 0 | z by name: k 38
+switchall N 3 T 70 | k5 269 domfail 0 zodd 269 zmov 0 zeven 0 zesc 0 zlow 0 | z by name: k 269
+switchall N 4 T 150 | k5 1016 domfail 0 zodd 1016 zmov 0 zeven 0 zesc 0 zlow 0 | z by name: k 1016
+switchall N 5 T 310 | k5 3053 domfail 0 zodd 3053 zmov 0 zeven 0 zesc 0 zlow 0 | z by name: k 3053
+switchall N 6 T 630 | k5 8170 domfail 0 zodd 8170 zmov 0 zeven 0 zesc 0 zlow 0 | z by name: k 8170
+switchall N 7 T 1243 | k5 20114 domfail 0 zodd 20114 zmov 0 zeven 0 zesc 0 zlow 0 | z by name: k 20114

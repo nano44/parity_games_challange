@@ -1,6 +1,25 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## RESUME POINT -- successor 19 (L-COMP 19; session_01V5yGRY8iNCAZqwL8HSCXM2), 2026-11-12 13:57Z by date -u. BOX 43 item 1 DONE; items 2-3 open.
+- «go» for BOX 43: Lead 13:17Z (handover check 3f8d27af accepted; item 1 first). Record: experiments/comp/box43/README.md (all DATA).
+- Item 1 (box 208, claude/l-new 8db300fe, on MY engine ideal37): (a) L-NEW's 16 LEVEL counters + 6 plateau counters on my history: 0 on
+  25 records + 53 corpus (lines identical to its frozen files) + 57 of my frozen genomes; MY 23 counters (lev43.py, from the text): 0 on
+  137 frozen runs, 3,300 random, 1,350 mutants; controls fire. (c) T_CYC / ALL-TCYC bound ≤ 5.6e-04 everywhere (constants untested).
+  (b) lift to Howard on G_N / switchallexp: first failure (K5) at N = 2, state 5 (g2, f2), z = f2 odd above the escape h1: the failing
+  step is (K2) COARSE, the property E-DOM; on G_N Φ takes only (N + 1)² − 1 values, the exponential is in the plateaus (9·2^(N−2) − 2):
+  Lemma PLATEAU is what G_N defeats. Two engines (n5b / si.py) agree on every value.
+- Item 2 started: trace43.py on DHIB26_2804 (out/trace43_DHIB26.out): 24 deep internal flips at 13 gates; repeater gate (10, 0) 7 flips
+  (two rounds t 7-8 and 18-19 at depths 5/4 then 6/6); cascade gates (76..83, 1) one flip each at t 20-26, fed by mover 17's options.
+  Next: per-flip Π tops of gate (10, 0), a growth rule (lengthen the cascade / add rounds), >= 4 sizes, two engines, fit.
+- Things only I know: second-engine trees are ARCHIVES in the scratchpad (lost on a new container): eng/lsi100 (l-si 23d39400), eng/red
+  (l-red 59daaef2 experiments/), eng/lnew (l-new fcba92fc), eng/lnew208 (l-new 8db300fe), eng/llit (l-lit a19fff23); rebuild with
+  `git archive <sha> <paths> | tar -x -C <dir>` (no worktrees needed). cross100: RED=eng/red LNEW=eng/lnew CMAX=3 python3 -I
+  eng/lsi100/experiments/si/box100/cross100.py inst <abs path>. A push takes ~25 min (verify runs every lane's check.sh): batch commits.
+  T66's G_N table has a priority collision (g_n = a_1 = 4n + 4); lev43.lmcs indexes vertices by sorted name like L-LIT's.
+- Slips: first local handover-check commit carried a model name (never pushed; redone with reset --soft, Lead 13:17Z: acceptable); one
+  job started with a bare «&» (killed within a minute, restarted as a tracked task).
+
 ## HANDOVER -- successor 18 (L-COMP 18, Opus 5.5; session_01V5yGRVyip8PwDCTvydpDg1) PARKS 2026-11-12 (date -u in the park commit) after BOX 42. NOTHING RUNNING.
 - Boxes done this session (records = the READMEs; all DATA): BOX 39 (box39: Q_(>c) counter = L-NEW/L-RED; Q_(>1) climbs 10 @303, 18 @612;
   fit NOT identified), BOX 40 (box40: box 99 SCC census = L-SI 26/26; ties G1 small; SCC-LIN climbs max 0.8), BOX 41 (box41: DEEP3

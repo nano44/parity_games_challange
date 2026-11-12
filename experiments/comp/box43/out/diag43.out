@@ -1,0 +1,12 @@
+lmcs N 2, state 5; escapes W (marked *): h1:30 h2:34
+Ω_t(f2) [successor y of g2]: Λ x, Π [f2:33 h1:30* f1:29 k1:27 s:22 e2:10 d2:9 e1:6], len 8
+Ω_t(k2) [σ_t(g2)]: Λ x, Π [k2:31], len 1
+Ω_(t+1)(g2), σ_(t+1)(g2) = k2: Λ x, Π [k2:31 g2:12], len 2
+z = f2: priority 33 (ODD), owner 1, escape False, in Π_t(f2): True
+vertices above the least relevant escape h1 that are not escapes: k2:31 f2:33
+switchall N 2, state 6; escapes W (marked *): m0:38 m1:42
+Ω_t(k1) [successor y of l1]: Λ q, Π [p:44 k1:41 m0:38* k0:37 z0:35 h1:22 e1:21 h0:20 s:2], len 9
+Ω_t(z1) [σ_t(l1)]: Λ q, Π [p:44 z1:39], len 2
+Ω_(t+1)(l1), σ_(t+1)(l1) = z1: Λ q, Π [p:44 z1:39 l1:17], len 3
+z = k1: priority 41 (ODD), owner 1, escape False, in Π_t(k1): True
+vertices above the least relevant escape m0 that are not escapes: z1:39 k1:41 p:44
