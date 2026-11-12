@@ -106,3 +106,36 @@ No GAP; nothing refused. SP-2 is a citation requirement for the line, not a gap.
 
 ## 8. Tools and outputs (committed, docs/referee/scratch/)
 split_replay.py; split_logs/: sweep.out, check199_rerun.out.
+
+## §C. Fixes entry 2 and line L-1 (REFEREE successor 31, Opus 5.5, D15; date -u at writing 2026-11-11T23:24Z; Lead 23:23Z byte test)
+- Objects: claude/l-new 8f4dab7e (ancestor of origin/claude/l-new, checked). docs/new/P-N5-SPLIT-line-L1.txt sha1
+  634b2fdfda31eda9e82e9f558ffebf3c89f5701c, 9,249 B; docs/new/P-N5-SPLIT-fixes.md sha1 f7940ddf3361d45407855ce51baddc9e59515426 (entry 2);
+  packet docs/new/P-N5-SPLIT.md at 8f4dab7e: sha1 5bc1b1f3… (frozen, unchanged). No earlier line exists: L-1 is tested for meaning against
+  LS-1..LS-8 and SP-1 / SP-2 / SP-3 of §2 and §7, strings typed from this report (scratch/split_l1.py; log split_logs/l1test.out), not
+  from the lane's generator.
+- Mechanics: one line, 0 «|», 260 «(» = 260 «)», depth never negative.
+- SP-1 / LS-2: the governing clause «(LEX-Λ) is applied only to non-core vertices (pads), where P-N5-CHAIN's W-1 repair holds» is in L-1
+  verbatim, with the credit (REFEREE-2 W-1; REFEREE SP-1; P-N5-CHAIN fixes entry 3, R-W). The withdrawn sentence is ABSENT («a play passes
+  K0 iff it passes K3»: 0; «iff its cycle node is in the closed core»: 0). Entry 2's restatement of the uses (§3 (c), PAIR-SPLIT (c′),
+  RW-SHAPE (ii), ASC-WIT (c): pads) matches §2. CORRECT.
+- SP-2 / LS-3: [DEF] = R104, [G3] = R117, [OPT] = R118 (b) + R21 (a): present. (R), (P), (E-DOM), (Core) «in its W-1-repaired reading», F2,
+  CYC cited from «P-N5-CHAIN's frozen text (l-new 93531b03, sha1 6e613ba7, §2 and §4)»: present; and indeed R125's line L-5 (473344b1) names
+  none of F2, (Core), (E-DOM). The facts cited «as RESULTS R125» (HOW3, REACH3-ALL, F1, F3, F4′, F5, F6, DOM, STRICT, CN2-3, LOC-GATE3,
+  LOC-K2-3, B-ONLY3, NO-TIE3, T-QUIET3 with L3, E-MON3, CHAIN-DECOMP3) are EACH named in R125's line L-5 (counted by script). CORRECT.
+- SP-3 (optional): taken as governing wording of (PL); matches §2. N-2 (REFEREE-2): premise column additions are facts the proofs use; fine.
+- LS-1: «each statement PROVED and CONDITIONAL on RESULTS R125 (P-N5-CHAIN)»; [E-LEV] only for ASC-WIT, ASC-ROOT; DEAD D1-D7 each with
+  instance, sha1 prefix, counter and unit. LS-4: run named («HOW3(G), i.e. N5′-xi from S3 on Γ3(G) until its first fallback»), nothing for N5,
+  outside Γ3(G) or beyond T3. LS-5: DATA units as my §4 read them in split199.py (spfail in its lower-bound, stronger form; rh2fail over all
+  same-pair couples; the four definitional counters named without a control; the max c_y clause with its set; «large zero counts are DATA,
+  not evidence»). LS-6: equivalences stated as such, SPLIT-COUNT «a reduction, not an equivalence», the open core named, «G-N5-TIME stays
+  OPEN». LS-7: the TARGET tail occurs verbatim in L-1 and twice in trunk RESULTS (R123 / R124 form). LS-8: «sha1 5bc1b1f3, with fixes
+  entries 1-2», «L-NEW successors 65-67 and 69», «L-RED 60-62». All CORRECT.
+- Cited replays checked against the reports: REFEREE 30 «28 pinned instances and 800 random genomes» = §4 (4 families × 200); REFEREE-2 36
+  «28 pinned, 7,000 random and 2,200 mutants» = R2-P-N5-SPLIT l. 239, 244 (991296c9). split.pins 61 rows: entry 2's count, not re-run here.
+- **Ruling asked: «RESULTS R125» before R125 lands.** ACCEPTABLE, as a landing-order condition, not a defect: the line cites R125 by id for
+  facts that R125's line L-5 (the text at CHECKER C139 Add. 1) states, and every SPLIT row is CONDITIONAL on R125 anyway. Condition (for the
+  CHECKER of P-N5-SPLIT): P-N5-SPLIT lands only after R125 is in trunk docs/RESULTS.md under that id, and the landed R125 still names each
+  fact cited «as RESULTS R125» (re-run split_l1.py's R125 block on the landed text). If R125 lands under another id or with a changed fact
+  list, L-1 is regenerated. Until then the line reads «CONDITIONAL on RESULTS R125 (P-N5-CHAIN)», which is true.
+- Verdict: fixes entry 2 CORRECT. **Line L-1 MATCHES** the packet read with fixes entries 1-2 and my LS-1..LS-8, SP-1, SP-2. Statements and
+  labels as in §0 (all SIGN, conditional on R125). Note for P-N5-GATE (R-P-N5-GATE GT-3): C-EQUIV is this packet's §6, as L-1 states.

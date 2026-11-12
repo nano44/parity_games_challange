@@ -1,0 +1,379 @@
+my ids parsed: ['D-1', 'D-2', 'D-3', 'D-4', 'D-5a', 'D-5b', 'G-a', 'G-b', 'G-c', 'R-1', 'R-2', 'R-3', 'R-4', 'R-5', 'R-6', 'R-7']
+D-1: old in L2 1, old in L3 0, new in L3 1
+D-2: old in L2 1, old in L3 0, new in L3 1
+D-3: old in L2 1, old in L3 0, new in L3 1
+D-4: old in L2 1, old in L3 0, new in L3 0
+D-5a: old in L2 1, old in L3 0, new in L3 1
+D-5b: old in L2 1, old in L3 0, new in L3 -
+G-a: old in L2 1, old in L3 0, new in L3 0
+G-b: old in L2 1, old in L3 0, new in L3 0
+G-c: old in L2 1, old in L3 0, new in L3 0
+R-1: old in L2 1, old in L3 0, new in L3 0
+R-2: old in L2 1, old in L3 0, new in L3 0
+R-3: old in L2 1, old in L3 0, new in L3 0
+R-4: old in L2 1, old in L3 0, new in L3 0
+R-5: old in L2 1, old in L3 0, new in L3 1
+R-6: old in L2 1, old in L3 0, new in L3 0
+R-7: old in L2 1, old in L3 0, new in L3 0
+lines 1 bars 0 parens 229 229
+depth never negative: True
+absent? §2 (a) 0
+absent? P-N5-CHAIN's C-EQUIV 0
+absent? lie on both of two plays 0
+absent? not a premise here 0
+absent? not among P-N5-CHAIN 0
+absent? while its play avoids 0
+absent? over the run then 0
+absent? CTRL=a0 0
+
+--- hunk 0 insert
+OLD: 
+NEW: F4′'s stated clause, F6, (c) STRICT, 
+
+--- hunk 1 insert
+OLD: 
+NEW: LOC-K2, 
+
+--- hunk 2 insert
+OLD: 
+NEW: and (E-DOM) and (Core) read off RESULTS R104's priorities and closed core with LOC-K2 (non-core vertices only: the core is entered only at K0 and then follows one fixed suffix, so K0, K3 lie on the play iff Λ is a core vertex), 
+
+--- hunk 3 replace
+OLD: the
+NEW: RESULTS
+
+--- hunk 4 replace
+OLD: facts
+NEW: R125 (P-N5-CHAIN):
+
+--- hunk 5 delete
+OLD:  F2,
+NEW: 
+
+--- hunk 6 delete
+OLD: CYC, 
+NEW: 
+
+--- hunk 7 insert
+OLD: 
+NEW: LOC-K2-3, B-ONLY3, E-MON3, and F2, CYC, 
+
+--- hunk 8 replace
+OLD: (Core),
+NEW: (Core)
+
+--- hunk 9 replace
+OLD: E-MON3
+NEW: from P-N5-CHAIN's frozen text (l-new 93531b03, sha1 6e613ba7, §2 and §4), (Core) in its W-1-repaired reading, applied only to non-core vertices (the faces
+
+--- hunk 10 insert
+OLD: 
+NEW: a gate and 
+
+--- hunk 11 replace
+OLD: pending
+NEW: successors
+
+--- hunk 12 replace
+OLD: packet
+NEW: of a mover or a gate;
+
+--- hunk 13 replace
+OLD: (L-NEW,
+NEW: fixes
+
+--- hunk 14 replace
+OLD: frozen
+NEW: entry
+
+--- hunk 15 replace
+OLD: claude/l-new
+NEW: 3,
+
+--- hunk 16 replace
+OLD: 93531b03,
+NEW: R-W;
+
+--- hunk 17 replace
+OLD: landing
+NEW: referee-originated:
+
+--- hunk 18 replace
+OLD: as
+NEW: REFEREE-2
+
+--- hunk 19 replace
+OLD: R125);
+NEW: R2-P-N5-GATE G-1);
+
+--- hunk 20 delete
+OLD:  PAIR-EXPEL, EXPEL-COUNT and
+NEW: 
+
+--- hunk 21 delete
+OLD:  §2 (a),
+NEW: 
+
+--- hunk 22 delete
+OLD:  the pending packet
+NEW: 
+
+--- hunk 23 replace
+OLD: referees
+NEW: sha1
+
+--- hunk 24 replace
+OLD: pending);
+NEW: 5bc1b1f3);
+
+--- hunk 25 replace
+OLD: over
+NEW: at every state of
+
+--- hunk 26 insert
+OLD: 
+NEW: D's play avoids e_o at every state of the run and whose 
+
+--- hunk 27 delete
+OLD:  while its play avoids e_o
+NEW: 
+
+--- hunk 28 replace
+OLD: PAIR-EXPEL,
+NEW: PAIR-EXPEL;
+
+--- hunk 29 replace
+OLD: PROVED-CONDITIONAL
+NEW: its
+
+--- hunk 30 replace
+OLD: on
+NEW: Step 1 is the argument of
+
+--- hunk 31 replace
+OLD: §2
+NEW: §3
+
+--- hunk 32 replace
+OLD: (a))
+NEW: (a), Lemma REWIN (a), which the packet writes out in full from F1, STRICT, F3, F6, F4′, CN2-3, so no P-N5-SPLIT premise is used)
+
+--- hunk 33 replace
+OLD: Dhi_z,
+NEW: Dhi_z (at most 3M split pairs: the split is a mover or a gate, with M mover edges and 2M faces; referee-originated: REFEREE-2 R2-P-N5-GATE G-6),
+
+--- hunk 34 delete
+OLD: P-N5-CHAIN's 
+NEW: 
+
+--- hunk 35 insert
+OLD: 
+NEW: (on both runs, with no P-N5-SPLIT premise: each entry of a top starts a run, 
+
+--- hunk 36 insert
+OLD: 
+NEW:  every run but one starts at a change; referee-originated: REFEREE-2 R2-P-N5-GATE G-7) and, on Γ3 only,
+
+--- hunk 37 replace
+OLD: while
+NEW: and
+
+--- hunk 38 replace
+OLD: that
+NEW: it
+
+--- hunk 39 replace
+OLD: case
+NEW: does
+
+--- hunk 40 replace
+OLD: needs
+NEW: not
+
+--- hunk 41 replace
+OLD: B-ONLY
+NEW: occur
+
+--- hunk 42 replace
+OLD: on
+NEW: either,
+
+--- hunk 43 replace
+OLD: Γ3,
+NEW: by
+
+--- hunk 44 replace
+OLD: which
+NEW: RESULTS R125's B-ONLY3, the same argument with the pads (pβ_o
+
+--- hunk 45 replace
+OLD: not
+NEW: never
+
+--- hunk 46 replace
+OLD: a
+NEW: an
+
+--- hunk 47 replace
+OLD: premise
+NEW: exception;
+
+--- hunk 48 replace
+OLD: here
+NEW: pe_o
+
+--- hunk 49 replace
+OLD: (OPEN
+NEW: is
+
+--- hunk 50 replace
+OLD: within
+NEW: one
+
+--- hunk 51 replace
+OLD: this
+NEW: only
+
+--- hunk 52 replace
+OLD: entry,
+NEW: when
+
+--- hunk 53 replace
+OLD: covered
+NEW: D
+
+--- hunk 54 replace
+OLD: by
+NEW: =
+
+--- hunk 55 replace
+OLD: E-FACE-PAYS
+NEW: c_W,
+
+--- hunk 56 replace
+OLD: (a)
+NEW: and
+
+--- hunk 57 replace
+OLD: only);
+NEW: then Λ(pe_o) = c_W ≠ Λ(pβ_o); referee-originated: REFEREE R-P-N5-GATE GT-1 and REFEREE-2 R2-P-N5-GATE G-5);
+
+--- hunk 58 replace
+OLD: while
+NEW: and
+
+--- hunk 59 insert
+OLD: 
+NEW: it holds at every state 0, …, T3 by RESULTS R125's B-ONLY3 at 
+
+--- hunk 60 insert
+OLD: 
+NEW:  mover D, by the same argument, so there too (b), (c) and WAIT-QUIET hold with no
+
+--- hunk 61 replace
+OLD: is
+NEW: (referee-originated:
+
+--- hunk 62 replace
+OLD: a
+NEW: REFEREE
+
+--- hunk 63 replace
+OLD: hypothesis
+NEW: R-P-N5-GATE
+
+--- hunk 64 replace
+OLD: here;
+NEW: GT-1 and REFEREE-2 R2-P-N5-GATE G-5);
+
+--- hunk 65 replace
+OLD: (unit
+NEW: (unit:
+
+--- hunk 66 replace
+OLD: gate,
+NEW: Odd vertex with two successors for grfail and gr2fail, flip for grwhy and trfail;
+
+--- hunk 67 replace
+OLD: decfail, glnfail, lowflip
+NEW: decfail
+
+--- hunk 68 replace
+OLD: state);
+NEW: state): the decider is at least as relevant as e_o; (a)'s order equivalence is not counted by the lane), glnfail and lowflip 0 (unit: flip with LAM ∧ PRIV at t − 1 and t;
+
+--- hunk 69 insert
+OLD: 
+NEW:  (b′) no separate lane DATA,
+
+--- hunk 70 replace
+OLD: npsub,
+NEW: npsub (unit (gate, state)),
+
+--- hunk 71 replace
+OLD: npkind,
+NEW: npkind
+
+--- hunk 72 replace
+OLD: relfail,
+NEW: (unit
+
+--- hunk 73 replace
+OLD: unlfail,
+NEW: flip), relfail (relocks > ch_(p_e)), unlfail (unlocks > 1 + ch_(p_e); the bounds unlocks ≤ 1 + relocks and unlocks ≤ ch_(p_b) are not counted by the lane),
+
+--- hunk 74 replace
+OLD: gate;
+NEW: gate for relfail, unlfail, k1both, k1c2;
+
+--- hunk 75 insert
+OLD: 
+NEW: as sets 
+
+--- hunk 76 insert
+OLD: 
+NEW:  of box 94's 20 simultaneous-clock instances (all but NSQ2_4, NSQ3_4, whose levels run one after another and whose rows differ) (REFEREE replay, own engine; L-SI's set re-measure copy95.py agrees on both engines; the lane's lev94 compares sizes),
+
+--- hunk 77 replace
+OLD: level;
+NEW: level);
+
+--- hunk 78 replace
+OLD: box
+NEW: PARALLEL:
+
+--- hunk 79 replace
+OLD: 94's
+NEW: par1-3
+
+--- hunk 80 replace
+OLD: 22
+NEW: 0
+
+--- hunk 81 replace
+OLD: instances);
+NEW: (unit:
+
+--- hunk 82 replace
+OLD: PARALLEL,
+NEW: change of H with an expelled letter, at route tuples; x's position after u′ not counted);
+
+--- hunk 83 delete
+OLD: par1-3, lexfail, afail, pxfail, dhifail, 
+NEW: 
+
+--- hunk 84 insert
+OLD: 
+NEW: 0, with lexfail and dhifail 
+
+--- hunk 85 insert
+OLD: 
+NEW:  (E-MON3 on H)
+
+--- hunk 86 delete
+OLD:  CTRL=a0 afail 14 / 96,
+NEW: 
+
+--- hunk 87 replace
+OLD: 1-2,
+NEW: 1-3,
