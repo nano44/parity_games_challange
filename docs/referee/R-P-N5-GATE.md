@@ -410,3 +410,50 @@ Line L-2: does NOT match; required R-1..R-7, D-1..D-5 (§5); recommended G-a..G-
   the three rows to DATA, and the construction rows staying DEAD (the Lead, 03:00Z), match §J.
 - Verdict: fixes entry 4 CORRECT. **Line L-4 MATCHES** (L-3 + exactly LT-1, GL-1..GL-3 and the entry count). Statements and labels as in
   §0 and §I: every statement SIGN; the Γ3 rows on LANDED R125; A*-EQUIV (ii), (iii) CONDITIONAL on R127 (P-N5-SPLIT).
+
+## §L. Fixes entry 5 and line L-5 (REFEREE successor 34; date -u at writing 2026-11-12T20:49Z; the Lead's «go» of 20:04Z, item A0)
+Second, independent byte test; claude/referee-2 0df0fdd8 NOT read before this section was committed.
+- Objects (git, measured): claude/l-si 2051a0ee (ancestor of origin/claude/l-si 516b6837); fix commit 7b0a58ae. docs/si/P-N5-GATE-line-L5.txt
+  sha1 459fd88d2d1959647f6aeb065bf8ac58cce684f9, 12,923 B. Base L-4 at 676b6a1c sha1 6bfde78e… (this lane's §K, MATCHES). CHECKER C142
+  at claude/checker 269effb3, docs/checker/C142.md sha1 8b005c61e217f0b3601d57a8d69a29e798fd1403 (equal to the lane's byte copy's sha1
+  as fixes entry 5 states it). From 676b6a1c to 2051a0ee: the frozen packet (f3a584e6…) and L-1..L-4 unchanged (`git diff --quiet`);
+  P-N5-GATE-fixes.md gains 48 lines (entry 5) and loses none.
+- Byte test (scratch/gate_l5.py; log gate_logs/l5test.out): my script parses C142 §4's «old» → «new» pairs from C142.md as committed at
+  269effb3 (wrapped lines joined with one space, as §4 says), finds 9 pairs, and applies them to L-4 in §4's order, each old string
+  asserted to occur exactly once (9 × count 1). Result after the nine: sha1 **7ebcf7355be9838473f05a7defe913940b6fd723**, 12,923 B =
+  CHECKER's target (C142 §4). Then the tenth pair «fixes entries 1-4,» → «fixes entries 1-5,» (count 1; fixes entry 5 F5-4 writes it
+  with the longer context «docs/si/P-N5-GATE.md with its fixes entries 1-4,», the same single occurrence). Result: sha1
+  **459fd88d2d1959647f6aeb065bf8ac58cce684f9**, 12,923 B, one line with its newline, 0 «|», 238 «(» = 238 «)»; `cmp` with the lane's
+  L-5: **EQUAL**. So L-5 = L-4 + exactly CHECKER's nine pairs + the tenth pair; nothing else changed.
+- Meaning, E-1 and E-2 (scratch/gate_l5_data.py; log gate_logs/l5data.out; columns found by header name, both engines own and g3; each
+  file unchanged from its cited commit to 2051a0ee):
+  | cited in L-5 | file @ commit | own | g3 |
+  | --- | --- | --- | --- |
+  | m 8 / 32, C 17 / 65 on MW8_2 / MW32_2 | box90/out/mw90.out @ 2d0344d3, maxm, C | 8 / 32, 17 / 65 | 8 / 32, 17 / 65 |
+  | P 54 / 2583, C 3 on FW8_2 / FW16_2 (depth 8 / 16) | box90/out/fw90.out @ 4ded1e8d, maxP, C, depth | 54 / 2583, 3 / 3, 8 / 16 | 54 / 2583, 3 / 3, 8 / 16 |
+  | C 17 / 65, per-gate flips 34 / 130 on MW8_2 / MW32_2 | box91/out/own91.out, g391.out, C, maxflip | 17 / 65, 34 / 130 | 17 / 65, 34 / 130 |
+  | flips 9 / 17 / 33, ch_D 4 / 8 / 16, lamch 0 on MWR4/8/16_2 | box93/out/mwr93_{own,g3}.out, mx_flips, mx_ch_D, mx_lam_pe, mx_lam_pb | 9 / 17 / 33, 4 / 8 / 16, 0, 0 | 9 / 17 / 33, 4 / 8 / 16, 0, 0 |
+  F_10 − 1 = 54 and F_18 − 1 = 2583 (printed by the script), so «= F_(d+2) − 1 at d = 8, 16» is right. Every number in R-E1 / R-E2 is on
+  a named instance with its file and counter; «linear in n» and A*_all are gone (A*_all: 0 occurrences in the growth clause; it stays
+  only in A*-EQUIV's statement, which is a proved reduction, not DATA). Box 91's «maxa» (9 / 33) is not cited, correctly (C ≤ A*_all and
+  65 > 33).
+- «where E-FACE-PAYS (d) holds with equality»: true, and it follows from numbers that are in the cited files plus the signed bound (d)
+  itself, not from a per-gate column: for the gate o with flips(o) = mx_flips, 2·ch_D + 1 = mx_flips = flips(o) ≤ 2·min(ch_(p_e)(o),
+  ch_(p_b)(o)) + 1 ≤ 2·mx_ch_pe + 1, and mx_ch_pe = mx_ch_D (4 / 8 / 16, both engines; mx_ch_pb 9 / 17 / 33), so every inequality is an
+  equality at that gate. dfail 0 on all six rows. Note N-L1 (no change asked): «lamch 0» is backed by the columns mx_lam_pe = mx_lam_pb =
+  0, which the clause's file list does not name by column; lamch(o) is defined in the line itself («the number of steps at which Λ
+  changes at p_e or p_b»), and the two columns are its two halves. L43 is met for C, flips and ch_D by name; I record the lamch columns
+  here rather than ask for a fifth fix round.
+- Meaning, E-3: the seven inserted markers sit where the frozen packet's parts begin (packet §3.2 (a), (b), (b′); §3.4 (a), (b), (c),
+  (d), read at 2051a0ee l. 76-79 and 105-111): GATE-LOW-NULL (a) the order equivalence at LAM ∧ PRIV with e_o ∈ E_t(p_e), (b) a flip
+  under LAM ∧ PRIV ∧ UP at t − 1 and t changes a π, (b′) the equal-Λ rise; E-FACE-PAYS (a) relocks / unlocks with no PRIV, LAM or UP
+  hypothesis, (b) p_e changes iff D does when e_o ∉ P_(t−1)(D) ∪ P_t(D), (c) the unlock bound when D's play avoids e_o, (d) the flip
+  bound. No word of the two statements changes (fixes entry 5 F5-3 asserts «one marker inserted» per pair; my count: each new string is
+  its old string plus 4 or 5 characters, «(a) » … «(b′) »). The line's later citations «E-FACE-PAYS (b)», «(c)», «(d)» and «(a)'s order
+  equivalence», «(b′)» now resolve inside the line. The statements are the ones this lane signed (§0, §I, §K); I re-sign them with the
+  markers.
+- The tenth pair (Lead 17:58Z, F5-4): matches the L-4 precedent («1-3» → «1-4», §K). E-4 (TRIGGER name clash) is entry text, not in the
+  line, correctly.
+- Verdict: fixes entry 5 CORRECT. **Line L-5 MATCHES** (L-4 + exactly C142 §4's nine pairs + the tenth pair; sha1 459fd88d…, 12,923 B).
+  Statements and labels as in §0, §I and §K, now with the part markers: every statement SIGN; the Γ3 rows on LANDED R125; A*-EQUIV (ii),
+  (iii) CONDITIONAL on R127 (P-N5-SPLIT), which is landed (C141, f9520557).
