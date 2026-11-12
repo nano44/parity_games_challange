@@ -244,3 +244,41 @@ byte copies (never retyped), merges overlapping ones, and asserts every referee 
   REFEREE's R-3 form ((i) on both runs, (ii) on Γ3 only) with REFEREE-2's G-7 proof credit; DATA by REFEREE's D-1..D-5 (supersede
   REFEREE-2's R-9); Γ3 K10 / PROVISO by G-a / G-b = R-6a / R-6b with «RESULTS R125»; REFEREE-2's R-7a / R-7b («at every state of the
   run») kept, though optional once G-b holds the proviso on both runs.
+
+## Entry 4 (fix round 4; L-SI successor 50; Lead 2026-11-12 02:57Z, 03:00Z, 03:17Z, 04:09Z)
+Items: REFEREE 31 (claude/referee fbc4d865, docs/referee/R-P-N5-GATE.md; byte copy experiments/si/box95/fix4/ref_R-P-N5-GATE_fbc4d865.md,
+sha1 9aaf92a6…): §I (L-3 byte test: entry 3 CORRECT; L-3 MATCHES except LT-1) and §J (GT-10, strings GL-1..GL-3). REFEREE-2 37's L-3
+byte test (claude/referee-2 6269fec5, Addendum 2): L-3 MATCHES, no new item. Strings: L-4 by fix4/mkL4.py (GL-1..GL-3 parsed from the byte
+copy, never retyped); this text by fix4/mkfix4.py.
+
+### F4-1 (LT-1, REQUIRED; Lead's ruling: the landing-order form)
+- REFEREE 31: L-3 dropped P-N5-SPLIT's pending status. Lead's ruling (02:57Z): the landing order is fixed, R126 = P-N5-QN, then R127 =
+  P-N5-SPLIT, then this entry; so SPLIT-COUNT and C-EQUIV are cited as «RESULTS R127 (P-N5-SPLIT)», and A*-EQUIV (ii), (iii) stay
+  labelled CONDITIONAL with R127 as the premise; CHECKER confirms R127 = P-N5-SPLIT at this entry's landing. (REFEREE 31's own New, «of
+  the pending packet P-N5-SPLIT … not landed», is superseded by the ruling.)
+- L-4: «C-EQUIV of P-N5-SPLIT (L-NEW, frozen claude/l-new 399cda07, sha1 5bc1b1f3);» → «C-EQUIV of RESULTS R127 (P-N5-SPLIT; L-NEW,
+  frozen claude/l-new 399cda07, sha1 5bc1b1f3; landing order R126 = P-N5-QN, R127 = P-N5-SPLIT, then this entry);», and «PROVED-CONDITIONAL
+  on P-N5-SPLIT's SPLIT-COUNT and C-EQUIV» → «PROVED-CONDITIONAL on RESULTS R127 (P-N5-SPLIT)'s SPLIT-COUNT and C-EQUIV».
+- Packet reading: wherever the packet (with entries 1-3) cites P-N5-SPLIT's SPLIT-COUNT or C-EQUIV as a premise (table §3.8, §3.8's
+  heading and (ii), (iii), §1's P-N5-SPLIT row), read «RESULTS R127 (P-N5-SPLIT)»; the labels stay CONDITIONAL on it.
+
+### F4-2 (GT-10 = L43, REQUIRED; GL-1..GL-3 verbatim): three asymptotic rows leave the DEAD list and become DATA
+- L43 (Lead reading, docs/DECISIONS.md, quoted by REFEREE 31 §J): a lane DEAD of an ASYMPTOTIC statement enters a RESULTS line as DATA
+  with its numbers and source commit, or not at all. The three rows below refute their statements only on finitely many instances.
+- §5 rows relabelled DATA, not DEAD (the numbers and instances stand; the word «DEAD» goes):
+  - «| RA-MULT(K) (constant re-arm multiplicity) | m = n, C = 2n + 1 | MW8_2, MW32_2 | 66b84dcb, 445031d1 | box91 inst |»
+    → DATA: re-arm multiplicity m = n with C = 2n + 1 on MW8_2, MW32_2 (refutes a constant multiplicity only below 32).
+  - «| polynomial P bound (RA path count) | P = F_(d+2) − 1 with C = 3 | FW8_2, FW16_2 | 108a63cf, 94df42b7 | box91 inst |»
+    → DATA: RA path count P = F_(d+2) − 1 with C = 3 on FW8_2, FW16_2 (no finite instance set refutes «polynomial»).
+  - «| K1-FLIP(c), every constant c, at k = 1 (L-RED 63) | flips 2n + 1 with lamch 0 | MWR4_2, MWR8_2, MWR16_2 | 856d369b, 918f1414, 2ccda9a9 | box93 inst (copies of claude/l-red 406ef2fd r229/inst) |»
+    → DATA: per-gate flips 9 / 17 / 33 at lamch 0 on MWR4_2, MWR8_2, MWR16_2 (L-RED 63, claude/l-red 406ef2fd; refutes c·(lamch + 1)
+    only for c ≤ 32).
+- The construction rows (WC, K6 LAG TOWER, K7 probe, nesting multipliers, Db / Dbr) stay DEAD: each records that a named construction
+  fails to produce growth, with measured numbers; they claim no asymptotic bound (REFEREE 31 §J; the Lead, 03:00Z).
+- L-4: GL-1 and GL-2 delete the three from the DEAD clause; GL-3 adds them as DATA after «… inst with sha1 files» (strings in fix4/mkL4.py,
+  parsed from REFEREE 31 §J).
+
+### F4-3 (L-4)
+- docs/si/P-N5-GATE-line-L4.txt = L-3 + LT-1 (two strings) + GL-1..GL-3 + «fixes entries 1-4»; sha1 6bfde78ef050b47f43527875256c65a205869e77, 12562 bytes (wc -c).
+  mkL4.py asserts each Old once, that «RA-MULT», «K1-FLIP(c)» and «a polynomial bound on the RA path count» are absent, no «|», and
+  balanced parentheses.
