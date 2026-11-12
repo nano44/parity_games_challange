@@ -1,0 +1,3 @@
+quote 'IDEAL-CYC(G) := Γ(G) of ANY genome G (Ξ-cycles allowed) with' line(s) [13607] found True
+quote 'The game is Γ(G) with every Even vertex that is not a mover ' line(s) [13677, 14528] found True
+quotes 2 missing 0 trunk b3d7294c

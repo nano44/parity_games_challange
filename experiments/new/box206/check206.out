@@ -17,3 +17,4 @@ K1F21_n48.json {'T': 31, 'L': 1, 'b': 6, 'Dtop': 22, 'F0': 22, 'excess': 0, 'pfa
 K1L10_n48.json {'T': 31, 'L': 1, 'b': 6, 'Dtop': 14, 'F0': 22, 'excess': -8, 'pfall': 0}
 BLKX23_n48.json {'T': 28, 'L': 1, 'b': 6, 'Dtop': 23, 'F0': 22, 'excess': 1, 'pfall': 0}
 CW4_n.json k 1 N 51 M 106 N+M 157 b 6 Dtop 12 D_mov 12 T 30
+ediag CWRR4 TOTALS closed 0 raceTop 20 states 29

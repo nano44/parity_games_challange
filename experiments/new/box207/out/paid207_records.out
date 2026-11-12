@@ -1,0 +1,13 @@
+MWR4_2.json egates 109 direct 109 maxchain 0 nonext 0 notK1 0 notE 0 lexfail 0 nochain 0
+MWR8_2.json egates 301 direct 301 maxchain 0 nonext 0 notK1 0 notE 0 lexfail 0 nochain 0
+CW8_n.json egates 284 direct 284 maxchain 0 nonext 0 notK1 0 notE 0 lexfail 0 nochain 0
+CWRR8_n.json egates 22 direct 22 maxchain 0 nonext 0 notK1 0 notE 0 lexfail 0 nochain 0
+K1F21_n48.json egates 93 direct 93 maxchain 0 nonext 0 notK1 0 notE 0 lexfail 0 nochain 0
+K1F34_n84.json egates 278 direct 278 maxchain 0 nonext 0 notK1 0 notE 0 lexfail 0 nochain 0
+K1L7_n48.json egates 142 direct 73 maxchain 1 nonext 0 notK1 0 notE 0 lexfail 0 nochain 0
+K1L10_n48.json egates 129 direct 44 maxchain 2 nonext 0 notK1 0 notE 0 lexfail 0 nochain 0
+BLKX23_n48.json egates 89 direct 57 maxchain 1 nonext 0 notK1 0 notE 0 lexfail 0 nochain 0
+BLKX26_n48.json egates 113 direct 75 maxchain 1 nonext 0 notK1 0 notE 0 lexfail 0 nochain 0
+B400_r32_a13d9661.json egates 293 direct 292 maxchain 1 nonext 0 notK1 0 notE 0 lexfail 0 nochain 0
+CFI3_n48.json egates 48 direct 36 maxchain 1 nonext 0 notK1 0 notE 0 lexfail 0 nochain 0
+RINT_n48.json egates 98 direct 64 maxchain 1 nonext 0 notK1 0 notE 0 lexfail 0 nochain 0
