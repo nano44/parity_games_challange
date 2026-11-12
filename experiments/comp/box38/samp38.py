@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """L-COMP box 38 item 2(a) SAMPLED: random genomes of (N, M), T3 by U(G). Sampler (stated): lev = a uniformly random nondecreasing
-level vector from 0 with steps 0/1 (gen36.levvecs); D = uniform composition of M into N parts >= 1 (rejection); xt uniform in {-1} +
+level vector from 0 with steps 0/1 (gen36.levvecs); D = uniform composition of M into N parts >= 1 (rejection for the first five pairs, stars and bars after: same law); xt uniform in {-1} +
 movers; gate, br uniform permutations; bp uniform bits; start uniform; wt = a UNIFORM mover of level lev - 1 (box 33/36 used the first:
 this sampler is wider). Counter: T3 (fast36 bin/k, [E-LEV] and FAST36_NOELEV; N5'-xi from S3 on Gamma3 to the first fallback; total).
 Out: one JSON line per (N, M, U) at the end + checkpoint every 2,000 genomes (OUT.ck; resume continues at the saved index; genome i is
@@ -11,13 +11,17 @@ H = os.path.dirname(os.path.abspath(__file__)); sys.path[:0] = [H, os.path.join(
 import fast36, gen36, u38
 N, M, CNT, SEED, OUT = int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4]), sys.argv[5]
 LEVS = gen36.levvecs(N)
+OLD = {(3, 9), (4, 8), (6, 6), (4, 12), (6, 10)}
 
 
 def draw(i):
     r = random.Random(f"{SEED}-{N}-{M}-{i}"); lev = list(r.choice(LEVS))
-    while True:
-        D = [r.randint(1, M) for _ in range(N)]
-        if sum(D) == M: break
+    if (N, M) in OLD:   # the first five pairs were drawn by rejection (kept for exact reproducibility; same uniform law)
+        while True:
+            D = [r.randint(1, M) for _ in range(N)]
+            if sum(D) == M: break
+    else:               # stars and bars: N - 1 distinct cuts among 1..M-1, uniform over compositions (rejection is too slow at N = M = 8)
+        cuts = sorted(r.sample(range(1, M), N - 1)); D = [b - a for a, b in zip([0] + cuts, cuts + [M])]
     gate = list(range(M)); r.shuffle(gate); br = list(range(M)); r.shuffle(br)
     opts, g, b = [], [], 0
     for x in range(N):
