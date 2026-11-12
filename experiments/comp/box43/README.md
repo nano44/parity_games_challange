@@ -147,8 +147,8 @@ Counter: Deep_3 = Σ_C Deep_3(C) (flips of INTERNAL gates at steps t ≥ t0(C), 
   reproduces MWR4_2 sha1 856d369b; inst/SHA1SUMS.tail43). Second engine (cross100; out/meas43_tail_cross.out), n = 4, 8, 16, 32, 48
   (N + M 153, 269, 501, 965, 1429 = 29n + 37): T3 30, 54, 102, 198, 294 = 6n + 6, equal to MWR(n)'s; flips of the busiest gate 9, 17,
   33, 65, 97 = **2n + 1**; whole-run deep (every gate) 13, 25, 49, 97, 145 = 3n + 1 = the number of Λ-quiet flips (0 on MWR(n)); dmax
-  5 at every n. My engine (out/meas43_tail_mine.out): Deep_3 = per-gate max = 9, 17, 33, 65 for n = 4, 8, 16, 32, dmaxInt 5, T3 and whole-run deep equal
-  to cross100's (n = 48 on my engine: see the note at the end of this section).
+  5 at every n. My engine (out/meas43_tail_mine.out): Deep_3 = per-gate max = 9, 17, 33, 65, 97 for n = 4, 8, 16, 32, 48, dmaxInt 5; T3, whole-run
+  deep and dmax equal cross100's on all 13 instances of the tail set (fit43.py: per-gate max = 1 + 2n, max residual 0).
   So ONE gate's deep flips grow linearly: 2n + 1 = (2/29)(N + M − 37) + 1, dmax constant. TREC = TAIL_2(BEST_C300_r34): one gate with
   34 deep flips at N + M 307 (cross100: T3 48, deep 61 = qflip 61, maxfl 34, dmax 12).
 - READING (for L-SI 51 / L-RED 66 through the Lead; an argument sketch, not a refereed lemma). Why the run is unchanged: the tail's
@@ -164,9 +164,6 @@ Counter: Deep_3 = Σ_C Deep_3(C) (flips of INTERNAL gates at steps t ≥ t0(C), 
      not a weaker «deep» part of it.
   3. Depth measured from the top is therefore not intrinsic; a count that TAIL cannot inflate would have to measure depth relative to
      the changing part (for example among the e-vertices that are not common to both faces of the gate).
-
-- Note on n = 48: TMWR48 was still running on my engine (own34, > 25 min) when this record was committed; its line is appended to
-  out/meas43_tail_mine.out if it finished before the park (see the notebook). MWR48_2 was not run on my engine (cross100: T3 294, deep 0).
 
 ## Files (items 2-3)
 trace43.py, probe43.py (trace), fam43.sh, meas43.sh, fit43.py (families, two engines), tail43.py, tailcheck43.py, fam43b.sh (TAIL);

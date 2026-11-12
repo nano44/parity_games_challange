@@ -16,7 +16,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - Item 3 (one gate): tail43.py, TAIL_h(G) = sink Ξ-targets retargeted to a chain of one-option movers with even Ξ self-loops (Odd must
   escape through each): the run is unchanged (7 genomes: T3, sigma, Odd's choices equal) and every Λ-quiet K1-flip gets depth + h or
   more, so Deep_3(TAIL_2(G)) = QF_K1(G) (all Λ-quiet internal flips after t0) exactly on the 7. TMWR(n) = TAIL_2(MWR(n)): ONE gate with
-  2n + 1 deep flips (n 4-48, N + M 153-1429; second engine: maxfl 2n + 1, whole-run deep 3n + 1, dmax 5). READING sent to the Lead: the
+  2n + 1 deep flips (n 4-48, N + M 153-1429; BOTH engines on all 13 tail instances: per-gate max 2n + 1, whole-run deep 3n + 1,
+  dmax 5; own34 needs ~35 min at N + M 1,429). READING sent to the Lead: the
   depth cut-off of DEEP3 does no work on a tail-closed class; DEEP3 is as strong as «quiet internal flips polynomial».
 - Open (not started): (a) a depth notion TAIL cannot inflate (e.g. depth among the e-vertices not common to both faces) and its count
   on the frozen sets; (b) the per-gate quiet-flip maximum beyond linear (BOX 36/37 found linear only); (c) L-NEW's --hist form of
