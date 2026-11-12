@@ -16,7 +16,7 @@ Counters (unit; scope):
   must be 0], qflip [flip: Λ(a) unchanged], qint [qflip at an internal gate of its mover's SCC], gates, multi [gates with >= 2 flips],
   maxfl [max flips of one gate].
   PER SCC after t0 (box 100 §4): DeepInt = Σ_C Deep_c(C); DeepBig = Deep_c(C_max) (largest SCC); dmaxInt = max charged depth at internal
-  gates after t0; Iint = internal gates in total.
+  gates after t0; gmaxInt = per-gate maximum of those deep internal flips (box 42); Iint = internal gates in total.
 Usage: deep41.py G.json ...   (env CMAX, default 3; env CTRL=1: charge to the face Odd moves TO: unm must fire)"""
 import sys, os, json
 H = os.path.dirname(os.path.abspath(__file__)); sys.path[:0] = [os.path.join(H, "..", "box34"), os.path.join(H, "..", "box40")]
@@ -55,10 +55,10 @@ def census(G):
     t0 = [max((f[d] for d in R(c)), default=0) for c in range(K)]
     big = max(range(K), key=lambda c: (len(comps[c]), sum(len(G["opts"][x]) for x in comps[c])))
     c = dict(T3=T, deep=0, dmax=-1, unm=0, qflip=0, qint=0, gates=0, multi=0, maxfl=0, DeepInt=0, DeepBig=0, dmaxInt=-1, Iint=0,
-             nscc=K, big=len(comps[big]))
+             nscc=K, big=len(comps[big]), gmaxInt=0)
     for x in range(G["N"]):
         for k, (wt, xt, _) in enumerate(G["opts"][x]):
-            q = (x, k); gv, pe, pb = V[("g", q)], V[("pe", q)], V[("pB", q)]
+            q = (x, k); gv, pe, pb = V[("g", q)], V[("pe", q)], V[("pB", q)]; gd = 0
             internal = wt >= 0 and xt >= 0 and comp[wt] == comp[x] and comp[xt] == comp[x]
             c["gates"] += 1; c["Iint"] += internal; fl = 0
             for t in range(T):
@@ -70,8 +70,8 @@ def census(G):
                 if va[0] == vb[0]: c["qflip"] += 1; c["qint"] += internal
                 if internal and t >= t0[comp[x]]:
                     c["dmaxInt"] = max(c["dmaxInt"], d)
-                    if d > CMAX: c["DeepInt"] += 1; c["DeepBig"] += comp[x] == big
-            c["multi"] += fl >= 2; c["maxfl"] = max(c["maxfl"], fl)
+                    if d > CMAX: c["DeepInt"] += 1; c["DeepBig"] += comp[x] == big; gd += 1
+            c["multi"] += fl >= 2; c["maxfl"] = max(c["maxfl"], fl); c["gmaxInt"] = max(c["gmaxInt"], gd)
     return c
 
 
