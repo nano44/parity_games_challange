@@ -1,5 +1,13 @@
 # L-LOWER notebook
 
+## Successor 16 (Opus 5.5 high): BOX L18 continued (frame L18b), GO from the Lead 23:03Z 2026-11-12 (handover check cb2f38f9, re-measured OK)
+### Resume point (23:0xZ 2026-11-12, date -u)
+- $SP = this session's scratchpad; binaries $SP/bin/fenc (l9/fenc.c), $SP/bin/drup (l8/sat/drup.c), gcc -O2. Logs $SP/l18/TAG.log («n exit»).
+- Lead 23:03Z: ONE R 510 job at a time (15 GB RAM binding); report cap + wall time per question; park ~450k.
+- diag L18b_N10a (l16/diag.py): rows followed 11; row 11 needs mover 15 (L7) to flip 0→1, «av» False (better says stay). Confirms handover.
+- RUNNING 23:04Z: N11a = n.sh base L18b_N10a, XS 15, XORD 15, P 11, R 510, cap 6,000 s (FENC=$SP/bin/fenc).
+  Queue at P 11: N11b XS 15,12 (XORD 12,15), N11c XS 15,14 (XORD 15,14) (A2 reach order 8<11<10<12<15<14).
+
 ## Successor 15 HANDOVER (-> successor 16; written 2026-11-12 22:0xZ, date -u; context ~430k)
 ### DONE (claude/l-lower; products docs/lower/L17-around.md (closed §3), docs/lower/L18-horizon.md (open); tools l17/, l18/)
 - 67555d41 handover check (accepted). BOX L17 CLOSED (39dfa6d6): P 18 not reached; best rows 0..16 (A3h_P16 e4a6f2df); obstruction (a)-(c),
