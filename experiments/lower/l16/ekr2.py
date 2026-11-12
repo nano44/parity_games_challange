@@ -10,6 +10,7 @@ env LEVEL=L (default 8): the cascade sits on levels L..L+K-1 (movers 2L..), its 
 EXT movers must not reach those slots. env KEEPR=1: every mover whose base chain (at some row < P) enters the client or a cascade slot keeps its base better value
 on rows 0..P-1 (its chain = the fixed base prefix + the design's chain from the hook); sufficient for an unchanged run elsewhere.
 env KEEPO=1: o(7+K) of the cascade must equal the base genome's o(7+K) on the clamped run (keys above the graft unchanged).
+env CNF=path: write DIMACS instead of solving (for edrup.py).
 Usage: ekr2.py GENOME TARGET K P CLIENT EXT(e.g. 0-11) OUT [TLIM]"""
 import sys, os, subprocess, ast, time
 here = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, os.path.join(here, '..', 'l6')); sys.path.insert(0, os.path.join(here, '..', 'l7'))
@@ -213,6 +214,13 @@ if os.environ.get('FORCEBASE') == '1':   # debug: the client's options exactly a
         for f in FX: cl.append([higher(NC + k, 'f%d' % f)] if D['br'][2 * X + k] > D['br'][f] else [-higher(NC + k, 'f%d' % f)])
     cl.append([higher(NC + 1, NC)] if D['br'][2 * X + 1] > D['br'][2 * X] else [-higher(NC + 1, NC)])
 print('EKR2 LEVEL', os.environ.get('LEVEL', '8'), 'KEEPO', os.environ.get('KEEPO', '0'), 'K', K, 'P', P, 'client', X, 'EXT', EXT, 'fixed options', len(FX), 'kept readers', sorted({r for (r, t, k) in RD}), 'vars', nv[0], 'clauses', len(cl), flush=True)
+cnfp = os.environ.get('CNF')
+if cnfp:
+    import hashlib
+    with open(cnfp, 'w') as f:
+        f.write(f'p cnf {nv[0]} {len(cl)}\n')
+        for c in cl: f.write(' '.join(map(str, c)) + ' 0\n')
+    print('CNF ->', cnfp, hashlib.sha1(open(cnfp, 'rb').read()).hexdigest()); sys.exit()
 from pysat.solvers import Solver
 import threading
 sv = Solver(name='glucose4', bootstrap_with=cl); t0 = time.time()
