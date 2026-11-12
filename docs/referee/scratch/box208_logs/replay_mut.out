@@ -1,0 +1,4 @@
+mutants: seed 3210, 150 per base, 1..6 mutations, bases K1L10_n48 CFI3_n48 RINT_n48 MWR4_2 CW4_n BLKX26_n48 K1F21_n48 DSALT6_n108
+MUST-0:  k1 0  k2 0  k3a 0  k3c 0  k3d 0  k3e 0  k4 0  k5 0  l1 0  l2 0  l3 0  l3v 0  l4 0  l5 0  c4 0  w1 0  w2 0  w3 0  w3v 0  w4 0  w5 0  w_stall 0  w_beta 0  w_len 0  w_quiet 0  rh 0  p1 0  p2 0  p3 0  p4 0  p5v 0  p5h 0  p6 0  p7 0  p7s 0  tb 0
+RECORDS: genomes 1200  states 29843  maxT 33  k=0 0  k=1 838  k=2 200  k=>2 162  maxPhi 31  stalls 3505  stallloud 358  plateaus 3007  maxplat 25  maxplat_pct_movers 49  intervals 17896  maxwinlen 29  c_k4 3224956  c_k5 52332  ch1 9524  ch2 24252  ch3 24252  ch3v 0  ch4 28698  ch5 24252  c_S 3505  c_Y 36850
+exit 0

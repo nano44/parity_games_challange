@@ -1,6 +1,36 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 32), written 2026-11-12T14:04Z by date -u
+- Handover check a0574a6b (Lead 12:47Z: «verified on origin and accepted», «go»). Trunk merged normally twice (ab23e17f: 9c83214f; becbb75e: 471aba45).
+- B1 DONE (pre-packet read, NOT a signature): docs/referee/R-restrictC-preread.md (ff9b16f6 on origin; Addendum 1 with this commit). L-SI 51's
+  Lemma RESTRICT-C (claude/l-si d8945c4a, box 101 Add. D.2): BR-SEG tie-rule caveat CONFIRMED on the landed text (P-N5-XICYC §2 l. 58-60,
+  P-N5-CHAIN §2 l. 88-89) and by Lean `PG.brseg` (l-formal 4b376da4, built by me); (i)-(iii) no gap found; (iv) GAP W-1 (literal window
+  wording false: C6G8_n54, sink SCC, 17 steps > N′ = 1; true in BR-SEG's form); W-2 (G′ as a genome: R104's packet wants br / gate onto
+  0..M − 1); C-1 (no landed STATEMENT gives BR-SEG for every HOW3 run of Γ3); N-1 (box 100 TWO-CROSS = P-N5-GATE §3.1 GATE-RACE, R128).
+- B2 DONE (pre-packet read, NOT a signature): docs/referee/R-box208-preread.md (this commit). L-NEW 72's box 208 (claude/l-new 8db300fe, sha1
+  55e65381…): LEVEL, counting, WIN, R-INT, R-HEIGHT, K1-TCYC, FVS-TCYC no gap found; Addendum A PLATEAU: GAP G-P6 (induction step (ii)
+  beyond the plateau; repair: Odd answers with σ̄_s); ALL-TCYC follows once repaired. Lead 13:30Z: logged; L-RED 66 and L-RED-B reached the
+  same verdict, L-RED-B the same (P6) gap; repair goes to L-NEW 72 as Addendum B.
+- QUEUE: (1) if L-COMP 19's second engine and G_N test are clean, box 208 becomes packet P-N5-LEVEL and this lane is its FIRST referee: a
+  separate signature, the frozen packet read afresh, this pre-read disclosed in the report. Test it against PR-1..PR-6 of
+  R-box208-preread §9, and two caveats from the Lead (13:49Z, L-LIT T69, claude/l-lit 3b69f530, not opened by me): the bound is for
+  Howard's ALL-SWITCH step only (Björklund–Vorobyov single-switch instances are exponential), and the orientation is maximiser-improves.
+  (2) any byte test / CHECKER item on R127 (C141) or P-N5-GATE (R128). (3) a RESTRICT-C packet, if L-SI freezes one: W-1, W-2, C-1.
+- Tools added (docs/referee/scratch/): restrictc_quotes.py, restrictc_replay.py (logs restrictc_logs/); box208_quotes.py, box208_replay.py
+  (36 must-be-0 counters written from the statements; families tiny / noX / big; mut), box208_climb.py (logs box208_logs/, incl. my Lean
+  build outputs lean_*.out). Lean: elan + Lean 4.35.0 installed in THIS container only (~/.elan; scratchpad build of `git archive
+  4b376da4 lean/lemmas`, about 2 min with the Mathlib cache); gone at a container restart, steps in lean/lemmas/README.md at 4b376da4.
+- Lessons / traps (keep):
+  - Commit trailer: the Claude-Session line only (the Lead's brief: no model id in commits). My first two commits (ab23e17f, a0574a6b)
+    carry the harness pair with a Co-Authored-By line; not amended.
+  - push.sh verify takes about 58 min here. The stop hook asks to commit untracked files while it runs: do not; commit after it lands.
+  - A window statement must say which steps it counts: after a sub-run has ended its state repeats, and a «maximal run of states» then
+    runs on (W-1). Check every window lemma against a sink SCC.
+  - An induction that runs past the interval a lemma was proved on must carry what it uses (G-P6).
+  - Parse «name value» counter lines with a script; my one-line awk paired a value with the next name (caught before any report).
+  - Times only from date -u in the same command.
+
 ## HANDOVER NOTE (successor 31), written 2026-11-12T10:02Z by date -u (Opus 5.5, D15); parking on the Lead's 10:07Z ask (context ~505k)
 - DONE (all via scripts/push.sh, VERIFY PASS; Lean / Oink NOT RUN as usual):
   | item | report (commit) | final state |

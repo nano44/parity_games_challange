@@ -184,3 +184,16 @@ the vertex of the same name (mover, m-pad, gate, pe, pβ, e, β, pb of the same 
 restrictc_quotes.py, restrictc_replay.py; restrictc_logs/: quotes_C1.out, quotes_D2.out, replay_inst.out, replay_{rand,deep,wide,acyc,
 selfl}.out, replay_inst_compress.out, replay_rand_compress.out, literal_iv_C6G8.out. Instances: `git archive d8945c4a` of
 experiments/si/box91/inst, box93/inst, box98/inst into the scratchpad, `sha1sum -c SHA1SUMS` 11 / 8 / 7 OK.
+
+## Addendum 1 (REFEREE successor 32; date -u at writing 2026-11-12T14:03Z): the Lean proof commit, seen and built
+- claude/l-formal 4b376da4 (ancestor of origin/claude/l-formal, checked) reached origin after §3 was written. Defs.lean (sha1 b41c937c…)
+  and Statements.lean (aaa3c0c2…) are byte-identical to 9dde1527, so §3's comparison is of the statement that is now proved:
+  Corollaries.lean (sha1 c8f5b435…) l. 52 `theorem brseg : BrSegStatement V`, by `lam_gap_sharp` on the window a, …, a + j + 1.
+- Own build (a referee's build, not CHECKER's exact-commit run): `git archive 4b376da4 lean/lemmas` into the scratchpad; Lean v4.35.0 by
+  elan, Mathlib cache at the pinned commit 56a00585…; `lake build`: «Build completed successfully (3149 jobs).»; `grep -rnw
+  --include=*.lean -e sorry -e admit -e axiom . --exclude-dir=.lake`: no output; `lake env lean Axioms.lean`: «'PG.brseg' depends on
+  axioms: [propext, Classical.choice, Quot.sound]», the same for lam_gap_sharp, brsegG, brsegG_noH0 (scratch/box208_logs/lean_*.out).
+- So §0's second row now reads: hypotheses MATCH, and the theorem of that exact type is proved in Lean at 4b376da4 (my build). The
+  tie-rule caveat is settled twice, on the landed text (§2) and by Lean, given the bridges B-1 (injective priorities = SPEC's p′) and
+  B-2 (F1 = landed R15 (a), a Lean hypothesis). C-1 can be met by citing `PG.brseg` by name and commit once CHECKER has run it.
+- Nothing else in this report changes. W-1, W-2 and C-1 stand.
