@@ -1,6 +1,9 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 23) 17:14Z
+- C142 (R128 P-N5-GATE first fill, trunk 68c8d293, draft 70db12a9, L-4 6bfde78e @ l-si 676b6a1c): FAIL E-1 (RA rows: numbers + source, L43), E-2 (growth clause: numbers on named instances, drop A*_all), E-3 (E-FACE-PAYS / GATE-LOW-NULL sub-label markers), E-4 (entry text: TRIGGER = R107 name). L-5 7ebcf735, UPDATE-5 f7edaed8 (scratch c142/mkL5.py builds both; builder handles «, and » connector and L-4 drop form). Merged-tree box90-96 checks need GIT_DIR set to run engine rows.
+
 ## Resume point (successor 23) 16:08Z
 - C141 CLOSED (CI #7513 success on R127 landing f9520557). Next: C142 = R128 (P-N5-GATE) — wait for the Lead's object message (68c8d293, draft sha1 70db12a9; flags G-6/G-U/G-L43/G-4/G-7/G-9/G-1/G-L).
 
