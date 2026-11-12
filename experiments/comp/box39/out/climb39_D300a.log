@@ -1,0 +1,4 @@
+BEST BEST_D300a_Q9_T60_NM303_978ed2a7.json sha1 978ed2a72d94ddfd9989d477d4431b7babc66245 score [9, 60, 60] {"QC": 9, "Q": 60, "T": 60, "maxdepth": 8, "maxloud": 8, "hist": {"0": 50, "2": 1, "3": 1, "4": 2, "5": 1, "6": 2, "7": 1, "8": 2}, "elfall": 0, "ufail": [0, 0, 0], "NM": 303} lnew206 {"T": 60, "hist": {"0": 50, "2": 1, "3": 1, "4": 2, "5": 1, "6": 2, "7": 1, "8": 2}} agree True t 07:14:21Z
+START r 0 step 0 [9, 60, 60] {"QC": 9, "Q": 60, "T": 60, "maxdepth": 8, "maxloud": 8, "hist": {"0": 50, "2": 1, "3": 1, "4": 2, "5": 1, "6": 2, "7": 1, "8": 2}, "elfall": 0, "ufail": [0, 0, 0], "NM": 303}
+restart 0 seed C300a_best.json end [9, 60, 60] {"QC": 9, "Q": 60, "T": 60, "maxdepth": 9, "maxloud": 8, "hist": {"0": 50, "2": 1, "3": 1, "4": 2, "5": 1, "6": 2, "7": 1, "8": 2}, "elfall": 0, "ufail": [0, 0, 0], "NM": 309} global [9, 60, 60] evals 174 617s
+DONE
