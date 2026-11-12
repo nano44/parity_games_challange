@@ -1,0 +1,4 @@
+TMWR4.json {'N': 52, 'M': 101, 'T3': 30, 'deepC': 9, 'deepC_max': 9, 'intC': 9, 'alldeep': 13, 'dmaxC': 5, 'soft': 40, 'gsoft': 40, 'top': [((34, 0), 9)]}
+TMWR8.json {'N': 88, 'M': 181, 'T3': 54, 'deepC': 17, 'deepC_max': 17, 'intC': 17, 'alldeep': 25, 'dmaxC': 5, 'soft': 76, 'gsoft': 76, 'top': [((62, 0), 17)]}
+TMWR16.json {'N': 160, 'M': 341, 'T3': 102, 'deepC': 33, 'deepC_max': 33, 'intC': 33, 'alldeep': 49, 'dmaxC': 5, 'soft': 148, 'gsoft': 148, 'top': [((118, 0), 33)]}
+TOTAL {'n': 3, 'deepC': 59, 'intC': 59, 'alldeep': 87, 'deepC_max': 33}

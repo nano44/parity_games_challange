@@ -3463,3 +3463,7 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
   index); 12 games differ first in tau (S4b), 4 in sigma (S4a). Example: game 5 (n 7), state 0 -> 1, Odd vertex 6 (its own H'-cycle
   node, W* = (6, {}, 0)), A = [0, 1, 4]: mine 0 (cycle length 3), n5v 4 (length 2); both optimal. So any F_n count from n5x236 is
   independent up to SPEC's cycle-node and S4b tie rules (spec lines: S1 (iv)-(v), FIX 2, FIX 4, Q2).
+- 2026-11-12T15:45Z: route B (Lead 15:17Z): L-COMP 19's TMWR (claude/l-comp ae0f65c3 experiments/comp/box43/inst; sha1 TMWR4 e8073089, TMWR8
+  cdd10740, TMWR16 ab2bcad0) on my deep234 (exact Deep_3: internal gates after t0, charged change of depth > 3; HOW3 engine r232):
+  Deep_3 = 9 / 17 / 33 = 2n + 1, ALL at one gate ((34,0) / (62,0) / (118,0)), dmax 5, T3 30 / 54 / 102 (= MWR(n)'s). Confirms box 43:
+  TAIL_2 pushes MWR's re-arm flips below depth 3 without changing the run; linear. out/deep234_tmwr.out.
