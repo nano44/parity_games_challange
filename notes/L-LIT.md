@@ -1,7 +1,20 @@
 # L-LIT notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (HANDOVER, T64, 2026-11-01 ~03:15Z by date -u; same session; PARKED after T64)
+## Resume point (successor T65-, 2026-11-12 from 10:38Z by date -u; session_01V5yGRZyBwA3rKaGJ1Uax66; D18, D1; N5′-xi route on Γ3)
+START: origin/claude/l-lit = 6895fb31 (0 / 0; trap check clean); handover check 627402e7 (push exit 0); Lead «go» 11:04Z. Trunk is NOT
+merged into this branch (Lead's word): read NOW / DECISIONS / GAPS / RESULTS with `git show origin/claude/vibrant-johnson-nxvvxo:<file>`.
+- T65 (this push): docs/lit/T65-lamgap-one-player-howard.md. LAM-GAP / SHARP (L-SI box 101, L-RED R234) = the Howard, no-H0, |Ch| form of
+  landed R118 (c)/(d) and R17 (b)/(c). Chain link options A (R118 (l) + R125, global windows, DEEP3 for all gates), B′ (R118 (d) + (l) on
+  the sub-genome of Reach(C)), B (LAM-GAP as a lane lemma). External: KNOWN for additive weights (Cochet-Terrasson–Gaubert Thm 2.3) and
+  mean payoff (Zhong–Ye Thm 7.2 proof; Madani Fig. 5); STATED without proof for parity games (Friedmann thesis p.101, Thm 4.9; VJ00
+  Prop. 7.4). Zhong–Ye Thm 6.1 (preprint) claims to refute Hansen's Conj. 6.1.1; no contradiction with LAM-GAP.
+- T66 (IN FLIGHT): DEEP3 vs the exponential families. L-RED R217 §7-§11 (claude/l-red) already compiled Friedmann's switchallexp into a
+  genome: DEAD port, obstruction E-DOM (every e above every β). To do: verify against the LMCS G_n (Table 4, PDF p.15: k_i, f_i odd above
+  h_j, j < i), classify the other families, measure depth of the flips on G_n itself, write docs/lit/T66-*.md and the summary page.
+IN FLIGHT: T66, summary page. NEEDS: none from the owner (optional library: Vöge thesis 2000, Hansen thesis 2012, Hansen–Zwick 2010).
+
+## Previous resume point (HANDOVER, T64, 2026-11-01 ~03:15Z by date -u; predecessor session; PARKED after T64)
 T64 (Lead 02:52Z, one box): docs/lit/T64-one-player-pivots.md.
 - Post-Ye Thm 3.7 / 4.8; HKZ abstract only; Zhong-Ye Thm 2.1, 6.1, 7.1; MC94 via Christ-Yannakakis p.3.
 - TWO-FIX = one-player switch-best (R17) iff D = empty; otherwise a stale-model arena optimum, with no opened bound.
@@ -604,6 +617,22 @@ NEEDS: none from the owner.
   Post-Ye 1208.5083v2 (Thm 3.7 p.9, Thm 4.8 p.12, abstract), Zhong-Ye 2609.40147v2, ABS 2102.04922, Friedmann 1106.0778 p.7. ABSTRACT ONLY:
   Hansen-Kaplan-Zwick SODA 2014, CRIS record cris.iucc.ac.il (DOI 10.1137/1.9781611973402.63, pp.847-860). NOT OPENED: Melekopoglou-Condon
   1994; Orlin 1997.
+
+- T65 (2026-11-12). OPENED (scratchpad t65/dl, t65/txt; lost with the container): Cochet-Terrasson–Gaubert, «Policy iteration
+  algorithm for shortest path problems», www.cmap.polytechnique.fr/~gaubert/PAPERS/shortestpath.ps (7ea755d41b290afe; 14 pages via
+  ps2pdf; Thm 2.3 p.5, Lemma 4.2 p.9, proof p.10, Example 5.1 p.11); Cochet-Terrasson et al. IFAC SSC 1998,
+  www.cmap.polytechnique.fr/~gaubert/PAPERS/ifacssc98.pdf (29f0aed94161b7bb; p.2 conjecture, Thm 4.5 p.7); Madani UAI 2002 arXiv
+  1301.0583 (3007a3d8a1968381; §5, Fig. 5); Fearnley arXiv 1705.02313 (a49296a20f1294b1; §4 PDF p.9, Lemma 3). RE-OPENED: Zhong–Ye
+  arXiv 2609.40147 v2 (dafeb81816af6582; Thm 6.1 p.23, p.24, eq. (6.8) p.26, Thm 7.2 + proof p.33-34); Asadi–Chatterjee–de Raaij arXiv
+  2506.12254 v1 (78c4ee071961b89e; §1, Conj. 3.1, Thm 3.2); Friedmann thesis edoc.ub.uni-muenchen.de/13294 (68748f5388a94151; Thm 4.9
+  printed p.84, §4.3 printed p.101); BRICS RS-00-48 (485a12de432a2a8c; Prop. 7.4 printed p.27); Hansen–Zwick slides (1ff1ee804ac47c08;
+  slide pages 13, 14, 19); HMZ arXiv 1008.0530 (f53a6b5127d95078; Lemma 5.3 PDF p.10); Post–Ye arXiv 1208.5083 v2 (c51876ebf5c3cdb0;
+  p.2, Thm 3.7 p.9); Friedmann arXiv 1106.0778 v2 (46c96f44775aa2b0; §5 PDF p.8; Table 4 PDF p.15; Thm 6.14); Friedmann arXiv 0901.2731
+  (6c56adb207f38468). Fleet files read: claude/l-si 4fda7245 box99/100/101; claude/l-red 0148d73f R234-lamgap.md, R217-ovt.md §7-§11;
+  trunk 07139249 RESULTS R17, R104, R117, R118, R125, docs/new/P-N5-XICYC.md §2-§6, docs/red/P-N5-REALIZE.md §1-§3.
+  NOT OPENED: Hansen–Zwick ISAAC 2010 paper (closed access); Hansen thesis 2012 (404; Wayback snapshot 20160826003911 exists, host
+  unreachable from here); Vöge thesis 2000 (403); Madani AAAI 2002 (aaai.org 403); Madani–Thorup–Zwick 2010; Dasdan 2004;
+  Meister–Holzbaur 1986.
 
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
