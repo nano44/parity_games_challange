@@ -10,7 +10,7 @@
   before the box: 6. Chain: L18b_H7 → N510 (P 8) → N9a (P 9) → N10a (P 10); solve times 929 / 1,443 / 2,514 s (cap 2,900).
 ### IN FLIGHT at park: none. N10a finished SAT (frozen l18/run/L18b_N10a_dec.txt).
 ### NEXT (successor 16, BOX L18 continued)
-1. P 11 on base L18b_N10a (diag row 11 names the clients). Solve time is near the cap: consider a longer cap only with the Lead's OK. SAT → freeze (cp decode to l18/run/L18b_N10a_dec.txt, log with $SP paths sed'ed to run/, SHA1SUMS, inframe.txt), diag the
+1. P 11 on base L18b_N10a: diag at row 11 names ONLY mover 15 (f7, wants to stay): try XS 15 alone, then 15 with 12 or 14 (XORD from the design). Solve time is near the cap: consider a longer cap only with the Lead's OK. SAT → freeze (cp decode to l18/run/L18b_N10a_dec.txt, log with $SP paths sed'ed to run/, SHA1SUMS, inframe.txt), diag the
    next failing row, next P with clients = the failing movers among {8,10,11,12,14,15} (XORD from the design's reach order: script in
    this notebook's 21:4xZ entry). UNSAT / no answer → try other client pairs at that P; stop after 3 consecutive capped / UNSAT at one P.
 2. Every UNSAT cited: DRUP (l13/pdrup.py with PGAD=../l18/pgad6.py and env F6R/XALL/XORD/FIXC; R 510 proofs may be huge — prefer small).
