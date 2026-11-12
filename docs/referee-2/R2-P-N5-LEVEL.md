@@ -213,3 +213,169 @@ Plateau [u, v], u < v, reference b; Φ = (m, −|J|), J = FRONT_u; every step in
 - What ALL-TCYC changes in the landed record (§13): R118's «no bound on R is claimed (OPEN)» gets a bound for IDEAL-CYC only; R126's
   «whether max_g min(D^tot(e_g), D^tot(β_g)) is polynomial in N + M at k = 1 is OPEN» is answered (D^tot(v) − 1 ≤ T_CYC). Both readings
   are right, and both need the «Consequences» bullet, which L-1 does not carry (box 5, L-1 item R-1).
+
+## Box 4: DATA (the lane's, re-read) and my own replay
+
+### 4.1 The lane's DATA, re-read by column name (R2-P-N5-LEVEL/r2lvdata.py, out r2lvdata.out; not the lane's summ208*.py)
+The frozen outputs of experiments/new/box208/out/ at 1e6df499 were read with `git show`. For each file the script gives the rows, the sum
+of the must-0 counters by name (16 for level208 / own208 / mut208, 6 for plat208, 49 for rv208) and the descriptive maxima:
+- level208: records 25 rows, corpus 53, rand 2,000 + 6 × 500 = 5,000, mut208 8 × 250 = 2,000; own208 (second engine) 25 + 53. Must-0 sum
+  0 on every file. Descriptive values equal §11's table: corpus max T 199, Φ values 199, stalls 48 (loud 23), plateaus 15 (longest 13),
+  windows 615; records max T 114, stalls 31 (loud 0), plateaus 14 (longest 9), windows 556; mutant maxima (e.g. MWR4_2 platmax 26).
+- plat208: records 25, corpus 53, rand 3,600, mut 600 + mut2 600: must-0 sum 0; longest plateau 9 / 13 / 4 / 15 / 25 as in §11.
+- rv208: frozen 81 genomes, mut 480, rand 3,300: must-0 sum 0, 0 VIOLATION lines; frozen max T 199, plateaus 538 (longest 13).
+- Controls fire: level208_ctrl1 (winstall 8 on 4 genomes), ctrl1_rand (50), ctrl2 (198), plat208_ctrl1 (211), rv208_ctrl1 (1,930).
+- L-1's DATA numbers (25 / 53 / 5,000 / 2,000; 78 / 3,600 / 1,200; 81 / 480 / 3,300; «at most 199 values of Φ», «no plateau longer than
+  26 steps») equal these. DATA rule: every clause names its counters; nothing claimed from DATA is a statement. «NO RUN TESTS THE
+  CONSTANTS» (§11): agreed; P = 2,120,796 on MW32_2 against 199 values of Φ.
+
+### 4.2 Own replay: tool (R2-P-N5-LEVEL/r2lv.py; doc string has every counter and its unit)
+- Engine: REFEREE-2's R2-P-ACYC/r2acyc.py (Γ(G) built from R104's text; own VJ values and order; Odd's optimum by strict switch-all policy
+  iteration from the worst start, cross-checked against a second start at every state). The Howard loop is written in r2lv.py from R118
+  (a)'s text: keep σ_t(x) if it is ⊴-best, else a ⊴-best gate chosen by --tie max | min | rand. e-priority order of [DEF] («even, above
+  every β»): --eorder gate (gate index) or lev (level, then gate index); both satisfy [DEF].
+- Class key: (reward(Λ), Σ 2^rel(e)), whose integer order is the packet's order (1.2).
+- 44 must-0 counters: the landed premises re-tested (CN2, B-ONLY, NO-TIE, LOC-GATE, LOC-K2, F1, DOM, local optimality of σ̄, PI-start
+  agreement, QUIET-N); (K1)-(K5) ((K2) on all pairs of non-core vertices at t, t and t, t + 1 when there are at most 110 of them, else on
+  4,000 random pairs per pair of states); for every reference b (all b on the --ball runs and on every run with n·T² ≤ 3·10^7, else T and
+  6 random b): (L1) both halves, (L2), (L3) («(α) or (β)», and the «then» of (α) for EVERY qualifying mover, of (β) for EVERY qualifying
+  cycle), (L4) (the map s into FRONT_t, σ̄_t(g) = β_g at front gates, and an s-cycle mover → σ_b(x) → β-face → xt), (L5) (≤ P values, ≤
+  M(N + 2M) under (α) everywhere, and m_t in the 2M-set), (C2), (C3), (C4); WIN (i)-(iii) for every maximal interval of every minimum
+  Ξ-feedback set S (all of them at k ≤ 2, one at k = 3; k found by exhaustive search) and for S = all movers; R-HEIGHT at k = 1; the
+  bounds K1-TCYC, FVS-TCYC, ALL-TCYC; for every plateau of every reference: (P1)-(P4), (P5) (H built on Y and valued by a separate VJ
+  routine, equal to Ω_s on Y; σ_(s+1) an allowed H-Howard choice), (P6), (P7) (v − u ≤ n_E(H); no Λ change on Y), H0 on every step of
+  H's own Howard run from σ_u|Y and its longest p-run ≤ n_E(H), and that run equal to σ_(u+1..v)|Y.
+
+### 4.3 Sets and results (sweep_sets.out, ball_every_b.out, frozen_max_gate.out; scripts sweep.sh, sweep2.sh; one process per file)
+| set | runs | fail counters (sum) | descriptive |
+| --- | --- | --- | --- |
+| 25 frozen k = 1 genomes + 3 R118 (m) genomes, tie max, eorder gate | 28 | 0 | max T 114, plateaus 17 (longest 9), stalls 44 |
+| the same, tie min, eorder lev | 28 | 0 | max T 114, plateaus 19 (longest 9), stalls 47 |
+| 53 genomes of box202/inst, tie max, eorder gate | 53 | 0 | max T 199, plateaus 16 (longest 13), stalls 49 |
+| the same, tie min, eorder lev | 53 | 0 | max T 199, plateaus 15 (longest 13), stalls 48 |
+| all 81 above, EVERY reference b = 1, …, T (--ball) | 81 (2,655 references) | 0 | 465 plateau checks; P4 cases (1) 94,002, (2) 206, (3) 43 |
+| random, r2end.gen «any» (Ξ-targets anywhere), seeds 3911-3918 | 2,000 | 0 | k 0: 88, 1: 540, 2: 692, 3: 437, ≥ 4 / not searched: 243; mover ties 127 |
+| random «self» (≥ 1 Ξ self-loop), seeds 3921-3924 | 1,000 | 0 | mover ties 54 |
+| random «acyc», seeds 3931-3932 | 500 | 0 | k = 0 on all 500 |
+| random «any», tie rand, eorder lev, seeds 3941-3944 | 1,000 | 0 | mover ties 69 |
+| own mutants (r2split.mutate) of BLKX26, CFI3, CW4_n, K1F21, K1L10, K1L7, MWR4_2, RINT, 100 each, seed 3951 | 800 | 0 | max T 37, plateaus 813 (longest 21) |
+| the same, tie min, eorder lev, seed 3952 | 800 | 0 | max T 37, plateaus 798 (longest 22) |
+- On every set: (L3) never had (α) and (β) at once at a state (rec_l3_both 0); (β)-only states occur (e.g. 567 on the --ball run);
+  no plateau is longer than the number of movers of its Y (rec_plat_over_moversY 0): DATA consistent with remark SHARP, not a proof of it.
+- The tie rule is free in R118 (a); my three rules (max, min, random) and two e-orders agree with the statements. My runs' lengths T
+  and plateau counts differ slightly between configurations (as the tie rule and e-order change the run); the lane's numbers are for its
+  own engine and rule.
+
+### 4.4 Controls (controls.out; each must FIRE, and each does)
+| control | what it breaks | set | fired |
+| --- | --- | --- | --- |
+| fronthigh | FRONT := the HIGHEST lagging class | 8 genomes (3 R118 (m), CFI3, MWR4_2, RINT, K1L10, WC8_2) | l1 713, l2 1,427, l3 1,427, l4map 1,986, l4cyc 1,126, l5 1,427, c2 84, p1 346, p2 167, p3 1,393, p4 179 |
+| snonfvs | WIN with S := a mover in no minimum feedback set | same | winfail 9 |
+| yfront | PLATEAU with Y := J | same | p2 2,500, p3 4,802 |
+| k5t | (K5) with class_t(x) in place of class_(t+1)(x) | same | k5fail 280 |
+| edom | [DEF] broken: one β-vertex gets an odd priority above every e-vertex (E-DOM fails) | same | bonly 188, notie 6, pistart 1, k1 38, k2 7,040, k3b 1, k3d 12, k4 15, k5 80, l1 22, l2 48, l3 7, l4map 8, l4cyc 3, l5 3, c2 8, win 1 |
+| hval (mechanics) | H valued with relevance by index | same | p5val 65,080, p5step 3,848, p7run 101 |
+| p6out (mechanics) | (P6) asked of the movers OUTSIDE Y | same | p6fail 304 |
+| htie (mechanics) | H's own run with the opposite tie rule | same: NOTHING (no mover tie on those plateaus); 1,000 random (seeds 3911, 3912 any; 3921, 3922 self) | p7runfail 2 |
+- edom is the control for the genome-only steps (5.2): with E-DOM broken on Γ(G) itself, (K1), (K2), (K4), (K5) and LEVEL fail.
+
+## Box 5: scope, genome-only steps, TARGET.md diff, line L-1, verdicts
+
+### 5.1 Scope (checked against every proof)
+- Rule: Howard ALL-SWITCH, Even = MAXIMISER of ⊴ improves, Odd answers optimally ([OPT]), switch-best with keep-if-best, any choice among
+  several ⊴-best non-current successors. Every statement of §6-§8 goes through (K5) (via (L4), or (P3) in PLATEAU), and (K5) rests on DOM,
+  which needs every mover at a ⊴-best gate after every step: a single-switch rule is NOT covered, as the packet says. The tie choice is
+  free: my replay uses three tie rules (max, min, random) and all counters are 0 on each (box 4).
+- Games and run: IDEAL-CYC(G) of R118 (a), every R104 genome (Ξ-cycles and Ξ self-loops allowed), the run from R104's start. NOT N5 (its
+  S4a step is not a Howard step), NOT N5′-xi (on Γ3 or off it), NOT M4, NOT M3. Nothing is claimed for Γ3: the level208_g3_* rows are
+  DATA on another run, and no statement uses them.
+- The packet's scope section says the same (P-N5-LEVEL l. 16-35), and L-1's tail says the same. Correct.
+
+### 5.2 Genome-only steps (every step that uses a property of Γ(G) or of IDEAL-CYC beyond «a parity game under Howard's rule»)
+My list, from the proofs as re-derived in boxes 1-3:
+1. (K1): E-MON (R121, IDEAL-CYC). (The Λ half is general: F1 with (VJ-1), N-1.)
+2. (K2): E-DOM ([DEF]'s priorities: above an e-vertex only e-vertices, c_W, K0, K3); (D3) (the core is entered only at K0); the frozen
+   K0 → K3 and K1 → K1; LOC-K2 (σ̄(K2) = K1).
+3. (K3): (b), (d) from B-ONLY (R123); (e) from [DEF]'s priorities (top), the freeze and LOC-K2. ((a), (c) are general.)
+4. (K4): NO-TIE and LOC-GATE (R123), with (K2); every Odd vertex with a choice is a gate with exactly two faces, or K2 ([DEF]).
+5. (K5): DOM (R118 (c), IDEAL-CYC) and CN2 (movers have priority 0 and are never cycle nodes), with (K2).
+6. (L2): the successor kinds of [DEF] (e → mover or c_W; β → mover or K0) with (K3 (d), (e)).
+7. (L3): CN2 (the cycle node of a fully lagging cycle is a β-vertex), (D4) (c_X has no in-edge from another vertex), and the alternation
+   mover → gate → face → mover of [DEF].
+8. (L4): (K5) at the movers, (K4) at b at the gates, the β-vertex's frozen successor = its Ξ-target: the front cycle IS a Ξ-graph cycle.
+9. (L5): M gates, M β-vertices, |FRONT| ≤ N + 2M.
+10. (C4), hence WIN (iii), R-INT, K1-TCYC, FVS-TCYC, ALL-TCYC: QUIET-N (R126).
+11. WIN, R-INT, R-HEIGHT, K1-TCYC, FVS-TCYC: the Ξ-graph and its feedback sets (R126's definition) meet every front cycle (L4) / (β) cycle.
+12. (P4): (D1) in case (3), with (K3 (d), (e)) and the «largest class» clause; LOC-K2.
+13. (P5): the only vertices with a choice are movers, gates and K2; every other Even vertex is frozen (R118 (a)).
+14. (P7): H0 on H through CN2 for positional pairs of IDEAL-CYC(G); n_E(H) ≤ N + 2M + 5.
+- N-3 (no change required; §9 is READING, not to sign): the packet's §9 names items 1, 2 (E-DOM), 3, 4, 5, 10, 12 and «(L2), (L4)»; it
+  does not name (D3) / LOC-K2 inside (K2) (they are in (K2)'s proof), CN2 / (D4) in (L3), or CN2 in (P7)'s H0. These are genome steps too.
+  None changes a statement. The «Friedmann G_N» DATA (L-COMP 19, cited, not re-run by the lane or by me) is consistent with item 2: the
+  first failure is (K2) inside (K5) at an odd vertex above an escape vertex, which E-DOM excludes.
+- My control edom (box 4) breaks item 2 on Γ(G) itself (one β-vertex gets an odd priority above every e-vertex): B-ONLY, NO-TIE, (K1), (K2),
+  (K3 (b), (d)), (K4), (K5), (L1)-(L5), (C2) and WIN counters fire (4.4). The genome property is load-bearing, on my engine too.
+
+### 5.3 TARGET.md diff (TARGET.md sha1 a41d5e1a…, same at 68c8d293 and 7fa6aff4)
+- §2 (M4) and §4's first bullet are quoted verbatim (r2lvq.py, «TARGET» bullets). The packet has no algorithm for parity games and claims
+  none: it counts steps of one improvement rule in the model IDEAL-CYC on the games Γ(G). Not M4. §4: «Polynomial only on a restricted
+  class» does not count as M4; it may count as M3 only if stated in TARGET.md's vocabulary and checked for novelty by L-LIT (§7e); neither
+  is done, and the packet presents no M3. Not M3.
+- §5 step 4 («Written correctness and running-time proofs, double-refereed with every gap listed») is about an algorithm claim on every
+  parity game; this packet is not one. Not a step-4 pass. G-N5-TIME stays OPEN; N5′-xi stays a CANDIDATE (D1).
+- §3 (bit cost): no arithmetic is analysed; the bounds count steps. Nothing to diff.
+- No statement of the packet is phrased in TARGET.md's vocabulary or claims to be. PASS.
+
+### 5.4 Line L-1 against «To sign» (L-1 sha1 28565b3c…, 7,239 B; rebuilt byte-equal, 1.0)
+Item by item, L-1's statement against the packet's row:
+- Setting (IDEAL-CYC, the Howard step with keep-if-best, every genome, N, M, the run's states, class, loud / quiet, the order, P, A): equal.
+- (K1), (K2) (for triples), (K5): equal in content. (K3): L-1 gives (c) and (d) («a vertex has the class of its successor on its play,
+  except an e-vertex with a mover successor, whose class is strictly larger»); this also covers e-vertices into c_W (equal classes,
+  (K3 (e))). (a), (b) and (e)'s constancy are not in L-1. (K4): L-1 omits «σ̄_t(g) has that class». Both say less, nothing wrong.
+- LEVEL: «Φ never falls; it stays equal exactly at a stall», the stall cycle with options at b, gates at b and β-faces, at most P values:
+  equal to (L1), (L4), (L5) (Φ is defined where LAG ≠ ∅; at a non-stall step with LAG_(t+1) = ∅ it is undefined, so «exactly» is right).
+  (L2), (L3) and (L4)'s «σ̄_t(g_i) = β_(g_i)» are not in L-1 (lemma steps; fine).
+- WIN: equal, except that (iii)'s «b − b′ ≤ N» is folded into «b − a ≤ A». R-INT: L-1 omits «at most M(N + 2M) of its steps are loud,
+  and they come first». R-HEIGHT, K1-TCYC, FVS-TCYC, PLATEAU, ALL-TCYC: equal.
+- ALL-TCYC's «Consequences» (a «To sign» row: «Theorem ALL-TCYC, with its bullet «Consequences»») is NOT in L-1. §13 of the packet says
+  what a signed ALL-TCYC changes in R118 (the bound on R) and R126 (D^tot at k = 1); without the bullet the line does not state either.
+- Premises: equal to §1 (R104 + (D1), (D3), (D4); R118 (a), (b) F1, (c), (e) with its stated reason, (i) BR-SEG-G (a) under H0; R121
+  E-MON / E-DOM; R123 CN2, B-ONLY, NO-TIE, LOC-GATE, LOC-K2, [OPT]; R126 QUIET-N). The sentence «the class facts, LEVEL, WIN, R-INT,
+  R-HEIGHT, K1-TCYC and FVS-TCYC use neither PLATEAU nor F1, [OPT], (D1) or BR-SEG-G» is true (2.3).
+- Tail: scope, «not an argument about Howard's rule on parity games in general», supersession arithmetic, the L41 credit of the (P6) step
+  to REFEREE 32 with L-RED-B's independent G-1, DATA clause by clause (numbers equal to my re-read of the frozen outputs, box 4), not M4 /
+  not M3 / not a step-4 pass / G-N5-TIME OPEN, related lane statements named as not premises. Correct.
+- DATA rule (L43; every DATA clause names its counter): the packet has no DEAD row. Each DATA clause of L-1 names its counters (the 16 of
+  level208.py by name, the 6 of plat208.py by name, «the 49 must-0 counters of rv208.py», «the counter of (K5)» on G_N); units are given
+  by reference («units in the packet §11»). Met.
+- R-1 (requested for L-2; L-1 is signed without it, as SIGN WITH GAP below). Old, exactly once in L-1:
+  «(Theorem ALL-TCYC) for every genome G, T_CYC ≤ P·(N + 2M + 6) + N (premises:»
+  New: «(Theorem ALL-TCYC) for every genome G, T_CYC ≤ P·(N + 2M + 6) + N, and so are the number R of steps at which σ̄ changes, the
+  number Q of loud steps and D^tot(v) − 1 for every vertex v (D^tot as in RESULTS R126) (premises:»
+- R-2 (optional). Old, exactly once in L-1: «through DOM with CN2 in (K5),» New: «through NO-TIE and LOC-GATE in (K4), through DOM with CN2
+  in (K5) and in PLATEAU's H0,».
+
+### 5.5 Verdicts (Opus 5.5, D1). Statements as frozen in P-N5-LEVEL at 1e6df499.
+| statement | verdict | conditions, gaps |
+| --- | --- | --- |
+| §3 (K1)-(K5) | SIGN | (K1) on R118 (e)'s stated reason or on F1 with (VJ-1) (N-1) |
+| §4 Lemma LEVEL (L1)-(L5) | SIGN | none |
+| §5 (C1)-(C4) | SIGN | (C4) uses landed R126 QUIET-N only |
+| §6 Theorem WIN | SIGN | none |
+| §6 Corollary R-INT | SIGN | none |
+| §6 Theorem R-HEIGHT | SIGN | none |
+| §6 Theorem K1-TCYC | SIGN | none |
+| §6 Theorem FVS-TCYC | SIGN | none |
+| §7 Lemma PLATEAU (P1)-(P7) | SIGN | (P6) step (B) is referee-originated (REFEREE 32); signed here independently under L41 |
+| §8 Theorem ALL-TCYC, with «Consequences» | SIGN | none |
+| line L-1 (sha1 28565b3c) | SIGN WITH GAP | «L-1 omits ALL-TCYC's «Consequences», a «To sign» row» (R-1, exact strings in 5.4) |
+- No statement is REFUSED. No signed proof keeps an open gap. Notes N-1 to N-3 ask for no change.
+- Not M3, not M4, not a step-4 pass. G-N5-TIME stays OPEN. N5 and N5′-xi stay CANDIDATES (D1). The bound is polynomial in N + M for the
+  one rule (Howard all-switch) in the one model (IDEAL-CYC) on the genome games, and for nothing else.
+
+### Statement of independence
+- These verdicts rest on my derivations in boxes 1-3 and on my own replay (box 4). Before this verdict was on origin I did not open
+  docs/referee/ (REFEREE 34's review, REFEREE 32's R-box208-preread.md), notes/REFEREE.md, L-RED 66's R235, L-RED-B's B1 or L-COMP 19's
+  box 43. The packet's §10 told me where REFEREE 32 found G-P6 and what its repair is; I re-derived the repaired step myself (3.1).
+- Lane code read: the headers and output formats of level208.py, plat208.py, rv208.py (to read their frozen outputs by column name) and
+  mkl1_211.py (run once, isolated, to rebuild L-1). Nothing of the lane is imported by my replay.

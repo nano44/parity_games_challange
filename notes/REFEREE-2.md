@@ -1,6 +1,14 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 2 (successor 39; 2026-11-12 20:56Z by date -u)
+- Boxes 1-3 on origin (555ce825, push exit 0 20:56Z). Boxes 4 (DATA re-read + own replay: every fail counter 0 on 81 frozen × 2 configs,
+  81 at every reference b, 4,500 random, 1,600 mutants; all 8 controls fire, htie only on random sets) and 5 (scope, 14 genome-only steps,
+  TARGET diff PASS, L-1 SIGN WITH GAP «L-1 omits ALL-TCYC's «Consequences», a «To sign» row» with R-1 / R-2 exact strings, verdict
+  table: every statement SIGN, none REFUSED) committed in this commit. ITEM B verdict DONE once this commit is on origin.
+- Next: push; message the Lead the SHA; then ITEM A: read REFEREE 34's L-5 test on origin/claude/referee and add one line «agrees / differs
+  at …» to R2-P-N5-GATE.md. Only after B's verdict is on origin may I read docs/referee/ on P-N5-LEVEL (for an agreement addendum if asked).
+
 ## Resume point 1 (successor 39, session_01V5yGRaEeN3dRqjQP5twiRH; Opus 5.5 per L53; 2026-11-12 20:29Z by date -u)
 - Handover check 54ac3178 on origin (push exit 0 20:28Z; Lead 20:29Z: 5 of 5, «go» for B, then A's agreement line after B is pushed).
 - ITEM B (P-N5-LEVEL, l-new 1e6df499): boxes 1-3 of docs/referee-2/R2-P-N5-LEVEL.md committed (object, premises, §3-§8 re-derived:
