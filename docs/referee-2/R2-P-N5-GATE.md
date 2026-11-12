@@ -332,3 +332,89 @@ is R2-P-N5-GATE/r2gate.py, on REFEREE-2's own engines.
     tools, which I read at the byte test.
 - R-2 is a packet-text item (premise rows of §3.1, §3.5, §3.7 and the F3 / F6 glosses), for fixes entry 3. L-2 carries no per-lemma
   premise rows, and it defines E_t(v) explicitly, so R-2 asks nothing of the line beyond R-1 / R-10.
+
+## Box 4: own replay, controls, DEAD list, verdicts
+
+### 2.9 Replay (R2-P-N5-GATE/r2gate.py; own engines; units in the tool's doc string)
+- Engines.
+  - g3 = Γ3, N5′-xi from S3 to the first fallback (R2-P-N5-SPLIT/r2split.howrun on R2-P-N5-END/r2end.py).
+  - cyc = IDEAL-CYC on Γ, Howard with the keep rule (R2-P-ACYC/r2acyc.py).
+  - E-priorities: 'lev' on g3 (L-NEW's choice) and the r2acyc default on cyc. Every counter is checked on both.
+- Every statement of §3.1-§3.8 has a must-0 counter. The premises LOC-GATE(3) / NO-TIE(3) (locfail), E-MON(3) (emonfail) and CYC
+  (cycfail) are checked too.
+- Sets and results. Every must-0 counter is 0 on every row, and dpass = 0 and rec_k10 = 0 on both engines:
+  - pinned: the lane's frozen instances with N ≤ 170, 41 genomes (box 91, 93, 94, 95 fix1 inst/, copied from 9c0349b1), × 2 engines.
+    - Coverage on g3: 8,978 gates, 1,685 states, 20,769 (state, gate) pairs for GATE-LOW-NULL (a), 390 flips for (b) and 378 for (b′).
+    - Also on g3: 3,305 NP steps, 405,231 E-FACE-PAYS (b) steps, 269,244 SAME-SUFFIX windows (83,787 Even 3-windows), 89,645 PARALLEL
+      changes, 51,164 same-pair expulsion couples, 43,706 EXPEL-COUNT tuples. Output: pinned_p1.out.
+  - random: 900 genomes of R2-P-N5-END's generator (any / self / acyc, 300 each), × 2 engines. Output: rand.out.
+    - These are small (T ≤ 7, C = 1) and test little beyond (a)-type statements. I say so rather than count them as strong evidence.
+  - mutants: 440 own mutants (r2split.mutate; 40 each of C6G8_n54, MW8_2, FW8_2, MWR8_2, Ku_8, DHIB18_2805, DWT20_2803, RWX_n95,
+    NDV2_4, k1fail_202, WC16_2), × 2 engines. Output: mut.out.
+    - Coverage on g3: 11,140 states, 10,434 GATE-LOW-NULL (b) flips, 24,068 NP steps, 1,557,316 SAME-SUFFIX windows, 118,896 same-pair
+      expulsion couples.
+- NOT RUN: the 16 pinned genomes with N > 170 (MW32_2, FW16_2, LT4/LT5, NSQ2/NSQ3, ND3_8, NDb/NDbr/NP/NV 3_8 and 2_8): the Γ3 engine's
+  SPEC S1 dominates the cost. Their DEAD records (MW32_2 C = 65; FW16_2) are cited from the lane, not re-run by me.
+- Controls (ctrl.out; MW8_2, C6G8_n54, MWR8_2; each fires on both engines):
+
+| control | fires (g3 / cyc) |
+| --- | --- |
+| gr (GATE-RACE (a) on the entered face) | grfail 101 / 101 |
+| low (π := letters below e_o) | decfail 1,191 / 1,191 |
+| np (faces swapped) | npfail 219 / 219 |
+| efb (p_e against p_b instead of D) | efbfail 1,746 / 1,746 |
+| ss (windows that fail the hypotheses) | ssfail 600, ssofail 140 / same |
+| sb (only x's own successor) | sbfail 8,080 / 4,387 |
+| par ((iii) as «at least 3 after u′») | parfail 1,265 / 926 |
+| uz (U_z := ∅) | pefail = pe3fail 2,184 / 1,233 |
+| ec (EXPEL-COUNT without its 1 +) | ecfail 20 / 11 |
+| c (c_y ≤ a_y − 1) | cfail 4,381 / 2,494 |
+| a2 ((ii)'s bound − 1) | a2fail 244 / 244 |
+
+- Control history.
+  - The first par control («after the play's first vertex») and the first sb control («movers only») could not fire. The second par
+    control («at least 2 after u′») fired on cyc but not on g3, where a pad follows every split. I replaced each, as listed above, before
+    the recorded run. ctrl.out holds the recorded runs, including the «at least 2» run, whose g3 line shows no parfail.
+  - No ctrl was used on a recorded zero run.
+- Records (equal on the two engines, instance by instance; pinned_p1.out): MW8_2 T 55, C 17, A*_all 18, max flips 34 = 4n + 2;
+  C6G8_n54 C 6; FW8_2 C 3; WC4_2 and WC16_2 T 4.
+
+### 2.10 DEAD list (§5; not to sign; witnesses re-run where my engines reach them)
+- WC «waiting High»: T3 = 4 on WC4_2 and WC16_2 (both engines). Re-run.
+- RA-MULT: MW8_2 C = 17 = 2n + 1. Re-run. MW32_2 (65) not re-run (size).
+- Polynomial P bound: C = 3 on FW8_2. Re-run. The RA path count P = F_(d+2) − 1 and FW16_2 are not re-run.
+- K6 LAG TOWER (LT*): not re-run (size; N ≥ 225).
+- K7 probe: C = 2 on Ku_4, Ku_8, Ku_16, Kprev_8. Re-run.
+- K1-FLIP(c): MWR4/8/16_2 max flips 9 / 17 / 33 = 2n + 1, with lamch 0 at that gate, on both engines. Re-run (mwr_lamch.out).
+- Nesting multipliers and Db / Dbr: every NP/NV/ND/NDV/NDB/NDb/NDbr instance with n = 4 or 8 that I ran has exactly one MW(n)'s C, max
+  flips and T3 (n = 4: 9 / 18 / 31; n = 8: 17 / 34 / 55). This is the «simultaneous» case. NSQ (the «sum» case) and the 3_8 sizes are
+  not re-run.
+
+### 2.11 Verdicts (Opus 5.5, D1). Γ3 rows CONDITIONAL on RESULTS R125 (landed per the Lead, 00:06Z). Statements as in the packet with fixes 1-2.
+| statement | verdict | conditions, gaps closed here |
+| --- | --- | --- |
+| GATE-RACE (a), (b); TRIGGER | SIGN | both runs; CYC added to TRIGGER's premises (R-2) |
+| GATE-LOW-NULL (a), (b), (b′) | SIGN | both runs; (Core) at the faces only (G-1, R-1); IDEAL-CYC (E-DOM) / (Core) from R104 (R-5) |
+| NP-SHAPE (a), (b) | SIGN | both runs; the «no re-entry into A_t» step closed (1.4) |
+| E-FACE-PAYS (a)-(d); WAIT-QUIET | SIGN | both runs; proviso «at every state of the run» (R-7); PROVISO also on Γ3 by B-ONLY3 (G-5) |
+| K10 empty / PROVISO (fixes 1-2) | SIGN on IDEAL-CYC (R123 B-ONLY); on Γ3 SIGN as my G-5 extension, CONDITIONAL on R125 | the reason «not among P-N5-CHAIN's facts» is false (G-5, R-6) |
+| SAME-SUFFIX (with G2); STEP-BOUND | SIGN | both runs; Λ(y) constancy and o = K2 closed (2.5); LOC-K2-3 added (R-2) |
+| PARALLEL | SIGN | both runs |
+| PAIR-EXPEL; EXPEL-COUNT | SIGN | both runs; needs no P-N5-SPLIT statement (G-4, R-4); 3M count by my proof (G-6, R-8); F3 added (R-2) |
+| A*-EQUIV (i)-(iii) | SIGN, CONDITIONAL on P-N5-SPLIT (SPLIT-COUNT, C-EQUIV) and R125; Γ3 only | (i) by my proof (G-7, R-8); C-EQUIV is P-N5-SPLIT's (G-3, R-3) |
+| DEAD list | SIGN (dead) as far as re-run (2.10) | the rest cited, not re-run |
+
+- No statement is REFUSED. No signed proof keeps an open gap.
+- G-1 to G-7 are text and citation defects; each is closed here and turned into a line requirement (3.4, 3.5).
+- R-2 is for fixes entry 3 (the packet's premise rows and glosses).
+- The line verdict waits for L-3 (Lead: L-SI 50 writes one fixes entry 3 + L-3 answering both referees).
+- Not M3, not M4, not a step-4 pass; nothing bounds T3, T_CYC, C or A*_all by a polynomial. G-N5-TIME stays OPEN; N5′-xi stays a
+  CANDIDATE (D1).
+
+### Statement of independence
+- These verdicts rest on my derivations above and on my own engines. Before this verdict I did not open docs/referee/R-P-N5-GATE.md
+  (REFEREE 31), notes/REFEREE.md, or L-RED's R228 / R229 reports and tools.
+- The Lead's 00:06Z message told me that my G-5 is «the same point as REFEREE 31's GT-1». I found G-5 before that message: it is in my
+  00:04Z message and in box 1 (a28bc5e1).
+- I read the lane's L-2, fixes 1-2, and the frozen packets P-N5-CHAIN and P-N5-SPLIT. I did not read the lane's tools (gate92 / mult91
+  / np93 / lev94 / astar92 / d96); I read them only at the L-3 byte test, for (D-1).

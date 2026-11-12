@@ -31,7 +31,7 @@ Counters: unit in brackets; every «…fail» must be 0; «rec_…» are records
        a2fail   [route tuple (b, J, y)] Dhi_y(b, J) − 1 > Σ_(x ∈ U_y) a_x(b, J);  a3fail [run] C > 3M·(1 + M·A*_route)
 Controls (--ctrl NAME; each must FIRE its counter): gr (GATE-RACE (a) on the entered face q), low (π := letters BELOW e_o),
   np (NP-SHAPE with p_e and p_b swapped), efb (compare p_e with p_b instead of D), ss (order compared on windows that FAIL the
-  hypotheses), sb (only x's own successor counts), par ((iii) as «at least 2 after u′»), uz (U_z := ∅ in PAIR-EXPEL),
+  hypotheses), sb (only x's own successor counts), par ((iii) as «at least 3 after u′»), uz (U_z := ∅ in PAIR-EXPEL),
   ec (EXPEL-COUNT bound without the 1 +), c (c_y ≤ a_y − 1), a2 ((ii)'s per-tuple bound − 1).
 Usage: r2gate.py [--eng g3|cyc|both] [--eorder lev|gate] [--limit L] [--ctrl NAME] [--gen COUNT SEED KIND] [--mut COUNT SEED FILE] FILES.json ..."""
 import sys, os, json, random
@@ -156,7 +156,9 @@ def analyse(R, C):
                     if Lam(t, pe) == Lam(t - 1, pe):
                         C["n_glnbp"] += 1; w = pe if q == pb else pb
                         if lexc(pi(E(t, w)), pi(E(t - 1, w))) <= 0: C["gbpfail"] += 1
-        C["n_gates"] += 1; C["rec_maxflips"] = max(C["rec_maxflips"], flips)
+        C["n_gates"] += 1
+        if flips > C["rec_maxflips"] or (flips == C["rec_maxflips"] and lamch < C.get("rec_lamch_at_maxflips", 10 ** 9)):
+            C["rec_maxflips"] = flips; C["rec_lamch_at_maxflips"] = lamch
         chpe, chpb = chp[pe], chp[pb]
         if flips > min(chpe + chpb, 2 * min(chpe, chpb) + 1): C["gr2fail"] += 1
         if rel_ > chpe or unl > 1 + rel_ or unl > chpb: C["efafail"] += 1
@@ -288,7 +290,7 @@ def analyse(R, C):
                     if x not in P1 or x in P0: bad = True
                     for z in Z:
                         if z not in P0 or z in P1 or rel[z] >= rel[x]: bad = True
-                    sh = 1 if CTRL == "par" else 0                      # control: «at least 2 after u′»
+                    sh = 2 if CTRL == "par" else 0                      # control: «at least 3 after u′» (on Γ3 a pad follows every split)
                     if u1 is None: bad = True
                     elif not bad:
                         i0, i1 = P0.index(u1) if u1 in P0 else -1, P1.index(u1) if u1 in P1 else -1
@@ -363,7 +365,7 @@ def main(a):
             except RuntimeError as ex:
                 C["error"] += 1; print(nm, e, "ERROR", ex)
             for k, v in C.items():
-                tot[e][k] = max(tot[e][k], v) if k.startswith("rec_max") else tot[e][k] + v
+                tot[e][k] = max(tot[e][k], v) if k.startswith("rec_") else tot[e][k] + v
             if files and not gens:
                 print(nm, e, " ".join(f"{k} {C[k]}" for k in sorted(C)), flush=True)
     for e in tot:
