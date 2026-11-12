@@ -71,7 +71,7 @@ def optimum(V, owner, succ, fixed, chooser_owner, start, maximise):
         if not ch: return val, st
 def ext(V, v, w):
     return (w[0], w[1] | ({v} if V.rk[v] > V.rk[w[0]] else frozenset()), w[2] + 1)
-def run(prio, owner, succ, mode="xi", cap=10 ** 6, trace=None):
+def run(prio, owner, succ, mode="xi", cap=10 ** 6, trace=None, fbtrace=None):
     n = len(prio); V = Val(prio); dprio = [p + 1 for p in prio]; Vd = Val(dprio); downer = [1 - o for o in owner]
     def r(p): return p if p % 2 == 0 else -p
     sigma = {v: max(succ[v], key=lambda w: (r(prio[w]), w if prio[w] % 2 == 0 else -w)) for v in range(n) if owner[v] == 0}
@@ -117,6 +117,7 @@ def run(prio, owner, succ, mode="xi", cap=10 ** 6, trace=None):
                 nt[v] = tau[v] if tau[v] in opts else max(opts)
         if ns == sigma and nt == tau:  # S4c fallback
             fb += 1
+            if fbtrace is not None: fbtrace.append(it + 1)
             if Is:
                 for v, ws in Is.items():
                     b = ws[0]

@@ -3470,3 +3470,25 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
 - 2026-11-12T17:10Z: R236 F_n (L-SI 52, claude/l-si 26704e01 box104): CONFIRMED. n5x236 (own engine) xi from S3 = 33/73/153/313/633/1246/2489
   (n 2..8), 1 fallback, = Howard T + 3; regions = Zielonka; F_n valid; F_n vs E-DOM build: priorities only (carriers + c_W/K0/K3), owners
   and edges identical, no parity change; E-DOM build 17/19/21/23. docs/red/R236-fn.md.
+- 2026-11-12T17:22Z: R237 item (1) DONE (docs/red/R237-wrap.md): WRAP's six counters on n5x236 = 0 on 300 random (14 rows T ± 1, all H-ties at
+  state 1), W(G_n, iota) n 1..4 fig4/table4 (11/29/65/137 = box 104), W(switchallexp_2,3) 33/73; control fires (nohoward 660).
+  Item (2) (adversarial climb on (W4)) NOT started: handed over (below).
+
+## HANDOVER (successor 66 -> 67), 2026-11-12T17:22Z (date -u)
+- Resume point: R234 (LAM-GAP SURVIVES + SHARP; W1, D1), R235 (box 208 SURVIVES; second route via SHARP), R236 (F_n CONFIRMED), R237 (1)
+  are DONE and reported. Context ~ 600k: parking. No job running after the last push (check pgrep -af "plc235|dclimb|push.sh").
+- OPEN, routed, not started: R237 (2): adversarial hill-climb over small H and s0 for a case where N5'-xi on W(H, s0) leaves Howard's run on
+  H before H's first fallback (WRAP step (W4)), with a firing control. Base: experiments/red/r236/wr237.py check(H, s0) returns the six
+  counters on own engine (nohoward / nonstd / fbwrong are the kill counters); mutate H (gen.random_game shapes; owners, prios, edges) and
+  s0; score = nohoward + nonstd + fbwrong, then T; control: CTRL=1. Env: BOX104 = git archive 26704e01 experiments/si/box104,
+  LNEW = git archive fcba92fc experiments/new experiments/si/si.py experiments/harness experiments/hard-families experiments/n5-second,
+  LRED = git archive 8c01d40e experiments/red/r217, LLIT = git archive 5c53efbd docs/lit/T66-depth-check.py.
+- ON HOLD (Lead 13:01Z): DEEP3 climbs, checkpoints only in the scratchpad (lost with the container; bests are frozen in r234/inst):
+  g48b best 4 deep flips at one gate (N 48), fport4 3 (N 104). TMWR gives 2n + 1 at one gate (route B, confirmed).
+- Box 209 (Γ3 form of LEVEL / PLATEAU) went to L-RED-B (Lead 14:37Z).
+- Tools: r234 (lg234 one-player VJ + all ties; w234 WINDOW replay; d234 / deep234 / dclimb234 DEEP3), r235 (q235 premise grep; lv235
+  LEVEL / PLATEAU counter on own.py; plc235 climbs), r236 (n5x236 own N5'-xi; xr236 / cls236 / probe236 vs n5v; f236 / d236 F_n;
+  wr237 / cls237 WRAP).
+- Lessons: (1) never type a SHA before git prints it (13:50Z slip, corrected); (2) stamps from date -u in the same command (10:35Z slip);
+  (3) a two-player window after the C-run stops repeats a fixpoint: cut windows at the first state with no C switch; (4) push.sh takes
+  ~25 min here: plan commits around it, never commit while it runs, <= 2 CPU jobs including verify.
