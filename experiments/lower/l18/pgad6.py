@@ -122,21 +122,48 @@ if cnfp:
 if E.empty: print('RESULT UNSAT (empty clause at build)'); sys.exit()
 if os.environ.get('PHASE'):   # L-LOWER 17: phase hints from a hint genome's design (search order only; verdicts unchanged)
     Hg = enc32.rdgen(os.environ['PHASE']); ph = []
-    def _ph(v, b):
-        if not isinstance(v, bool): ph.append(v if b else -v)
-    for (m, z), v in ctx['Wv'].items(): _ph(v, Hg['xt'][m] == z)
-    for m, v in ctx['pos'].items(): _ph(v, Hg['bp'][m] == 0)
-    for (l, a), v in ctx['Gb'].items(): _ph(v, Hg['gate'][4 * l + a] > Hg['gate'][4 * l + 2 + a])
+    tags = []
+    def _ph(v, b, tg=()):
+        if not isinstance(v, bool): ph.append(v if b else -v); tags.append(tg)
+    for (m, z), v in ctx['Wv'].items(): _ph(v, Hg['xt'][m] == z, (('o', m // 2),))
+    for m, v in ctx['pos'].items(): _ph(v, Hg['bp'][m] == 0, (('o', m // 2),))
+    for (l, a), v in ctx['Gb'].items(): _ph(v, Hg['gate'][4 * l + a] > Hg['gate'][4 * l + 2 + a], (('g', l),))
     for x in range(N):
         v = ctx['st'][0][x] if x < len(ctx['st'][0]) else None
-        if v is not None: _ph(v, Hg['start'][x] == 1)
+        if v is not None: _ph(v, Hg['start'][x] == 1, (('s', x),))
     fs = ctx['fixed_sorted']
     for e in freerank:
-        for k, u in enumerate(ctx['fr_u'][e]): _ph(u, Hg['br'][e] > Hg['br'][fs[k]])
+        for k, u in enumerate(ctx['fr_u'][e]): _ph(u, Hg['br'][e] > Hg['br'][fs[k]], (('o', e // 2),))
         for f in freerank:
-            if f != e: _ph(ordl(e, f), Hg['br'][e] > Hg['br'][f])
+            if f != e: _ph(ordl(e, f), Hg['br'][e] > Hg['br'][f], (('o', e // 2), ('o', f // 2)))
+    nph_design = len(ph)
+    if os.environ.get('PHASESTATES', '1') == '1':   # L-LOWER 18: helper states from the hint genome's CLAMPED run (l7/clamp.py, as f6check)
+        sys.path.insert(0, os.path.join(here, '..', 'l6')); sys.path.insert(0, os.path.join(here, '..', 'l7'))
+        import sim6, clamp
+        Dh = sim6.rd(os.environ['PHASE']); NCc = 2 * H
+        tgt = [list(r) + (Dh['start'][NCc:] if t == 0 else [0] * (N - NCc)) for t, r in enumerate(S)]
+        Sh = clamp.runclamp(Dh, tgt, set(range(NCc))); nst = 0
+        for t in range(min(len(Sh), len(ctx['st']))):
+            for x in range(NCc, N):
+                v = ctx['st'][t][x]
+                if v is not None and not isinstance(v, bool): ph.append(v if Sh[t][x] else -v); nst += 1
+        print('PHASESTATES', nst, flush=True)
     sv.set_phases(ph); print('PHASE', os.path.basename(os.environ['PHASE']), 'literals', len(ph), flush=True)
-t1 = time.time(); r = sv.solve(); print(f'SOLVE -> {"SAT" if r else "UNSAT"} {time.time() - t1:.1f}s', flush=True)
+if os.environ.get('LNS') is not None and os.environ.get('PHASE'):   # L-LOWER 18: large-neighbourhood question around the hint
+    fm = set(rng(os.environ['LNS'])); fc = set(os.environ.get('LNSFREE', '').split(','))
+    def _free(tg): return any((k == 'o' and v in fm) or (k == 'g' and 'gates' in fc) or (k == 's' and 'starts' in fc) for k, v in tg)
+    asm = [l for l, tg in zip(ph[:nph_design], tags) if not _free(tg)]
+    print('LNS free movers', sorted(fm), 'free', sorted(fc - {''}), 'assumptions', len(asm), 'of', nph_design, flush=True)
+    t1 = time.time(); r = sv.solve(assumptions=asm); print(f'SOLVE -> {"SAT" if r else "UNSAT"} {time.time() - t1:.1f}s (LNS)', flush=True)
+    if not r: print('RESULT LNS-UNSAT (this neighbourhood only; NOT a frame verdict)'); sys.exit()
+else:
+    r = None
+if os.environ.get('ASSUMEHINT') == '1':   # L-LOWER 18 diagnostic: is the hint's design (as phase literals) a model?
+    t1 = time.time(); ra = sv.solve(assumptions=[l for l in ph[:nph_design]]); print('ASSUMEHINT', ra, f'{time.time() - t1:.1f}s', flush=True)
+    if not ra: print('ASSUMEHINT core size', len(sv.get_core() or [])); 
+    sys.exit()
+if r is None:
+    t1 = time.time(); r = sv.solve(); print(f'SOLVE -> {"SAT" if r else "UNSAT"} {time.time() - t1:.1f}s', flush=True)
 if not r: print('RESULT UNSAT'); sys.exit()
 M = set(l for l in sv.get_model() if l > 0)
 Gn = enc32.decode(D, M, ctx, H); enc32.wrgen(Gn, outp + '_dec.txt')

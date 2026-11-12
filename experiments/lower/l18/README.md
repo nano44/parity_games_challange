@@ -9,3 +9,9 @@
   implies UNSAT at 510 (the full question only adds constraints).
 - q.sh: ONE pgad6 question per task in the BOX L18 frame (XS 8,11,12,14,15, XORD 8,11,12,15,14, XALL, FIXC 16,17, G empty), with
   replay (sim6 = fenc) and f6check 0..510 on SAT.
+- pgad6 env PHASESTATES (default 1 with PHASE): also phases the helper states from the hint genome's clamped run (l7/clamp.py).
+  FINDING: CaDiCaL (pysat cadical195) does not follow these phases: P 6 R 32 with A2_solved (a model) phased: 524 s (unphased 584 s);
+  the same design as ASSUMPTIONS (env ASSUMEHINT=1, diagnostic): SAT in 0.2 s.
+- pgad6 env LNS=movers [LNSFREE=gates,starts] (with PHASE): large-neighbourhood question: the hint's design literals are ASSUMED except
+  those of the listed movers' options (wiring, signs, ranks) and the listed categories. SAT = a real solution (decoded, CHECKed, replayed);
+  UNSAT = «this neighbourhood only», never a frame verdict.
