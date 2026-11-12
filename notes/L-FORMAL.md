@@ -12,6 +12,74 @@
   «an IDEAL-CYC plateau satisfies PlateauStatement's hypotheses (P1)-(P4), (P6)» and «LEVEL's class facts (K1)-(K5) on IDEAL-CYC».
   Statement-first, as before. Start with R104's [DEF] (the genome and Γ(G)) and R118 (a) (IDEAL-CYC), quoted, and send the definitions
   for a diff before any proof. If that turns out to be too large for one session, say so after the definitions, with an estimate.»
+- HANDOVER 2026-11-12T15:51Z (my context is near the 450k mark again; a successor starts here). Lead's target (14:54Z, quoted below):
+  the genome bridge. STATE: (K1), (K2), (K3), (K5) of box 208 §2 and the landed premises CN2, LOC-K2 (first half), B-ONLY, E-DOM are
+  PROVED in Lean with no premise. LEAD'S RULINGS (read 15:54Z): LevelCountStatement «ACCEPT. Keep it in the tree.» (15:16Z, three
+  deviation lines, now in README). Genome.lean «ACCEPT with one required change» (15:36Z): «REQUIRED CHANGE (h): WF must require deg x
+  ≥ 1 for every mover. … With M = 0 you get bmax = 0, top = 4 < K1's 5, and §3.1's rank facts … fail. Add the field, or state where
+  M ≥ 1 is used.» DONE 15:55Z: deg x ≥ 1 already holds by the type of `start`; I added `WF.one_le_N` (so M ≥ 1) and
+  `prio_K1_lt_top`, its only use. GenomeClass.lean «ACCEPT» (15:50Z); «One statement is MISSING, and the bridge needs it: … state
+  ClassOrder before the assembly: on the classes that occur at IsState maps with OptCounter (cycle nodes β, K1, K2, c_X, c_W by
+  B-ONLY), clsLt is irreflexive, transitive and total. Alternatively, give an order-embedding of occurring classes into a lex type.»
+  NOT DONE. «IdealCycRun needs one engine comparison before you lean on it: on the 11 pinned genomes, a mirror of frozen / legal /
+  howard / moves holds along ideal.traj, and a control that breaks HowardAt fires.» NOT DONE. «Route: PREMISE-FREE APPROVED. … Keep
+  statement-first: every new Statement goes to me before its proof lands in a commit.» If a definition changes, re-run genomecheck.py
+  and rebuild.
+  - Files of the genome layer (all build; last full check 15:55Z, the tree with `WF.one_le_N`: `rm -rf .lake/build && lake build` →
+    «Build completed successfully (3179 jobs)», 0 warnings; Axioms.lean 46 theorems within the allowed three; no sorry / admit / axiom;
+    7,113 lines in 41 files; genomecheck re-run on 2 genomes after the change: 110 vertices, all counters 0):
+    Genome.lean (definitions), GenomeBasic.lean, GenomePlay.lean, GenomeBOnly.lean, GenomeClass.lean (class definitions and
+    K1Statement..K5Statement), GenomeK3.lean (`k3`), GenomeK2.lean (`k2`), GenomeK15.lean (`k1`, `k5`, `IdealCycRun.f1`).
+  - NEXT, in this order (the first two are the Lead's asks of 15:50Z; the rest is my plan):
+    (0) the engine comparison of `IdealCycRun`: a Python mirror of frozen / legal / howard / moves (and of `OptCounter` for σ̄) along
+        the fleet engine's IDEAL-CYC run (experiments/new/box191/idealcyc.py with experiments/si/si.py's Engine; check/crosscheck.py
+        already mirrors `val`, `Val.lt`, `OptCounter` against si.py) on the 11 genomes of experiments/new/box191/inst, with a control
+        that breaks HowardAt; put it in lean/lemmas/check/.
+    (0′) the statement ClassOrder (or the order-embedding cls ↦ (rew Λ, wt E) ∈ ℤ ×ₗ ℤ), sent to the Lead for the diff before its proof.
+    (1) (K4): `K4Statement` is stated, NOT proved. Plan: LOC-GATE in ⊴ form, for an Odd vertex g and w ∈ E g: Val.le (val s (s g))
+        (val s w), s = pair V0 σ τ. Get `UnderProgAt pr s g w` from TwoPlayer.lean `underProgAt_of_opt` with hopt := `OptCounter`.2
+        applied to `Function.update τ g w` at the vertex g (pair V0 σ (update τ g w) = update (pair V0 σ τ) g w since g ∉ V0); then the
+        converse of Mono.lean `underProgAt_of_le` (valid because lam s g ≠ g: `lam_ne_gate`), with Weights.lean `Val.le_iff_lex`,
+        `wt_ext`, `sl_ext`. Then: cls (gate o) = cls (s (gate o)) by `cls_step`; s (gate o) is a face (`IsState.gate`); for the other
+        face use `k2` (faces are not core). NO-TIE is not needed for (K4) in this form.
+    (2) NO-TIE (R123): Ω(e_g) ≠ Ω(β_g). Plan: if wt g = none, Λ(e_g) = c_W ≠ Λ(β_g) (`b_only` at β_g). Else e_g ∈ Π(e_g)
+        (`cls_eface`); if e_g ∉ Π(β_g) the sets differ; if e_g ∈ Π(β_g) the play of β_g passes g then e_g (the only predecessor of e_g
+        is g), so len(β_g) > len(e_g).
+    (3) LEVEL on the genome: (L2), (L3), (L5) of box 208 §3 from (K1)-(K5) (the stall lemma (L4) is not needed for ALL-TCYC); to use
+        `level_count` the classes need a LinearOrder: map a class to the key (rew Λ, wt E) in ℤ ×ₗ ℤ (Weights.lean `setLt_iff_wt_lt`,
+        `wt_injective`) and show clsLt ⇔ < on keys.
+    (4) PLATEAU's (P1)-(P4), (P6) on a plateau of IDEAL-CYC (box 208 A2), then `plateau` with Ch := the movers of Y; then ALL-TCYC
+        by `level_count`; (C4) either by R126 QUIET-N as a premise or by `plateau` with Y := all vertices.
+  - Traps met in the genome layer: (i) decidable-equality instances: `ext`, `setLt` and other generic definitions carry the classical
+    instance, statements about `Finset G.Vertex` carry the derived `instDecidableEqVertex`; never close such goals by `rfl`, go through
+    `Finset.mem_insert` / `Finset.mem_symmDiff` with `simp only`, or `ext u`. (ii) `omega` does not instantiate ∀-hypotheses: give it
+    `six_le_bprio o`, `bprio_lt_eprio o o'` for the options at hand. (iii) `rcases v with x | o | o | o | _ | _ | _ | _ | _ | _` is
+    the vertex case split (mover, gate, beta, eface, cX, cW, K0, K1, K2, K3); `simp only [prio]` / `[idx]` / `[start0]` unfold one
+    constructor. (iv) `(val pr s v).top`, `.set` are `lam pr s v`, `pset pr s v` by rfl; `nxt V0 σ τ t` is `pair V0 (σ t) (τ t)` by
+    rfl, `exact` sees through both.
+- GENOME TARGET, state 15:36Z (nothing of it committed yet; the push of 3880f474 runs since 15:13Z):
+  - PGLemmas/Genome.lean (256 lines, sha1 707974398221…): DEFINITIONS ONLY, sent to the Lead 15:32Z for the diff with deviations (a)-(g)
+    (β-id not a field; `none` for «none» and X; WF separate; e_g's edge follows wt; start0 one map with τ_0 on Odd's vertices; in
+    `IdealCycRun` τ t is ANY optimal counterstrategy, the first state any mover state, `FromStart` and `Stopped` separate; pmax spells
+    out «max Ω so far»). Verdict open.
+  - DATA (tool lean/lemmas/check/genomecheck.py; unit: vertex; Lean's `idx`, `prio`, `isOdd`, `E`, `start0`, `pr` evaluated by
+    `lake env lean` against stab.py build(G, 0, kgad=True, esc=True) and si.py's p′): experiments/new/box191/inst, 11 genomes, 1,018
+    vertices: all 7 counters 0; experiments/new/box202/inst, the 21 genomes with at most 400 vertices, 4,916 vertices: all 0 (14.6 min);
+    control GEN_CTRL=1, 2 genomes, 110 vertices: priofail 56, succfail 56, startfail 78, prfail 56. NOT run: the 32 larger corpus genomes.
+  - PGLemmas/GenomeBasic.lean (no premise, compiles): `idx_injective`, `pr_injective`, `pr_lt_iff` (under WF), `even_pr`, priority bands
+    (`bprio_lt_eprio`, `eprio_lt_top`, `eprio_even`, `top_even`, …), `isE`, `e_dom` (R121 E-DOM from the priorities).
+  - PGLemmas/GenomePlay.lean (no premise, compiles, 15:38Z): `IsState` (a successor map of IDEAL-CYC(G)), `IdealCycRun.isState`,
+    `cn2` (R123 CN2), `lam_ne_mover`, `lam_ne_gate`, `loc_k2` (R123 LOC-K2: τ(K2) = K1 for every `OptCounter`), `lam_K0..K3`, `lam_cX`,
+    `lam_cW`, `IdealCycRun.k2`.
+  - ESTIMATE sent to the Lead 15:32Z: full premise-free bridge 3,000-5,000 lines, 3-4 sessions. PROPOSED STAGE A (about 2,500 lines):
+    box 208's own logic (§1 classes, (K1)-(K5), LEVEL (L1)-(L3), (L5), PLATEAU (P1)-(P4), (P6), ALL-TCYC via `level_count` and
+    `plateau`) CONDITIONAL on the landed statements it quotes (R123 CN2, B-ONLY, NO-TIE; LOC-GATE, LOC-K2, DOM, E-DOM, QUIET-N where
+    not proved directly). STAGE B: discharge those premises. The Lead's choice is open.
+  - Proof ideas noted for the cheap premises (mine): CN2: a cycle node w of priority < 2 is a mover or a gate, its successor (a gate,
+    resp. a face) is on the same cycle with a larger priority. LOC-K2: if τ(K2) = K2 then val(K2) = (K2, ∅, 0), and K2 → K1 gives
+    (K1, ∅, 1), strictly smaller since pr K1 > pr K2 and both are odd: against `OptCounter`. B-ONLY: compare with Odd's all-β strategy
+    (its cycle nodes are β's, K1 or c_X), then use optimality on rewards. Class order: use the key (rew Λ, wt E) in ℤ ×ₗ ℤ
+    (Weights.lean `setLt_iff_wt_lt`, `wt_injective`) to get a LinearOrder for `level_count`.
 - BOX 208 TARGET (Lead 13:13Z / 13:52Z: «box 208's abstract core in Lean. claude/l-new 8db300fe docs/new/N5-LEVEL-box208.md: §10 … first,
   then Addendum A's PLATEAU in its one-player form. Send the statements for a diff first.»): BOTH DONE IN LEAN.
   - §10 Statement ABS: `abs_statement : AbsStatement V` (PGLemmas/AbsProof.lean, 14:40Z). Lead's diff of `AbsStatement` (13:58Z): «(i)
@@ -127,8 +195,9 @@
 - Toolchain in a fresh container: commands in lean/lemmas/README.md (elan, `lake exe cache get`, `lake build`); tested on a fresh copy.
 
 ## Queue
-000. OPEN: (1) the genome Γ(G) (RESULTS R104 [DEF]) and IDEAL-CYC (R118 (a)) as Lean DEFINITIONS, sent to the Lead for a diff before any
-     proof (Lead 14:54Z); (2) the Lead's diff of `LevelCountStatement`.
+000. OPEN: (1) the Lead's diffs: Genome.lean (15:32Z), GenomeClass.lean with K1Statement..K5Statement (15:46Z), LevelCountStatement
+     (15:14Z); (2) (K4), NO-TIE, LEVEL (L2), (L3), (L5), PLATEAU (P1)-(P4), (P6), ALL-TCYC on the genome (plan in the Resume point).
+0000. DONE 15:51Z: CN2, LOC-K2 (first half), B-ONLY, E-DOM, (K1), (K2), (K3), (K5) for Γ(G) / IDEAL-CYC(G), no premise.
 00. DONE 14:44Z: `abs_statement` (box 208 §10) and `plateau` (Addendum A2, abstract one-player form), both Lean-checked (lane).
 0. (accepted by the Lead 12:29Z / 13:13Z) TWO-CROSS, Λ-count, Howard run bound, (M) one-player, premise-free one-player LAM-GAP and
    Howard bound, DEPTH-COUNT3 with fix D1, T-CYC without the genome: all PROVED in Lean; every statement needs the Lead's diff.
@@ -167,7 +236,10 @@
 - Fleet texts read as inputs (not sources): claude/l-si 23d39400 docs/si/box101-lamgap.md §2; claude/l-red 0148d73f
   docs/red/R234-lamgap.md §0, §2, §3; claude/l-red docs/red/R231-onecross.md §2; trunk docs/RESULTS.md R118 (l. 13607 ff.), R17
   (l. 730 ff.), R15 (l. 624 ff.); docs/new/P-N5-XICYC.md §1-§5 and P-N5-XICYC-fixes.md l. 30-60 (F4′, STRICT-G, PATH-G).
-  claude/l-new 8db300fe docs/new/N5-LEVEL-box208.md §3 (Lemma LEVEL), §4, §10 (Statement ABS), Addendum A (A0-A5, Lemma PLATEAU).
+  claude/l-new 8db300fe docs/new/N5-LEVEL-box208.md §0-§2 ((K1)-(K5)), §3 (Lemma LEVEL), §4, §10 (Statement ABS), Addendum A (A0-A5, Lemma PLATEAU).
+  trunk docs/RESULTS.md R104 (l. 9864) and R118 (l. 13607) header lines; docs/red/P-N5-REALIZE.md §2, §3.1; docs/new/P-N5-XICYC.md §1-§2;
+  experiments/red/r187/stab.py build(); experiments/si/si.py l. 7, l. 38-43. NOT opened: R123's and R121's packets (CN2, B-ONLY,
+  LOC-K2, E-DOM are proved here from the definitions, by my own arguments), R126's QUIET-N proof, L-RED R235, REFEREE 32.
 
 ## Dead ends
 - None yet. (One trap met, not a dead end: inside `namespace PG` a theorem named `Val.lt_irrefl` shadows Mathlib's `lt_irrefl` in its

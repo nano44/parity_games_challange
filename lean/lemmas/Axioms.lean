@@ -39,3 +39,14 @@ import PGLemmas
 #print axioms PG.AbsExample.d_start
 #print axioms PG.AbsExample.d_end
 #print axioms PG.level_count
+#print axioms PG.Genome.pr_injective
+#print axioms PG.Genome.pr_lt_iff
+#print axioms PG.Genome.e_dom
+#print axioms PG.Genome.cn2
+#print axioms PG.Genome.loc_k2
+#print axioms PG.Genome.b_only
+#print axioms PG.Genome.k3
+#print axioms PG.Genome.k2
+#print axioms PG.Genome.k1
+#print axioms PG.Genome.k5
+#print axioms PG.Genome.prio_K1_lt_top

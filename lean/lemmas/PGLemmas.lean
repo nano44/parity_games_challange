@@ -31,3 +31,11 @@ import PGLemmas.Plateau
 import PGLemmas.AbsExample
 import PGLemmas.LevelCountStatement
 import PGLemmas.LevelCount
+import PGLemmas.Genome
+import PGLemmas.GenomeBasic
+import PGLemmas.GenomePlay
+import PGLemmas.GenomeBOnly
+import PGLemmas.GenomeClass
+import PGLemmas.GenomeK3
+import PGLemmas.GenomeK2
+import PGLemmas.GenomeK15
