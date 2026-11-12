@@ -14,9 +14,22 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   class_(t+1)(x) = class_(t+1)(sigma_(t+1)(x)) (K3 (c)) >= class_t(sigma_(t+1)(x)) (K1). (L4) is where Howard enters (uses K5 at
   sigma_b). RF-B: (P1), (P2), (P4) rule-free; H_Y keeps only the gates IN Y; NOT (P3), (P6), (P7). Tail = window with Y = V (gates
   constant: case 3 needs B-ONLY for e_g -> c_W).
-- Tool experiments/new/box212/rf212.py (imports box208/rv208.py; RULE=howard|allrand|allleast|onebest|onerand|oneleast|subrand) +
-  run212.sh A (frozen 81 x 7 rules, resumable per line) / B (random 300 x 7) / C (rstart) / D (control). A and B started ~20:40Z as
-  tracked tasks (B done 0 must-0 hits; C started after B); outputs experiments/new/box212/out/. Doc to write: docs/new/N5-RFLEVEL-box212.md.
+- Tools in experiments/new/box212/: rf212.py (IDEAL-CYC, any improving rule; imports box208/rv208.py), rfd212.py (N5 ITSELF on Gamma3 via
+  level208.prep(G, True) with box190 n5v.step's mode switched at import: RFD_MODE spec|seq|idx|xi; imp3 = [IMP3] check), quotes212.py
+  (generic [Q R123] / [Q path@commit] checker; QCTRL=1 control), summ212.py (one line per (set, rule); dedupes (genome, rule) lines).
+  Runners: run212.sh A-G (A stopped 21:33Z: too slow), run212a2.sh (A's continuation, 300 s timeout, TIMEOUT300 lines), run212a3.sh
+  (second worker, subrand only), run212h.sh (towers). inst/ = 5 tower genomes from claude/l-comp 2fa72fb5 box29 (SHA1SUMS, SOURCE.txt).
+- DATA FINAL (summ212.py -> out/summ212.txt, out/SHA1SUMS): every must-0 = 0 on 31 rows (rf212 frozen/rand/rstart x 7 rules; rfd212
+  frozen/rand x spec/seq/idx; towers x spec/seq/idx/xi); NOT checked: 9 timeouts + CW16_n/oneleast OOM twice (NOTCHECKED-OOM line).
+  Two OOM kills seen with two big rf212 workers at once: rf212 keeps the whole history; run at most ONE big-genome rf212 at a time.
+  FINDING: towers (O1) = ONE window (tail = T 30/67/136/209/299; HIT7 = L-COMP longest_fl 299); frozen genomes: 2 stalls in 1,721 steps.
+  Howard-only facts fire under other rules (K5how, platexit, platidle, plat_gt_movers, tail_gt_N), as RF-B / RF-C say.
+- check.sh block «BOX 212 RF-LEVEL» (check212.sh ~2 s + summ212 + pins + quotes) PASS standalone. Box 209 Addendum B appended.
+- REFEREE-2 39 R2-P-N5-LEVEL (claude/referee-2 43824abc): all SIGN; L-1 SIGN WITH GAP: R-1 (required for L-2: ALL-TCYC «Consequences»),
+  R-2 optional; exact strings in its §5.4. NOT routed yet. Draft generator in my scratchpad (mkl2_211.py: asserts packet 7c956df4 and
+  L-1 28565b3c, applies R-1, R-2; both old strings occur once in L-1). When routed: fixes entry 1 (creates P-N5-LEVEL-fixes.md) + L-2 +
+  pins in box211/level.pins + the check.sh «P-N5-LEVEL» block.
+- Lead silent since 20:37Z; my ~20:38Z request (successor 73's RF-C / kill / DATA text) unanswered: §8 kill criteria = my reconstruction.
 
 ## HANDOVER (successor 73, PARKING 2026-11-12 ~19:06Z by date -u; BOX 211 frozen and on origin; BOX 212 proposed to the Lead, NOT started)
 ### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)

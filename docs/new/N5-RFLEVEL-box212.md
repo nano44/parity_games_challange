@@ -25,7 +25,8 @@ on box 209's CANDIDATE lemmas), DATA (§7, not to sign). Nothing here is a RESUL
    one successor at u). Not claimed for a general rule: (P3), (P6), (P7) (DATA: they fail under single-switch rules).
 4. **RF-C (CANDIDATE).** For any improving run and reference b = T: T ≤ P + (P + 1)·W, where W is the length of the longest class-frozen
    window of the run (a plateau of RF-B, or the tail after LAG empties, which is the same kind of window with Y = every vertex). For
-   Howard's rule W ≤ N + 2M + 5 (P-N5-LEVEL's PLATEAU and QUIET-N) gives ALL-TCYC back; for other rules no bound on W is claimed.
+   Howard's rule (plateaus ≤ N + 2M + 5 by P-N5-LEVEL's PLATEAU, the tail ≤ N by QUIET-N) the same count is ALL-TCYC's; for other
+   rules no bound on W is claimed.
 5. **RF-D (CONDITIONAL; a reduction, not a bound).** If every step of N5 from S3 on Γ3(G) before its first fallback is an improving step
    at the movers (hypothesis [IMP3]; box 104's W-FLAT (lane) gives it, §6), and box 209's Γ3 class facts and LEVEL3 hold (CANDIDATES;
    by (a) their landed premises hold at every standard state), then the number T_key(G) of steps of N5's run before its first fallback
@@ -33,11 +34,14 @@ on box 209's CANDIDATE lemmas), DATA (§7, not to sign). Nothing here is a RESUL
    run of the KEY rule on a closed one-player sub-game of Γ3(G) with frozen classes. So O1′ (KEY-CYC) is equivalent, up to the polynomial factor P3 + 1, to a bound on the key
    rule inside such windows. This is a reduction of an OPEN question to another OPEN question.
 6. **DATA (§7).** Every rule-free counter is 0 under seven improving rules (Howard and six others) on random and frozen genomes, and on
-   N5's own key-rule run on Γ3(G); the Howard-only facts (K5), (P3), (P6) fire under the other rules, as RF-A / RF-B predict.
+   N5's own key-rule run on Γ3(G); the Howard-only facts (K5), (P3), (P6) fire under the other rules, as RF-A / RF-B predict. On the
+   five tower genomes of O1 (T up to 299) N5's whole run before its first fallback is ONE class-frozen window; on the 81 frozen genomes
+   it is almost all non-stall steps (2 stalls in 1,721 steps).
 
 ## 1. Premises
 - P-N5-LEVEL (docs/new/P-N5-LEVEL.md, frozen at l-new 1e6df499, sha1 7c956df443cfddbf23bfbaa18a26a98369b176ec; this lane's packet,
-  under review by REFEREE 34 and REFEREE-2 39): its §1 (premises, quoted by script, box211/quotes211.py at trunk 68c8d293), §2
+  under review: REFEREE-2 39's verdict is on origin (claude/referee-2 43824abc, R2-P-N5-LEVEL.md §5.5: every statement SIGN, line L-1
+  SIGN WITH GAP, items R-1, R-2 not yet routed to me); REFEREE 34's is not): its §1 (premises, quoted by script, box211/quotes211.py at trunk 68c8d293), §2
   (setting, ORDER ON CLASSES), §3-§5, §7. RF-A / RF-B / RF-C re-use its proofs line by line; they are lane statements, not premises.
 - Landed premises used (as quoted in P-N5-LEVEL §1, re-quoted here where the scope matters; every «…» on a bullet marked [Q X] is checked
   by experiments/new/box212/quotes212.py, output quotes212.out):
@@ -170,7 +174,7 @@ gate keeps its face. Hence T ≤ P + (P + 1)·W, W the longest window (plateau o
 class at every t ((K4)), the same face. If they have equal classes and e_g's successor were c_W, β_g would have class (c_W, ∅), so
 Λ(β_g) = c_W, against B-ONLY (β_g is not excepted); so e_g's successor is a mover and P-N5-LEVEL (P4) case (3) gives σ̄_t(g) = e_g at
 every t. K2: LOC-K2. ∎
-- For Howard: W ≤ N + 2M + 5 (P-N5-LEVEL PLATEAU for plateaus; QUIET-N for the tail), and the line is ALL-TCYC. For any other rule
+- For Howard: plateaus ≤ N + 2M + 5 (P-N5-LEVEL PLATEAU), the tail ≤ N (QUIET-N); the count is ALL-TCYC's. For any other rule
   nothing bounds W here, and QUIET-N does not apply to the tail (DATA: tail_gt_N > 0 under single-switch rules).
 
 ## 6. RF-D (CONDITIONAL): the Γ3 form, and what it does to O1′
@@ -189,13 +193,73 @@ the first fallback, is T_key(G) plus a constant, as for N5′-xi, whose first fa
 **What it does to O1′.** O1′ asks for F(G) ≤ poly(N + M) on every R104 genome. Under the hypotheses (and the READING above), O1′
 holds iff W_key(G) ≤ poly(N + M) for every genome (⇐ by the line; ⇒ because a window is part of the run). So the open question moves from «the key rule
 against Odd's replies on Ξ-cyclic genomes» to «the key rule on one-player class-frozen windows», a generalised O1 (O1 is the
-Ξ-acyclic case, where LAG is empty from the start and the whole run is one window: the reduction says nothing new there). Not claimed:
-any bound on W_key; anything after the first fallback; anything about N5 on other games.
+Ξ-acyclic case, where the whole run is one window: the reduction says nothing new there). Not claimed: any bound on W_key; anything
+after the first fallback; anything about N5 on other games.
+- DATA bearing on this (§7, not a proof): on the five tower genomes of O1 (L-COMP box 29, claude/l-comp 2fa72fb5, copied to
+  box212/inst/ with their sha1), N5's key-rule run before its first fallback is ONE window: no vertex ever lags against the last state
+  (Φ takes no value; the tail is the whole run), T = 30, 67, 136, 209, 299 (HIT7's 299 = L-COMP box 29's «longest_fl» 299 from its own
+  engine n5b). On the 81 frozen genomes of box 208 / 209 the same run is almost all non-stall steps (at most 2 stalls in total; windows
+  of at most 1 step; tails of at most 4). So in the data the long key-rule runs live inside a window, and the steps RF-A counts are few:
+  the difficulty of O1′ sits where RF-D puts it.
 
-## 7. DATA (not to sign; tools in experiments/new/box212/; outputs out/; summary by summ212.py)
-[filled from summ212.py after the runs are final]
+## 7. DATA (not to sign; tools in experiments/new/box212/; outputs out/, pinned in out/SHA1SUMS; every number below is from
+## summ212.py's output out/summ212.txt)
+Tools. rf212.py: IDEAL-CYC(G) under an improving rule (rv208.py's builder, VJ valuation and Odd reply, box 208 Addendum B, imported
+unchanged), RULE = howard (rv208's), allrand, allleast (every improvable mover to its LEAST strictly better gate), onebest, onerand,
+oneleast (one mover per step), subrand (a random non-empty subset); reference states b: every b when T ≤ 80, else b = T and 30 random b
+(unit bchecked = reference states checked). rfd212.py: N5 ITSELF from S3 on Γ3(G) up to its first fallback (box 208's level208.prep
+on box 190's n5v.step, whose mode is switched at import: spec = SPEC's root-first key, seq = SPEC's choice at one vertex, idx = ties by
+largest index, xi = N5′-xi), reference T only; imp3 checks [IMP3] step by step. Units of every counter: the tools' doc strings.
+Must-0 counters (rule-free; any value > 0 is a kill under §8): rf212: IMP, CAP, the ten static lemmas of §2 at every visited state
+(CN2, CN2pi, BONLY, NOTIE, LOCGATE, LOCK2), F1, K1, K2 (3,000 sampled pairs per run), K3a-K3e, K4, K5new, L1sub, L1stall, L1rise,
+L1stallempty, L1lagback, L2, L3, L3alpha_m, L3beta_kind, L3beta_m, L5set, L5phi, NSP (> P non-stall steps for one b), P1, P2, P4,
+P4K2, PHclosed, PHval, PHimp, PHout, C4, DECOMP; rfd212: imp3, monofail, k3fail, k4fail, einF, l3fail, phifail, phivals3, p1, pclos, p3.
+- Sets and results: EVERY must-0 counter is 0 on every set below (summ212.txt: «must0_sum 0» on every row; 0 VIOLATION lines).
+  - rf212, random genomes (rv208's generator, modes rand, cyc, self, up, down, dense, flat; seeds 2121-2127): 300 runs per rule, 7 rules.
+  - rf212, random mover start states (5 per genome, seed 2131) on 8 frozen bases: 40 runs per rule, 7 rules.
+  - rf212, the 81 frozen genomes of box 208 Addendum B (25 k = 1 records, 53 corpus genomes, 3 DEAD genomes of R118 (m)): 81 runs for
+    howard, allrand, allleast, subrand; onebest 78 (3 timeouts), onerand 76 (5 timeouts), oneleast 79 (1 timeout; CW16_n killed for
+    memory twice, the second time as the only worker). The 9 timeouts (300 s or 1,200 s per (genome, rule)) and the 1 OOM pair are NOT
+    checked.
+  - rfd212, Γ3(G): the 81 frozen genomes under spec, seq, idx (81 each); 1,200 random eg195 genomes per mode (modes rand, dense, deep,
+    noesc, 300 each, seeds 2150-2153); the 5 tower genomes (inst/) under spec, seq, idx, xi.
+- What the rule-dependent counters show (descriptive; they are NOT claimed for a general rule):
+  - K5how (Howard's (K5) for every gate) is 0 under howard on every set and > 0 under every other rule (frozen: 234 to 132,762).
+  - Plateaus under single-switch rules: longest 85 (onebest), 66 (onerand), 126 (oneleast) steps on the frozen set; plateaus longer than
+    the number of movers of Y: 703, 600, 711; plateau steps that move no mover of Y (platidle): 33,927, 28,375, 28,821; (plateau state,
+    mover of Y) pairs with a strictly better gate outside Y not taken (platexit): 136,763, 134,288, 185,516. Under howard: 0, 0, 0; its
+    longest plateau 13. So (P3), (P6), (P7) are Howard's, as §4 says.
+  - Tails longer than N (QUIET-N's bound, a Howard statement): 0 under howard everywhere; 4 runs each under onebest and onerand
+    (frozen); on the random sets 1 (allleast), 2 (oneleast), 1 (onerand).
+  - Non-stall steps for one b: at most 368 (oneleast, frozen) against P (at most 5 % of P on every set).
+  - Γ3, N5 itself (spec), frozen set: 1,721 steps in all, 2 of them stalls; the longest window 1 step, the longest tail 4. seq: 339
+    stalls in 3,793 steps, plateaus up to 21 steps, 3 plateaus longer than H's Even vertices (Howard's (P7) bound) on the frozen set and
+    3 on the random sets. Towers (rfd212_tower_spec.out, one line per genome): no vertex lags against the last state, the whole run is
+    the tail: T = 30 (DBL4), 67 (RECF4), 136 (H5), 209 (H6), 299 (HIT7); xi (N5′-xi) on the same genomes: at most 12.
+- Controls (each fires): rf212 RF_CTRL=1 (FRONT := the highest lagging class) under howard: L2 31, L3 31, P1 5, PHval 5; under onerand:
+  L2 98, L3 98, P1 139, PHval 61; rfd212 RFD_CTRL=1 (imp3's comparison inverted): imp3 61; LV_CTRL=2: einF 35, l3fail 35. quotes212.py
+  QCTRL=1: 30 of 30 quotes MISS.
+- Cross-checks: HIT7's T = 299 under spec equals L-COMP box 29's «longest_fl» 299 (out/HIT7_d28_F254.json, its own engine n5b,
+  claude/l-comp 2fa72fb5). rf212's Howard run is rv208's (box 208 Addendum B, cross-checked there against box191 idealcyc / si.Engine);
+  this box adds no cross-check of the other rules' runs against a second engine (a weak point).
+- Checks run by experiments/new/check.sh, block «BOX 212 RF-LEVEL»: check212.sh (two rules and N5 on small sets, the controls; diffed
+  against check212.out), every frozen output all 0 (through summ212.py), controls fire, out/SHA1SUMS and inst/SHA1SUMS, the quote
+  checks (quotes212.out: «quotes 30 missing 0»; quotes209B.out: «quotes 6 missing 0»).
 
-## 8. Not proposed, scope, TARGET.md diff
+## 8. Kill criteria (where to attack)
+The approved wording is successor 73's (message to the Lead, ~18:29Z), which is in no file; asked for verbatim at ~20:38Z. Until it is
+inserted, the criteria as this successor reads them (Lead to correct):
+- (i) An improving run of IDEAL-CYC(G) (any rule) with a rule-free counter > 0 (§7's must-0 list: a class that falls, (K3), (K4),
+  K5-NEW, (L1)-(L3), (L5), more than P non-stall steps for one b, (P1), (P2), (P4), (P5′), the tail clause) kills RF-A / RF-B / RF-C;
+  the genome, start state and rule are the instance.
+- (ii) A landed static lemma whose proof needs a property of Howard's run (a line of §2's proofs that compares two states or uses DOM,
+  F1 or the step rule) kills the reading of §2 for that lemma, and with it RF-A for non-Howard runs.
+- (iii) A step of N5 from S3 on Γ3(G) before its first fallback that is not an improving step at the movers (imp3 > 0), or a non-zero
+  rule-free Γ3 counter on that run, kills [IMP3] or [L3], and with it RF-D.
+- Weak points named for the attacker: §2's verdicts are readings of proofs, not re-proofs; (K2)'s use at two different states of a
+  non-Howard run; RF-D's READING that Ξσ's order on Γ3 is Ω_t's; the tail clause's case (3).
+
+## 9. Not proposed, scope, TARGET.md diff
 - Not proposed: a bound for N5, and a rule-free bound on the windows. Source (change (c)): W-FLAT, box 104 §7 (claude/l-si 26704e01):
   [Q docs/si/box104-map.md@26704e01] «So on these games the algorithm is a ONE-SIDED strategy improvement on the inner game». On W-flat
   wrappers of ANY parity game every tie rule turns N5′-xi / N5 into one-sided strategy improvement on the inner game, so a rule-free

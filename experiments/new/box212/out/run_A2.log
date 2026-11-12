@@ -1,0 +1,3 @@
+run212a2.sh: line 14: 21969 Killed                  RULE=$r SEED=212 timeout 300 python3 -I rf212.py $f > out/one2.tmp 2>&1
+run212a2 finished
+exit 0

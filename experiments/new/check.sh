@@ -1193,4 +1193,14 @@ if [ -z "$pinL" ]; then
 else
   echo "P-N5-LEVEL check: FAILED"; echo "$pinL" | head -20; exit 1
 fi
+# BOX 212 RF-LEVEL (L-NEW successor 74): CANDIDATES RF-A / RF-B / RF-C (any improving rule on IDEAL-CYC(G)) and CONDITIONAL RF-D (N5's key rule on Gamma3): rule-free must-0 counters 0 on the check set and in every frozen output (summ212.py), controls fire, outputs and tower genomes pinned, quotes found (box 212 and box 209 Addendum B)
+r212=0; run212=$(cd box212 && bash check212.sh 2>&1) || r212=$?
+d212=$(diff <(printf '%s\n' "$run212") box212/check212.out 2>&1) || true
+m212='\b(IMP|CAP|CN2|CN2pi|BONLY|NOTIE|LOCGATE|LOCK2|F1|K1|K2|K3a|K3b|K3c|K3d|K3e|K4|K5new|L1sub|L1stall|L1rise|L1stallempty|L1lagback|L2|L3|L3alpha_m|L3beta_kind|L3beta_m|L5set|L5phi|NSP|P1|P2|P4|P4K2|PHclosed|PHval|PHimp|PHout|C4|DECOMP|imp3|monofail|k3fail|k4fail|einF|l3fail|phifail|phivals3|p1|pclos|p3) [1-9]'
+s212=$(cd box212 && python3 -I summ212.py 2>&1) || r212=$((r212 + 100))
+if [ "$r212" -eq 0 ] && [ -z "$d212" ] && ! grep -v '^ctrl' box212/check212.out | grep -Eq "$m212" && grep -Eq '^ctrl .*\bL3 [1-9]' box212/check212.out && grep -Eq '^ctrlimp .*\bimp3 [1-9]' box212/check212.out && grep -Eq '^ctrllv .*\bl3fail [1-9]' box212/check212.out && [ "$(printf '%s\n' "$s212" | grep -c 'must0_sum 0 ')" -eq 31 ] && ! printf '%s\n' "$s212" | grep -Eq 'must0_sum [1-9]|MISSING' && printf '%s\n' "$s212" | grep -q '^VIOLATION lines: 0 ' && diff <(printf '%s\n' "$s212") box212/out/summ212.txt > /dev/null && (cd box212/out && sha1sum -c --quiet SHA1SUMS) && (cd box212/inst && sha1sum -c --quiet SHA1SUMS) && grep -q '^quotes 30 missing 0 ' box212/quotes212.out && grep -q '^quotes 6 missing 0 ' box212/quotes209B.out; then
+  echo "BOX 212 RF-LEVEL: rule-free must-0 counters 0 (check set; 21 rf212 and 10 rfd212 frozen rows), controls fire, outputs and tower genomes pinned, quotes 30 + 6 found: PASS"
+else
+  echo "BOX 212 RF-LEVEL check: FAILED (exit $r212)"; echo "$d212" | head -30; echo "$run212" | tail -15; printf '%s\n' "$s212" | tail -5; exit 1
+fi
 rm -rf "$tmp"
