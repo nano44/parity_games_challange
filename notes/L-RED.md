@@ -3492,3 +3492,23 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
 - Lessons: (1) never type a SHA before git prints it (13:50Z slip, corrected); (2) stamps from date -u in the same command (10:35Z slip);
   (3) a two-player window after the C-run stops repeats a fixpoint: cut windows at the first state with no C switch; (4) push.sh takes
   ~25 min here: plan commits around it, never commit while it runs, <= 2 CPU jobs including verify.
+
+## Successor 67 (Fable 5.2, xhigh; from 2026-11-12 18:03Z, date -u) — R237 (2)
+- Trap check: local claude/l-red 308 behind; ff to 5eca1c328. Clock skew 0 s. Handover check 2165ad19c (VERIFY PASS 18:30Z; lean / oink NOT RUN),
+  sent to the Lead 18:30Z; waiting for «go» (written 2026-11-12T18:31Z).
+- Envs (scratchpad, rebuilt each container): BOX104 = <dir>/experiments/si/box104 of `git archive 26704e01 experiments/si/box104`;
+  LNEW = `git archive fcba92fc experiments/new experiments/si/si.py experiments/harness experiments/hard-families experiments/n5-second`;
+  LRED = `git archive 8c01d40e experiments/red/r217`; LLIT = `git archive 5c53efbd docs/lit/T66-depth-check.py` (each | tar -x -C <dir>).
+- Tools experiments/red/r237 (all need the four envs):
+  - n5s237.py: SPEC-EXACT own engine (S1 (i)-(vi), FIX 1-4, Q2-Q4; modes spec / xi) written from the SPEC text; xs237.py: state by state
+    equal to box 190's n5v on 8,900 random games (spec + xi; n <= 12 / 30 / 80), control CTRL=1 fires (trajdiff 60 / 1,000).
+  - w237.py: check(H, s0, eng) = wr237.check on engine «x» (n5x236) or «s» (n5s237); check_spec = WRAP (v) + Remark (3) counters for N5
+    (vfb, vend, vnonstd, vpick, vkey, r3); second = box 104's own check (n5v xi).
+  - climb237.py TAG SEED EVALS NMAX (RESUME=1, TLIMIT, START=lmcs1|fried2|file, CTRL=1; checkpoint out/ck_TAG.json with the rng state);
+    exh237.py N (every H with n vertices, every s0; PART=i/k, RESUME=1; n = 3: 438,976 games); aim237.py FAMILY ... (perm / fperm /
+    eqprio / oneowner / loops / optstart / big).
+- Smoke DATA (seconds): rand300 on n5x236 = R237 (1) (0; 14 tie rows); on n5s237: 0 and 300 / 300 rows equal box 104's. exh n = 1, 2: 0
+  (control nohoward 288). Speed: ~30 ms per climb eval at n <= 12 (both own engines + spec counters).
+- Lesson: n5x236 «spec» mode is not SPEC's tie rule; use n5s237 for anything about N5's key rule (box 105 replay).
+- RESUME POINT: after «go»: (a) exh237 3 (2 parts), (b) climb237 small (n <= 12) two seeds, then medium (n <= 30) two seeds, CTRL=1
+  control, (c) aim237 families, (d) docs/red/R237-w4.md, (e) the (W4) proof read, (f) box 105 replay on n5s237.
