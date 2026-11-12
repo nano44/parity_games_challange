@@ -467,3 +467,45 @@ My verdicts rest on my own derivations above and on my own engine. I did not rea
   under HYPOTHESIS [E-LEV].
 - SPLIT-COUNT is a reduction, not a bound: G-N5-TIME stays OPEN, and nothing is claimed for N5 or M4.
 - I have not read docs/referee/ for this byte test.
+
+## Addendum 3 (REFEREE-2 successor 37, Opus 5.5 under D1; 2026-11-12 by date -u): byte test of fixes entries 3-4 + line L-3 (claude/l-new 621e6b77)
+- Object (re-hashed from `git show 621e6b77:…`):
+  - L-3: docs/new/P-N5-SPLIT-line-L3.txt, sha1 a8661c4b7998aafc02299c43dfe4e2c6320f73ee, 9,796 B. One line, no «|», 273 «(» = 273 «)».
+  - Intermediate L-2: d8888d0b, 9,521 B.
+  - L-1: 634b2fdf, my Addendum 2 MATCH; unchanged.
+  - Fixes: sha1 242ade7b, 13,865 B. The diff 8f4dab7e..621e6b77 removes no line: entries 3-4 are appended.
+  - The packet (5bc1b1f3) is unchanged.
+- Independent rebuild: R2-P-N5-SPLIT/bt_l3.py (my code; mkl2_199.py and mkl3_199.py not imported), output bt_l3.out.
+  - It parses the six «old» → «new» strings from the whitespace-normalised fixes entries 3-4, in order:
+    - R-D7a's D7 replacement;
+    - R-D7a's DATA insertion after «max split pairs 5 (FW6_4, FW8_4);»;
+    - R-U127 (a), (b), (c), (d).
+  - It applies them to L-1, each Old asserted once. Result: sha1 a8661c4b…, 9,796 B, BYTE-EQUAL to the lane's L-3 (cmp equal).
+- Diff L-1 → L-3, word level: 10 regions, all inside the six replacements. Four are in D7, then (a), (b), the DATA insertion, (c) and
+  (d). There is no other change. «RA-LOG», «MW32_2, 445031d1» and «with fixes entries 1-2» are absent.
+- Meaning.
+  - D7 now claims only «fan-in 1 of RA as a game property». That is an explicit bound, so finite instances kill it (NK6_cl21 3,
+    DSALT9_n416 4). This matches my predecessor's box-4 re-run and Addendum 1. DSALT9_n416 now carries its sha1 da3308b5, which closes my
+    optional N-4.
+  - The unit «max over (v, I, y) of the number of letters of RA(y), box198/pair198.out maxRA» agrees with r2split's maxRA (max |RA(y)|).
+  - RA-LOG and the bounded multiplicity leave DEAD (L43). Their numbers enter as DATA, with sources:
+    - The RA depth 4 / 8 / 12 / 16 on FW4/8/12/16_2 cites my predecessor (4948ce5d). His l. 272 there reads «The longest RA chain (counting
+      y) on FW4/8/12/16_2 is 4 / 8 / 12 / 16», and the line quotes it correctly.
+    - The MW(n) multiplicity n is «not re-run by the lane or a referee». That is true: my predecessor's l. 273 says «The multiplicity
+      m(y, z) = n on MW is L-SI's census. I did not compute it».
+  - Units (a), (b), (c), read against split199.py (unchanged since my review).
+    - maxc is the number of y-tops (`len(L)`) of one (v, I, y), maximised. maxSPL is the number of distinct (u, b) = (p[1], p[2]) of one
+      (v, I, y). T3 is `len(H) − 1`. All three are right.
+    - Optional N-5: T3 is the last state's index (= the number of steps); the run has T3 + 1 states. «unit: states of the HOW3 run» is
+      loose, not false.
+    - «199 on MW32_2» is right: split199.out's largest T3 is 199. My GATE spot replay gives T 199 on MW32_2 too (IDEAL-CYC; R2-P-N5-GATE
+      Add. 4).
+- Spot replay, cheap, as asked (fwdep_l3.out).
+  - FW4_2 (sha1 e583d437) and FW8_2 (108a63cf) are re-hashed equal to box199/inst/SHA1SUMS. r2split.py gives maxDep 4 and 8, with T3 17
+    and 29.
+  - This is the same tool as the cited 4948ce5d numbers, so it confirms that they reproduce on this commit's inputs. It is not a third
+    engine.
+  - FW12_2 and FW16_2 were not re-run now. FW16_2's C = 3 is re-run on IDEAL-CYC in R2-P-N5-GATE Add. 4.
+- Verdict: L-3 (621e6b77, sha1 a8661c4b) MATCHES. L-1 → L-3 is exactly rulings R-D7a and R-U127, as stated in fixes entries 3-4, and
+  every new DATA number and unit is correct. P-N5-SPLIT's signed statements are unchanged.
+- I did not read docs/referee/ for this test.
