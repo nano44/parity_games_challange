@@ -1,0 +1,3 @@
+MWR4_2.json N+M 145 {"T3": 30, "deep": 0, "dmax": -1, "unm": 13, "qflip": 0, "qint": 0, "gates": 97, "multi": 1, "maxfl": 9, "DeepInt": 0, "DeepBig": 0, "dmaxInt": -1, "Iint": 2, "nscc": 5, "big": 44}
+C6G8_n54.json N+M 204 {"T3": 17, "deep": 1, "dmax": 4, "unm": 51, "qflip": 13, "qint": 13, "gates": 150, "multi": 16, "maxfl": 11, "DeepInt": 1, "DeepBig": 1, "dmaxInt": 4, "Iint": 50, "nscc": 5, "big": 50}
+DHIB26_2804.json N+M 400 {"T3": 28, "deep": 18, "dmax": 8, "unm": 98, "qflip": 50, "qint": 49, "gates": 292, "multi": 31, "maxfl": 15, "DeepInt": 16, "DeepBig": 16, "dmaxInt": 8, "Iint": 114, "nscc": 7, "big": 102}

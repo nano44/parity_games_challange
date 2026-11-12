@@ -1,0 +1,4 @@
+BEST BEST_D150b_D0_dm2_W0_NM140_5c5a0868.json sha1 5c5a0868309e1b42e3f5b6eacb28f9227d0d6d58 score [0, 2, 0] {"NM": 140, "T3": 9, "deep": 0, "dmax": 2, "unm": 0, "qflip": 22, "qint": 22, "gates": 96, "multi": 30, "maxfl": 4, "DeepInt": 0, "DeepBig": 0, "dmaxInt": 2, "Iint": 67, "nscc": 7, "big": 38} engine2 {"dmax": 2, "deep": 0, "qflip": 22, "qint": 22, "gates": 96, "unm": 0, "sumf": 0, "minf": 0, "tie": 0, "multi": 30, "tight": 0, "maxfl": 4, "T3": 9} agree True t 10:39:06Z
+START r 0 step 0 [0, 2, 0] {"NM": 140, "T3": 9, "deep": 0, "dmax": 2, "unm": 0, "qflip": 22, "qint": 22, "gates": 96, "multi": 30, "maxfl": 4, "DeepInt": 0, "DeepBig": 0, "dmaxInt": 2, "Iint": 67, "nscc": 7, "big": 38}
+restart 0 seed C98_453g_150.json end [0, 2, 0] {"NM": 154, "T3": 9, "deep": 0, "dmax": 2, "unm": 0, "qflip": 34, "qint": 31, "gates": 105, "multi": 43, "maxfl": 4, "DeepInt": 0, "DeepBig": 0, "dmaxInt": 2, "Iint": 71, "nscc": 9, "big": 41} global [0, 2, 0] evals 184 167s
+DONE

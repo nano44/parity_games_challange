@@ -1,0 +1,4 @@
+START r 0 step 0 [3, 4, 3] {"NM": 204, "T3": 17, "deep": 3, "dmax": 4, "unm": 0, "qflip": 54, "qint": 51, "gates": 150, "multi": 16, "maxfl": 11, "DeepInt": 3, "DeepBig": 3, "dmaxInt": 4, "Iint": 50, "nscc": 5, "big": 50}
+GROWN GROWN_G300_S5_5_5_NM281_203a3c81.json sha1 203a3c81d92f8bb2c2298473973e13136dcc7f87 {"NM": 281, "T3": 13, "deep": 5, "dmax": 5, "unm": 0, "qflip": 40, "qint": 31, "gates": 197, "multi": 19, "maxfl": 5, "DeepInt": 5, "DeepBig": 5, "dmaxInt": 5, "Iint": 67, "nscc": 12, "big": 73} evals 66
+restart 0 seed C6G8_n54.json end [5, 5, 5] {"NM": 281, "T3": 13, "deep": 5, "dmax": 5, "unm": 0, "qflip": 40, "qint": 31, "gates": 197, "multi": 19, "maxfl": 5, "DeepInt": 5, "DeepBig": 5, "dmaxInt": 5, "Iint": 67, "nscc": 12, "big": 73} global [3, 4, 3] evals 66 148s
+DONE

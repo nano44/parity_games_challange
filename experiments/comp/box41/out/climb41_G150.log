@@ -1,0 +1,4 @@
+START r 0 step 0 [0, 2, 0] {"NM": 72, "T3": 19, "deep": 0, "dmax": 2, "unm": 0, "qflip": 33, "qint": 33, "gates": 52, "multi": 25, "maxfl": 6, "DeepInt": 0, "DeepBig": 0, "dmaxInt": 2, "Iint": 31, "nscc": 2, "big": 19}
+GROWN GROWN_G150_S0_2_0_NM140_5c5a0868.json sha1 5c5a0868309e1b42e3f5b6eacb28f9227d0d6d58 {"NM": 140, "T3": 9, "deep": 0, "dmax": 2, "unm": 0, "qflip": 22, "qint": 22, "gates": 96, "multi": 30, "maxfl": 4, "DeepInt": 0, "DeepBig": 0, "dmaxInt": 2, "Iint": 67, "nscc": 7, "big": 38} evals 45
+restart 0 seed C98_4_5_3.json end [0, 2, 0] {"NM": 140, "T3": 9, "deep": 0, "dmax": 2, "unm": 0, "qflip": 22, "qint": 22, "gates": 96, "multi": 30, "maxfl": 4, "DeepInt": 0, "DeepBig": 0, "dmaxInt": 2, "Iint": 67, "nscc": 7, "big": 38} global [0, 2, 0] evals 45 23s
+DONE
