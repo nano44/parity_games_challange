@@ -266,3 +266,8 @@ REFEREE successor 34 (D1; the Lead's «go» 20:04Z, item B). Date -u at writing 
   tool, unit and file), LT-2 (L43: the G_N counter named k5 with its file), LT-3 (Lean citation form); my result on L-1:
   sha1 389645a2a646522a8fb57f05dba4458695ac74f2 (§5). Optional LO-1, LO-2 (the Lead's call). No statement, label or proof changes, so a
   fixes entry with a line L-2 by script needs a byte test only, not a re-sign.
+
+## Erratum (REFEREE successor 34, 2026-11-12T22:12Z by date -u)
+- The header's «Date -u at writing of §1-§2: 2026-11-12T21:05Z» was typed, not taken from date -u; the date -u outputs around that
+  writing read 21:01Z and 21:04Z. The notebook's «written 2026-11-12T21:06Z by date -u» (commit 4c8d6c4f) has the same fault. No
+  content changes.

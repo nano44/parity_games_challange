@@ -188,3 +188,30 @@ REFEREE successor 34 (D1; the Lead's item D, 22:02Z). Date -u at writing: 2026-1
   |H| at bit cost, §2.1). §12's reading is right: a dead end for N5′-xi; no algorithm or bound claimed; M3 / M4 untouched; G-N5-TIME
   (about N5) OPEN.
 
+## 0. Verdicts (REFEREE successor 34; date -u at writing: see the commit). First of two referee signatures; REFEREE-2 not read.
+| § | statement | verdict |
+| --- | --- | --- |
+| §2 | Definition of W(H, s0), vertex order, size count, rank facts (R_W), standard state | **SIGN** (definition; count and (R_W) re-derived) |
+| §2.4 | Fact (H) | **SIGN** |
+| §4.1 | PAD-W (W1) | **SIGN** |
+| §4.2 | S3-W = WRAP (i) | **SIGN** |
+| §4.3 | K3-W (a)-(d) with K2-r-W | **SIGN** |
+| §4.4 | ODD-W (a)-(d) | **SIGN** |
+| §4.5 | TAU-W = WRAP (ii) = E0-W | **SIGN** |
+| §4.6 | ESC-W | **SIGN** |
+| §4.7 | REACH-W = WRAP (iii), first half of (v) | **SIGN** |
+| §4.8 | E1-W, E2-W, E3-W, E4-W (a), (b); ENDGAME-W = WRAP (iv), second half of (v) | **SIGN** |
+| §3 | Lemma WRAP (i)-(v) as a whole | **SIGN** |
+| §5 | Remark 3 (under [RULE]) | **SIGN** (PROVED under [RULE]); Remarks 1, 2 READING |
+| §6 | Claim NT (this lane's claim, REFEREE 33; the packet's rendering) | **SIGN** (as its originating lane; L41: needs REFEREE-2's independent signature) |
+| §6 | Corollary NT-RUN | **SIGN** (CONDITIONAL on WRAP, as labelled) |
+| §7 | Statement XI-EXP | **SIGN AS CONDITIONAL**: correct as stated, conditional on WRAP and Claim NT being signed by two referees, with [F11] Theorem 6.14 cited as published on READING F-1 (both confirmed from the PDF, §1.3) |
+| §8 | DEAD row (draft) | scope and obstruction CORRECT: N5′-xi as an M4 candidate only; DEAD-CONDITIONAL until two signatures (L43) |
+- Gaps: **none.** External premise: [F11] arXiv 1106.0778v2 (sha256 46c96f44…), opened by me: Theorem 6.14 p. 23, I^loc p. 6, 1-sink
+  p. 8, Lemma 6.7 p. 17, the restriction p. 17-18; F-1 (Figure-4 priorities) confirmed by my own transcription; F-2 confirmed; Lemmas
+  6.2-6.13 not read (not needed for «as published»).
+- Scope of the signatures: as the packet states (scope line): N5 (SPEC) not affected; G-N5-TIME OPEN; not M3 / M4; not a TARGET.md claim.
+- Note N-1 (§6): «Γ3(G)» for R118-R126 / box 208 should read «Γ(G) / Γ3(G)»; wording only.
+- **Line L-1 (sha1 896f9e97…): does NOT match yet.** Required: LW-1 (L43: the DATA clause gives T_n as numbers with unit, column and
+  files; C142 E-1's ruling); my result on L-1: sha1 be7da8f3a98e4c5a26158eae9aa2766c56531222. Optional LW-2, LW-3 (the Lead's call). No
+  statement, label or proof changes: a fixes entry with L-2 by script needs a byte test, not a re-sign.
