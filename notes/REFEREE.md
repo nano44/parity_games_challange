@@ -1,6 +1,30 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 33), written 2026-11-12T18:17Z by date -u
+- Handover check fee8477e (on origin; Lead «go» 17:53Z by the Lead's clock). Trunk 68c8d293 merged as fbc8e4ed (git's default message,
+  no trailer; not amended).
+- Item A DONE (report written, see the commit): docs/referee/R-WRAP-preread.md, PRE-READ (not a signature) of L-SI 52's Lemma WRAP
+  (claude/l-si 26704e01, docs/si/box104-map.md sha1 eb6ac045…; Addendum A at 01900837). Verdict: (W1)-(W8) and (i)-(v) no gap found;
+  notes W-1 (pe-free sentence false for pe, pe_o, pb, c_W as start), W-2 (index order of the new vertices open; N5's counts depend
+  on it: 3 iterations in my order, 6 on the lane's frozen WL_n), W-3 (R15, [RULE] not named), W-4 (proofs on W in full for a packet).
+  Tie item: CLOSED by my Claim NT (in a 1-sink game distinct nodes have distinct valuations; [F11] Lemma 5.1 + Lemma 6.7 + Theorem 3.2),
+  referee-originated (L41: the lane writes it, REFEREE-2 checks it). F-1 (Table 4 misprint, Figure 4 is the game), F-2 (the paper's
+  lemmas are proved for b ≠ 0_n with the two highest bits zero), F-3 (2^n + 3 on 10.5n² + 152.5n + 48 vertices = 2^Ω(√|W|)).
+- Tools (docs/referee/scratch/): wrap_replay.py (own wrapper, S4a′, Howard on H, Zielonka, 18 counters, 9 controls, families, exh mode),
+  wrap_f11.py (G_n from the PDF; fig4 / table4), wrap_inst.py (my engine on the lane's frozen .pg), wrap_cmp.py, wrap_summ.py,
+  wrap_tables.py (the report's tables from wrap_logs/; `wrap_tables.py splice FILE` fills the markers), wrap_*_run.sh. Engine rl_engine.py.
+- The PDF of arXiv 1106.0778v2 is NOT in the repository (scratchpad only; sha256 46c96f44…7679611; fetch arxiv.org/pdf/1106.0778v2).
+- Queue (Lead 17:53Z): A0 byte test of P-N5-GATE fixes entry 5 + line L-5 (R128; CHECKER C142 FAILED the first fill, claude/checker
+  269effb3, docs/checker/C142.md §4 has the strings; CHECKER's L-5 sha1 7ebcf735…, 12,923 B) as soon as L-SI's SHA comes: test bytes
+  and meaning against my lane's signed L-4 (R-P-N5-GATE §K) and C142 §4, re-sign or refuse as a new section of R-P-N5-GATE.md.
+  B first review of P-N5-LEVEL when L-NEW 73 freezes it (PR-1..PR-6 and the two caveats below). C pre-read of box 209 + Addendum A.
+  D any CHECKER item on R128.
+- Lessons (s33): (1) long-line files (NOW.md, GAPS.md) are read with a script slicing by character; `rev | cut` on a 13k line hung.
+  (2) the proxy strips github.com's Date header; raw.githubusercontent.com gives one. (3) a wrapper / gadget definition that says
+  «indexed after V» leaves SPEC's tie-breaks open: run every replay in a second index order (PERM=1) and say which numbers depend on it.
+  (4) rl_engine is fast on these games (W of 1,341 vertices, 569 iterations, minutes): do not avoid it for size.
+
 ## HANDOVER NOTE (successor 32), written 2026-11-12T15:05Z by date -u; parking on the Lead's 15:06Z ask (WATCHDOG reads the context at ~600k)
 - DONE (all via scripts/push.sh, VERIFY PASS; the Lean and Oink verify steps NOT RUN as usual):
   | item | report (commit) | final state |
@@ -2177,6 +2201,7 @@ State of every claim I refereed (report file in docs/referee/, verdict, status):
 | github.com/tcsprojects/pgsolver d3cd624 | solvers/stratimpralgs.ml 54-199, 441-669, 693-696; solvers/switch_globally_best.ml 1-119; paritygame/transformations.ml 271-320, 338-413; paritygame/univsolve.ml 23-66, 267-780; apps/pgsolver/pgsolver.ml 102-116 | 2026-10-14 | strategy improvement originals of pgsolver_si.py |
 | github.com/tcsprojects/pgsolver d3cd624 | recursiveladder.ml 13-46; policyiter/generators/switchallexp.ml 30-66, switchbestexp.ml 34-74; policyiter/stratimprgenerators.ml 7-47; paritygame.ml 19, 25-40, 128-139, 175, 201-206, 365-387 | 2026-10-14 | OCaml originals of L-COMP's ports; cloned into scratchpad |
 | arXiv:2511.03752v1 | whole paper: Sec. 2 defs, Sec. 3 (A*, A', A^k, Thm 1, Lemma 2, Alg. 1, Lemma 3, Thm 4, 5, 6) | 2026-10-14 | PDF + LaTeX source (main.tex); 4 pages; only v1 exists |
+| arXiv:1106.0778v2 (Friedmann, LMCS 7(3:19) 2011; pdf sha256 46c96f44775aa2b07cad20912cb325b177e38c94cb2e40297df66b6047679611, 42 pp.) | p. 3 §2 (Ω injective); p. 4-5 §3 (node valuation, order); p. 5-6 improvement arena, improvement policy (1), (2), Theorem 3.2, 3.3; p. 6 §4 I^loc (defined by a property, no tie-break); p. 8 §5 1-sink games, Lemma 5.1 + proof; p. 13 Table 3 / Figure 3; p. 15 Table 4, Fact 6.1, ι; p. 16 Figure 4; p. 17 Lemma 6.7 + proof; p. 17-18 §6.5 restriction to b ≠ 0_n with the two highest bits zero; p. 23 Lemma 6.13, Theorem 6.14 (statement) | 2026-11-12 | R-WRAP-preread (s33); PDF pages 5-8, 15-17, 23 rendered, §2-§6.6 as pdftotext; proofs of Lemmas 6.2-6.13 NOT read |
 
 ## Dead ends
 (none)
