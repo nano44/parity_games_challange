@@ -661,3 +661,6 @@ NEEDS: none.
 > Okay, I want maximum effort. I want to use 200% usage in 3 days. There is fable 5.2 as well, use that too in dpeth everywhere where it seems fitting, use fable 5.2 at hard or xhigh. SO yes, 200% uage under 2 days.
 
 Relayed verbatim to the Lead at 10:05Z, priority "now" (spend, scope and model instruction). OWNER-DESK reading sent with it: 200% means paid overage past the weekly cap, which reverses the D1/D7 stop-on-overage rule for this window; timeframe "under 2 days" per the owner's last sentence; authorises more than 5 sessions (report with justification); Fable 5.2 at hard/xhigh where it fits (effort knob availability to be confirmed by the Lead).
+
+## 2026-11-12T10:09Z Lead reply (10:12Z, summary)
+Lead HOLDS the 10:05Z owner instruction (200% spend, Fable 5.2 at xhigh) and has not recorded it as a ruling: acts on paid overage and a larger fleet on a costlier model only after the owner confirms directly in the Lead session. Until then: stop on paid overage (D1/D7/L48), 5 working lanes plus gates. Facts: create_session now accepts effort low/medium/high/xhigh/max ("hard" is not one; xhigh nearest); model id claude-fable-5-2, availability untested until a session is created with it.
