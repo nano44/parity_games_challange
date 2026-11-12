@@ -121,3 +121,48 @@ over the simple paths P from v to Λ_a(v).
 - arXiv 2506.12254v1 full text (abstract; §1; §3 Conjecture 3.1, Theorem 3.2; §5).
 - arXiv 1008.0530 (abstract). arXiv 1208.5083 (abstract).
 - Not opened, cited only as quoted by 2506.12254: Hansen 2012 (thesis, Conjecture 6.1.1); Hansen–Zwick 2010 (ISAAC, LNCS 6506).
+
+## Addendum A (L-SI successor 51, 2026-11-12T09:54Z (date -u); append-only, §0-§4 unchanged): the chain to a polynomial T3, and its scope
+Lead 09:56Z: «write this first, before box 102 work». Everything below is a CONDITIONAL of lane lemmas. All of them are unrefereed except
+the landed R-ids named. DEEP3 is a CONJECTURE. Nothing here is a TARGET.md claim, M3 or M4.
+
+### A.1 The chain (polynomial T3 ⇐ DEEP3)
+Columns: link | statement (short) | status | attacked by, verdict | premises (landed R-ids).
+
+| link | statement | status | attacked by, verdict | premises |
+| --- | --- | --- | --- | --- |
+| REACH3-ALL, END-T3 | N5′-xi from S3 on Γ3(G) is a HOW3 run at the movers until its first fallback at T3 + 1; it makes exactly T3 + 3 iterations | LANDED (R125; R124 END-T3, its condition discharged by R125) | both referees (signed) | R104, R117, R118, R124, R125 |
+| SCC-RED (box 99 §2 + Add. A) | T3 ≤ max over SCC chains of D(G) of Σ (H(C) + 1), H(C) over all legal tie resolutions | PROVED, lane | L-RED 65 R232: SURVIVES, with wording gap G1 (fixed in Add. A) | R125 (HOW3, reachability from R104's edges) |
+| CAP (box 99 §3) | an option's value is capped by its β-face | PROVED, lane (not used by the bound itself) | L-RED 65 R232: SURVIVES | R125 (f) LOC-GATE3, (i) NO-TIE3, CN2-3, F4′ |
+| ONE-CROSS3 + INT-ONLY (L-RED 65, R232 §0) | a gate with a constant face flips ≤ 1 time; in G_C after t0 only internal gates re-flip | PROVED, lane (L-RED's own) | not attacked by another lane | R125 (d) F1, (f), (i) |
+| TWO-CROSS (box 100 §2) | each flip away from a face = a change of that face; flips ≤ ch(pe) + ch(pβ) | PROVED, lane | not yet attacked | R125 (d) F1, (f), (i) |
+| DEPTH-COUNT3 (box 100 §3) | per vertex ≤ n3 − 1 Λ changes and ≤ n3(S_c(n3) − 1) changes of depth ≤ c | PROVED, lane (transfer of L-NEW 70's box 206 lemma) | not yet attacked | R125 (d) F1; the VJ order (VJ00 §4.2, R118's premise list) |
+| WINDOW (box 100 §4; all-vertex form in §3 here) | the run in C after t0 ≤ (#windows) · (window length) | PROVED, lane | not yet attacked | R125 (HOW3, [OPT] best response), box 99 §1 |
+| LAM-GAP (§2 here) | a one-player Howard window with every Λ constant lasts ≤ \|Ch\| + 1 iterations | PROVED, lane | queued: L-RED 66 first item (Lead 09:56Z) | R15 (a) |
+| L1-POLY, SCC-POLY (§3 here) | L1(C) ≤ (n3(n3 − 1) + 1)(N_C + 2); H-run(C) ≤ (…)·(N_C + 2) | PROVED, lane (corollaries of the rows above) | not yet attacked | as the rows above |
+| DEEP3 (box 100 §5.2) | for some fixed c, internal-gate flips charged to depth > c are polynomially many | CONJECTURE (DATA only) | queued: L-RED 66 (kill side); L-SI box 102 (proof side) | none |
+
+The conditional, as one sentence: if DEEP3 holds on a family of genomes, then by SCC-POLY and SCC-RED, T3 is bounded by a polynomial in
+N + M on that family. By END-T3, N5′-xi from S3 on Γ3(G) then makes a polynomial number of iterations.
+
+### A.2 Scope, in TARGET.md's terms
+- What T3 counts: the number of HOW3 states of N5′-xi's run (R118's [N5XI], SPEC with box 190's S4a tie rule) from S3 on Γ3(G) before
+  its first fallback (R125 REACH3-ALL; T3 + 1 = the first fallback). The run's total is exactly T3 + 3 iterations (R124 ENDGAME-3 /
+  END-T3).
+- Inputs: the games Γ3(G) for every genome G of R104 (R117's Γ3; Ξ-cycles and Ξ self-loops allowed; any Ξ-feedback number k). This is
+  under the standing SPEC premise 1E-N3 of R57 (b), as in R104 / R117 / R124.
+  - The chain does NOT use [E-LEV], a bound on k, or IDEAL-ACYC: every premise above is stated for every genome.
+  - DEEP3 itself is stated for every genome. Its DATA (box 100 §5.2) covers 26 frozen instances and 400 random genomes only.
+- What ENDGAME-3 adds (R124, landed): after the first fallback there are exactly 2 more iterations, so the WHOLE run of N5′-xi (and of
+  N5) is T3 + 3, resp. F + 2 iterations. A bound on T3 is therefore a bound on the run. For N5 (SPEC's own S4a tie rule), R125's REACH3-ALL
+  is stated for N5′-xi only. The chain would cover N5 only if N5's mover phase is also a HOW3 run (any legal tie resolution, as H(C) now
+  allows). That is NOT established here.
+- What the chain would NOT give:
+  - M4. TARGET.md §2 asks for an algorithm polynomial on EVERY parity game; §4: «Polynomial only on a restricted class … does not
+    count as M4». The Γ3(G) games are a restricted class (the genome games of R104), and the chain says nothing about N5 or N5′-xi on
+    any other game.
+  - TARGET.md §4 also excludes «Correctness or running time resting on an unproved conjecture»; this rests on DEEP3.
+  - It counts iterations only: the cost of one iteration at bit cost (TARGET.md §3, gauntlet step 4) is a separate item.
+  - It gives no exact bound (H(C) ≤ M_C, U-FREE's T3 ≤ N + M + 4); the polynomial is crude (degree about c + 4 in n3).
+- Plainly: a chain of lane lemmas, unrefereed (except the landed rows), ending in CONJECTURE DEEP3. G-N5-TIME stays OPEN; N5′-xi stays a
+  CANDIDATE (D1).
