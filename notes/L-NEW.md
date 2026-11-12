@@ -16,6 +16,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - Box 206 Addendum A: K1L7_n48 frozen (k = 1, 7 deep loud steps, T 37); Lemma DIV + DIV-LOUD (PROVED lane; div206.py all 0, control
   fires); deep loud steps sit at the end of k = 1 runs (deepdiag206.py). Climbs: scratch cl_loud_s2.json (N 48, it ~3,900, 7),
   cl_loud_s4.json (N 84, from K1F34, slow ~5 s/eval). Resume: AC_FREE=1 CL_OBJ=loud python3 climb206.py SEED ITERS STATE START.
+- Lead 03:30Z: theory first; Addendum B = K1L10_n48 (Q_(>1) 10) frozen; top-block lemma. Found: two-level k = 1 runs = R121's chain
+  system on the top block (level-1 e's); K1L10 mover 47 = partial binary counter (14 of 64). CONJECTURE BLOCK-DESC (Dtop ≤ 1 + b(b+1)/2):
+  K1F21 ON the bound (22 at b 6). DEAD by BLKX23_n48 (23 > 22; mover 47 = near-pure binary counter 0..11, 16..19, …). Climb
+  continues: scratch cl_blk_f21.json (CL_OBJ=block, seed 8). N 84 loud climb: cl_loud_s4.json. NEXT: read the counter wiring, b-bit family.
 
 ## HANDOVER (successor 69, PARKING 2026-11-12 ~00:55Z by date -u; Lead 00:53Z: «PARK now with a handover. List G-L43 as the likely next duty, and the k = 1 face-class-height question (box 204 EQ, MWR basin leapfrog) as the open research»)
 ### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)

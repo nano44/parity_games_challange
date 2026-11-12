@@ -13,3 +13,6 @@ K1L7_n48.json ctrl 0 genomes 1 cases 1940 nop 0 lamp 0 symp 0 dep 0 kind 0
 WC8_2.json ctrl 0 genomes 1 cases 146 nop 0 lamp 0 symp 0 dep 0 kind 0
 k1 seed 69 ctrl 0 genomes 50 cases 217 nop 0 lamp 0 symp 0 dep 0 kind 0
 ctrl3 K1L7_n48.json ctrl 1 genomes 1 cases 1940 nop 0 lamp 0 symp 1277 dep 0 kind 1268
+K1F21_n48.json {'T': 31, 'L': 1, 'b': 6, 'Dtop': 22, 'F0': 22, 'excess': 0, 'pfall': 0}
+K1L10_n48.json {'T': 31, 'L': 1, 'b': 6, 'Dtop': 14, 'F0': 22, 'excess': -8, 'pfall': 0}
+BLKX23_n48.json {'T': 28, 'L': 1, 'b': 6, 'Dtop': 23, 'F0': 22, 'excess': 1, 'pfall': 0}

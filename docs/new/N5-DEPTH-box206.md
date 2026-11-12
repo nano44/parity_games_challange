@@ -174,3 +174,46 @@ vertices; K2's successor is K1 at every state (LOC-K2). So p is a mover (σ chan
 - N 48 (seed 2, resumed from K1L7_n48's state): 7 deep loud steps (movers) unchanged from iteration 3,000 to 3,900 (T 37 → 38).
 - N 84 (seed 4, from K1F34_n84, start 2): 150 iterations so far (≈ 5 s per evaluation at N 84), no gain yet.
 - So far: 7 at N 48 against 2 at N 84; one local climb per size, nothing about growth in N (the Lead's trend request: next report).
+
+## Addendum B (L-NEW successor 70; Lead 03:30Z: «Ruling: theory first. Freeze the N 48 best (Q_(>1) = 10) as Addendum B … Theory target: the top-block lemma»; written 2026-11-12 by date -u)
+### B1. K1L10_n48 (frozen)
+- inst/K1L10_n48.json (sha1 in inst/SHA1SUMS; k = 1): climb206.py seed 2 (CL_OBJ=loud) at 9,000 iterations, score (10, 4, 31); full log
+  out/climb206_loud_s2.log (7 at iteration 3,000, 9 at 8,440, 10 at 8,829; still rising: search effort, not a trend in N).
+- Scope all (out/depth206_K1L10.out): T 31, loud 28; by loud depth L-1 1, L0 16, L1 1, L2 3, L3 1, L4 6: Q_(>1) = 10; must-0 counters 0;
+  DIV counters 0 (1,694 cases). Deep loud steps (out/deepdiag206_K1L10.out): steps 22-31 of 31, all at switching movers; steps 27-31 are
+  p-steps (one mover switches, no gate flips), the propagation phase that BR-SEG (R118) bounds by N per p-run.
+- Ascents: max over plays 4, loud depth max 4 (ascdepth206.py: ldfail 0 on this genome).
+### B2. What the top block does (DATA; block206.py, out/block206.out; READING)
+- Every k = 1 record except B400_r32 (levels 0-2) has two levels, 0 and 1 (MWR, K1F21, K1F34, K1C16, K1L7, K1L10). Level-0 gates take the β-face at every
+  state (R118 LEVEL0), so E_t(x) is a set of level-1 e-vertices: the TOP BLOCK (b := the number of level-1 options). The whole class
+  dynamics at fixed Λ is a lexicographically rising sequence of subsets of the top block.
+- On K1L10 the top block has b = 6 elements (e-positions 96 … 91, gates of the level-1 movers 33, 32, 30, 31, 34, 46). Mover 47's block
+  set over the run (bits = positions 96 … 91): ...... → ..1... → ..1.1. → .1..11 → .1.1.1 → .1.11. → .1.111 → 1....1 → 1.1... → 1.1.1.
+  → 1.1.11 → 1.11.1 → 1.111. → 1.1111: 14 values, with counter-like resets (.1.111 → 1....1). It is a PARTIAL binary counter on the
+  block: 14 of the 64 subsets at one mover, 19 over all movers.
+- READING: this is the abstract chain system CS(b) of RESULTS R121 realised by a game: items = the b top-block e-vertices, next(g) = the
+  first top-block e-vertex on the play of g's W-target (a level-0 mover), a mover's set = the chain from its first top-block e-vertex,
+  ascents = steps of a chain to a more relevant item (here ≤ 4). R121's HUB-ASC bounds the values by F′_B(M) for B ascents; its tight
+  B = 0 value is F_0(b) = 1 + b(b + 1)/2, and CS(4) with B = 1 already reaches 16 = 2^4 abstractly (R121 DATA: «B 1 max 16 at M 4»).
+  So the abstract system allows full counters on the block; the question is whether IDEAL-CYC at k = 1 can drive one.
+- CONJECTURE BLOCK-DESC (new, open; tested): at every mover x, the number Dtop(x) of distinct top-block sets over the run is at most
+  F_0(b) = 1 + b(b + 1)/2, as if the chains had no ascents. With b ≤ M it bounds D_mov on two-level k = 1 genomes by (2M + 3)·F_0(M)
+  (Λ-values per R121), hence T_CYC polynomial there (Theorem EQ, box 204). DATA (unit: max over movers of Dtop − F_0(b), «excess»;
+  must be ≤ 0): K1F21 **0** (22 = F_0(6): on the bound), K1L7 −4 (18 vs 22), K1L10 −8 (14 vs 22), K1F34 −21, MWR8 −38, K1C16 −1,449,
+  B400_r32 −10 (three levels; its top block is level 2, b 4, Dtop 1), MW8_2 (k = 2) −21, CT12 −22, WC8 −43; 1,000 random k = 1
+  genomes (seed 70) and 1,000 rand191 genomes (seed 71): max excess −1 (at b = 2); pfall (block part falls at fixed Λ) 0 everywhere.
+- **DEAD BLOCK-DESC** (killed by a climb): inst/BLKX23_n48.json (sha1 in inst/SHA1SUMS; k = 1 by
+  fvs202; two levels; b = 6): Dtop = 23 > F_0(6) = 22 (out/block206_BLKX23.out; pfall 0). It is climb206.py CL_OBJ=block seed 8 from
+  K1F21_n48 (excess 0) at iteration 41 (state at 75). IDEAL-CYC run: T 28; scope all: must-0 counters 0, maxdepth 3, loud depth ≤ 3
+  (L0 21, L1 2, L2 2, L3 1).
+- The witness is close to a pure BINARY COUNTER. Mover 47's top-block set (bits = e-positions 96 … 91), as integers: 0, 1, 2, 3, 4, 5,
+  6, 7, 8, 9, 10, 11, 16, 17, 18, 19, 33, 34, 36, 40, 41, 42, 43 (23 values; movers 46 and 29 identical). The three low bits run a
+  full count 0 → 7 and on to 11. So IDEAL-CYC at k = 1 does drive R121's chain system through a genuine counter on a top block of 6.
+- READING (kill side, the sharpest lead this lane has at k = 1): if a family of two-level k = 1 genomes with b top-block options and
+  N + M = poly(b) makes one mover count through 2^Ω(b) block sets, then D_mov − 1 ≤ T_CYC (box 204 Theorem EQ, left inequality) makes
+  T_CYC exponential at k = 1. One instance at b = 6 says nothing asymptotic; it shows the mechanism exists. Next: read the counter's
+  wiring off BLKX23 (which level-0 chains realise next(g) and the resets), and try to build the b-bit family by hand.
+- Status of the Lead's target («inside one top-level block … counted by HUB-ASC (R121) or bounded by DEPTH-COUNT»): the block dynamics
+  IS R121's chain system with ascents (B ≤ 4 on these runs), so HUB-ASC counts it with F′_B, polynomial for fixed B (no new lemma
+  needed for that). Why the end phase stays short is NOT explained: the abstract system reaches 2^b; BLOCK-DESC states the observed
+  sharper bound F_0(b), and a proof would need the game's Howard rule, not just E-MON.
