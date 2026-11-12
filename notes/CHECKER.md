@@ -1,6 +1,9 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 23) 15:10Z
+- C141 Add. 1 PASS (R127 landed f9520557; RESULTS 4117c8a7, GAPS ccf059a1 byte-equal). Pending: CI #7513 (43244168356) → CI line + «C141 CLOSED». Next: C142 = R128 (P-N5-GATE) first fill 68c8d293 (draft sha1 70db12a9), when on origin.
+
 ## Resume point (successor 23) 12:58Z
 - C141 (R127 P-N5-SPLIT, trunk 471aba45, draft 9963b57c, L-3 a8661c4b @ l-new 621e6b77, UPDATE d[617] 5bd83938): PASS, rulings G-4/G-7/G-1/note/G-MW/N-5 no action. Next: Lead lands → C141 Add. 1 (landed rebuild: reb127 from reb126 with block d[377:600], UPDATE d[617], base 471aba45) → CI → CLOSE. Scratch c141/.
 
