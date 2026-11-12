@@ -1,0 +1,4 @@
+L18b_H7_P7R256_10-11_gates P 7 R 256 LNS 10,11 FREE gates: RESULT SAT decoded -> /tmp/claude-0/-home-user-parity-games-challange/97a1ea02-8c8b-52fc-aa3b-40645cf06caf/scratchpad/l1 CHECK decoded genome, all fixed, prefix 7 -> SAT (consistent)  secs 624
+L18b_H7_P7R256_10-11_gates_dec.txt sim6 T 9 fenc T 9 sim6==fenc True rows followed (sim6, fenc): 8 8 of target 511
+F6CHECK L18b_H7_P7R256_10-11_gates_dec.txt client 13 rows 0..510 free 129 mismatches 15 [394, 402, 410, 418, 426, 434, 442, 450, 458, 466, 474, 482, 490, 498, 5
+(question 2, all six clients R 256: stopped by me at ~20:38Z to free memory for R 510; not answered)

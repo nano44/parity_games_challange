@@ -1,0 +1,6 @@
+L18b_C9_P9R64_10_gates P 9 R 64 LNS 10 FREE gates: RESULT LNS-UNSAT (this neighbourhood only; NOT a frame verdict)  secs 22
+L18b_C9_P9R64_10-12-14-15_gates P 9 R 64 LNS 10,12,14,15 FREE gates: RESULT SAT decoded -> /tmp/claude-0/-home-user-parity-games-challange/97a1ea02-8c8b-52fc-aa3b-40645cf06caf/scratchpad/l1 CHECK decoded genome, all fixed, prefix 9 -> SAT (consistent)  secs 424
+L18b_C9_P9R64_10-12-14-15_gates_dec.txt sim6 T 13 fenc T 13 sim6==fenc True rows followed (sim6, fenc): 11 11 of target 511
+F6CHECK L18b_C9_P9R64_10-12-14-15_gates_dec.txt client 13 rows 0..510 free 129 mismatches 18 [122, 138, 154, 170, 186, 202, 218, 234, 250, 378, 394, 410, 426, 4
+L18b_C9_P9R64_8-10-11_gates P 9 R 64 LNS 8,10,11 FREE gates: RESULT LNS-UNSAT (this neighbourhood only; NOT a frame verdict)  secs 106
+lnsb exit
