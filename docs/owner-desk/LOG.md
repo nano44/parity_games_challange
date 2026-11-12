@@ -683,3 +683,8 @@ Relayed verbatim to the Lead, priority "now". OWNER-DESK reading sent: a separat
 
 ## 2026-11-12T10:38Z Lead report (10:40Z, summary)
 Lead acting on the 10:05Z instruction; to be recorded as D21 / L51 (~11:20Z). Maximum effort until 2026-11-14 ~10:05Z on the owner's usage resets (general + Fable 5.2); paid overage NOT expected; if isUsingOverage = true, Lead tells the owner at once and spawns nothing new until the owner answers; running lanes stop only on an owner «stop». New successors and lanes on Fable 5.2 at effort xhigh; running Opus lanes switch at next park; CHECKER stays Opus 5.5. Fleet: 7 working lanes + 3 gates. Created on Fable 5.2 xhigh: L-NEW 72 (session_01V5yGRXmuUaLa7fpE3SAC7s), L-LIT (session_01V5yGRZyBwA3rKaGJ1Uax66), L-FORMAL new lane for Lean checks (session_01V5yGRZm5AyrczAEMySsfpN); REFEREE 32 on Fable after REFEREE 31 parks.
+
+## 2026-11-12T12:03Z owner message (verbatim)
+> so is it workign well now with the update? Are we utilising the usage?
+
+Answered from get_session (12:03Z): L-NEW 72 and L-FORMAL running on claude-fable-5-2 xhigh (cost ~$20 and ~$7 since ~10:37Z); Lead on opus-5-5 high, five-hour limit "allowed", isUsingOverage false; trunk last push 10:23Z (Lead push 471aba45 in progress). Relayed to the Lead with a request for a utilisation figure against the D21 target.
