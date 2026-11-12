@@ -1,0 +1,2 @@
+MW8_2.json N 84 M 177 {"T3": 55, "nscc": 83, "big": 2, "Mbig": 11, "locbig": 55, "maxloc": 55, "ratio": 5.0, "locfail": 10, "chainfail": 0, "bound": 271}
+FW8_2.json N 123 M 248 {"T3": 29, "nscc": 123, "big": 1, "Mbig": 8, "locbig": 27, "maxloc": 27, "ratio": 0.0, "locfail": 14, "chainfail": 0, "bound": 229}
