@@ -3432,3 +3432,16 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
      tool base r232/how3_232.py (add a tie-choice enumeration at tie events).
   3. Internal-gate re-flip structure for SCC-LIN: only internal gates of C re-flip inside G_C (INT-ONLY); characterise their flip sequences
      (oc3_232.py counts 94 internal multi-flips on 14 instances; start from MWR4_2's giant SCC).
+
+## Successor 66 (Opus 5.5; from 2026-11-12 09:30Z, date -u) — R234
+- Trap check: local claude/l-red 294 behind; ff to 6544d4849. Handover check 9cb968e42 (VERIFY PASS), Lead accepted, GO 10:00Z with NEW
+  ITEM 0 = attack L-SI 51 box 101 LAM-GAP (claude/l-si 23d39400, sha1 7e7692bb).
+- 2026-11-12T10:26Z: docs/red/R234-lamgap.md. LAM-GAP SURVIVES; Lemma SHARP (b − a ≤ |Ch|, PROVED lane, tight on DATA); GAP W1 (G_C[φ] must be taken on
+  Reach(C)); TWO-CROSS SURVIVES; DEPTH-COUNT3 GAP D1 (length-only changes with |Π| ≤ c omitted; fix + n3(n3−1)S′_c per vertex; 284 such
+  changes on the 26, 2,590 on 100 randoms); WINDOW SURVIVES with W1 + D1 (w234 replayfail 0 on 26; ctrl 14/14). Verdict sent 10:35Z.
+- Tools r234: lg234 (INDEPENDENT one-player VJ + Howard over all tie resolutions; exh / rnd / climb), xlg234 (replays lamgap101's games;
+  env LSI, RED), w234 (WINDOW replay on Γ3; env LNEW), d234 (DEPTH-COUNT3 / TWO-CROSS counters; rand mode), run234.sh [w|d|k|exh4].
+- Costs: lg234 exh 4 ~ 9 min (18.9 M runs); w234 on the 26 ~ 5 min (MWR16_2 most); d234 on the 26 ~ 3 min.
+- Lesson: a two-player window after the C-run has stopped repeats a fixpoint; cut windows at the first state with no C switch (FW8_2's
+  raw window 29 at N_C 1 is not a violation).
+- RESUME POINT: next = item 3 DEEP3 kill side (DHIB26_2804's 24 deep flips, MW32_2's 32), unless the Lead routes otherwise.

@@ -1,0 +1,7 @@
+best 1 excess -4 win 1 Ch 4 succ [[2, 4], [0, 2], [3], [0, 1], [0, 2]] par [1, 0, 1, 0, 1]
+best 5 excess -3 win 2 Ch 4 succ [[2, 4], [0, 2], [3], [0, 1, 2], [0, 2]] par [1, 0, 0, 1, 1]
+best 8 excess -2 win 2 Ch 3 succ [[2, 3, 4], [2], [3], [0, 1, 2], [0, 2]] par [1, 0, 0, 1, 1]
+best 215 excess -1 win 2 Ch 2 succ [[1, 2], [2], [3], [4], [0, 1]] par [0, 0, 0, 1, 1]
+best 387 excess -1 win 3 Ch 3 succ [[1, 2, 3, 4], [2, 4], [3], [4], [0, 1, 2]] par [0, 1, 0, 1, 1]
+best 909 excess -1 win 4 Ch 4 succ [[1, 2, 3, 4], [2, 3, 4], [3, 4], [4], [0, 1, 2, 3]] par [1, 1, 1, 1, 1]
+TOTAL {'games': 3000, 'runs': 0, 'gapfail': 0, 'sharpfail': 0, 'eqCh': 0, 'tight': 0, 'capped': 0, 'maxT': 0, 'maxwin': {}}

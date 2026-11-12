@@ -1,0 +1,2 @@
+MWR4_2.json {'N_C': 44, 'M_C': 91, 'T3': 30, 't0': 0, 'all': {'windows': 14, 'maxraw': 7, 'maxlen': 7, 'lamgapfail': 0, 'sharpfail': 0}, 'reach': {'windows': 14, 'maxraw': 7, 'maxlen': 7, 'lamgapfail': 0, 'sharpfail': 0}, 'ctrl_replay_mismatch': 14, 'flipped_gates': 5}
+C98_4_5_3.json {'N_C': 19, 'M_C': 49, 'T3': 19, 't0': 0, 'all': {'windows': 14, 'maxraw': 4, 'maxlen': 4, 'lamgapfail': 0, 'sharpfail': 0}, 'reach': {'windows': 14, 'maxraw': 4, 'maxlen': 4, 'lamgapfail': 0, 'sharpfail': 0}, 'ctrl_replay_mismatch': 14, 'flipped_gates': 32}
