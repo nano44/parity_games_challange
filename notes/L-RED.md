@@ -3456,3 +3456,10 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
   stalls 48 / plateaus 15 / longest 13 / max T 199), control fires; climbs (N <= 56) best ratio 0.789, best plateau 15 (frozen r235/inst).
   DEEP3 on hold (Lead 13:01Z): climbs paused at checkpoints in scratchpad dclimb/ (g48b best 4 deep flips at one gate, N 48; fport4 3).
   NEXT: box 209 (Γ3 form, LEVEL3 / PLATEAU3 on HOW3) when the Lead sends the SHA.
+- 2026-11-12T15:17Z: R236 n5x236 vs n5v xi, the 16 count differences of xr236 seed 2 (Lead 15:17Z), classified by cls236.py + probe236.py:
+  start 0, fallback 0, real divergence 0; ALL tie rule. At the first differing state (t = 1 or 2) every differing choice is optimal in
+  the arena under n5x236's W* in BOTH engines: 14 choices at the vertex's own arena cycle node (SPEC S1 (v) / FIX 2 DFS choice vs my
+  reading R2 / R3), 3 non-cycle Odd choices in S4b (SPEC FIX 4 longest-path / BFS choice vs my reading R3: keep tau(v), else larger
+  index); 12 games differ first in tau (S4b), 4 in sigma (S4a). Example: game 5 (n 7), state 0 -> 1, Odd vertex 6 (its own H'-cycle
+  node, W* = (6, {}, 0)), A = [0, 1, 4]: mine 0 (cycle length 3), n5v 4 (length 2); both optimal. So any F_n count from n5x236 is
+  independent up to SPEC's cycle-node and S4b tie rules (spec lines: S1 (iv)-(v), FIX 2, FIX 4, Q2).
