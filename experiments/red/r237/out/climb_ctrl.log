@@ -1,0 +1,6 @@
+Thu Nov 12 23:31:22 UTC 2026
+CLIMB237 c1 PAUSED (TLIMIT): evals 2337 cur [264, 11] n 12 best [264, 11] n_best 12 | s3fail 0 nonstd 0 nohoward 359999 fbwrong 0 endwrong 0 wrong 0 | states 18053 pairs 181810 sumT 15716 maxT 11 max|W| 371 cands 2333 tiediff(x,s) 140 | N5 (spec, WRAP (v) + Remark 3): vfb 0 vend 0 vnonstd 0 vpick 0 vkey 0 r3 0 maxF 6 sumF 6503 | (W4)-(W6): w4a 0 w4b 0 w4c 0 w4d 0 w4ord 0 w4x 0 w5 0 w6tie 0 w6valve 0 w6core 0 (W-1 starts 1566550) | second engine: sampled 0 xdiff 0 xkill 0 | accepted 743 ctrl 1
+KCLIMB238 kc1 END: evals 3000 cur [2, 13] best [2, 13] | s3fail 0 keyfail 2694 endfail 2561 wrong 0 keymono 0 | sum L* 20773 max |V| 368 L* histogram {'0': 14, '1': 118, '2': 173, '3': 609, '4': 244, '5': 122, '6': 195, '7': 116, '8': 212, '9': 260, '10': 35, '11': 506, '12': 174, '13': 221} | cands 2694 second-simulator kills 0 of 0 | ctrl 1 | 126 s
+KCLIMB238 kc2 END: evals 3000 cur [71, 7] best [71, 7] | s3fail 0 keyfail 2997 endfail 2932 wrong 0 keymono 145379 | sum L* 13671 max |V| 318 L* histogram {'0': 20, '1': 88, '2': 125, '3': 488, '4': 504, '5': 1163, '6': 240, '7': 371} | cands 2996 second-simulator kills 0 of 0 | ctrl 2 | 76 s
+exit 0
+Thu Nov 12 23:39:45 UTC 2026
