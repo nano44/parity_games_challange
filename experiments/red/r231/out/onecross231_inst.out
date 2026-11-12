@@ -1,0 +1,8 @@
+CWG1_4.json {'gates': 111, 'const': 106, 'one': 2, 'xfail': 0, 'dfail': 0, 'tie': 0, 'multi_nonconst': 3}
+CWG1_8.json {'gates': 221, 'const': 212, 'one': 2, 'xfail': 0, 'dfail': 0, 'tie': 0, 'multi_nonconst': 7}
+CWG2_8.json {'gates': 227, 'const': 218, 'one': 8, 'xfail': 0, 'dfail': 0, 'tie': 0, 'multi_nonconst': 7}
+CW8_n.json {'gates': 212, 'const': 203, 'one': 1, 'xfail': 0, 'dfail': 0, 'tie': 0, 'multi_nonconst': 8}
+CWRR8_n.json {'gates': 219, 'const': 210, 'one': 1, 'xfail': 0, 'dfail': 0, 'tie': 0, 'multi_nonconst': 1}
+BLKX23_n48.json {'gates': 97, 'const': 92, 'one': 1, 'xfail': 0, 'dfail': 0, 'tie': 0, 'multi_nonconst': 4}
+K1L10_n48.json {'gates': 97, 'const': 93, 'one': 2, 'xfail': 0, 'dfail': 0, 'tie': 0, 'multi_nonconst': 4}
+TOTAL {'gates': 1184, 'const': 1134, 'one': 17, 'xfail': 0, 'dfail': 0, 'tie': 0, 'multi_nonconst': 34}
