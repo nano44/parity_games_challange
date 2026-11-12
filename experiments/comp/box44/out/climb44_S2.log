@@ -1,1 +1,9 @@
 START restart 0 seed seed_gen37_10.json T3 67 NM 319 ratio 0.2100
+BEST BEST_S2_T67_NM319_63efcb6a.json T3 67 NM 319 ratio 0.2100 | text engine T3 67 iterations 70 fallbacks 1 agree True | box 209 counters sum 0 | restart 0 step 21 evals 19
+BEST BEST_S2_T67_NM318_d25112dd.json T3 67 NM 318 ratio 0.2107 | text engine T3 67 iterations 70 fallbacks 1 agree True | box 209 counters sum 0 | restart 0 step 33 evals 30
+BEST BEST_S2_T67_NM317_71e4652e.json T3 67 NM 317 ratio 0.2114 | text engine T3 67 iterations 70 fallbacks 1 agree True | box 209 counters sum 0 | restart 0 step 41 evals 38
+BEST BEST_S2_T67_NM316_03682fd6.json T3 67 NM 316 ratio 0.2120 | text engine T3 67 iterations 70 fallbacks 1 agree True | box 209 counters sum 0 | restart 0 step 43 evals 39
+BEST BEST_S2_T67_NM315_b3076120.json T3 67 NM 315 ratio 0.2127 | text engine T3 67 iterations 70 fallbacks 1 agree True | box 209 counters sum 0 | restart 0 step 67 evals 62
+BEST BEST_S2_T68_NM315_92c256b5.json T3 68 NM 315 ratio 0.2159 | text engine T3 68 iterations 71 fallbacks 1 agree True | box 209 counters sum 0 | restart 0 step 94 evals 89
+BEST BEST_S2_T68_NM314_de361117.json T3 68 NM 314 ratio 0.2166 | text engine T3 68 iterations 71 fallbacks 1 agree True | box 209 counters sum 0 | restart 0 step 163 evals 158
+BEST BEST_S2_T68_NM313_f4664bf5.json T3 68 NM 313 ratio 0.2173 | text engine T3 68 iterations 71 fallbacks 1 agree True | box 209 counters sum 0 | restart 0 step 253 evals 241

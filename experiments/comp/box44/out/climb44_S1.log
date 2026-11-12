@@ -15,3 +15,5 @@ END restart 1: current T3 67 NM 308 ratio 0.2175; best so far [65, 285]; evals 9
 START restart 2 seed seed_gen37_9.json T3 61 NM 290 ratio 0.2103
 END restart 2: current T3 61 NM 283 ratio 0.2155; best so far [65, 285]; evals 1429
 START restart 3 seed seed_MWR_10.json T3 66 NM 319 ratio 0.2069
+END restart 3: current T3 66 NM 308 ratio 0.2143; best so far [65, 285]; evals 1911
+DONE S1: best [65, 285] BEST_S1_T65_NM285_bea3c331.json evals 1911
