@@ -40,7 +40,7 @@ Model: R104's IDEAL model at degree ≤ 2 (sim6; fenc for replays). Target core8
   Exact prefix (pgad3, G {63}, 600 s per question; l17/sweep.sh; l17/sweepA2/): XS 8: SAT for every prefix 2..12, UNSAT at 13 (296 s);
   XS 11: SAT 2..12, UNSAT at 13 (379 s). Every SAT decode (22) replayed sim6 = fenc, each following at least rows 0..P (sweepA2/replay.txt,
   SHA1SUMS). DATA (unit = prefix length in core8 rows, scope A2_solved with one helper 63 and one rewired client): best realized prefix rows
-  0..12 (A2x8_P11_dec follows 0..12 as well). A2 does NOT pass P 18. The two P 13 UNSATs are solver-only until DRUP-checked (pending).
+  0..12 (A2x8_P11_dec follows 0..12 as well). A2 does NOT pass P 18. P 13 UNSAT for XS 8 DRUP VERIFIED (l17/sweepA2/drup.txt: 880,002 clauses, Glucose4 proof, l8/sat/drup.c «s VERIFIED»); XS 11 at P 13 solver-only (DRUP pending).
 - Reading of the stop rule used here: a «run» is one capped search plus its exact prefix measurement; three consecutive runs that do not pass
   P 18 end the box with the obstruction. Count so far: A1 failed (prefix < 2); A2 failed (prefix 12, UNSAT at 13 for XS 8 and XS 11); A3 running (pgad5, below).
 

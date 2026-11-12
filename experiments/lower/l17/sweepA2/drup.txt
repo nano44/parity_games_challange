@@ -1,0 +1,1 @@
+pdrup pgad3.py ../l17/run/A2_solved.txt ../l10/out/core8_HIT7.txt 13 8 63 SKIP  | cnf sha1 22a28707788d15cd4e762e763a02b518722e0a4a clauses 880002 lemmas 3485067 | drup: s VERIFIED (1625440 lemmas RUP-checked)
