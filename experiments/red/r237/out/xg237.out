@@ -1,0 +1,6 @@
+XG237 mode spec seed 1041 free genomes 2000 d<=4 w<=3 deg<=3: trajdiff 0 itdiff 0 fbdiff 0 wrong 0 | max iterations 7 sum 7519 max |V| 225 | first differing genome None
+XG237 mode xi seed 1041 free genomes 2000 d<=4 w<=3 deg<=3: trajdiff 0 itdiff 0 fbdiff 0 wrong 0 | max iterations 12 sum 9159 max |V| 225 | first differing genome None
+XG237 mode spec seed 1042 free genomes 1000 d<=6 w<=4 deg<=3: trajdiff 0 itdiff 0 fbdiff 0 wrong 0 | max iterations 8 sum 4007 max |V| 368 | first differing genome None
+XG237 mode xi seed 1042 free genomes 1000 d<=6 w<=4 deg<=3: trajdiff 0 itdiff 0 fbdiff 0 wrong 0 | max iterations 12 sum 5326 max |V| 368 | first differing genome None
+XG237 mode spec seed 1041 free genomes 300 d<=4 w<=3 deg<=3: trajdiff 229 itdiff 164 fbdiff 0 wrong 0 | max iterations 12 sum 1404 max |V| 225 | first differing genome (0, 114, 7, 5)
+XG237 mode xi seed 1042 free genomes 300 d<=6 w<=4 deg<=3: trajdiff 268 itdiff 199 fbdiff 0 wrong 0 | max iterations 8 sum 1191 max |V| 354 | first differing genome (0, 71, 3, 3)
