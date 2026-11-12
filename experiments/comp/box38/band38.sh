@@ -3,5 +3,6 @@
 # Dmov, no U constraint, KONE 1 = BOX 36/37's k = 1), seed gen37(19) (N + M 580). Stream s uses RNG seed 3800 + s. Every new best is re-run
 # on ideal37 inside climb38 (agreement logged). Resumable: climb38 OUT.state; a log with DONE is skipped. Usage: band38.sh STREAM
 cd "$(dirname "$0")"; s=$1; T=B600s$s
+exec 9>out/.lock_$T; flock -n 9 || exit 0   # one copy per stream
 grep -q DONE out/climb38_$T.log 2>/dev/null && exit 0
 python3 climb38.py $T 580 620 1 200 $((3800 + s)) out/climb38_$T.log Dmov -1 1 ../box37/inst/gen37_n19.json
