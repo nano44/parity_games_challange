@@ -248,3 +248,23 @@ vertices; K2's successor is K1 at every state (LOC-K2). So p is a mover (σ chan
   2n + 2 (about 3n, 4.75n, 5.75n at n = 4, 8, 16), but T stays linear and D_mov − 1 ≤ T_CYC (box 204 Theorem EQ): each step jumps many
   counter values. No 2^Ω(b) here. Growing ascents alone do not make runs long; a long k = 1 run would need carries that must be
   RE-ARMED step by step (a nested race), which CW does not have. Consistent with CONJECTURE DEEP-k1 (open).
+
+## Addendum D (L-NEW successor 70; Lead 04:10Z: «APPROVED: ONE more design try …: a CW variant whose carries need RE-ARMING (a nested race), aimed at making T grow»; written 2026-11-12 by date -u)
+- Variant CWR(n) (carry206.py with CW_REARM=R or Q): CW(n) plus, for every carry chooser c_k, one more option whose Ξ-target is the race
+  mover R (or Q), so that a carry's W-target play follows the race and is re-armed whenever the race flips. k stays 1 (fvs202; every new
+  Ξ-cycle passes R). Frozen: inst/CWRR4_n, CWRR8_n, CWRR16_n, CWRQ4_n, CWRQ8_n, CWRQ16_n (sha1 in inst/SHA1SUMS).
+- DATA (cwmeas206.py, out/cwmeas206_rearm.out; IDEAL-CYC; same table):
+  | genome | k | N + M | b | Dtop | D_mov | T |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | CWRR4_n / CWRR8_n / CWRR16_n | 1 | 160 / 310 / 658 | 6 / 10 / 18 | 3 / 3 / 3 | 3 / 3 / 3 | 28 / 52 / 100 |
+  | CWRQ4_n / CWRQ8_n / CWRQ16_n | 1 | 160 / 310 / 658 | 6 / 10 / 18 | 3 / 3 / 3 | 3 / 3 / 3 | 28 / 52 / 100 |
+  Scratch runs with the re-arm option's β odd (CW_RPAR=1): the same numbers at n = 4, 8.
+- DEAD (this design, with the obstruction): re-arming a carry through the race vertex collapses the counter. The re-arm edge c_k → R
+  closes a Γ-cycle qh_k → e_qh_k → c_k → … → R → … → qh_k THROUGH the e-vertex e_qh_k. On IDEAL-CYC, Odd never takes such an e-face: on
+  CWRR8_n the e-faces of the re-armed high bits (movers 54-60) are taken at 0 states, against 14-39 states each on CW8_n
+  (out/eface206_rearm.out). READING: this is R123 B-ONLY's mechanism (no cycle node above an e-vertex; a cycle through an e-vertex would
+  be Even-winning and Odd avoids it). So at k = 1 a carry's re-arming cannot pass the feedback vertex R, and R is the only vertex every
+  cycle passes. A long k = 1 run would need re-arming WITHOUT a route back through the bit's own e-vertex: open, and this lane has no
+  design for it.
+- Block climb, final (one lean job, stopped for the park): climb206.py CL_OBJ=block seed 8 from K1F21_n48, 7,050 iterations: Dtop 26
+  at b = 6, T 33 (frozen inst/BLKX26_n48.json; log out/climb206_block_s8.log; cwmeas206: D_mov 26). Still within T + 1.

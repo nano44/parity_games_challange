@@ -1,6 +1,41 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## HANDOVER (successor 70, PARKING 2026-11-12 ~04:40Z by date -u; Lead 04:10Z: «park with a handover … list (a) CW and its variant as the kill-side record; (b) the top-block theory target (DEEP-k1 via LOUD-SPLIT / DIV); (c) BLOCK-DESC DEAD, and BLKX23 corrected»)
+### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
+- 09bb6aa7 handover check (Lead 5/5).
+- 70501a99 DUTY C140 E-1 (G-L43, ruling R-D2a): P-N5-QN fixes entry 2 + line L-2 (docs/new/P-N5-QN-line-L2.txt sha1 166e4695…, 7,187 B
+  = CHECKER's expected; box203/mkl2_qn.py; qn.pins 63 rows). Lead routed L-2 to both referees (byte test).
+- 9d360059 BOX 206 (docs/new/N5-DEPTH-box206.md; experiments/new/box206/; check.sh «BOX 206 DEPTH»): change depth / loud depth;
+  Lemma DEPTH-COUNT + Theorem LOUD-SPLIT (PROVED lane): T_CYC poly iff #loud steps of loud depth > c is poly (fixed c). MWR leapfrog =
+  depth 0. DEAD: depth bounded / loud depth bounded (WC(n)), LD-ASC (K1F34 step 52).
+- 8e6a4641 Addendum A: K1L7_n48; Lemma DIV + DIV-LOUD (PROVED lane; div206.py counters 0, control fires); deep loud steps at run ends.
+- d3fc2d21 Addendum B: K1L10_n48; top block = R121 chain system CS(b); CONJECTURE BLOCK-DESC (Dtop ≤ 1 + b(b+1)/2) DEAD by BLKX23_n48.
+- f7b8bb66 Addendum C: CORRECTION (BLKX23 is NOT a binary counter beyond 2 bits: one-hot high part, MW multiplicity); carry family
+  CW(n): D_mov 12 / 38 / 92 at b 6 / 10 / 18, T linear 30 / 59 / 114, ascents b − 1.
+- (this commit) Addendum D: re-armed variant CWR(n) DEAD (re-arm edge to R closes a Γ-cycle through e_qh: Dtop 3, T linear); block climb
+  final BLKX26_n48 (Dtop 26 at b 6, T 33).
+### OPEN LANE ITEMS (DUTY FIRST)
+1. DUTY: P-N5-QN L-2 at the referees (byte test), then C140 Add. 1 second fill; answer any item as fixes entry 3 + L-3 by script
+   (pattern box203/mkl2_qn.py; assert L-2's sha1 166e4695…). P-N5-SPLIT lands as R127 after R126: answer items as fixes entry 3.
+2. Box 206 goes to L-RED 65 (and BLKX23 to L-COMP 17) for attack: answer as Addendum E (append-only).
+3. Research (D18), the record the Lead asked for:
+   (a) Kill side: MWR(n) (D_mov 2n + 2), CW(n) (carries; D_mov super-linear, T linear), CWR(n) (re-armed through R: DEAD, collapses),
+       BLKX23/BLKX26 (climbs, b 6). No super-polynomial k = 1 family. Obstruction met: re-arming must not pass the bit's own e-vertex,
+       and at k = 1 every cycle passes R.
+   (b) Theory target: CONJECTURE DEEP-k1 (Q_(>c) poly at k = 1) ⟺ T_CYC poly at k = 1 (LOUD-SPLIT + box 204 EQ). Tools: DIV (the
+       divergence vertex carries the change), deep loud steps sit at run ends and at switching movers. Idea not tried: charge each deep
+       loud step to a re-arming of the top block (a race flip at R), and bound re-armings by R's class height.
+   (c) BLOCK-DESC DEAD (BLKX23, 23 > 22); Addendum B's «binary counter» READING withdrawn in Addendum C.
+### TOOLS (box206): depth206.py (census; DEP_ALL, DEP_CTRL), ascdepth206.py, div206.py, deepdiag206.py, block206.py, climb206.py
+### (CL_OBJ deep / loud / block; START may be rand:B), trace206.py (step trace), carry206.py (CW / CWR, env CW_REARM, CW_RPAR),
+### cwmeas206.py (k, N + M, b, Dtop, D_mov, T). All fast (< 1 s per N 48 genome; CW16 ~ 1 min). check206.sh ~ 15 s.
+### Traps (successor 70)
+- I called BLKX23 a «near-pure binary counter» from the integer list alone; the step trace showed a one-hot high part. Trace the
+  mechanism (trace206.py) before naming a structure; integer runs like 0..11 can be products of a small counter and one-hot bits.
+- Statements like «every k = 1 record has two levels» need a check over the whole set (B400_r32 has three levels).
+- Never edit a tool a running sweep re-imports; climbs import once, sweeps per genome do not.
+
 ## Resume point (successor 70, Opus; session_01V5yGRY45JmHVuQdwncwSps; started 2026-11-12 ~01:19Z; GO 01:46Z)
 - Step 0: handover check 09bb6aa7 (VERIFY PASS; Lead score 5/5). Stale container (1053 behind) fast-forwarded to f736b2ab.
 - DUTY: C140 (P-N5-QN, G-L43) not started at 01:46Z; Lead will relay the ruling. Nothing routed on P-N5-SPLIT.

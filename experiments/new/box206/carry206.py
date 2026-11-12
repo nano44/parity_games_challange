@@ -3,16 +3,19 @@
 qh_k (k < n) gets a new level-0 W-target c_k (instead of the dead sink D) whose options have Xi-targets qh_j (j > k) and X, so that a play
 can pass several high bits (qh_k -> e -> c_k -> beta-chain -> qh_j -> e -> ...). New beta ranks above all existing ones (parity PAR,
 default 0 = even), new gate indices after all existing ones, start = the X option. Xi-feedback number stays 1 (no Xi-edge enters c_k).
+CW_RPAR=1 gives that re-arm option an odd beta. With CW_REARM=R (or Q), each c_k also gets an option whose Xi-target is that race mover (k stays 1: every new cycle passes R).
 Usage: carry206.py MWR.json OUT.json [PAR]"""
-import sys, json, copy
+import sys, json, copy, os
+REARM = os.environ.get("CW_REARM")          # Addendum D: also an option with Xi-target the named race mover (R or Q): carries re-armed by the race
 src, out = sys.argv[1], sys.argv[2]; par = int(sys.argv[3]) if len(sys.argv) > 3 else 0
 G = json.load(open(src)); nm = json.load(open(src.replace(".json", ".names.json"))); H = copy.deepcopy(G)
 qh = sorted((int(k[2:]), v) for k, v in nm.items() if k.startswith("qh")); n = len(qh)
 rk = max(H["br"]) + 1; gi = max(g for row in H["gate"] for g in row) + 1
 for i, (k, x) in enumerate(qh[:-1]):
     c = H["N"]; H["N"] += 1; H["lev"].append(0); opts = []; gates = []
-    for (k2, x2) in qh[i + 1:] + [(None, -1)]:
-        b = len(H["br"]); H["br"].append(rk); H["bp"].append(par); rk += 1
+    extra = [(None, nm[REARM])] if REARM else []
+    for (k2, x2) in qh[i + 1:] + extra + [(None, -1)]:
+        b = len(H["br"]); H["br"].append(rk); H["bp"].append(int(os.environ.get("CW_RPAR", par)) if (REARM and x2 == nm[REARM]) else par); rk += 1
         opts.append([-1, x2, b]); gates.append(gi); gi += 1
     H["opts"].append(opts); H["gate"].append(gates); H["start"].append(len(opts) - 1)
     H["opts"][x][0][0] = c
