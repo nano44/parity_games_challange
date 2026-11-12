@@ -1,68 +1,57 @@
-# Handover check: L-RED successor 67 (Fable 5.2, xhigh, D1/D18/D21; LANE-RESTART step 3; written 2026-11-12T18:05Z by date -u)
-Every answer is measured from the repository (commands named), not recalled. Predecessor: successor 66, handover =
-notes/L-RED.md «HANDOVER (successor 66 -> 67)» (l. 3477) at l-red 5eca1c328.
+# Handover check: L-RED successor 68 (Opus 5.5, high, D1/D18/D21, L53; LANE-RESTART step 3; written 2026-11-12T20:01Z by date -u)
+Every answer is measured from the repository (commands named), not recalled. Predecessor: successor 67 (Fable 5.2, stopped by the
+Fable weekly limit ~19:38Z, NO handover); last push 2d290a15 «R237 (2): exhaustive n = 3, part 0 of 2». Its resume point is
+notes/L-RED.md «Successor 67 ... RESUME POINT» (last lines of the notebook); successor 66's handover is at l. 3477.
 
 ## 1. Branch, head, distance to trunk
 - Trap check run first: `git fetch --unshallow origin; git fetch origin claude/l-red claude/vibrant-johnson-nxvvxo; git checkout
-  claude/l-red; git merge --ff-only origin/claude/l-red`. The local branch was 308 behind (at 429351d5, successor 49's park);
-  fast-forwarded.
-- `git branch --show-current` = claude/l-red; `git rev-parse HEAD origin/claude/l-red` -> both 5eca1c32837b9330e8fd52f1b31d51b0f6d04ca8.
-- Trunk claude/vibrant-johnson-nxvvxo = 68c8d2933 (committed 2026-11-12T15:06:33Z).
-  `git rev-list --left-right --count origin/claude/vibrant-johnson-nxvvxo...HEAD` -> 1233 186, i.e. 186 ahead / 1233 behind
-  (left = trunk-only); merge-base c2d1e88ee. Trunk is not merged in; the truth docs (NOW, DECISIONS-INDEX, GAPS, DECISIONS,
-  LANE-RESTART) were read from trunk by `git show origin/claude/vibrant-johnson-nxvvxo:<file>`.
-- Clock: `date -u` 18:03:32Z against the Date header of a raw.githubusercontent.com response 18:03:32 GMT: skew 0 s.
+  claude/l-red; git merge --ff-only origin/claude/l-red`. The local branch was 314 behind origin/claude/l-red; fast-forwarded.
+- `git branch --show-current` = claude/l-red; `git rev-parse HEAD origin/claude/l-red` -> both 2d290a15b672c9a86caa8ceb49df4adb3b4be510.
+- Trunk claude/vibrant-johnson-nxvvxo = 7fa6aff4a (committed 2026-11-12T17:10:52Z).
+  `git rev-list --left-right --count origin/claude/vibrant-johnson-nxvvxo...HEAD` -> 1235 192, i.e. 192 ahead / 1235 behind;
+  merge-base c2d1e88ee. Trunk is not merged in; truth docs read from trunk with `git show origin/claude/vibrant-johnson-nxvvxo:<file>`.
+- Clock: `date -u` 20:00:38Z against the Date header of a raw.githubusercontent.com response 20:00:38 GMT: skew 0 s.
 
 ## 2. Open work and the next step of each
-- Nothing running: new container (`pgrep -af "plc235|dclimb|push.sh|climb"`: none); tools/oink/build absent; scratchpad empty, so
-  the four read-only archives must be rebuilt before any run:
-  BOX104 = `git archive 26704e01 experiments/si/box104`, LNEW = `git archive fcba92fc experiments/new experiments/si/si.py
-  experiments/harness experiments/hard-families experiments/n5-second`, LRED = `git archive 8c01d40e experiments/red/r217`,
-  LLIT = `git archive 5c53efbd docs/lit/T66-depth-check.py`.
-- Done by the predecessor and reported: R236 (F_n CONFIRMED on own engine n5x236), R237 (1) (WRAP's six counters 0 on 300 random,
-  W(G_n, ι), switchallexp, F_n; 14 random rows ±1 = Howard ties in H; control fires).
-- Box after «go», in order:
-  1. R237 (2): adversarial climb on WRAP's step (W4). Base experiments/red/r236/wr237.py `check(H, s0)`; score = nohoward + nonstd +
-     fbwrong, then T; mutate H (owners, priorities, edges) and s0; CTRL=1 must fire. Two seed streams, small H (n ≤ 12) then medium
-     (n ≤ 30). Every candidate is re-run on a second engine (n5v xi via the LNEW archive) and against the spec line before a report.
-     Next step: rebuild the archives, re-run `wr237.py json` on rand300 to reproduce R237 (1)'s line, then write the climb (resumable
-     checkpoint in experiments/red/r237/).
-  2. Read WRAP's written proof of (W4) (claude/l-si docs/si/box104-map.md §3, l. 148-164 at a9ea60b96) as an adversary: weakest
-     sentence, an instance aimed at it. First candidates seen on the pre-read (not yet tested): the sentence «a pe-free strategy
-     gives u a value with a node in H, strictly ◁-smaller» when the H-cycle is even with a large reward (the comparison c_W against
-     an even node of H is by reward, top > every Ω of H: to be checked for odd/even cases); (b)'s «pointwise minimum is unique as a
-     value» with equal priorities in H (ranks by (priority, index)); self-loops and vertices with one successor in H.
-  3. If budget remains: L-SI 52's box 105 (KEY-MODEL) once its first commit lands (not on claude/l-si at a9ea60b96: `git ls-tree -r`
-     shows no docs/si/box105* and no experiments/si/box105; the 7 «box105» paths in that tree are L-NEW's older box 105 under
-     docs/new and experiments/new): replay key105.py's equivalence on n5x236 in spec mode on random free genomes; report keyfail.
-- ON HOLD (Lead): DEEP3 climbs. Their scratchpad checkpoints died with the old container; the bests are frozen in r234/inst.
+- Nothing running (new container; `pgrep -af "push.sh|exh237|climb237"`: none; 4 CPUs). The four read-only archives (BOX104 26704e01,
+  LNEW fcba92fc, LRED 8c01d40e, LLIT 5c53efbd; notebook «Envs») must be rebuilt in the scratchpad before any run.
+- R237 (2) (WRAP step (W4), box 104), state measured from experiments/red/r237/out:
+  (a) exh237 n = 3 part 0 of 2 DONE (exh3_0of2.log END: 219,488 games, all kill / N5 / (W4)-(W6) sentence counters 0, second engine
+      xdiff 0 on 438 sampled, ctrl 0 = control not run in this part). Next: part 1 of 2 (PART=1/2, RESUME=1), then CTRL=1 control.
+  (b) climb237 (W4) climb, two engines, CTRL=1 must fire: NOT started (no ck_*climb* checkpoint). Next: small (n <= 12) two seeds,
+      then medium (n <= 30).
+  (c) aim237 families aimed at single sentences of box 104's (W4) proof, incl. REFEREE 33's W-1 (pe-free play from a start outside
+      the core along the 6-edge paths; starts pe, pe_o, pb, c_W): NOT started. I do not read the rest of R-WRAP-preread.md before my verdict.
+  (d) docs/red/R237-w4.md (verdict «(W4) survives climb of size S» with counts, or a counter surviving engine 2 + SPEC-line check).
+- Correction for R237's doc (Lead item 2): n5x236 «spec» mode is not SPEC's tie rule; n5s237 (= box 104's n5v spec) gives 5/5/5/5/6 on
+  F_n n = 2..5 (out/fn_spec.out also has n5s237 6/6/6 at n = 6..8, n5x236 3); R236's «3 on every F_n» was n5x236's reading.
+- Then L-SI box 105 (claude/l-si 516b6837, docs/si/box105-key.md KEY-MODEL): replay N5 spec on Γ3*(G*) = KEY rule state for state on
+  n5s237, random free genomes, keyfail with controls.
+- ON HOLD (Lead): DEEP3 climbs.
 
-## 3. docs/GAPS.md rows I own (trunk 68c8d2933)
+## 3. docs/GAPS.md rows I own (trunk 7fa6aff4a)
 - G-NEST (major, «L-RED (attacks + proof attempts); L-ALG successor if any», open; l. 9).
 - L-RED attacks: GAP-A (blocker, open; l. 6), GAP-C (blocker, open; l. 7), G-STR (major, closed; l. 22), G-DOM (major, closed; l. 23).
 - This box works against G-N5-TIME (major, owner «L-NEW (L-LIT T22; referees later)», open; l. 11) under D1/D18: WRAP bears on the
-  variant N5′-xi only; the row's claim is about N5 and stays OPEN.
+  variant N5′-xi; the row's claim is about N5 and stays OPEN.
 
 ## 4. Three owner rulings (verbatim; status from trunk docs/DECISIONS-INDEX.md)
 - D1 «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own,
-  as wrong until it passes the gauntlet below.» (active, index l. 5; full string found once in trunk docs/DECISIONS.md by grep -cF; its first sentence once in trunk
-  docs/decisions/D001-launch-brief.md)
+  as wrong until it passes the gauntlet below.» (active, index l. 5; string found once in trunk docs/DECISIONS.md by grep -cF)
 - D18 «Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics
   and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and
   proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.» (active, index l. 32;
-  string found once in trunk docs/DECISIONS.md)
+  found once by grep -cF)
 - D21 «Okay, I want maximum effort. I want to use 200% usage in 3 days. There is fable 5.2 as well, use that too in dpeth everywhere
-  where it seems fitting, use fable 5.2 at hard or xhigh. SO yes, 200% uage under 2 days.» (active, index l. 46; relayed text in trunk
-  docs/DECISIONS.md l. 452). Lead reading L51 (not the owner's words): maximum effort until 2026-11-14 10:05Z; a «rejected» limit
-  still pauses, so on a limit failure I resume from the notebook when woken.
+  where it seems fitting, use fable 5.2 at hard or xhigh. SO yes, 200% uage under 2 days.» (active, index l. 46; trunk DECISIONS.md
+  l. 452). Lead readings (not the owner's words): L51 maximum effort to 2026-11-14 10:05Z; L52 a reset limit is a pause; L53 (Lead
+  brief; not yet in trunk's index at 7fa6aff4a) this session on Opus 5.5 while the Fable weekly limit is reached (reset 2026-11-18 21:00Z).
 
 ## 5. One trap that bit this lane, and the check
-- Stale local branch at start (this session: 308 behind, at successor 49's park). Check: the trap-check commands above; HEAD ==
-  origin/claude/l-red before any work.
-- Typed stamps and SHAs (successor 66: a verdict header «10:35Z» typed, not measured; a SHA typed before git printed it, 13:50Z).
-  Check: every stamp from `date -u` in the same command; every SHA copied from git output in a step after the commit.
-- A «counterexample» from my own engine's tie readings (R236: 16 of 300 counts differ from n5v, all tie rule). Check for this box:
-  no (W4) candidate is reported before it survives the second engine (n5v xi) and I have quoted the SPEC line my engine implements at
-  the state where the run leaves Howard's.
-- Parking or committing with a job or a push running. Check: `pgrep -af "bash scripts/push.sh"` before every commit and push; at
-  most 2 CPU-heavy jobs including verify; long jobs resumable from a committed checkpoint.
+- Stale local branch at start (this session: 314 behind). Check: the trap-check commands above; HEAD == origin/claude/l-red before work.
+- A session stopped by a limit with no handover (successor 67, this box): check = every long job resumable from a committed
+  checkpoint (exh237 PART/RESUME, climb237 out/ck_TAG.json with rng state) and a notebook resume point updated at each push.
+- A «counterexample» from my own engine's tie readings (R236: n5x236 vs n5v, all tie rule). Check: no (W4) candidate is reported before
+  it survives the second engine and a SPEC-line check (H, s0, sha1, state) at once.
+- Typed stamps / SHAs, and commits during a push. Check: stamps from date -u in the same command; SHAs copied from git output in a
+  later step; `pgrep -af "bash scripts/push.sh"` before every commit and push; <= 2 CPU-heavy jobs including verify.
