@@ -7,6 +7,9 @@
 - diag L18b_N10a (l16/diag.py): rows followed 11; row 11 needs mover 15 (L7) to flip 0→1, «av» False (better says stay). Confirms handover.
 - RUNNING 23:04Z: N11a = n.sh base L18b_N10a, XS 15, XORD 15, P 11, R 510, cap 6,000 s (FENC=$SP/bin/fenc).
   Queue at P 11: N11b XS 15,12 (XORD 12,15), N11c XS 15,14 (XORD 15,14) (A2 reach order 8<11<10<12<15<14).
+- 23:22Z N11a SAT: solve 1,109 s, wall 1,213 s (cap 6,000), 63.3M clauses, RSS 7.9 GB at 16 min. Frozen L18b_N11a_dec a6e0185b (rows 0..11,
+  sim6 = fenc, f6check 0/129 rows 0..510, inframe OK). LARGEST P f6-globally-correct = 11. diag row 12: mover 14 only.
+- RUNNING 23:24Z: N12a = n.sh base L18b_N11a, XS 14, XORD 14, P 12, R 510, cap 6,000 s.
 
 ## Successor 15 HANDOVER (-> successor 16; written 2026-11-12 22:0xZ, date -u; context ~430k)
 ### DONE (claude/l-lower; products docs/lower/L17-around.md (closed §3), docs/lower/L18-horizon.md (open); tools l17/, l18/)

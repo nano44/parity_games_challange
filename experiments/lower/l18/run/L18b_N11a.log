@@ -1,0 +1,9 @@
+INFO {'d': 32, 'H': 8, 'T': 510, 'relevant': 64, 'Lmax': 31, 'options': 128, 'vars': 7040792, 'clauses': 63277269, 'empty': False, 'nP': 24763, 'quad': 81140414, 'lazy': 0, 'fixc_units': 10, 'transitivity_clauses': 0, 'build_s': 69.2}
+SOLVE -> SAT 1108.7s
+RESULT SAT decoded -> run/N11a_dec.txt a6e0185b4a55b6c536d2b759155a6891e87cdcd8
+CHECK decoded genome, all fixed, prefix 11 -> SAT (consistent)
+N11a base L18b_N10a_dec.txt XS 15 XORD 15 FIXC 16,17 P 11 R 510 secs 1213 rc 0
+N11a_dec.txt sim6 T 11 fenc T 11 sim6==fenc True rows followed (sim6, fenc): 12 12 of target 511
+F6CHECK N11a_dec.txt client 13 rows 0..510 free 129 mismatches 0 []
+INFRAME N11a_dec.txt vs A2_solved.txt OK | wiring diffs (options) [16, 17, 20, 21, 22, 23, 24, 25, 28, 29, 30, 31] outsi
+n exit
