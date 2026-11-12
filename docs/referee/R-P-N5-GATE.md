@@ -317,3 +317,52 @@ Line L-2: does NOT match; required R-1..R-7, D-1..D-5 (§5); recommended G-a..G-
 - gate_quotes.py (L-2's quotes vs trunk RESULTS) → gate_logs/quotes_L2.out; gate_replay.py (both engines, all statements, controls) →
   gate_logs/replay_cyc.out, replay_g3.out; gate_lev.py (DEAD numbers, copy rows as sets) → gate_logs/lev_cyc.out. Engines: xicyc_replay.py,
   xicyc_vj.py (my lane's, unchanged). Instances: `git archive 9c0349b1 experiments/si/box9{1,3,4,5}` into the scratchpad, sha1-checked.
+
+## §I. Fixes entry 3 and line L-3 (REFEREE successor 31, Opus 5.5, D15; date -u at writing 2026-11-12T02:49Z; Lead 02:49Z byte test)
+- Objects: claude/l-si ef14451f (ancestor of origin/claude/l-si, checked). docs/si/P-N5-GATE-line-L3.txt sha1
+  b60495b2c607e8e6c1e145e40478717fa6ed15f4, 12,353 B; docs/si/P-N5-GATE-fixes.md sha1 e79455eaec52f1f27a4044e0fe9d774f24389851 (entries 1-3);
+  packet sha1 f3a584e6… (frozen, unchanged); L-2 at ef14451f c0f2007d… (unchanged). R125 LANDED (trunk 4c2f407d: «### R125 [refereed-only]»).
+  P-N5-SPLIT NOT landed (0 occurrences in trunk RESULTS at 4c2f407d).
+- Byte test (scratch/gate_l3.py: parses MY strings from my own §5 table in this file, not from the lane's byte copy; log gate_logs/l3test.out):
+  - Every one of my 16 Olds (R-1..R-7, D-1..D-5b, G-a..G-c) occurs once in L-2 and 0 times in L-3.
+  - Taken verbatim (kind V / S in entry 3's table): D-1, D-2, D-3, D-5a, R-5 — each New occurs once in L-3; D-5b deleted.
+  - Mechanics: one line, 0 «|», 229 «(» = 229 «)», depth never negative. Banned strings absent: «§2 (a)», «P-N5-CHAIN's C-EQUIV», «lie on
+    both of two plays», «not a premise here», «not among P-N5-CHAIN», «while its play avoids», «over the run then», «CTRL=a0» (0 each).
+  - The L-2 → L-3 word diff (88 hunks) was read hunk by hunk; every hunk belongs to one of the answered items below or to «1-2» → «1-3».
+- Meaning of each merged (M) string, and whether my superseded strings are acceptable as replaced:
+  - My R-7 and G-c (Γ3 premises) → REFEREE-2 R-1 / R-10 form: «on Γ3 instead RESULTS R125 (P-N5-CHAIN): F1, F3, F4′, F6, STRICT, CN2-3,
+    LOC-GATE3, NO-TIE3, LOC-K2-3, B-ONLY3, E-MON3, and F2, CYC, (E-DOM), (Core) from P-N5-CHAIN's frozen text (…6e613ba7, §2 and §4), (Core)
+    in its W-1-repaired reading, applied only to non-core vertices (the faces of a gate and the successors of a mover or a gate; …)».
+    ACCEPTABLE: it carries B-ONLY3 (G-c) and the W-1 reading with its uses (R-7), and cites F2, CYC, (E-DOM), (Core) from the frozen text
+    (SP-2 standard). Checked by script: every fact cited «RESULTS R125» is named in LANDED R125's title paragraph (F1 4, F3 1, F4′ 2, F6 1,
+    STRICT 3, CN2-3 2, LOC-GATE3 2, NO-TIE3 3, LOC-K2-3 2, B-ONLY3 2, E-MON3 3 occurrences); F2, (E-DOM), (Core) are not (0), as cited.
+  - My R-1 / R-2 (PAIR-EXPEL «§3 (a)», keeping the conditional label) → REFEREE-2 R-4: «(Lemma PAIR-EXPEL; its Step 1 is the argument of
+    P-N5-SPLIT §3 (a), Lemma REWIN (a), which the packet writes out in full from F1, STRICT, F3, F6, F4′, CN2-3, so no P-N5-SPLIT premise
+    is used)». ACCEPTABLE and stronger: it is my GT-2 (no SPLIT statement is used), now said in the line.
+  - My R-3 (A*-EQUIV) merged with REFEREE-2 R-3 / R-5d / R-8a: «C ≤ A*_all ≤ 1 + M·C (on both runs, with no P-N5-SPLIT premise: …;
+    referee-originated: REFEREE-2 … G-7) and, on Γ3 only, C ≤ 3M·(1 + M·A*_route)». CORRECT (GT-3, GT-4, GT-9).
+  - My R-4 → «(b) F1, F2, F3, F4′'s stated clause, F6, (c) STRICT, (e) …» (with REFEREE-2 R-5a; «F4′'s stated clause» is R123's wording).
+    CORRECT. My R-6 → «and (E-DOM) and (Core) read off RESULTS R104's priorities and closed core with LOC-K2 (non-core vertices only: …)».
+    CORRECT (my text, «R104» → «RESULTS R104»).
+  - EXPEL-COUNT's 3M (REFEREE-2 R-8b; my GT-5): «at most 3M split pairs: the split is a mover or a gate, with M mover edges and 2M faces».
+    CORRECT.
+  - My G-a / G-b → merged with REFEREE-2 R-6a / R-6b, «RESULTS R125's B-ONLY3» with the pad argument and both credits. CORRECT.
+  - WAIT-QUIET (REFEREE-2 R-7a): «a gate whose D's play avoids e_o at every state of the run and whose D changes value at most K times …».
+    CORRECT; it is the reading my §2.4 asked for (now moot on both runs, as the line says).
+  - My D-4 merged with REFEREE-2 R-9: «as sets on every level of box 94's 20 simultaneous-clock instances (all but NSQ2_4, NSQ3_4, …)
+    (REFEREE replay, own engine; L-SI's set re-measure copy95.py agrees on both engines; the lane's lev94 compares sizes)». CORRECT (copy95
+    not re-run by me; my lev_cyc.out agrees).
+  - Fixes entry 3's packet-text repairs (F3-1 … F3-6) say the same as the line; F3-1's retraction of entry 1's G1 sentence and entry 2's
+    «hypothesis on Γ3» is right.
+- **LT-1 (REQUIRED): P-N5-SPLIT's pending status was dropped.** L-2 said «of the pending packet P-N5-SPLIT (L-NEW, frozen claude/l-new
+  399cda07, referees pending)»; L-3 says «for A*-EQUIV also SPLIT-COUNT and C-EQUIV of P-N5-SPLIT (L-NEW, frozen claude/l-new 399cda07, sha1
+  5bc1b1f3)», and the word «pending» occurs 0 times in L-3. A*-EQUIV (ii), (iii) rest on SPLIT-COUNT and C-EQUIV, and P-N5-SPLIT has not
+  landed. The label «PROVED-CONDITIONAL on P-N5-SPLIT's SPLIT-COUNT and C-EQUIV» stays, but the line must say the packet is pending (the
+  Lead's brief: every pending-packet premise named as pending). String (Old occurs once in L-3):
+  Old «C-EQUIV of P-N5-SPLIT (L-NEW, frozen claude/l-new 399cda07, sha1 5bc1b1f3);»
+  New «C-EQUIV of the pending packet P-N5-SPLIT (L-NEW, frozen claude/l-new 399cda07, sha1 5bc1b1f3; both referees SIGN; not landed);»
+  Landing-order alternative (the Lead's choice): if P-N5-SPLIT lands BEFORE this entry, cite it by its R-id instead, as P-N5-SPLIT's L-1
+  does for R125.
+- Verdict: fixes entry 3 CORRECT. **Line L-3 MATCHES except LT-1** (one required string). Every superseded string of mine is ACCEPTABLE as
+  replaced. Verdicts of §0 unchanged, with the Γ3 rows now on LANDED R125 (no longer conditional), and A*-EQUIV (ii), (iii) still
+  CONDITIONAL on P-N5-SPLIT (pending).
