@@ -1,0 +1,6 @@
+H7_P7R130_8-11-12-14-15_ P 7 R 130 LNS 8,11,12,14,15 FREE : RESULT SAT decoded -> /tmp/claude-0/-home-user-parity-games-challange/97a1ea02-8c8b-52fc-aa3b-40645cf06caf/scratchpad/l1 CHECK decoded genome, all fixed, prefix 7 -> SAT (consistent)  secs 280
+H7_P7R130_8-11-12-14-15__dec.txt sim6 T 9 fenc T 9 sim6==fenc True rows followed (sim6, fenc): 8 8 of target 511
+F6CHECK H7_P7R130_8-11-12-14-15__dec.txt client 13 rows 0..510 free 129 mismatches 41 [138, 146, 154, 162, 170, 178, 186, 194, 202, 210, 218, 226, 234, 242, 250
+H7_P7R130__gates-starts P 7 R 130 LNS  FREE gates,starts: RESULT LNS-UNSAT (this neighbourhood only; NOT a frame verdict)  secs 221
+H7_P7R130_12-14-15_gates P 7 R 130 LNS 12,14,15 FREE gates: RESULT LNS-UNSAT (this neighbourhood only; NOT a frame verdict)  secs 297
+lnsb exit

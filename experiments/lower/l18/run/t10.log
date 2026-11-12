@@ -1,0 +1,4 @@
+INFO {'d': 32, 'H': 8, 'T': 32, 'relevant': 64, 'Lmax': 31, 'options': 128, 'vars': 946989, 'clauses': 6058490, 'empty': False, 'nP': 1686, 'quad': 5769094, 'lazy': 0, 'fixc_units': 10, 'transitivity_clauses': 240, 'build_s': 6.8}
+PHASE A3x5_P12_dec.txt literals 1892
+TAG t10 P 10 R 32 HINT A3x5_P12_dec.txt secs 600 rc 124
+q exit 124

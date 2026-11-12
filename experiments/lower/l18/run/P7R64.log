@@ -1,0 +1,8 @@
+INFO {'d': 32, 'H': 8, 'T': 64, 'relevant': 64, 'Lmax': 31, 'options': 128, 'vars': 1609716, 'clauses': 11057786, 'empty': False, 'nP': 3191, 'quad': 11211518, 'lazy': 0, 'fixc_units': 10, 'transitivity_clauses': 240, 'build_s': 12.3}
+SOLVE -> SAT 384.0s
+RESULT SAT decoded -> run/P7R64_dec.txt 187aba91763d71a6659eb7bfadfb7284b0772488
+CHECK decoded genome, all fixed, prefix 7 -> SAT (consistent)
+TAG P7R64 P 7 R 64 HINT - secs 402 rc 0
+P7R64_dec.txt sim6 T 9 fenc T 9 sim6==fenc True rows followed (sim6, fenc): 8 8 of target 511
+F6CHECK P7R64_dec.txt client 13 rows 0..510 free 129 mismatches 44 [122, 130, 138, 146, 154, 162, 170, 178, 186, 194, 202, 210, 218, 226, 234, 242, 250, 258, 266, 274]
+q exit 0

@@ -5,6 +5,11 @@
 - Tools l18/ (README): enc32c (clamp), pgad6 (F6R), ccheck (validated), q.sh (one question per task; logs in $SP/l18/TAG.log, «q exit»).
 - Calibration: P 10 R 32 hinted by A3x5_P12: NO ANSWER 600 s (A3 unclamped P 10: 99 s). Clamped rows make questions much harder.
 - L17 box result pushed 39dfa6d6 and reported 16:04Z.
+- 17:55Z P 13 R 32 hinted (A3x5_P12; A2_solved): both NO ANSWER 2,900 s (P 13 count 2). Phases are NOT followed by cadical (ASSUMEHINT:
+  A2_solved's design as assumptions SAT 0.2 s; as phases 524 s). LNS added (66df8bb8). LNS P 7 R 64 around A2_solved: {11}+gates/starts
+  UNSAT 165 s, {8,11} UNSAT 69 s, all XS UNSAT 73 s (gates/starts assumed): local only.
+- 18:28Z FULL P 7 R 64 (no hint): SAT 384 s, P7R64_dec 187aba91 follows rows 0..7 (sim6 = fenc), f6check first mismatch 122 (44/129).
+  Running: P 7 R 130 (refine), P 10 R 64 (climb). Frozen so far l18/run/ (SHA1SUMS).
 
 ## Successor 15 (Opus 5.5): BOX L17, GO from the Lead 10:09Z 2026-11-12 (handover check 67555d41, accepted)
 ### Resume point (10:1xZ 2026-11-12, date -u)

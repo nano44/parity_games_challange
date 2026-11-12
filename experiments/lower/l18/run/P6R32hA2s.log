@@ -1,0 +1,10 @@
+INFO {'d': 32, 'H': 8, 'T': 32, 'relevant': 64, 'Lmax': 31, 'options': 128, 'vars': 860009, 'clauses': 5739692, 'empty': False, 'nP': 1632, 'quad': 5669428, 'lazy': 0, 'fixc_units': 10, 'transitivity_clauses': 240, 'build_s': 6.3}
+PHASESTATES 1584
+PHASE A2_solved.txt literals 3476
+SOLVE -> SAT 524.2s
+RESULT SAT decoded -> run/P6R32hA2s_dec.txt 21ad4d819f8e97e8741e9636564791921999496e
+CHECK decoded genome, all fixed, prefix 6 -> SAT (consistent)
+TAG P6R32hA2s P 6 R 32 HINT A2_solved.txt secs 532 rc 0
+P6R32hA2s_dec.txt sim6 T 6 fenc T 6 sim6==fenc True rows followed (sim6, fenc): 7 7 of target 511
+F6CHECK P6R32hA2s_dec.txt client 13 rows 0..510 free 129 mismatches 30 [38, 70, 102, 134, 166, 198, 214, 222, 230, 238, 246, 254, 262, 270, 274, 294, 326, 398, 410, 414]
+q exit 0

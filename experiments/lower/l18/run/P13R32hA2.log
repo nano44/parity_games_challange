@@ -1,0 +1,4 @@
+INFO {'d': 32, 'H': 8, 'T': 32, 'relevant': 64, 'Lmax': 31, 'options': 128, 'vars': 1020840, 'clauses': 6328318, 'empty': False, 'nP': 1725, 'quad': 5852614, 'lazy': 0, 'fixc_units': 10, 'transitivity_clauses': 240, 'build_s': 7.5}
+PHASE A2_solved.txt literals 1892
+TAG P13R32hA2 P 13 R 32 HINT A2_solved.txt secs 2900 rc 124
+q exit 124

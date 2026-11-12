@@ -1,0 +1,3 @@
+INFO {'d': 32, 'H': 8, 'T': 130, 'relevant': 64, 'Lmax': 31, 'options': 128, 'vars': 3099804, 'clauses': 21821226, 'empty': False, 'nP': 6375, 'quad': 22579706, 'lazy': 0, 'fixc_units': 10, 'transitivity_clauses': 240, 'build_s': 23.8}
+TAG P7R130 P 7 R 130 HINT - secs 2900 rc 124
+q exit 124
