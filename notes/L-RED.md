@@ -3512,3 +3512,17 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
 - Lesson: n5x236 «spec» mode is not SPEC's tie rule; use n5s237 for anything about N5's key rule (box 105 replay).
 - RESUME POINT: after «go»: (a) exh237 3 (2 parts), (b) climb237 small (n <= 12) two seeds, then medium (n <= 30) two seeds, CTRL=1
   control, (c) aim237 families, (d) docs/red/R237-w4.md, (e) the (W4) proof read, (f) box 105 replay on n5s237.
+
+## Successor 68 (Opus 5.5, high; from 2026-11-12 20:00Z, date -u) — R237 (2) finish, R238 box 105 replay
+- Trap check: local claude/l-red 314 behind; ff to 2d290a15. Clock skew 0 s. Handover check 034512dc3 (VERIFY PASS 20:26Z); Lead «go» 20:27Z.
+- Envs as successor 67 (scratchpad box104 / lnew / lred / llit; NEW: box105 = `git archive 516b68371 experiments/si/box105`; env BOX105 =
+  <dir>/experiments/si/box105). They survived the 21:5xZ container restart (scratchpad kept), but rebuild them if missing.
+- DONE: exh237 n = 3 part 1 (219,488 games, all 0) = all 438,976; controls CTRL=1, CTRLW=1/2/3 fire (out/exh3_ctrl.log). aim237: 10 families
+  (new plen / pset) all 0 on both own engines + box 104's check; CTRL=1 fires (out/aim237.out). R237-wrap.md §3 correction (n5x236 «spec» is
+  not SPEC: N5 on F_n n = 2..8 = 5/5/5/5/6/6/6 by n5s237; box 104 n5v 5/5/5/5/6 at n = 2..6). R238 key238 (own KEY simulator + n5s237 spec):
+  7,300 random free genomes keyfail 0 (key105 kdiff 0 on 715 sampled; commit ca8dd9a11's message says 615: wrong, typed), controls 1-3 fire,
+  CTRL=4 neutral 0; kclimb238 ka 25,000 climbed genomes L* up to 19, all 0.
+- IN FLIGHT at 2026-11-12T21:54Z: climb237 s1 (seed 2371, 60000, n <= 12; checkpoint out/ck_s1.json 24,000 evals, best T 27, all 0; RESUME=1 TLIMIT);
+  kclimb238 kb (seed 2392, 25000, d <= 16 w <= 2 deg <= 3; out/kck_kb.json 13,500 evals, best L* 19; RESUME=1).
+- Drafts NOT committed: docs/red/R237-w4.md (placeholders CLIMB-TABLE, CLIMB-CTRL), docs/red/R238-key.md (KCLIMB, LSTAR-MAX).
+- RESUME POINT: finish s1 + kb; climb s2 (seed 2372, n <= 12) and m1 (seed 2373, n <= 30) + CTRL=1 climb; fill the two docs; push; message Lead.
