@@ -14,5 +14,15 @@ if [ -f out/key_rand.out ]; then
   grep -q "CTRL 1: s3fail 0 keyfail [1-9]" out/key_ctrl.out || bad "key control"
   [ "$(grep -c "^KEY105 json .*: $Z | " out/key_json.out)" = 25 ] && [ "$(grep -c "^KEY105 json Kprev_8.json: SKIPPED" out/key_json.out)" = 1 ] && [ "$(wc -l < out/key_json.out)" = 26 ] || bad "key frozen instances"
 fi
+# (3) D2, when present: six ladder searches (free / edom, d = 2, 3, 4) with the recorded bests, each best genome validated against N5
+#   (six counters 0, L* = the search's), all Xi-cyclic
+if [ -f out/val105.out ]; then
+  for p in "free 2 5" "edom 2 5" "free 3 9" "edom 3 10" "free 4 14" "edom 4 13"; do
+    set -- $p
+    grep -q "^LADDER105 mode $1 d $2 seed 11 restarts 40 steps 3000: best L\* $3 | " out/ladder105.out || bad "ladder $1 d $2"
+    grep -q "^VAL105 ladder_$1_d$2.json mode $1 d $2: .* L\* $3 (search: $3) Xi-graph cyclic | $Z$" out/val105.out || bad "val $1 d $2"
+  done
+  [ "$(wc -l < out/val105.out)" = 6 ] || bad "val rows"
+fi
 [ $fail = 0 ] && echo "BOX105 checks: PASS"
 exit $fail

@@ -107,7 +107,8 @@ key_(s_(t−1))(y), and let C_ℓ be the number of steps at which some mover of 
   the ladder shape: L-RED's ladderbf.py (claude/l-red 707c0e82, experiments/red/r177) computes the longest such chain; the DATA
   commit reports its numbers next to 3^d − 1. Whether sets that come from VALUES can come near it is O2.
 
-## 4. DATA: D1 (key105.py, the direct simulator of KEY(G*), against N5 from S3; run105.sh, outputs experiments/si/box105/out/)
+## 4. DATA
+### 4.1 D1 (key105.py, the direct simulator of KEY(G*), against N5 from S3; run105.sh, outputs experiments/si/box105/out/)
 Label of every number below (Lead 17:27Z, 18:06Z): «KEY(G*), equal to N5's run on the validated set only» — until KEY-MODEL (§2) is
 refereed, a KEY(G*) count is a statement about N5 only on the genomes listed here, where it was compared state by state. Run:
 `bash experiments/si/box105/run105.sh` (L-SI successor 53, finished 2026-11-12T20:57Z by date -u; engines n5v.py mode spec at claude/l-new
@@ -156,6 +157,41 @@ fcba92fc and box 104's free104.py / freereach104.py, read-only). The lines below
   iterations, first fallback at L* + 1, regions correct) and KEY-MONO* (keymono 0) and the valuation monotonicity (valmono 0) on them.
   It is DATA: it bounds nothing. The random free genomes are small (L* ≤ 4); the long runs (L* 52-196) are the lane's frozen E-DOM instances (families
   FW, MW, MWR, Ku), i.e. R104 genomes, not free ones. D2 (search for long free runs against the ceiling) follows in a later commit.
+
+### 4.2 D2: the ladder shape of RESULTS R110, free against E-DOM priorities, and the adversarial ceiling (DATA; a SEARCH, not an enumeration)
+Label of every L* below: «KEY(G*), equal to N5's run on the validated set only»; the validated set is the six best genomes (val105.py),
+not the searched space. Tools: run105d2.sh (ladder105.py, then val105.py), outputs out/ladder105.out, out/val105.out, best genomes in
+best/ (L-SI successor 53, finished 2026-11-12T21:48Z by date -u). Shape (ladder105.py header): movers 2l and 2l + 1 on level l < d,
+degree 2, option k of a level-l mover W-points to mover 2(l − 1) + k; free parameters: Ξ-targets (a mover or X; Ξ-cycles allowed),
+gate indices, start, and the carriers' order and parities: all 2M carriers (MODE free) or only the β ranks and parities with every e
+even above every β in (level, gate) order (MODE edom, R104's priorities). Search: 40 random restarts × 3,000 hill-climb steps, seed 11.
+- Search output (best L* and the per-restart bests), inserted by script:
+  «LADDER105 mode free d 2 seed 11 restarts 40 steps 3000: best L* 5 | per restart [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]»
+  «LADDER105 mode edom d 2 seed 11 restarts 40 steps 3000: best L* 5 | per restart [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4]»
+  «LADDER105 mode free d 3 seed 11 restarts 40 steps 3000: best L* 9 | per restart [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 7, 7, 7, 7, 6, 6, 6, 6, 6]»
+  «LADDER105 mode edom d 3 seed 11 restarts 40 steps 3000: best L* 10 | per restart [10, 10, 9, 9, 9, 9, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, 6]»
+  «LADDER105 mode free d 4 seed 11 restarts 40 steps 3000: best L* 14 | per restart [14, 13, 13, 12, 12, 12, 12, 12, 12, 12, 11, 11, 11, 11, 11, 11, 11, 11, 11, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 9, 9, 9, 9, 9, 8, 8, 8, 8, 8]»
+  «LADDER105 mode edom d 4 seed 11 restarts 40 steps 3000: best L* 13 | per restart [13, 12, 12, 12, 12, 11, 11, 11, 11, 11, 11, 10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 8, 8, 8, 8, 8, 8, 8, 7, 7]»
+- Validation of each best genome against N5 from S3 (all six counters 0 on all six; L* equal to the search's; Ξ-graph checked):
+  «VAL105 ladder_free_d2.json mode free d 2: |V| 70 L* 5 (search: 5) Xi-graph cyclic | s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0»
+  «VAL105 ladder_edom_d2.json mode edom d 2: |V| 70 L* 5 (search: 5) Xi-graph cyclic | s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0»
+  «VAL105 ladder_free_d3.json mode free d 3: |V| 100 L* 9 (search: 9) Xi-graph cyclic | s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0»
+  «VAL105 ladder_edom_d3.json mode edom d 3: |V| 100 L* 10 (search: 10) Xi-graph cyclic | s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0»
+  «VAL105 ladder_free_d4.json mode free d 4: |V| 130 L* 14 (search: 14) Xi-graph cyclic | s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0»
+  «VAL105 ladder_edom_d4.json mode edom d 4: |V| 130 L* 13 (search: 13) Xi-graph cyclic | s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0»
+- Ceiling for comparison: L-RED's ladderbf.py (claude/l-red 707c0e82, experiments/red/r177, read-only, re-run here 21:5xZ: `python3 -I
+  ladderbf.py d 20 1`): the longest chain of the BFS lex-min key rule when the availability sets are chosen ADVERSARIALLY (any set
+  containing the current option), best over 20 random gate permutations: «LADDERBF d 2 N 4 trials 20 max chain 8», «LADDERBF d 3 N 6
+  trials 20 max chain 22», «LADDERBF d 4 N 8 trials 20 max chain 52». 3^d − 1 = 8, 26, 80: equal at d = 2 only.
+- E-DOM maxima for the acyclic ladder class 𝓛^R_d: T^R(3) = 8 is landed (RESULTS R112, machine-certified); T^R(2) = 4 and T^R(4) = 13 are
+  lane DATA, as trunk RESULTS records them («T^R(2) = 4 and T^R(4) = 13 are lane DATA»).
+  The E-DOM search above found L* = 5 (d = 2) and 10 (d = 3): all six best genomes have a cyclic Ξ-graph (val105.py's column;
+  ladder105.py does not forbid Ξ-cycles), so they are outside 𝓛^R_d and do not contradict R110 / R112. An acyclic-only search was not run.
+- Reading (DATA, no conclusion): value-induced availability reached 5 / 9 / 14 (free) and 5 / 10 / 13 (E-DOM) against the adversarial
+  8 / 22 / 52; free priorities did not beat E-DOM's in this search at d ≤ 3 and beat it by 1 at d = 4. «No separation so far» between
+  the free and the E-DOM class is DATA with these sizes (N = 4, 6, 8 movers) and this search budget, not a statement. Exhaustive
+  enumeration is not feasible beyond depth 1 (at d = 2 already 12 relevant carriers: 12!·2^12 orders, times the Ξ-targets and gate
+  orders); the exact d = 2 maximum needs an exact method (order constraints or a SAT encoding as R112 did for T^R(3)), not done here.
 
 ## 5. Questions, and what is not done
 - LAG* (how many steps a level-ℓ mover can be behind level ℓ − 1; the tower's doubling needs it): not stated yet.

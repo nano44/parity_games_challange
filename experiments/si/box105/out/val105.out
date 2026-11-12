@@ -1,0 +1,6 @@
+VAL105 ladder_free_d2.json mode free d 2: |V| 70 L* 5 (search: 5) Xi-graph cyclic | s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0
+VAL105 ladder_edom_d2.json mode edom d 2: |V| 70 L* 5 (search: 5) Xi-graph cyclic | s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0
+VAL105 ladder_free_d3.json mode free d 3: |V| 100 L* 9 (search: 9) Xi-graph cyclic | s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0
+VAL105 ladder_edom_d3.json mode edom d 3: |V| 100 L* 10 (search: 10) Xi-graph cyclic | s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0
+VAL105 ladder_free_d4.json mode free d 4: |V| 130 L* 14 (search: 14) Xi-graph cyclic | s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0
+VAL105 ladder_edom_d4.json mode edom d 4: |V| 130 L* 13 (search: 13) Xi-graph cyclic | s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0
