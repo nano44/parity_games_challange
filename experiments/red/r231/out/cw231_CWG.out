@@ -1,0 +1,12 @@
+CWG1_4.json k 1 N 53 M 111 N+M 164 b 7 Dtop 8 D_mov 8 T 28 maxasc 5 maxloud 0 must0 0
+CWG1_8.json k 1 N 93 M 221 N+M 314 b 11 Dtop 30 D_mov 30 T 52 maxasc 9 maxloud 0 must0 0
+CWG1_16.json k 1 N 173 M 489 N+M 662 b 19 Dtop 86 D_mov 86 T 108 maxasc 17 maxloud 16 must0 0
+CWG2_4.json k 1 N 55 M 113 N+M 168 b 9 Dtop 8 D_mov 8 T 28 maxasc 5 maxloud 0 must0 0
+CWG2_8.json k 1 N 99 M 227 N+M 326 b 17 Dtop 30 D_mov 30 T 52 maxasc 9 maxloud 0 must0 0
+CWG2_16.json k 1 N 187 M 503 N+M 690 b 33 Dtop 86 D_mov 86 T 108 maxasc 17 maxloud 16 must0 0
+CWG3_4.json k 1 N 53 M 111 N+M 164 b 7 Dtop 3 D_mov 3 T 28 maxasc 1 maxloud 0 must0 0
+CWG3_8.json k 1 N 93 M 221 N+M 314 b 11 Dtop 3 D_mov 3 T 52 maxasc 1 maxloud 0 must0 0
+CWG3_16.json k 1 N 173 M 489 N+M 662 b 19 Dtop 3 D_mov 3 T 100 maxasc 1 maxloud 0 must0 0
+CWG4_4.json k 1 N 55 M 113 N+M 168 b 9 Dtop 3 D_mov 3 T 28 maxasc 1 maxloud 0 must0 0
+CWG4_8.json k 1 N 99 M 227 N+M 326 b 17 Dtop 3 D_mov 3 T 52 maxasc 1 maxloud 0 must0 0
+CWG4_16.json k 1 N 187 M 503 N+M 690 b 33 Dtop 3 D_mov 3 T 100 maxasc 1 maxloud 0 must0 0
