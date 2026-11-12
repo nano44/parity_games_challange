@@ -1,6 +1,39 @@
 # L-FORMAL notebook (Lean formalization lane; branch claude/l-formal; files: lean/, this notebook)
 
 ## Resume point
+- SUCCESSOR 3 (session_01V5yGRX3V51LguQp6WMvAgj, Opus 5.5, started 2026-11-12T19:59Z; THIS block is the resume point; successor 2's
+  blocks below it are history). Successor 2 was stopped by the Fable weekly limit about 19:38Z; its RF-A files were never committed.
+  - Handover check 91f25983 (docs/agents/handover-checks/L-FORMAL.md). Lead 20:08Z: «Handover check 91f25983 received, and it matches my
+    state … «go» once 91f25983 is on origin with push exit 0.» «Your recovery plan is approved: take the RF-A files' text from successor
+    2's transcript … Recovered proofs still have to compile from a clean build before they are committed.» «Your trap note is adopted:
+    commit everything that compiles before a push starts. Order: (1) CI run, (2) INDEX rows, (3) RF-A.»
+  - (1) CI: workflow verify.yml run 43292277834 on 6ed90b71: job lean-lemmas 131441320129 SUCCESS («Build completed successfully (3189
+    jobs).», «LEAN LEMMAS PASS», 19:38:57Z-19:41:18Z); job verify (the gate) was still in progress at 20:07Z.
+  - RECOVERY METHOD (reusable): list_events(session_01V5yGRaQYgCY9vD9mnoWrPb, kinds=["assistant"]) pages saved as files by the harness;
+    a Python parser took every tool_use input verbatim; successor 2 edited only through Bash heredocs, so its ten commands from 18:59Z
+    to 19:09Z were REPLAYED in order (paths rewritten) in a scratch worktree at 6ed90b71. Every build output matched its log: 3161,
+    3190, 3171 jobs, the same omega failure at GenomeImp.lean:93:64 and its fix, 3173, then a clean 3191 jobs, 69/69 axiom lines (68
+    with the three, 1 with propext + Quot.sound), 9,409 lines in 53 files. Notebook edits re-run with their original NOW times.
+  - Recovered: GenomeImpStatement.lean (sha1 f5255b58a05b94716b9acee4a66126133e4a9e8a as recovered; c7a6ecd10b87de4384a6b3b47aed50fcc5c9d4df
+    after one comment fix: a literal «\n» in the header became a newline), GenomeImp.lean (503d99d5a2ca8630c89728022e924e110bfd3a5c),
+    the GenomeLevel.lean refactor (IdealPreRun), PGLemmas.lean, Axioms.lean, INDEX.md (both 19:00Z wordings, the RF-A rows), README.md.
+    Statement text vs what the Lead accepted: the 19:01:59Z file plus `ImpK5NewStatement` (identical to the 19:09Z message text); the
+    only other differences are header comments. Lead 20:12Z: «No Statement word changed, so no new diff is needed. The replay method
+    goes into the notebook. Go ahead as planned: one commit with a clean build, push, then send me the SHA.»
+  - 91f25983 on origin: push.sh exit 0 at 20:58:49Z, VERIFY PASS (git ls-remote = 91f25983).
+  - RF-A COMMIT (this commit): the recovered files copied into the lane tree; clean build 20:59:10Z-21:00:11Z: «Build completed
+    successfully (3191 jobs).», 0 warnings, Axioms.lean 69/69 (68 with the three, 1 with propext + Quot.sound), no sorry / admit /
+    axiom / native_decide, 9,411 lines in 53 files (+2 vs 19:07Z: successor 2's header edit at 19:09Z and my comment fix).
+  - NEXT (Lead 20:12Z, verbatim): «After your RF-A commit is on origin and its lean-lemmas CI job is green, send me a one-page MANIFEST
+    in lean/lemmas/MANIFEST.md, committed: (a) every theorem to be offered, with Statement name, file, line and commit; (b) the
+    definition files those Statements depend on (Defs.lean, Genome.lean, GenomeClass.lean, …), each with its sha1 and the Lead acceptance
+    it carries (time, deviations); (c) the exact build and axiom commands and their outputs.» PREPARED (not committed, in the scratch
+    worktree; re-create if lost): lean/lemmas/check/manifest.lean, a `#eval` over the compiled environment: for every name in
+    Axioms.lean its module, line and the head of its type after the binders (the Statement); and the PG definitions those types
+    depend on, transitively through definition bodies (not through theorems), grouped by module (26 modules at RF-A). Run from
+    lean/lemmas: `lake env lean check/manifest.lean`. Per-file acceptance times of Statements.lean..Statements7.lean are recorded in
+    the lane files only as the set 11:49Z-14:54Z (Statements 11:44Z sent, Statements2 12:26Z sent; 12:29Z / 13:13Z for the next).
+  - Then: box 212's RF-B in Lean when L-NEW 74 states it; Γ3 in Lean, definitions first.
 - SUCCESSOR 2 (session_01V5yGRaQYgCY9vD9mnoWrPb, started 2026-11-12T17:10Z; this block is the resume point, the blocks below it are the
   predecessor's and stay as history). Handover check 8fb3dd6c is on origin (push.sh exit 0 at 18:00:32Z). Lead 17:22Z: all five answers
   match, «go». Lead's rulings of 17:22Z, verbatim. Item (0): «(a) Mirror frozen / legal / howard / moves EXACTLY as defined, along
@@ -12,83 +45,99 @@
   where it is cheap. That is DATA about the transcription. It does not replace the Lean proofs.» Item (0′): «if ClassOrder holds for ALL
   pairs under WF, state the stronger form and name the deviation («stronger than box 208 §1's sentence»), as you plan. Send the Statement
   before its proof lands in a commit.» Stale sentences: «fix README l. 117 and INDEX l. 56 in your first commit, as you propose.»
-- STATE 2026-11-12T18:12Z (date -u):
-  - (0) DONE as DATA: lean/lemmas/check/idealcheck.py (outputs check/out/idealcheck*.out). 11 JSON genomes of experiments/new/box191/inst,
-    1,018 vertices, 191 states, 180 steps: all 12 counters 0 (fastdiff 18,814 (state, vertex); valdiff 18,814; devfail 546,942 (state,
-    vertex, deviation); howardfail 2,388 (step, mover); stopfail 272 (mover, gate)). IDEAL_CTRL=how: howardfail 180 on all 11;
-    IDEAL_CTRL=opt: devfail 7,361, valdiff 3,541 on all 11. Lasso enumeration: not done.
-  - (1) DONE: PGLemmas/GenomeK4.lean: `le_of_underProgAt`, `OptCounter.le_succ` (R123 LOC-GATE in ⊴ form, any game), `Genome.k4 :
-    G.K4Statement`. NO-TIE was not needed.
-  - (0′) `ClassOrderStatement` + `clsKey` are in PGLemmas/GenomeOrderStatement.lean (statement only, committed with this block) and go to
-    the Lead for the diff. THE PROOF EXISTS AND COMPILES BUT IS NOT COMMITTED: PGLemmas/GenomeOrder.lean (untracked on purpose;
-    `class_order : G.ClassOrderStatement`, `clsLt_iff`, `clsKey_lt_iff`, `clsKey_le_iff`, `clsKey_injective`, `clsLt_total`,
-    `clsLt_trans`, `pw_lt_of_max`). After the Lead's ACCEPT: `git add` it, add `import PGLemmas.GenomeOrder` to PGLemmas.lean and
-    `#print axioms PG.Genome.class_order` to Axioms.lean, update the INDEX row. If the container was replaced the file is LOST: its
-    proof is 150 lines; the route is in its header (key (rew Λ, Σ 2^pr over E); `Prod.Lex.toLex_lt_toLex`; `pw_lt` for the top vertex).
-  - Statements for (3) and (4) are WRITTEN, compiled and go to the Lead together with `ClassOrderStatement`; NONE is proved:
-    PGLemmas/GenomeLevelStatement.lean (`ck`, `L2Statement`, `L3Statement`, `L5Statement`, `PlateauGStatement`, `QuietStatement`,
-    `AllTCycStatement`, `AllTCycSharpStatement`; deviations in the file's header).
-  - Build of the tree with these files: `rm -rf .lake/build && lake build` → «Build completed successfully (3181 jobs).», 0 warnings,
-    before GenomeLevelStatement.lean was added; with it, incremental `lake build` → 3182 jobs. Axioms.lean: 48 theorems, 47 with [propext,
-    Classical.choice, Quot.sound], 1 with [propext, Quot.sound]. No sorry / admit / axiom / native_decide.
-- STATE 2026-11-12T18:43Z (date -u), LATER THE SAME SESSION. EVERYTHING OF THE BRIEF'S WORK LIST (0)-(4) IS PROVED IN LEAN ON MY DISK; THE PROOFS OF THE
-  NINE NEW STATEMENTS ARE NOT COMMITTED (statement first: they wait for the Lead's diff; sent 18:17Z (eight) and 18:42Z (the ninth),
-  reminders 18:28Z; no verdict yet when this was written). Commit a1f02bee (engine comparison, `k4`, the statement files, docs) is being
-  pushed since 18:15Z.
-  UNCOMMITTED FILES (all compile; `rm -rf .lake/build && lake build` → 3189 jobs, 0 warnings; Axioms.lean 61 theorems, all within the
-  allowed three; 8,957 lines in 51 files). IF THE CONTAINER IS REPLACED THEY ARE LOST; the routes are in this block and in the file
-  headers of the statement files:
-  - PGLemmas/GenomeOrder.lean (170 lines): `class_order`.
-  - PGLemmas/GenomeLevel.lean (324): `l2`, `l3`, `l5`; `ck_eq_iff` / `ck_le_iff` / `ck_lt_iff`, `IdealCycRun.ck_mono`, `cls_succ_le`,
-    `cls_of_lam_eq`, `isConst`, `IdealCycRun.cls_const`, `nxt_mover`.
-  - PGLemmas/GenomePlateau.lean (492): `IdealCycRun.window_le` (the generic window lemma through `plateau` with Ch := Mov ∩ Y),
-    `IdealCycRun.gate_const` ((P4)) with `gate_of_cls_eq_some`, `gate_of_cls_eq_none`, `succ_eq_eface`, `cW_dom`, `pset_of_lam_cW`;
-    `quiet` (Y := univ, (d) from `moves`); `plateau_g` (Y := keys at u ≤ the front's key; `hpers` = the front persists through stalls
-    by `Nat.le_induction`; (P6) by the claim «∀ k, t + k ≤ b → movers of Y keep σ_t ∧ values on Y are those of t», with
-    `val_congr` against the answer τ t and `R.f1`).
-  - PGLemmas/GenomeAllTCyc.lean (101): `all_tcyc_sharp` (S := image of ck T ∘ gate ∪ image of clsKey (β, ∅); `level_count`; the first
-    state without a lag by `Nat.find`; `quiet` on the tail), `all_tcyc`.
-  - PGLemmas/GenomeRunStatement.lean (statement `RunExistsStatement`, my addition), PGLemmas/GenomeRun.lean: `exists_best`,
-    `howardNext`, `howardNext_spec`, `runStep`, `runSeq`, `run_prefix`, `run_exists` (stops by `all_tcyc`).
-  - PGLemmas/GenomeExample.lean: `tiny`, `tinyOpt`, `tiny_wf`, `tiny_better`, `tiny_run` (a run of length 1); `setLt_insert_of_lt`,
-    `ext_ext_lt`, `core_closed`, `core_iterate`.
-  - MODIFIED, uncommitted: PGLemmas/GenomeK4.lean (`optCounter_of_local`, import OptExists), PGLemmas.lean (7 more imports),
-    Axioms.lean (13 more lines), check/idealcheck.py (counter wffail, control IDEAL_CTRL=wf) and check/out/idealcheck*.out
-    (re-run with the final tool: all 13 counters 0; how: howardfail 180; opt: devfail 7,361, valdiff 3,541; wf: wffail 44; each
-    control fires on all 11 genomes).
-  - NEW DATA TOOL, uncommitted: check/levelcheck.py (+ check/out/levelcheck.out, levelcheck_ctrl.out): the conclusions of L2 / L3 / L5 /
-    PlateauG / Quiet / AllTCycSharp and (K1) on keys along the engine's runs of the 11 genomes, every reference state b: all 8
-    counters 0; 1,473 pairs (b, t) with a lag, clause (α) at 747, (β) at 726; 309 stall steps; longest interval of stalls 9 (cyc2_d7,
-    N = 14), and 8 = N on DEAD_SEG2P_d4_N8 (the bound of `plateau_g` is attained); LEVEL_CTRL=1: l2fail = l3fail = l5fail = 1,470.
-  - The README / INDEX edits for that commit are scripted: scratchpad docs2.py NOW VERDICT_TIME, run from lean/lemmas (dry run on
-    copies passed). If the scratchpad is gone: README needs the «BOX 208 ON THE GENOME, THE CHAIN TO ALL-TCYC» bullet with its reading
-    rules (model, restricted family, not TARGET.md, G-N5-TIME open, lane-level, the three route differences), the file list, and INDEX
-    the rows for the nine statements, `tiny_run`, `optCounter_of_local`.
-- LEAD'S VERDICTS, read 2026-11-12T18:46Z (three copies had queued: 18:20Z, 18:30Z, 18:43Z): «VERDICT … ACCEPT ALL NINE. - ClassOrderStatement +
-  clsKey, L2, L3, L5, PlateauG, Quiet, AllTCyc, AllTCycSharp: accepted with your deviations (i)-(vii) as at 18:17Z. -
-  RunExistsStatement: ACCEPT. … Record the named deviation «existence is not stated in the fleet texts; added so that the theorems
-  about IdealCycRun are not empty; uniqueness not claimed». - tiny_wf / tiny_run (a run with T = 1, no premise) is the non-vacuity
-  witness I asked for. Accepted as an example theorem. - optCounter_of_local is logged as the Lean bridge for idealcheck's devfail.
-  Good. Commit everything (proof files, README / INDEX / Axioms.lean rows) as soon as a1f02bee's push ends, then push. Send me the SHA
-  and the theorem list with commit. Then I open the CHECKER item for the Lean rows, which go through the CI job lean-lemmas (now on
-  trunk; your branch needs trunk merged with --no-ff for the job to run there).» From 18:20Z: «PlateauG with bound N … accepted as a
-  STRONGER claim. In INDEX, cite it as matching L-RED 66's SHARP route and REFEREE 32's PR-5. If the proof needs N + 2M + 5 after all,
-  restate it with A0's constant; do not weaken the hypotheses.» (The proof gives N.) «Quiet replacing R126 QUIET-N: accepted. Name it
-  in INDEX as «premise-free replacement of a landed citation».» «AllTCycSharpStatement is your route's bound, credited to L-RED 66's
-  SHARP route (L41).» «Your finding (the wt g = none sub-case …) … I routed it to L-NEW 73 for the P-N5-LEVEL freeze.» From 18:30Z:
-  «Your FINDINGS block stays as the status text: Lean-checked (lane) only; IDEAL-CYC on Γ(G) only; not N5, not N5′-xi, not Γ3, not
-  TARGET.md; G-N5-TIME OPEN; the bound is not tested by data.» README and INDEX carry these words (docs2.py applied 18:46Z).
-- NEXT: (i) when push.sh of a1f02bee has ended: clean rebuild, commit everything by explicit path (the list of UNCOMMITTED FILES above,
-  check/levelcheck.py with its two outputs, README, INDEX, this notebook), then `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo`
-  (the Lead: the CI job lean-lemmas is on trunk), then scripts/push.sh as a tracked task, then send the Lead the SHA and the theorem
-  list. (ii) Then whatever the Lead routes. Candidates I see (mine,
-  not asked): box 209's Γ3 form (LEVEL3 / PLATEAU3 / T3-ALL) needs Γ3 in Lean
-  (P-N5-REACH §3) and is a new definition diff; box 208 (L4), §5-§6 are not needed for ALL-TCYC.
-- TRAPS met by successor 2: (i) `if_pos` / `if_neg` / `dif_pos` / `push_neg` are deprecated in this Mathlib (warnings): use
-  `ite_eq_left` / `ite_eq_right` / `dite_eq_left` / `push Not`. (ii) A module that PGLemmas.lean does not import is built by
-  `lake build PGLemmas.<Module>`. (iii) `exact absurd (f … trivial) h` cannot infer an implicit vertex; write `exact (h (f …
-  trivial)).elim`. (iv) Numerals in `Fin (tiny.deg x)` need the type ascription `(1 : Fin 2)`. (v) In the gate, experiments/new/check.sh
-  alone takes most of the 41 minutes; nothing in lean/ is built by the gate (no lean/lakefile.* at lean/ root).
+- STATE 2026-11-12T18:59Z (date -u). THE BRIEF'S WORK LIST (0)-(4) IS DONE AND COMMITTED. Nothing of this lane is uncommitted except this notebook
+  block. Commits of successor 2 on claude/l-formal:
+  - 8fb3dd6c handover check (on origin 18:00Z);
+  - a1f02bee engine comparison check/idealcheck.py, `k4` + `OptCounter.le_succ` (GenomeK4.lean), the statement files
+    GenomeOrderStatement.lean and GenomeLevelStatement.lean (on origin 18:56Z, VERIFY PASS);
+  - e14f5508 the proofs: GenomeOrder.lean `class_order`; GenomeLevel.lean `l2`, `l3`, `l5`; GenomePlateau.lean
+    `IdealCycRun.window_le`, `IdealCycRun.gate_const`, `gate_of_cls_eq_some`, `gate_of_cls_eq_none`, `plateau_g`, `quiet`;
+    GenomeAllTCyc.lean `all_tcyc_sharp`, `all_tcyc`; GenomeRunStatement.lean + GenomeRun.lean `run_exists`; GenomeExample.lean
+    `tiny_wf`, `tiny_run`; GenomeK4.lean `optCounter_of_local`; check/idealcheck.py with wffail; check/levelcheck.py; README, INDEX,
+    Axioms.lean (61 theorems);
+  - 6ed90b71 merge of trunk 7fa6aff4 with --no-ff (the Lead's instruction: the CI job lean-lemmas is in trunk's
+    .github/workflows/verify.yml); no lane file changed by it. push.sh for 6ed90b71 started 18:58Z: CHECK `git ls-remote origin
+    claude/l-formal` FIRST; if it does not show 6ed90b71 (or a later commit of this lane), the push did not land: re-run
+    scripts/push.sh.
+  Build of e14f5508's lean/lemmas: `rm -rf .lake/build && lake build` → «Build completed successfully (3189 jobs).», 0 warnings;
+  Axioms.lean 61 theorems (60 with the three allowed axioms, 1 with [propext, Quot.sound]); no sorry / admit / axiom /
+  native_decide; 8,957 lines in 51 files.
+  WHAT LEAN NOW CHECKS (lane-level; statements accepted by the Lead): for every genome with `G.WF` and every `IdealCycRun σ τ T`:
+  T ≤ 2M(N + 2M)(N + 1) + N ≤ P(N + 2M + 6) + N, P = 2M(N + 2M) (box 208 A0); a stopping run from the genome's start exists
+  (`run_exists`); the genome `tiny` has a run with T = 1. SCOPE, never to be dropped from a report: a step bound for the MODEL
+  IDEAL-CYC on the genome games Γ(G); not N5, not N5′-xi, not Γ3, not TARGET.md; G-N5-TIME stays OPEN; box 208 is a CANDIDATE in its
+  lane; a row is a result only through CHECKER and the CI job; no data run comes near the bound.
+  DATA: check/idealcheck.py (13 counters 0 on the 11 genomes of experiments/new/box191/inst; controls how / opt / wf fire on all 11);
+  check/levelcheck.py (8 counters 0; 1,473 pairs (b, t) with a lag; (α) 747, (β) 726; 309 stall steps; longest interval of stalls 9
+  on cyc2_d7 (N = 14) and 8 = N on DEAD_SEG2P_d4_N8; control fires with 1,470 on l2fail, l3fail, l5fail). Outputs in check/out/.
+  How the proofs go, for whoever edits them: the file headers of GenomeLevel.lean, GenomePlateau.lean, GenomeAllTCyc.lean,
+  GenomeRun.lean, GenomeExample.lean (each lists its lemmas and the argument). The one place where the route leaves box 208's text:
+  `gate_of_cls_eq_none` (both faces of a level-0 gate of class (c_W, ∅): Ω(e_g) = (c_W, ∅, 1), plen(β_g) ≥ 2, c_W even, LOC-GATE gives
+  σ̄(g) = β_g); the Lead routed it to L-NEW 73.
+- LEAD'S VERDICTS (18:20Z, 18:30Z, 18:43Z; quoted in lean/lemmas/README.md): «ACCEPT ALL NINE» (ClassOrderStatement + clsKey, L2, L3, L5,
+  PlateauG, Quiet, AllTCyc, AllTCycSharp with deviations (i)-(vii); RunExistsStatement with the deviation «existence is not stated in
+  the fleet texts; added so that the theorems about IdealCycRun are not empty; uniqueness not claimed»; `tiny_wf` / `tiny_run` accepted
+  as the non-vacuity witness; `optCounter_of_local` logged as the bridge for devfail). «Then I open the CHECKER item for the Lean rows,
+  which go through the CI job lean-lemmas».
+- LEAD 19:00Z (verbatim): «Witness: your flag is fair. I accept tiny_run as is. Non-vacuity is an existence property: `optCounter_exists`
+  plus a derived Howard step is a proof, and «decide or rfl» was my over-specification. No explicit decidable witness is wanted.
+  Record in INDEX: «witness by existence (optCounter_exists), not by computation; Lead ruling 19:00Z».» «INDEX's citation of L-RED
+  66's SHARP route on my word is fine as written. Say «per the Lead (R235 not opened by L-FORMAL)».» (Both done in INDEX.md.)
+  «NEXT, one item, statement-first: RF-A, for L-NEW's BOX 212. - Define IdealImpRun: IdealCycRun with `howard` replaced by «each step
+  moves a non-empty set of movers, each to a gate strictly ⊴-better under the current values; every other mover keeps its gate». -
+  For each of (K1)-(K5), L2, L3, L5, PlateauG, Quiet, LevelCount's use, list which proofs use `howard`. Then state the rule-free
+  versions for IdealImpRun of those that do not need it, plus «at most P = 2M(N + 2M) non-stall steps for every reference state b».
+  - Send me the Statements and the list of where `howard` is genuinely needed (K5 surely; PlateauG presumably) before proving
+  anything. That is the Lean side of L-NEW 74's RF-A. Γ3 in Lean comes later.» «After 6ed90b71 lands and the lean-lemmas CI job is
+  green on it, I open a CHECKER item for the Lean rows. Send me the CI run id when you see it.»
+- LEAD 19:05Z (verbatim): «RF-A Statements: ACCEPT, diffed against L-NEW 73's BOX 212 RF-A … - IdealImpRun: improve + moves render
+  «each moving mover goes to a strictly better gate; at least one moves; the others keep». frozen / legal / opt are unchanged.
+  Correct. - NonStallCount, ImpK1, ImpL2, ImpL3, ImpL5, ImpNonStall: accepted with your readings (a)-(d). … IdealCycRun.toImp is a
+  good bridge; add it. - YES to the rule-free remnant of (K5), as one more Statement, ImpK5New: «for the NEW gate y′ = σ_(t+1)(x),
+  class_t(y′) ≤ class_(t+1)(x)». Box 212's RF-B («no mover of Y moves to a gate outside Y before the step that ends the interval»)
+  will want it. Send me its text with the proofs. - Your «where howard is used» list is logged verbatim as DATA for L-NEW 74's box
+  212 … Context: you are near 400k. Prove if room remains; otherwise commit the notebook with the plan and write a handover at about
+  450k. A successor continues from it.»
+- HANDOVER 2026-11-12T19:08Z (successor 2 parks after the next push; a successor starts here).
+  RF-A IS PROVED (uncommitted when this was written; it goes into the commit that follows the push of 6ed90b71):
+  - PGLemmas/GenomeImpStatement.lean: `IdealImpRun`, `NonStallCountStatement`, `ImpK1Statement`, `ImpL2Statement`, `ImpL3Statement`,
+    `ImpL5Statement`, `ImpNonStallStatement` (accepted 19:05Z) and `ImpK5NewStatement` (the Lead asked for it in those words; its
+    accepted 19:13Z).
+  - PGLemmas/GenomeImp.lean: `non_stall_count`, `IdealImpRun.toPre`, `IdealCycRun.toImp`, `imp_k1`, `imp_l2`, `imp_l3`, `imp_l5`,
+    `imp_non_stall`, `imp_k5_new`.
+  - PGLemmas/GenomeLevel.lean was refactored: `IdealPreRun` (frozen, legal, opt, mono = F1) with `isState`, `k2`, `k1`, `bOnly`,
+    `ck_step`, `ck_mono`, `cls_const`; `l2_pre`, `l3_pre`, `l5_pre` hold the proofs; `l2`, `l3`, `l5` and the `IdealCycRun.*` lemmas
+    are one-line instances through `IdealCycRun.toPre`. No accepted Statement or theorem name changed.
+  - Build: `rm -rf .lake/build && lake build` → «Build completed successfully (3191 jobs).», 0 warnings; Axioms.lean 69 theorems (68
+    with the three allowed axioms, 1 with [propext, Quot.sound]); no sorry / admit / axiom / native_decide; 9,409 lines in 53 files.
+  WHAT IS OPEN, IN THIS ORDER:
+  (a) `git ls-remote origin claude/l-formal`: it must show the commit that follows 6ed90b71 (message «RF-A …»). If it shows 6ed90b71
+      or older, the last push did not land: check `git status`, commit what is uncommitted by explicit path, run scripts/push.sh as a
+      tracked task (2-hour timeout, output to a file, echo the exit code), and report.
+  (b) The CI job lean-lemmas on the branch head: read the run with the GitHub tools (ToolSearch «select:mcp__github__actions_list,
+      mcp__github__actions_get»; repository nano44/parity_games_challange, branch claude/l-formal) and send the Lead the run id with
+      PASS / FAIL. He opens the CHECKER item for the Lean rows after it is green.
+  (c) DONE: the Lead 19:13Z (verbatim): «ImpK5NewStatement: ACCEPT. It renders «for the NEW gate y′ = σ_(t+1)(x), class_t(y′) ≤
+      class_(t+1)(x)». Stating it for every mover, moved or not, is a harmless generalisation; record it as the named point you
+      wrote. RF-A is logged as proved (lane), with your scope sentence verbatim: «bounds the NON-stall steps … under any improvement
+      rule (at most 2M(N + 2M) per reference state b); nothing about the number of stalls, so no bound on the run length; genome
+      games only, not TARGET.md, G-N5-TIME OPEN». Also logged: no engine DATA under a non-Howard rule. L-NEW 74's box 212 will supply
+      that. Commit, push, send the SHA and the CI run id, then park. Your successor's queue: (1) the lean-lemmas CI run on your head;
+      (2) anything CHECKER rules on the Lean rows; (3) box 212's RF-B in Lean, when L-NEW 74 states it; (4) Γ3 in Lean,
+      definitions-first.»
+  (d) Next item, when the Lead routes it: «Γ3 in Lean comes later» (box 209: LEVEL3 / PLATEAU3 / T3-ALL need Γ3(G) of P-N5-REACH §3
+      as a new definition, STATEMENT FIRST, with a genomecheck-style DATA comparison against experiments/new/box189/gamma3.py
+      build(G, pads) before any proof); box 212's RF-B («no mover of Y moves to a gate outside Y before the step that ends the
+      interval») is announced as wanting `imp_k5_new`.
+- RULES THAT BIT OR ALMOST BIT (successor 2): never commit while push.sh runs (the gate takes 41 minutes; the stop hook asks for a
+  commit anyway: do not); a merge of trunk changes experiments/ under a running gate: merge only when no push runs; the Lead's
+  messages can queue for 25 minutes: call ReadNotifications when waiting for a verdict; proofs of a new `…Statement` stay out of
+  commits until the Lead's ACCEPT, so they live only in the container: ask for the verdict early and say so.
+- TRAPS in Lean met by successor 2: (i) `if_pos` / `if_neg` / `dif_pos` / `push_neg` are deprecated in this Mathlib (warnings): use
+  `ite_eq_left` / `ite_eq_right` / `dite_eq_left` / `push Not`. (ii) A module that PGLemmas.lean does not import is built by `lake
+  build PGLemmas.<Module>`. (iii) `exact absurd (f … trivial) h` cannot infer an implicit vertex; write `exact (h (f … trivial)).elim`.
+  (iv) Numerals in `Fin (tiny.deg x)` need the ascription `(1 : Fin 2)`. (v) Nothing in lean/ is built by the gate (no lean/lakefile.*
+  at lean/ root); CI's separate job lean-lemmas builds lean/lemmas.
 - 2026-11-12T14:46Z (date -u): STATE. Everything proved so far is «Lean-checked (lane)»: the Lead ACCEPTED every statement (rulings 11:49Z,
   12:29Z, 13:13Z, 13:58Z, 14:54Z, quoted in lean/lemmas/README.md «Status and reading rules») EXCEPT `LevelCountStatement`, which is
   PROPOSED (my addition; verdict open). Rows become RESULTS only through CHECKER + the Lead's CI job «lean-lemmas» (Lead 13:52Z: «elan, lake exe

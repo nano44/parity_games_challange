@@ -7,6 +7,9 @@ Box 208 §3, Lemma LEVEL on the genome: `l2 : G.L2Statement`, `l3 : G.L3Statemen
 * `cls_succ_le`                           (K3) (c), (d), (e): the class does not rise along the play.
 * `IdealCycRun.cls_const`                 (K3) (e) and the β-vertices with successor u: classes that
                                           are the same at every state.
+* `IdealPreRun`                           what these proofs use of a run (states, optimal
+                                          counterstrategies, F1); `l2_pre`, `l3_pre`, `l5_pre` are the
+                                          proofs, `l2`, `l3`, `l5` their Howard instances.
 * `l2`  the constant classes never lag; an e-vertex with a mover successor w either has its class of
         b (w does not lag) or is above w (w lags), so it is not in the front.
 * `l3`  along the play of a front vertex the classes do not rise, so a lagging play vertex is in the
@@ -47,21 +50,93 @@ theorem ck_lt_iff (h : G.WF) {t t' : ℕ} {v v' : G.Vertex} :
       G.clsLt (G.cls (nxt G.V0 σ τ t) v) (G.cls (nxt G.V0 σ τ t') v') :=
   (clsKey_lt_iff h).symm
 
+/-! ### What the class facts use of a run
+
+`IdealPreRun`: the states (frozen, legal), the optimal counterstrategies, and F1 (no value falls
+in a step).  A run of IDEAL-CYC under Howard's rule (`IdealCycRun`) and a run under any improvement
+rule (`IdealImpRun`, `PGLemmas/GenomeImpStatement.lean`) are both such runs; (K1), (L2), (L3), (L5)
+are proved for `IdealPreRun`. -/
+
+/-- A sequence of states of IDEAL-CYC(G) with optimal counterstrategies along which no value
+falls. -/
+structure IdealPreRun (G : Genome) (σ τ : ℕ → G.Vertex → G.Vertex) (T : ℕ) : Prop where
+  frozen : ∀ t, t ≤ T → ∀ v ∈ G.V0, (∀ x, v ≠ Vertex.mover x) → σ t v = G.start0 v
+  legal : ∀ t, t ≤ T → ∀ x, σ t (Vertex.mover x) ∈ G.E (Vertex.mover x)
+  opt : ∀ t, t ≤ T → OptCounter G.pr G.E G.V0 (σ t) (τ t)
+  mono : ∀ t, t < T → ∀ v,
+    Val.le G.pr (val G.pr (nxt G.V0 σ τ t) v) (val G.pr (nxt G.V0 σ τ (t + 1)) v)
+
+/-- A Howard run is such a run (F1: `IdealCycRun.f1`). -/
+theorem IdealCycRun.toPre (h : G.WF) (R : G.IdealCycRun σ τ T) : G.IdealPreRun σ τ T :=
+  ⟨R.frozen, R.legal, R.opt, fun _ ht v => R.f1 h ht v⟩
+
+theorem IdealPreRun.isState (R : G.IdealPreRun σ τ T) {t : ℕ} (ht : t ≤ T) :
+    G.IsState (nxt G.V0 σ τ t) := by
+  refine ⟨fun v => ?_, fun v hv hnm => ?_⟩
+  · unfold nxt
+    by_cases hv : v ∈ G.V0
+    · rw [pair_of_mem hv]
+      by_cases hm : ∃ x, v = Vertex.mover x
+      · obtain ⟨x, rfl⟩ := hm
+        exact R.legal t ht x
+      · rw [R.frozen t ht v hv (fun x e => hm ⟨x, e⟩)]
+        exact start0_mem_E v
+    · rw [pair_of_notMem hv]
+      exact (R.opt t ht).1 v hv
+  · unfold nxt
+    rw [pair_of_mem hv]
+    exact R.frozen t ht v hv hnm
+
+theorem IdealPreRun.k2 (h : G.WF) (R : G.IdealPreRun σ τ T) {t : ℕ} (ht : t ≤ T) :
+    nxt G.V0 σ τ t Vertex.K2 = Vertex.K1 := by
+  have e := loc_k2 h (R.opt t ht) (R.isState ht)
+  unfold nxt
+  rw [pair_of_notMem K2_notMem_V0]
+  exact e
+
+/-- (K1) MONOTONE, for every `IdealPreRun`. -/
+theorem IdealPreRun.k1 (h : G.WF) (R : G.IdealPreRun σ τ T) {t : ℕ} (ht : t < T) (v : G.Vertex) :
+    G.clsLe (G.cls (nxt G.V0 σ τ t) v) (G.cls (nxt G.V0 σ τ (t + 1)) v) := by
+  have hs := R.isState ht.le
+  have hs' := R.isState (t := t + 1) (by omega)
+  have hk := R.k2 h ht.le
+  have hk' := R.k2 h (t := t + 1) (by omega)
+  by_cases hc : G.isCore v = false
+  · exact Genome.k2 h _ _ hs hs' hk hk' v v hc hc (R.mono t ht v)
+  · refine Or.inr ?_
+    have e1 := (k3 h (σ t) (τ t) (R.opt t ht.le) hs).2.2.2.2
+    have e2 := (k3 h (σ (t + 1)) (τ (t + 1)) (R.opt (t + 1) (by omega)) hs').2.2.2.2
+    rcases v with x | o | o | o | _ | _ | _ | _ | _ | _ <;> simp [isCore] at hc
+    · exact e1.1.trans e2.1.symm
+    · exact e1.2.1.trans e2.2.1.symm
+    · exact e1.2.2.1.trans e2.2.2.1.symm
+    · exact e1.2.2.2.1.trans e2.2.2.2.1.symm
+
 /-- B-ONLY at every state of a run. -/
-theorem IdealCycRun.bOnly (h : G.WF) (R : G.IdealCycRun σ τ T) {t : ℕ} (ht : t ≤ T) :
+theorem IdealPreRun.bOnly (h : G.WF) (R : G.IdealPreRun σ τ T) {t : ℕ} (ht : t ≤ T) :
     G.BOnly (nxt G.V0 σ τ t) :=
   fun _ hv hve o => b_only h (R.opt t ht) (R.isState ht) hv hve o
 
 /-- (K1) on keys. -/
-theorem IdealCycRun.ck_step (h : G.WF) (R : G.IdealCycRun σ τ T) {t : ℕ} (ht : t < T)
+theorem IdealPreRun.ck_step (h : G.WF) (R : G.IdealPreRun σ τ T) {t : ℕ} (ht : t < T)
     (v : G.Vertex) : G.ck σ τ t v ≤ G.ck σ τ (t + 1) v :=
-  (ck_le_iff h).mpr (k1 h σ τ T R t ht v)
+  (ck_le_iff h).mpr (R.k1 h ht v)
 
 /-- (K1) on keys, over any number of steps. -/
-theorem IdealCycRun.ck_mono (h : G.WF) (R : G.IdealCycRun σ τ T) {t t' : ℕ} (htt : t ≤ t')
+theorem IdealPreRun.ck_mono (h : G.WF) (R : G.IdealPreRun σ τ T) {t t' : ℕ} (htt : t ≤ t')
     (ht' : t' ≤ T) (v : G.Vertex) : G.ck σ τ t v ≤ G.ck σ τ t' v :=
   lc_mono (c := G.ck σ τ) (a := 0) (b := T) (fun _ _ ht u => R.ck_step h ht u) (Nat.zero_le _)
     htt ht' v
+
+theorem IdealCycRun.bOnly (h : G.WF) (R : G.IdealCycRun σ τ T) {t : ℕ} (ht : t ≤ T) :
+    G.BOnly (nxt G.V0 σ τ t) := (R.toPre h).bOnly h ht
+
+theorem IdealCycRun.ck_step (h : G.WF) (R : G.IdealCycRun σ τ T) {t : ℕ} (ht : t < T)
+    (v : G.Vertex) : G.ck σ τ t v ≤ G.ck σ τ (t + 1) v := (R.toPre h).ck_step h ht v
+
+theorem IdealCycRun.ck_mono (h : G.WF) (R : G.IdealCycRun σ τ T) {t t' : ℕ} (htt : t ≤ t')
+    (ht' : t' ≤ T) (v : G.Vertex) : G.ck σ τ t v ≤ G.ck σ τ t' v :=
+  (R.toPre h).ck_mono h htt ht' v
 
 /-- The successor of a mover in the state of a run is Even's choice. -/
 theorem nxt_mover (x : Fin G.N) (t : ℕ) :
@@ -113,7 +188,7 @@ def isConst (G : Genome) : G.Vertex → Prop
   | _ => True
 
 /-- (K3) (e), and the β-vertices whose frozen successor is `u`: these classes never change. -/
-theorem IdealCycRun.cls_const (h : G.WF) (R : G.IdealCycRun σ τ T) {t b : ℕ} (ht : t ≤ T)
+theorem IdealPreRun.cls_const (h : G.WF) (R : G.IdealPreRun σ τ T) {t b : ℕ} (ht : t ≤ T)
     (hb : b ≤ T) {v : G.Vertex} (hv : G.isConst v) :
     G.cls (nxt G.V0 σ τ t) v = G.cls (nxt G.V0 σ τ b) v := by
   have e1 := (k3 h (σ t) (τ t) (R.opt t ht) (R.isState ht)).2.2.2.2
@@ -142,9 +217,15 @@ theorem IdealCycRun.cls_const (h : G.WF) (R : G.IdealCycRun σ τ T) {t b : ℕ}
 
 /-! ### (L2) -/
 
-/-- **(L2)** (box 208 §3). -/
-theorem l2 : G.L2Statement := by
-  intro h σ τ T R b t htb hbT v hF
+theorem IdealCycRun.cls_const (h : G.WF) (R : G.IdealCycRun σ τ T) {t b : ℕ} (ht : t ≤ T)
+    (hb : b ≤ T) {v : G.Vertex} (hv : G.isConst v) :
+    G.cls (nxt G.V0 σ τ t) v = G.cls (nxt G.V0 σ τ b) v := (R.toPre h).cls_const h ht hb hv
+
+/-- (L2) for every `IdealPreRun`. -/
+theorem l2_pre (h : G.WF) (σ τ : ℕ → G.Vertex → G.Vertex) (T : ℕ) (R : G.IdealPreRun σ τ T)
+    (b t : ℕ) (htb : t ≤ b) (hbT : b ≤ T) (v : G.Vertex) (hF : FrontAt (G.ck σ τ) b t v) :
+    (∃ x, v = Vertex.mover x) ∨ (∃ o, v = Vertex.gate o) ∨
+      (∃ o y, v = Vertex.beta o ∧ G.xt o = some y) := by
   have ht : t ≤ T := htb.trans hbT
   have hlag : G.cls (nxt G.V0 σ τ t) v ≠ G.cls (nxt G.V0 σ τ b) v :=
     fun e => hF.1 ((ck_eq_iff h).mpr e)
@@ -174,11 +255,23 @@ theorem l2 : G.L2Statement := by
         exact absurd ((ck_lt_iff h).mpr hlt) (not_lt.mpr (hF.2 (Vertex.mover y) hy))
   all_goals exact (hlag (R.cls_const h ht hbT trivial)).elim
 
+/-- **(L2)** (box 208 §3). -/
+theorem l2 : G.L2Statement := fun h σ τ T R => l2_pre h σ τ T (R.toPre h)
+
 /-! ### (L3) -/
 
-/-- **(L3)** (box 208 §3). -/
-theorem l3 : G.L3Statement := by
-  intro h σ τ T R b t htb hbT hlag
+/-- (L3) for every `IdealPreRun`. -/
+theorem l3_pre (h : G.WF) (σ τ : ℕ → G.Vertex → G.Vertex) (T : ℕ) (R : G.IdealPreRun σ τ T)
+    (b t : ℕ) (htb : t ≤ b) (hbT : b ≤ T) (hlag : ∃ v, G.ck σ τ t v ≠ G.ck σ τ b v) :
+    (∃ x, FrontAt (G.ck σ τ) b t (Vertex.mover x) ∧
+      G.ck σ τ t (σ t (Vertex.mover x)) = G.ck σ τ b (σ t (Vertex.mover x)) ∧
+      G.cls (nxt G.V0 σ τ t) (Vertex.mover x) =
+        G.cls (nxt G.V0 σ τ b) (σ t (Vertex.mover x))) ∨
+    (∃ v o, lam G.pr (nxt G.V0 σ τ t) v = Vertex.beta o ∧
+      (∀ u, OnCycle (nxt G.V0 σ τ t) v u → FrontAt (G.ck σ τ) b t u ∧
+        ((∃ x, u = Vertex.mover x) ∨ (∃ o', u = Vertex.gate o') ∨
+          (∃ o', u = Vertex.beta o'))) ∧
+      G.cls (nxt G.V0 σ τ t) (Vertex.beta o) = (Vertex.beta o, ∅)) := by
   have ht : t ≤ T := htb.trans hbT
   have hpr := pr_injective h
   have hs := R.isState ht
@@ -204,7 +297,7 @@ theorem l3 : G.L3Statement := by
     obtain ⟨n, hn⟩ := exists_hit G.pr (nxt G.V0 σ τ t) v
     have hc := hfront n (hall n)
     rw [hn] at hc
-    have hkind := l2 h σ τ T R b t htb hbT _ hc
+    have hkind := l2_pre h σ τ T R b t htb hbT _ hc
     rcases hkind with ⟨x, hx⟩ | ⟨o, ho⟩ | ⟨o, y, ho, -⟩
     · exact absurd hx (lam_ne_mover h hs v x)
     · exact absurd ho (lam_ne_gate h hs v o)
@@ -213,7 +306,7 @@ theorem l3 : G.L3Statement := by
         have hfu := hfront m (hall m)
         rw [hm] at hfu
         refine ⟨hfu, ?_⟩
-        rcases l2 h σ τ T R b t htb hbT _ hfu with ⟨x, hx⟩ | ⟨o', ho'⟩ | ⟨o', y', ho', -⟩
+        rcases l2_pre h σ τ T R b t htb hbT _ hfu with ⟨x, hx⟩ | ⟨o', ho'⟩ | ⟨o', y', ho', -⟩
         · exact Or.inl ⟨x, hx⟩
         · exact Or.inr (Or.inl ⟨o', ho'⟩)
         · exact Or.inr (Or.inr ⟨o', ho'⟩)
@@ -240,7 +333,7 @@ theorem l3 : G.L3Statement := by
       -- z := the m-th vertex of the play; its successor does not lag
       generalize (nxt G.V0 σ τ t)^[m] v = z at hz hzlag hn0
       have hyeq := (ck_eq_iff h).mp hn0
-      rcases l2 h σ τ T R b t htb hbT z hz with ⟨x, rfl⟩ | ⟨o, rfl⟩ | ⟨o, y, rfl, hxt⟩
+      rcases l2_pre h σ τ T R b t htb hbT z hz with ⟨x, rfl⟩ | ⟨o, rfl⟩ | ⟨o, y, rfl, hxt⟩
       · -- a mover
         refine ⟨x, hz, ?_, ?_⟩
         · rw [← nxt_mover (σ := σ) (τ := τ) x t]
@@ -269,15 +362,22 @@ theorem l3 : G.L3Statement := by
         rw [e1, e2]
         exact hyeq
 
+/-- **(L3)** (box 208 §3). -/
+theorem l3 : G.L3Statement := fun h σ τ T R => l3_pre h σ τ T (R.toPre h)
+
 /-! ### (L5) -/
 
-/-- **(L5)**, as its two factors (box 208 §3). -/
-theorem l5 : G.L5Statement := by
-  intro h σ τ T R b t htb hbT
+/-- (L5), as its two factors, for every `IdealPreRun`. -/
+theorem l5_pre (h : G.WF) (σ τ : ℕ → G.Vertex → G.Vertex) (T : ℕ) (R : G.IdealPreRun σ τ T)
+    (b t : ℕ) (htb : t ≤ b) (hbT : b ≤ T) :
+    (∀ v, FrontAt (G.ck σ τ) b t v →
+      (∃ o, G.cls (nxt G.V0 σ τ t) v = G.cls (nxt G.V0 σ τ b) (Vertex.gate o)) ∨
+      (∃ o, G.cls (nxt G.V0 σ τ t) v = (Vertex.beta o, ∅))) ∧
+    (Finset.univ.filter (FrontAt (G.ck σ τ) b t)).card ≤ G.N + 2 * G.M := by
   have ht : t ≤ T := htb.trans hbT
   constructor
   · intro v hv
-    rcases l3 h σ τ T R b t htb hbT ⟨v, hv.1⟩ with ⟨x, hx, -, hcls⟩ | ⟨v0, o, hc, hcyc, hcls⟩
+    rcases l3_pre h σ τ T R b t htb hbT ⟨v, hv.1⟩ with ⟨x, hx, -, hcls⟩ | ⟨v0, o, hc, hcyc, hcls⟩
     · obtain ⟨k, hk⟩ := (R.isState ht).mover x
       have hσ : σ t (Vertex.mover x) = Vertex.gate ⟨x, k⟩ := by
         rw [← hk, nxt_mover]
@@ -294,7 +394,7 @@ theorem l5 : G.L5Statement := by
           (Finset.univ.image (Vertex.gate : G.Opt → G.Vertex) ∪
             Finset.univ.image (Vertex.beta : G.Opt → G.Vertex)) := by
       intro v hF
-      rcases l2 h σ τ T R b t htb hbT v hF with ⟨x, rfl⟩ | ⟨o, rfl⟩ | ⟨o, y, rfl, -⟩
+      rcases l2_pre h σ τ T R b t htb hbT v hF with ⟨x, rfl⟩ | ⟨o, rfl⟩ | ⟨o, y, rfl, -⟩
       · exact Finset.mem_union.mpr (Or.inl (Finset.mem_image.mpr ⟨x, Finset.mem_univ _, rfl⟩))
       · exact Finset.mem_union.mpr (Or.inr (Finset.mem_union.mpr
           (Or.inl (Finset.mem_image.mpr ⟨o, Finset.mem_univ _, rfl⟩))))
@@ -316,6 +416,9 @@ theorem l5 : G.L5Statement := by
     have h4 := Finset.card_union_le (Finset.univ.image (Vertex.gate : G.Opt → G.Vertex))
       (Finset.univ.image (Vertex.beta : G.Opt → G.Vertex))
     omega
+
+/-- **(L5)**, as its two factors (box 208 §3). -/
+theorem l5 : G.L5Statement := fun h σ τ T R => l5_pre h σ τ T (R.toPre h)
 
 end Genome
 

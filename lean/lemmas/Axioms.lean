@@ -65,3 +65,11 @@ import PGLemmas
 #print axioms PG.Genome.run_exists
 #print axioms PG.Genome.tiny_wf
 #print axioms PG.Genome.tiny_run
+#print axioms PG.non_stall_count
+#print axioms PG.Genome.IdealCycRun.toImp
+#print axioms PG.Genome.imp_k1
+#print axioms PG.Genome.imp_l2
+#print axioms PG.Genome.imp_l3
+#print axioms PG.Genome.imp_l5
+#print axioms PG.Genome.imp_non_stall
+#print axioms PG.Genome.imp_k5_new

@@ -49,3 +49,5 @@ import PGLemmas.GenomeAllTCyc
 import PGLemmas.GenomeRunStatement
 import PGLemmas.GenomeRun
 import PGLemmas.GenomeExample
+import PGLemmas.GenomeImpStatement
+import PGLemmas.GenomeImp

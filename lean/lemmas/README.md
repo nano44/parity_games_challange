@@ -191,7 +191,8 @@ Allowed axioms: propext, Classical.choice, Quot.sound. No sorry, no admit, no ne
                             window (`QuietStatement`: the content of RESULTS R126 QUIET-N, with no premise), Theorem ALL-TCYC with the
                             lane's bound (`AllTCycStatement`) and with the bound of the Lean route (`AllTCycSharpStatement`). The
                             deviations from the lane text are listed in the file's header.
-- PGLemmas/GenomeLevel.lean `Genome.l2`, `l3`, `l5`; `ck_eq_iff`, `ck_le_iff`, `ck_lt_iff` (keys against classes),
+- PGLemmas/GenomeLevel.lean `Genome.IdealPreRun` (what the class facts use of a run: states, optimal counterstrategies, F1) with
+                            `IdealPreRun.k1`, `l2_pre`, `l3_pre`, `l5_pre`; their Howard instances `Genome.l2`, `l3`, `l5`; `ck_eq_iff`, `ck_le_iff`, `ck_lt_iff` (keys against classes),
                             `IdealCycRun.ck_mono` ((K1) on keys), `cls_succ_le` (the class does not rise along the play),
                             `IdealCycRun.cls_const` (the classes that never change).
 - PGLemmas/GenomePlateau.lean  `Genome.plateau_g : G.PlateauGStatement`, `Genome.quiet : G.QuietStatement`; the window lemma
@@ -199,6 +200,15 @@ Allowed axioms: propext, Classical.choice, Quot.sound. No sorry, no admit, no ne
                             `gate_of_cls_eq_none`; `succ_eq_eface` (the only predecessor of e_g is g), `cW_dom`, `pset_of_lam_cW`.
 - PGLemmas/GenomeAllTCyc.lean  `Genome.all_tcyc_sharp : G.AllTCycSharpStatement`, `Genome.all_tcyc : G.AllTCycStatement`: the assembly
                             by `level_count`, `l5`, `plateau_g` and `quiet`.
+- PGLemmas/GenomeImpStatement.lean  RF-A (Lead 19:00Z; accepted 19:05Z), DEFINITION AND STATEMENTS ONLY: `Genome.IdealImpRun` (a run
+                            under an arbitrary improvement rule), `NonStallCountStatement`, `ImpK1Statement`, `ImpL2Statement`,
+                            `ImpL3Statement`, `ImpL5Statement`, `ImpNonStallStatement`, `ImpK5NewStatement`; its header lists where
+                            the proofs of e14f5508 use `howard` ((K5), `plateau_g`, `quiet`, `all_tcyc`, `run_exists`) and where they
+                            do not.
+- PGLemmas/GenomeImp.lean   RF-A proved, no premise: `non_stall_count`, `Genome.IdealImpRun.toPre`, `IdealCycRun.toImp`, `imp_k1`,
+                            `imp_l2`, `imp_l3`, `imp_l5`, `imp_non_stall`, `imp_k5_new`. Reading rule: these bound the NON-stall
+                            steps of IDEAL-CYC under any improvement rule; they say nothing about the number of stalls, so they give
+                            no bound on the length of such a run. Same scope as ALL-TCYC: the genome games only, not TARGET.md.
 - PGLemmas/GenomeRunStatement.lean  STATEMENT ONLY: `RunExistsStatement` (a run of IDEAL-CYC(G) from the genome's start exists and
                             stops).
 - PGLemmas/GenomeRun.lean   `Genome.run_exists : G.RunExistsStatement`; `exists_best`, `howardNext`, `howardNext_spec` (Howard's
