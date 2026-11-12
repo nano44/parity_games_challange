@@ -3450,3 +3450,9 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
 - DEEP3 (item 3): deep234 exact Deep_3 on the 26 = 38 (DHIB26 24, DWT20 9, C6G8 3, DHIB18 2; MW/Kprev deep flips not internal). Climbs
   (dclimb234 sum score): Deep_3 19 at N 40 (inst/deep3_n40_19.json), 11 at N 24 (deep3_n24_11.json); deep flips one per gate, T3 <= 12.
   Running: SCORE=gate climb (N <= 48; max deep flips at ONE gate), checkpoint scratchpad dclimb/best_gate48.json (RESUME=1).
+- 2026-11-12T13:27Z: R235 box 208 (L-NEW 72, claude/l-new 8db300fe) attack: every statement SURVIVES (LEVEL, K1-K5, WIN, R-INT, R-HEIGHT, K1-TCYC,
+  FVS-TCYC, PLATEAU P1-P7, ALL-TCYC); premises 29/29 at trunk 471aba45 (r235/q235.py); second route PLATEAU via R234 LAM-GAP/SHARP (lane):
+  v - u <= #movers(Y), ALL-TCYC sharpened to P(N + 1) + N. lv235 fresh counter on own.py: 0 fails on box202's 53 corpus (= box 208's
+  stalls 48 / plateaus 15 / longest 13 / max T 199), control fires; climbs (N <= 56) best ratio 0.789, best plateau 15 (frozen r235/inst).
+  DEEP3 on hold (Lead 13:01Z): climbs paused at checkpoints in scratchpad dclimb/ (g48b best 4 deep flips at one gate, N 48; fport4 3).
+  NEXT: box 209 (Γ3 form, LEVEL3 / PLATEAU3 on HOW3) when the Lead sends the SHA.

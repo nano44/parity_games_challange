@@ -1,0 +1,3 @@
+plc_plat_best.json {'N': 56, 'M': 110, 'T': 24, 'phifail': 0, 'nocyc': 0, 'qfail': 0, 'tfail': 0, 'platfail': 0, 'sharpfail': 0, 'q': 9, 'stalls': 15, 'plateaus': 1, 'maxplat': 15, 'maxratio': 0.405}
+plc_ratio_best.json {'N': 56, 'M': 112, 'T': 26, 'phifail': 0, 'nocyc': 0, 'qfail': 0, 'tfail': 0, 'platfail': 0, 'sharpfail': 0, 'q': 10, 'stalls': 16, 'plateaus': 2, 'maxplat': 15, 'maxratio': 0.789}
+TOTAL {'T': 26, 'phifail': 0, 'nocyc': 0, 'qfail': 0, 'tfail': 0, 'platfail': 0, 'sharpfail': 0, 'q': 19, 'stalls': 31, 'plateaus': 3, 'maxplat': 15, 'maxratio': 0.789, 'genomes': 2}
