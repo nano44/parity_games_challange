@@ -1,29 +1,49 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (successor 33), written 2026-11-12T18:17Z by date -u
-- Handover check fee8477e (on origin; Lead «go» 17:53Z by the Lead's clock). Trunk 68c8d293 merged as fbc8e4ed (git's default message,
-  no trailer; not amended).
-- Item A DONE (report written, see the commit): docs/referee/R-WRAP-preread.md, PRE-READ (not a signature) of L-SI 52's Lemma WRAP
-  (claude/l-si 26704e01, docs/si/box104-map.md sha1 eb6ac045…; Addendum A at 01900837). Verdict: (W1)-(W8) and (i)-(v) no gap found;
-  notes W-1 (pe-free sentence false for pe, pe_o, pb, c_W as start), W-2 (index order of the new vertices open; N5's counts depend
-  on it: 3 iterations in my order, 6 on the lane's frozen WL_n), W-3 (R15, [RULE] not named), W-4 (proofs on W in full for a packet).
-  Tie item: CLOSED by my Claim NT (in a 1-sink game distinct nodes have distinct valuations; [F11] Lemma 5.1 + Lemma 6.7 + Theorem 3.2),
-  referee-originated (L41: the lane writes it, REFEREE-2 checks it). F-1 (Table 4 misprint, Figure 4 is the game), F-2 (the paper's
-  lemmas are proved for b ≠ 0_n with the two highest bits zero), F-3 (2^n + 3 on 10.5n² + 152.5n + 48 vertices = 2^Ω(√|W|)).
-- Tools (docs/referee/scratch/): wrap_replay.py (own wrapper, S4a′, Howard on H, Zielonka, 18 counters, 9 controls, families, exh mode),
-  wrap_f11.py (G_n from the PDF; fig4 / table4), wrap_inst.py (my engine on the lane's frozen .pg), wrap_cmp.py, wrap_summ.py,
-  wrap_tables.py (the report's tables from wrap_logs/; `wrap_tables.py splice FILE` fills the markers), wrap_*_run.sh. Engine rl_engine.py.
-- The PDF of arXiv 1106.0778v2 is NOT in the repository (scratchpad only; sha256 46c96f44…7679611; fetch arxiv.org/pdf/1106.0778v2).
-- Queue (Lead 17:53Z): A0 byte test of P-N5-GATE fixes entry 5 + line L-5 (R128; CHECKER C142 FAILED the first fill, claude/checker
-  269effb3, docs/checker/C142.md §4 has the strings; CHECKER's L-5 sha1 7ebcf735…, 12,923 B) as soon as L-SI's SHA comes: test bytes
-  and meaning against my lane's signed L-4 (R-P-N5-GATE §K) and C142 §4, re-sign or refuse as a new section of R-P-N5-GATE.md.
-  B first review of P-N5-LEVEL when L-NEW 73 freezes it (PR-1..PR-6 and the two caveats below). C pre-read of box 209 + Addendum A.
-  D any CHECKER item on R128.
-- Lessons (s33): (1) long-line files (NOW.md, GAPS.md) are read with a script slicing by character; `rev | cut` on a 13k line hung.
-  (2) the proxy strips github.com's Date header; raw.githubusercontent.com gives one. (3) a wrapper / gadget definition that says
-  «indexed after V» leaves SPEC's tie-breaks open: run every replay in a second index order (PERM=1) and say which numbers depend on it.
-  (4) rl_engine is fast on these games (W of 1,341 vertices, 569 iterations, minutes): do not avoid it for size.
+## HANDOVER NOTE (successor 33), written 2026-11-12T18:36Z by date -u; parking near the 480k context line (brief: park before a full review I cannot finish)
+- DONE (reports in docs/referee/; SHAs and push state: see the commits and my last message to the Lead):
+  | item | report | final state |
+  | --- | --- | --- |
+  | handover check | docs/agents/handover-checks/REFEREE.md (fee8477e, on origin) | «go» at the Lead's 17:53Z |
+  | A: pre-read of L-SI 52's Lemma WRAP (l-si 26704e01, box 104 §3; Addendum A 01900837); NOT a signature | R-WRAP-preread.md (e44ce56b) | (W1)-(W8), (i)-(v) no gap found; notes W-1..W-4; tie item closable by my Claim NT (referee-originated, L41); F-1..F-3 on [F11] Theorem 6.14 |
+  | C: pre-read of L-NEW 72's box 209 (l-new 311bbf81, sha1 147c889b…) + Addendum A; NOT a signature | R-box209-preread.md | (K0′)-(K5′), LEVEL3, PLATEAU3 (i), (ii), T3-ALL, N5XI-G3, FLIPS3 no gap found; (P6) in the repaired form; notes N-1 ((P2) citation), N-2 (H0 in (P7)), N-3 (readings (D1′) etc.) |
+- NOT DONE, for successor 34 (the Lead's order of 17:53Z):
+  - A0. BYTE TEST of P-N5-GATE fixes entry 5 + line L-5 (R128) when L-SI's SHA comes. CHECKER C142 FAILED the first fill (claude/checker
+    269effb3, docs/checker/C142.md; I read §1-§3: E-1 GL-3's RA rows need numbers and a source (L-SI 47 box 90: maxm 8 / 32, maxP 54 /
+    2583); E-2 the growth clause needs numbers (C 17 / 65, maxflip 34 / 130 on MW8_2 / MW32_2; MWR 9 / 17 / 33) and A*_all is dropped;
+    E-3 seven part markers into E-FACE-PAYS (b)-(d) and GATE-LOW-NULL (a), (b′), no word changes; E-4 «TRIGGER» name clash, entry text
+    only, no re-sign). §4 has the exact strings: NOT read by me. CHECKER's L-5 sha1 7ebcf7355be9838473f05a7defe913940b6fd723, 12,923 B.
+    Test bytes and meaning against this lane's signed L-4 (R-P-N5-GATE.md §K, tool scratch/gate_l4.py) and C142 §4; re-sign or refuse as
+    a new section of R-P-N5-GATE.md.
+  - B. FIRST REVIEW (a signature) of packet P-N5-LEVEL when L-NEW 73 freezes it. Read the frozen packet afresh; disclose
+    R-box208-preread.md (s32) and R-box209-preread.md (s33) as prior work of this lane. Test PR-1..PR-6 and the two caveats in the s32
+    note below. Mine to add: (a) the H0 point (N-2 of R-box209-preread: landed BR-SEG-G's H0 is on every step of H's run; it holds
+    there because only movers choose in H); (b) (P2)-type citations for e-vertices with successor c_W; (c) Lean cited by theorem name and
+    commit as «Lean-checked (lane)» unless CHECKER passed it.
+  - D. Any CHECKER item on R128.
+- State of this container's side work (lost at a restart; redo if needed):
+  - Lean: built claude/l-formal f74d38a4 by the s32 recipe (elan v4.35.0; 3,179 jobs; grep sorry / admit / axiom: no line; Axioms.lean: 46
+    theorems, 45 with [propext, Classical.choice, Quot.sound], 1 with [propext, Quot.sound]; includes PG.Genome.k1, k2, k3, k5, e_dom, cn2,
+    loc_k2, b_only). Logs copied to docs/referee/scratch/box209_logs/lean_*.out. origin/claude/l-formal moved on to 8fb3dd6c (not built).
+  - The n = 8 wrapper row finished: R-WRAP-preread Addendum 1 (2,297 iterations on 1,940 vertices, one fallback, 18 counters 0; log
+    wrap_logs/f11_W_xi_fig4_long8.out). Nothing is left running.
+- Tools added (docs/referee/scratch/): wrap_replay.py, wrap_f11.py, wrap_inst.py, wrap_cmp.py, wrap_summ.py, wrap_tables.py, wrap_*_run.sh
+  (logs wrap_logs/); box209_replay.py (30 counters on HOW3, own Γ3 builder), box209_quotes.py ([Q] quotes of any box against RESULTS
+  entries and TARGET.md), box209_summ.py, box209_run.sh (logs box209_logs/). Engines unchanged: rl_engine.py, xicyc_replay.py, xicyc_vj.py.
+- The PDF of arXiv 1106.0778v2 is NOT in the repository (sha256 46c96f44…7679611; fetch arxiv.org/pdf/1106.0778v2); row in «Sources opened».
+- Lessons / traps (s33; keep):
+  - Long-line files (NOW.md, GAPS.md, RESULTS.md) are read with a script that slices by character; `rev | cut` on a 13k line hung 120 s.
+  - The proxy strips github.com's Date header; raw.githubusercontent.com gives one (clock skew 0 s).
+  - A gadget definition that says «indexed after V» leaves SPEC's tie-breaks open: run every replay in a second index order and say
+    which numbers depend on it (W-2: N5 makes 3 iterations on W^L_n in my order, 6 in the lane's).
+  - A lower-bound citation needs the paper's GAME checked against its own figure and facts (Table 4's misprint) and the scope of its
+    lemmas (two highest bits zero) stated next to «as published».
+  - Tables of a report are generated from the logs by a script and spliced at markers; a `*.out` glob picks up copied logs: exclude them.
+  - `git merge --no-edit` makes a commit without the Claude-Session trailer; use `git merge -m … ` with the trailer next time.
+  - The stop hook asks to push while scripts/push.sh runs: do not; it is already pushing.
+  - My 18:37Z message to the Lead gave «347 gates» for (P4) case (3), a sum I did in my head; the script says 368 (corrected to the Lead
+    with the SHAs). A total goes into a message only from a command that printed it, the same as into a report.
 
 ## HANDOVER NOTE (successor 32), written 2026-11-12T15:05Z by date -u; parking on the Lead's 15:06Z ask (WATCHDOG reads the context at ~600k)
 - DONE (all via scripts/push.sh, VERIFY PASS; the Lean and Oink verify steps NOT RUN as usual):

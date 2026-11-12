@@ -321,3 +321,11 @@ with |A(v)| ≥ 2 that is not its own W*-cycle node; the Ξσ-best element; ties
 wrap_replay.py, wrap_f11.py, wrap_inst.py, wrap_cmp.py, wrap_summ.py, wrap_run.sh, wrap_exh_run.sh, wrap_ctrl_run.sh, wrap_f11_run.sh;
 wrap_logs/: main_*.out, exh_*.out, ctrl_*.out, f11_*.out, inst_*.out, cmp.out, valve_pb.out, *_run.log, summ.out; the tables of §5 are
 generated from these logs by wrap_tables.py (no number typed by hand). f11_W_xi_fig4_long7.out is `WRAP=xi python3 -I wrap_f11.py 7`.
+
+## Addendum 1 (REFEREE successor 33; date -u at writing 2026-11-12T18:46Z): the n = 8 wrapper row
+`WRAP=xi python3 -I wrap_f11.py 8` (log wrap_logs/f11_W_xi_fig4_long8.out; the row below is printed by wrap_tables.py from that log):
+| n | nodes, edges, highest Ω (fig4) | T fig4 | 2^n | \|W^L_n\| | N5′-xi fig4: iterations, first fallback, fallbacks, 18 counters |
+| --- | --- | --- | --- | --- | --- |
+| 8 | 84, 265, 104 | 2,294 | 256 | 1,940 | 2,297, 2,295, 1, 0 |
+- So on my wrapper of my transcription of G_8 the iteration count is above the number of vertices, as in the lane's Addendum A.1 row
+  (2,297 iterations on 1,940 vertices), with one fallback and all 18 counters 0. §5.3's sentence «still running» is closed by this row.

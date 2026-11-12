@@ -1,0 +1,35 @@
+OK   l.41 named R117 found R117 «4M + 4 single-successor Even pads of priority ≤ 2 (pA on K0 → K3, s on K1's loop, q on K1 → K0, r…»
+OK   l.44 named R104 found R104,R126 «Even movers of priority 0; Odd gates of priority 1 with a W-face e and a Ξ-face β»
+OK   l.44 named R104 found R104,R126 «β of priority 6 + 2·rank + parity with edges to the Ξ-target and to u, or to u alone»
+OK   l.44 named R104 found R104,R126 «e of even priority above every β with one edge to the W-target or to the top even self-loop c_W»
+OK   l.44 named R104 found R104,R126 «a closed core u = K0 (Even, top + 2) → {K1, K3}, K1 (Even, 5) → {K0, K1}, K2 (Odd, 3) → {K1, K2},…»
+OK   l.48 named R125 found R125 «HOW3(G), the Howard run on Γ3(G) (every non-mover Even vertex frozen at the standard state's choi…»
+OK   l.51 named R124 found R124 «the core K-config κ0 = (σ(K0), σ(K1), σ(K3)) = (pA, s, K2)»
+OK   l.51 named R104,R124 found R104,R126 «β → its Ξ-target (u when the target is X), K0 → K3, K1 → K1, K3 → K2»
+OK   l.58 named R125 found R125 «N5′-xi from S3 on Γ3(G) visits only standard states and its mover parts form a run of HOW3(G) unt…»
+OK   l.60 named R125 found R125 «(Facts F1, F3, F4′, F5, F6, DOM, STRICT on HOW3(G)) F1 from RESULTS R15 (a)»
+OK   l.60 named R125,R15 found R15,R118,R125 «Lemma A: for any non-empty unambiguous set I of improvements of σ (VJ00 §4.4), Ωσ ⊴ Ω_{Switch_I(σ…»
+OK   l.62 named R118 found R118 «For every mover x, step t and successor y of x: Ω_(t+1)(x) ⊵ ext(x, Ω_t(y)).»
+OK   l.64 named R125 found R125 «for every positional pair and every vertex v other than c_X the cycle node of v's play has priori…»
+OK   l.66 named R125 found R125 «at every state and gate g, if the faces pe_g, pβ_g have different values then Odd's optimal count…»
+OK   l.68 named R125 found R125 «Ω_t(pe_g) ≠ Ω_t(pβ_g) at every state and gate»
+OK   l.69 named R125 found R125 «σ̄_t(K2) = r and Ω_t(r) ◁ Ω_t(K2) at every state»
+OK   l.70 named R125 found R125 «at every state and every vertex v other than c_W, the e-vertices whose successor is c_W and their…»
+OK   l.72 named R125 found R121,R123,R125 «VJ00 §4.2 / Friedmann arXiv 1106.0778 §3 for the value (Λ, Π, k) and its order ⊴»
+OK   l.72 named R125 found R125 «[OPT] for HOW3's σ̄_t = RESULTS R118's σ̄ as used in R118 (b)»
+OK   l.72 named R118,R123,R125 found R123 «[OPT] (σ̄_t is optimal at every vertex at once against σ_t)»
+ELSE l.72 named R118,R123,R125 found R122 «an optimal counterstrategy being pointwise optimal (at every vertex its play value is ⊴ the value…»
+OK   l.80 named R121 found R121 «Every vertex more relevant than some e-vertex is an e-vertex, c_W, K0 or K3, by [DEF]»
+OK   l.82 named R118 found R118 «H0: every step t → t+1 switches some Even x with Λ_t(x) ≠ x and Λ_(t+1)(x) ≠ x.»
+OK   l.82 named R118 found R118 «(a) every maximal run of p-steps has at most n_E steps;»
+OK   l.82 named R118 found R118,R126 «labelled C if some vertex's cycle node Λ changes, else R if Odd's optimal counterstrategy σ̄ (any…»
+OK   l.86 named R124 found R124 «if REACH3-CYC holds for G, N5′-xi from S3 on Γ3(G) makes exactly T3 + 3 iterations»
+OK   l.86 named R124,R125 found R125 «RESULTS R118 (k)'s Theorem REACH3-CYC»
+OK   l.315 named R125 found R125 «T3 ≤ (1 + Σ_v (D^tot_E(v) − 1))·(L3 + 1)»
+OK   l.322 named R118 found R118 «T3 ≤ C + R + (C + R + 1)·N»
+OK   l.322 named R118 found R118 «N5′-xi's FL run on Γ3(G) is polynomial in N + M for every genome»
+OK   l.322 named R118 found R118 «R is polynomial along these Howard runs»
+OK   l.335 named R124,R125 found R124 «it bounds none of F, T3, L(G) (OPEN)»
+OK   l.342 named R125 found R125 «says nothing about N5 (whose pre-fallback run on Ξ-cyclic genomes is not a Howard run)»
+OK   l.361 named R118,R122 found R122 «an optimal counterstrategy being pointwise optimal (at every vertex its play value is ⊴ the value…»
+[Q] bullets 21, quotes 34, found in an entry named before the quote 33, found only elsewhere 1, missing 0
