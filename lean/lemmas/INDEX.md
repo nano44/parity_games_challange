@@ -1,8 +1,8 @@
-# lean/lemmas index: lane text ↔ Lean statement ↔ Lean theorem (L-FORMAL, 2026-11-12T13:08Z by date -u)
+# lean/lemmas index: lane text ↔ Lean statement ↔ Lean theorem (L-FORMAL, 2026-11-12T14:46Z by date -u)
 
 Status of every row: «Lean-checked (lane)»: lake build passes, no sorry, axioms ⊆ propext, Classical.choice, Quot.sound (Axioms.lean),
-and the Lead accepted the statement in his diffs of 2026-11-12 11:49Z, 12:29Z, 13:13Z. A row becomes a RESULT only through CHECKER and
-the Lead's CI job. «Premise» = a hypothesis of the Lean statement that is not a definition; rows with premise F1 / (M) are checked
+and the Lead accepted the statement in his diffs of 2026-11-12 11:49Z, 12:29Z, 13:13Z, 13:58Z, 14:54Z (the one row marked PROPOSED is
+not yet diffed). A row becomes a RESULT only through CHECKER and the Lead's CI job. «Premise» = a hypothesis of the Lean statement that is not a definition; rows with premise F1 / (M) are checked
 CONDITIONAL on F1 = landed RESULTS R15 (a).
 
 | Lane / landed text | Lean statement (file) | Lean theorem (file) | Premise |
@@ -27,10 +27,18 @@ CONDITIONAL on F1 = landed RESULTS R15 (a).
 | optimal counterstrategies exist: Friedmann Lemma 3.1 | OptCounterExistsStatement (OptExists) | optCounter_exists (OptExists) | none |
 | VJ00 §4.2's order as printed = the order of Defs.lean on play values | (theorem only) | vj00Le_iff, val_proper (VJ00) | none |
 | the window hypotheses are satisfiable, bound attained at \|Ch\| = 1 | (theorem only) | Example.window_example (Example) | none |
+| Statement ABS (shortest-path games, Howard's all-switch step, Max improves): l-new 8db300fe box 208 §10, a CANDIDATE there; clause (2) for every step t < T | AbsStatement (AbsStatement) | abs_statement (AbsProof) | none (target not a Max vertex; no weight-0 cycle) |
+| the hypotheses of AbsStatement are satisfiable with T = 1 (3 vertices, one Howard step, d rises from 1 to 3) | (theorem only) | AbsExample.hyps, d_start, d_end (AbsExample) | none |
+| PLATEAU, abstract one-player form: box 208 Addendum A2 (P5) + (P7), on the original vertex set with Y ⊆ V; bound \|Ch\| = movers of Y | PlateauStatement (PlateauStatement) | plateau (Plateau) | (P1)-(P4), (P6) of A2 are HYPOTHESES; that an IDEAL-CYC plateau satisfies them is unformalized genome work |
 
-STATED, NOT PROVED: box 208 §10 Statement ABS (l-new 8db300fe docs/new/N5-LEVEL-box208.md): `AbsStatement`, with `SPGame`, `SPGame.d`,
-`SPGame.HowardAt`, `SPGame.NoZeroCycle` (PGLemmas/AbsStatement.lean). No theorem of that type exists. Proved so far (PGLemmas/Abs.lean):
-the Bellman facts (B1) and (K1′) `SPGame.d_le_step`. Proof plan for the rest: notes/L-FORMAL.md.
+| LEVEL, the counting: box 208 §3 (L1) + §4 (C1), (C2), abstract (classes in any linear order): b′ − a ≤ \|M\|·F·(L + 1). PROPOSED, not yet diffed | FrontAt, StallAt, LevelCountStatement (LevelCountStatement) | level_count (LevelCount) | (K1); the lowest lagging classes lie in M; fronts ≤ F; at most L consecutive stalls |
 
-Not formalized: box 208's Lemma LEVEL on the genome, Addendum A (PLATEAU), WINDOW, SCC-RED, CAP, REACH3 (they need RESULTS R104 / R117's genome and Γ3 in Lean); R15 (b), (c), (d); the
-equality of the positional Ω_σ used here with VJ00 §4.3's minimum over plays; anything about running time at bit cost; TARGET.md §6.
+DATA beside the ABS row (check/abscheck.py, a Python transcription, not Lean; unit: step of a Howard run on a random shortest-path game):
+seed 1, 20,000 games with at most 7 vertices: 7,130 runs with T ≥ 1, 7,914 steps, longest run 3 steps; seed 2, 20,000 games with at most
+12 vertices: 9,035 runs with T ≥ 1, 10,286 steps, longest run 4 steps; dfail, hypfail, boundfail, c2fail, lastfail all 0 in both. Control
+ABS_CTRL=1 (seed 1, 2,000 games): c2fail 1,140 of 1,140 steps. The runs are short: this checks the reading of the statement, not growth.
+
+Not formalized: box 208's Lemma LEVEL on the genome (§3) and the class facts (K1)-(K5); that a plateau of IDEAL-CYC satisfies (P1)-(P4),
+(P6) of Addendum A2; §10's reading of IDEAL-CYC at class level as a shortest-path game; Theorem ALL-TCYC; WINDOW, SCC-RED, CAP, REACH3
+(they need RESULTS R104 / R117's genome and Γ3 in Lean); R15 (b), (c), (d); the equality of the positional Ω_σ used here with VJ00 §4.3's
+minimum over plays; anything about running time at bit cost; TARGET.md §6.

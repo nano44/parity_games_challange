@@ -33,3 +33,9 @@ import PGLemmas
 #print axioms PG.brsegG_noH0'
 #print axioms PG.SPGame.d_max
 #print axioms PG.SPGame.d_le_step
+#print axioms PG.abs_statement
+#print axioms PG.plateau
+#print axioms PG.AbsExample.hyps
+#print axioms PG.AbsExample.d_start
+#print axioms PG.AbsExample.d_end
+#print axioms PG.level_count

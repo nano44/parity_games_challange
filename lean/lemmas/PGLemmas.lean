@@ -25,3 +25,9 @@ import PGLemmas.Statements7
 import PGLemmas.NoH0
 import PGLemmas.AbsStatement
 import PGLemmas.Abs
+import PGLemmas.AbsProof
+import PGLemmas.PlateauStatement
+import PGLemmas.Plateau
+import PGLemmas.AbsExample
+import PGLemmas.LevelCountStatement
+import PGLemmas.LevelCount
