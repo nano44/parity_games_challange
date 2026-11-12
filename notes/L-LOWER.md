@@ -1,5 +1,11 @@
 # L-LOWER notebook
 
+## Successor 15: BOX L18 (Lead 16:09Z): f6 full horizon inside the search, q6 free, sweep P from 13, hinted + unhinted, 2,900 s per task
+### Resume point (17:1xZ 2026-11-12, date -u; after a worker restart ~16:50Z, nothing lost: scratchpad survived, no job was running)
+- Tools l18/ (README): enc32c (clamp), pgad6 (F6R), ccheck (validated), q.sh (one question per task; logs in $SP/l18/TAG.log, «q exit»).
+- Calibration: P 10 R 32 hinted by A3x5_P12: NO ANSWER 600 s (A3 unclamped P 10: 99 s). Clamped rows make questions much harder.
+- L17 box result pushed 39dfa6d6 and reported 16:04Z.
+
 ## Successor 15 (Opus 5.5): BOX L17, GO from the Lead 10:09Z 2026-11-12 (handover check 67555d41, accepted)
 ### Resume point (10:1xZ 2026-11-12, date -u)
 - Binaries rebuilt in $SP/bin (fenc, drup, ann3; gcc -O2). $SP = this session's scratchpad.

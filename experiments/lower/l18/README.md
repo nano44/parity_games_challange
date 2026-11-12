@@ -1,0 +1,11 @@
+# L-LOWER BOX L18: f6's full-horizon correctness inside the search (tools; product docs/lower/L18-horizon.md)
+- enc32c.py: copy of ../l12/enc32_lcomp.py (sha1 a8c4f5e3) + CLAMP_FROM / CLAMP_KEEP: transitions t >= CLAMP_FROM keep only the
+  CLAMP_KEEP core movers' constraints (core forced to the target = the clamped run of l16/f6check.py). CLAMP_FROM None = original.
+- pgad6.py: l16/pgad5.py on enc32c with env F6R = R (horizon): free run rows 0..PREFIX, clamped f6 constraints on transitions PREFIX..R-1.
+- ccheck.py: checker mode (genome fully fixed). Validation: A3x5_P15 (f6check first mismatch at pre-state row 18) prefix 15: SAT at R 17,
+  18, UNSAT at R 19, 20; A2_solved (f6 correct on rows 0..510) prefix 6: SAT at R 64 and R 510 (34M clauses, 35 s, 651 MB).
+- Sizes (pgad6 build, frame below, P 13): R 32 6.3M clauses / 0.85 GB; R 64 11.5M / 1.6 GB; ~163k clauses per clamped row, so R 510
+  (~85M) does not fit. Horizon refinement: ask at R < 510, check SAT decodes with f6check 0..510, raise R past a mismatch. UNSAT at R
+  implies UNSAT at 510 (the full question only adds constraints).
+- q.sh: ONE pgad6 question per task in the BOX L18 frame (XS 8,11,12,14,15, XORD 8,11,12,15,14, XALL, FIXC 16,17, G empty), with
+  replay (sim6 = fenc) and f6check 0..510 on SAT.
