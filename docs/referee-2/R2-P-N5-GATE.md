@@ -272,3 +272,63 @@ is R2-P-N5-GATE/r2gate.py, on REFEREE-2's own engines.
   473344b1; checked by script). The line must cite them as P-N5-CHAIN's frozen text (l-new 93531b03, sha1 6e613ba7) and the rest as
   RESULTS R125 (P-N5-CHAIN).
 - N-1 (optional): PARALLEL with y = w (2.6). N-2 (optional): the landed R123 / R124 TARGET tail.
+
+### 3.5 R-1..R-10 as exact old → new strings against L-2 (Lead 00:06Z: R125 has landed, so B-ONLY3 etc. are RESULTS R125 facts)
+- Script R2-P-N5-GATE/l3req.py, output l3req.out. Each Old occurs exactly once in L-2 (sha1 c0f2007d, asserted). Applying all of them
+  gives the reference text l3req_applied.txt (sha1 1bd49ea1…, 11,146 B, 211 «(» = 211 «)»).
+- None of these occurs in the applied text: «§2 (a)», «P-N5-CHAIN's C-EQUIV», «lie on both of two plays», «not a premise here», «not
+  among P-N5-CHAIN», «while its play avoids», «over the run then», «L-RED R228».
+- L-3 need not equal the reference byte for byte. At the byte test I check each New's meaning, each Old's absence, and nothing else
+  changed beyond fixes entry 3.
+- R-1 / R-10 (G-1; SP-2 form).
+  - Old: «on Γ3 instead the facts F1, F2, F3, F4′, F6, STRICT, CYC, CN2-3, LOC-GATE3, NO-TIE3, (E-DOM), (Core), E-MON3 of the pending
+    packet P-N5-CHAIN (L-NEW, frozen claude/l-new 93531b03, landing as R125); for PAIR-EXPEL, EXPEL-COUNT and A*-EQUIV also §2 (a),
+    SPLIT-COUNT and C-EQUIV of the pending packet P-N5-SPLIT (L-NEW, frozen claude/l-new 399cda07, referees pending)»
+  - New: «on Γ3 instead RESULTS R125 (P-N5-CHAIN): F1, F3, F4′, F6, STRICT, CN2-3, LOC-GATE3, NO-TIE3, LOC-K2-3, B-ONLY3, E-MON3, and F2,
+    CYC, (E-DOM), (Core) from P-N5-CHAIN's frozen text (l-new 93531b03, sha1 6e613ba7, §2 and §4), (Core) in its W-1-repaired reading,
+    applied only to non-core vertices (the faces of a gate and the successors of a mover or a gate; P-N5-CHAIN fixes entry 3, R-W;
+    referee-originated: REFEREE-2 R2-P-N5-GATE G-1); for A*-EQUIV also SPLIT-COUNT and C-EQUIV of P-N5-SPLIT (L-NEW, frozen claude/l-new
+    399cda07, sha1 5bc1b1f3)»
+  - If P-N5-SPLIT lands before L-3, its R-id replaces «P-N5-SPLIT (…)». The same applies to R125's line names: every R125 name above
+    occurs in L-5 (473344b1); F2, CYC, (E-DOM), (Core) do not.
+- R-5a: «(b) F1, F2, F3, (e) in its per-vertex form» → «(b) F1, F2, F3 and F4′'s stated clause, (c) STRICT, (e) in its per-vertex form».
+- R-5b: «RESULTS R123 Lemmas CN2, LOC-GATE, B-ONLY» → «RESULTS R123 Lemmas CN2, LOC-GATE, LOC-K2, B-ONLY».
+- R-5c.
+  - Old: «for IDEAL-CYC; on Γ3 instead»
+  - New: «and (E-DOM), (Core) on Γ read off RESULTS R104's priorities and core edges (non-core vertices only), for IDEAL-CYC; on Γ3
+    instead»
+- R-4: «(Lemma PAIR-EXPEL, PROVED-CONDITIONAL on P-N5-SPLIT §2 (a))» → «(Lemma PAIR-EXPEL)».
+  - The line's global «each statement PROVED» and R125 conditionality then cover it. The alternative «PROVED-CONDITIONAL on P-N5-SPLIT
+    §3 (a)» is also acceptable.
+- R-3 / R-5d.
+  - Old: «(Corollary A*-EQUIV, PROVED-CONDITIONAL on P-N5-SPLIT's SPLIT-COUNT and P-N5-CHAIN's C-EQUIV)»
+  - New: «(Corollary A*-EQUIV, on Γ3 only, PROVED-CONDITIONAL on P-N5-SPLIT's SPLIT-COUNT and C-EQUIV)»
+- R-8a.
+  - Old: «C ≤ A*_all ≤ 1 + M·C and»
+  - New: «C ≤ A*_all ≤ 1 + M·C (each entry of a top starts a run, and every run but one starts at a change; referee-originated: REFEREE-2
+    R2-P-N5-GATE G-7) and»
+- R-8b.
+  - Old: «is at most 1 + 3M·max Dhi_z,»
+  - New: «is at most 1 + 3M·max Dhi_z (at most 3M split pairs: the split is a mover or a gate, with M mover edges and 2M faces;
+    referee-originated: REFEREE-2 R2-P-N5-GATE G-6),»
+- R-7a: «so if D's play avoids e_o over the run then» → «so if D's play avoids e_o at every state of the run then».
+- R-7b.
+  - Old: «(Lemma WAIT-QUIET) a gate whose D changes value at most K times while its play avoids e_o unlocks»
+  - New: «(Lemma WAIT-QUIET) a gate whose D's play avoids e_o at every state of the run and whose D changes value at most K times unlocks»
+- R-6a.
+  - Old: «while on Γ3 that case needs B-ONLY on Γ3, which is not a premise here (OPEN within this entry, covered by E-FACE-PAYS (a) only)»
+  - New: «and on Γ3 it does not occur either, by RESULTS R125's B-ONLY3 (pβ_o is never an exception; pe_o is one only when D = c_W, and
+    then Λ(pe_o) = c_W ≠ Λ(pβ_o); referee-originated: REFEREE-2 R2-P-N5-GATE G-5)»
+- R-6b.
+  - Old: «while on Γ3 the proviso is a hypothesis here»
+  - New: «and on Γ3 it holds at every state by RESULTS R125's B-ONLY3 at the mover D, by the same argument (referee-originated: REFEREE-2
+    R2-P-N5-GATE G-5)»
+  - The weaker option of R-6, «not claimed here» on Γ3, stays acceptable. What is not acceptable is any reason saying B-ONLY3 is absent
+    from P-N5-CHAIN / R125.
+- R-9 (DATA).
+  - Old: «SAME-SUFFIX: copy rows» → New: «SAME-SUFFIX (a record of box 94's nesting families, not a test of the lemma's statement): copy
+    rows».
+  - Plus (D-1), content only: the DATA clause must name the must-0 counters that have no firing control. The list comes from the lane's
+    tools, which I read at the byte test.
+- R-2 is a packet-text item (premise rows of §3.1, §3.5, §3.7 and the F3 / F6 glosses), for fixes entry 3. L-2 carries no per-lemma
+  premise rows, and it defines E_t(v) explicitly, so R-2 asks nothing of the line beyond R-1 / R-10.

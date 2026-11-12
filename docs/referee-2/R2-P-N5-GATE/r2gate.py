@@ -33,7 +33,7 @@ Controls (--ctrl NAME; each must FIRE its counter): gr (GATE-RACE (a) on the ent
   np (NP-SHAPE with p_e and p_b swapped), efb (compare p_e with p_b instead of D), ss (order compared on windows that FAIL the
   hypotheses), sb (only x's own successor counts), par ((iii) as «at least 2 after u′»), uz (U_z := ∅ in PAIR-EXPEL),
   ec (EXPEL-COUNT bound without the 1 +), c (c_y ≤ a_y − 1), a2 ((ii)'s per-tuple bound − 1).
-Usage: r2gate.py [--eng g3|cyc|both] [--eorder lev|gate] [--ctrl NAME] [--gen COUNT SEED KIND] FILES.json ..."""
+Usage: r2gate.py [--eng g3|cyc|both] [--eorder lev|gate] [--limit L] [--ctrl NAME] [--gen COUNT SEED KIND] [--mut COUNT SEED FILE] FILES.json ..."""
 import sys, os, json, random
 from collections import defaultdict
 H = os.path.dirname(os.path.abspath(__file__))
@@ -331,7 +331,7 @@ def load(fn):
 
 def main(a):
     global CTRL, LIMIT
-    eng, gens, files, eorder = "both", [], [], "lev"
+    eng, gens, files, eorder, muts = "both", [], [], "lev", []
     i = 0
     while i < len(a):
         if a[i] == "--eng": eng = a[i + 1]; i += 2
@@ -339,12 +339,17 @@ def main(a):
         elif a[i] == "--eorder": eorder = a[i + 1]; i += 2
         elif a[i] == "--limit": LIMIT = int(a[i + 1]); i += 2
         elif a[i] == "--gen": gens.append((int(a[i + 1]), int(a[i + 2]), a[i + 3])); i += 4
+        elif a[i] == "--mut": muts.append((int(a[i + 1]), int(a[i + 2]), a[i + 3])); i += 4
         else: files.append(a[i]); i += 1
     A.EORDER = eorder
     jobs = [(os.path.basename(fn), load(fn)) for fn in files if not fn.endswith(".names.json")]
     for cnt, seed, kind in gens:
         rng = random.Random(seed)
         jobs += [(f"gen_{kind}_{seed}_{k}", RE.gen(rng, kind)) for k in range(cnt)]
+    for cnt, seed, fn in muts:                       # own mutants of a pinned genome (R2-P-N5-SPLIT/r2split.mutate)
+        rng = random.Random(seed); G0 = load(fn)
+        jobs += [(f"mut_{os.path.basename(fn)}_{seed}_{k}", SP.mutate(rng, G0)) for k in range(cnt)]
+    gens = gens or muts
     tot = {e: defaultdict(int) for e in ("g3", "cyc")}
     for nm, G in jobs:
         if G is None: print(nm, "skipped"); continue
