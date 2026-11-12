@@ -189,3 +189,26 @@ polynomial in N + M on every genome.
 - claude/l-new docs/new/N5-DEPTH-box206.md (§0-§2: DEPTH-COUNT, LOUD-SPLIT, DEEP-k1).
 - trunk 7f7ee70e1 docs/RESULTS.md R125 (l. 15595-15654: (d) F1, (f) LOC-GATE3, (i) NO-TIE3).
 - arXiv 2506.12254 (abstract page only).
+
+## Addendum A (L-SI successor 51, 2026-11-12T10:14Z (date -u); append-only, §0-§7 unchanged): L-RED 66's gaps D1 and W1, fixed
+Source: L-RED 66, docs/red/R234-lamgap.md (not yet on origin when this was written; relayed by the Lead 10:15Z). Verdicts: TWO-CROSS
+SURVIVES; WINDOW SURVIVES with W1; DEPTH-COUNT3 has the missing case D1.
+- D1 (DEPTH-COUNT3, §3): a length-only change has depth |Π_t| by definition. If |Π_t| ≤ c it counts as shallow, but §3's proof put it with
+  «d > c: P_a = P_b», so the P-count does not cover it. L-RED measured 284 such changes on the 26 instances and 2,590 on 100 random
+  genomes.
+  Fix (L-RED 66, PROVED lane; checked here). On a Λ-interval Ω(v) is ⊴-non-decreasing (F1), so Π never falls in the VJ set order ≺:
+  each Π value occupies one plateau of consecutive states. On a plateau, Λ and Π are fixed, so every change is length-only, and len is
+  strictly monotone there (F1; the direction depends on Λ's parity). That gives at most n3 − 1 changes per plateau. Plateaus with
+  |Π| ≤ c number at most S′_c(n3) := Σ_(j ≤ c) C(n3, j) per Λ-interval. Corrected statement of DEPTH-COUNT3: per vertex, at most n3 − 1 Λ
+  changes and at most n3·(S_c(n3) − 1) + n3(n3 − 1)·S′_c(n3) changes of depth in [0, c]. Polynomial for fixed c, as before.
+- W1 (WINDOW, §4, and box 101 §3): G_C[φ] was defined with EVERY mover outside C fixed at its final strategy, including movers upstream of
+  C. Those can still switch after t0(C), so «Λ constant at every vertex» on the two-player run is not «Λ constant at every vertex of
+  G_C[φ]».
+  Fix: take G_C[φ] on Reach(C), the vertices reachable from C's movers in Γ3. Reach(C) is closed under successors, and after t0(C) it
+  contains no switching mover outside C (box 99 §1, §2). Read a window as «σ̄|C and Λ constant on Reach(C)»; then each two-player
+  window is a window of the one-player run of G_C[σ̄_a] on Reach(C). L-RED 66 replayed every two-player window that way on the 26
+  instances: replayfail 0, and its control mismatches 14 of 14. The Λ-change count stays ≤ n3(n3 − 1).
+- Corrected bound (with L-RED 66's Lemma SHARP, b − a ≤ |Ch|; box 101 Add. B), for every c ≥ 0:
+  H-run(C) after t0 ≤ (1 + E_C + n3(n3 − 1) + 2·I_C·(n3 − 1 + n3(S_c(n3) − 1) + n3(n3 − 1)S′_c(n3)) + Deep_c(C))·(N_C + 1).
+  Deep_c is unchanged: L-RED found no charged flip on a length-only change of depth ≤ c («0 so far»), and Deep_c counts depth > c
+  anyway.

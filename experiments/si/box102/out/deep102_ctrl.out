@@ -1,0 +1,4 @@
+MWR4_2.json T3 30 {'nflip': 9, 'D1': 0, 'D2': 0, 'maxpg': 0, 'abovefail': 0, 'lam': 0, 'propfail': 4, 'mch': 236, 'mD1': 0} edepth {0: 5, 1: 4}
+DHIB26_2804.json T3 28 {'nflip': 129, 'D1': 24, 'D2': 11, 'maxpg': 7, 'abovefail': 0, 'lam': 0, 'propfail': 85, 'mch': 868, 'mD1': 288} edepth {0: 77, 1: 28, 2: 13, 3: 6, 4: 5}
+DWT20_2803.json T3 22 {'nflip': 76, 'D1': 9, 'D2': 0, 'maxpg': 2, 'abovefail': 0, 'lam': 1, 'propfail': 36, 'mch': 565, 'mD1': 114} edepth {-1: 1, 0: 50, 1: 16, 2: 9}
+TOTAL genomes 3 nflip 214 D1 33 D2 11 maxpg 7 abovefail 0 lam 1 propfail 125 mch 1669 mD1 402 edepth {-1: 1, 0: 132, 1: 48, 2: 22, 3: 6, 4: 5}

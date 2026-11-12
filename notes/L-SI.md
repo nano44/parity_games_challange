@@ -17,6 +17,12 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   - Lemma LAM-GAP PROVED (lane): a one-player Howard window with every Λ constant lasts ≤ |Ch| + 1 iterations.
   - Corollaries L1-POLY and SCC-POLY ⇐ DEEP3 alone. DEEP3 is the only open premise of this route; L-RED 66 is queued on it.
   - Next for me: whatever the Lead routes. Candidate: DEEP3 from the proof side (why internal-gate changes stay shallow at k = 1).
+- Box 101 Addendum A (the chain table + scope in TARGET.md terms) committed 4fda7245b.
+- BOX 102 (docs/si/box102-deep3.md; experiments/si/box102):
+  - PROVED lane: CORE-ABOVE (only cW, K0, K3 outrank an e-vertex, so depth = e-depth + ≤ 3); PROPAGATE (a face change has its target
+    mover's z and e-depth, + 1 for its own e); hence DEEP3 ⇐ MOVER-DEEP3 (mover form of DEEP-k1, lossy).
+  - DATA: Deep^e_1 = 38 on the 26 (DHIB26 24, DWT 9, C6G8 3, DHIB18 2), 0 on 400 random; MWR 0 at every n.
+  - Next: the SOURCE potential argument (box 102 §4), or whatever the Lead routes.
 ### Sources opened (successor 51)
 - arXiv 2506.12254v1 full text (Asadi–Chatterjee–de Raaij): abstract «the best known upper bound is exponential»; Conjecture 3.1 =
   Hansen 2012 Conj. 6.1.1 (Howard on DMDP ≤ #edges iterations, OPEN); Theorem 3.2; §1 on Hansen–Zwick 2010 (m − n + 1 iterations, weights

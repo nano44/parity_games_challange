@@ -166,3 +166,25 @@ N + M on that family. By END-T3, N5′-xi from S3 on Γ3(G) then makes a polynom
   - It gives no exact bound (H(C) ≤ M_C, U-FREE's T3 ≤ N + M + 4); the polynomial is crude (degree about c + 4 in n3).
 - Plainly: a chain of lane lemmas, unrefereed (except the landed rows), ending in CONJECTURE DEEP3. G-N5-TIME stays OPEN; N5′-xi stays a
   CANDIDATE (D1).
+
+## Addendum B (L-SI successor 51, 2026-11-12T10:14Z (date -u); append-only, §0-§4 and Addendum A unchanged): L-RED 66's verdicts folded into the chain
+Source: L-RED 66, docs/red/R234-lamgap.md (relayed by the Lead 10:15Z; SHA to follow from the Lead).
+- LAM-GAP SURVIVES case by case: P1-P3, the base case, the deterministic and Ch cases, the all-simple-paths quantifier, (O) / (E), and the
+  one-player reading of R15 (a).
+- Lemma SHARP (PROVED, lane, L-RED 66): b − a ≤ |Ch|, tight. Exhaustive at n = 4: 810,000 games, 18.9M runs over ALL tie resolutions,
+  gapfail 0, max window = |Ch|. The factor (N_C + 2) in §3 becomes (N_C + 1), and L1-POLY reads L1(C) ≤ (n3(n3 − 1) + 1)(N_C + 1).
+- Gaps W1 and D1 and their fixes: box 100 Addendum A (G_C[φ] on Reach(C); DEPTH-COUNT3 plus length-only plateaus). §3's SCC-POLY bound,
+  corrected: H-run(C) after t0 ≤ (1 + E_C + n3(n3 − 1) + 2·I_C·(n3 − 1 + n3(S_c(n3) − 1) + n3(n3 − 1)S′_c(n3)) + Deep_c(C))·(N_C + 1).
+- Chain table statuses, updated (rows of Addendum A not listed here are unchanged):
+
+| link | status now |
+| --- | --- |
+| TWO-CROSS | PROVED lane; SURVIVES L-RED 66 |
+| DEPTH-COUNT3 | PROVED lane; GAP D1 (length-only changes with \|Π\| ≤ c) found by L-RED 66, fixed in box 100 Add. A |
+| WINDOW | PROVED lane; SURVIVES L-RED 66 with W1 (G_C[φ] on Reach(C)), fixed in box 100 Add. A |
+| LAM-GAP | PROVED lane; SURVIVES L-RED 66 |
+| SHARP | PROVED lane (L-RED 66): window ≤ \|Ch\|, tight |
+| L1-POLY, SCC-POLY | PROVED lane, with the corrected bounds above |
+| DEEP3 | CONJECTURE; L-RED 66 attacks the kill side; box 102 reduces it to MOVER-DEEP3 |
+
+- The conclusion is unchanged: polynomial T3 ⇐ CONJECTURE DEEP3, through lane lemmas that are unrefereed except the landed rows.

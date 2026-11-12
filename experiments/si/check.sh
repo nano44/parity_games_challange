@@ -1298,3 +1298,5 @@ bash box99/check99.sh
 bash box100/check100.sh
 # box 101 (Lemma LAM-GAP on random one-player games; docs/si/box101-lamgap.md)
 bash box101/check101.sh
+# box 102 (DEEP3 proof side: CORE-ABOVE, PROPAGATE, DEEP3 <= MOVER-DEEP3; deep102 counters; docs/si/box102-deep3.md)
+bash box102/check102.sh
