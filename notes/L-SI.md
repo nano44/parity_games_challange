@@ -13,6 +13,17 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   - MWR mechanism = fuse + one internal re-arm gate, k = 1.
   - Next: try to prove LAM-GAP (the Bellman–Ford step for VJ path values at fixed Λ; the open step is optimal substructure when a
     switch closes a cycle with the same top), or find a one-player G_C[φ] with a fixed-Λ window > N_C + 1.
+- BOX 101 (docs/si/box101-lamgap.md; experiments/si/box101):
+  - Lemma LAM-GAP PROVED (lane): a one-player Howard window with every Λ constant lasts ≤ |Ch| + 1 iterations.
+  - Corollaries L1-POLY and SCC-POLY ⇐ DEEP3 alone. DEEP3 is the only open premise of this route; L-RED 66 is queued on it.
+  - Next for me: whatever the Lead routes. Candidate: DEEP3 from the proof side (why internal-gate changes stay shallow at k = 1).
+### Sources opened (successor 51)
+- arXiv 2506.12254v1 full text (Asadi–Chatterjee–de Raaij): abstract «the best known upper bound is exponential»; Conjecture 3.1 =
+  Hansen 2012 Conj. 6.1.1 (Howard on DMDP ≤ #edges iterations, OPEN); Theorem 3.2; §1 on Hansen–Zwick 2010 (m − n + 1 iterations, weights
+  O(n^(n²)), «best known upper bound is exponential as the weights are exponential»).
+- arXiv 1008.0530 (Hansen–Miltersen–Zwick) abstract: strongly polynomial at constant discount.
+- arXiv 1208.5083 (Post–Ye) abstract: simplex strongly polynomial on discounted DMDPs.
+- Not opened: Hansen 2012 thesis, Hansen–Zwick 2010 (cited only via 2506.12254).
 ### Things only I know
 - The engine is L-RED's own how3_232 (59daaef2) via env RED; it imports elev230 → bonly3_230, which needs env LNEW (l-new fcba92fc
   archive). python -I drops the script dir, so iv100 inserts it into sys.path itself.

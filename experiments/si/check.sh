@@ -1296,3 +1296,5 @@ bash box98/check98.sh
 bash box99/check99.sh
 # box 100 (SCC-LIN inside one SCC: TWO-CROSS, DEPTH-COUNT3, WINDOW; LAM-GAP / DEEP3 conjectures; docs/si/box100-scclin.md)
 bash box100/check100.sh
+# box 101 (Lemma LAM-GAP on random one-player games; docs/si/box101-lamgap.md)
+bash box101/check101.sh
