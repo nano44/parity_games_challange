@@ -139,3 +139,34 @@ split_replay.py; split_logs/: sweep.out, check199_rerun.out.
   list, L-1 is regenerated. Until then the line reads «CONDITIONAL on RESULTS R125 (P-N5-CHAIN)», which is true.
 - Verdict: fixes entry 2 CORRECT. **Line L-1 MATCHES** the packet read with fixes entries 1-2 and my LS-1..LS-8, SP-1, SP-2. Statements and
   labels as in §0 (all SIGN, conditional on R125). Note for P-N5-GATE (R-P-N5-GATE GT-3): C-EQUIV is this packet's §6, as L-1 states.
+
+## §E. Fixes entries 3-4 and line L-3 (REFEREE successor 31, Opus 5.5, D15; date -u at writing 2026-11-12T09:18Z; Lead 09:18Z byte test)
+- Objects: claude/l-new 621e6b77 (ancestor of origin/claude/l-new, checked; d0a7d351 also ancestor). docs/new/P-N5-SPLIT-line-L3.txt sha1
+  a8661c4b7998aafc02299c43dfe4e2c6320f73ee, 9,796 B; L-2 d8888d0b…; L-1 at 621e6b77 = 634b2fdf… (the line §C MATCHED); packet 5bc1b1f3…
+  (frozen, unchanged). Line-only change: Lead rulings R-D7a (07:12Z, L43; fixes entry 3) and R-U127 (07:58Z; fixes entry 4).
+- Byte test (scratch/split_l3.py; log split_logs/l3test.out): L-1 + R-D7a (D7 rewrite; DATA insert after «max split pairs 5 (FW6_4,
+  FW8_4);») + R-U127 (a) maxc unit, (b) maxSPL unit, (c) T3 unit, (d) «with fixes entries 1-2» → «1-4», strings typed from fixes entries 3-4;
+  each Old once. Result sha1 a8661c4b…, 9,796 B; `cmp` with the lane's L-3: **EQUAL**. Word diff L-1 → L-3: 21 hunks, every one inside
+  those six regions; nothing else changed. One line, 0 «|», 273 «(» = 273 «)»; «RA-LOG», «bounded multiplicity», «MW32_2, 445031d1» 0 each.
+- Meaning (L43): D7 keeps only «fan-in 1 of RA as a game property», an explicit bound killed by fan-in 3 (NK6_cl21) and 4 (DSALT9_n416),
+  with its unit. RA-LOG (unspecified constant) and bounded multiplicity (RA-MULT(K)) leave DEAD and enter DATA with numbers and sources. Right,
+  and the same class as GATE's GT-10 (R-P-N5-GATE §J).
+- New DATA ids, each resolved by git:
+  - NK6_cl21 408b9988…, DSALT9_n416 da3308b5…: box199/inst/SHA1SUMS at 621e6b77. maxRA 3 / 4: box198/pair198.out at 621e6b77.
+  - claude/referee-2 4948ce5d (ancestor of origin/claude/referee-2): R2-P-N5-SPLIT.md l. 272 «The longest RA chain (counting y) on
+    FW4/8/12/16_2 is 4 / 8 / 12 / 16: linear in the family parameter.»; l. 273 «The multiplicity m(y, z) = n on MW is L-SI's census. I did
+    not compute it».
+  - claude/l-si 4ded1e8d (ancestor): docs/si/box90-ra.md rows FW4_2 … FW16_2 with «RA depth» 4 / 8 / 12 / 16 (column header l. 53).
+  - claude/l-si 2d0344d3 (ancestor): docs/si/box90-ra.md l. 30 «Family MW(n): m(y, z) = n» and the MW32_2 row «maxm» 32 (l. 106).
+  - Claims: RA depth = the longest RA chain, linear (4d / d at d = 4…16) on FW; multiplicity n on MW(n), L-SI's census, «not re-run by the
+    lane or a referee» (true: REFEREE-2 says it did not compute it; my lane did not either). Stated «DATA only»: correct.
+- R-U127 units against the tool (split199.out at 621e6b77, 28 rows): T3 max 199 on MW32_2; maxc 6 on C6G8_n54 outside the MW family and
+  9 / 17 / 33 / 65 on MW4/8/16/32_2 (= 2n + 1); maxSPL 5. The units name the counters as split199.py computes them (entry 4 quotes its l. 31).
+  CORRECT.
+- Optional (not in the ruled regions; text unchanged since L-1, which §C matched): «max split pairs … 5 (FW6_4, FW8_4)»: W86_n77 also has
+  maxSPL 5 in split199.out. The parenthesis gives witnesses, not all of them; not false. If anything is touched again, «(FW6_4, FW8_4,
+  W86_n77)».
+- Verdict: fixes entries 3-4 CORRECT. **Line L-3 MATCHES** (= L-1 + R-D7a + R-U127 exactly). Statements and labels unchanged (§0; §C).
+- §E correction (2026-11-12T10:02Z by date -u; Lead 10:07Z): the «Optional» note above is WITHDRAWN. split199.out row 28 at 621e6b77 gives W86_n77
+  maxSPL 2 (maxc 5); maxSPL 5 occurs only on FW6_4 and FW8_4, as the line says. My error: two awk outputs printed back to back, and
+  «5 W86_n77» was a maxc line, not maxSPL. The verdict (L-3 MATCHES) is unaffected.
