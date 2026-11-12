@@ -44,8 +44,9 @@ counter (unit, set, scope). Model: R104's IDEAL model at degree ≤ 2 (sim6; fen
   | 10 | L18b_N9a | 10, 14 | SAT 2,514 s | L18b_N10a d3b6e342 | 0..10 |
   | 11 | L18b_N10a | 15 | SAT 1,109 s (wall 1,213, cap 6,000) | L18b_N11a a6e0185b | 0..11 |
   | 12 | L18b_N11a | 14 | SAT 451 s (wall 523, cap 6,000) | L18b_N12a 96fb7995 | 0..12 |
+  | 13 | L18b_N12a | 12 | SAT 829 s (wall 920, cap 6,000) | L18b_N13a 2969f3cc | 0..13 |
   DATA (unit = core8 rows followed by the free run, counter f6 = 129 free pre-states of rows 0..510, scope frame L18b on A2_solved):
-  largest P with f6 globally correct = 10 (L18b_N10a); 12 after §4 (L18b_N12a). The pair keeps moving to row 505 in L18b_N510 (65 changes): the «silence» of §2 was a
+  largest P with f6 globally correct = 10 (L18b_N10a); 13 after §4 (L18b_N13a). The pair keeps moving to row 505 in L18b_N510 (65 changes): the «silence» of §2 was a
   property of those designs, not of the frame.
 - Climb continues (§4 log).
 
@@ -58,6 +59,13 @@ counter (unit, set, scope). Model: R104's IDEAL model at degree ≤ 2 (sim6; fen
 - P 12: base L18b_N11a, client 14 alone (diag row 12: mover 14 only): SAT, solve 451 s (cap 6,000 s, wall 523 s) → L18b_N12a 96fb7995:
   rows 0..12, sim6 = fenc, f6check 0 / 129 on rows 0..510, inframe OK. diag at row 13: movers 12 (L6, «better» says stay) and 15 (L7,
   wants to flip). Next: P 13, client 12 alone, then 12 with 15.
+- P 13: base L18b_N12a, client 12 alone: SAT, solve 829 s (cap 6,000 s, wall 920 s) → L18b_N13a 2969f3cc: rows 0..13 (the run reaches
+  T 14), sim6 = fenc, f6check 0 / 129, inframe OK. diag at row 14: mover 8 only (L4, «better» says stay). Next: P 14, client 8 alone.
+- P 14, attempt 1: base L18b_N13a, client 8 alone, R 510: UNSAT 0.4 s (wall 43 s, cap 6,000 s): «this neighbourhood only», solver only.
+  Horizon diagnostics at R 15 (same base, P 14, cap 600 s each; UNSAT at R 15 implies UNSAT at R 510 in the same neighbourhood): clients
+  {8}, {8,11}, {8,10}, {8,12}, {8,15}, {8,14} UNSAT in ≤ 0.4 s (solver only); {8,10,11} SAT 38.5 s (decode follows rows 0..14, f6 broken
+  62 / 129 at R 15, as expected); all six clients: tool error (RecursionError in pgad6, no answer). So the block at row 14 is local to the
+  prefix: mover 8's stay needs 10 and 11 rewired together. Attempt 2 at R 510: clients 8, 10, 11 (XORD 8 < 11 < 10).
 
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All statements are about the IDEAL

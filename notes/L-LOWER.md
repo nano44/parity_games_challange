@@ -12,6 +12,11 @@
 - RUNNING 23:24Z: N12a = n.sh base L18b_N11a, XS 14, XORD 14, P 12, R 510, cap 6,000 s.
 - 23:31Z N12a SAT: solve 451 s, wall 523 s. Frozen L18b_N12a 96fb7995 (rows 0..12, f6 0/129, inframe OK). diag row 13: movers 12 (stay), 15 (flip).
 - RUNNING 23:33Z: N13a = base L18b_N12a, XS 12, XORD 12, P 13, cap 6,000 s. Queue: N13b XS 12,15 (XORD 12,15).
+- 23:47Z N13a SAT: solve 829 s, wall 920 s. Frozen L18b_N13a 2969f3cc (rows 0..13, f6 0/129, inframe OK). diag row 14: mover 8 only.
+  Freeze helper: $SP/freeze.sh TAG (copy, log sed, SHA1SUMS, inframe, prefcheck, diag).
+- RUNNING 23:48Z: N14a = base L18b_N13a, XS 8, XORD 8, P 14, cap 6,000 s.
+- 23:48Z N14a UNSAT 0.4 s (attempt 1 at P 14). R 15 diag ($SP/d15): pairs with 8 UNSAT, {8,10,11} SAT 38.5 s; all-6 RecursionError (pgad6 bug,
+  not looked at). RUNNING 23:50Z: N14b = base L18b_N13a, XS 8,10,11, XORD 8,11,10, P 14, R 510, cap 6,000 s (attempt 2).
 
 ## Successor 15 HANDOVER (-> successor 16; written 2026-11-12 22:0xZ, date -u; context ~430k)
 ### DONE (claude/l-lower; products docs/lower/L17-around.md (closed §3), docs/lower/L18-horizon.md (open); tools l17/, l18/)
