@@ -236,3 +236,33 @@ REFEREE successor 34 (D1; the Lead's «go» 20:04Z, item B). Date -u at writing 
   are accurate as «Lean-checked (lane)»; the line's wording is fixed by LT-3. The packet's body writes «Genome.k1» for PG.Genome.k1
   (note N-5; body text, not landing text).
 
+## 0. Verdicts (REFEREE successor 34; date -u at writing: see the commit). First of two referee signatures; REFEREE-2 not read.
+| § | statement | verdict |
+| --- | --- | --- |
+| §3 | Class facts (K1)-(K5) ((K2) on triples; (K4) with the face clause; (K3 e) with «largest class») | **SIGN** |
+| §4 | Lemma LEVEL (L1)-(L5) | **SIGN** |
+| §5 | Counting (C1)-(C4) ((C4) by landed R126 QUIET-N) | **SIGN** |
+| §6 | Theorem WIN | **SIGN** |
+| §6 | Corollary R-INT | **SIGN** |
+| §6 | Theorem R-HEIGHT | **SIGN** |
+| §6 | Theorem K1-TCYC | **SIGN** |
+| §6 | Theorem FVS-TCYC | **SIGN** |
+| §7 | Lemma PLATEAU (P1)-(P7) ((P6) with the σ̄_s step, REFEREE 32's under L41; (P7) by landed R118 (i) (a) with H0 checked; (P4) on a plateau only) | **SIGN** |
+| §8 | Theorem ALL-TCYC with its «Consequences» | **SIGN** |
+| §8-§14 | READING / DATA rows (not to sign) | checked: §2.6-§2.7, §4, §6 |
+- Scope of every signature, as the packet states it: Howard ALL-SWITCH strategy improvement with Even, the MAXIMISER, improving
+  (switch-best, keep-if-best) and VJ values, on IDEAL-CYC(G) of RESULTS R118 (a), for every genome G of R104 (Ξ-cycles and Ξ self-loops
+  allowed), states 0, …, T_CYC of that run. Not N5, not N5′-xi (on or off Γ3), not other rules or games, not M4, not M3, not a gauntlet
+  step-4 pass; G-N5-TIME stays OPEN.
+- Gaps: **none in the statements or proofs.** Premises: landed R-ids only (R104 [DEF] with (D1), (D3), (D4) re-derived from R104's own
+  line, §1.3; R15 (a); R118 (a), (b) F1, (c) DOM, (e)'s reason, (i) BR-SEG-G (a); R121 E-MON, E-DOM; R123 CN2, B-ONLY, NO-TIE, LOC-GATE,
+  LOC-K2, [OPT] (R122's wording); R126 QUIET-N and the Ξ-feedback number); no lane lemma, no Lean theorem.
+- The Lead's particular checks: (C4) uses landed R126 QUIET-N: YES (§2.3). A step relying on (P4) outside a plateau: NONE (§2.4).
+  PR-1, PR-2, PR-3, PR-4, PR-5 (N-a applied; N-b as remark SHARP, not claimed), PR-6 (one packet): applied. Successor 33's three points:
+  H0 on every step of H's run (§2.5), (P2)-type citations through (K3 e) for e-vertices with successor c_W ((L3), (P2)), Lean as
+  «Lean-checked (lane)» (§7): applied in the packet; the line's Lean wording needs LT-3.
+- Notes (no change asked): N-1 (K3 c), N-2 (H's priorities), N-3 (§8's N ≤ M), N-4 (class order), N-5 (Lean names in the body).
+- **Line L-1 (sha1 28565b3c…): does NOT match yet.** Required: LT-1 (L43: the «no run tests the constants» clause names instance,
+  tool, unit and file), LT-2 (L43: the G_N counter named k5 with its file), LT-3 (Lean citation form); my result on L-1:
+  sha1 389645a2a646522a8fb57f05dba4458695ac74f2 (§5). Optional LO-1, LO-2 (the Lead's call). No statement, label or proof changes, so a
+  fixes entry with a line L-2 by script needs a byte test only, not a re-sign.

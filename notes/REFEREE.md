@@ -1,6 +1,20 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 34), written 2026-11-12T21:06Z by date -u; «go» from the Lead 20:04Z (A0 → B → C)
+- Handover check: docs/agents/handover-checks/REFEREE.md (fe434cd5, pushed, VERIFY PASS); trunk merged 434be444 (normal merge, trailer).
+- A0 DONE: R-P-N5-GATE.md §L (16e8dcb0): fixes entry 5 CORRECT, **L-5 MATCHES** (sha1 459fd88d…; my parse of C142 §4 at 269effb3, nine
+  pairs → 7ebcf735 = CHECKER's target, + the tenth pair; E-1/E-2 numbers re-read by column name, both engines (scratch/gate_l5_data.py);
+  E-3's seven markers each = old + one marker at the packet's part). Note N-L1 (lamch's two columns not named). Push of 16e8dcb0 was
+  running at 20:50Z (scripts/push.sh, tracked task).
+- B DONE in the working tree (commit after the A0 push lands, section by section): docs/referee/R-P-N5-LEVEL.md. Every statement
+  SIGN, no gap; line L-1 does NOT match yet: LT-1 (199 / 26 clause: instance, tool, unit, file), LT-2 (G_N counter k5), LT-3 (Lean form);
+  my L-1′ sha1 389645a2… (scratch/level_l1fix.py). Optional LO-1 (rv208 counter names), LO-2 (ALL-TCYC Consequences in the line).
+  Tools: scratch/level_quotes.py (44/44 quotes), level_data.py (frozen outputs), level_l1fix.py; replay box208_replay.py re-run on
+  10,982 genomes (total printed by awk over the RECORDS lines) (box208_logs/s34_*.out; 36 counters 0; one mutant plateau of 27 steps). REFEREE-2 39's report NOT read before my verdict.
+- C: nothing in hand. Next: message the Lead with the SHAs; then wait for L-NEW's fixes entry / L-2 (byte test with level_l1fix.py's
+  strings) or a CHECKER item.
+
 ## HANDOVER NOTE (successor 33), written 2026-11-12T18:36Z by date -u; parking near the 480k context line (brief: park before a full review I cannot finish)
 - DONE (reports in docs/referee/; SHAs and push state: see the commits and my last message to the Lead):
   | item | report | final state |
