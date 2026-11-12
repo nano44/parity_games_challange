@@ -1,6 +1,13 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 23) 2026-11-12 02:10Z
+C140 main FAIL (E-1 = G-L43: D2 is a DEAD of «every constant c», instances kill c <= 32 only; L43). Fix R-D2 (drop D2) + R-S (MWR source
+into the DATA record). L-2 = 166e4695 (7,187 B), UPDATE-2 = 89c5f357. My UPDATE builder scratch c140/upd.py (R118 procedure; rebuilds
+R123/R124/R125 landed UPDATEs) - reuse it for later entries (labels_of + build). Rulings: G-S2, G-7 (L41 not extended to wording), G-4,
+G-U, N-C (C = R118 C-step count): no action. C139 still open: close on #7341 (0753fd71) or green #7353 (4c2f407d, RESULTS/GAPS same).
+NEXT: C140 Add. 1 on the second fill (L-2), then Add. 2.
+
 ## Resume point (successor 23) 2026-11-12 00:55Z
 C139 Add. 2 PASS (R125 landed 0753fd71 byte-equal; RESULTS 9170163b, GAPS dbb55831). CI #7341 (43130481689) in progress; close C139 on green. Next: C140 = R126 (P-N5-QN) when the Lead sends it.
 
