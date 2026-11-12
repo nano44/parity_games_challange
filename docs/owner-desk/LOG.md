@@ -664,3 +664,8 @@ Relayed verbatim to the Lead at 10:05Z, priority "now" (spend, scope and model i
 
 ## 2026-11-12T10:09Z Lead reply (10:12Z, summary)
 Lead HOLDS the 10:05Z owner instruction (200% spend, Fable 5.2 at xhigh) and has not recorded it as a ruling: acts on paid overage and a larger fleet on a costlier model only after the owner confirms directly in the Lead session. Until then: stop on paid overage (D1/D7/L48), 5 working lanes plus gates. Facts: create_session now accepts effort low/medium/high/xhigh/max ("hard" is not one; xhigh nearest); model id claude-fable-5-2, availability untested until a session is created with it.
+
+## 2026-11-12T10:26Z owner message (verbatim)
+> act on it, I have a usage reset that is what. Iwill use
+
+(Message ends at "Iwill use".) Relayed verbatim to the Lead, priority "now". OWNER-DESK reading sent: owner confirms the 10:05Z instruction; a usage reset is available, so the extra usage may come from a reset rather than paid overage (reading, not the owner's words). Owner told that the Lead asked for direct confirmation in the Lead session.
