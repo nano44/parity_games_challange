@@ -5,7 +5,14 @@ Lead's wording said «on Γ3»; this lemma is proved for IDEAL-CYC only, because
 is NOT claimed. Nothing here is a TARGET.md claim.
 
 ## 1. Premises (quoted by grep from trunk 575ac9443)
-- F1, frozen P-N5-XICYC §3 l. 69, a premise of RESULTS R118 (b): «F1 (from [R15a]): Ω_t ⊴ Ω_(t+1) pointwise, for every step t.»
+- F1, LANDED through RESULTS R15 (a) Lemma A (l. 631): «Lemma A: for any non-empty unambiguous set I of improvements of σ (VJ00 §4.4),
+  Ωσ ⊴ Ω_{Switch_I(σ)}. This is VJ00 Lemma 5.7 as stated». RESULTS R118's premise line (l. 13736-13737) cites it «for F1 (Ω_t ⊴ Ω_(t+1)
+  under a Howard step, an unambiguous non-empty switch set)». A Howard step at the movers of IDEAL-CYC is such a Switch_I (R118 (a)).
+  The POINTWISE sense (Ω_t(v) ⊴ Ω_(t+1)(v) for every vertex v) is VJ00's order on valuations. Landed RESULTS do not write «pointwise»
+  out; the frozen lane packet P-N5-XICYC §3 l. 69 does: «F1 (from [R15a]): Ω_t ⊴ Ω_(t+1) pointwise, for every step t.»
+  Label: F1 landed (R15 (a), cited for F1 by R118); its pointwise reading is VJ00's (§4.2 / Lemma 5.7) and is written out only in the
+  lane packet. A packet built on ONE-CROSS should quote R15 (a) and state the pointwise reading as VJ00's, with a source check of VJ00
+  Lemma 5.7 (BRICS RS-00-48, as opened for R15).
 - Corollary NO-TIE, RESULTS R123 (c) (l. 15171): «At every state and every gate g, Ω_t(e_g) ≠ Ω_t(β_g). So LOC-GATE applies at every gate and
   state.»
 - Lemma LOC-GATE, RESULTS R123 (d) (l. 15173-15174): «Let G be any genome, t a state of a run of IDEAL-CYC(G), g a gate, a := σ̄_t(g),
