@@ -3526,3 +3526,12 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
   kclimb238 kb (seed 2392, 25000, d <= 16 w <= 2 deg <= 3; out/kck_kb.json 13,500 evals, best L* 19; RESUME=1).
 - Drafts NOT committed: docs/red/R237-w4.md (placeholders CLIMB-TABLE, CLIMB-CTRL), docs/red/R238-key.md (KCLIMB, LSTAR-MAX).
 - RESUME POINT: finish s1 + kb; climb s2 (seed 2372, n <= 12) and m1 (seed 2373, n <= 30) + CTRL=1 climb; fill the two docs; push; message Lead.
+- 2026-11-12T23:55Z: R237 (2) DONE -> docs/red/R237-w4.md: (W4) SURVIVES (exh n <= 3 = 438,976 games; 10 aimed families incl. new plen / pset; climbs s1 / s2
+  (n <= 12) / m1 (n <= 30) = 56,696 evals, best T 27 / 23 / 28; every counter 0 on both own engines; second engine 1,132 sampled, xdiff 0);
+  controls fire (exh CTRL=1, CTRLW=1/2/3; aim CTRL=1; climb CTRL=1). W-1 = wording gap only (false at pe, pe_o, pb, c_W; never used there;
+  one-phrase repair). R238 DONE -> docs/red/R238-key.md: KEY-MODEL SURVIVES the replay (7,300 random + 50,000 climbed free genomes, L* <= 21,
+  keyfail 0 with every Even vertex compared; key105 agrees on 715 sampled + both best genomes; controls 1-3 fire, CTRL=4 neutral).
+- Lessons: (1) a «sampled» count typed into a commit message before the sum (615 vs 715) -> sums from python in the same step; (2) one job
+  started with «&» by mistake (s2, 22:51Z), killed at once and restarted as a tracked task from a clean checkpoint; (3) run climbs with OUT in
+  the scratchpad while verify runs, copy checkpoints into out/ before commits.
+- RESUME POINT: nothing in flight after this push; next = whatever the Lead routes (DEEP3 still ON HOLD).

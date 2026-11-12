@@ -1,0 +1,8 @@
+Thu Nov 12 22:34:30 UTC 2026
+CLIMB237 m1 PAUSED (TLIMIT): evals 5695 cur [0, 25] n 25 best [0, 25] n_best 30 | s3fail 0 nonstd 0 nohoward 0 fbwrong 0 endwrong 0 wrong 0 | states 75812 pairs 1141740 sumT 70117 maxT 25 max|W| 803 cands 0 tiediff(x,s) 1766 | N5 (spec, WRAP (v) + Remark 3): vfb 0 vend 0 vnonstd 0 vpick 0 vkey 0 r3 0 maxF 5 sumF 15415 | (W4)-(W6): w4a 0 w4b 0 w4c 0 w4d 0 w4ord 0 w4x 0 w5 0 w6tie 0 w6valve 0 w6core 0 (W-1 starts 11759565) | second engine: sampled 113 xdiff 0 xkill 0 | accepted 2213 ctrl 0
+exit 0
+Thu Nov 12 23:14:31 UTC 2026
+Thu Nov 12 23:14:39 UTC 2026
+CLIMB237 m1 PAUSED (TLIMIT): evals 9279 cur [0, 28] n 30 best [0, 28] n_best 30 | s3fail 0 nonstd 0 nohoward 0 fbwrong 0 endwrong 0 wrong 0 | states 142739 pairs 2353386 sumT 133460 maxT 28 max|W| 911 cands 0 tiediff(x,s) 4506 | N5 (spec, WRAP (v) + Remark 3): vfb 0 vend 0 vnonstd 0 vpick 0 vkey 0 r3 0 maxF 5 sumF 25967 | (W4)-(W6): w4a 0 w4b 0 w4c 0 w4d 0 w4ord 0 w4x 0 w5 0 w6tie 0 w6valve 0 w6core 0 (W-1 starts 24833770) | second engine: sampled 185 xdiff 0 xkill 0 | accepted 3188 ctrl 0
+exit 0
+Thu Nov 12 23:54:39 UTC 2026
