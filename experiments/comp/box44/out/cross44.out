@@ -1,0 +1,14 @@
+CROSS44 records level vs n5v        : my runs  25, ref rows  25, in both  25, lines differing 0 | L-NEW's counters on my runs sum 0
+CROSS44 records level vs HOW3       : my runs  25, ref rows  25, in both  25, lines differing 0 | L-NEW's counters on my runs sum 0
+CROSS44 records plat  vs n5v        : my runs  25, ref rows  25, in both  25, lines differing 0 | L-NEW's counters on my runs sum 0
+CROSS44 records plat  vs HOW3       : my runs  25, ref rows  25, in both  25, lines differing 0 | L-NEW's counters on my runs sum 0
+CROSS44 corpus  level vs n5v        : my runs  53, ref rows  53, in both  53, lines differing 0 | L-NEW's counters on my runs sum 0
+CROSS44 corpus  level vs HOW3       : my runs  53, ref rows  53, in both  53, lines differing 0 | L-NEW's counters on my runs sum 0
+CROSS44 corpus  plat  vs n5v        : my runs  53, ref rows  53, in both  53, lines differing 0 | L-NEW's counters on my runs sum 0
+CROSS44 corpus  plat  vs HOW3       : my runs  53, ref rows  53, in both  53, lines differing 0 | L-NEW's counters on my runs sum 0
+CROSS44 dead    level vs n5v        : my runs   3, ref rows   3, in both   3, lines differing 0 | L-NEW's counters on my runs sum 0
+CROSS44 dead    level vs HOW3       : my runs   3, ref rows   3, in both   3, lines differing 0 | L-NEW's counters on my runs sum 0
+CROSS44 dead    plat  vs n5v        : my runs   3, ref rows   3, in both   3, lines differing 0 | L-NEW's counters on my runs sum 0
+CROSS44 dead    plat  vs HOW3       : my runs   3, ref rows   3, in both   3, lines differing 0 | L-NEW's counters on my runs sum 0
+CROSS44 mine    level vs L-SI replay: my runs  59, ref rows  26, in both  26, lines differing 0 | L-NEW's counters on my runs sum 0
+CROSS44 mine    plat  vs L-SI replay: my runs  59, ref rows  26, in both  26, lines differing 0 | L-NEW's counters on my runs sum 0

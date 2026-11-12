@@ -179,20 +179,43 @@ b = 1 … T3 on the small sets (BREF=all) and for 3 further evenly spaced b on t
   tail) per genome: records 25 of 25, corpus 53 of 53, dead 3 of 3 equal, against BOTH of its engines (its n5v rows and its rows on L-RED
   65's HOW3 engine): 0 differing rows. Its nine LEVEL3 counters and my 47 are 0 on all 81.
 - Against L-SI's replay (claude/l-si 925577fe experiments/si/box104/out/replay209_level.out, replay209_plat.out: L-NEW's counter code on L-RED
-  65's HOW3 engine, L-SI's 26 frozen genomes): PENDING at this commit. 15 of the 26 are in my records / corpus rows and compare equal (0
-  differing rows); the other 11 (C98_*, Kprev_8, Ku_*) are in my set «mine» (box40/inst), whose run is not finished.
-- The cross (L-NEW's own counter code, level208.py --hist and plat209.py --hist, on MY builder's runs; run44c.sh): PENDING at this commit
-  (tried on CFI3_n48: its line is identical to L-NEW's own).
+  65's HOW3 engine, L-SI's 26 frozen genomes; out/cmp44_lsi925577fe.out, one line per genome, all 26 listed): 26 of 26 EQUAL in (T3, number
+  of Φ values, stalls, plateaus, longest plateau, tail); my must-0 sum 0 and L-SI's 9 + 9 counters sum 0 on all 26; largest T3 199
+  (MW32_2). My rows come from my sets records (5), corpus (11) and mine (10: C98_* 7, Ku_4/8/16, Kprev_8 — box40/inst; 59 distinct genomes
+  in «mine», must-0 sum 0; MWR4/8/16_2 occur in both box39/inst and box40/inst with equal sha1 and run once).
+- The cross (L-NEW's own counter code, claude/l-new 311bbf81 box208/level208.py --hist (16 counters) and box209/plat209.py --hist (9
+  counters), run unchanged with python3 -I on the history of MY builder + engine; run44c.sh; compared by cross44.py, whole line character for
+  character after «plat3 hist » := «plat3 »; out/cross44.out): records 25, corpus 53, dead 3 — 0 differing lines against BOTH of L-NEW's
+  engines (its n5v rows level3_* / plat3_* and its rows on L-RED 65's HOW3 engine own3_*), level and plat; mine 59 runs, of which the 26 of
+  L-SI's replay (925577fe) compare: 0 differing lines, level and plat. L-NEW's 16 + 9 counters sum 0 on all 140 of my runs.
 ### T3 against the T3-ALL bound; the largest T3 seen (out/lev44_big.out; table by tab44.py)
-PENDING at this commit: the long runs (out/lev44_big.out) are not finished.
-- On the sets finished at this commit (records, corpus, dead, rand, mut; 1,681 genome runs): t3all 0 everywhere; the largest T3 is 199
-  (MW32_2, N + M 957; bound 16,359,115,035, ratio 1.2e-08); the largest T3 / bound is 1.77e-04 (a random genome with T3 small and a small
-  bound). The data do not test the constants of T3-ALL: no run is within a factor 5,000 of its bound. The long runs (T3 up to 294) are
-  PENDING at this commit.
+| genome | N + M | n | T3 | iterations | bound P3·(n_E3 + 1) + n_E3 | T3 / bound | sum of my 47 | stalls, plateaus (longest), tail |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| TMWR4 | 153 | 769 | 30 | 33 | 61531483 | 4.876e-07 | 0 | 0, 0 (0), 0 |
+| TMWR8 | 269 | 1365 | 54 | 57 | 348030879 | 1.552e-07 | 0 | 0, 0 (0), 0 |
+| TMWR16 | 501 | 2557 | 102 | 105 | 2303241703 | 4.429e-08 | 0 | 0, 0 (0), 0 |
+| TMWR32 | 965 | 4941 | 198 | 201 | 16680259959 | 1.187e-08 | 0 | 0, 0 (0), 0 |
+| MWR32_2 | 957 | 4909 | 198 | 201 | 16359115035 | 1.210e-08 | 0 | 0, 0 (0), 0 |
+| TREC | 307 | 1523 | 48 | 51 | 483615361 | 9.925e-08 | 0 | 0, 0 (0), 0 |
+| TC6G8 | 212 | 1146 | 17 | 20 | 205932255 | 8.255e-08 | 0 | 0, 0 (0), 0 |
+| TDHIB26 | 412 | 2210 | 28 | 31 | 1488256823 | 1.881e-08 | 0 | 1, 1 (1), 0 |
+| D10_k128 | 1168 | 6770 | 28 | 31 | 43136380685 | 6.491e-10 | 0 | 1, 1 (1), 0 |
+| D18_k32 | 1104 | 6898 | 28 | 31 | 45717250925 | 6.125e-10 | 0 | 1, 1 (1), 0 |
+| D80_k128 | 1040 | 5874 | 28 | 31 | 28142642189 | 9.949e-10 | 0 | 1, 1 (1), 0 |
+| CL131 | 1202 | 7122 | 14 | 17 | 50257678866 | 2.786e-10 | 0 | 0, 0 (0), 0 |
+| MWR48_2 | 1421 | 7293 | 294 | 297 | 53710057643 | 5.474e-09 | 0 | 0, 0 (0), 0 |
+| TMWR48 | 1429 | 7325 | 294 | 297 | 54417975559 | 5.403e-09 | 0 | 0, 0 (0), 0 |
+- All sets (records, corpus, dead, rand, mut, mine, big; 1,754 genome runs = 1,681 + 59 + 14; counter t3all and every other must-0 counter
+  0 on every row; run by successors 20 and 21): the largest T3 is 294 (MWR48_2, N + M 1,421, bound 53,710,057,643, ratio 5.5e-09; TMWR48,
+  N + M 1,429, the same T3); the largest T3 / bound is 1.77e-04 (rand_s4411_nm60_px0.3_115: T3 1, bound 5,660). The data do not test the
+  constants of T3-ALL: no run is within a factor 5,000 of its bound. The long runs (14 genomes, N + M 153-1,429) were re-run by successor 21
+  (successor 20's rows were lost with its container, never committed).
 
 ## Item 3: a climb on T3 / (N + M) at N + M ≈ 300
-RUNNING at this commit (climb44.py, run44d.sh; band 280 ≤ N + M ≤ 320; seeds gen37(9): T3 61 at N + M 290, ratio 0.2103; gen37(10): 67 at
-319, 0.2100; MWR(9): 60 at 290; MWR(10): 66 at 319, 0.2069). No result is claimed here yet.
+RUNNING at this commit (item 3 is pushed separately when both streams end). climb44.py / run44d.sh; band 280 ≤ N + M ≤ 320; seeds gen37(9): T3
+61 at N + M 290, ratio 0.2103; gen37(10): 67 at 319, 0.2100; MWR(9): 60 at 290; MWR(10): 66 at 319, 0.2069. Successor 20's climb state was
+lost with its container; successor 21 restarted stream 1 from its seed (RNG seeded by (4431, restart, step), so the run repeats): restart 0
+again reaches T3 65 at N + M 285 (ratio 0.2281; text engine agrees, box 209 counters 0), as successor 20 reported. No result is claimed here yet.
 
 ## Files
 wrap44.py (builder, canonical relabelling, isomorphism), n5xi44.py (engine + tie-rule census), val44.py (independent evaluator, Howard),
