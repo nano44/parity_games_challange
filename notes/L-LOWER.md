@@ -7,7 +7,12 @@
 - f6check A2_solved client 13: 0 / 18 mismatches rows 0..64, 0 / 129 rows 0..510 (A1_solved: 7 / 18). The frozen f6 pair stays correct in A2.
 - Free run (prefcheck, sim6 = fenc): fixed point T 6, rows 0..6 followed. diag: row 7 needs movers 11 (L5), 13 (L6), 15 (L7) to flip;
   11 not available (better says stay).
-- Running (tracked, resumable, $SP/sw/sweep.sh, logs $SP/sw/A2x8.log, A2x11.log): pgad3 ascending 2..18, G {63}, XS 8 and XS 11, 600 s each.
+- A2 sweeps DONE: XS 8 and XS 11 (pgad3, G {63}): SAT 2..12, UNSAT 13 (XS 8 DRUP VERIFIED, 8cfd8a7e; XS 11 DRUP running,
+  $SP/sw/drup_A2x11_P13.out). 22 decodes replayed sim6 = fenc, frozen l17/sweepA2/ (1c36e612). A2 FAILED (run 2 of the stop rule).
+- A3 RUNNING: pgad5 on A2_solved, XS 8,11,12,14,15, XORD 8,11,12,15,14, XALL=1, FIXC 16,17, G empty, from P 10, 2,900 s per question
+  ($SP/sw/sweep5.sh A3x5; log $SP/sw/A3x5.log; resumable: re-run the same command with the same env). SAT 10 (99 s), 11 (626), 12 (496),
+  13 (812 s; decode follows rows 0..13, replayed). FINDING: A3 decodes break f6 beyond the prefix (f6check rows 0..510: 47-62 / 129
+  mismatches, first at row 14-18): rewired readers change the chains f6 reads (L16 coupling, reader side).
 
 ## Successor 14 HANDOVER (-> successor 15; written 2026-11-12 09:2xZ, date -u; PARK on Lead 09:04Z instruction, context ~450k)
 ### DONE (claude/l-lower; products docs/lower/L16-cascade.md (closed), docs/lower/L17-around.md (open); tools experiments/lower/l16/, l17/)

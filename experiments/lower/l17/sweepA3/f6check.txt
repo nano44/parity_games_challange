@@ -1,0 +1,6 @@
+F6CHECK A3x5_P10_dec.txt client 13 rows 0..510 free 129 mismatches 62 [14, 22, 30, 38, 46, 54, 62, 70, 78, 86,
+F6CHECK A3x5_P11_dec.txt client 13 rows 0..510 free 129 mismatches 47 [18, 26, 34, 38, 58, 66, 70, 90, 98, 102
+F6CHECK A3x5_P12_dec.txt client 13 rows 0..510 free 129 mismatches 62 [18, 26, 34, 42, 50, 58, 66, 74, 82, 90,
+F6CHECK A3x5_P13_dec.txt client 13 rows 0..510 free 129 mismatches 47 [18, 26, 38, 50, 58, 70, 82, 90, 102, 11
+F6CHECK A3x5_P14_dec.txt client 13 rows 0..510 free 129 mismatches 62 [14, 22, 30, 38, 46, 54, 62, 70, 78, 86,
+F6CHECK A3x5_P15_dec.txt client 13 rows 0..510 free 129 mismatches 62 [18, 26, 34, 42, 50, 58, 66, 74, 82, 90,
