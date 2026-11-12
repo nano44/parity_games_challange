@@ -21,7 +21,7 @@ CW_REARM, written from Addendum D's prose and carry206.py's documented option or
   - From t ≈ 10, at Q's gate Odd takes the β-face (the e-face of Q leads hv → v → qh → e → c → R, back into R). The race cycle R → Q → R through
     the β's closes. Its top is β_(R,0), priority 218 (even), so every play that reaches R ends there.
   - At qh_3's gate both faces end in that cycle: val(e) = (β_R, |Π| 2), val(β) = (β_R, |Π| 0). The e-face only adds the e-vertex to Π
-    (good for Even), so Odd takes β. On CW8 instead, c_3 picks its qh_j or X options, Λ stays K1, and Odd uses the e-face at 30 of 60 states.
+    (good for Even), so Odd takes β. On CW8 instead, c_3 picks its qh_j or X options, Λ stays K1, and Odd uses the e-face at 27 of 60 states (eface231).
 - READING (corrected mechanism): the re-arm edge makes every exit of the race component lead back to R. So Odd can no longer escape the race
   to K1 and must close the R ↔ Q cycle, whose top β_R is even. That cycle absorbs every re-armed carry: one class for all movers, D_mov 3.
   Addendum D's «a cycle through e_qh_k» is the counterfactual that Odd blocks at Q's gate, not a cycle that closes. DEAD CWR stands, with
