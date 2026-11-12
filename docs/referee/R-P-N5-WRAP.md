@@ -123,3 +123,68 @@ REFEREE successor 34 (D1; the Lead's item D, 22:02Z). Date -u at writing: 2026-1
   successor, which a Howard step and every policy with the I^loc property must take; the stop rule is the algorithm's. So T is the
   number of improvement steps of Theorem 6.14. Correct.
 
+## 3. Replay with my lane's code (no lane code; s33's wrap_replay.py, own engine rl_engine.py; logs scratch/wrap_logs/s34_*)
+- New seeds (driver wrap_logs/s34_run.sh, 4 min 33 s): modes xi (N5′-xi) and spec (N5) × families rand, dup, even, odd, twin, seed 3440,
+  2,000 games each, n ≤ 10, plus PERM = 1 (another index order) on xi rand seed 3441: 11 × 2,000 = 22,000 wrapped games. **All 18
+  must-be-0 counters (the box's six and twelve of my lane's: size, w1, w4a-d, w5, w6, w8, v5, rem2, rem3) are 0 on every set**; max T 7,
+  max |W| 234. (The odd family has T = 0: a trivial set, counted but not informative.)
+- G^L_n alone, my lane's transcription (wrap_f11.py), n = 1..10: T = 8, 26, 62, 134, 278, 566, 1,142, 2,294, 4,598, 9,206 (each ≥ 2^n),
+  counters fact61, sinkex, w1all, sinkseek, eqval (equal values of two nodes: Claim NT's DATA), tie: 0 (log s34_f11_H_fig4.out; equal to
+  s33's f11_H_fig4.out at e44ce56b, `cmp` EQUAL).
+- The firing controls and the exhaustive / wrapped-Friedmann rows are my lane's s33 runs (R-WRAP-preread §5, Addendum 1), not re-run.
+
+## 4. DATA rule (L43), clause by clause
+1. §9's six must-0 counters: named, with units (games; states; (step, Even vertex of H) pairs; games), sets and output files; controls
+   named with their firing counts; the two-implementation agreement is labelled as agreement of one rule. MEETS.
+2. §9's iteration and T_n rows: numbers on named instances (11 … 2,297; 8 … 2,294), formula only as «= 9·2^n − 10» beside the numbers;
+   checkW.sh re-reads them from out/wrap_lmcs_xi.out and wrap_long.out. MEETS in the packet.
+3. §8 / §10: instances by name and sha1 (checked, §1.1); independent replays cited with commits, in the landed «cited, not re-run» form.
+   MEETS.
+4. **Line L-1's DATA clause: does NOT meet it.** «DATA: T_n = 9·2^n − 10 for n ≤ 8 on the wrappers (…) and n ≤ 10 on G_n» gives a
+   formula, not the numbers, and names no unit, column or file; «n ≤ 10 on G_n» names no source. CHECKER C142 E-1 ruled exactly this
+   form out for R128 («the numbers are given as formulas …, not as numbers»). REQUIRED: LW-1 (§5).
+5. The DEAD row is not a DATA DEAD: it rests on a proof (WRAP, Claim NT) and a published theorem, and is labelled DEAD-CONDITIONAL until
+   two signatures (L43: «DEAD» needs a refereed proof or an instance beyond an explicit bound). Correct use.
+
+## 5. Line L-1 against the statements
+- Every clause of L-1 matches a statement of «To sign»: WRAP for every H and s0 with the size and the T + 3 / F + 2 counts; the proof
+  lemmas named; premises as §1; Claim NT credited to REFEREE successor 33 (L41) with the lane's rendering; NT-RUN; XI-EXP labelled
+  CONDITIONAL with Theorem 6.14 cited as published on the READING F-1; «2^Ω(n) … on a game with O(n²) vertices, so 2^Ω(√|V|)»;
+  «exactly T_n + 3 ≥ 2^n + 3», |V| = 10.5n² + 152.5n + 48 (my count, §1.3); the obstruction W-FLAT; the frozen instances; «N5 (SPEC)
+  is not affected; G-N5-TIME stays OPEN; not M3 or M4, not a TARGET.md claim». Nothing says more than a signed statement.
+- REQUIRED (string; old occurs exactly once, checked by scratch/pwrap_l1fix.py; log pwrap_logs/l1fix.out):
+  - LW-1 (L43): «DATA: T_n = 9·2^n − 10 for n ≤ 8 on the wrappers (this lane, L-COMP 20 aa863db5, REFEREE 33 e44ce56b / 90703a81: 18
+    counters 0 on 523,721 runs) and n ≤ 10 on G_n;» → «DATA (unit: T_n, the steps of Howard's run on G^L_n from ι, = N5′-xi iterations
+    − 3 on W^L_n; experiments/si/box104/out/wrap_lmcs_xi.out and wrap_long.out, column T, with WRAP's six must-0 counters s3fail, nonstd,
+    nohoward, fbwrong, endwrong, wrong 0 on the same rows): T_n 8, 26, 62, 134, 278, 566, 1,142, 2,294 for n = 1, …, 8 (equal to 9·2^n
+    − 10 on these eight), and 4,598, 9,206 for n = 9, 10 on G^L_n alone (REFEREE 33, claude/referee e44ce56b,
+    docs/referee/scratch/wrap_logs/f11_H_fig4.out, column T); independent replays, every fail counter 0, their counters in their own
+    pinned outputs, cited, not re-run: L-COMP 20 (aa863db5), REFEREE 33 (e44ce56b / 90703a81; 18 counters 0 on 523,721 runs);»
+  - The numbers in it: n = 1..8 re-read by checkW.sh's patterns from the frozen outputs (PASS, §1.1) and by my replay; n = 9, 10 from
+    s33's log at e44ce56b (`git show`), equal to my re-run. Result on L-1: sha1 **be7da8f3a98e4c5a26158eae9aa2766c56531222**, 3,190 B,
+    one line, 39 «(» = 39 «)».
+- OPTIONAL (the Lead's call): LW-2, the instance clause «(33 … 2,489 iterations = Howard T + 3)» could name its files (out/
+  wrap_fried_xi.out, wrap_long.out, free_xi.out) as LW-1 does; LW-3, «an Even valve with an exit to R117's core»: W's core is K0-K3
+  with the pads pA, s, q, r (R117's entry names pA; q, s, r with W's edges are not R117's text); «to the core K0-K3 (with pads pA, s,
+  q, r)» would avoid the reference. Neither changes a statement.
+- Verdict on L-1: **does NOT match yet**: LW-1 required.
+
+## 6. Scope, XI-EXP and the DEAD row (the Lead's checks)
+- **XI-EXP stays CONDITIONAL and does not overstate.** Its label names both conditions (WRAP and Claim NT signed by two referees) and
+  the cited theorem with READING F-1. The arithmetic is right: |W^L_n| = Θ(n²), so 2^n = 2^Ω(√|V|); «exponential» is said in n only
+  (F-3); the count is «exactly T_n + 3 ≥ 2^n + 3». The «More generally» bullet is labelled READING. Note N-1 (wording, no change
+  asked): §7's «nothing about RESULTS R118-R125 or boxes 208 / 209, whose scope is R104's genome games Γ3(G)» — R118's IDEAL-CYC, R122,
+  R123, R126 and box 208 are on Γ(G), not Γ3(G); the point (W^L_n is not a genome game) holds for both.
+- **The DEAD row's scope is N5′-xi as an M4 candidate only**: «claim killed: N5′-xi makes polynomially many iterations on every parity
+  game (gauntlet step 4; M4 candidacy)»; «Not killed by this row: N5 (SPEC)»; status DEAD-CONDITIONAL with both conditions. The scope
+  line and §12 say the same. Correct. The exact obstruction (W-FLAT) and the killing family with sha1-pinned instances are given, as
+  CLAUDE.md asks.
+- CLAUDE.md's trap («A "counterexample" from an unfaithful implementation …»): the kill does not rest on an implementation; it rests on
+  WRAP (proved on W from SPEC's text), Claim NT and the published theorem; the implementations are DATA.
+
+## 7. TARGET.md diff: CLEAN
+- No statement is about an algorithm for parity games or about W_E / W_O; WRAP and XI-EXP are statements about one candidate's
+  iteration count on a family of parity games in TARGET.md §1's sense (W(H, s0) has every vertex with a successor; size polynomial in
+  |H| at bit cost, §2.1). §12's reading is right: a dead end for N5′-xi; no algorithm or bound claimed; M3 / M4 untouched; G-N5-TIME
+  (about N5) OPEN.
+
