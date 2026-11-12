@@ -1,0 +1,23 @@
+start {'N': 24, 'M': 55, 'U': 2, 'inv': 536, 'T3': 7, 'total': 10, 'fb': 1, 'nstd': 0, 'capped': False}
+136 score (8, 11) {'N': 24, 'M': 55, 'U': 2, 'inv': 590, 'T3': 8, 'total': 11, 'fb': 1, 'nstd': 0, 'capped': False}
+202 score (9, 12) {'N': 24, 'M': 55, 'U': 2, 'inv': 630, 'T3': 9, 'total': 12, 'fb': 1, 'nstd': 0, 'capped': False}
+346 score (12, 15) {'N': 24, 'M': 55, 'U': 2, 'inv': 597, 'T3': 12, 'total': 15, 'fb': 1, 'nstd': 0, 'capped': False}
+682 score (13, 16) {'N': 24, 'M': 54, 'U': 2, 'inv': 578, 'T3': 13, 'total': 16, 'fb': 1, 'nstd': 0, 'capped': False}
+1436 score (14, 17) {'N': 24, 'M': 52, 'U': 2, 'inv': 452, 'T3': 14, 'total': 17, 'fb': 1, 'nstd': 0, 'capped': False}
+2088 score (15, 18) {'N': 24, 'M': 53, 'U': 1, 'inv': 433, 'T3': 15, 'total': 18, 'fb': 1, 'nstd': 0, 'capped': False}
+2873 score (16, 19) {'N': 24, 'M': 51, 'U': 2, 'inv': 416, 'T3': 16, 'total': 19, 'fb': 1, 'nstd': 0, 'capped': False}
+3461 score (17, 20) {'N': 24, 'M': 50, 'U': 2, 'inv': 396, 'T3': 17, 'total': 20, 'fb': 1, 'nstd': 0, 'capped': False}
+3995 score (18, 21) {'N': 24, 'M': 50, 'U': 1, 'inv': 289, 'T3': 18, 'total': 21, 'fb': 1, 'nstd': 0, 'capped': False}
+4166 score (19, 22) {'N': 24, 'M': 50, 'U': 1, 'inv': 389, 'T3': 19, 'total': 22, 'fb': 1, 'nstd': 0, 'capped': False}
+5422 score (20, 23) {'N': 24, 'M': 51, 'U': 2, 'inv': 429, 'T3': 20, 'total': 23, 'fb': 1, 'nstd': 0, 'capped': False}
+6021 score (21, 24) {'N': 24, 'M': 50, 'U': 2, 'inv': 393, 'T3': 21, 'total': 24, 'fb': 1, 'nstd': 0, 'capped': False}
+9047 score (22, 25) {'N': 24, 'M': 51, 'U': 2, 'inv': 412, 'T3': 22, 'total': 25, 'fb': 1, 'nstd': 0, 'capped': False}
+10588 score (23, 26) {'N': 24, 'M': 51, 'U': 2, 'inv': 495, 'T3': 23, 'total': 26, 'fb': 1, 'nstd': 0, 'capped': False}
+12132 score (24, 27) {'N': 24, 'M': 50, 'U': 2, 'inv': 318, 'T3': 24, 'total': 27, 'fb': 1, 'nstd': 0, 'capped': False}
+12359 score (25, 28) {'N': 24, 'M': 50, 'U': 2, 'inv': 405, 'T3': 25, 'total': 28, 'fb': 1, 'nstd': 0, 'capped': False}
+17168 score (26, 29) {'N': 24, 'M': 50, 'U': 2, 'inv': 386, 'T3': 26, 'total': 29, 'fb': 1, 'nstd': 0, 'capped': False}
+22258 score (27, 30) {'N': 24, 'M': 52, 'U': 2, 'inv': 439, 'T3': 27, 'total': 30, 'fb': 1, 'nstd': 0, 'capped': False}
+24830 score (28, 31) {'N': 24, 'M': 51, 'U': 2, 'inv': 378, 'T3': 28, 'total': 31, 'fb': 1, 'nstd': 0, 'capped': False}
+25956 score (30, 33) {'N': 24, 'M': 50, 'U': 2, 'inv': 374, 'T3': 30, 'total': 33, 'fb': 1, 'nstd': 0, 'capped': False}
+37344 score (31, 34) {'N': 24, 'M': 50, 'U': 2, 'inv': 267, 'T3': 31, 'total': 34, 'fb': 1, 'nstd': 0, 'capped': False}
+END evals 40000 best (31, 34) rejected 2258 fails 0
