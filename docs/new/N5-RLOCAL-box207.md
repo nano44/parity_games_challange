@@ -141,3 +141,79 @@ the window; λ_max = max loud steps in one window; flipint = max flips of one ga
   (FACE-TARGET), so the e-faces taken in a window are «paid» by R's fixed ε. The first test: does every e-face taken inside a window sit on a
   gate whose β-play reaches R or whose W-target's play contains an e-face so paid (a «paid chain» invariant)? CFI3's lane is the instance
   to check it on.
+
+## Addendum A (L-NEW successor 71; Lemma PAID: at k = 1 every e-face Odd takes is anchored at R; written 2026-11-12 by date -u)
+Lead 06:29Z approved box 207's plan; this addendum follows §6's «paid chain» test, which held, and gives its proof. Tool:
+experiments/new/box207/paid207.py (counters defined in its header); outputs out/paid207_*.out; quotes by quotes207.py (all «[Q]» lines of
+this file, trunk b3d7294c).
+### A1. Statement
+- Setting: G a genome with Ξ-feedback number 1, R a FEEDBACK VERTEX (a mover on every cycle of the Ξ-graph), t a state of IDEAL-CYC(G),
+  plays under (σ_t, σ̄_t). A gate g is DIRECT at t if R lies on the play of e_g or on the play of β_g. For a gate g with σ̄_t(g) = e_g that
+  is not DIRECT, next_t(g) := the gate of the first e-vertex on the play of β_g.
+- **Lemma PAID (PROVED, lane).** At every state t and every gate g with σ̄_t(g) = e_g: if g is not DIRECT, then (i) Λ_t(e_g) = Λ_t(β_g) =
+  K1; (ii) the play of β_g contains an e-vertex, so next_t(g) =: h exists, and σ̄_t(h) = e_h; (iii) E_t(e_g) <lex E_t(e_h). Hence the chain
+  g, next_t(g), next_t(next_t(g)), … consists of gates at their e-faces with strictly rising E_t(e_·), and ends, after at most M − 1 steps,
+  at a DIRECT gate.
+- Premises: [DEF] = RESULTS R104's definitions of the genome and of Γ(G), read as (D1)-(D3) of P-N5-QN §1 (frozen l-new e252182d): (D1) the
+  only in-edge of e_g is from g; (D2) E-DOM: every vertex more relevant than an e-vertex is an e-vertex, c_W, K0 or K3; (D3) the core is
+  entered from outside only at u = K0; R118 (a) (IDEAL-CYC; frozen starts); R118 (h) LEVEL0; R123 B-ONLY, LOC-GATE, LOC-K2; [VJ] (the order ⊴,
+  R118's premise, as read in P-N5-QN §1).
+- [Q] R104 (l. 9864): «e of even priority above every β with one edge to the W-target or to the top even self-loop c_W»; and R104's start
+  (l. 9864): «β → its Ξ-target (u when the target is X), K0 → K3, K1 → K1, K3 → K2»
+- [Q] R118 (h) (l. 13607): «σ̄ takes the β-face at every level-0 gate in every state»
+- [Q] R123 B-ONLY (l. 15076): «at every state t and every vertex v other than c_W and the e-vertices whose successor is c_W, Λ_t(v) is less
+  relevant than every e-vertex»
+- [Q] R123 LOC-GATE (l. 15076): «at every state t and gate g, Odd's optimal counterstrategy σ̄_t chooses the face of strictly ⊴-smaller value»
+- [Q] R123 LOC-K2 (l. 15176): «At every state σ̄_t(K2) = K1 and Ω_t(K1) ◁ Ω_t(K2).»
+### A2. Proof
+Step 0 (cycles). Every cycle of a play is K1's self-loop, c_W's self-loop, or passes R. (a) No cycle contains an e-vertex f: its successor
+on the cycle would be f's W-target m (a mover; if f's successor is c_W, the play stays in c_W's loop and f is not on a cycle), and m's
+cycle node would be at least as relevant as f, against B-ONLY (m is not an exception). (b) In the core the strategies are K0 → K3 → K2 → K1
+→ K1 (R104's start, frozen by R118 (a); σ̄(K2) = K1 by LOC-K2), so its only cycle is K1's loop, and by (D3) a play leaves no core vertex
+for a non-core one. (c) Any other cycle consists of movers, gates and β's only: mover x → σ_t(x) = a gate (x, k) → β_(x,k) (not e, by (a))
+→ its frozen successor, the Ξ-target xt(x, k) (a mover; a β to u enters the core). So it is a cycle x → xt(x, k) → … → x of the Ξ-graph,
+and passes R.
+Step 1 (i). Let σ̄_t(g) = e_g, g not DIRECT. By Step 0 each face's play ends in K1's or c_W's loop. c_W's only in-edges are from e-vertices of
+level-0 options ([DEF]), and a play from a non-e vertex reaches such an e_f only through f (D1), where σ̄ takes β (LEVEL0). So β_g's play
+never reaches c_W. If g were a level-0 gate, LEVEL0 would give σ̄_t(g) = β_g; so wt(g) is a mover, e_g's play continues from a non-e vertex
+and never reaches c_W either. Hence Λ_t(e_g) = Λ_t(β_g) = K1.
+Step 2 (core letters). Both plays end at K1, which they reach only through K0 → K3 → K2 (D3, Step 0 (b)); K0 and K3 are more relevant than K1,
+so K0, K3 lie in Π_t(e_g) and in Π_t(β_g). c_W lies in neither.
+Step 3 ((ii), (iii)). LOC-GATE: Ω_t(e_g) ◁ Ω_t(β_g). Both have cycle node K1, so [VJ] compares Π: with z the most relevant vertex of
+Π_t(e_g) Δ Π_t(β_g), the side containing z is the larger iff z is even. e_g ∈ Π_t(e_g) (the first vertex; e above every β and K1).
+- Case A, e_g ∉ Π_t(β_g). The Π's differ at e_g, so z = e_g or z is more relevant than e_g; by E-DOM and Step 2, z is an e-vertex, hence the
+  most relevant element of E_t(e_g) Δ E_t(β_g), and even. Ω_t(e_g) ◁ Ω_t(β_g) puts z on β_g's side: E_t(e_g) <lex E_t(β_g).
+- Case B, e_g ∈ Π_t(β_g). β_g's play passes e_g, so it passes g (D1) and continues as g's play. If the first e-vertex on β_g's play were e_g
+  itself, the segment from β_g to g would hold only movers, gates and β's: a Ξ-path xt(g) → … → x, which with the edge x → xt(g) of option
+  g closes a cycle of the Ξ-graph without R (R is not on β_g's play): impossible. So an e-vertex f precedes e_g on β_g's play; the play of
+  e_g is a suffix of it (both plays simple up to K1), so E_t(β_g) ⊇ E_t(e_g) ∪ {f} with f ∉ E_t(e_g); the difference lies in E_t(β_g)
+  only, so its most relevant element does: E_t(e_g) <lex E_t(β_g).
+In both cases E_t(β_g) ≠ ∅: (ii). Let f be the first e-vertex on β_g's play and h its gate (D1): h precedes f, σ̄_t(h) = f = e_h, the part
+of the play before h has no e-vertex, and from h on the play is h · (e_h's play), with the same cycle node K1; h is a gate, of priority 1,
+not in Π. So E_t(β_g) = E_t(e_h), and (iii) follows from Cases A / B.
+Step 4 (chain). Along g_0 = g, g_(i+1) = next_t(g_i) (while g_i is not DIRECT), E_t(e_(g_i)) strictly rises in a total order, so the g_i are
+distinct; there are M gates, so a DIRECT gate is reached after at most M − 1 steps. ∎
+- Remarks. (1) Nothing but Step 0 uses k = 1: for any k, with R replaced by a feedback vertex set F of the Ξ-graph and DIRECT meaning
+  «a face's play meets F», the same proof gives the same chain. (2) For a Ξ-acyclic genome take F = ∅: no gate is DIRECT, so no chain ends,
+  so no gate is at its e-face at any state: R122 BETA-ACYC's first clause on Γ(G) (consistency, not new; it uses LEVEL0, which R122 does not).
+### A3. DATA (paid207.py; unit (state, gate at its e-face); scope every gate; R = the first feedback vertex in index order)
+- Must-0 counters nonext (A1 (ii) fails), notK1 ((i)), notE (next(g) not at its e-face), lexfail ((iii)), nochain (chain does not end at a
+  DIRECT gate): 0 on every row.
+  | set | e-gate cases | DIRECT | longest chain |
+  | --- | --- | --- | --- |
+  | MWR4_2, MWR8_2, CW8_n, CWRR8_n, K1F21_n48, K1F34_n84 | 109, 301, 284, 22, 93, 278 | all | 0 |
+  | K1L7_n48, K1L10_n48, BLKX23_n48, BLKX26_n48 | 142, 129, 89, 113 | 73, 44, 57, 75 | 1, 2, 1, 1 |
+  | B400_r32, CFI3_n48, RINT_n48 | 293, 48, 98 | 292, 36, 64 | 1, 1, 1 |
+  | 1,000 random k = 1 genomes (box202 k1srch202.mk, seed 714) | 3,512 | 3,444 | 1 |
+  (out/paid207_records.out, out/paid207_rand_k1_s714.out.)
+- Control PAID_CTRL=1 (R replaced by the next mover that is not a feedback vertex; out/paid207_ctrl.out): MWR4_2 lexfail 31, nochain 109;
+  CFI3_n48 lexfail 21, nochain 48 (fires).
+### A4. What PAID gives, and what it does not (READING)
+- It is the k = 1 form of BETA-ACYC: Odd's e-faces exist only because of R, each one either meeting R directly or resting, through a rising
+  chain, on one that does. On MWR(n), CW(n), CWR(n), K1F21 and K1F34 every e-face taken is DIRECT; chains (length ≤ 2) appear on the climbed
+  genomes.
+- It bounds nothing yet: a DIRECT gate's choice still depends on its faces' classes, which change with the movers. For (Q2) (R-INT) the use
+  would be inside a window: there R's class is fixed, so a DIRECT gate whose two face plays both pass R compares the parts BEFORE R only
+  (the common suffix's E(R) cancels). Next step (proposal): split the e-gates of a window by «both faces through R» / «one face through R»
+  / chained, and test whether flips inside a window happen only at the last two kinds (CFI3's window flips are at gates with neither face
+  through R at t = 6, so those are chained or β-side-through-R cases: to be checked).

@@ -5,4 +5,10 @@ quote 'every maximal window of quiet steps has at most L := (M + 1)' lines [1507
 quote 'for every genome G whose Ξ-graph is acyclic, on Γ(G) or Γ3(G' lines [14744, 14849] found True
 quote 'the Howard run of IDEAL-CYC(G) from any mover state has C = ' lines [14744] found True
 quote "R104's definitions of the genome, the Ξ-graph, Γ(G) and its " lines [14744, 14876, 14891] found True
-quotes 7 missing 0 trunk b3d7294c
+quote 'e of even priority above every β with one edge to the W-targ' lines [9864] found True
+quote 'β → its Ξ-target (u when the target is X), K0 → K3, K1 → K1,' lines [9864] found True
+quote 'σ̄ takes the β-face at every level-0 gate in every state' lines [13607] found True
+quote 'at every state t and every vertex v other than c_W and the e' lines [15076] found True
+quote "at every state t and gate g, Odd's optimal counterstrategy σ" lines [15076] found True
+quote 'At every state σ̄_t(K2) = K1 and Ω_t(K1) ◁ Ω_t(K2).' lines [15176] found True
+quotes 13 missing 0 trunk b3d7294c

@@ -7,3 +7,6 @@ RINT_n48.json T 24 R 29 DR 2 cint 7 loudint 22 flipint 3 Rint 2 deepnoR 0 efail 
 ctrl MWR4_2.json T 30 R 47 DR 2 cint 2 loudint 10 flipint 1 Rint 2 deepnoR 0 efail 4 pR 0 rrep 8 ifail 1 qfail 1
 B400 43 NO-Rchange (62, 1)e eR[0, 0] bR[0, 1] gOnRplay[0, 0]; (86, 0)e eR[0, 0] bR[0, 1] gOnRplay[0, 0]
 CFI3 6 NO-Rchange (32, 0)e eR[0, 0] bR[0, 0] gOnRplay[0, 0]
+paid CFI3_n48.json egates 48 direct 36 maxchain 1 nonext 0 notK1 0 notE 0 lexfail 0 nochain 0
+paid K1L10_n48.json egates 129 direct 44 maxchain 2 nonext 0 notK1 0 notE 0 lexfail 0 nochain 0
+ctrlpaid CFI3_n48.json egates 48 direct 0 maxchain 2 nonext 0 notK1 0 notE 0 lexfail 21 nochain 48
