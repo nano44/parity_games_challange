@@ -12,3 +12,4 @@ python3 div206.py inst/K1L7_n48.json ../box202/inst/WC8_2.json
 python3 div206.py --rand k1 69 50
 DIV_CTRL=1 python3 div206.py inst/K1L7_n48.json | sed 's/^/ctrl3 /'
 python3 block206.py ../box203/inst/K1F21_n48.json inst/K1L10_n48.json inst/BLKX23_n48.json
+python3 cwmeas206.py inst/CW4_n.json

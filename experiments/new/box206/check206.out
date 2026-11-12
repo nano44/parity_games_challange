@@ -16,3 +16,4 @@ ctrl3 K1L7_n48.json ctrl 1 genomes 1 cases 1940 nop 0 lamp 0 symp 1277 dep 0 kin
 K1F21_n48.json {'T': 31, 'L': 1, 'b': 6, 'Dtop': 22, 'F0': 22, 'excess': 0, 'pfall': 0}
 K1L10_n48.json {'T': 31, 'L': 1, 'b': 6, 'Dtop': 14, 'F0': 22, 'excess': -8, 'pfall': 0}
 BLKX23_n48.json {'T': 28, 'L': 1, 'b': 6, 'Dtop': 23, 'F0': 22, 'excess': 1, 'pfall': 0}
+CW4_n.json k 1 N 51 M 106 N+M 157 b 6 Dtop 12 D_mov 12 T 30

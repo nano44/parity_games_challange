@@ -19,7 +19,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - Lead 03:30Z: theory first; Addendum B = K1L10_n48 (Q_(>1) 10) frozen; top-block lemma. Found: two-level k = 1 runs = R121's chain
   system on the top block (level-1 e's); K1L10 mover 47 = partial binary counter (14 of 64). CONJECTURE BLOCK-DESC (Dtop ≤ 1 + b(b+1)/2):
   K1F21 ON the bound (22 at b 6). DEAD by BLKX23_n48 (23 > 22; mover 47 = near-pure binary counter 0..11, 16..19, …). Climb
-  continues: scratch cl_blk_f21.json (CL_OBJ=block, seed 8). N 84 loud climb: cl_loud_s4.json. NEXT: read the counter wiring, b-bit family.
+  continues: scratch cl_blk_f21.json (CL_OBJ=block, seed 8; Dtop 25 at it 2,395). N 84 loud climb STOPPED (2 at it 2,675).
+- 04:12Z CORRECTION sent: BLKX23 is NOT a binary counter beyond 2 bits (one-hot high part, MW multiplicity). Addendum C: carry family
+  CW(n) (carry206.py): D_mov 12 / 38 / 92 at b 6 / 10 / 18, T linear 30 / 59 / 114, ascents b − 1; no exponential. Next design idea
+  (not tried): carries that need re-arming (nested race), so that T grows.
 
 ## HANDOVER (successor 69, PARKING 2026-11-12 ~00:55Z by date -u; Lead 00:53Z: «PARK now with a handover. List G-L43 as the likely next duty, and the k = 1 face-class-height question (box 204 EQ, MWR basin leapfrog) as the open research»)
 ### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)

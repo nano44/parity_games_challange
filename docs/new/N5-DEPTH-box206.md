@@ -217,3 +217,34 @@ vertices; K2's successor is K1 at every state (LOC-K2). So p is a mover (σ chan
   IS R121's chain system with ascents (B ≤ 4 on these runs), so HUB-ASC counts it with F′_B, polynomial for fixed B (no new lemma
   needed for that). Why the end phase stays short is NOT explained: the abstract system reaches 2^b; BLOCK-DESC states the observed
   sharper bound F_0(b), and a proof would need the game's Howard rule, not just E-MON.
+
+## Addendum C (L-NEW successor 70; CORRECTION of Addendum B's READING, and the hand-built carry family; Lead 04:03Z: «GO with your default: a HAND-BUILT b-bit two-level k = 1 family … Measure Dtop, D_mov, T and N + M against b»; written 2026-11-12 by date -u)
+### C1. Correction (governs Addendum B where they differ)
+- Addendum B called BLKX23's sequence «close to a pure BINARY COUNTER». That is WRONG beyond 2 bits. Step trace (trace206.py,
+  out/trace206_BLKX23.out; bits = the level-1 movers 33, 32, 31, 30, 34, 46, high to low): the two LOW bits (34, 46) count 00 → 11 by the
+  race (R = mover 47 alternates R → Q = 46 and R → 34; v = 44 follows); the HIGH bits 30, 31, 32, 33 arrive ONE AT A TIME from the clock
+  lane (lane movers switch X → next from the lane's end, one per step; each bit's Ξ-target is a lane node), each arrival resetting the
+  low part. So 0 … 11 is {no high bit, 30, 31} × the 2-bit low counter: 12 = {30, 31} never occurs (11 → 16). The high part is one-hot,
+  as in MW(n) (L-SI box 90's «R's tops are h_k, y, z, y»). The only multi-high-bit sets (steps 21-28) come from one nesting edge: bit 31's
+  W-target chain 41 → 42 reaches bit 33.
+- What stands: DEAD BLOCK-DESC (Dtop 23 > F_0(6) = 22; exact counts). The kill-side «binary counter» reading is withdrawn; with one-hot
+  high bits Dtop is linear in b, and BLOCK-DESC fails only at small b (4b-type counts against 1 + b(b + 1)/2).
+### C2. Hand-built carry family CW(n) (DATA; exact)
+- Construction (carry206.py MWR.json OUT.json [PAR]; PAR = 0 used): from MWR(n) (box203/inst, L-RED 63's family), every high-bit mover
+  qh_k (k < n) gets a new level-0 W-target c_k instead of the dead sink D; c_k's options have Ξ-targets qh_j (j > k) and X, new β ranks
+  above all existing ones (even), new gate indices after all existing ones, start = the X option. No Ξ-edge enters c_k: k stays 1.
+  Frozen: inst/CW4_n.json, CW8_n.json, CW16_n.json (sha1 in inst/SHA1SUMS).
+- Measures (cwmeas206.py, out/cwmeas206.out; IDEAL-CYC from the start; Dtop = max over movers of distinct top-block sets; D_mov = max over
+  movers of distinct classes (Λ, E); T = T_CYC):
+  | genome | k | N + M | b | Dtop | D_mov | T |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | MWR4_2 / MWR8_2 / MWR16_2 | 1 | 145 / 261 / 493 | 6 / 10 / 18 | 10 / 18 / 34 | 10 / 18 / 34 | 30 / 54 / 102 |
+  | CW4_n / CW8_n / CW16_n | 1 | 157 / 303 / 643 | 6 / 10 / 18 | 12 / 38 / 92 | 12 / 38 / 92 | 30 / 59 / 114 |
+  | BLKX23_n48 | 1 | 145 | 6 | 23 | 23 | 28 |
+- Odd parity (PAR = 1) is weaker: CW4 Dtop 7, CW8 Dtop 11 (scratch runs, not frozen).
+- Ascents (ascdepth206.py, out/ascdepth206_CW.out): max ascents per play 5 / 9 / 17 = b − 1; max loud depth 3 / 8 / 16; ldfail 0.
+  [E-LEV] holds (gamma3's e-priorities by (level, gate)). So CW lies OUTSIDE HUB-ASC's fixed-B regime (B grows with b).
+- READING: carries work locally (CW8's mover 46 reaches sets such as ..11111111 and .11....111), and D_mov grows faster than MWR's
+  2n + 2 (about 3n, 4.75n, 5.75n at n = 4, 8, 16), but T stays linear and D_mov − 1 ≤ T_CYC (box 204 Theorem EQ): each step jumps many
+  counter values. No 2^Ω(b) here. Growing ascents alone do not make runs long; a long k = 1 run would need carries that must be
+  RE-ARMED step by step (a nested race), which CW does not have. Consistent with CONJECTURE DEEP-k1 (open).

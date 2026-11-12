@@ -1,0 +1,7 @@
+MWR4_2.json k 1 N 48 M 97 N+M 145 b 6 Dtop 10 D_mov 10 T 30
+MWR8_2.json k 1 N 84 M 177 N+M 261 b 10 Dtop 18 D_mov 18 T 54
+MWR16_2.json k 1 N 156 M 337 N+M 493 b 18 Dtop 34 D_mov 34 T 102
+CW4_n.json k 1 N 51 M 106 N+M 157 b 6 Dtop 12 D_mov 12 T 30
+CW8_n.json k 1 N 91 M 212 N+M 303 b 10 Dtop 38 D_mov 38 T 59
+CW16_n.json k 1 N 171 M 472 N+M 643 b 18 Dtop 92 D_mov 92 T 114
+BLKX23_n48.json k 1 N 48 M 97 N+M 145 b 6 Dtop 23 D_mov 23 T 28
