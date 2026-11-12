@@ -129,9 +129,9 @@ Tools: experiments/lower/l14/ (README.md). Target core8 = experiments/lower/l10/
   Replays: l13/prefcheck.py on the decoded genomes (l13/out/L14_C12_final_solved_core8_HIT7_X{6_k1_t13, 8_k1_t14, 11_k1_t14}_dec.txt;
   sha1 as listed). pgad3's CHECK (decoded genome, everything fixed) was SAT for each.
 - Single-helper sweep, XS = 8 (q4), prefix 15 (l13/sweep1.sh, T0 = P = 15; out/sweep1_C12_X8_P15.txt): UNSAT for all 48
-  helpers h = 16..63 (CaDiCaL). DRUP: DRUP_RESULT (l14/drupsweep.sh → l13/pdrup.py with pgad3, Glucose4 proof + l8/sat/drup.c;
+  helpers h = 16..63 (CaDiCaL). DRUP: 48 / 48 s VERIFIED (l14/drupsweep.sh → l13/pdrup.py with pgad3, Glucose4 proof + l8/sat/drup.c;
   out/drup_C12_X8_P15.txt, one line per helper with CNF sha1; proofs and CNFs deleted after the check).
-- Lemma C12-WALL-1 (PROVED, lane, given the DRUP line above; scope: C12's wiring and ranks (c58041d5) fixed except the options of
+- Lemma C12-WALL-1 (PROVED, lane; DRUP-verified exhaustive, 48 / 48; scope: C12's wiring and ranks (c58041d5) fixed except the options of
   q4 (8) and of ONE helper h, pgad3 candidate lists, insertion ranks; signs, helper gates, starts and states free; target core8):
   no single helper realizes rows 0..15; rows 0..14 are realizable (h = 63, replayed). Not claimed for |G| ≥ 2 or other XS.
 - RESULT (DATA, exact, replayed; instance frozen: C12 solved c58041d5, commit eaf68e67). The refuted statement, verbatim from the
@@ -142,7 +142,7 @@ Tools: experiments/lower/l14/ (README.md). Target core8 = experiments/lower/l10/
       before row 30 (out/sinks_C12.txt, l13/reqpref.py);
   (2) the C11-WALL question (XS f5, one helper, here h = 63) realizes rows 0..14 on C12 (replayed, sim6 = fenc, decoded genome sha1
       a3bd361d), where on C11 every helper set of size ≤ 2 is UNSAT at 14 (L13 §4, DRUP); the first UNSAT row there is 15;
-  (3) with XS q4 the wall is 15 for EVERY single helper (Lemma C12-WALL-1), with XS q3 it is 14 (top helper).
+  (3) with XS q4 the wall is 15 for EVERY single helper (Lemma C12-WALL-1, 48 / 48 DRUP VERIFIED), with XS q3 it is 14 (top helper).
   So the wall did not move down; it moved up by one at XS f5. The READING is REFUTED on C12 (one instance; the statement is refuted
   as a general rule, not shown false on every base).
 - Mechanism (DATA, sim6 runs of the replayed models). In the XS-f5 model, q4's private helper h41 (level 20, closure = pairs 0-2
