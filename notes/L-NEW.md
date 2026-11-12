@@ -30,7 +30,37 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - Second engine for box 208: box208/ownhist208.py runs L-RED 54's own.py (claude/l-red 72e2c5dc, experiments/red/r221q/own.py, read by
   git show into a temp dir, never copied) and writes level208's --hist format; own.py is ~10x faster than gfc203.hist_ideal, so use it
   for large sweeps (run208b.sh H).
-- Traps (successor 72): (1) I typed two numbers into the doc before the runs had finished (a bound value, a «longest plateau») and both
+- PUSHED 8db300fe (box 208 + Addendum A; VERIFY PASS 12:49Z); SHA message to the Lead 12:50Z (delivered). No answer yet when box 209
+  was written. The Lead's stated plan: route box 208 to L-RED (attack) and L-COMP (independent engine) before any label above CANDIDATE.
+- BOX 208 Addendum B (append-only; docs/new/N5-LEVEL-box208.md end): wording repairs of (P6) (ii), (P6) (i), (P5), (K5) found by my
+  re-reading and by ONE fresh-context reviewer agent I started inside this session (verdict: no error found; it is not a referee and no
+  label changed); box208/rv208.py = that agent's own checker taken into the lane (own builder / valuation / Odd reply / Howard run, 49
+  must-0 counters, EVERY reference state b; control RV_CTRL=1; --xcheck against idealcyc / si.Engine; --mut; --rand), run208c.sh J / K,
+  summ208c.py, check208c.sh / .out, outputs out/rv208_*.out; check.sh «BOX 208 ADD-B».
+- BOX 209 (docs/new/N5-LEVEL3-box209.md; experiments/new/box209/: plat209.py, own3hist209.py, struct209.py, quotes209.py, summ209.py,
+  run209.sh A-E, check209.sh / .out, out/; check.sh «BOX 209 LEVEL3»): the Gamma3 form, ALL CANDIDATES. LEVEL3 (P3 = 2M(N + 4M) values
+  of Phi; front inside movers, m-pads, gates, pbeta-pads, betas), PLATEAU3 (a plateau, and the tail after the last class change, has at
+  most n_E3 = N + 6M + 9 steps), T3-ALL (T3 <= P3(n_E3 + 1) + n_E3 for every genome), N5XI-G3 (with landed R125 REACH3-ALL + R124
+  END-T3: N5'-xi from S3 on Gamma3(G) makes exactly T3 + 3 iterations, so polynomially many for EVERY genome; R125's CHAIN3 needed
+  [E-LEV] and U(G) <= B; L-SI's chain needs CONJECTURE DEEP3), FLIPS3. Premises: R117 (pads), R104, R125 (HOW3, REACH3-ALL, F1 / DOM
+  on HOW3, CN2-3, LOC-GATE3, NO-TIE3, LOC-K2-3, B-ONLY3, [OPT]), R15 (a), R121 E-DOM, R118 (i) BR-SEG-G, R124 END-T3; 33 quotes, 0
+  missing at trunk 471aba45. NOT used: E-MON3, QUIET3, [E-LEV], depth, feedback number. Scope line: HOW3(G) on Gamma3(G) / N5'-xi from
+  S3 up to its first fallback; not N5, not M4; G-N5-TIME stays OPEN.
+  DATA: all counters 0 on N5'-xi's own run (n5v) and on L-RED 65's HOW3 engine (claude/l-red 707c0e82) for the 25 records, 53 corpus
+  genomes and the 3 DEAD genomes of R118 (m), T3 equal on all 81; random and mutant sets 0; controls fire.
+  Things only I know: (a) (K1') is proved from F1 + (K2'), so E-MON3 is not needed; (b) the tail after LAG is empty is bounded by the
+  same sub-game argument with Y = everything, because (P4)'s equal-class case needs only B-ONLY3 (a face pbeta_g never has Lambda = c_W)
+  and the in-edges of e_g; (c) the two engines share the builder gamma3.py, so the second engine is independent for values and runs
+  only; (d) LEVEL needs nothing about the order of the e-priorities, which is why [E-LEV] drops out.
+- Idea parked, NOT claimed anywhere (for a later box if the Lead wants it): after splitting every vertex into a priority vertex and a
+  choice vertex of priority 0, choice vertices are in no set Pi, so DOM and (K4) should hold in any parity game (NOT checked), and LEVEL
+  would go through for the class (Lambda, Pi restricted to the even vertices above the largest odd priority). What fails in general is PLATEAU: on a plateau Odd may still flip inside Y, so the
+  lower scale is a two-player game again; and an odd top scale has negative weights. So a general statement would have to start from
+  «non-negative top scale + one-player lower scale on plateaus», or use the dual run for odd scales (N5 is symmetric). Untested.
+- Traps (successor 72): (4) I edited run209.sh while a job was still reading it, in spite of trap (2). The edit added an rm -rf line
+  near the offset bash would resume from; I killed the job before it got there and nothing was lost. Run scripts are now one function
+  (main "$@"; exit) so bash has read all of the file before running, and I do not edit a script or tool while a job that uses it runs.
+  (5) git archive takes paths relative to the current directory: use git -C <top> archive. (1) I typed two numbers into the doc before the runs had finished (a bound value, a «longest plateau») and both
   were wrong; DATA sentences are now generated (box208/summ208.py) and inserted after the outputs are final. (2) Never append to a
   shell script that is running (run208.sh): bash reads it by offset; I made run208b.sh instead. (3) `sleep N; cmd` is blocked by the
   harness: wait with an until-loop in a tracked background task.
@@ -2600,6 +2630,12 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   (full), 707c0e82 docs/red/R234-lamgap.md (§0 only); claude/l-si 4fda7245 docs/si/box100-scclin.md, box101-lamgap.md (full), box99-ufree.md
   (§0-§5 head), 144f6821 docs/si/box102-deep3.md (§0-§1 head). NO external source opened for box 208: its READING «Howard for the maximiser
   in a shortest-path game with non-negative weights» is not cited from the literature and not claimed as new (L-LIT would have to check).
+- (successor 72, 2026-11-12, box 208 Addendum B and box 209) Opened, all inside the fleet: trunk 471aba45 docs/RESULTS.md R117 (l. 13362),
+  R124 (l. 15371), R125 (l. 15595, in full), R118 (l) and (m) (l. 13715-13724); docs/new/P-N5-XICYC.md §5 (BR-SEG-G's setting),
+  P-N5-XICYC-fixes.md l. 30-62 (STRICT-G, PATH-G; «on general games (§5) DOM is false»), P-N5-QN.md §4 (QUIET-N's proof);
+  experiments/new/box189/gamma3.py (the pads); claude/l-red 707c0e82 experiments/red/r232/how3_232.py, r230/elev230.py, r230/bonly3_230.py
+  (headers and the engine loop); claude/l-si d8945c4a docs/si/box101-lamgap.md (DEEP3 lines), box102-deep3.md (§0). NO external source
+  opened; nothing in boxes 208-209 cites one.
 ## Dead ends (successor 68, box 203; docs/new/N5-XIFVS-box202.md Addendum A, docs/new/N5-FLIP-box203.md §2)
 - CONJECTURE K1-FLIP(2) and K1-FLIP(c), every constant c, at k = 1: killed by L-RED 63's MWR(n) (claude/l-red 406ef2fd, R229-box202;
   copies experiments/new/box203/inst MWR4_2 856d369b, MWR8_2 918f1414, MWR16_2 2ccda9a9): gate (qz, 0) flips 2n + 1 with lamch 0.

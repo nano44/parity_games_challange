@@ -1,0 +1,8 @@
+mut K1L10_n48.json 2094 60 K2tested 240000 P4eq 883 Tmax 31 Tsum 1407 betaonly 1382 genomes 60 lagstates 18501 maxmvals_pct 3 nonstalls 16674 plateaus 1486 platmax 2 platpct 4 stalls 1827
+mut CFI3_n48.json 2094 60 K2tested 240000 P4eq 721 Tmax 24 Tsum 1088 betaonly 119 genomes 60 lagstates 10480 maxmvals_pct 1 nonstalls 7514 plateaus 1062 platmax 7 platpct 14 stalls 2966
+mut RINT_n48.json 2094 60 K2tested 240000 Tmax 24 Tsum 1133 betaonly 37 genomes 60 lagstates 12072 maxmvals_pct 2 nonstalls 10965 plateaus 1032 platmax 4 platpct 8 stalls 1107
+mut MWR4_2.json 2094 60 K2tested 240000 Tmax 30 Tsum 1444 betaonly 26 genomes 60 lagstates 18278 maxmvals_pct 2 nonstalls 17898 plateaus 73 platmax 24 platpct 50 stalls 380
+mut CW4_n.json 2094 60 K2tested 240000 Tmax 33 Tsum 1505 genomes 60 lagstates 19682 maxmvals_pct 2 nonstalls 18862 plateaus 101 platmax 26 platpct 50 stalls 820
+mut BLKX26_n48.json 2094 60 K2tested 240000 P4eq 30 Tmax 33 Tsum 1400 betaonly 39 genomes 60 lagstates 18858 maxmvals_pct 3 nonstalls 16420 plateaus 1233 platmax 4 platpct 8 stalls 2438
+mut K1D4_n48.json 2094 60 K2tested 240000 Tmax 23 Tsum 1064 betaonly 137 genomes 60 lagstates 9132 maxmvals_pct 2 nonstalls 4840 plateaus 630 platmax 10 platpct 20 stalls 4292
+mut DSALT6_n108.json 2094 60 K2tested 240000 P4eq 30 Tmax 21 Tsum 1107 genomes 60 lagstates 8113 maxmvals_pct 0 nonstalls 5209 plateaus 1170 platmax 15 platpct 18 stalls 2904

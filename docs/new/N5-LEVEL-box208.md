@@ -500,3 +500,67 @@ data test (P1)-(P6) state by state, not the bound N + 2M + 5.
   actual Howard step at a mover of Y is the Howard step of H (it needs every gate of the mover in Y: (P3)); (P6), which uses [OPT] and
   F1 beyond the plateau; (P7), which applies BR-SEG-G to H, a sub-game that is not a genome game (BR-SEG-G is stated for any parity
   game under H0). LEVEL itself: (L3) and (L4) of §3.
+
+## Addendum B (L-NEW successor 72; written 2026-11-12 after the push of 8db300fe: clarifications of proof wording in §2 and Addendum A, a third implementation that checks every reference state, three more genomes; no statement, bound or label changes)
+The body and Addendum A are unchanged. **SCOPE LINE and LABEL as above: IDEAL-CYC on Γ(G) only; not Γ3, not N5′-xi, not M4; G-N5-TIME
+stays OPEN; every statement a CANDIDATE.** The Γ3 form is a separate box (docs/new/N5-LEVEL3-box209.md).
+### B1. Clarifications (each closes a step that was terse; found by my own re-reading (1) and by a fresh-context reviewer agent (1)-(4))
+The reviewer agent was started by this session while the push ran, with the note, the landed premises and the engines to read, and the
+order to find the gap. It is not a fleet referee, its report is not a signature, and it changes no label. Its verdict: no error found in
+§2-§6 and Addendum A; four presentational gaps, listed here with their repairs.
+- (1) (P6) (ii), the sentence «the play from x ∈ Y is the play of state s′ (it stays in Y, where σ is unchanged)». For s′ > v, (P2) is
+  not available as stated. Repair, either of two: (a) let Odd answer σ_(s′+1) by σ̄_s, the counterstrategy of the state s inside the
+  plateau, instead of σ̄_(s′): the play from x ∈ Y under (σ_s, σ̄_s) stays in Y by (P2), σ_(s′+1) = σ_s on the movers of Y by (i), so
+  the play under (σ_(s′+1), σ̄_s) is that play, of value Ω_s(x); [OPT] gives Ω_(s′+1)(x) ⊴ Ω_s(x), and F1 with the induction hypothesis
+  gives Ω_(s′+1)(x) ⊵ Ω_(s′)(x) = Ω_s(x). (b) Keep σ̄_(s′): by the induction hypothesis class_(s′) = class_s on Y, and vertices outside
+  Y have class > m at s′ (K1), so {x : class_(s′)(x) ≤ m} = Y, and (K3 (c), (d)) at s′ keeps the play in Y. The conclusion of (P6) is
+  unchanged.
+- (2) (P6) (i) uses the rule of R118 (a), quoted in §1: «keeps σ_t(x) if σ_t(x) is such a successor». Spelled out: at the step
+  s → s + 1 the mover x kept σ_s(x), so no gate of x had a strictly larger value at s; at s′ its gates have the same values and its
+  current gate is the same, so it keeps it again.
+- (3) (P5), «with the same tie rule». What is used: the restriction of the run to Y is A Howard run of H in the sense of BR-SEG-G's
+  setting (P-N5-XICYC §5: «every Even v goes to a ⊴-best successor under Ω_t and keeps σ_t(v) when it is one»), namely the one whose
+  choice among several ⊴-best gates is the run's own. BR-SEG-G holds for every such choice. (Exact ties among ⊴-best non-current gates
+  do occur. In rv208.py the run and H use the same rule and the counter P5howard is 0; the reviewer agent reports that in its scratch
+  runs, with a different rule in H than in the run, that counter fired 468 times. That observation is not reproduced by a lane tool.)
+- (4) §2 (K5) applies (K2) to ext(x, Ω_t(y)), which is not the value of a vertex. (K2)'s proof uses only the pair (Λ, Π) of a play that
+  starts outside the core, and ext(x, ·) changes neither (x is in no set Π, CN2): read (K2) for such triples.
+- (5) My own note. (P4)'s three cases need only that the classes of the two faces are constant on the interval; so (P4)-(P7) also bound
+  the interval after LAG is empty by N + 2M + 5 (Y := all vertices), without QUIET-N. Not needed in this box ((C4) uses landed QUIET-N,
+  which is sharper); it is the form box 209 uses on Γ3.
+### B2. A third implementation, every reference state (rv208.py; run208c.sh; summ208c.py; outputs out/rv208_*.out)
+- rv208.py is the reviewer agent's checker, taken into the lane with a control and a mutation mode added: its own builder of Γ(G), its
+  own valuation and order (by the definition), Odd's reply by its own Odd-side iteration, its own Howard run, its own 49 must-0
+  counters, one per step of the note (premises re-tested: CN2, B-ONLY, NO-TIE, LOC-GATE, LOC-K2, F1, DOM; (K1)-(K5); (L1)-(L5) with the
+  2M-set of m_t; (P1)-(P7) with H built and valued independently). It imports nothing of box203 / box208 / si.py; --xcheck compares its
+  builder, run and values with box191 idealcyc / si.Engine state by state.
+- Unlike level208.py (reference b = T, and the ends of feedback-set intervals) it runs LEVEL and PLATEAU for EVERY reference state
+  b = 1, …, T. Unit of the LEVEL counters: pairs (b, t) with a lagging vertex; of the PLATEAU counters: (b, plateau) with the unit named
+  in the tool; scope: every vertex of Γ(G).
+| set (file in out/) | lines | genomes | sum of the 49 must-0 counters | VIOLATION lines | descriptive |
+| --- | --- | --- | --- | --- | --- |
+| rv208_ctrl1.out | 2 | 2 | CONTROL fires: L1rise 1, L1stall 29, L2 50, L3 50, L4beta 44, L4gate_face 21, L4mover 4, L4nocycle 47, P1 1267, P3 20, P4 24, P5howard 57, P5val 316 | 0 | max T 30, sum T 54, (b, t) pairs with a lagging vertex 54, stalls 47, non-stalls 7, case (β) only 0, plateaus 2 (longest 15; longer than the movers of Y: 0), equal-class gates met 16, (K2) pairs 8000 |
+| rv208_frozen.out | 81 | 81 | 0 | 0 | max T 199, sum T 2707, (b, t) pairs with a lagging vertex 93856, stalls 1247, non-stalls 92609, case (β) only 623, plateaus 538 (longest 13; longer than the movers of Y: 0), equal-class gates met 187, (K2) pairs 321444 |
+| rv208_mut_s2094.out | 8 | 480 | 0 | 0 | max T 33, sum T 10148, (b, t) pairs with a lagging vertex 115116, stalls 16734, non-stalls 98382, case (β) only 1740, plateaus 6787 (longest 26; longer than the movers of Y: 0), equal-class gates met 1664, (K2) pairs 1920000 |
+| rv208_rand_s2095.out | 3 | 3300 | 0 | 0 | max T 11, sum T 5405, (b, t) pairs with a lagging vertex 9041, stalls 368, non-stalls 8673, case (β) only 5337, plateaus 311 (longest 4; longer than the movers of Y: 0), equal-class gates met 6, (K2) pairs 9314030 |
+| rv208_xcheck.out | 81 | 81 | builder, run length, states and values equal to box191 idealcyc / si.Engine on 81 of 81 files | | max T 199 |
+(Table generated by box208/summ208c.py.) rv208_frozen.out: the 25 k = 1 genomes of §7, the 53 corpus genomes and the three genomes of B3,
+every reference state; rv208_xcheck.out: the same 81 files against box191 idealcyc / si.Engine; rv208_mut_s2094.out: 60 mutants (1 to 8
+of the tool's own mutations) of each of K1L10_n48, CFI3_n48, RINT_n48, MWR4_2, CW4_n, BLKX26_n48, K1D4_n48, DSALT6_n108;
+rv208_rand_s2095.out: 2,000 genomes of the tool's own generator (seed 2095), 1,000 more with the other tie rule TIE=min (seed 2096) and
+300 of its mode «big» (seed 2097); rv208_ctrl1.out: the control RV_CTRL=1 on MWR4_2 and CFI3_n48 with b = T (it fires).
+- In every set, no plateau is longer than the number of movers of Y (the bound proved is the number of Even vertices of Y).
+- Not in the lane, so not DATA: the reviewer's hill-climbs over small genomes (objectives T, stalls, plateau length; about 35,500
+  genomes visited, T up to 17, no violation) and its test of QUIET-N / GATE-CLASS with its own engine. Its scripts stayed in this
+  session's scratch directory.
+### B3. Three more genomes: the DEAD instances of landed R118 (m)
+RESULTS R118 (m) records, on three pinned genomes, that Odd's reply moves inside runs of steps that keep every Λ (DEAD ODD-FIXED: «σ̄ is
+constant on every run of Λ-keeping steps»). (P4) says less: σ̄ is constant on Y during a plateau, where the classes of Y are constant, not
+only the cycle nodes. The three genomes (experiments/new/box191/inst/DEAD_SEG2P_d4_N8.json, _d7_N14.json, _d9_N18.json) are in
+rv208_frozen.out and rv208_xcheck.out: every counter 0; they have plateaus of 8, 2 and 3 steps (b = T).
+### B4. What the reviewer agent did not check (its own list)
+- The proofs of the landed premises (it re-tested them numerically only; its test of BR-SEG-G on random one-player games had p-runs of
+  at most 3 steps, so it says nothing: BR-SEG-G is used as landed).
+- VJ theory: F1, [OPT], and «locally optimal ⇒ optimal» for Odd, which its engine assumes (cross-checked against the lane engine only).
+- The size of the bounds: no run comes near P or N + 2M + 5, so the data test the mechanism, not the constants.
+- §7's tables, §8's contradiction search, §10, anything on Γ3, and genomes outside R104's shape.

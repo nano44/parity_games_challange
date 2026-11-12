@@ -1149,4 +1149,22 @@ if [ "$r208" -eq 0 ] && [ -z "$d208" ] && ! grep -v "^ctrl" box208/check208.out 
 else
   echo "BOX 208 LEVEL check: FAILED (check208.sh exit $r208)"; echo "$d208" | head -30; echo "$run208" | tail -15; exit 1
 fi
+# BOX 208 ADD-B (L-NEW successor 72): the third implementation rv208.py (own builder / valuation / Odd reply / Howard run; every reference state b): check set, control fires, frozen outputs unchanged and all 0, cross-check OK on every file
+r208c=0; run208c=$(cd box208 && bash check208c.sh 2>&1) || r208c=$?
+d208c=$(diff <(printf '%s\n' "$run208c") box208/check208c.out 2>&1) || true
+m208c='VIOLATION|\b(CN2|CN2pi|BONLY|NOTIE|LOCGATE|LOCK2|F1|DOM|K1|K2|K3a|K3b|K3c|K3d|K3e|K4|K5|L1sub|L1stall|L1rise|L1stallempty|L1lagback|C4|L2|L3|L3alpha_m|L3beta_kind|L3beta_m|L5set|L4mover|L4gate_face|L4gate|L4beta|L4nocycle|L4shape|L4xi|L5m|L5phi|P1|P2|P3|P4|P4eq_face|P4K2|P5closed|P5val|P5howard|P6|P7) [1-9]'
+if [ "$r208c" -eq 0 ] && [ -z "$d208c" ] && ! grep -v "^ctrl" box208/check208c.out | grep -Eq "$m208c" && grep -Eq "^ctrl .*\bL3 [1-9]" box208/check208c.out && ! cat box208/out/rv208_frozen.out box208/out/rv208_mut_s2094.out box208/out/rv208_rand_s2095.out | grep -Eq "$m208c" && [ "$(grep -c ' OK$' box208/out/rv208_xcheck.out)" -eq "$(grep -c . box208/out/rv208_xcheck.out)" ] && grep -Eq "\bL3 [1-9]" box208/out/rv208_ctrl1.out && [ "$(grep -c . box208/out/rv208_frozen.out)" -eq 81 ]; then
+  echo "BOX 208 ADD-B: rv208 (third implementation, every reference state) counters 0 on the check set and the frozen outputs, control fires, cross-check OK: PASS"
+else
+  echo "BOX 208 ADD-B check: FAILED (check208c.sh exit $r208c)"; echo "$d208c" | head -30; echo "$run208c" | tail -15; exit 1
+fi
+# BOX 209 LEVEL3 (L-NEW successor 72): CANDIDATES Lemma LEVEL3 / Lemma PLATEAU3 / Theorem T3-ALL on Gamma3 runs (N5'-xi from S3, n5v; and L-RED's HOW3 engine in the frozen outputs): must-0 counters on the check set, controls fire, frozen outputs unchanged and all 0, quotes found
+r209=0; run209=$(cd box209 && bash check209.sh 2>&1) || r209=$?
+d209=$(diff <(printf '%s\n' "$run209") box209/check209.out 2>&1) || true
+m209='(monofail|k3fail|k4fail|k5fail|einF|l3fail|phifail|stallnocyc|nofvs|rstall|boundfail|winstall|wbeta|wl3fail|wmid|wbound|structfail) [1-9]'; p209='\b(p1|pclos|p2|p3|p4|p5|t1|t2|t3) [1-9]'
+if [ "$r209" -eq 0 ] && [ -z "$d209" ] && ! grep -v "^ctrl" box209/check209.out | grep -Eq "$m209|$p209" && grep -q "^ctrl1 .*winstall [1-9]" box209/check209.out && grep -q "^ctrl2 .*l3fail [1-9].*stallnocyc [1-9]" box209/check209.out && grep -q "^ctrlp .*pclos [1-9]" box209/check209.out && ! cat box209/out/level3_records.out box209/out/level3_corpus.out box209/out/level3_dead.out box209/out/level3_rand_*.out box209/out/own3_level_*.out box209/out/struct3.out | grep -Eq "$m209" && ! cat box209/out/plat3_records.out box209/out/plat3_corpus.out box209/out/plat3_dead.out box209/out/plat3_rand_s2103.out box209/out/plat3_mut_s2104.out box209/out/own3_plat_*.out | grep -Eq "$p209" && grep -q "pclos [1-9]" box209/out/plat3_ctrl1.out && grep -q "stallnocyc [1-9]" box209/out/level3_ctrl2.out && [ ! -e box209/out/own3_fail.out ] && [ "$(cat box209/out/own3_level_*.out | grep -c ' monofail ')" -eq 81 ] && grep -q "missing 0 " box209/out/quotes209.out && (cd box209/out && sha1sum -c --quiet SHA1SUMS); then
+  echo "BOX 209 LEVEL3: LEVEL3 / PLATEAU3 / T3-ALL must-0 counters 0 (check set and frozen outputs, two engines), controls fire: PASS"
+else
+  echo "BOX 209 LEVEL3 check: FAILED (check209.sh exit $r209)"; echo "$d209" | head -30; echo "$run209" | tail -15; exit 1
+fi
 rm -rf "$tmp"

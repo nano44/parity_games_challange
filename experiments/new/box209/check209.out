@@ -1,0 +1,15 @@
+MWR4_2.json g3 ctrl 0 N 48 M 97 monofail 0 k3fail 0 k4fail 0 k5fail 0 einF 0 l3fail 0 phifail 0 stallnocyc 0 nofvs 0 rstall 0 boundfail 0 winstall 0 wbeta 0 wl3fail 0 wmid 0 wbound 0 | T 30 k 1 levels 3 phivals 30 stalls 0 stallloud 0 plat 0 platmax 0 windows 10 wmax 7 wlev 2 DR 10
+CFI3_n48.json g3 ctrl 0 N 48 M 97 monofail 0 k3fail 0 k4fail 0 k5fail 0 einF 0 l3fail 0 phifail 0 stallnocyc 0 nofvs 0 rstall 0 boundfail 0 winstall 0 wbeta 0 wl3fail 0 wmid 0 wbound 0 | T 24 k 1 levels 2 phivals 17 stalls 7 stallloud 0 plat 2 platmax 4 windows 3 wmax 10 wlev 1 DR 3
+RINT_n48.json g3 ctrl 0 N 48 M 97 monofail 0 k3fail 0 k4fail 0 k5fail 0 einF 0 l3fail 0 phifail 0 stallnocyc 0 nofvs 0 rstall 0 boundfail 0 winstall 0 wbeta 0 wl3fail 0 wmid 0 wbound 0 | T 24 k 1 levels 3 phivals 23 stalls 1 stallloud 0 plat 1 platmax 1 windows 2 wmax 22 wlev 3 DR 2
+DEAD_SEG2P_d4_N8.json g3 ctrl 0 N 8 M 16 monofail 0 k3fail 0 k4fail 0 k5fail 0 einF 0 l3fail 0 phifail 0 stallnocyc 0 nofvs 0 rstall 0 boundfail 0 winstall 0 wbeta 0 wl3fail 0 wmid 0 wbound 0 | T 10 k 2 levels 1 phivals 2 stalls 8 stallloud 0 plat 1 platmax 8 windows 3 wmax 0 wlev 0 DR 0
+DEAD_SEG2P_d9_N18.json g3 ctrl 0 N 18 M 36 monofail 0 k3fail 0 k4fail 0 k5fail 0 einF 0 l3fail 0 phifail 0 stallnocyc 0 nofvs 0 rstall 0 boundfail 0 winstall 0 wbeta 0 wl3fail 0 wmid 0 wbound 0 | T 21 k 4 levels 3 phivals 12 stalls 5 stallloud 0 plat 2 platmax 3 windows 0 wmax 0 wlev 0 DR 0
+WC8_2.json g3 ctrl 0 N 36 M 76 monofail 0 k3fail 0 k4fail 0 k5fail 0 einF 0 l3fail 0 phifail 0 stallnocyc 0 nofvs 0 rstall 0 boundfail 0 winstall 0 wbeta 0 wl3fail 0 wmid 0 wbound 0 | T 4 k 2 levels 2 phivals 4 stalls 0 stallloud 0 plat 0 platmax 0 windows 3 wmax 2 wlev 1 DR 0
+ctrl1 CFI3_n48.json g3 ctrl 1 N 48 M 97 monofail 0 k3fail 0 k4fail 0 k5fail 0 einF 0 l3fail 0 phifail 0 stallnocyc 0 nofvs 0 rstall 0 boundfail 0 winstall 7 wbeta 0 wl3fail 0 wmid 0 wbound 0 | T 24 k 1 levels 2 phivals 17 stalls 7 stallloud 0 plat 2 platmax 4 windows 3 wmax 12 wlev 2 DR 3
+ctrl2 MWR4_2.json g3 ctrl 2 N 48 M 97 monofail 0 k3fail 0 k4fail 0 k5fail 0 einF 30 l3fail 30 phifail 0 stallnocyc 25 nofvs 0 rstall 4 boundfail 0 winstall 4 wbeta 0 wl3fail 8 wmid 0 wbound 0 | T 30 k 1 levels 12 phivals 30 stalls 25 stallloud 25 plat 5 platmax 8 windows 10 wmax 7 wlev 1 DR 10
+plat3 CFI3_n48.json ctrl 0 p1 0 pclos 0 p2 0 p3 0 p4 0 p5 0 t1 0 t2 0 t3 0 plateaus 2 maxlen 4 maxpct 8 tail 0 T 24
+plat3 K1D4_n48.json ctrl 0 p1 0 pclos 0 p2 0 p3 0 p4 0 p5 0 t1 0 t2 0 t3 0 plateaus 1 maxlen 9 maxpct 18 tail 2 T 23
+plat3 DEAD_SEG2P_d4_N8.json ctrl 0 p1 0 pclos 0 p2 0 p3 0 p4 0 p5 0 t1 0 t2 0 t3 0 plateaus 1 maxlen 8 maxpct 88 tail 0 T 10
+plat3 DEAD_SEG2P_d9_N18.json ctrl 0 p1 0 pclos 0 p2 0 p3 0 p4 0 p5 0 t1 0 t2 0 t3 0 plateaus 2 maxlen 3 maxpct 15 tail 4 T 21
+ctrlp plat3 K1D4_n48.json ctrl 1 p1 0 pclos 115 p2 0 p3 0 p4 0 p5 0 t1 0 t2 0 t3 0 plateaus 1 maxlen 9 maxpct 18 tail 2 T 23
+rnd plat3 rand k1 ctrl 0 seed 2105 genomes 40 p1 0 pclos 0 p2 0 p3 0 p4 0 p5 0 t1 0 t2 0 t3 0 plateaus 2 maxlen 1 maxpct 10 tail 3 T 6
+hist plat3 hist hist_K1D4.json ctrl 0 p1 0 pclos 0 p2 0 p3 0 p4 0 p5 0 t1 0 t2 0 t3 0 plateaus 1 maxlen 9 maxpct 18 tail 2 T 23
