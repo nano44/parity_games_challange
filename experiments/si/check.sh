@@ -1309,3 +1309,5 @@ bash box103/check103.sh
 bash box104/check104.sh
 # box 105 (O2, proof side: KEY(G*), Lemma KEY-MODEL, KEY-MONO*, DEPTH-BOUND*; quotes; D1 when present; docs/si/box105-key.md)
 bash box105/check105.sh
+# packet P-N5-WRAP (dead-end packet for N5'-xi: Lemma WRAP on W, Claim NT, XI-EXP CONDITIONAL; quotes, instance sha1, DATA lines, frozen sha1; docs/si/P-N5-WRAP.md)
+bash pwrap/checkW.sh
