@@ -1,34 +1,70 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (successor 32), written 2026-11-12T14:04Z by date -u
-- Handover check a0574a6b (Lead 12:47Z: «verified on origin and accepted», «go»). Trunk merged normally twice (ab23e17f: 9c83214f; becbb75e: 471aba45).
-- B1 DONE (pre-packet read, NOT a signature): docs/referee/R-restrictC-preread.md (ff9b16f6 on origin; Addendum 1 with this commit). L-SI 51's
-  Lemma RESTRICT-C (claude/l-si d8945c4a, box 101 Add. D.2): BR-SEG tie-rule caveat CONFIRMED on the landed text (P-N5-XICYC §2 l. 58-60,
-  P-N5-CHAIN §2 l. 88-89) and by Lean `PG.brseg` (l-formal 4b376da4, built by me); (i)-(iii) no gap found; (iv) GAP W-1 (literal window
-  wording false: C6G8_n54, sink SCC, 17 steps > N′ = 1; true in BR-SEG's form); W-2 (G′ as a genome: R104's packet wants br / gate onto
-  0..M − 1); C-1 (no landed STATEMENT gives BR-SEG for every HOW3 run of Γ3); N-1 (box 100 TWO-CROSS = P-N5-GATE §3.1 GATE-RACE, R128).
-- B2 DONE (pre-packet read, NOT a signature): docs/referee/R-box208-preread.md (this commit). L-NEW 72's box 208 (claude/l-new 8db300fe, sha1
-  55e65381…): LEVEL, counting, WIN, R-INT, R-HEIGHT, K1-TCYC, FVS-TCYC no gap found; Addendum A PLATEAU: GAP G-P6 (induction step (ii)
-  beyond the plateau; repair: Odd answers with σ̄_s); ALL-TCYC follows once repaired. Lead 13:30Z: logged; L-RED 66 and L-RED-B reached the
-  same verdict, L-RED-B the same (P6) gap; repair goes to L-NEW 72 as Addendum B.
-- QUEUE: (1) if L-COMP 19's second engine and G_N test are clean, box 208 becomes packet P-N5-LEVEL and this lane is its FIRST referee: a
-  separate signature, the frozen packet read afresh, this pre-read disclosed in the report. Test it against PR-1..PR-6 of
-  R-box208-preread §9, and two caveats from the Lead (13:49Z, L-LIT T69, claude/l-lit 3b69f530, not opened by me): the bound is for
-  Howard's ALL-SWITCH step only (Björklund–Vorobyov single-switch instances are exponential), and the orientation is maximiser-improves.
-  (2) any byte test / CHECKER item on R127 (C141) or P-N5-GATE (R128). (3) a RESTRICT-C packet, if L-SI freezes one: W-1, W-2, C-1.
-- Tools added (docs/referee/scratch/): restrictc_quotes.py, restrictc_replay.py (logs restrictc_logs/); box208_quotes.py, box208_replay.py
-  (36 must-be-0 counters written from the statements; families tiny / noX / big; mut), box208_climb.py (logs box208_logs/, incl. my Lean
-  build outputs lean_*.out). Lean: elan + Lean 4.35.0 installed in THIS container only (~/.elan; scratchpad build of `git archive
-  4b376da4 lean/lemmas`, about 2 min with the Mathlib cache); gone at a container restart, steps in lean/lemmas/README.md at 4b376da4.
+## HANDOVER NOTE (successor 32), written 2026-11-12T15:05Z by date -u; parking on the Lead's 15:06Z ask (WATCHDOG reads the context at ~600k)
+- DONE (all via scripts/push.sh, VERIFY PASS; the Lean and Oink verify steps NOT RUN as usual):
+  | item | report (commit) | final state |
+  | --- | --- | --- |
+  | handover check | docs/agents/handover-checks/REFEREE.md (a0574a6b) | accepted, «go» 12:47Z |
+  | B1: pre-packet read of L-SI 51's Lemma RESTRICT-C (l-si d8945c4a, box 101 Add. D.2); NOT a signature | R-restrictC-preread.md (ff9b16f6; Addendum 1 in 7524342b) | tie-rule caveat CONFIRMED (landed text + Lean `PG.brseg`); (i)-(iii) no gap found; (iv) GAP W-1 (wording; C6G8_n54); W-2; C-1; N-1 (TWO-CROSS = P-N5-GATE GATE-RACE) |
+  | B2: pre-packet read of L-NEW 72's box 208 (l-new 8db300fe, sha1 55e65381…); NOT a signature | R-box208-preread.md (7524342b) | LEVEL, counting, WIN, R-INT, R-HEIGHT, K1-TCYC, FVS-TCYC no gap found; PLATEAU (P6) GAP G-P6 with one-line repair; ALL-TCYC follows once repaired |
+- Lead's record (13:30Z, 13:49Z): L-RED 66 and L-RED-B reached the same B2 verdict, L-RED-B the same (P6) gap; the repair goes to L-NEW 72 as
+  Addendum B; L-LIT T69 (claude/l-lit 3b69f530, not opened by me) names the same genome-only steps.
+- OPEN QUEUE for successor 33 (Lead 15:06Z): the formal FIRST-referee review of the frozen packet P-N5-LEVEL, if box 208 is frozen (it waits
+  on L-COMP 19's second engine and G_N test). That review is a separate signature: read the frozen packet afresh, and disclose
+  R-box208-preread.md as prior work of this lane. Also: any byte test / CHECKER item on R127 (C141) or P-N5-GATE (R128); a RESTRICT-C
+  packet, if L-SI freezes one (W-1, W-2, C-1 of R-restrictC-preread).
+- For the P-N5-LEVEL review, what my pre-read would test the frozen text against (R-box208-preread §9; re-derive, do not copy):
+  - PR-1 (required): (P6)'s induction beyond the plateau must not use «the play of state s′ stays in Y»; the repair is «Odd answers
+    σ_(s′+1) with σ̄_s, the plateau state's choice; by (P2) at s that play stays in Y and has value Ω_s(x) = Ω_(s′)(x); [OPT], then F1».
+  - PR-2 (required): (P7) cites exactly one of landed R118 (i) BR-SEG-G (a) with H0 checked (movers switch by (P6); never cycle nodes by
+    CN2), or the Lean theorem by name and commit after CHECKER; and says H's Howard step is the step at every Even vertex of H.
+  - PR-3 (required): premises by R-id (R104 [DEF] with readings (D1), (D3), (D4) as in R126's packet; R118 (a), (b) F1, (c) DOM, (e)'s
+    reason, (i); R121 E-MON, E-DOM; R123 CN2, B-ONLY, NO-TIE, LOC-GATE, LOC-K2, [OPT]; R126 QUIET-N); no lane lemma (PAID, R-LOCAL,
+    LOUD-SPLIT are not used in any proof).
+  - PR-4 (required): DATA clauses say that no run tests the constants (most Φ values 199 against P = 2,120,796; longest plateau 25), with
+    units as the tools compute them. The lane's tools level208.py / plat208.py were NOT opened by me: the DATA rule is still to do.
+  - PR-5 (optional): (K2) is used on the triple ext(x, Ω_t(y)), not a vertex's value (say «triples»); the plateau bound sharpens to
+    v − u ≤ #movers of Y ≤ N by BR-SEG's own form (`PG.brseg` with Mov := the movers of Y).
+  - PR-6 (the Lead's call): body and Addendum A as one packet or two.
+  - Two caveats from the Lead (13:49Z, L-LIT T69): the bound concerns Howard's ALL-SWITCH step only (Björklund–Vorobyov single-switch
+    instances are exponential); the orientation is MAXIMISER-improves. Check that the packet's statement says both.
+  - The genome-only steps to look for in the frozen text (it must name them; Friedmann's G_N defeats any argument without one):
+    (K2) / (K3 (b), (d)) from B-ONLY + E-DOM; QUIET-N in WIN (iii) and (P4) in PLATEAU ((D1) in its equal-class case); (K5) from DOM;
+    Odd's only choices are two-faced gates. R118's line: switchallexp has C = 0 and R up to 241.
+  - Not covered by my pre-read: §10 Statement ABS; the lane's DATA tools; any Γ3 form; novelty.
+- Lean build recipe (worked in this container at l-formal 4b376da4, about 3 minutes with the Mathlib cache, about 10G of disk; the hosts
+  raw.githubusercontent.com, github.com and the Mathlib cache were reachable). The toolchain lives in ~/.elan of the container and is
+  gone at a restart:
+  ```
+  curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o elan-init.sh
+  sh elan-init.sh -y --default-toolchain leanprover/lean4:v4.35.0
+  export PATH="$HOME/.elan/bin:$PATH"
+  mkdir -p "$SCRATCH/lean_SHA" && git archive SHA lean/lemmas | tar -x -C "$SCRATCH/lean_SHA" && cd "$SCRATCH/lean_SHA/lean/lemmas"
+  lake exe cache get      # prebuilt Mathlib at the pinned commit 56a00585…
+  lake build              # must end «Build completed successfully (3149 jobs).»
+  grep -rnw --include=*.lean -e sorry -e admit -e axiom . --exclude-dir=.lake    # must print nothing
+  lake env lean Axioms.lean   # every line within [propext, Classical.choice, Quot.sound]
+  ```
+  Build in the scratchpad, never in the repository tree; redirect each output to a file and keep the files (mine: docs/referee/scratch/
+  box208_logs/lean_build_tail.out, lean_grep.out, lean_axioms.out). It is a referee's build, not CHECKER's exact-commit run: say so.
+  Statement check: `theorem brseg : BrSegStatement V` (Corollaries.lean l. 52), `brsegG : BrSegGStatement V` (l. 108), `brsegG_noH0`
+  (l. 82); Defs.lean b41c937c…, Statements.lean aaa3c0c2…. Bridges to the fleet's objects: pr := SPEC's p′ (2·rank + parity,
+  injective); F1 is a Lean hypothesis = landed R15 (a).
+- Tools added (docs/referee/scratch/): restrictc_quotes.py (quotes of a section against named RESULTS entries), restrictc_replay.py
+  (restriction to Reach(C), own Γ3 engine; logs restrictc_logs/); box208_quotes.py ([Q] bullets), box208_replay.py (36 must-be-0
+  counters written from box 208's statements; modes files / gen (families of end_replay.gen and own tiny, noX, big) / mut),
+  box208_climb.py (hill-climb running every counter); logs box208_logs/. Engines: xicyc_replay.py, xicyc_vj.py (unchanged).
 - Lessons / traps (keep):
   - Commit trailer: the Claude-Session line only (the Lead's brief: no model id in commits). My first two commits (ab23e17f, a0574a6b)
     carry the harness pair with a Co-Authored-By line; not amended.
-  - push.sh verify takes about 58 min here. The stop hook asks to commit untracked files while it runs: do not; commit after it lands.
-  - A window statement must say which steps it counts: after a sub-run has ended its state repeats, and a «maximal run of states» then
-    runs on (W-1). Check every window lemma against a sink SCC.
+  - push.sh verify takes about 58-60 min here. The stop hook asks to commit untracked files and to push while it runs: do neither; commit
+    after it lands, push only with scripts/push.sh.
+  - A window statement must say which steps it counts: after a sub-run has ended its state repeats, and a «maximal run of states» runs
+    on (W-1). Test every window lemma on a sink SCC.
   - An induction that runs past the interval a lemma was proved on must carry what it uses (G-P6).
   - Parse «name value» counter lines with a script; my one-line awk paired a value with the next name (caught before any report).
+  - The Lead's message times run a few minutes ahead of this machine's date -u; order events by commits.
   - Times only from date -u in the same command.
 
 ## HANDOVER NOTE (successor 31), written 2026-11-12T10:02Z by date -u (Opus 5.5, D15); parking on the Lead's 10:07Z ask (context ~505k)
