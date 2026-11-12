@@ -99,3 +99,30 @@ checks are pending)»; its Γ3 form box 209 is coming).
     (DHIB26_2804: 199 deep lossy changes in one SCC of greedy fvs ≤ 24) is the place to look.
 - Check to do when box 209 lands: replay box 208's must-0 counters on this lane's 26 frozen instances under HOW3 on Γ3, with L-RED 65's
   engine. Not done here (context limit; handover).
+
+## Addendum B (L-SI successor 52, 2026-11-12T17:08:47Z (date -u); append-only): box 209's must-0 counters replayed on this lane's 26 frozen instances (DATA; Addendum A's «Check to do»)
+- What was run (experiments/si/box104/replay209.sh, about 95 s on one core; outputs experiments/si/box104/out/replay209_level.out,
+  replay209_plat.out, replay209_ctrl.out; replay209_engine.sha1 has the sha1 of the seven tool files). For each of the 26 instances
+  (box 91: 11, box 93: 8, box 98: 7; the set of boxes 99-103) L-NEW's box209/own3hist209.py (claude/l-new 3f8960998, sha1 e7857212…)
+  writes the HOW3 run on Γ3(G) from the standard start as a history, computed by L-RED 65's own engine (claude/l-red 707c0e82:
+  r232/how3_232.py, sha1 3e0eea0d…, with r230 and r221q: its own values, Odd's reply and tie rule). L-NEW's box208/level208.py --hist
+  (sha1 40828775…) and box209/plat209.py --hist (sha1 f3fc5cb7…) count on that history. No tool of either lane is changed.
+- Counters (unit: one instance, counted over the states of its HOW3 run up to T3; scope: these 26 runs; lines of replay209sum.py):
+  - «REPLAY209 level208.py --hist: rows 26; sum of the 16 must-0 counters 0; k in [1, 2, 3, 4, 5, 99]; max T3 199; max levels 16; max Phi values 199; stalls 21 (loud 2); plateaus 12 (longest 4)»
+    The 16: monofail, k3fail, k4fail, k5fail, einF, l3fail, phifail, stallnocyc, nofvs, rstall, boundfail, winstall, wbeta, wl3fail,
+    wmid, wbound. «k 99» is level208.py's mark for a feedback number above fvs202's cap.
+  - «REPLAY209 plat209.py --hist: rows 26; sum of the 9 must-0 counters 0; plateaus 12; longest 4; longest tail 6; max T3 199»
+    The 9: p1, pclos, p2, p3, p4, p5, t1, t2, t3.
+  - Controls. LV_CTRL=2 (front := the highest lagging class) fires on each of its three instances: WC16_2: einF 1, l3fail 1, stallnocyc 2, winstall 1, wl3fail 2; C6G8_n54: einF 17, l3fail 17, stallnocyc 10; MWR4_2: einF 30, l3fail 30, stallnocyc 25, rstall 4, winstall 4, wl3fail 8.
+    PL_CTRL=1 (Y := the front alone) fires on the four instances with a plateau: DWT20_2803: pclos 2; C98_2_2_3: pclos 6; C98_3_3_3: pclos 6; C98_5_5_3: pclos 16;
+    it fires nothing on WC16_2, C6G8_n54, MWR4_2, which have no plateau (it cannot fire there). «REPLAY209 controls: LV_CTRL=2 fires on 3 of 3 rows; PL_CTRL=1 fires on 4 rows (the 4 with plateaus)»
+- Independence, and its limit. The runs are computed by L-RED's engine (not by n5v.py and not by this lane's tools): HOW3 with
+  L-RED's own tie rule among ⊴-best successors. So this is a replay on HOW3 runs, not on N5′-xi's own run: where several successors
+  tie for best, N5′-xi's S4a′ rule and L-RED's rule can pick differently and the two runs can differ. Relayed by the Lead (17:08Z;
+  not opened by me): L-RED 66 found 16 count differences between its engine and n5v.py, all of them due to the tie rule. Box 209's
+  statements are about HOW3 as RESULTS R125 defines it, «every mover moving to a ⊴-best successor and keeping a best current one»,
+  which fixes no tie rule; a replay under a second tie rule tests them on runs that n5v.py does not produce.
+- Reading. On the instances this lane built against DEEP3 / CHAIN (boxes 91-98), box 209's LEVEL3 and PLATEAU3 counters hold on the
+  HOW3 runs of L-RED's engine: no instance of the set is a counterexample to box 209. All 26 are R104 genomes (E-DOM); the replay says nothing
+  outside that family (docs/si/box104-map.md §3-§5: for N5′-xi the family does not extend to general parity games).
+- Check: experiments/si/box104/check104.sh runs replay209sum.py on the frozen outputs (26 + 26 rows, both sums 0, the controls).
