@@ -1,3 +1,5 @@
 start {'N': 36, 'M': 82, 'U': 2, 'inv': 1890, 'T3': 41, 'total': 44, 'fb': 1, 'nstd': 0, 'capped': False}
 69 score (42, 45) {'N': 38, 'M': 85, 'U': 2, 'inv': 2101, 'T3': 42, 'total': 45, 'fb': 1, 'nstd': 0, 'capped': False}
 start {'N': 38, 'M': 85, 'U': 2, 'inv': 2101, 'T3': 42, 'total': 45, 'fb': 1, 'nstd': 0, 'capped': False}
+305 score (43, 46) {'N': 42, 'M': 91, 'U': 2, 'inv': 2414, 'T3': 43, 'total': 46, 'fb': 1, 'nstd': 0, 'capped': False}
+350 score (46, 49) {'N': 42, 'M': 93, 'U': 2, 'inv': 2433, 'T3': 46, 'total': 49, 'fb': 1, 'nstd': 0, 'capped': False}
