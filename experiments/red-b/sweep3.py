@@ -5,6 +5,7 @@
            its two reductions hold on Gamma3 as well: pads are never cycle nodes and in no set Pi (R117 PAD), so their indices
            and priorities never decide a comparison; tie rule keep-low, reference every state)
   sweep3.py files <tie> <refs> FILE...                                frozen genomes
+  sweep3.py mut <seed> <per> FILE...                                  per mutants (1-6 mutations, mut.mutate) of each file; random tie
 Prints one summary line; a genome with a non-zero must-0 counter is appended to work/viol3_<tag>.jsonl."""
 import sys, json, random, time, os
 import eng, eng3, gen, lev3
@@ -63,6 +64,19 @@ def main():
             print("FILE %s N %d M %d T3 %d tie %s bad %d phivals %d mvals %d plateaus %d platmax %d tail %d" % (
                 os.path.basename(p), G["N"], sum(len(o) for o in G["opts"]), d["T"], tie, bad, d["phivals"], d["mvals"],
                 d["plateaus"], d["platmax"], d["tailmax"]), flush=True)
+    elif mode == "mut":
+        seed, per = int(sys.argv[2]), int(sys.argv[3]); tag = "mut_s%d_x%d" % (seed, per)
+        import mut
+        vf = open("work/viol3_%s.jsonl" % tag, "a"); rng = random.Random(seed)
+        for p in sys.argv[4:]:
+            G0 = eng.load(p); G0.pop("name", None)
+            for i in range(per):
+                G = G0
+                for _ in range(rng.randint(1, 6)):
+                    H = mut.mutate(G, rng)
+                    if H is not None: G = H
+                G.pop("eorder", None)
+                nviol += run_one(G, rng.choice(["keep-low", "high", "rand"]), rng, "T", tot, cov, mx, vf)[0]; nrun += 1
     summarize(tag, tot, cov, mx, nrun, t0, nviol)
 
 if __name__ == "__main__":
