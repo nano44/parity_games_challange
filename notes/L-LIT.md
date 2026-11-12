@@ -1,7 +1,27 @@
 # L-LIT notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (T69 + T68 item 3, 2026-11-12 13:30Z by date -u; session_01V5yGRYSuVcAoW1mpE9SL5h; D18, D1, D21; WORKING, not parked)
+## Resume point (T70, 2026-11-12 14:06Z by date -u; session_01V5yGRYSuVcAoW1mpE9SL5h; D18, D1, D21; WORKING, not parked)
+DONE since the T69 push (3b69f530; Lead received it 13:46Z, its clock, and gave T70):
+- T70 docs/lit/T70-step-bounds-and-ppi.md + docs/lit/T69-mirror-check.py + T69 Addendum A + T69-summary «Update».
+  (1) Robustness of «NEW»: a LINEAR step bound for all-switch strategy improvement on two-player non-negative-weight reachability
+  games is PUBLISHED in the MIRROR orientation (the minimiser improves): Jurdziński–Trivedi arXiv 0907.3414 v1 Lemma 19 (proof sketch
+  p.15). For finite games ≤ n − 1 steps by a Dijkstra-order induction (my READING, T70 §2.2; scratch DATA all 0). Box 208's
+  orientation (the maximiser improves) is NOT covered; the induction fails there (`T69-mirror-check.py ctrl 8`: the vertex with the
+  second-smallest optimal value settles last). ABS stays NEW (searched), weakly. Schewe CSL 2008 (opened, CISPA asset URL) leaves the
+  number of updates open; Rutkowski arXiv 1107.1199 is not a strategy improvement.
+  (2) LEVEL vs PPI (Cadilhac–Casares–Ohlmann): the game of ONE PPI round (En+ of a simple game) is an ABS game; PPI solves it by one
+  Dijkstra pass, ABS bounds Howard's steps on it; LEVEL's (m_t, −|FRONT_t|) is an analysis quantity, not PPI's labelling; nothing
+  transfers to or from the number of PPI rounds (Question 19).
+- T69 Addendum A1: ABS / LEVEL are all-switch only (Björklund–Vorobyov §10: single-switch exponential on acyclic LSP; R17 (f)).
+IN FLIGHT: nothing half-written.
+OPEN LEADS (only on a Lead question): the Odd-improves (MIRROR) run on Γ(G): would classes settle in Dijkstra order? (T70 §3.4);
+  which Friedmann family the 21N-state instances of Cadilhac–Casares–Ohlmann App. C encode; a tight example for ABS (none with more
+  than n steps found on random sets); Jurdziński–Trivedi's proof sketch for Algorithm 2 (induction on D does not cover Max regions,
+  my READING).
+NEEDS: none from the owner.
+
+## Previous resume point (T69 + T68 item 3, 2026-11-12 13:30Z by date -u; same session)
 Branch state: handover check a7c286d2 pushed (scripts/push.sh exit 0, VERIFY PASS; lean NOT RUN, no lakefile; Oink smoke NOT RUN, Oink
 not built); Lead «go» 13:10Z (its clock). Trunk is NOT merged into this branch (5 ahead / 1662 behind 471aba45 at 12:50Z): read NOW /
 DECISIONS / GAPS / RESULTS with `git show origin/claude/vibrant-johnson-nxvvxo:<file>`.
@@ -184,6 +204,10 @@ NEEDS: none from the owner.
   dagwidth_full.pdf (Berwanger et al.), archive.dimacs.rutgers.edu/archive/TechnicalReports/TechReports/2007/2007-02.pdf.
   The container clock (date -u) ran about 5 minutes behind the Lead's stamps today; order events by commits, not by clocks.
   The abstract form (A1)-(A5) in T69 §1 is MY wording of box 208, not L-NEW's; say so when citing it.
+- T70: the CISPA publication pages serve PDFs from /_assets/paper.<hash>.pdf (the old /publications/*.pdf links are 404): fetch the
+  page, grep href. My first test generator hung (asked for 3 distinct successors on a 3-vertex graph): cap k at n − 1 and run every
+  new script with `timeout`. Random shortest-path games give runs of a few steps only: a counter that is 0 on them proves little;
+  always add a designed control that fires (T69-mirror-check.py ctrl M). /usr/bin/time is not installed here.
 - T65-T68 (2026-11-12): downloads in scratchpad t65/dl (+ .txt in t65/txt) and t68, lost with the container; URLs and sha256 prefixes
   are in Sources. Cochet-Terrasson–Gaubert's report is PostScript: `apt-get install -y ghostscript`, then ps2pdf + pdftotext. Gaubert's
   page www.cmap.polytechnique.fr/~gaubert/HOWARD2.html links both papers. arxiv.org/pdf/<id> works with plain curl.
@@ -731,6 +755,15 @@ NEEDS: none from the owner.
 - T68 item 3 (2026-11-12; scratchpad t68). OPENED: Disser–Loho–Maat–Mosis arXiv 2512.16684 v2 (fa9b42e397e3e434; Fig. 4.1 and Lemma 4.4
   PDF p.13-14; gadgets p.16-23 skimmed); van Dijk–Loho–Maat arXiv 2309.02223 (10e6794d82aba465; Table 1 PDF p.9, Table 2 PDF p.13);
   Mei arXiv 2610.27386 v2 (1b4f5b87e384811f; §3.1, Table 1 PDF p.5, conditions (5)-(7) p.6). (T30 read v1 of Mei, 5b3265d3….)
+
+- T70 (2026-11-12; scratchpad t69/dl, t70/dl). OPENED: Jurdziński–Trivedi arXiv 0907.3414 v1 (7cc2bc84af899ae1; abstract; §4 PDF
+  p.7-10: Improve_Max, Alg. 1, Thm 13, Improve_Min, Alg. 2, Thm 18; Lemma 19 p.10; proof p.15); Schewe CSL 2008 author copy,
+  finkbeiner.groups.cispa.de/_assets/paper.DJvJAbZR.pdf (cf86d13b3e90fedf; §4 Complexity + Thm 4 PDF p.10; §6 p.14); Rutkowski arXiv
+  1107.1199 (a4e1d250eab340a2; abstract; Thm 19 PDF p.13). RE-OPENED: Cadilhac–Casares–Ohlmann arXiv 2110.07346 v3
+  (fe41f4ca0f4ec46d; §2 p.4-6; §3 p.6-7, Alg. 1, Thm 4; §4.1 p.10-11, Alg. 2, 3, Thm 11; App. B.2 p.27; App. C p.29; §6 p.17);
+  Björklund–Vorobyov (95a6b406f01db6b4; §10 p.226). DATA: docs/lit/T69-mirror-check.py (own engine): rand 1 1500 7 7, rand 2 20000
+  12 0, rand 3 5000 40 0, rand 4 2000 120 0 (all counters 0); ctrl 4, 8, 30 (control fires).
+  NOT OPENED: ICALP 2007 version of Jurdziński–Trivedi; Friedmann thesis §4.6.2 (today); Benerecetti et al. (QDPM).
 
 ## Dead ends
 - T66 (2026-11-12): a literature test of DEEP3 / U-FREE on Γ3 does not exist. Obstruction: E-DOM (every escape e even and above every β;

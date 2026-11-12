@@ -216,3 +216,23 @@ A referee of box 208 should press on exactly these: (K2) with (K3) (d) and NO-TI
 - NEEDS: Lead: relay §5.4 to the referees of box 208 (the two steps to press) and §3's orientation remark to L-NEW (any citation of
   Hansen–Ibsen-Jensen–Miltersen or Bertsekas must say that the minimiser improves there). Owner: nothing (optional library:
   Hansen–Kaplan–Zwick SODA 2014; Schewe CSL 2008; Obdržálek CAV 2003).
+
+## Addendum A (2026-11-12, date -u in the commit; append-only, §0-§7 unchanged): two corrections of scope
+- A1 (all-switch only; Lead 13:46Z: «Add finding 7's line»). Statement ABS and Lemma LEVEL are about Howard's all-switch step.
+  Björklund–Vorobyov §10 (p.226; DAM 2007 author copy) give ACYCLIC LSP instances (their Fig. 2, «the (2n + 2)-vertex graph») on
+  which a single-switch rule is exponential: «If the iterative improvement algorithm starts from the initial MAX strategy σ_0 …
+  and always makes the rightmost attractive single switch, it visits all 2^n possible strategies of MAX»; and p.226: «the
+  LSP-instances in Fig. 2 are "trivial", because the graphs are acyclic». (The weights of Fig. 2 are in a figure; I did not read
+  their signs.) This matches landed R17 (f) for one player («for arbitrary single switches the statement is false (CDAG_n)»). So no
+  bound of box 208 may be quoted for a single-switch or any other rule.
+- A2 (a published step bound in the MIRROR orientation; found after the first push). §0 item 3, the row «Howard's steps there ≤ …»
+  of §3 and §5.3's last line must be read with docs/lit/T70-step-bounds-and-ppi.md §2: Jurdziński–Trivedi, arXiv 0907.3414 v1, Lemma
+  19 states O(|R|) iterations for all-switch strategy improvement on two-player reachability-time games, in the orientation where
+  the MINIMISER improves; for finite non-negative shortest-path games that orientation has at most n − 1 steps by a Dijkstra-order
+  induction (T70 §2.2, READING). Box 208's orientation (the MAXIMISER improves) is NOT covered: the induction fails there (T70
+  §2.3, `T69-mirror-check.py ctrl 8`). The label of Statement ABS stays NEW (searched), weakly; the sentence «the three sources
+  that present policy iteration next to a Dijkstra algorithm prove finiteness only» stays true of those three sources.
+- A3 (opened after the first push): Schewe CSL 2008 (author copy; no step bound: «finding a non-trivial bound on the number of
+  updates remains an intriguing future challenge», p.14) and Rutkowski arXiv 1107.1199 (not a strategy improvement). §6's NOT
+  OPENED list is superseded for these two.
+

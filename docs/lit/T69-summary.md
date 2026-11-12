@@ -40,3 +40,15 @@ opened sources and six searches (T69 §6); a search result, not a theorem.
 - DONE: T69 note, this page, T66 Addendum C, notebook.
 - FINDINGS: §1-§3.
 - NEEDS: Lead: relay §2 to the referees of box 208 and §3's first bullet to L-NEW. Owner: nothing.
+
+## Update (2026-11-12, after T70; append-only): docs/lit/T70-step-bounds-and-ppi.md
+- §1 row 3 (Statement ABS) is to be read with this: a LINEAR step bound for all-switch strategy improvement on two-player
+  non-negative-weight reachability games IS published, in the MIRROR orientation (the minimiser improves): Jurdziński–Trivedi arXiv
+  0907.3414 Lemma 19; for finite games ≤ n − 1 steps by a Dijkstra-order induction (IMPLIED, READING). Box 208's orientation (the
+  maximiser improves) is not covered and the induction fails there (designed instance, T70 §2.3). ABS stays NEW (searched), weakly.
+- ABS and LEVEL are about the all-switch step only: single-switch rules are exponential on acyclic instances (Björklund–Vorobyov
+  §10; R17 (f)).
+- LEVEL is not PPI's potential under Howard's rule: the game of ONE PPI round is an ABS game; PPI solves it in one Dijkstra pass,
+  ABS bounds Howard's steps on it; nothing transfers to or from the number of PPI rounds (Question 19). T70 §3.
+- Schewe CSL 2008 and Rutkowski arXiv 1107.1199 are now OPENED: no step bound in either.
+
