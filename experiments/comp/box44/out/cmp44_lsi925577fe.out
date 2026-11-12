@@ -1,0 +1,27 @@
+CMP44 mine vs L-SI's replay rows (L-RED's HOW3 engine): genomes in both 26 of L-SI's 26 (not in my sets: []) | rows differing in (T3, phivals, stalls, plateaus, platmax, tail) 0 | my must-0 sum 0, L-SI's 9 + 9 counters sum 0 | max T3 199
+CMP44 lsi WC4_2.json                   my set corpus   mine (4, 4, 0, 0, 0, 0) L-SI (4, 4, 0, 0, 0, 0) EQUAL | my must-0 sum 0
+CMP44 lsi WC16_2.json                  my set corpus   mine (4, 4, 0, 0, 0, 0) L-SI (4, 4, 0, 0, 0, 0) EQUAL | my must-0 sum 0
+CMP44 lsi FW8_2.json                   my set corpus   mine (29, 29, 0, 0, 0, 0) L-SI (29, 29, 0, 0, 0, 0) EQUAL | my must-0 sum 0
+CMP44 lsi FW16_2.json                  my set corpus   mine (53, 53, 0, 0, 0, 0) L-SI (53, 53, 0, 0, 0, 0) EQUAL | my must-0 sum 0
+CMP44 lsi MW8_2.json                   my set corpus   mine (55, 55, 0, 0, 0, 0) L-SI (55, 55, 0, 0, 0, 0) EQUAL | my must-0 sum 0
+CMP44 lsi MW32_2.json                  my set corpus   mine (199, 199, 0, 0, 0, 0) L-SI (199, 199, 0, 0, 0, 0) EQUAL | my must-0 sum 0
+CMP44 lsi C6G8_n54.json                my set corpus   mine (17, 17, 0, 0, 0, 0) L-SI (17, 17, 0, 0, 0, 0) EQUAL | my must-0 sum 0
+CMP44 lsi RWX_n95.json                 my set corpus   mine (12, 12, 0, 0, 0, 0) L-SI (12, 12, 0, 0, 0, 0) EQUAL | my must-0 sum 0
+CMP44 lsi DWT20_2803.json              my set corpus   mine (22, 21, 1, 1, 1, 0) L-SI (22, 21, 1, 1, 1, 0) EQUAL | my must-0 sum 0
+CMP44 lsi DHIB26_2804.json             my set corpus   mine (28, 27, 1, 1, 1, 0) L-SI (28, 27, 1, 1, 1, 0) EQUAL | my must-0 sum 0
+CMP44 lsi DHIB18_2805.json             my set corpus   mine (19, 19, 0, 0, 0, 0) L-SI (19, 19, 0, 0, 0, 0) EQUAL | my must-0 sum 0
+CMP44 lsi k1fail_202.json              my set records  mine (4, 3, 0, 0, 0, 1) L-SI (4, 3, 0, 0, 0, 1) EQUAL | my must-0 sum 0
+CMP44 lsi Ku_4.json                    my set mine     mine (28, 28, 0, 0, 0, 0) L-SI (28, 28, 0, 0, 0, 0) EQUAL | my must-0 sum 0
+CMP44 lsi Ku_8.json                    my set mine     mine (52, 52, 0, 0, 0, 0) L-SI (52, 52, 0, 0, 0, 0) EQUAL | my must-0 sum 0
+CMP44 lsi Ku_16.json                   my set mine     mine (100, 100, 0, 0, 0, 0) L-SI (100, 100, 0, 0, 0, 0) EQUAL | my must-0 sum 0
+CMP44 lsi Kprev_8.json                 my set mine     mine (52, 52, 0, 0, 0, 0) L-SI (52, 52, 0, 0, 0, 0) EQUAL | my must-0 sum 0
+CMP44 lsi MWR4_2.json                  my set records  mine (30, 30, 0, 0, 0, 0) L-SI (30, 30, 0, 0, 0, 0) EQUAL | my must-0 sum 0
+CMP44 lsi MWR8_2.json                  my set records  mine (54, 54, 0, 0, 0, 0) L-SI (54, 54, 0, 0, 0, 0) EQUAL | my must-0 sum 0
+CMP44 lsi MWR16_2.json                 my set records  mine (102, 102, 0, 0, 0, 0) L-SI (102, 102, 0, 0, 0, 0) EQUAL | my must-0 sum 0
+CMP44 lsi C98_2_2_3.json               my set mine     mine (8, 4, 4, 1, 4, 0) L-SI (8, 4, 4, 1, 4, 0) EQUAL | my must-0 sum 0
+CMP44 lsi C98_2_3_3.json               my set mine     mine (8, 6, 2, 1, 2, 0) L-SI (8, 6, 2, 1, 2, 0) EQUAL | my must-0 sum 0
+CMP44 lsi C98_3_3_3.json               my set mine     mine (12, 8, 3, 2, 2, 1) L-SI (12, 8, 3, 2, 2, 1) EQUAL | my must-0 sum 0
+CMP44 lsi C98_3_4_3.json               my set mine     mine (12, 10, 1, 1, 1, 1) L-SI (12, 10, 1, 1, 1, 1) EQUAL | my must-0 sum 0
+CMP44 lsi C98_4_4_3.json               my set mine     mine (16, 7, 3, 2, 2, 6) L-SI (16, 7, 3, 2, 2, 6) EQUAL | my must-0 sum 0
+CMP44 lsi C98_4_5_3.json               my set mine     mine (19, 14, 1, 1, 1, 4) L-SI (19, 14, 1, 1, 1, 4) EQUAL | my must-0 sum 0
+CMP44 lsi C98_5_5_3.json               my set mine     mine (15, 8, 5, 2, 3, 2) L-SI (15, 8, 5, 2, 3, 2) EQUAL | my must-0 sum 0
