@@ -217,3 +217,28 @@ distinct; there are M gates, so a DIRECT gate is reached after at most M − 1 s
   (the common suffix's E(R) cancels). Next step (proposal): split the e-gates of a window by «both faces through R» / «one face through R»
   / chained, and test whether flips inside a window happen only at the last two kinds (CFI3's window flips are at gates with neither face
   through R at t = 6, so those are chained or β-side-through-R cases: to be checked).
+
+## Addendum B (L-NEW successor 71; Lead 07:58Z: «Label it CANDIDATE until the proof is written in full with its premises quoted by script. Give the exact statement of [VJ] with E-DOM that you use and its landed source. Name the strict-lex-cycle step's premise.»; written 2026-11-12 by date -u)
+- LABEL (governs Addendum A where they differ): Lemma PAID is a **CANDIDATE** (the Lead's rule). Addendum A2 writes the proof in full; with
+  this addendum every premise it uses is quoted by script from landed RESULTS (quotes207.py, all «[Q]» lines of this file) or named with
+  its landed source. I propose PROVED (lane, unrefereed) on the Lead's check; until then CANDIDATE.
+- [VJ], the exact statement used (only its first two clauses; the length clause never decides in A2): for values Ω = (Λ, Π, k) and
+  Ω′ = (Λ′, Π′, k′) of two vertices at one state: (VJ-1) if Λ ≠ Λ′, Ω ◁ Ω′ iff reward(Λ) < reward(Λ′); (VJ-2) if Λ = Λ′ and Π ≠ Π′, let z be
+  the most relevant vertex of Π Δ Π′; then Ω ◁ Ω′ iff (z ∈ Π′ and z is even) or (z ∈ Π and z is odd). «Most relevant» refers to the
+  relevance order, a linear order on the vertices (higher priority more relevant; on Γ(G) every e-vertex has its own priority). Landed
+  source: RESULTS R118's premise list (l. 13607 at trunk 07139249), quoted:
+- [Q] «VJ00 §4.2 / Friedmann arXiv 1106.0778 §3 for the order ⊴ on values (Λ, Π, k)»
+  (the same order is R126's [VJ], landed at trunk 07139249). A2 uses VJ-2 once, in Step 3, at Λ = Λ′ = K1.
+- E-DOM, the exact statement used: every vertex more relevant than some e-vertex is an e-vertex, c_W, K0 or K3. Landed source: RESULTS
+  R121's record (l. 14481 at trunk 07139249), quoted:
+- [Q] «Every vertex more relevant than some e-vertex is an e-vertex, c_W, K0 or K3, by [DEF]»
+  A2 Step 3 uses it to conclude that z, being e_g or more relevant than e_g, is an e-vertex once c_W (in neither Π) and K0, K3 (in both Π's,
+  Step 2) are excluded.
+- The order on e-sets used in (iii) and Step 4: R121's lexicographic order, quoted:
+- [Q] «sets of e-vertices compared lexicographically by their most relevant differing element»
+- Premise of the strict-lex-cycle step (A2 Step 4): this order is a STRICT TOTAL ORDER on the subsets of the e-vertices. Reason: the
+  relevance order is linear (VJ-2's premise above), so two distinct sets have a unique most relevant differing element, which lies in
+  exactly one of them; then «S < S′ iff that element lies in S′» is irreflexive, total on distinct sets and transitive (the standard
+  lexicographic order on 0/1 vectors indexed by a linear order). So a sequence E_t(e_(g_0)) < E_t(e_(g_1)) < … has pairwise distinct terms,
+  the chain's gates are pairwise distinct, and it has at most M terms. No other premise enters Step 4.
+- Quote check rerun: quotes207.py at trunk 07139249 (out/quotes207.out).

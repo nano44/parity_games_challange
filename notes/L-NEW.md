@@ -55,7 +55,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - 07:12Z DUTY R-D7a (P-N5-SPLIT = R127): fixes entry 3 + L-2 (d8888d0b, 9,521 B; box199/mkl2_199.py asserts L-1 634b2fdf); split.pins 63
   rows; check.sh P-N5-SPLIT asserts L-2. Ids verified by git (da3308b5, 4948ce5d, 4ded1e8d, 2d0344d3). Unit strings for the three maxima
   clauses PROPOSED in the entry, not applied.
-- Box 207 Addendum A (committed with this push): Lemma PAID at k = 1 (every e-face Odd takes is DIRECT (its face plays meet R) or
+- 08:36Z DUTY R-U127: fixes entry 4 + L-3 (a8661c4b, 9,796 B; mkl3_199.py asserts L-2 d8888d0b); split.pins 65; check.sh asserts L-3.
+- Box 207 Addendum B: PAID relabelled CANDIDATE (Lead rule) with [VJ] (R118 premise), E-DOM (R121 l. 14481) and the lex order (R121) quoted;
+  strict-lex-cycle premise = lex order on e-sets is a strict total order (relevance linear). quotes207 16/0 at 07139249.
+- Window flips (scratch wkind.py): in-window flips sit at gates with neither face through R (CFI3 8/10, RINT 6/8, K1L10 3/3): chained gates.
+- Box 207 Addendum A (b72411cf): Lemma PAID at k = 1 (every e-face Odd takes is DIRECT (its face plays meet R) or
   chained through gates of strictly lex-rising E(e_.) to a DIRECT one; proof sketch: non-DIRECT => both faces K1 (LEVEL0 excludes c_W),
   then [VJ]+(E-DOM) give E(e_g) <lex E(e_next(g)); Xi-acyclic case = BETA-ACYC). DATA: all counters 0 on records + 1,000 random (seed 714);
   control fires. Next: box 207 Addendum A.
