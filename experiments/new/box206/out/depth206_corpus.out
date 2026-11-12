@@ -1,0 +1,58 @@
+C10_NM164_bdf7a4f2.json ctrl 0 movers sumT 20 T 20 lam 41 ch 79 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 12 maxDE 21 | d0 51 d1 22 d2 6
+C11_NM172_93225ff6.json ctrl 0 movers sumT 22 T 22 lam 41 ch 89 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 14 maxDE 23 | d0 55 d1 26 d2 8
+C12_NM176_0009119c.json ctrl 0 movers sumT 24 T 24 lam 41 ch 95 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 16 maxDE 25 | d0 55 d1 32 d2 8
+C2CX4_n23.json ctrl 0 movers sumT 11 T 11 lam 2 ch 117 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 7 maxDE 12 | d0 56 d1 47 d2 14
+C2_NM33_38377e9c.json ctrl 0 movers sumT 3 T 3 lam 6 ch 7 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 1 maxdeep_v 1 maxDE 4 | d0 6 d1 1
+C3_NM45_8a702944.json ctrl 0 movers sumT 6 T 6 lam 6 ch 20 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 4 maxDE 7 | d0 11 d1 7 d2 2
+C4_NM50_184a739c.json ctrl 0 movers sumT 8 T 8 lam 0 ch 38 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 6 maxDE 9 | d0 24 d1 11 d2 3
+C5_NM63_7ae531ad.json ctrl 0 movers sumT 11 T 11 lam 16 ch 57 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 6 maxDE 11 | d0 41 d1 13 d2 3
+C6G8_n54.json ctrl 0 movers sumT 17 T 17 lam 56 ch 222 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 8 maxDE 13 | d0 114 d1 80 d2 28
+C6_NM75_72a89f5f.json ctrl 0 movers sumT 12 T 12 lam 12 ch 82 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 7 maxDE 12 | d0 64 d1 15 d2 3
+C7_NM105_4438ea3e.json ctrl 0 movers sumT 13 T 13 lam 21 ch 50 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 9 maxDE 14 | d0 28 d1 18 d2 4
+C8_NM112_8c4c784f.json ctrl 0 movers sumT 16 T 16 lam 22 ch 56 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 11 maxDE 17 | d0 31 d1 19 d2 6
+C9_NM122_6224f959.json ctrl 0 movers sumT 18 T 18 lam 22 ch 73 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 13 maxDE 19 | d0 39 d1 26 d2 8
+CT12_cap200.json ctrl 0 movers sumT 46 T 46 lam 144 ch 97 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 4 maxdeep_v 18 maxDE 24 | d0 47 d1 35 d2 8 d3 6 d4 1
+CT26_cap400.json ctrl 0 movers sumT 79 T 79 lam 84 ch 236 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 3 maxdeep_v 38 maxDE 53 | d0 156 d1 48 d2 28 d3 4
+CT27_cap400.json ctrl 0 movers sumT 79 T 79 lam 81 ch 306 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 3 maxdeep_v 41 maxDE 56 | d0 196 d1 68 d2 36 d3 6
+CX4_n21.json ctrl 0 movers sumT 10 T 10 lam 2 ch 88 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 7 maxDE 11 | d0 43 d1 32 d2 13
+DHIB18_2805.json ctrl 0 movers sumT 19 T 19 lam 93 ch 489 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 10 maxDE 19 | d0 322 d1 119 d2 48
+DHIB26_2804.json ctrl 0 movers sumT 28 T 28 lam 2 ch 794 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 6 maxdeep_v 20 maxDE 26 | d0 374 d1 166 d2 162 d3 52 d4 38 d6 2
+DSALT6_n108.json ctrl 0 movers sumT 21 T 21 lam 0 ch 49 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 6 maxDE 10 | d0 31 d1 13 d2 5
+DSALT7_n108.json ctrl 0 movers sumT 11 T 11 lam 6 ch 37 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 5 maxDE 10 | d0 30 d1 5 d2 2
+DSALT9_n416.json ctrl 0 movers sumT 30 T 30 lam 0 ch 1168 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 5 maxdeep_v 17 maxDE 24 | d0 623 d1 159 d2 268 d3 87 d4 24 d5 7
+DU21_h4.json ctrl 0 movers sumT 24 T 24 lam 0 ch 1558 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 3 maxdeep_v 8 maxDE 21 | d0 1348 d1 105 d2 103 d3 2
+DWT20_2803.json ctrl 0 movers sumT 22 T 22 lam 13 ch 478 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 3 maxdeep_v 16 maxDE 20 | d0 172 d1 192 d2 110 d3 4
+FW12_2.json ctrl 0 movers sumT 41 T 41 lam 40 ch 267 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 1 maxdeep_v 21 maxDE 34 | d0 170 d1 97
+FW16_2.json ctrl 0 movers sumT 53 T 53 lam 52 ch 371 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 1 maxdeep_v 29 maxDE 46 | d0 234 d1 137
+FW4_2.json ctrl 0 movers sumT 17 T 17 lam 16 ch 59 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 1 maxdeep_v 5 maxDE 10 | d0 42 d1 17
+FW6_3.json ctrl 0 movers sumT 30 T 30 lam 28 ch 204 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 1 maxdeep_v 12 maxDE 19 | d0 138 d1 66
+FW6_4.json ctrl 0 movers sumT 37 T 37 lam 34 ch 309 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 1 maxdeep_v 14 maxDE 21 | d0 216 d1 93
+FW8_2.json ctrl 0 movers sumT 29 T 29 lam 28 ch 163 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 1 maxdeep_v 13 maxDE 22 | d0 106 d1 57
+FW8_4.json ctrl 0 movers sumT 47 T 47 lam 44 ch 532 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 1 maxdeep_v 22 maxDE 31 | d0 348 d1 184
+GROW7_n34.json ctrl 0 movers sumT 13 T 13 lam 11 ch 138 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 10 maxDE 14 | d0 69 d1 61 d2 8
+GROW8_n53.json ctrl 0 movers sumT 18 T 18 lam 54 ch 265 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 11 maxDE 16 | d0 115 d1 119 d2 31
+HOLD2K_n84.json ctrl 0 movers sumT 13 T 13 lam 11 ch 155 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 3 maxdeep_v 9 maxDE 14 | d0 88 d1 59 d2 6 d3 2
+HOLD3K_n125.json ctrl 0 movers sumT 17 T 17 lam 11 ch 206 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 10 maxDE 16 | d0 127 d1 69 d2 10
+MW12_2.json ctrl 0 movers sumT 79 T 79 lam 76 ch 210 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 37 maxDE 51 | d0 112 d1 74 d2 24
+MW16_2.json ctrl 0 movers sumT 103 T 103 lam 100 ch 278 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 49 maxDE 67 | d0 148 d1 98 d2 32
+MW26_2.json ctrl 0 movers sumT 163 T 163 lam 160 ch 448 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 79 maxDE 107 | d0 238 d1 158 d2 52
+MW32_2.json ctrl 0 movers sumT 199 T 199 lam 196 ch 550 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 97 maxDE 131 | d0 292 d1 194 d2 64
+MW4_2.json ctrl 0 movers sumT 31 T 31 lam 28 ch 74 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 13 maxDE 19 | d0 40 d1 26 d2 8
+MW5_2.json ctrl 0 movers sumT 37 T 37 lam 34 ch 91 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 16 maxDE 23 | d0 49 d1 32 d2 10
+MW8_2.json ctrl 0 movers sumT 55 T 55 lam 52 ch 142 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 25 maxDE 35 | d0 76 d1 50 d2 16
+NK6_cl21.json ctrl 0 movers sumT 11 T 11 lam 0 ch 35 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 6 maxDE 10 | d0 27 d1 6 d2 2
+ROUTELOW_n21.json ctrl 0 movers sumT 10 T 10 lam 19 ch 86 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 3 maxDE 7 | d0 65 d1 11 d2 10
+RWX_n95.json ctrl 0 movers sumT 12 T 12 lam 10 ch 242 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 3 maxdeep_v 2 maxDE 8 | d0 184 d1 56 d2 1 d3 1
+W14_n75.json ctrl 0 movers sumT 13 T 13 lam 62 ch 258 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 9 maxDE 12 | d0 157 d1 89 d2 12
+W68_n66.json ctrl 0 movers sumT 8 T 8 lam 71 ch 202 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 5 maxDE 8 | d0 119 d1 60 d2 23
+W86_n77.json ctrl 0 movers sumT 19 T 19 lam 97 ch 282 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 3 maxdeep_v 12 maxDE 15 | d0 108 d1 126 d2 44 d3 4
+WC16_2.json ctrl 0 movers sumT 4 T 4 lam 0 ch 67 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 16 maxdeep_v 1 maxDE 3 | d0 66 d9 1
+WC4_2.json ctrl 0 movers sumT 4 T 4 lam 0 ch 19 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 4 maxdeep_v 1 maxDE 3 | d0 18 d4 1
+WC8_2.json ctrl 0 movers sumT 4 T 4 lam 0 ch 35 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 8 maxdeep_v 1 maxDE 3 | d0 34 d8 1
+m3_NM106_ea6c4f63.json ctrl 0 movers sumT 12 T 12 lam 17 ch 50 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 9 maxDE 13 | d0 26 d1 18 d2 6
+m4_NM121_d45d7aaa.json ctrl 0 movers sumT 17 T 17 lam 25 ch 72 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 12 maxDE 18 | d0 40 d1 24 d2 8
+k1fail_202.json ctrl 0 movers sumT 4 T 4 lam 0 ch 15 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 0 maxdeep_v 0 maxDE 3 | d0 15
+MWR16_2.json ctrl 0 movers sumT 102 T 102 lam 0 ch 2088 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 1 maxdeep_v 16 maxDE 34 | d0 1113 d1 975
+K1C16_n400.json ctrl 0 movers sumT 51 T 51 lam 0 ch 1893 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 26 maxDE 37 | d0 720 d1 784 d2 389
+B400_r32_a13d9661.json ctrl 0 movers sumT 49 T 49 lam 0 ch 1300 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 2 maxdeep_v 24 maxDE 34 | d0 405 d1 610 d2 285
+K1F34_n84.json ctrl 0 movers sumT 52 T 52 lam 0 ch 1279 elfall 0 topfall 0 pfail 0 cfail 0 maxdepth 3 maxdeep_v 25 maxDE 35 | d0 401 d1 406 d2 383 d3 89

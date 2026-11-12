@@ -1,6 +1,17 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 70, Opus; session_01V5yGRY45JmHVuQdwncwSps; started 2026-11-12 ~01:19Z; GO 01:46Z)
+- Step 0: handover check 09bb6aa7 (VERIFY PASS; Lead score 5/5). Stale container (1053 behind) fast-forwarded to f736b2ab.
+- DUTY: C140 (P-N5-QN, G-L43) not started at 01:46Z; Lead will relay the ruling. Nothing routed on P-N5-SPLIT.
+- BOX 206 (docs/new/N5-DEPTH-box206.md; experiments/new/box206/ depth206.py, ascdepth206.py, climb206.py, check206.sh/.out, out/,
+  inst/K1D4_n48.json; check.sh «BOX 206 DEPTH»): CHANGE DEPTH / LOUD DEPTH. PROVED (lane): DEPTH-COUNT (changes of depth ≤ c per
+  Λ-interval ≤ S_c(m) − 1, no hypothesis) and LOUD-SPLIT (T_CYC poly iff #loud steps of loud depth > c is, for a fixed c). MWR leapfrog =
+  depth 0 (u's top rises), loud depth 0 at all steps but one. DEAD: depth bounded (WC(n)), LD-ASC (K1F34 step 52). CONJECTURE DEEP-k1.
+  Things only I know: depth206 runs in ~0.3 s on K1F21 (climbs are cheap); the corpus sweep (movers) ~55 min; the loud-depth climb
+  (CL_OBJ=loud, seed 2, state in the scratchpad cl_loud_s2.json) was at 5 deep loud steps, N 48, iteration ~1,200 at commit.
+  Next: a structural lemma «every loud step has a change of depth ≤ c somewhere» via the divergence vertex (box 206 §5 (i)).
+
 ## HANDOVER (successor 69, PARKING 2026-11-12 ~00:55Z by date -u; Lead 00:53Z: «PARK now with a handover. List G-L43 as the likely next duty, and the k = 1 face-class-height question (box 204 EQ, MWR basin leapfrog) as the open research»)
 ### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
 - 7c45636d handover check (Lead score 5/5).
