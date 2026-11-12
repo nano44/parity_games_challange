@@ -1,6 +1,34 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## HANDOVER (successor 69, PARKING 2026-11-12 ~00:55Z by date -u; Lead 00:53Z: «PARK now with a handover. List G-L43 as the likely next duty, and the k = 1 face-class-height question (box 204 EQ, MWR basin leapfrog) as the open research»)
+### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
+- 7c45636d handover check (Lead score 5/5).
+- 02a928a3 P-N5-QN fixes entry 1 + line L-1 (docs/new/P-N5-QN-line-L1.txt sha1 28bf566b, 7,357 B; box203/mkl1_qn.py; LN-5 skip count 0 by
+  box203/skip203.py; qn.pins 61 rows). Both referees MATCH (Lead 00:53Z). R126 first fill at CHECKER C140.
+- dd83371b P-N5-CHAIN fixes entry 4 + L-5 (C139 E-1 R-U, E-2 R-L1 / R-L2; sha1 473344b1, 9,047 B = C139 §4; box196/mkl5_196.py). R125 LANDED.
+- 8f4dab7e P-N5-SPLIT fixes entry 2 + L-1 (sha1 634b2fdf, 9,249 B; box199/mkl1_199.py; split.pins 61 rows). Both referees MATCH.
+- 1478886e BOX 205 (docs/new/N5-BETALOC-box205.md; experiments/new/box205/; check.sh «BOX 205 BETA-LOC»): Lemma BETA-LOC, NOCYC-NOFLIP,
+  K1-BASIN (PROVED lane); naive basin claim DEAD (inst/naive_k1_s71.json). dfa199c7 Addendum A (L-RED 64 R230 G1-G5: Lemma CN-LIST on landed
+  premises; quotes205 6/0). 4e264eca + b68e520a Addendum B: exit-change route DEAD (MWR: 0 exit / cycle changes, flips 3n + 1).
+### OPEN LANE ITEMS (DUTY FIRST)
+1. LIKELY NEXT DUTY: CHECKER C140 on P-N5-QN (R126 first fill), flag G-L43: DEAD D2 «every constant c» rests on three MWR instances (kills
+   only c ≤ 32; nobody proved the MWR(n) family). Proposed R-D2a (drop D2) or R-D2b (state «c ≤ 32 … 9 / 17 / 33»). When ruled: fixes
+   entry 2 (docs/new/P-N5-QN-fixes.md, append-only) + L-2 = L-1 + the exact R-string by script (new box203/mkl2_qn.py asserting L-1's sha1
+   28bf566b…), re-pin qn.pins, push, send SHA + sha1 + wc -c. Never edit the frozen packet. (Option: prove MWR(n)'s 2n + 1 flips for all n
+   from L-RED 63's construction, claude/l-red 406ef2fd R229-box202 §2, if the Lead wants D2 kept as stated.)
+2. Research (D18), OPEN: T_CYC polynomial at k = 1 = max mover class height polynomial at k = 1 (box 204 Theorem EQ). Box 205 localises
+   flips (BETA-LOC: off the cycle's basin and odd-top case Odd is on β), and Addendum B shows MWR's flips are a basin gate's e-face (W-target
+   class, a clock) leapfrogging its β-face (constant exit route). Next idea: bound the leapfrogs of one basin gate by the class height of
+   its W-target lane at constant exit (a potential on the clock lane), or build a k = 1 family with super-linear W-target class height.
+### TOOLS (successor 69): box203/skip203.py, mkl1_qn.py; box196/mkl5_196.py; box199/mkl1_199.py; box205/betaloc205.py (records ~2 min,
+### 1,000 genomes ~3 min), check205.sh (~3 s), quotes205.py TRUNK, exit205.py.
+### Traps (successor 69)
+- A commit message / DATA arithmetic slip (4n + 1 for 3n + 1) caught after commit: fixed in a new commit (never amend). Recompute totals
+  from the output file before writing.
+- «|» in a line from absolute-value bars (|S|): write «the number of …» instead; the generators assert no «|».
+- Fleet stall 11-09 11:00Z to 11-11 21:00Z: container survived; trap check still first on resume.
+
 ## Resume point (successor 69, Opus; session_01V5yGRY3yrFHp3UvZiYnbYJ; started 2026-11-09 ~09:40Z; GO 10:11Z)
 - Step 0: handover check 7c45636d (VERIFY PASS; Lead score 5/5). Stale container (1044 behind) fast-forwarded to adfda628.
 - DUTY 1: P-N5-QN fixes entry 1 (docs/new/P-N5-QN-fixes.md) + line L-1 (docs/new/P-N5-QN-line-L1.txt, by box203/mkl1_qn.py from
