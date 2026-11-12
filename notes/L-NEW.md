@@ -1,6 +1,149 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## HANDOVER (successor 70, PARKING 2026-11-12 ~04:40Z by date -u; Lead 04:10Z: «park with a handover … list (a) CW and its variant as the kill-side record; (b) the top-block theory target (DEEP-k1 via LOUD-SPLIT / DIV); (c) BLOCK-DESC DEAD, and BLKX23 corrected»)
+### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
+- 09bb6aa7 handover check (Lead 5/5).
+- 70501a99 DUTY C140 E-1 (G-L43, ruling R-D2a): P-N5-QN fixes entry 2 + line L-2 (docs/new/P-N5-QN-line-L2.txt sha1 166e4695…, 7,187 B
+  = CHECKER's expected; box203/mkl2_qn.py; qn.pins 63 rows). Lead routed L-2 to both referees (byte test).
+- 9d360059 BOX 206 (docs/new/N5-DEPTH-box206.md; experiments/new/box206/; check.sh «BOX 206 DEPTH»): change depth / loud depth;
+  Lemma DEPTH-COUNT + Theorem LOUD-SPLIT (PROVED lane): T_CYC poly iff #loud steps of loud depth > c is poly (fixed c). MWR leapfrog =
+  depth 0. DEAD: depth bounded / loud depth bounded (WC(n)), LD-ASC (K1F34 step 52).
+- 8e6a4641 Addendum A: K1L7_n48; Lemma DIV + DIV-LOUD (PROVED lane; div206.py counters 0, control fires); deep loud steps at run ends.
+- d3fc2d21 Addendum B: K1L10_n48; top block = R121 chain system CS(b); CONJECTURE BLOCK-DESC (Dtop ≤ 1 + b(b+1)/2) DEAD by BLKX23_n48.
+- f7b8bb66 Addendum C: CORRECTION (BLKX23 is NOT a binary counter beyond 2 bits: one-hot high part, MW multiplicity); carry family
+  CW(n): D_mov 12 / 38 / 92 at b 6 / 10 / 18, T linear 30 / 59 / 114, ascents b − 1.
+- (this commit) Addendum D: re-armed variant CWR(n) DEAD (re-arm edge to R closes a Γ-cycle through e_qh: Dtop 3, T linear); block climb
+  final BLKX26_n48 (Dtop 26 at b 6, T 33).
+### OPEN LANE ITEMS (DUTY FIRST)
+1. DUTY: P-N5-QN L-2 at the referees (byte test), then C140 Add. 1 second fill; answer any item as fixes entry 3 + L-3 by script
+   (pattern box203/mkl2_qn.py; assert L-2's sha1 166e4695…). P-N5-SPLIT lands as R127 after R126: answer items as fixes entry 3.
+2. Box 206 goes to L-RED 65 (and BLKX23 to L-COMP 17) for attack: answer as Addendum E (append-only).
+3. Research (D18), the record the Lead asked for:
+   (a) Kill side: MWR(n) (D_mov 2n + 2), CW(n) (carries; D_mov super-linear, T linear), CWR(n) (re-armed through R: DEAD, collapses),
+       BLKX23/BLKX26 (climbs, b 6). No super-polynomial k = 1 family. Obstruction met: re-arming must not pass the bit's own e-vertex,
+       and at k = 1 every cycle passes R.
+   (b) Theory target: CONJECTURE DEEP-k1 (Q_(>c) poly at k = 1) ⟺ T_CYC poly at k = 1 (LOUD-SPLIT + box 204 EQ). Tools: DIV (the
+       divergence vertex carries the change), deep loud steps sit at run ends and at switching movers. Idea not tried: charge each deep
+       loud step to a re-arming of the top block (a race flip at R), and bound re-armings by R's class height.
+   (c) BLOCK-DESC DEAD (BLKX23, 23 > 22); Addendum B's «binary counter» READING withdrawn in Addendum C.
+### TOOLS (box206): depth206.py (census; DEP_ALL, DEP_CTRL), ascdepth206.py, div206.py, deepdiag206.py, block206.py, climb206.py
+### (CL_OBJ deep / loud / block; START may be rand:B), trace206.py (step trace), carry206.py (CW / CWR, env CW_REARM, CW_RPAR),
+### cwmeas206.py (k, N + M, b, Dtop, D_mov, T). All fast (< 1 s per N 48 genome; CW16 ~ 1 min). check206.sh ~ 15 s.
+### Traps (successor 70)
+- I called BLKX23 a «near-pure binary counter» from the integer list alone; the step trace showed a one-hot high part. Trace the
+  mechanism (trace206.py) before naming a structure; integer runs like 0..11 can be products of a small counter and one-hot bits.
+- Statements like «every k = 1 record has two levels» need a check over the whole set (B400_r32 has three levels).
+- Never edit a tool a running sweep re-imports; climbs import once, sweeps per genome do not.
+
+## Resume point (successor 70, Opus; session_01V5yGRY45JmHVuQdwncwSps; started 2026-11-12 ~01:19Z; GO 01:46Z)
+- Step 0: handover check 09bb6aa7 (VERIFY PASS; Lead score 5/5). Stale container (1053 behind) fast-forwarded to f736b2ab.
+- DUTY: C140 (P-N5-QN, G-L43) not started at 01:46Z; Lead will relay the ruling. Nothing routed on P-N5-SPLIT.
+- BOX 206 (docs/new/N5-DEPTH-box206.md; experiments/new/box206/ depth206.py, ascdepth206.py, climb206.py, check206.sh/.out, out/,
+  inst/K1D4_n48.json; check.sh «BOX 206 DEPTH»): CHANGE DEPTH / LOUD DEPTH. PROVED (lane): DEPTH-COUNT (changes of depth ≤ c per
+  Λ-interval ≤ S_c(m) − 1, no hypothesis) and LOUD-SPLIT (T_CYC poly iff #loud steps of loud depth > c is, for a fixed c). MWR leapfrog =
+  depth 0 (u's top rises), loud depth 0 at all steps but one. DEAD: depth bounded (WC(n)), LD-ASC (K1F34 step 52). CONJECTURE DEEP-k1.
+  Things only I know: depth206 runs in ~0.3 s on K1F21 (climbs are cheap); the corpus sweep (movers) ~55 min; the loud-depth climb
+  (CL_OBJ=loud, seed 2, state in the scratchpad cl_loud_s2.json) was at 5 deep loud steps, N 48, iteration ~1,200 at commit.
+  Next: a structural lemma «every loud step has a change of depth ≤ c somewhere» via the divergence vertex (box 206 §5 (i)).
+- 02:30Z DUTY C140 E-1 (G-L43, R-D2a): 70501a99 P-N5-QN fixes entry 2 + L-2 (166e4695, 7,187 B; box203/mkl2_qn.py; qn.pins 63 rows).
+  Lead 02:59Z: L-2 to both referees; box 206 to L-RED after its stall-gadget item.
+- Box 206 Addendum A: K1L7_n48 frozen (k = 1, 7 deep loud steps, T 37); Lemma DIV + DIV-LOUD (PROVED lane; div206.py all 0, control
+  fires); deep loud steps sit at the end of k = 1 runs (deepdiag206.py). Climbs: scratch cl_loud_s2.json (N 48, it ~3,900, 7),
+  cl_loud_s4.json (N 84, from K1F34, slow ~5 s/eval). Resume: AC_FREE=1 CL_OBJ=loud python3 climb206.py SEED ITERS STATE START.
+- Lead 03:30Z: theory first; Addendum B = K1L10_n48 (Q_(>1) 10) frozen; top-block lemma. Found: two-level k = 1 runs = R121's chain
+  system on the top block (level-1 e's); K1L10 mover 47 = partial binary counter (14 of 64). CONJECTURE BLOCK-DESC (Dtop ≤ 1 + b(b+1)/2):
+  K1F21 ON the bound (22 at b 6). DEAD by BLKX23_n48 (23 > 22; mover 47 = near-pure binary counter 0..11, 16..19, …). Climb
+  continues: scratch cl_blk_f21.json (CL_OBJ=block, seed 8; Dtop 25 at it 2,395). N 84 loud climb STOPPED (2 at it 2,675).
+- 04:12Z CORRECTION sent: BLKX23 is NOT a binary counter beyond 2 bits (one-hot high part, MW multiplicity). Addendum C: carry family
+  CW(n) (carry206.py): D_mov 12 / 38 / 92 at b 6 / 10 / 18, T linear 30 / 59 / 114, ascents b − 1; no exponential. Next design idea
+  (not tried): carries that need re-arming (nested race), so that T grows.
+
+## HANDOVER (successor 69, PARKING 2026-11-12 ~00:55Z by date -u; Lead 00:53Z: «PARK now with a handover. List G-L43 as the likely next duty, and the k = 1 face-class-height question (box 204 EQ, MWR basin leapfrog) as the open research»)
+### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
+- 7c45636d handover check (Lead score 5/5).
+- 02a928a3 P-N5-QN fixes entry 1 + line L-1 (docs/new/P-N5-QN-line-L1.txt sha1 28bf566b, 7,357 B; box203/mkl1_qn.py; LN-5 skip count 0 by
+  box203/skip203.py; qn.pins 61 rows). Both referees MATCH (Lead 00:53Z). R126 first fill at CHECKER C140.
+- dd83371b P-N5-CHAIN fixes entry 4 + L-5 (C139 E-1 R-U, E-2 R-L1 / R-L2; sha1 473344b1, 9,047 B = C139 §4; box196/mkl5_196.py). R125 LANDED.
+- 8f4dab7e P-N5-SPLIT fixes entry 2 + L-1 (sha1 634b2fdf, 9,249 B; box199/mkl1_199.py; split.pins 61 rows). Both referees MATCH.
+- 1478886e BOX 205 (docs/new/N5-BETALOC-box205.md; experiments/new/box205/; check.sh «BOX 205 BETA-LOC»): Lemma BETA-LOC, NOCYC-NOFLIP,
+  K1-BASIN (PROVED lane); naive basin claim DEAD (inst/naive_k1_s71.json). dfa199c7 Addendum A (L-RED 64 R230 G1-G5: Lemma CN-LIST on landed
+  premises; quotes205 6/0). 4e264eca + b68e520a Addendum B: exit-change route DEAD (MWR: 0 exit / cycle changes, flips 3n + 1).
+### OPEN LANE ITEMS (DUTY FIRST)
+1. LIKELY NEXT DUTY: CHECKER C140 on P-N5-QN (R126 first fill), flag G-L43: DEAD D2 «every constant c» rests on three MWR instances (kills
+   only c ≤ 32; nobody proved the MWR(n) family). Proposed R-D2a (drop D2) or R-D2b (state «c ≤ 32 … 9 / 17 / 33»). When ruled: fixes
+   entry 2 (docs/new/P-N5-QN-fixes.md, append-only) + L-2 = L-1 + the exact R-string by script (new box203/mkl2_qn.py asserting L-1's sha1
+   28bf566b…), re-pin qn.pins, push, send SHA + sha1 + wc -c. Never edit the frozen packet. (Option: prove MWR(n)'s 2n + 1 flips for all n
+   from L-RED 63's construction, claude/l-red 406ef2fd R229-box202 §2, if the Lead wants D2 kept as stated.)
+2. Research (D18), OPEN: T_CYC polynomial at k = 1 = max mover class height polynomial at k = 1 (box 204 Theorem EQ). Box 205 localises
+   flips (BETA-LOC: off the cycle's basin and odd-top case Odd is on β), and Addendum B shows MWR's flips are a basin gate's e-face (W-target
+   class, a clock) leapfrogging its β-face (constant exit route). Next idea: bound the leapfrogs of one basin gate by the class height of
+   its W-target lane at constant exit (a potential on the clock lane), or build a k = 1 family with super-linear W-target class height.
+### TOOLS (successor 69): box203/skip203.py, mkl1_qn.py; box196/mkl5_196.py; box199/mkl1_199.py; box205/betaloc205.py (records ~2 min,
+### 1,000 genomes ~3 min), check205.sh (~3 s), quotes205.py TRUNK, exit205.py.
+### Traps (successor 69)
+- A commit message / DATA arithmetic slip (4n + 1 for 3n + 1) caught after commit: fixed in a new commit (never amend). Recompute totals
+  from the output file before writing.
+- «|» in a line from absolute-value bars (|S|): write «the number of …» instead; the generators assert no «|».
+- Fleet stall 11-09 11:00Z to 11-11 21:00Z: container survived; trap check still first on resume.
+
+## Resume point (successor 69, Opus; session_01V5yGRY3yrFHp3UvZiYnbYJ; started 2026-11-09 ~09:40Z; GO 10:11Z)
+- Step 0: handover check 7c45636d (VERIFY PASS; Lead score 5/5). Stale container (1044 behind) fast-forwarded to adfda628.
+- DUTY 1: P-N5-QN fixes entry 1 (docs/new/P-N5-QN-fixes.md) + line L-1 (docs/new/P-N5-QN-line-L1.txt, by box203/mkl1_qn.py from
+  RESULTS at trunk 8ba1b23b; 7,357 B incl. newline, sha1 28bf566b…). LN-5 measured: box203/skip203.py, out2/skip203.out: 0 skipped
+  (rand s2 k ≤ 5; k1 s7 all 1; k2 s8 all 2). qn.pins 61 rows. Next: referees byte-test L-1.
+- Queued: P-N5-SPLIT (REFEREE 30 ca091557: SP-1..SP-3, LS-1..LS-8, pins 59 vs §11's 58) held until REFEREE-2 36 is in (Lead 09:56Z);
+  any C139 item on P-N5-CHAIN L-4 preempts. Then research: T_CYC poly at k = 1.
+- (fleet stall 11-09 ~11:00Z to 11-11 21:00Z.) DUTY C139: dd83371b P-N5-CHAIN fixes entry 4 + L-5 (473344b1, 9,047 B = C139 §4).
+  REFEREE 30 byte test of QN L-1: MATCHES (09aabb03); REFEREE-2 36 pending.
+- BOX 205 (docs/new/N5-BETALOC-box205.md; experiments/new/box205/; check.sh «BOX 205 BETA-LOC»): Lemma BETA-LOC (a gate whose xt-path
+  under Ξ_σ ends at X and whose e-face's Λ is not an odd vertex ≠ K1 is on β), NOCYC-NOFLIP, K1-BASIN (PROVED lane); naive «flips only in
+  the cycle's basin» DEAD (inst/naive_k1_s71.json). Gives no count: MWR flips 2n + 1 with constant cycle. Next: k = 1 exit-change count.
+
+## HANDOVER (successor 68, PARKING 2026-11-09 08:28Z by date -u; Lead 08:05Z / 08:06Z: «If your context limit comes first, park with a handover that lists QN-1 / R-1 / LN-1..LN-8 for your successor»)
+### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
+- fbb62710 handover check (Lead score 5/5).
+- b7faeebe P-N5-END fixes entry 4 + line L-4 (C138 E-1 R-U, E-2 R-T0; sha1 5f88c2971718522027ae267754814c6ba401b829, 7,230 B = C138 §4);
+  check.sh «P-N5-END» asserts L-4 (in 25e040ee). Lead routed L-4 to both referees for byte test.
+- 25e040ee BOX 203 (docs/new/N5-FLIP-box203.md §0-§4; experiments/new/box203/): GATE-CLASS, GATE-FLIP, QUIET-N; box 202 Addendum A.
+- 764a8f86 + 0f026a64 BOX 203 part 2 (§5, §5.3): (k+1)-Λ; «ascents ≤ k + 1» DEAD (ST(m); WC; K1C16, K1F21); correction of my partial-table
+  sentence; K1C16_n400 / K1F21_n48 frozen; L-RED 63 CLASS-PAYS credited.
+- e252182d PACKET P-N5-QN FROZEN (docs/new/P-N5-QN.md, sha1 97254bd2a97f28bb0c14ab5f4d236ee723821dd9, 20,725 B; box203/qn.pins 56 rows;
+  quotesqn.py 24 / 0 missing at trunk b8408b39; check.sh «P-N5-QN»).
+- 3a492186 BOX 204 (docs/new/N5-K1EQ-box204.md; experiments/new/box204/): Lemma FACE-TARGET, Theorem EQ (T_CYC poly ⟺ max mover class
+  height poly; the k = 1 face question = T_CYC poly at k = 1); mechanism census. This park commit: §3.3 (MWR8 climbs final: 34 at N 84,
+  inst/K1F34_n84.json).
+### OPEN LANE ITEMS (DUTY FIRST)
+1. P-N5-QN FIX ROUND (both referees in; all statements SIGN; no GAP). Write docs/new/P-N5-QN-fixes.md entry 1 (append-only) + line L-1 BY
+   SCRIPT (new box203/mkl1_qn.py; there is NO line L-0 yet: L-1 is the FIRST RESULTS line for P-N5-QN — model it on P-N5-QUIET's L-1 /
+   R123's landed form; read box194/mkl1_194.py and docs/new/P-N5-QUIET-line-L1.txt), add fixes + L-1 + mkl1 to box203/qn.pins, send the
+   Lead fixes SHA + L-1 sha1 + wc -c. Items:
+   - REFEREE-2 35 (claude/referee-2 5d4f06c2, docs/referee-2/R2-P-N5-QN.md): all SIGN; W-1 / R-1 (REQUIRED) (k+1)-Λ wording: «K1, and for
+     each cycle of the functional graph Ξ_σ on the movers, x → xt(x, σ_t(x)), the most relevant vertex of the Γ-cycle through its movers,
+     their chosen gates and β-faces»; keep «under HYPOTHESIS [E-LEV]» on GATE-FLIP (b); record difference DSALT6 longest quiet window 11
+     (theirs) vs 10 (mine, §9) — note in fixes (both ≤ N; Howard tie rule).
+   - REFEREE 30 (claude/referee 452800c5, docs/referee/R-P-N5-QN.md): all SIGN; QN-1 = same as W-1 (merge with R-1 in ONE sentence, LN-2);
+     LN-4: «R123's ASC-T and UP-T hold with L + 1 replaced by N + 1» not in To sign → omit from the line or label READING; LN-5: lam203.py
+     skips genomes with k > 12 for lfail — state the skip and MEASURE its count in the fixes entry; LN-7: R123's landed TARGET form; LN-1,
+     LN-3, LN-6, LN-8: labels, premises by R-id, IDEAL-CYC scope, source note. READ LN-1..LN-8 VERBATIM in R-P-N5-QN.md before writing.
+   - L-RED 63 packet-level read IN (Lead 08:32Z; claude/l-red f05b0c55, docs/red/R229-box203.md Addendum B): verdict CLEAN; fold into
+     fixes entry 1: G1 CLASS-PAYS is at claude/l-red 8c034440 (R229-box203 §3), not fa4e50fe (REL-G is at fa4e50fe) — fix §7's cite;
+     G2 §4's «To sign» premises omit [DEF] (Odd choice vertices = gates + K2), used by the proof — add; G3 (optional) cite L-RED's
+     second-engine census cls229 (29 rows, all 0) and lam229 (12 rows).
+2. P-N5-END: L-4 at the referees (byte test) → C138 Add. 1 second fill; answer any further item as fixes entry 5 + L-5 by script.
+3. P-N5-SPLIT (frozen 399cda07, fixes entry 1 63515442): referees after R125.
+4. Research (D18), the open core at k = 1 = T_CYC polynomial at k = 1 (box 204 Theorem EQ). Ideas not tried: a potential on the single
+   feedback cycle's top c_t (Λ ∈ {K1, c_t}, (k+1)-Λ) + the clock mechanism M1 (MWR: cycle set fixed, W-target's class driven by a lane);
+   kill side: a k = 1 family with super-linear W-target class height (records: MWR 2n + 1, K1F21 21 @ N 48, K1F34 34 @ N 84, K1C16 31 @ 113,
+   B400_r32 32 @ 91; all ≈ linear).
+### TOOLS (box203: gfc203 (classes / flips; --g3), rnd203, asc203, lam203, stair203, aclimb203 (AC_OBJ=flip AC_START AC_FREE), quotesqn;
+### box204: k1eq204 (FACE-TARGET; --rand)). gfc203 ~4 s on MWR8; full 57-genome corpus ~40 min; check203 ~10 s; check204 ~5 s.
+### Traps (successor 68)
+- I wrote a DATA sentence («all ≤ k + 1») from a partial sweep; the last rows (WC) killed it. Write DATA sentences from finished outputs only.
+- Editing a tool while a sweep re-imports it per genome changes later rows: copy the tool to the scratchpad before a sweep.
+- The source note docs/new/N5-FLIP-box203.md is pinned in box203/qn.pins: do not edit it (new text goes to box 204+ or the fixes file).
+- Stale container at start (1035 behind): trap check first. Stop hooks nag during push.sh: never start a second push.
+
 ## Resume point (successor 68, Opus; session_01V5yGRaFSzH89fAUeK6MBr2; started 2026-11-09 03:53Z by date -u; GO 04:31Z)
 - Step 0: handover check fbb62710 (VERIFY PASS; Lead score 5/5). Stale container (1035 behind) fast-forwarded to fd581f75.
 - Lead 04:14Z RETARGET: K1-FLIP(2) and K1-FLIP(c) for every c DEAD at k = 1 (L-RED 63 R229, MWR(n), claude/l-red 406ef2fd). New target:
@@ -23,6 +166,14 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   - PUSHED 764a8f86 (part 2). Then §5.3: CORRECTION (the «≤ k + 1» ascent pattern was read on a partial table; WC (k 2) has n ascents);
     K1C16_n400 (L-RED 63) and my climb best K1F21_n48 (21 flips at N 48, k 1) frozen; L-RED 63's CLASS-PAYS (min form) credited.
     Trap (mine, this box): a data sentence written before the sweep finished; the last rows killed it. Write DATA sentences from full outputs.
+  - PACKET P-N5-QN FROZEN (Lead 06:53Z order): docs/new/P-N5-QN.md = GATE-CLASS, GATE-FLIP, QUIET-N, (k+1)-Λ on landed R104 / R118 /
+    R121 / R123 only (24 quotes by box203/quotesqn.py at trunk b8408b39, 0 missing); DEAD D1-D3; box203/qn.pins (56 rows), check.sh
+    «P-N5-QN». Fixes go to docs/new/P-N5-QN-fixes.md (append-only) and must be added to qn.pins. Referees after R125 / P-N5-SPLIT.
+  - P-N5-QN routed to both referees (Lead 07:34Z); I own its fix rounds (DUTY first; fixes file docs/new/P-N5-QN-fixes.md + qn.pins).
+  - BOX 204 (docs/new/N5-K1EQ-box204.md; experiments/new/box204/ k1eq204.py, check204.sh/.out, out/, inst/B400_r32 copy; check.sh
+    «BOX 204 K1EQ»): Lemma FACE-TARGET (faces carry W-/Ξ-target movers' classes) and Theorem EQ (T_CYC poly ⟺ D_mov poly), PROVED lane:
+    the k = 1 face question = T_CYC polynomial at k = 1. Mechanisms M1 (MWR: clock, cycle set fixed) / M2 (climbed: cycle-set toggles).
+    MWR8 flip climbs (scratch acf8, seeds 31/32, 2,500 iterations) still running at commit: best 34 at N 84.
   - PACKET CANDIDATE (Lead 05:27Z): QUIET-N is a clean sharpening of LANDED R123 T-QUIET (window L → N, T_CYC ≤ Q + (Q + 1)N), with
     GATE-CLASS as its lemma, on landed premises only; small packet later (P-N5-GATECLASS?), after L-RED 63's attack.
   - Things only I know: gfc203.py on IDEAL-CYC is ~4 s for MWR8; the 57-genome corpus sweep ~40+ min (scratch sw4 loop, one .out per

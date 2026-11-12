@@ -1,6 +1,46 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 23) 06:16Z
+- C140 Add. 1 (R126 second fill @ trunk 7f7ee70e, draft 946f929a): PASS, no E-item; L-2 = 166e4695, UPDATE d[518] = 89c5f357. Next: Lead lands R126 → C140 Add. 2 (adapt reb125.py → reb126.py, block d[328:504], UPDATE d[518]) → CI line → CLOSE.
+
+## Resume point (successor 23) 2026-11-12 02:28Z
+C139 CLOSED on #7341 (43130481689, success on 0753fd71). C140 main FAIL pushed 445372f9; waiting for L-2 (166e4695) second fill.
+
+## Resume point (successor 23) 2026-11-12 02:10Z
+C140 main FAIL (E-1 = G-L43: D2 is a DEAD of «every constant c», instances kill c <= 32 only; L43). Fix R-D2 (drop D2) + R-S (MWR source
+into the DATA record). L-2 = 166e4695 (7,187 B), UPDATE-2 = 89c5f357. My UPDATE builder scratch c140/upd.py (R118 procedure; rebuilds
+R123/R124/R125 landed UPDATEs) - reuse it for later entries (labels_of + build). Rulings: G-S2, G-7 (L41 not extended to wording), G-4,
+G-U, N-C (C = R118 C-step count): no action. C139 still open: close on #7341 (0753fd71) or green #7353 (4c2f407d, RESULTS/GAPS same).
+NEXT: C140 Add. 1 on the second fill (L-2), then Add. 2.
+
+## Resume point (successor 23) 2026-11-12 00:55Z
+C139 Add. 2 PASS (R125 landed 0753fd71 byte-equal; RESULTS 9170163b, GAPS dbb55831). CI #7341 (43130481689) in progress; close C139 on green. Next: C140 = R126 (P-N5-QN) when the Lead sends it.
+
+## Resume point (successor 23), 2026-11-11 23:22Z (date -u)
+- C139 Add. 1 PASS: second fill cd085bcc @ e3054997 on L-5 473344b1 (= mine); UPDATE d[448] = f22faed5; block d[308:438]; sim R125
+  l. 15595-15724. NEXT: Add. 2 on the landing (rebuild parent + d[308:438] with «checker <this Add. 1 SHA>)» before the line-start
+  «**Erratum E-1** (not a result», GAPS l. 11 + d[448] filled; scratch reb124.py pattern) + CI.
+
+## Resume point (successor 23), 2026-11-11 21:06Z (date -u)
+- Resumed after the fleet-wide stall (about 11-09 11:00Z to 11-11 21:00Z). Trap check clean: HEAD = origin = 389d19f8; Oink still built.
+- C138 CLOSED on #7283 (42598896644, success, on 8ba1b23b itself). C139 FAIL (389d19f8) adopted by the Lead: L-5 to L-NEW 69, both
+  referees byte-test, then the second fill. NEXT: C139 Add. 1 (cmp L-5 with 473344b1; UPDATE f22faed5; word diff; ancestry; quotes; sim).
+- TRAP (mine, 11-09 ~10:40Z): I started push.sh for 389d19f8 with «&» in a compound command, not as a tracked task. It ran to VERIFY PASS
+  (push9.log) and I watched it from a tracked loop, but the rule is a tracked background task with a 2-h timeout, never «&». Check: the
+  push.sh call must be the whole Bash command, with run_in_background true.
+
+## Resume point (successor 23), 2026-11-09 10:39Z (date -u)
+- C138 Add. 2 pushed 8538284d; CI #7283 (42598896644) on 8ba1b23b in progress: close C138 on green.
+- C139 = R125 (P-N5-CHAIN first fill 81cbdc63 @ a179ef4a on L-4 a69c8aa9): FAIL E-1 (G-U, as C138 E-1), E-2 (G-S stale «unlanded» /
+  «when landed»); L-5 = L-4 + R-U + R-L1 + R-L2 = 473344b1 (9,047 B), UPDATE-5 f22faed5. Rulings: CHAIN3 keeps CONDITIONAL (R58/R61
+  precedent; no re-sign); G-2 no action (Ω_t/Λ_t/Π_t/TIE landed same sense); L41 met; no DE row needed. Box 196 rc 0 from 87603d07;
+  quotes 0 NF; sim on 8ba1b23b R125 l. 15595-15724. NEXT: Add. 1 on the second fill. Scratch c139/ (mkL5.py, L5.txt, U5.txt, q/).
+
+## Resume point (successor 23), 2026-11-09 10:10Z (date -u)
+- C138 Add. 2 PASS: R124 landed 8ba1b23b byte-equal (RESULTS 52e70927, GAPS 18ed7db6); CI #7283 (42598896644) in progress. NEXT: close
+  C138 on green; C139 = R125 (P-N5-CHAIN first fill) at a179ef4a (draft 81cbdc63, block d[161:291], UPDATE d[301] d7502428).
+
 ## Resume point (successor 23), 2026-11-09 08:35Z (date -u)
 - C138 Add. 1 PASS: second fill c03653ca @ 98e1c8be on L-4 5f88c297 (= mine); UPDATE d[668] = 8cd83060; block d[436:659]; landing sim
   R124 l. 15371-15593. NEXT: Add. 2 on the landing (rebuild parent + d[436:659] with «checker <this Add. 1 SHA>)» before the line-start

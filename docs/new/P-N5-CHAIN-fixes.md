@@ -92,3 +92,28 @@
   sha1 (6e613ba7…), L-3's sha1 (c484795c…), each old string exactly once where applied (R-G3, R-B3 also once in L-3; R-W's absent from L-3), one line, no «|», «(» = «)». Result: sha1
   a69c8aa96fb0b67c6c0a3f6d11670a0b57ba9331, 9,082 B, 174 «(» = 174 «)». L-3 kept (superseded).
 - chain.pins: this file re-pinned; L-4 and mkl4_196.py added.
+
+## Fixes entry 4 (L-NEW successor 69; line-only; CHECKER C139, claude/checker 389d19f8, docs/checker/C139.md §2 and §4; Lead 21:09Z 2026-11-11: «Write fixes entry 4 (line-only, append-only) and line L-5 by script: L-4 with R-U, R-L1 and R-L2 applied in that order»; written 2026-11-11 by date -u)
+- C139 verdict: FAIL on two line-only items of L-4 (a69c8aa9); the mathematics, DATA, tools and placement PASS. Both items ACCEPTED as
+  ruled. No statement, label, hypothesis, proof or DATA number changes; the packet stays frozen (l-new 93531b03, sha1 6e613ba7).
+- E-1 (scope-tail status words, the C138 E-1 / C134 E-3 class): fix R-U = C138's R-U with «P-N5-CHAIN» in place of «P-N5-END»; the tail
+  now reads «…, so this is not M4; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim», the landed R123 / R124 form.
+- E-2 (status words stale at landing: R121 and R124 have landed): fixes R-L1 and R-L2, C139 §4's strings verbatim. Lead / CHECKER ruling:
+  CHAIN3 KEEPS «CONDITIONAL», with its premises named as RESULTS R121 / R124; no label change, no G-2 action, no Dead-ends row.
+### Line changes (applied in the order R-U, R-L1, R-L2; each old string exactly once in the line it is applied to)
+- R-U: «; G-N5-TIME stays OPEN, N5′-xi stays a CANDIDATE (D1); TARGET.md §2 (M4) asks for an algorithm polynomial on every parity game
+  and §4 says a bound on a restricted class is not M4: not M3, not M4, not a step-4 pass, not a TARGET.md claim (P-N5-CHAIN» → «; N5′-xi
+  stays a CANDIDATE (D1); TARGET.md §2 (M4) asks for an algorithm polynomial on every parity game and §4 says a bound on a restricted
+  class is not M4, so this is not M4; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim (P-N5-CHAIN»
+- R-L1: «CONDITIONAL on the unlanded lane packets P-N5-END (ENDGAME-3) and P-N5-ASC §4 (its abstract core and F′; RESULTS R121 when
+  landed))» → «CONDITIONAL on P-N5-END's Theorem ENDGAME-3 (RESULTS R124) and P-N5-ASC §4 (its abstract core and F′; RESULTS R121))»
+- R-L2: «lane packets, not landed: P-N5-END's Theorem ENDGAME-3 (frozen at l-new 131b4c1c, REFEREE 29 SIGN) for CHAIN3, P-N5-ASC §4's
+  game-free abstract core CS(M) and its constants F′_B (RESULTS R121 when landed) for HUB-ASC-G3 and CHAIN3;» → «RESULTS R124's Theorem
+  ENDGAME-3 (P-N5-END) for CHAIN3, RESULTS R121's game-free abstract core CS(M) (Lemma SKELETON, Theorem HUB-ASC(B); P-N5-ASC §4) and its
+  constants F′_B for HUB-ASC-G3 and CHAIN3;»
+### Line L-5 (written by script)
+- docs/new/P-N5-CHAIN-line-L5.txt = L-4 + R-U + R-L1 + R-L2, by experiments/new/box196/mkl5_196.py (from the repo root): asserts the
+  packet's sha1 (6e613ba7…), L-4's sha1 (a69c8aa9…), each old string once, one line, no «|», «(» = «)», none of «unlanded» / «not landed»
+  / «when landed» / «to land», and the result. Intermediates 62c9c3f4 (9,093 B), fa545618 (9,078 B), equal to C139 §4. Result: sha1
+  473344b1149d4b44d87bdb917607b618d05d57ce, 9,047 B, 175 «(» = 175 «)»: EQUAL to C139 §4's expected L-5. L-4 kept (superseded).
+- chain.pins: this file re-pinned; L-5 and mkl5_196.py added.

@@ -1,0 +1,19 @@
+MWR4_2.json ctrl 0 movers sumT 30 T 30 lam 0 ch 240 elfall 0 topfall 0 pfail 0 cfail 0 ufail 0 maxdepth 1 maxdeep_v 4 maxDE 10 loud 30 maxloud 1 | d0 141 d1 99 | L0 29 L1 1
+k1fail_202.json ctrl 0 movers sumT 4 T 4 lam 0 ch 15 elfall 0 topfall 0 pfail 0 cfail 0 ufail 0 maxdepth 0 maxdeep_v 0 maxDE 3 loud 3 maxloud 0 | d0 15 | L0 3
+K1D4_n48.json ctrl 0 movers sumT 23 T 23 lam 88 ch 295 elfall 0 topfall 0 pfail 0 cfail 0 ufail 0 maxdepth 4 maxdeep_v 6 maxDE 10 loud 12 maxloud 0 | d0 104 d1 119 d2 36 d4 36 | L-1 2 L0 10
+WC8_2.json ctrl 0 movers sumT 4 T 4 lam 0 ch 35 elfall 0 topfall 0 pfail 0 cfail 0 ufail 0 maxdepth 8 maxdeep_v 1 maxDE 3 loud 4 maxloud 8 | d0 34 d8 1 | L0 3 L8 1
+all MWR4_2.json ctrl 0 all sumT 30 T 30 lam 0 ch 821 elfall 0 topfall 0 pfail 0 cfail 0 ufail 0 maxdepth 1 maxdeep_v 4 maxDE 10 loud 30 maxloud 1 | d0 496 d1 325 | L0 29 L1 1
+k1 seed 66 genomes 100 ctrl 0 movers sumT 193 T 4 lam 489 ch 58 elfall 0 topfall 0 pfail 0 cfail 0 ufail 0 maxdepth 1 maxdeep_v 1 maxDE 3 loud 109 maxloud 0 | d0 56 d1 2 | L-1 96 L0 13
+  genomes by maxdepth: {0: 98, 1: 2}
+ctrl1 MWR4_2.json ctrl 1 movers sumT 30 T 30 lam 0 ch 240 elfall 96 topfall 20 pfail 96 cfail 0 ufail 212 maxdepth 1 maxdeep_v 9 maxDE 10 loud 30 maxloud 0 | d0 75 d1 165 | L0 30
+K1F34_n84.json ctrl 0 genomes 1 loud 52 ldfail 1 maxld 3 maxA 2 gap 1
+WC8_2.json ctrl 0 genomes 1 loud 4 ldfail 0 maxld 8 maxA 8 gap 0
+ctrl2 WC8_2.json ctrl 1 genomes 1 loud 4 ldfail 1 maxld 8 maxA 7 gap 1
+K1L7_n48.json ctrl 0 genomes 1 cases 1940 nop 0 lamp 0 symp 0 dep 0 kind 0
+WC8_2.json ctrl 0 genomes 1 cases 146 nop 0 lamp 0 symp 0 dep 0 kind 0
+k1 seed 69 ctrl 0 genomes 50 cases 217 nop 0 lamp 0 symp 0 dep 0 kind 0
+ctrl3 K1L7_n48.json ctrl 1 genomes 1 cases 1940 nop 0 lamp 0 symp 1277 dep 0 kind 1268
+K1F21_n48.json {'T': 31, 'L': 1, 'b': 6, 'Dtop': 22, 'F0': 22, 'excess': 0, 'pfall': 0}
+K1L10_n48.json {'T': 31, 'L': 1, 'b': 6, 'Dtop': 14, 'F0': 22, 'excess': -8, 'pfall': 0}
+BLKX23_n48.json {'T': 28, 'L': 1, 'b': 6, 'Dtop': 23, 'F0': 22, 'excess': 1, 'pfall': 0}
+CW4_n.json k 1 N 51 M 106 N+M 157 b 6 Dtop 12 D_mov 12 T 30
