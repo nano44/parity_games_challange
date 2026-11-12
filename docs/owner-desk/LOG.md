@@ -720,3 +720,8 @@ Status (verbatim): «N5 in polynomial time remains an open problem. No proof is 
 
 ## 2026-11-12T19:56Z Lead EVENT report (19:57Z, summary; relayed to the owner at once per D21/L51)
 Fable 5.2 weekly limit reached: Fable sessions report «You've reached your Fable limit … rejected»; type seven_day_overage_included; resets 2026-11-18 21:00Z; isUsingOverage false, no paid overage. Since ~19:38Z Fable lanes stopped (L-SI 52, L-NEW 73, REFEREE 33 parked with handovers; L-COMP 20, L-FORMAL 2, L-RED 67, L-RED-B 2, REFEREE-2 38 stopped mid-work, last commits on origin, some local results may be redone). Opus 5.5 works (Lead, CHECKER, L-LOWER, OWNER-DESK); Opus weekly in warning. Lead reading L53: successors on Opus 5.5, maximum effort until 2026-11-14 10:05Z; Lead not buying usage credits (owner's decision). Risk: if the Opus weekly limit is reached, whole fleet incl. the Lead stops until 2026-11-18 21:00Z. Owner may say «stop» or «slow down to N lanes». State: R126, R127 landed; R128 line fix re-signed by one referee; box 208 frozen for two referees and Lean-proved at lane level (model only); WRAP passed referee pre-read, no gap; N5 polynomial time OPEN. Needs: none unless a different spend level.
+
+## 2026-11-12T22:21Z owner message (verbatim)
+> how is fable 5.2 doing? Do we feel a different?
+
+Answered from the Lead reports of 2026-11-12 (10:40Z-19:57Z) as an OWNER-DESK reading; relayed to the Lead asking for a Lead reading.
