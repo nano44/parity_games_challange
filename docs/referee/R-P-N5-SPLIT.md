@@ -167,3 +167,6 @@ split_replay.py; split_logs/: sweep.out, check199_rerun.out.
   maxSPL 5 in split199.out. The parenthesis gives witnesses, not all of them; not false. If anything is touched again, «(FW6_4, FW8_4,
   W86_n77)».
 - Verdict: fixes entries 3-4 CORRECT. **Line L-3 MATCHES** (= L-1 + R-D7a + R-U127 exactly). Statements and labels unchanged (§0; §C).
+- §E correction (2026-11-12T10:02Z by date -u; Lead 10:07Z): the «Optional» note above is WITHDRAWN. split199.out row 28 at 621e6b77 gives W86_n77
+  maxSPL 2 (maxc 5); maxSPL 5 occurs only on FW6_4 and FW8_4, as the line says. My error: two awk outputs printed back to back, and
+  «5 W86_n77» was a maxc line, not maxSPL. The verdict (L-3 MATCHES) is unaffected.
