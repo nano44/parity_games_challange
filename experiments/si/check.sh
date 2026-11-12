@@ -1307,3 +1307,5 @@ bash box102/check102.sh
 bash box103/check103.sh
 # box 104 (D18 big map: Lemma WRAP, FREE-REACH, Friedmann's counter under N5'-xi; frozen outputs; docs/si/box104-map.md)
 bash box104/check104.sh
+# box 105 (O2, proof side: KEY(G*), Lemma KEY-MODEL, KEY-MONO*, DEPTH-BOUND*; quotes; D1 when present; docs/si/box105-key.md)
+bash box105/check105.sh
