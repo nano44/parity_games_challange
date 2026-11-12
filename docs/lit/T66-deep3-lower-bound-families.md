@@ -225,3 +225,26 @@ above pr(esc). PDFs opened 2026-11-12 (sha256 prefixes in notes/L-LIT.md).
   and has signed costs with the top scale against the escapes. None is a family for Howard's rule. With Addendum B: every published
   construction checked so far fails E-DOM ([F09], [F11] §6, the four PGSolver ports, Zadeh, Cunningham, ranking, symmetric), and
   Mei's fails its cost analogue. «No E-DOM-compatible exponential family is published» stays a search result, not a theorem.
+
+## Addendum D (2026-11-12, date -u in the commit; append-only): [F11] Table 4 as printed has one priority twice; Figure 4 and Fact 6.1 use other values; no count of §5.1 changes (Lead 14:04Z, from L-COMP 19, claude/l-comp 90874f76 box 43)
+- L-COMP's observation is right, and §3's quote is faithful: the collision is in the SOURCE. [F11] = arXiv 1106.0778 v2, Table 4 (PDF
+  p.15) prints «a_i … 4n + 2i + 2» and «g_i … 4i + 4», so Ω(g_n) = Ω(a_1) = 4n + 4. This contradicts the paper's own convention
+  (§2, PDF p.3: «W.l.o.g. we assume Ω to be injective, i.e. there are no two different nodes with the same priority») and its Fact
+  6.1 (PDF p.15: «12·n + 8 as highest priority»; Table 4's h_n is 8n + 4n + 10 = 12n + 10).
+- The same paper's Figure 4 (PDF p.16, the game G_3) prints d_i : 3, 7, 11; e_i : 4, 8, 12; g_i : 6, 10, 14; t_1 : 15; a_1 : 16; …;
+  a_6 : 26; c : 28; s : 30; r : 32; k_i : 33, 37, 41; f_i : 35, 39, 43; h_i : 36, 40, 44. That is: d_i = 4i − 1, e_i = 4i, g_i = 4i + 2,
+  k_i = 8n + 4i + 5, f_i = 8n + 4i + 7, h_i = 8n + 4i + 8 (each 2 below Table 4), and t_i, a_i, c, s, r as in Table 4. These values are
+  pairwise distinct and have top priority 12n + 8, as Fact 6.1 says. Schewe–Trivedi–Varghese, arXiv 1501.06484 v1, Figure 2 (PDF
+  p.8), reproduce G_3 with the same numbers as Figure 4. READING: Table 4's six formulas for d, e, g, k, f, h are off by 2 (a
+  misprint); Figure 4 and Fact 6.1 are the consistent version.
+- What changes. The two versions order every pair of vertices the same way except that g_n lies above t_1 and ties with a_1 in
+  Table 4's version, and below both in Figure 4's. The remark quoted in §3 («the uniqueness of priorities in the game, implying
+  that there are no priorities between f_i and h_i») is true in both (f_i, h_i are adjacent: +9, +10 or +7, +8). The E-DOM test of §3
+  and §5.2 is unchanged: for i < j the odd f_j, k_j lie above h_i in both versions.
+- DATA (docs/lit/T66-fig4-check.py; engine = T66-depth-check.py's, experiments/si/si.py; unit: Howard run from ι_(G_N)):
+  `python3 -I docs/lit/T66-fig4-check.py 1 7 3`. Table 4's version has 10N + 3 distinct priorities on 10N + 4 vertices, Figure 4's
+  has 10N + 4. For N = 1 … 7 every counter of §5.1's table (T, C, flips, deep (c = 3), max depth, unm, flips of e_1) is THE SAME
+  in both versions (T = 8, 26, 62, 134, 278, 566, 1,142). So §5.1, Addendum A and T67 stand as written; the tie was broken by the
+  engines' vertex order without effect. N = 8 and the c = 9 column were not re-run for Figure 4's version.
+- For users of `lmcs(n)` in T66-depth-check.py: it implements Table 4 as printed (NOT injective). Use Figure 4's values where a tool
+  requires distinct priorities (the six replacements are in T66-fig4-check.py).

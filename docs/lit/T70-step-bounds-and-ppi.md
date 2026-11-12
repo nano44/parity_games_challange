@@ -150,3 +150,36 @@ Setting: Statement ABS's games (target t, weights ≥ 0, no cycle of weight 0). 
 - NEEDS: Lead: relay finding 1-2 to the box-208 checkers and to L-NEW (a citation for «strategy improvement is polynomial on
   non-negative shortest-path games» must name the orientation; Lemma 19 is the mirror); decide whether §3.4's second lead (the
   Odd-improves run on Γ(G)) is worth a designer's box. Owner: nothing.
+
+## Addendum A (2026-11-12, date -u in the commit; append-only): lead 7 (b) from the literature side — is Dijkstra-order settling for the Odd-improving half of a dual or symmetric strategy improvement published? (Lead 14:25Z, its clock)
+Sources opened for this addendum: Schewe, Trivedi, Varghese, «Symmetric strategy improvement», arXiv 1501.06484 v1 (ICALP 2015
+version: DOI 10.1007/978-3-662-47666-6_31, not opened); van Dijk, Loho, Maat, arXiv 2309.02223 (re-opened); §1's sources.
+«Baier et al.» (your message): I found no paper of Baier on symmetric or dual strategy improvement, neither in my searches nor in
+the reference lists of these two papers; nothing opened under that name.
+| question | label | by what |
+| --- | --- | --- |
+| the minimiser improves against the maximiser's exact answer, non-negative-weight reachability games: settling in the order of optimal values, linearly many steps | KNOWN (statement, proof sketch) on reachability-time games; IMPLIED for finite games | Jurdziński–Trivedi Lemma 19; §2.2 above |
+| symmetric strategy improvement, once ONE player's strategy is optimal: at most linearly many further iterations | KNOWN as a statement, no proof in the opened version | Schewe–Trivedi–Varghese Theorem 3.7 (PDF p.7): «The difference in the number of iterations of Algorithm 5 and Algorithm 6 is at most linear in the number of states of G.» (Algorithm 6 stops as soon as Prof(σ) or Prof(τ) is empty) |
+| symmetric strategy improvement on Friedmann's 1-sink games: polynomially many steps | KNOWN as an informal argument + experiments | the same paper §4 (PDF p.9-10): «Player Min will move to the right in the j most significant positions after 2j improvement steps»; «We have not formalised these arguments on other instances»; abstract: «symmetric strategy improvement defies Friedmann's traps» |
+| symmetric strategy improvement on sink parity games in general: a polynomial bound, or any settling order | CONTRADICTS (for the symmetric rule) | van Dijk–Loho–Maat Theorem 1 (PDF p.2): «the number of iterations of symmetric strategy improvement in parity games, mean payoff games and discounted payoff games is exponential … independently of the improvement rule»; p.3: «The key insight here is that the optimal counterstrategy to a bad strategy can also be a bad strategy itself.» Their games are sink parity games (Definition 2, PDF p.4) and violate E-DOM (T66 Addendum C) |
+| the Odd-improving half settles in Dijkstra's order on VJ-type games with non-negative class-level weights (E-DOM games, Γ(G)) | NEW if proved; NOT FOUND (searched: these two papers and their reference lists by title, T69 §6, T70 §1) | – |
+| alternating / dual potential iteration (PPI-alt): termination | OPEN in its source | Cadilhac–Casares–Ohlmann Question 18 («Do alternating fast value iterations terminate over simple games?»); 2 rounds on Friedmann's family (App. C) |
+READING (what the three published mechanisms are, and which could serve N5):
+- Jurdziński–Trivedi: value order. The improving minimiser settles vertices in the order of their optimal values because the
+  maximiser's answer is exact and weights are ≥ 0 (§2.2). This is the only Dijkstra-order statement found, and it is one-sided
+  (the other player does not improve; it answers optimally to every strategy).
+- Schewe–Trivedi–Varghese: guidance by the opponent's best response. A player switches only to edges that are profitable AND used
+  by its optimal counterstrategy to the opponent's current strategy (Algorithm 6 line 5, PDF p.7: «σ_(i+1) := σ_i^P for P ⊆
+  Prof(σ) ∩ σ^c_(τ_i)»; superscripts restored from the layout). Theorem 3.7 is the
+  statement closest to «Odd improves against an optimal Even»: once Even is optimal, Odd's guidance is a fixed optimal strategy and
+  Odd needs linearly many steps. The paper gives no proof and no order of settling; it is not a Dijkstra argument.
+- van Dijk–Loho–Maat: the guidance itself can be bad while NEITHER player is optimal, on sink games, for every rule. So Theorem 3.7
+  cannot be extended to «polynomially many steps before one player is optimal» on sink parity games.
+- For N5 (a symmetric rule; R54 P-N5-DUAL): no published result gives Dijkstra-order settling for the Odd half on VJ games. The two
+  usable facts are one-sided: (i) against an EXACT opponent and with weights ≥ 0 the improving minimiser is linear (Lemma 19, §2.2);
+  (ii) against an OPTIMAL opponent strategy the symmetric rule is linear (Theorem 3.7, unproved in the source). Whether N5's Odd
+  half on Γ(G) is in situation (i) at class level depends on fleet facts (analogues of (K1)-(K5) with the roles exchanged), not on
+  literature. The exponential symmetric family does not live in the genome class (E-DOM fails, T66 Addendum C), so it does not
+  decide the question either way.
+Limits: Schewe–Trivedi–Varghese read in the arXiv v1 text (abstract, §3.1-§3.2, §4); the ICALP version may contain a proof of
+Theorem 3.7 (not opened). I did not open the papers they cite for one-sided analyses beyond those already in T69 / T70.

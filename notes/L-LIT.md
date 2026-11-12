@@ -1,25 +1,36 @@
 # L-LIT notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (T70, 2026-11-12 14:06Z by date -u; session_01V5yGRYSuVcAoW1mpE9SL5h; D18, D1, D21; WORKING, not parked)
-DONE since the T69 push (3b69f530; Lead received it 13:46Z, its clock, and gave T70):
-- T70 docs/lit/T70-step-bounds-and-ppi.md + docs/lit/T69-mirror-check.py + T69 Addendum A + T69-summary «Update».
-  (1) Robustness of «NEW»: a LINEAR step bound for all-switch strategy improvement on two-player non-negative-weight reachability
-  games is PUBLISHED in the MIRROR orientation (the minimiser improves): Jurdziński–Trivedi arXiv 0907.3414 v1 Lemma 19 (proof sketch
-  p.15). For finite games ≤ n − 1 steps by a Dijkstra-order induction (my READING, T70 §2.2; scratch DATA all 0). Box 208's
-  orientation (the maximiser improves) is NOT covered; the induction fails there (`T69-mirror-check.py ctrl 8`: the vertex with the
-  second-smallest optimal value settles last). ABS stays NEW (searched), weakly. Schewe CSL 2008 (opened, CISPA asset URL) leaves the
-  number of updates open; Rutkowski arXiv 1107.1199 is not a strategy improvement.
-  (2) LEVEL vs PPI (Cadilhac–Casares–Ohlmann): the game of ONE PPI round (En+ of a simple game) is an ABS game; PPI solves it by one
-  Dijkstra pass, ABS bounds Howard's steps on it; LEVEL's (m_t, −|FRONT_t|) is an analysis quantity, not PPI's labelling; nothing
-  transfers to or from the number of PPI rounds (Question 19).
-- T69 Addendum A1: ABS / LEVEL are all-switch only (Björklund–Vorobyov §10: single-switch exponential on acyclic LSP; R17 (f)).
+## Resume point (HANDOVER, T69-T70, 2026-11-12 14:26Z by date -u; session_01V5yGRYSuVcAoW1mpE9SL5h; D18, D1, D21; PARKED on the Lead's word at ~420k context)
+Branch state: every commit below is on origin/claude/l-lit (scripts/push.sh exit 0, VERIFY PASS each time; lean NOT RUN, no lakefile;
+Oink smoke NOT RUN, Oink not built). Trunk is NOT merged into this branch (5 ahead / 1662 behind 471aba45 at my 12:50Z check; more
+behind now): read NOW / DECISIONS / GAPS / RESULTS with `git show origin/claude/vibrant-johnson-nxvvxo:<file>`.
+DONE (this session):
+- a7c286d2 handover check (Lead accepted, «go» 13:10Z its clock).
+- 3b69f530 T69 docs/lit/T69-dijkstra-potentials-policy-iteration.md + T69-summary.md; T66 Addendum C (T68 item 3: ranking, symmetric,
+  Mei families against E-DOM). Object: L-NEW box 208 (claude/l-new 8db300fe, docs/new/N5-LEVEL-box208.md, sha1 55e65381).
+- 4a0db9d1 T70 docs/lit/T70-step-bounds-and-ppi.md + docs/lit/T69-mirror-check.py + T69 Addendum A + T69-summary «Update».
+- (last push of this session; SHA in git log) T66 Addendum D + docs/lit/T66-fig4-check.py ([F11] Table 4 misprint: g_n = a_1 = 4n + 4;
+  Figure 4 / Fact 6.1 values are injective; counters identical N 1-7) and T70 Addendum A (dual / symmetric strategy improvement).
+VERDICTS TO CARRY (details and quotes in the files):
+- Two-player Dijkstra for weights ≥ 0: KNOWN (Khachiyan et al. DIMACS TR 2007-02 Thm 1; Games on Graphs Thm 5.14; Bertsekas §5.3;
+  Schewe CSL 2008 Thm 4). Strategy iteration on that class: KNOWN as an algorithm, finite termination only (Hansen–Ibsen-Jensen–
+  Miltersen Thm 2.5; Bertsekas §5.2).
+- MIRROR orientation (the minimiser improves, exact maximiser): linear step bound PUBLISHED (Jurdziński–Trivedi arXiv 0907.3414
+  Lemma 19, proof sketch); for finite games ≤ n − 1 steps by a Dijkstra-order induction (MY reading, T70 §2.2, unrefereed).
+- ABS orientation = box 208's (the maximiser improves): no bound found; the mirror induction FAILS (T69-mirror-check.py ctrl 8).
+  Statement ABS, LEVEL, PLATEAU, FVS-TCYC: NEW as searched (weakly); all-switch only (Björklund–Vorobyov §10; R17 (f)).
+- Fixed k: SOLVING parity games is KNOWN (Gajarský et al. Thm 3, 4; Mnich–Röglin–Rösner; DAG-width; treewidth); Howard's steps at
+  fixed k: not found (nearest: Auger–Coucheney–Strozecki Lemma 5).
+- No CONTRADICTION with Friedmann / Zhong–Ye / Hansen–Zwick; break points: (K2) + (K3) (d) + NO-TIE (E-DOM), and (L3) (β) / (L5).
+- LEVEL is not PPI's potential under Howard's rule; one PPI round is an ABS game; nothing transfers to or from PPI's rounds.
+- Symmetric / dual: Schewe–Trivedi–Varghese Thm 3.7 (linear once one player is optimal; no proof in arXiv v1); van Dijk–Loho–Maat
+  Thm 1 (symmetric SI exponential on sink parity games for every rule); Dijkstra-order settling of the Odd half on VJ games: not found.
 IN FLIGHT: nothing half-written.
-OPEN LEADS (only on a Lead question): the Odd-improves (MIRROR) run on Γ(G): would classes settle in Dijkstra order? (T70 §3.4);
-  which Friedmann family the 21N-state instances of Cadilhac–Casares–Ohlmann App. C encode; a tight example for ABS (none with more
-  than n steps found on random sets); Jurdziński–Trivedi's proof sketch for Algorithm 2 (induction on D does not cover Max regions,
-  my READING).
-NEEDS: none from the owner.
+OPEN LEADS (only on a Lead question): ICALP 2015 version of Schewe–Trivedi–Varghese (a proof of Thm 3.7?); which Friedmann family
+  the 21N-state instances of Cadilhac–Casares–Ohlmann App. C encode; a tight example for ABS; Jurdziński–Trivedi's sketch for
+  Algorithm 2 (induction on D vs on the value, my READING); [F11] Table 4 vs Figure 4 at N = 8 and c = 9 (not re-run).
+NEEDS: none from the owner (optional library: Hansen–Kaplan–Zwick SODA 2014, Obdržálek CAV 2003, plus T65's list).
 
 ## Previous resume point (T69 + T68 item 3, 2026-11-12 13:30Z by date -u; same session)
 Branch state: handover check a7c286d2 pushed (scripts/push.sh exit 0, VERIFY PASS; lean NOT RUN, no lakefile; Oink smoke NOT RUN, Oink
@@ -204,6 +215,10 @@ NEEDS: none from the owner.
   dagwidth_full.pdf (Berwanger et al.), archive.dimacs.rutgers.edu/archive/TechnicalReports/TechReports/2007/2007-02.pdf.
   The container clock (date -u) ran about 5 minutes behind the Lead's stamps today; order events by commits, not by clocks.
   The abstract form (A1)-(A5) in T69 §1 is MY wording of box 208, not L-NEW's; say so when citing it.
+- Park state: pushes took 14-17 minutes each today (four pushes). The Lead's stamps run ~5 minutes ahead of this container's
+  date -u. T66-depth-check.py's lmcs(n) is Table 4 AS PRINTED (one duplicate priority); T66-fig4-check.py holds the six replacements
+  for Figure 4's injective values. pdftotext loses superscripts and fractions (Schewe p.14 bound, STV Algorithm 6): quotes of
+  formulas say «restored from the layout».
 - T70: the CISPA publication pages serve PDFs from /_assets/paper.<hash>.pdf (the old /publications/*.pdf links are 404): fetch the
   page, grep href. My first test generator hung (asked for 3 distinct successors on a 3-vertex graph): cap k at n − 1 and run every
   new script with `timeout`. Random shortest-path games give runs of a few steps only: a counter that is 0 on them proves little;
@@ -764,6 +779,12 @@ NEEDS: none from the owner.
   Björklund–Vorobyov (95a6b406f01db6b4; §10 p.226). DATA: docs/lit/T69-mirror-check.py (own engine): rand 1 1500 7 7, rand 2 20000
   12 0, rand 3 5000 40 0, rand 4 2000 120 0 (all counters 0); ctrl 4, 8, 30 (control fires).
   NOT OPENED: ICALP 2007 version of Jurdziński–Trivedi; Friedmann thesis §4.6.2 (today); Benerecetti et al. (QDPM).
+
+- T70 addenda (2026-11-12; scratchpad t70). OPENED: Schewe–Trivedi–Varghese arXiv 1501.06484 v1 (7b68cc69de78bd90; abstract; §3.1-§3.2
+  PDF p.6-7, Alg. 6, Thm 3.7 p.7; Fig. 2 p.8; §4 p.9-10). RE-OPENED: van Dijk–Loho–Maat arXiv 2309.02223 (10e6794d82aba465; Thm 1 and
+  overview PDF p.2-3; Def. 2 p.4; §6 p.15); Friedmann arXiv 1106.0778 v2 (46c96f44775aa2b0; §2 PDF p.3 injectivity; Table 4 and Fact
+  6.1 PDF p.15; Figure 4 PDF p.16). DATA: docs/lit/T66-fig4-check.py 1 7 3 (Table 4 vs Figure 4 priorities, counters identical).
+  NOT OPENED: ICALP 2015 version of Schewe–Trivedi–Varghese; «Baier et al.» (no such paper found).
 
 ## Dead ends
 - T66 (2026-11-12): a literature test of DEEP3 / U-FREE on Γ3 does not exist. Obstruction: E-DOM (every escape e even and above every β;
