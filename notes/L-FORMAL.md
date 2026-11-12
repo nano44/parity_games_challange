@@ -1,30 +1,45 @@
 # L-FORMAL notebook (Lean formalization lane; branch claude/l-formal; files: lean/, this notebook)
 
 ## Resume point
-- 2026-11-12T11:41Z (date -u): «go» received 11:31Z (Lead rulings: pin Lean v4.35.0 + Mathlib v4.35.0 approved; SHARP text = claude/l-red
-  0148d73f docs/red/R234-lamgap.md; one core theorem with BR-SEG and BR-SEG-G as corollaries; statements diffed before any proof).
-- State: lean/lemmas/ holds DEFINITIONS (PGLemmas/Defs.lean) and STATEMENTS as propositions (PGLemmas/Statements.lean); both build
-  (`lake build`: «Build completed successfully»); no proof of any statement exists yet. Sent to the Lead for the statement diff.
-- Next, after the Lead's diff verdict: prove, in this order,
-  1. order facts for `Val.lt` / `Val.le` under an injective `pr` (irreflexive, transitive, total; `ext` strictly monotone off Π = F4′);
-  2. play facts from the definition of `val`: Λ(s v) = Λ(v); Λ(v) = v ⇒ val v = (v, ∅, 0); Λ(v) ≠ v ⇒ val v = ext(v, val(s v)) and
-     v is not on the play prefix of s v;
-  3. claim (L) of box 101 §2 over an inductive «simple path with value and choice count» predicate; (U) = the play prefix is such a path;
-  4. LamGapSharpStatement by the plan below; then the one-player wording, BrSegStatement, BrSegGStatement as corollaries; OneCross.
-- Proof plan for SHARP in Lean (mine, from box 101 §2 + R234 §3, slightly shorter than both): put t* := a + |Ch| and suppose t* + 1 ≤ b.
-  Some x ∈ Ch switches at t* (the step changes the state, and only Ch moves). With u := s_(t*)(x), w := s_(t*+1)(x): val_(t*)(u) ◁
-  val_(t*)(w) (Howard: x did not keep, so u was not best, and w is best).
-  - x not a top: (L) at k = |Ch| and (M) make every value equal at t* and t* + 1 (the play prefix at t* + 1 is a simple path). Then
-    val_(t*)(x) = ext(x, val_(t*)(u)) ◁ ext(x, val_(t*)(w)) = ext(x, val_(t*+1)(w)) = val_(t*+1)(x) = val_(t*)(x): contradiction. This
-    replaces box 101's three (E) cases by F4′ in its strict form.
-  - x a top: Λ(u) = Λ(w) = x, so the play prefixes of u and w at t* have at most |Ch| − 1 choice vertices before x; (L) at k = |Ch| − 1
-    and (M) give val_(t*−1) = val_(t*) at u and w; Howard at t* − 1 made u best, so val_(t*)(w) ⊴ val_(t*)(u): contradiction (R234 §3).
+- 2026-11-12T11:57Z (date -u): ALL FIVE STATEMENTS ARE PROVED IN LEAN (lean/lemmas, `lake build` «Build completed successfully (3147 jobs)», 0
+  warnings; no sorry / admit / axiom by grep; `lake env lean Axioms.lean`: every theorem ⊆ [propext, Classical.choice, Quot.sound]).
+  They are proved as sent to the Lead at 11:44Z (commit 9dde1527); the Lead's statement-diff verdict is still OPEN, so nothing here is
+  a result yet (CLAUDE.md: every theorem statement is diffed before it lands). If the diff changes a statement, re-prove that statement.
+- Theorems (file: name : statement):
+  - PGLemmas/LamGap.lean: `lam_gap_sharp : LamGapSharpStatement V`.
+  - PGLemmas/Corollaries.lean: `lam_gap_oneplayer : LamGapOnePlayerStatement V`, `brseg : BrSegStatement V`, `brsegG : BrSegGStatement V`,
+    and `brsegG_noH0` (BR-SEG-G (a) with H0 weakened to «every step changes σ at some Even vertex»: the checked proof uses nothing else
+    of H0).
+  - PGLemmas/OneCross.lean: `one_cross (α) [Preorder α] (F) : OneCrossStatement α F`; `one_cross_vj` (α = node valuations).
+  - PGLemmas/Counting.lean (statements in PGLemmas/Statements2.lean, PROPOSED, not yet sent for diff when written): `two_cross`
+    (box 100 §2 TWO-CROSS (i), (ii), any preorder), `lam_count` (a ⊴-non-falling sequence of node valuations changes its cycle node
+    at most n − 1 times: the Λ part of DEPTH-COUNT3, the per-vertex count behind R118 (i)(b)), `howard_run` (box 101 §3 L1-POLY,
+    abstract: T ≤ n(n − 1) + (n(n − 1) + 1)·|Ch| for a Howard run with only Ch moving, given (M)); helper `steps_le_of_breaks`.
+  - PGLemmas/Example.lean: `Example.window_example` (4 vertices, Ch = {1}, a window 0..1: the hypotheses hold together and b − a = |Ch|).
+  - PGLemmas/VJ00.lean: `vj00Le_iff` (VJ00 §4.2's order as printed = `Val.le` on play values), `val_proper` (every val is a play value).
+- How the SHARP proof goes in Lean (LamGap.lean), for whoever edits it:
+  - `SPath pr edge Ch ℓ v S x c` (inductive): a simple path v → … → ℓ with vertex set S, value x = value(P), c = choice vertices before ℓ.
+    `SPath.count_eq`: c + [ℓ ∈ Ch] = |Ch ∩ S|, so c ≤ |Ch| and c + 1 ≤ |Ch| when ℓ ∈ Ch.
+  - `ext_le_val`: inside ONE state σ, x ⊴ val(σ v) with top(x) ≠ v ∉ set(x) gives ext(v, x) ⊴ val(v) (cycle-node case by rewards, other
+    case by (P1) + F4′). This one lemma serves both the fixed-vertex and the choice-vertex case of (L).
+  - `lower_bound` = (L): induction on k, inside it induction on the SPath derivation; the choice-vertex case uses Howard at a + k − 1,
+    then (M), then `ext_le_val` at time a + k (never ext of an old value: box 101's point).
+  - `play_spath` = (U): induction on plen; `val_le_of_play` = (L) + (U) with the two count bounds.
+  - `lam_gap_sharp`: Ch.card = m + 1 (else nothing moves); x ∈ Ch switches at a + m + 1; u = old successor is strictly below w = new
+    one at a + m + 1; x a top → `hback` (values of u, w equal at a + m and a + m + 1) contradicts Howard at a + m; x not a top →
+    `hconst` (all values equal at a + m + 1 and a + m + 2) and strict F4′ give val(x) ◁ val(x).
+- Next: (1) commit the proof files once push.sh of 9dde1527 has ended (never commit while it runs), push, send the SHA to the Lead;
+  (2) apply the Lead's diff verdict; (3) possible next target, to propose: prove premise (M) (RESULTS R15 (a) = VJ00 Lemma 5.7) in Lean,
+  at least for one-player games, which would remove the only non-definitional hypothesis of `lam_gap_oneplayer`. It needs VJ00 §4.5's
+  multiset extension of the order (F4 is false on sets, F4′ needs v ∉ Π), so it is a real piece of work, not a corollary.
 - Layout rule: no lean/lakefile.* at lean/ root (Lead 11:31Z: «keep lean/lakefile.* absent at lean/ root»).
-- Toolchain in a fresh container: commands in lean/lemmas/README.md (elan, `lake exe cache get`, `lake build`).
+- Toolchain in a fresh container: commands in lean/lemmas/README.md (elan, `lake exe cache get`, `lake build`); tested on a fresh copy.
 
 ## Queue
-1. LAM-GAP, SHARP form, with BR-SEG and BR-SEG-G as corollaries (statements written; proofs after the diff).
-2. ONE-CROSS (statement written, abstract over a preorder; proof after the diff).
+0. (own initiative, proposed to the Lead) TWO-CROSS, Λ-count, Howard run bound: PROVED in Lean; statements need the Lead's diff.
+   Not done, candidates: DEPTH-COUNT3's depth ≤ c clause with R234's fix D1 (binomial counting); premise (M) for one-player games.
+1. LAM-GAP, SHARP form, with BR-SEG and BR-SEG-G as corollaries: PROVED in Lean as sent; waits for the Lead's statement diff.
+2. ONE-CROSS: PROVED in Lean as sent (abstract over a preorder, plus the VJ instance); waits for the Lead's statement diff.
 3. Possible later (Lead 11:31Z, not yet): L-NEW 72's CANDIDATE Lemma LEVEL, if it survives L-RED.
 
 ## Sources opened
@@ -52,13 +67,14 @@
     Theorem 3.2 ([VJ00]) read as statements only.
   - The Lean definitions (PGLemmas/Defs.lean) encode THIS form, line by line, as RESULTS R118's premise line says («in Friedmann arXiv
     1106.0778 §3's form (si.py)»). On play values (path component ⊆ V_{>cycle node}, VJ00 (1)) it is VJ00 §4.2's order: the filter
-    ∩ V_{>ℓ} does nothing there. That equivalence is a READING, not yet a Lean lemma.
+    ∩ V_{>ℓ} does nothing there. That equivalence is now a Lean lemma: PGLemmas/VJ00.lean `vj00Le_iff` with `val_proper`.
 - Fleet texts read as inputs (not sources): claude/l-si 23d39400 docs/si/box101-lamgap.md §2; claude/l-red 0148d73f
   docs/red/R234-lamgap.md §0, §2, §3; claude/l-red docs/red/R231-onecross.md §2; trunk docs/RESULTS.md R118 (l. 13607 ff.), R17
   (l. 730 ff.), R15 (l. 624 ff.); docs/new/P-N5-XICYC.md §1-§5 and P-N5-XICYC-fixes.md l. 30-60 (F4′, STRICT-G, PATH-G).
 
 ## Dead ends
-- None yet.
+- None yet. (One trap met, not a dead end: inside `namespace PG` a theorem named `Val.lt_irrefl` shadows Mathlib's `lt_irrefl` in its
+  own body, and `Val.lt_trichotomy` even failed with «fail to show termination»; the root lemmas are written `_root_.lt_irrefl`, …)
 
 ## Things only I know
 - Proxy: github.com HTML pages and codeload.github.com return 403; git reads of public repositories, GitHub release assets,

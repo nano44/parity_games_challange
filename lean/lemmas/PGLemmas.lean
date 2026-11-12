@@ -1,2 +1,11 @@
 import PGLemmas.Defs
 import PGLemmas.Statements
+import PGLemmas.Statements2
+import PGLemmas.Order
+import PGLemmas.Play
+import PGLemmas.LamGap
+import PGLemmas.Corollaries
+import PGLemmas.OneCross
+import PGLemmas.Counting
+import PGLemmas.Example
+import PGLemmas.VJ00
