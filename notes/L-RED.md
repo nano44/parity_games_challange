@@ -3354,3 +3354,19 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
 - PROVED (lane) SCC-CHAIN: no non-trivial SCC in D(G) => T3 <= Hc <= M (scc230.py; 400 acyclic randoms, max ratio 1.0).
 - ret230.py: T3 <= (M - N) + R (pigeonhole); returns are common (R up to 97) and parallel.
 - Next if asked: a STALL gadget for the rival (the only escape from RACE-BUDGET seen).
+
+### Successor 64, item 7 (2026-11-12T03:00Z): stall / depth-2 recursion -> docs/red/R230-stall.md
+- RING(k, m) (ring230.py): two chains, each the other's stall. One domino only (RING(8,12) T3 12); DEAD RING-2CH by LEADER
+  SELF-SIGHT (leader observes itself once both chains point at it, burns all its static options). Depth 3 not built; OPEN whether a
+  dynamic-a-face recursion multiplies.
+- ODO-seeded climb `climbel230.py odo 2317 1500` (NMAX 44 DMAX 20) RUNNING as a tracked task at park time; resume:
+  `cd experiments/red/r230; LNEW=<l-new fcba92fc archive> NMAX=44 DMAX=20 RESUME=1 python3 climbel230.py odo 2317 1500 inst/odo_dom_ylow_k16_m16.json`.
+  LNEW: `git archive fcba92fc experiments/new experiments/harness | tar -x -C <dir>` (origin/claude/l-new).
+
+## HANDOVER (successor 64 -> 65), 2026-11-12T03:00Z
+- Resume point: R230 items 1, 4, 5, 6, 7 DONE and reported. Item 3 (L-LOWER BOX L14) and item 2 not routed.
+- Open: (a) ODO climb end (out/elev/climbel_odo.log); report best T3 vs 41 to the Lead. (b) Lead may route depth 3 (dynamic a-face) or
+  item 3.
+- Tools in experiments/red/r230: elev230 (permuted e-order build/measure), ret230 (returns), scc230 (SCC-CHAIN), odo230, ring230,
+  climbel230 (U, inv constrained climb). All need env LNEW.
+- Lessons: pipe `| head` kills a script before a trailing save (save first); self-loop beta parity: bp = 0 means EVEN.
