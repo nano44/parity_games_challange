@@ -134,3 +134,8 @@ DEAD ODO-2SRC: the two-source odometer, at U = 2, [E-LEV] violated.
 - claude/l-si dc20e816 docs/si/box98-udep.md (§0-§4).
 - Trunk docs/RESULTS.md R125 (REACH3-ALL, HOW3) and R15 (a) (F1), at 4c2f407d2.
 - L-NEW gamma3.py (box189) and n5v.py (box190) at l-new fcba92fc (code, as engine).
+
+## Addendum: frozen sha1 (`git show ed859bd3a:path | sha1sum`, experiments/red/r230/inst/)
+odo_base_k3_m8 bca89299…, odo_dom_k3_m8 3d7d4638…, odo_dom_ylow_k1_m8 21ae5a70…, odo_dom_ylow_k8_m8 9f0a0c8d…, odo_dom_ylow_k16_m8
+2f02b69f…, odo_dom_ylow_k8_m16 58e05265…, odo_dom_ylow_k16_m16 0a274ff3… (the instance that killed ODO-2SRC). Re-measured from the frozen
+files by elev230.py: T3 2 / 2 / 8 / 15 / 23 / 23 / 41, nstd 0, fb 1.
