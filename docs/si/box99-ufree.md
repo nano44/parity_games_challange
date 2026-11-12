@@ -88,3 +88,18 @@ set, scope, counter) / READING. Not a TARGET.md claim; not M3 or M4; not a gaunt
 ## 6. Sources opened (this box)
 - claude/l-red 0e74d179 docs/red/R230-odo.md (§0-§6); L-COMP 17's box38 summary as relayed by the Lead (02:43Z; not opened here: cited as
   relayed); docs/RESULTS.md R125 (trunk 0753fd71), R15 (a); box 97 / box 98 records.
+
+## Addendum A (L-SI successor 51, 2026-11-12T08:01Z (date -u); append-only, §0-§6 unchanged): GAP G1 (tie rule in H(C)), fixed
+- Source: L-RED 65, claude/l-red 59daaef2 docs/red/R232-box99.md §1 «GAP G1 (wording; affects what SCC-LIN must bound)», relayed by the
+  Lead 08:01Z. R125's HOW3 is «every mover moving to a ⊴-best successor and keeping a best current one» (R232 §1, quoted from RESULTS
+  R125): when the current successor is not best, ANY ⊴-best successor is legal. §2 above defined H(C) with «HOW3's tie rule», which
+  names no single rule. DATA (L-RED's, not re-run here): L-RED's own HOW3 engine and n5v differ in T3 by ±1 on 7 of 400 random genomes
+  (seed 2321), the four inspected all with tie events.
+- Corrected definition (replaces the one in §2 wherever H(C) is used, including §4's CONJECTURE SCC-LIN):
+  H(C) := the maximum, over every start strategy of C's movers, every assignment of final strategies to the movers outside C, and every
+  HOW3-legal tie resolution at every iteration (each mover whose current successor is not ⊴-best moves to SOME ⊴-best successor; a mover
+  whose current successor is ⊴-best keeps it), of the number of iterations of that Howard run of G_C.
+- Lemma SCC-RED's proof is unchanged under this definition: the states t0, t0 + 1, … of N5′-xi's run restricted to C are ONE HOW3-legal
+  run of G_C (N5′-xi's S4a choice is one legal tie resolution), so their number is ≤ H(C) for the maximum above. The corollary
+  (H(C) ≤ M_C for all C ⇒ T3 ≤ M + N) is unchanged. SCC-LIN is now the stronger statement over all legal tie resolutions.
+- §4's measured loc(C) is one run (n5v's resolution), a lower bound on H(C); it does not test the tie-maximised H(C).
