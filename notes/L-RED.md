@@ -3424,3 +3424,11 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
   2. Window conventions differ by 1. Use the target's own convention before comparing numbers.
   3. A uniform-control «first = last» cannot fire under F1. Use «equal on the first two states».
   4. Check full traces, not samples, before writing «t = …» claims (R231-rearm2 needed two corrections).
+- 09:00-09:20Z: Lemma PAID (box 207 Add. A, l-new b72411cf) -> docs/red/R233-paid.md: SURVIVES every step; GAP P1 (c_X unused loop not
+  listed in Step 0; harmless). paid233.py must-0 0 on 8 records (every feedback vertex) + 300 random k = 1 (thin: 170 cases); control fires.
+- HANDOVER QUEUE for successor 66 (Lead 08:59Z), in order:
+  1. PAID verdict: DONE (R233-paid.md); re-open only if L-NEW 71 builds on it (Γ3 form not checked).
+  2. G1 tie-rule exploration for SCC-LIN (L-COMP 18 BOX 40 item 2 does the small-genome part): H(C) as max over HOW3-legal tie resolutions;
+     tool base r232/how3_232.py (add a tie-choice enumeration at tie events).
+  3. Internal-gate re-flip structure for SCC-LIN: only internal gates of C re-flip inside G_C (INT-ONLY); characterise their flip sequences
+     (oc3_232.py counts 94 internal multi-flips on 14 instances; start from MWR4_2's giant SCC).

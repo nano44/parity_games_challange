@@ -1,0 +1,3 @@
+MWR4_2.json {'cases': 109, 'direct': 0, 'notK1': 0, 'nonext': 0, 'notE': 0, 'lexfail': 109, 'nochain': 0, 'maxchain': 1}
+CFI3_n48.json {'cases': 48, 'direct': 17, 'notK1': 0, 'nonext': 0, 'notE': 0, 'lexfail': 25, 'nochain': 0, 'maxchain': 1}
+TOTAL {'cases': 157, 'direct': 17, 'notK1': 0, 'nonext': 0, 'notE': 0, 'lexfail': 134, 'nochain': 0, 'maxchain': 1, 'genomes': 2}

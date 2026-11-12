@@ -1,0 +1,9 @@
+MWR4_2.json {'cases': 109, 'direct': 109, 'notK1': 0, 'nonext': 0, 'notE': 0, 'lexfail': 0, 'nochain': 0, 'maxchain': 0}
+K1L10_n48.json {'cases': 258, 'direct': 154, 'notK1': 0, 'nonext': 0, 'notE': 0, 'lexfail': 0, 'nochain': 0, 'maxchain': 2}
+CFI3_n48.json {'cases': 48, 'direct': 36, 'notK1': 0, 'nonext': 0, 'notE': 0, 'lexfail': 0, 'nochain': 0, 'maxchain': 1}
+RINT_n48.json {'cases': 98, 'direct': 64, 'notK1': 0, 'nonext': 0, 'notE': 0, 'lexfail': 0, 'nochain': 0, 'maxchain': 1}
+BLKX23_n48.json {'cases': 267, 'direct': 171, 'notK1': 0, 'nonext': 0, 'notE': 0, 'lexfail': 0, 'nochain': 0, 'maxchain': 1}
+CW8_n.json {'cases': 284, 'direct': 284, 'notK1': 0, 'nonext': 0, 'notE': 0, 'lexfail': 0, 'nochain': 0, 'maxchain': 0}
+CWRR8_n.json {'cases': 22, 'direct': 22, 'notK1': 0, 'nonext': 0, 'notE': 0, 'lexfail': 0, 'nochain': 0, 'maxchain': 0}
+K1L7_n48.json {'cases': 142, 'direct': 73, 'notK1': 0, 'nonext': 0, 'notE': 0, 'lexfail': 0, 'nochain': 0, 'maxchain': 1}
+TOTAL {'cases': 1228, 'direct': 913, 'notK1': 0, 'nonext': 0, 'notE': 0, 'lexfail': 0, 'nochain': 0, 'maxchain': 2, 'genomes': 8}
