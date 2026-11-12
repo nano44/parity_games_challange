@@ -9,3 +9,7 @@ ctrl1 MWR4_2.json ctrl 1 movers sumT 30 T 30 lam 0 ch 240 elfall 96 topfall 20 p
 K1F34_n84.json ctrl 0 genomes 1 loud 52 ldfail 1 maxld 3 maxA 2 gap 1
 WC8_2.json ctrl 0 genomes 1 loud 4 ldfail 0 maxld 8 maxA 8 gap 0
 ctrl2 WC8_2.json ctrl 1 genomes 1 loud 4 ldfail 1 maxld 8 maxA 7 gap 1
+K1L7_n48.json ctrl 0 genomes 1 cases 1940 nop 0 lamp 0 symp 0 dep 0 kind 0
+WC8_2.json ctrl 0 genomes 1 cases 146 nop 0 lamp 0 symp 0 dep 0 kind 0
+k1 seed 69 ctrl 0 genomes 50 cases 217 nop 0 lamp 0 symp 0 dep 0 kind 0
+ctrl3 K1L7_n48.json ctrl 1 genomes 1 cases 1940 nop 0 lamp 0 symp 1277 dep 0 kind 1268

@@ -121,3 +121,56 @@ depth), maxloud (largest loud depth). Scope «all» = every vertex of Γ(G) (LOU
   divergence vertex of a changed play carries the same top difference z with depth no larger: start of a proof; a reconvergent high
   e-vertex is what keeps its depth positive); (ii) climbs on Q_(>1) at larger N; (iii) a WC-like k = 1 construction that repeats
   WC's deep step.
+
+## Addendum A (L-NEW successor 70; Lead 02:59Z: «Proceed as you proposed: first Addendum A with the frozen climb genome …, then the divergence-vertex lemma at k = 1»; written 2026-11-12 by date -u)
+### A1. The climb genome K1L7_n48 (frozen)
+- inst/K1L7_n48.json (sha1 in inst/SHA1SUMS; k = 1 by box202 fvs202.kfvs): the end state of climb206.py seed 2 (CL_OBJ=loud, AC_FREE=1,
+  from K1F21_n48) at 3,000 iterations, score (7, 4, 37) = (movers' loud steps of loud depth ≥ 2, max loud depth, T); log
+  out/climb206_loud_s2_part1.log.
+- Scope all (out/depth206_K1L7.out): T 37, loud 34; by loud depth L-1 1, L0 24, L1 2, L2 2, L3 1, L4 4: Q_(>1) = 7 with scope all
+  too (L2 + L3 + L4); maxdepth 4; all must-0 counters 0.
+### A2. Lemma DIV (PROVED, lane): the divergence vertex carries the change
+Premises: R118 (a) (IDEAL-CYC: every non-mover Even vertex frozen, Odd unrestricted), R123 LOC-K2 (σ̄(K2) = K1 at every state), the
+value (Λ, Π, k) of R118's order (VJ00 §4.2 / Friedmann arXiv 1106.0778 §3: Π = the vertices of the path from v to its cycle node Λ,
+before Λ, more relevant than Λ).
+Statement. Let t ≥ 1 and v a vertex with Λ_(t−1)(v) = Λ_t(v) = w and E_(t−1)(v) ≠ E_t(v); z and d as in §0. Let p be the first vertex of
+v's play under (σ_(t−1), σ̄_(t−1)) whose successor under (σ_t, σ̄_t) is different. Then p exists, p comes before the first occurrence of
+w on both plays from v (which agree up to p), Λ_(t−1)(p) = Λ_t(p) = w, E_(t−1)(p) Δ E_t(p) = E_(t−1)(v) Δ E_t(v), and p's change has the
+same z and depth ≤ d. p is a mover with σ_t(p) ≠ σ_(t−1)(p) or a gate with σ̄_t(p) ≠ σ̄_(t−1)(p).
+Proof. Positional plays agree as long as successors agree. If no vertex of the old play up to its first occurrence of w had a new
+successor, the new play would follow the same path to w; since Λ_t(v) = w, Π_t(v) would be the same set (Π depends on the path to Λ
+only), so E_t(v) = E_(t−1)(v): contradiction. So p exists and precedes the first w on the old play; the new play shares the prefix
+v … p, which does not contain w. Both plays are simple up to w, so for s ∈ {t − 1, t}: Π_s(v) = A ⊔ Π_s(p) with A := the prefix
+vertices before p more relevant than w (the same set at both states), and Λ_s(p) = w (p's play is the suffix of v's). Hence
+E_(t−1)(v) Δ E_t(v) = E_(t−1)(p) Δ E_t(p), the same z, and the elements of E_s(p) more relevant than z are among those of E_s(v): depth
+≤ d. Vertices with a fixed successor in IDEAL-CYC are the e-vertices, the β's, c_W, c_X and the frozen core and non-mover Even
+vertices; K2's successor is K1 at every state (LOC-K2). So p is a mover (σ changed) or a gate (σ̄ changed). ∎
+- Corollary DIV-LOUD (PROVED, lane). The loud depth of a loud step with no Λ change is attained at a mover that switches or a gate that
+  flips at that step. So in LOUD-SPLIT (iii) only movers and gates need to be charged:
+  Q ≤ n(2M + 2) + (N + M)(2M + 3)(S_c(M) − 1) + Q_(>c).
+- DATA for DIV (div206.py, out/div206.out; must-0 counters, unit (v, t) with Λ_t(v) fixed and E changed: nop (no p before the first
+  w), lamp (Λ(p) ≠ w), symp (E(p)'s symmetric difference ≠ E(v)'s), dep (p's depth > v's), kind (p not a switching mover or flipping
+  gate)): all 0 on K1L7_n48 (1,940 cases), MWR8_2 (2,225), WC8_2 (146), K1F21_n48 (1,930), K1F34_n84 (4,307), 300 k = 1 genomes (seed 67;
+  1,635) and 300 rand191 genomes (seed 68; 3,410). Control DIV_CTRL=1 (p replaced by its old successor) on K1L7_n48: symp 1,277,
+  kind 1,268 (fires).
+- DATA for DIV-LOUD (deepdiag206.py, out/deepdiag206.out; K1L7_n48, K1F21_n48, K1F34_n84, K1C16_n400, B400_r32, MWR8_2): every deep loud
+  step (loud depth ≥ 2) is attained at a switching mover.
+### A3. Where the deep loud steps are at k = 1 (DATA, READING)
+- Unit: loud steps of loud depth ≥ 2 (scope all), listed by step number t of T; «CC» = the cycle set of Ξ_σ changes at t.
+  | genome (k = 1) | T | deep loud steps (t: loud depth) |
+  | --- | --- | --- |
+  | K1L7_n48 | 37 | 30: 2 CC, 31: 2 CC, 33: 3 CC, 34: 4 CC, 35: 4, 36: 4, 37: 4 |
+  | K1F21_n48 | 31 | 30: 2 CC, 31: 3 CC |
+  | K1F34_n84 | 52 | 51: 2 CC, 52: 3 CC |
+  | K1C16_n400 | 51 | 51: 2 CC |
+  | B400_r32 | 49 | 49: 2 CC |
+  | MWR8_2 | 54 | none |
+- READING: at k = 1 the deep loud steps sit in the last steps of the run. On K1L7 (steps 28-37, Λ ≡ K1 at every switching mover) the
+  switching movers' e-sets are subsets of the six most relevant e-vertices: e.g. step 35, mover 39: E from positions {96, 94, 93, 92} to
+  {96, 94, 93, 92, 91} (positions in the relevance order of the 97 e-vertices, 96 = most relevant): the deep changes add or swap
+  elements inside one block of top e-vertices, reached repeatedly through ascents. They are not a counter in this run: the block has
+  6 elements and the run ends. Whether such end phases can be made long (a counter on a top block) is the k = 1 question in LOUD-SPLIT form.
+### A4. Climbs on Q_(>1) at k = 1 (in progress at this commit; logs in the scratchpad)
+- N 48 (seed 2, resumed from K1L7_n48's state): 7 deep loud steps (movers) unchanged from iteration 3,000 to 3,900 (T 37 → 38).
+- N 84 (seed 4, from K1F34_n84, start 2): 150 iterations so far (≈ 5 s per evaluation at N 84), no gain yet.
+- So far: 7 at N 48 against 2 at N 84; one local climb per size, nothing about growth in N (the Lead's trend request: next report).

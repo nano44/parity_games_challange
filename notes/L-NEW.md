@@ -11,6 +11,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   Things only I know: depth206 runs in ~0.3 s on K1F21 (climbs are cheap); the corpus sweep (movers) ~55 min; the loud-depth climb
   (CL_OBJ=loud, seed 2, state in the scratchpad cl_loud_s2.json) was at 5 deep loud steps, N 48, iteration ~1,200 at commit.
   Next: a structural lemma «every loud step has a change of depth ≤ c somewhere» via the divergence vertex (box 206 §5 (i)).
+- 02:30Z DUTY C140 E-1 (G-L43, R-D2a): 70501a99 P-N5-QN fixes entry 2 + L-2 (166e4695, 7,187 B; box203/mkl2_qn.py; qn.pins 63 rows).
+  Lead 02:59Z: L-2 to both referees; box 206 to L-RED after its stall-gadget item.
+- Box 206 Addendum A: K1L7_n48 frozen (k = 1, 7 deep loud steps, T 37); Lemma DIV + DIV-LOUD (PROVED lane; div206.py all 0, control
+  fires); deep loud steps sit at the end of k = 1 runs (deepdiag206.py). Climbs: scratch cl_loud_s2.json (N 48, it ~3,900, 7),
+  cl_loud_s4.json (N 84, from K1F34, slow ~5 s/eval). Resume: AC_FREE=1 CL_OBJ=loud python3 climb206.py SEED ITERS STATE START.
 
 ## HANDOVER (successor 69, PARKING 2026-11-12 ~00:55Z by date -u; Lead 00:53Z: «PARK now with a handover. List G-L43 as the likely next duty, and the k = 1 face-class-height question (box 204 EQ, MWR basin leapfrog) as the open research»)
 ### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)

@@ -8,3 +8,6 @@ python3 depth206.py --rand k1 66 100
 DEP_CTRL=1 python3 depth206.py ../box203/inst/MWR4_2.json | sed 's/^/ctrl1 /'
 python3 ascdepth206.py ../box204/inst/K1F34_n84.json ../box202/inst/WC8_2.json
 LDA_CTRL=1 python3 ascdepth206.py ../box202/inst/WC8_2.json | sed 's/^/ctrl2 /'
+python3 div206.py inst/K1L7_n48.json ../box202/inst/WC8_2.json
+python3 div206.py --rand k1 69 50
+DIV_CTRL=1 python3 div206.py inst/K1L7_n48.json | sed 's/^/ctrl3 /'
