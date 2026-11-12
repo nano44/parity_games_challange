@@ -69,3 +69,27 @@
   sentence verbatim in this file, R123's landed scope sentence and R124's landed TARGET tail verbatim in RESULTS, LN-5's skip counts in
   box203/out2/skip203.out, and that the line has no «|» and no newline.
 - Pinned in experiments/new/box203/qn.pins with this file, skip203.py, skip203.out and mkl1_qn.py.
+
+## Fixes entry 2 (L-NEW successor 70; CHECKER C140 E-1 (G-L43), Lead ruling R-D2a 02:30Z 2026-11-12; written 2026-11-12 by date -u)
+- Source: CHECKER C140 (claude/checker 445372f9, docs/checker/C140.md) FAILED R126's first fill on one line-only item, E-1 = flag G-L43:
+  DEAD D2 «at k = 1 every gate flips at most c·(lamch(g) + 1) times», «every constant c», rests on three instances (MWR4/8/16_2: 9 / 17 /
+  33 flips at lamch 0) and so kills the bound only for c ≤ 32; the MWR(n) family's count for every n is not proved anywhere.
+- Lead ruling (02:30Z, quoted): «RULING: R-D2a, with D2's source carried into DATA.»
+- What changes: the DEAD list of the RESULTS line only. D2 is dropped; D3 keeps its name. The MWR instances stay in the line as DATA
+  (C = 0 clause), now with their source and sha1s. No statement, proof, label or premise of P-N5-QN changes; the frozen packet
+  (e252182d, sha1 97254bd2) is not edited. The packet's own §6 D2 text is superseded by this entry for the RESULTS line.
+- The two replacements (C140 §4, in this order, each old string once in L-1 28bf566b):
+  - R-D2: «; D2 «at k = 1 every gate flips at most c·(lamch(g) + 1) times», every constant c (L-RED 63's MWR(n), claude/l-red 406ef2fd,
+    R229-box202 §2; copies experiments/new/box203/inst/MWR4_2.json sha1 856d369b, MWR8_2.json 918f1414, MWR16_2.json 2ccda9a9: gate
+    (qz, 0) flips 2n + 1 times with lamch 0)» → nothing.
+  - R-S: «C = 0): MWR4/8/16_2 9 / 17 / 33,» → «C = 0): MWR4/8/16_2 (L-RED 63's MWR(n), claude/l-red 406ef2fd; box203/inst/MWR4_2.json
+    sha1 856d369b, MWR8_2.json 918f1414, MWR16_2.json 2ccda9a9) 9 / 17 / 33,».
+- What remains true (READING, not in the line): on the three pinned instances the gate (qz, 0) flips 9 / 17 / 33 times with lamch 0, so
+  the bound c·(lamch(g) + 1) fails there for every c ≤ 32 (DATA, C = 0 clause). Proving 2n + 1 for all n would restore «every constant c».
+
+## Line L-2 (L-NEW successor 70; written 2026-11-12 by date -u)
+- docs/new/P-N5-QN-line-L2.txt = L-1 with R-D2 and R-S applied, generator experiments/new/box203/mkl2_qn.py (from the repo root, no
+  argument). It asserts the frozen packet's sha1, L-1's sha1 (28bf566b), each old string exactly once, one line with its newline, no «|»,
+  balanced parentheses, no «D2», «406ef2fd» once, and the result C140 §4 gives: sha1 166e4695b07843ae73e2d23ac92802c256f31113, 7,187 B
+  (intermediate after R-D2: 2e85dfe5, 7,060 B; equal to C140's).
+- Pinned in experiments/new/box203/qn.pins with this file (row re-pinned) and mkl2_qn.py.
