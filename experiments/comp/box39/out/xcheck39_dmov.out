@@ -1,0 +1,4 @@
+CW4_n.json N+M 157 {"T": 30, "Dmov": 12, "Dmov_x": 47, "Dface": 12, "Dminface": 12, "maxflip": 11, "flipgate": [34, 0]}
+CW8_n.json N+M 303 {"T": 59, "Dmov": 38, "Dmov_x": 83, "Dface": 38, "Dminface": 38, "maxflip": 37, "flipgate": [62, 0]}
+CW16_n.json N+M 643 {"T": 114, "Dmov": 92, "Dmov_x": 155, "Dface": 92, "Dminface": 92, "maxflip": 91, "flipgate": [118, 0]}
+CW32_own.json N+M 1515 {"T": 225, "Dmov": 202, "Dmov_x": 299, "Dface": 202, "Dminface": 202, "maxflip": 201, "flipgate": [230, 0]}

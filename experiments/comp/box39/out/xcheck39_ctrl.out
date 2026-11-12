@@ -1,0 +1,2 @@
+MWR4_2.json N+M 145 scope all {"T": 30, "Q": 30, "Q0": 0, "Q1": 0, "Q2": 0, "maxdepth": 1, "maxloud": 0, "hist": {"0": 30}, "elfall": 338, "ufail": [81, 338, 338]}
+K1L7_n48.json N+M 145 scope all {"T": 37, "Q": 34, "Q0": 0, "Q1": 0, "Q2": 0, "maxdepth": 2, "maxloud": 0, "hist": {"-1": 1, "0": 33}, "elfall": 1059, "ufail": [710, 1059, 1059]}

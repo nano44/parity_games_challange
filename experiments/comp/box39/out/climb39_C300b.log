@@ -1,0 +1,4 @@
+BEST BEST_C300b_Q7_T20_NM281_a58cbc0e.json sha1 a58cbc0e7d41d3d94ac452cf7de8c936d0e759c0 score [7, 17, 20] {"QC": 7, "Q": 17, "T": 20, "maxdepth": 5, "maxloud": 4, "hist": {"-1": 1, "0": 7, "1": 2, "2": 2, "3": 1, "4": 4}, "elfall": 0, "ufail": [0, 0, 0], "NM": 281} lnew206 {"T": 20, "hist": {"-1": 1, "0": 7, "1": 2, "2": 2, "3": 1, "4": 4}} agree True t 06:37:04Z
+START r 0 step 0 [7, 17, 20] {"QC": 7, "Q": 17, "T": 20, "maxdepth": 5, "maxloud": 4, "hist": {"-1": 1, "0": 7, "1": 2, "2": 2, "3": 1, "4": 4}, "elfall": 0, "ufail": [0, 0, 0], "NM": 281}
+restart 0 seed K1L7g_281.json end [7, 17, 20] {"QC": 7, "Q": 17, "T": 20, "maxdepth": 5, "maxloud": 4, "hist": {"-1": 1, "0": 7, "1": 2, "2": 2, "3": 1, "4": 4}, "elfall": 0, "ufail": [0, 0, 0], "NM": 289} global [7, 17, 20] evals 162 183s
+DONE
