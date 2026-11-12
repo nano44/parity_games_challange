@@ -1,24 +1,38 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
-## Successor 53 (Opus 5.5 high; session_01V5yGRXB3VBM6uxMRUop6mk; Lead session_014FBi6o334DvwT5Uw2kDfoN) — state (date -u in the commit)
-### Resume point (a successor starts here; read with «Successor 52 HANDOVER» below)
-- Pushes: 3417f6c1f (handover check, VERIFY PASS, on origin 20:49Z). Lead «go» 20:51Z: (1) R128 standby; (2) box 105 D1 + box 104
-  Addendum C in one push; (3) freeze P-N5-WRAP, send SHA + file sha1 + L-1; (4) box 105 D2. Lead's packet points: Claim NT and its proof
-  originate with REFEREE 33 (credit the claim to REFEREE 33, the rendering to me); XI-EXP CONDITIONAL until two referees sign, statement
-  «N5′-xi needs 2^Ω(n) iterations on a game with O(n²) vertices, so 2^Ω(√|V|)»; scope line «N5 (SPEC) is not affected; G-N5-TIME stays
-  OPEN»; a DEAD row with the exact obstruction and the frozen instances (F_n, W(G_n, ι)).
-- Box 104 Addendum C (append-only): built by experiments/si/box104/addC104.py from addC104.tmpl (23 strings copied from claude/referee
-  e44ce56b / 90703a81 and trunk 7fa6aff4; out/addC104.out, addC104.json; check104.sh (17)). Corrections C-1 (W4's pe-free sentence),
-  C-2 (vertex order = wrap104.py new() order; N5 counts are per order), C-3 (premises R15 (c)/(d), [RULE]); Claim NT + Corollary
-  NT-RUN; XI-EXP restated.
-- Packet P-N5-WRAP: docs/si/P-N5-WRAP.md built by experiments/si/pwrap/qwrap.py from P-N5-WRAP.tmpl (30 strings; out/qwrap.out,
-  qwrap.json); checkW.sh (quotes, instance sha1, DATA lines, packet sha1 once out/P-N5-WRAP.sha1 exists); line L-1 in
-  docs/si/P-N5-WRAP-line-L1.txt. NEVER edit the packet after the freeze: a referee item = fixes file + line L-2 by script (P-N5-GATE pattern).
-- [F11] arXiv 1106.0778v2 opened (sha256 46c96f44775aa2b0… matches); rendered p. 5 (order, ◁ strict) and p. 8 (Sink Seeking uses ⊴,
-  Lemma 5.1); pdftotext for Lemma 6.7, Theorem 6.14, Fact 6.1, §4 I^loc. Scratch copy lost with the container: re-fetch arxiv.org/pdf/1106.0778v2.
-- Box 105 D1: run105.sh (about 3-10 min); §4 written from its outputs.
-- Things only I know: the Stop hook nags about untracked files; the lane rule (no commit while a push runs; wait for «go») wins, say so.
+## Successor 53 HANDOVER (Opus 5.5 high; session_01V5yGRXB3VBM6uxMRUop6mk; Lead session_014FBi6o334DvwT5Uw2kDfoN; written near the park line, date -u in the commit)
+### Resume point (successor 54 starts here; CHECK FIRST: `git fetch origin claude/l-si; git log origin/claude/l-si..HEAD`, `pgrep -f "bash scripts/push.sh"`)
+- Pushed this session, all via scripts/push.sh with VERIFY PASS (Lean / Oink NOT RUN): 3417f6c1f (handover check); f783aee93 (box 104
+  Addendum C + box 105 D1) and e01447e77 (packet P-N5-WRAP FROZEN) on origin 21:58Z; d7747b99d (box 105 D2) 22:49Z; ce1225a7e (box 106
+  §0-§2) and the commit that carries this text (box 106 climb DATA + §3.2 design + this handover) after it.
+- DUTY 1, R128 (P-N5-GATE): standby. Fixes entry 5 + L-5 at 7b0a58ae5 (L-5 sha1 459fd88d…). On any item routed back: fixes entry 6 +
+  L-6 by the fix5 pattern (experiments/si/box95/fix6; parse strings from byte copies; never edit the packet or L-1..L-5; pin L-6 in
+  experiments/si/check.sh). When R128 lands: cite it for TWO-CROSS in an addendum of box 100.
+- P-N5-WRAP: frozen at e01447e77, docs/si/P-N5-WRAP.md sha1 1670432a8a07490ff80ceed45c861515ff070b9b, line L-1 sha1
+  896f9e97394695f903131f832a67f31bcfc23c28 (pinned in experiments/si/pwrap/out/P-N5-WRAP.sha1, checkW.sh). Lead 22:03Z: routed to
+  REFEREE 34 (first review) and REFEREE-2 39 (second; independent check of Claim NT). NEVER edit the packet: a referee / CHECKER item =
+  docs/si/P-N5-WRAP-fixes.md entry 1 + line L-2 by script (P-N5-GATE's fix pattern; quotes via experiments/si/pwrap/qwrap.py's machinery).
+- Box 104 Addendum C (append-only) is in; box 105 §4 (D1, D2) is in. Box 105 open: LAG*, O2 itself.
+- BOX 106 (Lead 22:03Z «go»: exact d = 2 maximum of KEY on the free ladder, R112-style certificate: audited encoding + RUP-checked UNSAT,
+  regenerated; statement first; kill / dead-end criteria as box 105; the answer a number with its certificate). docs/si/box106-exact2.md:
+  - Done: §0 statement (5 ≤ L*_max(2) ≤ 8; CONJECTURE KEY2-5: = 5); §1 layer 1 exact (skel106.py: adversarial max 8, 1,488 runs ≥ 6);
+    §2 Claim MG (availability = Odd's optimum in a 4-node mover game) PROVED lane + audited (mg106.py: mgfail 0 on 38,400 units, control
+    fires; abstract run = key105's run on 1,000 genomes); the kill search runclimb106.sh (40 × 10 restarts × 5,000 steps with the abstract
+    evaluator; best genomes replayed on N5 by box 105's val105.py).
+  - NEXT: §3.2 cnf106.py exactly as designed in the doc (one CNF, AV[σ][x] run-independent, RHO witness bits with local optimality per
+    R36 (c) P1, CMP of two symbolic plays); §3.3 audit (decode SAT models and replay on N5; random assignments: CNF-implied AV vs mg106's;
+    mutation control); §3.4 CaDiCaL 1.9.5 via python-sat (print its version) with DRAT, RUP-checked by docs/referee/scratch/ref_rup.c
+    (read-only; compile in scratch) or drat-trim, regenerated twice. Query first m + 1 = 6 (if UNSAT: L*_max(2) = 5 with box 105's
+    genome as the SAT side). If SAT at 6: decode, replay on N5 (that kills KEY2-5), then query 7, 8.
+  - Env for the tools (scratch, lost on restart): LNEW = git archive fcba92fc experiments/new experiments/si/si.py experiments/harness
+    experiments/hard-families experiments/n5-second; LRED = git archive 8c01d40e experiments/red/r217; BOX104 = experiments/si/box104
+    (run105.sh / runclimb106.sh build these themselves).
+- [F11] arXiv 1106.0778v2 opened (sha256 46c96f44775aa2b0… matches); scratch copy lost with the container.
+- Things only I know: (1) the Stop hook nags about uncommitted files; the lane rules (no commit while a push runs; wait for «go») win,
+  say so in one line. (2) Pushes take 30-50 min here; verify runs experiments/si/check.sh in full (do not run it yourself: it is long;
+  run only your box's check script). (3) addC104.py / qwrap.py: placeholders must match [A-Za-z0-9-]+ (a lowercase id was silently
+  left unreplaced before that fix). (4) val105.py prints the Ξ-graph column; all box 105 D2 bests are Ξ-cyclic.
 
 ## Successor 52 HANDOVER (written 2026-11-12T18:58:38Z (date -u); session_01V5yGRZ4qENLeJLfN8NoaRD; Lead session_014FBi6o334DvwT5Uw2kDfoN; long session, written before parking so that it is on origin)
 ### Resume point (successor 53 starts here)

@@ -77,17 +77,47 @@ is the pattern a kill family for O2 would have to approach on unboundedly many l
   (counter runfail, unit genomes). So availability on 𝓛*_2 is a finite function of (s, xt, the carriers' order and parities), exactly
   as §3's encoding needs; and the abstract run (about 2 ms per genome) can search far more than box 105's engine-based climb.
 
+## 2a. Kill search for KEY2-5 with the audited evaluator (DATA; a SEARCH, not an enumeration; no new statement)
+- runclimb106.sh (finished 2026-11-12T23:36Z by date -u): mg106.py climb, 40 chunks (seeds 1-40) × 10 restarts × 5,000 hill-climb steps
+  (ladder105.py's moves: Ξ-target, gate swap, carrier-rank swap, parity flip, start flip) on 𝓛*_2, score = L* of the abstract run
+  (= key105's run, §2 xrun); out/climb106.out (40 lines, first and last inserted by script):
+  «MG106 climb seed 1 restarts 10 steps 5000: best L* 5 | per restart [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]»
+  «MG106 climb seed 40 restarts 10 steps 5000: best L* 5 | per restart [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]»
+- Over the 400 restarts the final L* is 5 in 373 and 4 in 27; none is above 5. Each chunk's best genome (best/climb106_<seed>.json) was
+  replayed on N5 from S3 by box 105's val105.py (out/climbval106.out): 40 of 40 lines «L* 5 (search: 5) Xi-graph cyclic | s3fail 0 keyfail
+  0 endfail 0 wrong 0 keymono 0 valmono 0», i.e. N5 makes 8 iterations with its only fallback at 6 on each.
+- So CONJECTURE KEY2-5 survives this kill search (about 2·10^6 evaluated genomes, against 1.2·10^5 in box 105's free d = 2 search): DATA only. The exact
+  answer needs §3's certificate; the next query is «L* ≥ 6».
+
 ## 3. Plan and status (OPEN)
 - 3.1 mg106.py: the mover-game evaluator; audit against key105.py (SPEC's engine on Γ3*) on random 𝓛*_2 genomes: counter mgfail (unit
   (genome, state, option): the mover-game value's comparison with the current option's differs from SPEC's availability bit); must be
   0 on every audited genome, with a control (one carrier's parity flipped in the evaluator only) that fires.
-- 3.2 cnf106.py: the query «some G* ∈ 𝓛*_2 has L* ≥ m + 1» as CNF: one-hot Ξ-targets; a strict total order on the 16 carriers (pairwise
-  bits + transitivity); parity bits; the 24 gate orders and 16 starts enumerated OUTSIDE the CNF (as skeleton families from §1) or
-  encoded; per visited state Odd's strategy bits in M_s with local-optimality clauses; the needs A / N as value comparisons.
+- 3.2 cnf106.py (DESIGN, not written; successor 53 → 54): the query «some G* ∈ 𝓛*_2 has L* ≥ m + 1» as ONE CNF (no outside
+  enumeration, so one UNSAT proof), built on Claim MG:
+  - Free data: XT[q][t] one-hot, q the 8 options, t ∈ {0, 1, 2, 3, X}; GO[i][j] a strict total order on the 4 level-0 gates (pairwise
+    bits + transitivity); S0[x] the start; ORD[c][c′] a strict total order on the 16 carriers (120 pairwise bits + 3·C(16,3) transitivity
+    clauses), PAR[c] their parities. cW sits above and K1 below every carrier (constants), K0, K3 above cW.
+  - Availability, run-independent: AV[σ][x] for the 16 states σ and 4 movers (64 variables). The run: states R[j] (4 bits, j = 0..m + 1),
+    R[0] = S0; R[j + 1] = the KEY step of §1 (level 0 by GO, level 1 by the NEW level-0 gates) with availability AV[R[j]] (a 16-way mux
+    per bit); R[j + 1] ≠ R[j] for j ≤ m. (Run-independence of AV is what keeps the CNF small: values depend on the state only.)
+  - Values, per state σ (fixed in the encoding, so the e-edges and the active gates are constants): Odd's optimal positional strategy as
+    witness bits RHO[σ][u] at the 8 gates u (4 active, 4 inactive); the successor of node z under RHO is a one-hot over {0, 1, 2, 3, cW, K}
+    (e-face: constant; β-face: XT of z's active option). A play = the walk from a start gate in this functional graph, unrolled for at
+    most 5 node visits (4 movers + start), with one-hot position variables; from it per carrier c: ONPATH, ONCYC, NODE (c on the cycle
+    and above every other cycle carrier by ORD), INP (on the path before the node's first visit and above the node), and the terminal
+    flags. Lengths: 2 + 5·(steps) per §2's edge counts, as a one-hot over the ≤ 6 possible values.
+  - Comparison CMP(p, q) («p ▷ q» in SPEC S1's order) of two plays: reward of the nodes (ORD, PAR; cW / K1 constants), else the top of
+    the symmetric difference of INP (a «top» variable per carrier: in exactly one set and no higher carrier in exactly one set; its
+    parity and side decide), else the lengths by the node's parity.
+  - Constraints per σ: 16 plays (each gate under RHO, and each gate with its OTHER face first and RHO after); local optimality of RHO at
+    all 8 gates (no face strictly better for Odd: «not CMP(own, other) reversed»), which characterises Odd's pointwise optimum in a
+    one-player game (RESULTS R36 (c) Lemma P1); AV[σ][x] ⇔ CMP(play from x's inactive gate, play from x's active gate).
+  - Expected size: 16 states × (16 plays × ~6·5 position vars + 16 × ~5 per-carrier vars) ≈ 30k variables, ≲ 10^6 clauses: within
+    CaDiCaL's range (R112's CNF was of this order).
 - 3.3 Audit (R112's standard): every satisfying assignment is decoded into a genome and replayed on N5 (key105.validate); random
   assignments of the free data are pushed through both the CNF (unit propagation to a full assignment) and key105.py, and the predicted
   availability bits compared (counter cnffail); a mutation control.
 - 3.4 Certificate: CaDiCaL 1.9.5 (as R112; available here through python-sat 1.9.dev15's bindings, version to be printed) with DRAT output
   for «≥ m + 1», checked by a RUP checker (the referees' docs/referee/scratch/ref_rup.c, read-only, or drat-trim), and regenerated.
-- Status at this commit: §0, §1, §2 done (3.1 = mg106.py, audited); a kill search with the abstract evaluator is running
-  (runclimb106.sh: 40 × 10 restarts × 5,000 steps, best genomes replayed on N5; outputs land in the next commit); 3.2-3.4 not started.
+- Status: §0, §1, §2 done (3.1 = mg106.py, audited); §2a kill search done (KEY2-5 survives); 3.2 designed, not written; 3.3-3.4 not started.

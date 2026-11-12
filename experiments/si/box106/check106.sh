@@ -14,5 +14,10 @@ grep -q "^SKEL106 max length over 24 gate orders x 16 starts: 8 | .* 6:1072 7:35
 [ "$(grep -c "^MG106 rand seed 106[24] genomes 300: (genome, state, mover) units 19200 mgfail 0$" out/mg106.out)" = 2 ] || bad "mg audit"
 grep -q "^MG106 rand seed 1061 genomes 20 CTRL 1: .* mgfail [1-9]" out/mg106.out || bad "mg control"
 grep -q "^MG106 xrun seed 1063 genomes 1000: runfail 0 " out/mg106.out || bad "mg xrun"
+# §2a kill search (frozen outputs, when present): 40 chunks, every best L* 5; every best genome replayed on N5 with six counters 0
+if [ -f out/climbval106.out ]; then
+  [ "$(grep -c "^MG106 climb seed [0-9]* restarts 10 steps 5000: best L\* 5 | " out/climb106.out)" = 40 ] && [ "$(wc -l < out/climb106.out)" = 40 ] || bad "climb rows"
+  [ "$(grep -c "L\* 5 (search: 5) Xi-graph cyclic | s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0$" out/climbval106.out)" = 40 ] || bad "climb replays"
+fi
 [ $fail = 0 ] && echo "BOX106 checks: PASS"
 exit $fail
