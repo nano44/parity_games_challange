@@ -1,14 +1,23 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## RESUME POINT -- successor 17 (L-COMP 17, Opus 5.5), 2026-11-11 22:46Z by date -u (GO Lead 22:41Z: BOX 38, item 2 first)
-- Tools in experiments/comp/box38 (bin/ gitignored via .git/info/exclude: gcc -O2 -DW=1 -o bin/fast38_w1 fast38.c; box36 bin/k and
-  box37 bin rebuilt): u38.py (U(G) from P-N5-ASC §6 l. 179 = R121 (g); = L-NEW ug193 on 8 pins), full38.py (MY engine run to the END:
-  own34 + SPEC fallback n5b A7), lnew38.py (L-NEW n5v mode xi to the end, env LNEW = scratchpad worktree of claude/l-new 1478886e;
-  recreate: git worktree add --detach <dir> origin/claude/l-new), fullval38.py (both engines + fast36), sweep38.py (exhaustive by
-  block; U constant per block), ladder38.py (U-only families), climb38.py (band / U-constrained climb), freezer38.sh.
-- Running at 22:4xZ: sweep38 (2,2)(2,3)(2,4)(3,3)(3,4) chain and (4,4), out/sw_N<N>M<M>.jsonl, resumable (rerun the same command).
-- Item 1 cost: fast37 ~30 s/eval at N + M 580, ~50 s at 696: band climbs are slow; after item 2.
+## HANDOVER -- successor 17 (L-COMP 17, Opus 5.5) PARKS 2026-11-12 (date -u in the park commit) after BOX 38. NOTHING RUNNING.
+- BOX 38 record: experiments/comp/box38/README.md (all DATA). Lead 02:43Z: «When both are done, write the BOX 38 record and park».
+  Item 2 (U(G) axis, for L-SI 50 BOX 98; reported to the Lead 02:42Z, logged at 61d04877): U(G) per P-N5-ASC §6 l. 179 = R121 (g);
+  Ttot = T3 + 3 and F = 1 on 376/376 two-engine runs (mine full38 + L-NEW n5v); max T3 flat in U: exhaustive N + M <= 8 (118M
+  genomes), sampled N + M 12-48, structured ladders to N + M 486 (U = 0 keeps >= 96% of T3; gen37: 6n + 7 -> 6n + 4), U-constrained
+  T3 climbs: band 150: 33 / 32 / 34 (U <= 0 / <= 2 / none), band 290: 60 / 60 / 60. CHAIN3's bound at U = 0 alone is 10^13-10^18.
+  Item 1 (band [580, 620], Lead budget 2 streams x 1 x 200): D_mov 83 / 82 at N + M 582 (ideal37 = fast37 on 7/7 bests); on BOX 37's
+  linear envelope (predicts 84.4). Nothing above linear.
+  Preempt (Lead 04:03Z): BLKX23_n48 reproduced exactly on ideal37 (88ac6b07).
+- Things only I know: bin/ dirs (box36/bin/k, box37/bin, box38/bin) and out/.lock_* are in .git/info/exclude (re-add in a fresh
+  clone); lnew38.py needs env LNEW = a worktree of claude/l-new (git worktree add --detach <dir> origin/claude/l-new; used 1478886e).
+  Tasks die at 2 h and on container restarts (~every 1-2 h here): every BOX 38 job resumes by re-running its command (sweep38 per
+  block, samp38 .ck, ladders per .out, climb38 OUT.state, band38.sh has a flock). samp38's composition sampler: rejection for the
+  first five pairs, stars-and-bars after (the rejection sampler hangs at N = M = 8).
+- Slips (disclosed to the Lead): one commit made while a push ran (88ac6b07; push.sh pushed only the verified SHA); one message
+  timestamp written without date -u (04:12Z for 04:04Z).
+- Open (not started): larger U-constrained T3 climbs (bands > 300) if L-SI 50 asks; item 1 beyond one band (Lead: single point only).
 
 ## HANDOVER -- successor 16 (L-COMP 16, Opus 5.5) PARKS 2026-11-11 (date -u in the park commit) after BOX 37. NOTHING RUNNING.
 - BOX 37 record: experiments/comp/box37/README.md (item 1 gen37 family; (2) mover class height). All DATA; nothing above linear.

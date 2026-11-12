@@ -44,7 +44,29 @@ growth of gen37's T3 survives at U = 0 (T3 = 6n + 4 at N + M = 29n + 29).
 ## (c) U-CONSTRAINED T3 CLIMB at fixed N + M band (climb38.py SCORE T3, KONE 0; cl38.sh; out/climb38_L*.log, bests out/climb38/)
 Band [140, 160], seed = gen37(4)'s U = 0 form (T3 28), 6 restarts x 1,500 proposals, same seed and RNG stream for every B:
 best T3: U <= 0: 33; U <= 2: 32; no U constraint: 34 (at U 6). (gen37(4) itself: U 15, T3 31, N + M 145.)
-Band [280, 300] (seed gen37(9) U = 0 form, N + M 290): see below when finished.
+Band [280, 300], seed gen37(9)'s U = 0 form (N + M 290, T3 58), 4 restarts x 800 proposals (seed 383) per B: best T3: U <= 0: 60
+(N + M 300); U <= 2: 60; no U constraint: 60 (at U 3). (gen37(9) itself: U 30, T3 61, N + M 290.) The unconstrained climbs add a few
+upward edges and gain nothing (<= +1 at band 150, 0 at band 290).
+All climb bests: out/climb38/BEST_*.json, sha1 + log line in out/climb38/FROZEN.txt (87 files; freeze38.sh one-shot).
+
+## ITEM 1: SIZE-BAND D_mov CLIMB (Lead 02:43Z budget: ONE band [580, 620], 2 seed streams x 1 restart x 200 steps; band38.sh)
+Score (D_mov, T3), NOT divided by size; k = 1 (BOX 36/37 constraint); seed gen37(19) (N + M 580, D_mov 4n + 3 = 79, T3 121).
+Counter D_mov = max over movers of D^tot (number of distinct (Lambda, E) classes; unit one run). Proxy fast37 (Gamma3 run to the first
+fallback); EVERY new best re-run on ideal37 (IDEAL-CYC text engine): 7/7 agree on D_mov and T.
+| stream | RNG | evals | best D_mov | N + M | T3 | ratio D_mov/(N + M) | file |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | 3801 | 177 (of 200 proposals) | 83 | 582 | 121 | 0.143 | BEST_B600s1_D83_T121_U61_NM582_d909aa49.json |
+| 2 | 3802 | 177 (of 200 proposals) | 82 | 582 | 121 | 0.141 | BEST_B600s2_D82_T121_U60_NM582_df63862b.json |
+Envelope point past 500 (the aim): D_mov 83 at N + M 582. BOX 37's linear envelope (D_mov = 0.139 (N + M) + 3.5, 38 sizes 244-493)
+predicts 84.4 there: the new point lies ON the linear envelope (residual -1.4; BOX 37's max residual 4.1). NOTHING ABOVE LINEAR.
+Cost: fast37 ~20-30 s per eval at N + M 582 (4,253 s and 4,331 s for the two streams, 177 evals each).
+
+## PREEMPT (Lead 04:03Z): L-NEW 70's BLKX23_n48 on MY ideal37 (blkx/blkx38.py, blkx/blkx38_BLKX23.out)
+Instance claude/l-new d3fc2d21 experiments/new/box206/inst/BLKX23_n48.json, sha1 3275991e86fb590e35d3129ae7e9de36f4b85a0f (copy blkx/).
+T 28, k 1, N 48, M 97, L 1, b 6; D_mov 23 (movers 2, 3, 22-24, 27-29, 46, 47); Dtop = D^tot at every mover; F_0(6) = 22.
+Mover 47: Lambda = K1 at every t; block integer 0,0,0,1,...,7,7,8,...,11,11,16,...,19,19,33,33,34,36,40,...,43 (23 distinct).
+AGREES with L-NEW 70's block206 on every claimed number. (Lead 04:05Z: L-NEW 70 withdrew the «binary counter» reading: one-hot high
+bits from a clock lane + one nesting edge, Dtop linear in b; consistent with 12 never occurring, 11 -> 16.)
 
 ## CHAIN3's bound against the data (chainb38.py; formula quoted from P-N5-CHAIN L3 / box 196 §5 and P-N5-ASC §5)
 log10 of the bound on T3 + 3: gen37(2) U 0: 13.3, U 9: 4,361; gen37(4) U 0: 14.8, U 15: 3.2e5; gen37(12) U 0: 17.7, U 39: 6.5e12;
