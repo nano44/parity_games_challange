@@ -103,3 +103,46 @@ PCTRL=1 (charge to the OTHER face's target) must fire.
   divergence at e-depth > c consumes a change at e-depth ≤ c elsewhere: a potential argument on P_c sets (DEPTH-COUNT3's object).
 - Instances for L-RED 66 (through the Lead): DHIB26_2804 (sha1 2c49fd10; Deep^e_1 = 24, Deep^e_2 = 11, max 7 at gate (10, 0)) and
   DWT20_2803 (sha1 ca731061; Deep^e_1 = 9).
+
+## Addendum A (L-SI successor 51, 2026-11-12T11:23Z (date -u); append-only): DEEP3 and DEEP3-all are different conjectures
+Lead 11:25Z. Two open premises, one per route (box 101 Add. D.3):
+- CONJECTURE DEEP3 (routes B, B′): for some fixed c, for every SCC C of D(G), Deep_c(C) := the INTERNAL-gate flips after t0(C) charged
+  (TWO-CROSS) to a change of depth > c is polynomial in N + M.
+  - DATA (§3): e-depth > 1: 38 on the 26 instances (DHIB26 24), 0 on 400 random genomes, 0 on MWR at every n.
+- CONJECTURE DEEP3-all (route A): for some fixed c, Deep^all_c := ALL gate flips over the WHOLE run charged to a change of depth > c is
+  polynomial in N + M.
+  - DATA (box 100 cross100, depth > 3): 79 on the 26 instances, including MW8_2 / MW32_2 with 8 / 32 = n at ext gates before t0; 0 on 400
+    random genomes.
+  - It can only hold as a polynomial bound, not a constant.
+- Relation: neither implies the other as stated.
+  - DEEP3-all counts more flips (ext gates, pre-t0) but needs no per-SCC structure.
+  - DEEP3 counts fewer, but routes B / B′ multiply by the per-SCC factors and SCC-RED's chain sum.
+  - Box 102's reduction DEEP3 ⇐ MOVER-DEEP3 (§2) applies to DEEP3. The same PROPAGATE argument gives DEEP3-all ⇐ «all movers' changes
+    of e-depth ≥ c over the whole run are polynomial» (the same proof, without the restriction to C and t0).
+
+## Addendum B (L-SI successor 51, 2026-11-12T11:43Z (date -u); append-only): Friedmann's G_N passes every chain link, so DEEP3 needs a genome-only step
+Source: Lead 11:47Z relaying L-LIT T66 (claude/l-lit 5c53efbd, docs/lit/T66-deep3-lower-bound-families.md, T66-depth-check.py; not opened
+here; one engine, a second is being built by L-LIT).
+- DATA (L-LIT's, relayed): on Friedmann's game G_N (LMCS / arXiv 1106.0778; not a genome game), Howard from ι(G_N):
+  - T = 9·2^N − 10 and C = 0;
+  - every chain link holds (BR-SEG-G under H0, TWO-CROSS, DEPTH-COUNT3);
+  - flips charged to depth > 3: 0, 0, 1, 6, 22, 64, 163, 382 for N = 1..8; depth > 9: 0, 0, 1, 8, 37, 130 for N = 3..8; max depth 3(N − 1).
+- Consequence (Lead reading, accepted here): no argument valid for Howard on every parity game proves DEEP3 or DEEP3-all. A proof must use
+  a genome-only property.
+- Correction of credit. This box's Lemma CORE-ABOVE (§1) is the landed E-DOM step: R121 (b) «Every vertex more relevant than some
+  e-vertex is an e-vertex, c_W, K0 or K3, by [DEF]» (in E-MON's proof, IDEAL-CYC), with its Γ3 form inside R125 (k)'s E-MON3. It is not
+  new. PROPAGATE (§2) is close to R125 (k) Lemma CHAIN-DECOMP3 («If seq_t(v) = (f, …), then f's successor y_f is a mover,
+  Λ_t(y_f) = Λ_t(v) and E_t(v) = {f} ∪ E_t(y_f).»), stated for changes instead of states.
+- The named step (the test the Lead asks for: the step of a DEEP3 proof that must fail on G_N). It is R125 (k) Lemma E-MON3, «If
+  Λ_t(v) = Λ_(t+1)(v) then E_t(v) ≤ E_(t+1)(v).», as used inside the proof. It rests on E-DOM: at fixed Λ, the most relevant difference
+  z of a Π-change that is an e-vertex is even and lies above every non-core vertex, so z is GAINED. A change at fixed Λ therefore never
+  removes a vertex above its top changed e-vertex.
+  - On G_N this fails: odd vertices sit above the exits (L-LIT: the step [F11] Lemma 6.6 (2) needs them). There a deep change can LOSE
+    an odd vertex above the changed part, and that is how the counter resets its lower bits under a fixed top.
+  - On genomes a reset must instead be a GAIN of a more relevant e-vertex. E-MON3 forces it, and every such gain of the top c + 1 is
+    counted by DEPTH-COUNT3.
+  - So in any DEEP3 / MOVER-DEEP3 proof, the step «a change of e-depth > c at a mover is paid for by a gain of an e-vertex» is where E-DOM
+    (via E-MON3) must be invoked, and it is the step that breaks on G_N.
+- What remains open: E-MON3 does NOT by itself bound deep changes. A lexicographic counter on e-sets is monotone (gain the lowest
+  missing e-vertex, drop the less relevant ones), so it satisfies E-MON3 and still has deep changes. The open question is whether
+  Howard's greed on genomes can drive such a counter. That is L-NEW 70's DEEP-k1 question, here per SCC (DEEP3) or globally (DEEP3-all).

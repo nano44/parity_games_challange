@@ -256,3 +256,72 @@ by script) and from arXiv 2609.40147v2 (opened here: pdftotext of the arXiv PDF)
   - READING: a mean-payoff Howard run is not a VJ Howard run. Encoding priorities as weights (−n)^p makes the optimal cycles agree, but
     Howard's intermediate choices compare means and biases, not (Λ, Π, len). So Zhong–Ye's lower bound neither transfers to VJ nor
     contradicts LAM-GAP / SHARP.
+
+## Addendum D (L-SI successor 51, 2026-11-12T11:23Z (date -u); append-only): Lemma RESTRICT-C (route B′), the three routes, §1's wording
+Lead 11:25Z (Lead reading of L-LIT T65, claude/l-lit f5fff985 docs/lit/T65-lamgap-one-player-howard.md; not opened here).
+
+### D.1 Novelty label (Lead reading, recorded)
+- LAM-GAP / SHARP go beyond landed R118 in two points only: no H0, and the tight constant |Ch|.
+- The induction is R118 (c) PATH and R17 (b) Lemma P. The additive-weight analogue is Cochet-Terrasson–Gaubert Thm 2.3, per L-LIT T65 (not
+  opened by me).
+- Label: «PROVED (lane); the Γ3 use is covered by landed R118 (d) / (l) up to the restriction step D.2».
+
+### D.2 Lemma RESTRICT-C (PROVED, lane; the one new step of route B′)
+Premises (trunk 071392490 docs/RESULTS.md, quoted by script):
+- R125 (e) Lemma CN2-3: «For every positional pair of Γ3(G) and every vertex v ≠ c_X, the cycle node of v's play has Ω ≥ 3; no mover,
+  gate or pad is ever a cycle node or in a set Π.»
+- R125 (c) Theorem REACH3-ALL: «For every genome G, the N5′-xi run from S3 on Γ3(G) visits only standard states and its mover parts form a
+  run of HOW3(G) (tie rule: Ξσ-best, then SPEC's choice, then the larger index) until its first fallback, at iteration T3 + 1.»
+- R118 (d) Theorem BR-SEG [every genome]: «If Λ and σ̄ are constant on the states a, a+1, …, a+j+1 and the step a+j → a+j+1 changes σ,
+  then j ≤ N − 1.»
+- R118 (l) Corollary T3: «§4 applies on Γ3».
+- Definitions of R104 / R117: the genome (N, lev, opts, gate, br, bp, start), Γ3's vertices, edges and priorities:
+  - e-priorities eb + 2i in (lev, gate) order;
+  - β-priorities 6 + 2br + bp;
+  - m-pad priority 2 at the start option, else 0;
+  - the core above.
+
+Definitions.
+- C is an SCC of D(G). Reach(C) is the set of movers reachable from C in D(G), C included. Every option of a mover of Reach(C) has its
+  W- and Ξ-targets in Reach(C) or −1, so Reach(C) is closed under D(G)'s successors.
+- For a state a ≥ t0(C), G′ is the genome on the movers of Reach(C), renumbered:
+  - their options with the same (lev, gate, br, bp) entries and targets renamed (−1 kept);
+  - start := σ_a's choices at those movers.
+
+Statement. Let V_R be the vertices of Γ3(G) reachable from Reach(C)'s movers (the core included). Then:
+- (i) Γ3(G′) is isomorphic to Γ3(G) restricted to V_R, by a map that preserves owners and edges. It preserves the relevance order on all
+  vertices except the m-pads, whose priorities may differ (start := σ_a).
+- (ii) For every positional pair, the VJ value (Λ, Π, len) of every vertex of V_R is the same in both games, and Odd's pointwise-optimal
+  choices on V_R are the same.
+- (iii) The states a, a + 1, … of HOW3(G), restricted to V_R, form a HOW3 run of G′ from its start S3(G′).
+- (iv) Hence every two-player window of C (σ̄ and Λ constant on V_R) has at most N′ ≤ |Reach(C)| ≤ N steps (R118 (d) / (l) on G′):
+  Gap(C) ≤ N.
+
+Proof.
+- (i) The edges of V_R stay inside V_R (closure). Priorities: restricting the options keeps the (lev, gate) order of the e-vertices, and
+  the e-block stays above every β (eb > bmax in both games). Every other non-core priority (gates, pads, movers, c_X, K1, K2) is the
+  same constant, and the core stays on top; only m-pads change, with the start.
+- (ii) A play from V_R stays in V_R. By CN2-3, no m-pad is ever a cycle node or in a set Π, so its priority never enters a value. Values
+  and Odd's optimal replies are computed on V_R alone.
+- (iii) After t0(C) the movers of Reach(C) \ C do not switch in G's run (definition of t0). By (ii) they have the same values in G′, so
+  they have no improving switch there either. The movers of C switch by HOW3's rule on the same values, and the non-mover Even vertices
+  are frozen at the same standard choices. A tie resolution legal in G is legal in G′ (G1: H(C) ranges over all legal resolutions; the
+  proof of BR-SEG (DOM, STRICT, PATH) does not use a tie rule — Lead to confirm against R118's packet).
+- (iv) A two-player window of C on V_R is a p-run of the G′ run (the core's Λ and σ̄ are constant: R118's K2-r). Apply BR-SEG to G′. ∎
+- Caveat, stated plainly: (iii)'s tie-rule sentence is a reading of BR-SEG's proof, not a quote; a referee must check it.
+
+### D.3 The three routes (Lead reading 11:25Z, recorded)
+| route | window bound | Λ / σ̄ count | open premise | status |
+| --- | --- | --- | --- | --- |
+| B′ (PRIMARY for landing) | R118 (d) + (l) + R125 (c), (e) + RESTRICT-C: Gap(C) ≤ N | per SCC: ONE-CROSS3 / INT-ONLY, TWO-CROSS, DEPTH-COUNT3 (D1 fixed), SCC-RED | DEEP3 (per SCC: internal gates after t0) | lane + landed; RESTRICT-C is the one new step to referee |
+| B | LAM-GAP / SHARP + W1: Gap(C) ≤ N_C | as B′ | DEEP3 | lane (LAM-GAP SURVIVES L-RED 66; L-FORMAL formalizing it, per the Lead) |
+| A (fallback) | global windows: T3 ≤ (C + R + 1)(N + 1), R118 (l) + R125 (c) | R ≤ poly + Deep^all_c by TWO-CROSS + DEPTH-COUNT3 (Add. C, Theorem R-SPLIT) | DEEP3-all (every gate, whole run) | landed + 2 lane lemmas |
+- DEEP3 and DEEP3-all are different conjectures (box 102 Add. A). DEEP3-all can only be a polynomial bound: MW32_2 already has 32 = n
+  deep external flips.
+
+### D.4 §1's wording, as the Lead asks
+- Replace «OPEN» for Hansen 2012 Conj. 6.1.1 by: «open until 2026-10; Zhong–Ye arXiv 2609.40147v2 (unrefereed preprint) claims a
+  refutation (Thm 6.1)» (quotes in C.4).
+- Why it does not touch VJ windows: Zhong–Ye's exponential count is a count of gain improvements, i.e. of WINDOWS (iterations «before any
+  state attains its optimal gain»). Under VJ a window ends only when some Λ changes, and windows number at most n(n − 1) + 1, because
+  each vertex's Λ rises at most n − 1 times. Each window is ≤ |Ch| (SHARP).
