@@ -1,0 +1,4 @@
+edrup L14_C12_final_solved.txt K 0 P 32 client 13 EXT 0-11 env LEVEL=8 KEEPO=0 KEEPR=0 | cnf sha1 713a802880dd49db74740ede0ea30769a86f2f8e clauses 55185 lemmas 4011 | drup: s VERIFIED (608 lemmas RUP-checked)
+edrup L14_C12_final_solved.txt K 1 P 24 client 13 EXT 10,11 env LEVEL=8 KEEPO=0 KEEPR=0 | cnf sha1 36ed96fcde4a56443cd37e44e42bf0b431dba6aa clauses 327999 lemmas 143939 | drup: s VERIFIED (53497 lemmas RUP-checked)
+edrup L14_C12_final_solved.txt K 1 P 32 client 13 EXT 0-11 env LEVEL=8 KEEPO=1 KEEPR=0 | cnf sha1 c8bac5f4b3c994bb96df675825889ce1349cb121 clauses 531944 lemmas 160574 | drup: s VERIFIED (58660 lemmas RUP-checked)
+edrup X5_P14_dec.txt K 1 P 20 client 13 EXT 0,1,2,3,4,5,6,7,8,9,10,11,16,17,20,23,25,28,29,30,33,34,35,36,37,39,41,43,44,46,48,52,54,55,58,59,61 env LEVEL=13 KEEPO=1 KEEPR=0 | cnf sha1 ccccdfbb661f52749fc424ecd51b13b195b7da3a clauses 1018302 lemmas 343590 | drup: s VERIFIED (59869 lemmas RUP-checked)
