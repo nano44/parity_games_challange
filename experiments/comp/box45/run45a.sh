@@ -1,7 +1,7 @@
 #!/bin/bash
 # L-COMP box 45 item (a): depthNS (deep45.py) — (1) TAIL invariance flip by flip on 8 pairs (G, TAIL_2(G)) + 2 controls; (2) the counts on the
 # frozen sets. Resumable per genome / pair. env LNEW209 = an archive of claude/l-new 311bbf81 (experiments/new ...).
-# Usage: run45a.sh tail | frozen | big
+# Usage: run45a.sh tail | frozen | big | rand
 set -u; cd "$(dirname "$0")"; export PYTHONDONTWRITEBYTECODE=1; mkdir -p out inst
 main() {
 B43=../box43/inst
@@ -28,6 +28,9 @@ frozen)
      $B43/D10_k16.json $B43/D80_k16.json $B43/DHIB26_k0.json $B43/TMWR4.json $B43/TMWR8.json $B43/TMWR16.json $B43/TC6G8.json $B43/TREC.json $B43/TDHIB26.json inst/TRWX.json ;;
 big)
   per deep45_big.out ../box42/inst/CL45.json $B43/D10_k32.json $B43/D18_k32.json $B43/D80_k32.json $B43/TMWR32.json ../box42/inst/CL90.json $B43/D10_k64.json $B43/D80_k64.json ;;
+rand)
+  for px in 0.6 0.3 0.0; do python3 rand45.py 4511 300 60 $px out/deep45_rand.out; done
+  python3 rand45.py 4512 200 160 0.3 out/deep45_rand.out ;;
 *) echo usage; exit 2 ;;
 esac
 echo "run45a $1 done"
