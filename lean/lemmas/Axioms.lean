@@ -50,3 +50,5 @@ import PGLemmas
 #print axioms PG.Genome.k1
 #print axioms PG.Genome.k5
 #print axioms PG.Genome.prio_K1_lt_top
+#print axioms PG.OptCounter.le_succ
+#print axioms PG.Genome.k4

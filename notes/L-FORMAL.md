@@ -1,6 +1,63 @@
 # L-FORMAL notebook (Lean formalization lane; branch claude/l-formal; files: lean/, this notebook)
 
 ## Resume point
+- SUCCESSOR 2 (session_01V5yGRaQYgCY9vD9mnoWrPb, started 2026-11-12T17:10Z; this block is the resume point, the blocks below it are the
+  predecessor's and stay as history). Handover check 8fb3dd6c is on origin (push.sh exit 0 at 18:00:32Z). Lead 17:22Z: all five answers
+  match, «go». Lead's rulings of 17:22Z, verbatim. Item (0): «(a) Mirror frozen / legal / howard / moves EXACTLY as defined, along
+  idealcyc.py + si.py runs on the 11 genomes, with a HowardAt-breaking control that fires. You are right that r187/ideal.traj is the IDEAL
+  step and the wrong engine. (b) For opt: at every state, check Odd's reply against si.py's computed optimal counterstrategy, value by
+  value. Also check that no single-vertex deviation of σ̄_t improves Odd's valuation at any vertex (unit (state, vertex, deviation)), and
+  add a control that makes one gate non-optimal and must fire. Label it: «optimality checked as local optimality of a one-player
+  counterstrategy plus agreement with si.py's optimum; full enumeration not done». Lasso enumeration under a cap is optional and only
+  where it is cheap. That is DATA about the transcription. It does not replace the Lean proofs.» Item (0′): «if ClassOrder holds for ALL
+  pairs under WF, state the stronger form and name the deviation («stronger than box 208 §1's sentence»), as you plan. Send the Statement
+  before its proof lands in a commit.» Stale sentences: «fix README l. 117 and INDEX l. 56 in your first commit, as you propose.»
+- STATE 2026-11-12T18:12Z (date -u):
+  - (0) DONE as DATA: lean/lemmas/check/idealcheck.py (outputs check/out/idealcheck*.out). 11 JSON genomes of experiments/new/box191/inst,
+    1,018 vertices, 191 states, 180 steps: all 12 counters 0 (fastdiff 18,814 (state, vertex); valdiff 18,814; devfail 546,942 (state,
+    vertex, deviation); howardfail 2,388 (step, mover); stopfail 272 (mover, gate)). IDEAL_CTRL=how: howardfail 180 on all 11;
+    IDEAL_CTRL=opt: devfail 7,361, valdiff 3,541 on all 11. Lasso enumeration: not done.
+  - (1) DONE: PGLemmas/GenomeK4.lean: `le_of_underProgAt`, `OptCounter.le_succ` (R123 LOC-GATE in ⊴ form, any game), `Genome.k4 :
+    G.K4Statement`. NO-TIE was not needed.
+  - (0′) `ClassOrderStatement` + `clsKey` are in PGLemmas/GenomeOrderStatement.lean (statement only, committed with this block) and go to
+    the Lead for the diff. THE PROOF EXISTS AND COMPILES BUT IS NOT COMMITTED: PGLemmas/GenomeOrder.lean (untracked on purpose;
+    `class_order : G.ClassOrderStatement`, `clsLt_iff`, `clsKey_lt_iff`, `clsKey_le_iff`, `clsKey_injective`, `clsLt_total`,
+    `clsLt_trans`, `pw_lt_of_max`). After the Lead's ACCEPT: `git add` it, add `import PGLemmas.GenomeOrder` to PGLemmas.lean and
+    `#print axioms PG.Genome.class_order` to Axioms.lean, update the INDEX row. If the container was replaced the file is LOST: its
+    proof is 150 lines; the route is in its header (key (rew Λ, Σ 2^pr over E); `Prod.Lex.toLex_lt_toLex`; `pw_lt` for the top vertex).
+  - Statements for (3) and (4) are WRITTEN, compiled and go to the Lead together with `ClassOrderStatement`; NONE is proved:
+    PGLemmas/GenomeLevelStatement.lean (`ck`, `L2Statement`, `L3Statement`, `L5Statement`, `PlateauGStatement`, `QuietStatement`,
+    `AllTCycStatement`, `AllTCycSharpStatement`; deviations in the file's header).
+  - Build of the tree with these files: `rm -rf .lake/build && lake build` → «Build completed successfully (3181 jobs).», 0 warnings,
+    before GenomeLevelStatement.lean was added; with it, incremental `lake build` → 3182 jobs. Axioms.lean: 48 theorems, 47 with [propext,
+    Classical.choice, Quot.sound], 1 with [propext, Quot.sound]. No sorry / admit / axiom / native_decide.
+- NEXT, in this order (STATEMENT FIRST for each new `…Statement`):
+  (3) LEVEL on the genome. Classes as keys: `ck t v := G.clsKey (G.cls (nxt G.V0 σ τ t) v)`; `FrontAt ck b t v`, lag = `ck t v ≠ ck b v`.
+      (L2) a front vertex is a mover, a gate or a β with xt = some y. Proof: constant classes (`k3` (e)) never lag; β with xt = none has
+      the class of K0 (`cls_step`, frozen); e_g with wt = some w: w not lagging ⇒ e_g not lagging (`cls_eface` at t and at b), w lagging ⇒
+      class(w) < class(e_g), so e_g is not lowest.
+      (L3) (α) a mover z of the front with a non-lagging successor y, and then every front class = class_b(y); or (β) every vertex of a
+      play of the front lags, its cycle node c is a β, and every front class = (c, ∅). Proof: classes do not rise along a play (`cls_step`,
+      `cls_eface`); either some lagging play vertex has a non-lagging successor (then it is not a gate by `k4` at b + `k1`, not a β by
+      `cls_step` at t and b, so a mover), or the whole play lags (cycle node c has class (c, ∅) by `val_of_lam_eq`; c is a β by (L2) and
+      `lam_ne_mover`, `lam_ne_gate`).
+      (L5) the keys of the front lie in a set of at most 2M keys (class_b of the gates, (β, ∅) of the β's); a front has at most N + 2M
+      vertices.
+  (4) PLATEAU on the genome, as ONE generic lemma GP, then two uses. GP: a window [u, v] of a run and a set Y with, for all s in [u, v]:
+      (a) cls_s = cls_u on Y; (b) Y closed under the successor map of s; (c) every gate of a mover of Y is in Y; (d) every step s < v
+      changes σ at a mover of Y. Then v − u ≤ |movers of Y| ≤ N, by `plateau` with Ch := Mov ∩ Y. The one hypothesis of `plateau` that
+      needs work is «in Y only Ch changes», i.e. σ̄ is constant on the gates of Y ((P4)): the chosen face is in Y (b); if the other face
+      is not in Y the chosen one is the same at every s; if both are in Y and their classes differ, `k4` picks the lower; if the classes
+      are equal and wt g = some w, e_g ∈ E(e_g) = E(β_g) (`cls_eface`), so β_g's play passes e_g, hence g (the only vertex with
+      successor e_g), so σ̄(g) = e_g; if the classes are equal and wt g = none, both are (c_W, ∅), Ω(e_g) = (c_W, ∅, 1), plen(β_g) ≥ 2,
+      c_W is even, so `OptCounter.le_succ` forces σ̄(g) = β_g. (THIS LAST CASE IS NOT IN BOX 208: Addendum B1 (5) reuses (P4) with Y :=
+      all vertices, where «(c_W, ∅) is above every lagging class» is not available. Reported to the Lead 18:00Z; unproved until GP is.)
+      Use 1 (plateau, box 208 A2): stalls on [u, v) with reference b, Y := the vertices whose key at u is ≤ the front key; (a) is (P1)
+      from (L1) + `k1`; (b) (P2); (c) (P3) from `k5`; (d) is (P6) with REFEREE 32's repair (answer σ_(s′+1) by σ̄_s; `val_congr`; `f1`).
+      Use 2 (quiet tail, replaces QUIET-N): Y := all vertices on [b′, T], (d) from `IdealCycRun.moves`.
+      Assembly: `level_count` with α := ℤ ×ₗ ℤ, |M| ≤ 2M, F := N + 2M, L := N gives b′ ≤ 2M(N + 2M)(N + 1); tail ≤ N. So T ≤
+      2M(N + 2M)(N + 1) + N, which is below box 208 A0's P(N + 2M + 6) + N. Final Statement: the lane's bound, word for word, diffed by
+      the Lead against A0 and TARGET.md before the proof; the sharper bound as a second theorem.
 - 2026-11-12T14:46Z (date -u): STATE. Everything proved so far is «Lean-checked (lane)»: the Lead ACCEPTED every statement (rulings 11:49Z,
   12:29Z, 13:13Z, 13:58Z, 14:54Z, quoted in lean/lemmas/README.md «Status and reading rules») EXCEPT `LevelCountStatement`, which is
   PROPOSED (my addition; verdict open). Rows become RESULTS only through CHECKER + the Lead's CI job «lean-lemmas» (Lead 13:52Z: «elan, lake exe

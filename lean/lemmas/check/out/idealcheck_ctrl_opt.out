@@ -1,0 +1,13 @@
+DEAD_SEG2P_d4_N8.json: n 62 T 10 builddiff 0 prdiff 0 fastdiff 0 frozenfail 0 legalfail 0 taufail 0 valdiff 275 devfail 280 howardfail 22 movesfail 0 startfail 0 stopfail 1
+DEAD_SEG2P_d7_N14.json: n 104 T 19 builddiff 0 prdiff 0 fastdiff 0 frozenfail 0 legalfail 0 taufail 0 valdiff 321 devfail 1058 howardfail 36 movesfail 0 startfail 0 stopfail 1
+DEAD_SEG2P_d9_N18.json: n 132 T 21 builddiff 0 prdiff 0 fastdiff 0 frozenfail 0 legalfail 0 taufail 0 valdiff 392 devfail 745 howardfail 32 movesfail 1 startfail 0 stopfail 1
+cyc2_d7.json: n 104 T 21 builddiff 0 prdiff 0 fastdiff 0 frozenfail 0 legalfail 0 taufail 0 valdiff 84 devfail 103 howardfail 20 movesfail 0 startfail 0 stopfail 1
+cyc2_d8.json: n 118 T 22 builddiff 0 prdiff 0 fastdiff 0 frozenfail 0 legalfail 0 taufail 0 valdiff 852 devfail 1663 howardfail 21 movesfail 1 startfail 0 stopfail 2
+cyc_d3.json: n 48 T 9 builddiff 0 prdiff 0 fastdiff 0 frozenfail 0 legalfail 0 taufail 0 valdiff 180 devfail 281 howardfail 10 movesfail 1 startfail 0 stopfail 1
+cyc_d4.json: n 62 T 12 builddiff 0 prdiff 0 fastdiff 0 frozenfail 0 legalfail 0 taufail 0 valdiff 82 devfail 224 howardfail 17 movesfail 0 startfail 0 stopfail 1
+cyc_d5.json: n 76 T 13 builddiff 0 prdiff 0 fastdiff 0 frozenfail 0 legalfail 0 taufail 0 valdiff 211 devfail 481 howardfail 16 movesfail 0 startfail 0 stopfail 1
+cyc_d6.json: n 90 T 19 builddiff 0 prdiff 0 fastdiff 0 frozenfail 0 legalfail 0 taufail 0 valdiff 596 devfail 1523 howardfail 26 movesfail 2 startfail 0 stopfail 2
+cyc_d7.json: n 104 T 17 builddiff 0 prdiff 0 fastdiff 0 frozenfail 0 legalfail 0 taufail 0 valdiff 436 devfail 711 howardfail 24 movesfail 1 startfail 0 stopfail 4
+cyc_d8.json: n 118 T 17 builddiff 0 prdiff 0 fastdiff 0 frozenfail 0 legalfail 0 taufail 0 valdiff 112 devfail 292 howardfail 21 movesfail 0 startfail 0 stopfail 1
+idealcheck ctrl opt: genomes 11 vertices 1018 states 191 steps 180 fastchecks 18814 valchecks 18814 devchecks 546942 howardchecks 2388 stopchecks 272 | builddiff 0 prdiff 0 fastdiff 0 frozenfail 0 legalfail 0 taufail 0 valdiff 3541 devfail 7361 howardfail 245 movesfail 6 startfail 0 stopfail 16
+opt: optimality checked as local optimality of a one-player counterstrategy plus agreement with si.py's optimum; full enumeration not done

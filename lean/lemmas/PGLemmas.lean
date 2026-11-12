@@ -39,3 +39,6 @@ import PGLemmas.GenomeClass
 import PGLemmas.GenomeK3
 import PGLemmas.GenomeK2
 import PGLemmas.GenomeK15
+import PGLemmas.GenomeK4
+import PGLemmas.GenomeOrderStatement
+import PGLemmas.GenomeLevelStatement
