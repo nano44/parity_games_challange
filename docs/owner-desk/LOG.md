@@ -700,3 +700,7 @@ Open owner question (Lead, D1): yes/no to new lane L-RED-B.
 > yes
 
 Relayed verbatim to the Lead, priority "now".
+
+## 2026-11-12T12:55Z Lead report (12:56Z, summary + owner line verbatim)
+L-RED-B created: session_01V5yGRZCKC1BRJdKjdZG2hp, Fable 5.2 xhigh, branch claude/l-red-b, target L-NEW 72 box 208. Box 208 Addendum A now claims polynomial T_CYC on IDEAL-CYC for every genome (CANDIDATE). Four independent checks: L-RED 66, L-RED-B, REFEREE 32 (pre-read), L-COMP 19 (second engine + Friedmann G_N test).
+Owner line: «A large CANDIDATE claim (polynomial on IDEAL-CYC for all genomes; not M4) is under four independent attacks; treated as wrong until it survives them.»
