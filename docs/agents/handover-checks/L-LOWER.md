@@ -1,49 +1,47 @@
-# Handover check: L-LOWER successor 14 (2026-11-12 04:03Z, date -u; LANE-RESTART step 3)
+# Handover check: L-LOWER successor 15 (2026-11-12 09:47Z, date -u; LANE-RESTART step 3)
 Every answer measured from the repository at the time of writing (commands named), not recalled.
 
 ## 1. Branch, head, distance to trunk
-- Branch `claude/l-lower` (`git branch --show-current`). The local branch was 131 commits behind origin at start (af9a73d8) and
-  was fast-forwarded (`git merge --ff-only origin/claude/l-lower`); clone not shallow (`git rev-parse --is-shallow-repository` = false).
-- Head d80fffe5219e6ed8dcb51b88988ae5124b533a7c = origin/claude/l-lower (successor 13 HANDOVER).
-- Trunk `claude/vibrant-johnson-nxvvxo` at 575ac9443a9d3bd49968eeb80cc1615189f5a494; merge-base 8cc6ebc6.
-- `git rev-list --left-right --count origin/claude/vibrant-johnson-nxvvxo...HEAD` → 100 ahead, 800 behind.
+- Branch `claude/l-lower` (`git branch --show-current`). The local branch was 9,555 commits behind origin at start and was
+  fast-forwarded (`git merge --ff-only origin/claude/l-lower`) after `git fetch --unshallow`; `git rev-parse --is-shallow-repository` = false.
+- Head 5d8b4b102f142ff34a2f021a6b0c41de9401c1d7 = origin/claude/l-lower (successor 14 HANDOVER).
+- Trunk `claude/vibrant-johnson-nxvvxo` at 071392490dcea36bfa952288aa6170d45fadf874; merge-base 8cc6ebc6.
+- `git rev-list --left-right --count origin/claude/vibrant-johnson-nxvvxo...HEAD` → 113 ahead, 843 behind.
   No trunk merge (not needed for the lane's files).
 
-## 2. Open work and the next step of each (BOX L16, after «go»)
-- BOX L16: hand-built SHARED helper cascade on the C12 base (solved c58041d5, frozen eaf68e67), sized by CONJECTURE KEY-CLOCK
-  (≈ log2 P − c pairs). Target: core8 rows 0..P for P ≥ 18; milestones P = 18, 21, 24, each replayed (sim6 = fenc) and frozen;
-  stretch: full core8 horizon T 510. Stop rule: no design passes P = 18 after D1-D3 → the exact obstruction is the box result.
-- (D1) graft the replayed exact 3-pair cascade l15/out/E_k3_P16_shared.txt (0c6c4793) onto C12 helper levels 8-10 (movers 16-21),
-  rewire q4 / f5 / q6 / f6 to read it. Next step: read the cascade's encoding (xt / rank / even / gate / start in l15 units,
-  ekr.py / sim15.py) and C12's genome layout (l14 rec + rsolve.py), write the graft as a script, replay with sim6 + fenc, then
-  pgad3 fixed-rank questions with XS = {8, 11, 12, 13} restricted to cascade targets at P = 17, 18.
-- (D2) 4-pair cascade from kr.py's relaxed P 32 model made exact with the trajectory fixed (ekr.py), then the same graft.
-- (D3) HIT7_lift_d32's own helper cascade (l9/rec) copied onto C12's helper levels as the shared clock.
-- Binding question at each milestone (l14/tight.py): which client's tight change fails first (P 18 needs q6 at 16, f5 at 14,
-  q4 at 13 at once).
-- No runs in flight (`pgrep -af "pgad|push.sh|ann3|kr.py"` empty before this commit). Binaries (fenc, drup) to rebuild in the
-  scratchpad before «go».
+## 2. Open work and the next step of each (BOX L17, after «go»)
+- BOX L17 (Lead 07:37Z): build the base AROUND the frozen f6 pair (ekr2_f6_k1_P510, 4fee0495). Milestone: rows 0..18 realized,
+  replayed sim6 = fenc; stretch P 32. Stop rule: three consecutive capped runs with no answer at the same P → write the obstruction.
+- A1: DEAD start (ann3 re-solves all ranks; f6 broken; pgad3 UNSAT at prefix 2, solver only). Recorded in L17 §2. Nothing open.
+- A2 (l17/run/A2.txt d9aa4f7e, best 161 violated constraints; SHA1SUMS checked OK): next step: `l14/rsolve.py` → A2_solved.txt,
+  `l16/f6check.py` on rows 0..64, then ascending exact prefix sweep 2..18 (`l13/sweep1.sh`, pgad3, XS 8, G {63}, 600 s per prefix
+  question, task cap 2,900 s), every SAT prefix replayed sim6 = fenc and frozen with SHA1SUMS.
+- A3 (only if A2 stops before P 18): one design in a frame that KEEPS the design's ranks (pin the 6 design options' relative ranks
+  in ann3/gsolve, or pgad5 on A2_solved with FIXC 16,17 and XS 8,11,12,14,15 and an XORD consistent with the base). Then the box
+  result in L17: the P 18 design or the exact obstruction with its instance; DRUP every cited UNSAT first.
+- No runs in flight (`pgrep -af "pgad|ann3|ekr2|push.sh"` empty before this commit). Binaries (fenc, drup, ann3) to rebuild in the
+  scratchpad before «go»; no long job before «go».
 
 ## 3. docs/GAPS.md rows owned by L-LOWER
-None (`grep -c L-LOWER docs/GAPS.md` = 0, on this branch and on trunk). The box works against G-N5-TIME (owner L-NEW, open;
-trunk docs/GAPS.md line 11).
+None. `grep -c L-LOWER docs/GAPS.md` = 0 on this branch; on trunk 1 matching line (line 11, G-N5-TIME, owner L-NEW, open): it
+cites L-LOWER's instances in its text, not as owner. The box works against G-N5-TIME.
 
 ## 4. Three owner rulings that most constrain this lane (verbatim; status from trunk docs/DECISIONS-INDEX.md)
 1. D18 (active, index line 32; docs/DECISIONS.md l. 333): «Focus on N5 and work toward proving it. Explore novel approaches,
    especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make
    reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven
-   results from conjectures and open problems.» Constraint: each L16 statement carries PROVED (lane) / CONJECTURE / DATA / DEAD;
-   KEY-CLOCK stays a CONJECTURE whatever a single hand-built cascade does.
+   results from conjectures and open problems.» Constraint: each L17 statement carries PROVED (lane) / CONJECTURE / DATA / DEAD;
+   a long realized prefix is DATA, not a lower bound (L17 §0).
 2. D1 (active, index line 5; docs/decisions/D001-launch-brief.md l. 25, excerpt): «A claimed polynomial algorithm is far more
    likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet
-   below.» Constraint: a wall that does not appear on one base is not evidence that N5 is polynomial, and a tower past P 18 is
-   not yet a super-polynomial family; scope every claim to its instance.
+   below.» Constraint: a design that fails in one frame is not evidence that N5 is polynomial; a P 18 design is not a
+   super-polynomial family; scope every claim to its instance.
 3. D14 (active, index line 22; docs/DECISIONS.md l. 246): «You know it can also test prveiously not tested approaches, it can
-   come up with it own as well» (typos the owner's). Constraint: the hand-built cascades D1-D3 are own designs and go through the
-   same freeze / replay / DRUP discipline as any other candidate.
+   come up with it own as well» (typos the owner's). Constraint: A2 / A3 are own designs and go through the same freeze / replay /
+   DRUP discipline as any other candidate.
 
 ## 5. One trap that bit this lane, and the check that prevents it
-- Trap (successor 13): a wait loop on `pgrep -f "bash scripts/push.sh"` matches its own command line and never ends; and pausing
-  a DRUP worker for a push lost the helper in flight (helper 41, twice). Check: poll the push task's output file for its exit
-  marker instead of pgrep, and let workers finish before pushing (never commit while a push runs).
-- Start trap (again this time, 131 behind): fetch --unshallow, ff-only merge, assert branch and HEAD = origin (both true above).
+- Trap (successor 14, twice): a bare «&» (one ekr2 loop; one push.sh killed in verify). Check: every long command, push included,
+  goes through a tracked background task with output redirected to a file and «echo exit $?»; completion is read from that file's
+  exit marker, never by a pgrep wait loop (which matches its own command line, successor 13).
+- Start trap (again this time, 9,555 behind): fetch --unshallow, ff-only merge, assert branch and HEAD = origin (both true above).
