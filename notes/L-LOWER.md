@@ -13,6 +13,11 @@
   ($SP/sw/sweep5.sh A3x5; log $SP/sw/A3x5.log; resumable: re-run the same command with the same env). SAT 10 (99 s), 11 (626), 12 (496),
   13 (812 s; decode follows rows 0..13, replayed). FINDING: A3 decodes break f6 beyond the prefix (f6check rows 0..510: 47-62 / 129
   mismatches, first at row 14-18): rewired readers change the chains f6 reads (L16 coupling, reader side).
+- 11:43Z A3 P 14 SAT (765 s), P 15 SAT (2,680 s): A3x5_P15_dec 27ac152d follows rows 0..15 (replayed; frozen l17/sweepA3, pushed 48156d58).
+- 12:00Z: direct A3 P 18 question started (same frame; $SP/sw/A3d_P18.out; cap 2,900 s). 12:20Z: sweep task killed by the 2 h TASK limit
+  during P 16 (~2,200 s in; not a capped no-answer); relaunched 12:21Z from P 16 (resumes by the log). Lesson: a sweep of 2,900 s questions
+  must be relaunched per question or sized so the task (2 h) holds at most 2 questions.
+- A2 XS 11 P 13 DRUP: cap hit (2,900 s, proof 1.56 GB), not cited.
 
 ## Successor 14 HANDOVER (-> successor 15; written 2026-11-12 09:2xZ, date -u; PARK on Lead 09:04Z instruction, context ~450k)
 ### DONE (claude/l-lower; products docs/lower/L16-cascade.md (closed), docs/lower/L17-around.md (open); tools experiments/lower/l16/, l17/)

@@ -77,7 +77,7 @@ cnfp = os.environ.get('CNF'); cl = []
 if cnfp: sink = cl.append
 else:
     from pysat.solvers import Solver
-    sv = Solver(name='cadical195'); sink = sv.add_clause
+    sv = Solver(name=os.environ.get('SOLVER', 'cadical195')); sink = sv.add_clause
 t0 = time.time()
 try:
     E, info, ctx = enc32.build(D, S, H, {'ranks'}, sink=sink, freerank=freerank, cand_in=cand, fixpoint=False)
@@ -117,6 +117,22 @@ if cnfp:
         for c in cl: f.write(' '.join(map(str, c)) + ' 0\n')
     print('CNF ->', cnfp, hashlib.sha1(open(cnfp, 'rb').read()).hexdigest()); sys.exit()
 if E.empty: print('RESULT UNSAT (empty clause at build)'); sys.exit()
+if os.environ.get('PHASE'):   # L-LOWER 17: phase hints from a hint genome's design (search order only; verdicts unchanged)
+    Hg = enc32.rdgen(os.environ['PHASE']); ph = []
+    def _ph(v, b):
+        if not isinstance(v, bool): ph.append(v if b else -v)
+    for (m, z), v in ctx['Wv'].items(): _ph(v, Hg['xt'][m] == z)
+    for m, v in ctx['pos'].items(): _ph(v, Hg['bp'][m] == 0)
+    for (l, a), v in ctx['Gb'].items(): _ph(v, Hg['gate'][4 * l + a] > Hg['gate'][4 * l + 2 + a])
+    for x in range(N):
+        v = ctx['st'][0][x] if x < len(ctx['st'][0]) else None
+        if v is not None: _ph(v, Hg['start'][x] == 1)
+    fs = ctx['fixed_sorted']
+    for e in freerank:
+        for k, u in enumerate(ctx['fr_u'][e]): _ph(u, Hg['br'][e] > Hg['br'][fs[k]])
+        for f in freerank:
+            if f != e: _ph(ordl(e, f), Hg['br'][e] > Hg['br'][f])
+    sv.set_phases(ph); print('PHASE', os.path.basename(os.environ['PHASE']), 'literals', len(ph), flush=True)
 t1 = time.time(); r = sv.solve(); print(f'SOLVE -> {"SAT" if r else "UNSAT"} {time.time() - t1:.1f}s', flush=True)
 if not r: print('RESULT UNSAT'); sys.exit()
 M = set(l for l in sv.get_model() if l > 0)

@@ -10,3 +10,6 @@
   FORCEBASE (debug: client exactly as in the base), DEBUGCORE (UNSAT core over kept (reader, row) constraints).
 - sim2.py: independent replay of an ekr2 design (integer ENC values, own chain walk). graft2.py: graft an ekr2 design into a genome.
 - run/: designs and genomes (sha1 in the doc). Builds: none (Python + pysat).
+- pgad5.py env SOLVER (pysat solver name, default cadical195) and PHASE=genome (L-LOWER 17): phase hints from a hint genome's design
+  (wiring Wv, signs pos, gates Gb, starts, rank order fr_u / ordl). Phases change the search order only, never the verdict.
+  Check: P 10 on A2_solved hinted by A3x5_P12_dec re-finds that genome (5eca86c8) in 2.6 s (unhinted 99 s).
