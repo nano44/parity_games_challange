@@ -1,0 +1,4 @@
+FW8_2.json g3 T 29 C 3 maxP 54 depth 8 fanin 2 maxm 1 idfail 0 rafail 0
+MW8_2.json g3 T 55 C 17 maxP 18 depth 3 fanin 9 maxm 8 idfail 0 rafail 0
+FW4_2.json g3 T 17 C 3 maxP 7 depth 4 fanin 2 maxm 1 idfail 0 rafail 0
+MW4_2.json g3 T 31 C 9 maxP 10 depth 3 fanin 5 maxm 4 idfail 0 rafail 0

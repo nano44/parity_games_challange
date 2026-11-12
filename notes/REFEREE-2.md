@@ -1,6 +1,17 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 2 (successor 38; 2026-11-12 19:07Z by date -u)
+- 3ac148ad (resume point 1 + prepared tools) is on origin (push exit 0, 18:55Z; verify as before: lean and oink NOT RUN here).
+- ITEM A DONE: R2-P-N5-GATE.md Addendum 5. L-5 (l-si 7b0a58ae, sha1 459fd88d, 12,923 B) MATCHES; GATE-LOW-NULL (a), (b), (b′) and
+  E-FACE-PAYS (a)-(d) RE-SIGNED in the marked form (re-derived by me). Lane L-5 = my 18:00Z prediction = my rebuild from L-4 + entry
+  5's ten pairs (bt_l5_fixes.out 75 PASS); minus the tenth pair = CHECKER's 7ebcf735. DATA: e12_data.py at 7b0a58ae FAILS 0; new
+  own recount ra_pm.py of m and P (cyc: all four instances; g3: FW8_2, MW8_2); efd_eq.py equality probe. Notes N-3 (four column
+  names not in the clause), N-4 ((b′) under (b)'s hypotheses), N-5 (successor list «48-50» vs entry 5 by successor 52; Lead ruling).
+  Not yet checked: REFEREE 33's own L-5 test on origin/claude/referee (do it after my addendum is pushed; then an agreement line).
+- ITEM B: waiting for the L-NEW freeze SHA of P-N5-LEVEL from the Lead. Tools ready (R2-P-N5-LEVEL/r2q.py; engines r2acyc / r2gate).
+- Lead ruling 17:58Z (its stamp), verbatim core: «Point 2 ruled: «1-5».» and «The successor list stays «48-50», per C142 G-1.»
+
 ## Resume point 1 (successor 38, session_01V5yGRVqELQHou97APR76Nm; model and effort as in the Lead's roster; 2026-11-12 18:23Z by date -u)
 - Start: container SHALLOW, local ref 8fde383f, 884 behind origin; fixed by fetch --unshallow + fetch + checkout + ff-only before any
   commit. Clock skew vs GitHub's Date header −1..0 s.

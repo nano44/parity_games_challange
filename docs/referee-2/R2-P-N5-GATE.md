@@ -584,3 +584,105 @@ is R2-P-N5-GATE/r2gate.py, on REFEREE-2's own engines.
 - So two of L-4's numbers are now re-run on IDEAL-CYC by me: «C = 2n + 1 on MW8_2, MW32_2» and «C = 3 on FW8_2, FW16_2».
 - Still cited, not re-run: the re-arm multiplicity m = n, the RA path count P = F_(d+2) − 1, and Γ3 on these two instances. No verdict
   changes.
+
+## Addendum 5 (REFEREE-2 successor 38; 2026-11-12 19:06Z by date -u): byte test of fixes entry 5 + line L-5 (claude/l-si 7b0a58ae), for R128 after CHECKER C142
+Referee: REFEREE-2 successor 38 (session_01V5yGRVqELQHou97APR76Nm; model and effort as recorded in the Lead's roster; D1 «Never
+downgrade the referee to save money.»). I have not read docs/referee/ for this test (REFEREE 33 byte-tests the same independently).
+- Object (re-hashed from `git show 7b0a58ae:…`; 7b0a58ae is an ancestor of origin/claude/l-si 2051a0ee):
+  - L-5: docs/si/P-N5-GATE-line-L5.txt, sha1 459fd88d2d1959647f6aeb065bf8ac58cce684f9, 12,923 B. One line with its newline, no «|»,
+    238 «(» = 238 «)».
+  - Fixes: docs/si/P-N5-GATE-fixes.md, sha1 7c389a35a420ba73e4d9e61ae8295a692186771c, 34,305 B. The diff 676b6a1c..7b0a58ae is
+    +48 / −0 lines: entry 5 (F5-1..F5-5) is appended.
+  - Unchanged: the packet (sha1 f3a584e6), L-1..L-4 (L-4 6bfde78e, 12,562 B), and the trees experiments/si/box90, box91, box93.
+  - The lane's byte copy of C142 (box95/fix5/chk_C142_269effb3.md, sha1 8b005c61…) equals claude/checker 269effb3:docs/checker/C142.md.
+- Prediction. At 18:00Z I wrote l5_prediction.txt (in my commit 3ac148ad) and sent it to the Lead: L-4 + C142 §4's nine pairs + the
+  Lead's tenth pair = sha1 459fd88d…, 12,923 B. The lane's commit is dated 18:03:39Z and was not on origin at my 18:23Z and 18:55Z
+  fetches. The lane's L-5 equals the prediction byte for byte (cmp).
+- Independent rebuild: R2-P-N5-GATE/bt_l5.py (my code; the lane's mkL5.py and mkfix5.py are not imported and not run).
+  - Mode fixes (bt_l5_fixes.out: 75 PASS, «FAILS 0»). It parses the ten «old» → «new» pairs of the whitespace-normalised «## Entry 5»
+    and applies them to L-4 in order, each old string asserted once. The result is BYTE-EQUAL to the lane's L-5.
+  - Nine of the ten pairs carry the anchors of C142 §4's R-E1, R-E2 and R-E3's seven insertions; the tenth is F5-4.
+  - Reversing the tenth pair alone gives sha1 7ebcf7355be9838473f05a7defe913940b6fd723, 12,923 B, which is CHECKER's L-5 (C142 §4).
+    So THE TENTH PAIR IS THE ONLY DIFFERENCE FROM 7ebcf735. Reversing all ten gives L-4 back byte for byte.
+  - Mode c142 (bt_l5_c142.out: 72 PASS, «FAILS 0»): the nine pairs parsed from C142 §4 itself give 7ebcf735 too. So entry 5's nine
+    strings are CHECKER's strings.
+- Diff L-4 → L-5, word level: 23 regions, each read. 7 are single-marker insertions (E-3), 7 lie in the RA-MULT / RA-path rows (E-1),
+  8 in the growth clause (E-2), and 1 is «1-4,» → «1-5,» (F5-4). There is no other change.
+- Absent in L-5: «m = n», «P = F_(d+2) − 1 with», «linear in n», «on every family measured», «MW(n): C = 2n + 1», «MWR(n): flips»,
+  «A*_all and the largest», and every banned string of Addenda 2 and 3. No «2n + 1»-type formula remains in the line. The one
+  formula left, «(= F_(d+2) − 1 at d = 8, 16)», is an identity at two named instances: F_10 = 55, F_18 = 2584.
+
+### Meaning
+- E-1 (the GL-3 rows; L43: numbers and source commit).
+  - Numbers, read by column name at 7b0a58ae (e12_data.py; e12_data_7b0a58ae.out: 65 PASS, «FAILS 0», the same output as at
+    676b6a1c): box90/out/mw90.out maxm 8 / 32 and C 17 / 65 on MW8_2 / MW32_2; fw90.out maxP 54 / 2583, depth 8 / 16 and C 3 / 3 on
+    FW8_2 / FW16_2; each on both of the lane's engines.
+  - Sources: mw90.out has one commit, 2d0344d3, and fw90.out one, 4ded1e8d (`git log`), in the order the line gives them. Both are
+    box 90 commits of L-SI 47 (its notebook commit 76864a4b lies between them).
+  - Units, read in the lane's mult90.py (l. 36-41): per vertex v and maximal Λ-interval, m(y, z) is the number of gaps between
+    consecutive y-tops whose most relevant top is z, and P(y) = 1 + Σ_(z ∈ RA(y)) P(z). These are R127's RA-PATHS objects.
+  - OWN RECOUNT (new). C142 E-1 noted that neither referee had recounted m or P. R2-P-N5-GATE/ra_pm.py does, on my own engines:
+    - IDEAL-CYC (ra_pm_cyc.out): MW8_2 maxm 8, C 17; MW32_2 maxm 32, C 65; FW8_2 maxP 54, depth 8, C 3; FW16_2 maxP 2583, depth 16,
+      C 3. Also MW4_2 / MW16_2 maxm 4 / 16 and FW4_2 / FW12_2 maxP 7 / 376. idfail and rafail are 0.
+    - Γ3 (ra_pm_g3.out): FW8_2 maxP 54, C 3; MW8_2 maxm 8, C 17 (and FW4_2 7, MW4_2 4). NOT RUN on Γ3: MW32_2, FW16_2 (size).
+    - Every row equals the lane's row in T, C, maxP, depth, fanin and maxm. The box90/inst files have the sha1 of box91/inst's.
+  - «(refutes a constant multiplicity only below 32)» is unchanged and right: m reaches 32.
+- E-2 (the growth clause; L43).
+  - Numbers by column name: own91.out = g391.out C 17 / 65 and maxflip 34 / 130 on MW8_2 / MW32_2; mwr93_own.out = mwr93_g3.out
+    mx_flips 9 / 17 / 33 and mx_ch_D 4 / 8 / 16 on MWR4_2, MWR8_2, MWR16_2.
+  - The lane's mx_ columns are ONE row, the max-flip gate's (np93.py l. 72-75). So «9 / 17 / 33 = 2·ch_D + 1» is read at one gate.
+    In that row mx_lam_pe = mx_lam_pb = 0, which is «lamch 0», and mx_ch_pe 4 / 8 / 16, mx_ch_pb 9 / 17 / 33, so
+    flips = 2·min(ch_(p_e), ch_(p_b)) + 1: «E-FACE-PAYS (d) holds with equality».
+  - Own probe, recounted from the states (efd_eq.py; efd_eq_cyc.out, efd_eq_g3.out). At the max-flip gate,
+    (flips, ch_pe, ch_pb, ch_D, lamch) is (9, 4, 9, 4, 0), (17, 8, 17, 8, 0), (33, 16, 33, 16, 0) on MWR4/8/16_2, on both engines.
+    On MW8_2 it is (34, 17, 34, 17, 0) on both engines, and on MW32_2 (130, 65, 130, 65, 0) on IDEAL-CYC (Γ3 NOT RUN: size). On MW,
+    (d) is not an equality (34 < 35), and the clause claims equality on MWR only.
+  - A*_all has left the DATA. It occurs 4 times in L-5, all in A*-EQUIV's statement and the scope sentence. That is right under L43
+    («or not at all»): the lane has no A*_all counter, and box 91's maxa is 9 / 33 / 0 on MW8_2 / MW32_2 / FW16_2, below C. My
+    predecessor's A*_all 18 / 66 (2.9, Addendum 4) stay referee DATA of this report, not line DATA.
+- E-3 (seven markers; statement text). My script finds exactly seven single-token insertions from «(a)», «(b)», «(b′)», «(c)», «(d)»
+  and no other token change in the two statements. Placement against the packet's parts (§3.2 l. 77-79, §3.4 l. 106-111):
+
+| line clause (L-5) | packet part |
+| --- | --- |
+| GATE-LOW-NULL «(a) at a LAM ∧ PRIV step with e_o ∈ E_t(p_e), … iff … (and they differ)» | §3.2 (a), the order equivalence |
+| «so (b) a flip at t with LAM ∧ PRIV ∧ UP at t − 1 and t changes π(E(p_e)) or π(E(p_b)) at t» | §3.2 (b) |
+| «and (b′) if Λ(p_e) = Λ(p_b) is the same at t − 1 and t, π(E(p_e)) rises at a relock and π(E(p_b)) rises at an unlock» | §3.2 (b′) |
+| E-FACE-PAYS «(a) relocks(o) ≤ ch_(p_e), unlocks(o) ≤ 1 + relocks(o) and unlocks(o) ≤ ch_(p_b) with no PRIV, LAM or UP hypothesis» | §3.4 (a) |
+| «(b) at every t with e_o ∉ P_(t−1)(D) ∪ P_t(D) the value of p_e changes iff that of D does» | §3.4 (b) |
+| «so (c) if D's play avoids e_o at every state of the run then unlocks(o) ≤ 1 + ch_D ≤ …» | §3.4 (c), with R-7's proviso |
+| «and (d) flips(o) ≤ 2·min(ch_(p_e), ch_(p_b)) + 1 ≤ 2·lamch(o) + 2·min_f nl_f + 1» | §3.4 (d), first sentence |
+
+  - Every sub-label the line cites now points at a marked clause, and I read each in its context: «E-FACE-PAYS (b)» (3 times),
+    «E-FACE-PAYS (c) and WAIT-QUIET», «(b), (c) and WAIT-QUIET», «E-FACE-PAYS (d)», «(a)'s order equivalence», «(b′) no separate lane
+    DATA». Each refers to the clause it means.
+  - Re-derived by me, since markers touch statement text: GATE-LOW-NULL (a) (PRIV puts e_o in the E-difference; with equal Λ the
+    decider is the top e-letter, since (E-DOM) leaves only e-vertices, c_W, K0, K3 above it, c_W is in no Π, and the non-core faces
+    pass K0 and K3 together), (b) (UP gives e_o ∈ E(p_e); Odd's choice is a function of the two π's), (b′) (E-MON keeps π(E(p_b))
+    from falling); E-FACE-PAYS (a) (GATE-RACE (a) per flip kind, alternation), (b) (injective prefix map), (c) ((a), (b), CYC,
+    C per letter and interval), (d) (GATE-RACE (b), ch_f = lam_f + nl_f). They agree with 1.3 and 1.5 above.
+- F5-4 (the tenth pair). «docs/si/P-N5-GATE.md with its fixes entries 1-4,» → «… 1-5,»: correct, entry 5 exists and is the source of
+  L-5's strings. It follows L-3 → L-4 («1-3» → «1-4») and R127's landed note («with fixes entries 1-4»).
+- LT-1 (Addendum 3's open condition) is now met: trunk RESULTS at 7fa6aff4 has exactly one «### R127 [refereed-only]», P-N5-SPLIT's
+  entry, and no R128 yet. So «RESULTS R127 (P-N5-SPLIT; …)» in the line is true on trunk.
+- TARGET.md: no diff region touches the tail or a claim. Nothing new is claimed. Not M3 / M4, not a step-4 pass; G-N5-TIME stays OPEN.
+
+### Notes (optional; no change required)
+- N-3. In the growth clause, «lamch 0» and the equality in (d) rest on the columns mx_lam_pe, mx_lam_pb, mx_ch_pe, mx_ch_pb of the two
+  named mwr93 files; the clause names mx_flips and mx_ch_D only. In the GL-3 rows, C is the column C of the same mw90.out / fw90.out
+  (and of own91.out / g391.out); the parenthesis names maxm and maxP only. Every number is in a named file and is reproduced by my
+  engines. The equality also follows from the named numbers and signed statements: (b) with the PROVISO gives ch_(p_e) = ch_D, so
+  2·min(ch_(p_e), ch_(p_b)) + 1 ≤ 2·ch_D + 1 = flips ≤ 2·min(ch_(p_e), ch_(p_b)) + 1. A later line may name the four columns.
+- N-4. (b′) has no subject of its own («a relock» and «an unlock» are the flip of (b)), so it stands under (b)'s hypotheses, as the
+  packet's «If moreover» says. The marker does not change that reading; it is the reading signed in 1.3.
+- N-5. The source note keeps «L-SI successors 48-50» (Lead ruling 17:58Z, citing C142 G-1). For the record: entry 5's heading reads
+  «L-SI successor 52», and R127's landed note lists its fix author («L-NEW successors 65-67 and 69»). Not a referee item.
+
+### Verdict: L-5 (7b0a58ae, sha1 459fd88d) MATCHES. I RE-SIGN GATE-LOW-NULL (a), (b), (b′) and E-FACE-PAYS (a)-(d) in the marked form: the words are L-4's, and each marker sits at the packet's part.
+- L-4's match (Addenda 3 and 4) carries over. The changes are exactly C142 §4's R-E1, R-E2 and R-E3's seven insertions, plus the
+  Lead's tenth pair, and each is correct in bytes and in meaning. Nothing is REFUSED.
+- E-1's and E-2's numbers are confirmed three ways: by column name in the lane's outputs, by the lane's two engines agreeing, and
+  by my own engines (m, P, C, flips, ch_D, lamch; Γ3 not run on MW32_2 and FW16_2).
+- Every other verdict of 2.11 and Addendum 1 stands unchanged. Γ3 rows stay CONDITIONAL on RESULTS R125; A*-EQUIV (ii), (iii) stay
+  CONDITIONAL on RESULTS R127 and hold on Γ3 only.
+- A «signed by both referees» MATCH is unconditional only after REFEREE's own L-5 test is checked on origin/claude/referee.
