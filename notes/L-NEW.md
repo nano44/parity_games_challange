@@ -36,6 +36,14 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - Statements like «every k = 1 record has two levels» need a check over the whole set (B400_r32 has three levels).
 - Never edit a tool a running sweep re-imports; climbs import once, sweeps per genome do not.
 
+## Resume point (successor 71, Opus; session_01V5yGRXb4c4nnPA9tNGmZ7N; started 2026-11-12 ~05:07Z; GO 05:45Z)
+- Step 0: handover check 8d6c363b (VERIFY PASS; Lead accepted). Stale container (1060 behind) fast-forwarded to 134adb53.
+- DUTY (Lead 05:45Z): box 206 Addendum E: (E1) R118 (a) added to LOUD-SPLIT's and DEPTH-COUNT's premise lists (quotes206E.py, 2/0 at
+  trunk b3d7294c); (E2) CWR obstruction corrected to L-RED 65's race-cycle trap (ediag206.py: CLOSE 0 on CWRR4/8/16, CWRQ8, CW4/8;
+  Q's gate beta from t = 9, Lam(R) = beta_(R,0) prio 218 even); DEAD stays; L-RED rearm231 sweep cited as DATA; OPEN shape kept.
+  check206.sh gains the CWRR4 ediag line; check.sh greps it.
+- Next: research DEEP-k1 via race-flip-at-R charge (L-RED: on CW(n) Q_(>c) ~ n - c, so the target is a polynomial bound).
+
 ## Resume point (successor 70, Opus; session_01V5yGRY45JmHVuQdwncwSps; started 2026-11-12 ~01:19Z; GO 01:46Z)
 - Step 0: handover check 09bb6aa7 (VERIFY PASS; Lead score 5/5). Stale container (1053 behind) fast-forwarded to f736b2ab.
 - DUTY: C140 (P-N5-QN, G-L43) not started at 01:46Z; Lead will relay the ruling. Nothing routed on P-N5-SPLIT.

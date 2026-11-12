@@ -1124,10 +1124,10 @@ if [ "$r205" -eq 0 ] && [ -z "$d205" ] && ! grep -v "^ctrl1" box205/check205.out
 else
   echo "BOX 205 BETA-LOC check: FAILED (check205.sh exit $r205)"; echo "$d205" | head -30; echo "$run205" | tail -15; exit 1
 fi
-# BOX 206 DEPTH (L-NEW successor 70): change-depth counters (depth206.py), Lemma DIV (div206.py), controls, LD-ASC DEAD witness (ascdepth206.py)
+# BOX 206 DEPTH (L-NEW successor 70): change-depth counters (depth206.py), Lemma DIV (div206.py), controls, LD-ASC DEAD witness (ascdepth206.py); Addendum E: CWR race-cycle trap (ediag206.py)
 r206=0; run206=$(cd box206 && bash check206.sh 2>&1) || r206=$?
 d206=$(diff <(printf '%s\n' "$run206") box206/check206.out 2>&1) || true
-if [ "$r206" -eq 0 ] && [ -z "$d206" ] && ! grep -v "^ctrl" box206/check206.out | grep -Eq "(elfall|topfall|pfail|cfail|ufail|nop|lamp|symp|dep|kind) [1-9]" && grep -q "^ctrl3 .*symp [1-9].*kind [1-9]" box206/check206.out && grep -q "^ctrl1 .*elfall [1-9].*ufail [1-9]" box206/check206.out && grep -q "^K1F34_n84.json ctrl 0 .*ldfail 1 " box206/check206.out && grep -q "^ctrl2 .*ldfail [1-9]" box206/check206.out && grep -q "^WC8_2.json ctrl 0 movers .*maxdepth 8 " box206/check206.out && grep -q "^BLKX23_n48.json .*'excess': 1," box206/check206.out && (cd box206/inst && sha1sum -c --quiet SHA1SUMS); then
+if [ "$r206" -eq 0 ] && [ -z "$d206" ] && ! grep -v "^ctrl" box206/check206.out | grep -Eq "(elfall|topfall|pfail|cfail|ufail|nop|lamp|symp|dep|kind) [1-9]" && grep -q "^ctrl3 .*symp [1-9].*kind [1-9]" box206/check206.out && grep -q "^ctrl1 .*elfall [1-9].*ufail [1-9]" box206/check206.out && grep -q "^K1F34_n84.json ctrl 0 .*ldfail 1 " box206/check206.out && grep -q "^ctrl2 .*ldfail [1-9]" box206/check206.out && grep -q "^WC8_2.json ctrl 0 movers .*maxdepth 8 " box206/check206.out && grep -q "^BLKX23_n48.json .*'excess': 1," box206/check206.out && grep -q "^ediag CWRR4 TOTALS closed 0 raceTop 20 states 29" box206/check206.out && (cd box206/inst && sha1sum -c --quiet SHA1SUMS); then
   echo "BOX 206 DEPTH: depth and DIV counters 0, controls fire, DEAD witnesses (WC8_2 depth 8, K1F34 LD-ASC, BLKX23 BLOCK-DESC) = frozen: PASS"
 else
   echo "BOX 206 DEPTH check: FAILED (check206.sh exit $r206)"; echo "$d206" | head -30; echo "$run206" | tail -15; exit 1

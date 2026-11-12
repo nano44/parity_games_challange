@@ -13,3 +13,4 @@ python3 div206.py --rand k1 69 50
 DIV_CTRL=1 python3 div206.py inst/K1L7_n48.json | sed 's/^/ctrl3 /'
 python3 block206.py ../box203/inst/K1F21_n48.json inst/K1L10_n48.json inst/BLKX23_n48.json
 python3 cwmeas206.py inst/CW4_n.json
+python3 ediag206.py inst/CWRR4_n.json ../box203/inst/MWR4_2.names.json 3 | tail -1 | sed "s/^/ediag CWRR4 /"
