@@ -4,15 +4,19 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 ## Resume point (successor T65-, 2026-11-12 from 10:38Z by date -u; session_01V5yGRZyBwA3rKaGJ1Uax66; D18, D1; N5′-xi route on Γ3)
 START: origin/claude/l-lit = 6895fb31 (0 / 0; trap check clean); handover check 627402e7 (push exit 0); Lead «go» 11:04Z. Trunk is NOT
 merged into this branch (Lead's word): read NOW / DECISIONS / GAPS / RESULTS with `git show origin/claude/vibrant-johnson-nxvvxo:<file>`.
-- T65 (this push): docs/lit/T65-lamgap-one-player-howard.md. LAM-GAP / SHARP (L-SI box 101, L-RED R234) = the Howard, no-H0, |Ch| form of
+- T65 (pushed f5fff985, exit 0): docs/lit/T65-lamgap-one-player-howard.md. LAM-GAP / SHARP (L-SI box 101, L-RED R234) = the Howard, no-H0, |Ch| form of
   landed R118 (c)/(d) and R17 (b)/(c). Chain link options A (R118 (l) + R125, global windows, DEEP3 for all gates), B′ (R118 (d) + (l) on
   the sub-genome of Reach(C)), B (LAM-GAP as a lane lemma). External: KNOWN for additive weights (Cochet-Terrasson–Gaubert Thm 2.3) and
   mean payoff (Zhong–Ye Thm 7.2 proof; Madani Fig. 5); STATED without proof for parity games (Friedmann thesis p.101, Thm 4.9; VJ00
   Prop. 7.4). Zhong–Ye Thm 6.1 (preprint) claims to refute Hansen's Conj. 6.1.1; no contradiction with LAM-GAP.
-- T66 (IN FLIGHT): DEEP3 vs the exponential families. L-RED R217 §7-§11 (claude/l-red) already compiled Friedmann's switchallexp into a
-  genome: DEAD port, obstruction E-DOM (every e above every β). To do: verify against the LMCS G_n (Table 4, PDF p.15: k_i, f_i odd above
-  h_j, j < i), classify the other families, measure depth of the flips on G_n itself, write docs/lit/T66-*.md and the summary page.
-IN FLIGHT: T66, summary page. NEEDS: none from the owner (optional library: Vöge thesis 2000, Hansen thesis 2012, Hansen–Zwick 2010).
+- T66 (pushed with T67): docs/lit/T66-deep3-lower-bound-families.md + docs/lit/T66-depth-check.py. HOW3 = Friedmann's I^loc at the
+  movers. No published family lives in the genome class: E-DOM ([F11] Table 4: f_j, k_j odd above h_i, i < j; used in Lemma 6.6 (2));
+  agrees with L-RED 54's DEAD port (R217 §7). On G_N itself: C 0, TWO-CROSS charge fails 0 times, Deep_c exponential (c = 3: 0, 0, 1, 6,
+  22, 64, 163, 382 for N 1-8; T = 9·2^N − 10). So DEEP3's proof must use E-DOM. No embedding, no literature kill of DEEP3 / U-FREE.
+- T67: docs/lit/T67-n5-route-summary.md (one page for the Lead: verdict table, chain options A / B′ / B, the DEEP3 test).
+IN FLIGHT: none. OPEN LEADS (only on a Lead question): E-DOM test of the Zadeh / Cunningham / ranking families; an independent engine for
+  T66 §5.1's flip and depth counters; Vöge's thesis (the proof behind VJ00 Prop. 7.4) if a copy appears.
+NEEDS: none from the owner (optional library: Vöge thesis 2000, Hansen thesis 2012, Hansen–Zwick ISAAC 2010, Madani AAAI 2002).
 
 ## Previous resume point (HANDOVER, T64, 2026-11-01 ~03:15Z by date -u; predecessor session; PARKED after T64)
 T64 (Lead 02:52Z, one box): docs/lit/T64-one-player-pivots.md.
@@ -634,7 +638,17 @@ NEEDS: none from the owner.
   unreachable from here); Vöge thesis 2000 (403); Madani AAAI 2002 (aaai.org 403); Madani–Thorup–Zwick 2010; Dasdan 2004;
   Meister–Holzbaur 1986.
 
+- T66 / T67 (2026-11-12). OPENED: Fearnley arXiv 1003.3418 (0964f029581ae02e; PDF p.2 «Our contribution», p.6). RE-OPENED: Friedmann
+  arXiv 1106.0778 v2 (46c96f44775aa2b0; §4 PDF p.6 I^loc; §5 p.8; Lemma 6.3-6.6 p.12-14; Table 4 and ι p.15; p.18 valuations; Thm 6.14
+  p.23); Friedmann arXiv 0901.2731 (6c56adb207f38468; Thm 8 PDF p.9; Fig. 7 NOT re-read, quoted via L-RED R217 §10). Fleet files:
+  claude/l-red f77a0eef R217-ovt.md §7-§12; claude/l-new 9cdb7209 N5-ASC-box193.md §0-§1; trunk docs/red/P-N5-REALIZE.md §3.1.
+  DATA: docs/lit/T66-depth-check.py (engine experiments/si/si.py), runs lmcs 1-8, lics 2-7, edom × 5 families at N 3.
+  NOT OPENED: FHZ SODA / STOC 2011; [F09] Fig. 7 (image); Zadeh / Cunningham / ranking family papers were not re-opened.
+
 ## Dead ends
+- T66 (2026-11-12): a literature test of DEEP3 / U-FREE on Γ3 does not exist. Obstruction: E-DOM (every escape e even and above every β;
+  L-RED R217 §10). Instance: Friedmann's G_n, [F11] Table 4 (f_j, k_j odd above h_i for i < j; Lemma 6.6 (2) needs it). Every ported
+  family fails the E-DOM test at all gates but the top one (T66 §5.2).
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
 - T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.
 
