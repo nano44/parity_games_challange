@@ -477,3 +477,57 @@ is R2-P-N5-GATE/r2gate.py, on REFEREE-2's own engines.
   - Records agree: MW(n) C = 2n + 1 and flips 4n + 2; MWR flips 2n + 1 with lamch 0; Ku C = 2.
 - Result: P-N5-GATE has two referee signatures on every statement, with the conditions above. The line needs one fixes entry 3 + L-3 that
   meets both referees' REQUIRED items, as combined here.
+
+## Addendum 2 (REFEREE-2 successor 37; 2026-11-12 by date -u): byte test of fixes entry 3 + line L-3 (claude/l-si ef14451f)
+- Object (re-hashed from `git show ef14451f:…`):
+  - L-3: docs/si/P-N5-GATE-line-L3.txt, sha1 b60495b2c607e8e6c1e145e40478717fa6ed15f4, 12,353 B. One line, no «|», 229 «(» = 229 «)».
+  - Fixes: docs/si/P-N5-GATE-fixes.md, sha1 e79455ea, 24,889 B. The diff 9c0349b1..ef14451f removes no line: entry 3 is appended.
+  - The packet (sha1 f3a584e6) and L-2 (sha1 c0f2007d) are unchanged.
+- Check: R2-P-N5-GATE/bt_l3.py (my code; mkL3.py not imported), output bt_l3.out: 39 PASS, «FAILS 0».
+  - Every banned string is absent: «§2 (a)», «P-N5-CHAIN's C-EQUIV», «lie on both of two plays», «not a premise here», «not among
+    P-N5-CHAIN», «while its play avoids», «over the run then», «CTRL=a0», «is a hypothesis here», «L-RED R228», «afail», «pxfail», «box
+    94's 22 instances».
+  - Every required New of Addendum 1's combined list occurs exactly once.
+- All 46 changed regions read. A word-level diff of L-2 → L-3 gives 46 regions, and I read each one. Every region is one of: my R-1 /
+  R-10, R-4, R-5a-c, R-6a/b, R-7a/b, R-8a/b; REFEREE's R-1, R-3..R-6, D-1..D-5, G-a/G-b; or the source note «fixes entries 1-3». There
+  is no other change.
+- Meaning, read in full on the merged clauses:
+  - Γ3 premises.
+    - Every name in the R125 list occurs in R125's line L-5 (my earlier script).
+    - F2, CYC, (E-DOM) and (Core) are cited from CHAIN's frozen text, with (Core) restricted to non-core vertices.
+    - R125 is on trunk: 0753fd71 is an ancestor of origin/claude/vibrant-johnson-nxvvxo 4c2f407d, and RESULTS has one «### R125
+      [refereed-only]».
+  - IDEAL-CYC premises: F4′, F6, (c) STRICT, LOC-K2. (E-DOM) and (Core) are read off R104 «with LOC-K2». The clause «K0, K3 lie on the play
+    iff Λ is a core vertex» is right for non-core starts: the core is entered only at K0, then K3, K2 → K1 (LOC-K2), and K1's loop.
+  - PAIR-EXPEL: «no P-N5-SPLIT premise is used», and «§3 (a), Lemma REWIN (a)» is named as the argument written out. This is my R-4 and
+    REFEREE's R-1 merged.
+  - A*-EQUIV.
+    - (i) holds «on both runs, with no P-N5-SPLIT premise» and carries the G-7 proof sentence. (ii) is «on Γ3 only».
+    - The corollary's label is «PROVED-CONDITIONAL on P-N5-SPLIT's SPLIT-COUNT and C-EQUIV» (REFEREE's R-3 New, which I accepted). With
+      the explicit «(on both runs, with no P-N5-SPLIT premise …)» for (i), it says what both referees signed.
+  - K10 and the PROVISO hold on Γ3 by RESULTS R125's B-ONLY3, with the pad argument (pβ_o never an exception; pe_o only when D = c_W), and
+    are credited to GT-1 / G-5. This matches 1.3 and 1.5 above. The false reason is gone, and entry 3 F3-1 RETRACTS entry 1's G1
+    sentences in so many words.
+  - WAIT-QUIET / E-FACE-PAYS (c) carry «at every state of the run» (R-7, now optional since the proviso holds on both runs; it is still
+    true).
+  - EXPEL-COUNT carries the 3M reason (G-6).
+- DATA rule: I re-read the lane's tools at ef14451f for the adopted D-1, D-3, D-5. D-2 and D-4 were done in Addendum 1.
+  - D-1 holds: box91/mult91.py l. 97-110 loops over `odd2` (Odd vertices with two successors) for grfail / gr2fail; `why` and trfail
+    increment per flip.
+  - D-3 holds: box93/np93.py l. 50-60 counts npside / npsub per (gate, state) and npboth / npkind per flip; l. 68 has «unlfail += unl > 1
+    + A», A = ch_(p_e).
+  - D-5 holds: mult91 l. 126 counts par1-3 only `if Z:`. par3 tests the expelled z on the prefix, not x's position. afail / pxfail are
+    EXP-PATHS counters (l. 16-17).
+  - L-3's new DATA claim «L-SI's set re-measure copy95.py agrees on both engines» checks out. box95/fix3/copy95.py l. 39 compares sets
+    (`sr == prev`). out/copy95_own.out and copy95_g3.out have copy 1 on the 20 instances and copy 0 on NSQ2_4 / NSQ3_4 (R 18, 22, 26),
+    with the rows identical across the two engines.
+- TARGET.md: the tail is unchanged from L-2 (correct paraphrase of §2 / §4, 3.2 above). Nothing new is claimed. Not M3 / M4, not a step-4
+  pass; G-N5-TIME stays OPEN.
+
+### Verdict: L-3 (ef14451f, sha1 b60495b2) MATCHES. Every REQUIRED item of both referees, as combined in Addendum 1, is met in bytes and in meaning, and nothing else changed.
+- With REFEREE 31's signatures, P-N5-GATE's statements stand two-referee signed as in L-3:
+  - Γ3 rows CONDITIONAL on RESULTS R125 (landed);
+  - A*-EQUIV (ii), (iii) CONDITIONAL also on P-N5-SPLIT and holding on Γ3 only;
+  - A*-EQUIV (i) on both runs.
+- I have not read REFEREE's own L-3 byte test, if one exists. A «signed by both» MATCH is unconditional only after checking it on
+  claude/referee (my handover's second trap).
