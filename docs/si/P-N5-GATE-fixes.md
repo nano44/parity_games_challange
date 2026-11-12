@@ -114,3 +114,133 @@ experiments/si/box95/fix2/mkfix2.py (quotes asserted verbatim once, in L-RED's t
 - docs/si/P-N5-GATE-line-L2.txt = L-1 with three replacements (fix2/mkL2.py, each Old asserted once in L-1): the proviso clause (IDEAL-CYC
   PROVISO stated, with its proof in one sentence; Γ3 a hypothesis), PROVISO's DATA clause, «fixes entries 1-2». sha1 c0f2007d84afab1e00ef41e24ba8f5f064468cc5, 10295
   bytes (wc -c). L-1 stays as written (a44647db…, 9,541 bytes).
+
+## Entry 3 (fix round 3; L-SI successor 50; Lead 2026-11-11 23:33Z and 2026-11-12 01:14Z: ONE entry answering both referees)
+Governing: REFEREE-2 37 Addendum 1 (claude/referee-2 8983b3d8), Lead 01:38Z. Items: REFEREE 31 (claude/referee a401ce0e, docs/referee/R-P-N5-GATE.md; byte copy experiments/si/box95/fix3/ref_R-P-N5-GATE_a401ce0e.md,
+sha1 8c24800e…): R-1..R-7, D-1..D-5 REQUIRED, G-a..G-c (GT-1) taken. REFEREE-2 37 (claude/referee-2 c035b35f, docs/referee-2/R2-P-N5-GATE.md;
+byte copies fix3/ref2_R2-P-N5-GATE_c035b35f.md, sha1 aa0b4e5a…, and its l3req.py / l3req_applied.txt, sha1 30833fcc… / 1bd49ea1…):
+G-1..G-7 and line items R-1..R-10, all taken. Verdicts (both): every statement SIGN; Γ3 rows CONDITIONAL on R125, which has LANDED
+(trunk 0753fd71: «### R125 [refereed-only]»), so it is cited below as RESULTS R125; A*-EQUIV (ii), (iii) also on P-N5-SPLIT. Strings: this
+text by fix3/mkfix3.py (each Old asserted once in the frozen packet); L-3 by fix3/mkL3.py, which parses both referees' strings from the
+byte copies (never retyped), merges overlapping ones, and asserts every referee id answered.
+
+### F3-1 (REFEREE GT-1 = REFEREE-2 G-5): B-ONLY on Γ3 IS a P-N5-CHAIN fact (now RESULTS R125); entries 1-2 corrected
+- RETRACTED: entry 1's G1 sentences «On Γ3 the same needs B-ONLY on Γ3, which is not among P-N5-CHAIN's facts (§1) and not landed» and
+  every New of entry 1 / entry 2 that says K10 or the PROVISO stays open, or is a hypothesis, on Γ3. They are FALSE: P-N5-CHAIN §5
+  (claude/l-new 93531b03, l. 201) is Lemma B-ONLY3 with the same pad exceptions, signed by both referees, landed in RESULTS R125. My
+  error: I took L-RED 63's G1 claim without opening P-N5-CHAIN §5. Box 96's B-ONLY3 is the same lemma, re-derived (P-N5-BONLY3 is
+  WITHDRAWN as a landing packet: docs/si/P-N5-BONLY3-fixes.md entry 1).
+- §3.2 scope bullet. Old: «- Scope (L-RED 63, R229-box92): the K3 / K4 / K9 consequences hold on LAM ∧ PRIV ∧ UP steps only; a flip at a LAM ∧ PRIV step with e_o not above Λ («below», row K10 of WAIT-CLOSED) is covered by no part of this lemma (but by §3.4).»
+  New (supersedes entry 1's New): «- Scope: the K3 / K4 / K9 consequences hold on LAM ∧ PRIV ∧ UP steps only. A LAM ∧ PRIV step with
+  e_o not above Λ («below», row K10 of WAIT-CLOSED) does not occur on either run: on IDEAL-CYC by RESULTS R123 B-ONLY, on Γ3 by RESULTS
+  R125's B-ONLY3 (pβ_o is never an exception; pe_o is one only when D = c_W, and then Λ(pe_o) = c_W ≠ Λ(pβ_o)); referee-originated:
+  REFEREE R-P-N5-GATE GT-1 and REFEREE-2 R2-P-N5-GATE G-5.»
+- §3.4, WAIT-QUIET. Old: «(the classes K1-K10 of box 92's WAIT-CLOSED). ∎»
+  New (supersedes entry 1's New): «(the classes K1-K10 of box 92's WAIT-CLOSED; K10 is empty on both runs, §3.2's scope bullet). ∎»
+- §3.4, proviso note. Old: «- The proviso «D's play avoids e_o» was never violated on any measured instance (L-RED 63: dpass 0 on 29 instances).»
+  New (supersedes entry 2's): «- The proviso «D's play avoids e_o» holds at every state of both runs: on IDEAL-CYC by Lemma PROVISO
+  (L-RED 63, claude/l-red 2730ab90; premise RESULTS R123 B-ONLY), on Γ3 at every state 0, …, T3 by RESULTS R125's B-ONLY3 at the mover D,
+  the same argument (referee-originated: REFEREE R-P-N5-GATE GT-1, REFEREE-2 R2-P-N5-GATE G-5). So (b), (c) and WAIT-QUIET hold with no
+  proviso on both runs. DATA: dpass 0 (L-RED 63, 29 instances; L-SI box 96, 19 instances, two engines).»
+- §8, R229-box92 row. Old: «scope corrected to LAM ∧ PRIV ∧ UP (§3.2); «below» named K10.»
+  New (supersedes entry 1's New): «scope corrected to LAM ∧ PRIV ∧ UP (§3.2); «below» named K10; K10 is empty on IDEAL-CYC by RESULTS
+  R123 B-ONLY and on Γ3 by RESULTS R125's B-ONLY3 (REFEREE GT-1, REFEREE-2 G-5).»
+- §1, P-N5-CHAIN's status. Old: «- P-N5-CHAIN (L-NEW; frozen claude/l-new 93531b03; landing as R125, PENDING): the Γ3 facts used by name:»
+  New: «- P-N5-CHAIN (L-NEW; frozen claude/l-new 93531b03, sha1 6e613ba7; LANDED as RESULTS R125, trunk 0753fd71): the Γ3 facts used by
+  name (all in R125 except F2, CYC, (E-DOM), (Core), which are cited from the frozen text; REFEREE-2 R-10), with B-ONLY3 and LOC-K2-3 added:»
+
+### F3-2 (REFEREE-2 G-1 = REFEREE R-7): (Core) in its W-1-repaired reading
+- §1. Old: «(Core) (K0, K3 lie on both of two plays with the same Λ or on neither)»
+  New: «(Core) (P-N5-CHAIN §2's frozen core edges; used here ONLY in its W-1-repaired reading for non-core vertices: a non-core play
+  passes K0 iff it passes K3 (P-N5-CHAIN fixes entry 3, R-W); every use in this packet compares two non-core vertices, the faces of a gate
+  (§3.2 (a), (b′)) or the successors of a mover or a gate (§3.7 Step 2); on Γ read off R104's priorities and core edges; referee-originated:
+  REFEREE-2 R2-P-N5-GATE G-1)». The global gloss is false (plays from K3 and from K0 both have node K1; only one passes K0); no proof
+  changes, since every use is at non-core vertices.
+
+### F3-3 (REFEREE-2 G-2, R-2; REFEREE GT-8): the F3 / F6 / F4′ glosses and the premise rows
+- §1. Old: «F3 (E_t(v) is the set of e-vertices on v's play at t more relevant than Λ_t(v))»
+  New: «F3 (the recursion: if Λ_t(v) ≠ v then Ω_t(v) = ext(v, Ω_t(nx_t(v))); where §3.1 TRIGGER, §3.2 (b), §3.3 and §3.6 cite «F3» for
+  «E_t(v) is the set of e-vertices on v's play more relevant than Λ_t(v)», they mean the definition of E_t(v) (§2), not F3)»
+- §1. Old: «F6 (an e-vertex has exactly one successor, its W-target)»
+  New: «F6 (no mover is the cycle node of its own play; every non-mover Even vertex has one successor in HOW3), with [Γ3] / [DEF] for
+  «an e-vertex has exactly one successor, its W-target» where the packet cites F6 for it»
+- §1. Old: «F4′ (the extension inequality used in P-N5-SPLIT §2 (a))»
+  New: «F4′ (the extension inequality, used in PAIR-EXPEL Step 1)»
+- Table §3.1. Old: «| §3.1 | Lemma GATE-RACE (a), (b); Corollary TRIGGER | PROVED | F1, F2, LOC-GATE3, NO-TIE3, E-MON3, [OPT] |»
+  New: «| §3.1 | Lemma GATE-RACE (a), (b); Corollary TRIGGER | PROVED | F1, F2, LOC-GATE3, NO-TIE3, E-MON3, [OPT]; TRIGGER also CYC |»;
+  heading. Old: «### 3.1 Lemma GATE-RACE and Corollary TRIGGER (PROVED; F1, F2, LOC-GATE3, NO-TIE3; TRIGGER also E-MON3, [OPT], F3)»
+  New: «### 3.1 Lemma GATE-RACE and Corollary TRIGGER (PROVED; F1, F2, LOC-GATE3, NO-TIE3; TRIGGER also E-MON3, [OPT], CYC and the
+  definition of E)»
+- Table §3.5. Old: «| §3.5 | Lemma SAME-SUFFIX; Lemma STEP-BOUND | PROVED | [VJ], LOC-GATE3, NO-TIE3, [HOW] |»
+  New: «| §3.5 | Lemma SAME-SUFFIX; Lemma STEP-BOUND | PROVED | [VJ], LOC-GATE3, NO-TIE3, LOC-K2-3 (R123 LOC-K2 on IDEAL-CYC; for K2), [HOW] |»;
+  heading. Old: «### 3.5 Lemma SAME-SUFFIX and Lemma STEP-BOUND (PROVED; [VJ], LOC-GATE3, NO-TIE3, [HOW])»
+  New: «### 3.5 Lemma SAME-SUFFIX and Lemma STEP-BOUND (PROVED; [VJ], LOC-GATE3, NO-TIE3, LOC-K2-3 / R123 LOC-K2, [HOW])»
+
+### F3-4 (REFEREE R-1, R-2, GT-2 = REFEREE-2 G-4, R-4; REFEREE GT-5 = REFEREE-2 G-6, R-8): PAIR-EXPEL / EXPEL-COUNT need no P-N5-SPLIT premise
+- Table §3.7, label. Old: «PROVED-CONDITIONAL on P-N5-SPLIT (Step 1 quotes its §2 (a))»
+  New: «PROVED (on Γ3 CONDITIONAL on RESULTS R125 only; Step 1 is the argument of P-N5-SPLIT §3 (a), Lemma REWIN (a), written out here)»;
+  premises: F3 added (Step 1 uses Ω(u′) = ext(u′, Ω(b′))).
+- Heading. Old: «### 3.7 Lemma PAIR-EXPEL and Corollary EXPEL-COUNT (PROVED-CONDITIONAL on P-N5-SPLIT §2 (a); premises as in the table)»
+  New: «### 3.7 Lemma PAIR-EXPEL and Corollary EXPEL-COUNT (PROVED; on Γ3 CONDITIONAL on RESULTS R125; premises as in the table, with F3)»
+- Step 1. Old: «(P-N5-SPLIT §2 (a), with F1, STRICT, F4′, CN2-3)»
+  New: «(the argument of P-N5-SPLIT §3 (a), Lemma REWIN (a), with F1, STRICT, F3, F4′, CN2-3; nothing of P-N5-SPLIT is a premise)»
+- EXPEL-COUNT. Old: «(≤ 3M; L-RED R228 §2)»
+  New: «(≤ 3M: u′ is the first vertex whose successor differs; non-mover Even vertices are frozen (F6; R118 (a)) and σ̄(K2) is fixed
+  (LOC-K2-3 / R123 LOC-K2), so u′ is a mover or a gate and b′ one of its out-edges: M mover edges plus 2M gate faces; referee-originated:
+  REFEREE-2 R2-P-N5-GATE G-6; REFEREE R-P-N5-GATE GT-5 re-derived the same count)»
+
+### F3-5 (REFEREE R-3, GT-3, GT-4, GT-9 = REFEREE-2 G-3, G-7, R-3, R-5, R-8): A*-EQUIV
+- Table §3.8. Old: «PROVED-CONDITIONAL on P-N5-SPLIT (SPLIT-COUNT) and P-N5-CHAIN (C-EQUIV)»
+  New: «(i) PROVED on both runs; (ii), (iii) on Γ3 (HOW3) only, PROVED-CONDITIONAL on P-N5-SPLIT (SPLIT-COUNT, C-EQUIV) and RESULTS R125»
+- Heading. Old: «### 3.8 Corollary A*-EQUIV (PROVED-CONDITIONAL on P-N5-SPLIT's SPLIT-COUNT and P-N5-CHAIN's C-EQUIV)»
+  New: «### 3.8 Corollary A*-EQUIV ((i) PROVED, both runs; (ii), (iii) Γ3 only, PROVED-CONDITIONAL on P-N5-SPLIT's SPLIT-COUNT and
+  C-EQUIV)»
+- (i). Old: «(L-NEW, N5-CORE-forms §3 (5): cited, not re-proved here; uses E-MON3 only).»
+  New: «Proof (referee-originated: REFEREE-2 R2-P-N5-GATE G-7; REFEREE R-P-N5-GATE GT-4 re-derived it): C ≤ A*_all: take b := v, J := I;
+  each change of E(v) with top y makes y enter (E-MON3), which starts a new maximal run of y, so c_y(v, I) ≤ a_y(v, I). A*_all ≤ 1 + M·C:
+  every run of z on J, except one present at J's first state, starts at a change of E(b) inside J, and those number Σ_y c_y(b, J) ≤ M·C.
+  Uses E-MON3 (R121 E-MON on IDEAL-CYC) only; no lane file is cited.»
+- (iii). Old: «(with C-EQUIV)»
+  New: «(with P-N5-SPLIT's Corollary C-EQUIV; (ii) and (iii) are Γ3 statements only)»
+- §1, P-N5-SPLIT row. Old: «C-EQUIV and the form list in L-NEW's docs/new/N5-CORE-forms.md (claude/l-new 14babccb).»
+  New: «Corollary C-EQUIV (P-N5-SPLIT §6, frozen claude/l-new 399cda07, sha1 5bc1b1f3); the form list in L-NEW's docs/new/N5-CORE-forms.md
+  (claude/l-new 14babccb) is context only, not a premise.»
+
+### F3-6 (REFEREE D-4 = REFEREE-2 R-9): the copy rows, re-measured as sets
+- §6. Old: «- §3.5: lev94 (unit level; box 94's 22): copy rows S(R_j) = S(R_(j−1)), flips(g_Qj) 0 on NDV / NDB.»
+  New: «- §3.5 (a record of box 94's nesting families, not a test of SAME-SUFFIX's statement): copy rows S(R_j) = S(R_(j−1)) AS SETS on
+  every level of 20 of box 94's 22 instances, all but NSQ2_4, NSQ3_4, whose levels run one after another and whose rows differ (|S(R_j)|
+  18, 22, 26) (L-SI box95/fix3/copy95.py, both engines, rows identical, out/copy95_*.out; REFEREE 31's replay agrees; lev94 compared
+  sizes only, and the frozen «22» was false); flips(g_Qj) 0 on NDV / NDB.»
+- §6 controls. Old: «CTRL=a0 afail 14 / 96;»
+  New: «» (deleted: EXP-PATHS's control, not a statement of this packet; REFEREE D-5b).
+
+### F3-7 (L-3): the line, both referees' strings, one answer table
+- docs/si/P-N5-GATE-line-L3.txt = L-2 with the replacements of fix3/mkL3.py, applied in its order; sha1 b60495b2c607e8e6c1e145e40478717fa6ed15f4, 12353 bytes (wc -c).
+  Kind V: one referee's string verbatim; S: the two referees' strings coincide in meaning, REFEREE's taken; M: merged by the lane (both
+  referees' Olds lie inside the merged Old, asserted; the New carries both referees' facts and credits).
+  - 31:R-6, 31:R-7, 31:R-2, 31:G-c, 2:R-5c, 2:R-1/R-10 | M
+  - 31:R-1, 2:R-4 | M
+  - 31:R-3, 2:R-3/R-5d, 2:R-8a | M
+  - 31:R-4, 2:R-5a | M
+  - 31:R-5, 2:R-5b | S
+  - 31:G-a, 2:R-6a | M
+  - 31:G-b, 2:R-6b | M
+  - 31:D-4, 2:R-9 | M
+  - 31:D-1 | V
+  - 31:D-2 | V
+  - 31:D-3 | V
+  - 31:D-5a | V
+  - 31:D-5b | V
+  - 2:R-8b | V
+  - 2:R-7a | V
+  - 2:R-7b | V
+  - lane | M
+- Absent from L-3 (asserted by mkL3.py): «§2 (a)», «P-N5-CHAIN's C-EQUIV», «lie on both of two plays», «not a premise here», «not among
+  P-N5-CHAIN», «while its play avoids», «over the run then», «CTRL=a0». Parentheses balance; no «|».
+- Governing list: REFEREE-2 37 Addendum 1 (claude/referee-2 8983b3d8; byte copy fix3/ref2_R2-P-N5-GATE_8983b3d8.md), as the Lead
+  ruled (01:38Z). Choices made there: PAIR-EXPEL drops the P-N5-SPLIT condition (REFEREE-2 R-4; the argument of P-N5-SPLIT §3 (a) is
+  written out in the packet, so it is no premise); Γ3 premises in REFEREE-2's R-1 / R-10 form (supersedes REFEREE R-7, G-c); A*-EQUIV in
+  REFEREE's R-3 form ((i) on both runs, (ii) on Γ3 only) with REFEREE-2's G-7 proof credit; DATA by REFEREE's D-1..D-5 (supersede
+  REFEREE-2's R-9); Γ3 K10 / PROVISO by G-a / G-b = R-6a / R-6b with «RESULTS R125»; REFEREE-2's R-7a / R-7b («at every state of the
+  run») kept, though optional once G-b holds the proviso on both runs.
