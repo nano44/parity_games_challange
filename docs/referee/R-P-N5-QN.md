@@ -147,3 +147,22 @@ qn_replay.py, qn_dead.py, qn_quotes.py; qn_logs/: sweep.out, dead.out, quotes.ou
   ≤ N and explained by R118 (a)'s free tie rule: CORRECT (QUIET-N's bound is tie-rule independent).
 - Verdict: fixes entry 1 CORRECT. **Line L-1 MATCHES** the packet read with fixes entry 1 and meets LN-1..LN-8. Statements as §0 (all
   SIGN). docs/referee-2/ read only for the strings fixes entry 1 cites.
+
+## §D. Fixes entry 2 and line L-2 (REFEREE successor 31, Opus 5.5, D15; date -u at writing 2026-11-12T02:58Z; Lead 02:58Z byte test)
+- Objects: claude/l-new 70501a99 (ancestor of origin/claude/l-new, checked). docs/new/P-N5-QN-line-L2.txt sha1
+  166e4695b07843ae73e2d23ac92802c256f31113, 7,187 B; L-1 at 70501a99 sha1 28bf566b… (unchanged, the line my predecessor's §C matched).
+  Fixes entry 2: line-only (CHECKER C140 E-1 = flag G-L43; Lead ruling R-D2a 02:30Z).
+- Byte test: scratch/qn_l2.py applies R-D2 then R-S to L-1, both strings typed from CHECKER C140 §4 (claude/checker 445372f9), not from the
+  lane's generator. Each old string occurs once in L-1. After R-D2: sha1 2e85dfe5…, 7,060 B (= C140's intermediate); after R-S: sha1
+  166e4695…, 7,187 B. `cmp` with the lane's L-2: **EQUAL** (qn_logs/l2test.out). Nothing else changed. One line, 0 «|», 137 «(» = 137 «)»,
+  «D2» 0, «406ef2fd» once, «pending» / «landed» 0. The join reads «… (4, 0): 2 flips, lamch 0); D3 «every e-sequence has at most k + 1
+  ascents» …»: D3 keeps its name.
+- Meaning. R-D2: D2 «at k = 1 every gate flips at most c·(lamch(g) + 1) times», «every constant c», rested on three instances; at lamch 0
+  the bound is c, and 9 / 17 / 33 flips refute it only for c ≤ 32. «Every constant c» needs the MWR(n) count for every n, which no signed
+  text proves (my predecessor's §4 confirmed the numbers, not the family). Under L43 the item is DATA, not DEAD: dropping it is right.
+  R-S: the instances stay in the C = 0 DATA clause with their source (L-RED 63, claude/l-red 406ef2fd) and sha1s 856d369b, 918f1414,
+  2ccda9a9, which match box93/inst/SHA1SUMS at claude/l-si 9c0349b1 (same files; R-P-N5-GATE §1.1). The numbers 9 / 17 / 33 at lamch 0 are
+  reproduced independently by my own engine (R-P-N5-GATE §3.2, both runs: max flips 9 / 17 / 33 with lamch 0 at the max-flip gate).
+- Re-signature (as REFEREE, for the DEAD list): D1 and D3 as my predecessor's §0 / §4 signed them (CONFIRMED; D3's k = 2 WC family cited,
+  not re-run); D2 removed from DEAD (now DATA). Every statement and label of P-N5-QN unchanged.
+- Verdict: fixes entry 2 CORRECT. **Line L-2 MATCHES** (= L-1 + R-D2 + R-S exactly; = CHECKER C140 §4's L-2).

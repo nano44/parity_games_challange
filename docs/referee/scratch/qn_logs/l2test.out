@@ -1,0 +1,7 @@
+R-D2 old count 1
+R-D2 after: sha1 2e85dfe5ec607863b3b3cd95885681ff65012953 7060 B
+R-S old count 1
+R-S after: sha1 166e4695b07843ae73e2d23ac92802c256f31113 7187 B
+lines 1 bars 0 parens 137 137 D2 0 406ef2fd 1 pending 0 landed 0
+join: te (4, 0): 2 flips, lamch 0); D3 «every e-sequence has at most k + 1 ascents» (a
+CMP-EQUAL

@@ -366,3 +366,30 @@ Line L-2: does NOT match; required R-1..R-7, D-1..D-5 (§5); recommended G-a..G-
 - Verdict: fixes entry 3 CORRECT. **Line L-3 MATCHES except LT-1** (one required string). Every superseded string of mine is ACCEPTABLE as
   replaced. Verdicts of §0 unchanged, with the Γ3 rows now on LANDED R125 (no longer conditional), and A*-EQUIV (ii), (iii) still
   CONDITIONAL on P-N5-SPLIT (pending).
+
+## §J. GT-10 (L43 / G-L43), found while testing P-N5-QN L-2 (REFEREE successor 31; date -u at writing 2026-11-12T02:58Z)
+- My §0 and §3.3 passed the DEAD list «as reproduced»; I did not apply L43. CHECKER C140 E-1 (G-L43) failed P-N5-QN's D2 for exactly
+  this, on the SAME three MWR instances. L43 (Lead reading 2026-10-31, docs/DECISIONS.md l. 369-373), verbatim: «A lane DEAD of an
+  ASYMPTOTIC statement (one with an unspecified constant, e.g. «DESC_F ≤ c·n») does not enter a RESULTS line as «DEAD»: it enters as DATA
+  with its numbers and source commit, or not at all. «DEAD» in a landing line needs a refereed proof, or one instance exceeding an
+  EXPLICIT bound» and «A DATA label does not cure an overclaim».
+- Rows of L-3's DEAD clause that are asymptotic statements refuted only on finitely many instances (REQUIRED, same class as QN's R-D2):
+  - K1-FLIP(c) «a constant per-gate flip bound … at k = 1»: flips 9 / 17 / 33 at lamch 0 refute c·(lamch + 1) only for c ≤ 32 (= QN D2).
+  - RA-MULT «constant re-arm multiplicity»: m = n on MW8_2, MW32_2 refutes a constant K only for K < 32.
+  - «a polynomial bound on the RA path count»: P = F_(d+2) − 1 on FW8_2, FW16_2; no finite set of instances refutes «polynomial».
+- Rows that kill a CONSTRUCTION (WC waiting High, K6 LAG TOWER, K7, nesting multipliers, Db / Dbr): each says a specific design does not
+  produce growth, with the measured numbers; they claim no asymptotic bound, so L43 does not apply as written. Lead's call whether «DEAD» is
+  the right word for them; the numbers are reproduced (§3.3; K6's CNT not re-counted).
+- Strings for L-4 (applied to L-3; each Old once in L-3, checked):
+  - GL-1: Old «constant re-arm multiplicity RA-MULT (m = n, C = 2n + 1; MW8_2, MW32_2), a polynomial bound on the RA path count (P =
+    F_(d+2) − 1 with C = 3; FW8_2, FW16_2), » → New «» (nothing).
+  - GL-2: Old «, a constant per-gate flip bound K1-FLIP(c) at k = 1 (flips 2n + 1 with lamch 0; MWR4_2, MWR8_2, MWR16_2, L-RED 63)» →
+    New «».
+  - GL-3: Old «all in experiments/si/box91, box93, box94 and box95/fix1 inst with sha1 files» → New «all in experiments/si/box91, box93,
+    box94 and box95/fix1 inst with sha1 files; DATA, not DEAD (asymptotic statements, finitely many instances; L43): re-arm multiplicity
+    m = n with C = 2n + 1 on MW8_2, MW32_2 (refutes a constant multiplicity only below 32), the RA path count P = F_(d+2) − 1 with C = 3 on
+    FW8_2, FW16_2, and per-gate flips 9 / 17 / 33 at lamch 0 on MWR4_2, MWR8_2, MWR16_2 (L-RED 63, claude/l-red 406ef2fd; refutes
+    c·(lamch + 1) only for c ≤ 32)».
+- Also in the growth DATA clause, «MWR(n): flips 2n + 1 = 2·ch_D + 1 with lamch 0» and «MW(n): C = 2n + 1, flips 4n + 2» are family
+  formulas read off finitely many n; as DATA they are acceptable only as numbers on the named instances (optional: «on n = 4, 8, 16» /
+  «on n = 8, 32»).
