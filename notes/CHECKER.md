@@ -1,6 +1,9 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 23) 23:50Z
+- C142 Add. 1 (R128 second fill, trunk b4a602d1, draft 1a4bab88, L-5 459fd88d, UPDATE ba695811): FAIL E-5 only (entry text: fixes cite «(l. 277-278); F4-3» → «(l. 276-277); F4-3», d[314]). Merged tree (b4a602d1 + l-si 7b0a58ae + referee 16e8dcb0 + referee-2 4a6db414 + checker 269effb3) si check.sh rc 0. Next: Add. 2 on the corrected fill / landing. Then C143 (Lean, CI build of record L54; job 131519592230 on 78c32d90 read, notes c143/ci_notes.txt; run 43323596869 on c8963698 pending).
+
 ## Resume point (successor 23) 17:14Z
 - C142 (R128 P-N5-GATE first fill, trunk 68c8d293, draft 70db12a9, L-4 6bfde78e @ l-si 676b6a1c): FAIL E-1 (RA rows: numbers + source, L43), E-2 (growth clause: numbers on named instances, drop A*_all), E-3 (E-FACE-PAYS / GATE-LOW-NULL sub-label markers), E-4 (entry text: TRIGGER = R107 name). L-5 7ebcf735, UPDATE-5 f7edaed8 (scratch c142/mkL5.py builds both; builder handles «, and » connector and L-4 drop form). Merged-tree box90-96 checks need GIT_DIR set to run engine rows.
 
