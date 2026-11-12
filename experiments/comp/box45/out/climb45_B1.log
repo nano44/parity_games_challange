@@ -1,0 +1,10 @@
+START restart 0 seed seed_gen37_3.json QP 14 NM 116 ratio 0.1207
+BEST BEST_B1_T14_NM116_dc4ef6d9.json QP 14 NM 116 ratio 0.1207 | text engine qmax 14 ratio 0.1207 T3 25 (fast37 25) agree True | qflip 24 deepNS 0 gmaxNS 0 gmax100 3 unm 0 pimis 0 | restart 0 step 4 evals 4
+BEST BEST_B1_T14_NM115_a937d5f8.json QP 14 NM 115 ratio 0.1217 | text engine qmax 14 ratio 0.1217 T3 24 (fast37 24) agree True | qflip 24 deepNS 0 gmaxNS 0 gmax100 3 unm 0 pimis 0 | restart 0 step 24 evals 24
+BEST BEST_B1_T14_NM114_71af7ffe.json QP 14 NM 114 ratio 0.1228 | text engine qmax 14 ratio 0.1228 T3 21 (fast37 21) agree True | qflip 24 deepNS 0 gmaxNS 0 gmax100 3 unm 0 pimis 0 | restart 0 step 140 evals 136
+BEST BEST_B1_T14_NM113_cc75ea70.json QP 14 NM 113 ratio 0.1239 | text engine qmax 14 ratio 0.1239 T3 20 (fast37 20) agree True | qflip 24 deepNS 0 gmaxNS 0 gmax100 3 unm 0 pimis 0 | restart 0 step 145 evals 141
+BEST BEST_B1_T15_NM113_600b42ff.json QP 15 NM 113 ratio 0.1327 | text engine qmax 15 ratio 0.1327 T3 20 (fast37 20) agree True | qflip 25 deepNS 0 gmaxNS 0 gmax100 3 unm 0 pimis 0 | restart 0 step 182 evals 176
+BEST BEST_B1_T15_NM112_1113fdf1.json QP 15 NM 112 ratio 0.1339 | text engine qmax 15 ratio 0.1339 T3 17 (fast37 17) agree True | qflip 25 deepNS 0 gmaxNS 0 gmax100 3 unm 0 pimis 0 | restart 0 step 279 evals 267
+BEST BEST_B1_T15_NM111_ddf9309f.json QP 15 NM 111 ratio 0.1351 | text engine qmax 15 ratio 0.1351 T3 17 (fast37 17) agree True | qflip 25 deepNS 0 gmaxNS 0 gmax100 3 unm 0 pimis 0 | restart 0 step 292 evals 278
+BEST BEST_B1_T15_NM110_fabc8587.json QP 15 NM 110 ratio 0.1364 | text engine qmax 15 ratio 0.1364 T3 16 (fast37 16) agree True | qflip 25 deepNS 0 gmaxNS 0 gmax100 3 unm 0 pimis 0 | restart 0 step 294 evals 280
+BEST BEST_B1_T15_NM109_d4cf0e34.json QP 15 NM 109 ratio 0.1376 | text engine qmax 15 ratio 0.1376 T3 16 (fast37 16) agree True | qflip 25 deepNS 0 gmaxNS 0 gmax100 3 unm 0 pimis 0 | restart 0 step 348 evals 331
