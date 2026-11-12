@@ -15,9 +15,15 @@ def lnew(files, noelev):
     return [json.loads(l.split(" ", 1)[1]) for l in out if l.strip()]
 
 
-for noe in (False, True):
-    L = lnew(FILES, noe)
-    for f, l in zip(FILES, L):
+done = set()
+if os.path.exists(OUT):
+    for line in open(OUT):
+        r = json.loads(line); done.add((r["file"], r["elev"]))
+for f0 in FILES:   # one file at a time (resume skips (file, mode) pairs already in OUT)
+  for noe in (False, True):
+    if (os.path.basename(f0), not noe) in done: continue
+    L = lnew([f0], noe)
+    for f, l in zip([f0], L):
         G = json.load(open(f)); t = fast36.one(G, noelev=noe, bindir="bin/k")[0]; m = full38.full(G, not noe)
         agree = t == m["T3"] == l["T3"] and m["Ttot"] == l["Ttot"] and m["F"] == l["F"]
         rec = dict(file=os.path.basename(f), elev=not noe, U=u38.U(G), NM=u38.NM(G), T3_fast=t, mine=m, lnew=l, agree=agree,
