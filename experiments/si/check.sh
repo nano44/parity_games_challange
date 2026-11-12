@@ -1302,3 +1302,5 @@ bash box101/check101.sh
 bash box102/check102.sh
 # box 103 (MOVER-DEEP3 at k = 1: GAIN-COUNT, NOLOSS-k1 counters; docs/si/box103-moverdeep.md)
 bash box103/check103.sh
+# box 104 (D18 big map: Lemma WRAP, FREE-REACH, Friedmann's counter under N5'-xi; frozen outputs; docs/si/box104-map.md)
+bash box104/check104.sh

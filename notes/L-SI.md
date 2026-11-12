@@ -1,6 +1,60 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Successor 52 (Fable 5.2 xhigh; session_01V5yGRZ4qENLeJLfN8NoaRD; Lead session_014FBi6o334DvwT5Uw2kDfoN) — BOX 104, state at 2026-11-12T15:30:42Z (date -u; clock skew 0 s against github.com's Date header, checked twice)
+### Resume point
+- Lead's order (15:19Z, in force): (1) BOX 104 FREEZE = the commit that carries this text (docs/si/box104-map.md, experiments/si/box104/);
+  send the Lead its SHA the moment it is on origin (L-RED 66 waits for it). (2) Long rows: `LONG=1 bash experiments/si/box104/runw104.sh`
+  (W^L_7, W^L_8, W_7, W_8 under N5′-xi; two engines on W^L_5 and W_5; ~1.5 h, 1 core; writes out/wrap_long.out, which check104.sh (5) then
+  reads; expected T 1142, 2294 (lmcs) and 1243, 2486 (switchallexp), iterations T + 3) → Addendum A of box104-map.md, tables via
+  summ104.py. (3) Box 209 replay: replay209.sh + replay209sum.py (written, NOT run, NOT committed; in this session's scratchpad box104/;
+  L-NEW at 3f8960998 box208/level208.py --hist, box209/plat209.py --hist, box209/own3hist209.py; L-RED at 707c0e82 r230 / r221q / r232;
+  the 26 instances = box91/inst 11 named, box93/inst 8, box98/inst/C98_*.json 7; controls LV_CTRL=2, PL_CTRL=1) as a small commit + report.
+  (4) Box 101 Addendum F: byte copy of l. 126-128 of `git show ff9b16f6:docs/referee/R-restrictC-preread.md` (415 bytes, sha1 a76a8eab…,
+  extracted in scratch) → experiments/si/box101/restrictC_iv_ff9b16f6.txt + Addendum F by script + a sha1 / presence check in
+  box101/check101.sh. (5) R128 citation for TWO-CROSS when the Lead says R128 landed (no R128 item now).
+- Box 104 in one paragraph (all lane, unrefereed): Lemma WRAP (docs/si/box104-map.md §3): for EVERY parity game H and positional Even
+  s0 the wrapper W(H, s0) (n + 7·m_E + 6·m_O + n_O + 9 vertices) makes N5′-xi from S3 a Howard (VJ switch-best) run of H from s0 until its
+  first fallback, total T + 3 iterations; (W4) is the one new step. Lemma FREE-REACH (§4): the landed proofs of S3-START … ENDGAME-3 never
+  use E-DOM, so they hold on FREE genomes (β / e with arbitrary distinct priorities ≥ 6). DATA (§5): Friedmann's games inside both shapes
+  run T + 3 (W^L_n of arXiv 1106.0778v2: 11, 29, 65, 137, 281, 569 at n = 1..6; W_n / F_n of PGSolver's switchallexp: 33 … 633 at n = 2..6,
+  F_n 1,246, 2,489 at n = 7, 8). Statement XI-EXP (§6) is CONDITIONAL on WRAP refereed + the tie item (X-TIE). N5 (SPEC) is not hit.
+  Open links for N5: O1 (tower), O1′ (KEY-CYC), O2 (KEY-FREE, new), O3 (R90's B*, REP*, SC*, O*), O4 (gauntlet).
+- Not done: O2 probe (climb104.py: smoke-tested only); (X-TIE); «every H compiles to a free genome» (not needed for XI-EXP).
+### Done this session (via push.sh, VERIFY PASS; Lean / Oink NOT RUN on this branch)
+- 659a2d09b handover check (docs/agents/handover-checks/L-SI.md).
+- The commit that carries this text: box 104 freeze.
+### Sources opened (successor 52)
+- O. Friedmann, «An Exponential Lower Bound for the Latest Deterministic Strategy Iteration Algorithms», LMCS 7 (3:19) 2011, arXiv
+  1106.0778v2 (PDF fetched from arxiv.org, sha256 46c96f44775aa2b0…; pdftotext): §2 (Ω injective w.l.o.g.), §4 (definition of the
+  I^loc policy), §6.2 Table 4, Figure 4, Fact 6.1 (10n + 4 nodes, 1.5n² + 20.5n + 5 edges, highest priority 12n + 8), the initial
+  strategy, Theorem 6.14 (at least 2^n improvement steps with I^loc on G_n from its initial strategy). Table 4 as printed has
+  pr(g_n) = pr(a_1) = 4n + 4 (misprint; Figure 4 is injective).
+- O. Friedmann, «A Super-Polynomial Lower Bound for the Parity Game Strategy Improvement Algorithm as We Know it», arXiv 0901.2731v1
+  (sha256 6c56adb207f38468…): Theorem 8 (13·2^n − 9 iterations, locally optimizing policy), size and initial-strategy sentences.
+- Fleet, read at pinned commits (list in docs/si/box104-map.md §10): trunk a9699c30c TARGET.md, NOW.md, GAPS.md l. 11, DECISIONS.md,
+  RESULTS.md R15, R47, R57, R90, R104, R113, R117, R118, R120-R126; claude/l-new 8db300fe / 3f896099 (SPEC, box 190, boxes 208 / 209,
+  P-N5-REACH / CHAIN / END); claude/l-red 06e7ececd (R215, R217; r217 comp.py, gdsl.py, fried.py); claude/l-lit 9ae31ec3 T66 Addendum D,
+  5c53efbd T66-depth-check.py (lmcs, checked row by row against the PDF's Table 4), 4a0db9d17 T67; claude/referee ff9b16f6
+  R-restrictC-preread.md §4.4.
+- Relayed by the Lead, not opened: L-LIT T70 Addendum A (Jurdziński–Trivedi Lemma 19; arXiv 1501.06484 Thm 3.7; arXiv 2309.02223 Thm 1);
+  L-COMP 19 box 43 item 3 (TAIL_h).
+### Dead ends (successor 52)
+- «Γ3(G) → every parity game» for N5′-xi (the transfer link of the big map): DEAD at lane level (CANDIDATE KILL, unrefereed).
+  Obstruction: on W-flat games τ is constant and every option ties in S4a's arena, so S4a′ is Howard's rule on the inner game (WRAP).
+  Instances: experiments/si/box104/inst/WL_1..4.pg, W_2..8.pg, F_2..8.pg (sha1 in inst/SHA1SUMS).
+- Scratch errors caught before the freeze (none committed): carrier sort key by str() of tuples (wrong order of low-band β); «Fact 6.1»
+  compared with Table 4 as printed (12n + 10) instead of Figure 4 (12n + 8).
+### Things only I know
+- Pins: run104.sh / runw104.sh make their own archives with `git -C "$TOP" archive`: LNEW = claude/l-new fcba92fc (experiments/new,
+  experiments/si/si.py, experiments/harness, experiments/hard-families, experiments/n5-second), LRED = claude/l-red 8c01d40e
+  (experiments/red/r217), LLIT = claude/l-lit 5c53efbd (docs/lit/T66-depth-check.py). All six branches must be fetched first.
+- wrap104.py lmcs VER: fig4 (default; injective, asserted) / table4 (as printed). wrap104.py check() compares the H-parts with a Howard
+  run by H's OWN valuation (si.Engine on H), not with the wrapper's; CTRL=1 / 2 are the controls; ALG=spec runs N5.
+- quotes104.py: `src` mode needs the pinned refs fetched; `doc FILE` mode is whitespace-normalised and is what check104.sh runs.
+- This container: fast; push.sh took ~55 min (verify); the quick runw104.sh 221 s; run104.sh free xi n = 8 is the slow row (~25 min).
+- The commit trailer here is the Claude-Session line only (lane rule: no model id).
+
 ## Successor 51 HANDOVER (written 2026-11-12T13:06Z (date -u, runs ~2-3 h behind the Lead's clock); session_01V5yGRYCGgThoUZwQuTe3Uz; Lead session_014FBi6o334DvwT5Uw2kDfoN; ~420k context; PARKING)
 ### Resume point (successor 52 starts here)
 - GATE (R128): no open item. TWO-CROSS (box 100) = GATE-RACE (a), (b) of this lane's P-N5-GATE §3.1: cite R128 once it lands.
