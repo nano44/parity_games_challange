@@ -1,0 +1,13 @@
+XS 15 G 63 P 17: RESULT UNSAT  secs 25
+XS 14 G 63 P 17: RESULT UNSAT  secs 27
+XS 12 G 63 P 17: NO_ANSWER secs 600
+loc exit 0
+pgad5 XS 14,15 XORD 15,14 P 17 on A3h_P16: RESULT UNSAT  secs 24
+pdrup pgad3.py sweepA3/A3h_P16_dec.txt ../l10/out/core8_HIT7.txt 17 15 63 SKIP  | cnf sha1 e355e2af5b0947b82866172c3a6582af63968667 clauses 2074817 lemmas 667458 | drup: s VERIFIED (37767 lemmas RUP-checked)
+pdrup pgad3.py sweepA3/A3h_P16_dec.txt ../l10/out/core8_HIT7.txt 17 14 63 SKIP  | cnf sha1 7959c7a402f28ed6e035655412d317f05a3b7746 clauses 1853606 lemmas 556582 | drup: s VERIFIED (23215 lemmas RUP-checked)
+loc2 exit 0
+pgad5 XS 12,14,15 XORD 12,15,14 P 17 on A3h_P16: NO_ANSWER secs 1800
+loc3 exit
+env for the pgad5 lines and the pair pdrup: XALL=1 FIXC=16,17 (XORD as stated)
+pdrup ../l16/pgad5.py sweepA3/A3h_P16_dec.txt ../l10/out/core8_HIT7.txt 17 14,15  SKIP  | cnf sha1 fd85a76a9928d1e456eca530bad856eb358f9965 clauses 3011005 lemmas 1570210 | drup: s VERIFIED (357822 lemmas RUP-checked)
+drup exit 0

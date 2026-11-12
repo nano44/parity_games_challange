@@ -23,6 +23,11 @@
 - 13:08Z A3 sweep P 16 (unhinted): NO ANSWER 2,900 s. 13:09Z P 16 hinted by A3x5_P15 started ($SP/sw/A3h_P16.out).
 - diag on A3x5_P15: run leaves at row 16 with movers 10 (L5), 14, 15 (L7): the q6/q7 tight change at row 16 (L14 tight.py: P 18 needs q6
   at 16). f6check on A3x5_P15: first f6 mismatch at row 18.
+- 13:25Z P 16 hinted SAT (994 s): A3h_P16_dec e4a6f2df follows rows 0..16 (replayed; frozen; pushed bc6c6923). P 17 hinted by P16: NO
+  ANSWER. P 18 hinted by P16: NO ANSWER (14:14-15:02Z) = third consecutive capped no-answer at P 18 → STOP RULE → box result L17 §3.
+- Local questions on A3h_P16 at P 17 (l17/local/local_P17.txt): XS 15 + G63 UNSAT (DRUP VERIFIED), XS 14 + G63 UNSAT (DRUP VERIFIED),
+  pgad5 XS 14,15 UNSAT 24 s (DRUP running $SP/sw/drup_pair.out), XS 12 + G63 no answer 600 s, pgad5 XS 12,14,15 no answer 1,800 s.
+  SKIP=15 at P 17 SAT but decode leaves target at row 1 (coarse relaxation; not used).
 
 ## Successor 14 HANDOVER (-> successor 15; written 2026-11-12 09:2xZ, date -u; PARK on Lead 09:04Z instruction, context ~450k)
 ### DONE (claude/l-lower; products docs/lower/L16-cascade.md (closed), docs/lower/L17-around.md (open); tools experiments/lower/l16/, l17/)

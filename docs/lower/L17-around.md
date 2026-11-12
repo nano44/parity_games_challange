@@ -42,7 +42,8 @@ Model: R104's IDEAL model at degree ≤ 2 (sim6; fenc for replays). Target core8
   SHA1SUMS). DATA (unit = prefix length in core8 rows, scope A2_solved with one helper 63 and one rewired client): best realized prefix rows
   0..12 (A2x8_P11_dec follows 0..12 as well). A2 does NOT pass P 18. P 13 UNSAT for XS 8 DRUP VERIFIED (l17/sweepA2/drup.txt: 880,002 clauses, Glucose4 proof, l8/sat/drup.c «s VERIFIED»); XS 11 at P 13 solver-only (DRUP pending).
 - Reading of the stop rule used here: a «run» is one capped search plus its exact prefix measurement; three consecutive runs that do not pass
-  P 18 end the box with the obstruction. Count so far: A1 failed (prefix < 2); A2 failed (prefix 12, UNSAT at 13 for XS 8 and XS 11); A3 running (pgad5, below).
+  P 18 end the box with the obstruction. Count: A1 failed (prefix < 2); A2 failed (prefix 12, UNSAT at 13 for XS 8 and XS 11); A3 reached 16, then three consecutive capped runs
+  at P 18 gave no answer (below): the stop rule ends the box (§3).
 
 - A3 (frame that keeps the design's ranks): l16/pgad5.py on A2_solved, all ranks of fixed options kept, the f6 pair's signs / gates / starts
   fixed (FIXC 16, 17; f6 = mover 13 not in XS), clients XS = {8, 11, 12, 14, 15} free to read ANY mover compatible with the order
@@ -50,13 +51,48 @@ Model: R104's IDEAL model at degree ≤ 2 (sim6; fenc for replays). Target core8
   question (l17/sweep5.sh). SAT at P 10 (99 s), 11 (626), 12 (496), 13 (812), 14 (765), 15 (2,680 s); P 16 NO ANSWER (2,900 s).
   Phase hints (pgad5 env PHASE = a genome: the solver's phases start at that genome's design; search order only, verdicts unchanged):
   P 16 hinted by A3x5_P15: SAT (994 s), A3h_P16_dec (e4a6f2df) follows rows 0..16, T 16, replayed sim6 = fenc. P 18 questions, same frame:
-  unhinted NO ANSWER (2,900 s, A3d_P18.log); hinted by A3x5_P15 NO ANSWER (2,900 s, A3h_P18.log). P 17 hinted by A3h_P16 running.
+  unhinted NO ANSWER (2,900 s, A3d_P18.log); hinted by A3x5_P15 NO ANSWER (2,900 s, A3h_P18.log); hinted by A3h_P16 NO ANSWER (2,900 s,
+  A3h16_P18.log). P 17 hinted by A3h_P16: NO ANSWER (2,900 s, A3h_P17.log).
   Every decode replayed sim6 = fenc (l17/sweepA3/replay.txt, SHA1SUMS). DATA (unit = core8 rows followed by the free run, scope this frame
   on A2_solved): A3h_P16_dec (e4a6f2df) follows rows 0..16, the lane's longest realized prefix so far (L14-L16 best: rows 0..14).
   DATA (f6check rows 0..510, same counter as §1): every A3 decode breaks f6 beyond its prefix, 47-62 / 129 mismatching free pre-states,
   first at row 14-18 (l17/sweepA3/f6check.txt): re-searched readers change the chains f6 reads (the L16 coupling, seen from the reader side);
   the prefix constraints repair f6 only on the rows they cover.
 - A2 XS 11 P 13 UNSAT: DRUP check hit its 2,900 s cap (proof 1.56 GB; exit 124): solver-only, NOT cited.
+
+## 3. Box result (stop rule): milestone P 18 not reached; the obstruction moves into the cluster at row 17
+- Milestone P 18: NOT reached. Stop rule met: three consecutive capped runs at P 18 in the A3 frame gave no answer (2,900 s each: unhinted;
+  phases from A3x5_P15; phases from A3h_P16). P 17 (phases from A3h_P16): no answer in 2,900 s as well.
+- Best realized prefix of the box (DATA; unit = core8 rows followed by the free run; scope = this frame on A2_solved): rows 0..16,
+  A3h_P16_dec (e4a6f2df, l17/sweepA3, SHA1SUMS), replayed on two engines (sim6 = fenc, T 16). The lane's earlier best was rows 0..14
+  (X5_P14_dec, L16). This is DATA, not a lower bound (§0): one level-8 target, 17 of 511 rows.
+- The obstruction, measured on its instances.
+  (a) Keep the readers as annealed (A2, ranks re-solved, f6 correct on all 129 free pre-states of rows 0..510): the exact prefix with one
+      rewired client + one helper stops at row 12 (instance A2_solved 2eae1e1f, XS 8, G {63}: UNSAT at P 13, DRUP VERIFIED,
+      l17/sweepA2/drup.txt; XS 11 likewise UNSAT at 13, solver only).
+  (b) Re-search the readers with ranks kept (A3): the prefix grows to 16, and every A3 decode breaks f6 off its prefix (47-62 / 129
+      free pre-states of rows 0..510, first at row 14-18; l17/sweepA3/f6check.txt). The f6 pair stays correct only on the rows the prefix
+      constraints cover (reading: the readers that serve the core's tight changes rewrite the chains f6 reads). This is the L16 coupling, seen
+      from the reader side.
+  (c) Where the wall sits (local questions on the P 16 design A3h_P16_dec, l17/local/local_P17.txt): row 17 is unreachable by rewiring
+      q7 alone or f7 alone (+ helper 63; pgad3; UNSAT, both DRUP VERIFIED: CNF e355e2af (f7) and 7959c7a4 (q7)), and by rewiring q7 and
+      f7 together to read any mover in order 15 < 14 (pgad5; UNSAT in 24 s; DRUP VERIFIED: CNF fd85a76a). Rewiring q6, q7, f7 together: no answer in
+      1,800 s; q6 alone + helper: no answer in 600 s. So the step to row 17 from this design needs some mover outside {q7, f7} (and the
+      fixed f6 pair) to change as well; q6 (12) is the candidate (L14 tight.py lists q6's tight change at row 16 for P 18), but the
+      {q6, q7, f7} question is undecided.
+- What is NOT claimed. No UNSAT at P 17 or P 18 in the A3 frame (only no answers); the local UNSATs are about ONE design's neighbourhood
+  (A3h_P16), not about the frame. Nothing here bounds N5 on any game, nor shows that the level-8 tower does or does not exist in the IDEAL
+  model. The A3 frame fixes A2_solved's other wiring (movers outside XS) and ranks; other frames are untouched (§0).
+- Labels. DATA: §1, §2 and §3 tables, each with its counter. DEAD (as starts): A1 (ann3 with re-solved ranks breaks f6; UNSAT at prefix 2,
+  solver only). PROVED (lane): nothing new in this box. CONJECTURE: none added; KEY-CLOCK (isolated) unchanged from L16.
+- Cited UNSATs and their checks (Glucose4 proof + l8/sat/drup.c, «s VERIFIED»): A2_solved XS 8 G {63} P 13 (CNF 22a28707, 880,002 clauses);
+  A3h_P16 XS 15 G {63} P 17 (e355e2af, 2,074,817); A3h_P16 XS 14 G {63} P 17 (7959c7a4, 1,853,606); A3h_P16 pgad5 XS 14,15 XORD 15,14 P 17 (fd85a76a, 3,011,005). Solver-only (not cited
+  as lemmas): A2 XS 11 P 13 (DRUP hit its 2,900 s cap, proof 1.56 GB), A1 prefix 2.
+- Proposed next step (not a decision; the Lead's call): put f6's full-horizon correctness INTO the search. A3 enforces f6 only on the
+  prefix rows, so each extension may spend its budget re-repairing f6 (a reading, not measured). Candidate frame: pgad5 plus f6's
+  constraints on the clamped run of rows 0..510 (core forced to core8; size not yet measured, the helpers' states there are not fixed),
+  with q6 in XS from the start.
+  Alternative: accept a rows-0..16 base and move to the next level (lift), measuring whether the walls grow with d.
 
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All statements are about the IDEAL
