@@ -1,0 +1,9 @@
+MUT CFI3_n48.json seed 41 mutants 150 refs T | must0 0 | beta 3 cov_bothY 80 cov_bothYeq 79 cov_tie 0 plateaus 222 platsharp 0 stallloud 0 stalls 691 | max_T 24 max_mvals 3 max_platmax 8
+MUT RINT_n48.json seed 41 mutants 150 refs T | must0 0 | beta 15 cov_bothY 0 cov_bothYeq 0 cov_tie 2 plateaus 131 platsharp 0 stallloud 0 stalls 135 | max_T 24 max_mvals 4 max_platmax 3
+MUT K1L10_n48.json seed 41 mutants 150 refs T | must0 0 | beta 136 cov_bothY 218 cov_bothYeq 73 cov_tie 0 plateaus 205 platsharp 0 stallloud 0 stalls 304 | max_T 31 max_mvals 8 max_platmax 4
+MUT K1D4_n48.json seed 41 mutants 150 refs T | must0 0 | beta 83 cov_bothY 5 cov_bothYeq 1 cov_tie 0 plateaus 129 platsharp 0 stallloud 0 stalls 979 | max_T 23 max_mvals 5 max_platmax 14
+MUT BLKX26_n48.json seed 41 mutants 150 refs T | must0 0 | beta 7 cov_bothY 20 cov_bothYeq 6 cov_tie 13 plateaus 141 platsharp 0 stallloud 0 stalls 272 | max_T 33 max_mvals 6 max_platmax 7
+MUT K1F21_n48.json seed 41 mutants 150 refs T | must0 0 | beta 4 cov_bothY 0 cov_bothYeq 0 cov_tie 2 plateaus 136 platsharp 0 stallloud 1 stalls 154 | max_T 32 max_mvals 6 max_platmax 3
+MUT MWR4_2.json seed 41 mutants 150 refs T | must0 0 | beta 2 cov_bothY 0 cov_bothYeq 0 cov_tie 0 plateaus 10 platsharp 0 stallloud 3 stalls 57 | max_T 31 max_mvals 4 max_platmax 24
+MUT CW4_n.json seed 41 mutants 150 refs T | must0 0 | beta 3 cov_bothY 0 cov_bothYeq 0 cov_tie 0 plateaus 8 platsharp 0 stallloud 1 stalls 51 | max_T 31 max_mvals 5 max_platmax 12
+MUTTOTAL seed 41 runs 1200 | f1 0 cn2 0 bonly 0 notie 0 locgate 0 lock2 0 howard 0 k1 0 k2 0 k3 0 k4 0 k5 0 l1 0 l2 0 l3 0 l4map 0 l4cyc 0 l5 0 c4 0 p1 0 p2 0 p3 0 p4 0 p6 0 p7 0 plat 0 tbound 0 | 45s

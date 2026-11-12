@@ -1,0 +1,1 @@
+SWEEP exh_N2_M2 runs 216 viol 0 | f1 0 cn2 0 bonly 0 notie 0 locgate 0 lock2 0 howard 0 k1 0 k2 0 k3 0 k4 0 k5 0 l1 0 l2 0 l3 0 l4map 0 l4cyc 0 l5 0 c4 0 p1 0 p2 0 p3 0 p4 0 p6 0 p7 0 plat 0 tbound 0 | beta 0 cov_bothY 0 cov_bothYeq 0 cov_efaceY 0 cov_flipinplat 0 cov_frontb 0 cov_frontg 0 cov_tie 0 plateaus 0 platsharp 0 stallloud 0 stalls 0 |  | 0s

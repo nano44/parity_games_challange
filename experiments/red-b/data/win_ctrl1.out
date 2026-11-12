@@ -1,0 +1,4 @@
+WIN CFI3_n48.json N 48 M 97 T 24 feedback-vertices 0 sets 1 intervals 3 longest-loud-prefix 9 | winstall 3 wbeta 0 wbound 0 wmid 0 rstall 0 rheight 0 k1bound 0
+WIN RINT_n48.json N 48 M 97 T 24 feedback-vertices 0 sets 1 intervals 4 longest-loud-prefix 14 | winstall 1 wbeta 0 wbound 0 wmid 0 rstall 0 rheight 0 k1bound 0
+WIN K1L10_n48.json N 48 M 97 T 31 feedback-vertices 0 sets 1 intervals 1 longest-loud-prefix 31 | winstall 3 wbeta 1 wbound 0 wmid 0 rstall 0 rheight 0 k1bound 0
+WINTOTAL files 3 ctrl 1 runs 3 with-a-feedback-vertex 0 intervals 8 longest-loud-prefix 31 | winstall 7 wbeta 1 wbound 0 wmid 0 rstall 0 rheight 0 k1bound 0

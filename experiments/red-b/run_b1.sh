@@ -2,11 +2,12 @@
 # L-RED-B, report B1 (docs/red-b/B1-box208.md): the DATA runs. Run from experiments/red-b:  bash run_b1.sh A|B|W|X|T|C|D|E|F|G|H
 # A: engine validation; B: counters on the 78 frozen genomes; W: WIN / R-HEIGHT counters (win.py); X: the abstract game of par. 10 (abs_rb.py); T: every tie-breaking branch (ties.py); C: controls; D: exhaustive tiny sizes; E: random sweeps;
 # F, G, H: longer exhaustive sizes, random sweeps, climbs (minutes to hours; only after the Lead's go).
-# A set is skipped when its output exists; F-H are restart-safe.
+# A set is skipped when its output exists; F-H are restart-safe. Outputs go to data/ (the repository's root .gitignore
+# ignores experiments/*/out/, so the outputs are not kept in a directory called out).
 set -u
 export PYTHONDONTWRITEBYTECODE=1
 . ./frozen.sh
-one() { local out="out/$1"; shift; [ -s "$out" ] && return 0; "$@" > "$out.tmp" 2>&1 && mv "$out.tmp" "$out"; }
+one() { local out="data/$1"; shift; [ -s "$out" ] && return 0; "$@" > "$out.tmp" 2>&1 && mv "$out.tmp" "$out"; }
 case "${1:-A}" in
 A) one xcheck_s1.out python3 xcheck.py 3000 1 9
    one xcheck_s2.out python3 xcheck.py 400 2 12
@@ -46,7 +47,7 @@ G) # random sweeps in chunks (seed = chunk), all reference states, random tie ru
 H) # climbs (resumable; work/climb_*.json), each capped in size; outputs appended
    for spec in "plat 1 60000 12 24" "loud 2 60000 12 24" "mvals 3 60000 12 24" "Tn 4 60000 12 24" "platrel 5 60000 14 30" \
                "phi 6 40000 20 44" "plat 7 40000 24 50" "T 8 40000 24 50" "bothYeq 9 30000 14 30"; do
-     set -- $spec; out="out/climb_$1_s$2_N$4_M$5.out"
+     set -- $spec; out="data/climb_$1_s$2_N$4_M$5.out"
      grep -q "^CLIMB .* done" "$out" 2>/dev/null || python3 climb.py $1 $2 $3 $4 $5 >> "$out" 2>&1
    done ;;
 esac

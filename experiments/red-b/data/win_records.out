@@ -1,0 +1,26 @@
+WIN MWR4_2.json N 48 M 97 T 30 feedback-vertices 1 sets 1 intervals 10 longest-loud-prefix 7 | winstall 0 wbeta 0 wbound 0 wmid 0 rstall 0 rheight 0 k1bound 0
+WIN MWR8_2.json N 84 M 177 T 54 feedback-vertices 1 sets 1 intervals 18 longest-loud-prefix 7 | winstall 0 wbeta 0 wbound 0 wmid 0 rstall 0 rheight 0 k1bound 0
+WIN MWR16_2.json N 156 M 337 T 102 feedback-vertices 1 sets 1 intervals 34 longest-loud-prefix 7 | winstall 0 wbeta 0 wbound 0 wmid 0 rstall 0 rheight 0 k1bound 0
+WIN CW4_n.json N 51 M 106 T 30 feedback-vertices 1 sets 1 intervals 12 longest-loud-prefix 7 | winstall 0 wbeta 0 wbound 0 wmid 0 rstall 0 rheight 0 k1bound 0
+WIN CW8_n.json N 91 M 212 T 59 feedback-vertices 1 sets 1 intervals 38 longest-loud-prefix 7 | winstall 0 wbeta 0 wbound 0 wmid 0 rstall 0 rheight 0 k1bound 0
+WIN CW16_n.json N 171 M 472 T 114 feedback-vertices 1 sets 1 intervals 92 longest-loud-prefix 7 | winstall 0 wbeta 0 wbound 0 wmid 0 rstall 0 rheight 0 k1bound 0
+WIN CWRR4_n.json N 51 M 109 T 28 feedback-vertices 1 sets 1 intervals 3 longest-loud-prefix 19 | winstall 0 wbeta 0 wbound 0 wmid 0 rstall 0 rheight 0 k1bound 0
+WIN CWRR8_n.json N 91 M 219 T 52 feedback-vertices 1 sets 1 intervals 3 longest-loud-prefix 43 | winstall 0 wbeta 0 wbound 0 wmid 0 rstall 0 rheight 0 k1bound 0
+WIN CWRR16_n.json N 171 M 487 T 100 feedback-vertices 1 sets 1 intervals 3 longest-loud-prefix 91 | winstall 0 wbeta 0 wbound 0 wmid 0 rstall 0 rheight 0 k1bound 0
+WIN CWRQ8_n.json N 91 M 219 T 52 feedback-vertices 1 sets 1 intervals 3 longest-loud-prefix 43 | winstall 0 wbeta 0 wbound 0 wmid 0 rstall 0 rheight 0 k1bound 0
+WIN K1F21_n48.json N 48 M 97 T 31 feedback-vertices 3 sets 3 intervals 66 longest-loud-prefix 5 | winstall 0 wbeta 0 wbound 0 wmid 0 rstall 0 rheight 0 k1bound 0
+WIN K1F34_n84.json N 84 M 177 T 52 feedback-vertices 1 sets 1 intervals 35 longest-loud-prefix 5 | winstall 0 wbeta 0 wbound 0 wmid 0 rstall 0 rheight 0 k1bound 0
+WIN K1C16_n400.json N 113 M 287 T 51 feedback-vertices 1 sets 1 intervals 37 longest-loud-prefix 2 | winstall 0 wbeta 0 wbound 0 wmid 0 rstall 0 rheight 0 k1bound 0
+WIN K1L7_n48.json N 48 M 97 T 37 feedback-vertices 1 sets 2 intervals 40 longest-loud-prefix 7 | winstall 0 wbeta 0 wbound 0 wmid 0 rstall 0 rheight 0 k1bound 0
+WIN K1L10_n48.json N 48 M 97 T 31 feedback-vertices 2 sets 2 intervals 30 longest-loud-prefix 6 | winstall 0 wbeta 0 wbound 0 wmid 0 rstall 0 rheight 0 k1bound 0
+WIN K1D4_n48.json N 48 M 97 T 23 feedback-vertices 1 sets 2 intervals 24 longest-loud-prefix 1 | winstall 0 wbeta 0 wbound 0 wmid 0 rstall 0 rheight 0 k1bound 0
+WIN BLKX23_n48.json N 48 M 97 T 28 feedback-vertices 3 sets 3 intervals 69 longest-loud-prefix 1 | winstall 0 wbeta 0 wbound 0 wmid 0 rstall 0 rheight 0 k1bound 0
+WIN BLKX26_n48.json N 48 M 97 T 33 feedback-vertices 1 sets 2 intervals 47 longest-loud-prefix 1 | winstall 0 wbeta 0 wbound 0 wmid 0 rstall 0 rheight 0 k1bound 0
+WIN B400_r32_a13d9661.json N 91 M 184 T 49 feedback-vertices 1 sets 1 intervals 34 longest-loud-prefix 3 | winstall 0 wbeta 0 wbound 0 wmid 0 rstall 0 rheight 0 k1bound 0
+WIN CFI3_n48.json N 48 M 97 T 24 feedback-vertices 1 sets 2 intervals 6 longest-loud-prefix 10 | winstall 0 wbeta 0 wbound 0 wmid 0 rstall 0 rheight 0 k1bound 0
+WIN RINT_n48.json N 48 M 97 T 24 feedback-vertices 1 sets 1 intervals 2 longest-loud-prefix 22 | winstall 0 wbeta 0 wbound 0 wmid 0 rstall 0 rheight 0 k1bound 0
+WIN k1fail_202.json N 15 M 45 T 4 feedback-vertices 2 sets 2 intervals 6 longest-loud-prefix 1 | winstall 0 wbeta 0 wbound 0 wmid 0 rstall 0 rheight 0 k1bound 0
+WIN naive_k1_s71.json N 9 M 18 T 3 feedback-vertices 2 sets 2 intervals 4 longest-loud-prefix 0 | winstall 0 wbeta 0 wbound 0 wmid 0 rstall 0 rheight 0 k1bound 0
+WIN ST4_k1.json N 9 M 9 T 0 feedback-vertices 1 sets 1 intervals 1 longest-loud-prefix 0 | winstall 0 wbeta 0 wbound 0 wmid 0 rstall 0 rheight 0 k1bound 0
+WIN ST8_k1.json N 17 M 17 T 0 feedback-vertices 1 sets 1 intervals 1 longest-loud-prefix 0 | winstall 0 wbeta 0 wbound 0 wmid 0 rstall 0 rheight 0 k1bound 0
+WINTOTAL files 25 ctrl 0 runs 25 with-a-feedback-vertex 25 intervals 618 longest-loud-prefix 91 | winstall 0 wbeta 0 wbound 0 wmid 0 rstall 0 rheight 0 k1bound 0

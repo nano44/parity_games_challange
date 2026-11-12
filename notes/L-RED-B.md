@@ -10,13 +10,13 @@ Files I own: docs/red-b/, experiments/red-b/, notes/L-RED-B.md, docs/agents/hand
   G-1 in PLATEAU (P6) step (ii) (plays from Y beyond v; repair = F3 + injective ext(g, ·) + NO-TIE); notes N-1, N-2. No DEAD.
 - Tools (experiments/red-b/): eng.py (own engine), lev.py (27 must-0 counters + coverage), gen.py (random shapes, exhaustive
   enumerator with part / parts), mut.py, sweep.py, climb.py (resumable, work/), xcheck.py, cmpT.py, requote.py, run_b1.sh (sets A-H),
-  check.sh (gate self-check, ~2 s). Outputs out/.
-- State of the runs (2026-11-12 14:10Z): sets A, B, W, X, T, C, D, E, G done (outputs in out/, pinned in out/SHA1SUMS). G (5.8M random
+  check.sh (gate self-check, ~2 s). Outputs data/.
+- State of the runs (2026-11-12 14:10Z): sets A, B, W, X, T, C, D, E, G done (outputs in data/, pinned in data/SHA1SUMS). G (5.8M random
   genomes) ran as short single-core chunks while the first push was in the gate, before any «go»; said so in the report §5.
   NOT started: F (exhaustive (1,5), (3,4), (1,6)) and H (climbs): ONLY after the Lead's «go», at most 2 at once, as tracked tasks
   (`bash run_b1.sh F`, `bash run_b1.sh H`; restart-safe, finished chunks skipped; climbs resume from work/climb_*.json).
 - Pushes: start check d81ff541 is on origin (push ended 14:06Z, VERIFY PASS). Second commit (report + tools + outputs): see git log.
-- After the runs: fill §5.1 of the report, write out/SHA1SUMS (`cd out && sha1sum *.out > SHA1SUMS`), commit by explicit path, push with
+- After the runs: fill §5.1 of the report, write data/SHA1SUMS (`cd data && sha1sum *.out > SHA1SUMS`), commit by explicit path, push with
   scripts/push.sh (pgrep first; never two pushes), message the Lead with the final verdict.
 - Independence rule: do not read L-RED 66, REFEREE 32, L-COMP 19 on box 208 before the FINAL verdict is sent.
 
@@ -42,8 +42,10 @@ Files I own: docs/red-b/, experiments/red-b/, notes/L-RED-B.md, docs/agents/hand
 - My engine's e-priority order is P-N5-REALIZE §3.1's (by (lev(owner), gate index)). The optional genome key "eorder" (mine, tests only)
   replaces it by an arbitrary order; box 208 says [E-LEV] is not used, and 30,000 such genomes gave 0 violations.
 - Exhaustive tiers with M = N are vacuous for LEVEL (every mover has one option, T = 0). The first non-trivial tiers are M ≥ N + 2.
+- The root .gitignore ignores experiments/*/out/: my outputs live in experiments/red-b/data/ (first commit fbb6a062 went out without
+  them for that reason; the next commit adds data/).
 - A gen.py bug I made and fixed before any output used it: the loop variable `part` shadowed the chunk parameter (chunks came out
-  empty after the first group). The outputs out/exh_* of set D were produced by the unchunked code (checked: counts equal the formula).
+  empty after the first group). The outputs data/exh_* of set D were produced by the unchunked code (checked: counts equal the formula).
 - Howard ties (several best gates, current one not best) are rare on the frozen genomes (2 in 78 runs) and common on small random
   genomes; the tie rule is a parameter of eng.howard_run ("keep-low", "high", "rand").
 - The Python engine does about 6,000-7,000 tiny genomes per second with all reference states; (N, M) = (2,5) has 294,865,920 genomes

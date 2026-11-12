@@ -1,0 +1,4 @@
+ABS seed 1 games 30000 nmax 8 weights [0, 1, 2, 4, 8] ctrl 0 | mono 0 phi 0 lev 0 bound 0 opt 0 | max T 3
+ABS seed 2 games 20000 nmax 30 weights [0, 1, 2, 4, 8] ctrl 0 | mono 0 phi 0 lev 0 bound 0 opt 0 | max T 4
+ABS seed 3 games 5000 nmax 100 weights [0, 1, 2, 4, 8, 16, 32] ctrl 0 | mono 0 phi 0 lev 0 bound 0 opt 0 | max T 5
+ABS seed 4 games 2000 nmax 8 weights [0, 1, 2, 4, 8] ctrl 1 | mono 2088 phi 941 lev 0 bound 0 opt 0 | max T 4

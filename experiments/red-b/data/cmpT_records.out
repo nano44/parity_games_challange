@@ -1,0 +1,26 @@
+MWR4_2.json N 48 M 97 T_mine 30 T_listed 30 OK
+MWR8_2.json N 84 M 177 T_mine 54 T_listed 54 OK
+MWR16_2.json N 156 M 337 T_mine 102 T_listed 102 OK
+CW4_n.json N 51 M 106 T_mine 30 T_listed 30 OK
+CW8_n.json N 91 M 212 T_mine 59 T_listed 59 OK
+CW16_n.json N 171 M 472 T_mine 114 T_listed 114 OK
+CWRR4_n.json N 51 M 109 T_mine 28 T_listed 28 OK
+CWRR8_n.json N 91 M 219 T_mine 52 T_listed 52 OK
+CWRR16_n.json N 171 M 487 T_mine 100 T_listed 100 OK
+CWRQ8_n.json N 91 M 219 T_mine 52 T_listed 52 OK
+K1F21_n48.json N 48 M 97 T_mine 31 T_listed 31 OK
+K1F34_n84.json N 84 M 177 T_mine 52 T_listed 52 OK
+K1C16_n400.json N 113 M 287 T_mine 51 T_listed 51 OK
+K1L7_n48.json N 48 M 97 T_mine 37 T_listed 37 OK
+K1L10_n48.json N 48 M 97 T_mine 31 T_listed 31 OK
+K1D4_n48.json N 48 M 97 T_mine 23 T_listed 23 OK
+BLKX23_n48.json N 48 M 97 T_mine 28 T_listed 28 OK
+BLKX26_n48.json N 48 M 97 T_mine 33 T_listed 33 OK
+B400_r32_a13d9661.json N 91 M 184 T_mine 49 T_listed 49 OK
+CFI3_n48.json N 48 M 97 T_mine 24 T_listed 24 OK
+RINT_n48.json N 48 M 97 T_mine 24 T_listed 24 OK
+k1fail_202.json N 15 M 45 T_mine 4 T_listed 4 OK
+naive_k1_s71.json N 9 M 18 T_mine 3 T_listed 3 OK
+ST4_k1.json N 9 M 9 T_mine 0 T_listed 0 OK
+ST8_k1.json N 17 M 17 T_mine 0 T_listed 0 OK
+cmpT: files 25 differences 0

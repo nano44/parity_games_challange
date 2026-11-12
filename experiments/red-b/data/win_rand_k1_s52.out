@@ -1,0 +1,1 @@
+WINTOTAL rand seed 52 count 20000 N<=10 M<=20 k1 ctrl 0 runs 20000 with-a-feedback-vertex 20000 intervals 32101 longest-loud-prefix 3 | winstall 0 wbeta 0 wbound 0 wmid 0 rstall 0 rheight 0 k1bound 0
