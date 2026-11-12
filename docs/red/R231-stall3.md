@@ -33,3 +33,21 @@ permuted e-priorities). Tool: experiments/red/r231/ring3_231.py; outputs r231/ou
   lifts all of a source's options together, the current one included, so no new improving option appears.
 - Lean scope: four wirings, no climb. Depth 3 stays OPEN in general. This box adds the reason above, to be checked first by anyone
   who tries it: log Odd's face at the source gates.
+
+## Addendum A (Lead 05:58Z item (a): turn §3's READING into DATA; written 2026-11-12, date -u in the commit)
+- Tool experiments/red/r231/face231.py. Per state up to the first fallback it computes σ̄_t, Odd's optimal counterstrategy against N5′-xi's
+  σ_t on Γ3, with my own VJ order and Odd-side SI (r221q/own.py evaluate). It reports σ̄_t(g) = pe (e-face) or pbeta (β-face) at every
+  gate of the chosen movers.
+- N5's own τ is NOT used: in standard states it is frozen at the start pair (that is what elev230's nstd checks), so it says nothing
+  about Odd's best reply.
+- DATA (unit: (gate, state); set: ring3D_k8_m12 (sha1 dce31576), contrast ring_k8_m12 (R230, sha1 1f766bb3); scope: the sources h = x1
+  (8 options, X_1 un-gated) and S = x2):
+  - ring3D_k8_m12 (out/face231_ring3D.out), 13 states:
+    - h options 1-7 (W-target a dynamic w): β at all 13 states. h option 0 (X_1, W-target g): e at all 13.
+    - S options 1-7: β at all 13. S option 0: e at state 0 only, then β.
+    - Totals e / b: h 13 / 91, S 1 / 103.
+  - ring_k8_m12, plain RING (out/face231_ring.out), 13 states: Odd takes the e-face of each option the source has reached (it 1:
+    «ee bbbbbb», it 2: «eee bbbbb», …, it 11-12: all e). Totals e / b: h 76 / 28, S 76 / 28.
+- CONFIRMED (DATA): with the dynamic W-target, Odd refuses the e-face of every dynamic source option at every state from t = 1, where
+  the static RING lets Odd take the e-face of each option the source climbs to. So the dynamic a-face is never on Odd's best reply, and
+  the source options' values are their β-faces. §3's READING is now DATA on ring3D; A / B / C were not logged.

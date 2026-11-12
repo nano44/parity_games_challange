@@ -1,0 +1,15 @@
+it 0: x1 holds 0 faces ebbbbbbb | x2 holds 0 faces ebbbbbbb
+it 1: x1 holds 1 faces eebbbbbb | x2 holds 1 faces eebbbbbb
+it 2: x1 holds 2 faces eeebbbbb | x2 holds 2 faces eeebbbbb
+it 3: x1 holds 3 faces eeeebbbb | x2 holds 3 faces eeeebbbb
+it 4: x1 holds 4 faces eeeeebbb | x2 holds 4 faces eeeeebbb
+it 5: x1 holds 5 faces eeeeeebb | x2 holds 5 faces eeeeeebb
+it 6: x1 holds 6 faces eeeeeeeb | x2 holds 6 faces eeeeeeeb
+it 7: x1 holds 7 faces eeeeeeee | x2 holds 7 faces eeeeeeee
+it 8: x1 holds 7 faces eeeeeeee | x2 holds 7 faces eeeeeeee
+it 9: x1 holds 7 faces eeeeeeee | x2 holds 7 faces eeeeeeee
+it 10: x1 holds 7 faces eeeeeeee | x2 holds 7 faces eeeeeeee
+it 11: x1 holds 7 faces eeeeeeee | x2 holds 7 faces eeeeeeee
+it 12: x1 holds 7 faces eeeeeeee | x2 holds 7 faces eeeeeeee
+first fallback at iteration 13
+TOTAL (gate, state) e / b: {'x1': (76, 28), 'x2': (76, 28)}
