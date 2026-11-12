@@ -138,7 +138,7 @@ naive (unit: flips at which xt(g)'s Ξ_σ-path ends at X at both t − 1 and t: 
   | B400_r32 | 49 | 60 | 33 | 33 | even at every state | 1 |
 - DEAD (as a bounding route, with its instance): «at k = 1 the flips are bounded by a polynomial in the number of exit changes (or of
   cycle changes)». MWR(n) (box203/inst/MWR4_2, MWR8_2, MWR16_2; sha1 in box203/inst/SHA1SUMS) has 0 exit changes and 0 cycle changes and
-  2n + 1 flips at one gate, 4n + 1 in all for n = 4, 8, 16 (13 / 25 / 49). Its flips are all case (a) of K1-BASIN: a BASIN gate (off Z, its
+  2n + 1 flips at one gate, 3n + 1 in all for n = 4, 8, 16 (13 / 25 / 49). Its flips are all case (a) of K1-BASIN: a BASIN gate (off Z, its
   β-route entering Z) whose e-face value (its W-target's class, box 204 FACE-TARGET) leapfrogs its β-face value (Z's constant exit route).
 - READING: on the climbed records the exit changes with the cycle (21 / 21, 32 / 35, 33 / 33), so there both mechanisms occur; M1 (MWR)
   is a pure basin leapfrog. What is left at k = 1 is the leapfrog count of two monotone values at one gate, i.e. GATE-FLIP's face class
