@@ -13,6 +13,12 @@ Families (unit: one (H, s0)):
  loops K SEED NMAX   every vertex has a self-loop (cycle nodes everywhere; (W1), (c) with w = v).
  optstart K SEED NMAX  s0 := the last strategy of Howard's run on H (T = 0: the first fallback is iteration 1).
  big K SEED NMIN NMAX  larger random games (|W| in the thousands).
+ plen K SEED NMAX    (L-RED 68) a DAG (successors of i among j < i) into ONE cycle node c with a self-loop and the TOP priority (n,
+                     parity alternating over the K games), every other priority < n: every play's P is empty, so SPEC's LENGTH
+                     component decides every comparison. Aimed at «(c, P, l) -> (c, P, 6 l) is strictly order-preserving» and (c)'s 6 l + 5.
+ pset K SEED NMAX    (L-RED 68) the same DAG into ONE cycle node c with the LOWEST priority (0 or 1), the others distinct priorities
+                     2..n+1 (TARGET.md section 1 allows priorities up to 2n+2 here: the order is what matters): P-sets decide. Aimed at
+                     «through vertices that are in no P-set (W1) ... same P» and at Q1 (the top differing vertex decides).
 Env: BOX104, LNEW, LRED, LLIT (as wr237.py); CTRL=1 (wr237's control). Output: one summary line per call."""
 import sys, os, random
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
@@ -67,6 +73,15 @@ def family(args):
             elif m == "loops": yield rnd(rng, n, list(range(n + 1)), loops=True)
             else:
                 H, s0 = rnd(rng, n, list(range(n + 1))); yield H, howard_last(H, s0)
+    elif m in ("plen", "pset"):
+        K, seed, nmax = int(args[1]), int(args[2]), int(args[3]); rng = random.Random(seed)
+        for i in range(K):
+            n = rng.randint(2, nmax); c = 0; owner = [rng.randint(0, 1) for _ in range(n)]
+            succ = [[0]] + [sorted(set(rng.sample(range(v), rng.randint(1, min(v, 3))))) for v in range(1, n)]
+            if m == "plen": prio = [n - (i % 2)] + [rng.randint(0, n - 2) for _ in range(1, n)]
+            else:
+                hi = list(range(2, n + 1)); rng.shuffle(hi); prio = [i % 2] + hi
+            H = pg.Game(prio, owner, succ); yield H, [rng.choice(H.succ[v]) if H.owner[v] == 0 else -1 for v in range(n)]
     elif m == "big":
         K, seed, nmin, nmax = int(args[1]), int(args[2]), int(args[3]), int(args[4]); rng = random.Random(seed)
         for _ in range(K):

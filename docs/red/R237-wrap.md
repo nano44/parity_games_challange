@@ -33,3 +33,19 @@ Item (2) is NOT done: it is handed over (notes/L-RED.md, HANDOVER 66 → 67).
   R2 / R3 (cycle-node and S4b ties) can resolve it differently from n5v, and H's Howard run then takes a different but equally legal
   path (T ± 1).
 - This is WRAP's own statement («a Howard run of H», any legal tie resolution), so it confirms WRAP on both runs.
+
+## 3. CORRECTION (L-RED successor 68, 2026-11-12T20:37Z by date -u; Lead brief item 2): n5x236's «spec» mode is not SPEC's tie rule
+- R236 §4 (docs/red/R236-fn.md l. 64) says «n5x236 in spec mode, with my tie readings, gives 3 iterations on every F_n». The «3» is
+  correct only as a property of n5x236's own tie readings (R1-R3). It is NOT N5's (SPEC's) count, so nothing about N5 may cite it.
+- N5's count on F_n, from the SPEC-exact engine n5s237 (successor 67; state by state equal to box 190's n5v on 8,900 random games,
+  experiments/red/r237/out/xs237.out, xg237.out), experiments/red/r237/out/fn_spec.out (committed 0f27cab02):
+  | n | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | n5s237 spec (iterations, 1 fallback each) | 5 | 5 | 5 | 5 | 6 | 6 | 6 |
+  | box 104 n5v spec (claude/l-si 26704e01 experiments/si/box104/out/free_spec.out) | 5 | 5 | 5 | 5 | 6 | not run | not run |
+  | n5x236 «spec» (own readings, NOT SPEC) | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+- So N5 (SPEC) and box 104 agree on n = 2..6 (5 / 5 / 5 / 5 / 6). The Lead brief's wording «5/5/5/5/6 on F_n n = 2..5» lists five
+  values, which are the counts for n = 2..6.
+- Rule from here on: anything about N5's tie or key rule (box 105's replay, (W4)'s N5 half, WRAP (v)) runs on n5s237. n5x236 stays a
+  second engine for N5′-xi only, where its readings change tie resolution but not WRAP's counters (§2).
+- R236's F_n verdict for N5′-xi (33 / 73 / … / 2,489; R236 §1-§3) is unaffected: it is xi mode, not spec mode.
