@@ -1,6 +1,9 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 23) 2026-11-12 02:28Z
+C139 CLOSED on #7341 (43130481689, success on 0753fd71). C140 main FAIL pushed 445372f9; waiting for L-2 (166e4695) second fill.
+
 ## Resume point (successor 23) 2026-11-12 02:10Z
 C140 main FAIL (E-1 = G-L43: D2 is a DEAD of «every constant c», instances kill c <= 32 only; L43). Fix R-D2 (drop D2) + R-S (MWR source
 into the DATA record). L-2 = 166e4695 (7,187 B), UPDATE-2 = 89c5f357. My UPDATE builder scratch c140/upd.py (R118 procedure; rebuilds
