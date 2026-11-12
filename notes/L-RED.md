@@ -3370,3 +3370,9 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
 - Tools in experiments/red/r230: elev230 (permuted e-order build/measure), ret230 (returns), scc230 (SCC-CHAIN), odo230, ring230,
   climbel230 (U, inv constrained climb). All need env LNEW.
 - Lessons: pipe `| head` kills a script before a trailing save (save first); self-loop beta parity: bp = 0 means EVEN.
+- PARK UPDATE (2026-11-12T03:20Z): ODO climb STOPPED cleanly (Lead 03:18Z: never park with a job running). Committed checkpoint
+  experiments/red/r230/out/elev/bestel_odo.json at _evals 725 (best T3 46, N 42, M 93 in the log at eval 350; current genome N 44,
+  equal score), log climbel_odo.log. Resume from that committed checkpoint:
+  `cd experiments/red/r230; LNEW=<dir> NMAX=44 DMAX=20 RESUME=1 python3 climbel230.py odo 2317 1500 inst/odo_dom_ylow_k16_m16.json`
+  (RESUME=1 loads bestel_odo.json and continues at eval 725; the rng restarts from seed 2317, so the mutation stream differs from an
+  uninterrupted run). No job is running at park.
