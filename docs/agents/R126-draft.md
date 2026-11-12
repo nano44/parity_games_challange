@@ -1,4 +1,146 @@
-# Draft RESULTS R126 (Lead; first fill 2026-11-11T23:59:06Z by date -u (subagent) on P-N5-QN line L-1, docs/new/P-N5-QN-line-L1.txt, l-new 02a928a3, sha1 28bf566bdf95d0708b3b80303bfa7311c8d5d8b1) — to CHECKER C140 — NOT LANDED; goes after R125 (landed at trunk 0753fd71, RESULTS l. 15595-15724), directly before the line-start «**Erratum E-1** (not a result» (l. 15726 at 0753fd71); its GAPS UPDATE after R125's on GAPS l. 11
+# Draft RESULTS R126 (Lead; first fill 2026-11-11T23:59:06Z by date -u (subagent) on P-N5-QN line L-1, docs/new/P-N5-QN-line-L1.txt, l-new 02a928a3, sha1 28bf566bdf95d0708b3b80303bfa7311c8d5d8b1 (draft sha1 9e5123ad, CHECKER C140 445372f9: FAIL E-1); SECOND FILL 2026-11-12T04:13:53Z by date -u (subagent) on P-N5-QN line L-2, docs/new/P-N5-QN-line-L2.txt, l-new 70501a99, sha1 166e4695b07843ae73e2d23ac92802c256f31113) — to CHECKER C140 Add. 1 — NOT LANDED; goes after R125 (LANDED at 0753fd71, RESULTS l. 15595-15724), directly before the line-start «**Erratum E-1** (not a result» (l. 15726 at 0753fd71 and at origin trunk 575ac944); its GAPS UPDATE after R125's on GAPS l. 11
+SECOND FILL (2026-11-12T04:13:53Z by date -u, subagent; for CHECKER C140 Add. 1). Read at the origin heads of a git fetch of claude/l-new,
+claude/referee, claude/referee-2, claude/checker and claude/vibrant-johnson-nxvvxo at 2026-11-12T04:07:46Z-2026-11-12T04:07:47Z (date -u
+before and after; its exit code was not captured, the output having been piped to tail) and a second fetch of the same five branches at
+2026-11-12T04:08:44Z-2026-11-12T04:08:44Z: rc 0, every head unchanged (r126b/fetch.txt, fetch2.log). I merged, committed and pushed nothing,
+wrote nothing into the repository and did not run scripts/push.sh or scripts/verify.sh; this file is built in the scratchpad r126b/ by
+fill2.py from git show 4c2f407d:docs/agents/R126-draft.md (sha1 9e5123ad4c724ba559a68cac4196f640d7e52fde, asserted; the same file at origin
+trunk 575ac944 and at the local HEAD b3d7294c). Heads: l-new d3fc2d21 (d3fc2d21aa20c405fe9e0140ac8e1ac7ff6a71f1, 2026-11-12T03:34:59Z,
+«L-NEW successor 70 BOX 206 Addendum B: K1L10_n48 frozen; top block = R121 chain system; CONJECTURE BLOCK-DESC stated …»), the branch head
+(box 206; not part of this entry), after 8e6a4641 (2026-11-12T03:02:27Z, box 206 Addendum A) and 70501a99
+(70501a99047afe624ea0dc40a1ce2f0d4a680add, 2026-11-12T02:31:09Z, «L-NEW successor 70: P-N5-QN fixes entry 2 + line L-2 (CHECKER C140 E-1
+G-L43, Lead ruling R-D2a: drop DEAD D2, MWR source into DATA; L-2 sha1 166e4695, 7,187 B; qn.pins 63 rows)»), L-NEW successor 70, the commit
+of record: git show --stat 70501a99 names exactly docs/new/P-N5-QN-fixes.md, docs/new/P-N5-QN-line-L2.txt (new),
+experiments/new/box203/mkl2_qn.py (new) and box203/qn.pins; git diff 70501a99 d3fc2d21 on the packet, the fixes file, L-1, L-2 and
+experiments/new/box203/ is empty (experiments/new/check.sh differs there in the BOX 206 block only; its l. 1094-1110, the «BOX 203 FLIP» and
+«P-N5-QN» blocks, are the same 17 lines, sha1 6cdbfb011966bb289474ebfa691541c2e5c8e5d5, at 02a928a3, 70501a99, d3fc2d21 and 575ac944). The
+packet docs/new/P-N5-QN.md is sha1 97254bd2a97f28bb0c14ab5f4d236ee723821dd9 at e252182d, 02a928a3, 70501a99, d3fc2d21, 0753fd71 and
+575ac944; L-1 is 28bf566b at 02a928a3, 70501a99, d3fc2d21 and 575ac944. By git, 70501a99 is the commit and
+166e4695b07843ae73e2d23ac92802c256f31113 the sha1 of docs/new/P-N5-QN-line-L2.txt (the file's only commit; its blob is
+fd3dbf2cc356955821208ca6c9a8a6dba3d8db84; 7,187 bytes, one line with its newline). The fixes file at 70501a99: 95 lines, 9,737 bytes, sha1
+b095597c579ab5d073b77aac3d2f07e4359b433f; its first 7,176 bytes are the file at 02a928a3 (sha1 b8f8a1a905c261c1f76bc3dc2a62bc37fa744bbc), by
+prefix test; fixes entry 2 is l. 73-88, «Line L-2» l. 90-95. qn.pins at 70501a99: 63 rows (02a928a3's 61 with the fixes file re-pinned, and
+L-2 and mkl2_qn.py added; L-1 stays pinned). referee fbc4d865 (fbc4d86560601681939940436f729ff676b47f0b, 2026-11-12T03:28:29Z, «REFEREE s31:
+R-P-N5-QN §D (fixes entry 2 CORRECT, L-2 MATCHES, DEAD list re-signed) and R-P-N5-GATE §J (GT-10: G-L43 in GATE DEAD list, strings …»), the
+branch head: docs/referee/R-P-N5-QN.md there 168 lines, 17,335 bytes, sha1 5ffb2363a6016cd25f9a0d8abf7b847782aebd6f; its first 149 lines are
+09aabb03's file (the first fill's), by prefix test; §D is l. 151-168 (git blame: l. 150-168 are fbc4d865's), by REFEREE successor 31,
+successor of REFEREE 30 on the same branch. referee-2 f6cfb35e (f6cfb35ed732ae591f77fa37038135d309e94ba8, 2026-11-12T03:15:30Z, «REFEREE-2
+37: R2-P-N5-QN Addendum 3 — L-2 (l-new 70501a99, sha1 166e4695) MATCHES CHECKER C140 §4 / ruling R-D2a; DEAD D1, D3 re-signed (D1 re-run on
+…»), the branch head: docs/referee-2/R2-P-N5-QN.md there 235 lines, 20,605 bytes, sha1 0c045e7c7b90ddfc8ac3489819bb7b20b149ffbc; its first
+201 lines are 565d5022's file (the first fill's), by prefix test; Addendum 3 is l. 203-235 (git blame: l. 202-235 are f6cfb35e's), by
+REFEREE-2 successor 37, successor of REFEREE-2 35 / 36 on the same branch. checker 62401c1b (62401c1b74a10aa616c28ace468e8ca8d44fab3d,
+2026-11-12T02:28:42Z, «CHECKER C139 CLOSED: CI #7341 (43130481689) success on the R125 landing 0753fd71»), the branch head, changes
+docs/checker/C139.md and notes/CHECKER.md only; its parent 445372f9 (445372f9a4ef2d76127208b4aac7336b50f65cfc, 2026-11-12T02:04:07Z,
+«CHECKER C140: R126 (P-N5-QN) first fill on L-1 FAIL E-1 (D2 DEAD of an asymptotic statement, L43); L-2 = 166e4695 (drop D2, MWR source into
+DATA), …») writes docs/checker/C140.md, 105 lines, 12,202 bytes, sha1 6a378d1eb5fc45b7235bef17362e919fd961ed4b, byte-equal at 62401c1b,
+sections §1-§6, no Addendum.
+TRUNK. Origin trunk is 575ac944 (575ac9443a9d3bd49968eeb80cc1615189f5a494, 2026-11-12T02:03:18Z, «Lead: log 00:52Z-02:03Z + resume point
+(R125 landed; C139 Add. 2 PASS; R126 at C140; SPLIT L-1 MATCHES both; GATE both SIGN, L-3 …»), two commits after the first fill 4c2f407d:
+1ca0ea48 (the claude/checker merge at d7aed061, C139 Add. 2) and 575ac944 (Lead log); git diff 4c2f407d 575ac944 names
+docs/agents/LEAD-STATE.md, docs/checker/C139.md and notes/CHECKER.md only. The local HEAD is b3d7294c
+(b3d7294c37abc130d429a84a0fee042b3df6509a, 2026-11-12T04:03:09Z), 575ac944's child, not on origin at my fetches, changing
+docs/agents/LEAD-STATE.md only. RESULTS and GAPS are byte-equal at 0753fd71, 4c2f407d, 575ac944 and b3d7294c (by script): RESULTS sha1
+9170163bf892f96f38009c1e11f87bce9764b6e2, 16,368 lines, 1,477 «|», «### R125» l. 15595, its block to l. 15724, blank l. 15725, the
+LINE-START «**Erratum E-1** (not a result» l. 15726 (the only one); GAPS sha1 dbb55831a88223706bbaa9105f5397f3cea3d6e2, l. 11 76 «|», its
+last UPDATE R125's «UPDATE 2026-11-11 23:47Z: RESULTS R125 (P-N5-CHAIN; CHECKER C139 1622c7d9)». So every RESULTS and GAPS line number of
+the first fill holds.
+ANCESTRY (git merge-base --is-ancestor against origin trunk 575ac944 and the local HEAD b3d7294c): every commit the first fill named as an
+ancestor still is (e252182d, 02a928a3; 452800c5, 09aabb03; 5d4f06c2, a327b4dc, 565d5022; 0753fd71), and so are 4c2f407d and CHECKER's
+d7aed061 and 1622c7d9. NOT ancestors of either, and needed for landing: claude/l-new 70501a99 (fixes entry 2, L-2, mkl2_qn.py, qn.pins 63
+rows; 8 commits not in 575ac944, the other seven being P-N5-SPLIT, box 205, box 206 and handover work; the head d3fc2d21 adds box 206 only),
+claude/referee fbc4d865 (§D; 8 commits not in 575ac944), claude/referee-2 f6cfb35e (Addendum 3; 12 commits) and claude/checker 445372f9
+(C140) with its child 62401c1b (C139 CLOSED; 2 commits), and C140 Add. 1's commit when it exists. The L-RED and L-SI commits L-2 cites as
+records or as «related lane statements, not premises» (f05b0c55, 406ef2fd, 8c034440, cdecc4e0, fa4e50fe; f723957b, d962efdb) are still not
+ancestors; C140 §5 ruled them so, as C138 §5 did.
+WHAT CHANGED SINCE THE FIRST FILL. CHECKER C140 (445372f9) FAILED the first fill (draft 9e5123ad at trunk 4c2f407d): «Verdict: **FAIL** on
+one item (E-1, D2 under L43); the mathematics, DATA, tools, UPDATE procedure and placement PASS» (l. 16). E-1 is the first fill's flag
+G-L43: «So D2 is the L43 case exactly.» (l. 25-26). The fix: «Fix (my ruling between the Lead's R-D2a and R-D2b): **R-D2a with the source
+carried into DATA** (R-D2 + R-S, §4).» (l. 28), «D3 keeps its name (the packet's numbering; no renumbering).» (l. 32) and «The fix touches
+the DEAD list, so both referees re-sign the line (each confirmed D2 on the three instances only). No proof, label or premise changes; the
+four signed statements are untouched.» (l. 33-34). C140 ruled the first fill's other questions: «G-S2 (R123's Γ3 scope sentence after R125):
+no action.» (l. 37), «G-7 (L41 and statement WORDING): L41 is not triggered and is not extended.» (l. 41), «G-4 (the one P-N5-XICYC quote):
+no action.» (l. 46), «G-U (no «N5′-xi stays a CANDIDATE (D1)» clause): no action.» (l. 50), «N-C (symbol «C» in DATA, «lamch 0; C = 0»): no
+action (the C135 E-4 exception).» (l. 52) and «G-DE (no Dead-ends row for D1, D3): not required» (l. 55). L-2 = L-1 + R-D2, then R-S (fixes
+entry 2, L-NEW successor 70, 70501a99; «What changes: the DEAD list of the RESULTS line only. D2 is dropped; D3 keeps its name.», l. 78), as
+C140 §4 gave it: «**L-2** sha1 **166e4695b07843ae73e2d23ac92802c256f31113**, 7,187 B,» (l. 64). R-D2's old string is the first fill's R-D2a
+proposal. Both referees MATCH L-2: REFEREE successor 31, «Verdict: fixes entry 2 CORRECT. **Line L-2 MATCHES** (= L-1 + R-D2 + R-S exactly;
+= CHECKER C140 §4's L-2).» (l. 168) (§D at fbc4d865); REFEREE-2 successor 37, «Verdict: L-2 (70501a99, sha1 166e4695) MATCHES CHECKER C140
+§4 and the Lead's ruling R-D2a. It changes only the DEAD list and one DATA record, as stated. Every signed statement of P-N5-QN is
+unchanged, and my predecessor's verdicts stand.» (l. 233-234) (Add. 3 at f6cfb35e). Both re-sign the DEAD list as D1, D3: REFEREE §D «D1 and
+D3 as my predecessor's §0 / §4 signed them (CONFIRMED; D3's k = 2 WC family cited, not re-run); D2 removed from DEAD (now DATA). Every
+statement and label of P-N5-QN unchanged.» (l. 166-167); REFEREE-2 Add. 3 D1 «SIGN (dead)» (l. 224, re-run on its own GATE engine, l.
+226-227) and D3 «SIGN (dead)» (l. 229). Both read entry 2 as line-only (REFEREE §D «Fixes entry 2: line-only (CHECKER C140 E-1 = flag G-L43;
+Lead ruling R-D2a 02:30Z).», l. 154; REFEREE-2 Add. 3 «Nothing else changed: no statement, label, premise or other DATA clause.», l. 214).
+The UPDATE is the first fill's with R-D2 and R-S, «sha1 **89c5f3571a20e19baf3782ffb2534b0ce62a2f68** (unfilled, no newline), 7,216 B» (l.
+67) as C140 §4 gave it, now built by R118's procedure from L-2 with NO reading. C140's instruction for this fill, «the Lead's second fill on
+L-2 (refreshing the block's L-1 references and its D2 text), then C140 Add. 1, Add. 2 (landed), CI.» (l. 69-70), is met below (Changes at
+this fill).
+Checks run at this fill (scratch r126b/; nothing written into the repository). (a) tools/l2rel126b.py (l2rel126b.out): R-D2 and R-S parsed
+from C140 §4 (l. 59-63, wrapped lines joined with one space) = fixes entry 2's strings (l. 82-86) = mkl2_qn.py's tuples (read by ast, not
+executed) (True ×2), and R-D2's old string is in the first fill's r126a/fill1.py (its R-D2a proposal, True); each old string once in the
+text it is applied to and 0 times after; L-1 + R-D2 = 2e85dfe5 (7,060 bytes), + R-S = L-2 (True, byte for byte); NEGATIVE CONTROL: one hex
+digit of R-S's new string altered does not give L-2. L-2 = 166e4695b07843ae73e2d23ac92802c256f31113, 7,187 bytes, 7,055 characters with its
+newline, one line, 137 «(» / 137 «)», depth never negative, final depth 0, 0 «|», one « — », «D2» 0 (L-1: 1), «406ef2fd» 1, «lamch» 4 (L-1:
+6), «(2026-11-09)» once, «unlanded», «not landed», «when landed», «pending», «to land», «landed», «candidate» 0 each, «so this is not M4;
+G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim» once. mkl2_qn.py (70501a99) re-run from a copy of 70501a99's packet
+and L-1 (scratch mk/; L-2 not copied): rc 0, «L-2 written: sha1 166e4695b07843ae73e2d23ac92802c256f31113 7187 B», output cmp-equal to L-2
+(mk.out). (b) The check.sh blocks «BOX 203 FLIP» and «P-N5-QN» (l. 1094-1110 at 70501a99 = tools/blocks203.sh, run by tools/runblocks.sh)
+from a FULL git archive of 70501a99 (r126b/arch/, every path of the tree, 47,654 files), 2026-11-12T04:09:05Z-2026-11-12T04:09:17Z by date
+-u, rc 0, output «BOX 203 FLIP: GATE-CLASS / GATE-FLIP / QUIET-N / (k+1)-Lambda counters 0, ST8 ascent witness, controls fire = frozen:
+PASS» and «P-N5-QN: packet and 63 pinned files match qn.pins, quotes 24 missing 0: PASS»; NEGATIVE CONTROL 1: one byte appended to the
+archive's L-2, the «P-N5-QN» block alone (tools/blockqn.sh), 2026-11-12T04:09:23Z-2026-11-12T04:09:23Z, rc 1, «P-N5-QN check: FAILED» /
+«../../../docs/new/P-N5-QN-line-L2.txt: FAILED»; L-2 restored (sha1 166e4695… again) and the block re-run: PASS, rc 0; NEGATIVE CONTROL 2:
+one byte prepended to the archive's box203/check203.out, the «BOX 203 FLIP» block alone (tools/blockflip.sh),
+2026-11-12T04:09:23Z-2026-11-12T04:09:35Z, rc 1, «BOX 203 FLIP check: FAILED (check203.sh exit 0)»; file restored (cmp-equal to its backup)
+and both blocks re-run: rc 0, both PASS. (c) tools/upd126b.py (upd126b.out): the UPDATE by R118's procedure (direct() of
+r126a/tools/upd126a.py, unchanged, with R126's constants unchanged) from L-2 with NO reading: sha1 89c5f3571a20e19baf3782ffb2534b0ce62a2f68
+without newline (6e01ac288d5cff82433556560dce631fb53c1681 with it; = C140 §4's UPDATE-2, True), 7,216 bytes, 137 «(» / 137 «)», 0 «|», one
+each of the three fill tokens; = the first fill's d[375] (640258db…, which the same function rebuilds from L-1: True) with R-D2 and R-S
+applied (True). CONTROLS on 575ac944 (GAPS = 0753fd71's): R123's landed UPDATE (739c5f71…, once on l. 11), R124's (8cd83060…, once) and
+R125's (f22faed5…, the last on l. 11), each True; negative controls (a drop string altered; a label altered) raise errors. (d)
+tools/chk126b.py (title, block, UPDATE, pipes, fill tokens, stale grep, quote sweep with a negative control), tools/lp126b.py (the quotes
+new at this fill at their cited lines, with two negative controls), tools/sim126b.py (landing simulation on 575ac944), tools/rec126b.py (the
+kept sections byte-unchanged; token diffs against the first fill) and tools/hex126b.py (hex ids, with a negative control): Addendum 2.
+NOTES at this fill (for CHECKER; no line change proposed):
+- D-1, CHECK.SH AND L-2. At 70501a99 experiments/new/check.sh is unchanged (git show --stat 70501a99 names four files, not check.sh); the
+  «P-N5-QN» block asserts L-2 through qn.pins only (a pinned row; the block prints «63 pinned files»). Fixes entry 2 claims no more: «Pinned
+  in experiments/new/box203/qn.pins with this file (row re-pinned) and mkl2_qn.py.», l. 95.
+- D-2, STAMPS AND ATTRIBUTION (history, no verdict affected). C140: «Report 2026-11-12 02:02Z by date -u.», l. 2, commit 445372f9 at
+  02:04:07Z. C140 calls R-D2a + R-S «my ruling between the Lead's R-D2a and R-D2b» (l. 28); fixes entry 2's heading names «Lead ruling R-D2a
+  02:30Z 2026-11-12» (l. 73) and quotes «RULING: R-D2a, with D2's source carried into DATA.», l. 77, and REFEREE §D says «Lead ruling R-D2a
+  02:30Z» (l. 154): the same choice, the Lead's 02:30Z being after C140's commit. 70501a99 is stamped 02:31:09Z; REFEREE-2 Add. 3
+  «2026-11-12 by date -u», l. 203, commit f6cfb35e at 03:15:30Z; REFEREE §D «date -u at writing 2026-11-12T02:58Z», l. 151, commit fbc4d865
+  at 03:28:29Z.
+- N-S AT L-2. The source note still names «with fixes entry 1» and «L-NEW successors 68-69»; entry 2 (successor 70) is line-only (REFEREE §D
+  l. 154, above; fixes entry 2: «No statement, proof, label or premise of P-N5-QN changes; the frozen packet (e252182d, sha1 97254bd2) is
+  not edited.», l. 79-80). R124 and R125 landed with the same shape (source notes naming the proof-bearing entries only; C139 Add. 1 PASS on
+  R125's). Honest limits (ix) records it.
+- N-L41 AT L-2. C140 §3 G-7 (above) ruled L41 not triggered on L-1; R-D2 and R-S do not touch (k+1)-Λ's wording (QN-1), the one
+  referee-originated text (REFEREE-2 Add. 3 l. 214, above; the token diff L-1 → L-2 has its two regions inside R-D2 and R-S, Addendum 2
+  [rec]).
+- N-W, REFEREE-2 37'S WITHDRAWAL. The first fill quotes REFEREE-2 35's «So no c·(lamch + 1) bound holds, and none with C as the denominator.
+  DEAD.» (l. 91) in its record (G-L43) and in the entry's L43 paragraph as a confirmation on n = 4, 8, 16. Successor 37 withdraws the
+  reading beyond those instances: «My predecessor's §6 line «So no c·(lamch + 1) bound holds» over-read the same DATA, and I withdraw it:
+  the DATA kills the bound for c ≤ 32 only.» (l. 220-221). The entry now says so in its L43 paragraph; the record keeps the first fill's
+  words (history).
+- D-3, PLACEMENT AS C140 SIMULATED IT. C140 §5 simulated the first fill's block on 4c2f407d: «R125 15595, R126 15726-15901, Erratum E-1
+  15903» (l. 99-100). This fill keeps the block at 176 lines (every change is inside an existing line) and RESULTS is unchanged at 575ac944,
+  so the same places hold (Addendum 2 [sim]).
+Changes at this fill, and nothing else: line 1 (the header: the first fill's draft sha1 and C140 verdict, the SECOND FILL clause, to CHECKER
+C140 Add. 1, the trunk 575ac944); this section (new); the title (L-2: R-D2, R-S); in the entry (176 lines, as in the first fill): Object
+(successors 68-70; the packet also at 70501a99, d3fc2d21 and 575ac944), Fixes (the file at 70501a99; entry 2 appended to the bullet), The
+RESULTS line is (L-2 the line of record, written from L-1 by mkl2_qn.py; the L-2 byte tests and MATCHES, REFEREE §D and REFEREE-2 Addendum
+3), Claims signed (successors 31 and 37; the L-2 re-signatures), Setting (fixes entries 1-2; «To sign» remark: not in L-1 or L-2; (f) DEAD
+D1, D3, the packet's D2 named as DATA, and the L-2 re-signatures), Premise (its (L-1) tag now (L-2)), L41 and L43 (D2 as L43's case, C140
+E-1, R-D2a; REFEREE-2 37's withdrawal), Referee strengthening (iii) (cited in L-1 and L-2), Honest limits (vi) (rewritten: the MWR count as
+DATA) and (ix) (new: N-S at L-2), Data (box203 at 70501a99 / d3fc2d21, 61 → 63 pins; this fill's re-run from 70501a99 and its negative
+controls; the first fill's and C140's re-runs; L-2 changes no DATA number), Signatures (§D, Addendum 3; successor 70's commit), INDEPENDENCE
+(the L-2 byte tests; REFEREE-2 37 did not read docs/referee/), TARGET.md diff (L-2 ends its scope words); the GAPS preamble (built from L-2
+by upd126b.py; no reading) and the UPDATE (= C140's UPDATE-2); Addendum 2 (new, at the end). The FIRST FILL record (from "FIRST FILL (this
+text)" to the L-1 SHAPE line, with its blank line) and the first fill's Addendum are kept byte-unchanged (rec126b.py): where they call L-1
+the title or the line of record, raise G-L43 as a flag and propose R-D2a / R-D2b, list DEAD D1-D3, or give their counts, slices, UPDATE sha1
+(640258db…) and block run (61 pinned files), they describe draft 9e5123ad at 23:59Z on 2026-11-11; C140 ruled at 02:02Z on 2026-11-12, and
+the entry block now follows L-2.
 FIRST FILL (this text). Built by script (r126a/fill1.py) in the scratchpad r126a/ for the Lead to copy to docs/agents/R126-draft.md; nothing
   in the repository was edited, committed, merged or pushed by me, and scripts/push.sh and scripts/verify.sh were not run. Read at the
   origin heads of a git fetch of claude/l-new, claude/referee, claude/referee-2, claude/checker and claude/l-red at 2026-11-11T23:49:16Z by
@@ -184,10 +326,10 @@ FLAGS FIRST (my reading; CHECKER rules; strings below are PROPOSALS only).
 - (L-1 SHAPE, by script) one line: 7,357 bytes, 140 «(» / 140 «)», 0 «|», one « — », «(2026-11-09)» once, «DATA, clause by clause» once,
   «HYPOTHESIS» once, «CONDITIONAL» 0, «referee-originated» 0, «R124» 0, «R125» 0.
 
-### R126 [refereed-only] In IDEAL-CYC(G) (RESULTS R118 (a): Γ(G) with every non-mover Even vertex frozen at R104's start, Odd unrestricted (gates and K2), Howard steps at the movers), for every genome G (Ξ-cycles and Ξ self-loops allowed), with class_t(v) := (Λ_t(v), E_t(v)), E_t(v) the e-vertices of Π_t(v), and loud / quiet steps as in RESULTS R123, flips(g) := #{t ≥ 1 : σ̄_(t−1)(g) ≠ σ̄_t(g)} and D^tot(v) := the number of distinct classes of v over the run (= R123's D^tot_E(v)): (Theorem GATE-CLASS) for every gate g and every step t, if σ̄_(t−1)(g) ≠ σ̄_t(g), then class_(t−1)(e_g) ≠ class_t(e_g) or class_(t−1)(β_g) ≠ class_t(β_g); (Corollary GATE-FLIP) (a) flips(g) ≤ (D^tot(e_g) − 1) + (D^tot(β_g) − 1) for every gate g; (b) with seq_t(v) and its ascents as in RESULTS R121, if every seq_t(e_g) and every seq_t(β_g) has at most B ascents, then flips(g) ≤ 2·((2M + 3)·F′_B(M) − 1) with F′_B of RESULTS R121, and under HYPOTHESIS [E-LEV] (lev(x) < lev(x′) implies pr(e_(x,k)) < pr(e_(x′,k′))) B = U(G), the number of options whose Ξ-target has a higher level, may be taken; (Corollary QUIET-N, sharpens RESULTS R123 Theorem QUIET / Corollary T-QUIET: window L → N) every quiet step is a p-step of RESULTS R118, every maximal window of quiet steps has at most N steps, and T_CYC ≤ Q + (Q + 1)·N, Q := the number of loud steps, Q ≤ Σ_v (D^tot(v) − 1); (Lemma (k+1)-Λ) with the Ξ-feedback number k := the minimum size of a set of movers meeting every cycle (self-loops count) of the Ξ-graph on the movers (an edge x → xt(x, j) for each option whose Ξ-target is a mover; options whose Ξ-target is X omitted): for every genome G with Ξ-feedback number k and every state t of IDEAL-CYC(G), the cycle nodes Λ_t(v), over all vertices v other than c_W, c_X and the e-vertices whose successor is c_W, take at most k + 1 values: K1, and, for each cycle of the functional graph Ξ_σ on the movers, x → xt(x, σ_t(x)), the most relevant vertex of the Γ-cycle through its movers, their chosen gates and β-faces; Ξ_σ has at most k cycles (premises: RESULTS R104's definitions of the genome and of Γ(G) only, including that the Odd vertices with a choice are the gates and K2; RESULTS R118 (a), (d) BR-SEG, (e) with its stated reason, R118's order ⊴ on values (Λ, Π, k) (VJ00 §4.2 / Friedmann arXiv 1106.0778 §3) and its step labels C / R / p; RESULTS R121 Lemma E-MON, and for GATE-FLIP (b) only R121's HUB-ASC-G whole-run form and UP-B; RESULTS R123 Lemma CN2, Lemma B-ONLY, Corollary NO-TIE, Lemma LOC-GATE, Lemma LOC-K2; R123 Theorem QUIET and Corollary T-QUIET are the bounds QUIET-N sharpens; [E-LEV] only in GATE-FLIP (b)'s U(G) form; not used: any lane packet, any L-RED or L-SI lane lemma, any P-N5-CHAIN fact) (2026-11-09) — this bounds per-gate flips and quiet windows only, in one restricted model; it makes no new class of genomes on which T_CYC is polynomial, and at k = 1 it bounds the cycle nodes only (whether max_g min(D^tot(e_g), D^tot(β_g)) is polynomial in N + M at k = 1 is OPEN); T bounds IDEAL-CYC iterations only; nothing is proved on Γ3: by RESULTS R118 (k) and (l), under REACH3-CYC's premises, N5′-xi from S3 on Γ3(G) makes Howard steps on Γ3 up to its first fallback, a run that can differ from the IDEAL-CYC run at exact VJ ties (R118's DATA), and a Γ3 form of this proof (not given here) would bound N5′-xi only up to its first fallback; nothing is claimed about post-fallback iterations, N5′-xi's total count, N5 or general games; DEAD (each with the instance that kills it; none is a premise): D1 «at k = 1 each gate flips at most 2·lamch(g) + 1 times», lamch(g) the number of steps at which Λ changes at e_g or β_g (experiments/new/box202/k1fail_202.json, sha1 99bba752, gate (4, 0): 2 flips, lamch 0); D2 «at k = 1 every gate flips at most c·(lamch(g) + 1) times», every constant c (L-RED 63's MWR(n), claude/l-red 406ef2fd, R229-box202 §2; copies experiments/new/box203/inst/MWR4_2.json sha1 856d369b, MWR8_2.json 918f1414, MWR16_2.json 2ccda9a9: gate (qz, 0) flips 2n + 1 times with lamch 0); D3 «every e-sequence has at most k + 1 ascents» (at k = 1 the staircase ST(m), box203/inst/ST4_k1.json sha1 3fa71a98, 3 ascents, and ST8_k1.json sha1 9dbf71f4, 7 ascents; at k = 2 L-SI's WC family, box202/inst/WC4_2, WC8_2, WC16_2: 4, 8, 16 ascents); DATA, clause by clause (scope IDEAL-CYC from the genome's start, cap 20,000 states, engine box191/idealcyc.py with experiments/si/si.py's Engine; tools in experiments/new/box203/, run in part by check203.sh; all pinned in box203/qn.pins): GATE-CLASS: lfail 0 (unit: flip steps at which neither face's class (Λ, E) changes); GATE-FLIP (a): gfail 0 (unit: gates with flips(g) > D^tot(e_g) + D^tot(β_g) − 2); QUIET-N: qflip 0 (unit: quiet steps at which σ̄ changes at some Odd vertex), qfail 0 (unit: runs with a maximal quiet window > N), Tfail 0 (unit: runs with T_CYC > Q + (Q + 1)N); all by gfc203.py on: the 57-genome corpus (the 53 box 202 genomes, MWR4/8/16_2, k1fail_202; out/gfc203_corpus.out), 1,000 rand191 genomes (d 1-6, w 1-3, degree 2-3, seed 2; out/rnd203_rand_s2.out), 5,000 k = 1 genomes (box202 k1srch202.mk, seed 202; out/rnd203_k1_s202.out), K1C16_n400 and K1F21_n48 (out2/gfc203_k1extra.out); control GFC_CTRL=3 (only the e-face's class looked at) fires, lfail 9 on MWR4_2 (check203.out); longest quiet window 10 at N 108 (DSALT6_n108) on this engine and 11 on REFEREE-2 35's engine, both ≤ N (Howard's tie rule is free in R118 (a)); (k+1)-Λ: lam203.py lfail 0 (unit: states with more than k + 1 values) on 2,000 k = 1 genomes (seed 7), 1,000 k = 2 genomes (seed 8) and 1,000 rand191 genomes (seed 2) (out2/lam203_*.out); lam203.py skips genomes with k > 12, and none of these 4,000 was skipped (unit: genomes; skip203.py, out2/skip203.out: k ≤ 5 on every genome); control LAM_CTRL=1 (bound k) fires, lfail 3,492 on the k = 1 set; k = 1 per-gate records (unit: flips of the gate with most flips; lamch 0; C = 0): MWR4/8/16_2 9 / 17 / 33, K1F21_n48 (N 48) 21, K1C16_n400 (N 113) 31; Γ3 counts (N5′-xi from S3 to its first fallback, same counters 0 on MWR4_2, MWR8_2, k1fail_202, C4_NM50, C6G8_n54, RWX_n95; out/gfc203_g3.out) are DATA only, nothing claimed; independent replays, every fail counter 0, their counters in their own pinned outputs, cited, not re-run: REFEREE 30 R-P-N5-QN §4 (claude/referee 452800c5; 1,500 runs and 8 pinned files), REFEREE-2 35 R2-P-N5-QN (claude/referee-2 5d4f06c2; 61 pinned genome runs and 6,000 random), L-RED 63 cls229 (29 rows; claude/l-red 8c034440) and lam229 (12 genomes; claude/l-red cdecc4e0); TARGET.md §2 (M4) asks for an algorithm polynomial on every parity game and §4 says a bound on a restricted class is not M4, so this is not M4; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim (P-N5-QN, docs/new/P-N5-QN.md, frozen at l-new e252182d, sha1 97254bd2, with fixes entry 1, docs/new/P-N5-QN-fixes.md; L-NEW successors 68-69; related lane statements, not premises: L-RED 63 Lemma CLASS-PAYS / Corollary GATE-FLIP-MIN (claude/l-red 8c034440, docs/red/R229-box203.md §3) and Lemma REL-G (claude/l-red fa4e50fe, docs/red/R229-box93.md §1.3), L-SI 49 NP-SHAPE / E-FACE-PAYS (claude/l-si f723957b, docs/si/box93-k7k6.md), L-SI 48 GATE-LOW-NULL (claude/l-si d962efdb, docs/si/box92-closed.md)), CHECKER PASS (docs/checker/C140.md, checker PENDING)
-- Object (L-NEW successors 68-69, D1 / D14 / D18, box 203; frozen, unchanged during review): packet P-N5-QN, docs/new/P-N5-QN.md, sha1
+### R126 [refereed-only] In IDEAL-CYC(G) (RESULTS R118 (a): Γ(G) with every non-mover Even vertex frozen at R104's start, Odd unrestricted (gates and K2), Howard steps at the movers), for every genome G (Ξ-cycles and Ξ self-loops allowed), with class_t(v) := (Λ_t(v), E_t(v)), E_t(v) the e-vertices of Π_t(v), and loud / quiet steps as in RESULTS R123, flips(g) := #{t ≥ 1 : σ̄_(t−1)(g) ≠ σ̄_t(g)} and D^tot(v) := the number of distinct classes of v over the run (= R123's D^tot_E(v)): (Theorem GATE-CLASS) for every gate g and every step t, if σ̄_(t−1)(g) ≠ σ̄_t(g), then class_(t−1)(e_g) ≠ class_t(e_g) or class_(t−1)(β_g) ≠ class_t(β_g); (Corollary GATE-FLIP) (a) flips(g) ≤ (D^tot(e_g) − 1) + (D^tot(β_g) − 1) for every gate g; (b) with seq_t(v) and its ascents as in RESULTS R121, if every seq_t(e_g) and every seq_t(β_g) has at most B ascents, then flips(g) ≤ 2·((2M + 3)·F′_B(M) − 1) with F′_B of RESULTS R121, and under HYPOTHESIS [E-LEV] (lev(x) < lev(x′) implies pr(e_(x,k)) < pr(e_(x′,k′))) B = U(G), the number of options whose Ξ-target has a higher level, may be taken; (Corollary QUIET-N, sharpens RESULTS R123 Theorem QUIET / Corollary T-QUIET: window L → N) every quiet step is a p-step of RESULTS R118, every maximal window of quiet steps has at most N steps, and T_CYC ≤ Q + (Q + 1)·N, Q := the number of loud steps, Q ≤ Σ_v (D^tot(v) − 1); (Lemma (k+1)-Λ) with the Ξ-feedback number k := the minimum size of a set of movers meeting every cycle (self-loops count) of the Ξ-graph on the movers (an edge x → xt(x, j) for each option whose Ξ-target is a mover; options whose Ξ-target is X omitted): for every genome G with Ξ-feedback number k and every state t of IDEAL-CYC(G), the cycle nodes Λ_t(v), over all vertices v other than c_W, c_X and the e-vertices whose successor is c_W, take at most k + 1 values: K1, and, for each cycle of the functional graph Ξ_σ on the movers, x → xt(x, σ_t(x)), the most relevant vertex of the Γ-cycle through its movers, their chosen gates and β-faces; Ξ_σ has at most k cycles (premises: RESULTS R104's definitions of the genome and of Γ(G) only, including that the Odd vertices with a choice are the gates and K2; RESULTS R118 (a), (d) BR-SEG, (e) with its stated reason, R118's order ⊴ on values (Λ, Π, k) (VJ00 §4.2 / Friedmann arXiv 1106.0778 §3) and its step labels C / R / p; RESULTS R121 Lemma E-MON, and for GATE-FLIP (b) only R121's HUB-ASC-G whole-run form and UP-B; RESULTS R123 Lemma CN2, Lemma B-ONLY, Corollary NO-TIE, Lemma LOC-GATE, Lemma LOC-K2; R123 Theorem QUIET and Corollary T-QUIET are the bounds QUIET-N sharpens; [E-LEV] only in GATE-FLIP (b)'s U(G) form; not used: any lane packet, any L-RED or L-SI lane lemma, any P-N5-CHAIN fact) (2026-11-09) — this bounds per-gate flips and quiet windows only, in one restricted model; it makes no new class of genomes on which T_CYC is polynomial, and at k = 1 it bounds the cycle nodes only (whether max_g min(D^tot(e_g), D^tot(β_g)) is polynomial in N + M at k = 1 is OPEN); T bounds IDEAL-CYC iterations only; nothing is proved on Γ3: by RESULTS R118 (k) and (l), under REACH3-CYC's premises, N5′-xi from S3 on Γ3(G) makes Howard steps on Γ3 up to its first fallback, a run that can differ from the IDEAL-CYC run at exact VJ ties (R118's DATA), and a Γ3 form of this proof (not given here) would bound N5′-xi only up to its first fallback; nothing is claimed about post-fallback iterations, N5′-xi's total count, N5 or general games; DEAD (each with the instance that kills it; none is a premise): D1 «at k = 1 each gate flips at most 2·lamch(g) + 1 times», lamch(g) the number of steps at which Λ changes at e_g or β_g (experiments/new/box202/k1fail_202.json, sha1 99bba752, gate (4, 0): 2 flips, lamch 0); D3 «every e-sequence has at most k + 1 ascents» (at k = 1 the staircase ST(m), box203/inst/ST4_k1.json sha1 3fa71a98, 3 ascents, and ST8_k1.json sha1 9dbf71f4, 7 ascents; at k = 2 L-SI's WC family, box202/inst/WC4_2, WC8_2, WC16_2: 4, 8, 16 ascents); DATA, clause by clause (scope IDEAL-CYC from the genome's start, cap 20,000 states, engine box191/idealcyc.py with experiments/si/si.py's Engine; tools in experiments/new/box203/, run in part by check203.sh; all pinned in box203/qn.pins): GATE-CLASS: lfail 0 (unit: flip steps at which neither face's class (Λ, E) changes); GATE-FLIP (a): gfail 0 (unit: gates with flips(g) > D^tot(e_g) + D^tot(β_g) − 2); QUIET-N: qflip 0 (unit: quiet steps at which σ̄ changes at some Odd vertex), qfail 0 (unit: runs with a maximal quiet window > N), Tfail 0 (unit: runs with T_CYC > Q + (Q + 1)N); all by gfc203.py on: the 57-genome corpus (the 53 box 202 genomes, MWR4/8/16_2, k1fail_202; out/gfc203_corpus.out), 1,000 rand191 genomes (d 1-6, w 1-3, degree 2-3, seed 2; out/rnd203_rand_s2.out), 5,000 k = 1 genomes (box202 k1srch202.mk, seed 202; out/rnd203_k1_s202.out), K1C16_n400 and K1F21_n48 (out2/gfc203_k1extra.out); control GFC_CTRL=3 (only the e-face's class looked at) fires, lfail 9 on MWR4_2 (check203.out); longest quiet window 10 at N 108 (DSALT6_n108) on this engine and 11 on REFEREE-2 35's engine, both ≤ N (Howard's tie rule is free in R118 (a)); (k+1)-Λ: lam203.py lfail 0 (unit: states with more than k + 1 values) on 2,000 k = 1 genomes (seed 7), 1,000 k = 2 genomes (seed 8) and 1,000 rand191 genomes (seed 2) (out2/lam203_*.out); lam203.py skips genomes with k > 12, and none of these 4,000 was skipped (unit: genomes; skip203.py, out2/skip203.out: k ≤ 5 on every genome); control LAM_CTRL=1 (bound k) fires, lfail 3,492 on the k = 1 set; k = 1 per-gate records (unit: flips of the gate with most flips; lamch 0; C = 0): MWR4/8/16_2 (L-RED 63's MWR(n), claude/l-red 406ef2fd; box203/inst/MWR4_2.json sha1 856d369b, MWR8_2.json 918f1414, MWR16_2.json 2ccda9a9) 9 / 17 / 33, K1F21_n48 (N 48) 21, K1C16_n400 (N 113) 31; Γ3 counts (N5′-xi from S3 to its first fallback, same counters 0 on MWR4_2, MWR8_2, k1fail_202, C4_NM50, C6G8_n54, RWX_n95; out/gfc203_g3.out) are DATA only, nothing claimed; independent replays, every fail counter 0, their counters in their own pinned outputs, cited, not re-run: REFEREE 30 R-P-N5-QN §4 (claude/referee 452800c5; 1,500 runs and 8 pinned files), REFEREE-2 35 R2-P-N5-QN (claude/referee-2 5d4f06c2; 61 pinned genome runs and 6,000 random), L-RED 63 cls229 (29 rows; claude/l-red 8c034440) and lam229 (12 genomes; claude/l-red cdecc4e0); TARGET.md §2 (M4) asks for an algorithm polynomial on every parity game and §4 says a bound on a restricted class is not M4, so this is not M4; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim (P-N5-QN, docs/new/P-N5-QN.md, frozen at l-new e252182d, sha1 97254bd2, with fixes entry 1, docs/new/P-N5-QN-fixes.md; L-NEW successors 68-69; related lane statements, not premises: L-RED 63 Lemma CLASS-PAYS / Corollary GATE-FLIP-MIN (claude/l-red 8c034440, docs/red/R229-box203.md §3) and Lemma REL-G (claude/l-red fa4e50fe, docs/red/R229-box93.md §1.3), L-SI 49 NP-SHAPE / E-FACE-PAYS (claude/l-si f723957b, docs/si/box93-k7k6.md), L-SI 48 GATE-LOW-NULL (claude/l-si d962efdb, docs/si/box92-closed.md)), CHECKER PASS (docs/checker/C140.md, checker PENDING)
+- Object (L-NEW successors 68-70, D1 / D14 / D18, box 203; frozen, unchanged during review): packet P-N5-QN, docs/new/P-N5-QN.md, sha1
   97254bd2a97f28bb0c14ab5f4d236ee723821dd9, 195 lines, 20,725 bytes (l-new e252182d, 2026-11-09T06:55:55Z, the file's only commit; identical
-  at 02a928a3, at the l-new head 8f4dab7e and at trunk 0753fd71; pinned in experiments/new/box203/qn.pins). Both referees measured it
+  at 02a928a3, 8f4dab7e, 70501a99, at the l-new head d3fc2d21 and at trunk 0753fd71 and 575ac944; pinned in experiments/new/box203/qn.pins). Both referees measured it
   (REFEREE l. 3 «docs/new/P-N5-QN.md sha1 97254bd2a97f28bb0c14ab5f4d236ee723821dd9,»; REFEREE-2 l. 7 «docs/new/P-N5-QN.md at e252182d: sha1
   97254bd2a97f28bb0c14ab5f4d236ee723821dd9, 20,725 B»). Freeze (l. 2-5): «freeze P-N5-QN = Theorem GATE-CLASS, Corollary GATE-FLIP,
   Corollary QUIET-N (the sharpening of landed R123 T-QUIET: L → N), Lemma (k+1)-Λ — premises landed R-ids only». Labels (l. 7): «Labels:
@@ -197,8 +339,8 @@ FLAGS FIRST (my reading; CHECKER rules; strings below are PROPOSALS only).
   [E-LEV] except in §3's second form.» (l. 30-31). Source (l. 6): «Source, history only: docs/new/N5-FLIP-box203.md (box 203, §1-§5.3).
   Every proof is carried here in full.» The packet's own scope (l. 17): «What it does NOT give: no new class on which T_CYC is polynomial
   (the classes of R123 ASC-T / UP-T are unchanged; only degrees drop)».
-- Fixes: docs/new/P-N5-QN-fixes.md, append-only, one entry (02a928a3, 2026-11-09T10:14:07Z, the file's only commit; 71 lines, 7,176 bytes,
-  sha1 b8f8a1a905c261c1f76bc3dc2a62bc37fa744bbc; byte-equal at the l-new head and at 0753fd71). Entry 1 (L-NEW successor 69, l. 3-64;
+- Fixes: docs/new/P-N5-QN-fixes.md, append-only, two entries (70501a99, 2026-11-12T02:31:09Z: 95 lines, 9,737 bytes, sha1 b095597c579ab5d073b77aac3d2f07e4359b433f, byte-equal at the l-new head d3fc2d21; its first 7,176 bytes are the file at 02a928a3, 2026-11-09T10:14:07Z, 71 lines,
+  sha1 b8f8a1a905c261c1f76bc3dc2a62bc37fa744bbc, byte-equal at 0753fd71 and 575ac944). Entry 1 (L-NEW successor 69, l. 3-64;
   answering REFEREE 30, REFEREE-2 35 and L-RED 63's Addendum B): «No statement, no proof and no label changes. Where this entry and the
   packet differ, this entry governs. Every item is ACCEPTED.» (l. 9). QN-1 = W-1 / R-1 (l. 11-19): the value list of §5 corrected by one
   governing sentence (l. 17, quoted in (e) below), «The count k + 1 and the proof are unaffected.» (l. 15); GATE-FLIP (b)'s «under
@@ -207,18 +349,18 @@ FLAGS FIRST (my reading; CHECKER rules; strings below are PROPOSALS only).
   skip203.py, «**0 skipped** on each of the three»); L-RED G1 (§7's citation commits), G2 (§4's premise row names [DEF]: «No new premise
   enters the packet.») and G3 (a second engine cited, not re-run) (l. 51-64). «Line L-1» (l. 66-71): generator
   experiments/new/box203/mkl1_qn.py, pinned in qn.pins. No item changes a statement's content, a label or a proof: QN-1 changes (k+1)-Λ's
-  wording to what its proof proves; the rest is line, DATA or citation.
-- The RESULTS line is L-1, 28bf566bdf95d0708b3b80303bfa7311c8d5d8b1 (docs/new/P-N5-QN-line-L1.txt, l-new 02a928a3, 2026-11-09T10:14:07Z, the
-  file's only commit; 7,357 bytes, blob dcb87fa888cc80fd1f231cd8620219cf268fcebc). The title is L-1 verbatim, with nothing inserted and
-  nothing stripped (its date parenthesis «(2026-11-09)», its scope tail and its source note are the line's own). L-1's parentheses balance
-  (140 «(» / 140 «)»); it has no pipe character. It is written by experiments/new/box203/mkl1_qn.py, which asserts the frozen packet's sha1,
+  wording to what its proof proves; the rest is line, DATA or citation. Entry 2 (L-NEW successor 70, 70501a99, l. 73-88; line-only; CHECKER C140 E-1 = flag G-L43, ruling R-D2a): «What changes: the DEAD list of the RESULTS line only. D2 is dropped; D3 keeps its name.» (l. 78), «No statement, proof, label or premise of P-N5-QN changes; the frozen packet (e252182d, sha1 97254bd2) is not edited.» (l. 79-80); R-D2 and R-S are C140 §4's strings (l. 81-86). «Line L-2» (l. 90-95): generator experiments/new/box203/mkl2_qn.py, L-2 = L-1 + R-D2 + R-S, pinned in qn.pins (63 rows).
+- The RESULTS line is L-2, 166e4695b07843ae73e2d23ac92802c256f31113 (docs/new/P-N5-QN-line-L2.txt, l-new 70501a99, 2026-11-12T02:31:09Z, the
+  file's only commit; 7,187 bytes, blob fd3dbf2cc356955821208ca6c9a8a6dba3d8db84). The title is L-2 verbatim, with nothing inserted and
+  nothing stripped (its date parenthesis «(2026-11-09)», its scope tail and its source note are the line's own). L-2's parentheses balance
+  (137 «(» / 137 «)»); it has no pipe character. It is written by experiments/new/box203/mkl2_qn.py (L-1 + R-D2 + R-S; it asserts the frozen packet's sha1, L-1's sha1, each old string once and L-2's sha1) from L-1 (28bf566bdf95d0708b3b80303bfa7311c8d5d8b1, docs/new/P-N5-QN-line-L1.txt, l-new 02a928a3, 2026-11-09T10:14:07Z, 7,357 bytes, blob dcb87fa8…), which experiments/new/box203/mkl1_qn.py writes and which asserts the frozen packet's sha1,
   fixes entry 1's governing (k+1)-Λ sentence, R123's landed scope sentence and R124's landed TARGET tail in RESULTS, and LN-5's skip counts;
-  rebuilt byte-equal by REFEREE (§C, l. 122-123: «rewrites L-1 byte-identically (cmp: SAME; sha1 28bf566b). qn.pins 61 rows, `sha1sum -c`
+  L-1 rebuilt byte-equal by REFEREE (§C, l. 122-123: «rewrites L-1 byte-identically (cmp: SAME; sha1 28bf566b). qn.pins 61 rows, `sha1sum -c`
   all OK.»), by REFEREE-2 (Add. 1, l. 150-151: «exits 0 and rebuilds L-1 byte-equal (28bf566b…).») and by the drafter with RESULTS at
-  0753fd71 (rc 0). REFEREE: L-1 MATCHES (§C, 09aabb03, l. 148-149, quoted below). REFEREE-2: L-1 MATCHES (Add. 1, a327b4dc, l. 185-186; Add.
-  2, 565d5022, l. 200-201, quoted below).
-- Claims signed (REFEREE successor 30: report 452800c5, §C 09aabb03; REFEREE-2 successor 35: report 5d4f06c2; successor 36: Add. 1 a327b4dc,
-  Add. 2 565d5022). REFEREE's table («## 0. Verdicts», l. 7-16 of R-P-N5-QN.md) reads: GATE-CLASS «**SIGN** (PROVED). Every step re-derived
+  0753fd71 (rc 0); L-2 byte-tested by REFEREE (§D, «`cmp` with the lane's L-2: **EQUAL**», l. 157), by REFEREE-2 (Add. 3, «It equals CHECKER C140 §4's expected L-2», l. 206) and rebuilt by the drafter (mkl2_qn.py on a copy of 70501a99's packet and L-1: rc 0, cmp-equal). REFEREE: L-1 MATCHES (§C, 09aabb03, l. 148-149, quoted below); L-2 MATCHES (§D, REFEREE successor 31, fbc4d865, l. 168, quoted below). REFEREE-2: L-1 MATCHES (Add. 1, a327b4dc, l. 185-186; Add.
+  2, 565d5022, l. 200-201, quoted below); L-2 MATCHES (Add. 3, REFEREE-2 successor 37, f6cfb35e, l. 233-234, quoted below).
+- Claims signed (REFEREE successor 30: report 452800c5, §C 09aabb03; successor 31: §D fbc4d865; REFEREE-2 successor 35: report 5d4f06c2; successor 36: Add. 1 a327b4dc,
+  Add. 2 565d5022; successor 37: Add. 3 f6cfb35e). REFEREE's table («## 0. Verdicts», l. 7-16 of R-P-N5-QN.md) reads: GATE-CLASS «**SIGN** (PROVED). Every step re-derived
   (§3 below).» (l. 10); GATE-FLIP (a) «**SIGN** (PROVED).» (l. 11); GATE-FLIP (b) «**SIGN** (PROVED under its ascent hypothesis; the U(G)
   form under HYPOTHESIS [E-LEV], labelled so).» (l. 12); QUIET-N «**SIGN** (PROVED).» (l. 13); (k+1)-Λ «**SIGN** (PROVED) with wording note
   QN-1» (l. 14); DEAD D1-D3 «**CONFIRMED** on my own engine (§4), except D3's k = 2 WC family (not re-run; cited).» (l. 15); then «No GAP.
@@ -229,16 +371,16 @@ FLAGS FIRST (my reading; CHECKER rules; strings below are PROPOSALS only).
   D1-D3 «SIGN (dead)» (l. 22, «each instance re-run on my own code»); then «No statement is REFUSED. W-1 is a wording defect in (k+1)-Λ's
   statement, not in its proof. The proof identifies the values correctly.» (l. 24). Both re-signed on L-1: REFEREE §C «Statements as §0 (all
   SIGN).» (l. 148-149); REFEREE-2 Add. 2 «Verdicts: equal. Both referees SIGN GATE-CLASS, GATE-FLIP (a), GATE-FLIP (b) (the U(G) form under
-  HYPOTHESIS [E-LEV]), QUIET-N and (k+1)-Λ. DEAD D1-D3 are confirmed on independent engines.» (l. 189-190). The HYPOTHESIS statement, with
+  HYPOTHESIS [E-LEV]), QUIET-N and (k+1)-Λ. DEAD D1-D3 are confirmed on independent engines.» (l. 189-190). Both re-signed on L-2, whose DEAD list is D1, D3 (D2 is DATA, fixes entry 2): REFEREE §D «Every statement and label of P-N5-QN unchanged.» (l. 167); REFEREE-2 Add. 3 «Every signed statement of P-N5-QN is unchanged, and my predecessor's verdicts stand.» (l. 234). The HYPOTHESIS statement, with
   its condition as the line states it: GATE-FLIP (b)'s U(G) form «under HYPOTHESIS [E-LEV] (lev(x) < lev(x′) implies pr(e_(x,k)) <
   pr(e_(x′,k′))) B = U(G), the number of options whose Ξ-target has a higher level, may be taken» ([E-LEV] as R121 lands it, REFEREE §C
   LN-1). The joint gap map: EMPTY (REFEREE «No GAP.»; REFEREE-2 «W-1 is a wording defect in (k+1)-Λ's statement, not in its proof.», l. 24;
   Add. 1 «Nothing REQUIRED is open.» (l. 185-186)). The one defect found in review, (k+1)-Λ's value list (QN-1 = W-1 / R-1), is a wording
-  defect of the statement, not of the proof, corrected by fixes entry 1's governing sentence and carried by L-1 (REFEREE §C LN-2 PASS;
+  defect of the statement, not of the proof, corrected by fixes entry 1's governing sentence and carried by L-1, unchanged in L-2 (REFEREE §C LN-2 PASS;
   REFEREE-2 Add. 1 «R-1 ((k+1)-Λ, REQUIRED): MET.» (l. 161)). Nothing is REFUSED.
 - Setting: IDEAL-CYC(G) of RESULTS R118 (a) for every genome G of R104 (Ξ-cycles and Ξ self-loops allowed): R104's Γ(G), every non-mover
   Even vertex frozen at R104's start, Odd unrestricted (the gates and K2), Howard steps at the movers; states 0, …, T_CYC. Statements as
-  signed (packet with fixes entry 1, which governs §5's wording):
+  signed (packet with fixes entries 1-2; entry 1 governs §5's wording, entry 2 is line-only):
   (a) Theorem GATE-CLASS (§2 l. 78-79) [every genome]: «For every genome G, every gate g and every step t of IDEAL-CYC(G): if σ̄_(t−1)(g) ≠
     σ̄_t(g), then class_(t−1)(e_g) ≠ class_t(e_g) or class_(t−1)(β_g) ≠ class_t(β_g).» Both SIGN (REFEREE l. 10; REFEREE-2 l. 17).
   (b) Corollary GATE-FLIP (a) (§3 l. 102) [every genome]: «(a) flips(g) ≤ (D^tot(e_g) − 1) + (D^tot(β_g) − 1) for every gate g.» Both SIGN
@@ -250,7 +392,7 @@ FLAGS FIRST (my reading; CHECKER rules; strings below are PROPOSALS only).
   (d) Corollary QUIET-N (§4 l. 110-111) [every genome; sharpens RESULTS R123 Theorem QUIET / Corollary T-QUIET]: «In IDEAL-CYC(G), for every
     genome G: every quiet step is a p-step of R118; every maximal window of quiet steps has at most N steps; and T_CYC ≤ Q + (Q + 1)·N,
     where Q := the number of loud steps, Q ≤ Σ_v (D^tot(v) − 1).» Both SIGN (l. 13; l. 20). The «Against R123» bullet's «R123's ASC-T and
-    UP-T hold with L + 1 replaced by N + 1.» (l. 119) is not in «To sign», not signed and not in L-1 (LN-4; fixes l. 38-39).
+    UP-T hold with L + 1 replaced by N + 1.» (l. 119) is not in «To sign», not signed and not in L-1 or L-2 (LN-4; fixes l. 38-39).
   (e) Lemma (k+1)-Λ (§5 l. 123-125 as governed by fixes entry 1, l. 17) [every genome; k the Ξ-feedback number, packet (D5)]: «For every
     genome G with Ξ-feedback number k and every state t of IDEAL-CYC(G), the cycle nodes Λ_t(v), over all vertices v other than c_W, c_X and
     the e-vertices whose successor is c_W, take at most k + 1 values: K1, and, for each cycle of the functional graph Ξ_σ on the movers, x →
@@ -258,11 +400,11 @@ FLAGS FIRST (my reading; CHECKER rules; strings below are PROPOSALS only).
     The frozen §5 named «the most relevant vertex of each cycle of the functional graph Ξ_σ on the movers», a mover (QN-1 = W-1); the proof
     is unchanged. REFEREE SIGN with QN-1 (l. 14), REFEREE-2 SIGN WITH W-1 (l. 21); both on the corrected wording (REFEREE §C LN-2 PASS;
     REFEREE-2 Add. 1 R-1 MET).
-  (f) DEAD D1-D3 (§6 l. 137-147): D1 «at k = 1 each gate flips at most 2·lamch(g) + 1 times» (k1fail_202, gate (4, 0): 2 flips, lamch 0); D2
-    «at k = 1 every gate flips at most c·(lamch(g) + 1) times», every constant c (MWR4/8/16_2: 9 / 17 / 33 flips at lamch 0); D3 «Every
+  (f) DEAD D1, D3 (§6 l. 137-147; the packet's D2 is not in L-2: fixes entry 2, C140 E-1 under L43): D1 «at k = 1 each gate flips at most 2·lamch(g) + 1 times» (k1fail_202, gate (4, 0): 2 flips, lamch 0); the packet's D2
+    «at k = 1 every gate flips at most c·(lamch(g) + 1) times», every constant c, rests on MWR4/8/16_2 (9 / 17 / 33 flips at lamch 0), which L-2 carries as DATA (the C = 0 clause, with L-RED 63's source, R-S); D3 «Every
     e-sequence has at most k + 1 ascents» (ST4_k1 3, ST8_k1 7 ascents at k = 1; WC4/8/16_2 4 / 8 / 16 at k = 2). REFEREE CONFIRMED on its
     own engine (l. 15, D3's k = 2 family cited), REFEREE-2 SIGN (dead) (l. 22); «D3's k = 2 WC family is re-run by neither referee. It is
-    cited, and ST(m) kills D3 alone.» (REFEREE-2 Add. 2, l. 198).
+    cited, and ST(m) kills D3 alone.» (REFEREE-2 Add. 2, l. 198). Re-signed on L-2 as D1, D3: REFEREE §D (l. 166-167, quoted in the SECOND FILL section) and REFEREE-2 Add. 3 (D1 and D3 «SIGN (dead)», l. 224 and 229; D1 re-run on its own GATE engine, l. 226-227).
 - Premise (landed RESULTS only; quoted by script at trunk 0753fd71, RESULTS line numbers there; the packet's §1 quotes, l. 33-75): [DEF]
   RESULTS R104 (l. 9864), definitions of the genome and of Γ(G) only: «Even movers of priority 0; Odd gates of priority 1 with a W-face e
   and a Ξ-face β» (l. 9864); «β of priority 6 + 2·rank + parity with edges to the Ξ-target and to u, or to u alone» (l. 9864); «e of even
@@ -288,7 +430,7 @@ FLAGS FIRST (my reading; CHECKER rules; strings below are PROPOSALS only).
   class and quiet otherwise» (l. 15076); «every maximal window of quiet steps has at most L := (M + 1)(2M + 1)(N + 1) + N(n − 1) steps, n =
   N + 3M + 6» (l. 15076); «(Corollary T-QUIET) T_CYC ≤ (1 + Σ_v (D^tot_E(v) − 1))·(L + 1), D^tot_E(v) the number of distinct classes of v
   over the run» (l. 15076). VJ00 §4.2 / Friedmann arXiv 1106.0778 §3 for the order ⊴ as cited by R118. HYPOTHESIS [E-LEV] only in GATE-FLIP
-  (b)'s U(G) form. Not used: any lane packet, any L-RED or L-SI lane lemma, any P-N5-CHAIN fact (L-1). Both referees and L-RED 63 checked
+  (b)'s U(G) form. Not used: any lane packet, any L-RED or L-SI lane lemma, any P-N5-CHAIN fact (L-2). Both referees and L-RED 63 checked
   the 24 quotes by script (REFEREE §1 l. 20 «**24 quotes, 0 missing** (qn_logs/quotes.out): R104 6, P-N5-XICYC 1, R118 6, R121 3, R123 8.»;
   REFEREE-2 l. 27-28 «All 24 are verbatim (whitespace-normalised) in trunk docs/RESULTS.md or P-N5-XICYC.md»; L-RED Add. B l. 114 «24 of 24
   found verbatim»); REFEREE-2 l. 34 «R104, R118, R121 and R123 are all landed at 547985a10. No lane packet and no L-RED / L-SI lemma is a
@@ -299,7 +441,7 @@ FLAGS FIRST (my reading; CHECKER rules; strings below are PROPOSALS only).
   the frozen proof already makes (REFEREE l. 71 «The proof says so («Z with w is determined by that cycle»).»). L43: D1 and D3 each have one
   instance exceeding an explicit bound (k1fail_202: 2 > 2·0 + 1; ST4_k1: 3 > k + 1 = 2 at k = 1). D2's statement has an unspecified constant
   c; its instances are MWR4/8/16_2 (9 / 17 / 33 flips at lamch 0), its family MWR(n) is L-RED 63's (R229-box202 §2), and both referees
-  confirmed it on n = 4, 8, 16 (REFEREE l. 84; REFEREE-2 l. 90-91).
+  confirmed it on n = 4, 8, 16 (REFEREE l. 84; REFEREE-2 l. 90-91), on those instances only: «So D2 is the L43 case exactly.» (l. 25-26) (C140 E-1). By ruling R-D2a (C140 §2, §4; fixes entry 2) L-2 drops D2 from the DEAD list and keeps its numbers, source commit and instance sha1s in the C = 0 DATA clause (R-S). REFEREE-2 37: «the DATA kills the bound for c ≤ 32 only.» (l. 221).
 - Not signed: packet §7 (related lane statements: L-SI 49 NP-SHAPE / E-FACE-PAYS, L-SI 48 GATE-LOW-NULL, L-RED 63 REL-G and CLASS-PAYS,
   «cited, NOT premises»), §8 (what stays OPEN), §9 (DATA), §10 (TARGET diff), §11 (machine checks), the «Against R123» remark (READING), the
   Γ3 counts (DATA only); the referees' and L-RED's replays.
@@ -309,7 +451,7 @@ FLAGS FIRST (my reading; CHECKER rules; strings below are PROPOSALS only).
   check203.sh from git archive e252182d (l. 86-87). (ii) REFEREE-2: own engine on r2acyc.py, «Random: 6,000 runs, k up to 7, max T 9, every
   counter 0.» (l. 114), 61 pinned genome runs, every must-0 counter 0, «(k+1)-Λ is counted on 41 of the 61 pinned genomes.» (l. 112);
   controls fire (l. 121-123). (iii) L-RED 63 (not a referee): cls229 (29 rows) and lam229 (12 genomes), every counter 0 (Add. B l. 123-125;
-  cited in L-1).
+  cited in L-1 and L-2).
 - Honest limits: (i) GATE-CLASS, GATE-FLIP and QUIET-N bound per-gate flips and quiet windows in ONE model, IDEAL-CYC(G); they make no new
   class of genomes on which T_CYC is polynomial (the classes of R123's ASC-T / UP-T are unchanged); nothing bounds a running time or a bit
   cost. (ii) At k = 1, (k+1)-Λ bounds the cycle nodes only; whether max_g min(D^tot(e_g), D^tot(β_g)) is polynomial in N + M at k = 1 is
@@ -318,62 +460,63 @@ FLAGS FIRST (my reading; CHECKER rules; strings below are PROPOSALS only).
   T-QUIET3), not of QUIET-N; the Γ3 counts are DATA only. (v) DATA are runs of the lane's engine (box191 idealcyc, si.py) and the referees'
   engines; quiet windows depend on Howard's free tie rule (DSALT6_n108: 10 here, 11 on REFEREE-2 35's engine, both ≤ N); every run is short
   (REFEREE-2's pinned set: «Max T 199, max quiet window 11», l. 110), so the data test that nothing exceeds the bounds, not their tightness.
-  (vi) D2 is supported by three instances (L43 above). (vii) Names: GATE-CLASS, GATE-FLIP, QUIET-N, (k+1)-Λ, lamch and the instance names
+  (vi) The MWR(n) count 2n + 1 is measured on three instances (n = 4, 8, 16) and not proved for every n; L-2 carries it as DATA, not as a DEAD (L43 above). (vii) Names: GATE-CLASS, GATE-FLIP, QUIET-N, (k+1)-Λ, lamch and the instance names
   are new to RESULTS. (viii) Literature: VJ00 §4.2 and Friedmann arXiv 1106.0778 §3 as in R118; no novelty is claimed; L-RED 63's CLASS-PAYS
-  (min instead of sum, exact on MWR) is sharper than GATE-FLIP (a) and is a lane statement, not signed here.
-- Data (DATA, not proof): experiments/new/box203/ at l-new 02a928a3 (tools, outputs and instances unchanged to 8f4dab7e and 0753fd71;
-  e252182d had the same tools and outputs, and 02a928a3 adds skip203.py, out2/skip203.out, mkl1_qn.py and re-pins qn.pins, 56 → 61 rows):
+  (min instead of sum, exact on MWR) is sharper than GATE-FLIP (a) and is a lane statement, not signed here. (ix) The line's source note names «with fixes entry 1» and «L-NEW successors 68-69»; fixes entry 2 (successor 70) is line-only (REFEREE §D: «Fixes entry 2: line-only», l. 154) and carries no proof text, so the note does not name it (the C134 N-S rule; R124 and R125 landed with their line-only entries unnamed in the same way).
+- Data (DATA, not proof): experiments/new/box203/ at l-new 02a928a3 (tools, outputs and instances unchanged to 8f4dab7e, 0753fd71, 70501a99, d3fc2d21 and 575ac944;
+  e252182d had the same tools and outputs, and 02a928a3 adds skip203.py, out2/skip203.out, mkl1_qn.py and re-pins qn.pins, 56 → 61 rows; 70501a99 adds mkl2_qn.py and L-2 and re-pins the fixes file, 61 → 63 rows):
   gfc203.py, rnd203.py, lam203.py, asc203.py, run in part by check203.sh, its frozen output check203.out (17 lines); the record outputs
   out/gfc203_corpus.out (57 rows), out/rnd203_rand_s2.out, out/rnd203_k1_s202.out, out2/gfc203_k1extra.out, out2/lam203_*.out,
   out2/skip203.out, out/gfc203_g3.out; called from the check.sh blocks «BOX 203 FLIP» and «P-N5-QN» (experiments/new/check.sh l. 1094-1110
-  at e252182d, 02a928a3, 8f4dab7e and 0753fd71, the same 17 lines, sha1 6cdbfb011966bb289474ebfa691541c2e5c8e5d5), run by scripts/verify.sh.
-  Re-run by the drafter from a full git archive of 02a928a3: 2026-11-11T23:51:25Z-2026-11-11T23:51:36Z, rc 0, «BOX 203 FLIP: GATE-CLASS /
-  GATE-FLIP / QUIET-N / (k+1)-Lambda counters 0, ST8 ascent witness, controls fire = frozen: PASS» and «P-N5-QN: packet and 61 pinned files
-  match qn.pins, quotes 24 missing 0: PASS»; with one byte appended to L-1 the «P-N5-QN» block printed «P-N5-QN check: FAILED», rc 1, and
+  at e252182d, 02a928a3, 8f4dab7e, 0753fd71, 70501a99, d3fc2d21 and 575ac944, the same 17 lines, sha1 6cdbfb011966bb289474ebfa691541c2e5c8e5d5), run by scripts/verify.sh.
+  Re-run by the drafter from a full git archive of 70501a99: 2026-11-12T04:09:05Z-2026-11-12T04:09:17Z, rc 0, «BOX 203 FLIP: GATE-CLASS /
+  GATE-FLIP / QUIET-N / (k+1)-Lambda counters 0, ST8 ascent witness, controls fire = frozen: PASS» and «P-N5-QN: packet and 63 pinned files
+  match qn.pins, quotes 24 missing 0: PASS»; with one byte appended to L-2 the «P-N5-QN» block printed «P-N5-QN check: FAILED», rc 1, and
   with one byte prepended to check203.out the «BOX 203 FLIP» block printed «BOX 203 FLIP check: FAILED (check203.sh exit 0)», rc 1 (negative
-  controls). Frozen totals (by script, data126a.py): every must-0 counter 0 on the corpus (57), rand191 (1,000), k = 1 (5,000), K1C16_n400,
+  controls). The same blocks from a full archive of 02a928a3 (61 pinned files): rc 0 at 2026-11-11T23:51:25Z-2026-11-11T23:51:36Z (drafter, first fill) and by CHECKER C140 (§5: «2026-11-12T01:59:20Z-01:59:31Z, rc 0», l. 77). Frozen totals (by script, data126a.py): every must-0 counter 0 on the corpus (57), rand191 (1,000), k = 1 (5,000), K1C16_n400,
   K1F21_n48 and the 6 Γ3 rows; lam203 lfail 0 on 2,000 + 1,000 + 1,000 genomes, 0 skipped, k ≤ 5; controls ctrl3 lfail 9, LAM_CTRL=1 lfail
   3,492; records MWR4/8/16_2 9 / 17 / 33, K1F21_n48 21, K1C16_n400 31, DSALT6_n108 window 10 (N 108). REFEREE-2 read every DATA clause
-  against the code (Add. 1, «Every DATA number in L-1 equals its output file.», l. 182).
+  against the code (Add. 1, «Every DATA number in L-1 equals its output file.», l. 182). L-2 changes no DATA number; R-S adds the MWR source and the three instance sha1s, the pinned files' (box203/inst/SHA1SUMS at 70501a99).
 - Signatures: REFEREE docs/referee/R-P-N5-QN.md: successor 30's report 452800c5 (452800c55384828e52244fcef44144ab3cc923c0,
   2026-11-09T07:38:09Z), «docs/referee-2/ and L-RED 63's R229-box203 were NOT read before this verdict.» (l. 4-5), verdict table l. 7-16; §C
   09aabb03 (09aabb03cf145e2f9ea779536fcbb87182c92efb, 2026-11-09T10:42:00Z) l. 119-149, «**Line L-1 MATCHES** the packet read with fixes
-  entry 1 and meets LN-1..LN-8.» (l. 148-149). REFEREE-2 docs/referee-2/R2-P-N5-QN.md: successor 35's report 5d4f06c2
+  entry 1 and meets LN-1..LN-8.» (l. 148-149); successor 31's §D fbc4d865 (fbc4d86560601681939940436f729ff676b47f0b, 2026-11-12T03:28:29Z) l. 151-168, «Verdict: fixes entry 2 CORRECT. **Line L-2 MATCHES** (= L-1 + R-D2 + R-S exactly; = CHECKER C140 §4's L-2).» (l. 168). REFEREE-2 docs/referee-2/R2-P-N5-QN.md: successor 35's report 5d4f06c2
   (5d4f06c2dcf25c2a6723bb398ac7632284f31cb5, 2026-11-09T07:37:31Z), «Independent: docs/referee/ NOT read for this packet before this report
   is committed.» (l. 2-3), verdict table l. 14-24; successor 36's Add. 1 a327b4dc (a327b4dcb4ae6d61f17299b0203f0e3aac535fc6,
   2026-11-11T21:08:47Z) l. 142-186, «Verdict: L-1 MATCHES the packet as governed by fixes entry 1» (l. 185); Add. 2 565d5022
   (565d5022191145f5e69996a331b372acee5964ea, 2026-11-11T21:09:11Z) l. 188-201, «P-N5-QN's line has two signatures, with no item open.» (l.
-  200-201). Lane (claude/l-new): L-NEW successor 68, e252182d (packet FROZEN); successor 69, 02a928a3 (fixes entry 1, L-1). Adversary (not a
+  200-201); successor 37's Add. 3 f6cfb35e (f6cfb35ed732ae591f77fa37038135d309e94ba8, 2026-11-12T03:15:30Z) l. 203-235, «Verdict: L-2 (70501a99, sha1 166e4695) MATCHES CHECKER C140 §4 and the Lead's ruling R-D2a.» (l. 233). Lane (claude/l-new): L-NEW successor 68, e252182d (packet FROZEN); successor 69, 02a928a3 (fixes entry 1, L-1); successor 70, 70501a99 (fixes entry 2, L-2). Adversary (not a
   signature): L-RED 63, f05b0c55 (R229-box203 Addendum B), «Three small fixes (G1-G3); none touches a proof.» (l. 111-112).
 - INDEPENDENCE: each referee wrote its first report without reading the other's (REFEREE l. 4-5; REFEREE-2 l. 2-3 and l. 140, «I did not
   read docs/referee/ for this packet, nor L-RED 63's reports.»); the two reports were committed 38 seconds apart (5d4f06c2 07:37:31Z,
   452800c5 07:38:09Z). REFEREE §C read docs/referee-2/ only for the strings fixes entry 1 cites («docs/referee-2/ read only for the strings
   fixes entry 1 cites.», l. 149). REFEREE-2 36 discloses that fixes entry 1 outlines REFEREE's findings and read REFEREE's report only after
   its own verdict («My report (5d4f06c2) was committed before that entry existed. I read REFEREE's report only after this addendum's verdict
-  (Addendum 2).», l. 147-148), then compared (Add. 2). Each referee rebuilt L-1 byte-equal from the lane generator on its own archive; each
+  (Addendum 2).», l. 147-148), then compared (Add. 2). Each referee rebuilt L-1 byte-equal from the lane generator on its own archive, and byte-tested L-2 with its own script (REFEREE §D: «both strings typed from CHECKER C140 §4 (claude/checker 445372f9), not from the lane's generator», l. 155-156; REFEREE-2 Add. 3: «Diff L-1 → L-2 (word level, own script): exactly two regions.», l. 209); each
   read the DATA code itself (REFEREE §5; REFEREE-2 Add. 1). Neither read L-RED 63's reports before its verdict (REFEREE l. 4-5; REFEREE-2 l.
-  2-4).
+  2-4). REFEREE-2 37: «I did not read docs/referee/ for this addendum.» (l. 235).
 - TARGET.md diff: TARGET.md §2 (M4) asks for one algorithm, polynomial on EVERY parity game, that outputs (W_E, W_O); this entry is a
   mechanism lemma, a per-gate bound, a sharper window bound and a cycle-node count on one model, IDEAL-CYC(G), for no algorithm on general
   games (TARGET.md §4: «Polynomial only on a restricted class»; packet §10 l. 183-186; REFEREE §6 «No algorithm claim; one model (IDEAL-CYC
   of R104 / R118 genomes); QUIET-N sharpens a landed bound and makes no new class polynomial»; REFEREE-2 «So it is not M3, not M4, not a
   step-4 pass, and not a TARGET.md claim. G-N5-TIME stays OPEN.»). It is not an algorithm claim on every game, so TARGET.md §5's gauntlet
-  does not apply, and it is not a step-4 pass. L-1 ends its scope words «so this is not M4; G-N5-TIME stays OPEN; not M3, not a step-4 pass,
+  does not apply, and it is not a step-4 pass. L-2 ends its scope words «so this is not M4; G-N5-TIME stays OPEN; not M3, not a step-4 pass,
   not a TARGET.md claim», the form of landed R123 and R124. GAPS G-N5-TIME: open.
 
 Proposed GAPS line-11 UPDATE (append-only), to go AFTER the last UPDATE on GAPS l. 11 at landing (R125's, «UPDATE 2026-11-11 23:47Z: RESULTS
-R125 (P-N5-CHAIN; CHECKER C139 1622c7d9)», the last at 0753fd71), as a pure insertion with one separating space before the row's closing
-« |». BUILT FROM L-1 by tools/upd126a.py (R118's procedure: the direct build of r125b/tools/upd125b.py, unchanged, with R126's constants:
-date «(2026-11-09)», start «for every genome G (Ξ-cycles and Ξ self-loops allowed), with class_t(v) := (Λ_t(v), E_t(v)), … (= R123's
-D^tot_E(v)): » (the span up to the first label), its four labels «(Theorem GATE-CLASS)», «(Corollary GATE-FLIP)», «(Corollary QUIET-N,
-sharpens RESULTS R123 Theorem QUIET / Corollary T-QUIET: window L → N)», «(Lemma (k+1)-Λ)», source prefix «(P-N5-QN, docs/new/P-N5-QN.md»),
-with NO reading; controls on 0753fd71: the same function rebuilds R123's landed UPDATE (739c5f71…; filled with 2026-11-09, 00:52, 3479ecb0
-it occurs once on l. 11: True), R124's (8cd83060…; 2026-11-09, 09:04, 5b9f4af8, once: True) and R125's (f22faed5…; 2026-11-11, 23:47,
-1622c7d9: it ends l. 11, True); negative controls (an altered drop string; an altered label) raise errors. sha1
-640258db370e0b6f3a217198375ee2399f6ec902 of the line without newline and unfilled (fb69fad69e0aa3f3353ec524630c72dfa4bd2155 with its
-newline), 7386 bytes. <DATE>, <HH:MM> and <checker> are the landing date, time and the CHECKER commit of the PASS (C140), all filled at
-landing:
-UPDATE <DATE> <HH:MM>Z: RESULTS R126 (P-N5-QN; CHECKER C140 <checker>) [refereed-only] LANDED: In IDEAL-CYC(G) (RESULTS R118 (a): Γ(G) with every non-mover Even vertex frozen at R104's start, Odd unrestricted (gates and K2), Howard steps at the movers), for every genome G (Ξ-cycles and Ξ self-loops allowed), with class_t(v) := (Λ_t(v), E_t(v)), E_t(v) the e-vertices of Π_t(v), and loud / quiet steps as in RESULTS R123, flips(g) := #{t ≥ 1 : σ̄_(t−1)(g) ≠ σ̄_t(g)} and D^tot(v) := the number of distinct classes of v over the run (= R123's D^tot_E(v)): for every gate g and every step t, if σ̄_(t−1)(g) ≠ σ̄_t(g), then class_(t−1)(e_g) ≠ class_t(e_g) or class_(t−1)(β_g) ≠ class_t(β_g) (Theorem GATE-CLASS); (a) flips(g) ≤ (D^tot(e_g) − 1) + (D^tot(β_g) − 1) for every gate g; (b) with seq_t(v) and its ascents as in RESULTS R121, if every seq_t(e_g) and every seq_t(β_g) has at most B ascents, then flips(g) ≤ 2·((2M + 3)·F′_B(M) − 1) with F′_B of RESULTS R121, and under HYPOTHESIS [E-LEV] (lev(x) < lev(x′) implies pr(e_(x,k)) < pr(e_(x′,k′))) B = U(G), the number of options whose Ξ-target has a higher level, may be taken (Corollary GATE-FLIP); every quiet step is a p-step of RESULTS R118, every maximal window of quiet steps has at most N steps, and T_CYC ≤ Q + (Q + 1)·N, Q := the number of loud steps, Q ≤ Σ_v (D^tot(v) − 1) (Corollary QUIET-N, sharpens RESULTS R123 Theorem QUIET / Corollary T-QUIET: window L → N); with the Ξ-feedback number k := the minimum size of a set of movers meeting every cycle (self-loops count) of the Ξ-graph on the movers (an edge x → xt(x, j) for each option whose Ξ-target is a mover; options whose Ξ-target is X omitted): for every genome G with Ξ-feedback number k and every state t of IDEAL-CYC(G), the cycle nodes Λ_t(v), over all vertices v other than c_W, c_X and the e-vertices whose successor is c_W, take at most k + 1 values: K1, and, for each cycle of the functional graph Ξ_σ on the movers, x → xt(x, σ_t(x)), the most relevant vertex of the Γ-cycle through its movers, their chosen gates and β-faces; Ξ_σ has at most k cycles (premises: RESULTS R104's definitions of the genome and of Γ(G) only, including that the Odd vertices with a choice are the gates and K2; RESULTS R118 (a), (d) BR-SEG, (e) with its stated reason, R118's order ⊴ on values (Λ, Π, k) (VJ00 §4.2 / Friedmann arXiv 1106.0778 §3) and its step labels C / R / p; RESULTS R121 Lemma E-MON, and for GATE-FLIP (b) only R121's HUB-ASC-G whole-run form and UP-B; RESULTS R123 Lemma CN2, Lemma B-ONLY, Corollary NO-TIE, Lemma LOC-GATE, Lemma LOC-K2; R123 Theorem QUIET and Corollary T-QUIET are the bounds QUIET-N sharpens; [E-LEV] only in GATE-FLIP (b)'s U(G) form; not used: any lane packet, any L-RED or L-SI lane lemma, any P-N5-CHAIN fact) (Lemma (k+1)-Λ): this bounds per-gate flips and quiet windows only, in one restricted model; it makes no new class of genomes on which T_CYC is polynomial, and at k = 1 it bounds the cycle nodes only (whether max_g min(D^tot(e_g), D^tot(β_g)) is polynomial in N + M at k = 1 is OPEN); T bounds IDEAL-CYC iterations only; nothing is proved on Γ3: by RESULTS R118 (k) and (l), under REACH3-CYC's premises, N5′-xi from S3 on Γ3(G) makes Howard steps on Γ3 up to its first fallback, a run that can differ from the IDEAL-CYC run at exact VJ ties (R118's DATA), and a Γ3 form of this proof (not given here) would bound N5′-xi only up to its first fallback; nothing is claimed about post-fallback iterations, N5′-xi's total count, N5 or general games; DEAD (each with the instance that kills it; none is a premise): D1 «at k = 1 each gate flips at most 2·lamch(g) + 1 times», lamch(g) the number of steps at which Λ changes at e_g or β_g (experiments/new/box202/k1fail_202.json, sha1 99bba752, gate (4, 0): 2 flips, lamch 0); D2 «at k = 1 every gate flips at most c·(lamch(g) + 1) times», every constant c (L-RED 63's MWR(n), claude/l-red 406ef2fd, R229-box202 §2; copies experiments/new/box203/inst/MWR4_2.json sha1 856d369b, MWR8_2.json 918f1414, MWR16_2.json 2ccda9a9: gate (qz, 0) flips 2n + 1 times with lamch 0); D3 «every e-sequence has at most k + 1 ascents» (at k = 1 the staircase ST(m), box203/inst/ST4_k1.json sha1 3fa71a98, 3 ascents, and ST8_k1.json sha1 9dbf71f4, 7 ascents; at k = 2 L-SI's WC family, box202/inst/WC4_2, WC8_2, WC16_2: 4, 8, 16 ascents); DATA, clause by clause (scope IDEAL-CYC from the genome's start, cap 20,000 states, engine box191/idealcyc.py with experiments/si/si.py's Engine; tools in experiments/new/box203/, run in part by check203.sh; all pinned in box203/qn.pins): GATE-CLASS: lfail 0 (unit: flip steps at which neither face's class (Λ, E) changes); GATE-FLIP (a): gfail 0 (unit: gates with flips(g) > D^tot(e_g) + D^tot(β_g) − 2); QUIET-N: qflip 0 (unit: quiet steps at which σ̄ changes at some Odd vertex), qfail 0 (unit: runs with a maximal quiet window > N), Tfail 0 (unit: runs with T_CYC > Q + (Q + 1)N); all by gfc203.py on: the 57-genome corpus (the 53 box 202 genomes, MWR4/8/16_2, k1fail_202; out/gfc203_corpus.out), 1,000 rand191 genomes (d 1-6, w 1-3, degree 2-3, seed 2; out/rnd203_rand_s2.out), 5,000 k = 1 genomes (box202 k1srch202.mk, seed 202; out/rnd203_k1_s202.out), K1C16_n400 and K1F21_n48 (out2/gfc203_k1extra.out); control GFC_CTRL=3 (only the e-face's class looked at) fires, lfail 9 on MWR4_2 (check203.out); longest quiet window 10 at N 108 (DSALT6_n108) on this engine and 11 on REFEREE-2 35's engine, both ≤ N (Howard's tie rule is free in R118 (a)); (k+1)-Λ: lam203.py lfail 0 (unit: states with more than k + 1 values) on 2,000 k = 1 genomes (seed 7), 1,000 k = 2 genomes (seed 8) and 1,000 rand191 genomes (seed 2) (out2/lam203_*.out); lam203.py skips genomes with k > 12, and none of these 4,000 was skipped (unit: genomes; skip203.py, out2/skip203.out: k ≤ 5 on every genome); control LAM_CTRL=1 (bound k) fires, lfail 3,492 on the k = 1 set; k = 1 per-gate records (unit: flips of the gate with most flips; lamch 0; C = 0): MWR4/8/16_2 9 / 17 / 33, K1F21_n48 (N 48) 21, K1C16_n400 (N 113) 31; Γ3 counts (N5′-xi from S3 to its first fallback, same counters 0 on MWR4_2, MWR8_2, k1fail_202, C4_NM50, C6G8_n54, RWX_n95; out/gfc203_g3.out) are DATA only, nothing claimed; independent replays, every fail counter 0, their counters in their own pinned outputs, cited, not re-run: REFEREE 30 R-P-N5-QN §4 (claude/referee 452800c5; 1,500 runs and 8 pinned files), REFEREE-2 35 R2-P-N5-QN (claude/referee-2 5d4f06c2; 61 pinned genome runs and 6,000 random), L-RED 63 cls229 (29 rows; claude/l-red 8c034440) and lam229 (12 genomes; claude/l-red cdecc4e0); TARGET.md §2 (M4) asks for an algorithm polynomial on every parity game and §4 says a bound on a restricted class is not M4, so this is not M4 (P-N5-QN, docs/new/P-N5-QN.md, frozen at l-new e252182d, sha1 97254bd2, with fixes entry 1, docs/new/P-N5-QN-fixes.md; L-NEW successors 68-69; related lane statements, not premises: L-RED 63 Lemma CLASS-PAYS / Corollary GATE-FLIP-MIN (claude/l-red 8c034440, docs/red/R229-box203.md §3) and Lemma REL-G (claude/l-red fa4e50fe, docs/red/R229-box93.md §1.3), L-SI 49 NP-SHAPE / E-FACE-PAYS (claude/l-si f723957b, docs/si/box93-k7k6.md), L-SI 48 GATE-LOW-NULL (claude/l-si d962efdb, docs/si/box92-closed.md)). G-N5-TIME stays open.
+R125 (P-N5-CHAIN; CHECKER C139 1622c7d9)», the last at 0753fd71 and at origin trunk 575ac944), as a pure insertion with one separating space
+before the row's closing « |». BUILT FROM L-2 by tools/upd126b.py (R118's procedure: the direct build of r126a/tools/upd126a.py, unchanged,
+with R126's constants unchanged: date «(2026-11-09)», start «for every genome G (Ξ-cycles and Ξ self-loops allowed), with class_t(v) :=
+(Λ_t(v), E_t(v)), … (= R123's D^tot_E(v)): » (the span up to the first label), its four labels «(Theorem GATE-CLASS)», «(Corollary
+GATE-FLIP)», «(Corollary QUIET-N, sharpens RESULTS R123 Theorem QUIET / Corollary T-QUIET: window L → N)», «(Lemma (k+1)-Λ)», source prefix
+«(P-N5-QN, docs/new/P-N5-QN.md»), with NO reading; controls on 575ac944 (GAPS = 0753fd71's): the same function rebuilds R123's landed UPDATE
+(739c5f71…; filled with 2026-11-09, 00:52, 3479ecb0 it occurs once on l. 11: True), R124's (8cd83060…; 2026-11-09, 09:04, 5b9f4af8, once:
+True), R125's (f22faed5…; 2026-11-11, 23:47, 1622c7d9: it ends l. 11, True) and, from L-1, the first fill's UPDATE (640258db…: True);
+negative controls (an altered drop string; an altered label) raise errors. sha1 89c5f3571a20e19baf3782ffb2534b0ce62a2f68 of the line without
+newline and unfilled (6e01ac288d5cff82433556560dce631fb53c1681 with its newline), 7216 bytes, = C140 §4's UPDATE-2 (True) = the first fill's
+d[375] line with R-D2 and R-S applied (True). <DATE>, <HH:MM> and <checker> are the landing date, time and the CHECKER commit of the PASS
+(C140 Add. 1), all filled at landing:
+UPDATE <DATE> <HH:MM>Z: RESULTS R126 (P-N5-QN; CHECKER C140 <checker>) [refereed-only] LANDED: In IDEAL-CYC(G) (RESULTS R118 (a): Γ(G) with every non-mover Even vertex frozen at R104's start, Odd unrestricted (gates and K2), Howard steps at the movers), for every genome G (Ξ-cycles and Ξ self-loops allowed), with class_t(v) := (Λ_t(v), E_t(v)), E_t(v) the e-vertices of Π_t(v), and loud / quiet steps as in RESULTS R123, flips(g) := #{t ≥ 1 : σ̄_(t−1)(g) ≠ σ̄_t(g)} and D^tot(v) := the number of distinct classes of v over the run (= R123's D^tot_E(v)): for every gate g and every step t, if σ̄_(t−1)(g) ≠ σ̄_t(g), then class_(t−1)(e_g) ≠ class_t(e_g) or class_(t−1)(β_g) ≠ class_t(β_g) (Theorem GATE-CLASS); (a) flips(g) ≤ (D^tot(e_g) − 1) + (D^tot(β_g) − 1) for every gate g; (b) with seq_t(v) and its ascents as in RESULTS R121, if every seq_t(e_g) and every seq_t(β_g) has at most B ascents, then flips(g) ≤ 2·((2M + 3)·F′_B(M) − 1) with F′_B of RESULTS R121, and under HYPOTHESIS [E-LEV] (lev(x) < lev(x′) implies pr(e_(x,k)) < pr(e_(x′,k′))) B = U(G), the number of options whose Ξ-target has a higher level, may be taken (Corollary GATE-FLIP); every quiet step is a p-step of RESULTS R118, every maximal window of quiet steps has at most N steps, and T_CYC ≤ Q + (Q + 1)·N, Q := the number of loud steps, Q ≤ Σ_v (D^tot(v) − 1) (Corollary QUIET-N, sharpens RESULTS R123 Theorem QUIET / Corollary T-QUIET: window L → N); with the Ξ-feedback number k := the minimum size of a set of movers meeting every cycle (self-loops count) of the Ξ-graph on the movers (an edge x → xt(x, j) for each option whose Ξ-target is a mover; options whose Ξ-target is X omitted): for every genome G with Ξ-feedback number k and every state t of IDEAL-CYC(G), the cycle nodes Λ_t(v), over all vertices v other than c_W, c_X and the e-vertices whose successor is c_W, take at most k + 1 values: K1, and, for each cycle of the functional graph Ξ_σ on the movers, x → xt(x, σ_t(x)), the most relevant vertex of the Γ-cycle through its movers, their chosen gates and β-faces; Ξ_σ has at most k cycles (premises: RESULTS R104's definitions of the genome and of Γ(G) only, including that the Odd vertices with a choice are the gates and K2; RESULTS R118 (a), (d) BR-SEG, (e) with its stated reason, R118's order ⊴ on values (Λ, Π, k) (VJ00 §4.2 / Friedmann arXiv 1106.0778 §3) and its step labels C / R / p; RESULTS R121 Lemma E-MON, and for GATE-FLIP (b) only R121's HUB-ASC-G whole-run form and UP-B; RESULTS R123 Lemma CN2, Lemma B-ONLY, Corollary NO-TIE, Lemma LOC-GATE, Lemma LOC-K2; R123 Theorem QUIET and Corollary T-QUIET are the bounds QUIET-N sharpens; [E-LEV] only in GATE-FLIP (b)'s U(G) form; not used: any lane packet, any L-RED or L-SI lane lemma, any P-N5-CHAIN fact) (Lemma (k+1)-Λ): this bounds per-gate flips and quiet windows only, in one restricted model; it makes no new class of genomes on which T_CYC is polynomial, and at k = 1 it bounds the cycle nodes only (whether max_g min(D^tot(e_g), D^tot(β_g)) is polynomial in N + M at k = 1 is OPEN); T bounds IDEAL-CYC iterations only; nothing is proved on Γ3: by RESULTS R118 (k) and (l), under REACH3-CYC's premises, N5′-xi from S3 on Γ3(G) makes Howard steps on Γ3 up to its first fallback, a run that can differ from the IDEAL-CYC run at exact VJ ties (R118's DATA), and a Γ3 form of this proof (not given here) would bound N5′-xi only up to its first fallback; nothing is claimed about post-fallback iterations, N5′-xi's total count, N5 or general games; DEAD (each with the instance that kills it; none is a premise): D1 «at k = 1 each gate flips at most 2·lamch(g) + 1 times», lamch(g) the number of steps at which Λ changes at e_g or β_g (experiments/new/box202/k1fail_202.json, sha1 99bba752, gate (4, 0): 2 flips, lamch 0); D3 «every e-sequence has at most k + 1 ascents» (at k = 1 the staircase ST(m), box203/inst/ST4_k1.json sha1 3fa71a98, 3 ascents, and ST8_k1.json sha1 9dbf71f4, 7 ascents; at k = 2 L-SI's WC family, box202/inst/WC4_2, WC8_2, WC16_2: 4, 8, 16 ascents); DATA, clause by clause (scope IDEAL-CYC from the genome's start, cap 20,000 states, engine box191/idealcyc.py with experiments/si/si.py's Engine; tools in experiments/new/box203/, run in part by check203.sh; all pinned in box203/qn.pins): GATE-CLASS: lfail 0 (unit: flip steps at which neither face's class (Λ, E) changes); GATE-FLIP (a): gfail 0 (unit: gates with flips(g) > D^tot(e_g) + D^tot(β_g) − 2); QUIET-N: qflip 0 (unit: quiet steps at which σ̄ changes at some Odd vertex), qfail 0 (unit: runs with a maximal quiet window > N), Tfail 0 (unit: runs with T_CYC > Q + (Q + 1)N); all by gfc203.py on: the 57-genome corpus (the 53 box 202 genomes, MWR4/8/16_2, k1fail_202; out/gfc203_corpus.out), 1,000 rand191 genomes (d 1-6, w 1-3, degree 2-3, seed 2; out/rnd203_rand_s2.out), 5,000 k = 1 genomes (box202 k1srch202.mk, seed 202; out/rnd203_k1_s202.out), K1C16_n400 and K1F21_n48 (out2/gfc203_k1extra.out); control GFC_CTRL=3 (only the e-face's class looked at) fires, lfail 9 on MWR4_2 (check203.out); longest quiet window 10 at N 108 (DSALT6_n108) on this engine and 11 on REFEREE-2 35's engine, both ≤ N (Howard's tie rule is free in R118 (a)); (k+1)-Λ: lam203.py lfail 0 (unit: states with more than k + 1 values) on 2,000 k = 1 genomes (seed 7), 1,000 k = 2 genomes (seed 8) and 1,000 rand191 genomes (seed 2) (out2/lam203_*.out); lam203.py skips genomes with k > 12, and none of these 4,000 was skipped (unit: genomes; skip203.py, out2/skip203.out: k ≤ 5 on every genome); control LAM_CTRL=1 (bound k) fires, lfail 3,492 on the k = 1 set; k = 1 per-gate records (unit: flips of the gate with most flips; lamch 0; C = 0): MWR4/8/16_2 (L-RED 63's MWR(n), claude/l-red 406ef2fd; box203/inst/MWR4_2.json sha1 856d369b, MWR8_2.json 918f1414, MWR16_2.json 2ccda9a9) 9 / 17 / 33, K1F21_n48 (N 48) 21, K1C16_n400 (N 113) 31; Γ3 counts (N5′-xi from S3 to its first fallback, same counters 0 on MWR4_2, MWR8_2, k1fail_202, C4_NM50, C6G8_n54, RWX_n95; out/gfc203_g3.out) are DATA only, nothing claimed; independent replays, every fail counter 0, their counters in their own pinned outputs, cited, not re-run: REFEREE 30 R-P-N5-QN §4 (claude/referee 452800c5; 1,500 runs and 8 pinned files), REFEREE-2 35 R2-P-N5-QN (claude/referee-2 5d4f06c2; 61 pinned genome runs and 6,000 random), L-RED 63 cls229 (29 rows; claude/l-red 8c034440) and lam229 (12 genomes; claude/l-red cdecc4e0); TARGET.md §2 (M4) asks for an algorithm polynomial on every parity game and §4 says a bound on a restricted class is not M4, so this is not M4 (P-N5-QN, docs/new/P-N5-QN.md, frozen at l-new e252182d, sha1 97254bd2, with fixes entry 1, docs/new/P-N5-QN-fixes.md; L-NEW successors 68-69; related lane statements, not premises: L-RED 63 Lemma CLASS-PAYS / Corollary GATE-FLIP-MIN (claude/l-red 8c034440, docs/red/R229-box203.md §3) and Lemma REL-G (claude/l-red fa4e50fe, docs/red/R229-box93.md §1.3), L-SI 49 NP-SHAPE / E-FACE-PAYS (claude/l-si f723957b, docs/si/box93-k7k6.md), L-SI 48 GATE-LOW-NULL (claude/l-si d962efdb, docs/si/box92-closed.md)). G-N5-TIME stays open.
 
 Addendum (subagent, first fill; checks run on the pass-1 draft, whose title, entry block, GAPS preamble and UPDATE are byte-equal to this
 file's; outputs r126a/*_p1.out; the final run on this file is r126a/*_final.out). Verbatim key lines, with «|» printed as «¦»:
@@ -432,3 +575,143 @@ file's; outputs r126a/*_p1.out; the final run on this file is r126a/*_final.out)
   [sim] GAPS: only l. 11 changes True ; lines 23 -> 23 ; l. 11 "¦" 76 -> 76 ; «UPDATE 2026-» 60 -> 60 ; R126 last: True ; after R125's (2026-11-11 23:47Z, 1622c7d9): True ; prefix byte-unchanged: True
   [sim] GAPS whole file "¦" 198 -> 198
   [sim] fill values used only here: 2099-01-11 00:00 3333333
+
+Addendum 2 (subagent, for the Lead; does not land; second fill, 2026-11-12T04:13:53Z by date -u). (1) SECOND FILL on line L-2 (l-new
+70501a99, sha1 166e4695…), to CHECKER C140 Add. 1. Built in the scratchpad by fill2.py from git show 4c2f407d:docs/agents/R126-draft.md
+(sha1 9e5123ad…, asserted; the same file at origin trunk 575ac944); I merged, committed and pushed nothing and wrote nothing into the
+repository; the Lead commits this file. (2) WHAT IS LEFT: CHECKER C140 Add. 1 on this file (C140 §6: L-2 = §4, UPDATE-2 = 89c5f357, the
+block's L-1 references and its D2 text refreshed; and the notes D-1, D-2, N-S, N-L41, N-W and D-3 of the SECOND FILL section); the Lead's
+merges of claude/l-new (70501a99 or later), claude/referee (fbc4d865), claude/referee-2 (f6cfb35e) and claude/checker (62401c1b, then C140
+Add. 1's commit), none of them an ancestor of origin trunk 575ac944 or of the local HEAD b3d7294c; then the Lead lands R126 after R125 with
+<DATE>, <HH:MM> and <checker> filled. (3) Scratch:
+/tmp/claude-0/-home-user-parity-games-challange/43a29ffc-0674-5391-84c1-1d3918a14b5d/scratchpad/r126b/ (arch/ = full git archive of
+70501a99; mk/ and mkscript/ for mkl2_qn.py; blocks.*, neg.*, neg2.*, mk.out; tools/blocks203.sh, blockqn.sh, blockflip.sh, runblocks.sh,
+l2rel126b.py, upd126b.py, chk126b.py, lp126b.py, sim126b.py, rec126b.py, hex126b.py with their *.out, *_p1.out and *_final.out; fill2.py,
+cites2.json, fetch.txt, fetch2.log, filltime.txt, R126-fill1.md (the first fill), R126-draft.pre.md (pass 1); report.txt). (4) NOT DONE:
+scripts/verify.sh and scripts/push.sh not run (the two box 203 blocks of experiments/new/check.sh only, and each block once more for its
+negative control); the referees' qn_l2.py and own diff scripts not re-run (their sections read); the proofs not re-derived; L-RED's files
+not re-read at this fill; the first fetch's exit code not captured (the second fetch rc 0, every head unchanged); no Oink run (L-2 cites no
+Oink check). (5) Checks on the pass-1 draft, whose line 1, SECOND FILL section, title, entry block, GAPS preamble and UPDATE are byte-equal
+to this file's (outputs r126b/*_p1.out; the final run on this file is r126b/*_final.out). Verbatim output lines, with «|» printed as «¦» and
+the guillemets as ‹ ›, so that they are not read as quotes of this file:
+  [chk] model: landed R125 title (0753fd71) == ‹### R125 [refereed-only] › + R125 L-5 + ‹, CHECKER PASS (docs/checker/C139.md, checker 1622c7d9)›: True
+  [chk] file: sha1 82abf5be9e0fccd2cbb569dcfb8664fde9a6b83b bytes 93556 lines 597 ends with newline True
+  [chk] ### R headings at d[...]: [328]
+  [chk] (a) title == prefix + L-2 (no newline) + tail: True ; middle bytes == L-2 bytes without newline: True
+  [chk]     title: 7133 chars, 7265 bytes, sha1 2cf364dc3877bd8c1dd00e32a50172d069dac59d, ( 138 ) 138, min depth 0, final 0, ¦ 0, fill token 1
+  [chk] (e) entry block d[328:504] (lines 329-504, 176 lines, sha1 of the joined block 1a73a194ceaea13bf4575f80384578c4bb8d2196); next line blank: True; line after: 'Proposed GAPS line-11 UPDATE (append-onl'
+  [chk] (b) fill token in the entry block: 1 ; in the whole file: 1 at lines [329]
+  [chk]     ‹\n**Erratum E-1** (not a result› in the block: False ; line-start ‹**Erratum› in the file: 0 ; empty lines inside the block: 0
+  [chk] (e) UPDATE line(s) at d[...]: [518] (line [519])
+  [chk]     GAPS preamble at d[505:518]
+  [chk] (c) "¦" in entry block: 0 ; in UPDATE: 0 ; in GAPS preamble: 1 (the quoted ‹ ¦› of the row end); in the file: 14
+  [chk] (d) UPDATE <DATE> 1 <HH:MM> 1 <checker> 1; head at its start: True
+  [chk]     UPDATE = upd126L2.txt: True ; sha1 (no newline) 89c5f3571a20e19baf3782ffb2534b0ce62a2f68 ; with newline 6e01ac288d5cff82433556560dce631fb53c1681 ; 7216 bytes ( 137 ) 137
+  [chk]     stale grep, entry block minus title (case-insensitive): {'first fill': 1}
+  [chk]     stale grep, title: {'pending': 1} ; UPDATE: {}
+  [chk]     line 1 ‹NOT LANDED› 1 ; ‹<DATE>› in file 5 ; ‹<checker>› 5 ; ‹<HH:MM>› 5
+  [chk]     SECOND FILL section d[1:143]; Addendum 2 d[578:597]
+  [chk] (e) slices: line 1 d[0]; FIRST FILL record d[143:327] (+ blank d[327]: ''); title d[328]; entry d[328:504]; blank d[504]; preamble d[505:518]; UPDATE d[518]; blank d[519]: ''; Addendum d[520:577]
+  [chk] (f) QUOTE SWEEP (corpus: 109 texts)
+  [chk]     sweep line 1: 1 quotes, 1 parts, 0 not found []
+  [chk]     sweep FIRST FILL record: 147 quotes, 125 parts, 0 not found []
+  [chk]     sweep entry block: 142 quotes, 140 parts, 0 not found []
+  [chk]     sweep GAPS preamble + UPDATE: 11 quotes, 11 parts, 0 not found []
+  [chk]     sweep first fill Addendum: 16 quotes, 11 parts, 0 not found []
+  [chk]     sweep Addendum 2: 2 quotes, 0 parts, 0 not found []
+  [chk]     sweep SECOND FILL section: 88 quotes, 83 parts, 0 not found []
+  [chk]     sweep whole file: 407 quotes, 371 parts, 0 not found []
+  [chk]     sweep NEGATIVE CONTROL: 1 quotes, 1 parts, 1 not found ['QUIET-N bounds T_CYC by N cubed on every second genome']
+  [chk]     negative control reported missing: True
+  [lp] cites 46 (46 shown in the draft as ‹quote›, 0 used for a line number only) in 4 (commit, file) pairs; failed at the cited lines: 0 []
+  [lp] shown quotes not in the draft as ‹quote›: 0 []
+  [lp] NEGATIVE CONTROL 1 (window shifted by 40 lines): 0 of 46 still pass []
+  [lp] NEGATIVE CONTROL 2 (longest word mutated): 0 of 46 still pass
+  [lp]     445372f9 docs/checker/C140.md 18
+  [lp]     70501a99 docs/new/P-N5-QN-fixes.md 7
+  [lp]     f6cfb35e docs/referee-2/R2-P-N5-QN.md 12
+  [lp]     fbc4d865 docs/referee/R-P-N5-QN.md 9
+  [sim] trunk 575ac944 (= 0753fd71 = local HEAD b3d7294c) RESULTS sha1 9170163bf892f96f38009c1e11f87bce9764b6e2 lines 16368 "¦" 1477 ; GAPS sha1 dbb55831a88223706bbaa9105f5397f3cea3d6e2 lines 23
+  [sim] pure insertion: prefix byte-unchanged True ; suffix byte-unchanged True ; inserted lines 177
+  [sim] headings after insertion: {'R124': [15371], 'R125': [15595], 'R126': [15726], 'E-1': [15903], 'E-2': [15916], 'E-3': [15944], 'Dead': [15975]}
+  [sim] R125 at l. 15595 (unchanged: True); R126 at l. 15726-15901, blank l. 15902 (''), ‹**Erratum E-1**› l. 15903; the line before R126: l. 15725 '' (R125's block ends l. 15724)
+  [sim] order R124 < R125 < R126 < E-1 < E-2 < E-3 < Dead ends: True
+  [sim] RESULTS lines 16368 -> 16545 (+177) ; "¦" 1477 -> 1477 (unchanged True) ; ‹checker 3333333)› once True ; fill token 0
+  [sim] ### R1xx headings: 27, R126 the last: True
+  [sim] GAPS: only l. 11 changes True ; lines 23 -> 23 ; l. 11 "¦" 76 -> 76 ; ‹UPDATE 2026-› 60 -> 60 ; R126 last: True ; after R125's (2026-11-11 23:47Z, 1622c7d9): True ; prefix byte-unchanged: True
+  [sim] GAPS whole file "¦" 198 -> 198
+  [sim] fill values used only here: 2099-01-11 00:00 3333333
+  [rec] FIRST FILL record + blank: this d[143:328] == first fill d[1:186]: True (185 lines)
+  [rec] first fill Addendum: this d[520:577] == first fill d[377:434]: True (57 lines); blank before: '', after: ''
+  [rec] first fill title in this file: 0; first fill UPDATE (640258db) in this file: 0; first fill line 1: 0
+  [rec] token diff L-1 -> L-2: 2 hunks, 43 tokens out, 12 in
+  [rec]     delete "D2 ‹at k = 1 every gate flips at most c·(lamch(g) + 1) times›, every constant c (L-RED 63's MWR(n), claude/l-red 406ef2fd, R229-box202 §2; copies experiments/n -> ''
+  [rec]     insert '' -> "(L-RED 63's MWR(n), claude/l-red 406ef2fd; box203/inst/MWR4_2.json sha1 856d369b, MWR8_2.json 918f1414, MWR16_2.json 2ccda9a9)"
+  [rec] token diff title: 2 hunks, 43 tokens out, 12 in
+  [rec] token diff entry block without title: 60 hunks, 59 tokens out, 728 in
+  [rec]     replace '68-69,' -> '68-70,'
+  [rec]     insert '' -> '8f4dab7e, 70501a99,'
+  [rec]     replace '8f4dab7e' -> 'd3fc2d21'
+  [rec]     replace '0753fd71;' -> '0753fd71 and 575ac944;'
+  [rec]     replace "one entry (02a928a3, 2026-11-09T10:14:07Z, the file's only commit; 71" -> 'two entries (70501a99, 2026-11-12T02:31:09Z: 95'
+  [rec]     replace '7,176' -> '9,737'
+  [rec]     replace 'b8f8a1a905c261c1f76bc3dc2a62bc37fa744bbc;' -> 'b095597c579ab5d073b77aac3d2f07e4359b433f,'
+  [rec]     insert '' -> 'd3fc2d21; its first 7,176 bytes are the file at 02a928a3, 2026-11-09T10:14:07Z, 71 lines, sha1 b8f8a1a905c261c1f76bc3dc2a62bc37fa744bbc, byte-equal at 0753fd71'
+  [rec]     replace 'at 0753fd71).' -> '575ac944).'
+  [rec]     insert '' -> "Entry 2 (L-NEW successor 70, 70501a99, l. 73-88; line-only; CHECKER C140 E-1 = flag G-L43, ruling R-D2a): ‹What changes: the DEAD list of the RESULTS line only. D2 is dropped; D3 keeps its name.› (l. 78), ‹No statement, proof, label or premise of P-N5-QN changes; the frozen packet (e252182d, sha1 9
+  [rec]     replace 'L-1, 28bf566bdf95d0708b3b80303bfa7311c8d5d8b1 (docs/new/P-N5-QN-line-L1.txt,' -> 'L-2, 166e4695b07843ae73e2d23ac92802c256f31113 (docs/new/P-N5-QN-line-L2.txt,'
+  [rec]     replace '02a928a3, 2026-11-09T10:14:07Z,' -> '70501a99, 2026-11-12T02:31:09Z,'
+  [rec]     replace '7,357' -> '7,187'
+  [rec]     replace 'dcb87fa888cc80fd1f231cd8620219cf268fcebc).' -> 'fd3dbf2cc356955821208ca6c9a8a6dba3d8db84).'
+  [rec]     replace 'L-1' -> 'L-2'
+  [rec]     replace "L-1's" -> "L-2's"
+  [rec]     replace '(140' -> '(137'
+  [rec]     replace '140' -> '137'
+  [rec]     replace 'experiments/new/box203/mkl1_qn.py,' -> "experiments/new/box203/mkl2_qn.py (L-1 + R-D2 + R-S; it asserts the frozen packet's sha1, L-1's sha1, each old string once and L-2's sha1) from L-1 (28bf566bdf95d0708b3b80303bfa7311c8d5d8b1, docs/new/P-N5-QN-line-L1.txt, l-new 02a928a3, 2026-11-09T10:14:07Z, 7,357 bytes, blob dcb87fa8…), which expe
+  [rec]     insert '' -> 'L-1'
+  [rec]     replace '0).' -> "0); L-2 byte-tested by REFEREE (§D, ‹`cmp` with the lane's L-2: **EQUAL**›, l. 157), by REFEREE-2 (Add. 3, ‹It equals CHECKER C140 §4's expected L-2›, l. 206) and rebuilt by the drafter (mkl2_qn.py on a copy of 70501a99's packet and L-1: rc 0, cmp-equal)."
+  [rec]     insert '' -> 'quoted below); L-2 MATCHES (§D, REFEREE successor 31, fbc4d865, l. 168,'
+  [rec]     insert '' -> 'below); L-2 MATCHES (Add. 3, REFEREE-2 successor 37, f6cfb35e, l. 233-234, quoted'
+  [rec]     insert '' -> 'successor 31: §D fbc4d865;'
+  [rec]     replace '565d5022).' -> '565d5022; successor 37: Add. 3 f6cfb35e).'
+  [rec]     insert '' -> "Both re-signed on L-2, whose DEAD list is D1, D3 (D2 is DATA, fixes entry 2): REFEREE §D ‹Every statement and label of P-N5-QN unchanged.› (l. 167); REFEREE-2 Add. 3 ‹Every signed statement of P-N5-QN is unchanged, and my predecessor's verdicts stand.› (l. 234)."
+  [rec]     replace 'L-1' -> 'L-1, unchanged in L-2'
+  [rec]     insert '' -> 'entries 1-2;'
+  [rec]     replace '1, which' -> '1'
+  [rec]     replace 'wording):' -> 'wording, entry 2 is line-only):'
+  [rec]     insert '' -> 'or L-2'
+  [rec]     replace 'D1-D3' -> 'D1, D3'
+  [rec]     replace '137-147):' -> "137-147; the packet's D2 is not in L-2: fixes entry 2, C140 E-1 under L43):"
+  [rec]     insert '' -> "the packet's"
+  [rec]     replace 'c (MWR4/8/16_2: 9' -> 'c, rests on MWR4/8/16_2 (9'
+  [rec]     replace '0);' -> "0), which L-2 carries as DATA (the C = 0 clause, with L-RED 63's source, R-S);"
+  [rec]     insert '' -> 'Re-signed on L-2 as D1, D3: REFEREE §D (l. 166-167, quoted in the SECOND FILL section) and REFEREE-2 Add. 3 (D1 and D3 ‹SIGN (dead)›, l. 224 and 229; D1 re-run on its own GATE engine, l. 226-227).'
+  [rec]     replace '(L-1).' -> '(L-2).'
+  [rec]     replace '90-91).' -> '90-91), on those instances only: ‹So D2 is the L43 case exactly.› (l. 25-26) (C140 E-1). By ruling R-D2a (C140 §2, §4; fixes entry 2) L-2 drops D2 from the DEAD list and keeps its numbers, source commit and instance sha1s in the C = 0 DATA clause (R-S). REFEREE-2 37: ‹the DATA kills the bound for c
+  [rec]     replace 'L-1).' -> 'L-1 and L-2).'
+  [rec]     replace 'D2' -> 'The MWR(n) count 2n + 1'
+  [rec]     replace 'supported by' -> 'measured on'
+  [rec]     insert '' -> '(n = 4, 8, 16) and not proved for every n; L-2 carries it as DATA, not as a DEAD'
+  [rec]     insert '' -> "(ix) The line's source note names ‹with fixes entry 1› and ‹L-NEW successors 68-69›; fixes entry 2 (successor 70) is line-only (REFEREE §D: ‹Fixes entry 2: line-only›, l. 154) and carries no proof text, so the note does not name it (the C134 N-S rule; R124 and R125 landed with their line-only entri
+  [rec]     replace '8f4dab7e' -> '8f4dab7e, 0753fd71, 70501a99, d3fc2d21'
+  [rec]     replace '0753fd71;' -> '575ac944;'
+  [rec]     insert '' -> 'rows; 70501a99 adds mkl2_qn.py and L-2 and re-pins the fixes file, 61 → 63'
+  [rec]     replace '8f4dab7e' -> '8f4dab7e, 0753fd71, 70501a99, d3fc2d21'
+  [rec]     replace '0753fd71,' -> '575ac944,'
+  [rec]     replace '02a928a3: 2026-11-11T23:51:25Z-2026-11-11T23:51:36Z,' -> '70501a99: 2026-11-12T04:09:05Z-2026-11-12T04:09:17Z,'
+  [rec]     replace '61' -> '63'
+  [rec]     replace 'L-1' -> 'L-2'
+  [rec]     insert '' -> 'The same blocks from a full archive of 02a928a3 (61 pinned files): rc 0 at 2026-11-11T23:51:25Z-2026-11-11T23:51:36Z (drafter, first fill) and by CHECKER C140 (§5: ‹2026-11-12T01:59:20Z-01:59:31Z, rc 0›, l. 77).'
+  [rec]     insert '' -> "L-2 changes no DATA number; R-S adds the MWR source and the three instance sha1s, the pinned files' (box203/inst/SHA1SUMS at 70501a99)."
+  [rec]     replace '148-149).' -> "148-149); successor 31's §D fbc4d865 (fbc4d86560601681939940436f729ff676b47f0b, 2026-11-12T03:28:29Z) l. 151-168, ‹Verdict: fixes entry 2 CORRECT. **Line L-2 MATCHES** (= L-1 + R-D2 + R-S exactly; = CHECKER C140 §4's L-2).› (l. 168)."
+  [rec]     replace '200-201).' -> "200-201); successor 37's Add. 3 f6cfb35e (f6cfb35ed732ae591f77fa37038135d309e94ba8, 2026-11-12T03:15:30Z) l. 203-235, ‹Verdict: L-2 (70501a99, sha1 166e4695) MATCHES CHECKER C140 §4 and the Lead's ruling R-D2a.› (l. 233)."
+  [rec]     replace 'L-1).' -> 'L-1); successor 70, 70501a99 (fixes entry 2, L-2).'
+  [rec]     replace 'archive;' -> "archive, and byte-tested L-2 with its own script (REFEREE §D: ‹both strings typed from CHECKER C140 §4 (claude/checker 445372f9), not from the lane's generator›, l. 155-156; REFEREE-2 Add. 3: ‹Diff L-1 → L-2 (word level, own script): exactly two regions.›, l. 209);"
+  [rec]     insert '' -> 'REFEREE-2 37: ‹I did not read docs/referee/ for this addendum.› (l. 235).'
+  [rec]     replace 'L-1' -> 'L-2'
+  [rec] entry block lines: first fill 176, this 176; per-line: 136 lines byte-equal, 40 changed
+  [rec] token diff UPDATE: 2 hunks, 43 tokens out, 12 in
+  [rec]     delete "D2 ‹at k = 1 every gate flips at most c·(lamch(g) + 1) times›, every constant c (L-RED 63's MWR(n), claude/l-red 406ef2fd, R229-box202 §2; copies experiments/n -> ''
+  [rec]     insert '' -> "(L-RED 63's MWR(n), claude/l-red 406ef2fd; box203/inst/MWR4_2.json sha1 856d369b, MWR8_2.json 918f1414, MWR16_2.json 2ccda9a9)"
+  [hex] hex ids in the draft: 111; git objects 70; measured sha1s (not objects) 41; neither: 0 []
+  [hex] NEGATIVE CONTROL (0badc0de1, 1234abcd9f): neither: 2 ['0badc0de1', '1234abcd9f']
