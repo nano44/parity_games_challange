@@ -282,3 +282,51 @@ copy, never retyped); this text by fix4/mkfix4.py.
 - docs/si/P-N5-GATE-line-L4.txt = L-3 + LT-1 (two strings) + GL-1..GL-3 + «fixes entries 1-4»; sha1 6bfde78ef050b47f43527875256c65a205869e77, 12562 bytes (wc -c).
   mkL4.py asserts each Old once, that «RA-MULT», «K1-FLIP(c)» and «a polynomial bound on the RA path count» are absent, no «|», and
   balanced parentheses.
+
+## Entry 5 (fix round 5; L-SI successor 52; Lead 2026-11-12 17:47Z; CHECKER C142)
+Items: CHECKER C142 (claude/checker 269effb3, docs/checker/C142.md; byte copy experiments/si/box95/fix5/chk_C142_269effb3.md, sha1
+8b005c61…): FAIL on the first fill of R128, with three line items E-1, E-2, E-3 (§2) and one entry-text item E-4 (the Lead's; not in
+this entry). Mathematics, tools, box checks, UPDATE and placement PASS there. Strings: L-5 by fix5/mkL5.py, which parses C142 §4's nine
+old → new pairs from the byte copy and applies them to L-4 in §4's order, each old string asserted once, and then a tenth pair
+ruled by the Lead (F5-4); this text by fix5/mkfix5.py, which prints the same parsed strings. No string of CHECKER's is retyped.
+
+### F5-1 (E-1, L43, REQUIRED): the RA-MULT and RA-path DATA rows get their numbers and their source commits
+- CHECKER: GL-3's two rows gave formulas (m = n, P = F_(d+2) − 1) but no numbers and no source commit. R-E1, verbatim:
+  «re-arm multiplicity m = n with C = 2n + 1 on MW8_2, MW32_2 (refutes a constant multiplicity only below 32), the RA path count P = F_(d+2) − 1 with C = 3 on FW8_2, FW16_2,»
+  → «re-arm multiplicity m 8 / 32 with C 17 / 65 on MW8_2 / MW32_2 (refutes a constant multiplicity only below 32), the RA path count P 54 / 2583 (= F_(d+2) − 1 at d = 8, 16) with C 3 on FW8_2 / FW16_2 (m and P: L-SI 47 box 90, claude/l-si 2d0344d3 and 4ded1e8d, box90/out/mw90.out maxm and fw90.out maxP, both engines),»
+- Re-read here by column name (mkfix5.py asserts them, both engines): box90/out/mw90.out maxm 8 / 32 and C 17 / 65 on MW8_2 / MW32_2;
+  box90/out/fw90.out maxP 54 / 2583 and C 3 / 3 on FW8_2 / FW16_2.
+- Packet reading: fixes entry 4 F4-2's two DATA rows are read with these numbers and sources.
+
+### F5-2 (E-2, L43, REQUIRED): the growth clause as numbers on named instances; A*_all leaves it
+- CHECKER: «growth: … linear in n on every family measured» named no instance, and A*_all has no lane counter. R-E2, verbatim:
+  «growth: C, A*_all and the largest gate flip count are linear in n on every family measured (MW(n): C = 2n + 1, flips 4n + 2; MWR(n): flips 2n + 1 = 2·ch_D + 1 with lamch 0, which makes E-FACE-PAYS (d) tight)»
+  → «growth, as numbers on the named instances only (both engines; box91/out/own91.out and g391.out C and maxflip, box93/out/mwr93_own.out and mwr93_g3.out mx_flips and mx_ch_D): C 17 / 65 and the largest per-gate flip count 34 / 130 on MW8_2 / MW32_2, and per-gate flips 9 / 17 / 33 = 2·ch_D + 1 (ch_D 4 / 8 / 16) with lamch 0 on MWR4_2, MWR8_2, MWR16_2, where E-FACE-PAYS (d) holds with equality»
+- Re-read here by column name (both engines): box91/out/own91.out and g391.out C 17 / 65 and maxflip 34 / 130 on MW8_2 / MW32_2;
+  box93/out/mwr93_own.out and mwr93_g3.out mx_flips 9 / 17 / 33 and mx_ch_D 4 / 8 / 16 on MWR4_2, MWR8_2, MWR16_2.
+- For the record (Lead 17:47Z): box 91's counter «maxa» is NOT A*_all. On MW8_2 / MW32_2 maxa is 9 / 33 (re-read here) while C is 17 / 65;
+  CHECKER cites REFEREE-2 Add. 4 for A*_all = 66 on MW32_2. The lane has no A*_all counter; the clause no longer names A*_all.
+
+### F5-3 (E-3, REQUIRED): the part markers of GATE-LOW-NULL and E-FACE-PAYS enter the line (seven insertions, no word changed)
+- CHECKER: the line cites E-FACE-PAYS (b), (c), (d) and GATE-LOW-NULL (a), (b′), but its statements did not mark those parts. The
+  markers are the packet's (§3.2, §3.4). R-E3, verbatim, in §4's order:
+  - «(Lemma GATE-LOW-NULL) at a LAM ∧ PRIV step» → «(Lemma GATE-LOW-NULL) (a) at a LAM ∧ PRIV step»
+  - «(and they differ), so a flip at t» → «(and they differ), so (b) a flip at t»
+  - «changes π(E(p_e)) or π(E(p_b)) at t, and if Λ(p_e) = Λ(p_b)» → «changes π(E(p_e)) or π(E(p_b)) at t, and (b′) if Λ(p_e) = Λ(p_b)»
+  - «(Corollary E-FACE-PAYS) relocks(o) ≤ ch_(p_e),» → «(Corollary E-FACE-PAYS) (a) relocks(o) ≤ ch_(p_e),»
+  - «UP hypothesis, at every t with e_o ∉» → «UP hypothesis, (b) at every t with e_o ∉»
+  - «that of D does, so if D's play avoids e_o at every state of the run then» → «that of D does, so (c) if D's play avoids e_o at every state of the run then»
+  - «unchanged), and flips(o) ≤ 2·min(ch_(p_e), ch_(p_b)) + 1» → «unchanged), and (d) flips(o) ≤ 2·min(ch_(p_e), ch_(p_b)) + 1»
+- mkfix5.py asserts that each new string is its old string with exactly one marker «(a) », «(b) », «(b′) », «(c) » or «(d) » inserted.
+
+### F5-4 (the tenth pair: Lead ruling 2026-11-12 17:58Z, flagged by REFEREE-2 38)
+- The Lead: L-5's source note must say «with its fixes entries 1-5», not «1-4». Precedent: L-4 changed «1-3» to «1-4» when the
+  line-only entry 4 was added. So L-5 gets a tenth pair on top of CHECKER's nine:
+  «docs/si/P-N5-GATE.md with its fixes entries 1-4,» → «docs/si/P-N5-GATE.md with its fixes entries 1-5,».
+  The successor list «L-SI successors 48-50» stays (the Lead, citing CHECKER C142 G-1: no action).
+
+### F5-5 (L-5)
+- After CHECKER's nine pairs (R-E1, R-E2, R-E3's seven) the line is CHECKER's target byte for byte (C142 §4: «sha1
+  **7ebcf7355be9838473f05a7defe913940b6fd723**, 12,923 B»): mkL5.py asserts it and prints it with --nine; check_fix5.sh re-checks it.
+- docs/si/P-N5-GATE-line-L5.txt = that line + the tenth pair; sha1 459fd88d2d1959647f6aeb065bf8ac58cce684f9, 12923 bytes (wc -c). mkL5.py asserts each old
+  string once, one line with its newline, no «|», and 238 «(» = 238 «)» before and after the tenth pair.

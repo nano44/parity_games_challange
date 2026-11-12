@@ -1284,8 +1284,11 @@ bash box92/check92.sh
 bash box93/check93.sh
 # box 94 (nested MW / doubler counters: ADD, not multiply; SAME-SUFFIX; docs/si/box94-nest.md)
 bash box94/check94.sh
-# box 95 (P-N5-GATE fixes entry 1 + line L-1; docs/si/P-N5-GATE-fixes.md)
+# box 95 (P-N5-GATE fixes entries 1-5 + lines L-1..L-5, each rebuilt by its fixN script; docs/si/P-N5-GATE-fixes.md)
 bash box95/check95.sh
+# P-N5-GATE line revision L-5 (fixes entry 5: CHECKER C142's nine pairs + the Lead's tenth pair): must not change.
+echo "459fd88d2d1959647f6aeb065bf8ac58cce684f9  ../../docs/si/P-N5-GATE-line-L5.txt" | sha1sum -c --quiet
+echo "si (P-N5-GATE L-5 pinned): PASS"
 # box 96 (PROVISO on IDEAL-CYC, B-ONLY3 on Gamma3: d96 two engines; docs/si/box96-bonly3.md)
 bash box96/check96.sh
 # box 97 ([STD3] for every genome up to the first fallback: REACH3-ALL re-derived; std97 census; docs/si/box97-std3.md)
