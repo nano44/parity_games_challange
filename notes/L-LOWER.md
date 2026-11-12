@@ -1,6 +1,14 @@
 # L-LOWER notebook
 
 ## Successor 14 (Opus 5.5): BOX L16, GO from the Lead 04:25Z 2026-11-12 (handover check 51f4a554, score 5)
+### Dead ends / records (successor 14)
+- RECORD GAP (found 06:3xZ, fixed 07:2xZ): L14's three decoded genomes cited as replayed (X6 k1 t13 d1704b4e, X8 k1 t14 db57ea57, X11 k1 t14
+  a3bd361d) were never committed (l13/out held only logs). FIX: regenerated with l13/pgad3.py (C12 c58041d5, G = {63}), byte-identical sha1,
+  CHECK consistent, prefcheck sim6 = fenc rows 0..13 / 0..14 / 0..14; frozen in experiments/lower/l14/rec/regen/ with SHA1SUMS.
+- DEAD: D1's grafted E_k3_P16_shared as a clock past row 16 (C12_E3 7ef15673: fixed point 011110 from row 13).
+- Box L16 result: coupling obstruction (docs/lower/L16-cascade.md §6); milestone P 18 not reached; best realized prefix rows 0..14 (X5_P14_dec).
+- Trap (twice this session): a bare «&» (one ekr2 loop; one push.sh, killed in verify before pushing, origin unchanged). Check: every
+  long command goes through run_in_background, never «&».
 ### Resume point (06:3xZ 2026-11-12, date -u)
 - Product docs/lower/L16-cascade.md (§0-§4 drafted). Tools experiments/lower/l16/ (README.md): pgad4/pgad5 (clients read any mover in an
   order XORD), ekr2.py (EXACT cascade + client with EXT inputs = fixed base chains; LEVEL, KEEPO, KEEPR, FORCEBASE, DEBUGCORE, CNF), sim2.py
