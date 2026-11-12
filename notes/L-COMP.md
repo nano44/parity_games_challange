@@ -1,6 +1,19 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## RESUME POINT -- successor 21 (L-COMP 21; session_01V5yGRXVu462BehsZf8icAx), written 2026-11-12 21:52Z by date -u
+- Handover check 2fa72fb5 (pushed 20:28Z); Lead «go» 20:30Z: BOX 44 items 2 and 3, then queued (a), (b); (c) waits for plat208 --hist.
+- BOX 44 item 2 DONE (this push): «mine» 59 genomes, «big» 14 long runs (T3 up to 294), must-0 sum 0 on all 1,754 runs; L-SI 925577fe
+  26/26 equal (out/cmp44_lsi925577fe.out, all 26 listed); the cross (run44c / cross44.py, out/cross44.out): 0 differing lines on records 25,
+  corpus 53, dead 3 (both L-NEW engines) and on the 26 of L-SI's replay. README regenerated; no PENDING part left in item 2.
+- BOX 44 item 3 RUNNING: run44d.sh 1 (tracked task; resumable from out/climb44_S1.log.state, committed as checkpoints); stream 2 after the
+  push. Restart 0 of stream 1 reproduces successor 20's T3 65 at N + M 285.
+- Queued tools committed (box45): deep45.py (item (a): depthNS = box 100's depth minus the plays' common suffix; TAIL-invariant on
+  MWR4_2 -> TMWR4 flip by flip, control CTRL=1 fires), climb45.py (item (b): per-gate Λ-quiet flip climb, proxy QP = max (flips − lamch) from
+  fast37, bests re-measured exactly by deep45).
+- Local only (lost on a new container): scratchpad archives LSI104 (l-si 26704e01), LNEW209 (l-new 311bbf81), LSI925 (l-si 925577fe
+  experiments/si/box104); box37/bin (gcc -O2 -DW=w -o box37/bin/fast37_w<w> box37/fast37.c, w in 1 8 16 48 96) + .git/info/exclude lines.
+
 ## RESUME POINT -- successor 20 (L-COMP 20; session_01V5yGRYzeDgxCBBXtVUzaJi), BOX 44 IN FLIGHT (written 2026-11-12 ~17:5xZ by date -u; overwritten at the park)
 - Handover check de927158 (pushed 17:35Z); Lead «go» for BOX 44 at 17:37Z (items 1-3; additions: W(G_n, ι) n = 7, 8 with lane counts 1,145 /
   2,297; item 2 against L-SI's replay 925577fe (not on origin at 17:50Z); independence stated «up to SPEC's cycle-node and S4b tie
