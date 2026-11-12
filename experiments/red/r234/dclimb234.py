@@ -2,7 +2,7 @@
 """L-RED 66 R234 item 3: kill-side climb on CONJECTURE DEEP3 (L-SI 51 box 100 §5.2). Score = (deepC, soft): deepC = sum over SCCs C of
 Deep_c(C) (internal-gate flips after t0(C) charged to a change of depth > c; deep234.one), soft = sum of max(0, depth) over the
 internal flips after t0 (a gradient). Mutations r230/mut230 (env NMAX, DMAX). Start: START.json or "rand:d,w,D" (r231 dep231.rgen).
-Env SCORE=gate: score = (max deep flips at ONE internal gate, deepC, soft) (the re-arm resource).
+Env SCORE=gate: score = (max deep flips at ONE internal gate, max sum of depths at one internal gate, deepC) (the re-arm resource).
 Checkpoint every 10 evals (OUT/best_<tag>.json; RESUME=1), log OUT/dclimb_<tag>.log; every new best deepC is frozen to
 OUT/deep_<tag>_<deepC>.json. Usage: dclimb234.py TAG SEED EVALS START"""
 import sys, os, json, random, time
@@ -18,10 +18,10 @@ elif start.startswith("rand:"):
     from dep231 import rgen
     d, w, D = map(int, start[5:].split(",")); cur = rgen(rng, d, w, D); done0 = 0
 else: cur = json.load(open(start)); cur = cur.get("genome", cur); cur.pop("_evals", None); done0 = 0
-SC = os.environ.get("SCORE", "sum")    # sum: (deepC, soft); gate: (max deep flips at one internal gate, deepC, soft)
+SC = os.environ.get("SCORE", "sum")    # sum: (deepC, soft); gate: (max deep flips at one gate, max depth sum at one gate, deepC)
 def score(G):
     o = deep234.one(G, soft=True); g = o["top"][0][1] if o["top"] else 0
-    return ((o["deepC"], o["soft"]) if SC == "sum" else (g, o["deepC"], o["soft"])), o
+    return ((o["deepC"], o["soft"]) if SC == "sum" else (g, o["gsoft"], o["deepC"])), o
 cs, o = score(cur); t0 = time.time(); print("start", cs, "N", cur["N"], file=lg, flush=True); bestd = cs[0]
 for e in range(done0, evals):
     nG = mut230.mutate(cur)

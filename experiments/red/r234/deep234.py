@@ -28,7 +28,7 @@ def one(G, soft=False):
         for d in succD[ci]: r |= {d} | reach[d]
         reach.append(r)
     t0 = [max((f[d] for d in reach[ci]), default=0) for ci in range(K)]
-    out = dict(T3=T, deepC=0, deepC_max=0, intC=0, alldeep=0, dmaxC=-1, soft=0); perC = [0] * K; prof = {}
+    out = dict(T3=T, deepC=0, deepC_max=0, intC=0, alldeep=0, dmaxC=-1, soft=0); perC = [0] * K; prof = {}; gs = {}
     for x in range(G["N"]):
         for k, o in enumerate(G["opts"][x]):
             g, pe, pb = V[("g", (x, k))], V[("pe", (x, k))], V[("pbeta", (x, k))]
@@ -39,9 +39,9 @@ def one(G, soft=False):
                 d = depth(full[t][0][a], full[t + 1][0][a], rk)
                 out["alldeep"] += d > c
                 if internal and t >= t0[ci]:
-                    out["intC"] += 1; out["dmaxC"] = max(out["dmaxC"], d); out["soft"] += max(0, d)
+                    out["intC"] += 1; out["dmaxC"] = max(out["dmaxC"], d); out["soft"] += max(0, d); gs[(x, k)] = gs.get((x, k), 0) + max(0, d)
                     if d > c: perC[ci] += 1; prof[(x, k)] = prof.get((x, k), 0) + 1
-    out["deepC"] = sum(perC); out["deepC_max"] = max(perC); out["top"] = sorted(prof.items(), key=lambda kv: -kv[1])[:3]
+    out["gsoft"] = max(gs.values(), default=0); out["deepC"] = sum(perC); out["deepC_max"] = max(perC); out["top"] = sorted(prof.items(), key=lambda kv: -kv[1])[:3]
     return out
 def items():
     if sys.argv[1] == "rand":
