@@ -1,0 +1,8 @@
+r85 {'T3': 4, 'sccs': 1, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.444, 'bigN': 3, 'bigM': 9, 'bigloc': 4, 'chainbound': 5} T3n5v 3
+r96 {'T3': 8, 'sccs': 1, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.178, 'bigN': 15, 'bigM': 45, 'bigloc': 8, 'chainbound': 9} T3n5v 6
+r238 {'T3': 7, 'sccs': 1, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.146, 'bigN': 12, 'bigM': 48, 'bigloc': 7, 'chainbound': 8} T3n5v 11
+r271 {'T3': 4, 'sccs': 1, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.083, 'bigN': 12, 'bigM': 48, 'bigloc': 4, 'chainbound': 5} T3n5v 5
+r296 {'T3': 6, 'sccs': 1, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.2, 'bigN': 10, 'bigM': 30, 'bigloc': 6, 'chainbound': 7} T3n5v 5
+r327 {'T3': 5, 'sccs': 1, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.104, 'bigN': 12, 'bigM': 48, 'bigloc': 5, 'chainbound': 6} T3n5v 6
+r363 {'T3': 10, 'sccs': 1, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.125, 'bigN': 20, 'bigM': 80, 'bigloc': 10, 'chainbound': 11} T3n5v 9
+TOTAL {'genomes': 400, 'locfail': 0, 'chainfail': 0, 't3diff': 7, 'maxratio': 0.667, 'maxT3': 11}

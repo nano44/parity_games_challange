@@ -1,0 +1,1 @@
+TOTAL {'genomes': 14, 'gates': 1089, 'const': 867, 'xfail': 0, 'dfail': 0, 'tie': 0, 'outgates': 898, 'sfail': 5, 'internal_multi': 95}

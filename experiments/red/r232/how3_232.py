@@ -13,7 +13,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."
 from elev230 import build
 import own, functools
 CTRL = os.environ.get("CTRL") == "1"
-def how3(G, cap=5000, start=None):
+def how3(G, cap=5000, start=None, full=None):
     gm, sig0, tau0, V, O = build(G); N = G["N"]; n = gm.n; ow = list(gm.owner); vj = own.VJ(gm.prio)
     inv = {V[("m", q)]: q[1] for q in O}; key = functools.cmp_to_key(vj.cmp)
     sig = [sig0[v] if (ow[v] == 0 and v in sig0) else (gm.succ[v][0] if ow[v] == 0 else None) for v in range(n)]
@@ -23,6 +23,7 @@ def how3(G, cap=5000, start=None):
     seq = []
     while len(seq) <= cap:
         vals, tb = own.evaluate(n, ow, gm.succ, vj, sig, tb); seq.append(tuple(inv[sig[x]] for x in range(N)))
+        if full is not None: full.append((vals, dict(tb), V))
         ns = list(sig)
         for x in range(N): ns[x] = max(gm.succ[x], key=lambda w: (key(vals[w]), w == sig[x], w))
         if ns == sig: break

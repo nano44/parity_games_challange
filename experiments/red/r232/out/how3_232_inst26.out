@@ -1,0 +1,27 @@
+C6G8_n54.json {'T3': 17, 'sccs': 5, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.118, 'bigN': 50, 'bigM': 144, 'bigloc': 17, 'chainbound': 20, 'T3n5v': 17}
+C98_2_2_3.json {'T3': 8, 'sccs': 1, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.8, 'bigN': 4, 'bigM': 10, 'bigloc': 8, 'chainbound': 9, 'T3n5v': 8}
+C98_2_3_3.json {'T3': 8, 'sccs': 1, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.571, 'bigN': 6, 'bigM': 14, 'bigloc': 8, 'chainbound': 9, 'T3n5v': 8}
+C98_3_3_3.json {'T3': 12, 'sccs': 1, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.545, 'bigN': 9, 'bigM': 22, 'bigloc': 12, 'chainbound': 13, 'T3n5v': 12}
+C98_3_4_3.json {'T3': 12, 'sccs': 1, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.414, 'bigN': 12, 'bigM': 29, 'bigloc': 12, 'chainbound': 13, 'T3n5v': 12}
+C98_4_4_3.json {'T3': 16, 'sccs': 1, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.4, 'bigN': 16, 'bigM': 40, 'bigloc': 16, 'chainbound': 17, 'T3n5v': 16}
+C98_4_5_3.json {'T3': 19, 'sccs': 2, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.388, 'bigN': 19, 'bigM': 49, 'bigloc': 19, 'chainbound': 21, 'T3n5v': 19}
+C98_5_5_3.json {'T3': 15, 'sccs': 2, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.268, 'bigN': 24, 'bigM': 56, 'bigloc': 15, 'chainbound': 17, 'T3n5v': 15}
+DHIB18_2805.json {'T3': 19, 'sccs': 6, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.065, 'bigN': 94, 'bigM': 294, 'bigloc': 19, 'chainbound': 22, 'T3n5v': 19}
+DHIB26_2804.json {'T3': 28, 'sccs': 7, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.095, 'bigN': 102, 'bigM': 283, 'bigloc': 27, 'chainbound': 32, 'T3n5v': 28}
+DWT20_2803.json {'T3': 22, 'sccs': 9, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.089, 'bigN': 94, 'bigM': 246, 'bigloc': 22, 'chainbound': 27, 'T3n5v': 22}
+FW16_2.json {'T3': 53, 'sccs': 259, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.0, 'bigN': 1, 'bigM': 1, 'bigloc': 0, 'chainbound': 166, 'T3n5v': 53}
+FW8_2.json {'T3': 29, 'sccs': 123, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.0, 'bigN': 1, 'bigM': 1, 'bigloc': 0, 'chainbound': 86, 'T3n5v': 29}
+Kprev_8.json {'T3': 52, 'sccs': 58, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.04, 'bigN': 26, 'bigM': 50, 'bigloc': 2, 'chainbound': 107, 'T3n5v': 52}
+Ku_16.json {'T3': 100, 'sccs': 107, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.021, 'bigN': 49, 'bigM': 97, 'bigloc': 2, 'chainbound': 204, 'T3n5v': 100}
+Ku_4.json {'T3': 28, 'sccs': 35, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.08, 'bigN': 13, 'bigM': 25, 'bigloc': 2, 'chainbound': 60, 'T3n5v': 28}
+Ku_8.json {'T3': 52, 'sccs': 59, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.041, 'bigN': 25, 'bigM': 49, 'bigloc': 2, 'chainbound': 108, 'T3n5v': 52}
+MW32_2.json {'T3': 199, 'sccs': 299, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.029, 'bigN': 2, 'bigM': 35, 'bigloc': 1, 'chainbound': 402, 'T3n5v': 199}
+MW8_2.json {'T3': 55, 'sccs': 83, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.091, 'bigN': 2, 'bigM': 11, 'bigloc': 1, 'chainbound': 114, 'T3n5v': 55}
+MWR16_2.json {'T3': 102, 'sccs': 5, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.308, 'bigN': 152, 'bigM': 331, 'bigloc': 102, 'chainbound': 106, 'T3n5v': 102}
+MWR4_2.json {'T3': 30, 'sccs': 5, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.33, 'bigN': 44, 'bigM': 91, 'bigloc': 30, 'chainbound': 34, 'T3n5v': 30}
+MWR8_2.json {'T3': 54, 'sccs': 5, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.316, 'bigN': 80, 'bigM': 171, 'bigloc': 54, 'chainbound': 58, 'T3n5v': 54}
+RWX_n95.json {'T3': 12, 'sccs': 9, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.054, 'bigN': 87, 'bigM': 222, 'bigloc': 12, 'chainbound': 17, 'T3n5v': 12}
+WC16_2.json {'T3': 4, 'sccs': 3, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.027, 'bigN': 66, 'bigM': 146, 'bigloc': 4, 'chainbound': 6, 'T3n5v': 4}
+WC4_2.json {'T3': 4, 'sccs': 3, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.105, 'bigN': 18, 'bigM': 38, 'bigloc': 4, 'chainbound': 6, 'T3n5v': 4}
+k1fail_202.json {'T3': 4, 'sccs': 12, 'locfail': 0, 'chainfail': 0, 'maxratio': 0.167, 'bigN': 4, 'bigM': 12, 'bigloc': 2, 'chainbound': 10, 'T3n5v': 4}
+TOTAL {'genomes': 26, 'locfail': 0, 'chainfail': 0, 't3diff': 0}

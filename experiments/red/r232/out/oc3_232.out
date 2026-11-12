@@ -1,0 +1,15 @@
+MWR4_2.json T3 30 {'gates': 97, 'const': 95, 'xfail': 0, 'dfail': 0, 'tie': 0, 'outgates': 95, 'sfail': 0, 'internal_multi': 1}
+MWR8_2.json T3 54 {'gates': 177, 'const': 175, 'xfail': 0, 'dfail': 0, 'tie': 0, 'outgates': 175, 'sfail': 0, 'internal_multi': 1}
+C98_2_2_3.json T3 8 {'gates': 10, 'const': 7, 'xfail': 0, 'dfail': 0, 'tie': 0, 'outgates': 7, 'sfail': 0, 'internal_multi': 0}
+C98_2_3_3.json T3 8 {'gates': 14, 'const': 9, 'xfail': 0, 'dfail': 0, 'tie': 0, 'outgates': 9, 'sfail': 0, 'internal_multi': 1}
+C98_3_3_3.json T3 12 {'gates': 22, 'const': 9, 'xfail': 0, 'dfail': 0, 'tie': 0, 'outgates': 9, 'sfail': 0, 'internal_multi': 9}
+C98_3_4_3.json T3 12 {'gates': 29, 'const': 13, 'xfail': 0, 'dfail': 0, 'tie': 0, 'outgates': 13, 'sfail': 0, 'internal_multi': 8}
+C98_4_4_3.json T3 16 {'gates': 40, 'const': 12, 'xfail': 0, 'dfail': 0, 'tie': 0, 'outgates': 12, 'sfail': 0, 'internal_multi': 12}
+C98_4_5_3.json T3 19 {'gates': 52, 'const': 19, 'xfail': 0, 'dfail': 0, 'tie': 0, 'outgates': 21, 'sfail': 0, 'internal_multi': 24}
+C98_5_5_3.json T3 15 {'gates': 59, 'const': 20, 'xfail': 0, 'dfail': 0, 'tie': 0, 'outgates': 22, 'sfail': 0, 'internal_multi': 22}
+MW8_2.json T3 55 {'gates': 177, 'const': 176, 'xfail': 0, 'dfail': 0, 'tie': 0, 'outgates': 177, 'sfail': 0, 'internal_multi': 0}
+Ku_8.json T3 52 {'gates': 177, 'const': 168, 'xfail': 0, 'dfail': 0, 'tie': 0, 'outgates': 177, 'sfail': 0, 'internal_multi': 0}
+C6G8_n54.json T3 17 {'gates': 150, 'const': 98, 'xfail': 0, 'dfail': 0, 'tie': 0, 'outgates': 100, 'sfail': 0, 'internal_multi': 16}
+k1fail_202.json T3 4 {'gates': 45, 'const': 28, 'xfail': 0, 'dfail': 0, 'tie': 0, 'outgates': 43, 'sfail': 0, 'internal_multi': 0}
+WC4_2.json T3 4 {'gates': 40, 'const': 38, 'xfail': 0, 'dfail': 0, 'tie': 0, 'outgates': 38, 'sfail': 0, 'internal_multi': 0}
+TOTAL {'genomes': 14, 'gates': 1089, 'const': 867, 'xfail': 0, 'dfail': 0, 'tie': 0, 'outgates': 898, 'sfail': 0, 'internal_multi': 94}
