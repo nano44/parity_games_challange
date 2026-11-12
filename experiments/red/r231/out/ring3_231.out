@@ -1,0 +1,13 @@
+RING3 A k 8 m 12: N 53 M 93 U 6 inv 1957 T3 12 total 15 fb 1 nstd 0
+RING3 B k 8 m 12: N 53 M 95 U 6 inv 1957 T3 12 total 15 fb 1 nstd 0
+RING3 C k 8 m 12: N 53 M 93 U 6 inv 1957 T3 12 total 15 fb 1 nstd 0
+RING3 A k 4 m 6: N 29 M 49 U 6 inv 480 T3 6 total 9 fb 1 nstd 0
+RING3 A k 8 m 6: N 29 M 57 U 6 inv 752 T3 6 total 9 fb 1 nstd 0
+RING3 B k 4 m 6: N 29 M 51 U 6 inv 480 T3 6 total 9 fb 1 nstd 0
+RING3 B k 8 m 6: N 29 M 59 U 6 inv 752 T3 6 total 9 fb 1 nstd 0
+RING3 C k 4 m 6: N 29 M 49 U 6 inv 480 T3 6 total 9 fb 1 nstd 0
+RING3 C k 8 m 6: N 29 M 57 U 6 inv 752 T3 6 total 9 fb 1 nstd 0
+RING3 D k 4 m 6: N 34 M 59 U 9 inv 480 T3 6 total 9 fb 1 nstd 0
+RING3 D k 8 m 6: N 42 M 83 U 17 inv 752 T3 6 total 9 fb 1 nstd 0
+RING3 D k 8 m 12: N 66 M 119 U 17 inv 1957 T3 12 total 15 fb 1 nstd 0
+RING3 D k 8 m 24: N 114 M 191 U 17 inv 5282 T3 24 total 27 fb 1 nstd 0
