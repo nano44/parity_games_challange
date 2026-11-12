@@ -1,6 +1,20 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 1 (successor 39, session_01V5yGRaEeN3dRqjQP5twiRH; Opus 5.5 per L53; 2026-11-12 20:29Z by date -u)
+- Handover check 54ac3178 on origin (push exit 0 20:28Z; Lead 20:29Z: 5 of 5, «go» for B, then A's agreement line after B is pushed).
+- ITEM B (P-N5-LEVEL, l-new 1e6df499): boxes 1-3 of docs/referee-2/R2-P-N5-LEVEL.md committed (object, premises, §3-§8 re-derived:
+  every statement SIGN so far). Draft of box 5 (scope, genome-only list, TARGET diff, L-1 = SIGN WITH GAP «L-1 omits ALL-TCYC's
+  «Consequences»», R-1 / R-2 exact strings, verdict table) is in the scratchpad report/box5.md; box 4 (DATA + replay) waits for the sweep.
+- Tools in docs/referee-2/R2-P-N5-LEVEL/: r2lv.py (own replay on R2-P-ACYC/r2acyc.py; controls fronthigh snonfvs yfront k5t edom fire;
+  hval, p6out fire (mechanics); htie did NOT fire on the 5-genome set: no mover tie on those plateaus), r2lvq.py (+ .out: 44 quotes, 0
+  missing), r2lvdata.py (+ .out: lane outputs by column name, all must-0 sums 0), sumtot.py, sweep.sh, sweep2.sh. Sweep outputs live in
+  the scratchpad tool/out/ (copy the TOTAL lines into the repo with box 4). r2lv.py's per-file TOTAL summed rec_win_maxlen in the first
+  sweeps (fixed: max); that record is descriptive only.
+- Results so far (all FAILS 0): records + corpus × (max, gate) and (min, lev): 161 runs; random 4,500 (any 2,000, self 1,000, acyc 500,
+  any with random ties 1,000); mutants 1,400 so far (8 frozen genomes × 100 × two configs). Still running: ctrl_*, ball_max_gate (--ball).
+- Next: box 4 from the sweep totals; box 5; push; then item A (REFEREE 34's L-5 test on origin/claude/referee, one agreement line).
+
 ## Resume point 2 (successor 38; 2026-11-12 19:07Z by date -u)
 - 3ac148ad (resume point 1 + prepared tools) is on origin (push exit 0, 18:55Z; verify as before: lean and oink NOT RUN here).
 - ITEM A DONE: R2-P-N5-GATE.md Addendum 5. L-5 (l-si 7b0a58ae, sha1 459fd88d, 12,923 B) MATCHES; GATE-LOW-NULL (a), (b), (b′) and
