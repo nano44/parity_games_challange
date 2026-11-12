@@ -1,30 +1,37 @@
 # L-LIT notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (successor T65-, 2026-11-12 from 10:38Z by date -u; session_01V5yGRZyBwA3rKaGJ1Uax66; D18, D1; N5′-xi route on Γ3)
-START: origin/claude/l-lit = 6895fb31 (0 / 0; trap check clean); handover check 627402e7 (push exit 0); Lead «go» 11:04Z. Trunk is NOT
-merged into this branch (Lead's word): read NOW / DECISIONS / GAPS / RESULTS with `git show origin/claude/vibrant-johnson-nxvvxo:<file>`.
-- T65 (pushed f5fff985, exit 0): docs/lit/T65-lamgap-one-player-howard.md. LAM-GAP / SHARP (L-SI box 101, L-RED R234) = the Howard, no-H0, |Ch| form of
-  landed R118 (c)/(d) and R17 (b)/(c). Chain link options A (R118 (l) + R125, global windows, DEEP3 for all gates), B′ (R118 (d) + (l) on
-  the sub-genome of Reach(C)), B (LAM-GAP as a lane lemma). External: KNOWN for additive weights (Cochet-Terrasson–Gaubert Thm 2.3) and
-  mean payoff (Zhong–Ye Thm 7.2 proof; Madani Fig. 5); STATED without proof for parity games (Friedmann thesis p.101, Thm 4.9; VJ00
-  Prop. 7.4). Zhong–Ye Thm 6.1 (preprint) claims to refute Hansen's Conj. 6.1.1; no contradiction with LAM-GAP.
-- T66 (pushed with T67): docs/lit/T66-deep3-lower-bound-families.md + docs/lit/T66-depth-check.py. HOW3 = Friedmann's I^loc at the
-  movers. No published family lives in the genome class: E-DOM ([F11] Table 4: f_j, k_j odd above h_i, i < j; used in Lemma 6.6 (2));
-  agrees with L-RED 54's DEAD port (R217 §7). On G_N itself: C 0, TWO-CROSS charge fails 0 times, Deep_c exponential (c = 3: 0, 0, 1, 6,
-  22, 64, 163, 382 for N 1-8; T = 9·2^N − 10). So DEEP3's proof must use E-DOM. No embedding, no literature kill of DEEP3 / U-FREE.
-- T67: docs/lit/T67-n5-route-summary.md (one page for the Lead: verdict table, chain options A / B′ / B, the DEEP3 test).
-- T66 Addendum A: docs/lit/T66-depth-xcheck.py (independent brute-force engine) reproduces §5.1's [F11] table for N 1-8 exactly.
-- T66 Addendum B (T68 item 3, partial): E-DOM read off the papers' tables. Zadeh game (arXiv 1911.01074 Table 3.1): fails at every cycle
-  center (escapes s_(i,j) of priority 8 / 10 below all odd g_i = 2i + 9). Cunningham game (arXiv 1305.3944 Fig. 2): g_(i′) = 2i′ + 7 odd
-  above h_i = 2i + 8 for i′ > i. Ranking / symmetric / Mei families NOT checked.
-- T68 (Lead 11:46Z): item 1 = Addendum A (done). Item 2 WAITS for L-NEW 72's box 208 tool (not on origin at 11:54Z; the Lead sends the
-  SHA): run its must-0 counters on G_N ([F11] Table 4 via T66-depth-check.py's lmcs()) and on switchallexp, report the first failing
-  counter and step at the smallest N and the genome property that step needs. Item 3 = Addendum B (partial).
-- Lead reading 11:24Z on the LAM-GAP link: B′ primary (landed R118 (d) + (l) + R125 (c), (e) + restriction lemma RESTRICT-C, to be
+## Resume point (HANDOVER, T65-T68, 2026-11-12 12:22Z by date -u; session_01V5yGRZyBwA3rKaGJ1Uax66; D18, D1; PARKED on the Lead's word)
+Branch state: every commit below is on origin/claude/l-lit (scripts/push.sh exit 0, VERIFY PASS each time; lean NOT RUN, no lakefile; Oink
+smoke NOT RUN, Oink not built). Trunk is NOT merged into this branch (Lead's word, 0 ahead / 1659 behind at 10:40Z): read NOW /
+DECISIONS / GAPS / RESULTS with `git show origin/claude/vibrant-johnson-nxvvxo:<file>`.
+DONE:
+- 627402e7 handover check (docs/agents/handover-checks/L-LIT.md); Lead «go» 11:04Z.
+- f5fff985 T65 docs/lit/T65-lamgap-one-player-howard.md. LAM-GAP / SHARP (L-SI box 101, L-RED R234) = the Howard, no-H0, |Ch| form of
+  landed R118 (c)/(d) and R17 (b)/(c). External: KNOWN for additive weights (Cochet-Terrasson–Gaubert Thm 2.3) and mean payoff (Zhong–Ye
+  Thm 7.2's proof; Madani Fig. 5); STATED without proof for parity games (Friedmann thesis p.101, Thm 4.9; VJ00 Prop. 7.4). Zhong–Ye Thm
+  6.1 (unrefereed preprint) claims to refute Hansen's Conj. 6.1.1; no contradiction with LAM-GAP (it counts windows, not window length).
+  Lead reading 11:24Z on the chain link: B′ primary (landed R118 (d) + (l) + R125 (c), (e) + restriction lemma RESTRICT-C, to be
   refereed), B kept (L-FORMAL formalizes LAM-GAP / SHARP), A fallback (needs DEEP3-all).
-IN FLIGHT: T68 item 2 (blocked on the tool). OPEN LEADS (only on a Lead question): E-DOM test of the ranking / symmetric / Mei families;
-  Vöge's thesis (the proof behind VJ00 Prop. 7.4) if a copy appears.
+- 5c53efbd T66 docs/lit/T66-deep3-lower-bound-families.md + T66-depth-check.py, T67 docs/lit/T67-n5-route-summary.md. HOW3 = Friedmann's
+  I^loc at the movers. No published family lives in the genome class: E-DOM ([F11] Table 4: f_j, k_j odd above h_i, i < j; Lemma 6.6 (2));
+  agrees with L-RED 54's DEAD port (R217 §7). On G_N itself every chain link holds and Deep_c is exponential (c = 3: 0, 0, 1, 6, 22, 64,
+  163, 382 for N 1-8; T = 9·2^N − 10), so DEEP3's proof must use E-DOM or another genome-only property.
+- 6d5e619d T68 item 1 = T66 Addendum A: docs/lit/T66-depth-xcheck.py (independent brute-force engine) reproduces §5.1's [F11] table for
+  N 1-8 exactly. T68 item 3, partial = T66 Addendum B: E-DOM fails in the Zadeh game (arXiv 1911.01074 Table 3.1) at every cycle center
+  and in the Cunningham game (arXiv 1305.3944 Fig. 2) at all but the top one.
+IN FLIGHT (for whoever the Lead assigns; nothing is half-written):
+- T68 item 2: when L-NEW 72's box 208 tool is on origin (the Lead sends the SHA; claude/l-new head was 25835c59 at 12:22Z, no box 208),
+  run its must-0 counters on Friedmann's G_N and on switchallexp. Its CANDIDATE Lemma LEVEL claims polynomial T_CYC at fixed k on
+  genomes; on G_N it must fail somewhere. Report the first failing counter and step at the smallest N, and the genome property (E-DOM or
+  other) that step needs. Inputs ready: `lmcs(n)` in docs/lit/T66-depth-check.py returns (pg.Game, start tuple, names) for [F11] Table 4
+  with ι_(G_n); `pgsolver_port.switchallexp(n)` (experiments/hard-families) returns the .pg text of [F09]'s game, start = si.Engine
+  .initial("best"). Both are plain parity games, NOT genomes: a tool that only reads genome JSON needs its counters lifted to (game,
+  Howard run) first. Reference counts to match: T66 §5.1.
+- T68 item 3, remaining: the E-DOM test for the ranking (Disser–Loho–Maat–Mosis arXiv 2512.16684), symmetric (van Dijk–Loho–Maat arXiv
+  2309.02223) and Mei (arXiv 2610.27386) families. Read the priority tables as in Addendum B; `T66-depth-check.py edom FAMILY N` works
+  for any generator added to pgsolver_port.py.
+OPEN LEADS (only on a Lead question): Vöge's thesis (the proof behind VJ00 Prop. 7.4) if a copy appears; [F09] Fig. 7 not re-read by me.
 NEEDS: none from the owner (optional library: Vöge thesis 2000, Hansen thesis 2012, Hansen–Zwick ISAAC 2010, Madani AAAI 2002).
 
 ## Previous resume point (HANDOVER, T64, 2026-11-01 ~03:15Z by date -u; predecessor session; PARKED after T64)
@@ -146,6 +153,17 @@ NEEDS: none from the owner.
 - Open FL09 (self-loop removal) if the REFEREE needs it; Friedmann RAIRO 2011 (publisher 403; try author copy).
 
 ## Things only I know
+- T65-T68 (2026-11-12): downloads in scratchpad t65/dl (+ .txt in t65/txt) and t68, lost with the container; URLs and sha256 prefixes
+  are in Sources. Cochet-Terrasson–Gaubert's report is PostScript: `apt-get install -y ghostscript`, then ps2pdf + pdftotext. Gaubert's
+  page www.cmap.polytechnique.fr/~gaubert/HOWARD2.html links both papers. arxiv.org/pdf/<id> works with plain curl.
+  web.archive.org is unreachable (curl: connection reset; WebFetch refuses the host), but archive.org/wayback/available?url=… answers:
+  Hansen's thesis has the snapshot 20160826003911. Semantic Scholar and OpenAlex search APIs rate-limit after one call.
+  A push takes about 20 minutes here (verify runs every lane's experiment checks); wait with `tail --pid=<push pid> -f /dev/null` in
+  blocks under 10 minutes, never a second push. The stop hook complains about unpushed commits while a push is running: wait, do not push
+  again. Commit trailer used: «Co-Authored-By: Claude <noreply@anthropic.com>» + this session's Claude-Session URL (no model id).
+  T66-depth-xcheck.py at N = 8 takes a few minutes (256 counterstrategies per state, 2,294 states).
+  The fleet's own prior work on the same questions sits in other lanes: L-RED R217 §7-§12 (Friedmann port, E-DOM, LEAK-ARCH), L-NEW box
+  193 (ASC-EXP), RESULTS R17 / R118 (the one-player and BR-SEG proofs). Grep those before starting a literature task on the N5′-xi route.
 - T59: sources in scratchpad t59/A (lost with the container; sha256 prefixes in Sources). fx_K_m16 (K = 4, 8, 16) and fx_K8_m32 regenerated in
   t59/inst (l-red worktree t59/lred at 717f407a); switchbestexp N via experiments/hard-families/pgsolver_port.py switchbestexp N > out.pg.
   Corpus wrapper t59/one.sh (30 s timeout per game, start file = same basename .start), list t59/list.txt (892 games), output t59/corpus3.out.
