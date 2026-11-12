@@ -1,0 +1,13 @@
+K1L10_n48.json {'T': 31, 'L': 1, 'b': 6, 'Dtop': 14, 'F0': 22, 'excess': -8, 'pfall': 0}
+K1L7_n48.json {'T': 37, 'L': 1, 'b': 6, 'Dtop': 18, 'F0': 22, 'excess': -4, 'pfall': 0}
+K1F34_n84.json {'T': 52, 'L': 1, 'b': 10, 'Dtop': 35, 'F0': 56, 'excess': -21, 'pfall': 0}
+MWR8_2.json {'T': 54, 'L': 1, 'b': 10, 'Dtop': 18, 'F0': 56, 'excess': -38, 'pfall': 0}
+WC8_2.json {'T': 4, 'L': 1, 'b': 9, 'Dtop': 3, 'F0': 46, 'excess': -43, 'pfall': 0}
+MW8_2.json {'T': 55, 'L': 1, 'b': 10, 'Dtop': 35, 'F0': 56, 'excess': -21, 'pfall': 0}
+DHIB26_2804.json {'T': 28, 'L': 3, 'b': 1, 'Dtop': 1, 'F0': 2, 'excess': -1, 'pfall': 0}
+CT12_cap200.json {'T': 46, 'L': 1, 'b': 9, 'Dtop': 24, 'F0': 46, 'excess': -22, 'pfall': 0}
+K1F21_n48.json {'T': 31, 'L': 1, 'b': 6, 'Dtop': 22, 'F0': 22, 'excess': 0, 'pfall': 0}
+K1C16_n400.json {'T': 51, 'L': 1, 'b': 54, 'Dtop': 37, 'F0': 1486, 'excess': -1449, 'pfall': 0}
+B400_r32_a13d9661.json {'T': 49, 'L': 2, 'b': 4, 'Dtop': 1, 'F0': 11, 'excess': -10, 'pfall': 0}
+k1 seed 70 {'excess': -1, 'genomes': 1000, 'pfall': 0, 'Dtop': 4, 'at_b': 2}
+rand seed 71 {'excess': -1, 'genomes': 1000, 'pfall': 0, 'Dtop': 5, 'at_b': 2}

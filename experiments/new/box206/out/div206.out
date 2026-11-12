@@ -1,0 +1,8 @@
+K1L7_n48.json ctrl 0 genomes 1 cases 1940 nop 0 lamp 0 symp 0 dep 0 kind 0
+MWR8_2.json ctrl 0 genomes 1 cases 2225 nop 0 lamp 0 symp 0 dep 0 kind 0
+WC8_2.json ctrl 0 genomes 1 cases 146 nop 0 lamp 0 symp 0 dep 0 kind 0
+K1F21_n48.json ctrl 0 genomes 1 cases 1930 nop 0 lamp 0 symp 0 dep 0 kind 0
+K1F34_n84.json ctrl 0 genomes 1 cases 4307 nop 0 lamp 0 symp 0 dep 0 kind 0
+k1 seed 67 ctrl 0 genomes 300 cases 1635 nop 0 lamp 0 symp 0 dep 0 kind 0
+rand seed 68 ctrl 0 genomes 300 cases 3410 nop 0 lamp 0 symp 0 dep 0 kind 0
+K1L7_n48.json ctrl 1 genomes 1 cases 1940 nop 0 lamp 0 symp 1277 dep 0 kind 1268
