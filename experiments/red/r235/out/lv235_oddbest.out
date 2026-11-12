@@ -1,0 +1,2 @@
+plc_odd_best.json {'N': 56, 'M': 115, 'T': 20, 'phifail': 0, 'nocyc': 0, 'qfail': 0, 'tfail': 0, 'platfail': 0, 'sharpfail': 0, 'q': 18, 'stalls': 0, 'plateaus': 0, 'maxplat': 0, 'maxratio': 0.0, 'oddflips': 137, 'oddquiet': 0, 'k2flips': 0}
+TOTAL {'T': 20, 'phifail': 0, 'nocyc': 0, 'qfail': 0, 'tfail': 0, 'platfail': 0, 'sharpfail': 0, 'q': 18, 'stalls': 0, 'plateaus': 0, 'maxplat': 0, 'maxratio': 0, 'oddflips': 137, 'oddquiet': 0, 'k2flips': 0, 'genomes': 1}
