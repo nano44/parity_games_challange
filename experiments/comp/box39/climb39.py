@@ -54,7 +54,9 @@ def log(s):
 def freeze(G, m, s):
     fn = os.path.join(CL, f"BEST_{TAG}_Q{m['QC']}_T{m['T']}_NM{m['NM']}_{sha(G)[:8]}.json"); json.dump(G, open(fn, "w"), sort_keys=True)
     sh = hashlib.sha1(open(fn, "rb").read()).hexdigest(); l2 = lnew(fn)
-    agree = None if l2 is None or "hist" not in l2 else (l2["T"] == m["T"] and l2["hist"] == m["hist"])
+    cap = {}                                                   # depth206 prints loud depths >= 8 as L8 (its l. 72: min(d + 1, 9))
+    for k, v in m["hist"].items(): cap[min(int(k), 8)] = cap.get(min(int(k), 8), 0) + v
+    agree = None if l2 is None or "hist" not in l2 else (l2["T"] == m["T"] and l2["hist"] == cap)
     log(f"BEST {os.path.basename(fn)} sha1 {sh} score {list(s)} {json.dumps(m)} lnew206 {json.dumps(l2)} agree {agree} "
         f"t {time.strftime('%H:%M:%SZ', time.gmtime())}")
     return os.path.basename(fn)

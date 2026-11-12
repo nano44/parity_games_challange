@@ -1,0 +1,4 @@
+START r 0 step 0 [7, 34, 37] {"QC": 7, "Q": 34, "T": 37, "maxdepth": 4, "maxloud": 4, "hist": {"-1": 1, "0": 24, "1": 2, "2": 2, "3": 1, "4": 4}, "elfall": 0, "ufail": [0, 0, 0], "NM": 145}
+GROWN GROWN_G600_Q12_T22_NM580_7b03650a.json sha1 7b03650a2e0c88d7da03fd2425924802d670f693 {"QC": 12, "Q": 21, "T": 22, "maxdepth": 7, "maxloud": 6, "hist": {"-1": 1, "0": 8, "2": 2, "3": 2, "4": 1, "5": 2, "6": 5}, "elfall": 0, "ufail": [0, 0, 0], "NM": 580} evals 337
+restart 0 seed K1L7_n48.json end [12, 21, 22] {"QC": 12, "Q": 21, "T": 22, "maxdepth": 7, "maxloud": 6, "hist": {"-1": 1, "0": 8, "2": 2, "3": 2, "4": 1, "5": 2, "6": 5}, "elfall": 0, "ufail": [0, 0, 0], "NM": 580} global [7, 34, 37] evals 337 797s
+DONE
