@@ -53,7 +53,7 @@ raw.githubusercontent.com response: 0 s (local 20:00:37Z, header 20:00:37 GMT).
   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
 - D21 (docs/DECISIONS.md line 452; DECISIONS-INDEX line 46, status **active**), relayed text, verbatim:
   > Okay, I want maximum effort. I want to use 200% usage in 3 days. There is fable 5.2 as well, use that too in dpeth everywhere where it seems fitting, use fable 5.2 at hard or xhigh. SO yes, 200% uage under 2 days.
-  Direct confirmation (line 455): «I confrim tge stuff». Lead reading L51 (not the owner's words): maximum effort until 2026-11-14 10:05Z.
+  Direct confirmation (line 454): «I confrim tge stuff». Lead reading L51 (not the owner's words): maximum effort until 2026-11-14 10:05Z.
   The brief adds L53 (Fable weekly limit reached, resets 2026-11-18 21:00Z; this session runs on Opus 5.5).
 - The owner's approval of a second adversary (2026-11-12, per the brief): `grep -n "L-RED-B\|second adversary"` on trunk
   docs/DECISIONS.md finds nothing; the Lead holds those words.
