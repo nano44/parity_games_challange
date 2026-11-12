@@ -10,7 +10,9 @@ Per genome (must-0 counters):
   qfail      #non-stall steps with LAG != {} above P = 2M(N + 2M) (C1);  tfail: T above P(N + 2M + 6) + N (ALL-TCYC)
   platfail   a plateau (maximal constant-Phi interval [u, v], u < v) with v - u > N + 2M + 5 (PLATEAU)
   sharpfail  v - u > #movers of Y (Y = {x : class_u(x) <= m}); L-RED's route: LAM-GAP / SHARP on the one-player sub-game H (R234)
-Descriptive: T, q, plateaus, maxplat, max (v - u)/(movers of Y), stalls. CTRL=1: the e-set order REVERSED (most relevant differing element in the SMALLER class) -> must fire.
+  oddquiet   an Odd flip at a gate whose two face classes are both unchanged at that step (L-LIT T69 (a); landed R126 GATE-CLASS
+             excludes it); k2flips: flips of K2 (LOC-K2 excludes them)
+Descriptive: oddflips, T, q, plateaus, maxplat, max (v - u)/(movers of Y), stalls. CTRL=1: the e-set order REVERSED (most relevant differing element in the SMALLER class) -> must fire.
 Usage: lv235.py G.json ...  (prints one line per genome and a TOTAL)"""
 import sys, os, json
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "r221q"))
@@ -37,7 +39,7 @@ def analyse(G):
             if lt(C[t][v], C[t][m]): m = v
         mc = C[t][m]; front = [v for v in lag if C[t][v] == mc]
         return mc, front
-    r = dict(N=N, M=M, T=T, phifail=0, nocyc=0, qfail=0, tfail=0, platfail=0, sharpfail=0, q=0, stalls=0, plateaus=0, maxplat=0, maxratio=0.0)
+    r = dict(N=N, M=M, T=T, phifail=0, nocyc=0, qfail=0, tfail=0, platfail=0, sharpfail=0, q=0, stalls=0, plateaus=0, maxplat=0, maxratio=0.0, oddflips=0, oddquiet=0, k2flips=0)
     P = 2 * M * (N + 2 * M); seq = []
     for t in range(T + 1):
         mc, fr = phi(t); seq.append((mc, None if fr is None else len(fr), fr))
@@ -65,6 +67,12 @@ def analyse(G):
         else:
             r["q"] += 1
             if mc2 is not None and not (lt(mc, mc2) or (mc2 == mc and k2 < k)): r["phifail"] += 1
+    for t in range(T):          # (a) of L-LIT T69: an Odd flip at a gate with BOTH face classes constant (R126 GATE-CLASS says never)
+        for g, q in gates.items():
+            if out[t][2][g] != out[t + 1][2][g]:
+                r["oddflips"] += 1; fe, fb = V[("e", q)], V[("b", q)]
+                if C[t][fe] == C[t + 1][fe] and C[t][fb] == C[t + 1][fb]: r["oddquiet"] += 1
+        if out[t][2][V["K2"]] != out[t + 1][2][V["K2"]]: r["k2flips"] += 1
     r["qfail"] = int(r["q"] > P); r["tfail"] = int(T > P * (N + 2 * M + 6) + N)
     t = 0
     while t <= T:
