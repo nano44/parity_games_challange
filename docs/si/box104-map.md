@@ -620,3 +620,82 @@ WRAP freezes τ at faces that all end in c_W, so S4a's arena is flat and only th
   E-DOM genome it finds. A weak search (unit: one climb; 18 climbs); nothing asymptotic; O2 stays OPEN. For scale: NOW's M4 row (quoted
   in §8, O1) has a CANDIDATE tower with F(6) = 254 at d = 28 under E-DOM, far above what a blind climb reaches; a search that starts
   from that tower and frees its carrier priorities is the natural next probe (not done here).
+
+## Addendum B (L-SI successor 52, 2026-11-12T18:03:50Z (date -u); append-only): a scan of the fixed faces at H_n's cycle gates (DATA, negative); a note on tie rules; N5 against the globally optimizing policy (DATA)
+### B.1 Gate-face scan for GUIDE-RULE (A.2) on H_n: no variant is faster than quadratic
+- gscan104.py (runs104.sh; out/gscan104.out; 40 rows = 10 variants × n = 1, …, 4; unit: one run of N5 (n5v.py mode spec) from S3). The
+  game is A.2's Wg(H_n, ι, ρ0) with two more parameters. In H_n the only Odd vertices with two successors are the e_i (→ d1_i or
+  h_i); e_i is entered from d3_i (Even) and from f_i (Odd, one successor). GF: where the fixed face of f_i leads (e: to e_i; d1: past
+  e_i into the cycle; h: past e_i out to h_i). G3: where the fixed face of the Even edge d3_i → e_i leads (e, d1, h). RE: ρ0(e_i) (d1
+  or h). copy 1: a face that skips e_i passes a pad with e_i's priority; copy 0: it does not (then a closed cycle d1_i, d2_i, d3_i
+  has an odd top on the fixed faces). Every target is reachable from the skipped vertex by Odd's own moves, so H's values are those
+  of H_n up to that pad.
+- On all 40 rows: S3 standard True, τ changes 0 and valve moves 0 before the first fallback, 1 fallback, regions = harness Zielonka.
+| GF | G3 | RE | copy | iterations at n = 1, 2, 3, 4 | first fallback at n = 1, 2, 3, 4 |
+| --- | --- | --- | --- | --- | --- |
+| e | e | d1 | 1 | 14, 37, 65, 99 | 12, 34, 62, 96 |
+| e | h | d1 | 1 | 13, 19, 25, 31 | 11, 17, 23, 29 |
+| h | e | d1 | 1 | 14, 36, 64, 98 | 12, 34, 62, 96 |
+| h | h | d1 | 1 | 13, 20, 27, 34 | 11, 18, 25, 32 |
+| e | e | h | 1 | 13, 20, 27, 34 | 11, 18, 25, 32 |
+| e | d1 | h | 1 | 14, 36, 64, 98 | 12, 34, 62, 96 |
+| h | d1 | d1 | 1 | 14, 36, 64, 98 | 12, 34, 62, 96 |
+| e | d1 | d1 | 0 | 6, 12, 18, 24 | 4, 10, 16, 22 |
+| h | d1 | d1 | 0 | 15, 27, 39, 51 | 4, 10, 16, 22 |
+| e | h | h | 1 | 13, 20, 27, 34 | 11, 18, 25, 32 |
+- Iterations after the only fallback: 2 on every row, except the variant (e, e, d1, copy 1): 2, 3, 3, 3 (there N5 goes on after the core has flipped); the variant (h, d1, d1, copy 0): 11, 17, 23, 29 (there N5 goes on after the core has flipped).
+- Largest count: 99 (n = 4). The variants fall into two groups: those that keep «a closed cycle is an Even win of the arena» grow
+  like A.2's row (second differences 5-6), the others linearly. READING (mine, not a counter): on the fixed faces a cycle, once
+  closed or once its exit is over-valued, is never worth leaving and re-entering, so every bit is set once and the counter of [F11]
+  §8 never counts; about one pass of the deceleration lane (6n − 2 nodes) per bit gives the quadratic rows.
+- DEAD (lane, DATA; scope: these ten fixed-face variants on H_n): «N5 on a guided wrapper of H_n follows the globally optimizing
+  policy's exponential run». Obstruction: Odd's reply at e_i depends on three Even choices (d1_i, d2_i, d3_i); a positional fixed
+  face is exact only for plays that enter through f_i. GUIDE-RULE itself stays OPEN.
+### B.2 Tie rules (relayed by the Lead 17:08Z, not opened by me)
+- The Lead's words: «The 16 count differences L-RED 66 found between its engine and n5v are all tie rule, which matters for your
+  write-up's independence wording.» (Which runs they are on is in L-RED 66's file, not opened by me.) A difference that comes from
+  the tie rule among ⊴-best successors is consistent with Lemma WRAP as stated: (iii) is about the Howard run under N5′-xi's own tie rule (Ξσ-best,
+  then SPEC's choice, then the larger index), T is the length of THAT run, and wrap104.py's counter nohoward tests «a ⊴-best
+  successor by H's own valuation», not equality with another engine's run. A Howard run under another tie rule can have another
+  length. §5's rows on G^L_n (n ≤ 8) and on switchallexp_n (n ≤ 8) have no tie event, so there every tie rule gives the same run.
+- Wording to use for this box: «two implementations of N5′-xi agree» (n5v.py, n5bxi.py) is agreement of two implementations of the
+  same rule, not of independent rules; an engine with another tie rule replays WRAP's counters nohoward (best by H's valuation),
+  fbwrong and endwrong against ITS OWN T, not the counts of §3's random rows.
+### B.3 Where the fixed faces copy Odd's reply, N5 makes the globally optimal improvement step (DATA; READING WRAP-GLO; CONJECTURE GLO-1P)
+- The globally optimizing policy (Schewe's; [F11] §4 and Theorem 4.2): the new strategy is an optimal strategy of the game in which
+  Even is restricted to its current and its improving edges and Odd is free. [F11] §8 is the paper's exponential lower bound for it
+  (Theorem 8.4, on H_n).
+- glo104.py (runq104.sh; out/glo104.out; 18 rows). Per step before the first fallback it computes A(v) = {current} ∪ {improving
+  successors of v in H} by H's own valuation and OPT = the optimal valuation of H restricted to A (Howard iteration on that game
+  from the current strategy to its fixpoint). Counter iglofail (unit: steps before the first fallback): the H-valuation of N5's
+  new H-part differs from OPT at some vertex. cntfail (unit: games): the first fallback is not at (this file's own run of the
+  policy from s0) + 1. endfail (unit: games): iterations ≠ first fallback + 2.
+  - G^L_n with faces that copy Odd's reply (ρ0(e_i) = d_i; the fixed face of the Even edge d_i → e_i leads to h_i: in G^L_n the only
+    Odd vertices with two successors are the e_i, and Odd leaves the simple cycle exactly when d_i → e_i is chosen), n = 1, …, 6:
+    iglofail 0, 0, 0, 0, 0, 0; the policy's own run has 3, 4, 5, 7, 9, 11 steps, N5 makes 6, 7, 8, 10, 12, 14 iterations, first fallback at
+    4, 5, 6, 8, 10, 12: on every row N5 = the policy's run + 3 iterations.
+  - Control, G^L_n with plain faces (to w; ρ0 = Odd's optimal counterstrategy to ι), n = 1, …, 4: iglofail 0, 2, 3, 5: fires for n ≥ 2.
+  - Random ONE-player games (harness gen.random_game, every Odd vertex cut to its first successor; a random s0; plain faces):
+    «rand1p seed 1045 games 300 n<=12: steps before the first fallback 303 iglofail 0 | cntfail (first fallback != policy steps + 1) 2 endfail (iterations != first fallback + 2) 0 | max steps of the globally optimal policy 5 max |Wg| 291»
+    «rand1p seed 1046 games 100 n<=24: steps before the first fallback 147 iglofail 0 | cntfail (first fallback != policy steps + 1) 2 endfail (iterations != first fallback + 2) 0 | max steps of the globally optimal policy 4 max |Wg| 511»
+    cntfail is not 0: the two runs can resolve ties between equally valued strategies differently (not analysed further); the
+    tested statement is iglofail.
+  - H_n (B.1's variants (e, e, d1, 1) and (e, h, d1, 1)), n = 1, 2, 3: iglofail 0, 4, 30 and 1, 2, 2; the policy's own run on H_n has
+    11, 43, 107 steps (the counts L-COMP's box 16 README gives for PGSolver's port), N5 on the wrappers 14, 37, 65 and 13, 19, 25.
+- READING WRAP-GLO (NOT proved; a candidate lemma with WRAP's proof as template, (W6) replaced). If every Odd vertex of H has one
+  successor, then on Wg(H, s0) the real valuation at H's vertices is H's, Iτ = ∅ at the frozen faces, and S4a's arena is H
+  restricted to A; so N5's step at H's Even vertices is a step of the globally optimizing policy on H, the first step without a
+  change is the first fallback, and the run ends 2 iterations later. The same holds for a two-player H whose Odd reply is copied
+  by fixed faces for every Even strategy of the arena (G^L_n above). DATA: the rows above.
+- What it would give, if proved: «N5 from S3 makes polynomially many iterations on every parity game» IMPLIES «the globally
+  optimizing policy makes polynomially many steps on every one-player parity game, from every start». The latter is CONJECTURE
+  GLO-1P (lane; Lead ruling 17:27Z: it «is a CONJECTURE in your text and stays one»); it would be a NECESSARY condition for
+  G-N5-TIME, next to O1-O3. No source opened: I have read nothing on policy iteration on one-player games (mean-payoff or
+  shortest-path policy iteration, lower bounds for Howard's rule there), so I do not know whether a published bound, upper or
+  lower, covers the globally optimizing rule. That is a question of box 105 (Lead 17:27Z).
+- A sketch, NOT a proof, and nothing in this box rests on it: on a one-player game, (a) if an optimal successor w of v already
+  has its optimal value and the current play from w avoids v, then v has its optimal value after one more step; (b) values never
+  decrease and a vertex on a closed cycle has the cycle's value, so the same cycle is not closed twice with the same vertex on it,
+  which is what the bits of [F11] §8's counter do. This says why I do not see a one-player copy of that counter; it bounds nothing.
+- For the kill side: a counterexample family to GLO-1P, or a two-player family whose Odd replies fixed faces can copy and on which the policy
+  is super-polynomial, would make N5 super-polynomial (through Wg). [F11]'s H_n is not such a family (B.1: its stubborn cycles).

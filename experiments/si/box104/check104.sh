@@ -10,7 +10,7 @@
 #   counters 0 on random free genomes, controls fire; (10) F_n is outside E-DOM, the E-DOM build is inside.
 # (11) instance sha1; (12) quotes: 0 FAIL at the sources, and every quoted string stands in docs/si/box104-map.md.
 # Addenda (each checked when its output is present): replay209sum.py (box 209's counters on the lane's 26 instances; box 103
-#   Addendum B); (13) guide104.py rows; (14) climb104.py rows.
+#   Addendum B); (13) guide104.py rows; (14) climb104.py rows; (15) gscan104.py rows; (16) glo104.py rows.
 set -u
 cd "$(dirname "$0")"
 fail=0
@@ -83,6 +83,24 @@ if [ -f out/guide104.out ]; then
   [ "$(grep "^GUIDE104 alg spec core high lmcs " out/guide104.out | sed 's/.*| iterations \([0-9]*\) .*/\1/' | tr '\n' ' ')" = "6 8 9 11 13 " ] || bad "guide lmcs counts"
   [ "$(grep "^GUIDE104 alg spec core high fried " out/guide104.out | sed 's/.*| iterations \([0-9]*\) .*/\1/' | tr '\n' ' ')" = "10 10 12 14 " ] || bad "guide fried counts"
   [ "$(grep -c "^GUIDE104 alg spec core low hn .* valve moves [1-9]" out/guide104.out)" = 3 ] || bad "guide core-low control"
+fi
+# (15) Addendum B.1 (gscan104.py), when present: 40 rows, each S3 standard, tau and valves frozen, 1 fallback, correct; baseline counts
+if [ -f out/gscan104.out ]; then
+  [ "$(grep -c "^GSCAN104 .* S3 standard True | .* fallbacks 1 .* tau changes 0 valve moves 0 .* | correct True$" out/gscan104.out)" = 40 ] && [ "$(wc -l < out/gscan104.out)" = 40 ] || bad "gscan rows"
+  [ "$(grep "^GSCAN104 alg spec hn GF e G3 e RE d1 copy 1 " out/gscan104.out | sed 's/.*| iterations \([0-9]*\) .*/\1/' | tr '\n' ' ')" = "14 37 65 99 " ] || bad "gscan baseline"
+  [ "$(sed 's/.*| iterations \([0-9]*\) .*/\1/' out/gscan104.out | sort -n | tail -1)" = 99 ] || bad "gscan maximum"
+fi
+# (16) Addendum B.3 (glo104.py), when present: iglofail 0 on the copying faces (6 rows, N5 = policy + 3) and on the one-player
+#   games (2 rows, endfail 0); the control fires (plain faces, n >= 2); the policy's own counts on H_n
+if [ -f out/glo104.out ]; then
+  [ "$(wc -l < out/glo104.out)" = 18 ] || bad "glo rows"
+  for p in "1 6 4 3" "2 7 5 4" "3 8 6 5" "4 10 8 7" "5 12 10 9" "6 14 12 11"; do
+    set -- $p
+    grep -q "^GLO104 lmcs emul n $1: .* | N5 iterations $2 first fallback $3 | steps before it $4 iglofail 0 | globally optimal policy on H from iota: $4 steps$" out/glo104.out || bad "glo emul n $1"
+  done
+  [ "$(grep -c "^GLO104 rand1p .* iglofail 0 | .* endfail (iterations != first fallback + 2) 0 | " out/glo104.out)" = 2 ] || bad "glo one-player"
+  [ "$(grep -c "^GLO104 lmcs plain n [234]: .* iglofail [1-9]" out/glo104.out)" = 3 ] || bad "glo control"
+  [ "$(grep "^GLO104 hn GF e G3 e " out/glo104.out | sed 's/.*iota: \([0-9]*\) steps$/\1/' | tr '\n' ' ')" = "11 43 107 " ] || bad "glo policy counts on H_n"
 fi
 # (14) O2 probe (climb104.py), when present: 18 climbs, none failed
 if [ -f out/climb104.out ]; then

@@ -1,0 +1,18 @@
+GLO104 lmcs emul n 1: Odd vertices with 2 successors 1 | |Wg| 274 | N5 iterations 6 first fallback 4 | steps before it 3 iglofail 0 | globally optimal policy on H from iota: 3 steps
+GLO104 lmcs emul n 2: Odd vertices with 2 successors 2 | |Wg| 516 | N5 iterations 7 first fallback 5 | steps before it 4 iglofail 0 | globally optimal policy on H from iota: 4 steps
+GLO104 lmcs emul n 3: Odd vertices with 2 successors 3 | |Wg| 785 | N5 iterations 8 first fallback 6 | steps before it 5 iglofail 0 | globally optimal policy on H from iota: 5 steps
+GLO104 lmcs emul n 4: Odd vertices with 2 successors 4 | |Wg| 1081 | N5 iterations 10 first fallback 8 | steps before it 7 iglofail 0 | globally optimal policy on H from iota: 7 steps
+GLO104 lmcs emul n 5: Odd vertices with 2 successors 5 | |Wg| 1404 | N5 iterations 12 first fallback 10 | steps before it 9 iglofail 0 | globally optimal policy on H from iota: 9 steps
+GLO104 lmcs emul n 6: Odd vertices with 2 successors 6 | |Wg| 1754 | N5 iterations 14 first fallback 12 | steps before it 11 iglofail 0 | globally optimal policy on H from iota: 11 steps
+GLO104 lmcs plain n 1: Odd vertices with 2 successors 1 | |Wg| 274 | N5 iterations 6 first fallback 4 | steps before it 3 iglofail 0 | globally optimal policy on H from iota: 3 steps
+GLO104 lmcs plain n 2: Odd vertices with 2 successors 2 | |Wg| 516 | N5 iterations 8 first fallback 5 | steps before it 4 iglofail 2 | globally optimal policy on H from iota: 4 steps
+GLO104 lmcs plain n 3: Odd vertices with 2 successors 3 | |Wg| 785 | N5 iterations 9 first fallback 6 | steps before it 5 iglofail 3 | globally optimal policy on H from iota: 5 steps
+GLO104 lmcs plain n 4: Odd vertices with 2 successors 4 | |Wg| 1081 | N5 iterations 11 first fallback 8 | steps before it 7 iglofail 5 | globally optimal policy on H from iota: 7 steps
+GLO104 rand1p seed 1045 games 300 n<=12: steps before the first fallback 303 iglofail 0 | cntfail (first fallback != policy steps + 1) 2 endfail (iterations != first fallback + 2) 0 | max steps of the globally optimal policy 5 max |Wg| 291
+GLO104 rand1p seed 1046 games 100 n<=24: steps before the first fallback 147 iglofail 0 | cntfail (first fallback != policy steps + 1) 2 endfail (iterations != first fallback + 2) 0 | max steps of the globally optimal policy 4 max |Wg| 511
+GLO104 hn GF e G3 e RE d1 copy 1 n 1: |Wg| 404 | N5 iterations 14 first fallback 12 | steps before it 11 iglofail 0 | globally optimal policy on H from iota: 11 steps
+GLO104 hn GF e G3 e RE d1 copy 1 n 2: |Wg| 899 | N5 iterations 37 first fallback 34 | steps before it 33 iglofail 4 | globally optimal policy on H from iota: 43 steps
+GLO104 hn GF e G3 e RE d1 copy 1 n 3: |Wg| 1457 | N5 iterations 65 first fallback 62 | steps before it 61 iglofail 30 | globally optimal policy on H from iota: 107 steps
+GLO104 hn GF e G3 h RE d1 copy 1 n 1: |Wg| 404 | N5 iterations 13 first fallback 11 | steps before it 10 iglofail 1 | globally optimal policy on H from iota: 11 steps
+GLO104 hn GF e G3 h RE d1 copy 1 n 2: |Wg| 899 | N5 iterations 19 first fallback 17 | steps before it 16 iglofail 2 | globally optimal policy on H from iota: 43 steps
+GLO104 hn GF e G3 h RE d1 copy 1 n 3: |Wg| 1457 | N5 iterations 25 first fallback 23 | steps before it 22 iglofail 2 | globally optimal policy on H from iota: 107 steps
