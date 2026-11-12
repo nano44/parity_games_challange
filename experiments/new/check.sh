@@ -1076,10 +1076,10 @@ if [ "$r199" -eq 0 ] && [ -z "$d199" ] && ! grep -v "^ctrl" box199/check199.out 
 else
   echo "BOX 199 SPLIT check: FAILED (check199.sh exit $r199)"; echo "$d199" | head -30; echo "$run199" | tail -15; exit 1
 fi
-# P-N5-SPLIT (L-NEW successor 67; L-2 assert successor 71, R-D7a): frozen packet + sources, P-N5-CHAIN premise, tools / outputs / instances / engine against box199/split.pins (DOCS/ = docs/new/)
+# P-N5-SPLIT (L-NEW successor 67; L-3 assert successor 71, R-D7a + R-U127): frozen packet + sources, P-N5-CHAIN premise, tools / outputs / instances / engine against box199/split.pins (DOCS/ = docs/new/)
 pinS=$(cd box199 && sed 's#DOCS/#../../../docs/new/#' split.pins | sha1sum -c --quiet 2>&1) || true
-if [ -z "$pinS" ] && grep -q "^d8888d0b090339b80b4ce9b636a23461b476bf3f  DOCS/P-N5-SPLIT-line-L2.txt$" box199/split.pins; then
-  echo "P-N5-SPLIT: packet and $(wc -l < box199/split.pins) pinned files match split.pins, line L-2 d8888d0b pinned: PASS"
+if [ -z "$pinS" ] && grep -q "^a8661c4b7998aafc02299c43dfe4e2c6320f73ee  DOCS/P-N5-SPLIT-line-L3.txt$" box199/split.pins; then
+  echo "P-N5-SPLIT: packet and $(wc -l < box199/split.pins) pinned files match split.pins, line L-3 a8661c4b pinned: PASS"
 else
   echo "P-N5-SPLIT check: FAILED"; echo "$pinS" | head -20; exit 1
 fi

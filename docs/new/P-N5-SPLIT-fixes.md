@@ -115,3 +115,20 @@ Scope: DATA only (§9.1). No statement, proof, premise or DEAD row of the packet
     frozen instances, split199.out T3; 199 on MW32_2)».
   - Also noticed, not applied: L-1's source note reads «with fixes entries 1-2»; after this entry it could read «with fixes entries 1-3»
     (the QN precedent, mkl2_qn.py, left its source note unchanged).
+
+## Fixes entry 4 (L-NEW successor 71; Lead ruling R-U127 07:58Z 2026-11-12, DATA rule; written 2026-11-12T08:36Z by date -u)
+- Ruling R-U127 (Lead): «every DATA clause names its counter … units (a), (b), (c) exactly as you proposed in entry 3, and the source note
+  «with fixes entries 1-2» → «with fixes entries 1-4»», with (a) in the FIRST «max c_y». ACCEPTED; applied verbatim, line only:
+  - (a) «max c_y ≤ 6» → «max c_y (unit: y-tops of one (v, I, y), max over (v, I, y); split199.out maxc) ≤ 6»;
+  - (b) «max split pairs 5 (FW6_4, FW8_4)» → «max split pairs (unit: distinct split pairs (u, b) of the y-tops of one (v, I, y), max over
+    (v, I, y); split199.out maxSPL) 5 (FW6_4, FW8_4)»;
+  - (c) «every run is short (T3 ≤ 199)» → «every run is short (T3 ≤ 199; unit: states of the HOW3 run, max over the 28 frozen instances,
+    split199.out T3; 199 on MW32_2)»;
+  - (d) «with fixes entries 1-2» → «with fixes entries 1-4».
+- Counters checked against the tool: split199.py header l. 31 «maxc, maxW (non-rewin re-entries), maxSPL (distinct (u, b)): per (v, I, y),
+  maxima over the genome»; split199.out: MW32_2 T3 199 (the largest T3 of the 28 rows), FW6_4 maxSPL 5.
+- Line L-3: docs/new/P-N5-SPLIT-line-L3.txt = L-2 + R-U127, built by experiments/new/box199/mkl3_199.py (from the repo root; asserts the frozen
+  packet's sha1 5bc1b1f3, L-2's sha1 d8888d0b, each old string exactly once (incl. «max c_y ≤ 6»), one line, no «|», balanced parentheses,
+  each new unit string once, «with fixes entries 1-2» absent): sha1 a8661c4b7998aafc02299c43dfe4e2c6320f73ee, 9,796 B. L-1 → L-3 =
+  R-D7a + R-U127.
+- Re-pinned: split.pins adds L-3 and mkl3_199.py and re-pins this file (65 rows); check.sh «P-N5-SPLIT» asserts the L-3 pin row.
