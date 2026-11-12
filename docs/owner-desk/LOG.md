@@ -704,3 +704,8 @@ Relayed verbatim to the Lead, priority "now".
 ## 2026-11-12T12:55Z Lead report (12:56Z, summary + owner line verbatim)
 L-RED-B created: session_01V5yGRZCKC1BRJdKjdZG2hp, Fable 5.2 xhigh, branch claude/l-red-b, target L-NEW 72 box 208. Box 208 Addendum A now claims polynomial T_CYC on IDEAL-CYC for every genome (CANDIDATE). Four independent checks: L-RED 66, L-RED-B, REFEREE 32 (pre-read), L-COMP 19 (second engine + Friedmann G_N test).
 Owner line: «A large CANDIDATE claim (polynomial on IDEAL-CYC for all genomes; not M4) is under four independent attacks; treated as wrong until it survives them.»
+
+## 2026-11-12T15:29Z owner message (verbatim)
+> any update ever sicne we started working with higher speed?
+
+Answered from trunk f95205575 (13:59Z) and LEAD-STATE.md 13:04Z-13:59Z: R127 landed; box 208 CANDIDATE survives L-RED 66, L-RED-B and REFEREE 32 pre-read (one minor gap, repair given), L-COMP 19 pending; L-FORMAL first Lean batch (26 theorems, 3 axioms); L-LIT T69 novelty check. Relayed to the Lead.
