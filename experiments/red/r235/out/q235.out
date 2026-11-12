@@ -1,0 +1,30 @@
+FOUND   l.9864 Even movers of priority 0; Odd gates of priority 1 with a W-face e and a Ξ-face β
+FOUND   l.9864 β of priority 6 + 2·rank + parity with edges to the Ξ-target and to u, or to u alone
+FOUND   l.9864 e of even priority above every β with one edge to the W-target or to the top even self-loop c_W
+FOUND   l.9864 a closed core u = K0 (Even, top + 2) → {K1, K3}, K1 (Even, 5) → {K0, K1}, K2 (Odd, 3) → {K1, K2}, K3 (Even, to
+FOUND   l.9864 β → its Ξ-target (u when the target is X), K0 → K3, K1 → K1, K3 → K2
+FOUND   l.15726 the minimum size of a set of movers meeting every cycle (self-loops count) of the Ξ-graph on the movers (an ed
+FOUND   l.13677 The game is Γ(G) with every Even vertex that is not a mover frozen at its start successor. Odd is unrestricted
+FOUND   l.13678 every mover x goes to a successor of ⊴-largest Ω_t value, and keeps σ_t(x) if σ_t(x) is such a successor
+FOUND   l.13686 For every mover x, step t and successor y of x: Ω_(t+1)(x) ⊵ ext(x, Ω_t(y)).
+FOUND   l.13691 each vertex's Λ moves only to a vertex of strictly larger reward among at most 2M + 3 possible cycle nodes
+FOUND   l.13607 VJ00 §4.2 / Friedmann arXiv 1106.0778 §3 for the order ⊴ on values (Λ, Π, k)
+FOUND   l.14480 If Λ_t(v) = Λ_(t+1)(v), then E_t(v) ≤ E_(t+1)(v).
+FOUND   l.14481 Every vertex more relevant than some e-vertex is an e-vertex, c_W, K0 or K3, by [DEF]
+FOUND   l.14320 sets of e-vertices compared lexicographically by their most relevant differing element
+FOUND   l.15165 For every genome G, every positional pair of IDEAL-CYC(G) and every vertex v, the cycle node of v's play has p
+FOUND   l.None In IDEAL-CYC(G), for every genome G, every state t and every vertex v other than c_W and the e-vertices whose 
+FOUND   l.15171 At every state and every gate g, Ω_t(e_g) ≠ Ω_t(β_g). So LOC-GATE applies at every gate and state.
+FOUND   l.15173 Let G be any genome, t a state of a run of IDEAL-CYC(G), g a gate, a := σ̄_t(g), b := its other face, Ω := Ω_t
+FOUND   l.15176 At every state σ̄_t(K2) = K1 and Ω_t(K1) ◁ Ω_t(K2).
+FOUND   l.15076 every maximal window of quiet steps has at most N steps
+FOUND   l.15726 it makes no new class of genomes on which T_CYC is polynomial, and at k = 1 it bounds the cycle nodes only (wh
+FOUND   l.14744 the Howard run of IDEAL-CYC(G) from any mover state has C = 0, R = 0 and T_CYC ≤ N
+FOUND   l.13693 T_CYC ≤ C + R + (C + R + 1)·N ≤ (C + R + 1)(N + 1).
+FOUND   l.15726 for every gate g and every step t, if σ̄_(t−1)(g) ≠ σ̄_t(g), then class_(t−1)(e_g) ≠ class_t(e_g) or class_(t−
+FOUND   l.None H0: every step t → t+1 switches some Even x with Λ_t(x) ≠ x and Λ_(t+1)(x) ≠ x.
+FOUND   l.13698 (a) every maximal run of p-steps has at most n_E steps;
+FOUND   l.13607 labelled C if some vertex's cycle node Λ changes, else R if Odd's optimal counterstrategy σ̄ (any fixed determ
+FOUND   l.13682 (b) Facts F1-F6 (§3 l. 68-83) with F4 REPLACED by F4′
+FOUND   l.15076 optimal at every vertex at once against σ_t
+TOTAL quotes 29 found 29 missing 0
