@@ -1,0 +1,9 @@
+bit 0: e-pos 91 option (mover 46, j 0) W-target 45 Xi-target 28 lev(x) 1
+bit 1: e-pos 92 option (mover 34, j 0) W-target 43 Xi-target 27 lev(x) 1
+bit 2: e-pos 93 option (mover 30, j 0) W-target 41 Xi-target 20 lev(x) 1
+bit 3: e-pos 94 option (mover 31, j 0) W-target 41 Xi-target 15 lev(x) 1
+bit 4: e-pos 95 option (mover 32, j 0) W-target 1 Xi-target 10 lev(x) 1
+bit 5: e-pos 96 option (mover 33, j 0) W-target 6 Xi-target 4 lev(x) 1
+high parts (dedup over states): [0, 1, 2, 4, 8, 9, 10]
+popcount of high parts: [0, 1, 1, 1, 1, 2, 2]
+level-1 movers: [30, 31, 32, 33, 34, 46]
