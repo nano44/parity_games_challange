@@ -6,14 +6,16 @@ Files I own: docs/red-b/, experiments/red-b/, notes/L-RED-B.md, docs/agents/hand
 ## Resume point
 **SUCCESSOR 3 (Opus 5.5, session_01V5yGRXHoHifjbeqR3Lntn5; started 2026-11-12 20:00Z by date -u). «go» from the Lead 20:06Z, effective
 at the push of d19af5df (exit 0, 20:47:58Z).** Successor 2's 8d5d8388 is lost (not on origin); its tools are rebuilt from scratch.
-- B2 (box 209) IN FLIGHT. Tools (committed bba65c83): eng3.py (own Γ3 builder from P-N5-REACH §3 + HOW3 run), xcheck3.py (brute force
-  over all Odd strategies; PAD (c) vs eng.py's Γ), lev3.py (32 must-0 counters: premises, (K0′)-(K5′), LEVEL3, PLATEAU3, tail, T3-ALL),
-  sweep3.py (rand / exh / files), n5xi3.py (N5XI-G3 identity: N5′-xi iterations by L-NEW's n5v (git archive of 311bbf81 into the
-  scratchpad, not copied) vs my T3 + 3, and REACH3-ALL replayed with my values), run_b2.sh (resumable: frozen | exh | rand).
-  Smoke: T3 equal to box 209's on 6 records; 504 states brute-force equal; controls ctrl=1, ctrl=2 fire.
-- Proof read of box 209 (§2-§5) done: no failing step found (reading, not DATA). E-DOM enters through (K2′) only (and through (K4′),
-  (K5′), (L3′), (L4′), (P1)-(P4) via (K2′)); B-ONLY3 in (K3′ b, d), (P4) case (3).
-- Runs: work/ (ignored); outputs move to data/ + SHA1SUMS before each commit. Batch pushes.
+- B2 (box 209) DONE (verdict NO KILL; every statement SURVIVES; E-DOM's use VALID; notes N-1 (P2) citation, N-2 tie-rule
+  dependence of T3, N-3 n_E3 wording): docs/red-b/B2-box209.md, evidence data/b2/ (pinned). Tools: eng3.py, xcheck3.py, lev3.py,
+  sweep3.py, n5xi3.py, climb3.py, edomctl.py, run_b2.sh; gate checks in check.sh. Not run: exhaustive (1,6), (2,5); (3,4) partial 8.8M.
+- B3 IN FLIGHT (GUIDE-RULE on N5 itself). Archives in experiments/red-b/work/b3/ (ignored; rebuild: `git archive` of claude/l-new
+  069c888b experiments/new/{box190,box189,box21,*.py} experiments/si experiments/harness experiments/hard-families -> work/b3/lnew,
+  claude/l-red 2d290a15 experiments/red/r217 -> work/b3/lred, claude/l-si 2051a0ee experiments/si/box104 -> work/b3/lsi).
+  gclimb.py (random H, s0, rho0, gamma; climbs done: best N5 iterations 10-16 for |H| 6-16, flat/linear, 0 wrong); gfam.py (H fixed =
+  switchallexp_n, mutate s0 / rho0 / gamma; run_b3.sh fam, n = 2..6, resumable: work/gfam_*.json). Reading (not DATA): on the FLAT
+  wrapper W, N5's S4a ties are broken by BFS order (SPEC S1 (iv), odd cycle node c_W in the dual), so each Even vertex's successor index
+  only decreases: at most |E| H-steps before the first fallback.
 - B3 after B2: n5v spec mode + L-SI box104 guide tools (2051a0ee) via git archive; SPEC = docs/new/N5-ssi-global.md «## SPEC» l. 23-62.
 
 ### (session 1 resume point, kept as history)

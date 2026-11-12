@@ -1,0 +1,4 @@
+N5XI3 DEAD_SEG2P_d4_N8.json N 8 M 16 n3 130 its_xi 13 fb_xi 1 T3' 10 T3_lo 10 T3_hi 10 its_spec 4 fb_spec 1 idfail 0 reachfail 0
+N5XI3 DEAD_SEG2P_d7_N14.json N 14 M 28 n3 220 its_xi 22 fb_xi 1 T3' 19 T3_lo 19 T3_hi 19 its_spec 5 fb_spec 1 idfail 0 reachfail 0
+N5XI3 DEAD_SEG2P_d9_N18.json N 18 M 36 n3 280 its_xi 24 fb_xi 1 T3' 21 T3_lo 21 T3_hi 21 its_spec 4 fb_spec 1 idfail 0 reachfail 0
+N5XI3 SUMMARY genomes 3 idfail 0 reachfail 0 t3diff 0

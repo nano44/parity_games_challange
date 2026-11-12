@@ -1,0 +1,13 @@
+it 47 score 8301 T3 2 N 12 M 23 platmax 1 phivals 1
+it 50 score 16602 T3 3 N 12 M 24 platmax 2 phivals 1
+it 67 score 18102 T3 3 N 11 M 21 platmax 2 phivals 1
+it 75 score 20002 T3 3 N 10 M 21 platmax 2 phivals 1
+it 96 score 30003 T3 4 N 10 M 23 platmax 3 phivals 1
+it 99 score 33303 T3 4 N 9 M 22 platmax 3 phivals 1
+it 131 score 37503 T3 4 N 8 M 20 platmax 3 phivals 1
+it 143 score 42803 T3 4 N 7 M 16 platmax 3 phivals 1
+it 184 score 50003 T3 5 N 6 M 14 platmax 3 phivals 1
+it 192 score 60003 T3 4 N 5 M 12 platmax 3 phivals 1
+it 251 score 75003 T3 5 N 7 M 17 platmax 3 phivals 2
+it 348 score 100004 T3 6 N 9 M 20 platmax 4 phivals 2
+CLIMB3 plat_s508_N24_M52_rand best 100004 T3 9 N 23 M 51 platmax 4 phivals 5 viol 0 37s

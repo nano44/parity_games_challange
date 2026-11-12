@@ -1,0 +1,4 @@
+FILE DEAD_SEG2P_d4_N8.json N 8 M 16 T3 10 tie high bad 0 phivals 2 mvals 1 plateaus 2 platmax 8 tail 0
+FILE DEAD_SEG2P_d7_N14.json N 14 M 28 T3 19 tie high bad 0 phivals 16 mvals 9 plateaus 12 platmax 2 tail 0
+FILE DEAD_SEG2P_d9_N18.json N 18 M 36 T3 21 tie high bad 0 phivals 12 mvals 3 plateaus 27 platmax 3 tail 4
+SWEEP3 files_high_all runs 3 viol 0 | f1 0 dom 0 howard 0 cn23 0 notie3 0 locgate3 0 lock23 0 bonly3 0 edom3 0 d1 0 k0 0 k1 0 k2 0 k3 0 k4 0 k5 0 l1 0 l2 0 l3 0 l4map 0 l4cyc 0 l5 0 p1 0 p2 0 p3 0 p4 0 p4c3 0 p6 0 p7 0 plat 0 tail 0 t3all 0 | alpha 347 beta 70 case3 21 plateaus 41 stalls 108 | max_T 21 max_T_over_NM 0.452 max_intervals 16 max_mvals 9 max_phivals 16 max_platmax 8 max_platratio 1.0 max_tailmax 4 | 0s

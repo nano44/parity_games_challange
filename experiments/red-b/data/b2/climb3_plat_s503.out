@@ -1,0 +1,6 @@
+it 59 score 20001 T3 2 N 6 M 10 platmax 1 phivals 1
+it 65 score 25001 T3 2 N 6 M 10 platmax 1 phivals 1
+it 92 score 33301 T3 2 N 5 M 7 platmax 1 phivals 1
+it 254 score 50001 T3 2 N 6 M 13 platmax 1 phivals 1
+it 452 score 100001 T3 2 N 6 M 13 platmax 1 phivals 1
+CLIMB3 plat_s503_N12_M26_rand best 100001 T3 2 N 12 M 25 platmax 1 phivals 1 viol 0 8s

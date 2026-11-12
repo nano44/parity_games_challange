@@ -1,0 +1,9 @@
+it 1 score 1 T3 2 N 6 M 10 platmax 0 phivals 1
+it 86 score 2 T3 2 N 12 M 19 platmax 0 phivals 0
+it 122 score 3 T3 4 N 10 M 19 platmax 0 phivals 1
+it 223 score 5 T3 6 N 9 M 21 platmax 0 phivals 1
+it 959 score 6 T3 7 N 12 M 25 platmax 0 phivals 1
+it 1112 score 7 T3 7 N 12 M 26 platmax 0 phivals 0
+it 1156 score 8 T3 8 N 11 M 24 platmax 0 phivals 0
+it 1938 score 9 T3 9 N 10 M 24 platmax 0 phivals 0
+CLIMB3 tail_s506_N12_M26_rand best 9 T3 9 N 12 M 26 platmax 0 phivals 0 viol 0 11s

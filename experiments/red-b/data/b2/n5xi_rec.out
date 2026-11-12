@@ -1,0 +1,26 @@
+N5XI3 MWR4_2.json N 48 M 97 n3 737 its_xi 33 fb_xi 1 T3' 30 T3_lo 30 T3_hi 30 its_spec 31 fb_spec 1 idfail 0 reachfail 0
+N5XI3 MWR8_2.json N 84 M 177 n3 1333 its_xi 57 fb_xi 1 T3' 54 T3_lo 54 T3_hi 54 its_spec 55 fb_spec 1 idfail 0 reachfail 0
+N5XI3 MWR16_2.json N 156 M 337 n3 2525 its_xi 105 fb_xi 1 T3' 102 T3_lo 102 T3_hi 102 its_spec 103 fb_spec 1 idfail 0 reachfail 0
+N5XI3 CW4_n.json N 51 M 106 n3 803 its_xi 33 fb_xi 1 T3' 30 T3_lo 30 T3_hi 30 its_spec 31 fb_spec 1 idfail 0 reachfail 0
+N5XI3 CW8_n.json N 91 M 212 n3 1585 its_xi 62 fb_xi 1 T3' 59 T3_lo 59 T3_hi 59 its_spec 55 fb_spec 1 idfail 0 reachfail 0
+N5XI3 CW16_n.json N 171 M 472 n3 3485 its_xi 117 fb_xi 1 T3' 114 T3_lo 114 T3_hi 114 its_spec 103 fb_spec 1 idfail 0 reachfail 0
+N5XI3 CWRR4_n.json N 51 M 109 n3 824 its_xi 31 fb_xi 1 T3' 28 T3_lo 28 T3_hi 28 its_spec 31 fb_spec 1 idfail 0 reachfail 0
+N5XI3 CWRR8_n.json N 91 M 219 n3 1634 its_xi 55 fb_xi 1 T3' 52 T3_lo 52 T3_hi 52 its_spec 55 fb_spec 1 idfail 0 reachfail 0
+N5XI3 CWRR16_n.json N 171 M 487 n3 3590 its_xi 103 fb_xi 1 T3' 100 T3_lo 100 T3_hi 100 its_spec 103 fb_spec 1 idfail 0 reachfail 0
+N5XI3 CWRQ8_n.json N 91 M 219 n3 1634 its_xi 55 fb_xi 1 T3' 52 T3_lo 52 T3_hi 52 its_spec 55 fb_spec 1 idfail 0 reachfail 0
+N5XI3 K1F21_n48.json N 48 M 97 n3 737 its_xi 34 fb_xi 1 T3' 31 T3_lo 31 T3_hi 31 its_spec 6 fb_spec 1 idfail 0 reachfail 0
+N5XI3 K1F34_n84.json N 84 M 177 n3 1333 its_xi 55 fb_xi 1 T3' 52 T3_lo 52 T3_hi 52 its_spec 5 fb_spec 1 idfail 0 reachfail 0
+N5XI3 K1C16_n400.json N 113 M 287 n3 2132 its_xi 54 fb_xi 1 T3' 51 T3_lo 51 T3_hi 51 its_spec 7 fb_spec 1 idfail 0 reachfail 0
+N5XI3 K1L7_n48.json N 48 M 97 n3 737 its_xi 40 fb_xi 1 T3' 37 T3_lo 37 T3_hi 37 its_spec 4 fb_spec 1 idfail 0 reachfail 0
+N5XI3 K1L10_n48.json N 48 M 97 n3 737 its_xi 34 fb_xi 1 T3' 31 T3_lo 31 T3_hi 31 its_spec 5 fb_spec 1 idfail 0 reachfail 0
+N5XI3 K1D4_n48.json N 48 M 97 n3 737 its_xi 26 fb_xi 1 T3' 23 T3_lo 23 T3_hi 23 its_spec 5 fb_spec 1 idfail 0 reachfail 0
+N5XI3 BLKX23_n48.json N 48 M 97 n3 737 its_xi 31 fb_xi 1 T3' 28 T3_lo 28 T3_hi 28 its_spec 6 fb_spec 1 idfail 0 reachfail 0
+N5XI3 BLKX26_n48.json N 48 M 97 n3 737 its_xi 36 fb_xi 1 T3' 33 T3_lo 33 T3_hi 33 its_spec 5 fb_spec 1 idfail 0 reachfail 0
+N5XI3 B400_r32_a13d9661.json N 91 M 184 n3 1389 its_xi 52 fb_xi 1 T3' 49 T3_lo 49 T3_hi 49 its_spec 25 fb_spec 1 idfail 0 reachfail 0
+N5XI3 CFI3_n48.json N 48 M 97 n3 737 its_xi 27 fb_xi 1 T3' 24 T3_lo 24 T3_hi 24 its_spec 5 fb_spec 1 idfail 0 reachfail 0
+N5XI3 RINT_n48.json N 48 M 97 n3 737 its_xi 27 fb_xi 1 T3' 24 T3_lo 24 T3_hi 24 its_spec 5 fb_spec 1 idfail 0 reachfail 0
+N5XI3 k1fail_202.json N 15 M 45 n3 340 its_xi 7 fb_xi 1 T3' 4 T3_lo 4 T3_hi 4 its_spec 4 fb_spec 1 idfail 0 reachfail 0
+N5XI3 naive_k1_s71.json N 9 M 18 n3 145 its_xi 6 fb_xi 1 T3' 3 T3_lo 3 T3_hi 3 its_spec 4 fb_spec 1 idfail 0 reachfail 0
+N5XI3 ST4_k1.json N 9 M 9 n3 82 its_xi 3 fb_xi 1 T3' 0 T3_lo 0 T3_hi 0 its_spec 3 fb_spec 1 idfail 0 reachfail 0
+N5XI3 ST8_k1.json N 17 M 17 n3 146 its_xi 3 fb_xi 1 T3' 0 T3_lo 0 T3_hi 0 its_spec 3 fb_spec 1 idfail 0 reachfail 0
+N5XI3 SUMMARY genomes 25 idfail 0 reachfail 0 t3diff 0

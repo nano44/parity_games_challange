@@ -1,0 +1,26 @@
+FILE MWR4_2.json N 48 M 97 T3 30 tie rand bad 0 phivals 30 mvals 3 plateaus 0 platmax 0 tail 0
+FILE MWR8_2.json N 84 M 177 T3 54 tie rand bad 0 phivals 54 mvals 3 plateaus 0 platmax 0 tail 0
+FILE MWR16_2.json N 156 M 337 T3 102 tie rand bad 0 phivals 102 mvals 3 plateaus 0 platmax 0 tail 0
+FILE CW4_n.json N 51 M 106 T3 30 tie rand bad 0 phivals 30 mvals 3 plateaus 0 platmax 0 tail 0
+FILE CW8_n.json N 91 M 212 T3 59 tie rand bad 0 phivals 59 mvals 8 plateaus 0 platmax 0 tail 0
+FILE CW16_n.json N 171 M 472 T3 114 tie rand bad 0 phivals 114 mvals 15 plateaus 0 platmax 0 tail 0
+FILE CWRR4_n.json N 51 M 109 T3 28 tie rand bad 0 phivals 28 mvals 1 plateaus 0 platmax 0 tail 0
+FILE CWRR8_n.json N 91 M 219 T3 52 tie rand bad 0 phivals 52 mvals 1 plateaus 0 platmax 0 tail 0
+FILE CWRR16_n.json N 171 M 487 T3 100 tie rand bad 0 phivals 100 mvals 1 plateaus 0 platmax 0 tail 0
+FILE CWRQ8_n.json N 91 M 219 T3 52 tie rand bad 0 phivals 52 mvals 1 plateaus 0 platmax 0 tail 0
+FILE K1F21_n48.json N 48 M 97 T3 31 tie rand bad 0 phivals 30 mvals 5 plateaus 1 platmax 1 tail 0
+FILE K1F34_n84.json N 84 M 177 T3 52 tie rand bad 0 phivals 52 mvals 5 plateaus 0 platmax 0 tail 0
+FILE K1C16_n400.json N 113 M 287 T3 51 tie rand bad 0 phivals 48 mvals 6 plateaus 3 platmax 1 tail 0
+FILE K1L7_n48.json N 48 M 97 T3 37 tie rand bad 0 phivals 34 mvals 7 plateaus 2 platmax 2 tail 0
+FILE K1L10_n48.json N 48 M 97 T3 31 tie rand bad 0 phivals 28 mvals 7 plateaus 2 platmax 2 tail 0
+FILE K1D4_n48.json N 48 M 97 T3 23 tie rand bad 0 phivals 12 mvals 3 plateaus 1 platmax 9 tail 2
+FILE BLKX23_n48.json N 48 M 97 T3 28 tie rand bad 0 phivals 26 mvals 6 plateaus 1 platmax 2 tail 0
+FILE BLKX26_n48.json N 48 M 97 T3 33 tie rand bad 0 phivals 30 mvals 6 plateaus 1 platmax 2 tail 1
+FILE B400_r32_a13d9661.json N 91 M 184 T3 49 tie rand bad 0 phivals 49 mvals 4 plateaus 0 platmax 0 tail 0
+FILE CFI3_n48.json N 48 M 97 T3 24 tie rand bad 0 phivals 17 mvals 2 plateaus 2 platmax 4 tail 0
+FILE RINT_n48.json N 48 M 97 T3 24 tie rand bad 0 phivals 23 mvals 3 plateaus 1 platmax 1 tail 0
+FILE k1fail_202.json N 15 M 45 T3 4 tie rand bad 0 phivals 3 mvals 1 plateaus 0 platmax 0 tail 1
+FILE naive_k1_s71.json N 9 M 18 T3 3 tie rand bad 0 phivals 1 mvals 1 plateaus 0 platmax 0 tail 2
+FILE ST4_k1.json N 9 M 9 T3 0 tie rand bad 0 phivals 0 mvals 0 plateaus 0 platmax 0 tail 0
+FILE ST8_k1.json N 17 M 17 T3 0 tie rand bad 0 phivals 0 mvals 0 plateaus 0 platmax 0 tail 0
+SWEEP3 files_rand_T runs 25 viol 0 | f1 0 dom 0 howard 0 cn23 0 notie3 0 locgate3 0 lock23 0 bonly3 0 edom3 0 d1 0 k0 0 k1 0 k2 0 k3 0 k4 0 k5 0 l1 0 l2 0 l3 0 l4map 0 l4cyc 0 l5 0 p1 0 p2 0 p3 0 p4 0 p4c3 0 p6 0 p7 0 plat 0 tail 0 t3all 0 | alpha 1001 beta 4 case3 5 plateaus 14 stalls 31 | max_T 114 max_T_over_NM 0.255 max_intervals 114 max_mvals 15 max_phivals 114 max_platmax 9 max_platratio 0.188 max_tailmax 2 | 19s

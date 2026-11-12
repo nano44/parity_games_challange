@@ -1,0 +1,12 @@
+it 3 score 1 T3 1 N 3 M 4 platmax 0 phivals 1
+it 14 score 2 T3 2 N 6 M 9 platmax 0 phivals 2
+it 71 score 3 T3 3 N 11 M 14 platmax 0 phivals 3
+it 81 score 4 T3 4 N 8 M 12 platmax 0 phivals 4
+it 82 score 6 T3 6 N 8 M 13 platmax 0 phivals 6
+it 197 score 8 T3 9 N 12 M 24 platmax 1 phivals 8
+it 277 score 9 T3 10 N 12 M 25 platmax 0 phivals 9
+it 282 score 10 T3 11 N 12 M 25 platmax 0 phivals 10
+it 1114 score 11 T3 11 N 9 M 25 platmax 0 phivals 11
+it 1123 score 12 T3 12 N 9 M 25 platmax 0 phivals 12
+it 2866 score 13 T3 13 N 12 M 26 platmax 0 phivals 13
+CLIMB3 phi_s504_N12_M26_rand best 13 T3 13 N 12 M 26 platmax 0 phivals 13 viol 0 19s
