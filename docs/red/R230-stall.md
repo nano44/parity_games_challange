@@ -66,3 +66,6 @@ ODO-seeded climb (climbel230.py, seed 2317, from odo_dom_ylow_k16_m16, N ≤ 44,
 ## 5. Sources opened
 claude/l-si dc20e816 docs/si/box98-udep.md; my docs/red/R230-odo.md (0e74d1798); trunk RESULTS R125 at 4c2f407d2; L-NEW gamma3 / n5v
 at l-new fcba92fc.
+
+## Addendum: frozen sha1 (`git show 40d23da3a:path | sha1sum`, experiments/red/r230/inst/)
+ring_k4_m6 4621d904…, ring_k8_m12 1f766bb3… (the instance that killed RING-2CH).
