@@ -1,0 +1,4 @@
+it 2 best 99992 N 48 M 97 T 19 platmax 1 platY 48 stalls 1 loud 0 mvals 3 phivals 18 R 8 flips 12 maxgate 3 stallflips 0 minch 8 betavals 1 lamvals 2 Q 18  0s
+it 52 best 99994 N 49 M 91 T 10 platmax 0 platY 0 stalls 0 loud 0 mvals 1 phivals 9 R 4 flips 6 maxgate 2 stallflips 0 minch 6 betavals 0 lamvals 2 Q 9  2s
+it 98 best 99997 N 51 M 95 T 7 platmax 0 platY 0 stalls 0 loud 0 mvals 3 phivals 7 R 4 flips 10 maxgate 2 stallflips 0 minch 3 betavals 1 lamvals 5 Q 7  3s
+CLIMB2 minch_s33_N52_M110_K1L10_n48 done it 6000 best 99997 viol 0

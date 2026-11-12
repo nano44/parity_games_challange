@@ -1,0 +1,13 @@
+it 44 best 90 N 10 M 19 T 3 platmax 1 platY 10 stalls 1 loud 0 mvals 2 phivals 2 R 2 flips 3 maxgate 1 stallflips 0 minch 13 betavals 1 lamvals 3 Q 2  0s
+it 89 best 100 N 9 M 17 T 3 platmax 1 platY 9 stalls 1 loud 0 mvals 2 phivals 2 R 1 flips 5 maxgate 1 stallflips 0 minch 39 betavals 1 lamvals 3 Q 2  0s
+it 119 best 111 N 8 M 16 T 3 platmax 1 platY 8 stalls 1 loud 0 mvals 2 phivals 2 R 2 flips 4 maxgate 1 stallflips 0 minch 18 betavals 1 lamvals 2 Q 2  0s
+it 164 best 125 N 7 M 11 T 3 platmax 1 platY 7 stalls 1 loud 0 mvals 2 phivals 2 R 2 flips 3 maxgate 1 stallflips 0 minch 18 betavals 1 lamvals 2 Q 2  0s
+it 184 best 142 N 6 M 10 T 3 platmax 1 platY 6 stalls 1 loud 0 mvals 2 phivals 2 R 2 flips 3 maxgate 1 stallflips 0 minch 19 betavals 1 lamvals 3 Q 2  0s
+it 269 best 166 N 5 M 10 T 5 platmax 1 platY 5 stalls 1 loud 0 mvals 3 phivals 4 R 3 flips 5 maxgate 2 stallflips 0 minch 11 betavals 1 lamvals 3 Q 4  0s
+it 276 best 200 N 4 M 10 T 4 platmax 1 platY 4 stalls 1 loud 0 mvals 3 phivals 3 R 1 flips 2 maxgate 1 stallflips 0 minch 20 betavals 2 lamvals 4 Q 3  0s
+it 279 best 500 N 3 M 9 T 3 platmax 2 platY 3 stalls 2 loud 0 mvals 1 phivals 1 R 0 flips 0 maxgate 0 stallflips 0 minch -1 betavals 0 lamvals 2 Q 1  0s
+it 309 best 750 N 3 M 9 T 4 platmax 3 platY 3 stalls 3 loud 0 mvals 1 phivals 1 R 0 flips 0 maxgate 0 stallflips 0 minch -1 betavals 0 lamvals 2 Q 1  0s
+it 5338 best 800 N 7 M 27 T 6 platmax 4 platY 4 stalls 4 loud 0 mvals 2 phivals 2 R 1 flips 12 maxgate 1 stallflips 0 minch 71 betavals 1 lamvals 3 Q 2  14s
+it 8086 best 833 N 14 M 29 T 7 platmax 5 platY 5 stalls 5 loud 1 mvals 2 phivals 2 R 3 flips 11 maxgate 3 stallflips 1 minch 9 betavals 0 lamvals 2 Q 3  24s
+it 22924 best 857 N 14 M 29 T 10 platmax 6 platY 6 stalls 6 loud 0 mvals 3 phivals 4 R 3 flips 6 maxgate 2 stallflips 0 minch 14 betavals 1 lamvals 4 Q 4  77s
+CLIMB2 platrel_s19_N14_M30 done it 40000 best 857 viol 0

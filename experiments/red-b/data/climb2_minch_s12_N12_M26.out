@@ -1,0 +1,7 @@
+it 1 best 99984 N 6 M 15 T 3 platmax 0 platY 0 stalls 0 loud 0 mvals 3 phivals 3 R 2 flips 6 maxgate 1 stallflips 0 minch 16 betavals 1 lamvals 5 Q 3  0s
+it 7 best 99985 N 6 M 14 T 4 platmax 0 platY 0 stalls 0 loud 0 mvals 3 phivals 3 R 2 flips 5 maxgate 1 stallflips 0 minch 15 betavals 1 lamvals 4 Q 3  0s
+it 9 best 99986 N 5 M 13 T 4 platmax 0 platY 0 stalls 0 loud 0 mvals 2 phivals 3 R 2 flips 3 maxgate 1 stallflips 0 minch 14 betavals 1 lamvals 3 Q 3  0s
+it 12 best 99988 N 5 M 13 T 3 platmax 0 platY 0 stalls 0 loud 0 mvals 3 phivals 3 R 2 flips 3 maxgate 1 stallflips 0 minch 12 betavals 1 lamvals 4 Q 3  0s
+it 14 best 99996 N 5 M 13 T 3 platmax 0 platY 0 stalls 0 loud 0 mvals 3 phivals 3 R 3 flips 4 maxgate 2 stallflips 0 minch 4 betavals 1 lamvals 4 Q 3  0s
+it 41 best 99997 N 6 M 14 T 3 platmax 0 platY 0 stalls 0 loud 0 mvals 3 phivals 3 R 3 flips 5 maxgate 2 stallflips 0 minch 3 betavals 1 lamvals 5 Q 3  0s
+CLIMB2 minch_s12_N12_M26 done it 40000 best 99997 viol 0

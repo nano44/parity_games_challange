@@ -1,0 +1,18 @@
+it 2714 best 1001 N 12 M 26 T 3 platmax 1 platY 10 stalls 1 loud 1 mvals 1 phivals 1 R 2 flips 6 maxgate 1 stallflips 1 minch 8 betavals 0 lamvals 2 Q 2  4s
+it 3240 best 2001 N 12 M 26 T 3 platmax 1 platY 6 stalls 1 loud 1 mvals 2 phivals 2 R 3 flips 4 maxgate 1 stallflips 2 minch 8 betavals 0 lamvals 1 Q 3  5s
+it 3395 best 3001 N 12 M 26 T 2 platmax 1 platY 6 stalls 1 loud 1 mvals 1 phivals 1 R 2 flips 4 maxgate 1 stallflips 3 minch 17 betavals 0 lamvals 1 Q 2  6s
+it 3477 best 4001 N 11 M 26 T 2 platmax 1 platY 6 stalls 1 loud 1 mvals 1 phivals 1 R 2 flips 5 maxgate 1 stallflips 4 minch 6 betavals 0 lamvals 1 Q 2  6s
+it 3615 best 5001 N 11 M 26 T 3 platmax 1 platY 5 stalls 1 loud 1 mvals 1 phivals 2 R 2 flips 8 maxgate 1 stallflips 5 minch 8 betavals 0 lamvals 1 Q 3  6s
+it 3706 best 7001 N 12 M 26 T 2 platmax 1 platY 6 stalls 1 loud 1 mvals 1 phivals 1 R 2 flips 10 maxgate 1 stallflips 7 minch 27 betavals 0 lamvals 1 Q 2  7s
+it 3797 best 9001 N 11 M 26 T 2 platmax 1 platY 4 stalls 1 loud 1 mvals 1 phivals 1 R 2 flips 11 maxgate 1 stallflips 9 minch 22 betavals 0 lamvals 1 Q 2  7s
+it 3810 best 10001 N 12 M 26 T 2 platmax 1 platY 4 stalls 1 loud 1 mvals 1 phivals 1 R 2 flips 12 maxgate 1 stallflips 10 minch 23 betavals 0 lamvals 1 Q 2  7s
+it 3833 best 12001 N 12 M 25 T 2 platmax 1 platY 2 stalls 1 loud 1 mvals 1 phivals 1 R 2 flips 13 maxgate 1 stallflips 12 minch 56 betavals 0 lamvals 1 Q 2  7s
+it 3862 best 13001 N 12 M 26 T 2 platmax 1 platY 2 stalls 1 loud 1 mvals 1 phivals 1 R 2 flips 14 maxgate 1 stallflips 13 minch 25 betavals 0 lamvals 1 Q 2  7s
+it 3935 best 14001 N 12 M 26 T 2 platmax 1 platY 2 stalls 1 loud 1 mvals 1 phivals 1 R 2 flips 15 maxgate 1 stallflips 14 minch 57 betavals 0 lamvals 1 Q 2  7s
+it 4017 best 15001 N 12 M 26 T 2 platmax 1 platY 2 stalls 1 loud 1 mvals 1 phivals 1 R 2 flips 16 maxgate 1 stallflips 15 minch 40 betavals 0 lamvals 1 Q 2  7s
+it 4195 best 16001 N 12 M 26 T 2 platmax 1 platY 2 stalls 1 loud 1 mvals 1 phivals 1 R 2 flips 17 maxgate 1 stallflips 16 minch 65 betavals 0 lamvals 1 Q 2  8s
+it 4300 best 17001 N 12 M 26 T 2 platmax 1 platY 2 stalls 1 loud 1 mvals 1 phivals 1 R 2 flips 18 maxgate 1 stallflips 17 minch 62 betavals 0 lamvals 1 Q 2  8s
+it 4358 best 18001 N 12 M 26 T 2 platmax 1 platY 2 stalls 1 loud 1 mvals 1 phivals 1 R 2 flips 19 maxgate 1 stallflips 18 minch 60 betavals 0 lamvals 1 Q 2  8s
+it 17678 best 19002 N 12 M 26 T 8 platmax 2 platY 3 stalls 3 loud 2 mvals 4 phivals 5 R 7 flips 44 maxgate 4 stallflips 19 minch 37 betavals 3 lamvals 5 Q 7  41s
+it 26895 best 20001 N 12 M 26 T 2 platmax 1 platY 2 stalls 1 loud 1 mvals 1 phivals 1 R 2 flips 21 maxgate 1 stallflips 20 minch 66 betavals 0 lamvals 1 Q 2  73s
+CLIMB2 stallflips_s11_N12_M26 done it 40000 best 20001 viol 0

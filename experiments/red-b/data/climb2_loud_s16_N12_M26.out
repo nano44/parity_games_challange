@@ -1,0 +1,7 @@
+it 23 best 1 N 5 M 10 T 3 platmax 1 platY 5 stalls 1 loud 0 mvals 1 phivals 2 R 2 flips 2 maxgate 2 stallflips 0 minch 23 betavals 0 lamvals 2 Q 2  0s
+it 98 best 1001 N 8 M 13 T 2 platmax 1 platY 5 stalls 1 loud 1 mvals 1 phivals 1 R 1 flips 1 maxgate 1 stallflips 0 minch 8 betavals 0 lamvals 3 Q 2  0s
+it 99 best 1002 N 8 M 14 T 3 platmax 2 platY 5 stalls 2 loud 1 mvals 1 phivals 1 R 1 flips 1 maxgate 1 stallflips 0 minch 8 betavals 0 lamvals 3 Q 2  0s
+it 453 best 1003 N 12 M 26 T 4 platmax 3 platY 11 stalls 3 loud 1 mvals 1 phivals 1 R 0 flips 0 maxgate 0 stallflips 0 minch -1 betavals 0 lamvals 4 Q 2  1s
+it 1037 best 1004 N 12 M 26 T 5 platmax 4 platY 11 stalls 4 loud 1 mvals 1 phivals 1 R 1 flips 1 maxgate 1 stallflips 0 minch 16 betavals 0 lamvals 4 Q 2  2s
+it 1047 best 1005 N 12 M 25 T 6 platmax 5 platY 11 stalls 5 loud 1 mvals 1 phivals 1 R 1 flips 1 maxgate 1 stallflips 0 minch 16 betavals 0 lamvals 4 Q 2  2s
+CLIMB2 loud_s16_N12_M26 done it 40000 best 1005 viol 0

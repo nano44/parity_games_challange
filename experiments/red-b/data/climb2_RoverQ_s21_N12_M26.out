@@ -1,0 +1,15 @@
+it 4 best 666 N 7 M 13 T 2 platmax 0 platY 0 stalls 0 loud 0 mvals 2 phivals 2 R 2 flips 5 maxgate 1 stallflips 0 minch 19 betavals 0 lamvals 2 Q 2  0s
+it 8 best 750 N 7 M 13 T 3 platmax 0 platY 0 stalls 0 loud 0 mvals 3 phivals 3 R 3 flips 8 maxgate 1 stallflips 0 minch 20 betavals 1 lamvals 3 Q 3  0s
+it 41 best 800 N 8 M 16 T 4 platmax 0 platY 0 stalls 0 loud 0 mvals 4 phivals 4 R 4 flips 9 maxgate 2 stallflips 0 minch 3 betavals 1 lamvals 3 Q 4  0s
+it 127 best 833 N 11 M 25 T 5 platmax 0 platY 0 stalls 0 loud 0 mvals 5 phivals 5 R 5 flips 21 maxgate 3 stallflips 0 minch 30 betavals 3 lamvals 6 Q 5  0s
+it 143 best 875 N 10 M 19 T 7 platmax 0 platY 0 stalls 0 loud 0 mvals 5 phivals 7 R 7 flips 19 maxgate 3 stallflips 0 minch 17 betavals 2 lamvals 4 Q 7  0s
+it 284 best 888 N 12 M 23 T 8 platmax 0 platY 0 stalls 0 loud 0 mvals 5 phivals 8 R 8 flips 25 maxgate 5 stallflips 0 minch 5 betavals 4 lamvals 7 Q 8  1s
+it 515 best 900 N 11 M 24 T 9 platmax 0 platY 0 stalls 0 loud 0 mvals 6 phivals 9 R 9 flips 28 maxgate 6 stallflips 0 minch 5 betavals 5 lamvals 7 Q 9  2s
+it 685 best 909 N 12 M 26 T 11 platmax 1 platY 11 stalls 1 loud 0 mvals 7 phivals 10 R 10 flips 26 maxgate 5 stallflips 0 minch 14 betavals 6 lamvals 8 Q 10  3s
+it 733 best 916 N 12 M 26 T 12 platmax 1 platY 11 stalls 1 loud 0 mvals 9 phivals 11 R 11 flips 28 maxgate 6 stallflips 0 minch 53 betavals 6 lamvals 8 Q 11  3s
+it 1172 best 923 N 12 M 26 T 12 platmax 0 platY 0 stalls 0 loud 0 mvals 11 phivals 12 R 12 flips 47 maxgate 5 stallflips 0 minch 47 betavals 7 lamvals 10 Q 12  5s
+it 1739 best 928 N 12 M 26 T 13 platmax 0 platY 0 stalls 0 loud 0 mvals 11 phivals 13 R 13 flips 37 maxgate 7 stallflips 0 minch 14 betavals 4 lamvals 8 Q 13  8s
+it 3118 best 933 N 11 M 26 T 14 platmax 0 platY 0 stalls 0 loud 0 mvals 10 phivals 14 R 14 flips 41 maxgate 5 stallflips 0 minch 9 betavals 4 lamvals 8 Q 14  16s
+it 3119 best 937 N 11 M 26 T 15 platmax 0 platY 0 stalls 0 loud 0 mvals 11 phivals 15 R 15 flips 39 maxgate 6 stallflips 0 minch 9 betavals 5 lamvals 8 Q 15  16s
+it 4668 best 941 N 10 M 26 T 16 platmax 0 platY 0 stalls 0 loud 0 mvals 12 phivals 16 R 16 flips 42 maxgate 6 stallflips 0 minch 14 betavals 6 lamvals 8 Q 16  26s
+CLIMB2 RoverQ_s21_N12_M26 done it 40000 best 941 viol 0

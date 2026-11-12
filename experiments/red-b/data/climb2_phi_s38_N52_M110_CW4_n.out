@@ -1,0 +1,4 @@
+it 13 best 31 N 51 M 107 T 31 platmax 0 platY 0 stalls 0 loud 0 mvals 4 phivals 31 R 14 flips 20 maxgate 9 stallflips 0 minch 11 betavals 0 lamvals 2 Q 31  1s
+it 81 best 32 N 52 M 103 T 32 platmax 0 platY 0 stalls 0 loud 0 mvals 5 phivals 32 R 16 flips 37 maxgate 15 stallflips 0 minch 18 betavals 0 lamvals 1 Q 32  5s
+it 167 best 33 N 52 M 103 T 33 platmax 0 platY 0 stalls 0 loud 0 mvals 6 phivals 33 R 22 flips 57 maxgate 18 stallflips 0 minch 14 betavals 0 lamvals 1 Q 33  10s
+CLIMB2 phi_s38_N52_M110_CW4_n done it 6000 best 33 viol 0

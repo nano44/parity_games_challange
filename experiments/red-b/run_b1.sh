@@ -1,7 +1,8 @@
 #!/bin/bash
-# L-RED-B, report B1 (docs/red-b/B1-box208.md): the DATA runs. Run from experiments/red-b:  bash run_b1.sh A|B|W|X|T|C|D|E|F|G|H
+# L-RED-B, report B1 (docs/red-b/B1-box208.md): the DATA runs. Run from experiments/red-b:  bash run_b1.sh A|B|W|X|T|C|D|E|F|G|P|H
 # A: engine validation; B: counters on the 78 frozen genomes; W: WIN / R-HEIGHT counters (win.py); X: the abstract game of par. 10 (abs_rb.py); T: every tie-breaking branch (ties.py); C: controls; D: exhaustive tiny sizes; E: random sweeps;
 # F, G, H: longer exhaustive sizes, random sweeps, climbs (minutes to hours; only after the Lead's go).
+# P: the pressure-point counters (press.py) on the 78 frozen genomes.
 # A set is skipped when its output exists; F-H are restart-safe. Outputs go to data/ (the repository's root .gitignore
 # ignores experiments/*/out/, so the outputs are not kept in a directory called out).
 set -u
@@ -44,11 +45,8 @@ G) # random sweeps in chunks (seed = chunk), all reference states, random tie ru
    for s in $(seq 100 114); do one rand_s${s}.out python3 sweep.py rand $s 200000 8 12 all mix; done
    for s in $(seq 200 209); do one rand_s${s}.out python3 sweep.py rand $s 30000 20 40 all mix; done
    for s in $(seq 300 304); do one rand_s${s}.out python3 sweep.py rand $s 100000 8 14 all eany; done ;;
-H) # climbs (resumable; work/climb_*.json), each capped in size; outputs appended
-   for spec in "plat 1 60000 12 24" "loud 2 60000 12 24" "mvals 3 60000 12 24" "Tn 4 60000 12 24" "platrel 5 60000 14 30" \
-               "phi 6 40000 20 44" "plat 7 40000 24 50" "T 8 40000 24 50" "bothYeq 9 30000 14 30"; do
-     set -- $spec; out="data/climb_$1_s$2_N$4_M$5.out"
-     grep -q "^CLIMB .* done" "$out" 2>/dev/null || python3 climb.py $1 $2 $3 $4 $5 >> "$out" 2>&1
-   done ;;
+P) one press_frozen.out python3 press.py $REC $COR ;;
+H) # climbs (press.py + lev.py counters on every candidate; resumable, work/climb2_*.json; outputs data/climb2_*.out)
+   bash run_h.sh 1; bash run_h.sh 2 ;;
 esac
 echo "run_b1 ${1:-A} finished"
