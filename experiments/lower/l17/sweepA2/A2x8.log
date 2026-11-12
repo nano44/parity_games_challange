@@ -1,0 +1,12 @@
+P 2 RESULT SAT decoded -> sweepA2/A2x8_P2_dec.txt 5289a290e2993753f5e07c9ac4d6dc39a0213ec3 CHECK decoded genome, all fixed, prefix 2 -> SAT (consistent)  secs 0
+P 3 RESULT SAT decoded -> sweepA2/A2x8_P3_dec.txt f178a60f10f0eb606104c00a051896bf2ccdd685 CHECK decoded genome, all fixed, prefix 3 -> SAT (consistent)  secs 1
+P 4 RESULT SAT decoded -> sweepA2/A2x8_P4_dec.txt ebaec894d3f1a0227e36c8481a0691282ad790cd CHECK decoded genome, all fixed, prefix 4 -> SAT (consistent)  secs 0
+P 5 RESULT SAT decoded -> sweepA2/A2x8_P5_dec.txt 3562f75b5fb85f7ae00613e862b6515fb70ba451 CHECK decoded genome, all fixed, prefix 5 -> SAT (consistent)  secs 1
+P 6 RESULT SAT decoded -> sweepA2/A2x8_P6_dec.txt 7213d219c7d81d5539f85f9b9d980b566d9c404b CHECK decoded genome, all fixed, prefix 6 -> SAT (consistent)  secs 1
+P 7 RESULT SAT decoded -> sweepA2/A2x8_P7_dec.txt 6a1baf5e4cd0d1cf02d050fc1a86fddaed566c7d CHECK decoded genome, all fixed, prefix 7 -> SAT (consistent)  secs 3
+P 8 RESULT SAT decoded -> sweepA2/A2x8_P8_dec.txt ed5b23c75c9869537e6c831ade87c147910a343e CHECK decoded genome, all fixed, prefix 8 -> SAT (consistent)  secs 2
+P 9 RESULT SAT decoded -> sweepA2/A2x8_P9_dec.txt 112be9764832d4c707bd754b53981945b5489706 CHECK decoded genome, all fixed, prefix 9 -> SAT (consistent)  secs 21
+P 10 RESULT SAT decoded -> sweepA2/A2x8_P10_dec.txt 15f171da46a54bcafae34864c5999218b2496bc3 CHECK decoded genome, all fixed, prefix 10 -> SAT (consistent)  secs 7
+P 11 RESULT SAT decoded -> sweepA2/A2x8_P11_dec.txt 7e81dac1f96a2670400bc291544f12db45577a0a CHECK decoded genome, all fixed, prefix 11 -> SAT (consistent)  secs 9
+P 12 RESULT SAT decoded -> sweepA2/A2x8_P12_dec.txt 3e36655bf354d02f199d290d076e90b1159d7df5 CHECK decoded genome, all fixed, prefix 12 -> SAT (consistent)  secs 52
+P 13 RESULT UNSAT  secs 296

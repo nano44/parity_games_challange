@@ -33,9 +33,21 @@ Model: R104's IDEAL model at degree ≤ 2 (sim6; fenc for replays). Target core8
   not kept: f6 mismatches 7 / 18 free pre-states on rows 0..64 of A1's clamped run (l16/f6check.py). Exact prefix (l13/sweep1.sh, pgad3, XS 8,
   G {63}): UNSAT already at prefix 2 (solver only). A1: DEAD start (frozen wiring without frozen ranks breaks f6 at row 2).
 - A2: same, from B2 (C12 + the o(8)-keeping P 32 design, l17/run/A2_start.txt a6c646f6), seed 18. Start 909, end best 161 (A2.txt d9aa4f7e).
-  Exact prefix NOT measured (session parked at the Lead's 09:04Z instruction; successor's first step).
+  Ranks re-solved (l14/rsolve.py → A2_solved.txt 2eae1e1f; score 161 of 12,556 constraints). Unlike A1, the re-solved ranks KEEP f6 correct
+  (DATA, l16/f6check.py; counter = free pre-states of f6 in the clamped run where its better differs from its required value): 0 / 18 on rows
+  0..64, 0 / 129 on rows 0..510. Free run (l13/prefcheck.py, sim6 = fenc): fixed point at T 6, rows 0..6 followed; at row 7 movers 11, 13, 15
+  must flip and 11 does not want to (l16/diag.py).
+  Exact prefix (pgad3, G {63}, 600 s per question; l17/sweep.sh; l17/sweepA2/): XS 8: SAT for every prefix 2..12, UNSAT at 13 (296 s);
+  XS 11: SAT 2..12, UNSAT at 13 (379 s). Every SAT decode (22) replayed sim6 = fenc, each following at least rows 0..P (sweepA2/replay.txt,
+  SHA1SUMS). DATA (unit = prefix length in core8 rows, scope A2_solved with one helper 63 and one rewired client): best realized prefix rows
+  0..12 (A2x8_P11_dec follows 0..12 as well). A2 does NOT pass P 18. The two P 13 UNSATs are solver-only until DRUP-checked (pending).
 - Reading of the stop rule used here: a «run» is one capped search plus its exact prefix measurement; three consecutive runs that do not pass
-  P 18 end the box with the obstruction. Count so far: A1 failed (prefix < 2); A2 pending measurement.
+  P 18 end the box with the obstruction. Count so far: A1 failed (prefix < 2); A2 failed (prefix 12, UNSAT at 13 for XS 8 and XS 11); A3 running (pgad5, below).
+
+- A3 (frame that keeps the design's ranks): l16/pgad5.py on A2_solved, all ranks of fixed options kept, the f6 pair's signs / gates / starts
+  fixed (FIXC 16, 17; f6 = mover 13 not in XS), clients XS = {8, 11, 12, 14, 15} free to read ANY mover compatible with the order
+  XORD 8 < 11 < 12 < 15 < 14 (the base wiring's reach order among XS, computed on A2_solved), G empty; ascending from P 10, 2,900 s per
+  question (l17/sweep5.sh). Running.
 
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All statements are about the IDEAL

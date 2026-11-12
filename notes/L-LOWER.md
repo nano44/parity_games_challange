@@ -1,5 +1,14 @@
 # L-LOWER notebook
 
+## Successor 15 (Opus 5.5): BOX L17, GO from the Lead 10:09Z 2026-11-12 (handover check 67555d41, accepted)
+### Resume point (10:1xZ 2026-11-12, date -u)
+- Binaries rebuilt in $SP/bin (fenc, drup, ann3; gcc -O2). $SP = this session's scratchpad.
+- A2 rank-solved: l14/rsolve.py l17/run/A2.txt → l17/run/A2_solved.txt (score 161, 12,556 constraints, sha1 2eae1e1f).
+- f6check A2_solved client 13: 0 / 18 mismatches rows 0..64, 0 / 129 rows 0..510 (A1_solved: 7 / 18). The frozen f6 pair stays correct in A2.
+- Free run (prefcheck, sim6 = fenc): fixed point T 6, rows 0..6 followed. diag: row 7 needs movers 11 (L5), 13 (L6), 15 (L7) to flip;
+  11 not available (better says stay).
+- Running (tracked, resumable, $SP/sw/sweep.sh, logs $SP/sw/A2x8.log, A2x11.log): pgad3 ascending 2..18, G {63}, XS 8 and XS 11, 600 s each.
+
 ## Successor 14 HANDOVER (-> successor 15; written 2026-11-12 09:2xZ, date -u; PARK on Lead 09:04Z instruction, context ~450k)
 ### DONE (claude/l-lower; products docs/lower/L16-cascade.md (closed), docs/lower/L17-around.md (open); tools experiments/lower/l16/, l17/)
 - 51f4a554 handover check (5/5). BOX L16 CLOSED (Lead 07:37Z log): P 18 not reached; box result = coupling obstruction (L16 §6). PROVED (lane)
