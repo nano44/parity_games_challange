@@ -123,3 +123,23 @@ naive (unit: flips at which xt(g)'s Ξ_σ-path ends at X at both t − 1 and t: 
 ### G5. Independent engine.
 - L-RED 64, R230-betaloc (claude/l-red 7b54f257, docs/red/R230-betaloc.md): BETA-LOC on its own engine, 0 failures on 3,000 random
   genomes, 4 pinned instances and a 100k-evaluation climb; control fires 4,079 times (cited, not re-run here).
+
+## Addendum B (L-NEW successor 69; the k = 1 «exit-change» route; written 2026-11-12 by date -u)
+- Question (Lead brief: «continue at k = 1 with the exit-change count»): at k = 1 with an even-top cycle Z_s, Odd's plays from Z leave it
+  through the e-face of an exit gate on Z (K1-BASIN). Does the number of exit changes bound the flips?
+- DATA (tool experiments/new/box205/exit205.py; IDEAL-CYC; set: MWR4/8/16_2, K1F21_n48, K1C16_n400, B400_r32; output out/exit205_records.out;
+  units: flips = gate flips; cycle_changes, exit_changes = steps at which Ξ_σ's cycle Z, resp. the set of exits on Z, changes; parity of
+  Z's top at every state):
+  | genome | T | flips | cycle changes | exit changes | Z's top parity | max exits |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | MWR4_2 / MWR8_2 / MWR16_2 | 30 / 54 / 102 | 13 / 25 / 49 | 0 | 0 | even at every state | 1 |
+  | K1F21_n48 | 31 | 40 | 21 | 21 | even (2 states with no cycle) | 1 |
+  | K1C16_n400 | 51 | 125 | 35 | 32 | even (2 states with no cycle) | 1 |
+  | B400_r32 | 49 | 60 | 33 | 33 | even at every state | 1 |
+- DEAD (as a bounding route, with its instance): «at k = 1 the flips are bounded by a polynomial in the number of exit changes (or of
+  cycle changes)». MWR(n) (box203/inst/MWR4_2, MWR8_2, MWR16_2; sha1 in box203/inst/SHA1SUMS) has 0 exit changes and 0 cycle changes and
+  2n + 1 flips at one gate, 4n + 1 in all for n = 4, 8, 16 (13 / 25 / 49). Its flips are all case (a) of K1-BASIN: a BASIN gate (off Z, its
+  β-route entering Z) whose e-face value (its W-target's class, box 204 FACE-TARGET) leapfrogs its β-face value (Z's constant exit route).
+- READING: on the climbed records the exit changes with the cycle (21 / 21, 32 / 35, 33 / 33), so there both mechanisms occur; M1 (MWR)
+  is a pure basin leapfrog. What is left at k = 1 is the leapfrog count of two monotone values at one gate, i.e. GATE-FLIP's face class
+  heights again (box 204 Theorem EQ). No new bound. T_CYC polynomial at k = 1 stays OPEN.

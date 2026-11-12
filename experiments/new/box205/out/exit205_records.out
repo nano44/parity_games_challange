@@ -1,0 +1,6 @@
+MWR4_2.json T 30 flips 13 cycle_changes 0 exit_changes 0 parities Counter({0: 31}) max_exits 1
+MWR8_2.json T 54 flips 25 cycle_changes 0 exit_changes 0 parities Counter({0: 55}) max_exits 1
+MWR16_2.json T 102 flips 49 cycle_changes 0 exit_changes 0 parities Counter({0: 103}) max_exits 1
+K1F21_n48.json T 31 flips 40 cycle_changes 21 exit_changes 21 parities Counter({0: 30, None: 2}) max_exits 1
+K1C16_n400.json T 51 flips 125 cycle_changes 35 exit_changes 32 parities Counter({0: 50, None: 2}) max_exits 1
+B400_r32_a13d9661.json T 49 flips 60 cycle_changes 33 exit_changes 33 parities Counter({0: 50}) max_exits 1
