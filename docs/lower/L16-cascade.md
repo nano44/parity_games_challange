@@ -56,9 +56,16 @@ c6e19673). Base C12 (l14/rec/L14_C12_final_solved.txt, c58041d5). Tools experime
 - The P 510 design (DATA): cascade movers y0, y1 on level 8; y0's options → q4 (8), y1; y1's options → f4 (9), q2 (5); f6's options → y0, q5 (10);
   gates 0 0. f6 thus reads pair 5 and pair 4 / pair 2 through their fixed chains (which pass C12 helpers 41, 36, 23, 28, 29, …) plus one pair
   driven by the parity clock.
-- What this says about CONJECTURE KEY-CLOCK (L15: a PRIVATE cascade driven by o(7) ALONE needs ≈ log2 P − c pairs). Its scope is untouched (an
-  isolated cascade), but the premise «isolated» is what made it grow: with the slow core pairs' chains as inputs, ONE pair serves f6's whole
-  list (R = 127 changes, T 510) on the C12 chains. READING: the count of helper pairs a cluster sink needs is not the binding cost.
+- KEY-CLOCK, exactly (Lead 06:44Z asked for the statement before and after).
+  BEFORE (L15 §4, verbatim): «CONJECTURE KEY-CLOCK: a private cascade must have ≥ log2(P) − c pairs to separate a client with a tight change
+  near row P.» «Private» there means L15 §0: Ξ-edges only inside H, input = the key cascade, at its lowest level o(7) = t mod 2. The box brief
+  used it as a SIZE for the shared cascade («sized by KEY-CLOCK (≈ log2 P − c pairs)»), i.e. read it for cascades that may also read the core.
+  AFTER: (i) CONJECTURE KEY-CLOCK (isolated), scope narrowed to exactly L15 §0's private cascades: unchanged, still a CONJECTURE (DATA P ≤ 32,
+  L15 §3), not touched by §3 here. (ii) The non-isolated reading «every cascade that serves a client with a tight change near row P has
+  ≥ log2(P) − c pairs, also when its movers and the client may read core movers» is DEAD in the ekr2 scope: instance ekr2_f6_k1_P510_e0-11.txt
+  (4fee0495), ONE pair, client f6 with a tight change at every 4th row up to P = 510 (R = 127), C12's fixed chains of movers 0-11 as inputs,
+  replayed (sim2, 0 mismatches of 129). Scope of the DEAD: the base's chains are held fixed (the graft's own effect on keys and readers above
+  level 8 is NOT modelled; §4 is exactly that effect). So the count of pairs is not the binding cost; the coupling of §4 is.
 
 ## 4. Why the design does not graft: the slots are read by the cluster (DATA, exact)
 - Graft (l16/graft2.py) of the X5 design into X5 at level 13 → l16/run/G1.txt (2a2ab451). Free run (sim6): the core leaves the target at row 2
