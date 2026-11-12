@@ -7,3 +7,4 @@ kdrup K 3 P 32 clients 8 | cnf sha1 586b583f197d59492b0fafc3674af9fcccdb36c3 cla
 kdrup K 2 P 32 clients 11 | cnf sha1 105eb9ec7f77e0fe27903acee537a94b8850e71e clauses 34579 lemmas 13098 | drup: s VERIFIED (5351 lemmas RUP-checked)
 kdrup K 3 P 32 clients 12 | cnf sha1 824db672815df924f75eaa7fec3afe3c39b6c6a4 clauses 64735 lemmas 4690783 | drup: s VERIFIED (2380394 lemmas RUP-checked)
 kdrup K 3 P 30 clients 8,11,12,13 | cnf sha1 eda0cc6d9ad8d48f5d3fea1d7f5d24e0ac0bb955 clauses 57336 lemmas 3473976 | drup: s VERIFIED (1779454 lemmas RUP-checked)
+kdrup K 3 P 32 clients 13 | NO ANSWER within 2900 s
