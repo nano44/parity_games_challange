@@ -19,17 +19,17 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 | Role | Session id | Branch | Model | Effort | State | Reason |
 | --- | --- | --- | --- | --- | --- | --- |
 | Lead | session_014FBi6o334DvwT5Uw2kDfoN | claude/vibrant-johnson-nxvvxo | opus-5-5 | high | working | Owner-chosen session; routing judgement; keeps context lean |
-| L-SI (succ. 51, Opus) | session_01V5yGRYCGgThoUZwQuTe3Uz | claude/l-si | opus-5-5 | high | working: box 99-103 (U-FREE ⇐ DEEP3 chain; RESTRICT-C; MOVER-DEEP3) | D18/D21 |
-| L-RED (succ. 66, Opus) | session_01V5yGRXZBjsAvYsrxDJMwDt | claude/l-red | opus-5-5 | high | working: R234 (LAM-GAP SURVIVES, SHARP); box 208 attack | D1/D21 |
-| L-RED-B (new, Fable) | session_01V5yGRZCKC1BRJdKjdZG2hp | claude/l-red-b | claude-fable-5-2 | xhigh | started 12:52Z: second adversary on box 208 (owner «yes» 2026-11-12) | D1/D21 |
-| L-NEW (succ. 72, Fable) | session_01V5yGRXmuUaLa7fpE3SAC7s | claude/l-new | claude-fable-5-2 | xhigh | working: box 208 LEVEL / PLATEAU (CANDIDATE), box 209 draft | D14/D18/D21 |
-| L-COMP (succ. 19, Fable) | session_01V5yGRY8iNCAZqwL8HSCXM2 | claude/l-comp | claude-fable-5-2 | xhigh | started 12:46Z: BOX 43 (box 208 second engine + G_N; DHIB family) | D21 |
-| L-LOWER (succ. 15, Opus) | session_01V5yGRXmrVy79urWLL1QTrZ | claude/l-lower | opus-5-5 | high | working: BOX L17 (A2/A3 prefix sweep) | D18 |
-| L-FORMAL (new, Fable) | session_01V5yGRZm5AyrczAEMySsfpN | claude/l-formal | claude-fable-5-2 | xhigh | working: lean/lemmas (LAM-GAP SHARP, BR-SEG, BR-SEG-G, ONE-CROSS Lean-checked cond. on F1); F1 one-player next | D21 |
-| L-LIT (next, Fable) | session_01V5yGRYSuVcAoW1mpE9SL5h | claude/l-lit | claude-fable-5-2 | xhigh | started 12:46Z: T69 (LEVEL / fixed-k literature), T68 rest | D21 |
-| REFEREE (succ. 32, Fable) | session_01V5yGRW9Ho3M1A2bjvnDtbn | claude/referee | claude-fable-5-2 | xhigh | working: box 208 pre-read, RESTRICT-C pre-read; C141 items | D1/D21 |
-| REFEREE-2 (succ. 37, Opus) | session_01V5yGRVhzXCnkFQbXe6tmzW | claude/referee-2 | opus-5-5 | high | idle: SPLIT L-3 MATCHES (98a64b91); GATE L-4 MATCHES | D1 |
-| CHECKER (succ. 23, Opus) | session_01V5yGRWB6gCtv2nZGVfYacG | claude/checker | opus-5-5 | high | STARTED 23:11Z 2026-11-08 (22 PARKED 873ed3ae: C135 CLOSED, C136 Add. 2 PASS, C137 PASS 3479ecb0); check ae61667b 5/5, GO 23:46Z: C136 close (CI #7176 green on ac9ab013), C137 Add. 1 (R123 landing), then C138 / C139 | D1/D18 |
+| L-SI (succ. 52, Fable) | session_01V5yGRZ4qENLeJLfN8NoaRD | claude/l-si | claude-fable-5-2 | xhigh | working: box 104 (WRAP, FREE-REACH; freeze 26704e01), box 209 replay, Add. A pipelines | D18/D21 |
+| L-RED (succ. 66, Opus) | session_01V5yGRXZBjsAvYsrxDJMwDt | claude/l-red | opus-5-5 | high | working: R237 (WRAP replay on n5x236 + (W4) attack); R235/R236 done | D1/D21 |
+| L-RED-B (new, Fable) | session_01V5yGRZCKC1BRJdKjdZG2hp | claude/l-red-b | claude-fable-5-2 | xhigh | finishing box 208 verdict (no kill), then handover/park (~504k) | D1/D21 |
+| L-NEW (succ. 73, Fable) | session_01V5yGRX6dpFLtdnq3jrnFfy | claude/l-new | claude-fable-5-2 | xhigh | started 17:09Z: BOX 211 freeze P-N5-LEVEL (box 208 + Add. A, B); then BOX 212 (O1-O3) | D14/D18/D21 |
+| L-COMP (succ. 20, Fable) | session_01V5yGRYzeDgxCBBXtVUzaJi | claude/l-comp | claude-fable-5-2 | xhigh | started 17:08Z: BOX 44 (WRAP third engine, box 209 own builder) | D21 |
+| L-LOWER (succ. 15, Opus) | session_01V5yGRXmrVy79urWLL1QTrZ | claude/l-lower | opus-5-5 | high | working: BOX L18 (full-horizon f6, q6 free; L17 rows 0..16 realized) | D18 |
+| L-FORMAL (succ. 2, Fable) | session_01V5yGRaQYgCY9vD9mnoWrPb | claude/l-formal | claude-fable-5-2 | xhigh | started 17:09Z: genome bridge to box 208 ALL-TCYC (K1-K3, K5 done, lane); IdealCycRun mirror, ClassOrder, K4 next | D21 |
+| L-LIT (next, Fable) | session_01V5yGRYSuVcAoW1mpE9SL5h | claude/l-lit | claude-fable-5-2 | xhigh | PARKED 9ae31ec3 (branch carries a stale 30-min verify.yml; successor merges trunk first) | D21 |
+| REFEREE (succ. 33, Fable) | session_01V5yGRZt4c2mW3AUQh3SEXv | claude/referee | claude-fable-5-2 | xhigh | started 16:05Z: handover check; then WRAP pre-read, P-N5-LEVEL first review | D1/D21 |
+| REFEREE-2 (succ. 37, Opus) | session_01V5yGRVhzXCnkFQbXe6tmzW | claude/referee-2 | opus-5-5 | high | PARKED f2793d9a; successor 38 (Fable) at the P-N5-LEVEL freeze | D1 |
+| CHECKER (succ. 23, Opus) | session_01V5yGRWB6gCtv2nZGVfYacG | claude/checker | opus-5-5 | high | working: C142 (R128 P-N5-GATE first fill 68c8d293); C141 CLOSED 533ccefb | D1/D18 |
 | WATCHDOG | session_01JQNTX8zT3T3mWMt6ZmYzkn | none (never edits) | haiku-5-5 | high | working (cron :30, trig_019xE43BZ5qaDGwxDkZ5h5ik) | Routine liveness/overage checks; reports to Lead only (deviation from playbook: does not wake lanes, so idle sessions never get messages) |
 | OWNER-DESK | session_01Eq99qsTJBiTh6xLzwCPtqv | claude/owner-desk | opus-5-5 | high | idle between owner messages | Owner D3: owner Q&A and open questions; accuracy in plain explanation, no proofs; idle between owner messages |
 
