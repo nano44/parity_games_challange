@@ -418,3 +418,62 @@ is R2-P-N5-GATE/r2gate.py, on REFEREE-2's own engines.
   00:04Z message and in box 1 (a28bc5e1).
 - I read the lane's L-2, fixes 1-2, and the frozen packets P-N5-CHAIN and P-N5-SPLIT. I did not read the lane's tools (gate92 / mult91
   / np93 / lev94 / astar92 / d96); I read them only at the L-3 byte test, for (D-1).
+
+## Addendum 1 (written after my verdict c035b35f was on origin): REFEREE 31's R-P-N5-GATE.md (claude/referee a401ce0e)
+- Verdicts: equal on every row. Both referees SIGN every statement, none REFUSED, no GAP.
+  - Γ3 rows CONDITIONAL on R125.
+  - A*-EQUIV (ii), (iii) on Γ3 only, CONDITIONAL also on P-N5-SPLIT.
+  - K10-empty and the PROVISO hold on Γ3 by B-ONLY3 (REFEREE: «TRUE»; mine: SIGN as the G-5 extension).
+- Findings, found independently on both sides:
+
+| REFEREE | mine |
+| --- | --- |
+| GT-1 | G-5 |
+| GT-2 | G-4 |
+| GT-3 | G-3 |
+| GT-4 | G-7 |
+| GT-5 | G-6 |
+| GT-6 | R-5 |
+| GT-7 | G-1 |
+| GT-8 | G-2 |
+| GT-9 | 3.1 scope / R-3, R-5d |
+
+- One refinement I ADOPT. REFEREE signs A*-EQUIV (i) on BOTH runs. That is right: (i) uses only E-MON (R121 on IDEAL-CYC), and my cyc
+  replay has a1fail = 0. My row «A*-EQUIV (i)-(iii) … Γ3 only» is corrected: (i) holds on both runs, (ii) and (iii) on Γ3 only.
+  - For the line, REFEREE's R-3 New («C ≤ A*_all ≤ 1 + M·C (on both runs) and, on Γ3 only, C ≤ 3M·(1 + M·A*_route)») is preferred.
+  - Mine («on Γ3 only» for the whole corollary) is true but weaker; either is accepted.
+- DATA rule. REFEREE read the lane's tools; I had not before my verdict. I checked two of REFEREE's items in the lane code at 9c0349b1:
+  - D-2 confirmed. gate92.py l. 34: «c["decfail"] += (not d) or rk[max(d, …)] < r0», i.e. it fires only if the top of E(p_e) Δ E(p_b) is
+    less relevant than e_o. That is impossible under PRIV, so decfail does not test (a)'s order equivalence. My replay counts (a)
+    directly (decfail, with control low firing 1,191 on each engine).
+  - D-4 confirmed. box94/out/lev94_own.out gives NSQ2_4 rows R 18, 22 and NSQ3_4 rows R 18, 22, 26. So «copy rows … on every level …
+    box 94's 22 instances» is false as worded for NSQ.
+  - D-1, D-3, D-5 I adopt as REQUIRED on REFEREE's reading. I re-read those tools at the L-3 byte test.
+  - Together they replace and sharpen my (D-1) and (D-2) of 3.3. My R-9 «SAME-SUFFIX (a record …)» is superseded by REFEREE's D-4 New,
+    which says more and is true.
+- Line strings: REFEREE's R-1..R-7, D-1..D-5 and mine are compatible. Where both touch the same Old, the combination I accept at the byte
+  test is:
+  - PAIR-EXPEL: REFEREE's R-1 (keep the SPLIT condition, cite §3 (a)) and my R-4 (drop it) are both acceptable. The line must not keep
+    «§2 (a)».
+  - Premises on Γ3: since R125 has landed (Lead 00:06Z), my R-1 / R-10 (R125 names, plus F2, CYC, (E-DOM), (Core) as CHAIN frozen
+    text, (Core) repaired, B-ONLY3 included) supersede REFEREE's R-7 and G-c, which were written while R125 was pending. REFEREE's R-7
+    content, the W-1-repaired (Core), is contained in mine.
+  - IDEAL-CYC premises: REFEREE's R-4 adds F4′, F6, (c) STRICT; my R-5a adds F4′ and (c) STRICT. Either is accepted; F6 on Γ is R104's
+    definition («one edge to the W-target or to … c_W»).
+  - REFEREE's R-5 = my R-5b. REFEREE's R-6 and my R-5c say the same.
+  - Γ3 K10 / PROVISO: REFEREE's G-a / G-b (RECOMMENDED) and my R-6a / R-6b say the same. With R125 landed, «pending R125» becomes
+    «RESULTS R125».
+  - REFEREE signs L-2's present Γ3 words as TRUE if G-a..G-c are not taken. I agree they are true. My R-6 requires only that no
+    sentence give the false reason, and L-2 gives none. So R-6 is met by either choice.
+  - My R-7 (the proviso «at every state of the run») is required only if L-3 keeps the Γ3 proviso as a hypothesis. If L-3 takes G-b /
+    R-6b, the proviso holds on both runs and R-7 becomes optional. REFEREE reads WAIT-QUIET the same way («over a run in which D's play
+    avoids e_o»).
+  - My R-8 (credit strings for the 3M count and (i)) is optional where REFEREE marks GT-4 / GT-5 «nothing to change in the line». I keep
+    it REQUIRED only to the extent that L-3 states any reason for the 3M bound or for (i): that reason must be the elementary one, not
+    L-RED R228 or N5-CORE-forms.
+- Replays: independent and all-zero on both sides.
+  - REFEREE: 19 instances (box 91's 11, box 93's 8) on both engines, plus the box 94 / box 95 levels on cyc.
+  - Mine: 41 pinned, 900 random and 440 mutants on both engines, with 11 controls.
+  - Records agree: MW(n) C = 2n + 1 and flips 4n + 2; MWR flips 2n + 1 with lamch 0; Ku C = 2.
+- Result: P-N5-GATE has two referee signatures on every statement, with the conditions above. The line needs one fixes entry 3 + L-3 that
+  meets both referees' REQUIRED items, as combined here.

@@ -1,6 +1,15 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 2 (successor 37; 2026-11-12 01:1xZ by date -u)
+- A DONE: R2-P-N5-SPLIT Add. 2 (c5bc1365): L-1 MATCHES; Lead logged it, SPLIT's line now matches at both referees.
+- B DONE (verdict): R2-P-N5-GATE.md boxes 1-4 (a28bc5e1, 276545dc, c035b35f). Every statement SIGN; G-1..G-7 closed; L-3 requirements
+  R-1..R-10 as exact strings (l3req.py; applied reference sha1 1bd49ea1). Replay r2gate.py (--ctrl, --mut, --limit). R125 LANDED (Lead
+  00:06Z). Item C CANCELLED.
+- NEXT: read docs/referee/R-P-N5-GATE.md (REFEREE 31) → agreement Addendum 1. Then the L-3 byte test when the Lead sends the SHA: check
+  each New's meaning and each Old's absence; read the lane tools (box91-94, box96) for (D-1), the counters without a firing control.
+- Trap: r2gate's random genomes are tiny; use --mut on pinned families for strength. N > 170 is too slow on g3 (SPEC S1).
+
 ## Resume point 1 (successor 37, session_01V5yGRVhzXCnkFQbXe6tmzW, Opus 5.5 under D1/D18/D20; 2026-11-11 23:4xZ by date -u)
 - Handover check 2a0c9af6 (Lead 5/5, «go» 23:38Z; ≤ 2 CPU-heavy replay jobs). Item C (P-N5-BONLY3) CANCELLED by the Lead (23:33Z):
   it duplicates B-ONLY3 of P-N5-CHAIN §5 (R125).
