@@ -17,6 +17,18 @@ Allowed axioms: propext, Classical.choice, Quot.sound. No sorry, no admit, no ne
 - PGLemmas/OneCross.lean    `one_cross` (any preorder) and `one_cross_vj` (node valuations).
 - PGLemmas/Statements2.lean three further statements, PROPOSED to the Lead (TWO-CROSS, the Λ-change count, the Howard run bound).
 - PGLemmas/Counting.lean    `two_cross`, `lam_count`, `howard_run` (proofs of Statements2).
+- PGLemmas/Statements3.lean premise (M) for one-player games and the two premise-free one-player statements, PROPOSED to the Lead.
+- PGLemmas/Weights.lean     additive path weights: `setLt_iff_wt_lt` (the order on path sets = the order of Σ ±2^pr), `Val.le_iff_lex`.
+- PGLemmas/Mono.lean        `val_mono : ValMonoStatement V`: premise (M) = VJ00 Lemma 5.7 when the opponent has no choice.
+- PGLemmas/OnePlayer.lean   `lam_gap_oneplayer_noM`, `howard_run_oneplayer`: one-player LAM-GAP SHARP and Howard's run bound, no premise.
+- PGLemmas/Statements4.lean DEPTH-COUNT3's shallow-change count with R234's fix D1 (`depth`, `Sc`, `Sc'`), PROPOSED to the Lead.
+- PGLemmas/DepthCount.lean  `depth_count : DepthCountStatement V`, `plen_lt_card`, `depth_count_val`.
+- PGLemmas/Statements5.lean R118 (f) T-CYC and (i)(b), (c) as one statement without the genome, PROPOSED to the Lead.
+- PGLemmas/TCyc.lean        `tcyc : TCycStatement V`, `lam_steps_le`.
+- PGLemmas/Statements6.lean two-player F1 (`OptCounter`, `F1Statement`) and BR-SEG / T-CYC with «σ̄_t optimal» in place of F1, PROPOSED.
+- PGLemmas/Dual.lean        `val_mono_dual`: (M) for the minimising player (priorities shifted by one reverse the order, keep the values).
+- PGLemmas/TwoPlayer.lean   `f1 : F1Statement V` (RESULTS R15 (a) Lemma A = VJ00 Lemma 5.7), `brseg_opt`, `tcyc_opt`.
+- PGLemmas/OptExists.lean   `optCounter_exists`: an optimal counterstrategy exists (Friedmann Lemma 3.1, existence).
 - PGLemmas/Example.lean     `Example.window_example`: a 4-vertex window with b − a = 1 = |Ch| (the hypotheses are satisfiable).
 - PGLemmas/VJ00.lean        VJ00 §4.2's order as printed (`vj00Le`) equals `Val.le` on play values (`vj00Le_iff`, `val_proper`).
 - PGLemmas.lean             the library root (imports).

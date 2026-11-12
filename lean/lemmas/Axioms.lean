@@ -17,3 +17,16 @@ import PGLemmas
 #print axioms PG.two_cross
 #print axioms PG.lam_count
 #print axioms PG.howard_run
+#print axioms PG.val_mono
+#print axioms PG.lam_gap_oneplayer_noM
+#print axioms PG.howard_run_oneplayer
+#print axioms PG.depth_count
+#print axioms PG.plen_lt_card
+#print axioms PG.depth_count_val
+#print axioms PG.tcyc
+#print axioms PG.val_le_of_underProg
+#print axioms PG.val_mono_dual
+#print axioms PG.f1
+#print axioms PG.brseg_opt
+#print axioms PG.tcyc_opt
+#print axioms PG.optCounter_exists

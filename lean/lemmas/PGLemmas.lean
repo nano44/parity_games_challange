@@ -1,6 +1,8 @@
 import PGLemmas.Defs
 import PGLemmas.Statements
 import PGLemmas.Statements2
+import PGLemmas.Statements3
+import PGLemmas.Statements4
 import PGLemmas.Order
 import PGLemmas.Play
 import PGLemmas.LamGap
@@ -9,3 +11,13 @@ import PGLemmas.OneCross
 import PGLemmas.Counting
 import PGLemmas.Example
 import PGLemmas.VJ00
+import PGLemmas.Weights
+import PGLemmas.Mono
+import PGLemmas.OnePlayer
+import PGLemmas.DepthCount
+import PGLemmas.Statements5
+import PGLemmas.TCyc
+import PGLemmas.Statements6
+import PGLemmas.Dual
+import PGLemmas.TwoPlayer
+import PGLemmas.OptExists

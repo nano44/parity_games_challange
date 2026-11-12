@@ -15,6 +15,32 @@
     (box 100 §2 TWO-CROSS (i), (ii), any preorder), `lam_count` (a ⊴-non-falling sequence of node valuations changes its cycle node
     at most n − 1 times: the Λ part of DEPTH-COUNT3, the per-vertex count behind R118 (i)(b)), `howard_run` (box 101 §3 L1-POLY,
     abstract: T ≤ n(n − 1) + (n(n − 1) + 1)·|Ch| for a Howard run with only Ch moving, given (M)); helper `steps_le_of_breaks`.
+  - 2026-11-12T12:36Z: PREMISE (M) IS PROVED IN LEAN FOR ONE-PLAYER GAMES (statements in PGLemmas/Statements3.lean, PROPOSED, need the Lead's diff):
+    PGLemmas/Mono.lean `val_mono : ValMonoStatement V` (if every vertex keeps its successor or moves to one of strictly larger value
+    under s, then val_s ⊴ val_s′ pointwise: VJ00 Lemma 5.7 / RESULTS R15 (a) when the opponent has no choice); PGLemmas/OnePlayer.lean
+    `lam_gap_oneplayer_noM` (LAM-GAP SHARP, one-player, NO premise) and `howard_run_oneplayer` (Howard with VJ valuations on a
+    one-player game: T ≤ n(n − 1) + (n(n − 1) + 1)·|Ch|, NO premise). Proof route (Weights.lean + Mono.lean): path sets → integer
+    weights wt(M) = Σ ±2^pr (`setLt_iff_wt_lt`; `Nat.geomSum_lt` gives the dominance of the top vertex); keys (wt, signed length)
+    compare lexicographically (`Val.le_iff_lex`); `edge_key` (one s′-edge inside a Λ-class) and `telescope` (a walk); `rew_cycle` (a
+    cycle of s′ has non-negative weight, so its top beats the old Λ or is it; uses `Function.minimalPeriod` for distinct cycle
+    vertices); `prefix_key` (induction on the new prefix length).
+  - 2026-11-12T12:44Z: also PROVED (statements PROPOSED, need the Lead's diff): PGLemmas/DepthCount.lean `depth_count : DepthCountStatement V`
+    (DEPTH-COUNT3's count of changes of depth in [0, c] with R234's fix D1: ≤ n(S_c(n) − 1) + n(n − 1)S′_c(n) for a non-falling
+    sequence of values with lengths < n), `plen_lt_card` (plen < n), `depth_count_val`; PGLemmas/TCyc.lean `tcyc : TCycStatement V`
+    (R118 (f) T-CYC and (i)(b), (c) without the genome: T ≤ C + R + (C + R + 1)·|Mov| and C ≤ n(n − 1), given F1).
+    Proof notes: `topk pr (c+1) Π` = box 100's P_t; a set change of depth ≤ c raises wt(topk) strictly (`topk_setLt`), deeper ones
+    keep topk (`topk_eq`); t ↦ (Λ_t, topk_t) is injective on such steps and misses the heaviest set; length-only steps: t ↦
+    (Λ_t, Π_t, len_t or len_t − 1) is injective into n × S′_c × (n − 1).
+  - 2026-11-12T12:54Z: TWO-PLAYER F1 = RESULTS R15 (a) LEMMA A IS PROVED IN LEAN (statements in PGLemmas/Statements6.lean, PROPOSED, need the
+    Lead's diff): PGLemmas/TwoPlayer.lean `f1 : F1Statement V`: τ an optimal counterstrategy against σ (`OptCounter`: Friedmann §3's
+    definition, pointwise ⊴-minimum over Odd's strategies), σ′ arising from σ by improvements ⇒ Ω_σ(v) ⊴ val(σ′, τ′)(v) for EVERY Odd
+    strategy τ′, in particular Ω_σ ⊴ Ω_σ′. Also `brseg_opt`, `tcyc_opt` (BR-SEG and T-CYC with «σ̄_t optimal» instead of F1) and
+    PGLemmas/OptExists.lean `optCounter_exists` (an optimal counterstrategy exists when every Odd vertex has a successor).
+    Route: Mono.lean was refactored around `UnderProgAt pr s u w` (the three under-progress conditions on one edge) and
+    `val_le_of_underProg` (VJ00 Lemma 5.5); `underProgAt_of_le` (Ξ(s u) ⊴ Ξ(w) suffices); Dual.lean `val_mono_dual` via the shift
+    pr ↦ pr + 1 (`val_shift`: same values; `Val.lt_shift`: reversed order); `underProgAt_of_opt` (if switching u to w does not lower
+    the value of u, the edge u → w is under-progressive: else dual (M) makes the value of u unchanged, and (P1) + strict F4′, or the
+    empty path set after a cycle node, contradict); `optCounter_exists` by a pointwise-minimal valuation among finitely many strategies.
   - PGLemmas/Example.lean: `Example.window_example` (4 vertices, Ch = {1}, a window 0..1: the hypotheses hold together and b − a = |Ch|).
   - PGLemmas/VJ00.lean: `vj00Le_iff` (VJ00 §4.2's order as printed = `Val.le` on play values), `val_proper` (every val is a play value).
 - How the SHARP proof goes in Lean (LamGap.lean), for whoever edits it:
@@ -28,16 +54,18 @@
   - `lam_gap_sharp`: Ch.card = m + 1 (else nothing moves); x ∈ Ch switches at a + m + 1; u = old successor is strictly below w = new
     one at a + m + 1; x a top → `hback` (values of u, w equal at a + m and a + m + 1) contradicts Howard at a + m; x not a top →
     `hconst` (all values equal at a + m + 1 and a + m + 2) and strict F4′ give val(x) ◁ val(x).
-- Next: (1) commit the proof files once push.sh of 9dde1527 has ended (never commit while it runs), push, send the SHA to the Lead;
-  (2) apply the Lead's diff verdict; (3) possible next target, to propose: prove premise (M) (RESULTS R15 (a) = VJ00 Lemma 5.7) in Lean,
-  at least for one-player games, which would remove the only non-definitional hypothesis of `lam_gap_oneplayer`. It needs VJ00 §4.5's
-  multiset extension of the order (F4 is false on sets, F4′ needs v ∉ Π), so it is a real piece of work, not a corollary.
+- Next: (1) apply the Lead's diff verdict on all statements (Statements.lean sent 11:44Z; Statements2.lean sent 12:26Z; Statements3-6
+  and OptCounterExistsStatement to send); (2) whatever the Lead routes next (L-NEW 72's Lemma LEVEL if it survives). Not formalized
+  and needing R104 / R117's genome definitions: WINDOW, SCC-RED, CAP, REACH3. Not formalized, generic: R15 (b), (c) (the φ potential and
+  strictness), VJ00's Ω_σ as a minimum over plays (the Lean `OptCounter` is Friedmann's positional form).
 - Layout rule: no lean/lakefile.* at lean/ root (Lead 11:31Z: «keep lean/lakefile.* absent at lean/ root»).
 - Toolchain in a fresh container: commands in lean/lemmas/README.md (elan, `lake exe cache get`, `lake build`); tested on a fresh copy.
 
 ## Queue
-0. (own initiative, proposed to the Lead) TWO-CROSS, Λ-count, Howard run bound: PROVED in Lean; statements need the Lead's diff.
-   Not done, candidates: DEPTH-COUNT3's depth ≤ c clause with R234's fix D1 (binomial counting); premise (M) for one-player games.
+0. (own initiative, proposed to the Lead) TWO-CROSS, Λ-count, Howard run bound, (M) one-player, premise-free one-player LAM-GAP and
+   Howard bound, DEPTH-COUNT3 with fix D1, T-CYC without the genome: all PROVED in Lean; every statement needs the Lead's diff.
+   Two-player F1 = R15 (a) and the existence of optimal counterstrategies: PROVED in Lean; statements need the Lead's diff.
+   Not done: WINDOW, SCC-RED, CAP (they need R104 / R117's genome definitions).
 1. LAM-GAP, SHARP form, with BR-SEG and BR-SEG-G as corollaries: PROVED in Lean as sent; waits for the Lead's statement diff.
 2. ONE-CROSS: PROVED in Lean as sent (abstract over a preorder, plus the VJ instance); waits for the Lead's statement diff.
 3. Possible later (Lead 11:31Z, not yet): L-NEW 72's CANDIDATE Lemma LEVEL, if it survives L-RED.
