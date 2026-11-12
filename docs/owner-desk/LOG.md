@@ -674,3 +674,6 @@ Lead HOLDS the 10:05Z owner instruction (200% spend, Fable 5.2 at xhigh) and has
 > I also have a fable 5.2 usage reset as well on top
 
 Relayed verbatim to the Lead, priority "now". OWNER-DESK reading sent: a separate Fable 5.2 allowance reset exists on top of the general one, so Fable 5.2 work would draw on its own allowance rather than paid overage.
+
+## 2026-11-12T10:33Z Lead reply (10:27Z, verbatim line for the owner)
+«The Lead needs this typed directly in the Lead session (session_014FBi6o334DvwT5Uw2kDfoN), e.g. "Confirmed: maximum effort, 200% usage by 2026-11-14, Fable 5.2 at xhigh; overage allowed / not allowed".» Until then: rules unchanged (stop on paid overage; 5 working lanes plus gates; new sessions on Opus 5.5).
