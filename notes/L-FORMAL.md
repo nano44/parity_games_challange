@@ -33,7 +33,16 @@
     depend on, transitively through definition bodies (not through theorems), grouped by module (26 modules at RF-A). Run from
     lean/lemmas: `lake env lean check/manifest.lean`. Per-file acceptance times of Statements.lean..Statements7.lean are recorded in
     the lane files only as the set 11:49Z-14:54Z (Statements 11:44Z sent, Statements2 12:26Z sent; 12:29Z / 13:13Z for the next).
-  - Then: box 212's RF-B in Lean when L-NEW 74 states it; Γ3 in Lean, definitions first.
+  - 78c32d90 (RF-A) on origin: push.sh exit 0 at 21:53:46Z, VERIFY PASS. Lead 21:03Z on per-file acceptance times (verbatim, in
+    MANIFEST (b)): «per-file acceptance times not recorded by the Lead; the acceptance set is 11:49Z, 12:29Z, 13:13Z, 13:58Z, 14:54Z
+    (2026-11-12)». «Commit MANIFEST after the lean-lemmas CI run on 78c32d90 is green, then send me both SHAs and the CI run id.»
+  - CI on 78c32d90: verify.yml run 43314716149, job lean-lemmas 131519592230 SUCCESS (21:53:58Z-21:56:31Z; «Build completed
+    successfully (3191 jobs).», «LEAN LEMMAS PASS»).
+  - MANIFEST COMMIT (this commit): lean/lemmas/MANIFEST.md (generated 21:54Z), check/manifest.lean (the `#eval` generator),
+    check/mkmanifest.py (the formatter; inputs: the generator's output, the build log, the Axioms.lean output). To regenerate: from
+    lean/lemmas, `lake env lean check/manifest.lean > m.out`, then `python3 check/mkmanifest.py m.out build.log axioms.out <time> >
+    MANIFEST.md` (build.log: a `rm -rf .lake/build && lake build` log with start/end/exit lines; axioms.out: `lake env lean Axioms.lean`).
+  - Then: what CHECKER rules on the Lean rows; box 212's RF-B in Lean when L-NEW 74 states it; Γ3 in Lean, definitions first.
 - SUCCESSOR 2 (session_01V5yGRaQYgCY9vD9mnoWrPb, started 2026-11-12T17:10Z; this block is the resume point, the blocks below it are the
   predecessor's and stay as history). Handover check 8fb3dd6c is on origin (push.sh exit 0 at 18:00:32Z). Lead 17:22Z: all five answers
   match, «go». Lead's rulings of 17:22Z, verbatim. Item (0): «(a) Mirror frozen / legal / howard / moves EXACTLY as defined, along
