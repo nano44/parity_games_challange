@@ -1,0 +1,4 @@
+START r 0 step 0 [0.118056, -127, 17] {"rbig": 0.1181, "NM": 204, "T3": 17, "nscc": 5, "big": 50, "Mbig": 144, "locbig": 17, "maxloc": 17, "ratio": 0.118, "locfail": 0, "chainfail": 0, "bound": 20, "HM": -1}
+GROWN GROWN_G300_R0.1241_NM280_53aaec73.json sha1 53aaec7397306e4104477f856ae588f9ca52d0d2 {"rbig": 0.1241, "NM": 280, "T3": 18, "nscc": 37, "big": 50, "Mbig": 145, "locbig": 18, "maxloc": 18, "ratio": 0.124, "locfail": 0, "chainfail": 0, "bound": 25, "HM": -1} evals 92
+restart 0 seed C6G8_n54.json end [0.124138, -127, 18] {"rbig": 0.1241, "NM": 280, "T3": 18, "nscc": 37, "big": 50, "Mbig": 145, "locbig": 18, "maxloc": 18, "ratio": 0.124, "locfail": 0, "chainfail": 0, "bound": 25, "HM": -1} global [0.118056, -127, 17] evals 92 178s
+DONE

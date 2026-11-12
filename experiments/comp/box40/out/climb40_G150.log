@@ -1,0 +1,4 @@
+START r 0 step 0 [0.8, -2, 8] {"rbig": 0.8, "NM": 14, "T3": 8, "nscc": 1, "big": 4, "Mbig": 10, "locbig": 8, "maxloc": 8, "ratio": 0.8, "locfail": 0, "chainfail": 0, "bound": 9, "HM": -2}
+GROWN GROWN_G150_R0.8_NM140_4fbcb198.json sha1 4fbcb198c975e5d9440f0f919cd467cfca679a35 {"rbig": 0.8, "NM": 140, "T3": 11, "nscc": 41, "big": 4, "Mbig": 10, "locbig": 8, "maxloc": 8, "ratio": 0.8, "locfail": 0, "chainfail": 0, "bound": 27, "HM": -1} evals 144
+restart 0 seed C98_2_2_3.json end [0.8, -2, 11] {"rbig": 0.8, "NM": 140, "T3": 11, "nscc": 41, "big": 4, "Mbig": 10, "locbig": 8, "maxloc": 8, "ratio": 0.8, "locfail": 0, "chainfail": 0, "bound": 27, "HM": -1} global [0.8, -2, 8] evals 144 23s
+DONE

@@ -98,7 +98,32 @@ def rgen(r, NMMAX):
         if own36.kfvs(G, 1) == 1: return G
 
 
+def rgen_lred(rng, d, w, D):
+    """COPY of L-RED's generator r231/dep231.rgen (= r221q brute221.rgen; claude/l-red 078e2b29, dep231.py l. 88-97), used only to replay
+    L-RED 65's rand232 set (r232/rand232.py at 59daaef2: rng = Random(SEED); per genome rgen(rng, randint(1, 5), randint(1, 4),
+    choice([2, 3, 4])); Ξ-cyclic allowed)."""
+    N = d * w; lev = [x // w for x in range(N)]; opts = []
+    for x in range(N):
+        opts.append([[(rng.choice([y for y in range(N) if lev[y] == lev[x] - 1]) if lev[x] else -1), rng.choice(list(range(N)) + [-1]), 0] for _ in range(D)])
+    M = N * D; perm = list(range(M)); rng.shuffle(perm); gate = []; i = 0
+    for x in range(N):
+        gate.append([])
+        for o in opts[x]: o[2] = i; gate[x].append(perm[i]); i += 1
+    br = list(range(M)); rng.shuffle(br)
+    return {"N": N, "lev": lev, "opts": opts, "gate": gate, "br": br, "bp": [rng.randrange(2) for _ in range(M)], "start": [rng.randrange(D) for _ in range(N)]}
+
+
 if __name__ == "__main__":
+    if sys.argv[1] == "--lred":
+        SEED, CNT, OUT = int(sys.argv[2]), int(sys.argv[3]), sys.argv[4]; rng = random.Random(SEED)
+        done = sum(1 for _ in open(OUT)) if os.path.exists(OUT) else 0
+        for i in range(CNT):
+            G = rgen_lred(rng, rng.randint(1, 5), rng.randint(1, 4), rng.choice([2, 3, 4]))
+            if i < done: continue
+            try: res = analyse(G)
+            except OverflowError: res = dict(capped=1)
+            with open(OUT, "a") as f: f.write(json.dumps(dict(i=i, tag="r%d" % i, N=G["N"], M=sum(map(len, G["opts"])), k=own36.kfvs(G, 1), **res, G=G)) + "\n")
+        print("DONE", CNT); sys.exit(0)
     if sys.argv[1] == "--rand":
         SEED, CNT, NMMAX, OUT = int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4]), sys.argv[5]
         done = sum(1 for _ in open(OUT)) if os.path.exists(OUT) else 0
