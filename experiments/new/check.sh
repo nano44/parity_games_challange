@@ -1140,4 +1140,13 @@ if [ "$r207" -eq 0 ] && [ -z "$d207" ] && ! grep -v "^ctrl" box207/check207.out 
 else
   echo "BOX 207 RLOCAL check: FAILED (check207.sh exit $r207)"; echo "$d207" | head -30; echo "$run207" | tail -15; exit 1
 fi
+# BOX 208 LEVEL (L-NEW successor 72): CANDIDATES Lemma LEVEL / Theorem WIN / Lemma PLATEAU (Addendum A): class facts, L1-L4, window and plateau must-0 counters on the check set, controls fire, frozen outputs unchanged and all 0
+r208=0; run208=$(cd box208 && bash check208.sh 2>&1) || r208=$?
+d208=$(diff <(printf '%s\n' "$run208") box208/check208.out 2>&1) || true
+m208='(monofail|k3fail|k4fail|k5fail|einF|l3fail|phifail|stallnocyc|nofvs|rstall|boundfail|winstall|wbeta|wl3fail|wmid|wbound|levfail|stall0|optfail) [1-9]'
+if [ "$r208" -eq 0 ] && [ -z "$d208" ] && ! grep -v "^ctrl" box208/check208.out | grep -Eq "$m208" && grep -q "^ctrl1 .*winstall [1-9]" box208/check208.out && grep -q "^ctrl2 .*l3fail [1-9].*stallnocyc [1-9]" box208/check208.out && grep -q "^RINT_n48.json .*wmax 22 " box208/check208.out && ! cat box208/out/level208_records.out box208/out/level208_corpus.out box208/out/level208_rand_*.out box208/out/level208_g3_*.out box208/out/mut208_*.out box208/out/own208_records.out box208/out/own208_corpus.out | grep -Eq "$m208" && ! grep "ctrl 0" box208/out/abs208.out | grep -Eq "$m208" && ! grep -h "ctrl 0" box208/check208.out box208/out/plat208_records.out box208/out/plat208_corpus.out box208/out/plat208_rand_s2091.out box208/out/plat208_mut_s2092.out box208/out/plat208_mut2_s2093.out | grep "^plat\|^rnd plat" | grep -Eq "\b(p1|pclos|p2|p3|p4|p5) [1-9]" && grep -q "^ctrlp .*pclos [1-9]" box208/check208.out && grep -q "ctrl 1 monofail [1-9]" box208/out/abs208.out && grep -q "winstall [1-9]" box208/out/level208_ctrl1.out && (cd box208/out && sha1sum -c --quiet SHA1SUMS); then
+  echo "BOX 208 LEVEL: LEVEL / WIN must-0 counters 0 (check set and frozen outputs), controls fire: PASS"
+else
+  echo "BOX 208 LEVEL check: FAILED (check208.sh exit $r208)"; echo "$d208" | head -30; echo "$run208" | tail -15; exit 1
+fi
 rm -rf "$tmp"
