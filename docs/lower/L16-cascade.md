@@ -72,7 +72,7 @@ c6e19673). Base C12 (l14/rec/L14_C12_final_solved.txt, c58041d5). Tools experime
   (f5); at row 1 already movers 24, 45-49, 51 differ from X5's run (counter = movers whose state differs from X5's free run, rows 0..3:
   0, 7, 7, 12). Cause: rewiring f6 changes the chain values seen by every mover whose chain enters f6's options, and the cascade slots are
   entered by other movers' chains too.
-- Indirect readers (counter = movers whose Ξ-reach contains a slot mover, X5 wiring; l16 table in the notebook): every level whose key moves
+- Indirect readers (counter = movers whose Ξ-reach contains a slot mover; set = all 64; scope = the X5 and C12 wirings; l16/out/readers_X5.txt, readers_C12.txt): every level whose key moves
   in the clamped run (8-25) is reached by 16-62 movers, always including q6, q7, f7 (12, 14, 15); the two levels reached by ≤ 1 mover (26, 31)
   have constant keys o(25), o(30) on rows ≥ 3, so a cascade there moves at most once per mover (M3).
 - Keeping every such reader's base better (ekr2 KEEPR) is UNSAT already at P 14, even with f6 forced to its base wiring (FORCEBASE; solver
@@ -80,7 +80,43 @@ c6e19673). Base C12 (l14/rec/L14_C12_final_solved.txt, c58041d5). Tools experime
   cannot reproduce. UNSAT core (DEBUGCORE) over (reader, row): readers 12, 14, 15, 19, 21, 24, rows 0-11.
 - Re-solving the readers instead (exact; pgad4 on G1, cascade signs / gates / starts fixed, XS = {12, 14, 15} with pgad's candidates):
   UNSAT at P 15 and at P 18 (CaDiCaL, 53 s each; diagnostics, not cited as lemmas). pgad5 on G1 with XS = {8, 11, 12, 14, 15} free to read
-  any mover compatible with 8 < 11 < 12 < 15 < 14: PENDING (2,900 s cap).
+  any mover compatible with 8 < 11 < 12 < 15 < 14 (cascade signs / gates / starts fixed): P 18 NO ANSWER in 2,900 s (1,008,873 vars).
+
+## 5. D2 / D3 as coupling checks (Lead 06:44Z: «run D2 and D3 only as quick coupling checks, at most one capped run each … Run D2/D3 in
+full only if a quick check shows a level whose movers are read by fewer than about 4 cluster readers.»)
+- Reader sets per helper level (l16/readers.py; out/readers_C12.txt, out/readers_X5.txt). Counter: R(L) = movers r not on level L whose Ξ-reach
+  contains a mover of level L (set = all 64 movers; scope = the frozen wiring); cluster readers = R(L) ∩ {12, 13, 14, 15}; key activity =
+  changes of o(L−1) on rows 0..40 of the clamped run (core forced to core8).
+  C12 (c58041d5): levels 8-14 and 16-18 (keys with 3-40 changes): |R| 13-50, cluster readers ⊇ {12, 14, 15} except level 15 ({14, 15},
+  |R| 13, 9 key changes); levels 19, 26, 31 (|R| 1, no cluster reader) have 0-2 key changes; 28 and 30 (cluster reader 12 only) have 0.
+  X5 (f002cc9f): every level 8-30 with a moving key has ⊇ {12, 14, 15} among its readers; levels 26, 31 (|R| 1) have 2 and 0 key changes.
+- D2 (a 4-pair cascade, levels 8-11) and D3 (HIT7_lift_d32's helper block, levels 7-27) occupy only levels with cluster readers ⊇ {12, 14, 15}
+  (both bases), so the criterion for a full run is not met for either. The one level below the threshold (C12 level 15) got the one capped
+  run: ekr2 LEVEL 15, k 1, KEEPO, KEEPR (all 26 readers of f6 or of the slots keep their base better), P 18: UNSAT in 7.3 s (solver only;
+  diagnostic). UNSAT core over (reader, row): f7 (15) rows 4, 7, 8; helper 49 rows 5-8; helper 53 row 9; f7 and 49 read the slots 30 / 31
+  directly. D2, D3: not run in full (criterion not met); recorded as SKIPPED with this reason, not as DEAD.
+
+## 6. Box result (stop rule): the coupling obstruction (DATA, exact; no hand-built cascade passed P = 18)
+- Milestone P = 18: NOT reached. Best realized prefix of the box: rows 0..14 (X5_P14_dec f002cc9f, sim6 = fenc). Undecided at P 18 within
+  2,900 s: D1 free (levels 8-10), clients-only (pgad5), G1 completion (pgad5 with the cascade fixed).
+- The obstruction, exactly. (a) Information: the cluster sink f6 needs XNOR(s10, s11) (§2), which ENC on the core's fixed chains does not
+  supply (k 0 UNSAT, DRUP VERIFIED) and ONE fresh pair does, to T 510 (§3, replayed). (b) Coupling: a fresh pair must sit on a level whose key
+  moves; on C12 and X5 every such level is reached through Ξ chains by at least two of q6 / q7 / f7, and by 13-62 movers in all (§5, counter
+  stated there). (c) Consequence, measured: grafting the P 18 design for f6 (X5 level 13) changes those readers' chain values: instance
+  G1 (2a2ab451) drifts at row 1 (movers 24, 45-49, 51) and leaves the target at row 2 (f5); keeping every reader's base better is UNSAT at
+  P 14 even with f6 at its base wiring (KEEPR + FORCEBASE; UNSAT core readers 12, 14, 15, 19, 21, 24, rows 0-11); at C12 level 15 it is
+  UNSAT at P 18 (core f7, 49, 53). Re-solving the readers instead (G1, pgad5) gave no answer at P 18 in 2,900 s.
+- What is NOT claimed. No lower bound: the KEEPR frame is a sufficient condition (readers may change if they still meet the target), and the
+  re-solving questions are undecided, not UNSAT. Nothing here bounds N5 on any game. The obstruction is about the C12 / X5 wirings; a base
+  built with the cascade from the start (readers designed around it) is not excluded.
+- Cited UNSATs and their DRUP (l16/out/edrup.txt; Glucose4 proof + l8/sat/drup.c, s VERIFIED each): C12 k 0 EXT 0-11 P 32 (CNF 713a8028);
+  C12 k 1 EXT {10, 11} P 24 (36ed96fc); C12 k 1 EXT 0-11 KEEPO P 32 (c8bac5f4); X5 level 13 k 1 KEEPO P 20 (ccccdfbb). The KEEPR, pgad4 and
+  level-15 UNSATs are solver-only diagnostics and are labelled so.
+- Labels: PROVED (lane): CLUSTER-SINK. DATA: §1-§6 tables, each with its counter. DEAD: D1's grafted E_k3 cascade as a clock past row 16
+  (C12_E3, 7ef15673); the non-isolated reading of KEY-CLOCK in the ekr2 scope (4fee0495). CONJECTURE: KEY-CLOCK (isolated) unchanged.
+  READING: ENC routing does not compute XOR (§2).
+- Proposed next step (not a decision): build the base AROUND the cascade: freeze the f6 design + its pair first, then let the annealer /
+  pgad choose the readers' wiring (q6 / q7 / f7 read f6, not the slots), i.e. move the coupling into the search frame instead of grafting.
 
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All statements are about the IDEAL
