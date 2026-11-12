@@ -1,7 +1,29 @@
 # L-LIT notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (HANDOVER, T65-T68, 2026-11-12 12:22Z by date -u; session_01V5yGRZyBwA3rKaGJ1Uax66; D18, D1; PARKED on the Lead's word)
+## Resume point (T69 + T68 item 3, 2026-11-12 13:30Z by date -u; session_01V5yGRYSuVcAoW1mpE9SL5h; D18, D1, D21; WORKING, not parked)
+Branch state: handover check a7c286d2 pushed (scripts/push.sh exit 0, VERIFY PASS; lean NOT RUN, no lakefile; Oink smoke NOT RUN, Oink
+not built); Lead «go» 13:10Z (its clock). Trunk is NOT merged into this branch (5 ahead / 1662 behind 471aba45 at 12:50Z): read NOW /
+DECISIONS / GAPS / RESULTS with `git show origin/claude/vibrant-johnson-nxvvxo:<file>`.
+DONE (this session; the commit SHA is in git log, quoted to the Lead from git output):
+- T69 docs/lit/T69-dijkstra-potentials-policy-iteration.md + docs/lit/T69-summary.md. Object: L-NEW box 208 (claude/l-new 8db300fe,
+  docs/new/N5-LEVEL-box208.md, sha1 55e65381). Verdicts: two-player Dijkstra for weights ≥ 0 KNOWN (Khachiyan et al. DIMACS TR 2007-02
+  Thm 1; Games on Graphs Thm 5.14; Bertsekas arXiv 1608.01670 §5.3); strategy iteration on that class KNOWN as an algorithm with
+  finite termination only (Hansen–Ibsen-Jensen–Miltersen arXiv 1201.3498 Thm 2.5; Bertsekas §5.2); a polynomial bound on Howard's
+  steps by a lowest-lagging-value potential (box 208 §10 ABS) NEW, weakly; one player KNOWN (Cochet-Terrasson–Gaubert Thm 2.3); fixed
+  k: SOLVING is KNOWN (Gajarský et al. Thm 3, 4; Mnich–Röglin–Rösner; DAG-width Thm 4.5; Fearnley–Schewe), a step bound for Howard at
+  fixed feedback number NEW as a statement (nearest: Auger–Coucheney–Strozecki Lemma 5, k = 0 analogue). No CONTRADICTION; break
+  points of the abstract form: (K2) + (K3) (d) + NO-TIE (E-DOM) against Friedmann, (L3) (β) / (L5) against Zhong–Ye / Hansen–Zwick.
+- T68 item 3 remainder = T66 Addendum C: ranking (arXiv 2512.16684 Fig. 4.1) and symmetric (arXiv 2309.02223 Tables 1, 2) games
+  violate E-DOM at all gates but the top two; Mei (arXiv 2610.27386 Table 1) is a discounted game, signed costs, top scale −R.
+- T68 item 2 (box 208 counters on G_N) was moved to L-COMP 19 by the Lead (13:10Z): not mine.
+IN FLIGHT: nothing half-written.
+OPEN LEADS (only on a Lead question): Hansen–Kaplan–Zwick SODA 2014 (not opened); Schewe CSL 2008 / Friedmann thesis §4.6.2 (OSI
+  exponential family, cited by Cadilhac–Casares–Ohlmann, not re-opened); intermediate class maps on G_n (T69 §5.1, not analysed);
+  whether ABS's bound (edges of Max)·(vertices) is tight (no example searched).
+NEEDS: none from the owner (optional library: Hansen–Kaplan–Zwick SODA 2014, Schewe CSL 2008, Obdržálek CAV 2003, plus T65's list).
+
+## Previous resume point (HANDOVER, T65-T68, 2026-11-12 12:22Z by date -u; session_01V5yGRZyBwA3rKaGJ1Uax66; D18, D1; PARKED on the Lead's word)
 Branch state: every commit below is on origin/claude/l-lit (scripts/push.sh exit 0, VERIFY PASS each time; lean NOT RUN, no lakefile; Oink
 smoke NOT RUN, Oink not built). Trunk is NOT merged into this branch (Lead's word, 0 ahead / 1659 behind at 10:40Z): read NOW /
 DECISIONS / GAPS / RESULTS with `git show origin/claude/vibrant-johnson-nxvvxo:<file>`.
@@ -153,6 +175,15 @@ NEEDS: none from the owner.
 - Open FL09 (self-loop removal) if the REFEREE needs it; Friedmann RAIRO 2011 (publisher 403; try author copy).
 
 ## Things only I know
+- T69 (2026-11-12): downloads in scratchpad t69/dl (+ pdftotext -layout in t69/txt) and t68/dl, lost with the container; URLs and
+  sha256 prefixes in Sources. Page numbers in T69 are PDF pages counted from form feeds in the pdftotext output (awk '/\f/{p++}').
+  epubs.siam.org returns an HTML wall to curl (Hansen–Kaplan–Zwick). Gaubert's shortestpath.ps: `gs -sDEVICE=pdfwrite` (gs was
+  already installed here). arXiv ids guessed from memory were WRONG twice (1502.06484, 1108.0966 are unrelated papers): always check
+  the first lines of the text before citing. Author copies used: lamsade.dauphine.fr/~mlampis/papers/parity.pdf (Gajarský et al.),
+  dbai.tuwien.ac.at/staff/vorobyov/dam-2007-mpg-subexp.pdf (Björklund–Vorobyov), cs.ox.ac.uk/people/paul.hunter/papers/
+  dagwidth_full.pdf (Berwanger et al.), archive.dimacs.rutgers.edu/archive/TechnicalReports/TechReports/2007/2007-02.pdf.
+  The container clock (date -u) ran about 5 minutes behind the Lead's stamps today; order events by commits, not by clocks.
+  The abstract form (A1)-(A5) in T69 §1 is MY wording of box 208, not L-NEW's; say so when citing it.
 - T65-T68 (2026-11-12): downloads in scratchpad t65/dl (+ .txt in t65/txt) and t68, lost with the container; URLs and sha256 prefixes
   are in Sources. Cochet-Terrasson–Gaubert's report is PostScript: `apt-get install -y ghostscript`, then ps2pdf + pdftotext. Gaubert's
   page www.cmap.polytechnique.fr/~gaubert/HOWARD2.html links both papers. arxiv.org/pdf/<id> works with plain curl.
@@ -674,6 +705,32 @@ NEEDS: none from the owner.
 
 - T68 (2026-11-12). OPENED (scratchpad t68): Disser–Friedmann–Hopp arXiv 1911.01074 v2 (ba3242140c0832ac; Table 3.1 and Fig. 3.2, PDF
   p.7); Avis–Friedmann arXiv 1305.3944 v1 (d1fafb8b5d0b822c; Fig. 2, PDF p.12). Both opened before for T37; re-opened for the priorities.
+
+- T69 (2026-11-12; scratchpad t69). OPENED: Khachiyan et al. DIMACS TR 2007-02 (9a31e6e37a3ea994; Thm 1 PDF p.6; §2.2); Games on
+  Graphs arXiv 2305.10546 v2 (578f60494338cc87; Thm 5.6 PDF p.179, p.183; Thm 5.14 PDF p.199-201; notes p.202); Hansen–Ibsen-Jensen–
+  Miltersen arXiv 1201.3498 v3 (eb0162c48b39b07f; §2 PDF p.4-9, Lemma 2.3, Cor. 2.4, Thm 2.5; Conj. 5.1 p.27); Bertsekas arXiv
+  1608.01670 v1 (823d04ce10facfc7; §5.2 p.23; §5.3 p.25-30, Assumption 5.1, Prop. 5.1-5.3); Guillot–Stauffer arXiv 1702.03186
+  (b9c9140c35e5e1a6; abstract, §4.2 p.9); Björklund–Vorobyov DAM 155 (2007) author copy (95a6b406f01db6b4; §3.1 p.213-214, p.219,
+  §6 p.222, §10 p.226); Cadilhac–Casares–Ohlmann arXiv 2110.07346 v3 (fe41f4ca0f4ec46d; §1 p.3, §4.1 p.10, §6 p.17 Question 19);
+  Luttenberger arXiv 0806.2923 v4 (5423346ce997c8ac; Prop. 4.19); Gajarský et al. author copy (6b8790b4964a5df4; §1 p.2-3, Thm 3, 4
+  p.9, Cor. 3 p.17); Mnich–Röglin–Rösner arXiv 1512.03246 v1 (63fc51cb5799bc15; abstract, Thm 1); Berwanger et al. full version
+  (45ccd6c7573a06f2; p.2, Thm 4.5 p.22); Fearnley–Schewe arXiv 1112.0221 (32c2cf48a8ab6e82; abstract); Auger–Coucheney–Strozecki
+  arXiv 1402.0471 v1 (43c0ba955c97e377; p.2-3, Def. 5 p.8, Lemma 5 p.9, Thm 5 p.11, Thm 8 p.18); Fearnley–Savani arXiv 1507.04500
+  (d25c1f25041122ae; abstract; one-sink games PDF p.8); Brihaye et al. arXiv 1407.5030 (c2587986152b9104; PDF p.3 on Khachiyan et al.).
+  RE-OPENED: Cochet-Terrasson–Gaubert shortestpath.ps (7ea755d41b290afe; abstract, Thm 2.3); Zhong–Ye arXiv 2609.40147 v2
+  (dafeb81816af6582; Thm 6.1 p.23, p.26, Thm 7.1 p.31, Thm 7.2 + text p.33); HMZ arXiv 1008.0530 (f53a6b5127d95078; §1 p.3, §7 p.11);
+  Post–Ye arXiv 1208.5083 v2 (c51876ebf5c3cdb0; p.2); Friedmann arXiv 1106.0778 v2 (46c96f44775aa2b0); Madani arXiv 1301.0583
+  (3007a3d8a1968381; no Dijkstra-type argument). Downloaded, not used: Dorfman–Kaplan–Zwick ICALP 2019 (a63fb180bb917296), Ohlmann
+  arXiv 2110.04533, arXiv 2603.07555, Maat arXiv 2509.16075, Fearnley arXiv 1705.02313. Fleet file: claude/l-new 8db300fe
+  docs/new/N5-LEVEL-box208.md (sha1 55e65381), read in full except §7's tables.
+  NOT OPENED: Hansen–Kaplan–Zwick SODA 2014 (DOI 10.1137/1.9781611973402.63; HTML wall; bibliographic page only); Khachiyan–Gurvich–
+  Zhao CSR 2006 (DOI 10.1007/11753728_24); journal versions of Khachiyan et al. (DOI 10.1007/s00224-007-9025-6) and Berwanger et al.
+  (DOI 10.1016/j.jctb.2012.04.004); Obdržálek CAV 2003; Schewe CSL 2008; Rutkowski QAPL 2011; Gimbert–Horn 2008; Ibsen-Jensen–
+  Miltersen 2012; Bertsekas DP book §3.4.1; Vladimirsky 2008.
+
+- T68 item 3 (2026-11-12; scratchpad t68). OPENED: Disser–Loho–Maat–Mosis arXiv 2512.16684 v2 (fa9b42e397e3e434; Fig. 4.1 and Lemma 4.4
+  PDF p.13-14; gadgets p.16-23 skimmed); van Dijk–Loho–Maat arXiv 2309.02223 (10e6794d82aba465; Table 1 PDF p.9, Table 2 PDF p.13);
+  Mei arXiv 2610.27386 v2 (1b4f5b87e384811f; §3.1, Table 1 PDF p.5, conditions (5)-(7) p.6). (T30 read v1 of Mei, 5b3265d3….)
 
 ## Dead ends
 - T66 (2026-11-12): a literature test of DEEP3 / U-FREE on Γ3 does not exist. Obstruction: E-DOM (every escape e even and above every β;

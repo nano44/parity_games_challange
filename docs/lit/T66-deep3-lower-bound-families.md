@@ -185,3 +185,43 @@ No generator and no run: the priorities are read from the papers' tables (PROVED
 - Both families defeat single-switch, history-based rules, not Howard (§4), so they were never tests of HOW3. The point here is only
   that the «odd selector above lower escapes» pattern is common to every construction checked: [F09], [F11] §6, the four PGSolver ports
   of §5.2, Zadeh, Cunningham. Not checked: Disser–Loho–Maat–Mosis (ranking rules), van Dijk–Loho–Maat (symmetric), Mei.
+
+## Addendum C (2026-11-12, date -u in the commit; append-only): E-DOM read off the ranking, symmetric and Mei families' own tables (T68 item 3, remainder)
+No generator and no run: priorities and costs are read from the papers (PROVED-in-source for the tables; READING for the test). Test as
+in Addendum B and §5.2: unit = an Odd vertex with a choice; esc = its successor of largest even priority; listed = odd priorities
+above pr(esc). PDFs opened 2026-11-12 (sha256 prefixes in notes/L-LIT.md).
+- Disser, Loho, Maat, Mosis, «Lower bounds for ranking-based pivot rules», arXiv 2512.16684 v2 (10 Aug 2026), Fig. 4.1 and the proof of
+  Lemma 4.4 (PDF p.13-14), the base game G_n («The games that we use to prove Theorem 4.3 all have the same base structure», p.13):
+  «each level i ∈ [n] contains a player 0 node a_i with priority 2i + 1 and a player 1 node b_i with priority 2i + 2»; «a player 1 node
+  b_(n+1) with priority 2n + 4 whose only edge ends in the sink»; «the node b_i has two outgoing edges leading to b_(i+1) and
+  a_(i+1)». The Odd choice vertices are b_1, …, b_n. esc(b_i) = b_(i+1), priority 2i + 4. Odd priorities above it: a_j with
+  2j + 1 > 2i + 4, i.e. a_(i+2), …, a_n. E-DOM FAILS at b_i for every i ≤ n − 2 and holds at b_(n−1), b_n. The escape of a gate is
+  itself the next gate (a chain of Odd vertices), which a genome does not allow either (D1 of P-N5-QN: e_g has one in-edge and one
+  out-edge). The gadgets added for Theorems 4.2 / 4.3 (Fig. 4.2-4.5, PDF p.16-23) use the priorities 1, 2, 3 below this structure;
+  I did not test them one by one. Rule: Bland-type and ranking-based single-switch rules, not Howard.
+- van Dijk, Loho, Maat, «The worst-case complexity of symmetric strategy improvement», arXiv 2309.02223, Table 1 (PDF p.9), the game
+  G_n: «a_1 Player 0, 3, a_2, d_2»; «a_i, i = 2, …, n: Player 0, 2i + 1, a_1, a_(i+1), d_(i+1)»; «d_1 Player 1, 4, a_2, d_2»; «d_i,
+  i = 2, …, n: Player 1, 2i + 2, d_1, a_(i+1), d_(i+1)»; «a_(n+1) Player 0, 1»; «d_(n+1) Player 1, 2n + 4, a_(n+1)». The Odd choice
+  vertices are d_1, …, d_n. esc(d_i) = d_(i+1), priority 2i + 4. Odd priorities above it: a_(i+2), …, a_n. E-DOM FAILS at d_i for
+  every i ≤ n − 2 and holds at d_(n−1), d_n: the same pattern as the ranking game (which is «adapted from [11]», a binary counter).
+  For i ≥ 2 the gates are ternary (two even successors, d_1 and d_(i+1)).
+  - Table 2 (PDF p.13), the game for generalized symmetric strategy improvement (N = 16n + 16): Odd choice vertices e_i (14i + 4;
+    successors m_i, a_(i+1), both odd: no even successor), f_i (14i + 6; c_i, d_(i+1)), g_i (14i + 8; k_i, h_i, (d_1)), h_i (14i + 10;
+    l_i, g_i, (d_1)). esc(f_i) = d_(i+1) = N + 2i + 2, with the odd a_j = N + 2j − 1 above it for j ≥ i + 2: FAILS for i ≤ n − 2,
+    holds for f_(n−1), f_n. For i > 1, esc(g_i) = esc(h_i) = d_1 = N + 2, below every a_j with j ≥ 2: FAILS. For i = 1 the escapes h_1
+    (24) and g_1 (22) lie below k_1 (25), l_1 (27) and every a_j: FAILS.
+  - Rule: symmetric strategy improvement (both players improve), not Howard.
+- Mei, «Simple strategy-iteration with Dantzig's rule is not strongly polynomial on turn-based deterministic games», arXiv 2610.27386
+  v2 (30 Oct 2026), §3.1 and Table 1 (PDF p.5). NOT a parity game: a discounted turn-based deterministic game with action costs. There
+  are no priorities, so E-DOM cannot be read off as above. Table 1: «a_i Player 1, p_i; q_i, 0; 0»; «p_i Player 2, a_(i+1); a_i,
+  W_i/γ; −K_i/γ»; «q_i Player 2, b_(i+1); a_i, W_i/γ; −K_i/γ»; «b_i Player 2, a_(i+1), b_(i+1), 0; 0»; «b_(h+1) Player 2, a_(h+1),
+  −R»; conditions (5)-(7) (PDF p.6): «W_(i+1) ≥ 4W_i», «K_i ≥ 2K_(i+1)», «R ≥ 4W_h». Player 1 (the minimiser) improves, Player 2
+  answers. In the cost reading of E-DOM (the largest scale belongs to the escapes and has the sign that favours the improver) the
+  test FAILS: the costs have both signs, and the largest scale is the single terminal cost −R, above every W_i. The paper's own
+  description of the mechanism is a cancellation: «a mixed-player cycle created by a Player 1 pivot may be canceled by Player 2's
+  optimal counter strategy. … we construct a family in which such cancellation occurs at every iteration» (PDF p.5). Rule: one Dantzig switch per step, not Howard.
+- Summary for §4's last-but-one row: of the three families, two are parity games and violate E-DOM at all gates but the top two
+  (the «odd selector above lower escapes» pattern again, here with a_j above the lower d's / b's); the third is not a parity game
+  and has signed costs with the top scale against the escapes. None is a family for Howard's rule. With Addendum B: every published
+  construction checked so far fails E-DOM ([F09], [F11] §6, the four PGSolver ports, Zadeh, Cunningham, ranking, symmetric), and
+  Mei's fails its cost analogue. «No E-DOM-compatible exponential family is published» stays a search result, not a theorem.
