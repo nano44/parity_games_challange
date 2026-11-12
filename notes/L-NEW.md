@@ -1,6 +1,48 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## HANDOVER (successor 73, PARKING 2026-11-12 ~19:06Z by date -u; BOX 211 frozen and on origin; BOX 212 proposed to the Lead, NOT started)
+### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
+- 5ca65a0a handover check (Lead accepted, «go» 17:52Z).
+- 1e6df499 BOX 211 = FREEZE of packet P-N5-LEVEL: docs/new/P-N5-LEVEL.md sha1 7c956df443cfddbf23bfbaa18a26a98369b176ec (65,874 B, 575
+  lines); proposed RESULTS line docs/new/P-N5-LEVEL-line-L1.txt sha1 28565b3c60fe8167f4b660c83fa27c00cd7b4fe9 (7,239 B); quotes pinned
+  at trunk 68c8d29339d5945efe6878a7e4cfc9d6a1611d48 (44 quotes, 0 missing); experiments/new/box211/ (quotes211.py, quotes211.out,
+  mkl1_211.py, level.pins with 106 files); check.sh block «P-N5-LEVEL». Messages to the Lead: 17:50Z (check SHA), 18:29Z (BOX 212
+  proposal), 19:03Z (freeze SHA, both sha1, sizes, where each requirement of the brief sits).
+### IN FLIGHT
+- Nothing running: no job, no push (after this handover's own push). Waiting on the Lead: routing of 1e6df499 to REFEREE 33 (first)
+  and REFEREE-2 38 (second); a ruling on BOX 212.
+### NEEDS (for successor 74)
+- DUTY first: every referee / CHECKER item on P-N5-LEVEL goes to docs/new/P-N5-LEVEL-fixes.md (append-only; entry 1 creates the file)
+  plus line L-2 BY SCRIPT (new experiments/new/box211/mkl2_211.py on the pattern of box199/mkl3_199.py: assert L-1's sha1 28565b3c and
+  the packet's sha1 7c956df4, apply the named replacements, each old string once in L-1). Then add the fixes file and L-2 to
+  box211/level.pins and to the check.sh block, push, send SHA + sha1 + wc -c. NEVER edit the frozen packet or L-1.
+- Likely first items (my own list of soft spots): (i) the «To sign» row of §3 names R118 (a) for the freeze used in (K3 (e)); the
+  [VJ] reading in §1 is not script-checked; (ii) §12 cites other lanes' documents by the commit that last touched the file, not their
+  branch heads; (iii) L-1's DATA clause gives set sizes that the generator asserts against the packet's tables, not against the
+  .out files themselves; (iv) (P5)'s sentence that the VJ order on Y is the restriction of Γ(G)'s (REFEREE 32's bridge B-1) is
+  argued in one line.
+- BOX 212, only if the Lead rules «yes»: RF-LEVEL, exactly as in the 18:29Z message (statement RF-A..RF-D, DATA plan, three kill
+  criteria; summary in the Resume point below). First step: read whether R125's static lemmas (CN2-3, B-ONLY3, NO-TIE3, LOC-GATE3,
+  LOC-K2-3) are proved for every standard state or only along HOW3 (P-N5-CHAIN §5); then the pluggable-rule counter on rv208's builder.
+- Boxes 209 and 210 are still CANDIDATES under attack by other lanes; answers are append-only addenda. I read their statements,
+  PLATEAU3 and both Addenda A only, not their DATA sections.
+### Things only I know
+- The packet was assembled from a template and a build script that lived in this session's scratchpad (gone with the container).
+  Nothing needs rebuilding: the packet is frozen. Its §11 tables are box 208's generated rows (summ208.py / summ208c.py).
+- quotes211.py needs git objects (trunk 68c8d293 must be fetched: `git fetch origin claude/vibrant-johnson-nxvvxo`); mkl1_211.py
+  re-run from the repo root on `git show 68c8d293:docs/RESULTS.md > RES.md` reproduces L-1 byte for byte (it asserts the packet's
+  sha1, twelve statements verbatim in the packet, the set sizes in §11's tables, R124's TARGET tail in RESULTS).
+- RF-LEVEL, the two steps that are not in any file: (1) a non-front mover x of Y cannot move to a gate y outside Y before b, because
+  class_(s+1)(x) ≥ class_s(y) > m ≥ class_b(x) would break (K1); a front mover that does so ends the plateau; (2) for a rule other
+  than Howard the tail after LAG is empty is one more frozen window (Y = every vertex), not bounded by QUIET-N.
+- What the proofreading agent did NOT check: the landed premises' proofs, the Lean proofs, §11's numbers against the .out files,
+  mkl1_211.py and L-1, L-LIT T66, boxes 209 / 210.
+- Traps (successor 73): (1) this session's stop hook refuses to end a turn with uncommitted or unpushed work; while a push runs, hold
+  the turn with `timeout 580 tail --pid=$(pgrep -f "bash scripts/push.sh" | head -1) -f /dev/null` (not a direct git push, and no
+  early commit of a file that is to be frozen). (2) `cd` persists between shell calls: use absolute paths. (3) A RESULTS line must
+  not contain «|»: write the size of the front as f_t. (4) A sub-agent's output file must not be read; wait for its hand-back.
+
 ## Resume point (successor 73; session_01V5yGRX6dpFLtdnq3jrnFfy; started 2026-11-12 ~17:09Z; GO 17:52Z)
 - Step 0: handover check 5ca65a0a (VERIFY PASS; Lead accepted 17:52Z). Container came up on claude/l-new but SHALLOW (unshallowed).
   Oink built here (scripts/setup_oink.sh). Clock skew <= 1 s (against raw.githubusercontent.com; github.com gave no Date header).
