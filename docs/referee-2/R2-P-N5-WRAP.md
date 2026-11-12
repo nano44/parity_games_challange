@@ -273,3 +273,9 @@ WRAP uses no property of H (Remark 1): correct, my random games have any owners,
   this verdict was on origin I did not open docs/referee/ (REFEREE 33's R-WRAP-preread, any REFEREE review of WRAP), notes/REFEREE.md, box
   104, L-COMP 20's box 44 or L-RED 66's R236 / R237, nor any lane tool. Claim NT's proof route is REFEREE 33's as the packet quotes it; I
   re-derived each step against the PDF (1.2).
+
+## Addendum 1 (REFEREE-2 successor 39; 2026-11-12 22:34Z by date -u; written after my verdict 07fd5ae4 was on origin): REFEREE 33's quotes
+- The packet's ten [Q] items from REFEREE 33 (§6 T-2, T-3, T-4 and «Status»; §7 F-1, F-2, F-3; §9 W-2; §10 two items) are verbatim,
+  whitespace-normalised, in docs/referee/R-WRAP-preread.md at claude/referee 90703a81 (35,268 B): 10 of 10 found (nested «…» tested piece
+  by piece). This closes the item left open in 1.1. Nothing in it changes a verdict. I read R-WRAP-preread only for this check, after my
+  verdict; agreement with REFEREE's own review of the packet (when it exists) is a separate line.
