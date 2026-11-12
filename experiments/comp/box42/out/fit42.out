@@ -1,0 +1,4 @@
+points (N+M, Deep_3): [(285, 10), (341, 42), (397, 74), (495, 130), (600, 190), (915, 370), (1202, 534)]
+linear fit Deep_3 = 0.571429 (N+M) + -152.857; max residual 1.14e-13  (exact rule: Deep_3 = 10 + 4k, N+M = 285 + 7k)
+log-log slope (k >= 8; affine offset biases it above 1): 1.941
+per-gate max deep internal flips: [3]  dmaxInt: [5]  T3: [14]

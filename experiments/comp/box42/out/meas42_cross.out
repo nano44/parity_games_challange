@@ -1,0 +1,14 @@
+CL0.json T3 14 {'dmax': 5, 'deep': 10, 'qflip': 57, 'qint': 46, 'gates': 199, 'unm': 0, 'sumf': 0, 'minf': 0, 'tie': 0, 'multi': 25, 'tight': 0, 'maxfl': 5}
+CL8.json T3 14 {'dmax': 5, 'deep': 42, 'qflip': 145, 'qint': 134, 'gates': 247, 'unm': 0, 'sumf': 0, 'minf': 0, 'tie': 0, 'multi': 49, 'tight': 0, 'maxfl': 5}
+CL16.json T3 14 {'dmax': 5, 'deep': 74, 'qflip': 233, 'qint': 222, 'gates': 295, 'unm': 0, 'sumf': 0, 'minf': 0, 'tie': 0, 'multi': 73, 'tight': 0, 'maxfl': 5}
+CL30.json T3 14 {'dmax': 5, 'deep': 130, 'qflip': 387, 'qint': 376, 'gates': 379, 'unm': 0, 'sumf': 0, 'minf': 0, 'tie': 0, 'multi': 115, 'tight': 0, 'maxfl': 5}
+CL45.json T3 14 {'dmax': 5, 'deep': 190, 'qflip': 552, 'qint': 541, 'gates': 469, 'unm': 0, 'sumf': 0, 'minf': 0, 'tie': 0, 'multi': 160, 'tight': 0, 'maxfl': 5}
+Traceback (most recent call last):
+  File "/tmp/claude-0/-home-user-parity-games-challange/4ae1203f-2c0e-5c7a-b76f-3eb7fdf5b502/scratchpad/lsi100/experiments/si/box100/cross100.py", line 62, in <module>
+    print("TOTAL genomes", n, " ".join("%s %d" % kv for kv in tot.items()), flush=True)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+Exception ignored on flushing sys.stdout:
+BrokenPipeError: [Errno 32] Broken pipe
+CL90.json T3 14 {'dmax': 5, 'deep': 370, 'qflip': 1047, 'qint': 1036, 'gates': 739, 'unm': 0, 'sumf': 0, 'minf': 0, 'tie': 0, 'multi': 295, 'tight': 0, 'maxfl': 5}
+CL131.json T3 14 {'dmax': 5, 'deep': 534, 'qflip': 1498, 'qint': 1487, 'gates': 985, 'unm': 0, 'sumf': 0, 'minf': 0, 'tie': 0, 'multi': 418, 'tight': 0, 'maxfl': 5}

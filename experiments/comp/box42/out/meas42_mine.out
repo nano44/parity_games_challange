@@ -1,0 +1,7 @@
+CL0.json N+M 285 {"T3": 14, "deep": 10, "dmax": 5, "unm": 0, "qflip": 57, "qint": 46, "gates": 199, "multi": 25, "maxfl": 5, "DeepInt": 10, "DeepBig": 10, "dmaxInt": 5, "Iint": 68, "nscc": 14, "big": 73, "gmaxInt": 3}
+CL8.json N+M 341 {"T3": 14, "deep": 42, "dmax": 5, "unm": 0, "qflip": 145, "qint": 134, "gates": 247, "multi": 49, "maxfl": 5, "DeepInt": 42, "DeepBig": 42, "dmaxInt": 5, "Iint": 100, "nscc": 14, "big": 81, "gmaxInt": 3}
+CL16.json N+M 397 {"T3": 14, "deep": 74, "dmax": 5, "unm": 0, "qflip": 233, "qint": 222, "gates": 295, "multi": 73, "maxfl": 5, "DeepInt": 74, "DeepBig": 74, "dmaxInt": 5, "Iint": 132, "nscc": 14, "big": 89, "gmaxInt": 3}
+CL30.json N+M 495 {"T3": 14, "deep": 130, "dmax": 5, "unm": 0, "qflip": 387, "qint": 376, "gates": 379, "multi": 115, "maxfl": 5, "DeepInt": 130, "DeepBig": 130, "dmaxInt": 5, "Iint": 188, "nscc": 14, "big": 103, "gmaxInt": 3}
+CL45.json N+M 600 {"T3": 14, "deep": 190, "dmax": 5, "unm": 0, "qflip": 552, "qint": 541, "gates": 469, "multi": 160, "maxfl": 5, "DeepInt": 190, "DeepBig": 190, "dmaxInt": 5, "Iint": 248, "nscc": 14, "big": 118, "gmaxInt": 3}
+CL90.json N+M 915 {"T3": 14, "deep": 370, "dmax": 5, "unm": 0, "qflip": 1047, "qint": 1036, "gates": 739, "multi": 295, "maxfl": 5, "DeepInt": 370, "DeepBig": 370, "dmaxInt": 5, "Iint": 428, "nscc": 14, "big": 163, "gmaxInt": 3}
+CL131.json N+M 1202 {"T3": 14, "deep": 534, "dmax": 5, "unm": 0, "qflip": 1498, "qint": 1487, "gates": 985, "multi": 418, "maxfl": 5, "DeepInt": 534, "DeepBig": 534, "dmaxInt": 5, "Iint": 592, "nscc": 14, "big": 204, "gmaxInt": 3}

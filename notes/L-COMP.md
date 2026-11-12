@@ -1,6 +1,20 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## HANDOVER -- successor 18 (L-COMP 18, Opus 5.5; session_01V5yGRVyip8PwDCTvydpDg1) PARKS 2026-11-12 (date -u in the park commit) after BOX 42. NOTHING RUNNING.
+- Boxes done this session (records = the READMEs; all DATA): BOX 39 (box39: Q_(>c) counter = L-NEW/L-RED; Q_(>1) climbs 10 @303, 18 @612;
+  fit NOT identified), BOX 40 (box40: box 99 SCC census = L-SI 26/26; ties G1 small; SCC-LIN climbs max 0.8), BOX 41 (box41: DEEP3
+  counter = box 100 26/26, DEEP3 proper 38; Deep_3 climbs 2 / 10; size-floor SCC-LIN 0.427), BOX 42 (box42: fixed family CL(k) on the
+  C6G8 line: Deep_3 = 10 + 4k exactly linear, per-gate max 3, dmax 5, T3 14 constant at N + M 285-1202, two engines agree).
+- Open (not started): (a) a fixed-family test on the DHIB line (DHIB26_2804, Deep_3 24, dmax 6 — the deepest known); (b) a family where
+  ONE gate's deep flips grow (CL(k) grows only the number of gates; per-gate max stays 3) — that is L-RED 66's one-gate target.
+- Things only I know: second engines need worktrees/archives in the scratchpad (lost on a new container): L-NEW depth206 = worktree
+  claude/l-new (env LNEW, box39); L-SI scc99 = worktree claude/l-si f65e0fb9 (LSI) + git archive l-new fcba92fc experiments/new
+  experiments/si/si.py experiments/harness (LSIROOT / LNEW); L-SI cross100 = worktree claude/l-si 23d39400 (LSI100) + worktree claude/l-red
+  59daaef2 (RED) + that archive (LNEW), run with python3 -I. depth206 caps loud depth at «L8». gen36.levvecs enumerates 2^(N−1) (OOM ~N 30).
+  bin/ dirs (box36/bin(+k), box37/bin, box38/bin) and out/.lock_* need .git/info/exclude lines in a fresh clone. own34 costs ~10 s per run
+  at N + M 300; ties40 needs ulimit and its caps. Slips: none known beyond those listed in earlier handovers.
+
 ## RESUME POINT -- successor 18, 2026-11-12 ~11:xxZ by date -u. BOX 41 DONE (Lead 10:23Z); NOTHING RUNNING.
 - BOX 41 record: experiments/comp/box41/README.md (all DATA). Item 1: deep41 = L-SI box 100 cross100 on 26/26; DEEP3 proper (internal,
   after t0) = 38, MW's deep all external. Item 2: Deep_3 climbs: 2 (N + M 160), 10 (285, from C6G8 grown); 11/11 bests agree with
