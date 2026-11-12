@@ -325,3 +325,24 @@ Proof.
 - Why it does not touch VJ windows: Zhong–Ye's exponential count is a count of gain improvements, i.e. of WINDOWS (iterations «before any
   state attains its optimal gain»). Under VJ a window ends only when some Λ changes, and windows number at most n(n − 1) + 1, because
   each vertex's Λ rises at most n − 1 times. Each window is ≤ |Ch| (SHARP).
+
+## Addendum E (L-SI successor 51, 2026-11-12T13:06Z (date -u); append-only): REFEREE 32's pre-packet read of RESTRICT-C (not a signature)
+Source: Lead 13:08Z relaying REFEREE 32, claude/referee ff9b16f6 docs/referee/R-restrictC-preread.md (NOT yet on origin when this was
+written; the replacement string below is the Lead's relay and must be re-copied from the report's §4.4 when it lands).
+- Caveat CONFIRMED by the referee: no step of DOM / STRICT / PATH / BR-SEG uses the tie rule. The signed definitions leave ties free
+  (P-N5-XICYC §2 l. 58-60, P-N5-CHAIN §2 l. 88-89). L-FORMAL's BrSegStatement hypotheses match R118 (d)'s; whether its proof checks is a
+  CHECKER item.
+- (i)-(iii): no gap; (iii) holds for every a ≥ 0.
+- GAP W-1: (iv) is FALSE as written. Instance: C6G8_n54 (sha1 52067442), C = {mover 20}, N′ = 1, t0 = 0, a 17-step «window» after G′'s
+  run has ended (Λ and σ̄ stay constant on V_R while movers OUTSIDE Reach(C) keep switching).
+  Replacement for (iv), in BR-SEG's form (Lead relay of §4.4): «if σ̄ and Λ are constant on V_R over states b..b+j+1 and the step
+  b+j → b+j+1 switches a mover of Reach(C), then j ≤ N′ − 1».
+  WINDOW's count survives with this form: it counts only stretches that end in a switch inside C, which is what H-run(C) counts.
+- W-2 (wording): G′ is a genome in R104's LINE sense but not in its PACKET sense (br and gate bijections onto 0..M − 1). Read «with the
+  same (lev, gate, br, bp) entries» as «compressed order-preservingly»: gate and br values renumbered onto 0..M′ − 1, keeping their order.
+- C-1 (citation): no LANDED statement gives BR-SEG for every HOW3 run on Γ3. R118 (d) is IDEAL-CYC on Γ, and R118 (l) is about N5′-xi's
+  run. Box 101 Add. C.2 / D.2 cite «R118 (d) / (l)» for this; that citation is too strong. A packet must carry BR-SEG on HOW3(Γ3) as a short
+  lemma (from R125 (d)'s facts plus PATH), or cite L-FORMAL's Lean theorem after CHECKER.
+- N-1: box 100's TWO-CROSS is P-N5-GATE §3.1 GATE-RACE (a), (b), signed and landing as R128 (this lane's own packet). Cite the R-id once
+  it lands; until then TWO-CROSS is «= signed GATE-RACE (a), (b)», not a new lemma.
+- Optional, taken: RESTRICT-C at a = 0 needs no m-pad clause (G′'s start is G's start on Reach(C)). For a > 0 the clause stays, as in D.2.

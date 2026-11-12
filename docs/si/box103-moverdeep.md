@@ -77,3 +77,25 @@ NOLOSS-k1 holds), gain_d1, and lostE (an e-vertex z lost as the most relevant di
   R's play (CHAIN-DECOMP3 splits E accordingly). A deep loss at y would have to come from a deep loss at R, or from a tree-path switch
   that drops an e-vertex below a fixed top. The first reduces NOLOSS-k1 to the single vertex R; the second is a Bellman–Ford segment in
   which Howard only improves. This is where the proof attempt should go next.
+
+## Addendum A (L-SI successor 51, 2026-11-12T13:06Z (date -u); append-only): comparison with L-NEW 72's box 208 (Lemma LEVEL; CANDIDATE)
+Source: claude/l-new 8db300fe docs/new/N5-LEVEL-box208.md (§0, §1 read here; Lead 13:08Z: «SURVIVED L-RED 66's full attack (three more
+checks are pending)»; its Γ3 form box 209 is coming).
+- What box 208 claims (CANDIDATE, IDEAL-CYC): with class_t(v) = (Λ_t(v), E_t(v)) and the lowest lagging class m_t, the potential
+  Φ_t = (m_t, −|FRONT_t|) never falls. It stalls only on a whole Ξ-cycle. Hence T_CYC ≤ P·(A + 1) + N at k = 1 (Theorem K1-TCYC; it would
+  be DEEP-k1), and (P + N)(P + 1)^k for fixed k (FVS-TCYC). General k stays OPEN.
+- Comparison with this lane's E-MON3 analysis (box 102 Add. B, box 103):
+  - Same genome-only step. Box 208's READING, «the class of a vertex equals the class of its successor on the play, except at an
+    e-vertex, where it is strictly higher», is E-DOM (R121 (b)) plus CHAIN-DECOMP. It is the step box 102 Add. B names as the one a DEEP3
+    proof must invoke. On Friedmann's G_N it is the step that fails (odd vertices above the exits).
+  - Different use. This lane split mover changes into lossy / gain / E-unchanged, and reduced MOVER-DEEP3 to «no deep losses»
+    (NOLOSS). Box 208 avoids counting changes by depth at all: a Dijkstra potential on classes bounds the steps directly, and the depth
+    statistic never enters.
+  - If LEVEL and K1-TCYC transfer to Γ3 (box 209), then at k = 1, and for every fixed k, T3 is polynomial with no DEEP3 / NOLOSS
+    premise. This box's NOLOSS-k1 becomes a consequence-shaped fact (DATA consistent with it: deep lossy changes 0 at k = 1), not a needed
+    premise.
+  - What survives from this lane's chain if box 209 holds: TWO-CROSS (= GATE-RACE, R128) and the per-SCC structure are not needed for
+    fixed k. DEEP3 / NOLOSS stay the open premises only for UNBOUNDED k, where box 208 says nothing. There, this lane's k ≥ 2 data
+    (DHIB26_2804: 199 deep lossy changes in one SCC of greedy fvs ≤ 24) is the place to look.
+- Check to do when box 209 lands: replay box 208's must-0 counters on this lane's 26 frozen instances under HOW3 on Γ3, with L-RED 65's
+  engine. Not done here (context limit; handover).
