@@ -6,10 +6,11 @@
   3 local UNSATs DRUP VERIFIED. pgad5 env PHASE / SOLVER (e7eb05f3).
 - BOX L18 (Lead 16:09Z, re-aimed 19:57Z: largest P with f6 correct on ALL 129 free pre-states; frame L18b = L18 + q5 free): tools l18/
   (enc32c clamp, pgad6 F6R, ccheck, q.sh, lnsb.sh LNS, n.sh base-neighbourhood at R 510, inframe.py, drift.py, pairtraj.py).
-  HEADLINE (DATA): largest P with f6 globally correct = 9 (L18b_N9a 5b634aac, rows 0..9, sim6 = fenc, f6check 0/129, inframe OK); before: 6.
-### IN FLIGHT at writing: N10a = l18/n.sh base L18b_N9a, XS 10,14 (XORD 10,14), P 10, R 510 (log $SP/l18/N10a.log, «n exit»; cap 2,900 s).
+  HEADLINE (DATA): largest P with f6 globally correct = 10 (L18b_N10a d3b6e342, rows 0..10, sim6 = fenc, f6check 0/129, inframe OK);
+  before the box: 6. Chain: L18b_H7 → N510 (P 8) → N9a (P 9) → N10a (P 10); solve times 929 / 1,443 / 2,514 s (cap 2,900).
+### IN FLIGHT at park: none. N10a finished SAT (frozen l18/run/L18b_N10a_dec.txt).
 ### NEXT (successor 16, BOX L18 continued)
-1. Read N10a. SAT → freeze (cp decode to l18/run/L18b_N10a_dec.txt, log with $SP paths sed'ed to run/, SHA1SUMS, inframe.txt), diag the
+1. P 11 on base L18b_N10a (diag row 11 names the clients). Solve time is near the cap: consider a longer cap only with the Lead's OK. SAT → freeze (cp decode to l18/run/L18b_N10a_dec.txt, log with $SP paths sed'ed to run/, SHA1SUMS, inframe.txt), diag the
    next failing row, next P with clients = the failing movers among {8,10,11,12,14,15} (XORD from the design's reach order: script in
    this notebook's 21:4xZ entry). UNSAT / no answer → try other client pairs at that P; stop after 3 consecutive capped / UNSAT at one P.
 2. Every UNSAT cited: DRUP (l13/pdrup.py with PGAD=../l18/pgad6.py and env F6R/XALL/XORD/FIXC; R 510 proofs may be huge — prefer small).

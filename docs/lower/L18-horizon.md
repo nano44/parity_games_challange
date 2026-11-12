@@ -41,13 +41,15 @@ counter (unit, set, scope). Model: R104's IDEAL model at degree ≤ 2 (sim6; fen
   | P asked | base | clients free | result | design (sha1) | rows followed |
   | 7 | L18b_H7 | 10, 11 | SAT 929 s | L18b_N510 13ea6547 | 0..8 |
   | 9 | L18b_N510 | 10, 12 | SAT 1,443 s | L18b_N9a 5b634aac | 0..9 |
+  | 10 | L18b_N9a | 10, 14 | SAT 2,514 s | L18b_N10a d3b6e342 | 0..10 |
   DATA (unit = core8 rows followed by the free run, counter f6 = 129 free pre-states of rows 0..510, scope frame L18b on A2_solved):
-  largest P with f6 globally correct = 9 (L18b_N9a). The pair keeps moving to row 505 in L18b_N510 (65 changes): the «silence» of §2 was a
+  largest P with f6 globally correct = 10 (L18b_N10a). The pair keeps moving to row 505 in L18b_N510 (65 changes): the «silence» of §2 was a
   property of those designs, not of the frame.
 - Climb continues (§4 log).
 
 ## 4. Climb log (base-neighbourhood questions at R 510; one job at a time, 13 GB cap)
-- P 10: base L18b_N9a, clients 10, 14 (diag at row 10: movers 10, 13, 14): running at the time of writing.
+- P 10: base L18b_N9a, clients 10, 14 (diag at row 10: movers 10, 13, 14): SAT 2,514 s (close to the 2,900 s cap; solve times 929 →
+  1,443 → 2,514 s for P 7 → 9 → 10). Next: P 11 on base L18b_N10a with the movers diag names at row 11 (successor 16).
 
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All statements are about the IDEAL
