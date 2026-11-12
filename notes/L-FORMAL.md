@@ -1,10 +1,50 @@
 # L-FORMAL notebook (Lean formalization lane; branch claude/l-formal; files: lean/, this notebook)
 
 ## Resume point
-- 2026-11-12T11:57Z (date -u): ALL FIVE STATEMENTS ARE PROVED IN LEAN (lean/lemmas, `lake build` «Build completed successfully (3147 jobs)», 0
-  warnings; no sorry / admit / axiom by grep; `lake env lean Axioms.lean`: every theorem ⊆ [propext, Classical.choice, Quot.sound]).
-  They are proved as sent to the Lead at 11:44Z (commit 9dde1527); the Lead's statement-diff verdict is still OPEN, so nothing here is
-  a result yet (CLAUDE.md: every theorem statement is diffed before it lands). If the diff changes a statement, re-prove that statement.
+- 2026-11-12T13:54Z (date -u): HANDOVER STATE. Everything proved so far is «Lean-checked (lane)»: the Lead ACCEPTED every statement (rulings 11:49Z,
+  12:29Z, 13:13Z, quoted in lean/lemmas/README.md «Status and reading rules»); they become RESULTS only through CHECKER + the Lead's CI
+  job for lean/lemmas (he owns .github/ and will name the job). lean/lemmas/INDEX.md is the table of statements and theorems.
+- OPEN TARGET (Lead 13:13Z): «NEXT TARGET: box 208's ABSTRACT core … 1. State in Lean the abstract LEVEL potential theorem (§10's
+  form). Send the statements for a diff first, as before. 2. If it goes well, state PLATEAU in the abstract one-player form it reduces
+  to. Your BR-SEG-G / LAM-GAP theorems should do most of the work. Defining the genome and IDEAL-CYC in Lean comes later and only if §10
+  goes through.» Source: claude/l-new 8db300fe docs/new/N5-LEVEL-box208.md (§10 l. 373-400; §3 Lemma LEVEL l. 120-181; §4 l. 183-197;
+  Addendum A PLATEAU l. 402-500, NOT yet read by me).
+  - DONE for step 1: PGLemmas/AbsStatement.lean = definitions (`SPGame`, `SPGame.edge`, `SPGame.PathW`, `SPGame.d : ℕ∞`,
+    `SPGame.HowardAt`, `SPGame.NoZeroCycle`) and `AbsStatement` (a `def … : Prop`). It builds. NOT PROVED. Sent to the Lead for the
+    statement diff; his verdict is open. My three deviations from §10's wording: (i) hypothesis `G.tgt ∉ G.Max` (§10 does not say who
+    owns the target; with a Max target Bellman's equation fails there); (ii) weights in ℕ, d in ℕ∞; (iii) clause (2) is stated for
+    EVERY step t < T (§10: «every step before the last one»); under my encoding every step of the run changes the state, and then the
+    last step raises a front value too (argument below).
+  - ALREADY PROVED towards it (PGLemmas/Abs.lean, builds): (B1) `SPGame.d_le_of_path`, `path_of_d_eq`, `d_tgt`, `d_le_edge`,
+    `exists_edge_eq`, `d_max`; (K1′) `SPGame.d_le_step`. Still to do: (K5′), (A), (F), (L3), (L4), (L1), (C) below.
+    ℕ∞ hints that worked: split on `G.d s v = ⊤`, else `obtain ⟨k, hk⟩ := ENat.ne_top_iff_exists.mp h` (hk : ↑k = d); `gcongr`
+    for `↑w + a ≤ ↑w + b`; `push_cast; rfl` for `↑w + ↑k = ↑(w + k)`; `zero_le` takes no explicit argument; `dif_pos` / `dif_neg`
+    are deprecated names (`dite_eq_left` / `dite_eq_right`), like `if_pos` / `if_neg` (`ite_eq_left` / `ite_eq_right`).
+  - PROOF PLAN for `AbsStatement` (mine, from §10 and §3; write d_t := G.d (s t), reference state T):
+    (B1) Bellman facts from the `Nat.find` definition: d_s(tgt) = 0; for every edge (v, u) of the s-graph d_s(v) ≤ w(v, u) + d_s(u)
+    (cons a path); for v ≠ tgt with d_s(v) < ∞ some edge has equality (invert the least path: `cases` on `PathW`); so for a Max z
+    (z ≠ tgt by hypothesis, s z ∈ E z) d_s(z) = w(z, s z) + d_s(s z).
+    (K1′) d_t ≤ d_(t+1) pointwise: induction on a `PathW (s (t+1))` path, using at a Min vertex the Bellman inequality in the old graph
+    and at a Max vertex Howard's «best» clause plus (B1). (K5′) d_(t+1)(z) ≥ w(z, y) + d_t(y) for every y ∈ E z, z Max.
+    (A) every t < T lags somewhere: the step changes s at a Max z; «keeps» fails, so some y ∈ E z has w + d_t(y) > d_t(z); by (K5′)
+    d_(t+1)(z) > d_t(z), and d_T ≥ d_(t+1). (So there is no value-flat step at all in this model.)
+    (F) LAG_t := {v | d_t v ≠ d_T v} (then d_t v < d_T v, so d_t v is finite); m_t := the least lagging value; FRONT_t := the lagging
+    vertices of value m_t. A front vertex of Min's has a best edge of weight 0 into the front (a non-lagging end would pin it by
+    Bellman at T). A front vertex z of Max's whose edge s_t z lags has that edge of weight 0 into the front.
+    (L3) so some Max z ∈ FRONT_t has s_t z not lagging (else the front maps into itself along weight-0 edges: pigeonhole on iterates
+    gives `Relation.TransGen` v v, against `NoZeroCycle`), and m_t = w(z, s_t z) + d_T(s_t z): one value per Max edge.
+    (L4) no stall: if every front vertex kept its value, map Max z ↦ s_T z (by (K5′) at y = s_T z: w + d_t(y) ≤ d_(t+1)(z) = m <
+    d_T(z) = w + d_T(y), so y lags, w = 0, y ∈ FRONT) and Min o ↦ its best edge: again a weight-0 cycle. So some front vertex rises:
+    clause (2).
+    (L1) LAG only shrinks, m never falls, at equal m the front only shrinks: Φ_t = (m_t, −|FRONT_t|) rises strictly at every step.
+    (C) t ↦ (m_t, |FRONT_t|) is injective on t < T into {w(z, y) + d_T(y) : z Max, y ∈ E z} × {1..n}: T ≤ (#Max edges)·n. Clause (1).
+    Lean advice: do the order facts on ℕ∞ with `WithTop` case splits (lagging values are finite, `ENat.coe_toNat`); reuse the
+    pigeonhole from Defs.lean `exists_cycleNode` (`Finite.exists_ne_map_eq_of_infinite`) and the injective-map counting from
+    DepthCount.lean (`Finset.card_le_card_of_injOn` into a product). Expect 400-600 lines.
+  - Step 2 (PLATEAU, abstract one-player form): read Addendum A first; the Lead expects `lam_gap_sharp` / `brsegG_noH0'` to carry it.
+- Committed together with this notebook (2026-11-12T14:30Z, after push.sh of 91a29b88 ended with exit 0): README.md, INDEX.md
+  (Lead's wording rulings applied), PGLemmas/Statements7.lean + NoH0.lean (`BrSegGNoH0Statement`, `brsegG_noH0'`),
+  PGLemmas/AbsStatement.lean, PGLemmas/Abs.lean, PGLemmas.lean, Axioms.lean, this notebook.
 - Theorems (file: name : statement):
   - PGLemmas/LamGap.lean: `lam_gap_sharp : LamGapSharpStatement V`.
   - PGLemmas/Corollaries.lean: `lam_gap_oneplayer : LamGapOnePlayerStatement V`, `brseg : BrSegStatement V`, `brsegG : BrSegGStatement V`,
@@ -71,7 +111,8 @@
 - Toolchain in a fresh container: commands in lean/lemmas/README.md (elan, `lake exe cache get`, `lake build`); tested on a fresh copy.
 
 ## Queue
-0. (own initiative, proposed to the Lead) TWO-CROSS, Λ-count, Howard run bound, (M) one-player, premise-free one-player LAM-GAP and
+00. OPEN: prove `AbsStatement` (box 208 §10) after the Lead's diff; then PLATEAU's abstract one-player form (Lead 13:13Z).
+0. (accepted by the Lead 12:29Z / 13:13Z) TWO-CROSS, Λ-count, Howard run bound, (M) one-player, premise-free one-player LAM-GAP and
    Howard bound, DEPTH-COUNT3 with fix D1, T-CYC without the genome: all PROVED in Lean; every statement needs the Lead's diff.
    Two-player F1 = R15 (a) and the existence of optimal counterstrategies: PROVED in Lean; statements need the Lead's diff.
    Not done: WINDOW, SCC-RED, CAP (they need R104 / R117's genome definitions).

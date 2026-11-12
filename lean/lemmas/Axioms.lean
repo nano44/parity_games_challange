@@ -30,3 +30,6 @@ import PGLemmas
 #print axioms PG.brseg_opt
 #print axioms PG.tcyc_opt
 #print axioms PG.optCounter_exists
+#print axioms PG.brsegG_noH0'
+#print axioms PG.SPGame.d_max
+#print axioms PG.SPGame.d_le_step
