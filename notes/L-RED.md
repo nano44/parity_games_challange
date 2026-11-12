@@ -3396,3 +3396,31 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
   (b) gated re-arm CWG1-4 (R231-rearm2.md, c80e4fb2): static exit one-shot, hv exit = race trap; none beats CW.
 - RESUME POINT (06:30Z): all routed items done and reported; waiting for U-FREE (L-SI 50 box 99) or routing. Γ3 tools need env
   LNEW = git archive fcba92fc experiments/new experiments/harness experiments/si/si.py (si.py is required).
+- 07:18-08:57Z: U-FREE / L-SI 50 box 99 (f65e0fb9) -> docs/red/R232-box99.md (e728d163 tools, 59daaef2 draft, c9a0b08c final): SCC-RED, CAP
+  SURVIVE (G1: H(C) must be max over every HOW3-legal tie resolution; own T3 vs n5v differ +-1 on 7/400 randoms, all with tie events);
+  ONE-CROSS3 + Corollary INT-ONLY PROVED (lane): in G_C only internal gates re-flip; SCC-LIN climbs (H over ALL starts): best H 11 vs
+  M_C 12 (HC_hA), 12 vs 15 (HC_hB). Box 207 (l-new 2d599a09) (Q2) -> docs/red/R233-rint.md (b0d9e459): all rows reproduce with box 207's
+  window convention; LONG / NEST lanes linear (lambda_max = L + 1).
+- ONE-CROSS (R231-onecross, 52606148 + 1396ccb9): F1 landed via R15 (a) Lemma A (l. 631), cited by R118's premise line (l. 13736-7).
+
+## HANDOVER (successor 65 -> 66), 2026-11-12T09:00Z (date -u)
+- Resume point: every routed item of BOX R231 / R232 / R233 is DONE and reported (last report 08:57Z: c9a0b08c, b0d9e459). Waiting for the
+  Lead's next routing. No job running; no checkpoint pending.
+- Open threads (all OPEN, none routed yet):
+  - SCC-LIN (L-SI 51 owns the proof side). Kill side: climbs only at N <= 7 with my tie rule. Next would be other tie resolutions (G1) and
+    larger one-SCC genomes with sampled starts (hstart232.py LIMIT/SAMPLES).
+  - R-INT (box 207 Q2): lanes are one pass. Next would be a re-armed lane inside a window (the same missing resource as the re-armed carry).
+  - The re-arm dilemma: a constant exit is one-shot (ONE-CROSS, proved); a moving exit led back into R on every MWR design tried (DATA only).
+  - Depth-3 stall: RING3 A-D dead (Odd refuses dynamic a-faces, face231 DATA on D).
+- Tools:
+  - r231 (IDEAL-CYC, own.py; no env needed): blk231, blkmap231, blkplay231, dep231 (box 206 counters + rgen), cw231, carry231
+    (CW / CWR builder, CW_REARM), rearm231, gate231 (CWG1-4), gface231, eface231, ediag231, onecross231, climb231.
+  - r231 Γ3 tools (need env LNEW): ring3_231, face231.
+  - r232 (Γ3; need env LNEW): how3_232 (own HOW3 on Γ3 + SCC counters), reach232, hstart232, hclimb232, oc3_232, rand232.
+  - r233 (IDEAL-CYC): window233 (R-windows; WCONV=start for the other convention), lane233 (LONG / NEST).
+  - LNEW: `git archive fcba92fc experiments/new experiments/harness experiments/si/si.py | tar -x -C <dir>` (si.py is REQUIRED).
+- Lessons this session:
+  1. In standard states N5's own τ is frozen. Never log it as Odd's reply; compute σ̄ with own.evaluate.
+  2. Window conventions differ by 1. Use the target's own convention before comparing numbers.
+  3. A uniform-control «first = last» cannot fire under F1. Use «equal on the first two states».
+  4. Check full traces, not samples, before writing «t = …» claims (R231-rearm2 needed two corrections).
