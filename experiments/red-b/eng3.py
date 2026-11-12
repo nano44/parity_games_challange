@@ -65,6 +65,11 @@ def build3(G, frozen=True):
         succ[b] = [xt] if xt >= 0 else [d]   # frozen standard choice of beta
     for x in range(N):
         succ[x] = [mp[(x, k)] for k in range(len(G["opts"][x]))]
+    if "edomx" in G:
+        # CONTROL only (this lane's test key, NOT R104's game): the beta-vertices of the listed options (indices in (x, k)
+        # order) get priority (largest e-priority) + 1, odd, above every e-vertex and below c_W: (E-DOM3) fails.
+        emax = max(prio[g0.evx[o]] for o in olist)
+        for i in G["edomx"]: prio[g0.beta[olist[i]]] = emax + 1
     g.owner, g.prio, g.succ, g.kind = owner, prio, succ, kind
     byrel = sorted(range(n), key=lambda v: (prio[v], v))
     rank = [0] * n
