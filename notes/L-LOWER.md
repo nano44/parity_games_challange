@@ -18,6 +18,11 @@
   during P 16 (~2,200 s in; not a capped no-answer); relaunched 12:21Z from P 16 (resumes by the log). Lesson: a sweep of 2,900 s questions
   must be relaunched per question or sized so the task (2 h) holds at most 2 questions.
 - A2 XS 11 P 13 DRUP: cap hit (2,900 s, proof 1.56 GB), not cited.
+- 12:48Z A3 direct P 18 (unhinted): NO ANSWER 2,900 s (P18 capped run 1). Added pgad5 env PHASE / SOLVER (e7eb05f3). kissat404 slower
+  (P 10 > 120 s vs cadical 99 s). 12:59Z P 18 hinted by A3x5_P15 started ($SP/sw/A3h_P18.out) = P18 attempt 2.
+- 13:08Z A3 sweep P 16 (unhinted): NO ANSWER 2,900 s. 13:09Z P 16 hinted by A3x5_P15 started ($SP/sw/A3h_P16.out).
+- diag on A3x5_P15: run leaves at row 16 with movers 10 (L5), 14, 15 (L7): the q6/q7 tight change at row 16 (L14 tight.py: P 18 needs q6
+  at 16). f6check on A3x5_P15: first f6 mismatch at row 18.
 
 ## Successor 14 HANDOVER (-> successor 15; written 2026-11-12 09:2xZ, date -u; PARK on Lead 09:04Z instruction, context ~450k)
 ### DONE (claude/l-lower; products docs/lower/L16-cascade.md (closed), docs/lower/L17-around.md (open); tools experiments/lower/l16/, l17/)

@@ -47,9 +47,12 @@ Model: R104's IDEAL model at degree ≤ 2 (sim6; fenc for replays). Target core8
 - A3 (frame that keeps the design's ranks): l16/pgad5.py on A2_solved, all ranks of fixed options kept, the f6 pair's signs / gates / starts
   fixed (FIXC 16, 17; f6 = mover 13 not in XS), clients XS = {8, 11, 12, 14, 15} free to read ANY mover compatible with the order
   XORD 8 < 11 < 12 < 15 < 14 (the base wiring's reach order among XS, computed on A2_solved), G empty; ascending from P 10, 2,900 s per
-  question (l17/sweep5.sh). SAT at P 10 (99 s), 11 (626), 12 (496), 13 (812), 14 (765), 15 (2,680 s); P 16 running.
+  question (l17/sweep5.sh). SAT at P 10 (99 s), 11 (626), 12 (496), 13 (812), 14 (765), 15 (2,680 s); P 16 NO ANSWER (2,900 s).
+  Phase hints (pgad5 env PHASE = a genome: the solver's phases start at that genome's design; search order only, verdicts unchanged):
+  P 16 hinted by A3x5_P15: SAT (994 s), A3h_P16_dec (e4a6f2df) follows rows 0..16, T 16, replayed sim6 = fenc. P 18 questions, same frame:
+  unhinted NO ANSWER (2,900 s, A3d_P18.log); hinted by A3x5_P15 NO ANSWER (2,900 s, A3h_P18.log). P 17 hinted by A3h_P16 running.
   Every decode replayed sim6 = fenc (l17/sweepA3/replay.txt, SHA1SUMS). DATA (unit = core8 rows followed by the free run, scope this frame
-  on A2_solved): A3x5_P15_dec (27ac152d) follows rows 0..15, T 16, the lane's longest realized prefix so far (L14-L16 best: rows 0..14).
+  on A2_solved): A3h_P16_dec (e4a6f2df) follows rows 0..16, the lane's longest realized prefix so far (L14-L16 best: rows 0..14).
   DATA (f6check rows 0..510, same counter as §1): every A3 decode breaks f6 beyond its prefix, 47-62 / 129 mismatching free pre-states,
   first at row 14-18 (l17/sweepA3/f6check.txt): re-searched readers change the chains f6 reads (the L16 coupling, seen from the reader side);
   the prefix constraints repair f6 only on the rows they cover.

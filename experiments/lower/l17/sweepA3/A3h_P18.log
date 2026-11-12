@@ -1,0 +1,3 @@
+INFO {'d': 32, 'H': 8, 'T': 18, 'relevant': 64, 'Lmax': 31, 'options': 128, 'vars': 804691, 'clauses': 4412852, 'empty': False, 'nP': 1112, 'quad': 3558810, 'lazy': 0, 'fixc_units': 10, 'transitivity_
+PHASE A3x5_P15_dec.txt literals 1892
+hinted exit 124 secs 2900

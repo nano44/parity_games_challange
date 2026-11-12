@@ -1,0 +1,5 @@
+PHASE A3x5_P15_dec.txt literals 1892
+SOLVE -> SAT 994.5s
+RESULT SAT decoded -> sweepA3/A3h_P16_dec.txt e4a6f2df178da6b9243c4944dcf4630c44660a43
+CHECK decoded genome, all fixed, prefix 16 -> SAT (consistent)
+hinted exit 0 secs 1001

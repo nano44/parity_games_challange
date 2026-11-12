@@ -4,3 +4,4 @@ A3x5_P12_dec.txt sim6 T 12 fenc T 12 sim6==fenc True rows followed (sim6, fenc):
 A3x5_P13_dec.txt sim6 T 14 fenc T 14 sim6==fenc True rows followed (sim6, fenc): 14 14 of target 511
 A3x5_P14_dec.txt sim6 T 15 fenc T 15 sim6==fenc True rows followed (sim6, fenc): 15 15 of target 511
 A3x5_P15_dec.txt sim6 T 16 fenc T 16 sim6==fenc True rows followed (sim6, fenc): 16 16 of target 511
+A3h_P16_dec.txt sim6 T 16 fenc T 16 sim6==fenc True rows followed (sim6, fenc): 17 17 of target 511
