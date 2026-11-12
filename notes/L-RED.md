@@ -3467,3 +3467,6 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
   cdd10740, TMWR16 ab2bcad0) on my deep234 (exact Deep_3: internal gates after t0, charged change of depth > 3; HOW3 engine r232):
   Deep_3 = 9 / 17 / 33 = 2n + 1, ALL at one gate ((34,0) / (62,0) / (118,0)), dmax 5, T3 30 / 54 / 102 (= MWR(n)'s). Confirms box 43:
   TAIL_2 pushes MWR's re-arm flips below depth 3 without changing the run; linear. out/deep234_tmwr.out.
+- 2026-11-12T17:10Z: R236 F_n (L-SI 52, claude/l-si 26704e01 box104): CONFIRMED. n5x236 (own engine) xi from S3 = 33/73/153/313/633/1246/2489
+  (n 2..8), 1 fallback, = Howard T + 3; regions = Zielonka; F_n valid; F_n vs E-DOM build: priorities only (carriers + c_W/K0/K3), owners
+  and edges identical, no parity change; E-DOM build 17/19/21/23. docs/red/R236-fn.md.

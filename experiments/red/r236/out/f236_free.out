@@ -1,0 +1,7 @@
+F_2.pg |V| 708 edges 929 maxprio 353 selfloops 3 valid True [] | xi iterations 33 fallbacks 1 | spec(my ties) iterations 3 fallbacks 1 | Even wins 707 zielonka Even 707 regfail xi 0 spec 0
+F_3.pg |V| 1017 edges 1338 maxprio 505 selfloops 3 valid True [] | xi iterations 73 fallbacks 1 | spec(my ties) iterations 3 fallbacks 1 | Even wins 1016 zielonka Even 1016 regfail xi 0 spec 0
+F_4.pg |V| 1326 edges 1747 maxprio 657 selfloops 3 valid True [] | xi iterations 153 fallbacks 1 | spec(my ties) iterations 3 fallbacks 1 | Even wins 1325 zielonka Even 1325 regfail xi 0 spec 0
+F_5.pg |V| 1635 edges 2156 maxprio 809 selfloops 3 valid True [] | xi iterations 313 fallbacks 1 | spec(my ties) iterations 3 fallbacks 1 | Even wins 1634 zielonka Even 1634 regfail xi 0 spec 0
+F_6.pg |V| 1944 edges 2565 maxprio 961 selfloops 3 valid True [] | xi iterations 633 fallbacks 1 | spec(my ties) iterations 3 fallbacks 1 | Even wins 1943 zielonka Even 1943 regfail xi 0 spec 0
+F_7.pg |V| 2253 edges 2974 maxprio 1113 selfloops 3 valid True [] | xi iterations 1246 fallbacks 1 | spec(my ties) iterations 3 fallbacks 1 | Even wins 2252 zielonka Even 2252 regfail xi 0 spec 0
+F_8.pg |V| 2562 edges 3383 maxprio 1265 selfloops 3 valid True [] | xi iterations 2489 fallbacks 1 | spec(my ties) iterations 3 fallbacks 1 | Even wins 2561 zielonka Even 2561 regfail xi 0 spec 0

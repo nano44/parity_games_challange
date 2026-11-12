@@ -1,0 +1,4 @@
+vertices 708 owner diffs 0 successor-list diffs 0 priority diffs 187 of which touching priorities <= 5: 0 | top-3 (B) vertices [335, 332, 331] [377, 376, 374] in A [353, 352, 350] | top-3 (A) [335, 332, 331] [353, 352, 350] | parity changes 0
+vertices 1017 owner diffs 0 successor-list diffs 0 priority diffs 269 of which touching priorities <= 5: 0 | top-3 (B) vertices [480, 477, 476] [541, 540, 538] in A [505, 504, 502] | top-3 (A) [480, 477, 476] [505, 504, 502] | parity changes 0
+vertices 1326 owner diffs 0 successor-list diffs 0 priority diffs 351 of which touching priorities <= 5: 0 | top-3 (B) vertices [625, 622, 621] [705, 704, 702] in A [657, 656, 654] | top-3 (A) [625, 622, 621] [657, 656, 654] | parity changes 0
+vertices 1635 owner diffs 0 successor-list diffs 0 priority diffs 433 of which touching priorities <= 5: 0 | top-3 (B) vertices [770, 767, 766] [869, 868, 866] in A [809, 808, 806] | top-3 (A) [770, 767, 766] [809, 808, 806] | parity changes 0
