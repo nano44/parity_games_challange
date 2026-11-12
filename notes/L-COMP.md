@@ -6,8 +6,12 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - BOX 44 item 2 DONE (this push): «mine» 59 genomes, «big» 14 long runs (T3 up to 294), must-0 sum 0 on all 1,754 runs; L-SI 925577fe
   26/26 equal (out/cmp44_lsi925577fe.out, all 26 listed); the cross (run44c / cross44.py, out/cross44.out): 0 differing lines on records 25,
   corpus 53, dead 3 (both L-NEW engines) and on the 26 of L-SI's replay. README regenerated; no PENDING part left in item 2.
-- BOX 44 item 3 RUNNING: run44d.sh 1 (tracked task; resumable from out/climb44_S1.log.state, committed as checkpoints); stream 2 after the
-  push. Restart 0 of stream 1 reproduces successor 20's T3 65 at N + M 285.
+- BOX 44 item 3 DONE (2026-11-12 23:33Z): S1 best T3 65 at N + M 285 (0.2281, frozen inst/FROZEN44_S1_T65_NM285.json), S2 63 at 281 (0.2242,
+  FROZEN44_S2_T63_NM281.json); 24/24 bests equal on fast37, own34 + n5xi44 and L-NEW's n5v (sec44.sh); must-0 0; fit NOT identified
+  (one band). BOX 44 complete.
+- Item (a) RUNNING (run45a.sh tail DONE: depthNS unchanged flip by flip on 8 TAIL pairs, controls fire; frozen / big / rand phases
+  resumable). FINDING so far: depthNS = 0 on every flip seen (box 100's depth is entirely the common suffix of the two plays). Slip:
+  run45a.sh was edited (rand phase added) while an instance ran; rows are skipped when present, so the worst case is a re-run.
 - Queued tools committed (box45): deep45.py (item (a): depthNS = box 100's depth minus the plays' common suffix; TAIL-invariant on
   MWR4_2 -> TMWR4 flip by flip, control CTRL=1 fires), climb45.py (item (b): per-gate Λ-quiet flip climb, proxy QP = max (flips − lamch) from
   fast37, bests re-measured exactly by deep45).

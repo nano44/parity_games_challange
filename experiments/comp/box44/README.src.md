@@ -1,4 +1,4 @@
-# L-COMP BOX 44 (successor 20; Lead «go» 17:37Z 2026-11-12): Lemma WRAP / FREE-REACH on a third engine; box 209 on my own Γ3 builder; a T3 climb. All DATA.
+# L-COMP BOX 44 (successors 20 and 21; Lead «go» 17:37Z and 20:30Z 2026-11-12; items 1-3 DONE): Lemma WRAP / FREE-REACH on a third engine; box 209 on my own Γ3 builder; a T3 climb. All DATA.
 Nothing here is a TARGET.md claim, an M3 / M4 statement or a gauntlet step. Lemma WRAP and Lemma FREE-REACH (L-SI 52, box 104) stay lane lemmas,
 unrefereed; box 209 (L-NEW 72: LEVEL3, PLATEAU3, T3-ALL, N5XI-G3) stays a CANDIDATE; N5′-xi stays a CANDIDATE (D1); G-N5-TIME stays OPEN. Every
 number names its counter (unit, set, scope). Scope of every run: N5′-xi (RESULTS R118's [N5XI]) or N5 (SPEC) from SPEC's default start S3.
@@ -152,7 +152,7 @@ b = 1 … T3 on the small sets (BREF=all) and for 3 further evenly spaced b on t
 
 ## Files
 wrap44.py (builder, canonical relabelling, isomorphism), n5xi44.py (engine + tie-rule census), val44.py (independent evaluator, Howard),
-wchk44.py, w4chk44.py, cls44.py, free44.py (item 1); lev44.py, rand44.py, cmp44.py (item 2); climb44.py (item 3); sum44.py, tab44.py; run44a.sh
+wchk44.py, w4chk44.py, cls44.py, free44.py (item 1); lev44.py, rand44.py, cmp44.py (item 2); climb44.py, sec44.sh (item 3); cross44.py (item 2 cross); sum44.py, tab44.py; run44a.sh
 (item 1), run44b.sh (item 2), run44c.sh (L-NEW's counter code on my runs), run44d.sh (item 3). inst/: rand300.json (copy of L-SI's),
 SHA1SUMS.* (every other-lane input and frozen output used), seed_*.json and the frozen climb bests. out/: every output, with out/SHA1SUMS.
 Environment: LSI104 = an archive of claude/l-si 26704e01 (experiments/si/box104/inst); LNEW209 = an archive of claude/l-new 311bbf81
