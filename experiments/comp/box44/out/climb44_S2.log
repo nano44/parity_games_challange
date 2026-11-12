@@ -7,3 +7,15 @@ BEST BEST_S2_T67_NM315_b3076120.json T3 67 NM 315 ratio 0.2127 | text engine T3 
 BEST BEST_S2_T68_NM315_92c256b5.json T3 68 NM 315 ratio 0.2159 | text engine T3 68 iterations 71 fallbacks 1 agree True | box 209 counters sum 0 | restart 0 step 94 evals 89
 BEST BEST_S2_T68_NM314_de361117.json T3 68 NM 314 ratio 0.2166 | text engine T3 68 iterations 71 fallbacks 1 agree True | box 209 counters sum 0 | restart 0 step 163 evals 158
 BEST BEST_S2_T68_NM313_f4664bf5.json T3 68 NM 313 ratio 0.2173 | text engine T3 68 iterations 71 fallbacks 1 agree True | box 209 counters sum 0 | restart 0 step 253 evals 241
+BEST BEST_S2_T68_NM312_d9f3795b.json T3 68 NM 312 ratio 0.2179 | text engine T3 68 iterations 71 fallbacks 1 agree True | box 209 counters sum 0 | restart 0 step 435 evals 417
+BEST BEST_S2_T68_NM311_d9145a5f.json T3 68 NM 311 ratio 0.2186 | text engine T3 68 iterations 71 fallbacks 1 agree True | box 209 counters sum 0 | restart 0 step 496 evals 477
+END restart 0: current T3 68 NM 311 ratio 0.2186; best so far [68, 311]; evals 481
+START restart 1 seed seed_MWR_9.json T3 60 NM 290 ratio 0.2069
+BEST BEST_S2_T63_NM284_6df5472c.json T3 63 NM 284 ratio 0.2218 | text engine T3 63 iterations 66 fallbacks 1 agree True | box 209 counters sum 0 | restart 1 step 206 evals 678
+BEST BEST_S2_T63_NM283_70c3f597.json T3 63 NM 283 ratio 0.2226 | text engine T3 63 iterations 66 fallbacks 1 agree True | box 209 counters sum 0 | restart 1 step 230 evals 700
+BEST BEST_S2_T63_NM282_ac1e38c3.json T3 63 NM 282 ratio 0.2234 | text engine T3 63 iterations 66 fallbacks 1 agree True | box 209 counters sum 0 | restart 1 step 372 evals 837
+BEST BEST_S2_T63_NM281_75a16f72.json T3 63 NM 281 ratio 0.2242 | text engine T3 63 iterations 66 fallbacks 1 agree True | box 209 counters sum 0 | restart 1 step 403 evals 864
+END restart 1: current T3 63 NM 281 ratio 0.2242; best so far [63, 281]; evals 957
+START restart 2 seed seed_gen37_10.json T3 67 NM 319 ratio 0.2100
+END restart 2: current T3 68 NM 309 ratio 0.2201; best so far [63, 281]; evals 1431
+START restart 3 seed seed_MWR_9.json T3 60 NM 290 ratio 0.2069
