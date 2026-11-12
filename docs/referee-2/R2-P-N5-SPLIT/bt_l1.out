@@ -1,0 +1,37 @@
+PASS sha1 634b2fdf :: 634b2fdfda31eda9e82e9f558ffebf3c89f5701c 9249
+PASS one line, no |
+PASS R-1 false sentence absent: passes K0 iff
+PASS R-1 false sentence absent: iff it passes K3
+PASS R-1 false sentence absent: cycle node is in the closed core
+PASS R-1 LS-2 string (accepted for R-1 in Add. 1)
+PASS R-1 my parenthetical: pads of movers and gates; fixes entry 3, R-W
+PASS R-1 credit
+PASS R-1 (LEX-Λ) named only once :: 1
+PASS R-2 CONDITIONAL string
+PASS R-2 every other PROVED is a back-reference :: [308, 7110, 8474]
+PASS R-3 [E-LEV] only at ASC-WIT/ASC-ROOT + the 'only in' clause :: [4002, 5351]
+PASS R-3 HYPOTHESIS once
+PASS R-4 run name
+PASS R-4 reduction direction
+PASS R-4 SPLIT-COUNT never called equivalence
+PASS R-4 G-N5-TIME stays OPEN
+PASS R-4 nothing for N5 / outside Γ3
+PASS R-5 unit: (v, I, y); SPLIT-COUNT's first inequality 
+PASS R-5 rh2fail (unit: same-pair couples, all pairs t < 
+PASS R-5 playfail, kindfail, trfail and wlamfail are defi
+PASS R-5 on the 28 frozen instances max c_y ≤ 6
+PASS R-5 large zero counts are DATA, not evidence
+PASS R-6 R125 list free of non-R125 facts :: ['HOW3', 'REACH3-ALL', 'F1', 'F3', 'F4′', 'F5', 'F6', 'DOM', 'STRICT', 'CN2-3', 'LOC-GATE3', 'LOC-K2-3', 'B-ONLY3', 'NO-TIE3', 'T-QUIET3 with L3', 'E-MON3', 'CHAIN-DECOMP3']
+PASS R-6 frozen-text citation
+PASS R-6 landed sources
+PASS R-6 every R125-list name occurs in CHAIN L-5 :: []
+PASS formula in packet/fixes: T3 ≤ (1 + n3·((2M + 3)(M + 1) − 1) + Rtop)·(L3 + 1)
+PASS formula in packet/fixes: Rtop ≤ n3·T3
+PASS formula in packet/fixes: (1 + n3·((2M + 3)(1 + M·C) − 1))·(L3 + 1)
+PASS formula in packet/fixes: 3M
+PASS formula in packet/fixes: C(M, 2)
+PASS formula in packet/fixes: max(0, A_xy − 1)
+PASS formula in packet/fixes: 2·Dhi_y + 1
+PASS formula in packet/fixes: A ≤ max(1, T3)
+PASS formula in packet/fixes: C ≤ max(1, T3)
+FAILS 0

@@ -1,0 +1,40 @@
+CHAIN sha1 6e613ba7  SPLIT sha1 5bc1b1f3  GATE sha1 f3a584e6
+FOUND RESULTS,CHAIN :: e of even priority above every β with one edge to the W-target or to the top even self-loop c_W
+FOUND RESULTS :: The game is Γ(G) with every Even vertex that is not a mover frozen at its start successor. Odd is unrestricted
+FOUND RESULTS :: every mover x goes to a successor of ⊴-largest Ω_t value, and keeps σ_t(x) if σ_t(x) is such a successor
+FOUND RESULTS :: T3 is the first state at which no mover has a strictly better successor in Γ3;
+FOUND RESULTS :: an N5′-xi run (box 190's S4a tie rule by Ξσ)
+FOUND RESULTS :: (Lemma E-MON) if Λ_t(v) = Λ_(t+1)(v) then E_t(v) ≤ E_(t+1)(v)
+FOUND RESULTS :: at every state t and every vertex v other than c_W and the e-vertices whose successor is c_W, Λ_t(v) is less r
+FOUND RESULTS :: at every state and gate g, Ω_t(e_g) ≠ Ω_t(β_g)
+FOUND GATE :: D's play avoids e_o
+CHAIN defines F1. True
+CHAIN defines F2. True
+CHAIN defines F3. True
+CHAIN defines F4′. True
+CHAIN defines F5. True
+CHAIN defines F6. True
+CHAIN defines DOM. True
+CHAIN defines STRICT. True
+CHAIN defines CYC. True
+CHAIN defines (E-DOM) True
+CHAIN defines (Core) True
+CHAIN defines Lemma CN2-3. True
+CHAIN defines Lemma LOC-GATE3. True
+CHAIN defines Corollary NO-TIE3. True
+CHAIN defines Lemma LOC-K2-3. True
+CHAIN defines Lemma B-ONLY3. True
+CHAIN defines E-MON3 True
+CHAIN defines [OPT] True
+C-EQUIV in CHAIN: 0  in SPLIT: 1
+GATE's F3 gloss  : True
+CHAIN's F3 starts: If Λ_t(v) ≠ v then Ω_t(v) = ext(v, Ω_t(nx_t(v))), nx_t(v) := σ_t(v) for Even v, 
+GATE's F6 gloss  : True
+CHAIN's F6 starts: No mover is the cycle node of its own play ((P): a cycle through a mover has a vertex of Ω ≥ 6; movers have Ω 0). Every 
+GATE's (Core) gloss (global form): True
+SPLIT §2 has an item (a): False
+SPLIT §3 (a) is the mover chain: True
+GATE cites SPLIT «§2 (a)»: 5  L-2: 2
+GATE cites «P-N5-CHAIN (C-EQUIV)»: 1  L-2 «P-N5-CHAIN's C-EQUIV»: 1
+GATE cites L-RED R228 §2 in EXPEL-COUNT's proof: True
+GATE cites N5-CORE-forms for A*-EQUIV (i): True

@@ -199,3 +199,37 @@ My verdicts rest on my own derivations above and on my own engine. I did not rea
   - The DSALT6_n108 window, 10 (lane engine) vs 11 (my predecessor's): REFEREE's reading equals mine (tie rule free in R118 (a); both ≤ N).
 - L-1: both referees find MATCHES (REFEREE §C 09aabb03, LN-1..LN-8 PASS; mine Addendum 1). P-N5-QN's line has two signatures, with no item
   open.
+
+## Addendum 3 (REFEREE-2 successor 37, Opus 5.5, D1; 2026-11-12 by date -u): fixes entry 2 + line L-2 (claude/l-new 70501a99)
+- Object (re-hashed from `git show 70501a99:…`):
+  - L-2: docs/new/P-N5-QN-line-L2.txt, sha1 166e4695b07843ae73e2d23ac92802c256f31113, 7,187 B. One line, no «|», 137 «(» = 137 «)».
+  - It equals CHECKER C140 §4's expected L-2 (claude/checker 445372f9, C140.md l. 64: «L-2 sha1 166e4695…, 7,187 B»).
+  - L-1 is unchanged at 28bf566b.
+  - The fixes file's diff 70501a99~1..70501a99 adds lines only: entry 2 and «Line L-2».
+- Diff L-1 → L-2 (word level, own script): exactly two regions.
+  - R-D2 deletes «D2 «at k = 1 every gate flips at most c·(lamch(g) + 1) times», every constant c (L-RED 63's MWR(n), … gate (qz, 0)
+    flips 2n + 1 times with lamch 0); », with its separator.
+  - R-S inserts «(L-RED 63's MWR(n), claude/l-red 406ef2fd; box203/inst/MWR4_2.json sha1 856d369b, MWR8_2.json 918f1414, MWR16_2.json
+    2ccda9a9)» into the C = 0 DATA clause.
+  - Nothing else changed: no statement, label, premise or other DATA clause. «D2» no longer occurs. «406ef2fd» occurs once.
+- Re-hashed instances (70501a99):
+  - box203/inst MWR4_2 856d369b, MWR8_2 918f1414, MWR16_2 2ccda9a9.
+  - box202/k1fail_202 99bba752.
+  - These are equal to the files my GATE replay used (l-si box93/inst copies, same sha1).
+- Why R-D2 is right (L43 / CHECKER C140 E-1): D2 claimed DEAD «for every constant c». Three instances with 9 / 17 / 33 flips at lamch 0
+  kill c·(lamch + 1) only for c ≤ 32. MWR(n)'s 2n + 1 for all n is not proved anywhere. My predecessor's §6 line «So no c·(lamch + 1)
+  bound holds» over-read the same DATA, and I withdraw it: the DATA kills the bound for c ≤ 32 only. The MWR numbers stay true as DATA,
+  and L-2 keeps them in the C = 0 clause with their source.
+- DEAD list re-signed (REFEREE-2 successor 37):
+  - D1 «at k = 1 each gate flips at most 2·lamch(g) + 1 times»: SIGN (dead).
+    - My predecessor re-ran it (§6: k1fail_202, 2 flips, lamch 0).
+    - Independently I re-ran it now on this session's engine (R2-P-N5-GATE/r2gate.py, IDEAL-CYC): max-flip gate 2 flips,
+      rec_lamch_at_maxflips 0. 2 > 2·0 + 1.
+    - A single instance suffices, since D1 has no free constant.
+  - D3 «every e-sequence has at most k + 1 ascents»: SIGN (dead). ST4_k1 / ST8_k1 give 3 / 7 ascents at k = 1 (my predecessor's own
+    re-run, §6). One instance kills a fixed bound. The k = 2 WC family stays cited, not re-run (as Addendum 2 noted).
+  - The MWR DATA (C = 0 clause) agrees with my GATE replay: MWR4/8/16_2 max flips 9 / 17 / 33 with lamch 0 at that gate, on both engines
+    (R2-P-N5-GATE/mwr_lamch.out).
+- Verdict: L-2 (70501a99, sha1 166e4695) MATCHES CHECKER C140 §4 and the Lead's ruling R-D2a. It changes only the DEAD list and one DATA
+  record, as stated. Every signed statement of P-N5-QN is unchanged, and my predecessor's verdicts stand.
+- I did not read docs/referee/ for this addendum.

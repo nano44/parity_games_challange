@@ -238,7 +238,17 @@ box 5 = TARGET.md diff, line requirements, verdict table.
 ### Random genomes and mutations
 - Random genomes (gen.out): 7,000 runs, 65,045 changes, every must-0 counter 0. They are small (max T3 8, max c_y 1), so they test §2, §6
   and §7, but they produce no same-pair couple.
-- Mutations (mut.out): MUT-RESULT
+- Mutations (sweep3.sh, mut_*.out, summed by mutsum.py into mutsum.out). Base instances and run counts:
+  - 300 mutants each of CX4_n21, C2CX4_n23, ROUTELOW_n21, NK6_cl21, GROW7_n34, MW4_2 and FW4_2;
+  - 100 mutants of RWX_n95 (seed 19). I added these on 11-11, because RWX_n95 is the only pinned run with S_t = S_t′ couples.
+- Coverage: 2,200 runs, 1,466,278 changes, 307,718 same-pair couples (188,620 re-wins), 2,149 couples with S_t = S_t′ (all on RWX mutants,
+  all multi-split: d6 = d6m = 2,149), 1,968,797 ascents. Every must-0 counter is 0.
+- So RW-SHAPE (i), (ii) and RW-1 are tested non-vacuously on 2,149 couples, not only on RWX_n95's 31.
+- Not completed: the ninth chunk planned in sweep2.sh, 300 mutants of FW6_4 (seed 18).
+  - Its first single-process run died in the 11-09 fleet stall.
+  - Its restart ran 73 minutes without finishing, and I stopped it on 11-11.
+  - FW6_4 itself is in the pinned set, and FW4_2's 300 mutants are done. FW4_2's mutants have no same-pair couples: FW's y-tops use
+    different pairs.
 ### Controls (CX4_n21, RWX_n95, FW6_4 unless said)
 - ctrl_neg.out, ctrl_neg_gen.out (every condition negated): every must-0 counter fires except playfail and prefail. Those two check how
   the plays are walked (definitions), not a lemma; the packet's playfail likewise has no control.
@@ -339,3 +349,121 @@ R-1 to R-4, and R-5 if it has DATA.
 ## Statement of independence
 My verdicts rest on my own derivations above and on my own engine. I did not read docs/referee/ for this packet, nor L-RED's R227 / R228
 / R229 reports. I read the lane's split199.py (doc string and the DEAD-counter lines) only to fix the units of §8's counters.
+
+## Addendum 1 (REFEREE-2 successor 36; written after my verdict, committed in 991296c9 and boxes 1-5 on origin): REFEREE 30's R-P-N5-SPLIT.md (claude/referee ca091557)
+- Verdicts: equal on every row.
+  - Both referees SIGN every statement, CONDITIONAL on R125, with ASC-WIT / ASC-ROOT under HYPOTHESIS [E-LEV]. Neither finds a GAP or
+    refuses anything.
+  - REFEREE labels REWIN / REWIN-HI / REWIN-COUNT, PAIR-SPLIT / SPLIT-COUNT, RW-SHAPE(*) / RW-1 and ASC-WIT (c) «SIGN WITH SP-1». I
+    label them SIGN with W-1 closed. These are the same finding and the same repair, under different labels.
+- SP-1 (REFEREE) = my W-1, found independently. Both name the same sentence of (LEX-Λ), the same counterexample class (plays from pA or K3),
+  the same repair (non-core vertices; P-N5-CHAIN's W-1 repair) and the same list of uses (all at pads).
+  - I add one thing REFEREE does not state: the CONCLUSION of (LEX-Λ) («larger value ⇒ lex-larger e-set») holds for all pairs. This is a
+    strengthening, not a disagreement.
+  - Line strings: REFEREE's LS-2, «(LEX-Λ) is applied only to non-core vertices (pads), where P-N5-CHAIN's W-1 repair holds», meets my
+    R-1. Either string suffices for me. My R-1's first clause still applies: the line must not restate the false sentence.
+- SP-2 (REFEREE, citation, REQUIRED in the line): I did not find this, and I AGREE.
+  - Checked on the bytes: R125's line (L-4 a69c8aa9 and L-5 473344b1) names none of F2, (Core), (E-DOM), [G3], [DEF], (R), (P). SPLIT
+    uses all of them as «P-N5-CHAIN facts».
+  - My review checked them against P-N5-CHAIN's frozen text (sha1 6e613ba7), where all are defined (r2q.py: 30 anchors). My predecessor
+    signed F2 and CYC «as used» in R2-P-N5-CHAIN. So the mathematics stands. The line must cite them as P-N5-CHAIN's frozen text (or their
+    landed sources: [DEF] R104, [G3] R117, [OPT] R118 (b) + R21 (a)), with (Core) in the W-1 repaired reading, and not as facts of R125's
+    line.
+  - I adopt it as my R-6 (REQUIRED).
+- SP-3 (REFEREE, optional) = my N-1 ((PL): «the e-letters of Π_s(v) strictly before u»).
+- Other line items: LS-1 = my R-2 + R-3; LS-4 / LS-6 = my R-4; LS-5 = my R-5; LS-7 (landed tail) and LS-8 (source note) I agree with. My
+  N-2 (premise lists in «To sign») is mine only and optional.
+- DATA: the two replays are independent, and both are all-zero.
+  - REFEREE: own engine, 28 pinned instances + 800 random; DEAD D1, D2, D4, D5, D6 from the lane's check199.sh re-run; D3 and D7 not
+    re-run.
+  - Mine: own engine, 28 pinned + 7,000 random + 2,200 mutants (307,718 couples, 2,149 with S_t = S_t′); D1-D7 re-run with my own code,
+    first witnesses equal.
+  - So D3 (HOLD2K_n84 18) and D7's fan-in (NK6_cl21 3, DSALT9_n416 4) and FW depth are now re-run by one referee on independent code.
+  - Records equal: MW32_2 c_y 65, T3 199; C6G8_n54 6; FW6_4 / FW8_4 5 pairs.
+- Result: P-N5-SPLIT has two referee signatures on every statement, CONDITIONAL on R125. The line needs R-1 (= LS-2), R-2 to R-5, and R-6
+  (= SP-2).
+
+## Addendum 2 (REFEREE-2 successor 37, Opus 5.5 under D1; 2026-11-11 by date -u): byte test of fixes entry 2 + line L-1 (claude/l-new 8f4dab7e)
+- Object (hashes re-computed from `git show 8f4dab7e:…`; equal to the Lead's 23:23Z message):
+  - docs/new/P-N5-SPLIT-line-L1.txt: sha1 634b2fdfda31eda9e82e9f558ffebf3c89f5701c, 9,249 B, one line, 260 «(» = 260 «)», no «|».
+  - docs/new/P-N5-SPLIT-fixes.md: sha1 f7940ddf3361d45407855ce51baddc9e59515426, 7,523 B. Entry 2 is append-only: the diff
+    8f4dab7e~1..8f4dab7e removes no line of the file.
+  - experiments/new/box199/mkl1_199.py: sha1 a8d59bf2, 10,925 B.
+  - split.pins: the fixes row is re-pinned, and rows for L-1 and the generator are added. Nothing else changed.
+  - Unchanged since my review (`git diff 399cda07 8f4dab7e`): the packet (sha1 5bc1b1f3), split199.py, split199.out, check199.*, and inst/.
+- Rebuild: on a clean `git archive 8f4dab7e`, `python3 -I mkl1_199.py RES.md` with RES.md = `git show 8ba1b23b:docs/RESULTS.md` prints
+  «ok sha1 634b2fdf… 9249 bytes; parens 260 260». The output is byte-equal to the committed L-1 (cmp).
+- Own checks: R2-P-N5-SPLIT/bt_l1.py (my code; it does not import the generator), output in R2-P-N5-SPLIT/bt_l1.out: 36 PASS, «FAILS 0».
+  - The first run had 2 FAILs. Both were bugs in my checker, not in L-1, and are fixed in the committed script:
+    - R-2. I required «PROVED» to occur once. The 2 other occurrences only refer back to the lemmas: «every PROVED-lemma counter 0»
+      (DATA) and «all PROVED statements SURVIVE» (L-RED attack record).
+    - R-3. I compared a 32-character slice with a 37-character string.
+
+### Requirements, one by one
+- R-1: MET.
+  - None of the false sentence's three clauses («passes K0 iff», «iff it passes K3», «cycle node is in the closed core») occurs.
+  - (LEX-Λ) is named exactly once: «(LEX-Λ) is applied only to non-core vertices (pads), where P-N5-CHAIN's W-1 repair holds (pads of
+    movers and gates; P-N5-CHAIN fixes entry 3, R-W; referee-originated: REFEREE-2 R2-P-N5-SPLIT W-1; also REFEREE R-P-N5-SPLIT SP-1)».
+    This is LS-2's string, which Addendum 1 accepts as meeting R-1. The parenthesis also carries my R-1's content: pads of movers and
+    gates, fixes entry 3, R-W.
+  - The credit string occurs exactly once.
+- R-2: MET. The clause «each statement PROVED and CONDITIONAL on RESULTS R125 (P-N5-CHAIN)» governs every statement. No statement is
+  PROVED without it.
+- R-3: MET.
+  - [E-LEV] occurs twice: in «(Lemmas ASC-WIT, ASC-ROOT, under HYPOTHESIS [E-LEV]: …)» and in «[E-LEV] only in ASC-WIT and ASC-ROOT».
+  - «HYPOTHESIS» occurs once. The line states [E-LEV] as in §1 of the packet: lev(x) < lev(x′) ⇒ pr(e_(x,k)) < pr(e_(x′,k′)).
+- R-4: MET.
+  - The line opens with «On HOW3(G), i.e. N5′-xi from S3 on Γ3(G) until its first fallback».
+  - SPLIT-COUNT: «so C polynomial ⇐ max over y, b, J of Dhi_y(b, J) polynomial (a reduction, not an equivalence)», and the tail repeats
+    «SPLIT-COUNT is a reduction». Only RE-EQUIV, ALT-EQUIV and C-EQUIV are called equivalences.
+  - «G-N5-TIME stays OPEN» occurs once. Also present: «nothing is claimed for N5 (SPEC S4a), outside Γ3(G), or on iteration counts beyond
+    T3».
+- R-5: MET. I read split199.py line by line, all 178 lines (unchanged since 399cda07), against the DATA clause:
+  - spfail: the code's `bnd` sums, over the split pairs, the number of distinct values of E(b) ∩ U_y at that pair's own y-tops, per
+    (v, I, y). The line states exactly this lower-bound form and says why spfail 0 is the stronger statement.
+  - rh2fail: double loop i1 < i2 over each pair's y-top list, so all pairs t < t′. Unit «same-pair couples»: MET.
+  - dnfail, rhfail and rw1fail run inside the consecutive re-entry loop with the same (u, b), so the unit is re-wins: MET. wlamfail runs
+    over every consecutive re-entry and checks Λ(m) = w at t1 and t2: MET.
+  - Firing controls, re-read in check199.out: ctrl1 hwfail 444; ctrl3 dnfail 219; ctrl4 rhfail 219, rh2fail 313, spfail 161, rw1fail 127;
+    ctrl5 gtfail 284. These equal the line. playfail, kindfail, trfail and wlamfail have no control, and the line says so.
+  - split199.out, read by my own parser: 28 rows; every one of the 11 must-0 counters is 0 on every row; max T3 = 199.
+  - Records equal the line: max split pairs 5 (FW6_4, FW8_4); max c_y outside MW is 6 (C6G8_n54); MW4/8/16/32_2 give 9/17/33/65 = 2n + 1.
+  - DEAD records equal the line: dn_nobelow_all 192 (CX4_n21); wcfail 18 and premono_no 18 (GROW7_n34); wbfail 18 (HOLD2K_n84);
+    ytopB_ne 65 (ROUTELOW_n21); rwfail 31 (RWX_n95).
+  - The 8 sha1 prefixes the line gives equal the inst files' hashes.
+- R-6: MET.
+  - The list after «RESULTS R125 (P-N5-CHAIN):» has 17 names. Every one occurs in CHAIN's L-5 (8f4dab7e:docs/new/P-N5-CHAIN-line-L5.txt).
+    None of F2, (Core), (E-DOM), [G3], [DEF], (R), (P), CYC, [OPT] is among them.
+  - These are cited instead as «P-N5-CHAIN's frozen text (l-new 93531b03, sha1 6e613ba7, §2 and §4)», with (Core) in the W-1-repaired
+    reading, or as landed sources: [DEF] R104, [G3] R117, [OPT] R118 (b) + R21 (a). I re-hashed 93531b03:docs/new/P-N5-CHAIN.md: 6e613ba7.
+    This is REFEREE's SP-2 form.
+
+### Meaning, statement by statement
+- I read each statement of the line against the packet's statement text (§2-§7), with fixes entry 1's corrected forms for PAIR-COUNT
+  and ALT-EQUIV:
+  - SPLIT (i)-(iv), incl. TRANSFER; REWIN (a)(b), REWIN-HI (c); REWIN-COUNT; PAIR-SPLIT (a′)(b′)(c′).
+  - SPLIT-COUNT, incl. the 3M bound and J_b; RW-SHAPE(*) (i)(ii); RW-1; PAIR-HIGH (a)(b)(c); RA-PATHS; RE-COUNT.
+  - RE-EQUIV, PAIR-COUNT, ALT-EQUIV and C-EQUIV: every bound byte-equal to the packet's, after whitespace normalisation.
+  - ASC-WIT (a)-(d) folded into one «either … or» clause; ASC-ROOT.
+- Each line clause says what the packet's statement says: no strengthening, no dropped hypothesis, no changed quantifier.
+  - The line's TRANSFER omits the packet's «= w». This is implied, since u is on v's play inside (v, I).
+  - PAIR-COUNT states the first inequality only.
+- The TARGET tail equals R124's landed form. It occurs in trunk RESULTS at 86f62c26 (2 matches, R123 and R124), and the generator
+  asserts it at 8ba1b23b.
+- Citations checked on origin:
+  - REFEREE 30 ca091557 is an ancestor of origin/claude/referee.
+  - My 991296c9 is an ancestor of origin/claude/referee-2.
+  - The replay sizes quoted in L-1 (REFEREE: 28 + 800; mine: 28 + 7,000 + 2,200 mutants, D1-D7 re-run) equal Addendum 1.
+
+### Notes (optional; no change required)
+- N-3. playfail's unit. The line follows §9.1 and gives «changes at (v, I)». The code checks the play's e-set against the engine's value
+  at every state t and every vertex v (`for t in range(len(H)): for v in range(n)`). So the measured 0 is over (state, vertex) pairs, a
+  superset. The line's sentence is true as written, a fortiori. A later line may state the larger unit.
+- N-4. DSALT9_n416 is named in D7 without a hash: da3308b5, from inst/SHA1SUMS. The packet's §8 does the same; my box-1 note (line 20
+  above) recorded it.
+
+### Verdict: L-1 (8f4dab7e, sha1 634b2fdf) MATCHES. R-1 to R-6 are met in bytes and in meaning, and fixes entry 2 changes no signed statement.
+- With REFEREE's signatures, P-N5-SPLIT's statements stand as two-referee signed, CONDITIONAL on R125. ASC-WIT and ASC-ROOT stand
+  under HYPOTHESIS [E-LEV].
+- SPLIT-COUNT is a reduction, not a bound: G-N5-TIME stays OPEN, and nothing is claimed for N5 or M4.
+- I have not read docs/referee/ for this byte test.
