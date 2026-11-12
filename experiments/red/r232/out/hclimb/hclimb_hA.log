@@ -1,2 +1,4 @@
 start (-2, 8, -10) N 4
 6608 score (-1, 10, -11) N 4 M 11
+14113 score (-1, 11, -12) N 4 M 12
+END hA best (-1, 11, -12) N 4 rejected 1785 fails 0 secs 4008
