@@ -1,0 +1,12 @@
+DEAD_SEG2P_d4_N8.json: N 8 M 16 n 62 T 10 keyfail 0 k1fail 0 l2fail 19 l3fail 19 l5fail 19 platfail 0 quietfail 0 boundfail 0 | states 11 lagpairs 19 alpha 0 beta 0 stalls 16 maxplat 8 maxquiet 8 maxfront 1
+DEAD_SEG2P_d7_N14.json: N 14 M 28 n 104 T 19 keyfail 0 k1fail 0 l2fail 185 l3fail 185 l5fail 185 platfail 0 quietfail 0 boundfail 0 | states 20 lagpairs 186 alpha 1 beta 0 stalls 46 maxplat 4 maxquiet 2 maxfront 3
+DEAD_SEG2P_d9_N18.json: N 18 M 36 n 132 T 21 keyfail 0 k1fail 0 l2fail 212 l3fail 212 l5fail 212 platfail 0 quietfail 0 boundfail 0 | states 22 lagpairs 212 alpha 0 beta 0 stalls 152 maxplat 8 maxquiet 4 maxfront 1
+cyc2_d7.json: N 14 M 28 n 104 T 21 keyfail 0 k1fail 0 l2fail 185 l3fail 185 l5fail 185 platfail 0 quietfail 0 boundfail 0 | states 22 lagpairs 186 alpha 1 beta 0 stalls 28 maxplat 9 maxquiet 9 maxfront 10
+cyc2_d8.json: N 16 M 32 n 118 T 22 keyfail 0 k1fail 0 l2fail 238 l3fail 238 l5fail 238 platfail 0 quietfail 0 boundfail 0 | states 23 lagpairs 238 alpha 0 beta 0 stalls 105 maxplat 6 maxquiet 4 maxfront 1
+cyc_d3.json: N 6 M 12 n 48 T 9 keyfail 0 k1fail 0 l2fail 41 l3fail 41 l5fail 41 platfail 0 quietfail 0 boundfail 0 | states 10 lagpairs 41 alpha 0 beta 0 stalls 24 maxplat 3 maxquiet 2 maxfront 1
+cyc_d4.json: N 8 M 16 n 62 T 12 keyfail 0 k1fail 0 l2fail 67 l3fail 67 l5fail 67 platfail 0 quietfail 0 boundfail 0 | states 13 lagpairs 67 alpha 0 beta 0 stalls 12 maxplat 5 maxquiet 4 maxfront 5
+cyc_d5.json: N 10 M 20 n 76 T 13 keyfail 0 k1fail 0 l2fail 69 l3fail 69 l5fail 69 platfail 0 quietfail 0 boundfail 0 | states 14 lagpairs 69 alpha 0 beta 0 stalls 40 maxplat 8 maxquiet 6 maxfront 2
+cyc_d6.json: N 12 M 24 n 90 T 19 keyfail 0 k1fail 0 l2fail 182 l3fail 182 l5fail 182 platfail 0 quietfail 0 boundfail 0 | states 20 lagpairs 183 alpha 1 beta 0 stalls 116 maxplat 4 maxquiet 2 maxfront 2
+cyc_d7.json: N 14 M 28 n 104 T 17 keyfail 0 k1fail 0 l2fail 135 l3fail 135 l5fail 135 platfail 0 quietfail 0 boundfail 0 | states 18 lagpairs 135 alpha 0 beta 0 stalls 33 maxplat 6 maxquiet 5 maxfront 1
+cyc_d8.json: N 16 M 32 n 118 T 17 keyfail 0 k1fail 0 l2fail 137 l3fail 137 l5fail 137 platfail 0 quietfail 0 boundfail 0 | states 18 lagpairs 137 alpha 0 beta 0 stalls 47 maxplat 3 maxquiet 4 maxfront 1
+levelcheck ctrl 1: genomes 11 keyfail 0 k1fail 0 l2fail 1470 l3fail 1470 l5fail 1470 platfail 0 quietfail 0 boundfail 0 | states 191 lagpairs 1473 alpha 3 beta 0 stalls 619 maxplat 9 maxquiet 9 maxfront 10

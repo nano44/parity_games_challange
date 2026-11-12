@@ -31,33 +31,64 @@
   - Build of the tree with these files: `rm -rf .lake/build && lake build` → «Build completed successfully (3181 jobs).», 0 warnings,
     before GenomeLevelStatement.lean was added; with it, incremental `lake build` → 3182 jobs. Axioms.lean: 48 theorems, 47 with [propext,
     Classical.choice, Quot.sound], 1 with [propext, Quot.sound]. No sorry / admit / axiom / native_decide.
-- NEXT, in this order (STATEMENT FIRST for each new `…Statement`):
-  (3) LEVEL on the genome. Classes as keys: `ck t v := G.clsKey (G.cls (nxt G.V0 σ τ t) v)`; `FrontAt ck b t v`, lag = `ck t v ≠ ck b v`.
-      (L2) a front vertex is a mover, a gate or a β with xt = some y. Proof: constant classes (`k3` (e)) never lag; β with xt = none has
-      the class of K0 (`cls_step`, frozen); e_g with wt = some w: w not lagging ⇒ e_g not lagging (`cls_eface` at t and at b), w lagging ⇒
-      class(w) < class(e_g), so e_g is not lowest.
-      (L3) (α) a mover z of the front with a non-lagging successor y, and then every front class = class_b(y); or (β) every vertex of a
-      play of the front lags, its cycle node c is a β, and every front class = (c, ∅). Proof: classes do not rise along a play (`cls_step`,
-      `cls_eface`); either some lagging play vertex has a non-lagging successor (then it is not a gate by `k4` at b + `k1`, not a β by
-      `cls_step` at t and b, so a mover), or the whole play lags (cycle node c has class (c, ∅) by `val_of_lam_eq`; c is a β by (L2) and
-      `lam_ne_mover`, `lam_ne_gate`).
-      (L5) the keys of the front lie in a set of at most 2M keys (class_b of the gates, (β, ∅) of the β's); a front has at most N + 2M
-      vertices.
-  (4) PLATEAU on the genome, as ONE generic lemma GP, then two uses. GP: a window [u, v] of a run and a set Y with, for all s in [u, v]:
-      (a) cls_s = cls_u on Y; (b) Y closed under the successor map of s; (c) every gate of a mover of Y is in Y; (d) every step s < v
-      changes σ at a mover of Y. Then v − u ≤ |movers of Y| ≤ N, by `plateau` with Ch := Mov ∩ Y. The one hypothesis of `plateau` that
-      needs work is «in Y only Ch changes», i.e. σ̄ is constant on the gates of Y ((P4)): the chosen face is in Y (b); if the other face
-      is not in Y the chosen one is the same at every s; if both are in Y and their classes differ, `k4` picks the lower; if the classes
-      are equal and wt g = some w, e_g ∈ E(e_g) = E(β_g) (`cls_eface`), so β_g's play passes e_g, hence g (the only vertex with
-      successor e_g), so σ̄(g) = e_g; if the classes are equal and wt g = none, both are (c_W, ∅), Ω(e_g) = (c_W, ∅, 1), plen(β_g) ≥ 2,
-      c_W is even, so `OptCounter.le_succ` forces σ̄(g) = β_g. (THIS LAST CASE IS NOT IN BOX 208: Addendum B1 (5) reuses (P4) with Y :=
-      all vertices, where «(c_W, ∅) is above every lagging class» is not available. Reported to the Lead 18:00Z; unproved until GP is.)
-      Use 1 (plateau, box 208 A2): stalls on [u, v) with reference b, Y := the vertices whose key at u is ≤ the front key; (a) is (P1)
-      from (L1) + `k1`; (b) (P2); (c) (P3) from `k5`; (d) is (P6) with REFEREE 32's repair (answer σ_(s′+1) by σ̄_s; `val_congr`; `f1`).
-      Use 2 (quiet tail, replaces QUIET-N): Y := all vertices on [b′, T], (d) from `IdealCycRun.moves`.
-      Assembly: `level_count` with α := ℤ ×ₗ ℤ, |M| ≤ 2M, F := N + 2M, L := N gives b′ ≤ 2M(N + 2M)(N + 1); tail ≤ N. So T ≤
-      2M(N + 2M)(N + 1) + N, which is below box 208 A0's P(N + 2M + 6) + N. Final Statement: the lane's bound, word for word, diffed by
-      the Lead against A0 and TARGET.md before the proof; the sharper bound as a second theorem.
+- STATE 2026-11-12T18:43Z (date -u), LATER THE SAME SESSION. EVERYTHING OF THE BRIEF'S WORK LIST (0)-(4) IS PROVED IN LEAN ON MY DISK; THE PROOFS OF THE
+  NINE NEW STATEMENTS ARE NOT COMMITTED (statement first: they wait for the Lead's diff; sent 18:17Z (eight) and 18:42Z (the ninth),
+  reminders 18:28Z; no verdict yet when this was written). Commit a1f02bee (engine comparison, `k4`, the statement files, docs) is being
+  pushed since 18:15Z.
+  UNCOMMITTED FILES (all compile; `rm -rf .lake/build && lake build` → 3189 jobs, 0 warnings; Axioms.lean 61 theorems, all within the
+  allowed three; 8,957 lines in 51 files). IF THE CONTAINER IS REPLACED THEY ARE LOST; the routes are in this block and in the file
+  headers of the statement files:
+  - PGLemmas/GenomeOrder.lean (170 lines): `class_order`.
+  - PGLemmas/GenomeLevel.lean (324): `l2`, `l3`, `l5`; `ck_eq_iff` / `ck_le_iff` / `ck_lt_iff`, `IdealCycRun.ck_mono`, `cls_succ_le`,
+    `cls_of_lam_eq`, `isConst`, `IdealCycRun.cls_const`, `nxt_mover`.
+  - PGLemmas/GenomePlateau.lean (492): `IdealCycRun.window_le` (the generic window lemma through `plateau` with Ch := Mov ∩ Y),
+    `IdealCycRun.gate_const` ((P4)) with `gate_of_cls_eq_some`, `gate_of_cls_eq_none`, `succ_eq_eface`, `cW_dom`, `pset_of_lam_cW`;
+    `quiet` (Y := univ, (d) from `moves`); `plateau_g` (Y := keys at u ≤ the front's key; `hpers` = the front persists through stalls
+    by `Nat.le_induction`; (P6) by the claim «∀ k, t + k ≤ b → movers of Y keep σ_t ∧ values on Y are those of t», with
+    `val_congr` against the answer τ t and `R.f1`).
+  - PGLemmas/GenomeAllTCyc.lean (101): `all_tcyc_sharp` (S := image of ck T ∘ gate ∪ image of clsKey (β, ∅); `level_count`; the first
+    state without a lag by `Nat.find`; `quiet` on the tail), `all_tcyc`.
+  - PGLemmas/GenomeRunStatement.lean (statement `RunExistsStatement`, my addition), PGLemmas/GenomeRun.lean: `exists_best`,
+    `howardNext`, `howardNext_spec`, `runStep`, `runSeq`, `run_prefix`, `run_exists` (stops by `all_tcyc`).
+  - PGLemmas/GenomeExample.lean: `tiny`, `tinyOpt`, `tiny_wf`, `tiny_better`, `tiny_run` (a run of length 1); `setLt_insert_of_lt`,
+    `ext_ext_lt`, `core_closed`, `core_iterate`.
+  - MODIFIED, uncommitted: PGLemmas/GenomeK4.lean (`optCounter_of_local`, import OptExists), PGLemmas.lean (7 more imports),
+    Axioms.lean (13 more lines), check/idealcheck.py (counter wffail, control IDEAL_CTRL=wf) and check/out/idealcheck*.out
+    (re-run with the final tool: all 13 counters 0; how: howardfail 180; opt: devfail 7,361, valdiff 3,541; wf: wffail 44; each
+    control fires on all 11 genomes).
+  - NEW DATA TOOL, uncommitted: check/levelcheck.py (+ check/out/levelcheck.out, levelcheck_ctrl.out): the conclusions of L2 / L3 / L5 /
+    PlateauG / Quiet / AllTCycSharp and (K1) on keys along the engine's runs of the 11 genomes, every reference state b: all 8
+    counters 0; 1,473 pairs (b, t) with a lag, clause (α) at 747, (β) at 726; 309 stall steps; longest interval of stalls 9 (cyc2_d7,
+    N = 14), and 8 = N on DEAD_SEG2P_d4_N8 (the bound of `plateau_g` is attained); LEVEL_CTRL=1: l2fail = l3fail = l5fail = 1,470.
+  - The README / INDEX edits for that commit are scripted: scratchpad docs2.py NOW VERDICT_TIME, run from lean/lemmas (dry run on
+    copies passed). If the scratchpad is gone: README needs the «BOX 208 ON THE GENOME, THE CHAIN TO ALL-TCYC» bullet with its reading
+    rules (model, restricted family, not TARGET.md, G-N5-TIME open, lane-level, the three route differences), the file list, and INDEX
+    the rows for the nine statements, `tiny_run`, `optCounter_of_local`.
+- LEAD'S VERDICTS, read 2026-11-12T18:46Z (three copies had queued: 18:20Z, 18:30Z, 18:43Z): «VERDICT … ACCEPT ALL NINE. - ClassOrderStatement +
+  clsKey, L2, L3, L5, PlateauG, Quiet, AllTCyc, AllTCycSharp: accepted with your deviations (i)-(vii) as at 18:17Z. -
+  RunExistsStatement: ACCEPT. … Record the named deviation «existence is not stated in the fleet texts; added so that the theorems
+  about IdealCycRun are not empty; uniqueness not claimed». - tiny_wf / tiny_run (a run with T = 1, no premise) is the non-vacuity
+  witness I asked for. Accepted as an example theorem. - optCounter_of_local is logged as the Lean bridge for idealcheck's devfail.
+  Good. Commit everything (proof files, README / INDEX / Axioms.lean rows) as soon as a1f02bee's push ends, then push. Send me the SHA
+  and the theorem list with commit. Then I open the CHECKER item for the Lean rows, which go through the CI job lean-lemmas (now on
+  trunk; your branch needs trunk merged with --no-ff for the job to run there).» From 18:20Z: «PlateauG with bound N … accepted as a
+  STRONGER claim. In INDEX, cite it as matching L-RED 66's SHARP route and REFEREE 32's PR-5. If the proof needs N + 2M + 5 after all,
+  restate it with A0's constant; do not weaken the hypotheses.» (The proof gives N.) «Quiet replacing R126 QUIET-N: accepted. Name it
+  in INDEX as «premise-free replacement of a landed citation».» «AllTCycSharpStatement is your route's bound, credited to L-RED 66's
+  SHARP route (L41).» «Your finding (the wt g = none sub-case …) … I routed it to L-NEW 73 for the P-N5-LEVEL freeze.» From 18:30Z:
+  «Your FINDINGS block stays as the status text: Lean-checked (lane) only; IDEAL-CYC on Γ(G) only; not N5, not N5′-xi, not Γ3, not
+  TARGET.md; G-N5-TIME OPEN; the bound is not tested by data.» README and INDEX carry these words (docs2.py applied 18:46Z).
+- NEXT: (i) when push.sh of a1f02bee has ended: clean rebuild, commit everything by explicit path (the list of UNCOMMITTED FILES above,
+  check/levelcheck.py with its two outputs, README, INDEX, this notebook), then `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo`
+  (the Lead: the CI job lean-lemmas is on trunk), then scripts/push.sh as a tracked task, then send the Lead the SHA and the theorem
+  list. (ii) Then whatever the Lead routes. Candidates I see (mine,
+  not asked): box 209's Γ3 form (LEVEL3 / PLATEAU3 / T3-ALL) needs Γ3 in Lean
+  (P-N5-REACH §3) and is a new definition diff; box 208 (L4), §5-§6 are not needed for ALL-TCYC.
+- TRAPS met by successor 2: (i) `if_pos` / `if_neg` / `dif_pos` / `push_neg` are deprecated in this Mathlib (warnings): use
+  `ite_eq_left` / `ite_eq_right` / `dite_eq_left` / `push Not`. (ii) A module that PGLemmas.lean does not import is built by
+  `lake build PGLemmas.<Module>`. (iii) `exact absurd (f … trivial) h` cannot infer an implicit vertex; write `exact (h (f …
+  trivial)).elim`. (iv) Numerals in `Fin (tiny.deg x)` need the type ascription `(1 : Fin 2)`. (v) In the gate, experiments/new/check.sh
+  alone takes most of the 41 minutes; nothing in lean/ is built by the gate (no lean/lakefile.* at lean/ root).
 - 2026-11-12T14:46Z (date -u): STATE. Everything proved so far is «Lean-checked (lane)»: the Lead ACCEPTED every statement (rulings 11:49Z,
   12:29Z, 13:13Z, 13:58Z, 14:54Z, quoted in lean/lemmas/README.md «Status and reading rules») EXCEPT `LevelCountStatement`, which is
   PROPOSED (my addition; verdict open). Rows become RESULTS only through CHECKER + the Lead's CI job «lean-lemmas» (Lead 13:52Z: «elan, lake exe

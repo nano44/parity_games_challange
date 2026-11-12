@@ -1,0 +1,13 @@
+DEAD_SEG2P_d4_N8.json: n 62 T 10 wffail 4 builddiff 0 prdiff 0 fastdiff 0 frozenfail 0 legalfail 0 taufail 0 valdiff 0 devfail 0 howardfail 0 movesfail 0 startfail 0 stopfail 0
+DEAD_SEG2P_d7_N14.json: n 104 T 19 wffail 4 builddiff 0 prdiff 0 fastdiff 0 frozenfail 0 legalfail 0 taufail 0 valdiff 0 devfail 0 howardfail 0 movesfail 0 startfail 0 stopfail 0
+DEAD_SEG2P_d9_N18.json: n 132 T 21 wffail 4 builddiff 0 prdiff 0 fastdiff 0 frozenfail 0 legalfail 0 taufail 0 valdiff 0 devfail 0 howardfail 0 movesfail 0 startfail 0 stopfail 0
+cyc2_d7.json: n 104 T 21 wffail 4 builddiff 0 prdiff 0 fastdiff 0 frozenfail 0 legalfail 0 taufail 0 valdiff 0 devfail 0 howardfail 0 movesfail 0 startfail 0 stopfail 0
+cyc2_d8.json: n 118 T 22 wffail 4 builddiff 0 prdiff 0 fastdiff 0 frozenfail 0 legalfail 0 taufail 0 valdiff 0 devfail 0 howardfail 0 movesfail 0 startfail 0 stopfail 0
+cyc_d3.json: n 48 T 9 wffail 4 builddiff 0 prdiff 0 fastdiff 0 frozenfail 0 legalfail 0 taufail 0 valdiff 0 devfail 0 howardfail 0 movesfail 0 startfail 0 stopfail 0
+cyc_d4.json: n 62 T 12 wffail 4 builddiff 0 prdiff 0 fastdiff 0 frozenfail 0 legalfail 0 taufail 0 valdiff 0 devfail 0 howardfail 0 movesfail 0 startfail 0 stopfail 0
+cyc_d5.json: n 76 T 13 wffail 4 builddiff 0 prdiff 0 fastdiff 0 frozenfail 0 legalfail 0 taufail 0 valdiff 0 devfail 0 howardfail 0 movesfail 0 startfail 0 stopfail 0
+cyc_d6.json: n 90 T 19 wffail 4 builddiff 0 prdiff 0 fastdiff 0 frozenfail 0 legalfail 0 taufail 0 valdiff 0 devfail 0 howardfail 0 movesfail 0 startfail 0 stopfail 0
+cyc_d7.json: n 104 T 17 wffail 4 builddiff 0 prdiff 0 fastdiff 0 frozenfail 0 legalfail 0 taufail 0 valdiff 0 devfail 0 howardfail 0 movesfail 0 startfail 0 stopfail 0
+cyc_d8.json: n 118 T 17 wffail 4 builddiff 0 prdiff 0 fastdiff 0 frozenfail 0 legalfail 0 taufail 0 valdiff 0 devfail 0 howardfail 0 movesfail 0 startfail 0 stopfail 0
+idealcheck ctrl wf: genomes 11 vertices 1018 states 191 steps 180 fastchecks 18814 valchecks 18814 devchecks 546942 howardchecks 2388 stopchecks 272 | wffail 44 builddiff 0 prdiff 0 fastdiff 0 frozenfail 0 legalfail 0 taufail 0 valdiff 0 devfail 0 howardfail 0 movesfail 0 startfail 0 stopfail 0
+opt: optimality checked as local optimality of a one-player counterstrategy plus agreement with si.py's optimum; full enumeration not done

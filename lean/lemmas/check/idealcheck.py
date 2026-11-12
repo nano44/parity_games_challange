@@ -24,6 +24,9 @@ line-by-line transcription of Defs.lean in check/crosscheck.py at every vertex o
 transcriptions.
 
 Counters (all must be 0 without a control); the unit is printed with each:
+  wffail       a field of `Genome.WF` fails on the genome file (one_le_N; graded0, graded, bpar_le per
+               option; gate_inj + gate_lt and brank_inj + brank_lt as «the values are a permutation of
+               0..M−1»); unit: failed condition
   builddiff    gamma3.build(G, {}) differs from stab.build(G, 0, kgad, esc) at a vertex (priority, owner,
                successor set or start); unit: vertex
   prdiff       Lean's pr differs from si.py's injective priority p'; unit: vertex
@@ -52,6 +55,8 @@ Controls (IDEAL_CTRL):
         ⊴-smallest gate instead of its new successor; howardfail must fire.
   opt   makes one gate non-optimal: at every state the first gate (index order) whose switch to the other
         face changes some value is switched; devfail (and valdiff) must fire.
+  wf    every level is raised by one (the game is unchanged; GRADED fails at the old level 0); wffail
+        must fire.
 
 Usage (from the repository root):
     python3 -I lean/lemmas/check/idealcheck.py experiments/new/box191/inst/*.json
@@ -73,7 +78,7 @@ import stab  # noqa: E402
 
 cc.CTRL = False
 CTRL = os.environ.get("IDEAL_CTRL", "")
-NAMES = ["builddiff", "prdiff", "fastdiff", "frozenfail", "legalfail", "taufail", "valdiff", "devfail",
+NAMES = ["wffail", "builddiff", "prdiff", "fastdiff", "frozenfail", "legalfail", "taufail", "valdiff", "devfail",
          "howardfail", "movesfail", "startfail", "stopfail"]
 SIZES = ["vertices", "states", "steps", "fastchecks", "valchecks", "devchecks", "howardchecks", "stopchecks"]
 
@@ -93,10 +98,32 @@ def vals(pr, s):
     return out
 
 
+def wf_failures(G):
+    """The fields of `Genome.WF` (Genome.lean) on a genome file: wt = opts[x][k][0] (−1: none),
+    brank (x, k) = br[opts[x][k][2]], bpar (x, k) = bp[opts[x][k][2]]."""
+    N, lev, opts, gate, br, bp = G["N"], G["lev"], G["opts"], G["gate"], G["br"], G["bp"]
+    O = [(x, k) for x in range(N) for k in range(len(opts[x]))]
+    M = len(O)
+    bad = int(N < 1)                                                       # one_le_N
+    for x, k in O:
+        wt, b = opts[x][k][0], opts[x][k][2]
+        if lev[x] == 0:
+            bad += wt >= 0                                                 # graded0
+        else:
+            bad += not (0 <= wt < N and lev[wt] + 1 == lev[x])             # graded
+        bad += bp[b] > 1                                                   # bpar_le
+    bad += sorted(gate[x][k] for x, k in O) != list(range(M))              # gate_inj, gate_lt
+    bad += sorted(br[opts[x][k][2]] for x, k in O) != list(range(M))       # brank_inj, brank_lt
+    return bad
+
+
 def check(path):
     G = json.load(open(path))
+    if CTRL == "wf":
+        G["lev"] = [l + 1 for l in G["lev"]]
     N = G["N"]
     c = dict.fromkeys(NAMES + SIZES, 0)
+    c["wffail"] = wf_failures(G)
     # ---- the Lean side: the game genomecheck.py compared with Genome.lean
     ref, rsig, rtau = stab.build(G, 0, kgad=True, esc=True)[:3]
     n = ref.n
@@ -211,6 +238,8 @@ def main():
         return 0 if total["howardfail"] > 0 else 1
     if CTRL == "opt":
         return 0 if total["devfail"] > 0 else 1
+    if CTRL == "wf":
+        return 0 if total["wffail"] > 0 else 1
     return 0 if all(total[k] == 0 for k in NAMES) else 1
 
 

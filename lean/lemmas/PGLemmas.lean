@@ -42,3 +42,10 @@ import PGLemmas.GenomeK15
 import PGLemmas.GenomeK4
 import PGLemmas.GenomeOrderStatement
 import PGLemmas.GenomeLevelStatement
+import PGLemmas.GenomeOrder
+import PGLemmas.GenomeLevel
+import PGLemmas.GenomePlateau
+import PGLemmas.GenomeAllTCyc
+import PGLemmas.GenomeRunStatement
+import PGLemmas.GenomeRun
+import PGLemmas.GenomeExample

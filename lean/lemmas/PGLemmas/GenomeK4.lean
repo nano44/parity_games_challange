@@ -9,10 +9,14 @@ Box 208 §2 (K4) GATES, proved for IDEAL-CYC(G): `k4 : G.K4Statement`
                         sends an Odd vertex `u` that is not its own cycle node to a successor of
                         ⊴-least value.  (From optimality against `Function.update τ u w` and
                         `underProgAt_of_opt`.)  NO-TIE is not used.
+* `optCounter_of_local` local optimality suffices: if no single-vertex deviation of τ improves
+                        the value of the deviating vertex, τ is an optimal counterstrategy
+                        (`underProgAt_of_opt`, then `optCounter_of_underProg`).
 * `k4`                  the class of a gate is the class of its chosen face (`cls_step`), and the
                         chosen face is ⊴ the other one, so (K2) compares their classes.
 -/
 import PGLemmas.GenomeK15
+import PGLemmas.OptExists
 
 namespace PG
 
@@ -74,6 +78,16 @@ theorem OptCounter.le_succ (hpr : Function.Injective pr) {E : V → Finset V} {V
   have h := hopt.2 _ hτ₂ u
   rw [hpair] at h
   exact h
+
+/-- Local optimality suffices: a counterstrategy that follows the edges, and that no single-vertex
+deviation improves at the deviating vertex, is an optimal counterstrategy.  (This is what
+check/idealcheck.py's counter `devfail` tests along the engine's runs.) -/
+theorem optCounter_of_local (hpr : Function.Injective pr) {E : V → Finset V} {V0 : Finset V}
+    {σ τ : V → V} (hτ : ∀ u, u ∉ V0 → τ u ∈ E u)
+    (h : ∀ u, u ∉ V0 → ∀ w ∈ E u,
+      Val.le pr (val pr (pair V0 σ τ) u) (val pr (Function.update (pair V0 σ τ) u w) u)) :
+    OptCounter pr E V0 σ τ :=
+  optCounter_of_underProg hpr hτ (fun u hu w hw => underProgAt_of_opt hpr (h u hu w hw))
 
 end Generic
 

@@ -6,7 +6,7 @@ of 2026-11-12 11:31Z); the Lead rules later how CI runs it.
 Pin: Lean v4.35.0 (lean-toolchain), Mathlib v4.35.0 = 56a005855ea17e0b0958f73ec801ae140b0a1679 (lake-manifest.json).
 Allowed axioms: propext, Classical.choice, Quot.sound. No sorry, no admit, no new axioms.
 
-## Status and reading rules (Lead rulings 2026-11-12 11:49Z, 12:29Z, 13:13Z, 13:58Z, 14:54Z, 15:16Z, 15:36Z, 15:50Z, 17:22Z; statements accepted as diffed)
+## Status and reading rules (Lead rulings 2026-11-12 11:49Z, 12:29Z, 13:13Z, 13:58Z, 14:54Z, 15:16Z, 15:36Z, 15:50Z, 17:22Z, 18:20Z, 18:30Z, 18:43Z; statements accepted as diffed)
 - Every theorem here is «Lean-checked (lane)». It becomes a RESULT only through CHECKER (statement diff against the landed text,
   exact-commit re-run) and the Lead's CI job for lean/lemmas. INDEX.md lists each statement with the premise it keeps.
 - Statements with a premise are checked in Lean CONDITIONAL on F1 (premise (M)); F1 is landed RESULTS R15 (a), refereed on paper.
@@ -38,11 +38,11 @@ Allowed axioms: propext, Classical.choice, Quot.sound. No sorry, no admit, no ne
   - ABS says nothing about IDEAL-CYC or a genome: §10's last bullet («IDEAL-CYC at class level is such a game») is NOT formalized.
 - LEVEL, the counting (box 208 §3 (L1), §4 (C1), (C2)): `level_count : LevelCountStatement V α` is Lean-checked (lane); the Lead accepted
   `LevelCountStatement` (15:16Z), with three deviation lines: (a) the class order is an arbitrary LinearOrder α; for box 208's classes
-  the bridge must show that the class order is linear (`ClassOrderStatement`, PROPOSED; `clsKey` maps the classes into ℤ ×ₗ ℤ) and
-  that (K1) holds (now `k1`);
-  (b) hypotheses 2-4 (the set M, the bound F, the bound L) are HYPOTHESES; discharging them from IDEAL-CYC is (L2) / (L3) / (L5) plus
-  PLATEAU's (P1)-(P6): genome work, NOT formalized; (c) lane-level only: a result only through CHECKER and the CI job lean-lemmas.
-  (C4) (the quiet steps after b′) is not stated.
+  the bridge must show that the class order is linear (now `class_order`; `clsKey` maps the classes into ℤ ×ₗ ℤ) and that (K1)
+  holds (now `k1`);
+  (b) hypotheses 2-4 (the set M, the bound F, the bound L) are HYPOTHESES of `level_count`; for IDEAL-CYC they are now discharged by
+  `l5` (the set M and the bound F) and `plateau_g` (L := N); (c) lane-level only: a result only through CHECKER and the CI job
+  lean-lemmas. (C4) (the quiet steps after b′) is `quiet`.
 - THE GENOME LAYER (Genome*.lean). The Lead ACCEPTED the definitions: Genome.lean (15:36Z, 15:50Z; diffed by him against P-N5-REALIZE §2,
   §3.1 l. 51-100) and GenomeClass.lean with K1Statement..K5Statement (15:50Z; against box 208 §1-§2). Deviations of Genome.lean from the
   texts: (a) the β-id is not a field, only br(b(x, k)) and bp(b(x, k)) are (`brank`, `bpar`); (b) «none» and the exit X are both `none`;
@@ -53,9 +53,9 @@ Allowed axioms: propext, Classical.choice, Quot.sound. No sorry, no admit, no ne
   `one_le_N` is used by `prio_K1_lt_top` only. Deviations of GenomeClass.lean: (K2) for ANY two `IsState` maps with K2 → K1; (K3) (e)
   names the constant classes; (K4) spells «min» as «equal to one face's class and ≤ both».
   Asked for by the Lead (15:50Z), state 2026-11-12 18:12Z: (i) ClassOrder («It is a strict total order on the classes that occur», box
-  208 §1): `ClassOrderStatement` (PGLemmas/GenomeOrderStatement.lean) is WRITTEN and PROPOSED, with the named deviation that it is
-  STRONGER than the lane's sentence (all pairs (Λ, E), not only the classes that occur; B-ONLY is not used) and with the order-embedding
-  `clsKey` into ℤ ×ₗ ℤ; its proof is not in the tree before the Lead's diff. (ii) The engine comparison of `IdealCycRun` is DONE, as
+  208 §1): `class_order : G.ClassOrderStatement` (PGLemmas/GenomeOrder.lean), with the named deviation that the statement is STRONGER
+  than the lane's sentence (all pairs (Λ, E), not only the classes that occur; B-ONLY is not used) and with the order-embedding `clsKey`
+  into ℤ ×ₗ ℤ. (ii) The engine comparison of `IdealCycRun` is DONE, as
   DATA: check/idealcheck.py (below; numbers in INDEX.md), with the Lead's label for `opt` (17:22Z): «optimality checked as local
   optimality of a one-player counterstrategy plus agreement with si.py's optimum; full enumeration not done». It is DATA about the
   transcription and replaces no Lean proof.
@@ -64,14 +64,57 @@ Allowed axioms: propext, Classical.choice, Quot.sound. No sorry, no admit, no ne
   Every theorem about Γ(G) is Lean-checked (lane) and has no premise: `cn2` (R123 CN2), `loc_k2` (R123 LOC-K2, first half), `b_only` (R123
   B-ONLY), `e_dom` (R121 E-DOM), `k1`, `k2`, `k3`, `k4`, `k5` (box 208 §2; box 208 is a CANDIDATE in its lane), and
   `OptCounter.le_succ` (RESULTS R123 LOC-GATE in ⊴ form, for any game: an optimal counterstrategy sends an Odd vertex that is not its
-  own cycle node to a successor of ⊴-least value; `k4` uses it, NO-TIE is not used). Not formalized: NO-TIE, LEVEL (L2), (L3), (L5) on
-  the genome, PLATEAU's (P1)-(P4), (P6), QUIET-N, Theorem ALL-TCYC. DATA for the definitions: check/genomecheck.py; for the run:
-  check/idealcheck.py (both below).
+  own cycle node to a successor of ⊴-least value; `k4` uses it, NO-TIE is not used). DATA for the definitions: check/genomecheck.py; for the run: check/idealcheck.py (both below).
+- BOX 208 ON THE GENOME, THE CHAIN TO ALL-TCYC (statements in PGLemmas/GenomeLevelStatement.lean and GenomeRunStatement.lean; the Lead's
+  diff verdict: see INDEX.md). Lean-checked (lane), no premise, for every genome with `G.WF`:
+  - `l2`, `l3`, `l5` (box 208 §3 (L2), (L3), (L5)); `plateau_g` (Addendum A, Lemma PLATEAU, with the bound N for any interval of
+    consecutive stalls); `quiet` (a window of a run on which no class changes has at most N steps: the content of RESULTS R126 QUIET-N,
+    proved here from the definitions, R126's packet not opened);
+  - `all_tcyc_sharp`: every `IdealCycRun σ τ T` has T ≤ 2M(N + 2M)(N + 1) + N; `all_tcyc`: T ≤ P(N + 2M + 6) + N with P = 2M(N + 2M),
+    box 208 Addendum A0's bound word for word. The run is ANY run in the sense of `IdealCycRun`: any first mover state, any optimal
+    counterstrategy at each state, any choice among ⊴-best gates that are not the current one;
+  The Lead's diff verdicts (2026-11-12 18:20Z, repeated 18:30Z, 18:43Z): «A. ClassOrderStatement: ACCEPT, with the named deviation
+  «stronger than box 208 §1: all pairs (Λ, E), B-ONLY not used».» «B. All seven: ACCEPT, with your deviations (i)-(vii) recorded
+  verbatim in README/INDEX.» «PlateauG with bound N, sharper than A0's N + 2M + 5: accepted as a STRONGER claim. In INDEX, cite it as
+  matching L-RED 66's SHARP route and REFEREE 32's PR-5.» «Quiet replacing R126 QUIET-N: accepted. Name it in INDEX as «premise-free
+  replacement of a landed citation».» «AllTCycStatement is A0 word for word. AllTCycSharpStatement is your route's bound, credited to
+  L-RED 66's SHARP route (L41).» «(vii) TARGET.md diff: correct. Restricted model class, not §2, G-N5-TIME OPEN.» 18:43Z:
+  «RunExistsStatement: ACCEPT. … Record the named deviation «existence is not stated in the fleet texts; added so that the theorems
+  about IdealCycRun are not empty; uniqueness not claimed».» «tiny_wf / tiny_run (a run with T = 1, no premise) is the non-vacuity
+  witness I asked for. Accepted as an example theorem.» «optCounter_of_local is logged as the Lean bridge for idealcheck's devfail.»
+  The deviations (i)-(vii) of GenomeLevelStatement.lean, as sent to the Lead 18:17Z and accepted, verbatim: «(i) LAG / FRONT / STALL
+  are on the keys `ck`; by ClassOrder (key injective and order-preserving) that is the lane's definition on classes. So B depends on
+  A. (ii) (L3) (β) states the kinds of the cycle's vertices (mover, gate or β, all in the front), not the alternation mover → chosen
+  gate → β-face → mover, which is what the successor map does on such a cycle. (iii) (L5) is stated as its two factors, the form
+  `level_count` consumes; «at most M·(N + 2M) if case (β) never occurs» is not stated. (iv) PLATEAU: bound N (movers; `plateau`), where
+  A0 has N + 2M + 5; any interval of consecutive stalls, maximality not used. (v) QUIET: every window of constant classes, no premise;
+  it replaces the citation of R126 QUIET-N in (C4). (vi) ALL-TCYC: every `IdealCycRun` of length T (any first mover state, not only the
+  genome's start, and not only the run to its stop), so in particular T_CYC. `AllTCycStatement` is A0's bound word for word (P·(N + 2M
+  + 6) + N, P = 2M(N + 2M)); `AllTCycSharpStatement` is the bound my route gives, P·(N + 1) + N. (vii) TARGET.md: none of these is a
+  TARGET.md §2 statement. They bound Howard steps of a model (IDEAL-CYC, R118 (a)) on a restricted family (the genome games of R104);
+  TARGET.md §4 excludes restricted classes. G-N5-TIME stays OPEN.»
+  - `run_exists`: for every genome there is a run from the genome's start whose last state has stopped (so T_CYC exists for that run and
+    obeys the bound); `tiny_run`: the 13-vertex genome `Genome.tiny` has a run of length 1 from its start, so the hypotheses are
+    satisfiable with a real Howard step.
+  Reading rules. (a) This is a bound on the number of Howard steps of a MODEL (IDEAL-CYC, RESULTS R118 (a)) on a RESTRICTED family of
+  games (the genome games Γ(G) of R104). It is not a TARGET.md statement (TARGET.md §4: restricted class), says nothing about N5,
+  N5′-xi or Γ3, and docs/GAPS.md G-N5-TIME stays OPEN. (b) Box 208 is a CANDIDATE in its lane; these rows are «Lean-checked (lane)»
+  and become results only through CHECKER and the CI job. (c) The theorems are about the Lean definitions (Genome.lean, GenomeClass.lean,
+  `OptCounter`, `HowardAt`); that these are the fleet's objects rests on the Lead's diffs and on the DATA of check/genomecheck.py and
+  check/idealcheck.py. (d) The route differs from box 208's text at three places, each named in GenomeLevelStatement.lean: the plateau
+  bound is N (LAM-GAP SHARP through `plateau`) instead of N + 2M + 5; (C4) uses `quiet` instead of citing QUIET-N; and the equal-class
+  case of (P4) at a gate whose W-face leads to c_W (both faces of class (c_W, ∅)) is proved by a length argument
+  (`gate_of_cls_eq_none`: the level-0 sub-case that box 208's text lacks; reported to the Lead 18:00Z, routed by him to L-NEW 73) that
+  Addendum B1 (5) does not give; it is needed only for `quiet` (Y := all vertices). (P6) follows REFEREE
+  32's repair (claude/referee R-box208-preread §5.2 = Addendum B1 (1)(a)). (e) No run in the data comes near the bound (T ≤ 22 on the
+  11 pinned genomes): the data test the transcription, the Lean proof is what bounds T.
+  Not formalized: RESULTS R123 NO-TIE (not needed on this route); box 208 (L4), §5-§6 (WIN, R-INT, R-HEIGHT, K1-TCYC, FVS-TCYC), §10's
+  reading of IDEAL-CYC as a shortest-path game; anything on Γ3, N5′-xi, N5.
 - PLATEAU, abstract one-player form (box 208 Addendum A2, steps (P5) + (P7)): `plateau : PlateauStatement V` is Lean-checked (lane),
   no premise (M). The Lead accepted `PlateauStatement` (14:54Z) with its three deviations from A2's wording: (a) one statement on the
   original vertex set with Y ⊆ V, instead of a separate game H; (b) the bound |Ch|; (c) (P6) only for t < b.
-  - (P1)-(P4) and (P6) are HYPOTHESES of the Lean statement. Showing that a plateau of IDEAL-CYC satisfies them is genome work (box 208
-    A2's text) and is NOT formalized.
+  - (P1)-(P4) and (P6) are HYPOTHESES of the Lean statement `PlateauStatement`. That a plateau of IDEAL-CYC satisfies them is now
+    `plateau_g` (PGLemmas/GenomePlateau.lean, through `IdealCycRun.window_le`).
   - The bound is |Ch| (the movers of Y, so ≤ N), from LAM-GAP SHARP; A2 (P7) has n_E(H) ≤ N + 2M + 5 from BR-SEG-G (a). Lead 14:54Z:
     «Your reading that the bound drops to |movers of Y| ≤ N matches L-RED 66's lane remark (R235 «second route») and REFEREE 32's
     (`brseg` with Mov = movers of Y). Record it as agreement of three, still lane-level.» (L-FORMAL has not opened those two texts.)
@@ -136,14 +179,32 @@ Allowed axioms: propext, Classical.choice, Quot.sound. No sorry, no admit, no ne
                             K0 → K3 → K2 → K1), `cW_notMem_pset`.
 - PGLemmas/GenomeK15.lean   `Genome.k1 : G.K1Statement`, `Genome.k5 : G.K5Statement`; `IdealCycRun.f1` (F1 along a run).
 - PGLemmas/GenomeK4.lean    `Genome.k4 : G.K4Statement` ((K4) GATES); `OptCounter.le_succ` (RESULTS R123 LOC-GATE in ⊴ form, any game);
-                            `le_of_underProgAt` (the converse of `underProgAt_of_le` at a vertex that is not its own cycle node).
-- PGLemmas/GenomeOrderStatement.lean  ClassOrder as a DEFINITION AND A STATEMENT (PROPOSED to the Lead): `Genome.clsKey` (the key
-                            (rew Λ, Σ_{x ∈ E} 2^(pr x)) in ℤ ×ₗ ℤ) and `ClassOrderStatement`.
-- PGLemmas/GenomeLevelStatement.lean  STATEMENTS ONLY, PROPOSED to the Lead, NONE PROVED: box 208 §3 (L2), (L3), (L5) on the genome
-                            (`Genome.ck`, `L2Statement`, `L3Statement`, `L5Statement`), Addendum A's Lemma PLATEAU with the bound N
-                            (`PlateauGStatement`), the quiet window (`QuietStatement`: the content of RESULTS R126 QUIET-N, with no
-                            premise), Theorem ALL-TCYC with the lane's bound (`AllTCycStatement`) and with the bound of the Lean route
-                            (`AllTCycSharpStatement`). The deviations from the lane text are listed in the file's header.
+                            `le_of_underProgAt` (the converse of `underProgAt_of_le` at a vertex that is not its own cycle node);
+                            `optCounter_of_local` (a counterstrategy that no single-vertex deviation improves at the deviating vertex
+                            is optimal: the Lean bridge for check/idealcheck.py's counter `devfail`).
+- PGLemmas/GenomeOrderStatement.lean  ClassOrder as a DEFINITION AND A STATEMENT: `Genome.clsKey` (the key (rew Λ, Σ_{x ∈ E} 2^(pr x))
+                            in ℤ ×ₗ ℤ) and `ClassOrderStatement`.
+- PGLemmas/GenomeOrder.lean `Genome.class_order : G.ClassOrderStatement`; `clsLt_iff`, `clsKey_lt_iff`, `clsKey_le_iff`,
+                            `clsKey_injective`, `clsLt_total`, `clsLt_trans`; `pw_lt_of_max`.
+- PGLemmas/GenomeLevelStatement.lean  STATEMENTS ONLY: box 208 §3 (L2), (L3), (L5) on the genome (`Genome.ck`, `L2Statement`,
+                            `L3Statement`, `L5Statement`), Addendum A's Lemma PLATEAU with the bound N (`PlateauGStatement`), the quiet
+                            window (`QuietStatement`: the content of RESULTS R126 QUIET-N, with no premise), Theorem ALL-TCYC with the
+                            lane's bound (`AllTCycStatement`) and with the bound of the Lean route (`AllTCycSharpStatement`). The
+                            deviations from the lane text are listed in the file's header.
+- PGLemmas/GenomeLevel.lean `Genome.l2`, `l3`, `l5`; `ck_eq_iff`, `ck_le_iff`, `ck_lt_iff` (keys against classes),
+                            `IdealCycRun.ck_mono` ((K1) on keys), `cls_succ_le` (the class does not rise along the play),
+                            `IdealCycRun.cls_const` (the classes that never change).
+- PGLemmas/GenomePlateau.lean  `Genome.plateau_g : G.PlateauGStatement`, `Genome.quiet : G.QuietStatement`; the window lemma
+                            `IdealCycRun.window_le`; (P4) `IdealCycRun.gate_const` with `gate_of_cls_eq_some`,
+                            `gate_of_cls_eq_none`; `succ_eq_eface` (the only predecessor of e_g is g), `cW_dom`, `pset_of_lam_cW`.
+- PGLemmas/GenomeAllTCyc.lean  `Genome.all_tcyc_sharp : G.AllTCycSharpStatement`, `Genome.all_tcyc : G.AllTCycStatement`: the assembly
+                            by `level_count`, `l5`, `plateau_g` and `quiet`.
+- PGLemmas/GenomeRunStatement.lean  STATEMENT ONLY: `RunExistsStatement` (a run of IDEAL-CYC(G) from the genome's start exists and
+                            stops).
+- PGLemmas/GenomeRun.lean   `Genome.run_exists : G.RunExistsStatement`; `exists_best`, `howardNext`, `howardNext_spec` (Howard's
+                            choice is a `HowardAt` step), `runSeq`, `run_prefix`.
+- PGLemmas/GenomeExample.lean  `Genome.tiny` (one mover, two options, 13 vertices), `tiny_wf`, `tiny_better`, `tiny_run` (a run of
+                            length 1 from the start); `setLt_insert_of_lt`, `ext_ext_lt`, `core_closed`.
 - PGLemmas.lean             the library root (imports).
 - Axioms.lean               `#print axioms` of every theorem above.
 - INDEX.md                  lane text ↔ Lean statement ↔ Lean theorem, with the premise each statement keeps.
@@ -159,9 +220,17 @@ Allowed axioms: propext, Classical.choice, Quot.sound. No sorry, no admit, no ne
                             `FromStart`, `Stopped`, as Genome.lean states them, on the run of the fleet's engine
                             (experiments/new/box191/idealcyc.py with experiments/si/si.py; σ̄_t = si.py's counterstrategy). `opt` is
                             checked as agreement with si.py's optimum, value by value, plus every single-vertex deviation of σ̄_t; full
-                            enumeration is not done. Twelve counters, all must be 0; the controls IDEAL_CTRL=how (HowardAt broken) and
-                            IDEAL_CTRL=opt (one gate made non-optimal) must fire. Frozen outputs: check/out/idealcheck*.out.
+                            enumeration is not done (by `optCounter_of_local` the single-vertex deviations suffice). It also checks
+                            the fields of `Genome.WF` on the genome file. Thirteen counters, all must be 0; the controls
+                            IDEAL_CTRL=how (HowardAt broken), IDEAL_CTRL=opt (one gate made non-optimal) and IDEAL_CTRL=wf (GRADED
+                            broken) must fire. Frozen outputs: check/out/idealcheck*.out.
                             `python3 -I lean/lemmas/check/idealcheck.py experiments/new/box191/inst/*.json` (about 75 s).
+- check/levelcheck.py       DATA, not Lean: evaluates the conclusions of `L2Statement`, `L3Statement`, `L5Statement`,
+                            `PlateauGStatement`, `QuietStatement`, `AllTCycSharpStatement` and (K1) on keys, as the Lean file states
+                            them, along the same engine runs as idealcheck.py, for every reference state b. Eight counters, all must
+                            be 0; descriptive counts of fronts, stalls and plateaus; LEVEL_CTRL=1 (the front taken at the highest
+                            lagging key) must fire. Frozen outputs: check/out/levelcheck*.out.
+                            `python3 -I lean/lemmas/check/levelcheck.py experiments/new/box191/inst/*.json` (about 10 s).
 - check/abscheck.py         DATA, not Lean: a Python transcription of AbsStatement.lean (d by Bellman-Ford and, for n ≤ 7, by enumerating
                             the paths of the definition), run on random shortest-path games: the hypotheses are satisfiable with T ≥ 1 and
                             both conclusions hold at every step. Counters dfail / hypfail / boundfail / c2fail / lastfail must be 0;

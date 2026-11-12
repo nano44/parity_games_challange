@@ -52,3 +52,16 @@ import PGLemmas
 #print axioms PG.Genome.prio_K1_lt_top
 #print axioms PG.OptCounter.le_succ
 #print axioms PG.Genome.k4
+#print axioms PG.Genome.class_order
+#print axioms PG.Genome.l2
+#print axioms PG.Genome.l3
+#print axioms PG.Genome.l5
+#print axioms PG.Genome.IdealCycRun.window_le
+#print axioms PG.Genome.plateau_g
+#print axioms PG.Genome.quiet
+#print axioms PG.Genome.all_tcyc_sharp
+#print axioms PG.Genome.all_tcyc
+#print axioms PG.optCounter_of_local
+#print axioms PG.Genome.run_exists
+#print axioms PG.Genome.tiny_wf
+#print axioms PG.Genome.tiny_run
