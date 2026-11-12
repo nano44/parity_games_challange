@@ -1,6 +1,23 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 74; session_01V5yGRYHKYSjsfxFEDcsyEP; started 2026-11-12 ~19:58Z; GO 20:37Z)
+- Step 0: handover check e7dff7d1 (VERIFY PASS 20:35Z; Lead accepted; «go» 20:37Z: start with BOX 212 (a), then RF-A, RF-B; paper
+  statements to match L-FORMAL 3's IdealImpRun, ImpNonStall <= 2M(N + 2M), ImpK5New (commit pending on claude/l-formal); box 209
+  Addendum B (N-1..N-3) when there is room; any P-N5-LEVEL referee item first). Container came up 3 behind origin (ff'd). Oink built.
+  Slip: first local commit had a model-name trailer; reset --soft before any push (reported to the Lead).
+- ~20:38Z (the message's header says 20:52Z: I TYPED that time, not from date -u; my slip, to be reported) asked the Lead for successor 73's 18:29Z paragraphs (RF-C, kill (i)-(iii), DATA (a)/(b)) verbatim: they are in no file.
+- BOX 212 (a) verdict (proofs read ~20:37-20:40Z): R123 CN2 (P-N5-QUIET §2), LOC-GATE, LOC-K2 (§3), B-ONLY, NO-TIE (fixes entry 1) and
+  R125 CN2-3, LOC-GATE3, LOC-K2-3, B-ONLY3, NO-TIE3 (P-N5-CHAIN §2, §5) use no run property (no F1, DOM, rule): CN2 / CN2-3 every
+  positional pair of Gamma / Gamma3; the others every IDEAL-CYC state / every standard state ([OPT] + shape + the frozen core).
+- RF-A key facts: (K1) from F1 (R15 (a) for any non-empty unambiguous improving set) + (K2), core by (K3 (e)); K5-NEW is one line:
+  class_(t+1)(x) = class_(t+1)(sigma_(t+1)(x)) (K3 (c)) >= class_t(sigma_(t+1)(x)) (K1). (L4) is where Howard enters (uses K5 at
+  sigma_b). RF-B: (P1), (P2), (P4) rule-free; H_Y keeps only the gates IN Y; NOT (P3), (P6), (P7). Tail = window with Y = V (gates
+  constant: case 3 needs B-ONLY for e_g -> c_W).
+- Tool experiments/new/box212/rf212.py (imports box208/rv208.py; RULE=howard|allrand|allleast|onebest|onerand|oneleast|subrand) +
+  run212.sh A (frozen 81 x 7 rules, resumable per line) / B (random 300 x 7) / C (rstart) / D (control). A and B started ~20:40Z as
+  tracked tasks (B done 0 must-0 hits; C started after B); outputs experiments/new/box212/out/. Doc to write: docs/new/N5-RFLEVEL-box212.md.
+
 ## HANDOVER (successor 73, PARKING 2026-11-12 ~19:06Z by date -u; BOX 211 frozen and on origin; BOX 212 proposed to the Lead, NOT started)
 ### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
 - 5ca65a0a handover check (Lead accepted, «go» 17:52Z).

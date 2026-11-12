@@ -375,3 +375,35 @@ G-N5-TIME stays OPEN; every statement a CANDIDATE.**
 - (5) Box 210 (docs/new/N5-GENLEVEL-box210.md) states the same argument for games in split form. Γ3(G) is not in split form and its
   e-vertices are not an up-set of even vertices (K3, K0 and c_W lie above them), so this box is NOT an instance of box 210's Theorem OF:
   it is an analogue with its own proofs (see box 210 Addendum A).
+
+## Addendum B (L-NEW successor 74; written 2026-11-12 20:48Z by date -u: REFEREE 33's pre-read notes N-1..N-3 applied; wording only; no statement, bound or label changes)
+The body and Addendum A are unchanged. **SCOPE LINE and LABEL as above: HOW3(G) on Γ3(G) / N5′-xi from S3 up to its first fallback;
+not N5, not M4; G-N5-TIME stays OPEN; every statement a CANDIDATE.** Source of the three notes (L41: referee-originated, credited):
+REFEREE 33, R-box209-preread.md §3 (claude/referee 90703a81), a PRE-READ and not a signature. Its verdict there: «No FALSE statement
+found; no instance against any step.» Quotes on the bullets below whose tag names a source (Q, a space, then an R-id or PATH@COMMIT)
+are checked by experiments/new/box212/quotes212.py (output experiments/new/box212/quotes209B.out); that tool skips the body's bullets
+tagged with Q alone, which stay quotes209.py's.
+- (B1) N-1, (P2)'s citation. (P2) cites (K3′ c, d). For an e-vertex e whose successor is c_W neither clause applies. There the class
+  is that of c_W: e's play is e, c_W, c_W, …; its cycle node is c_W, which is more relevant than every e-vertex (R104's [DEF]: c_W's
+  priority top lies above every other priority outside K0, K3), so Π(e) = ∅ and class_t(e) = (c_W, ∅) = class_t(c_W) at every state.
+  Read (K3′ e) as also saying «an e-vertex with successor c_W has the class (c_W, ∅) of c_W», and (P2)'s proof as «class_s(s_s(x)) ≤
+  class_s(x) ≤ m by (K3′ c, d), and by (K3′ e) (equality) for an e-vertex whose successor is c_W; (P1)». (Its pad pe_g is not an
+  e-vertex: (K3′ c) applies to it.) This is P-N5-LEVEL (K3 (e))'s wording, frozen at l-new 1e6df499.
+- (B2) N-2, H0 in (P7). Landed BR-SEG-G's H0 is a hypothesis on EVERY step of the Howard run it speaks of. (P7) shows it for the steps
+  u → v; it also holds at every step of every Howard run of H: a step switches an Even vertex with a choice, i.e. a mover of Y, and a
+  mover is never the cycle node of its play under any positional pair of H (such a pair extends to a positional pair of Γ3(G) with the
+  same plays from Y, because Y is closed in H; CN2-3, «for every positional pair», box 212 §2). (P6) is what makes the plateau's steps
+  consecutive steps of that run. The same two sentences stand for PLATEAU3 (ii) (the tail, H := Γ3(G) with the non-movers restricted).
+  This is P-N5-LEVEL (P7)'s wording. Lean (lane-level, not a premise): PG.brsegG (hypotheses on the segment only), claude/l-formal
+  f74d38a4, built by REFEREE 33 (pre-read §3: «Lean-checked (lane)» until CHECKER passes it).
+- (B3) N-3, the readings of the construction. (D1′), (D3′), (D4′) and (E-DOM3) of §1 are READINGS of R104 / R117's text, not quoted
+  lines. They are cited, as the landed packet P-N5-CHAIN does, from its §2 and §5 (the packet landed as R125; file
+  docs/new/P-N5-CHAIN.md at trunk 7fa6aff4, sha1 6e613ba762b6ecf67247ef6d8674b4c960013039):
+- [Q docs/new/P-N5-CHAIN.md@7fa6aff4] (D1′): «e_g's only in-edge is from pe_g, and pe_g's only from g» (B-ONLY3's proof). (D3′):
+  «(Core) In standard states and in HOW3: K0 → pA → K3 → K2 and K1 → s → K1 are frozen»; «K3's only in-edge is from pA, pA's only from
+  K0; K0's in-edges are from q (q's only in-edge is from K1, which plays s) and from the pb's. So a play passes K0 iff it passes K3, iff it
+  enters the core through some pb_g; K0 and K3 lie on no cycle.» (D4′) for c_X: «c_X has no in-edge but its loop». (E-DOM3): «(E-DOM)
+  Every vertex more relevant than some e-vertex is an e-vertex, c_W, K0 or K3 ((R)).»
+- [Q R104] (D4′) for c_W, from [DEF]: «with one edge to the W-target or to the top even self-loop c_W»
+- What this addendum does not do: re-run anything (the notes change no counter), fold Addendum A into §1 (REFEREE 33's P3-1 asks that of
+  a PACKET; box 209 is not frozen as one), or answer P3-2 / P3-3 (packet questions, the Lead's call).
