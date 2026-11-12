@@ -1132,4 +1132,12 @@ if [ "$r206" -eq 0 ] && [ -z "$d206" ] && ! grep -v "^ctrl" box206/check206.out 
 else
   echo "BOX 206 DEPTH check: FAILED (check206.sh exit $r206)"; echo "$d206" | head -30; echo "$run206" | tail -15; exit 1
 fi
+# BOX 207 RLOCAL (L-NEW successor 71): R-LOCAL must-0 counters, DEAD race-flip charges (K1L10 deepnoR 5, B400_r32 step 43), control
+r207=0; run207=$(cd box207 && bash check207.sh 2>&1) || r207=$?
+d207=$(diff <(printf '%s\n' "$run207") box207/check207.out 2>&1) || true
+if [ "$r207" -eq 0 ] && [ -z "$d207" ] && ! grep -v "^ctrl" box207/check207.out | grep -Eq "(rrep|ifail|qfail) [1-9]" && grep -q "^ctrl .*rrep [1-9].*ifail [1-9].*qfail [1-9]" box207/check207.out && grep -q "^K1L10_n48.json .*deepnoR 5 " box207/check207.out && grep -q "^B400 43 NO-Rchange (62, 1)e" box207/check207.out && (cd box207/inst && sha1sum -c --quiet SHA1SUMS); then
+  echo "BOX 207 RLOCAL: R-LOCAL counters 0, control fires, DEAD charges (K1L10 deepnoR 5, B400_r32 step 43) = frozen: PASS"
+else
+  echo "BOX 207 RLOCAL check: FAILED (check207.sh exit $r207)"; echo "$d207" | head -30; echo "$run207" | tail -15; exit 1
+fi
 rm -rf "$tmp"

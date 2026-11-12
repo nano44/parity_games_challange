@@ -1,0 +1,9 @@
+MWR4_2.json T 30 R 47 DR 10 cint 2 loudint 8 flipint 2 Rint 2 deepnoR 0 efail 0 pR 0 rrep 0 ifail 0 qfail 0
+K1L10_n48.json T 31 R 28 DR 15 cint 2 loudint 7 flipint 2 Rint 3 deepnoR 5 efail 0 pR 0 rrep 0 ifail 0 qfail 0
+B400_r32_a13d9661.json T 49 R 83 DR 34 cint 3 loudint 4 flipint 2 Rint 2 deepnoR 0 efail 1 pR 0 rrep 0 ifail 0 qfail 0
+CWRR4_n.json T 28 R 47 DR 3 cint 2 loudint 19 flipint 1 Rint 1 deepnoR 0 efail 0 pR 0 rrep 0 ifail 0 qfail 0
+CFI3_n48.json T 24 R 29 DR 3 cint 4 loudint 11 flipint 3 Rint 9 deepnoR 0 efail 5 pR 0 rrep 0 ifail 0 qfail 0
+RINT_n48.json T 24 R 29 DR 2 cint 7 loudint 22 flipint 3 Rint 2 deepnoR 0 efail 2 pR 0 rrep 0 ifail 0 qfail 0
+ctrl MWR4_2.json T 30 R 47 DR 2 cint 2 loudint 10 flipint 1 Rint 2 deepnoR 0 efail 4 pR 0 rrep 8 ifail 1 qfail 1
+B400 43 NO-Rchange (62, 1)e eR[0, 0] bR[0, 1] gOnRplay[0, 0]; (86, 0)e eR[0, 0] bR[0, 1] gOnRplay[0, 0]
+CFI3 6 NO-Rchange (32, 0)e eR[0, 0] bR[0, 0] gOnRplay[0, 0]

@@ -43,6 +43,15 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   Q's gate beta from t = 9, Lam(R) = beta_(R,0) prio 218 even); DEAD stays; L-RED rearm231 sweep cited as DATA; OPEN shape kept.
   check206.sh gains the CWRR4 ediag line; check.sh greps it.
 - Next: research DEEP-k1 via race-flip-at-R charge (L-RED: on CW(n) Q_(>c) ~ n - c, so the target is a polynomial bound).
+- 06:29Z Lead approved box 207 plan + asks (1) split vs reduction, (2) R122 premises by script, (3) freeze instances.
+- BOX 207 (docs/new/N5-RLOCAL-box207.md; experiments/new/box207/ rlocal207.py, window207.py, quotes207.py (7/0 at b3d7294c), check207.sh;
+  check.sh «BOX 207 RLOCAL»): Lemma R-LOCAL (PROVED lane, elementary): DEEP-k1 <=> (Q1) D^tot(R) poly AND (Q2) R-INT (loud steps per
+  constant-class(R) window poly) = a SPLIT, not an easier question; (Q1) strictly weaker in the sense CWR(n): D(R) 3, T linear.
+  DEAD: naive race-flip charge (K1L10_n48 steps 27-31, both R 28/46), EFLIP-R (B400_r32 step 43). (Q2) outside R122: hypothesis «Xi-graph
+  acyclic» fails; CFI3_n48 window [4,18] gate (32,0) e-face at t = 6, 8 R-steps. Frozen CFI3_n48 (d55b20b8), RINT_n48 (35b48913; climb
+  lambda_max 22 at N 48). Withdrawn before writing: «class(R) never changes at p-steps» (random pR 23).
+  Things only I know: scratch climbers climbfi.py / climbli.py (scratchpad; objective via rlocal-style counters); climbs are ~1 it/s at N 48.
+  Next idea (§6): «paid chain» invariant for e-faces inside a window (each e-face taken is paid by R's fixed epsilon), test on CFI3's lane.
 
 ## Resume point (successor 70, Opus; session_01V5yGRY45JmHVuQdwncwSps; started 2026-11-12 ~01:19Z; GO 01:46Z)
 - Step 0: handover check 09bb6aa7 (VERIFY PASS; Lead score 5/5). Stale container (1053 behind) fast-forwarded to f736b2ab.

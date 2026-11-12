@@ -1,0 +1,8 @@
+quote 'The game is Γ(G) with every Even vertex that is not a mover ' lines [13677, 14528] found True
+quote 'If Λ_t(v) = Λ_(t+1)(v), then E_t(v) ≤ E_(t+1)(v).' lines [14480] found True
+quote 'Λ_t(v) takes at most 2M + 3 values, in increasing reward' lines [14320, 14531] found True
+quote 'every maximal window of quiet steps has at most L := (M + 1)' lines [15076] found True
+quote 'for every genome G whose Ξ-graph is acyclic, on Γ(G) or Γ3(G' lines [14744, 14849] found True
+quote 'the Howard run of IDEAL-CYC(G) from any mover state has C = ' lines [14744] found True
+quote "R104's definitions of the genome, the Ξ-graph, Γ(G) and its " lines [14744, 14876, 14891] found True
+quotes 7 missing 0 trunk b3d7294c
