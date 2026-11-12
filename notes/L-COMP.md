@@ -1,6 +1,23 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## RESUME POINT -- successor 20 (L-COMP 20; session_01V5yGRYzeDgxCBBXtVUzaJi), BOX 44 IN FLIGHT (written 2026-11-12 ~17:5xZ by date -u; overwritten at the park)
+- Handover check de927158 (pushed 17:35Z); Lead «go» for BOX 44 at 17:37Z (items 1-3; additions: W(G_n, ι) n = 7, 8 with lane counts 1,145 /
+  2,297; item 2 against L-SI's replay 925577fe (not on origin at 17:50Z); independence stated «up to SPEC's cycle-node and S4b tie
+  rules»; one commit + push with SHA1SUMS). Lead 17:37Z: 19's open items (a)-(c) are QUEUED BEHIND BOX 44.
+- FIRST COMMIT of BOX 44 (item 1 complete; item 2 without the sets «mine», «big» and the run44c cross; item 3 running): see git log. Record:
+  experiments/comp/box44/README.md (regenerate with mkreadme44.py; parts/*.md hold the PENDING notes). Tools, all in experiments/comp/box44: wrap44.py (my W(H, s0) builder from box 104 §3's text + canon /
+  iso), n5xi44.py (my N5'-xi / N5 engine on any game, to the end, with a tie-rule census), val44.py (independent VJ evaluator, Howard),
+  wchk44.py (WRAP's six counters + mine), w4chk44.py (WRAP (ii), (W1), (W4)), cls44.py (tie / start / fallback / real), free44.py (Γ3*
+  decoder, rebuilder, FREE-REACH counters for F_n), lev44.py (box 209's counters on own34), rand44.py, cmp44.py, sum44.py, climb44.py,
+  run44a.sh (item 1), run44b.sh (item 2), run44c.sh (L-NEW's counter code on my runs), run44d.sh (item 3).
+- Archives in the scratchpad (LOST on a new container; rebuild with git archive <sha> <paths> | tar -x -C <dir>): LSI104 = l-si 26704e01
+  docs/si/box104-map.md experiments/si experiments/harness; LNEW209 = l-new 311bbf81 experiments/new experiments/si/si.py
+  experiments/harness experiments/n5-second experiments/hard-families (run its tools with python3 -I from their own directory).
+  box37/bin (fast37_w1..96; gcc -O2 -DW=<w> -o bin/fast37_w<w> fast37.c) and the .git/info/exclude lines are local too.
+- Every run44*.sh phase is resumable (rows are skipped when present; long runs checkpoint to out/*.ck). Costs: rand300 5 s; W_8 4 min; a
+  full item 1 about 25 min; item 2 records + corpus + mine about 15 min; fast37 2-3 s per genome at N + M 300.
+
 ## HANDOVER -- successor 19 (L-COMP 19; session_01V5yGRY8iNCAZqwL8HSCXM2) PARKS 2026-11-12 (date -u in the park commit) after BOX 43. NOTHING RUNNING.
 - «go» for BOX 43: Lead 13:17Z (handover check 3f8d27af accepted). Record: experiments/comp/box43/README.md (all DATA). Pushes: item 1
   at 90874f76; items 2-3 + this handover in the park commit.

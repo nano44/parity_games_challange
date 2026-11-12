@@ -1,0 +1,8 @@
+CLS44 tiemin game 9: tie at state 1 | A: T 3 (iterations, fallbacks, first) (6, 1, 4) | B: T 3 (6, 1, 4)
+CLS44 tiemin game 77: tie at state 1 | A: T 2 (iterations, fallbacks, first) (5, 1, 3) | B: T 3 (6, 1, 4)
+CLS44 tiemin game 198: tie at state 2 | A: T 3 (iterations, fallbacks, first) (6, 1, 4) | B: T 2 (5, 1, 3)
+CLS44 tiemin game 219: tie at state 1 | A: T 3 (iterations, fallbacks, first) (6, 1, 4) | B: T 3 (6, 1, 4)
+CLS44 tiemin game 281: tie at state 1 | A: T 3 (iterations, fallbacks, first) (6, 1, 4) | B: T 3 (6, 1, 4)
+CLS44 tiemin game 297: tie at state 1 | A: T 2 (iterations, fallbacks, first) (5, 1, 3) | B: T 2 (5, 1, 3)
+CLS44 tiemin game 298: tie at state 1 | A: T 2 (iterations, fallbacks, first) (5, 1, 3) | B: T 3 (6, 1, 4)
+CLS44 tiemin vs mine, games 0-299 of rand300.json: same 293 start 0 tie 7 real 0 fallback 0 | games whose counts differ 3

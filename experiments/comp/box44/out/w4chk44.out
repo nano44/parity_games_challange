@@ -1,0 +1,15 @@
+W4CHK44 json rand300.json games 300 alg xi factor 6 | tauch 0 itau 0 w4a 0 w4b 0 w4c 0 w1 0 oddties 290 | iterations (sum) 1248
+W4CHK44 json rand300.json games 300 alg xi factor 5 | tauch 0 itau 0 w4a 0 w4b 3818 w4c 4571 w1 0 oddties 290 | iterations (sum) 1248
+W4CHK44 json rand300.json games 300 alg spec factor 6 | tauch 0 itau 0 w4a 0 w4b 0 w4c 0 w1 0 oddties 215 | iterations (sum) 1081
+W4CHK44 fam switchall n 2 alg xi factor 6 | tauch 0 itau 0 w4a 0 w4b 0 w4c 0 w1 0 oddties 0 | iterations 33 fallbacks 1
+W4CHK44 fam switchall n 3 alg xi factor 6 | tauch 0 itau 0 w4a 0 w4b 0 w4c 0 w1 0 oddties 0 | iterations 73 fallbacks 1
+W4CHK44 fam switchall n 4 alg xi factor 6 | tauch 0 itau 0 w4a 0 w4b 0 w4c 0 w1 0 oddties 0 | iterations 153 fallbacks 1
+W4CHK44 fam switchall n 5 alg xi factor 6 | tauch 0 itau 0 w4a 0 w4b 0 w4c 0 w1 0 oddties 0 | iterations 313 fallbacks 1
+W4CHK44 fam switchall n 6 alg xi factor 6 | tauch 0 itau 0 w4a 0 w4b 0 w4c 0 w1 0 oddties 0 | iterations 633 fallbacks 1
+W4CHK44 fam lmcs n 1 alg xi factor 6 | tauch 0 itau 0 w4a 0 w4b 0 w4c 0 w1 0 oddties 0 | iterations 11 fallbacks 1
+W4CHK44 fam lmcs n 2 alg xi factor 6 | tauch 0 itau 0 w4a 0 w4b 0 w4c 0 w1 0 oddties 0 | iterations 29 fallbacks 1
+W4CHK44 fam lmcs n 3 alg xi factor 6 | tauch 0 itau 0 w4a 0 w4b 0 w4c 0 w1 0 oddties 0 | iterations 65 fallbacks 1
+W4CHK44 fam lmcs n 4 alg xi factor 6 | tauch 0 itau 0 w4a 0 w4b 0 w4c 0 w1 0 oddties 0 | iterations 137 fallbacks 1
+W4CHK44 fam lmcs n 5 alg xi factor 6 | tauch 0 itau 0 w4a 0 w4b 0 w4c 0 w1 0 oddties 0 | iterations 281 fallbacks 1
+W4CHK44 fam lmcs n 6 alg xi factor 6 | tauch 0 itau 0 w4a 0 w4b 0 w4c 0 w1 0 oddties 0 | iterations 569 fallbacks 1
+W4CHK44 fam lmcs n 3 alg xi factor 5 | tauch 0 itau 0 w4a 0 w4b 2079 w4c 3528 w1 0 oddties 0 | iterations 65 fallbacks 1
