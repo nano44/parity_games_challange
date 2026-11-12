@@ -5,7 +5,7 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 - On origin: B verdict 43824abc (P-N5-LEVEL all SIGN, L-1 SIGN WITH GAP R-1); A = R2-P-N5-GATE Add. 6 4a6db414 (agrees with REFEREE 34 §L).
 - Lead 21:28Z: L-NEW 74 writes ONE L-2 (my R-1, R-2 + REFEREE 34's LT-1..LT-3, LO-1) after REFEREE 34's review lands; I byte-test it (that is
   the agreement check; preempts). This commit adds R2-P-N5-LEVEL Addendum 1 (N-2 measured at l-formal 78c32d90, optional item 1).
-- ITEM C (Lead 22:02Z): second review of P-N5-WRAP (l-si e01447e7; packet 1670432a, 56,745 B; L-1 896f9e97). Boxes 1-2 in this commit:
+- ITEM C (Lead 22:02Z): second review of P-N5-WRAP (l-si e01447e7; packet 1670432a, 56,745 B; L-1 896f9e97). Boxes 1-2 in 3cf594cc, box 3 + VERDICT in the next commit (all SIGN; XI-EXP CONDITIONAL; L-1 SIGN WITH GAP R-1, R-2):
   Claim NT SIGN (re-derived from [F11] PDF, sha256 46c96f44…, in scratchpad pdf/), NT-RUN SIGN CONDITIONAL on WRAP, WRAP (i)-(v) SIGN.
   Tool R2-P-N5-WRAP/r2wrap.py (+ sweep.out: all 0; controls start / worst / ntrand fire). Box 3 (XI-EXP, DEAD row, DATA, TARGET, L-1,
   verdicts) still to write: draft in scratchpad report/. Do NOT read docs/referee/ on WRAP before box 3 is on origin; afterwards check the

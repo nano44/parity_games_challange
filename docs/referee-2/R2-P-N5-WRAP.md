@@ -169,3 +169,107 @@ My proof (the same route as the packet's; written before comparing the wording):
 All five parts follow as the packet states: (i) S3-W; (ii) TAU-W; (iii) REACH-W; (iv) ENDGAME-W with REACH-W; (v) REACH-W's N5 half and
 ENDGAME-W. Premises used: [SPEC] S1-S5 with FIX 1, FIX 3; [N5XI]; [1E-N3] P1, P2; [DUAL]; [R15c], [R15d] (and [R15a] in NT-RUN only).
 WRAP uses no property of H (Remark 1): correct, my random games have any owners, equal priorities, self-loops and degrees 1-3.
+
+## Box 3: remarks, XI-EXP, DEAD row, DATA, own replay, TARGET.md diff, line L-1, verdicts
+
+### 3.1 §5 Remarks
+- Remark 1 (READING): agreed; my random games use any owners, equal priorities, self-loops, out-degrees 1-3.
+- Remark 2 (READING): not checked by me; it is not to sign.
+- Remark 3 (PROVED under [RULE]): given [RULE]'s choice rule as the packet quotes it (SPEC's S4a pick is the key-least option of TIE(v);
+  RESULTS R24 (b)), the argument holds: by ESC-W every option's arena play is m → g → pe → c_W at every standard state, so each option's
+  root-first key is a fixed index sequence, each move of v goes to a strictly smaller key, at most deg(v) − 1 moves per v, F ≤ m_E −
+  |V_E| + 1. I did not re-prove [RULE] itself (a premise here). DATA, mine: rem3 0 (unit: N5 runs with F > m_E − |V_E| + 1) on 600 random
+  wrapped games (300 in §2.1's order, 300 permuted); F ≤ 4 there. N5 on W(G_n, ι), n = 1, …, 4: 3 iterations (F = 1) in MY numbering of
+  G_n (names x, s, c, r, t, a, d, e, g, k, f, h; successor lists by index): as the packet and REFEREE 33 (quoted in §9) say, N5's count
+  depends on the indices (the lane's frozen numbering gives 6); the bound does not.
+
+### 3.2 §7 Statement XI-EXP: SIGN as a CONDITIONAL statement
+- The implication is correct: WRAP (iv) gives T + 3 iterations on W(G^L_n, ι), NT-RUN makes T the I^loc step count of [F11] Theorem 6.14,
+  and the theorem gives T ≥ 2^n. |W^L_n| = 10.5n² + 152.5n + 48 (n_H = 10n + 4, m_E = 1.5n² + 14.5n + 4, m_O = 6n + 1, n_O = 5n + 1, which I
+  recounted from Table 4's successor lists; m_E + m_O = Fact 6.1's 1.5n² + 20.5n + 5). Since n ≥ √(|V|/211), 2^n = 2^Ω(√|V|):
+  super-polynomial in |V|. «Exponential» only in n (F-3): agreed.
+- It STAYS CONDITIONAL: (1) on WRAP and Claim NT being signed by both referees (I sign both here; the other signature is REFEREE's);
+  (2) on READING F-1. I checked F-1 myself (1.3): Figure-4 priorities are the only reading under which [F11]'s standing injectivity and
+  Fact 6.1's «12 · n + 8 as highest priority» hold; still a reading of a misprint, so it stays named; (3) on Theorem 6.14 as published
+  (F-2: its phase lemmas are written for counter states whose two top bits stay zero; any 2^Ω(n) suffices for «not polynomial»).
+- My DATA: T_n = 9·2^n − 10 for n ≤ 8 on G_n from my own transcription (≥ 2^n), and T + 3 = 11, 29, 65, 137, 281 iterations of N5′-xi on
+  my W(G_n, ι), n ≤ 5, with one fallback each (my counters 0). DATA, not the proof.
+- «It says nothing against N5 … and nothing about RESULTS R118-R125 or boxes 208 / 209»: correct; W^L_n is not a Γ3(G) or a genome game.
+
+### 3.3 §8 DEAD row: SIGN as a draft, DEAD-CONDITIONAL, scope right
+- Candidate: N5′-xi from S3. Claim killed: «N5′-xi makes polynomially many iterations on every parity game» (gauntlet step 4, M4
+  candidacy). Scope: N5′-xi as an M4 candidate only; N5 (SPEC) is explicitly not killed (Remark 3, WRAP (v)); G-N5-TIME stays OPEN. Correct.
+- L43: the killed statement is asymptotic; the row rests on a proof (WRAP + Claim NT + a published theorem), not on finitely many
+  instances; it says «DEAD-CONDITIONAL» until two signatures. That is what L43 allows. The instances are named with sha1 prefixes (not
+  re-hashed by me: box 104's inst/ is outside what I read).
+- Obstruction W-FLAT stated exactly (τ inert by TAU-W; every option of v ∈ V_E tied in S4a's arena by ESC-W; so N5′-xi's pick is Howard's
+  rule on H). Correct.
+
+### 3.4 DATA (§9, §10; L43)
+- §9's clauses name counter, unit, set and scope (WRAP's six counters with units; iteration counts by family; controls named). The rule is
+  met in the packet. §10 is cited DATA of other lanes / REFEREE 33, not re-run, and says so.
+- L-1's DATA clause does NOT name WRAP's counters and cites «18 counters 0 on 523,721 runs» without naming them: R-2 below.
+
+### 3.5 Own replay (R2-P-N5-WRAP/r2wrap.py; sweep.out; counters and units in the tool's doc string)
+| set | runs | fail counters (sum) | notes |
+| --- | --- | --- | --- |
+| random H (n ≤ 8, owners and priorities uniform, out-degree 1-3, ties and self-loops allowed), N5′-xi, seed 3901 | 3,000 | 0 | s3fail, nonstd, e0fail, nohoward, fbwrong, endwrong, kconf, odd5 |
+| the same, N5 (S4a = S1 on the dual arena) | 3,000 | 0 | endwrong, kconf, nonstd, nohoward (moves inside {s(v)} ∪ strictly better) |
+| random H, n ≤ 12, new vertices' indices permuted, N5′-xi / N5, seed 3902 | 1,000 + 1,000 | 0 | statements independent of the order |
+| random H, N5, rem3 (Remark 3's bound), seeds 3905, 3906 (permuted) | 300 + 300 | 0 | F ≤ 4 |
+| W(G_n, ι), n = 1, …, 5, N5′-xi | 5 | 0 | 211 / 395 / 600 / 826 / 1,073 vertices; 11 / 29 / 65 / 137 / 281 iterations, F = T + 1 |
+| W(G_n, ι), n = 1, …, 4, N5 | 4 | 0 | 3 iterations, F = 1 (my numbering) |
+| G_n, n = 1, …, 8, Howard = I^loc from ι, Figure-4 priorities | 8 runs, 4,518 states | 0 | ntfail, tiefail, sinkfail, injfail 0; T_n = 9·2^n − 10 |
+| CONTROL --ctrl start (τ(K2) := r at S3) | 200 | FIRES 3,571 | nonstd 800, e0fail 600, endwrong 200, odd5 1,931, nohoward 40 |
+| CONTROL --ctrl worst (H-check against the WORST successor) | 200 | FIRES 222 | nohoward 222 |
+| CONTROL ntrand (Claim NT's distinctness on random NON-1-sink games) | 300 | FIRES 244 | ntfail 198, tiefail 46 |
+| CONTROL G_n with Table 4's printed priorities | 3 | FIRES 3 | injfail 3 (g_n = a_1); T_n unchanged on n ≤ 3 |
+
+### 3.6 TARGET.md diff (TARGET.md at 7fa6aff4)
+- §1: W(H, s0) is a parity game in §1's sense (every vertex has a successor; priorities ≤ max pr + 11, polynomial, d ≤ n + 1 holds for
+  the W^L_n since max priority 12n + 19 < |W^L_n|). §3: sizes polynomial at bit cost. §2 (M4): XI-EXP, if signed, is a family on which one
+  candidate takes super-polynomially many iterations: a dead end for that candidate, not an algorithm and not a bound. Not M3, not M4, not a
+  gauntlet step (it is the failure of step 4 for N5′-xi). G-N5-TIME (N5) stays OPEN. PASS.
+
+### 3.7 Line L-1 (sha1 896f9e97, 2,648 B) against «To sign»
+- Carries WRAP (i)-(v) in summary, Remark 3's bound under [RULE], Claim NT with its L41 origin, NT-RUN, XI-EXP CONDITIONAL with the
+  reading and «as published», the obstruction, the frozen instances, the scope tail (N5 not affected, G-N5-TIME OPEN, not M3 / M4). It
+  says less than «To sign» on §2 and §4's lemma statements (named, not stated): acceptable for a line.
+- R-1 (REQUIRED). The NT clause speaks of «G_n», but Claim NT's identification of SPEC's values with [F11]'s needs injective priorities,
+  and NT-RUN is stated for G^L_n (Figure 4's priorities); Table 4's G_n is not injective. Old (exactly once in L-1):
+  «no tie occurs on Howard's run of G_n from ι and that run»
+  New: «no tie occurs on Howard's run of G_n (Figure 4's injective priorities, the READING below) from ι and that run»
+- R-2 (REQUIRED, DATA rule: every DATA clause names its counter). Old (exactly once):
+  «REFEREE 33 e44ce56b / 90703a81: 18 counters 0 on 523,721 runs)»
+  New: «REFEREE 33 e44ce56b / 90703a81: its 18 must-be-0 counters, named in its report, 0 on 523,721 runs); WRAP's six must-0 counters
+  (s3fail, nonstd, nohoward, fbwrong, endwrong, wrong; units in the packet §9) 0 on 4,000 random games for N5′-xi, 3,000 for N5, the
+  frozen 300 and W(G_n, ι), W(switchallexp_n) for n ≤ 8»
+  (the counts are §9's; the lane should check them against its outputs when it applies the string).
+- R-3 (optional). Old: «an Even valve with an exit to R117's core» New: «an Even valve with an exit to a closed core K0-K3 (the shape of
+  R117's; no R117 fact is used)». §1 says no R117 lemma is used; the line's wording could be read as a premise.
+
+### 3.8 Verdicts (Opus 5.5, D1). Statements as frozen in P-N5-WRAP at e01447e7.
+| statement | verdict | conditions, gaps |
+| --- | --- | --- |
+| §2 W(H, s0), order, count, (R_W), standard state; §2.4 Fact (H) | SIGN | none |
+| §4.1 PAD-W; §4.2 S3-W = WRAP (i) | SIGN | none |
+| §4.3 K3-W (a)-(d), K2-r-W | SIGN | none |
+| §4.4 ODD-W (a)-(d) | SIGN | none |
+| §4.5 TAU-W = WRAP (ii) | SIGN | none |
+| §4.6 ESC-W | SIGN | none |
+| §4.7 REACH-W = WRAP (iii), first half of (v) | SIGN | none |
+| §4.8 E1-W to E4-W, ENDGAME-W = WRAP (iv), second half of (v) | SIGN | none |
+| Lemma WRAP (i)-(v) | SIGN | none |
+| §5 Remark 3 | SIGN, CONDITIONAL on [RULE] (as labelled) | [RULE] not re-proved by me |
+| §6 Claim NT | SIGN (independent check under L41; author REFEREE 33) | none |
+| §6 Corollary NT-RUN | SIGN, CONDITIONAL on WRAP's second signature | none |
+| §7 Statement XI-EXP | SIGN as a CONDITIONAL statement | stays CONDITIONAL on WRAP and Claim NT signed by both referees, READING F-1 and Theorem 6.14 as published (F-2) |
+| §8 DEAD row (draft) | SIGN as DEAD-CONDITIONAL; scope N5′-xi as an M4 candidate only | DEAD only after both signatures (L43) |
+| line L-1 (896f9e97) | SIGN WITH GAP | «L-1's NT clause names G_n without its priorities; L-1's DATA clause names no counter» (R-1, R-2 exact strings in 3.7) |
+- No statement is REFUSED. No signed proof keeps an open gap. N5 (SPEC) is not affected; G-N5-TIME stays OPEN; not M3, not M4.
+
+### Statement of independence
+- These verdicts rest on my derivations (boxes 1-2) from the packet's text, SPEC's text and the opened PDF, and on my own replay. Before
+  this verdict was on origin I did not open docs/referee/ (REFEREE 33's R-WRAP-preread, any REFEREE review of WRAP), notes/REFEREE.md, box
+  104, L-COMP 20's box 44 or L-RED 66's R236 / R237, nor any lane tool. Claim NT's proof route is REFEREE 33's as the packet quotes it; I
+  re-derived each step against the PDF (1.2).
