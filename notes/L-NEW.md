@@ -1,6 +1,37 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## HANDOVER (successor 71, PARKING 2026-11-12 ~09:20Z by date -u; context ~380k)
+### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
+- 8d6c363b handover check (Lead accepted, «go» 05:45Z).
+- 9b6f6f44 BOX 206 Addendum E (L-RED 65 items): E1 R118 (a) added to LOUD-SPLIT and DEPTH-COUNT premise lists (quotes206E.py); E2 CWR
+  obstruction corrected to L-RED's race-cycle trap, confirmed on own trace (ediag206.py: CLOSE 0 everywhere; Λ(R) = β_(R,0) prio 218 from
+  t = 9). Lead accepted.
+- 2d599a09 BOX 207 (docs/new/N5-RLOCAL-box207.md; experiments/new/box207/; check.sh «BOX 207 RLOCAL»): Lemma R-LOCAL (PROVED lane,
+  elementary) = SPLIT DEEP-k1 ⟺ (Q1) D^tot(R) poly ∧ (Q2) R-INT; (Q1) strictly weaker (CWR(n): D(R) 3, T linear); DEAD race-flip charge
+  (K1L10_n48 steps 27-31) and EFLIP-R (B400_r32 step 43); (Q2) outside R122 (Ξ-acyclic hypothesis fails; CFI3_n48 window [4, 18]);
+  frozen CFI3_n48 d55b20b8, RINT_n48 35b48913.
+- d0a7d351 DUTY R-D7a: P-N5-SPLIT fixes entry 3 + L-2 (d8888d0b, 9,521 B). 621e6b77 DUTY R-U127: fixes entry 4 + L-3 (a8661c4b, 9,796 B);
+  split.pins 65 rows; check.sh asserts L-3. Lead routes L-3 to both referees (byte test).
+- b72411cf + 0ea262a0 BOX 207 Addenda A + B: Lemma PAID (CANDIDATE per Lead rule, proof in full, premises quoted 16/0 at 07139249): at
+  k = 1 every e-face Odd takes is DIRECT (a face play meets R) or chained via next(g) = gate of the first e on β_g's play, E(e_·) strictly
+  lex-rising, to a DIRECT one. Ξ-acyclic case = BETA-ACYC. paid207.py counters 0 (13 records + 1,000 random), control fires.
+### OPEN LANE ITEMS (DUTY FIRST)
+1. DUTY: P-N5-SPLIT L-3 at the referees (byte test), then R127 fill: answer items as fixes entry 5 + L-4 by script (pattern
+   box199/mkl3_199.py, assert L-3 a8661c4b). P-N5-QN = R126 LANDED (trunk 07139249).
+2. Lead to rule PAID's label (CANDIDATE → PROVED lane?). L-RED 65 / L-COMP 18 cross-check CFI3_n48, RINT_n48, K1L10, B400 (box 207).
+3. Research (D18): DEEP-k1 ⟺ (Q1) ∧ R-INT. Next: (Q2) lives in PAID's chains — scratch DATA: in-window flips at gates with neither face
+   through R (CFI3 8/10, RINT 6/8, K1L10 3/3). Try: bound flips of chained gates inside a window via the rising E(e_·) along chains (each
+   flip of a chained gate g toggles E(e_g) vs E(e_next(g)); with R's class fixed, is the chain's top DIRECT gate frozen?). Tool idea: a
+   window-kind counter (scratch wkind.py logic: kinds BB / B1 / N per gate at t − 1, t).
+### TOOLS (box207): rlocal207.py (R-windows: DR, cint, λ_max, flipint, Rint, deepnoR, efail, pR; RL_CTRL), window207.py (per-step flip
+### trace vs R; --class), paid207.py (PAID counters; PAID_CTRL), quotes207.py TRUNK, check207.sh (~25 s). Climbers were scratch only
+### (climbfi / climbli: aclimb203 mutations, AC_FREE=1, k = 1; ~1 it/s at N 48).
+### Traps (successor 71)
+- A «never at a p-step» observation held on every record and failed on random genomes (pR 23): run random sets before writing any DATA rule.
+- push.sh takes ~35-40 min (experiments/si/check.sh at the end): batch commits; never create lane files while it runs (draft in scratchpad).
+- The container started 1060 behind origin/claude/l-new: the trap check (fetch --unshallow, ff-only, rev-parse) is still needed.
+
 ## HANDOVER (successor 70, PARKING 2026-11-12 ~04:40Z by date -u; Lead 04:10Z: «park with a handover … list (a) CW and its variant as the kill-side record; (b) the top-block theory target (DEEP-k1 via LOUD-SPLIT / DIV); (c) BLOCK-DESC DEAD, and BLKX23 corrected»)
 ### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
 - 09bb6aa7 handover check (Lead 5/5).
