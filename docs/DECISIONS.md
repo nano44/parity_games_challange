@@ -492,3 +492,12 @@ Owner (verbatim): «yes»
 Effect: L-RED-B (files docs/red-b/, experiments/red-b/; CLAUDE.md line added a9699c30) created 12:52Z. Recorded late (20:10Z) after
 L-RED-B successor 3 found the ruling missing from this file; the lane's existence rested on it from 12:52Z. Under L53 its successors run
 on Opus 5.5 until the Fable reset.
+
+Lead reading L54 (2026-11-12 23:01Z by date -u; on CLAUDE.md «Lean checks it (no sorry, allowed axioms only)» and the CHECKER exact-commit rule):
+(1) Event: CHECKER 23 (C143, Lean rows) has no Lean toolchain; installing elan in its session was refused by the permission classifier,
+    and CHECKER did not work around it.
+(2) Reading: for Lean rows, the clean build of record is the GitHub Actions job lean-lemmas (trunk workflow .github/workflows/verify.yml,
+    added 7fa6aff4) run on the EXACT commit in a fresh runner. CHECKER reads it itself from the Actions API (head_sha, conclusion, the log
+    lines «Build completed successfully», the axiom list and «LEAN LEMMAS PASS»), checks that the workflow file at that commit equals
+    trunk's job, and records the step as «PASS by CI re-run of record (L54)», not as a checker build. If the run is on an ancestor, CHECKER
+    shows lean/ byte-identical between the two commits. Statement and definition diffs remain CHECKER's own work.
