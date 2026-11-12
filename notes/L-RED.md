@@ -3445,3 +3445,8 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
 - Lesson: a two-player window after the C-run has stopped repeats a fixpoint; cut windows at the first state with no C switch (FW8_2's
   raw window 29 at N_C 1 is not a violation).
 - RESUME POINT: next = item 3 DEEP3 kill side (DHIB26_2804's 24 deep flips, MW32_2's 32), unless the Lead routes otherwise.
+- 2026-11-12T11:21Z: clock note (Lead 10:16Z): container date -u is correct; my verdict header «10:35Z» was typed, not taken from date -u (sent ~10:24Z).
+  Rule kept: every stamp from date -u in the same command.
+- DEEP3 (item 3): deep234 exact Deep_3 on the 26 = 38 (DHIB26 24, DWT20 9, C6G8 3, DHIB18 2; MW/Kprev deep flips not internal). Climbs
+  (dclimb234 sum score): Deep_3 19 at N 40 (inst/deep3_n40_19.json), 11 at N 24 (deep3_n24_11.json); deep flips one per gate, T3 <= 12.
+  Running: SCORE=gate climb (N <= 48; max deep flips at ONE gate), checkpoint scratchpad dclimb/best_gate48.json (RESUME=1).
