@@ -15900,6 +15900,230 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   does not apply, and it is not a step-4 pass. L-2 ends its scope words «so this is not M4; G-N5-TIME stays OPEN; not M3, not a step-4 pass,
   not a TARGET.md claim», the form of landed R123 and R124. GAPS G-N5-TIME: open.
 
+### R127 [refereed-only] On HOW3(G), i.e. N5′-xi from S3 on Γ3(G) until its first fallback (the Howard run on Γ3(G) of RESULTS R125 (P-N5-CHAIN), states 0, …, T3, n3 = N + 7M + 10; by R125's REACH3-ALL the mover part of N5′-xi from S3 until its first fallback), for every genome G (Ξ-cycles and Ξ self-loops allowed), each statement PROVED and CONDITIONAL on RESULTS R125 (P-N5-CHAIN), with E_t(v) the e-vertices of Π_t(v), sets of e-vertices ordered lexicographically by the most relevant differing element, a Λ-interval I of v a maximal interval of states with Λ_t(v) constant, a change a step t − 1 → t in I with E_(t−1)(v) ≠ E_t(v), its top the most relevant element of E_(t−1)(v) Δ E_t(v), U_y the e-vertices more relevant than y, c_y(v, I) the number of changes in I with top y, Dhi_y(v, I) the number of distinct values of E_t(v) ∩ U_y on I, C := max over v, I, y of c_y(v, I), and nx_s(u) := σ_s(u) at a mover, σ̄_s(u) at a gate: (Lemma SPLIT, incl. TRANSFER) at every change of (v, I), the first vertex u at which the plays P_(t−1)(v), P_t(v) leave by different edges is a mover with σ_(t−1)(u) ≠ σ_t(u) and Ω_(t−1)(new) ▷ Ω_(t−1)(old), or a gate with σ̄_(t−1)(u) ≠ σ̄_t(u) whose abandoned face rose strictly, Ω_t(old) ▷ Ω_t(new) ⊵ Ω_(t−1)(new) ▷ Ω_(t−1)(old); and Λ_(t−1)(u) = Λ_t(u) and E_(t−1)(v) Δ E_t(v) = E_(t−1)(u) Δ E_t(u); (Lemma REWIN, Lemma REWIN-HI) for two consecutive y-tops t1 < t2 of (v, I) with the same split u and the same new successor b := nx_t1(u) = nx_t2(u), and a := nx_(t2−1)(u): (a) Ω_(t2−1)(a) ▷ Ω_t1(b), (b) Ω_(t2−1)(b) ▷ Ω_(t2−1)(a) ▷ Ω_t1(b), (c) E_t2(b) ∩ U_y >lex E_t1(b) ∩ U_y; (Corollary REWIN-COUNT, superseded by SPLIT-COUNT) c_y(v, I) ≤ 1 + W_y(v, I) + Σ_(u,b) (Dhi_y(b, J_b) − 1), W_y the number of consecutive y-top couples with different split pairs; (Lemma PAIR-SPLIT) (a′), (b′), (c′) hold for ANY two y-tops t < t′ of (v, I) through the same split pair (u, b), with a := nx_(t′−1)(u): Ω_(t′−1)(a) ▷ Ω_t(b), Ω_(t′−1)(b) ▷ Ω_t(b), E_t′(b) ∩ U_y >lex E_t(b) ∩ U_y; (Corollary SPLIT-COUNT) c_y(v, I) ≤ Σ_((u,b) ∈ SPL_y(v,I)) Dhi_y(b, J_b) ≤ 3M · max_((u,b)) Dhi_y(b, J_b), SPL_y(v, I) the split pairs of the y-tops of (v, I) and J_b the Λ-interval of b containing the y-tops through (u, b), so C polynomial ⇐ max over y, b, J of Dhi_y(b, J) polynomial (a reduction, not an equivalence); (Lemma RW-SHAPE, RW-SHAPE*) for same-pair y-tops t < t′ through (u, b) (consecutive, resp. any), m := wt(y), E_s(b) ∩ U_y = B_s ⊔ S_s with B_s the U_y-letters of b's play at s before y and S_s := E_s(m) ∩ U_y: if S_t = S_t′, then B_t′ ≠ ∅ and for every f ∈ B_t′ some vertex of P_t′(b) strictly between f and y has nx_(t′−1) ≠ nx_t′; (Corollary RW-1) at every such couple whose t′-step is single-split, S_t ≠ S_t′; (Lemma PAIR-HIGH, abstract: any lex-increasing set sequence, E-MON3 only) on (v, I), c_y ≤ Dhi_y, A_xy ≤ 2·Dhi_y + 1 (A_xy the longest x/y-alternating subsequence of the tops, y more relevant than x) and Dhi_y = 1 + Σ_(z ∈ U_y) c_z; (Lemma RA-PATHS) c_y ≤ P(y), the number of directed paths from y in the graph RA of most relevant tops strictly between consecutive y-tops; (Lemma RE-COUNT) D_I(v) ≤ 1 + Mact_I(v) + Rtop_I(v) (D_I(v) the number of distinct sets E_t(v), t ∈ I; Mact_I(v) the number of e-vertices in ⋃_(t∈I) E_t(v); Rtop_I(v) the number of changes in I whose top lies in E_s(v) for some s ∈ I, s < t − 1); (Theorem RE-EQUIV) T3 ≤ (1 + n3·((2M + 3)(M + 1) − 1) + Rtop)·(L3 + 1) and Rtop ≤ n3·T3, so T3 is polynomial in N + M iff Rtop is; (Lemma PAIR-COUNT, corrected form) a sequence over m letters with no two equal consecutive letters has length ≤ 1 + Σ_(x<y) max(0, A_xy − 1); (Theorem ALT-EQUIV, corrected form) with A := max(1, the longest two-letter alternation in tops(v, I) over v, I), T3 ≤ (1 + n3·((2M + 3)·(2 + C(M, 2)·(A − 1)) − 1))·(L3 + 1) and A ≤ max(1, T3), so T3 is polynomial iff A is; (Corollary C-EQUIV) T3 ≤ (1 + n3·((2M + 3)(1 + M·C) − 1))·(L3 + 1) and C ≤ max(1, T3), so T3 is polynomial iff C is; (Lemmas ASC-WIT, ASC-ROOT, under HYPOTHESIS [E-LEV]: lev(x) < lev(x′) implies pr(e_(x,k)) < pr(e_(x′,k′))) at an ascent (c_i, c_(i+1)) of seq_t(v), y the successor of c_i and g1 the gate of σ_t(y): σ̄_t(g1) = pβ_(g1), Ω_t(pe_(g1)) ▷ Ω_t(pβ_(g1)), and either Λ_t(pe_(g1)) = Λ_t(v) and E_t(pe_(g1)) contains an e-vertex at least as relevant as c_(i+1), or Λ_t(pe_(g1)) has strictly larger reward than Λ_t(v); and at the first ascent there is a gate g* with lev(g*) < lev(c_i), σ̄_t(g*) = pβ_(g*) and Ω_t(pe_(g*)) ▷ Ω_t(pβ_(g*)), whose W-face's cycle node has strictly larger reward than Λ_t(v) (premises: RESULTS R125 (P-N5-CHAIN): HOW3, REACH3-ALL, F1, F3, F4′, F5, F6, DOM, STRICT, CN2-3, LOC-GATE3, LOC-K2-3, B-ONLY3, NO-TIE3, T-QUIET3 with L3, E-MON3, CHAIN-DECOMP3; [DEF] = RESULTS R104's definitions of the genome and of Γ(G); [G3] = RESULTS R117's definition of Γ3(G); [OPT] = RESULTS R118 (b) and RESULTS R21 (a) (σ̄_t optimal at every vertex at once); (R), (P), (E-DOM), (Core) in its W-1-repaired reading (the only edge into the eight-vertex core from outside is pb_g → K0), F2 and CYC: P-N5-CHAIN's frozen text (l-new 93531b03, sha1 6e613ba7, §2 and §4); (LEX-Λ) is applied only to non-core vertices (pads), where P-N5-CHAIN's W-1 repair holds (pads of movers and gates; P-N5-CHAIN fixes entry 3, R-W; referee-originated: REFEREE-2 R2-P-N5-SPLIT W-1; also REFEREE R-P-N5-SPLIT SP-1); [E-LEV] only in ASC-WIT and ASC-ROOT; not used: any other packet, any other R-id, any L-RED or L-SI lemma) (2026-11-11) — this proves no running-time bound: RE-EQUIV, ALT-EQUIV and C-EQUIV are equivalences and SPLIT-COUNT is a reduction, and neither side is proved polynomial; the open core is max over y, b, J of Dhi_y(b, J); nothing is claimed for N5 (SPEC S4a), outside Γ3(G), or on iteration counts beyond T3; DEAD (each with the instance that kills it, experiments/new/box199/inst, sha1 prefix; none is a premise): D1 «each re-win of y at u is paid by a class change of a vertex on the y-route below y» (CX4_n21, ef29debb; dn_nobelow_all 192, unit: re-wins); D2 «E(wt(y)) ∩ U_y changes between any two consecutive y-tops» (GROW7_n34, 42bbd562; wcfail 18, unit: re-entries); D3 «c_y(v) ≤ the number of values of E(wt(y)) ∩ U_y on the span» (HOLD2K_n84, 423a4a88; wbfail 18, unit: (v, I, y)); D4 ROUTE-LOW «no U_y-letter on v's new play between u and y at a y-top» (ROUTELOW_n21, 80f9b977; ytopB_ne 65, unit: y-tops); D5 the product-chain idea «the U_y-letters before y on v's play are lex-monotone at y-tops» (GROW7_n34; premono_no 18, unit: (v, I, y)); D6 CONJECTURES RW-WT, RW-WT*, RW-B0, RW-B0* (RWX_n95, da8b3a30, L-RED 62; rwfail 31, unit: re-wins); D7 fan-in 1 of RA as a game property (NK6_cl21, 408b9988, fan-in 3; DSALT9_n416, da3308b5, fan-in 4; unit: max over (v, I, y) of the number of letters of RA(y), box198/pair198.out maxRA); DATA, clause by clause (tool experiments/new/box199/split199.py on R125's engine: box 189 gamma3.build, box 190 n5v.step mode xi from S3 to the first fallback; set: the 28 frozen instances of experiments/new/box199/inst; record box199/split199.out; check199.sh re-run by check.sh): every PROVED-lemma counter 0 on all 28: playfail, kindfail, hwfail, gtfail, trfail (unit: changes at (v, I); SPLIT), dnfail (REWIN), rhfail (REWIN-HI), rw1fail (RW-1) (unit: re-wins), rh2fail (unit: same-pair couples, all pairs t < t′; PAIR-SPLIT), spfail (unit: (v, I, y); SPLIT-COUNT's first inequality with Dhi_y(b, J_b) replaced by the number of distinct values of E(b) ∩ U_y at the pair's own y-tops, a lower bound for Dhi_y(b, J_b), so spfail 0 is the stronger statement), wlamfail (unit: re-entries; Λ(wt(y)) = w at both y-tops); playfail, kindfail, trfail and wlamfail are definition checks without a firing control; every other counter has one (check199.out on CX4_n21: hwfail 444, dnfail 219, rhfail 219, rh2fail 313, spfail 161, rw1fail 127, gtfail 284); on the 28 frozen instances max c_y (unit: y-tops of one (v, I, y), max over (v, I, y); split199.out maxc) ≤ 6 outside the MW family (C6G8_n54: 6) and MW(n) has max c_y = 2n + 1 (65 on MW32_2); max split pairs (unit: distinct split pairs (u, b) of the y-tops of one (v, I, y), max over (v, I, y); split199.out maxSPL) 5 (FW6_4, FW8_4); RA depth (longest RA chain) 4 / 8 / 12 / 16 on FW4/8/12/16_2 (REFEREE-2 36 R2-P-N5-SPLIT, claude/referee-2 4948ce5d, own engine; L-SI 47 box 90, claude/l-si 4ded1e8d) and the per-pair multiplicity n on MW(n) (L-SI 47 box 90, claude/l-si 2d0344d3, not re-run by the lane or a referee), DATA only; every run is short (T3 ≤ 199; unit: states of the HOW3 run, max over the 28 frozen instances, split199.out T3; 199 on MW32_2) and nothing here tests a polynomial bound; large zero counts are DATA, not evidence of a lemma; independent replays, every fail counter 0, cited, not re-run: REFEREE 30 R-P-N5-SPLIT §4 (claude/referee ca091557; 28 pinned instances and 800 random genomes), REFEREE-2 36 R2-P-N5-SPLIT (claude/referee-2 991296c9; 28 pinned, 7,000 random and 2,200 mutants, D1-D7 re-run); attack record L-RED 60-62 (R226, R227, R228; all PROVED statements SURVIVE); N5′-xi stays a CANDIDATE (D1); TARGET.md §2 (M4) asks for an algorithm polynomial on every parity game and §4 says a bound on a restricted class is not M4, so this is not M4; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim (P-N5-SPLIT, docs/new/P-N5-SPLIT.md, frozen at l-new 399cda07, sha1 5bc1b1f3, with fixes entries 1-4, docs/new/P-N5-SPLIT-fixes.md; sources boxes 197-199; L-NEW successors 65-67 and 69), CHECKER PASS (docs/checker/C141.md, checker 850e9765)
+- Object (L-NEW successors 65-67, 69 and 71, D1 / D14 / D18, boxes 197-199; frozen, unchanged during review): packet P-N5-SPLIT,
+  docs/new/P-N5-SPLIT.md, sha1 5bc1b1f390ed81683fe5c93008c7ea0b338fe735, 275 lines, 30,949 bytes (l-new 399cda07, 2026-11-08T23:38:56Z, the
+  file's only commit; identical at 63515442, 8f4dab7e, d0a7d351, 621e6b77, at the l-new head 0ea262a0 and at trunk 07139249; pinned in
+  experiments/new/box199/split.pins). Both referees measured it (REFEREE l. 3-4 «docs/new/P-N5-SPLIT.md sha1
+  5bc1b1f390ed81683fe5c93008c7ea0b338fe735, 30,949 B, 275 lines»; REFEREE-2 l. 11 «docs/new/P-N5-SPLIT.md at 399cda07: sha1
+  5bc1b1f390ed81683fe5c93008c7ea0b338fe735, 30,949 B (= the brief)»). Labels (l. 8): «Labels: PROVED (L-NEW 65 / 66, unrefereed; each
+  survived the L-RED attacks listed in §9) / DEAD / DATA / READING (not to sign).». Scope (l. 9): «This packet is NOT a TARGET.md claim, NOT
+  M3 and NOT M4. It does not decide G-N5-TIME. It is a REDUCTION / EQUIVALENCE (§10).». To sign (l. 24-35): §2 Lemma SPLIT (i)-(iv) incl.
+  TRANSFER; §3 Lemma REWIN, Lemma REWIN-HI, Corollary REWIN-COUNT; §4 Lemma PAIR-SPLIT, Corollary SPLIT-COUNT, Lemma RW-SHAPE(*), Corollary
+  RW-1; §5 Lemma PAIR-HIGH, Lemma RA-PATHS; §6 Lemma RE-COUNT, Theorem RE-EQUIV, Lemma PAIR-COUNT, Theorem ALT-EQUIV, Corollary C-EQUIV; §7
+  Lemmas ASC-WIT, ASC-ROOT; §8 DEAD D1-D7; §9-§11 DATA / READING. Premises (l. 36-38): «Every row is conditional on P-N5-CHAIN (lane packet,
+  frozen at l-new 93531b03, sha1 6e613ba762b6ecf67247ef6d8674b4c960013039»; «Nothing else is a premise: no other packet, no landed R-id, no
+  L-RED or L-SI lemma.». Dropped (l. 39-40): «DROPPED from the sources (no standing here): Corollary C-WT and Corollary REWIN-ASC (both
+  implications from the DEAD CONJECTURES of §8),». Source (l. 5-7): «Every proof is carried here in full; nothing is cited from those
+  files.». The packet's own scope (l. 20): «What it does NOT imply: any polynomial bound. The open core after this packet is max over y, b,
+  J of Dhi_y(b, J) (§10).».
+- Fixes: docs/new/P-N5-SPLIT-fixes.md, append-only, four entries (621e6b77, 2026-11-12T08:37:02Z: 134 lines, 13,865 bytes, sha1
+  242ade7b046515a8895c3f787eaefba1cf64c542, byte-equal at the l-new head 0ea262a0; its first 12,071 bytes are the file at d0a7d351 (117
+  lines, sha1 c51caa12…), whose first 7,523 bytes are the file at 8f4dab7e (75 lines, sha1 f7940ddf3361d45407855ce51baddc9e59515426,
+  byte-equal at 07139249); by prefix test, entries 3-4 appended). Entry 1 (L-NEW successor 67, 63515442, 2026-11-09T00:44:26Z; l. 3-14;
+  answering L-RED 62's packet-level read): «Scope: DATA only (§9.1). No statement, proof, premise or DEAD row of the packet changes.» (l.
+  4); (n1) restates §9.1's max c_y clause with its set, «On the 28 frozen instances of experiments/new/box199/inst (split199.out)» (l. 6),
+  and relays L-RED 62's MW-mutant climb (C 12 at N + M ≤ 200, C 26 at N + M ≤ 400, «relayed by the Lead; not re-run by me», l. 9); (n2) no
+  change. Entry 2 (L-NEW successor 69, 8f4dab7e, 2026-11-11T22:57:03Z; l. 16-70; answering REFEREE 30 and REFEREE-2 36): «No statement,
+  proof, label, premise of a signed row, or DATA number changes. Where this entry and the packet differ, this entry governs. Every item is
+  ACCEPTED.» (l. 22-23). SP-1 = W-1 (l. 25-34): §1 (LEX-Λ)'s reason is false over all vertices; every use is at pads; governing reading
+  «(LEX-Λ) is applied only to non-core vertices (pads), where P-N5-CHAIN's W-1 repair holds.» (l. 31), «Credit: referee-originated:
+  REFEREE-2 R2-P-N5-SPLIT W-1; also REFEREE R-P-N5-SPLIT SP-1 (found independently).» (l. 33). SP-2 = R-6 (l. 36-44): the citation form of
+  L-1's premise list. SP-3 = N-1 (l. 46-48): (PL)'s wording. N-2 (l. 50-51): «These were used in the proofs as written; no new premise.».
+  split.pins 61 rows (l. 53-55). LS-1..LS-8 (l. 57-70). «Line L-1» (l. 72-75): generator experiments/new/box199/mkl1_199.py, pinned in
+  split.pins. No item changes a statement, a label, a proof's content or a DATA number: SP-1 restricts one sentence of §1's proof text to
+  where it is used. Entry 3 (L-NEW successor 71, d0a7d351, 2026-11-12T07:14:44Z; l. 77-117): «Fixes entry 3 (L-NEW successor 71; Lead ruling
+  R-D7a 07:12Z 2026-11-12, L43; written 2026-11-12T07:14Z by date -u)» (l. 77); «Ruling R-D7a (Lead, line-only), applied verbatim» (l. 83);
+  D7 reduced to «fan-in 1 of RA» with its unit, and the RA depth on FW and the MW(n) multiplicity carried into DATA with their numbers and
+  source commits; «Ids and numbers verified by git before the build (Lead: «If any id or number is wrong, STOP»; none was)» (l. 93); Line
+  L-2 = L-1 + R-D7a (l. 104-106); the units the Lead asked for next, «Lead's second ask (the three maxima clauses and the DATA rule),
+  PROPOSED, NOT APPLIED (L-2 carries R-D7a only)» (l. 108). Entry 4 (L-NEW successor 71, 621e6b77, 2026-11-12T08:37:02Z; l. 119-134): «Fixes
+  entry 4 (L-NEW successor 71; Lead ruling R-U127 07:58Z 2026-11-12, DATA rule; written 2026-11-12T08:36Z by date -u)» (l. 119); «ACCEPTED;
+  applied verbatim, line only:» (l. 121): units (a)-(c) on the three maxima clauses and (d) the source note; «Counters checked against the
+  tool: split199.py header l. 31 «maxc, maxW (non-rewin re-entries), maxSPL (distinct (u, b)): per (v, I, y), maxima over the genome»» (l.
+  128-129); Line L-3 = L-2 + R-U127, «L-1 → L-3 = R-D7a + R-U127.» (l. 132-133). Both entries are line-only; REFEREE-2 37 on L-3:
+  «P-N5-SPLIT's signed statements are unchanged.» (l. 510).
+- The RESULTS line is L-3, a8661c4b7998aafc02299c43dfe4e2c6320f73ee (docs/new/P-N5-SPLIT-line-L3.txt, l-new 621e6b77, 2026-11-12T08:37:02Z,
+  the file's only commit, on origin through its child 0ea262a0; 9,796 bytes, 9,481 characters with its newline, one line, blob
+  c8a9d17777a5545ffa34db110f9975d544ab1b11). The title is L-3 verbatim, with nothing inserted and nothing stripped (its date parenthesis
+  «(2026-11-11)», its scope tail and its source note are the line's own). L-3's parentheses balance (273 «(» / 273 «)»); it has no pipe
+  character. It is written by experiments/new/box199/mkl3_199.py (L-2 + R-U127; it asserts the frozen packet's sha1, L-2's sha1, each old
+  string once, one line, no pipe character, balanced parentheses, each new unit string once and «with fixes entries 1-2» absent) from L-2
+  (d8888d0b090339b80b4ce9b636a23461b476bf3f, docs/new/P-N5-SPLIT-line-L2.txt, l-new d0a7d351, 2026-11-12T07:14:44Z, the file's only commit,
+  9,521 bytes; written by mkl2_199.py, L-1 + R-D7a, which asserts L-1's sha1, each old string once, «RA-LOG» and «MW32_2, 445031d1» absent
+  and each new source id once) from L-1 (634b2fdfda31eda9e82e9f558ffebf3c89f5701c, docs/new/P-N5-SPLIT-line-L1.txt, l-new 8f4dab7e,
+  2026-11-11T22:57:03Z, the file's only commit, 9,249 bytes, blob 726d0c5d9bb740b2f3f146f425cc3f2fc18c7e5b), written by
+  experiments/new/box199/mkl1_199.py, which asserts the frozen packet's sha1, fixes entry 2's governing (LEX-Λ) sentence verbatim in the
+  fixes file, the absence of the withdrawn sentence, R124's landed TARGET tail in RESULTS, one line, no pipe character, balanced
+  parentheses. L-1 → L-3 is the six replacements of rulings R-D7a and R-U127 and nothing else (L-1 with the six strings of mkl2_199.py and
+  mkl3_199.py applied = L-3, byte for byte: tools/upd127b.py (4c)). L-1 rebuilt byte-equal by REFEREE-2 (Add. 2, l. 394-395: «The output is
+  byte-equal to the committed L-1 (cmp).») and by the drafter with RESULTS at 07139249 (rc 0); REFEREE tested it against its own strings
+  (§C, l. 113-115: «strings typed from this report (scratch/split_l1.py; log split_logs/l1test.out), not from the lane's generator»). L-3
+  rebuilt by REFEREE-2 37 with its own code (Add. 3, «R2-P-N5-SPLIT/bt_l3.py (my code; mkl2_199.py and mkl3_199.py not imported)» (l. 478);
+  «Result: sha1 a8661c4b…, 9,796 B, BYTE-EQUAL to the lane's L-3 (cmp equal).» (l. 483)) and by the drafter with the lane's chain
+  mkl1_199.py (RESULTS at 07139249), mkl2_199.py and mkl3_199.py from a git archive of 621e6b77 (rc 0 each; L-1, L-2 and L-3 cmp-equal to
+  the committed files). REFEREE: L-1 MATCHES (§C, 8c395bff, l. 140-141, quoted below); its §E on L-3 (REFEREE successor 31, 33cd0fca, l.
+  143-169) tested L-3 with strings of its own («strings typed from fixes entries 3-4;» (l. 148)), «`cmp` with the lane's L-3: **EQUAL**» (l.
+  149), and found «Verdict: fixes entries 3-4 CORRECT. **Line L-3 MATCHES** (= L-1 + R-D7a + R-U127 exactly). Statements and labels
+  unchanged (§0; §C).» (l. 169). REFEREE-2: L-1 MATCHES (Add. 2, c5bc1365, l. 465, quoted below); L-3 MATCHES (Add. 3, REFEREE-2 successor
+  37, 98a64b91, l. 509-510, quoted below).
+- Claims signed (REFEREE successor 30: report ca091557; successor 31: §C 8c395bff, §E 33cd0fca; REFEREE-2 successor 36: report 15a05bf0 …
+  4948ce5d, final sweep 991296c9, Add. 1 c708c968; successor 37: Add. 2 c5bc1365, Add. 3 98a64b91); every row CONDITIONAL on R125, as the
+  packet states. REFEREE's table («## 0. Verdicts», «every row CONDITIONAL on R125 = P-N5-CHAIN landing, as the packet states», l. 8-19 of
+  R-P-N5-SPLIT.md) reads: SPLIT «**SIGN**» (l. 11); REWIN / REWIN-HI / REWIN-COUNT «**SIGN WITH SP-1** ((LEX-Λ) read for non-core vertices;
+  every use is on pads)» (l. 12); PAIR-SPLIT / SPLIT-COUNT «**SIGN WITH SP-1**» (l. 13); RW-SHAPE(*) / RW-1 «**SIGN WITH SP-1**» (l. 14);
+  PAIR-HIGH / RA-PATHS «**SIGN** (abstract; E-MON3 only)» (l. 15); RE-COUNT, RE-EQUIV, PAIR-COUNT, ALT-EQUIV, C-EQUIV «**SIGN**» (l. 16);
+  ASC-WIT, ASC-ROOT «**SIGN** under HYPOTHESIS [E-LEV] (ASC-WIT (c) WITH SP-1)» (l. 17); DEAD D1-D7 «D1, D2, D4, D5, D6 reproduced by the
+  lane's check199.sh (lane code, re-run, byte-equal); D3, D7 cited, not re-run» (l. 18); then «No GAP; nothing refused.» (l. 19).
+  REFEREE-2's table («## Verdicts (Opus 5.5, D1)», l. 329-344 of R2-P-N5-SPLIT.md, 4948ce5d) reads «SIGN» on each of its eleven statement
+  rows (l. 332-342; ASC-WIT, ASC-ROOT «under HYPOTHESIS [E-LEV]», l. 342), «SIGN (dead)» on DEAD D1-D7 (l. 343), and W-1 «a proof-text
+  defect: false over all pairs, true for non-core pairs, and every use is at pads; the conclusion holds for all pairs» (l. 344); then «No
+  statement is REFUSED, and no gap is left open in any signed proof. W-1 is a sentence of §1's proof text, closed above.» (l. 346). Addendum
+  1 (c708c968): «Verdicts: equal on every row.» (l. 354); «These are the same finding and the same repair, under different labels.» (l.
+  357-358). Both re-signed on L-1: REFEREE §C (quoted above, l. 140-141); REFEREE-2 Add. 2 «With REFEREE's signatures, P-N5-SPLIT's
+  statements stand as two-referee signed, CONDITIONAL on R125. ASC-WIT and ASC-ROOT stand under HYPOTHESIS [E-LEV].» (l. 466-467). On L-3:
+  REFEREE-2 Add. 3 «P-N5-SPLIT's signed statements are unchanged.» (l. 510), with D7's scope «D7 now claims only «fan-in 1 of RA as a game
+  property». That is an explicit bound, so finite instances kill it (NK6_cl21 3, DSALT9_n416 4).» (l. 487-488); REFEREE §E «Statements and
+  labels unchanged (§0; §C).» (l. 169). The HYPOTHESIS statements, with their condition as the line states it: ASC-WIT and ASC-ROOT «under
+  HYPOTHESIS [E-LEV]: lev(x) < lev(x′) implies pr(e_(x,k)) < pr(e_(x′,k′))», and no other row (REFEREE-2 R-3 MET, Add. 2 l. 412-414). The
+  joint gap map: EMPTY (REFEREE l. 19; REFEREE-2 l. 346). The one defect found in review, §1 (LEX-Λ)'s reason (SP-1 = W-1), is a sentence of
+  the proof text, not a statement; it is closed by restricting it to the pads, where every use sits (fixes entry 2, governing; REFEREE §C
+  «The withdrawn sentence is ABSENT» (l. 118); REFEREE-2 Add. 2 R-1 MET). Nothing is REFUSED.
+- Setting: HOW3(G) of RESULTS R125, the Howard run on Γ3(G) (RESULTS R117) from SPEC's default start S3, states 0, …, T3, for every genome G
+  of R104 (Ξ-cycles and Ξ self-loops allowed); by R125's REACH3-ALL it is the mover part of N5′-xi from S3 until its first fallback. Every
+  statement is PROVED and CONDITIONAL on RESULTS R125 (P-N5-CHAIN), which is landed (G-R125). Statements as signed (packet with fixes
+  entries 1-4; entry 2's (LEX-Λ) reading and (PL) wording govern; entries 3-4 are line-only; PAIR-COUNT and ALT-EQUIV in the packet's
+  corrected forms):
+  (a) Lemma SPLIT (i)-(iv), incl. TRANSFER (§2 l. 67-84): at every change of (v, I) the first departure u of the two plays is a mover making
+    a strict Howard switch or a gate whose abandoned face rose strictly, and «The change at v is a change of u's e-set inside a Λ-interval
+    of u, with the same symmetric difference and the same top.» Both SIGN (REFEREE l. 11; REFEREE-2 l. 332).
+  (b) Lemma REWIN (a)(b), Lemma REWIN-HI (c), Corollary REWIN-COUNT (§3 l. 86-113): «(c) REWIN-HI: E_t2(b) ∩ U_y >lex E_t1(b) ∩ U_y.»
+    REWIN-COUNT «(Superseded by SPLIT-COUNT, §4, which has no W term.)» Both SIGN (REFEREE l. 12 WITH SP-1; REFEREE-2 l. 333-334).
+  (c) Lemma PAIR-SPLIT, Corollary SPLIT-COUNT (§4 l. 116-130): (a′)(b′)(c′) for ANY two y-tops t < t′ through one split pair (u, b); «c_y(v,
+    I) ≤ Σ_((u,b) ∈ SPL_y(v,I)) Dhi_y(b, J_b) ≤ 3M · max_((u,b)) Dhi_y(b, J_b),», «J_b the Λ-interval of b containing the y-tops through (u,
+    b).» Both SIGN (REFEREE l. 13 WITH SP-1; REFEREE-2 l. 335-336).
+  (d) Lemma RW-SHAPE, RW-SHAPE*, Corollary RW-1 (§4 l. 131-148): if S_t = S_t′ then B_t′ ≠ ∅ and every f ∈ B_t′ has a second split after it;
+    «At every y-top couple through (u, b) whose t′-step is single-split (u is the only vertex of v's play before y at t′ whose successor
+    changes at t′), S_t ≠ S_t′» Both SIGN (REFEREE l. 14 WITH SP-1; REFEREE-2 l. 337).
+  (e) Lemma PAIR-HIGH (a)(b)(c), Lemma RA-PATHS (§5 l. 150-166; abstract, E-MON3 only): «Both lemmas hold for any lex-increasing set
+    sequence; the abstract counter (every subset in binary order) makes them tight with c_y and P(y) exponential.» Both SIGN (REFEREE l. 15;
+    REFEREE-2 l. 338).
+  (f) Lemma RE-COUNT, Theorem RE-EQUIV, Lemma PAIR-COUNT (corrected), Theorem ALT-EQUIV (corrected), Corollary C-EQUIV (§6 l. 168-189): «So
+    T3 is polynomial in N + M iff Rtop is.» «T3 is polynomial iff A is.» «C ≤ max(1, T3). T3 is polynomial iff C is.» Both SIGN (REFEREE l.
+    16; REFEREE-2 l. 339-341).
+  (g) Lemmas ASC-WIT, ASC-ROOT (§7 l. 191-211) [under HYPOTHESIS [E-LEV]]: static witnesses at an ascent of seq_t(v); «Static (any σ against
+    an optimal σ̄); not a bound.» REFEREE SIGN under HYPOTHESIS [E-LEV] (l. 17), REFEREE-2 SIGN (l. 342).
+  (h) DEAD D1-D7 (§8 l. 213-224, instances frozen in experiments/new/box199/inst): D1 downward charge, D2 W-target charge for all
+    re-entries, D3 W-target bound, D4 ROUTE-LOW, D5 product chain, D6 CONJECTURES RW-WT, RW-WT*, RW-B0, RW-B0*, D7 as L-3 states it, «D7
+    fan-in 1 of RA as a game property» (the packet's D7 also names RA-LOG and bounded multiplicity; by ruling R-D7a their numbers are DATA
+    in L-3, not DEAD: L43 below). REFEREE: D1, D2, D4, D5, D6 reproduced by the lane's check199.sh, D3, D7 cited (l. 18); REFEREE-2 SIGN
+    (dead) (l. 343), D1-D6 and D7's fan-in and FW depth re-run on its own engine, «I did not compute it; it is cited DATA of another lane
+    and not a premise.» (l. 283-284). On L-3: REFEREE-2 Add. 3 «D7 now claims only «fan-in 1 of RA as a game property». That is an explicit
+    bound, so finite instances kill it (NK6_cl21 3, DSALT9_n416 4).» (l. 487-488); «DSALT9_n416 now carries its sha1 da3308b5, which closes
+    my optional N-4.» (l. 488-489).
+- Premise (named, not quoted; L-1 and L-3 have no premise quote, and L-3's premise parenthesis is byte-equal to L-1's; checked by script at
+  trunk 07139249, prem127a.py on L-1, prem127b.py on L-3): the 17 facts L-3 cites «as RESULTS R125 (P-N5-CHAIN)», HOW3, REACH3-ALL, F1, F3,
+  F4′, F5, F6, DOM, STRICT, CN2-3, LOC-GATE3, LOC-K2-3, B-ONLY3, NO-TIE3, T-QUIET3 with L3, E-MON3, CHAIN-DECOMP3, each named in landed
+  R125's title (RESULTS l. 15595); [DEF] = RESULTS R104 (l. 9864), definitions of the genome and of Γ(G); [G3] = RESULTS R117 (l. 13362),
+  the definition of Γ3(G); [OPT] = RESULTS R118 (b) (l. 13682) and RESULTS R21 (a) (l. 933), σ̄_t optimal at every vertex at once; (R), (P),
+  (E-DOM), (Core) in its W-1-repaired reading, F2 and CYC: P-N5-CHAIN's frozen text (l-new 93531b03, sha1
+  6e613ba762b6ecf67247ef6d8674b4c960013039; P-N5-CHAIN.md l. 91, 93, 96, 97 (§2), l. 165, 166 (§4)), the frozen packet of landed R125, not a
+  RESULTS text (G-4). HYPOTHESIS [E-LEV] only in ASC-WIT and ASC-ROOT. Not used (L-3): any other packet, any other R-id, any L-RED or L-SI
+  lemma. Both referees checked the premises against P-N5-CHAIN's frozen text and R125's line (REFEREE §1 l. 21-32 and §C «are EACH named in
+  R125's line L-5 (counted by script). CORRECT.» (l. 124); REFEREE-2 box 1 l. 24-38 and Add. 2 «The list after «RESULTS R125 (P-N5-CHAIN):»
+  has 17 names. Every one occurs in CHAIN's L-5» (l. 435)).
+- L41 and L43. The packet's proofs are L-NEW successors 65-66's (packet l. 8; «Every proof is carried here in full»). One proof repair is
+  referee-originated: (LEX-Λ) used only at pads (REFEREE-2 W-1, REFEREE SP-1, found independently; REFEREE-2 Add. 1 l. 359-360), named in
+  L-1's and L-3's premise parenthesis with the words «referee-originated: REFEREE-2 R2-P-N5-SPLIT W-1; also REFEREE R-P-N5-SPLIT SP-1»; each
+  referee signed the proofs on it. L43: D1-D6 are structural claims, each killed by a named instance and counter; D7's «fan-in 1» is an
+  explicit bound (RA(y) has at most one letter) exceeded on NK6_cl21 (3) and DSALT9_n416 (4); D7's «RA-LOG» (an O(log(N + M)) bound) and
+  «bounded multiplicity» (L-SI's RA-MULT(K), K a constant) are asymptotic and rest on finitely many instances, FW4/8/12/16_2 RA depth 4 / 8
+  / 12 / 16 (REFEREE-2 l. 282) and MW32_2 (L-SI's census, re-run by no referee). In L-1 these two were in the DEAD list; by ruling R-D7a
+  (Lead, 07:12Z, before CHECKER; fixes entry 3, «ACCEPTED as ruled.» (l. 82)) L-3's D7 keeps the explicit bound only, with its unit, and the
+  FW RA depth 4 / 8 / 12 / 16 (REFEREE-2 36, 4948ce5d; L-SI 47, 4ded1e8d) and the MW(n) multiplicity n (L-SI 47, 2d0344d3, re-run by neither
+  the lane nor a referee) enter the DATA clause with their source commits, as L43 asks (DECISIONS, 07139249: «it enters as DATA with its
+  numbers and source commit, or not at all» (l. 371)); REFEREE-2 Add. 3: «RA-LOG and the bounded multiplicity leave DEAD (L43). Their
+  numbers enter as DATA, with sources:» (l. 491).
+- Not signed: packet §9 (DATA and the attack record of L-RED 60-62), §10 (TARGET diff), §11 (machine checks), the dropped corollaries and
+  conjectures of l. 39-40 (C-WT, REWIN-ASC, RW-WT, RW-WT*, RW-B0, RW-B0*, DS-TOPS, RA-LOG, ALT-POLY, DS-POLY), the READING remarks;
+  REFEREE-2's strengthening of (LEX-Λ)'s conclusion to all pairs (Add. 1 l. 361-362, recorded in fixes entry 2, not used); the referees'
+  replays.
+- Referee strengthening (NOT part of this entry; referee checks): (i) REFEREE 30: own engine (xicyc_replay.howard, own Γ3 builder, own VJ;
+  «No lane code.», l. 73), the 28 pinned instances and families rand, deep, wide, selfl × 200, seed 1992: «**every counter 0**» (l. 77);
+  controls ctrlU, ctrlG fire; the lane's split.pins and check199.sh from git archive 63515442 (l. 80-83). (ii) REFEREE-2 36: own engine
+  (R2-P-N5-END/r2end.py with r2chain.py's stepping; «No lane, L-RED, REFEREE or L-SI code.», l. 224): 28 pinned runs, «Script output:
+  «compared 28 diffs 0».» (l. 236); «Random genomes (gen.out): 7,000 runs, 65,045 changes, every must-0 counter 0.» (l. 239); 2,200 mutants,
+  «Every must-0 counter is 0.» (l. 245); the FW6_4 mutant chunk not completed (l. 247-251); controls fire (l. 252-257). (iii) L-RED 60-62
+  (not referees): the attack record cited in L-1 and L-3, all PROVED statements SURVIVE (packet §9.2).
+- Honest limits: (i) No running-time bound: RE-EQUIV, ALT-EQUIV and C-EQUIV are equivalences (T3 polynomial if and only if Rtop, A, resp. C
+  is) and SPLIT-COUNT is a one-way reduction (C polynomial ⇐ max over y, b, J of Dhi_y(b, J) polynomial); neither side is proved polynomial,
+  and the open core is max over y, b, J of Dhi_y(b, J). (ii) One run, HOW3(G) on Γ3(G), up to N5′-xi's first fallback; nothing for N5 (SPEC
+  S4a), outside Γ3(G), on general parity games or on iteration counts beyond T3. (iii) Everything is CONDITIONAL on RESULTS R125, and six
+  premise items are P-N5-CHAIN's frozen text, not RESULTS text (G-4). (iv) ASC-WIT and ASC-ROOT rest on HYPOTHESIS [E-LEV]; they are static
+  witnesses, not a bound. (v) PAIR-HIGH and RA-PATHS are abstract (E-MON3 only) and tight with c_y exponential for an abstract counter; the
+  game input is §3-§4. (vi) DATA are runs of the lane's engine (box 189 gamma3.build, box 190 n5v.step) and the referees' engines on short
+  runs (T3 ≤ 199); they test that no lemma counter fires, not a polynomial bound; large zero counts are DATA, not evidence. (vii) The RA
+  depth on FW4/8/12/16_2 and the per-pair multiplicity n on MW(n) are measured on finitely many instances; L-3 carries them as DATA with
+  their sources, not as DEAD (ruling R-D7a, L43 above), and the MW multiplicity is L-SI 47's census, re-run by neither the lane nor a
+  referee. (viii) Names: REWIN, REWIN-HI, PAIR-SPLIT, SPLIT-COUNT, RW-SHAPE, RW-1, PAIR-HIGH, RA-PATHS, RE-COUNT, RE-EQUIV, PAIR-COUNT,
+  ALT-EQUIV, C-EQUIV, ASC-WIT, ASC-ROOT and the instance names are new to RESULTS; «Lemma SPLIT» and «TRANSFER» are also landed names of
+  other statements (R39 (a); R29 (b), R104 (b)), so this entry's are «RESULTS R127 Lemma SPLIT» and «RESULTS R127 TRANSFER». (ix)
+  Literature: VJ00 §4.2 / Friedmann arXiv 1106.0778 §3 for [VJ] as in R118 / R125; no novelty is claimed. (x) L-3's source note reads «with
+  fixes entries 1-4» (R-U127 (d)) and «L-NEW successors 65-67 and 69»: entries 3-4 are successor 71's and line-only (entry 3 «Ruling R-D7a
+  (Lead, line-only)», l. 83; entry 4 «applied verbatim, line only», l. 121). (xi) The DATA clause R-D7a added names its quantities in words
+  («RA depth (longest RA chain)», «the per-pair multiplicity n on MW(n)») and its source commits, with no output field and no «unit:»;
+  R-U127 gave a «unit:» to the three maxima clauses, and R-D7a to D7.
+- Data (DATA, not proof): experiments/new/box199/ at l-new 621e6b77 (tools, outputs and instances unchanged since 399cda07, and to 0ea262a0;
+  8f4dab7e adds mkl1_199.py and re-pins split.pins, 59 → 61 rows; d0a7d351 adds mkl2_199.py and L-2, 61 → 63; 621e6b77 adds mkl3_199.py and
+  L-3, 63 → 65; each re-pins the fixes file): split199.py on R125's engine (box 189 gamma3.build, box 190 n5v.step mode xi from S3 to the
+  first fallback), its record split199.out (28 rows, one per frozen instance of box199/inst), check199.sh with its frozen output
+  check199.out (5 instances + 6 controls on CX4_n21); box198/pair198.py, pair198.out for D7's fan-in; called from the check.sh blocks «BOX
+  199 SPLIT» and «P-N5-SPLIT» (experiments/new/check.sh: the same 15 lines, sha1 e1d2a63c4972afbeef7a8214e5853173c71a2713, at l. 1068-1082
+  at 399cda07 and 63515442 and at l. 1071-1085 at 8f4dab7e and 07139249; l. 1071-1085 at 621e6b77 and 0ea262a0 sha1
+  f51f824e52056d3e32ad1f248f4eca8fb57b4a07, whose «P-N5-SPLIT» block also asserts L-3's pin row), run by scripts/verify.sh. Re-run by the
+  drafter from a full git archive of 0ea262a0: 2026-11-12T09:45:49Z-2026-11-12T09:45:55Z, rc 0, «BOX 199 SPLIT: SPLIT / REWIN / REWIN-HI /
+  PAIR-SPLIT / SPLIT-COUNT / RW-1 counters 0, DEAD witnesses present, controls fire = frozen: PASS» and «P-N5-SPLIT: packet and 65 pinned
+  files match split.pins, line L-3 a8661c4b pinned: PASS»; with one byte appended to L-3 the «P-N5-SPLIT» block printed «P-N5-SPLIT check:
+  FAILED», rc 1, and with one byte prepended to check199.out (a pinned output) the «BOX 199 SPLIT» block printed «BOX 199 SPLIT check:
+  FAILED (check199.sh exit 0)», rc 1 (negative controls). The same blocks from a full archive of 8f4dab7e (61 pinned files): rc 0 at
+  2026-11-12T06:47:46Z-2026-11-12T06:47:52Z (drafter, first fill). Frozen totals (by script, data127b.py on the archive of 0ea262a0, 40
+  checks; data127a.py on 8f4dab7e, 41): the 11 PROVED-lemma counters 0 on all 28; controls hwfail 444, dnfail 219, rhfail 219, rh2fail 313,
+  spfail 161, rw1fail 127, gtfail 284; max c_y 6 outside MW (C6G8_n54), MW4/8/16/32_2 9 / 17 / 33 / 65; max split pairs 5 (FW6_4, FW8_4);
+  max T3 199; DEAD counters as L-3 (= L-1's; D7 with pair198.out maxRA as its unit). L-3 changes no DATA number: R-D7a moves the FW RA depth
+  and the MW(n) multiplicity from D7 into DATA with sources (tools/src127b.py: 4948ce5d R2-P-N5-SPLIT.md l. 272; 4ded1e8d
+  docs/si/box90-ra.md, RA depth 4 / 8 / 12 / 16 on FW4/8/12/16_2; 2d0344d3, MW4/8/16/32_2 maxm 4 / 8 / 16 / 32), and R-U127 names the unit
+  of each maximum by its split199.out field (maxc, maxSPL, T3; REFEREE-2 Add. 3 «All three are right.» (l. 498); maxSPL 5 on FW6_4 and FW8_4
+  only, T3 199 on MW32_2 only, data127b.py). REFEREE-2 read every DATA clause against split199.py (Add. 2, «R-5: MET. I read split199.py
+  line by line, all 178 lines (unchanged since 399cda07), against the DATA clause», l. 421).
+- Signatures: REFEREE docs/referee/R-P-N5-SPLIT.md: successor 30's report ca091557 (ca091557e43f2a9c6cce3baaa573260dd5e39e3e,
+  2026-11-09T09:28:06Z), «docs/referee-2/ and L-RED 62's R228-box91 / R229 reads NOT read before this verdict.» (l. 5-6), verdict table l.
+  8-19; successor 31's §C 8c395bff (8c395bffe0f1b0f31f7533715909341914c833b7, 2026-11-11T23:29:45Z) l. 110-141, «**Line L-1 MATCHES** the
+  packet read with fixes entries 1-2» (l. 140); successor 31's §E 33cd0fca (33cd0fcaf6c8ce4c88b2f466aec8a20ec09626aa, 2026-11-12T09:18:41Z)
+  l. 143-169, «**Line L-3 MATCHES** (= L-1 + R-D7a + R-U127 exactly).» (l. 169). REFEREE-2 docs/referee-2/R2-P-N5-SPLIT.md: successor 36's
+  report in boxes 15a05bf0, 026de5fb, b0b7c3f3, 4948ce5d (4948ce5d650b8ef81a15fb6489b39ef5e21854af, 2026-11-09T10:44:20Z) and 991296c9
+  (2026-11-11T22:34:15Z), «Independent: docs/referee/ (REFEREE 30's R-P-N5-SPLIT.md, ca091557) NOT read before this report's verdict is
+  committed.» (l. 2-3), verdict table l. 329-347; Add. 1 c708c968 (c708c96804dc3b73757bc891e2b1cb079d958fb9, 2026-11-11T22:34:50Z) l.
+  353-384; successor 37's Add. 2 c5bc1365 (c5bc13653b1cfad96213249f9781d6277620fadb, 2026-11-11T23:42:02Z) l. 386-469, «L-1 (8f4dab7e, sha1
+  634b2fdf) MATCHES.» (l. 465); successor 37's Add. 3 98a64b91 (98a64b91cdb76a71d3f6a7749edc78511c7d5aca, 2026-11-12T09:18:33Z) l. 471-511,
+  «Verdict: L-3 (621e6b77, sha1 a8661c4b) MATCHES.» (l. 509). Lane (claude/l-new): L-NEW successor 67, 399cda07 (packet FROZEN) and 63515442
+  (fixes entry 1); successor 69, 8f4dab7e (fixes entry 2, L-1); successor 71, d0a7d351 (fixes entry 3, L-2) and 621e6b77 (fixes entry 4,
+  L-3). Adversary (not a signature): L-RED 60-62 (R226, R227, R228), cited in L-1 and L-3 as the attack record.
+- INDEPENDENCE: each referee wrote its first verdict without reading the other's (REFEREE l. 5-6; REFEREE-2 l. 2-3 and l. 349-351, «I did
+  not read docs/referee/ for this packet, nor L-RED's R227 / R228 / R229 reports.»). REFEREE-2 36 read REFEREE's report only after its
+  verdict (Add. 1, l. 353 «written after my verdict, committed in 991296c9 and boxes 1-5 on origin»); REFEREE §C tested L-1 with strings
+  from its own report, not from the lane generator (l. 113-115), and read R2-P-N5-SPLIT only to check the replay sizes L-1 cites (l.
+  133-134); REFEREE-2 37's Add. 2 «I have not read docs/referee/ for this byte test.» (l. 469). Each referee re-derived every proof step and
+  replayed the DATA on its own engine; only REFEREE-2 rebuilt L-1 from the lane generator. REFEREE-2 37 byte-tested L-3 with its own code
+  («R2-P-N5-SPLIT/bt_l3.py (my code; mkl2_199.py and mkl3_199.py not imported)» (l. 478)) and wrote «I did not read docs/referee/ for this
+  test.» (l. 511).
+- TARGET.md diff: TARGET.md §2 (M4) asks for one algorithm, polynomial on EVERY parity game, that outputs (W_E, W_O); this entry is a set of
+  structural lemmas, exact equivalences and one reduction on one run, HOW3(G) on Γ3(G), for no algorithm on general games (TARGET.md §4:
+  «Polynomial only on a restricted class»; packet §10 l. 260-267; REFEREE §6 «No running-time bound; equivalences (T3 polynomial ⇔ Rtop ⇔ A
+  ⇔ C polynomial) and one reduction (C ⇐ max Dhi_y(b, J)). Not M3, not M4»; REFEREE-2 box 5 «Not M3, not M4, not a gauntlet step-4 pass, not
+  a TARGET.md claim.»). It is not an algorithm claim on every game, so TARGET.md §5's gauntlet does not apply, and it is not a step-4 pass.
+  L-3 ends its scope words «so this is not M4; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim», the form of landed
+  R123 and R124. GAPS G-N5-TIME: open.
+
 **Erratum E-1** (not a result; 2026-11-01 05:28Z by date -u; Lead; corpus counts in RESULTS R97-R100):
 - What is wrong: the DATA-of-record sentences that say «1,132 games» for the L-SI box 50b / box 53 corpus (sbcg.lst 719 lines + alt_all.lst
   413 lines) count RUNS, not games. Measured by CHECKER (C111 N-7, claude/checker d53e1d4f) at trunk 68d50c8f: experiments/si/anc58/
