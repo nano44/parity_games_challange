@@ -8,6 +8,8 @@ Top three, always:
 ## Hourly sweep (trigger "1 * * * *" into the Lead)
 1. Re-read docs/NOW.md and this file. Do not rely on chat memory.
 2. Overage: get_session on the Lead; if rate_limit_info.isUsingOverage is true, run the Stop procedure now and tell the owner.
+   D21 / L51 (until 2026-11-14 10:05Z): instead, tell the owner at once via OWNER-DESK and spawn nothing new until the owner answers;
+   run the Stop procedure only on the owner's «stop» or a «rejected» limit.
 3. Read the WATCHDOG's last message, if any. For each roster session that is "working": get_session (never list). Flag: idle with work announced but not done,
    failed status_bucket, context_usage above 600k (plan a handover). Read its branch head (git fetch) and notes/<LANE>.md resume point.
 3a. Count WORKING lanes (gate roles CHECKER/REFEREE/REFEREE-2 excluded). Fewer than 5 is an exception (D17/L39, L38 (4)): start successors
