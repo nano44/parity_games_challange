@@ -1,0 +1,14 @@
+N5S237 F_2.pg n 708 mode spec iterations 5 fallbacks 1 even_wins 707
+N5X236 F_2.pg n 708 mode spec iterations 3 fallbacks 1 even_wins 707
+N5S237 F_3.pg n 1017 mode spec iterations 5 fallbacks 1 even_wins 1016
+N5X236 F_3.pg n 1017 mode spec iterations 3 fallbacks 1 even_wins 1016
+N5S237 F_4.pg n 1326 mode spec iterations 5 fallbacks 1 even_wins 1325
+N5X236 F_4.pg n 1326 mode spec iterations 3 fallbacks 1 even_wins 1325
+N5S237 F_5.pg n 1635 mode spec iterations 5 fallbacks 1 even_wins 1634
+N5X236 F_5.pg n 1635 mode spec iterations 3 fallbacks 1 even_wins 1634
+N5S237 F_6.pg n 1944 mode spec iterations 6 fallbacks 1 even_wins 1943
+N5X236 F_6.pg n 1944 mode spec iterations 3 fallbacks 1 even_wins 1943
+N5S237 F_7.pg n 2253 mode spec iterations 6 fallbacks 1 even_wins 2252
+N5X236 F_7.pg n 2253 mode spec iterations 3 fallbacks 1 even_wins 2252
+N5S237 F_8.pg n 2562 mode spec iterations 6 fallbacks 1 even_wins 2561
+N5X236 F_8.pg n 2562 mode spec iterations 3 fallbacks 1 even_wins 2561

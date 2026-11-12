@@ -75,15 +75,17 @@ def family(args):
     else: raise SystemExit("unknown family")
 
 if __name__ == "__main__":
-    tot = {k: 0 for k in KEYS}; spec = {k: 0 for k in SKEYS}; sec = {k: 0 for k in KEYS}; games = 0; Ts = set(); tied = 0; xdiff = 0; maxW = 0; maxF = 0; sumT = 0
+    tot = {k: 0 for k in KEYS}; spec = {k: 0 for k in SKEYS}; sec = {k: 0 for k in KEYS}; games = 0; Ts = set(); tied = 0; xdiff = 0; maxW = 0; maxF = 0; sumT = 0; w4 = {k: 0 for k in Wm.WKEYS}; W1 = 0
     for H, s0 in family(sys.argv[1:]):
-        c, T, its, wn = Wm.check(H, s0, "x"); c2, T2, its2, _ = Wm.check(H, s0, "s"); cv, F, itv, _ = Wm.check_spec(H, s0); c3, T3, its3, _ = Wm.second(H, s0)
-        games += 1; Ts.add(T); tied += int((T, its) != (T2, its2)); xdiff += int((T2, its2) != (T3, its3)); maxW = max(maxW, wn); maxF = max(maxF, F); sumT += T
+        c, T, its, wn = Wm.check(H, s0, "s"); c2, T2, its2, _ = Wm.check(H, s0, "x"); cv, F, itv, _ = Wm.check_spec(H, s0); c3, T3, its3, _ = Wm.second(H, s0); cw, w1, _ = Wm.check_w4(H, s0); W1 += w1
+        for k in Wm.WKEYS: w4[k] += cw[k]
+        games += 1; Ts.add(T); tied += int((T, its) != (T2, its2)); xdiff += int((T, its) != (T3, its3)); maxW = max(maxW, wn); maxF = max(maxF, F); sumT += T
         for k in KEYS: tot[k] += c[k] + c2[k]; sec[k] += c3[k]
         for k in SKEYS: spec[k] += cv[k]
-        if sum(c.values()) + sum(c2.values()) + sum(cv.values()) + sum(c3.values()):
+        if sum(c.values()) + sum(c2.values()) + sum(cv.values()) + sum(c3.values()) + sum(cw.values()):
             print("AIM237 CANDIDATE", dict(prio=H.prio, owner=H.owner, succ=H.succ, s0=s0), c, c2, cv, c3, flush=True)
     print("AIM237 " + " ".join(sys.argv[1:]) + f": games {games} | own engines x + s: " + " ".join(f"{k} {tot[k]}" for k in KEYS)
           + f" | T values {sorted(Ts)[:6]}{'...' if len(Ts) > 6 else ''} ({len(Ts)} distinct) sumT {sumT} tiediff(x,s) {tied} max|W| {maxW}"
           + " | N5 (spec): " + " ".join(f"{k} {spec[k]}" for k in SKEYS) + f" maxF {maxF}"
+          + " | (W4)-(W6): " + " ".join(f"{k} {w4[k]}" for k in Wm.WKEYS) + f" (W-1 starts {W1})"
           + " | second engine (n5v xi): " + " ".join(f"{k} {sec[k]}" for k in KEYS) + f" xdiff(s, n5v) {xdiff} | ctrl {R.CTRL}", flush=True)

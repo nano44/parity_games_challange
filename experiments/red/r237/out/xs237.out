@@ -1,0 +1,9 @@
+XS237 mode spec seed 1 games 300 nmax 10: trajdiff 0 itdiff 0 fbdiff 0 wrong 0 | max iterations 6 sum 264 | first differing game None
+XS237 mode spec seed 2 games 3000 nmax 12: trajdiff 0 itdiff 0 fbdiff 0 wrong 0 | max iterations 6 sum 2932 | first differing game None
+XS237 mode xi seed 2 games 3000 nmax 12: trajdiff 0 itdiff 0 fbdiff 0 wrong 0 | max iterations 6 sum 2926 | first differing game None
+XS237 mode spec seed 3 games 1000 nmax 30: trajdiff 0 itdiff 0 fbdiff 0 wrong 0 | max iterations 10 sum 1970 | first differing game None
+XS237 mode xi seed 3 games 1000 nmax 30: trajdiff 0 itdiff 0 fbdiff 0 wrong 0 | max iterations 10 sum 1959 | first differing game None
+XS237 mode spec seed 4 games 300 nmax 80: trajdiff 0 itdiff 0 fbdiff 0 wrong 0 | max iterations 10 sum 1063 | first differing game None
+XS237 mode xi seed 4 games 300 nmax 80: trajdiff 0 itdiff 0 fbdiff 0 wrong 0 | max iterations 10 sum 1055 | first differing game None
+XS237 mode spec seed 3 games 1000 nmax 30: trajdiff 60 itdiff 14 fbdiff 1 wrong 0 | max iterations 10 sum 1959 | first differing game (44, 24, 3, 4)
+XS237 mode xi seed 4 games 300 nmax 80: trajdiff 63 itdiff 10 fbdiff 0 wrong 0 | max iterations 10 sum 1063 | first differing game (1, 52, 4, 4)

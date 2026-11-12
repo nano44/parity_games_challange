@@ -4,7 +4,9 @@ Goal: a parity game H and a positional Even strategy s0 for which N5'-xi from SP
 of H until its first fallback. Base: experiments/red/r236/wr237.py check(H, s0) = WRAP's six must-0 counters (s3fail, nonstd, nohoward,
 fbwrong, endwrong, wrong), run on BOTH own engines (w237.py: n5x236 and the SPEC-exact n5s237) and summed. Score = (sum of the six counters, T): any nonzero counter wins at once,
 otherwise the climb lengthens Howard's run on H (more states and (step, vertex) pairs under test). Neutral moves are accepted.
-A genome is (prio, owner, succ, s0): TARGET.md section 1 game, priorities in 0..n, every vertex with a successor, self-loops allowed.
+A genome is (prio, owner, succ, s0): a parity game with natural priorities in 0..2n+2 (TARGET.md section 1 before its compression
+step; random and mutated priorities are drawn from 0..n, a START family keeps its order and parities), every vertex with a successor,
+self-loops allowed.
 Mutations: owner flip, priority (random / copy another vertex's / +-1), add edge (self-loops included), remove edge, s0 change,
 add vertex, delete vertex, swap two indices (index tie-breaks), swap two priorities.
 Every candidate (counter sum > 0) is written to OUT/cand_TAG_EVAL.json and re-run on the second engine (box 104's wrap104.check =
@@ -25,7 +27,7 @@ KEYS = ("s3fail", "nonstd", "nohoward", "fbwrong", "endwrong", "wrong")
 def valid(g):
     n = len(g["prio"])
     return (n >= 1 and all(g["succ"][v] and all(0 <= w < n for w in g["succ"][v]) and len(set(g["succ"][v])) == len(g["succ"][v]) for v in range(n))
-            and all(0 <= p <= n for p in g["prio"]) and all((g["s0"][v] in g["succ"][v]) if g["owner"][v] == 0 else g["s0"][v] == -1 for v in range(n)))
+            and all(0 <= p <= 2 * n + 2 for p in g["prio"]) and all((g["s0"][v] in g["succ"][v]) if g["owner"][v] == 0 else g["s0"][v] == -1 for v in range(n)))
 
 def rand_genome(rng, nmax):
     n = rng.randint(2, min(nmax, 8)); prio = [rng.randint(0, n) for _ in range(n)]; owner = [rng.randint(0, 1) for _ in range(n)]
@@ -36,7 +38,7 @@ def fix(g, rng):
     """repair s0 and the priority range after a mutation"""
     n = len(g["prio"])
     for v in range(n):
-        g["succ"][v] = sorted(set(g["succ"][v])); g["prio"][v] = min(g["prio"][v], n)
+        g["succ"][v] = sorted(set(g["succ"][v])); g["prio"][v] = min(g["prio"][v], 2 * n + 2)
         if g["owner"][v] == 1: g["s0"][v] = -1
         elif g["s0"][v] not in g["succ"][v]: g["s0"][v] = rng.choice(g["succ"][v])
     return g
@@ -75,11 +77,13 @@ def mutate(g, rng, nmax):
     return fix(g, rng)
 
 def evaluate(g):
-    """both own engines (w237): counters summed over the two; T, iterations of engine x; tiediff = the engines' (T, iterations) differ"""
-    H = pg.Game(g["prio"], g["owner"], g["succ"]); c, T, its, wn = Wm.check(H, g["s0"], "x"); c2, T2, its2, _ = Wm.check(H, g["s0"], "s")
+    """both own engines (w237): counters summed over the two; T, iterations of the primary engine s (n5s237; Lead 18:33Z), engine x
+    (n5x236) second; tiediff = the engines' (T, iterations) differ"""
+    H = pg.Game(g["prio"], g["owner"], g["succ"]); c, T, its, wn = Wm.check(H, g["s0"], "s"); c2, T2, its2, _ = Wm.check(H, g["s0"], "x")
     cv, F, itv, _ = Wm.check_spec(H, g["s0"])
     evaluate.tiediff = int((T, its) != (T2, its2)); evaluate.parts = (c, c2, T2, its2, cv, F, itv); evaluate.spec = cv; evaluate.F = F
-    tot = {k: c[k] + c2[k] for k in c}; tot["spec"] = sum(cv.values())
+    cw, w1, _ = Wm.check_w4(H, g["s0"]); evaluate.w4 = cw; evaluate.w1 = w1
+    tot = {k: c[k] + c2[k] for k in c}; tot["spec"] = sum(cv.values()); tot["w4"] = sum(cw.values())
     return tot, T, its, wn
 
 def second(g):
@@ -99,7 +103,7 @@ def start_genome(rng, nmax):
         if cur % 2 != p % 2: cur += 1
         mp[p] = cur
     g = dict(prio=[mp[p] for p in H.prio], owner=list(H.owner), succ=[sorted(set(s)) for s in H.succ], s0=[s0[v] if H.owner[v] == 0 else -1 for v in range(H.n)])
-    assert max(g["prio"]) <= H.n, "priorities do not fit 0..n"
+    assert max(g["prio"]) <= 2 * H.n + 2, "priorities do not fit 0..2n+2"
     return g
 
 if __name__ == "__main__":
@@ -112,14 +116,14 @@ if __name__ == "__main__":
         g = start_genome(rng, nmax); assert valid(g); c, T, its, wn = evaluate(g)
         S = dict(tag=tag, seed=seed, nmax=nmax, ctrl=R.CTRL, evals=1, cur=g, cur_score=[sum(c.values()), T], best=g, best_score=[sum(c.values()), T],
                  tot={k: c[k] for k in KEYS}, pairs=T * sum(1 for o in g["owner"] if o == 0), states=T + 1, sumT=T, maxT=T, maxW=wn, cands=0,
-                 x=0, xdiff=0, xkill=0, accepted=0, nhist={}, tiediff=evaluate.tiediff, spec=dict(evaluate.spec), maxF=evaluate.F, sumF=evaluate.F)
+                 x=0, xdiff=0, xkill=0, accepted=0, nhist={}, tiediff=evaluate.tiediff, spec=dict(evaluate.spec), maxF=evaluate.F, sumF=evaluate.F, w4=dict(evaluate.w4), w1=evaluate.w1)
     def save():
         st = rng.getstate(); S["rng"] = [st[0], list(st[1]), st[2]]; tmp = ck + ".tmp"
         json.dump(S, open(tmp, "w")); os.replace(tmp, ck)
     def line(what):
         print(f"CLIMB237 {tag} {what}: evals {S['evals']} cur {S['cur_score']} n {len(S['cur']['prio'])} best {S['best_score']} n_best {len(S['best']['prio'])} | "
               + " ".join(f"{k} {S['tot'][k]}" for k in KEYS) + f" | states {S['states']} pairs {S['pairs']} sumT {S['sumT']} maxT {S['maxT']} max|W| {S['maxW']} "
-              f"cands {S['cands']} tiediff(x,s) {S['tiediff']} | N5 (spec, WRAP (v) + Remark 3): " + " ".join(f"{k} {S['spec'][k]}" for k in Wm.SKEYS) + f" maxF {S['maxF']} sumF {S['sumF']} | second engine: sampled {S['x']} xdiff {S['xdiff']} xkill {S['xkill']} | accepted {S['accepted']} ctrl {S['ctrl']}", flush=True)
+              f"cands {S['cands']} tiediff(x,s) {S['tiediff']} | N5 (spec, WRAP (v) + Remark 3): " + " ".join(f"{k} {S['spec'][k]}" for k in Wm.SKEYS) + f" maxF {S['maxF']} sumF {S['sumF']} | (W4)-(W6): " + " ".join(f"{k} {S['w4'][k]}" for k in Wm.WKEYS) + f" (W-1 starts {S['w1']}) | second engine: sampled {S['x']} xdiff {S['xdiff']} xkill {S['xkill']} | accepted {S['accepted']} ctrl {S['ctrl']}", flush=True)
     while S["evals"] < evals and time.time() - t0 < TLIMIT:
         g = S["cur"]
         for _ in range(1 + (rng.random() < 0.3) + (rng.random() < 0.1)): g = mutate(g, rng, nmax)
@@ -128,6 +132,8 @@ if __name__ == "__main__":
         for k in KEYS: S["tot"][k] += c[k]
         S["tiediff"] += evaluate.tiediff; S["maxF"] = max(S["maxF"], evaluate.F); S["sumF"] += evaluate.F
         for k in Wm.SKEYS: S["spec"][k] += evaluate.spec[k]
+        for k in Wm.WKEYS: S["w4"][k] += evaluate.w4[k]
+        S["w1"] += evaluate.w1
         S["pairs"] += T * nE; S["states"] += T + 1; S["sumT"] += T; S["maxT"] = max(S["maxT"], T); S["maxW"] = max(S["maxW"], wn)
         S["nhist"][str(len(g["prio"]))] = S["nhist"].get(str(len(g["prio"])), 0) + 1
         if kill:
