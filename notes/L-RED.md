@@ -3389,3 +3389,10 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
 - Tools in experiments/red/r231: blk231 (T, k, Dtop, D_mov, block seq), blkmap231, blkplay231, dep231 (BOX 206 counters + rgen),
   cw231 (CW measures + ascents), carry231 (CW builder), climb231. MWR(n): r229/genmw229.py WTGT=R n 2. No LNEW env needed.
 - Costs: own.py is fast to N+M ~ 650 (CW16: 37 s for cw231); CW32 (N+M 1,515): cw231 9 min, dep231 ~9 min.
+- 05:20-06:30Z: (a) CWR / Add. D: reproduced (own builder JSON-equal); true obstruction = race-cycle trap (top even beta_R 218), not a
+  cycle through e_qh (0 states); single-target re-arm sweep (all movers, n 4/8): none beats CW (R231-cwr.md, 49951e9b + 2c5e558b).
+  Item 3: RING3 A-D (dynamic a-faces) all one domino T3 = m (R231-stall3.md, 6e774d6b); Add. A (078e2b29): Odd's sigma-bar (own Odd SI on
+  Gamma3, face231.py) refuses every dynamic source e-face at every state; N5's tau is frozen in std states -- never log it as Odd's reply.
+  (b) gated re-arm CWG1-4 (R231-rearm2.md, c80e4fb2): static exit one-shot, hv exit = race trap; none beats CW.
+- RESUME POINT (06:30Z): all routed items done and reported; waiting for U-FREE (L-SI 50 box 99) or routing. Γ3 tools need env
+  LNEW = git archive fcba92fc experiments/new experiments/harness experiments/si/si.py (si.py is required).
