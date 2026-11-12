@@ -1,5 +1,20 @@
 # L-LOWER notebook
 
+## Successor 14 (Opus 5.5): BOX L16, GO from the Lead 04:25Z 2026-11-12 (handover check 51f4a554, score 5)
+### Resume point (06:3xZ 2026-11-12, date -u)
+- Product docs/lower/L16-cascade.md (§0-§4 drafted). Tools experiments/lower/l16/ (README.md): pgad4/pgad5 (clients read any mover in an
+  order XORD), ekr2.py (EXACT cascade + client with EXT inputs = fixed base chains; LEVEL, KEEPO, KEEPR, FORCEBASE, DEBUGCORE, CNF), sim2.py
+  (independent replay), graft2.py, diag.py, edrup.py (DRUP of ekr2 UNSATs).
+- D1 literal: grafted E_k3 cascade freezes by row 13 (DEAD as a clock past 16). Free levels 8-10 (pgad3, 6 helpers) P 18: no answer 2,900 s.
+  pgad5 clients-only: P 14 SAT (X5_P14_dec f002cc9f, replayed), P 18 no answer 2,900 s.
+- KEY RESULT (DATA): f6 is the cluster sink (CLUSTER-SINK, trivial lemma); its list = XNOR(s10, s11) at 128/129 free pre-states (exception
+  row 2). ekr2 on C12 chains: k 0 UNSAT (P 32); k 1 with EXT 0-11 SAT through P 510 (replayed). KEEPO (o(8) unchanged) kills k 1 at 32.
+  X5 base: level 13, k 1 SAT P 18, UNSAT P 20.
+- OBSTRUCTION found: any slot with an oscillating key is read (indirectly) by q6 / q7 / f7; graft G1 (2a2ab451) drifts at row 1.
+  Running: pgad5 on G1, XS 8,11,12,14,15, XORD 8,11,12,15,14, FIXC 26,27, P 18 (log $SP/G1X5_P18.log); edrup batch ($SP/edrup.log).
+- FINDING for the Lead: L14's cited decoded genomes (d1704b4e, db57ea57, a3bd361d) were never committed (l13/out holds only logs).
+- Trap: I launched one ekr2 loop with a bare «&» (rule break); killed it at once and relaunched as a tracked task.
+
 ## Successor 13 HANDOVER (written 2026-11-12 03:41Z, date -u; PARK on Lead 03:42Z instruction)
 ### DONE (claude/l-lower; products docs/lower/L14-sink.md, docs/lower/L15-keyroom.md; tools experiments/lower/l14/, l15/)
 - 7a8ca8cc handover check (score 5). ddb647db prep tools (rsolve, ann3, mincut, cause).
