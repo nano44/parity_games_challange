@@ -1,0 +1,1 @@
+TAIL45 MWR4_2.json -> TMWR4.json | T3 30 / 30 | flips on G's gates 13 / 13, same flip set True | flips with depth100 changed 13, depthNS changed 0, depthMID changed 0 | deepNS 0 / 0, IntNS 0 / 0, gmaxNS 0 / 0 | deep100 0 / 13 | pimis 0 / 0 | ctrl 0
