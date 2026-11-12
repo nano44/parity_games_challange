@@ -6,17 +6,25 @@ Files I own: docs/red-b/, experiments/red-b/, notes/L-RED-B.md, docs/agents/hand
 ## Resume point
 - Object: claude/l-new 8db300fe, docs/new/N5-LEVEL-box208.md (sha1 55e65381…, 502 lines): Lemma LEVEL, WIN, R-INT, R-HEIGHT, K1-TCYC,
   FVS-TCYC (body), Addendum A: Lemma PLATEAU, Theorem ALL-TCYC. All CANDIDATE, scope IDEAL-CYC on Γ(G).
-- Done: start check written. Next: own engine in experiments/red-b/ (IDEAL-CYC from R104 / R118 (a) / P-N5-REALIZE §3.1), then counters,
-  then proof read B1 in docs/red-b/.
-- No CPU job running. No long CPU job before the Lead's «go».
-- Independence rule: do not read L-RED 66, REFEREE 32, L-COMP 19 on box 208 before my verdict is sent.
+- Report: docs/red-b/B1-box208.md. INTERIM verdict sent to the Lead 13:23Z: every lemma SURVIVES my read and my engine; one write-up GAP
+  G-1 in PLATEAU (P6) step (ii) (plays from Y beyond v; repair = F3 + injective ext(g, ·) + NO-TIE); notes N-1, N-2. No DEAD.
+- Tools (experiments/red-b/): eng.py (own engine), lev.py (27 must-0 counters + coverage), gen.py (random shapes, exhaustive
+  enumerator with part / parts), mut.py, sweep.py, climb.py (resumable, work/), xcheck.py, cmpT.py, requote.py, run_b1.sh (sets A-H),
+  check.sh (gate self-check, ~2 s). Outputs out/.
+- State of the runs (2026-11-12 14:10Z): sets A, B, W, X, T, C, D, E, G done (outputs in out/, pinned in out/SHA1SUMS). G (5.8M random
+  genomes) ran as short single-core chunks while the first push was in the gate, before any «go»; said so in the report §5.
+  NOT started: F (exhaustive (1,5), (3,4), (1,6)) and H (climbs): ONLY after the Lead's «go», at most 2 at once, as tracked tasks
+  (`bash run_b1.sh F`, `bash run_b1.sh H`; restart-safe, finished chunks skipped; climbs resume from work/climb_*.json).
+- Pushes: start check d81ff541 is on origin (push ended 14:06Z, VERIFY PASS). Second commit (report + tools + outputs): see git log.
+- After the runs: fill §5.1 of the report, write out/SHA1SUMS (`cd out && sha1sum *.out > SHA1SUMS`), commit by explicit path, push with
+  scripts/push.sh (pgrep first; never two pushes), message the Lead with the final verdict.
+- Independence rule: do not read L-RED 66, REFEREE 32, L-COMP 19 on box 208 before the FINAL verdict is sent.
 
 ## Queue
-1. Engine + brute-force cross-check (small games, all Odd strategies).
-2. Counters: Φ monotone, stall ⇒ cycle, plateau length, Φ values vs P, T_CYC vs bound; controls.
-3. Proof read of (K1)-(K5), (L1)-(L5), (C1)-(C4), (P1)-(P7), with premises re-quoted from trunk RESULTS.
-4. Constructions: exhaustive small sizes, climbs on plateau length and T_CYC / bound.
-5. Verdict per lemma to the Lead.
+1. Second push (report + tools + outputs) through scripts/push.sh; tell the Lead the SHA.
+2. «go» from the Lead → run_b1.sh F and H (two tracked tasks).
+3. Fill the report's §5.1 and final verdict; message the Lead.
+4. If asked: the Γ3 form (box 209) is NOT my object; ask the Lead before touching it.
 
 ## Sources opened
 - trunk docs/RESULTS.md R104 (l. 9864), R118 (l. 13607): read 2026-11-12 (title lines; definitions of the genome, Γ(G), IDEAL-CYC).
@@ -28,7 +36,15 @@ Files I own: docs/red-b/, experiments/red-b/, notes/L-RED-B.md, docs/agents/hand
   as R118's packet states it and have not opened the papers myself.
 
 ## Dead ends
-- None yet.
+- None yet (no statement of box 208 killed; attacks tried and why each fails: docs/red-b/B1-box208.md §5).
 
 ## Things only I know
-- Nothing yet.
+- My engine's e-priority order is P-N5-REALIZE §3.1's (by (lev(owner), gate index)). The optional genome key "eorder" (mine, tests only)
+  replaces it by an arbitrary order; box 208 says [E-LEV] is not used, and 30,000 such genomes gave 0 violations.
+- Exhaustive tiers with M = N are vacuous for LEVEL (every mover has one option, T = 0). The first non-trivial tiers are M ≥ N + 2.
+- A gen.py bug I made and fixed before any output used it: the loop variable `part` shadowed the chunk parameter (chunks came out
+  empty after the first group). The outputs out/exh_* of set D were produced by the unchunked code (checked: counts equal the formula).
+- Howard ties (several best gates, current one not best) are rare on the frozen genomes (2 in 78 runs) and common on small random
+  genomes; the tie rule is a parameter of eng.howard_run ("keep-low", "high", "rand").
+- The Python engine does about 6,000-7,000 tiny genomes per second with all reference states; (N, M) = (2,5) has 294,865,920 genomes
+  and is not run exhaustively.
