@@ -1,0 +1,2 @@
+K1L7_n48.json {'N': 48, 'M': 97, 'T': 37, 'Q': 34, 'maxdepth': 4, 'Q>1': 7, 'hist': {-1: 1, 0: 24, 1: 2, 2: 2, 3: 1, 4: 4}, 'elfall': 0, 'pfail': 0, 'cfail': 0, 'qfail': 0, 'tfail': 0, 'dnop': 0, 'dlam': 0, 'dsym': 1277, 'ddep': 0, 'dkind': 1940, 'dlfail': 0, 'divcases': 1940}
+TOTAL {'elfall': 0, 'pfail': 0, 'cfail': 0, 'qfail': 0, 'tfail': 0, 'dnop': 0, 'dlam': 0, 'dsym': 1277, 'ddep': 0, 'dkind': 1940, 'dlfail': 0, 'genomes': 1, 'divcases': 1940, 'Q': 34} hist {-1: 1, 0: 24, 1: 2, 2: 2, 3: 1, 4: 4}

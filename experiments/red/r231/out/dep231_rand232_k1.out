@@ -1,0 +1,1 @@
+TOTAL {'elfall': 0, 'pfail': 0, 'cfail': 0, 'qfail': 0, 'tfail': 0, 'dnop': 0, 'dlam': 0, 'dsym': 0, 'ddep': 0, 'dkind': 0, 'dlfail': 0, 'genomes': 300, 'divcases': 313, 'Q': 286} hist {-1: 267, 0: 19}
