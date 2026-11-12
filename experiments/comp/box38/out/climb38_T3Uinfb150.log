@@ -1,0 +1,17 @@
+BEST BEST_T3Uinfb150_D1_T28_U0_NM147_fadf0f61.json score [28, 1] {"U": 0, "T3": 28, "fb": 1, "C": 0, "Dmov": 1, "Dmov_x": 0, "NM": 147, "maxflip": 0} ideal37 {"Dmov": 1, "skipped": 1} agree True t 01:28:39Z
+BEST BEST_T3Uinfb150_D2_T28_U1_NM154_aaa52de9.json score [28, 2] {"U": 1, "T3": 28, "fb": 1, "C": 1, "Dmov": 2, "Dmov_x": 0, "NM": 154, "maxflip": 1} ideal37 {"Dmov": 2, "skipped": 1} agree True t 01:28:43Z
+BEST BEST_T3Uinfb150_D3_T28_U2_NM156_21c06d04.json score [28, 3] {"U": 2, "T3": 28, "fb": 1, "C": 1, "Dmov": 3, "Dmov_x": 39, "NM": 156, "maxflip": 1} ideal37 {"Dmov": 3, "skipped": 1} agree True t 01:28:44Z
+BEST BEST_T3Uinfb150_D2_T29_U3_NM158_f4ae8994.json score [29, 2] {"U": 3, "T3": 29, "fb": 1, "C": 1, "Dmov": 2, "Dmov_x": 39, "NM": 158, "maxflip": 1} ideal37 {"Dmov": 2, "skipped": 1} agree True t 01:28:48Z
+BEST BEST_T3Uinfb150_D4_T29_U4_NM158_364cad45.json score [29, 4] {"U": 4, "T3": 29, "fb": 1, "C": 1, "Dmov": 4, "Dmov_x": 39, "NM": 158, "maxflip": 2} ideal37 {"Dmov": 4, "skipped": 1} agree True t 01:28:48Z
+BEST BEST_T3Uinfb150_D5_T29_U4_NM159_600a6efd.json score [29, 5] {"U": 4, "T3": 29, "fb": 1, "C": 1, "Dmov": 5, "Dmov_x": 39, "NM": 159, "maxflip": 2} ideal37 {"Dmov": 5, "skipped": 1} agree True t 01:28:49Z
+BEST BEST_T3Uinfb150_D6_T29_U4_NM160_01c4c511.json score [29, 6] {"U": 4, "T3": 29, "fb": 1, "C": 1, "Dmov": 6, "Dmov_x": 43, "NM": 160, "maxflip": 2} ideal37 {"Dmov": 6, "skipped": 1} agree True t 01:28:58Z
+BEST BEST_T3Uinfb150_D7_T29_U4_NM160_62d83278.json score [29, 7] {"U": 4, "T3": 29, "fb": 1, "C": 1, "Dmov": 7, "Dmov_x": 43, "NM": 160, "maxflip": 2} ideal37 {"Dmov": 7, "skipped": 1} agree True t 01:29:03Z
+BEST BEST_T3Uinfb150_D8_T29_U3_NM159_25e0117a.json score [29, 8] {"U": 3, "T3": 29, "fb": 1, "C": 1, "Dmov": 8, "Dmov_x": 43, "NM": 159, "maxflip": 2} ideal37 {"Dmov": 8, "skipped": 1} agree True t 01:29:09Z
+restart 0 seed g37n4_down_greedy_U0.json end [29, 8] {"U": 3, "T3": 29, "fb": 1, "C": 1, "Dmov": 8, "Dmov_x": 43, "NM": 160, "maxflip": 2} global [29, 8] evals 419 34s
+BEST BEST_T3Uinfb150_D5_T30_U1_NM160_50f098e5.json score [30, 5] {"U": 1, "T3": 30, "fb": 1, "C": 1, "Dmov": 5, "Dmov_x": 52, "NM": 160, "maxflip": 2} ideal37 {"Dmov": 5, "skipped": 1} agree True t 01:29:35Z
+restart 1 seed g37n4_down_greedy_U0.json end [30, 5] {"U": 1, "T3": 30, "fb": 1, "C": 1, "Dmov": 5, "Dmov_x": 52, "NM": 159, "maxflip": 2} global [30, 5] evals 851 32s
+restart 2 seed g37n4_down_greedy_U0.json end [28, 4] {"U": 2, "T3": 28, "fb": 1, "C": 1, "Dmov": 4, "Dmov_x": 53, "NM": 160, "maxflip": 2} global [30, 5] evals 1254 31s
+BEST BEST_T3Uinfb150_D6_T31_U4_NM155_4db72ac7.json score [31, 6] {"U": 4, "T3": 31, "fb": 1, "C": 1, "Dmov": 6, "Dmov_x": 34, "NM": 155, "maxflip": 2} ideal37 {"Dmov": 6, "skipped": 1} agree True t 01:30:29Z
+BEST BEST_T3Uinfb150_D6_T32_U4_NM156_96cccb25.json score [32, 6] {"U": 4, "T3": 32, "fb": 1, "C": 1, "Dmov": 6, "Dmov_x": 50, "NM": 156, "maxflip": 2} ideal37 {"Dmov": 6, "skipped": 1} agree True t 01:30:34Z
+restart 3 seed g37n4_down_greedy_U0.json end [32, 6] {"U": 6, "T3": 32, "fb": 1, "C": 1, "Dmov": 6, "Dmov_x": 51, "NM": 158, "maxflip": 2} global [32, 6] evals 1711 36s
+DONE
