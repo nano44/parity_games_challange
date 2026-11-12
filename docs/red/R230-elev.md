@@ -52,3 +52,4 @@ experiments/red/r230/inst/elev_best_c12.json, elev_best_c24.json, elev_best_c48.
 
 ## 5. Sources opened
 docs/RESULTS.md R121 (l. 14320) and R125 (l. 15595) at trunk 4c2f407d2; L-NEW gamma3.py / n5v.py at l-new fcba92fc (code, as engine).
+- sha1 at claude/l-red fabfe38e1: elev_best_c12 afaf9e8a…, elev_best_c24 50d82fe6…, elev_best_c48 6606feaa….
