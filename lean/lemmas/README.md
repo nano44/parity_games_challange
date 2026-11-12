@@ -220,8 +220,14 @@ Allowed axioms: propext, Classical.choice, Quot.sound. No sorry, no admit, no ne
                             with the carrier priorities as a parameter (`Carrier`, `r104`, `Carrier.WF`); `Vertex3`, `idx3`, `prio3`,
                             `top3`, `pr3`, `isOdd3`, `V0_3`, `E3`, the standard state `std3 s`, `start3`. Per-pad priorities fixed by
                             experiments/new/box189/gamma3.py (R117's text: ≤ 2), DATA-checked (check/gamma3check.py).
-- PGLemmas/Gamma3Statement.lean  STATEMENTS ONLY, PROPOSED to the Lead, none proved: `PadStatement` (R117's Lemma PAD (a), (b)),
-                            `Gamma3OldStatement` (Γ inside Γ3), `Gamma3CardStatement` (n = N + 7M + 10); deviations in its header.
+- PGLemmas/Gamma3Statement.lean  STATEMENTS ONLY, accepted by the Lead 22:56Z: `PadStatement` (R117's Lemma PAD (a), (b), STRONGER:
+                            every legal successor map, carriers Ω ≥ 3; PAD (c), the value transport, NOT stated), `Gamma3OldStatement`
+                            (Γ inside Γ3), `Gamma3CardStatement` (n = N + 7M + 10); deviations in its header.
+- PGLemmas/Gamma3Pad.lean   `Genome.pad : G.PadStatement`, no premise beyond the statement's: `reach_high` (every vertex but c_X
+                            reaches Ω ≥ 3 within four steps), `eq_cX_of_iterate` (only c_X reaches c_X), `pr3_lt_of_prio_lt`,
+                            `prio3_pad_le`, `top3_ge`.
+- PGLemmas/Gamma3Basic.lean `Genome.gamma3_card`, `Genome.gamma3_old`; `card_vertex` (N + 3M + 6), `card_vertex3`, `idx_lt`,
+                            `idx3_lt`, `idx3_injective`, `prio3_r104_old` (Γ3(G)'s priorities on Γ's vertices are Γ's).
 - PGLemmas.lean             the library root (imports).
 - Axioms.lean               `#print axioms` of every theorem above.
 - INDEX.md                  lane text ↔ Lean statement ↔ Lean theorem, with the premise each statement keeps.

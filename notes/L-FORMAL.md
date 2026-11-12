@@ -53,7 +53,15 @@
     them»). NEXT: the Lead's diff of those three; then prove PAD (plan: a cycle through any non-core vertex passes a gate's face β or e
     (Ω ≥ 3 by hypothesis) or c_W (top3 ≥ 4); core cycles pass K0, K1 or K3, or are K2's loop (Ω 3); c_X has no in-edge but its loop, so
     lam = c_X only for v = c_X with plen 0; p' orders by Ω first), then (i), (ii).
-  - Then: what CHECKER rules on the Lean rows (C143); box 212's RF-B in Lean when L-NEW 74 states it.
+  - Lead 22:56Z: PadStatement, Gamma3OldStatement, Gamma3CardStatement ACCEPTED (PAD «STRONGER in two ways … Both are fine»; «Record
+    (iii) clearly: PAD (c), the value transport, is not stated»). «Prove PAD first, then the other two. Commit when the build is clean
+    and push in a batch.» CHECKER item C143 opens on MANIFEST c8963698 (the Lead).
+  - Container restart about 23:00-23:40Z killed push.sh of 99b19401 (origin stayed at c8963698); the filesystem survived. PROOF COMMIT
+    (this commit, pushed together with 99b19401): PGLemmas/Gamma3Pad.lean (`pad`), PGLemmas/Gamma3Basic.lean (`gamma3_card`,
+    `gamma3_old`, `card_vertex`, `card_vertex3`, `idx3_injective`, …); Axioms.lean 72 lines.
+  - NEXT (my proposals, not yet routed): PAD (c) / the strategy transport Γ ↔ Γ3 (definitions first: `lift3 σ` on Γ3 from a state of
+    Γ, then «val in Γ3 of old v = val in Γ with padded length»); S3-START (needs SPEC's S3 in Lean: a definition diff); then what the
+    Lead routes (C143's rulings on the Lean rows; box 212's RF-B when L-NEW 74 states it).
 - SUCCESSOR 2 (session_01V5yGRaQYgCY9vD9mnoWrPb, started 2026-11-12T17:10Z; this block is the resume point, the blocks below it are the
   predecessor's and stay as history). Handover check 8fb3dd6c is on origin (push.sh exit 0 at 18:00:32Z). Lead 17:22Z: all five answers
   match, «go». Lead's rulings of 17:22Z, verbatim. Item (0): «(a) Mirror frozen / legal / howard / moves EXACTLY as defined, along

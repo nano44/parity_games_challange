@@ -73,3 +73,6 @@ import PGLemmas
 #print axioms PG.Genome.imp_l5
 #print axioms PG.Genome.imp_non_stall
 #print axioms PG.Genome.imp_k5_new
+#print axioms PG.Genome.pad
+#print axioms PG.Genome.gamma3_card
+#print axioms PG.Genome.gamma3_old

@@ -58,9 +58,9 @@ CONDITIONAL on F1 = landed RESULTS R15 (a).
 | every Howard run is a run under an improvement rule (so each rule-free row contains its Howard form) | (theorem only) | Genome.IdealCycRun.toImp (GenomeImp) | none |
 | WHERE THE RULE ENTERS (read off the proofs; logged by the Lead 19:05Z as DATA for box 212): `howard` is used by (K5), `plateau_g` ((P3), (P5), (P6), (P7)), `quiet`, `all_tcyc`, `all_tcyc_sharp`, `run_exists`; it is NOT used by (K1) beyond F1, (K2)-(K4), (L2), (L3), (L5), (P4) `gate_const`, or the count of non-stall steps. So the rule enters only at the stalls | | | |
 | Γ3(G) of RESULTS R117 (P-N5-REACH §3) and Γ3*(G*) of L-SI box 104 §4: DEFINITIONS, accepted by the Lead 22:22Z with deviations (a)-(e) | Gamma3.lean (definitions) | (none) | |
-| R117 Lemma PAD (a), (b): no pad is a cycle node or in a P-set; the cycle node has Ω ≥ 3 unless it is c_X | PadStatement (Gamma3Statement); PROPOSED | NOT PROVED | |
-| Γ inside Γ3 (indices, priorities, owners unchanged; pads on edges) | Gamma3OldStatement (Gamma3Statement); PROPOSED | NOT PROVED | |
-| n = N + 7M + 10; idx3 a bijection onto 0..n − 1 under WF | Gamma3CardStatement (Gamma3Statement); PROPOSED | NOT PROVED | |
+| R117 Lemma PAD (a), (b): no pad is a cycle node or in a P-set; the cycle node has Ω ≥ 3 unless it is c_X; STRONGER than R117 (every legal successor map; carriers Ω ≥ 3 only; Lead 22:56Z); PAD (c), the value transport, is NOT stated | PadStatement (Gamma3Statement); accepted 22:56Z | Genome.pad (Gamma3Pad) | none |
+| Γ inside Γ3 (indices, priorities, owners unchanged; pads on edges) | Gamma3OldStatement (Gamma3Statement); accepted 22:56Z | Genome.gamma3_old (Gamma3Basic) | none |
+| n = N + 7M + 10; idx3 a bijection onto 0..n − 1 under WF | Gamma3CardStatement (Gamma3Statement); accepted 22:56Z | Genome.gamma3_card (Gamma3Basic) | none (WF for the bijection) |
 
 DATA beside the Γ3 rows (check/gamma3check.py; unit: vertex): against experiments/new/box189/gamma3.py, the 14 genomes of
 experiments/new/box189/corpus and the 11 of experiments/new/box191/inst, 25 genomes, 5,834 vertices: nfail, miss, priofail, ownfail,

@@ -1,6 +1,10 @@
 /-
 STATEMENTS ONLY on Γ3(G) / Γ3*(G*) (PGLemmas/Gamma3.lean, accepted by the Lead 2026-11-12 22:22Z).
-PROPOSED to the Lead for the diff; nothing here is proved.  Order (Lead 22:22Z): PAD first.
+ACCEPTED by the Lead (2026-11-12 22:56Z): «PadStatement: ACCEPT, with deviations (i)-(iii) as you named them …
+Your form is STRONGER in two ways: it holds for every legal successor map, not only states on the run; carriers
+need only Ω ≥ 3.  Both are fine.»  «Record (iii) clearly: PAD (c), the value transport, is not stated.»
+«Gamma3OldStatement: ACCEPT.»  «Gamma3CardStatement: ACCEPT.»  Proofs: `pad` (PGLemmas/Gamma3Pad.lean),
+`gamma3_old`, `gamma3_card` (PGLemmas/Gamma3Basic.lean).
 
 * `PadStatement`  RESULTS R117's Lemma PAD, (a) and (b), in the wording of P-N5-REACH §5 (claude/l-new
   e7dff7d1): «(a) Every cycle of Γ3 other than the self-loop of c_X contains a vertex of Ω ≥ 3. (b) Hence,
@@ -16,7 +20,7 @@ PROPOSED to the Lead for the diff; nothing here is proved.  Order (Lead 22:22Z):
   (`π = G.r104`) and every Γ3*(G*); (ii) «no pad is a cycle node» and «no pad is in a P-set» are stated for
   EVERY vertex v, c_X included (c_X's play is its loop: cycle node c_X, empty P-set); (iii) PAD (c) (values
   in Γ3 = values in Γ with padded lengths) is NOT stated: it needs the transport of strategies Γ ↔ Γ3,
-  which Gamma3.lean does not define (its deviation (e)).
+  which Gamma3.lean does not define (its deviation (e)).  PAD (c), THE VALUE TRANSPORT, IS NOT STATED.
 * `Gamma3OldStatement`  (i) Γ inside Γ3, [REACH] §3: «Γ3(G) is Γ(G) ([DEF], with its vertex indices,
   priorities and owners unchanged) with these pads»: for every vertex v of Γ, idx3, prio3 (π = G.r104)
   and the owner of `old v` are those of v; and «A PAD on an edge a → b is a new Even vertex p with the
