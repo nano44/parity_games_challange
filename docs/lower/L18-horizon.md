@@ -43,8 +43,9 @@ counter (unit, set, scope). Model: R104's IDEAL model at degree ≤ 2 (sim6; fen
   | 9 | L18b_N510 | 10, 12 | SAT 1,443 s | L18b_N9a 5b634aac | 0..9 |
   | 10 | L18b_N9a | 10, 14 | SAT 2,514 s | L18b_N10a d3b6e342 | 0..10 |
   | 11 | L18b_N10a | 15 | SAT 1,109 s (wall 1,213, cap 6,000) | L18b_N11a a6e0185b | 0..11 |
+  | 12 | L18b_N11a | 14 | SAT 451 s (wall 523, cap 6,000) | L18b_N12a 96fb7995 | 0..12 |
   DATA (unit = core8 rows followed by the free run, counter f6 = 129 free pre-states of rows 0..510, scope frame L18b on A2_solved):
-  largest P with f6 globally correct = 10 (L18b_N10a); 11 after §4 (L18b_N11a). The pair keeps moving to row 505 in L18b_N510 (65 changes): the «silence» of §2 was a
+  largest P with f6 globally correct = 10 (L18b_N10a); 12 after §4 (L18b_N12a). The pair keeps moving to row 505 in L18b_N510 (65 changes): the «silence» of §2 was a
   property of those designs, not of the frame.
 - Climb continues (§4 log).
 
@@ -54,6 +55,9 @@ counter (unit, set, scope). Model: R104's IDEAL model at degree ≤ 2 (sim6; fen
 - P 11 (successor 16): base L18b_N10a, client 15 alone (diag at row 11: mover 15 only, «better» says stay): SAT, solve 1,109 s (cap 6,000 s, wall 1,213 s, 63.3M clauses;
   RSS 7.9 GB seen at 16 min) → L18b_N11a a6e0185b (run/SHA1SUMS): rows 0..11, sim6 = fenc, f6check 0 / 129 on rows 0..510, inframe OK. One free client
   solves faster than two (2,514 s at P 10 with clients 10, 14). diag at row 12: mover 14 only. Next: P 12, client 14.
+- P 12: base L18b_N11a, client 14 alone (diag row 12: mover 14 only): SAT, solve 451 s (cap 6,000 s, wall 523 s) → L18b_N12a 96fb7995:
+  rows 0..12, sim6 = fenc, f6check 0 / 129 on rows 0..510, inframe OK. diag at row 13: movers 12 (L6, «better» says stay) and 15 (L7,
+  wants to flip). Next: P 13, client 12 alone, then 12 with 15.
 
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All statements are about the IDEAL

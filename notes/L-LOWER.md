@@ -10,6 +10,8 @@
 - 23:22Z N11a SAT: solve 1,109 s, wall 1,213 s (cap 6,000), 63.3M clauses, RSS 7.9 GB at 16 min. Frozen L18b_N11a_dec a6e0185b (rows 0..11,
   sim6 = fenc, f6check 0/129 rows 0..510, inframe OK). LARGEST P f6-globally-correct = 11. diag row 12: mover 14 only.
 - RUNNING 23:24Z: N12a = n.sh base L18b_N11a, XS 14, XORD 14, P 12, R 510, cap 6,000 s.
+- 23:31Z N12a SAT: solve 451 s, wall 523 s. Frozen L18b_N12a 96fb7995 (rows 0..12, f6 0/129, inframe OK). diag row 13: movers 12 (stay), 15 (flip).
+- RUNNING 23:33Z: N13a = base L18b_N12a, XS 12, XORD 12, P 13, cap 6,000 s. Queue: N13b XS 12,15 (XORD 12,15).
 
 ## Successor 15 HANDOVER (-> successor 16; written 2026-11-12 22:0xZ, date -u; context ~430k)
 ### DONE (claude/l-lower; products docs/lower/L17-around.md (closed §3), docs/lower/L18-horizon.md (open); tools l17/, l18/)
