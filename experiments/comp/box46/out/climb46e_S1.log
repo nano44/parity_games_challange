@@ -8,3 +8,6 @@ BEST BEST_S1_WE151_NM157_719c159f.json Wused 151 NM 157 ratio 0.9618 Tkey 151 Wk
 BEST BEST_S1_WE151_NM156_def714e6.json Wused 151 NM 156 ratio 0.9679 Tkey 151 Wkey 151 run_used 80 must0 0 | BEST_S1_WE151_NM156_def714e6.json N+M 156 | mine (T_key, windows, W_key, stalls, tail) (151, 1, 151, 0, 151) run (iterations, fallbacks) (154, 1) must0 0 | n5b spec (iterations, fallbacks) (154, 1) | rfd212 (151, 1, 151, 0, 151) | agree True | restart 0 step 251 evals 246 rejected 0
 END restart 0: current Wused 151 NM 156 ratio 0.9679; best so far [151, 156, 151, 0, 151, 80]; evals 294
 START restart 1 seed BEST_B3_WU151_NM163_e934d333.json Wused 151 NM 163 ratio 0.9264 Tkey 151 Wkey 151
+BEST BEST_S1_WE153_NM158_a59f624d.json Wused 153 NM 158 ratio 0.9684 Tkey 153 Wkey 153 run_used 80 must0 0 | BEST_S1_WE153_NM158_a59f624d.json N+M 158 | mine (T_key, windows, W_key, stalls, tail) (153, 1, 153, 0, 153) run (iterations, fallbacks) (156, 1) must0 0 | n5b spec (iterations, fallbacks) (156, 1) | rfd212 (153, 1, 153, 0, 153) | agree True | restart 1 step 289 evals 573 rejected 0
+END restart 1: current Wused 153 NM 158 ratio 0.9684; best so far [153, 158, 153, 0, 153, 80]; evals 584
+DONE S1: best [153, 158, 153, 0, 153, 80] BEST_S1_WE153_NM158_a59f624d.json evals 584
