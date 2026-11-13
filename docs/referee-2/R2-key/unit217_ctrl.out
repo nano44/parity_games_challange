@@ -1,0 +1,16 @@
+ctrl howard: FIRED a1_mu a1_mus a2_k a3_i a4_i_val a4_i_sw a4_ii red_ideal | files skipped as Ξ-cyclic 0
+ctrl aall: FIRED a1_v a1_vs red_ideal id_state | files skipped as Ξ-cyclic 0
+ctrl kmax: FIRED a1_mu a1_mus red_ideal id_state | files skipped as Ξ-cyclic 0
+ctrl khalf: FIRED a2_k a2_T | files skipped as Ξ-cyclic 0
+ctrl a3any: FIRED a3_i a3_ii | files skipped as Ξ-cyclic 0
+ctrl a4half: FIRED a4_i_val a4_i_sw a4_ii | files skipped as Ξ-cyclic 0
+ctrl a7direct: FIRED a7_b a7p | files skipped as Ξ-cyclic 0
+ctrl a7nop: FIRED a7_c | files skipped as Ξ-cyclic 0
+ctrl a7path: FIRED a7_a | files skipped as Ξ-cyclic 0
+ctrl xfhalf: FIRED a4_iii a7_c | files skipped as Ξ-cyclic 0
+ctrl l0k: FIRED l0a_cnt l0b_cnt | files skipped as Ξ-cyclic 0
+ctrl l0w: FIRED l0b_val l0c_tie red_ideal id_state | files skipped as Ξ-cyclic 0
+ctrl brpar: FIRED br_cmp br_A red_ideal id_state | files skipped as Ξ-cyclic 0
+ctrl brstd: FIRED br_val br_cmp br_A | files skipped as Ξ-cyclic 0
+ctrl kmax_red: FIRED a1_mu a1_mus red_len red_state red_ideal id_state | files skipped as Ξ-cyclic 0
+CYC-CTRL genomes 300 seed 63 (Ξ-cyclic): br_face 417 br_k2 0 br_noe 3216

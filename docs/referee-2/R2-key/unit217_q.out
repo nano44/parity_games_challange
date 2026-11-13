@@ -1,0 +1,20 @@
+OK   R104 | under a state s the Ξ-value of option (x, k) is the set of β's on its chain (x, k), (xt, s(xt)), … u
+OK   R105 | (ENC) the Ξ-order of β-sets is the order of the integers Σ ±2^rank (+ for even parity)
+OK   R117 | Let G ∈ IDEAL-ACYC with IDEAL run s_0 → s_1 → … → s_L, L = L(G). Then the N5 run of Γ3(G) FROM S3 ha
+OK   docs/red/P-N5-REALIZE.md@5d7aab0f | Ω(e_g) := eb + 2·i, eb := the least even number > bmax, i := the position of g in the order by (lev(
+OK   R117 | KEY3 (availability and the root-first keys are the IDEAL ones)
+OK   docs/new/P-N5-REACH.md@5d7aab0f | (a) R(x) = {m_(x,k) : k ∈ A_s(x)}, A_s(x) := {s(x)} ∪ {k : (x, k) strictly Ξ-better than (x, s(x)) u
+OK   R117 | a family of acyclic genomes with L super-polynomial in N + M would give games on which N5 from its d
+OK   R105 | (MONO) the current Ξ-value of every mover never decreases along a run
+OK   R114 | (MOVE-RISE) at any degree, a move of z at step t gives cv_(s_t)(z) > cv_(s_(t−1))(z)
+OK   R113 | (PATH-RISE) at any degree, the current value cv(z) of every mover z rises at most P(z) − 1 times in 
+OK   R111 | (PAIR-KF) for a mover x of degree 2 and level ≥ 1 with W-targets a, b of its two options, KF_x = 0 i
+OK   R105 | (KEYFLIP) moves(x) ≤ 1 + KF_x with KF_x the number of steps at which KP(x) changes
+OK   R111 | (MERGE) at any degree, for two distinct options k, k′ of x and a state s, v_s(x, k) − v_s(x, k′) dep
+OK   R111 | (RETURN) for a mover x of degree 2 that moves to o at step t_1 and next moves at step t_2, the Ξ-tar
+OK   R113 | (MOVES) on 𝓛^R_d, KF_x = F(l − 1) and moves(x) ≤ 1 + F(l − 1) for every mover x of level l ≥ 1
+OK   R125 | (Lemma LOC-K2-3) σ̄_t(K2) = r and Ω_t(r) ◁ Ω_t(K2) at every state
+OK   R125 | the Howard run on Γ3(G)
+OK   R117 | gives σ̄(K2) = r in every standard state for every genome
+quotes 18 missing 0
+control (--ctrl): quotes 18 missing 18

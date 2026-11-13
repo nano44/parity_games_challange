@@ -1,0 +1,11 @@
+DBL4_d20_F30.json N 40 M 80 n3 610 mindeg 2 T 30 maxsw 15 k 0 id 0 F 31 it 33 red 0 zl 0 |W_E| 609 of 610 zh 0 lane 0 lane_it 33
+RECF4_d20_F60.json N 40 M 80 n3 610 mindeg 2 T 67 maxsw 30 k 4 id 0 F 68 it 70 red 0 zl 0 |W_E| 609 of 610 zh 0 lane 0 lane_it 70
+rec_w2_d4_D2_s1.json N 8 M 16 n3 130 mindeg 2 T 10 maxsw 3 k 1 id 0 F 11 it 13 red 0 zl 0 |W_E| 129 of 130 zh 0 lane 0 lane_it 13
+rec_w2_d6_D2_s1.json N 12 M 24 n3 190 mindeg 2 T 17 maxsw 4 k 2 id 0 F 18 it 20 red 0 zl 0 |W_E| 189 of 190 zh 0 lane 0 lane_it 20
+rec_w2_d8_D2_s1.json N 16 M 32 n3 250 mindeg 2 T 21 maxsw 4 k 1 id 0 F 22 it 24 red 0 zl 0 |W_E| 249 of 250 zh 0 lane 0 lane_it 24
+TOTAL genomes 5 id 0 red 0 zl 0 zh 0 lane 0 capped 0 ctrl 0
+FIT exponential: log2 T = a + b (N + M): a 3.2087 b 0.01934 R2 0.78498 residuals -0.623 +0.536 -0.351 +0.182 +0.255
+FIT polynomial: log2 T = a + b log2 (N + M): a -0.6409 b 0.89111 R2 0.83071 residuals -0.607 +0.552 -0.123 +0.121 +0.056
+FIT exponential: log2 maxsw = a + b (N + M): a 0.8006 b 0.02987 R2 0.93136 residuals -0.478 +0.522 +0.067 +0.124 -0.235
+FIT polynomial: log2 maxsw = a + b log2 (N + M): a -4.7304 b 1.30519 R2 0.88646 residuals -0.377 +0.623 +0.331 -0.017 -0.559
+TOTAL genomes 2 id 0 red 0 zl 2 zh 0 lane 0 capped 0 ctrl 1

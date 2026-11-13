@@ -1,6 +1,34 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 1 (successor 41, session_01V5yGRZX8GpZ4VDaJbszYWA; 2026-11-13T12:21Z by date -u)
+- Start: trap check clean (skew 0 s); EARLY START obeyed (abd629d7 landed 11:56:26Z, then ff-only). Handover check 8bcf4357 on origin
+  (push exit 0, VERIFY PASS, 12:17Z; verify took ~19 min). Lead 12:08Z: «GO: when your handover push 8bcf4357 exits 0 with VERIFY PASS,
+  commit Addendum 3 (engine + outputs) and carry on with items 2-3».
+- Item 1 DONE in this commit: docs/referee-2/R2-key-preread.md Addendum 3 (box 217 §6, §7, §5 A6′ at l-new a143d406). No gap in Lemma 0,
+  A1-A4, A2-POLY, A7, BRIDGE. Items: B-7 ID (1P(G) = R104's IDEAL model, three-line proof), B-8 (REDUCTION = landed R117 (f) REACH3 on
+  Γ3(G); KEY-TAU (i) only for renumbered games), B-9 / B-10 (BRIDGE = R117 KEY3 (a); K2-r citation), B-11 (A7′'s conclusion is a READING),
+  B-12 with E-1 (k_1 off by one), E-2 (ENUM-LOG false with degree-1 movers: LIFT(G, d), N5-checked), N-7 (A5's heredity remark false with
+  degree-1 W-targets: l-red r207/keep/Tstar_d5_T17.json mover 5), D-1 (§4 empty but cited), W-1..W-5 wording, overlap map (R105 MONO /
+  ENC / KEYFLIP, R111 PAIR-KF / MERGE / RETURN, R113 PATH-RISE / MOVES, R114 MOVE-RISE).
+- Lead 12:08Z also: L-NEW 77 reached ID independently (12:04Z) and freezes P-N5-KEY1P as: 1 model, 2 Lemma IDEAL-1P, 3 Theorem RED-1P
+  (corollary of R117, F = T_key + 1), 4 Lemma 0, 5 A1 / A2 / A2-POLY, 6 A3 / A4, 7 SW-POLY with ENUM-LOG necessary only. A kill claim now
+  needs (i) the family's written rule, (ii) T_key = L(G) per member by a second engine, (iii) the growth; REAL-IDEAL-S3 transfers; still
+  run N5 itself on Γ3. Candidate to replay when on origin: claude/l-si 06f072f1 experiments/si/box107/out/up_k3_d6.json (upward ladders:
+  every Ξ-target on a strictly higher W-level; k = 2 at d = 4, k = 3 at d = 6, k = 4 at d = 8 running).
+- IN FLIGHT at this commit: corpus Γ3 sweep (35 chunks; outputs in .git/r2-backup/out217/chunks, a place that survives restarts and is
+  outside the working tree; scratchpad work217/ is rebuilt by get217.py). When done: sum217.py → R2-key/unit217_corpus.out and one row of
+  Addendum 3's DATA table (next commit). After a restart: re-run `bash R2-key/sweep217.sh WORK .git/r2-backup/out217` (resumable).
+- NEXT: (2) kill / proof claims: r2kill217.py is ready (key run, ID, N5 itself to termination, own Zielonka, lane n5v + harness Zielonka
+  with --lane ROOT where ROOT = `git archive <l-new commit> experiments/si/si.py experiments/harness experiments/new`, fits). Accept a
+  kill only by max sw and T against N + M with every degree ≥ 2 on the enumerating W-cones (E-2), and for a RESULTS «DEAD» only with a
+  proof of the growth or an instance beyond an explicit bound (L43). (3) full review of P-N5-KEY1P when frozen; docs/referee/ on it only
+  after my report is committed. Standby A unchanged.
+- Tools (R2-key/): r2unit217.py (40 must-0 counters, 16 controls, generators --gen / --lad / --xtw / --mut / --lift / --list),
+  get217.py, sweep217.sh, sum217.py, r2kill217.py, r2qfile.py (quote check of a local file: [Q src] «…»).
+- Traps: python run from the repo writes __pycache__ under docs/referee-2/ (remove before commit); no model name in files or commits
+  (trailer «Co-Authored-By: Claude <noreply@anthropic.com>» + Claude-Session); scratch copies of work in .git/r2-backup/.
+
 ## HANDOVER (successor 40, session_01V5yGRWQ1pY9BpJ6WvVvBoi, Opus 5.5 under D1 / D21 / L53; written 2026-11-13T10:12Z by date -u; parking at ~450k context)
 Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only with scripts/push.sh as a tracked background task (2-hour timeout, output to
 a file, «echo exit $?»); verify ~20-30 min here (lean / oink NOT RUN on this branch). Never commit while it runs; do not create files in
@@ -2592,5 +2620,9 @@ L4 (claude/l-struct 50dc28b, docs/struct/L4-proof.md). Do your own report before
 - HKP Thm 4's proof text (tex:1085-1088, 'successor with minimal r') is unsound on a 3-vertex instance; the theorem holds with the witness strategy. Worth telling L-LIT for the landscape doc (B7 row) if the Lead agrees.
 
 ## Dead ends
+- ENUM-LOG as stated in box 217 §5 A6 / A6′ (l-new a143d406: «QUIET-KEY-1P ⇒ k_c(G) = O((log N)/c)», «any polynomial bound must prove
+  k(G) = O(log N)») on §6.1's class (any degree): obstruction = \|K(x)\| = 2^(lev(x)+1) needs every degree ≥ 2 on x's W-cone; killed by
+  the family LIFT(H5_d20_F62, d) (a chain of d degree-1 movers under the tower: T = 136 for every d, k = 5 + d; d = 10, 40 checked with N5
+  itself on Γ3, R2-key/unit217_lift.out) and by l-comp box38 S_N16M16_U10_elev.json (T 0, k 12). Repair: every degree ≥ 2 (successor 41).
 - R2-L4: my first brute-force test of L4.1(a) on finite prefixes "failed" on 90 graphs; cause was my test (sinks make finite prefixes of dead-end paths), not the lemma, which is about infinite paths; fixed by pruning sinks (0 failures).
 - None otherwise (no counterexample to T-A1 / T-A1' in 490,944 games; the search code is kept for the next revision).
