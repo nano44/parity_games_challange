@@ -57,6 +57,13 @@ wrapper's sha1 (data/b3/gverify_all.out): 22 wrappers (all 21 gfam bests incl. b
 (regenerate with gverify.py from the state files in data/b3/; each sha1 is in the output line).
 
 ## 3. Claim FLAT-IDX (L-RED-B reading, NOT PROVED; a candidate for L-NEW, with a proof sketch and a direct test)
+**AMENDED WORDING (after R240, §3a; this replaces the claim below, which is kept as history):** On W(H, s0), before N5's first fallback
+and while τ is standard at the gates, σ_(j+1)(v) = the element of {σ_j(v)} ∪ Iσ_j(v) with the least ROOT-FIRST KEY (index of its pe,
+then of its gate, then of its pad); with wrap104.py's numbering (the pads of v's edges created in H.succ[v] order) this is the least
+position in H.succ[v]. Keys (in wrap104's numbering: positions) never increase, so at most Σ_v (deg(v) − 1) ≤ |E(H)| iterations move
+H before the first fallback; this |E(H)| bound is the part that holds under EVERY numbering of the new vertices. The key form is not
+new: it is WRAP Remark (3) / R104 [RULE] (per R240 §3; I had not read WRAP's remarks when writing the sketch).
+History (the wording of 9bce72fa):
 Setting: W = W(H, s0) of wrap104.py for any parity game H and Even strategy s0; N5 (SPEC) from S3 on W.
 Claim. At every iteration j before the first fallback at which τ_j is standard at every gate (τ_j(g) = pe_g), and for every Even vertex
 v of H: σ_(j+1)(v) = the option of least position in H.succ[v] among {σ_j(v)} ∪ Iσ_j(v). Hence the position of σ(v) never increases
@@ -79,6 +86,14 @@ Proof sketch (from the SPEC lines of §1 and wrap104.py's construction; not chec
 What it does NOT say: anything after the first fallback; anything when τ leaves the standard faces before the fallback (not seen in
 DATA: counter taunstd); anything about the guided Wg (there the arena values differ: a gate's τ-face leads back into H); the total
 iteration count (iterations that move only valves, core or τ are not counted by (4); in DATA they do not occur before the fallback).
+### 3a. R240 (L-RED successor 68, claude/l-red 50fe432a docs/red/R240-flatidx.md; read 2026-11-13 after its verdict)
+R240 attacked the claim as the Lead stated it (it could not read this sketch: 9bce72fa was not yet on origin). Verdict: DEPENDS ON
+NUMBERING. With wrap104's numbering «least position / never increases» SURVIVES (notmin 0, idxinc 0 on 2,211 games); with the pe's
+renumbered, which W's definition («the new vertices are indexed after V») allows, it FAILS (PERM pe: notmin 1,947, idxinc 1,072; 42
+frozen instances, n5v agrees); the numbering-free form «least root-first key» SURVIVES under all six numberings (keymin 0 on 13,266
+games); hbound and taunstd are 0 under every numbering. My reading of R240: it agrees with step (3) of my sketch, which already derives
+«position» from wrap104's creation order; the claim's first sentence should have said so. The wording is amended above. My own DATA
+below uses wrap104's numbering only and is unchanged.
 Direct test (wflat.py): counters idxinc, notmin (unit (iteration, Even vertex of H) before the first fallback),
 hbound (game), taunstd (iteration); CONTROL: N5′-xi (ALG=xi, Howard's best-value tie rule) must fire idxinc / notmin.
 DATA of the direct test (data/b3/wflat_*.out; N5 = n5v spec, N5′-xi = n5v xi; unit of idxinc / notmin: (iteration, Even vertex
