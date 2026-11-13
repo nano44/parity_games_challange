@@ -11,7 +11,7 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   389645a2 = REFEREE 34's L-1'). Lead 00:04Z: received; both referees byte-test; N-L1 was the Lead's error (entry stays).
 - (this commit) BOX 213 start: experiments/new/box213/arena213.py + out/arena213_frozen.out (DATA probe, see the BOX 213 section).
 ### IN FLIGHT
-- Nothing running. CORRECTED 02:42ZZ from the Lead's 01:48Z message (reached me 02:42Z): L-2 d18125ed MATCHES at BOTH referees (REFEREE 34
+- Nothing running. CORRECTED 02:42Z from the Lead's 01:48Z message (reached me 02:42Z): L-2 d18125ed MATCHES at BOTH referees (REFEREE 34
   §8, claude/referee 98cdc7aa + 28b95151; REFEREE-2 39 Addendum 2, 5bba2b8e); R129's second fill goes to CHECKER as C144; nothing owed.
   «N-L1» closed (the Lead's labelling error; the fixes entry stays; CHECKER flag G-NL1).
 - BOX 213 inputs named by the Lead: L-COMP BOX 46 (independent W_key measurement on Xi-cyclic genomes, in progress); L-RED-B 3's
