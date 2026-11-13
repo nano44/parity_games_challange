@@ -253,15 +253,21 @@ FLAGS FIRST (my reading; CHECKER rules; strings below are PROPOSALS only; nothin
   in one model (IDEAL-CYC) on one restricted family (the R104 genome games); single-switch and other rules are not covered (every theorem of
   §6-§8 uses (K5), which needs DOM). (ii) Nothing is proved on Γ3, for N5′-xi, for N5, or for other games; the proofs use the genome's shape
   (E-DOM, B-ONLY, NO-TIE, LOC-GATE, DOM with CN2, QUIET-N, (D1)) and are not an argument about Howard's rule on parity games in general;
-  L-COMP's lift to Friedmann's G_N fires (K5)'s counter from G_2 on (DATA, eight instances, cited). (iii) The readings (D1), (D3), (D4) are
-  P-N5-QN.md §1 text, re-derived by REFEREE from R104 (G-4). (iv) No run tests the constants: at most 199 values of Φ against P = 2,120,796
-  on MW32_2, plateaus of at most 26 steps (REFEREE's mutants: 27) against N + 2M + 5; large zero counts are DATA, not evidence. (v) ALL-TCYC
-  supersedes K1-TCYC and FVS-TCYC as bounds for M ≥ 2 and k ≥ 1; at k = 0 landed R122's T_CYC ≤ N is sharper. (vi) Lean is cited in L-2 as a
-  related lane statement at l-formal f74d38a4, lane-level, not a premise and not this entry's proof (flag G-LEAN). (vii) Literature: VJ00
-  §4.2 / Friedmann arXiv 1106.0778 §3 for the value order, as in R118; no novelty is claimed (not presented as M3).
-- Lean status since: CHECKER C143 (claude/checker 37fcbd21) passes Genome.k1, k2, k3, k5 at claude/l-formal c8963698 (L54: CI run
-  43323596869); level_count, plateau, brsegG not ruled by C143; P-N5-LEVEL l. 189, 254, 547-548 stale on this point (frozen packet not
-  edited).
+  L-COMP's lift to Friedmann's G_N fires (K5)'s counter from G_2 on (DATA, eight instances, cited). L-2's «through DOM with CN2 in (K5) and
+  in PLATEAU's H0» is descriptive: H0 uses CN2 only, not DOM (REFEREE §8 note N-L2, no change asked: «H0 uses CN2 only, not DOM; the phrase
+  is meant as «DOM with CN2 in (K5), and CN2 in PLATEAU's H0».» (l. 293-294); packet (P7), l. 359-361). (iii) The readings (D1), (D3), (D4)
+  are P-N5-QN.md §1 text, re-derived by REFEREE from R104 (G-4). (iv) No run tests the constants: at most 199 values of Φ against P =
+  2,120,796 on MW32_2, plateaus of at most 26 steps (REFEREE's mutants: 27) against N + 2M + 5; large zero counts are DATA, not evidence.
+  (v) ALL-TCYC supersedes K1-TCYC and FVS-TCYC as bounds for M ≥ 2 and k ≥ 1; at k = 0 landed R122's T_CYC ≤ N is sharper. (vi) Lean is
+  cited in L-2 as a related lane statement at l-formal f74d38a4, lane-level, not a premise and not this entry's proof (flag G-LEAN). (vii)
+  Literature: VJ00 §4.2 / Friedmann arXiv 1106.0778 §3 for the value order, as in R118; no novelty is claimed (not presented as M3).
+- Lean status since: CHECKER C143 (claude/checker 37fcbd21) passes Genome.k1, k2, k3, k4, k5 at claude/l-formal c8963698 (L54: CI run
+  43323596869), with the notes that travel with those rows (C143 §4): «(N-1) OptCounter = VJ00 Ω_σ is a paper step (VJ00 §4.3 / Friedmann
+  Lemma 3.1).» (l. 106), «(N-3) k2 is box 208's value form, not P-N5-LEVEL's triple form.» (l. 108), «(N-4) k3 (e) has no «largest class»
+  clause.» (l. 109), «(N-5) k4 has no «face has that class» clause.» (l. 110); so the Lean rows are weaker than this entry's (K2), (K3 e)
+  and (K4) as signed, and nothing in this entry rests on them. level_count, plateau, brsegG: build and axioms PASS in C143, statements not
+  ruled. P-N5-LEVEL l. 189 («(K4) is stated there (K4Statement) and NOT proved in Lean.»), 254 and 547-548 are stale on this point (frozen
+  packet not edited).
 - Data (DATA, not proof): experiments/new/box208/ (tools level208.py, plat208.py, rv208.py, ownhist208.py; frozen outputs out/*.out with
   SHA1SUMS) and box211/ (level.pins, 110 rows at 366a38ab; quotes211.py / .out; mkl1_211.py, mkl2_211.py / .out) at l-new 366a38ab, called
   from experiments/new/check.sh l. 1143-1160 («BOX 208 LEVEL», «BOX 208 ADD-B») and l. 1187-1198 («P-N5-LEVEL», which asserts the L-2 and
@@ -924,3 +930,133 @@ CHANGES (tags in changes2.json). C1 (G-R8 resolved): REFEREE §8 at claude/refer
   [sim] [sim b] GAPS: only l. 11 changes True ; lines 23 -> 23 ; l. 11 "¦" 76 -> 76 ; «UPDATE 2026-» 62 -> 62 ; R129 last: True ; after R128's: True ; prefix byte-unchanged: True ; GAPS sha1 after: ffaa910bb5385f360dfa3bef4bb9286594b2d813
   [sim] [sim b] R128 block unchanged in the result: True ; R128 and R129 UPDATEs both on l. 11, R127 < R128 < R129: True
   [sim] fill values used only here: R128 ('2099-01-11', '00:00', '3333333') R129 ('2099-01-12', '00:00', '4444444')
+
+Addendum (third fill) (subagent, 2026-11-13; Lead brief 04:42Z; for the Lead and CHECKER C144 Add. 1; does not land). Built by r129c/fill3.py
+  from the second fill (= docs/agents/R129-draft.md at HEAD eb22d350, sha1 7db9c72d5aef9a40e938b8cd502ca2a23d22f6d1, asserted on both copies).
+  CHANGES, and nothing else: R-E1 (replaces the «Lean status since» bullet) and R-E2 (one sentence appended to Honest limits (ii) after «(DATA,
+  eight instances, cited).»), both PARSED from docs/checker/C144.md at claude/checker 3f372f9c (on origin after polling, 05:03:37Z), C144's rule
+  «one space wherever this file wraps a line inside a string»; each old string asserted once in its unwrapped unit; units re-wrapped by the
+  first fill's wrap(); the pairs in r129c/changes3.json, the quotes inside the new strings in r129c/cites3.json (7: C143 37fcbd21 l. 106, 108,
+  109, 110; packet 1e6df499 l. 189; L-2; REFEREE 28b95151 l. 293-294; each found at the line C144 gives). Nothing in the repository was
+  edited, committed, merged or pushed; scripts/push.sh and scripts/verify.sh were not run. Checks ran on r129c/R129-draft.p1.md (sha1 461003864d57f4537782fe6543746b04e3e2f0c5,
+  932 lines), which equals this file without this Addendum and its blank line (asserted). NOT CHANGED (asserted): line 1, the FIRST FILL
+  record and flags, the title (d[153], L-2 verbatim), the GAPS preamble, the UPDATE (31d7b642…), both earlier Addenda. Kept as history and
+  now dated by the R128 landing (8be40f9b, in HEAD eb22d350): line 1's "NOT YET LANDED" about R128, the G-BASE flag and the G-MERGE counts (the
+  merge bases are now 16e8dcb0 / 4a6db414, merge3.out). BASE: R128 is landed in local HEAD eb22d350 (origin trunk 626da53c at the fetch, push
+  in flight); the landing simulation runs on HEAD's RESULTS / GAPS (sim129c.py). MERGE LIST per C144: l-new 366a38ab, referee 28b95151,
+  referee-2 1177c24d, and the C144 Add. 1 checker commit (not yet written); merge-tree into HEAD: no conflict; each branch has later commits
+  on origin that the list does not take (6, 2, 8). Outputs: [fetch] fetch.txt, [fill3] fill3.out, [merge] merge3.out, [chk] chk_p1.out,
+  [lp] lp_p1.out, [sim] sim_p1.out.
+  [fetch] Fri Nov 13 04:41:42 UTC 2026
+  [fetch] rc 0
+  [fetch] checker aadf988748484af752e9ed43d78f820d5ae71352
+  [fetch] l-new 3bcd7b62da74b23ca68bd89085a186e581cee290
+  [fetch] referee 92d1cfdbaa0d72b468a28de1516720654c0cd250
+  [fetch] referee-2 612f4bf33af19ff6b03149e7c3bb9b6c99982cd1
+  [fetch] vibrant-johnson-nxvvxo 626da53c7c4a7040df26d78726419190303de579
+  [fetch] HEAD eb22d350589c3fbb76186345ad97dd4a62b9e324
+  [fetch] 3f372f9c: fatal: git cat-file: could not get object info
+  [fill3] block units 21; roundtrip with the first fill's wrap(): True
+  [fill3] C144.md at 3f372f9c: sha1 edc343ef8e02a500e077daeafc64e620e777a7b3, 131 lines
+  [fill3] R-E1 parsed from C144 l. 85-93: old 271 chars, new 835 chars
+  [fill3] R-E2 parsed from C144 l. 94-97: old 64 chars, new 344 chars
+  [fill3]   R-E1 applied to unit «Lean status since:…»: old once; unit 271 -> 835 chars
+  [fill3]   R-E2 applied to unit «Honest limits:…»: old once; unit 64 -> 344 chars
+  [fill3]   quote at 37fcbd21:docs/checker/C143.md l. 106 (C144 says l. 106): True
+  [fill3]   quote at 37fcbd21:docs/checker/C143.md l. 108 (C144 says l. 108): True
+  [fill3]   quote at 37fcbd21:docs/checker/C143.md l. 109 (C144 says l. 109): True
+  [fill3]   quote at 37fcbd21:docs/checker/C143.md l. 110 (C144 says l. 110): True
+  [fill3]   quote at 1e6df499:docs/new/P-N5-LEVEL.md l. 189 (C144 says l. 189): True
+  [fill3]   quote at 366a38ab:docs/new/P-N5-LEVEL-line-L2.txt l. 1 (C144 says l. 1): True
+  [fill3]   quote at 28b95151:docs/referee/R-P-N5-LEVEL.md l. 293-294 (C144 says l. 293): True
+  [fill3]   packet (P7) l. 359-361 at 1e6df499 mention H0 and CN2, not DOM: H0 1, CN2 1, DOM 0
+  [fill3]   C143 l. 103 PASS «Genome.k1, k2, k3, k4, k5, class_order;»: True; l. 113-114 «build and axioms PASS» / «NOT RULED on their statements»: True; MANIFEST c8963698 rows #4 `brsegG`, #31 `plateau`, #35 `level_count` (inside «#1-35 abstract»)
+  [fill3] pass-1 third fill: sha1 461003864d57f4537782fe6543746b04e3e2f0c5, 932 lines (+6); block d[153:309] (156 lines, was 150); title d[153] unchanged; UPDATE d[325] unchanged (31d7b642…); everything outside the block byte-unchanged
+  [merge] HEAD eb22d350; origin heads now: l-new 3bcd7b62, referee 92d1cfdb, referee-2 612f4bf3, checker 3f372f9c
+  [merge] claude/l-new at 366a38ab: on origin/claude/l-new yes; ancestor of HEAD no; merge base 621e6b77; commits to merge 15; later commits on origin not in the list 6
+  [merge]   old-style merge-tree: rc 0 ; conflict markers 0
+  [merge] claude/referee at 28b95151: on origin/claude/referee yes; ancestor of HEAD no; merge base 16e8dcb0; commits to merge 9; later commits on origin not in the list 2
+  [merge]   old-style merge-tree: rc 0 ; conflict markers 0
+  [merge] claude/referee-2 at 1177c24d: on origin/claude/referee-2 yes; ancestor of HEAD no; merge base 4a6db414; commits to merge 6; later commits on origin not in the list 8
+  [merge]   old-style merge-tree: rc 0 ; conflict markers 0
+  [merge] cited 1e6df499 in the list: l-new
+  [merge] cited b251a0ed in the list: referee
+  [merge] cited 044580e2 in the list: referee
+  [merge] cited 4c8d6c4f in the list: referee
+  [merge] cited 99df2458 in the list: referee
+  [merge] cited 98cdc7aa in the list: referee
+  [merge] cited 555ce825 in the list: referee-2
+  [merge] cited 43824abc in the list: referee-2
+  [merge] cited 3cf594cc in the list: referee-2
+  [merge] cited 5bba2b8e in the list: referee-2
+  [merge] cited 2c5695ec in the list: referee-2
+  [merge] C144 3f372f9c ancestor of HEAD: no; the C144 Add. 1 commit: not yet written
+  [chk] model: landed R127 title (HEAD) == «### R127 [refereed-only] » + R127 L-3 + «, CHECKER PASS (docs/checker/C141.md, checker 850e9765)»: True
+  [chk] file: sha1 461003864d57f4537782fe6543746b04e3e2f0c5 bytes 131242 lines 932 ends with newline True
+  [chk] ### R headings at d[...]: [153]
+  [chk] (a) title == prefix + L-2 (no newline) + tail: True ; middle bytes == L-2 bytes without newline: True
+  [chk]     title: 7944 chars, 8048 bytes, sha1 5a11a433a4ba6c417815ef46ac3fd8ff712ad9b0, ( 94 ) 94, min depth 0, final 0, ¦ 0, fill token 1
+  [chk] (e) entry block d[153:309] (lines 154-309, 156 lines, sha1 of the joined block fc25b3535416cc5c61ac760e1489938c53a3d636, with a final newline 7d5183eed4745e8dce18d0283c7e41be54d74d2a); next line blank: True; line after: 'Proposed GAPS line-11 UPDATE (append-onl'
+  [chk] (b) fill token in the entry block: 1 ; in the whole file: 1 at lines [154]
+  [chk]     «\n**Erratum E-1** (not a result» in the block: False ; line-start «**Erratum» in the file: 0 ; empty lines inside the block: 0 ; block lines starting «### »: 1
+  [chk] (e) UPDATE line(s) at d[...]: [325] (line [326])
+  [chk]     lines starting «UPDATE » in the file: [326]
+  [chk]     GAPS preamble at d[310:325]
+  [chk] (c) "¦" in entry block: 0 ; in UPDATE: 0 ; in GAPS preamble: 1 (the quoted « ¦» of the row end); in the file: 2
+  [chk] (d) UPDATE <DATE> 1 <HH:MM> 1 <checker> 1; head at its start: True
+  [chk]     UPDATE = upd129L2.txt: True ; sha1 (no newline) 31d7b6424542ec7fb7a0684df707c15caa5c5834 ; with newline 6aecd207a8f0386f4dfe9b3387a9d39cf12ff1bb ; 8002 bytes ( 93 ) 93
+  [chk]     stale grep, entry block minus title (case-insensitive): {'candidate': 1}
+  [chk]     stale grep, title: {'pending': 1} ; UPDATE: {}
+  [chk]     Lean-status lines (Lead addition, C143; FLAG G-LEAN): title (file line 154) «Lean» 2, «not through CHECKER» 1; UPDATE (file line 326) «Lean» 2, «not through CHECKER» 1
+  [chk]       [Lean-status line] file line 170: REFEREE-2 N-1 ((K1)'s Λ half also from F1 with (VJ-1)), N-2 (the packet's Lean sentences dated to f74d38a4), N-3 (§9's list of genome-only
+  [chk]       [Lean-status line] file line 193: B-ONLY, NO-TIE, LOC-GATE, LOC-K2, [OPT] (R122's wording); R126 QUIET-N and the Ξ-feedback number); no lane lemma, no Lean theorem." (l.
+  [chk]       [Lean-status line] file line 225: fact, [E-LEV], any Lean theorem" (l. 1). Both referees checked the premises by their own scripts (REFEREE "**25 bullets, 44 quotes, 44
+  [chk]       [Lean-status line] file line 241: items), §11 (DATA), §12 (check record), §13 (TARGET diff), §14 (machine checks); box 209 (the Γ3 form), box 210, box 212; any Lean theorem
+  [chk]       [Lean-status line] file line 261: (v) ALL-TCYC supersedes K1-TCYC and FVS-TCYC as bounds for M ≥ 2 and k ≥ 1; at k = 0 landed R122's T_CYC ≤ N is sharper. (vi) Lean is
+  [chk]       [Lean-status line] file line 264: - Lean status since: CHECKER C143 (claude/checker 37fcbd21) passes Genome.k1, k2, k3, k4, k5 at claude/l-formal c8963698 (L54: CI run
+  [chk]       [Lean-status line] file line 267: clause." (l. 109), "(N-5) k4 has no "face has that class" clause." (l. 110); so the Lean rows are weaker than this entry's (K2), (K3 e)
+  [chk]       [Lean-status line] file line 269: ruled. P-N5-LEVEL l. 189 ("(K4) is stated there (K4Statement) and NOT proved in Lean."), 254 and 547-548 are stale on this point (frozen
+  [chk]       [Lean-status line] file line 285: named k5 with its file), LT-3 (Lean citation form); my result on L-1: sha1 389645a2a646522a8fb57f05dba4458695ac74f2 (§5). Optional LO-1,
+  [chk]     line 1 «NOT LANDED» 1 ; «<DATE>» in file 10 ; «<checker>» 10 ; «<HH:MM>» 10
+  [chk] (e) slices: line 1 d[0]; FIRST FILL record d[1:152] (flags d[58:152]; + blank d[152]: ''); title d[153]; entry d[153:309]; blank d[309]; preamble d[310:325]; UPDATE d[325]; blank d[326]: ''; Addendum (first fill) d[327:647]; Addendum (second fill) d[648:932]
+  [chk]     Addendum (third fill) none
+  [chk] (h) vs second fill 7db9c72d: d[:154] equal True; everything from the GAPS preamble to the end of the second-fill Addendum equal True; block lines 150 -> 156
+  [chk] (g) vs first fill eb785172: line 1 equal True; title equal True; UPDATE equal True; preamble equal True; first-fill Addendum d[327:647] == first fill d[296:616]: True; block lines 141 -> 156
+  [chk] (f) QUOTE SWEEP (corpus: 83 texts)
+  [chk]     sweep line 1: 1 quotes, 1 parts, 0 not found []
+  [chk]     sweep FIRST FILL record and flags: 96 quotes, 87 parts, 0 not found []
+  [chk]     sweep entry block: 73 quotes, 85 parts, 0 not found []
+  [chk]     sweep GAPS preamble + UPDATE: 18 quotes, 16 parts, 0 not found []
+  [chk]     sweep first-fill Addendum: 65 quotes, 56 parts, 0 not found []
+  [chk]     sweep Addendum (second fill): 77 quotes, 74 parts, 0 not found []
+  [chk]     sweep whole file: 310 quotes, 364 parts, 32 not found ['**25 bullets, 44 quotes, 44 [chk] [Lean-status line] file line 224: it', '2 [chk] (e) slices: line 1 d[0]; FIRST FILL record d[1:136] (flags d[5', ', 35 used for a line number only) in 12 (commit, file) pairs; failed a', ': 0 [] [lp] NEGATIVE CONTROL 1 (window shifted by 40 lines): 0 of 88 s', "l. 16269; the line before R129: l. 16126 '' (R127's block ends l. 1612", 'once True ; fill token 0 [sim] [sim a] ### R1xx headings: 29, R129 the', "62 -> 62 ; R129 last: True ; after R127's: True ; prefix byte-unchange", "l. 16510; the line before R129: l. 16367 '' (R128's block ends l. 1636"]
+  [chk]     sweep NEGATIVE CONTROL: 1 quotes, 1 parts, 1 not found ['ALL-TCYC bounds T_CYC by a polynomial on every parity game']
+  [chk]     negative control reported missing: True
+  [lp] cites 108 (70 shown in the draft as «quote», 38 used for a line number only) in 14 (commit, file) pairs; failed at the cited lines: 0 []
+  [lp] shown quotes not in the draft as «quote»: 0 []
+  [lp] NEGATIVE CONTROL 1 (window shifted by 40 lines): 0 of 108 still pass []
+  [lp] NEGATIVE CONTROL 2 (longest word mutated): 0 of 108 still pass
+  [lp]     044580e2 docs/referee/R-P-N5-LEVEL.md 3
+  [lp]     1177c24d docs/referee-2/R2-P-N5-LEVEL.md 2
+  [lp]     1e6df499 docs/new/P-N5-LEVEL.md 11
+  [lp]     28b95151 docs/referee/R-P-N5-LEVEL.md 8
+  [lp]     366a38ab docs/new/P-N5-LEVEL-fixes.md 4
+  [lp]     366a38ab docs/new/P-N5-LEVEL-line-L2.txt 7
+  [lp]     37fcbd21 docs/checker/C143.md 10
+  [lp]     43824abc docs/referee-2/R2-P-N5-LEVEL.md 24
+  [lp]     4c8d6c4f docs/referee/R-P-N5-LEVEL.md 21
+  [lp]     555ce825 docs/referee-2/R2-P-N5-LEVEL.md 3
+  [lp]     5bba2b8e docs/referee-2/R2-P-N5-LEVEL.md 7
+  [lp]     b251a0ed docs/referee/R-P-N5-LEVEL.md 5
+  [lp]     de2a3f8a TARGET.md 1
+  [lp]     de2a3f8a docs/agents/LEAD-STATE.md 2
+  [sim] HEAD RESULTS sha1 41bef91d45ea710cfbf5ca9dd240fcb9e1094d84 lines 17010 "¦" 1477 ; GAPS sha1 7f221f94219132783b0faa2b952b43257feb118d lines 23
+  [sim] == base: HEAD eb22d350, R128 LANDED (RESULTS l. 16127 «### R128»; GAPS l. 11 last UPDATE R128's «UPDATE 2026-11-13 04:22Z: RESULTS R128 (P-N5-GATE; CHECKER C142 a9233137)»: True)
+  [sim] pure insertion: prefix byte-unchanged True ; suffix byte-unchanged True ; inserted lines 157
+  [sim] headings after insertion: {'R126': [15726], 'R127': [15903], 'R128': [16127], 'R129': [16368], 'E-1': [16525], 'E-2': [16538], 'E-3': [16566], 'Dead': [16597]}
+  [sim] R129 at l. 16368-16523, blank l. 16524 (''), «**Erratum E-1**» l. 16525; the line before R129: l. 16367 '' (R128's block ends l. 16366)
+  [sim] order R126 < R127 < R128 < R129 < E-1 < E-2 < E-3 < Dead: True
+  [sim] RESULTS lines 17010 -> 17167 (+157) ; "¦" 1477 -> 1477 (unchanged True) ; «checker 4444444)» once True ; fill token 0
+  [sim] ### R1xx headings: 30, R129 the last: True ; RESULTS sha1 after: b71bf522a74e355c9089278cd1822cc93ed298bc
+  [sim] GAPS: only l. 11 changes True ; lines 23 -> 23 ; l. 11 "¦" 76 -> 76 ; «UPDATE 2026-» 63 -> 63 ; R129 last: True ; after R128's: True ; prefix byte-unchanged: True ; GAPS sha1 after: 423778446b24351f3d2c58fb456acdde381e155c
+  [sim] fill values used only here: R129 ('2099-01-12', '00:00', '4444444')
