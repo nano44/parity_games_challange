@@ -138,8 +138,8 @@ gverify.py work/b3 OUTDIR STATEFILES. Outputs and the climbs' final state files 
 - H_4, 1,500 steps × 1 (seed 5004): PARTIAL at this commit: best 101 (first fallback 97) after 481 steps (vs 102 at 400 steps, seed
   2041); the final value goes into the B4 report.
 - The family members' OWN guides (start iota, ρ0 = Odd's optimal counterstrategy, γ = ∅; docs/red-b/B4-postfb.md DATA, b4phase.py,
-  both engines): H_n, n = 1..5: N5 iterations 14, 37, 65, 99, 139 with one fallback each at iteration 12, 34, 62, 96, 136. FIT
-  (exact): iterations before the first fallback = 3n² + 13n − 5 (n = 1..5: 11, 33, 61, 95, 135; residuals 0, 0, 0, 0, 0; three
-  parameters, five points). This matches the proxy count 3n² + 13n − 5 that successor 2 reported for H_n (Lead's relay; not DATA of
-  mine before this). switchallexp n = 2..6: 10, 10, 12, 14, 16 (2n + 4 for n = 3..6, residuals 0); LMCS n = 2..6: 8, 9, 11, 13, 15 (2n + 3 for n = 3..6,
-  residuals 0). (Corrected in the commit after d889e559, which printed «both: 2n + 4».)
+  both engines): H_n, n = 1..5: N5 iterations 14, 37, 65, 99, 139 with one fallback each at iteration 12, 34, 62, 96, 136. The
+  iterations before the first fallback (11, 33, 61, 95, 135) equal 3n² + 13n − 5 at n = 1..5 (DATA; a 3-parameter fit to 5 points
+  with zero residuals, not a formula for H_n's run until n ≥ 6 agrees or it is proved). This matches the proxy count 3n² + 13n − 5 that successor 2 reported for H_n (Lead's relay; not DATA of
+  mine before this). switchallexp n = 2..6: 10, 10, 12, 14, 16 (equal 2n + 4 at n = 3..6, DATA only); LMCS n = 2..6: 8, 9, 11, 13, 15 (equal 2n + 3 at n = 3..6,
+  DATA only). (Corrected in the commit after d889e559, which printed «both: 2n + 4».)

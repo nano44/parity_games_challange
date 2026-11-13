@@ -40,4 +40,5 @@ Nothing about N5 before its first fallback (B3, box 212 RF-D), M4 or general gam
 | own guides, H_n n = 1..5 | 5 | 1 | 0 | 2, 3, 3, 3, 3 | 0 | 0 | 0 |
 | CONTROL n5v mode xi vs n5b spec (fried and LMCS bests; b4phase_ctrl_xi.out) | 15 | 1 | 0 | — | 0 | 2 (fires) | 0 |
 Reading: on every wrapper so far N5 has exactly ONE fallback; with the families' own guides the run after it is 3 iterations (2 for
-H_1); the climbed guides lengthen it to at most 37. PRE for the own guides: H_n 11, 33, 61, 95, 135 = 3n² + 13n − 5 exactly (n = 1..5).
+H_1); the climbed guides lengthen it to at most 37. PRE for the own guides: H_n 11, 33, 61, 95, 135, equal to 3n² + 13n − 5 at n = 1..5 (DATA; not a formula
+for H_n's run until n ≥ 6 agrees or it is proved). The table counts 38 wrappers (23 bests + 15 own guides).
