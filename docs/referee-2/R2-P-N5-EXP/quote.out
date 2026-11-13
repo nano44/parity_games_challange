@@ -1,0 +1,32 @@
+R104P FOUND «A GENOME G consists of:»
+R104P FOUND «movers x = 0, …, N − 1, each with a level lev(x) ∈ {0, …, d − 1} and o»
+R104P FOUND «per option (x, k): a W-target wt(x, k), which is a mover of level lev(»
+R104P FOUND «a Ξ-target xt(x, k) ∈ {movers} ∪ {X}; a β-id b(x, k) (a bijection onto»
+R104P FOUND «a gate index gate(x, k), a bijection of the options onto 0..M − 1;»
+R104P FOUND «per β-id b: a rank br(b) (a bijection onto 0..M − 1) and a parity bp(b»
+R104P FOUND «a start s_0 (an option per mover).»
+R104P FOUND «The Ξ-GRAPH of G: the digraph on movers with an edge x → xt(x, k) for »
+R104P FOUND «The X-CHAIN of a face (x, k) is the sequence of options (x, k) = (x_0,»
+R104P FOUND «(x_1, k_1), … with x_(i+1) := xt(x_i, k_i) and k_(i+1) := s(x_(i+1)), »
+R104P FOUND «B_s(x, k) := the set of β-ids of the chain.»
+R104P FOUND «(x, k) ▷_s (x, k') iff the β-id of LARGEST rank in B_s(x, k) Δ B_s(x, »
+R104P FOUND «IDEAL step from s. Availability A_s(x) := {s(x)} ∪ {k : (x, k) ▷_s (x,»
+R104P FOUND «If |A_s(x)| = 1 for every x, the run STOPS («opt»).»
+R104P FOUND «Otherwise s' is defined level by level, lev = 0, 1, …: key(x, k) := (g»
+R104P FOUND «followed by gate(x, k) otherwise (a tuple of length lev(x) + 1); s'(x)»
+R104P FOUND «If s' = s, the run STOPS («stuck»).»
+R104P FOUND «Otherwise s → s' is one IDEAL step. L(G) := the number of IDEAL steps »
+R117 FOUND inR117 1 «N5 (SPEC S1-S5) from its DEFAULT start S3 (SPEC S3 with FIX 1)»
+R117 FOUND inR117 1 «(Theorem REACH3) for every G with an ACYCLIC Ξ-graph, the game Γ3(G) o»
+R117 FOUND inR117 1 «n = N + 7M + 10) has S3's start pair equal to R104's stated start tran»
+R117 FOUND inR117 1 «the N5 run of Γ3(G) FROM S3 has states 0, …, L(G) equal to the transpo»
+R117 FOUND inR117 1 «(Corollary REAL-IDEAL-S3) if every FL run of N5 from S3 on every n-ver»
+TARGET FOUND «4. Written correctness and running-time proofs, double-refereed with e»
+CLAUDE FOUND «Every algorithm claim runs the gauntlet in TARGET.md section 5. Failin»
+GAPS FOUND «N5 SSI-GLOBAL makes polynomially many iterations (gauntlet step 4, run»
+TARGET FOUND «There is a deterministic algorithm A and a polynomial p such that for »
+UNTAGGED in ['R104P'] «s' is defined level by level»
+UNTAGGED in ['R104P'] «s'(x) := the k ∈ A_s(x) with the lexicographically least key»
+UNTAGGED in no source «different options at depth d*»
+UNTAGGED in ['R104P'] «implemented as r178/fastcyc.simulate and r187/ideal.traj»
+TOTAL tagged 27 missing 0 nosource 0 outside 0 untagged 4 ctrl 0

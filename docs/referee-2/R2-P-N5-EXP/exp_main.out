@@ -1,0 +1,16 @@
+k 3 N 11 T 6 (2^k − 2 = 6) maxsw 2 total 13 br-key ties 0 | 
+k 4 N 20 T 14 (2^k − 2 = 14) maxsw 4 total 35 br-key ties 2 | 
+k 5 N 29 T 30 (2^k − 2 = 30) maxsw 8 total 79 br-key ties 6 | 
+k 6 N 38 T 62 (2^k − 2 = 62) maxsw 16 total 167 br-key ties 10 | 
+k 7 N 47 T 126 (2^k − 2 = 126) maxsw 32 total 343 br-key ties 14 | 
+k 8 N 56 T 254 (2^k − 2 = 254) maxsw 64 total 695 br-key ties 18 | 
+k 9 N 65 T 510 (2^k − 2 = 510) maxsw 128 total 1399 br-key ties 22 | 
+k 10 N 74 T 1022 (2^k − 2 = 1022) maxsw 256 total 2807 br-key ties 26 | 
+k 11 N 83 T 2046 (2^k − 2 = 2046) maxsw 512 total 5623 br-key ties 30 | 
+k 12 N 92 T 4094 (2^k − 2 = 4094) maxsw 1024 total 11255 br-key ties 34 | 
+k 13 N 101 T 8190 (2^k − 2 = 8190) maxsw 2048 total 22519 br-key ties 38 | 
+k 14 N 110 T 16382 (2^k − 2 = 16382) maxsw 4096 total 45047 br-key ties 42 | 
+TOTAL ctrl -: size 0 lanediff 0 leadsha 0 depth 0 rawdiff 0 tiebreak 0 member_c1 0 member_c2 0 member_c3 0 member_c4 0 member_c5 0 member_c6 0 member_c7 0 member_c8 0 tfail 0 stopfail 0 swfail 0 totfail 0 idfail 0 v1 0 v2 0 v3 0 v4 0 k1 0 k2 0 k3 0 k4 0 move2 0 resp 0 rest 0 inp 0
+INFO k_done 12 lane_files 12 lane_raw_files 12 lead_sha1s 4 exhaustive_states 0 static_states 6409 responses 16177
+FIRED none
+exit 0

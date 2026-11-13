@@ -14,6 +14,8 @@ Per genome, one line with:
   F it            N5 itself from S3 on Γ3(G) (own engine): iteration of the first fallback, total iterations to termination
   red             1 if the mover parts of N5's states before the first fallback ≠ the key run, or F ≠ T + 1                  [must 0]
   zl              1 if N5's output (W_E from the final valuation: cycle node of even priority) ≠ own Zielonka's regions        [must 0]
+  oink-<s>        with --oink zlk,tl: 1 if OINK (pinned 8fbf0a7, built by scripts/setup_oink.sh), solver <s> with its own
+                  verification, gives different regions from N5's output — a THIRD independent solver                          [must 0]
   zh, lane        with --lane: 1 if the harness Zielonka differs from N5's output; 1 if the lane's n5v spec run on the lane's Γ3
                   has a different number of states before its first fallback, different mover states there, a different total
                   iteration count or different final regions (compared through the two vertex maps)                          [must 0]
@@ -21,7 +23,7 @@ After all genomes: least-squares fits of log2 T and log2 maxsw against N + M (ex
 slope, R² and residuals (needs ≥ 3 genomes); a fit is DATA about the given members, not a statement about the family.
 --nog3: skip everything on Γ3 (1P and ID only). --cap ITER: stop N5 after ITER iterations (reported as capped; red / zl then unchecked).
 Control --ctrl: the Zielonka comparison is made against the regions with one vertex flipped (zl must fire on every genome).
-Usage: r2kill217.py [--lane ROOT] [--nog3] [--cap ITER] [--ctrl] GENOME.json ..."""
+Usage: r2kill217.py [--lane ROOT] [--oink zlk,tl] [--nog3] [--cap ITER] [--ctrl] GENOME.json ..."""
 import sys, os, json, math, time
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path[:0] = [HERE, os.path.join(HERE, "..", "R2-P-N5-END"), os.path.join(HERE, "..", "R2-TA1")]
@@ -103,6 +105,27 @@ def lane_run(G, root):
     ZE = frozenset(name[v] for v in range(g.n) if zw[v] == 0)
     return S, it, WE, ZE
 
+def oink_WE(g, solver="zlk", tmpdir=None):
+    """W_E by OINK (pinned 8fbf0a7, built by scripts/setup_oink.sh into tools/oink/build; a THIRD solver beside my Zielonka and the
+    harness one). Writes the game, runs `oink --<solver> -w 1 GAME SOL` with verification (`-v`) and reads the solution file.
+    Returns None when oink is not built. Raises when oink's own verification fails."""
+    import subprocess, tempfile
+    here = os.path.dirname(os.path.abspath(__file__))
+    ob = os.path.abspath(os.path.join(here, "..", "..", "..", "tools", "oink", "build", "oink"))
+    if not os.path.exists(ob): return None
+    txt = "parity %d;\n" % (g["n"] - 1) + "".join("%d %d %d %s;\n" % (v, g["pr"][v], g["ow"][v], ",".join(map(str, g["E"][v])))
+                                                  for v in range(g["n"]))
+    with tempfile.TemporaryDirectory(dir=tmpdir) as d:
+        gf, sf = os.path.join(d, "g.pg"), os.path.join(d, "g.sol")
+        open(gf, "w").write(txt)
+        r = subprocess.run([ob, "--" + solver, "-v", "-w", "1", gf, sf], capture_output=True, text=True)
+        assert r.returncode == 0 and "solution verified" in (r.stdout + r.stderr), f"oink {solver} failed: {r.stdout[-300:]}"
+        W = set()
+        for l in open(sf):
+            l = l.strip().rstrip(";"); p = l.split()
+            if l and not l.startswith("paritysol") and p[0].isdigit() and len(p) > 1 and p[1] == "0": W.add(int(p[0]))
+    return frozenset(W)
+
 def fit(xs, ys):
     n = len(xs); mx, my = sum(xs) / n, sum(ys) / n; sxx = sum((x - mx) ** 2 for x in xs)
     if sxx == 0: return None
@@ -111,14 +134,15 @@ def fit(xs, ys):
     return a, b, (1 - sum(r * r for r in res) / sst) if sst else 1.0, res
 
 def main(a):
-    lane = None; nog3 = False; cap = 10 ** 7; ctrl = False; files = []; i = 0
+    lane = None; nog3 = False; cap = 10 ** 7; ctrl = False; files = []; oink = []; i = 0
     while i < len(a):
         if a[i] == "--lane": lane = a[i + 1]; i += 2
+        elif a[i] == "--oink": oink = a[i + 1].split(","); i += 2
         elif a[i] == "--nog3": nog3 = True; i += 1
         elif a[i] == "--cap": cap = int(a[i + 1]); i += 2
         elif a[i] == "--ctrl": ctrl = True; i += 1
         else: files.append(a[i]); i += 1
-    rows = []; bad = dict(id=0, red=0, zl=0, zh=0, lane=0, capped=0)
+    rows = []; bad = dict(id=0, red=0, zl=0, zh=0, zo=0, lane=0, capped=0, oink_missing=0)
     for fn in files:
         G = json.load(open(fn)); G = G.get("genome", G); t0 = time.time()
         m = r2unit217.M1P(G); S = m.run(); T = len(S) - 1
@@ -135,6 +159,11 @@ def main(a):
                 if ctrl: ZE = ZE ^ {0}
                 zl = int(ZE != WE); bad["zl"] += zl
                 line += f" F {F} it {it} red {red} zl {zl} |W_E| {len(WE)} of {g['n']}"
+                for sv in oink:
+                    OW = oink_WE(g, sv)
+                    if OW is None: line += f" oink-{sv} NOT BUILT"; bad["oink_missing"] += 1
+                    else:
+                        zo = int((OW ^ {0} if ctrl else OW) != WE); bad["zo"] += zo; line += f" oink-{sv} {zo}"
                 if lane:
                     LS, lit, LWE, LZE = lane_run(G, lane)
                     nm = {v: kname(kk) for kk, v in g["V"].items()}

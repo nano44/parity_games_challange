@@ -1,0 +1,6 @@
+k 15 N 119 T 32766 (2^k − 2 = 32766) maxsw 8192 total 90103 br-key ties 46 | 
+k 16 N 128 T 65534 (2^k − 2 = 65534) maxsw 16384 total 180215 br-key ties 50 | 
+TOTAL ctrl -: size 0 lanediff 0 leadsha 0 depth 0 rawdiff 0 tiebreak 0 member_c1 0 member_c2 0 member_c3 0 member_c4 0 member_c5 0 member_c6 0 member_c7 0 member_c8 0 tfail 0 stopfail 0 swfail 0 totfail 0 idfail 0 v1 0 v2 0 v3 0 v4 0 k1 0 k2 0 k3 0 k4 0 move2 0 resp 0 rest 0 inp 0
+INFO k_done 2 lane_files 0 lane_raw_files 0 lead_sha1s 0 exhaustive_states 0 static_states 1600 responses 16000
+FIRED none
+exit 0

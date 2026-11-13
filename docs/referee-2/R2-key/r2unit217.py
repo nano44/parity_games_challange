@@ -73,6 +73,8 @@ class M1P:
         assert len(set(pr.values())) == len(self.O), "β priorities not distinct"
         rk = {o: r for r, o in enumerate(sorted(self.O, key=lambda o: pr[o]))}
         self.om = {o: (1 << rk[o]) if pr[o] % 2 == 0 else -(1 << rk[o]) for o in self.O}
+        if ctrl == "kswap":                               # control for the engine-agreement check: swap ε of mover 0's two options
+            if self.deg[0] >= 2: self.eps[(0, 0)], self.eps[(0, 1)] = self.eps[(0, 1)], self.eps[(0, 0)]
         if ctrl == "l0w": self.om = {o: (rk[o] + 1) if pr[o] % 2 == 0 else -(rk[o] + 1) for o in self.O}
         if ctrl == "brpar":
             top = max(self.O, key=lambda o: rk[o]); self.om[top] = -self.om[top]

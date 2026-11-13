@@ -1,0 +1,18 @@
+r2_G_3.json N 11 M 22 n3 175 mindeg 2 T 6 maxsw 2 k 1 id 0 secs 0.0
+r2_G_4.json N 20 M 40 n3 310 mindeg 2 T 14 maxsw 4 k 1 id 0 secs 0.0
+r2_G_5.json N 29 M 58 n3 445 mindeg 2 T 30 maxsw 8 k 1 id 0 secs 0.0
+r2_G_6.json N 38 M 76 n3 580 mindeg 2 T 62 maxsw 16 k 1 id 0 secs 0.0
+r2_G_7.json N 47 M 94 n3 715 mindeg 2 T 126 maxsw 32 k 1 id 0 secs 0.1
+r2_G_8.json N 56 M 112 n3 850 mindeg 2 T 254 maxsw 64 k 1 id 0 secs 0.1
+r2_G_9.json N 65 M 130 n3 985 mindeg 2 T 510 maxsw 128 k 1 id 0 secs 0.3
+r2_G_10.json N 74 M 148 n3 1120 mindeg 2 T 1022 maxsw 256 k 1 id 0 secs 0.6
+r2_G_11.json N 83 M 166 n3 1255 mindeg 2 T 2046 maxsw 512 k 1 id 0 secs 1.4
+r2_G_12.json N 92 M 184 n3 1390 mindeg 2 T 4094 maxsw 1024 k 1 id 0 secs 3.4
+r2_G_13.json N 101 M 202 n3 1525 mindeg 2 T 8190 maxsw 2048 k 1 id 0 secs 7.5
+r2_G_14.json N 110 M 220 n3 1660 mindeg 2 T 16382 maxsw 4096 k 1 id 0 secs 17.0
+TOTAL genomes 12 id 0 red 0 zl 0 zh 0 zo 0 lane 0 capped 0 oink_missing 0 ctrl 0
+FIT exponential: log2 T = a + b (N + M): a 1.5419 b 0.03797 R2 0.99949 residuals -0.210 -0.013 +0.061 +0.083 +0.081 +0.067 +0.048 +0.025 +0.001 -0.023 -0.048 -0.073
+FIT polynomial: log2 T = a + b log2 (N + M): a -16.7652 b 3.48221 R2 0.92090 residuals +1.785 +0.004 -0.764 -1.074 -1.119 -0.988 -0.731 -0.379 +0.045 +0.529 +1.060 +1.632
+FIT exponential: log2 maxsw = a + b (N + M): a -0.2222 b 0.03704 R2 1.00000 residuals -0.000 -0.000 -0.000 -0.000 -0.000 +0.000 +0.000 +0.000 +0.000 +0.000 +0.000 +0.000
+FIT polynomial: log2 maxsw = a + b log2 (N + M): a -17.9054 b 3.37251 R2 0.90848 residuals +1.893 -0.016 -0.824 -1.139 -1.173 -1.025 -0.750 -0.381 +0.060 +0.559 +1.105 +1.690
+exit 0

@@ -1,0 +1,13 @@
+ctrl start: FIRED leadsha tfail swfail totfail resp rest
+ctrl eps: FIRED leadsha tfail swfail totfail k1 k2 k3 k4 resp rest inp
+ctrl rank: FIRED leadsha tfail swfail totfail v1 v2 v3 v4 resp rest inp
+ctrl sched: FIRED resp
+ctrl form: FIRED v1 v2 v3 v4
+ctrl mv2: FIRED move2
+ctrl stuck: FIRED stopfail
+ctrl mem2: FIRED member_c2
+ctrl mem4: FIRED member_c4
+ctrl mem5: FIRED member_c5
+ctrl mem6: FIRED member_c6
+ctrl mem8: FIRED member_c8
+ctrl start with --lane: FIRED lanediff leadsha tfail swfail totfail resp rest

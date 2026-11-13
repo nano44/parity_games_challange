@@ -1,0 +1,15 @@
+DBL4_d20_F30.json N 40 M 80 n3 610 mindeg 2 T 30 maxsw 15 k 0 id 0 F 31 it 33 red 0 zl 0 |W_E| 609 of 610 oink-zlk 0 oink-tl 0 zh 0 lane 0 lane_it 33
+H5_d20_F62.json N 40 M 80 n3 610 mindeg 2 T 136 maxsw 31 k 5 id 0 F 137 it 139 red 0 zl 0 |W_E| 609 of 610 oink-zlk 0 oink-tl 0 zh 0 lane 0 lane_it 139
+H6_d24_F126.json N 48 M 96 n3 730 mindeg 2 T 209 maxsw 63 k 6 id 0 F 210 it 212 red 0 zl 0 |W_E| 729 of 730 oink-zlk 0 oink-tl 0 zh 0 lane 0 lane_it 212
+HIT7_d28_F254.json N 56 M 112 n3 850 mindeg 2 T 299 maxsw 127 k 7 id 0 F 300 it 302 red 0 zl 0 |W_E| 849 of 850 oink-zlk 0 oink-tl 0 zh 0 lane 0 lane_it 302
+RECF4_d20_F60.json N 40 M 80 n3 610 mindeg 2 T 67 maxsw 30 k 4 id 0 F 68 it 70 red 0 zl 0 |W_E| 609 of 610 oink-zlk 0 oink-tl 0 zh 0 lane 0 lane_it 70
+k2_d2.json N 4 M 8 n3 70 mindeg 2 T 3 maxsw 3 k 2 id 0 F 4 it 6 red 0 zl 0 |W_E| 69 of 70 oink-zlk 0 oink-tl 0 zh 0 lane 0 lane_it 6
+up_k2_d4.json N 8 M 16 n3 130 mindeg 2 T 3 maxsw 3 k 2 id 0 F 4 it 6 red 0 zl 0 |W_E| 129 of 130 oink-zlk 0 oink-tl 0 zh 0 lane 0 lane_it 6
+up_k3_d6.json N 12 M 24 n3 190 mindeg 2 T 8 maxsw 7 k 3 id 0 F 9 it 11 red 0 zl 0 |W_E| 189 of 190 oink-zlk 0 oink-tl 0 zh 0 lane 0 lane_it 11
+up_d4_k2.json N 8 M 16 n3 130 mindeg 2 T 7 maxsw 3 k 2 id 0 F 8 it 10 red 0 zl 0 |W_E| 129 of 130 oink-zlk 0 oink-tl 0 zh 0 lane 0 lane_it 10
+up_d6_k3.json N 12 M 24 n3 190 mindeg 2 T 11 maxsw 7 k 3 id 0 F 12 it 14 red 0 zl 0 |W_E| 189 of 190 oink-zlk 0 oink-tl 0 zh 0 lane 0 lane_it 14
+TOTAL genomes 10 id 0 red 0 zl 0 zh 0 zo 0 lane 0 capped 0 oink_missing 0 ctrl 0
+FIT exponential: log2 T = a + b (N + M): a 1.3587 b 0.04085 R2 0.92817 residuals -1.354 +0.827 +0.467 +0.003 -0.194 -0.264 -0.754 +0.171 +0.468 +0.630
+FIT polynomial: log2 T = a + b log2 (N + M): a -5.4693 b 1.73220 R2 0.88897 residuals -1.588 +0.593 +0.757 +0.888 -0.429 +0.844 -0.888 -0.486 +0.335 -0.027
+FIT exponential: log2 maxsw = a + b (N + M): a 1.1476 b 0.03188 R2 0.93614 residuals -1.066 -0.018 +0.240 +0.486 -0.066 +0.055 -0.328 +0.512 -0.328 +0.512
+FIT polynomial: log2 maxsw = a + b log2 (N + M): a -4.0569 b 1.33052 R2 0.86870 residuals -1.226 -0.179 +0.494 +1.210 -0.226 +0.872 -0.459 -0.014 -0.459 -0.014

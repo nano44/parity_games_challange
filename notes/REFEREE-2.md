@@ -1,6 +1,49 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## HANDOVER to successor 42 (written by successor 41, session_01V5yGRZX8GpZ4VDaJbszYWA; 2026-11-13T14:15:24Z by date -u; context past the park line)
+State at this commit (the commit that carries this handover; its SHA is in my message to the Lead and in `git log -1`):
+- DONE and on origin before it: 8bcf4357 (handover check), 2dd4e5e3 (R2-key-preread Addendum 3: box 217 pre-read, ID: 1P(G) = R104's
+  IDEAL model), cd54dbfe (Addendum 4: upward ladders replayed), ef64889a (Addendum 5: box 107 pre-read).
+- IN this commit: **docs/referee-2/R2-P-N5-EXP.md — the SECOND REVIEW of the kill packet P-N5-EXP** (claude/l-red-b 350d84eb, sha1
+  c0449b17…): no error; SIGN Theorem EXP-IDEAL (a)-(c) with its lemmas, items G-1 (proof gap of the RESPONSE LEMMA: used on unit j + 1
+  before its (H2) is known; closed by the PREFIX form, §2.4), M-1 (§3's br clause is not injective on wires for k ≥ 4; gk.py breaks
+  ties by β-id; harmless), W-1 («step t» = s_(t−1) → s_t), W-2 (the Dead-end wording is conditional on R117 as landed), D-1 (§9.7
+  is the placeholder QUOTESUMMARY); SIGN Corollary EXP-N5 as PROVED-CONDITIONAL on R117 Theorem REACH3 (refereed-only). Own tools in
+  docs/referee-2/R2-P-N5-EXP/ (r2exp.py, r2pg.py, r2qexp.py) and r2kill217.py (now with --oink zlk,tl). docs/referee/ NOT read on it.
+NEXT, in this order:
+1. If the Lead sends L-RED-B's fixes file for P-N5-EXP: check G-1's restatement against §2.4's PREFIX form (hypothesis cut at τ_0: C
+   up to τ_0, E up to τ_0 − 1; conclusion: the moves of steps t..τ_0), M-1's tie-break sentence, W-1, W-2, D-1; write «Addendum 1» in
+   R2-P-N5-EXP.md. Only after that: read docs/referee/ on P-N5-EXP (REFEREE 35) for an agreement note (items, numbers, wording).
+2. P-N5-KEY1P (L-NEW 77, frozen at claude/l-new 44775605, sha1 f7191623e9ee212fa127c7e4a224f7ab9d689156): the FULL second review was
+   NOT started (I told the Lead at 13:48Z it is yours). ASK THE LEAD FIRST whether it is still wanted: Theorem EXP-IDEAL refutes
+   SW-POLY / QUIET-KEY-1P as box 217 states them (check the frozen packet's wording): they are statements about 1P(G) = the IDEAL
+   model, so the refutation does NOT go through R117 (max sw = 2^(k−2) on 9k − 16 movers, every degree 2). What stays true and reviewable in that packet: the model, Lemma IDEAL-1P (my ID), Theorem RED-1P
+   (= R117), Lemma 0, A1 MONO-1P, A2 SWITCH-BOUND, A2-POLY, A3, A4. My pre-read of its source box is R2-key-preread Addendum 3 (items
+   B-7..B-12, E-1, E-2, N-7, D-1, W-1..W-5): start by checking which of them the frozen packet took. Engines: R2-key/r2unit217.py
+   (40 must-0 counters; its controls are listed in its header), r2box107.py, r2kill217.py, r2qfile.py (quotes of a LOCAL file: `[Q src]` then the quote).
+3. Standby A: R128-R130 items from CHECKER, if any arrive.
+Things only I know:
+- O-1: R2-P-N5-END/r2end.build numbers the β-vertices in GATE order; R104 (P-N5-REALIZE l. 86) says (x, k) order. Isomorphic (β
+  priorities distinct, no vertex has two β successors), and r2pg.relabel gives R104's numbering (then my game = the lane's .pg files
+  index by index, k = 3..11). All my earlier comparisons went through name maps, so no earlier number changes. If a claim ever depends
+  on the INDEX of a β-vertex, use relabel. I did not edit r2end.py (a signed report's tool); say this in the next report that uses it.
+- While writing §2.2 I first read «depth-major» backwards (smaller Ξ-depth = HIGHER rank: comparisons are decided at the far end of
+  the chains, by the targets' order, and by the head β's only when the tails coincide). The exhaustive check (66,048 states) caught it
+  before the report was final. Lesson: write the direction of a rank order down before deriving with it.
+- Timings: r2kill217.py with --lane and --oink on Γ3(G_k): 81 s at k = 9, 213 s at k = 10, 540 s at k = 11 (both engines); k = 12
+  would need about 25 minutes per engine. r2exp.py: k = 3..14 in 40 s; k = 15, 16 in about 4 minutes.
+- The Lead's 12:25Z message reached me at 13:46Z (81 minutes late, across a usage-limit stall and a container restart). After any
+  restart: ReadNotifications first.
+- PUSH TRAP (Lead 13:10Z): push.sh can exit 0 after «RPC failed; HTTP 503» with origin unchanged: compare `git ls-remote origin
+  claude/referee-2` with the local SHA after every push.
+- Scratch that is NOT in the repository: .git/r2-backup/ (expout/ = this review's raw outputs, up/ = my upward-ladder search
+  scripts, out217/, out107/); the lane archives are re-made with `git archive` (commands in R2-P-N5-EXP.md §6).
+Sources opened for this review (trunk 5d7aab0f unless said): docs/red-b/P-N5-EXP.md and experiments/red-b/gk.py at l-red-b
+350d84eb (in full); docs/red/P-N5-REALIZE.md §2 l. 50-78 (the genome and the IDEAL step) and l. 83-96 (vertices and indices of
+Γ(G)); docs/RESULTS.md R117 header (l. 13362); TARGET.md §2, §3, §5; docs/DECISIONS-INDEX.md L43.
+Dead ends: none new in this review (the kill candidate SURVIVED my review; ENUM-LOG's dead end is recorded below).
+
 ## Resume point 1 (successor 41, session_01V5yGRZX8GpZ4VDaJbszYWA; 2026-11-13T12:21Z by date -u)
 - Start: trap check clean (skew 0 s); EARLY START obeyed (abd629d7 landed 11:56:26Z, then ff-only). Handover check 8bcf4357 on origin
   (push exit 0, VERIFY PASS, 12:17Z; verify took ~19 min). Lead 12:08Z: «GO: when your handover push 8bcf4357 exits 0 with VERIFY PASS,
@@ -27,6 +70,8 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
   uncertified), S-4 (scope can cite R117). Box 107's three instances replayed: switch lists equal, and N5 itself on Γ3 = the key run with
   output = two Zielonka implementations. Own checker r2box107.py (10 must-0 counters, 8 controls): 0 on towers, records, 2,400 random,
   450 mutants, the 875-genome corpus. Oink built (8fbf0a7) in this container for kill checks; verify now runs its oink smoke step.
+- 2026-11-13T14:16:52Z: SECOND REVIEW of P-N5-EXP committed (docs/referee-2/R2-P-N5-EXP.md + R2-P-N5-EXP/; see the HANDOVER at the top). Kill-candidate
+  message of 12:25Z received 13:46Z; interim findings sent to the Lead 14:03Z; origin was ef64889a before this commit.
 - (superseded by the line above) IN FLIGHT at this commit: corpus Γ3 sweep (35 chunks; outputs in .git/r2-backup/out217/chunks, a place that survives restarts and is
   outside the working tree; scratchpad work217/ is rebuilt by get217.py). When done: sum217.py → R2-key/unit217_corpus.out and one row of
   Addendum 3's DATA table (next commit). After a restart: re-run `bash R2-key/sweep217.sh WORK .git/r2-backup/out217` (resumable).
