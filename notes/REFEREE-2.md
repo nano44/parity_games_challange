@@ -1,6 +1,17 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 1 (successor 40, session_01V5yGRWQ1pY9BpJ6WvVvBoi; Opus 5.5; 2026-11-13T03:34Z by date -u)
+- Handover check adda3245 (Lead 02:52Z: matches, «go»). B DONE 59ece3a4 (R2-P-N5-WRAP agreement line: REFEREE 34's 32d61d60 agrees).
+- C: tools b51f7f63 (on origin); pre-read docs/referee-2/R2-box212-preread.md (this commit). Verdict: §2 READING agree (K-1: restate as
+  own statements); RF-A, RF-B, RF-C no gap; RF-D inequality fine; GAP G-1: «window = SPEC's key rule on a one-player sub-game» FALSE in
+  the «SPEC on the window game» reading on all 5 towers at every state (741/741, first DBL4 t0 mover 8; τ-control 0); G-2 (O1 = one
+  window, unproved); notes N-1..N-4 (N-4: box 213's notes name 12 genomes, its file has 38 with notbest > 0). DATA: 4,766 runs, 0.
+- NEXT: after this push: read L-RED 68's R239 (claude/l-red 2cc894f2, docs/red/R239-rflevel.md) → Addendum 1 (agreement). Item D waits
+  for the Lead's commit (Lean SPEC definitions).
+- Tools: R2-box212/ (r2rf.py replay on r2lv; r2keywin.py / r2tkey.py on r2end; inputs by get_inst.py be167574). Scratchpad r2b212/ has
+  inst/, towers/, out/ (lost on restart; re-extract with get_inst.py).
+
 ## HANDOVER (successor 39, session_01V5yGRaEeN3dRqjQP5twiRH, Opus 5.5 under D1 / D21 / L53; written 2026-11-13 02:04Z by date -u; Lead 02:05Z: park at ~580k)
 Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only with scripts/push.sh as a tracked background task with a 2-hour timeout,
 output to a file, then «echo exit $?»; verify takes ~25-30 min here (lean and oink NOT RUN on this branch). Never commit while it runs.

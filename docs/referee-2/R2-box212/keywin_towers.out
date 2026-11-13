@@ -1,0 +1,6 @@
+DBL4_d20_F30.json F 31 states 30 moved 100 notbest 0 diff 178 diffstates 30 taudiff 2400 gatestates 2400 itfail 0 first_diff t0:mover8:sig549:N5548:win549
+H5_d20_F62.json F 137 states 136 moved 351 notbest 0 diff 1152 diffstates 136 taudiff 10880 gatestates 10880 itfail 0 first_diff t0:mover18:sig569:N5569:win566
+H6_d24_F126.json F 210 states 209 moved 491 notbest 0 diff 1627 diffstates 209 taudiff 20064 gatestates 20064 itfail 0 first_diff t0:mover11:sig657:N5656:win657
+HIT7_d28_F254.json F 300 states 299 moved 1103 notbest 0 diff 3923 diffstates 299 taudiff 33488 gatestates 33488 itfail 0 first_diff t0:mover13:sig765:N5763:win765
+RECF4_d20_F60.json F 68 states 67 moved 203 notbest 0 diff 478 diffstates 67 taudiff 5360 gatestates 5360 itfail 0 first_diff t0:mover7:sig544:N5545:win544
+TOTAL ctrl 0 runs 5 states 741 moved 2248 notbest 0 diff 7358 diffstates 741 taudiff 72192 gatestates 72192 itfail 0 nofb 0

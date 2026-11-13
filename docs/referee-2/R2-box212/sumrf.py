@@ -3,7 +3,7 @@
 with a TOTAL line, timeouts / errors (exit ≠ 0), runs, rule-free FAILS sum, and chosen descriptive records (max for *max / rec_W /
 rec_tail_max / rec_nsp_max, else sum). Usage: sumrf.py OUTDIR"""
 import sys, os, glob, re
-MAXK = lambda k: k.endswith("max") or k in ("rec_Wmax", "rec_tail_max", "rec_nsp_max", "rec_Tmax", "rec_platmax", "rec_plat_len_max")
+MAXK = lambda k: k.endswith("max") or k in ("rec_Wmax", "rec_W", "rec_tail_max", "rec_nsp_max", "rec_Tmax", "rec_platmax", "rec_plat_len_max")
 SHOW = ["rec_Tmax", "rec_Wmax", "rec_nsp_max", "rec_platexit", "rec_restrict_steps", "rec_restrict_idle", "rec_restrict_diff", "rec_tail_gt_N",
         "rec_how_k5fail", "rec_how_domfail", "rec_how_p3fail", "rec_how_p6fail", "rec_how_p7fail", "rec_how_l4mapfail", "rec_how_quietnfail", "rec_how_c4fail"]
 for d in sorted(glob.glob(os.path.join(sys.argv[1], "*"))):
@@ -20,5 +20,6 @@ for d in sorted(glob.glob(os.path.join(sys.argv[1], "*"))):
             if int(v): nonzero[k] = nonzero.get(k, 0) + int(v)
         for k, v in re.findall(r"(rec_\w+|capped) (\d+)", l):
             v = int(v); tot[k] = max(tot.get(k, 0), v) if MAXK(k) else tot.get(k, 0) + v
+    if "rec_W" in tot: tot["rec_Wmax"] = max(tot.get("rec_Wmax", 0), tot.pop("rec_W"))   # one-run files written before the rename
     print(f"{os.path.basename(d)}: files {len(files)} with_TOTAL {nt} runs {runs} capped {tot.get('capped', 0)} rulefree_FAILS {fails}"
           + (f" nonzero {nonzero}" if nonzero else "") + (f" exit!=0 {bad}" if bad else "") + " | " + " ".join(f"{k[4:]} {tot.get(k, 0)}" for k in SHOW))
