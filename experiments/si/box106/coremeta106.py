@@ -42,7 +42,7 @@ def main():
     if os.path.exists(cf):
         lines = open(cf).read().splitlines()
         for l in lines:
-            m = re.match(r"CERTCORE106 (core(\d+)) .*: UNSAT \| .* proof lines (\d+) sha1 ([0-9a-f]{40})$", l)
+            m = re.match(r"CERTCORE106 (core(\d+)) .*\| UNSAT \| .* proof lines (\d+) sha1 ([0-9a-f]{40})$", l)
             if m and sum(1 for x in lines if x.startswith("CHECK106 %s " % m.group(1)) and "s VERIFIED" in x) == 2:
                 cert[int(m.group(2))] = {"proof_lines": int(m.group(3)), "sha1": m.group(4)}
     for m in meta:

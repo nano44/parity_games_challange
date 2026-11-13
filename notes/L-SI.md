@@ -1,27 +1,58 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
-## Successor 54 (Opus 5.5 high; session_01V5yGRZnPJdkB4KaoEZZtig; Lead session_014FBi6o334DvwT5Uw2kDfoN)
-### Resume point (successor 54; updated 2026-11-13 ~08:00Z; CHECK FIRST: `git fetch origin claude/l-si; git log origin/claude/l-si..HEAD`, `pgrep -f "bash scripts/push.sh"`)
-- On origin: 18cd2b88, 3fc5aef4, 047f0725, d2648412 (box 106 §3a-§3d, all VERIFY PASS). Pushing from 07:19Z: eb84c267 (core file
-  out/cores106.json), e860fb19 (core106 conflict budget), 821de9e0 (pair projections). Local after that: whatever the cert runs commit.
-- BOX 106 STATE (docs/si/box106-exact2.md §3a-§3d; tools experiments/si/box106):
-  - SEARCH RESULT (DATA, uncertified): core106.py 6 ended «RUN-CNF with 276 cores UNSAT (covered)»: 276 cores (28 found by cadical195
-    UNSAT + 248 symmetry images, NOT yet checked), sizes 2 lit: 28, 4: 88, 6: 80, 8: 80 (3-5 states). No realisable pattern found.
-  - CERTIFIED so far: the coverage cover6 (covercert106.py: run-only CNF, AV free, 276 cores forbidden): UNSAT, drup.c and ref_rup.c
-    «s VERIFIED» (1,098 lemmas), regenerated equal, proof dump/cover6.drup.gz (out/certcore106.out).
-  - RUNNING (07:55Z): `bash run106.sh certcores 4` = every core with ≤ 4 literals (116) through certcore106.py (core's AV-CNF + units,
-    Glucose DRUP), both checkers, regeneration; resumable (a core with a PROOF106 line is skipped). A SAT core stops it (exit 5): that
-    image is NOT a core -> drop it from cores106_L6.json, rerun core106.py 6 (it will find what is needed) and cover again.
-  - NEXT: (i) measure one 6-literal core (`bash run106.sh certcores 6` does all ≤ 6); 8-literal cores measured: core 20 (index 19) took
-    Glucose 582.5 s, proof 1.27 GB (6.26 M lines): 80 such cores are beyond this window by brute force. Proofs > 50 MB gz are deleted
-    with sha1 kept (runner rule), regenerable. (ii) coremeta106.py 6 after each batch (merges proof sha1s into out/cores106.json).
-    (iii) write §3e (search result + certified part, by script from out/certcore106.out) and pin it in check106.sh.
-  - Honest statement until everything is certified: «L*_max(2) = 5 is CERTIFIED modulo the uncertified cores (list in out/cores106.json:
-    those without "proof")»; KEY2-5 stays a CONJECTURE (Lead 05:57Z).
-  - Ideas not tried: hand proofs of the small families (2-literal: x cannot improve both ways between σ and σ^x; 4-literal mutual
-    trigger), smaller cores via other deletion orders, triple facts. Pair facts do NOT imply core 20 (out/proj, tested).
+## Successor 54 HANDOVER (Opus 5.5 high; session_01V5yGRZnPJdkB4KaoEZZtig; Lead session_014FBi6o334DvwT5Uw2kDfoN; written 2026-11-13T08:20:48Z by date -u; parking on the Lead's 08:21Z word)
+### Resume point (successor 55 starts here; CHECK FIRST: trap check as in the brief; `git log origin/claude/l-si..HEAD`; `pgrep -f "bash scripts/push.sh"`)
+- On origin (all VERIFY PASS): 18cd2b88 (handover check), 3fc5aef4 (diff check + box 106 §3a encoding / Lemma ENC + §3b audit), 047f0725
+  (§3c controls), d2648412 (§3d dead ends), 821de9e0 (core file, budget, pair projections), dc6c2dbb (coverage certificate, first small
+  cores, notebook) and the commit that carries this handover.
+- NEW TOP ITEM (Lead 09:08Z, relaying the OWNER directly: «So put everything into trying solving it today»): «L*_max(d) for d = 3 and 4,
+  by your audited search and SAT, as numbers with how they were obtained («search lower bound» or «SAT exact»), not certified yet. If
+  L*_max grows with d (5 at d = 2, then what?), that is direct evidence on the key rule's long runs. Relate it explicitly to L-NEW's 1P(G)
+  model (box 217) and say whether your KEY model is the same rule. Keep the box 106 certification resumable as the second item.»
+  How (my suggestion): mg106.py's evaluator and abstract_run are depth-2 only (4 movers, the level-1 rule hard-coded). Generalise them to
+  d levels from box 105's key105.key_run semantics (keys = gate chains, ladder105's shape: movers 2l, 2l + 1 on level l, option k of level
+  l ≥ 1 W-points to mover 2(l − 1) + k), audit the generalised evaluator against key105.key_run (SPEC's engine on Γ3*) on random genomes
+  (counter like xrun's runfail, a control that fires), then (i) climb (box 105 D2 had best L* 9 at d = 3 and 14 at d = 4 in the free
+  class, engine-based, 40 restarts; the abstract evaluator is about 100× faster), (ii) the SAT query «L* ≥ m» at d = 3 with cnf106
+  generalised (the free data grow: 12 options, 24 carriers; 64 states; the adversarial ceiling 3^d − 1 = 26 at d = 3 is NOT reached: L-RED
+  ladderbf gives 22). Label every number «search lower bound» or «SAT exact (uncertified)». For 1P(G): read L-NEW's box 217 file
+  (docs/new/, claude/l-new) before comparing; KEY(G*) is defined in box 105 §1 (one-sided key rule; values = SPEC S1 on Γ3* in the standard
+  state; Lemma KEY-MODEL, lane).
+- BOX 106 (second item) (docs/si/box106-exact2.md §0-§3d; §3e NOT YET WRITTEN; tools experiments/si/box106, runner run106.sh, resumable):
+  - SEARCH (DATA, uncertified): `core106.py 6` ended «RUN-CNF with 276 cores UNSAT (covered)». 276 cores in out/cores106_L6.json, with
+    provenance in out/cores106.json (coremeta106.py 6: 28 found by cadical195 UNSAT without proof, 248 images under the 16-element
+    relabelling group core106.GROUP; sizes 2 lit 28, 4: 88, 6: 80, 8: 80, on 3-5 states). No realisable pattern (no kill of KEY2-5).
+  - CERTIFIED (Glucose 4 DRUP; drup.c AND ref_rup.c «s VERIFIED»; regenerated byte-identically; out/certcore106.out; dump/*.drup.gz):
+    cover6 = the run-only CNF (AV free) with the 276 cores forbidden: UNSAT, 1,098 lemmas. Plus every core with a PROOF106 line in
+    out/certcore106.out (≤ 4-literal cores, in file order: 42 of the 116 at park time, 09:21Z; coremeta106.py merges them: «276 cores (28 found, 248 images), 42 certified»). The runner `bash run106.sh certcores 4` was running at park
+    time and was STOPPED by me (resumable: rerun the same command; cores with a PROOF106 line are skipped). A core reported SAT stops the
+    runner (exit 5): that image is not a core: drop it from cores106_L6.json, rerun core106.py 6 and the cover step.
+  - LEAD RULING 08:21Z (quoted): «(1) IMAGES BY RENAMING, not by re-solving. Each of the 248 images is a core under a relabelling of
+    variables. Generate its certificate by applying the same variable renaming to the found core's CNF AND to its DRUP proof. Then check
+    the renamed proof against the image's OWN regenerated AV-CNF with both checkers. No symmetry argument enters the certificate: each
+    image is checked on its own. It only saves the solving. If a renamed proof fails, re-solve that image directly and record the
+    failure. This leaves 28 found cores to solve, not 276. (2) The large FOUND cores: try a cheaper encoding of the core's states first
+    (the core's own states only, a clause subset as now, plus symmetry-free minimisation by other deletion orders), then brute force.
+    Proofs over 50 MB gz: keep the sha1 and regeneration recipe, as you proposed. (3) Hand proofs of the 2- and 4-literal families:
+    welcome as lane lemmas (unrefereed), but a hand proof does NOT replace a certificate in §3e. (4) §3e wording as you propose:
+    «certified MODULO the listed uncertified cores», each listed.»
+  - TRAP for (1) (my reading, not yet tried): the image's own AV-CNF (certcore106.py on the image) numbers its variables in build order,
+    and its unnamed Tseitin variables need not correspond one-to-one to the found core's under the relabelling. A renamed proof is RUP
+    against the image's own CNF only if the two clause sets are equal under a variable bijection. Build that bijection constructively:
+    rebuild the found core's CNF with cnf106 instrumented to record, for every variable, the construct that created it (state, mover, carrier,
+    gate, …), map constructs through the relabelling, and assert the renamed clause set == the image CNF's clause set; then rename the
+    proof and run both checkers. If the clause sets differ, re-solve (Lead's fallback).
+  - Costs measured: ≤ 4-literal cores 4-41 s each (proofs ≤ 0.7 M lines); core 20 (8 literals, 4 states, index 19) Glucose 582.5 s, proof
+    1.27 GB (6.26 M lines); drup.c needed > 35 min on a 4.5 M-lemma proof. Pair facts do NOT imply core 20 (out/proj).
+  - NEXT for successor 55: (a) resume certcores 4; (b) the renaming route for images (above); (c) the large found cores (5 with 6
+    literals, 5 with 8: out/cores106.json "source":"found"); (d) coremeta106.py 6 after each batch; (e) §3e by script from
+    out/certcore106.out with the «certified MODULO …» statement and the list; pin in check106.sh; push; message the Lead.
 - DUTIES: P-N5-WRAP fixes entry 2 + L-3 only if a byte test routes an item (pattern experiments/si/pwrap/fix1/mkL2.py); R128 standby.
+- Things only I know: (1) python-sat's cadical153 proofs end without a refutation: never certify with them; cadical195 has no proof
+  output here: search only. (2) Pipes into tail hide exit codes and errors of long jobs: redirect to a log file. (3) The Stop hook nags
+  during pushes; the lane rule (no commit while push.sh runs) wins. (4) Background jobs moved to the background automatically get a
+  30-min limit: start long jobs with run_in_background and a 2 h timeout.
 
 ### CHECK: independent scratch L-2 vs faf0c8ff's L-2 (Lead 00:38Z; a check only: no file in docs/si/ changes, no fixes entry; written 2026-11-13T02:20:08Z by date -u)
 - Before the Lead's 00:32Z correction reached me, I built an L-2 of P-N5-WRAP on my own, from L-1 (896f9e97) and byte copies of

@@ -68,3 +68,148 @@ CHECK106 core13 drup: s VERIFIED (65627 lemmas RUP-checked)
 CHECK106 core13 ref_rup: s VERIFIED (65627 lemmas RUP-checked, deletions ignored)
 REGEN106 core13 cnf equal yes proof equal yes
 PROOF106 core13 dump/core13.drup.gz bytes 5500205 sha1 9f0c23646f8cac8d5d174c4ad38c07509b806a37
+CERTCORE106 core14 core 14 of L* >= 6: AV[0001][3] -AV[0100][1] AV[0101][1] -AV[0101][3] | states 3 | UNSAT | vars 13709 clauses 77269 | cnf sha1 170be3251c68220a1b854ecd04e74efed0c85a18 | solver glucose4 (python-sat 1.9.dev15) | 59.7 s | proof lines 987057 sha1 45f8e0fc89ed06bd43086060085af3022c8d00de
+CHECK106 core14 drup: s VERIFIED (485679 lemmas RUP-checked)
+CHECK106 core14 ref_rup: s VERIFIED (485679 lemmas RUP-checked, deletions ignored)
+REGEN106 core14 cnf equal yes proof equal yes
+PROOF106 core14 dump/core14.drup.gz bytes 55080392 sha1 23074c12bff51d9d7d174a1558ead35911dab378 (deleted: > 50 MB; regenerate)
+CERTCORE106 core15 core 15 of L* >= 6: AV[0001][1] AV[0101][1] | states 2 | UNSAT | vars 9219 clauses 52819 | cnf sha1 e39381ab9629220bd9c2735e85bd55dd56b76e64 | solver glucose4 (python-sat 1.9.dev15) | 8.7 s | proof lines 189705 sha1 b2b56cf27790841a513d184dd5d37eb9c30fdd79
+CHECK106 core15 drup: s VERIFIED (97949 lemmas RUP-checked)
+CHECK106 core15 ref_rup: s VERIFIED (97949 lemmas RUP-checked, deletions ignored)
+REGEN106 core15 cnf equal yes proof equal yes
+PROOF106 core15 dump/core15.drup.gz bytes 8416231 sha1 d5647159aac4e1a6f8cae5b66a8d4a3c912b2fb4
+CERTCORE106 core16 core 16 of L* >= 6: AV[0011][1] -AV[0011][2] AV[0101][1] -AV[0101][2] | states 2 | UNSAT | vars 9245 clauses 53029 | cnf sha1 2d8d1d643bdb1ea64939863d5669cc0389c75948 | solver glucose4 (python-sat 1.9.dev15) | 26.9 s | proof lines 602446 sha1 e5b92a7d03e3f2a12887ad837b6de87afa8af5b0
+CHECK106 core16 drup: s VERIFIED (310524 lemmas RUP-checked)
+CHECK106 core16 ref_rup: s VERIFIED (310524 lemmas RUP-checked, deletions ignored)
+REGEN106 core16 cnf equal yes proof equal yes
+PROOF106 core16 dump/core16.drup.gz bytes 31131144 sha1 5152a5f33ad3cb24b2c726ef52adabf90694628a
+CERTCORE106 core20 core 20 of L* >= 6: AV[0001][2] AV[0011][2] | states 2 | UNSAT | vars 9219 clauses 52819 | cnf sha1 467731e3fb055596e46df87fa66b2136bbd83cbf | solver glucose4 (python-sat 1.9.dev15) | 4.8 s | proof lines 120111 sha1 3343ca98a0142bd3f1e816cbae68f37b50ad92a7
+CHECK106 core20 drup: s VERIFIED (63431 lemmas RUP-checked)
+CHECK106 core20 ref_rup: s VERIFIED (63431 lemmas RUP-checked, deletions ignored)
+REGEN106 core20 cnf equal yes proof equal yes
+PROOF106 core20 dump/core20.drup.gz bytes 5657065 sha1 7e387c5da7ea872b1f7928c3c533c51aec5aa5de
+CERTCORE106 core21 core 21 of L* >= 6: AV[1100][2] AV[1110][2] | states 2 | UNSAT | vars 9219 clauses 52819 | cnf sha1 178b839fda9032af7af829a8633c9e61a9ead7a7 | solver glucose4 (python-sat 1.9.dev15) | 4.8 s | proof lines 113585 sha1 868f74f414569a49a678cd2506603735d824c84b
+CHECK106 core21 drup: s VERIFIED (62442 lemmas RUP-checked)
+CHECK106 core21 ref_rup: s VERIFIED (62442 lemmas RUP-checked, deletions ignored)
+REGEN106 core21 cnf equal yes proof equal yes
+PROOF106 core21 dump/core21.drup.gz bytes 5058627 sha1 b0c3214c760d82a2da5561a916c8ea3cc6675067
+CERTCORE106 core22 core 22 of L* >= 6: AV[0110][3] AV[0111][3] | states 2 | UNSAT | vars 9219 clauses 52819 | cnf sha1 8c98641839f226dc9589150c024ca2cb6c5cab05 | solver glucose4 (python-sat 1.9.dev15) | 4.4 s | proof lines 116145 sha1 dacc3b197234c3725e9ba34c308da915de6fc619
+CHECK106 core22 drup: s VERIFIED (63130 lemmas RUP-checked)
+CHECK106 core22 ref_rup: s VERIFIED (63129 lemmas RUP-checked, deletions ignored)
+REGEN106 core22 cnf equal yes proof equal yes
+PROOF106 core22 dump/core22.drup.gz bytes 5700449 sha1 1abf55a2740f8f0c90d9a858c1c44eee24aeb85a
+CERTCORE106 core23 core 23 of L* >= 6: AV[1110][3] AV[1111][3] | states 2 | UNSAT | vars 9219 clauses 52819 | cnf sha1 df633fe8ec2913b5d01eb58e9adf8f4439a0c129 | solver glucose4 (python-sat 1.9.dev15) | 4.1 s | proof lines 124917 sha1 d8508a8252293a1f2b16cffdcbc814777666a3e9
+CHECK106 core23 drup: s VERIFIED (57410 lemmas RUP-checked)
+CHECK106 core23 ref_rup: s VERIFIED (57410 lemmas RUP-checked, deletions ignored)
+REGEN106 core23 cnf equal yes proof equal yes
+PROOF106 core23 dump/core23.drup.gz bytes 5192166 sha1 caa328bc700a6ce8741e94a864903e64d8efd8da
+CERTCORE106 core24 core 24 of L* >= 6: AV[0101][2] AV[0111][2] | states 2 | UNSAT | vars 9219 clauses 52819 | cnf sha1 78ed36b027277529e0b7e0fbb8bcd302d1062544 | solver glucose4 (python-sat 1.9.dev15) | 4.5 s | proof lines 121101 sha1 6ab4a59d3a74b8331b8d61a7f0c2680d97e7a733
+CHECK106 core24 drup: s VERIFIED (61609 lemmas RUP-checked)
+CHECK106 core24 ref_rup: s VERIFIED (61609 lemmas RUP-checked, deletions ignored)
+REGEN106 core24 cnf equal yes proof equal yes
+PROOF106 core24 dump/core24.drup.gz bytes 5351193 sha1 3d399f690001a200263a82b601a730056ece1859
+CERTCORE106 core25 core 25 of L* >= 6: AV[1000][2] AV[1010][2] | states 2 | UNSAT | vars 9219 clauses 52819 | cnf sha1 8e73cc94fccb01143aab797d5cd227e958d1ad43 | solver glucose4 (python-sat 1.9.dev15) | 4.9 s | proof lines 117719 sha1 af6a3b6c0220d909abeb4ffa80c9aef592fc6ec0
+CHECK106 core25 drup: s VERIFIED (61901 lemmas RUP-checked)
+CHECK106 core25 ref_rup: s VERIFIED (61901 lemmas RUP-checked, deletions ignored)
+REGEN106 core25 cnf equal yes proof equal yes
+PROOF106 core25 dump/core25.drup.gz bytes 5017548 sha1 dc21812cb2f77d8433f3e0a43a54f503accbec2b
+CERTCORE106 core26 core 26 of L* >= 6: AV[0100][2] AV[0110][2] | states 2 | UNSAT | vars 9219 clauses 52819 | cnf sha1 e6fd7cf2f1c81b15591e739f416f841b957f1171 | solver glucose4 (python-sat 1.9.dev15) | 4.9 s | proof lines 122939 sha1 a4b4826cff835a40a1ead587554c38583b4d43da
+CHECK106 core26 drup: s VERIFIED (62686 lemmas RUP-checked)
+CHECK106 core26 ref_rup: s VERIFIED (62686 lemmas RUP-checked, deletions ignored)
+REGEN106 core26 cnf equal yes proof equal yes
+PROOF106 core26 dump/core26.drup.gz bytes 5631293 sha1 6d33df1d4883f34719d4cc1680a257bf5ed0a37e
+CERTCORE106 core27 core 27 of L* >= 6: AV[0000][1] AV[0100][1] | states 2 | UNSAT | vars 9219 clauses 52819 | cnf sha1 9e1f237abdc661a144551d4c1016274342239ddc | solver glucose4 (python-sat 1.9.dev15) | 7.9 s | proof lines 182954 sha1 bf1ec94749dc94ebe8800c75a21a309f39e0f8af
+CHECK106 core27 drup: s VERIFIED (98277 lemmas RUP-checked)
+CHECK106 core27 ref_rup: s VERIFIED (98277 lemmas RUP-checked, deletions ignored)
+REGEN106 core27 cnf equal yes proof equal yes
+PROOF106 core27 dump/core27.drup.gz bytes 8610943 sha1 f78ae9175147ba9a778cd33af9842b5b36b4a217
+CERTCORE106 core28 core 28 of L* >= 6: AV[1000][1] AV[1100][1] | states 2 | UNSAT | vars 9219 clauses 52819 | cnf sha1 f176ee3b3ec16f774192a8910743a68e084c485c | solver glucose4 (python-sat 1.9.dev15) | 6.9 s | proof lines 165276 sha1 55250289245a111181d82b5d37c27e9b9066ecdc
+CHECK106 core28 drup: s VERIFIED (85989 lemmas RUP-checked)
+CHECK106 core28 ref_rup: s VERIFIED (85988 lemmas RUP-checked, deletions ignored)
+REGEN106 core28 cnf equal yes proof equal yes
+PROOF106 core28 dump/core28.drup.gz bytes 7620480 sha1 79f586c4680d5675eba57c9b9ddcd64733bb1658
+CERTCORE106 core29 core 29 of L* >= 6: AV[0111][0] AV[1111][0] | states 2 | UNSAT | vars 9219 clauses 52819 | cnf sha1 5ad3e5c0b1307aa3ee8479051f4e768eb383c32d | solver glucose4 (python-sat 1.9.dev15) | 7.2 s | proof lines 156863 sha1 9dce9417038f8024d5657c816573bae1667cf48c
+CHECK106 core29 drup: s VERIFIED (86200 lemmas RUP-checked)
+CHECK106 core29 ref_rup: s VERIFIED (86200 lemmas RUP-checked, deletions ignored)
+REGEN106 core29 cnf equal yes proof equal yes
+PROOF106 core29 dump/core29.drup.gz bytes 7520481 sha1 4f28da099c808301d24d871adc08133bcd769ad5
+CERTCORE106 core30 core 30 of L* >= 6: AV[0010][0] AV[0010][3] AV[1011][0] AV[1011][3] | states 2 | UNSAT | vars 9245 clauses 53029 | cnf sha1 940d2b665455fa5966adaf6d05c110af86d2175c | solver glucose4 (python-sat 1.9.dev15) | 11.3 s | proof lines 235839 sha1 e1eee22f4b4a9082f477d2d4a31c631501ce76e0
+CHECK106 core30 drup: s VERIFIED (127151 lemmas RUP-checked)
+CHECK106 core30 ref_rup: s VERIFIED (127151 lemmas RUP-checked, deletions ignored)
+REGEN106 core30 cnf equal yes proof equal yes
+PROOF106 core30 dump/core30.drup.gz bytes 11667057 sha1 d585a1e8bd3c350a8579e3e09b6cd13fb31d6de5
+CERTCORE106 core31 core 31 of L* >= 6: AV[0001][1] AV[0001][3] AV[0100][1] AV[0100][3] | states 2 | UNSAT | vars 9245 clauses 53029 | cnf sha1 384aa05e40c4ebe816ba52632b7fe72bfed8fd95 | solver glucose4 (python-sat 1.9.dev15) | 11.3 s | proof lines 248208 sha1 1fee8d78e88a1af82abeea59f2305cdbd66d2a57
+CHECK106 core31 drup: s VERIFIED (124814 lemmas RUP-checked)
+CHECK106 core31 ref_rup: s VERIFIED (124814 lemmas RUP-checked, deletions ignored)
+REGEN106 core31 cnf equal yes proof equal yes
+PROOF106 core31 dump/core31.drup.gz bytes 11465503 sha1 4e00d5cef28e641e57155aa890716351b9a89f94
+CERTCORE106 core32 core 32 of L* >= 6: AV[1000][1] AV[1000][3] AV[1101][1] AV[1101][3] | states 2 | UNSAT | vars 9245 clauses 53029 | cnf sha1 63cd066792ffb509c75678033736505004498488 | solver glucose4 (python-sat 1.9.dev15) | 9.2 s | proof lines 217612 sha1 ea8ad1c8b238a1df21b892dd20fe772fb17dca94
+CHECK106 core32 drup: s VERIFIED (115526 lemmas RUP-checked)
+CHECK106 core32 ref_rup: s VERIFIED (115526 lemmas RUP-checked, deletions ignored)
+REGEN106 core32 cnf equal yes proof equal yes
+PROOF106 core32 dump/core32.drup.gz bytes 10296993 sha1 7c545d8bb9cd31ebea1f7f4f4c528ed27b1cec19
+CERTCORE106 core33 core 33 of L* >= 6: AV[0010][1] AV[0010][2] AV[0100][1] AV[0100][2] | states 2 | UNSAT | vars 9245 clauses 53029 | cnf sha1 59ab274c36fa01e01660ba5c513ed3486d447b44 | solver glucose4 (python-sat 1.9.dev15) | 10.8 s | proof lines 247754 sha1 c5806bb9190d42dbc428f8328d84f991ae27e897
+CHECK106 core33 drup: s VERIFIED (124638 lemmas RUP-checked)
+CHECK106 core33 ref_rup: s VERIFIED (124638 lemmas RUP-checked, deletions ignored)
+REGEN106 core33 cnf equal yes proof equal yes
+PROOF106 core33 dump/core33.drup.gz bytes 11588678 sha1 370b83be15e0c09444499d6a604af1e42ef8d63e
+CERTCORE106 core34 core 34 of L* >= 6: AV[0011][0] AV[0011][2] AV[1001][0] AV[1001][2] | states 2 | UNSAT | vars 9245 clauses 53029 | cnf sha1 3b68bc836a70913d3fcef8396ef05d727387f216 | solver glucose4 (python-sat 1.9.dev15) | 9.9 s | proof lines 233458 sha1 7dc520cb304bb2e9005c68f64f7ecf2ccd73071a
+CHECK106 core34 drup: s VERIFIED (114193 lemmas RUP-checked)
+CHECK106 core34 ref_rup: s VERIFIED (114193 lemmas RUP-checked, deletions ignored)
+REGEN106 core34 cnf equal yes proof equal yes
+PROOF106 core34 dump/core34.drup.gz bytes 10665683 sha1 f70654514e8db42f4aab064f6d1d30d2065b4752
+CERTCORE106 core35 core 35 of L* >= 6: AV[0101][0] AV[0101][2] AV[1111][0] AV[1111][2] | states 2 | UNSAT | vars 9245 clauses 53029 | cnf sha1 863fb387a8f9d497bea85c2287a0c8e2faf58448 | solver glucose4 (python-sat 1.9.dev15) | 10.4 s | proof lines 244207 sha1 f86aa87a8c5ede9b033024dcf19b8ea3f185cd38
+CHECK106 core35 drup: s VERIFIED (114803 lemmas RUP-checked)
+CHECK106 core35 ref_rup: s VERIFIED (114803 lemmas RUP-checked, deletions ignored)
+REGEN106 core35 cnf equal yes proof equal yes
+PROOF106 core35 dump/core35.drup.gz bytes 10801060 sha1 ed470120d264b1b7a5070ceeaa6a9bd7321b5705
+CERTCORE106 core36 core 36 of L* >= 6: AV[0111][0] AV[0111][3] AV[1110][0] AV[1110][3] | states 2 | UNSAT | vars 9245 clauses 53029 | cnf sha1 e0ed4a3a44dac30f87112c3ad159ce78c973858a | solver glucose4 (python-sat 1.9.dev15) | 10.2 s | proof lines 235271 sha1 b7406fa037c2c3adefa998540e49e5687aa12bb5
+CHECK106 core36 drup: s VERIFIED (117590 lemmas RUP-checked)
+CHECK106 core36 ref_rup: s VERIFIED (117590 lemmas RUP-checked, deletions ignored)
+REGEN106 core36 cnf equal yes proof equal yes
+PROOF106 core36 dump/core36.drup.gz bytes 10866920 sha1 05e896071dd1b64b9885f591e70a880b9335cbd5
+CERTCORE106 core37 core 37 of L* >= 6: AV[0000][1] AV[0000][2] AV[0110][1] AV[0110][2] | states 2 | UNSAT | vars 9245 clauses 53029 | cnf sha1 1acb9d3ab91032d6cde201d3651cf714d6592fac | solver glucose4 (python-sat 1.9.dev15) | 10.9 s | proof lines 244990 sha1 6c079e50aaed000214bcae3473da848de8016566
+CHECK106 core37 drup: s VERIFIED (126240 lemmas RUP-checked)
+CHECK106 core37 ref_rup: s VERIFIED (126240 lemmas RUP-checked, deletions ignored)
+REGEN106 core37 cnf equal yes proof equal yes
+PROOF106 core37 dump/core37.drup.gz bytes 11949709 sha1 29c3aa28550e1d8379167cd8fcf009ee2f193f2d
+CERTCORE106 core38 core 38 of L* >= 6: AV[0111][0] AV[0111][2] AV[1101][0] AV[1101][2] | states 2 | UNSAT | vars 9245 clauses 53029 | cnf sha1 3ec747f9d39579edd5200bfb058dbdbfdf40ff20 | solver glucose4 (python-sat 1.9.dev15) | 9.0 s | proof lines 202008 sha1 89ec26dae1244213e72839e0eb9f53cf3fa0d9b6
+CHECK106 core38 drup: s VERIFIED (110064 lemmas RUP-checked)
+CHECK106 core38 ref_rup: s VERIFIED (110064 lemmas RUP-checked, deletions ignored)
+REGEN106 core38 cnf equal yes proof equal yes
+PROOF106 core38 dump/core38.drup.gz bytes 9909975 sha1 a3a92bd283d8946fd11691215b2b3584e9647675
+CERTCORE106 core39 core 39 of L* >= 6: AV[0110][0] AV[0110][3] AV[1111][0] AV[1111][3] | states 2 | UNSAT | vars 9245 clauses 53029 | cnf sha1 c54cf3724070f1f47c6db53ce90ddeea79def910 | solver glucose4 (python-sat 1.9.dev15) | 10.8 s | proof lines 226214 sha1 c15cf4b6e62dfbeba2b108cc6ba4b0c055d63cc9
+CHECK106 core39 drup: s VERIFIED (125728 lemmas RUP-checked)
+CHECK106 core39 ref_rup: s VERIFIED (125728 lemmas RUP-checked, deletions ignored)
+REGEN106 core39 cnf equal yes proof equal yes
+PROOF106 core39 dump/core39.drup.gz bytes 10761274 sha1 776700ab36fc2e10bfc14de7c56586169720396c
+CERTCORE106 core40 core 40 of L* >= 6: AV[1001][1] AV[1001][3] AV[1100][1] AV[1100][3] | states 2 | UNSAT | vars 9245 clauses 53029 | cnf sha1 046f57c79c29cdb1bcfd9afd347fa14c59f8c878 | solver glucose4 (python-sat 1.9.dev15) | 9.8 s | proof lines 229188 sha1 46549448a2f7a1ea8eb2126be006fee737a8049e
+CHECK106 core40 drup: s VERIFIED (115863 lemmas RUP-checked)
+CHECK106 core40 ref_rup: s VERIFIED (115849 lemmas RUP-checked, deletions ignored)
+REGEN106 core40 cnf equal yes proof equal yes
+PROOF106 core40 dump/core40.drup.gz bytes 11043214 sha1 f9568656d555257cecaddb32636d549787e462e7
+CERTCORE106 core41 core 41 of L* >= 6: AV[0001][0] AV[0001][2] AV[1011][0] AV[1011][2] | states 2 | UNSAT | vars 9245 clauses 53029 | cnf sha1 68a5d72ebd8e23499970604efa8625d5e51b971a | solver glucose4 (python-sat 1.9.dev15) | 11.4 s | proof lines 261896 sha1 e30204636eeff84fd6204e5d2528dd0f6a97f529
+CHECK106 core41 drup: s VERIFIED (133531 lemmas RUP-checked)
+CHECK106 core41 ref_rup: s VERIFIED (133531 lemmas RUP-checked, deletions ignored)
+REGEN106 core41 cnf equal yes proof equal yes
+PROOF106 core41 dump/core41.drup.gz bytes 11986173 sha1 f6a116ddc9d0f5d11244ce6a3abd9d48b0a36df9
+CERTCORE106 core42 core 42 of L* >= 6: AV[1000][1] AV[1000][2] AV[1110][1] AV[1110][2] | states 2 | UNSAT | vars 9245 clauses 53029 | cnf sha1 4644fb9af7439b3816279dec4e82f700b08445a8 | solver glucose4 (python-sat 1.9.dev15) | 10.3 s | proof lines 242462 sha1 211b95cd816aea6930a28116c7564852fc2a2d10
+CHECK106 core42 drup: s VERIFIED (114912 lemmas RUP-checked)
+CHECK106 core42 ref_rup: s VERIFIED (114912 lemmas RUP-checked, deletions ignored)
+REGEN106 core42 cnf equal yes proof equal yes
+PROOF106 core42 dump/core42.drup.gz bytes 11114126 sha1 d6873cc2d8e9a36d09e5d364ef3c73c0332efc6f
+CERTCORE106 core43 core 43 of L* >= 6: AV[1010][1] AV[1010][2] AV[1100][1] AV[1100][2] | states 2 | UNSAT | vars 9245 clauses 53029 | cnf sha1 3d4b753c166c29ba4ae93e3a93004976bc8d0272 | solver glucose4 (python-sat 1.9.dev15) | 8.8 s | proof lines 191005 sha1 5704c7bd75a8e68461fae0e1305a629735e7d8ae
+CHECK106 core43 drup: s VERIFIED (110223 lemmas RUP-checked)
+CHECK106 core43 ref_rup: s VERIFIED (110223 lemmas RUP-checked, deletions ignored)
+REGEN106 core43 cnf equal yes proof equal yes
+PROOF106 core43 dump/core43.drup.gz bytes 9215013 sha1 131276633bdc23bfa249d9f27d921054c8ec0098
+CERTCORE106 core44 core 44 of L* >= 6: AV[0000][1] AV[0000][3] AV[0101][1] AV[0101][3] | states 2 | UNSAT | vars 9245 clauses 53029 | cnf sha1 79848079a342e6c0f2b9619cef6b5130b7dbaa60 | solver glucose4 (python-sat 1.9.dev15) | 10.6 s | proof lines 246406 sha1 2187fe6aa7ec9f6d6e0432c7bccb522dcec679e7
+CHECK106 core44 drup: s VERIFIED (127954 lemmas RUP-checked)
+CHECK106 core44 ref_rup: s VERIFIED (127954 lemmas RUP-checked, deletions ignored)
+REGEN106 core44 cnf equal yes proof equal yes
+PROOF106 core44 dump/core44.drup.gz bytes 12246081 sha1 35076a2ed5608f5223f976651fb867b3d26f1614
+CERTCORE106 core60 core 60 of L* >= 6: AV[0000][2] AV[0100][1] -AV[0110][1] AV[0110][2] | states 3 | UNSAT | vars 13709 clauses 77269 | cnf sha1 3ac40e2c190f857f4bd28a1098228c3afdbaa9f7 | solver glucose4 (python-sat 1.9.dev15) | 34.8 s | proof lines 548931 sha1 b30862b628f2c399104fd29c0c81099f167524f0
+CHECK106 core60 drup: s VERIFIED (296435 lemmas RUP-checked)
+CHECK106 core60 ref_rup: s VERIFIED (296435 lemmas RUP-checked, deletions ignored)
+REGEN106 core60 cnf equal yes proof equal yes
+PROOF106 core60 dump/core60.drup.gz bytes 29531246 sha1 c4d3c6c0f64d35a864809a7641bd90e61b9f79e1
