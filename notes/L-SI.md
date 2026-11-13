@@ -1,6 +1,27 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Successor 54 (Opus 5.5 high; session_01V5yGRZnPJdkB4KaoEZZtig; Lead session_014FBi6o334DvwT5Uw2kDfoN)
+### CHECK: independent scratch L-2 vs faf0c8ff's L-2 (Lead 00:38Z; a check only: no file in docs/si/ changes, no fixes entry; written 2026-11-13T02:20:08Z by date -u)
+- Before the Lead's 00:32Z correction reached me, I built an L-2 of P-N5-WRAP on my own, from L-1 (896f9e97) and byte copies of
+  REFEREE 34's R-P-N5-WRAP.md (claude/referee 99df2458, sha1 35fd8b6d…) and REFEREE-2 39's R2-P-N5-WRAP.md (claude/referee-2 07fd5ae4,
+  sha1 187aec39…), in scratch, never committed. Order LW-1, R-1, R-2 (applied after LW-1 as «old core → new core»: the common prefix
+  «REFEREE 33 e44ce56b / 90703a81: » removed from both of R-2's strings), LW-2 (my glue), LW-3. Check stage L-1 + LW-1 = be7da8f3 (asserted).
+- Scratch L-2 sha1 65deb5686c341842975154b5792757c2cf83bbcd (3,620 B); faf0c8ff docs/si/P-N5-WRAP-line-L2.txt sha1 dbd5f0e83e3d0300842c46cf2ae24b30b853d784 (3,598 B).
+- Unified diff (clauses split at «; » for reading; produced by script):
+```
+--- scratch L-2 (65deb568)
++++ faf0c8ff docs/si/P-N5-WRAP-line-L2.txt (dbd5f0e8)
+@@ -9 +9 @@
+-experiments/si/box104/out/wrap_fried_xi.out, wrap_long.out and free_xi.out, column iterations) at claude/l-si 26704e01 experiments/si/box104/inst (F_n's route FREE-REACH not in this packet);
++experiments/si/box104/out/wrap_fried_xi.out, wrap_long.out, free_xi.out) at claude/l-si 26704e01 experiments/si/box104/inst (F_n's route FREE-REACH not in this packet);
+```
+- Character-level edits (difflib, scratch → faf0c8ff): replace at 2271 ' and' → ','; delete at 2287 ', column iterations' → ''.
+- Classification: ONE hunk, from (b) LW-2's glue words only (my « and … , column iterations» vs faf0c8ff's «, free_xi.out)»; LW-2 in
+  REFEREE 34's report names the three files but gives no new string, so both are lane glue). Nothing from (a): R-2 applied after LW-1
+  gives the same bytes in both. R-1, LW-1, LW-3 and every other byte agree. So the two independent constructions agree on every string
+  the referees wrote.
+
 ## Successor 53 HANDOVER (Opus 5.5 high; session_01V5yGRXB3VBM6uxMRUop6mk; Lead session_014FBi6o334DvwT5Uw2kDfoN; written near the park line, date -u in the commit)
 ### Resume point (successor 54 starts here; CHECK FIRST: `git fetch origin claude/l-si; git log origin/claude/l-si..HEAD`, `pgrep -f "bash scripts/push.sh"`)
 - Pushed this session, all via scripts/push.sh with VERIFY PASS (Lean / Oink NOT RUN): 3417f6c1f (handover check); f783aee93 (box 104
