@@ -1,0 +1,15 @@
+B4PHASE alg spec b4c_b4_fried_n2_s6002_c1 |H| 35 |Wg| 736 sha1 e691f0093959cdbf08ed94aca8d93f6cabdf8334 | I 23 k 1 PRE 3 BETWEEN 0 POST 19 P1 19 fallbacks at [4] | n5b I 23 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg spec b4c_b4_fried_n3_s6003_c1 |H| 49 |Wg| 1063 sha1 c96ca48847784b78dccf3aea3170e5bf48e3d1f8 | I 18 k 1 PRE 3 BETWEEN 0 POST 14 P1 14 fallbacks at [4] | n5b I 18 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg spec b4c_b4_fried_n4_s6004_c1 |H| 63 |Wg| 1390 sha1 602a7db0f1246b61acc05e9829e2e1866c2f60d2 | I 28 k 1 PRE 12 BETWEEN 0 POST 15 P1 15 fallbacks at [13] | n5b I 28 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg spec b4c_b4_fried_n5_s6005_c1 |H| 77 |Wg| 1717 sha1 09f5f574d6bc631f7aa62662545ea5bfb313aae9 | I 33 k 1 PRE 12 BETWEEN 0 POST 20 P1 20 fallbacks at [13] | n5b I 33 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg spec b4c_b4_fried_n6_s6006_c1 |H| 91 |Wg| 2044 sha1 51816c9568f0b4d9504542c41fb8c61c44acda8a | I 31 k 1 PRE 6 BETWEEN 0 POST 24 P1 24 fallbacks at [7] | n5b I 31 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg spec b4c_b4_hn_n1_s6201_c1 |H| 21 |Wg| 404 sha1 f50281df458f19634c2c9d3316698a190a119a83 | I 21 k 1 PRE 8 BETWEEN 0 POST 12 P1 12 fallbacks at [9] | n5b I 21 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg spec b4c_b4_hn_n2_s6202_c1 |H| 42 |Wg| 899 sha1 842afddf352a72ff0cb0ef1976fb438cc300abd3 | I 29 k 1 PRE 10 BETWEEN 0 POST 18 P1 18 fallbacks at [11] | n5b I 29 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg spec b4c_b4_hn_n3_s6203_c1 |H| 63 |Wg| 1457 sha1 7fece73e8329c2cbee9e939038973aa68f6dfc9c | I 37 k 1 PRE 6 BETWEEN 0 POST 30 P1 30 fallbacks at [7] | n5b I 37 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg spec b4c_b4_hn_n4_s6204_c1 |H| 84 |Wg| 2078 sha1 4489560424ebc0469c3cc3ec9988a8cf10373295 | I 74 k 1 PRE 40 BETWEEN 0 POST 33 P1 33 fallbacks at [41] | n5b I 74 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg spec b4c_b4_lmcs_n2_s6102_c1 |H| 24 |Wg| 516 sha1 cf8a15439c269bb542073f6cfd04d9494d352231 | I 17 k 1 PRE 6 BETWEEN 0 POST 10 P1 10 fallbacks at [7] | n5b I 17 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg spec b4c_b4_lmcs_n3_s6103_c1 |H| 34 |Wg| 785 sha1 e7ab14fd604825bc4830f6c0a060f3fe67887fa3 | I 22 k 1 PRE 7 BETWEEN 0 POST 14 P1 14 fallbacks at [8] | n5b I 22 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg spec b4c_b4_lmcs_n4_s6104_c1 |H| 44 |Wg| 1081 sha1 e49773fb7675d2ffc046bbe6cee4bf40e0a8bc9e | I 26 k 1 PRE 9 BETWEEN 0 POST 16 P1 16 fallbacks at [10] | n5b I 26 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg spec b4c_b4_lmcs_n5_s6105_c1 |H| 54 |Wg| 1404 sha1 a42164cd0d3fc68ebd9cce559060f09fbd30caf3 | I 21 k 1 PRE 2 BETWEEN 0 POST 18 P1 18 fallbacks at [3] | n5b I 21 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg spec b4c_b4_lmcs_n6_s6106_c1 |H| 64 |Wg| 1754 sha1 cb1b851a7af7677e25757ade63f1a35e1d858e37 | I 25 k 1 PRE 5 BETWEEN 0 POST 19 P1 19 fallbacks at [6] | n5b I 25 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE SUMMARY alg spec wrappers 14 wrong 0 engdiff 0 phasesum 0

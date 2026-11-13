@@ -1,0 +1,11 @@
+start its 16 F1 13 |Wg| 2044
+it 8 P1 6 its 18 F1 12 fbs 1 hsteps 11 hmoves 80 tauch 0
+it 20 P1 6 its 20 F1 14 fbs 1 hsteps 13 hmoves 93 tauch 0
+it 22 P1 7 its 21 F1 14 fbs 1 hsteps 13 hmoves 89 tauch 0
+it 24 P1 16 its 30 F1 14 fbs 1 hsteps 13 hmoves 90 tauch 0
+it 29 P1 16 its 31 F1 15 fbs 1 hsteps 14 hmoves 93 tauch 0
+it 33 P1 20 its 27 F1 7 fbs 1 hsteps 6 hmoves 79 tauch 0
+it 40 P1 22 its 29 F1 7 fbs 1 hsteps 6 hmoves 75 tauch 0
+it 300 P1 23 its 30 F1 7 fbs 1 hsteps 6 hmoves 67 tauch 0
+it 372 P1 24 its 31 F1 7 fbs 1 hsteps 6 hmoves 79 tauch 0
+B4CLIMB b4_fried_n6_s6006_c1 |H| 91 P1 24 its 31 F1 7 fbs 1 |Wg| 2044 hsteps 6 wrong 0 508s

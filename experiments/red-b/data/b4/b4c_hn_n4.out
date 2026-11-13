@@ -1,0 +1,21 @@
+start its 99 F1 96 |Wg| 2078
+it 3 P1 11 its 27 F1 16 fbs 1 hsteps 15 hmoves 126 tauch 0
+it 9 P1 15 its 31 F1 16 fbs 1 hsteps 15 hmoves 122 tauch 0
+it 17 P1 15 its 32 F1 17 fbs 1 hsteps 16 hmoves 120 tauch 0
+it 21 P1 17 its 51 F1 34 fbs 1 hsteps 33 hmoves 213 tauch 0
+it 22 P1 17 its 75 F1 58 fbs 1 hsteps 57 hmoves 314 tauch 0
+it 28 P1 25 its 67 F1 42 fbs 1 hsteps 41 hmoves 219 tauch 0
+it 32 P1 25 its 84 F1 59 fbs 1 hsteps 58 hmoves 309 tauch 0
+it 40 P1 27 its 48 F1 21 fbs 1 hsteps 20 hmoves 63 tauch 0
+it 43 P1 27 its 60 F1 33 fbs 1 hsteps 32 hmoves 125 tauch 0
+it 74 P1 29 its 57 F1 28 fbs 1 hsteps 27 hmoves 105 tauch 0
+it 77 P1 30 its 58 F1 28 fbs 1 hsteps 27 hmoves 104 tauch 0
+it 143 P1 32 its 59 F1 27 fbs 1 hsteps 26 hmoves 95 tauch 0
+it 178 P1 32 its 60 F1 28 fbs 1 hsteps 27 hmoves 104 tauch 0
+it 190 P1 32 its 61 F1 29 fbs 1 hsteps 28 hmoves 113 tauch 0
+it 283 P1 33 its 62 F1 29 fbs 1 hsteps 28 hmoves 118 tauch 0
+it 311 P1 33 its 63 F1 30 fbs 1 hsteps 29 hmoves 111 tauch 0
+it 345 P1 33 its 65 F1 32 fbs 1 hsteps 31 hmoves 113 tauch 0
+it 362 P1 33 its 73 F1 40 fbs 1 hsteps 39 hmoves 134 tauch 0
+it 370 P1 33 its 74 F1 41 fbs 1 hsteps 40 hmoves 136 tauch 0
+B4CLIMB b4_hn_n4_s6204_c1 |H| 84 P1 33 its 74 F1 41 fbs 1 |Wg| 2078 hsteps 40 wrong 0 988s

@@ -1,0 +1,5 @@
+B4PHASE alg spec lmcs_n7_own |H| 74 |Wg| 2131 sha1 75176dfe67753dcff59aa05b6da3c8ad4f54986c | I 17 k 1 PRE 13 BETWEEN 0 POST 3 P1 3 fallbacks at [14] | n5b I 17 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg spec lmcs_n8_own |H| 84 |Wg| 2535 sha1 f46131f528db0f6a00bc7bd90e3fec0eb0846819 | I 19 k 1 PRE 15 BETWEEN 0 POST 3 P1 3 fallbacks at [16] | n5b I 19 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg spec lmcs_n9_own |H| 94 |Wg| 2966 sha1 9eecf9a4843fff582e8d3550b4f3463fa276b023 | I 21 k 1 PRE 17 BETWEEN 0 POST 3 P1 3 fallbacks at [18] | n5b I 21 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg spec lmcs_n10_own |H| 104 |Wg| 3424 sha1 3867eba96c29ded1111e71a9ecb09fe34202739e | I 23 k 1 PRE 19 BETWEEN 0 POST 3 P1 3 fallbacks at [20] | n5b I 23 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE SUMMARY alg spec wrappers 4 wrong 0 engdiff 0 phasesum 0

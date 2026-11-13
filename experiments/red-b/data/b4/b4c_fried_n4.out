@@ -1,0 +1,9 @@
+start its 12 F1 9 |Wg| 1390
+it 2 P1 6 its 15 F1 9 fbs 1 hsteps 8 hmoves 48 tauch 0
+it 4 P1 6 its 17 F1 11 fbs 1 hsteps 10 hmoves 77 tauch 0
+it 16 P1 6 its 18 F1 12 fbs 1 hsteps 11 hmoves 77 tauch 0
+it 22 P1 13 its 25 F1 12 fbs 1 hsteps 11 hmoves 76 tauch 0
+it 82 P1 14 its 26 F1 12 fbs 1 hsteps 11 hmoves 69 tauch 0
+it 115 P1 14 its 27 F1 13 fbs 1 hsteps 12 hmoves 73 tauch 0
+it 329 P1 15 its 28 F1 13 fbs 1 hsteps 12 hmoves 52 tauch 0
+B4CLIMB b4_fried_n4_s6004_c1 |H| 63 P1 15 its 28 F1 13 fbs 1 |Wg| 1390 hsteps 12 wrong 0 282s

@@ -1,0 +1,18 @@
+start its 10 F1 7 |Wg| 736
+it 3 P1 4 its 6 F1 2 fbs 1 hsteps 1 hmoves 3 tauch 0
+it 8 P1 6 its 8 F1 2 fbs 1 hsteps 1 hmoves 4 tauch 0
+it 12 P1 7 its 9 F1 2 fbs 1 hsteps 1 hmoves 4 tauch 0
+it 44 P1 8 its 10 F1 2 fbs 1 hsteps 1 hmoves 5 tauch 0
+it 71 P1 11 its 13 F1 2 fbs 1 hsteps 1 hmoves 9 tauch 0
+it 73 P1 12 its 14 F1 2 fbs 1 hsteps 1 hmoves 8 tauch 0
+it 107 P1 13 its 15 F1 2 fbs 1 hsteps 1 hmoves 8 tauch 0
+it 189 P1 14 its 16 F1 2 fbs 1 hsteps 1 hmoves 7 tauch 0
+start its 15 F1 2 |Wg| 736
+it 188 P1 14 its 16 F1 2 fbs 1 hsteps 1 hmoves 6 tauch 0
+it 211 P1 14 its 17 F1 3 fbs 1 hsteps 2 hmoves 10 tauch 0
+it 217 P1 14 its 18 F1 4 fbs 1 hsteps 3 hmoves 10 tauch 0
+it 228 P1 16 its 20 F1 4 fbs 1 hsteps 3 hmoves 11 tauch 0
+it 245 P1 17 its 21 F1 4 fbs 1 hsteps 3 hmoves 14 tauch 0
+it 285 P1 18 its 22 F1 4 fbs 1 hsteps 3 hmoves 15 tauch 0
+it 346 P1 19 its 23 F1 4 fbs 1 hsteps 3 hmoves 13 tauch 0
+B4CLIMB b4_fried_n2_s6002_c1 |H| 35 P1 19 its 23 F1 4 fbs 1 |Wg| 736 hsteps 3 wrong 0 27s

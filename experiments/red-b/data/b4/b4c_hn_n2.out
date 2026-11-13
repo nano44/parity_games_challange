@@ -1,0 +1,10 @@
+start its 37 F1 34 |Wg| 899
+it 1 P1 4 its 29 F1 25 fbs 1 hsteps 24 hmoves 110 tauch 0
+it 5 P1 4 its 38 F1 34 fbs 1 hsteps 33 hmoves 124 tauch 0
+it 16 P1 13 its 21 F1 8 fbs 1 hsteps 7 hmoves 9 tauch 0
+it 19 P1 16 its 24 F1 8 fbs 1 hsteps 7 hmoves 10 tauch 0
+it 29 P1 17 its 26 F1 9 fbs 1 hsteps 8 hmoves 15 tauch 0
+it 47 P1 18 its 27 F1 9 fbs 1 hsteps 8 hmoves 14 tauch 0
+it 49 P1 18 its 28 F1 10 fbs 1 hsteps 9 hmoves 15 tauch 0
+it 280 P1 18 its 29 F1 11 fbs 1 hsteps 10 hmoves 27 tauch 0
+B4CLIMB b4_hn_n2_s6202_c1 |H| 42 P1 18 its 29 F1 11 fbs 1 |Wg| 899 hsteps 10 wrong 0 137s

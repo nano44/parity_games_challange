@@ -61,8 +61,8 @@ if sys.argv[4] == "fam":
 else:
     for sf in sys.argv[4:]:
         S = json.load(open(sf)); base = os.path.basename(sf)[:-5]
-        if base.startswith("gfam_"):
-            m = re.match(r"gfam_([a-z]+)_n(\d+)_s\d+_c(\d)", base); H = fam(m.group(1), int(m.group(2)))[0]; copy = m.group(3) == "1"
+        if base.startswith("gfam_") or base.startswith("b4c_b4_"):
+            m = re.match(r"(?:gfam|b4c_b4)_([a-z]+)_n(\d+)_s\d+_c(\d)", base); H = fam(m.group(1), int(m.group(2)))[0]; copy = m.group(3) == "1"
             G = S["G"]; s0 = [G["s0"].get(str(v), -1) if H.owner[v] == 0 else -1 for v in range(H.n)]
             rho0 = {v: G["rho"][str(v)] for v in range(H.n) if H.owner[v] == 1}
             gamma = {tuple(map(int, k.split(","))): t for k, t in G["gam"].items()}

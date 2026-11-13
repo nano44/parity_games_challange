@@ -42,3 +42,28 @@ Nothing about N5 before its first fallback (B3, box 212 RF-D), M4 or general gam
 Reading: on every wrapper so far N5 has exactly ONE fallback; with the families' own guides the run after it is 3 iterations (2 for
 H_1); the climbed guides lengthen it to at most 37. PRE for the own guides: H_n 11, 33, 61, 95, 135, equal to 3n² + 13n − 5 at n = 1..5 (DATA; not a formula
 for H_n's run until n ≥ 6 agrees or it is proved). The table counts 38 wrappers (23 bests + 15 own guides).
+
+## 6. DATA (b): the climb on P1, and the own guides at larger n (2026-11-13)
+Climb (b4climb.py, run_b4.sh): objective P1 = I − f_1 (ties by I), moves on s0 / ρ0 (any vertex) / γ as in B3, H fixed, start = the
+family's own guide; budget 400 steps × 1 restart per row. Bests re-run on both engines (data/b4/b4phase_climbs_spec.out, sha1 of each
+wrapper there):
+| family | n = | best P1 (I, PRE) | |Wg| |
+| --- | --- | --- | --- |
+| switchallexp_n | 2, 3, 4, 5, 6 | 19 (23, 3), 14 (18, 3), 15 (28, 12), 20 (33, 12), 24 (31, 6) | 736 … 2044 |
+| LMCS G_n | 2, 3, 4, 5, 6 | 10 (17, 6), 14 (22, 7), 16 (26, 9), 18 (21, 2), 19 (25, 5) | 516 … 1754 |
+| H_n | 1, 2, 3, 4 | 12 (21, 8), 18 (29, 10), 30 (37, 6), 33 (74, 40) | 404 … 2078 |
+On all 14 bests: k = 1 (one fallback, BETWEEN = 0), wrong 0, engdiff 0, phasesum 0. Climb candidates: 0 wrong outputs.
+Growth words: GROWTH NOT IDENTIFIED (P1 per family from 400-step climbs: switchallexp 19, 14, 15, 20, 24; LMCS 10, 14, 16, 18, 19;
+H_n 12, 18, 30, 33; none of these is a fit). Nothing clearly super-polynomial: NO CANDIDATE KILL.
+Own guides at larger n (run_b4own.sh; both engines, all correct, k = 1, POST = 3 on every one):
+- H_n, n = 6, 7: I = 185, 237; PRE = 181, 233. The DATA «PRE equals 3n² + 13n − 5 at n = 1..5» now also agrees at n = 6, 7 (181, 233):
+  DATA on n = 1..7, still not a formula (not proved).
+- switchallexp n = 7..10: I = 18, 20, 22, 24 (equal 2n + 4 at n = 3..10, DATA); LMCS n = 7..10: I = 17, 19, 21, 23 (equal 2n + 3 at
+  n = 3..10, DATA).
+Reading (L-RED-B, not proved): on these wrappers the phase after N5's only fallback is short and does not grow with n under the own
+guides (3 iterations at every n tried); the guide climbs lengthen it to a few dozen at most. The kill criterion of §3 is not met.
+## 7. Verdict on B4 (so far), not done
+- NO CANDIDATE KILL; on 62 wrappers (23 B3 bests, 14 B4 bests, 25 own guides) N5 has exactly one fallback; the phase after it is
+  2..37 iterations; both engines agree on every one and every output is correct.
+- Not done: guides that force a SECOND fallback (none found: k = 1 everywhere, so BETWEEN and the run after a later fallback were never
+  exercised); other families; climbs longer than 400 steps on P1; any proof about the post-fallback phase.

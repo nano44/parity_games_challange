@@ -1,0 +1,18 @@
+start its 9 F1 6 |Wg| 785
+it 4 P1 4 its 10 F1 6 fbs 1 hsteps 5 hmoves 12 tauch 0
+it 7 P1 5 its 11 F1 6 fbs 1 hsteps 5 hmoves 13 tauch 0
+it 10 P1 6 its 10 F1 4 fbs 1 hsteps 3 hmoves 7 tauch 0
+it 13 P1 8 its 12 F1 4 fbs 1 hsteps 3 hmoves 14 tauch 0
+it 39 P1 8 its 14 F1 6 fbs 1 hsteps 5 hmoves 22 tauch 0
+it 69 P1 9 its 12 F1 3 fbs 1 hsteps 2 hmoves 7 tauch 0
+it 92 P1 9 its 13 F1 4 fbs 1 hsteps 3 hmoves 10 tauch 0
+it 105 P1 9 its 14 F1 5 fbs 1 hsteps 4 hmoves 12 tauch 0
+it 116 P1 10 its 15 F1 5 fbs 1 hsteps 4 hmoves 11 tauch 0
+it 118 P1 11 its 15 F1 4 fbs 1 hsteps 3 hmoves 12 tauch 0
+it 204 P1 12 its 16 F1 4 fbs 1 hsteps 3 hmoves 12 tauch 0
+it 225 P1 12 its 17 F1 5 fbs 1 hsteps 4 hmoves 15 tauch 0
+it 266 P1 12 its 19 F1 7 fbs 1 hsteps 6 hmoves 12 tauch 0
+it 310 P1 13 its 20 F1 7 fbs 1 hsteps 6 hmoves 11 tauch 0
+it 330 P1 13 its 21 F1 8 fbs 1 hsteps 7 hmoves 13 tauch 0
+it 386 P1 14 its 22 F1 8 fbs 1 hsteps 7 hmoves 13 tauch 0
+B4CLIMB b4_lmcs_n3_s6103_c1 |H| 34 P1 14 its 22 F1 8 fbs 1 |Wg| 785 hsteps 7 wrong 0 70s
