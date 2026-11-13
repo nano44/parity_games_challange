@@ -6,12 +6,21 @@ movers there -> the signed weights of their current options, one mover against n
 weights).  Everything else (key bits, rule, goals) as in syn107.py.  Models are decoded to L-NEW genomes; replay107.py must confirm.
 Usage: up107.py d T goal [--notime] [--out FILE] [--maxjump J] [--fuelonly h]
   goal: full:x,y,..  |  cap:h (both movers of levels 0..h-1 full)  |  len
-  --maxjump J : Xi-targets at most J levels up;   --fuelonly h : movers of levels < h have Xi-targets on levels >= h only"""
+  --maxjump J : Xi-targets at most J levels up;   --fuelonly h : movers of levels < h have Xi-targets on levels >= h only
+  --upperbil h : movers of levels >= h have both Xi-targets on the next level (top level: the exit)
+  --lift FILE [--mid m] [--free L,L]: FILE = a genome with d - 2 levels, embedded with its Xi-targets, weights and key bits: without
+                 --mid one level up (new bottom and top levels), with --mid m two new levels m, m + 1 are inserted (old levels >= m go
+                 up by 2); --free lists levels of the new ladder whose old wiring is dropped;
+                 old: its movers are placed one level up with their Xi-targets, weights and sigma bits
+                 (old exits may go to the exit or to the new top level); only the new bottom and top levels, sigma_1 and the start are free
+  --hered      : add the constraints implied by box 107's lemmas for the full movers (every lower mover's key changes
+                 2^(l+1) - 1 times; ABANDON at the full movers): redundant, they only help the solver
+  --dualcap h  : movers of levels l >= h switch exactly 2^(d-l) - 1 times;   --extra sw:x:n,st:x:c : switch counts / start options"""
 import sys, json, itertools, time
 from pysat.formula import IDPool, CNF
 from pysat.card import CardEnc, EncType
 from pysat.solvers import Solver
-def build(d, T, goal, maxjump=None, fuelonly=None):
+def build(d, T, goal, maxjump=None, fuelonly=None, upperbil=None, dualcap=None, extra=(), lift=None, hered=False):
     N = 2 * d; EXIT = N; pool = IDPool(); cnf = CNF(); v = pool.id; add = cnf.append
     lev = lambda x: x // 2
     def AND(name, lits):
@@ -28,6 +37,8 @@ def build(d, T, goal, maxjump=None, fuelonly=None):
         lo = lev(x) + 1
         if fuelonly is not None and lev(x) < fuelonly: lo = max(lo, fuelonly)
         hi = d - 1 if maxjump is None else min(d - 1, lev(x) + maxjump)
+        if upperbil is not None and lev(x) >= upperbil:
+            return [EXIT] if lev(x) == d - 1 else [y for y in range(N) if lev(y) == lev(x) + 1]
         return [y for y in range(N) if lo <= lev(y) <= hi] + [EXIT]
     XT = lambda x, o, y: v(("XT", x, o, y))
     for x in range(N):
@@ -40,10 +51,41 @@ def build(d, T, goal, maxjump=None, fuelonly=None):
         for a, b, c in itertools.permutations(range(4), 3):
             if a < b and a < c: add([-GT(L, a, b), -GT(L, b, c), GT(L, a, c)])
         for q, q2 in itertools.permutations(range(4), 2): add([-POS(L, q), POS(L, q2), GT(L, q, q2)])
+    if lift is not None:      # lift = (old genome with d - 2 levels, insertion level m, levels of the NEW ladder left free)
+        Go, m_, freeL = lift; No = Go["N"]; assert No == N - 4
+        fL = lambda Lo: Lo if Lo < m_ else Lo + 2                      # m_ = 0: old movers go one level up... (m_ = 0 means shift by 1)
+        if m_ == 0: fL = lambda Lo: Lo + 1
+        fx = lambda xo: 2 * fL(xo // 2) + xo % 2
+        newlevels = [L for L in range(d) if L not in [fL(Lo) for Lo in range(No // 2)]]
+        pro = lambda b: 6 + 2 * Go["br"][b] + Go["bp"][b]
+        for xo in range(No):
+            x = fx(xo)
+            if lev(x) in freeL: continue
+            for o in (0, 1):
+                yo = Go["opts"][xo][o][1]
+                if yo >= 0: add([XT(x, o, fx(yo))])
+                else: add([XT(x, o, y) for y in [EXIT] + [yy for yy in range(N) if lev(yy) in newlevels and lev(yy) > lev(x)]])
+        for Lo in range(No // 2):
+            L = fL(Lo); w = []
+            if L in freeL: continue
+            for q in range(4):
+                b = 2 * (2 * Lo + q // 2) + q % 2; p_ = pro(b); w.append((1 if p_ % 2 == 0 else -1) * (2 ** Go["br"][b]))
+                add([POS(L, q) if p_ % 2 == 0 else -POS(L, q)])
+            for q, q2 in itertools.combinations(range(4), 2): add([GT(L, q, q2) if w[q] > w[q2] else -GT(L, q, q2)])
     def EP(q, q2): return v(("EP", q, q2)) if q < q2 else -v(("EP", q2, q))
     for a, b, c in itertools.permutations(range(4), 3):
         if a < b and a < c: add([-EP(a, b), -EP(b, c), EP(a, c)])
     SW = lambda l, u: v(("SW", l, u)); C = lambda t, x: v(("C", t, x))
+    if lift is not None:
+        Go, m_, freeL = lift
+        for lo in range(1, Go["N"] // 2):
+            L = (lo + 1) if m_ == 0 else (lo if lo < m_ else lo + 2)
+            if L in freeL or (m_ > 0 and lo == m_): continue          # the level just above the insertion reads a new pair: its sigma is free
+            for u in (0, 1):
+                g = Go["gate"]; add([SW(L, u) if g[2 * lo + 1][u] < g[2 * lo][u] else -SW(L, u)])
+        if m_ > 0:                                                     # level 0 is old: keep its eps order
+            g = Go["gate"]; e_ = [g[0][0], g[0][1], g[1][0], g[1][1]]
+            for q, q2 in itertools.combinations(range(4), 2): add([EP(q, q2) if e_[q] < e_[q2] else -EP(q, q2)])
     def omega(t, l):
         key = ("OM", t, l)
         if key in pool.obj2id: return pool.obj2id[key]
@@ -140,6 +182,31 @@ def build(d, T, goal, maxjump=None, fuelonly=None):
     elif goal.startswith("cap:"): fulls = list(range(2 * int(goal[4:])))
     elif goal == "len":
         for t in range(T): add([SWT[t, x] for x in range(N)])
+    if fulls and hered:      # implied by the lemmas of box 107 (HEREDITY + FULL-ORDER + ABANDON): redundant constraints for the solver
+        KCH = {}
+        for t in range(T):
+            for x in range(N):
+                if lev(x) == 0: KCH[t, x] = SWT[t, x]
+                else:
+                    c = C(t, x); ta, tb = KCH[t, 2 * (lev(x) - 1)], KCH[t, 2 * (lev(x) - 1) + 1]
+                    KCH[t, x] = OR(("KCH", t, x), [SWT[t, x], AND(("KA", t, x), [-c, ta]), AND(("KB", t, x), [c, tb])])
+        top = max(lev(x) for x in fulls)
+        for x in range(N):
+            if lev(x) < top and x not in fulls:
+                cnf.extend(CardEnc.equals(lits=[KCH[t, x] for t in range(T)], bound=2 ** (lev(x) + 1) - 1, vpool=pool, encoding=EncType.seqcounter).clauses)
+        for x in fulls:
+            if lev(x) == 0: continue
+            for t in range(T):
+                add([C(t, x), -KCH[t, 2 * (lev(x) - 1)]]); add([-C(t, x), -KCH[t, 2 * (lev(x) - 1) + 1]])
+    if dualcap is not None:
+        for x in range(2 * dualcap, N):
+            need = 2 ** (d - lev(x)) - 1
+            if need > T: add([]); continue
+            cnf.extend(CardEnc.equals(lits=[SWT[t, x] for t in range(T)], bound=need, vpool=pool, encoding=EncType.seqcounter).clauses)
+    for e in extra:                      # "sw:x:n" mover x switches exactly n times; "st:x:c" start option
+        k_, a_, b_ = e.split(":")
+        if k_ == "sw": cnf.extend(CardEnc.equals(lits=[SWT[t, int(a_)] for t in range(T)], bound=int(b_), vpool=pool, encoding=EncType.seqcounter).clauses)
+        elif k_ == "st": add([C(0, int(a_)) if int(b_) else -C(0, int(a_))])
     for x in fulls:
         need = 2 ** (lev(x) + 1) - 1
         if need > T: add([]); continue
@@ -172,10 +239,19 @@ if __name__ == "__main__":
     a = sys.argv[1:]; d, T, goal = int(a[0]), int(a[1]), a[2]
     mj = int(a[a.index("--maxjump") + 1]) if "--maxjump" in a else None
     fo = int(a[a.index("--fuelonly") + 1]) if "--fuelonly" in a else None
-    t0 = time.time(); cnf, pool = build(d, T, goal, mj, fo)
+    ub = int(a[a.index("--upperbil") + 1]) if "--upperbil" in a else None
+    dc = int(a[a.index("--dualcap") + 1]) if "--dualcap" in a else None
+    ex = a[a.index("--extra") + 1].split(",") if "--extra" in a else ()
+    lf = None
+    if "--lift" in a:
+        lf = json.load(open(a[a.index("--lift") + 1])); lf = lf.get("genome", lf)
+        m_ = int(a[a.index("--mid") + 1]) if "--mid" in a else 0
+        fr = [int(z) for z in a[a.index("--free") + 1].split(",")] if "--free" in a else []
+        lf = (lf, m_, fr)
+    t0 = time.time(); cnf, pool = build(d, T, goal, mj, fo, ub, dc, ex, lf, "--hered" in a)
     with Solver(name="cadical195", bootstrap_with=cnf.clauses) as S:
         r = S.solve()
-        print(f"UP107 d {d} T {T} goal {goal} maxjump {mj} fuelonly {fo} vars {pool.top} clauses {len(cnf.clauses)} answer {'SAT' if r else 'UNSAT'}" + ("" if "--notime" in a else f" time {time.time() - t0:.1f}s"), flush=True)
+        print(f"UP107 d {d} T {T} goal {goal} maxjump {mj} fuelonly {fo}" + (f" upperbil {ub} dualcap {dc} extra {list(ex)}" if (ub is not None or dc is not None or ex) else "") + f" vars {pool.top} clauses {len(cnf.clauses)} answer {'SAT' if r else 'UNSAT'}" + ("" if "--notime" in a else f" time {time.time() - t0:.1f}s"), flush=True)
         if r and "--out" in a:
             G, states = decode(d, T, S.get_model(), pool)
             json.dump({"genome": G, "states": states, "d": d, "T": T, "goal": goal}, open(a[a.index("--out") + 1], "w"))

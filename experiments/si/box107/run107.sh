@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # L-SI box 107 runner (resumable: a query whose answer line is already in its out/ file is skipped).
 # Environment: L-NEW's one217.py and the five tower genomes, read-only, by git archive of claude/l-new a143d4060 into a temp dir.
-# Steps: abandon | small | exact3 | exact4 | bil | up | pn     (SAT answers are SEARCH answers of cadical195 via python-sat: uncertified)
+# Steps: abandon | small | control | exact3 | exact4 | bil | up | pn     (SAT answers are SEARCH answers of cadical195 via python-sat: uncertified)
 set -u
 cd "$(dirname "$0")"; export PYTHONDONTWRITEBYTECODE=1
 T=$(mktemp -d); trap 'rm -rf "$T"' EXIT
@@ -20,6 +20,9 @@ small)   # k = 2 on the 2-level ladder (model kept and replayed); exact maxima o
   q out/syn107.out "SYN107 d 2 T 6 goal full:2" python3 syn107.py 2 6 full:2 --notime --out out/k2_d2.json
   python3 -I replay107.py "$ONE" out/k2_d2.json > out/replay107.out; cat out/replay107.out
   for T_ in 3 4 5 6 7 8; do q out/syn107.out "SYN107 d 2 T $T_ goal len" python3 syn107.py 2 $T_ len --notime; done;;
+control) # encoder control on the Lead's free-rank bi-ladder instance (ctrl/lead_bil4.json, T_key 7 on one217.OneP): SAT at 7, UNSAT at 8
+         python3 -I replay107.py "$ONE" ctrl/lead_bil4.json > out/ctrl107.out
+         for T_ in 7 8; do python3 syn107.py 4 $T_ len --fix ctrl/lead_bil4.json --notime | grep "^SYN107" >> out/ctrl107.out; done; cat out/ctrl107.out;;
 exact3)  q out/syn107.out "SYN107 d 3 T 22 goal full:4" python3 syn107.py 3 22 full:4 --notime;;
 exact4)  q out/syn107.out "SYN107 d 4 T 12 goal full:4" python3 syn107.py 4 12 full:4 --notime
          q out/syn107.out "SYN107 d 4 T 52 goal full:4" python3 syn107.py 4 52 full:4 --notime;;

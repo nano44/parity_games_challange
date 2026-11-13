@@ -3,7 +3,7 @@
 fill107.py write : rewrite the block between the two DATA107 markers;  fill107.py check : exit 1 unless the block equals the files."""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); DOC = os.path.join(HERE, "..", "..", "..", "docs", "si", "box107-timing.md")
-FILES = ["abandon107.out", "replay107.out", "syn107.out", "bil107.out", "up107.out", "replay107_up.out", "pn107.out"]
+FILES = ["abandon107.out", "replay107.out", "ctrl107.out", "syn107.out", "bil107.out", "up107.out", "replay107_up.out", "pn107.out"]
 def block():
     out = []
     for f in FILES:

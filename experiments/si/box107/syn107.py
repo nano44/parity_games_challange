@@ -8,13 +8,15 @@ Ladder: mover 2l + i (i = 0: a_l, 1: b_l), option o has W-target 2(l-1) + o.  Ke
 om_l = the level-l mover with the smaller key.  Values: sets of options on the Xi-path, compared by the top-rank element of the
 symmetric difference (weights +-2^rank), exactly box 217's order (hops never decide: two options of one mover differ).
 A model is decoded to a genome in L-NEW's JSON format and must be replayed by replay107.py (their one217.OneP) before it is cited.
-Usage: syn107.py d T goal [--solver cadical195] [--out FILE.json] [--both] [--stats]"""
+CONTROL (--fix G.json): every parameter of the given ladder genome is added as a unit clause; «len T» must then be SAT for T = its
+T_key and UNSAT for T_key + 1 (the encoder neither loses nor invents runs on that instance).
+Usage: syn107.py d T goal [--solver cadical195] [--out FILE.json] [--fix G.json] [--notime] [--print]"""
 import sys, json, itertools, time
 from pysat.formula import IDPool, CNF
 from pysat.card import CardEnc, EncType
 from pysat.solvers import Solver
 
-def build(d, T, goal, extra=()):
+def build(d, T, goal, extra=(), fix=None):
     N = 2 * d; Q = 2 * N; EXIT = N
     pool = IDPool(); cnf = CNF(); v = pool.id
     add = cnf.append
@@ -143,6 +145,20 @@ def build(d, T, goal, extra=()):
             cnf.extend(ce.clauses)
     elif goal == "len":
         for t in range(T): add([SWT[t, x] for x in range(N)])
+    if fix is not None:                              # CONTROL: all parameters of a given ladder genome as unit clauses
+        G = fix; assert G["N"] == N
+        for x in range(N):
+            for o in (0, 1):
+                assert G["opts"][x][o][0] == (2 * (x // 2 - 1) + o if x >= 2 else -1), "not a ladder"
+                y = G["opts"][x][o][1]; add([XT(x, o, y if y >= 0 else EXIT)])
+        for q in range(Q):
+            add([POS(q) if G["bp"][q] == 0 else -POS(q)])
+            for q2 in range(q + 1, Q): add([PREC(q, q2) if G["br"][q] > G["br"][q2] else -PREC(q, q2)])
+        e_ = [G["gate"][0][0], G["gate"][0][1], G["gate"][1][0], G["gate"][1][1]]
+        for q, q2 in itertools.combinations(range(4), 2): add([EP(q, q2) if e_[q] < e_[q2] else -EP(q, q2)])
+        for l in range(1, d):
+            for u in (0, 1): add([SW(l, u) if G["gate"][2 * l + 1][u] < G["gate"][2 * l][u] else -SW(l, u)])
+        for x in range(N): add([C(0, x) if G["start"][x] else -C(0, x)])
     for e in extra:                                  # extra constraints: "nosw:x" mover x never switches; "exit:x" both options to the exit
         k, _, a = e.partition(":")
         if k == "nosw":
@@ -180,12 +196,15 @@ if __name__ == "__main__":
     a = sys.argv[1:]; d, T, goal = int(a[0]), int(a[1]), a[2]
     solver = a[a.index("--solver") + 1] if "--solver" in a else "cadical195"
     extra = a[a.index("--extra") + 1].split(";") if "--extra" in a else ()
-    t0 = time.time(); cnf, pool, SWT = build(d, T, goal, extra)
+    fix = None
+    if "--fix" in a:
+        fix = json.load(open(a[a.index("--fix") + 1])); fix = fix.get("genome", fix)
+    t0 = time.time(); cnf, pool, SWT = build(d, T, goal, extra, fix)
     NT = "--notime" in a
-    print(f"d {d} T {T} goal {goal} extra {list(extra)} vars {pool.top} clauses {len(cnf.clauses)}" + ("" if NT else f" build {time.time() - t0:.1f}s"), flush=True)
+    print(f"d {d} T {T} goal {goal} extra {list(extra)}" + (" FIXED " + a[a.index("--fix") + 1] if fix else "") + f" vars {pool.top} clauses {len(cnf.clauses)}" + ("" if NT else f" build {time.time() - t0:.1f}s"), flush=True)
     with Solver(name=solver, bootstrap_with=cnf.clauses) as S:
         t1 = time.time(); r = S.solve()
-        print(f"SYN107 d {d} T {T} goal {goal} extra {list(extra)} solver {solver} answer {'SAT' if r else 'UNSAT'}" + ("" if NT else f" time {time.time() - t1:.1f}s"), flush=True)
+        print(f"SYN107 d {d} T {T} goal {goal} extra {list(extra)}" + (" FIXED " + a[a.index("--fix") + 1] if fix else "") + f" solver {solver} answer {'SAT' if r else 'UNSAT'}" + ("" if NT else f" time {time.time() - t1:.1f}s"), flush=True)
         if r:
             G, states = decode(d, T, S.get_model(), pool)
             out = a[a.index("--out") + 1] if "--out" in a else None

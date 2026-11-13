@@ -5,7 +5,7 @@ import sys, json
 sys.path.insert(0, sys.argv[1])
 import one217
 for fn in sys.argv[2:]:
-    D = json.load(open(fn)); G = D["genome"]; P = one217.OneP(G); S = [list(s) for s in P.run("key")]
+    D = json.load(open(fn)); G = D.get("genome", D); P = one217.OneP(G); S = [list(s) for s in P.run("key")]
     st = D.get("states"); N = G["N"]; T = len(S) - 1
     ok = True
     if st is not None:

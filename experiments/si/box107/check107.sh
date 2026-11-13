@@ -18,6 +18,12 @@ if grep -q "CONTROL-SILENT" out/abandon107.out; then echo "control silent"; exit
 python3 -I replay107.py "$ONE" out/k2_d2.json > "$T/rp.out"; cmp "$T/rp.out" out/replay107.out
 grep -q "replay_equals_model 1 sw \[1, 1, 3, 1\] full \[0, 1, 2\]" out/replay107.out
 chk() { local f=$1 key=$2; shift 2; "$@" > "$T/l" 2>&1; a=$(grep -- "^$key " "$T/l"); b=$(grep -- "^$key " "$f"); [ -n "$a" ] && [ "$a" = "$b" ] || { echo "MISMATCH $key"; exit 1; }; }
+python3 -I replay107.py "$ONE" ctrl/lead_bil4.json > "$T/c.out"
+for T_ in 7 8; do python3 syn107.py 4 $T_ len --fix ctrl/lead_bil4.json --notime | grep "^SYN107" >> "$T/c.out"; done
+cmp "$T/c.out" out/ctrl107.out
+grep -q "lead_bil4.json N 8 T_key 7 " out/ctrl107.out
+grep -q "SYN107 d 4 T 7 goal len extra \[\] FIXED ctrl/lead_bil4.json solver cadical195 answer SAT" out/ctrl107.out
+grep -q "SYN107 d 4 T 8 goal len extra \[\] FIXED ctrl/lead_bil4.json solver cadical195 answer UNSAT" out/ctrl107.out
 chk out/syn107.out "SYN107 d 2 T 6 goal full:2" python3 syn107.py 2 6 full:2 --notime
 chk out/syn107.out "SYN107 d 2 T 8 goal len" python3 syn107.py 2 8 len --notime
 for dT in "2 2" "2 3" "3 3" "3 4" "4 6" "4 7"; do set -- $dT; chk out/bil107.out "BIL107 d $1 T $2 full None" python3 bil107.py $1 $2 --notime; done

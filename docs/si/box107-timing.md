@@ -22,9 +22,11 @@ check107.sh; «box 107» in experiments/si/check.sh).
   «both level-(j + 1) movers have left S_j», and has a Ξ-cause one step earlier (CAUSE). No lower bound on movers follows from these
   (§4 names the exact step that is missing); the question «one shared chain or one relay per level» stays OPEN.
 - (c) Neither outcome reached. DATA: no 3-level ladder has a full level-2 mover (SAT, exact horizon, uncertified; §7); two natural
-  «self-dual» classes are DEAD as sources of long runs (bi-ladders: exact maxima 2, 3, 6, 8, 11 for d = 2..6; pair networks on a
-  W-chain: no k = 3 with up to 6 pairs; §6). One structured class is ALIVE: UPWARD ladders (every Ξ-target on a higher W-level,
-  ranks by level; §6) have k = 2 at d = 4 and k = 3 at d = 6 (models replayed on one217.OneP), and no k = 3 at d = 5 within 12 steps:
+  «self-dual» LEVEL-RANKED classes are DEAD as sources of long runs (level-ranked bi-ladders: exact maxima 2, 3, 6, 8, 11 for
+  d = 2..6; pair networks on a W-chain: no k = 3 with up to 6 pairs; §6). «Level-ranked» (β ranks increasing with the W-level) is a
+  real restriction: with free ranks the bi-ladder wiring has T_key 7 at d = 4 (the Lead's instance, ctrl/lead_bil4.json, replayed),
+  so NO negative statement about a level-ranked class transfers to ladders in general. One structured class is ALIVE: level-ranked
+  UPWARD ladders (every Ξ-target on a higher W-level; §6) have k = 2 at d = 4 and k = 3 at d = 6 (models replayed on one217.OneP), and no k = 3 at d = 5 within 12 steps:
   k = d/2 at the two sizes measured. Whether k = 4 exists at d = 8 is the next query; it decides whether this is a family.
 
 ## 1. Setting and notation
@@ -157,24 +159,32 @@ level from 0: mover (l, i) with o := c(l, i) switches iff [BET_c(l, i) ≠ o, i.
 their one217.OneP (replay107.py: equal states) before it is cited.
 
 ## 6. Dead ends of this box (lane; DATA with numbers, not asymptotic claims; L43)
-- **BI-LADDER.** B_d: the ladder in which every mover of level l has its two Ξ-targets on the two movers of level l + 1 (top level
-  to the exit), ranks increasing with the level, so that both sides are one bit per level (the exact self-dual form of the rule up
+- **LEVEL-RANKED BI-LADDER.** B_d: the ladder in which every mover of level l has its two Ξ-targets on the two movers of level l + 1
+  (top level to the exit) AND the β ranks increase with the level, so that both sides are one bit per level (the exact self-dual form of the rule up
   to the one-step delay). Longest run, exact by SAT over all parameters and starts (uncertified): 2, 3, 6, 8, 11 for d = 2, …, 6
   (bil107.py; §7). Obstruction: with both Ξ-targets one level up, the Ξ-order of a mover is the bit «which of the two movers above
   is higher», which is decided by the first level at which their Ξ-paths merge, so no mover reads further than its merge level.
+  CORRECTION (Lead 11:47Z, with an instance): the same WIRING with FREE β ranks has T_key 7 at d = 4 (ctrl/lead_bil4.json, replayed
+  on one217.OneP: switches 1, 1, 1, 2, 1, 2, 1, 1; the Lead reports 15 at d = 6, not re-measured here). So «6» and «11» are maxima
+  of the level-ranked class only; the dead end is «level-ranked bi-ladders», not «bi-ladders».
 - **PAIR NETWORKS on a W-chain.** Pairs with a W-parent pair and a Ξ-parent pair (any acyclic choice), both options of a mover into
   the two members of ONE Ξ-parent pair: no k = 3 (no full level-2 mover) with P = 3, 4, 5, 6 pairs on a W-chain (SAT, horizons 22,
   30, 20, 20; uncertified); the general ladder has k = 3 at d = 5 (Lead scratch, N = 10). So the two options of a mover must be able
   to read movers of DIFFERENT pairs / levels. With a free W-forest the longest run is 1, 2, 4, 6 for P = 1, …, 4 and ≥ 10 for P = 5.
 
-- **UPWARD LADDERS (not dead; DATA).** The ladders in which every Ξ-target lies on a strictly higher W-level (or is the exit) and
+- **LEVEL-RANKED UPWARD LADDERS (not dead; DATA).** The ladders in which every Ξ-target lies on a strictly higher W-level (or is the exit) and
   the β ranks increase with the W-level: «low reads high by value, high reads low by key», the orientation §4 arrives at. The
   Ξ-graph is acyclic by construction and an option comparison is decided at the highest level where the two Ξ-paths differ
   (up107.py; a much smaller CNF than syn107.py). Longest run, exact (uncertified): 3, 5, 7 for d = 2, 3, 4. Full movers: k = 2 at
   d = 4 (out/up_k2_d4.json) and k = 3 at d = 6 (out/up_k3_d6.json: N = 12, T_key = 8, switches 1, 1, 3, 3, 7, 1, 3, 3, 3, 2, 1, 1; both
   replayed on one217.OneP with equal states); no k = 3 at d = 5 within T = 12. Counting gives k ≤ (d + 1)/2 in this class for one full
   mover (a level-(k − 1) mover has at most 2^(d − k + 1) Ξ-paths, A2), so the two measured sizes sit within one level of the counting
-  bound. This is two data points, not a family: no rule is read off yet.
+  bound. This is two data points, not a family: no rule is read off yet. The negative lines of this class («d 5 T 12 full:4
+  UNSAT», the longest runs) are statements about level-ranked upward ladders only. Scratch attempts toward k = 4 (not in the output
+  files; commands in notes/L-SI.md): `up107.py 8 18 full:6` no answer in 55 min (timeout 3,300 s); lifting the k = 3 model by a new bottom and top
+  level (`--lift`): UNSAT at T = 18, 22; inserting two middle levels (`--lift … --mid 3`, with levels 2 / 2, 5 freed): no answer / UNSAT
+  in 250 s; the «perfect» structure (`cap:h --upperbil h --dualcap h`: lower half key-capped, upper half a pure ladder of
+  value-capped movers) is SAT at h = 2 (d = 4) and UNSAT at h = 3 (d = 6, T ≤ 24, 2 s).
 
 ## 7. DATA (experiments/si/box107/out; every SAT answer is a SEARCH answer of cadical195 via python-sat 1.9.dev15, UNCERTIFIED)
 Counters and units. abandon107.out: one line per tower (set: the five tower genomes of claude/l-new a143d4060
@@ -188,6 +198,15 @@ a 2-level ladder run has at most 8 steps and a 3-level one at most 22 (R113 T-BO
 run of a 2-level ladder: 4) and «d 3 T 22 full:4 UNSAT» is exact: NO 3-LEVEL LADDER HAS k = 3. d = 4 (N = 8): the query at T = 12 gave
 no answer in 23 minutes and was stopped (not in the files); the Lead's anneal has k = 3 at d = 5 (N = 10), so the least d for k = 3
 on ladders is 4 or 5 (OPEN). check107.sh re-derives the fast lines and compares the rest with the files.
+ENCODER CONTROL (ctrl107.out; Lead 11:47Z: «feed it a known instance's parameters as unit clauses and require SAT with the same
+run»): with every parameter of the Lead's instance fixed by unit clauses, syn107.py answers «len 7» SAT and «len 8» UNSAT, and
+one217.OneP gives T_key = 7 on it: on this instance the general encoder neither loses nor invents a step. up107.py / bil107.py /
+pn107.py have no such control beyond the replay of their SAT models; their UNSAT lines rest on the encoders as written.
+Relation to landed text (Lead 12:10Z relays REFEREE-2 41 and L-NEW 77: 1P(G) with gate-index ε is R104's IDEAL model, so every
+landed IDEAL lemma holds in 1P(G); not re-verified in this box): OMEGA restates R113 ALIGN + R120 MOVE; ODOMETER (1)-(3) on doubling
+levels restates R120 DOUBLE-EQ / PULSE-NEST; FLIP-SUPPLY is the counting behind R113 PATH-RISE / box 217 A2. Not found in the landed
+entries read (R113, R120): ABANDON at any shape and degree with the «arrive, never leave» rule, ENUM-ABANDON, ONE-AHEAD, CAUSE,
+FROZEN / SEPARATION. R105 KEYFLIP and R111 PAIR-KF were NOT opened in this box (to do before any packet).
 <!-- DATA107 begin -->
 ```
 --- out/abandon107.out
@@ -199,6 +218,10 @@ HIT7_d28_F254.json N 56 T 299 lmax 7 skipped 40 full 14 [0.0 0.1 1.2 1.3 2.4 2.5
 TOTAL bad_i 0 viol_ii 0 viol_iii 0 viol_iv 0
 --- out/replay107.out
 out/k2_d2.json N 4 T_key 3 replay_equals_model 1 sw [1, 1, 3, 1] full [0, 1, 2]
+--- out/ctrl107.out
+ctrl/lead_bil4.json N 8 T_key 7 replay_equals_model 1 sw [1, 1, 1, 2, 1, 2, 1, 1] full [0, 1]
+SYN107 d 4 T 7 goal len extra [] FIXED ctrl/lead_bil4.json solver cadical195 answer SAT
+SYN107 d 4 T 8 goal len extra [] FIXED ctrl/lead_bil4.json solver cadical195 answer UNSAT
 --- out/syn107.out
 SYN107 d 2 T 6 goal full:2 extra [] solver cadical195 answer SAT
 SYN107 d 2 T 3 goal len extra [] solver cadical195 answer SAT
