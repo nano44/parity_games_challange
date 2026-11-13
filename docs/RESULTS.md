@@ -16365,6 +16365,163 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   nothing by a polynomial, so this is not M4 and not M3; G-N5-TIME stays OPEN; not a step-4 pass, not a TARGET.md claim». GAPS G-N5-TIME:
   open.
 
+### R129 [refereed-only] In IDEAL-CYC(G) (RESULTS R118 (a): Γ(G) with every non-mover Even vertex frozen at R104's start, Odd unrestricted (gates and K2), Howard steps at the movers: every mover goes to a ⊴-best successor and keeps its current successor if that is ⊴-best), for every genome G (Ξ-cycles and Ξ self-loops allowed) with N movers and M options, on the states 0, …, T_CYC of the run, with class_t(v) := (Λ_t(v), E_t(v)) and loud / quiet steps as in RESULTS R123, the classes ordered by the reward of Λ and then by the lexicographic order of RESULTS R121 on E, P := 2M(N + 2M) and A := M(N + 2M) + N: (class facts) (K1) no class ever falls; (K2) of two triples whose cycle node and Π-set are those of plays of vertices outside the core, a ⊴-larger one has a class at least as large; (K3) a vertex has the class of its successor on its play, except an e-vertex with a mover successor, whose class is strictly larger; (K4) a gate has the smaller of the classes of its two faces; (K5) after a step a mover's class is at least the class that each of its gates had before the step; (Lemma LEVEL) for a reference state b and a state t < b, with LAG_t the vertices whose class at t is not their class at b, m_t the least class of a vertex of LAG_t, FRONT_t the vertices of LAG_t of class m_t, f_t their number and Φ_t := (m_t, −f_t) ordered lexicographically: Φ never falls; it stays equal exactly at a stall (a step at which no vertex of FRONT_t changes class); at a stall FRONT_t contains movers x_1, …, x_r that form a cycle of the Ξ-graph through their options at b, with their gates at b and those gates' β-faces; and Φ takes at most P values; (Theorem WIN) if S is a set of movers meeting every cycle of the Ξ-graph and every vertex of S keeps its class on the states a, …, b, then, with reference b and b′ the first state with LAG = ∅, no step before b′ is a stall, b′ − a ≤ M(N + 2M), the steps after b′ are quiet, and b − a ≤ A; (Corollary R-INT) at Ξ-feedback number 1 (RESULTS R126), with R a mover on every cycle of the Ξ-graph, every maximal interval of states of constant class(R) has at most A steps; (Theorem R-HEIGHT) at Ξ-feedback number 1, class(R) changes at at most P steps; (Theorem K1-TCYC) at Ξ-feedback number 1, T_CYC ≤ P·(A + 1) + N; (Theorem FVS-TCYC) at Ξ-feedback number k, T_CYC ≤ (P + N)·(P + 1)^k; (Lemma PLATEAU) for every reference state, every maximal interval of states of constant Φ has at most N + 2M + 5 steps; (Theorem ALL-TCYC) for every genome G, T_CYC ≤ P·(N + 2M + 6) + N, and so are the number R of steps at which σ̄ changes, the number Q of loud steps and D^tot(v) − 1 for every vertex v (D^tot as in RESULTS R126) (premises: RESULTS R104's definitions of the genome and of Γ(G) only, with the readings (D1), (D3), (D4) of the packet landed as RESULTS R126; RESULTS R118 (a), (b) F1 (RESULTS R15 (a) Lemma A), (c) DOM, (e) with its stated reason, (i) Theorem BR-SEG-G (a) under H0, applied in PLATEAU to a one-player sub-game, and R118's order ⊴ on values (Λ, Π, k) (VJ00 §4.2 / Friedmann arXiv 1106.0778 §3); RESULTS R121 Lemma E-MON and its [DEF] fact E-DOM; RESULTS R123 Lemma CN2, Lemma B-ONLY, Corollary NO-TIE, Lemma LOC-GATE, Lemma LOC-K2 and [OPT] (σ̄_t is optimal at every vertex at once, spelled out in RESULTS R122 as the standing premise 1E-N3 of RESULTS R57 (b)); RESULTS R126 Corollary QUIET-N; the class facts, LEVEL, WIN, R-INT, R-HEIGHT, K1-TCYC and FVS-TCYC use neither PLATEAU nor F1, [OPT], (D1) or BR-SEG-G; not used: any lane packet or lane lemma, any Γ3 fact, [E-LEV], any Lean theorem) (2026-11-12) — this bounds the steps of one improvement rule (Howard all-switch with Even, the maximiser, improving, switch-best with keep-if-best) in one restricted model on one restricted family of games; single-switch rules and other rules are not covered; the proofs use the genome's shape, through E-DOM and B-ONLY in (K2) and (K3), on which Lemma LEVEL and all that follows rest, through NO-TIE and LOC-GATE in (K4), through DOM with CN2 in (K5) and in PLATEAU's H0, and through QUIET-N and (D1) for Odd's choices while classes stand still, and they are not an argument about Howard's rule on parity games in general; nothing is proved on Γ3, for N5′-xi, for N5 or for other games; when ALL-TCYC stands it supersedes K1-TCYC and FVS-TCYC as bounds for M ≥ 2 and k ≥ 1, and at k = 0 RESULTS R122's T_CYC ≤ N is sharper than FVS-TCYC and ALL-TCYC; the step of PLATEAU's proof in which Odd answers a later strategy by the plateau state's counterstrategy σ̄_s ([OPT], then F1) is referee-originated (REFEREE 32, claude/referee 7524342b, docs/referee/R-box208-preread.md §5.2, gap G-P6; found independently as G-1 by L-RED-B, claude/l-red-b 0510c800, docs/red-b/B1-box208.md §2.5); DATA, clause by clause (scope IDEAL-CYC from the genome's start, every vertex of Γ(G); tools and frozen outputs in experiments/new/box208/, pinned in experiments/new/box211/level.pins; no run tests the constants: at most 199 values of Φ in a run (unit: values of Φ with reference b = T; level208.py's phivals, largest over the level208.py sets above; 199 on MW32_2, out/level208_corpus.out, where P = 2,120,796) and no plateau longer than 26 steps (unit: steps; level208.py's platmax and rv208.py's platmax, largest over the sets above; 26 on mutants of MWR4_2, out/mut208_MWR4_2_s2086.out, and of CW4_n, out/rv208_mut_s2094.out)): class facts, LEVEL, WIN, R-HEIGHT: the 16 must-0 counters of level208.py (monofail, k3fail, k4fail, k5fail; einF, l3fail, phifail, stallnocyc, nofvs, rstall, boundfail; winstall, wbeta, wl3fail, wmid, wbound; units in the packet §11) are 0 on the 25 frozen k = 1 genomes, the 53 genomes of box202/inst (window counters for k ≤ 3 only), 5,000 random genomes and 2,000 mutants, and, on a second engine (L-RED 54's own.py through ownhist208.py), on the 78 frozen genomes; PLATEAU: the 6 must-0 counters of plat208.py (p1, pclos, p2, p3, p4, p5) are 0 on the 78 frozen genomes, 3,600 random genomes and 1,200 mutants; every reference state: the 49 must-0 counters of rv208.py (named in its header; a counter that is 0 is not printed) (a third implementation with its own builder, valuation, Odd reply and run) are 0 on 81 frozen genomes, 480 mutants and 3,300 random genomes; the controls LV_CTRL, PL_CTRL and RV_CTRL fire; R-INT, K1-TCYC, FVS-TCYC and ALL-TCYC: no separate DATA beyond boundfail (they follow from LEVEL, WIN and PLATEAU); on Friedmann's game G_N, N = 1, …, 8, lifted to a plain parity game by L-COMP 19 (claude/l-comp a6cce717, experiments/comp/box43, cited, not re-run), L-COMP's counter k5 of (K5) (experiments/comp/box43/README.md item 1 (b), column k5) is 0 on G_1 and first fires on G_2 at the step 5 → 6, at an odd vertex above an escape vertex, which E-DOM excludes on Γ(G) (DATA on eight instances); independent replays, every fail counter 0, their counters in their own outputs, cited, not re-run: L-RED 66 R235 (claude/l-red 2d2969c2), L-RED-B B1 (claude/l-red-b 0510c800), REFEREE 32's pre-read (claude/referee 7524342b), L-COMP 19 BOX 43 (claude/l-comp a6cce717); TARGET.md §2 (M4) asks for an algorithm polynomial on every parity game and §4 says a bound on a restricted class is not M4, so this is not M4; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim (P-N5-LEVEL, docs/new/P-N5-LEVEL.md, sha1 7c956df4, frozen together with this line; L-NEW successors 72-73; related lane statements, not premises: L-RED 66's sharper plateau bound through the lane lemma LAM-GAP in its sharp form SHARP, which would give T_CYC ≤ P(N + 1) + N (claude/l-red 2d2969c2, docs/red/R235-box208.md §5), L-FORMAL's theorems PG.Genome.k1, PG.Genome.k2, PG.Genome.k3, PG.Genome.k5, PG.level_count, PG.plateau and PG.brsegG, Lean-checked (lane) on L-FORMAL's transcription, not through CHECKER (claude/l-formal f74d38a4), L-SI 52's Lemma WRAP (claude/l-si 26704e01, docs/si/box104-map.md)), CHECKER PASS (docs/checker/C144.md, checker 57ee9e34)
+- Object (L-NEW successors 72-73, D1 / D14 / D18 / D21, boxes 208 and 211; frozen, unchanged during review): packet P-N5-LEVEL,
+  docs/new/P-N5-LEVEL.md, sha1 7c956df443cfddbf23bfbaa18a26a98369b176ec, 575 lines, 65,874 bytes (l-new 1e6df499, 2026-11-12T18:26:56Z, the
+  file's only commit; identical at 366a38ab; pinned in experiments/new/box211/level.pins). Both referees measured it (REFEREE
+  «docs/new/P-N5-LEVEL.md sha1 7c956df443cfddbf23bfbaa18a26a98369b176ec, 65,874 B, 575 lines.» (l. 14); REFEREE-2 «docs/new/P-N5-LEVEL.md
+  sha1 7c956df443cfddbf23bfbaa18a26a98369b176ec, 65,874 B, 575 lines;» (l. 14-15)). Labels: «Labels: PROVED (lane) = proved in this lane and
+  unrefereed;» (l. 9). «This packet is NOT a TARGET.md claim, NOT M3 and NOT M4. It does not decide G-N5-TIME (§13).» (l. 14) To sign (l.
+  40-49): §3 class facts (K1)-(K5); §4 Lemma LEVEL (L1)-(L5); §5 counting (C1)-(C4); §6 Theorem WIN, Corollary R-INT, Theorems R-HEIGHT,
+  K1-TCYC, FVS-TCYC; §7 Lemma PLATEAU (P1)-(P7); §8 Theorem ALL-TCYC with its «Consequences»; §8-§14 READING / DATA, not to sign. «The rows
+  of §3-§6 do not use §7. If a referee refuses PLATEAU, LEVEL, WIN, R-INT, R-HEIGHT, K1-TCYC and FVS-TCYC still stand or fall on their own
+  (Lead ruling 17:52Z).» (l. 51-52)
+- Fixes: docs/new/P-N5-LEVEL-fixes.md, append-only, one entry (366a38ab, 2026-11-12T23:25:30Z: 41 lines, 4,884 bytes, sha1
+  43891337f77cc3f3cfd830d6acfb06e569ddc8d7). Entry 1 (L-NEW successor 74): «LINE-ONLY: no statement, proof, bound or label of the packet
+  changes» (l. 3); the Lead's ruling (2026-11-12 21:43Z) quoted there: REQUIRED REFEREE-2 R-1 (ALL-TCYC's «Consequences»; = REFEREE LO-2)
+  and REFEREE LT-1, LT-2, LT-3; ADOPTED REFEREE-2 R-2 and REFEREE LO-1; NOTES REFEREE-2 N-1..N-3 and REFEREE 34's notes («Every old and new
+  string is EXTRACTED by the script from the two reports at the pinned commits» (l. 12)). It records as notes, with no line change:
+  REFEREE-2 N-1 ((K1)'s Λ half also from F1 with (VJ-1)), N-2 (the packet's Lean sentences dated to f74d38a4), N-3 (§9's list of genome-only
+  steps is REFEREE-2's 14-step list), and REFEREE 34's N-1..N-5 under the heading «N-L1» (see flag G-NL1). No item changes a statement, a
+  label, a proof or a premise.
+- The RESULTS line is L-2, d18125ed1c62f8ad20396d9f94eac8bdbc624cf4 (docs/new/P-N5-LEVEL-line-L2.txt, l-new 366a38ab, 2026-11-12T23:25:30Z,
+  the file's only commit; 7,970 bytes, one line, blob 62f4bfeea96d158a977bd03baba9acbc02239af2). The title is L-2 verbatim, with nothing
+  inserted and nothing stripped (its date parenthesis «(2026-11-12)», its scope tail and its source note are the line's own). L-2's
+  parentheses balance (93 «(» / 93 «)»); it has no pipe character. It is written by experiments/new/box211/mkl2_211.py from L-1
+  (28565b3c60fe8167f4b660c83fa27c00cd7b4fe9, 1e6df499, 7,239 bytes, frozen with the packet, written by box211/mkl1_211.py) with REFEREE 34's
+  LT-1, LT-2, LT-3 (giving REFEREE's L-1′ 389645a2a646522a8fb57f05dba4458695ac74f2, asserted) and then REFEREE-2's R-1, R-2 and REFEREE's
+  LO-1, every string extracted from the reports (fixes l. 14-16). Rebuilt byte-equal by the drafter (the lane's mkl2_211.py in a git archive
+  of 366a38ab: cmp EQUAL) and by REFEREE-2 with its own code: «cmp with the lane's L-2: EQUAL. So L-2 = L-1 + exactly the six items; nothing
+  else changed.» (l. 442). REFEREE rebuilt it with its own strings (§8, claude/referee 98cdc7aa and 28b95151): «Result: sha1
+  **d18125ed1c62f8ad20396d9f94eac8bdbc624cf4**, 7,970 B, one line,» (l. 284) and «`cmp` with the lane's L-2: **EQUAL**. Nothing else
+  changed.» (l. 285) (its L-1 test: «my result on L-1: sha1 389645a2a646522a8fb57f05dba4458695ac74f2 (§5)» (l. 266-267)).
+- Claims signed (REFEREE successor 34: §1-§2 b251a0ed, §3-§7 044580e2, §0 4c8d6c4f, Erratum 99df2458, §8 98cdc7aa and 28b95151; REFEREE-2
+  successor 39: boxes 1-3 555ce825, boxes 4-5 and verdict 43824abc, Add. 1 3cf594cc, Add. 2 5bba2b8e). REFEREE's table («## 0. Verdicts»,
+  R-P-N5-LEVEL.md l. 239-251), row by row as the report prints it: Class facts (K1)-(K5) ((K2) on triples; (K4) with the face clause; (K3 e)
+  with «largest class») → **SIGN** (l. 242); Lemma LEVEL (L1)-(L5) → **SIGN** (l. 243); Counting (C1)-(C4) ((C4) by landed R126 QUIET-N) →
+  **SIGN** (l. 244); Theorem WIN → **SIGN** (l. 245); Corollary R-INT → **SIGN** (l. 246); Theorem R-HEIGHT → **SIGN** (l. 247); Theorem
+  K1-TCYC → **SIGN** (l. 248); Theorem FVS-TCYC → **SIGN** (l. 249); Lemma PLATEAU (P1)-(P7) ((P6) with the σ̄_s step, REFEREE 32's under
+  L41; (P7) by landed R118 (i) (a) with H0 checked; (P4) on a plateau only) → **SIGN** (l. 250); Theorem ALL-TCYC with its «Consequences» →
+  **SIGN** (l. 251); then «Gaps: **none in the statements or proofs.** Premises: landed R-ids only (R104 [DEF] with (D1), (D3), (D4)
+  re-derived from R104's own line, §1.3; R15 (a); R118 (a), (b) F1, (c) DOM, (e)'s reason, (i) BR-SEG-G (a); R121 E-MON, E-DOM; R123 CN2,
+  B-ONLY, NO-TIE, LOC-GATE, LOC-K2, [OPT] (R122's wording); R126 QUIET-N and the Ξ-feedback number); no lane lemma, no Lean theorem.» (l.
+  257-259). REFEREE-2's table («5.5 Verdicts», R2-P-N5-LEVEL.md l. 358-371), row by row: §3 (K1)-(K5) → SIGN [(K1) on R118 (e)'s stated
+  reason or on F1 with (VJ-1) (N-1)] (l. 361); §4 Lemma LEVEL (L1)-(L5) → SIGN (l. 362); §5 (C1)-(C4) → SIGN [(C4) uses landed R126 QUIET-N
+  only] (l. 363); §6 Theorem WIN → SIGN (l. 364); §6 Corollary R-INT → SIGN (l. 365); §6 Theorem R-HEIGHT → SIGN (l. 366); §6 Theorem
+  K1-TCYC → SIGN (l. 367); §6 Theorem FVS-TCYC → SIGN (l. 368); §7 Lemma PLATEAU (P1)-(P7) → SIGN [(P6) step (B) is referee-originated
+  (REFEREE 32); signed here independently under L41] (l. 369); §8 Theorem ALL-TCYC, with «Consequences» → SIGN (l. 370); line L-1 (sha1
+  28565b3c) → SIGN WITH GAP [«L-1 omits ALL-TCYC's «Consequences», a «To sign» row» (R-1, exact strings in 5.4)] (l. 371); then «No
+  statement is REFUSED. No signed proof keeps an open gap. Notes N-1 to N-3 ask for no change.» (l. 372). L-1's SIGN WITH GAP is closed on
+  L-2 (Add. 2, quoted under The RESULTS line), and both referees MATCH L-2 (REFEREE §8, REFEREE-2 Add. 2; quoted under Signatures). The
+  joint gap map: EMPTY (REFEREE l. 257; REFEREE-2 l. 372). No statement is CONDITIONAL and none rests on a HYPOTHESIS; nothing is REFUSED.
+- Setting and scope, as both referees sign it: REFEREE «Scope of every signature, as the packet states it: Howard ALL-SWITCH strategy
+  improvement with Even, the MAXIMISER, improving (switch-best, keep-if-best) and VJ values, on IDEAL-CYC(G) of RESULTS R118 (a), for every
+  genome G of R104 (Ξ-cycles and Ξ self-loops allowed), states 0, …, T_CYC of that run. Not N5, not N5′-xi (on or off Γ3), not other rules
+  or games, not M4, not M3, not a gauntlet step-4 pass; G-N5-TIME stays OPEN.» (l. 253-256); REFEREE-2 «Not M3, not M4, not a step-4 pass.
+  G-N5-TIME stays OPEN. N5 and N5′-xi stay CANDIDATES (D1). The bound is polynomial in N + M for the one rule (Howard all-switch) in the one
+  model (IDEAL-CYC) on the genome games, and for nothing else.» (l. 373-374). The run is IDEAL-CYC(G) of RESULTS R118 (a) from R104's start,
+  states 0, …, T_CYC. Statements as signed (packet with fixes entry 1, which changes none):
+  (a) Class facts (K1)-(K5) (§3): both SIGN (REFEREE l. 242; REFEREE-2 l. 361).
+  (b) Lemma LEVEL (L1)-(L5) (§4): both SIGN (REFEREE l. 243; REFEREE-2 l. 362).
+  (c) counting (C1)-(C4) (§5; (C4) by landed R126 QUIET-N): both SIGN (REFEREE l. 244; REFEREE-2 l. 363).
+  (d) Theorem WIN, Corollary R-INT, Theorems R-HEIGHT, K1-TCYC, FVS-TCYC (§6; none uses §7): both SIGN (REFEREE l. 245; REFEREE-2 l. 364).
+  (e) Lemma PLATEAU (P1)-(P7) (§7; (P6) step (B) referee-originated, (P7) by landed R118 (i) (a) with H0): both SIGN (REFEREE l. 250;
+    REFEREE-2 l. 369).
+  (f) Theorem ALL-TCYC with its «Consequences» (§8): both SIGN (REFEREE l. 251; REFEREE-2 l. 370).
+- Premise (named in L-2's premise parenthesis; no «…» quote in L-2; checked by script at trunk HEAD de2a3f8a, prem129a.py): RESULTS R104 (l.
+  9864), definitions of the genome and of Γ(G), with the readings (D1), (D3), (D4) of P-N5-QN.md §1 (the packet landed as R126; not R126's
+  RESULTS text, flag G-4); RESULTS R118 (l. 13607) (a), (b) F1 with RESULTS R15 (l. 624) (a) Lemma A, (c) DOM, (e) with its stated reason,
+  (i) Theorem BR-SEG-G (a) under H0 (applied in PLATEAU to a one-player sub-game), R118's order ⊴ (VJ00 §4.2 / Friedmann arXiv 1106.0778
+  §3); RESULTS R121 (l. 14320) Lemma E-MON and E-DOM; RESULTS R123 (l. 15076) CN2, B-ONLY, NO-TIE, LOC-GATE, LOC-K2 and [OPT], spelled out
+  in RESULTS R122 (l. 14744) as the standing premise 1E-N3 of RESULTS R57 (l. 2893) (b); RESULTS R126 (l. 15726) Corollary QUIET-N (in (C4)
+  only) and its Ξ-feedback number. All eight R-ids are landed (### R<n> headings at HEAD); none is above R127. «the class facts, LEVEL, WIN,
+  R-INT, R-HEIGHT, K1-TCYC and FVS-TCYC use neither PLATEAU nor F1, [OPT], (D1) or BR-SEG-G; not used: any lane packet or lane lemma, any Γ3
+  fact, [E-LEV], any Lean theorem» (l. 1). Both referees checked the premises by their own scripts (REFEREE «**25 bullets, 44 quotes, 44
+  found in the tagged source, 0 missing**» (l. 25-26); REFEREE-2 «Result: 44 quotes, 44 found, 0 missing» (l. 28)) and read each landed item
+  for its scope.
+- L41 and L43. The packet's proofs are L-NEW successors 72-73's; one proof step is referee-originated and named in L-2: «the step of
+  PLATEAU's proof in which Odd answers a later strategy by the plateau state's counterstrategy σ̄_s ([OPT], then F1) is referee-originated
+  (REFEREE 32, claude/referee 7524342b, docs/referee/R-box208-preread.md §5.2, gap G-P6; found independently as G-1 by L-RED-B,
+  claude/l-red-b 0510c800, docs/red-b/B1-box208.md §2.5)» (l. 1). The packet credits it the same way («The step in the packet is credited to
+  REFEREE 32.» (l. 427); L-RED-B's own repair «whose repair is different (σ̄_(s′) = σ̄_s on the gates of Y, from F3, CN2 and NO-TIE) and is
+  not used here;»). Under L41 the author lane (REFEREE) signs it and the other referee checks it independently: REFEREE «(P6) with the σ̄_s
+  step, REFEREE 32's under L41;» (l. 250) (its §0 PLATEAU row; re-derived in §2.5); REFEREE-2 «(P6) step (B) is referee-originated (REFEREE
+  32); signed here independently under L41» (l. 369). L-RED 66's SHARP route is named in L-2 only among «related lane statements, not
+  premises» («L-RED 66's sharper plateau bound through the lane lemma LAM-GAP in its sharp form SHARP, which would give T_CYC ≤ P(N + 1) + N
+  (claude/l-red 2d2969c2, docs/red/R235-box208.md §5)» (l. 1)); the packet keeps remark SHARP not to sign, and REFEREE-2 «Remark SHARP (not
+  to sign): correctly kept out.» (l. 202). L43: «L43: this packet has no DEAD row.» (l. 445) LT-1 and LT-2 (REFEREE, L43) gave the «no run
+  tests the constants» clause and the G_N clause their counter, unit, instance and file in L-2.
+- Not signed: packet §8's arithmetic «Against K1-TCYC and FVS-TCYC», remark SHARP, §9 (genome-only steps; Friedmann G_N DATA), §10 (referee
+  items), §11 (DATA), §12 (check record), §13 (TARGET diff), §14 (machine checks); box 209 (the Γ3 form), box 210, box 212; any Lean theorem
+  (cited in L-2 as a related lane statement, lane-level, not a premise; flag G-LEAN); the referees' replays.
+- Referee strengthening (NOT part of this entry; referee checks): (i) REFEREE 34: own code («## 3. Replay with my lane's own code (no lane
+  code; written from box 208's statements, which the packet's statements equal or weaken)» (l. 147)), 36 must-be-0 counters all 0 on 5 ×
+  2,000 + 300 random genomes, the 82 frozen genomes and 600 mutants (l. 155-158), controls fire; «A plateau of 27 steps among my mutants is
+  one step longer than the packet's «no plateau longer than 26 steps» for the lane's sets;» (l. 161-162) (that clause is about the lane's
+  sets). (ii) REFEREE-2 39: own replay r2lv.py with 44 must-0 counters on REFEREE-2's engine, «Nothing of the lane is imported by my
+  replay.» (l. 381); 81 frozen genomes with every reference state, 4,500 random genomes and 1,600 mutants under three tie rules and two
+  e-orders, every fail counter 0 (box 4.3, l. 250-262); eight controls fire, among them edom (E-DOM broken on Γ(G)), «The genome property is
+  load-bearing, on my engine too.» (l. 317) (iii) L-RED 66 (R235), L-RED-B (B1), REFEREE 32's pre-read and L-COMP 19 BOX 43: independent
+  replays cited in L-2, not re-run.
+- Honest limits: (i) The bound is for one improvement rule (Howard ALL-SWITCH, Even the maximiser improving, switch-best with keep-if-best)
+  in one model (IDEAL-CYC) on one restricted family (the R104 genome games); single-switch and other rules are not covered (every theorem of
+  §6-§8 uses (K5), which needs DOM). (ii) Nothing is proved on Γ3, for N5′-xi, for N5, or for other games; the proofs use the genome's shape
+  (E-DOM, B-ONLY, NO-TIE, LOC-GATE, DOM with CN2, QUIET-N, (D1)) and are not an argument about Howard's rule on parity games in general;
+  L-COMP's lift to Friedmann's G_N fires (K5)'s counter from G_2 on (DATA, eight instances, cited). L-2's «through DOM with CN2 in (K5) and
+  in PLATEAU's H0» is descriptive: H0 uses CN2 only, not DOM (REFEREE §8 note N-L2, no change asked: «H0 uses CN2 only, not DOM; the phrase
+  is meant as «DOM with CN2 in (K5), and CN2 in PLATEAU's H0».» (l. 293-294); packet (P7), l. 359-361). (iii) The readings (D1), (D3), (D4)
+  are P-N5-QN.md §1 text, re-derived by REFEREE from R104 (G-4). (iv) No run tests the constants: at most 199 values of Φ against P =
+  2,120,796 on MW32_2, plateaus of at most 26 steps (REFEREE's mutants: 27) against N + 2M + 5; large zero counts are DATA, not evidence.
+  (v) ALL-TCYC supersedes K1-TCYC and FVS-TCYC as bounds for M ≥ 2 and k ≥ 1; at k = 0 landed R122's T_CYC ≤ N is sharper. (vi) Lean is
+  cited in L-2 as a related lane statement at l-formal f74d38a4, lane-level, not a premise and not this entry's proof (flag G-LEAN). (vii)
+  Literature: VJ00 §4.2 / Friedmann arXiv 1106.0778 §3 for the value order, as in R118; no novelty is claimed (not presented as M3).
+- Lean status since: CHECKER C143 (claude/checker 37fcbd21) passes Genome.k1, k2, k3, k4, k5 at claude/l-formal c8963698 (L54: CI run
+  43323596869), with the notes that travel with those rows (C143 §4): «(N-1) OptCounter = VJ00 Ω_σ is a paper step (VJ00 §4.3 / Friedmann
+  Lemma 3.1).» (l. 106), «(N-3) k2 is box 208's value form, not P-N5-LEVEL's triple form.» (l. 108), «(N-4) k3 (e) has no «largest class»
+  clause.» (l. 109), «(N-5) k4 has no «face has that class» clause.» (l. 110); so the Lean rows are weaker than this entry's (K2), (K3 e)
+  and (K4) as signed, and nothing in this entry rests on them. level_count, plateau, brsegG: build and axioms PASS in C143, statements not
+  ruled. P-N5-LEVEL l. 189 («(K4) is stated there (K4Statement) and NOT proved in Lean.»), 254 and 547-548 are stale on this point (frozen
+  packet not edited).
+- Data (DATA, not proof): experiments/new/box208/ (tools level208.py, plat208.py, rv208.py, ownhist208.py; frozen outputs out/*.out with
+  SHA1SUMS) and box211/ (level.pins, 110 rows at 366a38ab; quotes211.py / .out; mkl1_211.py, mkl2_211.py / .out) at l-new 366a38ab, called
+  from experiments/new/check.sh l. 1143-1160 («BOX 208 LEVEL», «BOX 208 ADD-B») and l. 1187-1198 («P-N5-LEVEL», which asserts the L-2 and
+  fixes pins and that mkl2_211.out ends with L-2's sha1), run by scripts/verify.sh once merged. Re-run by the drafter from a full git
+  archive of 366a38ab: rc 0, three PASS lines; with one byte appended to L-2 «P-N5-LEVEL check: FAILED», rc 1; with one byte prepended to
+  box208/check208.out «BOX 208 LEVEL check: FAILED», rc 1 (negative controls; restored, re-run rc 0). Frozen totals by column name
+  (data129a.py, 31 checks): the 16 level208 counters sum 0 on records 25, corpus 53, random 5,000, mutants 2,000 (8 × 250) and on the second
+  engine own208 (78); max phivals 199 on MW32_2 (N 300, M 657, P = 2,120,796); max platmax 26 (mut208_MWR4_2_s2086.out; rv208_mut_s2094.out
+  CW4_n, MWR4_2 24); plat208's 6 counters sum 0 on 25 + 53 + 3,600 + 1,200; rv208: 81 frozen rows, 480 mutants, 3,300 random genomes, no
+  line matching check.sh's 49-name must-0 pattern; controls fire. Cited, not re-run: L-COMP 19 BOX 43 (claude/l-comp a6cce717, README sha1
+  db74c155…), L-RED 66 R235 (2d2969c2), L-RED-B B1 (0510c800), REFEREE 32 (7524342b).
+- Signatures: REFEREE docs/referee/R-P-N5-LEVEL.md, successor 34 (b251a0ed 2026-11-12T21:40:12Z, 044580e2 2026-11-12T21:40:13Z, 4c8d6c4f
+  2026-11-12T21:40:13Z; Erratum 99df2458 2026-11-12T22:31:53Z): §0 verdict table l. 239-251; on L-1 «**Line L-1 (sha1 28565b3c…): does NOT
+  match yet.** Required: LT-1 (L43: the «no run tests the constants» clause names instance, tool, unit and file), LT-2 (L43: the G_N counter
+  named k5 with its file), LT-3 (Lean citation form); my result on L-1: sha1 389645a2a646522a8fb57f05dba4458695ac74f2 (§5). Optional LO-1,
+  LO-2 (the Lead's call). No statement, label or proof changes, so a fixes entry with a line L-2 by script needs a byte test only, not a
+  re-sign.» (l. 265-268). On L-2, §8 (98cdc7aa 2026-11-13T00:02:04Z; 28b95151 2026-11-13T00:02:11Z, «REFEREE s34: R-P-N5-LEVEL §8: restore
+  the word «cmp» lost to shell quoting in 98cdc7aa (no content change)»): «Verdict: fixes entry 1 CORRECT. **Line L-2 MATCHES** (L-1 +
+  exactly LT-1..LT-3, R-1, R-2, LO-1; sha1 d18125ed…). Statements and labels as in §0: every statement SIGN.» (l. 298-299). REFEREE-2
+  docs/referee-2/R2-P-N5-LEVEL.md, successor 39 (555ce825 2026-11-12T20:29:14Z, 43824abc 2026-11-12T20:56:57Z, 3cf594cc
+  2026-11-12T22:08:25Z, 5bba2b8e 2026-11-13T00:02:16Z): verdict table l. 358-372; Correction (2c5695ec 2026-11-13T00:48:16Z; notebook
+  1177c24d) «l. 413-435: pasted git show of 5d30968a, not part of this report.» (l. 461); Add. 2 «L-2 (366a38ab, sha1 d18125ed) MATCHES. My
+  SIGN WITH GAP on L-1 is closed by R-1; every statement of P-N5-LEVEL stays SIGN.» (l. 458). Lane (claude/l-new): L-NEW successor 73,
+  1e6df499 (packet FROZEN, L-1); successor 74, 366a38ab (fixes entry 1, L-2). Pre-reads and adversary records (not signatures): REFEREE 32
+  (7524342b), L-RED 66 R235 (2d2969c2), L-RED-B B1 (0510c800).
+- INDEPENDENCE: each referee wrote its verdict without reading the other's (REFEREE «Not read before my verdict: docs/referee-2/ on
+  P-N5-LEVEL;» (l. 8); REFEREE-2 «Independent: I did NOT open docs/referee/ (REFEREE 34's review of this packet, REFEREE 32's
+  R-box208-preread.md) or notes/REFEREE.md before this report's verdict is on origin.» (l. 3-4)). REFEREE-2 read REFEREE's report only after
+  its verdict: «REFEREE 34's report read now (claude/referee 4c8d6c4f, docs/referee/R-P-N5-LEVEL.md), after my verdict 43824abc.» (l. 437).
+  REFEREE's lane wrote the pre-read that found G-P6 and disclosed it: «I re-derived every proof below from the frozen text, not from those
+  reports.» (l. 5-6). REFEREE's L-2 test (§8, after both verdicts) took REFEREE-2's R-1 and R-2 from REFEREE-2's report: «parsed by my
+  script from R2-P-N5-LEVEL.md at claude/referee-2 43824abc §5.4 (wraps joined with one space)» (l. 282). Each referee re-derived every
+  proof step and replayed the DATA on its own engine.
+- TARGET.md diff: TARGET.md §2 (M4) asks for one deterministic algorithm, polynomial on EVERY parity game, that outputs (W_E, W_O); this
+  entry bounds the steps of one improvement rule in one model on the genome games only (TARGET.md §4: «Polynomial only on a restricted class
+  (bounded d, treewidth, Strahler/register number, ...).» (l. 31); REFEREE «## 6. TARGET.md diff: CLEAN» (l. 222); REFEREE-2 «No statement
+  of the packet is phrased in TARGET.md's vocabulary or claims to be. PASS.» (l. 327)). It is not an algorithm claim on every game, so
+  TARGET.md §5's gauntlet does not apply, and it is not a step-4 pass. L-2 ends its scope words «so this is not M4; G-N5-TIME stays OPEN;
+  not M3, not a step-4 pass, not a TARGET.md claim», the form of landed R123-R127. GAPS G-N5-TIME: open.
+
 **Erratum E-1** (not a result; 2026-11-01 05:28Z by date -u; Lead; corpus counts in RESULTS R97-R100):
 - What is wrong: the DATA-of-record sentences that say «1,132 games» for the L-SI box 50b / box 53 corpus (sbcg.lst 719 lines + alt_all.lst
   413 lines) count RUNS, not games. Measured by CHECKER (C111 N-7, claude/checker d53e1d4f) at trunk 68d50c8f: experiments/si/anc58/
