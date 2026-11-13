@@ -20,16 +20,16 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 | --- | --- | --- | --- | --- | --- | --- |
 | Lead | session_014FBi6o334DvwT5Uw2kDfoN | claude/vibrant-johnson-nxvvxo | opus-5-5 | high | working | Owner-chosen session; routing judgement; keeps context lean |
 | L-SI (succ. 54, Opus) | session_01V5yGRZnPJdkB4KaoEZZtig | claude/l-si | opus-5-5 | high | started 00:29Z (succ. 53 PARKED 01:27Z at faf0c8ff): P-N5-WRAP L-2 diff check; R128 standby; box 106 §3.2-§3.4 | D18/D21/L53 |
-| L-RED (succ. 68, Opus) | session_01V5yGRXuswqfJXj1bzSN949 | claude/l-red | opus-5-5 | high | started 20:00Z: R237 (2) WRAP (W4) attack; box 105 KEY-MODEL replay | D1/D21/L53 |
-| L-RED-B (succ. 3, Opus) | session_01V5yGRXHoHifjbeqR3Lntn5 | claude/l-red-b | opus-5-5 | high | started 20:00Z: B2 attack box 209; B3 GUIDE-RULE (N5 kill attempt) | D1/D21/L53 |
-| L-NEW (succ. 74, Opus) | session_01V5yGRYHKYSjsfxFEDcsyEP | claude/l-new | opus-5-5 | high | started 19:58Z: P-N5-LEVEL fixes (frozen 1e6df499); BOX 212 RF-LEVEL | D14/D18/D21/L53 |
+| L-RED (succ. 68, Opus) | session_01V5yGRXuswqfJXj1bzSN949 | claude/l-red | opus-5-5 | high | PARKED 02:45Z (50fe432a: R239 box 212 SURVIVES; R240 FLAT-IDX depends on numbering); succ. 69 when routed | D1/D21/L53 |
+| L-RED-B (succ. 3, Opus) | session_01V5yGRXHoHifjbeqR3Lntn5 | claude/l-red-b | opus-5-5 | high | B3 NO KILL (9bce72fa, eb28fde5); B4 post-fallback attack running | D1/D21/L53 |
+| L-NEW (succ. 75, Opus) | session_01V5yGRWimvjsi2nZhjaevtK | claude/l-new | opus-5-5 | high | started 03:03Z (succ. 74 PARKED 03:22Z at 7f12bf0d): box 213 KEY-WINDOW (14340979: RF-D window clause withdrawn, KEY-TAU candidate, G-2); box 214 proposal | D14/D18/D21/L53 |
 | L-COMP (succ. 21, Opus) | session_01V5yGRXVu462BehsZf8icAx | claude/l-comp | opus-5-5 | high | started 20:00Z: BOX 45 DONE 7dae7f9e; BOX 46 W_key (item 1 6ac85200: 86/86 = rfd212) | D21/L53 |
 | L-LOWER (succ. 16, Opus) | session_01V5yGRXdTj8q5JFrkUewoYW | claude/l-lower | opus-5-5 | high | started 22:45Z: BOX L18b climb (P 13 with f6 globally correct, de5975d1; P 14 running) | D18/D21/L53 |
 | L-FORMAL (succ. 4, Opus) | session_01V5yGRWV98usJz6buk8GaGb | claude/l-formal | opus-5-5 | high | started 00:56Z (succ. 3 PARKED 00:54Z at 1a44c6aa): C143 notes + MANIFEST #70-#74 (82ec6eb4); SPEC S1-S5 definitions in Lean (proposed) | D18/D21/L53 |
 | L-LIT (next, Fable) | session_01V5yGRYSuVcAoW1mpE9SL5h | claude/l-lit | claude-fable-5-2 | xhigh | PARKED 9ae31ec3 (branch carries a stale 30-min verify.yml; successor merges trunk first) | D21 |
-| REFEREE (succ. 34, Opus) | session_01V5yGRZCHx7MEGFpGYmGHwg | claude/referee | opus-5-5 | high | started 19:56Z: R128 L-5 byte test; P-N5-LEVEL first review | D1/D21/L53 |
-| REFEREE-2 (succ. 39, Opus) | session_01V5yGRaEeN3dRqjQP5twiRH | claude/referee-2 | opus-5-5 | high | started 19:57Z: P-N5-LEVEL second review (L-5 MATCHES by 38, 0df0fdd8) | D1/D21/L53 |
-| CHECKER (succ. 23, Opus) | session_01V5yGRWB6gCtv2nZGVfYacG | claude/checker | opus-5-5 | high | C143 DONE 37fcbd21; parking (520k); succ. 24 next: C142 Add. 2, C144 (R129), C145 | D1/D18 |
+| REFEREE (succ. 34, Opus) | session_01V5yGRZCHx7MEGFpGYmGHwg | claude/referee | opus-5-5 | high | PARKED 03:31Z (92d1cfdb); LEVEL §8 28b95151, WRAP §8 32d61d60; succ. 35 when needed | D1/D21/L53 |
+| REFEREE-2 (succ. 40, Opus) | session_01V5yGRWQ1pY9BpJ6WvVvBoi | claude/referee-2 | opus-5-5 | high | started 02:31Z (succ. 39 PARKED 0f2606da): WRAP agreement 59ece3a4; box 212 pre-read 8e075239 (G-1); SPEC-LEAN reading 73b5e3a7; standby R128-R130 | D1/D21/L53 |
+| CHECKER (succ. 24, Opus) | session_01V5yGRXJ9rtWJvFJkY1f1JA | claude/checker | opus-5-5 | high | started 02:27Z (succ. 23 PARKED 5819f96c): C142 Add. 2 PASS a9233137 (R128 LANDED); C145 PASS 2b02ba34; C144 (R129) now; C146 (R130) next | D1/D18 |
 | WATCHDOG | session_01JQNTX8zT3T3mWMt6ZmYzkn | none (never edits) | haiku-5-5 | high | working (cron :30, trig_019xE43BZ5qaDGwxDkZ5h5ik) | Routine liveness/overage checks; reports to Lead only (deviation from playbook: does not wake lanes, so idle sessions never get messages) |
 | OWNER-DESK | session_01Eq99qsTJBiTh6xLzwCPtqv | claude/owner-desk | opus-5-5 | high | idle between owner messages | Owner D3: owner Q&A and open questions; accuracy in plain explanation, no proofs; idle between owner messages |
 
