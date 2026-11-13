@@ -1,0 +1,14 @@
+NUMBCHECK NUMB_all2_deep2453_303.json (all 2): original: all counters 0 T 2 xdiff 0 | renumbered: TAU+e-key 0 eord 1 kpg 15 kflip 7 kflipm 1 ladder 0 lkp 0 pkf 0 casc 0 T 4 n 220 xdiff 0
+NUMBCHECK NUMB_all2_deep2453_466.json (all 2): original: all counters 0 T 2 xdiff 0 | renumbered: TAU+e-key 0 eord 1 kpg 13 kflip 5 kflipm 1 ladder 0 lkp 0 pkf 0 casc 0 T 2 n 220 xdiff 0
+NUMBCHECK NUMB_all2_deep2453_64.json (all 2): original: all counters 0 T 1 xdiff 0 | renumbered: TAU+e-key 0 eord 1 kpg 4 kflip 3 kflipm 1 ladder 0 lkp 0 pkf 0 casc 0 T 3 n 250 xdiff 0
+NUMBCHECK NUMB_e1_BEST_B3_WU151_NM164_5fdc0426.json (e 1): original: all counters 0 T 151 xdiff 0 | renumbered: TAU+e-key 0 eord 1 kpg 67 kflip 14 kflipm 2 ladder 0 lkp 0 pkf 0 casc 0 T 5 n 822 xdiff 0
+NUMBCHECK NUMB_e1_H6_x0_glo_blo_p0.json (e 1): original: all counters 0 T 103 xdiff 0 | renumbered: TAU+e-key 0 eord 1 kpg 31 kflip 11 kflipm 1 ladder 0 lkp 0 pkf 0 casc 0 T 3 n 737 xdiff 0
+NUMBCHECK NUMB_e1_HIT7_d28_F254.json (e 1): original: all counters 0 T 299 xdiff 0 | renumbered: TAU+e-key 0 eord 1 kpg 25 kflip 13 kflipm 1 ladder 1 lkp 0 pkf 0 casc 0 T 4 n 850 xdiff 0
+NUMBCHECK NUMB_e1_deep2451_0.json (e 1): original: all counters 0 T 1 xdiff 0 | renumbered: TAU+e-key 0 eord 1 kpg 17 kflip 0 kflipm 0 ladder 0 lkp 0 pkf 0 casc 0 T 3 n 318 xdiff 0
+NUMBCHECK NUMB_e1_deep2451_1.json (e 1): original: all counters 0 T 1 xdiff 0 | renumbered: TAU+e-key 0 eord 1 kpg 4 kflip 2 kflipm 0 ladder 0 lkp 0 pkf 0 casc 0 T 1 n 100 xdiff 0
+NUMBCHECK NUMB_e1_deep2451_3.json (e 1): original: all counters 0 T 2 xdiff 0 | renumbered: TAU+e-key 0 eord 1 kpg 14 kflip 6 kflipm 0 ladder 0 lkp 0 pkf 0 casc 0 T 2 n 280 xdiff 0
+NUMBCHECK NUMB_e1_deep2452_416.json (e 1): original: all counters 0 T 2 xdiff 0 | renumbered: TAU+e-key 0 eord 1 kpg 5 kflip 3 kflipm 1 ladder 0 lkp 0 pkf 0 casc 0 T 2 n 190 xdiff 0
+NUMBCHECK NUMB_e1_deep2452_471.json (e 1): original: all counters 0 T 2 xdiff 0 | renumbered: TAU+e-key 0 eord 1 kpg 12 kflip 4 kflipm 1 ladder 0 lkp 0 pkf 0 casc 0 T 4 n 280 xdiff 0
+NUMBCHECK NUMB_e1_deep2452_517.json (e 1): original: all counters 0 T 1 xdiff 0 | renumbered: TAU+e-key 0 eord 1 kpg 15 kflip 4 kflipm 1 ladder 0 lkp 0 pkf 0 casc 0 T 3 n 220 xdiff 0
+NUMBCHECK NUMB_e3_H6_d24_F126.json (e 3): original: all counters 0 T 209 xdiff 0 | renumbered: TAU+e-key 0 eord 1 kpg 35 kflip 6 kflipm 2 ladder 2 lkp 0 pkf 0 casc 0 T 4 n 730 xdiff 0
+NUMBCHECK NUMB_e3_RECF4_d20_F60.json (e 3): original: all counters 0 T 67 xdiff 0 | renumbered: TAU+e-key 0 eord 1 kpg 24 kflip 9 kflipm 1 ladder 1 lkp 0 pkf 0 casc 0 T 3 n 610 xdiff 0

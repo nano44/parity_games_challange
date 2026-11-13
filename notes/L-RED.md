@@ -3581,3 +3581,8 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
   box 215 §1 identifies them with gate indices through box 189's numbering. 14 instances in experiments/red/r241/inst (n5v xdiff 0).
 - Lesson: perm sets run before the *_e counters existed printed no *_e fields (summ grp gives 0 for absent keys): re-run (kt_rand2.out) — read
   «rows with e-key counters» before trusting an EKEY 0.
+- 2026-11-13T08:18Z: R241 DONE -> docs/red/R241-keytau.md. KEY-TAU (i), (ii), (iii) SURVIVE (8,047 runs incl. every renumbering, Σ T 41,097,
+  76,650 climb evals, n5v xdiff 0 on 1,227; BEST_B3_WU151_NM163 T 151 all 0); box 215 KEYSIDE-ALL as stated (gate keys) DEPENDS ON NUMBERING
+  (14 NUMB_* instances, kflipm / ladder fire on renumbered towers and L-COMP bests); its e-index form SURVIVES (every *_e 0; xi control fires it).
+  Lesson repeated: two table totals typed before computing (4,403 / 24,618) were wrong; fixed from summ241 before commit.
+- RESUME POINT: nothing in flight after this push; next = whatever the Lead routes (DEEP3 on hold).

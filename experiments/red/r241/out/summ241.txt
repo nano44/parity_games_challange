@@ -1,0 +1,54 @@
+== per-file runs (json; one row per genome)
+kt_frz_all1.out: genomes 81 timeouts 0 | TAU 0 | GATE 1526 {'eord': 81, 'kpg': 1222, 'kflip': 223} | EKEY 0 (rows with e-key counters 81) | sum T 142 switches 824 cycuse 4019 | n5v sampled 81 xdiff 0
+kt_frz_e1.out: genomes 81 timeouts 0 | TAU 0 | GATE 1544 {'eord': 81, 'kpg': 1239, 'kflip': 224} | EKEY 0 (rows with e-key counters 81) | sum T 143 switches 839 cycuse 4246 | n5v sampled 81 xdiff 0
+kt_frz_none.out: genomes 81 timeouts 0 | TAU 0 | GATE 0 | EKEY 0 (rows with e-key counters 81) | sum T 1721 switches 3859 cycuse 37731 | n5v sampled 81 xdiff 0
+kt_hard_all1.out: genomes 30 timeouts 0 | TAU 0 | GATE 936 {'eord': 30, 'kpg': 657, 'kflip': 241, 'kflipm': 6, 'ladder': 2} | EKEY 0 (rows with e-key counters 30) | sum T 73 switches 538 cycuse 157 | n5v sampled 30 xdiff 0
+kt_hard_all2.out: genomes 30 timeouts 0 | TAU 0 | GATE 1093 {'eord': 30, 'kpg': 818, 'kflip': 240, 'kflipm': 5} | EKEY 0 (rows with e-key counters 30) | sum T 89 switches 516 cycuse 147 | n5v sampled 30 xdiff 0
+kt_hard_e1.out: genomes 30 timeouts 0 | TAU 0 | GATE 1284 {'eord': 30, 'kpg': 930, 'kflip': 307, 'kflipm': 16, 'ladder': 1} | EKEY 0 (rows with e-key counters 30) | sum T 96 switches 581 cycuse 138 | n5v sampled 30 xdiff 0
+kt_hard_e2.out: genomes 30 timeouts 0 | TAU 0 | GATE 1000 {'eord': 30, 'kpg': 726, 'kflip': 236, 'kflipm': 6, 'ladder': 2} | EKEY 0 (rows with e-key counters 30) | sum T 87 switches 561 cycuse 149 | n5v sampled 30 xdiff 0
+kt_hard_e3.out: genomes 30 timeouts 0 | TAU 0 | GATE 1090 {'eord': 30, 'kpg': 815, 'kflip': 236, 'kflipm': 6, 'ladder': 3} | EKEY 0 (rows with e-key counters 30) | sum T 91 switches 501 cycuse 180 | n5v sampled 30 xdiff 0
+kt_hard_none.out: genomes 30 timeouts 0 | TAU 0 | GATE 0 | EKEY 0 (rows with e-key counters 21) | sum T 3666 switches 12101 cycuse 3283 | n5v sampled 30 xdiff 0
+kt_xtower_none.out: genomes 224 timeouts 0 | TAU 0 | GATE 0 | EKEY 0 (rows with e-key counters 224) | sum T 25252 switches 78349 cycuse 1562 | n5v sampled 224 xdiff 0
+== generated sets (kt_rand.out; one TOTAL row per set)
+-- kt_rand.out
+#own1: genomes 300 | TAU 0 | GATE 0 | EKEY 0 | sum T 201 max T 3 ladders 1 | n5v sampled 15 xdiff 0
+#own2: genomes 300 | TAU 0 | GATE 0 | EKEY 0 | sum T 322 max T 4 ladders 1 | n5v sampled 15 xdiff 0
+#own3: genomes 300 | TAU 0 | GATE 0 | EKEY 0 | sum T 393 max T 5 ladders 1 | n5v sampled 15 xdiff 0
+#gen_rand: genomes 300 | TAU 0 | GATE 0 | EKEY 0 | sum T 316 max T 5 ladders 12 | n5v sampled 15 xdiff 0
+#gen_dense: genomes 300 | TAU 0 | GATE 0 | EKEY 0 | sum T 390 max T 5 ladders 0 | n5v sampled 15 xdiff 0
+#gen_deep: genomes 300 | TAU 0 | GATE 0 | EKEY 0 | sum T 487 max T 6 ladders 0 | n5v sampled 15 xdiff 0
+#gen_noesc: genomes 300 | TAU 0 | GATE 0 | EKEY 0 | sum T 341 max T 4 ladders 19 | n5v sampled 15 xdiff 0
+#gen_esc: genomes 300 | TAU 0 | GATE 0 | EKEY 0 | sum T 272 max T 2 ladders 9 | n5v sampled 15 xdiff 0
+#gen_lvl0: genomes 300 | TAU 0 | GATE 0 | EKEY 0 | sum T 515 max T 6 ladders 0 | n5v sampled 15 xdiff 0
+#lad: genomes 500 | TAU 0 | GATE 0 | EKEY 0 | sum T 607 max T 6 ladders 500 | n5v sampled 25 xdiff 0
+#perm_e_dense: genomes 300 | TAU 0 | GATE 1493 {'eord': 300, 'kpg': 1193} | EKEY 0 | sum T 392 max T 4 ladders 0 | n5v sampled 0 xdiff 0
+#perm_all_dense: genomes 300 | TAU 0 | GATE 1372 {'eord': 300, 'kpg': 1072} | EKEY 0 | sum T 383 max T 5 ladders 0 | n5v sampled 0 xdiff 0
+#perm_e_deep: genomes 300 | TAU 0 | GATE 2487 {'eord': 300, 'kpg': 1921, 'kflip': 262, 'kflipm': 4} | EKEY 0 | sum T 482 max T 5 ladders 0 | n5v sampled 0 xdiff 0
+#perm_all_deep: genomes 300 | TAU 0 | GATE 2095 {'eord': 300, 'kpg': 1578, 'kflip': 217} | EKEY 0 | sum T 473 max T 4 ladders 0 | n5v sampled 0 xdiff 0
+#perm_e_own: genomes 300 | TAU 0 | GATE 930 {'eord': 300, 'kpg': 405, 'kflip': 225} | EKEY 0 | sum T 228 max T 3 ladders 2 | n5v sampled 0 xdiff 0
+#ctrl_xi: genomes 100 | TAU 2484 {'kp': 655, 'mukappa': 1067, 'muinc': 736, 'kviol': 26} | GATE 638 {'kpg': 638} | EKEY 0 | sum T 308 max T 10 ladders 0 | n5v sampled 0 xdiff 0
+#ctrl_1: genomes 100 | TAU 2325 {'kp': 523, 'kpf': 245, 'kpa': 768, 'mukappa': 789} | GATE 0 | EKEY 0 | sum T 133 max T 4 ladders 0 | n5v sampled 0 xdiff 0
+#ctrl_2: genomes 100 | TAU 719 {'mukappa': 613, 'muinc': 106} | GATE 0 | EKEY 0 | sum T 133 max T 4 ladders 0 | n5v sampled 0 xdiff 0
+#ctrl_3: genomes 100 | TAU 0 | GATE 370 {'kpg': 370} | EKEY 0 | sum T 133 max T 4 ladders 0 | n5v sampled 0 xdiff 0
+-- kt_rand2.out
+#perm_e7_dense: genomes 300 | TAU 0 | GATE 1493 {'eord': 300, 'kpg': 1193} | EKEY 0 | sum T 392 max T 4 ladders 0 | n5v sampled 30 xdiff 0
+#perm_all7_dense: genomes 300 | TAU 0 | GATE 1372 {'eord': 300, 'kpg': 1072} | EKEY 0 | sum T 383 max T 5 ladders 0 | n5v sampled 30 xdiff 0
+#perm_e7_deep: genomes 300 | TAU 0 | GATE 2487 {'eord': 300, 'kpg': 1921, 'kflip': 262, 'kflipm': 4} | EKEY 0 | sum T 482 max T 5 ladders 0 | n5v sampled 30 xdiff 0
+#perm_all7_deep: genomes 300 | TAU 0 | GATE 2095 {'eord': 300, 'kpg': 1578, 'kflip': 217} | EKEY 0 | sum T 473 max T 4 ladders 0 | n5v sampled 30 xdiff 0
+#perm_e8_dense: genomes 300 | TAU 0 | GATE 1433 {'eord': 300, 'kpg': 1133} | EKEY 0 | sum T 377 max T 4 ladders 0 | n5v sampled 30 xdiff 0
+#perm_all8_dense: genomes 300 | TAU 0 | GATE 1371 {'eord': 300, 'kpg': 1071} | EKEY 0 | sum T 389 max T 5 ladders 0 | n5v sampled 30 xdiff 0
+#perm_e8_deep: genomes 300 | TAU 0 | GATE 2456 {'eord': 300, 'kpg': 1901, 'kflip': 255} | EKEY 0 | sum T 500 max T 4 ladders 0 | n5v sampled 30 xdiff 0
+#perm_all8_deep: genomes 300 | TAU 0 | GATE 2208 {'eord': 300, 'kpg': 1648, 'kflip': 259, 'kflipm': 1} | EKEY 0 | sum T 483 max T 5 ladders 0 | n5v sampled 30 xdiff 0
+#perm_e9_dense: genomes 300 | TAU 0 | GATE 1411 {'eord': 292, 'kpg': 1119} | EKEY 0 | sum T 403 max T 5 ladders 0 | n5v sampled 30 xdiff 0
+#perm_all9_dense: genomes 300 | TAU 0 | GATE 1314 {'eord': 292, 'kpg': 1022} | EKEY 0 | sum T 384 max T 4 ladders 0 | n5v sampled 30 xdiff 0
+#perm_e9_deep: genomes 300 | TAU 0 | GATE 2307 {'eord': 300, 'kpg': 1764, 'kflip': 242, 'kflipm': 1} | EKEY 0 | sum T 493 max T 4 ladders 0 | n5v sampled 30 xdiff 0
+#perm_all9_deep: genomes 300 | TAU 0 | GATE 2315 {'eord': 300, 'kpg': 1759, 'kflip': 255, 'kflipm': 1} | EKEY 0 | sum T 524 max T 6 ladders 0 | n5v sampled 30 xdiff 0
+#perm_e8_own: genomes 300 | TAU 0 | GATE 930 {'eord': 300, 'kpg': 405, 'kflip': 225} | EKEY 0 | sum T 228 max T 3 ladders 2 | n5v sampled 30 xdiff 0
+#perm_e8_lad: genomes 300 | TAU 0 | GATE 1937 {'eord': 300, 'kpg': 1096, 'kflip': 531, 'kflipm': 5, 'ladder': 5} | EKEY 0 | sum T 382 max T 5 ladders 300 | n5v sampled 30 xdiff 0
+#ctrl_xi: genomes 100 | TAU 2484 {'kp': 655, 'mukappa': 1067, 'muinc': 736, 'kviol': 26} | GATE 638 {'kpg': 638} | EKEY 638 {'kpg_e': 638} | sum T 308 max T 10 ladders 0 | n5v sampled 0 xdiff 0
+#ctrl_xi_deep: genomes 100 | TAU 5758 {'kp': 1031, 'mukappa': 2721, 'muinc': 1950, 'kviol': 56} | GATE 1517 {'kpg': 1008, 'kflip': 344, 'kflipm': 165} | EKEY 1517 {'kpg_e': 1008, 'kflip_e': 344, 'kflipm_e': 165} | sum T 446 max T 10 ladders 0 | n5v sampled 0 xdiff 0
+generated sets without controls: genomes 8900 sum T 11695
+== totals (controls and superseded kt_rand.out perm rows excluded)
+json inputs, original numbering: genomes 335 sum T 30639 switches 94309; json inputs renumbered: runs 312 sum T 721; n5v on json 647
+generated, original numbering: genomes 3200 sum T 3844; generated renumbered: genomes 4200 sum T 5893; n5v on generated 580
+ALL runs 8047 sum T 41097 n5v 1227 (xdiff 0 on every one: see the rows above)

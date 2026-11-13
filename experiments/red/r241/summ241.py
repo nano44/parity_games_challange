@@ -41,3 +41,31 @@ for f in sorted(glob.glob(os.path.join(D, "kt_rand*.out"))):
         print(f"{tag}: genomes {g} | TAU {grp(c, TAU)} | GATE {grp(c, GATE)} | EKEY {grp(c, EKEY)} | sum T {T} max T {mT} ladders {lad} | n5v sampled {xs} xdiff {xd}")
         if not ("ctrl" in tag): G += g; Tt += T
 print(f"generated sets without controls: genomes {G} sum T {Tt}")
+
+# == totals (for the doc). kt_rand.out's perm_* rows ran before the *_e counters existed and are superseded by kt_rand2.out (same seeds,
+# identical GATE counts); they are excluded here. Controls (ctrl_*) are excluded.
+import io, contextlib
+buf = io.StringIO()
+with contextlib.redirect_stdout(buf): pass
+js_o = js_p = T_o = T_p = xs = sw = 0
+for f in sorted(glob.glob(os.path.join(D, "kt_*.out"))):
+    b = os.path.basename(f)
+    if b.startswith("kt_rand"): continue
+    for l in open(f):
+        if not (l.startswith("KT241") and ": std" in l): continue
+        T = int(re.search(r"\| T (\d+)", l).group(1)); m = re.search(r"xdiff (\d+)", l); xs += int(m is not None)
+        if b.endswith("_none.out"): js_o += 1; T_o += T; sw += int(re.search(r"switches (\d+)", l).group(1))
+        else: js_p += 1; T_p += T
+go = gp = To = Tp = xg = 0
+for f in sorted(glob.glob(os.path.join(D, "kt_rand*.out"))):
+    for l in open(f):
+        if not l.startswith("#") or "ctrl" in l.split()[0]: continue
+        tag = l.split()[0][1:]
+        if os.path.basename(f) == "kt_rand.out" and tag.startswith("perm"): continue
+        g = int(re.search(r"genomes (\d+)", l).group(1)); T = int(re.search(r"\| T (\d+)", l).group(1)); xg += int(re.search(r"sampled (\d+)", l).group(1))
+        if tag.startswith("perm"): gp += g; Tp += T
+        else: go += g; To += T
+print("== totals (controls and superseded kt_rand.out perm rows excluded)")
+print(f"json inputs, original numbering: genomes {js_o} sum T {T_o} switches {sw}; json inputs renumbered: runs {js_p} sum T {T_p}; n5v on json {xs}")
+print(f"generated, original numbering: genomes {go} sum T {To}; generated renumbered: genomes {gp} sum T {Tp}; n5v on generated {xg}")
+print(f"ALL runs {js_o + js_p + go + gp} sum T {T_o + T_p + To + Tp} n5v {xs + xg} (xdiff 0 on every one: see the rows above)")
