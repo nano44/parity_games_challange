@@ -1,0 +1,8 @@
+facts entry 3 (DATA sentence): lines of the frozen n5.out and of entry 1's n5_k12.out: k 3..12 (10 lines); its = its2 = 2^k + 1, fb = fb2 = 1, F = 2^k − 2 fails on 0
+facts entry 5.1: gk.py has the line `order = sorted(rawrk, key=lambda b: (rawrk[b], b))` 1; brtie.out k 3..14: tied = this lane's wtie (gen.out), rundiff 0, member2 1: lines different 0
+facts entry 5.3: quote.out lines 33 = source 5 + FOUND 27 + 1; last line «quotes 27 found 27 notfound 0»
+facts entry 5.4: width.out k 3..14: max = this lane's width and N = this lane's N (member.out): lines different 0; max per k 4 6 8 9 9 9 9 9 9 9 9 9
+facts entry 5.5, 5.7: SHA1SUMS_b6b lines 50; keys of G_5.json: N bp br deg gate lev opts start; deg = 2; bp all 0: 1
+facts entry 5.8, 5.9: packet l. 304-305 has «three N5 engines (n5v, n5b, n5s237) and three Γ3 builders» 1; entry 1 (9.10) has «About 40% of the broken variants» 1; pre-check l. 86 has «counter RENUM 0» 1; commits dc6d831f (box48/README.md present 1), c7ed9b8b (R245-kill-Gk.md present 1), 706d1ecc an ancestor of c7ed9b8b 1
+facts entry 6 (9.14): n5ck_check.out G_3 G_4 G_5 G_6 G_7 G_8: 72 fields against the frozen n5.out, different 0; control line (ctrl 2) wrong 1; resume line G_9 resumes 2, its 513, fb 1, twelve fields against the frozen line different 0
+facts entry 6 (9.15): n5_k13.out against N = 9k − 16, M = 2N, n = 135k − 230, T1p = F = 2^13 − 2, its = 2^13 + 1, fb 1, mism, wrong, nonmover, gdiff 0, resumes 0, pg_sha1 = sha1 of pg/G_13_g3.pg: fields 15 different 0; secs 1947.2; size_k13.out: ctrl 0 n 1525 m 1988 sizediff 0; ctrl 1 sizediff 1

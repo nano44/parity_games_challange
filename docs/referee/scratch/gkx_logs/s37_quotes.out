@@ -1,0 +1,17 @@
+fixes file at 0c8fdf9e: lines 881 sha1 43a941eb6249f0278e342438f92293b7f7a4449e; at 24f4d436: lines 829 sha1 9dc9179fb08063cd59de25c5d3e16b0f8c693fbd; at 06d399c2: lines 125 sha1 4c692ab2a092708d206719759f966a0ae4f98e5a
+append-only, each file a byte prefix of the next: 06d399c2 in 24f4d436 1; 24f4d436 in 0c8fdf9e 1
+packet sha1 at 350d84eb c0449b17193f19619f33b366096762dfde27d542; at 0c8fdf9e c0449b17193f19619f33b366096762dfde27d542; unchanged 1
+350d84eb -> 0c8fdf9e on the packet, gk.py, data/b6b/G, raw, pg, SHA1SUMS_b6b: modified or deleted 0; added 2 (G_12_g3.pg G_13_g3.pg: the games of entries 1 and 6)
+24f4d436 -> 0c8fdf9e under docs/red-b, experiments/red-b: added 7; modified P-N5-EXP-fixes.md check.sh; deleted 0; pin files fixes1, fixes2 changed 0
+entries by their headings: conventions l. 126-148; entry 2 l. 150-243; entry 3 l. 245-286; entry 4 l. 288-646; entry 5 l. 648-829; entry 6 l. 831-881
+NOTFOUND (REF2, by script): entry 2 [Q REF2 l. 248-249]
+quotes, conventions (l. 126-148): tags 0; quotes with a label other than REF2 0 found in the cited lines 0; REF2-tagged 0 found 0 (by script only)
+quotes, entry 2 (l. 150-243): tags 15; quotes with a label other than REF2 19 found in the cited lines 19; REF2-tagged 5 found 4 (by script only)
+quotes, entry 3 (l. 245-286): tags 6; quotes with a label other than REF2 10 found in the cited lines 10; REF2-tagged 1 found 1 (by script only)
+quotes, entry 4 (l. 288-646): tags 13; quotes with a label other than REF2 14 found in the cited lines 14; REF2-tagged 4 found 4 (by script only)
+quotes, entry 5 (l. 648-829): tags 14; quotes with a label other than REF2 12 found in the cited lines 12; REF2-tagged 8 found 8 (by script only)
+quotes, entry 6 (l. 831-881): tags 0; quotes with a label other than REF2 0 found in the cited lines 0; REF2-tagged 0 found 0 (by script only)
+quotes, entries 2-6 together: tags 48; quotes 73 = 55 + 18 (REF2); found 55 + 17
+REF2 source as the fixes file names it: claude/referee-2 33ff0e98 docs/referee-2/R2-P-N5-EXP.md lines 284 sha1 f63e227e31586d159fad57a6c3ea986cdf644343 (the fixes file writes 284 lines, sha1 f63e227e31586d159fad57a6c3ea986cdf644343: 1)
+untagged (entry 4.0, E-1 bullet): «that the run reaches» and «the run reaches s_(t+P_j−1)» in the fixes file 1, verbatim in packet l. 194-196: 1 (the lane's count 75 for entries 2-5 = this script's 73 + these 2)
+quotes control (first letter spoiled), entries 2-6 together: tags 48; quotes 73 = 55 + 18 (REF2); found 0 + 0

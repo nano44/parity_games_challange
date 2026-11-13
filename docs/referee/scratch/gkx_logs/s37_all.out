@@ -1,0 +1,24 @@
+all k 3 ctrl 0 L 6 triples 36 h1 5 h1only 2 windows 3 expected 3 notrec 0 full 3 pairs 12 viol 0
+all k 4 ctrl 0 L 14 triples 102 h1 12 h1only 5 windows 7 expected 7 notrec 0 full 7 pairs 40 viol 0
+all k 5 ctrl 0 L 30 triples 264 h1 27 h1only 12 windows 15 expected 15 notrec 0 full 15 pairs 112 viol 0
+all k 6 ctrl 0 L 62 triples 650 h1 58 h1only 27 windows 31 expected 31 notrec 0 full 31 pairs 288 viol 0
+all k 7 ctrl 0 L 126 triples 1548 h1 121 h1only 58 windows 63 expected 63 notrec 0 full 63 pairs 704 viol 0
+all k 8 ctrl 0 L 254 triples 3598 h1 248 h1only 121 windows 127 expected 127 notrec 0 full 127 pairs 1664 viol 0
+all k 9 ctrl 0 L 510 triples 8208 h1 503 h1only 248 windows 255 expected 255 notrec 0 full 255 pairs 3840 viol 0
+all k 10 ctrl 0 L 1022 triples 18450 h1 1014 h1only 503 windows 511 expected 511 notrec 0 full 511 pairs 8704 viol 0
+all k 11 ctrl 0 L 2046 triples 40980 h1 2037 h1only 1014 windows 1023 expected 1023 notrec 0 full 1023 pairs 19456 viol 0
+all k 12 ctrl 0 L 4094 triples 90134 h1 4084 h1only 2037 windows 2047 expected 2047 notrec 0 full 2047 pairs 43008 viol 0
+all k 13 ctrl 0 L 8190 triples 196632 h1 8179 h1only 4084 windows 4095 expected 4095 notrec 0 full 4095 pairs 94208 viol 0
+all k 5 ctrl 2 L 30 triples 264 h1 27 h1only 12 windows 15 expected 15 notrec 0 full 15 pairs 112 viol 89
+all k 6 ctrl 2 L 62 triples 650 h1 58 h1only 27 windows 31 expected 31 notrec 0 full 31 pairs 288 viol 241
+all k 3 ctrl frozen L 6 frozen_hyp_holds 5 frozen_conclusion_fails 2 at_1_1_2k-1 1 failset_is_expected 1 holds_minus_fails 3 recursion_windows 3
+all k 4 ctrl frozen L 14 frozen_hyp_holds 10 frozen_conclusion_fails 3 at_1_1_2k-1 1 failset_is_expected 1 holds_minus_fails 7 recursion_windows 7
+all k 5 ctrl frozen L 30 frozen_hyp_holds 19 frozen_conclusion_fails 4 at_1_1_2k-1 1 failset_is_expected 1 holds_minus_fails 15 recursion_windows 15
+all k 6 ctrl frozen L 62 frozen_hyp_holds 36 frozen_conclusion_fails 5 at_1_1_2k-1 1 failset_is_expected 1 holds_minus_fails 31 recursion_windows 31
+all k 7 ctrl frozen L 126 frozen_hyp_holds 69 frozen_conclusion_fails 6 at_1_1_2k-1 1 failset_is_expected 1 holds_minus_fails 63 recursion_windows 63
+all k 8 ctrl frozen L 254 frozen_hyp_holds 134 frozen_conclusion_fails 7 at_1_1_2k-1 1 failset_is_expected 1 holds_minus_fails 127 recursion_windows 127
+all k 9 ctrl frozen L 510 frozen_hyp_holds 263 frozen_conclusion_fails 8 at_1_1_2k-1 1 failset_is_expected 1 holds_minus_fails 255 recursion_windows 255
+all k 10 ctrl frozen L 1022 frozen_hyp_holds 520 frozen_conclusion_fails 9 at_1_1_2k-1 1 failset_is_expected 1 holds_minus_fails 511 recursion_windows 511
+all k 11 ctrl frozen L 2046 frozen_hyp_holds 1033 frozen_conclusion_fails 10 at_1_1_2k-1 1 failset_is_expected 1 holds_minus_fails 1023 recursion_windows 1023
+all k 12 ctrl frozen L 4094 frozen_hyp_holds 2058 frozen_conclusion_fails 11 at_1_1_2k-1 1 failset_is_expected 1 holds_minus_fails 2047 recursion_windows 2047
+all k 13 ctrl frozen L 8190 frozen_hyp_holds 4107 frozen_conclusion_fails 12 at_1_1_2k-1 1 failset_is_expected 1 holds_minus_fails 4095 recursion_windows 4095

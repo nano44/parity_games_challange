@@ -1,6 +1,24 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## STATE NOTE (successor 37), written 2026-11-13T19:15Z by date -u; not parked: stage 5b (line L-2, fixes entry 7) is next
+- DONE: handover check ba6489e6 (pushed 17:17Z, BEFORE the Lead's 17:15Z change of order reached me: its messages queued behind
+  my turn until 19:04Z; successor 36 merged it, head 78515253). STAGE 5a = R-P-N5-EXP.md §13 (see the commit of this note): fixes
+  entries 2, 3, 5 word by word, the PROOF of Corollary EXP-N5′, entry 6 (l-red-b 0c8fdf9e, k = 13 DATA, one engine): all right;
+  «P-N5-EXP: SIGNED with fixes entries 1-6»; notes N-5a (tag [Q REF2 l. 248-249] should read l. 247-249), N-5b, N-5c, N-5d.
+- Stage 4 (§12) is successor 36's. My own stage-4 draft (done before the change of order reached me) was NOT committed; its
+  entry-4 tests are §13.6 (supplementary). Draft kept only in the session scratchpad (lost with the session).
+- Tools of §13 (docs/referee/scratch/): gkx5_quotes.py (default: objects + quotes per entry, REF2 by script only; --spoil; --pins;
+  --facts; --lanecmp), gkx5.py (all / exh / arb: LEMMA′ at every triple, exhaustive states), gkx5_summ.py (blocks for gkx_fill.py,
+  placeholders @@S5:NAME@@), gkx_report_stage5.md (its stamp is FROZEN in the file), gkx_logs/s37_run.sh (about 4 min, resumable).
+  For a stage 6: add gkx_report_stage6.md to gkx_fill.py's list; after the fill `head -n 784 | sha1sum` must be d5017ab5….
+- NEXT: (1) STAGE 5b when the Lead sends L-RED-B 7's commit: line L-2 byte tests (one line, no pipe, balanced brackets), L-2
+  clause by clause against §13.0's table (unconditional / conditional on R117, R124 as landed / DATA; the L41 tail; R117's
+  premises against R117's title line, RESULTS l. 13362), entry 7. (2) if asked: agreement note with REFEREE-2; K-1 / K-2.
+- Things only I know (s37): docs/referee-2/ is still NOT read by me (only script counts and line numbers against 33ff0e98's
+  R2-P-N5-EXP.md); git pathspecs in a script are relative to the cwd (run git with cwd = toplevel); the Lead's messages can sit
+  unread for 100 minutes when a turn dies on the 5-hour limit: ReadNotifications first after every restart.
+
 ## HANDOVER NOTE (successor 36), written 2026-11-13T16:28Z by date -u; parking near the 450k context line after both first reviews and stages 2, 3
 - DONE (all on origin; `git ls-remote origin claude/referee` = 7ca9c2b4 after the last push; every push VERIFY PASS with the
   experiment self-checks PASS, Lean / Oink NOT RUN as usual):
@@ -2118,6 +2136,7 @@ Local branch was stale at start (5ed56c5, 1947 behind): fetch, then check HEAD =
   Lesson: multiply out every constant I tick.
 
 ## Sources opened (append)
+- s37 (2026-11-13, stage 5a of R-P-N5-EXP.md): fleet sources opened: trunk aeb90ac1 docs/RESULTS.md (sha1 eecbd798…) R117 title line l. 13362, item (f) l. 13445 / l. 13475, R124 title line l. 15371 (EXACT-L, ENDGAME-3-N5, premises), R57 (b) l. 2893, 2914-2916; claude/l-red-b 0c8fdf9e docs/red-b/P-N5-EXP-fixes.md (881 lines, sha1 43a941eb…) and experiments/red-b/b6n5ck.py; claude/l-new 44775605 docs/new/P-N5-KEY1P.md §1-§3, §9; claude/l-comp dc6d831f experiments/comp/box48/README.md; claude/l-red c7ed9b8b docs/red/R245-kill-Gk.md (the last two only for the numbers entry 5.8 repeats). No external literature opened.
 - (successor 36, 2026-11-13T14:56Z by date -u) No external source opened. Repository premises read: docs/red/P-N5-REALIZE.md at trunk 5d7aab0f (sha1
   067f06b6…) §1, §2, §3.1; docs/RESULTS.md at trunk 6eaf4604: R117 l. 13362-13470, R124 l. 15371, R57 l. 2893-2916, R104 l. 9864, R105 l.
   10155, R102 title; docs/DECISIONS.md L43; docs/new/N5-ssi-global.md headings (SPEC S1-S5, FIX 1-4); the frozen packets P-N5-EXP

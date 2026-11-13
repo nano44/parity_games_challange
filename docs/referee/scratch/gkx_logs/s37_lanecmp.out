@@ -1,0 +1,5 @@
+lanecmp prefix_all.out (k 3..12): triples, windows, expected, steps = pairs, aviol = viol, h1only − mine = 2(k − 1): compared 60 different 0
+lanecmp prefix_run.out (its k 3..14, mine up to 13): windows, pairs: compared 22 different 0
+lanecmp prefix_ctrl.out, the lemma as frozen (its control 5, 6 lines) and the exchanged list (its G_5 run ctrl 2): hyp_holds, conclusion_fails, the fail set, psched = viol: compared 25 different 0
+lanecmp prefix_exh.out (k 3, 4) and its exh controls 2, 3 (k 4): 14 columns each: compared 56 different 0
+lanecmp total: compared 163 different 0

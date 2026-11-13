@@ -1,0 +1,5 @@
+pins: sha1 values written in entries 2-6 (the second referee's file excepted): 20; not in the fixes file 0; different from the git object 0
+pins: SHA1SUMS_b6b_fixes2 at 0c8fdf9e: files 13; sha1 mismatches 0
+pins: SHA1SUMS_b6b_fixes3 at 0c8fdf9e: files 6; sha1 mismatches 0
+pins: fenced DATA lines / of them not a line of a pinned output file: entry 4 79 / 0; entry 5 30 / 0; entry 6 11 / 0
+arith: entry 2 (a′) N + M = 27k − 48; (c) n + m = 311k − 530; (d) 2^12 + 1 = 4,097, n(12) = 1,390, n + m = 3,202, n² = 1,932,100, 2^k + 1 > n first at k = 11 (2,049 > 1,255), > n + m first at k = 12, 2^k − 1 > n² first at k = 23 (n = 2,875; 8,388,607); entry 5.1 2(k − 3) + 2(k − 4) = 4k − 14; entry 6 n(13) = 1,525, m = 1,988, n + m = 3,513 < 8,193 = 2^13 + 1 < n² = 2,325,625, 2^13 − 2 = 8,190: checks 23 failed 0
