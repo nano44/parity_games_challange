@@ -9,7 +9,9 @@
 set -u
 HERE="$(cd "$(dirname "$0")" && pwd)"
 ROOT="$1"; STAGE="$2"; KMAX="${3:-10}"
+mkdir -p "$ROOT"; ROOT="$(cd "$ROOT" && pwd)"   # absolute: the gen stage changes directory (P-N5-EXP-fixes entry 1, par. 10 erratum)
 mkdir -p "$ROOT/out" "$ROOT/G" "$ROOT/raw" "$ROOT/norm" "$ROOT/pg"
+fail=0; set -E; trap 'fail=1' ERR              # a failing command of a stage is counted and makes the exit code 1
 has() { [ -f "$1" ] && grep -q "^$2 " "$1"; }
 
 gen() {
@@ -70,4 +72,5 @@ case "$STAGE" in
   ctrl) ctrl ;; size) size ;; fit) fit ;;
   all) gen; member; sim; lemma; one217; ablate; bilad; ctrl; n5; size; fit ;;
 esac
-echo "run_b6b $STAGE KMAX $KMAX done $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+echo "run_b6b $STAGE KMAX $KMAX done $(date -u +%Y-%m-%dT%H:%M:%SZ) failures $fail"
+exit $fail

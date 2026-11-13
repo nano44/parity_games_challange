@@ -1,0 +1,12 @@
+G_4 mode spec ctrl 0 N 20 M 40 n 310 T1p 14 F 14 mism 0 its 17 fb 1 wrong 0 nonmover 0 badstrat 0 its2 17 fb2 1 wrong2 0 engdiff 0 gdiff 0 pg_sha1 4a2e89c57ec82362c128074c8be3344fb3c0da61 secs1 0.1 secs2 0.2
+G_6 mode spec ctrl 0 N 38 M 76 n 580 T1p 62 F 62 mism 0 its 65 fb 1 wrong 0 nonmover 0 badstrat 0 its2 65 fb2 1 wrong2 0 engdiff 0 gdiff 0 pg_sha1 b9fea1092df47c2abfefef85bf18511346da7d71 secs1 1.6 secs2 2.7
+G_8 mode spec ctrl 0 N 56 M 112 n 850 T1p 254 F 254 mism 0 its 257 fb 1 wrong 0 nonmover 0 badstrat 0 its2 257 fb2 1 wrong2 0 engdiff 0 gdiff 0 pg_sha1 924239d911a4c32a32397a7ed5ab2efdacf02fee secs1 14.0 secs2 23.7
+G_4 mode xi ctrl 0 N 20 M 40 n 310 T1p 14 F 4 mism 1 its 7 fb 1 wrong 0 nonmover 0 badstrat 0 its2 17 fb2 1 wrong2 0 engdiff 1 gdiff 0 pg_sha1 4a2e89c57ec82362c128074c8be3344fb3c0da61 secs1 0.1 secs2 0.2
+G_6 mode xi ctrl 0 N 38 M 76 n 580 T1p 62 F 4 mism 1 its 7 fb 1 wrong 0 nonmover 0 badstrat 0 its2 65 fb2 1 wrong2 0 engdiff 1 gdiff 0 pg_sha1 b9fea1092df47c2abfefef85bf18511346da7d71 secs1 0.2 secs2 2.7
+G_8 mode xi ctrl 0 N 56 M 112 n 850 T1p 254 F 4 mism 1 its 7 fb 1 wrong 0 nonmover 0 badstrat 0 its2 257 fb2 1 wrong2 0 engdiff 1 gdiff 0 pg_sha1 924239d911a4c32a32397a7ed5ab2efdacf02fee secs1 0.5 secs2 23.5
+G_4 mode idx ctrl 0 N 20 M 40 n 310 T1p 14 F 4 mism 1 its 7 fb 1 wrong 0 nonmover 0 badstrat 0 its2 17 fb2 1 wrong2 0 engdiff 1 gdiff 0 pg_sha1 4a2e89c57ec82362c128074c8be3344fb3c0da61 secs1 0.1 secs2 0.3
+G_6 mode idx ctrl 0 N 38 M 76 n 580 T1p 62 F 4 mism 1 its 7 fb 1 wrong 0 nonmover 0 badstrat 0 its2 65 fb2 1 wrong2 0 engdiff 1 gdiff 0 pg_sha1 b9fea1092df47c2abfefef85bf18511346da7d71 secs1 0.2 secs2 3.1
+G_8 mode idx ctrl 0 N 56 M 112 n 850 T1p 254 F 4 mism 1 its 7 fb 1 wrong 0 nonmover 0 badstrat 0 its2 257 fb2 1 wrong2 0 engdiff 1 gdiff 0 pg_sha1 924239d911a4c32a32397a7ed5ab2efdacf02fee secs1 0.4 secs2 23.4
+G_4 mode seq ctrl 0 N 20 M 40 n 310 T1p 14 F 25 mism 1 its 65 fb 1 wrong 0 nonmover 0 badstrat 0 its2 17 fb2 1 wrong2 0 engdiff 1 gdiff 0 pg_sha1 4a2e89c57ec82362c128074c8be3344fb3c0da61 secs1 0.3 secs2 0.2
+G_6 mode seq ctrl 0 N 38 M 76 n 580 T1p 62 F 73 mism 1 its 154 fb 1 wrong 0 nonmover 0 badstrat 0 its2 65 fb2 1 wrong2 0 engdiff 1 gdiff 0 pg_sha1 b9fea1092df47c2abfefef85bf18511346da7d71 secs1 2.7 secs2 2.7
+G_8 mode seq ctrl 0 N 56 M 112 n 850 T1p 254 F 118 mism 1 its 235 fb 1 wrong 0 nonmover 0 badstrat 0 its2 257 fb2 1 wrong2 0 engdiff 1 gdiff 0 pg_sha1 924239d911a4c32a32397a7ed5ab2efdacf02fee secs1 8.0 secs2 22.8

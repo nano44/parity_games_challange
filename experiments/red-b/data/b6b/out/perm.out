@@ -1,0 +1,6 @@
+G_4 ctrl 0 perms 3000 seed 13 base 14 keep 0 brokeT 1214 broken_minT 3 broken_maxT 14 listed_comparisons 15
+G_5 ctrl 0 perms 2000 seed 11 base 30 keep 0 brokeT 716 broken_minT 3 broken_maxT 30 listed_comparisons 21
+G_6 ctrl 0 perms 1000 seed 12 base 62 keep 0 brokeT 378 broken_minT 3 broken_maxT 62 listed_comparisons 27
+G_7 ctrl 0 perms 600 seed 15 base 126 keep 0 brokeT 214 broken_minT 3 broken_maxT 126 listed_comparisons 33
+G_8 ctrl 0 perms 300 seed 14 base 254 keep 0 brokeT 117 broken_minT 3 broken_maxT 254 listed_comparisons 39
+G_9 ctrl 0 perms 150 seed 16 base 510 keep 0 brokeT 60 broken_minT 3 broken_maxT 510 listed_comparisons 45

@@ -15,12 +15,16 @@ Per genome, one line:
   mism    1 if N5's mover states s_0..s_F are not the key run's states         (must be 0)
   its, fb N5 iterations to its stop, number of fallbacks (engine 1)
   wrong   #vertices whose winner (engine 1's SPEC S5 output) differs from harness Zielonka   (must be 0)
+  badstrat #complaints of the harness strategy verifier (experiments/harness/verify.py check) about engine 1's positional
+          strategies at its stop, as TARGET.md par. 5 (D2 change 5) requires                 (must be 0)
   nonmover #transitions before the first fallback at which a non-mover Even vertex or tau changes   (must be 0)
   its2, fb2, wrong2  engine 2's iterations, fallbacks, and #vertices whose winner in its .sol differs from Zielonka (must be 0)
   engdiff 1 if (its, fb) != (its2, fb2)                                          (must be 0)
   gdiff   see above                                                             (must be 0)
 Controls: B6N5_CTRL=1 compares N5's states with the HOWARD run of the model (mism must fire);
-          B6N5_CTRL=2 flips the Zielonka answer at vertex 0 (wrong and wrong2 must fire);
+          B6N5_CTRL=2 flips the Zielonka answer at vertex 0 (wrong and wrong2 must fire); B6N5_CTRL=3 drops the strategy at one vertex of the winner's own region
+          (badstrat must fire; note: sending ONE choice to another successor is NOT a reliable control here, since on these games
+          most alternatives are winning too: on Gamma3(G_4) only 4 of the 94 single-edge changes are detected);
           B6N5_MODE=xi runs engine 1 as N5'-xi (not N5): engdiff must fire where the two rules differ.
 Usage: b6n5.py LNEW TRUNK PGDIR G.json ...   (LNEW, TRUNK: trees holding claude/l-new's and trunk's experiments/)"""
 import sys, os, json, time, hashlib, subprocess, re, tempfile
@@ -30,7 +34,7 @@ sys.path[:0] = [os.path.join(LNEW, p) for p in ("experiments/new/box195", "exper
                                                "experiments/new/box21", "experiments/new", "experiments/si", "experiments/harness")]
 sys.path[:0] = [HERE, os.path.abspath(os.path.join(HERE, "..", "..", ".."))]      # this lane's eng.py / eng3.py
 os.environ.setdefault("EG195_ROOT", LNEW)
-import gamma3, eg195, n5v, n5x, zielonka, pg
+import gamma3, eg195, n5v, n5x, zielonka, pg, verify
 import onep, eng3
 MODE = os.environ.get("B6N5_MODE", "spec")
 CTRL = os.environ.get("B6N5_CTRL", "0")
@@ -90,11 +94,15 @@ for fn in sys.argv[4:]:
     t1 = time.time()
     R = onep.OneP(G).run("howard" if CTRL == "1" else "key")
     mism = int([tuple(s) for s in S] != [tuple(s) for s in R])
-    win, _ = n5v.solution(g, states, E)
+    win, strat = n5v.solution(g, states, E)
     zwin = list(zielonka.solve(g))
     if CTRL == "2":
         zwin[0] = 1 - zwin[0]
     wrong = sum(1 for v in range(g.n) if win[v] != zwin[v])
+    if CTRL == "3":                      # control: drop the strategy at one vertex of the winner's own region
+        strat = list(strat)
+        strat[next(v for v in range(g.n) if strat[v] is not None)] = None
+    badstrat = len(verify.check(g, win, strat))
     with tempfile.TemporaryDirectory() as td:
         sol = os.path.join(td, "out.sol")
         r = subprocess.run([sys.executable, N5B, pgf, sol, "--mode", "spec"], capture_output=True, text=True)
@@ -111,4 +119,4 @@ for fn in sys.argv[4:]:
     t2 = time.time()
     engdiff = int((its, fb) != (its2, fb2))
     print(f"{name} mode {MODE} ctrl {CTRL} N {G['N']} M {sum(len(o) for o in G['opts'])} n {g.n} T1p {len(R) - 1} F {F} mism {mism} its {its} fb {fb} wrong {wrong} "
-          f"nonmover {nonmover} its2 {its2} fb2 {fb2} wrong2 {wrong2} engdiff {engdiff} gdiff {gdiff} pg_sha1 {sha} secs1 {t1 - t0:.1f} secs2 {t2 - t1:.1f}", flush=True)
+          f"nonmover {nonmover} badstrat {badstrat} its2 {its2} fb2 {fb2} wrong2 {wrong2} engdiff {engdiff} gdiff {gdiff} pg_sha1 {sha} secs1 {t1 - t0:.1f} secs2 {t2 - t1:.1f}", flush=True)

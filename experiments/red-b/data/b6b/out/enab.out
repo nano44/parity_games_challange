@@ -1,0 +1,10 @@
+G_3 ctrl 0 states 7 venab 0 kenab 0 movd 0 T 6
+G_4 ctrl 0 states 15 venab 0 kenab 0 movd 0 T 14
+G_5 ctrl 0 states 31 venab 0 kenab 0 movd 0 T 30
+G_6 ctrl 0 states 63 venab 0 kenab 0 movd 0 T 62
+G_7 ctrl 0 states 127 venab 0 kenab 0 movd 0 T 126
+G_8 ctrl 0 states 255 venab 0 kenab 0 movd 0 T 254
+G_9 ctrl 0 states 511 venab 0 kenab 0 movd 0 T 510
+G_10 ctrl 0 states 1023 venab 0 kenab 0 movd 0 T 1022
+G_11 ctrl 0 states 2047 venab 0 kenab 0 movd 0 T 2046
+G_12 ctrl 0 states 4095 venab 0 kenab 0 movd 0 T 4094

@@ -29,5 +29,11 @@ lc=$(B6L_CTRL=1 python3 b6lemma.py 5 | tail -n 1); case "$lc" in *" sched 0 "*) 
 m6=$(python3 b6member.py data/b6b/G/G_6.json | tail -n 1); case "$m6" in *"member 1 viol 0 "*) ;; *) echo "red-b: b6member G_6 FAILED: $m6"; fail=1;; esac
 mc=$(python3 b6member.py --ctrl 8 data/b6b/G/G_6.json | tail -n 1); case "$mc" in *"member 0 "*) ;; *) echo "red-b: b6member control did not fire: $mc"; fail=1;; esac
 if [ -f data/b6b/SHA1SUMS_b6b ]; then (cd data/b6b && sha1sum -c --quiet SHA1SUMS_b6b) || { echo "red-b: data/b6b SHA1SUMS mismatch"; fail=1; }; fi
+# P-N5-EXP fixes entry 1: the enabling predicates and the numbering check, with their controls (0.3 s), and the entry's pins
+e6=$(python3 b6enab.py 6 | tail -n 1); case "$e6" in *"venab 0 kenab 0 movd 0 T 62") ;; *) echo "red-b: b6enab 6 FAILED: $e6"; fail=1;; esac
+ec=$(B6E_CTRL=2 python3 b6enab.py 5 | tail -n 1); case "$ec" in *" kenab 0 "*) echo "red-b: b6enab control did not fire"; fail=1;; esac
+p5=$(python3 b6perm.py 5 40 7 | tail -n 1); case "$p5" in *" keep 0 "*) ;; *) echo "red-b: b6perm 5 FAILED: $p5"; fail=1;; esac
+pc=$(B6P_CTRL=1 python3 b6perm.py 5 40 7 | tail -n 1); case "$pc" in *" keep 0 "*) echo "red-b: b6perm control did not fire"; fail=1;; esac
+if [ -f data/b6b/SHA1SUMS_b6b_fixes1 ]; then (cd data/b6b && sha1sum -c --quiet SHA1SUMS_b6b_fixes1) || { echo "red-b: data/b6b fixes1 SHA1SUMS mismatch"; fail=1; }; fi
 [ $fail -eq 0 ] && echo "red-b check PASS" || echo "red-b check FAILED"
 exit $fail
