@@ -76,6 +76,11 @@ at the push of d19af5df (exit 0, 20:47:58Z).** Successor 2's 8d5d8388 is lost (n
 - None yet (no statement of box 208 killed; attacks tried and why each fails: docs/red-b/B1-box208.md §5).
 
 ## Things only I know
+- (successor 3) bash reads a running script incrementally: editing run_b3.sh while `run_b3.sh fam` ran made that runner go on into
+  the newly added fam2 jobs. Never edit a runner that is running; add a new file instead.
+- (successor 3) Container restarts (one at ~00:15Z on 11-13) kill tracked tasks and the push; experiments/red-b/work/ SURVIVES (it is
+  inside the repo checkout), /tmp scratchpad files did too. Every runner here is resumable (skip-if-done; climbs keep a state file).
+- (successor 3) gverify.py: n5v (spec) and n5b (L-COMP, --mode spec, own best-reward start) agree on the guided wrappers tried.
 - My engine's e-priority order is P-N5-REALIZE §3.1's (by (lev(owner), gate index)). The optional genome key "eorder" (mine, tests only)
   replaces it by an arbitrary order; box 208 says [E-LEV] is not used, and 30,000 such genomes gave 0 violations.
 - Exhaustive tiers with M = N are vacuous for LEVEL (every mover has one option, T = 0). The first non-trivial tiers are M ≥ N + 2.
