@@ -1,0 +1,13 @@
+LW-1 old count 1
+  stage sha1 be7da8f3a98e4c5a26158eae9aa2766c56531222
+R-1 old count 1
+  stage sha1 3408d78773e071eb5229e57e8f114b9f0b931763
+R-2 old in current line: 0
+R-2 (adapted to LW-1's clause) old count 1
+  stage sha1 ad219782e561edfdaf823c67ad5fe3c8c14c7be5
+LW-2 old count 1
+  stage sha1 11590acfdd2197470e24c6fe096faa6a37986a23
+LW-3 old count 1
+  stage sha1 dbd5f0e83e3d0300842c46cf2ae24b30b853d784
+L-2 sha1 dbd5f0e83e3d0300842c46cf2ae24b30b853d784 3598 B; newlines 1 parens 44 44
+EQUAL

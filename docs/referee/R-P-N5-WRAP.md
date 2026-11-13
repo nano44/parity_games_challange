@@ -215,3 +215,32 @@ REFEREE successor 34 (D1; the Lead's item D, 22:02Z). Date -u at writing: 2026-1
 - **Line L-1 (sha1 896f9e97…): does NOT match yet.** Required: LW-1 (L43: the DATA clause gives T_n as numbers with unit, column and
   files; C142 E-1's ruling); my result on L-1: sha1 be7da8f3a98e4c5a26158eae9aa2766c56531222. Optional LW-2, LW-3 (the Lead's call). No
   statement, label or proof changes: a fixes entry with L-2 by script needs a byte test, not a re-sign.
+
+## §8. Fixes entry 1 and line L-2 (REFEREE successor 34; date -u at writing 2026-11-13T01:28Z; the Lead's 01:27Z byte test)
+- Objects (git): claude/l-si faf0c8ff87aad0bda8441f3b9b3f7f53e8775755 (an ancestor of origin/claude/l-si, checked);
+  docs/si/P-N5-WRAP-line-L2.txt sha1 dbd5f0e83e3d0300842c46cf2ae24b30b853d784, 3,598 B; docs/si/P-N5-WRAP-fixes.md sha1
+  9fff274d4e527c42b64f47ded6b3f2627a344c32 (entry 1, line-only); the lane's check stage experiments/si/pwrap/fix1/mkL2.out prints «L-1 +
+  LW-1 sha1 be7da8f3… REFEREE 34's be7da8f3…: True».
+- Byte test (scratch/pwrap_l2test.py; log pwrap_logs/l2test.out): L-1 (896f9e97, asserted) + my LW-1 (the strings of my
+  pwrap_l1fix.py) gives **be7da8f3a98e4c5a26158eae9aa2766c56531222** = my §5 L-1′; then REFEREE-2's R-1, parsed by my script from
+  R2-P-N5-WRAP.md at claude/referee-2 07fd5ae4 §3.7 (old once; stage 3408d787…); R-2's old string no longer occurs (count 0: LW-1 rewrote
+  that clause), so, as fixes entry 1 item 3 says, «18 counters 0 on 523,721 runs);» (once) → R-2's REFEREE-33 part «its 18 must-be-0
+  counters, named in its report, 0 on 523,721 runs» + «); » + R-2's sentence on WRAP's six counters + «;» (stage ad219782…); then LW-2
+  «(33 … 2,489 iterations = Howard T + 3)» → «(33 … 2,489 iterations = Howard T + 3; experiments/si/box104/out/wrap_fried_xi.out,
+  wrap_long.out, free_xi.out)» (stage 11590acf…) and LW-3 «an Even valve with an exit to R117's core» → «an Even valve with an exit to
+  the core K0-K3 (with pads pA, s, q, r)». Result: sha1 **dbd5f0e83e3d0300842c46cf2ae24b30b853d784**, 3,598 B, one line, 44 «(» = 44
+  «)»; `cmp` with the lane's L-2: **EQUAL**. Nothing else changed.
+- Meaning:
+  - The Lead's flag (R-2 on LW-1's clause): the L-2 DATA clause keeps every element of LW-1, each found once by my script: the unit
+    («unit: T_n, … = N5′-xi iterations − 3 on W^L_n»), the files and column («wrap_lmcs_xi.out and wrap_long.out, column T»), the six
+    counters 0 on the same rows, the numbers 8 … 2,294 for n = 1..8 and 4,598, 9,206 for n = 9, 10, s33's file and column, and the
+    «independent replays … cited, not re-run» list with L-COMP 20 and REFEREE 33. R-2's addition names REFEREE 33's counters by reference
+    («named in its report») and adds WRAP's six counters on §9's sets; those sets are §9's (4,000 = seeds 1043 + 1044 for N5′-xi, 3,000
+    for N5, the frozen 300, W(G^L_n, ι) and W(switchallexp_n) for n ≤ 8), as I read §9 in my first review. Correct. Note N-W2 (no change
+    asked): the R-2 sentence follows the cited-replays list after a semicolon; it is the lane's own §9 DATA, not a cited replay.
+  - R-1: «G_n (Figure 4's injective priorities, the READING below) from ι» in the NT clause: right; NT-RUN is stated for G^L_n, and
+    Table 4's G_n is not injective (my §1.3).
+  - LW-2, LW-3: my points, in the form fixes entry 1 records (the three file names are mine; «with pads pA, s, q, r» is mine).
+- Fixes entry 1: line-only; records both referees' SIGN, the Lead's rulings, and my note N-1 verbatim. CORRECT.
+- Verdict: **Line L-2 MATCHES** (L-1 + exactly LW-1, R-1, R-2 as applied to LW-1's clause, LW-2, LW-3; sha1 dbd5f0e8…). Statements and
+  labels as in §0: every statement SIGN; XI-EXP CONDITIONAL as signed.
