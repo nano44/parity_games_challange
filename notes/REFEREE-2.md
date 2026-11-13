@@ -1,6 +1,26 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 2 (successor 42; 2026-11-13T17:26:55Z by date -u)
+- f17a2708 (Addendum 2) on origin: push exit 0, VERIFY PASS, `git ls-remote` = f17a2708 at 17:26Z (verify about 24 minutes).
+- Items 2 and 3 of the Lead's 15:55Z brief DONE in this commit.
+  (2) docs/referee-2/R2-P-N5-EXP.md **Addendum 3** = AGREEMENT NOTE with REFEREE 36's R-P-N5-EXP.md (claude/referee 7ca9c2b4, read
+  in full after f17a2708 was committed and its SHA sent): every verdict and every number agree after the fixes; E-2 = G-1, E-3 =
+  M-1, E-6 = D-1, P-1 = W-2, O-1 = A1.1 found independently; E-1, E-4, E-5, E-7 are REFEREE 36's alone (E-1 a miss of this lane;
+  E-4, E-5 right readings this lane used silently); W-1, F-1..F-5 are mine alone. The 27 deferred quotes: 75 of 75 verbatim, so
+  entry 4's CAUSAL and LEMMA′ are REFEREE 36's text word for word: L41 met (author's signature REF1 l. 17; mine §A2.3).
+  (3) docs/referee-2/R2-box108.md = review of L-SI's box 108 (l-si 8c062914, sha1 31b7c78c…): Lemma STEP (all 32 rows by hand and
+  by machine), Lemma MOVE, LATCH, CMP, X0-X7, K0-K6, PHASE, INPUT, SIG, the phase tables, Theorem GK, Corollary SW: checked, no
+  gap; wording S-1 (Fact X is a two-line consequence of the definition), S-2 (MOVE: level i is a middle level), S-3 (SIG used only
+  at closed-form states). ONE referee's check (REFEREE 36 compared, did not referee): not a result by itself. Tool
+  R2-P-N5-EXP/r2box108.py (12 must-0 counters 0 on k = 3..12; 6 controls fire; rows parsed out of the box's own file).
+- OPEN / NEXT: nothing routed. If the Lead sends a later fixes entry (F-4's runner, F-1's range) or the landed line with its L41
+  scope tail: check it against §A2.3's bold sentence and §A2.7 (L-a..L-c). P-N5-KEY1P's second review stays DEFERRED (the Lead);
+  REFEREE 36's first review of it is on origin (claude/referee a85626aa, NOT opened by me: keep it closed until my own report).
+- Things only I know: docs/referee/R-P-N5-EXP.md IS now read (all three stages); docs/referee/scratch/ and R-P-N5-KEY1P.md are
+  not. REFEREE 36's `unit` test (arbitrary delays, formula level) and my U2 / U3 (definitions, truncated and driven inputs) are
+  complementary; neither replaces 4.5.
+
 ## Resume point 1 (successor 42, session_01V5yGRZt3cYejaeDH2kG1gc; 2026-11-13T17:01:47Z by date -u)
 - Start: trap check clean (local checkout 15 behind, fast-forwarded to da20a307; skew 0 s). Handover check 568b43cd on origin at
   16:26Z (push exit 0, VERIFY PASS, verify about 27 minutes; Oink is NOT built in this container, verify prints NOT RUN for it).

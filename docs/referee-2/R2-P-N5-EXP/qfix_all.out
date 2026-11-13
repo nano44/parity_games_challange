@@ -1,0 +1,77 @@
+REF2 FOUND «That sentence is Corollary EXP-N5, which is proved THROUGH R117's Theo»
+REF2 FOUND «So the sentence is PROVED-CONDITIONAL on R117 as landed, like every li»
+REF2 FOUND «UNCONDITIONAL (mathematics about R104's DEFINITIONS, no theorem used):»
+REF2 FOUND «PROVED-CONDITIONAL on RESULTS R117 as landed: Corollary EXP-N5's itera»
+PRE FOUND «So «N5 from S3 makes at least 2^k − 1 iterations on Γ3(G_k) for every »
+REF1 FOUND «the Corollary (l. 54-60), the title (l. 1) and the dead-end paragraph »
+REF1 FOUND «So: Corollary EXP-N5 and «FALSE» are CONDITIONAL on R117's premises; f»
+REF1 FOUND «the DATA covers k = 3..11; for every k the sentence is landed R57 (b) »
+R104P FOUND «Let IDEAL-ACYC-POLY mean: there is a polynomial q such that L(G) ≤ q(N»
+KEY1P FOUND «There is a polynomial p with T_key(G) ≤ p(N + M) for every genome G wi»
+KEY1P FOUND «There is a polynomial q with sw(x) ≤ q(N + M) for every genome G with »
+R117 FOUND «with R104's premises as landed (1E-N3 = RESULTS R57 (b) in its two for»
+R117 FOUND «R104's three premises as landed, in R104's forms: [1E-N3]»
+R117 FOUND «forms P1 (σ̄, τ̄ pointwise optima) and P2 (S4a's σ_new a pointwise opt»
+R117 FOUND «[VJ-LOC] (R104 l. 10011-10012, R36 (c) Lemma P1 on the dual game»
+R117 FOUND «[TERM] RESULTS R15 (d)»
+R117 FOUND «Premises [1E-N3], [RULE], [VJ-LOC] as landed in R104: the correctness »
+R117 FOUND «for every G with an ACYCLIC Ξ-graph»
+FROZEN FOUND «The claim "N5 (SPEC S1-S5, default start S3) runs in polynomial time" »
+FROZEN FOUND «N5 therefore cannot pass gauntlet step 4 (no running-time proof can ex»
+REF2 FOUND «They are far below every explicit polynomial bound (2^k − 1 < n² until»
+FROZEN FOUND «N5 is CORRECT on these games (DATA §9.4: every winner equals Zielonka'»
+R57 FOUND «N5's output at its stop is correct on EVERY parity game (Lemma OUT-G)»
+R57 FOUND «In particular, on every game N5 stops (R15 (d)) and SPEC S5's output t»
+REF1 FOUND «The packet does not need it (the lower bound kills). O-1 (optional fix»
+LNEW FOUND «N5 makes exactly T_key + 3 = 2^k + 1 iterations with one fallback, at »
+R124 FOUND «PROVED for G ∈ IDEAL-ACYC»
+R124 FOUND «N5 (SPEC S1-S5 with its FIX 1-4 tie-breaks) from S3 on Γ3(G) makes exa»
+R124 FOUND «N5′-xi, and N5, from S3 on Γ3(G) have exactly one fallback, at an iter»
+R124 FOUND «premise RESULTS R117 (f); it uses SPEC's S1 tie-breaks, through REACH3»
+R124 FOUND «premises, all under the standing SPEC premise 1E-N3 of RESULTS R57 / R»
+R124 FOUND «iterations counted as in SPEC S4»
+R124 FOUND «so on {Γ3(G) : G ∈ IDEAL-ACYC} N5's iteration count is polynomial in n»
+R124 FOUND «it bounds none of F, T3, L(G) (OPEN)»
+REF2 FOUND «the first fallback is transition 2^k − 1 (as REACH3 says: L(G) + 1), N»
+REF2 FOUND «Case (ii) applies the lemma to unit j + 1 before the hypothesis (H2) o»
+REF2 FOUND «So the lemma, as stated with (H2) on the whole window, cannot be used »
+REF1 FOUND «If the run has stopped at s_(t−1), (H2) is vacuous and the conclusion »
+REF1 FOUND «The lemma means the key input of the STEP, i.e. C_(j−1) under the s′ t»
+REF1 FOUND «At the point where it is used, that hypothesis is not yet known»
+REF1 FOUND «As a black box the lemma cannot be applied before its hypothesis holds»
+REF1 FOUND «K1's C_0(s) = s(v_0) and V1's E_0(s) = s(v_0), and with them every C_j»
+REF1 FOUND «Fix: «every wire and u_0 at option 0» (the wire part is needed only fo»
+REF1 FOUND «Read under one state it is false: under s_0 unit 1 is at rest 0 with i»
+REF1 FOUND «Correct form: «if unit i is at rest b under s, E_(i−1)(s) = b and C_(i»
+FROZEN FOUND «provided its input stays (1, 1), which we check along the way»
+FROZEN FOUND «that the run reaches»
+FROZEN FOUND «the run reaches s_(t+P_j−1)»
+REF1 FOUND «Standing: states with every wire and u_0 at option 0 (E-4). For such a»
+REF1 FOUND «For 1 ≤ j ≤ k − 1 the restriction of s⁺ to U_j is a function of three »
+REF2 FOUND «(K-loc) no observer is a W-target, so a key depends only on the option»
+REF1 FOUND «Let 1 ≤ j ≤ k − 1, a ∈ {0, 1}, c := 1 − a, t ≥ 1, last := t + P_j − 1 »
+REF2 FOUND «PREFIX FORM. Let j, a, c, t, F, B, F′, B′ be as in the packet, last :=»
+FROZEN FOUND «which we check along the way»
+REF1 FOUND «random states with wires at 0 and u_0 FREE: K1 980 / 8,000, V1 731 / 8»
+REF2 FOUND «The br key is NOT injective for k ≥ 4: every wv_j has the pairs (−(2k »
+REF2 FOUND «Fix: add «ties broken by β-id» to §3 and to c6.»
+REF1 FOUND «is not a bijection for k ≥ 4: the options (wv_j, 0), 1 ≤ j ≤ k − 2, al»
+REF1 FOUND «The Theorem names gk.py build(k), so G_k is well defined; the TEXT of »
+REF2 FOUND «the run with the br ties broken by DECREASING β-id ≠ the run (M-1) | 0»
+REF2 FOUND «tied br keys per k = 0, 2, 6, 10, …, 42 (= 4k − 14 for k ≥ 4)»
+REF2 FOUND «§6 never says that «step t» is the IDEAL step s_(t−1) → s_t; (H1), (H2»
+REF2 FOUND «§9.7 is the unfilled placeholder `QUOTESUMMARY` (l. 530).»
+REF1 FOUND «The four untagged citations are verbatim in the sources named; «differ»
+REF1 FOUND «§9.7 is the literal placeholder `QUOTESUMMARY`.»
+PRE FOUND «my rebuild has 9 movers on a level for every k ≥ 6 (levels 4..k − 2: u»
+FROZEN FOUND «its levels have up to 9 movers»
+FROZEN FOUND «up to 8 movers on a level»
+PRE FOUND «The genome «as generated» (gate = 100·level + eps) is NOT in R104's cl»
+PRE FOUND «The file's mover order fixes the mover indices and the option order of»
+REF2 FOUND «then my game EQUALS the lane's instance file index by index for k = 3.»
+REF2 FOUND «The lane's files are right»
+PRE FOUND ««deg» is the scalar 2 in the JSON and «pi», «cyc» of the older genome »
+REF1 FOUND «for «δ(v_j, ·) > δ(u_j, ·)» my variants keep only δ(v_j, o) > δ(u_j, 1»
+REF1 FOUND «So «DEFINITIONS ONLY (no theorem of R104 is used)» is right; MEMBER c8»
+PER LABEL (tagged, found) FROZEN 9 9 KEY1P 2 2 LNEW 1 1 PRE 5 5 R104P 1 1 R117 7 7 R124 8 8 R57 2 2 REF1 22 22 REF2 18 18
+TOTAL tagged 75 checked 75 found 75 missing 0 deferred 0 nosource 0 ctrl 0

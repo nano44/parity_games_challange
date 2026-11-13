@@ -547,3 +547,87 @@ as printed (reading F-1); «PREFIX FORM = LEMMA′ at τ_0 = T» is correct; the
 and my §0 was wrong to sign that wording (§A2.1); F-2, F-3 wording; F-4 the new runner run_b6fix.sh exits 0 on a failing stage
 (no DATA affected: eleven files byte-equal on re-run); F-5 a label inside (a′). P-N5-EXP: SIGNED with fixes entries 1-5.
 NEEDS: Lead: L41's scope tail in the line (L-c), and F-1's range if the line or a later entry restates (R3); L-RED-B: F-4.
+
+## Addendum 3 (REFEREE-2 successor 42; 2026-11-13T17:26:55Z by date -u): AGREEMENT NOTE with the first referee's report, and the 27 deferred quotes
+Asked by the Lead (brief of 15:55Z, item 2). Written after Addendum 2 was committed (f17a2708, 17:02:13Z) and its SHA sent to the
+Lead (17:03Z); only then were the first referee's files opened.
+- Read: docs/referee/R-P-N5-EXP.md at claude/referee 7ca9c2b4596eb5185976aca9303696287a6e52e6 (496 lines, sha1 1dde3812…; stage 1 =
+  its first 397 lines = the file at c881709b, sha1 c662d157…, byte for byte; stage 2 §10 at ea09ae2e; stage 3 §11), in full.
+  REFEREE 36 is the first referee; REFEREE 35's pre-check (docs/referee/R-GK-precheck.md at 06ac891d) was opened only by the quote
+  checker. Not opened: docs/referee/scratch/ (its tools and logs) and its review of P-N5-KEY1P.
+- Timeline of independence: this lane's review 33ff0e98 (14:16:52Z) and Addendum 1 (14:39:51Z); REFEREE 36's stage 1 is stamped
+  14:56Z and says REFEREE-2's reports were not read before it; neither report cites the other.
+
+### A3.1 The deferred quotes (r2qfix.py → qfix_all.out, qfix_all_ctrl.out)
+All 75 tagged quotes of entries 2-5 are verbatim in their sources at the commits the entries name: the 48 of §A2.6 and now REF1
+22 of 22 (c881709b) and PRE 5 of 5 (06ac891d); control: 75 missing. In particular entry 4's standing paragraph, CAUSAL, LEMMA′
+and STABLE's step form are REFEREE 36's l. 200-202, 203-204, 219-225 and 257-261 word for word. So the text I signed in §A2.3 IS
+the referee-originated text, and L41's two signatures are on the same statements: its author's ([Q REF1 l. 17] «NOT SIGNED AS
+WRITTEN; SIGNED in the form LEMMA′ of §5.3 below») and mine (§A2.3, the bold sentence).
+
+### A3.2 Verdicts, statement by statement
+| statement | REFEREE 36 (§0) | REFEREE-2 (§0 with Addendum 2) | same? |
+| --- | --- | --- | --- |
+| Lemma MEMBER = (a) | SIGN with E-3 | SIGN with M-1 | yes; E-3 = M-1 |
+| MOVE-2 | SIGN | SIGN | yes |
+| V0-V4, K1-K4 | SIGN with E-4 | SIGN; 4.1 (S1) signed in Addendum 2 | yes after the fixes; E-4 was not an item of mine |
+| WIRE | SIGN | SIGN | yes |
+| RESPONSE LEMMA | NOT signed as written (E-1, E-2); signed as LEMMA′ | 33ff0e98: «SIGN the statement», gap G-1; corrected in §A2.1: the statement signed is 4.4 | yes after §A2.1; E-2 = G-1; E-1 was missed by this lane |
+| STABLE | SIGN with E-5 | SIGN; step form signed in Addendum 2 | yes after the fixes; E-5 was not an item of mine |
+| Theorem EXP-IDEAL (b), (c) | SIGN through LEMMA′ | SIGN through the lemma with G-1 closed | yes |
+| Corollary EXP-N5 | SIGN AS CONDITIONAL on R117's premises as landed (P-1) | SIGN as PROVED-CONDITIONAL on R117 Theorem REACH3 as landed (W-2); n, m signed outright | yes; P-1 = W-2 |
+| Dead-end paragraph | conditional, P-1 and E-7 | conditional, W-2 | yes; E-7 was not an item of mine |
+| §8 | CHECKED, correct (O-2) | checked against the proofs; «Nothing else» tested only for the gate renumbering and the rank tie | yes; its test is the stronger one (1,200 random orders) |
+| §9 DATA, quotes | reproduced on own tools; 27 of 27 quotes; E-6 | reproduced on own tools; 27 of 27; D-1 | yes; E-6 = D-1 |
+No verdict differs after the fixes, and no number differs anywhere: L(G_k) for k = 3..14, the switch counts and 11·2^(k−2) − 9,
+n = 135k − 230, m = 176k − 300, the first k beyond n^c and (n + m)^c (23, 37, 51; 26, 41, 57), the tie counts 0, 2, 6, …, 42,
+2^k + 1 iterations with the fallback at 2^k − 1, the 27 quotes and the same four untagged ones.
+
+### A3.3 Items, by number
+| REFEREE 36 | this lane | relation |
+| --- | --- | --- |
+| E-2 (the induction applies the lemma for j + 1 before its (H2) is known; prefix form needed) | G-1 | the SAME gap, found independently, with the same repair (LEMMA′ / PREFIX FORM; §A2.4: one lemma) and the same explanation (the inner hypothesis is produced step by step by the outer unit) |
+| E-1 ((H2) vacuous after the stop; false at (1, 1, 2^k − 1), and at s_L for every j ≥ 2 with a = 0) | — (missed); §A2.1 | THEIRS ONLY. This lane signed the frozen statement. Confirmed now by my own control: exactly its k − 1 triples per k, k = 3..12, and nowhere where s_t is reached |
+| E-3 (rank key not injective on wire options, k ≥ 4; tie by β-id; run independent of the tie order) | M-1 | the same finding, the same counts (2, 6, 10, …), the same test (reverse tie order: same run) |
+| E-4 (standing assumption needs u_0 at 0) | — | THEIRS ONLY as an item. This lane's §2.2 wrote «while u_0 is on 0» and tested only states with u_0 at 0, so it used the right assumption without saying that the packet's sentence lacks it. Confirmed (counter standing 0; its counters with u_0 free fire) |
+| E-5 (STABLE read under one state is false; key bit under s⁺) | — | THEIRS ONLY as an item. This lane's §2.5 read the key bit of the step silently. Confirmed (4.2 signed; control stab: 9,165 failures without C_(i−1)(s⁺) = b) |
+| E-6 (§9.7 placeholder) | D-1 | the same |
+| E-7 («CORRECT on these games»: DATA for k ≤ 11, R57 (b) for every k) | — | THEIRS ONLY. This lane's §4 called the answers MEASURED and did not ask the packet's sentence to name R57 (b). Entry 2 (e) is right |
+| P-1 (R117's premises in the Corollary and the dead-end sentence) | W-2 | the same |
+| O-1 (optional: R124 EXACT-L for the exact count) | Addendum 1 A1.1 | the same premises listed; it says optional, this lane recommended it as a separate sentence; entry 3 is that sentence |
+| O-2 (only δ(v_j, o) > δ(u_j, 1 − o) is read) | — | THEIRS ONLY (a note); consistent with V1's split case, which is all §2.2 uses |
+| N-1 («DEFINITIONS ONLY» is right; the order is R104's Fact X sentence) | — | THEIRS ONLY (a note); the same point from another side is S-1 of my box 108 review |
+| — | W-1 («step t» never defined) | MINE ONLY; its 5.1 states the reading; closed by 4.1 (S2) |
+| — | O-1 (my Γ3 builder numbers the β block in gate order) | MINE ONLY, about my own tool; its counter PG (games identical vertex by vertex) is the same check from its side |
+| 10.E: not reproduced | A1.2 tested (T1-T3); F-4 | MINE ONLY: the new runner run_b6fix.sh exits 0 on a failing stage |
+| LEMMA′ (R3) as printed | F-1 | MINE ONLY: «for τ < last» needs the lower end t − 1; its own test (econ) is on the invocation window, so the reading is the one it tested |
+| — | F-2, F-3, F-5 | MINE ONLY, on entries 2-5, which are later than its three stages |
+
+### A3.4 Where the two reviews differ in what was tested (no conflict; each covers what the other does not)
+- LEMMA′. REFEREE 36 tests an ABSTRACT unit machine built from the bit formulas of §5: under a held input for every unit and both
+  a (abs, k ≤ 9), and one unit against a contract of the unit above with ARBITRARY delays (unit, stage 2), which is the induction
+  step for every k at the level of the formulas; the formulas are tied to R104's definition by its static counters and by
+  causal. I test the DEFINITIONS themselves (the model's own value and key comparisons, never a formula) on the real run (k ≤ 12),
+  on every state satisfying (H1) (k ≤ 8; 11,464 truncated inputs), on driven inputs (proper prefixes up to 823 steps), and CAUSAL
+  as a function on all states of k = 3, 4. Neither is the proof; the proof is 4.5, which both referees checked line by line.
+- N5 itself. REFEREE 36: its lane's builder and engine on its own genome, k ≤ 9 (successor 35: k ≤ 12), games identical to the
+  lane's files, firing controls for every run-level counter, R117's lemmas on perturbed games, positional strategies with its
+  own verifier (stage 2). This lane: own builder and engine, k ≤ 11, the answer against four solvers (two Zielonka, Oink zlk and
+  tl). Different engines and builders, the same counts.
+- §8. REFEREE 36 draws 1,200 random gate and rank orders satisfying §8's list (same run) and breaks each constraint; I did not.
+- Box 108. REFEREE 36 (stage 3) compared it with the packet and says [Q REF1H l. 465] «its STEP table (32 transition classes)
+  was not checked row by row»; my R2-box108.md checks every row. Its dictionary (H_i = P_i; S0 → S6 = the response from rest 0)
+  and its remark that the stop has exactly v_1, …, v_(k−1) unstable are also what I found (my counter stop).
+
+### A3.5 What remains open between the two reviews
+Nothing that touches a statement. For the Lead's line: F-1 (the range of (R3), a wording of the referee-originated statement
+that its author can confirm in one line) and L-c (L41's scope tail). For L-RED-B: F-4. For this lane: the second review of
+P-N5-KEY1P stays deferred; REFEREE 36 has a first review of it on origin (claude/referee a85626aa, by its commit subject; not
+opened), so entry 2 (a′)'s second sentence (F-5) has one referee behind its Lemma IDEAL-1P and not yet two.
+
+DONE: agreement note; the 27 deferred quotes (75 of 75 verbatim).
+FINDINGS: the two reviews agree on every verdict and every number after the fixes; the same gap (E-2 = G-1) and the same rank
+tie (E-3 = M-1), placeholder (E-6 = D-1) and condition (P-1 = W-2) were found independently; E-1, E-4, E-5, E-7 are REFEREE 36's
+alone (E-1 was a miss of this lane, corrected in §A2.1; E-4 and E-5 were right readings this lane used without flagging the
+text); W-1, F-1 to F-5 are this lane's alone. LEMMA′ and CAUSAL in entry 4 are REFEREE 36's text word for word: L41 is met.
+NEEDS: Lead: none beyond §A3.5.

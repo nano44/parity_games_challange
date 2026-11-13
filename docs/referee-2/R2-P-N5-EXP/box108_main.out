@@ -1,0 +1,14 @@
+k 3 T 6 | all 0
+k 4 T 14 | all 0
+k 5 T 30 | all 0
+k 6 T 62 | all 0
+k 7 T 126 | all 0
+k 8 T 254 | all 0
+k 9 T 510 | all 0
+k 10 T 1022 | all 0
+k 11 T 2046 | all 0
+k 12 T 4094 | all 0
+TOTAL ctrl -: parse 0 closed 0 stop 0 step_eq 0 table 0 hand 0 sig 0 phase 0 input 0 move 0 latch 0 missing 0
+INFO rows_parsed 32 rows_seen 32 states 8174 step_eq_units 679477 table_units 81855 latch_states 67 never_met: none
+FIRED none
+exit 0

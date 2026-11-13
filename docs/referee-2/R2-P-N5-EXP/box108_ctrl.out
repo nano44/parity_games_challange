@@ -1,0 +1,18 @@
+TOTAL ctrl hoff: parse 0 closed 106 stop 0 step_eq 6 table 8 hand 0 sig 1 phase 2 input 5 move 0 latch 0 missing 20
+INFO rows_parsed 32 rows_seen 13 states 7 step_eq_units 77 table_units 14 latch_states 67 never_met: ['bot A2 stay', 'bot A2->A3', 'bot A4 stay (E=1)', 'mid S0 idle', 'mid S0->S1', 'mid S1->S2', 'mid S10 stay', 'mid S10->S11', 'mid S11->S0', 'mid S2 stay', 'mid S2->S3', 'mid S3->S4', 'mid S4 stay', 'mid S4->S5', 'mid S5->S6', 'mid S6->S7', 'mid S7->S8', 'mid S8 stay', 'mid S8->S9', 'mid S9->S10']
+FIRED closed step_eq table sig phase input missing
+TOTAL ctrl rowmut: parse 0 closed 0 stop 0 step_eq 0 table 11 hand 1 sig 0 phase 0 input 0 move 0 latch 0 missing 0
+INFO rows_parsed 32 rows_seen 32 states 116 step_eq_units 3670 table_units 498 latch_states 67 never_met: none
+FIRED table hand
+TOTAL ctrl posmut: parse 0 closed 44 stop 0 step_eq 57 table 46 hand 2 sig 0 phase 0 input 0 move 0 latch 0 missing 0
+INFO rows_parsed 32 rows_seen 32 states 116 step_eq_units 3670 table_units 498 latch_states 67 never_met: none
+FIRED closed step_eq table hand
+TOTAL ctrl kold: parse 0 closed 0 stop 0 step_eq 178 table 156 hand 0 sig 0 phase 0 input 0 move 0 latch 0 missing 0
+INFO rows_parsed 32 rows_seen 32 states 116 step_eq_units 3670 table_units 498 latch_states 67 never_met: none
+FIRED step_eq table
+TOTAL ctrl sigmut: parse 0 closed 0 stop 0 step_eq 0 table 0 hand 0 sig 614 phase 0 input 0 move 0 latch 0 missing 0
+INFO rows_parsed 32 rows_seen 32 states 116 step_eq_units 3670 table_units 498 latch_states 67 never_met: none
+FIRED sig
+TOTAL ctrl phasemut: parse 0 closed 82 stop 0 step_eq 0 table 0 hand 0 sig 0 phase 0 input 0 move 0 latch 0 missing 18
+INFO rows_parsed 32 rows_seen 14 states 7 step_eq_units 77 table_units 14 latch_states 67 never_met: ['bot A2 stay', 'mid S0 idle', 'mid S0->S1', 'mid S1->S2', 'mid S10 stay', 'mid S10->S11', 'mid S11->S0', 'mid S2 stay', 'mid S2->S3', 'mid S3->S4', 'mid S4 stay', 'mid S4->S5', 'mid S5->S6', 'mid S6->S7', 'mid S7->S8', 'mid S8 stay', 'mid S8->S9', 'mid S9->S10']
+FIRED closed missing
