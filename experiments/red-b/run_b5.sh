@@ -17,6 +17,7 @@ if [ "$2" = lemma ]; then
   done
   job ctrl1 CTRL=1 python3 b5lemma.py "$R" rand 5201 200 8
   job ctrl2 CTRL=2 python3 b5lemma.py "$R" rand 5202 200 8
+  job ctrl3 CTRL=3 python3 b5lemma.py "$R" rand 5101 1500 10
   job ctrl_free CORE=high python3 b5lemma.py "$R" rand 5203 500 10 0.7
   job x2_mirror_rand MIRROR=1 python3 b5lemma.py "$R" rand 5204 500 10
   job x2_mirror_states MIRROR=1 python3 b5lemma.py "$R" states $ST

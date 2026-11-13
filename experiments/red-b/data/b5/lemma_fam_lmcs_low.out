@@ -1,0 +1,8 @@
+B5LEMMA core low lmcs_n2_own |Wg| 516 sha1 6ca98a21c1e49a6fe5339973f28f881f5722929d | I 7 k 1 fallbacks at [4] P1 3 | n5b I 7 k 1 | tau 0 itau 0 k 0 pre 0 f1 0 f2 0 post 0 wrong 0 engdiff 0 null2 0
+B5LEMMA core low lmcs_n3_own |Wg| 785 sha1 236882ccf747dc32052eea01534d65f99b0005c0 | I 9 k 1 fallbacks at [6] P1 3 | n5b I 9 k 1 | tau 0 itau 0 k 0 pre 0 f1 0 f2 0 post 0 wrong 0 engdiff 0 null2 0
+B5LEMMA core low lmcs_n4_own |Wg| 1081 sha1 383c59042584b482c82caeb522248c32728ac728 | I 11 k 1 fallbacks at [8] P1 3 | n5b I 11 k 1 | tau 0 itau 0 k 0 pre 0 f1 0 f2 0 post 0 wrong 0 engdiff 0 null2 0
+B5LEMMA core low lmcs_n5_own |Wg| 1404 sha1 f5ffcf18c308f339182810c24b49fc679f5c3849 | I 13 k 1 fallbacks at [10] P1 3 | n5b I 13 k 1 | tau 0 itau 0 k 0 pre 0 f1 0 f2 0 post 0 wrong 0 engdiff 0 null2 0
+B5LEMMA core low lmcs_n6_own |Wg| 1754 sha1 6c60d1020244e3cff0e73c6b9aa0988d4e78a7a5 | I 15 k 1 fallbacks at [12] P1 3 | n5b I 15 k 1 | tau 0 itau 0 k 0 pre 0 f1 0 f2 0 post 0 wrong 0 engdiff 0 null2 0
+B5LEMMA core low lmcs_n7_own |Wg| 2131 sha1 3f13bf733fca849f9d5125f584ddff825930372c | I 17 k 1 fallbacks at [14] P1 3 | n5b I 17 k 1 | tau 0 itau 0 k 0 pre 0 f1 0 f2 0 post 0 wrong 0 engdiff 0 null2 0
+B5LEMMA core low lmcs_n8_own |Wg| 2535 sha1 0330648cc461b07802313758f8b971b754a3dfa1 | I 19 k 1 fallbacks at [16] P1 3 | n5b I 19 k 1 | tau 0 itau 0 k 0 pre 0 f1 0 f2 0 post 0 wrong 0 engdiff 0 null2 0
+B5LEMMA SUMMARY core low mode fam lmcs 2 3 4 5 6 7 8 wrappers 7 | tau 0 itau 0 k 0 pre 0 f1 0 f2 0 post 0 wrong 0 engdiff 0 null2 0

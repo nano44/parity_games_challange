@@ -1,0 +1,8 @@
+B5LEMMA core low fried_n2_own |Wg| 736 sha1 42e7e6ba9ffe2edb63761087325b7647c50d6c5c | I 8 k 1 fallbacks at [6] P1 2 | n5b I 8 k 1 | tau 0 itau 0 k 0 pre 0 f1 0 f2 0 post 0 wrong 0 engdiff 0 null2 0
+B5LEMMA core low fried_n3_own |Wg| 1063 sha1 ea22862284e8ec76d592c817637e246bf4aef350 | I 10 k 1 fallbacks at [7] P1 3 | n5b I 10 k 1 | tau 0 itau 0 k 0 pre 0 f1 0 f2 0 post 0 wrong 0 engdiff 0 null2 0
+B5LEMMA core low fried_n4_own |Wg| 1390 sha1 9dc2587980711224fe5076c3d59f4f54a708f926 | I 12 k 1 fallbacks at [9] P1 3 | n5b I 12 k 1 | tau 0 itau 0 k 0 pre 0 f1 0 f2 0 post 0 wrong 0 engdiff 0 null2 0
+B5LEMMA core low fried_n5_own |Wg| 1717 sha1 9d2238a3c78ca2b83fcf85b8082181539605bd44 | I 14 k 1 fallbacks at [11] P1 3 | n5b I 14 k 1 | tau 0 itau 0 k 0 pre 0 f1 0 f2 0 post 0 wrong 0 engdiff 0 null2 0
+B5LEMMA core low fried_n6_own |Wg| 2044 sha1 df5afb4d698a728bfbafb4b4d416aa7753a22392 | I 16 k 1 fallbacks at [13] P1 3 | n5b I 16 k 1 | tau 0 itau 0 k 0 pre 0 f1 0 f2 0 post 0 wrong 0 engdiff 0 null2 0
+B5LEMMA core low fried_n7_own |Wg| 2371 sha1 d25e8dc2badb2ec0d4da73284803a78b831720e7 | I 18 k 1 fallbacks at [15] P1 3 | n5b I 18 k 1 | tau 0 itau 0 k 0 pre 0 f1 0 f2 0 post 0 wrong 0 engdiff 0 null2 0
+B5LEMMA core low fried_n8_own |Wg| 2698 sha1 42377525d901aedb398c432b0b495e5632f1d386 | I 20 k 1 fallbacks at [17] P1 3 | n5b I 20 k 1 | tau 0 itau 0 k 0 pre 0 f1 0 f2 0 post 0 wrong 0 engdiff 0 null2 0
+B5LEMMA SUMMARY core low mode fam fried 2 3 4 5 6 7 8 wrappers 7 | tau 0 itau 0 k 0 pre 0 f1 0 f2 0 post 0 wrong 0 engdiff 0 null2 0

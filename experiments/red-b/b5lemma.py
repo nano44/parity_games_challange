@@ -1,21 +1,23 @@
 #!/usr/bin/env python3
-"""B5 (L-RED-B successor 4; docs/red-b/B5-second-fb.md): direct test of Lemma ONE-FB (k = 1 on every guided wrapper Wg) and of its
+"""B5 (L-RED-B successor 4; docs/red-b/B5-second-fb.md): direct test of Lemma ONE-FB′ (k ≤ 2 on every guided wrapper Wg; a second fallback is NULL and ends the run) and of its
 proof's intermediate claims, per iteration of N5 (SPEC, L-NEW's box190/n5v.py mode spec) from S3 on L-SI's gscan104.wrapg wrappers
 (claude/l-si 2051a0ee via git archive; core placement by env CORE = high | low, as gscan104 reads it).
 Must-0 counters (unit: one wrapper):
   tau     tau changes at some iteration                       itau  I_tau is nonempty at some state
-  k       the number of fallbacks is not 1                    pre   a state before the first fallback F has sigma(K0) != pA or (K0, K1) not in I_sigma
+  k       the number of fallbacks is not 1 or 2                   pre   a state before the first fallback F has sigma(K0) != pA or (K0, K1) not in I_sigma
   f1      iteration F+1 is a fallback, or after it sigma(K1) != q (or the run ends before F+1)
   f2      the run reaches F+2 and iteration F+2 is a fallback or the state after it is not CLOSED (sigma(K0) = K1, sigma(K1) = q,
           every valve at pb)
-  post    a fallback occurs after F, or some state from F+2 on is not CLOSED, or at some CLOSED state from F+1 on Odd's optimal
+  post    a fallback after F is not a NULL fallback (the last iteration, only NULL edges in I_sigma: Xi(w), Xi(sigma(v)) both
+          with cycle node v, Xi unchanged), or some state from F+2 on is not CLOSED, or at some CLOSED state from F+1 on Odd's optimal
           counterstrategy (S1, si.Engine.evaluate) differs from tau at an Odd vertex
   wrong   N5's output regions != harness Zielonka on the wrapper     engdiff  (I, k) of n5v != (I, k) of n5b --mode spec (engine 2)
 Variant FREE (outside the lemma's hypothesis, used as the CONTROL and for B5 part 2): every Odd vertex o of H gets, with probability
 FREE, one more non-valve face o -> f1 -> ... -> f5 -> t (all pads Omega 0, 6 edges, t a random vertex of H); S3 still picks the guide
 face z1 (Omega 1). On FREE wrappers the counters may fire; they are reported, not required to be 0.
 CONTROLS: CTRL=1, every check is made with F + 1 in place of F (pre must fire); CTRL=2, CLOSED expects the valves at y
-(f2 and post must fire).
+(f2 and post must fire); CTRL=3, the UNCORRECTED claim «no fallback after F» (post fires on every k = 2 wrapper).
+  null2   DATA, not must-0: the wrapper has a (NULL) second fallback.
 Variant MIRROR=1 (construction X2, §4): a disjoint mirror copy of the core (owners swapped, priorities + 1) is added; Odd then
 keeps a permanent improving edge, so itau fires by design and the lemma's k = 1 is replaced by k = 2 (§4).
 Usage: b5lemma.py B3ROOT (states FILE... | fam NAME n... | rand SEED COUNT NMAX [FREE])     env CORE, N5B=0 skips engine 2."""
@@ -30,7 +32,7 @@ from wrap104 import pg, n5v, n5, n5x, zielonka
 from si import Engine
 N5B = os.path.join(root, "trunk/experiments/n5-second/n5b.py"); USE_N5B = os.environ.get("N5B", "1") == "1"
 CORE = GS.CORE; MIRROR = os.environ.get("MIRROR", "0") == "1"; CTRL = int(os.environ.get("CTRL", "0"))   # CTRL=1: F+1 for F (pre must fire); CTRL=2: y for pb (f2, post must fire)
-NAMES = ["tau", "itau", "k", "pre", "f1", "f2", "post", "wrong", "engdiff"]
+NAMES = ["tau", "itau", "k", "pre", "f1", "f2", "post", "wrong", "engdiff", "null2"]   # null2: DATA (not must-0)
 
 def fam(name, n):
     if name == "fried": r = W.fried_game(n); return r[0], list(r[1])
@@ -66,10 +68,10 @@ def run_one(tag, g, K, pA, q, valves):
         ns, nt, Is, It, fb = r; its += 1; Isl.append(Is); Itl.append(It)
         if fb: fbl.append(its)
         sigma, tau = ns, nt; states.append((tuple(sigma), tuple(tau)))
-    c = dict.fromkeys(NAMES, 0); odd = [v for v in range(g.n) if g.owner[v] == 1]
+    c = dict.fromkeys(NAMES, 0); c["null2"] = 0; odd = [v for v in range(g.n) if g.owner[v] == 1]
     c["tau"] = int(any(states[j][1] != states[0][1] for j in range(len(states))))
     c["itau"] = int(any(It for It in Itl if It is not None))
-    c["k"] = int(len(fbl) != 1)
+    c["k"] = int(len(fbl) not in (1, 2))
     if fbl:
         F = fbl[0] + (CTRL == 1)
         c["pre"] = int(any(states[j][0][K[0]] != pA or (K[0], K[1]) not in set(Isl[j]) for j in range(F)))
@@ -77,7 +79,15 @@ def run_one(tag, g, K, pA, q, valves):
         pbs = {b: (pbof(g, b, K) if CTRL != 2 else [w for w in g.succ[b] if w != pbof(g, b, K)][0]) for b in valves}
         def closed(j): return states[j][0][K[0]] == K[1] and states[j][0][K[1]] == q and all(states[j][0][b] == pbs[b] for b in valves)
         c["f2"] = int(its >= F + 2 and ((F + 2) in fbl or not closed(F + 2)))
-        bad = any(f > F for f in fbl)
+        # Lemma ONE-FB' (corrected): a fallback after F is a NULL fallback: it is the last iteration, every edge (v, w) of I_sigma at
+        # its state is NULL (Xi(w) and Xi(sigma(v)) both have cycle node v), and Xi is unchanged by it. CTRL=3: the uncorrected claim
+        # «no fallback after F» (fires on every k = 2 wrapper).
+        bad = False; c["null2"] = 0
+        for f in fbl[1:]:
+            if CTRL == 3 or f != its: bad = True; break
+            sg = states[f - 1][0]; vs0, _ = E.evaluate(sg); vs1, _ = E.evaluate(states[f][0])
+            if any(not (vs0[w][0] == v and vs0[sg[v]][0] == v) for v, w in Isl[f - 1]) or vs0 != vs1: bad = True; break
+            c["null2"] = 1
         for j in range(F + 1, len(states)):
             if bad: break
             if j == F + 1 and not closed(j): continue

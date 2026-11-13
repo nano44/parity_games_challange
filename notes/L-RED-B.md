@@ -4,6 +4,18 @@ Lead session: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/l-red-b (from trun
 Files I own: docs/red-b/, experiments/red-b/, notes/L-RED-B.md, docs/agents/handover-checks/L-RED-B.md.
 
 ## Resume point
+**SUCCESSOR 4 (Opus 5.5, session_01V5yGRZixRCf3PLfDhttq7S; started 2026-11-13 06:14Z by date -u; handover check 28823167 on origin;
+«go» from the Lead 06:56Z on B5 plan (1)-(3)).**
+- B5 (SECOND FALLBACK): report docs/red-b/B5-second-fb.md; tools b5lemma.py (direct test, counters + controls CTRL=1/2/3, FREE, MIRROR),
+  b5climb.py (climbs outside W: FREE Odd faces; objectives p1 / k / its), run_b5.sh (lemma | climbs; resumable; outputs work/b5/).
+- FINDING: Lemma ONE-FB («k = 1 on every Wg», draft 2afb3f11) is FALSE (my test, 07:10Z; Lead told 07:16Z): NULL second fallback at the
+  last iteration, 15/1,500 (high) and 12/1,500 (low) random Wg. Corrected ONE-FB′: k ∈ {1, 2}; a second fallback only switches NULL
+  edges (v the cycle node of both values), leaves Ξ unchanged, ends the run. Proof step (v.2) rewritten without [F11] Thm 3.2.
+- Lead 06:56Z: ONE-FB not routed to a referee (lane lemma, UNREFEREED, premise 1E-N3); climbs outside W aim at P1 / I, not k; growth words
+  only with fits; Lead wants «the B5 record SHA».
+- Archives rebuilt in experiments/red-b/work/b3 (fresh container had none). Old (uncorrected-counter) lemma outputs in work/b5_old/.
+- Next: corrected lemma battery (work/run_b5_lemma2.log) -> data/b5; climbs (run_b5.sh climbs) -> bests on n5b + Zielonka; B5 §3-§5.
+
 **SUCCESSOR 3 HANDOVER (written 2026-11-13 ~04:45Z by date -u; park after the B4 report's push and the final message).**
 - B2 (box 209): DONE, verdict NO KILL (docs/red-b/B2-box209.md, 7247a639). B3 (GUIDE-RULE): DONE, NO KILL (docs/red-b/B3-guide.md,
   9bce72fa + §3a R240 / amended FLAT-IDX d4e16fc1 + Addendum A d889e559, eb28fde5, 4b8f650a, cb98decb). FLAT-IDX routed by the Lead to

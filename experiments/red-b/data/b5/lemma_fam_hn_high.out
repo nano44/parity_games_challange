@@ -1,0 +1,5 @@
+B5LEMMA core high hn_n1_own |Wg| 404 sha1 842689a60bd9da9605946f4838e03252cb63f312 | I 14 k 1 fallbacks at [12] P1 2 | n5b I 14 k 1 | tau 0 itau 0 k 0 pre 0 f1 0 f2 0 post 0 wrong 0 engdiff 0 null2 0
+B5LEMMA core high hn_n2_own |Wg| 899 sha1 08a3ca072552016ee1074dc00b8f24ca0f5adf91 | I 37 k 1 fallbacks at [34] P1 3 | n5b I 37 k 1 | tau 0 itau 0 k 0 pre 0 f1 0 f2 0 post 0 wrong 0 engdiff 0 null2 0
+B5LEMMA core high hn_n3_own |Wg| 1457 sha1 c41f120d723dea83ce10b593c33f38ae4ae79c39 | I 65 k 1 fallbacks at [62] P1 3 | n5b I 65 k 1 | tau 0 itau 0 k 0 pre 0 f1 0 f2 0 post 0 wrong 0 engdiff 0 null2 0
+B5LEMMA core high hn_n4_own |Wg| 2078 sha1 c402be005aa435439a04e6caf0d69ee228e634fe | I 99 k 1 fallbacks at [96] P1 3 | n5b I 99 k 1 | tau 0 itau 0 k 0 pre 0 f1 0 f2 0 post 0 wrong 0 engdiff 0 null2 0
+B5LEMMA SUMMARY core high mode fam hn 1 2 3 4 wrappers 4 | tau 0 itau 0 k 0 pre 0 f1 0 f2 0 post 0 wrong 0 engdiff 0 null2 0
