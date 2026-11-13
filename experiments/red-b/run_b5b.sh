@@ -10,3 +10,8 @@ for obj in p1 its; do
     job w2_${obj}_rand_n${n}_s$s CORE=high python3 b5climb.py "$R" $obj $((5700 + 10 * n + s)) 4000 rand $n
   done; done
 done
+# warm starts from the B4 bests (P1 on Wg up to 33): add FREE faces and climb on, objective p1
+for f in data/b4/b4c_b4_*.json; do
+  b=$(basename $f .json); fam=$(echo $b | cut -d_ -f3); n=$(echo $b | cut -d_ -f4 | tr -d n)
+  job w2_warm_${fam}_n$n START=$f CORE=high python3 b5climb.py "$R" p1 $((5900 + n)) 600 fam $fam $n
+done

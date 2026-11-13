@@ -8,6 +8,7 @@ Modes:  rand nH  (H random with nH vertices and mutated, as gclimb.py; plus s0, 
         fam NAME n  (H = a family member, fixed: fried | lmcs | hn; start = its own, rho0 = Odd's optimal counterstrategy; mutated:
                      s0, rho0, gamma, free)
 Objectives: k (k, then P1, then I) | p1 (P1, then k, then I) | its (I).
+env START=FILE (fam mode): start from the guide of a B4 best state file instead of the family's own guide.
 Usage: b5climb.py B3ROOT OBJ SEED ITERS (rand nH | fam NAME n) [copy]   env CORE. Resumable: work/b5c_<tag>.json. Final line B5CLIMB."""
 import sys, os, json, random, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -85,6 +86,9 @@ def main():
     os.makedirs("work", exist_ok=True); sf = "work/b5c_%s.json" % tag; wf = open("work/b5wrong_%s.jsonl" % tag, "a")
     if os.path.exists(sf):
         S = json.load(open(sf)); D = S["D"]; it0 = S["it"]; rng.seed(seed * 7919 + it0)
+    elif Hfix and os.environ.get("START"):
+        G = json.load(open(os.environ["START"]))["G"]   # warm start from a B4 climb best (data/b4/b4c_b4_*.json): its s0, rho0, gamma
+        D = {"s0": dict(G["s0"]), "rho": dict(G["rho"]), "gam": dict(G["gam"]), "free": {}, "copy": copy}; D = fixup(rng, D, Hfix); it0 = 0
     elif Hfix:
         _, cs = Engine(Hfix).evaluate(tuple(s0b[v] if Hfix.owner[v] == 0 else -1 for v in range(Hfix.n)))
         D = {"s0": {str(v): s0b[v] for v in range(Hfix.n) if Hfix.owner[v] == 0},
