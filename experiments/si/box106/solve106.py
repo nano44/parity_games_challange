@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """L-SI box 106 §3.4: solve one cnf106 query and keep its certificate.
-Usage: solve106.py LEN TAG [--genome FILE.json] [--solver cadical153|glucose4]
+Usage: solve106.py LEN TAG [--genome FILE.json] [--solver glucose4|cadical153]   (default glucose4: its DRUP output is complete;
+  cadical153's proof as returned by python-sat 1.9.dev15 ended without a refutation on g6 / c9 here, so it is not used for certificates)
   Builds cnf106.build(LEN) («some G* in 𝓛*_2 has L* >= LEN»); with --genome the genome's free data are added as UNIT CLAUSES (so a proof
   refers to the DIMACS file alone). Writes dump/TAG.cnf (DIMACS); solves with pysat's solver (version printed) with proof output;
   on UNSAT writes dump/TAG.drup; on SAT decodes the model into a genome (ladder105's «state» format) best/TAG.json and replays it with
@@ -40,7 +41,7 @@ def decode(E, model):
 def main():
     LEN, tag = int(sys.argv[1]), sys.argv[2]; args = sys.argv[3:]
     gfile = args[args.index("--genome") + 1] if "--genome" in args else None
-    sname = args[args.index("--solver") + 1] if "--solver" in args else "cadical153"
+    sname = args[args.index("--solver") + 1] if "--solver" in args else "glucose4"
     os.makedirs("dump", exist_ok=True); os.makedirs("best", exist_ok=True)
     E = C.build(LEN)
     if gfile:
@@ -59,11 +60,13 @@ def main():
             for line in pf: f.write(line + "\n")
         out += " | proof lines %d sha1 %s" % (len(pf), hashlib.sha1(open(pp, "rb").read()).hexdigest())
     else:
-        st = decode(E, s.get_model()); json.dump({"mode": "free", "d": 2, "state": st, "L": None}, open("best/%s.json" % tag, "w"))
+        st = decode(E, s.get_model())
         import mg106 as MG
         G, pb, pe = MG.gp(st); run = MG.abstract_run(G, pb, pe)
+        json.dump({"mode": "free", "d": 2, "state": st, "L": len(run) - 1}, open("best/%s.json" % tag, "w"))
         mrun = [tuple(int(E.names[("R", j, x)] in set(l for l in s.get_model() if l > 0)) for x in range(4)) for j in range(LEN + 1)]
         out += " | decoded L* (mg106) %d | model run = mg106 run prefix %s" % (len(run) - 1, mrun == [tuple(t) for t in run[:LEN + 1]])
     print(out, flush=True)
 
-main()
+if __name__ == "__main__":
+    main()

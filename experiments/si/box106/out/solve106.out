@@ -1,0 +1,14 @@
+SOLVE106 c5 L* >= 5: SAT | vars 71972 clauses 393931 | cnf sha1 cc358fe65da5dea8a28e9ce2da4e1b88a744b6cf | solver glucose4 (python-sat 1.9.dev15) | 5.0 s | decoded L* (mg106) 5 | model run = mg106 run prefix True
+N5REPLAY106 c5: VAL105 c5.json mode free d 2: |V| 70 L* 5 (search: 5) Xi-graph cyclic | s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0
+SOLVE106 g5 L* >= 5 genome climb106_1.json: SAT | vars 71972 clauses 394117 | cnf sha1 6992411c0859a2ed4cb7c4c64095255b5f40109a | solver glucose4 (python-sat 1.9.dev15) | 0.2 s | decoded L* (mg106) 5 | model run = mg106 run prefix True
+N5REPLAY106 g5: VAL105 g5.json mode free d 2: |V| 70 L* 5 (search: 5) Xi-graph cyclic | s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0
+SOLVE106 g6 L* >= 6 genome climb106_1.json: UNSAT | vars 72015 clauses 394407 | cnf sha1 9a3074d764b601a4081b985b4af6793182df5814 | solver glucose4 (python-sat 1.9.dev15) | 0.2 s | proof lines 119364 sha1 cd65e1ffc9a852a907bd565c214f902a7d3a25ff
+CHECK106 g6 drup: s VERIFIED (89 lemmas RUP-checked)
+CHECK106 g6 ref_rup: s VERIFIED (89 lemmas RUP-checked, deletions ignored)
+REGEN106 g6 cnf equal yes proof equal yes
+PROOF106 g6 dump/g6.drup.gz bytes 512790 sha1 740a2fa61ffbb908a95d4cdf8e229bcae823f5b0
+SOLVE106 c9 L* >= 9: UNSAT | vars 72144 clauses 395091 | cnf sha1 321498e6e67047b7a99a54caa8f1066d55c21618 | solver glucose4 (python-sat 1.9.dev15) | 0.1 s | proof lines 2107 sha1 5e9c0b589760b6de5864bb49b3bc7aff9f5390cf
+CHECK106 c9 drup: s VERIFIED (730 lemmas RUP-checked)
+CHECK106 c9 ref_rup: s VERIFIED (730 lemmas RUP-checked, deletions ignored)
+REGEN106 c9 cnf equal yes proof equal yes
+PROOF106 c9 dump/c9.drup.gz bytes 14110 sha1 990187767a33a76f6ae1db99404eb18969bcd415

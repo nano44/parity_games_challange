@@ -59,4 +59,5 @@ def main():
         seed, count, " CTRL %d" % C.CTRL if C.CTRL else "", " full" if full else "", units, c["avfail"], c["avfree"] if full else "-",
         c["runfail"], c["unsat"], mx, "" if first is None else " | first %s" % (first,)))
 
-main()
+if __name__ == "__main__":
+    main()

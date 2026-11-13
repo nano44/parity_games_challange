@@ -26,5 +26,11 @@ if [ -f out/aud106.out ]; then
   grep -q "^AUD106 seed json genomes 40 full: .* avfail 0 avfree 0 runfail 0 unsat 0 | max L\* 5$" out/aud106.out || bad "cnf audit long runs"
   for c in 1 2 3; do grep -q "^AUD106 seed 1067 genomes 100 CTRL $c: .*| first " out/aud106.out || bad "cnf control $c"; done
 fi
+# §3c controls (frozen out/solve106.out): c5, g5 SAT with N5 replays clean; g6, c9 UNSAT, both checkers VERIFIED, regenerated equal
+if [ -f out/solve106.out ]; then
+  for t in c5 g5; do grep -q "^SOLVE106 $t L\* >= 5.*: SAT | .* decoded L\* (mg106) 5 | model run = mg106 run prefix True$" out/solve106.out && grep -q "^N5REPLAY106 $t: .* L\* 5 .* | s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0$" out/solve106.out || bad "control $t"; done
+  for t in g6 c9; do grep -q "^SOLVE106 $t .*: UNSAT | " out/solve106.out && [ "$(grep -c "^CHECK106 $t [a-z_]*: s VERIFIED" out/solve106.out)" = 2 ] && grep -q "^REGEN106 $t cnf equal yes proof equal yes$" out/solve106.out || bad "control $t"
+    f=dump/$t.drup.gz; [ -f $f ] && grep -q "^PROOF106 $t $f bytes $(stat -c %s $f) sha1 $(sha1sum < $f | cut -c1-40)$" out/solve106.out || bad "proof file $t"; done
+fi
 [ $fail = 0 ] && echo "BOX106 checks: PASS"
 exit $fail

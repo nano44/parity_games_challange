@@ -194,3 +194,34 @@ is the pattern a kill family for O2 would have to approach on unboundedly many l
   determined (avfree 0 on 21,760 units), as Lemma ENC says. The three mutations fire (CTRL 1: avfail 2,816, runfail 64; CTRL 2: avfail
   1,511, runfail 34; CTRL 3: unsat 99 of 100). With §2's audit of mg106 against SPEC's engine (mgfail 0) this is the chain CNF = mg106 =
   key105 (SPEC on Γ3*); every SAT answer is in addition replayed on N5 itself (§3c).
+
+## 3c. Controls of the certificate pipeline (Lead 2026-11-13 01:27Z; DATA; run106.sh controls; out/solve106.out)
+- Pipeline (run106.sh, solve106.py): the CNF is written as DIMACS (sha1 printed; dump/*.cnf git-ignored, cnf106.py regenerates it) and
+  solved by Glucose 4 through python-sat 1.9.dev15 with DRUP output. UNSAT: the proof is checked by TWO independent forward RUP checkers,
+  L-COMP's drup.c (claude/l-comp 07cec8399, sha1 2d4b8eab…, the checker of RESULTS R112; read-only copy experiments/si/box71/ref) and
+  REFEREE's ref_rup.c (claude/referee 2005aee7, sha1 707c484d…; deletions ignored), both compiled from source by the runner; then the CNF
+  and the proof are REGENERATED from scratch in a temp dir and compared byte for byte; the proof is kept gzipped (dump/TAG.drup.gz).
+  SAT: the model is decoded into a genome (best/TAG.json) and replayed by mg106.abstract_run (its L*) and by box 105's val105.py on N5
+  itself from S3 (s3fail, keyfail, endfail, wrong, keymono, valmono).
+- Note: python-sat 1.9.dev15's «cadical153» returned proofs that end without a refutation on g6 and c9 (49,802 lemmas all RUP, «s NOT
+  VERIFIED: no refutation reached» at both checkers): not used for certificates; Glucose 4 is (as R112).
+- Controls (as the Lead set them): «L* ≥ 5» on the whole class must be SAT with a replayed witness; «L* ≥ 5» on the climbed genome
+  best/climb106_1.json (L* = 5, §2a) SAT and «L* ≥ 6» on it UNSAT with a checked proof; «L* ≥ 9» on the whole class UNSAT with a checked
+  proof (the adversarial maximum is 8, §1). Output (out/solve106.out, inserted by script):
+  «SOLVE106 c5 L* >= 5: SAT | vars 71972 clauses 393931 | cnf sha1 cc358fe65da5dea8a28e9ce2da4e1b88a744b6cf | solver glucose4 (python-sat 1.9.dev15) | 5.0 s | decoded L* (mg106) 5 | model run = mg106 run prefix True»
+  «N5REPLAY106 c5: VAL105 c5.json mode free d 2: |V| 70 L* 5 (search: 5) Xi-graph cyclic | s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0»
+  «SOLVE106 g5 L* >= 5 genome climb106_1.json: SAT | vars 71972 clauses 394117 | cnf sha1 6992411c0859a2ed4cb7c4c64095255b5f40109a | solver glucose4 (python-sat 1.9.dev15) | 0.2 s | decoded L* (mg106) 5 | model run = mg106 run prefix True»
+  «N5REPLAY106 g5: VAL105 g5.json mode free d 2: |V| 70 L* 5 (search: 5) Xi-graph cyclic | s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0»
+  «SOLVE106 g6 L* >= 6 genome climb106_1.json: UNSAT | vars 72015 clauses 394407 | cnf sha1 9a3074d764b601a4081b985b4af6793182df5814 | solver glucose4 (python-sat 1.9.dev15) | 0.2 s | proof lines 119364 sha1 cd65e1ffc9a852a907bd565c214f902a7d3a25ff»
+  «CHECK106 g6 drup: s VERIFIED (89 lemmas RUP-checked)»
+  «CHECK106 g6 ref_rup: s VERIFIED (89 lemmas RUP-checked, deletions ignored)»
+  «REGEN106 g6 cnf equal yes proof equal yes»
+  «PROOF106 g6 dump/g6.drup.gz bytes 512790 sha1 740a2fa61ffbb908a95d4cdf8e229bcae823f5b0»
+  «SOLVE106 c9 L* >= 9: UNSAT | vars 72144 clauses 395091 | cnf sha1 321498e6e67047b7a99a54caa8f1066d55c21618 | solver glucose4 (python-sat 1.9.dev15) | 0.1 s | proof lines 2107 sha1 5e9c0b589760b6de5864bb49b3bc7aff9f5390cf»
+  «CHECK106 c9 drup: s VERIFIED (730 lemmas RUP-checked)»
+  «CHECK106 c9 ref_rup: s VERIFIED (730 lemmas RUP-checked, deletions ignored)»
+  «REGEN106 c9 cnf equal yes proof equal yes»
+  «PROOF106 c9 dump/c9.drup.gz bytes 14110 sha1 990187767a33a76f6ae1db99404eb18969bcd415»
+- Reading: the pipeline finds a known witness (c5, decoded and replayed on N5 with L* = 5, all six counters 0), recovers the fixed
+  genome's L* exactly (g5 SAT, g6 UNSAT with a proof both checkers verify), and refutes «L* ≥ 9» with a checked proof (a sanity bound,
+  below the layer-1 maximum + 1). Both proofs regenerate byte-identically.
