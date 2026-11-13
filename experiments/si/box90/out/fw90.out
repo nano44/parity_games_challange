@@ -1,0 +1,30 @@
+engine own instance N+M T C maxP depth fanin A maxm idfail rafail lexdec
+own FW4_2.json 163 17 3 7 4 2 4 1 0 0 0
+own FW8_2.json 371 29 3 54 8 2 4 1 0 0 0
+own FW12_2.json 579 41 3 376 12 2 4 1 0 0 0
+own FW16_2.json 787 53 3 2583 16 2 4 1 0 0 0
+own FW6_3.json 471 30 4 28 6 3 6 1 0 0 0
+own FW6_4.json 719 37 5 31 6 4 8 1 0 0 0
+own FW8_4.json 1127 47 5 116 8 4 8 1 0 0 0
+engine g3 instance N+M T C maxP depth fanin A maxm idfail rafail lexdec
+g3 FW4_2.json 163 17 3 7 4 2 4 1 0 0 0
+g3 FW8_2.json 371 29 3 54 8 2 4 1 0 0 0
+g3 FW12_2.json 579 41 3 376 12 2 4 1 0 0 0
+g3 FW16_2.json 787 53 3 2583 16 2 4 1 0 0 0
+g3 FW6_3.json 471 30 4 28 6 3 6 1 0 0 0
+g3 FW6_4.json 719 37 5 31 6 4 8 1 0 0 0
+g3 FW8_4.json 1127 47 5 116 8 4 8 1 0 0 0
+FW4_2.json 17 3 7 4 2 4 0 0 0 0 0 0
+FW4_2.json T3 17 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 3 maxP 7 maxDep 4 maxRA 2 tight 1 A 4 at ('x', 54) states 0-17
+FW8_2.json 29 3 54 8 2 4 0 0 0 0 0 0
+FW8_2.json T3 29 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 3 maxP 54 maxDep 8 maxRA 2 tight 1 A 4 at ('x', 122) states 0-29
+FW12_2.json 41 3 376 12 2 4 0 0 0 0 0 0
+FW12_2.json T3 41 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 3 maxP 376 maxDep 12 maxRA 2 tight 1 A 4 at ('x', 190) states 0-41
+FW16_2.json 53 3 2583 16 2 4 0 0 0 0 0 0
+FW16_2.json T3 53 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 3 maxP 2583 maxDep 16 maxRA 2 tight 1 A 4 at ('x', 258) states 0-53
+FW6_3.json 30 4 28 6 3 6 0 0 0 0 0 0
+FW6_3.json T3 30 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 4 maxP 28 maxDep 6 maxRA 3 tight 1 A 6 at ('x', 155) states 0-30
+FW6_4.json 37 5 31 6 4 8 0 0 0 0 0 0
+FW6_4.json T3 37 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 5 maxP 31 maxDep 6 maxRA 4 tight 1 A 8 at ('x', 237) states 0-37
+FW8_4.json 47 5 116 8 4 8 0 0 0 0 0 0
+FW8_4.json T3 47 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 5 maxP 116 maxDep 8 maxRA 4 tight 1 A 8 at ('x', 371) states 0-47

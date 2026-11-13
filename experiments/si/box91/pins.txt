@@ -1,0 +1,8 @@
+# Engines used read-only by box 91 (not copied; extracted at run time by run91.sh with `git archive <SHA>`):
+# own engine: L-RED R221 own.py at claude/l-red 4b309716e (R228 Addendum C)
+# g3 engine: L-NEW's Gamma3 N5'-xi run from S3 (gamma3 / n5v / n5x / eg195) at claude/l-new fcba92fcacbd4a40bd32ba4e395b4430c703803b (= box 90's pin)
+5cfc0b240c744ad302109f6d93419b063790d7b2  4b309716:experiments/red/r221/own.py
+8758456ffb932bb75cdc327114c3023c454f0dc2  fcba92fc:experiments/new/box189/gamma3.py
+aeaa8d019c6f0e41e60748a72f1745180d0b33cb  fcba92fc:experiments/new/box190/n5v.py
+e9c14eb4301355e713f8ef586cf7980dedd39dfc  fcba92fc:experiments/new/box21/n5x.py
+100c3c6f03b3297ee48508a27debdd5c3bfafab6  fcba92fc:experiments/new/box195/eg195.py

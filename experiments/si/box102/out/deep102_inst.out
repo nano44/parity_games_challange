@@ -1,0 +1,27 @@
+WC4_2.json T3 4 {'nflip': 2, 'D1': 0, 'D2': 0, 'maxpg': 0, 'abovefail': 0, 'lam': 0, 'propfail': 0, 'mch': 19, 'mD1': 1} edepth {0: 2}
+WC16_2.json T3 4 {'nflip': 14, 'D1': 0, 'D2': 0, 'maxpg': 0, 'abovefail': 0, 'lam': 0, 'propfail': 0, 'mch': 67, 'mD1': 1} edepth {0: 14}
+FW8_2.json T3 29 {'nflip': 0, 'D1': 0, 'D2': 0, 'maxpg': 0, 'abovefail': 0, 'lam': 0, 'propfail': 0, 'mch': 0, 'mD1': 0} edepth {}
+FW16_2.json T3 53 {'nflip': 0, 'D1': 0, 'D2': 0, 'maxpg': 0, 'abovefail': 0, 'lam': 0, 'propfail': 0, 'mch': 0, 'mD1': 0} edepth {}
+MW8_2.json T3 55 {'nflip': 0, 'D1': 0, 'D2': 0, 'maxpg': 0, 'abovefail': 0, 'lam': 0, 'propfail': 0, 'mch': 2, 'mD1': 2} edepth {}
+MW32_2.json T3 199 {'nflip': 0, 'D1': 0, 'D2': 0, 'maxpg': 0, 'abovefail': 0, 'lam': 0, 'propfail': 0, 'mch': 2, 'mD1': 2} edepth {}
+C6G8_n54.json T3 17 {'nflip': 64, 'D1': 3, 'D2': 0, 'maxpg': 2, 'abovefail': 0, 'lam': 13, 'propfail': 0, 'mch': 308, 'mD1': 29} edepth {-1: 13, 0: 33, 1: 15, 2: 3}
+RWX_n95.json T3 12 {'nflip': 60, 'D1': 0, 'D2': 0, 'maxpg': 0, 'abovefail': 0, 'lam': 4, 'propfail': 0, 'mch': 290, 'mD1': 2} edepth {-1: 4, 0: 52, 1: 4}
+DWT20_2803.json T3 22 {'nflip': 76, 'D1': 9, 'D2': 0, 'maxpg': 2, 'abovefail': 0, 'lam': 1, 'propfail': 0, 'mch': 565, 'mD1': 114} edepth {-1: 1, 0: 50, 1: 16, 2: 9}
+DHIB26_2804.json T3 28 {'nflip': 129, 'D1': 24, 'D2': 11, 'maxpg': 7, 'abovefail': 0, 'lam': 0, 'propfail': 0, 'mch': 868, 'mD1': 288} edepth {0: 77, 1: 28, 2: 13, 3: 6, 4: 5}
+DHIB18_2805.json T3 19 {'nflip': 142, 'D1': 2, 'D2': 0, 'maxpg': 2, 'abovefail': 0, 'lam': 31, 'propfail': 0, 'mch': 632, 'mD1': 61} edepth {-1: 31, 0: 87, 1: 22, 2: 2}
+k1fail_202.json T3 4 {'nflip': 1, 'D1': 0, 'D2': 0, 'maxpg': 0, 'abovefail': 0, 'lam': 0, 'propfail': 0, 'mch': 4, 'mD1': 0} edepth {0: 1}
+Ku_4.json T3 28 {'nflip': 0, 'D1': 0, 'D2': 0, 'maxpg': 0, 'abovefail': 0, 'lam': 0, 'propfail': 0, 'mch': 2, 'mD1': 0} edepth {}
+Ku_8.json T3 52 {'nflip': 0, 'D1': 0, 'D2': 0, 'maxpg': 0, 'abovefail': 0, 'lam': 0, 'propfail': 0, 'mch': 2, 'mD1': 0} edepth {}
+Ku_16.json T3 100 {'nflip': 0, 'D1': 0, 'D2': 0, 'maxpg': 0, 'abovefail': 0, 'lam': 0, 'propfail': 0, 'mch': 2, 'mD1': 0} edepth {}
+Kprev_8.json T3 52 {'nflip': 0, 'D1': 0, 'D2': 0, 'maxpg': 0, 'abovefail': 0, 'lam': 0, 'propfail': 0, 'mch': 2, 'mD1': 0} edepth {}
+MWR4_2.json T3 30 {'nflip': 9, 'D1': 0, 'D2': 0, 'maxpg': 0, 'abovefail': 0, 'lam': 0, 'propfail': 0, 'mch': 236, 'mD1': 0} edepth {0: 5, 1: 4}
+MWR8_2.json T3 54 {'nflip': 17, 'D1': 0, 'D2': 0, 'maxpg': 0, 'abovefail': 0, 'lam': 0, 'propfail': 0, 'mch': 660, 'mD1': 0} edepth {0: 9, 1: 8}
+MWR16_2.json T3 102 {'nflip': 33, 'D1': 0, 'D2': 0, 'maxpg': 0, 'abovefail': 0, 'lam': 0, 'propfail': 0, 'mch': 2084, 'mD1': 0} edepth {0: 17, 1: 16}
+C98_2_2_3.json T3 8 {'nflip': 0, 'D1': 0, 'D2': 0, 'maxpg': 0, 'abovefail': 0, 'lam': 0, 'propfail': 0, 'mch': 19, 'mD1': 0} edepth {}
+C98_2_3_3.json T3 8 {'nflip': 4, 'D1': 0, 'D2': 0, 'maxpg': 0, 'abovefail': 0, 'lam': 3, 'propfail': 0, 'mch': 24, 'mD1': 0} edepth {-1: 3, 0: 1}
+C98_3_3_3.json T3 12 {'nflip': 20, 'D1': 0, 'D2': 0, 'maxpg': 0, 'abovefail': 0, 'lam': 10, 'propfail': 0, 'mch': 69, 'mD1': 2} edepth {-1: 10, 0: 10}
+C98_3_4_3.json T3 12 {'nflip': 20, 'D1': 0, 'D2': 0, 'maxpg': 0, 'abovefail': 0, 'lam': 10, 'propfail': 0, 'mch': 88, 'mD1': 0} edepth {-1: 10, 0: 10}
+C98_4_4_3.json T3 16 {'nflip': 29, 'D1': 0, 'D2': 0, 'maxpg': 0, 'abovefail': 0, 'lam': 24, 'propfail': 0, 'mch': 117, 'mD1': 0} edepth {-1: 24, 0: 5}
+C98_4_5_3.json T3 19 {'nflip': 83, 'D1': 0, 'D2': 0, 'maxpg': 0, 'abovefail': 0, 'lam': 50, 'propfail': 0, 'mch': 215, 'mD1': 0} edepth {-1: 50, 0: 33}
+C98_5_5_3.json T3 15 {'nflip': 54, 'D1': 0, 'D2': 0, 'maxpg': 0, 'abovefail': 0, 'lam': 30, 'propfail': 0, 'mch': 185, 'mD1': 0} edepth {-1: 30, 0: 24}
+TOTAL genomes 26 nflip 757 D1 38 D2 11 maxpg 7 abovefail 0 lam 176 propfail 0 mch 6462 mD1 502 edepth {-1: 176, 0: 430, 1: 113, 2: 27, 3: 6, 4: 5}

@@ -1,0 +1,14 @@
+engine own instance N+M T C maxP depth fanin A maxm idfail rafail lexdec
+own WC4_2.json 60 4 1 1 1 0 2 0 0 0 0
+own WC8_2.json 112 4 1 1 1 0 2 0 0 0 0
+own WC16_2.json 216 4 1 1 1 0 2 0 0 0 0
+engine g3 instance N+M T C maxP depth fanin A maxm idfail rafail lexdec
+g3 WC4_2.json 60 4 1 1 1 0 2 0 0 0 0
+g3 WC8_2.json 112 4 1 1 1 0 2 0 0 0 0
+g3 WC16_2.json 216 4 1 1 1 0 2 0 0 0 0
+WC4_2.json 4 1 1 1 0 2 0 0 0 0 0 0
+WC4_2.json T3 4 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 1 maxP 1 maxDep 1 maxRA 0 tight 0 A 2 at ('x', 19) states 0-4
+WC8_2.json 4 1 1 1 0 2 0 0 0 0 0 0
+WC8_2.json T3 4 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 1 maxP 1 maxDep 1 maxRA 0 tight 0 A 2 at ('x', 35) states 0-4
+WC16_2.json 4 1 1 1 0 2 0 0 0 0 0 0
+WC16_2.json T3 4 ph1fail 0 ph2fail 0 rafail 0 rpfail 0 maxC 1 maxP 1 maxDep 1 maxRA 0 tight 0 A 2 at ('x', 67) states 0-4

@@ -1,0 +1,4 @@
+XCK104 n 2: Howard T 30; |V| 708; impl1 iterations 33 fallbacks 1; impl2 iterations 33 fallbacks 1; regions equal True; vs Zielonka True/True; verify errors 0/0; AGREE+CORRECT
+XCK104 n 3: Howard T 70; |V| 1017; impl1 iterations 73 fallbacks 1; impl2 iterations 73 fallbacks 1; regions equal True; vs Zielonka True/True; verify errors 0/0; AGREE+CORRECT
+XCK104 n 4: Howard T 150; |V| 1326; impl1 iterations 153 fallbacks 1; impl2 iterations 153 fallbacks 1; regions equal True; vs Zielonka True/True; verify errors 0/0; AGREE+CORRECT
+XCK104 n 5: Howard T 310; |V| 1635; impl1 iterations 313 fallbacks 1; impl2 iterations 313 fallbacks 1; regions equal True; vs Zielonka True/True; verify errors 0/0; AGREE+CORRECT

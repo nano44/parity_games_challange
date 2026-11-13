@@ -1,0 +1,3 @@
+WRAP104 alg xi rand seed 1043 games 3000 n<=12: s3fail 0 nonstd 0 nohoward 0 fbwrong 0 endwrong 0 wrong 0 | max T 7 sum T 3618 max |W| 284
+WRAP104 alg xi rand seed 1044 games 1000 n<=24: s3fail 0 nonstd 0 nohoward 0 fbwrong 0 endwrong 0 wrong 0 | max T 7 sum T 1850 max |W| 511
+WRAP104 alg spec rand seed 1043 games 3000 n<=12: s3fail 0 nonstd 0 nohoward 0 fbwrong 0 endwrong 0 wrong 0 | max F 4 sum F 4813 max |W| 284

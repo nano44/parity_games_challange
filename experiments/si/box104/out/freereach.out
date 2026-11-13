@@ -1,0 +1,3 @@
+FREEREACH104 alg xi seed 1041 genomes 2000 d<=4 w<=3 deg<=3: s3fail 0 nonstd 0 nohoward 0 fbwrong 0 endwrong 0 wrong 0 | max T3 9 sum T3 3159 max |V| 225 edomok 0
+FREEREACH104 alg xi seed 1042 genomes 1000 d<=6 w<=4 deg<=3: s3fail 0 nonstd 0 nohoward 0 fbwrong 0 endwrong 0 wrong 0 | max T3 9 sum T3 2326 max |V| 368 edomok 0
+FREEREACH104 alg spec seed 1041 genomes 2000 d<=4 w<=3 deg<=3: s3fail 0 nonstd 0 nohoward 0 fbwrong 0 endwrong 0 wrong 0 | max F 5 sum F 3519 max |V| 225 edomok 0

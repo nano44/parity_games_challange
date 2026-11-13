@@ -1,0 +1,5 @@
+F104 n 2 mode edom alg xi: |G_n| 35 Howard T 30 | N 54 M 92 |V| 708 m 929 maxprio 377 | iterations 17 fallbacks 1 | iterations - T = -13 | S3 = standard start True | Even wins 707/708
+F104 n 3 mode edom alg xi: |G_n| 49 Howard T 70 | N 76 M 133 |V| 1017 m 1338 maxprio 541 | iterations 19 fallbacks 1 | iterations - T = -51 | S3 = standard start True | Even wins 1016/1017
+F104 n 4 mode edom alg xi: |G_n| 63 Howard T 150 | N 98 M 174 |V| 1326 m 1747 maxprio 705 | iterations 21 fallbacks 1 | iterations - T = -129 | S3 = standard start True | Even wins 1325/1326
+F104 n 5 mode edom alg xi: |G_n| 77 Howard T 310 | N 120 M 215 |V| 1635 m 2156 maxprio 869 | iterations 23 fallbacks 1 | iterations - T = -287 | S3 = standard start True | Even wins 1634/1635
+F104 n 6 mode edom alg xi: |G_n| 91 Howard T 630 | N 142 M 256 |V| 1944 m 2565 maxprio 1033 | iterations 25 fallbacks 1 | iterations - T = -605 | S3 = standard start True | Even wins 1943/1944

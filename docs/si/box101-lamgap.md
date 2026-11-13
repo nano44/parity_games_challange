@@ -1,0 +1,369 @@
+# Box 101: LAM-GAP proved (lane): in a one-player game, a Howard window with every Λ constant lasts at most |Ch| + 1 iterations; so SCC-LIN (polynomial form) ⇐ DEEP3 alone
+L-SI successor 51 (Opus 5.5), D18 / D14 / D1; Lead 09:07Z («BOX 101 = the LAM-GAP proof attempt, approved, with one gate in front of it:
+STEP 0 (literature, short)»). Labels: PROVED (L-SI lane, unrefereed) / CONJECTURE / DATA (unit, set, scope, counter) / OPEN (literature) /
+READING. Not a TARGET.md claim; not M3 or M4; not a gauntlet step; G-N5-TIME stays OPEN; N5′-xi stays a CANDIDATE (D1). Tools:
+experiments/si/box101/ (lamgap101.py, run101.sh, check101.sh); VJ engine L-RED 65 own.py (claude/l-red 59daaef2, read-only).
+
+## 0. Answer
+- STEP 0 (§1). The general statement behind L1 is OPEN in the literature: «Howard on a deterministic MDP makes at most #edges iterations»
+  is Hansen's conjecture (quoted in arXiv 2506.12254 as Conjecture 3.1, citing Hansen 2012, Conjecture 6.1.1), and «the best known upper
+  bound is exponential» (same paper, abstract and §1). So a polynomial bound for Howard on general weighted one-player games is not
+  something to expect from this lane.
+- Our case is narrower in one exact way. Under the VJ valuation the «gain» of a play is its cycle's top vertex Λ, so a vertex has at most
+  n distinct gains, and they rise monotonically. In mean-payoff DMDPs the gain is a cycle mean, and there are exponentially many. With
+  the gain counted by DEPTH-COUNT3's Λ part, what is left is the fixed-gain window: §5.1's missing step.
+- Lemma LAM-GAP (PROVED, lane; §2). In every one-player game under the VJ valuation, a maximal window of a Howard run in which Λ(v) is
+  constant for every vertex v has at most |Ch| + 1 iterations (Ch = the Even vertices with a choice). §5.1's obstacle (a switch that
+  closes a cycle) is harmless:
+  - a closed cycle that avoids the window's top ℓ has another top, so Λ changes and the window ends;
+  - a closed cycle through ℓ leaves val(ℓ) = (ℓ, ∅, 0) unchanged.
+- Corollary L1-POLY (PROVED, lane; §3). L1(C) ≤ (n3(n3 − 1) + 1)·(N_C + 2). Howard on every one-player game G_C[φ] is polynomial.
+- Corollary (PROVED, lane, from box 100 WINDOW with LAM-GAP; §3), for every c ≥ 0:
+  H-run(C) after t0 ≤ (1 + E_C + n3(n3 − 1) + 2·I_C·(n3 − 1 + n3(S_c(n3) − 1)) + Deep_c(C))·(N_C + 2).
+  So SCC-LIN in polynomial form, and with SCC-RED a polynomial T3, now rest on CONJECTURE DEEP3 ALONE (box 100 §5.2).
+- Not claimed: H(C) ≤ M_C (the exact SCC-LIN); novelty of LAM-GAP (it is an elementary Bellman–Ford argument; I did not find it in the
+  sources opened, which treat mean-payoff, not VJ, valuations).
+
+## 1. STEP 0: literature (sources opened; notebook entry «Sources opened», box 101)
+- arXiv 2506.12254v1 (Asadi, Chatterjee, de Raaij, «Lower Bound on Howard Policy Iteration for Deterministic Markov Decision
+  Processes»; full text, pdftotext of the arXiv PDF):
+  - Abstract: «the best known upper bound is exponential».
+  - §3, Conjecture 3.1 «([Hansen, 2012, Conjecture 6.1.1]). The number of iterations performed by Howard's algorithm, when applied to
+    a DMDP, is at most the number of edges.»
+  - Theorem 3.2 (Main Result; fractions as rendered by pdftotext): a DMDP with 2n vertices and (3n² + n)/2 edges on which Howard
+    performs (n² + 7n − 6)/2 iterations
+    (fewer than the edges, so it is consistent with Conjecture 3.1).
+  - §1 describes Hansen–Zwick 2010 as «DMDPs with 2n vertices, m edges, and edge weights of O(n^(n²)), on which the algorithm requires
+    m − n + 1 iterations», and adds: «the best known upper bound is exponential as the weights are exponential».
+  - Hansen 2012 and Hansen–Zwick 2010 are cited here only as quoted by 2506.12254 (not opened themselves).
+- arXiv 1008.0530 (Hansen, Miltersen, Zwick; abstract): strategy iteration is strongly polynomial for turn-based stochastic games with a
+  CONSTANT discount factor, O((m/(1 − γ))·log(n/(1 − γ))) iterations. Not our case: VJ / parity corresponds to no fixed discount.
+- arXiv 1208.5083 (Post, Ye; abstract): the SIMPLEX method with the highest-gain rule is strongly polynomial on discounted DMDPs,
+  O(n³m²log²n) iterations at uniform discount. It concerns simplex, not Howard; the page states no open problem.
+- Plain answer to the Lead's gate. LAM-GAP plus the Λ count does NOT imply Hansen's conjecture or any polynomial bound for Howard on
+  mean-payoff DMDPs: the VJ valuation is a different, coarser algorithm state (gain = top vertex, then the set Π, then the length). It
+  implies only the VJ statement «Howard on one-player games under the VJ valuation makes O(n²·|Ch|) iterations» (§3). That statement is
+  narrower than the open one, and §2 proves it.
+
+## 2. Lemma LAM-GAP (PROVED, lane)
+Setting: a one-player game (every non-Even vertex has one successor; for G_C[φ]: Odd fixed by φ at C's gates and constant elsewhere
+after t0; non-mover Even vertices frozen). Ch := the Even vertices allowed to switch (for G_C[φ]: C's movers). VJ value of v under σ:
+(Λ, Π, len), where the play is a lasso, Λ is the most relevant vertex of its cycle, and the path from v to the first visit of Λ is
+simple, of length len, with Π its vertices more relevant than Λ. Order ⊴ as in box 100 §3. Howard: every v ∈ Ch with a successor of
+strictly larger value moves to a ⊴-best successor; otherwise it keeps its current one (any tie resolution).
+
+Premise. (M) val_(t+1) ⊵ val_t pointwise: RESULTS R15 (a) («a switch set of improvements does not lower any value»), in the one-player
+case. Elementary facts about VJ path values:
+- (P1) If v ≠ Λ(v), then val(v) = ext(v, val(σ(v))). Here ext(v, (ℓ, Π, len)) := (ℓ, Π ∪ ({v} if v is more relevant than ℓ), len + 1),
+  and σ(v)'s path to ℓ is the suffix of v's, so it avoids v.
+- (P2) ext(v, ·) is strictly order-preserving on values whose paths avoid v: Λ is unchanged, v enters both Π or neither, and len rises
+  by 1 on both.
+- (P3) If Λ(v) = v, then val(v) = (v, ∅, 0).
+
+Statement. Let a..b be a maximal run of states of a Howard run with Λ_t(v) = Λ_a(v) for every vertex v and a ≤ t ≤ b. Then b − a ≤ |Ch| + 1.
+
+Proof.
+Notation: Tops := {ℓ : Λ_a(ℓ) = ℓ}, constant on the window. For a simple path P from v to ℓ ∈ Tops: value(P) := (ℓ, its vertices
+before ℓ more relevant than ℓ, its length), and c(P) := the number of vertices of Ch on P before ℓ. opt(v) := the ⊴-maximum of value(P)
+over the simple paths P from v to Λ_a(v).
+- (U) Upper bound. For t in the window, val_t(v) = value(the path of v's play to Λ(v)) ⊴ opt(v).
+- (L) Claim: for a + k ≤ b, every vertex v and every simple path P from v to any ℓ ∈ Tops with c(P) ≤ k: val_(a+k)(v) ⊵ value(P).
+  Induction on k, and inside one k along P from ℓ backwards. Let P = v, u, …, ℓ, with P′ the suffix from u.
+  - v = ℓ: trivial.
+  - v not in Ch (deterministic): by the induction, val_(a+k)(u) ⊵ value(P′).
+    - If v ≠ Λ(v), then val(v) = ext(v, val(u)) ⊵ ext(v, value(P′)) = value(P) (P1, P2; both paths avoid v).
+    - If Λ(v) = v, then u's play returns to v, so Λ(u) = v. Then val(u) ⊵ value(P′) forces rew(v) > rew(ℓ) (v ≠ ℓ), so
+      (v, ∅, 0) ▷ value(P).
+  - v ∈ Ch: c(P′) ≤ k − 1, so val_(a+k−1)(u) ⊵ value(P′). Howard at a + k − 1 gives v a successor w := σ_(a+k)(v) with
+    val_(a+k−1)(w) ⊵ val_(a+k−1)(u) (w is ⊴-best, or the kept current one is best). By (M), val_(a+k)(w) ⊵ value(P′).
+    - If v ≠ Λ(v): val_(a+k)(v) = ext(v, val_(a+k)(w)) ⊵ ext(v, value(P′)) = value(P). This uses P1 and P2 at time a + k, where w's
+      path avoids v. It never applies ext to val_(a+k−1)(w), whose path may pass v: this is the point where §5.1's «same-top cycle»
+      worry is avoided.
+    - If Λ(v) = v: as in the deterministic case.
+- (O) By (L) with k = |Ch| (every simple path has c ≤ |Ch|) and (U): if t* := a + |Ch| ≤ b, then val_(t*) = opt on every vertex.
+- (E) Exit. Suppose t* + 1 ≤ b, and v ∈ Ch with v ≠ Λ(v) has an improving switch at t* to w, with val_(t*)(w) ▷ val_(t*)(σ v). Let
+  ℓ := Λ(v).
+  - If Λ(w) ≠ ℓ: at t* + 1, v → w gives Λ(v) = Λ(w) ≠ ℓ (whether or not v lies on w's cycle). This contradicts Λ constant at t* + 1.
+  - If Λ(w) = ℓ and w's path Q at t* avoids v: ext(v, value(Q)) is a simple-path value ⊴ opt(v) = ext(v, opt(σ v)), so by P2
+    value(Q) ⊴ opt(σ v) = val_(t*)(σ v). Not improving: contradiction.
+  - If Q passes v: at t* + 1, v → w, and (U) with (M) give val_(t*+1)(w) = opt(w), by a path that now avoids v (it is the suffix of
+    v's). So ext(v, opt(w)) = val_(t*+1)(v) ⊴ opt(v) = ext(v, opt(σ_(t*) v)). By P2, opt(w) ⊴ opt(σ_(t*) v), which contradicts the
+    improving switch.
+  So at t* only top vertices ℓ ∈ Ch switch. At t* + 1 all values are unchanged (= opt, by (U) and (M)), so each such ℓ is already at a
+  best successor, and by the same case analysis every non-top improving switch at t* + 1 ends the window. Hence b ≤ t* + 1 =
+  a + |Ch| + 1. ∎
+- Where the earlier attempt (box 100 §5.1) stuck: it asked for optimal substructure of opt paths. The proof does not need it, because
+  (L) quantifies over ALL simple paths and is driven by monotonicity (M), not by suffix-optimality.
+- DATA (lamgap101.py; unit: Howard run on a random one-player game; set: seeds 1, 2 (3,000 games each, n ≤ 9, 30% with an added fuse
+  path), seed 3 (2,000 games, n ≤ 40); both tie rules; out/lamgap_*.out). Must-0 counters, all 0:
+  - pathfail: claim (L) brute-forced at n ≤ 7, 23,412 / 23,124 path checks on seeds 2 / 1;
+  - gapfail: the bound;
+  - optfail: (O), 269 / 238 windows reaching t*;
+  - lfail: L ≤ (#Λ-steps + 1)(|Ch| + 2).
+  Controls fire: CTRL=1 (bound ⌊|Ch|/2⌋) gapfail 137; PCTRL=1 (paths with ≤ k + 1 choices) pathfail 2,117.
+  - Limit of this data: random games have short runs (max window 6, max T 9). The long windows are on Γ3 (box 100 §5.1:
+    MWR4/8/16_2 gap 26 / 50 / 98 ≤ N_C 44 / 80 / 152), which agrees.
+
+## 3. Consequences (PROVED, lane)
+- Corollary L1-POLY. A Howard run of G_C[φ] splits into windows at the states where some Λ changes. By (M) every Λ only rises in
+  reward, so at most n3(n3 − 1) such states over the vertices of Γ3(G). Each window has ≤ N_C + 2 states (LAM-GAP with Ch = C's
+  movers). So L1(C) ≤ (n3(n3 − 1) + 1)(N_C + 2).
+- Corollary SCC-POLY ⇐ DEEP3. This is box 100 Theorem WINDOW with Λ constancy over all vertices, so that windows match LAM-GAP's.
+  - The Λ-change count becomes n3(n3 − 1) instead of N_C(n3 − 1); the proof is unchanged, by DEPTH-COUNT3 per vertex.
+  - Gap(C) ≤ N_C + 1 by LAM-GAP, applied to G_C[σ̄_a]: a two-player window is a one-player window of that game (box 100 §4).
+  - Result: H-run(C) after t0 ≤ (1 + E_C + n3(n3 − 1) + 2·I_C·(n3 − 1 + n3(S_c(n3) − 1)) + Deep_c(C))·(N_C + 2), for every c ≥ 0.
+  - With SCC-RED (box 99 §2, with Addendum A): if for some fixed c Deep_c is polynomial on a family, T3 is polynomial on it.
+- What stays open: CONJECTURE DEEP3 (box 100 §5.2; the Γ3 form of L-NEW 70's DEEP-k1, for internal gates of one SCC). It is now the only
+  open premise of this route to SCC-LIN in polynomial form. L-RED 66 is queued to attack it (Lead 09:07Z); the start is DHIB26_2804's
+  24 deep flips (sha1 2c49fd10).
+
+## 4. Sources opened (this box)
+- arXiv 2506.12254v1 full text (abstract; §1; §3 Conjecture 3.1, Theorem 3.2; §5).
+- arXiv 1008.0530 (abstract). arXiv 1208.5083 (abstract).
+- Not opened, cited only as quoted by 2506.12254: Hansen 2012 (thesis, Conjecture 6.1.1); Hansen–Zwick 2010 (ISAAC, LNCS 6506).
+
+## Addendum A (L-SI successor 51, 2026-11-12T09:54Z (date -u); append-only, §0-§4 unchanged): the chain to a polynomial T3, and its scope
+Lead 09:56Z: «write this first, before box 102 work». Everything below is a CONDITIONAL of lane lemmas. All of them are unrefereed except
+the landed R-ids named. DEEP3 is a CONJECTURE. Nothing here is a TARGET.md claim, M3 or M4.
+
+### A.1 The chain (polynomial T3 ⇐ DEEP3)
+Columns: link | statement (short) | status | attacked by, verdict | premises (landed R-ids).
+
+| link | statement | status | attacked by, verdict | premises |
+| --- | --- | --- | --- | --- |
+| REACH3-ALL, END-T3 | N5′-xi from S3 on Γ3(G) is a HOW3 run at the movers until its first fallback at T3 + 1; it makes exactly T3 + 3 iterations | LANDED (R125; R124 END-T3, its condition discharged by R125) | both referees (signed) | R104, R117, R118, R124, R125 |
+| SCC-RED (box 99 §2 + Add. A) | T3 ≤ max over SCC chains of D(G) of Σ (H(C) + 1), H(C) over all legal tie resolutions | PROVED, lane | L-RED 65 R232: SURVIVES, with wording gap G1 (fixed in Add. A) | R125 (HOW3, reachability from R104's edges) |
+| CAP (box 99 §3) | an option's value is capped by its β-face | PROVED, lane (not used by the bound itself) | L-RED 65 R232: SURVIVES | R125 (f) LOC-GATE3, (i) NO-TIE3, CN2-3, F4′ |
+| ONE-CROSS3 + INT-ONLY (L-RED 65, R232 §0) | a gate with a constant face flips ≤ 1 time; in G_C after t0 only internal gates re-flip | PROVED, lane (L-RED's own) | not attacked by another lane | R125 (d) F1, (f), (i) |
+| TWO-CROSS (box 100 §2) | each flip away from a face = a change of that face; flips ≤ ch(pe) + ch(pβ) | PROVED, lane | not yet attacked | R125 (d) F1, (f), (i) |
+| DEPTH-COUNT3 (box 100 §3) | per vertex ≤ n3 − 1 Λ changes and ≤ n3(S_c(n3) − 1) changes of depth ≤ c | PROVED, lane (transfer of L-NEW 70's box 206 lemma) | not yet attacked | R125 (d) F1; the VJ order (VJ00 §4.2, R118's premise list) |
+| WINDOW (box 100 §4; all-vertex form in §3 here) | the run in C after t0 ≤ (#windows) · (window length) | PROVED, lane | not yet attacked | R125 (HOW3, [OPT] best response), box 99 §1 |
+| LAM-GAP (§2 here) | a one-player Howard window with every Λ constant lasts ≤ \|Ch\| + 1 iterations | PROVED, lane | queued: L-RED 66 first item (Lead 09:56Z) | R15 (a) |
+| L1-POLY, SCC-POLY (§3 here) | L1(C) ≤ (n3(n3 − 1) + 1)(N_C + 2); H-run(C) ≤ (…)·(N_C + 2) | PROVED, lane (corollaries of the rows above) | not yet attacked | as the rows above |
+| DEEP3 (box 100 §5.2) | for some fixed c, internal-gate flips charged to depth > c are polynomially many | CONJECTURE (DATA only) | queued: L-RED 66 (kill side); L-SI box 102 (proof side) | none |
+
+The conditional, as one sentence: if DEEP3 holds on a family of genomes, then by SCC-POLY and SCC-RED, T3 is bounded by a polynomial in
+N + M on that family. By END-T3, N5′-xi from S3 on Γ3(G) then makes a polynomial number of iterations.
+
+### A.2 Scope, in TARGET.md's terms
+- What T3 counts: the number of HOW3 states of N5′-xi's run (R118's [N5XI], SPEC with box 190's S4a tie rule) from S3 on Γ3(G) before
+  its first fallback (R125 REACH3-ALL; T3 + 1 = the first fallback). The run's total is exactly T3 + 3 iterations (R124 ENDGAME-3 /
+  END-T3).
+- Inputs: the games Γ3(G) for every genome G of R104 (R117's Γ3; Ξ-cycles and Ξ self-loops allowed; any Ξ-feedback number k). This is
+  under the standing SPEC premise 1E-N3 of R57 (b), as in R104 / R117 / R124.
+  - The chain does NOT use [E-LEV], a bound on k, or IDEAL-ACYC: every premise above is stated for every genome.
+  - DEEP3 itself is stated for every genome. Its DATA (box 100 §5.2) covers 26 frozen instances and 400 random genomes only.
+- What ENDGAME-3 adds (R124, landed): after the first fallback there are exactly 2 more iterations, so the WHOLE run of N5′-xi (and of
+  N5) is T3 + 3, resp. F + 2 iterations. A bound on T3 is therefore a bound on the run. For N5 (SPEC's own S4a tie rule), R125's REACH3-ALL
+  is stated for N5′-xi only. The chain would cover N5 only if N5's mover phase is also a HOW3 run (any legal tie resolution, as H(C) now
+  allows). That is NOT established here.
+- What the chain would NOT give:
+  - M4. TARGET.md §2 asks for an algorithm polynomial on EVERY parity game; §4: «Polynomial only on a restricted class … does not
+    count as M4». The Γ3(G) games are a restricted class (the genome games of R104), and the chain says nothing about N5 or N5′-xi on
+    any other game.
+  - TARGET.md §4 also excludes «Correctness or running time resting on an unproved conjecture»; this rests on DEEP3.
+  - It counts iterations only: the cost of one iteration at bit cost (TARGET.md §3, gauntlet step 4) is a separate item.
+  - It gives no exact bound (H(C) ≤ M_C, U-FREE's T3 ≤ N + M + 4); the polynomial is crude (degree about c + 4 in n3).
+- Plainly: a chain of lane lemmas, unrefereed (except the landed rows), ending in CONJECTURE DEEP3. G-N5-TIME stays OPEN; N5′-xi stays a
+  CANDIDATE (D1).
+
+## Addendum B (L-SI successor 51, 2026-11-12T10:14Z (date -u); append-only, §0-§4 and Addendum A unchanged): L-RED 66's verdicts folded into the chain
+Source: L-RED 66, docs/red/R234-lamgap.md (relayed by the Lead 10:15Z; SHA to follow from the Lead).
+- LAM-GAP SURVIVES case by case: P1-P3, the base case, the deterministic and Ch cases, the all-simple-paths quantifier, (O) / (E), and the
+  one-player reading of R15 (a).
+- Lemma SHARP (PROVED, lane, L-RED 66): b − a ≤ |Ch|, tight. Exhaustive at n = 4: 810,000 games, 18.9M runs over ALL tie resolutions,
+  gapfail 0, max window = |Ch|. The factor (N_C + 2) in §3 becomes (N_C + 1), and L1-POLY reads L1(C) ≤ (n3(n3 − 1) + 1)(N_C + 1).
+- Gaps W1 and D1 and their fixes: box 100 Addendum A (G_C[φ] on Reach(C); DEPTH-COUNT3 plus length-only plateaus). §3's SCC-POLY bound,
+  corrected: H-run(C) after t0 ≤ (1 + E_C + n3(n3 − 1) + 2·I_C·(n3 − 1 + n3(S_c(n3) − 1) + n3(n3 − 1)S′_c(n3)) + Deep_c(C))·(N_C + 1).
+- Chain table statuses, updated (rows of Addendum A not listed here are unchanged):
+
+| link | status now |
+| --- | --- |
+| TWO-CROSS | PROVED lane; SURVIVES L-RED 66 |
+| DEPTH-COUNT3 | PROVED lane; GAP D1 (length-only changes with \|Π\| ≤ c) found by L-RED 66, fixed in box 100 Add. A |
+| WINDOW | PROVED lane; SURVIVES L-RED 66 with W1 (G_C[φ] on Reach(C)), fixed in box 100 Add. A |
+| LAM-GAP | PROVED lane; SURVIVES L-RED 66 |
+| SHARP | PROVED lane (L-RED 66): window ≤ \|Ch\|, tight |
+| L1-POLY, SCC-POLY | PROVED lane, with the corrected bounds above |
+| DEEP3 | CONJECTURE; L-RED 66 attacks the kill side; box 102 reduces it to MOVER-DEEP3 |
+
+- The conclusion is unchanged: polynomial T3 ⇐ CONJECTURE DEEP3, through lane lemmas that are unrefereed except the landed rows.
+
+## Addendum C (L-SI successor 51, 2026-11-12T11:05Z (date -u); append-only): landed R118 already covers WINDOW + LAM-GAP's role; the chain shortened; Zhong–Ye
+Lead 11:05Z (F1, F2, from L-LIT's T35 / T65 read-in, claude/l-lit 627402e7). Quotes below are from trunk 071392490 docs/RESULTS.md (grep
+by script) and from arXiv 2609.40147v2 (opened here: pdftotext of the arXiv PDF).
+
+### C.1 (F1) What is landed
+- R118 (c) Lemma PATH: «Ω_t(z_0) ⊵ val(π) along a simple path π of the fixed-σ̄ graph to a fixed cycle node, once t − a ≥ μ(π)
+  (Bellman-Ford induction).» It is the same induction as LAM-GAP's claim (L).
+- R118 (d) Theorem BR-SEG [every genome, IDEAL-CYC]: «If Λ and σ̄ are constant on the states a, a+1, …, a+j+1 and the step a+j → a+j+1
+  changes σ, then j ≤ N − 1. Hence every maximal run of consecutive p-steps has at most N steps.»
+- R118 (i) Theorem BR-SEG-G [any parity game, Howard from any σ_0, under H0]: «H0: every step t → t+1 switches some Even x with
+  Λ_t(x) ≠ x and Λ_(t+1)(x) ≠ x.»; «(a) every maximal run of p-steps has at most n_E steps;», «(b) C ≤ n(n − 1);», «(c) T ≤ C + R +
+  (C + R + 1)·n_E.»
+- R118 (l) Corollary T3 [as REACH3-CYC; R125 discharges that condition]: on Γ3 «T3 ≤ C + R + (C + R + 1)·N, with C ≤ n3·(2M + 2) and
+  n3 = N + 7M + 10;», and «N5′-xi's FL run on Γ3(G) is polynomial in N + M for every genome» ⇔ «R is polynomial along these Howard
+  runs». Here R := the steps at which Odd's σ̄ changes.
+- R118's line also records «σ̄(K2) = r proved for every genome» (Lemma K2-r), so on Γ3 R counts only steps with a gate flip.
+
+### C.2 What LAM-GAP adds, and what it does not
+- LAM-GAP / SHARP is a ONE-PLAYER statement without H0: a vertex that is its own cycle node may switch (§2 (E) handles it). It counts |Ch|
+  (the vertices with a choice; SHARP: ≤ |Ch|) instead of N or n_E. Neither difference matters on Γ3: every HOW3 step switches movers
+  only, and no mover is ever a cycle node (R125 CN2-3), so H0 holds.
+- For the chain, WINDOW + LAM-GAP's role (bounding the Λ-and-σ̄-constant stretches) is COVERED BY LANDED R118 (d) / (l). It applies
+  directly to the whole HOW3 run, so the per-SCC one-player games G_C[φ], and with them W1, are not needed. The chain table should cite
+  R118 (l) there. LAM-GAP stays a lane lemma of independent interest (one-player, no H0); for the chain it is superseded.
+- What the lane adds that is NOT landed: a bound on R. R118 (l) states it OPEN («no bound on R is claimed (OPEN)», R118's line).
+
+### C.3 The shortened chain: Theorem R-SPLIT (PROVED, lane) and CONJECTURE DEEP3-G
+- Theorem R-SPLIT. On HOW3 (Γ3, every genome), for every c ≥ 0:
+  R ≤ Σ_gates flips(g) ≤ 2M·(n3 − 1 + n3(S_c(n3) − 1) + n3(n3 − 1)S′_c(n3)) + Deep^G_c,
+  where Deep^G_c := the gate flips over the whole run that TWO-CROSS charges to a change of depth > c.
+  Proof:
+  - R counts steps with some gate flip (K2-r), so R ≤ Σ_g flips(g).
+  - TWO-CROSS (box 100 §2) charges each flip injectively to a change of the face Odd leaves at the same step.
+  - Per face, DEPTH-COUNT3 with D1's fix (box 100 Add. A) bounds the charged changes that are Λ changes (≤ n3 − 1) or have depth ≤ c
+    (≤ n3(S_c − 1) + n3(n3 − 1)S′_c). The rest are counted by Deep^G_c. There are 2M faces. ∎
+- With R118 (l): T3 ≤ C + R + (C + R + 1)·N, so T3 is polynomial in N + M on a family if, for some fixed c, Deep^G_c is.
+- CONJECTURE DEEP3-G: for some fixed c, Deep^G_c is polynomial in N + M on every genome.
+  - DATA (box 100 cross100, depth > 3, all gates, whole run): 0 on 400 random genomes; 79 in total on the 26 instances. MW8_2 / MW32_2
+    have 8 / 32 (= n; ext gates before t0), so it is linear on that family; DHIB26_2804 has 24.
+  - DEEP3-G is the Γ3 / gate form of L-NEW 70's CONJECTURE DEEP-k1 (box 206 LOUD-SPLIT on IDEAL-CYC has the same shape: T polynomial iff
+    Q_(>c) polynomial).
+- Relation to the per-SCC route (box 99-102): DEEP3 (internal gates, after t0) plus SCC-RED is a second sufficient condition. It is
+  weaker in what it asks of flips (ext gates and pre-t0 flips are free) but uses more lane lemmas. Both end in a CONJECTURE.
+- Updated chain, shortest form: R125 REACH3-ALL / R124 END-T3 (landed) → R118 (l) Corollary T3 (landed) → TWO-CROSS (lane, SURVIVES
+  L-RED 66) → DEPTH-COUNT3 + D1 fix (lane) → CONJECTURE DEEP3-G.
+
+### C.4 (F2) Hansen's conjecture: claimed refuted by an unrefereed preprint
+- §1 above called Hansen 2012 Conj. 6.1.1 OPEN. Correction: OPEN, but claimed refuted by an unrefereed preprint.
+  arXiv 2609.40147v2 (Zhong, Ye, «Policy Iteration Is Not Strongly Polynomial for Deterministic Markov Decision Processes: The Price of
+  Algorithmic Anarchy», v1 30 Sep 2026, v2 13 Oct 2026).
+  - Theorem 6.1 (p. 23): «There is a family of deterministic average-reward MDPs with N states and at most four actions per state, on
+    which Howard's policy iteration performs at least exp(Ω(N)) iterations from a specified initial policy before any state attains its
+    optimal gain.»
+  - p. 23-24: «It also refutes the conjecture that Howard's policy iteration terminates within M iterations on every deterministic
+    average-reward MDP with M state–action pairs or, equivalently, on every weighted directed graph with M edges (Hansen, 2012,
+    Conjecture 6.1.1; Asadi et al., 2025, Conjecture 3.1).»
+  - Not checked here; not a source for any claim of this lane beyond «it is claimed».
+- Why an exponential mean-payoff family does not give long Howard runs under VJ (PROVED part, then READING):
+  - PROVED (lane): under the VJ valuation, Howard on ANY one-player game makes at most (n(n − 1) + 1)(|Ch| + 1) iterations. Each
+    vertex's Λ changes at most n − 1 times (values monotone, R15 (a)), and between Λ changes SHARP bounds the window by |Ch|. On
+    two-player games R118 (i) BR-SEG-G gives the same shape with R added.
+  - The exponential family's iterations all happen «before any state attains its optimal gain». They are gain updates. In mean payoff a
+    gain is a cycle MEAN, and the family's many gain improvements are possible because cycle means take exponentially many values. In VJ
+    the «gain» is Λ, the cycle's top VERTEX: at most n values per vertex, each reached at most once.
+  - READING: a mean-payoff Howard run is not a VJ Howard run. Encoding priorities as weights (−n)^p makes the optimal cycles agree, but
+    Howard's intermediate choices compare means and biases, not (Λ, Π, len). So Zhong–Ye's lower bound neither transfers to VJ nor
+    contradicts LAM-GAP / SHARP.
+
+## Addendum D (L-SI successor 51, 2026-11-12T11:23Z (date -u); append-only): Lemma RESTRICT-C (route B′), the three routes, §1's wording
+Lead 11:25Z (Lead reading of L-LIT T65, claude/l-lit f5fff985 docs/lit/T65-lamgap-one-player-howard.md; not opened here).
+
+### D.1 Novelty label (Lead reading, recorded)
+- LAM-GAP / SHARP go beyond landed R118 in two points only: no H0, and the tight constant |Ch|.
+- The induction is R118 (c) PATH and R17 (b) Lemma P. The additive-weight analogue is Cochet-Terrasson–Gaubert Thm 2.3, per L-LIT T65 (not
+  opened by me).
+- Label: «PROVED (lane); the Γ3 use is covered by landed R118 (d) / (l) up to the restriction step D.2».
+
+### D.2 Lemma RESTRICT-C (PROVED, lane; the one new step of route B′)
+Premises (trunk 071392490 docs/RESULTS.md, quoted by script):
+- R125 (e) Lemma CN2-3: «For every positional pair of Γ3(G) and every vertex v ≠ c_X, the cycle node of v's play has Ω ≥ 3; no mover,
+  gate or pad is ever a cycle node or in a set Π.»
+- R125 (c) Theorem REACH3-ALL: «For every genome G, the N5′-xi run from S3 on Γ3(G) visits only standard states and its mover parts form a
+  run of HOW3(G) (tie rule: Ξσ-best, then SPEC's choice, then the larger index) until its first fallback, at iteration T3 + 1.»
+- R118 (d) Theorem BR-SEG [every genome]: «If Λ and σ̄ are constant on the states a, a+1, …, a+j+1 and the step a+j → a+j+1 changes σ,
+  then j ≤ N − 1.»
+- R118 (l) Corollary T3: «§4 applies on Γ3».
+- Definitions of R104 / R117: the genome (N, lev, opts, gate, br, bp, start), Γ3's vertices, edges and priorities:
+  - e-priorities eb + 2i in (lev, gate) order;
+  - β-priorities 6 + 2br + bp;
+  - m-pad priority 2 at the start option, else 0;
+  - the core above.
+
+Definitions.
+- C is an SCC of D(G). Reach(C) is the set of movers reachable from C in D(G), C included. Every option of a mover of Reach(C) has its
+  W- and Ξ-targets in Reach(C) or −1, so Reach(C) is closed under D(G)'s successors.
+- For a state a ≥ t0(C), G′ is the genome on the movers of Reach(C), renumbered:
+  - their options with the same (lev, gate, br, bp) entries and targets renamed (−1 kept);
+  - start := σ_a's choices at those movers.
+
+Statement. Let V_R be the vertices of Γ3(G) reachable from Reach(C)'s movers (the core included). Then:
+- (i) Γ3(G′) is isomorphic to Γ3(G) restricted to V_R, by a map that preserves owners and edges. It preserves the relevance order on all
+  vertices except the m-pads, whose priorities may differ (start := σ_a).
+- (ii) For every positional pair, the VJ value (Λ, Π, len) of every vertex of V_R is the same in both games, and Odd's pointwise-optimal
+  choices on V_R are the same.
+- (iii) The states a, a + 1, … of HOW3(G), restricted to V_R, form a HOW3 run of G′ from its start S3(G′).
+- (iv) Hence every two-player window of C (σ̄ and Λ constant on V_R) has at most N′ ≤ |Reach(C)| ≤ N steps (R118 (d) / (l) on G′):
+  Gap(C) ≤ N.
+
+Proof.
+- (i) The edges of V_R stay inside V_R (closure). Priorities: restricting the options keeps the (lev, gate) order of the e-vertices, and
+  the e-block stays above every β (eb > bmax in both games). Every other non-core priority (gates, pads, movers, c_X, K1, K2) is the
+  same constant, and the core stays on top; only m-pads change, with the start.
+- (ii) A play from V_R stays in V_R. By CN2-3, no m-pad is ever a cycle node or in a set Π, so its priority never enters a value. Values
+  and Odd's optimal replies are computed on V_R alone.
+- (iii) After t0(C) the movers of Reach(C) \ C do not switch in G's run (definition of t0). By (ii) they have the same values in G′, so
+  they have no improving switch there either. The movers of C switch by HOW3's rule on the same values, and the non-mover Even vertices
+  are frozen at the same standard choices. A tie resolution legal in G is legal in G′ (G1: H(C) ranges over all legal resolutions; the
+  proof of BR-SEG (DOM, STRICT, PATH) does not use a tie rule — Lead to confirm against R118's packet).
+- (iv) A two-player window of C on V_R is a p-run of the G′ run (the core's Λ and σ̄ are constant: R118's K2-r). Apply BR-SEG to G′. ∎
+- Caveat, stated plainly: (iii)'s tie-rule sentence is a reading of BR-SEG's proof, not a quote; a referee must check it.
+
+### D.3 The three routes (Lead reading 11:25Z, recorded)
+| route | window bound | Λ / σ̄ count | open premise | status |
+| --- | --- | --- | --- | --- |
+| B′ (PRIMARY for landing) | R118 (d) + (l) + R125 (c), (e) + RESTRICT-C: Gap(C) ≤ N | per SCC: ONE-CROSS3 / INT-ONLY, TWO-CROSS, DEPTH-COUNT3 (D1 fixed), SCC-RED | DEEP3 (per SCC: internal gates after t0) | lane + landed; RESTRICT-C is the one new step to referee |
+| B | LAM-GAP / SHARP + W1: Gap(C) ≤ N_C | as B′ | DEEP3 | lane (LAM-GAP SURVIVES L-RED 66; L-FORMAL formalizing it, per the Lead) |
+| A (fallback) | global windows: T3 ≤ (C + R + 1)(N + 1), R118 (l) + R125 (c) | R ≤ poly + Deep^all_c by TWO-CROSS + DEPTH-COUNT3 (Add. C, Theorem R-SPLIT) | DEEP3-all (every gate, whole run) | landed + 2 lane lemmas |
+- DEEP3 and DEEP3-all are different conjectures (box 102 Add. A). DEEP3-all can only be a polynomial bound: MW32_2 already has 32 = n
+  deep external flips.
+
+### D.4 §1's wording, as the Lead asks
+- Replace «OPEN» for Hansen 2012 Conj. 6.1.1 by: «open until 2026-10; Zhong–Ye arXiv 2609.40147v2 (unrefereed preprint) claims a
+  refutation (Thm 6.1)» (quotes in C.4).
+- Why it does not touch VJ windows: Zhong–Ye's exponential count is a count of gain improvements, i.e. of WINDOWS (iterations «before any
+  state attains its optimal gain»). Under VJ a window ends only when some Λ changes, and windows number at most n(n − 1) + 1, because
+  each vertex's Λ rises at most n − 1 times. Each window is ≤ |Ch| (SHARP).
+
+## Addendum E (L-SI successor 51, 2026-11-12T13:06Z (date -u); append-only): REFEREE 32's pre-packet read of RESTRICT-C (not a signature)
+Source: Lead 13:08Z relaying REFEREE 32, claude/referee ff9b16f6 docs/referee/R-restrictC-preread.md (NOT yet on origin when this was
+written; the replacement string below is the Lead's relay and must be re-copied from the report's §4.4 when it lands).
+- Caveat CONFIRMED by the referee: no step of DOM / STRICT / PATH / BR-SEG uses the tie rule. The signed definitions leave ties free
+  (P-N5-XICYC §2 l. 58-60, P-N5-CHAIN §2 l. 88-89). L-FORMAL's BrSegStatement hypotheses match R118 (d)'s; whether its proof checks is a
+  CHECKER item.
+- (i)-(iii): no gap; (iii) holds for every a ≥ 0.
+- GAP W-1: (iv) is FALSE as written. Instance: C6G8_n54 (sha1 52067442), C = {mover 20}, N′ = 1, t0 = 0, a 17-step «window» after G′'s
+  run has ended (Λ and σ̄ stay constant on V_R while movers OUTSIDE Reach(C) keep switching).
+  Replacement for (iv), in BR-SEG's form (Lead relay of §4.4): «if σ̄ and Λ are constant on V_R over states b..b+j+1 and the step
+  b+j → b+j+1 switches a mover of Reach(C), then j ≤ N′ − 1».
+  WINDOW's count survives with this form: it counts only stretches that end in a switch inside C, which is what H-run(C) counts.
+- W-2 (wording): G′ is a genome in R104's LINE sense but not in its PACKET sense (br and gate bijections onto 0..M − 1). Read «with the
+  same (lev, gate, br, bp) entries» as «compressed order-preservingly»: gate and br values renumbered onto 0..M′ − 1, keeping their order.
+- C-1 (citation): no LANDED statement gives BR-SEG for every HOW3 run on Γ3. R118 (d) is IDEAL-CYC on Γ, and R118 (l) is about N5′-xi's
+  run. Box 101 Add. C.2 / D.2 cite «R118 (d) / (l)» for this; that citation is too strong. A packet must carry BR-SEG on HOW3(Γ3) as a short
+  lemma (from R125 (d)'s facts plus PATH), or cite L-FORMAL's Lean theorem after CHECKER.
+- N-1: box 100's TWO-CROSS is P-N5-GATE §3.1 GATE-RACE (a), (b), signed and landing as R128 (this lane's own packet). Cite the R-id once
+  it lands; until then TWO-CROSS is «= signed GATE-RACE (a), (b)», not a new lemma.
+- Optional, taken: RESTRICT-C at a = 0 needs no m-pad clause (G′'s start is G's start on Reach(C)). For a > 0 the clause stays, as in D.2.
+
+## Addendum F (L-SI successor 52, 2026-11-12T17:09:20Z (date -u); append-only): REFEREE 32's replacement for RESTRICT-C (iv), copied verbatim from the report
+Source: claude/referee ff9b16f6 docs/referee/R-restrictC-preread.md §4.4 («(iv): GAP W-1 (exact, wording)»), l. 126-128; on origin now.
+Addendum E carried the Lead's relay of this string. The byte copy is experiments/si/box101/restrictC_iv_ff9b16f6.txt (the output of
+`git show ff9b16f6:docs/referee/R-restrictC-preread.md | sed -n '126,128p'`; 415 bytes, sha1 a76a8eab7afcf25458ae849737056af3a9f14229); check101.sh checks its
+sha1 and that its three lines stand below unchanged.
+- The replacement for (iv) of D.2, verbatim (three lines of the report):
+  «(iv) Hence, if σ̄ and Λ are constant on V_R over the states b, b + 1, …, b + j + 1 (b ≥ a) and the step b + j → b + j + 1 switches a
+  mover of Reach(C), then j ≤ N′ − 1, with N′ = |Reach(C)| ≤ N: at most N′ consecutive steps that switch a mover of Reach(C) keep σ̄ and
+  Λ constant on V_R. (A step that switches no mover of Reach(C) ends G′'s run; nothing on V_R changes after it.)»
+- Against Addendum E's string («if σ̄ and Λ are constant on V_R over states b..b+j+1 and the step b+j → b+j+1 switches a mover of
+  Reach(C), then j ≤ N′ − 1»): the report's text has «(b ≥ a)» and two more clauses, «with N′ = |Reach(C)| ≤ N: at most N′ consecutive
+  steps that switch a mover of Reach(C) keep σ̄ and Λ constant on V_R» and «(A step that switches no mover of Reach(C) ends G′'s run;
+  nothing on V_R changes after it.)». No mathematical difference: Addendum E's form is the report's first clause. From here on (iv) is
+  the report's string.
+- Also in the report and not yet recorded here: §4.5, «from its start S3(G′)» in D.2 (iii) should read «from G′'s standard state»
+  (SPEC's S3 is not used; S3-START on G′ would need R117 there); the bound is N′ = |Reach(C)|, not N_C (D.3's row B′ already says
+  Gap(C) ≤ N). §4.4's last bullet: the parenthesis «(the core's Λ and σ̄ are constant: R118's K2-r)» in D.2 (iv) is true and not needed.
+- Status in the light of box 104 (docs/si/box104-map.md): RESTRICT-C and the routes of D.3 are statements about HOW3 on R104's genomes
+  (E-DOM). Box 104 §3-§5 concern games outside that family and change nothing in them; they change what the routes can be worth for
+  M4 (box 104 §2, link L3).
