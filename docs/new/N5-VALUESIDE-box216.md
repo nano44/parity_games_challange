@@ -225,4 +225,18 @@ RAND = eg195.gen family «rand», Ξ-cyclic only, 200 genomes per seed (seeds 21
   (xi) on the same genomes is also all quiet, with Wq = Tk = 9, 9, 9, 12, 8. On the MW families both runs are all loud (Wq = 0;
   N5 Tk 196 vs Howard 199 on MW32_2). Largest Wq over FROZEN: N5 299 (HIT7), Howard 12 (H6). So the towers are exactly QUIET-KEY's
   instances: a fixed one-player game on which Howard's Bellman-Ford step converges in ≤ 12 steps and N5's key rule takes up to 299.
-- (vi) other improving rules (idx, seq): in progress at this commit (runC216.sh); reported in the next push.
+- (vi) other improving rules (runC216.sh, done 2026-11-13 ~07:50Z; gate_frozen_idx.out, gate_frozen_seq.out, FROZEN, 0 timeouts): every
+  must-0 counter 0 in both modes (each is an improving run of standard states, as §0 requires). Q / Wq / Tk:
+  - idx (S4a's TIE by largest index): the first fallback comes at Tk ≤ 12 on every genome (towers: Tk 2, 2, 2, 2, 1), so this mode's
+    pre-fallback run says nothing about long quiet windows (the run continues after the fallback, outside V1's scope). Not evidence for
+    QUIET-RF.
+  - seq (SPEC's σ_new at ONE vertex per step): towers Wq = Tk = 13, 8, 4, 23, 6 (DBL4, RECF4, H5, H6, HIT7); the longest quiet window
+    over FROZEN is 35 (CT27_cap400: Tk 35, Q 0), where N5 has Wq 1 and Howard Wq 0 (all loud, Tk 79); the longest run is FW8_4 (Tk 354,
+    all loud; N5 46, Howard 47).
+  - So on FROZEN: largest Wq is 299 (N5, HIT7), 35 (seq, CT27_cap400), 12 (Howard, H6), 8 (idx). Quiet windows depend on the rule; the
+    towers' long quiet windows are N5's key rule's (seq and Howard leave them in ≤ 23 steps). Finitely many instances: nothing about
+    QUIET-RF or QUIET-KEY follows (L43).
+- (iv′) L-RED-B 4's NULL-switch instance (relayed by the Lead 08:19Z; claude/l-red-b 8854d85d,
+  experiments/red-b/data/b5/null2_s5101_i313_n3.pg, sha1 8be02077b7ca002df7f91daf547f256b671ead69 re-measured from git show; not copied):
+  xflip216 --pg: T 5, fb 2 (= the Lead's «I = 5, with fallbacks at 2 and 5»), xmove 0, xflip 0, xflipd 0 (10 degree-2 Even vertices,
+  10 moves, XF sum 9); control X216_CTRL=1 (swap): xmove 10 (fires at every move); X216_CTRL=2 does not fire there (no vertex moves twice).

@@ -1,3 +1,5 @@
+gate_frozen_idx.out done genomes 88 timeouts 0 must0_sum 0 f1 0 strict 0 imp 0 grfail 0 gr2fail 0 efp 0 npshape 0 stepb 0 par 0 pexp 0 ssimp 0 loud 0 | f5best 1783 dom 2061 Q 93 sumD 15880 flips 411 couples 0 | max_Tk 12 max_Wq 8
+gate_frozen_seq.out done genomes 88 timeouts 0 must0_sum 0 f1 0 strict 0 imp 0 grfail 0 gr2fail 0 efp 0 npshape 0 stepb 0 par 0 pexp 0 ssimp 0 loud 0 | f5best 57097 dom 127384 Q 3388 sumD 99877 flips 741 couples 0 | max_Tk 354 max_Wq 35
 gate_frozen_spec.out done genomes 88 timeouts 0 must0_sum 0 f1 0 strict 0 imp 0 grfail 0 gr2fail 0 efp 0 npshape 0 stepb 0 par 0 pexp 0 ssimp 0 loud 0 | f5best 14440 dom 37209 Q 1693 sumD 50447 flips 627 couples 0 | max_Tk 299 max_Wq 299
 gate_frozen_xi.out done genomes 88 timeouts 0 must0_sum 0 f1 0 strict 0 imp 0 grfail 0 gr2fail 0 efp 0 npshape 0 stepb 0 par 0 pexp 0 ssimp 0 loud 0 | f5best 0 dom 0 Q 2627 sumD 272193 flips 3500 couples 333540 | max_Tk 199 max_Wq 12
 qt3_frozen_spec.out done genomes 88 timeouts 0 must0_sum 0 cnlow 0 locfail 0 ties 0 bonly 0 k2fail 0 upfail 0 emon 0 nonstd 0 | nohoward 14440 wfail 0 Tfail 0 | max_T3 299 max_W 299

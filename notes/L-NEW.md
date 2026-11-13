@@ -23,7 +23,7 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   the committed files restored by git checkout).
 - DATA complete (§7 of the doc, summ216.txt): every must-0 0 on 88 frozen + RAND; HOW items f5best/dom fire for N5, 0 for Howard.
   KEY FINDING: towers = one quiet sub-window (Q 0, no flip, ΣD 0): N5 Wq = Tk = 30/67/136/209/299, Howard 9/9/9/12/8.
-- In flight: runC216.sh (gate216 idx / seq: DATA (vi)); then summ + next push.
+- d50ec578 pushed (VERIFY PASS 08:30Z), reported to the Lead 08:30Z with box 217 QUIET-KEY proposal. DATA (vi) (seq: towers Wq ≤ 23, CT27 35; idx uninformative) and L-RED-B null2 replay (xmove 0) folded in the next commit.
 - First DATA: DBL4_d20_F30 (tower): N5's key run has Q = 0 and one quiet window Wq = 30 = Tk (no class (Λ, E) change at all); f5best 238,
   dom 210 (N5 is not Howard there). CFI3_n48: spec key run Tk = 2 (xi: 24).
 
