@@ -827,3 +827,55 @@ finite. No circularity.»
 
 (N-1.) The order that the frozen §1 quotes from R104's packet stands there after the word «Hence» of Fact X; the landed line R104
 states the same order as the model's definition. The frozen §1's label DEFINITIONS ONLY stays.
+
+## Entry 6 (L-RED-B successor 6, 2026-11-13, written 16:43Z by date -u): N5 itself at k = 13 on one engine — extra DATA, no change to any statement, proof or hypothesis
+The Lead allowed k = 13 only as a tracked, resumable job. b6n5.py runs one k as one process (about 27 + 41 minutes at k = 13 by
+the ratio of entry 1's timings), which is longer than a container usually lives; so this entry uses experiments/red-b/b6n5ck.py
+(committed with entries 2-5): the same game, the same engine 1 (L-NEW's n5v.step in mode spec, from S3 = n5x.start_pair), the same
+counters as b6n5.py, with a checkpoint of (σ, τ, the counters) every 100 iterations and a restart from it; engine 2 (L-COMP's
+n5b.py) is NOT run by it, because it is one subprocess without a checkpoint. Files: data/b6b/out/n5_k13.out, n5ck_check.out,
+n5ck_ctrl.out, n5ck_resume.out and the game data/b6b/pg/G_13_g3.pg, pinned in data/b6b/SHA1SUMS_b6b_fixes3 (checked by check.sh).
+
+### 9.14 The checkpointed driver against the frozen lines (b6n5ck.py → n5ck_check.out, n5ck_ctrl.out, n5ck_resume.out)
+- Must-0 counter `ckdiff`, unit (genome, field), set k = 3..8 × the twelve fields N, M, n, T1p, F, mism, its, fb, wrong, nonmover,
+  gdiff, pg_sha1: the field of b6n5ck.py's line differs from the frozen line of data/b6b/out/n5.out. Result: 0 of 72.
+```
+G_3 mode spec ctrl 0 ck 100 N 11 M 22 n 175 T1p 6 F 6 mism 0 its 9 fb 1 wrong 0 nonmover 0 gdiff 0 pg_sha1 fca7a52c49e095d297458c2264664b846c442f8b secs 0.0 resumes 0
+G_4 mode spec ctrl 0 ck 100 N 20 M 40 n 310 T1p 14 F 14 mism 0 its 17 fb 1 wrong 0 nonmover 0 gdiff 0 pg_sha1 4a2e89c57ec82362c128074c8be3344fb3c0da61 secs 0.2 resumes 0
+G_5 mode spec ctrl 0 ck 100 N 29 M 58 n 445 T1p 30 F 30 mism 0 its 33 fb 1 wrong 0 nonmover 0 gdiff 0 pg_sha1 f145a99c548d3f5489c0aca1552ed6eb96deafc3 secs 0.7 resumes 0
+G_6 mode spec ctrl 0 ck 100 N 38 M 76 n 580 T1p 62 F 62 mism 0 its 65 fb 1 wrong 0 nonmover 0 gdiff 0 pg_sha1 b9fea1092df47c2abfefef85bf18511346da7d71 secs 1.8 resumes 0
+G_7 mode spec ctrl 0 ck 100 N 47 M 94 n 715 T1p 126 F 126 mism 0 its 129 fb 1 wrong 0 nonmover 0 gdiff 0 pg_sha1 daa0f243aefaaf8cbdd205283f5fc7ce2f3d0f56 secs 5.8 resumes 0
+G_8 mode spec ctrl 0 ck 100 N 56 M 112 n 850 T1p 254 F 254 mism 0 its 257 fb 1 wrong 0 nonmover 0 gdiff 0 pg_sha1 924239d911a4c32a32397a7ed5ab2efdacf02fee secs 16.1 resumes 0
+```
+- Control (B6N5_CTRL=2: the Zielonka answer flipped at vertex 0; `wrong` must fire):
+```
+G_4 mode spec ctrl 2 ck 100 N 20 M 40 n 310 T1p 14 F 14 mism 0 its 17 fb 1 wrong 1 nonmover 0 gdiff 0 pg_sha1 4a2e89c57ec82362c128074c8be3344fb3c0da61 secs 0.1 resumes 0
+```
+- Kill and resume: G_9 with a checkpoint every 50 iterations, the process killed twice by a timeout (after 12 s and after a
+  further 14 s) and started a third time. Its line (resumes 2) has the frozen line's values in all twelve fields (513 iterations,
+  one fallback, pg_sha1 9cece8a782b6212e06a177c0899422ebac6e3b0b):
+```
+G_9 mode spec ctrl 0 ck 50 N 65 M 130 n 985 T1p 510 F 510 mism 0 its 513 fb 1 wrong 0 nonmover 0 gdiff 0 pg_sha1 9cece8a782b6212e06a177c0899422ebac6e3b0b secs 43.4 resumes 2
+```
+
+### 9.15 N5 at k = 13 (b6n5ck.py → n5_k13.out; game data/b6b/pg/G_13_g3.pg)
+Command (from the repository root, R = experiments/red-b/work/b6 with the lnew archive of the frozen §10): `B6N5_CK=100 python3
+experiments/red-b/b6n5ck.py R/lnew R/pg13 R/ck experiments/red-b/data/b6b/G/G_13.json`. Started 15:41Z as a tracked background
+job, ended 16:13:13Z with exit 0, without a restart (resumes 0). Its line:
+```
+G_13 mode spec ctrl 0 ck 100 N 101 M 202 n 1525 T1p 8190 F 8190 mism 0 its 8193 fb 1 wrong 0 nonmover 0 gdiff 0 pg_sha1 9d887e3bf2e1fa4912c32ee0a1ec4ed14327bf71 secs 1947.2 resumes 0
+```
+So at k = 13: n = 1,525 = 135·13 − 230; the model's run has 8,190 = 2^13 − 2 steps; N5 (engine 1) makes 8,193 = 2^13 + 1 iterations
+with one fallback, after F = 8,190 S4a iterations (the fallback is iteration 8,191 = 2^13 − 1); N5's mover states before the
+fallback are the model's states, one by one (mism 0); every winner equals harness Zielonka's (wrong 0); no non-mover Even vertex
+and no τ changes before the fallback (nonmover 0); this lane's Γ3 builder and L-NEW's give the same game (gdiff 0). These are the
+values Corollary EXP-N5 (at least 8,191 iterations, through R117) and Corollary EXP-N5′ (exactly 8,193, through R124) give for
+k = 13 (entries 2, 3): the DATA agrees with them at one more k.
+What this does NOT add: 8,193 iterations on 1,525 vertices is above n + m = 3,513 and below n² = 2,325,625, like every measured
+run (entry 2 (d)): the dead end still rests on the proof. Not done at k = 13: engine 2; the strategy verifier of entry 1's 9.9;
+fit.out and size.out were not regenerated (the residual against 2^k + 1 at k = 13 is 0 by the line itself). The size of the game,
+by b6size.py on the file, with its control (m tested against 176k − 299), data/b6b/out/size_k13.out:
+```
+G_13_g3.pg ctrl 0 k 13 n 1525 m 1988 sizediff 0
+G_13_g3.pg ctrl 1 k 13 n 1525 m 1988 sizediff 1
+```

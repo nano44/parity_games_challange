@@ -6,7 +6,7 @@ Files I own: docs/red-b/, experiments/red-b/, notes/L-RED-B.md, docs/agents/hand
 ## Resume point
 **SUCCESSOR 6 (session_01V5yGRYvwUZTkQxfvG8iXBu; model and effort as in the Lead's brief; started 2026-11-13 14:11Z by date -u;
 handover check f755b8a4 on origin 15:40Z; «go» given in the brief in advance, effective at that push). AUTHOR lane of P-N5-EXP.**
-- STATE at this commit (2026-11-13T15:51Z by date -u): fixes entries 2-5 are in docs/red-b/P-N5-EXP-fixes.md (appended; entry 1 untouched). The
+- STATE at commit 24f4d436 (2026-11-13T15:51Z by date -u): fixes entries 2-5 are in docs/red-b/P-N5-EXP-fixes.md (appended; entry 1 untouched). The
   frozen packet is untouched (sha1 c0449b17…; guard `git diff --quiet 350d84eb -- docs/red-b/P-N5-EXP.md
   experiments/red-b/data/b6b/SHA1SUMS_b6b` → 0). All three reports were on origin and are quoted by commit and line: REFEREE-2 41
   (claude/referee-2 33ff0e98, R2-P-N5-EXP.md), REFEREE 35's pre-check (claude/referee 06ac891d, R-GK-precheck.md), REFEREE 36's first
@@ -32,14 +32,18 @@ handover check f755b8a4 on origin 15:40Z; «go» given in the brief in advance, 
 - Line L-1 (three parts: unconditional / conditional on R117 and R124 as landed / DATA): docs/red-b/P-N5-EXP-line-L1.txt, one line,
   5585 bytes with its newline, sha1 59c5309377eda882ba436ffe7eb03fbff598c7c8; sent to the Lead as a message after this commit's push. The Lead diffs it against
   TARGET.md; changes come back as referee line items (L-2 by a script from L-1, never by hand).
-- IN FLIGHT at this commit: N5 at k = 13 (engine 1 only) as a tracked background job, started 15:41Z: `B6N5_CK=100 python3
-  experiments/red-b/b6n5ck.py experiments/red-b/work/b6/lnew experiments/red-b/work/b6/pg13 experiments/red-b/work/b6/ck
-  experiments/red-b/data/b6b/G/G_13.json > experiments/red-b/work/b6/n5_k13.out` (about 4 iterations per second, 8,193 expected;
-  the checkpoint is work/b6/ck/G_13.ck; if the container restarts, rebuild the lnew archive per the frozen §10 and run the same
-  command again: it resumes). Its line would go into an entry 6 with the game file; not DATA yet.
-- NEXT: (1) answer whatever the referees' reading of entries 2-5 returns, as entry 6 onward (append-only); (2) L-2 if line items
+- ON ORIGIN (2026-11-13T16:43Z by date -u): f755b8a4 (handover check, push exit 0 at 15:40:20Z) and 24f4d436 (entries 2-5 + L-1 + tools, push
+  exit 0 at 16:42:00Z; each compared with `git ls-remote` after its push). L-1 went to the Lead at 15:53Z, the on-origin
+  confirmation at 16:42Z.
+- ENTRY 6 (this commit): N5 at k = 13 on engine 1 with the checkpointed driver b6n5ck.py: 8,193 = 2^13 + 1 iterations, one
+  fallback after 8,190 S4a iterations, mism / wrong / nonmover / gdiff 0, game data/b6b/pg/G_13_g3.pg (n = 1,525, m = 1,988, sha1
+  9d887e3b…); the driver equals the frozen lines of k = 3..8 in twelve fields (0 of 72 differ), its control fires, and a run of
+  k = 9 killed twice and resumed gives the frozen line. Pins: data/b6b/SHA1SUMS_b6b_fixes3. DATA only: still below n². Nothing is
+  running after this commit except its push.
+- NEXT: (1) answer whatever the referees' reading of entries 2-6 returns, as entry 7 onward (append-only); (2) L-2 if line items
   come; (3) if L-SI 56's independent proof (docs/si/box108, NOT read by me) disagrees with entry 4 anywhere, run b6prefix.py /
-  b6lemma.py / b6enab.py on the disputed step first and report the counter; (4) the k = 13 line when the job ends.
+  b6lemma.py / b6enab.py on the disputed step first and report the counter. REFEREE 36's stage 3 (claude/referee 7ca9c2b4) compared
+  the two proofs: «no conflict between the two proofs; the verdicts of §0 stand» (read there; box 108 itself still not opened by me).
 - THINGS ONLY I KNOW (successor 6):
   1. The frozen wording of the RESPONSE LEMMA fails at exactly k − 1 triples per k, not one: (1, 1, 2^k − 1) (REFEREE 36's E-1) and
      (j, 0, 2^k − 1) for 2 ≤ j ≤ k − 1 (under the last state every unit is at rest with its input equal to its rest bit). b6prefix.py

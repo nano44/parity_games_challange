@@ -42,5 +42,7 @@ a6=$(python3 b6prefix.py all 6 | tail -n 1); case "$a6" in *"windows 31 expected
 x3=$(python3 b6prefix.py exh 3 | tail -n 1); case "$x3" in *"c0e0 0 loc 0 "*"stviol 0 "*"pviol 0") ;; *) echo "red-b: b6prefix exh 3 FAILED: $x3"; fail=1;; esac
 ac=$(B6X_CTRL=5 python3 b6prefix.py all 5 | tail -n 1); case "$ac" in *"frozen_conclusion_fails 4 at(j,a,t) (1,1,31) (2,0,31) (3,0,31) (4,0,31)") ;; *) echo "red-b: b6prefix frozen-wording control did not fire as expected: $ac"; fail=1;; esac
 if [ -f data/b6b/SHA1SUMS_b6b_fixes2 ]; then (cd data/b6b && sha1sum -c --quiet SHA1SUMS_b6b_fixes2) || { echo "red-b: data/b6b fixes2 SHA1SUMS mismatch"; fail=1; }; fi
+# P-N5-EXP fixes entry 6 (N5 at k = 13 on the checkpointed driver): the entry's pins
+if [ -f data/b6b/SHA1SUMS_b6b_fixes3 ]; then (cd data/b6b && sha1sum -c --quiet SHA1SUMS_b6b_fixes3) || { echo "red-b: data/b6b fixes3 SHA1SUMS mismatch"; fail=1; }; fi
 [ $fail -eq 0 ] && echo "red-b check PASS" || echo "red-b check FAILED"
 exit $fail
