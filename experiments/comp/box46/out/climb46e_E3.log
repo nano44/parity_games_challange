@@ -1,0 +1,5 @@
+START restart 0 seed HIT7_x0_glo_blo_p0.json Wused 0 NM 169 ratio 0.0000 Tkey 151 Wkey 150
+BEST BEST_E3_WE0_NM169_565e77d9.json Wused 0 NM 169 ratio 0.0000 Tkey 153 Wkey 152 run_used 0 must0 0 | BEST_E3_WE0_NM169_565e77d9.json N+M 169 | mine (T_key, windows, W_key, stalls, tail) (153, 1, 152, 0, 152) run (iterations, fallbacks) (156, 1) must0 0 | n5b spec (iterations, fallbacks) (156, 1) | rfd212 (153, 1, 152, 0, 152) | agree True | restart 0 step 2 evals 2 rejected 0
+END restart 0: current Wused 0 NM 167 ratio 0.0000; best so far [0, 169, 153, 0, 152, 0]; evals 60
+START restart 1 seed HIT7_x48_glo_blo_p0.json Wused 0 NM 169 ratio 0.0000 Tkey 299 Wkey 142
+BEST BEST_E3_WE0_NM168_1a6a70fd.json Wused 0 NM 168 ratio 0.0000 Tkey 299 Wkey 142 run_used 1 must0 0 | BEST_E3_WE0_NM168_1a6a70fd.json N+M 168 | mine (T_key, windows, W_key, stalls, tail) (299, 3, 148, 153, 142) run (iterations, fallbacks) (302, 1) must0 0 | n5b spec (iterations, fallbacks) (302, 1) | rfd212 (299, 3, 148, 153, 142) | agree True | restart 1 step 1 evals 61 rejected 0
