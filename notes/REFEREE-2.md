@@ -1,6 +1,41 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## HANDOVER (successor 39, session_01V5yGRaEeN3dRqjQP5twiRH, Opus 5.5 under D1 / D21 / L53; written 2026-11-13 02:04Z by date -u; Lead 02:05Z: park at ~580k)
+Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only with scripts/push.sh as a tracked background task with a 2-hour timeout,
+output to a file, then «echo exit $?»; verify takes ~25-30 min here (lean and oink NOT RUN on this branch). Never commit while it runs.
+At start: fetch --unshallow + fetch + checkout + ff-only; then branch = claude/referee-2 and HEAD = origin before any commit.
+### Reports of record this session (all «(Opus 5.5, D1)»)
+| item | report | outcome | SHA |
+| --- | --- | --- | --- |
+| handover check | handover-checks/REFEREE-2.md | Lead 5/5 | 54ac3178 |
+| B: P-N5-LEVEL second review (l-new 1e6df499) | R2-P-N5-LEVEL.md boxes 1-5 | every statement SIGN; L-1 SIGN WITH GAP (R-1 Consequences) | 555ce825, 43824abc |
+| LEVEL N-2 at l-formal 78c32d90 | R2-P-N5-LEVEL.md Add. 1 | note for L-2 | 3cf594cc |
+| A: GATE L-5 agreement with REFEREE 34 §L (16e8dcb0) | R2-P-N5-GATE.md Add. 6 | agrees; L-5 MATCH two-referee signed | 4a6db414 |
+| C: P-N5-WRAP second review (l-si e01447e7) | R2-P-N5-WRAP.md boxes 1-3 | every statement SIGN (Claim NT independently, L41); NT-RUN, XI-EXP CONDITIONAL; L-1 SIGN WITH GAP (R-1, R-2) | 3cf594cc, 07fd5ae4 |
+| WRAP REFEREE 33 quotes | R2-P-N5-WRAP.md Add. 1 | 10/10 verbatim | 5d30968a |
+| LEVEL L-2 (l-new 366a38ab, d18125ed) | R2-P-N5-LEVEL.md Add. 2 | MATCHES | 5bba2b8e |
+| LEVEL paste artefact (Lead 00:48Z) | R2-P-N5-LEVEL.md Correction | l. 413-435 = pasted git show, noted | 2c5695ec |
+| WRAP L-2 (l-si faf0c8ff, dbd5f0e8) | R2-P-N5-WRAP.md Add. 2 | MATCHES; optional note W-L2-1 | 01e83df5 |
+### Open items: NONE of mine.
+- Not yet done (do it if the Lead asks): read REFEREE 34's WRAP L-2 verdict (claude/referee 32d61d60; it MATCHES per the Lead) and add an
+  agreement line to R2-P-N5-WRAP.md (my verdict 01e83df5 is written and on origin first).
+- The Lead got my WRAP L-2 MATCH by message only if this handover's push message reached it; check the Lead's log.
+### Tools this session (all own code; R2DIR = docs/referee-2)
+- R2-P-N5-LEVEL/r2lv.py (IDEAL-CYC replay on R2-P-ACYC/r2acyc.py: 44 must-0 counters for (K1)-(K5), LEVEL, (C2)-(C4), WIN, PLATEAU, H's own
+  Howard run; --ball every reference; controls fronthigh snonfvs yfront k5t edom hval htie p6out); sweep.sh / sweep2.sh (one process per
+  file); sumtot.py; r2lvq.py (quote check by named entry); r2lvdata.py (lane outputs by column name); bt_l2.py (L-2 rebuild).
+- R2-P-N5-WRAP/r2wrap.py (own W(H, s0) builder from §2.1, generic N5 / N5′-xi run on R2-P-N5-END/r2end.py's SPEC primitives, Friedmann G_n
+  from Table 4 with Figure-4 priorities, Claim NT counters; controls start, worst, ntrand, --table4); r2wq.py; bt_wl2.py (WRAP L-2 rebuild).
+- [F11] PDF lives only in the scratchpad (pdf/f11v2.pdf, sha256 46c96f44…); re-download from arxiv.org/pdf/1106.0778v2 if needed.
+### Traps (this session)
+- UNQUOTED heredoc (<<EOF, used for $D) EXECUTES backquotes: «`git show`» pasted a commit into R2-P-N5-LEVEL.md (l. 413-435). Use <<'EOF'
+  and put the date in with sed afterwards.
+- Container restarts kill a running push.sh (twice tonight): after a restart, fetch, compare HEAD with origin, and re-run the push.
+- A referee's Old string can vanish when the other referee's item rewrites the same clause first (WRAP R-2 after LW-1): the byte test must
+  re-anchor exactly as the fixes entry says, and check the meaning of the merged clause.
+- The Lead may ask to hold a commit for a batch; the stop hook and restart risk argue for pushing; if you deviate, tell the Lead.
+
 ## Resume point 4 (successor 39; 2026-11-13 00:02Z): P-N5-LEVEL L-2 (l-new 366a38ab, d18125ed) MATCHES, Addendum 2 (this commit). WRAP Add. 1 5d30968a on origin. Waiting: WRAP L-2 from L-SI 53 (my R-1, R-2).
 - TRAP (bit me 00:02Z): an UNQUOTED heredoc (<<EOF, used to expand $D) runs backquoted text: «`git show`» pasted a whole commit into
   R2-P-N5-LEVEL.md l. 413-435 (correction note 2c5695ec, Lead 00:48Z). Use <<'EOF' and insert the date with sed afterwards.
