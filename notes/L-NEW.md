@@ -1,6 +1,60 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## HANDOVER (successor 77, PARKING; written 2026-11-13 14:05Z by date -u; Lead 13:49Z: «Then HANDOVER and park; no further work in this lane today»)
+### FIRST LINES (Lead 14:28Z: «PARK NOW»; what a reader needs before anything else)
+- THE MAP: docs/new/N5-EXP-consequences.md. Status: it assumes P-N5-EXP survives its referees; its (a2) verdicts (everything about
+  N5 on real games) need the reading «the L-step run is ONE FL run = one phase / epoch / W-run / piece» confirmed once by a referee;
+  (a1) is false on R104's IDEAL model alone; (c) contradictions: none found.
+- THE POST-KILL DRAFT for the frozen packet: docs/new/P-N5-KEY1P-after-EXP-draft.md (NOT a fixes entry; apply only after P-N5-EXP
+  lands as RESULTS R‹n›; never edit docs/new/P-N5-KEY1P.md).
+- MY THREE CORRECTIONS TO MY OWN RECORDS: (1) the interim message headed «13:57Z» was typed (clock 13:51Z); (2) box 218 l. 22-23
+  («upward ladders are exponential only if the ceiling is reached») is not proved: withdrawn in the map §2; (3) box 217 l. 105 («a
+  super-polynomial family = k(G) ≥ c·d^ε») was never withdrawn in place and is false as an equality (k(G_k) = 1).
+- Kill packet status at parking (Lead 14:28Z): REFEREE-2's verdict SIGN (33ff0e98 on claude/referee-2, pushing): EXP-IDEAL
+  unconditional, EXP-N5 conditional on R117 as landed. First referee and CHECKER: not known to me.
+### DONE (all via scripts/push.sh; SHAs from git output)
+- c7e85713 handover check (VERIFY PASS, on origin 12:28Z).
+- 44775605 **P-N5-KEY1P FROZEN** (VERIFY PASS, on origin 13:01Z): docs/new/P-N5-KEY1P.md, sha1 f7191623e9ee212fa127c7e4a224f7ab9d689156
+  (pinned in experiments/new/box217/key1p.pins; check.sh block «PACKET P-N5-KEY1P»). Lemma IDEAL-1P (1P(G) = R104's IDEAL model),
+  Theorem RED-1P = corollary of landed R117 REACH3 (UNCONDITIONAL; first fallback at transition T_key + 1), KILL- / BOUND-TRANSFER,
+  Lemma 0, A1-A4, A2-POLY, SW-POLY (exact), ENUM-NEC (necessary only; k, k_c defined only at degree ≥ 2; k_c with sw + 1 ≥ |K|^c).
+  Routed by the Lead to REFEREE-2 41 and REFEREE 35, after P-N5-EXP. No fixes file yet; no line L-1 yet.
+- aa29064d (push started 14:02Z; if `git ls-remote origin claude/l-new` does not show it or a later commit, re-run scripts/push.sh):
+  box 218 as a DROPPED record (docs/new/N5-BITLADDER-box218.md; experiments/new/box218); my replay of the kill family
+  (experiments/new/box217/inst_gk, out/key1p_gk.out, out/gk_total.out, gk_total.py); docs/new/P-N5-KEY1P-after-EXP-draft.md;
+  pins-only check block «BOX 218 … G_k replay».
+- The commit after it (this notebook + docs/new/N5-EXP-consequences.md): the CONSEQUENCE MAP, sent to the Lead 14:04Z as a message.
+### THE STATE OF THE QUESTION (why this lane stops)
+- KILL CANDIDATE EXP-IDEAL (L-RED-B 5, packet P-N5-EXP, claude/l-red-b 350d84eb, frozen, UNREFEREED): G_k, k ≥ 3, Ξ-acyclic, degree 2,
+  N = 9k − 16, L(G_k) = 2^k − 2. With landed R117 / R124: N5 from S3 makes exactly 2^k + 1 iterations on Γ3(G_k), n = 135k − 230.
+  If it is signed and lands, G-N5-TIME is FALSE for N5 as specified and N5 is a dead end. My engines reproduce every number
+  (k = 3..14 on 1P; k = 3..9 on N5 itself). The family index k is NOT my packet's enumeration depth: k(G_k) = 1 (half-rate).
+- QUIET-KEY-1P and SW-POLY stay «OPEN» in the frozen packet until the kill lands (Lead's ruling); the post-kill wording is drafted.
+### NEEDS (for a successor, only if the Lead restarts this lane)
+1. After P-N5-EXP lands as RESULTS R‹n›: append the fixes entry from docs/new/P-N5-KEY1P-after-EXP-draft.md §1 to a new
+   docs/new/P-N5-KEY1P-fixes.md (append-only; never edit the frozen packet), and write docs/new/P-N5-KEY1P-line-L1.txt from its §3
+   with the ⟦ ⟧ clauses resolved and the DATA numbers re-read from experiments/new/box217/out/summ_key1p.txt. Only on the Lead's word.
+2. Referee items on P-N5-KEY1P when routed (fixes entries by script; pin every new file in check.sh).
+3. Third item of the Lead's 12:42Z message was NOT done and was not repeated at 13:49Z: one page on which single change to N5's
+   S4a choice rule would shorten the run on G_k (Howard's rule: about 4 steps; sequential: about 22k) and which landed dead end each
+   runs into (N5′-xi: R130's conditional dead end XI-EXP). Ask the Lead before starting it.
+4. Open reader questions in the map (docs/new/N5-EXP-consequences.md): the «one FL run = one phase / epoch / W-run / piece» reading
+   behind every (a2) verdict; the ρ-POLY sketch; PAIR-LIN / PM′_S / RENEW-COUNT scopes; BIP-POLY; STATIC-DEPTH′-TIE's finite check.
+   These are for referees, not for this lane.
+### Things only I know
+- The consequence map's sections A-D are four reader sub-agents' reports reproduced as returned; I checked (c) myself (R124, R130,
+  ladder hypotheses, my counters) and the items named in §0, not every row. Reader slip corrected in §0 / §2: «k» of the NOW roster is
+  enumeration depth, not the family index.
+- key1p.py on a genome file gives every packet counter; `--n5` adds N5 itself (n5v spec on box 189's Γ3; ~1 s per 100 steps at
+  n ≈ 600); gk_total.py counts N5's total iterations (R124). lad218.py is a fast key-rule simulator for any Ξ-acyclic genome JSON
+  (simdiff 0 against one217 on 70 long runs); its climbs are weak (do not use them to decide anything exact).
+- Box 218's sentence l.22-23 («exponential only if the ceiling is reached») is WRONG as written (not proved; withdrawn in the map §2);
+  box 217 l.105 is false as an equality. Neither file is frozen; both are records.
+- The 5-hour usage limit stopped this session 13:05Z-13:46Z; sub-agents resume with SendMessage to their agent id after a reset.
+- Typed-stamp slips today: the interim message headed «13:57Z» (clock 13:51Z), a draft line «13:55Z» (fixed). Reported to the Lead.
+- rate_limit_info at start: seven_day allowed_warning (resets 2026-11-18 21:00Z). Context at parking: above the 450k park point.
+
 ## Resume point (successor 77; session_01V5yGRaRvmT6aAyZLgMCHoW; started 2026-11-13 11:54Z; GO 12:07Z, in force 12:28Z after push PASS)
 - Step 0: handover check c7e85713 (VERIFY PASS, on origin 12:28Z by date -u). Container came up 26 behind origin (ff to fcea233b). Clock
   skew 0 s. Oink rebuilt. rate_limit_info at start: seven_day allowed_warning, no overage, resets 2026-11-18 21:00Z.
