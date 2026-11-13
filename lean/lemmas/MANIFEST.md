@@ -1,4 +1,4 @@
-# lean/lemmas MANIFEST (L-FORMAL, 2026-11-13T01:04Z by date -u; for the Lead's RESULTS draft and CHECKER)
+# lean/lemmas MANIFEST (L-FORMAL, 2026-11-13T08:47Z by date -u; for the Lead's RESULTS draft and CHECKER)
 
 Generated, not hand-copied: (a) and (b) come from `lake env lean check/manifest.lean` (a `#eval` over the compiled environment:
 each theorem named in Axioms.lean, its module and line, the head of its type after the binders, and every PG definition the type
@@ -6,7 +6,7 @@ depends on, transitively through definition bodies, grouped by module); the «co
 declaration line (`git log -G`); sha1 = sha1sum of the file at this commit. Status of every row: «Lean-checked (lane)»; a result only
 through CHECKER and the CI job lean-lemmas. Scope: see README «Status and reading rules»; nothing here is a TARGET.md §2 statement.
 
-## (a) Theorems offered (74 = every `#print axioms` line of Axioms.lean)
+## (a) Theorems offered (78 = every `#print axioms` line of Axioms.lean)
 
 | # | theorem | Statement (type head) | file:line | first commit |
 | --- | --- | --- | --- | --- |
@@ -84,8 +84,12 @@ through CHECKER and the CI job lean-lemmas. Scope: see README «Status and readi
 | 72 | `Genome.gamma3_old` | Genome.Gamma3OldStatement | Gamma3Basic.lean:119 | 5ea6cd22 |
 | 73 | `Genome.pad_value` | Genome.PadValueStatement | Gamma3Lift.lean:499 | 1a44c6aa |
 | 74 | `Genome.lift_start` | Genome.LiftStartStatement | Gamma3Lift.lean:505 | 1a44c6aa |
+| 75 | `Spec.fuel_eval` | Spec.FuelEvalStatement | SpecFuel.lean:1304 | 8687c6fc |
+| 76 | `Spec.fuel_iter` | Spec.FuelIterStatement | SpecFuel.lean:1307 | 8687c6fc |
+| 77 | `Spec.fuel_run` | Spec.FuelRunStatement | SpecFuel.lean:1310 | 8687c6fc |
+| 78 | `Spec.fuel_states` | Spec.FuelStatesStatement | SpecFuel.lean:1314 | 8687c6fc |
 
-## (b) Definition modules the offered types depend on (29)
+## (b) Definition modules the offered types depend on (31)
 
 Statements.lean … Statements7.lean, Defs.lean, OptExists.lean (Lead 21:03Z, verbatim): «per-file acceptance times not recorded by the
 Lead; the acceptance set is 11:49Z, 12:29Z, 13:13Z, 13:58Z, 14:54Z (2026-11-12)». CHECKER diffs each Statement against its lane text;
@@ -113,6 +117,8 @@ the times are context, not the check. «Helper definitions» rows: no separate a
 | OneCross.lean | 866c2ef3a285 | `valPreorder` | helper definitions, NO separate acceptance recorded in lane files; they enter the types of the theorems listed | 1: #7 |
 | OptExists.lean | 35cb62cc74ce | `OptCounterExistsStatement` | OptCounterExistsStatement: accepted in the diffs 11:49Z-14:54Z (INDEX l. 3-4) | 1: #26 |
 | PlateauStatement.lean | 48aed4a9a6c4 | `PlateauStatement` | 14:54Z, deviations (a)-(c) (README «PLATEAU, abstract») | 1: #31 |
+| Spec.lean | f5fbaac0081c | `Spec.BS`, `Spec.BS.dist`, `Spec.BS.layer`, `Spec.BS.tau`, `Spec.DS`, `Spec.DS.hit`, `Spec.DS.marked`, `Spec.DS.parent`, `Spec.DS.seen`, `Spec.DS.st`, `Spec.ES`, `Spec.ES.alive`, `Spec.ES.fault`, `Spec.ES.fuelOut`, `Spec.ES.tau`, `Spec.ES.val`, `Spec.Eng`, `Spec.Eng.bit`, `Spec.Eng.evaluate`, `Spec.Eng.improving`, `Spec.Eng.initialBest`, `Spec.Eng.key`, `Spec.Eng.n`, `Spec.Eng.ofGame`, `Spec.Eng.order`, `Spec.Eng.owner`, `Spec.Eng.par`, `Spec.Eng.prio`, `Spec.Eng.rank`, `Spec.Eng.rankpar`, `Spec.Eng.rew`, `Spec.Eng.succ`, `Spec.Eng.weight`, `Spec.EvalOut`, `Spec.EvalOut.fault`, `Spec.EvalOut.fuelOut`, `Spec.EvalOut.tau`, `Spec.EvalOut.val`, `Spec.EvalOut.valOf`, `Spec.LSt`, `Spec.LSt.busy`, `Spec.LSt.d`, `Spec.LSt.fault`, `Spec.LSt.fuelOut`, `Spec.LSt.tau`, `Spec.RunOut`, `Spec.RunOut.states`, `Spec.RunOut.steps`, `Spec.SGame`, `Spec.SGame.StratWF`, `Spec.SGame.WF`, `Spec.SGame.dual`, `Spec.SGame.n`, `Spec.SGame.owner`, `Spec.SGame.prio`, `Spec.SGame.succ`, `Spec.SVal`, `Spec.SVal.c`, `Spec.SVal.len`, `Spec.SVal.mask`, `Spec.StepOut`, `Spec.StepOut.fuelOut`, `Spec.StepOut.sigma`, `Spec.StepOut.tau`, `Spec.arenaH`, `Spec.arenaH'`, `Spec.assign`, `Spec.bfsInner`, `Spec.bfsStep`, `Spec.dfs`, `Spec.dfsStep`, `Spec.evenFold`, `Spec.fallbackAt`, `Spec.improvSet`, `Spec.instInhabitedSVal`, `Spec.instInhabitedSVal.default`, `Spec.keyLt`, `Spec.lengths`, `Spec.lexPrioLe`, `Spec.longest`, `Spec.longest._f`, `Spec.longestAll`, `Spec.loopFuel`, `Spec.loopFuel._f`, `Spec.oddFold`, `Spec.phaseU`, `Spec.procNode`, `Spec.restrict`, `Spec.s4a`, `Spec.s4b`, `Spec.scan`, `Spec.scan._f`, `Spec.specIter`, `Spec.specIter._f`, `Spec.specRun`, `Spec.specStep`, `Spec.startPair`, `Spec.stepA`, `Spec.stepB`, `Spec.walk` | DEFINITIONS, 2026-11-13 03:58Z «ACCEPTED WITH FIXES» U1-U4 + U-3 (fixed in 9176725a; deviations (D1)-(D11) in the file) | 4: #75, #76, #77, #78 |
+| SpecFuelStatement.lean | 773f57affa22 | `Spec.FuelEvalStatement`, `Spec.FuelIterStatement`, `Spec.FuelRunStatement`, `Spec.FuelStatesStatement` | 2026-11-13 08:42Z / 08:44Z «The four Fuel Statements are accepted as written» (R1 by FuelStatesStatement; R2 in the header) | 4: #75, #76, #77, #78 |
 | Statements.lean | aaa3c0c2900d | `BrSegGStatement`, `BrSegStatement`, `LamGapOnePlayerStatement`, `LamGapSharpStatement`, `OneCrossStatement`, `nxt` | sent 11:44Z (notebook); accepted in the diffs 11:49Z-14:54Z (INDEX l. 3-4) | 30: #1-69 (30 rows) |
 | Statements2.lean | 1b4e7c0474cb | `HowardRunStatement`, `LamCountStatement`, `TwoCrossStatement` | sent 12:26Z; accepted 12:29Z / 13:13Z (notebook Queue item 0) | 3: #11, #12, #13 |
 | Statements3.lean | 457d1f43a9a6 | `HowardRunOnePlayerStatement`, `LamGapOnePlayerNoMStatement`, `ValMonoStatement` | accepted 12:29Z / 13:13Z (notebook Queue item 0) | 3: #14, #15, #16 |
@@ -123,20 +129,20 @@ the times are context, not the check. «Helper definitions» rows: no separate a
 | VJ00.lean | 2a67315117fc | `Proper`, `above`, `vj00Le` | helper definitions, NO separate acceptance recorded in lane files; they enter the types of the theorems listed | 2: #9, #10 |
 | Weights.lean | 2b57e8b9f8ae | `LexLe`, `ds`, `dw`, `pw`, `sgw`, `sl`, `wt` | helper definitions, NO separate acceptance recorded in lane files; they enter the types of the theorems listed | 10: #21, #49, #50, #51, #52, #54, #65, #66, #67, #68 |
 
-## (c) Commands and outputs (run from lean/lemmas on the tree of 1a44c6aa, 2026-11-13; the MANIFEST commit adds no file under PGLemmas/)
+## (c) Commands and outputs (run from lean/lemmas on the tree of 8687c6fc; the MANIFEST commit adds no file under PGLemmas/)
 
 ```
 lake exe cache get
 rm -rf .lake/build && lake build
-  start 2026-11-13T00:59:21Z
-  Build completed successfully (3197 jobs).
+  start 2026-11-13T08:45:25Z
+  Build completed successfully (3201 jobs).
   build exit 0
+  end 2026-11-13T08:46:45Z
   axioms exit 0
-  grep exit 1 (1 = nothing found)
-  end 2026-11-13T01:00:27Z
+  grep exit 1
   lines with «warning:»: 0
 lake env lean Axioms.lean
-   72  depends on axioms: [propext, Classical.choice, Quot.sound]
+   76  depends on axioms: [propext, Classical.choice, Quot.sound]
     1  depends on axioms: [propext, Quot.sound]
     1  depends on axioms: [propext]
 grep -rnw --include=*.lean -e sorry -e admit -e axiom -e native_decide . --exclude-dir=.lake   (prints nothing, exit 1)
