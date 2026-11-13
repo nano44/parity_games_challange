@@ -1,6 +1,9 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 23) 00:40Z (2026-11-13)
+- C143 (Lean rows, l-formal c8963698): (1) PASS by CI re-run of record (L54: run 43323596869 job 131550315049); (2)-(3) 23 headline rows PASS with notes N-1..N-7; 46 others build-only, NOT RULED on statements; finding: P-N5-LEVEL l. 189 stale «(K4) NOT proved in Lean». Sources in scratch c143/srcdocs. C142 waits for the Lead's E-5 string (Add. 2).
+
 ## Resume point (successor 23) 23:50Z
 - C142 Add. 1 (R128 second fill, trunk b4a602d1, draft 1a4bab88, L-5 459fd88d, UPDATE ba695811): FAIL E-5 only (entry text: fixes cite «(l. 277-278); F4-3» → «(l. 276-277); F4-3», d[314]). Merged tree (b4a602d1 + l-si 7b0a58ae + referee 16e8dcb0 + referee-2 4a6db414 + checker 269effb3) si check.sh rc 0. Next: Add. 2 on the corrected fill / landing. Then C143 (Lean, CI build of record L54; job 131519592230 on 78c32d90 read, notes c143/ci_notes.txt; run 43323596869 on c8963698 pending).
 
