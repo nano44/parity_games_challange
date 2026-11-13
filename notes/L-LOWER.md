@@ -27,6 +27,9 @@
   Plan: screen 4 = S_12 again at cap 6,000 after the push; attempt 3 at R 510 = a SAT screen's clients, else {8,10,11,12}.
 - 04:23Z S_12L (screen 4) SAT 3,358 s, f6 0/129; ccheck R 510 SAT 32 s → frozen L18b_N14c b7101f79 (P 14). S_14 stopped (pkill) 04:24Z.
   diag row 15: 11 (stay), 15 (stay), 13 (flip). R 16 screen {11,15} SAT 84 s. RUNNING 04:26Z: N15a base N14c, XS 11,15, R 510, cap 6,000.
+- Lead 04:27Z CONFIRMED P 14 = attempt 3 SAT («found by an R 64 screen; verified at R 510 by ccheck + f6check»); screens at P 14 4 of 4.
+- 04:58Z: screen 2 at P 15: P15_S2 = {10,11,12,15} R 64 cap 6,000 ($SP/d15/P15_S2.log), parallel to N15a (light, ~1-2 GB).
+  Any SAT screen → ccheck R 510 + freeze ($SP/freeze.sh after copying to $SP/l18/TAG_dec.txt + log, as N14c).
 
 ## Successor 15 HANDOVER (-> successor 16; written 2026-11-12 22:0xZ, date -u; context ~430k)
 ### DONE (claude/l-lower; products docs/lower/L17-around.md (closed §3), docs/lower/L18-horizon.md (open); tools l17/, l18/)
