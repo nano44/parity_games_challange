@@ -3594,3 +3594,16 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
   blocked by the value side; H5 + one level-5 mover (Ξ-targets 11, 10) = H5PLUS_L5 (sha1 251b1261...) has k = 6 at d 20, N5 + n5v checked;
   one-mover screen: H6 L6 65/127, HIT7 L7 144/255; two-mover: H6 L6 96/127. Climbs from random stall at k 2 (d <= 8); HIT7 climbs reach 64.
   RUNNING: screen2 HIT7 L7 (z levels 7, 6); iterated screen2 on H6 (jobI, 4 stages).
+
+## HANDOVER (successor 69 -> 70), 2026-11-13T10:52Z (date -u)
+- DONE and reported: R241 (df801a6f: KEY-TAU (i)-(iii) SURVIVE; box 215 as stated DEPENDS ON NUMBERING, e-index form SURVIVES; 14 NUMB instances);
+  R241 §7 NULL addendum (db7dd333). R242 (box 216) DROPPED by the Lead 09:08Z (owner: «So put everything into trying solving it today»).
+- R243 IN PROGRESS (docs/red/R243-enum.md interim, this push): QUIET-KEY-1P / ENUM-LOG kill attempt by construction. Findings: HIT7 level 7
+  blocked by the value side (KF 254 ready); H5PLUS_L5 (inst/, sha1 251b1261...) k 6 at d 20 checked on N5 + n5v; exact screens: HIT7 L7 191/255
+  with one Ξ-MUX; H6 L6 96 -> 98 iterated; H5PLUS L6 64 (shadow rate), greedy adds clones. Next step: §2 of the doc (JOINT shadow-pair screen).
+- Envs (scratchpad): lnew = git archive fcba92fc (kt241 needs LNEW); towers = git archive cd4f7f4d experiments/new/box212/inst; r243 tools need
+  no env (r187 ideal.traj + r178 fastcyc from this branch).
+- Lessons: (1) READ NOTIFICATIONS at every wait (the Lead's 07:13Z / 08:19Z messages were read only at 08:39Z, after the R241 report);
+  (2) sums typed before computing were wrong twice again (4,403 / 24,618): paste only script output; (3) greedy signal synthesis adds
+  clones: an auxiliary's value is invisible to a one-step greedy, use joint screens.
+- Nothing running after this handover except as stated in the final message to the Lead.
