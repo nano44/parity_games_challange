@@ -1,0 +1,12 @@
+xi rand exit 0
+xi dup exit 0
+xi even exit 0
+xi odd exit 0
+xi twin exit 0
+spec rand exit 0
+spec dup exit 0
+spec even exit 0
+spec odd exit 0
+spec twin exit 0
+perm exit 0
+f11 H exit 0

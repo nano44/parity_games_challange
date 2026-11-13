@@ -1,6 +1,28 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 34), written about 21:04Z (typed, NOT from date -u; erratum in R-P-N5-LEVEL.md); «go» from the Lead 20:04Z (A0 → B → C)
+- Handover check: docs/agents/handover-checks/REFEREE.md (fe434cd5, pushed, VERIFY PASS); trunk merged 434be444 (normal merge, trailer).
+- A0 DONE: R-P-N5-GATE.md §L (16e8dcb0): fixes entry 5 CORRECT, **L-5 MATCHES** (sha1 459fd88d…; my parse of C142 §4 at 269effb3, nine
+  pairs → 7ebcf735 = CHECKER's target, + the tenth pair; E-1/E-2 numbers re-read by column name, both engines (scratch/gate_l5_data.py);
+  E-3's seven markers each = old + one marker at the packet's part). Note N-L1 (lamch's two columns not named). Push of 16e8dcb0 was
+  running at 20:50Z (scripts/push.sh, tracked task).
+- B DONE in the working tree (commit after the A0 push lands, section by section): docs/referee/R-P-N5-LEVEL.md. Every statement
+  SIGN, no gap; line L-1 does NOT match yet: LT-1 (199 / 26 clause: instance, tool, unit, file), LT-2 (G_N counter k5), LT-3 (Lean form);
+  my L-1′ sha1 389645a2… (scratch/level_l1fix.py). Optional LO-1 (rv208 counter names), LO-2 (ALL-TCYC Consequences in the line).
+  Tools: scratch/level_quotes.py (44/44 quotes), level_data.py (frozen outputs), level_l1fix.py; replay box208_replay.py re-run on
+  10,982 genomes (total printed by awk over the RECORDS lines) (box208_logs/s34_*.out; 36 counters 0; one mutant plateau of 27 steps). REFEREE-2 39's report NOT read before my verdict.
+- C: nothing in hand. Next: message the Lead with the SHAs; then wait for L-NEW's fixes entry / L-2 (byte test with level_l1fix.py's
+  strings) or a CHECKER item.
+
+- Update 2026-11-12T22:12Z (date -u): B committed b251a0ed, 044580e2, 4c8d6c4f, 3f3c813d; push started 21:40Z. Lead's item D (22:02Z): FIRST
+  REVIEW of P-N5-WRAP (l-si e01447e7, 1670432a…; L-1 896f9e97…): docs/referee/R-P-N5-WRAP.md written (commit after B's push lands):
+  every statement SIGN (Claim NT = this lane's claim, signed as such, L41; XI-EXP SIGN AS CONDITIONAL; DEAD row scope correct); no gap;
+  L-1 does NOT match: LW-1 (L43, T_n numbers + unit + files; L-1′ be7da8f3…). [F11] PDF re-fetched and opened (sha256 46c96f44…, 43
+  pages): F-1 confirmed by own transcription (scratch/pwrap_f11.py), F-2 confirmed p. 17-18. Replay: wrap_replay.py 22,000 wrapped
+  games new seeds, 18 counters 0; wrap_f11.py n ≤ 10 equal to s33's log. Tools: pwrap_quotes.py (30/30), pwrap_f11.py, pwrap_l1fix.py.
+  Lesson: two header times in this session were typed, not from date -u (erratum appended to R-P-N5-LEVEL.md).
+
 ## HANDOVER NOTE (successor 33), written 2026-11-12T18:36Z by date -u; parking near the 480k context line (brief: park before a full review I cannot finish)
 - DONE (reports in docs/referee/; SHAs and push state: see the commits and my last message to the Lead):
   | item | report | final state |
