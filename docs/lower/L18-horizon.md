@@ -99,6 +99,9 @@ counter (unit, set, scope). Model: R104's IDEAL model at degree ≤ 2 (sim6; fen
   Screen 2 {10,11,12,14} R 64 cap 6,000 s: no answer (wall 6,000 s, 05:30-07:10Z). Attempt 2 at R 510: clients 10, 12, 14 (XORD 10 < 12 < 14), cap 6,000 s:
   NO ANSWER (capped; wall 6,000 s, 65.9M clauses). Screens 3 {10,14,15} and 4 {10,11,14} at R 64, cap 6,000 s each (07:26Z / 07:29Z).
   Screen 4 {10,11,14} R 64: UNSAT, solve 3,028 s (wall 3,035 s), solver only, not cited (by mono.py also UNSAT at R 510 for these clients).
+  Screen 3 {10,14,15} R 64: SAT, solve 3,337 s (wall 3,352 s); decode follows rows 0..16 (sim6 = fenc) but f6check 28 / 129, first
+  mismatch row 66 (beyond the screened horizon): not a full-horizon design, no ccheck. Attempt 3 at R 510: clients 10, 14, 15
+  (XORD 10 < 15 < 14), cap 6,000 s, started 08:22Z (the only P 16 neighbourhood with a SAT screen).
   Attempt 3 (the last before the stop rule): a SAT screen's decode checked at R 510 (ccheck + f6check), else one R 510 question.
 
 ## 9. Diff against TARGET.md

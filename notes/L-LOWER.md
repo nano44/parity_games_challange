@@ -35,6 +35,8 @@
 - 05:30Z screen 2 P16_S2 {10,11,12,14} R 64 cap 6,000. 05:48Z N16a UNSAT 2,017 s (attempt 1). RUNNING 05:49Z: N16b XS 10,12,14 R 510 (attempt 2).
 - 07:10Z P16_S2 no answer (cap). 07:28Z N16b NO ANSWER (cap 6,000; attempt 2). RUNNING: P16_S3 {10,14,15} (07:26Z), P16_S4 {10,11,14} (07:29Z),
   both R 64 cap 6,000. Screens at P 16: 4 of 4 used. Attempt 3 = SAT screen + ccheck, else R 510 (choose then).
+- 08:19Z S4 UNSAT 3,028 s. 08:21Z S3 SAT 3,337 s but f6 28/129 from row 66. RUNNING 08:22Z: N16c = attempt 3, XS 10,14,15, XORD 10,15,14, R 510.
+  If N16c fails: STOP RULE at P 16 → L18b summary in L18 §5 (largest P 15, trend, P 16 obstruction), report to the Lead.
 
 ## Successor 15 HANDOVER (-> successor 16; written 2026-11-12 22:0xZ, date -u; context ~430k)
 ### DONE (claude/l-lower; products docs/lower/L17-around.md (closed §3), docs/lower/L18-horizon.md (open); tools l17/, l18/)
