@@ -127,6 +127,8 @@ def main():
               f"n {' '.join(x['n'] for x in z)}; m {' '.join(x['m'] for x in z)}; maxprio {' '.join(x['maxprio'] for x in z)}")
     for l in lines("unit.out"):
         print(l)
+    for l in lines("fixes4.out"):
+        print(l)
     cl = lines("closed.out")
     if cl:
         z = [kv(l) for l in cl if " ctrl 0 " in l]

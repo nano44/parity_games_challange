@@ -11,7 +11,7 @@ import gkx_summ
 PREFIX = {"GEN": ("packet sha1", "gen:"), "MEMBER": ("member:", "member control"), "FACTS": ("facts, ",), "FACTSCTRL": ("facts control",),
           "CAUSAL": ("causal",), "ABS": ("abs",), "RESP": ("resp",), "RUN": ("run:",), "SIZES": ("sizes files", "first k"),
           "N5": ("n5_pg", "n5:"), "N5CTL": ("n5 control",), "LEM": ("lem ",), "ORDERS": ("orders",), "QUOTES": ("tags ", "UNTAGGED", "NOTFOUND"),
-          "PG12": ("pg12:",), "STRAT": ("strat",), "UNIT": ("unit ",), "CLOSED": ("closed",)}
+          "PG12": ("pg12:",), "STRAT": ("strat",), "UNIT": ("unit ",), "CLOSED": ("closed",), "FIXES4": ("fixes4:",)}
 
 STAGE1 = "2026-11-13T14:56Z"          # the date -u stamp of stage 1 as committed in c881709b (kept when later stages are appended)
 
@@ -25,7 +25,7 @@ def main():
     out = []
     prev = ""
     tmpl = open(os.path.join(here, "gkx_report_tmpl.md"), encoding="utf-8").read()
-    for extra in ("gkx_report_stage2.md", "gkx_report_stage3.md"):          # later stages are appended, never merged into stage 1
+    for extra in ("gkx_report_stage2.md", "gkx_report_stage3.md", "gkx_report_stage4.md"):          # later stages are appended, never merged into stage 1
         p = os.path.join(here, extra)
         if os.path.exists(p):
             tmpl = tmpl.rstrip("\n") + "\n\n" + open(p, encoding="utf-8").read()

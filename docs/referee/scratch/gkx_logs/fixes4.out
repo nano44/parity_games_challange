@@ -1,0 +1,4 @@
+fixes4: claude/l-red-b 24f4d436a0fea1f62ae736f20f78ff9e84333a90; docs/red-b/P-N5-EXP-fixes.md sha1 9dc9179fb08063cd59de25c5d3e16b0f8c693fbd, 829 lines; docs/red-b/P-N5-EXP.md there sha1 c0449b17193f19619f33b366096762dfde27d542
+fixes4: append-only against 06d399c2 (its 125 lines are a byte prefix): 1 (1 = yes)
+fixes4: own quote script (gkx_quotes.py) on the whole fixes file: tagged quotes 74 found 74 notfound 0; quotes of my stage 1 (label REF1) 22 found, of which 12 inside entry 4 (l. 288-647)
+fixes4: my §5.3 inside entry 4, white space normalised, the bold labels dropped: standing paragraph 1, CAUSAL 1, LEMMA′ 1 (1 = verbatim)

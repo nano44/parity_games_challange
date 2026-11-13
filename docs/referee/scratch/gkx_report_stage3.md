@@ -1,4 +1,4 @@
-## 11. Stage 3 (written @@NOW@@, date -u): comparison with L-SI's independent proof (box 108)
+## 11. Stage 3 (written 2026-11-13T15:44Z, date -u): comparison with L-SI's independent proof (box 108)
 Stage 1 (§0-§9) and stage 2 (§10) are unchanged; no verdict of §0 changes here. Erratum to §10.3: its sentence «box 108 … was not
 on origin at this writing» was written at 15:02Z; the file was on origin at my 15:41Z fetch, the minute stage 2 was stamped.
 - Object: claude/l-si 8c062914, docs/si/box108-gk-proof.md (461 lines, sha1 31b7c78c9b4941f083b86beb0e0fa513049dce22): «Theorem GK …
