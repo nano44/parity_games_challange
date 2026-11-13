@@ -57,3 +57,5 @@
 | D25 | 2026-11-13 | Owner (direct): «So put everything into trying solving it today»; Lead session switched to Fable 5.2 high by the owner | active | docs/DECISIONS.md#d21 |
 | L58 | 2026-11-13 | Lead reading of D24 / D25: new sessions at effort xhigh (amends L57); the whole fleet works on box 217 ENUM-LOG (QUIET-KEY-1P) today, either answer taken; D1's standard of proof unchanged | active | docs/DECISIONS.md#d21 |
 | L59 | 2026-11-13 | Lead reading, amending L58: the exact open statement is SW-POLY (ENUM-LOG necessary only); today's Fable 5.2 xhigh successors listed; early start of successors with a no-commit clause | active | docs/DECISIONS.md#d21 |
+| D26 | 2026-11-13 | Owner (direct): usage limit hit and reset; «Please continue from where you left off.» | active | docs/DECISIONS.md#d21 |
+| L60 | 2026-11-13 | Lead reading of D26 / L52: fleet woken after the 5-hour limit; load lowered (search lanes park; no L-FORMAL 6 / L-RED 71 until the kill packet's referee round); push.sh checks ls-remote after git push | active | docs/DECISIONS.md#d21 |
