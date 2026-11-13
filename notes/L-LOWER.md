@@ -32,6 +32,7 @@
   Any SAT screen → ccheck R 510 + freeze ($SP/freeze.sh after copying to $SP/l18/TAG_dec.txt + log, as N14c).
 - 05:10Z N15a SAT 2,547 s → L18b_N15a 76309bca (P 15). P15_S2 stopped. diag row 16: 10 (must stay), 14 (must flip). R 17 screen {10,14} SAT 165 s.
   RUNNING 05:14Z: N16a base N15a, XS 10,14, R 510, cap 6,000.
+- 05:30Z screen 2 P16_S2 {10,11,12,14} R 64 cap 6,000. 05:48Z N16a UNSAT 2,017 s (attempt 1). RUNNING 05:49Z: N16b XS 10,12,14 R 510 (attempt 2).
 
 ## Successor 15 HANDOVER (-> successor 16; written 2026-11-12 22:0xZ, date -u; context ~430k)
 ### DONE (claude/l-lower; products docs/lower/L17-around.md (closed §3), docs/lower/L18-horizon.md (open); tools l17/, l18/)

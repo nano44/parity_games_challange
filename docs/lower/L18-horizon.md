@@ -95,6 +95,8 @@ counter (unit, set, scope). Model: R104's IDEAL model at degree ≤ 2 (sim6; fen
   Attempt 1: SAT, solve 2,547 s (wall 2,659 s) → L18b_N15a 76309bca: rows 0..15, sim6 = fenc, f6check 0 / 129 on rows 0..510, inframe OK.
 - P 16: diag at row 16 (L18b_N15a): movers 10 (L5, flips but must stay) and 14 (L7, must flip, «better» says stay); this is the row-16
   q6/q7 change named in L14 / L17. Screen 1 {10,14} R 17: SAT 165 s (prefix feasible). Attempt 1 at R 510: clients 10, 14, cap 6,000 s.
+  Attempt 1 (clients 10, 14, R 510): UNSAT, solve 2,017 s (wall 2,067 s, cap 6,000 s), solver only, «this neighbourhood only».
+  Screen 2 {10,11,12,14} R 64 cap 6,000 s: running since 05:30Z. Attempt 2 at R 510: clients 10, 12, 14 (XORD 10 < 12 < 14), cap 6,000 s.
 
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All statements are about the IDEAL
