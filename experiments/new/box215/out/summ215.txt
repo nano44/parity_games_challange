@@ -1,0 +1,2 @@
+keyside215_frozen.out lines 88 timeouts 0 done 1 must0_sum 0 lkp 0 pkf 0 pkfa 0 kflip 0 casc 0 ftt 0 ladder 0 T 299 xcyc 83 lr 5 flipsum 14425 maxF 254 maxmoves 127
+keyside215_rand.out lines 4 timeouts 0 done 1 must0_sum 0 lkp 0 pkf 0 pkfa 0 kflip 0 casc 0 ftt 0 ladder 0 T 5 xcyc 1200 lr 32 flipsum 1756 maxF 1 maxmoves 4

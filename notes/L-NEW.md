@@ -17,6 +17,15 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - Tools (experiments/new/box213): key213.py (G-1), keymu213.py (KEY-TAU), kcount213.py (switches vs |K(x)|), g2_213.py (G-2), find213.py,
   ks213.py, n4fix213.py, summ213.py, run213.sh / run213m.sh (resumable, 600 s per genome), check213.sh (+ check213.out).
 - My slip: one ad-hoc job started with a bare «&» (third CPU job); killed within a minute, rerun as a tracked task.
+- 14340979 (box 213 + Addendum B + N-4) pushed by push.sh started 04:21Z. Lead 04:23Z: all four points met.
+- BOX 214 Step A (Lead «go» 04:25Z, redefined): prior-lift record (reader pass, 7 quotes re-checked by git grep) + block alignment:
+  docs/new/N5-LIFT-box214.md, experiments/new/box214/ (align214.py, mirror214.py). NEGATIVE: 0 matching Ξ-levels at every shift
+  (H5→H6, H6→HIT7, H5→HIT7); the mirror shape = shuffled baseline. Step B not run. Lead 04:29Z: recorded; (A) invariant study DEFERRED to
+  L-LOWER (L18 works there).
+- BOX 215 KEYSIDE-ALL (Lead «go» 04:31Z with amendments): docs/new/N5-KEYSIDE-box215.md, experiments/new/box215/ (keyside215.py,
+  run215.sh, check215.sh, summ215.py). CONDITIONAL on KEY-TAU (i). DATA: all must-0 0 on 88 frozen (83 Ξ-cyclic, 12,000 flips) + 1,200
+  random Ξ-cyclic (32 ladder-shaped); controls fire (xi, permuted gates, CASCADE without own). Quotes 17/17 (quotes215.out).
+  Things only I know: reversing the gate order is NOT a control (every comparison flips at the same steps).
 
 ## HANDOVER (successor 74, PARKING 2026-11-13 02:02ZZ by date -u; context large; natural pause after box 212 Addendum A and the BOX 213 start)
 ### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
@@ -2899,6 +2908,12 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   Xi_sigma-best gate): FALSE. a non-best gate: notbest 187 of 6107 moves on 38 of 86 genomes (from experiments/new/box213/out/arena213_frozen.out by n4fix213.py; CORRECTED per REFEREE-2 40 N-4, Lead 03:57Z; the earlier «on 12 genomes» list summed to 84): DHIB18_2805 18, W86_n77 16, W14_n75 15, DSALT9_n416 12, RWX_n95 12, DHIB26_2804 11, C6G8_n54 10, GROW8_n53 10, K1C16_n400 9, DWT20_2803 8, W68_n66 7, DU21_h4 6, HOLD3K_n125 5, CT26_cap400 4, CT27_cap400 4, DSALT6_n108 4, NK6_cl21 4, DSALT7_n108 3, HOLD2K_n84 3, k1fail_202 3, BLKX23_n48 2, C5_NM63_7ae531ad 2, C6_NM75_72a89f5f 2, CT12_cap200 2, ROUTELOW_n21 2, B400_r32_a13d9661 1, BLKX26_n48 1, C2CX4_n23 1, C4_NM50_184a739c 1, C8_NM112_8c4c784f 1, C9_NM122_6224f959 1, CFI3_n48 1, CX4_n21 1, GROW7_n34 1, K1D4_n48 1, K1F34_n84 1, K1L7_n48 1, RINT_n48 1. Obstruction: S4a's
   choice is the optimum of the tau-arena (Odd fixed at its SI strategy tau, which differs from sigma-bar at almost every gate), whose
   order on improving gates differs from Xi_sigma's. True on the 5 towers (notbest 0).
+
+## Dead ends (successor 75, box 214 Step A; docs/new/N5-LIFT-box214.md §3, experiments/new/box214/)
+- «Block lifting» of the doubling towers (my 04:23Z proposal: HIT7 = H6 + one block of 4 ladder levels, then extrapolate to k = 8-10):
+  DEAD before Step B. Obstruction: the Ξ-target pattern (level-relative offset and side) of NO level of H5 / H6 reappears in H6 / HIT7 at
+  ANY shift (0 matches; align214.out), and the apparent mirror shape lev(xt) ≈ d − 1 − l equals a shuffled baseline (HIT7 8.32 vs 8.78 ±
+  0.50; mirror214.out). Instances: box212/inst H5_d20_F62, H6_d24_F126, HIT7_d28_F254. Consistent with L-LOWER's «the diff gives no rule».
 
 ## Dead ends (successor 75, box 213 G-1; docs/new/N5-KEYWIN-box213.md §2, experiments/new/box213/key213.py)
 - REFEREE-2 40's repair (a) of box 212 RF-D's window clause (a τ-arena RF-B: (P2^τ) «τ(g) ∈ Y for every gate g ∈ Y» and (P5^τ)): DEAD as a

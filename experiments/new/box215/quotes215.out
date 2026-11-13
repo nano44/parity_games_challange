@@ -1,0 +1,18 @@
+OK   [docs/new/P-IDEAL-KEYS.md@b302bbf5] docs/new/P-IDEAL-KEYS.md@b302bbf5 | s_t(x) := the option in A_(s_(t−1))(x) with the least key_(s_t)(x, ·) (keys under the NEW 
+OK   [R111] RESULTS l. 11598 | (LOCAL-KP) at any degree, if two states agree on W(x) then they give every option of x the
+OK   [docs/new/P-IDEAL-KEYS.md@b302bbf5] docs/new/P-IDEAL-KEYS.md@b302bbf5 | lev(x) = 0: key_s(x, k) = (g(x, k)) = key_(s′)(x, k).
+OK   [docs/new/P-IDEAL-KEYS.md@b302bbf5] docs/new/P-IDEAL-KEYS.md@b302bbf5 | If Mv_t ∩ W(x) = ∅, then s_t and s_(t−1) agree on W(x), so KP_(s_t)(x) = KP_(s_(t−1))(x) b
+OK   [docs/new/P-IDEAL-KEYS.md@b302bbf5] docs/new/P-IDEAL-KEYS.md@b302bbf5 | LOCAL-KP is about keys only; R105's LOCAL is not used
+OK   [R111] RESULTS l. 11598 | for a mover x of degree 2 and level ≥ 1 with W-targets a, b of its two options, KF_x = 0 i
+OK   [docs/new/P-IDEAL-KEYS.md@b302bbf5] docs/new/P-IDEAL-KEYS.md@b302bbf5 | key_s(x, k) = key_s(wt(x, k), s(wt(x, k))) followed by g(x, k), the prefix having length l
+OK   [docs/new/P-IDEAL-KEYS.md@b302bbf5] docs/new/P-IDEAL-KEYS.md@b302bbf5 | (F1) key_s(x, k) is a tuple of length lev(x) + 1 whose last entry is g(x, k)
+OK   [R111] RESULTS l. 11598 | if every mover has degree ≤ 2, moves(x) ≤ 1 + flips(a, b) for such x with a ≠ b and moves(
+OK   [docs/new/P-IDEAL-KEYS.md@b302bbf5] docs/new/P-IDEAL-KEYS.md@b302bbf5 | KEYFLIP gives moves(x) ≤ 1 + KF_x.
+OK   [docs/new/P-IDEAL-KEYS.md@b302bbf5] docs/new/P-IDEAL-KEYS.md@b302bbf5 | T ≤ Σ_x moves(x)
+OK   [R111] RESULTS l. 11598 | (CASCADE) at any degree, at every step at which two distinct movers p, q of one level l fl
+OK   [docs/new/P-IDEAL-KEYS.md@b302bbf5] docs/new/P-IDEAL-KEYS.md@b302bbf5 | (own) and (below) exclude each other by definition.
+OK   [docs/new/P-IDEAL-KEYS.md@b302bbf5] docs/new/P-IDEAL-KEYS.md@b302bbf5 | A flip of (p, q) is then a flip of (w_p, w_q).
+OK   [R111] RESULTS l. 11598 | on 𝓛^R_d with F(l) := flips(2l, 2l + 1), F(0) ≤ 2, F(l) ≤ moves(2l) + moves(2l + 1) + F(l 
+OK   [docs/new/P-IDEAL-KEYS.md@b302bbf5] docs/new/P-IDEAL-KEYS.md@b302bbf5 | Every mover x of level l ≥ 1 has wt(x, k) = 2(l − 1) + k, distinct, so PAIR-MOVES gives mo
+OK   [docs/new/P-IDEAL-KEYS.md@b302bbf5] docs/new/P-IDEAL-KEYS.md@b302bbf5 | the two Ξ-sets differ: β(x, a) lies only in the first, since x does not recur on an acycli
+quotes 17 missing 0 (trunk e8b6abf0170fb63ecbd68d058a2bb38599bc5b01)

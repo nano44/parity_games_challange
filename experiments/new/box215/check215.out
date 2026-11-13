@@ -1,0 +1,8 @@
+DBL4_d20_F30.json KM_MODE spec ctrl 0 lkp 0 pkf 0 pkfa 0 kflip 0 casc 0 ftt 0 ladder 0 T 30 xcyc 0 lr 1 flipsum 137 maxF 30 maxmoves 15
+MWR4_2.json KM_MODE spec ctrl 0 lkp 0 pkf 0 pkfa 0 kflip 0 casc 0 ftt 0 ladder 0 T 28 xcyc 1 lr 0 flipsum 0 maxF 0 maxmoves 1
+CFI3_n48.json KM_MODE spec ctrl 0 lkp 0 pkf 0 pkfa 0 kflip 0 casc 0 ftt 0 ladder 0 T 2 xcyc 1 lr 0 flipsum 126 maxF 0 maxmoves 1
+rand rand seed 2190 genomes 20 cyconly 1 KM_MODE spec ctrl 0 lkp 0 pkf 0 pkfa 0 kflip 0 casc 0 ftt 0 ladder 0 T 2 xcyc 20 lr 1 flipsum 16 maxF 0 maxmoves 2
+ctrlxi DBL4_d20_F30.json KM_MODE xi ctrl 0 lkp 0 pkf 0 pkfa 0 kflip 4 casc 0 ftt 0 ladder 0 T 9 xcyc 0 lr 1 flipsum 56 maxF 6 maxmoves 5
+ctrlxi CFI3_n48.json KM_MODE xi ctrl 0 lkp 0 pkf 0 pkfa 0 kflip 21 casc 0 ftt 0 ladder 0 T 24 xcyc 1 lr 0 flipsum 1056 maxF 0 maxmoves 7
+ctrlperm DBL4_d20_F30.json KM_MODE spec ctrl 1 lkp 0 pkf 0 pkfa 0 kflip 7 casc 0 ftt 0 ladder 0 T 30 xcyc 0 lr 1 flipsum 82 maxF 12 maxmoves 15
+ctrlown CFI3_n48.json KM_MODE spec ctrl 2 lkp 0 pkf 0 pkfa 0 kflip 0 casc 124 ftt 0 ladder 0 T 2 xcyc 1 lr 0 flipsum 126 maxF 0 maxmoves 1

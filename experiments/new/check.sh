@@ -1216,4 +1216,14 @@ if [ "$r213" -eq 0 ] && [ -z "$d213" ] && ! grep -v '^ctrl' box213/check213.out 
 else
   echo "BOX 213 KEY-WINDOW check: FAILED (exit $r213)"; echo "$d213" | head -30; echo "$run213" | tail -15; printf '%s\n' "$s213" | tail -5; exit 1
 fi
+# BOX 215 KEYSIDE-ALL (L-NEW successor 75): R111's key-side lemmas (LOCAL-KP, PAIR-KF, KEYFLIP, CASCADE, F <= T, LADDER) on N5's run on Gamma3 of every genome, Xi-cyclic included, CONDITIONAL on box 213's KEY-TAU (i): must-0 counters 0 on the check set and in the frozen outputs (summ215.py), three controls fire, outputs pinned, quotes found
+r215=0; run215=$(cd box215 && bash check215.sh 2>&1) || r215=$?
+d215=$(diff <(printf '%s\n' "$run215") box215/check215.out 2>&1) || true
+m215='\b(lkp|pkf|pkfa|kflip|casc|ftt|ladder) [1-9]'
+s215=$(cd box215 && python3 -I summ215.py 2>&1) || r215=$((r215 + 100))
+if [ "$r215" -eq 0 ] && [ -z "$d215" ] && ! grep -v '^ctrl' box215/check215.out | grep -Eq "$m215" && grep -Eq '^ctrlxi .*\bkflip [1-9]' box215/check215.out && grep -Eq '^ctrlperm .*\bkflip [1-9]' box215/check215.out && grep -Eq '^ctrlown .*\bcasc [1-9]' box215/check215.out && ! printf '%s\n' "$s215" | grep -Eq 'must0_sum [1-9]' && diff <(printf '%s\n' "$s215") box215/out/summ215.txt > /dev/null && (cd box215/out && sha1sum -c --quiet SHA1SUMS) && grep -q '^quotes 17 missing 0 ' box215/quotes215.out; then
+  echo "BOX 215 KEYSIDE-ALL: key-side must-0 counters 0 (check set and outputs), controls fire (xi kflip, permuted gates kflip, CASCADE without own casc), outputs pinned, quotes 17 found: PASS"
+else
+  echo "BOX 215 KEYSIDE-ALL check: FAILED (exit $r215)"; echo "$d215" | head -30; echo "$run215" | tail -15; printf '%s\n' "$s215" | tail -5; exit 1
+fi
 rm -rf "$tmp"

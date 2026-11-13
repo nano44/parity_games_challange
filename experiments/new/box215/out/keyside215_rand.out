@@ -1,0 +1,5 @@
+rand rand seed 2150 genomes 300 cyconly 1 KM_MODE spec ctrl 0 lkp 0 pkf 0 pkfa 0 kflip 0 casc 0 ftt 0 ladder 0 T 3 xcyc 300 lr 19 flipsum 356 maxF 1 maxmoves 2
+rand dense seed 2151 genomes 300 cyconly 1 KM_MODE spec ctrl 0 lkp 0 pkf 0 pkfa 0 kflip 0 casc 0 ftt 0 ladder 0 T 5 xcyc 300 lr 0 flipsum 529 maxF 0 maxmoves 2
+rand deep seed 2152 genomes 300 cyconly 1 KM_MODE spec ctrl 0 lkp 0 pkf 0 pkfa 0 kflip 0 casc 0 ftt 0 ladder 0 T 5 xcyc 300 lr 0 flipsum 495 maxF 0 maxmoves 4
+rand noesc seed 2153 genomes 300 cyconly 1 KM_MODE spec ctrl 0 lkp 0 pkf 0 pkfa 0 kflip 0 casc 0 ftt 0 ladder 0 T 5 xcyc 300 lr 13 flipsum 376 maxF 1 maxmoves 3
+DONE

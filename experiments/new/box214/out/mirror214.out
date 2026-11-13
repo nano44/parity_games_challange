@@ -1,0 +1,5 @@
+DBL4_d20_F30.json d 20 Xi-edges 74 mean|lev(xt) - (d-1-l)| 6.14 shuffled baseline 6.41 +- 0.47 corr(l, lev(xt)) -0.051
+RECF4_d20_F60.json d 20 Xi-edges 74 mean|lev(xt) - (d-1-l)| 6.7 shuffled baseline 6.05 +- 0.47 corr(l, lev(xt)) 0.173
+H5_d20_F62.json d 20 Xi-edges 74 mean|lev(xt) - (d-1-l)| 7.18 shuffled baseline 6.47 +- 0.45 corr(l, lev(xt)) 0.162
+H6_d24_F126.json d 24 Xi-edges 90 mean|lev(xt) - (d-1-l)| 8.47 shuffled baseline 7.89 +- 0.49 corr(l, lev(xt)) 0.069
+HIT7_d28_F254.json d 28 Xi-edges 108 mean|lev(xt) - (d-1-l)| 8.32 shuffled baseline 8.78 +- 0.5 corr(l, lev(xt)) -0.104
