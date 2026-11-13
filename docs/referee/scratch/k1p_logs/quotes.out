@@ -1,0 +1,45 @@
+RESULTS file sha1 eecbd798b81ad431d1b753f5a7f92f3c63e56da1
+FOUND R117 packet l. 31 «N5 (SPEC S1-S5) from its DEFAULT start S3 (SPEC S3 with FIX 1)»
+FOUND R104 packet l. 32 «an IDEAL genome G has N movers x with levels lev(x), M := Σ deg(x) options (x, k»
+FOUND R104 packet l. 34 «under a state s the Ξ-value of option (x, k) is the set of β's on its chain (x, »
+FOUND R104 packet l. 36 «an IDEAL step moves every mover to the lexicographically least key (gate indices»
+FOUND R104 packet l. 38 «the Ξ-graph has an edge x → xt(x, k) for every option with a mover as Ξ-target»
+FOUND docs/red/P-N5-REALIZE.md@e609c5d2 packet l. 40 «a gate index gate(x, k), a bijection of the options onto 0..M − 1»
+FOUND docs/red/P-N5-REALIZE.md@e609c5d2 packet l. 41 «IDEAL step from s. Availability A_s(x) := {s(x)} ∪ {k : (x, k) ▷_s (x, s(x))}.»
+FOUND docs/red/P-N5-REALIZE.md@e609c5d2 packet l. 41 «If |A_s(x)| = 1 for every x, the run STOPS»
+FOUND docs/red/P-N5-REALIZE.md@e609c5d2 packet l. 42 «key(x, k) := (gate(x, k)) if lev(x) = 0, and key_(s')(wt(x, k), s'(wt(x, k))) fo»
+FOUND docs/red/P-N5-REALIZE.md@e609c5d2 packet l. 43 «If s' = s, the run STOPS»
+FOUND docs/red/P-N5-REALIZE.md@e609c5d2 packet l. 43 «Otherwise s → s' is one IDEAL step. L(G) := the number of IDEAL steps from s_0»
+FOUND docs/red/P-N5-REALIZE.md@e609c5d2 packet l. 44 «For IDEAL-ACYC and two options k ≠ k' of ONE mover x, B_s(x, k) ≠ B_s(x, k')»
+FOUND R105 packet l. 46 «(ENC) the Ξ-order of β-sets is the order of the integers Σ ±2^rank (+ for even p»
+FOUND R105 packet l. 48 «(MONO) the current Ξ-value of every mover never decreases along a run»
+FOUND R104 packet l. 49 «vertex indices: movers, gates in gate-index order, β-vertices, e-vertices in the»
+FOUND docs/red/P-N5-REALIZE.md@e609c5d2 packet l. 51 «e_g: indices N + 2M, … allocated in GATE-INDEX order»
+FOUND R117 packet l. 54 «for every G with an ACYCLIC Ξ-graph, the game Γ3(G) obtained from Γ(G) by 4M + 4»
+FOUND R117 packet l. 59 «a family of acyclic genomes with L super-polynomial in N + M would give games on»
+FOUND docs/new/P-N5-REACH.md@73b3d1fd packet l. 62 «The STANDARD STATE of Γ3 for a mover state s is the transport of R104's start wi»
+FOUND docs/new/P-N5-REACH.md@73b3d1fd packet l. 64 «Let G ∈ IDEAL-ACYC with IDEAL run s_0 → s_1 → … → s_L, L = L(G). Then the N5 run»
+FOUND docs/new/P-N5-REACH.md@73b3d1fd packet l. 66 «Let IDEAL-ACYC-POLY mean: there is a polynomial q with L(G) ≤ q(N + M) for every»
+FOUND docs/new/P-N5-REACH.md@73b3d1fd packet l. 67 «(b) Conversely, if (G_i) ⊆ IDEAL-ACYC has L(G_i) super-polynomial in N_i + M_i, »
+FOUND R104 packet l. 70 «one FL run (a maximal set of consecutive non-fallback transitions that keep τ, c»
+FOUND R117 packet l. 72 «with R104's premises as landed (1E-N3 = RESULTS R57 (b) in its two forms; RESULT»
+FOUND docs/referee-2/R2-key-preread.md@abd629d7 packet l. 267 «mism 0 on the 5 towers (T_1P = 30, 67, 136, 209, 299 = N5's; my F = T + 1 on eac»
+FOUND docs/referee-2/R2-key-preread.md@abd629d7 packet l. 268 «a1mu, a1v, a2, a3, a4h, a4x all 0»
+FOUND docs/new/P-N5-REACH.md@73b3d1fd packet l. 282 «(a) R(x) = {m_(x,k) : k ∈ A_s(x)}, A_s(x) := {s(x)} ∪ {k : (x, k) strictly Ξ-bet»
+FOUND docs/new/P-N5-REACH.md@73b3d1fd packet l. 283 «e-indices follow gate indices ([DEF]; unchanged in Γ3)»
+FOUND R105 packet l. 287 «(MONO) the current Ξ-value of every mover never decreases along a run»
+FOUND R114 packet l. 288 «(MOVE-RISE) at any degree, a move of z at step t gives cv_(s_t)(z) > cv_(s_(t−1)»
+FOUND R113 packet l. 289 «(PATH-RISE) at any degree, the current value cv(z) of every mover z rises at mos»
+FOUND R111 packet l. 291 «(PAIR-KF) for a mover x of degree 2 and level ≥ 1 with W-targets a, b of its two»
+FOUND R105 packet l. 291 «(KEYFLIP) moves(x) ≤ 1 + KF_x with KF_x the number of steps at which KP(x) chang»
+FOUND R111 packet l. 292 «(MERGE) at any degree, for two distinct options k, k′ of x and a state s, v_s(x,»
+FOUND R111 packet l. 294 «(RETURN) for a mover x of degree 2 that moves to o at step t_1 and next moves at»
+tags 19 tagged_quotes 35 found 35 notfound 0 nosource 0
+UNTAGGED packet l. 2 «FREEZE the packet P-N5-KEY1P (statement first, then the file)»
+UNTAGGED packet l. 3 «Every premise from landed RESULTS, quoted by script with its R-id»
+UNTAGGED packet l. 3 «This packet is on the critical path of BOTH outcomes: a kill family on 1P(G) transfers to N5 only th»
+UNTAGGED packet l. 5 «Write the packet AS STATED in your (2), items 1-7, unconditional on landed R104 / R105 / R117.»
+UNTAGGED packet l. 6 «B-1: cite R117's KEY3 (a) with the pointer and the quoted statement; do NOT re-prove it.»
+UNTAGGED packet l. 7 «Kill form in item 7: state it by max_x sw(x) or T against N + M (SW-POLY is the exact statement), wi»
+UNTAGGED packet l. 211 «There is a polynomial q with sw(x) ≤ q(N + M) for every genome G with an acyclic Ξ-graph and every m»
+UNTAGGED packet l. 303 «1 + the largest level of a mover with sw = |K| − 1»

@@ -1,0 +1,4 @@
+H5_d20_F62.json ctl lastfb N 40 M 80 n 610 m 808 maxprio 329 L 136 stop stuck iterations 139 fallbacks [137] S3START 0 STD 0 FLFB 0 FLTAU 0 FLSIG 0 LASTFB 1 WIN 0 EXACT 0 evenwins 609 secs 7.2
+H5_d20_F62.json ctl revE N 40 M 80 n 610 m 808 maxprio 329 L 136 stop stuck iterations 7 fallbacks [5] S3START 0 STD 8 FLFB 1 FLTAU 0 FLSIG 0 LASTFB 0 WIN 0 EXACT 1 evenwins 609 secs 0.3
+H5_d20_F62.json ctl rank N 40 M 80 n 610 m 808 maxprio 329 L 136 stop stuck iterations 5 fallbacks [3] S3START 0 STD 6 FLFB 1 FLTAU 0 FLSIG 0 LASTFB 0 WIN 0 EXACT 1 evenwins 609 secs 0.2
+H5_d20_F62.json ctl start N 40 M 80 n 610 m 808 maxprio 329 L 136 stop stuck iterations 72 fallbacks [70] S3START 1 STD 74 FLFB 1 FLTAU 0 FLSIG 0 LASTFB 0 WIN 0 EXACT 1 evenwins 609 secs 3.4

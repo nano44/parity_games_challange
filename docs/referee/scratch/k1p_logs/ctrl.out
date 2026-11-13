@@ -1,0 +1,7 @@
+HIT7_d28_F254.json ctrl howard N 56 M 112 D 2 mindeg 2 T 8 L 299 stop stuck maxsw 5 ideq 0 ordv 0 l0a 0 l0b 0 l0c 0 a1v 0 a1mu 103 a2 1 a2p 0 a3 1 a3r 0 a4h 0 a4x 0 enum 0 k_1 1 k_0.75 1 k_0.5 4
+HIT7_d28_F254.json ctrl down N 56 M 112 D 2 mindeg 2 T 6 L 299 stop stuck maxsw 4 ideq 0 ordv 0 l0a 0 l0b 0 l0c 0 a1v 149 a1mu 103 a2 0 a2p 0 a3 0 a3r 0 a4h 0 a4x 0 enum 0 k_1 1 k_0.75 2 k_0.5 3
+HIT7_d28_F254.json ctrl a2half N 56 M 112 D 2 mindeg 2 T 299 L 299 stop stuck maxsw 127 ideq 0 ordv 0 l0a 0 l0b 0 l0c 0 a1v 0 a1mu 0 a2 14 a2p 0 a3 0 a3r 0 a4h 0 a4x 0 enum 0 k_1 7 k_0.75 7 k_0.5 10
+HIT7_d28_F254.json ctrl a3all N 56 M 112 D 2 mindeg 2 T 299 L 299 stop stuck maxsw 127 ideq 0 ordv 0 l0a 0 l0b 0 l0c 0 a1v 0 a1mu 0 a2 0 a2p 0 a3 43 a3r 0 a4h 0 a4x 0 enum 0 k_1 7 k_0.75 7 k_0.5 10
+HIT7_d28_F254.json ctrl a4any N 56 M 112 D 2 mindeg 2 T 299 L 299 stop stuck maxsw 127 ideq 0 ordv 0 l0a 0 l0b 0 l0c 0 a1v 0 a1mu 0 a2 0 a2p 0 a3 0 a3r 0 a4h 7553 a4x 36 enum 0 k_1 7 k_0.75 7 k_0.5 10
+HIT7_d28_F254.json ctrl w0 N 56 M 112 D 2 mindeg 2 T 0 L 299 stop stuck maxsw 0 ideq 1 ordv 56 l0a 0 l0b 40 l0c 56 a1v 0 a1mu 0 a2 0 a2p 0 a3 0 a3r 0 a4h 0 a4x 0 enum 0 k_1 0 k_0.75 0 k_0.5 0
+HIT7_d28_F254.json ctrl perm N 56 M 112 D 2 mindeg 2 T 3 L 299 stop stuck maxsw 1 ideq 1 ordv 0 l0a 0 l0b 0 l0c 0 a1v 0 a1mu 0 a2 0 a2p 0 a3 0 a3r 0 a4h 0 a4x 0 enum 0 k_1 1 k_0.75 1 k_0.5 1

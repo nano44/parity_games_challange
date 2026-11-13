@@ -1,0 +1,5 @@
+DBL4_d20_F30.json ctrl 0 N 40 M 80 D 2 mindeg 2 T 30 L 30 stop stuck maxsw 15 ideq 0 ordv 0 l0a 0 l0b 0 l0c 0 a1v 0 a1mu 0 a2 0 a2p 0 a3 0 a3r 0 a4h 0 a4x 0 enum 0 k_1 0 k_0.75 5 k_0.5 5
+H5_d20_F62.json ctrl 0 N 40 M 80 D 2 mindeg 2 T 136 L 136 stop stuck maxsw 31 ideq 0 ordv 0 l0a 0 l0b 0 l0c 0 a1v 0 a1mu 0 a2 0 a2p 0 a3 0 a3r 0 a4h 0 a4x 0 enum 0 k_1 5 k_0.75 6 k_0.5 8
+H6_d24_F126.json ctrl 0 N 48 M 96 D 2 mindeg 2 T 209 L 209 stop stuck maxsw 63 ideq 0 ordv 0 l0a 0 l0b 0 l0c 0 a1v 0 a1mu 0 a2 0 a2p 0 a3 0 a3r 0 a4h 0 a4x 0 enum 0 k_1 6 k_0.75 6 k_0.5 9
+HIT7_d28_F254.json ctrl 0 N 56 M 112 D 2 mindeg 2 T 299 L 299 stop stuck maxsw 127 ideq 0 ordv 0 l0a 0 l0b 0 l0c 0 a1v 0 a1mu 0 a2 0 a2p 0 a3 0 a3r 0 a4h 0 a4x 0 enum 0 k_1 7 k_0.75 7 k_0.5 10
+RECF4_d20_F60.json ctrl 0 N 40 M 80 D 2 mindeg 2 T 67 L 67 stop stuck maxsw 30 ideq 0 ordv 0 l0a 0 l0b 0 l0c 0 a1v 0 a1mu 0 a2 0 a2p 0 a3 0 a3r 0 a4h 0 a4x 0 enum 0 k_1 4 k_0.75 5 k_0.5 6

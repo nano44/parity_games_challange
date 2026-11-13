@@ -1,0 +1,8 @@
+G_3 ctrl 0 N 11 M 22 D 2 mindeg 2 T 6 L 6 stop stuck maxsw 2 ideq 0 ordv 0 l0a 0 l0b 0 l0c 0 a1v 0 a1mu 0 a2 0 a2p 0 a3 0 a3r 0 a4h 0 a4x 0 enum 0 k_1 1 k_0.75 1 k_0.5 3
+G_4 ctrl 0 N 20 M 40 D 2 mindeg 2 T 14 L 14 stop stuck maxsw 4 ideq 0 ordv 0 l0a 0 l0b 0 l0c 0 a1v 0 a1mu 0 a2 0 a2p 0 a3 0 a3r 0 a4h 0 a4x 0 enum 0 k_1 1 k_0.75 1 k_0.5 4
+G_5 ctrl 0 N 29 M 58 D 2 mindeg 2 T 30 L 30 stop stuck maxsw 8 ideq 0 ordv 0 l0a 0 l0b 0 l0c 0 a1v 0 a1mu 0 a2 0 a2p 0 a3 0 a3r 0 a4h 0 a4x 0 enum 0 k_1 1 k_0.75 1 k_0.5 6
+G_6 ctrl 0 N 38 M 76 D 2 mindeg 2 T 62 L 62 stop stuck maxsw 16 ideq 0 ordv 0 l0a 0 l0b 0 l0c 0 a1v 0 a1mu 0 a2 0 a2p 0 a3 0 a3r 0 a4h 0 a4x 0 enum 0 k_1 1 k_0.75 1 k_0.5 7
+G_7 ctrl 0 N 47 M 94 D 2 mindeg 2 T 126 L 126 stop stuck maxsw 32 ideq 0 ordv 0 l0a 0 l0b 0 l0c 0 a1v 0 a1mu 0 a2 0 a2p 0 a3 0 a3r 0 a4h 0 a4x 0 enum 0 k_1 1 k_0.75 1 k_0.5 8
+G_8 ctrl 0 N 56 M 112 D 2 mindeg 2 T 254 L 254 stop stuck maxsw 64 ideq 0 ordv 0 l0a 0 l0b 0 l0c 0 a1v 0 a1mu 0 a2 0 a2p 0 a3 0 a3r 0 a4h 0 a4x 0 enum 0 k_1 1 k_0.75 8 k_0.5 9
+G_9 ctrl 0 N 65 M 130 D 2 mindeg 2 T 510 L 510 stop stuck maxsw 128 ideq 0 ordv 0 l0a 0 l0b 0 l0c 0 a1v 0 a1mu 0 a2 0 a2p 0 a3 0 a3r 0 a4h 0 a4x 0 enum 0 k_1 1 k_0.75 9 k_0.5 10
+G_10 ctrl 0 N 74 M 148 D 2 mindeg 2 T 1022 L 1022 stop stuck maxsw 256 ideq 0 ordv 0 l0a 0 l0b 0 l0c 0 a1v 0 a1mu 0 a2 0 a2p 0 a3 0 a3r 0 a4h 0 a4x 0 enum 0 k_1 1 k_0.75 10 k_0.5 11

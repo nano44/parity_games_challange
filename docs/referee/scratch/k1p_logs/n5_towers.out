@@ -1,0 +1,5 @@
+DBL4_d20_F30.json ctl 0 N 40 M 80 n 610 m 808 maxprio 329 L 30 stop stuck iterations 33 fallbacks [31] S3START 0 STD 0 FLFB 0 FLTAU 0 FLSIG 0 LASTFB 0 WIN 0 EXACT 0 evenwins 609 secs 1.6
+H5_d20_F62.json ctl 0 N 40 M 80 n 610 m 808 maxprio 329 L 136 stop stuck iterations 139 fallbacks [137] S3START 0 STD 0 FLFB 0 FLTAU 0 FLSIG 0 LASTFB 0 WIN 0 EXACT 0 evenwins 609 secs 7.2
+H6_d24_F126.json ctl 0 N 48 M 96 n 730 m 968 maxprio 393 L 209 stop stuck iterations 212 fallbacks [210] S3START 0 STD 0 FLFB 0 FLTAU 0 FLSIG 0 LASTFB 0 WIN 0 EXACT 0 evenwins 729 secs 15.7
+HIT7_d28_F254.json ctl 0 N 56 M 112 n 850 m 1130 maxprio 457 L 299 stop stuck iterations 302 fallbacks [300] S3START 0 STD 0 FLFB 0 FLTAU 0 FLSIG 0 LASTFB 0 WIN 0 EXACT 0 evenwins 849 secs 28.8
+RECF4_d20_F60.json ctl 0 N 40 M 80 n 610 m 808 maxprio 329 L 67 stop stuck iterations 70 fallbacks [68] S3START 0 STD 0 FLFB 0 FLTAU 0 FLSIG 0 LASTFB 0 WIN 0 EXACT 0 evenwins 609 secs 3.6
