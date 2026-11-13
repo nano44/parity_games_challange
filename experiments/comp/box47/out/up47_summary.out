@@ -1,0 +1,4 @@
+d 6 (N 12, M 24): runs 18 done 18 | best k_A6 3 T 12 (U6_7.log) | runs per final k: k2:17 k3:1
+d 8 (N 16, M 32): runs 18 done 18 | best k_A6 3 T 14 (U8_3.log) | runs per final k: k2:15 k3:3
+d 10 (N 20, M 40): runs 18 done 18 | best k_A6 3 T 14 (U10_12.log) | runs per final k: k2:15 k3:3
+d 12 (N 24, M 48): runs 18 done 17 | best k_A6 3 T 13 (U12_15.log) | runs per final k: k2:16 k3:1
