@@ -728,3 +728,8 @@ Answered from the Lead reports of 2026-11-12 (10:40Z-19:57Z) as an OWNER-DESK re
 
 ## 2026-11-12T22:26Z Lead reading on Fable 5.2 vs Opus 5.5 (22:23Z, summary)
 Impression, not a controlled measurement. Fable lanes at xhigh did the deepest new work (L-NEW 72/73 boxes 208-211; L-FORMAL premise-free Lean proof of the whole box 208 bound in ~2 h; REFEREE 33 closed the WRAP tie question). Slips about equal on both models; no false claim survived review today. Fable used its weekly allowance in ~9 h with 8-9 sessions; ~2.5x Opus per token. Since 20:00Z Opus successors kept pace on checking: both referees signed P-N5-LEVEL; L-RED 68 ran 438,976 exhaustive games, no kill; L-FORMAL 3 recovered the lost Lean work. Caveat: model share not separable. Lead guess: Fable best for open-ended design and proof writing; Opus as good and cheaper for byte checks and replays.
+
+## 2026-11-13T08:43Z owner message (verbatim)
+> I reset the fable weekly limit, please conitnue on high effort, we already used a day, w still have 160% of usage left until tomorrow night
+
+Relayed verbatim to the Lead, priority "now" (spend/model). OWNER-DESK reading sent: Fable limit reset, resume Fable lanes at maximum pace within D21; ~160% left until tomorrow night; "high effort" may be the effort level (high vs D21's xhigh) or "work hard", Lead to pick and say; Lead to verify the reset on a new Fable session.
