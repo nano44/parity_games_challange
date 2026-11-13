@@ -736,3 +736,8 @@ Relayed verbatim to the Lead, priority "now" (spend/model). OWNER-DESK reading s
 
 ## 2026-11-13T08:48Z Lead owner line (08:46Z, verbatim; owner message recorded as D23 / L57)
 «Received, thank you. The fleet continues at maximum effort until D21's end (2026-11-14 10:05Z). "High effort" is taken literally: new sessions run at effort level high. Fable 5.2 goes back on the deep design, proof and referee successors once the first new Fable session shows the limit is open. If it is still refused, I will tell you and stay on Opus. Overage remains the stop signal. Landed tonight: RESULTS R128 (P-N5-GATE) and R129 (P-N5-LEVEL); R130 (P-N5-WRAP) is through CHECKER and lands next. G-N5-TIME (N5's running time) stays open.»
+
+## 2026-11-13T08:55Z owner message (verbatim; correction to the Lead's 08:46Z «high» reading)
+> do xhigh
+
+Relayed verbatim to the Lead, priority "now". OWNER-DESK reading: new sessions at effort xhigh (amends D23 / L57).
