@@ -1,0 +1,16 @@
+L-1 sha1 28565b3c60fe8167f4b660c83fa27c00cd7b4fe9 7239 B
+LT-1: old occurs 1×; old 118 chars, new 444 chars
+LT-2: old occurs 1×; old 72 chars, new 137 chars
+LT-3: old occurs 1×; old 138 chars, new 213 chars
+after LT-1..LT-3: sha1 389645a2a646522a8fb57f05dba4458695ac74f2 7706 B
+R-1: old occurs 1×; old 76 chars, new 221 chars
+R-2: old occurs 1×; old 29 chars, new 86 chars
+LO-1: old occurs 1×; old 34 chars, new 92 chars
+rebuilt L-2: sha1 d18125ed1c62f8ad20396d9f94eac8bdbc624cf4 7970 B; lines 1 ; «|» 0 ; (  93  )  93
+lane L-2: sha1 d18125ed1c62f8ad20396d9f94eac8bdbc624cf4 7970 B; EQUAL
+LT-1 new string present once in lane L-2: 1
+LT-2 new string present once in lane L-2: 1
+LT-3 new string present once in lane L-2: 1
+R-1 new string present once in lane L-2: 1
+R-2 new string present once in lane L-2: 1
+LO-1 new string present once in lane L-2: 1
