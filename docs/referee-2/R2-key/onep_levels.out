@@ -1,0 +1,6 @@
+per level: max sw over the level's movers / (max |K| over the level) - 1; k = largest k with a mover of level k-1 at sw = |K|-1 (A6's definition), per mover
+DBL4_d20_F30.json T 30 d 20 k 0 fullenum_movers 0 L0:0/1 L1:1/3 L2:3/7 L3:7/15 L4:15/31 L5:5/63 L6:4/127 L7:5/255 L8:1/511
+RECF4_d20_F60.json T 67 d 20 k 4 fullenum_movers 8 L0:1/1 L1:3/3 L2:7/7 L3:15/15 L4:30/31 L5:7/63 L6:6/127 L7:7/255 L8:5/511
+H5_d20_F62.json T 136 d 20 k 5 fullenum_movers 10 L0:1/1 L1:3/3 L2:7/7 L3:15/15 L4:31/31 L5:31/63 L6:31/127 L7:15/255 L8:16/511
+H6_d24_F126.json T 209 d 24 k 6 fullenum_movers 12 L0:1/1 L1:3/3 L2:7/7 L3:15/15 L4:31/31 L5:63/63 L6:32/127 L7:32/255 L8:30/511
+HIT7_d28_F254.json T 299 d 28 k 7 fullenum_movers 14 L0:1/1 L1:3/3 L2:7/7 L3:15/15 L4:31/31 L5:63/63 L6:127/127 L7:33/255 L8:62/511

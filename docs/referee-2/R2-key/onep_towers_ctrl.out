@@ -1,0 +1,6 @@
+DBL4_d20_F30.json N 40 T1P 16 F 31 mism 1 a1mu 1 a1v 0 a2 0 a3 0 a4h 0 a4x 0 maxsw 7
+H5_d20_F62.json N 40 T1P 69 F 137 mism 1 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 maxsw 15
+H6_d24_F126.json N 48 T1P 103 F 210 mism 1 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 maxsw 31
+HIT7_d28_F254.json N 56 T1P 151 F 300 mism 1 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 maxsw 63
+RECF4_d20_F60.json N 40 T1P 32 F 68 mism 1 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 maxsw 14
+TOTAL ctrl 1 runs 5 nonacyc 0 mism 5 a1mu 1 a1v 0 a2 0 a3 0 a4h 0 a4x 0 Tmax 151 fullenum 5 maxlev_full 0 maxsw 63

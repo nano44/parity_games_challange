@@ -1,6 +1,38 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## HANDOVER (successor 40, session_01V5yGRWQ1pY9BpJ6WvVvBoi, Opus 5.5 under D1 / D21 / L53; written 2026-11-13T10:12Z by date -u; parking at ~450k context)
+Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only with scripts/push.sh as a tracked background task (2-hour timeout, output to
+a file, «echo exit $?»); verify ~20-30 min here (lean / oink NOT RUN on this branch). Never commit while it runs; do not create files in
+docs/ while it runs. L55 was WITHDRAWN (Lead 05:51Z): do NOT merge trunk for a verify skip; L56 skips only docs/agents/-only changes.
+At start: fetch --unshallow + fetch + checkout + ff-only; branch = claude/referee-2 and HEAD = origin before any commit.
+### Reports of record this session (all «(Opus 5.5, D1)»)
+| item | report | outcome | SHA |
+| --- | --- | --- | --- |
+| handover check | handover-checks/REFEREE-2.md | Lead: matches | adda3245 |
+| B: WRAP L-2 agreement with REFEREE 34 (32d61d60) | R2-P-N5-WRAP.md agreement line | agrees, no difference | 59ece3a4 |
+| C: box 212 RF-LEVEL pre-read (l-new be167574) | R2-box212-preread.md (+ tools R2-box212/) | RF-A/B/C no gap; GAP G-1 (window clause false on towers, 741/741); G-2; N-1..N-4 | b51f7f63, 8e075239 |
+| C: R239 agreement | R2-box212-preread.md Add. 1 | agrees; differs only at G-1 | 612f4bf3 |
+| D: Lean SPEC definitions (l-formal 0ee5b8bc) | R2-SPEC-LEAN.md | every SPEC definition MATCHES; unnamed U-1, U-2, U-3 (start3 = S3 unstated) | 73b5e3a7 |
+| key pre-read: box 213 KEY-TAU / G-2, box 215 (l-new d50ec578) | R2-key-preread.md | no gap; KT-1..KT-4, STD-N5, KS-1..KS-3 | dbedf93c |
+| R241 agreement | R2-key-preread.md Add. 1 | agrees | 4657952d |
+| box 217 §1-§5 (l-new a32a588d) | R2-key-preread.md Add. 2 | REDUCTION correct ([IMP3] not needed; F = T + 1); 1P = N5 state by state on 5 towers + random; A1-A4 correct (A4 XF needs deg 2); N-5: A6's «(4, 20) DBL4» is RECF4's, DBL4 has k = 0 | this commit |
+### OPEN / NEXT for successor 41
+- Box 217 §6 (A1-A4 referee unit, §6.4 Lemma BRIDGE) and §7 (A7 FLIP-SUPPLY) at claude/l-new b0e03795 (Lead 09:53Z: «due ~10:30Z»):
+  extend R2-key-preread.md with Addendum 3 (pre-read form). BRIDGE = 1P's A_s = SPEC S4a's A(x) at the movers via R122 BETA-ACYC: check
+  it against my Add. 2 row «1P(G)» (XI-1P: β-face plays, K1 node, K0/K3 common, LOC-K2-3, LAMBDA-CONST); check the frozen frame
+  hypothesis of BETA-ACYC is met (STD-N5). Then a full review the moment a packet is frozen (Lead: «must be refereed fast»).
+- Standby for A (R128-R130 routed back by CHECKER).
+### Tools (own code; R2DIR = docs/referee-2)
+- R2-key/r2onep.py: 1P(G) from box 217 §1 vs N5 on Γ3 (r2end), counters mism, a1mu, a1v, a2, a3, a4h, a4x; --ctrl (ε swap); --gen (acyc).
+  onep_levels.out: per-level sw / |K| − 1 and k on the five towers.
+- R2-box212/: r2rf.py (RF-A/B/C replay, 7 rules), r2keywin.py (N5 step vs window-game step), r2tkey.py (F vs T_key), r2q212.py (quote
+  check for any lane box: «r2q212.py <commit>:<file> <trunk>»), r2prem212.py, r2kill3.py, get_inst.py (frozen 81 + 5 towers by git show).
+### Traps (this session)
+- The stop hook nags while push.sh runs: answer that a push is running; never start a second one.
+- Files created under docs/ while push.sh verifies may be seen by verify: create them in the scratchpad, copy after the push exits.
+- Box texts cite tower numbers by name; re-derive per tower (N-5: DBL4 vs RECF4).
+
 ## Resume point 2 (successor 40; 09:3xZ)
 - Lead 09:09Z (owner: «So put everything into trying solving it today»): pre-read of box 213 KEY-TAU / G-2, box 215 KEYSIDE-ALL, box 217
   (not on origin yet) → docs/referee-2/R2-key-preread.md (this commit). Findings: KEY-TAU (i)-(iii) no gap (KT-1..KT-4 wording / STD-N5
