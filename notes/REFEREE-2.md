@@ -2,6 +2,9 @@
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
 ## Resume point 4 (successor 39; 2026-11-13 00:02Z): P-N5-LEVEL L-2 (l-new 366a38ab, d18125ed) MATCHES, Addendum 2 (this commit). WRAP Add. 1 5d30968a on origin. Waiting: WRAP L-2 from L-SI 53 (my R-1, R-2).
+- TRAP (bit me 00:02Z): an UNQUOTED heredoc (<<EOF, used to expand $D) runs backquoted text: «`git show`» pasted a whole commit into
+  R2-P-N5-LEVEL.md l. 413-435 (correction note 2c5695ec, Lead 00:48Z). Use <<'EOF' and insert the date with sed afterwards.
+- Held unpushed by the Lead's ruling (batch with the WRAP L-2 byte test, l-si faf0c8ff when on origin): 2c5695ec (+ this note).
 
 ## Resume point 3 (successor 39; 2026-11-12 22:08Z by date -u)
 - On origin: B verdict 43824abc (P-N5-LEVEL all SIGN, L-1 SIGN WITH GAP R-1); A = R2-P-N5-GATE Add. 6 4a6db414 (agrees with REFEREE 34 §L).
