@@ -77,4 +77,22 @@ if [ "$step" = cubes ]; then   # §3d: 384 cubes of «L* >= 6» (start x level-0
     cat "$T/line" >> $f
   fi
 fi
+certone() {  # certone TAG CMD...: run CMD (prints one line, writes dump/TAG.cnf and on UNSAT dump/TAG.drup), both checkers, regeneration,
+            # proof gzipped (kept if <= 50 MB gzipped, else deleted with its sha1 printed), CNF deleted (regenerable); lines to out/certcore106.out
+  local tag=$1; shift; local f=out/certcore106.out; touch $f; grep -q "^PROOF106 $tag " $f && return 0
+  "$@" > "$T/line" || exit 1
+  grep -q ": UNSAT |\| UNSAT |" "$T/line" || { cat "$T/line" >> $f; echo "NOT UNSAT: $tag"; exit 5; }
+  cert $tag
+  mkdir -p "$T/re" && (cd "$T/re" && mkdir -p out && cp "$OLDPWD"/out/cores106_L6.json out/ && "$@" > /dev/null) || exit 1
+  echo "REGEN106 $tag cnf equal $(cmp -s dump/$tag.cnf "$T/re/dump/$tag.cnf" && echo yes || echo NO) proof equal $(cmp -s dump/$tag.drup "$T/re/dump/$tag.drup" && echo yes || echo NO)" >> "$T/line"
+  rm -rf "$T/re" dump/$tag.cnf; gzip -9 -n -f dump/$tag.drup; local sz=$(stat -c %s dump/$tag.drup.gz) sh=$(sha1sum < dump/$tag.drup.gz | cut -c1-40)
+  [ "$sz" -gt 52428800 ] && { rm -f dump/$tag.drup.gz; echo "PROOF106 $tag dump/$tag.drup.gz bytes $sz sha1 $sh (deleted: > 50 MB; regenerate)" >> "$T/line"; } || echo "PROOF106 $tag dump/$tag.drup.gz bytes $sz sha1 $sh" >> "$T/line"
+  cat "$T/line" >> $f
+}
+if [ "$step" = cover ]; then certone cover6 python3 -I "$PWD/covercert106.py" 6 cover6; fi
+if [ "$step" = certcores ]; then   # certcores MAXLITS: every core with at most MAXLITS literals, in file order
+  for i in $(python3 -I -c "import json,sys; M=json.load(open('out/cores106_L6.json')); print(' '.join(str(i) for i,c in enumerate(M) if len(c) <= int(sys.argv[1])))" "${2:-4}"); do
+    certone core$i python3 -I "$PWD/certcore106.py" 6 $i core$i
+  done
+fi
 echo DONE "$step"

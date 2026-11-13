@@ -2,22 +2,26 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
 ## Successor 54 (Opus 5.5 high; session_01V5yGRZnPJdkB4KaoEZZtig; Lead session_014FBi6o334DvwT5Uw2kDfoN)
-### Resume point (successor 54; CHECK FIRST: `git fetch origin claude/l-si; git log origin/claude/l-si..HEAD`, `pgrep -f "bash scripts/push.sh"`)
-- On origin: 18cd2b88 (handover check, on faf0c8ff), 3fc5aef4 (diff check 8421e3ce + box 106 §3a encoding / Lemma ENC + §3b audit).
-  047f0725 (box 106 §3c controls + cube106.py / cover106.py) pushed with push.sh from 03:21Z.
-- BOX 106 (docs/si/box106-exact2.md; tools experiments/si/box106: cnf106.py, aud106.py, solve106.py, cube106.py, cover106.py, run106.sh):
-  - §3c controls DONE (out/solve106.out): c5 SAT replayed on N5, g5 SAT, g6 UNSAT, c9 UNSAT; Glucose 4 DRUP checked by drup.c AND
-    ref_rup.c (compiled by run106.sh from ../box71/ref/drup.c and `git show 2005aee7:docs/referee/scratch/ref_rup.c`), regenerated equal.
-    python-sat's cadical153 proofs end without a refutation: never use them for certificates.
-  - The monolithic «L* ≥ 6» (run106.sh query) gave no answer in ~60 min (stopped 03:18Z). Instead: `bash run106.sh cubes` (resumable:
-    a cube with a PROOF106 line in out/cube106.out is skipped; ~9 s per cube; 384 cubes = 16 starts x 24 level-0 gate orders; then
-    cover106.py: the query + the 384 cube negations UNSAT, both checkers). A SAT cube stops the runner (exit 5): decode
-    best/<tag>.json, replay on N5 (val105.py), that KILLS KEY2-5. Started 03:19Z.
-  - NEXT after all 384 + cover: §3d in the box file (numbers by script from out/cube106.out: cubes, lemma totals, proof bytes), pin in
-    check106.sh (count 384 UNSAT, 768 VERIFIED, 384 REGEN equal, every PROOF106 file sha1), commit dump/*.drup.gz (git add -f not needed:
-    only *.cnf / *.drup ignored), push, message the Lead. Statement then: L*_max(2) = 5 (machine statement: Lemma ENC + cubes + coverage;
-    lane; about N5 only through Claim MG + KEY-MODEL), the SAT side c5 replayed on N5.
-- DUTIES: P-N5-WRAP fixes entry 2 + L-3 (pattern experiments/si/pwrap/fix1/mkL2.py) only if a byte test routes an item; R128 standby.
+### Resume point (successor 54; updated 2026-11-13 ~08:00Z; CHECK FIRST: `git fetch origin claude/l-si; git log origin/claude/l-si..HEAD`, `pgrep -f "bash scripts/push.sh"`)
+- On origin: 18cd2b88, 3fc5aef4, 047f0725, d2648412 (box 106 §3a-§3d, all VERIFY PASS). Pushing from 07:19Z: eb84c267 (core file
+  out/cores106.json), e860fb19 (core106 conflict budget), 821de9e0 (pair projections). Local after that: whatever the cert runs commit.
+- BOX 106 STATE (docs/si/box106-exact2.md §3a-§3d; tools experiments/si/box106):
+  - SEARCH RESULT (DATA, uncertified): core106.py 6 ended «RUN-CNF with 276 cores UNSAT (covered)»: 276 cores (28 found by cadical195
+    UNSAT + 248 symmetry images, NOT yet checked), sizes 2 lit: 28, 4: 88, 6: 80, 8: 80 (3-5 states). No realisable pattern found.
+  - CERTIFIED so far: the coverage cover6 (covercert106.py: run-only CNF, AV free, 276 cores forbidden): UNSAT, drup.c and ref_rup.c
+    «s VERIFIED» (1,098 lemmas), regenerated equal, proof dump/cover6.drup.gz (out/certcore106.out).
+  - RUNNING (07:55Z): `bash run106.sh certcores 4` = every core with ≤ 4 literals (116) through certcore106.py (core's AV-CNF + units,
+    Glucose DRUP), both checkers, regeneration; resumable (a core with a PROOF106 line is skipped). A SAT core stops it (exit 5): that
+    image is NOT a core -> drop it from cores106_L6.json, rerun core106.py 6 (it will find what is needed) and cover again.
+  - NEXT: (i) measure one 6-literal core (`bash run106.sh certcores 6` does all ≤ 6); 8-literal cores measured: core 20 (index 19) took
+    Glucose 582.5 s, proof 1.27 GB (6.26 M lines): 80 such cores are beyond this window by brute force. Proofs > 50 MB gz are deleted
+    with sha1 kept (runner rule), regenerable. (ii) coremeta106.py 6 after each batch (merges proof sha1s into out/cores106.json).
+    (iii) write §3e (search result + certified part, by script from out/certcore106.out) and pin it in check106.sh.
+  - Honest statement until everything is certified: «L*_max(2) = 5 is CERTIFIED modulo the uncertified cores (list in out/cores106.json:
+    those without "proof")»; KEY2-5 stays a CONJECTURE (Lead 05:57Z).
+  - Ideas not tried: hand proofs of the small families (2-literal: x cannot improve both ways between σ and σ^x; 4-literal mutual
+    trigger), smaller cores via other deletion orders, triple facts. Pair facts do NOT imply core 20 (out/proj, tested).
+- DUTIES: P-N5-WRAP fixes entry 2 + L-3 only if a byte test routes an item (pattern experiments/si/pwrap/fix1/mkL2.py); R128 standby.
 
 ### CHECK: independent scratch L-2 vs faf0c8ff's L-2 (Lead 00:38Z; a check only: no file in docs/si/ changes, no fixes entry; written 2026-11-13T02:20:08Z by date -u)
 - Before the Lead's 00:32Z correction reached me, I built an L-2 of P-N5-WRAP on my own, from L-1 (896f9e97) and byte copies of
