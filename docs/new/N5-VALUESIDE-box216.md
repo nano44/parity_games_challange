@@ -83,10 +83,41 @@ CONDITIONAL where named, REFORMULATION (V3), DATA (§5, not to sign). Nothing he
   an Even mover o changes σ(o) at most deg(o) − 1 times on W. Proof: SAME-SUFFIX's proof makes the ⊴-preorder of o's successors constant on W;
   each change goes to a strictly ▷-larger successor (§0), so the ⊴-class of σ(o) strictly rises at each change; there are at most deg(o)
   classes. ∎
-- (V1-d) LOUD-RF. In any improving run of standard states, Q (steps at which some vertex changes class (Λ, E)) ≤ Σ_v (D^tot_E(v) − 1),
-  and under [E-LEV] D^tot_E(v) ≤ (2M + 3)·F′_(U(G))(M) (HUB-ASC-G3, UP-B3: RF). So for N5 (under [IMP3], [E-LEV]): T_key ≤ Q + (Q + 1)·Wq,
-  Wq := the longest QUIET window of N5's key run, and Q is polynomial in N + M when U(G) is bounded. What QUIET3 does for Howard (Wq ≤ L3)
-  is the one missing piece; it is HOW (DOM's Bellman-Ford step). Not a bound; a reduction (compare box 212 RF-C: class-frozen windows).
+- (V1-d) LOUD-RF: stated in §1.4 as a CONDITIONAL reduction (Lead 06:49Z point (1)).
+
+### 1.4 LOUD-RF (CONDITIONAL reduction, not a bound) and the missing QUIET piece
+Definitions, with sources (all landed):
+- [Q docs/new/P-N5-CHAIN.md@65e02855] «U(G) := the number of options (x, k) whose Ξ-target is a mover of level > lev(x).»
+- [Q docs/new/P-N5-ASC.md@65e02855] «Here F′_0(M) := 1 + M(M + 1)/2 and» with [Q docs/new/P-N5-ASC.md@65e02855] «F′_B(M) := (M² + 3M + 1)(1 + M·F′_(B−1)(M)²).»
+  (R121's line: [Q R121] «F′_0 = F_0 (DESC-POLY on the whole interval), F′_B(M) = (M² + 3M + 1)(1 + M·F′_(B−1)(M)²)»). For fixed B, F′_B
+  is a polynomial in M.
+- [Q docs/new/P-N5-ASC.md@65e02855] «HYPOTHESIS [E-LEV] (only for §6 UP-JUMP and UP-B): the e-priorities increase with the level of their
+  gate's mover. Formally: lev(x) < lev(x′) implies pr(e_(x,k)) < pr(e_(x′,k′)).» It is a property of the builder, not of a landed R-id.
+- class_t(v) := (Λ_t(v), E_t(v)); a step is LOUD if some vertex changes class, else QUIET; Q := #loud steps; a quiet window is a maximal
+  interval of states whose steps are all quiet (P-N5-CHAIN §6's definitions, verbatim in meaning); Wq := the longest quiet window (steps).
+**LOUD-RF (PROVED lane given the V1 table; CONDITIONAL on [IMP3] and [E-LEV]).** On N5's key run on Γ3(G) up to its first fallback:
+  (a) Q ≤ Σ_v (D^tot_E(v) − 1) ≤ n3·((2M + 3)·F′_(U(G))(M) − 1), n3 = N + 7M + 10;
+  (b) T_key ≤ Q + (Q + 1)·Wq.
+Proof. (a): (F-cls3) is RF (§1.2); D^tot_E(v) ≤ (2M + 3)·F′_(U(G))(M) is HUB-ASC-G3 with UP-B3, both RF, the second under [E-LEV]. (b): the
+steps are loud or quiet, and the quiet ones form at most Q + 1 windows. ∎
+So, under [IMP3] and [E-LEV], on every genome class with U(G) ≤ B (B fixed), O1′ (T_key polynomial) holds IF Wq is polynomial. Not
+claimed: any bound on Wq.
+**The missing piece, named.** QUIET3 bounds Wq ≤ L3 for Howard; its only HOW lines are (Q2)'s «by DOM» and (Q5)'s Bellman-Ford induction
+«with DOM at x» (§1.2). Everything else in its proof ((Q1), (Q3), (Q4), (F-cls3), the gate-flip count in (Q5)) is F1 + LOC-GATE3 / NO-TIE3
++ static. Inside a quiet window, (Q4)-(Q5) reduce the run to sub-windows on which, for each B-class C, the graph G_C (C's movers with the
+options whose gate's chosen face is in C), its chosen faces and C's boundary values are constant; there the run is an improving run of
+a FIXED one-player game: each C-mover picks a G_C-option, plays are simple G_C-paths (internal edges: β-faces to Ξ-targets) ending at a
+boundary point (an e-face into the class (w, S ∖ {e}), the core exit, or w), compared by [VJ]. The smallest statement that would replace
+the DOM step:
+- **QUIET-RF (OPEN).** There is a polynomial p such that every improving run of standard states, on a sub-window of a quiet window in
+  which G_C, its chosen faces and C's boundary values are constant, has at most p(N, M) steps. With (Q5)'s count of sub-windows (at most
+  2M + 1 per class level, M + 1 levels) and (Q3) (E-class movers: at most N(n3 − 1) changes, RF: F1 only), QUIET-RF gives
+  Wq ≤ (M + 1)(2M + 1)(p(N, M) + 1) + N(n3 − 1) for EVERY improving rule, and then LOUD-RF gives O1′ under [IMP3], [E-LEV], U(G) ≤ B.
+- **QUIET-KEY (OPEN; weaker, enough for N5).** The same with «improving run» replaced by «N5's key run» (KEY-TAU's rule).
+- READING (not a claim): a sub-window is a one-player lexicographic path game on the Ξ-graph of one class, i.e. box 212 RF-D's «generalised
+  O1»; QUIET-RF asks it for every improving rule, QUIET-KEY for the key rule only. DATA (§5 (vi)): on the tower DBL4_d20_F30, N5's whole
+  key run is one quiet window with no gate flip (Q = 0, Wq = Tk = 30), so the towers are QUIET-KEY instances: an exponential tower family
+  (L-LOWER L18's attempt) would refute QUIET-KEY and QUIET-RF at once, and with them this route.
 
 ## 2. V2 XFLIP (PROVED, lane; holds for N5's WHOLE run on EVERY game, fallbacks included)
 **Definitions (exactly as counted).** Run N5 (SPEC S1-S5) on a game; states σ_0, σ_1, …, σ_T (σ at the start of each iteration and at the
@@ -98,8 +129,8 @@ state (alternations of the strict order, ties skipped). moves(x) := #{t ≥ 1 : 
 t ≥ 1 at which the weak order of x's successors under Ξ_t differs from that under Ξ_(t−1).
 **Proof.** Every change of σ(x) is to a strictly Ξ_(t−1)-better successor: in S4a σ_new is a strategy of the arena H, whose Even edges go
 to A(v): [Q docs/new/N5-ssi-global.md@65e02855] «A(v) = {σ(v)} ∪ {w : (v, w) ∈ Iσ} for Even v.» with [Q docs/new/N5-ssi-global.md@65e02855]
-«Iσ = {(v, w) : owner(v) = Even, w ≠ σ(v), Ξσ(w) strictly better than Ξσ(σ(v))}»; in S4c the fallback takes an edge of Iσ; S4b does not
-change σ. Degree 2: let t_1 < t_2 < … be the move steps; x alternates y_a → y_b → y_a …, so d_(t_i − 1)(x) is the new successor, a strict
+«Iσ = {(v, w) : owner(v) = Even, w ≠ σ(v), Ξσ(w) strictly better than Ξσ(σ(v))}»; in S4c the fallback takes an edge of Iσ: [Q docs/new/N5-ssi-global.md@65e02855] «for every Even v with an improving edge set σ_new(v) = the w with (v, w) ∈ Iσ»;
+S4b does not change σ: [Q docs/new/N5-ssi-global.md@65e02855] «Even v only the edge to σ(v).» and «τ_new = Odd's optimal counterstrategy (S1 procedure on H', not dual) to σ.» Degree 2: let t_1 < t_2 < … be the move steps; x alternates y_a → y_b → y_a …, so d_(t_i − 1)(x) is the new successor, a strict
 value, and these alternate; between two consecutive moves the remaining sequence alternates at least once at a state in
 (t_i − 1, t_(i+1) − 1], and these intervals are disjoint. So moves(x) − 1 ≤ XF_x. Degree d: between two consecutive order changes the weak
 order is constant and each move strictly raises σ(x)'s class, at most d − 1 times. ∎
@@ -146,6 +177,10 @@ and the Ξ-order to agree); it does not bound it.
 - V3 (degree-2 genomes only, N5 key run on Γ3): per mover KF, XF, JF, moves; must-0 jmove (moves > 1 + JF), jfmin (JF > min(KF, XF));
   descriptive: Σ JF, max JF, T_key, and Σ JF / (N·T_key). Towers and the ladder genomes L^R_d of box 215 for growth (numbers on named
   instances only, L43).
+- (vi) QUIET under other improving rules (Lead 06:49Z point (1)): gate216.py with G216_MODE = idx and seq (box 190's n5v modes: S4a's
+  TIE by largest index; SPEC's σ_new at ONE vertex), with xi (Howard) and spec (N5): Q, Wq and Tk per genome, plus every must-0 counter
+  (each mode is an improving run of standard states, so the RF counters must be 0 in every mode). Descriptive; QUIET-RF and QUIET-KEY
+  are not tested by finitely many instances.
 - Runners resumable (600 s per genome), at most 2 CPU jobs, outputs pinned (SHA1SUMS), summ216.py, check216.sh + a check.sh block.
 
 ## 6. Not claimed

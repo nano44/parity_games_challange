@@ -28,6 +28,14 @@ OK   [docs/si/P-N5-GATE.md@65e02855] docs/si/P-N5-GATE.md@65e02855 | GATE-RACE (
 OK   [docs/si/P-N5-GATE-fixes.md@65e02855] docs/si/P-N5-GATE-fixes.md@65e02855 | an Even mover is at t on a ▷-best option for the values at t − 1 ([HOW]).
 OK   [docs/si/P-N5-GATE.md@65e02855] docs/si/P-N5-GATE.md@65e02855 | A value is a function of the play; a play changes only if a successor on it changes.
 OK   [docs/si/P-N5-GATE-fixes.md@65e02855] docs/si/P-N5-GATE-fixes.md@65e02855 | (the argument of P-N5-SPLIT §3 (a), Lemma REWIN (a), with F1, STRICT, F3, F4′, CN2-3; noth
+OK   [docs/new/P-N5-CHAIN.md@65e02855] docs/new/P-N5-CHAIN.md@65e02855 | U(G) := the number of options (x, k) whose Ξ-target is a mover of level > lev(x).
+OK   [docs/new/P-N5-ASC.md@65e02855] docs/new/P-N5-ASC.md@65e02855 | Here F′_0(M) := 1 + M(M + 1)/2 and
+OK   [docs/new/P-N5-ASC.md@65e02855] docs/new/P-N5-ASC.md@65e02855 | F′_B(M) := (M² + 3M + 1)(1 + M·F′_(B−1)(M)²).
+OK   [R121] RESULTS l. 14320 | F′_0 = F_0 (DESC-POLY on the whole interval), F′_B(M) = (M² + 3M + 1)(1 + M·F′_(B−1)(M)²)
+OK   [docs/new/P-N5-ASC.md@65e02855] docs/new/P-N5-ASC.md@65e02855 | HYPOTHESIS [E-LEV] (only for §6 UP-JUMP and UP-B): the e-priorities increase with the leve
 OK   [docs/new/N5-ssi-global.md@65e02855] docs/new/N5-ssi-global.md@65e02855 | A(v) = {σ(v)} ∪ {w : (v, w) ∈ Iσ} for Even v.
 OK   [docs/new/N5-ssi-global.md@65e02855] docs/new/N5-ssi-global.md@65e02855 | Iσ = {(v, w) : owner(v) = Even, w ≠ σ(v), Ξσ(w) strictly better than Ξσ(σ(v))}
-quotes 32 missing 0 (trunk 65e02855265ab0df1a8a3392a980c8d5b459d3a1)
+OK   [docs/new/N5-ssi-global.md@65e02855] docs/new/N5-ssi-global.md@65e02855 | for every Even v with an improving edge set σ_new(v) = the w with (v, w) ∈ Iσ
+OK   [docs/new/N5-ssi-global.md@65e02855] docs/new/N5-ssi-global.md@65e02855 | Even v only the edge to σ(v).
+OK   [docs/new/N5-ssi-global.md@65e02855] docs/new/N5-ssi-global.md@65e02855 | τ_new = Odd's optimal counterstrategy (S1 procedure on H', not dual) to σ.
+quotes 40 missing 0 (trunk 65e02855265ab0df1a8a3392a980c8d5b459d3a1)
