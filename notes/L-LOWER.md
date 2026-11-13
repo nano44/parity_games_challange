@@ -37,6 +37,13 @@
   both R 64 cap 6,000. Screens at P 16: 4 of 4 used. Attempt 3 = SAT screen + ccheck, else R 510 (choose then).
 - 08:19Z S4 UNSAT 3,028 s. 08:21Z S3 SAT 3,337 s but f6 28/129 from row 66. RUNNING 08:22Z: N16c = attempt 3, XS 10,14,15, XORD 10,15,14, R 510.
   If N16c fails: STOP RULE at P 16 → L18b summary in L18 §5 (largest P 15, trend, P 16 obstruction), report to the Lead.
+- 10:02Z N16c NO ANSWER (cap 6,000) → STOP RULE at P 16; L18 §5 written (largest P 15). BOX L18 CLOSED for this lane (Lead 09:08Z re-target).
+## BOX L19 (Lead 09:08Z relaying the owner «So put everything into trying solving it today»; plan approved 09:12Z, k-objective 09:15Z)
+- Model: box 217 1P(G) (claude/l-new a32a588d; read-only worktree $SP/lnew). Tools experiments/lower/l19/: enc19.py (symbolic genome, key
+  step circuit, ENUM / LEN / free / checker FIXG), val19.py (checker-mode validation vs one217.OneP).
+- 10:0xZ val19: W 2,2 / 2,2,2,2 / 3,3,3 / 1,2,2,2,2,1, 20-40 genomes each: bad 0 (random runs short, maxT 2).
+- LEN W 2,2 (N 4, M 8): L 2,3,4 SAT (L 4 decode replayed: one217 key 4, n5 4, mism 0); L 5 UNSAT 136 s, L 6 UNSAT 171 s (solver only).
+  UNSAT is slow even at N 4: symmetry (free rank permutation). Next: symmetry breaking, DRUP, then ENUM ladder.
 
 ## Successor 15 HANDOVER (-> successor 16; written 2026-11-12 22:0xZ, date -u; context ~430k)
 ### DONE (claude/l-lower; products docs/lower/L17-around.md (closed §3), docs/lower/L18-horizon.md (open); tools l17/, l18/)

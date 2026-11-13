@@ -102,6 +102,26 @@ counter (unit, set, scope). Model: R104's IDEAL model at degree ≤ 2 (sim6; fen
   Screen 3 {10,14,15} R 64: SAT, solve 3,337 s (wall 3,352 s); decode follows rows 0..16 (sim6 = fenc) but f6check 28 / 129, first
   mismatch row 66 (beyond the screened horizon): not a full-horizon design, no ccheck. Attempt 3 at R 510: clients 10, 14, 15
   (XORD 10 < 15 < 14), cap 6,000 s, started 08:22Z (the only P 16 neighbourhood with a SAT screen).
+  Attempt 3: NO ANSWER (capped; wall 6,000 s, 71.5M clauses). Third consecutive failure at P 16: STOP RULE (§5).
+
+## 5. L18b summary (stop rule fired at P 16; Lead re-target 09:08Z to BOX L19). All DATA, not a lower bound.
+- Result (DATA; unit = core8 rows followed by the free run; counter f6 = mismatches on the 129 free pre-states of rows 0..510; scope frame
+  L18b on base chain A2_solved → L18b_H7 → …): the largest P with f6 correct over the whole horizon is **15** (L18b_N15a 76309bca, rows
+  0..15, sim6 = fenc, f6check 0 / 129, inframe OK). Before BOX L18: 6. Chain (base → design, clients, solve s): H7 → N510 (10,11; 929) →
+  N9a (10,12; 1,443) → N10a (10,14; 2,514) → N11a (15; 1,109) → N12a (14; 451) → N13a (12; 829) → N14c (8,10,11,12; found by an R 64
+  screen in 3,358 s, verified at R 510 by ccheck + f6check) → N15a (11,15; 2,547).
+- Solve-time trend: no monotone growth through P 13 (929 → 2,514 → 451 → 829 s); from P 14 the needed neighbourhood widens (one or two
+  clients up to P 13, four at P 14, two at P 15) and R 510 questions with three clients reach the 6,000 s cap (P 16).
+- P 14 block (DATA, this neighbourhood only): with client 8 alone, or 8 with any one of 10, 11, 12, 14, 15, the prefix rows 0..14 are
+  already infeasible (R 15 UNSAT ≤ 0.4 s); {8,10,11} follows rows 0..14 at R 32 but is UNSAT at R 64 (1,366 s) and at R 510 (5,699 s):
+  in that neighbourhood f6's horizon fails first in rows 32..63. Four clients {8,10,11,12} pass.
+- P 16 obstruction (DATA, this neighbourhood only; solver only, none DRUP-checked, none cited as UNSAT): row 16 is the q6 / q7 change named
+  in L14 / L17 (diag: mover 10 must stay, 14 must flip). On base L18b_N15a: {10,14} R 510 UNSAT 2,017 s; {10,12,14} R 510 no answer
+  6,000 s; {10,14,15} R 510 no answer 6,000 s; screens: {10,14} R 17 SAT (prefix feasible), {10,11,12,14} R 64 no answer 6,000 s,
+  {10,11,14} R 64 UNSAT 3,028 s, {10,14,15} R 64 SAT but its decode breaks f6 at row 66 (28 / 129).
+- What it means: L17's best design (A3h_P16, rows 0..16) had f6 broken (A3 decodes: first f6 mismatch at rows 14-18); L18b keeps f6
+  right on the whole horizon and reaches rows 0..15; the row-16 q6 / q7 change is where both lines stop. Not a super-polynomial family, not evidence about N5's
+  running time either way (D1). Open: P 16 in a wider frame (≥ 4 clients, or all six, which needs enc32c's known limit removed).
   Attempt 3 (the last before the stop rule): a SAT screen's decode checked at R 510 (ccheck + f6check), else one R 510 question.
 
 ## 9. Diff against TARGET.md
