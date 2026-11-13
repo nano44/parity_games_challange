@@ -562,3 +562,18 @@ Lead reading L59 (2026-11-13 11:57Z by date -u; amends L58 (2) on L-NEW 76's cor
 (3) Early start: a successor may be created before its predecessor's handover commit is on origin, with a brief clause that forbids any commit
     or push until that commit is on origin (then fast-forward, then the handover check). Reason: container restarts killed four handover pushes
     this morning and each costs 30-70 minutes of verify.
+
+D26 (owner, direct message to the Lead, received 13:43Z on 2026-11-13 by date -u):
+«I hit my usage limit while you were working, but it has reset now. Please continue from where you left off.»
+
+Lead reading L60 (2026-11-13 13:47Z by date -u; on D26, L52):
+(1) Facts: the working sessions' turns failed at about 13:35Z («You've hit your 5-hour limit · resets 1:40pm (UTC)», read with get_session on L-RED-B 5
+    and REFEREE 35 at 13:44Z); about ten sessions at effort xhigh were running. Everything committed before that is on origin, including the
+    frozen kill packet P-N5-EXP (claude/l-red-b 350d84eb). The Lead woke the lanes between 13:45Z and 13:47Z (the messages carry stamps up to «13:52Z», typed ahead of the clock).
+(2) Reading: a reset 5-hour limit is a pause (L52); work continues from the notebooks. To keep the referees supplied, the load is lowered:
+    the search lanes (L-COMP, L-LOWER) and L-NEW park after their final commits; L-FORMAL 6 and L-RED 71 are not created until the kill
+    packet has had its referee round; successors are created only where a referee or the packet's author is past its park line.
+(3) scripts/push.sh now checks origin with git ls-remote after git push, retries four times and exits 2 if origin does not show the verified
+    commit (L-COMP 22: a push that printed «RPC failed; HTTP 503» had exited 0). Lane branches carry the old copy until they merge trunk:
+    every lane compares ls-remote with its SHA after a push.
+
