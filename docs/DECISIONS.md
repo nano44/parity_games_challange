@@ -522,3 +522,14 @@ Lead reading L56 (2026-11-13 05:40Z by date -u; correction of L55 on CHECKER 24'
     (docs/agents-only diff skips; CI, VERIFY_FULL, a RESULTS/NOW diff and an empty diff run in full).
 (3) Commits 626da53c, eb22d350 and 65e02855 had no CI self-check run: CHECKER 24 runs VERIFY_FULL=1 on eb22d350 (the R128 landing
     commit) itself, and the first CI run after this fix runs the full suite on trunk.
+
+D23 (owner, relayed verbatim by OWNER-DESK, received 08:44Z on 2026-11-13 by date -u):
+«I reset the fable weekly limit, please conitnue on high effort, we already used a day, w still have 160% of usage left until tomorrow night»
+
+Lead reading L57 (2026-11-13 08:44Z by date -u; on D21 and D23):
+(1) D21's maximum effort continues to its end (2026-11-14 10:05Z); D23 says about 160% of the allowance remains until «tomorrow night».
+(2) «high effort» is read literally: new sessions run at effort level «high» (D21's «hard or xhigh» is superseded on this point by the later
+    owner word). Fable 5.2 is available again (L53's Opus-only reading lapses), to be used «in depth everywhere where it seems fitting»
+    (D21): deep design and proof work (L-NEW, L-SI, L-FORMAL, referees) on Fable 5.2 at high, others may stay on Opus 5.5 at high.
+(3) The reset is verified by measurement, not assumed: the first new Fable session's rate_limit_info is read with get_session; if Fable is
+    still refused, successors stay on Opus and the owner is told. Overage stays the stop signal (L51).
