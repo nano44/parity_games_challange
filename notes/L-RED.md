@@ -3607,3 +3607,20 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
   (2) sums typed before computing were wrong twice again (4,403 / 24,618): paste only script output; (3) greedy signal synthesis adds
   clones: an auxiliary's value is invisible to a one-step greedy, use joint screens.
 - Nothing running after this handover except as stated in the final message to the Lead.
+
+## Successor 70 (Fable 5.2, xhigh; from 2026-11-13 11:20Z, date -u) — R244 (R243 §2: PAIR-ON-TOP)
+- Trap check: local 9 behind, fast-forwarded to aa4f7680; skew 0 s. Handover check 390e56f6 (VERIFY PASS, pushed 11:44Z). Lead conditional go 11:29Z.
+  Slips: (1) my first message carried hand-typed times (11:50Z / ~11:49Z; real 11:2xZ): stamp only from date -u output; (2) a first local commit
+  carried a model name in its trailer; replaced before any push (Lead: fix such things with a NEW commit from now on); (3) one short command used
+  «&» for four 1-minute climbs (three failed on a missing cd): never «&», use tracked tasks or sequential runs.
+- 2026-11-13T12:15Z: R244 written (docs/red/R244-pairontop.md). FINDINGS: PAIR-ON-TOP step 1 fails in every screened neighbourhood (H5PLUS_L5: 1,560,896 acyclic
+  candidates, best KF 30 / 126; B = mover 9 rigid: 1 of 841 acyclic re-wirings keeps the block; ROOM 1); smallest instance LAD_d5_k3_s13 (k 3, d 5, N 10,
+  T 14, hill 1, 3, 7, 7, 3; N5 mism 0, control fires) found by lad244 at evaluation 27,272,611 (seed 13), same failure there (KF 4 / 14, B rigid 1 of 36).
+  Lane lemmas C (C-ELEMENT) and VL (VALUE-LAST EXACTNESS). READING: ξ(B) = s(A) ⊕ [y behind F]; memory sits in half-rate shadows above the pair.
+- Tools experiments/red/r244: sim244 (own engine), show / trace / cause244, pair244.c, room244, lad244.c (seeded lifts: SEEDFILE INS), dual244.c,
+  dualclimb244.c, prune244, dump244, dumpseed244. C binaries are built in the scratchpad (gcc -O2; lad244 needs -lm), never committed.
+- Envs (scratchpad): towers = git archive cd4f7f4d experiments/new/box212/inst; lnewfull = git archive a143d406 experiments/new experiments/si/si.py
+  experiments/harness experiments/hard-families experiments/n5-second (one217.py --check runs from that root).
+- Things only I know: (1) pair244's INTACT filter compares per-level BEST switch counts below F and sw(F); (2) lad244 seeded mode: INS = d_seed
+  appends on top, INS = k inserts above the block; restarts re-lift the seed; (3) dual244's template fields: xi (4 bits), gate perm, β rank perm,
+  signs, starts; (4) the blind climb needed 27M evaluations for k 3 at d 5 and two other seeds failed at 150M: it is a lottery, not a method.

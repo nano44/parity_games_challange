@@ -1,0 +1,10 @@
+DUAL244 d 4 GROUP 0 templates 589824 cap 100000
+histogram of T (bucket b: 2^(b-1) <= T < 2^b): b0:174336 b1:372160 b2:38496 b3:4832
+DUAL244 d 4 GROUP 1 templates 589824 cap 100000
+histogram of T (bucket b: 2^(b-1) <= T < 2^b): b0:218112 b1:371712
+DUAL244 d 6 GROUP 0 templates 589824 cap 100000
+histogram of T (bucket b: 2^(b-1) <= T < 2^b): b0:174336 b1:370912 b2:36992 b3:7584
+DUAL244 d 6 GROUP 1 templates 589824 cap 100000
+histogram of T (bucket b: 2^(b-1) <= T < 2^b): b0:218112 b1:371712
+DUAL244 d 8 GROUP 0 templates 589824 cap 100000
+histogram of T (bucket b: 2^(b-1) <= T < 2^b): b0:174336 b1:370912 b2:35712 b3:4032 b4:4832

@@ -1,0 +1,4 @@
+PAIR244 base LAD_d5_k3_s13.txt: N 10 T 14 F 5 (level 2, sw 7) B 2 (sw 3); best per level below F: 1 3
+PAIR244 MODE 1: candidates 77440 acyclic 13824 INTACT 304 | best KF 4 (staggered full pair: 14) with sw(y) 3 at B Xi-targets (10, 3) y Xi-targets (4, 3) parities (0, 0) rankorder 0 gateorder 0 start 1, sw(B) 3
+PAIR244 KF histogram among INTACT (KF:count): 0:176 2:32 4:96
+exit 0

@@ -1,0 +1,4 @@
+ROOM244 base: T 14 sw(F) 7 sw(B) 3 best below [1, 3] ROOM1 1 ROOM2 1
+ROOM244 candidates 100 acyclic 36 INTACT 1; (ROOM1, ROOM2) histogram among INTACT: [((1, 1), 1)]
+ROOM244 INTACT with ROOM1 >= 2 and ROOM2 >= 2: 0 []
+exit 0

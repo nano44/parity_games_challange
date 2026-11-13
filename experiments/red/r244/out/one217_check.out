@@ -1,0 +1,6 @@
+LAD_d5_k3_s13.json N 10 M 20 key 14 howard 6 seq 6 n5 14 mism 0 ctrl 0
+H5PLUS_L5.json N 41 M 82 key 136 howard 10 seq 4 n5 136 mism 0 ctrl 0
+exit 0
+LAD_d5_k3_s13.json N 10 M 20 key 1 howard 6 seq 4 n5 14 mism 1 ctrl 1
+H5PLUS_L5.json N 41 M 82 key 3 howard 10 seq 11 n5 136 mism 1 ctrl 1
+exit 0

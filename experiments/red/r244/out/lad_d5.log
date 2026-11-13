@@ -1,0 +1,7 @@
+LAD244 d 5 seed 11 eval 2929: k 2 T 9
+LAD244 END d 5 seed 11 evals 150000000 best k 2 T 17 score 2006017
+LAD244 d 5 seed 12 eval 7922: k 2 T 4
+LAD244 END d 5 seed 12 evals 150000000 best k 2 T 17 score 2006017
+LAD244 d 5 seed 13 eval 849082: k 2 T 10
+LAD244 d 5 seed 13 eval 27272611: k 3 T 12
+LAD244 END d 5 seed 13 evals 150000000 best k 3 T 14 score 3007014

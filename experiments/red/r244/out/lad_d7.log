@@ -1,0 +1,10 @@
+LAD244 d 7 seed 21 eval 261006: k 2 T 3
+LAD244 END d 7 seed 21 evals 100000000 best k 2 T 8 score 2005008
+LAD244 d 7 seed 22 eval 175560: k 2 T 4
+LAD244 END d 7 seed 22 evals 100000000 best k 2 T 8 score 2005008
+LAD244 d 7 seed 23 eval 537948: k 2 T 3
+LAD244 END d 7 seed 23 evals 100000000 best k 2 T 7 score 2005007
+LAD244 d 7 seed 24 eval 325760: k 2 T 4
+LAD244 END d 7 seed 24 evals 100000000 best k 2 T 7 score 2005007
+exit 0
+Fri Nov 13 12:07:38 UTC 2026
