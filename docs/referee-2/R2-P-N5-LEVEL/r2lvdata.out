@@ -1,0 +1,36 @@
+level208_corpus.out: rows 53 must0sum 0 | max DR 1 T 199 k 99 levels 16 phivals 199 platmax 13 wlev 2 wmax 53 | sums plat 15 stallloud 23 stalls 48 windows 615
+level208_ctrl1.out: rows 4 must0sum 8 (control) | max DR 15 T 31 k 1 levels 7 phivals 30 platmax 4 wlev 3 wmax 30 | sums plat 5 stallloud 0 stalls 11 windows 21
+level208_ctrl1_rand_k1_s2083.out: rows 300 must0sum 50 (control) | max DR 5 T 6 k 1 levels 3 phivals 5 platmax 2 wlev 2 wmax 4 | sums plat 27 stallloud 0 stalls 34 windows 561
+level208_ctrl2.out: rows 3 must0sum 198 (control) | max DR 10 T 30 k 2 levels 12 phivals 30 platmax 22 wlev 2 wmax 10 | sums plat 7 stallloud 42 stalls 49 windows 16
+level208_g3_rand_k1_s2084.out: rows 500 must0sum 0 | max DR 5 T 6 k 1 levels 3 phivals 4 platmax 2 wlev 3 wmax 4 | sums plat 47 stallloud 0 stalls 52 windows 1087
+level208_g3_rand_rand_s2085.out: rows 300 must0sum 0 | max DR 4 T 10 k 7 levels 7 phivals 8 platmax 2 wlev 2 wmax 3 | sums plat 33 stallloud 0 stalls 37 windows 579
+level208_g3_records.out: rows 8 must0sum 0 | max DR 38 T 59 k 2 levels 8 phivals 59 platmax 4 wlev 3 wmax 22 | sums plat 5 stallloud 0 stalls 11 windows 110
+level208_rand_deep_s2082.out: rows 500 must0sum 0 | max DR 3 T 12 k 8 levels 8 phivals 10 platmax 3 wlev 1 wmax 2 | sums plat 94 stallloud 1 stalls 108 windows 735
+level208_rand_dense_s2082.out: rows 500 must0sum 0 | max DR 4 T 12 k 9 levels 8 phivals 9 platmax 3 wlev 1 wmax 1 | sums plat 91 stallloud 0 stalls 112 windows 910
+level208_rand_esc_s2082.out: rows 500 must0sum 0 | max DR 4 T 4 k 3 levels 2 phivals 4 platmax 2 wlev 2 wmax 2 | sums plat 44 stallloud 1 stalls 50 windows 847
+level208_rand_k1_s2081.out: rows 2000 must0sum 0 | max DR 5 T 7 k 1 levels 4 phivals 5 platmax 3 wlev 2 wmax 3 | sums plat 168 stallloud 1 stalls 192 windows 4378
+level208_rand_lvl0_s2082.out: rows 500 must0sum 0 | max DR 3 T 10 k 10 levels 7 phivals 7 platmax 4 wlev 1 wmax 1 | sums plat 95 stallloud 1 stalls 112 windows 550
+level208_rand_noesc_s2082.out: rows 500 must0sum 0 | max DR 3 T 10 k 8 levels 7 phivals 7 platmax 3 wlev 1 wmax 1 | sums plat 49 stallloud 0 stalls 59 windows 863
+level208_rand_rand_s2082.out: rows 500 must0sum 0 | max DR 4 T 10 k 8 levels 7 phivals 9 platmax 5 wlev 1 wmax 2 | sums plat 61 stallloud 0 stalls 70 windows 1003
+level208_records.out: rows 25 must0sum 0 | max DR 92 T 114 k 1 levels 15 phivals 114 platmax 9 wlev 3 wmax 91 | sums plat 14 stallloud 0 stalls 31 windows 556
+mut208_BLKX26_n48_s2086.out: rows 250 must0sum 0 | max T 33 levels 7 phivals 31 plat 246 platmax 21 stallloud 2 stalls 535 windows 3361 wlev 6 wmax 22 | sums 
+mut208_CFI3_n48_s2086.out: rows 250 must0sum 0 | max T 25 levels 3 phivals 21 plat 379 platmax 9 stallloud 0 stalls 1153 windows 945 wlev 3 wmax 12 | sums 
+mut208_CW4_n_s2086.out: rows 250 must0sum 0 | max T 32 levels 6 phivals 32 plat 13 platmax 23 stallloud 1 stalls 127 windows 2548 wlev 5 wmax 28 | sums 
+mut208_K1F21_n48_s2086.out: rows 250 must0sum 0 | max T 32 levels 6 phivals 32 plat 223 platmax 17 stallloud 2 stalls 284 windows 9064 wlev 4 wmax 24 | sums 
+mut208_K1L10_n48_s2086.out: rows 250 must0sum 0 | max T 31 levels 8 phivals 28 plat 359 platmax 4 stallloud 4 stalls 499 windows 4921 wlev 6 wmax 17 | sums 
+mut208_K1L7_n48_s2086.out: rows 250 must0sum 0 | max T 37 levels 8 phivals 34 plat 329 platmax 7 stallloud 0 stalls 559 windows 3412 wlev 5 wmax 25 | sums 
+mut208_MWR4_2_s2086.out: rows 250 must0sum 0 | max T 31 levels 5 phivals 31 plat 12 platmax 26 stallloud 1 stalls 129 windows 2020 wlev 3 wmax 28 | sums 
+mut208_RINT_n48_s2086.out: rows 250 must0sum 0 | max T 24 levels 4 phivals 23 plat 220 platmax 4 stallloud 0 stalls 237 windows 741 wlev 3 wmax 22 | sums 
+own208_corpus.out: rows 53 must0sum 0 | max DR 1 T 199 k 99 levels 16 phivals 199 platmax 13 wlev 2 wmax 53 | sums plat 15 stallloud 23 stalls 48 windows 615
+own208_records.out: rows 25 must0sum 0 | max DR 92 T 114 k 1 levels 15 phivals 114 platmax 9 wlev 3 wmax 91 | sums plat 14 stallloud 0 stalls 31 windows 556
+plat208_corpus.out: rows 53 must0sum 0 | plateaus 15 longest 13 maxpct 14
+plat208_ctrl1.out: rows 3 must0sum 211 | plateaus 5 longest 13 maxpct 433
+plat208_mut2_s2093.out: rows 600 must0sum 0 | plateaus 302 longest 25 maxpct 51
+plat208_mut_s2092.out: rows 600 must0sum 0 | plateaus 846 longest 15 maxpct 20
+plat208_rand_s2091.out: rows 3600 must0sum 0 | plateaus 546 longest 4 maxpct 57
+plat208_records.out: rows 25 must0sum 0 | plateaus 14 longest 9 maxpct 18
+rv208_ctrl1.out: lines 2 genomes 2 must0sum 1930 VIOLATION 0 | K2tested 8000 P4eq 16 Tmax 30 Tsum 54 genomes 2 lagstates 54 maxmvals_pct 6 nonstalls 7 plateaus 2 platmax 15 platpct 31 stalls 47
+rv208_frozen.out: lines 81 genomes 81 must0sum 0 VIOLATION 0 | K2tested 321444 P4eq 187 Tmax 199 Tsum 2707 betaonly 623 genomes 81 lagstates 93856 maxmvals_pct 16 nonstalls 92609 plateaus 538 platmax 13 platpct 100 stalls 1247
+rv208_mut_s2094.out: lines 8 genomes 480 must0sum 0 VIOLATION 0 | BLKX26_n48.json 2094 CFI3_n48.json 2094 CW4_n.json 2094 DSALT6_n108.json 2094 K1D4_n48.json 2094 K1L10_n48.json 2094 K2tested 1920000 MWR4_2.json 2094 P4eq 1664 RINT_n48.json 2094 Tmax 33 Tsum 10148 betaonly 1740 genomes 480 lagstates 115116 maxmvals_pct 3 nonstalls 98382 plateaus 6787 platmax 26 platpct 50 stalls 16734
+rv208_rand_s2095.out: lines 3 genomes 3300 must0sum 0 VIOLATION 0 | K2tested 9314030 P4eq 6 Tmax 11 Tsum 5405 betaonly 5337 genomes 3300 lagstates 9041 maxmvals_pct 33 nonstalls 8673 plateaus 311 platmax 4 platpct 100 rand 6288 stalls 368
+rv208_xcheck.out: lines 81 genomes 0 must0sum 0 VIOLATION 0 | 

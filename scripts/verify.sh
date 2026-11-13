@@ -17,7 +17,23 @@ lean()   { ls lean/lakefile.* >/dev/null 2>&1 || { echo "no lean/lakefile"; retu
              (cd lean && lake env lean Axioms.lean) | grep -o "\[.*\]" | tr -d '[]' | tr ',' '\n' | sed 's/ //g' | grep -v '^$' \
                | grep -vxE 'propext|Classical.choice|Quot.sound' && { echo "disallowed axiom"; return 1; }
            fi; return 0; }
-exps()   { local n=0; for c in experiments/*/check.sh; do [ -f "$c" ] || continue; n=$((n+1)); echo "-- $c"; bash "$c" || return 1; done
+# L55 (Lead, 2026-11-13), narrowed by L56 after CHECKER 24's finding (CI skipped the self-checks: in the Actions checkout
+# origin/<branch> IS the pushed commit). The self-checks are reported NOT RUN, with the tree ids, ONLY when: not in CI
+# (GITHUB_ACTIONS unset), VERIFY_FULL != 1, the tree is clean, experiments/ and scripts/ equal origin/<branch>, every path
+# changed since origin/<branch> is under docs/agents/, and no check script (*.sh, *.py, *.pins) under experiments/ mentions «docs/agents». Otherwise full run.
+same_as_origin() { [ "${VERIFY_FULL:-0}" = 1 ] && return 1; [ -n "${GITHUB_ACTIONS:-}" ] && return 1
+           local b; b="$(git branch --show-current 2>/dev/null)"; [ -n "$b" ] || return 1
+           git rev-parse -q --verify "origin/$b" >/dev/null || return 1
+           [ -z "$(git status --porcelain)" ] || return 1
+           for d in experiments scripts; do
+             [ "$(git rev-parse "HEAD:$d" 2>/dev/null)" = "$(git rev-parse "origin/$b:$d" 2>/dev/null)" ] || return 1; done
+           local ch; ch="$(git diff --name-only "origin/$b" HEAD)" || return 1
+           [ -n "$ch" ] || return 1
+           ! printf '%s\n' "$ch" | grep -qv '^docs/agents/' || return 1
+           ! grep -rqI --include=*.sh --include=*.py --include=*.pins 'docs/agents' experiments 2>/dev/null || return 1
+           echo "only docs/agents/ changed since origin/$b; experiments/ and scripts/ trees equal ($(git rev-parse --short HEAD:experiments), $(git rev-parse --short HEAD:scripts)); CI runs the full suite (L55/L56)"; }
+exps()   { same_as_origin && return 77
+           local n=0; for c in experiments/*/check.sh; do [ -f "$c" ] || continue; n=$((n+1)); echo "-- $c"; bash "$c" || return 1; done
            [ $n -gt 0 ] || { echo "no experiments/*/check.sh"; return 77; }; }
 oink()   { local b=tools/oink/build; [ -x $b/oink ] || { echo "Oink not built; run scripts/setup_oink.sh"; return 77; }
            local g; g="$(mktemp)"; $b/tc 6 > "$g" && $b/oink --zlk -v "$g" 2>&1 | grep -q "solution verified"; local r=$?; rm -f "$g"; return $r; }

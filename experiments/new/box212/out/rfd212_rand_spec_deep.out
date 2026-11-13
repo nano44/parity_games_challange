@@ -1,0 +1,1 @@
+rand deep seed 2152 genomes 300 RFD_MODE spec RULEFREE imp3 0 monofail 0 k3fail 0 k4fail 0 einF 0 l3fail 0 phifail 0 phivals3 0 p1 0 pclos 0 p3 0 DESC k5fail 601 stallnocyc 0 p2 11 p4 0 p5 0 T 5 phivals 5 stalls 15 plat 13 platmax 2 maxlen 2 tail 2 tail_gt_nE 0 steps 529 movesum 1479

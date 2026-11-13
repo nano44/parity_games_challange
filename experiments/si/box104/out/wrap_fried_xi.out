@@ -1,0 +1,5 @@
+WRAP104 alg xi switchallexp n 2: |H| 35 m 75 Howard T (fried.howard) 30 | |W| 567 | T 30 iterations 33 | iterations - Howard T = 3 | s3fail 0 nonstd 0 nohoward 0 fbwrong 0 endwrong 0 wrong 0
+WRAP104 alg xi switchallexp n 3: |H| 49 m 109 Howard T (fried.howard) 70 | |W| 818 | T 70 iterations 73 | iterations - Howard T = 3 | s3fail 0 nonstd 0 nohoward 0 fbwrong 0 endwrong 0 wrong 0
+WRAP104 alg xi switchallexp n 4: |H| 63 m 143 Howard T (fried.howard) 150 | |W| 1069 | T 150 iterations 153 | iterations - Howard T = 3 | s3fail 0 nonstd 0 nohoward 0 fbwrong 0 endwrong 0 wrong 0
+WRAP104 alg xi switchallexp n 5: |H| 77 m 177 Howard T (fried.howard) 310 | |W| 1320 | T 310 iterations 313 | iterations - Howard T = 3 | s3fail 0 nonstd 0 nohoward 0 fbwrong 0 endwrong 0 wrong 0
+WRAP104 alg xi switchallexp n 6: |H| 91 m 211 Howard T (fried.howard) 630 | |W| 1571 | T 630 iterations 633 | iterations - Howard T = 3 | s3fail 0 nonstd 0 nohoward 0 fbwrong 0 endwrong 0 wrong 0

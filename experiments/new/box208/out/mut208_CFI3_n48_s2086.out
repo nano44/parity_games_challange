@@ -1,0 +1,1 @@
+mut CFI3_n48.json seed 2086 samples 250 dmax 6 k0 0 k1 155 k2-3 95 k4+ 0 TOTALS monofail 0 k3fail 0 k4fail 0 k5fail 0 einF 0 l3fail 0 phifail 0 stallnocyc 0 nofvs 0 rstall 0 boundfail 0 winstall 0 wbeta 0 wl3fail 0 wmid 0 wbound 0 stalls 1153 stallloud 0 plat 379 windows 945 MAX T 25 levels 3 phivals 21 platmax 9 wmax 12 wlev 3

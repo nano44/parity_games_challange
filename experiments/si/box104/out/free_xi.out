@@ -1,0 +1,7 @@
+F104 n 2 mode free alg xi: |G_n| 35 Howard T 30 | N 54 M 92 |V| 708 m 929 maxprio 353 | iterations 33 fallbacks 1 | iterations - T = 3 | S3 = standard start True | Even wins 707/708
+F104 n 3 mode free alg xi: |G_n| 49 Howard T 70 | N 76 M 133 |V| 1017 m 1338 maxprio 505 | iterations 73 fallbacks 1 | iterations - T = 3 | S3 = standard start True | Even wins 1016/1017
+F104 n 4 mode free alg xi: |G_n| 63 Howard T 150 | N 98 M 174 |V| 1326 m 1747 maxprio 657 | iterations 153 fallbacks 1 | iterations - T = 3 | S3 = standard start True | Even wins 1325/1326
+F104 n 5 mode free alg xi: |G_n| 77 Howard T 310 | N 120 M 215 |V| 1635 m 2156 maxprio 809 | iterations 313 fallbacks 1 | iterations - T = 3 | S3 = standard start True | Even wins 1634/1635
+F104 n 6 mode free alg xi: |G_n| 91 Howard T 630 | N 142 M 256 |V| 1944 m 2565 maxprio 961 | iterations 633 fallbacks 1 | iterations - T = 3 | S3 = standard start True | Even wins 1943/1944
+F104 n 7 mode free alg xi: |G_n| 105 Howard T 1243 | N 164 M 297 |V| 2253 m 2974 maxprio 1113 | iterations 1246 fallbacks 1 | iterations - T = 3 | S3 = standard start True | Even wins 2252/2253
+F104 n 8 mode free alg xi: |G_n| 119 Howard T 2486 | N 186 M 338 |V| 2562 m 3383 maxprio 1265 | iterations 2489 fallbacks 1 | iterations - T = 3 | S3 = standard start True | Even wins 2561/2562

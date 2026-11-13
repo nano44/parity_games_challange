@@ -1,0 +1,4 @@
+engine own instance N+M gates flips np_rel np_unl npside npsub npboth npkind relfail unlfail dfail k1c2 k1both relL relE relG mx_flips mx_ch_pe mx_ch_pb mx_lam_pe mx_ech_pe mx_gam_pe mx_lam_pb mx_ech_pb mx_gam_pb mx_ch_D
+own MWR4_2.json 145 97 13 0 9 0 0 0 0 0 0 0 1 1 0 4 0 9 4 9 0 4 0 0 9 0 4
+own MWR8_2.json 261 177 25 0 17 0 0 0 0 0 0 0 1 1 0 8 0 17 8 17 0 8 0 0 17 0 8
+own MWR16_2.json 493 337 49 0 33 0 0 0 0 0 0 0 1 1 0 16 0 33 16 33 0 16 0 0 33 0 16

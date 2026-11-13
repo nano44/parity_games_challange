@@ -1,0 +1,3 @@
+  «(iv) Hence, if σ̄ and Λ are constant on V_R over the states b, b + 1, …, b + j + 1 (b ≥ a) and the step b + j → b + j + 1 switches a
+  mover of Reach(C), then j ≤ N′ − 1, with N′ = |Reach(C)| ≤ N: at most N′ consecutive steps that switch a mover of Reach(C) keep σ̄ and
+  Λ constant on V_R. (A step that switches no mover of Reach(C) ends G′'s run; nothing on V_R changes after it.)»

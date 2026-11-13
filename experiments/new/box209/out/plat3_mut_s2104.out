@@ -1,0 +1,8 @@
+plat3 mut K1L10_n48.json ctrl 0 seed 2104 samples 150 p1 0 pclos 0 p2 0 p3 0 p4 0 p5 0 t1 0 t2 0 t3 0 plateaus 221 maxlen 4 maxpct 8 tail 4 T 31
+plat3 mut CFI3_n48.json ctrl 0 seed 2104 samples 150 p1 0 pclos 0 p2 0 p3 0 p4 0 p5 0 t1 0 t2 0 t3 0 plateaus 238 maxlen 8 maxpct 16 tail 7 T 25
+plat3 mut K1D4_n48.json ctrl 0 seed 2104 samples 150 p1 0 pclos 0 p2 0 p3 0 p4 0 p5 0 t1 0 t2 0 t3 0 plateaus 145 maxlen 10 maxpct 20 tail 8 T 24
+plat3 mut K1F21_n48.json ctrl 0 seed 2104 samples 150 p1 0 pclos 0 p2 0 p3 0 p4 0 p5 0 t1 0 t2 0 t3 0 plateaus 142 maxlen 20 maxpct 40 tail 10 T 31
+plat3 mut BLKX26_n48.json ctrl 0 seed 2104 samples 150 p1 0 pclos 0 p2 0 p3 0 p4 0 p5 0 t1 0 t2 0 t3 0 plateaus 147 maxlen 3 maxpct 6 tail 16 T 33
+plat3 mut MWR4_2.json ctrl 0 seed 2104 samples 150 p1 0 pclos 0 p2 0 p3 0 p4 0 p5 0 t1 0 t2 0 t3 0 plateaus 13 maxlen 21 maxpct 42 tail 8 T 31
+plat3 mut CW4_n.json ctrl 0 seed 2104 samples 150 p1 0 pclos 0 p2 0 p3 0 p4 0 p5 0 t1 0 t2 0 t3 0 plateaus 15 maxlen 26 maxpct 50 tail 25 T 33
+plat3 mut RINT_n48.json ctrl 0 seed 2104 samples 150 p1 0 pclos 0 p2 0 p3 0 p4 0 p5 0 t1 0 t2 0 t3 0 plateaus 138 maxlen 3 maxpct 6 tail 5 T 24

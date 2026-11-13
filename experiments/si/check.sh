@@ -1272,3 +1272,44 @@ bash box86/check86.sh
 bash box87/check87.sh
 # box 88 (NEST-CHARGE: type-II nesting charged to e-set heights; leap88 census per-bit + ALL; docs/si/box88-nest.md)
 bash box88/check88.sh
+# box 89 (MULTIPLY on D_U at a bit's waiting hub: D_U(w) <= T + 1, climbs; docs/si/box89-multiply.md)
+bash box89/check89.sh
+# box 90 (FW staircase: P exponential with C 3 on N5'-xi runs; window k: C = k + 1; docs/si/box90-ra.md)
+bash box90/check90.sh
+# box 91 (PARALLEL / PAIR-EXPEL / GATE-RACE census, two engines; docs/si/box91-expel.md)
+bash box91/check91.sh
+# box 92 (GATE-LOW-NULL census, two engines; CONJECTURE WAIT-CLOSED; docs/si/box92-closed.md)
+bash box92/check92.sh
+# box 93 (K7: NP-SHAPE / E-FACE-PAYS census, two engines; K6 lag towers at h = 4, 5; docs/si/box93-k7k6.md)
+bash box93/check93.sh
+# box 94 (nested MW / doubler counters: ADD, not multiply; SAME-SUFFIX; docs/si/box94-nest.md)
+bash box94/check94.sh
+# box 95 (P-N5-GATE fixes entries 1-5 + lines L-1..L-5, each rebuilt by its fixN script; docs/si/P-N5-GATE-fixes.md)
+bash box95/check95.sh
+# P-N5-GATE line revision L-5 (fixes entry 5: CHECKER C142's nine pairs + the Lead's tenth pair): must not change.
+echo "459fd88d2d1959647f6aeb065bf8ac58cce684f9  ../../docs/si/P-N5-GATE-line-L5.txt" | sha1sum -c --quiet
+echo "si (P-N5-GATE L-5 pinned): PASS"
+# box 96 (PROVISO on IDEAL-CYC, B-ONLY3 on Gamma3: d96 two engines; docs/si/box96-bonly3.md)
+bash box96/check96.sh
+# box 97 ([STD3] for every genome up to the first fallback: REACH3-ALL re-derived; std97 census; docs/si/box97-std3.md)
+bash box97/check97.sh
+# box 98 (CHAIN3 U-dependence reading; asc98 / climb98, two engines; CONJECTURE U-FREE; docs/si/box98-udep.md)
+bash box98/check98.sh
+# box 99 (U-FREE proof side: Lemma SCC-RED, CAP; CONJECTURE SCC-LIN; scc99 census; docs/si/box99-ufree.md)
+bash box99/check99.sh
+# box 100 (SCC-LIN inside one SCC: TWO-CROSS, DEPTH-COUNT3, WINDOW; LAM-GAP / DEEP3 conjectures; docs/si/box100-scclin.md)
+bash box100/check100.sh
+# box 101 (Lemma LAM-GAP on random one-player games; docs/si/box101-lamgap.md)
+bash box101/check101.sh
+# box 102 (DEEP3 proof side: CORE-ABOVE, PROPAGATE, DEEP3 <= MOVER-DEEP3; deep102 counters; docs/si/box102-deep3.md)
+bash box102/check102.sh
+# box 103 (MOVER-DEEP3 at k = 1: GAIN-COUNT, NOLOSS-k1 counters; docs/si/box103-moverdeep.md)
+bash box103/check103.sh
+# box 104 (D18 big map: Lemma WRAP, FREE-REACH, Friedmann's counter under N5'-xi; frozen outputs; docs/si/box104-map.md)
+bash box104/check104.sh
+# box 105 (O2, proof side: KEY(G*), Lemma KEY-MODEL, KEY-MONO*, DEPTH-BOUND*; quotes; D1 when present; docs/si/box105-key.md)
+bash box105/check105.sh
+# packet P-N5-WRAP (dead-end packet for N5'-xi: Lemma WRAP on W, Claim NT, XI-EXP CONDITIONAL; quotes, instance sha1, DATA lines, frozen sha1; docs/si/P-N5-WRAP.md)
+bash pwrap/checkW.sh
+# box 106 (exact d = 2 maximum of KEY on the free ladder: layer 1 skeleton enumeration; docs/si/box106-exact2.md)
+bash box106/check106.sh

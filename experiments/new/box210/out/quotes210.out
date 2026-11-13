@@ -1,0 +1,10 @@
+quote 'VJ00 §4.2 / Friedmann arXiv 1106.0778 §3 for the order ⊴ on ' lines [13607, 13726, 14320] found True
+quote 'Lemma A: for any non-empty unambiguous set I of improvements' lines [631, 13736, 15595] found True
+quote 'an optimal counterstrategy being pointwise optimal (at every' lines [14744, 14782, 14877] found True
+quote 'H0: every step t → t+1 switches some Even x with Λ_t(x) ≠ x ' lines [] found True
+quote '(a) every maximal run of p-steps has at most n_E steps;' lines [13698] found True
+quote "labelled C if some vertex's cycle node Λ changes, else R if " lines [13607, 15815] found True
+quote 'T ≤ C + R + (C + R + 1)·n_E' lines [13607, 13699] found True
+quote 'C = 0; R = 4, 10, 24, 54, 116, 241; T = 30, 70, 150, 310, 63' lines [13607] found True
+quote 'an optimal counterstrategy being pointwise optimal (at every' lines [14744, 14782, 14877] found True
+quotes 9 missing 0 trunk 471aba45214c9b4009332ef1d498dd5dbc42f3cb

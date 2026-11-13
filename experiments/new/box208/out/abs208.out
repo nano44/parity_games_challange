@@ -1,0 +1,5 @@
+abs seed 11 games 30000 nmax 9 zero 0 ctrl 0 monofail 0 phifail 0 levfail 0 stall0 0 stallnocyc 0 boundfail 0 optfail 0 stalls 0 maxT 4
+abs seed 12 games 20000 nmax 30 zero 0 ctrl 0 monofail 0 phifail 0 levfail 0 stall0 0 stallnocyc 0 boundfail 0 optfail 0 stalls 0 maxT 5
+abs seed 13 games 20000 nmax 30 zero 1 ctrl 0 monofail 0 phifail 0 levfail 0 stall0 0 stallnocyc 0 boundfail 0 optfail 0 stalls 0 maxT 4
+abs seed 14 games 3000 nmax 120 zero 0 ctrl 0 monofail 0 phifail 0 levfail 0 stall0 0 stallnocyc 0 boundfail 0 optfail 0 stalls 0 maxT 6
+abs seed 3 games 500 nmax 8 zero 0 ctrl 1 monofail 745 phifail 31 levfail 105 stall0 7 stallnocyc 7 boundfail 0 optfail 330 stalls 7 maxT 3

@@ -1,0 +1,30 @@
+quote 'Even movers of priority 0; Odd gates of priority 1 with a W-' lines [9864, 15806] found True
+quote 'β of priority 6 + 2·rank + parity with edges to the Ξ-target' lines [9864, 15807] found True
+quote 'e of even priority above every β with one edge to the W-targ' lines [9864] found True
+quote 'a closed core u = K0 (Even, top + 2) → {K1, K3}, K1 (Even, 5' lines [9864, 15809] found True
+quote 'β → its Ξ-target (u when the target is X), K0 → K3, K1 → K1,' lines [9864, 15811] found True
+quote 'the minimum size of a set of movers meeting every cycle (sel' lines [15726] found True
+quote 'The game is Γ(G) with every Even vertex that is not a mover ' lines [13677, 14528, 15816] found True
+quote 'every mover x goes to a successor of ⊴-largest Ω_t value, an' lines [13678] found True
+quote 'For every mover x, step t and successor y of x: Ω_(t+1)(x) ⊵' lines [13686] found True
+quote "each vertex's Λ moves only to a vertex of strictly larger re" lines [13691] found True
+quote 'VJ00 §4.2 / Friedmann arXiv 1106.0778 §3 for the order ⊴ on ' lines [13607, 13726, 14320] found True
+quote 'If Λ_t(v) = Λ_(t+1)(v), then E_t(v) ≤ E_(t+1)(v).' lines [14480] found True
+quote 'Every vertex more relevant than some e-vertex is an e-vertex' lines [14481] found True
+quote 'sets of e-vertices compared lexicographically by their most ' lines [14320] found True
+quote 'For every genome G, every positional pair of IDEAL-CYC(G) an' lines [15165] found True
+quote 'In IDEAL-CYC(G), for every genome G, every state t and every' lines [] found True
+quote 'At every state and every gate g, Ω_t(e_g) ≠ Ω_t(β_g). So LOC' lines [15171] found True
+quote 'Let G be any genome, t a state of a run of IDEAL-CYC(G), g a' lines [15173] found True
+quote 'At every state σ̄_t(K2) = K1 and Ω_t(K1) ◁ Ω_t(K2).' lines [15176] found True
+quote 'every maximal window of quiet steps has at most N steps' lines [15076, 15726, 15790] found True
+quote 'it makes no new class of genomes on which T_CYC is polynomia' lines [15726] found True
+quote 'the Howard run of IDEAL-CYC(G) from any mover state has C = ' lines [14744] found True
+quote 'T_CYC ≤ C + R + (C + R + 1)·N ≤ (C + R + 1)(N + 1).' lines [13607, 13693, 15818] found True
+quote 'for every gate g and every step t, if σ̄_(t−1)(g) ≠ σ̄_t(g),' lines [15726] found True
+quote 'H0: every step t → t+1 switches some Even x with Λ_t(x) ≠ x ' lines [] found True
+quote '(a) every maximal run of p-steps has at most n_E steps;' lines [13698] found True
+quote "labelled C if some vertex's cycle node Λ changes, else R if " lines [13607, 15815] found True
+quote '(b) Facts F1-F6 (§3 l. 68-83) with F4 REPLACED by F4′' lines [13682] found True
+quote 'optimal at every vertex at once against σ_t' lines [6036, 15076, 15208] found True
+quotes 29 missing 0 trunk 071392490dcea36bfa952288aa6170d45fadf874

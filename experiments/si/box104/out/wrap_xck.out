@@ -1,0 +1,7 @@
+WXCK104 lmcs fig4 n 1: Howard T 8; |W| 211; impl1 iterations 11 fallbacks 1; impl2 iterations 11 fallbacks 1; regions equal True; vs Zielonka True/True; verify errors 0/0; AGREE+CORRECT
+WXCK104 lmcs fig4 n 2: Howard T 26; |W| 395; impl1 iterations 29 fallbacks 1; impl2 iterations 29 fallbacks 1; regions equal True; vs Zielonka True/True; verify errors 0/0; AGREE+CORRECT
+WXCK104 lmcs fig4 n 3: Howard T 62; |W| 600; impl1 iterations 65 fallbacks 1; impl2 iterations 65 fallbacks 1; regions equal True; vs Zielonka True/True; verify errors 0/0; AGREE+CORRECT
+WXCK104 lmcs fig4 n 4: Howard T 134; |W| 826; impl1 iterations 137 fallbacks 1; impl2 iterations 137 fallbacks 1; regions equal True; vs Zielonka True/True; verify errors 0/0; AGREE+CORRECT
+WXCK104 switchallexp n 2: Howard T 30; |W| 567; impl1 iterations 33 fallbacks 1; impl2 iterations 33 fallbacks 1; regions equal True; vs Zielonka True/True; verify errors 0/0; AGREE+CORRECT
+WXCK104 switchallexp n 3: Howard T 70; |W| 818; impl1 iterations 73 fallbacks 1; impl2 iterations 73 fallbacks 1; regions equal True; vs Zielonka True/True; verify errors 0/0; AGREE+CORRECT
+WXCK104 switchallexp n 4: Howard T 150; |W| 1069; impl1 iterations 153 fallbacks 1; impl2 iterations 153 fallbacks 1; regions equal True; vs Zielonka True/True; verify errors 0/0; AGREE+CORRECT

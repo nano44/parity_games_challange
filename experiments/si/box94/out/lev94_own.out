@@ -1,0 +1,22 @@
+own ND2_4.json T 31 | L1 v 9 gQ 18 R 18 flQ 18 echo 1 | L2 v 17 gQ 18 R 18 flQ 18 echo 0
+own ND2_8.json T 55 | L1 v 17 gQ 34 R 34 flQ 34 echo 1 | L2 v 33 gQ 34 R 34 flQ 34 echo 0
+own ND3_4.json T 31 | L1 v 9 gQ 18 R 18 flQ 18 echo 1 | L2 v 17 gQ 18 R 18 flQ 18 echo 0 | L3 v 17 gQ 18 R 18 flQ 18 echo 0
+own ND3_8.json T 55 | L1 v 17 gQ 34 R 34 flQ 34 echo 1 | L2 v 33 gQ 34 R 34 flQ 34 echo 0 | L3 v 33 gQ 34 R 34 flQ 34 echo 0
+own NDB2_4.json T 31 | L1 v 9 gQ 18 R 18 flQ 18 echo 1 | L2 v 18 gQ 18 R 18 flQ 0 echo 0
+own NDB2_8.json T 55 | L1 v 17 gQ 34 R 34 flQ 34 echo 1 | L2 v 34 gQ 34 R 34 flQ 0 echo 0
+own NDB3_4.json T 31 | L1 v 9 gQ 18 R 18 flQ 18 echo 1 | L2 v 18 gQ 18 R 18 flQ 0 echo 0 | L3 v 18 gQ 18 R 18 flQ 0 echo 0
+own NDB3_8.json T 55 | L1 v 17 gQ 34 R 34 flQ 34 echo 1 | L2 v 34 gQ 34 R 34 flQ 0 echo 0 | L3 v 34 gQ 34 R 34 flQ 0 echo 0
+own NDV2_4.json T 31 | L1 v 9 gQ 18 R 18 flQ 18 echo 1 | L2 v 18 gQ 18 R 18 flQ 0 echo 0
+own NDV2_8.json T 55 | L1 v 17 gQ 34 R 34 flQ 34 echo 1 | L2 v 34 gQ 34 R 34 flQ 0 echo 0
+own NDV3_4.json T 31 | L1 v 9 gQ 18 R 18 flQ 18 echo 1 | L2 v 18 gQ 18 R 18 flQ 0 echo 0 | L3 v 18 gQ 18 R 18 flQ 0 echo 0
+own NDV3_8.json T 55 | L1 v 17 gQ 34 R 34 flQ 34 echo 1 | L2 v 34 gQ 34 R 34 flQ 0 echo 0 | L3 v 34 gQ 34 R 34 flQ 0 echo 0
+own NP2_4.json T 31 | L1 v 9 gQ 18 R 18 flQ 18 echo 1 | L2 v 9 gQ 18 R 18 flQ 18 echo 1
+own NP2_8.json T 55 | L1 v 17 gQ 34 R 34 flQ 34 echo 1 | L2 v 17 gQ 34 R 34 flQ 34 echo 1
+own NP3_4.json T 31 | L1 v 9 gQ 18 R 18 flQ 18 echo 1 | L2 v 9 gQ 18 R 18 flQ 18 echo 1 | L3 v 9 gQ 18 R 18 flQ 18 echo 1
+own NP3_8.json T 55 | L1 v 17 gQ 34 R 34 flQ 34 echo 1 | L2 v 17 gQ 34 R 34 flQ 34 echo 1 | L3 v 17 gQ 34 R 34 flQ 34 echo 1
+own NSQ2_4.json T 103 | L1 v 9 gQ 18 R 18 flQ 18 echo 1 | L2 v 13 gQ 22 R 22 flQ 18 echo 0
+own NSQ3_4.json T 271 | L1 v 9 gQ 18 R 18 flQ 18 echo 1 | L2 v 13 gQ 22 R 22 flQ 18 echo 0 | L3 v 17 gQ 26 R 26 flQ 18 echo 0
+own NV2_4.json T 31 | L1 v 9 gQ 18 R 18 flQ 18 echo 1 | L2 v 18 gQ 18 R 18 flQ 2 echo 0
+own NV2_8.json T 55 | L1 v 17 gQ 34 R 34 flQ 34 echo 1 | L2 v 34 gQ 34 R 34 flQ 2 echo 0
+own NV3_4.json T 31 | L1 v 9 gQ 18 R 18 flQ 18 echo 1 | L2 v 18 gQ 18 R 18 flQ 2 echo 0 | L3 v 18 gQ 18 R 18 flQ 2 echo 0
+own NV3_8.json T 55 | L1 v 17 gQ 34 R 34 flQ 34 echo 1 | L2 v 34 gQ 34 R 34 flQ 2 echo 0 | L3 v 34 gQ 34 R 34 flQ 2 echo 0

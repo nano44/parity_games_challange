@@ -1,0 +1,1 @@
+WRAP104 alg xi json rand300.json games 300: s3fail 0 nonstd 0 nohoward 0 fbwrong 0 endwrong 0 wrong 0 | rows differing from the frozen (T, iterations, |W|) 0

@@ -472,3 +472,83 @@ Lead reading L52 (2026-11-12 17:08Z by date -u; on L51 and docs/agents/LEAD-BACK
     paid overage, or on a limit that still rejects after its stated reset time. After a pause the Lead sends one resume message to each
     session whose turn failed with live work, and starts successors that were due; D21 «maximum effort» stands.
 (3) The owner is told of each pause in the next owner line (not urgent: no spend beyond the plan).
+
+Lead reading L53 (2026-11-12 19:57Z by date -u; on D21, L51, L52):
+(1) Event: the Fable 5.2 weekly limit is reached (rate_limit_info rateLimitType «seven_day_overage_included», status «rejected»,
+    resets 2026-11-18 21:00Z; post-turn «You've reached your Fable limit»); every Fable session stopped about 19:38Z; isUsingOverage
+    false. Opus 5.5 sessions run (seven_day «allowed_warning»).
+(2) Reading: D21's «use fable 5.2 … where it seems fitting» cannot apply while Fable rejects; successors and new sessions use Opus
+    5.5 (effort high) until the Fable reset. No usage credits are bought (spend is the owner's decision). The fleet stays at D21's
+    maximum effort to 2026-11-14 10:05Z. The owner is told at once (via OWNER-DESK, 19:57Z), including the risk that an Opus weekly
+    «rejected» would stop the whole fleet until 2026-11-18 21:00Z.
+(3) A session stopped by the limit mid-work has no handover: its successor resumes from the notebook, origin, and the Lead's brief,
+    and redoes any result that was not on origin.
+
+## D22 (2026-11-12, owner: answer relayed by OWNER-DESK, logged on claude/owner-desk docs/owner-desk/LOG.md «2026-11-12T12:51Z owner message»)
+Question (Lead, 12:10Z, D1 approval for a new attack lane): «To spend more usefully, I propose one more lane, L-RED-B, a second
+adversary on Fable 5.2 xhigh against L-NEW 72's new CANDIDATE (a polynomial bound at k = 1 on IDEAL-CYC, the biggest claim of the
+week). Under D1, a new attack lane needs your «yes».»
+Owner (verbatim): «yes»
+Effect: L-RED-B (files docs/red-b/, experiments/red-b/; CLAUDE.md line added a9699c30) created 12:52Z. Recorded late (20:10Z) after
+L-RED-B successor 3 found the ruling missing from this file; the lane's existence rested on it from 12:52Z. Under L53 its successors run
+on Opus 5.5 until the Fable reset.
+
+Lead reading L54 (2026-11-12 23:01Z by date -u; on CLAUDE.md «Lean checks it (no sorry, allowed axioms only)» and the CHECKER exact-commit rule):
+(1) Event: CHECKER 23 (C143, Lean rows) has no Lean toolchain; installing elan in its session was refused by the permission classifier,
+    and CHECKER did not work around it.
+(2) Reading: for Lean rows, the clean build of record is the GitHub Actions job lean-lemmas (trunk workflow .github/workflows/verify.yml,
+    added 7fa6aff4) run on the EXACT commit in a fresh runner. CHECKER reads it itself from the Actions API (head_sha, conclusion, the log
+    lines «Build completed successfully», the axiom list and «LEAN LEMMAS PASS»), checks that the workflow file at that commit equals
+    trunk's job, and records the step as «PASS by CI re-run of record (L54)», not as a checker build. If the run is on an ancestor, CHECKER
+    shows lean/ byte-identical between the two commits. Statement and definition diffs remain CHECKER's own work.
+
+Lead reading L55 (2026-11-13 03:11Z by date -u; on CLAUDE.md «Push only with scripts/push.sh (runs scripts/verify.sh, pushes the current branch only on PASS)»):
+(1) Facts: verify's experiment self-checks take 30-70 min; container restarts come every 40-60 min and kill them (Lead pushes lost 00:50Z and
+    03:04Z on 2026-11-13; lanes report the same). Commits that change only docs/ or notes/ re-run the identical experiment suite.
+(2) Reading: scripts/verify.sh reports the experiment self-checks as NOT RUN, naming both tree ids, when the commit's experiments/ and scripts/
+    trees are byte-identical (same git tree id) to origin/<branch>, the working tree is clean there, and VERIFY_FULL is not 1. That
+    origin commit went through this gate, and CI (.github/workflows/verify.yml, job verify) re-runs the full suite on every push: CI is the
+    full run of record. Any change under experiments/ or scripts/, a missing origin branch or VERIFY_FULL=1 forces the full local run.
+    Doc shape, Lean and Oink steps are unchanged. Red CI on a pushed head is that branch's work at once (backstop step 5).
+
+Lead reading L56 (2026-11-13 05:40Z by date -u; correction of L55 on CHECKER 24's finding, 05:45Z):
+(1) Facts (CHECKER 24, CI run 43373199202 job 131713548195 on eb22d350): in the Actions push checkout origin/<branch> is the pushed commit,
+    so L55's test held in CI too and the experiment self-checks were NOT RUN there on every push since 626da53c; L55's «CI stays the full
+    run of record» was false. Also, many check.sh blocks pin files under docs/ (docs/new, docs/si, docs/referee*, docs/RESULTS.md, …), so a
+    docs-only commit can break a self-check.
+(2) Reading: the skip now applies ONLY outside CI (GITHUB_ACTIONS unset), with VERIFY_FULL != 1, a clean tree, experiments/ and scripts/
+    equal to origin/<branch>, EVERY changed path under docs/agents/ (Lead logs and drafts, handover checks), and no check script
+    (*.sh, *.py, *.pins) under experiments/ mentioning docs/agents. Anything else runs in full, locally and in CI. Tested both ways
+    (docs/agents-only diff skips; CI, VERIFY_FULL, a RESULTS/NOW diff and an empty diff run in full).
+(3) Commits 626da53c, eb22d350 and 65e02855 had no CI self-check run: CHECKER 24 runs VERIFY_FULL=1 on eb22d350 (the R128 landing
+    commit) itself, and the first CI run after this fix runs the full suite on trunk.
+
+D23 (owner, relayed verbatim by OWNER-DESK, received 08:44Z on 2026-11-13 by date -u):
+«I reset the fable weekly limit, please conitnue on high effort, we already used a day, w still have 160% of usage left until tomorrow night»
+
+Lead reading L57 (2026-11-13 08:44Z by date -u; on D21 and D23):
+(1) D21's maximum effort continues to its end (2026-11-14 10:05Z); D23 says about 160% of the allowance remains until «tomorrow night».
+(2) «high effort» is read literally: new sessions run at effort level «high» (D21's «hard or xhigh» is superseded on this point by the later
+    owner word). Fable 5.2 is available again (L53's Opus-only reading lapses), to be used «in depth everywhere where it seems fitting»
+    (D21): deep design and proof work (L-NEW, L-SI, L-FORMAL, referees) on Fable 5.2 at high, others may stay on Opus 5.5 at high.
+(3) The reset is verified by measurement, not assumed: the first new Fable session's rate_limit_info is read with get_session; if Fable is
+    still refused, successors stay on Opus and the owner is told. Overage stays the stop signal (L51).
+
+D24 (owner, relayed verbatim by OWNER-DESK, received 08:55Z on 2026-11-13 by date -u):
+«do xhigh»
+
+D25 (owner, direct message to the Lead, 2026-11-13, after the Lead's answer to «Did we achieve anything significant over the past few weeks?»):
+«So put everything into trying solving it today»
+Later the same morning (owner, direct message to the Lead): «I have switched you too to fable 5.2 high, maybe you can reason better»
+
+Lead reading L58 (2026-11-13 10:10Z by date -u; on D24 and D25; amends L57 (2)):
+(1) D24 supersedes L57 (2) on the effort level: every session created from now on, Fable 5.2 and Opus 5.5 alike, runs at effort «xhigh».
+    Running sessions keep their level until they park. The Fable reset is verified (the Lead session's get_session: five_hour «allowed»,
+    no overage). Overage stays the stop signal (L51).
+(2) D25 is read as: for today the whole fleet works on G-N5-TIME through the one question the night's work reduced it to, box 217's
+    ENUM-LOG on the one-player key model (QUIET-KEY-1P): is the enumeration depth k(G) of N5's key rule O(log N)? Either answer is taken:
+    a family with unbounded-rate k (min d(k) linear) is a kill of N5 and is reported as such; a proof of ENUM-LOG plus the bridge to SPEC is
+    a step toward a bound and is refereed as such. Landing duty (R130) and Lean statements continue; side items wait.
+(3) Nothing in D25 relaxes D1: no claim of a solution leaves the fleet, and a claimed bound is «wrong until it passes the gauntlet».
+    «Solving it today» is an instruction about effort, not a deadline that changes the standard of proof.
+(4) The Lead session runs on Fable 5.2 at effort high by the owner's own switch; the Lead's commit trailer follows the session.

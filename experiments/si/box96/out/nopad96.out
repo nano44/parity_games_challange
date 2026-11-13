@@ -1,0 +1,10 @@
+engine own instance N+M states gates pairs Dcw dpass lamD bonly sfail relD unlD tight aptpass
+ctrl=nopad own WC4_2.json 60 5 40 200 35 0 0 0 0 0 0 0 0
+ctrl=nopad own C6G8_n54.json 204 18 150 2700 84 0 0 0 0 0 0 0 0
+ctrl=nopad own k1fail_202.json 60 5 45 225 9 0 0 0 0 0 0 0 0
+ctrl=nopad own MWR4_2.json 145 31 97 3007 91 0 0 0 0 0 0 1 0
+engine g3 instance N+M states gates pairs Dcw dpass lamD bonly sfail relD unlD tight aptpass
+ctrl=nopad g3 WC4_2.json 60 5 40 200 35 0 0 175 0 0 0 0 0
+ctrl=nopad g3 C6G8_n54.json 204 18 150 2700 84 0 0 1512 0 0 0 0 0
+ctrl=nopad g3 k1fail_202.json 60 5 45 225 9 0 0 45 0 0 0 0 0
+ctrl=nopad g3 MWR4_2.json 145 31 97 3007 91 0 0 2821 0 0 0 1 0

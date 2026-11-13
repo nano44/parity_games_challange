@@ -1,0 +1,6 @@
+WRAP104 alg xi lmcs fig4 n 7: |H| 74 m 222 Fact 6.1 (nodes, edges) True maxprio 92 distinct priorities 74 | Howard T (own howard) 1142 tie events 0 | |W| 1630 | T 1142 iterations 1145 | iterations - Howard T = 3 | 2^n = 128 | s3fail 0 nonstd 0 nohoward 0 fbwrong 0 endwrong 0 wrong 0
+WRAP104 alg xi lmcs fig4 n 8: |H| 84 m 265 Fact 6.1 (nodes, edges) True maxprio 104 distinct priorities 84 | Howard T (own howard) 2294 tie events 0 | |W| 1940 | T 2294 iterations 2297 | iterations - Howard T = 3 | 2^n = 256 | s3fail 0 nonstd 0 nohoward 0 fbwrong 0 endwrong 0 wrong 0
+WRAP104 alg xi switchallexp n 7: |H| 105 m 245 Howard T (fried.howard) 1243 | |W| 1822 | T 1243 iterations 1246 | iterations - Howard T = 3 | s3fail 0 nonstd 0 nohoward 0 fbwrong 0 endwrong 0 wrong 0
+WRAP104 alg xi switchallexp n 8: |H| 119 m 279 Howard T (fried.howard) 2486 | |W| 2073 | T 2486 iterations 2489 | iterations - Howard T = 3 | s3fail 0 nonstd 0 nohoward 0 fbwrong 0 endwrong 0 wrong 0
+WXCK104 lmcs fig4 n 5: Howard T 278; |W| 1073; impl1 iterations 281 fallbacks 1; impl2 iterations 281 fallbacks 1; regions equal True; vs Zielonka True/True; verify errors 0/0; AGREE+CORRECT
+WXCK104 switchallexp n 5: Howard T 310; |W| 1320; impl1 iterations 313 fallbacks 1; impl2 iterations 313 fallbacks 1; regions equal True; vs Zielonka True/True; verify errors 0/0; AGREE+CORRECT

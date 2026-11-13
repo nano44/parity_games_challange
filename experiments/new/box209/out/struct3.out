@@ -1,0 +1,8 @@
+struct3 files genomes 81 structfail 0 skipped (not a genome file) 0
+struct3 rand k1 seed 2106 genomes 300 structfail 0
+struct3 rand rand seed 2106 genomes 300 structfail 0
+struct3 rand dense seed 2106 genomes 300 structfail 0
+struct3 rand deep seed 2106 genomes 300 structfail 0
+struct3 rand noesc seed 2106 genomes 300 structfail 0
+struct3 rand esc seed 2106 genomes 300 structfail 0
+struct3 rand lvl0 seed 2106 genomes 300 structfail 0

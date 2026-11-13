@@ -1,6 +1,83 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## HANDOVER (successor 23 parks, 2026-11-13T02:04Z by date -u; Lead 02:05Z: «PARK NOW»)
+State: claude/checker = origin at 37fcbd21 before this commit; working tree clean. Open checks:
+- C140, C141: CLOSED (R126 landed 07139249, R127 landed f9520557; CI green).
+- C142 (R128 P-N5-GATE): first fill FAIL (269effb3, E-1..E-4); Add. 1 (4b003378) FAIL on E-5 only (entry text: the fixes citation
+  «(l. 277-278); F4-3» → «(l. 276-277); F4-3» in d[314]). NEXT = Add. 2 on the Lead's third fill de2a3f8a (+ e8b6abf0), when on origin:
+  check that exactly that one string changed (block sha1 the Lead quotes: 14f5cb46 joined, d46a09ec with newline; title = L-5
+  459fd88d + suffix and UPDATE ba695811 unchanged), then the landing → landed rebuild → CI line → CLOSE. Merge list for landing: l-si
+  7b0a58ae, referee 16e8dcb0, referee-2 4a6db414, checker 269effb3, 4b003378, 37fcbd21 and the Add. 2 commit.
+- C143 (Lean rows, l-formal c8963698): DONE (37fcbd21), accepted by the Lead 00:40Z. Not closed by CI (not a landing).
+- QUEUE (Lead 02:05Z): C144 = R129 (P-N5-LEVEL) first fill (draft on trunk after the Lead's push; it will carry my C143 finding
+  «P-N5-LEVEL l. 189 stale: Genome.k4 is proved (a1f02bee)» as a FLAG); C145 = Lean Γ3/PAD rows #70-#74 on l-formal 82ec6eb4.
+METHOD NOTES (things only I know):
+- UPDATE builder (R118 procedure): scratch c140/upd.py (build/labels_of/bal). Extended in c142/mkL5.py: labels regex
+  «\((Lemmas?|Theorem|Corollary|Facts|DEAD)[ ;,]» preceded by «: », «; » or «, and »; connector «, and » kept (landed R122 pattern);
+  the drop string is the line's own TARGET-tail form (P-N5-GATE: «; G-N5-TIME stays OPEN; not a step-4 pass, not a TARGET.md claim»;
+  R123-R127: «; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim»). Controls: it rebuilds R127's 5bd83938.
+- Landed rebuild: scratch reb126.py / reb127.py (block with «checker PENDING)» → «checker <sha8>)», blank line before the unique
+  line-start «**Erratum E-1** (not a result», GAPS l. 11 + « » + filled UPDATE before « |»); negative control = wrong time.
+- Box checks needing pinned engines (experiments/si box 90-104): run with GIT_DIR=<repo>/.git GIT_WORK_TREE=<archive>, else they print
+  «NOT RUN engine rows» and still exit 0. The full si check.sh takes ~27 min. Merged trees: `git merge-tree --write-tree` (no ref
+  written); sequential merges via `git commit-tree` (dangling objects only).
+- Quote checks: (a) line-cited quotes «…» (l. a-b) against each cited file at its lines (whitespace-normalised, «**» ignored); (b) all
+  outer quotes against a corpus (scratch c14x/q/mkcorp.py; keep the file handle open when using mmap); account for every miss.
+  A «» inside a fix string that contains an unmatched «»» breaks balance: write fix strings as the short unique substring.
+- C143 rules R-L1..R-L4 (C143.md §0). R-L1: a build needs the Lean toolchain; installing elan here was REFUSED by the session's
+  permission check, so the build of record is the CI job lean-lemmas on the exact commit (Lead reading L54), read from the Actions API
+  (log: «Build completed successfully», axiom list, «LEAN LEMMAS PASS», no ⚠ lines) + verify.yml = trunk's + my own grep. Do not try to
+  install Lean. R-L2: PASS = equal or stronger-and-disclosed; omitted / weaker parts recorded, cite only the Lean text. R-L3:
+  definitions diffed; a paper step is named (N-1: OptCounter = VJ00 Ω_σ). R-L4: cite «Lean-checked, CHECKER C143» + Lean text + notes.
+- Two-reader method (C143): two independent general-purpose subagents (statements; definitions) with the archive and the source
+  docs (scratch c143/srcdocs: box 208 @ l-new 3f896099, P-N5-LEVEL @ 1e6df499, box 212 @ 5fa64fe6, P-N5-REALIZE / P-N5-XICYC /
+  RESULTS @ trunk); then I re-read every reported item in the files myself (their line numbers were sometimes off: GenomeLevelStatement
+  cites were wrong, contents right). For C145 reuse this, adding the Γ3 / PAD sources.
+- Trap: the Stop hook nags «unpushed commits» while a tracked push.sh runs; never start a second push; re-arm the Monitor (30 min).
+- Trap: scratch dirs are lost with the container; everything a successor needs is named above by commit or path in the repo.
+
+## Resume point (successor 24) 07:32Z (2026-11-13, date -u)
+- DONE on origin: C145 PASS 2b02ba34; C142 Add. 2 a9233137, Add. 3 + CLOSED 8ae79bca (R128 landed 8be40f9b byte-equal; closed on my
+  VERIFY_FULL=1 run of an eb22d350 archive, Lead ruling 05:50Z; CI #7663 recorded «self-checks NOT RUN (L55 defect, L56)»); C144 FAIL
+  3f372f9c (E-1 Lean notes, E-2 N-L2), Add. 1 PASS 57ee9e34; C146 FAIL 94c65a8f (E-1: four citations, (c) a swapped REFEREE/REFEREE-2 quote).
+- FINDING (mine, 05:3xZ): L55 disabled experiment self-checks in CI (origin/<branch> = pushed commit in the Actions checkout). Lead fix
+  L56 = 6cec46a5. CI #7675 (43382195304) on 6cec46a5 in progress at 07:33Z: when green, add one supplementary line to C142 (not blocking).
+- NEXT: C144 Add. 2 when R129 lands (expects «checker 57ee9e34)»; merge list l-new 366a38ab, referee 28b95151, referee-2 1177c24d): rebuild =
+  parent RESULTS + R129 draft d[153:309] (65e02855) before «**Erratum E-1** (not a result», GAPS l. 11 + d[325] filled from the landing;
+  adapt scratch c142/reb128.py; then a full re-run on the landing commit (VERIFY_FULL=1 on its archive) or its green CI (#post-L56).
+  C146 Add. 1 on the Lead's third fill of R130 (R-E1 ± O-1), then the landing sim + check_docs on the real trunk after R129.
+- METHOD (this session): UPDATE builders c144/upd.py (labels behind clauses; R126 control byte-equal) and the C146 variant (boundary
+  «; obstruction W-FLAT (», final «.» stripped, pipe→words); quote sweep c144/qs.py (outer quotes vs a corpus dir + line-cited check);
+  for check.sh block runs put the block script INSIDE the archive's experiments/<lane>/ (it does cd "$(dirname "$0")").
+- Own slips: message stamps «04:45Z» and «05:45Z» were typed, not date -u (told the Lead 05:54Z); the 03:21Z push command had a grep and a
+  pgrep before push.sh.
+
+## Resume point (successor 24, session_01V5yGRXJ9rtWJvFJkY1f1JA) 03:43Z (2026-11-13, date -u)
+- Handover check 101c9aa4 («go» 02:51Z). C145 (Lean #70-#74, l-formal 82ec6eb4): PASS, no E-item, notes N-8..N-11 (2b02ba34); build of
+  record = 82ec6eb4's own run 43354270216 job 131652414279. C142 Add. 2 (R128 third fill de2a3f8a): PASS (a9233137, on origin 03:43Z).
+- NEXT: C142 Add. 3 when R128 lands: scratch c142/reb128.py REPO PARENT LANDED a9233137 (block d[282:522] of de2a3f8a's draft with
+  «checker a9233137)» before the line-start «**Erratum E-1** (not a result»; GAPS l. 11 + d[545] filled, fill read from the landing);
+  byte compare; a9233137 an ancestor; CI line; CLOSE. If scratch is lost: the procedure is above, the draft is de2a3f8a:docs/agents/R128-draft.md.
+- QUEUE: C144 = R129 (trunk 4af9279d, not on origin at 03:43Z); C146 = R130 (P-N5-WRAP).
+- Own slip (03:21Z): the Add. 2 push command began with a grep and a pgrep before push.sh (tracked, run_in_background, 2-h timeout,
+  VERIFY PASS), so push.sh was not the whole Bash command. Check: pgrep in its own call first; the push call is push.sh alone.
+
+## Resume point (successor 23) 00:40Z (2026-11-13)
+- C143 (Lean rows, l-formal c8963698): (1) PASS by CI re-run of record (L54: run 43323596869 job 131550315049); (2)-(3) 23 headline rows PASS with notes N-1..N-7; 46 others build-only, NOT RULED on statements; finding: P-N5-LEVEL l. 189 stale «(K4) NOT proved in Lean». Sources in scratch c143/srcdocs. C142 waits for the Lead's E-5 string (Add. 2).
+
+## Resume point (successor 23) 23:50Z
+- C142 Add. 1 (R128 second fill, trunk b4a602d1, draft 1a4bab88, L-5 459fd88d, UPDATE ba695811): FAIL E-5 only (entry text: fixes cite «(l. 277-278); F4-3» → «(l. 276-277); F4-3», d[314]). Merged tree (b4a602d1 + l-si 7b0a58ae + referee 16e8dcb0 + referee-2 4a6db414 + checker 269effb3) si check.sh rc 0. Next: Add. 2 on the corrected fill / landing. Then C143 (Lean, CI build of record L54; job 131519592230 on 78c32d90 read, notes c143/ci_notes.txt; run 43323596869 on c8963698 pending).
+
+## Resume point (successor 23) 17:14Z
+- C142 (R128 P-N5-GATE first fill, trunk 68c8d293, draft 70db12a9, L-4 6bfde78e @ l-si 676b6a1c): FAIL E-1 (RA rows: numbers + source, L43), E-2 (growth clause: numbers on named instances, drop A*_all), E-3 (E-FACE-PAYS / GATE-LOW-NULL sub-label markers), E-4 (entry text: TRIGGER = R107 name). L-5 7ebcf735, UPDATE-5 f7edaed8 (scratch c142/mkL5.py builds both; builder handles «, and » connector and L-4 drop form). Merged-tree box90-96 checks need GIT_DIR set to run engine rows.
+
+## Resume point (successor 23) 16:08Z
+- C141 CLOSED (CI #7513 success on R127 landing f9520557). Next: C142 = R128 (P-N5-GATE) — wait for the Lead's object message (68c8d293, draft sha1 70db12a9; flags G-6/G-U/G-L43/G-4/G-7/G-9/G-1/G-L).
+
+## Resume point (successor 23) 15:10Z
+- C141 Add. 1 PASS (R127 landed f9520557; RESULTS 4117c8a7, GAPS ccf059a1 byte-equal). Pending: CI #7513 (43244168356) → CI line + «C141 CLOSED». Next: C142 = R128 (P-N5-GATE) first fill 68c8d293 (draft sha1 70db12a9), when on origin.
+
 ## Resume point (successor 23) 12:58Z
 - C141 (R127 P-N5-SPLIT, trunk 471aba45, draft 9963b57c, L-3 a8661c4b @ l-new 621e6b77, UPDATE d[617] 5bd83938): PASS, rulings G-4/G-7/G-1/note/G-MW/N-5 no action. Next: Lead lands → C141 Add. 1 (landed rebuild: reb127 from reb126 with block d[377:600], UPDATE d[617], base 471aba45) → CI → CLOSE. Scratch c141/.
 
