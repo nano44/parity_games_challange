@@ -1,0 +1,8 @@
+DBL4_d20_F30.json N 40 T 30 full 0 enum 0 fo 0 ab 0 eab 0 oa 0 cause 0 fs 0 od1 0 od3 0 fz 0 xl 0
+H5_d20_F62.json N 40 T 136 full 10 enum 10 fo 0 ab 0 eab 0 oa 0 cause 0 fs 0 od1 0 od3 0 fz 0 xl 0
+H6_d24_F126.json N 48 T 209 full 12 enum 12 fo 0 ab 0 eab 0 oa 0 cause 0 fs 0 od1 0 od3 0 fz 0 xl 0
+HIT7_d28_F254.json N 56 T 299 full 14 enum 14 fo 0 ab 0 eab 0 oa 0 cause 0 fs 0 od1 0 od3 0 fz 0 xl 0
+RECF4_d20_F60.json N 40 T 67 full 8 enum 8 fo 0 ab 0 eab 0 oa 0 cause 0 fs 0 od1 0 od3 0 fz 0 xl 0
+TOTAL ctrl -: fo 0 ab 0 eab 0 oa 0 cause 0 fs 0 od1 0 od3 0 fz 0 xl 0
+INFO runs 5 steps 741 full 44 enum 44 ab_units 7168 eab_units 0 oa_units 13851 cause_units 2207 ladders 5 capped_ladders 4 hmax 7 od1_units 18 od3_units 928 fz_units 210 xl_units 210
+FIRED none

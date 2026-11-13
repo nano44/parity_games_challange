@@ -290,3 +290,49 @@ So this is an INDEPENDENT replication: own instances from a plain hill-climb on 
 - What I will check in a kill packet: (i) the rule G_k for every k, every degree 2 (E-2); (ii) L(G_k) by two engines at every k run;
   (iii) a proof that some mover switches ≥ c·2^(εk) times for every k (induction, or an explicit run checked against the step rule);
   fits with residuals are DATA; (iv) N5 itself on Γ3(G_k) with outputs against Zielonka, up to about k = 13 on my engine.
+
+## Addendum 5 (REFEREE-2 successor 41; 2026-11-13T13:02Z by date -u): PRE-READ (not a signature) of L-SI's box 107 (claude/l-si 06f072f1, docs/si/box107-timing.md, sha1 a69adf7e3fd2ab4debad55be3e049c655182aea4, 255 lines) — the timing lemmas of full key enumeration on 1P(G), and the replay of its three instances
+Independence: box 107 was read after Addendum 4 was written (my own upward-ladder replication, commit cd54dbfe); docs/referee/ holds no
+report on it. Every statement below is a lane CANDIDATE. QUIET-KEY-1P / SW-POLY stay OPEN; G-N5-TIME stays OPEN; not M3, not M4.
+Own engine: docs/referee-2/R2-key/r2box107.py (counters from box 107's own statements, on r2unit217's 1P(G); no lane code, not abandon107.py).
+
+### A5.0 Verdict (pre-read)
+| statement (§) | finding | for a packet |
+| --- | --- | --- |
+| FULL-ORDER (§2) | no gap: μ(x) ∈ K(x) is non-increasing, strictly falls at each of the \|K(x)\| − 1 switches, so it takes all \|K(x)\| values in decreasing order, one predecessor per switch, and cannot change without a switch | — |
+| ABANDON (§2) | no gap. The two cases (x keeps k; x switches to k′) are both excluded by FULL-ORDER, the second because κ′ ++ ε(x, k) ∈ K(x) would be skipped | — |
+| ENUM-ABANDON, ONE-AHEAD (§2) | no gap (an enumerating monotone μ(x) skips no key; ONE-AHEAD's λ* is taken at a time t′ ≥ t and μ(w) is non-increasing) | — |
+| CAUSE (§4) | no gap, with one reading to pin: [Q docs/si/box107-timing.md@06f072f1] «a mover of lower level on a W-path below one of x's options» must mean the W-CHAIN under s_t (then no switch on it gives s_(t+1) = s_t there AND the chain under s_(t+1) is the same chain, so the keys of x's options are unchanged). The rest is right: A_t(x) ⊆ A_(t−1)(x) when x switched at t − 1 to the Ξ-better k, and the keys are unchanged, so x stays | S-1: write «the W-chain under s_t» |
+| FROZEN, Ξ-LAST, SEPARATION (§4) | no gap in FROZEN or Ξ-LAST on my re-derivation and replay. SEPARATION is a statement about any two frozen states, not a counting bound; the box says so | — |
+| ODOMETER (1)-(3) (§3) | no gap: (1) from FULL-ORDER (a full reader switches at every change of μ, one option per owner); (3) from §3's own argument with ABANDON applied to the owner of p and p + 2 | — |
+| FLIP-SUPPLY (§4 (iii)) | the inequality sw(x) ≤ 1 + Σ_(y ∈ D(x)) sw(y) and the induction sw(x) ≤ 2^\|D(x)\| are correct (topological order: \|D(y_i)\| ≤ m − i, Σ 2^(m−i) = 2^m − 1). S-2: its corollary [Q docs/si/box107-timing.md@06f072f1] «a full level-(h − 1) mover has at least h strict Ξ-descendants» is FALSE at h = 1 and right from h = 2 (2^h − 1 > 2^(h−1)): a full level-0 mover (sw 1 = \|K\| − 1) may have D = ∅. 23 such movers in my sets, e.g. l-new a143d406 experiments/new/box217/out/rec/rec_w2_d10_D2_s3.json mover 1 (level 0, \|K\| 2, sw 1, \|D\| 0) | S-2: «for h ≥ 2» |
+| [Q docs/si/box107-timing.md@06f072f1] «Counting gives k ≤ (d + 1)/2 in this class for one full mover» (§6) | AGREES with my own ceiling (Addendum 4, reached before reading box 107): \|PΞ\| ≤ 2^(d−l) for a level-l mover, so a full level-(k − 1) mover needs 2^k − 1 ≤ 2^(d−k+1) − 1 | — |
+| SAT answers (§7) | UNCERTIFIED by the box's own label; I did not re-run any SAT query. «no 3-level ladder has k = 3» and the bi-ladder maxima rest on cadical195 alone | S-3: for a RESULTS line these need certificates (as R112 did) or an independent solver |
+| scope line | correct and complete (1P(G) only, through L-NEW's reduction; no N5 bound claimed). With my Addendum 3's ID the reduction is no longer conditional on Γ3(G) as R117 indexes it | S-4: cite R117 (f) REACH3 instead of [Q docs/si/box107-timing.md@06f072f1] «about N5 only through L-NEW's REDUCTION there (lane, conditional)» |
+
+### A5.1 Replay of box 107's instances (my engines; kill217_si107.out, box107_*.out)
+| instance (06f072f1) | sha1 | box 107's numbers | mine |
+| --- | --- | --- | --- |
+| experiments/si/box107/out/k2_d2.json | f7a22a2266e2e1eec2f963895eaea628f95fe085 | [Q docs/si/box107-timing.md@06f072f1] «N 4 T_key 3 … sw [1, 1, 3, 1] full [0, 1, 2]» | N 4, T 3, max sw 3, k 2; ID 0; N5 itself from S3 on Γ3: fallback at 4, 6 iterations, output = Zielonka (two implementations); lane n5v = my engine |
+| out/up_k2_d4.json | d28a333248f564f96265932ed9ff45c34f767e18 | [Q docs/si/box107-timing.md@06f072f1] «N 8 T_key 3 … sw [1, 1, 3, 1, 2, 2, 1, 1]» | the same list; T 3, k 2; ID 0; N5: fallback at 4, 6 iterations; zl / zh / lane 0 |
+| out/up_k3_d6.json | 0dc9a46dfa359f8007814654d7236c363494ee5c | [Q docs/si/box107-timing.md@06f072f1] «N 12 T_key 8 … sw [1, 1, 3, 3, 7, 1, 3, 3, 3, 2, 1, 1] full [0, 1, 2, 3, 4]» | the same list; T 8, max sw 7 at mover 4 (level 2), k 3; ID 0; N5: fallback at 9, 11 iterations; zl / zh / lane 0 |
+So box 107's k = 2 at d = 4 and k = 3 at d = 6 are confirmed on independent code, and (new here) they are confirmed for N5 ITSELF on Γ3(G)
+with its output checked against two Zielonka implementations. My own instances of Addendum 4 are different genomes with the same k
+(up_d4_k2.json T 7, up_d6_k3.json T 11: longer runs, same enumeration depth).
+
+### A5.2 DATA (own counters; r2box107.py, units in its header)
+All ten must-0 counters (fo, ab, eab, oa, cause, fs, od1, od3, fz, xl) are 0 on: the 5 towers (741 steps; 44 full movers; ABANDON on
+7,168 (mover, step) units, ONE-AHEAD on 13,851, CAUSE on 2,207 switches, ODOMETER (3) on 928 (level, reader, position) units, FROZEN and
+Ξ-LAST on 210 moves of S_j each; 4 capped ladders, h up to 7); the 62 records + H5PLUS_L5 + box 107's three instances + my two (68 runs);
+2,400 random genomes and ladders; 450 tower mutants (27,092 steps; FROZEN on 5,885 moves); and the 875-genome corpus of Addendum 3
+(12,095 steps; 3,088 full movers; 80 capped ladders). Controls (box107_ctrl.out), each firing its target counter: abnf (ABANDON on
+non-full movers), eabne (ENUM-ABANDON on non-enumerating movers), oastrict (ONE-AHEAD with a strict inequality), causexi and causew
+(CAUSE with one disjunct dropped), od3strict (W(p) < E(z, p) strictly: the same-step case does occur), fzlate (FROZEN's interval one step
+longer), xl2 (Ξ-LAST one step earlier).
+
+### A5.3 Where box 107 and Addendum 3 meet
+- Box 107's lemmas are about 1P(G) and, by Addendum 3's ID, about R104's IDEAL model; §3 already cites the landed twins (R113 ALIGN,
+  R120 MOVE, DOUBLE-EQ, PULSE-NEST). What is new there: ABANDON at any shape and degree, ONE-AHEAD, FROZEN / Ξ-LAST / SEPARATION, CAUSE.
+- Neither box bounds the enumeration depth. Box 107 §4's open step ([Q docs/si/box107-timing.md@06f072f1] «is the signal to S_j computable from the signal to S_(j+1) plus O(1) movers») is the same obstruction my Addendum 3 B-11 names in box 217's A7′: counting alone does not decide it.
+- For a kill: box 107's upward ladders are the live candidate; k = 4 at d = 8 is the deciding query. My own climbs did not reach it
+  (Addendum 4), and the ceiling k ≤ (d + 1)/2 means a family must hit the counting bound at every k.

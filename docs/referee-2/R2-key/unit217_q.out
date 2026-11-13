@@ -16,5 +16,13 @@ OK   R113 | (MOVES) on 𝓛^R_d, KF_x = F(l − 1) and moves(x) ≤ 1 + F(l − 
 OK   R125 | (Lemma LOC-K2-3) σ̄_t(K2) = r and Ω_t(r) ◁ Ω_t(K2) at every state
 OK   R125 | the Howard run on Γ3(G)
 OK   R117 | gives σ̄(K2) = r in every standard state for every genome
-quotes 18 missing 0
-control (--ctrl): quotes 18 missing 18
+OK   docs/si/box107-timing.md@06f072f1 | a mover of lower level on a W-path below one of x's options
+OK   docs/si/box107-timing.md@06f072f1 | a full level-(h − 1) mover has at least h strict Ξ-descendants
+OK   docs/si/box107-timing.md@06f072f1 | Counting gives k ≤ (d + 1)/2 in this class for one full mover
+OK   docs/si/box107-timing.md@06f072f1 | about N5 only through L-NEW's REDUCTION there (lane, conditional)
+OK   docs/si/box107-timing.md@06f072f1 | N 4 T_key 3 … sw [1, 1, 3, 1] full [0, 1, 2]
+OK   docs/si/box107-timing.md@06f072f1 | N 8 T_key 3 … sw [1, 1, 3, 1, 2, 2, 1, 1]
+OK   docs/si/box107-timing.md@06f072f1 | N 12 T_key 8 … sw [1, 1, 3, 3, 7, 1, 3, 3, 3, 2, 1, 1] full [0, 1, 2, 3, 4]
+OK   docs/si/box107-timing.md@06f072f1 | is the signal to S_j computable from the signal to S_(j+1) plus O(1) movers
+quotes 26 missing 0
+control (--ctrl): quotes 26 missing 26
