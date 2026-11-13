@@ -1,62 +1,75 @@
-# Handover check: L-NEW (successor 76; session session_01V5yGRXFkFRGsbtdAPyKqXN; started 2026-11-13 ~06:06Z, written 2026-11-13T06:07Z by date -u)
-Overwrites successor 75's answers (history in git). Each answer measured from the repository at writing (commands named).
-Predecessor: successor 75, parked at l-new f8a042ab (section «HANDOVER (successor 75, PARKING 2026-11-13 04:57Z …)» at the top of notes/L-NEW.md).
-Clock: `date -u` 06:06:23Z against the `date:` header of raw.githubusercontent.com (06:06:23 GMT) in the same command: skew 0 s (< 1 s).
+# Handover check: L-NEW (successor 77; session session_01V5yGRaRvmT6aAyZLgMCHoW; effort xhigh; started 2026-11-13 ~11:54Z, written 2026-11-13T11:56Z by date -u)
+Overwrites successor 76's answers (history in git). Each answer measured from the repository at writing (commands named).
+Predecessor: successor 76, parked at l-new fcea233b (section «HANDOVER (successor 76, PARKING; written 2026-11-13 10:40Z by date -u …)»
+at the top of notes/L-NEW.md).
+Clock: `date -u` 11:54:49Z against the `date:` header of raw.githubusercontent.com (11:54:49 GMT) in the same command: skew 0 s (< 1 s).
+rate_limit_info (get_session on this session, 11:5xZ): isUsingOverage false, rateLimitType seven_day, status allowed_warning,
+resetsAt 1795035600 (= 2026-11-18 21:00:00Z by date -u -d); effort_level xhigh (the model line is in my message to the Lead, not here).
 
 ### 1. Branch, head, ahead/behind trunk
 - Trap check, as briefed: `git fetch --unshallow origin; git fetch origin claude/l-new claude/vibrant-johnson-nxvvxo;
-  git checkout claude/l-new; git merge --ff-only origin/claude/l-new`. The container came up on claude/l-new but 16 commits BEHIND
-  origin/claude/l-new (fast-forwarded to f8a042ab); `git rev-parse --is-shallow-repository` = false.
-  `git branch --show-current` = claude/l-new; `git rev-parse HEAD origin/claude/l-new` both f8a042abf1cf4dea19b74d8765029f3120255df5.
-- Trunk origin/claude/vibrant-johnson-nxvvxo head at my fetch (06:06Z): 65e02855 («Lead: R129 third fill (CHECKER C144 R-E1 …)»,
-  committed 2026-11-13T05:37:20Z). `git rev-list --left-right --count trunk...HEAD` = 481 / 24: **24 ahead / 481 behind**;
-  merge-base 621e6b77 (unchanged since successors 73-75). Not merged by me (the brief does not ask for a merge).
-- RESULTS on trunk 65e02855: `### R128` present (P-N5-GATE, CHECKER C142 a9233137); `### R129` NOT yet present (third fill in flight).
+  git checkout claude/l-new; git merge --ff-only origin/claude/l-new`. The container came up on claude/l-new but 26 commits BEHIND
+  origin/claude/l-new (fast-forwarded to fcea233b). `git branch --show-current` = claude/l-new; `git rev-parse HEAD
+  origin/claude/l-new` both fcea233b3ff030fae54c19d7f0eff19bdac8f50c; working tree clean.
+- Trunk origin/claude/vibrant-johnson-nxvvxo head at my fetch (11:54Z): 5d7aab0f («Lead: log 10:10Z-11:27Z (R130 on origin c6c9646f; …)»,
+  committed 2026-11-13T11:26:58Z). `git rev-list --left-right --count trunk...HEAD` = 531 / 19: **19 ahead / 531 behind**;
+  `git merge-base` = 366a38ab (my lane's commit «P-N5-LEVEL fixes entry 1 + line L-2 by script», taken into trunk; successor 76's
+  check named 621e6b77 at trunk 65e02855). Not merged by me (the brief does not ask for a merge).
+- RESULTS on trunk 5d7aab0f: `grep -c '^### R'` = 130; `### R128`, `### R129`, `### R130` all present.
 
 ### 2. Open work and the next step of each
-- Item 1, BOX 216 VALUE SIDE (approved by the Lead 04:58Z; proposal and terms in notes/L-NEW.md HANDOVER of successor 75):
-  V1 first: per-lemma rule-free reading of the landed value-side lemmas (R121 E-MON; R125 E-MON3, CHAIN-DECOMP3; R127 SPLIT, TRANSFER,
-  REWIN, REWIN-HI, SPLIT-COUNT; R128 GATE-RACE, TRIGGER, GATE-LOW-NULL, NP-SHAPE, E-FACE-PAYS, WAIT-QUIET, SAME-SUFFIX, STEP-BOUND,
-  PARALLEL, PAIR-EXPEL, EXPEL-COUNT, A*-EQUIV), each with its deciding proof line quoted by script; verdict per lemma: uses Howard's tie
-  rule, or only «each moved mover improves strictly» + F1-F6 + static lemmas. Output: the list that holds for ANY improving run of
-  standard states, hence for N5's key run via [IMP3]. Then V2 XFLIP (moves(x) ≤ 1 + XF_x for degree-2 movers, from F2; proof, must-0
-  counter xflip, a firing control «swap the gates' Ξ values»), then V3 JOINT-POLY labelled as a reformulation equivalent to O1′ at
-  degree ≤ 2 up to a factor N (DATA: KF, XF, JF per mover). Next step: statement first (docs/new/N5-VALUESIDE-box216.md), reading
-  the proofs in the landed packets. Not a bound; G-N5-TIME stays OPEN; not M3 or M4.
-- Item 2, duty P-N5-LEVEL / R129 (C144): if CHECKER routes an item to L-NEW: fixes entry 2 + L-3 by script (box211 mkl2 pattern, asserting
-  L-2 sha1 d18125ed); never edit the frozen packet, L-1 or L-2. At writing nothing is routed to L-NEW (Lead's third fill 65e02855
-  carries C144's R-E1/R-E2 strings itself).
-- Boxes 209, 210, 212, 213 (KEY-TAU CANDIDATE), 215 (KEYSIDE-ALL CONDITIONAL on KEY-TAU (i)): under attack (L-RED 69, R241);
-  answers are append-only addenda. Box 214: dead end of its proposal (block lifting), recorded.
-- Running at writing: only `scripts/setup_oink.sh` (tools/oink absent; tracked task). No research job started; none before «go».
+- Item 1 (FIRST JOB), FREEZE packet P-N5-KEY1P (docs/new/P-N5-KEY1P.md; source docs/new/N5-QUIETKEY-box217.md at a143d406, §1, §2, §5 A6′,
+  §6, §6.4). Statement first, then the file, in this order: §1 model 1P(G) (ε pin [NUM]; s_0 via R117 S3-START) → Lemma XI-1P (= §6.4
+  BRIDGE stated as a lemma with its proof) → REDUCTION (N5's run on Γ3(G) from S3 up to its first fallback, read at the movers, is the
+  key run of 1P(G); CONDITIONAL on KEY-TAU (i) unless KEY-TAU (i) is frozen in the same packet — to decide and say which) → Lemma 0,
+  A1-A4, A2-POLY → A6′ as stated (SW-POLY exact; ENUM-LOG necessary only; the converse OPEN) → DATA with named must-0 counters and firing
+  controls. Apply REFEREE-2 40's B-1 (Ξ_s as Lemma XI-1P with proof), B-2 (cite R117 S3-START for s_0), B-3 («= O1» needs
+  F = T_key + 1; cite box 212 only for «O1 is the Ξ-acyclic case»; [IMP3] and G-2 not needed), B-4 (A4's XF clause needs degree 2),
+  B-6 (A6's equivalence is a CONJECTURE), N-5 (DBL4 / RECF4). Every premise from landed RESULTS, quoted by script with its R-id.
+  Next step: read REFEREE-2's Addendum 2 (commit abd629d7; NOT on origin/claude/referee-2 at 11:56Z, whose head is 4657952d = Addendum 1:
+  its push is in verify; I work from the Lead's relay until it shows), write the statement, send it, then the file; freeze SHA to the Lead.
+- Item 2 (after the freeze), own attack on the open part (SW-POLY / ENUM-LOG on 1P(G)), ONE route the two other design lanes (L-SI 55 proof
+  side: box 107 timing lemmas; L-RED 70 construction side: R243) are not on, stated first. Candidates named by the Lead: (a) the
+  half-rate regime (sw = |K|/2 − 1), (b) the Ξ-dual of L-SI's lemmas, (c) lifting (T against k and d at fixed k). Not chosen yet.
+- Item 3, duty: R130 items if CHECKER routes any (none routed at writing).
+- Standing: boxes 209, 210, 212, 213 (KEY-TAU CANDIDATE), 215 (KEYSIDE-ALL, CONDITIONAL; Addendum A e-index form), 216 (value side):
+  under attack / pre-read (KT-1..4, KS-1..3 answered in the packet where they touch it, else in append-only addenda when routed).
+  Box 214: dead end of its proposal, recorded. Track B records (experiments/new/box217/out/rec) are DATA.
+- Running at writing: only `scripts/setup_oink.sh` (tools/oink absent in this container; tracked task). No research job started;
+  none before «go» (the brief's exception: paper work and second-scale runs on item 1 while this push is in verify; no long job, no commit).
 
-### 3. docs/GAPS.md rows I own (`git show trunk:docs/GAPS.md | grep -n L-NEW`, trunk 65e02855)
-- G-N5-TIME (l.11): major; owner «L-NEW (L-LIT T22; referees later)»; status **open** (last UPDATE in the row: 2026-11-13 04:22Z,
-  R128 landed). Box 216 does not close it.
+### 3. docs/GAPS.md rows I own (`git show trunk:docs/GAPS.md | grep -n L-NEW`, trunk 5d7aab0f)
+- G-N5-TIME (l.11): major; owner «L-NEW (L-LIT T22; referees later)»; status **open** (last UPDATE in the row: 2026-11-13 10:06Z,
+  R130 landed). The packet P-N5-KEY1P does not close it (a model, a reduction and an exact reformulation SW-POLY; no bound).
 - G-N1-LB (l.10): minor; owner «L-NEW (optional; not routed)»; status **open**.
 - G-N5-TERM (l.16): major; owner «L-NEW (L-COMP checks runs)»; status **closed** (RESULTS R15).
 
-### 4. Three owner rulings (verbatim; status from docs/DECISIONS-INDEX.md on trunk 65e02855)
+### 4. Three owner rulings (verbatim; status from docs/DECISIONS-INDEX.md on trunk 5d7aab0f)
 1. D18 (INDEX l.32, **active**; text docs/DECISIONS.md l.333): «Focus on N5 and work toward proving it. Explore novel approaches,
    especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable
    assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from
    conjectures and open problems.»
-2. D14 (INDEX l.22, **active**; text docs/DECISIONS.md l.246): «You know it can also test prveiously not tested approaches, it can come
-   up with it own as well»
-3. D1 (INDEX l.5, **active**; excerpt, docs/decisions/D001-launch-brief.md l.25-26): «A claimed polynomial algorithm is far more likely
+2. D1 (INDEX l.5, **active**; excerpt, docs/decisions/D001-launch-brief.md l.25-26): «A claimed polynomial algorithm is far more likely
    to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.»
-- Also in force: D21 (INDEX l.46, **active**) with Lead readings L51 (l.48: maximum effort until 2026-11-14 10:05Z), L52 (l.49), L53
-  (l.50: Fable 5.2 weekly limit reached, resets 2026-11-18 21:00Z; successors on Opus 5.5 high). L55 (l.51) on verify's self-check skip;
-  L56 (per the brief, docs/DECISIONS.md) — the skip applies only to docs/agents/-only changes, so my pushes run verify in full.
+3. D25 (INDEX l.57, **active**; text docs/DECISIONS.md l.541): «So put everything into trying solving it today». Lead reading L58
+   (INDEX l.58, active): the whole fleet works on box 217's ENUM-LOG / QUIET-KEY-1P today, either answer taken; (3) «Nothing in D25
+   relaxes D1».
+- Also in force: D14 (INDEX l.22, **active**; text l.246): «You know it can also test prveiously not tested approaches, it can come up
+  with it own as well»; D21 (INDEX l.46, active; L51: maximum effort until 2026-11-14 10:05Z); D23 (INDEX l.54, active): «I reset the
+  fable weekly limit, please conitnue on high effort, we already used a day, w still have 160% of usage left until tomorrow night»;
+  D24 (INDEX l.56, active): «do xhigh». L56: verify's self-check skip applies only to docs/agents/-only changes (this commit is one;
+  my later pushes run in full).
 
 ### 5. One trap, and the check that prevents it
-- Trap (this lane, many starts; this start: 16 commits behind): the container starts shallow, stale or detached; a commit there forks
+- Trap (this lane, many starts; this start: 26 commits behind): the container starts shallow, stale or detached; a commit there forks
   history and the push fails («invalid refspec» on a detached HEAD) or is rejected as non-fast-forward.
 - Check: fetch --unshallow + fetch the branches by name, checkout + merge --ff-only, then `git branch --show-current` and
-  `git rev-parse HEAD origin/claude/l-new` must agree before any edit (done: claude/l-new, both f8a042ab, not shallow). Before my own
-  push: re-fetch and ff-only again; on a non-fast-forward refusal, merge origin/claude/l-new with --no-ff (never rebase, never force).
-- Also kept (box 216 relevant): a lemma read on a wider class than its proof covers (one-player read as two-player; Howard-only facts
-  read as rule-free: R212's K5how, platexit fire under other rules). V1's check: quote each proof's deciding line by script and run
-  each rule-free claim's counter under a non-Howard rule as a firing control. Reversing the gate order is NOT a control (use a random
-  permutation). Never edit check.sh while verify runs; one push at a time (`pgrep -f "bash scripts/push.sh"` first); SHAs only from git
-  output in a later step; times from `date -u`; no model name in commits.
+  `git rev-parse HEAD origin/claude/l-new` must agree before any edit (done: claude/l-new, both fcea233b). Before my own push:
+  `pgrep -f "bash scripts/push.sh"` (never two pushes), re-fetch and ff-only; on a non-fast-forward refusal, merge
+  origin/claude/l-new with --no-ff (never rebase, never force). Push as a tracked task with a 2-hour timeout, output redirected to a
+  file, then `echo exit $?`; never a pipe, never «&».
+- Packet-relevant traps kept from successors 74-76: (1) a statement read on a wider class than its proof covers: the REDUCTION is for
+  Ξ-acyclic G, N5 (not N5′-xi), Γ3(G) with the input game's e-vertex numbering ([NUM], R241), states before the first fallback only;
+  (2) A6's withdrawn equivalence (only SW-POLY is exact; ENUM-LOG is necessary); DBL4 has k = 0 (half enumeration); (3) a control that
+  cannot fire is no control (reversing the gate order flips every comparison at once: use a random permutation); (4) typed timestamps
+  (three slips by successor 76): stamps are copied from the date -u output of the same command; SHAs only from git output in a later step.
