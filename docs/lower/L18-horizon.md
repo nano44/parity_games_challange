@@ -69,6 +69,10 @@ counter (unit, set, scope). Model: R104's IDEAL model at degree ≤ 2 (sim6; fen
 - P 14, attempt 2: base L18b_N13a, clients 8, 10, 11, R 510: UNSAT, solve 5,699 s (wall 5,749 s, cap 6,000 s, 47.8M clauses), solver
   only, «this neighbourhood only». The same neighbourhood is SAT at R 15: the full-horizon f6 constraint is what fails. Horizon ladder
   (R 32, 64, 130) on the same neighbourhood to locate the f6 conflict before attempt 3 (stop rule: attempt 3 is the last at P 14).
+  Ladder (clients 8, 10, 11, P 14): R 32 SAT 380 s (decode follows rows 0..14, f6 first mismatch row 34); R 64 UNSAT 1,366 s (solver
+  only); R 130 no answer at the 1,500 s cap. So in this neighbourhood f6's constraint first fails in rows 32..63. Screen for attempt 3
+  (UNSAT at R 64 implies UNSAT at R 510): clients {8,10,11,12} and {8,10,11,15} at R 64, cap 3,000 s each, two light jobs in parallel.
+  Tool limit found: all six clients free → RecursionError in enc32c.ro (static-reach recursion has no cycle guard): no answer, not fixed.
 
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All statements are about the IDEAL

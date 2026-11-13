@@ -18,6 +18,8 @@
 - 23:48Z N14a UNSAT 0.4 s (attempt 1 at P 14). R 15 diag ($SP/d15): pairs with 8 UNSAT, {8,10,11} SAT 38.5 s; all-6 RecursionError (pgad6 bug,
   not looked at). RUNNING 23:50Z: N14b = base L18b_N13a, XS 8,10,11, XORD 8,11,10, P 14, R 510, cap 6,000 s (attempt 2).
 - 01:25Z N14b UNSAT 5,699 s (attempt 2 at P 14; solver only). RUNNING 01:27Z: ladder XS 8,10,11 R 32/64/130 (cap 1,500 each, $SP/d15/H_*).
+- 02:20Z ladder: R 32 SAT (f6 first 34), R 64 UNSAT 1,366 s, R 130 capped. RUNNING 02:2xZ: R 64 screens S_12 (8,10,11,12), S_15 (8,10,11,15),
+  cap 3,000 ($SP/d15/S_*.log). Then attempt 3 at R 510 with the SAT screen's clients (or S_14 if both UNSAT). all-6: enc32c.ro RecursionError.
 
 ## Successor 15 HANDOVER (-> successor 16; written 2026-11-12 22:0xZ, date -u; context ~430k)
 ### DONE (claude/l-lower; products docs/lower/L17-around.md (closed §3), docs/lower/L18-horizon.md (open); tools l17/, l18/)
