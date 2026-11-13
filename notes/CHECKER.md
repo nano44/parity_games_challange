@@ -37,6 +37,22 @@ METHOD NOTES (things only I know):
 - Trap: the Stop hook nags «unpushed commits» while a tracked push.sh runs; never start a second push; re-arm the Monitor (30 min).
 - Trap: scratch dirs are lost with the container; everything a successor needs is named above by commit or path in the repo.
 
+## Resume point (successor 24) 07:32Z (2026-11-13, date -u)
+- DONE on origin: C145 PASS 2b02ba34; C142 Add. 2 a9233137, Add. 3 + CLOSED 8ae79bca (R128 landed 8be40f9b byte-equal; closed on my
+  VERIFY_FULL=1 run of an eb22d350 archive, Lead ruling 05:50Z; CI #7663 recorded «self-checks NOT RUN (L55 defect, L56)»); C144 FAIL
+  3f372f9c (E-1 Lean notes, E-2 N-L2), Add. 1 PASS 57ee9e34; C146 FAIL 94c65a8f (E-1: four citations, (c) a swapped REFEREE/REFEREE-2 quote).
+- FINDING (mine, 05:3xZ): L55 disabled experiment self-checks in CI (origin/<branch> = pushed commit in the Actions checkout). Lead fix
+  L56 = 6cec46a5. CI #7675 (43382195304) on 6cec46a5 in progress at 07:33Z: when green, add one supplementary line to C142 (not blocking).
+- NEXT: C144 Add. 2 when R129 lands (expects «checker 57ee9e34)»; merge list l-new 366a38ab, referee 28b95151, referee-2 1177c24d): rebuild =
+  parent RESULTS + R129 draft d[153:309] (65e02855) before «**Erratum E-1** (not a result», GAPS l. 11 + d[325] filled from the landing;
+  adapt scratch c142/reb128.py; then a full re-run on the landing commit (VERIFY_FULL=1 on its archive) or its green CI (#post-L56).
+  C146 Add. 1 on the Lead's third fill of R130 (R-E1 ± O-1), then the landing sim + check_docs on the real trunk after R129.
+- METHOD (this session): UPDATE builders c144/upd.py (labels behind clauses; R126 control byte-equal) and the C146 variant (boundary
+  «; obstruction W-FLAT (», final «.» stripped, pipe→words); quote sweep c144/qs.py (outer quotes vs a corpus dir + line-cited check);
+  for check.sh block runs put the block script INSIDE the archive's experiments/<lane>/ (it does cd "$(dirname "$0")").
+- Own slips: message stamps «04:45Z» and «05:45Z» were typed, not date -u (told the Lead 05:54Z); the 03:21Z push command had a grep and a
+  pgrep before push.sh.
+
 ## Resume point (successor 24, session_01V5yGRXJ9rtWJvFJkY1f1JA) 03:43Z (2026-11-13, date -u)
 - Handover check 101c9aa4 («go» 02:51Z). C145 (Lean #70-#74, l-formal 82ec6eb4): PASS, no E-item, notes N-8..N-11 (2b02ba34); build of
   record = 82ec6eb4's own run 43354270216 job 131652414279. C142 Add. 2 (R128 third fill de2a3f8a): PASS (a9233137, on origin 03:43Z).
