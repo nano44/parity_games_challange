@@ -130,3 +130,15 @@ experiments/red-b: build B3ROOT = work/b3 by git archive as in gclimb.py's heade
 -> work/b3/llit, claude/l-comp aa863db5 experiments/friedmann-hn -> work/b3/lcomp, trunk 7fa6aff4 experiments/n5-second/n5b.py,
 hard-families, harness -> work/b3/trunk); then run_b3.sh work/b3 climbs | fam | fam2, run_b3b.sh work/b3, run_wflat.sh work/b3,
 gverify.py work/b3 OUTDIR STATEFILES. Outputs and the climbs' final state files (the guides) are in data/b3/, pinned in data/SHA1SUMS.
+
+## Addendum A (2026-11-13, L-RED-B successor 3): longer H_n climbs (budget check)
+- H_2, 1,500 steps × 1 (seed 5002): best 44 (first fallback 38), vs 41 at 400 steps (seed 2021).
+- H_3, 1,500 steps × 1 (seed 5003): best 73 (first fallback 47), vs 80 at 400 steps (seed 2031): the longer climb from another seed did
+  NOT beat the shorter one; the counts are seed-limited as much as budget-limited.
+- H_4, 1,500 steps × 1 (seed 5004): PARTIAL at this commit: best 101 (first fallback 97) after 481 steps (vs 102 at 400 steps, seed
+  2041); the final value goes into the B4 report.
+- The family members' OWN guides (start iota, ρ0 = Odd's optimal counterstrategy, γ = ∅; docs/red-b/B4-postfb.md DATA, b4phase.py,
+  both engines): H_n, n = 1..5: N5 iterations 14, 37, 65, 99, 139 with one fallback each at iteration 12, 34, 62, 96, 136. FIT
+  (exact): iterations before the first fallback = 3n² + 13n − 5 (n = 1..5: 11, 33, 61, 95, 135; residuals 0, 0, 0, 0, 0; three
+  parameters, five points). This matches the proxy count 3n² + 13n − 5 that successor 2 reported for H_n (Lead's relay; not DATA of
+  mine before this). switchallexp n = 2..6: 10, 10, 12, 14, 16; LMCS n = 2..6: 8, 9, 11, 13, 15 (both: 2n + 4 for n ≥ 3, residuals 0).
