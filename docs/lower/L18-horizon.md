@@ -45,7 +45,7 @@ counter (unit, set, scope). Model: R104's IDEAL model at degree ≤ 2 (sim6; fen
   | 11 | L18b_N10a | 15 | SAT 1,109 s (wall 1,213, cap 6,000) | L18b_N11a a6e0185b | 0..11 |
   | 12 | L18b_N11a | 14 | SAT 451 s (wall 523, cap 6,000) | L18b_N12a 96fb7995 | 0..12 |
   | 13 | L18b_N12a | 12 | SAT 829 s (wall 920, cap 6,000) | L18b_N13a 2969f3cc | 0..13 |
-  | 14 | L18b_N13a | 8, 10, 11, 12 | screen R 64 SAT 3,358 s (cap 6,000); R 510 by ccheck SAT 32 s | L18b_N14c b7101f79 | 0..14 |
+  | 14 | L18b_N13a | 8, 10, 11, 12 | SAT: found by an R 64 screen (3,358 s, cap 6,000); verified at R 510 by ccheck + f6check (Lead 04:27Z) | L18b_N14c b7101f79 | 0..14 |
   DATA (unit = core8 rows followed by the free run, counter f6 = 129 free pre-states of rows 0..510, scope frame L18b on A2_solved):
   largest P with f6 globally correct = 10 (L18b_N10a); 14 after §4 (L18b_N14c). The pair keeps moving to row 505 in L18b_N510 (65 changes): the «silence» of §2 was a
   property of those designs, not of the frame.
@@ -87,6 +87,7 @@ counter (unit, set, scope). Model: R104's IDEAL model at degree ≤ 2 (sim6; fen
   (genome fully fixed, prefix 14, R 510, KEEP 13 = n.sh's F6KEEP default): SAT, 31.97M clauses, 32 s. The decode is in frame (inframe)
   and fixes everything outside clients 8,10,11,12 as the base does, so it is a model of attempt 3's R 510 formula (base L18b_N13a,
   clients 8,10,11,12): P 14 reached → L18b_N14c b7101f79 (run/SHA1SUMS; log notes the screen origin and the ccheck line).
+  Lead 04:27Z: CONFIRMED as attempt 3 = SAT, recorded as «found by an R 64 screen; verified at R 510 by ccheck + f6check»; screens used at P 14: 4 of 4.
 - P 15: diag at row 15 (L18b_N14c): movers 11 (L5, stay), 15 (L7, stay), 13 (L6, wants to flip). R 16 screen {11,15}: SAT 84 s (prefix
   feasible; decode follows 0..16, f6 61 / 129 as expected at R 16). Attempt 1 at R 510: clients 11, 15 (XORD 11 < 15), cap 6,000 s.
 
