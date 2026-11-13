@@ -79,6 +79,8 @@ counter (unit, set, scope). Model: R104's IDEAL model at degree ≤ 2 (sim6; fen
   formula after renaming variables by allocation site and row; INCLUDED on 2 instances (R 16 vs 18, clients 8,10,11; R 15 vs 22,
   clients 8,10,11,12). So UNSAT at R 64 implies UNSAT at R 510 for the same clients. Record at P 14: the R 15 diagnostics and the
   R 32 / 64 / 130 ladder above were run before the ruling (11 questions); after it, 2 screens: {8,10,11,12} and {8,10,11,15} at R 64.
+  Screens at P 14 (R 64, base L18b_N13a): 1. {8,10,11,12} cap 3,000 s: no answer (wall 3,000 s). 2. {8,10,11,15} cap 3,000 s: no answer
+  (wall 3,000 s). 3. {8,10,11,14} cap 6,000 s: running (03:1xZ).
 
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All statements are about the IDEAL

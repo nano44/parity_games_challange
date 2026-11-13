@@ -20,6 +20,11 @@
 - 01:25Z N14b UNSAT 5,699 s (attempt 2 at P 14; solver only). RUNNING 01:27Z: ladder XS 8,10,11 R 32/64/130 (cap 1,500 each, $SP/d15/H_*).
 - 02:20Z ladder: R 32 SAT (f6 first 34), R 64 UNSAT 1,366 s, R 130 capped. RUNNING 02:2xZ: R 64 screens S_12 (8,10,11,12), S_15 (8,10,11,15),
   cap 3,000 ($SP/d15/S_*.log). Then attempt 3 at R 510 with the SAT screen's clients (or S_14 if both UNSAT). all-6: enc32c.ro RecursionError.
+- Lead 02:22Z RULING: R<510 screens not attempts (≤ 4 per P, monotonicity by script, SAT screen ≠ progress); attempt 3 fails → stop at P 14,
+  write the L18b summary (largest P 13, trend, P 14 obstruction rows 32..63 in {8,10,11}). Done: l18/mono.py INCLUDED (run/mono.txt);
+  all-6 crash = known limit (q/inopt recursion needs acyclic cands; ro fix alone useless, reverted).
+- 03:11Z S_12, S_15 (R 64, cap 3,000): both no answer. RUNNING 03:12Z: S_14 (8,10,11,14) R 64 cap 6,000 (screen 3 of 4); push of 3a2b6d25+3e83685a.
+  Plan: screen 4 = S_12 again at cap 6,000 after the push; attempt 3 at R 510 = a SAT screen's clients, else {8,10,11,12}.
 
 ## Successor 15 HANDOVER (-> successor 16; written 2026-11-12 22:0xZ, date -u; context ~430k)
 ### DONE (claude/l-lower; products docs/lower/L17-around.md (closed §3), docs/lower/L18-horizon.md (open); tools l17/, l18/)
