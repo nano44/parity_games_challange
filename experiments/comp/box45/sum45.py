@@ -42,6 +42,11 @@ def part_a():
         for b, nmm, c in R:
             if c["dmaxNS"] >= 2: hi.append((nm, b, nmm, c))
     print("\nTotal over the sets above: %d genome runs, %d flips." % (tot["n"], tot["fl"]))
+    one = []
+    for nm, fn, what in sets:
+        p = os.path.join(O, fn)
+        if os.path.exists(p): one += [(nm, b) for b, _, c in rows(p) if c["dmaxNS"] == 1]
+    print("\nGenome runs with max depthNS = 1: %d (%s)." % (len(one), "; ".join("%s: %s" % (k, ", ".join(sorted({b for n2, b in one if n2 == k}))) for k in sorted({n2 for n2, _ in one}))))
     print("\nGenomes with max depthNS = 2 (none higher):")
     seen = set()
     for nm, b, nmm, c in hi:

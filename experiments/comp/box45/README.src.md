@@ -29,7 +29,8 @@ DHIB18_2805, DWT20_2803, C7_NM105»; that list came from a grep matching dmaxNS 
   whole run, states 0..T3; «> 3» = depth above c = 3; Int = internal gates of their SCC after t0, box 100 §4):
 @@A@@
 - READING (DATA, these sets only; not a bound): on every genome run here, the elements of Π more relevant than the top difference z lie in the
-  common END of the two plays, except on 9 genomes where at most 2 of them do not (depthNS ≤ 2). So box 100's depth is, on these data, almost
+  common END of the two plays, except on 11 distinct genomes, where 1 (10 genomes, listed above; DHIB18_2805, DWT20_2803, RWX_n95 occur in
+  two sets) or 2 (DSALT9_n416) of them do not. So box 100's depth is, on these data, almost
   entirely the shared end of the two plays: the part TAIL can lengthen at will. A depth notion that discounts that shared end leaves every
   flip shallow (deepNS = 0 at c = 3), so DEEP-type counts measured this way are 0 here and the open quantity is the Λ-quiet flip count itself
   (as box 43's reading 2 said), item (b).
