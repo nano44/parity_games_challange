@@ -1,0 +1,14 @@
+Fri Nov 13 00:22:22 UTC 2026
+IMP239  DBL4_d20_F30.json: N 40 |V| 610 F1 31 iterations 33 fallbacks 1 nonstd 0 nomove 0 offmover 0 notimp 0 tauch 0 xdiff 0
+IMP239  H5_d20_F62.json: N 40 |V| 610 F1 137 iterations 139 fallbacks 1 nonstd 0 nomove 0 offmover 0 notimp 0 tauch 0 xdiff 0
+IMP239  H6_d24_F126.json: N 48 |V| 730 F1 210 iterations 212 fallbacks 1 nonstd 0 nomove 0 offmover 0 notimp 0 tauch 0 xdiff 0
+IMP239  HIT7_d28_F254.json: N 56 |V| 850 F1 300 iterations 302 fallbacks 1 nonstd 0 nomove 0 offmover 0 notimp 0 tauch 0 xdiff 0
+IMP239  RECF4_d20_F60.json: N 40 |V| 610 F1 68 iterations 70 fallbacks 1 nonstd 0 nomove 0 offmover 0 notimp 0 tauch 0 xdiff 0
+IMP239 json 5: nonstd 0 nomove 0 offmover 0 notimp 0 tauch 0 | genomes 5 non-fallback steps 741 max F1 300 sum F1 746 no-fallback runs 0 max |V| 850 | second engine (n5v spec) sampled 5 xdiff 0 | 122 s
+IMP239 rand 2391 1000 6 3 3: nonstd 0 nomove 0 offmover 0 notimp 0 tauch 0 | genomes 1000 non-fallback steps 652 max F1 4 sum F1 1652 no-fallback runs 0 max |V| 135 | second engine (n5v spec) sampled 50 xdiff 0 | 3 s
+IMP239 rand 2392 500 10 4 3: nonstd 0 nomove 0 offmover 0 notimp 0 tauch 0 | genomes 500 non-fallback steps 437 max F1 5 sum F1 937 no-fallback runs 0 max |V| 195 | second engine (n5v spec) sampled 25 xdiff 0 | 4 s
+IMP239 rand 2393 300 16 5 3: nonstd 0 nomove 0 offmover 0 notimp 0 tauch 0 | genomes 300 non-fallback steps 300 max F1 4 sum F1 600 no-fallback runs 0 max |V| 271 | second engine (n5v spec) sampled 15 xdiff 0 | 3 s
+IMP239 rand 2394 200 24 8 2: nonstd 0 nomove 0 offmover 0 notimp 0 tauch 0 | genomes 200 non-fallback steps 202 max F1 5 sum F1 402 no-fallback runs 0 max |V| 300 | second engine (n5v spec) sampled 10 xdiff 0 | 3 s
+IMP239 rand 2391 200 6 3 3 CTRL 1: nonstd 0 nomove 0 offmover 0 notimp 180 tauch 0 | genomes 200 non-fallback steps 132 max F1 4 sum F1 332 no-fallback runs 0 max |V| 128 | second engine (n5v spec) sampled 0 xdiff 0 | 1 s | first nonzero (0, {'nonstd': 0, 'nomove': 0, 'offmover': 0, 'notimp': 1, 'tauch': 0})
+exit 0
+Fri Nov 13 00:24:39 UTC 2026
