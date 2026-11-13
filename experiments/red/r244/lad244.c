@@ -5,6 +5,8 @@
    Simulated annealing with restarts; prints every improvement of k and the best genome (JSON, enum243 / sim244 format).
    Seeded mode (SEEDFILE INS): the start (and every restart) is the seed genome (text, dumpseed244.py) with d - d_seed new random levels
    inserted at level INS (old levels >= INS move up; old Xi-targets, gate orders, starts and the relative beta rank order are kept).
+   Env SC2=1: score = (k, stagger KF of the two movers of level k-1 (key-order flips, capped at 2^(k+1) - 2), their smaller switch count, best(k), T):
+   a gradient toward a STAGGERED full pair on top (step 1 of PAIR-ON-TOP) before the next level can fill.
    Usage: lad244 d SEED EVALS OUT.json TEMP [SEEDFILE INS]     (d <= 15: values in __int128) */
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,7 +20,7 @@ typedef struct { int xt[MAXN][2], gp[MAXD], br[4 * MAXD], bp[4 * MAXD], st[MAXN]
 static int perms[24][4];
 static void mkperms(void) { int n = 0; for (int a = 0; a < 4; a++) for (int b = 0; b < 4; b++) for (int c = 0; c < 4; c++) for (int e = 0; e < 4; e++)
   if (a != b && a != c && a != e && b != c && b != e && c != e) { perms[n][0] = a; perms[n][1] = b; perms[n][2] = c; perms[n][3] = e; n++; } }
-static int topo[MAXN], sw[MAXN];
+static int topo[MAXN], sw[MAXN], KFL[MAXD], SC2 = 0;
 static int mktopo(const gen *g) {      /* Xi-targets first; 0 if cyclic */
   int col[MAXN] = {0}, n = 0, stk[MAXN], it[MAXN];
   for (int r = 0; r < N; r++) { if (col[r]) continue; int sp = 0; stk[0] = r; it[0] = 0; col[r] = 1;
@@ -32,7 +34,7 @@ static long run(const gen *g, long cap) {
   for (int x = 0; x < N; x++) { s[x] = g->st[x]; sw[x] = 0; int l = x / 2, m = x % 2;
     for (int c = 0; c < 2; c++) { int b = 4 * l + 2 * m + c; gate[x][c] = perms[g->gp[l]][2 * m + c];
       om[x][c] = ((i128)1 << (2 * g->br[b] + g->bp[b])) * (g->bp[b] == 0 ? 1 : -1); } }
-  V[N] = 0;
+  V[N] = 0; int prevo[MAXD]; for (int l = 0; l < d; l++) { prevo[l] = -1; KFL[l] = 0; }
   while (T < cap) {
     for (int i = 0; i < N; i++) { int x = topo[i], t = g->xt[x][s[x]]; V[x] = om[x][s[x]] + V[t < 0 ? N : t]; }
     int ch = 0;
@@ -48,6 +50,8 @@ static long run(const gen *g, long cap) {
       }
       memcpy(key[x], bk, sizeof(int) * (l + 1)); ns[x] = best; if (best != s[x]) { sw[x]++; ch = 1; }
     }
+    for (int l = 0; l < d; l++) { int o = 0; for (int i = 0; i <= l; i++) if (key[2 * l][i] != key[2 * l + 1][i]) { o = key[2 * l][i] < key[2 * l + 1][i]; break; }
+      if (prevo[l] >= 0 && o != prevo[l]) KFL[l]++; prevo[l] = o; }
     if (!ch) break;
     memcpy(s, ns, sizeof(int) * N); T++;
   }
@@ -58,7 +62,10 @@ static double score(const gen *g, int *kk, long *TT) {
   long T = run(g, 50000); int k = 0; long part = 0;
   for (int l = 0; l < d; l++) { int b = sw[2 * l] > sw[2 * l + 1] ? sw[2 * l] : sw[2 * l + 1]; long c = (1L << (l + 1)) - 1;
     if (b == c && k == l) k++; else { if (l == k) part = b < c ? b : 0; break; } }
-  *kk = k; *TT = T; return k * 1e6 + part * 1e3 + (T < 999 ? T : 999);
+  *kk = k; *TT = T;
+  if (SC2 && k >= 1) { long kf = KFL[k - 1], cap2 = (1L << (k + 1)) - 2; int lo = sw[2 * (k - 1)] < sw[2 * (k - 1) + 1] ? sw[2 * (k - 1)] : sw[2 * (k - 1) + 1];
+    return k * 1e9 + (kf < cap2 ? kf : cap2) * 1e6 + lo * 1e4 + part * 1e2 + (T < 99 ? T : 99); }   /* SC2: stagger of the top full level first */
+  return k * 1e6 + part * 1e3 + (T < 999 ? T : 999);
 }
 static unsigned long long rs;
 static unsigned rnd(void) { rs ^= rs << 13; rs ^= rs >> 7; rs ^= rs << 17; return (unsigned)(rs >> 11); }
@@ -107,6 +114,7 @@ static void dump(const gen *g, const char *fn, int k, long T) {
 int main(int argc, char **argv) {
   d = atoi(argv[1]); long seed = atol(argv[2]); long EV = atol(argv[3]); const char *out = argv[4]; double temp = argc > 5 ? atof(argv[5]) : 0.0;
   rs = 88172645463325252ULL ^ (unsigned long long)seed * 0x9E3779B97F4A7C15ULL; N = 2 * d; M = 4 * d; mkperms();
+  SC2 = getenv("SC2") != NULL;
   if (argc > 7) { FILE *f = fopen(argv[6], "r"); INS = atoi(argv[7]); if (fscanf(f, "%d", &seedd) != 1) return 2;
     for (int x = 0; x < 2 * seedd; x++) { int g0, g1, pi = -1; if (fscanf(f, "%d %d %d %d %d", &seedg.st[x], &seedg.xt[x][0], &seedg.xt[x][1], &g0, &g1) != 5) return 2;
       if (x % 2 == 1) { int w[4] = {seedg.br[0], seedg.br[1], g0, g1}; for (int p = 0; p < 24; p++) if (perms[p][0] == w[0] && perms[p][1] == w[1] && perms[p][2] == w[2] && perms[p][3] == w[3]) pi = p; if (pi < 0) return 4; seedg.gp[x / 2] = pi; }

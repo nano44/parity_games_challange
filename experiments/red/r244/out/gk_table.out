@@ -1,0 +1,9 @@
+k | N | M | n(Γ3) | 135k-230 | T_key (N5 FL run) | 2^k-2 | first fallback | N5 iterations | 2^k+1 | fallbacks | must-0 counters nonzero / all | n5v xdiff | maxsw | to the end: iterations, wrong, bad_E, bad_O
+3 | 11 | 22 | 175 | 175 | 6 | 6 | 7 | 9 | 9 | 1 | 0 / 34 | 0 | 2 | 9, 0, 0, 0
+4 | 20 | 40 | 310 | 310 | 14 | 14 | 15 | 17 | 17 | 1 | 0 / 34 | 0 | 4 | 17, 0, 0, 0
+5 | 29 | 58 | 445 | 445 | 30 | 30 | 31 | 33 | 33 | 1 | 0 / 34 | 0 | 8 | 33, 0, 0, 0
+6 | 38 | 76 | 580 | 580 | 62 | 62 | 63 | 65 | 65 | 1 | 0 / 34 | 0 | 16 | 65, 0, 0, 0
+7 | 47 | 94 | 715 | 715 | 126 | 126 | 127 | 129 | 129 | 1 | 0 / 34 | 0 | 32 | 129, 0, 0, 0
+8 | 56 | 112 | 850 | 850 | 254 | 254 | 255 | 257 | 257 | 1 | 0 / 34 | 0 | 64 | not run
+ALL ROWS AS CLAIMED
+fit: log2(iterations - 1) - k for k = [3, 4, 5, 6, 7, 8] : [0.0, 0.0, 0.0, 0.0, 0.0, 0.0] ; iterations = 2^((n + 230) / 135) + 1 exactly on these rows

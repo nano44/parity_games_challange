@@ -1,0 +1,9 @@
+ZCHECK244 G_3_renum.json: N 11 n 175 m 228 N5 iterations 9 fallbacks 1 | Even wins 174 of 175 | wrong 0 bad_E 0 bad_O 0 | ctrl 0
+ZCHECK244 G_4_renum.json: N 20 n 310 m 404 N5 iterations 17 fallbacks 1 | Even wins 309 of 310 | wrong 0 bad_E 0 bad_O 0 | ctrl 0
+ZCHECK244 G_5_renum.json: N 29 n 445 m 580 N5 iterations 33 fallbacks 1 | Even wins 444 of 445 | wrong 0 bad_E 0 bad_O 0 | ctrl 0
+ZCHECK244 G_6_renum.json: N 38 n 580 m 756 N5 iterations 65 fallbacks 1 | Even wins 579 of 580 | wrong 0 bad_E 0 bad_O 0 | ctrl 0
+ZCHECK244 G_7_renum.json: N 47 n 715 m 932 N5 iterations 129 fallbacks 1 | Even wins 714 of 715 | wrong 0 bad_E 0 bad_O 0 | ctrl 0
+exit 0
+ZCHECK244 G_3_renum.json: N 11 n 175 m 228 N5 iterations 9 fallbacks 1 | Even wins 174 of 175 | wrong 102 bad_E 0 bad_O 0 | ctrl 1
+ZCHECK244 G_4_renum.json: N 20 n 310 m 404 N5 iterations 17 fallbacks 1 | Even wins 309 of 310 | wrong 183 bad_E 0 bad_O 0 | ctrl 1
+exit 0

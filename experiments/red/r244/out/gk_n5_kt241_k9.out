@@ -1,0 +1,2 @@
+KT241 mode spec G_9_renum.json: std 0 tau3 0 w3 0 lenvar 0 kp 0 kpf 0 kpa 0 unreach 0 mukappa 0 muinc 0 muflat 0 mulen 0 kviol 0 nomove 0 eord 0 kpg 0 lkp 0 pkf 0 pkfa 0 kflip 0 kflipm 0 casc 0 ftt 0 ladder 0 nullbad 0 kpg_e 0 lkp_e 0 pkf_e 0 pkfa_e 0 kflip_e 0 kflipm_e 0 casc_e 0 ftt_e 0 ladder_e 0 | T 510 switches 1399 nlk 0 maxsw 128 maxK 1024 ladders 0 nullsw 0 nullxi 0 | N 65 n 985 F1 511 its 513 fb 1 xicyc 0 cycuse 0 slack -761 muroom 29260 xdiff 0
+k 9 exit 0 12:34:57Z

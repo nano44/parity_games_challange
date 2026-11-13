@@ -3624,3 +3624,25 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
 - Things only I know: (1) pair244's INTACT filter compares per-level BEST switch counts below F and sw(F); (2) lad244 seeded mode: INS = d_seed
   appends on top, INS = k inserts above the block; restarts re-lift the seed; (3) dual244's template fields: xi (4 bits), gate perm, β rank perm,
   signs, starts; (4) the blind climb needed 27M evaluations for k 3 at d 5 and two other seeds failed at 150M: it is a lottery, not a method.
+- 2026-11-13T12:32Z: RE-TARGET by the Lead 12:19Z (adversary OF THE KILL CLAIM). R245 written (docs/red/R245-gk-verdict.md): L-RED-B 5's rule-built family G_k
+  (rule relayed 12:27Z; N = 9k − 16) rebuilt from the text (gk244.py; 4 sha1 equal to the Lead's), VERDICT SURVIVES: G_k^renum ∈ IDEAL-ACYC (class244.py;
+  gates need the order-preserving renumbering, Lemma RENUM), T_key = 2^k − 2 for k = 3..12 on sim244 and ideal.traj, N5 itself (kt241 = own n5s237 + n5v,
+  34 counters 0) 2^k + 1 iterations at k = 3..8, Zielonka-checked to the end at k = 3..7 (zcheck244.py, control fires), robust to 1,200 ε renumberings
+  (robust244.py), start-dependent, outside 𝓛^R_d. Limits: Γ3 builder is L-NEW's (no own builder); no all-k proof; proofs of R104 / R117 not re-read for wires.
+
+## HANDOVER (successor 70 -> 71), 2026-11-13T12:32Z (date -u)
+- DONE and reported: R244 (306d74f6: PAIR-ON-TOP step 1 fails on H5PLUS_L5 and on the N = 10 instance; lemmas C-ELEMENT, VALUE-LAST; XOR statement) and
+  R245 (verdict SURVIVES on the kill candidate G_k; sent to the Lead 12:30Z). Commit + push of R245 and its tools: see the last lines of this section.
+- OPEN, for the Lead to route (R245 §7): (a) induction proof of T_key(G_k) = 2^k − 2 (L-SI's successor); (b) an independent Γ3 builder from R117's text
+  (I offered it; not started); (c) N5 at k ≥ 9 on the existing harness (kt241 json on gk/G_k_renum.json; k 8 took about 1 minute; zcheck244 runs N5 to
+  its end and my Zielonka: k 7 a few seconds); (d) referee read of R104 / R117 proofs for wires (two options on one W-target).
+- ON HOLD / dropped: 2-wide seeded lifts k 3 → 4 (stopped unfinished: out/lift_sc2_d7.log is partial; no k 4 seen); DEEP3 climbs (older hold).
+- Envs (scratchpad, rebuilt per container): lnewfull = git archive a143d406 experiments/new experiments/si/si.py experiments/harness
+  experiments/hard-families experiments/n5-second (LNEW for kt241.py and zcheck244.py; one217.py --check runs from that root); towers = git archive
+  cd4f7f4d experiments/new/box212/inst; C tools are compiled in the scratchpad (gcc -O2 FILE.c [-lm]).
+- Commands: python3 experiments/red/r244/gk244.py 3 12 DIR renum; gkrun244.py 3 12 DIR; robust244.py 4 7 300 1;
+  LNEW=<lnewfull> python3 experiments/red/r241/kt241.py json DIR/G_k_renum.json; LNEW=<lnewfull> python3 experiments/red/r244/zcheck244.py DIR/G_k_renum.json.
+- Lessons: (1) stamp messages only from date -u output; (2) never «&»; (3) a commit made while push.sh verifies is forbidden here, and the stop hook asks
+  for it anyway: wait for the push task's notification, then commit; (4) do not edit tracked files while verify runs (I edited lad244.c one minute into a
+  verify: the verified tree then differed from the commit by that file; say so in the report, as I did); (5) rate limit seen at 12:04Z: seven_day
+  allowed_warning, isUsingOverage false.

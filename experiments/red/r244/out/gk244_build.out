@@ -1,0 +1,11 @@
+GK244 G_3: N 11 M 22 levels 4 sha1(json.dumps) cd3cd7e361dfe16482bbe56eb87d3e3decf9e6af
+GK244 G_4: N 20 M 40 levels 5 sha1(json.dumps) 7a2218bfa94e37f85b3fc60d874030aeba8ca848
+GK244 G_5: N 29 M 58 levels 6 sha1(json.dumps) d3fb68bb84bafd87e26c4cffc8fcb1989f5123aa
+GK244 G_6: N 38 M 76 levels 7 sha1(json.dumps) 42f3a827ec063de28e1e1ae12188c6584906675c
+GK244 G_7: N 47 M 94 levels 8 sha1(json.dumps) 14b14a3b57ff596e9c087ba1aedc6973d8c509d6
+GK244 G_8: N 56 M 112 levels 9 sha1(json.dumps) d3ad8e2e6f202eb17e66d04dad77de1a33e74eb2
+GK244 G_9: N 65 M 130 levels 10 sha1(json.dumps) 570ec5847a03a672d5d06c3dc8c481df39319d46
+GK244 G_10: N 74 M 148 levels 11 sha1(json.dumps) da29d33ecaf20cb777650729e54acb1dad17cfd9
+GK244 G_11: N 83 M 166 levels 12 sha1(json.dumps) 4099ecb35b3be703c3c936cdd147919e6f236284
+GK244 G_12: N 92 M 184 levels 13 sha1(json.dumps) 6484acf7ec1d7e14c6433f0d010bd195a450e868
+exit 0
