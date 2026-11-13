@@ -1,0 +1,22 @@
+START restart 0 seed seed_gen37_6.json QP 26 NM 203 ratio 0.1281
+BEST BEST_B2_T26_NM202_dbd94bc6.json QP 26 NM 202 ratio 0.1287 | text engine qmax 26 ratio 0.1287 T3 43 (fast37 43) agree True | qflip 45 deepNS 0 gmaxNS 0 gmax100 6 unm 0 pimis 0 | restart 0 step 21 evals 21
+BEST BEST_B2_T26_NM201_39b84535.json QP 26 NM 201 ratio 0.1294 | text engine qmax 26 ratio 0.1294 T3 43 (fast37 43) agree True | qflip 45 deepNS 0 gmaxNS 0 gmax100 6 unm 0 pimis 0 | restart 0 step 25 evals 25
+BEST BEST_B2_T28_NM201_0ec3b84d.json QP 28 NM 201 ratio 0.1393 | text engine qmax 28 ratio 0.1393 T3 39 (fast37 39) agree True | qflip 43 deepNS 0 gmaxNS 0 gmax100 8 unm 0 pimis 0 | restart 0 step 110 evals 108
+BEST BEST_B2_T28_NM200_aa410c45.json QP 28 NM 200 ratio 0.1400 | text engine qmax 28 ratio 0.1400 T3 39 (fast37 39) agree True | qflip 43 deepNS 0 gmaxNS 0 gmax100 8 unm 0 pimis 0 | restart 0 step 119 evals 116
+BEST BEST_B2_T28_NM199_819d88b5.json QP 28 NM 199 ratio 0.1407 | text engine qmax 28 ratio 0.1407 T3 38 (fast37 38) agree True | qflip 43 deepNS 0 gmaxNS 0 gmax100 8 unm 0 pimis 0 | restart 0 step 131 evals 127
+BEST BEST_B2_T28_NM198_1015d397.json QP 28 NM 198 ratio 0.1414 | text engine qmax 28 ratio 0.1414 T3 38 (fast37 38) agree True | qflip 43 deepNS 0 gmaxNS 0 gmax100 8 unm 0 pimis 0 | restart 0 step 147 evals 143
+BEST BEST_B2_T28_NM197_590c9086.json QP 28 NM 197 ratio 0.1421 | text engine qmax 28 ratio 0.1421 T3 38 (fast37 38) agree True | qflip 43 deepNS 0 gmaxNS 0 gmax100 8 unm 0 pimis 0 | restart 0 step 156 evals 152
+BEST BEST_B2_T28_NM196_8f87bb89.json QP 28 NM 196 ratio 0.1429 | text engine qmax 28 ratio 0.1429 T3 37 (fast37 37) agree True | qflip 43 deepNS 0 gmaxNS 0 gmax100 8 unm 0 pimis 0 | restart 0 step 165 evals 158
+BEST BEST_B2_T28_NM195_c80b6992.json QP 28 NM 195 ratio 0.1436 | text engine qmax 28 ratio 0.1436 T3 35 (fast37 35) agree True | qflip 43 deepNS 0 gmaxNS 0 gmax100 8 unm 0 pimis 0 | restart 0 step 187 evals 180
+BEST BEST_B2_T28_NM194_3d597d00.json QP 28 NM 194 ratio 0.1443 | text engine qmax 28 ratio 0.1443 T3 34 (fast37 34) agree True | qflip 43 deepNS 0 gmaxNS 0 gmax100 8 unm 0 pimis 0 | restart 0 step 204 evals 195
+BEST BEST_B2_T28_NM193_6a59c623.json QP 28 NM 193 ratio 0.1451 | text engine qmax 28 ratio 0.1451 T3 32 (fast37 32) agree True | qflip 43 deepNS 0 gmaxNS 0 gmax100 8 unm 0 pimis 0 | restart 0 step 223 evals 213
+BEST BEST_B2_T29_NM193_c7f84614.json QP 29 NM 193 ratio 0.1503 | text engine qmax 29 ratio 0.1503 T3 32 (fast37 32) agree True | qflip 44 deepNS 0 gmaxNS 0 gmax100 8 unm 0 pimis 0 | restart 0 step 238 evals 227
+BEST BEST_B2_T29_NM192_cf2a32c9.json QP 29 NM 192 ratio 0.1510 | text engine qmax 29 ratio 0.1510 T3 31 (fast37 31) agree True | qflip 44 deepNS 0 gmaxNS 0 gmax100 8 unm 0 pimis 0 | restart 0 step 292 evals 279
+END restart 0: current QP 29 NM 192 ratio 0.1510; best so far [29, 192]; evals 380
+START restart 1 seed seed_MWR_6.json QP 13 NM 203 ratio 0.0640
+END restart 1: current QP 23 NM 186 ratio 0.1237; best so far [29, 192]; evals 754
+START restart 2 seed seed_gen37_6.json QP 26 NM 203 ratio 0.1281
+END restart 2: current QP 26 NM 191 ratio 0.1361; best so far [29, 192]; evals 1136
+START restart 3 seed seed_MWR_6.json QP 13 NM 203 ratio 0.0640
+END restart 3: current QP 13 NM 185 ratio 0.0703; best so far [29, 192]; evals 1508
+DONE B2: best [29, 192] BEST_B2_T29_NM192_cf2a32c9.json evals 1508

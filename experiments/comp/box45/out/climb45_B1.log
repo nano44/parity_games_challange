@@ -8,3 +8,11 @@ BEST BEST_B1_T15_NM112_1113fdf1.json QP 15 NM 112 ratio 0.1339 | text engine qma
 BEST BEST_B1_T15_NM111_ddf9309f.json QP 15 NM 111 ratio 0.1351 | text engine qmax 15 ratio 0.1351 T3 17 (fast37 17) agree True | qflip 25 deepNS 0 gmaxNS 0 gmax100 3 unm 0 pimis 0 | restart 0 step 292 evals 278
 BEST BEST_B1_T15_NM110_fabc8587.json QP 15 NM 110 ratio 0.1364 | text engine qmax 15 ratio 0.1364 T3 16 (fast37 16) agree True | qflip 25 deepNS 0 gmaxNS 0 gmax100 3 unm 0 pimis 0 | restart 0 step 294 evals 280
 BEST BEST_B1_T15_NM109_d4cf0e34.json QP 15 NM 109 ratio 0.1376 | text engine qmax 15 ratio 0.1376 T3 16 (fast37 16) agree True | qflip 25 deepNS 0 gmaxNS 0 gmax100 3 unm 0 pimis 0 | restart 0 step 348 evals 331
+END restart 0: current QP 15 NM 109 ratio 0.1376; best so far [15, 109]; evals 378
+START restart 1 seed seed_MWR_3.json QP 7 NM 116 ratio 0.0603
+END restart 1: current QP 13 NM 104 ratio 0.1250; best so far [15, 109]; evals 744
+START restart 2 seed seed_gen37_3.json QP 14 NM 116 ratio 0.1207
+END restart 2: current QP 14 NM 108 ratio 0.1296; best so far [15, 109]; evals 1111
+START restart 3 seed seed_MWR_3.json QP 7 NM 116 ratio 0.0603
+END restart 3: current QP 7 NM 102 ratio 0.0686; best so far [15, 109]; evals 1477
+DONE B1: best [15, 109] BEST_B1_T15_NM109_d4cf0e34.json evals 1477
