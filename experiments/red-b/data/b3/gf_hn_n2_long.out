@@ -1,0 +1,8 @@
+start its 37 F1 34 |Wg| 899
+it 10 its 39 F1 34 fbs 1 hsteps 33 hmoves 129 tauch 0
+it 17 its 40 F1 35 fbs 1 hsteps 34 hmoves 130 tauch 0
+it 72 its 41 F1 35 fbs 1 hsteps 34 hmoves 129 tauch 0
+it 216 its 42 F1 37 fbs 1 hsteps 36 hmoves 134 tauch 0
+it 250 its 43 F1 38 fbs 1 hsteps 37 hmoves 145 tauch 0
+it 342 its 44 F1 38 fbs 1 hsteps 37 hmoves 147 tauch 0
+GFAM hn_n2_s5002_c1 |H| 42 its 44 F1 38 fbs 1 |Wg| 899 hsteps 37 wrong 0 730s

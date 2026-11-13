@@ -1,0 +1,8 @@
+start its 9 F1 6 |Wg| 785
+it 0 its 10 F1 5 fbs 1 hsteps 4 hmoves 18 tauch 0
+it 4 its 14 F1 7 fbs 1 hsteps 6 hmoves 20 tauch 0
+it 41 its 15 F1 8 fbs 1 hsteps 7 hmoves 15 tauch 0
+it 88 its 17 F1 11 fbs 1 hsteps 10 hmoves 25 tauch 0
+it 133 its 19 F1 13 fbs 1 hsteps 12 hmoves 32 tauch 0
+it 335 its 21 F1 13 fbs 1 hsteps 12 hmoves 21 tauch 0
+GFAM lmcs_n3_s3031_c1 |H| 34 its 21 F1 13 fbs 1 |Wg| 785 hsteps 12 wrong 0 71s

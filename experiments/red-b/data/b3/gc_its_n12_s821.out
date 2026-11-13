@@ -1,0 +1,21 @@
+it 2 its 4 F1 1 fbs 1 |Wg| 215 hsteps 0 hmoves 0 tauch 0
+it 4 its 4 F1 1 fbs 1 |Wg| 209 hsteps 0 hmoves 0 tauch 0
+it 5 its 5 F1 3 fbs 1 |Wg| 210 hsteps 2 hmoves 2 tauch 0
+it 16 its 5 F1 3 fbs 1 |Wg| 208 hsteps 2 hmoves 2 tauch 0
+it 23 its 6 F1 3 fbs 1 |Wg| 217 hsteps 2 hmoves 2 tauch 0
+it 24 its 6 F1 3 fbs 1 |Wg| 211 hsteps 2 hmoves 2 tauch 0
+it 46 its 8 F1 2 fbs 1 |Wg| 212 hsteps 1 hmoves 1 tauch 0
+it 56 its 9 F1 2 fbs 1 |Wg| 213 hsteps 1 hmoves 1 tauch 0
+it 71 its 9 F1 2 fbs 1 |Wg| 207 hsteps 1 hmoves 1 tauch 0
+it 94 its 10 F1 3 fbs 1 |Wg| 216 hsteps 2 hmoves 2 tauch 0
+it 142 its 10 F1 3 fbs 1 |Wg| 210 hsteps 2 hmoves 2 tauch 0
+it 172 its 10 F1 3 fbs 1 |Wg| 204 hsteps 2 hmoves 2 tauch 0
+it 185 its 10 F1 3 fbs 1 |Wg| 198 hsteps 2 hmoves 2 tauch 0
+it 190 its 10 F1 3 fbs 1 |Wg| 196 hsteps 2 hmoves 2 tauch 0
+it 202 its 10 F1 3 fbs 1 |Wg| 190 hsteps 2 hmoves 2 tauch 0
+it 272 its 10 F1 3 fbs 1 |Wg| 181 hsteps 2 hmoves 3 tauch 0
+it 358 its 10 F1 3 fbs 1 |Wg| 179 hsteps 2 hmoves 3 tauch 0
+it 734 its 10 F1 3 fbs 1 |Wg| 177 hsteps 2 hmoves 2 tauch 0
+it 751 its 10 F1 3 fbs 1 |Wg| 175 hsteps 2 hmoves 2 tauch 0
+it 1696 its 11 F1 3 fbs 1 |Wg| 184 hsteps 2 hmoves 2 tauch 0
+GCLIMB its_s821_n12_c1 its 11 F1 3 fbs 1 |Wg| 184 hsteps 2 wrong 0 23s

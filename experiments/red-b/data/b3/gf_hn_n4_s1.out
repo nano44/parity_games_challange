@@ -1,0 +1,5 @@
+start its 99 F1 96 |Wg| 2078
+it 63 its 100 F1 97 fbs 1 hsteps 96 hmoves 664 tauch 0
+it 191 its 102 F1 97 fbs 1 hsteps 96 hmoves 644 tauch 0
+start its 102 F1 97 |Wg| 2078
+GFAM hn_n4_s2041_c1 |H| 84 its 102 F1 97 fbs 1 |Wg| 2078 hsteps 96 wrong 0 669s

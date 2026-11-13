@@ -1,0 +1,16 @@
+it 0 its 4 F1 2 fbs 1 |Wg| 126 hsteps 1 hmoves 1 tauch 0
+it 3 its 4 F1 2 fbs 1 |Wg| 117 hsteps 1 hmoves 1 tauch 0
+it 7 its 4 F1 2 fbs 1 |Wg| 111 hsteps 1 hmoves 2 tauch 0
+it 8 its 4 F1 2 fbs 1 |Wg| 105 hsteps 1 hmoves 2 tauch 0
+it 19 its 4 F1 2 fbs 1 |Wg| 96 hsteps 1 hmoves 1 tauch 0
+it 20 its 4 F1 2 fbs 1 |Wg| 94 hsteps 1 hmoves 1 tauch 0
+it 23 its 4 F1 2 fbs 1 |Wg| 85 hsteps 1 hmoves 1 tauch 0
+it 29 its 4 F1 2 fbs 1 |Wg| 79 hsteps 1 hmoves 1 tauch 0
+it 42 its 4 F1 2 fbs 1 |Wg| 77 hsteps 1 hmoves 1 tauch 0
+it 134 its 5 F1 2 fbs 1 |Wg| 86 hsteps 1 hmoves 1 tauch 0
+it 153 its 7 F1 2 fbs 1 |Wg| 104 hsteps 1 hmoves 2 tauch 0
+it 237 its 8 F1 4 fbs 1 |Wg| 104 hsteps 3 hmoves 3 tauch 0
+it 251 its 9 F1 5 fbs 1 |Wg| 113 hsteps 4 hmoves 5 tauch 0
+it 644 its 9 F1 5 fbs 1 |Wg| 104 hsteps 4 hmoves 5 tauch 0
+it 854 its 10 F1 5 fbs 1 |Wg| 113 hsteps 4 hmoves 5 tauch 0
+GCLIMB its_s761_n6_c1 its 10 F1 5 fbs 1 |Wg| 113 hsteps 4 wrong 0 11s

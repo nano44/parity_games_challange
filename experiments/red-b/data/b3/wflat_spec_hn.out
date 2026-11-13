@@ -1,0 +1,7 @@
+WFLAT alg spec hn_n1 |H| 21 |W| 309 iterations 4 first fallback 2 H-move iterations 1 bound 18 | idxinc 0 notmin 0 hbound 0 taunstd 0
+WFLAT alg spec hn_n2 |H| 42 |W| 686 iterations 4 first fallback 2 H-move iterations 1 bound 47 | idxinc 0 notmin 0 hbound 0 taunstd 0
+WFLAT alg spec hn_n3 |H| 63 |W| 1112 iterations 4 first fallback 2 H-move iterations 1 bound 83 | idxinc 0 notmin 0 hbound 0 taunstd 0
+WFLAT alg spec hn_n4 |H| 84 |W| 1587 iterations 4 first fallback 2 H-move iterations 1 bound 126 | idxinc 0 notmin 0 hbound 0 taunstd 0
+WFLAT alg spec hn_n5 |H| 105 |W| 2111 iterations 4 first fallback 2 H-move iterations 1 bound 176 | idxinc 0 notmin 0 hbound 0 taunstd 0
+WFLAT alg spec hn_n6 |H| 126 |W| 2684 iterations 4 first fallback 2 H-move iterations 1 bound 233 | idxinc 0 notmin 0 hbound 0 taunstd 0
+WFLAT SUMMARY alg spec games 6 | units: idxinc 0 notmin 0 hbound 0 taunstd 0 | games with the counter > 0: idxinc 0 notmin 0 hbound 0 taunstd 0

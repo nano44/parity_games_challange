@@ -1,0 +1,8 @@
+start its 139 F1 136 |Wg| 2762
+it 51 its 140 F1 136 fbs 1 hsteps 135 hmoves 1126 tauch 0
+start its 139 F1 136 |Wg| 2762
+it 62 its 140 F1 136 fbs 1 hsteps 135 hmoves 1108 tauch 0
+it 90 its 150 F1 114 fbs 1 hsteps 113 hmoves 777 tauch 0
+it 187 its 151 F1 115 fbs 1 hsteps 114 hmoves 784 tauch 0
+it 199 its 152 F1 115 fbs 1 hsteps 114 hmoves 783 tauch 0
+GFAM hn_n5_s2051_c1 |H| 105 its 152 F1 115 fbs 1 |Wg| 2762 hsteps 114 wrong 0 4167s

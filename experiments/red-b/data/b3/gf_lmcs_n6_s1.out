@@ -1,0 +1,9 @@
+start its 15 F1 12 |Wg| 1754
+it 9 its 23 F1 12 fbs 1 hsteps 11 hmoves 42 tauch 0
+it 12 its 24 F1 13 fbs 1 hsteps 12 hmoves 54 tauch 0
+it 17 its 25 F1 14 fbs 1 hsteps 13 hmoves 72 tauch 0
+it 18 its 27 F1 14 fbs 1 hsteps 13 hmoves 72 tauch 0
+it 164 its 29 F1 16 fbs 1 hsteps 15 hmoves 53 tauch 0
+it 308 its 30 F1 16 fbs 1 hsteps 15 hmoves 57 tauch 0
+it 311 its 31 F1 17 fbs 1 hsteps 16 hmoves 58 tauch 0
+GFAM lmcs_n6_s3061_c1 |H| 64 its 31 F1 17 fbs 1 |Wg| 1754 hsteps 16 wrong 0 440s

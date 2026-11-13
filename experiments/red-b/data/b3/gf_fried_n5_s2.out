@@ -1,0 +1,9 @@
+start its 14 F1 11 |Wg| 1717
+it 2 its 15 F1 11 fbs 1 hsteps 10 hmoves 75 tauch 0
+it 5 its 21 F1 13 fbs 1 hsteps 12 hmoves 78 tauch 0
+it 8 its 22 F1 14 fbs 1 hsteps 13 hmoves 107 tauch 0
+it 32 its 23 F1 14 fbs 1 hsteps 13 hmoves 98 tauch 0
+it 183 its 27 F1 14 fbs 1 hsteps 13 hmoves 74 tauch 0
+it 365 its 28 F1 14 fbs 1 hsteps 13 hmoves 76 tauch 0
+it 449 its 29 F1 15 fbs 1 hsteps 14 hmoves 79 tauch 0
+GFAM fried_n5_s1052_c1 |H| 77 its 29 F1 15 fbs 1 |Wg| 1717 hsteps 14 wrong 0 519s

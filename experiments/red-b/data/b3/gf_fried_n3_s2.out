@@ -1,0 +1,11 @@
+start its 10 F1 7 |Wg| 1063
+it 1 its 14 F1 7 fbs 1 hsteps 6 hmoves 36 tauch 0
+it 13 its 15 F1 7 fbs 1 hsteps 6 hmoves 43 tauch 0
+it 24 its 16 F1 7 fbs 1 hsteps 6 hmoves 30 tauch 0
+it 81 its 20 F1 12 fbs 1 hsteps 11 hmoves 47 tauch 0
+it 85 its 21 F1 12 fbs 1 hsteps 11 hmoves 46 tauch 0
+it 161 its 22 F1 12 fbs 1 hsteps 11 hmoves 46 tauch 0
+it 476 its 23 F1 12 fbs 1 hsteps 11 hmoves 51 tauch 0
+it 556 its 24 F1 12 fbs 1 hsteps 11 hmoves 45 tauch 0
+it 593 its 25 F1 12 fbs 1 hsteps 11 hmoves 48 tauch 0
+GFAM fried_n3_s1032_c1 |H| 49 its 25 F1 12 fbs 1 |Wg| 1063 hsteps 11 wrong 0 189s

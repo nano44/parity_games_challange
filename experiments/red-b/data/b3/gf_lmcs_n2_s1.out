@@ -1,0 +1,10 @@
+start its 8 F1 5 |Wg| 516
+it 0 its 9 F1 5 fbs 1 hsteps 4 hmoves 9 tauch 0
+it 2 its 12 F1 8 fbs 1 hsteps 7 hmoves 10 tauch 0
+it 16 its 13 F1 8 fbs 1 hsteps 7 hmoves 11 tauch 0
+it 139 its 14 F1 9 fbs 1 hsteps 8 hmoves 15 tauch 0
+it 173 its 15 F1 9 fbs 1 hsteps 8 hmoves 14 tauch 0
+it 206 its 16 F1 9 fbs 1 hsteps 8 hmoves 13 tauch 0
+it 251 its 17 F1 9 fbs 1 hsteps 8 hmoves 12 tauch 0
+it 297 its 18 F1 10 fbs 1 hsteps 9 hmoves 16 tauch 0
+GFAM lmcs_n2_s3021_c1 |H| 24 its 18 F1 10 fbs 1 |Wg| 516 hsteps 9 wrong 0 33s

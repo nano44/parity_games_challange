@@ -1,0 +1,6 @@
+start its 14 F1 12 |Wg| 404
+it 5 its 16 F1 12 fbs 1 hsteps 11 hmoves 21 tauch 0
+it 45 its 17 F1 12 fbs 1 hsteps 11 hmoves 21 tauch 0
+it 171 its 20 F1 15 fbs 1 hsteps 14 hmoves 31 tauch 0
+it 370 its 21 F1 16 fbs 1 hsteps 15 hmoves 30 tauch 0
+GFAM hn_n1_s2011_c1 |H| 21 its 21 F1 16 fbs 1 |Wg| 404 hsteps 15 wrong 0 26s

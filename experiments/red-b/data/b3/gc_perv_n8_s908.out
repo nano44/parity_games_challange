@@ -1,0 +1,18 @@
+it 2 its 5 F1 3 fbs 1 |Wg| 142 hsteps 2 hmoves 2 tauch 0
+it 17 its 5 F1 1 fbs 1 |Wg| 141 hsteps 0 hmoves 0 tauch 0
+it 23 its 5 F1 1 fbs 1 |Wg| 132 hsteps 0 hmoves 0 tauch 0
+it 40 its 5 F1 2 fbs 1 |Wg| 130 hsteps 1 hmoves 1 tauch 0
+it 52 its 5 F1 2 fbs 1 |Wg| 124 hsteps 1 hmoves 1 tauch 0
+it 53 its 5 F1 2 fbs 1 |Wg| 118 hsteps 1 hmoves 1 tauch 0
+it 56 its 5 F1 2 fbs 1 |Wg| 116 hsteps 1 hmoves 1 tauch 0
+it 75 its 5 F1 2 fbs 1 |Wg| 114 hsteps 1 hmoves 1 tauch 0
+it 166 its 6 F1 2 fbs 1 |Wg| 114 hsteps 1 hmoves 1 tauch 0
+it 179 its 6 F1 2 fbs 1 |Wg| 108 hsteps 1 hmoves 1 tauch 0
+it 316 its 7 F1 2 fbs 1 |Wg| 117 hsteps 1 hmoves 1 tauch 0
+it 323 its 8 F1 2 fbs 1 |Wg| 117 hsteps 1 hmoves 1 tauch 0
+it 375 its 9 F1 2 fbs 1 |Wg| 128 hsteps 1 hmoves 1 tauch 0
+it 465 its 9 F1 2 fbs 1 |Wg| 126 hsteps 1 hmoves 1 tauch 0
+it 633 its 10 F1 2 fbs 1 |Wg| 135 hsteps 1 hmoves 1 tauch 0
+it 668 its 11 F1 3 fbs 1 |Wg| 135 hsteps 2 hmoves 2 tauch 0
+it 1035 its 12 F1 3 fbs 1 |Wg| 144 hsteps 2 hmoves 3 tauch 0
+GCLIMB perv_s908_n8_c1 its 12 F1 3 fbs 1 |Wg| 144 hsteps 2 wrong 0 15s

@@ -1,0 +1,6 @@
+WFLAT alg xi fried_n2 |H| 35 |W| 567 iterations 33 first fallback 31 H-move iterations 30 bound 38 | idxinc 76 notmin 78 hbound 0 taunstd 0
+WFLAT alg xi fried_n3 |H| 49 |W| 818 iterations 73 first fallback 71 H-move iterations 70 bound 57 | idxinc 227 notmin 237 hbound 1 taunstd 0
+WFLAT alg xi fried_n4 |H| 63 |W| 1069 iterations 153 first fallback 151 H-move iterations 150 bound 76 | idxinc 584 notmin 618 hbound 1 taunstd 0
+WFLAT alg xi fried_n5 |H| 77 |W| 1320 iterations 313 first fallback 311 H-move iterations 310 bound 95 | idxinc 1405 notmin 1503 hbound 1 taunstd 0
+WFLAT alg xi fried_n6 |H| 91 |W| 1571 iterations 633 first fallback 631 H-move iterations 630 bound 114 | idxinc 3258 notmin 3516 hbound 1 taunstd 0
+WFLAT SUMMARY alg xi games 5 | units: idxinc 5550 notmin 5952 hbound 4 taunstd 0 | games with the counter > 0: idxinc 5 notmin 5 hbound 4 taunstd 0

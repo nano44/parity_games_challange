@@ -1,0 +1,11 @@
+start its 10 F1 7 |Wg| 736
+it 1 its 14 F1 11 fbs 1 hsteps 10 hmoves 38 tauch 0
+it 15 its 16 F1 11 fbs 1 hsteps 10 hmoves 36 tauch 0
+start its 16 F1 11 |Wg| 736
+it 96 its 18 F1 10 fbs 1 hsteps 9 hmoves 27 tauch 0
+start its 18 F1 10 |Wg| 736
+it 105 its 19 F1 10 fbs 1 hsteps 9 hmoves 27 tauch 0
+it 217 its 21 F1 10 fbs 1 hsteps 9 hmoves 28 tauch 0
+it 311 its 22 F1 10 fbs 1 hsteps 9 hmoves 26 tauch 0
+it 430 its 23 F1 10 fbs 1 hsteps 9 hmoves 27 tauch 0
+GFAM fried_n2_s1021_c1 |H| 35 its 23 F1 10 fbs 1 |Wg| 736 hsteps 9 wrong 0 91s

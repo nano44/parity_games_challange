@@ -9,13 +9,11 @@ at the push of d19af5df (exit 0, 20:47:58Z).** Successor 2's 8d5d8388 is lost (n
 - B2 (box 209) DONE (verdict NO KILL; every statement SURVIVES; E-DOM's use VALID; notes N-1 (P2) citation, N-2 tie-rule
   dependence of T3, N-3 n_E3 wording): docs/red-b/B2-box209.md, evidence data/b2/ (pinned). Tools: eng3.py, xcheck3.py, lev3.py,
   sweep3.py, n5xi3.py, climb3.py, edomctl.py, run_b2.sh; gate checks in check.sh. Not run: exhaustive (1,6), (2,5); (3,4) partial 8.8M.
-- B3 IN FLIGHT (GUIDE-RULE on N5 itself). Archives in experiments/red-b/work/b3/ (ignored; rebuild: `git archive` of claude/l-new
-  069c888b experiments/new/{box190,box189,box21,*.py} experiments/si experiments/harness experiments/hard-families -> work/b3/lnew,
-  claude/l-red 2d290a15 experiments/red/r217 -> work/b3/lred, claude/l-si 2051a0ee experiments/si/box104 -> work/b3/lsi).
-  gclimb.py (random H, s0, rho0, gamma; climbs done: best N5 iterations 10-16 for |H| 6-16, flat/linear, 0 wrong); gfam.py (H fixed =
-  switchallexp_n, mutate s0 / rho0 / gamma; run_b3.sh fam, n = 2..6, resumable: work/gfam_*.json). Reading (not DATA): on the FLAT
-  wrapper W, N5's S4a ties are broken by BFS order (SPEC S1 (iv), odd cycle node c_W in the dual), so each Even vertex's successor index
-  only decreases: at most |E| H-steps before the first fallback.
+- B3 (GUIDE-RULE on N5): report docs/red-b/B3-guide.md, data/b3/ (pinned). NO CANDIDATE KILL; growth not identified (fits stated);
+  claim FLAT-IDX (L-RED-B reading, not proved; proof sketch §3; direct test 0 on 4,020 N5 runs, control N5'-xi fires). Still running
+  at the commit: run_b3b.sh (1,500-step H_n climbs n = 3, 4): report them in an addendum. Lead's three requirements (01:33Z): fits or
+  «not identified», FLAT-IDX labelled + lemma + test, budget per row: all in the report.
+  Archives in experiments/red-b/work/b3/ (ignored; rebuild per gclimb.py / B3-guide.md §6).
 - B3 after B2: n5v spec mode + L-SI box104 guide tools (2051a0ee) via git archive; SPEC = docs/new/N5-ssi-global.md «## SPEC» l. 23-62.
 
 ### (session 1 resume point, kept as history)

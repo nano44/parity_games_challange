@@ -1,0 +1,17 @@
+start its 16 F1 13 |Wg| 2044
+it 3 its 18 F1 12 fbs 1 hsteps 11 hmoves 87 tauch 0
+it 4 its 21 F1 12 fbs 1 hsteps 11 hmoves 88 tauch 0
+it 5 its 23 F1 15 fbs 1 hsteps 14 hmoves 90 tauch 0
+it 22 its 24 F1 15 fbs 1 hsteps 14 hmoves 96 tauch 0
+it 28 its 25 F1 15 fbs 1 hsteps 14 hmoves 87 tauch 0
+it 43 its 28 F1 12 fbs 1 hsteps 11 hmoves 89 tauch 0
+it 87 its 29 F1 13 fbs 1 hsteps 12 hmoves 85 tauch 0
+it 110 its 30 F1 14 fbs 1 hsteps 13 hmoves 76 tauch 0
+it 199 its 31 F1 15 fbs 1 hsteps 14 hmoves 69 tauch 0
+it 210 its 32 F1 15 fbs 1 hsteps 14 hmoves 72 tauch 0
+it 269 its 33 F1 16 fbs 1 hsteps 15 hmoves 72 tauch 0
+it 329 its 34 F1 16 fbs 1 hsteps 15 hmoves 67 tauch 0
+it 347 its 36 F1 16 fbs 1 hsteps 15 hmoves 59 tauch 0
+it 492 its 38 F1 16 fbs 1 hsteps 15 hmoves 57 tauch 0
+it 599 its 39 F1 16 fbs 1 hsteps 15 hmoves 51 tauch 0
+GFAM fried_n6_s1062_c1 |H| 91 its 39 F1 16 fbs 1 |Wg| 2044 hsteps 15 wrong 0 984s
