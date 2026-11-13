@@ -17,7 +17,13 @@ MUST-0 (unit; scope):
    window's first state (tail: any class change); wclos [(vertex of Y, state)]: its successor s_s(x) outside Y; wodd [(Odd vertex of Y,
    step inside the window)]: σ̄ changes; wout [(mover of Y, step inside)]: switches to a successor outside Y; wimp [(mover of Y, step
    inside)]: the switch is not strictly improving (Ω_s, = H_Y's value when hyval = 0); hyval [(vertex of Y, state)]: Ω_s(x) differs
-   from x's value in H_Y computed by val44.playvalues on the one-successor graph (σ_s at Even vertices, σ̄_s at Odd vertices).
+   from x's value in H_Y computed by val44.playvalues on the one-successor graph of H_Y (P5′: every mover on σ_s, every NON-mover on
+   s_u, its successor at the window's first state u; Lead correction (c), 01:38Z).
+ Descriptive: plat_at_b = maximal constant-Φ intervals reaching b (RF-B requires v < b; Lead correction (a)); wout_wclos = wout events,
+   each of which is also a wclos event at s + 1 (P2) — the overlap of the two counters.
+ Ξ-cyclic: xcyc = the number of movers on a cycle of R104's Ξ-graph («the Ξ-graph has an edge x → xt(x, k) for every option with a
+   mover as Ξ-target», docs/RESULTS.md R104 l. 9864; «Ξ-graph is ACYCLIC (self-loops count as cycles).», l. 9910; R122 (a) «the Ξ-graph
+   has no directed cycle», l. 14853; line numbers at trunk f5a237ce); Ξ-cyclic iff xcyc > 0.
 DESCRIPTIVE (Howard-only facts, not claimed for the key rule): nohoward, dom, k5, l4, p3, p6, p7, plat, tail, fbwrong, n5xig3, t3all.
 Controls: W46_CTRL = W1 (Y := FRONT_u: wcls / wclos), W2 (every window extended by one step at both ends where the run allows: wcls / wodd), W3 (improvement
 test reversed: imp3 / wimp), W4 (in H_Y every Odd vertex with two successors takes the other one: hyval); LV46_CTRL = lev44's 1-6.
@@ -37,7 +43,7 @@ PL = ("p1", "p2", "p4", "wcls", "wclos", "wodd", "wout", "wimp", "hyval")
 END = ("wrong", "stratbad")
 HOW = ("nohoward", "dom", "k5", "l4", "p3", "p6", "p7", "plat", "tail", "t1", "fbwrong", "n5xig3", "t3all")
 KEYS = PREM + K + LV + PL + END + HOW
-DESC = ("Tkey", "nwin", "Wkey", "inwin", "stalls", "tail_len", "plateaus", "platmax", "phivals", "q", "bprime", "Ttot", "F", "xcyc")
+DESC = ("Tkey", "nwin", "Wkey", "inwin", "stalls", "tail_len", "plateaus", "platmax", "phivals", "q", "bprime", "Ttot", "F", "xcyc", "plat_at_b", "wout_wclos")
 
 
 def kindof(V, n):
@@ -88,7 +94,7 @@ def measure(G, elev=True, dump=None):
         if k not in first: first[k] = (t, info)
     for v in range(n):                                   # (E-DOM3), a structural clause
         if rel(v) > emin and not (kind[v] == "e" or v in (cW, K0, K3)): fail("edom3", -1, nm[v])
-    cls = []; nxt = []; st = dict(prev=None, pnxt=None, T3h=None); impbad = set(); mism = []
+    cls = []; nxt = []; st = dict(prev=None, pnxt=None, T3h=None); impbad = set(); vals = []
     def clsof(val):
         L, Pi, _ = val; E = 0
         for u in Pi:
@@ -153,11 +159,7 @@ def measure(G, elev=True, dump=None):
                     moved += 1; cv = val44.cmpval(g, pv[sigma[x]], pv[psig[x]])
                     if (cv >= 0 if WC == "W3" else cv <= 0): fail("imp3", t - 1, "%s: %s -> %s" % (nm[x], nm[psig[x]], nm[sigma[x]])); impbad.add((t - 1, x))
             if not moved: fail("imp3e", t - 1, "no mover changes")
-        f = list(nx)                                     # H-value check: the one-successor graph (σ_t, σ̄_t)
-        if WC == "W4":
-            for v in range(n):
-                if owner[v] == ODD and len(set(succ[v])) == 2: f[v] = [w for w in set(succ[v]) if w != nx[v]][0]
-        pvv = val44.playvalues(g, f); mism.append({v for v in range(n) if pvv[v] != vs[v]})
+        vals.append(vs)
         if st["T3h"] is None and all(sigma[x] in val44.bestset(g, vs, x) for x in mv): st["T3h"] = t
         st["prev"] = vs; st["psig"] = list(sigma); cls.append(ct); nxt.append(nx)
 
@@ -212,7 +214,7 @@ def measure(G, elev=True, dump=None):
     elif BREF.startswith("k:"):
         j = int(BREF[2:]); refs = sorted({T} | {round(i * T / (j + 1)) for i in range(1, j + 1)} - {0}) or [0]
     else: refs = [T]
-    d = dict(Tkey=T, Ttot=r["Ttot"], F=r["F"], q=0, phivals=0, stalls=0, plateaus=0, platmax=0, bprime=0, tail_len=0, nwin=0, Wkey=0, inwin=0, xcyc=xcyc)
+    d = dict(Tkey=T, Ttot=r["Ttot"], F=r["F"], q=0, phivals=0, stalls=0, plateaus=0, platmax=0, bprime=0, tail_len=0, nwin=0, Wkey=0, inwin=0, xcyc=xcyc, wout_wclos=0, plat_at_b=0)
     Odd = [v for v in range(n) if owner[v] == ODD]
     for b in refs:
         fin = cls[b]
@@ -296,11 +298,16 @@ def measure(G, elev=True, dump=None):
                 for o in Odd:
                     if nxt[s][o] != nxt[s + 1][o]: fail("t1", s, nm[o])
             d.update(q=q, phivals=nphi, stalls=stalls, plateaus=nplat, platmax=platmax, bprime=bprime, tail_len=T - bprime)
-            allv = set(range(n)); W = [(u, v, Y, m, False) for u, v, Y, m in wins] + ([(bprime, T, allv, None, True)] if T > bprime else [])
+            ovl = [0]; allv = set(range(n)); W = [(u, v, Y, m, False) for u, v, Y, m in wins] + ([(bprime, T, allv, None, True)] if T > bprime else [])
             for u, v, Y, m, istail in W:
                 ve = min(v + 1, T) if WC == "W2" else v; us = max(u - 1, 0) if WC == "W2" else u
                 for s in range(us, ve + 1):
                     cs = cls[s]
+                    f = [nxt[s][x] if x in ms else nxt[u][x] for x in range(n)]     # H_Y (P5′): movers σ_s, every non-mover s_u
+                    if WC == "W4":
+                        for x in range(n):
+                            if owner[x] == ODD and len(set(succ[x])) == 2: f[x] = [w for w in set(succ[x]) if w != nxt[u][x]][0]
+                    pvv = val44.playvalues(g, f)
                     for x in range(n):
                         if istail:
                             if cs[x] != cls[u][x]: fail("wcls", s, "tail [%d, %d], %s" % (u, v, nm[x]))
@@ -309,16 +316,27 @@ def measure(G, elev=True, dump=None):
                             if iny != (cs[x] <= m) or (iny and cs[x] != cls[u][x]): fail("wcls", s, "window [%d, %d], %s" % (u, v, nm[x]))
                     for x in Y:
                         if nxt[s][x] not in Y: fail("wclos", s, "window [%d, %d], %s -> %s" % (u, v, nm[x], nm[nxt[s][x]]))
-                        if x in mism[s]: fail("hyval", s, "window [%d, %d], %s" % (u, v, nm[x]))
+                        if pvv[x] != vals[s][x]: fail("hyval", s, "window [%d, %d], %s" % (u, v, nm[x]))
                     if s < ve:
                         for o in Odd:
                             if o in Y and nxt[s][o] != nxt[s + 1][o]: fail("wodd", s, "window [%d, %d], %s" % (u, v, nm[o]))
                         for x in mv:
                             if x in Y and nxt[s][x] != nxt[s + 1][x]:
-                                if nxt[s + 1][x] not in Y: fail("wout", s, "window [%d, %d], %s" % (u, v, nm[x]))
+                                if nxt[s + 1][x] not in Y:
+                                    fail("wout", s, "window [%d, %d], %s" % (u, v, nm[x])); ovl[0] += 1      # also wclos at s + 1 (P2), by definition
                                 if (s, x) in impbad: fail("wimp", s, "window [%d, %d], %s" % (u, v, nm[x]))
             lens = [v - u for u, v, _, _, _ in W]
-            d.update(nwin=len(W), Wkey=max(lens, default=0), inwin=sum(lens))
+            d.update(nwin=len(W), Wkey=max(lens, default=0), inwin=sum(lens), wout_wclos=ovl[0])
+            # (a) RF-B's v < b: maximal constant-Φ intervals over the states t <= b at which Φ is defined, ending at b (Φ is undefined at b,
+            # LAG_b = ∅ with b = T_key, so this is 0 by construction; counted, not assumed)
+            ph = [fr[t] and (fr[t][1], -len(fr[t][2])) for t in range(b + 1)]; pab = 0; t = 0
+            while t <= b:
+                if not ph[t]: t += 1; continue
+                u0 = t
+                while t + 1 <= b and ph[t + 1] == ph[u0]: t += 1
+                if t > u0 and t >= b: pab += 1
+                t += 1
+            d.update(plat_at_b=pab)
     return c, d, first, dict(N=N, M=M, n=n, P3=P3, nE3=nE3, bT=bT, use=n5xi44.usestr(r))
 
 
