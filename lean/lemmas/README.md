@@ -291,6 +291,9 @@ Allowed axioms: propext, Classical.choice, Quot.sound. No sorry, no admit, no ne
                             owner_size of WF.  Nothing about `fault` (NoFault, next) or about N5's running time.
 - PGLemmas/SpecFuel.lean    PROOFS: fuel_eval, fuel_iter, fuel_run, fuel_states (potentials under `loopFuel`; run invariant
                             `RunInv`); specStep_flag / stepA_flag / stepB_flag: a record's `fuelOut` is the OR of its S1 calls.
+- PGLemmas/SpecNoFaultStatement.lean  STATEMENTS, PROOF DEFERRED (Lead 09:58Z): NoFaultEval / Iter / Run / States: on an
+                            `SGame.WF` game si.py's exception cases (F1 «cycle in restricted graph» = VJ00 §6 Prop. 6.1,
+                            F2-F6) never fire (`fault = false`).  No theorem yet; the graph toolkit is in L-FORMAL's scratch.
 - check/speccheck.py        DATA, not a proof: Lean's `specRun` against box190/n5v.py mode «spec» (si.py Engine), state by
                             state (σ, τ, Ξσ, σ̄, Iσ, Iτ, fallback, `fuelOut`, `fault`) and the key rule on the four procedure
                             calls of every state; SPEC_GAMMA3=1 runs Γ3 of genome files against box189's gamma3.build (from

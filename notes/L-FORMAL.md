@@ -22,6 +22,24 @@
     vertex of R, (F3) Odd vertex of R without choice, (F4) choice DFS without hit (impossible: same DFS as the cycle test), (F5)
     a vertex without valuation (every alive subgraph is successor-closed and has a cycle whose most relevant vertex was a cycle
     node when processed), (F6) S4a / S4b chooser without choice.  Send after the Fuel commit is on origin.
+  - Fuel on origin: 8687c6fc + fa54df74 (push exit 0 09:52:42Z); CI run 43404819676 lean-lemmas SUCCESS. Lead 09:58Z: Fuel
+    ACCEPTED «Lean-checked (lane)», rows #75-#78 to CHECKER later with the Γ3 rows. NoFault Statement (62c9fcc3) ACCEPTED with
+    (a) StratWF for Iter, (b) fault analogue of specStep_flag REQUIRED with the proof, (c) VJ00 + si.py lines in the header.
+    PRIORITY CHANGE (Lead 09:58Z, owner «So put everything into trying solving it today»; D24 «do xhigh», D25): «The NoFault
+    PROOF (1,500-3,000 lines) is DEFERRED. Commit the NoFault Statement file only, marked «STATEMENT, proof deferred», with no
+    theorem.  Send me KeyRuleS4aStatement NOW. After my diff, put your effort into its proof.»
+  - NOFAULT SCRATCH TOOLKIT (not committed; scratchpad nf/NFall2.lean 1,393 lines + NF12/NF13, 0 sorry, compiles against
+    fa54df74): dfs_closed / dfs_marked_iff / dfs_tree / dfs_hit_of_path (DFS completeness + soundness), pred_mem (gp), rank_inj,
+    assign_props, Walk toolkit (append, rotate, reverse, walk_max, src/tgt once), restrict_props + Cons (hs/hp consistency),
+    evenFold_props / oddFold_props, phaseM_iff, PhInv + phase_even + phase_odd + phases_fold (VJ00 Prop. 6.1 core),
+    longest_ok (no busy under acyclicity), bfs_closed. MISSING for NoFault: hs0/hp0 initial PhInv, procNode assembly, outer
+    loop (alive closure, G3, F5 pigeonhole), ofGame facts (rew order, order perm/sorted, gs/gp nodup), run level.
+    If the scratchpad is lost: the plan above is complete enough to redo it; each lemma took 1-3 tool rounds.
+  - 10:16Z-10:24Z connector down (KeyRule send failed twice); container restart ~10:20Z killed the NoFault build (exit 137).
+    KeyRuleS4aStatement RESENT 11:19Z (draft badf78c8; general-predicate option offered). Lead 11:21Z: «Keep KeyRuleS4aStatement
+    shaped so that it can serve that reduction (state it for an arbitrary fixed τ on H, option sets A(x) as in SPEC S4a)» —
+    the draft already is. NEXT: NoFault Statement commit + push; wait for the KeyRule diff; then its proof (R24 Lemma R + TB
+    step 5; REFEREE-2 R2-key-preread.md @ dbedf93c §2 KT-1..KT-4 = the paper proof steps on Γ3).
 - HANDOVER of SUCCESSOR 4 (session_01V5yGRWV98usJz6buk8GaGb, Opus 5.5), written at the Lead's call (05:03Z: context ~714k).
   A SUCCESSOR STARTS HERE.  FIXSHA = 9176725ac37ded142bb4d849f00a405518ca4827 (the post-verdict fix commit).
   STATE:
