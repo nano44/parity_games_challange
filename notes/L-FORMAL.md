@@ -1,6 +1,72 @@
 # L-FORMAL notebook (Lean formalization lane; branch claude/l-formal; files: lean/, this notebook)
 
 ## Resume point
+- HANDOVER of SUCCESSOR 4 (session_01V5yGRWV98usJz6buk8GaGb, Opus 5.5), written at the Lead's call (05:03Z: context ~714k).
+  A SUCCESSOR STARTS HERE.  FIXSHA = 9176725ac37ded142bb4d849f00a405518ca4827 (the post-verdict fix commit).
+  STATE:
+  - On origin from this session: e34ec899 (handover check), 82ec6eb4 (C143 notes in INDEX, MANIFEST rows #70-#74 -> CHECKER
+    C145), 0ee5b8bc (SPEC definitions, accepted text), 35dea2cb (notebook), FIXSHA (post-verdict fix commit: Spec.lean /
+    SpecGamma3.lean with fixes U1-U4, U-3, loopFuel refactor, fuelOut / fault split, literal FIX 2 walk; speccheck re-run).
+  - Spec.lean / SpecGamma3.lean are DEFINITIONS (Lead 03:58Z «ACCEPTED WITH FIXES» on 0ee5b8bc; the fix commit applies the
+    fixes). NO theorem about them is committed. The CI job lean-lemmas builds them (imported in PGLemmas.lean).
+  NEXT (Lead 05:03Z, verbatim): «Successor 5 states FuelStatement to me and proves it. Do not start FuelStatement in a commit
+  yourself.» Then (Lead 02:06Z (4)): NoFault (si.py's exception cases never occur on WF games; VJ00 §6-sized), then (i)
+  KeyRuleStatement restricted to one-player arenas (owner-0 vertices of H with τ fixed, the S4a case), Statement first; (ii)
+  (bridge Eng.evaluate -> Defs.val / OptCounter) is deferred.
+  FUELSTATEMENT, as drafted and accepted in wording by the Lead (04:07Z (e): «the draft wording is fine. Add the S3 /
+  start-file case through startPair as a small lemma; the Statement covers specRun from startPair under WF. Name in the
+  Statement header that only «successors < n, owners ≤ 1» is used»):
+    def FuelEvalStatement : Prop := ∀ g : SGame, g.WF → ∀ s : Array ℕ, g.StratWF 0 s → ((Eng.ofGame g).evaluate s).fuelOut = false
+    def FuelIterStatement : Prop := ∀ g : SGame, g.WF → ∀ sigma tau : Array ℕ,
+      (∀ v, v < g.n → g.owner[v]! = 0 → sigma[v]! < g.n) → (∀ v, v < g.n → g.owner[v]! = 1 → tau[v]! < g.n) →
+      ∀ cap : ℕ, ∀ r ∈ (specIter g (Eng.ofGame g) (Eng.ofGame g.dual) cap sigma tau).1, r.fuelOut = false
+    def FuelRunStatement : Prop := ∀ g : SGame, g.WF → ∀ start : Option (List (ℕ × ℕ) × List (ℕ × ℕ)),
+      (∀ ss ts, start = some (ss, ts) → (∀ p ∈ ss, p.1 < g.n ∧ g.owner[p.1]! = 0 ∧ p.2 ∈ g.succ[p.1]!) ∧
+        (∀ p ∈ ts, p.1 < g.n ∧ g.owner[p.1]! = 1 ∧ p.2 ∈ g.succ[p.1]!)) →
+      ∀ cap : ℕ, ∀ r ∈ (specRun g start cap).steps, r.fuelOut = false
+    Header note: of WF the proofs use only succ_lt, owner_le and owner_size (the dual's owners).
+  SCRATCH PROOF COMMITTED (Lead 05:05Z option (A)): lean/lemmas/scratch/SpecFuel.lean.txt, sha1
+  05a99b90c2d75f7052059cfdd9aa3f325bbba32b, 1,261 lines (10 header lines + the scratch file), NOT imported, NOT built by CI,
+  no INDEX / MANIFEST row.  Build (from lean/lemmas, copied to a .lean file, against 9176725a, 2026-11-13T05:37:08Z):
+  `lake env lean <copy>.lean` exit 0, output: 'PG.Spec.fuel_eval' / 'PG.Spec.fuel_iter' / 'PG.Spec.fuel_run' depends on
+  axioms: [propext, Classical.choice, Quot.sound]; `grep -c sorry` on the Lean text = 0.  It proves exactly the three
+  Statements below (`example : FuelRunStatement := fuel_run` etc. checked in scratch).  SUCCESSOR 5: send the Statement text
+  to the Lead FIRST; after his ACCEPT, move the proof into PGLemmas/SpecFuel.lean (+ SpecFuelStatement.lean), import it in
+  PGLemmas.lean, add the three `#print axioms` lines to Axioms.lean, the INDEX / MANIFEST rows, clean build, commit, push.
+  PROOF ROUTE (the scratch file's sections, in order):
+    1. loopFuel_ok: Inv + potential Φ strictly dropping at each step, Φ s < k + 1 ⇒ no fuel-out; loopFuel_inv.
+    2. unmarked n seen := #{i < n | seen[i]! = false} (Finset.card); unmarked_set (setting an unmarked index lowers it by 1;
+       get_set_eq / get_set_ne via getElem!_def + Array.getElem?_setIfInBounds_self_of_lt / _ne).
+    3. scan_inv: unmarked + |stack| constant through `scan`; dfsStep_dec: drops by 1; dfs_fuel (needs only successor entries
+       < n: «Bnd n g := ∀ i, ∀ y ∈ g[i]!, y < n»).  BFS: undisc + [layer ≠ []] (bfsInner_inv, bfsOuter_inv, bfs_fuel).
+    4. longest: LInv (busy.size = n, notbusy never grows, fuelOut stays false), induction on fuel with
+       «notbusy + 1 ≤ fuel» (x marked busy before recursing; x < n from Bnd).  longestAll by foldl.
+    5. Bnd preserved by set! (mem_get_set), modify (mem_get_modify), restrict, evenFold, oddFold, phaseU (phase_ok also
+       says the fuel flag is unchanged), hs0 / hp0 (foldl set! of filters), gs (strategy < n), gp (modify append v < n).
+    6. THE WALK (option (a)): DInv n root d (seen ↔ marked, nodup, stack and hit ⊆ marked, root ∈ marked, every marked
+       y ≠ root has parent[y] ∈ marked with idxOf y < idxOf parent[y] in `marked` (newest first)); scan_dinv (List.idxOf_cons_ne
+       from Mathlib, List.idxOf_cons_self), dfs_dinv; walk_fuel with Φ x = |marked| − idxOf x (|marked| ≤ n by
+       Nodup.length_le_of_subset into List.range n).
+    7. procNode_fuel: unfold procNode; split (dead v) ; dsimp only; split (no cycle); rw [assign_fuel]; collect C, R, phase,
+       lengths flags; for the walk: cases on the second DFS's hit, walk_fuel with dfs_dinv.  evaluate_fuel by
+       order_foldl_fuel (`unfold Eng.evaluate; exact order_foldl_fuel E _ _ (gs_bnd …) (gp_bnd …) E.order _ horder rfl`;
+       writing the gp term out explicitly TIMES OUT).  fuel_eval via ofGame_succ_bnd (mem_dedup, mem_mergeSort) and ofGame_order.
+    8. Output bounds (choices < n): OB n a := ∀ i t, a[i]! = some t → t < n; longest_tau, bfs_tau (layer entries < n),
+       walk_lt (loopFuel_inv with Inv x ∈ marked), procNode_tau, evaluate_tau.
+    9. Run level: RunInv g σ τ (σ < n at Even's, τ < n at Odd's); arenaH_sb / arenaH'_sb (improvSet entries < n; Is targets
+       < n by improving_lt), dual_owner (needs owner_size), s4a_ok / s4b_ok (fuel + new choices < n via eval_tau),
+       fallbackAt_lt (fold_pick_P), specStep_fuel (unfold specStep; dsimp only at h; split at h …; stepA / stepB keep the
+       nested ifs atomic — essential), specIter_fuel by induction on cap; startPair_inv (initialBest_lt: the foldl picks a
+       successor; set_foldl_lt for the overrides); fuel_run.
+  TRAPS met by successor 4: (i) typed timestamps: twice I wrote a time without date -u (03:46Z sent as «04:05Z»; 05:03Z as
+  «05:05Z»): run `date -u +%H:%MZ` in the same command as every send.  (ii) n5.py imports si.py as experiments/new/../si/si.py:
+  a tracer that filters by co_filename must normalise the path.  (iii) Lean: `let (a, b) := …` in definitions leaves
+  `match` terms that proofs cannot see through: write definitions with projections; unfold + `dsimp only` before `split`;
+  `split at h` opens the FIRST if in h, so keep sub-steps (stepA / stepB) as named definitions.  (iv) `rw` with a lemma whose
+  implicit record argument is an update `{ s with … }`: pass the hypothesis as `(by exact hs)` so the record unifies first.
+  (v) never edit a Lean file that a running check imports from its olean; rebuild only after the check ends.  (vi) speccheck
+  takes ~35 min per 101-instance run; run Γ3 (4 min each) first.  (vii) the old engine-equality check (V2 vs the accepted
+  Spec.lean): 69 instances, 6,900 evaluations, 0 differences (copy /home/user/lformal_scratch/eqcheck_partial.out; scratch only).
 - SUCCESSOR 4 (session_01V5yGRWV98usJz6buk8GaGb, Opus 5.5 high, started 2026-11-13T00:56Z; THIS block is the resume point; the
   blocks below are history). Lead's work list (brief): (1) CI on 1a44c6aa; (2) C143 notes into INDEX + MANIFEST Γ3 rows; (3) SPEC in
   Lean, DEFINITIONS ONLY, then the Lead's diff; (4) what the Lead routes.
@@ -49,6 +115,32 @@
     (∀ WF start pair, every step of specRun has bad = false). Caveat to raise: `bad` mixes FUEL (easy) and si.py's FAULT cases
     (cycle in the restricted graph = Q3 / VJ00 Prop 6.1 (4); BFS reaching all of R; every vertex in some R): the full statement
     is VJ00-sized; splitting `bad` into `fuelOut` and `fault` would be a definition change (needs the Lead's diff).
+  - Lead 03:43Z: diff of 0ee5b8bc started (Lead + REFEREE-2 40 item D, one verdict message). «(iii): Option B is ACCEPTED in
+    principle. Split `bad` into `fuelOut` and `fault`. Do it AFTER my verdict, in the same commit as any fixes the diff asks for,
+    so the files change once. Then FuelStatement (small) first, then NoFault, each Statement first to me.» «Until the verdict:
+    no change to Spec.lean / SpecGamma3.lean. You may work on the FuelStatement proof in a scratch file.»
+  - My message «04:05Z» was really sent at about 03:46Z (I typed the time without date -u): correct this in the next message.
+    Asked the Lead: (a) parent walk with stamps vs (b) child tracking (D10), and permission for the loopFuel refactor.
+  - SCRATCH (copies in /home/user/lformal_scratch/: V2.lean = refactored definitions, VP11.lean = definitions + proofs, 1,116
+    lines, no sorry; eqcheck.py = Lean V2 vs Spec.lean on runs): V2 = Spec's evaluate with every loop a named step function run
+    by `loopFuel`, `restrict2` (pure fold), `longest3` (state passing), `choice` via child tracking (variant (b)), the choice DFS
+    = the DFS of (i) reused (si.py runs the same DFS twice: a further named deviation), flags `fuelOut` / `fault`, `ofGame2`
+    (Eng.ofGame without do). PROVED (scratch): loopFuel_ok, dfs_fuel, bfs_fuel, longest3_fuel, phase_ok, procNode_fuel,
+    evaluate2_fuel (engine level), evaluate2_fuel_game: ∀ g, g.WF → ∀ s, g.StratWF 0 s → (evaluate2 (ofGame2 g) s).fuelOut = false
+    [propext, Classical.choice, Quot.sound]; output bounds evaluate2_tau (every Odd choice < n). eqcheck: V2 = Spec.evaluate on
+    every state (G and G^d) of the frozen .pg runs so far (diff 0). NEXT after the verdict: merge V2 into Spec.lean with the
+    Lead's fixes; run-level fuel (strategies stay < n through s4a / s4b / fallback); speccheck re-run; FuelStatement text first.
+  - Lead 03:46Z rulings: loopFuel refactor ALLOWED in the fix commit with evidence (speccheck re-run 101 + 25, controls, map
+    old → new in the commit message); parent walk OPTION (a), literal under loopFuel with its own fuelOut; (c) noted.
+  - Lead 03:58Z DIFF VERDICT on 9156c048 / 354e890e: ACCEPTED WITH FIXES U1 (SGame.WF as a definition, D10), U2 (cap: D11),
+    U3 (G1: Genome.WF), U4 (citations by script against si.py 0747733e, n5x.py 21c3201f); ADD tie instances A, B + fbsmall
+    control. Lead 03:56Z: REFEREE-2 40 U-3: s3eq column, n5Gamma3S3 run mode, G2 text.
+  - FIX COMMIT IN PREPARATION (04:12Z by date -u): Spec.lean rewritten (refactor + fixes; D11 implemented as «no call at the cap», as
+    n5x.py, and named); SpecGamma3.lean (G1, G2 placeholder S3G2RESULT to fill from speccheck_gamma3*.out, n5Gamma3S3);
+    speccheck.py (fuelfail / faultfail, FBDETAIL, fbsmall, SPEC_START=S3, s3eq); check/spec_ties/A.pg, B.pg; check/speccite.py
+    (54 citations, 0 unknown); README. Full evidence run started 04:11Z (first output's date -u) as one background job (9 outputs in check/out/).
+    Scratch fuel proofs (/home/user/lformal_scratch/VP16.lean) must be re-based on the new Spec.lean (names: Eng.evaluate,
+    restrict, longest, walk (option (a): the walk potential needs push-order stamps), EvalOut fuelOut).
 - HANDOVER of SUCCESSOR 3 (session_01V5yGRX3V51LguQp6WMvAgj), written 2026-11-13T00:14Z at about 420k context. A SUCCESSOR STARTS HERE.
   STATE (all Lean-checked (lane); results only through CHECKER (C143 opened by the Lead on MANIFEST c8963698) and the CI job lean-lemmas):
   - On origin before this batch: 91f25983 (handover check), 78c32d90 (RF-A, recovered by transcript replay), c8963698 (MANIFEST +

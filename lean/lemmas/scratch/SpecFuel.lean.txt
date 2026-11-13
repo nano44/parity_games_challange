@@ -1,0 +1,1261 @@
+-- SCRATCH PROOF, not a Statement, not imported, not built by CI; successor 5 states FuelStatement to the Lead first;
+-- built against 9176725ac37ded142bb4d849f00a405518ca4827 on 2026-11-13T05:37:08Z (date -u):
+-- `lake env lean <this file renamed to .lean>` from lean/lemmas, exit 0, output:
+--   'PG.Spec.fuel_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+--   'PG.Spec.fuel_iter' depends on axioms: [propext, Classical.choice, Quot.sound]
+--   'PG.Spec.fuel_run' depends on axioms: [propext, Classical.choice, Quot.sound]
+-- no sorry (grep -c sorry = 0).  L-FORMAL successor 4 (session_01V5yGRWV98usJz6buk8GaGb); Lead 05:05Z option (A).
+-- The Statements it proves are in notes/L-FORMAL.md («HANDOVER of SUCCESSOR 4»): FuelEvalStatement (fuel_eval),
+-- FuelIterStatement (fuel_iter), FuelRunStatement (fuel_run).  No INDEX or MANIFEST row.
+
+import PGLemmas.Spec
+import Mathlib.Data.Finset.Card
+
+namespace PG.Spec
+
+section Fuel
+
+theorem loopFuel_ok {S : Type} (step : S → Option S) (Inv : S → Prop) (Φ : S → ℕ)
+    (h : ∀ s s', Inv s → step s = some s' → Inv s' ∧ Φ s' < Φ s) :
+    ∀ k s, Inv s → Φ s < k + 1 → (loopFuel step k s).2 = false := by
+  intro k
+  induction k with
+  | zero =>
+    intro s hs hΦ
+    simp only [loopFuel]
+    cases hst : step s with
+    | none => rfl
+    | some s' => have := (h s s' hs hst).2; omega
+  | succ k ih =>
+    intro s hs hΦ
+    simp only [loopFuel]
+    cases hst : step s with
+    | none => rfl
+    | some s' =>
+      obtain ⟨hs', hlt⟩ := h s s' hs hst
+      exact ih s' hs' (by omega)
+
+def unmarked (n : ℕ) (seen : Array Bool) : ℕ := ((Finset.range n).filter fun i => seen[i]! = false).card
+
+theorem unmarked_le (n : ℕ) (seen : Array Bool) : unmarked n seen ≤ n := by
+  unfold unmarked
+  exact (Finset.card_filter_le _ _).trans (by simp)
+
+theorem get_set_ne {α} [Inhabited α] (a : Array α) (y i : ℕ) (b : α) (h : i ≠ y) : (a.set! y b)[i]! = a[i]! := by
+  simp only [Array.set!, getElem!_def, Array.getElem?_setIfInBounds_ne (Ne.symm h)]
+
+theorem get_set_eq {α} [Inhabited α] (a : Array α) (y : ℕ) (b : α) (hy : y < a.size) : (a.set! y b)[y]! = b := by
+  simp only [Array.set!, getElem!_def, Array.getElem?_setIfInBounds_self_of_lt hy]
+
+theorem size_set {α} (a : Array α) (y : ℕ) (b : α) : (a.set! y b).size = a.size := by
+  simp [Array.set!]
+
+theorem unmarked_set (n : ℕ) (seen : Array Bool) (y : ℕ) (hy : y < n) (hsz : seen.size = n)
+    (hu : seen[y]! = false) : unmarked n (seen.set! y true) + 1 = unmarked n seen := by
+  unfold unmarked
+  have : (Finset.range n).filter (fun i => (seen.set! y true)[i]! = false) =
+      ((Finset.range n).filter fun i => seen[i]! = false).erase y := by
+    ext i
+    simp only [Finset.mem_filter, Finset.mem_range, Finset.mem_erase]
+    by_cases hi : i = y
+    · subst hi; rw [get_set_eq seen i true (by omega)]; simp [hy, hu]
+    · rw [get_set_ne seen y i true hi]; simp [hi]
+  rw [this, Finset.card_erase_of_mem (by simp [hy, hu])]
+  have : 0 < ((Finset.range n).filter fun i => seen[i]! = false).card :=
+    Finset.card_pos.mpr ⟨y, by simp [hy, hu]⟩
+  omega
+
+theorem scan_inv (n : ℕ) (stop : Option ℕ) (ok : ℕ → Bool) (x : ℕ) :
+    ∀ (l : List ℕ) (d : DS), (∀ y ∈ l, y < n) → d.seen.size = n →
+      (scan stop ok x l d).seen.size = n ∧
+      unmarked n (scan stop ok x l d).seen + (scan stop ok x l d).st.length = unmarked n d.seen + d.st.length := by
+  intro l
+  induction l with
+  | nil => intro d _ hs; exact ⟨hs, rfl⟩
+  | cons y ys ih =>
+    intro d hl hs
+    have hy : y < n := hl y (by simp)
+    have hys : ∀ z ∈ ys, z < n := fun z hz => hl z (by simp [hz])
+    simp only [scan]
+    by_cases hv : (some y == stop) = true
+    · simp only [hv, ↓reduceIte]; exact ⟨hs, trivial⟩
+    · simp only [Bool.not_eq_true] at hv
+      simp only [hv, Bool.false_eq_true, ↓reduceIte]
+      by_cases hp : (ok y && !d.seen[y]!) = true
+      · simp only [hp, ↓reduceIte]
+        have hu : d.seen[y]! = false := by simp at hp; exact hp.2
+        obtain ⟨h1, h2⟩ := ih { d with seen := d.seen.set! y true, st := y :: d.st, marked := y :: d.marked,
+                                       parent := d.parent.set! y x } hys (by simp [Array.set!, hs])
+        refine ⟨h1, ?_⟩
+        rw [h2]
+        have := unmarked_set n d.seen y hy hs hu
+        simp only [List.length_cons]
+        omega
+      · simp only [Bool.not_eq_true] at hp
+        simp only [hp, Bool.false_eq_true, ↓reduceIte]
+        exact ih d hys hs
+
+theorem dfsStep_dec (n : ℕ) (g : Array (List ℕ)) (stop : Option ℕ) (ok : ℕ → Bool)
+    (hg : ∀ x : ℕ, ∀ y ∈ g[x]!, y < n) (d d' : DS) (hs : d.seen.size = n) (h : dfsStep g stop ok d = some d') :
+    d'.seen.size = n ∧ unmarked n d'.seen + d'.st.length < unmarked n d.seen + d.st.length := by
+  unfold dfsStep at h
+  split at h
+  · simp at h
+  · split at h
+    · simp at h
+    · rename_i x rest hst
+      simp only [Option.some.injEq] at h
+      subst h
+      obtain ⟨h1, h2⟩ := scan_inv n stop ok x (g[x]!) { d with st := rest } (hg x) hs
+      refine ⟨h1, ?_⟩
+      rw [h2, hst]
+      simp
+
+/-- FUEL, DFS: every DFS of `evaluate` ends within its n + 1 rounds when the successor lists hold indices < n. -/
+theorem dfs_fuel (n : ℕ) (g : Array (List ℕ)) (root : ℕ) (stop : Option ℕ) (ok : ℕ → Bool)
+    (hg : ∀ x : ℕ, ∀ y ∈ g[x]!, y < n) : (dfs n g root stop ok).2 = false := by
+  unfold dfs
+  apply loopFuel_ok (dfsStep g stop ok) (fun d => d.seen.size = n) (fun d => unmarked n d.seen + d.st.length)
+  · intro s s' hs h; exact dfsStep_dec n g stop ok hg s s' hs h
+  · simp [Array.set!]
+  · have := unmarked_le n ((Array.replicate n false).set! root true)
+    show unmarked n ((Array.replicate n false).set! root true) + [root].length < n + 1 + 1
+    simp only [List.length_singleton]; omega
+
+end Fuel
+
+section BFS
+
+def undisc (n : ℕ) (dist : Array (Option ℕ)) : ℕ := ((Finset.range n).filter fun i => dist[i]!.isNone).card
+
+theorem undisc_le (n : ℕ) (dist : Array (Option ℕ)) : undisc n dist ≤ n := by
+  unfold undisc; exact (Finset.card_filter_le _ _).trans (by simp)
+
+theorem undisc_set (n : ℕ) (dist : Array (Option ℕ)) (y k : ℕ) (hy : y < n) (hsz : dist.size = n)
+    (hu : dist[y]!.isNone = true) : undisc n (dist.set! y (some k)) + 1 = undisc n dist := by
+  unfold undisc
+  have : (Finset.range n).filter (fun i => (dist.set! y (some k))[i]!.isNone) =
+      ((Finset.range n).filter fun i => dist[i]!.isNone).erase y := by
+    ext i
+    simp only [Finset.mem_filter, Finset.mem_range, Finset.mem_erase]
+    by_cases hi : i = y
+    · subst hi; rw [get_set_eq dist i (some k) (by omega)]; simp
+    · rw [get_set_ne dist y i (some k) hi]; simp [hi]
+  have hu' : dist[y]! = none := Option.isNone_iff_eq_none.mp hu
+  rw [this, Finset.card_erase_of_mem (by simp [hy, hu'])]
+  have : 0 < ((Finset.range n).filter fun i => dist[i]!.isNone).card :=
+    Finset.card_pos.mpr ⟨y, by simp [hy, hu']⟩
+  omega
+
+theorem bfsInner_inv (n x : ℕ) : ∀ (ys : List ℕ) (a : BS), (∀ y ∈ ys, y < n) → a.dist.size = n →
+    (ys.foldl (bfsInner x) a).dist.size = n ∧
+    undisc n (ys.foldl (bfsInner x) a).dist + (ys.foldl (bfsInner x) a).layer.length =
+      undisc n a.dist + a.layer.length := by
+  intro ys
+  induction ys with
+  | nil => intro a _ h; exact ⟨h, rfl⟩
+  | cons y ys ih =>
+    intro a hl hs
+    have hy : y < n := hl y (by simp)
+    have hys : ∀ z ∈ ys, z < n := fun z hz => hl z (by simp [hz])
+    simp only [List.foldl_cons]
+    by_cases hu : a.dist[y]!.isNone = true
+    · simp only [bfsInner, hu, ↓reduceIte]
+      obtain ⟨h1, h2⟩ := ih ({ a with dist := a.dist.set! y (some (a.dist[x]!.getD 0 + 1)), tau := a.tau.set! y (some x), layer := a.layer ++ [y] } : BS) hys (by simp [Array.set!, hs])
+      refine ⟨h1, ?_⟩
+      rw [h2]
+      have := undisc_set n a.dist y (a.dist[x]!.getD 0 + 1) hy hs hu
+      simp only [List.length_append, List.length_singleton]
+      omega
+    · simp only [Bool.not_eq_true] at hu
+      simp only [bfsInner, hu, Bool.false_eq_true, ↓reduceIte]
+      exact ih a hys hs
+
+theorem bfsOuter_inv (n : ℕ) (hp : Array (List ℕ)) (hg : ∀ x : ℕ, ∀ y ∈ hp[x]!, y < n) :
+    ∀ (xs : List ℕ) (a : BS), a.dist.size = n →
+    (xs.foldl (fun acc x => (hp[x]!).foldl (bfsInner x) acc) a).dist.size = n ∧
+    undisc n (xs.foldl (fun acc x => (hp[x]!).foldl (bfsInner x) acc) a).dist +
+      (xs.foldl (fun acc x => (hp[x]!).foldl (bfsInner x) acc) a).layer.length =
+      undisc n a.dist + a.layer.length := by
+  intro xs
+  induction xs with
+  | nil => intro a h; exact ⟨h, rfl⟩
+  | cons x xs ih =>
+    intro a hs
+    simp only [List.foldl_cons]
+    obtain ⟨h1, h2⟩ := bfsInner_inv n x (hp[x]!) a (hg x) hs
+    obtain ⟨h3, h4⟩ := ih _ h1
+    exact ⟨h3, by rw [h4, h2]⟩
+
+theorem bfsStep_eq (hp : Array (List ℕ)) (b : BS) :
+    bfsStep hp b = if b.layer.isEmpty then none else
+      some (b.layer.foldl (fun acc x => (hp[x]!).foldl (bfsInner x) acc) { b with layer := [] }) := by
+  rfl
+
+/-- FUEL, BFS: the BFS of SPEC S1 (iv) ends within its n + 1 rounds. -/
+theorem bfs_fuel (n v : ℕ) (hp : Array (List ℕ)) (hg : ∀ x : ℕ, ∀ y ∈ hp[x]!, y < n) :
+    (loopFuel (bfsStep hp) (n + 1) ⟨(Array.replicate n none).set! v (some 0), Array.replicate n none, [v]⟩).2
+      = false := by
+  apply loopFuel_ok (bfsStep hp) (fun b => b.dist.size = n)
+    (fun b => undisc n b.dist + (if b.layer = [] then 0 else 1))
+  · intro s s' hs h
+    rw [bfsStep_eq] at h
+    by_cases he : s.layer.isEmpty = true
+    · simp [he] at h
+    · simp only [he, Bool.false_eq_true, ↓reduceIte, Option.some.injEq] at h
+      subst h
+      obtain ⟨h1, h2⟩ := bfsOuter_inv n hp hg s.layer { s with layer := [] } hs
+      refine ⟨h1, ?_⟩
+      have hne : s.layer ≠ [] := by simpa using he
+      simp only [hne, ↓reduceIte]
+      simp only [List.length_nil, Nat.add_zero] at h2
+      split
+      · omega
+      · rename_i hl
+        have : 0 < (List.foldl (fun acc x => List.foldl (bfsInner x) acc hp[x]!) { s with layer := [] } s.layer).layer.length :=
+          List.length_pos_iff.mpr hl
+        omega
+  · simp [Array.set!]
+  · have := undisc_le n ((Array.replicate n none).set! v (some 0))
+    simp only [List.cons_ne_nil, ↓reduceIte]
+    omega
+
+end BFS
+
+section Longest
+
+def notbusy (n : ℕ) (busy : Array Bool) : ℕ := unmarked n busy
+
+/-- the invariant: busy has size n; notbusy never grows; a fuel-out never appears -/
+def LInv (n : ℕ) (s s' : LSt) : Prop :=
+  s'.busy.size = n ∧ notbusy n s'.busy ≤ notbusy n s.busy ∧ (s.fuelOut = false → s'.fuelOut = false)
+
+theorem LInv_trans {n : ℕ} {a b c : LSt} (h1 : LInv n a b) (h2 : LInv n b c) : LInv n a c :=
+  ⟨h2.1, h2.2.1.trans h1.2.1, fun h => h2.2.2 (h1.2.2 h)⟩
+
+theorem longest_fuel (n v : ℕ) (hs : Array (List ℕ)) (hg : ∀ x : ℕ, ∀ y ∈ hs[x]!, y < n) :
+    ∀ f x s, x < n → s.busy.size = n → notbusy n s.busy + 1 ≤ f → LInv n s (longest v hs f x s).2 := by
+  intro f
+  induction f with
+  | zero => intro x s _ _ h; omega
+  | succ f ih =>
+    intro x s hx hsz hf
+    simp only [longest]
+    by_cases hv : (x == v) = true
+    · simp only [hv, ↓reduceIte]; exact ⟨hsz, le_refl _, id⟩
+    · simp only [Bool.not_eq_true] at hv
+      simp only [hv, Bool.false_eq_true, ↓reduceIte]
+      split
+      · exact ⟨hsz, le_refl _, id⟩
+      · by_cases hb : s.busy[x]! = true
+        · simp only [hb, ↓reduceIte]; exact ⟨hsz, le_refl _, id⟩
+        · simp only [Bool.not_eq_true] at hb
+          simp only [hb, Bool.false_eq_true, ↓reduceIte]
+          -- after marking x busy
+          set s1 : LSt := { s with busy := s.busy.set! x true } with hs1
+          have hs1sz : s1.busy.size = n := by simp [hs1, Array.set!, hsz]
+          have hs1nb : notbusy n s1.busy + 1 = notbusy n s.busy := unmarked_set n s.busy x hx hsz hb
+          have h01 : LInv n s s1 := ⟨hs1sz, by omega, fun h => h⟩
+          -- the fold over the successors keeps the invariant relative to s1
+          have hfold : ∀ (ys : List ℕ) (p : (ℤ × Option ℕ) × LSt), (∀ y ∈ ys, y < n) → LInv n s1 p.2 →
+              LInv n s1 (ys.foldl (fun (p : (ℤ × Option ℕ) × LSt) y =>
+                let q := longest v hs f y p.2
+                (if q.1 > p.1.1 then (q.1, some y) else p.1, q.2)) p).2 := by
+            intro ys
+            induction ys with
+            | nil => intro p _ hp; exact hp
+            | cons y ys ihy =>
+              intro p hl hp
+              simp only [List.foldl_cons]
+              apply ihy _ (fun z hz => hl z (by simp [hz]))
+              have hy : y < n := hl y (by simp)
+              have := ih y p.2 hy hp.1 (by have := hp.2.1; omega)
+              exact LInv_trans hp this
+          have h2 := hfold (hs[x]!) ((-1, none), s1) (hg x) ⟨hs1sz, le_refl _, id⟩
+          have h3 := LInv_trans h01 h2
+          exact ⟨by simpa using h3.1, by simpa using h3.2.1, by simpa using h3.2.2⟩
+
+end Longest
+
+section Bounds
+
+/-- every successor entry is < n -/
+def Bnd (n : ℕ) (a : Array (List ℕ)) : Prop := ∀ i : ℕ, ∀ y ∈ a[i]!, y < n
+
+theorem mem_get_set (a : Array (List ℕ)) (x i y : ℕ) (l : List ℕ) (h : y ∈ (a.set! x l)[i]!) :
+    y ∈ l ∨ y ∈ a[i]! := by
+  rw [getElem!_def, Array.set!, Array.getElem?_setIfInBounds] at h
+  rw [getElem!_def]
+  split_ifs at h with h1 h2
+  · exact Or.inl h
+  · change y ∈ ([] : List ℕ) at h; simp at h
+  · exact Or.inr h
+
+theorem mem_get_modify (a : Array (List ℕ)) (x i y : ℕ) (f : List ℕ → List ℕ) (h : y ∈ (a.modify x f)[i]!) :
+    y ∈ f (a[i]!) ∨ y ∈ a[i]! := by
+  rw [getElem!_def, Array.getElem?_modify] at h
+  rw [getElem!_def]
+  split_ifs at h with h1
+  · cases hc : a[i]? with
+    | none => rw [hc] at h; change y ∈ ([] : List ℕ) at h; simp at h
+    | some e => rw [hc] at h; simp at h; left; simpa [hc] using h
+  · exact Or.inr h
+
+theorem Bnd.set {n : ℕ} {a : Array (List ℕ)} (ha : Bnd n a) (x : ℕ) (l : List ℕ) (hl : ∀ y ∈ l, y < n) :
+    Bnd n (a.set! x l) := by
+  intro i y hy
+  rcases mem_get_set a x i y l hy with h | h
+  · exact hl y h
+  · exact ha i y h
+
+theorem Bnd.modify_sub {n : ℕ} {a : Array (List ℕ)} (ha : Bnd n a) (x : ℕ) (f : List ℕ → List ℕ)
+    (hf : ∀ l, ∀ y ∈ f l, y ∈ l) : Bnd n (a.modify x f) := by
+  intro i y hy
+  rcases mem_get_modify a x i y f hy with h | h
+  · exact ha i y (hf _ y h)
+  · exact ha i y h
+
+theorem Bnd.restrict {n : ℕ} {hs hp : Array (List ℕ)} (h1 : Bnd n hs) (h2 : Bnd n hp) (x : ℕ) (M : Array Bool) :
+    Bnd n (restrict hs hp x M).1 ∧ Bnd n (restrict hs hp x M).2 := by
+  refine ⟨h1.set x _ (fun y hy => h1 x y (List.mem_of_mem_filter hy)), ?_⟩
+  show Bnd n ((hs[x]!).foldl (fun hp y => if !M[y]! then hp.modify y (·.erase x) else hp) hp)
+  generalize hs[x]! = l
+  induction l generalizing hp with
+  | nil => exact h2
+  | cons y ys ih =>
+    simp only [List.foldl_cons]
+    apply ih
+    split
+    · exact h2.modify_sub y _ (fun l z hz => List.mem_of_mem_erase hz)
+    · exact h2
+
+end Bounds
+
+section Main
+
+theorem loopFuel_inv {S : Type} (step : S → Option S) (Inv : S → Prop)
+    (h : ∀ s s', Inv s → step s = some s' → Inv s') : ∀ k s, Inv s → Inv (loopFuel step k s).1 := by
+  intro k
+  induction k with
+  | zero => intro s hs; exact hs
+  | succ k ih =>
+    intro s hs
+    simp only [loopFuel]
+    cases hst : step s with
+    | none => exact hs
+    | some s' => exact ih s' (h s s' hs hst)
+
+theorem scan_marked (n : ℕ) (stop : Option ℕ) (ok : ℕ → Bool) (x : ℕ) :
+    ∀ (l : List ℕ) (d : DS), (∀ y ∈ l, y < n) → (∀ y ∈ d.marked, y < n) →
+      ∀ y ∈ (scan stop ok x l d).marked, y < n := by
+  intro l
+  induction l with
+  | nil => intro d _ hd; exact hd
+  | cons y ys ih =>
+    intro d hl hd
+    simp only [scan]
+    split
+    · exact hd
+    · split
+      · apply ih _ (fun z hz => hl z (by simp [hz]))
+        intro z hz
+        simp only [List.mem_cons] at hz
+        rcases hz with rfl | hz
+        · exact hl z (by simp)
+        · exact hd z hz
+      · exact ih d (fun z hz => hl z (by simp [hz])) hd
+
+theorem dfs_marked (n : ℕ) (g : Array (List ℕ)) (root : ℕ) (stop : Option ℕ) (ok : ℕ → Bool)
+    (hg : Bnd n g) (hr : root < n) : ∀ y ∈ (dfs n g root stop ok).1.marked, y < n := by
+  unfold dfs
+  apply loopFuel_inv (dfsStep g stop ok) (fun d => ∀ y ∈ d.marked, y < n)
+  · intro s s' hs h
+    unfold dfsStep at h
+    split at h
+    · simp at h
+    · split at h
+      · simp at h
+      · rename_i x rest _
+        simp only [Option.some.injEq] at h
+        subst h
+        exact scan_marked n stop ok x (g[x]!) _ (hg x) hs
+  · intro y hy; simp at hy; omega
+
+theorem Bnd.replicate (n m : ℕ) : Bnd n (Array.replicate m ([] : List ℕ)) := by
+  intro i y hy
+  rw [getElem!_def, Array.getElem?_replicate] at hy
+  by_cases hi : i < m
+  · simp only [hi, ↓reduceIte] at hy; simp at hy
+  · simp only [hi, ↓reduceIte] at hy; change y ∈ ([] : List ℕ) at hy; simp at hy
+
+theorem Bnd.foldl_set (n : ℕ) (f : ℕ → List ℕ) (hf : ∀ x, ∀ y ∈ f x, y < n) :
+    ∀ (l : List ℕ) (a : Array (List ℕ)), Bnd n a → Bnd n (l.foldl (fun a x => a.set! x (f x)) a) := by
+  intro l
+  induction l with
+  | nil => intro a h; exact h
+  | cons x xs ih => intro a h; exact ih _ (h.set x _ (hf x))
+
+theorem evenFold_bnd (n : ℕ) (M : Array Bool) : ∀ (l : List ℕ) (a : Array (List ℕ) × Array (List ℕ)),
+    Bnd n a.1 → Bnd n a.2 → Bnd n (evenFold M l a).1 ∧ Bnd n (evenFold M l a).2 := by
+  intro l
+  induction l with
+  | nil => intro a ha hb; exact ⟨ha, hb⟩
+  | cons q qs ih =>
+    intro a ha hb
+    unfold evenFold at ih ⊢
+    simp only [List.foldl_cons]
+    apply ih
+    · split
+      · exact (Bnd.restrict ha hb q _).1
+      · exact ha
+    · split
+      · exact (Bnd.restrict ha hb q _).2
+      · exact hb
+
+theorem oddFold_bnd (n : ℕ) (E : Eng) (u : ℕ) (M : Array Bool) : ∀ (l : List ℕ) (a : Array (List ℕ) × Array (List ℕ) × Array ℕ),
+    Bnd n a.1 → Bnd n a.2.1 → Bnd n (oddFold E u M l a).1 ∧ Bnd n (oddFold E u M l a).2.1 := by
+  intro l
+  induction l with
+  | nil => intro a ha hb; exact ⟨ha, hb⟩
+  | cons q qs ih =>
+    intro a ha hb
+    unfold oddFold at ih ⊢
+    simp only [List.foldl_cons]
+    apply ih
+    · split
+      · split
+        · exact (Bnd.restrict ha hb q _).1
+        · exact ha
+      · exact ha
+    · split
+      · split
+        · exact (Bnd.restrict ha hb q _).2
+        · exact hb
+      · exact hb
+
+/-- one u of the restriction phase keeps the bounds and adds no fuel-out -/
+theorem phaseU_ok (E : Eng) (n v : ℕ) (Rl : List ℕ) (u : ℕ)
+    (x : Array (List ℕ) × Array (List ℕ) × Array ℕ × Bool) (h1 : Bnd n x.1) (h2 : Bnd n x.2.1) :
+    Bnd n (phaseU E n v Rl x u).1 ∧ Bnd n (phaseU E n v Rl x u).2.1 ∧
+      (phaseU E n v Rl x u).2.2.2 = x.2.2.2 := by
+  unfold phaseU
+  split
+  · have hb := dfs_fuel n x.2.1 v none (fun y => y != u) h2
+    obtain ⟨r1, r2⟩ := Bnd.restrict h1 h2 u (dfs n x.2.1 v none (fun y => y != u)).1.seen
+    obtain ⟨k1, k2⟩ := evenFold_bnd n _ Rl _ r1 r2
+    exact ⟨k1, k2, by simp [hb]⟩
+  · have hb := dfs_fuel n x.2.1 u none (fun y => y != v) h2
+    obtain ⟨k1, k2⟩ := oddFold_bnd n E u _ Rl (x.1, x.2.1, x.2.2.1) h1 h2
+    exact ⟨k1, k2, by simp [hb]⟩
+
+theorem phase_ok (E : Eng) (n v : ℕ) (Rl : List ℕ) : ∀ (us : List ℕ) (x : Array (List ℕ) × Array (List ℕ) × Array ℕ × Bool),
+    Bnd n x.1 → Bnd n x.2.1 →
+    Bnd n (us.foldl (phaseU E n v Rl) x).1 ∧ Bnd n (us.foldl (phaseU E n v Rl) x).2.1 ∧
+      (us.foldl (phaseU E n v Rl) x).2.2.2 = x.2.2.2 := by
+  intro us
+  induction us with
+  | nil => intro x h1 h2; exact ⟨h1, h2, rfl⟩
+  | cons u us ih =>
+    intro x h1 h2
+    simp only [List.foldl_cons]
+    obtain ⟨a1, a2, a3⟩ := phaseU_ok E n v Rl u x h1 h2
+    obtain ⟨b1, b2, b3⟩ := ih _ a1 a2
+    exact ⟨b1, b2, b3.trans a3⟩
+
+theorem longestAll_key (n v : ℕ) (hs : Array (List ℕ)) (hg : Bnd n hs) (s0 : LSt) :
+    ∀ (l : List ℕ) (p : Array (Option ℕ) × LSt), (∀ x ∈ l, x < n) → LInv n s0 p.2 →
+      LInv n s0 (l.foldl (fun (p : Array (Option ℕ) × LSt) x =>
+        (p.1.set! x (some (longest v hs (n + 1) x p.2).1.toNat), (longest v hs (n + 1) x p.2).2)) p).2 := by
+  intro l
+  induction l with
+  | nil => intro p _ hp; exact hp
+  | cons x xs ih =>
+    intro p hl hp
+    simp only [List.foldl_cons]
+    apply ih _ (fun z hz => hl z (by simp [hz]))
+    have hx : x < n := hl x (by simp)
+    have h1 := hp.2.1
+    have h2 := unmarked_le n p.2.busy
+    have := longest_fuel n v hs hg (n + 1) x p.2 hx hp.1 (by unfold notbusy at *; omega)
+    exact LInv_trans hp this
+
+theorem longestAll_fuel (n v : ℕ) (hs : Array (List ℕ)) (hg : Bnd n hs) (Rl : List ℕ) (hR : ∀ x ∈ Rl, x < n) :
+    (longestAll n v hs Rl).2.fuelOut = false := by
+  unfold longestAll
+  have h := longestAll_key n v hs hg ⟨Array.replicate n none, Array.replicate n false, Array.replicate n none, false, false⟩
+    Rl (Array.replicate n none, ⟨Array.replicate n none, Array.replicate n false, Array.replicate n none, false, false⟩)
+    hR ⟨by simp, le_refl _, id⟩
+  exact h.2.2 rfl
+
+theorem assign_fuel (E : Eng) (v : ℕ) (Rl : List ℕ) (path : Array ℕ) (dist tau : Array (Option ℕ)) :
+    ∀ s : ES, (assign E v Rl path dist tau s).fuelOut = s.fuelOut := by
+  unfold assign
+  induction Rl with
+  | nil => intro s; rfl
+  | cons x xs ih =>
+    intro s
+    simp only [List.foldl_cons]
+    rw [ih]
+    split <;> (split <;> rfl)
+
+end Main
+
+section Walk
+
+/-- The DFS invariant the parent walk needs (marks = the marked list, below n; no repeats; the stack and the hit vertex are
+marked; the root is marked; every marked vertex but the root has a parent marked EARLIER, i.e. further from the head of
+`marked`, which lists the newest first). -/
+structure DInv (n root : ℕ) (d : DS) : Prop where
+  seen_size : d.seen.size = n
+  parent_size : d.parent.size = n
+  seen_iff : ∀ y, y < n → (d.seen[y]! = true ↔ y ∈ d.marked)
+  nodup : d.marked.Nodup
+  lt : ∀ y ∈ d.marked, y < n
+  st_sub : ∀ y ∈ d.st, y ∈ d.marked
+  hit_sub : ∀ x, d.hit = some x → x ∈ d.marked
+  root_mem : root ∈ d.marked
+  par : ∀ y ∈ d.marked, y ≠ root → d.parent[y]! ∈ d.marked ∧ d.marked.idxOf y < d.marked.idxOf (d.parent[y]!)
+
+theorem scan_dinv (n root : ℕ) (stop : Option ℕ) (ok : ℕ → Bool) (x : ℕ) :
+    ∀ (l : List ℕ) (d : DS), (∀ y ∈ l, y < n) → x ∈ d.marked → DInv n root d → DInv n root (scan stop ok x l d) := by
+  intro l
+  induction l with
+  | nil => intro d _ _ h; exact h
+  | cons y ys ih =>
+    intro d hl hxm h
+    have hy : y < n := hl y (by simp)
+    have hys : ∀ z ∈ ys, z < n := fun z hz => hl z (by simp [hz])
+    simp only [scan]
+    split
+    · exact { h with hit_sub := fun z hz => by simp at hz; rw [← hz]; exact hxm }
+    · split
+      · rename_i _ hp
+        have hu : d.seen[y]! = false := by simp at hp; exact hp.2
+        have hny : y ∉ d.marked := fun hm => by have := (h.seen_iff y hy).mpr hm; rw [hu] at this; simp at this
+        have hxy : x ≠ y := fun e => hny (e ▸ hxm)
+        apply ih _ hys (List.mem_cons_of_mem _ hxm)
+        refine ⟨by simp [Array.set!, h.seen_size], by simp [Array.set!, h.parent_size], ?_, ?_, ?_, ?_, ?_, ?_, ?_⟩
+        · intro z hz
+          by_cases hzy : z = y
+          · subst hzy; rw [get_set_eq _ _ _ (by rw [h.seen_size]; exact hz)]; simp
+          · rw [get_set_ne _ _ _ _ hzy, h.seen_iff z hz]; simp [hzy]
+        · exact List.nodup_cons.mpr ⟨hny, h.nodup⟩
+        · intro z hz; simp only [List.mem_cons] at hz; rcases hz with rfl | hz; exact hy; exact h.lt z hz
+        · intro z hz; simp only [List.mem_cons] at hz ⊢; rcases hz with rfl | hz; exact Or.inl rfl; exact Or.inr (h.st_sub z hz)
+        · intro z hz; exact List.mem_cons_of_mem _ (h.hit_sub z hz)
+        · exact List.mem_cons_of_mem _ h.root_mem
+        · intro z hz hzr
+          simp only [List.mem_cons] at hz
+          by_cases hzy : z = y
+          · subst hzy
+            rw [get_set_eq _ _ _ (by rw [h.parent_size]; exact hy)]
+            refine ⟨List.mem_cons_of_mem _ hxm, ?_⟩
+            rw [List.idxOf_cons_self, List.idxOf_cons_ne _ (Ne.symm hxy)]
+            omega
+          · have hzm : z ∈ d.marked := hz.resolve_left hzy
+            rw [get_set_ne _ _ _ _ hzy]
+            obtain ⟨hpm, hlt⟩ := h.par z hzm hzr
+            have hpy : d.parent[z]! ≠ y := fun e => hny (e ▸ hpm)
+            refine ⟨List.mem_cons_of_mem _ hpm, ?_⟩
+            rw [List.idxOf_cons_ne _ (Ne.symm hzy), List.idxOf_cons_ne _ (Ne.symm hpy)]
+            omega
+      · exact ih d hys hxm h
+
+theorem dfs_dinv (n : ℕ) (g : Array (List ℕ)) (root : ℕ) (hr : root < n) (stop : Option ℕ) (ok : ℕ → Bool)
+    (hg : ∀ x : ℕ, ∀ y ∈ g[x]!, y < n) : DInv n root (dfs n g root stop ok).1 := by
+  unfold dfs
+  apply loopFuel_inv (dfsStep g stop ok) (DInv n root)
+  · intro s s' hs h
+    unfold dfsStep at h
+    split at h
+    · simp at h
+    · split at h
+      · simp at h
+      · rename_i x rest hst
+        simp only [Option.some.injEq] at h
+        subst h
+        have hx : x ∈ s.marked := hs.st_sub x (by rw [hst]; simp)
+        exact scan_dinv n root stop ok x (g[x]!) _ (hg x) hx
+          { hs with st_sub := fun z hz => hs.st_sub z (by rw [hst]; simp [hz]) }
+  · refine ⟨by simp [Array.set!], by simp, ?_, by simp, by simp [hr], by simp, by simp, by simp, ?_⟩
+    · intro z hz
+      by_cases hzr : z = root
+      · subst hzr; rw [get_set_eq _ _ _ (by simp; exact hz)]; simp
+      · rw [get_set_ne _ _ _ _ hzr]; rw [getElem!_def, Array.getElem?_replicate]; simp [hz, hzr]
+    · intro z hz hzr; simp at hz; exact absurd hz hzr
+
+/-- FUEL, the parent walk of FIX 2 (option (a)): with the DFS invariant, the walk from a marked vertex ends in time. -/
+theorem walk_fuel (n v : ℕ) (d : DS) (h : DInv n v d) (cy : ℕ) (hcy : cy ∈ d.marked) : (walk n v d.parent cy).2 = false := by
+  unfold walk
+  dsimp only
+  apply loopFuel_ok _ (fun x => x ∈ d.marked) (fun x => d.marked.length - d.marked.idxOf x)
+  · intro x x' hx hst
+    by_cases hc : (x == v || d.parent[x]! == v) = true
+    · simp [hc] at hst
+    · simp only [hc, Bool.false_eq_true, ↓reduceIte, Option.some.injEq] at hst
+      subst hst
+      simp only [Bool.or_eq_true, beq_iff_eq, not_or] at hc
+      obtain ⟨hpm, hlt⟩ := h.par x hx hc.1
+      refine ⟨hpm, ?_⟩
+      have := List.idxOf_lt_length_of_mem hpm
+      omega
+  · exact hcy
+  · have hlen : d.marked.length ≤ n := by
+      have := h.nodup.length_le_of_subset (l₂ := List.range n) (fun z hz => List.mem_range.mpr (h.lt z hz))
+      simpa using this
+    omega
+
+end Walk
+
+section Top
+
+theorem filter_bnd {n : ℕ} {g : Array (List ℕ)} (hg : Bnd n g) (p : ℕ → Bool) :
+    ∀ x : ℕ, ∀ y ∈ List.filter p (g[x]! : List ℕ), y < n := fun x y hy => hg x y (List.mem_of_mem_filter hy)
+
+theorem lengths_fuel (E : Eng) (n v : ℕ) (Rl : List ℕ) (hs hp : Array (List ℕ)) (h1 : Bnd n hs) (h2 : Bnd n hp)
+    (hR : ∀ x ∈ Rl, x < n) : (lengths E n v Rl hs hp).2.2.1 = false := by
+  unfold lengths
+  split
+  · exact longestAll_fuel n v hs h1 Rl hR
+  · exact bfs_fuel n v hp h2
+
+theorem walkOpt_fuel (n v : ℕ) (d : DS) (h : DInv n v d) :
+    ((match d.hit with
+      | some cy => some (walk n v d.parent cy)
+      | none => none : Option (ℕ × Bool)).map (·.2)).getD false = false := by
+  cases hh : d.hit with
+  | none => rfl
+  | some cy => simp only [Option.map_some, Option.getD_some]; exact walk_fuel n v d h cy (h.hit_sub cy hh)
+
+theorem procNode_fuel (E : Eng) (gs gp : Array (List ℕ)) (hgs : Bnd E.n gs) (hgp : Bnd E.n gp)
+    (s : ES) (v : ℕ) (hv : v < E.n) (hs : s.fuelOut = false) : (procNode E gs gp s v).fuelOut = false := by
+  unfold procNode
+  split
+  · exact hs
+  · have hC := dfs_fuel E.n gs v (some v) (fun y => s.alive[y]! && E.rank[y]! < E.rank[v]!) hgs
+    dsimp only
+    split
+    · simp [hs, hC]
+    · rw [assign_fuel]
+      have hR := dfs_fuel E.n gp v none (fun y => s.alive[y]!) hgp
+      have hM := dfs_marked E.n gp v none (fun y => s.alive[y]!) hgp hv
+      have hs0 := Bnd.foldl_set E.n _ (filter_bnd hgs (fun y => (dfs E.n gp v none (fun y => s.alive[y]!)).1.seen[y]!))
+        (dfs E.n gp v none (fun y => s.alive[y]!)).1.marked _ (Bnd.replicate E.n E.n)
+      have hp0 := Bnd.foldl_set E.n _ (filter_bnd hgp (fun y => (dfs E.n gp v none (fun y => s.alive[y]!)).1.seen[y]!))
+        (dfs E.n gp v none (fun y => s.alive[y]!)).1.marked _ (Bnd.replicate E.n E.n)
+      obtain ⟨p1, p2, p3⟩ := phase_ok E E.n v (dfs E.n gp v none (fun y => s.alive[y]!)).1.marked
+        (((dfs E.n gp v none (fun y => s.alive[y]!)).1.marked.filter fun x => E.rank[x]! > E.rank[v]!).mergeSort
+          (fun a b => E.rank[a]! ≥ E.rank[b]!)) (_, _, Array.replicate E.n 0, false) hs0 hp0
+      have hL := lengths_fuel E E.n v (dfs E.n gp v none (fun y => s.alive[y]!)).1.marked _ _ p1 p2 hM
+      simp only [hs, hC, hR, p3, hL, Bool.or_false]
+      have hD := dfs_dinv E.n gs v hv (some v) (fun y => s.alive[y]! && E.rank[y]! < E.rank[v]!) hgs
+      cases hh : (dfs E.n gs v (some v) fun y => s.alive[y]! && decide (E.rank[y]! < E.rank[v]!)).1.hit with
+      | none => simp
+      | some cy => simp [walk_fuel _ _ _ hD cy (hD.hit_sub cy hh)]
+
+theorem order_foldl_fuel (E : Eng) (gs gp : Array (List ℕ)) (hgs : Bnd E.n gs) (hgp : Bnd E.n gp) :
+    ∀ (l : List ℕ) (s : ES), (∀ v ∈ l, v < E.n) → s.fuelOut = false → (l.foldl (procNode E gs gp) s).fuelOut = false := by
+  intro l
+  induction l with
+  | nil => intro s _ h; exact h
+  | cons v vs ih =>
+    intro s hl h
+    simp only [List.foldl_cons]
+    exact ih _ (fun z hz => hl z (by simp [hz])) (procNode_fuel E gs gp hgs hgp s v (hl v (by simp)) h)
+
+theorem Bnd.modify_append {n : ℕ} {a : Array (List ℕ)} (ha : Bnd n a) (w v : ℕ) (hv : v < n) :
+    Bnd n (a.modify w (· ++ [v])) := by
+  intro i y hy
+  rcases mem_get_modify a w i y _ hy with h | h
+  · simp only [List.mem_append, List.mem_singleton] at h
+    rcases h with h | rfl
+    · exact ha i y h
+    · exact hv
+  · exact ha i y h
+
+theorem gs_bnd (E : Eng) (strat : Array ℕ) (hsucc : Bnd E.n E.succ)
+    (hstrat : ∀ v, v < E.n → E.owner[v]! = 0 → strat[v]! < E.n) :
+    Bnd E.n ((Array.range E.n).map fun v => if E.owner[v]! == 0 then [strat[v]!] else E.succ[v]!) := by
+  intro i y hy
+  rw [getElem!_def, Array.getElem?_map, Array.getElem?_range] at hy
+  by_cases hi : i < E.n
+  · simp only [hi, ↓reduceIte, Option.map_some] at hy
+    split at hy
+    · rename_i h0
+      simp only [List.mem_singleton] at hy
+      subst hy
+      exact hstrat i hi (by simpa using h0)
+    · exact hsucc i y hy
+  · simp only [hi, ↓reduceIte, Option.map_none] at hy
+    change y ∈ ([] : List ℕ) at hy; simp at hy
+
+theorem gp_bnd (n : ℕ) (gs : Array (List ℕ)) :
+    Bnd n ((List.range n).foldl (fun a v => (gs[v]!).foldl (fun a w => a.modify w (· ++ [v])) a)
+      (Array.replicate n [])) := by
+  have inner : ∀ (v : ℕ), v < n → ∀ (l : List ℕ) (a : Array (List ℕ)), Bnd n a →
+      Bnd n (l.foldl (fun a w => a.modify w (· ++ [v])) a) := by
+    intro v hv l
+    induction l with
+    | nil => intro a h; exact h
+    | cons w ws ih => intro a h; exact ih _ (h.modify_append w v hv)
+  have outer : ∀ (l : List ℕ), (∀ v ∈ l, v < n) → ∀ (a : Array (List ℕ)), Bnd n a →
+      Bnd n (l.foldl (fun a v => (gs[v]!).foldl (fun a w => a.modify w (· ++ [v])) a) a) := by
+    intro l
+    induction l with
+    | nil => intro _ a h; exact h
+    | cons v vs ih =>
+      intro hl a h
+      exact ih (fun z hz => hl z (by simp [hz])) _ (inner v (hl v (by simp)) _ a h)
+  exact outer _ (fun v hv => List.mem_range.mp hv) _ (Bnd.replicate n n)
+
+/-- ENGINE-LEVEL FUEL for `Eng.evaluate`. -/
+theorem evaluate_fuel (E : Eng) (strat : Array ℕ) (hsucc : Bnd E.n E.succ)
+    (hstrat : ∀ v, v < E.n → E.owner[v]! = 0 → strat[v]! < E.n) (horder : ∀ v ∈ E.order, v < E.n) :
+    (E.evaluate strat).fuelOut = false := by
+  unfold Eng.evaluate
+  exact order_foldl_fuel E _ _ (gs_bnd E strat hsucc hstrat) (gp_bnd E.n _) E.order _ horder rfl
+
+theorem ofGame_succ_bnd (g : SGame) (hb : ∀ v, v < g.n → ∀ w ∈ g.succ[v]!, w < g.n) : Bnd g.n (Eng.ofGame g).succ := by
+  intro i y hy
+  simp only [Eng.ofGame] at hy
+  rw [getElem!_def, Array.getElem?_map, Array.getElem?_range] at hy
+  by_cases hi : i < g.n
+  · simp only [hi, ↓reduceIte, Option.map_some] at hy
+    exact hb i hi y (List.mem_dedup.mp (List.mem_mergeSort.mp hy))
+  · simp only [hi, ↓reduceIte, Option.map_none] at hy
+    change y ∈ ([] : List ℕ) at hy; simp at hy
+
+theorem ofGame_order (g : SGame) : ∀ v ∈ (Eng.ofGame g).order, v < (Eng.ofGame g).n := by
+  intro v hv
+  simp only [Eng.ofGame] at hv ⊢
+  exact List.mem_range.mp (List.mem_mergeSort.mp hv)
+
+/-- FUEL, one call: on a well-formed game, for every Even strategy, `Eng.evaluate` never runs out of fuel. -/
+theorem evaluate_fuel_game (g : SGame) (hg : g.WF) (s : Array ℕ) (hs : g.StratWF 0 s) :
+    ((Eng.ofGame g).evaluate s).fuelOut = false :=
+  evaluate_fuel (Eng.ofGame g) s (ofGame_succ_bnd g hg.succ_lt)
+    (fun v hv h0 => hg.succ_lt v hv _ (hs.2 v hv h0)) (ofGame_order g)
+
+end Top
+section OutBound
+
+/-- every `some t` entry is < n -/
+def OB (n : ℕ) (a : Array (Option ℕ)) : Prop := ∀ i t : ℕ, a[i]! = some t → t < n
+
+theorem mem_set_opt (a : Array (Option ℕ)) (x i : ℕ) (o : Option ℕ) (t : ℕ) (h : (a.set! x o)[i]! = some t) :
+    o = some t ∨ a[i]! = some t := by
+  rw [getElem!_def, Array.set!, Array.getElem?_setIfInBounds] at h
+  rw [getElem!_def]
+  split_ifs at h with h1 h2
+  all_goals first | exact Or.inl h | exact Or.inr h
+
+theorem OB.set {n : ℕ} {a : Array (Option ℕ)} (ha : OB n a) (x : ℕ) (o : Option ℕ) (ho : ∀ t, o = some t → t < n) :
+    OB n (a.set! x o) := by
+  intro i t h
+  rcases mem_set_opt a x i o t h with h | h
+  · exact ho t h
+  · exact ha i t h
+
+theorem OB.replicate (n m : ℕ) : OB n (Array.replicate m (none : Option ℕ)) := by
+  intro i t h
+  rw [getElem!_def, Array.getElem?_replicate] at h
+  by_cases hi : i < m
+  · simp [hi] at h
+  · simp only [hi, ↓reduceIte] at h; cases h
+
+/-- the choices of `longest` are successors in `hs` (< n) -/
+theorem longest_tau (n v : ℕ) (hs : Array (List ℕ)) (hg : Bnd n hs) :
+    ∀ f x s, OB n s.tau → OB n (longest v hs f x s).2.tau := by
+  intro f
+  induction f with
+  | zero => intro x s h; exact h
+  | succ f ih =>
+    intro x s h
+    simp only [longest]
+    split
+    · exact h
+    · split
+      · exact h
+      · split
+        · exact h
+        · -- the fold keeps OB on tau and the chosen argument is in hs[x]
+          have key : ∀ (ys : List ℕ), (∀ y ∈ ys, y < n) → ∀ (p : (ℤ × Option ℕ) × LSt),
+              (∀ t, p.1.2 = some t → t < n) → OB n p.2.tau →
+              (∀ t, (ys.foldl (fun (p : (ℤ × Option ℕ) × LSt) y =>
+                  let q := longest v hs f y p.2
+                  (if q.1 > p.1.1 then (q.1, some y) else p.1, q.2)) p).1.2 = some t → t < n) ∧
+              OB n (ys.foldl (fun (p : (ℤ × Option ℕ) × LSt) y =>
+                  let q := longest v hs f y p.2
+                  (if q.1 > p.1.1 then (q.1, some y) else p.1, q.2)) p).2.tau := by
+            intro ys
+            induction ys with
+            | nil => intro _ p h1 h2; exact ⟨h1, h2⟩
+            | cons y ys ihy =>
+              intro hl p h1 h2
+              simp only [List.foldl_cons]
+              apply ihy (fun z hz => hl z (by simp [hz]))
+              · intro t ht
+                dsimp only at ht
+                split at ht
+                · simp only [Option.some.injEq] at ht; rw [← ht]; exact hl y (by simp)
+                · exact h1 t ht
+              · exact ih y p.2 h2
+          obtain ⟨k1, k2⟩ := key (hs[x]!) (hg x) ((-1, none), { s with busy := s.busy.set! x true })
+            (by intro t ht; simp at ht) h
+          exact k2.set x _ k1
+
+theorem longestAll_tau (n v : ℕ) (hs : Array (List ℕ)) (hg : Bnd n hs) (Rl : List ℕ) :
+    OB n (longestAll n v hs Rl).2.tau := by
+  unfold longestAll
+  have key : ∀ (l : List ℕ) (p : Array (Option ℕ) × LSt), OB n p.2.tau →
+      OB n (l.foldl (fun (p : Array (Option ℕ) × LSt) x =>
+        (p.1.set! x (some (longest v hs (n + 1) x p.2).1.toNat), (longest v hs (n + 1) x p.2).2)) p).2.tau := by
+    intro l
+    induction l with
+    | nil => intro p h; exact h
+    | cons x xs ih =>
+      intro p h
+      simp only [List.foldl_cons]
+      exact ih _ (longest_tau n v hs hg (n + 1) x p.2 h)
+  exact key Rl _ (OB.replicate n n)
+
+end OutBound
+
+section OutBound2
+
+theorem bfsInner_ob (n x : ℕ) (hx : x < n) : ∀ (ys : List ℕ) (a : BS), (∀ y ∈ ys, y < n) → OB n a.tau →
+    (∀ z ∈ a.layer, z < n) → OB n (ys.foldl (bfsInner x) a).tau ∧ (∀ z ∈ (ys.foldl (bfsInner x) a).layer, z < n) := by
+  intro ys
+  induction ys with
+  | nil => intro a _ h1 h2; exact ⟨h1, h2⟩
+  | cons y ys ih =>
+    intro a hl h1 h2
+    simp only [List.foldl_cons]
+    apply ih _ (fun z hz => hl z (by simp [hz]))
+    · unfold bfsInner; split
+      · exact h1.set y _ (fun t ht => by simp at ht; rw [← ht]; exact hx)
+      · exact h1
+    · unfold bfsInner; split
+      · intro z hz
+        simp only [List.mem_append, List.mem_singleton] at hz
+        rcases hz with hz | rfl
+        · exact h2 z hz
+        · exact hl z (by simp)
+      · exact h2
+
+theorem bfsStep_ob (n : ℕ) (hp : Array (List ℕ)) (hg : Bnd n hp) (b b' : BS) (h1 : OB n b.tau)
+    (h2 : ∀ z ∈ b.layer, z < n) (h : bfsStep hp b = some b') : OB n b'.tau ∧ ∀ z ∈ b'.layer, z < n := by
+  rw [bfsStep_eq] at h
+  split at h
+  · simp at h
+  · simp only [Option.some.injEq] at h
+    subst h
+    have outer : ∀ (xs : List ℕ), (∀ x ∈ xs, x < n) → ∀ (a : BS), OB n a.tau → (∀ z ∈ a.layer, z < n) →
+        OB n (xs.foldl (fun acc x => (hp[x]!).foldl (bfsInner x) acc) a).tau ∧
+        ∀ z ∈ (xs.foldl (fun acc x => (hp[x]!).foldl (bfsInner x) acc) a).layer, z < n := by
+      intro xs
+      induction xs with
+      | nil => intro _ a k1 k2; exact ⟨k1, k2⟩
+      | cons x xs ih =>
+        intro hl a k1 k2
+        simp only [List.foldl_cons]
+        obtain ⟨m1, m2⟩ := bfsInner_ob n x (hl x (by simp)) (hp[x]!) a (hg x) k1 k2
+        exact ih (fun z hz => hl z (by simp [hz])) _ m1 m2
+    exact outer b.layer h2 { b with layer := [] } h1 (by simp)
+
+theorem bfs_tau (n v : ℕ) (hv : v < n) (hp : Array (List ℕ)) (hg : Bnd n hp) :
+    OB n (loopFuel (bfsStep hp) (n + 1) ⟨(Array.replicate n none).set! v (some 0), Array.replicate n none, [v]⟩).1.tau := by
+  have := loopFuel_inv (bfsStep hp) (fun b => OB n b.tau ∧ ∀ z ∈ b.layer, z < n)
+    (fun s s' hs h => bfsStep_ob n hp hg s s' hs.1 hs.2 h) (n + 1)
+    ⟨(Array.replicate n none).set! v (some 0), Array.replicate n none, [v]⟩
+    ⟨OB.replicate n n, fun z hz => by simp at hz; omega⟩
+  exact this.1
+
+end OutBound2
+
+section OutBound3
+
+theorem walk_lt (n v : ℕ) (d : DS) (h : DInv n v d) (cy : ℕ) (hcy : cy ∈ d.marked) : (walk n v d.parent cy).1 < n := by
+  unfold walk
+  dsimp only
+  have hm := loopFuel_inv (fun x => if x == v || d.parent[x]! == v then none else some d.parent[x]!) (fun x => x ∈ d.marked)
+    (fun x x' hx hst => by
+      by_cases hc : (x == v || d.parent[x]! == v) = true
+      · simp [hc] at hst
+      · simp only [hc, Bool.false_eq_true, ↓reduceIte, Option.some.injEq] at hst
+        subst hst
+        simp only [Bool.or_eq_true, beq_iff_eq, not_or] at hc
+        exact (h.par x hx hc.1).1) (n + 1) cy hcy
+  split
+  · exact h.lt _ hm
+  · exact h.lt _ hcy
+
+theorem lengths_tau (E : Eng) (n v : ℕ) (hv : v < n) (Rl : List ℕ) (hs hp : Array (List ℕ)) (h1 : Bnd n hs)
+    (h2 : Bnd n hp) : OB n (lengths E n v Rl hs hp).2.1 := by
+  unfold lengths
+  split
+  · exact longestAll_tau n v hs h1 Rl
+  · exact bfs_tau n v hv hp h2
+
+theorem assign_tau (E : Eng) (n v : ℕ) (Rl : List ℕ) (path : Array ℕ) (dist tau : Array (Option ℕ))
+    (ht : OB n tau) : ∀ s : ES, OB n s.tau → OB n (assign E v Rl path dist tau s).tau := by
+  unfold assign
+  induction Rl with
+  | nil => intro s h; exact h
+  | cons x xs ih =>
+    intro s h
+    simp only [List.foldl_cons]
+    apply ih
+    split
+    · split <;> exact h.set x _ (fun t h' => ht x t h')
+    · split <;> exact h
+
+theorem procNode_tau (E : Eng) (gs gp : Array (List ℕ)) (hgs : Bnd E.n gs) (hgp : Bnd E.n gp)
+    (s : ES) (v : ℕ) (hv : v < E.n) (hs : OB E.n s.tau) : OB E.n (procNode E gs gp s v).tau := by
+  unfold procNode
+  split
+  · exact hs
+  · dsimp only
+    split
+    · exact hs
+    · refine assign_tau E E.n v _ _ _ _ ?_ _ (by exact hs)
+      have hs0 := Bnd.foldl_set E.n _ (filter_bnd hgs (fun y => (dfs E.n gp v none (fun y => s.alive[y]!)).1.seen[y]!))
+        (dfs E.n gp v none (fun y => s.alive[y]!)).1.marked _ (Bnd.replicate E.n E.n)
+      have hp0 := Bnd.foldl_set E.n _ (filter_bnd hgp (fun y => (dfs E.n gp v none (fun y => s.alive[y]!)).1.seen[y]!))
+        (dfs E.n gp v none (fun y => s.alive[y]!)).1.marked _ (Bnd.replicate E.n E.n)
+      obtain ⟨p1, p2, _⟩ := phase_ok E E.n v (dfs E.n gp v none (fun y => s.alive[y]!)).1.marked
+        (((dfs E.n gp v none (fun y => s.alive[y]!)).1.marked.filter fun x => E.rank[x]! > E.rank[v]!).mergeSort
+          (fun a b => E.rank[a]! ≥ E.rank[b]!)) (_, _, Array.replicate E.n 0, false) hs0 hp0
+      have hL := lengths_tau E E.n v hv (dfs E.n gp v none (fun y => s.alive[y]!)).1.marked _ _ p1 p2
+      have hD := dfs_dinv E.n gs v hv (some v) (fun y => s.alive[y]! && E.rank[y]! < E.rank[v]!) hgs
+      split
+      · split
+        · rename_i w hw
+          cases hh : (dfs E.n gs v (some v) fun y => s.alive[y]! && decide (E.rank[y]! < E.rank[v]!)).1.hit with
+          | none => rw [hh] at hw; simp at hw
+          | some cy =>
+            rw [hh] at hw
+            simp only [Option.some.injEq] at hw
+            subst hw
+            exact hL.set v _ (fun t h' => by simp at h'; rw [← h']; exact walk_lt E.n v _ hD cy (hD.hit_sub cy hh))
+        · exact hL
+      · exact hL
+
+theorem evaluate_tau (E : Eng) (strat : Array ℕ) (hsucc : Bnd E.n E.succ)
+    (hstrat : ∀ v, v < E.n → E.owner[v]! = 0 → strat[v]! < E.n) (horder : ∀ v ∈ E.order, v < E.n) :
+    OB E.n (E.evaluate strat).tau := by
+  have key : ∀ (gs gp : Array (List ℕ)), Bnd E.n gs → Bnd E.n gp → ∀ (l : List ℕ) (s : ES), (∀ v ∈ l, v < E.n) →
+      OB E.n s.tau → OB E.n (l.foldl (procNode E gs gp) s).tau := by
+    intro gs gp hgs hgp l
+    induction l with
+    | nil => intro s _ h; exact h
+    | cons v vs ih =>
+      intro s hl h
+      simp only [List.foldl_cons]
+      exact ih _ (fun z hz => hl z (by simp [hz])) (procNode_tau E gs gp hgs hgp s v (hl v (by simp)) h)
+  unfold Eng.evaluate
+  exact key _ _ (gs_bnd E strat hsucc hstrat) (gp_bnd E.n _) E.order _ horder (OB.replicate E.n E.n)
+
+end OutBound3
+
+section RunFuel
+
+theorem get_map_range {α} [Inhabited α] (n v : ℕ) (f : ℕ → α) (hv : v < n) : ((Array.range n).map f)[v]! = f v := by
+  rw [getElem!_def, Array.getElem?_map, Array.getElem?_range]; simp [hv]
+
+/-- successor entries < n (the part of WF that fuel needs) -/
+def SB (h : SGame) : Prop := ∀ v, v < h.n → ∀ w ∈ h.succ[v]!, w < h.n
+
+theorem eval_fuel (h : SGame) (hb : SB h) (s : Array ℕ) (hs : ∀ v, v < h.n → h.owner[v]! = 0 → s[v]! < h.n) :
+    ((Eng.ofGame h).evaluate s).fuelOut = false :=
+  evaluate_fuel (Eng.ofGame h) s (ofGame_succ_bnd h hb) hs (ofGame_order h)
+
+theorem eval_tau (h : SGame) (hb : SB h) (s : Array ℕ) (hs : ∀ v, v < h.n → h.owner[v]! = 0 → s[v]! < h.n) :
+    OB h.n ((Eng.ofGame h).evaluate s).tau :=
+  evaluate_tau (Eng.ofGame h) s (ofGame_succ_bnd h hb) hs (ofGame_order h)
+
+theorem improving_lt (E : Eng) (hb : Bnd E.n E.succ) (strat : Array ℕ) (o : EvalOut) :
+    ∀ p ∈ E.improving strat o, p.2 < E.n := by
+  intro p hp
+  simp only [Eng.improving, List.mem_flatMap, List.mem_range] at hp
+  obtain ⟨v, _, hv⟩ := hp
+  split at hv
+  · simp only [List.mem_filterMap] at hv
+    obtain ⟨w, hw, hpw⟩ := hv
+    split at hpw
+    · simp at hpw; subst hpw; exact hb v w hw
+    · simp at hpw
+  · simp at hv
+
+theorem improvSet_lt (owner : Array ℕ) (who : ℕ) (cur : Array ℕ) (I : List (ℕ × ℕ)) (v n : ℕ) (hc : cur[v]! < n)
+    (hI : ∀ p ∈ I, p.2 < n) : ∀ w ∈ improvSet owner who cur I v, w < n := by
+  intro w hw
+  unfold improvSet at hw
+  split at hw
+  · have := List.mem_dedup.mp (List.mem_mergeSort.mp hw)
+    simp only [List.mem_cons, List.mem_filterMap] at this
+    rcases this with rfl | ⟨p, hp, hpw⟩
+    · exact hc
+    · split at hpw
+      · simp at hpw; subst hpw; exact hI p hp
+      · simp at hpw
+  · simp at hw
+
+/-- the run invariant: σ < n at Even's vertices, τ < n at Odd's -/
+structure RunInv (g : SGame) (sigma tau : Array ℕ) : Prop where
+  sig : ∀ v, v < g.n → g.owner[v]! = 0 → sigma[v]! < g.n
+  tau : ∀ v, v < g.n → g.owner[v]! = 1 → tau[v]! < g.n
+
+theorem arenaH_sb (g : SGame) (sigma tau : Array ℕ) (Is : List (ℕ × ℕ)) (hr : RunInv g sigma tau)
+    (hI : ∀ p ∈ Is, p.2 < g.n) (hown : ∀ v, v < g.n → g.owner[v]! ≤ 1) : SB (arenaH g sigma tau Is) := by
+  intro v hv w hw
+  simp only [arenaH] at hv hw ⊢
+  rw [get_map_range _ _ _ hv] at hw
+  split at hw
+  · rename_i h0
+    exact improvSet_lt g.owner 0 sigma Is v g.n (hr.sig v hv (by simpa using h0)) hI w hw
+  · simp only [List.mem_singleton] at hw; subst hw
+    have := hown v hv
+    exact hr.tau v hv (by rename_i h; simp at h; omega)
+
+theorem arenaH'_sb (g : SGame) (sigma tau : Array ℕ) (It : List (ℕ × ℕ)) (hr : RunInv g sigma tau)
+    (hI : ∀ p ∈ It, p.2 < g.n) (hown : ∀ v, v < g.n → g.owner[v]! ≤ 1) : SB (arenaH' g sigma tau It) := by
+  intro v hv w hw
+  simp only [arenaH'] at hv hw ⊢
+  rw [get_map_range _ _ _ hv] at hw
+  split at hw
+  · rename_i h0
+    exact improvSet_lt g.owner 1 tau It v g.n (hr.tau v hv (by simpa using h0)) hI w hw
+  · simp only [List.mem_singleton] at hw; subst hw
+    have := hown v hv
+    exact hr.sig v hv (by rename_i h; simp at h; omega)
+
+theorem dual_owner (g : SGame) (v : ℕ) (hv : v < g.owner.size) : g.dual.owner[v]! = 1 - g.owner[v]! := by
+  simp only [SGame.dual]
+  rw [getElem!_def, getElem!_def, Array.getElem?_map]
+  simp [hv]
+
+theorem owner_one (g : SGame) (hwf : g.WF) (v : ℕ) (hv : v < g.n) (h : 1 - g.owner[v]! = 0) : g.owner[v]! = 1 := by
+  have := hwf.owner_le v hv; omega
+
+theorem fold_pick_P (f : ℕ → ℕ → ℕ) (P : ℕ → Prop) (hf : ∀ b w, f b w = b ∨ f b w = w) :
+    ∀ (rest : List ℕ) (w0 : ℕ), P w0 → (∀ w ∈ rest, P w) → P (rest.foldl f w0) := by
+  intro rest
+  induction rest with
+  | nil => intro w0 h _; exact h
+  | cons w ws ih =>
+    intro w0 h hr
+    simp only [List.foldl_cons]
+    apply ih
+    · rcases hf w0 w with h' | h'
+      · rw [h']; exact h
+      · rw [h']; exact hr w (by simp)
+    · intro z hz; exact hr z (by simp [hz])
+
+theorem fallbackAt_lt (E : Eng) (o : EvalOut) (I : List (ℕ × ℕ)) (cur : Array ℕ) (n v : ℕ) (hn : v < n)
+    (hI : ∀ p ∈ I, p.2 < n) (hc : cur[v]! < n) : (fallbackAt E o I cur)[v]! < n := by
+  unfold fallbackAt
+  by_cases hv : v < cur.size
+  · rw [get_map_range _ _ _ hv]
+    split
+    · exact hc
+    · rename_i w0 rest hws
+      have hmem : ∀ w ∈ w0 :: rest, w < n := by
+        intro w hw
+        rw [← hws] at hw
+        simp only [List.mem_filterMap] at hw
+        obtain ⟨p, hp, hpw⟩ := hw
+        split at hpw
+        · simp at hpw; subst hpw; exact hI p hp
+        · simp at hpw
+      refine fold_pick_P _ (fun x => x < n) ?_ rest w0 (hmem w0 (by simp)) (fun w hw => hmem w (by simp [hw]))
+      intro b w
+      split <;> simp
+  · rw [getElem!_def, Array.getElem?_eq_none (by simp; omega)]; exact Nat.zero_lt_of_lt hn
+
+theorem s4a_ok (g : SGame) (hwf : g.WF) (sigma tau : Array ℕ) (Is : List (ℕ × ℕ)) (hr : RunInv g sigma tau)
+    (hI : ∀ p ∈ Is, p.2 < g.n) :
+    (s4a g sigma tau Is).2.1 = false ∧ ∀ v, v < g.n → g.owner[v]! = 0 → (s4a g sigma tau Is).1[v]! < g.n := by
+  have hsb : SB (arenaH g sigma tau Is).dual := arenaH_sb g sigma tau Is hr hI hwf.owner_le
+  have hstr : ∀ v, v < (arenaH g sigma tau Is).dual.n → (arenaH g sigma tau Is).dual.owner[v]! = 0 →
+      tau[v]! < (arenaH g sigma tau Is).dual.n := by
+    intro v hv h0
+    simp only [SGame.dual, arenaH] at hv ⊢
+    rw [dual_owner (arenaH g sigma tau Is) v (by simp [arenaH, hwf.owner_size]; exact hv)] at h0
+    simp only [arenaH] at h0
+    exact hr.tau v hv (owner_one g hwf v hv h0)
+  refine ⟨eval_fuel _ hsb tau hstr, ?_⟩
+  intro v hv h0
+  simp only [s4a]
+  rw [get_map_range _ _ _ hv]
+  simp only [h0, beq_self_eq_true, ↓reduceIte]
+  have hob := eval_tau _ hsb tau hstr
+  cases ht : ((Eng.ofGame (arenaH g sigma tau Is).dual).evaluate tau).tau[v]! with
+  | none => simp; exact hr.sig v hv h0
+  | some t => simp; exact hob v t ht
+
+theorem s4b_ok (g : SGame) (hwf : g.WF) (sigma tau : Array ℕ) (It : List (ℕ × ℕ)) (hr : RunInv g sigma tau)
+    (hI : ∀ p ∈ It, p.2 < g.n) :
+    (s4b g sigma tau It).2.1 = false ∧ ∀ v, v < g.n → g.owner[v]! = 1 → (s4b g sigma tau It).1[v]! < g.n := by
+  have hsb : SB (arenaH' g sigma tau It) := arenaH'_sb g sigma tau It hr hI hwf.owner_le
+  have hstr : ∀ v, v < (arenaH' g sigma tau It).n → (arenaH' g sigma tau It).owner[v]! = 0 →
+      sigma[v]! < (arenaH' g sigma tau It).n := by
+    intro v hv h0
+    simp only [arenaH'] at hv h0 ⊢
+    exact hr.sig v hv h0
+  refine ⟨eval_fuel _ hsb sigma hstr, ?_⟩
+  intro v hv h1
+  simp only [s4b]
+  rw [get_map_range _ _ _ hv]
+  simp only [h1, beq_self_eq_true, ↓reduceIte]
+  have hob := eval_tau _ hsb sigma hstr
+  cases ht : ((Eng.ofGame (arenaH' g sigma tau It)).evaluate sigma).tau[v]! with
+  | none => simp; exact hr.tau v hv h1
+  | some t => simp; exact hob v t ht
+
+theorem specStep_fuel (g : SGame) (hwf : g.WF) (sigma tau : Array ℕ) (hr : RunInv g sigma tau) (r : StepOut)
+    (h : specStep g (Eng.ofGame g) (Eng.ofGame g.dual) sigma tau = some r) :
+    r.fuelOut = false ∧ RunInv g r.sigma r.tau := by
+  have hsb : SB g := hwf.succ_lt
+  have hsbd : SB g.dual := hwf.succ_lt
+  have hov := eval_fuel g hsb sigma hr.sig
+  have hstrd : ∀ v, v < g.dual.n → g.dual.owner[v]! = 0 → tau[v]! < g.dual.n := by
+    intro v hv h0
+    simp only [SGame.dual] at hv ⊢
+    rw [dual_owner g v (by rw [hwf.owner_size]; exact hv)] at h0
+    exact hr.tau v hv (owner_one g hwf v hv h0)
+  have hod := eval_fuel g.dual hsbd tau hstrd
+  have hIs := improving_lt (Eng.ofGame g) (ofGame_succ_bnd g hsb) sigma ((Eng.ofGame g).evaluate sigma)
+  have hIt := improving_lt (Eng.ofGame g.dual) (ofGame_succ_bnd g.dual hsbd) tau ((Eng.ofGame g.dual).evaluate tau)
+  unfold specStep at h
+  dsimp only at h
+  split at h
+  · simp at h
+  · have hA : (stepA g sigma tau ((Eng.ofGame g).improving sigma ((Eng.ofGame g).evaluate sigma))).2.1 = false ∧
+        ∀ v, v < g.n → g.owner[v]! = 0 →
+          (stepA g sigma tau ((Eng.ofGame g).improving sigma ((Eng.ofGame g).evaluate sigma))).1[v]! < g.n := by
+      unfold stepA
+      split
+      · exact ⟨rfl, hr.sig⟩
+      · exact s4a_ok g hwf sigma tau _ hr hIs
+    have hB : (stepB g sigma tau ((Eng.ofGame g.dual).improving tau ((Eng.ofGame g.dual).evaluate tau))).2.1 = false ∧
+        ∀ v, v < g.n → g.owner[v]! = 1 →
+          (stepB g sigma tau ((Eng.ofGame g.dual).improving tau ((Eng.ofGame g.dual).evaluate tau))).1[v]! < g.n := by
+      unfold stepB
+      split
+      · exact ⟨rfl, hr.tau⟩
+      · exact s4b_ok g hwf sigma tau _ hr hIt
+    split at h
+    · split at h
+      · simp only [Option.some.injEq] at h
+        subst h
+        refine ⟨by simp [hov, hod, hA.1, hB.1], ⟨?_, hr.tau⟩⟩
+        intro v hv h0
+        exact fallbackAt_lt _ _ _ sigma g.n v hv hIs (hr.sig v hv h0)
+      · simp only [Option.some.injEq] at h
+        subst h
+        refine ⟨by simp [hov, hod, hA.1, hB.1], ⟨hr.sig, ?_⟩⟩
+        intro v hv h1
+        exact fallbackAt_lt _ _ _ tau g.n v hv hIt (hr.tau v hv h1)
+    · simp only [Option.some.injEq] at h
+      subst h
+      exact ⟨by simp [hov, hod, hA.1, hB.1], ⟨hA.2, hB.2⟩⟩
+
+theorem specIter_fuel (g : SGame) (hwf : g.WF) :
+    ∀ (cap : ℕ) (sigma tau : Array ℕ), RunInv g sigma tau →
+      ∀ r ∈ (specIter g (Eng.ofGame g) (Eng.ofGame g.dual) cap sigma tau).1, r.fuelOut = false := by
+  intro cap
+  induction cap with
+  | zero => intro _ _ _ r hr; simp [specIter] at hr
+  | succ cap ih =>
+    intro sigma tau hinv r hr
+    simp only [specIter] at hr
+    split at hr
+    · simp at hr
+    · rename_i r0 h0
+      obtain ⟨hf, hinv'⟩ := specStep_fuel g hwf sigma tau hinv r0 h0
+      simp only [List.mem_cons] at hr
+      rcases hr with rfl | hr
+      · exact hf
+      · exact ih r0.sigma r0.tau hinv' r hr
+
+end RunFuel
+
+section Start
+
+theorem initialBest_lt (h : SGame) (hb : SB h) (v : ℕ) (hv : v < h.n) : (Eng.ofGame h).initialBest[v]! < h.n := by
+  have hsb := ofGame_succ_bnd h hb
+  unfold Eng.initialBest
+  rw [get_map_range _ _ _ (by simp [Eng.ofGame]; exact hv)]
+  split
+  · simp [Eng.ofGame] at *; omega
+  · refine fold_pick_P _ (fun x => x < h.n) ?_ _ _ ?_ (fun w hw => hsb v w hw)
+    · intro b w; split <;> simp
+    · cases hl : (Eng.ofGame h).succ[v]! with
+      | nil => simp; omega
+      | cons a as => simp; exact hsb v a (by rw [hl]; simp)
+
+theorem set_foldl_lt (n : ℕ) (P : ℕ → Prop) : ∀ (l : List (ℕ × ℕ)) (a : Array ℕ), (∀ p ∈ l, p.2 < n) →
+    (∀ v, v < n → P v → a[v]! < n) → ∀ v, v < n → P v → (l.foldl (fun a p => a.set! p.1 p.2) a)[v]! < n := by
+  intro l
+  induction l with
+  | nil => intro a _ h; exact h
+  | cons p ps ih =>
+    intro a hl h
+    simp only [List.foldl_cons]
+    apply ih _ (fun q hq => hl q (by simp [hq]))
+    intro v hv hP
+    by_cases hvp : v = p.1
+    · subst hvp
+      by_cases hs : p.1 < a.size
+      · rw [get_set_eq _ _ _ hs]; exact hl p (by simp)
+      · rw [getElem!_def, Array.set!, Array.getElem?_setIfInBounds]
+        simp [hs]; exact Nat.zero_lt_of_lt hv
+    · rw [get_set_ne _ _ _ _ hvp]; exact h v hv hP
+
+theorem startPair_inv (g : SGame) (hwf : g.WF) (start : Option (List (ℕ × ℕ) × List (ℕ × ℕ)))
+    (hst : ∀ ss ts, start = some (ss, ts) →
+      (∀ p ∈ ss, p.1 < g.n ∧ g.owner[p.1]! = 0 ∧ p.2 ∈ g.succ[p.1]!) ∧
+      (∀ p ∈ ts, p.1 < g.n ∧ g.owner[p.1]! = 1 ∧ p.2 ∈ g.succ[p.1]!)) :
+    RunInv g (startPair (Eng.ofGame g) (Eng.ofGame g.dual) start).1 (startPair (Eng.ofGame g) (Eng.ofGame g.dual) start).2 := by
+  have h0 : ∀ v, v < g.n → g.owner[v]! = 0 → (Eng.ofGame g).initialBest[v]! < g.n :=
+    fun v hv _ => initialBest_lt g hwf.succ_lt v hv
+  have h1 : ∀ v, v < g.n → g.owner[v]! = 1 → (Eng.ofGame g.dual).initialBest[v]! < g.n :=
+    fun v hv _ => initialBest_lt g.dual hwf.succ_lt v hv
+  unfold startPair
+  cases start with
+  | none => exact ⟨h0, h1⟩
+  | some st =>
+    obtain ⟨ss, ts⟩ := st
+    obtain ⟨hs, ht⟩ := hst ss ts rfl
+    exact ⟨set_foldl_lt g.n _ ss _ (fun p hp => hwf.succ_lt p.1 (hs p hp).1 _ (hs p hp).2.2) h0,
+           set_foldl_lt g.n _ ts _ (fun p hp => hwf.succ_lt p.1 (ht p hp).1 _ (ht p hp).2.2) h1⟩
+
+end Start
+
+section Statements
+
+theorem fuel_eval : ∀ g : SGame, g.WF → ∀ s : Array ℕ, g.StratWF 0 s → ((Eng.ofGame g).evaluate s).fuelOut = false :=
+  evaluate_fuel_game
+
+theorem fuel_iter : ∀ g : SGame, g.WF → ∀ sigma tau : Array ℕ,
+    (∀ v, v < g.n → g.owner[v]! = 0 → sigma[v]! < g.n) → (∀ v, v < g.n → g.owner[v]! = 1 → tau[v]! < g.n) →
+    ∀ cap : ℕ, ∀ r ∈ (specIter g (Eng.ofGame g) (Eng.ofGame g.dual) cap sigma tau).1, r.fuelOut = false :=
+  fun g hwf sigma tau hs ht cap => specIter_fuel g hwf cap sigma tau ⟨hs, ht⟩
+
+theorem fuel_run : ∀ g : SGame, g.WF → ∀ start : Option (List (ℕ × ℕ) × List (ℕ × ℕ)),
+    (∀ ss ts, start = some (ss, ts) →
+      (∀ p ∈ ss, p.1 < g.n ∧ g.owner[p.1]! = 0 ∧ p.2 ∈ g.succ[p.1]!) ∧
+      (∀ p ∈ ts, p.1 < g.n ∧ g.owner[p.1]! = 1 ∧ p.2 ∈ g.succ[p.1]!)) →
+    ∀ cap : ℕ, ∀ r ∈ (specRun g start cap).steps, r.fuelOut = false := by
+  intro g hwf start hst cap r hr
+  have hinv := startPair_inv g hwf start hst
+  exact specIter_fuel g hwf cap _ _ hinv r hr
+
+end Statements
+
+end PG.Spec
+
+#print axioms PG.Spec.fuel_eval
+#print axioms PG.Spec.fuel_iter
+#print axioms PG.Spec.fuel_run
