@@ -1,0 +1,29 @@
+class [LAD218_PURE=1] d 4 seed 1 iters 150000: it 10489 d 4 k 1 T 5 c (1, 2, 12) sw [(1, 1), (2, 2), (3, 1), (1, 1)] sec 0
+class [LAD218_PURE=1] d 4 seed 2 iters 150000: it 19479 d 4 k 1 T 5 c (1, 2, 12) sw [(1, 1), (2, 2), (1, 3), (1, 1)] sec 1
+class [LAD218_PURE=1] d 6 seed 1 iters 150000: it 6049 d 6 k 1 T 8 c (1, 2, 24) sw [(1, 1), (2, 1), (4, 2), (3, 3), (2, 3), (1, 1)] sec 0
+class [LAD218_PURE=1] d 6 seed 2 iters 150000: it 119828 d 6 k 1 T 8 c (1, 2, 25) sw [(1, 1), (2, 2), (3, 3), (3, 3), (2, 3), (1, 1)] sec 7
+class [LAD218_TPL=mirror] d 4 seed 1 iters 150000: it 13796 d 4 k 1 T 3 c (1, 2, 13) sw [(1, 1), (1, 2), (3, 3), (1, 1)] sec 0
+class [LAD218_TPL=mirror] d 4 seed 2 iters 150000: it 78581 d 4 k 1 T 3 c (1, 2, 13) sw [(1, 1), (2, 1), (3, 3), (1, 1)] sec 3
+class [LAD218_TPL=mirror] d 6 seed 1 iters 150000: it 96012 d 6 k 1 T 6 c (1, 2, 23) sw [(1, 1), (2, 2), (3, 2), (3, 3), (2, 2), (1, 1)] sec 4
+class [LAD218_TPL=mirror] d 6 seed 2 iters 150000: it 61354 d 6 k 1 T 3 c (1, 2, 25) sw [(1, 1), (1, 2), (3, 3), (3, 3), (3, 3), (1, 1)] sec 3
+class [LAD218_TPL=mirror1] d 4 seed 1 iters 150000: it 181 d 4 k 1 T 2 c (1, 1, 10) sw [(1, 1), (1, 1), (2, 2), (1, 1)] sec 0
+class [LAD218_TPL=mirror1] d 4 seed 2 iters 150000: it 1689 d 4 k 1 T 2 c (1, 1, 10) sw [(1, 1), (1, 1), (2, 2), (1, 1)] sec 0
+class [LAD218_TPL=mirror1] d 6 seed 1 iters 150000: it 1765 d 6 k 1 T 3 c (1, 1, 21) sw [(1, 1), (1, 1), (2, 1), (3, 3), (3, 3), (1, 1)] sec 0
+class [LAD218_TPL=mirror1] d 6 seed 2 iters 150000: it 8858 d 6 k 1 T 3 c (1, 1, 21) sw [(1, 1), (1, 1), (1, 2), (3, 3), (3, 3), (1, 1)] sec 0
+class [LAD218_TPL=mid] d 4 seed 1 iters 150000: it 90923 d 4 k 1 T 3 c (1, 2, 13) sw [(1, 1), (2, 1), (3, 3), (1, 1)] sec 3
+class [LAD218_TPL=mid] d 4 seed 2 iters 150000: it 116751 d 4 k 1 T 3 c (1, 2, 13) sw [(1, 1), (1, 2), (3, 3), (1, 1)] sec 3
+class [LAD218_TPL=mid] d 6 seed 1 iters 150000: it 134294 d 6 k 1 T 4 c (1, 2, 25) sw [(1, 1), (1, 2), (3, 3), (3, 3), (3, 3), (1, 1)] sec 6
+class [LAD218_TPL=mid] d 6 seed 2 iters 150000: it 91340 d 6 k 1 T 4 c (1, 2, 25) sw [(1, 1), (2, 1), (1, 3), (4, 4), (3, 3), (1, 1)] sec 4
+class [LAD218_TPL=up2] d 4 seed 1 iters 150000: it 14788 d 4 k 1 T 3 c (1, 2, 13) sw [(1, 1), (2, 2), (2, 3), (1, 1)] sec 0
+class [LAD218_TPL=up2] d 4 seed 2 iters 150000: it 6999 d 4 k 1 T 3 c (1, 2, 13) sw [(1, 1), (2, 2), (2, 3), (1, 1)] sec 0
+class [LAD218_TPL=up2] d 6 seed 1 iters 150000: it 104842 d 6 k 1 T 6 c (1, 2, 24) sw [(1, 1), (2, 2), (3, 4), (2, 2), (2, 3), (1, 1)] sec 5
+class [LAD218_TPL=up2] d 6 seed 2 iters 150000: it 129009 d 6 k 1 T 4 c (1, 2, 26) sw [(1, 1), (2, 2), (3, 3), (3, 3), (3, 3), (1, 1)] sec 6
+class [LAD218_TPL=down] d 4 seed 1 iters 150000: it 221 d 4 k 1 T 1 c (1, 1, 8) sw [(1, 1), (1, 1), (1, 1), (1, 1)] sec 0
+class [LAD218_TPL=down] d 4 seed 2 iters 150000: it 308 d 4 k 1 T 1 c (1, 1, 8) sw [(1, 1), (1, 1), (1, 1), (1, 1)] sec 0
+class [LAD218_TPL=down] d 6 seed 1 iters 150000: it 1120 d 6 k 1 T 1 c (1, 1, 12) sw [(1, 1), (1, 1), (1, 1), (1, 1), (1, 1), (1, 1)] sec 0
+class [LAD218_TPL=down] d 6 seed 2 iters 150000: it 147 d 6 k 1 T 1 c (1, 1, 12) sw [(1, 1), (1, 1), (1, 1), (1, 1), (1, 1), (1, 1)] sec 0
+class [LAD218_TPL=down LAD218_LEVR=0] d 4 seed 1 iters 150000: it 46961 d 4 k 1 T 3 c (1, 1, 14) sw [(1, 1), (1, 1), (2, 2), (3, 3)] sec 2
+class [LAD218_TPL=down LAD218_LEVR=0] d 4 seed 2 iters 150000: it 3454 d 4 k 1 T 3 c (1, 1, 14) sw [(1, 1), (1, 1), (2, 2), (3, 3)] sec 0
+class [LAD218_TPL=down LAD218_LEVR=0] d 6 seed 1 iters 150000: it 33594 d 6 k 1 T 5 c (1, 1, 27) sw [(1, 1), (1, 1), (2, 2), (2, 2), (2, 3), (5, 5)] sec 2
+class [LAD218_TPL=down LAD218_LEVR=0] d 6 seed 2 iters 150000: it 16997 d 6 k 1 T 5 c (1, 1, 28) sw [(1, 1), (1, 1), (2, 2), (3, 1), (2, 4), (5, 5)] sec 1
+DONE

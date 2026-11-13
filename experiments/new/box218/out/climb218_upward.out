@@ -1,0 +1,21 @@
+class [LAD218_LEVR=1] d 4 seed 1 iters 250000: it 93717 d 4 k 2 T 3 c (2, 3, 16) sw [(1, 1), (3, 3), (3, 3), (1, 1)] sec 3
+class [LAD218_LEVR=1] d 4 seed 2 iters 250000: it 3819 d 4 k 2 T 3 c (2, 3, 16) sw [(1, 1), (3, 3), (3, 3), (1, 1)] sec 0
+class [LAD218_LEVR=1] d 4 seed 3 iters 250000: it 74761 d 4 k 2 T 3 c (2, 3, 16) sw [(1, 1), (3, 3), (3, 3), (1, 1)] sec 3
+class [LAD218_LEVR=1] d 6 seed 1 iters 250000: it 165148 d 6 k 2 T 7 c (2, 5, 30) sw [(1, 1), (3, 3), (4, 5), (2, 5), (2, 2), (1, 1)] sec 9
+class [LAD218_LEVR=1] d 6 seed 2 iters 250000: it 19056 d 6 k 2 T 10 c (2, 6, 28) sw [(1, 1), (3, 3), (6, 3), (2, 3), (2, 2), (1, 1)] sec 1
+class [LAD218_LEVR=1] d 6 seed 3 iters 250000: it 15877 d 6 k 2 T 7 c (2, 5, 31) sw [(1, 1), (3, 3), (5, 5), (3, 4), (2, 2), (1, 1)] sec 1
+class [LAD218_LEVR=0] d 4 seed 1 iters 250000: it 97139 d 4 k 2 T 4 c (2, 3, 16) sw [(1, 1), (3, 3), (3, 3), (1, 1)] sec 3
+class [LAD218_LEVR=0] d 4 seed 2 iters 250000: it 166698 d 4 k 2 T 4 c (2, 3, 16) sw [(1, 1), (3, 3), (3, 3), (1, 1)] sec 6
+class [LAD218_LEVR=0] d 4 seed 3 iters 250000: it 14849 d 4 k 2 T 4 c (2, 3, 16) sw [(1, 1), (3, 3), (3, 3), (1, 1)] sec 1
+class [LAD218_LEVR=0] d 6 seed 1 iters 250000: it 210527 d 6 k 2 T 5 c (2, 5, 27) sw [(1, 1), (3, 3), (5, 5), (3, 1), (2, 1), (1, 1)] sec 11
+class [LAD218_LEVR=0] d 6 seed 2 iters 250000: it 62834 d 6 k 2 T 7 c (2, 5, 28) sw [(1, 1), (3, 3), (3, 5), (2, 3), (3, 2), (1, 1)] sec 3
+class [LAD218_LEVR=0] d 6 seed 3 iters 250000: it 31499 d 6 k 2 T 5 c (2, 5, 32) sw [(1, 1), (3, 3), (5, 5), (2, 4), (3, 3), (1, 1)] sec 2
+class [LAD218_NEAR=1 LAD218_LEVR=1] d 4 seed 1 iters 250000: it 198381 d 4 k 2 T 3 c (2, 3, 16) sw [(1, 1), (3, 3), (3, 3), (1, 1)] sec 7
+class [LAD218_NEAR=1 LAD218_LEVR=1] d 4 seed 2 iters 250000: it 79082 d 4 k 2 T 4 c (2, 3, 16) sw [(1, 1), (3, 3), (3, 3), (1, 1)] sec 3
+class [LAD218_NEAR=1 LAD218_LEVR=1] d 4 seed 3 iters 250000: it 93769 d 4 k 2 T 3 c (2, 3, 16) sw [(1, 1), (3, 3), (3, 3), (1, 1)] sec 3
+class [LAD218_NEAR=1 LAD218_LEVR=1] d 6 seed 1 iters 250000: it 175073 d 6 k 2 T 8 c (2, 5, 27) sw [(1, 1), (2, 3), (5, 3), (3, 3), (2, 2), (1, 1)] sec 9
+class [LAD218_NEAR=1 LAD218_LEVR=1] d 6 seed 2 iters 250000: it 178977 d 6 k 2 T 4 c (2, 4, 32) sw [(1, 1), (3, 3), (4, 4), (4, 4), (3, 3), (1, 1)] sec 10
+class [LAD218_NEAR=1 LAD218_LEVR=1] d 6 seed 3 iters 250000: it 204762 d 6 k 2 T 6 c (2, 5, 25) sw [(1, 1), (3, 2), (5, 2), (3, 2), (2, 2), (1, 1)] sec 11
+class [LAD218_LEVR=0] d 8 seed 1 iters 600000: it 528253 d 8 k 2 T 7 c (2, 6, 54) sw [(1, 1), (3, 3), (6, 6), (5, 6), (5, 5), (5, 2), (2, 2), (1, 1)] sec 39
+class [LAD218_LEVR=0] d 8 seed 2 iters 600000: it 447797 d 8 k 3 T 9 c (3, 7, 59) sw [(1, 1), (3, 3), (7, 7), (7, 7), (4, 7), (3, 3), (2, 2), (1, 1)] sec 33
+DONE

@@ -1,0 +1,5 @@
+up_k2_d4.json d 4 N 8 T 3 k 2 full [2] | upceil 0 shape 0 notup 0 ctrl 0
+up_k3_d6.json d 6 N 12 T 8 k 3 full [2, 3, 4] | upceil 0 shape 0 notup 0 ctrl 0
+ctrl up_k2_d4.json d 4 N 8 T 3 k 2 full [2] | upceil 0 shape 5 notup 0 ctrl 1
+ctrl up_k3_d6.json d 6 N 12 T 8 k 3 full [2, 3, 4] | upceil 0 shape 7 notup 0 ctrl 1
+DONE

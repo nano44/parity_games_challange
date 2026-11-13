@@ -1,0 +1,1 @@
+Byte copies of claude/l-red-b 350d84eb experiments/red-b/data/b6b/G/G_3.json .. G_14.json (L-RED-B successor 5, packet P-N5-EXP, family G_k). Credit: L-RED-B. Used here only for an independent replay with key1p.py.

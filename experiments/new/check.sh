@@ -1247,4 +1247,10 @@ if [ "$rk1p" -eq 0 ] && [ -z "$dk1p" ] && ! grep -v '^ctrl' box217/check_key1p.o
 else
   echo "PACKET P-N5-KEY1P check: FAILED (exit $rk1p)"; echo "$dk1p" | head -30; echo "$runk1p" | tail -15; printf '%s\n' "$sk1p" | tail -8; exit 1
 fi
+# BOX 218 (L-NEW successor 77; DROPPED record, docs/new/N5-BITLADDER-box218.md) and the replay of L-RED-B's family G_k with key1p.py / gk_total.py: pinned outputs and byte-copied instances only (no run at verify time); must-0 counters 0 in the pinned replay
+if (cd box218/out && sha1sum -c --quiet SHA1SUMS) && (cd box218/inst && sha1sum -c --quiet SHA1SUMS) && (cd box217/out && sha1sum -c --quiet SHA1SUMS_gk) && (cd box217/inst_gk && sha1sum -c --quiet SHA1SUMS) && grep -q '^quotes 7 missing 0 ' box218/quotes218.out && ! grep -Eq '\b(ideq|l0|a1mu|a1v|a2|a3|a4h|a4x|mism|nofb|exl|fbn|fbat) [1-9]' box217/out/key1p_gk.out box217/out/gk_total.out && [ "$(grep -c '^G_' box217/out/key1p_gk.out)" -eq 12 ] && [ "$(grep -c '^n5 G_' box217/out/key1p_gk.out)" -eq 7 ] && [ "$(grep -c '^G_' box217/out/gk_total.out)" -eq 7 ] && grep -q 'simdiff 0$' box218/out/xfiles218.out; then
+  echo "BOX 218 (dropped record) and G_k replay: outputs and instances pinned, replay counters 0 on G_3..G_14 (N5 itself on G_3..G_9, exactly T_key + 3 iterations), quotes 7 found: PASS"
+else
+  echo "BOX 218 / G_k replay pins: FAILED"; exit 1
+fi
 rm -rf "$tmp"

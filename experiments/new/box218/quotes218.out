@@ -1,0 +1,8 @@
+OK   [R113] RESULTS l. 12152 | (T-BOUND) on 𝓛^R_d, F(l) ≤ 2^(l+2) − 2 and T ≤ 2d + 2(F(0) + … + F(d − 2)) ≤ 2^(d+2) − 2d 
+OK   [R113] RESULTS l. 12152 | (PATH-RISE) at any degree, the current value cv(z) of every mover z rises at most P(z) − 1
+OK   [R119] RESULTS l. 13879 | (HIT) at any degree, cv(y) rises at step t iff some mover of y's old chain moves at t, so 
+OK   [R119] RESULTS l. 13879 | (TOWER-NEED) at a doubling level l with f = F(l − 1), each member x moves f + 1 times, P(x
+OK   [R120] RESULTS l. 14114 | (PULSE-NEST) if levels j, …, j + k are doubling then PULSE ≥ k + 1 on every j-window
+OK   [R120] RESULTS l. 14114 | (GAP-NEST) if moreover k ≥ 1 then GAP ≥ k + 1, so with levels 0, …, h − 1 capped (F(l) = 2
+OK   [R120] RESULTS l. 14114 | (CROSS-ECONOMY) if level j is doubling and pair j is crossed onto two movers A_0 ≠ A_1 out
+quotes 7 missing 0 (trunk 6eaf460475effc5f27d6d2a02d3d80ffe7f0714f)

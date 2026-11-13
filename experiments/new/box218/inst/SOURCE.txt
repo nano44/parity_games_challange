@@ -1,0 +1,1 @@
+Byte copies of claude/l-si 06f072f1 experiments/si/box107/out/up_k2_d4.json and up_k3_d6.json (L-SI 55, box 107 UPWARD LADDERS, SAT models replayed there on one217.OneP). Credit: L-SI.

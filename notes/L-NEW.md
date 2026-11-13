@@ -30,8 +30,30 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   ladders (min(2^(l+1), 2^(d−l))); a PARITY obstruction on pure nearest-level bi-ladders (Ξ-targets exactly one level up, both
   options with distinct W- and Ξ-targets): two consecutive fully enumerating levels need ν_(l+1) to flip an odd number of times per
   κ_(l−1)-phase while the 4-cycle of level l + 1 returns it: to be written as a lemma and tested before any claim.
+- 13:01Z: freeze commit 44775605 ON ORIGIN (push.sh exit 0, VERIFY PASS; ls-remote checked). Reported to the Lead 13:02Z.
+- BOX 218 (item 2; route sent 12:32Z; docs/new/N5-BITLADDER-box218.md; experiments/new/box218: lad218.py fast ladder simulator
+  (simdiff 0 against one217 on 70 genomes incl. towers and records, maxT 340) + climbs by class, shape218.py (UP-CEIL / CEIL-SHAPE
+  counters + control), run218.sh (deterministic), inst/ = byte copies of L-SI's up_k2_d4.json, up_k3_d6.json with SOURCE.txt).
+  READING: no landed lemma (R113, R119, R120) forbids k = d/2 on upward ladders; they add up to the counting ceiling. PROVED lane:
+  UP-CEIL (k ≤ (d + 1)/2, T_key < 2^(⌈d/2⌉+3)), CEIL-SHAPE (targets of the full level-(k−1) mover at levels k, k + 1; a level-(k+1)
+  target takes every path value; at d = 2k − 1 both level-k movers, strictly interleaved). DATA: classes where both options of a
+  mover read ONE pair (PURE crossed, mirror, mirror1, mid, up2, down) stay at k = 1 at d = 4, 6; general upward climbs: k 2 (d 4),
+  k 3 once (d 6, free ranks), k 3 (d 8); seeded with L-SI's instance + two middle levels: no gain. Hill-climbing does not decide
+  d = 8; L-SI's SAT (up107.py) does: do NOT redo this search.
+- KILL CANDIDATE (Lead 12:42Z, read 13:05Z; packet P-N5-EXP, claude/l-red-b 350d84eb, L-RED-B 5; UNREFEREED): family G_k (k ≥ 3,
+  Ξ-acyclic, degree 2, N = 9k − 16, not a 2-wide ladder) with L(G_k) = 2^k − 2: QUIET-KEY-1P / SW-POLY / IDEAL-ACYC-POLY FALSE, and
+  G-N5-TIME FALSE for N5 as specified (R117; exact count by LANDED R124 EXACT-L: N5 from S3 makes exactly L + 3 = 2^k + 1 iterations
+  on Γ3(G_k), n = 135k − 230). Box 218 DROPPED on the Lead's word (13:49Z). The 5-hour usage limit stopped the fleet 13:05Z-13:46Z.
+- MY REPLAY of G_k (experiments/new/box217: inst_gk/ byte copies + SOURCE.txt; out/key1p_gk.out, out/gk_total.out, gk_total.py):
+  T_key = 2^k − 2 for k = 3..14, ideq 0, largest sw 2^(k−2), k(G_k) = 1 (half-rate), k_(3/4) = k or k + 1 from k = 8; all packet
+  counters 0; N5 itself k = 3..9: mism 0, nofb 0, exactly T_key + 3 iterations, one fallback at transition 2^k − 1. Sent to the
+  Lead (interim; my header said 13:57Z, TYPED: date -u read 13:51Z: slip, to report). Lead 14:00Z: R124 relayed to L-RED-B and referees.
+- Post-kill text for the frozen packet: docs/new/P-N5-KEY1P-after-EXP-draft.md (fixes-entry wording, what stays, L-1 title draft);
+  NOT a fixes entry yet; apply only after P-N5-EXP lands as RESULTS R‹n›.
+- CONSEQUENCE MAP (Lead's item): four reader sub-agents (RESULTS R17-R75, R76-R130, GAPS + NOW, lane boxes 209-218); tables in the
+  session scratchpad (cmap_*.md), to be assembled into docs/new/N5-EXP-consequences.md; message to the Lead first. Written 14:01Z.
 - Item 3 (duty): R130 items if CHECKER routes any: none routed.
-- Typed-stamp rule kept: stamps copied from date -u output (this entry written 12:31Z by date -u).
+- Typed-stamp rule kept: stamps copied from date -u output (box 218 lines written 13:04Z; this entry first written 12:31Z by date -u).
 
 ## HANDOVER (successor 76, PARKING; written 2026-11-13 10:40Z by date -u; Lead 10:39Z: «write the HANDOVER and park»; context > park point)
 Successor 77: Fable 5.2, effort xhigh (owner D24 «do xhigh», via the Lead). FIRST JOB: freeze packet P-N5-KEY1P (below).
@@ -3063,6 +3085,15 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   experiments/new/box191/inst, experiments/n5-box21/instances, experiments/si/instances (read by the tools, sha1 in
   box210/out/gen210_instances.sha1). NO external source opened: the box says so, and claims no novelty.
 ## Dead ends (successor 74, box 213 start; experiments/new/box213/arena213.py, out/arena213_frozen.out)
+- (successor 77, 2026-11-13, box 218) «PARITY OBSTRUCTION» for nearest-level upward ladders (my 12:32Z paper note: two consecutive fully
+  enumerating levels would need the value bit above to flip an odd number of times per window while the upper pair's 4-cycle returns
+  it): WITHDRAWN, not a proof. Exact obstruction to the argument: the value order of the upper pair may flip an even number of extra
+  times inside a window (it is a function of that pair's state AND of the order one level further up), so it need not return. The
+  class itself is dead by L-SI's exact SAT (BI-LADDER, claude/l-si 06f072f1 box 107 §6: longest runs 2, 3, 6, 8, 11 for d = 2..6).
+- (successor 77, box 218) Hill-climbing for k = d/2 on upward ladders: DEAD as a method at d ≥ 6 (lad218.py, 150k-600k proposals per
+  run: k 3 at d 6 once in 9 runs with free ranks, never with ranks by level although L-SI's SAT instance up_k3_d6.json has them; at
+  d 8 the best level-3 mover has 7 of 15 switches, seeded or not). Instance that shows the gap: inst/up_k3_d6.json (SAT) vs
+  out/climb218_upward.out. Single-pair-reading templates (both options of a mover on the two movers of one pair): k 1 at d 4, 6.
 - «N5's step on Gamma3 before its first fallback = Howard's step restricted to a subset of the movers» (every moved mover goes to a
   Xi_sigma-best gate): FALSE. a non-best gate: notbest 187 of 6107 moves on 38 of 86 genomes (from experiments/new/box213/out/arena213_frozen.out by n4fix213.py; CORRECTED per REFEREE-2 40 N-4, Lead 03:57Z; the earlier «on 12 genomes» list summed to 84): DHIB18_2805 18, W86_n77 16, W14_n75 15, DSALT9_n416 12, RWX_n95 12, DHIB26_2804 11, C6G8_n54 10, GROW8_n53 10, K1C16_n400 9, DWT20_2803 8, W68_n66 7, DU21_h4 6, HOLD3K_n125 5, CT26_cap400 4, CT27_cap400 4, DSALT6_n108 4, NK6_cl21 4, DSALT7_n108 3, HOLD2K_n84 3, k1fail_202 3, BLKX23_n48 2, C5_NM63_7ae531ad 2, C6_NM75_72a89f5f 2, CT12_cap200 2, ROUTELOW_n21 2, B400_r32_a13d9661 1, BLKX26_n48 1, C2CX4_n23 1, C4_NM50_184a739c 1, C8_NM112_8c4c784f 1, C9_NM122_6224f959 1, CFI3_n48 1, CX4_n21 1, GROW7_n34 1, K1D4_n48 1, K1F34_n84 1, K1L7_n48 1, RINT_n48 1. Obstruction: S4a's
   choice is the optimum of the tau-arena (Odd fixed at its SI strategy tau, which differs from sigma-bar at almost every gate), whose

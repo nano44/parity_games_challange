@@ -1,0 +1,20 @@
+G_3.json N 11 M 22 D 2 mindeg 2 T 6 k 1 k34 1 maxsw 2 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+G_4.json N 20 M 40 D 2 mindeg 2 T 14 k 1 k34 1 maxsw 4 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+G_5.json N 29 M 58 D 2 mindeg 2 T 30 k 1 k34 1 maxsw 8 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+G_6.json N 38 M 76 D 2 mindeg 2 T 62 k 1 k34 1 maxsw 16 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+G_7.json N 47 M 94 D 2 mindeg 2 T 126 k 1 k34 1 maxsw 32 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+G_8.json N 56 M 112 D 2 mindeg 2 T 254 k 1 k34 8 maxsw 64 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+G_9.json N 65 M 130 D 2 mindeg 2 T 510 k 1 k34 9 maxsw 128 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+G_10.json N 74 M 148 D 2 mindeg 2 T 1022 k 1 k34 10 maxsw 256 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+G_11.json N 83 M 166 D 2 mindeg 2 T 2046 k 1 k34 12 maxsw 512 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+G_12.json N 92 M 184 D 2 mindeg 2 T 4094 k 1 k34 13 maxsw 1024 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+G_13.json N 101 M 202 D 2 mindeg 2 T 8190 k 1 k34 14 maxsw 2048 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+G_14.json N 110 M 220 D 2 mindeg 2 T 16382 k 1 k34 15 maxsw 4096 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+n5 G_3.json N 11 M 22 D 2 mindeg 2 T 6 k 1 k34 1 maxsw 2 n5 6 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 mism 0 nofb 0 ctrl 0
+n5 G_4.json N 20 M 40 D 2 mindeg 2 T 14 k 1 k34 1 maxsw 4 n5 14 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 mism 0 nofb 0 ctrl 0
+n5 G_5.json N 29 M 58 D 2 mindeg 2 T 30 k 1 k34 1 maxsw 8 n5 30 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 mism 0 nofb 0 ctrl 0
+n5 G_6.json N 38 M 76 D 2 mindeg 2 T 62 k 1 k34 1 maxsw 16 n5 62 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 mism 0 nofb 0 ctrl 0
+n5 G_7.json N 47 M 94 D 2 mindeg 2 T 126 k 1 k34 1 maxsw 32 n5 126 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 mism 0 nofb 0 ctrl 0
+n5 G_8.json N 56 M 112 D 2 mindeg 2 T 254 k 1 k34 8 maxsw 64 n5 254 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 mism 0 nofb 0 ctrl 0
+n5 G_9.json N 65 M 130 D 2 mindeg 2 T 510 k 1 k34 9 maxsw 128 n5 510 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 mism 0 nofb 0 ctrl 0
+DONE
