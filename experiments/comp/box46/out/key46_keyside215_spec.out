@@ -1,0 +1,9 @@
+BEST_B3_WU151_NM163_e934d333.json KM_MODE spec ctrl 0 lkp 0 pkf 0 pkfa 0 kflip 0 casc 0 ftt 0 ladder 0 T 151 xcyc 1 lr 0 flipsum 566 maxF 0 maxmoves 63
+H5_x0_glo_blo_p0.json KM_MODE spec ctrl 0 lkp 0 pkf 0 pkfa 0 kflip 0 casc 0 ftt 0 ladder 0 T 69 xcyc 1 lr 0 flipsum 188 maxF 0 maxmoves 15
+H6_x0_glo_bhi_p0.json KM_MODE spec ctrl 0 lkp 0 pkf 0 pkfa 0 kflip 0 casc 0 ftt 0 ladder 0 T 103 xcyc 1 lr 0 flipsum 247 maxF 0 maxmoves 31
+H6_x0_glo_blo_p0.json KM_MODE spec ctrl 0 lkp 0 pkf 0 pkfa 0 kflip 0 casc 0 ftt 0 ladder 0 T 103 xcyc 1 lr 0 flipsum 247 maxF 0 maxmoves 31
+HIT7_x0_glo_blo_p0.json KM_MODE spec ctrl 0 lkp 0 pkf 0 pkfa 0 kflip 0 casc 0 ftt 0 ladder 0 T 151 xcyc 1 lr 0 flipsum 571 maxF 0 maxmoves 63
+HIT7_x48_glo_blo_p0.json KM_MODE spec ctrl 0 lkp 0 pkf 0 pkfa 0 kflip 0 casc 0 ftt 0 ladder 0 T 299 xcyc 1 lr 0 flipsum 1155 maxF 0 maxmoves 127
+RECF4_x32_glo_blo_p0.json KM_MODE spec ctrl 0 lkp 0 pkf 0 pkfa 0 kflip 0 casc 0 ftt 0 ladder 0 T 67 xcyc 1 lr 0 flipsum 258 maxF 0 maxmoves 30
+xrand_s4611_nm60_px0.0_215.json KM_MODE spec ctrl 0 lkp 0 pkf 0 pkfa 0 kflip 0 casc 0 ftt 0 ladder 0 T 2 xcyc 1 lr 0 flipsum 1 maxF 0 maxmoves 1
+xrand_s4612_nm160_px0.3_180.json KM_MODE spec ctrl 0 lkp 0 pkf 0 pkfa 0 kflip 0 casc 0 ftt 0 ladder 0 T 2 xcyc 1 lr 0 flipsum 6 maxF 0 maxmoves 1
