@@ -1,0 +1,21 @@
+climb46e_S1.log: lines 13, BEST 8, ALERT 0, agree True 8, DONE S1: best [153, 158, 153, 0, 153, 80] BEST_S1_WE153_NM158_a59f624d.json evals 584
+    START restart 0 seed BEST_B3_WU151_NM163_e934d333.json Wused 151 NM 163 ratio 0.9264 Tkey 151 Wkey 151
+    START restart 1 seed BEST_B3_WU151_NM163_e934d333.json Wused 151 NM 163 ratio 0.9264 Tkey 151 Wkey 151
+    BEST_S1_WE151_NM162_6e88b3fe.json W_ess 151 N+M 162 ratio 0.9321 T_key 151 Wused 151 wess_max 80 must0 0 agree True
+    BEST_S1_WE151_NM161_cbff98c2.json W_ess 151 N+M 161 ratio 0.9379 T_key 151 Wused 151 wess_max 80 must0 0 agree True
+    BEST_S1_WE151_NM160_9ce3c880.json W_ess 151 N+M 160 ratio 0.9437 T_key 151 Wused 151 wess_max 80 must0 0 agree True
+    BEST_S1_WE151_NM159_5b136fed.json W_ess 151 N+M 159 ratio 0.9497 T_key 151 Wused 151 wess_max 80 must0 0 agree True
+    BEST_S1_WE151_NM158_c3c11b42.json W_ess 151 N+M 158 ratio 0.9557 T_key 151 Wused 151 wess_max 80 must0 0 agree True
+    BEST_S1_WE151_NM157_719c159f.json W_ess 151 N+M 157 ratio 0.9618 T_key 151 Wused 151 wess_max 80 must0 0 agree True
+    BEST_S1_WE151_NM156_def714e6.json W_ess 151 N+M 156 ratio 0.9679 T_key 151 Wused 151 wess_max 80 must0 0 agree True
+    BEST_S1_WE153_NM158_a59f624d.json W_ess 153 N+M 158 ratio 0.9684 T_key 153 Wused 153 wess_max 80 must0 0 agree True
+climb46e_S2.log: lines 11, BEST 6, ALERT 0, agree True 6, DONE S2: best [151, 158, 151, 0, 151, 47] BEST_S2_WE151_NM158_0759ff6a.json evals 577
+    START restart 0 seed BEST_B3_WU151_NM163_e934d333.json Wused 151 NM 163 ratio 0.9264 Tkey 151 Wkey 151
+    START restart 1 seed BEST_B3_WU151_NM163_e934d333.json Wused 151 NM 163 ratio 0.9264 Tkey 151 Wkey 151
+    BEST_S2_WE151_NM163_188c8643.json W_ess 151 N+M 163 ratio 0.9264 T_key 151 Wused 151 wess_max 80 must0 0 agree True
+    BEST_S2_WE151_NM162_d81e51e4.json W_ess 151 N+M 162 ratio 0.9321 T_key 151 Wused 151 wess_max 80 must0 0 agree True
+    BEST_S2_WE151_NM161_d875ade1.json W_ess 151 N+M 161 ratio 0.9379 T_key 151 Wused 151 wess_max 80 must0 0 agree True
+    BEST_S2_WE151_NM160_cd9ff7b9.json W_ess 151 N+M 160 ratio 0.9437 T_key 151 Wused 151 wess_max 80 must0 0 agree True
+    BEST_S2_WE151_NM159_471f99d4.json W_ess 151 N+M 159 ratio 0.9497 T_key 151 Wused 151 wess_max 80 must0 0 agree True
+    BEST_S2_WE151_NM158_0759ff6a.json W_ess 151 N+M 158 ratio 0.9557 T_key 151 Wused 151 wess_max 47 must0 0 agree True
+max W_ess per N + M over all bests: 156:151 157:151 158:153 159:151 160:151 161:151 162:151 163:151
