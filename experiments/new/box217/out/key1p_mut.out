@@ -1,0 +1,6 @@
+mut DBL4_d20_F30.json seed 7703 genomes 200 maxT 30 sumT 2808 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+mut H5_d20_F62.json seed 7703 genomes 200 maxT 136 sumT 8092 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+mut H6_d24_F126.json seed 7703 genomes 200 maxT 209 sumT 12077 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+mut HIT7_d28_F254.json seed 7703 genomes 200 maxT 299 sumT 16893 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+mut RECF4_d20_F60.json seed 7703 genomes 200 maxT 67 sumT 4483 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+DONE

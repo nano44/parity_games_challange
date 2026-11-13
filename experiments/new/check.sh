@@ -1236,4 +1236,15 @@ if [ "$r216" -eq 0 ] && [ -z "$d216" ] && ! grep -v '^ctrl' box216/check216.out 
 else
   echo "BOX 216 VALUE SIDE check: FAILED (exit $r216)"; echo "$d216" | head -30; echo "$run216" | tail -15; printf '%s\n' "$s216" | tail -5; exit 1
 fi
+# PACKET P-N5-KEY1P (L-NEW successor 77; docs/new/P-N5-KEY1P.md, frozen): 1P(G) = R104's IDEAL model (ideq), RED-1P against N5 itself on Gamma3 (mism, nofb), Lemma 0 and A1-A4 (l0, a1mu, a1v, a2, a3, a4h, a4x): must-0 counters 0 on the check set and in the pinned outputs (summ_key1p.py), nine controls fire, packet and outputs pinned, quotes 35 found
+rk1p=0; runk1p=$(cd box217 && bash check_key1p.sh 2>&1) || rk1p=$?
+dk1p=$(diff <(printf '%s\n' "$runk1p") box217/check_key1p.out 2>&1) || true
+mk1p='\b(ideq|l0|a1mu|a1v|a2|a3|a4h|a4x|mism|nofb) [1-9]'
+sk1p=$(cd box217 && python3 -I summ_key1p.py 2>&1) || rk1p=$((rk1p + 100))
+pk1p=$(sha1sum < ../../docs/new/P-N5-KEY1P.md | cut -c1-40)
+if [ "$rk1p" -eq 0 ] && [ -z "$dk1p" ] && ! grep -v '^ctrl' box217/check_key1p.out | grep -Eq "$mk1p" && grep -Eq '^ctrlperm .*\bideq [1-9]' box217/check_key1p.out && grep -Eq '^ctrlpermn5 .*\bmism [1-9]' box217/check_key1p.out && grep -Eq '^ctrlhoward .*\ba1mu [1-9]' box217/check_key1p.out && grep -Eq '^ctrldown .*\ba1v [1-9]' box217/check_key1p.out && grep -Eq '^ctrla2half HIT7.*\ba2 [1-9]' box217/check_key1p.out && grep -Eq '^ctrla3all .*\ba3 [1-9]' box217/check_key1p.out && grep -Eq '^ctrla4any .*\ba4h [1-9].*\ba4x [1-9]' box217/check_key1p.out && grep -Eq '^ctrlw0 .*\bl0 [1-9]' box217/check_key1p.out && grep -Eq '^ctrlfbearly .*\bnofb [1-9]' box217/check_key1p.out && ! printf '%s\n' "$sk1p" | grep -Eq 'must0_sum [1-9]|MISSING' && printf '%s\n' "$sk1p" | grep -q '^all files must0_sum 0$' && diff <(printf '%s\n' "$sk1p") box217/out/summ_key1p.txt > /dev/null && (cd box217/out && sha1sum -c --quiet SHA1SUMS_key1p) && grep -q '^quotes 35 missing 0 (trunk 5d7aab0f19f664034567c3bf4f41bcf9e1684d20)$' box217/quotes_key1p.out && grep -q "^$pk1p  DOCS/P-N5-KEY1P.md$" box217/key1p.pins; then
+  echo "PACKET P-N5-KEY1P: must-0 counters 0 (check set and pinned outputs), nine controls fire (perm ideq/mism, howard a1mu, down a1v, a2half, a3all, a4any, w0 l0, fbearly nofb), packet sha1 and outputs pinned, quotes 35 found: PASS"
+else
+  echo "PACKET P-N5-KEY1P check: FAILED (exit $rk1p)"; echo "$dk1p" | head -30; echo "$runk1p" | tail -15; printf '%s\n' "$sk1p" | tail -8; exit 1
+fi
 rm -rf "$tmp"

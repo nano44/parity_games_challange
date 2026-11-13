@@ -1,0 +1,6 @@
+lift 0 H5_d20_F62.json N 40 M 80 D 2 mindeg 2 T 136 k 5 k34 6 maxsw 31 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+lift 10 H5_d20_F62.json N 50 M 90 D 2 mindeg 1 T 136 k 15 k34 16 maxsw 31 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+lift 40 H5_d20_F62.json N 80 M 120 D 2 mindeg 1 T 136 k 45 k34 46 maxsw 31 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+lift 10 H5_d20_F62.json N 50 M 90 D 2 mindeg 1 T 136 k 15 k34 16 maxsw 31 n5 136 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 mism 0 nofb 0 ctrl 0
+lift 40 H5_d20_F62.json N 80 M 120 D 2 mindeg 1 T 136 k 45 k34 46 maxsw 31 n5 136 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 mism 0 nofb 0 ctrl 0
+DONE

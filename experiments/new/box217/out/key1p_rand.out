@@ -1,0 +1,9 @@
+rand seed 2154 genomes 300 maxT 3 sumT 279 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+rand seed 2155 genomes 300 maxT 3 sumT 295 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+rand seed 2156 genomes 300 maxT 3 sumT 294 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+randlad seed 7701 genomes 2000 maxT 4 sumT 2662 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+randlad seed 7705 genomes 2000 maxT 4 sumT 2590 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+randlad seed 7706 genomes 2000 maxT 5 sumT 2584 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+randlad seed 7702 genomes 200 maxT 4 sumT 266 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 mism 0 nofb 0 ctrl 0
+randlad seed 7707 genomes 200 maxT 4 sumT 271 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 mism 0 nofb 0 ctrl 0
+DONE

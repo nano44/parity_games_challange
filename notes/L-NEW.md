@@ -1,6 +1,38 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 77; session_01V5yGRaRvmT6aAyZLgMCHoW; started 2026-11-13 11:54Z; GO 12:07Z, in force 12:28Z after push PASS)
+- Step 0: handover check c7e85713 (VERIFY PASS, on origin 12:28Z by date -u). Container came up 26 behind origin (ff to fcea233b). Clock
+  skew 0 s. Oink rebuilt. rate_limit_info at start: seven_day allowed_warning, no overage, resets 2026-11-18 21:00Z.
+- FINDING (12:04Z, sent to the Lead; confirmed independently by REFEREE-2 41 at 11:58Z, Lead 12:07Z): box 217's REDUCTION is LANDED.
+  1P(G) with ε = gate index IS R104's IDEAL model (same A_s by R105 ENC, same key, same stop); R117 Theorem REACH3 (+ S3-START) gives
+  N5 from S3 on Γ3(G) = the IDEAL run state for state, first fallback at transition L(G) + 1; R117's packet lemma KEY3 (a) is box 217's
+  BRIDGE / XI-1P. So no KEY-TAU (i), no [IMP3], no G-2, no STD-N5; the kill transfer is R117's Corollary REAL-IDEAL-S3 (b), landed.
+  KEY-TAU stays needed only for Ξ-cyclic genomes and renumbered copies of Γ3.
+- PACKET P-N5-KEY1P written and FROZEN at this push: docs/new/P-N5-KEY1P.md (sha1 in experiments/new/box217/key1p.pins). To sign: §1
+  model, §2 Lemma IDEAL-1P, §3 Theorem RED-1P (corollary of R117; F = T_key + 1) + KILL-TRANSFER / BOUND-TRANSFER, §4 Lemma 0, §5 A1,
+  §6 A2 + A2-POLY, §7 A3, §8 A4 ((iii) at degree 2), §9 SW-POLY (exact) + ENUM-NEC (necessary only; k, k_c DEFINED only when every
+  mover has degree ≥ 2; k_c uses sw + 1 ≥ |K|^c). Lead items applied (12:07Z, two messages): B-1 cite KEY3 (a) quoted, not re-proved;
+  REMARK new vs restated (R105 MONO, R114 MOVE-RISE, R113 PATH-RISE, R111 PAIR-KF / MERGE / RETURN, R105 KEYFLIP quoted); E-1 (sw + 1);
+  E-2 LIFT (REFEREE-2 41's family: degree-1 chain under G; k grows by D at constant T; reproduced: LIFT(H5, D) T 136, k 5 / 15 / 45,
+  N5-checked at D 10, 40); N-7 (A5's sentence is not in the packet); kill form by max sw / T, k a degree-≥-2 diagnostic.
+- Tools (experiments/new/box217): key1p.py (counters ideq, l0, a1mu, a1v, a2, a3, a4h, a4x; --n5 adds mism, nofb; --levels, --rand,
+  --randlad, --mut, --lift; controls KEY1P_CTRL = perm, howard, down, a2half, a3all, a4any, w0, fbearly: all nine fire),
+  check_key1p.sh (verify-time, ~15 s, pinned check_key1p.out), run_key1p.sh (pinned outputs out/key1p_*.out, resumable),
+  summ_key1p.py (out/summ_key1p.txt), quotes_key1p.out (quotes212.py at trunk 5d7aab0f: 35 quotes, 0 missing), key1p.pins,
+  check.sh block «PACKET P-N5-KEY1P». DATA: every must-0 0 on 5 towers, 63 climbed records (both with N5 itself), 1,000 mutated towers,
+  24 mutated DBL4 / RECF4 with N5, 7,300 random, LIFT; 20 renumbered towers mism 0 (out/key1p_renum.out; runs of 1-6 steps there).
+- NEXT (item 2, after the freeze SHA is sent): own route, stated first. Lead 12:07Z: «the best own route is the one that uses the landed
+  IDEAL library (R105-R116, R119, R120) against the upward ladders L-SI 55 found (k = d/2 at d = 4, 6): which landed lemma, if any,
+  forbids k = d/2 for all d?» My paper notes so far (NOT run, NOT a result): at degree 2 the rule is «switch iff the other option is
+  strictly better in value under s AND strictly smaller in key under s′» (self-dual up to the delay); on a 2-wide ladder with
+  level-respecting β ranks the state reduces to one key bit κ_l and one value bit ν_l per level; A2 gives k ≤ about d/2 for upward
+  ladders (min(2^(l+1), 2^(d−l))); a PARITY obstruction on pure nearest-level bi-ladders (Ξ-targets exactly one level up, both
+  options with distinct W- and Ξ-targets): two consecutive fully enumerating levels need ν_(l+1) to flip an odd number of times per
+  κ_(l−1)-phase while the 4-cycle of level l + 1 returns it: to be written as a lemma and tested before any claim.
+- Item 3 (duty): R130 items if CHECKER routes any: none routed.
+- Typed-stamp rule kept: stamps copied from date -u output (this entry written 12:31Z by date -u).
+
 ## HANDOVER (successor 76, PARKING; written 2026-11-13 10:40Z by date -u; Lead 10:39Z: «write the HANDOVER and park»; context > park point)
 Successor 77: Fable 5.2, effort xhigh (owner D24 «do xhigh», via the Lead). FIRST JOB: freeze packet P-N5-KEY1P (below).
 ### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)

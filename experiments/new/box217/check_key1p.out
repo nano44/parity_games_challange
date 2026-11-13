@@ -1,0 +1,31 @@
+DBL4_d20_F30.json N 40 M 80 D 2 mindeg 2 T 30 k 0 k34 5 maxsw 15 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+H5_d20_F62.json N 40 M 80 D 2 mindeg 2 T 136 k 5 k34 6 maxsw 31 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+H6_d24_F126.json N 48 M 96 D 2 mindeg 2 T 209 k 6 k34 6 maxsw 63 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+HIT7_d28_F254.json N 56 M 112 D 2 mindeg 2 T 299 k 7 k34 7 maxsw 127 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+RECF4_d20_F60.json N 40 M 80 D 2 mindeg 2 T 67 k 4 k34 5 maxsw 30 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+n5 DBL4_d20_F30.json N 40 M 80 D 2 mindeg 2 T 30 k 0 k34 5 maxsw 15 n5 30 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 mism 0 nofb 0 ctrl 0
+n5 RECF4_d20_F60.json N 40 M 80 D 2 mindeg 2 T 67 k 4 k34 5 maxsw 30 n5 67 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 mism 0 nofb 0 ctrl 0
+rand seed 2154 genomes 300 maxT 3 sumT 279 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+randlad seed 7701 genomes 2000 maxT 4 sumT 2662 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+n5 randlad seed 7702 genomes 200 maxT 4 sumT 266 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 mism 0 nofb 0 ctrl 0
+rec_w2_d32_D2_s2001_enum.json N 64 M 128 D 2 mindeg 2 T 340 k 7 k34 7 maxsw 127 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+rec_w2_d28_D2_s2002_enum.json N 56 M 112 D 2 mindeg 2 T 239 k 6 k34 6 maxsw 63 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+rec_w2_d30_D2_s2003_enum.json N 60 M 120 D 2 mindeg 2 T 318 k 7 k34 7 maxsw 127 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+lift 10 H5_d20_F62.json N 50 M 90 D 2 mindeg 1 T 136 k 15 k34 16 maxsw 31 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl 0
+ctrlperm HIT7_d28_F254.json N 56 M 112 D 2 mindeg 2 T 3 k 1 k34 1 maxsw 1 | ideq 1 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl perm
+ctrlperm DBL4_d20_F30.json N 40 M 80 D 2 mindeg 2 T 3 k 1 k34 1 maxsw 2 | ideq 1 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl perm
+ctrlhoward HIT7_d28_F254.json N 56 M 112 D 2 mindeg 2 T 8 k 1 k34 1 maxsw 5 | ideq 0 l0 0 a1mu 103 a1v 0 a2 1 a3 1 a4h 0 a4x 0 ctrl howard
+ctrlhoward DBL4_d20_F30.json N 40 M 80 D 2 mindeg 2 T 9 k 2 k34 2 maxsw 5 | ideq 0 l0 0 a1mu 91 a1v 0 a2 1 a3 1 a4h 1 a4x 0 ctrl howard
+ctrldown HIT7_d28_F254.json N 56 M 112 D 2 mindeg 2 T 3 k 1 k34 2 maxsw 3 | ideq 0 l0 0 a1mu 52 a1v 105 a2 0 a3 0 a4h 0 a4x 0 ctrl down
+ctrldown DBL4_d20_F30.json N 40 M 80 D 2 mindeg 2 T 3 k 1 k34 2 maxsw 2 | ideq 0 l0 0 a1mu 41 a1v 45 a2 1 a3 1 a4h 0 a4x 0 ctrl down
+ctrla2half HIT7_d28_F254.json N 56 M 112 D 2 mindeg 2 T 299 k 7 k34 7 maxsw 127 | ideq 0 l0 0 a1mu 0 a1v 0 a2 14 a3 0 a4h 0 a4x 0 ctrl a2half
+ctrla2half DBL4_d20_F30.json N 40 M 80 D 2 mindeg 2 T 30 k 0 k34 5 maxsw 15 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 ctrl a2half
+ctrla3all HIT7_d28_F254.json N 56 M 112 D 2 mindeg 2 T 299 k 7 k34 7 maxsw 127 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 43 a4h 0 a4x 0 ctrl a3all
+ctrla3all DBL4_d20_F30.json N 40 M 80 D 2 mindeg 2 T 30 k 0 k34 5 maxsw 15 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 17 a4h 0 a4x 0 ctrl a3all
+ctrla4any HIT7_d28_F254.json N 56 M 112 D 2 mindeg 2 T 299 k 7 k34 7 maxsw 127 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 36 a4x 42 ctrl a4any
+ctrla4any DBL4_d20_F30.json N 40 M 80 D 2 mindeg 2 T 30 k 0 k34 5 maxsw 15 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 32 a4x 36 ctrl a4any
+ctrlw0 HIT7_d28_F254.json N 56 M 112 D 2 mindeg 2 T 4 k 1 k34 1 maxsw 2 | ideq 0 l0 383 a1mu 0 a1v 17 a2 0 a3 0 a4h 0 a4x 1 ctrl w0
+ctrlw0 DBL4_d20_F30.json N 40 M 80 D 2 mindeg 2 T 2 k 0 k34 0 maxsw 1 | ideq 0 l0 172 a1mu 0 a1v 14 a2 0 a3 0 a4h 0 a4x 0 ctrl w0
+ctrlpermn5 DBL4_d20_F30.json N 40 M 80 D 2 mindeg 2 T 3 k 1 k34 1 maxsw 2 n5 30 | ideq 1 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 mism 1 nofb 0 ctrl perm
+ctrlpermn5 randlad seed 7702 genomes 200 maxT 4 sumT 260 | ideq 192 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 mism 192 nofb 0 ctrl perm
+ctrlfbearly DBL4_d20_F30.json N 40 M 80 D 2 mindeg 2 T 30 k 0 k34 5 maxsw 15 n5 30 | ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 mism 0 nofb 1 ctrl fbearly

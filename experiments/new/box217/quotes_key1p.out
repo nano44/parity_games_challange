@@ -1,0 +1,36 @@
+OK   [R117] RESULTS l. 13362 | N5 (SPEC S1-S5) from its DEFAULT start S3 (SPEC S3 with FIX 1)
+OK   [R104] RESULTS l. 9864 | an IDEAL genome G has N movers x with levels lev(x), M := Σ deg(x) options (x, k), each wi
+OK   [R104] RESULTS l. 9864 | under a state s the Ξ-value of option (x, k) is the set of β's on its chain (x, k), (xt, s
+OK   [R104] RESULTS l. 9864 | an IDEAL step moves every mover to the lexicographically least key (gate indices of the ch
+OK   [R104] RESULTS l. 9864 | the Ξ-graph has an edge x → xt(x, k) for every option with a mover as Ξ-target
+OK   [docs/red/P-N5-REALIZE.md@e609c5d2] docs/red/P-N5-REALIZE.md@e609c5d2 | a gate index gate(x, k), a bijection of the options onto 0..M − 1
+OK   [docs/red/P-N5-REALIZE.md@e609c5d2] docs/red/P-N5-REALIZE.md@e609c5d2 | IDEAL step from s. Availability A_s(x) := {s(x)} ∪ {k : (x, k) ▷_s (x, s(x))}.
+OK   [docs/red/P-N5-REALIZE.md@e609c5d2] docs/red/P-N5-REALIZE.md@e609c5d2 | If |A_s(x)| = 1 for every x, the run STOPS
+OK   [docs/red/P-N5-REALIZE.md@e609c5d2] docs/red/P-N5-REALIZE.md@e609c5d2 | key(x, k) := (gate(x, k)) if lev(x) = 0, and key_(s')(wt(x, k), s'(wt(x, k))) followed by 
+OK   [docs/red/P-N5-REALIZE.md@e609c5d2] docs/red/P-N5-REALIZE.md@e609c5d2 | If s' = s, the run STOPS
+OK   [docs/red/P-N5-REALIZE.md@e609c5d2] docs/red/P-N5-REALIZE.md@e609c5d2 | Otherwise s → s' is one IDEAL step. L(G) := the number of IDEAL steps from s_0
+OK   [docs/red/P-N5-REALIZE.md@e609c5d2] docs/red/P-N5-REALIZE.md@e609c5d2 | For IDEAL-ACYC and two options k ≠ k' of ONE mover x, B_s(x, k) ≠ B_s(x, k')
+OK   [R105] RESULTS l. 10155 | (ENC) the Ξ-order of β-sets is the order of the integers Σ ±2^rank (+ for even parity), so
+OK   [R105] RESULTS l. 10155 | (MONO) the current Ξ-value of every mover never decreases along a run
+OK   [R104] RESULTS l. 9864 | vertex indices: movers, gates in gate-index order, β-vertices, e-vertices in the order of 
+OK   [docs/red/P-N5-REALIZE.md@e609c5d2] docs/red/P-N5-REALIZE.md@e609c5d2 | e_g: indices N + 2M, … allocated in GATE-INDEX order
+OK   [R117] RESULTS l. 13362 | for every G with an ACYCLIC Ξ-graph, the game Γ3(G) obtained from Γ(G) by 4M + 4 single-su
+OK   [R117] RESULTS l. 13362 | a family of acyclic genomes with L super-polynomial in N + M would give games on which N5 
+OK   [docs/new/P-N5-REACH.md@73b3d1fd] docs/new/P-N5-REACH.md@73b3d1fd | The STANDARD STATE of Γ3 for a mover state s is the transport of R104's start with the gen
+OK   [docs/new/P-N5-REACH.md@73b3d1fd] docs/new/P-N5-REACH.md@73b3d1fd | Let G ∈ IDEAL-ACYC with IDEAL run s_0 → s_1 → … → s_L, L = L(G). Then the N5 run of Γ3(G) 
+OK   [docs/new/P-N5-REACH.md@73b3d1fd] docs/new/P-N5-REACH.md@73b3d1fd | Let IDEAL-ACYC-POLY mean: there is a polynomial q with L(G) ≤ q(N + M) for every G ∈ IDEAL
+OK   [docs/new/P-N5-REACH.md@73b3d1fd] docs/new/P-N5-REACH.md@73b3d1fd | (b) Conversely, if (G_i) ⊆ IDEAL-ACYC has L(G_i) super-polynomial in N_i + M_i, then on th
+OK   [R104] RESULTS l. 9864 | one FL run (a maximal set of consecutive non-fallback transitions that keep τ, change σ an
+OK   [R117] RESULTS l. 13362 | with R104's premises as landed (1E-N3 = RESULTS R57 (b) in its two forms; RESULTS R24 (a) 
+OK   [docs/referee-2/R2-key-preread.md@abd629d7] docs/referee-2/R2-key-preread.md@abd629d7 | mism 0 on the 5 towers (T_1P = 30, 67, 136, 209, 299 = N5's; my F = T + 1 on each) and on 
+OK   [docs/referee-2/R2-key-preread.md@abd629d7] docs/referee-2/R2-key-preread.md@abd629d7 | a1mu, a1v, a2, a3, a4h, a4x all 0
+OK   [docs/new/P-N5-REACH.md@73b3d1fd] docs/new/P-N5-REACH.md@73b3d1fd | (a) R(x) = {m_(x,k) : k ∈ A_s(x)}, A_s(x) := {s(x)} ∪ {k : (x, k) strictly Ξ-better than (
+OK   [docs/new/P-N5-REACH.md@73b3d1fd] docs/new/P-N5-REACH.md@73b3d1fd | e-indices follow gate indices ([DEF]; unchanged in Γ3)
+OK   [R105] RESULTS l. 10155 | (MONO) the current Ξ-value of every mover never decreases along a run
+OK   [R114] RESULTS l. 12394 | (MOVE-RISE) at any degree, a move of z at step t gives cv_(s_t)(z) > cv_(s_(t−1))(z)
+OK   [R113] RESULTS l. 12152 | (PATH-RISE) at any degree, the current value cv(z) of every mover z rises at most P(z) − 1
+OK   [R111] RESULTS l. 11598 | (PAIR-KF) for a mover x of degree 2 and level ≥ 1 with W-targets a, b of its two options, 
+OK   [R105] RESULTS l. 10155 | (KEYFLIP) moves(x) ≤ 1 + KF_x with KF_x the number of steps at which KP(x) changes
+OK   [R111] RESULTS l. 11598 | (MERGE) at any degree, for two distinct options k, k′ of x and a state s, v_s(x, k) − v_s(
+OK   [R111] RESULTS l. 11598 | (RETURN) for a mover x of degree 2 that moves to o at step t_1 and next moves at step t_2,
+quotes 35 missing 0 (trunk 5d7aab0f19f664034567c3bf4f41bcf9e1684d20)

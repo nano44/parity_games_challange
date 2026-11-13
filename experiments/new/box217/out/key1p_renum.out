@@ -1,0 +1,21 @@
+DBL4_d20_F30.json perm e 11 pgsame 0 N 40 key 2 howard 9 seq 13 key_box189 30 n5 2 mism 0 ctrl 0
+H5_d20_F62.json perm e 11 pgsame 0 N 40 key 5 howard 9 seq 24 key_box189 136 n5 5 mism 0 ctrl 0
+H6_d24_F126.json perm e 11 pgsame 0 N 48 key 5 howard 12 seq 20 key_box189 209 n5 5 mism 0 ctrl 0
+HIT7_d28_F254.json perm e 11 pgsame 0 N 56 key 2 howard 8 seq 12 key_box189 299 n5 2 mism 0 ctrl 0
+RECF4_d20_F60.json perm e 11 pgsame 0 N 40 key 3 howard 9 seq 18 key_box189 67 n5 3 mism 0 ctrl 0
+DBL4_d20_F30.json perm e 12 pgsame 0 N 40 key 2 howard 9 seq 10 key_box189 30 n5 2 mism 0 ctrl 0
+H5_d20_F62.json perm e 12 pgsame 0 N 40 key 3 howard 9 seq 9 key_box189 136 n5 3 mism 0 ctrl 0
+H6_d24_F126.json perm e 12 pgsame 0 N 48 key 4 howard 12 seq 19 key_box189 209 n5 4 mism 0 ctrl 0
+HIT7_d28_F254.json perm e 12 pgsame 0 N 56 key 2 howard 8 seq 18 key_box189 299 n5 2 mism 0 ctrl 0
+RECF4_d20_F60.json perm e 12 pgsame 0 N 40 key 3 howard 9 seq 13 key_box189 67 n5 3 mism 0 ctrl 0
+DBL4_d20_F30.json perm all 11 pgsame 0 N 40 key 2 howard 9 seq 14 key_box189 30 n5 2 mism 0 ctrl 0
+H5_d20_F62.json perm all 11 pgsame 0 N 40 key 6 howard 9 seq 28 key_box189 136 n5 6 mism 0 ctrl 0
+H6_d24_F126.json perm all 11 pgsame 0 N 48 key 2 howard 12 seq 30 key_box189 209 n5 2 mism 0 ctrl 0
+HIT7_d28_F254.json perm all 11 pgsame 0 N 56 key 5 howard 8 seq 15 key_box189 299 n5 5 mism 0 ctrl 0
+RECF4_d20_F60.json perm all 11 pgsame 0 N 40 key 2 howard 9 seq 14 key_box189 67 n5 2 mism 0 ctrl 0
+DBL4_d20_F30.json perm all 12 pgsame 0 N 40 key 1 howard 9 seq 6 key_box189 30 n5 1 mism 0 ctrl 0
+H5_d20_F62.json perm all 12 pgsame 0 N 40 key 2 howard 9 seq 5 key_box189 136 n5 2 mism 0 ctrl 0
+H6_d24_F126.json perm all 12 pgsame 0 N 48 key 4 howard 12 seq 24 key_box189 209 n5 4 mism 0 ctrl 0
+HIT7_d28_F254.json perm all 12 pgsame 0 N 56 key 2 howard 8 seq 22 key_box189 299 n5 2 mism 0 ctrl 0
+RECF4_d20_F60.json perm all 12 pgsame 0 N 40 key 2 howard 9 seq 16 key_box189 67 n5 2 mism 0 ctrl 0
+DONE

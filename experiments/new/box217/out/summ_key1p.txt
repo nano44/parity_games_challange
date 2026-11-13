@@ -1,0 +1,8 @@
+key1p_towers_n5.out genomes 5 steps 741 maxT 299 must0_sum 0 ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 mism 0 nofb 0
+key1p_rec.out genomes 63 steps 1945 maxT 340 must0_sum 0 ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 mism - nofb -
+key1p_rec_n5.out genomes 63 steps 1945 maxT 340 must0_sum 0 ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 mism 0 nofb 0
+key1p_mut.out genomes 1000 steps 44353 maxT 299 must0_sum 0 ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 mism - nofb -
+key1p_mut_n5.out genomes 24 steps 488 maxT 67 must0_sum 0 ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 mism 0 nofb 0
+key1p_rand.out genomes 7300 steps 9241 maxT 5 must0_sum 0 ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 mism 0 nofb 0
+key1p_lift.out genomes 5 steps 680 maxT 136 must0_sum 0 ideq 0 l0 0 a1mu 0 a1v 0 a2 0 a3 0 a4h 0 a4x 0 mism 0 nofb 0
+all files must0_sum 0
