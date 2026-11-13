@@ -8,3 +8,6 @@ for replays: ONE217_DIR = <worktree>/experiments/new/box217).
 - val19.py: checker-mode validation against one217 (random genomes: SAT with the simulator's states; a wrong state bit UNSAT).
 - rep19.py: replay of a decode with one217 (T_key, switches per mover, |K| by box 217's DP, enumeration depth k(G)) and, with --n5, N5
   itself on Gamma3 (one217.report --check: n5 steps, mism).
+- drup19.py: DRUP check of one enc19 UNSAT (Glucose4 proof + l8/sat/drup.c). tlad19.py: T_max per level profile over all compositions of N.
+- Class env (Lead 12:13Z): LADDER=1 (different W-targets per mover), XUP=one|strict (Xi-targets one level up / strictly higher), BRANK=lev.
+- inst/: frozen SAT decodes (genome JSON + encoder states), SHA1SUMS, replay.txt (rep19 --n5: one217 and N5 on Gamma3, mism 0 each).

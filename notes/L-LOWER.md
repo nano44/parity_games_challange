@@ -1,5 +1,27 @@
 # L-LOWER notebook
 
+## Successor 16 HANDOVER (written 2026-11-13 13:5xZ, date -u; PARK on Lead 13:51Z instruction; context ~330k)
+### DONE (claude/l-lower; products docs/lower/L18-horizon.md (CLOSED, §5 summary) and docs/lower/L19-onep.md (CLOSED); tools l18/, l19/)
+- cb2f38f9 handover check (accepted 23:03Z). BOX L18b: largest P with f6 correct on all 129 free pre-states (rows 0..510) = 15 (L18b_N15a
+  76309bca; chain N11a a6e0185b, N12a 96fb7995, N13a 2969f3cc, N14c b7101f79 (R 64 screen + ccheck R 510), N15a). Stop rule at P 16
+  (row-16 q6/q7 change; {10,14} UNSAT, {10,12,14} and {10,14,15} capped at 6,000 s). l18/mono.py: horizon monotonicity checked by
+  script (Lead ruling 02:22Z). All DATA, not a lower bound.
+- BOX L19 (Lead 09:08Z, owner «So put everything into trying solving it today»): enc19 (v2 VAL=ro default) + val19 / rep19 / drup19 /
+  tlad19; T(4) = 4 on all 8 profiles (W 2,2 DRUP VERIFIED); k 2 at N 4 minimal; bi-ladder d 4 T 7 (settles L-SI 6 vs anneal 7 for 7);
+  upward ladder k 3: d 6 SAT (N5-checked), d 5 UNSAT within L 12 (solver). G_3 (L-RED-B) replayed in checker mode: T 6. Closed by the
+  Lead 13:51Z (L-RED-B's G_k family, P-N5-EXP 350d84eb, settles the question from another side; no k = 4 restart).
+### IN FLIGHT at park: none (all enc19 / cbatch / pgad jobs stopped 13:47Z; pgrep empty).
+### NEXT (if the Lead reopens): T(5), T(6) with tlad19 (32 / 64 profiles, v2); DRUP the 7 other N 4 profiles and the bi-ladder L 8 UNSAT;
+  T_max of the upward class at d 5 (LEN L 13) to make «UNSAT within L 12» exact; k 4 upward d 7, 8 (no answer at 3,000 s with L 20).
+### Things only I know (successor 16)
+- The free beta-rank permutation (v1) kills the solver; v2 (beta-id sets + pairwise rank order, own beta constant) is the encoding to use.
+- The Lead's L-SI lemmas (ladder one-bit keys, ABANDON, ODOMETER) were NOT used: enc19 is lemma-free.
+- push.sh can fail AFTER «VERIFY PASS» with HTTP 503 (12:4xZ, push exit 1, «Everything up-to-date» printed): retry; check with git ls-remote.
+- A container restart (~10:2xZ) and the 5-hour usage limit (~13:35Z) each killed running jobs; scratchpad and the l-new worktree
+  ($SP/lnew, detached a32a588d, read-only use) survived. Batches in $SP/l19/*.sh are resumable by log.
+- Rule slips this session: one notebook timestamp written as «23:4xZ» in a message (not from date -u); one third CPU job (tlad N 5) started
+  for ~2 min and a leftover v1 batch question was running unnoticed (both stopped).
+
 ## Successor 16 (Opus 5.5 high): BOX L18 continued (frame L18b), GO from the Lead 23:03Z 2026-11-12 (handover check cb2f38f9, re-measured OK)
 ### Resume point (23:0xZ 2026-11-12, date -u)
 - $SP = this session's scratchpad; binaries $SP/bin/fenc (l9/fenc.c), $SP/bin/drup (l8/sat/drup.c), gcc -O2. Logs $SP/l18/TAG.log («n exit»).
