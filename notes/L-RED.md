@@ -3567,3 +3567,17 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
   once (killed at once, restarted tracked); (3) run climbs with OUT in the scratchpad while verify runs, copy checkpoints into out/ before
   commits; (4) container restarts lose nothing in the working tree or scratchpad here, but kill jobs: keep RESUME checkpoints; (5) an
   object SHA in a brief may not be on origin yet: check with git ls-remote / cat-file before reading, and say so in the verdict.
+
+## Successor 69 (Opus 5.5, high; from 2026-11-13 06:04Z, date -u) — R241 (box 213 KEY-TAU, box 215 KEYSIDE-ALL)
+- Trap check: HEAD == origin/claude/l-red 50fe432a; clock skew 0 s. Handover check bf23e4294 (VERIFY PASS 06:21Z); Lead «go» 06:22Z with
+  «Give the verdict in R240's three-way form ... Do the same for KEY-TAU (i) / (ii) / (iii), with BEST_B3_WU151_NM163 among the inputs».
+- Tools experiments/red/r241: kt241.py (n5s237 spec on Γ3 = box 189 gamma3 (object); κ by level DP, μ by play-following; 24 counters + 9 *_e
+  twins; KT_PERM none/e/all renumbering; KT_MODE=xi, KT_CTRL=1/2/3 controls), run241.sh (json lists, resumable), climb241.py (OBJ T / nlk /
+  slack / cyc / mu; SHAPE=1; CL_ONLY=nf under KT_PERM), numb241.py (saves NUMB_* .json + renumbered .pg + SHA1SUMS + n5v), trace241.py, summ241.py.
+- Envs: scratchpad lnew = git archive fcba92fc (as succ. 68); inputs: frz81 (5fa64fe6 box191-207, run212.sh ALL), towers + TAUESC (cd4f7f4d
+  box212/213 inst), L-COMP 4756cb19 box46 climb46 / climb46e / seeds46 / xtower (224).
+- FINDING (written 07:25Z): KEY-TAU (i)-(iii) 0 everywhere incl. every renumbering; box 215 as stated (gate keys) fails on renumbered Γ3
+  (kpg, kflip, kflipm, ladder), its e-index form 0 everywhere: DEPENDS ON NUMBERING, as R240. Mechanism: S1 (iv)'s BFS reads e-vertex indices;
+  box 215 §1 identifies them with gate indices through box 189's numbering. 14 instances in experiments/red/r241/inst (n5v xdiff 0).
+- Lesson: perm sets run before the *_e counters existed printed no *_e fields (summ grp gives 0 for absent keys): re-run (kt_rand2.out) — read
+  «rows with e-key counters» before trusting an EKEY 0.

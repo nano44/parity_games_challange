@@ -8,6 +8,7 @@ KEYSIDE-ALL, every eval checked with kt241.analyse (all must-0 counters). Object
   mu    Σ over movers of the number of states whose μ is NOT the least key of x's τ-paths in the W-graph (room for μ to fall)
 Fitness = (must-0 sum, objective, -(N + M)); any must-0 > 0 is saved at once (out/CAND_*.json) and re-run on n5v (box 190) by kt241.
 Mutations: start, W-target, Ξ-target (mover, -1 or self), gate swap, β-rank swap, β parity, add / remove an option, add a mover.
+CL_ONLY=nf: only the numbering-free counters decide «candidate» (use with KT_PERM=e|all, where box 215's gate-key counters fire by design).
 SHAPE=1: W-structure kept (used from ladder-shaped towers, e.g. DBL4 / H5: Ξ-cycles are added onto a fixed 𝓛^R_d).
 Resumable: checkpoint OUT/ck_TAG.json (genome, fitness, evals, rng state) every 200 evals; RESUME=1 continues; TLIMIT seconds per call.
 Usage: climb241.py TAG SEED EVALS NMAX OBJ [START.json]   (env LNEW; OUT default experiments/red/r241/out; LRED unset)"""
@@ -66,8 +67,12 @@ def mutate(G, rng, nmax):
     G["br"], G["bp"] = br, bp
     return normalize(G)
 
+ONLY = os.environ.get("CL_ONLY") == "nf"   # nf: count only the numbering-free counters (KEY-TAU + premises + *_e), for climbs under KT_PERM
+NF = ("std", "tau3", "w3", "lenvar", "kp", "kpf", "kpa", "unreach", "mukappa", "muinc", "muflat", "mulen", "kviol", "nomove") + tuple(k for k in K.KEYS if k.endswith("_e"))
+
 def fitness(G, obj):
     c, d, info = K.analyse(G)
+    if ONLY: c = {k: c[k] for k in NF}
     m0 = sum(c.values()); M = sum(len(o) for o in G["opts"])
     if obj == "T": v = d["T"]
     elif obj == "nlk": v = d["nlk"] * 1000 + d["T"]
@@ -96,7 +101,7 @@ def main():
         try: f, c, d, info = fitness(cand, obj)
         except AssertionError as e:
             print(f"CLIMB241 {tag} eval {ev} ASSERT {e}", flush=True); continue
-        for k in K.KEYS: tot[k] += c[k]
+        for k in c: tot[k] = tot.get(k, 0) + c[k]
         if f[0] > 0:
             h = hashlib.sha1(json.dumps(cand, sort_keys=True).encode()).hexdigest()[:8]; fn = os.path.join(OUT, f"CAND_{tag}_{h}.json")
             json.dump(cand, open(fn, "w")); print(f"CLIMB241 {tag} eval {ev} CANDIDATE {fn} " + " ".join(f"{k} {v}" for k, v in c.items() if v), flush=True)

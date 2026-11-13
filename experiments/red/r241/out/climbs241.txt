@@ -1,0 +1,13 @@
+CLIMBS241 ctlxi: evals 300 best objective 1002 file BEST_ctlxi_nlk_1002_54244e61.json | must0 sum over all evals 434 | candidates 69
+CLIMBS241 cyc2: evals 12000 best objective 540017 file BEST_cyc2_cyc_540017_e3028fa0.json | must0 sum over all evals 0 | candidates 0
+CLIMBS241 lad1: evals 1200 best objective 1016033 file BEST_lad1_cyc_1016033_555ea390.json | must0 sum over all evals 0 | candidates 0
+CLIMBS241 mu1: evals 6000 best objective 101010 file BEST_mu1_mu_101010_caa56fde.json | must0 sum over all evals 0 | candidates 0
+CLIMBS241 nlk1: evals 6000 best objective 10005 file BEST_nlk1_nlk_10005_5d29b74f.json | must0 sum over all evals 0 | candidates 0
+CLIMBS241 nlk2: evals 12000 best objective 28012 file BEST_nlk2_nlk_28012_d83e4b06.json | must0 sum over all evals 0 | candidates 0
+CLIMBS241 plad: evals 450 best objective 469013 file BEST_plad_cyc_469013_07ee2ee6.json | must0 sum over all evals 0 | candidates 0
+CLIMBS241 pmu: evals 9000 best objective 27005 file BEST_pmu_mu_27005_06d644d4.json | must0 sum over all evals 0 | candidates 0
+CLIMBS241 pnlk: evals 9000 best objective 3002 file BEST_pnlk_nlk_3002_5cd465c2.json | must0 sum over all evals 0 | candidates 0
+CLIMBS241 pslk: evals 9000 best objective 6004 file BEST_pslk_slack_6004_a3bb3e1f.json | must0 sum over all evals 0 | candidates 0
+CLIMBS241 slk1: evals 6000 best objective 8008 file BEST_slk1_slack_8008_42528fbb.json | must0 sum over all evals 0 | candidates 0
+CLIMBS241 t1: evals 6000 best objective 5 file BEST_t1_T_5_8d1a14e6.json | must0 sum over all evals 0 | candidates 0
+CLIMBS241 TOTAL evals (without the control climb ctlxi) 76650; candidates outside ctlxi 0; ctlxi candidates 69

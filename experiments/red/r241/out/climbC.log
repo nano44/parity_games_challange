@@ -1,0 +1,217 @@
+CLIMB241 nlk1 eval 200 best (0, 3003, -22) N 8 | must0 so far 0 | 2 s
+CLIMB241 nlk1 eval 400 best (0, 4003, -23) N 8 | must0 so far 0 | 5 s
+CLIMB241 nlk1 eval 600 best (0, 4005, -26) N 9 | must0 so far 0 | 7 s
+CLIMB241 nlk1 eval 800 best (0, 4006, -28) N 10 | must0 so far 0 | 11 s
+CLIMB241 nlk1 eval 1000 best (0, 5005, -28) N 10 | must0 so far 0 | 15 s
+CLIMB241 nlk1 eval 1200 best (0, 5005, -28) N 10 | must0 so far 0 | 19 s
+CLIMB241 nlk1 eval 1400 best (0, 6005, -29) N 10 | must0 so far 0 | 21 s
+CLIMB241 nlk1 END evals 1500 best (0, 6005, -29) file BEST_nlk1_nlk_6005_cb2280ce.json | must0 totals std 0 tau3 0 w3 0 lenvar 0 kp 0 kpf 0 kpa 0 unreach 0 mukappa 0 muinc 0 muflat 0 mulen 0 kviol 0 nomove 0 eord 0 kpg 0 lkp 0 pkf 0 pkfa 0 kflip 0 kflipm 0 casc 0 ftt 0 ladder 0 kpg_e 0 lkp_e 0 pkf_e 0 pkfa_e 0 kflip_e 0 kflipm_e 0 casc_e 0 ftt_e 0 ladder_e 0 | 23 s
+CLIMB241 slk1 eval 200 best (0, 5003, -21) N 7 | must0 so far 0 | 2 s
+CLIMB241 slk1 eval 400 best (0, 7003, -21) N 7 | must0 so far 0 | 3 s
+CLIMB241 slk1 eval 600 best (0, 7006, -21) N 7 | must0 so far 0 | 5 s
+CLIMB241 slk1 eval 800 best (0, 7006, -21) N 7 | must0 so far 0 | 7 s
+CLIMB241 slk1 eval 1000 best (0, 7006, -21) N 7 | must0 so far 0 | 9 s
+CLIMB241 slk1 eval 1200 best (0, 7006, -21) N 7 | must0 so far 0 | 11 s
+CLIMB241 slk1 eval 1400 best (0, 8007, -24) N 8 | must0 so far 0 | 13 s
+CLIMB241 slk1 END evals 1500 best (0, 8007, -24) file BEST_slk1_slack_8007_ae80ee73.json | must0 totals std 0 tau3 0 w3 0 lenvar 0 kp 0 kpf 0 kpa 0 unreach 0 mukappa 0 muinc 0 muflat 0 mulen 0 kviol 0 nomove 0 eord 0 kpg 0 lkp 0 pkf 0 pkfa 0 kflip 0 kflipm 0 casc 0 ftt 0 ladder 0 kpg_e 0 lkp_e 0 pkf_e 0 pkfa_e 0 kflip_e 0 kflipm_e 0 casc_e 0 ftt_e 0 ladder_e 0 | 15 s
+CLIMB241 mu1 eval 200 best (0, 32005, -25) N 8 | must0 so far 0 | 2 s
+CLIMB241 mu1 eval 400 best (0, 44006, -30) N 9 | must0 so far 0 | 4 s
+CLIMB241 mu1 eval 600 best (0, 56006, -30) N 9 | must0 so far 0 | 7 s
+CLIMB241 mu1 eval 800 best (0, 59006, -32) N 9 | must0 so far 0 | 9 s
+CLIMB241 mu1 eval 1000 best (0, 59006, -32) N 9 | must0 so far 0 | 12 s
+CLIMB241 mu1 eval 1200 best (0, 63006, -33) N 9 | must0 so far 0 | 15 s
+CLIMB241 mu1 eval 1400 best (0, 63006, -33) N 9 | must0 so far 0 | 18 s
+CLIMB241 mu1 END evals 1500 best (0, 63006, -33) file BEST_mu1_mu_63006_d7409b79.json | must0 totals std 0 tau3 0 w3 0 lenvar 0 kp 0 kpf 0 kpa 0 unreach 0 mukappa 0 muinc 0 muflat 0 mulen 0 kviol 0 nomove 0 eord 0 kpg 0 lkp 0 pkf 0 pkfa 0 kflip 0 kflipm 0 casc 0 ftt 0 ladder 0 kpg_e 0 lkp_e 0 pkf_e 0 pkfa_e 0 kflip_e 0 kflipm_e 0 casc_e 0 ftt_e 0 ladder_e 0 | 19 s
+CLIMB241 t1 eval 200 best (0, 2, -21) N 9 | must0 so far 0 | 2 s
+CLIMB241 t1 eval 400 best (0, 2, -20) N 9 | must0 so far 0 | 3 s
+CLIMB241 t1 eval 600 best (0, 4, -22) N 9 | must0 so far 0 | 5 s
+CLIMB241 t1 eval 800 best (0, 4, -22) N 9 | must0 so far 0 | 7 s
+CLIMB241 t1 eval 1000 best (0, 4, -22) N 9 | must0 so far 0 | 9 s
+CLIMB241 t1 eval 1200 best (0, 4, -22) N 9 | must0 so far 0 | 12 s
+CLIMB241 t1 eval 1400 best (0, 5, -22) N 9 | must0 so far 0 | 14 s
+CLIMB241 t1 END evals 1500 best (0, 5, -22) file BEST_t1_T_5_50972bad.json | must0 totals std 0 tau3 0 w3 0 lenvar 0 kp 0 kpf 0 kpa 0 unreach 0 mukappa 0 muinc 0 muflat 0 mulen 0 kviol 0 nomove 0 eord 0 kpg 0 lkp 0 pkf 0 pkfa 0 kflip 0 kflipm 0 casc 0 ftt 0 ladder 0 kpg_e 0 lkp_e 0 pkf_e 0 pkfa_e 0 kflip_e 0 kflipm_e 0 casc_e 0 ftt_e 0 ladder_e 0 | 16 s
+CLIMB241 lad1 eval 200 best (0, 624030, -120) N 40 | must0 so far 0 | 202 s
+CLIMB241 lad1 END evals 300 best (0, 658029, -120) file BEST_lad1_cyc_658029_5029ff2b.json | must0 totals std 0 tau3 0 w3 0 lenvar 0 kp 0 kpf 0 kpa 0 unreach 0 mukappa 0 muinc 0 muflat 0 mulen 0 kviol 0 nomove 0 eord 0 kpg 0 lkp 0 pkf 0 pkfa 0 kflip 0 kflipm 0 casc 0 ftt 0 ladder 0 kpg_e 0 lkp_e 0 pkf_e 0 pkfa_e 0 kflip_e 0 kflipm_e 0 casc_e 0 ftt_e 0 ladder_e 0 | 305 s
+CLIMB241 nlk1 eval 1600 best (0, 6005, -29) N 10 | must0 so far 0 | 2 s
+CLIMB241 nlk1 eval 1800 best (0, 6005, -28) N 10 | must0 so far 0 | 6 s
+CLIMB241 nlk1 eval 2000 best (0, 6005, -28) N 10 | must0 so far 0 | 9 s
+CLIMB241 nlk1 eval 2200 best (0, 6005, -28) N 10 | must0 so far 0 | 12 s
+CLIMB241 nlk1 eval 2400 best (0, 8005, -31) N 10 | must0 so far 0 | 16 s
+CLIMB241 nlk1 eval 2600 best (0, 9005, -32) N 10 | must0 so far 0 | 20 s
+CLIMB241 nlk1 eval 2800 best (0, 9005, -32) N 10 | must0 so far 0 | 24 s
+CLIMB241 nlk1 eval 3000 best (0, 9005, -32) N 10 | must0 so far 0 | 28 s
+CLIMB241 nlk1 END evals 3000 best (0, 9005, -32) file BEST_nlk1_nlk_9005_73269140.json | must0 totals std 0 tau3 0 w3 0 lenvar 0 kp 0 kpf 0 kpa 0 unreach 0 mukappa 0 muinc 0 muflat 0 mulen 0 kviol 0 nomove 0 eord 0 kpg 0 lkp 0 pkf 0 pkfa 0 kflip 0 kflipm 0 casc 0 ftt 0 ladder 0 kpg_e 0 lkp_e 0 pkf_e 0 pkfa_e 0 kflip_e 0 kflipm_e 0 casc_e 0 ftt_e 0 ladder_e 0 | 28 s
+CLIMB241 slk1 eval 1600 best (0, 8007, -24) N 8 | must0 so far 0 | 1 s
+CLIMB241 slk1 eval 1800 best (0, 8007, -24) N 8 | must0 so far 0 | 4 s
+CLIMB241 slk1 eval 2000 best (0, 8007, -24) N 8 | must0 so far 0 | 6 s
+CLIMB241 slk1 eval 2200 best (0, 8007, -24) N 8 | must0 so far 0 | 9 s
+CLIMB241 slk1 eval 2400 best (0, 8007, -24) N 8 | must0 so far 0 | 12 s
+CLIMB241 slk1 eval 2600 best (0, 8007, -24) N 8 | must0 so far 0 | 14 s
+CLIMB241 slk1 eval 2800 best (0, 8007, -24) N 8 | must0 so far 0 | 17 s
+CLIMB241 slk1 eval 3000 best (0, 8007, -24) N 8 | must0 so far 0 | 19 s
+CLIMB241 slk1 END evals 3000 best (0, 8007, -24) file BEST_slk1_slack_8007_7b0855b2.json | must0 totals std 0 tau3 0 w3 0 lenvar 0 kp 0 kpf 0 kpa 0 unreach 0 mukappa 0 muinc 0 muflat 0 mulen 0 kviol 0 nomove 0 eord 0 kpg 0 lkp 0 pkf 0 pkfa 0 kflip 0 kflipm 0 casc 0 ftt 0 ladder 0 kpg_e 0 lkp_e 0 pkf_e 0 pkfa_e 0 kflip_e 0 kflipm_e 0 casc_e 0 ftt_e 0 ladder_e 0 | 19 s
+CLIMB241 mu1 eval 1600 best (0, 63006, -33) N 9 | must0 so far 0 | 1 s
+CLIMB241 mu1 eval 1800 best (0, 63006, -33) N 9 | must0 so far 0 | 4 s
+CLIMB241 mu1 eval 2000 best (0, 63006, -33) N 9 | must0 so far 0 | 7 s
+CLIMB241 mu1 eval 2200 best (0, 69007, -33) N 9 | must0 so far 0 | 9 s
+CLIMB241 mu1 eval 2400 best (0, 72007, -35) N 9 | must0 so far 0 | 12 s
+CLIMB241 mu1 eval 2600 best (0, 72007, -35) N 9 | must0 so far 0 | 15 s
+CLIMB241 mu1 eval 2800 best (0, 72007, -34) N 9 | must0 so far 0 | 18 s
+CLIMB241 mu1 eval 3000 best (0, 72007, -34) N 9 | must0 so far 0 | 21 s
+CLIMB241 mu1 END evals 3000 best (0, 72007, -34) file BEST_mu1_mu_72007_15b0b164.json | must0 totals std 0 tau3 0 w3 0 lenvar 0 kp 0 kpf 0 kpa 0 unreach 0 mukappa 0 muinc 0 muflat 0 mulen 0 kviol 0 nomove 0 eord 0 kpg 0 lkp 0 pkf 0 pkfa 0 kflip 0 kflipm 0 casc 0 ftt 0 ladder 0 kpg_e 0 lkp_e 0 pkf_e 0 pkfa_e 0 kflip_e 0 kflipm_e 0 casc_e 0 ftt_e 0 ladder_e 0 | 21 s
+CLIMB241 t1 eval 1600 best (0, 5, -22) N 9 | must0 so far 0 | 1 s
+CLIMB241 t1 eval 1800 best (0, 5, -22) N 9 | must0 so far 0 | 3 s
+CLIMB241 t1 eval 2000 best (0, 5, -22) N 9 | must0 so far 0 | 6 s
+CLIMB241 t1 eval 2200 best (0, 5, -22) N 9 | must0 so far 0 | 8 s
+CLIMB241 t1 eval 2400 best (0, 5, -22) N 9 | must0 so far 0 | 10 s
+CLIMB241 t1 eval 2600 best (0, 5, -22) N 9 | must0 so far 0 | 12 s
+CLIMB241 t1 eval 2800 best (0, 5, -22) N 9 | must0 so far 0 | 15 s
+CLIMB241 t1 eval 3000 best (0, 5, -22) N 9 | must0 so far 0 | 17 s
+CLIMB241 t1 END evals 3000 best (0, 5, -22) file BEST_t1_T_5_e1652aac.json | must0 totals std 0 tau3 0 w3 0 lenvar 0 kp 0 kpf 0 kpa 0 unreach 0 mukappa 0 muinc 0 muflat 0 mulen 0 kviol 0 nomove 0 eord 0 kpg 0 lkp 0 pkf 0 pkfa 0 kflip 0 kflipm 0 casc 0 ftt 0 ladder 0 kpg_e 0 lkp_e 0 pkf_e 0 pkfa_e 0 kflip_e 0 kflipm_e 0 casc_e 0 ftt_e 0 ladder_e 0 | 17 s
+CLIMB241 lad1 eval 400 best (0, 863032, -120) N 40 | must0 so far 0 | 118 s
+CLIMB241 lad1 eval 600 best (0, 922033, -120) N 40 | must0 so far 0 | 346 s
+CLIMB241 lad1 END evals 600 best (0, 922033, -120) file BEST_lad1_cyc_922033_da6ccaca.json | must0 totals std 0 tau3 0 w3 0 lenvar 0 kp 0 kpf 0 kpa 0 unreach 0 mukappa 0 muinc 0 muflat 0 mulen 0 kviol 0 nomove 0 eord 0 kpg 0 lkp 0 pkf 0 pkfa 0 kflip 0 kflipm 0 casc 0 ftt 0 ladder 0 kpg_e 0 lkp_e 0 pkf_e 0 pkfa_e 0 kflip_e 0 kflipm_e 0 casc_e 0 ftt_e 0 ladder_e 0 | 346 s
+CLIMB241 nlk1 eval 3200 best (0, 9005, -32) N 10 | must0 so far 0 | 5 s
+CLIMB241 nlk1 eval 3400 best (0, 9005, -32) N 10 | must0 so far 0 | 8 s
+CLIMB241 nlk1 eval 3600 best (0, 9005, -32) N 10 | must0 so far 0 | 12 s
+CLIMB241 nlk1 eval 3800 best (0, 9005, -32) N 10 | must0 so far 0 | 16 s
+CLIMB241 nlk1 eval 4000 best (0, 9005, -31) N 10 | must0 so far 0 | 20 s
+CLIMB241 nlk1 eval 4200 best (0, 9005, -31) N 10 | must0 so far 0 | 24 s
+CLIMB241 nlk1 eval 4400 best (0, 9005, -31) N 10 | must0 so far 0 | 28 s
+CLIMB241 nlk1 END evals 4500 best (0, 9005, -31) file BEST_nlk1_nlk_9005_41a2f352.json | must0 totals std 0 tau3 0 w3 0 lenvar 0 kp 0 kpf 0 kpa 0 unreach 0 mukappa 0 muinc 0 muflat 0 mulen 0 kviol 0 nomove 0 eord 0 kpg 0 lkp 0 pkf 0 pkfa 0 kflip 0 kflipm 0 casc 0 ftt 0 ladder 0 kpg_e 0 lkp_e 0 pkf_e 0 pkfa_e 0 kflip_e 0 kflipm_e 0 casc_e 0 ftt_e 0 ladder_e 0 | 29 s
+CLIMB241 slk1 eval 3200 best (0, 8007, -24) N 8 | must0 so far 0 | 3 s
+CLIMB241 slk1 eval 3400 best (0, 8008, -24) N 8 | must0 so far 0 | 6 s
+CLIMB241 slk1 eval 3600 best (0, 8008, -24) N 8 | must0 so far 0 | 9 s
+CLIMB241 slk1 eval 3800 best (0, 8008, -24) N 8 | must0 so far 0 | 12 s
+CLIMB241 slk1 eval 4000 best (0, 8008, -24) N 8 | must0 so far 0 | 14 s
+CLIMB241 slk1 eval 4200 best (0, 8008, -24) N 8 | must0 so far 0 | 17 s
+CLIMB241 slk1 eval 4400 best (0, 8008, -24) N 8 | must0 so far 0 | 20 s
+CLIMB241 slk1 END evals 4500 best (0, 8008, -24) file BEST_slk1_slack_8008_3d52aea0.json | must0 totals std 0 tau3 0 w3 0 lenvar 0 kp 0 kpf 0 kpa 0 unreach 0 mukappa 0 muinc 0 muflat 0 mulen 0 kviol 0 nomove 0 eord 0 kpg 0 lkp 0 pkf 0 pkfa 0 kflip 0 kflipm 0 casc 0 ftt 0 ladder 0 kpg_e 0 lkp_e 0 pkf_e 0 pkfa_e 0 kflip_e 0 kflipm_e 0 casc_e 0 ftt_e 0 ladder_e 0 | 21 s
+CLIMB241 mu1 eval 3200 best (0, 72007, -34) N 9 | must0 so far 0 | 3 s
+CLIMB241 mu1 eval 3400 best (0, 72007, -34) N 9 | must0 so far 0 | 6 s
+CLIMB241 mu1 eval 3600 best (0, 72007, -34) N 9 | must0 so far 0 | 9 s
+CLIMB241 mu1 eval 3800 best (0, 72007, -34) N 9 | must0 so far 0 | 11 s
+CLIMB241 mu1 eval 4000 best (0, 72007, -34) N 9 | must0 so far 0 | 14 s
+CLIMB241 mu1 eval 4200 best (0, 72007, -34) N 9 | must0 so far 0 | 18 s
+CLIMB241 mu1 eval 4400 best (0, 72007, -34) N 9 | must0 so far 0 | 21 s
+CLIMB241 mu1 END evals 4500 best (0, 72007, -34) file BEST_mu1_mu_72007_4bf9e075.json | must0 totals std 0 tau3 0 w3 0 lenvar 0 kp 0 kpf 0 kpa 0 unreach 0 mukappa 0 muinc 0 muflat 0 mulen 0 kviol 0 nomove 0 eord 0 kpg 0 lkp 0 pkf 0 pkfa 0 kflip 0 kflipm 0 casc 0 ftt 0 ladder 0 kpg_e 0 lkp_e 0 pkf_e 0 pkfa_e 0 kflip_e 0 kflipm_e 0 casc_e 0 ftt_e 0 ladder_e 0 | 22 s
+CLIMB241 t1 eval 3200 best (0, 5, -22) N 9 | must0 so far 0 | 3 s
+CLIMB241 t1 eval 3400 best (0, 5, -22) N 9 | must0 so far 0 | 5 s
+CLIMB241 t1 eval 3600 best (0, 5, -22) N 9 | must0 so far 0 | 7 s
+CLIMB241 t1 eval 3800 best (0, 5, -22) N 9 | must0 so far 0 | 9 s
+CLIMB241 t1 eval 4000 best (0, 5, -22) N 9 | must0 so far 0 | 11 s
+CLIMB241 t1 eval 4200 best (0, 5, -22) N 9 | must0 so far 0 | 13 s
+CLIMB241 t1 eval 4400 best (0, 5, -22) N 9 | must0 so far 0 | 16 s
+CLIMB241 t1 END evals 4500 best (0, 5, -22) file BEST_t1_T_5_5cc5af51.json | must0 totals std 0 tau3 0 w3 0 lenvar 0 kp 0 kpf 0 kpa 0 unreach 0 mukappa 0 muinc 0 muflat 0 mulen 0 kviol 0 nomove 0 eord 0 kpg 0 lkp 0 pkf 0 pkfa 0 kflip 0 kflipm 0 casc 0 ftt 0 ladder 0 kpg_e 0 lkp_e 0 pkf_e 0 pkfa_e 0 kflip_e 0 kflipm_e 0 casc_e 0 ftt_e 0 ladder_e 0 | 18 s
+CLIMB241 lad1 eval 800 best (0, 934033, -120) N 40 | must0 so far 0 | 257 s
+CLIMB241 lad1 END evals 900 best (0, 934033, -120) file BEST_lad1_cyc_934033_2083084d.json | must0 totals std 0 tau3 0 w3 0 lenvar 0 kp 0 kpf 0 kpa 0 unreach 0 mukappa 0 muinc 0 muflat 0 mulen 0 kviol 0 nomove 0 eord 0 kpg 0 lkp 0 pkf 0 pkfa 0 kflip 0 kflipm 0 casc 0 ftt 0 ladder 0 kpg_e 0 lkp_e 0 pkf_e 0 pkfa_e 0 kflip_e 0 kflipm_e 0 casc_e 0 ftt_e 0 ladder_e 0 | 382 s
+CLIMB241 nlk1 eval 4600 best (0, 9005, -31) N 10 | must0 so far 0 | 2 s
+CLIMB241 nlk1 eval 4800 best (0, 9005, -31) N 10 | must0 so far 0 | 5 s
+CLIMB241 nlk1 eval 5000 best (0, 10005, -32) N 10 | must0 so far 0 | 10 s
+CLIMB241 nlk1 eval 5200 best (0, 10005, -32) N 10 | must0 so far 0 | 14 s
+CLIMB241 nlk1 eval 5400 best (0, 10005, -32) N 10 | must0 so far 0 | 19 s
+CLIMB241 nlk1 eval 5600 best (0, 10005, -32) N 10 | must0 so far 0 | 23 s
+CLIMB241 nlk1 eval 5800 best (0, 10005, -32) N 10 | must0 so far 0 | 27 s
+CLIMB241 nlk1 eval 6000 best (0, 10005, -32) N 10 | must0 so far 0 | 32 s
+CLIMB241 nlk1 END evals 6000 best (0, 10005, -32) file BEST_nlk1_nlk_10005_5d29b74f.json | must0 totals std 0 tau3 0 w3 0 lenvar 0 kp 0 kpf 0 kpa 0 unreach 0 mukappa 0 muinc 0 muflat 0 mulen 0 kviol 0 nomove 0 eord 0 kpg 0 lkp 0 pkf 0 pkfa 0 kflip 0 kflipm 0 casc 0 ftt 0 ladder 0 kpg_e 0 lkp_e 0 pkf_e 0 pkfa_e 0 kflip_e 0 kflipm_e 0 casc_e 0 ftt_e 0 ladder_e 0 | 32 s
+CLIMB241 slk1 eval 4600 best (0, 8008, -24) N 8 | must0 so far 0 | 1 s
+CLIMB241 slk1 eval 4800 best (0, 8008, -24) N 8 | must0 so far 0 | 4 s
+CLIMB241 slk1 eval 5000 best (0, 8008, -24) N 8 | must0 so far 0 | 7 s
+CLIMB241 slk1 eval 5200 best (0, 8008, -24) N 8 | must0 so far 0 | 10 s
+CLIMB241 slk1 eval 5400 best (0, 8008, -24) N 8 | must0 so far 0 | 13 s
+CLIMB241 slk1 eval 5600 best (0, 8008, -24) N 8 | must0 so far 0 | 16 s
+CLIMB241 slk1 eval 5800 best (0, 8008, -24) N 8 | must0 so far 0 | 19 s
+CLIMB241 slk1 eval 6000 best (0, 8008, -24) N 8 | must0 so far 0 | 21 s
+CLIMB241 slk1 END evals 6000 best (0, 8008, -24) file BEST_slk1_slack_8008_42528fbb.json | must0 totals std 0 tau3 0 w3 0 lenvar 0 kp 0 kpf 0 kpa 0 unreach 0 mukappa 0 muinc 0 muflat 0 mulen 0 kviol 0 nomove 0 eord 0 kpg 0 lkp 0 pkf 0 pkfa 0 kflip 0 kflipm 0 casc 0 ftt 0 ladder 0 kpg_e 0 lkp_e 0 pkf_e 0 pkfa_e 0 kflip_e 0 kflipm_e 0 casc_e 0 ftt_e 0 ladder_e 0 | 21 s
+CLIMB241 mu1 eval 4600 best (0, 72007, -34) N 9 | must0 so far 0 | 1 s
+CLIMB241 mu1 eval 4800 best (0, 80007, -37) N 10 | must0 so far 0 | 4 s
+CLIMB241 mu1 eval 5000 best (0, 89008, -38) N 10 | must0 so far 0 | 8 s
+CLIMB241 mu1 eval 5200 best (0, 89008, -37) N 10 | must0 so far 0 | 11 s
+CLIMB241 mu1 eval 5400 best (0, 97009, -38) N 10 | must0 so far 0 | 15 s
+CLIMB241 mu1 eval 5600 best (0, 101010, -38) N 10 | must0 so far 0 | 19 s
+CLIMB241 mu1 eval 5800 best (0, 101010, -38) N 10 | must0 so far 0 | 23 s
+CLIMB241 mu1 eval 6000 best (0, 101010, -38) N 10 | must0 so far 0 | 27 s
+CLIMB241 mu1 END evals 6000 best (0, 101010, -38) file BEST_mu1_mu_101010_caa56fde.json | must0 totals std 0 tau3 0 w3 0 lenvar 0 kp 0 kpf 0 kpa 0 unreach 0 mukappa 0 muinc 0 muflat 0 mulen 0 kviol 0 nomove 0 eord 0 kpg 0 lkp 0 pkf 0 pkfa 0 kflip 0 kflipm 0 casc 0 ftt 0 ladder 0 kpg_e 0 lkp_e 0 pkf_e 0 pkfa_e 0 kflip_e 0 kflipm_e 0 casc_e 0 ftt_e 0 ladder_e 0 | 27 s
+CLIMB241 t1 eval 4600 best (0, 5, -22) N 9 | must0 so far 0 | 1 s
+CLIMB241 t1 eval 4800 best (0, 5, -22) N 9 | must0 so far 0 | 3 s
+CLIMB241 t1 eval 5000 best (0, 5, -22) N 9 | must0 so far 0 | 6 s
+CLIMB241 t1 eval 5200 best (0, 5, -22) N 9 | must0 so far 0 | 8 s
+CLIMB241 t1 eval 5400 best (0, 5, -22) N 9 | must0 so far 0 | 11 s
+CLIMB241 t1 eval 5600 best (0, 5, -22) N 9 | must0 so far 0 | 14 s
+CLIMB241 t1 eval 5800 best (0, 5, -22) N 9 | must0 so far 0 | 16 s
+CLIMB241 t1 eval 6000 best (0, 5, -22) N 9 | must0 so far 0 | 19 s
+CLIMB241 t1 END evals 6000 best (0, 5, -22) file BEST_t1_T_5_8d1a14e6.json | must0 totals std 0 tau3 0 w3 0 lenvar 0 kp 0 kpf 0 kpa 0 unreach 0 mukappa 0 muinc 0 muflat 0 mulen 0 kviol 0 nomove 0 eord 0 kpg 0 lkp 0 pkf 0 pkfa 0 kflip 0 kflipm 0 casc 0 ftt 0 ladder 0 kpg_e 0 lkp_e 0 pkf_e 0 pkfa_e 0 kflip_e 0 kflipm_e 0 casc_e 0 ftt_e 0 ladder_e 0 | 19 s
+CLIMB241 lad1 eval 1000 best (0, 934033, -120) N 40 | must0 so far 0 | 122 s
+CLIMB241 lad1 eval 1200 best (0, 1016033, -120) N 40 | must0 so far 0 | 352 s
+CLIMB241 lad1 END evals 1200 best (0, 1016033, -120) file BEST_lad1_cyc_1016033_555ea390.json | must0 totals std 0 tau3 0 w3 0 lenvar 0 kp 0 kpf 0 kpa 0 unreach 0 mukappa 0 muinc 0 muflat 0 mulen 0 kviol 0 nomove 0 eord 0 kpg 0 lkp 0 pkf 0 pkfa 0 kflip 0 kflipm 0 casc 0 ftt 0 ladder 0 kpg_e 0 lkp_e 0 pkf_e 0 pkfa_e 0 kflip_e 0 kflipm_e 0 casc_e 0 ftt_e 0 ladder_e 0 | 352 s
+CLIMB241 ctlxi eval 1 CANDIDATE CAND_ctlxi_915491ee.json kp 1 mukappa 1 muinc 1 kpg 1 kflip 1 kpg_e 1 kflip_e 1
+CLIMB241 ctlxi eval 6 CANDIDATE CAND_ctlxi_60da1286.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 8 CANDIDATE CAND_ctlxi_fcb3ea70.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 10 CANDIDATE CAND_ctlxi_9be85121.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 16 CANDIDATE CAND_ctlxi_5eb416e6.json kp 2 mukappa 2 muinc 2 kpg 2 kflip 2 kpg_e 2 kflip_e 2
+CLIMB241 ctlxi eval 27 CANDIDATE CAND_ctlxi_4db245e4.json kp 1 mukappa 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 29 CANDIDATE CAND_ctlxi_ac0da966.json kp 1 mukappa 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 30 CANDIDATE CAND_ctlxi_c248de47.json kp 1 mukappa 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 35 CANDIDATE CAND_ctlxi_352962cd.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 38 CANDIDATE CAND_ctlxi_9fce78c2.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 41 CANDIDATE CAND_ctlxi_29a51e86.json kp 1 mukappa 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 44 CANDIDATE CAND_ctlxi_14673f40.json kp 1 mukappa 2 muinc 2 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 46 CANDIDATE CAND_ctlxi_68984801.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 51 CANDIDATE CAND_ctlxi_079fd919.json kp 1 mukappa 1 muinc 1 kpg 1 kflip 1 kpg_e 1 kflip_e 1
+CLIMB241 ctlxi eval 54 CANDIDATE CAND_ctlxi_d492fdc8.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 57 CANDIDATE CAND_ctlxi_8ff09cdd.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 60 CANDIDATE CAND_ctlxi_df355fe6.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 61 CANDIDATE CAND_ctlxi_5640ea70.json kp 1 mukappa 1 muinc 1 kpg 1 kflip 1 kpg_e 1 kflip_e 1
+CLIMB241 ctlxi eval 66 CANDIDATE CAND_ctlxi_51c1f416.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 68 CANDIDATE CAND_ctlxi_44c3f84f.json kp 1 mukappa 1 muinc 1 kpg 1 kflip 1 kpg_e 1 kflip_e 1
+CLIMB241 ctlxi eval 69 CANDIDATE CAND_ctlxi_6af6beac.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 73 CANDIDATE CAND_ctlxi_f2e643a1.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 75 CANDIDATE CAND_ctlxi_871ccafe.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 98 CANDIDATE CAND_ctlxi_1c033bbc.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 101 CANDIDATE CAND_ctlxi_694c427f.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 106 CANDIDATE CAND_ctlxi_7b618f36.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 118 CANDIDATE CAND_ctlxi_8be26f7d.json kp 2 mukappa 2 muinc 2 kpg 2 kflip 1 kpg_e 2 kflip_e 1
+CLIMB241 ctlxi eval 128 CANDIDATE CAND_ctlxi_5b68d8c1.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 129 CANDIDATE CAND_ctlxi_7b749c8c.json kp 1 mukappa 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 131 CANDIDATE CAND_ctlxi_424365fe.json kp 2 mukappa 2 muinc 2 kpg 2 kflip 1 kpg_e 2 kflip_e 1
+CLIMB241 ctlxi eval 133 CANDIDATE CAND_ctlxi_db4e5e32.json kp 1 mukappa 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 137 CANDIDATE CAND_ctlxi_6fe76f77.json kp 2 mukappa 2 muinc 2 kpg 2 kflip 1 kpg_e 2 kflip_e 1
+CLIMB241 ctlxi eval 141 CANDIDATE CAND_ctlxi_1da1ddae.json kp 2 mukappa 2 muinc 2 kviol 1 kpg 2 kflip 1 kflipm 1 kpg_e 2 kflip_e 1 kflipm_e 1
+CLIMB241 ctlxi eval 156 CANDIDATE CAND_ctlxi_b793404e.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 167 CANDIDATE CAND_ctlxi_0f78ab7d.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 181 CANDIDATE CAND_ctlxi_ff50bd82.json kp 1 mukappa 1 muinc 1 kpg 1 kflip 1 kpg_e 1 kflip_e 1
+CLIMB241 ctlxi eval 183 CANDIDATE CAND_ctlxi_62512f32.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 187 CANDIDATE CAND_ctlxi_d46bdebd.json kp 1 mukappa 1 muinc 1 kpg 1 kflip 1 kpg_e 1 kflip_e 1
+CLIMB241 ctlxi eval 189 CANDIDATE CAND_ctlxi_7830302f.json kp 2 mukappa 2 muinc 2 kpg 2 kflip 1 kpg_e 2 kflip_e 1
+CLIMB241 ctlxi eval 192 CANDIDATE CAND_ctlxi_163c77ae.json kp 1 mukappa 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 195 CANDIDATE CAND_ctlxi_e0a627d7.json kp 2 mukappa 3 muinc 3 kpg 2 kflip 1 kpg_e 2 kflip_e 1
+CLIMB241 ctlxi eval 198 CANDIDATE CAND_ctlxi_e9b2cade.json kp 1 mukappa 1 muinc 1 kpg 1 kflip 1 kpg_e 1 kflip_e 1
+CLIMB241 ctlxi eval 200 CANDIDATE CAND_ctlxi_b49281c1.json kp 1 mukappa 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 202 CANDIDATE CAND_ctlxi_8511b25b.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 207 CANDIDATE CAND_ctlxi_0513b879.json kp 1 mukappa 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 209 CANDIDATE CAND_ctlxi_e99864bc.json kp 1 mukappa 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 210 CANDIDATE CAND_ctlxi_5157c31d.json kp 2 mukappa 2 muinc 2 kpg 2 kflip 1 kpg_e 2 kflip_e 1
+CLIMB241 ctlxi eval 221 CANDIDATE CAND_ctlxi_fbe3eafd.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 233 CANDIDATE CAND_ctlxi_4b75ad3d.json kp 1 mukappa 1 muinc 1 kpg 1 kflip 1 kpg_e 1 kflip_e 1
+CLIMB241 ctlxi eval 238 CANDIDATE CAND_ctlxi_0be1572c.json kp 1 mukappa 1 muinc 1 kpg 1 kflip 1 kpg_e 1 kflip_e 1
+CLIMB241 ctlxi eval 244 CANDIDATE CAND_ctlxi_a5a5c720.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 246 CANDIDATE CAND_ctlxi_d1ee8fd8.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 254 CANDIDATE CAND_ctlxi_cc88b2c4.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 265 CANDIDATE CAND_ctlxi_5b70dbe0.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 267 CANDIDATE CAND_ctlxi_f0fe4c8b.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 268 CANDIDATE CAND_ctlxi_01b188d0.json kp 1 mukappa 2 muinc 2 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 271 CANDIDATE CAND_ctlxi_a66fb123.json kp 1 mukappa 1 muinc 1 kpg 1 kflip 1 kpg_e 1 kflip_e 1
+CLIMB241 ctlxi eval 272 CANDIDATE CAND_ctlxi_f4a1fe0e.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 273 CANDIDATE CAND_ctlxi_941bb97e.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 277 CANDIDATE CAND_ctlxi_8d321930.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 278 CANDIDATE CAND_ctlxi_00c94030.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 281 CANDIDATE CAND_ctlxi_cb919003.json kp 1 mukappa 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 283 CANDIDATE CAND_ctlxi_13542fbd.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 284 CANDIDATE CAND_ctlxi_e48a1f59.json kp 1 mukappa 2 muinc 2 kviol 1 kpg 1 kflip 1 kflipm 1 kpg_e 1 kflip_e 1 kflipm_e 1
+CLIMB241 ctlxi eval 286 CANDIDATE CAND_ctlxi_aa7e9de6.json kp 1 mukappa 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 289 CANDIDATE CAND_ctlxi_1b439f3b.json kp 1 mukappa 1 muinc 1 kpg 1 kflip 1 kpg_e 1 kflip_e 1
+CLIMB241 ctlxi eval 290 CANDIDATE CAND_ctlxi_884439f7.json kp 1 mukappa 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 291 CANDIDATE CAND_ctlxi_39d2f9a5.json kp 1 mukappa 1 muinc 1 kpg 1 kpg_e 1
+CLIMB241 ctlxi eval 294 CANDIDATE CAND_ctlxi_43f30c63.json kp 2 mukappa 3 kpg 3 kpg_e 3
+CLIMB241 ctlxi END evals 300 best (0, 1002, -9) file BEST_ctlxi_nlk_1002_54244e61.json | must0 totals std 0 tau3 0 w3 0 lenvar 0 kp 78 kpf 0 kpa 0 unreach 0 mukappa 83 muinc 67 muflat 0 mulen 0 kviol 2 nomove 0 eord 0 kpg 79 lkp 0 pkf 0 pkfa 0 kflip 21 kflipm 2 casc 0 ftt 0 ladder 0 kpg_e 79 lkp_e 0 pkf_e 0 pkfa_e 0 kflip_e 21 kflipm_e 2 casc_e 0 ftt_e 0 ladder_e 0 | 1 s
+JOBC DONE 2026-11-13T06:54:48Z
