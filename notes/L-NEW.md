@@ -1,6 +1,57 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## HANDOVER (successor 76, PARKING; written 2026-11-13 10:40Z by date -u; Lead 10:39Z: «write the HANDOVER and park»; context > park point)
+Successor 77: Fable 5.2, effort xhigh (owner D24 «do xhigh», via the Lead). FIRST JOB: freeze packet P-N5-KEY1P (below).
+### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
+- ad64c6a8 handover check. f27ea2f6, d50ec578, ed65bb8a: BOX 216 VALUE SIDE (docs/new/N5-VALUESIDE-box216.md; experiments/new/box216;
+  check.sh block «BOX 216 VALUE SIDE»): V1 rule-free reading (RF list survives its counters; F5-best, DOM are HOW), LOUD-RF CONDITIONAL,
+  QUIET-RF / QUIET-KEY named, XFLIP (PROVED lane, every game, null switches incl.), JOINT; DATA (i)-(vi).
+- a32a588d (on origin): box 215 ADDENDUM A (e-index keys, R241, credit L-RED 69); box 217 statement + one217.py / climb217.py + §1-§5.
+- b0e03795 + a143d406 (push.sh started 10:38Z after a container restart killed the first attempt; check `git ls-remote origin
+  claude/l-new` = a143d406… before anything else; if not, re-run scripts/push.sh): box 217 §6 referee unit (Lemma 0, A1-A4, A2-POLY),
+  §6.4 Lemma BRIDGE (REFEREE-2 40 crux), §7 A7 / A7′, §5 A6′ correction, climb records.
+### (a) PACKET PLAN P-N5-KEY1P (freeze-ready; apply REFEREE-2 40's B-1..B-6 and N-5, relayed by the Lead 10:39Z from claude/referee-2
+### abd629d7 «Addendum 2» of docs/referee-2/R2-key-preread.md — READ IT FIRST, it may differ in wording from this relay)
+File list to write (docs/new/P-N5-KEY1P.md, frozen; fixes file later; line L-1 later), content in this order:
+1. §1 model 1P(G) (from docs/new/N5-QUIETKEY-box217.md §1 + §6.1): Ξ-acyclic genome, ε = e-vertex index of the input game (pin [NUM]),
+   s_0 = G's start citing R117 S3-START (B-2), A_s, KEY step level by level, stop at s′ = s.
+2. Lemma XI-1P (B-1; = §6.4 BRIDGE as a lemma with proof): Ξσ at mover pads = Ξ_s up to a common constant: β-face plays (R122 BETA-ACYC),
+   cycle node K1, K0 / K3 common, LOC-K2-3 (R125), LAMBDA-CONST (R122); pads / gates / movers below K1; longer better (K1 odd).
+3. REDUCTION: N5 from S3 on Γ3(G) before its first fallback = 1P(G)'s key run. B-3: [IMP3] NOT needed (STD-N5 + KEY-TAU (i) give the
+   whole step; 1P's stop s′ = s is S4c because Iσ ∋ (K0, K1), ESC3-ALL); G-2 not needed; «= O1» needs F = T_key + 1 (one line; REFEREE-2's
+   DATA F − T = 1 on 86/86); cite box 212 only for «O1 is the Ξ-acyclic case». KEY-TAU (i) stays a CANDIDATE premise (box 213; R2 pre-read:
+   re-derived, no gap; L-RED R241: survives) — the packet is CONDITIONAL on it unless KEY-TAU is frozen first (KT-1..4, KS-1..3 items).
+4. A1 MONO-1P, A2 SWITCH-BOUND + Corollary A2-POLY, A3 PAIR-1P, A4 HEREDITY with B-4 (A4's XF clause needs deg(x) = 2), Lemma 0 — proofs in
+   full as in §6.2 (they use only the model).
+5. A6 as CONJECTURE (B-6): the «⟺ k(G) = O(log N)» claim is withdrawn (A6′): exact = SW-POLY; ENUM-LOG necessary only. N-5 applied (DBL4).
+6. DATA: one217.py --check / --numb / --renum (mism 0: 5 towers, 23 renumbered, 200 random; L-COMP 22's C port 255/255; REFEREE-2's
+   r2onep.py 5 towers + 600 random); controls (permuted keys) fire.
+Not in the packet: §7 (A7 is lane-proved but not needed), track B searches.
+### (b) k(G), settled (§5 A6′): k(G) := 1 + the largest W-level of a mover x with sw(x) = |K(x)| − 1 (0 if none); DBL4 = 0 (half
+enumeration: 0/1, 1/3, 3/7, 7/15, 15/31 per level); RECF4 4, H5 5, H6 6, HIT7 7. k_c(G) for c ∈ (0, 1]: sw(x) ≥ |K(x)|^c. QUIET-KEY-1P ⟺
+SW-POLY (every mover switches poly times); QUIET-KEY-1P ⇒ k_c = O((log N)/c); converse unproved. Kill: a family with k_c ≥ c′·d^ε.
+### (c) Track B records (experiments/new/box217/out/rec, sha1 in out/SHA1SUMS_rec and SHA1SUMS_plain)
+- rec_w2_d32_D2_s2001_enum.json (HIT7 + 4 TOP-ADD, climbed on (k, T); N 64): T_key 340 = N5 on Γ3 340 (mism 0), k 7, Howard 8, seq 15;
+  sha1 1051aee813f3d6ca1041c3d02cc989deb743c34a.
+- rec_w2_d28_D2_s2002_enum.json (H6 + 4; N 56): T 239 = N5 239, k 6; sha1 5e5c1be1816c21576da5767b9ddb949e316a52fe.
+- plain climbs (w 2, D 2, d 4-16, 4 seeds, objective T): best T 10, 19, 23, 28, 39, 39, 43 (N 8-32), Howard ≤ 9 (out/climb217.out).
+- ladder climbs (objective (k, T), d 3-10): Ξ = W ladders T = d, k 1 (XTW-2 conjecture: ≤ 2 switches/mover, 20,000 random); free-Ξ k ≤ 2.
+- rec_w2_d30_D2_s2003_enum.json (HIT7 + 2; N 60): T 318 = N5 318 (mism 0, checked 11:04Z by date -u; sha1 727ffdd7291a8dcbbe826b4d34798384ffa838c0), k 7, Howard 8, seq 12. runK217.sh done (3 runs).
+- External (Lead 10:39Z, not mine): L-RED 69 R243 H5PLUS_L5 = H5 + one level-5 mover: k = 6 at d = 20, N5-checked (T 136); a two-mover
+  screen lifts HIT7's level 7 from 33 to 191 of 255; diagnosis «the level-7 cap is on the value side». Lead's view: per-level cost looks
+  O(1) movers → a family (QUIET-KEY-1P false) is the more likely outcome; then the REDUCTION is on the kill packet's critical path.
+### (d) §7: A7 FLIP-SUPPLY PROVED (lane): XF_x ≤ #steps with a switch on the current Ξ-paths of x's two Ξ-targets ≤ Σ_{Ξdesc} sw.
+A7′ PROVED (lane): counting cannot bound k (a full ladder block can self-supply with zero slack: 2^k − 2 = 2·(2^(k−1) − 1)). DATA only:
+the towers' supply decomposition (internal partner / level-below + outside fuel), XTW ladders dead, timing route (R120) not stated.
+### Things only I know
+- one217.py: OneP(G, eidx=None) with --check (needs box 215 keyside215 + box 190 n5v), --numb (L-RED R241 NUMB json), --renum HOW SEED.
+  Its renumbering re-implements L-RED kt241.renumber byte for byte (pgsame 1 on their 3 acyclic NUMB instances).
+- climb217.py env: CLIMB217_OBJ=enum, CLIMB217_LADDER=1, CLIMB217_XTW=1; --from G --lift K (TOP-ADD). enum_depth(G) = k(G).
+- run216.sh appended a second DONE when resumed (fixed: tail check); run scripts are resumable by record file.
+- My typed-stamp slips today: 06:58Z, 08:40Z, 08:37Z (all reported). Copy stamps from the date -u output of the same command.
+- Container restarts ~every 40-60 min killed workers twice and one push; start pushes right after a restart.
+
 ## Resume point (successor 76; session_01V5yGRXFkFRGsbtdAPyKqXN; started 2026-11-13 ~06:06Z; GO 06:44Z)
 - Step 0: handover check ad64c6a8 (VERIFY PASS, on origin 06:43Z; Lead 06:44Z «it matches», «go» on box 216). Container came up 16 behind
   origin/claude/l-new (ff to f8a042ab). Oink built. Clock skew 0 s.
