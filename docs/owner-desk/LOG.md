@@ -768,3 +768,8 @@ Relayed verbatim to the Lead, priority "now". OWNER-DESK reading: new sessions a
 3. What this means, unchanged from my 12:40Z line: if it lands, N5 is not a polynomial algorithm and is recorded as a dead end; your ruling D1 called this the likely outcome. TARGET's question stays open. Three weeks of landed lemmas stay true; their stated purpose (steps toward a bound for N5) ends.
 4. Operations: the 5-hour limit stopped every session at about 13:35Z; all resumed after your word («I hit my usage limit while you were working, but it has reset now. Please continue from where you left off.», recorded as D26). The weekly limit reads «allowed_warning» on every session read since (resets 2026-11-18 21:00Z); no overage. To spare it I parked the search lanes and created only the successors the referee round needs (all Fable 5.2 at xhigh, CHECKER on Opus 5.5 at xhigh). RESULTS has 130 entries; R130 is closed.
 5. One question is coming, not yet asked: when R131 has landed, what should the fleet work on? Your D18 («Focus on N5 and work toward proving it.») ends with N5. I will put options to you then; until you answer, no new lane is created.
+
+## 2026-11-13T20:27Z owner message (verbatim)
+> SO we have to look for a new algorithm no? Do we have any promising lead or can convert our learning into a new promising algorithm?
+
+Answered with an OWNER-DESK reading (no named successor candidate on trunk aeb90ac19); relayed verbatim to the Lead, asking for the post-N5 options early.
