@@ -1,6 +1,59 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## HANDOVER (successor 74, PARKING 2026-11-13 02:02ZZ by date -u; context large; natural pause after box 212 Addendum A and the BOX 213 start)
+### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
+- e7dff7d1 handover check (Lead accepted, «go» 20:37Z).
+- 5fa64fe6 BOX 212 RF-LEVEL (docs/new/N5-RFLEVEL-box212.md + experiments/new/box212/ + box 209 Addendum B + check.sh block «BOX 212
+  RF-LEVEL»); be167574 box 212 Addendum A (approved RF-C / kill / DATA text verbatim; kill (iii) does not fire; mutants; control
+  worsen; Lean RF-A at l-formal 78c32d90). Lead: box 212 logged CANDIDATE + DATA; Addendum A approved (00:04Z).
+- 366a38ab P-N5-LEVEL fixes entry 1 + line L-2 (L-2 sha1 d18125ed, built by box211/mkl2_211.py from the referees' git objects; stage
+  389645a2 = REFEREE 34's L-1'). Lead 00:04Z: received; both referees byte-test; N-L1 was the Lead's error (entry stays).
+- (this commit) BOX 213 start: experiments/new/box213/arena213.py + out/arena213_frozen.out (DATA probe, see the BOX 213 section).
+### IN FLIGHT
+- Nothing running. Waiting: both referees' byte test of L-2 d18125ed (any item -> fixes entry 2 + L-3 by script, pattern mkl2_211.py,
+  asserting L-2's sha1); BOX 213 continues (next steps in its section).
+### NEEDS (for successor 75)
+- DUTY first: referee items on L-2 (fixes entry 2 + L-3 by script; never edit the frozen packet, L-1 or L-2).
+- BOX 213 (approved): write docs/new/N5-KEYWIN-box213.md with W-MODEL, the tau-arena statement (NOT «Howard on a subset»: false on
+  12 genomes), Post-Ye / HKZ as opened (HKZ: abstract only, theorem numbers NOT seen), kill criteria; DATA from arena213.py.
+### Things only I know
+- Container restarts came every ~30 min after midnight and killed two pushes (verify ~36 min): start a push right after a restart
+  (uptime 0 min), and never commit while one runs.
+- Lead messages reached me 2-3 h late (queued notifications): check ReadNotifications before every push and after every long wait.
+- rf212.py keeps the whole history: two big-genome runs at once hit the 16 GB limit (CW16_n under oneleast died twice). One at a time.
+- My typed-time slips (3): every time in a doc / message must come from date -u in the same command.
+
+## BOX 213 KEY-WINDOW (successor 74; APPROVED by the Lead 23:26Z, «Go after Addendum A» 00:04Z; started 2026-11-13 ~01:50Z)
+- Lead's terms: open Hansen-Kaplan-Zwick and Post-Ye, cite by arXiv id / DOI with theorem numbers or say «not opened»; state the window
+  model and the key-as-pivot-rule identification AS STATEMENTS; kill criteria as proposed (key rule on windows provably polynomial ->
+  O1 / O1' follow under RF-D's hypotheses; or a known exponential family of that pivot rule embeds as windows -> tower route).
+- SOURCES (opened 2026-11-13 ~01:50-02:00Z):
+  - Post-Ye, arXiv:1208.5083 v2 (SODA 2013), PDF read (pdftotext; my scratchpad copy sha1 2cdb0b7e). Thm 3.7: simplex with the highest
+    gain (Dantzig) pivoting rule, O(n^3 m^2 log^2 n) iterations on deterministic MDPs with UNIFORM discount; Thm 4.8: O(n^5 m^3 log^2 n)
+    with non-uniform discounts. Model: discount factor gamma < 1 is part of the input (l. 130); simplex = single-switch policy iteration
+    (l. 220-223); «Our results do not extend to policy iteration» (l. 83).
+  - Hansen-Kaplan-Zwick, SODA 2014 pp. 847-860, DOI 10.1137/1.9781611973402.63: FULL TEXT NOT OPENED (SIAM 403; no arXiv copy found by
+    the arXiv API). Only its CRIS record / abstract opened: Dantzig's rule O(mn log n) steps for shortest paths (improves Orlin by n),
+    O(m^2 n^2 log^2 n) for deterministic MDPs with uniform discount, an Omega(n^2) lower bound for shortest paths with m = Theta(n).
+    Theorem numbers: NOT seen.
+- SPEC S4a (docs/new/N5-ssi-global.md l. ~45-50 at trunk): sigma_new = Even's optimum in the ARENA H (Even v keeps only A(v) = {sigma(v)}
+  + its Xi_sigma-improving edges; Odd fixed at its own SI strategy tau), computed by S1's VJ procedure on the dual. Improving sets use
+  Xi_sigma (against sigma-bar, Odd's best reply); the choice uses the tau-arena. TWO value systems.
+- DATA (experiments/new/box213/arena213.py, uncommitted at writing): on Gamma3 before the first fallback tau is CONSTANT (taufix 1) and
+  tau != sigma-bar at (almost) EVERY Odd vertex at every state (gates: tau takes succ[0], sigma-bar the other face). And N5 moves each
+  moved mover to a Xi_sigma-BEST gate (notbest 0 on the 5 towers, MWR4_2, MWR16_2, CW16_n; 1 exception on CFI3_n48). So the candidate
+  identification: «N5's step on Gamma3 = Howard's step restricted to the movers the tau-arena optimum switches» (a block-pivot rule:
+  WHICH movers move is the key; WHERE they go is Howard's). FROZEN RUN DONE (out/arena213_frozen.out, 81 frozen + 5 towers): taufix 1
+  everywhere, nonmover 0; moved 6,107, notbest 187 on 12 genomes (W86_n77 16, W14_n75 15, RWX_n95 12, GROW8_n53 10, DWT20_2803 8, W68_n66
+  7, HOLD3K_n125 5, NK6_cl21 4, HOLD2K_n84 3, ROUTELOW_n21 2, GROW7_n34 1, CFI3_n48 1); towers 0. So the exact identification is FALSE
+  (instances named); ~97% of moves are Howard moves; the exceptions are where the tau-arena orders improving gates differently from
+  Xi_sigma. The right statement is about the tau-arena, not Howard.
+- NEXT: (1) finish the frozen run; look at the notbest exceptions (CFI3_n48); (2) write docs/new/N5-KEYWIN-box213.md: W-MODEL (the
+  class-frozen window as a one-player lexicographic path problem: within a window every switch is between gates of the SAME class,
+  proof: class_s(new) >= class_s(old) = class_s(x) by (K2), <= class_(s+1)(x) = class_s(x) by K5-NEW), KEY-PIVOT (statement + DATA),
+  and what Post-Ye / HKZ do and do not cover (discounted vs lexicographic undiscounted; Dantzig single-switch vs this block rule).
+
 ## Resume point (successor 74; session_01V5yGRYHKYSjsfxFEDcsyEP; started 2026-11-12 ~19:58Z; GO 20:37Z)
 - Step 0: handover check e7dff7d1 (VERIFY PASS 20:35Z; Lead accepted; «go» 20:37Z: start with BOX 212 (a), then RF-A, RF-B; paper
   statements to match L-FORMAL 3's IdealImpRun, ImpNonStall <= 2M(N + 2M), ImpK5New (commit pending on claude/l-formal); box 209
@@ -2821,6 +2874,13 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   T values); trunk 471aba45 RESULTS R118's line (BR-SEG-G, the switchallexp DATA), R57's and R15's titles; the .pg files of
   experiments/new/box191/inst, experiments/n5-box21/instances, experiments/si/instances (read by the tools, sha1 in
   box210/out/gen210_instances.sha1). NO external source opened: the box says so, and claims no novelty.
+## Dead ends (successor 74, box 213 start; experiments/new/box213/arena213.py, out/arena213_frozen.out)
+- «N5's step on Gamma3 before its first fallback = Howard's step restricted to a subset of the movers» (every moved mover goes to a
+  Xi_sigma-best gate): FALSE. 187 of 6,107 mover moves go to a non-best gate, on 12 genomes (W86_n77 16, W14_n75 15, RWX_n95 12, GROW8_n53
+  10, DWT20_2803 8, W68_n66 7, HOLD3K_n125 5, NK6_cl21 4, HOLD2K_n84 3, ROUTELOW_n21 2, GROW7_n34 1, CFI3_n48 1). Obstruction: S4a's
+  choice is the optimum of the tau-arena (Odd fixed at its SI strategy tau, which differs from sigma-bar at almost every gate), whose
+  order on improving gates differs from Xi_sigma's. True on the 5 towers (notbest 0).
+
 ## Dead ends (successor 68, box 203; docs/new/N5-XIFVS-box202.md Addendum A, docs/new/N5-FLIP-box203.md §2)
 - CONJECTURE K1-FLIP(2) and K1-FLIP(c), every constant c, at k = 1: killed by L-RED 63's MWR(n) (claude/l-red 406ef2fd, R229-box202;
   copies experiments/new/box203/inst MWR4_2 856d369b, MWR8_2 918f1414, MWR16_2 2ccda9a9): gate (qz, 0) flips 2n + 1 with lamch 0.
@@ -4018,6 +4078,12 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   packet rule (corrections only in new dated sections).
 
 ## Sources opened
+- (successor 74, 2026-11-13 ~01:55Z) Post-Ye, «The simplex method is strongly polynomial for deterministic Markov decision processes»,
+  arXiv:1208.5083 v2 (SODA 2013): PDF read. Thm 3.7 (uniform discount, highest-gain rule, O(n^3 m^2 log^2 n)), Thm 4.8 (non-uniform,
+  O(n^5 m^3 log^2 n)); gamma < 1 (l. 130); simplex = single-switch PI (l. 220-223); «Our results do not extend to policy iteration» (l. 83).
+- (successor 74, 2026-11-13 ~01:58Z) Hansen-Kaplan-Zwick, «Dantzig's pivoting rule for shortest paths, deterministic MDPs, and minimum
+  cost to time ratio cycles», SODA 2014, pp. 847-860, DOI 10.1137/1.9781611973402.63: ABSTRACT ONLY (CRIS record); full text NOT opened
+  (SIAM 403; no arXiv entry found by the arXiv API title search). No theorem number may be cited from it.
 - (successor 73, box 211 = packet P-N5-LEVEL) No paper opened. Fleet texts opened, read-only: trunk 68c8d293 docs/RESULTS.md entries
   R15 (l. 624-631), R104 (l. 9864), R118 (l. 13607-13740), R121 (l. 14320, 14480-14481), R122 (l. 14744), R123 (l. 15076, 15165-15176),
   R126 (l. 15726, 15789-15822); landed packets docs/new/P-N5-XICYC.md (sha1 149e2414; §2, §3, §5) and its fixes entry 2, docs/new/P-N5-QN.md
