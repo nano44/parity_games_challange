@@ -11,10 +11,14 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   389645a2 = REFEREE 34's L-1'). Lead 00:04Z: received; both referees byte-test; N-L1 was the Lead's error (entry stays).
 - (this commit) BOX 213 start: experiments/new/box213/arena213.py + out/arena213_frozen.out (DATA probe, see the BOX 213 section).
 ### IN FLIGHT
-- Nothing running. Waiting: both referees' byte test of L-2 d18125ed (any item -> fixes entry 2 + L-3 by script, pattern mkl2_211.py,
-  asserting L-2's sha1); BOX 213 continues (next steps in its section).
+- Nothing running. CORRECTED 02:42ZZ from the Lead's 01:48Z message (reached me 02:42Z): L-2 d18125ed MATCHES at BOTH referees (REFEREE 34
+  §8, claude/referee 98cdc7aa + 28b95151; REFEREE-2 39 Addendum 2, 5bba2b8e); R129's second fill goes to CHECKER as C144; nothing owed.
+  «N-L1» closed (the Lead's labelling error; the fixes entry stays; CHECKER flag G-NL1).
+- BOX 213 inputs named by the Lead: L-COMP BOX 46 (independent W_key measurement on Xi-cyclic genomes, in progress); L-RED-B 3's
+  reading that on the flat wrapper each Even vertex's successor index only decreases, giving <= |E(H)| steps before the first fallback
+  (a claim, not proved, tested by counter; credit L-RED-B under L41 if used). The Lead: «Successor 75 starts box 213 from it».
 ### NEEDS (for successor 75)
-- DUTY first: referee items on L-2 (fixes entry 2 + L-3 by script; never edit the frozen packet, L-1 or L-2).
+- DUTY: none open on P-N5-LEVEL (L-2 matched by both referees). Any CHECKER C144 item routed later: fixes entry 2 + L-3 by script.
 - BOX 213 (approved): write docs/new/N5-KEYWIN-box213.md with W-MODEL, the tau-arena statement (NOT «Howard on a subset»: false on
   12 genomes), Post-Ye / HKZ as opened (HKZ: abstract only, theorem numbers NOT seen), kill criteria; DATA from arena213.py.
 ### Things only I know
