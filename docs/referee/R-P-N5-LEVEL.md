@@ -282,7 +282,7 @@ REFEREE successor 34 (D1; the Lead's «go» 20:04Z, item B). Date -u at writing 
   parsed by my script from R2-P-N5-LEVEL.md at claude/referee-2 43824abc §5.4 (wraps joined with one space), each old string once
   (stages 7afc25c8…, 1ba96bd2…); then my LO-1 as «the 49 must-0 counters of rv208.py» → that string + « (named in its header; a
   counter that is 0 is not printed)» (old once). Result: sha1 **d18125ed1c62f8ad20396d9f94eac8bdbc624cf4**, 7,970 B, one line, 0 «|»,
-  93 «(» = 93 «)»;  with the lane's L-2: **EQUAL**. Nothing else changed.
+  93 «(» = 93 «)»; `cmp` with the lane's L-2: **EQUAL**. Nothing else changed.
 - Meaning:
   - LT-1..LT-3: my strings, verbatim (the stage equals my L-1′).
   - R-1 = my LO-2 point: «…, and so are the number R of steps at which σ̄ changes, the number Q of loud steps and D^tot(v) − 1 for
