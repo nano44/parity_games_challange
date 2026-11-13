@@ -83,8 +83,8 @@ FLAGS FIRST (my reading; CHECKER rules; blocking ones first; strings below are P
 - G-NW2, THE LEAD'S NOTE BULLET (note; RESOLVED with G-R8). Lead ruling (brief): L-2 lands verbatim, and the entry carries ONE Lead-text
   bullet "Note (both referees, no change asked): …" quoting REFEREE 34's N-W2 and REFEREE-2's W-L2-1 by script. Both are now quoted,
   extracted by script from the reports (note130a.py: N-W2 at 32d61d60 l. 239-240, W-L2-1 at 01e83df5 l. 303-307; each quoted piece asserted
-  once; W-L2-1's Old string occurs once in L-2). «no change asked» is verified for both: N-W2 «Note N-W2 (no change asked)» (l. 239), W-L2-1
-  «no change required for MATCH; the Lead's call» (l. 303). The bullet's own text (the runs are this lane's own, box 104, not a cited
+  once; W-L2-1's Old string occurs once in L-2). «no change asked» is verified for both: N-W2 «Note N-W2 (no change asked)» (l. 239-240),
+  W-L2-1 «no change required for MATCH; the Lead's call» (l. 303). The bullet's own text (the runs are this lane's own, box 104, not a cited
   replay) is checked against the box 104 outputs (data130a.py, note130a.py).
 - G-SHAPE, L-2'S FORM AGAINST THE LANDED TITLES (FLAG; CHECKER's call, possibly blocking under the landed form; Lead ruling: L-2 lands
   verbatim). (1) L-2 has no date parenthesis and no « — »: every landed «### R» heading R60-R127 has exactly one " (YYYY-MM-DD) — " (my scan
@@ -101,7 +101,10 @@ FLAGS FIRST (my reading; CHECKER rules; blocking ones first; strings below are P
   archive of HEAD 626da53c with docs/RESULTS.md and docs/GAPS.md replaced by base (b) of sim130b.py, HEAD + R128 + R129 + R130): rc 0, no
   violation; base (a): rc 0; HEAD as is: rc 0; negative control (the R130 title without «[refereed-only]»): rc 1 with «RESULTS entry not
   labelled formalized|refereed-only: ### R130 DEAD-END packet …» (Addendum (second fill), [docs]). check_docs.py reads the title only for
-  its label, and GAPS l. 11 only for its first four cells. So G-SHAPE is a note only.
+  its label, and GAPS l. 11 only for its first four cells. So G-SHAPE is a note only. THIRD FILL: CHECKER C146 §3 G-SHAPE: «the Lead's ruled
+  form; L-2 lands verbatim» (claude/checker 94c65a8f l. 40), no action. check_docs.py re-run on the REAL trunk after R129's landing (HEAD
+  0bdc8306, R128 and R129 landed; tools/docs130c.sh): HEAD as is rc 0; HEAD + R130 after the landed R129 rc 0; negative control (title
+  without «[refereed-only]») rc 1 (Addendum (third fill), [docs]).
 - G-U, THE UPDATE (FLAG: three mechanical generalisations of the landed procedure, one of them a wording reading). Built from L-2 by
   upd130a.py = upd129b.py's direct(), direct2() and controls copied unchanged, plus direct3() = direct() with: (i) a boundary in place of "
   (DATE) — ": the claim part ends before «; obstruction W-FLAT (», whose «; » is consumed as " (DATE) — " is, so the obstruction, the frozen
@@ -139,14 +142,25 @@ FLAGS FIRST (my reading; CHECKER rules; blocking ones first; strings below are P
   names WRAP's six must-0 counters with their values (0 on every set) and a firing control; R236 names no must-0 counter (flag G-R236). The
   values quoted from R237 (1) equal its own outputs (data130b.py: wr237_lmcs_fig4.out, wr237_lmcs_table4.out, wr237_json.out, wr237_ctrl.out
   at 5eca1c32), except the W(switchallexp_n), n = 2, 3 values, which have no output file of their own at 5eca1c32 beyond the control row and
-  are quoted from the report only.
+  are quoted from the report only. THIRD FILL: CHECKER C146 §3 G-L43 / G-R236: «Met; no action.» (l. 53); O-1 (C146 §4, the Lead's ruling
+  07:10Z: ACCEPTED) applied: the DATA-counters bullet now names R236's pinned output column, «its pinned output
+  experiments/red/r236/out/f236_free.out (0037d948) carries «regfail xi 0 spec 0» on all seven F_n rows» (C146's string), checked by script
+  against claude/l-red 0037d948 (all seven rows F_2..F_8 end with it).
 - G-R236, L-RED 66 R236 NAMES NO COUNTER (FLAG for CHECKER; the Lead's instruction: "If the report names no counters, say so in the bullet
   and FLAG it"). docs/red/R236-fn.md at 0037d948 announces «Labels: CONFIRMED / FLAWED / DEAD / DATA (unit, set, scope, counter).» (l. 6)
   but names no must-0 counter: it gives counts with units (iterations, fallbacks, regions, the classification of its self-check differences
   by start, fallback and real divergence). Its own output experiments/red/r236/out/f236_free.out (0037d948) carries a column «regfail xi 0
   spec 0» on all seven F_n rows (data130b.py), which the report text does not name; the entry does not use it (the bullet quotes the report
   only, as ruled). R237 (1), the other half of L-2's clause, names its counters. CHECKER's call whether "named here from its report" is met
-  for R236 by its unit-bearing counts.
+  for R236 by its unit-bearing counts. THIRD FILL: Answered by C146 §3 (G-L43 / G-R236 «Met; no action.») and O-1 applied (G-L43); no flag
+  remains on R236.
+- G-LN: applied by Lead, not from C146 (Lead 07:37Z: a citation fix in the Lead's entry text, not a change to L-2; listed for CHECKER
+  separately from C146's strings). The drafter's line-citation sweep (tools/lncheck130c.py: every «quote» followed by a line citation,
+  looked up at the cited lines of every cited source) found, besides C146's (a)-(d), that the Fixes bullet's «R-2's Old «REFEREE 33 e44ce56b
+  / 90703a81: 18 counters 0 on 523,721 runs)» occurs once in L-1 but not after LW-1» was cited «l. 14-15»; in docs/si/P-N5-WRAP-fixes.md at
+  faf0c8ff it is at l. 12-13 (located by script). Applied after C146's five pairs, old string asserted once in the unwrapped block: "occurs
+  once in L-1 but not after LW-1», l. 14-15)" → "occurs once in L-1 but not after LW-1», l. 12-13)". After it the sweep finds every
+  line-cited quote of the block at its lines (Addendum (third fill), [ln]).
 - G-0, THE CHECKER NUMBER (FLAG). C142 is R128's (open), C143 the Lean rows (claude/checker 37fcbd21, PASS), C144 R129's, C145 L-FORMAL's Γ3
   / PAD Lean rows (the Lead's state log: «Γ3/PAD rows -> CHECKER C145 when on origin.» (l. 3427)); «C146» occurs 0 times in trunk docs/ and
   notes/ at HEAD. This draft uses C146 (line 1, title fill tail, UPDATE head), as the brief says; the Lead confirms or renames. SECOND FILL:
@@ -167,7 +181,10 @@ FLAGS FIRST (my reading; CHECKER rules; blocking ones first; strings below are P
   26704e01 (in R128's 7b0a58ae), referee e44ce56b / 90703a81 (in R129's 28b95151). SECOND FILL: MERGE LIST (second fill; Lead 03:05Z): l-si
   faf0c8ff (or its head 18cd2b88, the handover check only); referee 32d61d60; referee-2 0f2606da, as cited (origin is now adda3245,
   REFEREE-2 40's handover check, docs/agents/handover-checks/REFEREE-2.md only; not needed); and C146's checker commit. merge130b.sh re-run
-  at the second fill's fetch: no conflict marker.
+  at the second fill's fetch: no conflict marker. THIRD FILL: MERGE LIST per C146 §3 G-MERGE: l-si faf0c8ff, referee 32d61d60, referee-2
+  0f2606da (contains 01e83df5; the later 59ece3a4 / adda3245 / 8e075239 / 612f4bf3 not needed, not cited), plus the C146 Add. 1 checker
+  commit. Origin heads at this fill's fetch: l-si d2648412, referee 92d1cfdb, referee-2 612f4bf3, checker 94c65a8f (fetch.txt);
+  merge130c.sh: each R130 merge head into HEAD 0bdc8306 (R128, R129 merged and landed): no conflict marker.
 - G-BASE, R128 AND R129 NOT LANDED (FLAG for the Lead). R130 is placed after R129 (the order of record). Simulated twice (sim130a.py): base
   (a) HEAD as is, R130 directly after R127 (a DRY RUN: not the landing order); base (b) HEAD + R128's block d[282:522] (third fill) + R129's
   block d[153:303] (second fill) before «**Erratum E-1**», then R130 after R129, and GAPS with R128's (ba695811) and R129's (31d7b642)
@@ -177,7 +194,9 @@ FLAGS FIRST (my reading; CHECKER rules; blocking ones first; strings below are P
   scripts/verify.sh only): RESULTS, GAPS, the R128 and R129 drafts, scripts/check_docs.py and TARGET.md are byte-equal at 4af9279d and
   626da53c (asserted), so base (b) is built on 626da53c's bytes and the first fill's line numbers stand. sim (b) re-run on this draft
   (sim_p1.out): R130 at l. 16519-16715 after R128 l. 16127 and R129 l. 16368 (the block is 197 lines, one bullet more); GAPS l. 11 order
-  R127 < R128 < R129 < R130; check_docs.py on that landed trunk: rc 0 (G-SHAPE).
+  R127 < R128 < R129 < R130; check_docs.py on that landed trunk: rc 0 (G-SHAPE). THIRD FILL: R128 and R129 are LANDED at local HEAD 0bdc8306
+  (R129 landing commit b28b7c81, log 0bdc8306; RESULTS l. 16127 and 16368, «**Erratum E-1**» l. 16525). The simulation now runs on HEAD's
+  actual RESULTS and GAPS (sim130c.py): R130 after the landed R129, the order of record (Addendum (third fill), [sim]).
 - G-4, PREMISE SCOPE (note). Every RESULTS R-id L-2 cites is landed at HEAD (prem130a.py: R15 l. 624, R57 l. 2893, R104 l. 9864, R118 l.
   13607; and R24 l. 1064, R103 l. 9641 inside the [RULE] quote of the packet); L-2 does NOT cite R128 or R129 (0 tokens), nor R117 (LW-3
   removed «R117's core»). Only R118 carries the prefix «RESULTS»; «R57 (b) as landed in R104», «Fact DUAL (R104)», «R15 (a), (c), (d)» are
@@ -220,7 +239,7 @@ FLAGS FIRST (my reading; CHECKER rules; blocking ones first; strings below are P
   «My script does the same from my report's text.» (l. 292) and «The DATA rule is met.» (l. 300). (3) "scope … WRAP + F_n + Friedmann [F11]
   Theorem 6.14": the brief quoted in the packet (l. 2-4) names F_n, but F_n's route is not in this packet («FREE-REACH and F_n (box 104
   §4-§5: the same fact in R104's genome shape with free carrier priorities; REFEREE 33's PW-4: «the Lead's call»): not needed for XI-EXP»,
-  l. 442-443); F_n enters L-2 only as frozen instances with iteration counts (DATA). (4) "L-RED 68 R237 (2) (3732f4a1)": neither L-2 nor the
+  l. 443-444); F_n enters L-2 only as frozen instances with iteration counts (DATA). (4) "L-RED 68 R237 (2) (3732f4a1)": neither L-2 nor the
   packet cites it (data130a.py), so the entry does not ("cite only as the line and packet do", the brief). (5) "trunk … local HEAD
   4af9279d": one commit ahead of origin e8b6abf0; RESULTS and GAPS byte-equal (TRUNK).
 
@@ -232,17 +251,17 @@ FLAGS FIRST (my reading; CHECKER rules; blocking ones first; strings below are P
   1670432a8a07490ff80ceed45c861515ff070b9b, 56,745 B, 462 lines;» (l. 13-14)). Labels: «Labels: PROVED (L-SI lane, unrefereed) / PROVED,
   REFEREE-originated (L41: written here by the lane, to be checked by the other referee) / CONDITIONAL / DATA / READING (not to sign) / DEAD
   (only after two signatures, L43).» (l. 7-8). Scope line: «N5 (SPEC) is not affected; G-N5-TIME stays OPEN. Not a TARGET.md claim; not M3
-  or M4; not a gauntlet step.» (l. 13-15). To sign (l. 22-38): §2 the wrapper W(H, s0) with its count and rank facts, §2.4 Fact (H);
-  §4.1-§4.8 PAD-W, S3-W, K3-W with K2-r-W, ODD-W, TAU-W, ESC-W, REACH-W, E1-W to E4-W, ENDGAME-W; §3 Lemma WRAP (i)-(v); §5 Remark 3 (under
-  [RULE]); §6 Claim NT (REFEREE 33's, L41) and Corollary NT-RUN; §7 Statement XI-EXP (CONDITIONAL); §8-§12 dead-end record (draft), DATA,
-  independent DATA, what is not here, TARGET diff, machine checks: not to sign.
+  or M4; not a gauntlet step.» (l. 10). To sign (l. 22-38): §2 the wrapper W(H, s0) with its count and rank facts, §2.4 Fact (H); §4.1-§4.8
+  PAD-W, S3-W, K3-W with K2-r-W, ODD-W, TAU-W, ESC-W, REACH-W, E1-W to E4-W, ENDGAME-W; §3 Lemma WRAP (i)-(v); §5 Remark 3 (under [RULE]);
+  §6 Claim NT (REFEREE 33's, L41) and Corollary NT-RUN; §7 Statement XI-EXP (CONDITIONAL); §8-§12 dead-end record (draft), DATA, independent
+  DATA, what is not here, TARGET diff, machine checks: not to sign.
 - Fixes: docs/si/P-N5-WRAP-fixes.md, append-only, one entry (faf0c8ff, 2026-11-13T00:29:35Z: 29 lines, 3,414 bytes, sha1
   9fff274d4e527c42b64f47ded6b3f2627a344c32). Entry 1 (L-SI successor 53): line L-2 from L-1 by the two reports, «Sources (byte copies; every
   string copied by experiments/si/pwrap/fix1/mkL2.py, never retyped)» (l. 3-4); «Lead 22:36Z / 00:05Z: R-1, R-2, LW-1 REQUIRED; LW-2, LW-3 /
-  R-3 ADOPTED; N-1 a note with no line change.» (l. 9). Items and their origins: LW-1 (REQUIRED; REFEREE 34, L43: the DATA clause with unit,
+  R-3 ADOPTED; N-1 a note with no line change.» (l. 7). Items and their origins: LW-1 (REQUIRED; REFEREE 34, L43: the DATA clause with unit,
   column, files and numbers; check stage be7da8f3 = REFEREE's L-1′), R-1 (REQUIRED; REFEREE-2: «G_n» in the NT clause with Figure 4's
   injective priorities), R-2 (REQUIRED; REFEREE-2: the counters named; applied to LW-1's clause because LW-1 rewrote R-2's Old string,
-  «R-2's Old «REFEREE 33 e44ce56b / 90703a81: 18 counters 0 on 523,721 runs)» occurs once in L-1 but not after LW-1», l. 14-15), LW-2
+  «R-2's Old «REFEREE 33 e44ce56b / 90703a81: 18 counters 0 on 523,721 runs)» occurs once in L-1 but not after LW-1», l. 12-13), LW-2
   (ADOPTED; REFEREE 34: the instance files), LW-3 (ADOPTED; REFEREE 34's string, «to the core K0-K3 (with pads pA, s, q, r)» in place of «to
   R117's core»; REFEREE-2's optional R-3 makes the same point and is not used); N-1 (REFEREE 34's note, recorded, no line change: ««Γ3(G)»
   for R118-R126 / box 208 should read «Γ(G) / Γ3(G)»; wording only.», l. 26-27). «Nothing in the packet's statements changes; both referees
@@ -255,10 +274,11 @@ FLAGS FIRST (my reading; CHECKER rules; blocking ones first; strings below are P
   G-SHAPE). It is written by experiments/si/pwrap/fix1/mkL2.py from L-1 (896f9e97394695f903131f832a67f31bcfc23c28, e01447e7, 2,648 bytes,
   frozen with the packet) with REFEREE 34's LW-1 (giving REFEREE's L-1′ be7da8f3a98e4c5a26158eae9aa2766c56531222, asserted), then
   REFEREE-2's R-1, R-2 (on LW-1's clause) and REFEREE 34's LW-2, LW-3, every string extracted from the reports. Rebuilt byte-equal by the
-  drafter (the lane's mkL2.py in a git archive of faf0c8ff: cmp EQUAL) and by REFEREE-2 with its own code:
-  299dafceb64587263b1492e5ef291d3bdf371ba7 (l. 295-296). REFEREE rebuilt it with its own strings (§8, 32d61d60): «cmp with the lane's L-2:
-  EQUAL. Each old string occurs exactly once at its step. L-2 = L-1 + exactly LW-1, R-1, R-2 (re-anchored), LW-2, LW-3.» (l. 231-232) (its
-  L-1 test: «my result on L-1: sha1 be7da8f3a98e4c5a26158eae9aa2766c56531222.» (l. 215-217)).
+  drafter (the lane's mkL2.py in a git archive of faf0c8ff: cmp EQUAL) and by REFEREE-2 with its own code: «cmp with the lane's L-2: EQUAL.
+  Each old string occurs exactly once at its step. L-2 = L-1 + exactly LW-1, R-1, R-2 (re-anchored), LW-2, LW-3.» (l. 295-296). REFEREE
+  rebuilt it with its own strings (§8, 32d61d60): «Result: sha1 **dbd5f0e83e3d0300842c46cf2ae24b30b853d784**, 3,598 B, one line, 44 «(» = 44
+  «)»; `cmp` with the lane's L-2: **EQUAL**. Nothing else changed.» (l. 231-232) (its L-1 test: «my result on L-1: sha1
+  be7da8f3a98e4c5a26158eae9aa2766c56531222.» (l. 215-217)).
 - Claims signed (REFEREE successor 34: §1-§2 ef4d3bd1, §3-§7 c6fcf2b6, §0 99df2458, §8 32d61d60; REFEREE-2 successor 39: boxes 1-2 3cf594cc,
   box 3 and verdict 07fd5ae4, Add. 1 5d30968a, Add. 2 01e83df5). REFEREE's table («## 0. Verdicts», R-P-N5-WRAP.md l. 191-209), row by row
   as the report prints it: §2 Definition of W(H, s0), vertex order, size count, rank facts (R_W), standard state → **SIGN** (definition;
@@ -388,7 +408,8 @@ FLAGS FIRST (my reading; CHECKER rules; blocking ones first; strings below are P
   (docs/red/R236-fn.md at 0037d948) names no must-0 counter by name («Labels: CONFIRMED / FLAWED / DEAD / DATA (unit, set, scope, counter).»
   (l. 6)): its DATA are counts with their units, the iterations and fallbacks of N5′-xi on F_2..F_8, «33 / 73 / 153 / 313 / 633 / 1,246 /
   2,489, with 1 fallback each.» (l. 11), the regions against Zielonka, «The regions equal the harness Zielonka's on all seven games.» (l.
-  13), and its self-check differences classified «start 0, fallback 0, real divergence 0.» (l. 42) (flag G-R236).
+  13), and its self-check differences classified «start 0, fallback 0, real divergence 0.» (l. 42); its pinned output
+  experiments/red/r236/out/f236_free.out (0037d948) carries «regfail xi 0 spec 0» on all seven F_n rows (flag G-R236).
 - Signatures: REFEREE docs/referee/R-P-N5-WRAP.md, successor 34 (ef4d3bd1 2026-11-12T22:31:53Z, c6fcf2b6 2026-11-12T22:31:53Z, 99df2458
   2026-11-12T22:31:53Z; §8 32d61d60 2026-11-13T01:40:40Z): §0 verdict table l. 191-209; on L-1 «**Line L-1 (sha1 896f9e97…): does NOT match
   yet.** Required: LW-1 (L43: the DATA clause gives T_n as numbers with unit, column and files; C142 E-1's ruling); my result on L-1: sha1
@@ -407,7 +428,7 @@ FLAGS FIRST (my reading; CHECKER rules; blocking ones first; strings below are P
   P-N5-WRAP; L-RED 66 R236 / R237, L-COMP 20 BOX 44 (cited DATA, not opened).» (l. 8); REFEREE-2 «Independent: I did NOT open docs/referee/
   on WRAP (REFEREE 33's R-WRAP-preread, any R-P-N5-WRAP) or notes/REFEREE.md before this verdict is on origin;» (l. 3-4) and «Before this
   verdict was on origin I did not open docs/referee/ (REFEREE 33's R-WRAP-preread, any REFEREE review of WRAP), notes/REFEREE.md, box 104,
-  L-COMP 20's box 44 or L-RED 66's R236 / R237, nor any lane tool.» (l. 273-274)). REFEREE-2 read REFEREE's report only after its verdict:
+  L-COMP 20's box 44 or L-RED 66's R236 / R237, nor any lane tool.» (l. 272-274)). REFEREE-2 read REFEREE's report only after its verdict:
   «REFEREE 34's report read now (claude/referee 99df2458, docs/referee/R-P-N5-WRAP.md), after my verdict 07fd5ae4.» (l. 285-286). REFEREE's
   lane wrote the pre-read that originated Claim NT and disclosed it (Claims signed; L41): «I re-derived every step from the frozen text, not
   from the pre-read.» (l. 7). REFEREE's L-2 test (§8, after both verdicts) took REFEREE-2's R-1 from REFEREE-2's report: «parsed by my
@@ -1360,3 +1381,202 @@ CHANGES (tags in changes2.json). L43: ONE new entry bullet, the Lead's text "DAT
   [sim] [sim b] GAPS l. 11 order of the last RESULTS UPDATEs: ['R125', 'R126', 'R127', 'R128', 'R129', 'R130']
   [sim] [sim b] R128 and R129 blocks unchanged in the result: True True ; UPDATEs R127 < R128 < R129 < R130 on l. 11: True
   [sim] fill values used only here: R128 ('2099-01-11', '00:00', '3333333') R129 ('2099-01-12', '00:00', '4444444') R130 ('2099-01-13', '00:00', '5555555')
+
+Addendum (third fill) (subagent, started 2026-11-13T07:33:23Z by date -u; CHECKER C146 FAIL E-1 and the Lead's message 07:10Z; for the Lead and CHECKER;
+  does not land). Built by r130c/fill3.py from the second fill r130b/R130-draft.md (sha1 a14ce536ffe1442ab3a8e7efaa583340e3ce3efb, 1362 lines,
+  = docs/agents/R130-draft.md at trunk HEAD 0bdc8306, asserted). The five entry-text pairs R-E1 (a)-(d) and O-1 are EXTRACTED BY SCRIPT from
+  docs/checker/C146.md §4 at claude/checker 94c65a8f (r130c/c146_pairs.json; never retyped), each old string asserted once in the unwrapped
+  block and applied in C146's order; every new quote located by script at its commit and lines (r130c/cites3.json; [fill3]). The block
+  changes by exactly these five pairs, the Lead's G-LN pair and the re-wrap (197 -> 199 lines). Outside the block: "THIRD FILL:" sentences on flags G-SHAPE, G-L43,
+  G-R236, G-MERGE, G-BASE; two wrong hand-typed line numbers in the drafter's own FLAGS record corrected (G-NW2 "l. 239" -> "l. 239-240",
+  G-BRIEF "l. 442-443" -> "l. 443-444"; tools/lncheck130c.py); G-LN, a sixth block change, APPLIED by the Lead (07:37Z), not from C146:
+  the Fixes bullet's R-2 Old citation "l. 14-15" -> "l. 12-13" (verified at faf0c8ff), with its flag «G-LN: applied by Lead, not from C146». 14 changes in r130c/changes3.json. NOT CHANGED (asserted): line 1, the title (L-2 verbatim), the GAPS preamble, the
+  UPDATE (58889da6…, rebuilt by upd130c.py with controls on the LANDED R125-R129 UPDATEs), the first- and second-fill Addenda. NOT RE-RUN
+  (objects unchanged at the origin heads, asserted): the check.sh blocks, the full experiments/si/check.sh (C146 §5 ran it on the merged
+  tree: rc 0), mkL2.py, data130a.py, data130b.py. Base: local trunk HEAD 0bdc8306 with R128 and R129 LANDED (R129 landing commit b28b7c81);
+  the landing simulation and check_docs.py run on HEAD's actual RESULTS / GAPS. [poll] / [poll2]: C146's commit was not on origin at the
+  start (07:09Z); fetched by poll at 07:32:50Z. Nothing in the repository was edited, committed, merged or pushed; scripts/push.sh and
+  scripts/verify.sh were not run (scripts/check_docs.py was run in a git archive of HEAD, r130c/landed, removed after). Checks ran on the
+  pass-1 draft r130c/R130-draft.p1.md (sha1 12614f2ff612e5278f816bc2238c4670a3928c47, 1383 lines), which equals this file without this Addendum and its blank line
+  (asserted by mkadd3.py). Outputs: [fetch] fetch.txt, [poll] poll.out, [poll2] poll2.out, [fill3] fill3.out, [merge] merge3.out, [upd] upd130c.out, [ln] ln_p1.out, [note] note3.out, [sim] sim_p1.out, [docs] docs_p1.out, [chk] chk_p1.out, [lp] lp_p1.out.
+  [fetch] Fri Nov 13 07:33:23 UTC 2026
+  [fetch] rc 0
+  [fetch] l-si d26484126975cab97428e7e098826b2571e65e80
+  [fetch] referee 92d1cfdbaa0d72b468a28de1516720654c0cd250
+  [fetch] referee-2 612f4bf33af19ff6b03149e7c3bb9b6c99982cd1
+  [fetch] l-red bf23e4294d3f1f7d49fc996dc6271248a618a49e
+  [fetch] checker 94c65a8f7558e48ef6a79851e41049db15dfde4b
+  [fetch] vibrant-johnson-nxvvxo 6cec46a5ce724d55eb5ad910a9a30aedad716781
+  [fetch] HEAD 0bdc83065cfdb4db3e0e5841e14c40ec81750e60
+  [fetch] ls-remote 94c65a8f7558e48ef6a79851e41049db15dfde4b refs/heads/claude/checker
+  [fetch] ls-remote d26484126975cab97428e7e098826b2571e65e80 refs/heads/claude/l-si
+  [fetch] ls-remote 92d1cfdbaa0d72b468a28de1516720654c0cd250 refs/heads/claude/referee
+  [fetch] ls-remote 612f4bf33af19ff6b03149e7c3bb9b6c99982cd1 refs/heads/claude/referee-2
+  [fetch] ls-remote 6cec46a5ce724d55eb5ad910a9a30aedad716781 refs/heads/claude/vibrant-johnson-nxvvxo
+  [poll] 94c65a8f absent after 40 tries 2026-11-13T07:29:57Z
+  [poll2] [poll] try 6 2026-11-13T07:32:50Z: 94c65a8f present; origin/claude/checker 94c65a8f7558e48ef6a79851e41049db15dfde4b
+  [fill3] units: record 24, block 23; roundtrip of every unit with the first fill's wrap(): True
+  [fill3] C146 §4 at 94c65a8f (l. 74-90): 5 pairs extracted: ['R-E1(a)', 'R-E1(b)', 'R-E1(c)', 'R-E1(d)', 'O-1']
+  [fill3]   pair R-E1(a)  unit «Object (L-SI successor 53, D18 / D1 / D2…»: old once in the unwrapped block, 32 -> 29 chars
+  [fill3]   pair R-E1(b)  unit «Fixes: docs/si/P-N5-WRAP-fixes.md, appen…»: old once in the unwrapped block, 39 -> 39 chars
+  [fill3]   pair R-E1(c)  unit «The RESULTS line is L-2, dbd5f0e83e3d030…»: old once in the unwrapped block, 304 -> 420 chars
+  [fill3]   pair R-E1(d)  unit «INDEPENDENCE: each referee wrote its ver…»: old once in the unwrapped block, 32 -> 32 chars
+  [fill3]   pair O-1      unit «DATA counters for the cited replay L-RED…»: old once in the unwrapped block, 91 -> 212 chars
+  [fill3]   new quotes located: scope line packet l. 10; fixes l. 7; REFEREE-2 l. 295-296 (01e83df5, = 0f2606da); REFEREE l. 231-232 (32d61d60); REFEREE-2 l. 272-274 (07fd5ae4); «regfail xi 0 spec 0» on all 7 rows F_2..F_8 of f236_free.out (0037d948)
+  [fill3]   pair REC-NW2  unit «G-NW2, THE LEAD'S NOTE BULLET (note; RES…»: old once in the unwrapped block, 38 -> 42 chars
+  [fill3]   pair REC-FR   unit «G-BRIEF (notes on the brief). (1) "REFER…»: old once in the unwrapped block, 35 -> 35 chars
+  [fill3]   append SHAPE    flag «G-SHAPE,»
+  [fill3]   append L43      flag «G-L43,»
+  [fill3]   append R236     flag «G-R236,»
+  [fill3]   append M        flag «G-MERGE,»
+  [fill3]   append B        flag «G-BASE,»
+  [fill3]   pair G-LN     unit «Fixes: docs/si/P-N5-WRAP-fixes.md, appen…»: old once in the unwrapped block, 49 -> 49 chars
+  [fill3]   insert G-LN    new flag after G-R236 («G-LN: applied by Lead, not from C146»)
+  [fill3] pass-1 third fill: sha1 12614f2ff612e5278f816bc2238c4670a3928c47, 1383 lines; changes 14; new cites 10; title d[245] unchanged; UPDATE d[461] unchanged (58889da6…); first- and second-fill Addenda d[463:1383] byte-unchanged
+  [merge] HEAD 0bdc8306; origin trunk 6cec46a5; R128 merge 7b0a58ae in HEAD: yes; R129 merges 366a38ab, 28b95151, 1177c24d, 57ee9e34 in HEAD: yes yes yes yes
+  [merge] == claude/l-si faf0c8ff: on origin claude/l-si: yes; ancestor of HEAD: no; merge base 7b0a58ae; commits not in HEAD: 9
+  [merge]   2051a0ee 2026-11-12T18:04:10+00:00 L-SI box 104 Addendum B: gate-face scan on H_n (negative), tie-rule note, N5 against the globally optimizing policy; notebook
+  [merge]   516b6837 2026-11-12T18:58:59+00:00 L-SI box 105 lemma section (O2, proof side): KEY(G*), Lemma KEY-MODEL, KEY-MONO*, DEPTH-BOUND*; successor 52 handover
+  [merge]   3417f6c1 2026-11-12T19:59:25+00:00 L-SI successor 53 handover check (five questions)
+  [merge]   f783aee9 2026-11-12T20:58:02+00:00 L-SI box 104 Addendum C (REFEREE 33's pre-read carried in: W-1..W-4 as Corrections C-1..C-3, Claim NT with proof credited to 
+  [merge]   e01447e7 2026-11-12T21:08:48+00:00 L-SI packet P-N5-WRAP FROZEN (dead-end packet for N5'-xi: Lemma WRAP proved on W in full incl. core and endgame lemmas; Claim
+  [merge]   d7747b99 2026-11-12T21:59:33+00:00 L-SI box 105 D2: ladder searches (free / E-DOM, d = 2-4; best L* 5/9/14 and 5/10/13), each best genome validated against N5 (
+  [merge]   ce1225a7 2026-11-12T22:49:37+00:00 L-SI box 106 (exact d = 2 maximum of KEY on the free ladder): statement first (5 <= L*_max(2) <= 8; CONJECTURE KEY2-5; kill a
+  [merge]   4fce46da 2026-11-12T23:38:34+00:00 L-SI box 106 §2a kill search (400 restarts x 5,000 steps with the audited evaluator: max L* 5, 40 bests replayed on N5, coun
+  [merge]   faf0c8ff 2026-11-13T00:29:35+00:00 L-SI P-N5-WRAP fixes entry 1 + line L-2 by script (REFEREE 34 LW-1 (check stage be7da8f3), REFEREE-2 39 R-1, R-2 on LW-1's cl
+  [merge]   old-style merge-tree 7b0a58ae HEAD faf0c8ff: rc 0 ; lines 5523 ; conflict markers 0
+  [merge]   paths outside the lane's own: docs/agents/handover-checks/L-SI.md 
+  [merge] == claude/referee 32d61d60: on origin claude/referee: yes; ancestor of HEAD: no; merge base 28b95151; commits not in HEAD: 1
+  [merge]   32d61d60 2026-11-13T01:40:40+00:00 REFEREE s34: R-P-N5-WRAP §8: fixes entry 1 CORRECT, line L-2 MATCHES (dbd5f0e8 = L-1 + LW-1 (be7da8f3) + REFEREE-2 R-1 + R-2
+  [merge]   old-style merge-tree 28b95151 HEAD 32d61d60: rc 0 ; lines 84 ; conflict markers 0
+  [merge]   paths outside the lane's own: 
+  [merge] == claude/referee-2 0f2606da: on origin claude/referee-2: yes; ancestor of HEAD: no; merge base 1177c24d; commits not in HEAD: 2
+  [merge]   01e83df5 2026-11-13T01:28:18+00:00 REFEREE-2 39: R2-P-N5-WRAP Addendum 2 — L-2 (l-si faf0c8ff, sha1 dbd5f0e8) MATCHES: own rebuild from L-1 + LW-1 (= be7da8f3
+  [merge]   0f2606da 2026-11-13T02:04:44+00:00 REFEREE-2 39: HANDOVER (park at ~580k, Lead 02:05Z): no open items; reports of record with SHAs (B LEVEL, A GATE Add. 6, C WR
+  [merge]   old-style merge-tree 1177c24d HEAD 0f2606da: rc 0 ; lines 153 ; conflict markers 0
+  [merge]   paths outside the lane's own: 
+  [merge] == claude/checker 94c65a8f: on origin claude/checker: yes; ancestor of HEAD: no; merge base 57ee9e34; commits not in HEAD: 2
+  [merge]   8ae79bca 2026-11-13T06:34:48+00:00 CHECKER C142 Add. 3 + CLOSED: R128 landed 8be40f9b byte-equal to rebuild (RESULTS 41bef91d, GAPS 7f221f94); VERIFY_FULL=1 on 
+  [merge]   94c65a8f 2026-11-13T07:08:30+00:00 CHECKER C146: R130 (P-N5-WRAP) second fill on L-2 dbd5f0e8 FAIL on one entry-text item (E-1: four citations, one a swapped RE
+  [merge]   old-style merge-tree 57ee9e34 HEAD 94c65a8f: rc 0 ; lines 153 ; conflict markers 0
+  [merge]   paths outside the lane's own: 
+  [merge] cited records, not merged: l-comp aa863db5 yes, l-red 0037d948 yes, 5eca1c32 yes (on their origin branches); in HEAD: no no no
+  [upd] trunk HEAD GAPS sha1 f2e7e5a792cb9197fae743142ad5e13808f5e151 ; lines 23 ; l. 11 "¦" 76 «UPDATE 2026-» 64
+  [upd] (1) control R125: sha1 f22faed54eeafdff59de062b1ed0294e3acb7ec6 = f22faed5…: True ; direct2 equal: True ; filled (2026-11-11, 23:47, 1622c7d9) once on l. 11: True
+  [upd] (2) control R126: sha1 89c5f3571a20e19baf3782ffb2534b0ce62a2f68 = 89c5f357…: True ; direct2 equal: True ; filled (2026-11-12, 06:44, 7b2fa753) once on l. 11: True
+  [upd] (3) control R127: sha1 5bd83938b1dfb6603581fc98669593ae2e09c83e ; direct2 equal: True ; filled (2026-11-12, 13:58, 850e9765) once on l. 11: True
+  [upd] (4) control R128 (LANDED): sha1 ba6958119e92cc3ab00cee0348fc69a9e51441b3 = ba695811…: True; filled (2026-11-13, 04:22, a9233137) once on l. 11: True
+  [upd] (4b) control R129 (LANDED, the last UPDATE): sha1 31d7b6424542ec7fb7a0684df707c15caa5c5834 = 31d7b642…: True; filled (2026-11-13, 06:56, 57ee9e34) ends l. 11 before " ¦": True
+  [upd] (4c) direct3 with BND « (2026-11-12) — », no period, no pipe pairs, on R129's L-2 == direct: True
+  [upd]     L-2: «¦» 6; «(20» date parentheses 0; « — » 0; ends «).\n»: True; START once: True; BND «; » + «obstruction W-FLAT (» once: True; drops: «; G-N5-TIME stays OPEN» 1, «; not M3 or M4, not a TARGET.md claim» 1; labels once: [1, 1, 1]; «(Corollary NT-RUN)» 1 (stays where L-2 has it)
+  [upd]     pipe pair: «(F ≤ m_E − ¦V_E¦ + 1 under [RULE])» in L-2 1 -> «(F ≤ m_E − (the number of Even vertices of H) + 1 under [RULE])»
+  [upd]     pipe pair: «so 2^Ω(√¦V¦):» in L-2 1 -> «so 2^Ω(√(the number of vertices)):»
+  [upd]     pipe pair: «, ¦V¦ = 10.5n² + 152.5n + 48» in L-2 1 -> «, the number of vertices = 10.5n² + 152.5n + 48»
+  [upd] (5) UPDATE from L-2 (landed drops with the line's own scope words, pipe pairs, NO other reading): sha1 no newline 58889da6f0b976ddc49e6ec89b6b3c75a7a133b4; with newline d217fc967e88b791057a1c6260184ad7f9a552d0; 3726 bytes, 3665 chars, 623 tokens; connectors ['; ', '; ']
+  [upd]      ( 47 ) 47, depth ok True, ¦ 0, <DATE> 1, <HH:MM> 1, <checker> 1, " — " 0, «G-N5-TIME stays OPEN» 0, «G-N5-TIME stays open.» 1, «not M3» 0, «LANDED:» 1, «pending» 0, «CONDITIONAL» 2, «PROVED lane» 1, «until two referees sign» 1, «L41» 1
+  [upd] (6) NEG drop altered ("G-N5-TIME stays OPEN" -> "G-N5-TIME stays Open") : AssertionError '; G-N5-TIME stays OPEN' (expected)
+  [upd] (6) NEG label altered ("(Lemma WRAP, PROVED lane)" -> "(Lemma WRAP2, PROVED lane)") : ValueError 'substring not found' (expected)
+  [upd] (6) NEG pipe string altered ("¦V_E¦" -> "¦V_O¦") : AssertionError '(F ≤ m_E − ¦V_E¦ + 1 under [RULE])' (expected)
+  [upd] (6) NEG one byte of L-2 changed ("T_n + 3 ≥ 2^n + 3" -> "T_n + 4 ≥ 2^n + 3") : builds, sha1 326aecfd89d4f6a536a02bc9aa8f44ceb327677e, == the L-2 UPDATE: False (expected False)
+  [upd] (7) token diff L-2 -> UPDATE: 8 hunks, 64 tokens out, 79 in
+  [upd]     insert '' -> 'UPDATE <DATE> <HH:MM>Z: RESULTS R130 (P-N5-WRAP; CHECKER C146 <checker>) [refereed-only] LANDED:'
+  [upd]     delete '(Lemma WRAP, PROVED lane)' -> ''
+  [upd]     replace '¦V_E¦' -> '(the number of Even vertices of H)'
+  [upd]     replace "only); (Claim NT: REFEREE successor 33's claim and proof (L41), rendered by L-SI 53)" -> 'only) (Lemma WRAP, PROVED lane);'
+  [upd]     replace 'NT-RUN);' -> "NT-RUN) (Claim NT: REFEREE successor 33's claim and proof (L41), rendered by L-SI 53); N5′-xi needs 2^Ω(n) it
+  [upd]     replace 'meant) N5′-xi needs 2^Ω(n) iterations on a game with O(n²) vertices, so 2^Ω(√¦V¦): exactly T_n + 3 ≥ 2^n + 3  -> 'meant):'
+  [upd]     replace 'affected; G-N5-TIME stays OPEN; not M3 or M4, not a TARGET.md claim' -> 'affected'
+  [upd]     insert '' -> 'G-N5-TIME stays open.'
+  [upd] (8) HEAD (R128, R129 landed): R130 filled UPDATE appended after R129's on l. 11: "¦" 76 -> 76; R130 last: True; R127 < R128 < R129 < R130: True; prefix byte-unchanged: True
+  [upd] (9) R130 UPDATE unchanged from the first and second fills (58889da6…): True
+  [ln] == entry block
+  [ln] line-cited quotes in d[245:445]: 62; held at the cited lines in some candidate source: 62; NOT held: 0
+  [ln] NEGATIVE CONTROL (every range shifted by +3): still held 0 of 62
+  [ln] == FIRST FILL record and flags
+  [ln] line-cited quotes in d[1:245]: 29; held at the cited lines in some candidate source: 29; NOT held: 0
+  [ln] NEGATIVE CONTROL (every range shifted by +3): still held 0 of 29
+  [note] Note bullet: file lines 394-402, 1089 chars
+  [note]   N-W2 (32d61d60 l. 239-240): once in its report True; «…» once in the Note bullet True; text: Note N-W2 (no change asked): the R-2 sentence follows the cited-replays list after a semic
+  [note]   W-L2-1 part 1 (01e83df5 l. 305): once in its report True; «…» once in the Note bullet True; text: The 4,000 / 3,000 / 300 runs are the lane's own (box 104 out/), not an independent replay.
+  [note]   W-L2-1 part 2 (01e83df5 l. 306-307): once in its report True; «…» once in the Note bullet True; text: Old (once in L-2): «; WRAP's six must-0 counters (». New: «; and this lane's own runs (box
+  [note]   N-W2 says «no change asked»: True; W-L2-1 says «no change required for MATCH»: True
+  [note]   W-L2-1 Old «; WRAP's six must-0 counters (» in L-2: 1
+  [note]   lane output wrap_rand.out at faf0c8ff: 3 lines, «s3fail 0 nonstd 0 nohoward 0 fbwrong 0 endwrong 0 wrong 0» rows 3, named in the Note bullet: True
+  [note]   lane output wrap_json.out at faf0c8ff: 1 lines, «s3fail 0 nonstd 0 nohoward 0 fbwrong 0 endwrong 0 wrong 0» rows 1, named in the Note bullet: True
+  [note]   lane output wrap_lmcs_xi.out at faf0c8ff: 12 lines, «s3fail 0 nonstd 0 nohoward 0 fbwrong 0 endwrong 0 wrong 0» rows 12, named in the Note bullet: True
+  [note]   lane output wrap_fried_xi.out at faf0c8ff: 5 lines, «s3fail 0 nonstd 0 nohoward 0 fbwrong 0 endwrong 0 wrong 0» rows 5, named in the Note bullet: True
+  [note]   lane output wrap_long.out at faf0c8ff: 6 lines, «s3fail 0 nonstd 0 nohoward 0 fbwrong 0 endwrong 0 wrong 0» rows 4, named in the Note bullet: True
+  [note]   L-2 «; L-RED 66 R236 / R237 (1)» follows the R-2 sentence (the cited-replays list resumes after it): True
+  [note] NEGATIVE CONTROL: a made-up N-W3 note in REFEREE's report: 0
+  [sim] HEAD 0bdc8306 RESULTS sha1 5cea47ffca92b27b361195f6903df27c3fb34474 lines 17167 "¦" 1477 ; GAPS sha1 f2e7e5a792cb9197fae743142ad5e13808f5e151 lines 23 ; R129 landing commit b28b7c81 an ancestor of HEAD: True
+  [sim] landed: ### R128 at [16127], ### R129 at [16368], «**Erratum E-1**» at [16525]; last «### R» heading: ### R129 [
+  [sim] pure insertion: prefix byte-unchanged True ; suffix byte-unchanged True ; inserted lines 200
+  [sim] headings after insertion: {'R127': [15903], 'R128': [16127], 'R129': [16368], 'R130': [16525], 'E-1': [16725], 'E-2': [16738], 'E-3': [16766], 'Dead': [16797]}
+  [sim] R130 at l. 16525-16723, blank l. 16724 (''), «**Erratum E-1**» l. 16725; the line before R130: l. 16524 '' (R129's block ends l. 16523)
+  [sim] order R127 < R128 < R129 < R130 < E-1 < E-2 < E-3 < Dead: True
+  [sim] RESULTS lines 17167 -> 17367 (+200) ; "¦" 1477 -> 1483 (+6 = the title's 6) ; «checker 5555555)» once True ; fill token 0 ; RESULTS sha1 after 4392ed0c26609f3ed6adce01d885763fc4953ed4
+  [sim] GAPS: only l. 11 changes True ; lines 23 -> 23 ; l. 11 "¦" 76 -> 76 ; «UPDATE 20» 67 -> 68 ; R130 last True ; prefix byte-unchanged True ; GAPS sha1 after 93ed694a90e725501ace765871c6012fbb10ec8d
+  [sim] GAPS l. 11 order of the last RESULTS UPDATEs: ['R125', 'R126', 'R127', 'R128', 'R129', 'R130']
+  [sim] fill values used only here: R130 ('2099-01-13', '00:00', '5555555')
+  [docs] archive of HEAD 0bdc8306: 49652 files
+  [docs] (0) control, HEAD as is: check_docs.py rc 0
+  [docs] (1) simulated: RESULTS sha1 4392ed0c26609f3ed6adce01d885763fc4953ed4, «### R130 » at l. 16525; GAPS sha1 93ed694a90e725501ace765871c6012fbb10ec8d
+  [docs] (1) HEAD + R130 after the landed R129: check_docs.py rc 0
+  [docs] (2) NEGATIVE CONTROL: the R130 title's label removed:
+  [docs]   - RESULTS entry not labelled formalized¦refereed-only: ### R130 DEAD-END packet for the candidate N5′-xi (RESULTS R118's [N5XI]: SPEC S1-S5 with box 190's S4a tie rule), CONDITIONAL until two referees sign: (Lemma WRAP, PROVED lane) for EVERY parity game H and every positional Even strategy s0 of H, the W-flat wrapper W(H, s0) (n + 7·m_E + 6·m_O + n_O + 9 vertices: every edge of H stretched to a 6-edge path through an Odd gate with a pad to an even self-loop c_W above H, an Even valve with an exit to the core K0-K3 (with pads pA, s, q, r), one pe_o pad per Odd vertex; new vertices in wrap104.py's order) makes N5′-xi from SPEC's default start S3 run, at H's Even vertices, a Howard (switch-best, Vöge-Jurdziński values) run of H from s0 and stop after exactly T + 3 iterations with one fallback, and makes N5 stop after exactly F + 2 iterations with one fallback (F ≤ m_E − ¦V_E¦ + 1 under [RULE]); every step proved on W (core lemma K3-W, Odd's reply ODD-W with values stretched by 6, τ fixed TAU-W, the W-flat arena ESC-W, REACH-W, endgame E1-W to E4-W); premises [SPEC], [N5XI], [1E-N3] (R57 (b) as landed in R104), Fact DUAL (R104), R15 (a), (c), (d), [RULE] (Remark 3 only); (Claim NT: REFEREE successor 33's claim and proof (L41), rendered by L-SI 53) in a 1-sink game ([F11] = Friedmann, arXiv 1106.0778v2, §5) every strategy σ with Ξ_ι ⊴ Ξσ gives distinct valuations to distinct nodes, so by [F11] Lemmas 5.1, 6.7 and R15 (a) no tie occurs on Howard's run of G_n (Figure 4's injective priorities, the READING below) from ι and that run is the I^loc run of [F11] Theorem 6.14 (Corollary NT-RUN); (Statement XI-EXP, CONDITIONAL on WRAP and Claim NT being signed, with [F11] Theorem 6.14 cited as published on the READING that Table 4's six priority formulas carry a misprint and Figure 4's priorities are meant) N5′-xi needs 2^Ω(n) iterations on a game with O(n²) vertices, so 2^Ω(√¦V¦): exactly T_n + 3 ≥ 2^n + 3 iterations on W(G_n, ι), ¦V¦ = 10.5n² + 152.5n + 48; obstruction W-FLAT (τ inert, every option of every Even vertex of H tied in S4a's arena, so the Ξσ-best tie pick is Howard's rule on H); frozen instances W(G_n, ι) = WL_1 … WL_4 (11, 29, 65, 137 iterations), W(switchallexp_n) = W_2 … W_8 and F_n = F_2 … F_8 (33 … 2,489 iterations = Howard T + 3; experiments/si/box104/out/wrap_fried_xi.out, wrap_long.out, free_xi.out) at claude/l-si 26704e01 experiments/si/box104/inst (F_n's route FREE-REACH not in this packet); DATA (unit: T_n, the steps of Howard's run on G^L_n from ι, = N5′-xi iterations − 3 on W^L_n; experiments/si/box104/out/wrap_lmcs_xi.out and wrap_long.out, column T, with WRAP's six must-0 counters s3fail, nonstd, nohoward, fbwrong, endwrong, wrong 0 on the same rows): T_n 8, 26, 62, 134, 278, 566, 1,142, 2,294 for n = 1, …, 8 (equal to 9·2^n − 10 on these eight), and 4,598, 9,206 for n = 9, 10 on G^L_n alone (REFEREE 33, claude/referee e44ce56b, docs/referee/scratch/wrap_logs/f11_H_fig4.out, column T); independent replays, every fail counter 0, their counters in their own pinned outputs, cited, not re-run: L-COMP 20 (aa863db5), REFEREE 33 (e44ce56b / 90703a81; its 18 must-be-0 counters, named in its report, 0 on 523,721 runs); WRAP's six must-0 counters (s3fail, nonstd, nohoward, fbwrong, endwrong, wrong; units in the packet §9) 0 on 4,000 random games for N5′-xi, 3,000 for N5, the frozen 300 and W(G_n, ι), W(switchallexp_n) for n ≤ 8; L-RED 66 R236 / R237 (1) (0037d948, 5eca1c32) on its own engine. N5 (SPEC) is not affected; G-N5-TIME stays OPEN; not M3 or M4, not a TARGET.md claim (P-N5-WRAP, docs/si/P-N5-WRAP.md; L-SI successor 53)., CHECKER PASS (docs/checker/C146.md, checker 5555555)
+  [docs] (2) negative control: check_docs.py rc 1
+  [docs] restored (cmp equal)
+  [docs] (1') re-run after the restore: check_docs.py rc 0
+  [chk] model: landed R127 title (HEAD) == «### R127 [refereed-only] » + R127 L-3 + «, CHECKER PASS (docs/checker/C141.md, checker 850e9765)»: True
+  [chk] file: sha1 12614f2ff612e5278f816bc2238c4670a3928c47 bytes 171209 lines 1383 ends with newline True
+  [chk] ### R headings at d[...]: [245]
+  [chk] (a) title == prefix + L-2 (no newline) + tail: True ; middle bytes == L-2 bytes without newline: True
+  [chk]     title: 3615 chars, 3676 bytes, sha1 671013588f5777a89660a1be9549266b12c4fc16, ( 45 ) 45, min depth 0, final 0, ¦ 6 (L-2's own), fill token 1, ends «AP.md; L-SI successor 53)., CHECKER PASS (docs/checker/C146.md, checker PENDING)»
+  [chk] (e) entry block d[245:444] (lines 246-444, 199 lines, sha1 of the joined block 2724e15d322c3d5c60112c55b444ee1b4221b061, with a final newline d65c9a6dfc55f2d0e9f4f4aa0f4953933a3ba224); next line blank: True; line after: 'Proposed GAPS line-11 UPDATE (append-onl'
+  [chk] (b) fill token in the entry block: 1 ; in the whole file: 3 at lines [246, 1013, 1316]
+  [chk]     «\n**Erratum E-1** (not a result» in the block: False ; line-start «**Erratum» in the file: 0 ; empty lines inside the block: 0 ; block lines starting «### »: 1
+  [chk] (e) UPDATE line(s) at d[...]: [461] (line [462])
+  [chk]     lines starting «UPDATE » in the file: [462]
+  [chk]     GAPS preamble at d[445:461]
+  [chk] (c) "¦" in the title: 6 (L-2's 6); in the entry block below the title: 0; in UPDATE: 0; in GAPS preamble: 1 (the quoted « ¦» of the row end); in line 1 + record + flags: 37; in the file: 44
+  [chk] (d) UPDATE <DATE> 1 <HH:MM> 1 <checker> 1; head at its start: True
+  [chk]     UPDATE = upd130L2.txt: True ; sha1 (no newline) 58889da6f0b976ddc49e6ec89b6b3c75a7a133b4 ; with newline d217fc967e88b791057a1c6260184ad7f9a552d0 ; 3726 bytes ( 47 ) 47
+  [chk]     stale grep, entry block minus title (case-insensitive): {'candidate': 10, 'until two referees sign': 1}
+  [chk]       'until two referees sign' at file lines: [(355, '  CONDITIONAL until two referees sign» and reco')]
+  [chk]     stale grep, title: {'pending': 1, 'candidate': 1, 'until two referees sign': 1, 'proved lane': 1} ; UPDATE: {'candidate': 1, 'until two referees sign': 1, 'proved lane': 1}
+  [chk]     R128 / R129 named in the entry block: 1 / 1 (as RESULTS premises: 0 / 0)
+  [chk]     line 1 «NOT LANDED» 1 ; «<DATE>» in file 10 ; «<checker>» 10 ; «<HH:MM>» 10 ; tab characters in the file: 0
+  [chk] (e) slices: line 1 d[0]; FIRST FILL record d[1:244] (flags d[73:244]; + blank d[244]: ''); title d[245]; entry d[245:444] (Note bullet at d[393]); blank d[444]; preamble d[445:461]; UPDATE d[461]; blank d[462]: ''; Addendum (first fill) d[463:1076]
+  [chk]     Addendum (second fill): d[1077:1383] ; the Lead's G-L43 bullet at d[[402]]
+  [chk] (g) vs second fill a14ce536: line 1 equal True; title equal True; UPDATE equal True; preamble equal True; first- and second-fill Addenda d[463:1383] == second fill d[442:1362]: True; block lines 197 -> 199; Addendum (third fill) none
+  [chk] (f) QUOTE SWEEP (corpus: 105 texts), per section
+  [chk]     sweep line 1: 1 quotes, 1 parts, 0 not found []
+  [chk]     sweep FIRST FILL record and flags: 158 quotes, 155 parts, 0 not found []
+  [chk]     sweep entry block: 94 quotes, 117 parts, 0 not found []
+  [chk]     sweep GAPS preamble + UPDATE: 14 quotes, 9 parts, 0 not found []
+  [chk]     sweep Addendum (first fill): 65 quotes, 86 parts, 11 not found ['rows 3, named in the Note bullet: True [note] lane output wrap_json.ou', 'rows 1, named in the Note bullet: True [note] lane output wrap_lmcs_xi', 'rows 12, named in the Note bullet: True [note] lane output wrap_fried_', 'rows 5, named in the Note bullet: True [note] lane output wrap_long.ou', 'rows 4, named in the Note bullet: True [note] L-2', 'follows the R-2 sentence (the cited-replays list resumes after it): Tr', ': True [chk] file: sha1 b4fc6697ae0d8a67d7cdbf347e207b9762691513 bytes', '[chk] (e) entry block d[191:379] (lines 192-379, 188 lines, sha1 of th']
+  [chk]     sweep Addendum (second fill): 58 quotes, 82 parts, 11 not found ['rows 3, named in the Note bullet: True [note] lane output wrap_json.ou', 'rows 1, named in the Note bullet: True [note] lane output wrap_lmcs_xi', 'rows 12, named in the Note bullet: True [note] lane output wrap_fried_', 'rows 5, named in the Note bullet: True [note] lane output wrap_long.ou', 'rows 4, named in the Note bullet: True [note] L-2', 'follows the R-2 sentence (the cited-replays list resumes after it): Tr', ': True [chk] file: sha1 eef22f39475a89bbc1be937d49f8d5acdb861a0b bytes', '[chk] (e) entry block d[226:423] (lines 227-423, 197 lines, sha1 of th']
+  [chk]     sweep whole file: 390 quotes, 450 parts, 22 not found ['rows 3, named in the Note bullet: True [note] lane output wrap_json.ou', 'rows 1, named in the Note bullet: True [note] lane output wrap_lmcs_xi', 'rows 12, named in the Note bullet: True [note] lane output wrap_fried_', 'rows 5, named in the Note bullet: True [note] lane output wrap_long.ou', 'rows 4, named in the Note bullet: True [note] L-2', 'follows the R-2 sentence (the cited-replays list resumes after it): Tr', ': True [chk] file: sha1 b4fc6697ae0d8a67d7cdbf347e207b9762691513 bytes', '[chk] (e) entry block d[191:379] (lines 192-379, 188 lines, sha1 of th']
+  [chk]     sweep NEGATIVE CONTROL: 1 quotes, 1 parts, 1 not found ['N5′-xi makes polynomially many iterations on W^L_n']
+  [chk]     negative control reported missing: True
+  [lp] cites 146 (97 shown in the draft as «quote», 49 used for a line number only) in 17 (commit, file) pairs; failed at the cited lines: 0 []
+  [lp] shown quotes not in the draft as «quote»: 0 []
+  [lp] NEGATIVE CONTROL 1 (window shifted by 40 lines): 0 of 146 still pass []
+  [lp] NEGATIVE CONTROL 2 (longest word mutated): 0 of 146 still pass
+  [lp]     0037d948 docs/red/R236-fn.md 5
+  [lp]     0037d948 experiments/red/r236/out/f236_free.out 1
+  [lp]     01e83df5 docs/referee-2/R2-P-N5-WRAP.md 12
+  [lp]     07fd5ae4 docs/referee-2/R2-P-N5-WRAP.md 29
+  [lp]     32d61d60 docs/referee/R-P-N5-WRAP.md 12
+  [lp]     3cf594cc docs/referee-2/R2-P-N5-WRAP.md 6
+  [lp]     4af9279d CLAUDE.md 1
+  [lp]     4af9279d TARGET.md 2
+  [lp]     4af9279d docs/RESULTS.md 1
+  [lp]     4af9279d docs/agents/LEAD-STATE.md 2
+  [lp]     5d30968a docs/referee-2/R2-P-N5-WRAP.md 1
+  [lp]     5eca1c32 docs/red/R237-wrap.md 6
+  [lp]     99df2458 docs/referee/R-P-N5-WRAP.md 43
+  [lp]     e01447e7 docs/si/P-N5-WRAP.md 10
+  [lp]     faf0c8ff docs/si/P-N5-WRAP-fixes.md 9
+  [lp]     faf0c8ff docs/si/P-N5-WRAP-line-L2.txt 3
+  [lp]     faf0c8ff notes/L-SI.md 3
