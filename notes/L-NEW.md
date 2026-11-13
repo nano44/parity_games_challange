@@ -23,6 +23,13 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   the committed files restored by git checkout).
 - DATA complete (§7 of the doc, summ216.txt): every must-0 0 on 88 frozen + RAND; HOW items f5best/dom fire for N5, 0 for Howard.
   KEY FINDING: towers = one quiet sub-window (Q 0, no flip, ΣD 0): N5 Wq = Tk = 30/67/136/209/299, Howard 9/9/9/12/8.
+- 09:51Z: a32a588d ON ORIGIN (ls-remote; VERIFY PASS). b0e03795 pushing (§6 referee unit A1-A4 + Lemma 0 + §6.4 BRIDGE answering
+  REFEREE-2 40 pre-read crux (claude/referee-2 dbedf93c R2-key-preread.md §5); §7 A7 FLIP-SUPPLY + A7′ «counting cannot prove ENUM-LOG»;
+  ladder climbs: Ξ = W ladders dead (T = d, k = 1; XTW-2: ≤ 2 switches per mover on 20,000 random); free-Ξ ladders k ≤ 2 at d ≤ 10).
+- runK217.sh (k = 8 attempt from lifted towers, obj (k, T)): HIT7+4 → T 340, k 7 (rec_w2_d32_D2_s2001_enum.json; NOT yet re-checked by
+  N5 on Γ3: do one217.py --check on it). H6+4, HIT7+2 running.
+- REFEREE-2 40 items for boxes 213 / 215 (KT-1..4, G-2, KS-1..3): to answer in addenda when the Lead routes them.
+- Track A open step: ENUM-LOG needs a TIMING argument (R120 PULSE-NEST / GAP-NEST / DOMINANCE-FREEZE); next: state the timing lemma.
 - ed65bb8a pushed (VERIFY PASS ~09:10Z): box 216 DATA (vi) + L-RED-B null2 replay.
 - BOX 217 (Lead APPROVED 08:34Z; re-framed 08:31Z): docs/new/N5-QUIETKEY-box217.md; experiments/new/box217 one217.py (1P model, e-index
   keys after R241; --check vs N5 on Γ3; --numb L-RED NUMB_*; --renum own renumberings), climb217.py (+ lift = TOP-ADD), run217.sh (plain

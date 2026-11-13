@@ -99,9 +99,23 @@ V_t(x) := Ξ_(s_t)(x, s_t(x)) (x's own Ξ-value); sw(x) := #switches of x in the
 - **A6 WHERE A POLYNOMIAL ARGUMENT FAILS (the exact step).** Nothing in A1-A4, KEY-TAU, XFLIP or JOINT bounds the ENUMERATION DEPTH
   k(G) := the largest k such that some mover of level k − 1 has sw = |K| − 1 (more generally: sw ≥ |K|^c). A2 is tight at k (HIT7: 127
   = |K| − 1 at level 6), so any polynomial bound must prove k(G) = O(log N), i.e. that full enumeration over k levels costs 2^Ω(k)
-  fuel levels (or movers). The towers say the opposite trend so far: (k, d) = (4, 20) DBL4, (5, 20) H5, (6, 24) H6, (7, 28) HIT7, about
-  three or four fuel levels per enumerated level. **OPEN (QUIET-KEY-1P ⟺ k(G) = O(log N) up to the polynomial factors of A2 — conjecture
-  form ENUM-LOG).** A super-polynomial family = an infinite family with k(G) ≥ c·d^ε; L-LOWER L18's level-8 attempt is k = 8.
+  fuel levels (or movers). The towers say the opposite trend so far: (k, d) = (4, 20) RECF4, (5, 20) H5, (6, 24) H6, (7, 28) HIT7, about
+  three or four fuel levels per enumerated level. [CORRECTED 10:03Z by date -u, see A6′: the earlier text listed «(4, 20) DBL4» (wrong:
+  DBL4 has k = 0 under this definition) and claimed «QUIET-KEY-1P ⟺ k(G) = O(log N)» (wrong direction: only ⇒ is proved).]
+  A super-polynomial family = an infinite family with k(G) ≥ c·d^ε; L-LOWER L18's level-8 attempt is k = 8.
+- **A6′ CORRECTION (Lead 10:03Z, relaying L-COMP 22 BOX 47 and L-RED 69's enum243.py; written 10:03Z by date -u).**
+  (1) DBL4: its level-0 movers never switch (sw 0, |K| = 2), and at levels l = 1-4 its top movers switch 2^l − 1 = |K|/2 − 1 times (L-COMP 22,
+  checked with one217.py; my own A5 run agrees: sw 15 at level 4, |K| 32). So DBL4 has k(G) = 0 as A6 defines k (full enumeration,
+  sw = |K| − 1) and is a HALF enumeration (sw = |K|/2 − 1); L-RED 69's «DBL4 = 4» is a different (half-enumeration) count. A5's table rows
+  are for H6 / HIT7 and are unchanged; the false entry was A6's «(4, 20) DBL4», now «(4, 20) RECF4» (RECF4: k = 4, sw 15 = |K| − 1 at
+  level 3 and 30 at level 4).
+  (2) What A2 actually proves. T ≤ N·max_x sw(x) and max_x sw(x) ≤ T, so QUIET-KEY-1P ⟺ SW-POLY: every mover switches at most poly(N + M)
+  times. For c ∈ (0, 1] let k_c(G) := 1 + the largest W-level of a mover with sw(x) ≥ |K(x)|^c (0 if none; k_1 is A6's k; at c = 3/4 DBL4's
+  level-4 movers qualify: sw 15 ≥ 32^(3/4) ≈ 13.5). Then QUIET-KEY-1P ⇒ k_c(G) = O((log N)/c) for every
+  c (a mover of level l with sw ≥ 2^(c(l+1)) needs 2^(c·k_c) ≤ poly). The converse is NOT proved: sw could be super-polynomial while
+  sw(x) < |K(x)|^c for every c (e.g. sw ≈ 2^√l). So ENUM-LOG (k = k_1 = O(log N)) is a NECESSARY condition for QUIET-KEY-1P, not a
+  reformulation; the statement whose proof would give QUIET-KEY-1P is SW-POLY itself, and A2-POLY is the only sufficient condition proved.
+  The kill side is unchanged: a family with k_c ≥ c′·d^ε for some fixed c is super-polynomial (it has a mover with ≥ 2^(c·k_c) switches).
 - Next for track A: (a) an exact characterisation of what a level-k full enumeration demands of the Ξ side (A4 gives XF_x ≥ |K(x)| − 2 at
   the top enumerating mover; the Ξ-flips must come from switches of movers on x's Ξ-paths, which are themselves bounded by A2 — a
   counting argument between the two potentials is the candidate route to ENUM-LOG); (b) DATA: k(G) and fuel per level on every climbed
