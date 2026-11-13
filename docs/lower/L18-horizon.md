@@ -46,8 +46,9 @@ counter (unit, set, scope). Model: R104's IDEAL model at degree ≤ 2 (sim6; fen
   | 12 | L18b_N11a | 14 | SAT 451 s (wall 523, cap 6,000) | L18b_N12a 96fb7995 | 0..12 |
   | 13 | L18b_N12a | 12 | SAT 829 s (wall 920, cap 6,000) | L18b_N13a 2969f3cc | 0..13 |
   | 14 | L18b_N13a | 8, 10, 11, 12 | SAT: found by an R 64 screen (3,358 s, cap 6,000); verified at R 510 by ccheck + f6check (Lead 04:27Z) | L18b_N14c b7101f79 | 0..14 |
+  | 15 | L18b_N14c | 11, 15 | SAT 2,547 s (wall 2,659, cap 6,000) | L18b_N15a 76309bca | 0..15 |
   DATA (unit = core8 rows followed by the free run, counter f6 = 129 free pre-states of rows 0..510, scope frame L18b on A2_solved):
-  largest P with f6 globally correct = 10 (L18b_N10a); 14 after §4 (L18b_N14c). The pair keeps moving to row 505 in L18b_N510 (65 changes): the «silence» of §2 was a
+  largest P with f6 globally correct = 10 (L18b_N10a); 15 after §4 (L18b_N15a). The pair keeps moving to row 505 in L18b_N510 (65 changes): the «silence» of §2 was a
   property of those designs, not of the frame.
 - Climb continues (§4 log).
 
@@ -90,6 +91,10 @@ counter (unit, set, scope). Model: R104's IDEAL model at degree ≤ 2 (sim6; fen
   Lead 04:27Z: CONFIRMED as attempt 3 = SAT, recorded as «found by an R 64 screen; verified at R 510 by ccheck + f6check»; screens used at P 14: 4 of 4.
 - P 15: diag at row 15 (L18b_N14c): movers 11 (L5, stay), 15 (L7, stay), 13 (L6, wants to flip). R 16 screen {11,15}: SAT 84 s (prefix
   feasible; decode follows 0..16, f6 61 / 129 as expected at R 16). Attempt 1 at R 510: clients 11, 15 (XORD 11 < 15), cap 6,000 s.
+  Screen 2 {10,11,12,15} R 64 cap 6,000 s (parallel fallback): stopped by me at 05:10Z with no answer (moot).
+  Attempt 1: SAT, solve 2,547 s (wall 2,659 s) → L18b_N15a 76309bca: rows 0..15, sim6 = fenc, f6check 0 / 129 on rows 0..510, inframe OK.
+- P 16: diag at row 16 (L18b_N15a): movers 10 (L5, flips but must stay) and 14 (L7, must flip, «better» says stay); this is the row-16
+  q6/q7 change named in L14 / L17. Screen 1 {10,14} R 17: SAT 165 s (prefix feasible). Attempt 1 at R 510: clients 10, 14, cap 6,000 s.
 
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All statements are about the IDEAL

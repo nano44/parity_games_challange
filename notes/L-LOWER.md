@@ -30,6 +30,8 @@
 - Lead 04:27Z CONFIRMED P 14 = attempt 3 SAT («found by an R 64 screen; verified at R 510 by ccheck + f6check»); screens at P 14 4 of 4.
 - 04:58Z: screen 2 at P 15: P15_S2 = {10,11,12,15} R 64 cap 6,000 ($SP/d15/P15_S2.log), parallel to N15a (light, ~1-2 GB).
   Any SAT screen → ccheck R 510 + freeze ($SP/freeze.sh after copying to $SP/l18/TAG_dec.txt + log, as N14c).
+- 05:10Z N15a SAT 2,547 s → L18b_N15a 76309bca (P 15). P15_S2 stopped. diag row 16: 10 (must stay), 14 (must flip). R 17 screen {10,14} SAT 165 s.
+  RUNNING 05:14Z: N16a base N15a, XS 10,14, R 510, cap 6,000.
 
 ## Successor 15 HANDOVER (-> successor 16; written 2026-11-12 22:0xZ, date -u; context ~430k)
 ### DONE (claude/l-lower; products docs/lower/L17-around.md (closed §3), docs/lower/L18-horizon.md (open); tools l17/, l18/)
