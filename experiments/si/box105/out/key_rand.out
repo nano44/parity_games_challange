@@ -1,0 +1,3 @@
+KEY105 rand seed 1051 genomes 2000 d<=4 w<=3 deg<=3: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | max L* 4 sum L* 1485 max |V| 217
+KEY105 rand seed 1052 genomes 1000 d<=6 w<=4 deg<=3: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | max L* 4 sum L* 1008 max |V| 332
+KEY105 rand seed 1053 genomes 1000 d<=8 w<=2 deg<=2: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | max L* 3 sum L* 523 max |V| 208

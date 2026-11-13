@@ -1307,3 +1307,9 @@ bash box102/check102.sh
 bash box103/check103.sh
 # box 104 (D18 big map: Lemma WRAP, FREE-REACH, Friedmann's counter under N5'-xi; frozen outputs; docs/si/box104-map.md)
 bash box104/check104.sh
+# box 105 (O2, proof side: KEY(G*), Lemma KEY-MODEL, KEY-MONO*, DEPTH-BOUND*; quotes; D1 when present; docs/si/box105-key.md)
+bash box105/check105.sh
+# packet P-N5-WRAP (dead-end packet for N5'-xi: Lemma WRAP on W, Claim NT, XI-EXP CONDITIONAL; quotes, instance sha1, DATA lines, frozen sha1; docs/si/P-N5-WRAP.md)
+bash pwrap/checkW.sh
+# box 106 (exact d = 2 maximum of KEY on the free ladder: layer 1 skeleton enumeration; docs/si/box106-exact2.md)
+bash box106/check106.sh
