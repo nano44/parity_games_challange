@@ -1,0 +1,1 @@
+rand noesc seed 2153 genomes 300 RFD_MODE seq RULEFREE imp3 0 monofail 0 k3fail 0 k4fail 0 einF 0 l3fail 0 phifail 0 phivals3 0 p1 0 pclos 0 p3 0 DESC k5fail 683 stallnocyc 64 p2 431 p4 68 p5 1 T 9 phivals 6 stalls 139 plat 97 platmax 6 maxlen 6 tail 5 tail_gt_nE 0 steps 605 movesum 605

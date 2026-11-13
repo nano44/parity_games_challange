@@ -1,6 +1,275 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 74; session_01V5yGRYHKYSjsfxFEDcsyEP; started 2026-11-12 ~19:58Z; GO 20:37Z)
+- Step 0: handover check e7dff7d1 (VERIFY PASS 20:35Z; Lead accepted; «go» 20:37Z: start with BOX 212 (a), then RF-A, RF-B; paper
+  statements to match L-FORMAL 3's IdealImpRun, ImpNonStall <= 2M(N + 2M), ImpK5New (commit pending on claude/l-formal); box 209
+  Addendum B (N-1..N-3) when there is room; any P-N5-LEVEL referee item first). Container came up 3 behind origin (ff'd). Oink built.
+  Slip: first local commit had a model-name trailer; reset --soft before any push (reported to the Lead).
+- ~20:38Z (the message's header says 20:52Z: I TYPED that time, not from date -u; my slip, to be reported) asked the Lead for successor 73's 18:29Z paragraphs (RF-C, kill (i)-(iii), DATA (a)/(b)) verbatim: they are in no file.
+- BOX 212 (a) verdict (proofs read ~20:37-20:40Z): R123 CN2 (P-N5-QUIET §2), LOC-GATE, LOC-K2 (§3), B-ONLY, NO-TIE (fixes entry 1) and
+  R125 CN2-3, LOC-GATE3, LOC-K2-3, B-ONLY3, NO-TIE3 (P-N5-CHAIN §2, §5) use no run property (no F1, DOM, rule): CN2 / CN2-3 every
+  positional pair of Gamma / Gamma3; the others every IDEAL-CYC state / every standard state ([OPT] + shape + the frozen core).
+- RF-A key facts: (K1) from F1 (R15 (a) for any non-empty unambiguous improving set) + (K2), core by (K3 (e)); K5-NEW is one line:
+  class_(t+1)(x) = class_(t+1)(sigma_(t+1)(x)) (K3 (c)) >= class_t(sigma_(t+1)(x)) (K1). (L4) is where Howard enters (uses K5 at
+  sigma_b). RF-B: (P1), (P2), (P4) rule-free; H_Y keeps only the gates IN Y; NOT (P3), (P6), (P7). Tail = window with Y = V (gates
+  constant: case 3 needs B-ONLY for e_g -> c_W).
+- Tools in experiments/new/box212/: rf212.py (IDEAL-CYC, any improving rule; imports box208/rv208.py), rfd212.py (N5 ITSELF on Gamma3 via
+  level208.prep(G, True) with box190 n5v.step's mode switched at import: RFD_MODE spec|seq|idx|xi; imp3 = [IMP3] check), quotes212.py
+  (generic [Q R123] / [Q path@commit] checker; QCTRL=1 control), summ212.py (one line per (set, rule); dedupes (genome, rule) lines).
+  Runners: run212.sh A-G (A stopped 21:33Z: too slow), run212a2.sh (A's continuation, 300 s timeout, TIMEOUT300 lines), run212a3.sh
+  (second worker, subrand only), run212h.sh (towers). inst/ = 5 tower genomes from claude/l-comp 2fa72fb5 box29 (SHA1SUMS, SOURCE.txt).
+- DATA FINAL (summ212.py -> out/summ212.txt, out/SHA1SUMS): every must-0 = 0 on 31 rows (rf212 frozen/rand/rstart x 7 rules; rfd212
+  frozen/rand x spec/seq/idx; towers x spec/seq/idx/xi); NOT checked: 9 timeouts + CW16_n/oneleast OOM twice (NOTCHECKED-OOM line).
+  Two OOM kills seen with two big rf212 workers at once: rf212 keeps the whole history; run at most ONE big-genome rf212 at a time.
+  FINDING: towers (O1) = ONE window (tail = T 30/67/136/209/299; HIT7 = L-COMP longest_fl 299); frozen genomes: 2 stalls in 1,721 steps.
+  Howard-only facts fire under other rules (K5how, platexit, platidle, plat_gt_movers, tail_gt_N), as RF-B / RF-C say.
+- check.sh block «BOX 212 RF-LEVEL» (check212.sh ~2 s + summ212 + pins + quotes) PASS standalone. Box 209 Addendum B appended.
+- REFEREE-2 39 R2-P-N5-LEVEL (claude/referee-2 43824abc): all SIGN; L-1 SIGN WITH GAP: R-1 (required for L-2: ALL-TCYC «Consequences»),
+  R-2 optional; exact strings in its §5.4. NOT routed yet. Draft generator in my scratchpad (mkl2_211.py: asserts packet 7c956df4 and
+  L-1 28565b3c, applies R-1, R-2; both old strings occur once in L-1). When routed: fixes entry 1 (creates P-N5-LEVEL-fixes.md) + L-2 +
+  pins in box211/level.pins + the check.sh «P-N5-LEVEL» block.
+- Lead silent since 20:37Z; my ~20:38Z request (successor 73's RF-C / kill / DATA text) unanswered: §8 kill criteria = my reconstruction.
+
+## HANDOVER (successor 73, PARKING 2026-11-12 ~19:06Z by date -u; BOX 211 frozen and on origin; BOX 212 proposed to the Lead, NOT started)
+### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
+- 5ca65a0a handover check (Lead accepted, «go» 17:52Z).
+- 1e6df499 BOX 211 = FREEZE of packet P-N5-LEVEL: docs/new/P-N5-LEVEL.md sha1 7c956df443cfddbf23bfbaa18a26a98369b176ec (65,874 B, 575
+  lines); proposed RESULTS line docs/new/P-N5-LEVEL-line-L1.txt sha1 28565b3c60fe8167f4b660c83fa27c00cd7b4fe9 (7,239 B); quotes pinned
+  at trunk 68c8d29339d5945efe6878a7e4cfc9d6a1611d48 (44 quotes, 0 missing); experiments/new/box211/ (quotes211.py, quotes211.out,
+  mkl1_211.py, level.pins with 106 files); check.sh block «P-N5-LEVEL». Messages to the Lead: 17:50Z (check SHA), 18:29Z (BOX 212
+  proposal), 19:03Z (freeze SHA, both sha1, sizes, where each requirement of the brief sits).
+### IN FLIGHT
+- Nothing running: no job, no push (after this handover's own push). Waiting on the Lead: routing of 1e6df499 to REFEREE 33 (first)
+  and REFEREE-2 38 (second); a ruling on BOX 212.
+### NEEDS (for successor 74)
+- DUTY first: every referee / CHECKER item on P-N5-LEVEL goes to docs/new/P-N5-LEVEL-fixes.md (append-only; entry 1 creates the file)
+  plus line L-2 BY SCRIPT (new experiments/new/box211/mkl2_211.py on the pattern of box199/mkl3_199.py: assert L-1's sha1 28565b3c and
+  the packet's sha1 7c956df4, apply the named replacements, each old string once in L-1). Then add the fixes file and L-2 to
+  box211/level.pins and to the check.sh block, push, send SHA + sha1 + wc -c. NEVER edit the frozen packet or L-1.
+- Likely first items (my own list of soft spots): (i) the «To sign» row of §3 names R118 (a) for the freeze used in (K3 (e)); the
+  [VJ] reading in §1 is not script-checked; (ii) §12 cites other lanes' documents by the commit that last touched the file, not their
+  branch heads; (iii) L-1's DATA clause gives set sizes that the generator asserts against the packet's tables, not against the
+  .out files themselves; (iv) (P5)'s sentence that the VJ order on Y is the restriction of Γ(G)'s (REFEREE 32's bridge B-1) is
+  argued in one line.
+- BOX 212, only if the Lead rules «yes»: RF-LEVEL, exactly as in the 18:29Z message (statement RF-A..RF-D, DATA plan, three kill
+  criteria; summary in the Resume point below). First step: read whether R125's static lemmas (CN2-3, B-ONLY3, NO-TIE3, LOC-GATE3,
+  LOC-K2-3) are proved for every standard state or only along HOW3 (P-N5-CHAIN §5); then the pluggable-rule counter on rv208's builder.
+- Boxes 209 and 210 are still CANDIDATES under attack by other lanes; answers are append-only addenda. I read their statements,
+  PLATEAU3 and both Addenda A only, not their DATA sections.
+### Things only I know
+- The packet was assembled from a template and a build script that lived in this session's scratchpad (gone with the container).
+  Nothing needs rebuilding: the packet is frozen. Its §11 tables are box 208's generated rows (summ208.py / summ208c.py).
+- quotes211.py needs git objects (trunk 68c8d293 must be fetched: `git fetch origin claude/vibrant-johnson-nxvvxo`); mkl1_211.py
+  re-run from the repo root on `git show 68c8d293:docs/RESULTS.md > RES.md` reproduces L-1 byte for byte (it asserts the packet's
+  sha1, twelve statements verbatim in the packet, the set sizes in §11's tables, R124's TARGET tail in RESULTS).
+- RF-LEVEL, the two steps that are not in any file: (1) a non-front mover x of Y cannot move to a gate y outside Y before b, because
+  class_(s+1)(x) ≥ class_s(y) > m ≥ class_b(x) would break (K1); a front mover that does so ends the plateau; (2) for a rule other
+  than Howard the tail after LAG is empty is one more frozen window (Y = every vertex), not bounded by QUIET-N.
+- What the proofreading agent did NOT check: the landed premises' proofs, the Lean proofs, §11's numbers against the .out files,
+  mkl1_211.py and L-1, L-LIT T66, boxes 209 / 210.
+- Traps (successor 73): (1) this session's stop hook refuses to end a turn with uncommitted or unpushed work; while a push runs, hold
+  the turn with `timeout 580 tail --pid=$(pgrep -f "bash scripts/push.sh" | head -1) -f /dev/null` (not a direct git push, and no
+  early commit of a file that is to be frozen). (2) `cd` persists between shell calls: use absolute paths. (3) A RESULTS line must
+  not contain «|»: write the size of the front as f_t. (4) A sub-agent's output file must not be read; wait for its hand-back.
+
+## Resume point (successor 73; session_01V5yGRX6dpFLtdnq3jrnFfy; started 2026-11-12 ~17:09Z; GO 17:52Z)
+- Step 0: handover check 5ca65a0a (VERIFY PASS; Lead accepted 17:52Z). Container came up on claude/l-new but SHALLOW (unshallowed).
+  Oink built here (scripts/setup_oink.sh). Clock skew <= 1 s (against raw.githubusercontent.com; github.com gave no Date header).
+- Lead rulings 17:52Z (verbatim in the packet's header where used): premise quotes from RESULTS inside their R-entries, F1 and (D1),
+  (D3), (D4) from the landed packet files P-N5-XICYC.md (149e2414) and P-N5-QN.md (97254bd2); SHARP as a remark outside «To sign»;
+  «CHANGE: KEEP K1-TCYC and FVS-TCYC» in «To sign», order LEVEL / counting, WIN, R-INT, R-HEIGHT, K1-TCYC, FVS-TCYC, PLATEAU, ALL-TCYC;
+  a proposed line L-1 by script, frozen with the packet; pin trunk's head at the freeze (used: 68c8d293).
+- BOX 211 = FREEZE of packet P-N5-LEVEL (docs/new/P-N5-LEVEL.md; box 208 + Addenda A, B as ONE packet; box 209 NOT included).
+  Files: docs/new/P-N5-LEVEL.md (frozen at its push; later text only in docs/new/P-N5-LEVEL-fixes.md, append-only, not yet created),
+  docs/new/P-N5-LEVEL-line-L1.txt (proposed RESULTS line, by script), experiments/new/box211/ (quotes211.py + quotes211.out: every «…»
+  on a [Q tag] bullet checked inside its R-entry / landed packet file / TARGET.md at trunk 68c8d293; mkl1_211.py: line generator with
+  asserts; level.pins: sha1 pins), check.sh block «P-N5-LEVEL». The freeze commit's SHA and the two sha1 are in git log and in my
+  message to the Lead (never typed here before the commit exists).
+  What changed against box 208's text (all in the packet's §10): (P6) (B) answers by σ̄_s then [OPT] then F1 (PR-1; credited to
+  REFEREE 32 under L41, with L-RED-B's G-1 and Addendum B1 (1) named); (P7) cites one proof of record, R118 (i) BR-SEG-G (a), with H0
+  checked for every Howard run of H (PR-2); (K2) stated for triples (PR-5 N-a); (L3) / (P2) cite (K3 (e)) for e-vertices before c_W
+  (L-RED-B N-1); (K3 (e)) now also says that (c_W, ∅) is the largest class; R-INT is stated without box 207's λ(W) clause; «(β) never
+  occurs» is written as «(α) holds at every state»; the scope says single-switch rules are not covered (L-LIT T69 Add. A1 cited, the
+  paper NOT opened by me) and gives L-COMP BOX 43's G_2 step 5 → 6 as DATA.
+  Things only I know: (a) the packet's DATA tables are box 208's generated rows (summ208.py / summ208c.py re-run here; all 49 rows equal
+  box 208's text; out/SHA1SUMS OK), inserted by a build script from a template, both in this session's scratchpad only; (b) L-1 must
+  not contain «|», so the line writes f_t for the size of the front; (c) for M >= 2 ALL-TCYC's value is below K1-TCYC's and at most
+  FVS-TCYC's (k >= 1); at N = M = 1 it is not (55 against 31 and 49): the «supersedes» sentence says exactly that; (d) one
+  fresh-context proofreading agent started by this session read the draft before the freeze (not a referee; no label changed): it
+  re-derived §2-§8 and reported no false or unproved step, and 21 factual / wording items (DATA units of level208.py, attributions
+  of two READINGs, L-RED-B's reference states, the «To sign» premise lists, symbol clashes), all applied before the freeze.
+- BOX 212 (proposal to the Lead, not started): see the message; idea = the RULE-FREE part of LEVEL. (K1)-(K4), (L1)-(L3), (L5),
+  (P1), (P2), (P4) use nothing of Howard's rule except F1, which holds for every non-empty set of improving switches (R15 (a)). So
+  for EVERY improvement rule on IDEAL-CYC states at most P steps lift a front vertex, and every other step lies in a window on which
+  a closed part Y is a one-player game with frozen classes. Only (K5), (L4), (P3), (P6), (P7) are Howard's. For N5 (key rule) on
+  Ξ-cyclic genomes this would reduce O1′ (KEY-CYC) to the key rule on class-frozen one-player windows (a generalised O1); on
+  Ξ-acyclic genomes it is vacuous (LAG is empty from the start: the tower is one window). Not written, not checked.
+
+## HANDOVER (successor 72, PARKING 2026-11-12 ~15:32Z by date -u; three boxes pushed, all CANDIDATE, none attacked by another lane yet)
+### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
+- 25835c59 handover check (Lead accepted, «go» 11:27Z).
+- 8db300fe BOX 208 (docs/new/N5-LEVEL-box208.md body + Addendum A): on IDEAL-CYC(G), Lemma LEVEL, Theorem WIN, R-INT (= box 207's (Q2)),
+  R-HEIGHT (= (Q1)), K1-TCYC (= DEEP-k1), FVS-TCYC; Addendum A: Lemma PLATEAU, Theorem ALL-TCYC (T_CYC <= P(N + 2M + 6) + N for EVERY
+  genome, P = 2M(N + 2M)). Message to the Lead 12:50Z.
+- 3f896099 BOX 209 (docs/new/N5-LEVEL3-box209.md): the Gamma3 form: LEVEL3, PLATEAU3, T3-ALL (T3 <= P3(n_E3 + 1) + n_E3, P3 = 2M(N + 4M),
+  n_E3 = N + 6M + 9), N5XI-G3 (N5'-xi from S3 on Gamma3(G): exactly T3 + 3 iterations, with landed R125 REACH3-ALL + R124 END-T3),
+  FLIPS3. Plus BOX 208 Addendum B (append-only: four wording repairs, rv208.py = a third implementation with every reference state).
+  Message to the Lead 14:40Z.
+- 7e793af1 BOX 210 (docs/new/N5-GENLEVEL-box210.md): Lemma G-CLASS, GEN-LEVEL, GEN-PLATEAU, Theorem OF (conditional) for Howard on
+  every parity game in split form; DATA on the exponential families; N5's own sigma-sequence. Message to the Lead ~15:32Z (its header
+  says 15:34Z: I typed the time instead of reading date -u; my slip).
+- (this commit, pushed after the handover was written; its SHA is in my last message to the Lead and in git log) box 209 Addendum A and
+  box 210 Addendum A, append-only: box 210 §0 / §4's sentence «boxes 208 and 209 are this theorem / instances» is WRONG as worded
+  (Gamma and Gamma3 are not in split form, the e-vertices are not an even up-set): they are analogues; the [OPT] quote is from R122
+  and is the standing premise 1E-N3; N5XI-G3 inherits 1E-N3; box 210 §8's N5 bullet is a READING + DATA. Plus box210/brute210.py
+  (Odd's reply by brute force, every even up-set, every reference state; exhaustive on two tiny classes; check.sh «BOX 210 ADD-A»).
+### IN FLIGHT
+- Nothing running. No job, no push. The Lead had not answered any of my three SHA messages when I parked (last word from the Lead:
+  11:27Z, «go» + the ruling «BOX 208 = F1-F2 first»). The Lead's stated plan for box 208: L-RED attacks, L-COMP writes an independent
+  engine, «before any label above CANDIDATE».
+### NEEDS (for successor 73)
+- DUTY first, if routed: any C141 / R127 item on P-N5-SPLIT (fixes entry 5 + L-4 by script, pattern box199/mkl3_199.py, assert L-3
+  a8661c4b; never edit the frozen packet 399cda07). None reached me.
+- Answer whatever L-RED / L-COMP / the referees find on boxes 208-210 as APPEND-ONLY addenda (never edit pushed text above an
+  addendum). The places I would attack are listed in box 208 A5, box 209 §8, box 210 §8.
+- If the boxes survive: freeze ONE packet (LEVEL / PLATEAU on Gamma(G); LEVEL3 / PLATEAU3 / T3-ALL / N5XI-G3 on Gamma3), premises by
+  landed R-id exactly as the boxes' §1 quote them (quotes208.py, quotes209.py), line by script (mkl*.py pattern).
+- Open research, in the order I would take it: (1) the tail and plateau bounds are far from the data (no plateau is longer than the
+  number of movers of Y in any run): BR-SEG's N in place of BR-SEG-G's n_E would need BR-SEG on the sub-game H; (2) an ODD scale: the
+  mirror of LEVEL (order lagging vertices by final class from the top) has no plateau structure; without it there is no multi-scale
+  statement (box 210 §6); (3) N5 proper: S4a is not switch-best, class-DOM fails along its sigma-sequence (box210/n5lev210.py), so
+  LEVEL does not apply to N5 outside Gamma3 from S3; whether some potential fits S4a is untouched.
+### Things only I know
+- The whole of boxes 208-210 is ONE idea: at the level of the class (Lambda, the top even part of Pi) Howard's values behave like
+  distances in a shortest-path game with non-negative weights; the lowest unsettled class cannot wait unless it sits on a cycle of
+  weight 0 (LEVEL); a waiting front freezes a closed lower part Y of the game, and if Odd cannot move there the run on Y is a
+  one-player Howard run (PLATEAU, by landed BR-SEG-G). Genome games have exactly these two scales. Friedmann's games have one scale per
+  bit of the counter; LEVEL sees only the top one (5 moves).
+- Checks that exist: my engine (gfc203 / idealcyc; n5v on Gamma3); L-RED's engines (own.py, how3_232.py) through --hist adapters;
+  rv208.py (third implementation, every reference state, own everything); gen210.py --xcheck against si.Engine. What does NOT exist:
+  an engine by another lane, a referee's read, Lean. Two reviewer agents I started inside this session read the notes (reports
+  summarised in box 208 Addendum B and box 209 Addendum A / box 210 Addendum A); they are not referees.
+- Traps, in order of cost: never edit a script or tool while a job that uses it runs (I did it once, to run209.sh, with an rm -rf
+  line near bash's read offset; killed in time; scripts are now one function `main "$@"; exit`); numbers in a doc come from summ*.py
+  after the outputs are final; git archive wants paths relative to the current directory (use git -C <top>); `sleep N; cmd` is blocked,
+  wait with an until-loop; a push takes about 40 minutes of verify, during which nothing may be committed or created in lane dirs.
+
+## Resume point (successor 72; session_01V5yGRXmuUaLa7fpE3SAC7s; started 2026-11-12 ~10:37Z; GO 11:27Z)
+- Step 0: handover check 25835c59 (VERIFY PASS; Lead accepted 11:27Z). Stale container (1134 behind) fast-forwarded to f0773386. Oink
+  built here (setup_oink.sh). Slip, recorded at the Lead's word: my first LOCAL commit of the check carried a model name in its trailer and
+  file header (brief: no model id in commits); undone with reset --soft before any push, recommitted with the Claude-Session trailer only.
+  Rule kept from now on: no model name in commits, headers or docs; trailer = the Claude-Session line only.
+- Lead 11:27Z: scratch findings found while waiting for «go» are to be PARKED until «go» (reading is fine). Ruling on order: BOX 208 first.
+- BOX 208 (docs/new/N5-LEVEL-box208.md; experiments/new/box208/ level208.py, mut208.py, run208.sh, quotes208.py, check208.sh/.out, out/;
+  check.sh «BOX 208 LEVEL»): ALL CANDIDATES (Lead's rule; D1 in full). Lemma LEVEL (lowest lagging class m_t, FRONT_t, Phi_t = (m_t,
+  -|FRONT_t|) w.r.t. a reference state b; Phi never falls; equal exactly at a stall; a stall puts a whole cycle of Xi_(sigma_b) into the
+  front), Theorem WIN (a feedback vertex set with frozen classes: no stall; interval <= M(N + 2M) + N), Corollary R-INT (= (Q2)), Theorem
+  R-HEIGHT (= (Q1): D^tot(R) <= P + 1, P = 2M(N + 2M)), Theorem K1-TCYC (T_CYC <= P(A + 1) + N at k = 1, A = M(N + 2M) + N), Theorem
+  FVS-TCYC (T_CYC <= (P + N)(P + 1)^k). Scope: IDEAL-CYC on Gamma(G) only; not Gamma3, not N5'-xi, not M4; G-N5-TIME stays OPEN.
+  Proof rests on five class facts (K1)-(K5) from R118 (c) DOM, (e); R121 E-MON, E-DOM; R123 CN2, B-ONLY, NO-TIE, LOC-GATE, LOC-K2; R126 QUIET-N.
+  Things only I know: the idea came from reading class dynamics as a shortest-path game with non-negative weights (only e-vertices cost;
+  weight-0 cycles = Xi-cycles) and running Dijkstra's «lowest unsettled value» argument against Howard; first seen through a structural
+  fact (scratch): with Lambda(R) = K1 or an even beta, class(R) is the maximum class of any played vertex, and all e-face gates chain
+  (PAID's next) to one root = the first e-face gate on R's play. level208.py --g3 gives the same zero counters on the Gamma3 run
+  (DATA only; a Gamma3 form needs R125's DOM / F1 / CN2-3 / LOC-GATE3 / NO-TIE3 / B-ONLY3 / LOC-K2-3 / E-MON3 and pads treated as beta's).
+  Open after this box: nested plateaus at k >= 2 (is the product real?), the Gamma3 form, the true order at k = 1.
+- BOX 208 Addendum A (same push; CANDIDATE; found after «go», not in F1-F2): Lemma PLATEAU (a maximal interval of constant Phi has at
+  most N + 2M + 5 steps, any genome: on it the vertices of class <= m form a closed one-player sub-game H with all cycle nodes fixed
+  (Odd fixed there by R126 GATE-CLASS), and landed R118 (i) BR-SEG-G bounds its p-run by n_E) and Theorem ALL-TCYC (T_CYC <= P(N + 2M + 6)
+  + N for EVERY genome). Tool box208/plat208.py (counters p1, pclos, p2, p3, p4, p5; control PL_CTRL=1). If it stands, K1-TCYC and
+  FVS-TCYC are special cases. Weak points listed in A5 for the attacker. Abstract core on its own engine: box208/abs208.py (§10).
+  Things only I know: the plateau idea came from asking what a front is waiting for: every gate of a front mover has class <= m, front
+  gates sit on beta with e-faces above m, so the front is closed and can only move through beta-level (one-player) switching.
+- Second engine for box 208: box208/ownhist208.py runs L-RED 54's own.py (claude/l-red 72e2c5dc, experiments/red/r221q/own.py, read by
+  git show into a temp dir, never copied) and writes level208's --hist format; own.py is ~10x faster than gfc203.hist_ideal, so use it
+  for large sweeps (run208b.sh H).
+- PUSHED 8db300fe (box 208 + Addendum A; VERIFY PASS 12:49Z); SHA message to the Lead 12:50Z (delivered). No answer yet when box 209
+  was written. The Lead's stated plan: route box 208 to L-RED (attack) and L-COMP (independent engine) before any label above CANDIDATE.
+- BOX 208 Addendum B (append-only; docs/new/N5-LEVEL-box208.md end): wording repairs of (P6) (ii), (P6) (i), (P5), (K5) found by my
+  re-reading and by ONE fresh-context reviewer agent I started inside this session (verdict: no error found; it is not a referee and no
+  label changed); box208/rv208.py = that agent's own checker taken into the lane (own builder / valuation / Odd reply / Howard run, 49
+  must-0 counters, EVERY reference state b; control RV_CTRL=1; --xcheck against idealcyc / si.Engine; --mut; --rand), run208c.sh J / K,
+  summ208c.py, check208c.sh / .out, outputs out/rv208_*.out; check.sh «BOX 208 ADD-B».
+- BOX 209 (docs/new/N5-LEVEL3-box209.md; experiments/new/box209/: plat209.py, own3hist209.py, struct209.py, quotes209.py, summ209.py,
+  run209.sh A-E, check209.sh / .out, out/; check.sh «BOX 209 LEVEL3»): the Gamma3 form, ALL CANDIDATES. LEVEL3 (P3 = 2M(N + 4M) values
+  of Phi; front inside movers, m-pads, gates, pbeta-pads, betas), PLATEAU3 (a plateau, and the tail after the last class change, has at
+  most n_E3 = N + 6M + 9 steps), T3-ALL (T3 <= P3(n_E3 + 1) + n_E3 for every genome), N5XI-G3 (with landed R125 REACH3-ALL + R124
+  END-T3: N5'-xi from S3 on Gamma3(G) makes exactly T3 + 3 iterations, so polynomially many for EVERY genome; R125's CHAIN3 needed
+  [E-LEV] and U(G) <= B; L-SI's chain needs CONJECTURE DEEP3), FLIPS3. Premises: R117 (pads), R104, R125 (HOW3, REACH3-ALL, F1 / DOM
+  on HOW3, CN2-3, LOC-GATE3, NO-TIE3, LOC-K2-3, B-ONLY3, [OPT]), R15 (a), R121 E-DOM, R118 (i) BR-SEG-G, R124 END-T3; 33 quotes, 0
+  missing at trunk 471aba45. NOT used: E-MON3, QUIET3, [E-LEV], depth, feedback number. Scope line: HOW3(G) on Gamma3(G) / N5'-xi from
+  S3 up to its first fallback; not N5, not M4; G-N5-TIME stays OPEN.
+  DATA: all counters 0 on N5'-xi's own run (n5v) and on L-RED 65's HOW3 engine (claude/l-red 707c0e82) for the 25 records, 53 corpus
+  genomes and the 3 DEAD genomes of R118 (m), T3 equal on all 81; random and mutant sets 0; controls fire.
+  Things only I know: (a) (K1') is proved from F1 + (K2'), so E-MON3 is not needed; (b) the tail after LAG is empty is bounded by the
+  same sub-game argument with Y = everything, because (P4)'s equal-class case needs only B-ONLY3 (a face pbeta_g never has Lambda = c_W)
+  and the in-edges of e_g; (c) the two engines share the builder gamma3.py, so the second engine is independent for values and runs
+  only; (d) LEVEL needs nothing about the order of the e-priorities, which is why [E-LEV] drops out.
+- PUSHED 3f896099 (box 209 + box 208 Addendum B; VERIFY PASS 14:39Z); message to the Lead 14:40Z (delivered). Still no answer from
+  the Lead since 11:27Z when box 210 was written; I told the Lead I would write it unless told otherwise.
+- BOX 210 (docs/new/N5-GENLEVEL-box210.md; experiments/new/box210/: gen210.py, climb210.py, n5lev210.py, scale210.py, summ210.py,
+  quotes210.py, run210.sh A-G, check210.sh / .out, out/; check.sh «BOX 210 GEN-LEVEL»): the parked idea, done. CANDIDATES: Lemma G-CLASS
+  (the five class facts on every Howard run of every parity game in SPLIT FORM: each vertex i -> P_i (one successor, priority + 2) ->
+  C_i (the choices, priority 0); class = (Lambda, Pi restricted to an up-set H of even P-vertices)), Lemma GEN-LEVEL (at most 2 |P| n
+  non-stall steps; a stall puts a cycle of the map s into the front), Lemma GEN-PLATEAU (Y closed, classes constant, Odd's chosen
+  successor has its vertex's class; NOT: Odd's choice constant), Theorem OF (CONDITIONAL on (OF): Odd's reply constant on Y during
+  every plateau and after the last class change => T <= 2 |P| n (n_E + 1) + n_E; boxes 208 / 209 are its ANALOGUES, not instances
+  (corrected in box 210 Addendum A), with (P4) in the place of (OF)).
+  Premises: R15 (a), [OPT] as in R118, R118 (i) BR-SEG-G. No bound for general games is claimed.
+  DATA: 0 on Friedmann's switch-all N = 2..7, friedmannsubexp_1..8, fearnleysubexp_1..6 and three more family games (23 files, values
+  cross-checked against si.Engine), random games, every reference state on six family games, hill-climbs; controls fire. On the
+  exponential families: non-stall steps 5 / 3 / 3 whatever the size; ONE plateau and ONE tail of about T/2 each; Odd flips inside
+  them, so (OF) fails there. Scale profile (scale210.py): loud steps per priority threshold double per block: a binary counter with
+  one scale per bit. N5's own sigma-sequence (n5lev210.py): K1, K3, K4, L1, L3 are 0, K5 (class-DOM) and L4 fire: S4a is not
+  switch-best, so the lemma reaches N5'-xi only where its steps are Howard steps.
+  Things only I know: (a) (G-K5) needs no ext / F4': class_(t+1)(x) = class_(t+1)(y') >= class_t(y') >= class_t(y) by F1 and COARSE;
+  (b) (G-K4)'s second case (the play of the other successor returns to g) needs no [OPT], only that H is even; (c) for an ODD scale
+  the mirror argument (order lagging vertices by FINAL class, from the top) settles one vertex per step but freezes nothing, so there
+  is no plateau structure: that is the missing piece for a multi-scale statement, and even with it the bound would be
+  n^(O(number of scales)); (d) the hill-climbs find only short runs (T <= 18): the hard evidence is the family table.
+- Traps (successor 72): (4) I edited run209.sh while a job was still reading it, in spite of trap (2). The edit added an rm -rf line
+  near the offset bash would resume from; I killed the job before it got there and nothing was lost. Run scripts are now one function
+  (main "$@"; exit) so bash has read all of the file before running, and I do not edit a script or tool while a job that uses it runs.
+  (5) git archive takes paths relative to the current directory: use git -C <top> archive. (1) I typed two numbers into the doc before the runs had finished (a bound value, a «longest plateau») and both
+  were wrong; DATA sentences are now generated (box208/summ208.py) and inserted after the outputs are final. (2) Never append to a
+  shell script that is running (run208.sh): bash reads it by offset; I made run208b.sh instead. (3) `sleep N; cmd` is blocked by the
+  harness: wait with an until-loop in a tracked background task.
+
+## HANDOVER (successor 71, PARKING 2026-11-12 ~09:20Z by date -u; context ~380k)
+### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
+- 8d6c363b handover check (Lead accepted, «go» 05:45Z).
+- 9b6f6f44 BOX 206 Addendum E (L-RED 65 items): E1 R118 (a) added to LOUD-SPLIT and DEPTH-COUNT premise lists (quotes206E.py); E2 CWR
+  obstruction corrected to L-RED's race-cycle trap, confirmed on own trace (ediag206.py: CLOSE 0 everywhere; Λ(R) = β_(R,0) prio 218 from
+  t = 9). Lead accepted.
+- 2d599a09 BOX 207 (docs/new/N5-RLOCAL-box207.md; experiments/new/box207/; check.sh «BOX 207 RLOCAL»): Lemma R-LOCAL (PROVED lane,
+  elementary) = SPLIT DEEP-k1 ⟺ (Q1) D^tot(R) poly ∧ (Q2) R-INT; (Q1) strictly weaker (CWR(n): D(R) 3, T linear); DEAD race-flip charge
+  (K1L10_n48 steps 27-31) and EFLIP-R (B400_r32 step 43); (Q2) outside R122 (Ξ-acyclic hypothesis fails; CFI3_n48 window [4, 18]);
+  frozen CFI3_n48 d55b20b8, RINT_n48 35b48913.
+- d0a7d351 DUTY R-D7a: P-N5-SPLIT fixes entry 3 + L-2 (d8888d0b, 9,521 B). 621e6b77 DUTY R-U127: fixes entry 4 + L-3 (a8661c4b, 9,796 B);
+  split.pins 65 rows; check.sh asserts L-3. Lead routes L-3 to both referees (byte test).
+- (this push) BOX 207 Addendum C: PAID label line «PROVED (lane), under L-RED attack; scope IDEAL-CYC on Γ(G) only (Γ3 OPEN)» (Lead 09:19Z
+  accepted PROVED lane); wkind207.py DATA: in-window flips at kind-N (chained) gates on long windows (CFI3 9/10, RINT 8/8, K1L10 3/3), at B1
+  gates on short ones (MWR8 8/8, CW8 3/3, BLKX26 5/5).
+- b72411cf + 0ea262a0 BOX 207 Addenda A + B: Lemma PAID (CANDIDATE per Lead rule, proof in full, premises quoted 16/0 at 07139249): at
+  k = 1 every e-face Odd takes is DIRECT (a face play meets R) or chained via next(g) = gate of the first e on β_g's play, E(e_·) strictly
+  lex-rising, to a DIRECT one. Ξ-acyclic case = BETA-ACYC. paid207.py counters 0 (13 records + 1,000 random), control fires.
+### OPEN LANE ITEMS (DUTY FIRST)
+1. DUTY: P-N5-SPLIT L-3 at the referees (byte test), then R127 fill: answer items as fixes entry 5 + L-4 by script (pattern
+   box199/mkl3_199.py, assert L-3 a8661c4b). P-N5-QN = R126 LANDED (trunk 07139249).
+2. Lead to rule PAID's label (CANDIDATE → PROVED lane?). L-RED 65 / L-COMP 18 cross-check CFI3_n48, RINT_n48, K1L10, B400 (box 207).
+3. Research (D18), FIRST ITEM for the successor (Lead 09:19Z): (Q2) through PAID's chains (box 207 Addendum C table: in-window flips at
+   kind-N gates on long windows). Try: bound flips of chained gates inside a window via the rising E(e_·) along chains (each
+   flip of a chained gate g toggles E(e_g) vs E(e_next(g)); with R's class fixed, is the chain's top DIRECT gate frozen?). Tool idea: a
+   window-kind counter (scratch wkind.py logic: kinds BB / B1 / N per gate at t − 1, t).
+### TOOLS (box207): rlocal207.py (R-windows: DR, cint, λ_max, flipint, Rint, deepnoR, efail, pR; RL_CTRL), window207.py (per-step flip
+### trace vs R; --class), paid207.py (PAID counters; PAID_CTRL), quotes207.py TRUNK, check207.sh (~25 s). Climbers were scratch only
+### (climbfi / climbli: aclimb203 mutations, AC_FREE=1, k = 1; ~1 it/s at N 48).
+### Traps (successor 71)
+- A «never at a p-step» observation held on every record and failed on random genomes (pR 23): run random sets before writing any DATA rule.
+- push.sh takes ~35-40 min (experiments/si/check.sh at the end): batch commits; never create lane files while it runs (draft in scratchpad).
+- The container started 1060 behind origin/claude/l-new: the trap check (fetch --unshallow, ff-only, rev-parse) is still needed.
+
 ## HANDOVER (successor 70, PARKING 2026-11-12 ~04:40Z by date -u; Lead 04:10Z: «park with a handover … list (a) CW and its variant as the kill-side record; (b) the top-block theory target (DEEP-k1 via LOUD-SPLIT / DIV); (c) BLOCK-DESC DEAD, and BLKX23 corrected»)
 ### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
 - 09bb6aa7 handover check (Lead 5/5).
@@ -55,7 +324,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - 07:12Z DUTY R-D7a (P-N5-SPLIT = R127): fixes entry 3 + L-2 (d8888d0b, 9,521 B; box199/mkl2_199.py asserts L-1 634b2fdf); split.pins 63
   rows; check.sh P-N5-SPLIT asserts L-2. Ids verified by git (da3308b5, 4948ce5d, 4ded1e8d, 2d0344d3). Unit strings for the three maxima
   clauses PROPOSED in the entry, not applied.
-- Box 207 Addendum A (committed with this push): Lemma PAID at k = 1 (every e-face Odd takes is DIRECT (its face plays meet R) or
+- 08:36Z DUTY R-U127: fixes entry 4 + L-3 (a8661c4b, 9,796 B; mkl3_199.py asserts L-2 d8888d0b); split.pins 65; check.sh asserts L-3.
+- Box 207 Addendum B: PAID relabelled CANDIDATE (Lead rule) with [VJ] (R118 premise), E-DOM (R121 l. 14481) and the lex order (R121) quoted;
+  strict-lex-cycle premise = lex order on e-sets is a strict total order (relevance linear). quotes207 16/0 at 07139249.
+- Window flips (scratch wkind.py): in-window flips sit at gates with neither face through R (CFI3 8/10, RINT 6/8, K1L10 3/3): chained gates.
+- Box 207 Addendum A (b72411cf): Lemma PAID at k = 1 (every e-face Odd takes is DIRECT (its face plays meet R) or
   chained through gates of strictly lex-rising E(e_.) to a DIRECT one; proof sketch: non-DIRECT => both faces K1 (LEVEL0 excludes c_W),
   then [VJ]+(E-DOM) give E(e_g) <lex E(e_next(g)); Xi-acyclic case = BETA-ACYC). DATA: all counters 0 on records + 1,000 random (seed 714);
   control fires. Next: box 207 Addendum A.
@@ -2522,6 +2795,23 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   DATA: correct on 1,038 library + families + hard families; SF ≈ ½ N5; runquad 264 → 2, topfix 7N + 43; switchbestexp N=10 619 vs 89, SBC 97.
   Open count SBC (CONJECTURE SF-POLY OPEN).
 
+- (successor 72, 2026-11-12, box 208) Opened, all inside the fleet: trunk 07139249 docs/RESULTS.md R104 (l. 9864), R118 (a)-(i) (l. 13677-13700:
+  DOM, STRICT, BR-SEG, CYC-COUNT, T-CYC, LEVEL0), R121 (l. 14480-14481 E-MON, E-DOM; l. 14531), R122 (l. 14744), R123 (a)-(f) (l. 15165-15180),
+  R125 (a)-(m) (l. 15643-15660), R126 (l. 15726); frozen docs/new/P-N5-QN.md §1; claude/l-red 9cb968e4 docs/red/R233-paid.md, R233-rint.md
+  (full), 707c0e82 docs/red/R234-lamgap.md (§0 only); claude/l-si 4fda7245 docs/si/box100-scclin.md, box101-lamgap.md (full), box99-ufree.md
+  (§0-§5 head), 144f6821 docs/si/box102-deep3.md (§0-§1 head). NO external source opened for box 208: its READING «Howard for the maximiser
+  in a shortest-path game with non-negative weights» is not cited from the literature and not claimed as new (L-LIT would have to check).
+- (successor 72, 2026-11-12, box 208 Addendum B and box 209) Opened, all inside the fleet: trunk 471aba45 docs/RESULTS.md R117 (l. 13362),
+  R124 (l. 15371), R125 (l. 15595, in full), R118 (l) and (m) (l. 13715-13724); docs/new/P-N5-XICYC.md §5 (BR-SEG-G's setting),
+  P-N5-XICYC-fixes.md l. 30-62 (STRICT-G, PATH-G; «on general games (§5) DOM is false»), P-N5-QN.md §4 (QUIET-N's proof);
+  experiments/new/box189/gamma3.py (the pads); claude/l-red 707c0e82 experiments/red/r232/how3_232.py, r230/elev230.py, r230/bonly3_230.py
+  (headers and the engine loop); claude/l-si d8945c4a docs/si/box101-lamgap.md (DEEP3 lines), box102-deep3.md (§0). NO external source
+  opened; nothing in boxes 208-209 cites one.
+- (successor 72, 2026-11-12, box 210) Opened, all inside the fleet: docs/new/N5-ssi-global.md SPEC S1-S5 (l. 24-66); experiments/new/n5.py
+  (the loop, l. 19-62); experiments/new/box191/brseg_gen191.py (Howard on general games, the best-reward start) and check191.out (sae
+  T values); trunk 471aba45 RESULTS R118's line (BR-SEG-G, the switchallexp DATA), R57's and R15's titles; the .pg files of
+  experiments/new/box191/inst, experiments/n5-box21/instances, experiments/si/instances (read by the tools, sha1 in
+  box210/out/gen210_instances.sha1). NO external source opened: the box says so, and claims no novelty.
 ## Dead ends (successor 68, box 203; docs/new/N5-XIFVS-box202.md Addendum A, docs/new/N5-FLIP-box203.md §2)
 - CONJECTURE K1-FLIP(2) and K1-FLIP(c), every constant c, at k = 1: killed by L-RED 63's MWR(n) (claude/l-red 406ef2fd, R229-box202;
   copies experiments/new/box203/inst MWR4_2 856d369b, MWR8_2 918f1414, MWR16_2 2ccda9a9): gate (qz, 0) flips 2n + 1 with lamch 0.
@@ -3719,6 +4009,15 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   packet rule (corrections only in new dated sections).
 
 ## Sources opened
+- (successor 73, box 211 = packet P-N5-LEVEL) No paper opened. Fleet texts opened, read-only: trunk 68c8d293 docs/RESULTS.md entries
+  R15 (l. 624-631), R104 (l. 9864), R118 (l. 13607-13740), R121 (l. 14320, 14480-14481), R122 (l. 14744), R123 (l. 15076, 15165-15176),
+  R126 (l. 15726, 15789-15822); landed packets docs/new/P-N5-XICYC.md (sha1 149e2414; §2, §3, §5) and its fixes entry 2, docs/new/P-N5-QN.md
+  (sha1 97254bd2; §1); TARGET.md §2, §4, §5, §7e; claude/referee 7524342b docs/referee/R-box208-preread.md (all); claude/l-red 2d2969c2
+  docs/red/R235-box208.md (all); claude/l-red-b 0510c800 docs/red-b/B1-box208.md (all); claude/l-comp a6cce717
+  experiments/comp/box43/README.md (all); claude/l-formal f74d38a4 lean/lemmas/INDEX.md (all), README.md (genome layer, by grep);
+  claude/l-si 26704e01 docs/si/box104-map.md (§0-§3 head, §7-§9); claude/l-lit 4a0db9d1 docs/lit/T69-dijkstra-potentials-policy-iteration.md
+  Addendum A1 only (it reports Björklund–Vorobyov, DAM 155 (2007) 210-229, §10 p. 226: single-switch exponential on acyclic LSP
+  instances; I did NOT open the paper, and the packet cites T69, not the paper).
 - (successor 59, box 191 add. 1) Hansen, Miltersen, Zwick arXiv 1008.0530 v1 (pdf sha256 f53a6b5127d95078d48c0567c3aa54483e11f026095ec20cae4f593bc8db0a69,
   text via pdftotext): Lemma 5.3 (T v^pi0 >= v^pi1), Lemma 5.4 (SI dominated by VI, min convention), §5 «well-known ... Meister and
   Holzbaur [27] ... (They may be folklore.)», Thm 6.5, §7 non-discounted open. Friedmann arXiv 1106.0778 (ar5iv html, first 100k chars):

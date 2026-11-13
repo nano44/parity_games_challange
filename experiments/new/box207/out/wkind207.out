@@ -1,0 +1,8 @@
+CFI3_n48.json R 29 flips 12 in 10 inN 9 end:B1>B1 2 in:B1>B1 1 in:N>B1 1 in:N>N 8
+RINT_n48.json R 29 flips 9 in 8 inN 8 end:B1>B1 1 in:N>B1 2 in:N>N 6
+K1L10_n48.json R 28 flips 22 in 3 inN 3 end:B1>B1 8 end:B1>BB 1 end:B1>N 1 end:N>B1 4 end:N>N 5 in:N>N 3
+K1L7_n48.json R 28 flips 30 in 3 inN 1 end:B1>B1 21 end:N>B1 1 end:N>BB 1 end:N>N 4 in:B1>B1 2 in:N>N 1
+BLKX26_n48.json R 28 flips 44 in 5 inN 0 end:B1>B1 30 end:B1>BB 1 end:B1>N 1 end:N>B1 5 end:N>N 2 in:B1>B1 5
+MWR8_2.json R 83 flips 25 in 8 inN 0 end:B1>B1 17 in:B1>B1 8
+CW8_n.json R 83 flips 119 in 3 inN 0 end:B1>B1 104 end:B1>BB 6 end:BB>B1 6 in:B1>B1 3
+B400_r32_a13d9661.json R 83 flips 60 in 8 inN 2 end:B1>B1 51 end:N>N 1 in:B1>B1 6 in:N>B1 2

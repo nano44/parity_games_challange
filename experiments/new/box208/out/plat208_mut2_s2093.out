@@ -1,0 +1,4 @@
+plat mut MWR4_2.json ctrl 0 seed 2093 samples 150 p1 0 pclos 0 p2 0 p3 0 p4 0 p5 0 plateaus 10 maxlen 17 maxpct 42
+plat mut CW4_n.json ctrl 0 seed 2093 samples 150 p1 0 pclos 0 p2 0 p3 0 p4 0 p5 0 plateaus 12 maxlen 17 maxpct 38
+plat mut BLKX26_n48.json ctrl 0 seed 2093 samples 150 p1 0 pclos 0 p2 0 p3 0 p4 0 p5 0 plateaus 144 maxlen 22 maxpct 44
+plat mut K1F21_n48.json ctrl 0 seed 2093 samples 150 p1 0 pclos 0 p2 0 p3 0 p4 0 p5 0 plateaus 136 maxlen 25 maxpct 51

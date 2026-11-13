@@ -10,3 +10,4 @@ CFI3 6 NO-Rchange (32, 0)e eR[0, 0] bR[0, 0] gOnRplay[0, 0]
 paid CFI3_n48.json egates 48 direct 36 maxchain 1 nonext 0 notK1 0 notE 0 lexfail 0 nochain 0
 paid K1L10_n48.json egates 129 direct 44 maxchain 2 nonext 0 notK1 0 notE 0 lexfail 0 nochain 0
 ctrlpaid CFI3_n48.json egates 48 direct 0 maxchain 2 nonext 0 notK1 0 notE 0 lexfail 21 nochain 48
+wkind CFI3_n48.json R 29 flips 12 in 10 inN 9 end:B1>B1 2 in:B1>B1 1 in:N>B1 1 in:N>N 8

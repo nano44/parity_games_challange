@@ -1,0 +1,2 @@
+rand 2140 30 cyc,self RULE howard DECOMP 1 K2tested 90000 L1stall 1 L2 31 L3 31 P1 5 P4 1 PHval 5 Tmax 3 Tsum 30 bchecked 30 lagstates 39 nonstalls 37 nsmax 2 nspctP 1 plateaus 1 platmax 1 runs 30 stalls 2 tailmax 1
+rand 2140 30 cyc,self RULE onerand DECOMP 9 K2tested 90000 K5how 18 L1rise 13 L1stall 12 L2 98 L3 98 P1 139 P2 13 P4 18 PHout 8 PHval 61 Tmax 9 Tsum 52 bchecked 52 lagstates 121 nonstalls 71 nsmax 3 nspctP 1 plateaus 37 platexit 31 platidle 1 platmax 2 runs 30 stalls 50 tailmax 2

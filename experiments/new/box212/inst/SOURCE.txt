@@ -1,0 +1,3 @@
+Tower genomes (Xi-acyclic R104 genomes on which N5's key rule is long), copied unmodified from claude/l-comp 2fa72fb5,
+experiments/comp/box29/inst/<name>_norm.json (L-COMP box 29: DBL4, H5, H6, RECF4 from L-LOWER 4 / the Lead; HIT7 = L-COMP 11's seven
+capped levels, F(6) = 254 at d 28). Checked: `git show 2fa72fb5:experiments/comp/box29/inst/<name>_norm.json | sha1sum` = SHA1SUMS.

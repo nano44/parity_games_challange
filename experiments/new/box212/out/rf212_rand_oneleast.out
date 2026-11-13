@@ -1,0 +1,1 @@
+rand 2126 300 rand,cyc,self,up,down,dense,flat RULE oneleast K2tested 900000 K5how 479 Tmax 25 Tsum 982 bchecked 982 lagstates 3361 nonstalls 2012 nsmax 10 nspctP 5 plat_gt_movers 101 plateaus 705 platexit 1715 platidle 610 platmax 13 runs 300 stalls 1349 tail_gt_N 2 tailmax 7
