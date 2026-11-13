@@ -33,6 +33,11 @@ N5="python3 -I $T/gkx_n5.py"
 st n5_pg && $N5 gk 3 12 --pg "$W/pg" --pgonly > "$HERE/n5_pg.tmp" && mv "$HERE/n5_pg.tmp" "$HERE/n5_pg.out"
 st n5_ctl && { for c in start win lastfb nonmover noesc rank revE; do $N5 gk 4 5 --ctl $c; done; } > "$HERE/n5_ctl.tmp" && mv "$HERE/n5_ctl.tmp" "$HERE/n5_ctl.out"
 st lem && { python3 -I "$T/gkx_lem.py" 5 40 3; python3 -I "$T/gkx_lem.py" 7 30 4; } > "$HERE/lem.tmp" && mv "$HERE/lem.tmp" "$HERE/lem.out"
+# stage 2 of the report: the lane's fixes entry 1 (l-red-b 9181c13c): its k = 12 game against this lane's builder; own strategy check
+F1=9181c13cd
+st n5_pg12 && { mkdir -p "$W/pg12"; git show $F1:experiments/red-b/data/b6b/pg/G_12_g3.pg > "$W/pg12/G_12_g3.pg"; sha1sum "$W/pg12/G_12_g3.pg" | cut -c1-40 | sed 's/^/G_12_g3.pg sha1 /'; $N5 gk 12 12 --pg "$W/pg12" --pgonly; } > "$HERE/n5_pg12.tmp" && mv "$HERE/n5_pg12.tmp" "$HERE/n5_pg12.out"
+st unit && { $P unit 7; $P unit 7 --ctrl 1; } > "$HERE/unit.tmp" && mv "$HERE/unit.tmp" "$HERE/unit.out"
+st strat && { python3 -I "$T/gkx_strat.py" 3 9; python3 -I "$T/gkx_strat.py" 4 5 --ctl allE; python3 -I "$T/gkx_strat.py" 4 5 --ctl allO; } > "$HERE/strat.tmp" && mv "$HERE/strat.tmp" "$HERE/strat.out"
 # the long stage last (k = 3..9: about 3 minutes on the engine; k = 10: about 4 more; pass N5MAX=10 to include it)
 st n5 && $N5 gk 3 ${N5MAX:-9} --pg "$W/pg" > "$HERE/n5.tmp" && mv "$HERE/n5.tmp" "$HERE/n5.out"
 rm -rf "$W"

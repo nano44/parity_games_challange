@@ -125,6 +125,20 @@ def main():
         print("n5_pg (game built here against the lane's frozen .pg, no N5 run): " + " ".join(l.split()[0] for l in pgo) + f"; PG {sum(int(x.get('PG', 0)) for x in z)} "
               f"on {sum(1 for x in z if 'PG' in x)} frozen files; GEN35 {sum(int(x['GEN35']) for x in z)}; "
               f"n {' '.join(x['n'] for x in z)}; m {' '.join(x['m'] for x in z)}; maxprio {' '.join(x['maxprio'] for x in z)}")
+    for l in lines("unit.out"):
+        print(l)
+    for l in lines("n5_pg12.out"):
+        print("pg12: " + l[:200])
+    sl = lines("strat.out")
+    if sl:
+        z = [(kv(l), l) for l in sl if " ctl 0 " in l]
+        print("strat: " + " ".join(l.split()[1] for d, l in z) + f"; iterations {' '.join(d['iterations'] for d, l in z)}; evenregion {' '.join(d['evenregion'] for d, l in z)}; "
+              f"oddregion {' '.join(d['oddregion'] for d, l in z)} (the vertex K2 on every line: {int(all(' oddvertices K2 STRATE' in l for d, l in z))}); "
+              f"STRATE {sum(int(d['STRATE']) for d, l in z)} STRATO {sum(int(d['STRATO']) for d, l in z)} REG {sum(int(d['REG']) for d, l in z)}")
+        for l in sl:
+            if " ctl 0 " not in l:
+                d = kv(l)
+                print(f"strat control {l.split()[3]} on {l.split()[1]}: STRATE {d['STRATE']} STRATO {d['STRATO']}")
     for l in lines("n5_ctl.out"):
         d = kv(l)
         cs = ("S3START", "STD", "FLFB", "FLTAU", "FLSIG", "LASTFB", "WIN", "EXACT")

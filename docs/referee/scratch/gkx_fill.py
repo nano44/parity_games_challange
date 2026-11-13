@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """REFEREE successor 36: builds docs/referee/R-P-N5-EXP.md (stage 1) from gkx_report_tmpl.md and the logs.
 Usage (repository root): python3 -I docs/referee/scratch/gkx_fill.py "$(date -u +%Y-%m-%dT%H:%MZ)" > docs/referee/R-P-N5-EXP.md
+(the argument stamps the LAST appended stage, @@NOW@@ in gkx_report_stage2.md / stage3.md; stage 1 keeps its committed stamp)
 Every @@NAME@@ line of the template is replaced by the lines of gkx_summ.py's output with the prefixes below (pasted, not typed);
 a missing block is an error."""
 import sys, os, io, contextlib
@@ -9,7 +10,10 @@ import gkx_summ
 
 PREFIX = {"GEN": ("packet sha1", "gen:"), "MEMBER": ("member:", "member control"), "FACTS": ("facts, ",), "FACTSCTRL": ("facts control",),
           "CAUSAL": ("causal",), "ABS": ("abs",), "RESP": ("resp",), "RUN": ("run:",), "SIZES": ("sizes files", "first k"),
-          "N5": ("n5_pg", "n5:"), "N5CTL": ("n5 control",), "LEM": ("lem ",), "ORDERS": ("orders",), "QUOTES": ("tags ", "UNTAGGED", "NOTFOUND")}
+          "N5": ("n5_pg", "n5:"), "N5CTL": ("n5 control",), "LEM": ("lem ",), "ORDERS": ("orders",), "QUOTES": ("tags ", "UNTAGGED", "NOTFOUND"),
+          "PG12": ("pg12:",), "STRAT": ("strat",), "UNIT": ("unit ",)}
+
+STAGE1 = "2026-11-13T14:56Z"          # the date -u stamp of stage 1 as committed in c881709b (kept when later stages are appended)
 
 def main():
     here = os.path.dirname(os.path.abspath(__file__))
@@ -20,7 +24,12 @@ def main():
     summ = buf.getvalue().split("\n")
     out = []
     prev = ""
-    for line in open(os.path.join(here, "gkx_report_tmpl.md"), encoding="utf-8").read().split("\n"):
+    tmpl = open(os.path.join(here, "gkx_report_tmpl.md"), encoding="utf-8").read()
+    for extra in ("gkx_report_stage2.md", "gkx_report_stage3.md"):          # later stages are appended, never merged into stage 1
+        p = os.path.join(here, extra)
+        if os.path.exists(p):
+            tmpl = tmpl.rstrip("\n") + "\n\n" + open(p, encoding="utf-8").read()
+    for line in tmpl.split("\n"):
         s = line.strip()
         if s.startswith("@@") and s.endswith("@@") and s[2:-2] in PREFIX:
             ind = prev[:len(prev) - len(prev.lstrip())]
@@ -28,7 +37,7 @@ def main():
             assert block, f"no log lines for {s}"
             out += [ind + l for l in block]
         else:
-            out.append(line.replace("@@STAGE1@@", sys.argv[1]))
+            out.append(line.replace("@@STAGE1@@", STAGE1).replace("@@NOW@@", sys.argv[1]))
         prev = line
     text = "\n".join(out)
     assert "@@" not in text, "unfilled placeholder"

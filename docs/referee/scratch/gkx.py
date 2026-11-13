@@ -16,6 +16,7 @@ Subcommands (each prints one line per k with named must-0 counters; `ctrl N` row
   causal k.. [--arb n seed] [--ctrl c]   the abstract machine against the definition's step, inputs taken from the definitions
   orders k.. [--reps n] [--seed s]       section 8: random gates / ranks inside the listed constraints give the same run
   sizes DIR k..      n, m, largest priority of the frozen DIR/G_k_g3.pg; the explicit instances of the dead-end paragraph
+  unit [wmax] [--ctrl c]   ONE generic unit against an abstract unit above with arbitrary delays (the induction step of LEMMA')
 No absolute paths. Run with python3 -I.
 """
 import sys, json, random, itertools
@@ -820,6 +821,140 @@ def cmd_abs(args):
         print(f"abs k {k} ctrl {ctrl} full {full} stable {stable} pref {pref}/{prefn}", flush=True)
 
 
+# ---------------------------------------------------------------- ONE unit against an abstract environment (all delays)
+def unit_step(kind, st, cin_new, ein_old, eup_new):
+    """One step of ONE unit j by the formulas of section 5 (K1-K4, V1-V4). kind: "mid" (u, v, e, y, yb, yp, ypb) or "bot" (unit 1:
+    u, v, y, yb). Inputs: cin_new = C_(j-1) under the new state, ein_old = E_(j-1) under the old state, eup_new = the option of
+    E(j + 1) under the new state. Returns (new state, C_j under the new state)."""
+    u, v, y, yb = st["u"], st["v"], st["y"], st["yb"]
+    EY = yb if y != yb else int(y != ein_old)
+    new = dict(st)
+    if EY == 1 - v and v != cin_new:
+        new["v"] = 1 - v
+    if EY == u and u != cin_new:
+        new["u"] = 1 - u
+    if kind == "mid":
+        yp, ypb, e = st["yp"], st["ypb"], st["e"]
+        EYp = ypb if yp != ypb else int((1 - yp) != EY)
+        if EYp == e and e != cin_new:
+            new["e"] = 1 - e
+    C = int(new["v"] == cin_new) if new["u"] != new["v"] else 0
+    D = int(eup_new == 1 or C == 0)
+    Z = int(eup_new == 0 or C == 1)
+    if ((ein_old == 1) if y == 0 else (ein_old == 0)) and ((D == 1) if y == 0 else (D == 0)):
+        new["y"] = 1 - y
+    if ((ein_old == 0) if yb == 0 else (ein_old == 1)) and ((D == 1) if yb == 0 else (D == 0)):
+        new["yb"] = 1 - yb
+    if kind == "mid":
+        if ((EY == 0) if yp == 0 else (EY == 1)) and ((Z == 1) if yp == 0 else (Z == 0)):
+            new["yp"] = 1 - yp
+        if ((EY == 1) if ypb == 0 else (EY == 0)) and ((Z == 1) if ypb == 0 else (Z == 0)):
+            new["ypb"] = 1 - ypb
+    return new, C
+
+def unit_E(st, ein):
+    """E_j under a state of the unit, with the value input E_(j-1) of the same state."""
+    EY = st["yb"] if st["y"] != st["yb"] else int(st["y"] != ein)
+    return 1 if st["u"] != st["v"] else int(EY == st["v"])
+
+def cmd_unit(args):
+    """The induction step of LEMMA' for a GENERIC unit and ARBITRARY delays of the unit above (assume-guarantee form).
+    Assumed of the unit above (LEMMA' for j + 1, as a contract): E(j + 1) is at 0; when the key input C_j becomes 1 at a step t0
+    it moves to 1 at step t0 + W (W = P_(j+1) - 1 >= 2) if its input stays (1, 1) for t0..t0 + W; when C_j becomes 0 at a step t1
+    it moves to 0 at step t1 + W2 if its input stays (0, 0). Checked of the unit (both kinds, both a, every pair W, W2 in the range):
+      list   a step whose moves differ from the lemma's list (t_1 = t + W, t_2 = t_1 + 1 + W2)
+      up     the unit's outputs (C_j under s_tau, E_j under s_tau) break the contract's premise: (1, 1) on [t, t_1], (0, 0) on [t_1 + 1, last]
+      down   (mid) e_j is not at a before the last step or not at c after it
+      rest   the last state is not REST_j(c)
+      fix    a waiting step (no listed move) at which the unit is NOT a fixed point of its own step: must be 0, so that the result
+             for every pair of delays >= 2 follows from the pairs tested
+      after  the unit moves again under the unchanged input after its last step (STABLE)
+    Control (--ctrl 1): the list with F and B exchanged."""
+    ctrl = int(take(args, "--ctrl", 1, 0))
+    wmax = int(args[0]) if args else 7
+    tot = dict(list=0, up=0, down=0, rest=0, fix=0, after=0)
+    runs = 0
+    for kind in ("mid", "bot"):
+        for a in (0, 1):
+            c = 1 - a
+            F, B = ("yb", "y") if a == 0 else ("y", "yb")
+            Fp, Bp = ("ypb", "yp") if a == 0 else ("yp", "ypb")
+            if ctrl == 1:
+                F, B = B, F
+            for W in range(2, wmax + 1):
+                for W2 in range(2, wmax + 1):
+                    runs += 1
+                    t = 1
+                    t1 = t + W
+                    t2 = t1 + 1 + W2
+                    last = t2 + 1 if kind == "mid" else t2
+                    sched = {t: [("v", c)], t + 1: [(F, 0)], t1: [(B, 1)], t1 + 1: [("u", c)]}
+                    if kind == "mid":
+                        sched[t1 + 1].append((Fp, 0))
+                        sched[t2] = [(Bp, 1)]
+                        sched[t2 + 1] = [("e", c)]
+                    st = {"u": a, "v": a, "y": a, "yb": 1 - a}
+                    if kind == "mid":
+                        st.update({"e": a, "yp": a, "ypb": 1 - a})
+                    eup = 0
+                    for tau in range(1, last + 4):
+                        ein_old = a if tau == 1 else c
+                        # the unit above, by its contract: E(j + 1) to 1 at t1, to 0 at t2
+                        eup_new = 1 if t1 <= tau < t2 else 0
+                        new, C = unit_step(kind, st, c, ein_old, eup_new)
+                        moves = sorted((n, new[n]) for n in new if new[n] != st[n])
+                        if tau <= last:
+                            tot["list"] += int(moves != sorted(sched.get(tau, [])))
+                            if not sched.get(tau):
+                                tot["fix"] += int(new != st)
+                            Eout = unit_E(new, c)
+                            want = (1, 1) if tau <= t1 else (0, 0)
+                            tot["up"] += int((C, Eout) != want)
+                            if kind == "mid":
+                                tot["down"] += int(new["e"] != (c if tau == last else a))
+                        else:
+                            tot["after"] += int(new != st)
+                        st = new
+                        if tau == last:
+                            want = {"u": c, "v": c, "y": c, "yb": 1 - c}
+                            if kind == "mid":
+                                want.update({"e": c, "yp": c, "ypb": 1 - c})
+                            tot["rest"] += int(st != want)
+    # cross-check of unit_step against the abstract machine abs_step (itself tied to the definition by `causal`): on random
+    # states of a whole tower and random inputs, each unit j <= k - 2 of abs_step's result equals unit_step with the inputs taken
+    # from abs_step's own old / new states
+    rnd = random.Random(99)
+    cross = ncross = 0
+    for k in (4, 5, 6, 7):
+        Efn = lambda j: f"e{j}" if 2 <= j <= k - 2 else f"u{j}"
+        for _ in range(1500):
+            st = {n: rnd.randrange(2) for n in abs_names(k, 1)}
+            cin, ein = rnd.randrange(2), rnd.randrange(2)
+            new = abs_step(k, 1, st, cin, ein)
+            # C_j under the new state and E_j under the old state, bottom-up
+            C = {0: cin}
+            E = {0: ein}
+            for j in range(1, k):
+                u, v = new[f"u{j}"], new[f"v{j}"]
+                C[j] = int(v == C[j - 1]) if u != v else 0
+                y, yb = st[f"y{j}"], st[f"yb{j}"]
+                EYo = yb if y != yb else int(y != E[j - 1])
+                E[j] = 1 if st[f"u{j}"] != st[f"v{j}"] else int(EYo == st[f"v{j}"])
+            for j in range(1, k - 1):
+                kind = "bot" if j == 1 else "mid"
+                loc = {"u": st[f"u{j}"], "v": st[f"v{j}"], "y": st[f"y{j}"], "yb": st[f"yb{j}"]}
+                if kind == "mid":
+                    loc.update({"e": st[f"e{j}"], "yp": st[f"yp{j}"], "ypb": st[f"ypb{j}"]})
+                got, Cj = unit_step(kind, loc, C[j - 1], E[j - 1], new[Efn(j + 1)])
+                ref = {"u": new[f"u{j}"], "v": new[f"v{j}"], "y": new[f"y{j}"], "yb": new[f"yb{j}"]}
+                if kind == "mid":
+                    ref.update({"e": new[f"e{j}"], "yp": new[f"yp{j}"], "ypb": new[f"ypb{j}"]})
+                ncross += 1
+                cross += int(got != ref or Cj != C[j])
+    print(f"unit ctrl {ctrl} kinds mid,bot a 0,1 delays 2..{wmax} runs {runs} " + " ".join(f"{k} {v}" for k, v in tot.items())
+          + f" cross {cross}/{ncross}", flush=True)
+
+
 def cmd_causal(args):
     """CAUSAL (referee): for every j0, the restriction of s+ (the definition's s') to the units j0..k-1 equals the abstract
     machine's step from (s on those units, E_(j0-1)(s), C_(j0-1)(s+)), the two input bits taken from the DEFINITION
@@ -1024,4 +1159,4 @@ def cmd_sizes(args):
 if __name__ == "__main__":
     cmd = sys.argv[1]
     {"gen": cmd_gen, "member": cmd_member, "run": cmd_run, "facts": cmd_facts, "resp": cmd_resp, "abs": cmd_abs,
-     "orders": cmd_orders, "causal": cmd_causal, "sizes": cmd_sizes}[cmd](sys.argv[2:])
+     "orders": cmd_orders, "causal": cmd_causal, "sizes": cmd_sizes, "unit": cmd_unit}[cmd](sys.argv[2:])

@@ -1,0 +1,2 @@
+unit ctrl 0 kinds mid,bot a 0,1 delays 2..7 runs 144 list 0 up 0 down 0 rest 0 fix 0 after 0 cross 0/21000
+unit ctrl 1 kinds mid,bot a 0,1 delays 2..7 runs 144 list 288 up 0 down 0 rest 0 fix 0 after 0 cross 0/21000

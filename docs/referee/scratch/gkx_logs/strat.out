@@ -1,0 +1,11 @@
+strat G_3 ctl 0 n 175 iterations 9 evenregion 174 oddregion 1 oddvertices K2 STRATE 0 STRATO 0 REG 0
+strat G_4 ctl 0 n 310 iterations 17 evenregion 309 oddregion 1 oddvertices K2 STRATE 0 STRATO 0 REG 0
+strat G_5 ctl 0 n 445 iterations 33 evenregion 444 oddregion 1 oddvertices K2 STRATE 0 STRATO 0 REG 0
+strat G_6 ctl 0 n 580 iterations 65 evenregion 579 oddregion 1 oddvertices K2 STRATE 0 STRATO 0 REG 0
+strat G_7 ctl 0 n 715 iterations 129 evenregion 714 oddregion 1 oddvertices K2 STRATE 0 STRATO 0 REG 0
+strat G_8 ctl 0 n 850 iterations 257 evenregion 849 oddregion 1 oddvertices K2 STRATE 0 STRATO 0 REG 0
+strat G_9 ctl 0 n 985 iterations 513 evenregion 984 oddregion 1 oddvertices K2 STRATE 0 STRATO 0 REG 0
+strat G_4 ctl allE n 310 iterations 17 evenregion 309 oddregion 1 oddvertices K2 STRATE 1 STRATO 0 REG 0
+strat G_5 ctl allE n 445 iterations 33 evenregion 444 oddregion 1 oddvertices K2 STRATE 1 STRATO 0 REG 0
+strat G_4 ctl allO n 310 iterations 17 evenregion 309 oddregion 1 oddvertices K2 STRATE 0 STRATO 3 REG 0
+strat G_5 ctl allO n 445 iterations 33 evenregion 444 oddregion 1 oddvertices K2 STRATE 0 STRATO 3 REG 0
