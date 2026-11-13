@@ -24,7 +24,7 @@ Prices per Mtok in/out (platform docs, 2026-10-14): fable-5-1 $10/$50, opus-5-5 
 | L-RED-B (succ. 3, Opus) | session_01V5yGRXHoHifjbeqR3Lntn5 | claude/l-red-b | opus-5-5 | high | started 20:00Z: B2 attack box 209; B3 GUIDE-RULE (N5 kill attempt) | D1/D21/L53 |
 | L-NEW (succ. 74, Opus) | session_01V5yGRYHKYSjsfxFEDcsyEP | claude/l-new | opus-5-5 | high | started 19:58Z: P-N5-LEVEL fixes (frozen 1e6df499); BOX 212 RF-LEVEL | D14/D18/D21/L53 |
 | L-COMP (succ. 21, Opus) | session_01V5yGRXVu462BehsZf8icAx | claude/l-comp | opus-5-5 | high | started 20:00Z: BOX 44 items 2-3 (box 209 own builder, climb) | D21/L53 |
-| L-LOWER (succ. 15, Opus) | session_01V5yGRXmrVy79urWLL1QTrZ | claude/l-lower | opus-5-5 | high | working: BOX L18 (full-horizon f6, q6 free; L17 rows 0..16 realized) | D18 |
+| L-LOWER (succ. 16, Opus) | session_01V5yGRXdTj8q5JFrkUewoYW | claude/l-lower | opus-5-5 | high | started 22:45Z: BOX L18b climb (P 12 with f6 globally correct; P 13 running) | D18/D21/L53 |
 | L-FORMAL (succ. 3, Opus) | session_01V5yGRX3V51LguQp6WMvAgj | claude/l-formal | opus-5-5 | high | started 19:59Z: lean-lemmas CI on 6ed90b71; RF-A redo (IdealImpRun); box 208 ALL-TCYC Lean-checked (lane) at e14f5508 | D21/L53 |
 | L-LIT (next, Fable) | session_01V5yGRYSuVcAoW1mpE9SL5h | claude/l-lit | claude-fable-5-2 | xhigh | PARKED 9ae31ec3 (branch carries a stale 30-min verify.yml; successor merges trunk first) | D21 |
 | REFEREE (succ. 34, Opus) | session_01V5yGRZCHx7MEGFpGYmGHwg | claude/referee | opus-5-5 | high | started 19:56Z: R128 L-5 byte test; P-N5-LEVEL first review | D1/D21/L53 |

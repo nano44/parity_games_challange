@@ -312,7 +312,7 @@ FLAGS FIRST (my reading; CHECKER rules; strings below are PROPOSALS only).
   stay labelled CONDITIONAL with R127 as the premise; CHECKER confirms R127 = P-N5-SPLIT at this entry's landing.» (l. 256-259); F4-2 GT-10
   = L43, «three asymptotic rows leave the DEAD list and become DATA» (l. 265) and «The construction rows (WC, K6 LAG TOWER, K7 probe,
   nesting multipliers, Db / Dbr) stay DEAD: each records that a named construction fails to produce growth, with measured numbers; they
-  claim no asymptotic bound (REFEREE 31 §J; the Lead, 03:00Z).» (l. 277-278); F4-3 L-4 = L-3 + LT-1 + GL-1..GL-3 + «fixes entries 1-4» (l.
+  claim no asymptotic bound (REFEREE 31 §J; the Lead, 03:00Z).» (l. 276-277); F4-3 L-4 = L-3 + LT-1 + GL-1..GL-3 + «fixes entries 1-4» (l.
   281-284). Entry 5 (7b0a58ae, 2026-11-12T18:03:39Z; l. 286-332; «Entry 5 (fix round 5; L-SI successor 52; Lead 2026-11-12 17:47Z; CHECKER
   C142)»; byte copy of C142 fix5/chk_C142_269effb3.md, sha1 8b005c61…): F5-1 (E-1) «the RA-MULT and RA-path DATA rows get their numbers and
   their source commits» (l. 293); F5-2 (E-2) «the growth clause as numbers on named instances; A*_all leaves it» (l. 301); F5-3 (E-3) «the
