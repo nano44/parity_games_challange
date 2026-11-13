@@ -8,7 +8,7 @@ import sys, os, re, glob
 H = os.path.dirname(os.path.abspath(__file__))
 f = lambda l, k: int(re.search(r"(?:^| )%s (-?\d+)" % k, l).group(1))
 mine = {}
-for fn in sorted(glob.glob(os.path.join(H, "out", "win46_*.out"))):
+for fn in sorted(f for f in glob.glob(os.path.join(H, "out", "win46_*.out")) if not f.endswith("_ctrl.out")):
     for l in open(fn):
         if " must0 " in l: mine[l.split()[0]] = (os.path.basename(fn), l)
 for rf in sys.argv[1:]:
