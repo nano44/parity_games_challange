@@ -16124,6 +16124,247 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   L-3 ends its scope words «so this is not M4; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim», the form of landed
   R123 and R124. GAPS G-N5-TIME: open.
 
+### R128 [refereed-only] Gate races, expulsions and who pays a gate flip, in ONE Howard strategy-improvement run with Vöge-Jurdziński values, on IDEAL-CYC(G) and on N5′-xi's mover phase on Γ3(G) from S3, for every genome G (premises: RESULTS R104's definitions of the genome and of Γ(G) only («e of even priority above every β with one edge to the W-target or to the top even self-loop c_W»); RESULTS R117's definition of Γ3(G) only; RESULTS R118 (a) IDEAL-CYC(G) («The game is Γ(G) with every Even vertex that is not a mover frozen at its start successor. Odd is unrestricted (gates and K2).») with its Howard step and tie rule («every mover x goes to a successor of ⊴-largest Ω_t value, and keeps σ_t(x) if σ_t(x) is such a successor»), (b) F1, F2, F3, F4′'s stated clause, F6, (c) STRICT, (e) in its per-vertex form, and (k) the form of N5′-xi's run on Γ3 from S3 up to its first fallback («T3 is the first state at which no mover has a strictly better successor in Γ3;») with N5′-xi's rule [N5XI] («an N5′-xi run (box 190's S4a tie rule by Ξσ)»; SPEC S4a's A(v) = {σ(v)} ∪ {w : (v, w) ∈ Iσ}, so a ⊴-best current option is kept); VJ00 §4.2 / Friedmann arXiv 1106.0778 §3 for the value (Λ, Π, k) and its order ⊴; [OPT] as in RESULTS R123 (σ̄_t optimal at every vertex at once against σ_t); RESULTS R121 Lemma E-MON («(Lemma E-MON) if Λ_t(v) = Λ_(t+1)(v) then E_t(v) ≤ E_(t+1)(v)»); RESULTS R123 Lemmas CN2, LOC-GATE, LOC-K2, B-ONLY («at every state t and every vertex v other than c_W and the e-vertices whose successor is c_W, Λ_t(v) is less relevant than every e-vertex») and Corollary NO-TIE («at every state and gate g, Ω_t(e_g) ≠ Ω_t(β_g)»), and (E-DOM) and (Core) read off RESULTS R104's priorities and closed core with LOC-K2 (non-core vertices only: the core is entered only at K0 and then follows one fixed suffix, so K0, K3 lie on the play iff Λ is a core vertex), for IDEAL-CYC; on Γ3 instead RESULTS R125 (P-N5-CHAIN): F1, F3, F4′, F6, STRICT, CN2-3, LOC-GATE3, NO-TIE3, LOC-K2-3, B-ONLY3, E-MON3, and F2, CYC, (E-DOM), (Core) from P-N5-CHAIN's frozen text (l-new 93531b03, sha1 6e613ba7, §2 and §4), (Core) in its W-1-repaired reading, applied only to non-core vertices (the faces of a gate and the successors of a mover or a gate; P-N5-CHAIN fixes entry 3, R-W; referee-originated: REFEREE-2 R2-P-N5-GATE G-1); for A*-EQUIV also SPLIT-COUNT and C-EQUIV of RESULTS R127 (P-N5-SPLIT; L-NEW, frozen claude/l-new 399cda07, sha1 5bc1b1f3; landing order R126 = P-N5-QN, R127 = P-N5-SPLIT, then this entry); no L-RED lane lemma is a premise), with Ω_t, P_t, Λ_t, E_t(v) (the e-vertices of P_t(v) more relevant than Λ_t(v)) the value, play, cycle node and e-set at state t, a gate o with e-vertex e_o, e-face p_e (= e_o on Γ, its pad on Γ3), β-face p_b and D := e_o's successor, a FLIP of o a change of σ̄(o) (an UNLOCK p_b → p_e or a RELOCK p_e → p_b), ch_f the number of steps at which Ω(f) changes, lamch(o) the number of steps at which Λ changes at p_e or p_b, nl_f := ch_f − (Λ-changes of f), LAM_t: Λ_t(p_e) = Λ_t(p_b), PRIV_t: e_o ∉ E_t(p_b), UP_t: e_o more relevant than Λ_t(p_e), π(X) the elements of X at least as relevant as e_o: (Lemma GATE-RACE) if o flips at t from face p to face q then Ω_t(p) ≠ Ω_(t−1)(p), and flips(o) ≤ min(ch_p + ch_q, 2·min(ch_p, ch_q) + 1); (Corollary TRIGGER) that change of p is a change of Λ(p) (at most 2M + 2 over the run), or inside one Λ-interval of p a change of E(p) whose most relevant differing element enters and lies on P_t(p), or a change of Π(p) below every e-letter or of k; (Lemma GATE-LOW-NULL) (a) at a LAM ∧ PRIV step with e_o ∈ E_t(p_e), Ω_t(p_e) ▷ Ω_t(p_b) iff π(E_t(p_e)) is lex-larger than π(E_t(p_b)) (and they differ), so (b) a flip at t with LAM ∧ PRIV ∧ UP at t − 1 and t changes π(E(p_e)) or π(E(p_b)) at t, and (b′) if Λ(p_e) = Λ(p_b) is the same at t − 1 and t, π(E(p_e)) rises at a relock and π(E(p_b)) rises at an unlock; (Lemma NP-SHAPE) at a step with e_o ∈ E_t(p_b), σ̄_t(o) = p_e, P_t(p_b) = A_t · o · P_t(p_e), Λ_t(p_b) = Λ_t(p_e) and E_t(p_e) ⊆ E_t(p_b), and a flip has such a step on at most one side, a relock if before and an unlock if after; (Corollary E-FACE-PAYS) (a) relocks(o) ≤ ch_(p_e), unlocks(o) ≤ 1 + relocks(o) and unlocks(o) ≤ ch_(p_b) with no PRIV, LAM or UP hypothesis, (b) at every t with e_o ∉ P_(t−1)(D) ∪ P_t(D) the value of p_e changes iff that of D does, so (c) if D's play avoids e_o at every state of the run then unlocks(o) ≤ 1 + ch_D ≤ 2M + 3 + (2M + 3)·M·C + gam(D) (C the largest number of changes of one vertex's e-set with one top letter inside one Λ-interval, gam(D) the changes of Ω(D) with Λ and E unchanged), and (d) flips(o) ≤ 2·min(ch_(p_e), ch_(p_b)) + 1 ≤ 2·lamch(o) + 2·min_f nl_f + 1; (Lemma WAIT-QUIET) a gate whose D's play avoids e_o at every state of the run and whose D changes value at most K times unlocks at most K + 1 and flips at most 2K + 1 times, whatever its trigger; (Lemma SAME-SUFFIX) on a window W inside one Λ-interval of a vertex o on which every successor f of o has P_t(f) = P_f · P_t(y) for fixed paths P_f to one vertex y whose play avoids every P_f, the ⊴-order of the successors' values is constant, so σ̄(o) is constant on W if o is Odd and σ(o) is constant from W's second step if o is an Even mover (by the tie rule above); (Lemma STEP-BOUND) Ω(x) changes at t only if some vertex of P_(t−1)(x) changes successor at t, so ch_x ≤ T; (Lemma PARALLEL) inside one Λ-interval of b, at a change of H_s := E_s(b) ∩ U_y (U_y the e-vertices more relevant than y), the top x of the change lies on the new play only and every expelled letter on the old play only, below x and strictly after b's split; (Lemma PAIR-EXPEL; its Step 1 is the argument of P-N5-SPLIT §3 (a), Lemma REWIN (a), which the packet writes out in full from F1, STRICT, F3, F6, F4′, CN2-3, so no P-N5-SPLIT premise is used) two expulsions of one letter z at b through the same split pair (u′, b′) leave E(b′) ∩ U_z strictly lex-larger at the later one, and (Corollary EXPEL-COUNT) the number a_z(b, J) of runs of z in E(b) on a Λ-interval J is at most 1 + 3M·max Dhi_z (at most 3M split pairs: the split is a mover or a gate, with M mover edges and 2M faces; referee-originated: REFEREE-2 R2-P-N5-GATE G-6), Dhi_z(b′, J′) the number of distinct E_s(b′) ∩ U_z on J′; (Corollary A*-EQUIV, PROVED-CONDITIONAL on RESULTS R127 (P-N5-SPLIT)'s SPLIT-COUNT and C-EQUIV) C ≤ A*_all ≤ 1 + M·C (on both runs, with no P-N5-SPLIT premise: each entry of a top starts a run, and every run but one starts at a change; referee-originated: REFEREE-2 R2-P-N5-GATE G-7) and, on Γ3 only, C ≤ 3M·(1 + M·A*_route), so T3 is polynomial iff C is iff A*_all is iff A*_route is (A*_all the largest a_z(b, J) over all b, J, z; A*_route the same over the new successors of split pairs) (2026-11-09) — these are reductions of one run's counts to per-gate or per-continuation counts of the same run, not bounds: none bounds T3, T_CYC, C or A*_all by a polynomial; on IDEAL-CYC a LAM ∧ PRIV step with e_o not above Λ (row K10 of WAIT-CLOSED) does not occur, by RESULTS R123 B-ONLY, so GATE-LOW-NULL covers every flip between two LAM ∧ PRIV steps there, and on Γ3 it does not occur either, by RESULTS R125's B-ONLY3, the same argument with the pads (pβ_o is never an exception; pe_o is one only when D = c_W, and then Λ(pe_o) = c_W ≠ Λ(pβ_o); referee-originated: REFEREE R-P-N5-GATE GT-1 and REFEREE-2 R2-P-N5-GATE G-5); on IDEAL-CYC the proviso «D's play avoids e_o» of E-FACE-PAYS (c) and WAIT-QUIET always holds (Lemma PROVISO, credit L-RED 63: if e_o lay on P_t(D), the play would close at D, the vertex after e_o, so its cycle would carry e_o and Λ_t(D) would be at least as relevant as e_o, against RESULTS R123 B-ONLY at the mover D; D = c_W is its own loop), so on IDEAL-CYC E-FACE-PAYS (b) holds at every step and (c) and WAIT-QUIET hold with no proviso, B-ONLY being the one premise shared with the K10 clause above, and on Γ3 it holds at every state 0, …, T3 by RESULTS R125's B-ONLY3 at the mover D, by the same argument, so there too (b), (c) and WAIT-QUIET hold with no proviso (referee-originated: REFEREE R-P-N5-GATE GT-1 and REFEREE-2 R2-P-N5-GATE G-5); DEAD, on frozen instances (DATA, two engines unless said): a waiting High WC (T3 = 4 at n = 4, 8, 16; WC4_2, WC16_2), the lagging merged copy K6 LAG TOWER (CNT ≤ 4, 3, 2, 2 at h = 2, 3, 4, 5), the High continuation on the race K7 (C = 2; Ku_4, Ku_8, Ku_16, Kprev_8), nesting multipliers at H = 2, 3 (C, flips and T3 of one MW(n) or the sum; 22 instances) and the non-common-suffix nesting Db / Dbr (one MW(n)'s counters; NDb2_4 … NDbr3_8, L-RED 63), all in experiments/si/box91, box93, box94 and box95/fix1 inst with sha1 files; DATA, not DEAD (asymptotic statements, finitely many instances; L43): re-arm multiplicity m 8 / 32 with C 17 / 65 on MW8_2 / MW32_2 (refutes a constant multiplicity only below 32), the RA path count P 54 / 2583 (= F_(d+2) − 1 at d = 8, 16) with C 3 on FW8_2 / FW16_2 (m and P: L-SI 47 box 90, claude/l-si 2d0344d3 and 4ded1e8d, box90/out/mw90.out maxm and fw90.out maxP, both engines), and per-gate flips 9 / 17 / 33 at lamch 0 on MWR4_2, MWR8_2, MWR16_2 (L-RED 63, claude/l-red 406ef2fd; refutes c·(lamch + 1) only for c ≤ 32); DATA, clause by clause (two engines: own = L-RED R221 own.py on IDEAL-CYC, g3 = L-NEW's Γ3 N5′-xi from S3; rows identical; set S11: box 91's 11 instances; tools experiments/si/box91-box94, run by check91-94.sh): GATE-RACE and TRIGGER: grfail, gr2fail, grwhy, trfail 0 (unit: Odd vertex with two successors for grfail and gr2fail, flip for grwhy and trfail; whole run; S11; own to the cap 3000, g3 to the first fallback or the cap 20000); GATE-LOW-NULL: decfail 0 (unit (gate, state): the decider is at least as relevant as e_o; (a)'s order equivalence is not counted by the lane), glnfail and lowflip 0 (unit: flip with LAM ∧ PRIV at t − 1 and t; S11), (b′) no separate lane DATA, with up to 599 changes below e_o that never flip a gate; NP-SHAPE and E-FACE-PAYS: npside, npsub (unit (gate, state)), npboth, npkind (unit flip), relfail (relocks > ch_(p_e)), unlfail (unlocks > 1 + ch_(p_e); the bounds unlocks ≤ 1 + relocks and unlocks ≤ ch_(p_b) are not counted by the lane), dfail (a proxy for E-FACE-PAYS (b)) 0, and k1both = k1c2 (unit gate for relfail, unlfail, k1both, k1c2; 18 instances: S11, k1fail_202, Ku_8, Ku_16, Kprev_8, MWR4_2, MWR8_2, MWR16_2), and the exact form of E-FACE-PAYS (b), L-RED 63's dexact (D's play followed vertex by vertex), 0, with dpass (steps at which D's play passes e_o) 0 (unit (gate, step); 29 instances; own engine only, cap 3000; claude/l-red fa4e50fe R229-box93 §2); PROVISO: dpass 0 (unit (gate, state); 19 instances, box 91's 11 and box 93's 8, 307,737 pairs per engine; both engines, rows identical; experiments/si/box96 d96.py), and the control with Odd made non-optimal (own engine; e-face at o, β-face at every other gate) fires on 14 of the 19; SAME-SUFFIX: copy rows S(R_j) = S(R_(j−1)) as sets on every level of box 94's 20 simultaneous-clock instances (all but NSQ2_4, NSQ3_4, whose levels run one after another and whose rows differ) (REFEREE replay, own engine; L-SI's set re-measure copy95.py agrees on both engines; the lane's lev94 compares sizes), and 0 flips at the copied gates on NDV and NDB (unit level); PARALLEL: par1-3 0 (unit: change of H with an expelled letter, at route tuples; x's position after u′ not counted); PAIR-EXPEL and EXPEL-COUNT: pefail, ecfail, pelam 0, with lexfail and dhifail 0 (E-MON3 on H) (unit change of H, tuple (b, J, y) or same-pair couple; S11; 28, 496, 10, 121, 103, 74 couples); A*-EQUIV: cfail (c_y > a_y) 0 (unit (v, I, z); S11); controls fire (CTRL=gr 8 on MW8_2, CTRL=low glnfail 26 and CTRL=swap relfail 4 on C6G8_n54, CTRL=uz pefail on every couple); growth, as numbers on the named instances only (both engines; box91/out/own91.out and g391.out C and maxflip, box93/out/mwr93_own.out and mwr93_g3.out mx_flips and mx_ch_D): C 17 / 65 and the largest per-gate flip count 34 / 130 on MW8_2 / MW32_2, and per-gate flips 9 / 17 / 33 = 2·ch_D + 1 (ch_D 4 / 8 / 16) with lamch 0 on MWR4_2, MWR8_2, MWR16_2, where E-FACE-PAYS (d) holds with equality; no separate DATA for STEP-BOUND and for A*-EQUIV's equivalence; TARGET.md §2 (M4) asks for a deterministic algorithm polynomial on every parity game and §4 says a bound on a restricted class, or one resting on an unproved conjecture or an empirical observation, is not M4: these lemmas bound nothing by a polynomial, so this is not M4 and not M3; G-N5-TIME stays OPEN; not a step-4 pass, not a TARGET.md claim (P-N5-GATE, docs/si/P-N5-GATE.md with its fixes entries 1-5, docs/si/P-N5-GATE-fixes.md; L-SI successors 48-50), CHECKER PASS (docs/checker/C142.md, checker a9233137)
+- Object (L-SI successors 48-50, D18 / D14 / D1, boxes 90-96; frozen, unchanged during review): packet P-N5-GATE (L-SI; not the L-NEW packet
+  P-N5-GATE of RESULTS R101), docs/si/P-N5-GATE.md, sha1 f3a584e68b5c998276ea717f42920bdeeca581ab, 230 lines, 25,604 bytes (l-si 4066f579,
+  2026-11-09T06:36:22Z, the file's only commit; identical at ecc5fe25, 9c0349b1, ef14451f, 676b6a1c and at the l-si head; not in trunk
+  f9520557 before the merge, G-MERGE). Both referees measured it (REFEREE «docs/si/P-N5-GATE.md sha1
+  f3a584e68b5c998276ea717f42920bdeeca581ab, 25,604 B, 230 lines» (l. 8-9); REFEREE-2 «Packet: claude/l-si 4066f579, docs/si/P-N5-GATE.md,
+  sha1 f3a584e68b5c998276ea717f42920bdeeca581ab, 25,604 B.» (l. 12)). Labels (l. 5-6): PROVED (L-SI, unrefereed), PROVED-CONDITIONAL on a
+  named packet, DATA, DEAD, READING; «Not a TARGET.md claim; not M3 or M4; not a gauntlet step; G-N5-TIME stays OPEN.». Scope (l. 8-13):
+  «None of them bounds T3; they are reductions of the open core (C, A*_all, …: L-NEW's N5-CORE-forms) to per-gate or per-continuation
+  quantities.». To sign (l. 15-26): §3.1 Lemma GATE-RACE (a), (b), Corollary TRIGGER; §3.2 Lemma GATE-LOW-NULL (a), (b); §3.3 Lemma NP-SHAPE
+  (a), (b); §3.4 Corollary E-FACE-PAYS (a)-(d), Lemma WAIT-QUIET; §3.5 Lemma SAME-SUFFIX, Lemma STEP-BOUND; §3.6 Lemma PARALLEL; §3.7 Lemma
+  PAIR-EXPEL, Corollary EXPEL-COUNT; §3.8 Corollary A*-EQUIV; §4-§8 overlaps, DEAD list, DATA, controls, TARGET diff, attack record not to
+  sign. The packet carries every proof (l. 4-5): «This packet carries every proof in full and is checked against this text only.».
+- Fixes: docs/si/P-N5-GATE-fixes.md, append-only, five entries (7b0a58ae: 332 lines, 34,305 bytes, sha1
+  7c389a35a420ba73e4d9e61ae8295a692186771c; its first 28,767 bytes are the file at 676b6a1c (284 lines, sha1 8009e018…), whose first 24,889
+  bytes are the file at ef14451f (246 lines, sha1 e79455ea…), whose first 12,272 bytes are the file at 9c0349b1 (116 lines, sha1 1fec4f8c…),
+  whose first 8,557 bytes are the file at ecc5fe25 (84 lines, sha1 00cf406d…); by prefix test). Entry 1 (L-SI successor 50, ecc5fe25,
+  2026-11-09T08:40:46Z; l. 3-84; L-RED 63's packet-level read R229-box94 Addendum A, G1-G6): «No PROVED statement changes; G1 narrows an
+  open case to Γ3, G2 adds the tie rule that SAME-SUFFIX's Even half uses.» (l. 6); G1 named the K10 case and closed it on IDEAL-CYC by
+  RESULTS R123 B-ONLY; G2 added [HOW]'s tie rule for SAME-SUFFIX's Even half; G3-G6 premise lists, names, a stale record, a DATA line; Line
+  L-1. Entry 2 (9c0349b1, 2026-11-09T10:05:10Z; l. 86-116; Lead ruling 09:24Z (a)): the PROVISO «D's play avoids e_o» on IDEAL-CYC, cited
+  from L-RED 63 and «cited, and derived independently» (l. 91); Line L-2. Entry 3 (ef14451f, 2026-11-12T01:50:52Z; l. 118-246; answering
+  REFEREE 31 a401ce0e and REFEREE-2 37 c035b35f, governing list REFEREE-2 Add. 1 8983b3d8): «Verdicts (both): every statement SIGN; Γ3 rows
+  CONDITIONAL on R125, which has LANDED» (l. 122); F3-1 «B-ONLY on Γ3 IS a P-N5-CHAIN fact (now RESULTS R125); entries 1-2 corrected» (l.
+  127) and RETRACTS entry 1's G1 sentence and entry 2's Γ3 hypothesis; F3-2 (Core) in its W-1-repaired reading; F3-3 premise glosses; F3-4
+  PAIR-EXPEL / EXPEL-COUNT need no P-N5-SPLIT premise; F3-5 A*-EQUIV ((i) on both runs, (ii), (iii) on Γ3 only); F3-6 copy rows as sets;
+  F3-7 Line L-3, «Absent from L-3 (asserted by mkL3.py): «§2 (a)», «P-N5-CHAIN's C-EQUIV», «lie on both of two plays», «not a premise here»,
+  «not among P-N5-CHAIN», «while its play avoids», «over the run then», «CTRL=a0».» (l. 239-240). Entry 4 (676b6a1c, 2026-11-12T04:09:12Z;
+  l. 248-284; Lead 02:57Z-04:09Z): F4-1 LT-1, «so SPLIT-COUNT and C-EQUIV are cited as «RESULTS R127 (P-N5-SPLIT)», and A*-EQUIV (ii), (iii)
+  stay labelled CONDITIONAL with R127 as the premise; CHECKER confirms R127 = P-N5-SPLIT at this entry's landing.» (l. 256-259); F4-2 GT-10
+  = L43, «three asymptotic rows leave the DEAD list and become DATA» (l. 265) and «The construction rows (WC, K6 LAG TOWER, K7 probe,
+  nesting multipliers, Db / Dbr) stay DEAD: each records that a named construction fails to produce growth, with measured numbers; they
+  claim no asymptotic bound (REFEREE 31 §J; the Lead, 03:00Z).» (l. 276-277); F4-3 L-4 = L-3 + LT-1 + GL-1..GL-3 + «fixes entries 1-4» (l.
+  281-284). Entry 5 (7b0a58ae, 2026-11-12T18:03:39Z; l. 286-332; «Entry 5 (fix round 5; L-SI successor 52; Lead 2026-11-12 17:47Z; CHECKER
+  C142)»; byte copy of C142 fix5/chk_C142_269effb3.md, sha1 8b005c61…): F5-1 (E-1) «the RA-MULT and RA-path DATA rows get their numbers and
+  their source commits» (l. 293); F5-2 (E-2) «the growth clause as numbers on named instances; A*_all leaves it» (l. 301); F5-3 (E-3) «the
+  part markers of GATE-LOW-NULL and E-FACE-PAYS enter the line (seven insertions, no word changed)» (l. 310); F5-4 the Lead's tenth pair,
+  «The Lead: L-5's source note must say «with its fixes entries 1-5», not «1-4».» (l. 323), «docs/si/P-N5-GATE.md with its fixes entries
+  1-4,» → «docs/si/P-N5-GATE.md with its fixes entries 1-5,»; F5-5 L-5 (l. 328). No entry changes a statement's content: entries 3-4 change
+  premise citations, scope sentences, labels of the DEAD rows and DATA wording, each named by a referee; entry 5 inserts the packet's part
+  markers into GATE-LOW-NULL and E-FACE-PAYS (no word changed) and gives two DATA clauses numbers and sources, each named by CHECKER C142.
+- The RESULTS line is L-5, 459fd88d2d1959647f6aeb065bf8ac58cce684f9 (docs/si/P-N5-GATE-line-L5.txt, l-si 7b0a58ae, 2026-11-12T18:03:39Z, the
+  file's only commit; 12,923 bytes, one line, blob c4ef22e8c48a2186923de9b35f7c81d0d4c58d5f). The title is L-5 verbatim, with nothing
+  inserted and nothing stripped (its date parenthesis «(2026-11-09)», its scope tail and its source note are the line's own). L-5's
+  parentheses balance (238 «(» / 238 «)»); it has no pipe character. It is written by experiments/si/box95/fix5/mkL5.py from L-4 with
+  CHECKER C142 §4's nine pairs (R-E1, R-E2 and R-E3's seven insertions), parsed from the byte copy fix5/chk_C142_269effb3.md (sha1
+  8b005c61…, equal to claude/checker 269effb3:docs/checker/C142.md), each old string asserted once, which give CHECKER's
+  7ebcf7355be9838473f05a7defe913940b6fd723 (asserted), and then the Lead's tenth pair (ruling 17:58Z) «docs/si/P-N5-GATE.md with its fixes
+  entries 1-4,» → «docs/si/P-N5-GATE.md with its fixes entries 1-5,» (fixes entry 5 F5-4, F5-5, l. 322-332). L-4 is
+  6bfde78ef050b47f43527875256c65a205869e77 (docs/si/P-N5-GATE-line-L4.txt, l-si 676b6a1c, 2026-11-12T04:09:12Z, 12,562 bytes, blob
+  47a09c227d61a5a37ae1a2a79c09c0704b534617), written by experiments/si/box95/fix4/mkL4.py from L-3
+  (b60495b2c607e8e6c1e145e40478717fa6ed15f4, ef14451f, 12,353 bytes; fix3/mkL3.py from L-2 c0f2007d84afab1e00ef41e24ba8f5f064468cc5,
+  9c0349b1, 10,295 bytes; fix2/mkL2.py from L-1 a44647db487dcd5193d11ff83f80006b3533dac4, ecc5fe25, 9,541 bytes; fix1/mkL1.py from the
+  frozen packet), with LT-1 (two strings), GL-1..GL-3 parsed from the byte copy of REFEREE §J (fix4/ref_R-P-N5-GATE_fbc4d865.md, sha1
+  9aaf92a6…, checked by fix4.sha1) and «fixes entries 1-3» → «1-4»; «mkL4.py asserts each Old once, that «RA-MULT», «K1-FLIP(c)» and «a
+  polynomial bound on the RA path count» are absent», no pipe character, and balanced parentheses (fixes l. 283-284, entry 4 F4-3). Rebuilt
+  byte-equal: L-5 by the drafter's own parse (r128b/tools/mkL5b.py: the nine pairs from C142.md at 269effb3, each old string once, giving
+  7ebcf735; then F5-4's pair, once), by the lane's mkL5.py from a git archive of 7b0a58ae (cmp equal; with --nine 7ebcf735) and by
+  check_fix5.sh in the box 95 block (rc 0); L-4 by the drafter with the lane's whole chain mkL1.py … mkL4.py from a git archive of 676b6a1c
+  (RESULTS at f9520557; rc 0 each; L-1, L-2, L-3, L-4 cmp-equal to the committed files) and by check_fix4.sh. REFEREE §L rebuilt L-5 from
+  its own parse of C142 §4: «So L-5 = L-4 + exactly CHECKER's nine pairs + the tenth pair; nothing else changed.» (l. 427); «`cmp` with the
+  lane's L-5: **EQUAL**» (l. 426-427). REFEREE-2 Add. 5 rebuilt it with its own code and had predicted it before the lane's commit: «The
+  lane's L-5 equals the prediction byte for byte (cmp).» (l. 600); «So THE TENTH PAIR IS THE ONLY DIFFERENCE FROM 7ebcf735.» (l. 606); «Diff
+  L-4 → L-5, word level: 23 regions, each read.» (l. 609); «There is no other change.» (l. 610). On L-4: REFEREE §K rebuilt it with its own
+  strings: «parsed from MY §J in this file, not from the lane's byte copy» (l. 402); «`cmp` with the lane's L-4: **EQUAL**» (l. 403).
+  REFEREE-2 Add. 3 read the six changed regions: «Diff L-3 → L-4 (word level): exactly six regions, all named by entry 4.» (l. 540); «There
+  is no other change.» (l. 548).
+- Claims signed (REFEREE successor 31: §1-§2 731db590, §3-§8 and §0 a401ce0e, §I 41228433, §J fbc4d865, §K 49d34123; successor 34: §L
+  16e8dcb0; REFEREE-2 successor 37: boxes 1-3 a28bc5e1, §3.5 276545dc, box 4 c035b35f, Add. 1 8983b3d8, Add. 2 6269fec5, Add. 3 93413fc6,
+  Add. 4 3282fc6c; successor 38: Add. 5 0df0fdd8). REFEREE's table («## 0. Verdicts», l. 290, R-P-N5-GATE.md) reads «**SIGN**» on GATE-RACE
+  (a), (b) / TRIGGER (l. 293), «**SIGN** (premises as R-4..R-7; (Core) for non-core vertices)» on GATE-LOW-NULL (l. 294), K10 empty
+  «**SIGN** on IDEAL-CYC (R123 B-ONLY); on Γ3 also TRUE by P-N5-CHAIN B-ONLY3 (GT-1, §2.2)» (l. 295), «**SIGN**» on NP-SHAPE (l. 296),
+  «**SIGN** (WAIT-QUIET read «over a run in which D's play avoids e_o», moot below)» on E-FACE-PAYS / WAIT-QUIET (l. 297), PROVISO
+  «**SIGN**; on Γ3 also TRUE by P-N5-CHAIN B-ONLY3 (GT-1, §2.4)» (l. 298), «**SIGN**» on SAME-SUFFIX / STEP-BOUND (l. 299) and PARALLEL (l.
+  300), «**SIGN**» on PAIR-EXPEL / EXPEL-COUNT with «the proof needs no SPLIT statement, GT-2; 3M re-derived, GT-5» (l. 301), «**SIGN**
+  (re-derived, GT-4)» on A*-EQUIV (i) (l. 302), «**SIGN, Γ3 ONLY** (R-3)» on A*-EQUIV (ii), (iii) (l. 303), the DEAD list «reproduced as
+  stated (own engine, §3.3) except K6's CNT and FW's P (not re-counted; their C / flips / T rows reproduced)» (l. 304); then «No GAP;
+  nothing REFUSED.» (l. 305). REFEREE-2's table («2.11 Verdicts (Opus 5.5, D1)», R2-P-N5-GATE.md l. 393) reads «SIGN» on each of its nine
+  statement rows (l. 396-404; A*-EQUIV (i)-(iii) «SIGN, CONDITIONAL on P-N5-SPLIT (SPLIT-COUNT, C-EQUIV) and R125; Γ3 only», «My row
+  «A*-EQUIV (i)-(iii) … Γ3 only» is corrected: (i) holds on both runs, (ii) and (iii) on Γ3 only.») and «SIGN (dead) as far as re-run
+  (2.10)» on the DEAD list (l. 405); then «No statement is REFUSED. No signed proof keeps an open gap.» (l. 407). Addendum 1 (8983b3d8):
+  «Verdicts: equal on every row. Both referees SIGN every statement, none REFUSED, no GAP.» (l. 423); «One refinement I ADOPT. REFEREE signs
+  A*-EQUIV (i) on BOTH runs.» (l. 441). Re-signed on L-3: REFEREE §I «Verdict: fixes entry 3 CORRECT. **Line L-3 MATCHES except LT-1** (one
+  required string).» (l. 366); REFEREE-2 Add. 2 «Verdict: L-3 (ef14451f, sha1 b60495b2) MATCHES.» (l. 527). Re-signed on L-4: REFEREE §K and
+  REFEREE-2 Add. 3; on L-5, the line of record: REFEREE §L and REFEREE-2 Add. 5 (quoted under Signatures), each re-signing GATE-LOW-NULL
+  (a), (b), (b′) and E-FACE-PAYS (a)-(d) with the part markers (REFEREE §L «I re-sign them with the markers.» (l. 453-454); REFEREE-2 Add. 5
+  «I RE-SIGN GATE-LOW-NULL (a), (b), (b′) and E-FACE-PAYS (a)-(d) in the marked form» (l. 681)). The CONDITIONAL statements, with their
+  condition as the line states it: every Γ3 statement on RESULTS R125 (landed); A*-EQUIV (ii), (iii) «PROVED-CONDITIONAL on RESULTS R127
+  (P-N5-SPLIT)'s SPLIT-COUNT and C-EQUIV», on Γ3 only, R127 landed (G-LT1). No HYPOTHESIS statement. The joint gap map: EMPTY (REFEREE l.
+  305; REFEREE-2 l. 407). The defects found in review are text and citation defects (REFEREE GT-1..GT-10, D-1..D-7; REFEREE-2 G-1..G-7,
+  R-1..R-10), each closed by fixes entries 3-4 and checked in bytes by both referees; CHECKER C142's line items E-1..E-3 (the GL-3 DATA
+  rows' numbers and sources, the growth clause, the part markers) are closed by fixes entry 5 and checked in bytes by both referees (§L,
+  Add. 5); nothing is REFUSED.
+- Setting: ONE run of Howard strategy improvement with Vöge-Jurdziński values per game, for every genome G of RESULTS R104: IDEAL-CYC(G) of
+  RESULTS R118 (a) on Γ(G), states 0, …, T_CYC; and HOW3(G) on Γ3(G) of RESULTS R117 from S3, states 0, …, T3, which by RESULTS R125's
+  REACH3-ALL is the mover part of N5′-xi from S3 until its first fallback. Every statement holds on both runs unless marked Γ3 only; on Γ3
+  every statement rests on RESULTS R125 (landed) and the four P-N5-CHAIN frozen-text items (G-4). Statements as signed (packet §3 with fixes
+  entries 1-5; entry 3's premise rows and scope sentences govern):
+  (a) Lemma GATE-RACE (a), (b), Corollary TRIGGER (§3.1 l. 67-74): «(a) If o flips at t from face p to face q, then Ω_t(p) ≠ Ω_(t−1)(p). (b)
+    #flips(o) ≤ min(ch_p + ch_q, 2·min(ch_p, ch_q) + 1).» TRIGGER: the change of the left face is a change of Λ (at most 2M + 2 over the
+    run), or inside one Λ-interval a change of E whose top enters, or neither (Π below every e-letter, or k). Both SIGN (REFEREE l. 293;
+    REFEREE-2 l. 396).
+  (b) Lemma GATE-LOW-NULL (a), (b), (b′) (§3.2 l. 76-92): «(a) At a step t with LAM_t, PRIV_t and e_o ∈ E_t(p_e): Ω_t(p_e) ▷ Ω_t(p_b) ⟺
+    π(E_t(p_e)) >lex π(E_t(p_b)), and the two π's differ.»; (b) a flip between two LAM ∧ PRIV ∧ UP steps changes π(E(p_e)) or π(E(p_b));
+    (b′) with Λ fixed, π(E(p_e)) rises at a relock and π(E(p_b)) at an unlock. The K10 case (LAM ∧ PRIV with e_o not above Λ) does not occur
+    on IDEAL-CYC (RESULTS R123 B-ONLY) nor on Γ3 (RESULTS R125's B-ONLY3, with the pads; referee-originated, REFEREE GT-1 = REFEREE-2 G-5).
+    Both SIGN (REFEREE l. 294; REFEREE-2 l. 397, «both runs; (Core) at the faces only (G-1, R-1); IDEAL-CYC (E-DOM) / (Core) from R104
+    (R-5)»).
+  (c) Lemma NP-SHAPE (a), (b) (§3.3 l. 94-103): «(a) If NP_t then σ̄_t(o) = p_e, P_t(p_b) = A_t · o · P_t(p_e) for a path A_t from p_b to o,
+    Λ_t(p_b) = Λ_t(p_e), and E_t(p_e) ⊆ E_t(p_b). (b) If o flips at t, not both NP_(t−1) and NP_t; NP_(t−1) implies a relock, NP_t an
+    unlock.» Both SIGN (REFEREE l. 296; REFEREE-2 l. 398).
+  (d) Corollary E-FACE-PAYS (a)-(d), Lemma WAIT-QUIET (§3.4 l. 105-121): «(a) relocks(o) ≤ ch_(p_e); unlocks(o) ≤ 1 + relocks(o) ≤ 1 +
+    ch_(p_e); likewise unlocks(o) ≤ ch_(p_b). No PRIV, LAM or UP hypothesis.»; (b) off e_o, p_e and D change value at the same steps; (c)
+    unlocks(o) ≤ 1 + ch_D ≤ 2M + 3 + (2M + 3)·M·C + gam(D); (d) flips(o) ≤ 2·lamch(o) + 2·min_f nl_f + 1; WAIT-QUIET: D changing at most K
+    times gives at most K + 1 unlocks and 2K + 1 flips. The proviso «D's play avoids e_o» holds at every state on both runs (Lemma PROVISO:
+    on IDEAL-CYC by RESULTS R123 B-ONLY, fixes entry 2, credit L-RED 63; on Γ3 by RESULTS R125's B-ONLY3, referee-originated, REFEREE GT-1 =
+    REFEREE-2 G-5), so (b), (c) and WAIT-QUIET hold with no proviso. Both SIGN (REFEREE l. 297, PROVISO l. 298; REFEREE-2 l. 399, l. 400).
+  (e) Lemma SAME-SUFFIX (with entry 1's G2 tie rule), Lemma STEP-BOUND (§3.5 l. 123-134): on a window with a common suffix the ⊴-order of
+    o's successors is constant, so σ̄(o) is constant if o is Odd and σ(o) from the second step if o is an Even mover; «STEP-BOUND. For every
+    vertex x, S(x) ⊆ {t : some vertex of P_(t−1)(x) changes successor at t}», so ch_x ≤ T. Both SIGN (REFEREE l. 299; REFEREE-2 l. 401).
+  (f) Lemma PARALLEL (i)-(iii) (§3.6 l. 136-144): at a change of H_s = E_s(b) ∩ U_y inside one Λ-interval of b, the top x lies on the new
+    play only, every expelled letter z on the old play only, z ≺ x, both strictly after b's split. Both SIGN (REFEREE l. 300; REFEREE-2 l.
+    402).
+  (g) Lemma PAIR-EXPEL, Corollary EXPEL-COUNT (§3.7 l. 146-165): two expulsions of z at b through one split pair (u′, b′), «Then E_s′(b′) ∩
+    U_z >lex E_s(b′) ∩ U_z.»; a_z(b, J) ≤ 1 + 3M·max Dhi_z, the 3M by the elementary count (a mover or a gate: M mover edges and 2M faces;
+    referee-originated, REFEREE-2 G-6 = REFEREE GT-5). Step 1 is the argument of P-N5-SPLIT §3 (a), written out in the packet from landed
+    facts, so no P-N5-SPLIT premise is used (REFEREE GT-2 = REFEREE-2 G-4; fixes entry 3 F3-4); the packet's CONDITIONAL label is dropped in
+    L-5 accordingly. Both SIGN (REFEREE l. 301; REFEREE-2 l. 403).
+  (h) Corollary A*-EQUIV (§3.8 l. 167-173): (i) C ≤ A*_all ≤ 1 + M·C on both runs, with no P-N5-SPLIT premise (proof referee-originated,
+    REFEREE-2 G-7 = REFEREE GT-4); (ii), Γ3 only, «C ≤ 3M·(1 + M·A*_route)»; (iii) T3 polynomial iff C iff A*_all iff A*_route, by RESULTS
+    R127's C-EQUIV. (ii), (iii) PROVED-CONDITIONAL on RESULTS R127 (P-N5-SPLIT)'s SPLIT-COUNT and C-EQUIV (landed). Both SIGN ((i) REFEREE
+    l. 302; (ii), (iii) REFEREE l. 303; REFEREE-2 l. 404).
+  (i) DEAD, constructions only (packet §5 l. 186-195 after GL-1, GL-2; frozen instances in experiments/si/box90, box91, box93, box94,
+    box95/fix1 inst): a waiting High WC (T3 = 4 at n = 4, 8, 16), the K6 LAG TOWER (CNT ≤ 4, 3, 2, 2 at h = 2, 3, 4, 5), the K7 probe (C = 2
+    on Ku_4, Ku_8, Ku_16, Kprev_8), nesting multipliers at H = 2, 3 (22 instances), the non-common-suffix nesting Db / Dbr (L-RED 63). DATA,
+    not DEAD (GL-3, L43): RA-MULT, the RA path count, K1-FLIP(c). REFEREE: reproduced except K6's CNT and FW's P (l. 304); REFEREE-2: «SIGN
+    (dead) as far as re-run» (l. 405), K6 not re-run.
+- Premise (8 quotes and named facts; checked by script at trunk f9520557, prem128a.py on L-4 and prem128b.py on L-5, the same results):
+  IDEAL-CYC: RESULTS R104 (l. 9864), its definitions of the genome and of Γ(G), with «e of even priority above every β with one edge to the
+  W-target or to the top even self-loop c_W»; RESULTS R117 (l. 13362), the definition of Γ3(G); RESULTS R118 (l. 13607) (a) IDEAL-CYC(G)
+  with its Howard step and tie rule (two quotes), (b) F1, F2, F3, F4′'s stated clause, F6, (c) STRICT, (e) per vertex, (k) the form of
+  N5′-xi's run on Γ3 up to its first fallback with [N5XI] (two quotes); VJ00 §4.2 / Friedmann arXiv 1106.0778 §3 for the value (Λ, Π, k) and
+  ⊴; [OPT] as in RESULTS R123; RESULTS R121 (l. 14320) Lemma E-MON (quoted); RESULTS R123 (l. 15076) Lemmas CN2, LOC-GATE, LOC-K2, B-ONLY
+  (quoted) and Corollary NO-TIE (quoted); (E-DOM) and (Core) read off R104 with LOC-K2, non-core vertices only. Γ3: RESULTS R125 (l. 15595):
+  F1, F3, F4′, F6, STRICT, CN2-3, LOC-GATE3, NO-TIE3, LOC-K2-3, B-ONLY3, E-MON3 (each a whole token in R125's title; 11 of 11); F2, CYC,
+  (E-DOM), (Core) from P-N5-CHAIN's frozen text (l-new 93531b03, sha1 6e613ba762b6ecf67247ef6d8674b4c960013039; P-N5-CHAIN.md l. 96, 97,
+  165, 166), (Core) in its W-1-repaired reading for non-core vertices (P-N5-CHAIN fixes entry 3, R-W; referee-originated, REFEREE-2 G-1 =
+  REFEREE GT-7) (G-4). A*-EQUIV (ii), (iii): RESULTS R127 (l. 15903) SPLIT-COUNT and C-EQUIV. Each of the 8 premise quotes occurs verbatim
+  in the entry it names (R104 1, R118 4, R121 1, R123 2; prem128a.py (1)); the 9th «…» of L-5, «D's play avoids e_o», is the packet's
+  proviso. Not used (L-5): any L-RED lane lemma («no L-RED lane lemma is a premise»); L-RED 63's PROVISO argument is credited and derived
+  independently (fixes entry 2). Both referees checked the premises by script (REFEREE «9 quotes; 8 are premise quotes and each occurs
+  verbatim» (l. 19); REFEREE-2 Add. 2 «Every name in the R125 list occurs in R125's line L-5 (my earlier script).» (l. 496)).
+- L41 and L43. The packet's proofs are L-SI successor 49's (packet l. 2; «This packet carries every proof in full»). Five referee-originated
+  steps are named in L-5 with their credit: (Core)'s W-1 reading (REFEREE-2 G-1, premise parenthesis), EXPEL-COUNT's 3M (REFEREE-2 G-6),
+  A*-EQUIV (i)'s proof (REFEREE-2 G-7), and the Γ3 K10 / PROVISO argument by B-ONLY3 (REFEREE GT-1 and REFEREE-2 G-5, twice in the scope
+  tail); each was found by one referee and signed by the other (REFEREE-2 Add. 1 table, GT-1 = G-5, GT-4 = G-7, GT-5 = G-6, GT-7 = G-1).
+  L43: GL-1..GL-3 move RA-MULT, the polynomial RA-path bound and K1-FLIP(c) (asymptotic, refuted on finitely many instances) from DEAD to
+  DATA, with numbers and, in L-5, source commits (fixes entry 5 F5-1, CHECKER C142 E-1): «re-arm multiplicity m 8 / 32 with C 17 / 65 on
+  MW8_2 / MW32_2 (refutes a constant multiplicity only below 32), the RA path count P 54 / 2583 (= F_(d+2) − 1 at d = 8, 16) with C 3 on
+  FW8_2 / FW16_2 (m and P: L-SI 47 box 90, claude/l-si 2d0344d3 and 4ded1e8d, box90/out/mw90.out maxm and fw90.out maxP, both engines)»,
+  per-gate flips 9 / 17 / 33 at lamch 0 on MWR4/8/16_2 (L-RED 63, claude/l-red 406ef2fd; box93 mwr93 outputs); L-5's growth clause gives
+  numbers on named instances only, and A*_all left the DATA (fixes entry 5 F5-2, CHECKER C142 E-2); the remaining DEAD rows are
+  constructions with numbers (Lead 03:00Z).
+- Not signed: packet §4 (overlaps: L-RED 63 CLASS-PAYS / GATE-FLIP-MIN and REL-G, L-NEW 68 GATE-CLASS), §5 DEAD list as statements
+  (reproduced as DATA), §6 DATA and controls, §7 TARGET reading, §8 attack record (L-RED 62-63, R228-box91, R229-box92, R229-box93); the
+  READING remarks; the referees' replays.
+- Referee strengthening (NOT part of this entry; referee checks): (i) REFEREE 31: own engine («no lane code; scratch/gate_replay.py,
+  scratch/gate_lev.py; logs scratch/gate_logs/»), «EVERY must-be-0 counter is 0 on every instance, on both engines, including k10 = 0 and
+  dpass = 0 on g3 (as GT-1 predicts from B-ONLY3).» (l. 196-197); «Controls fire on both: cJoin 588, cLow 14,013, cNP 1,469, cD 13,048
+  (totals, each engine); cU 16,929 (cyc) / 29,758 (g3) couples.» (l. 197-198). (ii) REFEREE-2 37: own engines («Lane code is not imported:
+  my replay is R2-P-N5-GATE/r2gate.py, on REFEREE-2's own engines.»), «Every must-0 counter is 0 on every row, and dpass = 0 and rec_k10 = 0
+  on both engines:» (l. 345); «pinned: the lane's frozen instances with N ≤ 170, 41 genomes (box 91, 93, 94, 95 fix1 inst/, copied from
+  9c0349b1), × 2 engines.» (l. 346); «These are small (T ≤ 7, C = 1) and test little beyond (a)-type statements. I say so rather than count
+  them as strong evidence.» (l. 351); «NOT RUN: the 16 pinned genomes with N > 170» (l. 356); Add. 4 on IDEAL-CYC, no size cap: «MW32_2: T
+  199, C = 65 = 2n + 1 (n = 32), A*_all 66, max per-gate flips 130 = 4n + 2 with lamch 0.» (l. 581); successor 38's Add. 5: «OWN RECOUNT
+  (new). C142 E-1 noted that neither referee had recounted m or P.» (l. 624), on its own engines MW8_2 / MW32_2 maxm 8 / 32 and FW8_2 /
+  FW16_2 maxP 54 / 2583 on IDEAL-CYC, «NOT RUN on Γ3: MW32_2, FW16_2 (size).» (l. 627). (iii) L-RED 62-63 (not referees): the attack record
+  (packet §8), every PROVED statement SURVIVES; L-RED 63's exact dexact for E-FACE-PAYS (b) on 29 instances (claude/l-red fa4e50fe), cited
+  in L-5.
+- Honest limits: (i) No running-time bound: every statement is a reduction of one run's counts to per-gate or per-continuation counts of the
+  same run; none bounds T3, T_CYC, C or A*_all by a polynomial; A*-EQUIV (iii) is an equivalence whose sides are not proved polynomial. (ii)
+  One run per game: IDEAL-CYC(G) and HOW3(G) on Γ3(G) up to N5′-xi's first fallback; nothing for N5 (SPEC S4a), for post-fallback
+  iterations, outside the genome family, or on general parity games. (iii) On Γ3 everything rests on RESULTS R125, and four premise items
+  are P-N5-CHAIN's frozen text, not RESULTS text (G-4); A*-EQUIV (ii), (iii) hold on Γ3 only and rest on RESULTS R127. (iv) DATA are runs of
+  two engines (L-RED R221 own.py on IDEAL-CYC, cap 3000; L-NEW's Γ3 N5′-xi, cap 20000) and the referees' engines on short runs (T ≤ 199);
+  they test that no lemma counter fires, not a bound; large zero counts are DATA, not evidence. (v) The DATA give numbers on named instances
+  only (n = 4-32; fixes entry 5, CHECKER C142 E-1, E-2), and no growth rate in n is claimed; the DATA rows of GL-3 refute their asymptotic
+  statements only on the named instances (L43). (vi) The DEAD rows kill constructions, not lemmas; K6's CNT was not re-counted by a referee;
+  FW's P and MW's m were, by REFEREE-2 Add. 5 on its own engines (on Γ3 not for MW32_2, FW16_2). (vii) Names: «P-N5-GATE» is also R101's
+  packet name (G-6); this entry's packet is docs/si/P-N5-GATE.md. «TRIGGER» is also R107's; this entry's is «RESULTS R128 Corollary
+  TRIGGER». (viii) Literature: VJ00 §4.2 / Friedmann arXiv 1106.0778 §3 for [VJ] as in R118 / R123; no novelty is claimed.
+- Data (DATA, not proof): experiments/si/box90-box96 at l-si 7b0a58ae (the same as at 676b6a1c except box95/check95.sh and box95/fix5; box
+  91-94 tools mult91.py, gate92.py, astar92.py, np93.py, lev94.py; box 95 fix3/copy95.py; box 96 d96.py; frozen instances with SHA1SUMS;
+  outputs out/*.out for both engines; check91-96.sh), called from experiments/si/check.sh l. 1279-1293 at 7b0a58ae (the same 15 lines at the
+  l-si head 3417f6c1; sha1 3695caa43cffe0e41c5f85ad34b1f2dbe30d2594; l. 1279-1290 at 676b6a1c, sha1 bfee3e33…; 7b0a58ae adds the fix5 call
+  in box95/check95.sh and the L-5 pin), run by scripts/verify.sh once merged. Re-run by the drafter from a full git archive of 7b0a58ae with
+  the object store visible: 2026-11-12T21:50:01Z-2026-11-12T21:50:20Z, rc 0, «BOX91 OK» … «BOX94 OK», «P-N5-GATE fix1 checks: PASS» …
+  «P-N5-GATE fix5 checks: PASS», «si (P-N5-GATE L-5 pinned): PASS», «BOX96 checks: PASS», no NOT RUN line; with one byte appended to L-5 the
+  box 95 block printed «BOX95 FAIL fix5», rc 1 (negative control; restored, all re-run rc 0, 2026-11-12T21:50:29Z-2026-11-12T21:50:48Z); on
+  676b6a1c (14:03:07Z-14:03:25Z, rc 0) the negative controls «BOX95 FAIL fix4» (one byte appended to L-4) and «BOX91 FAIL own rows» (one
+  byte added to a pinned own91.out row) gave rc 1. Frozen totals (by script, data128a.py, 48 checks on 676b6a1c, whose box 90-94 and 96
+  trees 7b0a58ae keeps): every lane must-0 counter of the DATA clause (the same in L-4 and L-5) 0 on its set and both engines, rows
+  identical (L-RED 63's dexact cited, not re-checked); pecouples 28, 496, 10, 121, 103, 74; max lowch 599; PROVISO 307,737 (gate, state)
+  pairs per engine, control on 14 of 19; copy rows set-equal on 20 of 22; controls gr2fail 8, glnfail 26, relfail 4, pefail on every couple;
+  C 17 / 65 on MW8_2 / MW32_2, 3 on FW8_2 / FW16_2; flips 9 / 17 / 33 at lamch 0 on MWR4/8/16_2; box 90 maxm 8 / 32 and maxP 54 / 2583; for
+  L-5 (data128b.py, 48 checks on 7b0a58ae, both engines, by column name): maxm, maxP and C as above with FW depth 8 / 16 (F_10 − 1 = 54,
+  F_18 − 1 = 2583), maxflip 34 / 130 on MW8_2 / MW32_2, mx_flips 9 / 17 / 33 = 2·mx_ch_D + 1, mx_ch_D = mx_ch_pe 4 / 8 / 16, mx_ch_pb 9 / 17
+  / 33 and mx_lam_pe = mx_lam_pb = 0 on MWR4/8/16_2. Independent re-measurement (cited in L-5 or the packet): L-RED 63 dexact / dpass
+  (claude/l-red fa4e50fe), R228-box91, R229-box92/93/203.
+- Signatures: REFEREE docs/referee/R-P-N5-GATE.md, successor 31 (731db590 2026-11-11T22:51:49Z, a401ce0e 2026-11-11T23:29:45Z, 41228433
+  2026-11-12T02:50:26Z, fbc4d865 2026-11-12T03:28:29Z, 49d34123 2026-11-12T05:09:52Z): §0 verdict table l. 290-307; §K «**Line L-4 MATCHES**
+  (L-3 + exactly LT-1, GL-1..GL-3 and the entry count)»; successor 34 (16e8dcb0 2026-11-12T20:49:58Z): §L «Verdict: fixes entry 5 CORRECT.
+  **Line L-5 MATCHES** (L-4 + exactly C142 §4's nine pairs + the tenth pair; sha1 459fd88d…, 12,923 B).» (l. 457). REFEREE-2
+  docs/referee-2/R2-P-N5-GATE.md, successor 37 (a28bc5e1 2026-11-12T00:04:33Z, 276545dc, c035b35f 2026-11-12T00:50:26Z, 8983b3d8
+  2026-11-12T01:14:17Z, 6269fec5 2026-11-12T02:50:37Z, 93413fc6 2026-11-12T05:10:00Z, 3282fc6c 2026-11-12T05:40:10Z): verdict table l.
+  393-405; Add. 3 «L-4 (676b6a1c, sha1 6bfde78e) MATCHES.»; «Open condition, unchanged: P-N5-SPLIT must land as R127 before this entry.» (l.
+  571), met at f9520557 (G-LT1 of the first-fill record); successor 38 (0df0fdd8 2026-11-12T19:07:28Z): Add. 5 «Verdict: L-5 (7b0a58ae, sha1
+  459fd88d) MATCHES.» (l. 681), and «A «signed by both referees» MATCH is unconditional only after REFEREE's own L-5 test is checked on
+  origin/claude/referee.» (l. 688): REFEREE §L is on origin/claude/referee (16e8dcb0, its head at the fetch of 21:45:13Z). Lane
+  (claude/l-si): L-SI successor 49, 4066f579 (packet FROZEN); successor 50, ecc5fe25, 9c0349b1, ef14451f, 676b6a1c (fixes entries 1-4,
+  L-1..L-4); successor 52, 7b0a58ae (fixes entry 5, L-5). Adversary (not a signature): L-RED 62-63 (R228-box91, R229-box92, R229-box93), the
+  attack record.
+- INDEPENDENCE: each referee wrote its first verdict without reading the other's (REFEREE «Not read before my own verdict: docs/referee-2/,
+  L-RED 62-64's records (R228-box91, R229-box92/93/94/203, R230).» (l. 3); REFEREE-2 «Independence: I have not opened
+  docs/referee/R-P-N5-GATE.md (REFEREE 31) or notes/REFEREE.md.» (l. 5) and «Before this verdict I did not open docs/referee/R-P-N5-GATE.md
+  (REFEREE 31), notes/REFEREE.md, or L-RED's R228 / R229 reports and tools.» (l. 415-416)). REFEREE-2 read REFEREE's report only after its
+  verdict was on origin (Add. 1, «written after my verdict c035b35f was on origin» (l. 422)); REFEREE read the adversary records after §0
+  («Adversary records, read AFTER §0 (context only, not signatures)» (l. 309)). On L-4 each tested the bytes alone: REFEREE §K with strings
+  from its own §J, «not from the lane's byte copy» (above); REFEREE-2 Add. 3 «I read REFEREE 31's §I / §J only as quoted in entry 4. I have
+  not opened claude/referee fbc4d865 for this test.» (l. 573). On L-5 likewise: REFEREE §L «Second, independent byte test; claude/referee-2
+  0df0fdd8 NOT read before this section was committed.» (l. 415); REFEREE-2 Add. 5 «I have not read docs/referee/ for this test» (l. 590)
+  and «the lane's mkL5.py and mkfix5.py are not imported and not run» (l. 601). Each referee re-derived every proof step and replayed the
+  DATA on its own engine.
+- TARGET.md diff: TARGET.md §2 (M4) asks for one deterministic algorithm, polynomial on EVERY parity game, that outputs (W_E, W_O); this
+  entry is a set of lemmas about one run of Howard / VJ strategy improvement on two restricted games per genome, with reductions and one
+  equivalence, and no bound (TARGET.md §4: «Polynomial only on a restricted class (bounded d, treewidth, Strahler/register number, ...).»;
+  packet §7 l. 218-223; REFEREE «## 6. TARGET.md diff: CLEAN»; REFEREE-2 Add. 2 «correct paraphrase of §2 / §4»). It is not an algorithm
+  claim on every game, so TARGET.md §5's gauntlet does not apply, and it is not a step-4 pass. L-5 ends its scope words «these lemmas bound
+  nothing by a polynomial, so this is not M4 and not M3; G-N5-TIME stays OPEN; not a step-4 pass, not a TARGET.md claim». GAPS G-N5-TIME:
+  open.
+
 **Erratum E-1** (not a result; 2026-11-01 05:28Z by date -u; Lead; corpus counts in RESULTS R97-R100):
 - What is wrong: the DATA-of-record sentences that say «1,132 games» for the L-SI box 50b / box 53 corpus (sbcg.lst 719 lines + alt_all.lst
   413 lines) count RUNS, not games. Measured by CHECKER (C111 N-7, claude/checker d53e1d4f) at trunk 68d50c8f: experiments/si/anc58/
