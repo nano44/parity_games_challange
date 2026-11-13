@@ -318,3 +318,232 @@ DONE: Addendum 1 (exact count through R124; the reproduction erratum; handover).
 FINDINGS: the exact form (2^k + 1 iterations, one fallback at 2^k − 1) equals every measured count; add it as a separate sentence
 under R124 + R117; the erratum is a script defect only.
 NEEDS: Lead: none.
+## Addendum 2 (REFEREE-2 successor 42; 2026-11-13T17:01:47Z by date -u): FIXES-FILE CHECK of P-N5-EXP-fixes.md entries 1-5, and the L41 cross-signature of LEMMA′, CAUSAL and STABLE in step form
+Asked by the Lead (brief of 15:55Z, item 1): (a) entries 2-5 against this lane's items G-1, M-1, W-1, W-2, D-1 and Addendum 1;
+(b) the L41 cross-check: sign or refuse LEMMA′ as stated in entry 4, independently; (c) the frozen guard.
+- Object: claude/l-red-b 24f4d436a0fea1f62ae736f20f78ff9e84333a90 (on origin at 16:42:16Z, `git ls-remote`),
+  docs/red-b/P-N5-EXP-fixes.md, sha1 9dc9179fb08063cd59de25c5d3e16b0f8c693fbd, 829 lines, 78,975 B; entries 2-5 are its lines
+  126-829. Read in full, entry 1 included. Line L-1 (docs/red-b/P-N5-EXP-line-L1.txt, sha1
+  59c5309377eda882ba436ffe7eb03fbff598c7c8, 5,585 B): read, §A2.7.
+- Independence: docs/referee/R-P-N5-EXP.md and docs/referee/R-GK-precheck.md were NOT opened before this addendum was committed.
+  What I know of the first referee's report is what entries 2-5 quote from it (22 tagged quotes; 5 of the pre-check). Whether those
+  quotes are verbatim (4.0 says «word for word») is checked in Addendum 3, after this commit (§A2.6). The derivation of §A2.3 and
+  the first version of my checker (my lane's PREFIX form, STABLE in step form, a causality statement, the frozen wording as a
+  control) were done, and their results sent to the Lead at 16:27Z, before 24f4d436 was on origin.
+
+### A2.0 Verdict
+| entry | this lane's items | verdict |
+| --- | --- | --- |
+| 1 (extra DATA, pointer correction, §10 erratum) | Addendum 1 A1.2 | **closed** for the runner A1.2 named: run_b6b.sh at 24f4d436 takes a relative root and exits 1 when a stage fails (tests T1-T3, §A2.5). No statement, proof or hypothesis changes. New item F-4 (the NEW runner) |
+| 2 (unconditional / conditional / measured) | W-2, §4 | **closed**: (b) and (c) carry «PROVED-CONDITIONAL on RESULTS R117's Theorem REACH3 AS LANDED [refereed-only]» with R117's standing premises quoted from its title line; the dead-end sentences are to be read through R117's Theorem REACH3, and the NO is for N5 from S3 only. Note F-5 |
+| 3 (Corollary EXP-N5′) | Addendum 1 A1.1 | **closed**: the exact count is a SEPARATE labelled corollary under R124 EXACT-L (premise R117 (f), SPEC's FIX 1-4 tie-breaks); the frozen lower bound through R117 alone is kept |
+| 4 (LEMMA′, CAUSAL, STABLE in step form) | G-1 (and W-1 in (S2)) | G-1 **closed**. L41: **I SIGN** 4.1 (S1)-(S4), 4.2, 4.3, 4.4 and the proofs 4.2, 4.3, 4.5, 4.6 as printed, with the reading F-1; the concordance claim «PREFIX FORM = LEMMA′ at τ_0 = T» is **correct** (§A2.4). Wording F-1, F-2 |
+| 5 (wording and records) | M-1, W-1, D-1 | **closed** (5.1, 5.2, 5.3); wording F-3. 5.4-5.9 answer other referees' items: read; where they quote this lane's report the quotes are verbatim; nothing in them contradicts it |
+| frozen guard | — | **holds**: the packet's sha1 is c0449b17193f19619f33b366096762dfde27d542 at 350d84eb and at 24f4d436; the fixes file at 06d399c2 (entry 1; sha1 4c692ab2…, 12,551 B) is a byte prefix of the file at 24f4d436 (`cmp -n 12551`) |
+
+**P-N5-EXP: SIGNED with fixes entries 1-5.** The signature is §0's, with one correction (§A2.1): the statement of the RESPONSE
+LEMMA that I sign is entry 4's 4.4 (LEMMA′), not the frozen l. 192-204; STABLE is signed in 4.2's step form. Every other row of §0
+stands as written. Items F-1 to F-5 are wording and tooling; none of them is a condition of the signature except the reading F-1.
+
+### A2.1 Self-correction: §0's row «RESPONSE LEMMA (§6): SIGN the statement»
+That row was wrong about the STATEMENT. As frozen, (H2) is quantified over the τ [Q FROZEN l. 194] «that the run reaches»; under
+the last state s_L, L = 2^k − 2, every unit is at rest with its input equal to its rest bit, so at t = 2^k − 1 (H1) holds for
+(j, a) = (1, 1) and for (j, 0), 2 ≤ j ≤ k − 1, no τ of the window is reached, (H2) is vacuous, and the conclusion (the run
+reaches the window's last state) is false. My lane's §2.4 wrote the PREFIX form, whose key clause («the step from s_(τ−1) leaves C_(j−1) = c») fails at
+those triples, but it did not notice that the frozen statement itself fails there and said [Q REF2 l. 44-45] «The stated lemma is
+the case τ_0 = the last step». The first referee found it (entry 4 quotes its E-1). My own control confirms it (§A2.5): the frozen
+wording fails at exactly k − 1 triples per k, all at t = 2^k − 1, and nowhere else (frozen_noncorner 0: never when s_t is
+reached). What this changes: the statement of record (now 4.4). What it does not change: any number, any step of §7 (the lemma is
+used at the windows of the recursion, t ≤ 2^k − 2 with s_t reached, where the frozen form and LEMMA′ say the same), any other
+verdict of §0, and G-1 (a gap of the PROOF, which 4.5 closes).
+
+### A2.2 Entries 2, 3, 5 against this lane's items
+- **W-2 and §4 → entry 2: closed.** (a) UNCONDITIONAL is my §4's first bullet. (b) quotes R117's own parenthesis of premises and
+  the entry's [1E-N3], [RULE], [VJ-LOC], [TERM] (7 quotes, all inside the entry «### R117» of trunk 5d7aab0f, §A2.6); REACH3's
+  only hypothesis on G is the acyclic Ξ-graph. (c) attaches the condition to the two dead-end sentences and restricts the NO:
+  [Q FIX l. 213] «G-N5-TIME is answered NO for N5 from S3». (d) MEASURED: the arithmetic re-done (4,097 iterations at k = 12 on
+  n = 1,390, n + m = 3,202, n² = 1,932,100; 2^k + 1 > n from k = 11, > n + m at k = 12; 2^23 − 1 = 8,388,607 > 2,875² first at
+  k = 23). (e) the correctness sentence is RESULTS R57 (b) Lemma OUT-G for every k (2 quotes found in the entry «### R57») and
+  DATA for k ≤ 12: right, and it is the answer to an item I did not raise.
+  **F-5 (label inside (a′); no change asked).** (a′) has two sentences of different standing. That IDEAL-ACYC-POLY is false follows
+  from Theorem EXP-IDEAL (b) alone (L(G_k) = 2^k − 2 against N + M = 27k − 48): unconditional. That QUIET-KEY-1P and SW-POLY of
+  P-N5-KEY1P are false needs that lane packet's Lemma IDEAL-1P to identify T_key and sw with the IDEAL model's quantities; the
+  entry says so ([Q FIX l. 187-188] «when T_key and sw are read in R104's IDEAL model, as that packet's Lemma IDEAL-1P reads
+  them»). P-N5-KEY1P is a lane packet whose second review is deferred (my pre-read, R2-key-preread Addendum 3 item B-7, found no
+  gap in that identification, and a pre-read is not a signature). A RESULTS line may carry the first sentence as unconditional
+  and not the second; line L-1 does exactly that.
+- **Addendum 1 A1.1 → entry 3: closed.** Corollary EXP-N5′: EXACTLY L(G_k) + 3 = 2^k + 1 iterations, one fallback, at iteration
+  2^k − 1; labelled PROVED-CONDITIONAL on R124's Corollary EXACT-L as landed, with R124's premise words quoted (R117 (f); SPEC's S1
+  tie-breaks through REACH3's [RULE]; «with another pointwise-optimal S4a choice the identity can fail»; 1E-N3; iterations counted
+  as in SPEC S4): the premises my A1.1 listed. F = L(G_k) + 1 follows from the two quoted clauses (L + 3 iterations; F + 2
+  iterations). G_k ∈ IDEAL-ACYC needs R104's self-loop clause, and the entry cites MEMBER c8 for it. The frozen Corollary EXP-N5
+  stays as the lower bound through R117 alone. R124's title line opened at trunk 38f4a6a0, l. 15371 (8 quotes found, §A2.6).
+- **M-1 → 5.1: closed.** br is now the rank of the TRIPLE (−depth, δ, β-id), the smaller β-id first, in §3's clause and in MEMBER
+  c6: the text I asked for, and what gk.py and my generator do. The count is right (2(k − 3) + 2(k − 4) = 4k − 14 for k ≥ 4, none
+  at k = 3). The lane's brtie.out (reverse tie order, same run, k = 3..14) agrees with my counter tiebreak.
+  **F-3 (wording).** The reason given, [Q FIX l. 670] «(table: every Ξ-target is a u, v, y, ȳ or X)», omits y′_j and ȳ′_j, the
+  Ξ-targets of e_j. The claim it supports, that no Ξ-edge ends at a wire, is true by the table.
+- **W-1 → 5.2 and 4.1 (S2): closed.** [Q FIX l. 340] ««Step τ» is the passage s_(τ−1) → s_τ = (s_(τ−1))⁺.»
+- **D-1 → 5.3: closed.** The placeholder's text is the summary of data/b6b/out/quote.out, pasted. Checked: that file's sha1 at
+  24f4d436 is b20118000a5456610e9303b0e140a4bc53501a6f and its first five and last lines are the pasted ones; the sha1s of R104P,
+  RESULTS, TARGET and GAPS equal `git show 5d7aab0f:PATH | sha1sum`; the fifth, CLAUDE.md 1e990915…, is the lane branch's own
+  CLAUDE.md (the same at 350d84eb and 24f4d436; trunk's is 30e54151…), as the packet's label «CLAUDE = CLAUDE.md» says, and the
+  quoted sentence is in both.
+- **Addendum 1 A1.2 → entry 1, 10.E: closed** for run_b6b.sh (it was already there when A1.2 was written; successor 41 had not
+  read the fixes file). Tested at 24f4d436 in a scratch copy: T1 relative root, stage gen: exit 0, files written; T2 stage n5
+  without archives: «failures 1», exit 1; T3 a python3 that exits 3: exit 1.
+  **F-4 (tooling; the same defect in the NEW runner).** experiments/red-b/run_b6fix.sh, added by 24f4d436 as the runner of 4.7,
+  5.1 and 5.4's DATA, has no failure count: with the same failing python3 it prints «run_b6fix exh done», exits 0 and leaves an
+  EMPTY prefix_exh.out (T4). run_b6b.sh got `trap 'fail=1' ERR` and `exit $fail` in entry 1; the new runner did not. No DATA is
+  affected: I re-ran `run_b6fix.sh OUT every` in the scratch copy (exit 0, about 2 minutes) and all eleven output files are
+  byte-equal to the pinned ones (prefix_run, prefix_all, prefix_off, prefix_drive, prefix_loc, prefix_stable, prefix_exh,
+  prefix_u0, brtie, width, prefix_ctrl), and the lane's check.sh tests content (four b6prefix lines and `sha1sum -c
+  SHA1SUMS_b6b_fixes2`), not an exit code. Ask: the two lines of run_b6b.sh in run_b6fix.sh; CHECKER should compare the files,
+  not trust the runner's exit code.
+- 5.4-5.9 (not this lane's items), what I could check cheaply: 5.4's widths equal my generator's for k = 3..14 (width_mine.out);
+  5.5's four genome sha1s and four raw sha1s equal `git show 24f4d436:… | sha1sum`, and the raw ones are the Lead's four values in
+  my r2exp.py; 5.6's mover order is my generator's row order; 5.8's line on this lane is what §3 says. 5.7, 5.9 and the other
+  lanes' numbers in 5.8: read, not checked.
+
+### A2.3 Entry 4, re-derived (the L41 cross-check)
+What I sign and how it was checked. Everything below was derived from the packet's table (§3) and R104's step; notation of 4.1.
+- **4.1.** (S1): C_0(s) = E_0(s) = s(v_0) needs u_0 at 0 (ε(u_0, 0) = 2 between ε(v_0, 1) = 1 and ε(v_0, 0) = 3; δ(u_0, 0) = 2
+  between 1 and 3); a wire at 0 and u_0 at 0 are value-worse and key-larger on their other option, so s⁺ keeps both. (S2): Φ is
+  total and the run stops at s iff s⁺ = s. (S3): in a step the value bits are read under s (A_s) and the key bits under s⁺ (keys
+  with s′ below): this is R104's definition, and it is the whole content of G-1. Correct.
+- **The unit as a transducer (my own derivation, before reading the entry).** For the movers of unit j in a step s → s⁺, with
+  e := E_(j−1)(s), γ := C_(j−1)(s⁺), σ := s⁺(E(j + 1)): EY_j(s) = s(ȳ_j) if s(y_j) ≠ s(ȳ_j), else [s(y_j) ≠ e]; EY′_j(s) = s(ȳ′_j)
+  if s(y′_j) ≠ s(ȳ′_j), else [1 − s(y′_j) ≠ EY_j(s)]; v_j at o moves iff EY_j(s) = 1 − o and o ≠ γ; u_j iff EY_j(s) = o and o ≠ γ;
+  e_j iff EY′_j(s) = o and o ≠ γ; then C_j(s⁺) = [s⁺(v_j) = γ] if the pair is split under s⁺, else 0; D_j(s⁺) = [σ = 1 or
+  C_j(s⁺) = 0], Z_j(s⁺) = [σ = 0 or C_j(s⁺) = 1]; y_j moves from back iff e = 1 and D_j(s⁺) = 1, from forward iff e = 0 and
+  D_j(s⁺) = 0; ȳ_j the same with e negated; y′_j from back iff EY_j(s) = 0 and Z_j(s⁺) = 1, from forward iff EY_j(s) = 1 and
+  Z_j(s⁺) = 0; ȳ′_j the same with EY_j negated (top unit: C_(k−1)(s⁺) in place of D). The unit reads the part below it through
+  e and γ only, and the part above through σ only; σ is fixed by the units above from (C_j(s⁺), E_j(s)), and E_j(s) = 1 if split
+  under s, else [EY_j(s) = s(v_j)].
+- **4.3 CAUSAL: correct.** It is the statement above: (L1) is the three rules for u_j, v_j, e_j; (L2) is «(C_j(s⁺), E_j(s)) is
+  a function of s⁺ on the pair, γ, s on the pair and EY_j(s)»; (L3) is the four observer rules with σ from CAUSAL for j + 1. The
+  order (pair and e, then the units above, then the observers) is the level order of R104's step, and it is well-founded because
+  no observer is a W-target. Downward induction on j, nothing to prove above k − 1. No gap.
+- **4.2 STABLE: correct.** At REST_i(b) with e = b and γ = b: u_i, v_i, e_i stand at b = γ (no move by the key half); EY_i(s) =
+  1 − b and Y_i = (b, 1 − b) with e = b makes both observers of Y_i value-disabled; EY_i(s) = 1 − b makes both observers of Y′_i
+  value-disabled. «Hence»: the pair is aligned, so C_i(s⁺) = 0 and E_i(s) = [1 − b = b] = 0. «Consequently»: these two bits are
+  the hypothesis for unit i + 1 at rest 0; induction upwards. Both uses (step t_2 + 1 inside 4.5; the stop in 4.6) are of this
+  form. The frozen one-state wording was false (under s_0 unit 1 is at rest 0 with input (0, 0) and v_1 moves in step 1).
+- **4.4 LEMMA′: correct, with the reading F-1.** I traced a response in the transducer with γ_τ := C_(j−1)((s_(τ−1))⁺) and
+  e_τ := E_(j−1)(s_(τ−1)): step t needs γ_t = c and e_t = a (from (H1)): only v_j moves (u_j, e_j value-disabled: EY_j = EY′_j =
+  c; no observer of Y_j value-enabled with e = a; none of Y′_j with EY_j = c). Steps t + 1, …, last need γ_τ = c and e_τ = c:
+  t + 1: F to back (case (i): B to forward); the quiet stretch (Y_j on (0, 0), EY_j = [0 ≠ e] = c, D_j = 0, Z_j = 1); t_1: B to
+  forward as σ becomes 1; t_1 + 1: u_j to c (EY_j = a from Y_j = (c, 1 − c)), then C_j = 0, Z_j = 0, F′ to back; the second
+  quiet stretch (D_j = 1, Z_j = 0, EY′_j = c); t_2: B′ to forward as σ becomes 0; t_2 + 1: e_j to c; case (i): t + 2: u_j to c
+  and F to back. So the moves of step τ are fixed by γ_τ and e_τ alone, which is exactly (H2′_T): C at τ = t..T and E at s_t, …,
+  s_(T−1). The guards «if the run reaches» make the hypothesis well-formed without weakening the lemma: (R2) at T − 1 makes every
+  guard of (H2′_T) true. The non-vacuity at a stop (Remark 1) is right: (H1) has C_(j−1)(s_(t−1)) = a and (H2′_T), T ≥ t, has
+  C_(j−1)((s_(t−1))⁺) = c ≠ a, so (s_(t−1))⁺ ≠ s_(t−1). Remark 2 is right (E_(j−1)(s_last) is read by step last + 1 only).
+  **F-1 (reading; inherited from the frozen l. 203).** (R3) says [Q FIX l. 384-385] «s_τ(E(j)) = a for τ < last» with no lower
+  end. Read: for t − 1 ≤ τ < last. Without the lower end it is false (before the first response of unit j ≥ 2 ends, E(j) is at
+  0, which is not a when a = 1). The proof uses and proves the window reading (4.5 (3): σ before t_1, resp. t_2). I sign with it.
+  **F-2 (wording).** 4.0 says the frozen statement l. 192-204 is REPLACED by 4.4, and 4.4 then refers to [Q FIX l. 384] «the
+  packet's list (i) / (ii)» and [Q FIX l. 384] «the lemma's F, B, F′, B′, t_1, t_2», which are frozen l. 195 and l. 197-202 (and P_j, l. 191).
+  So those lines stay as definitions; what is replaced is the frame (H2) and the conclusion's first and last sentences.
+- **4.5 the proof: correct, no gap left.** Outer induction downwards on j, inner on T. At step T: (1) u_j, v_j, e_j from
+  s_(T−1) and γ_T; (2) (C_j((s_(T−1))⁺), E_j(s_(T−1))), which is the inner hypothesis up to T for unit j + 1 — at the first step
+  of an inner window E_j(s_(T−1)) belongs to the inner (H1), whose other parts come from our (H1) (first window: REST_(j+1)(0),
+  (C_j, E_j)(s_(t−1)) = (0, 0)) or from (R3) of the first inner window (second window: REST_(j+1)(1), and (C_j, E_j)(s_(t_1)) =
+  (1, 1) because the pair is split with v_j at c = γ_(t_1)); (3) LEMMA′ for j + 1 at the same T gives σ; (4) the observers. The
+  inner hypotheses hold as 4.5 says: first window, the pair split with v_j at c = γ_τ (C_j = 1) and E_j = 1 under a split state,
+  u_j held back by EY_j = c, which needs e = c in the quiet stretch; second window, the pair aligned (C_j = 0) and E_j = [a = c]
+  = 0 because Y_j = (c, 1 − c) from s_(t_1) on. Step t_2 + 1 above j: STABLE in step form with (R3) of the second inner window.
+  (R2): the windows {t}, [t, t_1], [t_1 + 1, t_2], {t_2 + 1} cover [t, last] and each step has a listed mover. The table at the
+  end of 4.5 (which of the two input bits each frozen sentence reads) agrees with my trace row by row: the key input is c at
+  every step of the window; the value input is a at step t and c after it. This closes G-1: (3) at step T uses the inner
+  hypothesis up to T only, which rests on (1) at steps ≤ T and on states up to s_(T−1).
+- **4.6: correct.** j = 1, a = 0, t = 1: s⁺(v_0) = 1 for every state (v_0 at 0 is value- and key-enabled, at 1 it is not), so
+  γ_τ = 1 for every τ ≥ 1 and E_0(s_τ) = 1 for τ ≥ 1; (H1) under s_0 by the start column. (R1)-(R3) at T = last = 2^k − 2, then
+  STABLE with WIRE: s⁺ = s. L(G_k) = 2^k − 2; the stop is «stuck» (A_s(v_1) has two elements).
+Signature (L41: the statements 4.3 and 4.4 are referee-originated, REFEREE 36's; this is the independent second signature):
+**REFEREE-2 signs 4.1 (S1)-(S4), 4.2 STABLE, 4.3 CAUSAL, 4.4 LEMMA′ with their proofs (4.2, 4.3, 4.5) and 4.6, as printed in
+docs/red-b/P-N5-EXP-fixes.md at claude/l-red-b 24f4d436 (sha1 9dc9179f…), (R3)'s range read as t − 1 ≤ τ < last (F-1).**
+
+### A2.4 The concordance claim «PREFIX FORM = LEMMA′ at τ_0 = T»: correct
+Read on the sequence s_0, (s_0)⁺, … of (S2), my §2.4 hypothesis at the cut τ_0 is (H2′_T) at T = τ_0 without the guards, and
+its conclusion is (R1) ∧ (R2). LEMMA′ ⇒ PREFIX: an unguarded hypothesis implies the guarded one. PREFIX ⇒ LEMMA′ for T ≥ t: by
+induction on T the run reaches s_(T−1) ((R2) at T − 1), so every guard of (H2′_T) is true and the hypotheses coincide. What
+LEMMA′ has in addition is not new content: T = t − 1 is empty, and (R3) is the list read at T = last from the (H1) state (E(j)
+moves once, at step last; the movers of unit j end at REST_j(c); the units above have made two responses, 0 → 1 → 0). LEMMA′ is
+the better-formed text ((S2) says what «the step from s_(τ−1)» is at a stop; my «i.e. C_(j−1)(s_τ) = c» presupposed s_τ), so
+4.4 is the statement of record and §2.4 is the same lemma. Machine side: at every (H1) triple and every T ≥ t the two
+hypotheses have the same truth value and, where they hold, the two conclusions agree (conc_u1, conc_u2 = 0, §A2.5).
+
+### A2.5 DATA on my own code (docs/referee-2/R2-P-N5-EXP/r2lem.py → lem_main.out, lem_u1big.out, lem_drive.out, lem_ctrl.out; every counter «must 0» unless marked)
+r2exp.py lineage: my generator and my lane's model; Φ = s ↦ s⁺ is total; C_j, E_j are read off the model's own key and value
+comparison; the list is written from the frozen (i), (ii); every clause is evaluated as printed, the guards of (H2′_T) included.
+| counter | unit | set | value |
+| --- | --- | --- | --- |
+| lp_u1 | (triple, T): (H2′_T) true and (R1) or (R2) false | U1 = the run, k = 3..12: 163,840 triples (j, a, t), t ≤ 2^k; 8,109 with (H1) under a reached s_(t−1); 85,937 (triple, T) with a true hypothesis; 4,082 full windows (= Σ (2^(k−1) − 1)) | 0 |
+| r3_u1 | window: (R3) false at T = last (range as in F-1) | 4,082 | 0 |
+| pre_u1 | (triple, τ_0): my PREFIX form fails | 77,828 cuts with a true hypothesis | 0 |
+| conc_u1 | (triple, T ≥ t): PREFIX at τ_0 = T and LEMMA′ at T differ in hypothesis or in conclusion | every T of the 8,109 triples | 0 |
+| lp_u2, r3_u2, pre_u2, conc_u2 | the same | U2 = EVERY state with (H1) taken as s_(t−1), t = 1, k = 3..8: 121,368 states (41,368 exhaustive: all of k = 3, 4 and every unit with at most 2^14 lower parts; 80,000 sampled), 30,286 with (H1); inputs end: 6,440 full, 11,464 truncated (4,372 by C, 7,092 by E; longest 6 steps), 12,382 at once; 145,405 (triple, T) | 0 |
+| drive | step: both input bits as (H2′) asks and U_j moves otherwise than the list | U3 = driven inputs (the part below U_j disturbed by hand inside a window of the run; not a run of G_k), k = 3..10: 16,000 windows, 3,667 full, 12,333 proper (longest 823 steps), 88,953 steps | 0 |
+| causal | state: its triple (s on U_j, E_(j−1)(s), C_(j−1)(s⁺)) was seen with another s⁺ on U_j | every state of k = 3 and k = 4 (512; 65,536: CAUSAL as a function, 576 and 73,792 classes), 16,000 states each for k = 5..8; 228,381 repeated triples | 0 |
+| standing | state: s⁺ has a wire or u_0 off 0, or C_0(s) ≠ s(v_0), or E_0(s) ≠ s(v_0) | the same 130,048 states | 0 |
+| stab_u1, stab_u2 | (step, unit, b): STABLE's hypothesis true and a mover of the unit moves | 8,164 cases on U1, 510,405 on U2's trajectories | 0 |
+| stab_hence, stab_cons | the «hence» clause; the «consequently» clause (420,141 cases with the units above at rest 0) | the same | 0 |
+| lp_corner | triple where the frozen wording fails and (H2′_T) holds for some T ≥ t (Remark 1) | the 65 triples below | 0 |
+| frozen_noncorner | the frozen wording fails although s_t is reached | U1 and U2 | 0 |
+| tfail | k: the run does not stop at exactly 2^k − 2 | k = 3..12 | 0 |
+FIRING CONTROL (the Lead's): the RESPONSE LEMMA exactly as frozen fails at (j, a, t) = (1, 1, 2^k − 1) for every k = 3..12
+(frozen_at_111 = 10 of 10), and in all at 65 = Σ (k − 1) triples of U1: (1, 1, 2^k − 1) and (j, 0, 2^k − 1), 2 ≤ j ≤ k − 1; its
+hypothesis holds at 4,147 triples, so it holds with its conclusion at 4,082, the windows. On U2 it fails at 148 start states, all
+fixed points. Other controls (lem_ctrl.out, k = 3..5; each fires its targets): sched (the list shifted by one step: pre, lp,
+drive), noE (the hypotheses without their E half: pre_u2, lp_u2 — the E half is needed), noC (without their C half: pre, lp, and
+also conc and lp_corner — without the key clause the guards matter), late (the conclusion demanded one step beyond the cut:
+pre_u2, lp_u2, drive — the cut is tight), stab (STABLE without C_(i−1)(s⁺) = b), causalE, causalC (CAUSAL's triple without one
+input bit), unit (U_(j+1) with the inputs of unit j).
+Agreement with the lane's independent tool (its DATA, 4.7 (2), (8); not an input of mine): my exhaustive numbers at k = 3 and
+k = 4 are its numbers (7 / 839 (H1) triples whose key input is not c; 8 / 560 full and 3 / 667 proper windows; 30 / 2,428 steps;
+576 / 73,792 CAUSAL classes), and its control 5 fails at the same triples as mine.
+Runner tests (r2runner.sh → runner.out): T1-T5 and the «every» comparison of §A2.2.
+
+### A2.6 Quotes (r2qfix.py → qfix_pre.out, qfix_pre_ctrl.out)
+Entries 2-5 hold 75 tagged quotes (the lane's count too). Checked now, each against its source at the commit the entry names, by
+`git show`: 48 quotes — FROZEN 9, REF2 (this report at 33ff0e98) 18, R117 7, R124 8, R57 2 (each restricted to that entry of
+RESULTS at trunk 5d7aab0f), R104P 1, KEY1P 2 (claude/l-new 44775605), LNEW 1 (claude/l-new aa29064d): 48 found, 0 missing;
+control (one letter of each quote changed): 48 missing. DEFERRED to Addendum 3: the 22 quotes of REF1 and the 5 of PRE, whose
+sources are docs/referee/ files I had not opened. So «4.3 and 4.4 ADOPT REFEREE 36's two statements word for word» is not yet
+checked by me; what I signed is the text printed in entry 4.
+
+### A2.7 Line L-1 (read; a MATCHES check was not asked)
+Every clause that comes from this lane's review agrees with it: part (1) unconditional on R104's definitions, with LEMMA′,
+CAUSAL and STABLE in step form named; part (2) Corollary EXP-N5 PROVED-CONDITIONAL on R117's Theorem REACH3 as landed, the
+dead-end clause «through R117» and «NO for N5 from S3», and EXP-N5′ as a separate sentence under R124 EXACT-L; part (3) says the
+dead end rests on the proof and not on the DATA; the numbers (9k − 16, 18k − 32, 27k − 48, 135k − 230, 176k − 300, 311k − 530,
+11·2^(k−2) − 9, 16,368 windows, k − 1 triples, the first k beyond n^c) are right; this lane's row is what §3 says. Three notes
+for the Lead: (L-a) the gloss «per unit j a block pair u_j, v_j, an end-follower e_j, two wires wv_j, wu_j and two observer
+pairs Y_j, Y′_j» describes the middle units 2 ≤ j ≤ k − 2 only (unit 1 has no e_1, wu_1, Y′_1; unit k − 1 has no e, wire or
+Y′), and §6's UNIT j does not contain the wires, which the same line then counts separately («u_0 and the wires never»);
+(L-b) R117's premises are paraphrased (R117's title line also has «in its two forms», «Lemma R», «and (R1) ruling», «Lemma P1 on
+the dual game»): quote the parenthesis; (L-c) L41 asks for a scope tail naming the referee-originated statements (CAUSAL and
+LEMMA′, REFEREE 36) with both signatures quoted; the second one is the bold sentence of §A2.3.
+
+### A2.8 Reproduction (from the repository root)
+- `git show 24f4d436a0fea1f62ae736f20f78ff9e84333a90:docs/red-b/P-N5-EXP-fixes.md > FIX` (sha1 9dc9179f…); frozen guard:
+  `git show 24f4d436:docs/red-b/P-N5-EXP.md | sha1sum`; `git show 06d399c2:docs/red-b/P-N5-EXP-fixes.md > E1; cmp -n 12551 E1 FIX`.
+- `python3 -B docs/referee-2/R2-P-N5-EXP/r2lem.py 3 4 5 6 7 8` → lem_main.out (about 1 minute); `… r2lem.py --u1only 9 10 11 12` →
+  lem_u1big.out; `… r2lem.py --u3only 9 10` → lem_drive.out; `… r2lem.py --ctrl NAME 3 4 5` for sched, noE, noC, late, stab,
+  causalE, causalC, unit → lem_ctrl.out (the TOTAL and FIRED lines).
+- `python3 -B docs/referee-2/R2-P-N5-EXP/r2qfix.py FIX --from 126 --defer REF1,PRE FROZEN=350d84eb:docs/red-b/P-N5-EXP.md
+  REF2=33ff0e98:docs/referee-2/R2-P-N5-EXP.md R117=5d7aab0f:docs/RESULTS.md#R117 R124=5d7aab0f:docs/RESULTS.md#R124
+  R57=5d7aab0f:docs/RESULTS.md#R57 R104P=5d7aab0f:docs/red/P-N5-REALIZE.md KEY1P=44775605:docs/new/P-N5-KEY1P.md
+  LNEW=aa29064d:docs/new/P-N5-KEY1P-after-EXP-draft.md` → qfix_pre.out (with --ctrl → qfix_pre_ctrl.out).
+- `bash docs/referee-2/R2-P-N5-EXP/r2runner.sh WORKDIR every` (WORKDIR a new directory outside the tree) → runner.out.
+Not done: entry 1's DATA subsections 9.8-9.13 and the lane's N5 runs were not re-run (DATA, not to sign; CHECKER's re-run);
+the other lanes' numbers cited in 5.8 were not opened.
+
+DONE: fixes-file check of entries 1-5 (item by item), the L41 cross-check of entry 4 (re-derivation, own checker with a firing
+control), the concordance claim, the frozen guard.
+FINDINGS: every item of this lane is closed (G-1, M-1, W-1, W-2, D-1, A1.1, A1.2); I sign LEMMA′, CAUSAL and STABLE in step form
+as printed (reading F-1); «PREFIX FORM = LEMMA′ at τ_0 = T» is correct; the frozen wording fails only at the k − 1 stop triples,
+and my §0 was wrong to sign that wording (§A2.1); F-2, F-3 wording; F-4 the new runner run_b6fix.sh exits 0 on a failing stage
+(no DATA affected: eleven files byte-equal on re-run); F-5 a label inside (a′). P-N5-EXP: SIGNED with fixes entries 1-5.
+NEEDS: Lead: L41's scope tail in the line (L-c), and F-1's range if the line or a later entry restates (R3); L-RED-B: F-4.

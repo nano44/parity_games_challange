@@ -1,0 +1,6 @@
+k 9 N 65 T 510 | must0: all 0 | u3_windows 2000 u3_full 545 u3_proper 1455 maxproper_u3 436 u3_steps 17261
+k 10 N 74 T 1022 | must0: all 0 | u3_windows 2000 u3_full 528 u3_proper 1472 maxproper_u3 823 u3_steps 16096
+TOTAL ctrl -: tfail 0 pre_u1 0 pre_u2 0 lp_u1 0 lp_u2 0 r3_u1 0 r3_u2 0 conc_u1 0 conc_u2 0 lp_corner 0 stab_u1 0 stab_u2 0 stab_hence 0 stab_cons 0 causal 0 standing 0 drive 0 frozen_noncorner 0
+INFO frozen_fail 0 frozen_at_111 0 frozen_fail_u2 0 frozen_hyp_u1 0 triples_u1 0 h1_u1 0 u1_full 0 u1_trunc_C 0 u1_trunc_E 0 u1_none 0 cuts_u1 0 lp_hyp_u1 0 r3_hyp_u1 0 stab_hyp_u1 0 u2_states_exh 0 u2_states_rnd 0 h1_u2 0 u2_full 0 u2_trunc_C 0 u2_trunc_E 0 u2_none 0 maxproper_u2 0 cuts_u2 0 lp_hyp_u2 0 r3_hyp_u2 0 stab_hyp_u2 0 stab_cons_hyp 0 u3_windows 4000 u3_full 1073 u3_proper 2927 maxproper_u3 823 u3_steps 33357 u3_late 0 causal_exh 0 causal_states 0 causal_classes 0 causal_hits 0
+FIRED none
+exit 0

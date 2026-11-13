@@ -1,0 +1,16 @@
+TOTAL ctrl sched: tfail 0 pre_u1 164 pre_u2 9332 lp_u1 164 lp_u2 9332 r3_u1 0 r3_u2 0 conc_u1 0 conc_u2 0 lp_corner 0 stab_u1 0 stab_u2 0 stab_hence 0 stab_cons 0 causal 0 standing 0 drive 17868 frozen_noncorner 0
+FIRED pre_u1 pre_u2 lp_u1 lp_u2 drive
+TOTAL ctrl noE: tfail 0 pre_u1 0 pre_u2 4356 lp_u1 0 lp_u2 4356 r3_u1 0 r3_u2 1265 conc_u1 0 conc_u2 0 lp_corner 0 stab_u1 0 stab_u2 0 stab_hence 0 stab_cons 0 causal 0 standing 0 drive 0 frozen_noncorner 0
+FIRED pre_u2 lp_u2 r3_u2
+TOTAL ctrl noC: tfail 0 pre_u1 19 pre_u2 5468 lp_u1 98 lp_u2 5753 r3_u1 9 r3_u2 924 conc_u1 79 conc_u2 285 lp_corner 9 stab_u1 0 stab_u2 0 stab_hence 0 stab_cons 0 causal 0 standing 0 drive 0 frozen_noncorner 0
+FIRED pre_u1 pre_u2 lp_u1 lp_u2 r3_u1 r3_u2 conc_u1 conc_u2 lp_corner
+TOTAL ctrl late: tfail 0 pre_u1 0 pre_u2 2134 lp_u1 0 lp_u2 2134 r3_u1 0 r3_u2 0 conc_u1 0 conc_u2 0 lp_corner 0 stab_u1 0 stab_u2 0 stab_hence 0 stab_cons 0 causal 0 standing 0 drive 11592 frozen_noncorner 0
+FIRED pre_u2 lp_u2 drive
+TOTAL ctrl stab: tfail 0 pre_u1 0 pre_u2 0 lp_u1 0 lp_u2 0 r3_u1 0 r3_u2 0 conc_u1 0 conc_u2 0 lp_corner 0 stab_u1 25 stab_u2 9140 stab_hence 0 stab_cons 0 causal 0 standing 0 drive 0 frozen_noncorner 0
+FIRED stab_u1 stab_u2
+TOTAL ctrl causalE: tfail 0 pre_u1 0 pre_u2 0 lp_u1 0 lp_u2 0 r3_u1 0 r3_u2 0 conc_u1 0 conc_u2 0 lp_corner 0 stab_u1 0 stab_u2 0 stab_hence 0 stab_cons 0 causal 105285 standing 0 drive 0 frozen_noncorner 0
+FIRED causal
+TOTAL ctrl causalC: tfail 0 pre_u1 0 pre_u2 0 lp_u1 0 lp_u2 0 r3_u1 0 r3_u2 0 conc_u1 0 conc_u2 0 lp_corner 0 stab_u1 0 stab_u2 0 stab_hence 0 stab_cons 0 causal 40602 standing 0 drive 0 frozen_noncorner 0
+FIRED causal
+TOTAL ctrl unit: tfail 0 pre_u1 0 pre_u2 0 lp_u1 0 lp_u2 0 r3_u1 0 r3_u2 0 conc_u1 0 conc_u2 0 lp_corner 0 stab_u1 0 stab_u2 0 stab_hence 0 stab_cons 0 causal 103145 standing 0 drive 0 frozen_noncorner 0
+FIRED causal

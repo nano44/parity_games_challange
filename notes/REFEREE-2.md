@@ -1,6 +1,40 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 1 (successor 42, session_01V5yGRZt3cYejaeDH2kG1gc; 2026-11-13T17:01:47Z by date -u)
+- Start: trap check clean (local checkout 15 behind, fast-forwarded to da20a307; skew 0 s). Handover check 568b43cd on origin at
+  16:26Z (push exit 0, VERIFY PASS, verify about 27 minutes; Oink is NOT built in this container, verify prints NOT RUN for it).
+- Item 1 of the Lead's 15:55Z brief DONE in this commit: docs/referee-2/R2-P-N5-EXP.md **Addendum 2** = fixes-file check of
+  P-N5-EXP-fixes.md entries 1-5 (claude/l-red-b 24f4d436, on origin 16:42:16Z, sha1 9dc9179f…) and the L41 cross-signature:
+  every item of this lane closed (G-1, M-1, W-1, W-2, D-1, A1.1, A1.2); I SIGN 4.1-4.6 (LEMMA′, CAUSAL, STABLE in step form) as
+  printed, (R3)'s range read as t − 1 ≤ τ < last (F-1); the concordance «PREFIX FORM = LEMMA′ at τ_0 = T» is correct; frozen
+  guard holds. Self-correction: §0's «SIGN the statement» of the frozen RESPONSE LEMMA was wrong (false at the k − 1 stop
+  triples, t = 2^k − 1; vacuous (H2)); no number changes. New items: F-2, F-3 wording; F-4 the NEW runner run_b6fix.sh exits 0 on
+  a failing stage (no DATA affected: 11 files byte-equal on my re-run); F-5 a label inside entry 2 (a′). Line L-1 read: notes
+  L-a (gloss of «unit j»), L-b (R117's premises paraphrased), L-c (L41 scope tail missing).
+- Tools of this commit (R2-P-N5-EXP/): r2lem.py (FROZEN / PREFIX / LEMMA′ / STABLE / CAUSAL on U1 the run, U2 every (H1) state,
+  U3 driven inputs; 18 must-0 counters, 8 controls; whole DATA in about 2 minutes), r2qfix.py (quote check of a fixes file with
+  per-label commits, --defer for sources not to be opened), r2runner.sh (tests of the lane's two runners in a scratch copy).
+- NEXT, in order. (2) AGREEMENT NOTE = Addendum 3: only now open docs/referee/R-P-N5-EXP.md (claude/referee; stage 1 is c881709b,
+  the branch head was 7ca9c2b4 at 16:40Z) and R-GK-precheck.md (06ac891d); first the deferred quote check: `r2qfix.py FIX --from 126
+  REF1=c881709b:docs/referee/R-P-N5-EXP.md PRE=06ac891d:docs/referee/R-GK-precheck.md` plus the labels of §A2.8 (22 + 5 quotes;
+  «word for word» for CAUSAL and LEMMA′); then agreement and difference by item number (theirs: E-1..E-7, P-1, O-1 and notes;
+  mine: G-1, M-1, W-1, W-2, D-1, O-1, F-1..F-5). (3) Box 108 review: DRAFTED, not committed: scratchpad R2-box108.md,
+  r2box108.py, out/box108_main.out, out/box108_ctrl.out, copies in .git/r2-backup/s42/. All 32 rows of its §5 recomputed by
+  hand, no difference; STEP and MOVE checked; three wording items S-1..S-3. To commit as docs/referee-2/R2-box108.md with
+  R2-P-N5-EXP/r2box108.py + the two outputs AFTER the push of this commit has exited (never commit while a push runs).
+- Things only I know: (a) the lane's and my numbers agree exactly at k = 3, 4 exhaustive (839 / 560 / 667 / 2,428; 73,792
+  classes) although the tools share nothing: a strong cross-check, said in §A2.5. (b) On real trajectories proper prefixes are
+  short (≤ 6 steps in U2): long truncated inputs exist only in the driven universe U3 (up to 823 steps). (c) The label CLAUDE in
+  the packet's quote.out is the lane branch's CLAUDE.md (sha1 1e990915…), not trunk's (30e54151…): no discrepancy.
+  (d) P-N5-KEY1P's second review stays DEFERRED (Lead 15:55Z); F-5 is where it touches this packet.
+- Sources opened by successor 42: docs/red-b/P-N5-EXP.md at l-red-b 350d84eb (§1-§8 in full); docs/red-b/P-N5-EXP-fixes.md and
+  P-N5-EXP-line-L1.txt at 24f4d436 (in full); experiments/red-b/run_b6b.sh, run_b6fix.sh, check.sh (the red-b block) at 24f4d436;
+  docs/RESULTS.md at trunk 38f4a6a0: R117 title line (l. 13362), R124 title line (l. 15371); docs/red/P-N5-REALIZE.md l. 66 (Fact
+  X); docs/si/box108-gk-proof.md at l-si 8c062914 (in full); docs/DECISIONS.md l. 7, 8, 333, 538, 541, 567 and DECISIONS-INDEX at
+  trunk 38f4a6a0. Dead ends: none (the kill packet survives; the frozen wording of its RESPONSE LEMMA is the one false sentence
+  found, at the stop, repaired by entry 4).
+
 ## HANDOVER to successor 42 (written by successor 41, session_01V5yGRZX8GpZ4VDaJbszYWA; 2026-11-13T14:15:24Z by date -u; context past the park line)
 State at this commit (the commit that carries this handover; its SHA is in my message to the Lead and in `git log -1`):
 - DONE and on origin before it: 8bcf4357 (handover check), 2dd4e5e3 (R2-key-preread Addendum 3: box 217 pre-read, ID: 1P(G) = R104's

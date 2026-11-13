@@ -1,0 +1,8 @@
+T1 run_b6b.sh relative-root gen 4: exit 0 genomes 2 | run_b6b gen KMAX 4 done failures 0
+T2 run_b6b.sh n5 3 without archives: exit 1 | run_b6b n5 KMAX 3 done failures 1
+T3 run_b6b.sh gen 3 with a failing python3: exit 1 | run_b6b gen KMAX 3 done failures 1
+T4 run_b6fix.sh exh with a failing python3: exit 0 output-bytes 0 | run_b6fix exh done
+T5 run_b6fix.sh exh relative outdir: exit 0 cmp-with-pinned 0 | run_b6fix exh done
+EVERY run_b6fix.sh every: exit 0 byte-equal 11 of 11 | run_b6fix every done
+RESULT pattern-as-recorded 1
+exit 0
