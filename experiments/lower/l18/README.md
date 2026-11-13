@@ -20,3 +20,11 @@
   of A2_solved's wiring; also consistent with the C8 and H7 decodes). lnsb.sh with env XSL=8,10,11,12,14,15 XORDL=8,11,10,12,15,14.
   Results under L18b are tagged «L18b» in logs and docs, never mixed with L18 rows.
 - inframe.py: checks a genome lies in a pgad5/6 frame on a base (run/inframe.txt: every decode vs A2_solved under L18b).
+- mono.py (successor 16): horizon monotonicity check (run/mono.txt): builds one question's CNF at Ra < Rb with variables named by
+  allocation site and row, and checks Ra's clauses (minus the unused row-(Ra+1) gate definitions, checked extendable) occur in Rb.
+  INCLUDED on two instances ⇒ «UNSAT at R 64 implies UNSAT at R 510» for R-ladder screens (Lead ruling 02:22Z). First attempts without
+  renaming (literal inclusion) fail: state variables of all rows are allocated before the transitions, so numbers shift with R.
+- KNOWN LIMIT (successor 16): all six L18b clients free (XS 8,10,11,12,14,15, XORD 8,11,10,12,15,14) → RecursionError. Two recursions
+  need an acyclic candidate graph: enc32c.ro (static reach) and the chain-membership encoding q / inopt (enc32c l. 250, 257). An
+  iterative ro (regression: CNF sha1 identical, ec7e1941 for XS 8,10,11 and a7e0e854 for XS 8,10,11,12, R 16, base L18b_N13a) only moves
+  the crash to q / inopt, whose recursion IS the encoding (it assumes no cycle). Not a small fix: change reverted, limit recorded.

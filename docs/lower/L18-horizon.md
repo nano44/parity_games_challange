@@ -72,7 +72,13 @@ counter (unit, set, scope). Model: R104's IDEAL model at degree ≤ 2 (sim6; fen
   Ladder (clients 8, 10, 11, P 14): R 32 SAT 380 s (decode follows rows 0..14, f6 first mismatch row 34); R 64 UNSAT 1,366 s (solver
   only); R 130 no answer at the 1,500 s cap. So in this neighbourhood f6's constraint first fails in rows 32..63. Screen for attempt 3
   (UNSAT at R 64 implies UNSAT at R 510): clients {8,10,11,12} and {8,10,11,15} at R 64, cap 3,000 s each, two light jobs in parallel.
-  Tool limit found: all six clients free → RecursionError in enc32c.ro (static-reach recursion has no cycle guard): no answer, not fixed.
+  Tool limit found: all six clients free → RecursionError (enc32c needs an acyclic candidate graph; README «KNOWN LIMIT»): no answer.
+- Screens (Lead ruling 02:22Z, Lead reading): an R < 510 question is a «screen, this neighbourhood only, not cited»; it is not an
+  attempt for the stop rule; at most 4 per P; a SAT screen is not progress. Monotonicity checked by script (l18/mono.py,
+  run/mono.txt): the R = Ra formula, minus the definitions of unused row-(Ra+1) gates (checked extendable), is contained in the R = Rb
+  formula after renaming variables by allocation site and row; INCLUDED on 2 instances (R 16 vs 18, clients 8,10,11; R 15 vs 22,
+  clients 8,10,11,12). So UNSAT at R 64 implies UNSAT at R 510 for the same clients. Record at P 14: the R 15 diagnostics and the
+  R 32 / 64 / 130 ladder above were run before the ruling (11 questions); after it, 2 screens: {8,10,11,12} and {8,10,11,15} at R 64.
 
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All statements are about the IDEAL

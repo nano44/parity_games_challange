@@ -1,0 +1,7 @@
+# l18/mono.py (successor 16, Lead ruling 02:22Z condition 1): horizon monotonicity of n.sh / pgad6 questions, checked by script.
+# Statement checked: every clause of the R=Ra formula, except the definitional clauses of the unused row-(Ra+1) gates (O[T+1], read
+# only with fixpoint), occurs in the R=Rb formula after renaming variables by their structural names; the row-(Ra+1) gate clauses
+# extend any assignment. Hence an Rb model gives an Ra model: UNSAT at Ra implies UNSAT at Rb (same base, P, clients, XORD, FIXC).
+# Scope: two instances below (the encoder's per-row code is uniform in t; R 64 vs R 510 itself is too large to build twice in RAM).
+MONO base L18b_N13a_dec.txt P 14 XS 8,10,11 XORD 8,11,10 | R 16: vars 158293 clauses 1659417 | R 18: vars 174744 clauses 1849249 | Ra vars without an Rb name 0 | row-17 vars 191, their clauses 620, not max-var 0, not extendable 0 | core clauses missing from Rb after renaming 0 | INCLUDED
+MONO base L18b_N13a_dec.txt P 14 XS 8,10,11,12 XORD 8,11,10,12 | R 15: vars 414929 clauses 2477976 | R 22: vars 546679 clauses 3385710 | Ra vars without an Rb name 0 | row-16 vars 191, their clauses 620, not max-var 0, not extendable 0 | core clauses missing from Rb after renaming 0 | INCLUDED
