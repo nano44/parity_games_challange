@@ -1,6 +1,65 @@
 # L-FORMAL notebook (Lean formalization lane; branch claude/l-formal; files: lean/, this notebook)
 
 ## Resume point
+- HANDOVER of SUCCESSOR 5 (session_01V5yGRY9bh61TXMsQVPeAh9, Opus 5.5 high), parked at ~405k context, 2026-11-13 ~12:15Z.
+  A SUCCESSOR STARTS HERE.
+  STATE: on origin (or in the push of this commit): Fuel landed in the lane (8687c6fc + fa54df74; CI run 43404819676
+  lean-lemmas SUCCESS; rows #75-#78; Lead 09:58Z «Lean-checked (lane)»); NoFault Statement d6624d10 (ACCEPTED, PROOF DEFERRED,
+  no theorem); THIS commit adds two NON-BUILT scratch files: lean/lemmas/scratch/KeyRule.lean.txt (3,406 lines, 0 sorry,
+  compiles against fa54df74: copy to a .lean in lean/lemmas, `lake env lean`) and scratch/SpecKeyRuleStatement.accepted.lean.txt
+  (the Lead-accepted KeyRule Statement text, G + C + R1-R3; 11:28Z).  NO KeyRule theorem is committed.
+  WORK ITEM (Lead 11:28Z, verbatim excerpts): «KEYRULE diff verdict: ACCEPTED in the GENERAL form with the S4a form as a named
+  corollary, with three requirements.» «C … Its proof must discharge `(arenaH g σ τ Iσ).dual.WF` and `StratWF 0 τ` there as
+  stated lemmas, not inside a tactic block» «R1 … Name, in the header, the Spec.lean definition through which N5's next σ is
+  READ … R2 (uniqueness): state as a remark or a lemma … R3 (scope notes to keep)» «After the proof: clean build, axioms
+  within the three, no sorry, INDEX and MANIFEST rows, push, SHA and CI run to me.»  OPEN QUESTION to the Lead (11:29Z):
+  may NoFault's four theorems land with KeyRule (G contains NoFault's proof)? No answer seen before parking.
+  WHAT KeyRule.lean.txt PROVES (main names; every one compiles, no sorry):
+    graph toolkit: dfs_closed, dfs_marked_iff, dfs_tree, dfs_hit_of_path (DFS = reachability through ok vertices),
+      pred_mem / pred_nodup / pred_sorted (gp = predecessors, nodup, ascending), Walk + walk_append/rotate/reverse/max/
+      src_once/tgt_once/sources/targets/source/stays, rank_inj, assign_props, Cons + restrict_props, evenFold_props,
+      oddFold_props, phaseM_iff (M = reach v avoiding u, read in hs), setFold, seen_iff'.
+    VJ00 §6 Prop. 6.1 core: PhInv (Cons, support in R, every x ∈ R reaches v, cycle clause) with phase_even, phase_odd,
+      phases_fold; PathInv (path bits along kept edges + removed-edge CERTIFICATES) with phase_even_path, phase_odd_path,
+      phases_fold2; init_inv (hs0/hp0); nP_inv (both invariants after all phases of a real node); SubL / sub_phases (lists
+      only shrink → stay sorted).
+    longest mode: longest_ok (no busy hit under acyclicity), longest_val (memo = 1 + max over kept successors, choice =
+      FIRST max), longestAll_val, longestAll_fault, acyc_even, walk_valD.
+    BFS mode: bfs_closed (closure), lexLe lemmas (refl/total/antisymm/trans/snoc), pathF/keyB tree keys (tree_path,
+      tree_depth_lt, keyB_rec, keyB_len, keyB_stable), BO/RO/RI invariants, bfs_inner_order, bfs_outer_order, bfs_round,
+      bfs_order (first discovery = lex-least root-first key), tree_avoid.
+    per node: nR/nHs0/nHp0/nUs/nP/nLn/nC/nTau/nD/nB names, procNode_eq (procNode = assign of them; rfl), nUs_props,
+      EngOK (the engine facts assumed: bounds, nodup, sorted, pred iff, rank inj, par ∈ {0,1}, rew facts), nHs0_sorted,
+      lemmaR (R24 (a) Lemma R: a tied edge survived every phase; generic in a distance D with property DP),
+      node_even and node_odd (per cycle node: lengths fault-free, every x ∈ R has a distance, every x ≠ v has a choice t on
+      a kept edge with D t + 1 = D x chosen by least index (even) / least BFS key (odd), DP for lemmaR, D v = 0).
+    playTo_eq (playTo = playAux, so rootKey = reverse of the play).
+  REMAINING PLAN for G (estimate 600-1,000 lines):
+    (1) node record: from procNode_eq + assign_props + node_even/odd + PathInv.edge: after node v, for x ∈ R:
+        val[x] = some ⟨v, path[x], D x⟩, tau[x] = nTau[x] (owner 1), fault stays false (needs nTau[v] some at an Odd v:
+        nC hit is some, so the walk exists — the choice DFS IS nC).
+    (2) outer fold over E.order (state ES): invariant GI = sizes, fault = false, alive successor-closed in gs, dead ⇒ valued
+        (+ tau some at Odd), G3 «a processed alive w has no closed gs-walk through alive vertices of rank ≤ rank w» (feeds
+        init_inv's hcyc via order-by-rew: rew x < rew v ⇒ x processed earlier; needs `order` sorted by rew + perm of range n,
+        rew distinct), and a per-node RECORD for every processed node c (∃ Rl path dist tau with node facts, frozen: dead
+        vertices are never re-assigned).  Use dfs_hit_of_path for G3 at the node itself.
+    (3) F5: at the end every vertex is dead (alive set successor-closed + every vertex has a gs-successor ⇒ a closed walk;
+        walk_max ⇒ its max-rank vertex was processed while alive ⇒ G3 contradiction; pigeonhole on f^[i] x, i ≤ n).
+    (4) keyRuleAt at Odd x, c := val[x].c ≠ x: x ∈ R_c (record); tied w ⇒ (valOf w).c = c ⇒ w ∈ R_c ⇒ masks/lengths fit ⇒
+        lemmaR ⇒ w kept with D w + 1 = D x ⇒ node_even/odd ordering vs t; t itself is tied (PathInv.edge + D).  BFS mode:
+        rootKey s c E.n w = keyB (nB) w because s agrees with the BFS parents on R_c \ {c} (Odd: tau; Even: strat = the unique
+        kept successor) and pathF only reads discovered vertices (copy keyB_stable's argument); use playTo_eq.
+    (5) ofGame facts → EngOK for (Eng.ofGame h, gs, gp) with StratWF h 0 s: E.succ sorted strictly (mergeSort of dedup),
+        gs nodup/sorted, gp via pred_mem/pred_nodup/pred_sorted, rank_inj (in NF3 part), par01, rew facts (pp = 2·rank + par),
+        order = mergeSort by rew (List.pairwise_mergeSort, mergeSort_perm).
+    (6) G; C (arenaH_dual_wf, arenaH_dual_strat as stated lemmas); R2 lemma keyRuleAt_unique; module PGLemmas/SpecKeyRule.lean
+        + Statement file; INDEX / MANIFEST rows; push; SHA + CI run to the Lead.
+  TRAPS met by successor 5: (i) the claude-code-remote connector failed 10:16Z-10:24Z (credential error): retry, the Lead's
+  WATCHDOG sees it; (ii) a container restart (~10:20Z) killed a build (exit 137): files survived; (iii) Lean: `set x := …`
+  BEFORE an `obtain` leaves the obtained facts unabbreviated — obtain first, then `set`; never `subst` a variable that a `set`
+  abbreviation mentions (use `rw [h] at hy ⊢`); `simp` turns `(a == b) = true` into `a = b` in the goal only — normalise
+  hypotheses with `simp only [beq_iff_eq] at h`; `simp` unfolds `set!` to `setIfInBounds`: rw get_set_eq / get_set_ne FIRST;
+  `norm_num` is not imported (use simp / omega); pass `(x : ℕ)` binders in structures (`∀ x : ℕ, … hs[x]! …`).
 - SUCCESSOR 5 (session_01V5yGRY9bh61TXMsQVPeAh9, Opus 5.5 high, started 2026-11-13T07:30Z; THIS block is the resume point; the
   blocks below are history).
   - Handover check 4f571cdf (push exit 0 at 08:39:01Z, VERIFY PASS; ls-remote = 4f571cdf). Lead 07:36Z: «go» once on origin; order
@@ -40,6 +99,18 @@
     shaped so that it can serve that reduction (state it for an arbitrary fixed τ on H, option sets A(x) as in SPEC S4a)» —
     the draft already is. NEXT: NoFault Statement commit + push; wait for the KeyRule diff; then its proof (R24 Lemma R + TB
     step 5; REFEREE-2 R2-key-preread.md @ dbedf93c §2 KT-1..KT-4 = the paper proof steps on Γ3).
+  - 11:28Z Lead: KEYRULE ACCEPTED as G (general `KeyRuleStatement`) + C (`KeyRuleS4aStatement` corollary, with
+    `(arenaH g σ τ Iσ).dual.WF` and `StratWF 0 τ` as STATED lemmas), R1 (name `s4a` reads σ_new = o.tau.getD σ at Even v;
+    definitional), R2 (uniqueness lemma `keyRuleAt_unique`), R3 (scope). Statement file (accepted text):
+    scratchpad SpecKeyRuleStatement.accepted.lean (kept OUT of the tree until the proof lands). 11:29Z FINDING sent: G CONTAINS
+    NoFault's proof (keyRuleAt reads o.tau / o.valOf) + R24 (a)/(b) content K1-K4; asked whether NoFault's theorems may land too.
+  - KEYRULE PROOF PROGRESS (scratchpad nf/, all compiling, 0 sorry): NF14.lean (~2,000 lines: NoFault toolkit + PathInv
+    (path bits along kept edges + removed-edge certificates; phase_even_path, phase_odd_path, phases_fold2), init_inv (hs0/hp0),
+    pred_nodup, SubL through all phases (sub_phases)); NF15.lean (longest_val: memo = 1 + max, choice = FIRST max; MC, LVal);
+    NF16/NF17.lean (lexLe order lemmas; pathF/keyB tree keys; BO invariant; bfs_inner_order, bfs_outer_order, bfs_round,
+    bfs_order: BFS first discovery = lex-least root-first key). t2.lean: playTo_eq (playTo = playAux).
+    NEXT: sortedness of gp / E.succ; longestAll fold; Lemma R (tied ⇔ kept edge with dist + 1, via PathInv.cert/edge);
+    per-node keyRule; outer loop (assigned once, never overwritten, F5 pigeonhole); ofGame facts; G; C; R2; module + push.
 - HANDOVER of SUCCESSOR 4 (session_01V5yGRWV98usJz6buk8GaGb, Opus 5.5), written at the Lead's call (05:03Z: context ~714k).
   A SUCCESSOR STARTS HERE.  FIXSHA = 9176725ac37ded142bb4d849f00a405518ca4827 (the post-verdict fix commit).
   STATE:

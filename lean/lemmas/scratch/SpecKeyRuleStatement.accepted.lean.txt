@@ -1,0 +1,60 @@
+-- ACCEPTED STATEMENT TEXT (Lead 11:28Z: G + C, R1-R3), kept as scratch until its proof lands; the successor moves it to
+-- PGLemmas/SpecKeyRuleStatement.lean in the same commit as PGLemmas/SpecKeyRule.lean.  NOT imported.
+/-
+THE KEY RULE of SPEC S1's procedure (R24 (a) Lemma R + (b) TB step 5), in Lean, on EVERY well-formed game, and its S4a
+corollary (Lead 02:06Z (4) (i); diff 11:28Z: ACCEPTED in the GENERAL form G with the S4a form C as a named corollary,
+requirements R1-R3 below).  STATEMENTS; proofs: SpecKeyRule.lean.
+
+G (`KeyRuleStatement`).  For every `SGame.WF` game h and every Even strategy s (`StratWF h 0 s`), the procedure's output
+o = (Eng.ofGame h).evaluate s satisfies `Eng.keyRule` (Spec.lean, deviation (D8): a PREDICATE, R24's reading of SPEC's
+choice): at every Odd vertex x of h that is not its own cycle node c, Odd's choice is a TIED successor of x
+(extend(x, Ξ(w)) = Ξ(x), «fully optimal», R24 (a)), and it is the tied successor of least index if c has even Ω in h
+(SPEC S1 (iv) longest-path mode, FIX 4), the tied successor of lexicographically least ROOT-FIRST key if c has odd Ω (BFS
+mode; the key of w = the vertex indices of w's play under the final successor map, from c (excluded) back to w; R24 TB
+step 5: «the queue order of a layer is the lex order of the root-first index sequences of the BFS-tree paths»).  G covers
+every S1 call of a run: S4a (C), S4b (H′, not dual) and the two Ξ calls.
+
+C (`KeyRuleS4aStatement`, the diff object for box 213's KEY-TAU (i)).  S4a = S1 on dual(H), H = `arenaH g σ τ Iσ` (SPEC S4a:
+Even v keeps A(v) = {σ(v)} ∪ Iσ(v), `improvSet`, sorted; Odd v keeps τ(v)); in dual(H) the original Odd vertices are owner 0
+with the single edge τ(v) (FIXED, dual-Even), the original Even vertices are owner 1 (the choosers) with the edges A(v): a
+one-player problem.  τ is ARBITRARY (any `StratWF 1` strategy, not TAU3) and Iσ is ARBITRARY (any list of edges at Even
+vertices): no hypothesis that Iσ is S2's improving set, that Ξ changes, or that the step is not a fallback, so NULL
+improving switches (L-RED-B 4) and fallback steps are covered.  Paper form, quoted (docs/new/N5-KEYWIN-box213.md §3 on
+claude/l-new, L-NEW 75, CANDIDATE): «(i) σ_(t+1)(x) = the first option of x's least-key τ-path in X_t, for every mover x»,
+«X_t := the arena of S4a at t (Even v keeps A_t(v), Odd v keeps τ_t(v))».  The proof of C from G discharges
+`(arenaH g σ τ Iσ).dual.WF` and `StratWF 0 τ` on dual(H) as stated lemmas (`arenaH_dual_wf`, `arenaH_dual_strat`).
+
+R1 (what the predicate does not say).  `keyRule` is a predicate on the evaluation's output (its choices `o.tau`).  N5's
+next σ is READ from that output by `s4a` (Spec.lean): σ_new v := `o.tau[v]!.getD σ[v]!` at Even v of g (σ v elsewhere).
+This is DEFINITIONAL (unfold `s4a`); it equals the key-rule choice wherever `o.tau[v]!` is `some`, which holds at every
+Even v of g on a WF game (the NoFault content; proved inside SpecKeyRule.lean).  The step `specStep` then takes σ_new
+unless S4c's fallback fires (SPEC S4c), which this Statement does not cover.
+
+R2 (uniqueness).  The rule determines the choice at every chooser x ≠ its cycle node: in longest mode the least index of
+a finite set; in BFS mode keys of distinct tied successors are distinct (the root-first key of w ends with w; only w = c
+has the empty key), and `lexLe` is a total order on lists, so the least key is attained once.  Lemma `keyRuleAt_unique`
+(SpecKeyRule.lean).  At x = c the predicate says nothing (`keyRuleAt` is `true` there); c's choice is the FIX 2 walk's.
+
+R3 (scope).  No Γ3, no [STD], no W3-ALL, no W-graph; keys are VERTEX-index root-first sequences (R24 TB), not e-indices,
+so no numbering hypothesis ([NUM], R104's layout; REFEREE-2 KS-2) is taken.  The e-index form on Γ3 and BETA-ACYC are the
+reduction's own lemmas (L-NEW's packet P-N5-KEY1P: Lemma XI-1P and REDUCTION), not claimed here.  Nothing about the
+number of iterations or N5's running time: G-N5-TIME stays OPEN.
+-/
+import PGLemmas.Spec
+
+namespace PG.Spec
+
+/-- G: every S1 call on a well-formed game satisfies the key rule. -/
+def KeyRuleStatement : Prop :=
+  ∀ h : SGame, h.WF → ∀ s : Array ℕ, h.StratWF 0 s →
+    (Eng.ofGame h).keyRule s ((Eng.ofGame h).evaluate s) = true
+
+/-- C: S4a's call satisfies the key rule: in dual(H) with the dual-Even strategy τ fixed, every chooser vertex (an Even
+vertex of g) that is not its own cycle node takes the tied successor that R24's rule names. -/
+def KeyRuleS4aStatement : Prop :=
+  ∀ g : SGame, g.WF → ∀ sigma tau : Array ℕ, g.StratWF 0 sigma → g.StratWF 1 tau →
+    ∀ Is : List (ℕ × ℕ), (∀ p ∈ Is, p.1 < g.n ∧ g.owner[p.1]! = 0 ∧ p.2 ∈ g.succ[p.1]!) →
+      (Eng.ofGame (arenaH g sigma tau Is).dual).keyRule tau
+        ((Eng.ofGame (arenaH g sigma tau Is).dual).evaluate tau) = true
+
+end PG.Spec
