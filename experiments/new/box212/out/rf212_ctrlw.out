@@ -1,0 +1,1 @@
+rand 2180 30 rand,cyc,self RULE worsen C4 2 DECOMP 2 F1 120 IMP 24 K1 117 K2tested 90000 K5how 42 K5new 19 L1lagback 2 L1rise 10 L1sub 9 Tmax 5 Tsum 67 bchecked 67 lagstates 125 nonstalls 124 nsmax 5 nspctP 5 plateaus 1 platmax 1 runs 30 stalls 1 tailmax 2

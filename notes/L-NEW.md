@@ -29,7 +29,16 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   R-2 optional; exact strings in its §5.4. NOT routed yet. Draft generator in my scratchpad (mkl2_211.py: asserts packet 7c956df4 and
   L-1 28565b3c, applies R-1, R-2; both old strings occur once in L-1). When routed: fixes entry 1 (creates P-N5-LEVEL-fixes.md) + L-2 +
   pins in box211/level.pins + the check.sh «P-N5-LEVEL» block.
-- Lead silent since 20:37Z; my ~20:38Z request (successor 73's RF-C / kill / DATA text) unanswered: §8 kill criteria = my reconstruction.
+- Lead messages of 20:40Z, 21:28Z, 21:43Z reached me only at 23:23Z (queued ~2-3 h): successor 73's verbatim RF-C / kill / DATA
+  text; routing of both referees' items. DONE then: 366a38ab = P-N5-LEVEL fixes entry 1 + L-2 (mkl2_211.py extracts every string from
+  claude/referee 4c8d6c4f and claude/referee-2 43824abc; L-1 + LT-1..3 = REFEREE 34's 389645a2 asserted; + R-1, R-2, LO-1 = L-2
+  d18125ed, 7,970 B; fixes file sha1 43891337); message to the Lead 00:00Z. Waiting: both referees' byte test of L-2; the Lead on
+  «N-L1» (no such item in REFEREE 34's report; I recorded its notes N-1..N-5).
+- Box 212 Addendum A (this push): A1 RF-C verbatim, A2 kill (i)-(iii) verbatim, A3 kill (iii) evaluated by kill212.py (does NOT fire:
+  lam*_key >= T/2 only on runs <= 4 steps; on all 31 Xi-cyclic genomes with T >= 10 it is < T/2), A4 DATA plan verbatim + mapping +
+  mutants (4 rules x 160, all 0) + control worsen (K1 fires), A5 Lean: RF-A landed at claude/l-formal 78c32d90 (INDEX rows 55-59).
+- Next, if the Lead rules «yes» on BOX 213 KEY-WINDOW (proposed 23:22Z): the key rule on class-frozen one-player windows as a pivot
+  rule; first open the sources (Hansen-Kaplan-Zwick SODA 2014; Post-Ye) before citing anything.
 
 ## HANDOVER (successor 73, PARKING 2026-11-12 ~19:06Z by date -u; BOX 211 frozen and on origin; BOX 212 proposed to the Lead, NOT started)
 ### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)

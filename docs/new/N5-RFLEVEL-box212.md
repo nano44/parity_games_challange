@@ -266,3 +266,50 @@ inserted, the criteria as this successor reads them (Lead to correct):
   bound on windows would bound one-sided strategy improvement with that rule on every game; RF-A..RF-D stay on genome games.
 - TARGET.md: no algorithm, M3 or M4 is claimed. RF-A..RF-C are statements about one restricted family (IDEAL-CYC on genome games,
   TARGET.md §4: a bound on a restricted class is not M4); RF-D is a conditional reduction. G-N5-TIME stays OPEN.
+
+## Addendum A (L-NEW successor 74; written 2026-11-13 00:21Z by date -u, after the push of 5fa64fe6: the approved wording of RF-C, the kill criteria and the DATA plan, inserted verbatim; kill (iii) evaluated; one control added; one citation corrected. No statement, bound or label changes)
+The body is unchanged. **Labels as above: RF-A, RF-B, RF-C CANDIDATES; RF-D CONDITIONAL; G-N5-TIME stays OPEN.** Source of the verbatim
+paragraphs: successor 73's message to the Lead stamped «From L-NEW (2026-11-12 18:29Z)», relayed by the Lead (message 20:40Z by date -u;
+it reached this session only at 23:23Z, after 5fa64fe6 was pushed: §8 of the body is my reconstruction, written without it).
+- (A1) RF-C, the approved form (verbatim): «- RF-C. Hence T ≤ (P + 1)(λ* + 1) + (tail), λ* the longest such class-frozen window. For
+  Howard λ* ≤ N + 2M + 5 (the packet); for another rule λ* is that rule's count on one-player frozen windows.» The body's §5 is the same
+  count written with the tail inside W (the Lead: «Your RF-C reading agrees with this; use the verbatim form above»); this form is the
+  one of record.
+- (A2) Kill criteria, the approved form (verbatim), replacing the body's §8 reconstruction: «KILL CRITERIA: (i) one instance with a
+  falling class, a falling Φ or more than P non-stall steps under an improving rule kills RF-A (instance frozen); (ii) one plateau with Y
+  not closed or Odd moving on Y kills RF-B; (iii) if on every Ξ-cyclic genome of the sets λ*_key ≥ F/2, the reduction carries no
+  information: recorded as DATA «dead as a route» with its instances, box closed.» The body's §8 criteria are kept as additional points
+  of attack (they include (i) and (ii)); (iii) is new against §8.
+- (A3) Kill (iii) evaluated (DATA; tool box212/kill212.py, output out/kill212.out, from the frozen rfd212 spec lines and fvs202's
+  Ξ-feedback number): «Xi-cyclic 81 of 81; lam*_key >= T/2 on 17 (largest T among them 4); lam*_key < T/2 on 64; T >= 10 on 31, of which lam*_key >= T/2 on 0; largest lam*_key 4; largest T 196; kill (iii) fires: 0». λ*_key ≥ T_key/2 occurs only on runs of at most 4 steps; on every Ξ-cyclic genome with
+  T_key ≥ 10 the longest window is below T_key/2 (the largest window anywhere is 4 steps). Kill (iii) does NOT fire: the reduction carries information on the Ξ-cyclic frozen set. (F is read as T_key + const; the test uses T_key.)
+- (A4) The DATA plan, the approved form (verbatim): «DATA PLAN: (a) rv208's builder and run with a pluggable rule: three non-Howard rules
+  (single switch at the first improving mover; «least improving gate»; N5's key order where defined) on the 78 frozen genomes, random
+  genomes and mutants; must-0 counters rfK1 (a class falls), rfL1, rfL2, rfL3, rfP (more than P non-stall steps), rfY (in a plateau: Y
+  not closed, a class of Y changes, Odd moves on Y), rfOUT (a non-front mover of Y leaves Y); control: a rule that applies one
+  non-improving switch (rfK1 must fire). (b) N5's own σ-sequence on Γ3 (engine n5v; successor 72's n5lev210.py already has K1, K3, K4,
+  L1, L3 at 0 and K5, L4 firing there): add the plateau counters, and per genome record the non-stall steps against P3 and the longest
+  frozen window λ*_key against F; sets: the 78 frozen genomes, R118 (m)'s three, and L-LOWER's tower instances as the vacuous control
+  (expected λ*_key = F).»
+  Where each item stands (§7 and this addendum): rfK1 = K1; rfL1 = L1sub, L1stall, L1rise, L1stallempty, L1lagback; rfL2 = L2; rfL3 = L3,
+  L3alpha_m, L3beta_*; rfP = NSP; rfY = P1 (a class of Y changes), P2 (Y not closed), P4 / P4K2 (Odd moves on Y); rfOUT ⊆ PHout (a mover
+  of Y, front or not, switches out of Y; PHout is stronger). Rules: «single switch at the first improving mover» = oneleast's mover
+  choice (oneleast moves the least-index improvable mover, to its least improving gate) and onebest at a random mover; «least improving
+  gate» = allleast and oneleast; «N5's key order» on IDEAL-CYC is not defined in rf212 (key rule only through n5v on Γ3: rfd212). Mutants:
+  rf212 --mut (rv208's mutate, 1 to 8 mutations per sample, seed 2190), 20 mutants of each of the 8 bases of §7's rstart set, under
+  howard, onebest, oneleast, allleast: 160 runs per rule, every must-0 counter 0 (out/rf212_mut.out; summ212.txt rows «rf212 mut …»);
+  descriptive as on the frozen set (onebest / oneleast: plateaus up to 46 / 40 steps, 307 / 992 longer than the movers of Y; howard:
+  0). Control «one non-improving switch»: RULE=worsen (Howard's step, but at the first step one mover moves to a strictly worse gate),
+  out/rf212_ctrlw.out: K1 117 (= rfK1), F1 120, IMP 24, K5new 19, L1rise 10, L1sub 9: it fires. (b): done as rfd212 on Γ3, with plateau counters p1, pclos, p3 and per-genome T,
+  windows and tail; the 78 + 3 frozen genomes = the 81 of §7; the towers (L-COMP box 29's copies of L-LOWER's H5, H6 and three more) are
+  the vacuous control and give λ*_key = T_key as expected.
+- (A5) Citation corrected (Lead 20:40Z): the sentence «the rule enters only at the stalls; the non-stall count is rule-free» (body §3) is
+  cited as «L-FORMAL 2's report to the Lead, 2026-11-12 19:04Z, relayed», not as a file. L-FORMAL 3's «where howard is used» list goes
+  into lean/lemmas/INDEX with its RF-A commit; it has landed: claude/l-formal 78c32d90 («L-FORMAL: RF-A in Lean (Lead 19:00Z for L-NEW's box 212 …»), lean/lemmas/INDEX.md rows
+  55-59: IdealImpRun (every mover keeps its gate or moves to a strictly ⊴-better one, some mover moves) with ImpK1Statement,
+  ImpL2Statement, ImpL3Statement, ImpL5Statement, ImpNonStallStatement (at most P non-stall steps for every improvement rule and every
+  reference state), ImpK5NewStatement (stated for every mover, moved or not), Genome.IdealCycRun.toImp, and the row «WHERE THE RULE
+  ENTERS», all «Lean-checked (lane)» (not through CHECKER; CONDITIONAL on F1 = R15 (a) per the INDEX header). RF-A (i) (K1), (L2),
+  (L3), (L5), (iii) and (iv) match those statements; RF-A (ii)'s (L1) is inside the Lean count; RF-B's (P4) is the Lean `gate_const`.
+  The Lean row puts PLATEAU's (P5) among the Howard uses: that is the packet's (P5) (H's run is a Howard run); RF-B's (P5′) claims
+  only identity or improving steps of H_Y and is not in Lean. Lean is never the proof of record here.

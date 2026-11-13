@@ -6,7 +6,8 @@ Builder, valuation, order and Odd's reply are rv208.py's (experiments/new/box208
 Rules (RULE=...): howard (rv208's: best gate, keep current if best, ties to the larger index), allrand (every improvable mover to a random
 strictly better gate), allleast (every improvable mover to its LEAST strictly better gate), onebest (one random improvable mover to its best
 gate), onerand (one random improvable mover, random strictly better gate), oneleast (the improvable mover of least index, to its least
-strictly better gate), subrand (a random non-empty subset of the improvable movers, each to a random strictly better gate).
+strictly better gate), subrand (a random non-empty subset of the improvable movers, each to a random strictly better gate), and the CONTROL worsen (Addendum A: Howard's step, but at the first step one mover moves to a strictly WORSE gate:
+IMP and F1 or K1 must fire).
 Must-0 counters (a VIOLATION line names the first three of each; a counter that is 0 is not printed):
   the run: IMP (a step that is not a non-empty set of strictly improving mover switches), CAP (run hit the cap)
   box 212 (a), static lemmas at EVERY visited state: CN2, CN2pi, BONLY, NOTIE, LOCGATE, LOCK2;  R15 (a): F1
@@ -24,6 +25,7 @@ Control RF_CTRL=1: FRONT := the lagging vertices of the HIGHEST lagging class (L
 Usage: rf212.py [--T] G.json ...            (RULE from the environment; every b when T <= BALL, else b = T and BSAMP random b)
        rf212.py --rand SEED COUNT MODES      (rv208's generator; MODES as rv208)
        rf212.py --rstart SEED COUNT G.json ... (COUNT random mover start states per genome)
+       rf212.py --mut SEED COUNT G.json ...    (Addendum A: COUNT mutants of each genome, rv208's mutate, 1 to 8 mutations each)
 Environment: RULE (default howard), SEED (rule randomness, default 1), CAP (default 20000), BALL (default 80), BSAMP (default 30)."""
 import sys, os, json, random, collections, itertools, importlib.util
 
@@ -33,7 +35,7 @@ rv = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(rv)
 
 RULE = os.environ.get("RULE", "howard"); CAP = int(os.environ.get("CAP", "20000"))
 BALL = int(os.environ.get("BALL", "80")); BSAMP = int(os.environ.get("BSAMP", "30")); RF_CTRL = os.environ.get("RF_CTRL") == "1"
-RULES = ("howard", "allrand", "allleast", "onebest", "onerand", "oneleast", "subrand")
+RULES = ("howard", "allrand", "allleast", "onebest", "onerand", "oneleast", "subrand", "worsen")
 
 def run(B, rule, rng, start=None):
     n, own, succ, N = B["n"], B["own"], B["succ"], B["N"]; E = rv.Val(n, B["prio"], own, succ)
@@ -77,6 +79,12 @@ def run(B, rule, rng, start=None):
         elif rule == "subrand":
             k = rng.randint(1, len(xs))
             for x in rng.sample(xs, k): ns[x] = rng.choice(better[x])
+        elif rule == "worsen":     # CONTROL (Addendum A): Howard's step, plus at the FIRST step one mover moved to a strictly WORSE gate
+            for x in range(N): ns[x] = best(x)
+            if len(hist) == 1:
+                for x in range(N):
+                    wx = [w for w in succ[x] if E.cmp(val[w], val[sigma[x]]) < 0]
+                    if wx: ns[x] = wx[0]; break
         else: raise SystemExit("unknown RULE " + rule)
         sigma = ns
     return E, hist, capped
@@ -259,6 +267,15 @@ if __name__ == "__main__":
         for i in range(cnt):
             G = rv.rgen(rg, rg.choice(modes)); check(G, c, RULE, rr, tag="seed %d #%d" % (s, i))
         out("rand %d %d %s" % (s, cnt, a[3]), c)
+    elif a[0] == "--mut":                 # Addendum A: rv208's own mutations (1 to 8 per sample) of each base genome
+        s_, cnt = int(a[1]), int(a[2])
+        for fn in a[3:]:
+            G0 = json.load(open(fn)); G0 = G0.get("genome", G0); rg = random.Random(s_); rr = random.Random(seed); c = collections.Counter()
+            for i in range(cnt):
+                G = G0
+                for _ in range(rg.randint(1, 8)): G = rv.mutate(G, rg)
+                check(G, c, RULE, rr, tag="%s mut %d" % (os.path.basename(fn), i))
+            out("mut %s %d %d" % (os.path.basename(fn), s_, cnt), c)
     elif a[0] == "--rstart":
         s, cnt = int(a[1]), int(a[2])
         for fn in a[3:]:
