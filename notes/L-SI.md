@@ -13,6 +13,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   896f9e97394695f903131f832a67f31bcfc23c28 (pinned in experiments/si/pwrap/out/P-N5-WRAP.sha1, checkW.sh). Lead 22:03Z: routed to
   REFEREE 34 (first review) and REFEREE-2 39 (second; independent check of Claim NT). NEVER edit the packet: a referee / CHECKER item =
   docs/si/P-N5-WRAP-fixes.md entry 1 + line L-2 by script (P-N5-GATE's fix pattern; quotes via experiments/si/pwrap/qwrap.py's machinery).
+- P-N5-WRAP fixes entry 1 + L-2 DONE (this commit, 2026-11-13 ~00:40Z): both referees SIGN every statement (REFEREE 34 claude/referee
+  99df2458; REFEREE-2 39 claude/referee-2 07fd5ae4); L-2 = docs/si/P-N5-WRAP-line-L2.txt sha1 dbd5f0e83e3d0300842c46cf2ae24b30b853d784
+  (check stage L-1 + LW-1 = be7da8f3… printed by experiments/si/pwrap/fix1/mkL2.py), fixes file sha1 9fff274d…; R-2 applied to LW-1's
+  clause (R-2's Old does not survive LW-1; recorded); LW-3's string used for LW-3 / R-3. NEXT: the referees byte-test L-2; any item =
+  entry 2 + L-3 by the same script pattern (fix2/).
 - Box 104 Addendum C (append-only) is in; box 105 §4 (D1, D2) is in. Box 105 open: LAG*, O2 itself.
 - BOX 106 (Lead 22:03Z «go»: exact d = 2 maximum of KEY on the free ladder, R112-style certificate: audited encoding + RUP-checked UNSAT,
   regenerated; statement first; kill / dead-end criteria as box 105; the answer a number with its certificate). docs/si/box106-exact2.md:

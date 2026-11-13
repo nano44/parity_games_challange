@@ -27,5 +27,11 @@ for n in 1 2 3 4 5 6 7 8; do [ $((21 * n * n + 305 * n + 96)) = $((2 * $(grep -h
 grep -q "CTRL 1: s3fail 0 nonstd 0 nohoward 405 " $O/wrap_ctrl.out || bad "control 1"
 grep -q "CTRL 2: .* fbwrong 100 endwrong 100 " $O/wrap_ctrl.out || bad "control 2"
 if [ -f out/P-N5-WRAP.sha1 ]; then (cd ../../.. && sha1sum -c --quiet experiments/si/pwrap/out/P-N5-WRAP.sha1) || bad "packet sha1"; fi
+# (5) fixes entry 1: L-2 and the fixes file at their pinned sha1 (built by fix1/mkL2.py from L-1 and the two referee reports; mkL2.out
+#   records the check stage be7da8f3 = L-1 + LW-1)
+if [ -f fix1/SHA1SUMS ]; then
+  (cd ../../.. && sha1sum -c --quiet experiments/si/pwrap/fix1/SHA1SUMS) || bad "fixes entry 1 sha1"
+  grep -q "^L-1 + LW-1 sha1 be7da8f3a98e4c5a26158eae9aa2766c56531222 3190 B; .*: True$" fix1/mkL2.out || bad "fix1 check stage"
+fi
 [ $fail = 0 ] && echo "PWRAP checks: PASS"
 exit $fail
