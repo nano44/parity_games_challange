@@ -4,6 +4,30 @@ Lead session: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/l-red-b (from trun
 Files I own: docs/red-b/, experiments/red-b/, notes/L-RED-B.md, docs/agents/handover-checks/L-RED-B.md.
 
 ## Resume point
+**SUCCESSOR 4 HANDOVER (written 2026-11-13 ~09:25Z by date -u; for successor 5).**
+- B5 DONE (docs/red-b/B5-second-fb.md §1-§7): ONE-FB FALSE (dead end, NULL fallback instance data/b5/null2_s5101_i313_n3.pg sha1
+  8be02077) → ONE-FB′ (k ≤ 2 on every gscan104 Wg; UNREFEREED; Lead: not routed to a referee). Records on origin: 8854d85d (correction),
+  4065efc0 (tools), 18dd585f (wrap-up; push started ~09:11Z — CHECK `git ls-remote origin claude/l-red-b` before quoting it).
+- B6 (QUIET-KEY-1P / O1, Lead 09:08Z; owner relayed «So put everything into trying solving it today»): attempt 1 written in
+  docs/red-b/B6-quietkey-1p.md §1-§4. Three classical embeddings fail for clean reasons: Disser-Loho-Maat-Mosis arXiv 2512.16684v2
+  Lemma 4.4 G_n (N5 linear on it, data/b6/b6gn.out), its Thm 4.3 (single-switch class), and Zhong-Ye arXiv 2609.40147v2 (cycles). Lemma
+  ACYC-GREEDY (proved, lane): value-greedy rules are optimal after h steps on acyclic one-player games. DATA data/b6/b6acyc.out (0 viol;
+  the control fires for n ≥ 40), b6simul (SIMUL-BLAND climbs: no long runs from random local search).
+- Box 217 LANDED (Lead 09:53Z): claude/l-new a32a588d, docs/new/N5-QUIETKEY-box217.md + experiments/new/box217/one217.py (rules key /
+  howard / seq). Lead's target for B6 attempt 2: ENUMERATION DEPTH k = 8 (box 217 A6; towers stop at k = 7 = HIT7) by a designed carry
+  chain / Gray code, or a TIMING reason why k = 8 is impossible (L-NEW's A7′: counting alone cannot cap it). Read box 217 §1, §5 and
+  docs/lower/P-TOWER-FUEL.md (PULSE / GAP) first; L-LOWER L16 runs SAT screens on the same target (do not duplicate).
+- Next ideas: a designed doubling on the per-level pair automaton (𝓛^R_d with Ξ-targets as «fuel», see HIT7's format: opts[x][k] =
+  [W-target, Ξ-target, gate]; values flow on the Ξ-DAG, keys on the W-ladder); do NOT duplicate L-LOWER's SAT search (claude/l-lower
+  L16 P16 screens); read docs/lower/P-TOWER-FUEL.md first.
+- One-player N5 climbs (B5 §6, b5one.py): I ≈ 0.9 n on cyclic one-player games, n ≤ 64 (d3: n48 45, n64 43; d5: n6..n32 7, 9, 14, 18,
+  29, 32); runner run_b5d.sh was stopped at n48_d5 (resumable).
+- Sources opened this session: arXiv 1106.0778v2 (PDF sha1 a63a9293; Thm 3.2, p. 5-6), 2512.16684v2 (8629b38e; Lemma 4.4, Thm 1.1,
+  4.3, §2), 2609.40147v2 (72974eb2; Thm 2.1, 6.1, §2 figure text). PDFs in the session scratchpad only (not committed).
+- Traps this session: (1) my own lemma was false: always run the direct test before telling the Lead it is proved; (2) a message time
+  stamp typed by hand was wrong (09:20Z vs 09:11Z): take every stamp from date -u; (3) three CPU jobs at once happened for a minute (I
+  killed one): count verify as a CPU job.
+
 **SUCCESSOR 4 (Opus 5.5, session_01V5yGRZixRCf3PLfDhttq7S; started 2026-11-13 06:14Z by date -u; handover check 28823167 on origin;
 «go» from the Lead 06:56Z on B5 plan (1)-(3)).**
 - B5 (SECOND FALLBACK): report docs/red-b/B5-second-fb.md; tools b5lemma.py (direct test, counters + controls CTRL=1/2/3, FREE, MIRROR),

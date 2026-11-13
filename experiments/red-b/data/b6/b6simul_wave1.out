@@ -1,0 +1,5 @@
+B6SIMUL n8_d3_s8008 steps 5 | h 7 | N5 spec I 4 | wrong 0 1s
+B6SIMUL n12_d3_s8012 steps 6 | h 8 | N5 spec I 6 | wrong 0 1s
+B6SIMUL n16_d3_s8016 steps 11 | h 13 | N5 spec I 9 | wrong 0 3s
+B6SIMUL n24_d3_s8024 steps 7 | h 11 | N5 spec I 3 | wrong 0 2s
+B6SIMUL n32_d3_s8032 steps 11 | h 12 | N5 spec I 6 | wrong 0 7s

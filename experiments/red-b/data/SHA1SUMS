@@ -398,3 +398,6 @@ b17a6eca146dd92c78c894e3147f1361523e6dbe  b5/old/lemma_rand12_high.out
 e06a525424ea0a35eada76a1ad8fab8801b6c9a2  b5/old/lemma_rand12_low.out
 bac09bbfb05ac06413b4eb68e855c115eed1fc02  b5/old/lemma_rand_high.out
 a48f4f3443e10dedb075c1c22d64f04acbdc1b06  b5/old/lemma_rand_low.out
+edc0ad269d7b175471f59390c0002df4bd68a6b8  b6/b6acyc.out
+14d2125cc80513b86efeab9a4dd7a1f6122d9a29  b6/b6gn.out
+a8484e30ac2f27303ab92335a298b6c12d693f1d  b6/b6simul_wave1.out
