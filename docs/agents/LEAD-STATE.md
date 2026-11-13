@@ -3498,3 +3498,5 @@
 - 05:14Z L-LOWER 16: P 15 reached (L18b_N15a 76309bca; R510 SAT 2,547 s; f6check 0/129); P 16 (L17 A3 stall row) attempt 1 running.
 - 05:26Z L-RED-B 3: cb98decb on origin (H_4 1,500 steps 127; H_n bests 21,44,80,127,152); B4(b) f5761cff pushing: P1 climbs no kill, growth not identified; k=1 on 62 wrappers; own-guide equalities DATA to n=7 (H_n PRE) / n=10. Parking after push; successor 4 for B5 (force k>=2).
 - 05:37Z Lead push eb22d350 exit 0 (VERIFY PASS full): R128 LANDED ON ORIGIN (landing 8be40f9b). R129 third fill installed docs/agents/R129-draft.md 41e390a5.
+- 05:38Z Lead push 65e02855 exit 0 in ~1 min (L55 fast path worked: self-checks NOT RUN with tree ids). CHECKER told: C142 Add. 3 + C144 Add. 1. L55 FYI sent to CHECKER, REFEREE-2 40, L-SI 54 (merge trunk to gain it).
+- 05:4xZ CHECKER 24 finding: L55 skipped self-checks in CI (origin/<branch> = pushed commit in Actions) + docs pinned by check.sh. L56: skip only outside CI and only for docs/agents/-only diffs; tested. C142 closes on CHECKER's own VERIFY_FULL run of eb22d350.

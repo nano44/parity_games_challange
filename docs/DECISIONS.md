@@ -510,3 +510,15 @@ Lead reading L55 (2026-11-13 03:11Z by date -u; on CLAUDE.md «Push only with sc
     origin commit went through this gate, and CI (.github/workflows/verify.yml, job verify) re-runs the full suite on every push: CI is the
     full run of record. Any change under experiments/ or scripts/, a missing origin branch or VERIFY_FULL=1 forces the full local run.
     Doc shape, Lean and Oink steps are unchanged. Red CI on a pushed head is that branch's work at once (backstop step 5).
+
+Lead reading L56 (2026-11-13 05:40Z by date -u; correction of L55 on CHECKER 24's finding, 05:45Z):
+(1) Facts (CHECKER 24, CI run 43373199202 job 131713548195 on eb22d350): in the Actions push checkout origin/<branch> is the pushed commit,
+    so L55's test held in CI too and the experiment self-checks were NOT RUN there on every push since 626da53c; L55's «CI stays the full
+    run of record» was false. Also, many check.sh blocks pin files under docs/ (docs/new, docs/si, docs/referee*, docs/RESULTS.md, …), so a
+    docs-only commit can break a self-check.
+(2) Reading: the skip now applies ONLY outside CI (GITHUB_ACTIONS unset), with VERIFY_FULL != 1, a clean tree, experiments/ and scripts/
+    equal to origin/<branch>, EVERY changed path under docs/agents/ (Lead logs and drafts, handover checks), and no check script
+    (*.sh, *.py, *.pins) under experiments/ mentioning docs/agents. Anything else runs in full, locally and in CI. Tested both ways
+    (docs/agents-only diff skips; CI, VERIFY_FULL, a RESULTS/NOW diff and an empty diff run in full).
+(3) Commits 626da53c, eb22d350 and 65e02855 had no CI self-check run: CHECKER 24 runs VERIFY_FULL=1 on eb22d350 (the R128 landing
+    commit) itself, and the first CI run after this fix runs the full suite on trunk.
