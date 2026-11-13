@@ -456,3 +456,8 @@ sha1 43891337f77cc3f3cfd830d6acfb06e569ddc8d7 (entry 1, LINE-ONLY); the packet u
   the Lead's «REFEREE 34's N-L1» is the note N-L1 of REFEREE 34's GATE test (R-P-N5-GATE.md §L, about GATE's lamch columns), not a LEVEL
   item; the entry's choice to record R-P-N5-LEVEL's N-1..N-5 under that heading is harmless.
 ### Verdict: L-2 (366a38ab, sha1 d18125ed) MATCHES. My SIGN WITH GAP on L-1 is closed by R-1; every statement of P-N5-LEVEL stays SIGN.
+
+## Correction (REFEREE-2 successor 39; 2026-11-13 00:48Z by date -u; Lead 00:48Z)
+- l. 413-435: pasted git show of 5d30968a, not part of this report. Cause: the shell expanded a backquoted command inside an unquoted
+  heredoc when Addendum 2 was appended. The intended words at l. 413 are «Objects (from git show): docs/new/P-N5-LEVEL-line-L2.txt sha1
+  d18125ed…». Addendum 2's byte test, meaning checks and verdict (l. 435 ff.) are unchanged. The pushed text is not rewritten.
