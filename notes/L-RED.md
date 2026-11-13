@@ -3544,3 +3544,26 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
 - Tools r239: rf239.py, static239.py, imp239.py (env LNEW; LRED UNSET), climb239.py, impclimb239.py, frz239.sh (list of frozen genomes:
   git archive 5fa64fe6 experiments/new/box191..box207 inst, run212.sh's ALL).
 - RESUME POINT: nothing in flight; next = whatever the Lead routes (DEEP3 on hold).
+- 2026-11-13T02:22Z: R240 DONE -> docs/red/R240-flatidx.md (Lead 02:19Z: FLAT-IDX, L-RED-B 3 B3 §3). VERDICT: DEPENDS ON NUMBERING. «least position /
+  positions never increase» holds with wrap104's numbering (notmin 0 on 2,211 games) and FAILS on W(H, s0) as defined once the pe's are
+  renumbered (PERM pe: notmin 1,947, idxinc 1,072; 42 instances .pg + sha1, n5v xdiff 0 on all); gates-only or pads-only renumbering
+  changes nothing. The numbering-free form (least root-first key (pe, g, m) = WRAP Remark (3)) and «at most |E(H)| moves» SURVIVE
+  (keymin 0, hbound 0 under all 6 numberings); control N5'-xi fires. CAVEAT: claude/l-red-b 9bce72fa / docs/red-b/B3-guide.md were NOT on
+  origin (branch head 9aa0771fa); the claim was attacked as the Lead stated it. Tool experiments/red/r240/flat240.py (env BOX104, LNEW, LRED, LLIT).
+
+## HANDOVER (successor 68 -> 69), 2026-11-13T02:22Z (date -u)
+- Resume point: R237 (2) ((W4) SURVIVES; W-1 wording gap), R237 §3 correction (N5 on F_n = 5/5/5/5/6/6/6), R238 (box 105 KEY-MODEL SURVIVES),
+  R239 (box 212 RF-A/B/C + [IMP3] SURVIVE), R240 (FLAT-IDX depends on numbering) are DONE and reported. Context ~ 450k: parking at the
+  Lead's park point. Nothing running (pgrep -af "climb|exh237|kclimb|flat240|push.sh": none after this push).
+- OPEN: nothing routed. ON HOLD (Lead): DEEP3 climbs (bests frozen in r234/inst; L-COMP's depthNS = 0 weakens the route).
+- Envs (scratchpad, rebuilt per container; see successor 67's «Envs»): BOX104 = <d>/experiments/si/box104 of git archive 26704e01
+  experiments/si/box104; LNEW = git archive fcba92fc experiments/new experiments/si/si.py experiments/harness experiments/hard-families
+  experiments/n5-second; LRED = git archive 8c01d40e experiments/red/r217; LLIT = git archive 5c53efbd docs/lit/T66-depth-check.py;
+  BOX105 = <d>/experiments/si/box105 of git archive 516b68371 experiments/si/box105. imp239.py needs LRED UNSET.
+- Tools this session: r237 (exh237, aim237 + plen/pset, climb237, w237, n5s237 = SPEC-exact N5), r238 (key238, kclimb238: box 105 KEY replay),
+  r239 (rf239 own IDEAL-CYC + 10 improving rules, static239, imp239 [IMP3] on n5s237 + n5v, climb239, impclimb239, frz239.sh), r240 (flat240).
+- Lessons: (1) sums typed into commit messages / docs before computing them were wrong 4 times this session (615 vs 715; 17,045 vs
+  17,029; plateau 33 vs 37; 1,946 vs 1,944): compute every total with python in the same step and paste it; (2) a job started with «&»
+  once (killed at once, restarted tracked); (3) run climbs with OUT in the scratchpad while verify runs, copy checkpoints into out/ before
+  commits; (4) container restarts lose nothing in the working tree or scratchpad here, but kill jobs: keep RESUME checkpoints; (5) an
+  object SHA in a brief may not be on origin yet: check with git ls-remote / cat-file before reading, and say so in the verdict.
