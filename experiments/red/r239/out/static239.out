@@ -1,0 +1,35 @@
+Fri Nov 13 00:31:47 UTC 2026
+STATIC239 seed 2395 genomes 300 N<=6 d<=3 deg<=3 rule howard: cn2 0 bonly 0 notie 0 locgate 0 lock2 0 opt 0 | states 725 | 0 s
+STATIC239 seed 2395 genomes 300 N<=6 d<=3 deg<=3 rule allleast: cn2 0 bonly 0 notie 0 locgate 0 lock2 0 opt 0 | states 789 | 1 s
+STATIC239 seed 2395 genomes 300 N<=6 d<=3 deg<=3 rule allworst: cn2 0 bonly 0 notie 0 locgate 0 lock2 0 opt 0 | states 741 | 1 s
+STATIC239 seed 2395 genomes 300 N<=6 d<=3 deg<=3 rule allrand: cn2 0 bonly 0 notie 0 locgate 0 lock2 0 opt 0 | states 762 | 1 s
+STATIC239 seed 2395 genomes 300 N<=6 d<=3 deg<=3 rule subrand: cn2 0 bonly 0 notie 0 locgate 0 lock2 0 opt 0 | states 825 | 2 s
+STATIC239 seed 2395 genomes 300 N<=6 d<=3 deg<=3 rule onebest: cn2 0 bonly 0 notie 0 locgate 0 lock2 0 opt 0 | states 898 | 2 s
+STATIC239 seed 2395 genomes 300 N<=6 d<=3 deg<=3 rule onerand: cn2 0 bonly 0 notie 0 locgate 0 lock2 0 opt 0 | states 945 | 2 s
+STATIC239 seed 2395 genomes 300 N<=6 d<=3 deg<=3 rule oneleast: cn2 0 bonly 0 notie 0 locgate 0 lock2 0 opt 0 | states 966 | 3 s
+STATIC239 seed 2395 genomes 300 N<=6 d<=3 deg<=3 rule onefirst: cn2 0 bonly 0 notie 0 locgate 0 lock2 0 opt 0 | states 960 | 4 s
+STATIC239 seed 2395 genomes 300 N<=6 d<=3 deg<=3 rule oneworst: cn2 0 bonly 0 notie 0 locgate 0 lock2 0 opt 0 | states 940 | 4 s
+STATIC239 seed 2396 genomes 100 N<=12 d<=4 deg<=3 rule howard: cn2 0 bonly 0 notie 0 locgate 0 lock2 0 opt 0 | states 325 | 0 s
+STATIC239 seed 2396 genomes 100 N<=12 d<=4 deg<=3 rule allleast: cn2 0 bonly 0 notie 0 locgate 0 lock2 0 opt 0 | states 354 | 1 s
+STATIC239 seed 2396 genomes 100 N<=12 d<=4 deg<=3 rule allworst: cn2 0 bonly 0 notie 0 locgate 0 lock2 0 opt 0 | states 334 | 1 s
+STATIC239 seed 2396 genomes 100 N<=12 d<=4 deg<=3 rule allrand: cn2 0 bonly 0 notie 0 locgate 0 lock2 0 opt 0 | states 332 | 1 s
+STATIC239 seed 2396 genomes 100 N<=12 d<=4 deg<=3 rule subrand: cn2 0 bonly 0 notie 0 locgate 0 lock2 0 opt 0 | states 393 | 2 s
+STATIC239 seed 2396 genomes 100 N<=12 d<=4 deg<=3 rule onebest: cn2 0 bonly 0 notie 0 locgate 0 lock2 0 opt 0 | states 501 | 2 s
+STATIC239 seed 2396 genomes 100 N<=12 d<=4 deg<=3 rule onerand: cn2 0 bonly 0 notie 0 locgate 0 lock2 0 opt 0 | states 534 | 3 s
+STATIC239 seed 2396 genomes 100 N<=12 d<=4 deg<=3 rule oneleast: cn2 0 bonly 0 notie 0 locgate 0 lock2 0 opt 0 | states 554 | 3 s
+STATIC239 seed 2396 genomes 100 N<=12 d<=4 deg<=3 rule onefirst: cn2 0 bonly 0 notie 0 locgate 0 lock2 0 opt 0 | states 553 | 4 s
+STATIC239 seed 2396 genomes 100 N<=12 d<=4 deg<=3 rule oneworst: cn2 0 bonly 0 notie 0 locgate 0 lock2 0 opt 0 | states 526 | 4 s
+STATIC239 seed 2397 genomes 40 N<=20 d<=6 deg<=3 rule howard: cn2 0 bonly 0 notie 0 locgate 0 lock2 0 opt 0 | states 136 | 0 s
+STATIC239 seed 2397 genomes 40 N<=20 d<=6 deg<=3 rule allleast: cn2 0 bonly 0 notie 0 locgate 0 lock2 0 opt 0 | states 152 | 1 s
+STATIC239 seed 2397 genomes 40 N<=20 d<=6 deg<=3 rule allworst: cn2 0 bonly 0 notie 0 locgate 0 lock2 0 opt 0 | states 149 | 1 s
+STATIC239 seed 2397 genomes 40 N<=20 d<=6 deg<=3 rule allrand: cn2 0 bonly 0 notie 0 locgate 0 lock2 0 opt 0 | states 147 | 2 s
+STATIC239 seed 2397 genomes 40 N<=20 d<=6 deg<=3 rule subrand: cn2 0 bonly 0 notie 0 locgate 0 lock2 0 opt 0 | states 187 | 2 s
+STATIC239 seed 2397 genomes 40 N<=20 d<=6 deg<=3 rule onebest: cn2 0 bonly 0 notie 0 locgate 0 lock2 0 opt 0 | states 274 | 3 s
+STATIC239 seed 2397 genomes 40 N<=20 d<=6 deg<=3 rule onerand: cn2 0 bonly 0 notie 0 locgate 0 lock2 0 opt 0 | states 294 | 3 s
+STATIC239 seed 2397 genomes 40 N<=20 d<=6 deg<=3 rule oneleast: cn2 0 bonly 0 notie 0 locgate 0 lock2 0 opt 0 | states 306 | 4 s
+STATIC239 seed 2397 genomes 40 N<=20 d<=6 deg<=3 rule onefirst: cn2 0 bonly 0 notie 0 locgate 0 lock2 0 opt 0 | states 312 | 4 s
+STATIC239 seed 2397 genomes 40 N<=20 d<=6 deg<=3 rule oneworst: cn2 0 bonly 0 notie 0 locgate 0 lock2 0 opt 0 | states 306 | 5 s
+STATIC239 seed 2395 genomes 50 N<=6 d<=3 deg<=3 rule howard CTRL 1: cn2 0 bonly 3541 notie 0 locgate 0 lock2 0 opt 0 | states 117 | 0 s
+STATIC239 seed 2395 genomes 50 N<=6 d<=3 deg<=3 rule oneworst CTRL 1: cn2 0 bonly 4645 notie 0 locgate 0 lock2 0 opt 0 | states 146 | 0 s
+exit 0
+Fri Nov 13 00:32:00 UTC 2026
