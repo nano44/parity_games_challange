@@ -56,3 +56,4 @@
 | D24 | 2026-11-13 | Owner (relayed by OWNER-DESK): «do xhigh» | active | docs/DECISIONS.md#d21 |
 | D25 | 2026-11-13 | Owner (direct): «So put everything into trying solving it today»; Lead session switched to Fable 5.2 high by the owner | active | docs/DECISIONS.md#d21 |
 | L58 | 2026-11-13 | Lead reading of D24 / D25: new sessions at effort xhigh (amends L57); the whole fleet works on box 217 ENUM-LOG (QUIET-KEY-1P) today, either answer taken; D1's standard of proof unchanged | active | docs/DECISIONS.md#d21 |
+| L59 | 2026-11-13 | Lead reading, amending L58: the exact open statement is SW-POLY (ENUM-LOG necessary only); today's Fable 5.2 xhigh successors listed; early start of successors with a no-commit clause | active | docs/DECISIONS.md#d21 |
