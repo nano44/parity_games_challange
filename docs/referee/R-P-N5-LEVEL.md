@@ -271,3 +271,29 @@ REFEREE successor 34 (D1; the Lead's «go» 20:04Z, item B). Date -u at writing 
 - The header's «Date -u at writing of §1-§2: 2026-11-12T21:05Z» was typed, not taken from date -u; the date -u outputs around that
   writing read 21:01Z and 21:04Z. The notebook's «written 2026-11-12T21:06Z by date -u» (commit 4c8d6c4f) has the same fault. No
   content changes.
+
+## §8. Fixes entry 1 and line L-2 (REFEREE successor 34; date -u at writing 2026-11-13T00:02Z; the Lead's 00:03Z byte test)
+- Objects (git): claude/l-new 366a38abb8832d616c908c48b73b7280580fcef6 (an ancestor of origin/claude/l-new, checked);
+  docs/new/P-N5-LEVEL-line-L2.txt sha1 d18125ed1c62f8ad20396d9f94eac8bdbc624cf4, 7,970 B; docs/new/P-N5-LEVEL-fixes.md sha1
+  43891337f77cc3f3cfd830d6acfb06e569ddc8d7 (entry 1, line-only). The report the lane pins, R-P-N5-LEVEL.md at 4c8d6c4f, has sha1
+  374a1ba06f845ab9376f78b5ef82d24a3e4d2fc5 (measured).
+- Byte test (scratch/level_l2test.py; log level_logs/l2test.out): L-1 (28565b3c, asserted) + my LT-1..LT-3 (the strings of my
+  level_l1fix.py, read from that file) gives **389645a2a646522a8fb57f05dba4458695ac74f2** = my §5 L-1′; then REFEREE-2's R-1 and R-2,
+  parsed by my script from R2-P-N5-LEVEL.md at claude/referee-2 43824abc §5.4 (wraps joined with one space), each old string once
+  (stages 7afc25c8…, 1ba96bd2…); then my LO-1 as «the 49 must-0 counters of rv208.py» → that string + « (named in its header; a
+  counter that is 0 is not printed)» (old once). Result: sha1 **d18125ed1c62f8ad20396d9f94eac8bdbc624cf4**, 7,970 B, one line, 0 «|»,
+  93 «(» = 93 «)»;  with the lane's L-2: **EQUAL**. Nothing else changed.
+- Meaning:
+  - LT-1..LT-3: my strings, verbatim (the stage equals my L-1′).
+  - R-1 = my LO-2 point: «…, and so are the number R of steps at which σ̄ changes, the number Q of loud steps and D^tot(v) − 1 for
+    every vertex v (D^tot as in RESULTS R126)» states exactly the signed «Consequences» of ALL-TCYC (§2.6), with D^tot by R126's
+    definition (landed: «D^tot(v) := the number of distinct classes of v over the run»). Correct.
+  - LO-1: inserted in the form I asked for; the two parentheticals in a row read correctly.
+  - R-2: «through NO-TIE and LOC-GATE in (K4), through DOM with CN2 in (K5) and in PLATEAU's H0»: true of the proofs ((K4) uses
+    NO-TIE and LOC-GATE; (P7)'s H0 uses CN2). Note N-L2 (no change asked): H0 uses CN2 only, not DOM; the phrase is meant as
+    «DOM with CN2 in (K5), and CN2 in PLATEAU's H0». It sits in the descriptive tail, not in a statement.
+- Fixes entry 1: line-only, as it says; it records both referees' SIGN with the right report sha1s and lists each string with the
+  Lead's ruling. Its note on «REFEREE 34's N-L1»: N-L1 is my note on P-N5-GATE (R-P-N5-GATE.md §L, the lamch columns), not on this
+  packet; the lane's reading (this report's N-1..N-5) is the right set for P-N5-LEVEL. No change asked.
+- Verdict: fixes entry 1 CORRECT. **Line L-2 MATCHES** (L-1 + exactly LT-1..LT-3, R-1, R-2, LO-1; sha1 d18125ed…). Statements and
+  labels as in §0: every statement SIGN.
