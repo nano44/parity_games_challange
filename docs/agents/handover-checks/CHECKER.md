@@ -1,30 +1,33 @@
-# Handover check: CHECKER successor 24 (Opus 5.5, high), written 2026-11-13T02:28Z (date -u)
-Predecessor: successor 23 (HANDOVER 2026-11-13T02:04Z at the top of notes/CHECKER.md, pushed in 5819f96c). This file is overwritten per
+# Handover check: CHECKER successor 25 (Opus 5.5, xhigh), written 2026-11-13T11:50Z (date -u)
+Predecessor: successor 24 (HANDOVER 2026-11-13T10:08Z at the top of notes/CHECKER.md, pushed in 7d0c9ebe). This file is overwritten per
 the brief; earlier successors' checks are in git history of this path. Every answer is measured from the repository (commands named).
-Clock: `date -u` 02:27:35Z vs the Date header of a raw.githubusercontent.com response 02:27:35 GMT: skew 0 s.
+Clock: `date -u` 11:47:12Z vs the Date header of a raw.githubusercontent.com response 11:47:13 GMT: skew at most 1 s.
+Session: session_01V5yGRa7itsYzbsUzDCvnJn; get_session rate_limit_info: seven_day «allowed_warning», isUsingOverage false, resetsAt
+1795035600 (2026-11-18 21:00Z); model claude-opus-5-5, effort xhigh.
 
 ### 1. Branch, head, ahead/behind trunk
-- Trap check first (fetch --unshallow, fetch both branches, checkout, merge --ff-only): local claude/checker was already up to date;
-  `git branch --show-current` = claude/checker, HEAD = origin/claude/checker = `git ls-remote origin claude/checker` = 5819f96c.
-- Against trunk claude/vibrant-johnson-nxvvxo @ e8b6abf0 (`git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo`):
-  6 ahead (981aa080 C141 Add. 1, 533ccefb C141 CLOSED, 269effb3 C142, 4b003378 C142 Add. 1, 37fcbd21 C143, 5819f96c
-  handover; `git log --oneline $(git merge-base HEAD origin/claude/vibrant-johnson-nxvvxo)..HEAD`), 1141 behind (320 first-parent); merge-base 850e9765 (C141 main, already merged by the Lead).
+- Trap check first (fetch --unshallow, fetch both branches, checkout, merge --ff-only): `git branch --show-current` = claude/checker,
+  HEAD = origin/claude/checker = d7f07947 at 11:47Z. EARLY START: no commit until 7d0c9ebe was on origin (`git ls-remote origin
+  claude/checker` = 7d0c9ebe at 11:50:29Z); then `git merge --ff-only origin/claude/checker` → HEAD = origin = 7d0c9ebe.
+- Against trunk claude/vibrant-johnson-nxvvxo @ 5d7aab0f (`git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo`):
+  2 ahead (d7f07947 C144 CLOSED, 7d0c9ebe successor 24's HANDOVER), 1286 behind (345 first-parent); merge-base 26e9d73c (C146 Add. 1,
+  merged by the Lead in b943ada6 for R130).
 
 ### 2. Open work and the next step of each
-- C142 = R128 (P-N5-GATE): first fill FAIL (269effb3, E-1..E-4); Add. 1 FAIL E-5 only (4b003378). The Lead's third fill is on origin
-  trunk: de2a3f8a (draft docs/agents/R128-draft.md, Lead quotes sha1 3f64fcd9) + log commit e8b6abf0. NEXT = C142 Add. 2: check that
-  the only change from the second fill (b4a602d1, draft 1a4bab88) is d[314] «(l. 277-278); F4-3» → «(l. 276-277); F4-3»; block
-  d[282:522] sha1 14f5cb46 (d46a09ec with newline); title and UPDATE ba695811 unchanged; re-run what the delta touches. On PASS the
-  Lead lands R128 (merge list: l-si 7b0a58ae, referee 16e8dcb0, referee-2 4a6db414, checker 269effb3, 4b003378, 37fcbd21 + Add. 2);
-  then landed rebuild, CI line, CLOSE.
-- C143 (Lean rows, l-formal c8963698): DONE 37fcbd21, accepted by the Lead; not a landing, nothing to close by CI.
-- C144 = R129 (P-N5-LEVEL) second fill: trunk 4af9279d, draft sha1 7db9c72d. NOT on origin yet (`git cat-file -t 4af9279d` fails after
-  fetch). NEXT: start when on origin; FLAGS G-LEAN (Lean-status bullet), G-R2A2, G-4, G-L43, G-U, G-NL1, G-BRIEF, whole-file quote
-  sweep incl. misses from cut-off output lines, successor 23's stale-l. 189 finding. Lands only after R128.
-- C145 = Lean Γ3/PAD rows #70-#74 (pad, gamma3_card, gamma3_old, pad_value, lift_start) on claude/l-formal 82ec6eb4 + MANIFEST.md,
-  R-L1..R-L4 as in C143, build of record = lean-lemmas CI run on that commit (L54). NOT on origin yet (origin l-formal = e34ec899;
-  82ec6eb4 unknown object). NEXT: start when on origin.
-- Then whatever the Lead routes (R130 = P-N5-WRAP as C146).
+- C146 = R130 (P-N5-WRAP): Add. 1 PASS 26e9d73c; R130 LANDED at a41e21c0 (merges 6bf3b44d l-si faf0c8ff, 4eebeffc referee 32d61d60,
+  5055c7e9 referee-2 0f2606da, b943ada6 checker 26e9d73c). Add. 2 prepared in scratch, not committed (EARLY START): the four ancestors
+  rc 0; parent b943ada6 RESULTS / GAPS = b28b7c81's = b94b0bac's (rc 0); rebuild from b94b0bac's draft (sha1 6858d52d…, block d[245:444]
+  with «checker 26e9d73c)», UPDATE d[461] filled «2026-11-13», «10:06», «26e9d73c»): RESULTS eecbd798… and GAPS 3fa61e1c… byte-equal to
+  a41e21c0's (True, True), negative control False; NOW counters R31-R130 (l. 2) and R17-R130 (l. 11) the only NOW change. NEXT: the CI
+  line from run 43416851341 (#7719) on c6c9646f, the push that carried the landing (job verify, Gate in progress since 11:25:32Z at my
+  read; L56: full self-checks; read the Gate log for «PASS     experiment self-checks»), then «C146 CLOSED» or the failing string.
+- Lean rows #75-#78 (Fuel: Spec.fuel_eval / fuel_iter / fuel_run / fuel_states, claude/l-formal 8687c6fc + fa54df74 MANIFEST): report
+  number C147 unless the Lead numbers it otherwise. Read so far (no verdict): build of record = run 43404819676 (#7708) on fa54df74, job
+  lean-lemmas 131816478164 success, «Build completed successfully (3201 jobs).», axioms Classical.choice / Quot.sound / propext, «LEAN
+  LEMMAS PASS»; 8687c6fc..fa54df74 changes only MANIFEST.md under lean/; verify.yml = trunk's. NEXT after «go»: my grep of the archive,
+  the four Statements against the Lead's accepted text (08:42Z / 08:44Z, R1, R2) and the Spec.lean definitions they use (C143 / C145
+  form, two readers). Then the NoFault Statement file and the KeyRule rows when the Lead routes L-FORMAL 5's SHAs.
+- Standby: L-NEW 77 packet P-N5-KEY1P (1P(G), Lemma XI-1P, REDUCTION, A1-A4) or a kill packet, routed by the Lead with the two referee SHAs.
 
 ### 3. GAPS rows owned
 None. `git show origin/claude/vibrant-johnson-nxvvxo:docs/GAPS.md | grep -n -i checker`: l. 6 (GAP-A, owner L-ALG), l. 11 (G-N5-TIME,
@@ -37,14 +40,14 @@ owner L-NEW), l. 16 (G-N5-TERM, owner L-NEW, closed); CHECKER appears there only
   connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
   where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
   open problems.»
-- D21 (DECISIONS.md l. 452, relayed verbatim; index l. 46 «active»): «Okay, I want maximum effort. I want to use 200% usage in 3 days.
-  There is fable 5.2 as well, use that too in dpeth everywhere where it seems fitting, use fable 5.2 at hard or xhigh. SO yes, 200% uage
-  under 2 days.» (Lead readings L51-L53, index l. 48-50 «active»: maximum effort to 2026-11-14 10:05Z; CHECKER on Opus 5.5 (L53).)
-  Also binding on my Lean rows: L54 (index l. 51 «active», Lead reading): build of record = CI job lean-lemmas on the exact commit.
+- D25 (DECISIONS.md l. 541; index l. 57 «active»): «So put everything into trying solving it today». Lead reading L58 (index l. 58
+  «active») (2): «Landing duty (R130) and Lean statements continue; side items wait.» (3): «Nothing in D25 relaxes D1».
+  Also binding on my Lean rows: L54 (index l. 51 «active»): build of record = CI job lean-lemmas on the exact commit; on landings L56
+  (index l. 53 «active»): CI always runs the full suite.
 
 ### 5. One trap and the check that prevents it
-Successor 23's own trap (2026-11-09 ~10:40Z): push.sh was started with «&» inside a compound command instead of as a tracked background
-task; it passed, but an untracked push can die with a container restart unseen. Check: `pgrep -af "bash scripts/push.sh"` empty first;
-the push.sh call (redirected to a file, then `echo exit $?`) is the whole Bash command, run_in_background true, timeout 2 h; no commit
-while it runs. Second trap seen now: fresh container without Oink (`ls tools/oink/build` fails), so scripts/setup_oink.sh was started
-as a tracked task before the first push.sh; otherwise verify's smoke step reads NOT RUN.
+Successor 24's own slip (03:21Z and 07:3xZ): the push command began with a grep / pgrep before scripts/push.sh, so push.sh was not the
+whole Bash command. Check: `pgrep -af "bash scripts/push.sh"` in its own call first; then the push call is push.sh alone (output
+redirected to a file, then `echo exit $?`), run_in_background true, timeout 2 h; no commit while it runs. Second trap seen now: fresh
+container without Oink (`ls tools/oink/build` failed); scripts/setup_oink.sh ran as a tracked task first (exit 0, «oink built at
+8fbf0a7»), so verify's smoke step can run.
