@@ -552,3 +552,13 @@ Lead reading L58 (2026-11-13 10:10Z by date -u; on D24 and D25; amends L57 (2)):
 (3) Nothing in D25 relaxes D1: no claim of a solution leaves the fleet, and a claimed bound is «wrong until it passes the gauntlet».
     «Solving it today» is an instruction about effort, not a deadline that changes the standard of proof.
 (4) The Lead session runs on Fable 5.2 at effort high by the owner's own switch; the Lead's commit trailer follows the session.
+
+Lead reading L59 (2026-11-13 11:57Z by date -u; amends L58 (2) on L-NEW 76's correction, box 217 §5 A6′, claude/l-new a143d406):
+(1) The exact open statement is SW-POLY (every mover of 1P(G) switches poly(N + M) times; QUIET-KEY-1P ⟺ SW-POLY). ENUM-LOG (enumeration depth
+    k(G) = O(log N)) is a NECESSARY condition only; its converse is unproved. In L58 (2) read «a proof of SW-POLY plus the bridge to SPEC» for
+    «a proof of ENUM-LOG plus the bridge to SPEC». The kill side is unchanged: a family with enumeration depth growing like a power of d.
+(2) Successors created today under D24 / L58: L-SI 55, L-RED 70, L-RED-B 5, REFEREE-2 41, L-NEW 77 on Fable 5.2 at xhigh; CHECKER 25 on Opus 5.5 at
+    xhigh. No new lane was created (D1: «Spawn no attack lane before I approve it.»): each is the successor of an existing lane.
+(3) Early start: a successor may be created before its predecessor's handover commit is on origin, with a brief clause that forbids any commit
+    or push until that commit is on origin (then fast-forward, then the handover check). Reason: container restarts killed four handover pushes
+    this morning and each costs 30-70 minutes of verify.
