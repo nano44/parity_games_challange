@@ -1,7 +1,8 @@
 # Formats lean/lemmas/MANIFEST.md from the output of `lake env lean check/manifest.lean`.
-# usage (from lean/lemmas): python3 check/mkmanifest.py <manifest.out> <build.log> <axioms.out> <now> > MANIFEST.md
+# usage (from lean/lemmas): python3 check/mkmanifest.py <manifest.out> <build.log> <axioms.out> <now> [<tree commit>] > MANIFEST.md
 import sys, re, subprocess, hashlib
 man, buildlog, axout, now = sys.argv[1:5]
+tree = sys.argv[5] if len(sys.argv) > 5 else '78c32d90'
 L = open(man).read().splitlines()
 thms, mods = [], {}
 for l in L:
@@ -43,6 +44,9 @@ ACC = {
  'PGLemmas.GenomeRunStatement': '18:43Z, named deviation «existence is not stated in the fleet texts …; uniqueness not claimed»',
  'PGLemmas.GenomeExample': 'the witness genome `tiny`; tiny_wf / tiny_run accepted 18:43Z («Accepted as an example theorem»); 19:00Z «witness by existence (optCounter_exists), not by computation»',
  'PGLemmas.GenomeImpStatement': '19:05Z (readings (a)-(d)); ImpK5NewStatement 19:13Z, named point «stated for every mover, moved or not»',
+ 'PGLemmas.Gamma3': 'DEFINITIONS, 22:22Z «with deviations (a)-(e) as you named them» (file header)',
+ 'PGLemmas.Gamma3Statement': '22:56Z: PadStatement «with deviations (i)-(iii)», Gamma3OldStatement, Gamma3CardStatement (file header); PAD (c) not stated there',
+ 'PGLemmas.Gamma3LiftStatement': '2026-11-13 00:00Z «with deviations (i)-(iv)» (file header)',
 }
 HELPER = 'helper definitions, NO separate acceptance recorded in lane files; they enter the types of the theorems listed'
 out = []
@@ -81,7 +85,7 @@ for mod in sorted(mods):
     P('| %s | %s | %s | %s | %d: #%s |' % (path(mod).replace('PGLemmas/', ''), sha[:12], ', '.join('`%s`' % d for d in ds),
         ACC.get(mod, HELPER), len(reach), ', #'.join(map(str, reach)) if len(reach) < 12 else '%d-%d (%d rows)' % (reach[0], reach[-1], len(reach))))
 P('')
-P('## (c) Commands and outputs (run from lean/lemmas on the tree of 78c32d90, 2026-11-12; the MANIFEST commit adds no file under PGLemmas/)')
+P('## (c) Commands and outputs (run from lean/lemmas on the tree of %s; the MANIFEST commit adds no file under PGLemmas/)' % tree)
 P('')
 b = open(buildlog).read()
 ax = open(axout).read().splitlines()

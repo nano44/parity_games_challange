@@ -1,6 +1,27 @@
 # L-FORMAL notebook (Lean formalization lane; branch claude/l-formal; files: lean/, this notebook)
 
 ## Resume point
+- SUCCESSOR 4 (session_01V5yGRWV98usJz6buk8GaGb, Opus 5.5 high, started 2026-11-13T00:56Z; THIS block is the resume point; the
+  blocks below are history). Lead's work list (brief): (1) CI on 1a44c6aa; (2) C143 notes into INDEX + MANIFEST Γ3 rows; (3) SPEC in
+  Lean, DEFINITIONS ONLY, then the Lead's diff; (4) what the Lead routes.
+  - Handover check e34ec899 (push.sh started 01:00:50Z). Lead 01:01Z: «go», once ls-remote = e34ec899 and push exit 0; item (1)
+    and (2)-preparation allowed during the push; «Item (3) … send me the DEFINITIONS file, its deviation list and the comparison
+    tool's outputs (counters, controls) in one message, before any theorem.»
+  - (1) DONE: verify.yml run 43340637658 on 1a44c6aa, job lean-lemmas 131607775146 SUCCESS (3197 jobs, LEAN LEMMAS PASS). Sent 01:06Z.
+  - (2) PREPARED (sent 01:06Z): check/c143notes.py (INDEX column «CHECKER C143» from docs/checker/C143.md of claude/checker 37fcbd21
+    via `git show`, idempotent; notes N-1/N-2/N-7 by type dependency from check/c143deps.lean -> check/out/c143deps.out; N-3..N-6 by
+    name); MANIFEST.md regenerated on 1a44c6aa (rows #70-74: pad, gamma3_card, gamma3_old, pad_value, lift_start; mkmanifest.py
+    gains a tree argument + three Γ3 acceptance entries). To re-run: `git show 37fcbd21:docs/checker/C143.md > C143.md; git show
+    c8963698:lean/lemmas/Axioms.lean > Ax.lean; python3 -I check/c143notes.py C143.md check/out/c143deps.out INDEX.md Ax.lean`.
+  - (3) IN PROGRESS (NOT COMMITTED until the Lead's diff): PGLemmas/Spec.lean (general game: SGame, dual, Eng.ofGame, weight,
+    key, extend, reach, restrict, longest, Eng.evaluate = si.py l. 78-205 with FIX 2/4, improving, initialBest, arenaH/H', s4a,
+    s4b, fallbackAt, specStep, startPair, specRun; root-first key: playTo, rootKey, lexLe, Eng.tied, Eng.keyRuleAt, Eng.keyRule;
+    deviation list (D1)-(D9) at the end of the file); PGLemmas/SpecGamma3.lean (optList, vertList, vert3List, nV3, sgame3,
+    start3Pair, n5Gamma3; deviations (G1), (G2)); check/speccheck.py (general .pg mode; SPEC_GAMMA3=1 genome mode; counters
+    runfail statefail valfail sbarfail isfail itfail fbfail badfail keyfail; controls SPEC_CTRL=idx|xi|seq and keyctrl). First
+    run box113/inst (5 inst, 473 states): all counters 0, keyctrl 14, SPEC_CTRL=idx statefail 15. Full run of the 101 frozen .pg
+    -> check/out/speccheck.out (started 01:19:55Z).
+    Build: `lake build PGLemmas.SpecGamma3` (Spec is NOT yet imported by PGLemmas.lean; add both after the Lead's diff).
 - HANDOVER of SUCCESSOR 3 (session_01V5yGRX3V51LguQp6WMvAgj), written 2026-11-13T00:14Z at about 420k context. A SUCCESSOR STARTS HERE.
   STATE (all Lean-checked (lane); results only through CHECKER (C143 opened by the Lead on MANIFEST c8963698) and the CI job lean-lemmas):
   - On origin before this batch: 91f25983 (handover check), 78c32d90 (RF-A, recovered by transcript replay), c8963698 (MANIFEST +

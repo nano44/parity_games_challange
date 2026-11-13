@@ -1,4 +1,4 @@
-# lean/lemmas MANIFEST (L-FORMAL, 2026-11-12T21:54Z by date -u; for the Lead's RESULTS draft and CHECKER)
+# lean/lemmas MANIFEST (L-FORMAL, 2026-11-13T01:04Z by date -u; for the Lead's RESULTS draft and CHECKER)
 
 Generated, not hand-copied: (a) and (b) come from `lake env lean check/manifest.lean` (a `#eval` over the compiled environment:
 each theorem named in Axioms.lean, its module and line, the head of its type after the binders, and every PG definition the type
@@ -6,7 +6,7 @@ depends on, transitively through definition bodies, grouped by module); the «co
 declaration line (`git log -G`); sha1 = sha1sum of the file at this commit. Status of every row: «Lean-checked (lane)»; a result only
 through CHECKER and the CI job lean-lemmas. Scope: see README «Status and reading rules»; nothing here is a TARGET.md §2 statement.
 
-## (a) Theorems offered (69 = every `#print axioms` line of Axioms.lean)
+## (a) Theorems offered (74 = every `#print axioms` line of Axioms.lean)
 
 | # | theorem | Statement (type head) | file:line | first commit |
 | --- | --- | --- | --- | --- |
@@ -79,8 +79,13 @@ through CHECKER and the CI job lean-lemmas. Scope: see README «Status and readi
 | 67 | `Genome.imp_l5` | Genome.ImpL5Statement | GenomeImp.lean:159 | 78c32d90 |
 | 68 | `Genome.imp_non_stall` | Genome.ImpNonStallStatement | GenomeImp.lean:163 | 78c32d90 |
 | 69 | `Genome.imp_k5_new` | Genome.ImpK5NewStatement | GenomeImp.lean:197 | 78c32d90 |
+| 70 | `Genome.pad` | Genome.PadStatement | Gamma3Pad.lean:177 | 5ea6cd22 |
+| 71 | `Genome.gamma3_card` | Genome.Gamma3CardStatement | Gamma3Basic.lean:112 | 5ea6cd22 |
+| 72 | `Genome.gamma3_old` | Genome.Gamma3OldStatement | Gamma3Basic.lean:119 | 5ea6cd22 |
+| 73 | `Genome.pad_value` | Genome.PadValueStatement | Gamma3Lift.lean:499 | 1a44c6aa |
+| 74 | `Genome.lift_start` | Genome.LiftStartStatement | Gamma3Lift.lean:505 | 1a44c6aa |
 
-## (b) Definition modules the offered types depend on (26)
+## (b) Definition modules the offered types depend on (29)
 
 Statements.lean … Statements7.lean, Defs.lean, OptExists.lean (Lead 21:03Z, verbatim): «per-file acceptance times not recorded by the
 Lead; the acceptance set is 11:49Z, 12:29Z, 13:13Z, 13:58Z, 14:54Z (2026-11-12)». CHECKER diffs each Statement against its lane text;
@@ -90,8 +95,11 @@ the times are context, not the check. «Helper definitions» rows: no separate a
 | --- | --- | --- | --- | --- |
 | AbsExample.lean | eb8d4f68dde8 | `AbsExample.G`, `AbsExample.s` | helper definitions, NO separate acceptance recorded in lane files; they enter the types of the theorems listed | 3: #32, #33, #34 |
 | AbsStatement.lean | 4b2571cd9ec6 | `AbsStatement`, `SPGame`, `SPGame.E`, `SPGame.HowardAt`, `SPGame.Max`, `SPGame.NoZeroCycle`, `SPGame.PathW`, `SPGame.d`, `SPGame.edge`, `SPGame.tgt`, `SPGame.w` | 13:58Z, reading rules (i)-(v) (README «Statement ABS») | 6: #28, #29, #30, #32, #33, #34 |
-| Defs.lean | b41c937cc862 | `HowardAt`, `OnCycle`, `Val`, `Val.le`, `Val.len`, `Val.lt`, `Val.set`, `Val.top`, `Window`, `lam`, `pair`, `plen`, `pset`, `rew`, `setLt`, `val` | definitions of Statements.lean; the Lead's diffs 11:49Z-14:54Z (INDEX l. 3-4); per-file time not recorded (see note) | 54: #1-69 (54 rows) |
-| Genome.lean | 09b1bbf046c5 | `Genome`, `Genome.E`, `Genome.FromStart`, `Genome.IdealCycRun`, `Genome.M`, `Genome.N`, `Genome.Opt`, `Genome.Stopped`, `Genome.V0`, `Genome.Vertex`, `Genome.Vertex.K0`, `Genome.Vertex.K1`, `Genome.Vertex.K2`, `Genome.Vertex.K3`, `Genome.Vertex.beta`, `Genome.Vertex.cW`, `Genome.Vertex.cX`, `Genome.Vertex.casesOn`, `Genome.Vertex.ctorElim`, `Genome.Vertex.ctorElimType`, `Genome.Vertex.ctorIdx`, `Genome.Vertex.eface`, `Genome.Vertex.gate`, `Genome.Vertex.match_on_same_ctor._@.PGLemmas.Genome.3783567388._hygCtx._hyg.39`, `Genome.Vertex.match_on_same_ctor.het._@.PGLemmas.Genome.3783567388._hygCtx._hyg.39`, `Genome.Vertex.mover`, `Genome.Vertex.proxyTypeEquiv`, `Genome.Vertex.rec`, `Genome.WF`, `Genome.bmax`, `Genome.bpar`, `Genome.bprio`, `Genome.brank`, `Genome.deg`, `Genome.eb`, `Genome.epos`, `Genome.eprio`, `Genome.gate`, `Genome.idx`, `Genome.instDecidableEqVertex`, `Genome.instDecidableEqVertex.decEq`, `Genome.instFintypeVertex`, `Genome.isOdd`, `Genome.lev`, `Genome.pmax`, `Genome.pos`, `Genome.pr`, `Genome.prio`, `Genome.rk`, `Genome.start`, `Genome.start0`, `Genome.top`, `Genome.wt`, `Genome.xt` | 15:36Z, 15:50Z, deviations (a)-(h); (h) `WF.one_le_N` REQUIRED by the Lead (README «THE GENOME LAYER») | 31: #36-69 (31 rows) |
+| Defs.lean | b41c937cc862 | `HowardAt`, `OnCycle`, `Val`, `Val.le`, `Val.len`, `Val.lt`, `Val.set`, `Val.top`, `Window`, `lam`, `pair`, `plen`, `pset`, `rew`, `setLt`, `val` | definitions of Statements.lean; the Lead's diffs 11:49Z-14:54Z (INDEX l. 3-4); per-file time not recorded (see note) | 56: #1-73 (56 rows) |
+| Gamma3.lean | c67e98c67eaa | `Genome.Carrier`, `Genome.Carrier.pb`, `Genome.Carrier.pe`, `Genome.E3`, `Genome.Vertex3`, `Genome.Vertex3.casesOn`, `Genome.Vertex3.ctorIdx`, `Genome.Vertex3.m`, `Genome.Vertex3.old`, `Genome.Vertex3.pA`, `Genome.Vertex3.pQ`, `Genome.Vertex3.pR`, `Genome.Vertex3.pS`, `Genome.Vertex3.pb`, `Genome.Vertex3.pbeta`, `Genome.Vertex3.pe`, `Genome.Vertex3.proxyTypeEquiv`, `Genome.Vertex3.rec`, `Genome.idx3`, `Genome.instDecidableEqVertex3`, `Genome.instDecidableEqVertex3.decEq`, `Genome.instFintypeVertex3`, `Genome.isOdd3`, `Genome.n0`, `Genome.pmax3`, `Genome.pr3`, `Genome.prio3`, `Genome.r104`, `Genome.rk3`, `Genome.start3`, `Genome.std3`, `Genome.top3` | DEFINITIONS, 22:22Z «with deviations (a)-(e) as you named them» (file header) | 5: #70, #71, #72, #73, #74 |
+| Gamma3LiftStatement.lean | 305e0aea7b03 | `Genome.LiftStartStatement`, `Genome.PadValueStatement`, `Genome.lift3`, `Genome.npad`, `Genome.padAt`, `Genome.padSucc` | 2026-11-13 00:00Z «with deviations (i)-(iv)» (file header) | 2: #73, #74 |
+| Gamma3Statement.lean | d2258ab5ab95 | `Genome.Gamma3CardStatement`, `Genome.Gamma3OldStatement`, `Genome.PadStatement`, `Genome.Vertex3.isPad` | 22:56Z: PadStatement «with deviations (i)-(iii)», Gamma3OldStatement, Gamma3CardStatement (file header); PAD (c) not stated there | 4: #70, #71, #72, #73 |
+| Genome.lean | 09b1bbf046c5 | `Genome`, `Genome.E`, `Genome.FromStart`, `Genome.IdealCycRun`, `Genome.M`, `Genome.N`, `Genome.Opt`, `Genome.Stopped`, `Genome.V0`, `Genome.Vertex`, `Genome.Vertex.K0`, `Genome.Vertex.K1`, `Genome.Vertex.K2`, `Genome.Vertex.K3`, `Genome.Vertex.beta`, `Genome.Vertex.cW`, `Genome.Vertex.cX`, `Genome.Vertex.casesOn`, `Genome.Vertex.ctorElim`, `Genome.Vertex.ctorElimType`, `Genome.Vertex.ctorIdx`, `Genome.Vertex.eface`, `Genome.Vertex.gate`, `Genome.Vertex.match_on_same_ctor._@.PGLemmas.Genome.3783567388._hygCtx._hyg.39`, `Genome.Vertex.match_on_same_ctor.het._@.PGLemmas.Genome.3783567388._hygCtx._hyg.39`, `Genome.Vertex.mover`, `Genome.Vertex.proxyTypeEquiv`, `Genome.Vertex.rec`, `Genome.WF`, `Genome.bmax`, `Genome.bpar`, `Genome.bprio`, `Genome.brank`, `Genome.deg`, `Genome.eb`, `Genome.epos`, `Genome.eprio`, `Genome.gate`, `Genome.idx`, `Genome.instDecidableEqVertex`, `Genome.instDecidableEqVertex.decEq`, `Genome.instFintypeVertex`, `Genome.isOdd`, `Genome.lev`, `Genome.pmax`, `Genome.pos`, `Genome.pr`, `Genome.prio`, `Genome.rk`, `Genome.start`, `Genome.start0`, `Genome.top`, `Genome.wt`, `Genome.xt` | 15:36Z, 15:50Z, deviations (a)-(h); (h) `WF.one_le_N` REQUIRED by the Lead (README «THE GENOME LAYER») | 36: #36-74 (36 rows) |
 | GenomeBasic.lean | e7b3d8196455 | `Genome.isE`, `Genome.lexLt` | helper definitions, NO separate acceptance recorded in lane files; they enter the types of the theorems listed | 19: #37-69 (19 rows) |
 | GenomeClass.lean | ee81431726b4 | `Genome.K1Statement`, `Genome.K2Statement`, `Genome.K3Statement`, `Genome.K4Statement`, `Genome.K5Statement`, `Genome.cls`, `Genome.clsLe`, `Genome.clsLt`, `Genome.eset`, `Genome.isCore` | 15:50Z, deviations (K2), (K3) (e), (K4) (README «THE GENOME LAYER») | 18: #42-69 (18 rows) |
 | GenomeExample.lean | 5b48854052c2 | `Genome.tiny` | the witness genome `tiny`; tiny_wf / tiny_run accepted 18:43Z («Accepted as an example theorem»); 19:00Z «witness by existence (optCounter_exists), not by computation» | 2: #60, #61 |
@@ -115,21 +123,22 @@ the times are context, not the check. «Helper definitions» rows: no separate a
 | VJ00.lean | 2a67315117fc | `Proper`, `above`, `vj00Le` | helper definitions, NO separate acceptance recorded in lane files; they enter the types of the theorems listed | 2: #9, #10 |
 | Weights.lean | 2b57e8b9f8ae | `LexLe`, `ds`, `dw`, `pw`, `sgw`, `sl`, `wt` | helper definitions, NO separate acceptance recorded in lane files; they enter the types of the theorems listed | 10: #21, #49, #50, #51, #52, #54, #65, #66, #67, #68 |
 
-## (c) Commands and outputs (run from lean/lemmas on the tree of 78c32d90, 2026-11-12; the MANIFEST commit adds no file under PGLemmas/)
+## (c) Commands and outputs (run from lean/lemmas on the tree of 1a44c6aa, 2026-11-13; the MANIFEST commit adds no file under PGLemmas/)
 
 ```
 lake exe cache get
 rm -rf .lake/build && lake build
-  start 2026-11-12T20:59:10Z
-  Build completed successfully (3191 jobs).
+  start 2026-11-13T00:59:21Z
+  Build completed successfully (3197 jobs).
   build exit 0
   axioms exit 0
   grep exit 1 (1 = nothing found)
-  end 2026-11-12T21:00:11Z
+  end 2026-11-13T01:00:27Z
   lines with «warning:»: 0
 lake env lean Axioms.lean
-   68  depends on axioms: [propext, Classical.choice, Quot.sound]
+   72  depends on axioms: [propext, Classical.choice, Quot.sound]
     1  depends on axioms: [propext, Quot.sound]
+    1  depends on axioms: [propext]
 grep -rnw --include=*.lean -e sorry -e admit -e axiom -e native_decide . --exclude-dir=.lake   (prints nothing, exit 1)
 lake env lean check/manifest.lean   (the generator of (a) and (b))
 ```

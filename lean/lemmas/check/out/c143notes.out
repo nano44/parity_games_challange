@@ -1,0 +1,2 @@
+rows 56; theorems placed 70 (distinct 70); PASS placed 23 of 23; build-only placed 42; not-in-C143 placed 5
+theorems of Axioms.lean in no row: ['PG.brsegG_noH0', 'PG.SPGame.d_max', 'PG.SPGame.d_le_step', 'PG.Genome.prio_K1_lt_top']
