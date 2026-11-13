@@ -135,8 +135,9 @@ gverify.py work/b3 OUTDIR STATEFILES. Outputs and the climbs' final state files 
 - H_2, 1,500 steps × 1 (seed 5002): best 44 (first fallback 38), vs 41 at 400 steps (seed 2021).
 - H_3, 1,500 steps × 1 (seed 5003): best 73 (first fallback 47), vs 80 at 400 steps (seed 2031): the longer climb from another seed did
   NOT beat the shorter one; the counts are seed-limited as much as budget-limited.
-- H_4, 1,500 steps × 1 (seed 5004): PARTIAL at this commit: best 101 (first fallback 97) after 481 steps (vs 102 at 400 steps, seed
-  2041); the final value goes into the B4 report.
+- H_4, 1,500 steps × 1 (seed 5004): best 127 (first fallback 99; 28 iterations after it), vs 102 at 400 steps (seed 2041). [Was
+  «PARTIAL … 101 after 481 steps» in d889e559; final value added in the commit after 557e754c.] With the best per n over all climbs,
+  H_n n = 1..5: 21, 44, 80, 127, 152 (n = 5 only at 400 steps): growth NOT identified.
 - The family members' OWN guides (start iota, ρ0 = Odd's optimal counterstrategy, γ = ∅; docs/red-b/B4-postfb.md DATA, b4phase.py,
   both engines): H_n, n = 1..5: N5 iterations 14, 37, 65, 99, 139 with one fallback each at iteration 12, 34, 62, 96, 136. The
   iterations before the first fallback (11, 33, 61, 95, 135) equal 3n² + 13n − 5 at n = 1..5 (DATA; a 3-parameter fit to 5 points

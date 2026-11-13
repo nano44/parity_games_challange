@@ -1,0 +1,7 @@
+start its 65 F1 62 |Wg| 1457
+it 12 its 66 F1 63 fbs 1 hsteps 62 hmoves 337 tauch 0
+it 45 its 68 F1 63 fbs 1 hsteps 62 hmoves 341 tauch 0
+it 508 its 71 F1 47 fbs 1 hsteps 46 hmoves 185 tauch 0
+it 645 its 72 F1 47 fbs 1 hsteps 46 hmoves 200 tauch 0
+it 879 its 73 F1 47 fbs 1 hsteps 46 hmoves 192 tauch 0
+GFAM hn_n3_s5003_c1 |H| 63 its 73 F1 47 fbs 1 |Wg| 1457 hsteps 46 wrong 0 2593s

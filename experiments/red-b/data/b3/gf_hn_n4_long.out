@@ -1,0 +1,10 @@
+start its 99 F1 96 |Wg| 2078
+it 47 its 100 F1 96 fbs 1 hsteps 95 hmoves 635 tauch 0
+it 182 its 101 F1 97 fbs 1 hsteps 96 hmoves 632 tauch 0
+it 651 its 104 F1 97 fbs 1 hsteps 96 hmoves 617 tauch 0
+it 718 its 105 F1 98 fbs 1 hsteps 97 hmoves 577 tauch 0
+it 747 its 123 F1 98 fbs 1 hsteps 97 hmoves 576 tauch 0
+it 748 its 126 F1 98 fbs 1 hsteps 97 hmoves 576 tauch 0
+start its 126 F1 98 |Wg| 2078
+it 1216 its 127 F1 99 fbs 1 hsteps 98 hmoves 551 tauch 0
+GFAM hn_n4_s5004_c1 |H| 84 its 127 F1 99 fbs 1 |Wg| 2078 hsteps 98 wrong 0 3856s
