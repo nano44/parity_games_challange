@@ -1,0 +1,6 @@
+rand rand seed 2150 genomes 300 g2fail 0 g2e 0 lagcyc 204 xacyc 8 T 3
+rand dense seed 2151 genomes 300 g2fail 0 g2e 0 lagcyc 221 xacyc 3 T 5
+rand deep seed 2152 genomes 300 g2fail 0 g2e 0 lagcyc 265 xacyc 0 T 5
+rand noesc seed 2153 genomes 300 g2fail 0 g2e 0 lagcyc 209 xacyc 0 T 5
+rand acyc seed 2154 genomes 300 g2fail 0 g2e 0 lagcyc 0 xacyc 300 T 3
+DONE

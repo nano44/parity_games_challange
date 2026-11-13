@@ -1,6 +1,23 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 75; session_01V5yGRWimvjsi2nZhjaevtK; started 2026-11-13 ~03:03Z; GO 03:55Z, in force 03:56Z after push PASS)
+- Step 0: handover check 3a45ca65 + --no-ff merge 3bcd7b62 of successor 74's notebook corrections (530f2f54, 7f12bf0d), VERIFY PASS,
+  on origin 03:56Z. Item 0 (credited «Lead 02:43Z»): successor 74's 530f2f54 already records L-2 MATCH at both referees and N-L1 CLOSED;
+  added here: R129 is drafted by the Lead (docs/agents/R129-draft.md, not on trunk e8b6abf0 at 03:04Z) and goes to CHECKER as C144;
+  nothing owed by L-NEW on P-N5-LEVEL; if C144 routes an item: fixes entry 2 + L-3 by script (box211 mkl2 pattern, assert L-2 d18125ed).
+  Also: L-RED R240 (claude/l-red 50fe432a): FLAT-IDX's index form depends on numbering; the numbering-free content is «least root-first
+  key» = WRAP Remark (3) / R104 [RULE]; the hbound (≤ |E(H)| H-moving iterations) holds under every numbering (credit L-RED-B, L41).
+- BOX 213 first deliverable DONE in docs/new/N5-KEYWIN-box213.md + box 212 Addendum B (statement sent 04:05Z; Lead APPROVED 04:06Z with
+  points (1)-(4): Addendum B written; «exponential» replaced by kcount213's counts; W3-ALL cited for (i)'s reachability, must-0 unreach;
+  G-2 premises quoted by script (quotes213.out 8/8); hdec named). FINDINGS: (P2^τ) false at every window step with Y ≠ V; KEY-TAU
+  (consolidation of R125 W3-ALL + S1 (iv) + R24 TB); G-2 proved-lane from R122; towers: one mover switches 15/31/63/127 times (2^k − 1),
+  |K(x)| = 2^20..2^28. keysig reconciliation: RECF4 479 (non-movers keep A_s, SPEC's arena) vs REFEREE-2's 478 (non-movers kept at σ_s,
+  H_Y); ks213.py records the four readings. N-4 fixed by n4fix213.py (38 of 86 genomes, 187).
+- Tools (experiments/new/box213): key213.py (G-1), keymu213.py (KEY-TAU), kcount213.py (switches vs |K(x)|), g2_213.py (G-2), find213.py,
+  ks213.py, n4fix213.py, summ213.py, run213.sh / run213m.sh (resumable, 600 s per genome), check213.sh (+ check213.out).
+- My slip: one ad-hoc job started with a bare «&» (third CPU job); killed within a minute, rerun as a tracked task.
+
 ## HANDOVER (successor 74, PARKING 2026-11-13 02:02ZZ by date -u; context large; natural pause after box 212 Addendum A and the BOX 213 start)
 ### DONE (all via scripts/push.sh, VERIFY PASS; SHAs from git output)
 - e7dff7d1 handover check (Lead accepted, «go» 20:37Z).
@@ -20,7 +37,7 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 ### NEEDS (for successor 75)
 - DUTY: none open on P-N5-LEVEL (L-2 matched by both referees). Any CHECKER C144 item routed later: fixes entry 2 + L-3 by script.
 - BOX 213 (approved): write docs/new/N5-KEYWIN-box213.md with W-MODEL, the tau-arena statement (NOT «Howard on a subset»: false on
-  12 genomes), Post-Ye / HKZ as opened (HKZ: abstract only, theorem numbers NOT seen), kill criteria; DATA from arena213.py.
+  38 genomes per N-4; was «12»), Post-Ye / HKZ as opened (HKZ: abstract only, theorem numbers NOT seen), kill criteria; DATA from arena213.py.
 ### Things only I know
 - Container restarts came every ~30 min after midnight and killed two pushes (verify ~36 min): start a push right after a restart
   (uptime 0 min), and never commit while one runs.
@@ -49,8 +66,7 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   moved mover to a Xi_sigma-BEST gate (notbest 0 on the 5 towers, MWR4_2, MWR16_2, CW16_n; 1 exception on CFI3_n48). So the candidate
   identification: «N5's step on Gamma3 = Howard's step restricted to the movers the tau-arena optimum switches» (a block-pivot rule:
   WHICH movers move is the key; WHERE they go is Howard's). FROZEN RUN DONE (out/arena213_frozen.out, 81 frozen + 5 towers): taufix 1
-  everywhere, nonmover 0; moved 6,107, notbest 187 on 12 genomes (W86_n77 16, W14_n75 15, RWX_n95 12, GROW8_n53 10, DWT20_2803 8, W68_n66
-  7, HOLD3K_n125 5, NK6_cl21 4, HOLD2K_n84 3, ROUTELOW_n21 2, GROW7_n34 1, CFI3_n48 1); towers 0. So the exact identification is FALSE
+  everywhere, nonmover 0; moved 6,107, notbest 187 of 6107 moves on 38 of 86 genomes (from experiments/new/box213/out/arena213_frozen.out by n4fix213.py; CORRECTED per REFEREE-2 40 N-4, Lead 03:57Z; the earlier «on 12 genomes» list summed to 84): DHIB18_2805 18, W86_n77 16, W14_n75 15, DSALT9_n416 12, RWX_n95 12, DHIB26_2804 11, C6G8_n54 10, GROW8_n53 10, K1C16_n400 9, DWT20_2803 8, W68_n66 7, DU21_h4 6, HOLD3K_n125 5, CT26_cap400 4, CT27_cap400 4, DSALT6_n108 4, NK6_cl21 4, DSALT7_n108 3, HOLD2K_n84 3, k1fail_202 3, BLKX23_n48 2, C5_NM63_7ae531ad 2, C6_NM75_72a89f5f 2, CT12_cap200 2, ROUTELOW_n21 2, B400_r32_a13d9661 1, BLKX26_n48 1, C2CX4_n23 1, C4_NM50_184a739c 1, C8_NM112_8c4c784f 1, C9_NM122_6224f959 1, CFI3_n48 1, CX4_n21 1, GROW7_n34 1, K1D4_n48 1, K1F34_n84 1, K1L7_n48 1, RINT_n48 1; towers 0. So the exact identification is FALSE
   (instances named); ~97% of moves are Howard moves; the exceptions are where the tau-arena orders improving gates differently from
   Xi_sigma. The right statement is about the tau-arena, not Howard.
 - NEXT: (1) finish the frozen run; look at the notbest exceptions (CFI3_n48); (2) write docs/new/N5-KEYWIN-box213.md: W-MODEL (the
@@ -2880,10 +2896,17 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   box210/out/gen210_instances.sha1). NO external source opened: the box says so, and claims no novelty.
 ## Dead ends (successor 74, box 213 start; experiments/new/box213/arena213.py, out/arena213_frozen.out)
 - «N5's step on Gamma3 before its first fallback = Howard's step restricted to a subset of the movers» (every moved mover goes to a
-  Xi_sigma-best gate): FALSE. 187 of 6,107 mover moves go to a non-best gate, on 12 genomes (W86_n77 16, W14_n75 15, RWX_n95 12, GROW8_n53
-  10, DWT20_2803 8, W68_n66 7, HOLD3K_n125 5, NK6_cl21 4, HOLD2K_n84 3, ROUTELOW_n21 2, GROW7_n34 1, CFI3_n48 1). Obstruction: S4a's
+  Xi_sigma-best gate): FALSE. a non-best gate: notbest 187 of 6107 moves on 38 of 86 genomes (from experiments/new/box213/out/arena213_frozen.out by n4fix213.py; CORRECTED per REFEREE-2 40 N-4, Lead 03:57Z; the earlier «on 12 genomes» list summed to 84): DHIB18_2805 18, W86_n77 16, W14_n75 15, DSALT9_n416 12, RWX_n95 12, DHIB26_2804 11, C6G8_n54 10, GROW8_n53 10, K1C16_n400 9, DWT20_2803 8, W68_n66 7, DU21_h4 6, HOLD3K_n125 5, CT26_cap400 4, CT27_cap400 4, DSALT6_n108 4, NK6_cl21 4, DSALT7_n108 3, HOLD2K_n84 3, k1fail_202 3, BLKX23_n48 2, C5_NM63_7ae531ad 2, C6_NM75_72a89f5f 2, CT12_cap200 2, ROUTELOW_n21 2, B400_r32_a13d9661 1, BLKX26_n48 1, C2CX4_n23 1, C4_NM50_184a739c 1, C8_NM112_8c4c784f 1, C9_NM122_6224f959 1, CFI3_n48 1, CX4_n21 1, GROW7_n34 1, K1D4_n48 1, K1F34_n84 1, K1L7_n48 1, RINT_n48 1. Obstruction: S4a's
   choice is the optimum of the tau-arena (Odd fixed at its SI strategy tau, which differs from sigma-bar at almost every gate), whose
   order on improving gates differs from Xi_sigma's. True on the 5 towers (notbest 0).
+
+## Dead ends (successor 75, box 213 G-1; docs/new/N5-KEYWIN-box213.md §2, experiments/new/box213/key213.py)
+- REFEREE-2 40's repair (a) of box 212 RF-D's window clause (a τ-arena RF-B: (P2^τ) «τ(g) ∈ Y for every gate g ∈ Y» and (P5^τ)): DEAD as a
+  general statement. (P2^τ) fails at EVERY window step with Y ≠ V in the DATA: random 4 modes × 300 (seeds 2150-2153) 38 of 38 plateau
+  steps, tauclos 907 (all gates), undef 38; frozen set K1F21_n48 (tauclos 97) and DHIB26_2804 (4). Instances: box213/inst/
+  TAUESC_rand2150.json (genome 80 of seed 2150 rand, 6 gates), TAUESC_dense2151.json (genome 44 of seed 2151 dense, 18 gates).
+  Obstruction: τ = TAU3 sends every gate to pe_g → e_g; RF-B (P4) puts only the σ̄-face of a gate of Y in Y, and when σ̄ takes β_g the
+  e-face can have class > m, so the τ-play leaves Y. RF-D took repair (b) (box 212 Addendum B). Lead 04:06Z: (b) accepted on this DATA.
 
 ## Dead ends (successor 68, box 203; docs/new/N5-XIFVS-box202.md Addendum A, docs/new/N5-FLIP-box203.md §2)
 - CONJECTURE K1-FLIP(2) and K1-FLIP(c), every constant c, at k = 1: killed by L-RED 63's MWR(n) (claude/l-red 406ef2fd, R229-box202;

@@ -313,3 +313,24 @@ it reached this session only at 23:23Z, after 5fa64fe6 was pushed: §8 of the bo
   (L3), (L5), (iii) and (iv) match those statements; RF-A (ii)'s (L1) is inside the Lean count; RF-B's (P4) is the Lean `gate_const`.
   The Lean row puts PLATEAU's (P5) among the Howard uses: that is the packet's (P5) (H's run is a Howard run); RF-B's (P5′) claims
   only identity or improving steps of H_Y and is not in Lean. Lean is never the proof of record here.
+
+## Addendum B (L-NEW successor 75; written 2026-11-13 04:07Z by date -u; append-only: REFEREE-2 40's pre-read G-1 / G-2 answered; RF-D's window clause withdrawn; no other statement, bound or label changes)
+- Source: REFEREE-2 40, PRE-READ (not a signature), claude/referee-2 8e075239, docs/referee-2/R2-box212-preread.md §7 (G-1, G-2), §9 (N-4);
+  routed by the Lead 03:57Z: «choose (a) or (b) with reasons». Box 213 (docs/new/N5-KEYWIN-box213.md) holds the DATA and the proofs.
+- **G-1 (window clause of RF-D): WITHDRAWN, repair (b).** The sentence of §0.5 and §6 «where every window is a run of SPEC's key rule on a
+  closed one-player sub-game of Γ3(G) whose classes are frozen» is replaced by: «where every window [u, v] is class-frozen and closed
+  under (σ_s, σ̄_s) (RF-B (P1), (P2), (P4) on Γ3, under [L3]) and N5's steps restricted to the movers of its set Y are identity steps or
+  non-empty sets of strictly improving switches of H_Y (RF-B (P5′))». The sentences «So O1′ (KEY-CYC) is equivalent, up to the polynomial
+  factor P3 + 1, to a bound on the key rule inside such windows» and «a generalised O1» are replaced by: «So, under the hypotheses, O1′
+  holds iff the longest class-frozen window of N5's run is polynomial (W_key(G) ≤ poly(N + M))»; nothing is claimed about the key rule
+  as a rule on the window's game. Reason: REFEREE-2's reading «SPEC run on the window game» is FALSE on the five towers (its §7, 741 of
+  741 states; reproduced by box 213's key213.py: keysig DBL4 178); REFEREE-2's repair (a) needs (P2^τ) «τ(g) ∈ Y for every gate g ∈ Y»,
+  and (P2^τ) FAILS at every window step with Y ≠ V in box 213's DATA (instances box213/inst/TAUESC_rand2150.json, TAUESC_dense2151.json;
+  frozen K1F21_n48, DHIB26_2804). The global one-player description of N5's choice is box 213's KEY-TAU, not a window statement.
+- The same weaker wording in §4's last bullet («So the window on Y is «the rule's own run on the one-player game H_Y, interleaved with idle
+  steps»») is read as: «the run restricted to Y is a sequence of identity steps and improving steps of H_Y»; true as such for rules whose
+  choice at a mover is fixed by the order of the Ω_s values of its gates (REFEREE-2 §5's three rules), not claimed for other rules.
+- **G-2: PROVED-lane in box 213 §4** («on every genome with an acyclic Ξ-graph every class is constant along N5's pre-fallback run on Γ3,
+  so the run is one window, the tail, Y = V»; from R122 BETA-ACYC and LAMBDA-CONST under standard states). §6's parenthesis «O1 is the
+  Ξ-acyclic case, where the whole run is one window» now rests on that statement, not on the towers' DATA.
+- Labels: RF-A, RF-B, RF-C CANDIDATE (unchanged); RF-D CONDITIONAL for its inequality and the «iff» only. Not a bound for N5; G-N5-TIME OPEN.

@@ -1,0 +1,7 @@
+g2_213_frozen.out lines 88 timeouts 0 done 1 must0_sum 0 g2fail 0 g2e 0 lagcyc 70 xacyc 5 T 299
+g2_213_rand.out lines 5 timeouts 0 done 1 must0_sum 0 g2fail 0 g2e 0 lagcyc 899 xacyc 311 T 5
+kcount213_towers.out lines 5 timeouts 0 done 1 must0_sum 0 kviol 0 T 299 sumsw 2248 maxsw 127 maxK 268435456 N 56 M 112
+key213_frozen.out lines 86 timeouts 0 done 1 must0_sum 0 tauclos 101 tauclosg 101 undef 2 n5out 0 keytau 0 keytauval 0 keytau_tail 0 keysig 7848 T 299 plats 2 platsteps 2 tailsteps 770 ysz 558 outA 1 moversY 38746
+key213_rand.out lines 4 timeouts 0 done 0 must0_sum 0 tauclos 907 tauclosg 907 undef 38 n5out 0 keytau 0 keytauval 0 keytau_tail 0 keysig 647 T 5 plats 35 platsteps 38 tailsteps 260 ysz 5042 outA 6 moversY 2438
+keymu213_frozen.out lines 88 timeouts 0 done 1 must0_sum 0 tau3 0 kp 0 kpn 0 muinc 0 muflat 0 mukappa 0 T 299 unreach 0 switches 6111 hdec 0 lexdec 6111 infdec 0 maxlen 28 wacyc 88 xacyc 5
+keymu213_rand.out lines 5 timeouts 0 done 1 must0_sum 0 tau3 0 kp 0 kpn 0 muinc 0 muflat 0 mukappa 0 T 5 unreach 0 switches 4500 hdec 0 lexdec 4500 infdec 0 maxlen 9 wacyc 1500 xacyc 311

@@ -1,0 +1,6 @@
+rand rand seed 2150 genomes 300 KM_MODE spec ctrl 0 tau3 0 kp 0 kpn 0 muinc 0 muflat 0 mukappa 0 T 3 unreach 0 switches 660 hdec 0 lexdec 660 infdec 0 maxlen 5 wacyc 300 xacyc 8
+rand dense seed 2151 genomes 300 KM_MODE spec ctrl 0 tau3 0 kp 0 kpn 0 muinc 0 muflat 0 mukappa 0 T 5 unreach 0 switches 1005 hdec 0 lexdec 1005 infdec 0 maxlen 5 wacyc 300 xacyc 3
+rand deep seed 2152 genomes 300 KM_MODE spec ctrl 0 tau3 0 kp 0 kpn 0 muinc 0 muflat 0 mukappa 0 T 5 unreach 0 switches 1479 hdec 0 lexdec 1479 infdec 0 maxlen 9 wacyc 300 xacyc 0
+rand noesc seed 2153 genomes 300 KM_MODE spec ctrl 0 tau3 0 kp 0 kpn 0 muinc 0 muflat 0 mukappa 0 T 5 unreach 0 switches 703 hdec 0 lexdec 703 infdec 0 maxlen 5 wacyc 300 xacyc 0
+rand acyc seed 2154 genomes 300 KM_MODE spec ctrl 0 tau3 0 kp 0 kpn 0 muinc 0 muflat 0 mukappa 0 T 3 unreach 0 switches 653 hdec 0 lexdec 653 infdec 0 maxlen 5 wacyc 300 xacyc 300
+DONE

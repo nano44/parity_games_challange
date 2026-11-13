@@ -1,0 +1,6 @@
+DBL4_d20_F30.json kviol 0 T 30 sumsw 100 maxsw 15 maxK 1048576 N 40 M 80
+H5_d20_F62.json kviol 0 T 136 sumsw 351 maxsw 31 maxK 1048576 N 40 M 80
+H6_d24_F126.json kviol 0 T 209 sumsw 491 maxsw 63 maxK 16777216 N 48 M 96
+HIT7_d28_F254.json kviol 0 T 299 sumsw 1103 maxsw 127 maxK 268435456 N 56 M 112
+RECF4_d20_F60.json kviol 0 T 67 sumsw 203 maxsw 30 maxK 1048576 N 40 M 80
+DONE

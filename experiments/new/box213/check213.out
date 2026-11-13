@@ -1,0 +1,15 @@
+TAUESC_rand2150.json ctrl 0 tauclos 6 tauclosg 6 undef 1 n5out 0 keytau 0 keytauval 0 keytau_tail 0 keysig 0 T 2 plats 1 platsteps 1 tailsteps 0 ysz 43 outA 0 moversY 2
+TAUESC_dense2151.json ctrl 0 tauclos 18 tauclosg 18 undef 1 n5out 0 keytau 0 keytauval 0 keytau_tail 0 keysig 0 T 2 plats 1 platsteps 1 tailsteps 0 ysz 105 outA 0 moversY 6
+DBL4_d20_F30.json ctrl 0 tauclos 0 tauclosg 0 undef 0 n5out 0 keytau 0 keytauval 0 keytau_tail 0 keysig 178 T 30 plats 0 platsteps 0 tailsteps 30 ysz 0 outA 0 moversY 1200
+ctrlkey TAUESC_dense2151.json ctrl 1 tauclos 18 tauclosg 18 undef 1 n5out 1 keytau 0 keytauval 0 keytau_tail 0 keysig 0 T 2 plats 1 platsteps 1 tailsteps 0 ysz 104 outA 1 moversY 6
+DBL4_d20_F30.json KM_MODE spec ctrl 0 tau3 0 kp 0 kpn 0 muinc 0 muflat 0 mukappa 0 T 30 unreach 0 switches 100 hdec 0 lexdec 100 infdec 0 maxlen 20 wacyc 1 xacyc 1
+CFI3_n48.json KM_MODE spec ctrl 0 tau3 0 kp 0 kpn 0 muinc 0 muflat 0 mukappa 0 T 2 unreach 0 switches 12 hdec 0 lexdec 12 infdec 0 maxlen 2 wacyc 1 xacyc 0
+TAUESC_rand2150.json KM_MODE spec ctrl 0 tau3 0 kp 0 kpn 0 muinc 0 muflat 0 mukappa 0 T 2 unreach 0 switches 2 hdec 0 lexdec 2 infdec 0 maxlen 3 wacyc 1 xacyc 0
+rand rand seed 2180 genomes 30 KM_MODE spec ctrl 0 tau3 0 kp 0 kpn 0 muinc 0 muflat 0 mukappa 0 T 4 unreach 0 switches 83 hdec 0 lexdec 83 infdec 0 maxlen 5 wacyc 30 xacyc 0
+ctrlxi DBL4_d20_F30.json KM_MODE xi ctrl 0 tau3 0 kp 44 kpn 0 muinc 91 muflat 0 mukappa 248 T 9 unreach 0 switches 77 hdec 0 lexdec 77 infdec 0 maxlen 20 wacyc 1 xacyc 1
+ctrlrev DBL4_d20_F30.json KM_MODE spec ctrl 1 tau3 0 kp 213 kpn 0 muinc 0 muflat 0 mukappa 1006 T 30 unreach 0 switches 100 hdec 0 lexdec 100 infdec 0 maxlen 20 wacyc 1 xacyc 1
+DBL4_d20_F30.json kviol 0 T 30 sumsw 100 maxsw 15 maxK 1048576 N 40 M 80
+DBL4_d20_F30.json g2fail 0 g2e 0 lagcyc 0 xacyc 1 T 30
+MWR4_2.json g2fail 0 g2e 0 lagcyc 1 xacyc 0 T 28
+rand acyc seed 7 genomes 30 g2fail 0 g2e 0 lagcyc 0 xacyc 30 T 1
+notbest 187 of 6107 moves on 38 of 86 genomes (from experiments/new/box213/out/a

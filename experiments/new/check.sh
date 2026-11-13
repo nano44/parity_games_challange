@@ -1206,4 +1206,14 @@ if [ "$r212" -eq 0 ] && [ -z "$d212" ] && ! grep -v '^ctrl' box212/check212.out 
 else
   echo "BOX 212 RF-LEVEL check: FAILED (exit $r212)"; echo "$d212" | head -30; echo "$run212" | tail -15; printf '%s\n' "$s212" | tail -5; exit 1
 fi
+# BOX 213 KEY-WINDOW (L-NEW successor 75): G-1 ((P2^tau) fails at window steps with Y != V; RF-D repair (b)), KEY-TAU (N5's key step on Gamma3 = least root-first key on the W-graph; keys fall at every switch), G-2 (Xi-acyclic => one window), N-4: must-0 counters 0 on the check set and in every frozen output (summ213.py), controls fire, outputs and instances pinned, premise quotes found
+r213=0; run213=$(cd box213 && bash check213.sh 2>&1) || r213=$?
+d213=$(diff <(printf '%s\n' "$run213") box213/check213.out 2>&1) || true
+m213='\b(n5out|keytau_tail|tau3|kp|kpn|muinc|muflat|mukappa|unreach|hdec|g2fail|g2e|kviol) [1-9]'
+s213=$(cd box213 && python3 -I summ213.py 2>&1) || r213=$((r213 + 100))
+if [ "$r213" -eq 0 ] && [ -z "$d213" ] && ! grep -v '^ctrl' box213/check213.out | grep -Eq "$m213" && grep -Eq '^ctrlkey .*\bn5out [1-9]' box213/check213.out && grep -Eq '^ctrlxi .*\bkp [1-9]' box213/check213.out && grep -Eq '^ctrlrev .*\bkp [1-9]' box213/check213.out && grep -Eq '^MWR4_2.json .*\blagcyc [1-9]' box213/check213.out && grep -Eq '^TAUESC_rand2150.json .*\btauclos [1-9]' box213/check213.out && ! printf '%s\n' "$s213" | grep -Eq 'must0_sum [1-9]' && diff <(printf '%s\n' "$s213") box213/out/summ213.txt > /dev/null && (cd box213/out && sha1sum -c --quiet SHA1SUMS) && (cd box213/inst && sha1sum -c --quiet SHA1SUMS) && grep -q '^quotes 8 missing 0 ' box213/quotes213.out; then
+  echo "BOX 213 KEY-WINDOW: must-0 counters 0 (check set and frozen outputs), controls fire (key n5out, xi kp, reversed BFS kp, lagcyc), (P2^tau) fails on the pinned instances, outputs and instances pinned, quotes 8 found: PASS"
+else
+  echo "BOX 213 KEY-WINDOW check: FAILED (exit $r213)"; echo "$d213" | head -30; echo "$run213" | tail -15; printf '%s\n' "$s213" | tail -5; exit 1
+fi
 rm -rf "$tmp"

@@ -1,0 +1,4 @@
+rand deep seed 2152 genomes 300 ctrl 0 tauclos 447 tauclosg 447 undef 15 n5out 0 keytau 0 keytauval 0 keytau_tail 0 keysig 299 T 5 plats 13 platsteps 15 tailsteps 87 ysz 2407 outA 6 moversY 1161
+rand dense seed 2151 genomes 300 ctrl 0 tauclos 193 tauclosg 193 undef 9 n5out 0 keytau 0 keytauval 0 keytau_tail 0 keysig 152 T 5 plats 8 platsteps 9 tailsteps 65 ysz 1095 outA 0 moversY 448
+rand noesc seed 2153 genomes 300 ctrl 0 tauclos 225 tauclosg 225 undef 10 n5out 0 keytau 0 keytauval 0 keytau_tail 0 keysig 89 T 5 plats 10 platsteps 10 tailsteps 44 ysz 1277 outA 0 moversY 426
+rand rand seed 2150 genomes 300 ctrl 0 tauclos 42 tauclosg 42 undef 4 n5out 0 keytau 0 keytauval 0 keytau_tail 0 keysig 107 T 3 plats 4 platsteps 4 tailsteps 64 ysz 263 outA 0 moversY 403
