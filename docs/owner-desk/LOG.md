@@ -741,3 +741,6 @@ Relayed verbatim to the Lead, priority "now" (spend/model). OWNER-DESK reading s
 > do xhigh
 
 Relayed verbatim to the Lead, priority "now". OWNER-DESK reading: new sessions at effort xhigh (amends D23 / L57).
+
+## 2026-11-13T09:00Z Lead line (08:48Z, verbatim; «do xhigh» recorded as D24, amending L57)
+«Understood: new sessions run at effort xhigh, on Fable 5.2 for deep design, proof and referee work once the first Fable session shows the limit is open, and on Opus otherwise.»
