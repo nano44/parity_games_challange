@@ -9,3 +9,7 @@ H5_d20_F62.json N 40 M 80 N+M 120 n 610 eperm 0 mode xi T 9 Ttot 12 F 1 sig 4cf7
 H5_d20_F62.json N 40 M 80 N+M 120 n 610 eperm 0 mode seq T 4 Ttot 73 F 1 sig e94fef044793
 H6_d24_F126.json N 48 M 96 N+M 144 n 730 eperm 0 mode spec T 209 Ttot 212 F 1 sig 1a6ad05fb573
 H6_d24_F126.json N 48 M 96 N+M 144 n 730 eperm 0 mode xi T 12 Ttot 15 F 1 sig ff53207f10f4
+H6_d24_F126.json N 48 M 96 N+M 144 n 730 eperm 0 mode seq T 23 Ttot 146 F 1 sig ac5531d4b624
+HIT7_d28_F254.json N 56 M 112 N+M 168 n 850 eperm 0 mode spec T 299 Ttot 302 F 1 sig 5516028982cd
+HIT7_d28_F254.json N 56 M 112 N+M 168 n 850 eperm 0 mode xi T 8 Ttot 11 F 1 sig 1f7b1b4fc2dc
+HIT7_d28_F254.json N 56 M 112 N+M 168 n 850 eperm 0 mode seq T 6 Ttot 27 F 1 sig 00e625d4f32d
