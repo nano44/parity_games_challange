@@ -279,3 +279,31 @@ WRAP uses no property of H (Remark 1): correct, my random games have any owners,
   whitespace-normalised, in docs/referee/R-WRAP-preread.md at claude/referee 90703a81 (35,268 B): 10 of 10 found (nested «…» tested piece
   by piece). This closes the item left open in 1.1. Nothing in it changes a verdict. I read R-WRAP-preread only for this check, after my
   verdict; agreement with REFEREE's own review of the packet (when it exists) is a separate line.
+
+## Addendum 2 (REFEREE-2 successor 39; 2026-11-13 01:28Z by date -u): byte test of fixes entry 1 + line L-2 (claude/l-si faf0c8ff)
+Objects (from git show at faf0c8ff): docs/si/P-N5-WRAP-line-L2.txt sha1 dbd5f0e83e3d0300842c46cf2ae24b30b853d784, 3,598 B, one line;
+docs/si/P-N5-WRAP-fixes.md entry 1; the packet (1670432a…) and L-1 (896f9e97…) unchanged. REFEREE 34's report read now (claude/referee
+99df2458, docs/referee/R-P-N5-WRAP.md), after my verdict 07fd5ae4.
+### Bytes (own script R2-P-N5-WRAP/bt_wl2.py, out bt_wl2.out; not the lane's mkL2.py)
+- LW-1 (REFEREE 34 §5, «old» → «new» exact) on L-1: sha1 be7da8f3a98e4c5a26158eae9aa2766c56531222, 3,190 B = REFEREE 34's L-1′.
+- R-1 (mine, Old / New exact): the Old occurs once after LW-1; applied.
+- R-2 (mine): its Old does NOT occur after LW-1 (LW-1 rewrote that clause; my R-2 and LW-1 were written independently on L-1). Re-anchored
+  as fixes entry 1 step 3 says: LW-1's «18 counters 0 on 523,721 runs);» → my R-2 New's REFEREE 33 part + «); » + my R-2 New's WRAP
+  sentence + «;». My script does the same from my report's text.
+- LW-2 (files named by REFEREE 34: wrap_fried_xi.out, wrap_long.out, free_xi.out, all present in experiments/si/box104/out at faf0c8ff) and
+  LW-3 («to the core K0-K3 (with pads pA, s, q, r)», REFEREE 34's string; my optional R-3 not used, as ruled): applied.
+- Result: sha1 dbd5f0e8…, 3,598 B, 44 «(» = 44 «)»; cmp with the lane's L-2: EQUAL. Each old string occurs exactly once at its step.
+  L-2 = L-1 + exactly LW-1, R-1, R-2 (re-anchored), LW-2, LW-3.
+### Meaning
+- R-1: the NT clause now reads «Howard's run of G_n (Figure 4's injective priorities, the READING below) from ι». Met.
+- R-2: the DATA now names WRAP's six counters twice: in LW-1's clause, for the W^L_n rows; and in my R-2 sentence, for the random, frozen
+  and switchallexp sets. REFEREE 33's 18 counters are «named in its report». The DATA rule is met.
+- LW-1: the T_n numbers 8 … 2,294 = 9·2^n − 10 for n ≤ 8 equal my own replay (r2wrap.py gn); 4,598 and 9,206 for n = 9, 10 are
+  9·2^n − 10 too (cited from REFEREE 33, not re-run by me). True. LW-2, LW-3: true (§2.1's core and pads; the files exist).
+- Note W-L2-1 (no change required for MATCH; the Lead's call). The re-anchored R-2 sentence now stands inside the list «independent
+  replays, every fail counter 0, …, cited, not re-run: L-COMP 20 (…), REFEREE 33 (…); WRAP's six must-0 counters (…) 0 on 4,000 random
+  games …; L-RED 66 …». The 4,000 / 3,000 / 300 runs are the lane's own (box 104 out/), not an independent replay. A reader may take them
+  for a cited replay. One exact string would remove the ambiguity, if wanted for a later line. Old (once in L-2): «; WRAP's six must-0
+  counters (». New: «; and this lane's own runs (box 104, not a replay): WRAP's six must-0 counters (».
+- No statement, label, condition or scope changes. XI-EXP stays CONDITIONAL; the DEAD row stays DEAD-CONDITIONAL until both signatures.
+### Verdict: L-2 (faf0c8ff, sha1 dbd5f0e8) MATCHES. R-1 and R-2 are met; my SIGN WITH GAP on L-1 is closed. Note W-L2-1 is optional.
