@@ -47,6 +47,8 @@ ACC = {
  'PGLemmas.Gamma3': 'DEFINITIONS, 22:22Z «with deviations (a)-(e) as you named them» (file header)',
  'PGLemmas.Gamma3Statement': '22:56Z: PadStatement «with deviations (i)-(iii)», Gamma3OldStatement, Gamma3CardStatement (file header); PAD (c) not stated there',
  'PGLemmas.Gamma3LiftStatement': '2026-11-13 00:00Z «with deviations (i)-(iv)» (file header)',
+ 'PGLemmas.Spec': 'DEFINITIONS, 2026-11-13 03:58Z «ACCEPTED WITH FIXES» U1-U4 + U-3 (fixed in 9176725a; deviations (D1)-(D11) in the file)',
+ 'PGLemmas.SpecFuelStatement': '2026-11-13 08:42Z / 08:44Z «The four Fuel Statements are accepted as written» (R1 by FuelStatesStatement; R2 in the header)',
 }
 HELPER = 'helper definitions, NO separate acceptance recorded in lane files; they enter the types of the theorems listed'
 out = []

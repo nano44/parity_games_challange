@@ -284,6 +284,13 @@ Allowed axioms: propext, Classical.choice, Quot.sound. No sorry, no admit, no ne
                             is no defect, probe check/d4probe.py). No theorem; nothing here proves N5.
 - PGLemmas/SpecGamma3.lean  DEFINITIONS: the same step on Γ3(G) (`Genome.sgame3`, `start3Pair`, `n5Gamma3`, `n5Gamma3S3`);
                             (G1) (needs Genome.WF, U3), (G2) (start3 vs S3: DATA, REFEREE-2 40 U-3).
+- PGLemmas/SpecFuelStatement.lean  STATEMENTS (Lead's diff 08:42Z / 08:44Z 2026-11-13: ACCEPTED; R1 met by FuelStatesStatement,
+                            R2 = header paragraph): FuelEvalStatement, FuelIterStatement, FuelRunStatement, FuelStatesStatement:
+                            on an `SGame.WF` game no S1 call of the transcription (one evaluation, every step record, every
+                            state of `specRun` incl. S5's stopping call) sets `fuelOut`.  Uses only succ_lt, owner_le,
+                            owner_size of WF.  Nothing about `fault` (NoFault, next) or about N5's running time.
+- PGLemmas/SpecFuel.lean    PROOFS: fuel_eval, fuel_iter, fuel_run, fuel_states (potentials under `loopFuel`; run invariant
+                            `RunInv`); specStep_flag / stepA_flag / stepB_flag: a record's `fuelOut` is the OR of its S1 calls.
 - check/speccheck.py        DATA, not a proof: Lean's `specRun` against box190/n5v.py mode «spec» (si.py Engine), state by
                             state (σ, τ, Ξσ, σ̄, Iσ, Iτ, fallback, `fuelOut`, `fault`) and the key rule on the four procedure
                             calls of every state; SPEC_GAMMA3=1 runs Γ3 of genome files against box189's gamma3.build (from

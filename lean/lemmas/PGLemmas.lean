@@ -59,3 +59,5 @@ import PGLemmas.Gamma3LiftStatement
 import PGLemmas.Gamma3Lift
 import PGLemmas.Spec
 import PGLemmas.SpecGamma3
+import PGLemmas.SpecFuelStatement
+import PGLemmas.SpecFuel

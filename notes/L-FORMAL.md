@@ -1,6 +1,27 @@
 # L-FORMAL notebook (Lean formalization lane; branch claude/l-formal; files: lean/, this notebook)
 
 ## Resume point
+- SUCCESSOR 5 (session_01V5yGRY9bh61TXMsQVPeAh9, Opus 5.5 high, started 2026-11-13T07:30Z; THIS block is the resume point; the
+  blocks below are history).
+  - Handover check 4f571cdf (push exit 0 at 08:39:01Z, VERIFY PASS; ls-remote = 4f571cdf). Lead 07:36Z: «go» once on origin; order
+    (1) FuelStatement text first; (2) NoFault Statement after Fuel; (3) KeyRuleStatement on one-player arenas, Statement first;
+    (4) CHECKER duty. Lead note for (3), verbatim: «L-RED-B 4 has found NULL improving switches in N5 (lane DATA). A switch can be
+    strictly better by SPEC S2's length component while Ξ stays unchanged after it, and it shows up as a null fallback. Make sure
+    the KeyRule Statement's hypotheses do not quietly exclude such steps.»
+  - My 07:3xZ message typed «07:37Z» without date -u (real: commit 07:35:07Z, push start 07:35:12Z); corrected in the 08:39Z message.
+  - (1) FUEL: Statement sent 08:39Z (draft dee24dfe) + addendum 08:40Z (FuelStatesStatement, draft 6b6a86af: S5's stopping call
+    leaves no record). Lead 08:42Z: ACCEPTED with R1 (cover the stop evaluation) and R2 («Say in the header what a record's
+    `fuelOut` covers … Add a one-line `rfl`/`simp`-level lemma»); Lead 08:44Z: «Your FuelStatesStatement … satisfies my R1 …
+    The four Fuel Statements are accepted as written. R2 still stands». DONE in the Fuel commit: PGLemmas/SpecFuelStatement.lean
+    (Lean text = draft 6b6a86af; header: acceptance + R2 paragraph), PGLemmas/SpecFuel.lean (successor 4's scratch proof +
+    eval_pair_fuel, specIter_states, specStep_flag / stepA_flag / stepB_flag, the four theorems typed by their Statements),
+    imports, 4 `#print axioms`, INDEX rows, MANIFEST (mkmanifest ACC gains Spec, SpecFuelStatement), README.
+    Stop-hook note: before the verdict the uncommitted files were moved to the scratchpad (Lead: no commit before the diff).
+  - (2) NOFAULT draft (scratchpad SpecNoFaultStatement.lean, type-checks): NoFaultEval / Iter (StratWF σ, τ) / Run / States
+    with `fault = false`; header lists the fault sites (F1) busy in `longest` = SPEC Q3 / VJ00 Prop 6.1 (4), (F2) BFS misses a
+    vertex of R, (F3) Odd vertex of R without choice, (F4) choice DFS without hit (impossible: same DFS as the cycle test), (F5)
+    a vertex without valuation (every alive subgraph is successor-closed and has a cycle whose most relevant vertex was a cycle
+    node when processed), (F6) S4a / S4b chooser without choice.  Send after the Fuel commit is on origin.
 - HANDOVER of SUCCESSOR 4 (session_01V5yGRWV98usJz6buk8GaGb, Opus 5.5), written at the Lead's call (05:03Z: context ~714k).
   A SUCCESSOR STARTS HERE.  FIXSHA = 9176725ac37ded142bb4d849f00a405518ca4827 (the post-verdict fix commit).
   STATE:

@@ -78,3 +78,7 @@ import PGLemmas
 #print axioms PG.Genome.gamma3_old
 #print axioms PG.Genome.pad_value
 #print axioms PG.Genome.lift_start
+#print axioms PG.Spec.fuel_eval
+#print axioms PG.Spec.fuel_iter
+#print axioms PG.Spec.fuel_run
+#print axioms PG.Spec.fuel_states
