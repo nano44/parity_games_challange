@@ -1,18 +1,30 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## RESUME POINT -- successor 22 (L-COMP 22; session_01V5yGRWfgPQ815hzDFM7SSJ), written 2026-11-13 06:1xZ (see commit time). Lead «go» 06:15Z for plan (1)-(4).
-- Handover check 6ff38698 pushed (VERIFY PASS) and accepted. Lead 06:15Z: L56 (narrows L55's skip to docs/agents/-only local runs) is in
-  Lead commit 6cec46a5 (in verify then). Lead: fix a slip with a NEW commit, never reset --soft (no history rewriting, local included).
-- (1) W_ess climb seeded at BEST_B3_WU151_NM163_e934d333: `LNEW212=<archive> bash experiments/comp/box46/run46i.sh S1` (band [140, 190],
-  2 x 300, seed 4651; log out/climb46e_S1.log, bests out/climb46e/BEST_S1_*). S2 (band [150, 260], seed 4652) prepared, not started.
-  Resumable: re-run the same command after a restart.
-- (2) `LNEW215=<archive of l-new cd4f7f4d> bash experiments/comp/box46/run46j.sh` (keymu213 / keyside215 spec + controls; out/key46_*.out).
-  mov46.py (per-mover moves on my engine): on e934d333 sum 537 (= keymu switches), max 63 at mover 12 (degree 2, = keyside maxmoves);
-  levels 1-6 move 2^l - 1 (counter pattern), level 7 on drop (out/mov46_e934d333.out).
-- (3) run46f named, run46g 0 / 1, run46h, mk46 after (1)-(2). (4) BOX 45 (c): plat208 --hist absent at l-new cd4f7f4d.
-- Archives: scratchpad LNEW212 (l-new 5fa64fe6, paths as in successor 21's list) and LNEW215 (l-new cd4f7f4d experiments/new
-  experiments/si/si.py experiments/harness experiments/n5-second experiments/hard-families).
+## HANDOVER -- successor 22 (L-COMP 22; session_01V5yGRWfgPQ815hzDFM7SSJ) PARKS (written 2026-11-13T13:48Z by date -u; Lead 13:50Z: finish BOX 48, stop the lanes, hand over, park). NOTHING RUNNING.
+- Handover check 6ff38698 (accepted 06:15Z). Lead rulings this session: 06:15Z «go» (plan 1-4); fix slips with a NEW commit, never reset --soft;
+  09:08Z BOX 47 (owner: «So put everything into trying solving it today»); 10:03Z k_A6 + khalf; 12:08Z degree-2 rule (REFEREE-2 41); 12:28Z BOX 48
+  kill-candidate check; 13:50Z park.
+- DONE (records = READMEs and out/ files, all DATA):
+  * BOX 46 item 1 (W_ess climbs seeded at BEST_B3_WU151_NM163): S1 best W_ess 153 at N + M 158, S2 151 at 158 (out/sum46i.out); W_ess = T_key
+    on every best (one tail window). Item 2: keymu213 / keyside215 must-0 all 0 on 23 genomes, controls fire (out/sum46j.out).
+  * BOX 47: C port one47.h of L-NEW's 1P(G) (one217.py @ a32a588d): mism 0 vs one217 key/howard/seq and n5v spec on 255 genomes (control 25/25;
+    out/chk47_*.out); ideq 0 vs L-RED's IDEAL ideal.traj on 275 genomes (control 75/75; out/ideq47_*.out). Search tools gen47.h / search47.c
+    (SCORE T / K / KD / KR, CLASS=UP), run47c/d/e.sh.
+  * BOX 48 (experiments/comp/box48/README.md): G_k from the relayed rule (4/4 sha1); T_key = 2^k − 2 for k = 3..20 (C port), ideq 0 k = 3..10;
+    N5 on MY Γ3 by n5b spec = 2^k + 1 iterations, 1 fallback, k = 3..12, = n5v (engdiff 0), winners = Zielonka = Oink tl / zlk; controls fire.
+- STOPPED, NOT TO BE RESUMED (Lead 13:50Z: the question is settled by G_k): K32 / K40 (raw-sw K objective; WITHDRAWN: degree 1-18 in the bests,
+  out/lanes47_final.out), KD lanes (never run), upward ladders run47e (71 runs done of 72: best k_A6 3 at d = 6, 8, 10, 12, never 4;
+  out/up47_summary.out), BOX 46 item 2 final pass run46f (xbig 5 of 11) and bands B0 / B1 (not run), A3 growth probe (stopped at restart 1).
+- Things only I know: archives in the scratchpad (lost on a new container): LNEW212 (l-new 5fa64fe6), LNEW215 (l-new cd4f7f4d), LNEW217
+  (l-new a32a588d: experiments/new experiments/si/si.py experiments/harness experiments/n5-second experiments/hard-families), LRED (l-red
+  390e56f6 experiments/red/r187 experiments/red/r178 experiments/harness). box47/bin (one47, mut47, search47*) is local: gcc -O2 -I. -o bin/one47
+  one47.c (exclude line experiments/comp/box47/bin/ in .git/info/exclude). Oink was built in this container (tools/oink, gitignored).
+  1P(G)'s Ξ weights are compared EXACTLY as rank sets (no big integers). G_k's JSON has «deg»: 2 (a scalar).
+- TRAP found: scripts/push.sh exits 0 even when its git push fails (HTTP 503 at 13:0xZ; origin unchanged). Lead owns the fix; until then compare
+  git ls-remote with the SHA after EVERY push.
+- Slips (disclosed): message stamps 12:08Z / 12:10Z / 12:13Z / 12:37Z not from date -u in the same command (12:37Z was ~12:29Z by the clock);
+  local reset --soft of an unpushed commit (model name) — Lead: use a new commit instead; the raw-sw K objective drifted into degree inflation.
 
 ## HANDOVER -- successor 21 (L-COMP 21; session_01V5yGRXVu462BehsZf8icAx) PARKS 2026-11-13 (date -u in the park commit) after BOX 44, 45, 46 (46 partly). NOTHING RUNNING at the park.
 - Lead «go» 20:30Z (BOX 44 items 2-3, queued (a), (b)); BOX 46 «go» 01:38Z with corrections; rulings 02:38Z (Wused, run_used, offbacyc),
