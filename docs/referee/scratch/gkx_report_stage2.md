@@ -1,4 +1,4 @@
-## 10. Stage 2 (written @@NOW@@, date -u): the lane's fixes entry 1; positional strategies
+## 10. Stage 2 (written 2026-11-13T15:41Z, date -u): the lane's fixes entry 1; positional strategies
 Stage 1 (§0-§9) is unchanged: no verdict of §0 changes here.
 ### 10.1 P-N5-EXP-fixes.md, entry 1 (claude/l-red-b 06d399c2; read at 9181c13c: 125 lines, sha1 4c692ab2a092708d206719759f966a0ae4f98e5a)
 - Its claim «extra DATA, no change to any statement, proof or hypothesis»: CORRECT. Measured: docs/red-b/P-N5-EXP.md at 9181c13c has

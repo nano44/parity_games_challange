@@ -1,0 +1,11 @@
+closed k 3 ctrl 0 states 7 closed 0 stopset 0 HvsP 0
+closed k 4 ctrl 0 states 15 closed 0 stopset 0 HvsP 0
+closed k 5 ctrl 0 states 31 closed 0 stopset 0 HvsP 0
+closed k 6 ctrl 0 states 63 closed 0 stopset 0 HvsP 0
+closed k 7 ctrl 0 states 127 closed 0 stopset 0 HvsP 0
+closed k 8 ctrl 0 states 255 closed 0 stopset 0 HvsP 0
+closed k 9 ctrl 0 states 511 closed 0 stopset 0 HvsP 0
+closed k 10 ctrl 0 states 1023 closed 0 stopset 0 HvsP 0
+closed k 11 ctrl 0 states 2047 closed 0 stopset 0 HvsP 0
+closed k 12 ctrl 0 states 4095 closed 0 stopset 0 HvsP 0
+closed k 6 ctrl 1 states 63 closed 35 stopset 0 HvsP 0

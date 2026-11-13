@@ -11,7 +11,7 @@ import gkx_summ
 PREFIX = {"GEN": ("packet sha1", "gen:"), "MEMBER": ("member:", "member control"), "FACTS": ("facts, ",), "FACTSCTRL": ("facts control",),
           "CAUSAL": ("causal",), "ABS": ("abs",), "RESP": ("resp",), "RUN": ("run:",), "SIZES": ("sizes files", "first k"),
           "N5": ("n5_pg", "n5:"), "N5CTL": ("n5 control",), "LEM": ("lem ",), "ORDERS": ("orders",), "QUOTES": ("tags ", "UNTAGGED", "NOTFOUND"),
-          "PG12": ("pg12:",), "STRAT": ("strat",), "UNIT": ("unit ",)}
+          "PG12": ("pg12:",), "STRAT": ("strat",), "UNIT": ("unit ",), "CLOSED": ("closed",)}
 
 STAGE1 = "2026-11-13T14:56Z"          # the date -u stamp of stage 1 as committed in c881709b (kept when later stages are appended)
 

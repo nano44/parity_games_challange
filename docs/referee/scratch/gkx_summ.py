@@ -127,6 +127,15 @@ def main():
               f"n {' '.join(x['n'] for x in z)}; m {' '.join(x['m'] for x in z)}; maxprio {' '.join(x['maxprio'] for x in z)}")
     for l in lines("unit.out"):
         print(l)
+    cl = lines("closed.out")
+    if cl:
+        z = [kv(l) for l in cl if " ctrl 0 " in l]
+        print(f"closed (box 108's c_k(t), own implementation, against my run): k {z[0]['k']}..{z[-1]['k']}; states {sum(int(x['states']) for x in z):,}; "
+              f"closed {sum(int(x['closed']) for x in z)} stopset {sum(int(x['stopset']) for x in z)} HvsP {sum(int(x['HvsP']) for x in z)}")
+        for l in cl:
+            if " ctrl 0 " not in l:
+                d = kv(l)
+                print(f"closed control {d['ctrl']} (S3 for S2) on k {d['k']}: closed {d['closed']} of {d['states']} states")
     for l in lines("n5_pg12.out"):
         print("pg12: " + l[:200])
     sl = lines("strat.out")

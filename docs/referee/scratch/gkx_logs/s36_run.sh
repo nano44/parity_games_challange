@@ -37,6 +37,7 @@ st lem && { python3 -I "$T/gkx_lem.py" 5 40 3; python3 -I "$T/gkx_lem.py" 7 30 4
 F1=9181c13cd
 st n5_pg12 && { mkdir -p "$W/pg12"; git show $F1:experiments/red-b/data/b6b/pg/G_12_g3.pg > "$W/pg12/G_12_g3.pg"; sha1sum "$W/pg12/G_12_g3.pg" | cut -c1-40 | sed 's/^/G_12_g3.pg sha1 /'; $N5 gk 12 12 --pg "$W/pg12" --pgonly; } > "$HERE/n5_pg12.tmp" && mv "$HERE/n5_pg12.tmp" "$HERE/n5_pg12.out"
 st unit && { $P unit 7; $P unit 7 --ctrl 1; } > "$HERE/unit.tmp" && mv "$HERE/unit.tmp" "$HERE/unit.out"
+st closed && { $P closed 3 4 5 6 7 8 9 10 11 12; $P closed 6 --ctrl 1; } > "$HERE/closed.tmp" && mv "$HERE/closed.tmp" "$HERE/closed.out"
 st strat && { python3 -I "$T/gkx_strat.py" 3 9; python3 -I "$T/gkx_strat.py" 4 5 --ctl allE; python3 -I "$T/gkx_strat.py" 4 5 --ctl allO; } > "$HERE/strat.tmp" && mv "$HERE/strat.tmp" "$HERE/strat.out"
 # the long stage last (k = 3..9: about 3 minutes on the engine; k = 10: about 4 more; pass N5MAX=10 to include it)
 st n5 && $N5 gk 3 ${N5MAX:-9} --pg "$W/pg" > "$HERE/n5.tmp" && mv "$HERE/n5.tmp" "$HERE/n5.out"

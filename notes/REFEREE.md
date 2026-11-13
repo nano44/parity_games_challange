@@ -18,11 +18,17 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
     gk_lemck.check_state), gkx_summ.py + gkx_fill.py + gkx_report_tmpl.md (the report is REBUILT from the logs: never edit
     R-P-N5-EXP.md by hand above its stage-2 marker; edit the template and refill), gkx_logs/s36_run.sh (resumable, about 8 min);
     k1p.py, k1p_quotes.py, k1p_summ.py, k1p_fill.py, k1p_report_tmpl.md, k1p_logs/s36_k1p_run.sh (about 6 min).
-- NEXT (in order): (1) after the report push: read L-SI's box 108 (claude/l-si; an independent proof of L(G_k) = 2^k − 2) and
-  append «Stage 2: comparison» to R-P-N5-EXP.md (append BELOW the generated text; or add a stage-2 template part to gkx_fill.py);
-  (2) the lane's docs/red-b/P-N5-EXP-fixes.md when on origin (entry 1 = DATA + §10 erratum, entry 2 = R117's premises; later
-  entries should answer E-1..E-7): check each against §9 of the report; (3) REFEREE-2's report after its own verdict, comparison if
-  the Lead asks; (4) a RESULTS-line byte test when a line is drafted (this lane's practice: rebuild the line by script).
+- UPDATE 2026-11-13T15:44Z (date -u): stage 1 and R-P-N5-KEY1P.md are ON ORIGIN (a85626aa; full verify PASS, 43 min). Stage 2 (§10: fixes
+  entry 1 checked, own strategy verifier gkx_strat.py, the lane's k = 12 game = ours, `gkx.py unit` = the induction step for
+  arbitrary delays) and stage 3 (§11: comparison with L-SI's box 108, claude/l-si 8c062914; its closed form = my run for k ≤ 12,
+  `gkx.py closed`; no conflict; its time induction has no E-1 / E-2) are appended by gkx_report_stage2.md / gkx_report_stage3.md
+  (gkx_fill.py appends them; stage stamps are frozen in the files once committed: STAGE1 in gkx_fill.py, the date in stage2.md;
+  FREEZE the @@NOW@@ of stage3.md the same way before adding a stage 4).
+- NEXT (in order): (1) the lane's docs/red-b/P-N5-EXP-fixes.md entries 2, 3, … when on origin (l-red-b successor 6 started,
+  f755b8a4; entry 2 = R117's premises (P-1), entry 3 = R124 EXACT-L (O-1); an entry must answer E-1..E-7): check each against §9
+  of the report and append a stage; for E-1 / E-2 check the lane's restated lemma against LEMMA′ (§5.3) and `gkx.py unit` / `abs`;
+  (2) REFEREE-2's report after its own verdict, comparison if the Lead asks (L41 for LEMMA′); (3) a RESULTS-line byte test when
+  a line is drafted (this lane's practice: rebuild the line by script); (4) K-1 / K-2 for P-N5-KEY1P's line or fixes entry.
 - Things only I know (s36):
   - The lane's Γ3 games (frozen data/b6b/pg/G_k_g3.pg, k = 3..11) are IDENTICAL vertex by vertex to gk_gamma3.build3 of my genome
     (counter PG 0), and my genome equals gk_build.genome(k) (GEN35 0, k ≤ 12): three engines ran the same games.

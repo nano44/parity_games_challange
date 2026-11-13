@@ -17,6 +17,7 @@ Subcommands (each prints one line per k with named must-0 counters; `ctrl N` row
   orders k.. [--reps n] [--seed s]       section 8: random gates / ranks inside the listed constraints give the same run
   sizes DIR k..      n, m, largest priority of the frozen DIR/G_k_g3.pg; the explicit instances of the dead-end paragraph
   unit [wmax] [--ctrl c]   ONE generic unit against an abstract unit above with arbitrary delays (the induction step of LEMMA')
+  closed k.. [--ctrl c]    L-SI box 108's closed form c_k(t) (own implementation from its section 3) against my run
 No absolute paths. Run with python3 -I.
 """
 import sys, json, random, itertools
@@ -955,6 +956,63 @@ def cmd_unit(args):
           + f" cross {cross}/{ncross}", flush=True)
 
 
+# ---------------------------------------------------------------- L-SI box 108's closed form (docs/si/box108-gk-proof.md section 3)
+SPOS = {"S0": "0001010", "S1": "0101010", "S2": "0100010", "S3": "0110010", "S4": "1110000", "S5": "1110100", "S6": "1110101",
+        "S7": "1010101", "S8": "1000101", "S9": "1001101", "S10": "0001001", "S11": "0001011"}      # u v y yb yp ypb e
+TPOS = ["0001", "0101", "0111", "1110", "1010", "1011", "0001"]                                    # u v y yb; T6 = T0
+
+def pos108(tau, h, ctrl=0):
+    if tau in (0, 4 * h + 2): return "S0"
+    if tau == 1: return "S1"
+    if 2 <= tau <= h - 1: return "S2" if ctrl != 1 else "S3"
+    if tau == h: return "S3"
+    if h + 1 <= tau <= 2 * h - 1: return "S4"
+    if tau == 2 * h: return "S5"
+    if tau == 2 * h + 1: return "S6"
+    if tau == 2 * h + 2: return "S7"
+    if 2 * h + 3 <= tau <= 3 * h: return "S8"
+    if tau == 3 * h + 1: return "S9"
+    if 3 * h + 2 <= tau <= 4 * h: return "S10"
+    if tau == 4 * h + 1: return "S11"
+    raise ValueError((tau, h))
+
+def closed108(k, meta, t, ctrl=0):
+    """the state c_k(t) of box 108 section 3, as a list in gkx's mover order."""
+    ix = meta["idx"]
+    s = [0] * len(ix)
+    H = {i: 2 ** (k - i + 1) - 1 for i in range(1, k)}
+    tau = {1: t}
+    for i in range(1, k - 1):
+        tau[i + 1] = tau[i] % H[i]
+    s[ix["v0"]] = int(t >= 1)
+    p = SPOS[pos108(t, H[2], ctrl)]
+    for n, b in zip(("u1", "v1", "y1", "yb1"), p[:4]):
+        s[ix[n]] = int(b)
+    for i in range(2, k - 1):
+        p = SPOS[pos108(tau[i], H[i + 1], ctrl)]
+        for n, b in zip((f"u{i}", f"v{i}", f"y{i}", f"yb{i}", f"yp{i}", f"ypb{i}", f"e{i}"), p):
+            s[ix[n]] = int(b)
+    p = TPOS[tau[k - 1]]
+    for n, b in zip((f"u{k-1}", f"v{k-1}", f"y{k-1}", f"yb{k-1}"), p):
+        s[ix[n]] = int(b)
+    return s
+
+def cmd_closed(args):
+    """L-SI box 108: its closed form c_k(t) against my run, state by state; its claim on the stop (exactly v_1..v_(k-1) have a
+    second available option at the final state); its periods H_i against the packet's P_i. Control 1: S3 for S2 in pos()."""
+    ctrl = int(take(args, "--ctrl", 1, 0))
+    for k in map(int, args):
+        G, meta = rule(k)
+        S, word = run(G)
+        L = len(S) - 1
+        bad = sum(1 for t in range(L + 1) if closed108(k, meta, t, ctrl) != S[t])
+        _, w, A = step(G, S[L])
+        held = sorted(meta["names"][x] for x in range(G["N"]) if len(A[x]) == 2)
+        stop = int(held != sorted(f"v{j}" for j in range(1, k)) or w != "stuck")
+        hp = sum(1 for j in range(1, k) if 2 ** (k - j + 1) - 1 != P(k, j))
+        print(f"closed k {k} ctrl {ctrl} states {L + 1} closed {bad} stopset {stop} HvsP {hp}", flush=True)
+
+
 def cmd_causal(args):
     """CAUSAL (referee): for every j0, the restriction of s+ (the definition's s') to the units j0..k-1 equals the abstract
     machine's step from (s on those units, E_(j0-1)(s), C_(j0-1)(s+)), the two input bits taken from the DEFINITION
@@ -1159,4 +1217,4 @@ def cmd_sizes(args):
 if __name__ == "__main__":
     cmd = sys.argv[1]
     {"gen": cmd_gen, "member": cmd_member, "run": cmd_run, "facts": cmd_facts, "resp": cmd_resp, "abs": cmd_abs,
-     "orders": cmd_orders, "causal": cmd_causal, "sizes": cmd_sizes, "unit": cmd_unit}[cmd](sys.argv[2:])
+     "orders": cmd_orders, "causal": cmd_causal, "sizes": cmd_sizes, "unit": cmd_unit, "closed": cmd_closed}[cmd](sys.argv[2:])
