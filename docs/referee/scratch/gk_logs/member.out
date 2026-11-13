@@ -1,0 +1,144 @@
+G_3: N 11 (9k-16 = 11) M 22 d 4 (k+1 = 4) | DEF clauses 9/9 ok | Xi-acyclic True | renumbering order-preserving True | max movers per level 4 | wires 1 | level-0 movers with both Xi-targets X 2 | parities [0] | L 6 (2^k-2 = 6) stop stuck | max sw 2 (2^(k-2) = 2) | n3 175 (135k-230 = 175) | 0.0s
+   [ok] movers x = 0..N-1, each with a level in {0..d-1} N=11 d=4 levels used [0, 1, 2, 3]
+   [ok] options k = 0..deg(x)-1; M = sum deg M=22 degs [2]
+   [ok] W-target: a mover of level lev(x)-1 if lev(x) >= 1, none if lev(x) = 0 (GRADED) first violation None
+   [ok] Xi-target in {movers} U {X} 
+   [ok] beta-id b(x,k): a bijection onto 0..M-1 
+   [ok] gate index gate(x,k): a bijection of the options onto 0..M-1 
+   [ok] rank br(b): a bijection onto 0..M-1 
+   [ok] parity bp(b) in {0,1} parities used [0]
+   [ok] start s_0: an option per mover 
+   movers per level: {0: 2, 1: 2, 2: 3, 3: 4}
+G_4: N 20 (9k-16 = 20) M 40 d 5 (k+1 = 5) | DEF clauses 9/9 ok | Xi-acyclic True | renumbering order-preserving True | max movers per level 6 | wires 3 | level-0 movers with both Xi-targets X 2 | parities [0] | L 14 (2^k-2 = 14) stop stuck | max sw 4 (2^(k-2) = 4) | n3 310 (135k-230 = 310) | 0.0s
+   [ok] movers x = 0..N-1, each with a level in {0..d-1} N=20 d=5 levels used [0, 1, 2, 3, 4]
+   [ok] options k = 0..deg(x)-1; M = sum deg M=40 degs [2]
+   [ok] W-target: a mover of level lev(x)-1 if lev(x) >= 1, none if lev(x) = 0 (GRADED) first violation None
+   [ok] Xi-target in {movers} U {X} 
+   [ok] beta-id b(x,k): a bijection onto 0..M-1 
+   [ok] gate index gate(x,k): a bijection of the options onto 0..M-1 
+   [ok] rank br(b): a bijection onto 0..M-1 
+   [ok] parity bp(b) in {0,1} parities used [0]
+   [ok] start s_0: an option per mover 
+   movers per level: {0: 2, 1: 2, 2: 4, 3: 6, 4: 6}
+G_5: N 29 (9k-16 = 29) M 58 d 6 (k+1 = 6) | DEF clauses 9/9 ok | Xi-acyclic True | renumbering order-preserving True | max movers per level 8 | wires 5 | level-0 movers with both Xi-targets X 2 | parities [0] | L 30 (2^k-2 = 30) stop stuck | max sw 8 (2^(k-2) = 8) | n3 445 (135k-230 = 445) | 0.0s
+   [ok] movers x = 0..N-1, each with a level in {0..d-1} N=29 d=6 levels used [0, 1, 2, 3, 4, 5]
+   [ok] options k = 0..deg(x)-1; M = sum deg M=58 degs [2]
+   [ok] W-target: a mover of level lev(x)-1 if lev(x) >= 1, none if lev(x) = 0 (GRADED) first violation None
+   [ok] Xi-target in {movers} U {X} 
+   [ok] beta-id b(x,k): a bijection onto 0..M-1 
+   [ok] gate index gate(x,k): a bijection of the options onto 0..M-1 
+   [ok] rank br(b): a bijection onto 0..M-1 
+   [ok] parity bp(b) in {0,1} parities used [0]
+   [ok] start s_0: an option per mover 
+   movers per level: {0: 2, 1: 2, 2: 4, 3: 7, 4: 8, 5: 6}
+G_6: N 38 (9k-16 = 38) M 76 d 7 (k+1 = 7) | DEF clauses 9/9 ok | Xi-acyclic True | renumbering order-preserving True | max movers per level 9 | wires 7 | level-0 movers with both Xi-targets X 2 | parities [0] | L 62 (2^k-2 = 62) stop stuck | max sw 16 (2^(k-2) = 16) | n3 580 (135k-230 = 580) | 0.0s
+   [ok] movers x = 0..N-1, each with a level in {0..d-1} N=38 d=7 levels used [0, 1, 2, 3, 4, 5, 6]
+   [ok] options k = 0..deg(x)-1; M = sum deg M=76 degs [2]
+   [ok] W-target: a mover of level lev(x)-1 if lev(x) >= 1, none if lev(x) = 0 (GRADED) first violation None
+   [ok] Xi-target in {movers} U {X} 
+   [ok] beta-id b(x,k): a bijection onto 0..M-1 
+   [ok] gate index gate(x,k): a bijection of the options onto 0..M-1 
+   [ok] rank br(b): a bijection onto 0..M-1 
+   [ok] parity bp(b) in {0,1} parities used [0]
+   [ok] start s_0: an option per mover 
+   movers per level: {0: 2, 1: 2, 2: 4, 3: 7, 4: 9, 5: 8, 6: 6}
+G_7: N 47 (9k-16 = 47) M 94 d 8 (k+1 = 8) | DEF clauses 9/9 ok | Xi-acyclic True | renumbering order-preserving True | max movers per level 9 | wires 9 | level-0 movers with both Xi-targets X 2 | parities [0] | L 126 (2^k-2 = 126) stop stuck | max sw 32 (2^(k-2) = 32) | n3 715 (135k-230 = 715) | 0.0s
+   [ok] movers x = 0..N-1, each with a level in {0..d-1} N=47 d=8 levels used [0, 1, 2, 3, 4, 5, 6, 7]
+   [ok] options k = 0..deg(x)-1; M = sum deg M=94 degs [2]
+   [ok] W-target: a mover of level lev(x)-1 if lev(x) >= 1, none if lev(x) = 0 (GRADED) first violation None
+   [ok] Xi-target in {movers} U {X} 
+   [ok] beta-id b(x,k): a bijection onto 0..M-1 
+   [ok] gate index gate(x,k): a bijection of the options onto 0..M-1 
+   [ok] rank br(b): a bijection onto 0..M-1 
+   [ok] parity bp(b) in {0,1} parities used [0]
+   [ok] start s_0: an option per mover 
+   movers per level: {0: 2, 1: 2, 2: 4, 3: 7, 4: 9, 5: 9, 6: 8, 7: 6}
+G_8: N 56 (9k-16 = 56) M 112 d 9 (k+1 = 9) | DEF clauses 9/9 ok | Xi-acyclic True | renumbering order-preserving True | max movers per level 9 | wires 11 | level-0 movers with both Xi-targets X 2 | parities [0] | L 254 (2^k-2 = 254) stop stuck | max sw 64 (2^(k-2) = 64) | n3 850 (135k-230 = 850) | 0.1s
+   [ok] movers x = 0..N-1, each with a level in {0..d-1} N=56 d=9 levels used [0, 1, 2, 3, 4, 5, 6, 7, 8]
+   [ok] options k = 0..deg(x)-1; M = sum deg M=112 degs [2]
+   [ok] W-target: a mover of level lev(x)-1 if lev(x) >= 1, none if lev(x) = 0 (GRADED) first violation None
+   [ok] Xi-target in {movers} U {X} 
+   [ok] beta-id b(x,k): a bijection onto 0..M-1 
+   [ok] gate index gate(x,k): a bijection of the options onto 0..M-1 
+   [ok] rank br(b): a bijection onto 0..M-1 
+   [ok] parity bp(b) in {0,1} parities used [0]
+   [ok] start s_0: an option per mover 
+   movers per level: {0: 2, 1: 2, 2: 4, 3: 7, 4: 9, 5: 9, 6: 9, 7: 8, 8: 6}
+G_9: N 65 (9k-16 = 65) M 130 d 10 (k+1 = 10) | DEF clauses 9/9 ok | Xi-acyclic True | renumbering order-preserving True | max movers per level 9 | wires 13 | level-0 movers with both Xi-targets X 2 | parities [0] | L 510 (2^k-2 = 510) stop stuck | max sw 128 (2^(k-2) = 128) | n3 985 (135k-230 = 985) | 0.2s
+   [ok] movers x = 0..N-1, each with a level in {0..d-1} N=65 d=10 levels used [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+   [ok] options k = 0..deg(x)-1; M = sum deg M=130 degs [2]
+   [ok] W-target: a mover of level lev(x)-1 if lev(x) >= 1, none if lev(x) = 0 (GRADED) first violation None
+   [ok] Xi-target in {movers} U {X} 
+   [ok] beta-id b(x,k): a bijection onto 0..M-1 
+   [ok] gate index gate(x,k): a bijection of the options onto 0..M-1 
+   [ok] rank br(b): a bijection onto 0..M-1 
+   [ok] parity bp(b) in {0,1} parities used [0]
+   [ok] start s_0: an option per mover 
+   movers per level: {0: 2, 1: 2, 2: 4, 3: 7, 4: 9, 5: 9, 6: 9, 7: 9, 8: 8, 9: 6}
+G_10: N 74 (9k-16 = 74) M 148 d 11 (k+1 = 11) | DEF clauses 9/9 ok | Xi-acyclic True | renumbering order-preserving True | max movers per level 9 | wires 15 | level-0 movers with both Xi-targets X 2 | parities [0] | L 1022 (2^k-2 = 1022) stop stuck | max sw 256 (2^(k-2) = 256) | n3 1120 (135k-230 = 1120) | 0.5s
+   [ok] movers x = 0..N-1, each with a level in {0..d-1} N=74 d=11 levels used [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+   [ok] options k = 0..deg(x)-1; M = sum deg M=148 degs [2]
+   [ok] W-target: a mover of level lev(x)-1 if lev(x) >= 1, none if lev(x) = 0 (GRADED) first violation None
+   [ok] Xi-target in {movers} U {X} 
+   [ok] beta-id b(x,k): a bijection onto 0..M-1 
+   [ok] gate index gate(x,k): a bijection of the options onto 0..M-1 
+   [ok] rank br(b): a bijection onto 0..M-1 
+   [ok] parity bp(b) in {0,1} parities used [0]
+   [ok] start s_0: an option per mover 
+   movers per level: {0: 2, 1: 2, 2: 4, 3: 7, 4: 9, 5: 9, 6: 9, 7: 9, 8: 9, 9: 8, 10: 6}
+G_11: N 83 (9k-16 = 83) M 166 d 12 (k+1 = 12) | DEF clauses 9/9 ok | Xi-acyclic True | renumbering order-preserving True | max movers per level 9 | wires 17 | level-0 movers with both Xi-targets X 2 | parities [0] | L 2046 (2^k-2 = 2046) stop stuck | max sw 512 (2^(k-2) = 512) | n3 1255 (135k-230 = 1255) | 0.9s
+   [ok] movers x = 0..N-1, each with a level in {0..d-1} N=83 d=12 levels used [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+   [ok] options k = 0..deg(x)-1; M = sum deg M=166 degs [2]
+   [ok] W-target: a mover of level lev(x)-1 if lev(x) >= 1, none if lev(x) = 0 (GRADED) first violation None
+   [ok] Xi-target in {movers} U {X} 
+   [ok] beta-id b(x,k): a bijection onto 0..M-1 
+   [ok] gate index gate(x,k): a bijection of the options onto 0..M-1 
+   [ok] rank br(b): a bijection onto 0..M-1 
+   [ok] parity bp(b) in {0,1} parities used [0]
+   [ok] start s_0: an option per mover 
+   movers per level: {0: 2, 1: 2, 2: 4, 3: 7, 4: 9, 5: 9, 6: 9, 7: 9, 8: 9, 9: 9, 10: 8, 11: 6}
+G_12: N 92 (9k-16 = 92) M 184 d 13 (k+1 = 13) | DEF clauses 9/9 ok | Xi-acyclic True | renumbering order-preserving True | max movers per level 9 | wires 19 | level-0 movers with both Xi-targets X 2 | parities [0] | L 4094 (2^k-2 = 4094) stop stuck | max sw 1024 (2^(k-2) = 1024) | n3 1390 (135k-230 = 1390) | 2.2s
+   [ok] movers x = 0..N-1, each with a level in {0..d-1} N=92 d=13 levels used [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+   [ok] options k = 0..deg(x)-1; M = sum deg M=184 degs [2]
+   [ok] W-target: a mover of level lev(x)-1 if lev(x) >= 1, none if lev(x) = 0 (GRADED) first violation None
+   [ok] Xi-target in {movers} U {X} 
+   [ok] beta-id b(x,k): a bijection onto 0..M-1 
+   [ok] gate index gate(x,k): a bijection of the options onto 0..M-1 
+   [ok] rank br(b): a bijection onto 0..M-1 
+   [ok] parity bp(b) in {0,1} parities used [0]
+   [ok] start s_0: an option per mover 
+   movers per level: {0: 2, 1: 2, 2: 4, 3: 7, 4: 9, 5: 9, 6: 9, 7: 9, 8: 9, 9: 9, 10: 9, 11: 8, 12: 6}
+G_13: N 101 (9k-16 = 101) M 202 d 14 (k+1 = 14) | DEF clauses 9/9 ok | Xi-acyclic True | renumbering order-preserving True | max movers per level 9 | wires 21 | level-0 movers with both Xi-targets X 2 | parities [0] | L 8190 (2^k-2 = 8190) stop stuck | max sw 2048 (2^(k-2) = 2048) | n3 1525 (135k-230 = 1525) | 5.2s
+   [ok] movers x = 0..N-1, each with a level in {0..d-1} N=101 d=14 levels used [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+   [ok] options k = 0..deg(x)-1; M = sum deg M=202 degs [2]
+   [ok] W-target: a mover of level lev(x)-1 if lev(x) >= 1, none if lev(x) = 0 (GRADED) first violation None
+   [ok] Xi-target in {movers} U {X} 
+   [ok] beta-id b(x,k): a bijection onto 0..M-1 
+   [ok] gate index gate(x,k): a bijection of the options onto 0..M-1 
+   [ok] rank br(b): a bijection onto 0..M-1 
+   [ok] parity bp(b) in {0,1} parities used [0]
+   [ok] start s_0: an option per mover 
+   movers per level: {0: 2, 1: 2, 2: 4, 3: 7, 4: 9, 5: 9, 6: 9, 7: 9, 8: 9, 9: 9, 10: 9, 11: 9, 12: 8, 13: 6}
+G_14: N 110 (9k-16 = 110) M 220 d 15 (k+1 = 15) | DEF clauses 9/9 ok | Xi-acyclic True | renumbering order-preserving True | max movers per level 9 | wires 23 | level-0 movers with both Xi-targets X 2 | parities [0] | L 16382 (2^k-2 = 16382) stop stuck | max sw 4096 (2^(k-2) = 4096) | n3 1660 (135k-230 = 1660) | 12.2s
+   [ok] movers x = 0..N-1, each with a level in {0..d-1} N=110 d=15 levels used [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+   [ok] options k = 0..deg(x)-1; M = sum deg M=220 degs [2]
+   [ok] W-target: a mover of level lev(x)-1 if lev(x) >= 1, none if lev(x) = 0 (GRADED) first violation None
+   [ok] Xi-target in {movers} U {X} 
+   [ok] beta-id b(x,k): a bijection onto 0..M-1 
+   [ok] gate index gate(x,k): a bijection of the options onto 0..M-1 
+   [ok] rank br(b): a bijection onto 0..M-1 
+   [ok] parity bp(b) in {0,1} parities used [0]
+   [ok] start s_0: an option per mover 
+   movers per level: {0: 2, 1: 2, 2: 4, 3: 7, 4: 9, 5: 9, 6: 9, 7: 9, 8: 9, 9: 9, 10: 9, 11: 9, 12: 9, 13: 8, 14: 6}
+G_15: N 119 (9k-16 = 119) M 238 d 16 (k+1 = 16) | DEF clauses 9/9 ok | Xi-acyclic True | renumbering order-preserving True | max movers per level 9 | wires 25 | level-0 movers with both Xi-targets X 2 | parities [0] | L 32766 (2^k-2 = 32766) stop stuck | max sw 8192 (2^(k-2) = 8192) | n3 1795 (135k-230 = 1795) | 27.3s
+   [ok] movers x = 0..N-1, each with a level in {0..d-1} N=119 d=16 levels used [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+   [ok] options k = 0..deg(x)-1; M = sum deg M=238 degs [2]
+   [ok] W-target: a mover of level lev(x)-1 if lev(x) >= 1, none if lev(x) = 0 (GRADED) first violation None
+   [ok] Xi-target in {movers} U {X} 
+   [ok] beta-id b(x,k): a bijection onto 0..M-1 
+   [ok] gate index gate(x,k): a bijection of the options onto 0..M-1 
+   [ok] rank br(b): a bijection onto 0..M-1 
+   [ok] parity bp(b) in {0,1} parities used [0]
+   [ok] start s_0: an option per mover 
+   movers per level: {0: 2, 1: 2, 2: 4, 3: 7, 4: 9, 5: 9, 6: 9, 7: 9, 8: 9, 9: 9, 10: 9, 11: 9, 12: 9, 13: 9, 14: 8, 15: 6}
+exit 0

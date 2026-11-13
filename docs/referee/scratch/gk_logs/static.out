@@ -1,0 +1,56 @@
+G_3 L 6 | wires that move: 0 of 1 | sw(u0) 0 sw(v0) 1 (first move of v0 at step 1)
+   sw(u_j): 0=0 1=1 2=2
+   sw(v_j): 0=1 1=1 2=2
+   sw(e_j): 
+   sw(y_j): 1=1 2=2
+   sw(yb_j): 1=1 2=2
+   sw(yp_j): 
+   sw(ypb_j): 
+G_4 L 14 | wires that move: 0 of 3 | sw(u0) 0 sw(v0) 1 (first move of v0 at step 1)
+   sw(u_j): 0=0 1=1 2=2 3=4
+   sw(v_j): 0=1 1=1 2=2 3=4
+   sw(e_j): 2=2
+   sw(y_j): 1=1 2=2 3=4
+   sw(yb_j): 1=1 2=2 3=4
+   sw(yp_j): 2=2
+   sw(ypb_j): 2=2
+G_5 L 30 | wires that move: 0 of 5 | sw(u0) 0 sw(v0) 1 (first move of v0 at step 1)
+   sw(u_j): 0=0 1=1 2=2 3=4 4=8
+   sw(v_j): 0=1 1=1 2=2 3=4 4=8
+   sw(e_j): 2=2 3=4
+   sw(y_j): 1=1 2=2 3=4 4=8
+   sw(yb_j): 1=1 2=2 3=4 4=8
+   sw(yp_j): 2=2 3=4
+   sw(ypb_j): 2=2 3=4
+G_6 L 62 | wires that move: 0 of 7 | sw(u0) 0 sw(v0) 1 (first move of v0 at step 1)
+   sw(u_j): 0=0 1=1 2=2 3=4 4=8 5=16
+   sw(v_j): 0=1 1=1 2=2 3=4 4=8 5=16
+   sw(e_j): 2=2 3=4 4=8
+   sw(y_j): 1=1 2=2 3=4 4=8 5=16
+   sw(yb_j): 1=1 2=2 3=4 4=8 5=16
+   sw(yp_j): 2=2 3=4 4=8
+   sw(ypb_j): 2=2 3=4 4=8
+G_7 L 126 | wires that move: 0 of 9 | sw(u0) 0 sw(v0) 1 (first move of v0 at step 1)
+   sw(u_j): 0=0 1=1 2=2 3=4 4=8 5=16 6=32
+   sw(v_j): 0=1 1=1 2=2 3=4 4=8 5=16 6=32
+   sw(e_j): 2=2 3=4 4=8 5=16
+   sw(y_j): 1=1 2=2 3=4 4=8 5=16 6=32
+   sw(yb_j): 1=1 2=2 3=4 4=8 5=16 6=32
+   sw(yp_j): 2=2 3=4 4=8 5=16
+   sw(ypb_j): 2=2 3=4 4=8 5=16
+G_8 L 254 | wires that move: 0 of 11 | sw(u0) 0 sw(v0) 1 (first move of v0 at step 1)
+   sw(u_j): 0=0 1=1 2=2 3=4 4=8 5=16 6=32 7=64
+   sw(v_j): 0=1 1=1 2=2 3=4 4=8 5=16 6=32 7=64
+   sw(e_j): 2=2 3=4 4=8 5=16 6=32
+   sw(y_j): 1=1 2=2 3=4 4=8 5=16 6=32 7=64
+   sw(yb_j): 1=1 2=2 3=4 4=8 5=16 6=32 7=64
+   sw(yp_j): 2=2 3=4 4=8 5=16 6=32
+   sw(ypb_j): 2=2 3=4 4=8 5=16 6=32
+G_9 L 510 | wires that move: 0 of 13 | sw(u0) 0 sw(v0) 1 (first move of v0 at step 1)
+   sw(u_j): 0=0 1=1 2=2 3=4 4=8 5=16 6=32 7=64 8=128
+   sw(v_j): 0=1 1=1 2=2 3=4 4=8 5=16 6=32 7=64 8=128
+   sw(e_j): 2=2 3=4 4=8 5=16 6=32 7=64
+   sw(y_j): 1=1 2=2 3=4 4=8 5=16 6=32 7=64 8=128
+   sw(yb_j): 1=1 2=2 3=4 4=8 5=16 6=32 7=64 8=128
+   sw(yp_j): 2=2 3=4 4=8 5=16 6=32 7=64
+   sw(ypb_j): 2=2 3=4 4=8 5=16 6=32 7=64

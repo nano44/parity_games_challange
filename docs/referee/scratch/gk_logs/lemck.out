@@ -1,0 +1,14 @@
+G_3 n3 175 max priority 97: 60 standard states (seed 103): SBAR 0 TAU 0 ESC0 0 ESC 0 W 0 XI 0 AV 0 STEP 0 | IDEAL moved 59, stopped 1
+G_4 n3 310 max priority 169: 60 standard states (seed 104): SBAR 0 TAU 0 ESC0 0 ESC 0 W 0 XI 0 AV 0 STEP 0 | IDEAL moved 60, stopped 0
+G_5 n3 445 max priority 241: 60 standard states (seed 105): SBAR 0 TAU 0 ESC0 0 ESC 0 W 0 XI 0 AV 0 STEP 0 | IDEAL moved 59, stopped 1
+G_6 n3 580 max priority 313: 60 standard states (seed 106): SBAR 0 TAU 0 ESC0 0 ESC 0 W 0 XI 0 AV 0 STEP 0 | IDEAL moved 60, stopped 0
+G_7 n3 715 max priority 385: 60 standard states (seed 107): SBAR 0 TAU 0 ESC0 0 ESC 0 W 0 XI 0 AV 0 STEP 0 | IDEAL moved 60, stopped 0
+G_8 n3 850 max priority 457: 60 standard states (seed 108): SBAR 0 TAU 0 ESC0 0 ESC 0 W 0 XI 0 AV 0 STEP 0 | IDEAL moved 60, stopped 0
+G_9 n3 985 max priority 529: 60 standard states (seed 109): SBAR 0 TAU 0 ESC0 0 ESC 0 W 0 XI 0 AV 0 STEP 0 | IDEAL moved 60, stopped 0
+G_10 n3 1120 max priority 601: 60 standard states (seed 110): SBAR 0 TAU 0 ESC0 0 ESC 0 W 0 XI 0 AV 0 STEP 0 | IDEAL moved 60, stopped 0
+G_11 n3 1255 max priority 673: 60 standard states (seed 111): SBAR 0 TAU 0 ESC0 0 ESC 0 W 0 XI 0 AV 0 STEP 0 | IDEAL moved 60, stopped 0
+G_12 n3 1390 max priority 745: 60 standard states (seed 112): SBAR 0 TAU 0 ESC0 0 ESC 0 W 0 XI 0 AV 0 STEP 0 | IDEAL moved 59, stopped 1
+G_4 [control revE] n3 310 max priority 169: 60 standard states (seed 104): SBAR 0 TAU 0 ESC0 0 ESC 0 W 0 XI 0 AV 0 STEP 60 | IDEAL moved 60, stopped 0
+G_8 [control revE] n3 850 max priority 457: 60 standard states (seed 108): SBAR 0 TAU 0 ESC0 0 ESC 0 W 0 XI 0 AV 0 STEP 60 | IDEAL moved 60, stopped 0
+G_12 [control revE] n3 1390 max priority 745: 60 standard states (seed 112): SBAR 0 TAU 0 ESC0 0 ESC 0 W 0 XI 0 AV 0 STEP 60 | IDEAL moved 59, stopped 1
+exit 0

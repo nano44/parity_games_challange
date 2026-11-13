@@ -1,0 +1,9 @@
+G_3: L genome 6, L abstract 6; ABS (state bits that differ, all steps) 0; PREF (mover-states where «the other option is Xi-better» differs) 0
+G_4: L genome 14, L abstract 14; ABS (state bits that differ, all steps) 0; PREF (mover-states where «the other option is Xi-better» differs) 0
+G_5: L genome 30, L abstract 30; ABS (state bits that differ, all steps) 0; PREF (mover-states where «the other option is Xi-better» differs) 0
+G_6: L genome 62, L abstract 62; ABS (state bits that differ, all steps) 0; PREF (mover-states where «the other option is Xi-better» differs) 0
+G_7: L genome 126, L abstract 126; ABS (state bits that differ, all steps) 0; PREF (mover-states where «the other option is Xi-better» differs) 0
+G_8: L genome 254, L abstract 254; ABS (state bits that differ, all steps) 0; PREF (mover-states where «the other option is Xi-better» differs) 0
+G_9: L genome 510, L abstract 510; ABS (state bits that differ, all steps) 0; PREF (mover-states where «the other option is Xi-better» differs) 0
+G_10: L genome 1022, L abstract 1022; ABS (state bits that differ, all steps) 0; PREF (mover-states where «the other option is Xi-better» differs) 0
+exit 0

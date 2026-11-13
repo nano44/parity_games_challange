@@ -1,0 +1,5 @@
+G_3 [control revE]: N 11 M 22 L 6 n3 175 | N5 from S3: iterations 6 (2^k+1 = 9) fallback transitions [4] (2^k-1 = 7) | counters {'S3START': 0, 'STD': 7, 'FLFB': 1, 'FLTAU': 0, 'FLSIG': 0, 'LASTFB': 0, 'WIN': 0} | Even wins 174 of 175 | 0.1s
+G_4 [control revE]: N 20 M 40 L 14 n3 310 | N5 from S3: iterations 6 (2^k+1 = 17) fallback transitions [4] (2^k-1 = 15) | counters {'S3START': 0, 'STD': 7, 'FLFB': 1, 'FLTAU': 0, 'FLSIG': 0, 'LASTFB': 0, 'WIN': 0} | Even wins 309 of 310 | 0.1s
+G_5 [control revE]: N 29 M 58 L 30 n3 445 | N5 from S3: iterations 6 (2^k+1 = 33) fallback transitions [4] (2^k-1 = 31) | counters {'S3START': 0, 'STD': 7, 'FLFB': 1, 'FLTAU': 0, 'FLSIG': 0, 'LASTFB': 0, 'WIN': 0} | Even wins 444 of 445 | 0.2s
+G_6 [control revE]: N 38 M 76 L 62 n3 580 | N5 from S3: iterations 6 (2^k+1 = 65) fallback transitions [4] (2^k-1 = 63) | counters {'S3START': 0, 'STD': 7, 'FLFB': 1, 'FLTAU': 0, 'FLSIG': 0, 'LASTFB': 0, 'WIN': 0} | Even wins 579 of 580 | 0.3s
+exit 0

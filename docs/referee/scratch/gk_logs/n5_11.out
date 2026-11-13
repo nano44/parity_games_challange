@@ -1,0 +1,2 @@
+G_11: N 83 M 166 L 2046 n3 1255 | N5 from S3: iterations 2049 (2^k+1 = 2049) fallback transitions [2047] (2^k-1 = 2047) | counters {'S3START': 0, 'STD': 0, 'FLFB': 0, 'FLTAU': 0, 'FLSIG': 0, 'LASTFB': 0, 'WIN': 0} | Even wins 1254 of 1255 | 608.5s
+exit 0

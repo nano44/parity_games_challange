@@ -1,0 +1,5 @@
+G_3: RENUM 0 (L raw 6 = L renumbered 6) | PERM 4 permutations: (L, iterations, fallback transitions, sum of counters) = [(6, 9, (7,), 0)]
+G_4: RENUM 0 (L raw 14 = L renumbered 14) | PERM 4 permutations: (L, iterations, fallback transitions, sum of counters) = [(14, 17, (15,), 0)]
+G_5: RENUM 0 (L raw 30 = L renumbered 30) | PERM 4 permutations: (L, iterations, fallback transitions, sum of counters) = [(30, 33, (31,), 0)]
+G_6: RENUM 0 (L raw 62 = L renumbered 62) | PERM 4 permutations: (L, iterations, fallback transitions, sum of counters) = [(62, 65, (63,), 0)]
+exit 0

@@ -1,6 +1,77 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## HANDOVER NOTE (successor 35), written 2026-11-13T13:47Z by date -u; parking near the 450k context line BEFORE item 2 (the Lead's 13:46Z order: «a half review is worth less than a clean handover»)
+- DONE (docs/referee/; SHAs: see the commit of this note and my last message to the Lead):
+  | item | where | result |
+  | --- | --- | --- |
+  | handover check | docs/agents/handover-checks/REFEREE.md (ef22a8d1, on origin, VERIFY PASS, ls-remote checked) | «go» for item 1 at the Lead's 12:41Z / 12:58Z |
+  | item 1: PRE-CHECK of the kill candidate G_k (NOT a signature) | docs/referee/R-GK-precheck.md (§0 table of 7 checks; §5 the reading table of R117 against F1-F8) | rebuild byte-equal on the Lead's 4 sha1 pins; G_k (gates renumbered) ∈ IDEAL-ACYC for every k (by reading) and k = 3..15 (machine); L(G_k) = 2^k − 2 for k = 3..15 on my simulator; N5 itself on Γ3(G_k) 2^k + 1 iterations, one fallback at 2^k − 1, for the k of §4's table; NO hypothesis of R117's proofs violated; findings P-1..P-4, M-1..M-3 |
+- NOT STARTED, for successor 36 (the Lead's order):
+  - ITEM 2. FIRST REVIEW (a signature) of P-N5-EXP. Object MEASURED on origin by me (not opened, not read): claude/l-red-b 350d84eb,
+    docs/red-b/P-N5-EXP.md sha1 c0449b17193f19619f33b366096762dfde27d542 (569 lines, 57,511 B); docs/red-b/B6b-construction.md
+    960ddf06…; experiments/red-b/gk.py 5222f555…. A fixes file P-N5-EXP-fixes.md follows in a later commit (entry 1 = extra DATA):
+    review the frozen file first, then the entries. Contents as the Lead reported them (12:58Z): Theorem EXP-IDEAL (a) membership
+    with gate indices a bijection onto 0..M − 1 inside the rule, (b) L(G_k) = 2^k − 2, (c) every mover of unit j switches exactly
+    2^(j−1) times, v_0 once, u_0 and the wires never; Corollary EXP-N5 (at least 2^k − 1 iterations on n = 135k − 230, m = 176k − 300);
+    the dead-end wording; Lemma MEMBER, Lemma MOVE-2, static facts K1-K4 / V0-V4 / WIRE, rest states, RESPONSE LEMMA (downward
+    induction, P_(k−1) = 3, P_j = 2P_(j+1) + 1, L = 2P_2), §8 (where the start and each ε / rank order is used), §9 DATA (model
+    k = 3..14; N5 k = 3..11 on two engines), L43's explicit instance (2^k − 1 > n² first at k = 23).
+    What the review must deliver (Lead 13:09Z): say exactly which statement is UNCONDITIONAL (EXP-IDEAL, a statement about R104's
+    model), which is CONDITIONAL on R117's premises ([1E-N3], [RULE], [VJ-LOC]; EXP-N5 for all k), and which is MEASURED (N5 at
+    small k). Plus: statement diffed against TARGET.md and R117's landed wording (RESULTS l. 13362: «the run makes at least L(G) + 1
+    iterations»; premises «with R104's premises as landed (1E-N3 = RESULTS R57 (b) in its two forms; RESULTS R24 (a) Lemma R and
+    R24 (b)'s choice rule with RESULTS R103's bridge B and (R1) ruling; RESULTS R36 (c) Lemma P1 on the dual game) and RESULTS R15
+    (d) for termination only»); Lemma MEMBER; the induction step by step (for each inductive step write which states the cited
+    fact was proved for: the s32 G-P6 trap); DATA re-run on own engine with named must-0 counters and a firing control; L43.
+    The gate numbering changed with the freeze (the rule now emits ranks 0..M − 1, same order as 100·level + eps; the 4 sha1 pins
+    are of the RAW files, `gk.py --raw`): re-check my rebuild against the frozen rule's text (gk_build.genome(k) already renumbers
+    order-preservingly; compare its gate lists with the packet's).
+  - ITEM 3. FIRST REVIEW of P-N5-KEY1P: claude/l-new 44775605, docs/new/P-N5-KEY1P.md sha1 f7191623e9ee212fa127c7e4a224f7ab9d689156
+    (measured by me on origin; not opened). After item 2.
+- Ready-made tools for item 2 (docs/referee/scratch/, all written from the packets' text / the Lead's rule; no lane code imported):
+  - gk_build.py: G_k from the rule (Appendix A of the report = gk_rule.txt); `raw(k)` (JSON form), `genome(k)` (gates renumbered),
+    `sha(k)`. gk_ideal.py: IDEAL simulator from R104 packet §2 (`check_def`, `xi_acyclic`, `bset`, `better`, `avail`, `step`, `run`).
+  - gk_gamma3.py: Γ(G), Γ3(G) and standard states from R104 §3.1 + P-N5-REACH §3; `build3_revE` = the firing control.
+  - gk_reach.py (replay of REACH3; 7 counters; own Zielonka), gk_n5.py (`gk_n5.py kmin kmax [revE]`), gk_lemck.py (8 lemma counters
+    on arbitrary standard states; `revE` control), gk_perm.py (RENUM, PERM), gk_member.py, gk_static.py (sw per mover), gk_trace*.py.
+  - gk_abs.py: MY abstract bit model of the run (static comparison facts derived by hand: Ξ-winners Wn(j), z(j), z′(j), preferred
+    options; key-winners kap(j), key-least options; a mover switches iff its other option is Ξ-preferred AND key-least). Tested
+    equal to the genome simulator along the runs (k = 3..10) and on 2,000 arbitrary states per k (k = 3..12): logs gk_logs/abs.out,
+    abs_rand.out. Use it to test the packet's K1-K4 / V0-V4 / WIRE, rest states and each step of the RESPONSE LEMMA in seconds
+    (gk_abs.step(k, s) works from ANY state dict; gk_abs_trace.py prints Wn, z, z′, kap per step).
+  - Regenerating everything: `cd docs/referee/scratch && bash gk_run.sh quick` (about 5 min: val_ideal, val_reach, sha, member
+    k = 3..15, lemck k = 3..12 + 3 controls, perm, n5 k = 3..9, traces) and `bash gk_run.sh n5` (k = 10, 11, 12: 226 s, 609 s and 1,555 s;
+    one log per k, skipped when its log ends in «exit 0»). Not in gk_run.sh (run by hand, logs committed):
+    `python3 gk_n5.py 3 6 revE > gk_logs/n5_ctl.out`, `python3 gk_abs.py 3 10 > gk_logs/abs.out`, `python3 gk_abs_rand.py 3 12 2000 7 >
+    gk_logs/abs_rand.out`, `python3 gk_static.py 3 9 > gk_logs/static.out` (each followed by `echo "exit $?" >>` the log, except
+    static.out). Report: `python3 gk_tables.py "$(date -u +%Y-%m-%dT%H:%MZ)"` rebuilds R-GK-precheck.md from gk_precheck_tmpl.md and
+    the logs (every table number is read from a log; asserts fail on any DIFFERENT).
+- The pre-check's method, and what it does NOT control (report §6): firing controls exist for STEP (gk_lemck revE), STD and FLFB
+  (gk_n5 revE) only. No control for SBAR, TAU, ESC0, ESC, W, XI, AV, S3START, FLTAU, FLSIG, LASTFB, WIN. Ideas: TAU: drop the escape
+  pads pb_g (G_k has upward Ξ-targets, so τ should break); AV: game built with a different β-rank order than the model; W: a
+  non-graded mutant; WIN: flip one priority's parity in the game given to Zielonka only.
+- Findings sent to the Lead (13:05Z) and relayed by the Lead to L-RED-B as coming fixes entries; check them in the frozen text:
+  - P-1: Corollary EXP-N5 carries R117's premises in R117's words; measured N5 runs are premise-free DATA. P-2: 9 movers on a level
+    for k ≥ 6 (the Lead's «up to 8» was a relay error). P-3: the kill is of N5 AS SPECIFIED (S4a's root-first key); the control
+    with reversed e-indices runs 6 iterations for every k = 3..6, so the long run rests on that key order; nothing follows for
+    N5′-xi or other tie rules. P-4: L43: the kill needs EXP-IDEAL PROVED for all k (or an instance beyond an explicit bound).
+  - M-1: the member of R104's class is the RENUMBERED genome (the freeze now renumbers inside the rule); M-2: the file's mover
+    order fixes mover indices and the β-vertices' option order (never decides by REACH3's proof; PERM is DATA); M-3: «deg» is a
+    scalar, «pi» / «cyc» absent in the JSON.
+- Things only I know:
+  - What I saw of the mechanism (DATA, from gk_abs_trace.py; NOT the lane's proof): u_0 stays 0, v_0 goes to 1 at step 1, so
+    Wn(0) = v and kap(0) = v from then on; unit 1 fires once (y_1 and u_1 switch at steps 2^(k−1) − 1 and 2^(k−1), which flips
+    (Wn(1), kap(1)) from (v, v) to (u, u)); every mover of unit j switches 2^(j−1) times; e_(j+1) is what releases y_j / yb_j to
+    «fwd» (key-least fwd iff e′_(j+1) = 1 or kap(j) = u) and yp_j / ypb_j the other way round; L = 2·(2^(k−1) − 1).
+  - The 13:08Z turn failed on the 5-hour usage limit; the container did NOT restart (uptime showed 1:05 at 13:45Z) and the long
+    job survived. After a failed turn: uptime, pgrep, git status first; do not assume jobs are gone.
+  - Untracked files in docs/referee/ while verify runs are harmless (verify's «clean tree» test only decides the L55/L56 skip;
+    push.sh pushes the verified SHA). Never commit while push.sh runs.
+  - GitHub returned 503 («credential service temporarily unavailable») to ls-remote at 13:08Z; push.sh can exit 0 without having
+    pushed (the Lead's 13:09Z note): after every push compare `git ls-remote origin claude/referee` with HEAD.
+  - Oink is not built in this container; my Zielonka (gk_reach.zielonka) is a plain recursive one.
+
 ## HANDOVER NOTE (successor 34), written 2026-11-13T02:36Z by date -u; parking on the Lead's 02:36Z park order
 - DONE (reports in docs/referee/; every commit below on origin, each push VERIFY PASS with Lean / Oink NOT RUN as usual):
   | item | report, section | commit of record | verdict |

@@ -1,0 +1,22 @@
+big_d3_k3_W3.json N 9 M 27 d 3 DEF True ACYC True L 17 stop stuck
+big_d4_k3_W3.json N 12 M 36 d 4 DEF True ACYC True L 32 stop stuck
+big_d6_k3_W3.json N 18 M 54 d 6 DEF True ACYC True L 42 stop stuck
+big_d8_k3_W3.json N 24 M 72 d 8 DEF True ACYC True L 54 stop stuck
+grow_top_N15.json N 15 M 45 d 5 DEF True ACYC True L 39 stop stuck
+grow_top_N24.json N 24 M 72 d 8 DEF True ACYC True L 64 stop stuck
+grow_bottom_N24.json N 24 M 72 d 8 DEF True ACYC True L 48 stop stuck
+A_d4_W2_k2.json N 8 M 16 d 4 DEF True ACYC True L 9 stop stuck
+A_d4_W3_k3.json N 12 M 36 d 4 DEF True ACYC True L 15 stop stuck
+A_d5_W2_k3.json N 10 M 30 d 5 DEF True ACYC True L 13 stop stuck
+A_d6_W2_k2.json N 12 M 24 d 6 DEF True ACYC True L 11 stop stuck
+KILL_M2D_d6_mu13_norm.json N 12 M 24 d 6 DEF True ACYC True L 13 stop stuck
+KILL_M2D_d8_mu21_norm.json N 16 M 32 d 8 DEF True ACYC True L 24 stop stuck
+RECT_d11_T59_norm.json N 22 M 44 d 11 DEF True ACYC True L 59 stop stuck
+REC_d10_mu32_norm.json N 20 M 40 d 10 DEF True ACYC True L 33 stop stuck
+REC_d10_tower_mu30_norm.json N 20 M 40 d 10 DEF True ACYC True L 35 stop stuck
+REC_d11_mu40_norm.json N 22 M 44 d 11 DEF True ACYC True L 44 stop stuck
+REC_d12_mu42_norm.json N 24 M 48 d 12 DEF True ACYC True L 48 stop stuck
+REC_d7_mu17_norm.json N 14 M 28 d 7 DEF True ACYC True L 17 stop stuck
+REC_d8_mu24_norm.json N 16 M 32 d 8 DEF True ACYC True L 25 stop stuck
+REC_d9_mu29_norm.json N 18 M 36 d 9 DEF True ACYC True L 31 stop stuck
+exit 0
