@@ -3535,3 +3535,12 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
   started with «&» by mistake (s2, 22:51Z), killed at once and restarted as a tracked task from a clean checkpoint; (3) run climbs with OUT in
   the scratchpad while verify runs, copy checkpoints into out/ before commits.
 - RESUME POINT: nothing in flight after this push; next = whatever the Lead routes (DEEP3 still ON HOLD).
+- 2026-11-13T01:54Z: R239 DONE -> docs/red/R239-rflevel.md (Lead 00:20Z: box 212 RF-LEVEL, claude/l-new 5fa64fe6). Every statement SURVIVES, no candidate:
+  rf239 (own IDEAL-CYC engine r221q/own.py, 10 improving rules incl. worst key / least gate / lowest mover / random subsets) on 550 random
+  genomes, R235's 3 and box 212's 81 frozen genomes (810 pairs, 0 timeouts), 8 climbs (62,329 evals, longest plateau 75 under onefirst);
+  static239 (R123's five static lemmas at every visited state); imp239 ([IMP3] on n5s237 + n5v) on 5 towers (T 30/67/136/209/299 =
+  box 212), 2,000 random genomes and 2 climbs (17,029 genomes, 156,541 transitions in all). Controls fire (rf239 CTRL=1/2/3, static, imp,
+  climb). Howard-only facts (K5 every gate, P3, P6, P7, QUIET-N tail) fail under other rules, as box 212 says.
+- Tools r239: rf239.py, static239.py, imp239.py (env LNEW; LRED UNSET), climb239.py, impclimb239.py, frz239.sh (list of frozen genomes:
+  git archive 5fa64fe6 experiments/new/box191..box207 inst, run212.sh's ALL).
+- RESUME POINT: nothing in flight; next = whatever the Lead routes (DEEP3 on hold).
