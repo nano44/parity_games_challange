@@ -30,3 +30,14 @@ A family whose POST-first-fallback count P1 grows super-polynomially in |Wg|, ch
 correct, each best frozen with its sha1: it goes to the Lead at once as a CANDIDATE KILL, before anything else, nothing more.
 ## 4. Not claimed
 Nothing about N5 before its first fallback (B3, box 212 RF-D), M4 or general games; a climb that finds nothing proves nothing.
+
+## 5. DATA (a): phases (data/b4/b4phase_*.out; b4phase.py; engine 1 n5v, engine 2 n5b; 2026-11-13)
+| set | wrappers | k (fallbacks) | BETWEEN | POST = P1 | wrong | engdiff | phasesum |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| B3 bests (21 gfam + 2 gclimb; b4phase_bests_spec.out) | 23 | 1 on all 23 | 0 | 5..37 (H_5 best: 37; switchallexp n = 2..6 bests: 13/14, 10/13, 14/20, 20/14, 17/23; LMCS 8, 8, 14, 8, 14) | 0 | 0 | 0 |
+| own guides, switchallexp n = 2..6 | 5 | 1 | 0 | 3, 3, 3, 3, 3 | 0 | 0 | 0 |
+| own guides, LMCS G_n n = 2..6 | 5 | 1 | 0 | 3, 3, 3, 3, 3 | 0 | 0 | 0 |
+| own guides, H_n n = 1..5 | 5 | 1 | 0 | 2, 3, 3, 3, 3 | 0 | 0 | 0 |
+| CONTROL n5v mode xi vs n5b spec (fried and LMCS bests; b4phase_ctrl_xi.out) | 15 | 1 | 0 | — | 0 | 2 (fires) | 0 |
+Reading: on every wrapper so far N5 has exactly ONE fallback; with the families' own guides the run after it is 3 iterations (2 for
+H_1); the climbed guides lengthen it to at most 37. PRE for the own guides: H_n 11, 33, 61, 95, 135 = 3n² + 13n − 5 exactly (n = 1..5).

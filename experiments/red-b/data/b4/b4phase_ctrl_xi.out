@@ -1,0 +1,16 @@
+B4PHASE alg xi gfam_fried_n2_s1021_c1 |H| 35 |Wg| 736 sha1 d246e7211059df006717bf5cc7f1f0a58f834e8f | I 23 k 1 PRE 9 BETWEEN 0 POST 13 P1 13 fallbacks at [10] | n5b I 23 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg xi gfam_fried_n2_s1022_c1 |H| 35 |Wg| 736 sha1 e8e4f99bb6fd476411a24ba0783d5b0c52543db7 | I 20 k 1 PRE 7 BETWEEN 0 POST 12 P1 12 fallbacks at [8] | n5b I 22 k 1 | wrong 0 engdiff 1 phasesum 0
+B4PHASE alg xi gfam_fried_n3_s1031_c1 |H| 49 |Wg| 1063 sha1 dc00062b79025a366769ed4762f751f6e4d70a21 | I 20 k 1 PRE 9 BETWEEN 0 POST 10 P1 10 fallbacks at [10] | n5b I 21 k 1 | wrong 0 engdiff 1 phasesum 0
+B4PHASE alg xi gfam_fried_n3_s1032_c1 |H| 49 |Wg| 1063 sha1 91a0d7c7fe84da6442a422dfc577da05af69fb8f | I 25 k 1 PRE 12 BETWEEN 0 POST 12 P1 12 fallbacks at [13] | n5b I 25 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg xi gfam_fried_n4_s1041_c1 |H| 63 |Wg| 1390 sha1 eccc9f117792bf11874d73fb9e7d35223c40d5b3 | I 31 k 1 PRE 16 BETWEEN 0 POST 14 P1 14 fallbacks at [17] | n5b I 31 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg xi gfam_fried_n4_s1042_c1 |H| 63 |Wg| 1390 sha1 47968b9703b0001897363acc4215c9f039715788 | I 33 k 1 PRE 12 BETWEEN 0 POST 20 P1 20 fallbacks at [13] | n5b I 33 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg xi gfam_fried_n5_s1051_c1 |H| 77 |Wg| 1717 sha1 633deb83b7cbb023118b7fd831cd8970de4691b2 | I 36 k 1 PRE 15 BETWEEN 0 POST 20 P1 20 fallbacks at [16] | n5b I 36 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg xi gfam_fried_n5_s1052_c1 |H| 77 |Wg| 1717 sha1 b5136f77bd12311cf0eb94da79cbe21b20ff2b3c | I 29 k 1 PRE 14 BETWEEN 0 POST 14 P1 14 fallbacks at [15] | n5b I 29 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg xi gfam_fried_n6_s1061_c1 |H| 91 |Wg| 2044 sha1 e84a53840d5b8fc673fa1ce056d1655ce3e56dff | I 34 k 1 PRE 16 BETWEEN 0 POST 17 P1 17 fallbacks at [17] | n5b I 34 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg xi gfam_fried_n6_s1062_c1 |H| 91 |Wg| 2044 sha1 435ad89083c4252396cffda0d2b45e667c4e706a | I 39 k 1 PRE 15 BETWEEN 0 POST 23 P1 23 fallbacks at [16] | n5b I 39 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg xi gfam_lmcs_n2_s3021_c1 |H| 24 |Wg| 516 sha1 db693dec7b56bce48efc1f88c901b3a5f2b6521a | I 18 k 1 PRE 9 BETWEEN 0 POST 8 P1 8 fallbacks at [10] | n5b I 18 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg xi gfam_lmcs_n3_s3031_c1 |H| 34 |Wg| 785 sha1 a029b07a3392a44b46149de349165e980480890c | I 21 k 1 PRE 12 BETWEEN 0 POST 8 P1 8 fallbacks at [13] | n5b I 21 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg xi gfam_lmcs_n4_s3041_c1 |H| 44 |Wg| 1081 sha1 d6a238739a9bfda6070bb6b7649d29517dc36d49 | I 23 k 1 PRE 8 BETWEEN 0 POST 14 P1 14 fallbacks at [9] | n5b I 23 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg xi gfam_lmcs_n5_s3051_c1 |H| 54 |Wg| 1404 sha1 64a80f4d8ac2e5283c229de33ba77d0f1da741e0 | I 22 k 1 PRE 13 BETWEEN 0 POST 8 P1 8 fallbacks at [14] | n5b I 22 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg xi gfam_lmcs_n6_s3061_c1 |H| 64 |Wg| 1754 sha1 48d6e034f9920470d2849641be2e5a178753c657 | I 31 k 1 PRE 16 BETWEEN 0 POST 14 P1 14 fallbacks at [17] | n5b I 31 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE SUMMARY alg xi wrappers 15 wrong 0 engdiff 2 phasesum 0

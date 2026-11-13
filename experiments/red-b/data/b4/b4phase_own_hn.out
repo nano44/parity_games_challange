@@ -1,0 +1,6 @@
+B4PHASE alg spec hn_n1_own |H| 21 |Wg| 404 sha1 842689a60bd9da9605946f4838e03252cb63f312 | I 14 k 1 PRE 11 BETWEEN 0 POST 2 P1 2 fallbacks at [12] | n5b I 14 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg spec hn_n2_own |H| 42 |Wg| 899 sha1 08a3ca072552016ee1074dc00b8f24ca0f5adf91 | I 37 k 1 PRE 33 BETWEEN 0 POST 3 P1 3 fallbacks at [34] | n5b I 37 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg spec hn_n3_own |H| 63 |Wg| 1457 sha1 c41f120d723dea83ce10b593c33f38ae4ae79c39 | I 65 k 1 PRE 61 BETWEEN 0 POST 3 P1 3 fallbacks at [62] | n5b I 65 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg spec hn_n4_own |H| 84 |Wg| 2078 sha1 c402be005aa435439a04e6caf0d69ee228e634fe | I 99 k 1 PRE 95 BETWEEN 0 POST 3 P1 3 fallbacks at [96] | n5b I 99 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg spec hn_n5_own |H| 105 |Wg| 2762 sha1 916c65c6ce727e975f94f5ab31cea621dd6d546b | I 139 k 1 PRE 135 BETWEEN 0 POST 3 P1 3 fallbacks at [136] | n5b I 139 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE SUMMARY alg spec wrappers 5 wrong 0 engdiff 0 phasesum 0

@@ -262,3 +262,8 @@ a765be8129bbd09eabd8cac9985ad3d1f057cd31  b3/wflat_spec_lmcs.out
 7eb2bcc800938655747d8efc62d350cc7c75a875  b3/wflat_spec_rand_s12.out
 deab2e679552bfdfca6fab4d206450b1b41660ad  b3/wflat_xi_fried.out
 ff8a4a64db87816512a1cbfea6ac7a5d2fd22bd6  b3/wflat_xi_rand_s11.out
+09cba2b1588b714fc42a927eef1f8355d6664787  b4/b4phase_bests_spec.out
+536ceacd7b0b32595ce4f5dc5ac3be5fcacdd0f7  b4/b4phase_ctrl_xi.out
+090daab54a2018d8ed883ea26fc56302628c0f9e  b4/b4phase_own_fried.out
+a5dfdb2e876e1bcf3af6b13641acabad2ff38e50  b4/b4phase_own_hn.out
+b70387a189628bda3ba26b22a8299699a7ea67bd  b4/b4phase_own_lmcs.out

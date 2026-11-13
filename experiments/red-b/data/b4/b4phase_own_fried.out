@@ -1,0 +1,6 @@
+B4PHASE alg spec fried_n2_own |H| 35 |Wg| 736 sha1 a2be4f1fa8d8adff8e985e08c35329caa51a98ea | I 10 k 1 PRE 6 BETWEEN 0 POST 3 P1 3 fallbacks at [7] | n5b I 10 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg spec fried_n3_own |H| 49 |Wg| 1063 sha1 498ef4d704ea37a7ae6084e7de404911a794a1f3 | I 10 k 1 PRE 6 BETWEEN 0 POST 3 P1 3 fallbacks at [7] | n5b I 10 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg spec fried_n4_own |H| 63 |Wg| 1390 sha1 e750cf90140d5f34f89e00afcb4c0267d84acb3d | I 12 k 1 PRE 8 BETWEEN 0 POST 3 P1 3 fallbacks at [9] | n5b I 12 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg spec fried_n5_own |H| 77 |Wg| 1717 sha1 fbe6016af8bb40d2d3d0086b76961d3387201940 | I 14 k 1 PRE 10 BETWEEN 0 POST 3 P1 3 fallbacks at [11] | n5b I 14 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE alg spec fried_n6_own |H| 91 |Wg| 2044 sha1 b92b0e93c479eee48e51a0bcf346cefda84c900f | I 16 k 1 PRE 12 BETWEEN 0 POST 3 P1 3 fallbacks at [13] | n5b I 16 k 1 | wrong 0 engdiff 0 phasesum 0
+B4PHASE SUMMARY alg spec wrappers 5 wrong 0 engdiff 0 phasesum 0
