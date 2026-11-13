@@ -501,3 +501,12 @@ Lead reading L54 (2026-11-12 23:01Z by date -u; on CLAUDE.md «Lean checks it (n
     lines «Build completed successfully», the axiom list and «LEAN LEMMAS PASS»), checks that the workflow file at that commit equals
     trunk's job, and records the step as «PASS by CI re-run of record (L54)», not as a checker build. If the run is on an ancestor, CHECKER
     shows lean/ byte-identical between the two commits. Statement and definition diffs remain CHECKER's own work.
+
+Lead reading L55 (2026-11-13 03:11Z by date -u; on CLAUDE.md «Push only with scripts/push.sh (runs scripts/verify.sh, pushes the current branch only on PASS)»):
+(1) Facts: verify's experiment self-checks take 30-70 min; container restarts come every 40-60 min and kill them (Lead pushes lost 00:50Z and
+    03:04Z on 2026-11-13; lanes report the same). Commits that change only docs/ or notes/ re-run the identical experiment suite.
+(2) Reading: scripts/verify.sh reports the experiment self-checks as NOT RUN, naming both tree ids, when the commit's experiments/ and scripts/
+    trees are byte-identical (same git tree id) to origin/<branch>, the working tree is clean there, and VERIFY_FULL is not 1. That
+    origin commit went through this gate, and CI (.github/workflows/verify.yml, job verify) re-runs the full suite on every push: CI is the
+    full run of record. Any change under experiments/ or scripts/, a missing origin branch or VERIFY_FULL=1 forces the full local run.
+    Doc shape, Lean and Oink steps are unchanged. Red CI on a pushed head is that branch's work at once (backstop step 5).
