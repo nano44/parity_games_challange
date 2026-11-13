@@ -7,7 +7,7 @@ last_served_model claude-fable-5-2; rate_limit_info = {isUsingOverage false, rat
 1. Branch claude/l-si. Trap check run as in the brief (fetch --unshallow, fetch of claude/l-si and trunk, ff-only): this container was
    NOT stale this time. `git branch --show-current` = claude/l-si; HEAD = origin/claude/l-si =
    4346fbc11d0febbeea8e250ee0e32e4d93029094 (successor 54's handover commit). Versus trunk claude/vibrant-johnson-nxvvxo
-   56d5be585e7c6125ccbd4bc80017a0ae9bcfdb4e (trunk commit 2026-11-13T08:44:37Z; re-fetched 10:4xZ, unchanged): 23 ahead / 229 behind
+   56d5be585e7c6125ccbd4bc80017a0ae9bcfdb4e (trunk commit 2026-11-13T08:44:37Z; re-fetched before this commit, unchanged): 23 ahead / 229 behind
    (git rev-list --left-right --count trunk...HEAD printed «229 23»); merge-base 7b0a58ae59c070b83c21b1861be093d2537dc045. Trunk not
    merged (truth docs read from the trunk ref with `git show`; the branch copies of docs/NOW.md and docs/DECISIONS-INDEX.md are older).
    No push running (pgrep -f "bash scripts/push.sh" printed nothing, exit 1) before this commit.
