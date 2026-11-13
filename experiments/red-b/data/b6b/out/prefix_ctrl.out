@@ -1,0 +1,15 @@
+G_3 mode all ctrl 5 T 6 frozen_hyp_holds 5 frozen_conclusion_fails 2 at(j,a,t) (1,1,7) (2,0,7)
+G_4 mode all ctrl 5 T 14 frozen_hyp_holds 10 frozen_conclusion_fails 3 at(j,a,t) (1,1,15) (2,0,15) (3,0,15)
+G_5 mode all ctrl 5 T 30 frozen_hyp_holds 19 frozen_conclusion_fails 4 at(j,a,t) (1,1,31) (2,0,31) (3,0,31) (4,0,31)
+G_6 mode all ctrl 5 T 62 frozen_hyp_holds 36 frozen_conclusion_fails 5 at(j,a,t) (1,1,63) (2,0,63) (3,0,63) (4,0,63) (5,0,63)
+G_7 mode all ctrl 5 T 126 frozen_hyp_holds 69 frozen_conclusion_fails 6 at(j,a,t) (1,1,127) (2,0,127) (3,0,127) (4,0,127) (5,0,127) (6,0,127)
+G_8 mode all ctrl 5 T 254 frozen_hyp_holds 134 frozen_conclusion_fails 7 at(j,a,t) (1,1,255) (2,0,255) (3,0,255) (4,0,255) (5,0,255) (6,0,255) (7,0,255)
+G_5 mode run ctrl 2 T 30 windows 15 pairs 112 h1 0 h2 0 h2last 0 psched 89 empty 0
+G_6 mode off ctrl 1 seed 1 starts 400 cap 136 windows 2943 full 2838 proper 105 properlen 134 maxproper 3 steps 18214 pviol 0 ctrl1 105 byunit 2 94 325 791 1731
+G_6 mode off ctrl 2 seed 1 starts 400 cap 136 windows 2943 full 2838 proper 105 properlen 134 maxproper 3 steps 18214 pviol 14097 byunit 2 94 325 791 1731
+G_6 mode drive ctrl 1 seed 1 tries 2000 h1fail 0 windows 2000 full 873 proper 1127 properlen 7257 maxproper 60 steps 11327 dviol 0 ctrl1 1127 byunit 61 137 256 501 1045
+G_6 mode drive ctrl 2 seed 1 tries 2000 h1fail 0 windows 2000 full 873 proper 1127 properlen 7257 maxproper 60 steps 11327 dviol 9085 byunit 61 137 256 501 1045
+G_5 mode loc ctrl 3 seed 1 pool 30 states 12000 keys 210 hits 11790 loc 3262
+G_5 mode loc ctrl 4 seed 1 pool 30 states 12000 keys 180 hits 11820 loc 4262
+G_4 mode exh ctrl 2 states 65536 c0e0 0 loc 0 lockeys 73792 stcases 3200 stviol 0 onestate_cases 6400 onestate_moves 3424 h1only 839 windows 1227 full 560 proper 667 steps 2428 pviol 1192
+G_4 mode exh ctrl 3 states 65536 c0e0 0 loc 31712 lockeys 69664 stcases 3200 stviol 0 onestate_cases 6400 onestate_moves 3424 h1only 839 windows 1227 full 560 proper 667 steps 2428 pviol 0

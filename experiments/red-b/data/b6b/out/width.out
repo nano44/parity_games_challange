@@ -1,0 +1,12 @@
+G_3 mode width N 11 levels 4 widths 2 2 3 4 max 4 sum 11
+G_4 mode width N 20 levels 5 widths 2 2 4 6 6 max 6 sum 20
+G_5 mode width N 29 levels 6 widths 2 2 4 7 8 6 max 8 sum 29
+G_6 mode width N 38 levels 7 widths 2 2 4 7 9 8 6 max 9 sum 38
+G_7 mode width N 47 levels 8 widths 2 2 4 7 9 9 8 6 max 9 sum 47
+G_8 mode width N 56 levels 9 widths 2 2 4 7 9 9 9 8 6 max 9 sum 56
+G_9 mode width N 65 levels 10 widths 2 2 4 7 9 9 9 9 8 6 max 9 sum 65
+G_10 mode width N 74 levels 11 widths 2 2 4 7 9 9 9 9 9 8 6 max 9 sum 74
+G_11 mode width N 83 levels 12 widths 2 2 4 7 9 9 9 9 9 9 8 6 max 9 sum 83
+G_12 mode width N 92 levels 13 widths 2 2 4 7 9 9 9 9 9 9 9 8 6 max 9 sum 92
+G_13 mode width N 101 levels 14 widths 2 2 4 7 9 9 9 9 9 9 9 9 8 6 max 9 sum 101
+G_14 mode width N 110 levels 15 widths 2 2 4 7 9 9 9 9 9 9 9 9 9 8 6 max 9 sum 110

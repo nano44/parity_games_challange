@@ -1,0 +1,10 @@
+G_3 mode all ctrl 0 T 6 triples 36 h1only 6 windows 3 expected 3 steps 12 aviol 0
+G_4 mode all ctrl 0 T 14 triples 102 h1only 11 windows 7 expected 7 steps 40 aviol 0
+G_5 mode all ctrl 0 T 30 triples 264 h1only 20 windows 15 expected 15 steps 112 aviol 0
+G_6 mode all ctrl 0 T 62 triples 650 h1only 37 windows 31 expected 31 steps 288 aviol 0
+G_7 mode all ctrl 0 T 126 triples 1548 h1only 70 windows 63 expected 63 steps 704 aviol 0
+G_8 mode all ctrl 0 T 254 triples 3598 h1only 135 windows 127 expected 127 steps 1664 aviol 0
+G_9 mode all ctrl 0 T 510 triples 8208 h1only 264 windows 255 expected 255 steps 3840 aviol 0
+G_10 mode all ctrl 0 T 1022 triples 18450 h1only 521 windows 511 expected 511 steps 8704 aviol 0
+G_11 mode all ctrl 0 T 2046 triples 40980 h1only 1034 windows 1023 expected 1023 steps 19456 aviol 0
+G_12 mode all ctrl 0 T 4094 triples 90134 h1only 2059 windows 2047 expected 2047 steps 43008 aviol 0

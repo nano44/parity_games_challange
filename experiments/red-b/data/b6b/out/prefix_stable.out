@@ -1,0 +1,6 @@
+G_3 mode stable ctrl 0 seed 1 states 6000 cases 2014 stviol 0 onestate_cases 3736 onestate_moves 1808
+G_4 mode stable ctrl 0 seed 1 states 6000 cases 2311 stviol 0 onestate_cases 4002 onestate_moves 1775
+G_5 mode stable ctrl 0 seed 1 states 6000 cases 2474 stviol 0 onestate_cases 4210 onestate_moves 1820
+G_6 mode stable ctrl 0 seed 1 states 6000 cases 2486 stviol 0 onestate_cases 4278 onestate_moves 1871
+G_7 mode stable ctrl 0 seed 1 states 6000 cases 2719 stviol 0 onestate_cases 4495 onestate_moves 1856
+G_8 mode stable ctrl 0 seed 1 states 6000 cases 2694 stviol 0 onestate_cases 4555 onestate_moves 1937

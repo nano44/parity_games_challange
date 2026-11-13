@@ -1,0 +1,2 @@
+G_3 mode exh ctrl 0 states 512 c0e0 0 loc 0 lockeys 576 stcases 24 stviol 0 onestate_cases 48 onestate_moves 26 h1only 7 windows 11 full 8 proper 3 steps 30 pviol 0
+G_4 mode exh ctrl 0 states 65536 c0e0 0 loc 0 lockeys 73792 stcases 3200 stviol 0 onestate_cases 6400 onestate_moves 3424 h1only 839 windows 1227 full 560 proper 667 steps 2428 pviol 0

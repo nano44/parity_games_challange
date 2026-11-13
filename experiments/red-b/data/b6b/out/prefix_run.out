@@ -1,0 +1,12 @@
+G_3 mode run ctrl 0 T 6 windows 3 pairs 12 h1 0 h2 0 h2last 0 psched 0 empty 0
+G_4 mode run ctrl 0 T 14 windows 7 pairs 40 h1 0 h2 0 h2last 0 psched 0 empty 0
+G_5 mode run ctrl 0 T 30 windows 15 pairs 112 h1 0 h2 0 h2last 0 psched 0 empty 0
+G_6 mode run ctrl 0 T 62 windows 31 pairs 288 h1 0 h2 0 h2last 0 psched 0 empty 0
+G_7 mode run ctrl 0 T 126 windows 63 pairs 704 h1 0 h2 0 h2last 0 psched 0 empty 0
+G_8 mode run ctrl 0 T 254 windows 127 pairs 1664 h1 0 h2 0 h2last 0 psched 0 empty 0
+G_9 mode run ctrl 0 T 510 windows 255 pairs 3840 h1 0 h2 0 h2last 0 psched 0 empty 0
+G_10 mode run ctrl 0 T 1022 windows 511 pairs 8704 h1 0 h2 0 h2last 0 psched 0 empty 0
+G_11 mode run ctrl 0 T 2046 windows 1023 pairs 19456 h1 0 h2 0 h2last 0 psched 0 empty 0
+G_12 mode run ctrl 0 T 4094 windows 2047 pairs 43008 h1 0 h2 0 h2last 0 psched 0 empty 0
+G_13 mode run ctrl 0 T 8190 windows 4095 pairs 94208 h1 0 h2 0 h2last 0 psched 0 empty 0
+G_14 mode run ctrl 0 T 16382 windows 8191 pairs 204800 h1 0 h2 0 h2last 0 psched 0 empty 0

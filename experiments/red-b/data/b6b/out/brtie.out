@@ -1,0 +1,12 @@
+G_3 mode tie ctrl 0 N 11 tied 0 formula 0 changed 0 member2 1 T 6 T2 6 rundiff 0
+G_4 mode tie ctrl 0 N 20 tied 2 formula 2 changed 4 member2 1 T 14 T2 14 rundiff 0
+G_5 mode tie ctrl 0 N 29 tied 6 formula 6 changed 8 member2 1 T 30 T2 30 rundiff 0
+G_6 mode tie ctrl 0 N 38 tied 10 formula 10 changed 12 member2 1 T 62 T2 62 rundiff 0
+G_7 mode tie ctrl 0 N 47 tied 14 formula 14 changed 16 member2 1 T 126 T2 126 rundiff 0
+G_8 mode tie ctrl 0 N 56 tied 18 formula 18 changed 20 member2 1 T 254 T2 254 rundiff 0
+G_9 mode tie ctrl 0 N 65 tied 22 formula 22 changed 24 member2 1 T 510 T2 510 rundiff 0
+G_10 mode tie ctrl 0 N 74 tied 26 formula 26 changed 28 member2 1 T 1022 T2 1022 rundiff 0
+G_11 mode tie ctrl 0 N 83 tied 30 formula 30 changed 32 member2 1 T 2046 T2 2046 rundiff 0
+G_12 mode tie ctrl 0 N 92 tied 34 formula 34 changed 36 member2 1 T 4094 T2 4094 rundiff 0
+G_13 mode tie ctrl 0 N 101 tied 38 formula 38 changed 40 member2 1 T 8190 T2 8190 rundiff 0
+G_14 mode tie ctrl 0 N 110 tied 42 formula 42 changed 44 member2 1 T 16382 T2 16382 rundiff 0

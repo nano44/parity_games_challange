@@ -1,0 +1,6 @@
+G_3 mode loc ctrl 0 seed 1 pool 30 states 6000 keys 110 hits 5890 loc 0
+G_4 mode loc ctrl 0 seed 1 pool 30 states 9000 keys 224 hits 8776 loc 0
+G_5 mode loc ctrl 0 seed 1 pool 30 states 12000 keys 360 hits 11640 loc 0
+G_6 mode loc ctrl 0 seed 1 pool 30 states 15000 keys 480 hits 14520 loc 0
+G_7 mode loc ctrl 0 seed 1 pool 30 states 18000 keys 584 hits 17416 loc 0
+G_8 mode loc ctrl 0 seed 1 pool 30 states 21000 keys 708 hits 20292 loc 0

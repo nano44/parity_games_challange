@@ -1,0 +1,14 @@
+G_4 mode drive ctrl 0 seed 1 tries 2000 h1fail 0 windows 2000 full 744 proper 1256 properlen 4209 maxproper 13 steps 7062 dviol 0 byunit 280 542 1178
+G_4 mode drive ctrl 0 seed 2 tries 2000 h1fail 0 windows 2000 full 752 proper 1248 properlen 4455 maxproper 13 steps 7395 dviol 0 byunit 297 564 1139
+G_5 mode drive ctrl 0 seed 1 tries 2000 h1fail 0 windows 2000 full 831 proper 1169 properlen 5912 maxproper 29 steps 9410 dviol 0 byunit 117 287 518 1078
+G_5 mode drive ctrl 0 seed 2 tries 2000 h1fail 0 windows 2000 full 818 proper 1182 properlen 5512 maxproper 29 steps 9095 dviol 0 byunit 122 248 519 1111
+G_6 mode drive ctrl 0 seed 1 tries 2000 h1fail 0 windows 2000 full 873 proper 1127 properlen 7257 maxproper 60 steps 11327 dviol 0 byunit 61 137 256 501 1045
+G_6 mode drive ctrl 0 seed 2 tries 2000 h1fail 0 windows 2000 full 852 proper 1148 properlen 7959 maxproper 61 steps 12182 dviol 0 byunit 73 139 244 543 1001
+G_7 mode drive ctrl 0 seed 1 tries 2000 h1fail 0 windows 2000 full 859 proper 1141 properlen 9850 maxproper 122 steps 14254 dviol 0 byunit 30 62 142 256 518 992
+G_7 mode drive ctrl 0 seed 2 tries 2000 h1fail 0 windows 2000 full 850 proper 1150 properlen 9192 maxproper 113 steps 13374 dviol 0 byunit 24 74 120 256 496 1030
+G_8 mode drive ctrl 0 seed 1 tries 2000 h1fail 0 windows 2000 full 840 proper 1160 properlen 12198 maxproper 244 steps 16482 dviol 0 byunit 19 36 63 136 258 499 989
+G_8 mode drive ctrl 0 seed 2 tries 2000 h1fail 0 windows 2000 full 800 proper 1200 properlen 13071 maxproper 246 steps 16943 dviol 0 byunit 22 41 61 127 240 502 1007
+G_9 mode drive ctrl 0 seed 1 tries 2000 h1fail 0 windows 2000 full 850 proper 1150 properlen 12582 maxproper 452 steps 16996 dviol 0 byunit 5 18 35 58 113 228 530 1013
+G_9 mode drive ctrl 0 seed 2 tries 2000 h1fail 0 windows 2000 full 817 proper 1183 properlen 15041 maxproper 457 steps 19304 dviol 0 byunit 7 23 39 65 132 242 505 987
+G_10 mode drive ctrl 0 seed 1 tries 2000 h1fail 0 windows 2000 full 849 proper 1151 properlen 14150 maxproper 888 steps 18573 dviol 0 byunit 1 6 19 32 66 123 243 503 1007
+G_10 mode drive ctrl 0 seed 2 tries 2000 h1fail 0 windows 2000 full 842 proper 1158 properlen 13597 maxproper 457 steps 18103 dviol 0 byunit 1 6 19 29 63 152 255 502 973

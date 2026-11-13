@@ -1,0 +1,10 @@
+G_4 mode off ctrl 0 seed 1 starts 400 cap 40 windows 853 full 838 proper 15 properlen 15 maxproper 1 steps 3545 pviol 0 byunit 12 222 619
+G_4 mode off ctrl 0 seed 2 starts 400 cap 40 windows 898 full 883 proper 15 properlen 15 maxproper 1 steps 3692 pviol 0 byunit 12 224 662
+G_5 mode off ctrl 0 seed 1 starts 400 cap 72 windows 1552 full 1502 proper 50 properlen 55 maxproper 2 steps 7949 pviol 0 byunit 12 121 418 1001
+G_5 mode off ctrl 0 seed 2 starts 400 cap 72 windows 1567 full 1515 proper 52 properlen 59 maxproper 2 steps 8204 pviol 0 byunit 12 138 418 999
+G_6 mode off ctrl 0 seed 1 starts 400 cap 136 windows 2943 full 2838 proper 105 properlen 134 maxproper 3 steps 18214 pviol 0 byunit 2 94 325 791 1731
+G_6 mode off ctrl 0 seed 2 starts 400 cap 136 windows 3138 full 3034 proper 104 properlen 122 maxproper 3 steps 20067 pviol 0 byunit 9 110 344 832 1843
+G_7 mode off ctrl 0 seed 1 starts 400 cap 264 windows 5529 full 5369 proper 160 properlen 199 maxproper 3 steps 43011 pviol 0 byunit 7 85 270 658 1451 3058
+G_7 mode off ctrl 0 seed 2 starts 400 cap 264 windows 5451 full 5283 proper 168 properlen 218 maxproper 3 steps 42287 pviol 0 byunit 4 89 264 656 1438 3000
+G_8 mode off ctrl 0 seed 1 starts 400 cap 520 windows 10297 full 10122 proper 175 properlen 240 maxproper 4 steps 98265 pviol 0 byunit 9 81 235 575 1270 2651 5476
+G_8 mode off ctrl 0 seed 2 starts 400 cap 520 windows 10674 full 10429 proper 245 properlen 320 maxproper 4 steps 101410 pviol 0 byunit 5 88 257 610 1323 2741 5650

@@ -35,5 +35,12 @@ ec=$(B6E_CTRL=2 python3 b6enab.py 5 | tail -n 1); case "$ec" in *" kenab 0 "*) e
 p5=$(python3 b6perm.py 5 40 7 | tail -n 1); case "$p5" in *" keep 0 "*) ;; *) echo "red-b: b6perm 5 FAILED: $p5"; fail=1;; esac
 pc=$(B6P_CTRL=1 python3 b6perm.py 5 40 7 | tail -n 1); case "$pc" in *" keep 0 "*) echo "red-b: b6perm control did not fire"; fail=1;; esac
 if [ -f data/b6b/SHA1SUMS_b6b_fixes1 ]; then (cd data/b6b && sha1sum -c --quiet SHA1SUMS_b6b_fixes1) || { echo "red-b: data/b6b fixes1 SHA1SUMS mismatch"; fail=1; }; fi
+# P-N5-EXP fixes entries 4-5: the restated RESPONSE LEMMA (LEMMA') at every window of the run of G_6 and at every triple, all
+# states of G_3, the frozen wording as a firing control, and the entries' pins (0.3 s)
+r6=$(python3 b6prefix.py run 6 | tail -n 1); case "$r6" in *"windows 31 pairs 288 h1 0 h2 0 h2last 0 psched 0 empty 0") ;; *) echo "red-b: b6prefix run 6 FAILED: $r6"; fail=1;; esac
+a6=$(python3 b6prefix.py all 6 | tail -n 1); case "$a6" in *"windows 31 expected 31 steps 288 aviol 0") ;; *) echo "red-b: b6prefix all 6 FAILED: $a6"; fail=1;; esac
+x3=$(python3 b6prefix.py exh 3 | tail -n 1); case "$x3" in *"c0e0 0 loc 0 "*"stviol 0 "*"pviol 0") ;; *) echo "red-b: b6prefix exh 3 FAILED: $x3"; fail=1;; esac
+ac=$(B6X_CTRL=5 python3 b6prefix.py all 5 | tail -n 1); case "$ac" in *"frozen_conclusion_fails 4 at(j,a,t) (1,1,31) (2,0,31) (3,0,31) (4,0,31)") ;; *) echo "red-b: b6prefix frozen-wording control did not fire as expected: $ac"; fail=1;; esac
+if [ -f data/b6b/SHA1SUMS_b6b_fixes2 ]; then (cd data/b6b && sha1sum -c --quiet SHA1SUMS_b6b_fixes2) || { echo "red-b: data/b6b fixes2 SHA1SUMS mismatch"; fail=1; }; fi
 [ $fail -eq 0 ] && echo "red-b check PASS" || echo "red-b check FAILED"
 exit $fail
