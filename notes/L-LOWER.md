@@ -44,6 +44,13 @@
 - 10:0xZ val19: W 2,2 / 2,2,2,2 / 3,3,3 / 1,2,2,2,2,1, 20-40 genomes each: bad 0 (random runs short, maxT 2).
 - LEN W 2,2 (N 4, M 8): L 2,3,4 SAT (L 4 decode replayed: one217 key 4, n5 4, mism 0); L 5 UNSAT 136 s, L 6 UNSAT 171 s (solver only).
   UNSAT is slow even at N 4: symmetry (free rank permutation). Next: symmetry breaking, DRUP, then ENUM ladder.
+- Lead 10:52Z (relaying L-SI 55, PROVED lane unrefereed, re-derive before use): ladder key side = one bit per level; ABANDON; ODOMETER.
+  Asks: EXACT minimal instances for k = 2, 3, 4 (min N, then min d), printed in full. L-SI anneal: k 3 at N 10 (2,2,2,2,2), none at N 8 in 400 s.
+- Perm-mode (rank positions) k = 3: W 2,2,2,2 L 10, W 3,3,3 L 10 (1,800 s), W 2,2,2,2,2 L 16 (3,000 s): all NO ANSWER. Container restart ~10:2xZ
+  killed a batch + push (relaunched). FIX: VAL=ro (default now): value sets by beta id (own beta constant) + pairwise beta rank order;
+  gt = sign of the max-rank beta of the symmetric difference. val19 bad 0 (90 genomes); LEN W 2,2 L 5 UNSAT 3.1 s (was 55 s).
+- DRUP: enc19 2,2 5 len VERIFIED (cnf eaac86cf, 14,110 clauses, 109,408 lemmas). T(4) = 4 on all 8 profiles of N 4 (tlad19.py; each L 5
+  solver UNSAT < 4 s; each max decode replayed = one217). Running (ro): R_K3 W 2,2,2,2,2 L 16 and W 2,2,2,2 L 10 (cap 3,000; $SP/l19/batch.log).
 
 ## Successor 15 HANDOVER (-> successor 16; written 2026-11-12 22:0xZ, date -u; context ~430k)
 ### DONE (claude/l-lower; products docs/lower/L17-around.md (closed §3), docs/lower/L18-horizon.md (open); tools l17/, l18/)

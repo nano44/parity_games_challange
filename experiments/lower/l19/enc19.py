@@ -29,6 +29,7 @@ Usage: enc19.py W L MODE [K] [OUT_PREFIX]      W = widths like 2,2,2,2   MODE = 
 Prints RESULT SAT/UNSAT; on SAT writes OUT_PREFIX.json (one217 genome) and the encoder's state sequence."""
 import sys, os, json, time, itertools
 SB = os.environ.get('SB', '1') != '0'
+VALRO = os.environ.get('VAL', 'ro') == 'ro'   # value sets indexed by beta id + pairwise beta rank order (default); 'perm' = rank positions
 from pysat.formula import IDPool
 from pysat.card import CardEnc, EncType
 
@@ -84,9 +85,15 @@ def build(W, L, mode, K=None, fixg=None):
             for j in range(1, N):
                 E.add([-H[x][j]] + [E.AND(v, H[y][j - 1]) for k in (0, 1) for y, v in XT[(x, k)][1].items()])
     TO = H
-    P = [[E.new() for r in range(M)] for o in range(M)]
-    for o in range(M): E.onehot(P[o])
-    for r in range(M): E.onehot([P[o][r] for o in range(M)])
+    if VALRO:   # RO[(a, b)] = «rank(beta a) < rank(beta b)» (strict total order), SG[b] = beta b has an even priority (+)
+        P = {}
+        for a in range(M):
+            for b in range(a + 1, M): v = E.new(); P[(a, b)] = v; P[(b, a)] = -v
+        for a, b, c in itertools.permutations(range(M), 3): E.add([-P[(a, b)], -P[(b, c)], P[(a, c)]])
+    else:
+        P = [[E.new() for r in range(M)] for o in range(M)]
+        for o in range(M): E.onehot(P[o])
+        for r in range(M): E.onehot([P[o][r] for o in range(M)])
     SG = [E.new() for r in range(M)]
     GO = {}
     for l in range(len(W)):
@@ -97,7 +104,14 @@ def build(W, L, mode, K=None, fixg=None):
     S = [[E.new() for x in range(N)]]   # s_t(x): option index (0/1)
     if SB and fixg is None:
         for x in range(N): E.add([-S[0][x]])   # symmetry break: option labels are arbitrary, so WLOG s_0 = option 0 everywhere
+    def gt_ro(A, B):   # sets indexed by beta id: A > B iff the highest-rank beta of the symmetric difference is in A and even, or in B and odd
+        D = [E.XOR(A[b], B[b]) for b in range(M)]; hits = []
+        for b in range(M):
+            mx = E.AND(D[b], *[E.OR(-D[c], P[(c, b)]) for c in range(M) if c != b])
+            hits.append(E.AND(mx, -E.XOR(A[b], SG[b])))
+        return E.OR(*hits)
     def gt(A, B):   # A > B as signed rank-weight sets (A != B assumed for the use made of it)
+        if VALRO: return gt_ro(A, B)
         res = -T; eq = T   # scan from the top rank down: res = decided greater, eq = all equal so far
         for r in reversed(range(M)):
             d = E.XOR(A[r], B[r]); here = E.AND(eq, d, -E.XOR(A[r], SG[r]))
@@ -121,7 +135,8 @@ def build(W, L, mode, K=None, fixg=None):
         for x in range(N):
             for k in (0, 1):
                 ex, vs = XT[(x, k)]; o = 2 * x + k
-                Bo[(x, k)] = [E.OR(P[o][r], *[E.AND(v, Bm[y][r]) for y, v in vs.items()]) for r in range(M)]
+                if VALRO: Bo[(x, k)] = [T if r == o else E.OR(*[E.AND(v, Bm[y][r]) for y, v in vs.items()]) for r in range(M)]
+                else: Bo[(x, k)] = [E.OR(P[o][r], *[E.AND(v, Bm[y][r]) for y, v in vs.items()]) for r in range(M)]
             for r in range(M):
                 m = E.MUX(s[x], Bo[(x, 1)][r], Bo[(x, 0)][r]); E.add([-Bm[x][r], m]); E.add([Bm[x][r], -m])
         imp = {}
@@ -177,7 +192,11 @@ def fix(E, G, WT, XT, P, SG, GO, S, N, M, bylev):
     pr = {o: 6 + 2 * G["br"][G["opts"][o // 2][o % 2][2]] + G["bp"][G["opts"][o // 2][o % 2][2]] for o in range(M)}
     order = sorted(range(M), key=lambda o: (pr[o], o)); rank = {o: r for r, o in enumerate(order)}
     for o in range(M):
-        E.add([P[o][rank[o]]]); E.add([SG[rank[o]] if pr[o] % 2 == 0 else -SG[rank[o]]])
+        if VALRO:
+            E.add([SG[o]] if pr[o] % 2 == 0 else [-SG[o]])
+            for o2 in range(M):
+                if o2 != o: E.add([P[(o, o2)]] if rank[o] < rank[o2] else [-P[(o, o2)]])
+        else: E.add([P[o][rank[o]]]); E.add([SG[rank[o]] if pr[o] % 2 == 0 else -SG[rank[o]]])
     for x in range(N):
         for k in (0, 1):
             wt, xt, _ = G["opts"][x][k]
@@ -200,9 +219,14 @@ def decode(model, V, N, M, lev):
             ex, vs = V['XT'][(x, k)]; xt = -1 if T_(ex) else [y for y, v in vs.items() if T_(v)][0]
             oo.append([wt, xt, 2 * x + k])
         opts.append(oo)
-    rank = [[r for r in range(M) if T_(V['P'][o][r])][0] for o in range(M)]
-    sign = [T_(V['SG'][r]) for r in range(M)]
-    br = [rank[o] for o in range(M)]; bp = [0 if sign[rank[o]] else 1 for o in range(M)]
+    if VALRO:
+        rank = [sum(1 for c in range(M) if c != o and T_(V['P'][(c, o)])) for o in range(M)]
+        assert sorted(rank) == list(range(M)), 'RO not a total order'
+        br = rank; bp = [0 if T_(V['SG'][o]) else 1 for o in range(M)]
+    else:
+        rank = [[r for r in range(M) if T_(V['P'][o][r])][0] for o in range(M)]
+        sign = [T_(V['SG'][r]) for r in range(M)]
+        br = [rank[o] for o in range(M)]; bp = [0 if sign[rank[o]] else 1 for o in range(M)]
     import functools
     def cmp(a, b):
         if lev[a // 2] != lev[b // 2]: return lev[a // 2] - lev[b // 2]
