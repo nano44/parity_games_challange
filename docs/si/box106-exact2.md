@@ -120,4 +120,77 @@ is the pattern a kill family for O2 would have to approach on unboundedly many l
   availability bits compared (counter cnffail); a mutation control.
 - 3.4 Certificate: CaDiCaL 1.9.5 (as R112; available here through python-sat 1.9.dev15's bindings, version to be printed) with DRAT output
   for «≥ m + 1», checked by a RUP checker (the referees' docs/referee/scratch/ref_rup.c, read-only, or drat-trim), and regenerated.
-- Status: §0, §1, §2 done (3.1 = mg106.py, audited); §2a kill search done (KEY2-5 survives); 3.2 designed, not written; 3.3-3.4 not started.
+- Status: §0, §1, §2 done (3.1 = mg106.py, audited); §2a kill search done (KEY2-5 survives); 3.2 designed, not written; 3.3-3.4 not started. (Successor 54: 3.2 written as §3a, which supersedes the design above where they differ; 3.3 = §3b.)
+
+## 3a. The encoding as written: cnf106.py (L-SI successor 54; Lead 2026-11-13 01:27Z «go» conditions: encoding and audit in this file BEFORE any solve)
+- One CNF, cnf106.build(LEN), for «some G* ∈ 𝓛*_2 has L*(G*) ≥ LEN»; build(None) is the same CNF without the length constraint (the audit
+  uses it). No outside enumeration. Variables and constraints, in the order the encoder writes them:
+  - Free data (the genome): XT[q][t] one-hot (q = 2x + k, t ∈ {mover 0-3, X}); GO: a strict total order of the four level-0 gates (6
+    pairwise bits, transitivity on all ordered triples); ORD: a strict total order of the 16 carriers (β_q = q, e_q = 8 + q; 120 pairwise
+    bits, transitivity on all 3,360 ordered triples); PAR[c] (1 = odd); the start R[0]. Constants: cW above every carrier and even, K1 (5)
+    below every carrier and odd (K0, K3 above cW never decide a comparison: they are in the P-set of every K1-play and only K1-plays have
+    node K1).
+  - Per state σ (all 16; the run picks them by a mux): RHO[σ][u], Odd's face at the ACTIVE gate of mover u (0 = e-face, 1 = β-face).
+    SUCC[σ][u][·] one-hot over {0, 1, 2, 3, cW, K}: e-face → cW at level 0, → mover σ(u) at level 1 (option k W-points to mover k); β-face
+    → XT of the active option (X → K). POS[σ][z][i][·], i = 0..4: the walk from mover z in this functional graph (forward implication
+    plus at-most-one; cW and K absorb). CYC[σ][u] (u returns to itself within 4 steps), VIS[σ][z][u] (u among positions 0-3).
+  - The value of a walk from mover z (= the play from z's active gate, mg106.play_value with the start's return closing the cycle):
+    node = the ORD-largest active carrier of a visited cyclic mover, or cW / K1 at a terminal; P = the carriers of visited non-cyclic
+    movers above the node (all of them at K1, none at cW); LEN = the first position of the node's mover (of the terminal), 0..4. Lengths in
+    Γ3*'s edges are 5·LEN + 2 (carrier node), 5·LEN − 2 (cW), 5·LEN + 4 (K1): strictly increasing in LEN for a fixed node type, and LEN is
+    compared only at equal nodes. A «prepended» value (gate → carrier c → target t, then t's walk): node and P of t's walk (cW: ∅; K1: ∅),
+    plus c when c is above that node (always at K1), LEN + 1 (LEN 1 at a terminal target).
+  - GT(a, b) («a ▷ b», SPEC S1's order as mg106.key): RW (rewards of the nodes: an even node's reward is its priority, an odd one's the
+    negative; RG[n][n′] derived from PAR and ORD) or [same node and (top of P_a Δ P_b in P_a and even, or in P_b and odd) or (P_a = P_b
+    and LEN smaller at an even node / larger at an odd node)]. The top of the symmetric difference is a TOP[c] variable per carrier
+    (TOP → in exactly one set, TOP → no higher carrier in exactly one set, some TOP unless the sets are equal).
+  - Odd's optimum (local optimality of RHO at the four active gates): for the face f ≠ RHO[σ][u], the prepended value of u's active gate
+    with face f (carrier f, its target, then the walks under RHO) is NOT ◁ the value under RHO, i.e. ¬GT(value under RHO, value via f).
+  - Availability: AV[σ][x] ⇔ GT(e-face play of x's inactive gate, value of x's active gate) ∧ GT(β-face play of the inactive gate, the
+    same). An inactive gate lies on no play under RHO, so Odd's optimum there is the smaller of its two faces' plays, and «min ▷ v» is
+    «both ▷ v».
+  - The KEY run (mg106.abstract_run, §1's rule): R[j] (4 bits), j = 0..LEN; AVR[j][x] = AV[R[j]][x] by a 16-way selector; level 0:
+    x moves iff AVR[j][x] and the other option's gate is lower in GO; PREF = 1 iff gate(0, R[j+1](0)) is not below gate(1, R[j+1](1));
+    level 1: R[j+1](x) = PREF if AVR[j][x], else R[j](x). Length constraint: R[j+1] ≠ R[j] for j = 0, …, LEN − 1 (by KEY-MONO*, a run whose
+    first LEN steps all change the state has L* ≥ LEN; conversely a run with L* ≥ LEN satisfies it).
+  - Size: LEN = 6: 72,015 variables, 394,221 clauses (cnf106.py dimacs).
+- **Lemma ENC (PROVED, lane; premises Claim MG (§2, lane, audited), RESULTS R36 (c) Lemma P1 for ONE-player games, applied to Odd's
+  one-player game M_s through the duality [DUAL] of RESULTS R104 (a), and SPEC S1's order).** For fixed free data, the models of
+  build(None) restricted to AV and R are exactly one: AV[σ][x] is the availability bit of Claim MG and R[0..LEN] are the first LEN + 1
+  states of KEY(G*) (repeated after it stops). Hence build(LEN) is satisfiable iff some G* ∈ 𝓛*_2 has L*(G*) ≥ LEN.
+  Proof. Fix the free data and σ. Given RHO, SUCC, POS, CYC, VIS and every value variable are functions of RHO (each is defined by an
+  equivalence, or by forward implication plus at-most-one in a functional graph). The walk value is the VJ value of the play from the
+  active gate in M_s (cycle closed at the first repeated mover, node the most relevant carrier on the cycle, P the more relevant ones
+  before it, lengths as above), i.e. mg106.play_value; GT is mg106.key's order (reward, then the signed sum Σ ±2^rank over P, which is
+  decided by the top of the symmetric difference since 2^rank dominates all lower powers, then the length by the node's parity).
+  The local-optimality clauses say: no improving edge for Odd at an active gate, comparing the two pads' successor values under RHO
+  (Lemma M of R36 (b): prefixing by the gate and the pads is strictly monotone, so comparing the plays through the faces is comparing the
+  successors). M_s with the inactive gates removed is a one-player game for Odd (the movers' edges are fixed by σ). By P1 in its dual form
+  ([DUAL]: Odd's optimum in G is Even's in the dual game, with ⊴ reversed), an Odd strategy with no improving edge is pointwise optimal,
+  and Odd's optimal strategy has no improving edge; so models exist, and every model's walk values are THE optimal values of Claim MG
+  (pointwise optima are unique as values). The inactive gate's value is the minimum of its two faces under the optimal play, so AV is
+  Claim MG's bit. R follows by the run clauses, which are mg106.abstract_run's rule (box 106 §1; xrun audited against key105 in §2). ∎
+- What the lemma does NOT say: nothing about N5 except through Claim MG and box 105's KEY-MODEL (both lane, unrefereed); the SAT side is
+  certified independently of both by replaying a decoded genome on N5 (val105.py).
+
+## 3b. Audit of the encoding (§3.3; DATA; aud106.py; out/aud106.out; run106.sh audit)
+- aud106.py fixes a genome's free data by assumptions in build(None) (python-sat 1.9.dev15 solver «cadical195», incremental) and
+  compares with mg106.py (the audited evaluator of §2). Counters (all must be 0): avfail (unit (genome, state, mover): the model's AV bit
+  differs from mg106's), avfree (same unit, --full only: the opposite AV bit is also satisfiable, i.e. the CNF does not determine it:
+  Lemma ENC's uniqueness), runfail (unit genomes: R[0..6] differs from mg106.abstract_run's first 7 states, padded with the last), unsat
+  (unit genomes: no model). Sets: random genomes of ladder105's generator (seeds 1065 with --full, 1066), and the 40 climbed genomes of
+  §2a (best/climb106_*.json, every one with L* = 5: the long runs) with --full. Controls (encoder mutations, env CTRL; each must fire):
+  CTRL 1 availability ignores Odd's β-face at the inactive gate; CTRL 2 the length rule's parity reversed; CTRL 3 the node's parity reversed
+  in the reward (this one makes Odd's local optimality unsatisfiable: it fires as «unsat», a weaker control, kept for the record).
+- Output (out/aud106.out, six lines, inserted by script; run106.sh audit, 2 min 2 s, one core):
+  «AUD106 seed 1065 genomes 300 full: (genome, state, mover) units 19200 avfail 0 avfree 0 runfail 0 unsat 0 | max L* 3»
+  «AUD106 seed 1066 genomes 2000: (genome, state, mover) units 128000 avfail 0 avfree - runfail 0 unsat 0 | max L* 3»
+  «AUD106 seed json genomes 40 full: (genome, state, mover) units 2560 avfail 0 avfree 0 runfail 0 unsat 0 | max L* 5»
+  «AUD106 seed 1067 genomes 100 CTRL 1: (genome, state, mover) units 6400 avfail 2816 avfree - runfail 64 unsat 0 | max L* 2 | first (0, (0, 0, 0, 0), 1)»
+  «AUD106 seed 1067 genomes 100 CTRL 2: (genome, state, mover) units 5056 avfail 1511 avfree - runfail 34 unsat 21 | max L* 3 | first (0, (0, 0, 0, 0), 0)»
+  «AUD106 seed 1067 genomes 100 CTRL 3: (genome, state, mover) units 64 avfail 32 avfree - runfail 1 unsat 99 | max L* 1 | first (27, (0, 0, 0, 0), 1)»
+- Reading: on 2,300 random genomes and the 40 climbed genomes with L* = 5, the CNF's availability bits (151,360 (genome, state, mover)
+  units) and its runs (2,340 genomes, the longest of length 5) equal mg106's; on the 340 genomes of the --full sets every bit is
+  determined (avfree 0 on 21,760 units), as Lemma ENC says. The three mutations fire (CTRL 1: avfail 2,816, runfail 64; CTRL 2: avfail
+  1,511, runfail 34; CTRL 3: unsat 99 of 100). With §2's audit of mg106 against SPEC's engine (mgfail 0) this is the chain CNF = mg106 =
+  key105 (SPEC on Γ3*); every SAT answer is in addition replayed on N5 itself (§3c).

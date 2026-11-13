@@ -1,0 +1,6 @@
+AUD106 seed 1065 genomes 300 full: (genome, state, mover) units 19200 avfail 0 avfree 0 runfail 0 unsat 0 | max L* 3
+AUD106 seed 1066 genomes 2000: (genome, state, mover) units 128000 avfail 0 avfree - runfail 0 unsat 0 | max L* 3
+AUD106 seed json genomes 40 full: (genome, state, mover) units 2560 avfail 0 avfree 0 runfail 0 unsat 0 | max L* 5
+AUD106 seed 1067 genomes 100 CTRL 1: (genome, state, mover) units 6400 avfail 2816 avfree - runfail 64 unsat 0 | max L* 2 | first (0, (0, 0, 0, 0), 1)
+AUD106 seed 1067 genomes 100 CTRL 2: (genome, state, mover) units 5056 avfail 1511 avfree - runfail 34 unsat 21 | max L* 3 | first (0, (0, 0, 0, 0), 0)
+AUD106 seed 1067 genomes 100 CTRL 3: (genome, state, mover) units 64 avfail 32 avfree - runfail 1 unsat 99 | max L* 1 | first (27, (0, 0, 0, 0), 1)

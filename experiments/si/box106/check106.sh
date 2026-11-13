@@ -19,5 +19,12 @@ if [ -f out/climbval106.out ]; then
   [ "$(grep -c "^MG106 climb seed [0-9]* restarts 10 steps 5000: best L\* 5 | " out/climb106.out)" = 40 ] && [ "$(wc -l < out/climb106.out)" = 40 ] || bad "climb rows"
   [ "$(grep -c "L\* 5 (search: 5) Xi-graph cyclic | s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0$" out/climbval106.out)" = 40 ] || bad "climb replays"
 fi
+# §3b audit of cnf106.py (frozen out/aud106.out): CNF = mg106 on 2,340 genomes (incl. the 40 climbed L* = 5 genomes), every bit determined
+#   on the --full sets, the three encoder mutations fire
+if [ -f out/aud106.out ]; then
+  [ "$(grep -c ": (genome, state, mover) units [0-9]* avfail 0 avfree [0-]* runfail 0 unsat 0 | " out/aud106.out)" = 3 ] || bad "cnf audit"
+  grep -q "^AUD106 seed json genomes 40 full: .* avfail 0 avfree 0 runfail 0 unsat 0 | max L\* 5$" out/aud106.out || bad "cnf audit long runs"
+  for c in 1 2 3; do grep -q "^AUD106 seed 1067 genomes 100 CTRL $c: .*| first " out/aud106.out || bad "cnf control $c"; done
+fi
 [ $fail = 0 ] && echo "BOX106 checks: PASS"
 exit $fail
