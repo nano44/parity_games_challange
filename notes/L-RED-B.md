@@ -54,6 +54,24 @@ Files I own: docs/red-b/, experiments/red-b/, notes/L-RED-B.md, docs/agents/hand
     run_b6b.sh needs an ABSOLUTE ROOT and exited 0 on failed stages; fixed in this commit. Clean clone,
     relative ROOT, fixed runner: `gen 10` < 1 s, `n5 10` 406 s for G_3..G_10 (G_3 0.1 s, G_10 248 s), lines equal to the frozen ones
     but for `badstrat 0` and the timings, .pg files byte-equal (data/b6b/out/n5_clean.out).
+- (b′) ADDENDUM (Lead 14:00Z, read after the first handover commit 06d399c2 was made; written 14:06Z by date -u). Fixes entries to
+  PREPARE and to write only when the referees' reports ask for them (never into the frozen file):
+  - Entry 2 (P-1): R117's standing premises [1E-N3], [RULE], [VJ-LOC] in R117's words on Corollary EXP-N5; «the N5 runs at k ≤ 12
+    named as premise-free DATA» (Lead). Material in (b) P-1 above.
+  - Entry 3 (suggested by L-NEW 77, relayed by the Lead): landed RESULTS R124, Corollary EXACT-L. OPENED by me at trunk 6eaf4604
+    (docs/RESULTS.md l. 15371, the entry's title line; the file's sha1 eecbd798b81ad431d1b753f5a7f92f3c63e56da1 is the same as at
+    5d7aab0f, so my archive RESULTS.trunk.md already held it and I had not read it). Verbatim there: «N5 (SPEC S1-S5 with its FIX
+    1-4 tie-breaks) from S3 on Γ3(G) makes exactly L(G) + 3 iterations» and «N5's iteration count is polynomial in n iff L(G) is
+    polynomial in N + M», stated as «(Corollary EXACT-L, PROVED for G ∈ IDEAL-ACYC» with «premise RESULTS R117 (f); it uses SPEC's
+    S1 tie-breaks, through REACH3's [RULE] choice», all «under the standing SPEC premise 1E-N3». With Theorem EXP-IDEAL this gives
+    EXACTLY 2^k − 2 + 3 = 2^k + 1 iterations on Γ3(G_k), the number both engines measure for k = 3..12. Successor 6 states it as
+    Corollary EXP-N5′ with R124's premises quoted (check them with b6quote.py, new tag R124), IF the referees agree (Lead).
+    THIS CORRECTS item (d) 8 below, which I wrote before reading R124.
+  - A firing control from the first referee's lane (THEIR data, claude/referee 06ac891d as relayed by the Lead, pushing at 14:00Z;
+    not opened by me): with the e-indices in reversed gate order the run is 6 iterations for every k = 3..6, so the long run rests
+    on S4a's root-first key order. Cite it as theirs, after reading it on origin; it agrees with my §9.10 (a broken listed
+    comparison can drop T to 3) and §9.13.
+  - P-2 (width 9 for k ≥ 6), M-1, M-2, M-3: as in (b) above.
 - (c) N5 AT k = 12: COMPLETE (not to be resumed). Line in data/b6b/out/n5_k12.out (4097 = 2^12 + 1 iterations on both engines, all
   must-0 counters 0; 622 s + 944 s), game data/b6b/pg/G_12_g3.pg sha1 abca6452…, fixes entry 1 §9.12. If k = 13 is ever asked:
   `bash experiments/red-b/run_b6b.sh R n5 13` is resumable per GENOME only (a single k is one process); by the ratio 2.5-2.6 per k
@@ -85,8 +103,9 @@ Files I own: docs/red-b/, experiments/red-b/, notes/L-RED-B.md, docs/agents/hand
      N = 8k − 14 (DATA only; the proof's K2 uses wv; no proof for that variant: keep it outside the theorem, Lead 12:56Z item 4).
   7. In box 217's vocabulary k(G_k) = 1 (no mover above level 0 switches |K| − 1 times): the brief's target «k(G_k) = k» was NOT met
      in that sense; the kill is by run length and switch counts against N + M (Lead 12:08Z accepted that measure). Say so if asked.
-  8. N5's exact count on the DATA is 2^k + 1 = L + 3 iterations (k = 3..12); the Corollary claims only ≥ 2^k − 1 (REACH3's
-     «at least L(G) + 1»). Do not upgrade the exact count to a statement: nothing proves the last two transitions.
+  8. N5's exact count on the DATA is 2^k + 1 = L + 3 iterations (k = 3..12); the frozen Corollary claims only ≥ 2^k − 1 (REACH3's
+     «at least L(G) + 1»). CORRECTED 14:06Z: the exact count IS proved elsewhere, by landed R124's Corollary EXACT-L (see (b′));
+     the frozen packet does not use R124. Upgrade only through a fixes entry that quotes R124's premises (entry 3 in (b′)).
   9. Other tie rules (§9.13, DATA): xi and idx stop after 7 iterations on Γ3(G_4), Γ3(G_6), Γ3(G_8); seq takes 65 / 154 / 235.
      The family attacks N5's S4a key order and nothing else; no claim about any other rule.
 - TOOLS ADDED IN THIS COMMIT: b6enab.py, b6perm.py, b6reach.py (needs the lnew archive), b6n5.py (now with the `badstrat` column
