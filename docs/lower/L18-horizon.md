@@ -66,6 +66,9 @@ counter (unit, set, scope). Model: R104's IDEAL model at degree ≤ 2 (sim6; fen
   {8}, {8,11}, {8,10}, {8,12}, {8,15}, {8,14} UNSAT in ≤ 0.4 s (solver only); {8,10,11} SAT 38.5 s (decode follows rows 0..14, f6 broken
   62 / 129 at R 15, as expected); all six clients: tool error (RecursionError in pgad6, no answer). So the block at row 14 is local to the
   prefix: mover 8's stay needs 10 and 11 rewired together. Attempt 2 at R 510: clients 8, 10, 11 (XORD 8 < 11 < 10).
+- P 14, attempt 2: base L18b_N13a, clients 8, 10, 11, R 510: UNSAT, solve 5,699 s (wall 5,749 s, cap 6,000 s, 47.8M clauses), solver
+  only, «this neighbourhood only». The same neighbourhood is SAT at R 15: the full-horizon f6 constraint is what fails. Horizon ladder
+  (R 32, 64, 130) on the same neighbourhood to locate the f6 conflict before attempt 3 (stop rule: attempt 3 is the last at P 14).
 
 ## 9. Diff against TARGET.md
 No statement mentions a parity game, a winning region, an algorithm's running time or a complexity class. All statements are about the IDEAL
