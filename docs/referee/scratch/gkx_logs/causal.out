@@ -1,0 +1,13 @@
+causal k 3 ctrl 0 set run states 7 causal 0/14 optstates 0
+causal k 4 ctrl 0 set run states 15 causal 0/45 optstates 0
+causal k 5 ctrl 0 set run states 31 causal 0/124 optstates 0
+causal k 6 ctrl 0 set run states 63 causal 0/315 optstates 0
+causal k 7 ctrl 0 set run states 127 causal 0/762 optstates 0
+causal k 8 ctrl 0 set run states 255 causal 0/1785 optstates 0
+causal k 9 ctrl 0 set run states 511 causal 0/4088 optstates 0
+causal k 10 ctrl 0 set run states 1023 causal 0/9207 optstates 0
+causal k 4 ctrl 0 set arb states 2000 seed 9 causal 0/6000 optstates 0
+causal k 6 ctrl 0 set arb states 2000 seed 9 causal 0/10000 optstates 0
+causal k 8 ctrl 0 set arb states 2000 seed 9 causal 0/14000 optstates 0
+causal k 6 ctrl 1 set arb states 2000 seed 9 causal 3658/10000 optstates 0
+causal k 6 ctrl 2 set arb states 2000 seed 9 causal 3888/10000 optstates 0

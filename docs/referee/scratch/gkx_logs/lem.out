@@ -1,0 +1,14 @@
+lem k 5 ctl 0 states 40 seed 3 SBAR 0 TAU 0 ESC0 0 ESC 0 W 0 XI 0 AV 0 STEP 0 moved 39 stopped 1 errors 0
+lem k 5 ctl noesc states 40 seed 3 SBAR 0 TAU 40 ESC0 0 ESC 0 W 0 XI 0 AV 0 STEP 40 moved 39 stopped 1 errors 0
+lem k 5 ctl rank states 40 seed 3 SBAR 0 TAU 0 ESC0 0 ESC 0 W 0 XI 0 AV 40 STEP 40 moved 39 stopped 1 errors 0
+lem k 5 ctl oddE states 40 seed 3 SBAR 40 TAU 0 ESC0 0 ESC 0 W 0 XI 40 AV 40 STEP 40 moved 39 stopped 1 errors 0
+lem k 5 ctl ungraded states 40 seed 3 SBAR 0 TAU 0 ESC0 0 ESC 0 W 18 XI 0 AV 0 STEP 24 moved 39 stopped 1 errors 0
+lem k 5 ctl k1even states 40 seed 3 SBAR 40 TAU 0 ESC0 0 ESC 40 W 0 XI 40 AV 0 STEP 1 moved 39 stopped 1 errors 0
+lem k 5 ctl revE states 40 seed 3 SBAR 0 TAU 0 ESC0 0 ESC 0 W 0 XI 0 AV 0 STEP 40 moved 39 stopped 1 errors 0
+lem k 7 ctl 0 states 30 seed 4 SBAR 0 TAU 0 ESC0 0 ESC 0 W 0 XI 0 AV 0 STEP 0 moved 30 stopped 0 errors 0
+lem k 7 ctl noesc states 30 seed 4 SBAR 0 TAU 30 ESC0 0 ESC 0 W 0 XI 0 AV 0 STEP 30 moved 30 stopped 0 errors 0
+lem k 7 ctl rank states 30 seed 4 SBAR 0 TAU 0 ESC0 0 ESC 0 W 0 XI 0 AV 30 STEP 30 moved 30 stopped 0 errors 0
+lem k 7 ctl oddE states 30 seed 4 SBAR 30 TAU 0 ESC0 0 ESC 0 W 0 XI 30 AV 30 STEP 30 moved 30 stopped 0 errors 0
+lem k 7 ctl ungraded states 30 seed 4 SBAR 0 TAU 0 ESC0 0 ESC 0 W 13 XI 0 AV 0 STEP 17 moved 30 stopped 0 errors 0
+lem k 7 ctl k1even states 30 seed 4 SBAR 30 TAU 0 ESC0 0 ESC 30 W 0 XI 30 AV 0 STEP 0 moved 30 stopped 0 errors 0
+lem k 7 ctl revE states 30 seed 4 SBAR 0 TAU 0 ESC0 0 ESC 0 W 0 XI 0 AV 0 STEP 30 moved 30 stopped 0 errors 0

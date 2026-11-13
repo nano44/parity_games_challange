@@ -1,0 +1,9 @@
+abs k 3 ctrl 0 full 0 stable 0 pref 0/54
+abs k 4 ctrl 0 full 0 stable 0 pref 0/278
+abs k 5 ctrl 0 full 0 stable 0 pref 0/1238
+abs k 6 ctrl 0 full 0 stable 0 pref 0/3321
+abs k 7 ctrl 0 full 0 stable 0 pref 0/7659
+abs k 8 ctrl 0 full 0 stable 0 pref 0/17081
+abs k 9 ctrl 0 full 0 stable 0 pref 0/39012
+abs k 6 ctrl 1 full 216 stable 0 pref 3110/3321
+abs k 6 ctrl 2 full 0 stable 0 pref 173/3321

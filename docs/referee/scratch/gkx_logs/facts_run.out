@@ -1,0 +1,8 @@
+facts k 3 ctrl 0 set run states 7 K1 0/21 K2 0/7 K3 0/0 V0 0/210 V0shape 0 V1 0/21 V2 0/14 V3 0/0 V4 0/70 K4 0/56 M2 0/77 WIRE 0/14 optstates 0
+facts k 4 ctrl 0 set run states 15 K1 0/60 K2 0/30 K3 0/15 V0 0/1095 V0shape 0 V1 0/60 V2 0/45 V3 0/15 V4 0/255 K4 0/225 M2 0/300 WIRE 0/60 optstates 0
+facts k 5 ctrl 0 set run states 31 K1 0/155 K2 0/93 K3 0/62 V0 0/3596 V0shape 0 V1 0/155 V2 0/124 V3 0/62 V4 0/744 K4 0/682 M2 0/899 WIRE 0/186 optstates 0
+facts k 6 ctrl 0 set run states 63 K1 0/378 K2 0/252 K3 0/189 V0 0/10017 V0shape 0 V1 0/378 V2 0/315 V3 0/189 V4 0/1953 K4 0/1827 M2 0/2394 WIRE 0/504 optstates 0
+facts k 7 ctrl 0 set run states 127 K1 0/889 K2 0/635 K3 0/508 V0 0/25654 V0shape 0 V1 0/889 V2 0/762 V3 0/508 V4 0/4826 K4 0/4572 M2 0/5969 WIRE 0/1270 optstates 0
+facts k 8 ctrl 0 set run states 255 K1 0/2040 K2 0/1530 K3 0/1275 V0 0/62475 V0shape 0 V1 0/2040 V2 0/1785 V3 0/1275 V4 0/11475 K4 0/10965 M2 0/14280 WIRE 0/3060 optstates 0
+facts k 9 ctrl 0 set run states 511 K1 0/4599 K2 0/3577 K3 0/3066 V0 0/147168 V0shape 0 V1 0/4599 V2 0/4088 V3 0/3066 V4 0/26572 K4 0/25550 M2 0/33215 WIRE 0/7154 optstates 0
+facts k 10 ctrl 0 set run states 1023 K1 0/10230 K2 0/8184 K3 0/7161 V0 0/338613 V0shape 0 V1 0/10230 V2 0/9207 V3 0/7161 V4 0/60357 K4 0/58311 M2 0/75702 WIRE 0/16368 optstates 0

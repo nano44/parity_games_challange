@@ -1,0 +1,10 @@
+G_3 pgonly N 11 M 22 n 175 m 228 maxprio 97 L 6 PG 0 GEN35 0
+G_4 pgonly N 20 M 40 n 310 m 404 maxprio 169 L 14 PG 0 GEN35 0
+G_5 pgonly N 29 M 58 n 445 m 580 maxprio 241 L 30 PG 0 GEN35 0
+G_6 pgonly N 38 M 76 n 580 m 756 maxprio 313 L 62 PG 0 GEN35 0
+G_7 pgonly N 47 M 94 n 715 m 932 maxprio 385 L 126 PG 0 GEN35 0
+G_8 pgonly N 56 M 112 n 850 m 1108 maxprio 457 L 254 PG 0 GEN35 0
+G_9 pgonly N 65 M 130 n 985 m 1284 maxprio 529 L 510 PG 0 GEN35 0
+G_10 pgonly N 74 M 148 n 1120 m 1460 maxprio 601 L 1022 PG 0 GEN35 0
+G_11 pgonly N 83 M 166 n 1255 m 1636 maxprio 673 L 2046 PG 0 GEN35 0
+G_12 pgonly N 92 M 184 n 1390 m 1812 maxprio 745 L 4094 GEN35 0

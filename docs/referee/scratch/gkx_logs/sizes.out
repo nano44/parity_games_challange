@@ -1,0 +1,16 @@
+sizes k 3 n 175 m 228 maxprio 97 sizebad 0
+sizes k 4 n 310 m 404 maxprio 169 sizebad 0
+sizes k 5 n 445 m 580 maxprio 241 sizebad 0
+sizes k 6 n 580 m 756 maxprio 313 sizebad 0
+sizes k 7 n 715 m 932 maxprio 385 sizebad 0
+sizes k 8 n 850 m 1108 maxprio 457 sizebad 0
+sizes k 9 n 985 m 1284 maxprio 529 sizebad 0
+sizes k 10 n 1120 m 1460 maxprio 601 sizebad 0
+sizes k 11 n 1255 m 1636 maxprio 673 sizebad 0
+sizes files 9 sizebad_sum 0
+first k with 2^k-1 > (n)^2: k 23 size 2875 lhs 8388607 rhs 8265625 holds_for_next_400 1
+first k with 2^k-1 > (n+m)^2: k 26 size 7556 lhs 67108863 rhs 57093136 holds_for_next_400 1
+first k with 2^k-1 > (n)^3: k 37 size 4765 lhs 137438953471 rhs 108190397125 holds_for_next_400 1
+first k with 2^k-1 > (n+m)^3: k 41 size 12221 lhs 2199023255551 rhs 1825241069861 holds_for_next_400 1
+first k with 2^k-1 > (n)^4: k 51 size 6655 lhs 2251799813685247 rhs 1961517735450625 holds_for_next_400 1
+first k with 2^k-1 > (n+m)^4: k 57 size 17197 lhs 144115188075855871 rhs 87460260197502481 holds_for_next_400 1

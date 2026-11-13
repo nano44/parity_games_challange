@@ -1,0 +1,21 @@
+member k 3 ctrl 0 viol 0 c1 0 c2 0 c3 0 c4 0 c5 0 c6 0 c7 0 c8 0 N 11 Nform 0 M 22 d 4 dform 0 width 4 MX 16 MXform 0 alldeg2 1
+member k 4 ctrl 0 viol 0 c1 0 c2 0 c3 0 c4 0 c5 0 c6 0 c7 0 c8 0 N 20 Nform 0 M 40 d 5 dform 0 width 6 MX 30 MXform 0 alldeg2 1
+member k 5 ctrl 0 viol 0 c1 0 c2 0 c3 0 c4 0 c5 0 c6 0 c7 0 c8 0 N 29 Nform 0 M 58 d 6 dform 0 width 8 MX 44 MXform 0 alldeg2 1
+member k 6 ctrl 0 viol 0 c1 0 c2 0 c3 0 c4 0 c5 0 c6 0 c7 0 c8 0 N 38 Nform 0 M 76 d 7 dform 0 width 9 MX 58 MXform 0 alldeg2 1
+member k 7 ctrl 0 viol 0 c1 0 c2 0 c3 0 c4 0 c5 0 c6 0 c7 0 c8 0 N 47 Nform 0 M 94 d 8 dform 0 width 9 MX 72 MXform 0 alldeg2 1
+member k 8 ctrl 0 viol 0 c1 0 c2 0 c3 0 c4 0 c5 0 c6 0 c7 0 c8 0 N 56 Nform 0 M 112 d 9 dform 0 width 9 MX 86 MXform 0 alldeg2 1
+member k 9 ctrl 0 viol 0 c1 0 c2 0 c3 0 c4 0 c5 0 c6 0 c7 0 c8 0 N 65 Nform 0 M 130 d 10 dform 0 width 9 MX 100 MXform 0 alldeg2 1
+member k 10 ctrl 0 viol 0 c1 0 c2 0 c3 0 c4 0 c5 0 c6 0 c7 0 c8 0 N 74 Nform 0 M 148 d 11 dform 0 width 9 MX 114 MXform 0 alldeg2 1
+member k 11 ctrl 0 viol 0 c1 0 c2 0 c3 0 c4 0 c5 0 c6 0 c7 0 c8 0 N 83 Nform 0 M 166 d 12 dform 0 width 9 MX 128 MXform 0 alldeg2 1
+member k 12 ctrl 0 viol 0 c1 0 c2 0 c3 0 c4 0 c5 0 c6 0 c7 0 c8 0 N 92 Nform 0 M 184 d 13 dform 0 width 9 MX 142 MXform 0 alldeg2 1
+member k 13 ctrl 0 viol 0 c1 0 c2 0 c3 0 c4 0 c5 0 c6 0 c7 0 c8 0 N 101 Nform 0 M 202 d 14 dform 0 width 9 MX 156 MXform 0 alldeg2 1
+member k 14 ctrl 0 viol 0 c1 0 c2 0 c3 0 c4 0 c5 0 c6 0 c7 0 c8 0 N 110 Nform 0 M 220 d 15 dform 0 width 9 MX 170 MXform 0 alldeg2 1
+member k 5 ctrl 1 viol 15 c1 1 c2 14 c3 0 c4 0 c5 0 c6 0 c7 0 c8 0
+member k 5 ctrl 2 viol 1 c1 0 c2 1 c3 0 c4 0 c5 0 c6 0 c7 0 c8 0
+member k 5 ctrl 3 viol 1 c1 0 c2 0 c3 1 c4 0 c5 0 c6 0 c7 0 c8 0
+member k 5 ctrl 4 viol 1 c1 0 c2 0 c3 0 c4 1 c5 0 c6 0 c7 0 c8 0
+member k 5 ctrl 5 viol 1 c1 0 c2 0 c3 0 c4 0 c5 1 c6 0 c7 0 c8 0
+member k 5 ctrl 6 viol 1 c1 0 c2 0 c3 0 c4 0 c5 0 c6 1 c7 0 c8 0
+member k 5 ctrl 7 viol 1 c1 0 c2 0 c3 0 c4 0 c5 0 c6 0 c7 1 c8 0
+member k 5 ctrl 8 viol 1 c1 0 c2 0 c3 0 c4 0 c5 0 c6 0 c7 0 c8 1
+member k 5 ctrl 9 viol 1 c1 0 c2 0 c3 0 c4 0 c5 0 c6 0 c7 0 c8 1

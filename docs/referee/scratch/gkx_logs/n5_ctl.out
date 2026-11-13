@@ -1,0 +1,14 @@
+G_4 ctl start N 20 M 40 n 310 m 404 maxprio 169 L 14 stop stuck iterations 17 fallbacks [15] S3START 1 STD 2 FLFB 0 FLTAU 0 FLSIG 0 LASTFB 0 WIN 0 EXACT 0 evenwins 309 secs 0.2
+G_5 ctl start N 29 M 58 n 445 m 580 maxprio 241 L 30 stop stuck iterations 33 fallbacks [31] S3START 1 STD 2 FLFB 0 FLTAU 0 FLSIG 0 LASTFB 0 WIN 0 EXACT 0 evenwins 444 secs 0.9
+G_4 ctl win N 20 M 40 n 310 m 404 maxprio 169 L 14 stop stuck iterations 17 fallbacks [15] S3START 0 STD 0 FLFB 0 FLTAU 0 FLSIG 0 LASTFB 0 WIN 181 EXACT 0 evenwins 128 secs 0.2
+G_5 ctl win N 29 M 58 n 445 m 580 maxprio 241 L 30 stop stuck iterations 33 fallbacks [31] S3START 0 STD 0 FLFB 0 FLTAU 0 FLSIG 0 LASTFB 0 WIN 262 EXACT 0 evenwins 182 secs 0.9
+G_4 ctl lastfb N 20 M 40 n 310 m 404 maxprio 169 L 14 stop stuck iterations 17 fallbacks [15] S3START 0 STD 0 FLFB 0 FLTAU 0 FLSIG 0 LASTFB 1 WIN 0 EXACT 0 evenwins 309 secs 0.2
+G_5 ctl lastfb N 29 M 58 n 445 m 580 maxprio 241 L 30 stop stuck iterations 33 fallbacks [31] S3START 0 STD 0 FLFB 0 FLTAU 0 FLSIG 0 LASTFB 1 WIN 0 EXACT 0 evenwins 444 secs 0.9
+G_4 ctl nonmover N 20 M 40 n 310 m 404 maxprio 169 L 14 stop stuck iterations 17 fallbacks [15] S3START 0 STD 0 FLFB 0 FLTAU 0 FLSIG 14 LASTFB 0 WIN 0 EXACT 0 evenwins 309 secs 0.2
+G_5 ctl nonmover N 29 M 58 n 445 m 580 maxprio 241 L 30 stop stuck iterations 33 fallbacks [31] S3START 0 STD 0 FLFB 0 FLTAU 0 FLSIG 30 LASTFB 0 WIN 0 EXACT 0 evenwins 444 secs 0.9
+G_4 ctl noesc N 20 M 40 n 310 m 374 maxprio 169 L 14 stop stuck iterations 7 fallbacks [4] S3START 0 STD 8 FLFB 1 FLTAU 3 FLSIG 0 LASTFB 0 WIN 0 EXACT 1 evenwins 309 secs 0.1
+G_5 ctl noesc N 29 M 58 n 445 m 536 maxprio 241 L 30 stop stuck iterations 7 fallbacks [4] S3START 0 STD 8 FLFB 1 FLTAU 3 FLSIG 0 LASTFB 0 WIN 0 EXACT 1 evenwins 444 secs 0.2
+G_4 ctl rank N 20 M 40 n 310 m 404 maxprio 169 L 14 stop stuck iterations 4 fallbacks [2] S3START 0 STD 5 FLFB 1 FLTAU 0 FLSIG 0 LASTFB 0 WIN 0 EXACT 1 evenwins 309 secs 0.1
+G_5 ctl rank N 29 M 58 n 445 m 580 maxprio 241 L 30 stop stuck iterations 4 fallbacks [2] S3START 0 STD 5 FLFB 1 FLTAU 0 FLSIG 0 LASTFB 0 WIN 0 EXACT 1 evenwins 444 secs 0.1
+G_4 ctl revE N 20 M 40 n 310 m 404 maxprio 169 L 14 stop stuck iterations 6 fallbacks [4] S3START 0 STD 7 FLFB 1 FLTAU 0 FLSIG 0 LASTFB 0 WIN 0 EXACT 1 evenwins 309 secs 0.1
+G_5 ctl revE N 29 M 58 n 445 m 580 maxprio 241 L 30 stop stuck iterations 6 fallbacks [4] S3START 0 STD 7 FLFB 1 FLTAU 0 FLSIG 0 LASTFB 0 WIN 0 EXACT 1 evenwins 444 secs 0.1

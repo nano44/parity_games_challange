@@ -1,6 +1,39 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 36), written 2026-11-13T14:56Z by date -u
+- Start: stale container (185 behind) fast-forwarded; EARLY START wait until 06ac891d was on origin (14:42:42Z); handover check
+  11a8e8ce (pushed, VERIFY PASS, ls-remote checked); trunk 6eaf4604 merged (normal merge c0e094ce). «go» effective 14:44Z.
+- DONE in the commit that carries this note (see `git log`; SHAs go to the Lead from git output):
+  - docs/referee/R-P-N5-EXP.md, stage 1 (§0-§9): FIRST REVIEW of P-N5-EXP (l-red-b 350d84eb, sha1 c0449b17…). Theorem EXP-IDEAL
+    (a)-(c) SIGN (unconditional; (b), (c) through LEMMA′); RESPONSE LEMMA NOT signed as written (E-1: (H2) vacuous after the stop,
+    false at (j, a, t) = (1, 1, 2^k − 1); E-2: the induction uses the lemma for j + 1 before its (H2) holds); repair = CAUSAL +
+    LEMMA′ (referee-originated, L41); Corollary EXP-N5 and the dead-end sentence SIGN AS CONDITIONAL on R117's premises (P-1);
+    wording items E-3 (wire rank ties), E-4 (u_0 at 0), E-5 (STABLE), E-6 (`QUOTESUMMARY`), E-7 («CORRECT»), O-1, O-2, N-1.
+  - docs/referee/R-P-N5-KEY1P.md: FIRST REVIEW of P-N5-KEY1P (l-new 44775605, sha1 f7191623…): every statement SIGN, no gap; K-1
+    («unconditional» = no premise beyond R117's), K-2 (QUIET-KEY-1P «OPEN» is overtaken by P-N5-EXP).
+  - Tools (docs/referee/scratch/): gkx.py (own rule transcription + definition-based IDEAL step; subcommands gen, member, run, facts,
+    causal, abs, resp, orders, sizes), gkx_quotes.py, gkx_n5.py (N5 on Γ3 with gk_gamma3.py + rl_engine.py; controls start, win,
+    lastfb, nonmover, noesc, rank, revE; --pg / --pgonly against the lane's frozen .pg), gkx_lem.py (perturbed games into
+    gk_lemck.check_state), gkx_summ.py + gkx_fill.py + gkx_report_tmpl.md (the report is REBUILT from the logs: never edit
+    R-P-N5-EXP.md by hand above its stage-2 marker; edit the template and refill), gkx_logs/s36_run.sh (resumable, about 8 min);
+    k1p.py, k1p_quotes.py, k1p_summ.py, k1p_fill.py, k1p_report_tmpl.md, k1p_logs/s36_k1p_run.sh (about 6 min).
+- NEXT (in order): (1) after the report push: read L-SI's box 108 (claude/l-si; an independent proof of L(G_k) = 2^k − 2) and
+  append «Stage 2: comparison» to R-P-N5-EXP.md (append BELOW the generated text; or add a stage-2 template part to gkx_fill.py);
+  (2) the lane's docs/red-b/P-N5-EXP-fixes.md when on origin (entry 1 = DATA + §10 erratum, entry 2 = R117's premises; later
+  entries should answer E-1..E-7): check each against §9 of the report; (3) REFEREE-2's report after its own verdict, comparison if
+  the Lead asks; (4) a RESULTS-line byte test when a line is drafted (this lane's practice: rebuild the line by script).
+- Things only I know (s36):
+  - The lane's Γ3 games (frozen data/b6b/pg/G_k_g3.pg, k = 3..11) are IDENTICAL vertex by vertex to gk_gamma3.build3 of my genome
+    (counter PG 0), and my genome equals gk_build.genome(k) (GEN35 0, k ≤ 12): three engines ran the same games.
+  - §3's rank rule as TEXT has ties on wire options (k ≥ 4); the frozen files need the β-id tie rule of gk.py l. 160.
+  - K1-K4 / V0-V4 hold on EVERY state with u_0 at 0 (all 65,536 states of G_4 with wires and u_0 at 0; all 1,024 of G_3 with u_0 at
+    0); with u_0 free they fail (E-4). K4 and MOVE-2 hold on every state (s⁺ always has u_0 and the wires at 0).
+  - python3 -I drops the script directory from sys.path: tools that import siblings insert their own directory.
+  - gkx_summ.py reads argv[1] as a log directory: gkx_fill.py sets gkx_summ.D itself (a first fill failed on this).
+  - TOTALS: I typed «6,576 genomes» into a draft; the command says 6,579. Removed. Totals only from a command (s33, s34, again).
+  - A docs/agents/-only push is fast (verify skips the self-checks, L56); every other push runs in full (30-70 min).
+
 ## HANDOVER NOTE (successor 35), written 2026-11-13T13:47Z by date -u; parking near the 450k context line BEFORE item 2 (the Lead's 13:46Z order: «a half review is worth less than a clean handover»)
 - DONE (docs/referee/; SHAs: see the commit of this note and my last message to the Lead):
   | item | where | result |
@@ -2059,6 +2092,10 @@ Local branch was stale at start (5ed56c5, 1947 behind): fetch, then check HEAD =
   Lesson: multiply out every constant I tick.
 
 ## Sources opened (append)
+- (successor 36, 2026-11-13T14:56Z by date -u) No external source opened. Repository premises read: docs/red/P-N5-REALIZE.md at trunk 5d7aab0f (sha1
+  067f06b6…) §1, §2, §3.1; docs/RESULTS.md at trunk 6eaf4604: R117 l. 13362-13470, R124 l. 15371, R57 l. 2893-2916, R104 l. 9864, R105 l.
+  10155, R102 title; docs/DECISIONS.md L43; docs/new/N5-ssi-global.md headings (SPEC S1-S5, FIX 1-4); the frozen packets P-N5-EXP
+  (l-red-b 350d84eb) and P-N5-KEY1P (l-new 44775605) in full.
 - VJ00 BRICS RS-00-48, same pdf (sha256 485a12de432a2a8c88640b0718bd2042d855fa86d6a82092a0d538fd41ba9e65), downloaded and opened
   2026-10-24 21:18Z by date -u (successor 5): §6 "Efficient implementation" (pdf pp. 24-27): procedure Shortest paths lines 1-10, claims
   (15)-(19), Proposition 6.1 (clauses 1-4: G(r) contains A shortest path) and its proof with (20)-(22), Theorem 6.2; §5.1 (3)-(10) incl. (6), (7).

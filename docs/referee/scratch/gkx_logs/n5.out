@@ -1,0 +1,7 @@
+G_3 ctl 0 N 11 M 22 n 175 m 228 maxprio 97 L 6 stop stuck iterations 9 fallbacks [7] S3START 0 STD 0 FLFB 0 FLTAU 0 FLSIG 0 LASTFB 0 WIN 0 EXACT 0 PG 0 evenwins 174 secs 0.0
+G_4 ctl 0 N 20 M 40 n 310 m 404 maxprio 169 L 14 stop stuck iterations 17 fallbacks [15] S3START 0 STD 0 FLFB 0 FLTAU 0 FLSIG 0 LASTFB 0 WIN 0 EXACT 0 PG 0 evenwins 309 secs 0.2
+G_5 ctl 0 N 29 M 58 n 445 m 580 maxprio 241 L 30 stop stuck iterations 33 fallbacks [31] S3START 0 STD 0 FLFB 0 FLTAU 0 FLSIG 0 LASTFB 0 WIN 0 EXACT 0 PG 0 evenwins 444 secs 0.9
+G_6 ctl 0 N 38 M 76 n 580 m 756 maxprio 313 L 62 stop stuck iterations 65 fallbacks [63] S3START 0 STD 0 FLFB 0 FLTAU 0 FLSIG 0 LASTFB 0 WIN 0 EXACT 0 PG 0 evenwins 579 secs 3.2
+G_7 ctl 0 N 47 M 94 n 715 m 932 maxprio 385 L 126 stop stuck iterations 129 fallbacks [127] S3START 0 STD 0 FLFB 0 FLTAU 0 FLSIG 0 LASTFB 0 WIN 0 EXACT 0 PG 0 evenwins 714 secs 9.4
+G_8 ctl 0 N 56 M 112 n 850 m 1108 maxprio 457 L 254 stop stuck iterations 257 fallbacks [255] S3START 0 STD 0 FLFB 0 FLTAU 0 FLSIG 0 LASTFB 0 WIN 0 EXACT 0 PG 0 evenwins 849 secs 27.1
+G_9 ctl 0 N 65 M 130 n 985 m 1284 maxprio 529 L 510 stop stuck iterations 513 fallbacks [511] S3START 0 STD 0 FLFB 0 FLTAU 0 FLSIG 0 LASTFB 0 WIN 0 EXACT 0 PG 0 evenwins 984 secs 73.7

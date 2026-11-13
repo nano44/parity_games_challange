@@ -1,0 +1,14 @@
+resp k 3 ctrl 0 L 6 calls 3 sched 0 tlen 0 h1 0 h2 0 empty 0 econ 0 restend 0 fin 0 stuck 0 e1inst 1 e5inst 1
+resp k 4 ctrl 0 L 14 calls 7 sched 0 tlen 0 h1 0 h2 0 empty 0 econ 0 restend 0 fin 0 stuck 0 e1inst 1 e5inst 1
+resp k 5 ctrl 0 L 30 calls 15 sched 0 tlen 0 h1 0 h2 0 empty 0 econ 0 restend 0 fin 0 stuck 0 e1inst 1 e5inst 1
+resp k 6 ctrl 0 L 62 calls 31 sched 0 tlen 0 h1 0 h2 0 empty 0 econ 0 restend 0 fin 0 stuck 0 e1inst 1 e5inst 1
+resp k 7 ctrl 0 L 126 calls 63 sched 0 tlen 0 h1 0 h2 0 empty 0 econ 0 restend 0 fin 0 stuck 0 e1inst 1 e5inst 1
+resp k 8 ctrl 0 L 254 calls 127 sched 0 tlen 0 h1 0 h2 0 empty 0 econ 0 restend 0 fin 0 stuck 0 e1inst 1 e5inst 1
+resp k 9 ctrl 0 L 510 calls 255 sched 0 tlen 0 h1 0 h2 0 empty 0 econ 0 restend 0 fin 0 stuck 0 e1inst 1 e5inst 1
+resp k 10 ctrl 0 L 1022 calls 511 sched 0 tlen 0 h1 0 h2 0 empty 0 econ 0 restend 0 fin 0 stuck 0 e1inst 1 e5inst 1
+resp k 11 ctrl 0 L 2046 calls 1023 sched 0 tlen 0 h1 0 h2 0 empty 0 econ 0 restend 0 fin 0 stuck 0 e1inst 1 e5inst 1
+resp k 12 ctrl 0 L 4094 calls 2047 sched 0 tlen 0 h1 0 h2 0 empty 0 econ 0 restend 0 fin 0 stuck 0 e1inst 1 e5inst 1
+resp k 13 ctrl 0 L 8190 calls 4095 sched 0 tlen 0 h1 0 h2 0 empty 0 econ 0 restend 0 fin 0 stuck 0 e1inst 1 e5inst 1
+resp k 6 ctrl 1 L 62 calls 31 sched 59 tlen 0 h1 0 h2 0 empty 0 econ 0 restend 0 fin 0 stuck 0 e1inst 1 e5inst 1
+resp k 6 ctrl 2 L 62 calls 31 sched 0 tlen 0 h1 31 h2 0 empty 0 econ 0 restend 0 fin 0 stuck 0 e1inst 1 e5inst 1
+resp k 6 ctrl 3 L 62 calls 31 sched 0 tlen 0 h1 0 h2 288 empty 0 econ 0 restend 0 fin 0 stuck 0 e1inst 1 e5inst 1

@@ -1,0 +1,12 @@
+run k 3 L 6 Lform 0 stop stuck stopform 0 swk 0 maxsw 2 maxform 0 sumsw 13 sumform 0 nochange 0
+run k 4 L 14 Lform 0 stop stuck stopform 0 swk 0 maxsw 4 maxform 0 sumsw 35 sumform 0 nochange 0
+run k 5 L 30 Lform 0 stop stuck stopform 0 swk 0 maxsw 8 maxform 0 sumsw 79 sumform 0 nochange 0
+run k 6 L 62 Lform 0 stop stuck stopform 0 swk 0 maxsw 16 maxform 0 sumsw 167 sumform 0 nochange 0
+run k 7 L 126 Lform 0 stop stuck stopform 0 swk 0 maxsw 32 maxform 0 sumsw 343 sumform 0 nochange 0
+run k 8 L 254 Lform 0 stop stuck stopform 0 swk 0 maxsw 64 maxform 0 sumsw 695 sumform 0 nochange 0
+run k 9 L 510 Lform 0 stop stuck stopform 0 swk 0 maxsw 128 maxform 0 sumsw 1399 sumform 0 nochange 0
+run k 10 L 1022 Lform 0 stop stuck stopform 0 swk 0 maxsw 256 maxform 0 sumsw 2807 sumform 0 nochange 0
+run k 11 L 2046 Lform 0 stop stuck stopform 0 swk 0 maxsw 512 maxform 0 sumsw 5623 sumform 0 nochange 0
+run k 12 L 4094 Lform 0 stop stuck stopform 0 swk 0 maxsw 1024 maxform 0 sumsw 11255 sumform 0 nochange 0
+run k 13 L 8190 Lform 0 stop stuck stopform 0 swk 0 maxsw 2048 maxform 0 sumsw 22519 sumform 0 nochange 0
+run k 14 L 16382 Lform 0 stop stuck stopform 0 swk 0 maxsw 4096 maxform 0 sumsw 45047 sumform 0 nochange 0

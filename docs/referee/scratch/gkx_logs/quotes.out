@@ -1,0 +1,38 @@
+source R104P sha1 067f06b6c67969adf346621b4a92b253491ab2b9 bytes 28204
+source R117 sha1 eecbd798b81ad431d1b753f5a7f92f3c63e56da1 bytes 2493915
+source TARGET sha1 a41d5e1a3d251b1e7c345c159651c08d76ad8165 bytes 5619
+source CLAUDE sha1 1e990915503030bba02722f621767c4563c83c74 bytes 4527
+source GAPS sha1 3fa61e1cf9ce48ab16ee6102c3ee145a7d7e0491 bytes 256132
+FOUND R104P packet l. 16 «A GENOME G consists of:»
+FOUND R104P packet l. 16 «movers x = 0, …, N − 1, each with a level lev(x) ∈ {0, …, d − 1} and o»
+FOUND R104P packet l. 17 «per option (x, k): a W-target wt(x, k), which is a mover of level lev(»
+FOUND R104P packet l. 18 «a Ξ-target xt(x, k) ∈ {movers} ∪ {X}; a β-id b(x, k) (a bijection onto»
+FOUND R104P packet l. 18 «a gate index gate(x, k), a bijection of the options onto 0..M − 1;»
+FOUND R104P packet l. 19 «per β-id b: a rank br(b) (a bijection onto 0..M − 1) and a parity bp(b»
+FOUND R104P packet l. 20 «a start s_0 (an option per mover).»
+FOUND R104P packet l. 20 «The Ξ-GRAPH of G: the digraph on movers with an edge x → xt(x, k) for »
+FOUND R104P packet l. 22 «The X-CHAIN of a face (x, k) is the sequence of options (x, k) = (x_0,»
+FOUND R104P packet l. 22 «(x_1, k_1), … with x_(i+1) := xt(x_i, k_i) and k_(i+1) := s(x_(i+1)), »
+FOUND R104P packet l. 23 «B_s(x, k) := the set of β-ids of the chain.»
+FOUND R104P packet l. 24 «(x, k) ▷_s (x, k') iff the β-id of LARGEST rank in B_s(x, k) Δ B_s(x, »
+FOUND R104P packet l. 26 «IDEAL step from s. Availability A_s(x) := {s(x)} ∪ {k : (x, k) ▷_s (x,»
+FOUND R104P packet l. 26 «If |A_s(x)| = 1 for every x, the run STOPS («opt»).»
+FOUND R104P packet l. 27 «Otherwise s' is defined level by level, lev = 0, 1, …: key(x, k) := (g»
+FOUND R104P packet l. 28 «followed by gate(x, k) otherwise (a tuple of length lev(x) + 1); s'(x)»
+FOUND R104P packet l. 29 «If s' = s, the run STOPS («stuck»).»
+FOUND R104P packet l. 29 «Otherwise s → s' is one IDEAL step. L(G) := the number of IDEAL steps »
+FOUND R117 packet l. 32 «N5 (SPEC S1-S5) from its DEFAULT start S3 (SPEC S3 with FIX 1)»
+FOUND R117 packet l. 32 «(Theorem REACH3) for every G with an ACYCLIC Ξ-graph, the game Γ3(G) o»
+FOUND R117 packet l. 33 «n = N + 7M + 10) has S3's start pair equal to R104's stated start tran»
+FOUND R117 packet l. 34 «the N5 run of Γ3(G) FROM S3 has states 0, …, L(G) equal to the transpo»
+FOUND R117 packet l. 36 «(Corollary REAL-IDEAL-S3) if every FL run of N5 from S3 on every n-ver»
+FOUND TARGET packet l. 63 «4. Written correctness and running-time proofs, double-refereed with e»
+FOUND CLAUDE packet l. 64 «Every algorithm claim runs the gauntlet in TARGET.md section 5. Failin»
+FOUND GAPS packet l. 65 «N5 SSI-GLOBAL makes polynomially many iterations (gauntlet step 4, run»
+FOUND TARGET packet l. 74 «There is a deterministic algorithm A and a polynomial p such that for »
+tags 8 tagged_quotes 27 found 27 notfound 0
+UNTAGGED packet l. 56 in R117,GAPS «the run makes at least L(G) + 1 iterations»
+UNTAGGED packet l. 128 in R104P «s' is defined level by level»
+UNTAGGED packet l. 129 in R104P «s'(x) := the k ∈ A_s(x) with the lexicographically least key»
+UNTAGGED packet l. 146 in NONE «different options at depth d*»
+UNTAGGED packet l. 352 in R104P «implemented as r178/fastcyc.simulate and r187/ideal.traj»
