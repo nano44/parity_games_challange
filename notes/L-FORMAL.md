@@ -41,6 +41,14 @@
     speccheck.py, d4probe.py, check/d4/, check/out/speccheck*.out, d4probe.out, INDEX row + DATA paragraph, README entries.
     Clean build 02:24:36Z-02:25:39Z: 3199 jobs, 0 warnings, 74 axiom lines (72 full set; one_cross [propext, Quot.sound];
     lift_start [propext]); grep for sorry/admit/axiom/native_decide empty.
+  - 82ec6eb4 on origin (push exit 0 at 02:44:39Z, VERIFY PASS); sent to the Lead 02:46Z for C145.
+  - 0ee5b8bc (item (3), PROPOSED DEFINITIONS) committed 02:45Z; on origin (push exit 0 at 03:37:55Z, VERIFY PASS); CI verify.yml run
+    43360256652, job lean-lemmas 131671794511. NEXT: the Lead's diff of Spec.lean / SpecGamma3.lean; then (iii) Statement first.
+  - (iii) DRAFT (scratch, not committed; type-checks against Spec.lean): SGame.WF (sizes = n, owner ≤ 1, succ nonempty, succ < n),
+    SGame.StratWF g who s, EvalNoBadStatement (∀ WF g, ∀ Even strategy, (Eng.ofGame g).evaluate s).bad = false), RunNoBadStatement
+    (∀ WF start pair, every step of specRun has bad = false). Caveat to raise: `bad` mixes FUEL (easy) and si.py's FAULT cases
+    (cycle in the restricted graph = Q3 / VJ00 Prop 6.1 (4); BFS reaching all of R; every vertex in some R): the full statement
+    is VJ00-sized; splitting `bad` into `fuelOut` and `fault` would be a definition change (needs the Lead's diff).
 - HANDOVER of SUCCESSOR 3 (session_01V5yGRX3V51LguQp6WMvAgj), written 2026-11-13T00:14Z at about 420k context. A SUCCESSOR STARTS HERE.
   STATE (all Lean-checked (lane); results only through CHECKER (C143 opened by the Lead on MANIFEST c8963698) and the CI job lean-lemmas):
   - On origin before this batch: 91f25983 (handover check), 78c32d90 (RF-A, recovered by transcript replay), c8963698 (MANIFEST +
