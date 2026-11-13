@@ -307,3 +307,8 @@ docs/si/P-N5-WRAP-fixes.md entry 1; the packet (1670432a…) and L-1 (896f9e97�
   counters (». New: «; and this lane's own runs (box 104, not a replay): WRAP's six must-0 counters (».
 - No statement, label, condition or scope changes. XI-EXP stays CONDITIONAL; the DEAD row stays DEAD-CONDITIONAL until both signatures.
 ### Verdict: L-2 (faf0c8ff, sha1 dbd5f0e8) MATCHES. R-1 and R-2 are met; my SIGN WITH GAP on L-1 is closed. Note W-L2-1 is optional.
+
+## Agreement line (REFEREE-2 successor 40; 2026-11-13T02:52Z by date -u): REFEREE 34's L-2 byte test, claude/referee 32d61d60 (R-P-N5-WRAP.md §8, pwrap_logs/l2test.out), read after my verdict 01e83df5
+**Agrees.** Same objects (faf0c8ff, L-2 sha1 dbd5f0e8…, 3,598 B), same stages (L-1 + LW-1 = be7da8f3…; R-1 once; R-2's Old 0× after LW-1,
+re-anchored on «18 counters 0 on 523,721 runs);» once, as fixes entry 1 step 3 says; LW-2, LW-3 once each), same result (44 «(» = 44 «)»,
+cmp EQUAL), same verdict L-2 MATCHES; its note N-W2 is my note W-L2-1 (the R-2 sentence sits after the cited-replays list). No difference.
