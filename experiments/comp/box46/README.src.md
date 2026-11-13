@@ -47,8 +47,15 @@ committed rows and the tower genomes are pinned in inst/SHA1SUMS.lnew_5fa64fe6.
 @@T3@@
 - Bands changed from the statement's ≈ 70 / 140 / 280 (Lead 03:30Z accepted): long-window Ξ-cycle-using seeds exist only near the
   tower sizes, there is no tower generator, and no such seed near 280. Seeds in inst/seeds46/ (SHA1SUMS), chosen from out/seedcand46.out.
-- READING (DATA): the long USED windows are towers whose added even self-loop option is taken early and kept: inside every such window
-  wess = 0 (the use never changes). W_ess (a window with ≥ 2 entries or exits) is 0 on every seed and best measured.
+- READING (DATA, these genomes only; numbers in the wess table above, out/wess46.out sha1 aef7edac2d57): on every SEED the used window
+  is a tower whose added even self-loop option is taken early and kept: wess_wused 0, W_ess 0 (one random seed: 2). The B3 climb's best
+  BEST_B3_WU151_NM163_e934d333.json (sha1 e934d333, N + M 163) is different: its run (T_key 151, ONE window = the whole run, the tail;
+  equal on n5b and rfd212, climb46_B3.log) has wess 80 inside that window, so W_ess = 151 at N + M 163 (ratio 0.926): movers enter and
+  leave cycle options at 80 of its 151 steps (6 options on Ξ-cycles; cycopt 410 (mover, state) pairs, offbeta 0; cycopt and offbeta
+  re-measured by the independent use46.py, out/use46_bests.out sha1 598911aa). The E3 climb (objective W_ess, from the two seeds, both
+  W_ess 0) reached only 4: a W_ess climb from W_ess-0 seeds has no gradient. So a Ξ-cyclic genome whose key-rule run keeps ONE
+  class-frozen window of 151 steps while its movers keep switching on and off Ξ-cycle options exists; it is the strongest W_ess instance
+  here. This is one genome; nothing about growth is claimed.
 - Fit: NOT identified (bands B0, B1 not run, B2 / B3 / E3 as listed; three sizes of one construction are not a growth law).
 
 ## Files

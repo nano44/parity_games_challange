@@ -3,3 +3,6 @@ BEST BEST_E3_WE0_NM169_565e77d9.json Wused 0 NM 169 ratio 0.0000 Tkey 153 Wkey 1
 END restart 0: current Wused 0 NM 167 ratio 0.0000; best so far [0, 169, 153, 0, 152, 0]; evals 60
 START restart 1 seed HIT7_x48_glo_blo_p0.json Wused 0 NM 169 ratio 0.0000 Tkey 299 Wkey 142
 BEST BEST_E3_WE0_NM168_1a6a70fd.json Wused 0 NM 168 ratio 0.0000 Tkey 299 Wkey 142 run_used 1 must0 0 | BEST_E3_WE0_NM168_1a6a70fd.json N+M 168 | mine (T_key, windows, W_key, stalls, tail) (299, 3, 148, 153, 142) run (iterations, fallbacks) (302, 1) must0 0 | n5b spec (iterations, fallbacks) (302, 1) | rfd212 (299, 3, 148, 153, 142) | agree True | restart 1 step 1 evals 61 rejected 0
+BEST BEST_E3_WE4_NM173_673afdbb.json Wused 4 NM 173 ratio 0.0231 Tkey 5 Wkey 4 run_used 3 must0 0 | BEST_E3_WE4_NM173_673afdbb.json N+M 173 | mine (T_key, windows, W_key, stalls, tail) (5, 1, 4, 0, 4) run (iterations, fallbacks) (8, 1) must0 0 | n5b spec (iterations, fallbacks) (8, 1) | rfd212 (5, 1, 4, 0, 4) | agree True | restart 1 step 60 evals 120 rejected 0
+END restart 1: current Wused 4 NM 173 ratio 0.0231; best so far [4, 173, 5, 0, 4, 3]; evals 120
+DONE E3: best [4, 173, 5, 0, 4, 3] BEST_E3_WE4_NM173_673afdbb.json evals 120
