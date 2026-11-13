@@ -1,0 +1,31 @@
+OK   R15 | Lemma A: for any non-empty unambiguous set I of improvements of σ (VJ00 §4.4), Ωσ ⊴ Ω_{Swi
+OK   docs/new/P-N5-XICYC.md@7fa6aff4 | F1 (from [R15a]): Ω_t ⊴ Ω_(t+1) pointwise, for every step t.
+OK   docs/new/P-N5-XICYC.md@7fa6aff4 | so I is non-empty and unambiguous (one switch per vertex).
+OK   R118 | The game is Γ(G) with every Even vertex that is not a mover frozen at its start successor.
+OK   R123 | For every genome G, every positional pair of IDEAL-CYC(G) and every vertex v, the cycle no
+OK   R123 | In IDEAL-CYC(G), for every genome G, every state t and every vertex v other than c_W and t
+OK   R123 | At every state and every gate g, Ω_t(e_g) ≠ Ω_t(β_g).
+OK   R123 | Let G be any genome, t a state of a run of IDEAL-CYC(G), g a gate, a := σ̄_t(g), b := its 
+OK   R123 | At every state σ̄_t(K2) = K1 and Ω_t(K1) ◁ Ω_t(K2).
+OK   R121 | Every vertex more relevant than some e-vertex is an e-vertex, c_W, K0 or K3, by [DEF]
+OK   R126 | every maximal window of quiet steps has at most N steps
+OK   docs/si/box104-map.md@26704e01 | Let R be any rule that picks σ_new(x) inside TIE(x) at every Even x in S4a (SPEC's root-fi
+OK   docs/si/box104-map.md@26704e01 | until its first fallback, the run of N5 with R visits only standard states, and at each st
+OK   docs/si/box104-map.md@26704e01 | F(G) ≤ poly(N + M) for every R104 genome, F the first fallback of N5 from S3 on Γ3(G)
+OK   docs/new/P-N5-CHAIN.md@7fa6aff4 | a state is the frozen part plus a choice at every mover
+OK   docs/new/P-N5-QUIET.md@7fa6aff4 | A cycle containing a mover contains its successor, a gate ([DEF] used shape). A cycle cont
+OK   docs/new/P-N5-QUIET.md@7fa6aff4 | Let τ := σ̄_t with g switched to b, a positional Odd strategy ([XICYC] (a)). Write val_τ(g
+OK   docs/new/P-N5-QUIET.md@7fa6aff4 | K1 is frozen at K1 → K1 ([DEF] start, [XICYC] (a)), so Ω(K1) = (K1, ∅, 0), reward −5.
+OK   docs/new/P-N5-QUIET-fixes.md@7fa6aff4 | nor K0 or K3 (never cycle nodes: K0 → K3 → K2 frozen, nothing returns to K0)
+OK   docs/new/P-N5-QUIET-fixes.md@7fa6aff4 | By [OPT], Ω_t(v) ⊴ v's value under (σ_t, τ_β).
+OK   docs/new/P-N5-QUIET-fixes.md@7fa6aff4 | If e_g's successor is c_W, Λ(e_g) = c_W while Λ(β_g) ≠ c_W (B-ONLY): different.
+OK   docs/new/P-N5-CHAIN.md@7fa6aff4 | So every cycle other than c_X's loop has a vertex of Ω ≥ 3.
+OK   docs/new/P-N5-CHAIN.md@7fa6aff4 | For every positional pair of Γ3(G) and every vertex v ≠ c_X, the cycle node of v's play ha
+OK   docs/new/P-N5-CHAIN.md@7fa6aff4 | Let t be a state, g a gate, a := σ̄_t(g) ∈ {pe_g, pβ_g}, b the other face, Ω := Ω_t.
+OK   docs/new/P-N5-CHAIN.md@7fa6aff4 | By [OPT], Ω(g) ⊴ val_τ(g), the value of g's play under (σ_t, τ).
+OK   docs/new/P-N5-CHAIN.md@7fa6aff4 | K1 → s → K1 is frozen: Ω(K1) = (K1, ∅, 0)
+OK   docs/new/P-N5-CHAIN.md@7fa6aff4 | For the v of the statement its cycle holds no e-vertex and not c_W, and not K0, K3 ((Core)
+OK   docs/new/P-N5-CHAIN.md@7fa6aff4 | (Core) In standard states and in HOW3: K0 → pA → K3 → K2 and K1 → s → K1 are frozen
+OK   docs/new/P-N5-CHAIN.md@7fa6aff4 | If e_g → c_W: Λ(pe_g) = c_W while Λ(pβ_g) ≠ c_W (B-ONLY3).
+OK   docs/si/box104-map.md@26704e01 | So on these games the algorithm is a ONE-SIDED strategy improvement on the inner game
+quotes 30 missing 0

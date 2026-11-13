@@ -1,0 +1,16 @@
+LANDED     R15 | F1 source, Lemma A (RF-A, every rule) | ### R15 [refereed-only] Termination of N5 (SSI-GLOBAL), and of every VJ00 strategy-improvement step sequence, 
+LANDED     R117 | Γ3(G) (RF-D) | ### R117 [refereed-only] N5 (SPEC S1-S5) from its DEFAULT start S3 (SPEC S3 with FIX 1), on the games of RESUL
+LANDED     R118 | IDEAL-CYC (a), BR-SEG-G (i) (Howard remark) | ### R118 [refereed-only] Howard (switch-best) strategy improvement with Vöge-Jurdziński valuations (premises: 
+LANDED     R121 | E-DOM | ### R121 [refereed-only] The e-set height of one vertex on IDEAL-CYC is polynomial when its plays have bounded
+LANDED     R123 | CN2, B-ONLY, NO-TIE, LOC-GATE, LOC-K2 | ### R123 [refereed-only] In IDEAL-CYC(G) (RESULTS R118 (a): Γ(G) with every non-mover Even vertex frozen at R1
+LANDED     R124 | standard states (RF-D) | ### R124 [refereed-only] On Γ3(G) of RESULTS R117 (Γ(G) of R104 with 4M + 4 single-successor Even pads of prio
+LANDED     R125 | CN2-3, LOC-GATE3, LOC-K2-3, B-ONLY3, NO-TIE3, (Core) (RF-D) | ### R125 [refereed-only] On Γ3(G) of RESULTS R117 (n3 = N + 7M + 10), for N5′-xi (RESULTS R118's [N5XI]) from 
+LANDED     R126 | QUIET-N (RF-C Howard remark) | ### R126 [refereed-only] In IDEAL-CYC(G) (RESULTS R118 (a): Γ(G) with every non-mover Even vertex frozen at R1
+highest R id on trunk: 127
+in NO RESULTS header | P-N5-LEVEL | P-N5-LEVEL (packet, RF-A..RF-C re-use its proofs; to land as R129 per the Lead's numbering) | []
+in NO RESULTS header | box 209 | box 209 LEVEL3 (RF-D [L3]) | []
+in NO RESULTS header | LEVEL3 | box 209 LEVEL3 (RF-D [L3]) | []
+in NO RESULTS header | W-FLAT | box 104 W-FLAT (RF-D [IMP3]) | []
+in NO RESULTS header | RF-LEVEL | box 212 itself | []
+in NO RESULTS header | RF-A | box 212 itself | []
+GAPS G-N5-TIME: open

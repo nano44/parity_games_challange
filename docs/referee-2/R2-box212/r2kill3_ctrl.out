@@ -1,0 +1,3 @@
+own k distribution {1: 33, 2: 20, 3: 2, None: 26}
+Xi-cyclic 81 of 81 (Xi-acyclic 0); lam*_key >= T/2 on 81 (largest T among them 196); lam*_key < T/2 on 0; T >= 10 on 31, of which lam*_key >= T/2 on 31; largest lam*_key 196; largest T 196; kill (iii) fires: 1
+sums over the spec rows: steps 1721 stalls 2 max maxlen 1 max tail 4 must-0 sum 0
