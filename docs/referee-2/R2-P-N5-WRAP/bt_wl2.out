@@ -1,0 +1,10 @@
+L-1 896f9e97394695f903131f832a67f31bcfc23c28 2648
+LW-1: old occurs 1×
+after LW-1 be7da8f3a98e4c5a26158eae9aa2766c56531222 3190
+R-1: old occurs 1×
+R-2 Old occurs after LW-1: 0
+R-2 re-anchored: old occurs 1×
+LW-2: old occurs 1×
+LW-3: old occurs 1×
+rebuilt L-2 dbd5f0e83e3d0300842c46cf2ae24b30b853d784 3598 B; (  44 )  44 «|» 6 lines 1
+lane L-2 dbd5f0e83e3d0300842c46cf2ae24b30b853d784 3598 B: EQUAL
