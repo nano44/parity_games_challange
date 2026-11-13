@@ -1,0 +1,50 @@
+CUBE106 q6_s0000_g0123 L* >= 6 start 0000 go 0123: UNSAT | vars 72015 clauses 394231 | cnf sha1 d8c2e9d60d79fb0813511474a1e05a27e526f10e | solver glucose4 (python-sat 1.9.dev15) | 0.1 s | proof lines 2830 sha1 3e2a039fa8dd0b0d0213d2ef63dc32a9b15b07b0
+CHECK106 q6_s0000_g0123 drup: s VERIFIED (1 lemmas RUP-checked)
+CHECK106 q6_s0000_g0123 ref_rup: s VERIFIED (1 lemmas RUP-checked, deletions ignored)
+REGEN106 q6_s0000_g0123 cnf equal yes proof equal yes
+PROOF106 q6_s0000_g0123 dump/q6_s0000_g0123.drup.gz bytes 11889 sha1 2aa48debf4c74356423db3615606e1456fcae534
+CUBE106 q6_s0000_g0132 L* >= 6 start 0000 go 0132: UNSAT | vars 72015 clauses 394231 | cnf sha1 40b3613191e03656d8d8b2134ba83cc94bf9c516 | solver glucose4 (python-sat 1.9.dev15) | 0.1 s | proof lines 2486 sha1 07651ac99e5a4eef163265804b1134106c5a9c2d
+CHECK106 q6_s0000_g0132 drup: s VERIFIED (10 lemmas RUP-checked)
+CHECK106 q6_s0000_g0132 ref_rup: s VERIFIED (10 lemmas RUP-checked, deletions ignored)
+REGEN106 q6_s0000_g0132 cnf equal yes proof equal yes
+PROOF106 q6_s0000_g0132 dump/q6_s0000_g0132.drup.gz bytes 10393 sha1 adc3374a7711f3e1a6ebb2354916d8c61a3ac8f7
+CUBE106 q6_s0000_g0213 L* >= 6 start 0000 go 0213: UNSAT | vars 72015 clauses 394231 | cnf sha1 a205ce32157d3e056d10db190706f329708a6b7b | solver glucose4 (python-sat 1.9.dev15) | 0.1 s | proof lines 2830 sha1 e666364f001289da37e5f1b300e18bd3d4d24337
+CHECK106 q6_s0000_g0213 drup: s VERIFIED (1 lemmas RUP-checked)
+CHECK106 q6_s0000_g0213 ref_rup: s VERIFIED (1 lemmas RUP-checked, deletions ignored)
+REGEN106 q6_s0000_g0213 cnf equal yes proof equal yes
+PROOF106 q6_s0000_g0213 dump/q6_s0000_g0213.drup.gz bytes 11894 sha1 f7faa3441b9f9225d6332194abdf0e51b34bb15b
+CUBE106 q6_s0000_g0231 L* >= 6 start 0000 go 0231: UNSAT | vars 72015 clauses 394231 | cnf sha1 89cf6417d21010f2c67508b5c07bbf6e8261e843 | solver glucose4 (python-sat 1.9.dev15) | 0.1 s | proof lines 2830 sha1 d895496a5ed403a40cea51e91fd5aa61c099fc1b
+CHECK106 q6_s0000_g0231 drup: s VERIFIED (1 lemmas RUP-checked)
+CHECK106 q6_s0000_g0231 ref_rup: s VERIFIED (1 lemmas RUP-checked, deletions ignored)
+REGEN106 q6_s0000_g0231 cnf equal yes proof equal yes
+PROOF106 q6_s0000_g0231 dump/q6_s0000_g0231.drup.gz bytes 11898 sha1 a4e4059833f0e9a1e462b74c9ba84e81e8250aff
+CUBE106 q6_s0000_g0312 L* >= 6 start 0000 go 0312: UNSAT | vars 72015 clauses 394231 | cnf sha1 ccf96436019a8cee314784a6bac2e847180e148f | solver glucose4 (python-sat 1.9.dev15) | 0.1 s | proof lines 2486 sha1 7c01affe65bb4dfe31f1be76c2797ff906f8adb7
+CHECK106 q6_s0000_g0312 drup: s VERIFIED (10 lemmas RUP-checked)
+CHECK106 q6_s0000_g0312 ref_rup: s VERIFIED (10 lemmas RUP-checked, deletions ignored)
+REGEN106 q6_s0000_g0312 cnf equal yes proof equal yes
+PROOF106 q6_s0000_g0312 dump/q6_s0000_g0312.drup.gz bytes 10401 sha1 5e80d04c737a62c629f3f5d48526ca8dac8dbea3
+CUBE106 q6_s0000_g0321 L* >= 6 start 0000 go 0321: UNSAT | vars 72015 clauses 394231 | cnf sha1 eb60e6c76ed5a20aabf857aef0ce1dcbfe44b0a0 | solver glucose4 (python-sat 1.9.dev15) | 0.2 s | proof lines 2486 sha1 2387f2fb5ebef99b634b6021173ceb42d6b3a631
+CHECK106 q6_s0000_g0321 drup: s VERIFIED (10 lemmas RUP-checked)
+CHECK106 q6_s0000_g0321 ref_rup: s VERIFIED (10 lemmas RUP-checked, deletions ignored)
+REGEN106 q6_s0000_g0321 cnf equal yes proof equal yes
+PROOF106 q6_s0000_g0321 dump/q6_s0000_g0321.drup.gz bytes 10403 sha1 83366eea2396140d9b83099344191248a0654365
+CUBE106 q6_s0000_g1023 L* >= 6 start 0000 go 1023: UNSAT | vars 72015 clauses 394231 | cnf sha1 36a8eb5d3ac0799b62e6866228d578ca99f6ae8c | solver glucose4 (python-sat 1.9.dev15) | 0.1 s | proof lines 2486 sha1 31eb43a6c5e15a22cd545b4e08bf41467cd2dbc3
+CHECK106 q6_s0000_g1023 drup: s VERIFIED (10 lemmas RUP-checked)
+CHECK106 q6_s0000_g1023 ref_rup: s VERIFIED (10 lemmas RUP-checked, deletions ignored)
+REGEN106 q6_s0000_g1023 cnf equal yes proof equal yes
+PROOF106 q6_s0000_g1023 dump/q6_s0000_g1023.drup.gz bytes 10364 sha1 3d0a89c9be6ab79be17b75057a84544c1cccb81d
+CUBE106 q6_s0000_g1032 L* >= 6 start 0000 go 1032: UNSAT | vars 72015 clauses 394231 | cnf sha1 62d6556a9fa9209f3f8f1473b1628fd352ffc48d | solver glucose4 (python-sat 1.9.dev15) | 0.1 s | proof lines 1842 sha1 7388eeb81d899b1f65408d2a9be2e6c1b57f8da6
+CHECK106 q6_s0000_g1032 drup: s VERIFIED (19 lemmas RUP-checked)
+CHECK106 q6_s0000_g1032 ref_rup: s VERIFIED (19 lemmas RUP-checked, deletions ignored)
+REGEN106 q6_s0000_g1032 cnf equal yes proof equal yes
+PROOF106 q6_s0000_g1032 dump/q6_s0000_g1032.drup.gz bytes 7699 sha1 fd0b304852b7d7645120be05d2ff8902afe6800d
+CUBE106 q6_s0000_g1203 L* >= 6 start 0000 go 1203: UNSAT | vars 72015 clauses 394231 | cnf sha1 211c0379fb8497ccc0d4d4badb66308eabedb685 | solver glucose4 (python-sat 1.9.dev15) | 0.2 s | proof lines 2492 sha1 81235ef83b0bd4b7b8a0301c45e7046ad7245444
+CHECK106 q6_s0000_g1203 drup: s VERIFIED (52 lemmas RUP-checked)
+CHECK106 q6_s0000_g1203 ref_rup: s VERIFIED (52 lemmas RUP-checked, deletions ignored)
+REGEN106 q6_s0000_g1203 cnf equal yes proof equal yes
+PROOF106 q6_s0000_g1203 dump/q6_s0000_g1203.drup.gz bytes 10488 sha1 9238957b89ac7af764989822669e2b24e66e53c5
+CUBE106 q6_s0000_g1230 L* >= 6 start 0000 go 1230: UNSAT | vars 72015 clauses 394231 | cnf sha1 a953a370215736250938a355aee4233ca8727e4d | solver glucose4 (python-sat 1.9.dev15) | 0.1 s | proof lines 2492 sha1 e153822654aed272b1e01456ac7ad8610dff3953
+CHECK106 q6_s0000_g1230 drup: s VERIFIED (52 lemmas RUP-checked)
+CHECK106 q6_s0000_g1230 ref_rup: s VERIFIED (52 lemmas RUP-checked, deletions ignored)
+REGEN106 q6_s0000_g1230 cnf equal yes proof equal yes
+PROOF106 q6_s0000_g1230 dump/q6_s0000_g1230.drup.gz bytes 10485 sha1 d32db877908695b000aec8927499dc96190efcde
