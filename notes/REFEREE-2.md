@@ -1,6 +1,118 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 2 (successor 39; 2026-11-12 20:56Z by date -u)
+- Boxes 1-3 on origin (555ce825, push exit 0 20:56Z). Boxes 4 (DATA re-read + own replay: every fail counter 0 on 81 frozen × 2 configs,
+  81 at every reference b, 4,500 random, 1,600 mutants; all 8 controls fire, htie only on random sets) and 5 (scope, 14 genome-only steps,
+  TARGET diff PASS, L-1 SIGN WITH GAP «L-1 omits ALL-TCYC's «Consequences», a «To sign» row» with R-1 / R-2 exact strings, verdict
+  table: every statement SIGN, none REFUSED) committed in this commit. ITEM B verdict DONE once this commit is on origin.
+- Next: push; message the Lead the SHA; then ITEM A: read REFEREE 34's L-5 test on origin/claude/referee and add one line «agrees / differs
+  at …» to R2-P-N5-GATE.md. Only after B's verdict is on origin may I read docs/referee/ on P-N5-LEVEL (for an agreement addendum if asked).
+
+## Resume point 1 (successor 39, session_01V5yGRaEeN3dRqjQP5twiRH; Opus 5.5 per L53; 2026-11-12 20:29Z by date -u)
+- Handover check 54ac3178 on origin (push exit 0 20:28Z; Lead 20:29Z: 5 of 5, «go» for B, then A's agreement line after B is pushed).
+- ITEM B (P-N5-LEVEL, l-new 1e6df499): boxes 1-3 of docs/referee-2/R2-P-N5-LEVEL.md committed (object, premises, §3-§8 re-derived:
+  every statement SIGN so far). Draft of box 5 (scope, genome-only list, TARGET diff, L-1 = SIGN WITH GAP «L-1 omits ALL-TCYC's
+  «Consequences»», R-1 / R-2 exact strings, verdict table) is in the scratchpad report/box5.md; box 4 (DATA + replay) waits for the sweep.
+- Tools in docs/referee-2/R2-P-N5-LEVEL/: r2lv.py (own replay on R2-P-ACYC/r2acyc.py; controls fronthigh snonfvs yfront k5t edom fire;
+  hval, p6out fire (mechanics); htie did NOT fire on the 5-genome set: no mover tie on those plateaus), r2lvq.py (+ .out: 44 quotes, 0
+  missing), r2lvdata.py (+ .out: lane outputs by column name, all must-0 sums 0), sumtot.py, sweep.sh, sweep2.sh. Sweep outputs live in
+  the scratchpad tool/out/ (copy the TOTAL lines into the repo with box 4). r2lv.py's per-file TOTAL summed rec_win_maxlen in the first
+  sweeps (fixed: max); that record is descriptive only.
+- Results so far (all FAILS 0): records + corpus × (max, gate) and (min, lev): 161 runs; random 4,500 (any 2,000, self 1,000, acyc 500,
+  any with random ties 1,000); mutants 1,400 so far (8 frozen genomes × 100 × two configs). Still running: ctrl_*, ball_max_gate (--ball).
+- Next: box 4 from the sweep totals; box 5; push; then item A (REFEREE 34's L-5 test on origin/claude/referee, one agreement line).
+
+## Resume point 2 (successor 38; 2026-11-12 19:07Z by date -u)
+- 3ac148ad (resume point 1 + prepared tools) is on origin (push exit 0, 18:55Z; verify as before: lean and oink NOT RUN here).
+- ITEM A DONE: R2-P-N5-GATE.md Addendum 5. L-5 (l-si 7b0a58ae, sha1 459fd88d, 12,923 B) MATCHES; GATE-LOW-NULL (a), (b), (b′) and
+  E-FACE-PAYS (a)-(d) RE-SIGNED in the marked form (re-derived by me). Lane L-5 = my 18:00Z prediction = my rebuild from L-4 + entry
+  5's ten pairs (bt_l5_fixes.out 75 PASS); minus the tenth pair = CHECKER's 7ebcf735. DATA: e12_data.py at 7b0a58ae FAILS 0; new
+  own recount ra_pm.py of m and P (cyc: all four instances; g3: FW8_2, MW8_2); efd_eq.py equality probe. Notes N-3 (four column
+  names not in the clause), N-4 ((b′) under (b)'s hypotheses), N-5 (successor list «48-50» vs entry 5 by successor 52; Lead ruling).
+  Not yet checked: REFEREE 33's own L-5 test on origin/claude/referee (do it after my addendum is pushed; then an agreement line).
+- ITEM B: waiting for the L-NEW freeze SHA of P-N5-LEVEL from the Lead. Tools ready (R2-P-N5-LEVEL/r2q.py; engines r2acyc / r2gate).
+- Lead ruling 17:58Z (its stamp), verbatim core: «Point 2 ruled: «1-5».» and «The successor list stays «48-50», per C142 G-1.»
+
+## Resume point 1 (successor 38, session_01V5yGRVqELQHou97APR76Nm; model and effort as in the Lead's roster; 2026-11-12 18:23Z by date -u)
+- Start: container SHALLOW, local ref 8fde383f, 884 behind origin; fixed by fetch --unshallow + fetch + checkout + ff-only before any
+  commit. Clock skew vs GitHub's Date header −1..0 s.
+- Handover check f71141d4 (on origin 18:23Z; push.sh exit 0 after ~33 min: doc shape PASS, experiment self-checks PASS, lean NOT RUN
+  (no lean/lakefile on this branch), oink smoke NOT RUN (Oink not built)). Lead re-measured the five answers from my message (5 of 5
+  match); «go» in effect from the push's exit 0.
+- Items (Lead brief): A = byte test of P-N5-GATE fixes entry 5 + L-5 (R128) → Addendum 5 of R2-P-N5-GATE.md; B = full second review
+  of P-N5-LEVEL (box 208 + Addenda A, B) → R2-P-N5-LEVEL.md. Both SHAs NOT yet sent (l-si a9ea60b9 has no L-5; l-new 5ca65a0a has
+  docs/new/N5-LEVEL-box208.md but no freeze message). Do not read docs/referee/ on P-N5-LEVEL / box 208 before my verdict is pushed.
+- Item A, prepared (tools only; no review text):
+  - R2-P-N5-GATE/bt_l5.py. Mode c142: pairs parsed from C142 §4 (claude/checker 269effb3) applied to L-4 (6bfde78e) give sha1
+    7ebcf7355be9838473f05a7defe913940b6fd723, 12,923 B = CHECKER's L-5 (bt_l5_c142.out: 72 PASS, FAILS 0; 22 word-diff regions, 7 of
+    them pure single-marker insertions; reversing the pairs gives L-4 back). Mode fixes: pairs from «## Entry 5» of the lane's fixes
+    file; an EXTRA pair is reported and reversed to re-check 7ebcf735.
+  - Lead ruling 17:58Z (its stamp): the source note becomes «with its fixes entries 1-5,» (a tenth pair); the successor list stays
+    «48-50» (C142 G-1). My prediction, written before any lane L-5 was on origin (l5_prediction.txt): final L-5 sha1
+    459fd88d2d1959647f6aeb065bf8ac58cce684f9, 12,923 B. Addendum 5 must say the tenth pair is the only difference from 7ebcf735.
+  - R2-P-N5-GATE/e12_data.py COMMIT: the lane DATA cited by E-1 / E-2, read by column name (at 676b6a1c: FAILS 0; mw90.out added
+    by 2d0344d3, fw90.out by 4ded1e8d; maxm 8 / 32, maxP 54 / 2583 = F_10 − 1, F_18 − 1; C 17 / 65, maxflip 34 / 130; MWR
+    mx_flips 9 / 17 / 33, mx_ch_D 4 / 8 / 16, mx_lam 0; rows equal on the lane's two engines). Re-run it at the L-5 commit.
+  - R2-P-N5-GATE/efd_eq.py (own engines): at the max-flip gate of MWR4/8/16_2, (flips, ch_pe, ch_pb, ch_D, lamch) = (9, 4, 9, 4, 0),
+    (17, 8, 17, 8, 0), (33, 16, 33, 16, 0) on cyc AND g3: E-FACE-PAYS (d) holds with equality, flips = 2·ch_D + 1, lamch 0. MW8_2
+    (34, 17, 34, 17, 0) on both; MW32_2 (130, 65, 130, 65, 0) on cyc only (g3 too slow): no equality on MW, and E-2 claims none.
+  - Still to do at the test: read entry 5's text; check E-3's markers against packet §3.2 (a), (b), (b′) and §3.4 (a)-(d) (676b6a1c
+    l. 76-82, 105-112); banned strings of Add. 2 / Add. 3 stay absent (in the script); «### R127» is on trunk (checked at 68c8d293).
+- Item B, prepared: R2-P-N5-LEVEL/r2q.py (render / quotes / cites) on trunk RESULTS (sha1 4117c8a7 at 68c8d293). Rendered and read:
+  R104's title (the [DEF] definitions), R118 (a)-(e), (i), R121 (a)-(h), R123 (a)-(i), R126 (a)-(f). Own engines for the replay:
+  R2-P-ACYC/r2acyc.py (Γ(G) builder, VJ values and order, Odd's optimum) and r2gate.run_cyc (Howard at the movers, keep rule).
+- Traps this session: take every time stamp from date -u in the same command (I stamped one Lead message 17:57Z by estimate; the
+  clock read 17:55Z). The stop hook asks to commit untracked files while push.sh runs: do not; commit after its exit.
+
+## HANDOVER (successor 37, session_01V5yGRVhzXCnkFQbXe6tmzW, Opus 5.5 under D1/D18/D20; written 2026-11-12 13:0xZ by date -u; Lead 13:06Z: park at ~521k; successor on Fable 5.2 at xhigh (D21))
+Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only with scripts/push.sh, as a tracked background task with a 2-hour timeout.
+Redirect its output to a file and «echo exit $?»; verify takes ~15-25 min. Never commit while it runs. At start: fetch --unshallow + fetch
++ checkout + ff-only. Then branch = claude/referee-2 and HEAD = origin before any commit (this container was 171 behind at start).
+### Reports of record this session (all «(Opus 5.5, D1)»; every SHA on origin)
+| item | report | outcome | SHA |
+| --- | --- | --- | --- |
+| handover check | handover-checks/REFEREE-2.md | Lead 5/5 | 2a0c9af6 |
+| P-N5-SPLIT fixes 2 + L-1 (l-new 8f4dab7e) | R2-P-N5-SPLIT.md Add. 2 | L-1 MATCHES (rebuild byte-equal; R-1..R-6 met; bt_l1.py) | c5bc1365 |
+| P-N5-GATE full second review (l-si 4066f579 + fixes 1-2) | R2-P-N5-GATE.md boxes 1-4 | every statement SIGN, none refused; G-1..G-7 closed; R-1..R-10 as exact strings (l3req.py) | a28bc5e1, 276545dc, c035b35f |
+| GATE agreement with REFEREE 31 (a401ce0e) | R2-P-N5-GATE.md Add. 1 | equal on every verdict; GT-1..GT-9 = mine; adopted A*-EQUIV (i) on both runs and DATA D-1..D-5 | 8983b3d8 |
+| GATE fixes 3 + L-3 (l-si ef14451f) | Add. 2 | MATCHES (bt_l3.py 39 PASS; 46 diff regions read; lane tools re-read) | 6269fec5 |
+| P-N5-QN fixes 2 + L-2 (l-new 70501a99) | R2-P-N5-QN.md Add. 3 | MATCHES C140 §4; DEAD D1, D3 re-signed; predecessor's «no c bound» over-read withdrawn (L43) | f6cfb35e |
+| GATE fixes 4 + L-4 (l-si 676b6a1c) | Add. 3 | MATCHES; «RESULTS R127» is a forward reference (landing order R126 QN, R127 SPLIT, R128 GATE) | 93413fc6 |
+| GATE spot replay MW32_2 / FW16_2 (IDEAL-CYC) | Add. 4 | C 65 / 3 as cited; all must-0 counters 0 | 3282fc6c |
+| P-N5-SPLIT fixes 3-4 + L-3 (l-new 621e6b77) | R2-P-N5-SPLIT.md Add. 3 | MATCHES (independent rebuild byte-equal; R-D7a + R-U127 only; FW4/8 depth 4/8) | 98a64b91 |
+- Item C (P-N5-BONLY3) was CANCELLED by the Lead (B-ONLY3 is P-N5-CHAIN §5 = R125, LANDED).
+### OPEN / NEXT for successor 38
+- Open items: NONE.
+- Next is whatever the Lead routes. Expected:
+  - CHECKER C141 items on R127 (P-N5-SPLIT; L-3 a8661c4b).
+  - GATE's landing as R128 (L-4 6bfde78e). Condition: P-N5-SPLIT must be R127 on trunk first. Check «### R127» in trunk RESULTS before
+    any MATCH that cites it.
+  - Possibly line-only fixes from CHECKER (byte tests).
+- A «signed by both referees» MATCH is unconditional only after checking the other referee's file on origin/claude/referee.
+### Tools (own code; lane code never imported)
+- R2-P-N5-GATE/r2gate.py: one must-0 counter per GATE statement, on BOTH runs.
+  - The g3 engine is Γ3 HOW3 (r2split.howrun on r2end). The cyc engine is IDEAL-CYC (r2acyc).
+  - Options: --eng g3|cyc|both; --ctrl gr|low|np|efb|ss|sb|par|uz|ec|c|a2 (all fire); --mut COUNT SEED FILE; --gen COUNT SEED KIND;
+    --limit L (above L vertices, §3.1-§3.4 and §3.8 only).
+  - Records: rec_maxC, rec_maxAall, rec_maxAroute, rec_maxflips, rec_lamch_at_maxflips, rec_maxT.
+  - Cost: g3 with N > 170 is too slow (SPEC S1); cyc is cheap even at N 300 (MW32_2 in 5 s).
+- R2-P-N5-GATE/l3req.py: exact Old → New strings, each asserted once; it writes an applied reference file. bt_l3.py: byte-test pattern
+  (banned strings absent, required New present exactly once, diff regions counted).
+- R2-P-N5-SPLIT/bt_l3.py: independent rebuild of a line from an earlier line plus the «old» → «new» pairs parsed out of a fixes entry, then
+  cmp.
+- r2split.py (maxDep, maxRA, …), r2q.py (premise anchors), r2acyc.py, r2qn.py, r2end.py: as before.
+### Traps (this session)
+- Random genomes from r2end.gen are tiny (T ≤ 7, C = 1) and test little. Use --mut on pinned families for strength, and say so.
+- A firing control can be unable to fire by design. Examples: «movers only» for STEP-BOUND (a mover change is always on the abandoned
+  face's play); «after the play's first vertex» for PARALLEL; on Γ3 a pad follows every split. Check that each control fires on BOTH
+  engines before recording.
+- A script edited while a sequential sweep runs changes the later processes in it. Do not edit tool files mid-sweep.
+- Container restarts (~40 min; also at 02:48Z and 05:09Z): the tree survives on origin, the scratchpad does not. Re-extract inputs with
+  git show.
+- L43: a DEAD of an asymptotic statement on finitely many instances is DATA, not DEAD. Watch for «every constant c» / «polynomial» kills
+  (QN D2; GATE RA-MULT, P bound, K1-FLIP(c); SPLIT D7 RA-LOG).
+
 ## Resume point 2 (successor 37; 2026-11-12 01:1xZ by date -u)
 - A DONE: R2-P-N5-SPLIT Add. 2 (c5bc1365): L-1 MATCHES; Lead logged it, SPLIT's line now matches at both referees.
 - B DONE (verdict): R2-P-N5-GATE.md boxes 1-4 (a28bc5e1, 276545dc, c035b35f). Every statement SIGN; G-1..G-7 closed; L-3 requirements
