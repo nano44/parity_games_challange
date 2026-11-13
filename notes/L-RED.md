@@ -3586,3 +3586,5 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
   (14 NUMB_* instances, kflipm / ladder fire on renumbered towers and L-COMP bests); its e-index form SURVIVES (every *_e 0; xi control fires it).
   Lesson repeated: two table totals typed before computing (4,403 / 24,618) were wrong; fixed from summ241 before commit.
 - RESUME POINT: nothing in flight after this push; next = whatever the Lead routes (DEEP3 on hold).
+- 2026-11-13T09:30Z: R241 §7 NULL-switch addendum (Lead 07:13Z/08:19Z msgs read only at 08:39Z: lesson = call ReadNotifications at every wait,
+  not only when told). B5 null switch reproduced = post-F1 (2nd fallback); in-window NULL switches 1,175 / 2,211 runs, nullbad 0, nullxi 0; climbs 24,400 evals 0 cand.

@@ -5,6 +5,7 @@ KEYSIDE-ALL, every eval checked with kt241.analyse (all must-0 counters). Object
   nlk   moves to an option that is NOT the global least key under the new state (the value side restricting A_t: «non-least-key choice»)
   slack Σ over degree-2 movers of moves(x) - KF_x (KEYFLIP′ says <= 1 each; the climb pushes towards «moves > 1 + KF»)
   cyc   (mover, state) pairs whose option has a Ξ-edge on a Ξ-cycle of G (L-COMP box 46's cycopt), plus T
+  null  NULL switches before the first fallback (better in SPEC S2's length only; L-RED-B 4 B5), then Ξ-unchanged steps, then T
   mu    Σ over movers of the number of states whose μ is NOT the least key of x's τ-paths in the W-graph (room for μ to fall)
 Fitness = (must-0 sum, objective, -(N + M)); any must-0 > 0 is saved at once (out/CAND_*.json) and re-run on n5v (box 190) by kt241.
 Mutations: start, W-target, Ξ-target (mover, -1 or self), gate swap, β-rank swap, β parity, add / remove an option, add a mover.
@@ -68,7 +69,7 @@ def mutate(G, rng, nmax):
     return normalize(G)
 
 ONLY = os.environ.get("CL_ONLY") == "nf"   # nf: count only the numbering-free counters (KEY-TAU + premises + *_e), for climbs under KT_PERM
-NF = ("std", "tau3", "w3", "lenvar", "kp", "kpf", "kpa", "unreach", "mukappa", "muinc", "muflat", "mulen", "kviol", "nomove") + tuple(k for k in K.KEYS if k.endswith("_e"))
+NF = ("nullbad", "std", "tau3", "w3", "lenvar", "kp", "kpf", "kpa", "unreach", "mukappa", "muinc", "muflat", "mulen", "kviol", "nomove") + tuple(k for k in K.KEYS if k.endswith("_e"))
 
 def fitness(G, obj):
     c, d, info = K.analyse(G)
@@ -79,6 +80,7 @@ def fitness(G, obj):
     elif obj == "slack": v = info["slack"] * 1000 + d["T"]
     elif obj == "cyc": v = info["cyc"] * 1000 + d["T"]
     elif obj == "mu": v = info["muroom"] * 1000 + d["T"]
+    elif obj == "null": v = d["nullsw"] * 1000 + d["nullxi"] * 100 + d["T"]
     return (m0, v, -(G["N"] + M)), c, d, info
 
 def main():

@@ -36,6 +36,8 @@ Must-0 counters (unit: one (state, mover) unless said):
           moves(2l+1) + F(l-1), moves(x) > 1 + F(lev(x)-1), or F(l) > 3^(l+1) - 1                                LADDER
   *_e     the same nine box 215 counters with e-index keys instead of gate keys (the numbering-free form; = the gate form when
           e-order = gate order, i.e. eord 0)
+  nullbad a NULL switch (old and new pad equal in Ξσ_t's (cycle node, P-set), differing in length only; L-RED-B 4 B5's case) where μ(x) does
+          not strictly decrease. Descriptive: nullsw (NULL mover switches before F1), nullxi (non-fallback transitions with Ξσ unchanged).
 Descriptive: T (non-fallback steps), switches, nlk (moves to a non-global-least key option: σ_(t+1)(x) ≠ KP_(s_(t+1))(x)), maxsw, maxK,
   xicyc (genome has a Ξ-cycle), essential-Ξ statistics are NOT computed here.
 Controls (must fire): KT_MODE=xi (N5′-xi, Howard's tie rule): kp / kflip; KT_CTRL=1: κ DP takes the MOST key (kp fires);
@@ -67,8 +69,8 @@ def renumber(g, V, how, seed):
     return _G(prio, owner, succ), {k: pi[v] for k, v in V.items()}
 KEYS = ("std", "tau3", "w3", "lenvar", "kp", "kpf", "kpa", "unreach", "mukappa", "muinc", "muflat", "mulen", "kviol", "nomove",
         "eord", "kpg", "lkp", "pkf", "pkfa", "kflip", "kflipm", "casc", "ftt", "ladder",
-        "kpg_e", "lkp_e", "pkf_e", "pkfa_e", "kflip_e", "kflipm_e", "casc_e", "ftt_e", "ladder_e")
-DESC = ("T", "switches", "nlk", "maxsw", "maxK", "ladders")
+        "nullbad", "kpg_e", "lkp_e", "pkf_e", "pkfa_e", "kflip_e", "kflipm_e", "casc_e", "ftt_e", "ladder_e")
+DESC = ("T", "switches", "nlk", "maxsw", "maxK", "ladders", "nullsw", "nullxi")
 
 def ladder_shape(G):
     N, lev, opts = G["N"], G["lev"], G["opts"]
@@ -151,11 +153,11 @@ def analyse(G, second=False):
             own[x] = allk[x][s[x]]; KP[x] = min(range(len(opts[x])), key=lambda k: allk[x][k])
         return own, allk, KP
     ekey = lambda x, k: eid[(x, k)]; gkey = lambda x, k: gidx[(x, k)]
-    mu = []; kap = []; Aset = []
+    mu = []; kap = []; Aset = []; VS = []
     for t, (sg, tu) in enumerate(states):
         c["std"] += int(any(sg[v] != s0[v] for v in sg if v not in mvset))
         c["tau3"] += int(tu != t0 or not tau_ok)
-        vs, _ = S.vjproc(n, rk, ev, [[sg[v]] if isE[v] else succ[v] for v in range(n)], isO)
+        vs, _ = S.vjproc(n, rk, ev, [[sg[v]] if isE[v] else succ[v] for v in range(n)], isO); VS.append(vs)
         Is = {v: [w for w in succ[v] if w != sg[v] and O.better(vs[w], vs[sg[v]])] for v in sg}
         A = {v: sorted({sg[v]} | set(Is[v])) for v in sg}
         Am = {x: sorted(pad[w][1] for w in A[mvv[x]]) for x in range(N)}; Aset.append(Am)
@@ -184,7 +186,11 @@ def analyse(G, second=False):
             a, b, kk = mu[t + 1][x], mu[t][x], kap[t][x]
             c["mulen"] += int(len(a) != len(b) or len(a) != len(kk))
             c["mukappa"] += int(a != kk); c["muinc"] += int(a > b); c["muflat"] += int(x in mv and a == b)
-        for x in mv: sw[x] += 1
+        for x in mv:
+            sw[x] += 1; a, b = VS[t][V[("m", (x, sopt[t][x]))]], VS[t][V[("m", (x, sopt[t + 1][x]))]]
+            if a[0] == b[0] and a[1] == b[1]:                                   # NULL switch: better in SPEC S2's length component only
+                d["nullsw"] += 1; c["nullbad"] += int(not mu[t + 1][x] < mu[t][x])
+        d["nullxi"] += int(VS[t + 1] == VS[t])
     c["kviol"] = sum(int(sw[x] > npath[x] - 1) for x in range(N)); d["maxsw"] = max(sw) if sw else 0
     # box 215 ([M] and the key-side lemmas), once with gate keys (box 215 as stated, sfx "") and once with e-index keys (sfx "_e")
     bylev = {}
@@ -331,5 +337,5 @@ if __name__ == "__main__":
         if first is None and sum(c.values()): first = (name, {k: v for k, v in c.items() if v})
         if sys.argv[1] == "json": print(f"{tag} {name}: " + fmt(c, d, info), flush=True)
     print(f"{tag} TOTAL {sys.argv[1]} {' '.join(sys.argv[2:9]) if sys.argv[1] != 'json' else cnt}: genomes {cnt} " + " ".join(f"{k} {tot[k]}" for k in KEYS)
-          + " | " + " ".join(f"{k} {dt[k]}" for k in ("T", "switches", "nlk", "ladders")) + f" max T {mx['T']} maxsw {mx['maxsw']} maxK {mx['maxK']}"
+          + " | " + " ".join(f"{k} {dt[k]}" for k in ("T", "switches", "nlk", "ladders", "nullsw", "nullxi")) + f" max T {mx['T']} maxsw {mx['maxsw']} maxK {mx['maxK']}"
           + f" | second engine sampled {xs} xdiff {xd} | {time.time() - t0:.0f} s" + (f" | first nonzero {first}" if first else ""), flush=True)

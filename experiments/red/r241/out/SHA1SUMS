@@ -10,6 +10,7 @@ a5f93e1370d70e3b2371c417a5d6598d558e7eb7  kt_hard_none.out
 6a8914ead53e133dd4761bdb78ecc96dd8a33f32  kt_rand.out
 4449490ddec909e43f62290cf7bde38929ac8e92  kt_rand2.out
 9ae89a8febf9556afd554fb98057e6137a38164c  kt_xtower_none.out
+bc05e6c4c2cc1450e6a514f7dea98bc38b6b9c8c  numbcheck241.out
 bed941fbfe719f7fbc0723f55fa7bf45171b176e  trace241.out
 1367f5ec730125491c63dbc13a6feae0feacb3cc  climbs241.txt
 e0053684184b5a63958b7b2b2551d8c8f788b1c5  summ241.txt
@@ -18,3 +19,10 @@ f5db3e17e6165b893dc0b1ff1f3e5040b83974de  hard.list
 90d81dcdfc89aeb9bf39c526bb7a7ae78d8253bb  xtower.list
 321bd00f1d19049d44f222e5d4dbdf7432c33cd6  climbC.log
 4bdde51495c2fcc1eb04eb90bc3ba8aab2f1449a  climbD.log
+f3cde0d553eb91e480b51fb4c091a66f57d679c7  null/climbM.log
+783e44dde3484864aa4455b9831fe2e43cf427eb  null/climbM2.log
+71b76f9f8d7c2c85a41d0dd03fc6826af4c31170  null/kt_frz_null.out
+716ff4c237fd124dcc302a7a58566fedc8c2bce1  null/kt_hard_null.out
+51ebc63d7472cb171c1a389a541cdcf04201895a  null/kt_randnull.out
+8be02077b7ca002df7f91daf547f256b671ead69  null/null2.pg
+9b305eab679155c12c9546319346874159dd6c52  null/nullsumm241.txt

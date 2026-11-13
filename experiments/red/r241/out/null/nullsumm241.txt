@@ -1,0 +1,14 @@
+NULL241 kt_frz_null.out: runs 81 must0 0 nullsw 28 nullxi 0 T 1721 xs 81 xd 0
+NULL241 kt_hard_null.out: runs 30 must0 0 nullsw 4 nullxi 0 T 3666 xs 30 xd 0
+NULL241 #n_rand: runs 300 must0 0 nullsw 105 nullxi 0 T 324 xs 15 xd 0
+NULL241 #n_dense: runs 300 must0 0 nullsw 155 nullxi 0 T 408 xs 15 xd 0
+NULL241 #n_deep: runs 300 must0 0 nullsw 229 nullxi 0 T 502 xs 15 xd 0
+NULL241 #n_noesc: runs 300 must0 0 nullsw 213 nullxi 0 T 325 xs 15 xd 0
+NULL241 #n_esc: runs 300 must0 0 nullsw 2 nullxi 0 T 284 xs 15 xd 0
+NULL241 #n_lvl0: runs 300 must0 0 nullsw 212 nullxi 0 T 520 xs 15 xd 0
+NULL241 #n_perm: runs 300 must0 2428 nullsw 227 nullxi 0 T 520 xs 30 xd 0
+NULL241 TOTAL runs: runs 2211 must0 2428 nullsw 1175 nullxi 0 T 8270 xs 231 xd 0
+NULL241 climb null1: evals 12000 best objective 12003 (nullsw = objective // 1000)
+NULL241 climb pnull: evals 12000 best objective 8004 (nullsw = objective // 1000)
+NULL241 climb null2: evals 400 best objective 21005 (nullsw = objective // 1000)
+NULL241 climbs: evals 24400 candidates 0

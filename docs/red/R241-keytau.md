@@ -112,3 +112,23 @@ GATE = box 215 as stated (10); EKEY = box 215 with e-index keys (9). Original nu
 ## 6. Not claimed; kill criteria for others
 - No bound; T_key may be exponential (towers: maxsw 2^k − 1). Nothing after the first fallback. G-2 (box 213 §4) and MERGE / RETURN / RENEW
   not attacked. KEY-TAU is a reformulation with a monotone potential, not a running-time result (box 213 §8). **G-N5-TIME stays OPEN.**
+
+## 7. Addendum: NULL switches (Lead 07:13Z / 08:19Z, L-RED-B 4 B5; written 2026-11-13T09:30Z, date -u)
+The two Lead messages reached this session after §0-§6 were reported (08:39Z); this section covers them. Verdicts of §0 unchanged.
+- The B5 instance (claude/l-red-b 8854d85d experiments/red-b/data/b5/null2_s5101_i313_n3.pg, sha1 8be02077b7ca002df7f91daf547f256b671ead69, copied to
+  out/null/null2.pg) on n5s237 spec: I = 5, fallbacks at iterations 2 and 5 (= the Lead's numbers); the NULL switch (1, 28), Ξ value (1, ∅, 11) ->
+  (1, ∅, 5) with Ξσ unchanged after it, is transition 4 -> 5, i.e. the SECOND fallback, after the first. KEY-TAU and box 215 speak only of
+  transitions before the first fallback, and the game is a guided wrapper, not Γ3(G): outside both statements' scope. READING, not a claim about B5.
+- Inside the scope (Γ3, before F1): kt241 now counts nullsw (a mover switch whose old and new pads have equal (cycle node, P-set) in Ξσ_t, differing
+  only in SPEC S2's length) and nullxi (a non-fallback transition after which Ξσ is unchanged), and the must-0 nullbad (μ(x) not strictly
+  decreasing at a NULL switch). NULL switches were generated deliberately: out/null/nullsumm241.txt (nullsumm241.py):
+  | set | runs | nullsw | nullxi | nullbad + every KEY-TAU / *_e counter | n5v (xdiff) |
+  | --- | --- | --- | --- | --- | --- |
+  | 81 frozen (kt_frz_null) | 81 | 28 | 0 | 0 | 81 (0) |
+  | hard set incl. BEST_B3_WU151_NM163 (kt_hard_null) | 30 | 4 (0 on BEST_B3_WU151_NM163) | 0 | 0 | 30 (0) |
+  | eg195 rand / dense / deep / noesc / esc / lvl0, seed 2470, 300 each | 1,800 | 105 / 155 / 229 / 213 / 2 / 212 | 0 | 0 | 90 (0) |
+  | eg195 deep renumbered (KT_PERM=e, seed 5) | 300 | 227 | 0 | 0 (gate-key counters fire: kpg 1,860, kflip 266, kflipm 2, as §4) | 30 (0) |
+  | climbs OBJ null (null1 original; pnull renumbered, numbering-free counters; null2 from RECF4) | 24,400 evals | best 12 / 8 / 21 per genome | — | 0 candidates | — |
+- Reading: NULL switches are frequent inside KEY-TAU's window (1,175 in 2,211 runs) and harmless to it: (ii)'s strict decrease comes from the
+  KEY (distinct options have distinct e-vertices), not from the size of the value improvement, and box 215's [M] uses only s_t(x) ∈ A_t(x).
+  nullxi 0: no pre-fallback step of N5 on Γ3 left Ξσ unchanged in these runs (DATA). B5's «null fallback» is a post-F1 phenomenon here.
