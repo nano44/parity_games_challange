@@ -13,4 +13,7 @@ climbs)
   for n in 8 12; do job gc_perv_n${n}_s$((900 + n)) gclimb.py "$R" perv $((900 + n)) 2000 $n 1; done ;;
 fam)
   for n in 2 3 4 5 6; do for s in 1 2; do job gf_fried_n${n}_s$s gfam.py "$R" fried $n $((1000 + 10 * n + s)) 600 1; done; done ;;
+fam2)
+  for n in 1 2 3 4 5; do job gf_hn_n${n}_s1 gfam.py "$R" hn $n $((2000 + 10 * n + 1)) 400 1; done
+  for n in 2 3 4 5 6; do job gf_lmcs_n${n}_s1 gfam.py "$R" lmcs $n $((3000 + 10 * n + 1)) 400 1; done ;;
 esac

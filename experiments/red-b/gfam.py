@@ -4,11 +4,12 @@ which Howard is exponential), mutating only the guide: the Even start s0, the fr
 that is not a successor: a face that «disagrees with Odd's true reply») and the face targets gamma of Even edges. Wrapper and run:
 L-SI's gscan104.wrapg / run (claude/l-si 2051a0ee, git archive), N5 = L-NEW's box190/n5v.py mode spec; correctness against harness
 Zielonka on Wg inside run. Families: fried (PGSolver switchallexp_n via L-NEW's hard-families/pgsolver_port.py, best-reward start),
-lmcs (G_n of arXiv 1106.0778v2 with Figure 4 priorities, iota start; wrap104.lmcs_game, needs env LLIT).
+lmcs (G_n of arXiv 1106.0778v2 with Figure 4 priorities, iota start; wrap104.lmcs_game; B3ROOT/llit = claude/l-lit 5c53efbd\ndocs/lit/T66-depth-check.py), hn (H_n of its Section 8.4, L-COMP's hn.py mode fig, iota; B3ROOT/lcomp = claude/l-comp aa863db5\nexperiments/friedmann-hn).
 Usage: gfam.py B3ROOT FAMILY n seed iters [copy]    Resumable: work/gfam_<tag>.json. Final line GFAM ..."""
 import sys, os, json, random, time
 root = os.path.abspath(sys.argv[1])
 os.environ["LNEW"] = os.path.join(root, "lnew"); os.environ["LRED"] = os.path.join(root, "lred")
+os.environ["LLIT"] = os.path.join(root, "llit"); os.environ["HN"] = os.path.join(root, "lcomp/experiments/friedmann-hn")
 sys.path.insert(0, os.path.join(root, "lsi/experiments/si/box104"))
 import gscan104 as GS
 import wrap104 as W
@@ -18,6 +19,8 @@ def family(name, n):
         r = W.fried_game(n); return r[0], list(r[1])
     if name == "lmcs":
         H, s0 = W.lmcs_game(n, "fig4"); return H, list(s0)
+    if name == "hn":
+        H, s0 = GS.fam("hn", n); return H, list(s0)
     raise ValueError(name)
 
 def main():
