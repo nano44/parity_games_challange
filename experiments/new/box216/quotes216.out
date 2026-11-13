@@ -1,0 +1,33 @@
+OK   [R15] RESULTS l. 624 | Lemma A: for any non-empty unambiguous set I of improvements of σ (VJ00 §4.4), Ωσ ⊴ Ω_{Swi
+OK   [docs/new/P-N5-CHAIN.md@65e02855] docs/new/P-N5-CHAIN.md@65e02855 | A Howard step switches exactly the movers whose new successor is strictly better, one swit
+OK   [docs/new/P-N5-CHAIN.md@65e02855] docs/new/P-N5-CHAIN.md@65e02855 | F5. σ_(t+1)(x) is ⊴-best among x's successors under Ω_t, and Ω_t(σ_(t+1)(x)) ▷ Ω_t(σ_t(x))
+OK   [docs/new/P-N5-CHAIN.md@65e02855] docs/new/P-N5-CHAIN.md@65e02855 | which by F5 and F4′ is ⊵ ext(x, Ω_t(y)).
+OK   [docs/new/P-N5-CHAIN.md@65e02855] docs/new/P-N5-CHAIN.md@65e02855 | Proof: DOM gives ⊵ ext(x, Ω_t(σ_(t+1)(x))); F5 and F4′ (strict) give ▷ ext(x, Ω_t(σ_t(x)))
+OK   [docs/new/P-N5-CHAIN.md@65e02855] docs/new/P-N5-CHAIN.md@65e02855 | F3, F6 at t + 1 give Ω_(t+1)(x) = ext(x, Ω_(t+1)(σ_(t+1)(x))); by F1 and F4′ (x ∉ any Π, C
+OK   [docs/new/P-N5-CHAIN.md@65e02855] docs/new/P-N5-CHAIN.md@65e02855 | and by F1 and F2 it changes only to a vertex of strictly larger reward.
+OK   [docs/new/P-N5-ASC.md@65e02855] docs/new/P-N5-ASC.md@65e02855 | F1: Ω_t(v) ⊴ Ω_(t+1)(v). With equal cycle node w, [VJ] decides by z
+OK   [docs/new/P-N5-CHAIN.md@65e02855] docs/new/P-N5-CHAIN.md@65e02855 | (by DOM x's value at t + 1 would lie in that class)
+OK   [docs/new/P-N5-CHAIN.md@65e02855] docs/new/P-N5-CHAIN.md@65e02855 | by induction on h with DOM at x
+OK   [docs/new/P-N5-CHAIN.md@65e02855] docs/new/P-N5-CHAIN.md@65e02855 | Q ≤ Σ_v (D^tot_E(v) − 1)
+OK   [docs/new/P-N5-CHAIN.md@65e02855] docs/new/P-N5-CHAIN.md@65e02855 | So each class is a convex set of values, each vertex is in each class during one interval 
+OK   [docs/new/P-N5-CHAIN.md@65e02855] docs/new/P-N5-CHAIN.md@65e02855 | Proof. F1: Ω_t(v) ⊴ Ω_(t+1)(v).
+OK   [docs/new/P-N5-CHAIN.md@65e02855] docs/new/P-N5-CHAIN.md@65e02855 | E-MON3, CHAIN-DECOMP3, F1, F2, CYC on Γ3
+OK   [docs/new/P-N5-CHAIN.md@65e02855] docs/new/P-N5-CHAIN.md@65e02855 | UP-JUMP3 is a statement about plays
+OK   [docs/new/P-N5-SPLIT.md@65e02855] docs/new/P-N5-SPLIT.md@65e02855 | Non-mover Even vertices and pads have one successor in HOW3 (F6, [G3]).
+OK   [docs/new/P-N5-SPLIT.md@65e02855] docs/new/P-N5-SPLIT.md@65e02855 | F5: σ_t(u) is ⊴-best under Ω_(t−1) and strictly better than σ_(t−1)(u) when they differ.
+OK   [docs/new/P-N5-SPLIT.md@65e02855] docs/new/P-N5-SPLIT.md@65e02855 | Ω_(t−1)(new) ▷ Ω_(t−1)(old)
+OK   [docs/new/P-N5-SPLIT.md@65e02855] docs/new/P-N5-SPLIT.md@65e02855 | Then Ω_(t2−1)(u) ⊵ Ω_s(u) (F1) ▷ Ω_(s−1)(u) (STRICT) = ext(u, Ω_(s−1)(b)) ⊵ ext(u, Ω_t1(b)
+OK   [docs/new/P-N5-SPLIT.md@65e02855] docs/new/P-N5-SPLIT.md@65e02855 | At t2, u moves from a to b. Mover: Ω_(t2−1)(b) ▷ Ω_(t2−1)(a) (F5).
+OK   [docs/new/P-N5-SPLIT.md@65e02855] docs/new/P-N5-SPLIT.md@65e02855 | Proof: §3's proof with (t1, t2) := (t, t′).
+OK   [docs/new/P-N5-SPLIT.md@65e02855] docs/new/P-N5-SPLIT.md@65e02855 | Static (any σ against an optimal σ̄); not a bound.
+OK   [docs/new/P-N5-SPLIT.md@65e02855] docs/new/P-N5-SPLIT.md@65e02855 | Sum D^tot_E(v) − 1 over the n3 vertices and apply T-QUIET3.
+OK   [docs/new/P-N5-SPLIT.md@65e02855] docs/new/P-N5-SPLIT.md@65e02855 | ≤ T3
+OK   [docs/si/P-N5-GATE.md@65e02855] docs/si/P-N5-GATE.md@65e02855 | LOC-GATE3 and NO-TIE3 at t − 1 (Odd on p) and at t (Odd on q), with F1 for q
+OK   [docs/si/P-N5-GATE.md@65e02855] docs/si/P-N5-GATE.md@65e02855 | Both faces are in one Λ-interval over {t − 1, t} (hypothesis), so E(p_b) is lex-nondecreas
+OK   [docs/si/P-N5-GATE.md@65e02855] docs/si/P-N5-GATE.md@65e02855 | GATE-RACE (a) uses F1 and Odd's ◁-choice only.
+OK   [docs/si/P-N5-GATE-fixes.md@65e02855] docs/si/P-N5-GATE-fixes.md@65e02855 | an Even mover is at t on a ▷-best option for the values at t − 1 ([HOW]).
+OK   [docs/si/P-N5-GATE.md@65e02855] docs/si/P-N5-GATE.md@65e02855 | A value is a function of the play; a play changes only if a successor on it changes.
+OK   [docs/si/P-N5-GATE-fixes.md@65e02855] docs/si/P-N5-GATE-fixes.md@65e02855 | (the argument of P-N5-SPLIT §3 (a), Lemma REWIN (a), with F1, STRICT, F3, F4′, CN2-3; noth
+OK   [docs/new/N5-ssi-global.md@65e02855] docs/new/N5-ssi-global.md@65e02855 | A(v) = {σ(v)} ∪ {w : (v, w) ∈ Iσ} for Even v.
+OK   [docs/new/N5-ssi-global.md@65e02855] docs/new/N5-ssi-global.md@65e02855 | Iσ = {(v, w) : owner(v) = Even, w ≠ σ(v), Ξσ(w) strictly better than Ξσ(σ(v))}
+quotes 32 missing 0 (trunk 65e02855265ab0df1a8a3392a980c8d5b459d3a1)

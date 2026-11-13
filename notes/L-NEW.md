@@ -1,6 +1,24 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 76; session_01V5yGRXFkFRGsbtdAPyKqXN; started 2026-11-13 ~06:06Z; GO 06:44Z)
+- Step 0: handover check ad64c6a8 (VERIFY PASS, on origin 06:43Z; Lead 06:44Z «it matches», «go» on box 216). Container came up 16 behind
+  origin/claude/l-new (ff to f8a042ab). Oink built. Clock skew 0 s.
+- Lead 06:44Z relayed successor 75's 04:57Z proposal VERBATIM (V2: «XF_x := the number of steps at which the Ξσ-order of x's two gates
+  flips. Then moves(x) ≤ 1 + XF_x.»; «a move needs the new gate strictly Ξ-better than the current one (F2)»; V3: «JOINT-POLY: Σ_x
+  min(KF_x, XF_x) ≤ poly(N + M) …» with the honest label) and the kill criteria (V1: Howard-using proof AND counter fires on N5 → not RF;
+  V2: xflip > 0; V3: a family with Σ min(KF, XF) super-polynomial). Its «(F2)» = SPEC S2's strictness (P-N5-CHAIN's F2 is cycle rewards).
+- BOX 216 STATEMENT: docs/new/N5-VALUESIDE-box216.md (quotes 32/32 by quotes212.py at trunk 65e02855, quotes216.out; QCTRL 31/32 miss:
+  the inert quote ends before a «##» heading). Sent to the Lead ~06:50Z. MY SLIP: the message header says «06:58Z», TYPED, not from date -u
+  (date -u read 06:52Z right after); report it.
+- Tools (experiments/new/box216): xflip216.py (V2 xmove/xflip/xflipd on N5's whole run, any game; V3 jmove/jfmin, KF/XF/JF on degree-2
+  movers before the first fallback; controls X216_CTRL=1 swap → xmove, 2 XF:=0 → xflip, 3 permuted gate keys → jmove: all fire on
+  CFI3/DBL4), gate216.py (V1 run facts + R128 lemmas on N5's key run; f5best, dom = HOW descriptive: fire in spec, 0 in xi; controls 1-3
+  fire on MWR4_2), split216.py (split199.py unchanged under spec via an import wrapper; xi mode reproduces split199 on CFI3), run216.sh
+  (resumable, 600 s/genome), runA216.sh / runB216.sh (two workers, launched ~06:53Z as tracked tasks; outputs in out/).
+- First DATA: DBL4_d20_F30 (tower): N5's key run has Q = 0 and one quiet window Wq = 30 = Tk (no class (Λ, E) change at all); f5best 238,
+  dom 210 (N5 is not Howard there). CFI3_n48: spec key run Tk = 2 (xi: 24).
+
 ## HANDOVER (successor 75, PARKING 2026-11-13 04:57Z by date -u; Lead 04:56Z: «the VALUE-SIDE proposal, statement only, then park with a handover»)
 ### DONE (all via scripts/push.sh, VERIFY PASS unless said; SHAs from git output)
 - 3a45ca65 handover check + 3bcd7b62 --no-ff merge of successor 74's notebook corrections (530f2f54, 7f12bf0d).
