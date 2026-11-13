@@ -1,6 +1,37 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## HANDOVER (successor 75, PARKING 2026-11-13 04:57Z by date -u; Lead 04:56Z: «the VALUE-SIDE proposal, statement only, then park with a handover»)
+### DONE (all via scripts/push.sh, VERIFY PASS unless said; SHAs from git output)
+- 3a45ca65 handover check + 3bcd7b62 --no-ff merge of successor 74's notebook corrections (530f2f54, 7f12bf0d).
+- 14340979 BOX 213 KEY-WINDOW: docs/new/N5-KEYWIN-box213.md (G-1 repair (b): (P2^τ) false at every window step with Y ≠ V, instances
+  box213/inst/TAUESC_*; KEY-TAU CANDIDATE = consolidation of R125 W3-ALL + S1 (iv) + R24 TB; G-2 PROVED-lane from R122; N-4 fixed) +
+  box 212 Addendum B (window clause withdrawn) + check.sh block «BOX 213 KEY-WINDOW». Lead 04:23Z: all four points met.
+- cd4f7f4d (push.sh exit 0, VERIFY PASS, on origin): BOX 214 Step A
+  (docs/new/N5-LIFT-box214.md: prior-lift record; block lifting DEAD before Step B) + BOX 215 KEYSIDE-ALL (docs/new/N5-KEYSIDE-box215.md,
+  CONDITIONAL on KEY-TAU (i); must-0 0 on 88 frozen + 1,200 random Ξ-cyclic; check.sh block «BOX 215 KEYSIDE-ALL»). Lead 04:56Z: accepted.
+### IN FLIGHT
+- Nothing running after this push. Box 216 VALUE-SIDE proposed to the Lead ~04:57Z (my message header said «05:00Z»: TYPED, not from
+  date -u; slip, reported) (statement only; V1 per-lemma rule-free reading of
+  E-MON3, SPLIT/TRANSFER, REWIN(-HI), SPLIT-COUNT; V2 XFLIP «moves(x) ≤ 1 + XF_x» from F2; V3 JOINT-POLY, honestly a reformulation of O1′
+  at degree ≤ 2). NOT approved yet; nothing run.
+### NEEDS (for successor 76)
+- Box 216 APPROVED by the Lead 04:58Z «for your successor as stated: V1 first (the per-lemma rule-free reading, with deciding lines),
+  then V2 XFLIP (proof plus counter), with V3 JOINT-POLY labelled honestly as a reformulation equivalent to O1′ at degree ≤ 2 up to a
+  factor N». Order: V1 first (read PROOFS, deciding line per lemma, dated), V2 counter xflip (must 0; a «swap the
+  gates' Ξ values» control must fire), then V3 DATA (KF, XF, JF per mover). R128 (P-N5-GATE: PAIR-EXPEL / EXPEL-COUNT): Lead 04:58Z «LANDED on my
+  local trunk (landing commit 8be40f9b; push in flight now), so cite it as RESULTS R128 once origin shows it»: re-fetch trunk and check
+  `### R128` before citing (my message of ~04:57Z called it a draft: true of origin 626da53c at that time).
+- P-N5-LEVEL / R129 (C144): CHECKER failed only entry text (Lead's Lean bullet, REFEREE's N-L2); nothing owed by L-NEW (Lead 04:56Z).
+### Things only I know
+- Box 213 tools: key213.py (windows, G-1), keymu213.py (KEY-TAU), kcount213.py (switches vs |K(x)|), g2_213.py, ks213.py (keysig
+  readings: non-movers keep A_s → RECF4 479; kept at σ_s → 478 = REFEREE-2), find213.py, n4fix213.py. Box 215: keyside215.py.
+- Traps: (1) reversing the gate order is NOT a control (every comparison flips at the same steps); use a random permutation. (2) bash
+  reads scripts incrementally: never edit experiments/new/check.sh while a verify runs. (3) one bare «&» slip (killed); always tracked
+  tasks. (4) quotes212.py takes a DOC argument: python3 experiments/new/box212/quotes212.py TRUNK DOC (tag [Q Rnnn] or [Q path@sha]).
+- Towers: one mover switches 2^k − 1 times (15/31/63/127) with |K(x)| = 2^20..2^28; no generator; L-LOWER L18 is the active k = 8 attempt.
+- A reader subagent was used for the prior-lift record (7 quotes re-checked by git grep).
+
 ## Resume point (successor 75; session_01V5yGRWimvjsi2nZhjaevtK; started 2026-11-13 ~03:03Z; GO 03:55Z, in force 03:56Z after push PASS)
 - Step 0: handover check 3a45ca65 + --no-ff merge 3bcd7b62 of successor 74's notebook corrections (530f2f54, 7f12bf0d), VERIFY PASS,
   on origin 03:56Z. Item 0 (credited «Lead 02:43Z»): successor 74's 530f2f54 already records L-2 MATCH at both referees and N-L1 CLOSED;
