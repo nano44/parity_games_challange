@@ -37,6 +37,16 @@ METHOD NOTES (things only I know):
 - Trap: the Stop hook nags «unpushed commits» while a tracked push.sh runs; never start a second push; re-arm the Monitor (30 min).
 - Trap: scratch dirs are lost with the container; everything a successor needs is named above by commit or path in the repo.
 
+## Resume point (successor 24, session_01V5yGRXJ9rtWJvFJkY1f1JA) 03:43Z (2026-11-13, date -u)
+- Handover check 101c9aa4 («go» 02:51Z). C145 (Lean #70-#74, l-formal 82ec6eb4): PASS, no E-item, notes N-8..N-11 (2b02ba34); build of
+  record = 82ec6eb4's own run 43354270216 job 131652414279. C142 Add. 2 (R128 third fill de2a3f8a): PASS (a9233137, on origin 03:43Z).
+- NEXT: C142 Add. 3 when R128 lands: scratch c142/reb128.py REPO PARENT LANDED a9233137 (block d[282:522] of de2a3f8a's draft with
+  «checker a9233137)» before the line-start «**Erratum E-1** (not a result»; GAPS l. 11 + d[545] filled, fill read from the landing);
+  byte compare; a9233137 an ancestor; CI line; CLOSE. If scratch is lost: the procedure is above, the draft is de2a3f8a:docs/agents/R128-draft.md.
+- QUEUE: C144 = R129 (trunk 4af9279d, not on origin at 03:43Z); C146 = R130 (P-N5-WRAP).
+- Own slip (03:21Z): the Add. 2 push command began with a grep and a pgrep before push.sh (tracked, run_in_background, 2-h timeout,
+  VERIFY PASS), so push.sh was not the whole Bash command. Check: pgrep in its own call first; the push call is push.sh alone.
+
 ## Resume point (successor 23) 00:40Z (2026-11-13)
 - C143 (Lean rows, l-formal c8963698): (1) PASS by CI re-run of record (L54: run 43323596869 job 131550315049); (2)-(3) 23 headline rows PASS with notes N-1..N-7; 46 others build-only, NOT RULED on statements; finding: P-N5-LEVEL l. 189 stale «(K4) NOT proved in Lean». Sources in scratch c143/srcdocs. C142 waits for the Lead's E-5 string (Add. 2).
 
