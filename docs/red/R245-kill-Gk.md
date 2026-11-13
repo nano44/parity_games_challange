@@ -61,3 +61,30 @@ statement as well: the wires and observers are exactly the memory a 2-wide ladde
 ## 7. Open (for the Lead to route)
 (a) the induction proof of T_key(G_k) = 2^k − 2; (b) a Γ3 builder written from R117's text by a lane other than L-NEW; (c) N5 at k ≥ 9; (d) a referee read of
 R104 / R117's proofs for the wires. Until (a) and the referees, the kill is a CANDIDATE with DATA to k = 12 (model) and k = 8 (N5).
+
+## 8. Renamed and completed on the Lead's word (12:41Z; added 2026-11-13T12:58Z by date -u; this file was docs/red/R245-gk-verdict.md in 706d1ecc)
+- Items (0)-(5) of my 12:30Z message are §1 (0 rebuild), §2 (1 membership), §3 (2 model), §4 (3 N5 itself), §5 (4 robustness), §6 (5 landed lemmas).
+- The «NOT established by me» list, verbatim from that message: «What is NOT established by me: T_key = 2^k − 2 for ALL k (data to k = 12 here, a proof by
+  induction is still owed); N5 beyond k = 8; an independent Γ3 builder; a line-by-line re-read of R104 / R117 proofs against wires.» Since then: N5 at k = 9
+  (§4 addendum); the Lead reports (12:41Z, not checked by me) that L-RED-B 5 and L-COMP 22 each have a Γ3 builder of their own with equal .pg files to k = 9,
+  so the builder is no longer common; the line-by-line re-read (wires, exit targets, all-even parities, level width) is now REFEREE 35's and successor 71's.
+- Addendum (k = 10, kt241, out/gk_n5_kt241_k10.out): n 1120, FL run T 1022, first fallback 1023, iterations 1025, fallbacks 1, must-0 counters nonzero 0 / 34, n5v xdiff 0; as claimed: True.
+- Files and sha1 (sha1sum; experiments/red/r244):
+  126b6ce6818904a961702d624b536773e97fcaa2  gk244.py
+  b83c1019d2662bc839077e73cac14f348c0d454f  class244.py
+  26aad3df48c01a595cbd25d0648c9e336c45cb11  gkrun244.py
+  712e1f685ca9ea27a63216d7e1a5df92375f1e44  robust244.py
+  312bdc5a9644c5fe7495afb7f69614bc1b068188  zcheck244.py
+  b9be6ef1429826c7fd396dd0b42383049c1ac601  sim244.py
+  cd3cd7e361dfe16482bbe56eb87d3e3decf9e6af  gk/G_3.json
+  7a2218bfa94e37f85b3fc60d874030aeba8ca848  gk/G_4.json
+  d3ad8e2e6f202eb17e66d04dad77de1a33e74eb2  gk/G_8.json
+  da29d33ecaf20cb777650729e54acb1dad17cfd9  gk/G_10.json
+  fe5b59464d938730eb8e19afff139d983d2c3946  gk/G_3_renum.json
+  b293075ce300b23477f3bb6ad694c6577b2c64d2  gk/G_8_renum.json
+  a0f65098759a89bcf7896e151842476cd253b5f5  out/gk_table.out
+  97e992ac3945bad0dc731db655c0331293cb6930  out/gkrun244.out
+  16a4b4516ddb5e4c599fa28fa1f2e06ff0db610c  out/gk_n5_kt241.out
+  ac8ff12a06dfa097e61588e075dad0768adb7101  out/gk_zcheck244.out
+  7fe399e718c2bea62737c98ba710d5e0054de7c9  out/robust244.out
+  (the sha1 of G_3, G_4, G_8, G_10 above are sha1sum of the files = sha1 of json.dumps(G), the Lead's four values; all 20 genomes: gk/SHA1SUMS)

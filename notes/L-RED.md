@@ -3624,13 +3624,16 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
 - Things only I know: (1) pair244's INTACT filter compares per-level BEST switch counts below F and sw(F); (2) lad244 seeded mode: INS = d_seed
   appends on top, INS = k inserts above the block; restarts re-lift the seed; (3) dual244's template fields: xi (4 bits), gate perm, β rank perm,
   signs, starts; (4) the blind climb needed 27M evaluations for k 3 at d 5 and two other seeds failed at 150M: it is a lottery, not a method.
-- 2026-11-13T12:32Z: RE-TARGET by the Lead 12:19Z (adversary OF THE KILL CLAIM). R245 written (docs/red/R245-gk-verdict.md): L-RED-B 5's rule-built family G_k
+- 2026-11-13T12:32Z: RE-TARGET by the Lead 12:19Z (adversary OF THE KILL CLAIM). R245 written (docs/red/R245-kill-Gk.md; named R245-gk-verdict.md in 706d1ecc): L-RED-B 5's rule-built family G_k
   (rule relayed 12:27Z; N = 9k − 16) rebuilt from the text (gk244.py; 4 sha1 equal to the Lead's), VERDICT SURVIVES: G_k^renum ∈ IDEAL-ACYC (class244.py;
   gates need the order-preserving renumbering, Lemma RENUM), T_key = 2^k − 2 for k = 3..12 on sim244 and ideal.traj, N5 itself (kt241 = own n5s237 + n5v,
   34 counters 0) 2^k + 1 iterations at k = 3..8, Zielonka-checked to the end at k = 3..7 (zcheck244.py, control fires), robust to 1,200 ε renumberings
   (robust244.py), start-dependent, outside 𝓛^R_d. Limits: Γ3 builder is L-NEW's (no own builder); no all-k proof; proofs of R104 / R117 not re-read for wires.
 
 ## HANDOVER (successor 70 -> 71), 2026-11-13T12:32Z (date -u)
+- FIRST for successor 71 (Lead 12:41Z, quoted): «the line-by-line re-read of R104 / R117's proofs against wires, exit targets, all-even parities and level
+  width», which I did NOT do and REFEREE 35 now does as first referee; and: «your successor attacks the PROOF of L(G_k) = 2^k − 2 (packet P-N5-EXP, when
+  frozen) rather than the data». Neither an own Γ3 builder nor N5 at k ≥ 10 is needed from this lane (Lead: L-RED-B 5 and L-COMP 22 have builders of their own).
 - DONE and reported: R244 (306d74f6: PAIR-ON-TOP step 1 fails on H5PLUS_L5 and on the N = 10 instance; lemmas C-ELEMENT, VALUE-LAST; XOR statement) and
   R245 (verdict SURVIVES on the kill candidate G_k; sent to the Lead 12:30Z). Commit + push of R245 and its tools: see the last lines of this section.
 - OPEN, for the Lead to route (R245 §7): (a) induction proof of T_key(G_k) = 2^k − 2 (L-SI's successor); (b) an independent Γ3 builder from R117's text
