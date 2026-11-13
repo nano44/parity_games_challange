@@ -1,0 +1,13 @@
+PN107 P 1 T 1 chain 0 full None vars 24 clauses 49 answer SAT
+PN107 P 1 T 2 chain 0 full None vars 32 clauses 80 answer UNSAT
+PN107 P 2 T 2 chain 0 full None vars 109 clauses 401 answer SAT
+PN107 P 2 T 3 chain 0 full None vars 140 clauses 580 answer UNSAT
+PN107 P 3 T 4 chain 0 full None vars 267 clauses 1228 answer SAT
+PN107 P 3 T 5 chain 0 full None vars 314 clauses 1513 answer UNSAT
+PN107 P 4 T 6 chain 0 full None vars 494 clauses 2544 answer SAT
+PN107 P 4 T 7 chain 0 full None vars 557 clauses 2941 answer UNSAT
+PN107 P 5 T 10 chain 0 full None vars 948 clauses 5425 answer SAT
+PN107 P 3 T 22 chain 1 full [(2, 0)] vars 1320 clauses 6004 answer UNSAT
+PN107 P 4 T 30 chain 1 full [(2, 0)] vars 2322 clauses 11056 answer UNSAT
+PN107 P 5 T 20 chain 1 full [(2, 0)] vars 1910 clauses 9379 answer UNSAT
+PN107 P 6 T 20 chain 1 full [(2, 0)] vars 2272 clauses 11526 answer UNSAT

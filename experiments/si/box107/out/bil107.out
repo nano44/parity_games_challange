@@ -1,0 +1,10 @@
+BIL107 d 2 T 2 full None vars 58 clauses 186 answer SAT
+BIL107 d 2 T 3 full None vars 78 clauses 271 answer UNSAT
+BIL107 d 3 T 3 full None vars 128 clauses 457 answer SAT
+BIL107 d 3 T 4 full None vars 162 clauses 604 answer UNSAT
+BIL107 d 4 T 6 full None vars 322 clauses 1270 answer SAT
+BIL107 d 4 T 7 full None vars 370 clauses 1479 answer UNSAT
+BIL107 d 5 T 8 full None vars 538 clauses 2184 answer SAT
+BIL107 d 5 T 9 full None vars 600 clauses 2455 answer UNSAT
+BIL107 d 6 T 11 full None vars 886 clauses 3679 answer SAT
+BIL107 d 6 T 12 full None vars 962 clauses 4012 answer UNSAT

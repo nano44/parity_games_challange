@@ -1,0 +1,9 @@
+UP107 d 2 T 3 goal len maxjump None fuelonly None vars 175 clauses 677 answer SAT
+UP107 d 2 T 4 goal len maxjump None fuelonly None vars 218 clauses 880 answer UNSAT
+UP107 d 3 T 5 goal len maxjump None fuelonly None vars 690 clauses 3097 answer SAT
+UP107 d 3 T 6 goal len maxjump None fuelonly None vars 812 clauses 3690 answer UNSAT
+UP107 d 4 T 7 goal len maxjump None fuelonly None vars 2019 clauses 9347 answer SAT
+UP107 d 4 T 8 goal len maxjump None fuelonly None vars 2290 clauses 10648 answer UNSAT
+UP107 d 4 T 7 goal full:2 maxjump None fuelonly None vars 2043 clauses 9388 answer SAT
+UP107 d 5 T 12 goal full:4 maxjump None fuelonly None vars 6410 clauses 29612 answer UNSAT
+UP107 d 6 T 14 goal full:4 maxjump None fuelonly None vars 12578 clauses 57604 answer SAT

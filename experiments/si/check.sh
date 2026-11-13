@@ -1313,3 +1313,5 @@ bash box105/check105.sh
 bash pwrap/checkW.sh
 # box 106 (exact d = 2 maximum of KEY on the free ladder: layer 1 skeleton enumeration; docs/si/box106-exact2.md)
 bash box106/check106.sh
+# box 107 (timing structure of full key enumeration on 1P(G): ABANDON / ONE-AHEAD counters on five towers; small SAT answers; docs/si/box107-timing.md)
+bash box107/check107.sh
