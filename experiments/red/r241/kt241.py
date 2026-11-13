@@ -34,13 +34,15 @@ Must-0 counters (unit: one (state, mover) unless said):
   ftt     flips(p, q) > T (T = non-fallback steps)                                                                 F <= T
   ladder  on 𝓛^R_d-shaped genomes (movers 2l, 2l+1 at level l, degree 2, targets {2l-2, 2l-1}): F(0) > 2, F(l) > moves(2l) +
           moves(2l+1) + F(l-1), moves(x) > 1 + F(lev(x)-1), or F(l) > 3^(l+1) - 1                                LADDER
+  *_e     the same nine box 215 counters with e-index keys instead of gate keys (the numbering-free form; = the gate form when
+          e-order = gate order, i.e. eord 0)
 Descriptive: T (non-fallback steps), switches, nlk (moves to a non-global-least key option: σ_(t+1)(x) ≠ KP_(s_(t+1))(x)), maxsw, maxK,
   xicyc (genome has a Ξ-cycle), essential-Ξ statistics are NOT computed here.
 Controls (must fire): KT_MODE=xi (N5′-xi, Howard's tie rule): kp / kflip; KT_CTRL=1: κ DP takes the MOST key (kp fires);
   KT_CTRL=2: μ read leaf-first instead of root-first (muinc / mukappa fire); KT_CTRL=3: gate keys with gate indices permuted (kpg / kflip fire).
-Second engine (env SECOND=1 or per call): box 190's n5v mode spec from box 21's S3 pair, σ compared state by state to F1 (xdiff).
+Second engine (env SECOND=1: every genome; XEVERY=k: every k-th generated genome; json mode: always): box 190's n5v mode spec from box 21's S3 pair, σ compared state by state to F1 (xdiff).
 Scope check (not a control): KT_PERM=e|all, KT_PSEED: Γ3 renumbered (isomorphic copy); keys still read as the e-vertices' (new) indices.
-Usage: kt241.py json FILE.json ... | kt241.py rand SEED COUNT NMAX DMAX DEGMAX [XRATE]   (env LNEW; LRED unset)"""
+Usage: kt241.py json FILE.json ... | kt241.py gen MODE SEED COUNT | kt241.py ladder SEED COUNT DMAX | kt241.py rand SEED COUNT NMAX DMAX DEGMAX [XRATE]   (env LNEW; LRED unset)"""
 import sys, os, json, random, time, itertools
 HERE = os.path.dirname(os.path.abspath(__file__)); LNEW = os.environ["LNEW"]
 sys.path[:0] = [HERE, os.path.join(HERE, "..", "r237")] + [os.path.join(LNEW, p) for p in ("experiments/new/box195", "experiments/new/box190", "experiments/new/box189", "experiments/new/box21", "experiments/new", "experiments/si", "experiments/harness")]
@@ -64,7 +66,8 @@ def renumber(g, V, how, seed):
     for v in range(n): prio[pi[v]] = g.prio[v]; owner[pi[v]] = g.owner[v]; succ[pi[v]] = sorted(pi[w] for w in g.succ[v])
     return _G(prio, owner, succ), {k: pi[v] for k, v in V.items()}
 KEYS = ("std", "tau3", "w3", "lenvar", "kp", "kpf", "kpa", "unreach", "mukappa", "muinc", "muflat", "mulen", "kviol", "nomove",
-        "eord", "kpg", "lkp", "pkf", "pkfa", "kflip", "kflipm", "casc", "ftt", "ladder")
+        "eord", "kpg", "lkp", "pkf", "pkfa", "kflip", "kflipm", "casc", "ftt", "ladder",
+        "kpg_e", "lkp_e", "pkf_e", "pkfa_e", "kflip_e", "kflipm_e", "casc_e", "ftt_e", "ladder_e")
 DESC = ("T", "switches", "nlk", "maxsw", "maxK", "ladders")
 
 def ladder_shape(G):
@@ -183,52 +186,55 @@ def analyse(G, second=False):
             c["mukappa"] += int(a != kk); c["muinc"] += int(a > b); c["muflat"] += int(x in mv and a == b)
         for x in mv: sw[x] += 1
     c["kviol"] = sum(int(sw[x] > npath[x] - 1) for x in range(N)); d["maxsw"] = max(sw) if sw else 0
-    # box 215 (gate keys, [M] and the key-side lemmas)
-    KS = [keys_under(s, gkey) for s in sopt]
-    for t in range(T):
-        own1, allk1, KP1 = KS[t + 1]
-        for x in range(N):
-            ak = [k for k in Aset[t][x]]
-            c["kpg"] += int(sopt[t + 1][x] != min(ak, key=lambda k: allk1[x][k]))
-            d["nlk"] += int(sopt[t + 1][x] != sopt[t][x] and sopt[t + 1][x] != KP1[x])
-    KF = [0] * N; moves = [0] * N
-    for t in range(1, T + 1):
-        own0, allk0, KP0 = KS[t - 1]; own1, allk1, KP1 = KS[t]; Mv = {x for x in range(N) if sopt[t][x] != sopt[t - 1][x]}
-        for x in range(N):
-            KF[x] += int(KP1[x] != KP0[x]); moves[x] += int(x in Mv)
-            if not (Mv & below[x]): c["lkp"] += int(allk1[x] != allk0[x] or KP1[x] != KP0[x])
-            if len(opts[x]) == 2 and x in Mv: c["kflip"] += int(sopt[t][x] != KP1[x])
-    def flips(p, q):
-        f = 0; at = []
-        for t in range(1, T + 1):
-            if (KS[t][0][p] < KS[t][0][q]) != (KS[t - 1][0][p] < KS[t - 1][0][q]): f += 1; at.append(t)
-        return f, at
-    fl = {}
+    # box 215 ([M] and the key-side lemmas), once with gate keys (box 215 as stated, sfx "") and once with e-index keys (sfx "_e")
     bylev = {}
     for x in range(N): bylev.setdefault(lev[x], []).append(x)
-    for l, xs in bylev.items():
-        for p, q in itertools.combinations(xs, 2):
-            fl[(p, q)] = fl[(q, p)] = flips(p, q)
-    for x in range(N):
-        if len(opts[x]) == 2:
-            a, b = opts[x][0][0], opts[x][1][0]
-            if a == b or lev[x] == 0: c["pkfa"] += int(KF[x] != 0)
-            else: c["pkf"] += int(KF[x] != fl[(a, b)][0])
-            c["kflipm"] += int(moves[x] > 1 + KF[x])
-    for l, xs in bylev.items():
-        for p, q in itertools.combinations(xs, 2):
-            f, at = fl[(p, q)]; c["ftt"] += int(f > T)
-            for t in at:
-                if sopt[t][p] != sopt[t - 1][p] or sopt[t][q] != sopt[t - 1][q]: continue
-                wp, wq = opts[p][sopt[t][p]][0], opts[q][sopt[t][q]][0]
-                ok = l >= 1 and wp != wq and t in fl[(wp, wq)][1]
-                c["casc"] += int(not ok)
-    if ladder_shape(G):
-        d["ladders"] = 1; L = max(lev) + 1; F = [fl[(2 * l, 2 * l + 1)][0] for l in range(L)]
-        c["ladder"] += int(F[0] > 2)
-        for l in range(1, L):
-            c["ladder"] += int(F[l] > moves[2 * l] + moves[2 * l + 1] + F[l - 1]) + int(F[l] > 3 ** (l + 1) - 1)
-            for x in (2 * l, 2 * l + 1): c["ladder"] += int(moves[x] > 1 + F[l - 1])
+    def side(key_of, sfx):
+        KS = [keys_under(s, key_of) for s in sopt]
+        for t in range(T):
+            own1, allk1, KP1 = KS[t + 1]
+            for x in range(N):
+                ak = [k for k in Aset[t][x]]
+                c["kpg" + sfx] += int(sopt[t + 1][x] != min(ak, key=lambda k: allk1[x][k]))
+                if not sfx: d["nlk"] += int(sopt[t + 1][x] != sopt[t][x] and sopt[t + 1][x] != KP1[x])
+        KF = [0] * N; moves = [0] * N
+        for t in range(1, T + 1):
+            own0, allk0, KP0 = KS[t - 1]; own1, allk1, KP1 = KS[t]; Mv = {x for x in range(N) if sopt[t][x] != sopt[t - 1][x]}
+            for x in range(N):
+                KF[x] += int(KP1[x] != KP0[x]); moves[x] += int(x in Mv)
+                if not (Mv & below[x]): c["lkp" + sfx] += int(allk1[x] != allk0[x] or KP1[x] != KP0[x])
+                if len(opts[x]) == 2 and x in Mv: c["kflip" + sfx] += int(sopt[t][x] != KP1[x])
+        def flips(p, q):
+            f = 0; at = []
+            for t in range(1, T + 1):
+                if (KS[t][0][p] < KS[t][0][q]) != (KS[t - 1][0][p] < KS[t - 1][0][q]): f += 1; at.append(t)
+            return f, at
+        fl = {}
+        for l, xs in bylev.items():
+            for p, q in itertools.combinations(xs, 2):
+                fl[(p, q)] = fl[(q, p)] = flips(p, q)
+        for x in range(N):
+            if len(opts[x]) == 2:
+                a, b = opts[x][0][0], opts[x][1][0]
+                if a == b or lev[x] == 0: c["pkfa" + sfx] += int(KF[x] != 0)
+                else: c["pkf" + sfx] += int(KF[x] != fl[(a, b)][0])
+                c["kflipm" + sfx] += int(moves[x] > 1 + KF[x])
+        for l, xs in bylev.items():
+            for p, q in itertools.combinations(xs, 2):
+                f, at = fl[(p, q)]; c["ftt" + sfx] += int(f > T)
+                for t in at:
+                    if sopt[t][p] != sopt[t - 1][p] or sopt[t][q] != sopt[t - 1][q]: continue
+                    wp, wq = opts[p][sopt[t][p]][0], opts[q][sopt[t][q]][0]
+                    ok = l >= 1 and wp != wq and t in fl[(wp, wq)][1]
+                    c["casc" + sfx] += int(not ok)
+        if ladder_shape(G):
+            d["ladders"] = 1 if not sfx else d["ladders"]; L = max(lev) + 1; F = [fl[(2 * l, 2 * l + 1)][0] for l in range(L)]
+            c["ladder" + sfx] += int(F[0] > 2)
+            for l in range(1, L):
+                c["ladder" + sfx] += int(F[l] > moves[2 * l] + moves[2 * l + 1] + F[l - 1]) + int(F[l] > 3 ** (l + 1) - 1)
+                for x in (2 * l, 2 * l + 1): c["ladder" + sfx] += int(moves[x] > 1 + F[l - 1])
+        return KF, moves
+    side(ekey, "_e"); KF, moves = side(gkey, "")
     xd = None
     if second: xd = second_engine(g, [st[0] for st in states], F1)
     xc = xi_cyc_opts(G); allopt = {x: list(range(len(opts[x]))) for x in range(N)}; kglob, _ = kdp(allopt, ekey)
@@ -276,6 +282,20 @@ def rand_genome(rng, nmax, dmax, degmax, xrate=0.15, selfl=0.0):
     br = list(range(M)); rng.shuffle(br)
     return dict(N=N, lev=lev, opts=opts, gate=gate, br=br, bp=[rng.randint(0, 1) for _ in range(M)], start=[rng.randrange(len(o)) for o in opts])
 
+def ladder_genome(rng, dmax, xrate=0.1, selfl=0.1):
+    """𝓛^R_d-shaped genome (movers 2l, 2l+1 at level l, two options each, targets 2l-2 and 2l-1) with RANDOM Ξ-targets (cycles allowed),
+    random gate order, β ranks / parities and start: the Ξ-cyclic ladders box 215 §4 says no generator in the tree produces"""
+    d = rng.randint(1, dmax); N = 2 * d; lev = [x // 2 for x in range(N)]; opts = []; i = 0
+    for x in range(N):
+        l = lev[x]; wts = [-1, -1] if l == 0 else [2 * l - 2, 2 * l - 1]; rng.shuffle(wts); o = []
+        for w in wts:
+            r = rng.random(); xt = x if r < selfl else (-1 if r < selfl + xrate else rng.randrange(N))
+            o.append([w, xt, i]); i += 1
+        opts.append(o)
+    M = i; gp = list(range(M)); rng.shuffle(gp); it = iter(gp); gate = [[next(it) for _ in o] for o in opts]
+    br = list(range(M)); rng.shuffle(br)
+    return dict(N=N, lev=lev, opts=opts, gate=gate, br=br, bp=[rng.randint(0, 1) for _ in range(M)], start=[rng.randrange(2) for _ in range(N)])
+
 def load(fn):
     G = json.load(open(fn))
     if isinstance(G, dict) and "genome" in G: G = G["genome"]
@@ -286,17 +306,24 @@ def fmt(c, d, info):
     return " ".join(f"{k} {c[k]}" for k in KEYS) + " | " + " ".join(f"{k} {d[k]}" for k in DESC) + f" | N {info['N']} n {info['n']} F1 {info['F1']} its {info['its']} fb {info['fbs']} xicyc {info['xicyc']} cycuse {info['cyc']} slack {info['slack']} muroom {info['muroom']}" + (f" xdiff {info['xd']}" if info['xd'] is not None else "")
 
 if __name__ == "__main__":
-    t0 = time.time(); sec = os.environ.get("SECOND", "0") == "1"
+    t0 = time.time(); sec = os.environ.get("SECOND", "0") == "1"; XEVERY = int(os.environ.get("XEVERY", "0"))
     tag = f"KT241 mode {MODE}" + (f" CTRL {CTRL}" if CTRL else "") + (f" PERM {PERM} {PSEED}" if PERM != "none" else "")
     tot = {k: 0 for k in KEYS}; dt = {k: 0 for k in DESC}; mx = {"T": 0, "maxsw": 0, "maxK": 0}; xs = xd = 0; first = None; cnt = 0
     if sys.argv[1] == "json":
         items = [(os.path.basename(f), load(f)) for f in sys.argv[2:]]
+    elif sys.argv[1] == "gen":                                       # box 195's eg195.gen families (object): rand dense deep noesc esc acyc lvl0
+        import eg195
+        md, seed, k = sys.argv[2], int(sys.argv[3]), int(sys.argv[4]); rng = random.Random(seed)
+        items = ((f"{md}{seed}_{i}", eg195.gen(rng, md)) for i in range(k))
+    elif sys.argv[1] == "ladder":
+        seed, k, dmax = map(int, sys.argv[2:5]); rng = random.Random(seed)
+        items = ((f"lad{seed}_{i}", ladder_genome(rng, dmax)) for i in range(k))
     else:
         seed, k, nmax, dmax, degmax = map(int, sys.argv[2:7]); xr = float(sys.argv[7]) if len(sys.argv) > 7 else 0.15
         sl = float(sys.argv[8]) if len(sys.argv) > 8 else 0.0
         rng = random.Random(seed); items = ((f"r{seed}_{i}", rand_genome(rng, nmax, dmax, degmax, xr, sl)) for i in range(k))
     for name, G in items:
-        c, d, info = analyse(G, sec or sys.argv[1] == "json"); cnt += 1
+        c, d, info = analyse(G, sec or sys.argv[1] == "json" or (XEVERY > 0 and cnt % XEVERY == 0 and not CTRL and MODE == "spec")); cnt += 1
         for k in KEYS: tot[k] += c[k]
         for k in DESC: dt[k] += d[k]
         for k in mx: mx[k] = max(mx[k], d[k])

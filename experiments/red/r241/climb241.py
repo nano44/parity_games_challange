@@ -8,11 +8,13 @@ KEYSIDE-ALL, every eval checked with kt241.analyse (all must-0 counters). Object
   mu    Σ over movers of the number of states whose μ is NOT the least key of x's τ-paths in the W-graph (room for μ to fall)
 Fitness = (must-0 sum, objective, -(N + M)); any must-0 > 0 is saved at once (out/CAND_*.json) and re-run on n5v (box 190) by kt241.
 Mutations: start, W-target, Ξ-target (mover, -1 or self), gate swap, β-rank swap, β parity, add / remove an option, add a mover.
+SHAPE=1: W-structure kept (used from ladder-shaped towers, e.g. DBL4 / H5: Ξ-cycles are added onto a fixed 𝓛^R_d).
 Resumable: checkpoint OUT/ck_TAG.json (genome, fitness, evals, rng state) every 200 evals; RESUME=1 continues; TLIMIT seconds per call.
 Usage: climb241.py TAG SEED EVALS NMAX OBJ [START.json]   (env LNEW; OUT default experiments/red/r241/out; LRED unset)"""
 import sys, os, json, random, time, copy, hashlib
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 import kt241 as K
+SHAPE = os.environ.get("SHAPE") == "1"   # keep the W-structure (levels, W-targets, degrees): only start, Ξ-target, gate, β rank / parity mutate
 OUT = os.environ.get("OUT", os.path.join(HERE, "out")); TLIMIT = float(os.environ.get("TLIMIT", "6600")); RESUME = os.environ.get("RESUME") == "1"
 
 def normalize(G):
@@ -31,7 +33,10 @@ def mutate(G, rng, nmax):
     G = copy.deepcopy(G); N = G["N"]; lev = G["lev"]; by = {}
     for x in range(N): by.setdefault(lev[x], []).append(x)
     for _ in range(rng.choice([1, 1, 1, 2, 3])):
-        r = rng.random(); x = rng.randrange(N); k = rng.randrange(len(G["opts"][x])); o = G["opts"][x][k]
+        r = rng.random(); x = rng.randrange(N)
+        if SHAPE and 0.15 <= r < 0.30: r = 0.40
+        if SHAPE and r >= 0.78: r = 0.05
+        k = rng.randrange(len(G["opts"][x])); o = G["opts"][x][k]
         if r < 0.15: G["start"][x] = rng.randrange(len(G["opts"][x]))
         elif r < 0.30:
             if lev[x]: o[0] = rng.choice(by[lev[x] - 1])
