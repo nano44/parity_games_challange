@@ -289,3 +289,19 @@ R2-P-N5-LEVEL/r2lv.py, whose counters are reused unchanged; no lane code; output
 ## 13. Next
 Push; message the Lead; then read L-RED 68's R239 (claude/l-red 2cc894f2) and write the agreement section as Addendum 1. The Lead says
 R239 measured [IMP3] (in Ξσ), not the window clause; my [IMP3] trace is §7's first bullet.
+
+## Addendum 1 (REFEREE-2 successor 40; 2026-11-13T03:53Z by date -u): agreement with L-RED 68's R239 (claude/l-red 2cc894f2, docs/red/R239-rflevel.md, 13,424 B), read after this pre-read was on origin (8e075239)
+| point | R239 | this pre-read | agreement |
+| --- | --- | --- | --- |
+| §2 READING | SURVIVES (static239: five R123 lemmas + [OPT] at every visited state, 10 rules) | AGREE by re-reading the ten proofs (§3); item K-1 | agree; mine adds that the extended forms must be stated as new statements |
+| RF-A (i)-(iv) | SURVIVES; F1 from R15 (a) for any rule; (K2) at two states rule-free | no gap (§4), same two points | agree |
+| RF-B (P1), (P2), (P4), (P5′) | SURVIVES; (P5′) needs (P2) at s + 1 ≤ v | no gap (§5), same step; N-1 | agree |
+| RF-C | arithmetic T ≤ P + P·W + W right; tail clause via B-ONLY, (K3 (d)), NO-TIE | same (§6); N-2 on the Howard remark | agree; N-2 is mine only (wording) |
+| [IMP3] | SURVIVES on n5s237 (17,029 genomes, 156,541 transitions); towers T = 30 / 67 / 136 / 209 / 299 | traced (§7); my engine F − 1 = T on the 5 towers and 81 frozen | agree (three engines now give the tower T) |
+| Ξσ = Ω_t | READING under 1E-N3 | SPEC l. 32, 47 by definition | agree |
+| Howard-only facts fail under other rules | CONFIRMED | same (§9.2) | agree |
+| RF-D's window clause | not tested; §5 restates it: «it moves O1′ to a bound on the key rule inside class-frozen windows» | GAP G-1: false in the «SPEC on the window game» reading on all 5 towers at every state (741 / 741); τ-control 0 | **differs**: R239 measured [IMP3] (improvement in Ξσ), which holds; G-1 is about WHICH improving step N5 takes (S4a against τ), which [IMP3] does not decide. R239's DATA does not contradict G-1 |
+| controls | none for nsp, p4, tail beyond CTRL=2 | nsp0, tailshift, rfc, hval fire (§9.2) | complementary |
+| coverage | 810 (genome, rule) pairs, 0 timeouts | 566 of 567 (CW16_n under oneleast capped) | R239 covers the pair I could not |
+Net: two independent replays (R239's on L-RED's own engine; mine on REFEREE-2's) agree on RF-A, RF-B, RF-C and [IMP3]; G-1 and G-2
+stand from this pre-read alone and are not answered by R239.

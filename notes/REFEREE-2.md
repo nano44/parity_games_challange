@@ -7,7 +7,9 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
   own statements); RF-A, RF-B, RF-C no gap; RF-D inequality fine; GAP G-1: «window = SPEC's key rule on a one-player sub-game» FALSE in
   the «SPEC on the window game» reading on all 5 towers at every state (741/741, first DBL4 t0 mover 8; τ-control 0); G-2 (O1 = one
   window, unproved); notes N-1..N-4 (N-4: box 213's notes name 12 genomes, its file has 38 with notbest > 0). DATA: 4,766 runs, 0.
-- NEXT: after this push: read L-RED 68's R239 (claude/l-red 2cc894f2, docs/red/R239-rflevel.md) → Addendum 1 (agreement). Item D waits
+- 03:5xZ: C pushed 8e075239 (exit 0). R239 read after → Addendum 1 (agrees on RF-A..C, [IMP3]; differs only at G-1, untested by R239).
+  D (Lead 03:43Z): R2-SPEC-LEAN.md (l-formal 0ee5b8bc): all SPEC definitions MATCH; U-1..U-3 unnamed (U-3: start3 = S3 unstated).
+- (done) read L-RED 68's R239 (claude/l-red 2cc894f2, docs/red/R239-rflevel.md) → Addendum 1 (agreement). Item D waits
   for the Lead's commit (Lean SPEC definitions).
 - Tools: R2-box212/ (r2rf.py replay on r2lv; r2keywin.py / r2tkey.py on r2end; inputs by get_inst.py be167574). Scratchpad r2b212/ has
   inst/, towers/, out/ (lost on restart; re-extract with get_inst.py).
