@@ -534,3 +534,9 @@ strings entry 4 quotes from it were matched by script only); the lane's DATA §4
 - Verdict line of stage 4: **P-N5-EXP: Theorem EXP-IDEAL (a)-(c) SIGNED; RESPONSE LEMMA SIGNED as restated in fixes entry 4 (LEMMA′;
   L41: REFEREE-2's independent signature needed); Corollary EXP-N5 and the dead-end sentence SIGNED AS CONDITIONAL on R117's
   premises, as entry 2 (b), (c) now label them. Entries 1 and 4 fully checked; entries 2, 3, 5 checked in part as listed above.**
+- Addendum to stage 4 (2026-11-13T17:28Z, date -u; the Lead's 17:16Z item): entry 3's **Corollary EXP-N5′, the STATEMENT, is SIGNED AS
+  PROVED-CONDITIONAL on RESULTS R124 and R117 as landed**, by my own two-line derivation from the landed line R124 (l. 15371):
+  ENDGAME-3-N5 gives exactly one fallback, at an iteration F, and exactly F + 2 iterations; EXACT-L gives exactly L(G) + 3 iterations
+  for G ∈ IDEAL-ACYC; so F = L + 1; with MEMBER (G_k ∈ IDEAL-ACYC) and EXP-IDEAL (b) (L = 2^k − 2): exactly 2^k + 1 iterations and one
+  fallback at iteration 2^k − 1, which every measured run shows (§7, §10: counter EXACT 0). Entry 3's own proof text is unread by
+  me; successor 37 (session_01V5yGRXMfSsQpBQK2zihYD6) reads entries 2, 3, 5 word by word as stage 5 (the Lead's ruling, 17:20Z).

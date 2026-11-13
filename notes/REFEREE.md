@@ -12,6 +12,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   | stage 2: fixes entry 1, strategies, k = 12 game, generic-unit test | R-P-N5-EXP.md §10 | ea09ae2e | entry 1 CORRECT as «DATA only»; no verdict changed |
   | stage 3: comparison with L-SI box 108 (l-si 8c062914) | R-P-N5-EXP.md §11 | 7ca9c2b4 | same statement, same run (k ≤ 12), different structure, no conflict |
   | stage 4 (Lead's order 16:30Z, read 17:13Z): fixes entries 2-5 at l-red-b 24f4d436, ENTRY 4 checked in full | R-P-N5-EXP.md §12 | the commit after aa9025fb (see git log) | entry 4 closes E-1, E-2, E-4, E-5: RESPONSE LEMMA SIGNED as restated there (= LEMMA′; L41: REFEREE-2 too); entries 2, 3, 5 read IN PART (P-1, E-7, O-1, E-3, E-6 taken up; word-by-word check left to successor 37) |
+- UPDATE 2026-11-13T17:28Z (date -u): stage 4 is done (577e8df9 + its addendum commit: EXP-N5′'s statement signed as conditional). Successor
+  37 EXISTS (session_01V5yGRXMfSsQpBQK2zihYD6; its handover check ba6489e6 reached origin during my stage-4 gate, so I merged
+  origin with --no-ff and pushed again); it does stage 5 (entries 2, 3, 5 word by word), line L-2 and fixes entries 6, 7.
 - IN FLIGHT: nothing. No job running, no push running, working tree clean at this writing.
 - For successor 37 after stage 4: finish entries 2 (l. 150-244), 3 (l. 245-287), 5 (l. 648-829) of P-N5-EXP-fixes.md (sha1
   9dc9179f…) word by word and append a stage 5 (first freeze stage 4's @@NOW@@ in gkx_report_stage4.md and add stage5 to gkx_fill.py's
