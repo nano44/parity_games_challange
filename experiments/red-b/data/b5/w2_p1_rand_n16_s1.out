@@ -1,0 +1,12 @@
+start I 6 k 1 P1 2 |Wg| 291
+it 0 I 6 k 2 P1 3 fallbacks [3, 6] tau-changes 0 |Wg| 291 free 0
+it 2 I 6 k 2 P1 4 fallbacks [2, 6] tau-changes 0 |Wg| 297 free 0
+it 11 I 7 k 2 P1 5 fallbacks [2, 7] tau-changes 0 |Wg| 302 free 1
+it 63 I 8 k 2 P1 5 fallbacks [3, 8] tau-changes 1 |Wg| 284 free 1
+it 837 I 9 k 1 P1 6 fallbacks [3] tau-changes 2 |Wg| 224 free 2
+it 851 I 9 k 2 P1 6 fallbacks [3, 9] tau-changes 2 |Wg| 224 free 2
+it 880 I 10 k 2 P1 6 fallbacks [4, 10] tau-changes 2 |Wg| 235 free 2
+it 1544 I 10 k 2 P1 7 fallbacks [3, 10] tau-changes 2 |Wg| 233 free 2
+it 2192 I 11 k 2 P1 7 fallbacks [4, 11] tau-changes 2 |Wg| 231 free 2
+it 2904 I 12 k 2 P1 8 fallbacks [4, 12] tau-changes 2 |Wg| 240 free 2
+B5CLIMB p1_rand_n16_s5861_c1_high I 12 k 2 P1 8 fallbacks [4, 12] tau-changes 2 |Wg| 240 free 2 wrong 0 73s

@@ -1,0 +1,32 @@
+start I 5 k 1 P1 3 |Wg| 220
+it 5 I 5 k 1 P1 3 fallbacks [2] tau-changes 0 |Wg| 218 free 0
+it 9 I 5 k 1 P1 3 fallbacks [2] tau-changes 0 |Wg| 207 free 0
+it 16 I 6 k 1 P1 3 fallbacks [3] tau-changes 0 |Wg| 207 free 0
+it 46 I 6 k 1 P1 3 fallbacks [3] tau-changes 0 |Wg| 201 free 0
+it 92 I 6 k 1 P1 3 fallbacks [3] tau-changes 0 |Wg| 195 free 0
+it 96 I 7 k 1 P1 4 fallbacks [3] tau-changes 0 |Wg| 213 free 0
+it 105 I 7 k 1 P1 4 fallbacks [3] tau-changes 0 |Wg| 207 free 0
+it 109 I 7 k 1 P1 4 fallbacks [3] tau-changes 0 |Wg| 205 free 0
+it 125 I 9 k 1 P1 5 fallbacks [4] tau-changes 1 |Wg| 219 free 1
+it 151 I 9 k 1 P1 5 fallbacks [4] tau-changes 1 |Wg| 213 free 1
+it 178 I 10 k 2 P1 6 fallbacks [4, 10] tau-changes 1 |Wg| 222 free 1
+it 180 I 10 k 2 P1 6 fallbacks [4, 10] tau-changes 1 |Wg| 220 free 1
+it 186 I 10 k 2 P1 6 fallbacks [4, 10] tau-changes 1 |Wg| 214 free 1
+it 211 I 10 k 2 P1 6 fallbacks [4, 10] tau-changes 1 |Wg| 208 free 1
+it 226 I 10 k 2 P1 6 fallbacks [4, 10] tau-changes 1 |Wg| 206 free 1
+it 229 I 10 k 2 P1 6 fallbacks [4, 10] tau-changes 1 |Wg| 205 free 1
+it 236 I 10 k 2 P1 6 fallbacks [4, 10] tau-changes 1 |Wg| 196 free 1
+it 239 I 10 k 2 P1 6 fallbacks [4, 10] tau-changes 1 |Wg| 190 free 1
+it 294 I 10 k 2 P1 6 fallbacks [4, 10] tau-changes 1 |Wg| 188 free 1
+it 492 I 10 k 2 P1 6 fallbacks [4, 10] tau-changes 1 |Wg| 182 free 1
+it 967 I 11 k 2 P1 6 fallbacks [5, 11] tau-changes 1 |Wg| 191 free 1
+it 1861 I 12 k 1 P1 6 fallbacks [6] tau-changes 1 |Wg| 200 free 1
+it 1909 I 13 k 2 P1 7 fallbacks [6, 11] tau-changes 1 |Wg| 200 free 1
+it 2520 I 13 k 2 P1 8 fallbacks [5, 10] tau-changes 1 |Wg| 191 free 1
+it 2709 I 14 k 2 P1 9 fallbacks [5, 10] tau-changes 1 |Wg| 200 free 1
+it 2754 I 15 k 2 P1 9 fallbacks [6, 11] tau-changes 1 |Wg| 200 free 1
+it 2900 I 16 k 2 P1 10 fallbacks [6, 11] tau-changes 1 |Wg| 209 free 1
+it 3031 I 17 k 2 P1 11 fallbacks [6, 11] tau-changes 1 |Wg| 218 free 1
+it 3380 I 17 k 2 P1 10 fallbacks [7, 12] tau-changes 1 |Wg| 209 free 1
+it 3996 I 18 k 3 P1 11 fallbacks [7, 12, 13] tau-changes 1 |Wg| 218 free 1
+B5CLIMB its_rand_n12_s5822_c1_high I 18 k 3 P1 11 fallbacks [7, 12, 13] tau-changes 1 |Wg| 218 free 1 wrong 0 57s

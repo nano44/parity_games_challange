@@ -1,0 +1,11 @@
+start I 14 k 1 P1 2 |Wg| 404
+it 1 I 15 k 1 P1 5 fallbacks [10] tau-changes 0 |Wg| 404 free 0
+it 2 I 9 k 1 P1 7 fallbacks [2] tau-changes 1 |Wg| 409 free 1
+it 34 I 10 k 1 P1 8 fallbacks [2] tau-changes 1 |Wg| 409 free 1
+it 56 I 13 k 1 P1 8 fallbacks [5] tau-changes 1 |Wg| 409 free 1
+it 63 I 14 k 1 P1 8 fallbacks [6] tau-changes 1 |Wg| 409 free 1
+it 77 I 11 k 1 P1 9 fallbacks [2] tau-changes 1 |Wg| 409 free 1
+it 113 I 12 k 1 P1 9 fallbacks [3] tau-changes 2 |Wg| 414 free 2
+it 128 I 14 k 1 P1 9 fallbacks [5] tau-changes 3 |Wg| 419 free 3
+it 195 I 15 k 1 P1 9 fallbacks [6] tau-changes 2 |Wg| 419 free 3
+B5CLIMB k_hn_n1_s5401_c1_high I 15 k 1 P1 9 fallbacks [6] tau-changes 2 |Wg| 419 free 3 wrong 0 17s

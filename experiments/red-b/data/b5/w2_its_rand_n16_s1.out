@@ -1,0 +1,31 @@
+start I 6 k 1 P1 2 |Wg| 291
+it 15 I 6 k 2 P1 3 fallbacks [3, 6] tau-changes 0 |Wg| 289 free 0
+it 34 I 7 k 2 P1 4 fallbacks [3, 7] tau-changes 1 |Wg| 294 free 1
+it 38 I 7 k 2 P1 4 fallbacks [3, 7] tau-changes 1 |Wg| 288 free 1
+it 60 I 7 k 1 P1 4 fallbacks [3] tau-changes 1 |Wg| 282 free 1
+it 79 I 7 k 1 P1 4 fallbacks [3] tau-changes 1 |Wg| 276 free 1
+it 106 I 7 k 1 P1 4 fallbacks [3] tau-changes 1 |Wg| 270 free 1
+it 111 I 7 k 1 P1 4 fallbacks [3] tau-changes 1 |Wg| 264 free 1
+it 127 I 7 k 1 P1 4 fallbacks [3] tau-changes 1 |Wg| 258 free 1
+it 132 I 7 k 1 P1 4 fallbacks [3] tau-changes 1 |Wg| 252 free 1
+it 142 I 9 k 1 P1 4 fallbacks [5] tau-changes 2 |Wg| 257 free 2
+it 170 I 9 k 1 P1 4 fallbacks [5] tau-changes 2 |Wg| 255 free 2
+it 173 I 9 k 1 P1 4 fallbacks [5] tau-changes 2 |Wg| 246 free 2
+it 372 I 9 k 1 P1 4 fallbacks [5] tau-changes 2 |Wg| 234 free 2
+it 396 I 9 k 1 P1 4 fallbacks [5] tau-changes 2 |Wg| 228 free 2
+it 525 I 10 k 1 P1 4 fallbacks [6] tau-changes 3 |Wg| 233 free 3
+it 676 I 10 k 1 P1 4 fallbacks [6] tau-changes 3 |Wg| 231 free 3
+it 1079 I 10 k 1 P1 4 fallbacks [6] tau-changes 3 |Wg| 229 free 3
+it 1158 I 10 k 1 P1 4 fallbacks [6] tau-changes 3 |Wg| 227 free 3
+it 1355 I 11 k 1 P1 4 fallbacks [7] tau-changes 4 |Wg| 227 free 3
+it 2278 I 11 k 1 P1 4 fallbacks [7] tau-changes 4 |Wg| 225 free 3
+it 2810 I 12 k 1 P1 5 fallbacks [7] tau-changes 3 |Wg| 234 free 3
+it 2872 I 12 k 1 P1 5 fallbacks [7] tau-changes 3 |Wg| 225 free 3
+it 2935 I 13 k 1 P1 5 fallbacks [8] tau-changes 3 |Wg| 227 free 3
+it 3154 I 14 k 1 P1 6 fallbacks [8] tau-changes 3 |Wg| 245 free 3
+it 3162 I 14 k 1 P1 6 fallbacks [8] tau-changes 3 |Wg| 244 free 3
+it 3178 I 14 k 1 P1 6 fallbacks [8] tau-changes 3 |Wg| 238 free 3
+it 3203 I 14 k 1 P1 5 fallbacks [9] tau-changes 3 |Wg| 236 free 3
+it 3297 I 14 k 1 P1 6 fallbacks [8] tau-changes 3 |Wg| 234 free 3
+it 3405 I 16 k 1 P1 7 fallbacks [9] tau-changes 3 |Wg| 243 free 3
+B5CLIMB its_rand_n16_s5861_c1_high I 16 k 1 P1 7 fallbacks [9] tau-changes 3 |Wg| 243 free 3 wrong 0 76s

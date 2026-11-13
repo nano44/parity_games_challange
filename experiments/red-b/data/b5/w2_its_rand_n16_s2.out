@@ -1,0 +1,32 @@
+start I 4 k 1 P1 2 |Wg| 267
+it 5 I 5 k 1 P1 4 fallbacks [1] tau-changes 0 |Wg| 271 free 0
+it 16 I 6 k 1 P1 3 fallbacks [3] tau-changes 1 |Wg| 276 free 1
+it 27 I 6 k 1 P1 3 fallbacks [3] tau-changes 1 |Wg| 267 free 1
+it 38 I 6 k 1 P1 3 fallbacks [3] tau-changes 1 |Wg| 261 free 1
+it 69 I 6 k 1 P1 3 fallbacks [3] tau-changes 0 |Wg| 256 free 0
+it 77 I 6 k 1 P1 3 fallbacks [3] tau-changes 0 |Wg| 254 free 0
+it 115 I 6 k 1 P1 3 fallbacks [3] tau-changes 0 |Wg| 248 free 0
+it 126 I 6 k 1 P1 3 fallbacks [3] tau-changes 0 |Wg| 239 free 0
+it 175 I 6 k 1 P1 3 fallbacks [3] tau-changes 0 |Wg| 233 free 0
+it 198 I 6 k 1 P1 3 fallbacks [3] tau-changes 0 |Wg| 231 free 0
+it 209 I 7 k 1 P1 2 fallbacks [5] tau-changes 1 |Wg| 236 free 1
+it 226 I 7 k 1 P1 2 fallbacks [5] tau-changes 1 |Wg| 230 free 1
+it 231 I 7 k 1 P1 2 fallbacks [5] tau-changes 1 |Wg| 228 free 1
+it 259 I 7 k 1 P1 2 fallbacks [5] tau-changes 1 |Wg| 222 free 1
+it 262 I 7 k 1 P1 2 fallbacks [5] tau-changes 1 |Wg| 220 free 1
+it 318 I 7 k 1 P1 2 fallbacks [5] tau-changes 1 |Wg| 218 free 1
+it 324 I 7 k 1 P1 2 fallbacks [5] tau-changes 1 |Wg| 216 free 1
+it 356 I 7 k 1 P1 2 fallbacks [5] tau-changes 1 |Wg| 214 free 1
+it 393 I 7 k 1 P1 2 fallbacks [5] tau-changes 1 |Wg| 210 free 1
+it 399 I 8 k 1 P1 2 fallbacks [6] tau-changes 2 |Wg| 217 free 2
+it 498 I 8 k 1 P1 2 fallbacks [6] tau-changes 2 |Wg| 215 free 2
+it 805 I 8 k 1 P1 6 fallbacks [2] tau-changes 2 |Wg| 213 free 2
+it 945 I 9 k 1 P1 5 fallbacks [4] tau-changes 2 |Wg| 222 free 2
+it 1015 I 10 k 2 P1 6 fallbacks [4, 10] tau-changes 2 |Wg| 231 free 2
+it 1240 I 11 k 2 P1 6 fallbacks [5, 11] tau-changes 2 |Wg| 240 free 2
+it 1360 I 12 k 2 P1 6 fallbacks [6, 12] tau-changes 2 |Wg| 240 free 2
+it 1861 I 12 k 2 P1 6 fallbacks [6, 12] tau-changes 2 |Wg| 233 free 2
+it 1983 I 12 k 2 P1 6 fallbacks [6, 12] tau-changes 2 |Wg| 231 free 2
+it 2087 I 13 k 2 P1 6 fallbacks [7, 13] tau-changes 2 |Wg| 231 free 2
+it 2812 I 13 k 2 P1 6 fallbacks [7, 13] tau-changes 2 |Wg| 229 free 2
+B5CLIMB its_rand_n16_s5862_c1_high I 13 k 2 P1 6 fallbacks [7, 13] tau-changes 2 |Wg| 229 free 2 wrong 0 64s

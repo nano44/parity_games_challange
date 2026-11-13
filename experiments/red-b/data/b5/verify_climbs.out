@@ -1,0 +1,52 @@
+B5VERIFY its_rand_n12_s5821_c1_high |Wg| 200 sha1 57518fa1ae28a43ef7d14a2f7809923edd1778c9 | n5v I 16 k 1 fallbacks [6] P1 10 tau-changes 0 free 0 | n5b I 16 k 1 | wrong 0 engdiff 0
+B5VERIFY its_rand_n12_s5822_c1_high |Wg| 218 sha1 3fd1e5a8b9d7a693834bba1cfd0e7bd2f69a2e12 | n5v I 18 k 3 fallbacks [7, 12, 13] P1 11 tau-changes 1 free 1 | n5b I 18 k 3 | wrong 0 engdiff 0
+B5VERIFY its_rand_n16_s5861_c1_high |Wg| 243 sha1 785be575f3c91a4cb9bacc390597954606a0a424 | n5v I 16 k 1 fallbacks [9] P1 7 tau-changes 3 free 3 | n5b I 16 k 1 | wrong 0 engdiff 0
+B5VERIFY its_rand_n16_s5862_c1_high |Wg| 229 sha1 78078cf056c0576ae69b2d4102a1c20f2164b2ba | n5v I 13 k 2 fallbacks [7, 13] P1 6 tau-changes 2 free 2 | n5b I 13 k 2 | wrong 0 engdiff 0
+B5VERIFY its_rand_n20_s5901_c1_high |Wg| 298 sha1 e73600f70d730268a6076861ca59db68980c2540 | n5v I 16 k 1 fallbacks [6] P1 10 tau-changes 1 free 1 | n5b I 16 k 1 | wrong 0 engdiff 0
+B5VERIFY its_rand_n20_s5902_c1_high |Wg| 266 sha1 2293bc8519b6a154ed0a8dece23f9ad4b9933ad4 | n5v I 11 k 2 fallbacks [5, 11] P1 6 tau-changes 0 free 0 | n5b I 11 k 2 | wrong 0 engdiff 0
+B5VERIFY its_rand_n8_s5781_c1_high |Wg| 149 sha1 4029a03ec367f40acbf79743b1eeb593b091f9dc | n5v I 14 k 1 fallbacks [4] P1 10 tau-changes 1 free 1 | n5b I 14 k 1 | wrong 0 engdiff 0
+B5VERIFY its_rand_n8_s5782_c1_high |Wg| 142 sha1 72f7284394c946bc69861b0ea26dd86efdbeb91b | n5v I 14 k 1 fallbacks [7] P1 7 tau-changes 0 free 0 | n5b I 14 k 1 | wrong 0 engdiff 0
+B5VERIFY k_fried_n2_s5502_c1_high |Wg| 741 sha1 f51431e70c56fbc0ab93383a4fc58c00ae7c862d | n5v I 20 k 1 fallbacks [6] P1 14 tau-changes 1 free 1 | n5b I 20 k 1 | wrong 0 engdiff 0
+B5VERIFY k_fried_n3_s5503_c1_high |Wg| 1073 sha1 40e31fe284da301a5810c6a5c8c4dd451cb9c788 | n5v I 18 k 2 fallbacks [6, 18] P1 12 tau-changes 2 free 2 | n5b I 18 k 2 | wrong 0 engdiff 0
+B5VERIFY k_fried_n4_s5504_c1_high |Wg| 1395 sha1 b5567cb99e5d0100202a6424831d6836ab5c0451 | n5v I 20 k 1 fallbacks [9] P1 11 tau-changes 1 free 1 | n5b I 20 k 1 | wrong 0 engdiff 0
+B5VERIFY k_hn_n1_s5401_c1_high |Wg| 419 sha1 6afc698e9f2349b6ffe7384b840b345dc15f0ffc | n5v I 15 k 1 fallbacks [6] P1 9 tau-changes 2 free 3 | n5b I 15 k 1 | wrong 0 engdiff 0
+B5VERIFY k_hn_n2_s5402_c1_high |Wg| 904 sha1 a756380c06d1b91e6dbd22d0b3d4929442dd8667 | n5v I 35 k 1 fallbacks [20] P1 15 tau-changes 0 free 1 | n5b I 35 k 1 | wrong 0 engdiff 0
+B5VERIFY k_hn_n3_s5403_c1_high |Wg| 1457 sha1 63689afa207900cdd64c6a0d498dabdf18a5d966 | n5v I 29 k 1 fallbacks [11] P1 18 tau-changes 0 free 0 | n5b I 29 k 1 | wrong 0 engdiff 0
+B5VERIFY k_lmcs_n2_s5602_c1_high |Wg| 516 sha1 bee2d8349add5a46a26228a9f168f8b6fc4c270c | n5v I 14 k 1 fallbacks [5] P1 9 tau-changes 0 free 0 | n5b I 14 k 1 | wrong 0 engdiff 0
+B5VERIFY k_lmcs_n3_s5603_c1_high |Wg| 790 sha1 b29aba089462366add984684e3a4b321f79a97d0 | n5v I 13 k 1 fallbacks [4] P1 9 tau-changes 1 free 1 | n5b I 13 k 1 | wrong 0 engdiff 0
+B5VERIFY k_lmcs_n4_s5604_c1_high |Wg| 1096 sha1 9b6c1039d230d3d64a43a44322bc023aedfd7927 | n5v I 24 k 2 fallbacks [11, 21] P1 13 tau-changes 1 free 3 | n5b I 24 k 2 | wrong 0 engdiff 0
+B5VERIFY k_rand_n10_s5310_c1_high |Wg| 161 sha1 672b0d0a6eef20e491ea9c5c59fbae09f704d517 | n5v I 9 k 1 fallbacks [2] P1 7 tau-changes 0 free 0 | n5b I 9 k 1 | wrong 0 engdiff 0
+B5VERIFY k_rand_n12_s5312_c1_high |Wg| 190 sha1 a58474fcc91c0d0039f22882faa6a37f8a5ce9b1 | n5v I 10 k 1 fallbacks [3] P1 7 tau-changes 0 free 0 | n5b I 10 k 1 | wrong 0 engdiff 0
+B5VERIFY k_rand_n6_s5306_c1_high |Wg| 104 sha1 f18b780d3b7ba2e878e9814f60b6947e4f0c134d | n5v I 8 k 1 fallbacks [3] P1 5 tau-changes 1 free 1 | n5b I 8 k 1 | wrong 0 engdiff 0
+B5VERIFY k_rand_n8_s5308_c1_high |Wg| 110 sha1 54ffd287ac73d6d83551fdf720784e5638b72094 | n5v I 6 k 2 fallbacks [3, 6] P1 3 tau-changes 0 free 0 | n5b I 6 k 2 | wrong 0 engdiff 0
+B5VERIFY p1_fried_n2_s5502_c1_high |Wg| 741 sha1 f51431e70c56fbc0ab93383a4fc58c00ae7c862d | n5v I 20 k 1 fallbacks [6] P1 14 tau-changes 1 free 1 | n5b I 20 k 1 | wrong 0 engdiff 0
+B5VERIFY p1_fried_n2_s5902_c1_high |Wg| 736 sha1 cdb37d2e5480d17b8523579cd2f3b93e5947fd1d | n5v I 25 k 1 fallbacks [4] P1 21 tau-changes 0 free 0 | n5b I 25 k 1 | wrong 0 engdiff 0
+B5VERIFY p1_fried_n3_s5503_c1_high |Wg| 1073 sha1 40e31fe284da301a5810c6a5c8c4dd451cb9c788 | n5v I 18 k 2 fallbacks [6, 18] P1 12 tau-changes 2 free 2 | n5b I 18 k 2 | wrong 0 engdiff 0
+B5VERIFY p1_fried_n3_s5903_c1_high |Wg| 1063 sha1 fbac3d667c072a5f04c5dadf92b97b4def7cd82c | n5v I 22 k 2 fallbacks [8, 22] P1 14 tau-changes 0 free 0 | n5b I 22 k 2 | wrong 0 engdiff 0
+B5VERIFY p1_fried_n4_s5504_c1_high |Wg| 1395 sha1 b5567cb99e5d0100202a6424831d6836ab5c0451 | n5v I 20 k 1 fallbacks [9] P1 11 tau-changes 1 free 1 | n5b I 20 k 1 | wrong 0 engdiff 0
+B5VERIFY p1_fried_n4_s5904_c1_high |Wg| 1390 sha1 6021cc67f763056672b0cec93286e0246e38f4e2 | n5v I 28 k 1 fallbacks [13] P1 15 tau-changes 0 free 0 | n5b I 28 k 1 | wrong 0 engdiff 0
+B5VERIFY p1_fried_n5_s5905_c1_high |Wg| 1717 sha1 3b477d8523c5a466c713a0f64639199e7f750e3b | n5v I 40 k 1 fallbacks [16] P1 24 tau-changes 0 free 0 | n5b I 40 k 1 | wrong 0 engdiff 0
+B5VERIFY p1_fried_n6_s5906_c1_high |Wg| 2044 sha1 7c74096bb650ac31ebd2a369c9295d135cf92ab3 | n5v I 31 k 1 fallbacks [7] P1 24 tau-changes 0 free 0 | n5b I 31 k 1 | wrong 0 engdiff 0
+B5VERIFY p1_hn_n1_s5401_c1_high |Wg| 419 sha1 6afc698e9f2349b6ffe7384b840b345dc15f0ffc | n5v I 15 k 1 fallbacks [6] P1 9 tau-changes 2 free 3 | n5b I 15 k 1 | wrong 0 engdiff 0
+B5VERIFY p1_hn_n1_s5901_c1_high |Wg| 404 sha1 ab429fba905d9a98d33dd851edd85474f056567c | n5v I 21 k 1 fallbacks [9] P1 12 tau-changes 0 free 0 | n5b I 21 k 1 | wrong 0 engdiff 0
+B5VERIFY p1_hn_n2_s5402_c1_high |Wg| 904 sha1 a756380c06d1b91e6dbd22d0b3d4929442dd8667 | n5v I 35 k 1 fallbacks [20] P1 15 tau-changes 0 free 1 | n5b I 35 k 1 | wrong 0 engdiff 0
+B5VERIFY p1_hn_n2_s5902_c1_high |Wg| 904 sha1 4f8ec2c6a2776ce7be2cd1c60ec3ee11f2f50c7f | n5v I 36 k 1 fallbacks [16] P1 20 tau-changes 1 free 1 | n5b I 36 k 1 | wrong 0 engdiff 0
+B5VERIFY p1_hn_n3_s5403_c1_high |Wg| 1457 sha1 63689afa207900cdd64c6a0d498dabdf18a5d966 | n5v I 29 k 1 fallbacks [11] P1 18 tau-changes 0 free 0 | n5b I 29 k 1 | wrong 0 engdiff 0
+B5VERIFY p1_hn_n3_s5903_c1_high |Wg| 1462 sha1 aec60acdd90034531ff99cf70bcef17893af75c7 | n5v I 41 k 1 fallbacks [8] P1 33 tau-changes 0 free 1 | n5b I 41 k 1 | wrong 0 engdiff 0
+B5VERIFY p1_hn_n4_s5904_c1_high |Wg| 2083 sha1 6d3ad73a8888f59e4316513cc6788b8a0ae40c32 | n5v I 77 k 1 fallbacks [44] P1 33 tau-changes 1 free 1 | n5b I 77 k 1 | wrong 0 engdiff 0
+B5VERIFY p1_lmcs_n2_s5602_c1_high |Wg| 516 sha1 bee2d8349add5a46a26228a9f168f8b6fc4c270c | n5v I 14 k 1 fallbacks [5] P1 9 tau-changes 0 free 0 | n5b I 14 k 1 | wrong 0 engdiff 0
+B5VERIFY p1_lmcs_n3_s5603_c1_high |Wg| 790 sha1 b29aba089462366add984684e3a4b321f79a97d0 | n5v I 13 k 1 fallbacks [4] P1 9 tau-changes 1 free 1 | n5b I 13 k 1 | wrong 0 engdiff 0
+B5VERIFY p1_lmcs_n4_s5604_c1_high |Wg| 1096 sha1 9b6c1039d230d3d64a43a44322bc023aedfd7927 | n5v I 24 k 2 fallbacks [11, 21] P1 13 tau-changes 1 free 3 | n5b I 24 k 2 | wrong 0 engdiff 0
+B5VERIFY p1_rand_n10_s5310_c1_high |Wg| 161 sha1 672b0d0a6eef20e491ea9c5c59fbae09f704d517 | n5v I 9 k 1 fallbacks [2] P1 7 tau-changes 0 free 0 | n5b I 9 k 1 | wrong 0 engdiff 0
+B5VERIFY p1_rand_n12_s5312_c1_high |Wg| 190 sha1 a58474fcc91c0d0039f22882faa6a37f8a5ce9b1 | n5v I 10 k 1 fallbacks [3] P1 7 tau-changes 0 free 0 | n5b I 10 k 1 | wrong 0 engdiff 0
+B5VERIFY p1_rand_n12_s5821_c1_high |Wg| 238 sha1 0071dca637e9f22036fc99e0c43bcdb05c0272dc | n5v I 22 k 2 fallbacks [9, 22] P1 13 tau-changes 0 free 0 | n5b I 22 k 2 | wrong 0 engdiff 0
+B5VERIFY p1_rand_n12_s5822_c1_high |Wg| 200 sha1 93a31eff06e526ba61eeaaf62bdd611f0178932c | n5v I 12 k 3 fallbacks [3, 8, 12] P1 9 tau-changes 1 free 1 | n5b I 12 k 3 | wrong 0 engdiff 0
+B5VERIFY p1_rand_n16_s5861_c1_high |Wg| 240 sha1 288da38198c726e10cac4576c20dcb01cff3bd00 | n5v I 12 k 2 fallbacks [4, 12] P1 8 tau-changes 2 free 2 | n5b I 12 k 2 | wrong 0 engdiff 0
+B5VERIFY p1_rand_n16_s5862_c1_high |Wg| 263 sha1 8bcbedfb6756d15e7e80a59d7a422836b5e11f63 | n5v I 17 k 2 fallbacks [5, 17] P1 12 tau-changes 2 free 2 | n5b I 17 k 2 | wrong 0 engdiff 0
+B5VERIFY p1_rand_n20_s5901_c1_high |Wg| 280 sha1 2ab574d418e2e33a0d0660f54b350f527e242538 | n5v I 12 k 2 fallbacks [3, 8] P1 9 tau-changes 2 free 2 | n5b I 12 k 2 | wrong 0 engdiff 0
+B5VERIFY p1_rand_n20_s5902_c1_high |Wg| 266 sha1 8f56d71abdfca12dfdbeb77a3b7bca954afa45af | n5v I 11 k 2 fallbacks [4, 11] P1 7 tau-changes 0 free 0 | n5b I 11 k 2 | wrong 0 engdiff 0
+B5VERIFY p1_rand_n6_s5306_c1_high |Wg| 104 sha1 f18b780d3b7ba2e878e9814f60b6947e4f0c134d | n5v I 8 k 1 fallbacks [3] P1 5 tau-changes 1 free 1 | n5b I 8 k 1 | wrong 0 engdiff 0
+B5VERIFY p1_rand_n8_s5308_c1_high |Wg| 115 sha1 2687bbf6af503c61528e2d0b96c8184ebfc1ba59 | n5v I 7 k 1 fallbacks [3] P1 4 tau-changes 1 free 1 | n5b I 7 k 1 | wrong 0 engdiff 0
+B5VERIFY p1_rand_n8_s5781_c1_high |Wg| 149 sha1 f7622cb28274fe010191248551f4684b80eb34a2 | n5v I 13 k 1 fallbacks [4] P1 9 tau-changes 3 free 2 | n5b I 13 k 1 | wrong 0 engdiff 0
+B5VERIFY p1_rand_n8_s5782_c1_high |Wg| 160 sha1 0c3a21556ac8cfafdd5c77b5762fef071a032431 | n5v I 17 k 1 fallbacks [9] P1 8 tau-changes 0 free 0 | n5b I 17 k 1 | wrong 0 engdiff 0
+B5VERIFY SUMMARY wrappers 51 wrong 0 engdiff 0

@@ -1,0 +1,10 @@
+start I 9 k 1 P1 3 |Wg| 785
+it 17 I 10 k 1 P1 3 fallbacks [7] tau-changes 0 |Wg| 785 free 0
+it 25 I 11 k 1 P1 4 fallbacks [7] tau-changes 1 |Wg| 790 free 1
+it 33 I 12 k 1 P1 4 fallbacks [8] tau-changes 1 |Wg| 790 free 1
+it 48 I 13 k 1 P1 5 fallbacks [8] tau-changes 1 |Wg| 790 free 1
+it 50 I 14 k 1 P1 6 fallbacks [8] tau-changes 1 |Wg| 790 free 1
+it 63 I 12 k 1 P1 7 fallbacks [5] tau-changes 0 |Wg| 785 free 0
+it 201 I 13 k 1 P1 8 fallbacks [5] tau-changes 0 |Wg| 785 free 0
+it 212 I 13 k 1 P1 9 fallbacks [4] tau-changes 1 |Wg| 790 free 1
+B5CLIMB p1_lmcs_n3_s5603_c1_high I 13 k 1 P1 9 fallbacks [4] tau-changes 1 |Wg| 790 free 1 wrong 0 35s

@@ -1,0 +1,6 @@
+start I 37 k 1 P1 30 |Wg| 1457
+it 321 I 38 k 1 P1 30 fallbacks [8] tau-changes 1 |Wg| 1467 free 2
+it 337 I 39 k 1 P1 31 fallbacks [8] tau-changes 0 |Wg| 1462 free 1
+it 366 I 40 k 1 P1 32 fallbacks [8] tau-changes 0 |Wg| 1462 free 1
+it 465 I 41 k 1 P1 33 fallbacks [8] tau-changes 0 |Wg| 1462 free 1
+B5CLIMB p1_hn_n3_s5903_c1_high I 41 k 1 P1 33 fallbacks [8] tau-changes 0 |Wg| 1462 free 1 wrong 0 672s

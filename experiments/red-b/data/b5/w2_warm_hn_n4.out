@@ -1,0 +1,4 @@
+start I 74 k 1 P1 33 |Wg| 2078
+it 26 I 76 k 1 P1 33 fallbacks [43] tau-changes 0 |Wg| 2078 free 0
+it 96 I 77 k 1 P1 33 fallbacks [44] tau-changes 1 |Wg| 2083 free 1
+it 106 I 78 k 1 P1 33 fallbacks [45] tau-changes 1 |Wg| 2083 free 1

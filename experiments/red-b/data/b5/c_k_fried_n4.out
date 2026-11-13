@@ -1,0 +1,5 @@
+start I 12 k 1 P1 3 |Wg| 1390
+it 4 I 15 k 1 P1 6 fallbacks [9] tau-changes 1 |Wg| 1395 free 1
+it 51 I 19 k 1 P1 10 fallbacks [9] tau-changes 1 |Wg| 1395 free 1
+it 275 I 20 k 1 P1 11 fallbacks [9] tau-changes 1 |Wg| 1400 free 2
+B5CLIMB k_fried_n4_s5504_c1_high I 20 k 1 P1 11 fallbacks [9] tau-changes 1 |Wg| 1395 free 1 wrong 0 131s

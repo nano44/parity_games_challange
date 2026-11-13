@@ -1,0 +1,6 @@
+start I 33 k 1 P1 20 |Wg| 1717
+it 201 I 34 k 1 P1 20 fallbacks [14] tau-changes 0 |Wg| 1717 free 0
+it 289 I 38 k 1 P1 24 fallbacks [14] tau-changes 0 |Wg| 1717 free 0
+it 322 I 39 k 1 P1 24 fallbacks [15] tau-changes 0 |Wg| 1717 free 0
+it 569 I 40 k 1 P1 24 fallbacks [16] tau-changes 0 |Wg| 1717 free 0
+B5CLIMB p1_fried_n5_s5905_c1_high I 40 k 1 P1 24 fallbacks [16] tau-changes 0 |Wg| 1717 free 0 wrong 0 688s

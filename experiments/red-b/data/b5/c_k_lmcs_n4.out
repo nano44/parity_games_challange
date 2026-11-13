@@ -1,0 +1,12 @@
+start I 11 k 1 P1 3 |Wg| 1081
+it 1 I 12 k 1 P1 3 fallbacks [9] tau-changes 0 |Wg| 1081 free 0
+it 10 I 9 k 1 P1 4 fallbacks [5] tau-changes 0 |Wg| 1081 free 0
+it 25 I 10 k 1 P1 4 fallbacks [6] tau-changes 1 |Wg| 1086 free 1
+it 42 I 13 k 1 P1 4 fallbacks [9] tau-changes 0 |Wg| 1086 free 1
+it 45 I 14 k 1 P1 5 fallbacks [9] tau-changes 1 |Wg| 1091 free 2
+it 51 I 15 k 1 P1 6 fallbacks [9] tau-changes 2 |Wg| 1096 free 3
+it 56 I 21 k 2 P1 12 fallbacks [9, 18] tau-changes 2 |Wg| 1096 free 3
+it 172 I 22 k 2 P1 12 fallbacks [10, 20] tau-changes 1 |Wg| 1101 free 4
+it 178 I 23 k 2 P1 13 fallbacks [10, 20] tau-changes 0 |Wg| 1096 free 3
+it 218 I 24 k 2 P1 13 fallbacks [11, 21] tau-changes 0 |Wg| 1101 free 4
+B5CLIMB k_lmcs_n4_s5604_c1_high I 24 k 2 P1 13 fallbacks [11, 21] tau-changes 1 |Wg| 1096 free 3 wrong 0 97s

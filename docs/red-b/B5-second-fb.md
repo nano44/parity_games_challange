@@ -229,3 +229,50 @@ Controls (each must fire; all fire):
 - So a second (and third) fallback is easy to force and lengthens the run by a constant. The kill question is the LENGTH after the
   first fallback, not k. The Lead (06:56Z): «Aiming the climbs outside W at P1 / I, not at k, is accepted: k ≥ 2 alone lengthens
   nothing.»
+
+## 5. DATA: climbs outside W on P1 (b5climb.py; run_b5.sh climbs, run_b5b.sh; PARTIAL, stopped at the Lead's re-target 09:08Z)
+Wrappers: wrapg + FREE Odd faces (b5lemma.build), CORE high. Every candidate's output was checked against harness Zielonka inside
+b5climb (wrong = 0 on every row). Each row's best is re-run on engine 2 by b5verify.py (data/b5/verify_climbs.out: n5b's (I, k),
+the .pg sha1): 51 bests, wrong 0, engdiff 0. Columns: best P1 (I, k), |Wg|, budget (candidate wrappers evaluated × restarts).
+| family (start) | n | best P1 (I, k) | |Wg| | budget |
+| --- | --- | --- | --- | --- |
+| random H, own random guide (wave 1, obj p1 / k) | 6, 8, 10, 12 | 5 (8, 1), 4 (7, 1), 7 (9, 1), 7 (10, 1) | 104 … 190 | 400 × 1 each |
+| random H (wave 2, obj p1, 2 seeds) | 8, 12, 16, 20 | 9 (13, 1), 13 (22, 2), 12 (17, 2), 9 (12, 2) | 149 … 280 | 4,000 × 2 each |
+| random H (wave 2, obj its, 2 seeds) | 8, 12, 16, 20 | 10 (14, 1), 11 (18, 3), 7 (16, 1), 10 (16, 1) | 142 … 298 | 4,000 × 2 each |
+| H_n, own guide (wave 1) | 1, 2, 3 | 9 (15, 1), 15 (35, 1), 18 (29, 1) | 419 … 1457 | 300 × 1 |
+| switchallexp_n, own guide (wave 1) | 2, 3, 4 | 14 (20, 1), 12 (18, 2), 11 (20, 1) | 741 … 1395 | 300 × 1 |
+| LMCS G_n, own guide (wave 1) | 2, 3, 4 | 9 (14, 1), 9 (13, 1), 13 (24, 2) | 516 … 1096 | 300 × 1 |
+| switchallexp_n, warm start = the B4 best | 2, 3, 4, 5, 6 | 21 (25, 1), 14 (22, 2), 15 (28, 1), 24 (40, 1), 24 (31, 1) | 736 … 2044 | 600 × 1 |
+| H_n, warm start = the B4 best | 1, 2, 3, 4 | 12 (21, 1), 20 (36, 1), 33 (41, 1), 33 (78, 1; STOPPED at 106 of 600) | 404 … 2083 | 600 × 1 |
+The LMCS warm starts were not run (stopped). The wave-1 k-objective rows equal the p1 rows (same seeds, the same accepted moves).
+Growth words: GROWTH NOT IDENTIFIED. P1 per family is flat to slowly rising (switchallexp warm 21, 14, 15, 24, 24; H_n warm 12, 20, 33,
+33), no better than B4's Wg climbs (P1 ≤ 33). These are hill-climb lower bounds on a maximum over guides, on 3-5 points per family;
+no fit is claimed. Largest k found outside W: 3 (random n 12, fallbacks [7, 12, 13] and [3, 8, 12]).
+
+## 6. DATA: the post-fallback phase in isolation, N5 from S3 on ONE-PLAYER games (b5one.py; run_b5c.sh, run_b5d.sh; PARTIAL)
+By ONE-FB′, after the close of a Wg the run is a one-player run. Here N5 (SPEC, n5v spec) runs from S3 on one-player parity games H
+(every Odd vertex has one successor; ≈ 20 % Odd pass-through vertices; out-degree ≤ 3), hill-climbed on I (moves: swap two priorities,
+add / drop / retarget an edge, flip an owner). Every candidate's output was checked against harness Zielonka (0 wrong).
+- 3,000-step climbs (run_b5c.sh, 2 seeds per n): best I at n = 8, 12, 16, 24, 32, 48: 8, 11, 15, 14, 21, 24.
+- 20,000-step climbs (run_b5d.sh, out-degree ≤ 3, 1 seed): n = 6, 8, 12, 16, 24, 32: 6, 10, 14, 21, 30, 28; n = 48: ≥ 44 (running at
+  the commit; data/b5/one2_n48_d3.partial.out). Degree-5 rows: not reached when B5 was stopped.
+- Fits on the six finished 20,000-step points (n = 6..32), least squares: linear I ≈ 0.913 n + 3.26, residuals −2.74, −0.56, −0.21,
+  3.14, 4.84, −4.46 (RSS 61.0); power I ≈ 1.28 · n^0.954 (RSS 69.9); exponential I ≈ 6.25 · e^(0.0563 n), residuals −2.76, 0.20, 1.72,
+  5.62, 5.86, −9.88 (RSS 174.1). The linear fit has the smallest RSS on these points. This is DATA from hill-climb lower bounds; no
+  growth law is claimed.
+- Fallbacks: k = 0 on every one-player best. On a one-player game Iτ = ∅, so τ never moves. By (v.2), S4c can fire only on a NULL
+  state, which then ends the run. So a one-player run is all S4a steps (plus at most one final NULL fallback).
+
+## 7. Verdict on B5 (wrapped up at the Lead's re-target, 09:08Z)
+- NO CANDIDATE KILL. No family with super-polynomial P1 or I was found, inside W or outside it. Every output was correct on both engines
+  (§3-§5; b5verify for the climb bests).
+- Lemma ONE-FB («k = 1 on every Wg») is a DEAD END (§2, instance null2_s5101_i313_n3.pg). It is replaced by Lemma ONE-FB′ (L-RED-B,
+  UNREFEREED, premise 1E-N3): k ∈ {1, 2} on every guided wrapper; a second fallback is NULL and the last iteration. Tested on 3,740
+  wrappers with every must-0 counter 0 and every control firing.
+- The NULL improving edge is a property of SPEC's valuation order: an edge strictly better by S2 only through the length component at
+  the edge's own cycle node, whose switch changes no valuation. It shows that «Iσ ≠ ∅ ⇒ the S4a arena moves» is false even in
+  one-player games. The Lead has relayed it to L-NEW 76 and L-RED 69.
+- Outside W: second and third fallbacks are easy to construct (X1, X2) and lengthen nothing. P1 stays small in the climbs, and the
+  post-fallback phase in isolation (one-player runs) grows like n on hill-climbed instances up to n = 32 (fits above).
+- Not done: degree-5 one-player rows; LMCS warm starts; climbs longer than 4,000 steps outside W; any proof of a bound on the
+  one-player phase.

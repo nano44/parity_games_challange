@@ -1,0 +1,6 @@
+start I 5 k 1 P1 2 |Wg| 178
+it 6 I 6 k 1 P1 3 fallbacks [3] tau-changes 0 |Wg| 154 free 0
+it 24 I 6 k 1 P1 4 fallbacks [2] tau-changes 0 |Wg| 156 free 0
+it 65 I 5 k 2 P1 3 fallbacks [2, 5] tau-changes 0 |Wg| 150 free 0
+it 113 I 6 k 2 P1 3 fallbacks [3, 6] tau-changes 0 |Wg| 138 free 0
+B5CLIMB k_rand_n8_s5308_c1_high I 6 k 2 P1 3 fallbacks [3, 6] tau-changes 0 |Wg| 110 free 0 wrong 0 2s

@@ -14,7 +14,14 @@ Files I own: docs/red-b/, experiments/red-b/, notes/L-RED-B.md, docs/agents/hand
 - Lead 06:56Z: ONE-FB not routed to a referee (lane lemma, UNREFEREED, premise 1E-N3); climbs outside W aim at P1 / I, not k; growth words
   only with fits; Lead wants «the B5 record SHA».
 - Archives rebuilt in experiments/red-b/work/b3 (fresh container had none). Old (uncorrected-counter) lemma outputs in work/b5_old/.
-- Next: corrected lemma battery (work/run_b5_lemma2.log) -> data/b5; climbs (run_b5.sh climbs) -> bests on n5b + Zielonka; B5 §3-§5.
+- B5 WRAPPED UP 09:2xZ at the Lead's re-target (owner, via Lead 09:08Z: «So put everything into trying solving it today»): §1-§7 of
+  docs/red-b/B5-second-fb.md; NO CANDIDATE KILL; ONE-FB DEAD END -> ONE-FB′; climbs outside W partial (P1 ≤ 33), 51 bests verified on n5b;
+  one-player N5 climbs I ≈ 0.91 n + 3.3 on n ≤ 32 (DATA). Origin before this commit: 4065efc0 (8854d85d = correction record).
+- NEXT = B6 (Lead 09:08Z): second independent kill attempt on QUIET-KEY-1P (O1): N5's key rule on L-NEW's one-player model 1P(G)
+  (claude/l-new box 217, one217.py; e-index keys per L-RED R241). NOT on origin at 09:15Z (searched every remote branch): ask the Lead.
+  Method: cross-domain (D18): key rule as a pivot rule on a deterministic one-player lexicographic shortest-path problem; embed a known
+  exponential construction (Friedmann [F11] counters, Melekopoglou-Condon, Klee-Minty-type cubes for lexicographic rules); cite only
+  opened sources; test on one217.py and n5v. b5one.py already runs N5 from S3 on one-player games (no key model).
 
 **SUCCESSOR 3 HANDOVER (written 2026-11-13 ~04:45Z by date -u; park after the B4 report's push and the final message).**
 - B2 (box 209): DONE, verdict NO KILL (docs/red-b/B2-box209.md, 7247a639). B3 (GUIDE-RULE): DONE, NO KILL (docs/red-b/B3-guide.md,

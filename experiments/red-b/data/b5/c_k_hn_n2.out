@@ -1,0 +1,5 @@
+start I 37 k 1 P1 3 |Wg| 899
+it 4 I 33 k 1 P1 15 fallbacks [18] tau-changes 0 |Wg| 899 free 0
+it 203 I 34 k 1 P1 15 fallbacks [19] tau-changes 0 |Wg| 899 free 0
+it 232 I 35 k 1 P1 15 fallbacks [20] tau-changes 0 |Wg| 904 free 1
+B5CLIMB k_hn_n2_s5402_c1_high I 35 k 1 P1 15 fallbacks [20] tau-changes 0 |Wg| 904 free 1 wrong 0 110s

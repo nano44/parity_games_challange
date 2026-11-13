@@ -1,0 +1,11 @@
+start I 10 k 1 P1 3 |Wg| 1063
+it 1 I 12 k 1 P1 3 fallbacks [9] tau-changes 0 |Wg| 1063 free 0
+it 10 I 9 k 2 P1 7 fallbacks [2, 9] tau-changes 0 |Wg| 1063 free 0
+it 35 I 10 k 2 P1 8 fallbacks [2, 10] tau-changes 0 |Wg| 1063 free 0
+it 42 I 11 k 2 P1 9 fallbacks [2, 11] tau-changes 0 |Wg| 1068 free 1
+it 73 I 12 k 2 P1 9 fallbacks [3, 12] tau-changes 0 |Wg| 1068 free 1
+it 84 I 14 k 2 P1 11 fallbacks [3, 14] tau-changes 1 |Wg| 1073 free 2
+it 141 I 15 k 2 P1 12 fallbacks [3, 15] tau-changes 0 |Wg| 1068 free 1
+it 163 I 16 k 2 P1 12 fallbacks [4, 16] tau-changes 2 |Wg| 1073 free 2
+it 299 I 18 k 2 P1 12 fallbacks [6, 18] tau-changes 2 |Wg| 1073 free 2
+B5CLIMB k_fried_n3_s5503_c1_high I 18 k 2 P1 12 fallbacks [6, 18] tau-changes 2 |Wg| 1073 free 2 wrong 0 60s
