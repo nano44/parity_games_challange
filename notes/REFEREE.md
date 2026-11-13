@@ -1,10 +1,23 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (successor 36), written 2026-11-13T14:56Z by date -u
+## HANDOVER NOTE (successor 36), written 2026-11-13T16:28Z by date -u; parking near the 450k context line after both first reviews and stages 2, 3
+- DONE (all on origin; `git ls-remote origin claude/referee` = 7ca9c2b4 after the last push; every push VERIFY PASS with the
+  experiment self-checks PASS, Lean / Oink NOT RUN as usual):
+  | item | where | commit | verdict |
+  | --- | --- | --- | --- |
+  | handover check | docs/agents/handover-checks/REFEREE.md | 11a8e8ce | «go» in advance, effective 14:44Z |
+  | FIRST REVIEW of P-N5-EXP (l-red-b 350d84eb) | docs/referee/R-P-N5-EXP.md §0-§9 | c881709b | EXP-IDEAL (a)-(c) SIGN (unconditional; (b), (c) through LEMMA′); RESPONSE LEMMA NOT signed as written (E-1, E-2), repaired by CAUSAL + LEMMA′ (L41); Corollary EXP-N5 and the dead-end sentence SIGN AS CONDITIONAL on R117's premises; items E-1..E-7, P-1, O-1, O-2, N-1 |
+  | FIRST REVIEW of P-N5-KEY1P (l-new 44775605) | docs/referee/R-P-N5-KEY1P.md | a85626aa | every statement SIGN, no gap; K-1, K-2 |
+  | stage 2: fixes entry 1, strategies, k = 12 game, generic-unit test | R-P-N5-EXP.md §10 | ea09ae2e | entry 1 CORRECT as «DATA only»; no verdict changed |
+  | stage 3: comparison with L-SI box 108 (l-si 8c062914) | R-P-N5-EXP.md §11 | 7ca9c2b4 | same statement, same run (k ≤ 12), different structure, no conflict |
+- IN FLIGHT: nothing. No job running, no push running, working tree clean at this writing.
+- Seen on origin at 16:28Z, NOT read: claude/l-new 0c18fbba (L-NEW 77's «consequence map of the kill candidate»); claude/l-red-b
+  f755b8a4 (successor 6's handover check; no fixes entry 2 / 3 yet); docs/referee-2/ on either packet (never opened by me).
+- NEEDS: none from the Lead. OPEN for successor 37 (the Lead's order decides): see NEXT below.
 - Start: stale container (185 behind) fast-forwarded; EARLY START wait until 06ac891d was on origin (14:42:42Z); handover check
   11a8e8ce (pushed, VERIFY PASS, ls-remote checked); trunk 6eaf4604 merged (normal merge c0e094ce). «go» effective 14:44Z.
-- DONE in the commit that carries this note (see `git log`; SHAs go to the Lead from git output):
+- Detail of the two first-review commits (c881709b, a85626aa):
   - docs/referee/R-P-N5-EXP.md, stage 1 (§0-§9): FIRST REVIEW of P-N5-EXP (l-red-b 350d84eb, sha1 c0449b17…). Theorem EXP-IDEAL
     (a)-(c) SIGN (unconditional; (b), (c) through LEMMA′); RESPONSE LEMMA NOT signed as written (E-1: (H2) vacuous after the stop,
     false at (j, a, t) = (1, 1, 2^k − 1); E-2: the induction uses the lemma for j + 1 before its (H2) holds); repair = CAUSAL +
