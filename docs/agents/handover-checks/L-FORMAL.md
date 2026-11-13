@@ -1,52 +1,55 @@
-# L-FORMAL handover check (successor 4; written 2026-11-13T01:01Z (date -u); session_01V5yGRWV98usJz6buk8GaGb; predecessor session_01V5yGRX3V51LguQp6WMvAgj (successor 3, parked 00:54Z))
+# L-FORMAL handover check (successor 5; written 2026-11-13T07:40Z (date -u); session_01V5yGRY9bh61TXMsQVPeAh9 (Opus 5.5, high); predecessor successor 4, session_01V5yGRWV98usJz6buk8GaGb, handover 462360fd)
 Every answer is measured from the repository or from a command run in this container (commands named), not recalled. Nothing of the work
 list starts before the Lead's «go».
 
 ### 0. Trap check, clock, build
-- Trap check (00:56Z): `git fetch --unshallow origin` (no-op), `git fetch origin claude/l-formal claude/vibrant-johnson-nxvvxo`, `git checkout
-  claude/l-formal` (the local branch was 37 commits behind origin: stale), `git merge --ff-only origin/claude/l-formal` → fast-forward
-  f74d38a4 → 1a44c6aa. `git branch --show-current` = claude/l-formal. `git rev-parse HEAD origin/claude/l-formal` =
-  1a44c6aa369d7c0e08f0a8349b4f9bec43033c4a twice. Working tree clean.
-- Clock: `date -u` «Fri Nov 13 00:56:55 UTC 2026» and, in the same command, raw.githubusercontent.com «date: Fri, 13 Nov 2026 00:56:55 GMT».
-  Skew 0 s at 1 s resolution.
-- Build: elan was missing; installed with the README's two commands (Lean 4.35.0). Then in lean/lemmas as one tracked background
-  task: `lake exe cache get`; `rm -rf .lake/build && lake build`; `lake env lean Axioms.lean`. Result (00:57:37Z to 01:00:27Z): cache exit 0;
-  «Build completed successfully (3197 jobs).», build exit 0, 0 lines with «warning:»; `lake env lean Axioms.lean` exit 0: 74 lines for the
-  74 `#print axioms` commands, 72 with [propext, Classical.choice, Quot.sound], 1 (PG.one_cross) with [propext, Quot.sound], 1
-  (PG.Genome.lift_start) with [propext]; none outside the allowed three. `grep -rnw --include=*.lean -e sorry -e admit -e axiom -e
-  native_decide . --exclude-dir=.lake` prints nothing (exit 1). Job and theorem counts equal successor 3's figures for 1a44c6aa (3197, 74).
+- Trap check (07:30Z): `git fetch --unshallow origin` (no-op), `git fetch origin claude/l-formal claude/vibrant-johnson-nxvvxo`, `git checkout
+  claude/l-formal`: the local branch was 43 commits behind origin (stale); `git merge --ff-only origin/claude/l-formal` → fast-forward
+  f74d38a4 → 462360fd. `git branch --show-current` = claude/l-formal; `git rev-parse HEAD origin/claude/l-formal` =
+  462360fdd99ff3135ce5918a15f0998d881c4d9d twice. Working tree clean.
+- Clock: `date -u` «Fri Nov 13 07:30:43 UTC 2026», raw.githubusercontent.com «date: Fri, 13 Nov 2026 07:30:44 GMT», then `date -u`
+  «07:30:44». Skew 0 s at 1 s resolution.
+- Build: elan was missing; installed with the README's commands (Lean 4.35.0). In lean/lemmas, one tracked background task:
+  `lake exe cache get`; `rm -rf .lake/build && lake build`; `lake env lean Axioms.lean`. Result (07:31:30Z to 07:34:50Z): cache exit 0;
+  «Build completed successfully (3199 jobs).», build exit 0, no Lean «warning:» line (one elan self-update notice only); `lake env lean
+  Axioms.lean` exit 0: 74 lines for the 74 `#print axioms` commands, 72 with [propext, Classical.choice, Quot.sound], PG.one_cross
+  [propext, Quot.sound], PG.Genome.lift_start [propext]; none outside the allowed three. `grep -rnw --include=*.lean -e sorry -e admit -e
+  axiom -e native_decide . --exclude-dir=.lake` prints nothing (exit 1). Equals successor 4's figures for 9176725a (3199 jobs, 74).
+- Scratch proof: `sha1sum lean/lemmas/scratch/SpecFuel.lean.txt` = 05a99b90c2d75f7052059cfdd9aa3f325bbba32b, 1,261 lines (equals the handover).
+- CI (Actions API, 07:35Z): run 43379405264 on 9176725a: job lean-lemmas 131733397674 SUCCESS (06:32:35Z-06:35:00Z); job verify still
+  in progress. Run 43386105859 on 462360fd: both jobs in progress at 07:35Z.
 
 ### 1. Branch, head, distance to trunk
-- Branch claude/l-formal, head 1a44c6aa369d7c0e08f0a8349b4f9bec43033c4a (commit date 2026-11-13T00:14:01Z; «RESULTS R117 Lemma PAD (c) …
-  pad_value, lift_start; notebook handover of successor 3»), equal to origin.
-- Trunk origin/claude/vibrant-johnson-nxvvxo = f5a237ce2c687aabc4e1402dad0a8f5fa83ac6ab (commit date 2026-11-12T23:18:23Z, «Lead: L54 …»).
-  `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` = «18 4»: 18 ahead, 4 behind. Merge-base = 7fa6aff4
-  (unchanged since successor 2's no-ff merge 6ed90b71). The 18 ahead: 8cee97ea, 9dde1527, 4b376da4, 9fc1a0c4, 91a29b88, 027b1d65,
-  3880f474, f74d38a4, 8fb3dd6c, a1f02bee, e14f5508, 6ed90b71 (merge), 91f25983, 78c32d90, c8963698, 99b19401, 5ea6cd22, 1a44c6aa.
-  The 4 behind are the Lead's trunk commits since 7fa6aff4 (no merge needed for lean/; I merge trunk only if the Lead asks and no push runs).
+- Branch claude/l-formal, head 462360fdd99ff3135ce5918a15f0998d881c4d9d (commit date 2026-11-13T06:32:37Z, «L-FORMAL successor 4: handover
+  (Lead 05:03Z): notebook resume block … and the scratch fuel proof lean/lemmas/scratch/SpecFuel.lean.txt …»), equal to origin.
+- Trunk origin/claude/vibrant-johnson-nxvvxo = 6cec46a5ce724d55eb5ad910a9a30aedad716781 (commit date 2026-11-13T05:40:12Z, «Lead: L56 …»).
+  `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` = «24 103»: 24 ahead, 103 behind. Merge-base 7fa6aff4
+  (unchanged). The 103 behind are other lanes' and the Lead's trunk commits; lean/ is not touched by them, so no merge is needed for
+  lean/ (I merge trunk only if the Lead asks and no push runs).
 
-### 2. Open work and the next step of each (the brief's order; STATEMENT FIRST for every new definition or `…Statement`)
-1. CI job lean-lemmas (workflow verify.yml) on 1a44c6aa: not yet read. Next: Actions list for branch claude/l-formal, report run id, job
-   id, result; if red, fix the cause in lean/ only.
-2. CHECKER C143 (claude/checker 37fcbd21, docs/checker/C143.md, 119 lines; MANIFEST c8963698: 23 Statements PASS with notes N-1..N-7,
-   46 build-only, 0 FAIL): copy N-1..N-7 by script, verbatim, onto the INDEX.md rows they concern, plus «CHECKER C143: PASS / build-only»
-   per row; no Lean file changes. Then MANIFEST (a) gains the Γ3 / PAD rows (pad, gamma3_card, gamma3_old, pad_value, lift_start) for the
-   next CHECKER item; send the Lead the list.
-3. (b) SPEC in Lean toward N5 (Lead 23:53Z, verbatim in the notebook's NEXT): DEFINITIONS of N5's step as SPEC S1-S5 states it
-   (docs/new/N5-ssi-global.md l. 24-127, FIX 1-4 and «Four further SPEC points»): S4a's improving set A(v), the root-first key, S4b, the
-   S4c fallback, on a general game, then specialised to Γ3; a machine comparison against experiments/new/box190/n5v.py mode «spec»
-   (engine box21/n5x.py `step`, valuations experiments/si/si.py `Engine`, tie rules l. 152-195), state by state on the frozen sets
-   (experiments/new/box*/inst), with a firing control; a deviation list. Definitions only, then the Lead's diff, before any theorem. Next
-   step: read SPEC and n5x.py/si.py, then draft the definitions. This does not prove N5.
-4. Then what the Lead routes (successor 3's unrouted proposal: S3 in Lean, then S3-START: S3 = std3 start).
+### 2. Open work and the next step of each (brief order; STATEMENT FIRST)
+1. FuelStatement (Lead 05:03Z, verbatim: «Successor 5 states FuelStatement to me and proves it. Do not start FuelStatement in a commit
+   yourself.»). State: Statement text drafted by successor 4 (notebook resume block: SGame.WF, StratWF, FuelEvalStatement,
+   FuelIterStatement, FuelRunStatement through startPair; header note «only successors < n, owners ≤ 1 (and owner sizes) are used»);
+   proof in lean/lemmas/scratch/SpecFuel.lean.txt (not imported, not built by CI, no INDEX / MANIFEST row). Next: after «go», re-check
+   the scratch proof against the current tree, send the Lead the Statement text (the Statement file as it would be committed) BEFORE any
+   commit; after the Lead's diff: PGLemmas/SpecFuelStatement.lean + PGLemmas/SpecFuel.lean, import in PGLemmas.lean, three `#print
+   axioms` lines in Axioms.lean, INDEX row, MANIFEST row, clean build (no sorry; axioms within the three), commit, push, send SHA + CI run.
+2. NoFault (Lead 02:06Z (4) / 03:43Z: si.py's exception cases never occur on WF games; VJ00 §6-sized), Statement first. Order relative
+   to item 3 as the Lead routes (brief: KeyRuleStatement next).
+3. (i) KeyRuleStatement restricted to one-player arenas (the S4a case: owner-0 vertices of H with τ fixed), Statement first; the Lean side
+   of box 213's KEY-TAU (i) (L-NEW, CANDIDATE). Next: read docs/new/N5-KEYWIN-box213.md (on origin/claude/l-new, not on my branch or
+   trunk), quote its paper form, then draft. (ii) the bridge Eng.evaluate → Defs.val / OptCounter is deferred (Lead 02:06Z).
+4. Duty: CHECKER items on the Lean rows (C143 notes N-1..N-7, C145 notes N-8..N-11 on claude/checker; optional N-8 clause).
 
 ### 3. GAPS rows
-None. L-FORMAL owns no row of docs/GAPS.md (my copy equals trunk f5a237ce's: `diff` empty; open rows GAP-A, GAP-C, G-S5-6, G-NEST,
-G-N1-LB, G-N5-TIME). The lane's work sits under G-N5-TIME (owner «L-NEW (L-LIT T22; referees later)», open), which stays OPEN whatever
-Lean checks here: the theorems concern IDEAL-CYC / any improvement rule on Γ(G) and the Γ3 construction, not N5's running time; every
+None. L-FORMAL owns no row of docs/GAPS.md: open rows GAP-A, GAP-C, G-S5-6, G-NEST, G-N1-LB, G-N5-TIME, the same ids, owners and status in
+my copy and in trunk 6cec46a5 (my copy differs from trunk only in line 11's text, G-N5-TIME, updated by the Lead since). The lane's work
+sits under G-N5-TIME (owner «L-NEW (L-LIT T22; referees later)», open), which stays OPEN whatever Lean checks here: FuelStatement says
+only that the Lean transcription of SPEC never runs out of fuel on well-formed games; it says nothing about N5's running time. Every
 theorem is «Lean-checked (lane)» until CHECKER and the CI job lean-lemmas (L54) pass it.
 
-### 4. Rulings, verbatim (docs/DECISIONS.md; status from docs/DECISIONS-INDEX.md; line numbers equal in my copy and trunk f5a237ce's)
+### 4. Rulings, verbatim (docs/DECISIONS.md; status from docs/DECISIONS-INDEX.md)
 - D18 (DECISIONS.md l. 333; index l. 32: active): «Focus on N5 and work toward proving it. Explore novel approaches, especially by
   connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
   where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open
@@ -55,14 +58,15 @@ theorem is «Lean-checked (lane)» until CHECKER and the CI job lean-lemmas (L54
   claim, including the fleet's own, as wrong until it passes the gauntlet below.»
 - D21 (DECISIONS.md l. 452; index l. 46: active), relayed text: «Okay, I want maximum effort. I want to use 200% usage in 3 days. There is
   fable 5.2 as well, use that too in dpeth everywhere where it seems fitting, use fable 5.2 at hard or xhigh. SO yes, 200% uage under 2
-  days.» Lead readings: L51 (trunk index l. 48) maximum effort until 2026-11-14 10:05Z; L53 (trunk index l. 50) Fable weekly limit, so
-  successors on Opus 5.5 high (this session); L54 (trunk index l. 51) the CI job lean-lemmas on the exact commit is the build of record.
+  days.» Lead readings: L51 (index l. 47) maximum effort until 2026-11-14 10:05Z; L53 (index l. 50) Fable weekly limit, successors on
+  Opus 5.5 high (this session); L54 (index l. 51) the CI job lean-lemmas on the exact commit is the build of record; L56 (trunk index
+  l. 53, not yet on my branch) verify's self-check skip only for docs/agents/-only changes, so my pushes run in full.
 
 ### 5. One trap that bit this lane, and the check that now prevents it
-- Trap: a container restart (about 23:00-23:40Z on 2026-11-12) killed scripts/push.sh of 99b19401 silently; origin stayed at c8963698
-  while the session believed the push was running. (Before that: successor 2's RF-A proofs died uncommitted with its container.)
-- Check now: (a) before every push `pgrep -f "bash scripts/push.sh"` (never two pushes) and after it, or after any restart,
-  `git ls-remote origin claude/l-formal` must equal the local head before I report a SHA as on origin; (b) push.sh runs as a tracked
-  background task with a 2-hour timeout, output redirected to a file and `echo exit $?` (never piped); (c) everything that compiles is
-  committed before a push starts, and nothing is committed while it runs. Plus the stale-branch trap (37 behind here): fetch +
-  `--ff-only` + `rev-parse` equality, done in 0.
+- Trap: a stale local branch (43 commits behind origin here; 37 for successor 4); and earlier, a container restart killed push.sh of
+  99b19401 silently while the session believed it ran. Successor 4 also twice typed a time without date -u (03:46Z sent as «04:05Z»).
+- Check now: (a) fetch + `merge --ff-only` + `rev-parse HEAD origin/claude/l-formal` equality before anything (done in 0); (b) before every
+  push `pgrep -f "bash scripts/push.sh"` (never two pushes), push.sh as a tracked background task with a 2-hour timeout, output
+  redirected to a file and `echo exit $?` (never piped); after it or any restart, `git ls-remote origin claude/l-formal` must equal the
+  local head before a SHA is reported as on origin; (c) everything that compiles is committed before a push starts, nothing is committed
+  while it runs; (d) every time in a message comes from `date -u` in the same command as the send step.
