@@ -21,3 +21,5 @@ END restart 1: current QP 21 NM 275 ratio 0.0764; best so far [38, 275]; evals 7
 START restart 2 seed seed_gen37_9.json QP 38 NM 290 ratio 0.1310
 END restart 2: current QP 38 NM 279 ratio 0.1362; best so far [38, 275]; evals 1135
 START restart 3 seed seed_MWR_9.json QP 19 NM 290 ratio 0.0655
+END restart 3: current QP 34 NM 278 ratio 0.1223; best so far [38, 275]; evals 1518
+DONE B3: best [38, 275] BEST_B3_T38_NM275_703bb6b4.json evals 1518
