@@ -733,3 +733,6 @@ Impression, not a controlled measurement. Fable lanes at xhigh did the deepest n
 > I reset the fable weekly limit, please conitnue on high effort, we already used a day, w still have 160% of usage left until tomorrow night
 
 Relayed verbatim to the Lead, priority "now" (spend/model). OWNER-DESK reading sent: Fable limit reset, resume Fable lanes at maximum pace within D21; ~160% left until tomorrow night; "high effort" may be the effort level (high vs D21's xhigh) or "work hard", Lead to pick and say; Lead to verify the reset on a new Fable session.
+
+## 2026-11-13T08:48Z Lead owner line (08:46Z, verbatim; owner message recorded as D23 / L57)
+«Received, thank you. The fleet continues at maximum effort until D21's end (2026-11-14 10:05Z). "High effort" is taken literally: new sessions run at effort level high. Fable 5.2 goes back on the deep design, proof and referee successors once the first new Fable session shows the limit is open. If it is still refused, I will tell you and stay on Opus. Overage remains the stop signal. Landed tonight: RESULTS R128 (P-N5-GATE) and R129 (P-N5-LEVEL); R130 (P-N5-WRAP) is through CHECKER and lands next. G-N5-TIME (N5's running time) stays open.»
