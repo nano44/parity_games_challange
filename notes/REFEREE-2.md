@@ -16,7 +16,12 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
   needs (i) the family's written rule, (ii) T_key = L(G) per member by a second engine, (iii) the growth; REAL-IDEAL-S3 transfers; still
   run N5 itself on Γ3. Candidate to replay when on origin: claude/l-si 06f072f1 experiments/si/box107/out/up_k3_d6.json (upward ladders:
   every Ξ-target on a strictly higher W-level; k = 2 at d = 4, k = 3 at d = 6, k = 4 at d = 8 running).
-- IN FLIGHT at this commit: corpus Γ3 sweep (35 chunks; outputs in .git/r2-backup/out217/chunks, a place that survives restarts and is
+- 2026-11-13T12:42Z: 2dd4e5e3 on origin (push exit 0, 12:41Z). Corpus Γ3 sweep DONE (unit217_corpus.out: 875 runs, BRIDGE at 18,220 states, N5 itself on
+  all, 0) and Addendum 4 (replay note on the upward-ladder candidate: own instances up_d4_k2.json, up_d6_k3.json, N5-checked; A2 ceiling
+  k ≤ (d + 1)/2 on upward ladders; my climbs do not reach k = 4 at d = 8) in the commit after 2dd4e5e3. Scratch search scripts (climb_up.py,
+  ext_up.py, climb2.py, simplify.py) are in .git/r2-backup/up/, not committed. L-SI's up_k3_d6.json (l-si 06f072f1) still to replay
+  when on origin. Messages to the Lead: 11:58Z, 12:07Z, 12:23Z, 12:39Z.
+- (superseded by the line above) IN FLIGHT at this commit: corpus Γ3 sweep (35 chunks; outputs in .git/r2-backup/out217/chunks, a place that survives restarts and is
   outside the working tree; scratchpad work217/ is rebuilt by get217.py). When done: sum217.py → R2-key/unit217_corpus.out and one row of
   Addendum 3's DATA table (next commit). After a restart: re-run `bash R2-key/sweep217.sh WORK .git/r2-backup/out217` (resumable).
 - NEXT: (2) kill / proof claims: r2kill217.py is ready (key run, ID, N5 itself to termination, own Zielonka, lane n5v + harness Zielonka

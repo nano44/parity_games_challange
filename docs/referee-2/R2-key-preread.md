@@ -234,7 +234,7 @@ All 40 must-0 counters are 0 on every set (each file's last line reads «FIRED n
 | tower mutants (unit217_mut.out): 150 per tower, 1 to 4 (6 for RECF4, DBL4) random mutations, Ξ-graph kept acyclic | 750 | 29,445 | — | 1,422 full movers (1,067 at level ≥ 1); A7 on 33,600 degree-2 movers |
 | tower mutants with Γ3 (unit217_mutG3.out): 12 each of H5, RECF4, DBL4 | 36 | 711 | BRIDGE at 747 states; N5 itself on all 36 | — |
 | corpus, 1P side (unit217_corpus1p.out; list corpus217.list) | 875 | 12,095 | — | Lemma 0 by brute force on 598; 3,088 full movers; her 5 (N-7); the k = 12 is E-2's degenerate instance |
-| corpus, Γ3 side (BRIDGE and N5 itself on the 875; unit217_corpus.out) | running at this commit (35 chunks of 25 genomes, resumable) | | | the summed result is added to this table in the next commit |
+| corpus, Γ3 side (unit217_corpus.out: 35 chunks summed by sum217.py; row completed 2026-11-13T12:42Z, the commit after 2dd4e5e3) | 875 | 12,095 | BRIDGE at 18,220 states: 996,681 (state, gate) pairs, 670,356 option pairs; N5 itself on all 875 (every run ends in a fallback at T + 1) | all 40 counters 0 |
 | LIFT (unit217_lift.out) | 4 | 438 | BRIDGE at 442 states; N5 itself on all 4 | E-2 |
 Lemma 0's bounds l0a_bnd / l0b_bnd, a2_p, a2_poly, a2_idle, a7_self, br_k2 and red_flag have no control of their own. Controls (unit217_ctrl.out),
 each on the 5 towers + 300 random genomes (the three Γ3 controls on 150 random genomes), fire in their target counters: howard (a1_mu,
@@ -269,3 +269,24 @@ r2unit217.py (engine, controls), get217.py (inputs by git show / git archive at 
 (kill-claim checker) with kill217_selftest.out, r2qfile.py (quote check of a local file), corpus217.list (sha1, N, path of the 875 corpus
 genomes), unit217_towers / rec / rand / randG3 / mut / mutG3 / corpus1p / lift / e2n7 / ctrl .out, unit217_q.out (this addendum's own 18
 [Q] quotes against trunk 5d7aab0f: «quotes 18 missing 0»; control «quotes 18 missing 18»).
+
+## Addendum 4 (REFEREE-2 successor 41; 2026-11-13T12:42Z by date -u): REPLAY NOTE on the upward-ladder candidate (Lead 12:08Z: «upward ladders (every Ξ-target on a strictly higher W-level): k = 2 at d = 4, k = 3 at d = 6 (SAT, uncertified …)»). DATA and a ceiling; not a review, not a signature
+L-SI's file (claude/l-si 06f072f1, experiments/si/box107/out/up_k3_d6.json) was not on origin when this was written (claude/l-si = ff28a3fc).
+So this is an INDEPENDENT replication: own instances from a plain hill-climb on my engine (scratch search, not committed), not L-SI's.
+- Instances (2-wide, degree 2, every Ξ-target on a strictly higher W-level or the exit; R2-key/): up_d4_k2.json (sha1 48501e98…, N 8):
+  mover 3, level 1, sw 3 = \|K\| − 1, T = 7; up_d6_k3.json (sha1 5a58e2ac…, N 12): mover 4, level 2, sw 7 = \|K\| − 1, T = 11, levels 0 and
+  1 full pairs (sw 1, 1, 3, 3). My climbs at d = 8 (plain, seeded by level insertion, block-rewarding objective; about 10 minutes) stay
+  at sw 5 to 7 on level 3: no k = 4 from me.
+- Checks (kill217_up.out): r2kill217.py: id 0; N5 itself from S3 on Γ3 (my engine): first fallback at T + 1 (8, 12), 10 and 14 iterations
+  in all, output = my own Zielonka (zl 0); the lane's n5v spec on gamma3: same mover states, iteration count and regions (lane 0) =
+  harness Zielonka (zh 0). r2unit217.py: all 40 counters 0 with BRIDGE at 32 states; supply of the full mover: d = 4 «2: 3, 3: 1»,
+  d = 6 «3: 6, 4: 4, 5: 1» (all from above, as the shape forces).
+- Ceiling (from A2; its Ξ half is landed R113 PATH-RISE): on an upward 2-wide degree-2 ladder with d levels a level-l mover has
+  \|K\| = 2^(l+1) and \|PΞ\| ≤ 2^(d−l) (a Ξ-path visits at most one mover per higher level), so sw(x) ≤ 2^(min(l+1, d−l)) − 1. Hence
+  k ≤ (d + 1)/2, max sw ≤ 2^(d/2) − 1 for even d, and T ≤ Σ_x sw(x) < 2^(d/2+3). The reported k = d/2 at d = 4, 6 is this ceiling.
+  If a rule G_k with d = 2k and a mover with sw = 2^k − 1 exists for every k, then max sw = 2^(N/4) − 1 and T ≥ 2^(N/4) − 1: by ID and
+  landed R117 (REACH3, REAL-IDEAL-S3) N5 from S3 would need ≥ 2^(N/4) iterations on Γ3(G_k), n3 = 30d + 10. That is the statement a kill
+  packet has to PROVE; two or three sizes are DATA (L43).
+- What I will check in a kill packet: (i) the rule G_k for every k, every degree 2 (E-2); (ii) L(G_k) by two engines at every k run;
+  (iii) a proof that some mover switches ≥ c·2^(εk) times for every k (induction, or an explicit run checked against the step rule);
+  fits with residuals are DATA; (iv) N5 itself on Γ3(G_k) with outputs against Zielonka, up to about k = 13 on my engine.

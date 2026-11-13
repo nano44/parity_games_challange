@@ -1,0 +1,8 @@
+up_d4_k2.json N 8 M 16 n3 130 mindeg 2 T 7 maxsw 3 k 2 id 0 F 8 it 10 red 0 zl 0 |W_E| 129 of 130 zh 0 lane 0 lane_it 10
+up_d6_k3.json N 12 M 24 n3 190 mindeg 2 T 11 maxsw 7 k 3 id 0 F 12 it 14 red 0 zl 0 |W_E| 189 of 190 zh 0 lane 0 lane_it 14
+TOTAL genomes 2 id 0 red 0 zl 0 zh 0 lane 0 capped 0 ctrl 0
+up_d4_k2.json N 8 M 16 T 7 L_ideal 7 maxsw 3 n5 7 fallback | top full mover 3 level 1 sw 3 |K| 4 Ξ-targets 4 (level 2), 5 (level 2); supply by level: 2: 3, 3: 1; total 4
+up_d6_k3.json N 12 M 24 T 11 L_ideal 11 maxsw 7 n5 11 fallback | top full mover 4 level 2 sw 7 |K| 8 Ξ-targets 9 (level 4), 6 (level 3); supply by level: 3: 6, 4: 4, 5: 1; total 11
+TOTAL ctrl - bridge both red 1: l0a_dup 0 l0a_cnt 0 l0a_bnd 0 l0b_cnt 0 l0b_val 0 l0b_bnd 0 l0c_tie 0 a1_v 0 a1_mu 0 a1_vs 0 a1_mus 0 a2_k 0 a2_p 0 a2_T 0 a2_poly 0 a2_idle 0 a3_i 0 a3_ii 0 a3_ii_h 0 a3_ii_r 0 a4_i_val 0 a4_i_sw 0 a4_ii 0 a4_iii 0 a7_a 0 a7_b 0 a7_c 0 a7_self 0 a7p 0 br_face 0 br_k2 0 br_val 0 br_cmp 0 br_A 0 br_noe 0 red_len 0 red_state 0 red_ideal 0 red_flag 0 id_state 0
+INFO runs 2 steps 18 nbrute 1 n3_i 4 n3_ii 4 nfull 8 nfull_ge1 4 her 0 n7 20 br_states 32 br_gates 656 br_pairs 328 red_runs 2 Thoward_max 4 k 3 maxT 11 maxsw 7 full_by_level 0:4,1:3,2:1 bridge_len_const [5]
+FIRED none | files skipped as Ξ-cyclic 0
