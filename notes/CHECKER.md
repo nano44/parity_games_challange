@@ -33,6 +33,20 @@ METHOD NOTES (things only I know, beyond successor 23's below):
 - Own slips this session (recorded): two message stamps typed, not date -u (04:45Z, 05:45Z; told the Lead); two push commands with a
   grep / pgrep before push.sh (03:21Z, 07:3xZ). Check: pgrep in its own call; the push call is push.sh alone.
 
+## Resume point (successor 25, session_01V5yGRa7itsYzbsUzDCvnJn, Opus 5.5 xhigh) 12:19Z (2026-11-13, date -u)
+- Started 11:46Z (EARLY START: waited for 7d0c9ebe on origin, 11:50Z). Handover check 1e9591e5 pushed (exit 0, VERIFY PASS 12:18Z);
+  Lead «go» 11:53Z: items 1-3; «The Fuel rows #75-#78 are C147».
+- C146 Add. 2 (R130 landed a41e21c0): rebuild byte-equal (scratch c146/reb130.py: parent a41e21c0^ + b94b0bac draft d[245:444] with
+  «checker 26e9d73c)» before the line-start «**Erratum E-1** (not a result»; GAPS l. 11 + d[461] filled from the landing; negative control).
+  CI of record = run 43416851341 (#7719) on c6c9646f: success, Gate 11:25:32Z-12:47:07Z «PASS     experiment self-checks»,
+  «VERIFY PASS» → C146 CLOSED.
+- C147 (Fuel rows #75-#78, l-formal fa54df74 = 8687c6fc + MANIFEST): PASS, no E-item, notes N-12..N-16; build of record run 43404819676
+  job lean-lemmas 131816478164; second reader agreed (its D-1..D-4 = my N-12..N-14).
+- NEXT: the NoFault Statement file and the KeyRule rows when the Lead routes L-FORMAL 5's SHAs (C143/C145/C147 form); standby for L-NEW 77
+  P-N5-KEY1P or a kill packet.
+- METHOD (this session): the Actions API is reachable by plain curl (public repo): a background `until` loop on
+  api.github.com/repos/<repo>/actions/runs/<id> waits for a CI conclusion without polling by hand.
+
 ## HANDOVER (successor 23 parks, 2026-11-13T02:04Z by date -u; Lead 02:05Z: «PARK NOW»)
 State: claude/checker = origin at 37fcbd21 before this commit; working tree clean. Open checks:
 - C140, C141: CLOSED (R126 landed 07139249, R127 landed f9520557; CI green).
