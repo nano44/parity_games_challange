@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """L-COMP box 46 item 3: a climb on W_key / (N + M) over Ξ-CYCLIC genomes in a size band (copy of box44/climb44.py: moves, resumability
 and band unchanged; the score, the Ξ-cyclic constraint and the best re-measurement differ).
-Score: W_key / (N + M) by MY text engine (box46/win46.measure: N5's key rule from S3 on Γ3(G), windows of box 212 §4-§5), compared exactly,
-then W_key, then T_key. Proposals whose Ξ-graph (R104) is acyclic are rejected (counted). Every NEW GLOBAL BEST is re-run by sec46.py on
+Score (Lead 02:38Z): Wused / (N + M), Wused = the longest window of N5's key-rule run that itself contains a use of a Ξ-cycle (offbeta or
+cycopt > 0 at one of its states; box46/win46.measure, my text engine), compared exactly, then Wused, then T_key. Proposals whose Ξ-graph (R104) is acyclic are rejected (counted). Every NEW GLOBAL BEST is re-run by sec46.py on
 n5b --mode spec and on L-NEW's rfd212 (n5v spec): «agree» and must0 logged; a best with must0 > 0 or agree False is an ALERT line.
 --- climb44's header follows ---
 L-COMP box 44 item 3: a climb on T3 / (N + M) over genomes in a size band (N + M ≈ 300).
@@ -104,13 +104,13 @@ def mutate(G, rng):
 
 
 def better(a, b):
-    """a, b = (W_key, NM, T_key, must0): is a's score strictly above b's? (ratio first, then T3)"""
+    """a, b = (Wused, NM, T_key, must0, W_key, run_used): is a's score strictly above b's? (ratio first, then T3)"""
     l, r = a[0] * b[1], b[0] * a[1]
     return l > r or (l == r and (a[0], a[2]) > (b[0], b[2]))
 
 
 def evaluate(G):
-    c, d, first, B = win46.measure(G); return (d["Wkey"], NM(G), d["Tkey"], sum(c[k] for k in win46.PREM + win46.K + win46.LV + win46.PL + win46.END))
+    c, d, first, B = win46.measure(G); return (d["Wused"], NM(G), d["Tkey"], sum(c[k] for k in win46.PREM + win46.K + win46.LV + win46.PL + win46.END), d["Wkey"], d["run_used"])
 
 
 def ok(G): return LO <= NM(G) <= HI and rand46.xcyclic(G)
@@ -133,7 +133,7 @@ if __name__ == "__main__":
         si = st["r"] % len(seeds)
         if st["cur"] is None: st["cur"] = seeds[si]; st["step"] = 0
         G = st["cur"]; assert ok(G), "seed outside the band"; s = evaluate(G)
-        if st["step"] == 0: log("START restart %d seed %s Wkey %d NM %d ratio %.4f Tkey %d" % (st["r"], os.path.basename(SEEDS[si]), s[0], s[1], s[0] / s[1], s[2]))
+        if st["step"] == 0: log("START restart %d seed %s Wused %d NM %d ratio %.4f Tkey %d Wkey %d" % (st["r"], os.path.basename(SEEDS[si]), s[0], s[1], s[0] / s[1], s[2], s[4]))
         while st["step"] < STEPS:
             rng = random.Random("%d-%d-%d" % (SEED, st["r"], st["step"])); st["step"] += 1
             H2 = mutate(G, rng)
@@ -145,13 +145,13 @@ if __name__ == "__main__":
             if better(s2, s) or (s2[0] * s[1] == s[0] * s2[1] and rng.random() < 0.3):
                 G, s = H2, s2; st["cur"] = G
                 if st["best"] is None or better(s, st["best"]):
-                    st["best"] = list(s); fn = os.path.join(CL, "BEST_%s_W%d_NM%d_%s.json" % (TAG, s[0], s[1], sha(G)[:8])); json.dump(G, open(fn, "w"), sort_keys=True)
+                    st["best"] = list(s); fn = os.path.join(CL, "BEST_%s_WU%d_NM%d_%s.json" % (TAG, s[0], s[1], sha(G)[:8])); json.dump(G, open(fn, "w"), sort_keys=True)
                     st["bestfile"] = os.path.basename(fn)
                     o = subprocess.run([sys.executable, os.path.join(H, "sec46.py"), fn], capture_output=True, text=True).stdout.strip()
                     bad = s[3] > 0 or "agree True" not in o
-                    log("%sBEST %s Wkey %d NM %d ratio %.4f Tkey %d must0 %d | %s | restart %d step %d evals %d" % ("ALERT " if bad else "", os.path.basename(fn), s[0], s[1], s[0] / s[1], s[2], s[3], o, st["r"], st["step"], st["evals"]))
+                    log("%sBEST %s Wused %d NM %d ratio %.4f Tkey %d Wkey %d run_used %d must0 %d | %s | restart %d step %d evals %d rejected %d" % ("ALERT " if bad else "", os.path.basename(fn), s[0], s[1], s[0] / s[1], s[2], s[4], s[5], s[3], o, st["r"], st["step"], st["evals"], st.get("rej", 0)))
                 save(st)
             elif st["evals"] % 25 == 0: save(st)
-        log("END restart %d: current Wkey %d NM %d ratio %.4f; best so far %s; evals %d" % (st["r"], s[0], s[1], s[0] / s[1], st["best"], st["evals"]))
+        log("END restart %d: current Wused %d NM %d ratio %.4f; best so far %s; evals %d" % (st["r"], s[0], s[1], s[0] / s[1], st["best"], st["evals"]))
         st["r"] += 1; st["cur"] = None; st["step"] = 0; save(st)
     log("DONE %s: best %s %s evals %d" % (TAG, st["best"], st["bestfile"], st["evals"]))

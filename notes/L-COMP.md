@@ -14,7 +14,16 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   pairs; on 1,264 runs / 22,512 flips max depthNS 2 (DSALT9_n416 only), deepNS (> 3) 0, while depth100 reaches 32. (b) per-gate Λ-quiet
   maximum: band bests 0.1376 / 0.1510 / 0.1382 (N + M 109 / 192 / 275), 48/48 equal on L-RED's HOW3; MW 4n + 2, MWR 2n + 1, CW ≈ 7n at
   N + M ≈ n²/2: nothing beyond linear. Two wrong readings in messages (23:55Z, 00:46Z) corrected and recorded in the README.
-- Next: (c) waits for L-NEW's plat208 --hist; nothing else queued; ask the Lead.
+- BOX 46 (Lead «go» 01:38Z with corrections (a) plat_at_b, (b) Ξ-cyclic per R104 l. 9864 / 9910 and R122 l. 14853, (c) H_Y on s_u;
+  02:38Z: item 3 objective = Wused, the longest window that itself USES a Ξ-cycle (offbeta or cycopt > 0 inside it); run_used column;
+  must-0 offbacyc (R122 BETA-ACYC, RESULTS l. 14744 at f5a237ce); controls: odd self-loop tower → window-used 0, collapsing even variant →
+  run-used > 0, W5). State (2026-11-13 02:49Z): item 1 DONE and pushed (6ac85200: win46 = rfd212 on 86/86). Item 2: sets run (xrand 1,000, xmine,
+  xbest, xbig, xtower 224); final pass with the use columns RUNNING (run46f.sh named | rand → out/win46u_*.out); use46.py (run46e.sh) is an
+  independent cross-check of run_used. Item 3 next: climb46.py (Wused / (N + M), Ξ-cyclic proposals only), bands ≈ 70 / 140 / 280,
+  sec46.py (n5b spec + rfd212) on every best. (c) of box 45 waits for plat208 --hist.
+- RULE (Lead 02:39Z, after three typed-number slips 23:55Z, 00:46Z, 02:36Z): every number in a message to the Lead is pasted from a
+  generated file, with the file's path and sha1 in the same message; interim numbers carry «partial: N rows of M, file sha1 …».
+  Every message stamp from date -u in the same step.
 - Queued tools committed (box45): deep45.py (item (a): depthNS = box 100's depth minus the plays' common suffix; TAIL-invariant on
   MWR4_2 -> TMWR4 flip by flip, control CTRL=1 fires), climb45.py (item (b): per-gate Λ-quiet flip climb, proxy QP = max (flips − lamch) from
   fast37, bests re-measured exactly by deep45).
