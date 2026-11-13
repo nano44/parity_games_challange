@@ -28,6 +28,7 @@ Usage: enc19.py W L MODE [K] [OUT_PREFIX]      W = widths like 2,2,2,2   MODE = 
   env CNF=path: write DIMACS instead of solving. env SOLVER (default cadical195). env FIXG=genome.json: fix the genome (checker mode).
 Prints RESULT SAT/UNSAT; on SAT writes OUT_PREFIX.json (one217 genome) and the encoder's state sequence."""
 import sys, os, json, time, itertools
+SB = os.environ.get('SB', '1') != '0'
 from pysat.formula import IDPool
 from pysat.card import CardEnc, EncType
 
@@ -65,17 +66,24 @@ def build(W, L, mode, K=None, fixg=None):
         if lev[x] > 0:
             for k in (0, 1):
                 cand = bylev[lev[x] - 1]; vs = [E.new() for _ in cand]; E.onehot(vs); WT[(x, k)] = dict(zip(cand, vs))
-    TO = {}
-    for a in range(N):
-        for b in range(a + 1, N): v = E.new(); TO[(a, b)] = v; TO[(b, a)] = -v
-    for a, b, c in itertools.permutations(range(N), 3):
-        E.add([-TO[(a, b)], -TO[(b, c)], TO[(a, c)]])
+    # Xi-acyclicity by the longest-path depth h(x) (order encoding H[x][j] = «h(x) >= j», j = 1..N-1): xt = y => h(x) >= h(y) + 1,
+    # and (symmetry break, env SB != 0) h(x) >= j => some Xi-target has h >= j - 1, so h is exactly the longest-path depth: one model
+    # per Xi-graph instead of one per linear extension (a free order TO gave many).
+    H = [[T] + [E.new() for j in range(1, N)] + [-T] for x in range(N)]   # H[x][0] = true, H[x][N] = false
+    for x in range(N):
+        for j in range(1, N): E.add([-H[x][j + 1], H[x][j]]) if j + 1 < N else None
     XT = {}
     for x in range(N):
         for k in (0, 1):
             ex = E.new(); vs = {y: E.new() for y in range(N) if y != x}; E.onehot([ex] + list(vs.values()))
-            for y, v in vs.items(): E.add([-v, TO[(y, x)]])
+            for y, v in vs.items():
+                for j in range(0, N): E.add([-v, -H[y][j], H[x][j + 1]])
             XT[(x, k)] = (ex, vs)
+    if SB:
+        for x in range(N):
+            for j in range(1, N):
+                E.add([-H[x][j]] + [E.AND(v, H[y][j - 1]) for k in (0, 1) for y, v in XT[(x, k)][1].items()])
+    TO = H
     P = [[E.new() for r in range(M)] for o in range(M)]
     for o in range(M): E.onehot(P[o])
     for r in range(M): E.onehot([P[o][r] for o in range(M)])
@@ -87,6 +95,8 @@ def build(W, L, mode, K=None, fixg=None):
             for b in os_[i + 1:]: v = E.new(); GO[(a, b)] = v; GO[(b, a)] = -v
         for a, b, c in itertools.permutations(os_, 3): E.add([-GO[(a, b)], -GO[(b, c)], GO[(a, c)]])
     S = [[E.new() for x in range(N)]]   # s_t(x): option index (0/1)
+    if SB and fixg is None:
+        for x in range(N): E.add([-S[0][x]])   # symmetry break: option labels are arbitrary, so WLOG s_0 = option 0 everywhere
     def gt(A, B):   # A > B as signed rank-weight sets (A != B assumed for the use made of it)
         res = -T; eq = T   # scan from the top rank down: res = decided greater, eq = all equal so far
         for r in reversed(range(M)):
