@@ -1,0 +1,6 @@
+DBL4_d20_F30.json N 40 T_C 2 T_ideal 30 (stuck) ideq 1 ctrl 1
+H5_d20_F62.json N 40 T_C 3 T_ideal 136 (stuck) ideq 1 ctrl 1
+H6_d24_F126.json N 48 T_C 5 T_ideal 209 (stuck) ideq 1 ctrl 1
+HIT7_d28_F254.json N 56 T_C 3 T_ideal 299 (stuck) ideq 1 ctrl 1
+RECF4_d20_F60.json N 40 T_C 2 T_ideal 67 (stuck) ideq 1 ctrl 1
+TOTAL genomes 5 ideq 5 maxT 5 ctrl 1

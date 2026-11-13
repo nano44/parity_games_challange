@@ -1,0 +1,3 @@
+START seed inst/seeds/up/up_d10_11.txt N 20 M 40 N+M 60 d 10 score 1282762866689 (k 1 T 1) SCORE KR CAP 1000 ITERS 2000000 SEED 6011 TEMP0 2 UNIT 200000
+BEST k 2 kfront 74898 khalf 1 T 4 d 10 N 20 M 40 N+M 60 file out/up/U10_11_BEST_k2_T4_d10_N20_NM60_235aec5e1b47ecb2.txt iter 8471 acc 6879 errs 0 sec 0
+DONE iters 2000000 best score 2670241775626 (k 2 T 10) d 10 N 20 M 40 N+M 60 errs 0

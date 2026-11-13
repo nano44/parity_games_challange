@@ -1,0 +1,4 @@
+START seed inst/seeds/up/up_d8_7.txt N 16 M 32 N+M 48 d 8 score 1099511627777 (k 1 T 1) SCORE KR CAP 1000 ITERS 2000000 SEED 5807 TEMP0 2 UNIT 200000
+BEST k 2 kfront 74898 khalf 1 T 3 d 8 N 16 M 32 N+M 48 file out/up/U8_7_BEST_k2_T3_d8_N16_NM48_aec6dbc20baf2d67.txt iter 20176 acc 16516 errs 0 sec 0
+BEST k 3 kfront 139810 khalf 2 T 11 d 8 N 16 M 32 N+M 48 file out/up/U8_7_BEST_k3_T11_d8_N16_NM48_73ad4eb618853b96.txt iter 1393092 acc 582541 errs 0 sec 10
+DONE iters 2000000 best score 3591737704459 (k 3 T 11) d 8 N 16 M 32 N+M 48 errs 0

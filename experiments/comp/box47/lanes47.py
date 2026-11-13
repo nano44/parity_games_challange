@@ -13,10 +13,10 @@ def kk(G, S):
     k = max([lev[x] + 1 for x in range(N) if sw[x] == P[x] - 1], default=0)
     kh = max([lev[x] for x in range(N) if P[x] >= 2 and sw[x] >= P[x] // 2 - 1], default=-1)
     kf = max([sw[x] for x in range(N) if lev[x] == k], default=0)
-    return T, k, kh, kf
+    return T, k, kh, kf, max(sw), min(len(o) for o in G["opts"]), max(len(o) for o in G["opts"])
 lanes = sys.argv[1:] or sorted(os.path.basename(p)[:-6] for p in glob.glob(os.path.join(H, "out", "lanes", "*.state")))
-print("| lane | iters | best k_A6 | kfront | T (score) | re-measured T / k_A6 / khalf / kfront | d | N | N + M |")
-print("| --- | --- | --- | --- | --- | --- | --- | --- | --- |")
+print("| lane | iters | best k_A6 | kfront | T (score) | re-measured T / k_A6 / khalf / kfront | max_x sw | degree min-max | d | N | N + M | T / (N + M) |")
+print("| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |")
 for L in lanes:
     st = open(os.path.join(H, "out", "lanes", L + ".state")).read().split("\n"); it, rs, tc, tb = st[0].split()
     w = " ".join(st[1:]).split(); N0, M0 = int(w[0]), int(w[1]); n0 = 2 + N0 + 7 * M0 + N0; best = " ".join(w[n0:])
@@ -26,5 +26,6 @@ for L in lanes:
     bt = os.path.join(H, "out", "lanes", L + "_cur_best.txt"); open(bt, "w").write(best + "\n"); G = gen47.t2j(best)
     json.dump(G, open(bt[:-4] + ".json", "w"), sort_keys=True)
     o = subprocess.run([os.path.join(H, "bin", "one47"), bt, "key", "--states"], capture_output=True, text=True).stdout
-    S = [tuple(map(int, l.split()[3:])) for l in o.splitlines() if l.startswith("S ")]; T2, k2, kh2, kf2 = kk(G, S)
-    print("| %s | %s | %s | %s | %d | %d / %d / %d / %d | %d | %d | %d |" % (L, it, k if kmode else "—", f if kmode else "—", t, T2, k2, kh2, kf2, max(G["lev"]) + 1, G["N"], G["N"] + sum(len(o) for o in G["opts"])))
+    S = [tuple(map(int, l.split()[3:])) for l in o.splitlines() if l.startswith("S ")]; T2, k2, kh2, kf2, ms2, dmin, dmax = kk(G, S)
+    nm = G["N"] + sum(len(o) for o in G["opts"])
+    print("| %s | %s | %s | %s | %d | %d / %d / %d / %d | %d | %d-%d | %d | %d | %d | %.3f |" % (L, it, k if kmode else "—", f if kmode else "—", t, T2, k2, kh2, kf2, ms2, dmin, dmax, max(G["lev"]) + 1, G["N"], nm, T2 / nm))

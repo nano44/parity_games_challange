@@ -4,6 +4,7 @@
 # Lanes (Lead 10:03Z priority: K lanes, then the min-d ladder, then T lanes):
 #   K28 / K36 / K40: HIT7 (box 212's HIT7_d28_F254) lifted by 0 / 8 / 12 TOP-ADD pad levels (lift47.py; my lift, not L-RED's file);
 #   K<d>D: SCORE=KD (deficit sw − (|K| − 1) at level k), seed HIT7 lifted to depth d (lift47 adds 1 level per step: d − 28 levels);
+#   U<d>[_<r>]: upward ladders (CLASS=UP, SCORE=KR; Lead 12:12Z / L-SI 55), seed up47.py at depth d (seed 4900 + digits of the lane name);
 #   L<d>: min-d ladder at depth d, seed = rand47.py (w 2, degree 2, seed 4800 + d), N + M <= 6 d + 40;
 #   T<N>: objective T_key, seed HIT7 lifted to N movers.
 # Each launch runs ~6,600 s, then exits; re-launch resumes (OUT.state). Usage: run47d.sh LANE
@@ -15,6 +16,7 @@ K28) lift HIT7_d28_F254 0 HIT7_d28; CAP=260; SC=K ;;
 K36) lift HIT7_d28_F254 8 HIT7_d36; CAP=340; SC=K ;;
 K40) lift HIT7_d28_F254 12 HIT7_d40; CAP=380; SC=K ;;
 K*D) b=${L%D}; b=${b#K}; lift HIT7_d28_F254 $(( (b - 28) / 1 )) HIT7_d$b; CAP=$(( 10 * b - 20 )); SC=KD ;;
+U*) d=${L#U}; d=${d%%_*}; S=inst/seeds/up_d${L#U}.txt; [ -f $S ] || { python3 -B up47.py $d $((4900 + $(echo $L | tr -dc 0-9))) inst/seeds/up_d${L#U}.json && python3 -B gen47.py j2t inst/seeds/up_d${L#U}.json $S; }; CAP=1000; SC=KR; export CLASS=UP ;;
 L*) d=${L#L}; S=inst/seeds/rand_w2_d${d}.txt; [ -f $S ] || { python3 -B rand47.py 2 $d 2 $((4800 + d)) inst/seeds/rand_w2_d${d}.json && python3 -B gen47.py j2t inst/seeds/rand_w2_d${d}.json $S; }; CAP=$((6 * d + 40)); SC=K ;;
 T*) n=${L#T}; lift HIT7_d28_F254 $(( (n - 56) / 2 )) HIT7_N$n; CAP=$(( 3 * n + 40 )); SC=T ;;
 *) echo usage; exit 2 ;;

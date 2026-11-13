@@ -1,0 +1,4 @@
+START seed inst/seeds/up/up_d12_15.txt N 24 M 48 N+M 72 d 12 score 1282762866690 (k 1 T 2) SCORE KR CAP 1000 ITERS 2000000 SEED 6215 TEMP0 2 UNIT 200000
+BEST k 2 kfront 149796 khalf 1 T 3 d 12 N 24 M 48 N+M 72 file out/up/U12_15_BEST_k2_T3_d12_N24_NM72_a1e7ab9f4f0251bc.txt iter 63758 acc 53352 errs 0 sec 0
+BEST k 3 kfront 104857 khalf 2 T 12 d 12 N 24 M 48 N+M 72 file out/up/U12_15_BEST_k3_T12_d12_N24_NM72_bb488f2361f8558f.txt iter 194443 acc 114099 errs 0 sec 2
+DONE iters 2000000 best score 3591737704461 (k 3 T 13) d 12 N 24 M 48 N+M 72 errs 0

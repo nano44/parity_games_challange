@@ -1,0 +1,14 @@
+G_3 N 11 M 22 N+M 33 d 4 T_key 6 (2^k-2 = 6) T_howard 3 T_seq 10 max_sw 2 at u2,v2,y2,yb2 (2^(k-2) = 2) sec 0.0 | level:max_sw 0:1 1:1 2:2 3:2
+G_4 N 20 M 40 N+M 60 d 5 T_key 14 (2^k-2 = 14) T_howard 4 T_seq 25 max_sw 4 at u3,v3,y3,yb3 (2^(k-2) = 4) sec 0.0 | level:max_sw 0:1 1:1 2:2 3:4 4:4
+G_5 N 29 M 58 N+M 87 d 6 T_key 30 (2^k-2 = 30) T_howard 4 T_seq 51 max_sw 8 at u4,v4,y4,yb4 (2^(k-2) = 8) sec 0.0 | level:max_sw 0:1 1:1 2:2 3:4 4:8 5:8
+G_6 N 38 M 76 N+M 114 d 7 T_key 62 (2^k-2 = 62) T_howard 4 T_seq 73 max_sw 16 at u5,v5,y5,yb5 (2^(k-2) = 16) sec 0.0 | level:max_sw 0:1 1:1 2:2 3:4 4:8 5:16 6:16
+G_7 N 47 M 94 N+M 141 d 8 T_key 126 (2^k-2 = 126) T_howard 4 T_seq 96 max_sw 32 at u6,v6,y6,yb6 (2^(k-2) = 32) sec 0.0 | level:max_sw 0:1 1:1 2:2 3:4 4:8 5:16 6:32 7:32
+G_8 N 56 M 112 N+M 168 d 9 T_key 254 (2^k-2 = 254) T_howard 4 T_seq 118 max_sw 64 at u7,v7,y7,yb7 (2^(k-2) = 64) sec 0.0 | level:max_sw 0:1 1:1 2:2 3:4 4:8 5:16 6:32 7:64 8:64
+G_9 N 65 M 130 N+M 195 d 10 T_key 510 (2^k-2 = 510) T_howard 4 T_seq 140 max_sw 128 at u8,v8,y8,yb8 (2^(k-2) = 128) sec 0.0 | level:max_sw 0:1 1:1 2:2 3:4 4:8 5:16 6:32 7:64 8:128 9:128
+G_10 N 74 M 148 N+M 222 d 11 T_key 1022 (2^k-2 = 1022) T_howard 4 T_seq 162 max_sw 256 at u9,v9,y9,yb9 (2^(k-2) = 256) sec 0.0 | level:max_sw 0:1 1:1 2:2 3:4 4:8 5:16 6:32 7:64 8:128 9:256 10:256
+G_11 N 83 M 166 N+M 249 d 12 T_key 2046 (2^k-2 = 2046) T_howard 4 T_seq 184 max_sw 512 at u10,v10,y10,yb10 (2^(k-2) = 512) sec 0.0 | level:max_sw 0:1 1:1 2:2 3:4 4:8 5:16 6:32 7:64 8:128 9:256 10:512 11:512
+G_12 N 92 M 184 N+M 276 d 13 T_key 4094 (2^k-2 = 4094) T_howard 4 T_seq 206 max_sw 1024 at u11,v11,y11,yb11 (2^(k-2) = 1024) sec 0.0 | level:max_sw 0:1 1:1 2:2 3:4 4:8 5:16 6:32 7:64 8:128 9:256 10:512 11:1024 12:1024
+G_13 N 101 M 202 N+M 303 d 14 T_key 8190 (2^k-2 = 8190) T_howard 4 T_seq 228 max_sw 2048 at u12,v12,y12,yb12 (2^(k-2) = 2048) sec 0.0 | level:max_sw 0:1 1:1 2:2 3:4 4:8 5:16 6:32 7:64 8:128 9:256 10:512 11:1024 12:2048 13:2048
+G_14 N 110 M 220 N+M 330 d 15 T_key 16382 (2^k-2 = 16382) T_howard 4 T_seq 250 max_sw 4096 at u13,v13,y13,yb13 (2^(k-2) = 4096) sec 0.1 | level:max_sw 0:1 1:1 2:2 3:4 4:8 5:16 6:32 7:64 8:128 9:256 10:512 11:1024 12:2048 13:4096 14:4096
+G_15 N 119 M 238 N+M 357 d 16 T_key 32766 (2^k-2 = 32766) T_howard 4 T_seq 272 max_sw 8192 at u14,v14,y14,yb14 (2^(k-2) = 8192) sec 0.1 | level:max_sw 0:1 1:1 2:2 3:4 4:8 5:16 6:32 7:64 8:128 9:256 10:512 11:1024 12:2048 13:4096 14:8192 15:8192
+G_16 N 128 M 256 N+M 384 d 17 T_key 65534 (2^k-2 = 65534) T_howard 4 T_seq 294 max_sw 16384 at u15,v15,y15,yb15 (2^(k-2) = 16384) sec 0.2 | level:max_sw 0:1 1:1 2:2 3:4 4:8 5:16 6:32 7:64 8:128 9:256 10:512 11:1024 12:2048 13:4096 14:8192 15:16384 16:16384

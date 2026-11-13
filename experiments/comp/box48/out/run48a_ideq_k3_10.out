@@ -1,0 +1,8 @@
+G_3 N 11 M 22 N+M 33 d 4 T_key 6 (2^k-2 = 6) T_howard 3 T_seq 10 max_sw 2 at u2,v2,y2,yb2 (2^(k-2) = 2) sec 0.0 | level:max_sw 0:1 1:1 2:2 3:2 | ideal.traj T 6 (stuck) ideq 0
+G_4 N 20 M 40 N+M 60 d 5 T_key 14 (2^k-2 = 14) T_howard 4 T_seq 25 max_sw 4 at u3,v3,y3,yb3 (2^(k-2) = 4) sec 0.0 | level:max_sw 0:1 1:1 2:2 3:4 4:4 | ideal.traj T 14 (stuck) ideq 0
+G_5 N 29 M 58 N+M 87 d 6 T_key 30 (2^k-2 = 30) T_howard 4 T_seq 51 max_sw 8 at u4,v4,y4,yb4 (2^(k-2) = 8) sec 0.0 | level:max_sw 0:1 1:1 2:2 3:4 4:8 5:8 | ideal.traj T 30 (stuck) ideq 0
+G_6 N 38 M 76 N+M 114 d 7 T_key 62 (2^k-2 = 62) T_howard 4 T_seq 73 max_sw 16 at u5,v5,y5,yb5 (2^(k-2) = 16) sec 0.0 | level:max_sw 0:1 1:1 2:2 3:4 4:8 5:16 6:16 | ideal.traj T 62 (stuck) ideq 0
+G_7 N 47 M 94 N+M 141 d 8 T_key 126 (2^k-2 = 126) T_howard 4 T_seq 96 max_sw 32 at u6,v6,y6,yb6 (2^(k-2) = 32) sec 0.0 | level:max_sw 0:1 1:1 2:2 3:4 4:8 5:16 6:32 7:32 | ideal.traj T 126 (stuck) ideq 0
+G_8 N 56 M 112 N+M 168 d 9 T_key 254 (2^k-2 = 254) T_howard 4 T_seq 118 max_sw 64 at u7,v7,y7,yb7 (2^(k-2) = 64) sec 0.0 | level:max_sw 0:1 1:1 2:2 3:4 4:8 5:16 6:32 7:64 8:64 | ideal.traj T 254 (stuck) ideq 0
+G_9 N 65 M 130 N+M 195 d 10 T_key 510 (2^k-2 = 510) T_howard 4 T_seq 140 max_sw 128 at u8,v8,y8,yb8 (2^(k-2) = 128) sec 0.0 | level:max_sw 0:1 1:1 2:2 3:4 4:8 5:16 6:32 7:64 8:128 9:128 | ideal.traj T 510 (stuck) ideq 0
+G_10 N 74 M 148 N+M 222 d 11 T_key 1022 (2^k-2 = 1022) T_howard 4 T_seq 162 max_sw 256 at u9,v9,y9,yb9 (2^(k-2) = 256) sec 0.0 | level:max_sw 0:1 1:1 2:2 3:4 4:8 5:16 6:32 7:64 8:128 9:256 10:256 | ideal.traj T 1022 (stuck) ideq 0
