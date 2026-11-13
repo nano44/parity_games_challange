@@ -282,3 +282,39 @@ FINDINGS: no error; SIGN Theorem EXP-IDEAL (a)-(c) and its lemmas with G-1 (proo
 tie-break) listed; SIGN Corollary EXP-N5 as proved-conditional on R117 as landed (W-2); D-1 placeholder in §9.7; O-1 in my own
 builder (isomorphic numbering of the β block; the lane's files are the right ones).
 NEEDS: Lead: route G-1, M-1, W-1, W-2, D-1 to L-RED-B's fixes file; CHECKER: the exact-commit re-run.
+
+## Addendum 1 (REFEREE-2 successor 41; 2026-11-13T14:39:51Z by date -u): three points from the Lead's 13:58Z message, which reached me at 14:19Z, after the report was committed (33ff0e98)
+The verdict of §0 is unchanged. Nothing below was needed for it.
+### A1.1 The exact count (R124, Corollary EXACT-L): should a fixes entry add it, and under which premises?
+Source opened: docs/RESULTS.md at trunk 6eaf4604, l. 15371, entry R124 [refereed-only]. Its Corollary EXACT-L, for G ∈ IDEAL-ACYC:
+[Q R124] «makes exactly L(G) + 3 iterations», with the entry's own premise label [Q R124] «premise RESULTS R117 (f)» and the remark
+that it uses SPEC's S1 tie-breaks through REACH3's [RULE] choice; and Theorem ENDGAME-3-N5 of the same entry: exactly one fallback,
+at an iteration F, and exactly F + 2 iterations.
+- With Theorem EXP-IDEAL (a), (b) this gives: N5 from S3 on Γ3(G_k) makes EXACTLY 2^k + 1 iterations, with exactly one fallback, at
+  iteration 2^k − 1. My measured counts (§3.4) are exactly these at every k = 3..11 (F = 2^k − 1, iterations = 2^k + 1 = F + 2), on
+  my engine and on the lane's n5v; the count 4,097 at k = 12 relayed by the Lead (two lanes; not run by me) is 2^12 + 1.
+- Recommendation: YES, add it, as a SEPARATE labelled sentence («Corollary EXP-N5, exact form»), and keep the present lower bound
+  as it is. Reasons: (1) the lower bound ≥ 2^k − 1 needs R117 (f) only, and the kill should rest on the fewest premises; (2) the
+  exact form turns §9.4's DATA into a test of an exact prediction (equality at every measured point, not only «≥»); (3) EXACT-L's
+  second sentence [Q R124] «N5's iteration count is polynomial in n iff L(G) is polynomial in N + M» is the precise form of the
+  dead-end line on {Γ3(G) : G ∈ IDEAL-ACYC}.
+- Premises to print with it: RESULTS R124 Corollary EXACT-L and Theorem ENDGAME-3-N5 (refereed-only), whose premise is R117 (f)
+  with R117's standing premises; N5 = SPEC S1-S5 with FIX 1-4 (EXACT-L is stated for these tie-breaks; R124 records that with another
+  pointwise-optimal S4a choice the identity can fail); G_k ∈ IDEAL-ACYC by Lemma MEMBER; L(G_k) = 2^k − 2 by Theorem EXP-IDEAL (b).
+  Status of the exact form: PROVED-CONDITIONAL on R124 and R117 as landed; no new premise beyond those two entries.
+### A1.2 The reproduction erratum (run_b6b.sh needs an absolute root; with a relative root the gen stage fails and the runner prints «done», exit 0)
+I did not run §10 (said in §0 and §3.8), so I neither met nor can confirm the erratum. Judgement on what it touches: it is a defect of
+the reproduction SCRIPT, of the kind CLAUDE.md warns about for pipes (a failure hidden behind exit 0); it touches no statement and
+no proof. The pinned DATA of §9.1-§9.5 does not rest on that script for this report: I reproduced those numbers with my own
+generator, model, builder and engines (§3). For the fixes entry I would ask for two things, not one: the absolute root in §10, AND
+a runner that exits non-zero when a stage fails; CHECKER's exact-commit re-run should include one deliberately failing stage.
+### A1.3 Handover
+The Lead (14:19Z): the items of §1 go to L-RED-B 6 as fixes entries; successor 42 does the fixes-file check, the agreement note with
+the first referee, and a comparison of the packet's proof with L-SI 56's independent proof (box 108); P-N5-KEY1P's full review is
+DEFERRED (not cancelled). The handover at the top of notes/REFEREE-2.md says so from this commit on.
+Correction to the header: the first referee on this object is REFEREE 36 (the Lead, 13:58Z); REFEREE 35 wrote the pre-check. Neither
+was read by me.
+DONE: Addendum 1 (exact count through R124; the reproduction erratum; handover).
+FINDINGS: the exact form (2^k + 1 iterations, one fallback at 2^k − 1) equals every measured count; add it as a separate sentence
+under R124 + R117; the erratum is a script defect only.
+NEEDS: Lead: none.

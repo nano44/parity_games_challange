@@ -5,13 +5,16 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 State at this commit (the commit that carries this handover; its SHA is in my message to the Lead and in `git log -1`):
 - DONE and on origin before it: 8bcf4357 (handover check), 2dd4e5e3 (R2-key-preread Addendum 3: box 217 pre-read, ID: 1P(G) = R104's
   IDEAL model), cd54dbfe (Addendum 4: upward ladders replayed), ef64889a (Addendum 5: box 107 pre-read).
-- IN this commit: **docs/referee-2/R2-P-N5-EXP.md — the SECOND REVIEW of the kill packet P-N5-EXP** (claude/l-red-b 350d84eb, sha1
+- IN commit 33ff0e98 (on origin when the next commit exists): **docs/referee-2/R2-P-N5-EXP.md — the SECOND REVIEW of the kill packet P-N5-EXP** (claude/l-red-b 350d84eb, sha1
   c0449b17…): no error; SIGN Theorem EXP-IDEAL (a)-(c) with its lemmas, items G-1 (proof gap of the RESPONSE LEMMA: used on unit j + 1
   before its (H2) is known; closed by the PREFIX form, §2.4), M-1 (§3's br clause is not injective on wires for k ≥ 4; gk.py breaks
   ties by β-id; harmless), W-1 («step t» = s_(t−1) → s_t), W-2 (the Dead-end wording is conditional on R117 as landed), D-1 (§9.7
   is the placeholder QUOTESUMMARY); SIGN Corollary EXP-N5 as PROVED-CONDITIONAL on R117 Theorem REACH3 (refereed-only). Own tools in
   docs/referee-2/R2-P-N5-EXP/ (r2exp.py, r2pg.py, r2qexp.py) and r2kill217.py (now with --oink zlk,tl). docs/referee/ NOT read on it.
-NEXT, in this order:
+NEXT, in this order (as the Lead ruled at 14:19Z: «Successor 42 will be created when its objects exist (the fixes entries on origin and
+REFEREE 36's first report): its work is the fixes-file check, the agreement note, and a comparison of the packet's proof with L-SI
+56's independent proof (box 108, a closed form of the state at every t) once both referees have reported. P-N5-KEY1P's full review
+is DEFERRED, not cancelled»; so item 2 below is DEFERRED until the Lead says otherwise, and the box-108 comparison comes before it):
 1. If the Lead sends L-RED-B's fixes file for P-N5-EXP: check G-1's restatement against §2.4's PREFIX form (hypothesis cut at τ_0: C
    up to τ_0, E up to τ_0 − 1; conclusion: the moves of steps t..τ_0), M-1's tie-break sentence, W-1, W-2, D-1; write «Addendum 1» in
    R2-P-N5-EXP.md. Only after that: read docs/referee/ on P-N5-EXP (REFEREE 35) for an agreement note (items, numbers, wording).
@@ -23,6 +26,10 @@ NEXT, in this order:
    B-7..B-12, E-1, E-2, N-7, D-1, W-1..W-5): start by checking which of them the frozen packet took. Engines: R2-key/r2unit217.py
    (40 must-0 counters; its controls are listed in its header), r2box107.py, r2kill217.py, r2qfile.py (quotes of a LOCAL file: `[Q src]` then the quote).
 3. Standby A: R128-R130 items from CHECKER, if any arrive.
+4. R2-P-N5-EXP.md Addendum 1 (in the commit after 33ff0e98): R124's Corollary EXACT-L gives EXACTLY 2^k + 1 iterations (one fallback
+   at 2^k − 1), equal to every measured count; I recommended a separate labelled sentence in the fixes file (premises R124 + R117).
+   The first referee on P-N5-EXP is REFEREE 36 (not 35). The author reported a reproduction erratum (run_b6b.sh needs an absolute
+   root; with a relative one it fails and still exits 0): not met by me (§10 not run); ask for a runner that fails loudly.
 Things only I know:
 - O-1: R2-P-N5-END/r2end.build numbers the β-vertices in GATE order; R104 (P-N5-REALIZE l. 86) says (x, k) order. Isomorphic (β
   priorities distinct, no vertex has two β successors), and r2pg.relabel gives R104's numbering (then my game = the lane's .pg files
