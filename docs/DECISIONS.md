@@ -533,3 +533,22 @@ Lead reading L57 (2026-11-13 08:44Z by date -u; on D21 and D23):
     (D21): deep design and proof work (L-NEW, L-SI, L-FORMAL, referees) on Fable 5.2 at high, others may stay on Opus 5.5 at high.
 (3) The reset is verified by measurement, not assumed: the first new Fable session's rate_limit_info is read with get_session; if Fable is
     still refused, successors stay on Opus and the owner is told. Overage stays the stop signal (L51).
+
+D24 (owner, relayed verbatim by OWNER-DESK, received 08:55Z on 2026-11-13 by date -u):
+«do xhigh»
+
+D25 (owner, direct message to the Lead, 2026-11-13, after the Lead's answer to «Did we achieve anything significant over the past few weeks?»):
+«So put everything into trying solving it today»
+Later the same morning (owner, direct message to the Lead): «I have switched you too to fable 5.2 high, maybe you can reason better»
+
+Lead reading L58 (2026-11-13 10:10Z by date -u; on D24 and D25; amends L57 (2)):
+(1) D24 supersedes L57 (2) on the effort level: every session created from now on, Fable 5.2 and Opus 5.5 alike, runs at effort «xhigh».
+    Running sessions keep their level until they park. The Fable reset is verified (the Lead session's get_session: five_hour «allowed»,
+    no overage). Overage stays the stop signal (L51).
+(2) D25 is read as: for today the whole fleet works on G-N5-TIME through the one question the night's work reduced it to, box 217's
+    ENUM-LOG on the one-player key model (QUIET-KEY-1P): is the enumeration depth k(G) of N5's key rule O(log N)? Either answer is taken:
+    a family with unbounded-rate k (min d(k) linear) is a kill of N5 and is reported as such; a proof of ENUM-LOG plus the bridge to SPEC is
+    a step toward a bound and is refereed as such. Landing duty (R130) and Lean statements continue; side items wait.
+(3) Nothing in D25 relaxes D1: no claim of a solution leaves the fleet, and a claimed bound is «wrong until it passes the gauntlet».
+    «Solving it today» is an instruction about effort, not a deadline that changes the standard of proof.
+(4) The Lead session runs on Fable 5.2 at effort high by the owner's own switch; the Lead's commit trailer follows the session.

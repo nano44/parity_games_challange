@@ -53,3 +53,6 @@
 | L56 | 2026-11-13 | Lead reading, correcting L55: the self-check skip applies only outside CI and only when every changed path is under docs/agents/; CI always runs the full suite; CHECKER's own VERIFY_FULL run covers eb22d350 | active | docs/DECISIONS.md#d21 |
 | D23 | 2026-11-13 | Owner (relayed by OWNER-DESK): Fable weekly limit reset; «continue on high effort»; ~160% of usage left until tomorrow night | active | docs/DECISIONS.md#d21 |
 | L57 | 2026-11-13 | Lead reading of D21 / D23: max effort continues; effort level «high»; Fable 5.2 available again for deep design / proof / referee successors, verified by the first Fable session's rate_limit_info; overage still the stop signal | active | docs/DECISIONS.md#d21 |
+| D24 | 2026-11-13 | Owner (relayed by OWNER-DESK): «do xhigh» | active | docs/DECISIONS.md#d21 |
+| D25 | 2026-11-13 | Owner (direct): «So put everything into trying solving it today»; Lead session switched to Fable 5.2 high by the owner | active | docs/DECISIONS.md#d21 |
+| L58 | 2026-11-13 | Lead reading of D24 / D25: new sessions at effort xhigh (amends L57); the whole fleet works on box 217 ENUM-LOG (QUIET-KEY-1P) today, either answer taken; D1's standard of proof unchanged | active | docs/DECISIONS.md#d21 |
