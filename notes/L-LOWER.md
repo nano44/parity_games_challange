@@ -25,6 +25,8 @@
   all-6 crash = known limit (q/inopt recursion needs acyclic cands; ro fix alone useless, reverted).
 - 03:11Z S_12, S_15 (R 64, cap 3,000): both no answer. RUNNING 03:12Z: S_14 (8,10,11,14) R 64 cap 6,000 (screen 3 of 4); push of 3a2b6d25+3e83685a.
   Plan: screen 4 = S_12 again at cap 6,000 after the push; attempt 3 at R 510 = a SAT screen's clients, else {8,10,11,12}.
+- 04:23Z S_12L (screen 4) SAT 3,358 s, f6 0/129; ccheck R 510 SAT 32 s → frozen L18b_N14c b7101f79 (P 14). S_14 stopped (pkill) 04:24Z.
+  diag row 15: 11 (stay), 15 (stay), 13 (flip). R 16 screen {11,15} SAT 84 s. RUNNING 04:26Z: N15a base N14c, XS 11,15, R 510, cap 6,000.
 
 ## Successor 15 HANDOVER (-> successor 16; written 2026-11-12 22:0xZ, date -u; context ~430k)
 ### DONE (claude/l-lower; products docs/lower/L17-around.md (closed §3), docs/lower/L18-horizon.md (open); tools l17/, l18/)
