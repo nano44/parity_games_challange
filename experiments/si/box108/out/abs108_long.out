@@ -1,0 +1,6 @@
+ABS108 G_12 N 92 L_abstract 4094 want 4094 closed_form_mismatches 0
+ABS108 G_13 N 101 L_abstract 8190 want 8190 closed_form_mismatches 0
+ABS108 G_14 N 110 L_abstract 16382 want 16382 closed_form_mismatches 0
+ABS108 G_15 N 119 L_abstract 32766 want 32766 closed_form_mismatches 0
+ABS108 G_16 N 128 L_abstract 65534 want 65534 closed_form_mismatches 0
+ABS108 G_17 N 137 L_abstract 131070 want 131070 closed_form_mismatches 0

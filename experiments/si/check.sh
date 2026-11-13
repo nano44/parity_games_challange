@@ -1315,3 +1315,5 @@ bash pwrap/checkW.sh
 bash box106/check106.sh
 # box 107 (timing structure of full key enumeration on 1P(G): ABANDON / ONE-AHEAD counters on five towers; small SAT answers; docs/si/box107-timing.md)
 bash box107/check107.sh
+# box 108 (Theorem GK: L(G_k) = 2^k - 2 on R104's IDEAL model by a closed form; latch tables vs the doc, R104 quotes, 19 controls, one217 replay; docs/si/box108-gk-proof.md)
+bash box108/check108.sh

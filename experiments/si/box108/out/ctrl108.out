@@ -1,0 +1,19 @@
+CONTROL H-off: fired on 3 of 3 k (k 4..6); L [14, 30, 62] (unmutated [14, 30, 62]); counters CLOSED
+CONTROL eps-wv: fired on 3 of 3 k (k 4..6); L [3, 3, 3] (unmutated [14, 30, 62]); counters CLOSED RUN STATIC SW
+CONTROL eps-wu: fired on 3 of 3 k (k 4..6); L [3, 3, 3] (unmutated [14, 30, 62]); counters CLOSED RUN STATIC SW
+CONTROL eps-uv: fired on 3 of 3 k (k 4..6); L [11, 23, 47] (unmutated [14, 30, 62]); counters CLOSED RUN STATIC SW
+CONTROL eps-v0: fired on 3 of 3 k (k 4..6); L [0, 0, 0] (unmutated [14, 30, 62]); counters RUN STATIC SW
+CONTROL dl-y: fired on 3 of 3 k (k 4..6); L [6, 12, 24] (unmutated [14, 30, 62]); counters CLOSED RUN SIG STATIC SW
+CONTROL dl-y2: fired on 3 of 3 k (k 4..6); L [9, 14, 26] (unmutated [14, 30, 62]); counters CLOSED RUN SIG STATIC SW
+CONTROL dl-yp: fired on 3 of 3 k (k 4..6); L [5, 11, 23] (unmutated [14, 30, 62]); counters CLOSED RUN SIG STATIC SW
+CONTROL dl-yp2: fired on 3 of 3 k (k 4..6); L [6, 6, 6] (unmutated [14, 30, 62]); counters RUN STATIC SW
+CONTROL dl-uv: fired on 3 of 3 k (k 4..6); L [2, 2, 2] (unmutated [14, 30, 62]); counters CLOSED RUN STATIC SW
+CONTROL dl-uvtop: fired on 3 of 3 k (k 4..6); L [14, 30, 62] (unmutated [14, 30, 62]); counters STATIC
+CONTROL dl-v0: fired on 3 of 3 k (k 4..6); L [3, 4, 5] (unmutated [14, 30, 62]); counters CLOSED RUN SIG STATIC SW
+CONTROL dl-u0: fired on 3 of 3 k (k 4..6); L [14, 30, 62] (unmutated [14, 30, 62]); counters RUN STATIC
+CONTROL dl-w: fired on 3 of 3 k (k 4..6); L [14, 30, 62] (unmutated [14, 30, 62]); counters RUN STATIC
+CONTROL dep-yb: fired on 3 of 3 k (k 4..6); L [13, 28, 58] (unmutated [14, 30, 62]); counters CLOSED RUN STATIC SW
+CONTROL start-yb: fired on 3 of 3 k (k 4..6); L [6, 12, 24] (unmutated [14, 30, 62]); counters CLOSED RUN SIG SW
+CONTROL start-ypb: fired on 3 of 3 k (k 4..6); L [5, 8, 19] (unmutated [14, 30, 62]); counters CLOSED RUN SIG SW
+CONTROL form-kmin-yp: fired on 3 of 3 k (k 4..6); L [14, 30, 62] (unmutated [14, 30, 62]); counters STATIC
+CONTROL form-Q: fired on 3 of 3 k (k 4..6); L [14, 30, 62] (unmutated [14, 30, 62]); counters STATIC

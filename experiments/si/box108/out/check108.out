@@ -1,0 +1,45 @@
+G_3 N 11 L 6 want 6 held_at_stop v1,v2 fails SHA=0 RUN=0 CLOSED=0 LATCH=0 STATIC=0 SIG=0 SW=0
+G_4 N 20 L 14 want 14 held_at_stop v1,v2,v3 fails SHA=0 RUN=0 CLOSED=0 LATCH=0 STATIC=0 SIG=0 SW=0
+G_5 N 29 L 30 want 30 held_at_stop v1,v2,v3,v4 fails SHA=0 RUN=0 CLOSED=0 LATCH=0 STATIC=0 SIG=0 SW=0
+G_6 N 38 L 62 want 62 held_at_stop v1,v2,v3,v4,v5 fails SHA=0 RUN=0 CLOSED=0 LATCH=0 STATIC=0 SIG=0 SW=0
+G_7 N 47 L 126 want 126 held_at_stop v1,v2,v3,v4,v5,v6 fails SHA=0 RUN=0 CLOSED=0 LATCH=0 STATIC=0 SIG=0 SW=0
+G_8 N 56 L 254 want 254 held_at_stop v1,v2,v3,v4,v5,v6,v7 fails SHA=0 RUN=0 CLOSED=0 LATCH=0 STATIC=0 SIG=0 SW=0
+G_9 N 65 L 510 want 510 held_at_stop v1,v2,v3,v4,v5,v6,v7,v8 fails SHA=0 RUN=0 CLOSED=0 LATCH=0 STATIC=0 SIG=0 SW=0
+G_10 N 74 L 1022 want 1022 held_at_stop v1,v2,v3,v4,v5,v6,v7,v8,v9 fails SHA=0 RUN=0 CLOSED=0 LATCH=0 STATIC=0 SIG=0 SW=0
+G_11 N 83 L 2046 want 2046 held_at_stop v1,v10,v2,v3,v4,v5,v6,v7,v8,v9 fails SHA=0 RUN=0 CLOSED=0 LATCH=0 STATIC=0 SIG=0 SW=0
+G_12 N 92 L 4094 want 4094 held_at_stop v1,v10,v11,v2,v3,v4,v5,v6,v7,v8,v9 fails SHA=0 RUN=0 CLOSED=0 LATCH=0 STATIC=0 SIG=0 SW=0
+DOC positions 23 doc-positions 23 fails DOC=0
+TABLE classes 32 multi-row 0 missing 0 unexpected 0
+bot A0->A1         | old Q=yb Xb=0 | new Xb=1 E=0 Xi=1 | u:0 p0 - | v:0 p1 k1 ->1 | y:0 p0 - | yb:1 p1 -
+bot A1->A2         | old Q=yb Xb=1 | new Xb=1 E=0 Xi=1 | u:0 p0 - | v:1 p1 - | y:0 p1 k0 hold | yb:1 p0 k0 ->0
+bot A2 stay        | old Q=yb Xb=1 | new Xb=1 E=0 Xi=1 | u:0 p0 - | v:1 p1 - | y:0 p1 k0 hold | yb:0 p0 -
+bot A2->A3         | old Q=yb Xb=1 | new Xb=1 E=1 Xi=1 | u:0 p0 - | v:1 p1 - | y:0 p1 k1 ->1 | yb:0 p0 -
+bot A3->A4         | old Q=y Xb=1 | new Xb=1 E=1 Xi=0 | u:0 p1 k1 ->1 | v:1 p0 k1 hold | y:1 p1 - | yb:0 p0 -
+bot A4 stay (E=1)  | old Q=y Xb=1 | new Xb=1 E=1 Xi=0 | u:1 p1 - | v:1 p0 k1 hold | y:1 p1 - | yb:0 p0 -
+bot A4 stay (E=0)  | old Q=y Xb=1 | new Xb=1 E=0 Xi=0 | u:1 p1 - | v:1 p0 k1 hold | y:1 p1 - | yb:0 p0 -
+bot A4 stay (stop) | old Q=y Xb=1 | new Xb=1 E=0 Xi=0 | u:1 p1 - | v:1 p0 k1 hold | y:1 p1 - | yb:0 p0 -
+mid S0->S1         | old Q=yb R=ypb Xb=0 | new Xb=1 E=0 Xi=1 | u:0 p0 - | v:0 p1 k1 ->1 | y:0 p0 - | yb:1 p1 - | yp:0 p0 - | ypb:1 p1 - | e:0 p0 -
+mid S1->S2         | old Q=yb R=ypb Xb=1 | new Xb=1 E=0 Xi=1 | u:0 p0 - | v:1 p1 - | y:0 p1 k0 hold | yb:1 p0 k0 ->0 | yp:0 p0 - | ypb:1 p1 - | e:0 p0 -
+mid S2 stay        | old Q=yb R=ypb Xb=1 | new Xb=1 E=0 Xi=1 | u:0 p0 - | v:1 p1 - | y:0 p1 k0 hold | yb:0 p0 - | yp:0 p0 - | ypb:1 p1 - | e:0 p0 -
+mid S2->S3         | old Q=yb R=ypb Xb=1 | new Xb=1 E=1 Xi=1 | u:0 p0 - | v:1 p1 - | y:0 p1 k1 ->1 | yb:0 p0 - | yp:0 p0 - | ypb:1 p1 - | e:0 p0 -
+mid S3->S4         | old Q=y R=ypb Xb=1 | new Xb=1 E=1 Xi=0 | u:0 p1 k1 ->1 | v:1 p0 k1 hold | y:1 p1 - | yb:0 p0 - | yp:0 p1 k0 hold | ypb:1 p0 k0 ->0 | e:0 p0 -
+mid S4 stay        | old Q=y R=ypb Xb=1 | new Xb=1 E=1 Xi=0 | u:1 p1 - | v:1 p0 k1 hold | y:1 p1 - | yb:0 p0 - | yp:0 p1 k0 hold | ypb:0 p0 - | e:0 p0 -
+mid S4->S5         | old Q=y R=ypb Xb=1 | new Xb=1 E=0 Xi=0 | u:1 p1 - | v:1 p0 k1 hold | y:1 p1 - | yb:0 p0 - | yp:0 p1 k1 ->1 | ypb:0 p0 - | e:0 p0 -
+mid S5->S6         | old Q=y R=yp Xb=1 | new Xb=1 E=0 Xi=0 | u:1 p1 - | v:1 p0 k1 hold | y:1 p1 - | yb:0 p0 - | yp:1 p1 - | ypb:0 p0 - | e:0 p1 k1 ->1
+mid S6->S7         | old Q=y R=yp Xb=1 | new Xb=0 E=0 Xi=1 | u:1 p1 - | v:1 p0 k0 ->0 | y:1 p1 - | yb:0 p0 - | yp:1 p1 - | ypb:0 p0 - | e:1 p1 -
+mid S7->S8         | old Q=y R=yp Xb=0 | new Xb=0 E=0 Xi=1 | u:1 p1 - | v:0 p0 - | y:1 p0 k0 ->0 | yb:0 p1 k0 hold | yp:1 p1 - | ypb:0 p0 - | e:1 p1 -
+mid S8 stay        | old Q=y R=yp Xb=0 | new Xb=0 E=0 Xi=1 | u:1 p1 - | v:0 p0 - | y:0 p0 - | yb:0 p1 k0 hold | yp:1 p1 - | ypb:0 p0 - | e:1 p1 -
+mid S8->S9         | old Q=y R=yp Xb=0 | new Xb=0 E=1 Xi=1 | u:1 p1 - | v:0 p0 - | y:0 p0 - | yb:0 p1 k1 ->1 | yp:1 p1 - | ypb:0 p0 - | e:1 p1 -
+mid S9->S10        | old Q=yb R=yp Xb=0 | new Xb=0 E=1 Xi=0 | u:1 p0 k0 ->0 | v:0 p1 k0 hold | y:0 p0 - | yb:1 p1 - | yp:1 p0 k0 ->0 | ypb:0 p1 k0 hold | e:1 p1 -
+mid S10 stay       | old Q=yb R=yp Xb=0 | new Xb=0 E=1 Xi=0 | u:0 p0 - | v:0 p1 k0 hold | y:0 p0 - | yb:1 p1 - | yp:0 p0 - | ypb:0 p1 k0 hold | e:1 p1 -
+mid S10->S11       | old Q=yb R=yp Xb=0 | new Xb=0 E=0 Xi=0 | u:0 p0 - | v:0 p1 k0 hold | y:0 p0 - | yb:1 p1 - | yp:0 p0 - | ypb:0 p1 k1 ->1 | e:1 p1 -
+mid S11->S0        | old Q=yb R=ypb Xb=0 | new Xb=0 E=0 Xi=0 | u:0 p0 - | v:0 p1 k0 hold | y:0 p0 - | yb:1 p1 - | yp:0 p0 - | ypb:1 p1 - | e:1 p0 k0 ->0
+mid S0 idle        | old Q=yb R=ypb Xb=0 | new Xb=0 E=0 Xi=0 | u:0 p0 - | v:0 p1 k0 hold | y:0 p0 - | yb:1 p1 - | yp:0 p0 - | ypb:1 p1 - | e:0 p0 -
+top T0->T1         | old Q=yb Xb=0 | new Xb=1 Xi=1 | u:0 p0 - | v:0 p1 k1 ->1 | y:0 p0 - | yb:1 p1 -
+top T1->T2         | old Q=yb Xb=1 | new Xb=1 Xi=1 | u:0 p0 - | v:1 p1 - | y:0 p1 k1 ->1 | yb:1 p0 k1 hold
+top T2->T3         | old Q=y Xb=1 | new Xb=1 Xi=0 | u:0 p1 k1 ->1 | v:1 p0 k1 hold | y:1 p1 - | yb:1 p0 k0 ->0
+top T3->T4         | old Q=y Xb=1 | new Xb=0 Xi=1 | u:1 p1 - | v:1 p0 k0 ->0 | y:1 p1 - | yb:0 p0 -
+top T4->T5         | old Q=y Xb=0 | new Xb=0 Xi=1 | u:1 p1 - | v:0 p0 - | y:1 p0 k1 hold | yb:0 p1 k1 ->1
+top T5->T0         | old Q=yb Xb=0 | new Xb=0 Xi=0 | u:1 p0 k0 ->0 | v:0 p1 k0 hold | y:1 p0 k0 ->0 | yb:1 p1 -
+top T0 idle        | old Q=yb Xb=0 | new Xb=0 Xi=0 | u:0 p0 - | v:0 p1 k0 hold | y:0 p0 - | yb:1 p1 -
+CHECK108 PASS k 3..12 rand 200
