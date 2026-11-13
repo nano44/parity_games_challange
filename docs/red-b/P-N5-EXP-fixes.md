@@ -879,3 +879,269 @@ by b6size.py on the file, with its control (m tested against 176k − 299), data
 G_13_g3.pg ctrl 0 k 13 n 1525 m 1988 sizediff 0
 G_13_g3.pg ctrl 1 k 13 n 1525 m 1988 sizediff 1
 ```
+
+## Entry 7 (L-RED-B successor 7, session_01V5yGRVmUNMkUXGRuVH63B8; 2026-11-13, written 19:09Z by date -u): REFEREE-2 42's items F-1 to F-5 (its Addendum 2: the fixes-file check of entries 1-5 and the L41 cross-signature) and REFEREE 36's stage 4 — two readings of entry 4, one of entry 5, the runner run_b6fix.sh repaired, one label, line L-2; no statement, proof, hypothesis or number changes
+Conventions as in «Entries 2-5: conventions» above. New labels: REF2B = REFEREE-2 42's Addendum 2 (the fixes-file check of
+entries 1-5 at 24f4d436 and the L41 cross-signature), claude/referee-2 f17a2708de653b306eaedf878f6120d2d0b31e06,
+docs/referee-2/R2-P-N5-EXP.md (sha1 7128d83e76c675609af3f74c73cb0015c9de2ef3, 549 lines; Addendum 2 is its l. 321-549); REF1D =
+REFEREE 36's report with its stage 4, claude/referee 78515253a74a353a829b435d53f4987a8552989a, docs/referee/R-P-N5-EXP.md (sha1
+0ec7d605ffd23b31114cdc328d792261a108ced9, 542 lines; stage 4 is its §12, l. 498-542, commits 577e8df9 and 4cf6e1ff; its first 496
+lines are the file at 7ca9c2b4 byte for byte); FIX5 = this file as both referees read it, claude/l-red-b
+24f4d436a0fea1f62ae736f20f78ff9e84333a90 (entries 1-5: 829 lines, sha1 9dc9179fb08063cd59de25c5d3e16b0f8c693fbd), so a line number
+after FIX5 is a line of the signed text. Where a referee's sentence itself carries a tag and a quotation, the quote here is cut
+into the pieces before and after it. Quote check of the whole file: b6fixquote.py → data/b6b/out/quote_fixes7.out (the 80 quotes
+of entries 1-5 and the 24 of this entry: «quotes 104 found 104 notfound 0»; control, every quote spoiled by one letter, quote_fixes7_ctrl.out:
+«quotes 104 found 0 notfound 104»). The frozen packet is not edited (sha1 c0449b17193f19619f33b366096762dfde27d542) and entries 1-6 are byte for byte
+what they were (7.6). REFEREE-2's Addendum 3 (claude/referee-2 e643672d, an agreement note of the two reviews) was read and has
+no item for this lane beyond F-1 to F-5.
+
+The verdicts this entry answers.
+
+[Q REF2B l. 344-346] «**P-N5-EXP: SIGNED with fixes entries 1-5.** The signature is §0's, with one correction (§A2.1): the statement
+of the RESPONSE LEMMA that I sign is entry 4's 4.4 (LEMMA′), not the frozen l. 192-204; STABLE is signed in 4.2's step form. Every
+other row of §0 stands as written. Items F-1 to F-5 are wording and tooling; none of them is a condition of the signature except
+the reading F-1.»
+
+[Q REF1D l. 522-524] «**Verdict on entry 4: it closes E-1, E-2, E-4, E-5. RESPONSE LEMMA SIGNED as restated in fixes entry 4 (=
+LEMMA′ of §5.3 with CAUSAL and STABLE in step form).** Under L41 the lemma is referee-originated in statement, so it also needs
+REFEREE-2's independent signature.»
+
+[Q REF1D l. 537-538] «entry 3's **Corollary EXP-N5′, the STATEMENT, is SIGNED AS PROVED-CONDITIONAL on RESULTS R124 and R117 as
+landed**»
+
+Stage 4 raises no new item: it closes E-1, E-2, E-4, E-5 by entry 4, notes P-1, E-7, O-1, E-3 and E-6 as taken up by entries
+2, 3 and 5, which it read in part (the word-by-word reading is its successor's stage 5), and leaves entry 3's proof text unread.
+Nothing to change.
+The second signature that L41 asks for is REFEREE-2's (Lead reading L41: a referee-originated proof needs its author's signature
+and the other referee's independent one):
+
+[Q REF2B l. 463-465] «Signature (L41: the statements 4.3 and 4.4 are referee-originated, REFEREE 36's; this is the independent
+second signature): **REFEREE-2 signs 4.1 (S1)-(S4), 4.2 STABLE, 4.3 CAUSAL, 4.4 LEMMA′ with their proofs (4.2, 4.3, 4.5) and 4.6,
+as printed in docs/red-b/P-N5-EXP-fixes.md at claude/l-red-b 24f4d436 (sha1 9dc9179f…), (R3)'s range read as t − 1 ≤ τ < last
+(F-1).**»
+
+**7.1 Clause (R3) of LEMMA′ with its range (F-1; a READING of entry 4.4, the one condition of the second signature).**
+[Q REF2B l. 442-444] «**F-1 (reading; inherited from the frozen l. 203).** (R3) says» «with no lower end. Read: for t − 1 ≤ τ <
+last. Without the lower end it is false (before the first response of unit j ≥ 2 ends, E(j) is at 0, which is not a when a = 1).
+The proof uses and proves the window reading (4.5 (3): σ before t_1, resp. t_2). I sign with it.»
+
+The words in question stand in entry 4.4, inside REFEREE 36's LEMMA′ as adopted, and come from the frozen statement:
+
+[Q FIX5 l. 384-385] «For T = last this includes: s_τ(E(j)) = a for τ < last and E(j) moves to c at step last (j ≥ 2), and
+REST_j(c), REST_i(0) for i > j under s_last.»
+
+[Q FROZEN l. 203-204] «for j ≥ 2, s_τ(E(j)) = a for τ < t + P_j − 1 and E(j) moves to c at step t + P_j − 1»
+
+Accepted. Neither wording names the lower end of the range. Clause (R3) of 4.4 is to be READ, there and wherever it is cited:
+
+> (R3) For T = last: if j ≥ 2, then s_τ(E(j)) = a for every τ with t − 1 ≤ τ < last, and E(j) moves to c at step last; and (for
+> every j) REST_j(c) and REST_i(0) for every i > j hold under s_last.
+
+This is the clause the proof proves and uses; no step of 4.5 changes.
+- Proved: (H1) puts E(j) at a under s_(t−1) (REST_j(a) has e_j at a for 2 ≤ j ≤ k − 2, and u_(k−1) = E(k − 1) at a for j = k − 1),
+  and by (R1) at T = last the list moves E(j) exactly once in the window, at its last step (case (i): u_j to c at step t + 2 =
+  last; case (ii): e_j to c at step t_2 + 1 = last). So s_τ(E(j)) = a exactly for t − 1 ≤ τ ≤ last − 1, and s_last(E(j)) = c.
+- Used: only by the proof for unit j − 1, which reads the end-follower of the unit above inside that unit's own window, i.e. at
+  states s_τ with t − 1 ≤ τ ≤ last (4.5 (3)-(4): D and Z of unit j − 1 under (s_(T−1))⁺). The frozen proof's words for these two
+  uses are [Q FROZEN l. 229] «with s(E(j + 1)) = 0 before step t_1» and [Q FROZEN l. 248-249] «with s(E(j + 1)) = 1 before step
+  t_2»
+- Without a lower end the clause is false at every window of a unit j ≥ 2 except that unit's first: the responses of one unit
+  alternate between a = 0 and a = 1, and until the previous response of unit j ended, E(j) stood at the present c.
+
+DATA, a direct test of the clause as restated (experiments/red-b/b6e7.py r3 → data/b6b/out/e7_r3.out; no archive needed). Unit: a
+response window (j, t, a) of the recursion on the run of G_k, resp. a (window, τ) pair; set: k = 3..14, 16,368 windows, 16,356 of
+them with j ≥ 2 (windows2). Must 0: r3in = (window with j ≥ 2, τ) with t − 1 ≤ τ < last and s_τ(E(j)) ≠ a; r3move = windows with
+j ≥ 2 where E(j) does not move from a to c exactly at step last; r3rest = windows (every j) where REST_j(c) or a REST_i(0), i > j,
+fails under s_last; litdiff = [literal ≠ 2^(k−1) − k]. The firing control is the wording without a lower end: literal = windows
+with j ≥ 2 where s_τ(E(j)) ≠ a for some τ < t − 1; it is 2^(k−1) − k on every line (every window of a unit j ≥ 2 but its first),
+16,278 of the 16,356 in all.
+```
+G_3 mode r3 ctrl 0 T 6 windows 3 windows2 2 r3in 0 r3move 0 r3rest 0 literal 1 expected 1 litdiff 0
+G_4 mode r3 ctrl 0 T 14 windows 7 windows2 6 r3in 0 r3move 0 r3rest 0 literal 4 expected 4 litdiff 0
+G_5 mode r3 ctrl 0 T 30 windows 15 windows2 14 r3in 0 r3move 0 r3rest 0 literal 11 expected 11 litdiff 0
+G_6 mode r3 ctrl 0 T 62 windows 31 windows2 30 r3in 0 r3move 0 r3rest 0 literal 26 expected 26 litdiff 0
+G_7 mode r3 ctrl 0 T 126 windows 63 windows2 62 r3in 0 r3move 0 r3rest 0 literal 57 expected 57 litdiff 0
+G_8 mode r3 ctrl 0 T 254 windows 127 windows2 126 r3in 0 r3move 0 r3rest 0 literal 120 expected 120 litdiff 0
+G_9 mode r3 ctrl 0 T 510 windows 255 windows2 254 r3in 0 r3move 0 r3rest 0 literal 247 expected 247 litdiff 0
+G_10 mode r3 ctrl 0 T 1022 windows 511 windows2 510 r3in 0 r3move 0 r3rest 0 literal 502 expected 502 litdiff 0
+G_11 mode r3 ctrl 0 T 2046 windows 1023 windows2 1022 r3in 0 r3move 0 r3rest 0 literal 1013 expected 1013 litdiff 0
+G_12 mode r3 ctrl 0 T 4094 windows 2047 windows2 2046 r3in 0 r3move 0 r3rest 0 literal 2036 expected 2036 litdiff 0
+G_13 mode r3 ctrl 0 T 8190 windows 4095 windows2 4094 r3in 0 r3move 0 r3rest 0 literal 4083 expected 4083 litdiff 0
+G_14 mode r3 ctrl 0 T 16382 windows 8191 windows2 8190 r3in 0 r3move 0 r3rest 0 literal 8178 expected 8178 litdiff 0
+```
+Second control (B6E7_CTRL=1: the range one step too long, t − 1 ≤ τ ≤ last; r3in fires once per window with j ≥ 2):
+```
+G_5 mode r3 ctrl 1 T 30 windows 15 windows2 14 r3in 14 r3move 0 r3rest 0 literal 11 expected 11 litdiff 0
+G_6 mode r3 ctrl 1 T 62 windows 31 windows2 30 r3in 30 r3move 0 r3rest 0 literal 26 expected 26 litdiff 0
+```
+REFEREE-2's own counter for the same reading (its DATA, cited, not re-run): r3_u1, 0 of 4,082 windows for k = 3..12 (REF2B l. 483).
+
+**7.2 Which frozen lines of §6's statement stay in force (F-2; wording of 4.0).**
+[Q REF2B l. 445-447] «**F-2 (wording).** 4.0 says the frozen statement l. 192-204 is REPLACED by 4.4, and 4.4 then refers to»
+«which are frozen l. 195 and l. 197-202 (and P_j, l. 191). So those lines stay as definitions; what is replaced is the frame (H2)
+and the conclusion's first and last sentences.»
+
+The sentence of 4.0: [Q FIX5 l. 314-315] «The frozen STATEMENT of the RESPONSE LEMMA (l. 192-204) is REPLACED by 4.4 and the
+frozen statement of STABLE (l. 258) by 4.2»
+
+Accepted: that sentence is too coarse. READ it as the following table of the frozen lines 191-204 of docs/red-b/P-N5-EXP.md:
+
+| frozen line | what it holds | after entry 4 |
+| --- | --- | --- |
+| 191 | P_(k−1) := 3, P_j := 2·P_(j+1) + 1, so P_j = 2^(k+1−j) − 1 | IN FORCE (a definition; LEMMA′'s «last» is written with it) |
+| 192 | the head of the lemma: j, a, c := 1 − a, t ≥ 1 | REPLACED by the first sentence of LEMMA′ (the same j, a, c, t; it adds last and T) |
+| 193 | (H1) | IN FORCE, unchanged (4.4 says so) |
+| 194 | (H2) | REPLACED by (H2′_T) |
+| 195, its first sentence | the names F, B (the observers of Y_j) and F′, B′ (of Y′_j) | IN FORCE (a definition: these are «the lemma's F, B, F′, B′» of LEMMA′) |
+| 195 from «Then the run reaches», and 196 | the first sentence of the conclusion | REPLACED by the conclusion of LEMMA′: (R1), (R2) |
+| 197 | the list (i) | IN FORCE (a definition: «the packet's list (i)»); claimed for the steps t, …, T only |
+| 198-202 | the list (ii), with the definitions of t_1 and t_2, its sentence for j = 1 and its sentence that no mover of unit j moves at any other step | IN FORCE (a definition: «the packet's list (ii)», t_1, t_2); claimed for the steps t, …, T only |
+| 203-204 | the last sentence of the conclusion («In both cases: …») | REPLACED by (R2) and by (R3) as read in 7.1 |
+
+The first sentence of l. 195 is [Q FROZEN l. 195] «Let F be the observer of Y_j that is on forward under s_(t−1) and B the other
+one; F′, B′ the same for Y′_j.»
+
+In l. 198 and l. 200 the two parentheses about unit j + 1 («from REST_(j+1)(0), to the input (1, 1)» and «from REST_(j+1)(1), to
+the input (0, 0)») are descriptions in the frozen one-state vocabulary, not moves of the list; in the words of 4.1 (S3) they are
+the (H1) and the (H2′_T) of the two inner windows, which 4.5 proves. The frozen statement of STABLE (l. 258) is replaced by 4.2
+as 4.0 says; nothing of it stays as a definition.
+
+**7.3 The parenthesis of 5.1 (F-3; wording).**
+[Q REF2B l. 384-385] «**F-3 (wording).** The reason given,» «omits y′_j and ȳ′_j, the Ξ-targets of e_j. The claim it supports,
+that no Ξ-edge ends at a wire, is true by the table.»
+
+The sentence of 5.1: [Q FIX5 l. 670] «No Ξ-edge ends at a wire (table: every Ξ-target is a u, v, y, ȳ or X)»
+
+Accepted. READ the parenthesis as: (table: every Ξ-target is a u, v, y, ȳ, y′, ȳ′ or X). The row that was left out is that of the
+end-followers, [Q FROZEN l. 87] «| e_j | j | 2 ≤ j ≤ k − 2 | u_(j−1) / v_(j−1) | ȳ′_j / y′_j |»
+
+The sentence itself (no Ξ-edge ends at a wire) and what 5.1 draws from it (the β of a wire option lies in one X-chain only, so
+the tie-break of the wire ranks is harmless) stand as written. DATA (b6e7.py xt → data/b6b/out/e7_xt.out). Unit: an option of G_k;
+set: k = 3..14. kinds = the kinds of movers that are the Ξ-target of some option (yb, yp, ypb are the tool's names for ȳ, y′, ȳ′);
+must 0: wiretgt = options whose Ξ-target is a wire, etgt = options whose Ξ-target is an end-follower e_j, ypdiff = [yptgt ≠
+2(k − 3)], yptgt = options whose Ξ-target is a y′_j or ȳ′_j (the two options of each e_j).
+```
+G_3 mode xt ctrl 0 N 11 kinds u v y yb wiretgt 0 etgt 0 yptgt 0 expected 0 ypdiff 0
+G_4 mode xt ctrl 0 N 20 kinds u v y yb yp ypb wiretgt 0 etgt 0 yptgt 2 expected 2 ypdiff 0
+G_5 mode xt ctrl 0 N 29 kinds u v y yb yp ypb wiretgt 0 etgt 0 yptgt 4 expected 4 ypdiff 0
+G_6 mode xt ctrl 0 N 38 kinds u v y yb yp ypb wiretgt 0 etgt 0 yptgt 6 expected 6 ypdiff 0
+G_7 mode xt ctrl 0 N 47 kinds u v y yb yp ypb wiretgt 0 etgt 0 yptgt 8 expected 8 ypdiff 0
+G_8 mode xt ctrl 0 N 56 kinds u v y yb yp ypb wiretgt 0 etgt 0 yptgt 10 expected 10 ypdiff 0
+G_9 mode xt ctrl 0 N 65 kinds u v y yb yp ypb wiretgt 0 etgt 0 yptgt 12 expected 12 ypdiff 0
+G_10 mode xt ctrl 0 N 74 kinds u v y yb yp ypb wiretgt 0 etgt 0 yptgt 14 expected 14 ypdiff 0
+G_11 mode xt ctrl 0 N 83 kinds u v y yb yp ypb wiretgt 0 etgt 0 yptgt 16 expected 16 ypdiff 0
+G_12 mode xt ctrl 0 N 92 kinds u v y yb yp ypb wiretgt 0 etgt 0 yptgt 18 expected 18 ypdiff 0
+G_13 mode xt ctrl 0 N 101 kinds u v y yb yp ypb wiretgt 0 etgt 0 yptgt 20 expected 20 ypdiff 0
+G_14 mode xt ctrl 0 N 110 kinds u v y yb yp ypb wiretgt 0 etgt 0 yptgt 22 expected 22 ypdiff 0
+```
+Control (B6E7_CTRL=2: outside = options whose Ξ-target is a mover outside the list of 5.1's parenthesis as it was written; it
+fires for every k ≥ 4, and k = 3 has no e_j):
+```
+G_3 mode xt ctrl 2 N 11 kinds u v y yb wiretgt 0 etgt 0 yptgt 0 expected 0 ypdiff 0 outside 0
+G_4 mode xt ctrl 2 N 20 kinds u v y yb yp ypb wiretgt 0 etgt 0 yptgt 2 expected 2 ypdiff 0 outside 2
+G_5 mode xt ctrl 2 N 29 kinds u v y yb yp ypb wiretgt 0 etgt 0 yptgt 4 expected 4 ypdiff 0 outside 4
+G_6 mode xt ctrl 2 N 38 kinds u v y yb yp ypb wiretgt 0 etgt 0 yptgt 6 expected 6 ypdiff 0 outside 6
+```
+
+**7.4 The runner run_b6fix.sh (F-4; tooling; no DATA changes).**
+[Q REF2B l. 395-402] «**F-4 (tooling; the same defect in the NEW runner).** experiments/red-b/run_b6fix.sh, added by 24f4d436 as
+the runner of 4.7, 5.1 and 5.4's DATA, has no failure count: with the same failing python3 it prints «run_b6fix exh done», exits 0
+and leaves an EMPTY prefix_exh.out (T4). run_b6b.sh got `trap 'fail=1' ERR` and `exit $fail` in entry 1; the new runner did not.»
+«Ask: the two lines of run_b6b.sh in run_b6fix.sh; CHECKER should compare the files, not trust the runner's exit code.»
+
+Accepted and reproduced (control C1 below). The repair in this commit does more than the two lines, because the two lines alone
+were tested first and are not enough here:
+- With only the two lines added to the runner of 24f4d436, a stage whose commands all fail exits 1 but still leaves the empty
+  output file (control C2); and in the stage ctrl, whose ten commands run in one subshell, a failing command that is not the last
+  one is not seen at all: exit 0, «failures 0», and a prefix_ctrl.out of 14 lines instead of 15 (control C3).
+- The runner now tests each command where it runs. A command's output goes to a temporary file and reaches the output file only
+  if the command exits 0, so a failure leaves no empty or partial file; the ctrl stage replaces prefix_ctrl.out only if all ten
+  control commands exit 0; every failure is counted, the last line ends «failures N», and the runner exits 1 if N > 0; an unknown
+  stage exits 2. The two lines of run_b6b.sh are there as well, as a backstop for every other command. The stage commands, their
+  arguments and their order are those of 24f4d436.
+
+Tests (experiments/red-b/b6fixtest.sh WORKDIR → data/b6b/out/runfix.out; N1-N7 the runner as it is now, each with its expected
+values in the script's header; C1-C3 the controls, on the runner of 24f4d436 read with `git show`; E the full run). Every N line
+ends «ok 1», every control «fires 1», and the last line is «b6fixtest failed 0»:
+```
+N1 stage width all-fail: exit failures files = 1 12 0 ok 1
+N2 stage exh failing-python3-on-PATH: exit failures files = 1 2 0 ok 1
+N3 stage ctrl all-fail: exit failures files = 1 10 0 ok 1
+N4 stage ctrl one-middle-control-fails: exit failures files = 1 1 0 ok 1
+N5 unknown stage: exit files = 2 0 ok 1
+N6 stage width fail, run, run again: exit; exit cmp; exit cmp = 1 0 0 0 0 ok 1
+N7 stage width k=5-fails, then run: exit failures lines G_5-lines; exit lines same-lines-as-pin = 1 1 11 0 0 12 0 ok 1
+C1 runner of 24f4d436, stage exh failing-python3-on-PATH: exit files bytes = 0 1 0 fires 1
+C2 that runner + the two lines only, stage exh failing-python3-on-PATH: lines-added exit files bytes = 2 1 1 0 fires 1
+C3 the two-line variant, stage ctrl one-middle-control-fails: exit failures lines pinned-lines differs = 0 0 14 15 1 fires 1
+E run_b6fix.sh every: exit failures files = 0 0 11 ok 1
+E prefix_run.out sha1 23a7ccc2f6db4e2e5e3a5dff9f6e16f3ef0b08b0 cmp-with-data 0 sha1-equals-pin 1
+E prefix_all.out sha1 effd99c4e29ea98feab55e23c826cb4acc23da1a cmp-with-data 0 sha1-equals-pin 1
+E prefix_off.out sha1 a8627151bd6de3be4d558b217fd9e95b2e96afdf cmp-with-data 0 sha1-equals-pin 1
+E prefix_drive.out sha1 b1b88237aef2a3a305da5bc202bfd3768ec02e21 cmp-with-data 0 sha1-equals-pin 1
+E prefix_loc.out sha1 cd8195db9e0aaa65b9dae51eabd155146992d98d cmp-with-data 0 sha1-equals-pin 1
+E prefix_stable.out sha1 f6726881228602576942b3c0bb946e22b3657446 cmp-with-data 0 sha1-equals-pin 1
+E prefix_exh.out sha1 70d47b4dfb85776a4c95fa8bd947ef8567a0dc5c cmp-with-data 0 sha1-equals-pin 1
+E prefix_u0.out sha1 e1273bd394564c98c3447ae012f965094349f7fb cmp-with-data 0 sha1-equals-pin 1
+E brtie.out sha1 1bc769568775b902231df2d782929c42569c07f0 cmp-with-data 0 sha1-equals-pin 1
+E width.out sha1 414d23efc7511243fabfa12acadb1a2362bfec76 cmp-with-data 0 sha1-equals-pin 1
+E prefix_ctrl.out sha1 4b0bb7cc214098e3041c062ea05b467b771a6a5d cmp-with-data 0 sha1-equals-pin 1
+b6fixtest failed 0
+```
+No DATA changes: the lines E are a full run of the repaired runner (`run_b6fix.sh WORKDIR/every every`, exit 0) whose eleven
+output files are byte-equal to the pinned files of entries 4-5 (cmp-with-data 0) and have the sha1s of data/b6b/SHA1SUMS_b6b_fixes2
+(sha1-equals-pin 1). The pinned files and that pin file are not touched by this commit. As the referee asks, the comparison of
+record is of the files, not of an exit code. check.sh now runs one stage of the runner with a failing interpreter (exit 1 and no
+file left expected) and once normally (width.out byte-equal to its pinned file expected).
+
+**7.5 The two sentences of entry 2 (a′) (F-5; a remark, no change asked).**
+[Q REF2B l. 368-371] «**F-5 (label inside (a′); no change asked).** (a′) has two sentences of different standing. That
+IDEAL-ACYC-POLY is false follows from Theorem EXP-IDEAL (b) alone (L(G_k) = 2^k − 2 against N + M = 27k − 48): unconditional. That
+QUIET-KEY-1P and SW-POLY of P-N5-KEY1P are false needs that lane packet's Lemma IDEAL-1P to identify T_key and sw with the IDEAL
+model's quantities; the entry says so»
+
+[Q REF2B l. 373-374] «A RESULTS line may carry the first sentence as unconditional and not the second; line L-1 does exactly that.»
+
+Recorded, with the labels made explicit. Entry 2 (a′) holds two statements:
+- (i) R104's IDEAL-ACYC-POLY is false: UNCONDITIONAL (Theorem EXP-IDEAL (b); R104's definitions only).
+- (ii) QUIET-KEY-1P and SW-POLY of L-NEW's packet P-N5-KEY1P are false: CONDITIONAL on that packet's Lemma IDEAL-1P, which
+  identifies its T_key and sw with the IDEAL model's L(G) and option changes. That lemma is L-NEW's; it is not proved, used or
+  refereed in this packet, and its second review is deferred by REFEREE-2's own account. The words of entry 2 that carry the
+  condition are [Q FIX5 l. 187-188] «when T_key and sw are read in R104's IDEAL model, as that packet's Lemma IDEAL-1P reads them»
+
+The lines L-1 and L-2 carry (i) only; neither names QUIET-KEY-1P, SW-POLY or P-N5-KEY1P.
+
+**7.6 Guards, line L-2, pins (records).**
+- FROZEN and APPEND-ONLY guards, now in check.sh (experiments/red-b/b6guard.py; files only, no git): the packet has the sha1 of
+  its freeze commit; the fixes file still begins, byte for byte, with its text at each landed stage (entry 1 at 06d399c2: 125
+  lines; entries 1-5 at 24f4d436: 829 lines, sha1 9dc9179f…; entries 1-6 at 0c8fdf9e: 881 lines, sha1 43a941eb…; entries 1-7 at
+  this entry's commit); line L-1 has its sha1. Its line now is «guard frozen 0 prefix 0 of 4 l1 0»; its control (one letter of
+  entry 1 changed in memory) gives «guard frozen 0 prefix 4 of 4 l1 0». Both referees checked the same two properties on 24f4d436
+  by their own commands (REF2B l. 342; REF1D l. 504-505).
+- LINE L-2: docs/red-b/P-N5-EXP-line-L2.txt, built from line L-1 by experiments/red-b/b6line.py (five named replacements, each old
+  text occurring exactly once in L-1; undoing them gives L-1 back byte for byte; L-1 is not edited). Items: REFEREE-2's line notes
+
+  [Q REF2B l. 522-527] «(L-a) the gloss «per unit j a block pair u_j, v_j, an end-follower e_j, two wires wv_j, wu_j and two observer
+  pairs Y_j, Y′_j» describes the middle units 2 ≤ j ≤ k − 2 only (unit 1 has no e_1, wu_1, Y′_1; unit k − 1 has no e, wire or
+  Y′), and §6's UNIT j does not contain the wires, which the same line then counts separately («u_0 and the wires never»);
+  (L-b) R117's premises are paraphrased (R117's title line also has «in its two forms», «Lemma R», «and (R1) ruling», «Lemma P1 on
+  the dual game»): quote the parenthesis; (L-c) L41 asks for a scope tail naming the referee-originated statements (CAUSAL and
+  LEMMA′, REFEREE 36) with both signatures quoted; the second one is the bold sentence of §A2.3.»
+
+  and the Lead's item L-d (N5 at k = 13 from entry 6 into part (3); every measured run is still below n²). L-a: the gloss now says
+  which unit has which movers (units 1 and k − 1: four; the others: seven) and puts u_0, v_0 and the wires outside the units, as
+  §3's table and §6's definition of UNIT j have them. L-b: R117's premises in the words of its title line (trunk docs/RESULTS.md
+  l. 13362). L-c: the L41 scope tail with REFEREE 36's two verdict sentences (stage 1 and stage 4) and REFEREE-2's signature
+  sentence. Nothing else differs from L-1: the status phrase, part (1) with IDEAL-ACYC-POLY, the dead-end clause, the non-claims
+  and the closing parenthesis are byte for byte those of L-1 (the closing parenthesis still reads «with fixes entries 1-5», the
+  set both referees signed; entry 6 is named where its number enters, and this entry changes no statement). The builder's own
+  record (data/b6b/out/line_L2_build.out, its last four lines; line_L2_quotes.out: the four quotations inside L-2 found verbatim
+  at their commits; controls line_L2_ctrl.out, line_L2_quotes_ctrl.out fire):
+```
+L-2 bytes 7267 (with its newline) lines 1 pipes 0 sha1 6e047c676e582484fe8eb87891764e8c1a7d9a18
+L-2 brackets ( 79 ) 79 [ 0 ] 0 { 0 } 0 « 6 » 6 balanced 1
+L-2 checks failed 0
+written docs/red-b/P-N5-EXP-line-L2.txt
+```
+- PINS: the new files of this entry are pinned in data/b6b/SHA1SUMS_b6b_fixes4 (checked by check.sh); the pin files of the frozen
+  packet and of entries 1-6 are unchanged.

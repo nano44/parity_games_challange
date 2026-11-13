@@ -1,0 +1,119 @@
+source FROZEN = P-N5-EXP.md sha1 c0449b17193f19619f33b366096762dfde27d542
+source REF2 = REF2.R2-P-N5-EXP.md sha1 f63e227e31586d159fad57a6c3ea986cdf644343
+source PRE = PRE.R-GK-precheck.md sha1 e2d7c5cb965a960bd0dc5c00d5cd50fc6d368e6f
+source REF1 = REF1.R-P-N5-EXP.md sha1 c662d157621671c816ef03726e1649af1b648555
+source R117 = R117.RESULTS.md sha1 2645f31efdb833c5d124c6fe7990793805f57eba
+source R124 = R124.RESULTS.md sha1 3edcbce2478d5c1dd96f9be52a3fd2b461ae72e5
+source R57 = R57.RESULTS.md sha1 71acb0394d22bdc99773c4015e9b1031db89f2ae
+source R104P = R104P.P-N5-REALIZE.md sha1 067f06b6c67969adf346621b4a92b253491ab2b9
+source KEY1P = KEY1P.P-N5-KEY1P.md sha1 f7191623e9ee212fa127c7e4a224f7ab9d689156
+source LNEW = LNEW.P-N5-KEY1P-after-EXP-draft.md sha1 1f01befb1ef59bc5ab44bc418c4a75ccbdbc6ea3
+source n5v = n5v.n5v.py sha1 aeaa8d019c6f0e41e60748a72f1745180d0b33cb
+source REF2B = REF2B.R2-P-N5-EXP.md sha1 7128d83e76c675609af3f74c73cb0015c9de2ef3
+source REF1D = REF1D.R-P-N5-EXP.md sha1 0ec7d605ffd23b31114cdc328d792261a108ced9
+source FIX5 = FIX5.P-N5-EXP-fixes.md sha1 9dc9179fb08063cd59de25c5d3e16b0f8c693fbd
+R117 FOUND l. 13362-13362 «S3's start pair equal to R104's stated start transported thr»
+R117 FOUND l. 13362-13362 «no pad is ever a cycle node or in a P-set (Lemma PAD)»
+n5v FOUND l. 5-5 «mode "spec": N5 (box21 n5x.step).»
+n5v FOUND l. 8-8 «mode "idx" : the same TIE broken by the LARGEST vertex index»
+n5v FOUND l. 9-9 «mode "seq" : SPEC's sigma_new applied at ONE Even vertex onl»
+REF2 FOUND l. 56-57 «That sentence is Corollary EXP-N5, which is proved THROUGH R»
+REF2 FOUND l. 58-59 «So the sentence is PROVED-CONDITIONAL on R117 as landed, lik»
+REF2 FOUND l. 239-239 «UNCONDITIONAL (mathematics about R104's DEFINITIONS, no theo»
+REF2 FOUND l. 241-241 «PROVED-CONDITIONAL on RESULTS R117 as landed: Corollary EXP-»
+PRE FOUND l. 324-326 «So «N5 from S3 makes at least 2^k − 1 iterations on Γ3(G_k) »
+REF1 FOUND l. 60-61 «the Corollary (l. 54-60), the title (l. 1) and the dead-end »
+REF1 FOUND l. 62-63 «So: Corollary EXP-N5 and «FALSE» are CONDITIONAL on R117's p»
+REF1 FOUND l. 283-284 «the DATA covers k = 3..11; for every k the sentence is lande»
+R104P FOUND l. 224-224 «Let IDEAL-ACYC-POLY mean: there is a polynomial q such that »
+KEY1P FOUND l. 138-138 «There is a polynomial p with T_key(G) ≤ p(N + M) for every g»
+KEY1P FOUND l. 211-211 «There is a polynomial q with sw(x) ≤ q(N + M) for every geno»
+R117 FOUND l. 13362-13362 «with R104's premises as landed (1E-N3 = RESULTS R57 (b) in i»
+R117 FOUND l. 13482-13483 «R104's three premises as landed, in R104's forms: [1E-N3]»
+R117 FOUND l. 13484-13485 «forms P1 (σ̄, τ̄ pointwise optima) and P2 (S4a's σ_new a poi»
+R117 FOUND l. 13487-13487 «[VJ-LOC] (R104 l. 10011-10012, R36 (c) Lemma P1 on the dual »
+R117 FOUND l. 13488-13488 «[TERM] RESULTS R15 (d)»
+R117 FOUND l. 13543-13544 «Premises [1E-N3], [RULE], [VJ-LOC] as landed in R104: the co»
+R117 FOUND l. 13362-13362 «for every G with an ACYCLIC Ξ-graph»
+FROZEN FOUND l. 61-62 «The claim "N5 (SPEC S1-S5, default start S3) runs in polynom»
+FROZEN FOUND l. 62-63 «N5 therefore cannot pass gauntlet step 4 (no running-time pr»
+REF2 FOUND l. 247-249 «They are far below every explicit polynomial bound (2^k − 1 »
+FROZEN FOUND l. 65-66 «N5 is CORRECT on these games (DATA §9.4: every winner equals»
+R57 FOUND l. 2893-2893 «N5's output at its stop is correct on EVERY parity game (Lem»
+R57 FOUND l. 2914-2916 «In particular, on every game N5 stops (R15 (d)) and SPEC S5'»
+REF1 FOUND l. 66-67 «The packet does not need it (the lower bound kills). O-1 (op»
+LNEW FOUND l. 13-14 «N5 makes exactly T_key + 3 = 2^k + 1 iterations with one fal»
+R124 FOUND l. 15371-15371 «PROVED for G ∈ IDEAL-ACYC»
+R124 FOUND l. 15371-15371 «N5 (SPEC S1-S5 with its FIX 1-4 tie-breaks) from S3 on Γ3(G)»
+R124 FOUND l. 15371-15371 «N5′-xi, and N5, from S3 on Γ3(G) have exactly one fallback, »
+R124 FOUND l. 15371-15371 «premise RESULTS R117 (f); it uses SPEC's S1 tie-breaks, thro»
+R124 FOUND l. 15371-15371 «premises, all under the standing SPEC premise 1E-N3 of RESUL»
+R124 FOUND l. 15371-15371 «iterations counted as in SPEC S4»
+R124 FOUND l. 15371-15371 «so on {Γ3(G) : G ∈ IDEAL-ACYC} N5's iteration count is polyn»
+R124 FOUND l. 15371-15371 «it bounds none of F, T3, L(G) (OPEN)»
+REF2 FOUND l. 206-207 «the first fallback is transition 2^k − 1 (as REACH3 says: L(»
+REF2 FOUND l. 38-39 «Case (ii) applies the lemma to unit j + 1 before the hypothe»
+REF2 FOUND l. 42-45 «So the lemma, as stated with (H2) on the whole window, canno»
+REF1 FOUND l. 181-182 «If the run has stopped at s_(t−1), (H2) is vacuous and the c»
+REF1 FOUND l. 187-188 «The lemma means the key input of the STEP, i.e. C_(j−1) unde»
+REF1 FOUND l. 191-192 «At the point where it is used, that hypothesis is not yet kn»
+REF1 FOUND l. 193-196 «As a black box the lemma cannot be applied before its hypoth»
+REF1 FOUND l. 125-126 «K1's C_0(s) = s(v_0) and V1's E_0(s) = s(v_0), and with them»
+REF1 FOUND l. 128-129 «Fix: «every wire and u_0 at option 0» (the wire part is need»
+REF1 FOUND l. 257-258 «Read under one state it is false: under s_0 unit 1 is at res»
+REF1 FOUND l. 259-261 «Correct form: «if unit i is at rest b under s, E_(i−1)(s) = »
+FROZEN FOUND l. 229-229 «provided its input stays (1, 1), which we check along the wa»
+FROZEN FOUND l. 194-194 «that the run reaches»
+FROZEN FOUND l. 195-196 «the run reaches s_(t+P_j−1)»
+REF1 FOUND l. 200-202 «Standing: states with every wire and u_0 at option 0 (E-4). »
+REF1 FOUND l. 203-204 «For 1 ≤ j ≤ k − 1 the restriction of s⁺ to U_j is a function»
+REF2 FOUND l. 89-90 «(K-loc) no observer is a W-target, so a key depends only on »
+REF1 FOUND l. 219-225 «Let 1 ≤ j ≤ k − 1, a ∈ {0, 1}, c := 1 − a, t ≥ 1, last := t »
+REF2 FOUND l. 129-132 «PREFIX FORM. Let j, a, c, t, F, B, F′, B′ be as in the packe»
+FROZEN FOUND l. 229-229 «which we check along the way»
+REF1 FOUND l. 127-128 «random states with wires at 0 and u_0 FREE: K1 980 / 8,000, »
+REF2 FOUND l. 48-50 «The br key is NOT injective for k ≥ 4: every wv_j has the pa»
+REF2 FOUND l. 52-53 «Fix: add «ties broken by β-id» to §3 and to c6.»
+REF1 FOUND l. 95-96 «is not a bijection for k ≥ 4: the options (wv_j, 0), 1 ≤ j ≤»
+REF1 FOUND l. 98-101 «The Theorem names gk.py build(k), so G_k is well defined; th»
+REF2 FOUND l. 170-170 «the run with the br ties broken by DECREASING β-id ≠ the run»
+REF2 FOUND l. 171-171 «tied br keys per k = 0, 2, 6, 10, …, 42 (= 4k − 14 for k ≥ 4»
+REF2 FOUND l. 54-54 «§6 never says that «step t» is the IDEAL step s_(t−1) → s_t;»
+REF2 FOUND l. 60-60 «§9.7 is the unfilled placeholder `QUOTESUMMARY` (l. 530).»
+REF1 FOUND l. 371-371 «The four untagged citations are verbatim in the sources name»
+REF1 FOUND l. 372-372 «§9.7 is the literal placeholder `QUOTESUMMARY`.»
+PRE FOUND l. 327-329 «my rebuild has 9 movers on a level for every k ≥ 6 (levels 4»
+FROZEN FOUND l. 41-41 «its levels have up to 9 movers»
+FROZEN FOUND l. 566-566 «up to 8 movers on a level»
+PRE FOUND l. 330-333 «The genome «as generated» (gate = 100·level + eps) is NOT in»
+PRE FOUND l. 334-335 «The file's mover order fixes the mover indices and the optio»
+REF2 FOUND l. 65-65 «then my game EQUALS the lane's instance file index by index »
+REF2 FOUND l. 66-66 «The lane's files are right»
+PRE FOUND l. 336-337 ««deg» is the scalar 2 in the JSON and «pi», «cyc» of the old»
+REF1 FOUND l. 360-361 «for «δ(v_j, ·) > δ(u_j, ·)» my variants keep only δ(v_j, o) »
+REF1 FOUND l. 53-54 «So «DEFINITIONS ONLY (no theorem of R104 is used)» is right;»
+REF2B FOUND l. 344-346 «**P-N5-EXP: SIGNED with fixes entries 1-5.** The signature i»
+REF1D FOUND l. 522-524 «**Verdict on entry 4: it closes E-1, E-2, E-4, E-5. RESPONSE»
+REF1D FOUND l. 537-538 «entry 3's **Corollary EXP-N5′, the STATEMENT, is SIGNED AS P»
+REF2B FOUND l. 463-465 «Signature (L41: the statements 4.3 and 4.4 are referee-origi»
+REF2B FOUND l. 442-442 «**F-1 (reading; inherited from the frozen l. 203).** (R3) sa»
+REF2B FOUND l. 442-444 «with no lower end. Read: for t − 1 ≤ τ < last. Without the l»
+FIX5 FOUND l. 384-385 «For T = last this includes: s_τ(E(j)) = a for τ < last and E»
+FROZEN FOUND l. 203-204 «for j ≥ 2, s_τ(E(j)) = a for τ < t + P_j − 1 and E(j) moves »
+FROZEN FOUND l. 229-229 «with s(E(j + 1)) = 0 before step t_1»
+FROZEN FOUND l. 248-249 «with s(E(j + 1)) = 1 before step t_2»
+REF2B FOUND l. 445-445 «**F-2 (wording).** 4.0 says the frozen statement l. 192-204 »
+REF2B FOUND l. 446-447 «which are frozen l. 195 and l. 197-202 (and P_j, l. 191). So»
+FIX5 FOUND l. 314-315 «The frozen STATEMENT of the RESPONSE LEMMA (l. 192-204) is R»
+FROZEN FOUND l. 195-195 «Let F be the observer of Y_j that is on forward under s_(t−1»
+REF2B FOUND l. 384-384 «**F-3 (wording).** The reason given,»
+REF2B FOUND l. 384-385 «omits y′_j and ȳ′_j, the Ξ-targets of e_j. The claim it supp»
+FIX5 FOUND l. 670-670 «No Ξ-edge ends at a wire (table: every Ξ-target is a u, v, y»
+FROZEN FOUND l. 87-87 «| e_j | j | 2 ≤ j ≤ k − 2 | u_(j−1) / v_(j−1) | ȳ′_j / y′_j »
+REF2B FOUND l. 395-397 «**F-4 (tooling; the same defect in the NEW runner).** experi»
+REF2B FOUND l. 401-402 «Ask: the two lines of run_b6b.sh in run_b6fix.sh; CHECKER sh»
+REF2B FOUND l. 368-371 «**F-5 (label inside (a′); no change asked).** (a′) has two s»
+REF2B FOUND l. 373-374 «A RESULTS line may carry the first sentence as unconditional»
+FIX5 FOUND l. 187-188 «when T_key and sw are read in R104's IDEAL model, as that pa»
+REF2B FOUND l. 522-527 «(L-a) the gloss «per unit j a block pair u_j, v_j, an end-fo»
+quotes 104 found 104 notfound 0

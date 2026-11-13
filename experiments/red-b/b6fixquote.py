@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""L-RED-B packet P-N5-EXP: quote check for the FIXES file docs/red-b/P-N5-EXP-fixes.md (entries 1-5).
+"""L-RED-B packet P-N5-EXP: quote check for the FIXES file docs/red-b/P-N5-EXP-fixes.md (entries 1-7).
 
 Every guillemet quote that follows a Q-tag [Q LABEL ...] in the fixes file is checked verbatim by b6quote.py (same convention as
 the packet). This wrapper only fetches the sources: each LABEL is a file at a NAMED COMMIT, read with `git show COMMIT:PATH` (the
@@ -15,6 +15,9 @@ and the line numbers printed are the file's own).
   KEY1P   claude/l-new 44775605  docs/new/P-N5-KEY1P.md
   LNEW    claude/l-new aa29064d  docs/new/P-N5-KEY1P-after-EXP-draft.md
   n5v     claude/l-new a143d406  experiments/new/box190/n5v.py              (entry 1's tag)
+  REF2B   claude/referee-2 f17a2708  docs/referee-2/R2-P-N5-EXP.md          (REFEREE-2 42's Addendum 2; entry 7's tag)
+  REF1D   claude/referee   78515253  docs/referee/R-P-N5-EXP.md            (REFEREE 36's report with its stage 4; entry 7's tag)
+  FIX5    claude/l-red-b   24f4d436  docs/red-b/P-N5-EXP-fixes.md           (this file as the referees read it: entries 1-5)
 Usage (from anywhere inside the repository): b6fixquote.py WORKDIR [FIXESFILE]
   WORKDIR receives the source copies (WORKDIR/src/); the output is b6quote.py's (one line per quote, then «quotes N found F
   notfound K»); exit 1 if a source is missing or a quote is not found.
@@ -33,6 +36,9 @@ SRC = {
     "KEY1P": ("44775605d471b4f635a8c227b65744ac34bc6059", "docs/new/P-N5-KEY1P.md", None),
     "LNEW": ("aa29064d1beeaf7a25169ba273f323a187dbf4d0", "docs/new/P-N5-KEY1P-after-EXP-draft.md", None),
     "n5v": ("a143d4060d75f8463fe098b6ce18eef3febcd14b", "experiments/new/box190/n5v.py", None),
+    "REF2B": ("f17a2708de653b306eaedf878f6120d2d0b31e06", "docs/referee-2/R2-P-N5-EXP.md", None),
+    "REF1D": ("78515253a74a353a829b435d53f4987a8552989a", "docs/referee/R-P-N5-EXP.md", None),
+    "FIX5": ("24f4d436a0fea1f62ae736f20f78ff9e84333a90", "docs/red-b/P-N5-EXP-fixes.md", None),
 }
 FROZEN_SHA1 = "c0449b17193f19619f33b366096762dfde27d542"
 

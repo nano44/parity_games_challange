@@ -1,0 +1,119 @@
+source FROZEN = P-N5-EXP.md sha1 c0449b17193f19619f33b366096762dfde27d542
+source REF2 = REF2.R2-P-N5-EXP.md sha1 f63e227e31586d159fad57a6c3ea986cdf644343
+source PRE = PRE.R-GK-precheck.md sha1 e2d7c5cb965a960bd0dc5c00d5cd50fc6d368e6f
+source REF1 = REF1.R-P-N5-EXP.md sha1 c662d157621671c816ef03726e1649af1b648555
+source R117 = R117.RESULTS.md sha1 2645f31efdb833c5d124c6fe7990793805f57eba
+source R124 = R124.RESULTS.md sha1 3edcbce2478d5c1dd96f9be52a3fd2b461ae72e5
+source R57 = R57.RESULTS.md sha1 71acb0394d22bdc99773c4015e9b1031db89f2ae
+source R104P = R104P.P-N5-REALIZE.md sha1 067f06b6c67969adf346621b4a92b253491ab2b9
+source KEY1P = KEY1P.P-N5-KEY1P.md sha1 f7191623e9ee212fa127c7e4a224f7ab9d689156
+source LNEW = LNEW.P-N5-KEY1P-after-EXP-draft.md sha1 1f01befb1ef59bc5ab44bc418c4a75ccbdbc6ea3
+source n5v = n5v.n5v.py sha1 aeaa8d019c6f0e41e60748a72f1745180d0b33cb
+source REF2B = REF2B.R2-P-N5-EXP.md sha1 7128d83e76c675609af3f74c73cb0015c9de2ef3
+source REF1D = REF1D.R-P-N5-EXP.md sha1 0ec7d605ffd23b31114cdc328d792261a108ced9
+source FIX5 = FIX5.P-N5-EXP-fixes.md sha1 9dc9179fb08063cd59de25c5d3e16b0f8c693fbd
+R117 NOT-FOUND «S3's start pair equal to R104's stated start xransported thr»
+R117 NOT-FOUND «no pad is ever a cycle nodx or in a P-set (Lemma PAD)»
+n5v NOT-FOUND «mode "spec": N5 (xox21 n5x.step).»
+n5v NOT-FOUND «mode "idx" : the same TIE broken by the LAxGEST vertex index»
+n5v NOT-FOUND «mode "seq" : SPEC's sigma_new applied at ONE Even vertex oxl»
+REF2 NOT-FOUND «That sentence is Corollary EXP-N5, which is proved THROUGH R»
+REF2 NOT-FOUND «So the sentence is PROVED-CONDITIONAL on R117 as landed, lik»
+REF2 NOT-FOUND «UNCONDITIONAL (mathematics about R104's DEFINITIONS, no thex»
+REF2 NOT-FOUND «PROVED-CONDITIONAL on RESULTS R117 as landed: Corollary EXx-»
+PRE NOT-FOUND «So «N5 from S3 makes at least 2^k − 1 xterations on Γ3(G_k) »
+REF1 NOT-FOUND «the Corollary (l. 54-60), the title (l. 1) and the dxad-end »
+REF1 NOT-FOUND «So: Corollary EXP-N5 and «FAxSE» are CONDITIONAL on R117's p»
+REF1 NOT-FOUND «the DATA covers k = 3..11; for every k the sentence is lande»
+R104P NOT-FOUND «Let IDEAL-ACYC-POLY mean: there is a polynomial q xuch that »
+KEY1P NOT-FOUND «There is a polynomial p with T_key(G) ≤ p(N + x) for every g»
+KEY1P NOT-FOUND «There is a polynomial q with sw(x) ≤ q(N + M) for every xeno»
+R117 NOT-FOUND «with R104's premises as landed (1E-N3 = RESULTS R57 (b) in i»
+R117 NOT-FOUND «R104's three premises as lanxed, in R104's forms: [1E-N3]»
+R117 NOT-FOUND «forms P1 (σ̄, τ̄ pointwise optima) and P2 (S4x's σ_new a poi»
+R117 NOT-FOUND «[VJ-LOC] (R104 l. 10011-10012, R36 (x) Lemma P1 on the dual »
+R117 NOT-FOUND «[TERM] RESUxTS R15 (d)»
+R117 NOT-FOUND «Premises [1E-N3], [RULE], [VJ-LOC] as landed in R104: the co»
+R117 NOT-FOUND «for every G with xn ACYCLIC Ξ-graph»
+FROZEN NOT-FOUND «The claim "N5 (SPEC S1-S5, default starx S3) runs in polynom»
+FROZEN NOT-FOUND «N5 therefore cannot pass gauntlet step 4 (no running-time pr»
+REF2 NOT-FOUND «They are far below every explicit polynomial bound (2^k − 1 »
+FROZEN NOT-FOUND «N5 is CORRECT on these games (DATA §9.4: every winner xquals»
+R57 NOT-FOUND «N5's output at its stop is correct xn EVERY parity game (Lem»
+R57 NOT-FOUND «In particular, on every game N5 stops (R15 (d)) and SPEC S5'»
+REF1 NOT-FOUND «The packet does not need it (the lower bound kills). O-1 (op»
+LNEW NOT-FOUND «N5 makes exactly T_key + 3 = 2^k + 1 iterations with one fal»
+R124 NOT-FOUND «PROVED for G ∈ xDEAL-ACYC»
+R124 NOT-FOUND «N5 (SPEC S1-S5 with its FIX 1-4 tie-breaks) from S3 on Γ3(G)»
+R124 NOT-FOUND «N5′-xi, and N5, from S3 on Γ3(G) have exactly one fallbxck, »
+R124 NOT-FOUND «premise RESULTS R117 (f); it uses SPEC's S1 tie-breaks, thro»
+R124 NOT-FOUND «premises, all under the standing SPEC prxmise 1E-N3 of RESUL»
+R124 NOT-FOUND «iterations countxd as in SPEC S4»
+R124 NOT-FOUND «so on {Γ3(G) : G ∈ IDEAL-ACYC} N5's iteration count is polyn»
+R124 NOT-FOUND «it bounds none of x, T3, L(G) (OPEN)»
+REF2 NOT-FOUND «the first fallback is transition 2^k − 1 (as REACH3 says: L(»
+REF2 NOT-FOUND «Case (ii) applies the lemma to unit j + 1 before xhe hypothe»
+REF2 NOT-FOUND «So the lemma, as stated with (H2) on the whole window, canno»
+REF1 NOT-FOUND «If the run has stopped at s_(t−1), (H2) is vacuous and the c»
+REF1 NOT-FOUND «The lemma means the key input of the STEP, i.e. C_(j−1) unde»
+REF1 NOT-FOUND «At the point where it is used, xhat hypothesis is not yet kn»
+REF1 NOT-FOUND «As a black box the lemma cannot be applied before its hypoth»
+REF1 NOT-FOUND «K1's C_0(s) = s(v_0) and V1's E_0(s) = s(v_0), and witx them»
+REF1 NOT-FOUND «Fix: «every wire and x_0 at option 0» (the wire part is need»
+REF1 NOT-FOUND «Read under one state it is false: under s_0 unit 1 is xt res»
+REF1 NOT-FOUND «Correct form: «if unit i is at rest b under s, E_(i−1)(s) = »
+FROZEN NOT-FOUND «provided its input stays (1, 1), xhich we check along the wa»
+FROZEN NOT-FOUND «that the rxn reaches»
+FROZEN NOT-FOUND «the run reachxs s_(t+P_j−1)»
+REF1 NOT-FOUND «Standing: states with every wire and u_0 at option 0 (E-4). »
+REF1 NOT-FOUND «For 1 ≤ j ≤ k − 1 the restriction of s⁺ to U_j is a function»
+REF2 NOT-FOUND «(K-loc) no observer is a W-target, so a key depends only on »
+REF1 NOT-FOUND «Let 1 ≤ j ≤ k − 1, a ∈ {0, 1}, c := 1 − a, t ≥ 1, last := t »
+REF2 NOT-FOUND «PREFIX FORM. Let j, a, c, t, F, B, F′, B′ be as in the packe»
+FROZEN NOT-FOUND «which we check xlong the way»
+REF1 NOT-FOUND «random states with wires at 0 and u_0 FREE: K1 980 / 8,000, »
+REF2 NOT-FOUND «The br key is NOT injective for k ≥ 4: every wv_j has the pa»
+REF2 NOT-FOUND «Fix: add «ties brokxn by β-id» to §3 and to c6.»
+REF1 NOT-FOUND «is not a bijection for k ≥ 4: the options (wv_j, 0), 1 ≤ j ≤»
+REF1 NOT-FOUND «The Theorem names gk.py build(k), so G_k is well defined; th»
+REF2 NOT-FOUND «the run with the br ties broken by DxCREASING β-id ≠ the run»
+REF2 NOT-FOUND «tied br keys per k = 0, 2, 6, 10, …, 42 (= 4x − 14 for k ≥ 4»
+REF2 NOT-FOUND «§6 never says that «stex t» is the IDEAL step s_(t−1) → s_t;»
+REF2 NOT-FOUND «§9.7 is the unfilled placehoxder `QUOTESUMMARY` (l. 530).»
+REF1 NOT-FOUND «The four untagged citations are verbatim in the sources name»
+REF1 NOT-FOUND «§9.7 is the literal plaxeholder `QUOTESUMMARY`.»
+PRE NOT-FOUND «my rebuild has 9 movers on a level for every k ≥ 6 (levels 4»
+FROZEN NOT-FOUND «its levels have xp to 9 movers»
+FROZEN NOT-FOUND «up to 8 movexs on a level»
+PRE NOT-FOUND «The genome «as genxrated» (gate = 100·level + eps) is NOT in»
+PRE NOT-FOUND «The file's mover order fixes the mover indices and the optio»
+REF2 NOT-FOUND «then my game EQUALS the lane's instance file index by index »
+REF2 NOT-FOUND «The lane's fixes are right»
+PRE NOT-FOUND ««dxg» is the scalar 2 in the JSON and «px», «cxc» of the old»
+REF1 NOT-FOUND «for «δ(v_j, ·) > x(u_j, ·)» my variants keep only δ(v_j, o) »
+REF1 NOT-FOUND «So «DEFINITIONS ONLY (no txeorem of R104 is used)» is right;»
+REF2B NOT-FOUND «**P-N5-EXP: SIGNED with fixes entries 1-5.** The signature i»
+REF1D NOT-FOUND «**Verdict on entry 4: it closes E-1, E-2, E-4, E-5. RESPONSE»
+REF1D NOT-FOUND «entry 3's **Corollary EXP-N5′, the STATEMENT, is SIGNED Ax P»
+REF2B NOT-FOUND «Signature (L41: the statements 4.3 and 4.4 are referee-origi»
+REF2B NOT-FOUND «**F-1 (reading; inherited from xhe frozen l. 203).** (R3) sa»
+REF2B NOT-FOUND «with no lower end. Read: for t − 1 ≤ τ < last. Without the l»
+FIX5 NOT-FOUND «For T = last this includes: s_τ(E(j)) = a for τ < last and E»
+FROZEN NOT-FOUND «for j ≥ 2, s_τ(E(j)) = a for τ < t + P_j − 1 xnd E(j) moves »
+FROZEN NOT-FOUND «with s(E(j + 1)) = 0 xefore step t_1»
+FROZEN NOT-FOUND «with s(E(j + 1)) = 1 xefore step t_2»
+REF2B NOT-FOUND «**F-2 (wording).** 4.0 says the frozen statement l. 192-204 »
+REF2B NOT-FOUND «which are frozen l. 195 and l. 197-202 (and P_j, l. 191). So»
+FIX5 NOT-FOUND «The frozen STATEMENT of the RESPONSE LEMMA (l. 192-204) is R»
+FROZEN NOT-FOUND «Let F be the observer of Y_j that is on forward under x_(t−1»
+REF2B NOT-FOUND «**F-3 (wording).** xhe reason given,»
+REF2B NOT-FOUND «omits y′_j and ȳ′_j, the Ξ-targets of e_j. The claim it supx»
+FIX5 NOT-FOUND «No Ξ-edge ends at a wire (table: exery Ξ-target is a u, v, y»
+FROZEN NOT-FOUND «| e_j | j | 2 ≤ j ≤ k − 2 | u_(x−1) / v_(j−1) | ȳ′_j / y′_j »
+REF2B NOT-FOUND «**F-4 (tooling; the same defect in the NEW runner).** experi»
+REF2B NOT-FOUND «Ask: the two lines of run_b6b.sh in run_b6fix.sh; CHECKER xh»
+REF2B NOT-FOUND «**F-5 (label inside (a′); no change asked).** (a′) has two s»
+REF2B NOT-FOUND «A RESULTS line may carry the first sentence as uncondixional»
+FIX5 NOT-FOUND «when T_key and sw are read in R104's IDEAL modxl, as that pa»
+REF2B NOT-FOUND «(L-a) the gloss «per unit j a block pair u_j, v_j, an end-fo»
+quotes 104 found 0 notfound 104

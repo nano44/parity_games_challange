@@ -44,5 +44,23 @@ ac=$(B6X_CTRL=5 python3 b6prefix.py all 5 | tail -n 1); case "$ac" in *"frozen_c
 if [ -f data/b6b/SHA1SUMS_b6b_fixes2 ]; then (cd data/b6b && sha1sum -c --quiet SHA1SUMS_b6b_fixes2) || { echo "red-b: data/b6b fixes2 SHA1SUMS mismatch"; fail=1; }; fi
 # P-N5-EXP fixes entry 6 (N5 at k = 13 on the checkpointed driver): the entry's pins
 if [ -f data/b6b/SHA1SUMS_b6b_fixes3 ]; then (cd data/b6b && sha1sum -c --quiet SHA1SUMS_b6b_fixes3) || { echo "red-b: data/b6b fixes3 SHA1SUMS mismatch"; fail=1; }; fi
+# P-N5-EXP fixes entry 7: the frozen and append-only guards with their control; line L-2 rebuilt from L-1, with its bracket
+# control; the (R3) range test and the Xi-target test with their controls; run_b6fix.sh on a failing stage (exit 1, no file left)
+# and on a clean one (width.out byte-equal to its pinned file); the entry's pins (about 1 s)
+gd=$(python3 b6guard.py | tail -n 1); [ "$gd" = "guard frozen 0 prefix 0 of 4 l1 0" ] || { echo "red-b: P-N5-EXP frozen / append-only guard FAILED: $gd"; fail=1; }
+gc=$(B6G_CTRL=1 python3 b6guard.py | tail -n 1); [ "$gc" = "guard frozen 0 prefix 4 of 4 l1 0" ] || { echo "red-b: P-N5-EXP guard control did not fire: $gc"; fail=1; }
+l2=$(python3 b6line.py check | tail -n 1); [ "$l2" = "L-2 rebuilt-vs-committed diff 0" ] || { echo "red-b: line L-2 is not b6line.py's output from L-1: $l2"; fail=1; }
+lc=$(B6LINE_CTRL=1 python3 b6line.py check | grep -c "balanced 0"); [ "$lc" = "1" ] || { echo "red-b: b6line bracket control did not fire"; fail=1; }
+r6=$(python3 b6e7.py r3 6 | tail -n 1); case "$r6" in *"windows2 30 r3in 0 r3move 0 r3rest 0 literal 26 expected 26 litdiff 0") ;; *) echo "red-b: b6e7 r3 6 FAILED: $r6"; fail=1;; esac
+rc6=$(B6E7_CTRL=1 python3 b6e7.py r3 6 | tail -n 1); case "$rc6" in *" r3in 30 "*) ;; *) echo "red-b: b6e7 r3 control did not fire: $rc6"; fail=1;; esac
+x6=$(python3 b6e7.py xt 6 | tail -n 1); case "$x6" in *"kinds u v y yb yp ypb wiretgt 0 etgt 0 yptgt 6 expected 6 ypdiff 0") ;; *) echo "red-b: b6e7 xt 6 FAILED: $x6"; fail=1;; esac
+xc6=$(B6E7_CTRL=2 python3 b6e7.py xt 6 | tail -n 1); case "$xc6" in *" outside 6") ;; *) echo "red-b: b6e7 xt control did not fire: $xc6"; fail=1;; esac
+rt=$(mktemp -d)
+B6FIX_PY=false bash run_b6fix.sh "$rt/a" width > /dev/null 2>&1; rfa=$?
+{ [ "$rfa" = "1" ] && [ -z "$(ls -A "$rt/a")" ]; } || { echo "red-b: run_b6fix.sh on a failing stage: exit $rfa (expected exit 1 and no file left)"; fail=1; }
+bash run_b6fix.sh "$rt/b" width > /dev/null 2>&1; rfb=$?
+{ [ "$rfb" = "0" ] && cmp -s "$rt/b/width.out" data/b6b/out/width.out; } || { echo "red-b: run_b6fix.sh width: exit $rfb or width.out differs from its pinned file"; fail=1; }
+rm -rf "$rt"
+if [ -f data/b6b/SHA1SUMS_b6b_fixes4 ]; then (cd data/b6b && sha1sum -c --quiet SHA1SUMS_b6b_fixes4) || { echo "red-b: data/b6b fixes4 SHA1SUMS mismatch"; fail=1; }; fi
 [ $fail -eq 0 ] && echo "red-b check PASS" || echo "red-b check FAILED"
 exit $fail

@@ -1,0 +1,6 @@
+G_5 mode r3 ctrl 1 T 30 windows 15 windows2 14 r3in 14 r3move 0 r3rest 0 literal 11 expected 11 litdiff 0
+G_6 mode r3 ctrl 1 T 62 windows 31 windows2 30 r3in 30 r3move 0 r3rest 0 literal 26 expected 26 litdiff 0
+G_3 mode xt ctrl 2 N 11 kinds u v y yb wiretgt 0 etgt 0 yptgt 0 expected 0 ypdiff 0 outside 0
+G_4 mode xt ctrl 2 N 20 kinds u v y yb yp ypb wiretgt 0 etgt 0 yptgt 2 expected 2 ypdiff 0 outside 2
+G_5 mode xt ctrl 2 N 29 kinds u v y yb yp ypb wiretgt 0 etgt 0 yptgt 4 expected 4 ypdiff 0 outside 4
+G_6 mode xt ctrl 2 N 38 kinds u v y yb yp ypb wiretgt 0 etgt 0 yptgt 6 expected 6 ypdiff 0 outside 6

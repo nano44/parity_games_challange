@@ -1,0 +1,12 @@
+G_3 mode r3 ctrl 0 T 6 windows 3 windows2 2 r3in 0 r3move 0 r3rest 0 literal 1 expected 1 litdiff 0
+G_4 mode r3 ctrl 0 T 14 windows 7 windows2 6 r3in 0 r3move 0 r3rest 0 literal 4 expected 4 litdiff 0
+G_5 mode r3 ctrl 0 T 30 windows 15 windows2 14 r3in 0 r3move 0 r3rest 0 literal 11 expected 11 litdiff 0
+G_6 mode r3 ctrl 0 T 62 windows 31 windows2 30 r3in 0 r3move 0 r3rest 0 literal 26 expected 26 litdiff 0
+G_7 mode r3 ctrl 0 T 126 windows 63 windows2 62 r3in 0 r3move 0 r3rest 0 literal 57 expected 57 litdiff 0
+G_8 mode r3 ctrl 0 T 254 windows 127 windows2 126 r3in 0 r3move 0 r3rest 0 literal 120 expected 120 litdiff 0
+G_9 mode r3 ctrl 0 T 510 windows 255 windows2 254 r3in 0 r3move 0 r3rest 0 literal 247 expected 247 litdiff 0
+G_10 mode r3 ctrl 0 T 1022 windows 511 windows2 510 r3in 0 r3move 0 r3rest 0 literal 502 expected 502 litdiff 0
+G_11 mode r3 ctrl 0 T 2046 windows 1023 windows2 1022 r3in 0 r3move 0 r3rest 0 literal 1013 expected 1013 litdiff 0
+G_12 mode r3 ctrl 0 T 4094 windows 2047 windows2 2046 r3in 0 r3move 0 r3rest 0 literal 2036 expected 2036 litdiff 0
+G_13 mode r3 ctrl 0 T 8190 windows 4095 windows2 4094 r3in 0 r3move 0 r3rest 0 literal 4083 expected 4083 litdiff 0
+G_14 mode r3 ctrl 0 T 16382 windows 8191 windows2 8190 r3in 0 r3move 0 r3rest 0 literal 8178 expected 8178 litdiff 0

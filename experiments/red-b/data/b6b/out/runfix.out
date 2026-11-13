@@ -1,0 +1,23 @@
+N1 stage width all-fail: exit failures files = 1 12 0 ok 1
+N2 stage exh failing-python3-on-PATH: exit failures files = 1 2 0 ok 1
+N3 stage ctrl all-fail: exit failures files = 1 10 0 ok 1
+N4 stage ctrl one-middle-control-fails: exit failures files = 1 1 0 ok 1
+N5 unknown stage: exit files = 2 0 ok 1
+N6 stage width fail, run, run again: exit; exit cmp; exit cmp = 1 0 0 0 0 ok 1
+N7 stage width k=5-fails, then run: exit failures lines G_5-lines; exit lines same-lines-as-pin = 1 1 11 0 0 12 0 ok 1
+C1 runner of 24f4d436, stage exh failing-python3-on-PATH: exit files bytes = 0 1 0 fires 1
+C2 that runner + the two lines only, stage exh failing-python3-on-PATH: lines-added exit files bytes = 2 1 1 0 fires 1
+C3 the two-line variant, stage ctrl one-middle-control-fails: exit failures lines pinned-lines differs = 0 0 14 15 1 fires 1
+E run_b6fix.sh every: exit failures files = 0 0 11 ok 1
+E prefix_run.out sha1 23a7ccc2f6db4e2e5e3a5dff9f6e16f3ef0b08b0 cmp-with-data 0 sha1-equals-pin 1
+E prefix_all.out sha1 effd99c4e29ea98feab55e23c826cb4acc23da1a cmp-with-data 0 sha1-equals-pin 1
+E prefix_off.out sha1 a8627151bd6de3be4d558b217fd9e95b2e96afdf cmp-with-data 0 sha1-equals-pin 1
+E prefix_drive.out sha1 b1b88237aef2a3a305da5bc202bfd3768ec02e21 cmp-with-data 0 sha1-equals-pin 1
+E prefix_loc.out sha1 cd8195db9e0aaa65b9dae51eabd155146992d98d cmp-with-data 0 sha1-equals-pin 1
+E prefix_stable.out sha1 f6726881228602576942b3c0bb946e22b3657446 cmp-with-data 0 sha1-equals-pin 1
+E prefix_exh.out sha1 70d47b4dfb85776a4c95fa8bd947ef8567a0dc5c cmp-with-data 0 sha1-equals-pin 1
+E prefix_u0.out sha1 e1273bd394564c98c3447ae012f965094349f7fb cmp-with-data 0 sha1-equals-pin 1
+E brtie.out sha1 1bc769568775b902231df2d782929c42569c07f0 cmp-with-data 0 sha1-equals-pin 1
+E width.out sha1 414d23efc7511243fabfa12acadb1a2362bfec76 cmp-with-data 0 sha1-equals-pin 1
+E prefix_ctrl.out sha1 4b0bb7cc214098e3041c062ea05b467b771a6a5d cmp-with-data 0 sha1-equals-pin 1
+b6fixtest failed 0
