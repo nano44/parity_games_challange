@@ -1,0 +1,11 @@
+DBL4_d20_F30.json N 40 M 80 N+M 120 n 610 eperm 0 mode spec T 30 Ttot 33 F 1 sig 792f94834763
+DBL4_d20_F30.json N 40 M 80 N+M 120 n 610 eperm 0 mode xi T 9 Ttot 12 F 1 sig c9864cfaaf3b
+DBL4_d20_F30.json N 40 M 80 N+M 120 n 610 eperm 0 mode seq T 13 Ttot 97 F 1 sig ff3da979fcf7
+RECF4_d20_F60.json N 40 M 80 N+M 120 n 610 eperm 0 mode spec T 67 Ttot 70 F 1 sig d76cfed83218
+RECF4_d20_F60.json N 40 M 80 N+M 120 n 610 eperm 0 mode xi T 9 Ttot 12 F 1 sig 58672558f025
+RECF4_d20_F60.json N 40 M 80 N+M 120 n 610 eperm 0 mode seq T 8 Ttot 26 F 1 sig c137636b8443
+H5_d20_F62.json N 40 M 80 N+M 120 n 610 eperm 0 mode spec T 136 Ttot 139 F 1 sig 2c72da25bfae
+H5_d20_F62.json N 40 M 80 N+M 120 n 610 eperm 0 mode xi T 9 Ttot 12 F 1 sig 4cf7ce5d13c8
+H5_d20_F62.json N 40 M 80 N+M 120 n 610 eperm 0 mode seq T 4 Ttot 73 F 1 sig e94fef044793
+H6_d24_F126.json N 48 M 96 N+M 144 n 730 eperm 0 mode spec T 209 Ttot 212 F 1 sig 1a6ad05fb573
+H6_d24_F126.json N 48 M 96 N+M 144 n 730 eperm 0 mode xi T 12 Ttot 15 F 1 sig ff53207f10f4
