@@ -8,4 +8,4 @@ for b in $ALL ../box212/inst/*.json ../box213/inst/*.json; do
   n=$(basename "$b"); grep -q "^$n \|^TIMEOUT $n$\|[ /]$n " "$OUT" && continue
   timeout 600 "$@" "$b" >> "$OUT" || echo "TIMEOUT $n" >> "$OUT"
 done
-echo DONE >> "$OUT"
+tail -1 "$OUT" | grep -qx DONE || echo DONE >> "$OUT"

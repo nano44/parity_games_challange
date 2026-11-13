@@ -1,0 +1,13 @@
+gate_frozen_spec.out done genomes 88 timeouts 0 must0_sum 0 f1 0 strict 0 imp 0 grfail 0 gr2fail 0 efp 0 npshape 0 stepb 0 par 0 pexp 0 ssimp 0 loud 0 | f5best 14440 dom 37209 Q 1693 sumD 50447 flips 627 couples 0 | max_Tk 299 max_Wq 299
+gate_frozen_xi.out done genomes 88 timeouts 0 must0_sum 0 f1 0 strict 0 imp 0 grfail 0 gr2fail 0 efp 0 npshape 0 stepb 0 par 0 pexp 0 ssimp 0 loud 0 | f5best 0 dom 0 Q 2627 sumD 272193 flips 3500 couples 333540 | max_Tk 199 max_Wq 12
+qt3_frozen_spec.out done genomes 88 timeouts 0 must0_sum 0 cnlow 0 locfail 0 ties 0 bonly 0 k2fail 0 upfail 0 emon 0 nonstd 0 | nohoward 14440 wfail 0 Tfail 0 | max_T3 299 max_W 299
+rand216.out xflip216 seed 2161  genomes 200 must0_sum 0 xmove 0 xflip 0 xflipd 0 jmove 0 jfmin 0
+rand216.out gate216 seed 2161  genomes 200 must0_sum 0 f1 0 strict 0 imp 0 grfail 0 gr2fail 0 efp 0 npshape 0 stepb 0 par 0 pexp 0 ssimp 0 loud 0
+rand216.out xflip216 seed 2162  genomes 200 must0_sum 0 xmove 0 xflip 0 xflipd 0 jmove 0 jfmin 0
+rand216.out gate216 seed 2162  genomes 200 must0_sum 0 f1 0 strict 0 imp 0 grfail 0 gr2fail 0 efp 0 npshape 0 stepb 0 par 0 pexp 0 ssimp 0 loud 0
+rand216.out xflip216 seed 2163  genomes 200 must0_sum 0 xmove 0 xflip 0 xflipd 0 jmove 0 jfmin 0
+rand216.out gate216 seed 2163  genomes 200 must0_sum 0 f1 0 strict 0 imp 0 grfail 0 gr2fail 0 efp 0 npshape 0 stepb 0 par 0 pexp 0 ssimp 0 loud 0
+rand216.out qt3 seed 2161  genomes 200 must0_sum 0 cnlow 0 locfail 0 ties 0 bonly 0 k2fail 0 upfail 0 emon 0 nonstd 0
+rand216.out qt3 seed 2162  genomes 200 must0_sum 0 cnlow 0 locfail 0 ties 0 bonly 0 k2fail 0 upfail 0 emon 0 nonstd 0
+split_frozen_spec.out done genomes 88 timeouts 0 must0_sum 0 playfail 0 kindfail 0 hwfail 0 gtfail 0 trfail 0 dnfail 0 rhfail 0 rh2fail 0 spfail 0 rw1fail 0 wlamfail 0 |  | max_T3 299
+xflip_frozen.out done genomes 88 timeouts 0 must0_sum 0 xmove 0 xflip 0 xflipd 0 jmove 0 jfmin 0 | moves 19816 xfsum 23264 kfsum 4863 xfmsum 6054 jfsum 2094 mvkey 5695 | max_T 302 max_Tk 299 max_jfmax 126

@@ -1,0 +1,9 @@
+xflip216 2161 rand rand seed 2161 genomes 200 cyconly 1 mode spec ctrl 0 xmove 0 xflip 0 xflipd 0 jmove 0 jfmin 0 T 7 Tk 4 fb 200 deg2 3837 degd 674 moves 4610 xfsum 4466 ties 753 m2 545 kfsum 50 xfmsum 111 jfsum 2 jfmax 1 mvkey 157
+gate216 2161 rand rand seed 2161 genomes 200 cyconly 1 mode spec ctrl 0 MUST0 f1 0 strict 0 imp 0 grfail 0 gr2fail 0 efp 0 npshape 0 stepb 0 par 0 pexp 0 ssimp 0 loud 0 DESC f5best 672 dom 370 Tk 4 Q 191 Wq 2 sumD 15838 flips 496 couples 0 moves 463
+xflip216 2162 rand rand seed 2162 genomes 200 cyconly 1 mode spec ctrl 0 xmove 0 xflip 0 xflipd 0 jmove 0 jfmin 0 T 6 Tk 3 fb 200 deg2 3927 degd 650 moves 4625 xfsum 4660 ties 849 m2 596 kfsum 43 xfmsum 115 jfsum 3 jfmax 1 mvkey 161
+gate216 2162 rand rand seed 2162 genomes 200 cyconly 1 mode spec ctrl 0 MUST0 f1 0 strict 0 imp 0 grfail 0 gr2fail 0 efp 0 npshape 0 stepb 0 par 0 pexp 0 ssimp 0 loud 0 DESC f5best 599 dom 347 Tk 3 Q 179 Wq 3 sumD 13590 flips 416 couples 0 moves 478
+xflip216 2163 rand rand seed 2163 genomes 200 cyconly 1 mode spec ctrl 0 xmove 0 xflip 0 xflipd 0 jmove 0 jfmin 0 T 6 Tk 3 fb 200 deg2 4158 degd 665 moves 4884 xfsum 4801 ties 913 m2 657 kfsum 50 xfmsum 181 jfsum 1 jfmax 1 mvkey 211
+gate216 2163 rand rand seed 2163 genomes 200 cyconly 1 mode spec ctrl 0 MUST0 f1 0 strict 0 imp 0 grfail 0 gr2fail 0 efp 0 npshape 0 stepb 0 par 0 pexp 0 ssimp 0 loud 0 DESC f5best 586 dom 293 Tk 3 Q 204 Wq 2 sumD 17016 flips 499 couples 0 moves 552
+qt3 2161 rand seed 2161 mode spec ctrl 0 runs 200 nonstd 0 nohoward 645 cnlow 0 locfail 0 ties 0 bonly 0 k2fail 0 wfail 0 crossflip 0 Tfail 0 upfail 0 emon 0 tdiff 147 seqdiff 167 max T3 4 Tcyc 9 W 2 maxasc 2 UG 19 sumDE 1043 Q 4
+qt3 2162 rand seed 2162 mode spec ctrl 0 runs 200 nonstd 0 nohoward 538 cnlow 0 locfail 0 ties 0 bonly 0 k2fail 0 wfail 0 crossflip 0 Tfail 0 upfail 0 emon 0 tdiff 138 seqdiff 161 max T3 3 Tcyc 11 W 3 maxasc 2 UG 21 sumDE 620 Q 3
+DONE

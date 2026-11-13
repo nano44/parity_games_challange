@@ -16,6 +16,14 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   CFI3/DBL4), gate216.py (V1 run facts + R128 lemmas on N5's key run; f5best, dom = HOW descriptive: fire in spec, 0 in xi; controls 1-3
   fire on MWR4_2), split216.py (split199.py unchanged under spec via an import wrapper; xi mode reproduces split199 on CFI3), run216.sh
   (resumable, 600 s/genome), runA216.sh / runB216.sh (two workers, launched ~06:53Z as tracked tasks; outputs in out/).
+- Pushed f27ea2f6 (VERIFY PASS 07:48Z): 4b9b4b14 statement + tools, f372d014 §1.4 (Lead 06:49Z points: LOUD-RF CONDITIONAL, U(G) / F′_B /
+  [E-LEV] with sources, QUIET-RF / QUIET-KEY named; S4b/S4c quoted), f27ea2f6 xflip + split outputs. Lead 07:13Z: L-RED-B 4's B5 null
+  switch (strictly better by length only, no valuation changes): folded in (§2 paragraph; own inst/NULLSW_n4.pg; STRICT needs F6, Γ3 only).
+- Container restart ~07:07Z killed workers A, B; resumed from outputs (run216.sh skips done genomes; it appended a 2nd DONE: fixed, and
+  the committed files restored by git checkout).
+- DATA complete (§7 of the doc, summ216.txt): every must-0 0 on 88 frozen + RAND; HOW items f5best/dom fire for N5, 0 for Howard.
+  KEY FINDING: towers = one quiet sub-window (Q 0, no flip, ΣD 0): N5 Wq = Tk = 30/67/136/209/299, Howard 9/9/9/12/8.
+- In flight: runC216.sh (gate216 idx / seq: DATA (vi)); then summ + next push.
 - First DATA: DBL4_d20_F30 (tower): N5's key run has Q = 0 and one quiet window Wq = 30 = Tk (no class (Λ, E) change at all); f5best 238,
   dom 210 (N5 is not Howard there). CFI3_n48: spec key run Tk = 2 (xi: 24).
 

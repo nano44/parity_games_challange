@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Box 216 summary (L-NEW successor 76): one line per output file of out/: genomes, timeouts, the sum of every must-0 counter (must0_sum),
+"""Box 216 summary (L-NEW successor 76): one line per PINNED output file of out/ (those named in out/SHA1SUMS): genomes, timeouts, the sum of every must-0 counter (must0_sum),
 the per-counter sums of the must-0 counters, and the named descriptive maxima. Must-0 sets: xflip216 (xmove xflip xflipd jmove jfmin),
 gate216 (the MUST0 block), split216 (playfail kindfail hwfail gtfail trfail dnfail rhfail rh2fail spfail rw1fail wlamfail), qt3_196
 (cnlow locfail ties bonly k2fail upfail emon nonstd). HOW items (f5best, dom, nohoward, wfail, Tfail) are reported, never must-0."""
@@ -11,8 +11,16 @@ M0 = {"xflip": "xmove xflip xflipd jmove jfmin", "gate": "f1 strict imp grfail g
 DESC = {"xflip": "T Tk jfmax", "gate": "Tk Wq", "split": "T3", "qt3": "T3 W"}
 SUMD = {"xflip": "moves xfsum kfsum xfmsum jfsum mvkey", "gate": "f5best dom Q sumD flips couples", "split": "", "qt3": "nohoward wfail Tfail"}
 def kv(line): return {k: int(v) for k, v in re.findall(r"\b([A-Za-z_0-9]+) (-?\d+)\b", line)}
-for fn in sorted(os.listdir(OUT)):
+PINNED = [l.split()[1] for l in open(os.path.join(OUT, "SHA1SUMS")).read().splitlines() if l.strip()]   # only the pinned outputs
+for fn in sorted(PINNED):
     if not fn.endswith(".out"): continue
+    if fn == "rand216.out":
+        for line in open(os.path.join(OUT, fn)).read().splitlines():
+            if line == "DONE": continue
+            tool = line.split()[0]; kind = {"xflip216": "xflip", "gate216": "gate", "qt3": "qt3"}[tool]; d = kv(line.replace("max T3", "T3"))
+            print(fn, tool, "seed", line.split()[1], "TIMEOUT" if "TIMEOUT" in line else "", "genomes", d.get("genomes", d.get("runs", 0)),
+                  "must0_sum", sum(d.get(k, 0) for k in M0[kind].split()), " ".join("%s %d" % (k, d.get(k, 0)) for k in M0[kind].split()))
+        continue
     kind = next((k for k in M0 if fn.startswith(k)), None)
     if kind is None: continue
     L = open(os.path.join(OUT, fn)).read().splitlines(); g = to = 0; s = collections.Counter(); mx = collections.Counter(); done = "DONE" in L

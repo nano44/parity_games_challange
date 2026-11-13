@@ -138,6 +138,18 @@ order is constant and each move strictly raises σ(x)'s class, at most d − 1 t
   there named S2.
 - With box 215 (CONDITIONAL on KEY-TAU (i)): moves(x) ≤ 1 + min(KF_x, XF_x); sharper, §3's JF_x.
 
+- NULL switches (Lead 07:13Z, from L-RED-B 4's B5, lane DATA): N5 can switch x to a successor that is strictly Ξσ-better ONLY by the
+  length component, with x the cycle node of both plays, so that no valuation changes (S4a keeps σ in the arena tie and S4c's fallback
+  takes the switch, or S4a's arena takes it). XFLIP covers it: d_t(x) compares the WHOLE si.Engine key (cycle reward, path weight, signed
+  length), so the new successor is strictly better at t − 1 and the move is counted in moves(x); its proof uses only «strictly better
+  before the move». A null switch leaves d unchanged, so moving back needs a later strict reversal, i.e. an alternation. Own instance
+  inst/NULLSW_n4.pg (4 Even vertices: v = 0 of priority 8 with edges to a (length 2 back to v) and b (length 1)): N5 switches v from a
+  to b with every valuation unchanged (vals (0, 0, 0), (0, 0, 2), (0, 0, 1), (0, 0, 1) before and after); xflip216: xmove 0, xflip 0.
+- Where it matters for V1: STRICT (σ changes, so Ω(x) strictly rises) is FALSE at a null switch. V1's list is for Γ3's MOVERS, where F6
+  [Q docs/new/P-N5-CHAIN.md@65e02855] «No mover is the cycle node of its own play» excludes it, so STRICT and everything citing it ((Q6), REWIN (a), PAIR-EXPEL Step 1)
+  stand on Γ3; gate216's counter strict is 0 on the frozen set. LOUD-RF counts steps (loud or quiet), not value changes, and does not
+  assume that a move changes a value; QUIET-RF's count of E-class moves ((Q3), (Q6)) uses STRICT, hence F6, hence Γ3.
+
 ## 3. V3 JOINT-POLY (REFORMULATION; honest label)
 **Definition (as counted; degree-2 movers on Γ3, N5's key run before its first fallback).** KP_t(x) as in box 215 (the key-least option
 under s_t, KEY-TAU's keys). J_t(x) := k if option k is strictly Ξ_(t−1)-better than the other option AND KP_t(x) = k; else «none».
@@ -187,3 +199,30 @@ and the Ξ-order to agree); it does not bound it.
 No bound on T_key, T3 or any quiet window of N5; nothing after the first fallback except V2 (which is about every iteration); nothing about
 Ξ-order = Ω_t-order beyond box 212's READING; V1 is a reading of proofs, not a re-proof (except STRICT, SAME-SUFFIX-IMP, LOUD-RF, XFLIP,
 JOINT, written out above). TARGET.md §2 (M4) asks for a deterministic algorithm polynomial on every parity game; nothing here is that.
+
+## 7. DATA (not to sign; run 2026-11-13 06:53Z-07:35Z by date -u, two workers, one container restart at ~07:07Z resumed from the
+## outputs; every number below is from summ216.py's output out/summ216.txt; outputs pinned in out/SHA1SUMS)
+Sets: FROZEN = box 212's 81 frozen genomes (run212.sh's ALL list) + the 5 towers of box212/inst (DBL4_d20_F30, H5_d20_F62, H6_d24_F126,
+HIT7_d28_F254, RECF4_d20_F60; copied from claude/l-comp 2fa72fb5, L-COMP box 29, box212/inst/SOURCE.txt) + box213/inst (TAUESC_rand2150, TAUESC_dense2151): 88 genomes, 0 timeouts in every row.
+RAND = eg195.gen family «rand», Ξ-cyclic only, 200 genomes per seed (seeds 2161-2163; qt3: 2161, 2162).
+- (i) qt3_196.py, Q196_MODE=spec, FROZEN: cnlow, locfail, ties, bonly, k2fail, upfail, emon, nonstd 0 (must0_sum 0); HOW items: nohoward
+  14,440 (fires: N5 is not Howard), wfail 0 and Tfail 0 (QUIET3's bound L3 is not violated by N5 on these 88, though it is not proved
+  for N5); RAND 2161, 2162: must0_sum 0.
+- (ii) split216.py (split199.py unchanged, spec), FROZEN: playfail, kindfail, hwfail, gtfail, trfail, dnfail, rhfail, rh2fail, spfail,
+  rw1fail, wlamfail 0 (must0_sum 0).
+- (iii) gate216.py, FROZEN, spec: f1, strict, imp, grfail, gr2fail, efp, npshape, stepb, par, pexp, ssimp, loud 0 (must0_sum 0); HOW
+  items fire: f5best 14,440, dom 37,209. xi (Howard): must0_sum 0 and f5best 0, dom 0. RAND 2161-2163, spec: must0_sum 0. So no RF
+  verdict of §1.2 is killed, and the two HOW items checked by counter (F5's first half, DOM) are confirmed NOT rule-free on N5's run
+  (kill criterion V1, as stated).
+- (iv) xflip216.py, FROZEN (whole run, spec): xmove, xflip, xflipd 0; RAND 2161-2163: 0; own null-switch instance inst/NULLSW_n4.pg: 0.
+- (v) V3, FROZEN: jmove 0, jfmin 0 (degree-2 movers); RAND: 0. Σ JF > 0 on 6 of 88 genomes only: the five towers and W14_n75 (Σ JF 1). Towers
+  (Tk; Σ moves of degree-2 movers before the fallback; Σ KF; Σ XFm; Σ JF; max JF): DBL4_d20_F30 30; 100; 272; 124; 73; 14 —
+  RECF4_d20_F60 67; 203; 512; 248; 171; 29 — H5_d20_F62 136; 351; 748; 482; 327; 31 — H6_d24_F126 209; 491; 998; 614; 456; 62 —
+  HIT7_d28_F254 299; 1103; 2304; 1277; 1066; 126. On the MW / MWR / CW families KF = JF = 0 and every degree-2 mover moves once
+  (e.g. MW32_2: Tk 196, 260 movers, 260 moves).
+- QUIET (the §1.4 target), FROZEN, gate216 Q / Wq: on the five towers N5's key run has Q = 0, no gate flip and Σ_v (D^tot_E(v) − 1) = 0:
+  the whole run is ONE quiet sub-window with G_C, its faces and the boundary constant, of Wq = Tk = 30, 67, 136, 209, 299 steps; Howard
+  (xi) on the same genomes is also all quiet, with Wq = Tk = 9, 9, 9, 12, 8. On the MW families both runs are all loud (Wq = 0;
+  N5 Tk 196 vs Howard 199 on MW32_2). Largest Wq over FROZEN: N5 299 (HIT7), Howard 12 (H6). So the towers are exactly QUIET-KEY's
+  instances: a fixed one-player game on which Howard's Bellman-Ford step converges in ≤ 12 steps and N5's key rule takes up to 299.
+- (vi) other improving rules (idx, seq): in progress at this commit (runC216.sh); reported in the next push.

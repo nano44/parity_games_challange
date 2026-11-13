@@ -38,4 +38,5 @@ OK   [docs/new/N5-ssi-global.md@65e02855] docs/new/N5-ssi-global.md@65e02855 | I
 OK   [docs/new/N5-ssi-global.md@65e02855] docs/new/N5-ssi-global.md@65e02855 | for every Even v with an improving edge set σ_new(v) = the w with (v, w) ∈ Iσ
 OK   [docs/new/N5-ssi-global.md@65e02855] docs/new/N5-ssi-global.md@65e02855 | Even v only the edge to σ(v).
 OK   [docs/new/N5-ssi-global.md@65e02855] docs/new/N5-ssi-global.md@65e02855 | τ_new = Odd's optimal counterstrategy (S1 procedure on H', not dual) to σ.
-quotes 40 missing 0 (trunk 65e02855265ab0df1a8a3392a980c8d5b459d3a1)
+OK   [docs/new/P-N5-CHAIN.md@65e02855] docs/new/P-N5-CHAIN.md@65e02855 | No mover is the cycle node of its own play
+quotes 41 missing 0 (trunk 65e02855265ab0df1a8a3392a980c8d5b459d3a1)

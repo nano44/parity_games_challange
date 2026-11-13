@@ -1226,4 +1226,14 @@ if [ "$r215" -eq 0 ] && [ -z "$d215" ] && ! grep -v '^ctrl' box215/check215.out 
 else
   echo "BOX 215 KEYSIDE-ALL check: FAILED (exit $r215)"; echo "$d215" | head -30; echo "$run215" | tail -15; printf '%s\n' "$s215" | tail -5; exit 1
 fi
+# BOX 216 VALUE SIDE (L-NEW successor 76): V1 rule-free reading (run facts, R125/R127/R128 counters on N5's key run), V2 XFLIP, V3 JOINT: must-0 counters 0 on the check set and in the pinned outputs (summ216.py), six controls fire, Howard-only items 0 in xi mode, outputs pinned, quotes 41 found
+r216=0; run216=$(cd box216 && bash check216.sh 2>&1) || r216=$?
+d216=$(diff <(printf '%s\n' "$run216") box216/check216.out 2>&1) || true
+m216='\b(xmove|xflip|xflipd|jmove|jfmin|f1|strict|imp|grfail|gr2fail|efp|npshape|stepb|par|pexp|ssimp|loud|playfail|kindfail|hwfail|gtfail|trfail|dnfail|rhfail|rh2fail|spfail|rw1fail|wlamfail) [1-9]'
+s216=$(cd box216 && python3 -I summ216.py 2>&1) || r216=$((r216 + 100))
+if [ "$r216" -eq 0 ] && [ -z "$d216" ] && ! grep -v '^ctrl' box216/check216.out | grep -Eq "$m216" && grep -Eq '^ctrlswap .*\bxmove [1-9]' box216/check216.out && grep -Eq '^ctrlxf0 .*\bxflip [1-9]' box216/check216.out && grep -Eq '^ctrlperm .*\bjmove [1-9]' box216/check216.out && grep -Eq '^ctrlf1 .*\bf1 [1-9]' box216/check216.out && grep -Eq '^ctrlodd .*\bgrfail [1-9]' box216/check216.out && grep -Eq '^ctrlpexp .*\bpexp [1-9]' box216/check216.out && ! grep '^howxi' box216/check216.out | grep -Eq '\b(f5best|dom) [1-9]' && ! printf '%s\n' "$s216" | grep -Eq 'must0_sum [1-9]' && diff <(printf '%s\n' "$s216") box216/out/summ216.txt > /dev/null && (cd box216/out && sha1sum -c --quiet SHA1SUMS) && (cd box216/inst && sha1sum -c --quiet SHA1SUMS) && grep -q '^quotes 41 missing 0 ' box216/quotes216.out; then
+  echo "BOX 216 VALUE SIDE: V1/V2/V3 must-0 counters 0 (check set and pinned outputs), controls fire (swap xmove, XF:=0 xflip, permuted keys jmove, F1 reversed, Odd larger face grfail, PAIR-EXPEL reversed), Howard-only items 0 in xi mode, outputs pinned, quotes 41 found: PASS"
+else
+  echo "BOX 216 VALUE SIDE check: FAILED (exit $r216)"; echo "$d216" | head -30; echo "$run216" | tail -15; printf '%s\n' "$s216" | tail -5; exit 1
+fi
 rm -rf "$tmp"
