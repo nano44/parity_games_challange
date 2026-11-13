@@ -1,0 +1,11 @@
+DIAG243 HIT7_d28_F254.json: T 299 (stuck)
+  mover 8 level 4: sw 31 KF 30 blocked 51 | Ξ-targets [16, 7] (levels [8, 3]) | supply Σ sw(Ξ-desc) 354 over 25 movers
+  mover 9 level 4: sw 31 KF 30 blocked 168 | Ξ-targets [50, 54] (levels [25, 27]) | supply Σ sw(Ξ-desc) 227 over 22 movers
+  mover 10 level 5: sw 63 KF 62 blocked 177 | Ξ-targets [17, 30] (levels [8, 15]) | supply Σ sw(Ξ-desc) 701 over 34 movers
+  mover 11 level 5: sw 63 KF 62 blocked 51 | Ξ-targets [8, 9] (levels [4, 4]) | supply Σ sw(Ξ-desc) 417 over 28 movers
+  mover 12 level 6: sw 127 KF 126 blocked 127 | Ξ-targets [33, 11] (levels [16, 5]) | supply Σ sw(Ξ-desc) 720 over 32 movers
+  mover 13 level 6: sw 127 KF 126 blocked 0 | Ξ-targets [11, 19] (levels [5, 9]) | supply Σ sw(Ξ-desc) 576 over 30 movers
+  mover 14 level 7: sw 32 KF 254 blocked 122 | Ξ-targets [7, 50] (levels [3, 25]) | supply Σ sw(Ξ-desc) 131 over 18 movers
+  mover 15 level 7: sw 33 KF 254 blocked 142 | Ξ-targets [18, 31] (levels [9, 15]) | supply Σ sw(Ξ-desc) 258 over 22 movers
+  mover 16 level 8: sw 31 KF 190 blocked 107 | Ξ-targets [30, 7] (levels [15, 3]) | supply Σ sw(Ξ-desc) 323 over 24 movers
+  mover 17 level 8: sw 62 KF 190 blocked 88 | Ξ-targets [22, 34] (levels [11, 17]) | supply Σ sw(Ξ-desc) 639 over 33 movers

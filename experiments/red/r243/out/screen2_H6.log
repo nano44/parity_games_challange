@@ -1,0 +1,3 @@
+SCREEN2 H6_d24_F126.json L 6 z-level 6 mode low: best sw(y) 94 (full 127) at {'LZ': 6, 'mode': 'low', 'u': 22, 'v': 10, 'pz': (0, 1), 'gz': 0, 'stz': 1, 'swz': 31, 'y': (-1, 0, 0, 0, 9), 'w': 8} | pairs 2352 | 486 s
+SCREEN2 H6_d24_F126.json L 6 z-level 5 mode low: best sw(y) 96 (full 127) at {'LZ': 5, 'mode': 'low', 'u': 22, 'v': 10, 'pz': (0, 1), 'gz': 0, 'stz': 1, 'swz': 32, 'y': (-1, 0, 0, 0, 9), 'w': 8} | pairs 2352 | 953 s
+SCREEN2 BEST H6_d24_F126.json L 6: sw(y) 96 of 127 at {'LZ': 5, 'mode': 'low', 'u': 22, 'v': 10, 'pz': (0, 1), 'gz': 0, 'stz': 1, 'swz': 32, 'y': (-1, 0, 0, 0, 9), 'w': 8}

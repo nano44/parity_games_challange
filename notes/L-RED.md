@@ -3588,3 +3588,9 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
 - RESUME POINT: nothing in flight after this push; next = whatever the Lead routes (DEEP3 on hold).
 - 2026-11-13T09:30Z: R241 §7 NULL-switch addendum (Lead 07:13Z/08:19Z msgs read only at 08:39Z: lesson = call ReadNotifications at every wait,
   not only when told). B5 null switch reproduced = post-F1 (2nd fallback); in-window NULL switches 1,175 / 2,211 runs, nullbad 0, nullxi 0; climbs 24,400 evals 0 cand.
+- 2026-11-13T10:20Z: R243 (Lead 09:08Z RE-TARGET: kill attempt on QUIET-KEY-1P / ENUM-LOG by hand construction). Tools r243: enum243 (k(G) from
+  r187 ideal.traj = N5 T_key on towers; climbs + lift), diag243 (sw / KF / blocked / Ξ supply), signal243 (exact one-mover signal screen),
+  greedy243, screen2_243 (exact two-mover screen, Ξ-MUX z + target y; ADDZ iterates). FINDINGS: HIT7 level 7 has KF 254 (key side full),
+  blocked by the value side; H5 + one level-5 mover (Ξ-targets 11, 10) = H5PLUS_L5 (sha1 251b1261...) has k = 6 at d 20, N5 + n5v checked;
+  one-mover screen: H6 L6 65/127, HIT7 L7 144/255; two-mover: H6 L6 96/127. Climbs from random stall at k 2 (d <= 8); HIT7 climbs reach 64.
+  RUNNING: screen2 HIT7 L7 (z levels 7, 6); iterated screen2 on H6 (jobI, 4 stages).

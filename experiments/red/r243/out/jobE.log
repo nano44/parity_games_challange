@@ -1,0 +1,43 @@
+ENUM243 md4 eval 1243 new best (2, 0.1429, 5) levels [1, 3, 1, 1] | 0 s
+ENUM243 md4 eval 1454 new best (2, 0.2857, 5) levels [1, 3, 2, 2] | 0 s
+ENUM243 md4 eval 1663 new best (2, 1.0, 5) levels [1, 3, 1, 3] | 1 s
+ENUM243 md4 END evals 100000 d 4 best (2, 1.0, 8) file ENUM_md4_d4_k2_dbc68024.json | 31 s
+ENUM243 md6 eval 3802 new best (2, 1.0, 7) levels [1, 1, 1, 1] | 2 s
+ENUM243 md6 END evals 100000 d 6 best (2, 1.0, 15) file ENUM_md6_d6_k2_01492633.json | 60 s
+ENUM243 md8 eval 1 new best (1, 0.3333, 1) levels [1, 0, 0] | 0 s
+ENUM243 md8 eval 5 new best (1, 1.0, 1) levels [0, 0, 1] | 0 s
+ENUM243 md8 eval 1846 new best (2, 1.0, 8) levels [1, 1, 1, 1] | 1 s
+ENUM243 md8 END evals 100000 d 8 best (2, 1.0, 16) file ENUM_md8_d8_k2_2bb2f3cb.json | 118 s
+Traceback (most recent call last):
+  File "/home/user/parity_games_challange/experiments/red/r243/enum243.py", line 102, in <module>
+    climb(sys.argv[2], int(sys.argv[3]), int(sys.argv[4]), int(sys.argv[5]), sys.argv[6] if len(sys.argv) > 6 else None)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/parity_games_challange/experiments/red/r243/enum243.py", line 84, in climb
+    rng = random.Random(seed); best = json.load(open(start)) if start else ladder(rng, d); best = best.get("genome", best)
+                                                                           ~~~~~~^^^^^^^^
+  File "/home/user/parity_games_challange/experiments/red/r243/enum243.py", line 28, in ladder
+    if not acyclic(G): return ladder(rng, d)
+                              ~~~~~~^^^^^^^^
+  File "/home/user/parity_games_challange/experiments/red/r243/enum243.py", line 28, in ladder
+    if not acyclic(G): return ladder(rng, d)
+                              ~~~~~~^^^^^^^^
+  File "/home/user/parity_games_challange/experiments/red/r243/enum243.py", line 28, in ladder
+    if not acyclic(G): return ladder(rng, d)
+                              ~~~~~~^^^^^^^^
+  [Previous line repeated 991 more times]
+  File "/home/user/parity_games_challange/experiments/red/r243/enum243.py", line 24, in ladder
+    G = dict(N=N, lev=lev, opts=opts, gate=[[next(it), next(it)] for _ in range(N)], br=rng.sample(range(M), M), bp=[rng.randint(0, 1) for _ in range(M)],
+                                                                                        ~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/random.py", line 416, in sample
+    if not isinstance(population, _Sequence):
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen abc>", line 119, in __instancecheck__
+  File "<frozen abc>", line 123, in __subclasscheck__
+RecursionError: maximum recursion depth exceeded
+ENUM243 md12 eval 1 new best (1, 0.3333, 2) levels [0, 1, 1] | 0 s
+ENUM243 md12 eval 38 new best (1, 0.6667, 2) levels [1, 2, 1] | 0 s
+ENUM243 md12 eval 71 new best (1, 1.0, 2) levels [1, 0, 0] | 0 s
+ENUM243 md12 eval 324 new best (2, 0.1429, 4) levels [1, 0, 1, 1] | 0 s
+ENUM243 md12 eval 829 new best (2, 0.2857, 5) levels [1, 1, 0, 0] | 1 s
+ENUM243 md12 eval 1400 new best (2, 0.4286, 6) levels [1, 1, 1, 1] | 1 s
+ENUM243 md12 eval 2663 new best (2, 1.0, 6) levels [1, 1, 1, 1] | 2 s
