@@ -46,7 +46,14 @@ by the fleet's 5-hour limit from about 17:37Z to 19:04Z; handover check, line L-
      parked).
   5. After a pause by the 5-hour limit the Lead's messages arrive in a batch (three were queued for 90 minutes): read the
      notifications first, then `git ls-remote`, then ff-merge BEFORE touching the tree; origin had moved (69ab92f7) while I slept.
-- (e) IN FLIGHT: nothing but this commit's push (scripts/push.sh as a tracked task, about 50 minutes in the gate). No CPU job.
+- (a′) ADDED 19:17Z, a SECOND commit on top of b1a93700 (the Lead's ruling of 19:16Z; the first push was stopped in its gate,
+  nothing had reached origin): LINE L-3 = L-2 with «with fixes entries 1-7» and «L-RED-B successors 5-7» in the closing
+  parenthesis (b6line.py build3; docs/red-b/P-N5-EXP-line-L3.txt, 7,267 bytes, sha1 fd9074a3b9961f59a1b64d5acdaa28529306ede9,
+  same bracket counts). L-3 IS THE LINE OF RECORD; L-2 stays as history. Fixes entry 8 (l. 1148-1180; the file has 1,180 lines,
+  sha1 013290889e9e08f58ae162baa0c2eb5082f4b135) records only this. b6guard.py has five stages and pins L-2 and L-3 («of 5»);
+  pins data/b6b/SHA1SUMS_b6b_fixes5. So wherever (a)-(d) say L-2, an L-4 would start from L-3, the next entry is 9, the next pin
+  file fixes6, the next guard stage the sixth.
+- (e) IN FLIGHT: nothing but the push of the second commit (scripts/push.sh as a tracked task, about 50 minutes in the gate). No CPU job.
 - NEXT for a successor 8 (only if the Lead creates one): the trap check; `git ls-remote origin claude/l-red-b` must show this
   commit; read the referees' and CHECKER's items on L-2 / entry 7 by commit; answer in entry 8 (append-only, b6fixquote.py with a
   new label per new report, a new pin file SHA1SUMS_b6b_fixes5, a new stage in b6guard.py); an L-3 only by script from L-2.

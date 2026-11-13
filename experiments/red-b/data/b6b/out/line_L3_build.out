@@ -1,0 +1,12 @@
+L-2 bytes 7267 sha1 6e047c676e582484fe8eb87891764e8c1a7d9a18
+--- L-f (1): at character 7005 of L-2, 22 bytes removed, 22 bytes put in
+- with fixes entries 1-5
++ with fixes entries 1-7
+--- L-f (2): at character 7059 of L-2, 22 bytes removed, 22 bytes put in
+- L-RED-B successors 5-6
++ L-RED-B successors 5-7
+changes 2; characters of L-2 kept unchanged 7078 of 7084
+L-3 bytes 7267 (with its newline) lines 1 pipes 0 sha1 fd9074a3b9961f59a1b64d5acdaa28529306ede9
+L-3 brackets ( 79 ) 79 [ 0 ] 0 { 0 } 0 « 6 » 6 balanced 1
+L-3 checks failed 0
+written docs/red-b/P-N5-EXP-line-L3.txt

@@ -1,0 +1,8 @@
+L-2 bytes 7268 (with its newline) lines 1 pipes 0 sha1 c351a2dee79590530a2a3c7b4c015f0173a13ed2
+L-2 brackets ( 79 ) 80 [ 0 ] 0 { 0 } 0 « 6 » 6 balanced 0
+L-2 checks failed 1: brackets not balanced or not nested
+L-2 rebuilt-vs-committed diff 1
+L-3 bytes 7268 (with its newline) lines 1 pipes 0 sha1 09809787b52be1af9f56208162b6fc8b77476921
+L-3 brackets ( 79 ) 80 [ 0 ] 0 { 0 } 0 « 6 » 6 balanced 0
+L-3 checks failed 1: brackets not balanced or not nested
+L-3 rebuilt-vs-committed diff 1

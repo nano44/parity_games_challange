@@ -1145,3 +1145,36 @@ written docs/red-b/P-N5-EXP-line-L2.txt
 ```
 - PINS: the new files of this entry are pinned in data/b6b/SHA1SUMS_b6b_fixes4 (checked by check.sh); the pin files of the frozen
   packet and of entries 1-6 are unchanged.
+
+## Entry 8 (L-RED-B successor 7, session_01V5yGRVmUNMkUXGRuVH63B8; 2026-11-13, written 19:16Z by date -u): line L-3, the line of record — its closing parenthesis names the fixes entries and the successors as they are at landing (the Lead's ruling); a record of the line only, no statement, proof, hypothesis or number changes
+The Lead's ruling on the point that entry 7 (7.6) left as it was, by its message of 2026-11-13 19:16Z (date -u of the Lead's
+session), in its words: «the line of record must say what is true at landing, so it becomes «with fixes entries 1-7» and «L-RED-B
+successors 5-7»».
+- LINE L-3: docs/red-b/P-N5-EXP-line-L3.txt = line L-2 with two named replacements (item L-f), made by experiments/red-b/b6line.py
+  build3, each old text occurring exactly once in L-2, and nothing else: «with fixes entries 1-5» becomes «with fixes entries 1-7»,
+  and «L-RED-B successors 5-6» becomes «L-RED-B successors 5-7». Undoing them gives L-2 back byte for byte. L-3 IS THE LINE OF
+  RECORD. L-1 and L-2 are not edited and stay as history; what entry 7 (7.6) says of L-2 holds of L-3, except its sentence on the
+  closing parenthesis. The builder's record (data/b6b/out/line_L3_build.out; line_L3_quotes.out: the four quotations inside L-3
+  found verbatim at their commits; control line_L3_ctrl.out: the bracket check fires on both lines):
+```
+L-2 bytes 7267 sha1 6e047c676e582484fe8eb87891764e8c1a7d9a18
+--- L-f (1): at character 7005 of L-2, 22 bytes removed, 22 bytes put in
+- with fixes entries 1-5
++ with fixes entries 1-7
+--- L-f (2): at character 7059 of L-2, 22 bytes removed, 22 bytes put in
+- L-RED-B successors 5-6
++ L-RED-B successors 5-7
+changes 2; characters of L-2 kept unchanged 7078 of 7084
+L-3 bytes 7267 (with its newline) lines 1 pipes 0 sha1 fd9074a3b9961f59a1b64d5acdaa28529306ede9
+L-3 brackets ( 79 ) 79 [ 0 ] 0 { 0 } 0 « 6 » 6 balanced 1
+L-3 checks failed 0
+written docs/red-b/P-N5-EXP-line-L3.txt
+```
+- Why the parenthesis reads «1-7» although this entry is the eighth: entries 1-7 carry the packet's DATA, answers and readings;
+  entry 8 is a record of the line itself and changes no statement, so the line does not cite it.
+- This entry carries no tagged quotation: b6fixquote.py on the whole file gives, byte for byte, the output pinned with entry 7
+  (data/b6b/out/quote_fixes7.out: «quotes 104 found 104 notfound 0»).
+- Guards and pins: b6guard.py now also pins L-2 and L-3 by their sha1 and this file's text at entry 7's commit b1a93700 (1,147
+  lines) and at this entry's commit; its line is «guard frozen 0 prefix 0 of 5 l1 0 l2 0 l3 0», its control gives «prefix 5 of 5».
+  check.sh tests both, and that L-2 and L-3 are the builder's output. The new files are pinned in data/b6b/SHA1SUMS_b6b_fixes5;
+  the older pin files, the frozen packet and entries 1-7 are unchanged.

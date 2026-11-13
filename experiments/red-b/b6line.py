@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""L-RED-B packet P-N5-EXP: line L-2, built from line L-1 by NAMED REPLACEMENTS (never by hand).
+"""L-RED-B packet P-N5-EXP: lines L-2 and L-3, each built from the line before it by NAMED REPLACEMENTS (never by hand).
 
 L-1 = docs/red-b/P-N5-EXP-line-L1.txt (sha1 59c5309377eda882ba436ffe7eb03fbff598c7c8, pinned below; never edited).
 L-2 = docs/red-b/P-N5-EXP-line-L2.txt = L-1 with the replacements of CHANGES and nothing else.
@@ -7,15 +7,21 @@ Each replacement names the line item it answers (L-a, L-b, L-c: REFEREE-2 42's l
 docs/referee-2/R2-P-N5-EXP.md l. 521-527; L-d: the Lead's item, N5 at k = 13 from fixes entry 6) and its `old` text must occur EXACTLY ONCE in
 L-1; the replaced spans are disjoint, so every character outside them is that of L-1 (tested: undoing the replacements on
 the result gives L-1 back, byte for byte).
+L-3 = docs/red-b/P-N5-EXP-line-L3.txt = L-2 with the replacements of CHANGES3 and nothing else (fixes entry 8: the Lead's ruling of
+2026-11-13 19:16Z on the closing parenthesis, item L-f), by the same rules: each old text exactly once in L-2, undoing gives L-2
+back. L-2 stays in the repository as history; L-3 is the line of record.
 
 Usage (from anywhere; no other lane's file is needed for build / check):
   b6line.py build    write L-2; print the diff (per change: item, position in L-1, the old text, the new text, each cut down to
                      the part that differs), then the checks
-  b6line.py check    rebuild in memory and compare with the committed L-2; exit 1 on any difference or failed check (check.sh)
+  b6line.py build3   the same for L-3 from L-2 (the committed L-2 must be the rebuilt one); prints the diff against L-2
+  b6line.py check    rebuild L-2 and L-3 in memory and compare each with its committed file; exit 1 on any difference or failed
+                     check (check.sh); the last line of each block is «L-n rebuilt-vs-committed diff 0»
   b6line.py quotes   check every quotation of QUOTES verbatim (white space normalised on both sides, nothing else) against its
                      source, read with `git show COMMIT:PATH` (the commits must be in the clone: fetch claude/referee,
-                     claude/referee-2 and trunk first); prints the source's sha1 and the line numbers of each quotation
-Checks on L-2: exactly one line (one newline, the last byte); no pipe character; the brackets ( ) [ ] { } « » balanced and
+                     claude/referee-2 and trunk first); prints the source's sha1 and the line numbers of each quotation;
+                     `quotes` reads L-2, `quotes3` reads L-3 (the same quotations: CHANGES3 touches none of them)
+Checks on L-2 and on L-3: exactly one line (one newline, the last byte); no pipe character; the brackets ( ) [ ] { } « » balanced and
 properly nested (counts printed); sha1 and byte count printed.
 Control B6LINE_CTRL=1 (build / check): one unbalanced bracket is put into the result; the bracket check must fire (exit 1,
 nothing is written).  Control B6LINE_CTRL=2 (quotes): one letter of every quotation is changed; each must be NOT-FOUND (exit 1)."""
@@ -25,6 +31,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 TOP = os.path.normpath(os.path.join(HERE, "..", ".."))
 L1 = os.path.join(TOP, "docs", "red-b", "P-N5-EXP-line-L1.txt")
 L2 = os.path.join(TOP, "docs", "red-b", "P-N5-EXP-line-L2.txt")
+L3 = os.path.join(TOP, "docs", "red-b", "P-N5-EXP-line-L3.txt")
 L1_SHA1 = "59c5309377eda882ba436ffe7eb03fbff598c7c8"
 CTRL = os.environ.get("B6LINE_CTRL", "0")
 
@@ -66,6 +73,12 @@ CHANGES = [
      "(claude/referee-2 f17a2708, docs/referee-2/R2-P-N5-EXP.md, Addendum 2 §A2.3: «" + REF2_SIGN + "») (P-N5-EXP,"),
 ]
 
+# L-3 from L-2 (item L-f: the closing parenthesis names the fixes entries and the successors as they are at landing)
+CHANGES3 = [
+    ("L-f (1)", "with fixes entries 1-5", "with fixes entries 1-7"),
+    ("L-f (2)", "L-RED-B successors 5-6", "L-RED-B successors 5-7"),
+]
+
 # (item, quotation, commit, path, restrict-to-entry head or None)
 QUOTES = [
     ("L-b", R117_TITLE, "dba11145c222c9034144db821057485698232d44", "docs/RESULTS.md", "### R117 "),
@@ -94,16 +107,13 @@ def brackets(t):
     return counts, not st
 
 
-def build():
-    raw = open(L1, "rb").read()
-    if sha1(raw) != L1_SHA1:
-        raise SystemExit("b6line: L-1's sha1 differs from its pin")
-    t = raw.decode("utf-8")
+def apply(t, changes, src):
+    """t with the named replacements; every old text exactly once in t; undoing them on the result gives t back"""
     spans = []
-    for item, old, new in CHANGES:
+    for item, old, new in changes:
         n = t.count(old)
         if n != 1:
-            raise SystemExit(f"b6line: the old text of {item} occurs {n} times in L-1 (must be 1)")
+            raise SystemExit(f"b6line: the old text of {item} occurs {n} times in {src} (must be 1)")
         if old == new:
             raise SystemExit(f"b6line: {item} changes nothing")
         a = t.index(old)
@@ -126,10 +136,25 @@ def build():
             raise SystemExit(f"b6line: the new text of {item} does not occur exactly once in the result")
         back = back.replace(new, old)
     if back != t:
-        raise SystemExit("b6line: undoing the replacements does not give L-1 back")
+        raise SystemExit(f"b6line: undoing the replacements does not give {src} back")
+    return res, spans
+
+
+def build():
+    raw = open(L1, "rb").read()
+    if sha1(raw) != L1_SHA1:
+        raise SystemExit("b6line: L-1's sha1 differs from its pin")
+    t = raw.decode("utf-8")
+    res, spans = apply(t, CHANGES, "L-1")
     if CTRL == "1":
         res = res[:-1] + ")" + "\n"
     return t, res, spans
+
+
+def build3():
+    _, l2, _ = build()                          # under the control the unbalanced bracket of L-2 is carried into L-3
+    res, spans = apply(l2, CHANGES3, "L-2")
+    return l2, res, spans
 
 
 def checks(res):
@@ -144,11 +169,11 @@ def checks(res):
     return counts, ok, bad
 
 
-def report(res, counts, ok, bad):
+def report(res, counts, ok, bad, name="L-2"):
     b = res.encode("utf-8")
-    print("L-2 bytes %d (with its newline) lines %d pipes %d sha1 %s" % (len(b), res.count("\n"), res.count("|"), sha1(b)))
-    print("L-2 brackets " + " ".join("%s %d" % (ch, counts[ch]) for ch in "()[]{}«»") + " balanced %d" % int(ok))
-    print("L-2 checks failed %d%s" % (len(bad), (": " + "; ".join(bad)) if bad else ""))
+    print("%s bytes %d (with its newline) lines %d pipes %d sha1 %s" % (name, len(b), res.count("\n"), res.count("|"), sha1(b)))
+    print(name + " brackets " + " ".join("%s %d" % (ch, counts[ch]) for ch in "()[]{}«»") + " balanced %d" % int(ok))
+    print("%s checks failed %d%s" % (name, len(bad), (": " + "; ".join(bad)) if bad else ""))
 
 
 def trim(old, new):
@@ -189,8 +214,8 @@ def restrict(text, head):
     return "\n".join(l if a <= i < b else "" for i, l in enumerate(lines))
 
 
-def quotes():
-    res = open(L2, encoding="utf-8").read()
+def quotes(path=L2):
+    res = open(path, encoding="utf-8").read()
     news = {}
     for item, _, new in CHANGES:
         news[item] = news.get(item, "") + new
@@ -222,11 +247,28 @@ def quotes():
 
 if __name__ == "__main__":
     mode = sys.argv[1] if len(sys.argv) > 1 else ""
-    if mode not in ("build", "check", "quotes"):
+    if mode not in ("build", "build3", "check", "quotes", "quotes3"):
         print(__doc__)
         sys.exit(2)
-    if mode == "quotes":
-        sys.exit(quotes())
+    if mode in ("quotes", "quotes3"):
+        sys.exit(quotes(L2 if mode == "quotes" else L3))
+    if mode == "build3":
+        l2, res, spans = build3()
+        if open(L2, encoding="utf-8").read() != l2:
+            raise SystemExit("b6line: the committed L-2 is not the L-2 rebuilt from L-1")
+        counts, ok, bad = checks(res)
+        print("L-2 bytes %d sha1 %s" % (len(l2.encode("utf-8")), sha1(l2.encode("utf-8"))))
+        for a, b, item, old, new in spans:
+            print(f"--- {item}: at character {a} of L-2, {len(old.encode('utf-8'))} bytes removed, {len(new.encode('utf-8'))} bytes put in")
+            print(f"- {old}")
+            print(f"+ {new}")
+        print("changes %d; characters of L-2 kept unchanged %d of %d" % (len(spans), len(l2) - sum(len(trim(o, w)[1]) for _, _, _, o, w in spans), len(l2)))
+        report(res, counts, ok, bad, "L-3")
+        if bad:
+            sys.exit(1)
+        open(L3, "w", encoding="utf-8").write(res)
+        print("written " + os.path.relpath(L3, TOP))
+        sys.exit(0)
     t, res, spans = build()
     counts, ok, bad = checks(res)
     if mode == "build":
@@ -248,4 +290,10 @@ if __name__ == "__main__":
     cur = open(L2, encoding="utf-8").read() if os.path.exists(L2) else None
     diff = 0 if cur == res else 1
     print("L-2 rebuilt-vs-committed diff %d" % diff)
-    sys.exit(1 if (bad or diff) else 0)
+    _, res3, _ = build3()
+    counts3, ok3, bad3 = checks(res3)
+    report(res3, counts3, ok3, bad3, "L-3")
+    cur3 = open(L3, encoding="utf-8").read() if os.path.exists(L3) else None
+    diff3 = 0 if cur3 == res3 else 1
+    print("L-3 rebuilt-vs-committed diff %d" % diff3)
+    sys.exit(1 if (bad or diff or bad3 or diff3) else 0)
