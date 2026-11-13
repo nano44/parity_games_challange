@@ -1,0 +1,4 @@
+SCREEN2 BEST H6_d24_F126.json L 6: sw(y) 96 of 127 at {'LZ': 5, 'mode': 'low', 'u': 22, 'v': 10, 'pz': (0, 1), 'gz': 0, 'stz': 1, 'swz': 32, 'y': (-1, 0, 0, 0, 9), 'w': 8}
+SCREEN2 ADDZ wrote H6_z1.json: z = mover 48, sw(z) 32 (screen 32), earlier run unchanged True
+SCREEN2 BEST H6_z1.json L 6: sw(y) 98 of 127 at {'LZ': 6, 'mode': 'low', 'u': 48, 'v': 2, 'pz': (0, 1), 'gz': 0, 'stz': 0, 'swz': 6, 'y': (-1, 0, 0, 0, 9), 'w': 8}
+SCREEN2 ADDZ wrote H6_z2.json: z = mover 49, sw(z) 6 (screen 6), earlier run unchanged True

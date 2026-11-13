@@ -10,7 +10,7 @@ HERE = os.path.dirname(os.path.abspath(__file__)); sys.path[:0] = [os.path.join(
 import ideal
 G = json.load(open(sys.argv[1])); G = G.get("genome", G); L, R, OUTF = int(sys.argv[2]), int(sys.argv[3]), sys.argv[4]
 BASE = int(sys.argv[5]) if len(sys.argv) > 5 else 0; FULL = 2 ** (L - BASE + 1) - 1
-P = [x for x in range(G["N"]) if G["lev"][x] == L - 1][:2]
+P = [int(v) for v in os.environ["PAIR"].split(",")] if os.environ.get("PAIR") else [x for x in range(G["N"]) if G["lev"][x] == L - 1][:2]   # PAIR: the W-targets of the added mover
 def run(G):
     S, why = ideal.traj(G, cap=500000); return S
 def screen(G, S):
