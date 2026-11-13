@@ -9,13 +9,19 @@ import sys, os, json, random, time
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 from one217 import OneP, acyclic
 
+XTW = os.environ.get("CLIMB217_XTW") == "1"         # Xi-target = W-target on every option (a «self-fuelling» shape: Xi-edges parallel
+                                                    # to W-edges, so a switch below moves the key and the Xi value of the same option)
+LADDER = os.environ.get("CLIMB217_LADDER") == "1"   # W-graph fixed to the ladder shape (option j of a level-l mover -> the j-th mover of
+                                                    # level l - 1; needs D = w), as the towers (box 215's L^R_d shape); wt is not mutated
 def rand_genome(rng, w, d, D):
     lev = [x // w for x in range(w * d)]; N = len(lev); M = N * D; opts = []; i = 0
     perm = list(range(N)); rng.shuffle(perm); pos = {x: p for p, x in enumerate(perm)}
     for x in range(N):
         oo = []
-        for _ in range(D):
-            wt = rng.choice([y for y in range(N) if lev[y] == lev[x] - 1]) if lev[x] else -1
+        for j in range(D):
+            if LADDER: wt = [y for y in range(N) if lev[y] == lev[x] - 1][j] if lev[x] else -1
+            else: wt = rng.choice([y for y in range(N) if lev[y] == lev[x] - 1]) if lev[x] else -1
+            if XTW: oo.append([wt, wt, i]); i += 1; continue
             lower = [y for y in range(N) if pos[y] < pos[x]]
             xt = rng.choice(lower + [-1]) if lower and rng.random() < 0.8 else -1
             oo.append([wt, xt, i]); i += 1
@@ -28,8 +34,8 @@ def rand_genome(rng, w, d, D):
 def mutate(rng, G):
     H = json.loads(json.dumps(G)); N, lev, D = H["N"], H["lev"], len(H["opts"][0]); M = N * D
     r = rng.random(); x = rng.randrange(N); k = rng.randrange(D)
-    if r < 0.2 and lev[x] > 0: H["opts"][x][k][0] = rng.choice([y for y in range(N) if lev[y] == lev[x] - 1])
-    elif r < 0.45: H["opts"][x][k][1] = rng.choice(list(range(N)) + [-1])
+    if r < 0.2 and lev[x] > 0 and not LADDER: H["opts"][x][k][0] = rng.choice([y for y in range(N) if lev[y] == lev[x] - 1])
+    elif r < 0.45 and not XTW: H["opts"][x][k][1] = rng.choice(list(range(N)) + [-1])
     elif r < 0.6: a, b = rng.randrange(M), rng.randrange(M); H["br"][a], H["br"][b] = H["br"][b], H["br"][a]
     elif r < 0.7: b = rng.randrange(M); H["bp"][b] ^= 1
     elif r < 0.9:
@@ -54,6 +60,19 @@ def lift(G, k):
 
 def tkey(G): return len(OneP(G).run("key")) - 1
 
+def enum_depth(G, S=None):
+    """k(G) of box 217 §5 A6: the largest k such that some mover of W-level k - 1 switches |K(x)| - 1 times (every key), 0 if none"""
+    if S is None: S = OneP(G).run("key")
+    N, lev = G["N"], G["lev"]; K = {}
+    for x in sorted(range(N), key=lambda x: lev[x]): K[x] = sum((K[w] if w >= 0 else 1) for (w, _, _) in G["opts"][x])
+    sw = [sum(1 for t in range(1, len(S)) if S[t][x] != S[t - 1][x]) for x in range(N)]
+    return max([lev[x] + 1 for x in range(N) if K[x] > 1 and sw[x] == K[x] - 1] + [0])
+
+OBJ = os.environ.get("CLIMB217_OBJ", "T")      # T: maximise T_key; enum: maximise (k(G), T_key) lexicographically
+def score(G):
+    S = OneP(G).run("key"); t = len(S) - 1
+    return (enum_depth(G, S), t) if OBJ == "enum" else (t,)
+
 if __name__ == "__main__":
     w, d, D, seed, iters, outdir = int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4]), int(sys.argv[5]), sys.argv[6]
     rng = random.Random(seed)
@@ -63,17 +82,17 @@ if __name__ == "__main__":
         w = sum(1 for l in G["lev"] if l == 0); d = max(G["lev"]) + 1; D = len(G["opts"][0])
     else:
         G = rand_genome(rng, w, d, D)
-    best = tkey(G); t0 = time.time(); last = 0
+    best = score(G); t0 = time.time(); last = 0
     for it in range(iters):
         H = mutate(rng, G)
         if H is None: continue
-        t = tkey(H)
+        t = score(H)
         if t >= best:
-            if t > best: print(f"w {w} d {d} D {D} seed {seed} it {it} T {t}", flush=True); last = it
+            if t > best: print(f"w {w} d {d} D {D} seed {seed} it {it} score {t}", flush=True); last = it
             G, best = H, t
-    P = OneP(G); rec = {"genome": G, "T_key": best, "howard": len(P.run("howard")) - 1, "seq": len(P.run("seq")) - 1,
+    P = OneP(G); kG = enum_depth(G); best = len(P.run("key")) - 1; rec = {"genome": G, "T_key": best, "enum_depth": kG, "obj": OBJ, "howard": len(P.run("howard")) - 1, "seq": len(P.run("seq")) - 1,
                         "w": w, "d": d, "D": D, "seed": seed, "iters": iters}
-    os.makedirs(outdir, exist_ok=True); fn = os.path.join(outdir, f"rec_w{w}_d{d}_D{D}_s{seed}.json")
+    os.makedirs(outdir, exist_ok=True); fn = os.path.join(outdir, f"rec_w{w}_d{d}_D{D}_s{seed}" + ("_enum" if OBJ == "enum" else "") + ("_lad" if LADDER else "") + ("_xtw" if XTW else "") + ".json")
     json.dump(rec, open(fn, "w"), sort_keys=True)
-    print(f"FINAL w {w} d {d} D {D} seed {seed} N {G['N']} T_key {best} howard {rec['howard']} seq {rec['seq']} lastimp {last} "
+    print(f"FINAL w {w} d {d} D {D} seed {seed} N {G['N']} T_key {best} k {kG} obj {OBJ} howard {rec['howard']} seq {rec['seq']} lastimp {last} "
           f"secs {time.time() - t0:.0f} file {os.path.basename(fn)}", flush=True)

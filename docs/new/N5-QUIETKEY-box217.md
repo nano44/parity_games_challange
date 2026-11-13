@@ -106,3 +106,117 @@ V_t(x) := Ξ_(s_t)(x, s_t(x)) (x's own Ξ-value); sw(x) := #switches of x in the
   the top enumerating mover; the Ξ-flips must come from switches of movers on x's Ξ-paths, which are themselves bounded by A2 — a
   counting argument between the two potentials is the candidate route to ENUM-LOG); (b) DATA: k(G) and fuel per level on every climbed
   record (track B).
+
+## 6. TRACK A, referee unit (Lead 09:15Z: «write them as a referee-ready unit, with proofs in full and premises quoted»; written
+## 2026-11-13 09:17Z by date -u). Labels: A1-A4 PROVED (lane, unrefereed) as statements about the model 1P(G) of §1; A2's corollary for
+## N5 itself is CONDITIONAL on §2's REDUCTION (KEY-TAU (i), [IMP3]). Scope: G Ξ-acyclic, the key run up to its stop (N5: pre-fallback), D fixed.
+### 6.1 Premises (all inside the model; nothing landed is used by A1-A4)
+- The model 1P(G) exactly as §1 defines it: movers x with levels lev(x); every option (x, k) has a W-target wt(x, k) of level lev(x) − 1
+  (none at level 0), a Ξ-target xt(x, k) (a mover or the exit; the Ξ-graph is acyclic), a β-vertex with a weight ω(x, k) = ±2^(rank) (sign
+  by the parity of its priority; ranks distinct), and an index ε(x, k) (distinct over all options). c(x, k) := (ω(x, k), 1).
+- Values: V_s(exit) := (0, 0); Ξ_s(x, k) := c(x, k) + V_s(xt(x, k)); V_s(x) := Ξ_s(x, s(x)); pairs add coordinatewise and are compared
+  lexicographically (larger better). [This is the signed-weight comparison of si.Engine (its docstring: «M < N in Friedmann's set order iff
+  weight(M) < weight(N)») on a path's β-set, then path length; that 1P equals N5 is §2 / §4 (a), not used here.]
+- Keys: key_s(x, k) := (ε(x, k)) if lev(x) = 0, else key_s(wt(x, k), s(wt(x, k))) ++ (ε(x, k)); μ_s(x) := key_s(x, s(x)); tuples of one
+  length (lev(x) + 1) compared lexicographically.
+- A_s(x) := {s(x)} ∪ {k : Ξ_s(x, k) > Ξ_s(x, s(x))}. KEY step s → s′: by increasing level, s′(x) := argmin over k ∈ A_s(x) of key_s′(x, k)
+  (key_s′ at x uses s′ only at lower levels, already fixed). Run: s_0 = G's start; stop at the first t with s_(t+1) = s_t.
+- Counts: sw(x) := #{t : s_(t+1)(x) ≠ s_t(x)}; T := the number of steps; K(x) := the set of keys key_s(x, ·) over all states s and options;
+  PΞ(x) := the set of Ξ-paths from x (a choice of one option at x and at every mover the path then visits, to the exit).
+### 6.2 Statements and proofs
+**Lemma 0 (facts).** (a) Distinct options of one mover have distinct keys (last entries differ); |K(x)| = Σ_k |K(wt(x, k))| (level 0: D),
+so |K(x)| ≤ D^(lev(x) + 1). (b) Distinct Ξ-paths from x have distinct β-sets, hence distinct values; |PΞ(x)| ≤ D^(hΞ(x) + 1), hΞ(x) the
+length of the longest Ξ-path from x counted in movers after x. (c) No two options of one mover have equal Ξ_s (b, applied at x).
+Proof. (a) A key of x is the sequence of ε's of a W-path from x to level 0 (induction on the level), and the ε's are distinct, so distinct
+W-paths give distinct keys; count by the first option. (b) Two different Ξ-paths from x first differ at some mover y, choosing options
+k ≠ k′ there; the β of (y, k) is on the first path and not on the second: the second leaves y by k′ and, the Ξ-graph being acyclic, never
+returns to y. Different β-sets have different signed weights (the most relevant differing rank decides the sign of the difference). ∎
+**A1 MONO-1P.** For every mover x and step t: V_(t+1)(x) ≥ V_t(x) and μ_(t+1)(x) ≤ μ_t(x); both strict if s_(t+1)(x) ≠ s_t(x).
+Proof. V, by induction along the Ξ-DAG, targets first. Let k′ := s_(t+1)(x), y′ := xt(x, k′). By induction (or y′ = exit) V_(t+1)(y′) ≥ V_t(y′),
+so V_(t+1)(x) = c(x, k′) + V_(t+1)(y′) ≥ c(x, k′) + V_t(y′) = Ξ_t(x, k′) (the lexicographic order on pairs is invariant under adding a pair).
+k′ ∈ A_t(x), so Ξ_t(x, k′) ≥ Ξ_t(x, s_t(x)) = V_t(x), strictly if k′ ≠ s_t(x) (definition of A_t). μ, by induction on the level. Let
+k := s_t(x) ∈ A_t(x). μ_(t+1)(x) = min over A_t(x) of key_(s_(t+1))(x, ·) ≤ key_(s_(t+1))(x, k). At level 0 that is (ε(x, k)) = μ_t(x). At
+level ≥ 1, with w := wt(x, k): key_(s_(t+1))(x, k) = μ_(t+1)(w) ++ (ε(x, k)) ≤ μ_t(w) ++ (ε(x, k)) = μ_t(x), by induction (tuples of one
+length; appending one entry keeps ≤). If s_(t+1)(x) ≠ k, the minimum is attained only at s_(t+1)(x) (Lemma 0 (a)), so the first inequality
+is strict. ∎
+**A2 SWITCH-BOUND.** sw(x) ≤ min(|K(x)|, |PΞ(x)|) − 1 for every mover x, and T ≤ Σ_x (min(|K(x)|, |PΞ(x)|) − 1).
+Proof. By A1, along the run μ(x) is non-increasing in K(x) and strictly decreasing at every switch of x, so x's switches are at most
+|K(x)| − 1; and V(x) is non-decreasing among the values of PΞ(x) (Lemma 0 (b)) and strictly increasing at every switch, so they are at most
+|PΞ(x)| − 1. Every step switches at least one mover (otherwise s_(t+1) = s_t and the run stops), so T ≤ Σ_x sw(x). ∎
+**Corollary A2-POLY.** If D is fixed and every mover x has min(lev(x), hΞ(x)) ≤ c·log2 N, then T ≤ N·D^(1 + c·log2 N) = D·N^(1 + c·log2 D).
+For N5 itself (CONDITIONAL on §2's REDUCTION: KEY-TAU (i), [IMP3]): the same bound holds for the number of iterations of N5 from S3 on Γ3(G)
+before its first fallback, for every Ξ-acyclic genome G with that property. Not claimed: anything after the first fallback; Ξ-cyclic G.
+**A3 PAIR-1P.** Let x have degree 2, options a, b. (i) If wt(x, a) = wt(x, b), then sw(x) ≤ 1. (ii) If xt(x, a) = xt(x, b) (the exit
+included), then sw(x) ≤ 1, under ANY rule with s_(t+1)(x) ∈ A_t(x).
+Proof. (i) key_s(x, a) − key_s(x, b) differ only in the last entry, so their order is the same at every state. A move to k ∈ {a, b} at t
+needs k to be the key-least option of A_t(x) ⊆ {a, b}, in particular key-less than the other one if both are in A_t(x); a move from a to b
+needs b ∈ A_t(x), and then key(b) < key(a); a later move back to a would need key(a) < key(b). (ii) Ξ_s(x, a) − Ξ_s(x, b) = c(x, a) − c(x, b)
+at every state (common V term), so the Ξ-order is constant; a move from a to b needs Ξ(b) > Ξ(a), a move back the reverse. ∎
+**A4 HEREDITY.** If sw(x) = |K(x)| − 1 then (i) μ(x) takes every value of K(x) and every change of μ(x) is a switch of x; (ii) for every
+option k of x, μ(wt(x, k)) takes every value of K(wt(x, k)); (iii) if D = 2, x's Ξ-order (of its two options) alternates at least
+|K(x)| − 2 times (XF_x ≥ |K(x)| − 2).
+Proof. (i) A1: |K(x)| − 1 strict decreases inside a set of |K(x)| values visit all of them, and there is no room for a decrease without a
+switch. (ii) When μ(x) = κ ++ (ε(x, k)), x holds k (Lemma 0 (a): the last entry names the option) and μ(wt(x, k)) = κ; every κ ∈
+K(wt(x, k)) occurs (i). (iii) Box 216 §2 (XFLIP, proved for N5's moves; in 1P the same proof: every move of x goes to a strictly Ξ-better
+option, the two options alternate, Lemma 0 (c) excludes ties): moves(x) ≤ 1 + XF_x. ∎
+### 6.3 What the unit does not do
+No bound on the enumeration depth k(G) (§5 A6); no statement for Ξ-cyclic genomes or after the first fallback; A2-POLY's class is a
+restriction on the genome (log depth in W or in Ξ), not on N5. Related landed structure on 2-wide ladders: RESULTS R120 (P-TOWER-FUEL:
+MOVE, DOUBLE-EQ, PULSE-NEST, GAP-NEST, DOMINANCE-FREEZE, CROSS-ECONOMY), stated in R104's IDEAL model; A1-A4 do not use it.
+
+## 7. TRACK A, step 2: the Ξ-flip supply (Lead 09:15Z (3): «the Ξ-flip supply argument (A4 against A2's Ξ side) toward ENUM-LOG,
+## statement first»). Written 2026-11-13 09:19Z by date -u.
+**A7 FLIP-SUPPLY (PROVED lane; 1P, degree-2 mover x with Ξ-targets y_a, y_b).** XF_x ≤ #{t ≥ 1 : some mover on the Ξ-path of y_a or of y_b
+under s_(t−1) switches at step t} ≤ Σ_(z ∈ Ξdesc(x)) sw(z), Ξdesc(x) the movers reachable from x in the Ξ-graph. Hence (XFLIP)
+sw(x) ≤ 1 + Σ_(z ∈ Ξdesc(x)) sw(z).
+Proof. Ξ_s(x, a) − Ξ_s(x, b) = c(x, a) − c(x, b) + V_s(y_a) − V_s(y_b); there are no ties (Lemma 0 (c)), so an alternation of the order at
+state t needs V(y_a) or V(y_b) to differ between some earlier state and t, hence to change at some step; V_s(y) depends only on s at the
+movers of y's Ξ-path under s, and a step that switches none of them leaves the path and the value unchanged. ∎
+**A7′ what it gives against A4, and why COUNTING CANNOT PROVE ENUM-LOG (PROVED lane).** For the top mover x of a full block (level k − 1,
+D = 2), A4 (iii) and A7 give Σ_(z ∈ Ξdesc(x)) sw(z) ≥ 2^k − 2. But the two level-(k − 2) movers of a full ladder block switch 2^(k−1) − 1
+times each, i.e. exactly 2^k − 2 together: a block whose level-ℓ movers take their Ξ-targets one level down could supply every needed
+flip from inside, with zero slack. So no argument that only counts switches (A2, A4, A7) can bound k(G): an ENUM-LOG proof must use the
+TIMING and ORDER of the flips (as RESULTS R120's PULSE-NEST, GAP-NEST and DOMINANCE-FREEZE do), not their number.
+**DATA (box 217 tools; not a proof).**
+- Where the towers' supply comes from (unit: switches at step t of movers on the current Ξ-paths of the top full mover's two Ξ-targets,
+  by W-level; whole run): H6 (top full mover 10, level 5, sw 63, Ξ-targets 11 (level 5, its PAIR PARTNER) and 8 (level 4)): level 0: 1,
+  4: 31, 5: 63, 6: 32, 12-18: 12; HIT7 (mover 12, level 6, sw 127, Ξ-targets 33 (level 16) and 11 (level 5)): levels 2: 4, 5: 63, 6: 118,
+  7: 16, 9: 56, 10: 31, 12-24: 58. So most of the supply is INTERNAL to the full block (the partner at the same level and the level below),
+  the rest from the upper «fuel» levels (R120's CROSS-ECONOMY setting).
+- The naive self-fuelling shape DIES: ladders with Ξ-target = W-target on every option (a switch below improves the same option in key AND
+  in Ξ): climbs (objective (k(G), T), 30,000 proposals, d 3-10, two seeds) give T = d and k = 1 on every record; 20,000 random such ladders
+  (d 2-9): no mover switches more than twice. CONJECTURE XTW-2 (untested beyond this): on Ξ = W ladders every mover switches at most twice.
+  Free Ξ-targets on the same climbs: k ≤ 2, T ≤ 18 at d ≤ 10 (the climber is weak; the towers reach k = 7 at d = 28 by L-LOWER's recipes).
+**Next (statement first, then data):** the timing form. R120's PULSE-NEST gives, inside a doubling stack, PULSE, GAP ≥ h − j; A7's supply is
+consumed at specific steps (one flip per switch of the partner / level below). The candidate lemma: in a full block of depth k, the
+supply steps of level ℓ must fall inside the windows R120 reserves, which forces at least f(k − ℓ) fuel switches per window from outside
+the block; ENUM-LOG would follow if f grows exponentially, and fails if a construction keeps f constant. Not yet stated as a lemma.
+
+### 6.4 The crux named by REFEREE-2 40's pre-read (claude/referee-2 dbedf93c, docs/referee-2/R2-key-preread.md §5; relayed by the Lead
+### 09:44Z): where 1P(G) gets A_t. Answer: option (a), a rule on 1P(G)'s own state, PROVED equal to SPEC's A_t at the movers. Written
+### 2026-11-13 09:44Z by date -u.
+[Q docs/referee-2/R2-key-preread.md@dbedf93c] «A reduction «N5's run = 1P(G)'s key run» must say where 1P(G) gets A_t.» 1P(G)'s A_s(x) is
+computed from 1P(G)'s own state s by §1 / §6.1 (Ξ_s from the Ξ-DAG and the β weights; no oracle). The bridge to Γ3:
+**Lemma BRIDGE (PROVED lane; premises R122 BETA-ACYC, R117's Γ3 / standard states, [VJ]).** Let G be Ξ-acyclic and σ a standard state of
+Γ3(G) whose mover part is s. Then for every mover x and options k, k′: Ξσ(m_(x,k)) ▷ Ξσ(m_(x,k′)) iff Ξ_s(x, k) > Ξ_s(x, k′). Hence SPEC S4a's
+A(x) = {σ(x)} ∪ {w : (x, w) ∈ Iσ} is, read through the mover pads, 1P(G)'s A_s(x).
+Proof. (1) [Q R122] «every optimal counterstrategy of Odd takes the β-face at every gate» (BETA-ACYC; its hypothesis «every Even strategy
+that agrees with the stated start off the movers (transported through the pads on Γ3)» holds at standard states). So the play of
+(σ, σ̄) from m_(x,k) is m_(x,k) → g → pβ → β(x,k) → then xt(x,k)'s own play if xt(x,k) is a mover, else pb → K0 → pA → K3 → K2 → r → K1 →
+s → K1 (R117's Γ3 edges; σ̄(K2) = r by LOC-K2-3, R125). It never enters a pe pad, so it contains no e-vertex (an e-vertex's only in-edge is
+from its pe pad, [Γ3]). (2) Every such play ends in the cycle K1 → s → K1 with cycle node K1 (priority 5), the same for all options. The
+vertices of the play more relevant than K1 are its β-vertices (priority ≥ 6) and K0, K3 (on every such play); pads, gates, movers, pb, pA,
+K2, r, s have priority ≤ 3 ([DEF], R125's (R)). So Ξσ(m_(x,k)) = (K1, {β's of the Ξ-path of (x, k) under s} ∪ {K0, K3}, ℓ) with
+ℓ an increasing affine function of the number of movers on the path (five vertices per hop: m, g, pβ, β, the next mover;
+  the exit tail is the same for every option): [VJ] compares equal cycle nodes by the signed rank-weight of the
+symmetric difference of the Π-sets (K0, K3 cancel), then, K1 being odd, prefers the LONGER path. That is §6.1's order on (ω-sum, hops). ∎
+- DATA for the same claim, state by state: §4 (a) (mism 0 on the 5 towers, on 23 renumbered towers, on 200 random Ξ-acyclic genomes).
+**What the REDUCTION then needs, and nothing more:** KEY-TAU (i) for the choice (CANDIDATE, box 213; R2 pre-read: re-derived with no gap;
+L-RED 69 R241: survives) with keys read by e-vertex index; [STD]/[IMP3] that N5 changes nothing but movers before its first fallback
+(box 212 §6, lane). Pin: the numbering is the input game's; 1P(G) takes ε(x, k) := the vertex index of e_(x,k) in that game (one217.py
+--numb / --renum build it from L-RED's renumbering; on box 189's Γ3 ε orders options as G["gate"]). Scope: Γ3(G), G Ξ-acyclic, N5 from S3,
+states before the first fallback.
+**«= O1», corrected:** §2's sentence «it is O1 itself» means O1 as box 212 §6 uses the name (N5's key run on Ξ-acyclic genomes, one window).
+An identification with R104's IDEAL model (R104 / R118 vocabulary) is NOT proved here; DATA only: L-COMP box 29 measured R104's L(G) equal
+to N5's T on the four towers it ran (claude/l-comp, experiments/comp/box29/README.md, «my simulator (box27/sim.py) gives L(G) = 136, 209,
+67, 30 on them (= the Lead's T)»), and one217.py's key T equals N5's T on the same towers.
