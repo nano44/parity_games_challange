@@ -4,3 +4,5 @@ BEST BEST_B2_WU102_NM143_29fbf969.json Wused 102 NM 143 ratio 0.7133 Tkey 103 Wk
 BEST BEST_B2_WU102_NM142_01406bee.json Wused 102 NM 142 ratio 0.7183 Tkey 103 Wkey 102 run_used 1 must0 0 | BEST_B2_WU102_NM142_01406bee.json N+M 142 | mine (T_key, windows, W_key, stalls, tail) (103, 1, 102, 0, 102) run (iterations, fallbacks) (106, 1) must0 0 | n5b spec (iterations, fallbacks) (106, 1) | rfd212 (103, 1, 102, 0, 102) | agree True | restart 0 step 127 evals 127 rejected 0
 END restart 0: current Wused 102 NM 142 ratio 0.7183; best so far [102, 142, 103, 0, 102, 1]; evals 295
 START restart 1 seed H6_x0_glo_bhi_p0.json Wused 102 NM 145 ratio 0.7034 Tkey 103 Wkey 102
+END restart 1: current Wused 102 NM 142 ratio 0.7183; best so far [102, 142, 103, 0, 102, 1]; evals 592
+DONE B2: best [102, 142, 103, 0, 102, 1] BEST_B2_WU102_NM142_01406bee.json evals 592

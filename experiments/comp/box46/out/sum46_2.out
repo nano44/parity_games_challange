@@ -1,0 +1,21 @@
+| set | rows (of) | file (sha1) | must0 | offbacyc | Ξ-cyclic | run_used | max W_key (genome, N + M) | max Wused (genome, N + M) | Σ steps in windows / Σ T_key |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| box 212's 5 towers (Ξ-acyclic) | 5 (5) | win46u_tower.out (4777dad4ee3e) | 0 | 0 | 0 | 0 | 299 (HIT7_d28_F254.json, 168) | 0 (DBL4_d20_F30.json, 120) | 741 / 741 |
+| L-NEW's 81 frozen (records 25, corpus 53, dead 3) | 81 (81) | win46u_lnew81.out (482ee1b6edc6) | 0 | 0 | 81 | 81 | 4 (K1C16_n400.json, 400) | 4 (K1C16_n400.json, 400) | 31 / 1721 |
+| 1,000 random Ξ-cyclic (rand46.py, seeds 4611 / 4612) | 1000 (1000) | win46u_xrand.out (7a908acc2283) | 0 | 0 | 1000 | 983 | 2 (xrand_s4611_nm60_px0.0_213, 16) | 2 (xrand_s4611_nm60_px0.0_213, 16) | 310 / 1042 |
+| 500 random Ξ-acyclic (rand46.py --acyclic, 4621 / 4622) | 500 (500) | win46u_arand.out (94c8fbcaa30c) | 0 | 0 | 0 | 0 | 2 (arand_s4621_nm60_px0.3_4, 17) | 0 (arand_s4621_nm60_px0.3_36, 6) | 304 / 304 |
+| my box 39-45 sets, Ξ-cyclic members | 76 (76) (first pass, no use columns) | win46_xmine.out (55b935cb4c72) | 0 | — | 76 | — | 8 (TREC.json, 307) | — | 49 / 2081 |
+| box 44 / 45 climb bests, Ξ-cyclic | 64 (64) (first pass, no use columns) | win46_xbest.out (2f3e3197e7e9) | 0 | — | 64 | — | 4 (BEST_B1_T15_NM109_d4cf0e34.json, 109) | — | 18 / 1088 |
+| large family members, Ξ-cyclic | 11 (11) (first pass, no use columns) | win46_xbig.out (e72829e4fa82) | 0 | — | 11 | — | 1 (CL30.json, 495) | — | 15 / 422 |
+| 224 Ξ-cyclic tower variants (mkx46.py) | 224 (224) (first pass, no use columns) | win46_xtower.out (72a55e4090a0) | 0 | — | 224 | — | 299 (HIT7_x0_ghi_bhi_p0.json, 169) | — | 24936 / 25252 |
+
+Tower variants (out/win46_xtower.out, sha1 72a55e4090a0): odd β parity: run equal to the tower's (T_key and one window = the run) on 112 of 112; even: on 30 of 112.
+use46.py (independent of win46's use columns; out/use46.out, sha1 e6483d81df47): 414 genomes, cycle used (offbeta or cycopt > 0) on 272.
+Cross-check use46 vs win46's use columns (offbeta, cycopt, run_used) on the genomes in both: 100 of 100 equal.
+
+Controls of the use columns (out/win46_usectrl.out, sha1 199ea142c2bf; win46e.py):
+    plain DBL4_x0_glo_blo_p1.json must0 0 offbacyc 0 T_key 30 run_used 0 Wused 0 offbeta 0 cycopt 0 Wess 0
+    plain DBL4_x0_glo_blo_p0.json must0 0 offbacyc 0 T_key 7 run_used 1 Wused 6 offbeta 35 cycopt 7 Wess 0
+    plain DBL4_d20_F30.json must0 0 offbacyc 0 T_key 30 run_used 0 Wused 0 offbeta 0 cycopt 0 Wess 0
+    W5 DBL4_d20_F30.json must0 1 offbacyc 1 T_key 30 run_used 1 Wused 30 offbeta 2480 cycopt 0 Wess 0
+    W5 H5_d20_F62.json must0 1 offbacyc 1 T_key 136 run_used 1 Wused 136 offbeta 10960 cycopt 0 Wess 0

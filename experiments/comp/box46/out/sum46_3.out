@@ -1,0 +1,22 @@
+| band | log (sha1) | status | seeds (Wused at N + M) | best file | Wused | N + M | ratio | T_key | W_key | must0 | second engines | ALERT lines |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| B0 | — | NOT RUN | | | | | | | | | | |
+| B1 | — | NOT RUN | | | | | | | | | | |
+| B2 | climb46_B2.log (8c6d5b47cea6) | DONE | H6_x0_glo_bhi_p0.json 102 at 145; H6_x0_glo_blo_p0.json 102 at 145 | out/climb46/BEST_B2_WU102_NM142_01406bee.json | 102 | 142 | 0.7183 | 103 | 102 | 0 | 3 of 3 bests agree | 0 |
+| B3 | climb46_B3.log (691e74972113) | DONE | HIT7_x0_glo_blo_p0.json 150 at 169; HIT7_x48_glo_blo_p0.json 142 at 169 | out/climb46/BEST_B3_WU151_NM163_e934d333.json | 151 | 163 | 0.9264 | 151 | 151 | 0 | 9 of 9 bests agree | 0 |
+| E3 | climb46e_E3.log (93ba90964028) | DONE | HIT7_x0_glo_blo_p0.json 0 at 169; HIT7_x48_glo_blo_p0.json 0 at 169 | out/climb46e/BEST_E3_WE4_NM173_673afdbb.json | 4 | 173 | 0.0231 | 5 | 4 | 0 | 3 of 3 bests agree | 0 |
+
+(E3 row: the second B3 climb, objective W_ess; its «Wused» column is W_ess and its «W_key» column is Wused, names kept from climb46.)
+
+wess of seeds and final bests (out/wess46.out, sha1 aef7edac2d57; win46e.py):
+    H5_x0_glo_blo_p0.json N+M 121 T_key 69 W_key 68 Wused 68 offbeta 0 cycopt 69 wess_max 0 wess_wused 0 W_ess 0 must0 0
+    H6_x0_glo_bhi_p0.json N+M 145 T_key 103 W_key 102 Wused 102 offbeta 0 cycopt 103 wess_max 0 wess_wused 0 W_ess 0 must0 0
+    H6_x0_glo_blo_p0.json N+M 145 T_key 103 W_key 102 Wused 102 offbeta 0 cycopt 103 wess_max 0 wess_wused 0 W_ess 0 must0 0
+    HIT7_x0_glo_blo_p0.json N+M 169 T_key 151 W_key 150 Wused 150 offbeta 0 cycopt 151 wess_max 0 wess_wused 0 W_ess 0 must0 0
+    HIT7_x48_glo_blo_p0.json N+M 169 T_key 299 W_key 148 Wused 142 offbeta 25 cycopt 151 wess_max 1 wess_wused 0 W_ess 0 must0 0
+    RECF4_x32_glo_blo_p0.json N+M 121 T_key 67 W_key 66 Wused 66 offbeta 67 cycopt 67 wess_max 0 wess_wused 0 W_ess 0 must0 0
+    xrand_s4611_nm60_px0.0_215.json N+M 60 T_key 2 W_key 2 Wused 2 offbeta 6 cycopt 18 wess_max 0 wess_wused 0 W_ess 0 must0 0
+    xrand_s4612_nm160_px0.3_180.json N+M 80 T_key 2 W_key 2 Wused 2 offbeta 0 cycopt 9 wess_max 2 wess_wused 2 W_ess 2 must0 0
+    BEST_B2_WU102_NM142_01406bee.json N+M 142 T_key 103 W_key 102 Wused 102 offbeta 0 cycopt 103 wess_max 0 wess_wused 0 W_ess 0 must0 0
+    BEST_B3_WU151_NM163_e934d333.json N+M 163 T_key 151 W_key 151 Wused 151 offbeta 0 cycopt 410 wess_max 80 wess_wused 80 W_ess 151 must0 0
+    BEST_E3_WE4_NM173_673afdbb.json N+M 173 T_key 5 W_key 4 Wused 4 offbeta 0 cycopt 98 wess_max 3 wess_wused 3 W_ess 4 must0 0

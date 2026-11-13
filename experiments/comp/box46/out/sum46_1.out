@@ -1,0 +1,4 @@
+out/cmp46.out (sha1 44b858a97095):
+    CMP46 rfd212_mine.out: genomes in both 86 (mine 86, rfd212 86) | differing in (T_key, windows, W_key, stalls, tail, plateaus, platmax, Φ values) 0 | my T_key sum 2462, stalls 2 | rfd212's rule-free counters on them sum 0 | my must0 sum 0
+    CMP46 rfd212_tower_spec.out: genomes in both 5 (mine 86, rfd212 5) | differing in (T_key, windows, W_key, stalls, tail, plateaus, platmax, Φ values) 0 | my T_key sum 741, stalls 0 | rfd212's rule-free counters on them sum 0 | my must0 sum 0
+    CMP46 rfd212_frozen.out: genomes in both 81 (mine 86, rfd212 81) | differing in (T_key, windows, W_key, stalls, tail, plateaus, platmax, Φ values) 0 | my T_key sum 1721, stalls 2 | rfd212's rule-free counters on them sum 0 | my must0 sum 0
