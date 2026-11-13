@@ -1,0 +1,122 @@
+blobs: si.py 0747733e, n5x.py 21c3201f, n5.py f1f82fcc, n5v.py 73db4e89
+ANCHOR si.py   Engine.__init__        l. 29-52    FOUND
+ANCHOR si.py   succ sorted(set)       l. 33       FOUND
+ANCHOR si.py   pred                   l. 34-37    FOUND
+ANCHOR si.py   rank                   l. 38-41    FOUND
+ANCHOR si.py   par                    l. 42       FOUND
+ANCHOR si.py   pp                     l. 43       FOUND
+ANCHOR si.py   rew                    l. 44       FOUND
+ANCHOR si.py   bit                    l. 45       FOUND
+ANCHOR si.py   rankpar                l. 46-48    FOUND
+ANCHOR si.py   weight                 l. 54-65    FOUND
+ANCHOR si.py   key                    l. 68-70    FOUND
+ANCHOR si.py   extend                 l. 72-75    FOUND
+ANCHOR si.py   evaluate               l. 78-203   FOUND
+ANCHOR si.py   gs / gp                l. 86-90    FOUND
+ANCHOR si.py   outer loop             l. 94-96    FOUND
+ANCHOR si.py   outer loop (head)      l. 94       FOUND
+ANCHOR si.py   state init             l. 91-93    FOUND
+ANCHOR si.py   outer body             l. 94-200   FOUND
+ANCHOR si.py   (i) cycle test         l. 98-107   (not cited)
+ANCHOR si.py   (i) loop               l. 100      FOUND
+ANCHOR si.py   (i) scan               l. 102-106  FOUND
+ANCHOR si.py   (ii) R                 l. 109-115  (not cited)
+ANCHOR si.py   (ii) loop              l. 111      (not cited)
+ANCHOR si.py   (ii) scan              l. 113-115  (not cited)
+ANCHOR si.py   (iii) init             l. 116-118  (not cited)
+ANCHOR si.py   reach                  l. 120-127  FOUND
+ANCHOR si.py   reach loop             l. 122      (not cited)
+ANCHOR si.py   reach scan             l. 124-126  (not cited)
+ANCHOR si.py   restrict               l. 129-134  FOUND
+ANCHOR si.py   u loop                 l. 135-149  FOUND
+ANCHOR si.py   u loop (head)          l. 135      (not cited)
+ANCHOR si.py   even u                 l. 136-143  FOUND
+ANCHOR si.py   odd u                  l. 144-149  FOUND
+ANCHOR si.py   (iv)                   l. 150-180  FOUND
+ANCHOR si.py   longest state          l. 153-171  (not cited)
+ANCHOR si.py   longest                l. 154-169  FOUND
+ANCHOR si.py   longest (with state)   l. 153-169  FOUND
+ANCHOR si.py   for x in R: longest    l. 170-171  FOUND
+ANCHOR si.py   BFS                    l. 172-180  FOUND
+ANCHOR si.py   BFS loop               l. 174-180  FOUND
+ANCHOR si.py   (v)                    l. 181-195  (not cited)
+ANCHOR si.py   (v) owner test         l. 182      FOUND
+ANCHOR si.py   (v) DFS                l. 184-191  FOUND
+ANCHOR si.py   (v) par init           l. 184      FOUND
+ANCHOR si.py   (v) loop               l. 185      (not cited)
+ANCHOR si.py   (v) scan               l. 102-191  (not cited)
+ANCHOR si.py   (v) y == v             l. 188-189  FOUND
+ANCHOR si.py   (v) par[y] = x         l. 191      FOUND
+ANCHOR si.py   (v) walk               l. 192-195  FOUND
+ANCHOR si.py   (v) walk test          l. 193      FOUND
+ANCHOR si.py   (vi)                   l. 196-200  FOUND
+ANCHOR si.py   improving              l. 220-228  FOUND
+ANCHOR si.py   initial best           l. 236-240  FOUND
+ANCHOR n5x.py  step                   l. 15-45    FOUND
+ANCHOR n5x.py  S4a guard              l. 22       FOUND
+ANCHOR n5x.py  A(v)                   l. 23-25    FOUND
+ANCHOR n5x.py  arena H                l. 25       FOUND
+ANCHOR n5x.py  S4a                    l. 26-29    FOUND
+ANCHOR n5x.py  S4b guard              l. 30       FOUND
+ANCHOR n5x.py  arena H'               l. 33       FOUND
+ANCHOR n5x.py  S4b                    l. 34-37    FOUND
+ANCHOR n5x.py  Even fallback          l. 42       FOUND
+ANCHOR n5x.py  Odd fallback           l. 44       FOUND
+ANCHOR n5x.py  start_pair             l. 47-59    FOUND
+ANCHOR n5.py   dual                   l. 18       FOUND
+ANCHOR n5v.py  tie (extend)           l. 35       FOUND
+CITE   n5.py   l. 18       OK
+CITE   n5v.py  l. 35       OK
+CITE   n5x.py  l. 15-45    OK
+CITE   n5x.py  l. 22       OK
+CITE   n5x.py  l. 23-25    OK
+CITE   n5x.py  l. 25       OK
+CITE   n5x.py  l. 26-29    OK
+CITE   n5x.py  l. 30       OK
+CITE   n5x.py  l. 33       OK
+CITE   n5x.py  l. 34-37    OK
+CITE   n5x.py  l. 42       OK
+CITE   n5x.py  l. 44       OK
+CITE   n5x.py  l. 47-59    OK
+CITE   si.py   l. 29-52    OK
+CITE   si.py   l. 33       OK
+CITE   si.py   l. 34-37    OK
+CITE   si.py   l. 38-41    OK
+CITE   si.py   l. 42       OK
+CITE   si.py   l. 43       OK
+CITE   si.py   l. 44       OK
+CITE   si.py   l. 45       OK
+CITE   si.py   l. 46-48    OK
+CITE   si.py   l. 54-65    OK
+CITE   si.py   l. 68-70    OK
+CITE   si.py   l. 72-75    OK
+CITE   si.py   l. 78-203   OK
+CITE   si.py   l. 86-90    OK
+CITE   si.py   l. 91-93    OK
+CITE   si.py   l. 94       OK
+CITE   si.py   l. 94-96    OK
+CITE   si.py   l. 94-200   OK
+CITE   si.py   l. 100      OK
+CITE   si.py   l. 102-106  OK
+CITE   si.py   l. 120-127  OK
+CITE   si.py   l. 129-134  OK
+CITE   si.py   l. 135-149  OK
+CITE   si.py   l. 136-143  OK
+CITE   si.py   l. 144-149  OK
+CITE   si.py   l. 150-180  OK
+CITE   si.py   l. 153-169  OK
+CITE   si.py   l. 154-169  OK
+CITE   si.py   l. 170-171  OK
+CITE   si.py   l. 172-180  OK
+CITE   si.py   l. 174-180  OK
+CITE   si.py   l. 182      OK
+CITE   si.py   l. 184-191  OK
+CITE   si.py   l. 184      OK
+CITE   si.py   l. 188-189  OK
+CITE   si.py   l. 191      OK
+CITE   si.py   l. 192-195  OK
+CITE   si.py   l. 193      OK
+CITE   si.py   l. 196-200  OK
+CITE   si.py   l. 220-228  OK
+CITE   si.py   l. 236-240  OK
+citations 54, unknown 0

@@ -1,0 +1,11 @@
+Fri Nov 13 04:11:59 UTC 2026
+FBDETAIL A.pg step 2 sigma 5: 5 -> ref 0, lean 2
+A.pg n=7 iterations=2 stopped=True fallbacks=1 start=S3 statefail=1
+FBDETAIL B.pg step 2 tau 5: 6 -> ref 0, lean 3
+B.pg n=9 iterations=2 stopped=True fallbacks=1 start=S3 statefail=1
+MODE fbsmall CAP 200
+instances 2, vertices 16, states 6, steps 4
+COUNTERS runfail=0 statefail=2 valfail=0 sbarfail=0 isfail=0 itfail=0 fbfail=0 fuelfail=0 faultfail=0 keyfail=0
+CONTROL keyctrl=3 ties_longest=3 ties_bfs=0
+exit 0
+Fri Nov 13 04:12:04 UTC 2026

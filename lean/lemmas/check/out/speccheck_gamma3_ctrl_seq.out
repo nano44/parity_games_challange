@@ -1,32 +1,351 @@
-Fri Nov 13 01:57:07 UTC 2026
+Fri Nov 13 04:27:46 UTC 2026
+FBDETAIL A_d4_W2_k2.json step 12 sigma 0: 119 -> ref 122, lean 119
+FBDETAIL A_d4_W2_k2.json step 12 sigma 1: 115 -> ref 129, lean 129
+FBDETAIL A_d4_W2_k2.json step 12 sigma 58: 62 -> ref 59, lean 59
+S3EQ A_d4_W2_k2.json: even 0 of 113 differ, odd 0 of 17 differ; first []
 A_d4_W2_k2.json n=130 iterations=31 stopped=True fallbacks=1 start=file runfail=1 statefail=2512 valfail=566 sbarfail=25 isfail=30 fbfail=2
+S3EQ A_d4_W3_k3.json: even 0 of 237 differ, odd 0 of 37 differ; first []
 A_d4_W3_k3.json n=274 iterations=67 stopped=True fallbacks=1 start=file runfail=1 statefail=13584 valfail=2654 sbarfail=57 isfail=66 fbfail=1
+S3EQ A_d5_W2_k3.json: even 0 of 199 differ, odd 0 of 31 differ; first []
 A_d5_W2_k3.json n=230 iterations=52 stopped=True fallbacks=1 start=file runfail=1 statefail=8390 valfail=1553 sbarfail=48 isfail=51 fbfail=1
+FBDETAIL A_d6_W2_k2.json step 13 sigma 0: 168 -> ref 184, lean 184
+FBDETAIL A_d6_W2_k2.json step 13 sigma 10: 167 -> ref 169, lean 169
+FBDETAIL A_d6_W2_k2.json step 13 sigma 86: 90 -> ref 87, lean 87
+S3EQ A_d6_W2_k2.json: even 0 of 165 differ, odd 0 of 25 differ; first []
 A_d6_W2_k2.json n=190 iterations=36 stopped=True fallbacks=1 start=file runfail=1 statefail=4245 valfail=832 sbarfail=25 isfail=35 fbfail=2
+FBDETAIL KILL_M2D_d6_mu13_norm.json step 6 sigma 4: 174 -> ref 175, lean 175
+FBDETAIL KILL_M2D_d6_mu13_norm.json step 6 sigma 8: 184 -> ref 185, lean 185
+FBDETAIL KILL_M2D_d6_mu13_norm.json step 6 sigma 11: 186 -> ref 188, lean 188
+FBDETAIL KILL_M2D_d6_mu13_norm.json step 6 sigma 42: 11 -> ref 148, lean 11
+FBDETAIL KILL_M2D_d6_mu13_norm.json step 6 sigma 47: 11 -> ref 153, lean 11
+FBDETAIL KILL_M2D_d6_mu13_norm.json step 6 sigma 57: 11 -> ref 163, lean 11
+FBDETAIL KILL_M2D_d6_mu13_norm.json step 6 sigma 86: 90 -> ref 87, lean 90
+S3EQ KILL_M2D_d6_mu13_norm.json: even 0 of 165 differ, odd 0 of 25 differ; first []
 KILL_M2D_d6_mu13_norm.json n=190 iterations=34 stopped=True fallbacks=1 start=file runfail=1 statefail=3530 valfail=2158 sbarfail=35 isfail=33 fbfail=2
+FBDETAIL KILL_M2D_d8_mu21_norm.json step 13 sigma 3: 225 -> ref 223, lean 225
+FBDETAIL KILL_M2D_d8_mu21_norm.json step 13 sigma 4: 228 -> ref 229, lean 229
+FBDETAIL KILL_M2D_d8_mu21_norm.json step 13 sigma 6: 233 -> ref 230, lean 233
+FBDETAIL KILL_M2D_d8_mu21_norm.json step 13 sigma 9: 237 -> ref 236, lean 237
+FBDETAIL KILL_M2D_d8_mu21_norm.json step 13 sigma 114: 118 -> ref 115, lean 118
+S3EQ KILL_M2D_d8_mu21_norm.json: even 0 of 217 differ, odd 0 of 33 differ; first []
 KILL_M2D_d8_mu21_norm.json n=250 iterations=55 stopped=True fallbacks=1 start=file runfail=1 statefail=7201 valfail=4539 sbarfail=90 isfail=54 fbfail=2
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 4: 304 -> ref 305, lean 304
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 9: 313 -> ref 314, lean 313
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 15: 323 -> ref 322, lean 322
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 16: 325 -> ref 324, lean 324
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 17: 326 -> ref 327, lean 327
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 19: 331 -> ref 330, lean 331
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 21: 332 -> ref 333, lean 332
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 67: 13 -> ref 253, lean 13
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 68: 16 -> ref 254, lean 16
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 69: 13 -> ref 255, lean 13
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 70: 14 -> ref 256, lean 14
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 71: 21 -> ref 257, lean 21
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 72: 15 -> ref 258, lean 15
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 73: 19 -> ref 259, lean 19
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 74: 9 -> ref 260, lean 9
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 75: 12 -> ref 261, lean 12
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 76: 18 -> ref 262, lean 18
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 77: 20 -> ref 263, lean 20
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 78: 7 -> ref 264, lean 7
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 79: 11 -> ref 265, lean 11
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 80: 8 -> ref 266, lean 8
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 81: 4 -> ref 267, lean 4
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 82: 13 -> ref 268, lean 13
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 83: 10 -> ref 269, lean 10
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 84: 18 -> ref 270, lean 18
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 85: 12 -> ref 271, lean 12
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 86: 9 -> ref 272, lean 9
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 87: 5 -> ref 273, lean 5
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 88: 13 -> ref 274, lean 13
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 89: 8 -> ref 275, lean 8
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 90: 18 -> ref 276, lean 18
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 91: 3 -> ref 277, lean 3
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 92: 3 -> ref 278, lean 3
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 93: 20 -> ref 279, lean 20
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 94: 10 -> ref 280, lean 10
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 95: 6 -> ref 281, lean 6
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 97: 21 -> ref 283, lean 21
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 98: 21 -> ref 284, lean 21
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 99: 3 -> ref 285, lean 3
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 100: 2 -> ref 286, lean 2
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 101: 4 -> ref 287, lean 4
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 102: 16 -> ref 288, lean 16
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 103: 15 -> ref 289, lean 15
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 104: 21 -> ref 290, lean 21
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 106: 4 -> ref 292, lean 4
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 107: 3 -> ref 293, lean 3
+FBDETAIL RECT_d11_T59_norm.json step 8 sigma 156: 160 -> ref 157, lean 160
+S3EQ RECT_d11_T59_norm.json: even 0 of 295 differ, odd 0 of 45 differ; first []
 RECT_d11_T59_norm.json n=340 iterations=13 stopped=True fallbacks=1 start=file runfail=1 statefail=353 valfail=2924 sbarfail=90 isfail=12 fbfail=1
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 3: 276 -> ref 274, lean 276
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 6: 284 -> ref 283, lean 283
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 7: 282 -> ref 285, lean 285
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 16: 305 -> ref 304, lean 305
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 17: 302 -> ref 303, lean 303
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 19: 308 -> ref 306, lean 306
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 60: 19 -> ref 230, lean 19
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 61: 6 -> ref 231, lean 6
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 62: 3 -> ref 232, lean 3
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 64: 4 -> ref 234, lean 4
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 65: 15 -> ref 235, lean 15
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 68: 10 -> ref 238, lean 10
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 69: 17 -> ref 239, lean 17
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 70: 2 -> ref 240, lean 2
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 71: 6 -> ref 241, lean 6
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 72: 12 -> ref 242, lean 12
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 73: 16 -> ref 243, lean 16
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 74: 4 -> ref 244, lean 4
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 75: 14 -> ref 245, lean 14
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 76: 16 -> ref 246, lean 16
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 77: 4 -> ref 247, lean 4
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 78: 4 -> ref 248, lean 4
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 79: 16 -> ref 249, lean 16
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 81: 17 -> ref 251, lean 17
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 82: 8 -> ref 252, lean 8
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 84: 9 -> ref 254, lean 9
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 85: 11 -> ref 255, lean 11
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 86: 14 -> ref 256, lean 14
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 87: 9 -> ref 257, lean 9
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 88: 11 -> ref 258, lean 11
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 89: 19 -> ref 259, lean 19
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 90: 13 -> ref 260, lean 13
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 91: 12 -> ref 261, lean 12
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 92: 10 -> ref 262, lean 10
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 94: 3 -> ref 264, lean 3
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 96: 16 -> ref 266, lean 16
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 97: 3 -> ref 267, lean 3
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 98: 9 -> ref 268, lean 9
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 99: 4 -> ref 269, lean 4
+FBDETAIL REC_d10_mu32_norm.json step 8 sigma 142: 146 -> ref 143, lean 146
+S3EQ REC_d10_mu32_norm.json: even 0 of 269 differ, odd 0 of 41 differ; first []
 REC_d10_mu32_norm.json n=310 iterations=18 stopped=True fallbacks=1 start=file runfail=1 statefail=560 valfail=4266 sbarfail=246 isfail=17 fbfail=1
+FBDETAIL REC_d10_tower_mu30_norm.json step 17 sigma 0: 270 -> ref 272, lean 272
+FBDETAIL REC_d10_tower_mu30_norm.json step 17 sigma 3: 275 -> ref 277, lean 277
+FBDETAIL REC_d10_tower_mu30_norm.json step 17 sigma 7: 285 -> ref 284, lean 284
+FBDETAIL REC_d10_tower_mu30_norm.json step 17 sigma 8: 288 -> ref 289, lean 289
+FBDETAIL REC_d10_tower_mu30_norm.json step 17 sigma 10: 290 -> ref 291, lean 291
+FBDETAIL REC_d10_tower_mu30_norm.json step 17 sigma 19: 307 -> ref 306, lean 307
+FBDETAIL REC_d10_tower_mu30_norm.json step 17 sigma 142: 146 -> ref 143, lean 146
+S3EQ REC_d10_tower_mu30_norm.json: even 0 of 269 differ, odd 0 of 41 differ; first []
 REC_d10_tower_mu30_norm.json n=310 iterations=66 stopped=True fallbacks=1 start=file runfail=1 statefail=9101 valfail=8311 sbarfail=402 isfail=65 fbfail=2
+FBDETAIL REC_d11_mu40_norm.json step 20 sigma 6: 311 -> ref 309, lean 311
+FBDETAIL REC_d11_mu40_norm.json step 20 sigma 7: 308 -> ref 310, lean 310
+FBDETAIL REC_d11_mu40_norm.json step 20 sigma 9: 315 -> ref 314, lean 314
+FBDETAIL REC_d11_mu40_norm.json step 20 sigma 13: 321 -> ref 323, lean 323
+FBDETAIL REC_d11_mu40_norm.json step 20 sigma 15: 327 -> ref 324, lean 327
+FBDETAIL REC_d11_mu40_norm.json step 20 sigma 156: 160 -> ref 157, lean 160
+S3EQ REC_d11_mu40_norm.json: even 0 of 295 differ, odd 0 of 45 differ; first []
 REC_d11_mu40_norm.json n=340 iterations=77 stopped=True fallbacks=1 start=file runfail=1 statefail=10767 valfail=12623 sbarfail=352 isfail=76 fbfail=2
+FBDETAIL REC_d12_mu42_norm.json step 17 sigma 3: 329 -> ref 326, lean 329
+FBDETAIL REC_d12_mu42_norm.json step 17 sigma 6: 336 -> ref 334, lean 336
+FBDETAIL REC_d12_mu42_norm.json step 17 sigma 7: 335 -> ref 337, lean 335
+FBDETAIL REC_d12_mu42_norm.json step 17 sigma 17: 356 -> ref 354, lean 354
+FBDETAIL REC_d12_mu42_norm.json step 17 sigma 20: 362 -> ref 364, lean 362
+FBDETAIL REC_d12_mu42_norm.json step 17 sigma 22: 369 -> ref 366, lean 369
+FBDETAIL REC_d12_mu42_norm.json step 17 sigma 72: 11 -> ref 274, lean 11
+FBDETAIL REC_d12_mu42_norm.json step 17 sigma 74: 3 -> ref 276, lean 3
+FBDETAIL REC_d12_mu42_norm.json step 17 sigma 76: 8 -> ref 278, lean 8
+FBDETAIL REC_d12_mu42_norm.json step 17 sigma 77: 17 -> ref 279, lean 17
+FBDETAIL REC_d12_mu42_norm.json step 17 sigma 82: 23 -> ref 284, lean 23
+FBDETAIL REC_d12_mu42_norm.json step 17 sigma 88: 5 -> ref 290, lean 5
+FBDETAIL REC_d12_mu42_norm.json step 17 sigma 89: 17 -> ref 291, lean 17
+FBDETAIL REC_d12_mu42_norm.json step 17 sigma 91: 5 -> ref 293, lean 5
+FBDETAIL REC_d12_mu42_norm.json step 17 sigma 92: 23 -> ref 294, lean 23
+FBDETAIL REC_d12_mu42_norm.json step 17 sigma 94: 8 -> ref 296, lean 8
+FBDETAIL REC_d12_mu42_norm.json step 17 sigma 95: 23 -> ref 297, lean 23
+FBDETAIL REC_d12_mu42_norm.json step 17 sigma 97: 11 -> ref 299, lean 11
+FBDETAIL REC_d12_mu42_norm.json step 17 sigma 98: 11 -> ref 300, lean 11
+FBDETAIL REC_d12_mu42_norm.json step 17 sigma 101: 11 -> ref 303, lean 11
+FBDETAIL REC_d12_mu42_norm.json step 17 sigma 105: 3 -> ref 307, lean 3
+FBDETAIL REC_d12_mu42_norm.json step 17 sigma 106: 22 -> ref 308, lean 22
+FBDETAIL REC_d12_mu42_norm.json step 17 sigma 109: 3 -> ref 311, lean 3
+FBDETAIL REC_d12_mu42_norm.json step 17 sigma 110: 20 -> ref 312, lean 20
+FBDETAIL REC_d12_mu42_norm.json step 17 sigma 113: 3 -> ref 315, lean 3
+FBDETAIL REC_d12_mu42_norm.json step 17 sigma 114: 3 -> ref 316, lean 3
+FBDETAIL REC_d12_mu42_norm.json step 17 sigma 116: 5 -> ref 318, lean 5
+FBDETAIL REC_d12_mu42_norm.json step 17 sigma 118: 20 -> ref 320, lean 20
+FBDETAIL REC_d12_mu42_norm.json step 17 sigma 119: 20 -> ref 321, lean 20
+FBDETAIL REC_d12_mu42_norm.json step 17 sigma 170: 174 -> ref 171, lean 174
+S3EQ REC_d12_mu42_norm.json: even 0 of 321 differ, odd 0 of 49 differ; first []
 REC_d12_mu42_norm.json n=370 iterations=55 stopped=True fallbacks=1 start=file runfail=1 statefail=2930 valfail=14952 sbarfail=1210 isfail=54 fbfail=2
+FBDETAIL REC_d7_mu17_norm.json step 4 sigma 10: 215 -> ref 214, lean 214
+FBDETAIL REC_d7_mu17_norm.json step 4 sigma 11: 213 -> ref 212, lean 212
+FBDETAIL REC_d7_mu17_norm.json step 4 sigma 13: 219 -> ref 216, lean 219
+FBDETAIL REC_d7_mu17_norm.json step 4 sigma 43: 13 -> ref 165, lean 13
+FBDETAIL REC_d7_mu17_norm.json step 4 sigma 45: 5 -> ref 167, lean 5
+FBDETAIL REC_d7_mu17_norm.json step 4 sigma 46: 0 -> ref 168, lean 0
+FBDETAIL REC_d7_mu17_norm.json step 4 sigma 47: 3 -> ref 169, lean 3
+FBDETAIL REC_d7_mu17_norm.json step 4 sigma 48: 13 -> ref 170, lean 13
+FBDETAIL REC_d7_mu17_norm.json step 4 sigma 49: 10 -> ref 171, lean 10
+FBDETAIL REC_d7_mu17_norm.json step 4 sigma 50: 6 -> ref 172, lean 6
+FBDETAIL REC_d7_mu17_norm.json step 4 sigma 51: 8 -> ref 173, lean 8
+FBDETAIL REC_d7_mu17_norm.json step 4 sigma 52: 12 -> ref 174, lean 12
+FBDETAIL REC_d7_mu17_norm.json step 4 sigma 53: 13 -> ref 175, lean 13
+FBDETAIL REC_d7_mu17_norm.json step 4 sigma 54: 9 -> ref 176, lean 9
+FBDETAIL REC_d7_mu17_norm.json step 4 sigma 55: 11 -> ref 177, lean 11
+FBDETAIL REC_d7_mu17_norm.json step 4 sigma 56: 11 -> ref 178, lean 11
+FBDETAIL REC_d7_mu17_norm.json step 4 sigma 57: 12 -> ref 179, lean 12
+FBDETAIL REC_d7_mu17_norm.json step 4 sigma 58: 7 -> ref 180, lean 7
+FBDETAIL REC_d7_mu17_norm.json step 4 sigma 59: 6 -> ref 181, lean 6
+FBDETAIL REC_d7_mu17_norm.json step 4 sigma 60: 7 -> ref 182, lean 7
+FBDETAIL REC_d7_mu17_norm.json step 4 sigma 61: 10 -> ref 183, lean 10
+FBDETAIL REC_d7_mu17_norm.json step 4 sigma 62: 0 -> ref 184, lean 0
+FBDETAIL REC_d7_mu17_norm.json step 4 sigma 63: 13 -> ref 185, lean 13
+FBDETAIL REC_d7_mu17_norm.json step 4 sigma 64: 0 -> ref 186, lean 0
+FBDETAIL REC_d7_mu17_norm.json step 4 sigma 65: 5 -> ref 187, lean 5
+FBDETAIL REC_d7_mu17_norm.json step 4 sigma 66: 13 -> ref 188, lean 13
+FBDETAIL REC_d7_mu17_norm.json step 4 sigma 67: 3 -> ref 189, lean 3
+FBDETAIL REC_d7_mu17_norm.json step 4 sigma 100: 104 -> ref 101, lean 104
+S3EQ REC_d7_mu17_norm.json: even 0 of 191 differ, odd 0 of 29 differ; first []
 REC_d7_mu17_norm.json n=220 iterations=10 stopped=True fallbacks=1 start=file runfail=1 statefail=223 valfail=1587 sbarfail=58 isfail=9 fbfail=1
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 3: 225 -> ref 224, lean 225
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 12: 242 -> ref 243, lean 243
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 15: 246 -> ref 247, lean 246
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 48: 10 -> ref 186, lean 10
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 49: 12 -> ref 187, lean 12
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 50: 0 -> ref 188, lean 0
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 51: 8 -> ref 189, lean 8
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 52: 11 -> ref 190, lean 11
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 53: 15 -> ref 191, lean 15
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 54: 15 -> ref 192, lean 15
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 56: 9 -> ref 194, lean 9
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 57: 14 -> ref 195, lean 14
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 58: 12 -> ref 196, lean 12
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 59: 3 -> ref 197, lean 3
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 60: 4 -> ref 198, lean 4
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 61: 5 -> ref 199, lean 5
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 62: 5 -> ref 200, lean 5
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 63: 4 -> ref 201, lean 4
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 64: 7 -> ref 202, lean 7
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 65: 6 -> ref 203, lean 6
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 66: 2 -> ref 204, lean 2
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 67: 14 -> ref 205, lean 14
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 69: 3 -> ref 207, lean 3
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 70: 14 -> ref 208, lean 14
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 71: 3 -> ref 209, lean 3
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 72: 10 -> ref 210, lean 10
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 73: 15 -> ref 211, lean 15
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 74: 10 -> ref 212, lean 10
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 75: 8 -> ref 213, lean 8
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 76: 12 -> ref 214, lean 12
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 77: 15 -> ref 215, lean 15
+FBDETAIL REC_d8_mu24_norm.json step 3 sigma 114: 118 -> ref 115, lean 118
+S3EQ REC_d8_mu24_norm.json: even 0 of 217 differ, odd 0 of 33 differ; first []
 REC_d8_mu24_norm.json n=250 iterations=9 stopped=True fallbacks=1 start=file runfail=1 statefail=255 valfail=1741 sbarfail=66 isfail=8 fbfail=1
+FBDETAIL REC_d9_mu29_norm.json step 8 sigma 8: 260 -> ref 261, lean 260
+FBDETAIL REC_d9_mu29_norm.json step 8 sigma 10: 266 -> ref 264, lean 264
+FBDETAIL REC_d9_mu29_norm.json step 8 sigma 128: 132 -> ref 129, lean 132
+S3EQ REC_d9_mu29_norm.json: even 0 of 243 differ, odd 0 of 37 differ; first []
 REC_d9_mu29_norm.json n=280 iterations=65 stopped=True fallbacks=1 start=file runfail=1 statefail=8990 valfail=7877 sbarfail=89 isfail=64 fbfail=2
+FBDETAIL DEAD_SEG2P_d4_N8.json step 2 sigma 0: 115 -> ref 118, lean 118
+FBDETAIL DEAD_SEG2P_d4_N8.json step 2 sigma 2: 120 -> ref 124, lean 124
+FBDETAIL DEAD_SEG2P_d4_N8.json step 2 sigma 4: 127 -> ref 119, lean 119
+FBDETAIL DEAD_SEG2P_d4_N8.json step 2 sigma 5: 122 -> ref 128, lean 128
+FBDETAIL DEAD_SEG2P_d4_N8.json step 2 sigma 58: 62 -> ref 59, lean 59
+S3EQ DEAD_SEG2P_d4_N8.json: even 0 of 113 differ, odd 0 of 17 differ; first []
 DEAD_SEG2P_d4_N8.json n=130 iterations=22 stopped=True fallbacks=1 start=file runfail=1 statefail=2361 valfail=240 sbarfail=21 isfail=19
+FBDETAIL DEAD_SEG2P_d7_N14.json step 4 sigma 2: 202 -> ref 200, lean 202
+FBDETAIL DEAD_SEG2P_d7_N14.json step 4 sigma 3: 199 -> ref 206, lean 206
+FBDETAIL DEAD_SEG2P_d7_N14.json step 4 sigma 100: 104 -> ref 101, lean 101
+S3EQ DEAD_SEG2P_d7_N14.json: even 0 of 191 differ, odd 0 of 29 differ; first []
 DEAD_SEG2P_d7_N14.json n=220 iterations=39 stopped=True fallbacks=1 start=file runfail=1 statefail=7590 valfail=868 sbarfail=62 isfail=38 fbfail=2
+S3EQ DEAD_SEG2P_d9_N18.json: even 0 of 243 differ, odd 0 of 37 differ; first []
 DEAD_SEG2P_d9_N18.json n=280 iterations=13 stopped=True fallbacks=1 start=file runfail=1 statefail=2641 valfail=838 sbarfail=73 isfail=12 fbfail=1
+FBDETAIL cyc2_d7.json step 10 sigma 0: 192 -> ref 193, lean 192
+FBDETAIL cyc2_d7.json step 10 sigma 1: 211 -> ref 218, lean 211
+FBDETAIL cyc2_d7.json step 10 sigma 4: 202 -> ref 212, lean 202
+FBDETAIL cyc2_d7.json step 10 sigma 5: 197 -> ref 208, lean 208
+FBDETAIL cyc2_d7.json step 10 sigma 6: 215 -> ref 196, lean 215
+FBDETAIL cyc2_d7.json step 10 sigma 10: 209 -> ref 201, lean 209
+FBDETAIL cyc2_d7.json step 10 sigma 12: 206 -> ref 204, lean 204
+FBDETAIL cyc2_d7.json step 10 sigma 42: 1 -> ref 164, lean 164
+FBDETAIL cyc2_d7.json step 10 sigma 43: 13 -> ref 165, lean 165
+FBDETAIL cyc2_d7.json step 10 sigma 45: 8 -> ref 167, lean 167
+FBDETAIL cyc2_d7.json step 10 sigma 48: 4 -> ref 170, lean 170
+FBDETAIL cyc2_d7.json step 10 sigma 50: 13 -> ref 172, lean 172
+FBDETAIL cyc2_d7.json step 10 sigma 51: 8 -> ref 173, lean 173
+FBDETAIL cyc2_d7.json step 10 sigma 52: 6 -> ref 174, lean 174
+FBDETAIL cyc2_d7.json step 10 sigma 55: 10 -> ref 177, lean 177
+FBDETAIL cyc2_d7.json step 10 sigma 56: 5 -> ref 178, lean 178
+FBDETAIL cyc2_d7.json step 10 sigma 58: 13 -> ref 180, lean 180
+FBDETAIL cyc2_d7.json step 10 sigma 59: 0 -> ref 181, lean 181
+FBDETAIL cyc2_d7.json step 10 sigma 60: 5 -> ref 182, lean 182
+FBDETAIL cyc2_d7.json step 10 sigma 62: 13 -> ref 184, lean 184
+FBDETAIL cyc2_d7.json step 10 sigma 63: 12 -> ref 185, lean 185
+FBDETAIL cyc2_d7.json step 10 sigma 65: 10 -> ref 187, lean 187
+FBDETAIL cyc2_d7.json step 10 sigma 67: 6 -> ref 189, lean 189
+FBDETAIL cyc2_d7.json step 10 sigma 68: 4 -> ref 190, lean 190
+FBDETAIL cyc2_d7.json step 10 sigma 69: 6 -> ref 191, lean 191
+FBDETAIL cyc2_d7.json step 10 sigma 100: 104 -> ref 101, lean 101
+S3EQ cyc2_d7.json: even 0 of 191 differ, odd 0 of 29 differ; first []
 cyc2_d7.json n=220 iterations=27 stopped=True fallbacks=1 start=file runfail=1 statefail=3808 valfail=1765 sbarfail=83 isfail=26 fbfail=2
+S3EQ cyc2_d8.json: even 0 of 217 differ, odd 0 of 33 differ; first []
 cyc2_d8.json n=250 iterations=37 stopped=True fallbacks=1 start=file runfail=1 statefail=6864 valfail=1937 sbarfail=89 isfail=36 fbfail=1
+FBDETAIL cyc_d3.json step 7 sigma 3: 88 -> ref 98, lean 98
+FBDETAIL cyc_d3.json step 7 sigma 44: 48 -> ref 45, lean 45
+S3EQ cyc_d3.json: even 0 of 87 differ, odd 0 of 13 differ; first []
 cyc_d3.json n=100 iterations=21 stopped=True fallbacks=1 start=file runfail=1 statefail=1433 valfail=481 sbarfail=22 isfail=20 fbfail=2
+FBDETAIL cyc_d4.json step 7 sigma 0: 126 -> ref 129, lean 129
+FBDETAIL cyc_d4.json step 7 sigma 5: 114 -> ref 128, lean 128
+FBDETAIL cyc_d4.json step 7 sigma 58: 62 -> ref 59, lean 59
+S3EQ cyc_d4.json: even 0 of 113 differ, odd 0 of 17 differ; first []
 cyc_d4.json n=130 iterations=29 stopped=True fallbacks=1 start=file runfail=1 statefail=2756 valfail=323 sbarfail=21 isfail=28 fbfail=2
+FBDETAIL cyc_d5.json step 6 sigma 4: 155 -> ref 151, lean 151
+FBDETAIL cyc_d5.json step 6 sigma 31: 5 -> ref 121, lean 5
+FBDETAIL cyc_d5.json step 6 sigma 32: 8 -> ref 122, lean 8
+FBDETAIL cyc_d5.json step 6 sigma 33: 0 -> ref 123, lean 0
+FBDETAIL cyc_d5.json step 6 sigma 34: 1 -> ref 124, lean 1
+FBDETAIL cyc_d5.json step 6 sigma 35: 7 -> ref 125, lean 7
+FBDETAIL cyc_d5.json step 6 sigma 36: 9 -> ref 126, lean 9
+FBDETAIL cyc_d5.json step 6 sigma 37: 4 -> ref 127, lean 4
+FBDETAIL cyc_d5.json step 6 sigma 38: 2 -> ref 128, lean 2
+FBDETAIL cyc_d5.json step 6 sigma 39: 3 -> ref 129, lean 3
+FBDETAIL cyc_d5.json step 6 sigma 40: 8 -> ref 130, lean 8
+FBDETAIL cyc_d5.json step 6 sigma 41: 0 -> ref 131, lean 0
+FBDETAIL cyc_d5.json step 6 sigma 42: 9 -> ref 132, lean 9
+FBDETAIL cyc_d5.json step 6 sigma 43: 0 -> ref 133, lean 0
+FBDETAIL cyc_d5.json step 6 sigma 44: 2 -> ref 134, lean 2
+FBDETAIL cyc_d5.json step 6 sigma 45: 6 -> ref 135, lean 6
+FBDETAIL cyc_d5.json step 6 sigma 46: 5 -> ref 136, lean 5
+FBDETAIL cyc_d5.json step 6 sigma 47: 2 -> ref 137, lean 2
+FBDETAIL cyc_d5.json step 6 sigma 48: 4 -> ref 138, lean 4
+FBDETAIL cyc_d5.json step 6 sigma 49: 0 -> ref 139, lean 0
+FBDETAIL cyc_d5.json step 6 sigma 72: 76 -> ref 73, lean 76
+S3EQ cyc_d5.json: even 0 of 139 differ, odd 0 of 21 differ; first []
 cyc_d5.json n=160 iterations=9 stopped=True fallbacks=1 start=file runfail=1 statefail=99 valfail=787 sbarfail=48 isfail=8 fbfail=2
+FBDETAIL cyc_d6.json step 8 sigma 5: 180 -> ref 179, lean 179
+FBDETAIL cyc_d6.json step 8 sigma 10: 186 -> ref 183, lean 186
+FBDETAIL cyc_d6.json step 8 sigma 11: 189 -> ref 178, lean 189
+FBDETAIL cyc_d6.json step 8 sigma 86: 90 -> ref 87, lean 87
+S3EQ cyc_d6.json: even 0 of 165 differ, odd 0 of 25 differ; first []
 cyc_d6.json n=190 iterations=37 stopped=True fallbacks=1 start=file runfail=1 statefail=5182 valfail=986 sbarfail=50 isfail=36
+S3EQ cyc_d7.json: even 0 of 191 differ, odd 0 of 29 differ; first []
 cyc_d7.json n=220 iterations=49 stopped=True fallbacks=1 start=file runfail=1 statefail=8474 valfail=1964 sbarfail=68 isfail=48 fbfail=1
+FBDETAIL cyc_d8.json step 9 sigma 0: 220 -> ref 229, lean 220
+FBDETAIL cyc_d8.json step 9 sigma 3: 233 -> ref 240, lean 240
+FBDETAIL cyc_d8.json step 9 sigma 8: 230 -> ref 239, lean 230
+FBDETAIL cyc_d8.json step 9 sigma 14: 218 -> ref 243, lean 243
+FBDETAIL cyc_d8.json step 9 sigma 15: 248 -> ref 236, lean 236
+FBDETAIL cyc_d8.json step 9 sigma 48: 5 -> ref 186, lean 186
+FBDETAIL cyc_d8.json step 9 sigma 53: 14 -> ref 191, lean 191
+FBDETAIL cyc_d8.json step 9 sigma 54: 11 -> ref 192, lean 192
+FBDETAIL cyc_d8.json step 9 sigma 55: 6 -> ref 193, lean 193
+FBDETAIL cyc_d8.json step 9 sigma 56: 13 -> ref 194, lean 194
+FBDETAIL cyc_d8.json step 9 sigma 58: 11 -> ref 196, lean 196
+FBDETAIL cyc_d8.json step 9 sigma 59: 14 -> ref 197, lean 197
+FBDETAIL cyc_d8.json step 9 sigma 60: 3 -> ref 198, lean 198
+FBDETAIL cyc_d8.json step 9 sigma 61: 5 -> ref 199, lean 199
+FBDETAIL cyc_d8.json step 9 sigma 67: 11 -> ref 205, lean 205
+FBDETAIL cyc_d8.json step 9 sigma 70: 6 -> ref 208, lean 208
+FBDETAIL cyc_d8.json step 9 sigma 75: 3 -> ref 213, lean 213
+FBDETAIL cyc_d8.json step 9 sigma 114: 118 -> ref 115, lean 115
+S3EQ cyc_d8.json: even 0 of 217 differ, odd 0 of 33 differ; first []
 cyc_d8.json n=250 iterations=37 stopped=True fallbacks=1 start=file runfail=1 statefail=7062 valfail=1477 sbarfail=52 isfail=34 fbfail=2
-MODE seq CAP 200
+MODE seq CAP 200 GAMMA3 START start3
 instances 25, vertices 5834, states 933, steps 908
-COUNTERS runfail=25 statefail=120911 valfail=78249 sbarfail=3382 isfail=879 itfail=0 fbfail=37 badfail=0 keyfail=0
+COUNTERS runfail=25 statefail=120911 valfail=78249 sbarfail=3382 isfail=879 itfail=0 fbfail=37 fuelfail=0 faultfail=0 keyfail=0
 CONTROL keyctrl=9867 ties_longest=4 ties_bfs=9863
+S3EQ genomes with a difference 0 of 25; Even vertices differing 0 of 5063; Odd vertices differing 0 of 771
 exit 0
-Fri Nov 13 02:00:38 UTC 2026
+Fri Nov 13 04:31:37 UTC 2026

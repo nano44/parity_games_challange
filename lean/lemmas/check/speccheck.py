@@ -19,15 +19,23 @@ Counters (must be 0), with units:
   valfail   (state, vertex)     Xi_sigma(v) = (cycle node, path mask over ranks, length) differs
   sbarfail  (state, Odd vertex) sigma-bar differs
   isfail, itfail, fbfail (step) I_sigma, I_tau (as sets of edges), the fallback flag differ
-  badfail   (step / state)      Lean's `bad` flag (fuel or a si.py exception case) is set
+  fuelfail  (step / state)      Lean's `fuelOut` flag (a fuel bound was reached) is set
+  faultfail (step / state)      Lean's `fault` flag (a si.py exception case or a None choice) is set
   keyfail   (call, vertex)      Lean's procedure output violates Lean's key rule (R24 Lemma R + TB, DATA)
 Controls (must fire):
   SPEC_CTRL=idx (or xi, seq): the reference uses n5v.py mode "idx" (S4a's tie broken by the largest index), "xi" or
                 "seq" instead of "spec": statefail must become > 0 on instances where the tie rule matters;
+  SPEC_CTRL=fbsmall: the reference breaks S4c's fallback ties to the SMALLER index (SPEC: larger); it must fire on the
+                tie instances check/spec_ties/A.pg, B.pg (Lead 03:58Z);
   keyctrl (always printed): the key rule with both comparisons reversed (largest index / lex-LARGEST key) on the same
                 calls; it must fire wherever a tie with >= 2 tied successors occurs (ties are counted per mode).
+Gamma3 mode (SPEC_GAMMA3=1, genome JSON files): the reference is box189 gamma3.build(G, {K, pe, pb, m}) with its start;
+  Lean uses G.sgame3 G.r104 with its own start3Pair.  SPEC_START=S3 instead runs both from SPEC S3's best-reward start
+  (Lean: `n5Gamma3S3`, i.e. specRun (sgame3 π) none).  Column s3eq (REFEREE-2 40 U-3): per genome, the vertices where
+  Lean's Eng.initialBest on sgame3 (Even; Odd on the dual, FIX 1) differs from start3Pair (counts and the first few).
+FBDETAIL lines: for every fallback step, the vertices the fallback changes, with the reference's and Lean's new successor.
 Usage (from the repository root): python3 -I lean/lemmas/check/speccheck.py FILE.pg [FILE.pg ...]
-  env: SPEC_CAP (default 200), SPEC_CTRL, SPEC_MAXN (skip games with more vertices; default 600)."""
+  env: SPEC_CAP (default 200), SPEC_CTRL, SPEC_MAXN (skip games with more vertices; default 600), SPEC_GAMMA3, SPEC_START."""
 import os
 import subprocess
 import sys
@@ -53,11 +61,18 @@ def reference(g, start):
     states, recs = [(list(sigma), list(tau))], []
     stopped = False
     while len(recs) < CAP:
-        r = n5v.step(g, E, Ed, sigma, tau, MODE)
+        r = n5v.step(g, E, Ed, sigma, tau, "spec" if MODE == "fbsmall" else MODE)
         if r is None:
             stopped = True
             break
         ns, nt, Is, It, fb = r
+        if MODE == "fbsmall" and fb:   # CONTROL: fallback ties to the smaller index
+            vs, _ = E.evaluate(tuple(sigma)); vt, _ = Ed.evaluate(tuple(tau))
+            ns, nt = list(sigma), list(tau)
+            if Is:
+                for v in {v for v, _ in Is}: ns[v] = max((w for x, w in Is if x == v), key=lambda w: (E.key(vs[w]), -w))
+            else:
+                for v in {v for v, _ in It}: nt[v] = max((w for x, w in It if x == v), key=lambda w: (Ed.key(vt[w]), -w))
         recs.append((sorted(Is), sorted(It), fb))
         sigma, tau = list(ns), list(nt)
         states.append((sigma, tau))
@@ -113,11 +128,12 @@ def lean_file(g, start, gdef=None):
     st = "none" if start is None else "some ([%s], [%s])" % (
         ", ".join("(%d, %d)" % (v, w) for v, w in sorted(start[0].items())),
         ", ".join("(%d, %d)" % (v, w) for v, w in sorted(start[1].items())))
+    s3eq = "pure ()"
     if gdef is None:
         gdef = f"def g : SGame := ⟨{n}, #{lst(g.prio)}, #{lst(g.owner)}, {succ}⟩"
         pre = IMPORTS + HEADER
     else:
-        gdef, pre, st = gdef
+        gdef, pre, st, s3eq = gdef
     return pre + f"""
 {gdef}
 
@@ -126,6 +142,7 @@ def lean_file(g, start, gdef=None):
   let Ed := Eng.ofGame g.dual
   let r := specRun g ({st}) {CAP}
   IO.println s!"RUN {{r.steps.length}} {{r.stopped}}"
+  {s3eq}
   let mut i := 0
   for (s, t) in r.states do
     let ov := E.evaluate s
@@ -148,11 +165,11 @@ def lean_file(g, start, gdef=None):
     IO.println s!"S {{i}} {{String.intercalate "," ((List.range g.n).map fun v => toString (if g.owner[v]! == 0 then s[v]! else t[v]!))}}"
     IO.println s!"V {{i}} {{String.intercalate ";" ((List.range g.n).map fun v => showV ov.val[v]!)}}"
     IO.println s!"B {{i}} {{String.intercalate "," ((List.range g.n).map fun v => showO ov.tau[v]!)}}"
-    IO.println s!"K {{i}} {{kc.1}} {{kc.2.1}} {{kc.2.2.1}} {{kc.2.2.2}} {{ov.bad || od.bad}}"
+    IO.println s!"K {{i}} {{kc.1}} {{kc.2.1}} {{kc.2.2.1}} {{kc.2.2.2}} {{ov.fuelOut || od.fuelOut}} {{ov.fault || od.fault}}"
     i := i + 1
   let mut j := 0
   for x in r.steps do
-    IO.println s!"T {{j}} {{x.fb}} {{x.bad}} {{showP x.Is}} {{showP x.It}}"
+    IO.println s!"T {{j}} {{x.fb}} {{x.fuelOut}} {{x.fault}} {{showP x.Is}} {{showP x.It}}"
     j := j + 1
 """
 
@@ -171,6 +188,7 @@ def run_lean(src):
 
 
 GAMMA3 = os.environ.get("SPEC_GAMMA3") == "1"
+START = os.environ.get("SPEC_START", "")
 
 
 def gamma3_instance(path):
@@ -186,12 +204,20 @@ def gamma3_instance(path):
     genome = "\n".join(l for l in genome.split("\n") if not l.startswith(("import ", "open ")))
     pre = "import PGLemmas.SpecGamma3\nopen PG PG.Spec\n" + genome + "\n" + HEADER
     gdef = "def g : SGame := G.sgame3 π"
-    return gm, start, (gdef, pre, "some G.start3Pair")
+    s3eq = ("let E3 := Eng.ofGame g\n  let Ed3 := Eng.ofGame g.dual\n  let p3 := G.start3Pair\n"
+            "  let be := p3.1.filter (fun (q : ℕ × ℕ) => E3.initialBest[q.1]! != q.2)\n"
+            "  let bo := p3.2.filter (fun (q : ℕ × ℕ) => Ed3.initialBest[q.1]! != q.2)\n"
+            "  IO.println s!\"S3EQ {be.length} {p3.1.length} {bo.length} {p3.2.length} {(be ++ bo).take 8}\"")
+    if START == "S3":
+        return gm, None, (gdef, pre, "none", s3eq)
+    return gm, start, (gdef, pre, "some G.start3Pair", s3eq)
 
 
 def main(files):
-    tot = dict(runfail=0, statefail=0, valfail=0, sbarfail=0, isfail=0, itfail=0, fbfail=0, badfail=0, keyfail=0)
+    tot = dict(runfail=0, statefail=0, valfail=0, sbarfail=0, isfail=0, itfail=0, fbfail=0, fuelfail=0, faultfail=0,
+               keyfail=0)
     ctrl = dict(keyctrl=0, ties_longest=0, ties_bfs=0)
+    s3 = [0, 0, 0, 0, 0]   # genomes with a difference, even diffs, even total, odd diffs, odd total
     nst = nstep = ninst = nv = 0
     skipped = []
     for path in files:
@@ -211,6 +237,8 @@ def main(files):
         L = {}
         T = {}
         K = {}
+        s3line = None
+        lrun = None
         for l in out:
             f = l.split(" ")
             if f[0] == "RUN":
@@ -218,9 +246,12 @@ def main(files):
             elif f[0] in ("S", "V", "B"):
                 L[(f[0], int(f[1]))] = f[2] if len(f) > 2 else ""
             elif f[0] == "K":
-                K[int(f[1])] = (int(f[2]), int(f[3]), int(f[4]), int(f[5]), f[6] == "true")
+                K[int(f[1])] = (int(f[2]), int(f[3]), int(f[4]), int(f[5]), f[6] == "true", f[7] == "true")
             elif f[0] == "T":
-                T[int(f[1])] = (f[2] == "true", f[3] == "true", f[4] if len(f) > 4 else "", f[5] if len(f) > 5 else "")
+                T[int(f[1])] = (f[2] == "true", f[3] == "true", f[4] == "true", f[5] if len(f) > 5 else "",
+                                f[6] if len(f) > 6 else "")
+            elif f[0] == "S3EQ":
+                s3line = l
         if lrun != (len(recs), stopped):
             loc["runfail"] += 1
         for i, (s, t) in enumerate(states):
@@ -240,23 +271,40 @@ def main(files):
             for v in range(g.n):
                 if g.owner[v] == 1 and lb[v] != str(sbar[v]):
                     loc["sbarfail"] += 1
-            kf, kcf, tl, tb, bad = K[i]
+            kf, kcf, tl, tb, fo, fa = K[i]
             loc["keyfail"] += kf
             ctrl["keyctrl"] += kcf
             ctrl["ties_longest"] += tl
             ctrl["ties_bfs"] += tb
-            loc["badfail"] += int(bad)
+            loc["fuelfail"] += int(fo)
+            loc["faultfail"] += int(fa)
         for j, (Is, It, fb) in enumerate(recs):
             if j not in T:
                 loc["isfail"] += 1
                 continue
-            lfb, lbad, lIs, lIt = T[j]
+            lfb, lfo, lfa, lIs, lIt = T[j]
             pIs = sorted(tuple(map(int, p.split(":"))) for p in lIs.split(",") if p)
             pIt = sorted(tuple(map(int, p.split(":"))) for p in lIt.split(",") if p)
             loc["isfail"] += int(pIs != sorted(map(tuple, Is)))
             loc["itfail"] += int(pIt != sorted(map(tuple, It)))
             loc["fbfail"] += int(lfb != bool(fb))
-            loc["badfail"] += int(lbad)
+            loc["fuelfail"] += int(lfo)
+            loc["faultfail"] += int(lfa)
+            if fb:   # FBDETAIL: what the fallback changed (reference vs Lean)
+                (s0, t0), (s1, t1) = states[j], states[j + 1]
+                ls1 = L.get(("S", j + 1), "").split(",")
+                for v in range(g.n):
+                    a, b = (s0[v], s1[v]) if g.owner[v] == 0 else (t0[v], t1[v])
+                    if a != b:
+                        print("FBDETAIL %s step %d %s %d: %d -> ref %d, lean %s" % (
+                            os.path.basename(path), j + 1, "sigma" if g.owner[v] == 0 else "tau", v, a, b,
+                            ls1[v] if v < len(ls1) else "?"))
+        if s3line:
+            f = s3line.split(" ")
+            de, ne, do, no = int(f[1]), int(f[2]), int(f[3]), int(f[4])
+            s3[0] += int(de + do > 0); s3[1] += de; s3[2] += ne; s3[3] += do; s3[4] += no
+            print("S3EQ %s: even %d of %d differ, odd %d of %d differ; first %s" % (
+                os.path.basename(path), de, ne, do, no, " ".join(f[5:])))
         ninst += 1
         nst += len(states)
         nstep += len(recs)
@@ -266,10 +314,13 @@ def main(files):
         print("%s n=%d iterations=%d stopped=%s fallbacks=%d start=%s %s" % (
             os.path.basename(path), g.n, len(recs), stopped, sum(r[2] for r in recs), "file" if start else "S3",
             " ".join("%s=%d" % (k, v) for k, v in loc.items() if v)), flush=True)
-    print("MODE %s CAP %d" % (MODE, CAP))
+    print("MODE %s CAP %d%s" % (MODE, CAP, (" GAMMA3 START %s" % (START or "start3")) if GAMMA3 else ""))
     print("instances %d, vertices %d, states %d, steps %d" % (ninst, nv, nst, nstep))
     print("COUNTERS " + " ".join("%s=%d" % kv for kv in tot.items()))
     print("CONTROL " + " ".join("%s=%d" % kv for kv in ctrl.items()))
+    if GAMMA3:
+        print("S3EQ genomes with a difference %d of %d; Even vertices differing %d of %d; Odd vertices differing %d of %d"
+              % (s3[0], ninst, s3[1], s3[2], s3[3], s3[4]))
     if skipped:
         print("SKIPPED (n > %d): %s" % (MAXN, ", ".join("%s(n=%d)" % s for s in skipped)))
 

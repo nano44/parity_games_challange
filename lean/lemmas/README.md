@@ -272,20 +272,28 @@ Allowed axioms: propext, Classical.choice, Quot.sound. No sorry, no admit, no ne
                             both conclusions hold at every step. Counters dfail / hypfail / boundfail / c2fail / lastfail must be 0;
                             ABS_CTRL=1 (move to a smallest edge) must fire c2fail.
                             `python3 -I lean/lemmas/check/abscheck.py 1 20000 7` (from the repository root; about 1 s).
-- PGLemmas/Spec.lean        PROPOSED DEFINITIONS, not yet diffed by the Lead (2026-11-13): N5's step as SPEC S1-S5 states it
-                            (docs/new/N5-ssi-global.md l. 24-127 with FIX 1-4, Q1-Q4), a computable transcription of si.py
-                            `Engine` (evaluate l. 78-205) and n5x.py `step` / `start_pair`: `SGame`, `Eng.evaluate`,
-                            `Eng.improving`, `Eng.initialBest`, `arenaH`, `arenaH'`, `s4a`, `s4b`, `fallbackAt`, `specStep`,
-                            `specRun`; the root-first key (`rootKey`) and the key rule (`Eng.keyRuleAt`, R24's reading of SPEC's
-                            choice; a PREDICATE, Lead 02:06Z (3)); deviation list (D1)-(D9) at the end of the file (D4: si.py's
-                            `is not` is no defect, probe check/d4probe.py). No theorem; nothing here proves N5.
-- PGLemmas/SpecGamma3.lean  PROPOSED DEFINITIONS: the same step on Γ3(G) (`Genome.sgame3`, `start3Pair`, `n5Gamma3`); (G1), (G2).
+- PGLemmas/Spec.lean        DEFINITIONS (Lead's diff of 0ee5b8bc 03:58Z: ACCEPTED WITH FIXES; this text applies U1-U4 and the
+                            refactor ruled 03:46Z): N5's step as SPEC S1-S5 states it (docs/new/N5-ssi-global.md l. 24-127 with
+                            FIX 1-4, Q1-Q4), a computable transcription of si.py `Engine` (evaluate l. 78-203) and n5x.py
+                            `step` / `start_pair`: `SGame`, `SGame.WF`, `SGame.StratWF`, `Eng.ofGame`, `Eng.evaluate` (every
+                            loop a named step function under `loopFuel`: `dfs`/`scan`, `restrict`, `phaseU`, `longest`, `bfsStep`,
+                            `walk`, `procNode`, `assign`; flags `fuelOut` / `fault`), `Eng.improving`, `Eng.initialBest`,
+                            `arenaH`, `arenaH'`, `s4a`, `s4b`, `stepA`, `stepB`, `fallbackAt`, `specStep`, `specIter`, `specRun`;
+                            the root-first key (`rootKey`) and the key rule (`Eng.keyRuleAt`, R24's reading of SPEC's choice; a
+                            PREDICATE, Lead 02:06Z (3)); deviation list (D1)-(D11) at the end of the file (D4: si.py's `is not`
+                            is no defect, probe check/d4probe.py). No theorem; nothing here proves N5.
+- PGLemmas/SpecGamma3.lean  DEFINITIONS: the same step on Γ3(G) (`Genome.sgame3`, `start3Pair`, `n5Gamma3`, `n5Gamma3S3`);
+                            (G1) (needs Genome.WF, U3), (G2) (start3 vs S3: DATA, REFEREE-2 40 U-3).
 - check/speccheck.py        DATA, not a proof: Lean's `specRun` against box190/n5v.py mode «spec» (si.py Engine), state by
-                            state (σ, τ, Ξσ, σ̄, Iσ, Iτ, fallback, `bad`) and the key rule on the four procedure calls of every
-                            state; SPEC_GAMMA3=1 runs Γ3 of genome files against box189's gamma3.build. Nine counters, all must
-                            be 0; controls SPEC_CTRL=idx|xi|seq (n5v.py's other S4a rules) and the reversed key rule must fire.
-                            Frozen outputs: check/out/speccheck*.out.  Needs `lake build PGLemmas.SpecGamma3`.
+                            state (σ, τ, Ξσ, σ̄, Iσ, Iτ, fallback, `fuelOut`, `fault`) and the key rule on the four procedure
+                            calls of every state; SPEC_GAMMA3=1 runs Γ3 of genome files against box189's gamma3.build (from
+                            start3, or with SPEC_START=S3 from S3's start; column s3eq = start3 vs Eng.initialBest).  Ten
+                            counters, all must be 0; controls SPEC_CTRL=idx|xi|seq (n5v.py's other S4a rules), fbsmall (S4c's
+                            fallback ties to the smaller index; tie instances check/spec_ties/A.pg, B.pg, Lead 03:58Z) and the
+                            reversed key rule must fire.  Frozen outputs: check/out/speccheck*.out.  Needs `lake build`.
                             `python3 -I lean/lemmas/check/speccheck.py experiments/new/box*/inst/*.pg` (about 25 minutes).
+- check/speccite.py         every «si.py / n5x.py / n5.py / n5v.py l. …» citation of Spec.lean against the blobs the Lead diffed
+                            (output check/out/speccite.out; exit 0 iff none is unknown).
 - check/d4probe.py          DATA: a line tracer on si.py's own code path (l. 184-193) counting `par[x] == v` without `par[x] is v`;
                             output check/out/d4probe.out; synthetic instance check/d4/d4_big_odd_cycle_n400.pg.
 - check/c143notes.py, check/c143deps.lean  CHECKER C143's verdicts and notes onto INDEX.md (see INDEX's header).
