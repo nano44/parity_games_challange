@@ -15,6 +15,10 @@ def cube_units(E, start, perm):
         for r in range(q + 1, 4): u.append(E.names[("GO", q, r)] * (1 if rank[q] < rank[r] else -1))
     return u
 
+def path_units(E, path):
+    """unit literals fixing R[1..len(path)] to the given 4-bit words"""
+    return [E.names[("R", j + 1, x)] * (1 if w[x] == "1" else -1) for j, w in enumerate(path) for x in range(4)]
+
 def cubes():
     for s in itertools.product("01", repeat=4):
         for p in itertools.permutations(range(4)): yield "".join(s), list(p)

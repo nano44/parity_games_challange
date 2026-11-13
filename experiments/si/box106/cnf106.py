@@ -56,7 +56,8 @@ class Enc:
     def amo(self, lits):
         for a, b in itertools.combinations(lits, 2): self.add([-a, -b])
 
-def build(LEN=None):
+def build(LEN=None, states=None, run=True):
+    """states: the mover states whose value / AV sections are written (default all 16); run=False: no run section (an AV-CNF)."""
     E = Enc(); T = E.T; F = -T
     # ---- free data
     XT = [[E.v(("XT", q, t)) for t in range(5)] for q in range(8)]
@@ -103,7 +104,7 @@ def build(LEN=None):
         return y
     # ---- per state: Odd's faces RHO, the walks, the values
     AV = {}
-    for s in STATES:
+    for s in (STATES if states is None else states):
         S = s
         RHO = [E.v(("RHO", S, u)) for u in MOV]
         def car_lits(u):       # (carrier, literal «mover u uses it») for the active option of u
@@ -244,6 +245,11 @@ def build(LEN=None):
             k = 1 - S[x]; q = opt(x, k); cur = gate_val(x)
             g0 = GT(prepend(ecar(q), tgt_e(x, k)), cur); g1 = GT(prepend(beta(q), tgt_b(x, k)), cur)
             AV[(S, x)] = E.AND([g0] if CTRL == 1 else [g0, g1], ("AV", S, x))
+    E.mark = len(E.cl)      # clauses before this index: free data + values + AV (no run); the run section follows
+    if not run: return E
+    return run_section(E, AV, gov, LEN)
+
+def run_section(E, AV, gov, LEN):
     # ---- the KEY run
     NR = (LEN if LEN is not None else 6) + 1
     R = [[E.v(("R", j, x)) for x in MOV] for j in range(NR)]
@@ -269,9 +275,26 @@ def build(LEN=None):
             E.add([E.XOR(R[j][x], R[j + 1][x]) for x in MOV])
     return E
 
-def dimacs(E, path, header):
+def build_run(LEN, cores=()):
+    """RUN-CNF for the coverage step (§3d): GO with transitivity, AV[σ][x] FREE variables (no values), the run section with the length
+    constraint, and one clause per core forbidding it (a core = a list of (σ, x, bit))."""
+    E = Enc(); AV = {}
+    def gov(q, r):
+        if q < r: return E.v(("GO", q, r))
+        return -E.v(("GO", r, q))
+    for a, b, c in itertools.permutations(range(4), 3): E.add([-gov(a, b), -gov(b, c), gov(a, c)])
+    for S in STATES:
+        for x in MOV: AV[(S, x)] = E.v(("AV", S, x))
+    E.mark = len(E.cl)
+    E = run_section(E, AV, gov, LEN)
+    for core in cores: E.add([-(AV[(tuple(S), x)] if b else -AV[(tuple(S), x)]) for S, x, b in core])
+    return E
+
+def dimacs(E, path, header, avmap=False):
     with open(path, "w") as f:
         for h in header: f.write("c " + h + "\n")
+        for k, v in (sorted(E.names.items(), key=lambda kv: kv[1]) if avmap else []):
+            if k[0] == "AV": f.write("c AV %s %d var %d\n" % ("".join(map(str, k[1])), k[2], v))
         f.write("p cnf %d %d\n" % (E.n, len(E.cl)))
         for c in E.cl: f.write(" ".join(map(str, c)) + " 0\n")
 

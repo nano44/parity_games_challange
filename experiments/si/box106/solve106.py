@@ -20,6 +20,12 @@ def units_of(E, st):
     return aud106.assumptions(E, st)
 
 def decode(E, model):
+    m = set(l for l in model if l > 0)
+    return decode_av(E, model, [int(E.names[("R", 0, x)] in m) for x in range(4)],
+                     {(q, r): E.names[("GO", q, r)] in m for q in range(4) for r in range(q + 1, 4)})
+
+def decode_av(E, model, start, go):
+    """genome from the free data of model (XT, ORD, PAR), the level-0 gate order go[(q, r)] (q < r: gate q below gate r) and the start"""
     m = set(l for l in model if l > 0); val = lambda name: E.names[name] in m
     xt = []
     for q in range(8):
@@ -29,13 +35,13 @@ def decode(E, model):
     for a, b in zip(rank_order, rank_order[1:]): assert below(a, b)
     rank = [0] * 16
     for r, c in enumerate(rank_order): rank[c] = r
-    def gb(q, r): return val(("GO", q, r)) if q < r else not val(("GO", r, q))
+    def gb(q, r): return go[(q, r)] if q < r else not go[(r, q)]
     g0 = sorted(range(4), key=lambda q: sum(1 for r in range(4) if r != q and gb(r, q)))
     gate = [0] * 8
     for r, q in enumerate(g0): gate[q] = r
     for q in range(4, 8): gate[q] = q      # level-1 gates: only their relative position to nothing matters (box 106 §1)
     par = [int(val(("PAR", c))) for c in range(16)]
-    start = [int(val(("R", 0, x))) for x in range(4)]
+    start = [int(b) for b in start]
     return {"xt": xt, "gate": gate, "rank": rank, "par": par, "start": start}
 
 def main():
