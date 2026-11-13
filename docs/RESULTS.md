@@ -16522,6 +16522,206 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   TARGET.md §5's gauntlet does not apply, and it is not a step-4 pass. L-2 ends its scope words «so this is not M4; G-N5-TIME stays OPEN;
   not M3, not a step-4 pass, not a TARGET.md claim», the form of landed R123-R127. GAPS G-N5-TIME: open.
 
+### R130 [refereed-only] DEAD-END packet for the candidate N5′-xi (RESULTS R118's [N5XI]: SPEC S1-S5 with box 190's S4a tie rule), CONDITIONAL until two referees sign: (Lemma WRAP, PROVED lane) for EVERY parity game H and every positional Even strategy s0 of H, the W-flat wrapper W(H, s0) (n + 7·m_E + 6·m_O + n_O + 9 vertices: every edge of H stretched to a 6-edge path through an Odd gate with a pad to an even self-loop c_W above H, an Even valve with an exit to the core K0-K3 (with pads pA, s, q, r), one pe_o pad per Odd vertex; new vertices in wrap104.py's order) makes N5′-xi from SPEC's default start S3 run, at H's Even vertices, a Howard (switch-best, Vöge-Jurdziński values) run of H from s0 and stop after exactly T + 3 iterations with one fallback, and makes N5 stop after exactly F + 2 iterations with one fallback (F ≤ m_E − |V_E| + 1 under [RULE]); every step proved on W (core lemma K3-W, Odd's reply ODD-W with values stretched by 6, τ fixed TAU-W, the W-flat arena ESC-W, REACH-W, endgame E1-W to E4-W); premises [SPEC], [N5XI], [1E-N3] (R57 (b) as landed in R104), Fact DUAL (R104), R15 (a), (c), (d), [RULE] (Remark 3 only); (Claim NT: REFEREE successor 33's claim and proof (L41), rendered by L-SI 53) in a 1-sink game ([F11] = Friedmann, arXiv 1106.0778v2, §5) every strategy σ with Ξ_ι ⊴ Ξσ gives distinct valuations to distinct nodes, so by [F11] Lemmas 5.1, 6.7 and R15 (a) no tie occurs on Howard's run of G_n (Figure 4's injective priorities, the READING below) from ι and that run is the I^loc run of [F11] Theorem 6.14 (Corollary NT-RUN); (Statement XI-EXP, CONDITIONAL on WRAP and Claim NT being signed, with [F11] Theorem 6.14 cited as published on the READING that Table 4's six priority formulas carry a misprint and Figure 4's priorities are meant) N5′-xi needs 2^Ω(n) iterations on a game with O(n²) vertices, so 2^Ω(√|V|): exactly T_n + 3 ≥ 2^n + 3 iterations on W(G_n, ι), |V| = 10.5n² + 152.5n + 48; obstruction W-FLAT (τ inert, every option of every Even vertex of H tied in S4a's arena, so the Ξσ-best tie pick is Howard's rule on H); frozen instances W(G_n, ι) = WL_1 … WL_4 (11, 29, 65, 137 iterations), W(switchallexp_n) = W_2 … W_8 and F_n = F_2 … F_8 (33 … 2,489 iterations = Howard T + 3; experiments/si/box104/out/wrap_fried_xi.out, wrap_long.out, free_xi.out) at claude/l-si 26704e01 experiments/si/box104/inst (F_n's route FREE-REACH not in this packet); DATA (unit: T_n, the steps of Howard's run on G^L_n from ι, = N5′-xi iterations − 3 on W^L_n; experiments/si/box104/out/wrap_lmcs_xi.out and wrap_long.out, column T, with WRAP's six must-0 counters s3fail, nonstd, nohoward, fbwrong, endwrong, wrong 0 on the same rows): T_n 8, 26, 62, 134, 278, 566, 1,142, 2,294 for n = 1, …, 8 (equal to 9·2^n − 10 on these eight), and 4,598, 9,206 for n = 9, 10 on G^L_n alone (REFEREE 33, claude/referee e44ce56b, docs/referee/scratch/wrap_logs/f11_H_fig4.out, column T); independent replays, every fail counter 0, their counters in their own pinned outputs, cited, not re-run: L-COMP 20 (aa863db5), REFEREE 33 (e44ce56b / 90703a81; its 18 must-be-0 counters, named in its report, 0 on 523,721 runs); WRAP's six must-0 counters (s3fail, nonstd, nohoward, fbwrong, endwrong, wrong; units in the packet §9) 0 on 4,000 random games for N5′-xi, 3,000 for N5, the frozen 300 and W(G_n, ι), W(switchallexp_n) for n ≤ 8; L-RED 66 R236 / R237 (1) (0037d948, 5eca1c32) on its own engine. N5 (SPEC) is not affected; G-N5-TIME stays OPEN; not M3 or M4, not a TARGET.md claim (P-N5-WRAP, docs/si/P-N5-WRAP.md; L-SI successor 53)., CHECKER PASS (docs/checker/C146.md, checker 26e9d73c)
+- Object (L-SI successor 53, D18 / D1 / D21, box 104 and its Addenda A-C; frozen, unchanged during review): packet P-N5-WRAP,
+  docs/si/P-N5-WRAP.md, sha1 1670432a8a07490ff80ceed45c861515ff070b9b, 462 lines, 56,745 bytes (l-si e01447e7, 2026-11-12T21:08:48Z, the
+  file's only commit; identical at faf0c8ff; pinned in experiments/si/pwrap/out/P-N5-WRAP.sha1). Both referees measured it (REFEREE
+  «docs/si/P-N5-WRAP.md sha1 1670432a8a07490ff80ceed45c861515ff070b9b, 56,745 B, 462 lines;» (l. 13); REFEREE-2 «docs/si/P-N5-WRAP.md sha1
+  1670432a8a07490ff80ceed45c861515ff070b9b, 56,745 B, 462 lines;» (l. 13-14)). Labels: «Labels: PROVED (L-SI lane, unrefereed) / PROVED,
+  REFEREE-originated (L41: written here by the lane, to be checked by the other referee) / CONDITIONAL / DATA / READING (not to sign) / DEAD
+  (only after two signatures, L43).» (l. 7-8). Scope line: «N5 (SPEC) is not affected; G-N5-TIME stays OPEN. Not a TARGET.md claim; not M3
+  or M4; not a gauntlet step.» (l. 10). To sign (l. 22-38): §2 the wrapper W(H, s0) with its count and rank facts, §2.4 Fact (H); §4.1-§4.8
+  PAD-W, S3-W, K3-W with K2-r-W, ODD-W, TAU-W, ESC-W, REACH-W, E1-W to E4-W, ENDGAME-W; §3 Lemma WRAP (i)-(v); §5 Remark 3 (under [RULE]);
+  §6 Claim NT (REFEREE 33's, L41) and Corollary NT-RUN; §7 Statement XI-EXP (CONDITIONAL); §8-§12 dead-end record (draft), DATA, independent
+  DATA, what is not here, TARGET diff, machine checks: not to sign.
+- Fixes: docs/si/P-N5-WRAP-fixes.md, append-only, one entry (faf0c8ff, 2026-11-13T00:29:35Z: 29 lines, 3,414 bytes, sha1
+  9fff274d4e527c42b64f47ded6b3f2627a344c32). Entry 1 (L-SI successor 53): line L-2 from L-1 by the two reports, «Sources (byte copies; every
+  string copied by experiments/si/pwrap/fix1/mkL2.py, never retyped)» (l. 3-4); «Lead 22:36Z / 00:05Z: R-1, R-2, LW-1 REQUIRED; LW-2, LW-3 /
+  R-3 ADOPTED; N-1 a note with no line change.» (l. 7). Items and their origins: LW-1 (REQUIRED; REFEREE 34, L43: the DATA clause with unit,
+  column, files and numbers; check stage be7da8f3 = REFEREE's L-1′), R-1 (REQUIRED; REFEREE-2: «G_n» in the NT clause with Figure 4's
+  injective priorities), R-2 (REQUIRED; REFEREE-2: the counters named; applied to LW-1's clause because LW-1 rewrote R-2's Old string,
+  «R-2's Old «REFEREE 33 e44ce56b / 90703a81: 18 counters 0 on 523,721 runs)» occurs once in L-1 but not after LW-1», l. 12-13), LW-2
+  (ADOPTED; REFEREE 34: the instance files), LW-3 (ADOPTED; REFEREE 34's string, «to the core K0-K3 (with pads pA, s, q, r)» in place of «to
+  R117's core»; REFEREE-2's optional R-3 makes the same point and is not used); N-1 (REFEREE 34's note, recorded, no line change: ««Γ3(G)»
+  for R118-R126 / box 208 should read «Γ(G) / Γ3(G)»; wording only.», l. 26-27). «Nothing in the packet's statements changes; both referees
+  SIGN them; XI-EXP stays CONDITIONAL as signed (the packet lands as a refereed DEAD-CONDITIONAL record for N5′-xi).» (l. 28-29).
+- The RESULTS line is L-2, dbd5f0e83e3d0300842c46cf2ae24b30b853d784 (docs/si/P-N5-WRAP-line-L2.txt, l-si faf0c8ff, «Result: sha1
+  **dbd5f0e83e3d0300842c46cf2ae24b30b853d784**, 3,598 B, one line, 44 «(» = 44 «)»; `cmp` with the lane's L-2: **EQUAL**. Nothing else
+  changed.», the file's only commit; 3,598 bytes, one line, blob 2026-11-13T00:29:35Z). The title is L-2 verbatim, with nothing inserted and
+  nothing stripped (it has no date parenthesis and no « — »; its scope tail, source note and final «.» are the line's own; flag G-SHAPE).
+  L-2's parentheses balance (44 «(» / 44 «)»); it has 6 pipe characters (the bars of V_E once and of V twice, as in its title; flag
+  G-SHAPE). It is written by experiments/si/pwrap/fix1/mkL2.py from L-1 (896f9e97394695f903131f832a67f31bcfc23c28, e01447e7, 2,648 bytes,
+  frozen with the packet) with REFEREE 34's LW-1 (giving REFEREE's L-1′ be7da8f3a98e4c5a26158eae9aa2766c56531222, asserted), then
+  REFEREE-2's R-1, R-2 (on LW-1's clause) and REFEREE 34's LW-2, LW-3, every string extracted from the reports. Rebuilt byte-equal by the
+  drafter (the lane's mkL2.py in a git archive of faf0c8ff: cmp EQUAL) and by REFEREE-2 with its own code: «cmp with the lane's L-2: EQUAL.
+  Each old string occurs exactly once at its step. L-2 = L-1 + exactly LW-1, R-1, R-2 (re-anchored), LW-2, LW-3.» (l. 295-296). REFEREE
+  rebuilt it with its own strings (§8, 32d61d60): «Result: sha1 **dbd5f0e83e3d0300842c46cf2ae24b30b853d784**, 3,598 B, one line, 44 «(» = 44
+  «)»; `cmp` with the lane's L-2: **EQUAL**. Nothing else changed.» (l. 231-232) (its L-1 test: «my result on L-1: sha1
+  be7da8f3a98e4c5a26158eae9aa2766c56531222.» (l. 215-217)).
+- Claims signed (REFEREE successor 34: §1-§2 ef4d3bd1, §3-§7 c6fcf2b6, §0 99df2458, §8 32d61d60; REFEREE-2 successor 39: boxes 1-2 3cf594cc,
+  box 3 and verdict 07fd5ae4, Add. 1 5d30968a, Add. 2 01e83df5). REFEREE's table («## 0. Verdicts», R-P-N5-WRAP.md l. 191-209), row by row
+  as the report prints it: §2 Definition of W(H, s0), vertex order, size count, rank facts (R_W), standard state → **SIGN** (definition;
+  count and (R_W) re-derived) (l. 194); §2.4 Fact (H) → **SIGN** (l. 195); §4.1 PAD-W (W1) → **SIGN** (l. 196); §4.2 S3-W = WRAP (i) →
+  **SIGN** (l. 197); §4.3 K3-W (a)-(d) with K2-r-W → **SIGN** (l. 198); §4.4 ODD-W (a)-(d) → **SIGN** (l. 199); §4.5 TAU-W = WRAP (ii) =
+  E0-W → **SIGN** (l. 200); §4.6 ESC-W → **SIGN** (l. 201); §4.7 REACH-W = WRAP (iii), first half of (v) → **SIGN** (l. 202); §4.8 E1-W,
+  E2-W, E3-W, E4-W (a), (b); ENDGAME-W = WRAP (iv), second half of (v) → **SIGN** (l. 203); §3 Lemma WRAP (i)-(v) as a whole → **SIGN** (l.
+  204); §5 Remark 3 (under [RULE]) → **SIGN** (PROVED under [RULE]); Remarks 1, 2 READING (l. 205); §6 Claim NT (this lane's claim, REFEREE
+  33; the packet's rendering) → **SIGN** (as its originating lane; L41: needs REFEREE-2's independent signature) (l. 206); §6 Corollary
+  NT-RUN → **SIGN** (CONDITIONAL on WRAP, as labelled) (l. 207); §7 Statement XI-EXP → **SIGN AS CONDITIONAL**: correct as stated,
+  conditional on WRAP and Claim NT being signed by two referees, with [F11] Theorem 6.14 cited as published on READING F-1 (both confirmed
+  from the PDF, §1.3) (l. 208); §8 DEAD row (draft) → scope and obstruction CORRECT: N5′-xi as an M4 candidate only; DEAD-CONDITIONAL until
+  two signatures (L43) (l. 209); then «Gaps: **none.** External premise: [F11] arXiv 1106.0778v2 (sha256 46c96f44…), opened by me: Theorem
+  6.14 p. 23, I^loc p. 6, 1-sink p. 8, Lemma 6.7 p. 17, the restriction p. 17-18; F-1 (Figure-4 priorities) confirmed by my own
+  transcription; F-2 confirmed; Lemmas 6.2-6.13 not read (not needed for «as published»).» (l. 210-212). REFEREE-2's table («3.8 Verdicts»,
+  R2-P-N5-WRAP.md l. 251-268), row by row: §2 W(H, s0), order, count, (R_W), standard state; §2.4 Fact (H) → SIGN (l. 254); §4.1 PAD-W; §4.2
+  S3-W = WRAP (i) → SIGN (l. 255); §4.3 K3-W (a)-(d), K2-r-W → SIGN (l. 256); §4.4 ODD-W (a)-(d) → SIGN (l. 257); §4.5 TAU-W = WRAP (ii) →
+  SIGN (l. 258); §4.6 ESC-W → SIGN (l. 259); §4.7 REACH-W = WRAP (iii), first half of (v) → SIGN (l. 260); §4.8 E1-W to E4-W, ENDGAME-W =
+  WRAP (iv), second half of (v) → SIGN (l. 261); Lemma WRAP (i)-(v) → SIGN (l. 262); §5 Remark 3 → SIGN, CONDITIONAL on [RULE] (as labelled)
+  [[RULE] not re-proved by me] (l. 263); §6 Claim NT → SIGN (independent check under L41; author REFEREE 33) (l. 264); §6 Corollary NT-RUN →
+  SIGN, CONDITIONAL on WRAP's second signature (l. 265); §7 Statement XI-EXP → SIGN as a CONDITIONAL statement [stays CONDITIONAL on WRAP
+  and Claim NT signed by both referees, READING F-1 and Theorem 6.14 as published (F-2)] (l. 266); §8 DEAD row (draft) → SIGN as
+  DEAD-CONDITIONAL; scope N5′-xi as an M4 candidate only [DEAD only after both signatures (L43)] (l. 267); line L-1 (896f9e97) → SIGN WITH
+  GAP [«L-1's NT clause names G_n without its priorities; L-1's DATA clause names no counter» (R-1, R-2 exact strings in 3.7)] (l. 268);
+  then «No statement is REFUSED. No signed proof keeps an open gap. N5 (SPEC) is not affected; G-N5-TIME stays OPEN; not M3, not M4.» (l.
+  269). L-1's SIGN WITH GAP is closed on L-2, and both referees MATCH L-2 (REFEREE §8, REFEREE-2 Add. 2; quoted under Signatures). The joint
+  gap map: EMPTY (REFEREE l. 210; REFEREE-2 l. 269). No statement is REFUSED; Claim NT is signed by its originating lane and independently
+  by REFEREE-2 (L41); Corollary NT-RUN is CONDITIONAL on WRAP, which both sign; Statement XI-EXP is signed as a CONDITIONAL statement; the
+  DEAD row is DEAD-CONDITIONAL and not signed as DEAD (Not signed).
+- Setting and scope, as both referees sign it: REFEREE «Scope of the signatures: as the packet states (scope line): N5 (SPEC) not affected;
+  G-N5-TIME OPEN; not M3 / M4; not a TARGET.md claim.» (l. 213); REFEREE-2 «No statement is REFUSED. No signed proof keeps an open gap. N5
+  (SPEC) is not affected; G-N5-TIME stays OPEN; not M3, not M4.» (l. 269), and on XI-EXP «It STAYS CONDITIONAL: (1) on WRAP and Claim NT
+  being signed by both referees (I sign both here; the other signature is REFEREE's); (2) on READING F-1.» (l. 191-192). The objects are
+  every parity game H with every positional Even strategy s0, the wrapper W(H, s0), the runs of N5′-xi (RESULTS R118's [N5XI]) and of N5
+  (SPEC) from SPEC's default start S3 on W(H, s0), and [F11]'s G_n with Figure 4's priorities (G^L_n). Statements as signed (packet with
+  fixes entry 1, which changes none):
+  (a) §2 the wrapper W(H, s0), its vertex order, count, rank facts (R_W) and standard state; §2.4 Fact (H): both SIGN (REFEREE l. 194-195;
+    REFEREE-2 l. 254).
+  (b) §4.1-§4.8 PAD-W, S3-W = WRAP (i), K3-W (a)-(d) with K2-r-W, ODD-W (a)-(d), TAU-W = WRAP (ii), ESC-W, REACH-W = WRAP (iii), E1-W to
+    E4-W, ENDGAME-W = WRAP (iv): both SIGN (REFEREE l. 196-203; REFEREE-2 l. 255-261).
+  (c) §3 Lemma WRAP (i)-(v): both SIGN (REFEREE l. 204; REFEREE-2 l. 262).
+  (d) §5 Remark 3 (N5's bound on W(H, s0) under [RULE]): both SIGN, under [RULE] (a landed premise, R104's premise clause) (REFEREE l. 205;
+    REFEREE-2 l. 263).
+  (e) §6 Claim NT (REFEREE 33's claim and proof, L41; the lane's rendering): REFEREE SIGN as the originating lane, REFEREE-2 SIGN
+    independently (REFEREE l. 206; REFEREE-2 l. 264).
+  (f) §6 Corollary NT-RUN: both SIGN, CONDITIONAL on WRAP (signed by both) (REFEREE l. 207; REFEREE-2 l. 265).
+  (g) §7 Statement XI-EXP (N5′-xi needs 2^Ω(n) iterations on W^L_n, a game with O(n²) vertices): REFEREE SIGN AS CONDITIONAL, REFEREE-2 SIGN
+    as a CONDITIONAL statement; it stays CONDITIONAL on READING F-1 and on Theorem 6.14 as published (F-2) (REFEREE l. 208; REFEREE-2 l.
+    266).
+- Premise (named in L-2's premise clause «premises [SPEC], [N5XI], [1E-N3] (R57 (b) as landed in R104), Fact DUAL (R104), R15 (a), (c), (d),
+  [RULE] (Remark 3 only)» and in its NT clause «R15 (a)»; no «…» quote in L-2; checked by script at trunk HEAD 4af9279d, prem130a.py):
+  [SPEC] (docs/new/N5-ssi-global.md, the SPEC that RESULTS R15, R57, R104, R118 run); [N5XI] RESULTS R118 (l. 13607) and its frozen packet
+  docs/new/P-N5-XICYC.md l. 45-47; [1E-N3] RESULTS R57 (l. 2893) (b) as landed in RESULTS R104 (l. 9864); [DUAL] R104 (a) Fact DUAL; RESULTS
+  R15 (l. 624) (a) Lemma A, (c), (d); [RULE] (Remark 3 only) R104's premise clause, with RESULTS R24 (l. 1064) and R103 (l. 9641) inside it.
+  All landed (### R<n> headings at HEAD); none is R128 or R129; L-2 cites neither. The external premise [F11] (Friedmann, LMCS 7 (3:19)
+  2011, arXiv 1106.0778v2): Lemmas 5.1, 6.7 and Theorem 6.14, opened by the lane and by both referees (flag G-F11). «Not used: any lemma of
+  P-N5-REACH, P-N5-CHAIN, P-N5-END, R117, R118, R124, R125 (their proofs about Γ3(G) were the templates of §4; every step is re-proved here
+  on W)» (l. 107-108). Both referees checked the quotes by their own scripts (REFEREE «**30 quotes, 0 missing**» (l. 25); REFEREE-2 «24
+  quotes, 24 found» (l. 24); REFEREE-2 Add. 1 «10 of 10 found» (l. 279) for the ten REFEREE 33 items).
+- L41 and L43. The packet's proofs are L-SI successor 53's, with one REFEREE-originated claim and proof named in L-2's label: «(Claim NT:
+  REFEREE successor 33's claim and proof (L41), rendered by L-SI 53)» (l. 1). The packet credits it the same way («Claim NT and Corollary
+  NT-RUN (Claim NT and its proof originate with REFEREE successor 33, R-WRAP-preread §3.2; L41; the written rendering below is L-SI 53's)»,
+  l. 313). Under L41 the author lane signs it and the other referee signs it independently: REFEREE «**Claim NT and its proof originate in
+  this lane** (successor 33, R-WRAP-preread §3.2, (T-2)); the packet renders it and labels it so (L41). I sign the packet's rendering below
+  as this lane's claim; under L41 it counts as two-referee signed only when REFEREE-2 signs it independently.» (l. 5-7) and its §0 row
+  «**SIGN** (as its originating lane; L41: needs REFEREE-2's independent signature)» (l. 206); REFEREE-2 «Under L41 I sign Claim NT
+  independently; its author is REFEREE 33 (claude/referee e44ce56b, as the packet quotes it).» (l. 48-49) and its row «SIGN (independent
+  check under L41; author REFEREE 33)» (l. 264). REFEREE 33 also called the run step (T-4) referee-originated (packet l. 330-331); the
+  packet labels Corollary NT-RUN «PROVED (lane)», and both referees sign it (flag G-L41). L43: the DEAD row is not entered as DEAD: REFEREE
+  «The DEAD row is not a DATA DEAD: it rests on a proof (WRAP, Claim NT) and a published theorem, and is labelled DEAD-CONDITIONAL until two
+  signatures (L43: «DEAD» needs a refereed proof or an instance beyond an explicit bound). Correct use.» (l. 146-147); REFEREE-2 «L43: the
+  killed statement is asymptotic; the row rests on a proof (WRAP + Claim NT + a published theorem), not on finitely many instances; it says
+  «DEAD-CONDITIONAL» until two signatures. That is what L43 allows.» (l. 202-203). L-2 says «DEAD-END packet for the candidate N5′-xi …,
+  CONDITIONAL until two referees sign» and records the obstruction W-FLAT and the frozen instances. LW-1 (REFEREE, L43) gave the DATA clause
+  its unit, column, files and numbers, and R-2 (REFEREE-2) named the counters; one clause of L-2 names no counter (flag G-L43).
+- Not signed: packet §5 Remarks 1, 2 (READING), §7's «More generally» bullet (READING), §8 DEAD row as a DEAD (draft; signed as
+  DEAD-CONDITIONAL, scope N5′-xi as an M4 candidate only: REFEREE «scope and obstruction CORRECT: N5′-xi as an M4 candidate only;
+  DEAD-CONDITIONAL until two signatures (L43)» (l. 209); REFEREE-2 «SIGN as DEAD-CONDITIONAL; scope N5′-xi as an M4 candidate only» with
+  «DEAD only after both signatures (L43)» (l. 267)), §9 (DATA), §10 (independent DATA), §11 (FREE-REACH and F_n: not in this packet), §12
+  (TARGET diff, READING), §13 (machine checks); [F11]'s Lemmas 6.2-6.13 (not read by REFEREE, not needed for «as published»); the referees'
+  replays; L-RED 68 R237 (2) (3732f4a1; cited by neither the packet nor L-2).
+- Referee strengthening (NOT part of this entry; referee checks): (i) REFEREE 34: own replay with its lane's code (no lane code), 22,000
+  wrapped games on new seeds, «**All 18 must-be-0 counters (the box's six and twelve of my lane's: size, w1, w4a-d, w5, w6, w8, v5, rem2,
+  rem3) are 0 on every set**» (l. 128-129); G^L_n alone from its own transcription, n = 1..10, T = 8 … 9,206 (l. 131-133); F-1 and F-2
+  confirmed from the PDF («**F-1 (misprint reading): CONFIRMED independently.**», l. 52; «**F-2 («as published»): CONFIRMED**», l. 58). (ii)
+  REFEREE-2 39: own replay r2wrap.py, 0 failures on 3,000 + 3,000 random wrapped games, 1,000 + 1,000 with permuted indices, 600 for Remark
+  3, W(G_n, ι) n ≤ 5 and G_n n ≤ 8, four controls fire (3.5, l. 213-226); F-1 checked from the PDF (1.3). (iii) L-COMP 20 BOX 44 (aa863db5),
+  REFEREE 33's replay (e44ce56b / 90703a81, 523,721 runs), L-RED 66 R236 / R237 (1) (0037d948, 5eca1c32): cited in L-2, not re-run.
+- Honest limits: (i) The lower bound is not proved here: XI-EXP rests on [F11] Theorem 6.14 cited as published, read on the misprint reading
+  F-1 (Figure 4's priorities, not Table 4's) and in its published form F-2 («Honest limits: the lower bound rests on a published theorem
+  read on a misprint reading (F-1) and stated in its published form (F-2); the lane's tools were written by the lane (two engines are two
+  implementations of one rule); the independent replays are DATA.», l. 452-453); it stays CONDITIONAL. (ii) It is a dead end for ONE
+  candidate, N5′-xi (RESULTS R118's [N5XI]) from S3, as an M4 candidate; N5 (SPEC) is not affected (WRAP (v), Remark 3: at most m_E + 3
+  iterations less the number of Even vertices of H, on every W(H, s0) under [RULE]); G-N5-TIME stays OPEN; nothing about RESULTS R118-R127
+  or boxes 208 / 209, whose games are genome games, not W^L_n (REFEREE's note N-1 on «Γ(G) / Γ3(G)», wording only). (iii) «Exponential» is
+  in n only; in the number of vertices it is 2^Ω of the square root of that number, super-polynomial. (iv) The lane's tools were written by
+  the lane; two engines are two implementations of one rule; the numbers in L-2 are DATA (checked from the frozen outputs, data130a.py). (v)
+  N5's iteration counts on W(H, s0) depend on the index order (packet §9, W-2); the statements do not. (vi) No algorithm or bound is
+  claimed; no novelty against the literature is claimed (not M3).
+- Data (DATA, not proof): experiments/si/box104/ at l-si faf0c8ff (tools wrap104.py, n5v.py, n5bxi.py, free104.py; frozen outputs out/*.out;
+  instances inst/ with SHA1SUMS, byte-equal to 26704e01) and experiments/si/pwrap/ (qwrap.py / out/qwrap.out, 30 items; out/P-N5-WRAP.sha1;
+  fix1/mkL2.py, mkL2.out, SHA1SUMS), called from experiments/si/check.sh l. 1309 («bash box104/check104.sh») and l. 1313 («bash
+  pwrap/checkW.sh», which checks the quotes, the instance sha1s, the §9 DATA lines, the packet sha1, the L-2 and fixes sha1s and the check
+  stage be7da8f3), run by scripts/verify.sh once merged. Re-run by the drafter in a full git archive of faf0c8ff: rc 0, «BOX104 checks:
+  PASS», «PWRAP checks: PASS»; with one byte appended to L-2 «PWRAP FAIL fixes entry 1 sha1», rc 1; with one byte prepended to
+  box104/out/wrap_long.out «BOX104 FAIL …» and «PWRAP FAIL W^L_7 long», rc 1 (negative controls; restored, re-run rc 0). Frozen numbers by
+  column name (data130a.py, 25 checks): T = 8, 26, 62, 134, 278, 566, 1,142, 2,294 on W^L_n, n = 1..8 (wrap_lmcs_xi.out fig4 rows,
+  wrap_long.out), = 9·2^n − 10, iterations T + 3, 10.5n² + 152.5n + 48 vertices of W^L_n (the outputs' vertex-count column), the six
+  counters 0 on those rows; 4,598, 9,206 at n = 9, 10 in REFEREE 33's f11_H_fig4.out (e44ce56b); W_2..W_8 and F_2..F_8: 33, 73, 153, 313,
+  633, 1,246, 2,489 iterations = Howard T + 3; six counters 0 on 3,000 + 1,000 random games for N5′-xi and 3,000 for N5 (wrap_rand.out,
+  seeds 1043, 1044), on the frozen 300 (wrap_json.out, 0 rows differing). Cited, not re-run: L-COMP 20 BOX 44 (aa863db5), REFEREE 33
+  (e44ce56b / 90703a81), L-RED 66 R236 (0037d948) and R237 (1) (5eca1c32).
+- Note (both referees, no change asked): REFEREE 34 §8 (32d61d60, l. 239-240): «Note N-W2 (no change asked): the R-2 sentence follows the
+  cited-replays list after a semicolon; it is the lane's own §9 DATA, not a cited replay.»; REFEREE-2 Add. 2, note W-L2-1 (01e83df5, l.
+  303-307): «The 4,000 / 3,000 / 300 runs are the lane's own (box 104 out/), not an independent replay. A reader may take them for a cited
+  replay.» and «Old (once in L-2): «; WRAP's six must-0 counters (». New: «; and this lane's own runs (box 104, not a replay): WRAP's six
+  must-0 counters (».». L-2 lands verbatim (Lead ruling). The runs behind L-2's «WRAP's six must-0 counters (s3fail, nonstd, nohoward,
+  fbwrong, endwrong, wrong; units in the packet §9) 0 on 4,000 random games for N5′-xi, 3,000 for N5, the frozen 300 and W(G_n, ι),
+  W(switchallexp_n) for n ≤ 8» are this lane's own (box 104: experiments/si/box104/out/wrap_rand.out, wrap_json.out, wrap_lmcs_xi.out,
+  wrap_fried_xi.out, wrap_long.out), not a cited replay; the cited replays of that list are L-COMP 20 (aa863db5) and REFEREE 33 (e44ce56b /
+  90703a81).
+- DATA counters for the cited replay L-RED 66 R236 / R237 (1) (claude/l-red 0037d948, 5eca1c32), named here from its report (L43): R237 (1)
+  (docs/red/R237-wrap.md at 5eca1c32) names WRAP's six must-0 counters, «must-0: s3fail, nonstd, nohoward, fbwrong, endwrong, wrong; unit as
+  in wrap104.py's header» (l. 13), with the values «Every counter is 0.» (l. 17) on W(G_n, ι), n = 1..4, both priority versions; «n = 2, 3
+  give 33 / 73 = Howard T + 3 (30 / 70), every counter 0.» (l. 18) on W(switchallexp_n); «every counter is 0 on all 300;» (l. 22) on the 300
+  frozen random games; its control: «Control CTRL=1 («best» := worst): nohoward 660 on W(switchallexp_2) (fires).» (l. 25). R236
+  (docs/red/R236-fn.md at 0037d948) names no must-0 counter by name («Labels: CONFIRMED / FLAWED / DEAD / DATA (unit, set, scope, counter).»
+  (l. 6)): its DATA are counts with their units, the iterations and fallbacks of N5′-xi on F_2..F_8, «33 / 73 / 153 / 313 / 633 / 1,246 /
+  2,489, with 1 fallback each.» (l. 11), the regions against Zielonka, «The regions equal the harness Zielonka's on all seven games.» (l.
+  13), and its self-check differences classified «start 0, fallback 0, real divergence 0.» (l. 42); its pinned output
+  experiments/red/r236/out/f236_free.out (0037d948) carries «regfail xi 0 spec 0» on all seven F_n rows (flag G-R236).
+- Signatures: REFEREE docs/referee/R-P-N5-WRAP.md, successor 34 (ef4d3bd1 2026-11-12T22:31:53Z, c6fcf2b6 2026-11-12T22:31:53Z, 99df2458
+  2026-11-12T22:31:53Z; §8 32d61d60 2026-11-13T01:40:40Z): §0 verdict table l. 191-209; on L-1 «**Line L-1 (sha1 896f9e97…): does NOT match
+  yet.** Required: LW-1 (L43: the DATA clause gives T_n as numbers with unit, column and files; C142 E-1's ruling); my result on L-1: sha1
+  be7da8f3a98e4c5a26158eae9aa2766c56531222. Optional LW-2, LW-3 (the Lead's call). No statement, label or proof changes: a fixes entry with
+  L-2 by script needs a byte test, not a re-sign.» (l. 215-217); note «Note N-1 (§6): «Γ3(G)» for R118-R126 / box 208 should read «Γ(G) /
+  Γ3(G)»; wording only.» (l. 214). On L-2, §8: «Verdict: **Line L-2 MATCHES** (L-1 + exactly LW-1, R-1, R-2 as applied to LW-1's clause,
+  LW-2, LW-3; sha1 dbd5f0e8…). Statements and labels as in §0: every statement SIGN; XI-EXP CONDITIONAL as signed.» (l. 245-246) and «Fixes
+  entry 1: line-only; records both referees' SIGN, the Lead's rulings, and my note N-1 verbatim. CORRECT.» (l. 244). REFEREE-2
+  docs/referee-2/R2-P-N5-WRAP.md (= at its head 0f2606da), successor 39 (3cf594cc 2026-11-12T22:08:25Z, 07fd5ae4 2026-11-12T22:09:50Z,
+  5d30968a 2026-11-12T22:34:35Z, 01e83df5 2026-11-13T01:28:18Z): verdict table l. 251-269; Add. 2 «L-2 (faf0c8ff, sha1 dbd5f0e8) MATCHES.
+  R-1 and R-2 are met; my SIGN WITH GAP on L-1 is closed. Note W-L2-1 is optional.» (l. 309) and «No statement, label, condition or scope
+  changes. XI-EXP stays CONDITIONAL; the DEAD row stays DEAD-CONDITIONAL until both signatures.» (l. 308). Lane (claude/l-si): L-SI
+  successor 53, e01447e7 (packet FROZEN, L-1) and faf0c8ff (fixes entry 1, L-2). Pre-read and replays (not signatures): REFEREE 33
+  (e44ce56b, 90703a81), L-COMP 20 (aa863db5), L-RED 66 (0037d948, 5eca1c32).
+- INDEPENDENCE: each referee wrote its verdict without reading the other's (REFEREE «Not read before my verdict: docs/referee-2/ on
+  P-N5-WRAP; L-RED 66 R236 / R237, L-COMP 20 BOX 44 (cited DATA, not opened).» (l. 8); REFEREE-2 «Independent: I did NOT open docs/referee/
+  on WRAP (REFEREE 33's R-WRAP-preread, any R-P-N5-WRAP) or notes/REFEREE.md before this verdict is on origin;» (l. 3-4) and «Before this
+  verdict was on origin I did not open docs/referee/ (REFEREE 33's R-WRAP-preread, any REFEREE review of WRAP), notes/REFEREE.md, box 104,
+  L-COMP 20's box 44 or L-RED 66's R236 / R237, nor any lane tool.» (l. 272-274)). REFEREE-2 read REFEREE's report only after its verdict:
+  «REFEREE 34's report read now (claude/referee 99df2458, docs/referee/R-P-N5-WRAP.md), after my verdict 07fd5ae4.» (l. 285-286). REFEREE's
+  lane wrote the pre-read that originated Claim NT and disclosed it (Claims signed; L41): «I re-derived every step from the frozen text, not
+  from the pre-read.» (l. 7). REFEREE's L-2 test (§8, after both verdicts) took REFEREE-2's R-1 from REFEREE-2's report: «parsed by my
+  script from R2-P-N5-WRAP.md at claude/referee-2 07fd5ae4 §3.7» (l. 225-226). Each referee re-derived every proof step on W, opened [F11]
+  itself and replayed the DATA on its own engine.
+- TARGET.md diff: TARGET.md §2 (M4) asks for «There is a deterministic algorithm A and a polynomial p such that for every parity game G, A
+  on input G halts within p(n + m) steps and outputs the pair (W_E(G), W_O(G)).» (l. 20-21); this entry claims no algorithm and no bound: it
+  records that one candidate, N5′-xi, takes super-polynomially many iterations on a family of parity games in TARGET.md §1's sense
+  (conditionally on READING F-1 and Theorem 6.14 as published), i.e. a gauntlet step-4 failure for N5′-xi (TARGET.md §5 step 4: «Written
+  correctness and running-time proofs, double-refereed with every gap listed.», l. 45); REFEREE «## 7. TARGET.md diff: CLEAN» (l. 185);
+  REFEREE-2 «Not M3, not M4, not a gauntlet step (it is the failure of step 4 for N5′-xi). G-N5-TIME (N5) stays OPEN. PASS.» (l. 231-232).
+  It is not M3, not M4, not a TARGET.md claim, and not a step-4 pass for any candidate. L-2 ends its scope words «N5 (SPEC) is not affected;
+  G-N5-TIME stays OPEN; not M3 or M4, not a TARGET.md claim». GAPS G-N5-TIME: open (about N5, which this entry does not touch).
+
 **Erratum E-1** (not a result; 2026-11-01 05:28Z by date -u; Lead; corpus counts in RESULTS R97-R100):
 - What is wrong: the DATA-of-record sentences that say «1,132 games» for the L-SI box 50b / box 53 corpus (sbcg.lst 719 lines + alt_all.lst
   413 lines) count RUNS, not games. Measured by CHECKER (C111 N-7, claude/checker d53e1d4f) at trunk 68d50c8f: experiments/si/anc58/
