@@ -66,6 +66,9 @@ Column «CHECKER C143» (CHECKER C143 = docs/checker/C143.md on claude/checker 3
 | R117 Lemma PAD (c), the value transport Γ → Γ3 (`lift3`): (c1) cycle node old c, P-set old P, length ℓ + npad; (c2) a pad takes its successor's value with length + 1; (c3) values whose (Λ, Π) differ compare as in Γ (when they agree no claim: the padded lengths decide, so the Γ3 order may differ there; Lead 00:00Z) | PadValueStatement (Gamma3LiftStatement); accepted 00:00Z | Genome.pad_value (Gamma3Lift) | none (G.WF) | C143: Genome.pad_value: not in C143 (after c8963698) |
 | the lift of Γ's start is Γ3's standard start (R117: «R104's stated start transported through the pads») | LiftStartStatement (Gamma3LiftStatement); accepted 00:00Z | Genome.lift_start (Gamma3Lift) | none | C143: Genome.lift_start: not in C143 (after c8963698) |
 | n = N + 7M + 10; idx3 a bijection onto 0..n − 1 under WF | Gamma3CardStatement (Gamma3Statement); accepted 22:56Z | Genome.gamma3_card (Gamma3Basic) | none (WF for the bijection) | C143: Genome.gamma3_card: not in C143 (after c8963698) |
+| N5's step as SPEC S1-S5 states it (docs/new/N5-ssi-global.md l. 24-127, FIX 1-4, Q1-Q4): PROPOSED DEFINITIONS, not yet diffed by the Lead; the root-first key and the key rule (R24's reading of SPEC's choice, a predicate; Lead 02:06Z (3)); the same step on Γ3 | Spec.lean, SpecGamma3.lean (definitions; deviations (D1)-(D9), (G1), (G2)) | (none) |  | C143: — (no theorem in this row) |
+
+DATA beside the SPEC row (check/speccheck.py: Lean's `specRun` against experiments/new/box190/n5v.py mode «spec», state by state; outputs check/out/speccheck*.out): the 101 .pg of experiments/new/box*/inst (76 with their .start, 25 from S3; cap 200, 6 reach it), 9,668 vertices, 4,709 states, 4,608 steps: runfail, statefail, valfail, sbarfail, isfail, itfail, fbfail, badfail, keyfail all 0; Γ3 of the 25 genomes of box189/corpus + box191/inst (SPEC_GAMMA3=1; Lean's own start3Pair), 5,834 vertices, 533 states, 508 steps: all 0. Key rule (R24's reading, DATA): 0 failures at 25,004 tied (call, vertex) cases (12,647 + 12,357; 183 in longest mode, 24,821 in BFS mode); the reversed rule fires at every one. Controls (n5v.py's other S4a rules in the reference) on Γ3: idx statefail 2,331, xi 28,734, seq 120,911 (runfail 24, 25, 25). The data check the transcription; they prove nothing about N5.
 
 DATA beside the Γ3 rows (check/gamma3check.py; unit: vertex): against experiments/new/box189/gamma3.py, the 14 genomes of
 experiments/new/box189/corpus and the 11 of experiments/new/box191/inst, 25 genomes, 5,834 vertices: nfail, miss, priofail, ownfail,
@@ -109,6 +112,6 @@ seed 1, 20,000 games with at most 7 vertices: 7,130 runs with T ≥ 1, 7,914 ste
 ABS_CTRL=1 (seed 1, 2,000 games): c2fail 1,140 of 1,140 steps. The runs are short: this checks the reading of the statement, not growth.
 
 Not formalized: box 208 §3 (L4) and §5-§6 (WIN, R-INT, R-HEIGHT, K1-TCYC, FVS-TCYC); RESULTS R123 NO-TIE (not needed on the route to
-ALL-TCYC); §10's reading of IDEAL-CYC at class level as a shortest-path game; anything on Γ3, N5′-xi or N5; WINDOW, SCC-RED, CAP, REACH3
+ALL-TCYC); §10's reading of IDEAL-CYC at class level as a shortest-path game; any theorem on N5′-xi or N5 (N5's step and Γ3 are DEFINED: Spec.lean, SpecGamma3.lean, Gamma3.lean; no theorem about N5's step yet); WINDOW, SCC-RED, CAP, REACH3
 (they need RESULTS R104 / R117's genome and Γ3 in Lean); R15 (b), (c), (d); the equality of the positional Ω_σ used here with VJ00 §4.3's
 minimum over plays; anything about running time at bit cost; TARGET.md §6.

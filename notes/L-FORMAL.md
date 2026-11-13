@@ -22,6 +22,25 @@
     run box113/inst (5 inst, 473 states): all counters 0, keyctrl 14, SPEC_CTRL=idx statefail 15. Full run of the 101 frozen .pg
     -> check/out/speccheck.out (started 01:19:55Z).
     Build: `lake build PGLemmas.SpecGamma3` (Spec is NOT yet imported by PGLemmas.lean; add both after the Lead's diff).
+  - 82ec6eb4 (item (2)) committed 01:53Z; push.sh started 01:53:28Z. Lead 01:06Z: attachment rule ACCEPTED «L-FORMAL reading, Lead
+    accepted 01:06Z»; rows #70-#74 go to CHECKER as C145 once on origin (build of record CI run 43340637658).
+  - Item (3) sent 02:00Z (summary). Lead 02:06Z (verbatim excerpts): «Your summary is not enough for a diff: I diff the literal
+    text, so commit it.» «(1) COMMIT, after your 82ec6eb4 push ends: Spec.lean, SpecGamma3.lean, speccheck.py and its outputs.
+    Mark both .lean headers «PROPOSED DEFINITIONS, not yet diffed by the Lead». Import them in PGLemmas.lean so CI lean-lemmas builds
+    them; definitions without theorems are allowed to land in the lane. Add no theorem about them.» «(2) D4 is a POSSIBLE DEFECT IN
+    THE REFERENCE … Either way, put the answer under D4 in the file.» «(3) D8 is accepted: keyRuleAt is a PREDICATE checked on the
+    procedure, labelled R24's reading.» «(4) NEXT, after my diff: (iii) fuel sufficiency (bad = false on well-formed games) first,
+    Statement to me first; then (i) KeyRuleStatement restricted to one-player arenas (owner-0 vertices of H with τ fixed, the S4a
+    case), Statement first. (ii) is deferred.» «(5) The idx control over all 101 instances: send its counters when it is done.»
+  - D4 ANSWER: no defect by construction (only the loop object v can be popped equal to v); probe check/d4probe.py (line tracer,
+    si.py unmodified), check/out/d4probe.out: 1,011 walks, eq_not_id 0, incl. synthetic check/d4/d4_big_odd_cycle_n400.pg (142 walks
+    at v > 256). Text under D4 in Spec.lean.
+  - Controls: general idx (speccheck_ctrl_idx.out): runfail 28, statefail 3,742 (35 instances), keyfail 0; Γ3 idx / xi / seq
+    statefail 2,331 / 28,734 / 120,911.
+  - COMMIT PREPARED (waiting for the 82ec6eb4 push to end): Spec.lean, SpecGamma3.lean (headers marked), PGLemmas.lean imports,
+    speccheck.py, d4probe.py, check/d4/, check/out/speccheck*.out, d4probe.out, INDEX row + DATA paragraph, README entries.
+    Clean build 02:24:36Z-02:25:39Z: 3199 jobs, 0 warnings, 74 axiom lines (72 full set; one_cross [propext, Quot.sound];
+    lift_start [propext]); grep for sorry/admit/axiom/native_decide empty.
 - HANDOVER of SUCCESSOR 3 (session_01V5yGRX3V51LguQp6WMvAgj), written 2026-11-13T00:14Z at about 420k context. A SUCCESSOR STARTS HERE.
   STATE (all Lean-checked (lane); results only through CHECKER (C143 opened by the Lead on MANIFEST c8963698) and the CI job lean-lemmas):
   - On origin before this batch: 91f25983 (handover check), 78c32d90 (RF-A, recovered by transcript replay), c8963698 (MANIFEST +

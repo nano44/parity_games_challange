@@ -1,0 +1,108 @@
+Fri Nov 13 02:00:49 UTC 2026
+cascl_K4_m8_N100.pg n=222 iterations=44 stopped=True fallbacks=0 start=file 
+cedge_n32.pg n=32 iterations=25 stopped=True fallbacks=1 start=file runfail=1 statefail=245 valfail=373 sbarfail=18 isfail=20
+cp_K4.pg n=192 iterations=44 stopped=True fallbacks=0 start=file 
+fbg_K4_m6_m48.pg n=250 iterations=200 stopped=False fallbacks=0 start=file 
+suf_K4.pg n=103 iterations=44 stopped=True fallbacks=0 start=file 
+suf_K8.pg n=199 iterations=152 stopped=True fallbacks=0 start=file 
+w_re3_1.pg n=32 iterations=28 stopped=True fallbacks=1 start=file statefail=15 valfail=1 isfail=1
+switchallexp_2.pg n=35 iterations=8 stopped=True fallbacks=0 start=file 
+switchallexp_3.pg n=49 iterations=7 stopped=True fallbacks=0 start=file 
+switchallexp_4.pg n=63 iterations=8 stopped=True fallbacks=0 start=file 
+switchallexp_5.pg n=77 iterations=10 stopped=True fallbacks=0 start=file 
+switchallexp_6.pg n=91 iterations=12 stopped=True fallbacks=0 start=file 
+switchallexp_7.pg n=105 iterations=14 stopped=True fallbacks=0 start=file 
+switchallexp_8.pg n=119 iterations=16 stopped=True fallbacks=0 start=file 
+switchbestexp_2.pg n=60 iterations=32 stopped=True fallbacks=0 start=file 
+switchbestexp_3.pg n=85 iterations=41 stopped=True fallbacks=0 start=file 
+switchbestexp_4.pg n=110 iterations=47 stopped=True fallbacks=0 start=file 
+switchbestexp_5.pg n=135 iterations=55 stopped=True fallbacks=0 start=file 
+switchbestexp_6.pg n=160 iterations=62 stopped=True fallbacks=0 start=file 
+fbA_K4_m8_m8.pg n=136 iterations=44 stopped=True fallbacks=0 start=file 
+fbA_K8_m8_m8.pg n=192 iterations=88 stopped=True fallbacks=0 start=file 
+fbg_K12_m6_m24.pg n=290 iterations=200 stopped=False fallbacks=0 start=file 
+fbg_K4_m6_m24.pg n=178 iterations=140 stopped=True fallbacks=0 start=file 
+fbg_K4_m6_m48.pg n=250 iterations=9 stopped=True fallbacks=0 start=S3 
+fbg_K8_m6_m24.pg n=234 iterations=200 stopped=False fallbacks=0 start=file 
+fb3_K4_m6_m12_m12.pg n=215 iterations=159 stopped=True fallbacks=0 start=file 
+odxi_lasso_n13.pg n=13 iterations=4 stopped=True fallbacks=2 start=file 
+odxi_many_n32.pg n=32 iterations=19 stopped=True fallbacks=5 start=file runfail=1 statefail=147 valfail=436 sbarfail=80 isfail=16 itfail=4 fbfail=5
+odxi_min_n12.pg n=12 iterations=2 stopped=True fallbacks=1 start=file fbfail=1
+big_d3_k3_W3.pg n=65 iterations=8 stopped=True fallbacks=0 start=file runfail=1 statefail=89 valfail=180 sbarfail=15 isfail=7 itfail=3
+big_d4_k3_W3.pg n=86 iterations=5 stopped=True fallbacks=0 start=file runfail=1 statefail=13 valfail=148 sbarfail=4 isfail=4
+chain_k16_n81.pg n=81 iterations=7 stopped=True fallbacks=1 start=file runfail=1 statefail=120 valfail=481 sbarfail=114 isfail=6 fbfail=1
+cnmov_k8_n57.pg n=57 iterations=7 stopped=True fallbacks=1 start=file runfail=1 statefail=115 valfail=335 sbarfail=59 isfail=6 fbfail=1
+cyc_d2_k2_W2.pg n=22 iterations=3 stopped=True fallbacks=0 start=file 
+d2cyc4_n72.pg n=72 iterations=11 stopped=True fallbacks=2 start=file runfail=1 statefail=26 valfail=130 sbarfail=17 isfail=2 fbfail=2
+dcyc3_n48.pg n=48 iterations=13 stopped=True fallbacks=2 start=file runfail=1 statefail=41 valfail=232 sbarfail=28 isfail=11 itfail=3 fbfail=4
+odxi_n37.pg n=37 iterations=7 stopped=True fallbacks=1 start=file runfail=1 statefail=102 valfail=212 sbarfail=15 isfail=6 fbfail=1
+ovk_n37.pg n=37 iterations=7 stopped=True fallbacks=1 start=file runfail=1 statefail=124 valfail=217 sbarfail=14 isfail=6 itfail=3 fbfail=1
+cn_d4_n126.pg n=126 iterations=6 stopped=True fallbacks=1 start=file runfail=1 statefail=86 valfail=679 sbarfail=53 isfail=5 fbfail=1
+cn_g24_n246.pg n=246 iterations=6 stopped=True fallbacks=1 start=file runfail=1 statefail=246 valfail=1403 sbarfail=171 isfail=5 fbfail=1
+stab_d4_n126.pg n=126 iterations=6 stopped=True fallbacks=1 start=file runfail=1 statefail=92 valfail=639 sbarfail=55 isfail=5 fbfail=1
+stab_g24_n246.pg n=246 iterations=6 stopped=True fallbacks=1 start=file runfail=1 statefail=203 valfail=1287 sbarfail=120 isfail=5 fbfail=1
+g4_L12_n62.pg n=62 iterations=4 stopped=True fallbacks=1 start=file runfail=1 statefail=41 valfail=189 sbarfail=29 isfail=3 fbfail=1
+x3_L8_n48.pg n=48 iterations=4 stopped=True fallbacks=1 start=file runfail=1 statefail=29 valfail=131 sbarfail=22 isfail=3 fbfail=1
+lag1_n48.pg n=48 iterations=5 stopped=True fallbacks=1 start=file statefail=3 valfail=7 isfail=2
+lag1u_n48.pg n=48 iterations=4 stopped=True fallbacks=1 start=file runfail=1 statefail=9 valfail=93 sbarfail=14 isfail=3 fbfail=2
+lag2c_d4_n62.pg n=62 iterations=5 stopped=True fallbacks=1 start=file runfail=1 statefail=47 valfail=225 sbarfail=31 isfail=4 fbfail=1
+nest_d3_L4_n48.pg n=48 iterations=4 stopped=True fallbacks=1 start=file runfail=1 statefail=39 valfail=150 sbarfail=26 isfail=3 fbfail=1
+RECT_d11_T59_g0.pg n=160 iterations=1 stopped=True fallbacks=0 start=S3 
+RECT_d11_T59_g3.pg n=340 iterations=5 stopped=True fallbacks=1 start=file runfail=1 statefail=134 valfail=1464 sbarfail=88 isfail=4 fbfail=1
+REC_d10_tower_mu30_g0.pg n=146 iterations=1 stopped=True fallbacks=0 start=S3 
+REC_d10_tower_mu30_g3.pg n=310 iterations=5 stopped=True fallbacks=1 start=file runfail=1 statefail=88 valfail=1189 sbarfail=57 isfail=4 fbfail=1
+sae_2.pg n=35 iterations=8 stopped=True fallbacks=0 start=S3 
+sae_3.pg n=49 iterations=7 stopped=True fallbacks=0 start=S3 
+sae_4.pg n=63 iterations=8 stopped=True fallbacks=0 start=S3 
+sae_5.pg n=77 iterations=10 stopped=True fallbacks=0 start=S3 
+sae_6.pg n=91 iterations=12 stopped=True fallbacks=0 start=S3 
+sae_7.pg n=105 iterations=14 stopped=True fallbacks=0 start=S3 
+l121_a.pg n=41 iterations=122 stopped=True fallbacks=8 start=file 
+l121_b.pg n=42 iterations=122 stopped=True fallbacks=8 start=file 
+l121_c.pg n=43 iterations=122 stopped=True fallbacks=8 start=file 
+l121_cf35_39.pg n=41 iterations=122 stopped=True fallbacks=8 start=file 
+l121_cf_emb12.pg n=41 iterations=122 stopped=True fallbacks=8 start=file 
+l121_d29.pg n=41 iterations=122 stopped=True fallbacks=8 start=file 
+l121_e100.pg n=42 iterations=122 stopped=True fallbacks=8 start=file 
+l121_er19.pg n=41 iterations=122 stopped=True fallbacks=8 start=file 
+l121_er_6_19.pg n=41 iterations=122 stopped=True fallbacks=8 start=file 
+s2piece6_n32.pg n=32 iterations=8 stopped=True fallbacks=1 start=file runfail=1 statefail=112 valfail=203 sbarfail=5 isfail=7 fbfail=1
+s2piece_n32.pg n=32 iterations=6 stopped=True fallbacks=1 start=file runfail=1 statefail=83 valfail=159 sbarfail=4 isfail=5 fbfail=1
+latew_K20_m32.pg n=538 iterations=200 stopped=False fallbacks=0 start=file 
+wdepth_K4_m16.pg n=146 iterations=76 stopped=True fallbacks=0 start=file 
+cf_n24.pg n=24 iterations=11 stopped=True fallbacks=8 start=file runfail=1 statefail=69 valfail=84 isfail=8 itfail=1 fbfail=1
+cf_n64.pg n=64 iterations=47 stopped=True fallbacks=17 start=file runfail=1 statefail=947 valfail=1736 sbarfail=250 isfail=46 itfail=7 fbfail=22
+cfz_n64.pg n=64 iterations=35 stopped=True fallbacks=12 start=file runfail=1 statefail=349 valfail=560 sbarfail=23 isfail=29 itfail=3 fbfail=18
+cr_n24.pg n=24 iterations=19 stopped=True fallbacks=2 start=file runfail=1 statefail=63 valfail=311 sbarfail=57 isfail=18 fbfail=3
+cr_n80.pg n=80 iterations=27 stopped=True fallbacks=2 start=file statefail=6
+crz_n80.pg n=80 iterations=34 stopped=True fallbacks=3 start=file 
+cs_n32.pg n=32 iterations=15 stopped=True fallbacks=1 start=file 
+cs_n80.pg n=80 iterations=21 stopped=True fallbacks=0 start=file statefail=16 isfail=2 itfail=3
+csz_n24.pg n=24 iterations=22 stopped=True fallbacks=1 start=file statefail=1 valfail=2 isfail=1
+cf_n80.pg n=80 iterations=108 stopped=True fallbacks=8 start=file statefail=25 valfail=2 isfail=2
+cfl_n24.pg n=24 iterations=43 stopped=True fallbacks=10 start=file runfail=1 statefail=17 valfail=97 sbarfail=8 isfail=13 itfail=1 fbfail=8
+ladder_2.pg n=6 iterations=0 stopped=True fallbacks=0 start=S3 
+ladder_3.pg n=8 iterations=0 stopped=True fallbacks=0 start=S3 
+ladder_4.pg n=10 iterations=0 stopped=True fallbacks=0 start=S3 
+ladder_5.pg n=12 iterations=0 stopped=True fallbacks=0 start=S3 
+ladder_6.pg n=14 iterations=0 stopped=True fallbacks=0 start=S3 
+ladder_8.pg n=18 iterations=0 stopped=True fallbacks=0 start=S3 
+gl_2.pg n=12 iterations=1 stopped=True fallbacks=0 start=S3 
+gl_3.pg n=18 iterations=1 stopped=True fallbacks=0 start=S3 
+gl_4.pg n=24 iterations=1 stopped=True fallbacks=0 start=S3 
+gl_6.pg n=36 iterations=1 stopped=True fallbacks=0 start=S3 
+gl_8.pg n=48 iterations=1 stopped=True fallbacks=0 start=S3 
+ogl_2.pg n=12 iterations=0 stopped=True fallbacks=0 start=S3 
+ogl_3.pg n=18 iterations=0 stopped=True fallbacks=0 start=S3 
+ogl_4.pg n=24 iterations=0 stopped=True fallbacks=0 start=S3 
+ogl_6.pg n=36 iterations=0 stopped=True fallbacks=0 start=S3 
+ogl_8.pg n=48 iterations=0 stopped=True fallbacks=0 start=S3 
+latew_K16_m32.pg n=482 iterations=200 stopped=False fallbacks=0 start=file 
+obs_K12_m24.pg n=272 iterations=200 stopped=False fallbacks=0 start=file 
+sbq2_K8_m16.pg n=261 iterations=152 stopped=True fallbacks=0 start=file 
+MODE idx CAP 200
+instances 101, vertices 9668, states 4331, steps 4230
+COUNTERS runfail=28 statefail=3742 valfail=13355 sbarfail=1377 isfail=262 itfail=28 fbfail=82 badfail=0 keyfail=0
+CONTROL keyctrl=3772 ties_longest=84 ties_bfs=3688
+exit 0
+Fri Nov 13 02:24:24 UTC 2026

@@ -1,0 +1,32 @@
+Fri Nov 13 01:57:07 UTC 2026
+A_d4_W2_k2.json n=130 iterations=31 stopped=True fallbacks=1 start=file runfail=1 statefail=2512 valfail=566 sbarfail=25 isfail=30 fbfail=2
+A_d4_W3_k3.json n=274 iterations=67 stopped=True fallbacks=1 start=file runfail=1 statefail=13584 valfail=2654 sbarfail=57 isfail=66 fbfail=1
+A_d5_W2_k3.json n=230 iterations=52 stopped=True fallbacks=1 start=file runfail=1 statefail=8390 valfail=1553 sbarfail=48 isfail=51 fbfail=1
+A_d6_W2_k2.json n=190 iterations=36 stopped=True fallbacks=1 start=file runfail=1 statefail=4245 valfail=832 sbarfail=25 isfail=35 fbfail=2
+KILL_M2D_d6_mu13_norm.json n=190 iterations=34 stopped=True fallbacks=1 start=file runfail=1 statefail=3530 valfail=2158 sbarfail=35 isfail=33 fbfail=2
+KILL_M2D_d8_mu21_norm.json n=250 iterations=55 stopped=True fallbacks=1 start=file runfail=1 statefail=7201 valfail=4539 sbarfail=90 isfail=54 fbfail=2
+RECT_d11_T59_norm.json n=340 iterations=13 stopped=True fallbacks=1 start=file runfail=1 statefail=353 valfail=2924 sbarfail=90 isfail=12 fbfail=1
+REC_d10_mu32_norm.json n=310 iterations=18 stopped=True fallbacks=1 start=file runfail=1 statefail=560 valfail=4266 sbarfail=246 isfail=17 fbfail=1
+REC_d10_tower_mu30_norm.json n=310 iterations=66 stopped=True fallbacks=1 start=file runfail=1 statefail=9101 valfail=8311 sbarfail=402 isfail=65 fbfail=2
+REC_d11_mu40_norm.json n=340 iterations=77 stopped=True fallbacks=1 start=file runfail=1 statefail=10767 valfail=12623 sbarfail=352 isfail=76 fbfail=2
+REC_d12_mu42_norm.json n=370 iterations=55 stopped=True fallbacks=1 start=file runfail=1 statefail=2930 valfail=14952 sbarfail=1210 isfail=54 fbfail=2
+REC_d7_mu17_norm.json n=220 iterations=10 stopped=True fallbacks=1 start=file runfail=1 statefail=223 valfail=1587 sbarfail=58 isfail=9 fbfail=1
+REC_d8_mu24_norm.json n=250 iterations=9 stopped=True fallbacks=1 start=file runfail=1 statefail=255 valfail=1741 sbarfail=66 isfail=8 fbfail=1
+REC_d9_mu29_norm.json n=280 iterations=65 stopped=True fallbacks=1 start=file runfail=1 statefail=8990 valfail=7877 sbarfail=89 isfail=64 fbfail=2
+DEAD_SEG2P_d4_N8.json n=130 iterations=22 stopped=True fallbacks=1 start=file runfail=1 statefail=2361 valfail=240 sbarfail=21 isfail=19
+DEAD_SEG2P_d7_N14.json n=220 iterations=39 stopped=True fallbacks=1 start=file runfail=1 statefail=7590 valfail=868 sbarfail=62 isfail=38 fbfail=2
+DEAD_SEG2P_d9_N18.json n=280 iterations=13 stopped=True fallbacks=1 start=file runfail=1 statefail=2641 valfail=838 sbarfail=73 isfail=12 fbfail=1
+cyc2_d7.json n=220 iterations=27 stopped=True fallbacks=1 start=file runfail=1 statefail=3808 valfail=1765 sbarfail=83 isfail=26 fbfail=2
+cyc2_d8.json n=250 iterations=37 stopped=True fallbacks=1 start=file runfail=1 statefail=6864 valfail=1937 sbarfail=89 isfail=36 fbfail=1
+cyc_d3.json n=100 iterations=21 stopped=True fallbacks=1 start=file runfail=1 statefail=1433 valfail=481 sbarfail=22 isfail=20 fbfail=2
+cyc_d4.json n=130 iterations=29 stopped=True fallbacks=1 start=file runfail=1 statefail=2756 valfail=323 sbarfail=21 isfail=28 fbfail=2
+cyc_d5.json n=160 iterations=9 stopped=True fallbacks=1 start=file runfail=1 statefail=99 valfail=787 sbarfail=48 isfail=8 fbfail=2
+cyc_d6.json n=190 iterations=37 stopped=True fallbacks=1 start=file runfail=1 statefail=5182 valfail=986 sbarfail=50 isfail=36
+cyc_d7.json n=220 iterations=49 stopped=True fallbacks=1 start=file runfail=1 statefail=8474 valfail=1964 sbarfail=68 isfail=48 fbfail=1
+cyc_d8.json n=250 iterations=37 stopped=True fallbacks=1 start=file runfail=1 statefail=7062 valfail=1477 sbarfail=52 isfail=34 fbfail=2
+MODE seq CAP 200
+instances 25, vertices 5834, states 933, steps 908
+COUNTERS runfail=25 statefail=120911 valfail=78249 sbarfail=3382 isfail=879 itfail=0 fbfail=37 badfail=0 keyfail=0
+CONTROL keyctrl=9867 ties_longest=4 ties_bfs=9863
+exit 0
+Fri Nov 13 02:00:38 UTC 2026

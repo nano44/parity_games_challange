@@ -1,0 +1,32 @@
+Fri Nov 13 01:46:06 UTC 2026
+A_d4_W2_k2.json n=130 iterations=12 stopped=True fallbacks=1 start=file 
+A_d4_W3_k3.json n=274 iterations=18 stopped=True fallbacks=1 start=file 
+A_d5_W2_k3.json n=230 iterations=16 stopped=True fallbacks=1 start=file 
+A_d6_W2_k2.json n=190 iterations=14 stopped=True fallbacks=1 start=file 
+KILL_M2D_d6_mu13_norm.json n=190 iterations=16 stopped=True fallbacks=1 start=file 
+KILL_M2D_d8_mu21_norm.json n=250 iterations=27 stopped=True fallbacks=1 start=file 
+RECT_d11_T59_norm.json n=340 iterations=62 stopped=True fallbacks=1 start=file 
+REC_d10_mu32_norm.json n=310 iterations=36 stopped=True fallbacks=1 start=file 
+REC_d10_tower_mu30_norm.json n=310 iterations=38 stopped=True fallbacks=1 start=file 
+REC_d11_mu40_norm.json n=340 iterations=47 stopped=True fallbacks=1 start=file 
+REC_d12_mu42_norm.json n=370 iterations=51 stopped=True fallbacks=1 start=file 
+REC_d7_mu17_norm.json n=220 iterations=20 stopped=True fallbacks=1 start=file 
+REC_d8_mu24_norm.json n=250 iterations=28 stopped=True fallbacks=1 start=file 
+REC_d9_mu29_norm.json n=280 iterations=34 stopped=True fallbacks=1 start=file 
+DEAD_SEG2P_d4_N8.json n=130 iterations=4 stopped=True fallbacks=1 start=file 
+DEAD_SEG2P_d7_N14.json n=220 iterations=5 stopped=True fallbacks=1 start=file 
+DEAD_SEG2P_d9_N18.json n=280 iterations=4 stopped=True fallbacks=1 start=file 
+cyc2_d7.json n=220 iterations=10 stopped=True fallbacks=1 start=file 
+cyc2_d8.json n=250 iterations=10 stopped=True fallbacks=1 start=file 
+cyc_d3.json n=100 iterations=7 stopped=True fallbacks=1 start=file 
+cyc_d4.json n=130 iterations=8 stopped=True fallbacks=1 start=file 
+cyc_d5.json n=160 iterations=11 stopped=True fallbacks=1 start=file 
+cyc_d6.json n=190 iterations=10 stopped=True fallbacks=1 start=file 
+cyc_d7.json n=220 iterations=11 stopped=True fallbacks=1 start=file 
+cyc_d8.json n=250 iterations=9 stopped=True fallbacks=1 start=file 
+MODE spec CAP 200
+instances 25, vertices 5834, states 533, steps 508
+COUNTERS runfail=0 statefail=0 valfail=0 sbarfail=0 isfail=0 itfail=0 fbfail=0 badfail=0 keyfail=0
+CONTROL keyctrl=12357 ties_longest=6 ties_bfs=12351
+exit 0
+Fri Nov 13 01:49:46 UTC 2026

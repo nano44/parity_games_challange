@@ -1,0 +1,11 @@
+Fri Nov 13 02:07:25 UTC 2026
+w_re3_1.pg n=32 iterations=28 walks=49 big=0 eq_not_id=0 eq_id=3 v_big_cycle_nodes=0
+latew_K20_m32.pg n=538 iterations=200 walks=201 big=0 eq_not_id=0 eq_id=0 v_big_cycle_nodes=0
+obs_K12_m24.pg n=272 iterations=200 walks=201 big=0 eq_not_id=0 eq_id=0 v_big_cycle_nodes=0
+REC_d12_mu42_norm.json n=370 iterations=51 walks=161 big=0 eq_not_id=0 eq_id=52 v_big_cycle_nodes=0
+d4_big_odd_cycle_n400.pg n=400 iterations=0 walks=399 big=142 eq_not_id=0 eq_id=1 v_big_cycle_nodes=141
+TOTAL walks=1011 big=142 eq_not_id=0 eq_id=56 v_big_cycle_nodes=141
+EXAMPLES (v, x, id(par[x]), id(v)) of eq_not_id: []
+identity probe: the object v=300 from sorted(range(600)) is the object 300 of a separate int("300"): False
+exit 0
+Fri Nov 13 02:09:04 UTC 2026
