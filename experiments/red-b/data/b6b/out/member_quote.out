@@ -1,0 +1,11 @@
+[Q P-N5-REALIZE.md sha1 067f06b6c67969adf346621b4a92b253491ab2b9 l. 51-60]
+  «## 2. The IDEAL model (R178 §1) and the IDEAL-ACYC class»
+  «- A GENOME G consists of:»
+  «  - movers x = 0, …, N − 1, each with a level lev(x) ∈ {0, …, d − 1} and options k = 0, …, deg(x) − 1; M := Σ_x deg(x);»
+  «  - per option (x, k): a W-target wt(x, k), which is a mover of level lev(x) − 1 if lev(x) ≥ 1 and «none» if lev(x) = 0 (GRADED);»
+  «    a Ξ-target xt(x, k) ∈ {movers} ∪ {X}; a β-id b(x, k) (a bijection onto 0..M − 1);»
+  «  - a gate index gate(x, k), a bijection of the options onto 0..M − 1;»
+  «  - per β-id b: a rank br(b) (a bijection onto 0..M − 1) and a parity bp(b) ∈ {0, 1};»
+  «  - a start s_0 (an option per mover).»
+  «- The Ξ-GRAPH of G: the digraph on movers with an edge x → xt(x, k) for every option with xt(x, k) ≠ X. G is in IDEAL-ACYC iff its»
+  «  Ξ-graph is ACYCLIC (self-loops count as cycles).»

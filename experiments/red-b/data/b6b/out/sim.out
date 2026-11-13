@@ -1,0 +1,12 @@
+G_3.json ctrl 0 N 11 M 22 levels 4 T 6 TB 6 TC 6 ideq 0 maxsw 2 sumsw 13 howard 3 stop stuck k 1 mindeg 2
+G_4.json ctrl 0 N 20 M 40 levels 5 T 14 TB 14 TC 14 ideq 0 maxsw 4 sumsw 35 howard 4 stop stuck k 1 mindeg 2
+G_5.json ctrl 0 N 29 M 58 levels 6 T 30 TB 30 TC 30 ideq 0 maxsw 8 sumsw 79 howard 4 stop stuck k 1 mindeg 2
+G_6.json ctrl 0 N 38 M 76 levels 7 T 62 TB 62 TC 62 ideq 0 maxsw 16 sumsw 167 howard 4 stop stuck k 1 mindeg 2
+G_7.json ctrl 0 N 47 M 94 levels 8 T 126 TB 126 TC 126 ideq 0 maxsw 32 sumsw 343 howard 4 stop stuck k 1 mindeg 2
+G_8.json ctrl 0 N 56 M 112 levels 9 T 254 TB 254 TC 254 ideq 0 maxsw 64 sumsw 695 howard 4 stop stuck k 1 mindeg 2
+G_9.json ctrl 0 N 65 M 130 levels 10 T 510 TB 510 TC 510 ideq 0 maxsw 128 sumsw 1399 howard 4 stop stuck k 1 mindeg 2
+G_10.json ctrl 0 N 74 M 148 levels 11 T 1022 TB 1022 TC 1022 ideq 0 maxsw 256 sumsw 2807 howard 4 stop stuck k 1 mindeg 2
+G_11.json ctrl 0 N 83 M 166 levels 12 T 2046 TB 2046 TC 2046 ideq 0 maxsw 512 sumsw 5623 howard 4 stop stuck k 1 mindeg 2
+G_12.json ctrl 0 N 92 M 184 levels 13 T 4094 TB 4094 TC 4094 ideq 0 maxsw 1024 sumsw 11255 howard 4 stop stuck k 1 mindeg 2
+G_13.json ctrl 0 N 101 M 202 levels 14 T 8190 TB 8190 TC 8190 ideq 0 maxsw 2048 sumsw 22519 howard 4 stop stuck k 1 mindeg 2
+G_14.json ctrl 0 N 110 M 220 levels 15 T 16382 TB 16382 TC 16382 ideq 0 maxsw 4096 sumsw 45047 howard 4 stop stuck k 1 mindeg 2

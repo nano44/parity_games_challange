@@ -1,0 +1,12 @@
+G_3 ctrl 0 states 7 kfact 0 vfact 0 sched 0 tlen 0 rest 0 swk 0 T 6 moves 13 maxsw 2
+G_4 ctrl 0 states 15 kfact 0 vfact 0 sched 0 tlen 0 rest 0 swk 0 T 14 moves 35 maxsw 4
+G_5 ctrl 0 states 31 kfact 0 vfact 0 sched 0 tlen 0 rest 0 swk 0 T 30 moves 79 maxsw 8
+G_6 ctrl 0 states 63 kfact 0 vfact 0 sched 0 tlen 0 rest 0 swk 0 T 62 moves 167 maxsw 16
+G_7 ctrl 0 states 127 kfact 0 vfact 0 sched 0 tlen 0 rest 0 swk 0 T 126 moves 343 maxsw 32
+G_8 ctrl 0 states 255 kfact 0 vfact 0 sched 0 tlen 0 rest 0 swk 0 T 254 moves 695 maxsw 64
+G_9 ctrl 0 states 511 kfact 0 vfact 0 sched 0 tlen 0 rest 0 swk 0 T 510 moves 1399 maxsw 128
+G_10 ctrl 0 states 1023 kfact 0 vfact 0 sched 0 tlen 0 rest 0 swk 0 T 1022 moves 2807 maxsw 256
+G_11 ctrl 0 states 2047 kfact 0 vfact 0 sched 0 tlen 0 rest 0 swk 0 T 2046 moves 5623 maxsw 512
+G_12 ctrl 0 states 4095 kfact 0 vfact 0 sched 0 tlen 0 rest 0 swk 0 T 4094 moves 11255 maxsw 1024
+G_13 ctrl 0 states 8191 kfact 0 vfact 0 sched 0 tlen 0 rest 0 swk 0 T 8190 moves 22519 maxsw 2048
+G_14 ctrl 0 states 16383 kfact 0 vfact 0 sched 0 tlen 0 rest 0 swk 0 T 16382 moves 45047 maxsw 4096

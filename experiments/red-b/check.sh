@@ -22,5 +22,12 @@ ce=$(python3 edomctl.py 1 300 5 12 | tail -n 1); case "$ce" in *" k2 "*) ;; *) e
 if [ -f data/SHA1SUMS ]; then (cd data && sha1sum -c --quiet SHA1SUMS) || { echo "red-b: data/SHA1SUMS mismatch"; fail=1; }; fi
 (cd inst && echo "d55b20b8f00d0e4e08c606879c8c6ec44283e114  CFI3_n48.json
 35b48913a615d4c88f0eb69afc38e42ecb0ab0b0  RINT_n48.json" | sha1sum -c --quiet) || { echo "red-b: inst sha1 mismatch"; fail=1; }
+# B6 attempt 2 (P-N5-EXP, successor 5): the rule G_k, the proof's direct test and R104 membership, on k = 6 (0.1 s)
+g6=$(python3 gk.py 6 | tail -n 1); case "$g6" in *"key 62 howard 4 k 1 khalf 2 maxsw 16") ;; *) echo "red-b: gk.py 6 FAILED: $g6"; fail=1;; esac
+l6=$(python3 b6lemma.py 6 | tail -n 1); case "$l6" in *"kfact 0 vfact 0 sched 0 tlen 0 rest 0 swk 0 T 62 "*) ;; *) echo "red-b: b6lemma 6 FAILED: $l6"; fail=1;; esac
+lc=$(B6L_CTRL=1 python3 b6lemma.py 5 | tail -n 1); case "$lc" in *" sched 0 "*) echo "red-b: b6lemma control did not fire"; fail=1;; esac
+m6=$(python3 b6member.py data/b6b/G/G_6.json | tail -n 1); case "$m6" in *"member 1 viol 0 "*) ;; *) echo "red-b: b6member G_6 FAILED: $m6"; fail=1;; esac
+mc=$(python3 b6member.py --ctrl 8 data/b6b/G/G_6.json | tail -n 1); case "$mc" in *"member 0 "*) ;; *) echo "red-b: b6member control did not fire: $mc"; fail=1;; esac
+if [ -f data/b6b/SHA1SUMS_b6b ]; then (cd data/b6b && sha1sum -c --quiet SHA1SUMS_b6b) || { echo "red-b: data/b6b SHA1SUMS mismatch"; fail=1; }; fi
 [ $fail -eq 0 ] && echo "red-b check PASS" || echo "red-b check FAILED"
 exit $fail

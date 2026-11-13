@@ -1,0 +1,33 @@
+source R104P = P-N5-REALIZE.md sha1 067f06b6c67969adf346621b4a92b253491ab2b9
+source R117 = RESULTS.trunk.md sha1 eecbd798b81ad431d1b753f5a7f92f3c63e56da1
+source TARGET = TARGET.md sha1 a41d5e1a3d251b1e7c345c159651c08d76ad8165
+source CLAUDE = CLAUDE.md sha1 1e990915503030bba02722f621767c4563c83c74
+source GAPS = GAPS.trunk.md sha1 3fa61e1cf9ce48ab16ee6102c3ee145a7d7e0491
+R104P FOUND l. 52-52 «A GENOME G consists of:»
+R104P FOUND l. 53-53 «movers x = 0, …, N − 1, each with a level lev(x) ∈ {0, …, d »
+R104P FOUND l. 54-54 «per option (x, k): a W-target wt(x, k), which is a mover of »
+R104P FOUND l. 55-55 «a Ξ-target xt(x, k) ∈ {movers} ∪ {X}; a β-id b(x, k) (a bije»
+R104P FOUND l. 56-56 «a gate index gate(x, k), a bijection of the options onto 0..»
+R104P FOUND l. 57-57 «per β-id b: a rank br(b) (a bijection onto 0..M − 1) and a p»
+R104P FOUND l. 58-58 «a start s_0 (an option per mover).»
+R104P FOUND l. 59-60 «The Ξ-GRAPH of G: the digraph on movers with an edge x → xt(»
+R104P FOUND l. 61-61 «The X-CHAIN of a face (x, k) is the sequence of options (x, »
+R104P FOUND l. 62-62 «(x_1, k_1),»
+R104P FOUND l. 63-63 «B_s(x, k) := the set of β-ids of the chain.»
+R104P FOUND l. 69-70 «(x, k) ▷_s (x, k') iff the β-id of LARGEST rank in B_s(x, k)»
+R104P FOUND l. 71-71 «IDEAL step from s. Availability A_s(x) := {s(x)} ∪ {k : (x, »
+R104P FOUND l. 72-72 «If |A_s(x)| = 1 for every x, the run STOPS («opt»).»
+R104P FOUND l. 73-73 «Otherwise s' is defined level by level, lev = 0, 1, …: key(x»
+R104P FOUND l. 74-74 «followed by gate(x, k) otherwise (a tuple of length lev(x) +»
+R104P FOUND l. 75-75 «If s' = s, the run STOPS («stuck»).»
+R104P FOUND l. 76-76 «Otherwise s → s' is one IDEAL step. L(G) := the number of ID»
+R117 FOUND l. 13362-13362 «N5 (SPEC S1-S5) from its DEFAULT start S3 (SPEC S3 with FIX »
+R117 FOUND l. 13362-13362 «(Theorem REACH3) for every G with an ACYCLIC Ξ-graph, the ga»
+R117 FOUND l. 13362-13362 «n = N + 7M + 10) has S3's start pair equal to R104's stated »
+R117 FOUND l. 13362-13362 «the N5 run of Γ3(G) FROM S3 has states 0, …, L(G) equal to t»
+R117 FOUND l. 13362-13362 «(Corollary REAL-IDEAL-S3) if every FL run of N5 from S3 on e»
+TARGET FOUND l. 45-45 «4. Written correctness and running-time proofs, double-refer»
+CLAUDE FOUND l. 12-12 «Every algorithm claim runs the gauntlet in TARGET.md section»
+GAPS FOUND l. 11-11 «N5 SSI-GLOBAL makes polynomially many iterations (gauntlet s»
+TARGET FOUND l. 20-21 «There is a deterministic algorithm A and a polynomial p such»
+quotes 27 found 27 notfound 0
