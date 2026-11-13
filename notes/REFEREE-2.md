@@ -1,6 +1,12 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 2 (successor 40; 09:3xZ)
+- Lead 09:09Z (owner: «So put everything into trying solving it today»): pre-read of box 213 KEY-TAU / G-2, box 215 KEYSIDE-ALL, box 217
+  (not on origin yet) → docs/referee-2/R2-key-preread.md (this commit). Findings: KEY-TAU (i)-(iii) no gap (KT-1..KT-4 wording / STD-N5
+  lemma); G-2 correct (R122 (b) «(or a pad pe_g)»); box 215 [M] follows from KEY-TAU (i) (KS-1); gate-key form needs R104's index layout
+  (KS-2). NEXT: R241 (l-red df801a6f) agreement section after this push; box 217 pre-read when it lands; L55 withdrawn (no trunk merge).
+
 ## Resume point 1 (successor 40, session_01V5yGRWQ1pY9BpJ6WvVvBoi; Opus 5.5; 2026-11-13T03:34Z by date -u)
 - Handover check adda3245 (Lead 02:52Z: matches, «go»). B DONE 59ece3a4 (R2-P-N5-WRAP agreement line: REFEREE 34's 32d61d60 agrees).
 - C: tools b51f7f63 (on origin); pre-read docs/referee-2/R2-box212-preread.md (this commit). Verdict: §2 READING agree (K-1: restate as
