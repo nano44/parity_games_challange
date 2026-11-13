@@ -7,3 +7,17 @@ HIT7_x48_glo_blo_p0.json KM_MODE spec ctrl 0 tau3 0 kp 0 kpn 0 muinc 0 muflat 0 
 RECF4_x32_glo_blo_p0.json KM_MODE spec ctrl 0 tau3 0 kp 0 kpn 0 muinc 0 muflat 0 mukappa 0 T 67 unreach 0 switches 204 hdec 0 lexdec 204 infdec 0 maxlen 20 wacyc 1 xacyc 0
 xrand_s4611_nm60_px0.0_215.json KM_MODE spec ctrl 0 tau3 0 kp 0 kpn 0 muinc 0 muflat 0 mukappa 0 T 2 unreach 0 switches 4 hdec 0 lexdec 4 infdec 0 maxlen 14 wacyc 1 xacyc 0
 xrand_s4612_nm160_px0.3_180.json KM_MODE spec ctrl 0 tau3 0 kp 0 kpn 0 muinc 0 muflat 0 mukappa 0 T 2 unreach 0 switches 5 hdec 0 lexdec 5 infdec 0 maxlen 13 wacyc 1 xacyc 0
+BEST_B2_WU102_NM142_01406bee.json KM_MODE spec ctrl 0 tau3 0 kp 0 kpn 0 muinc 0 muflat 0 mukappa 0 T 103 unreach 0 switches 244 hdec 0 lexdec 244 infdec 0 maxlen 24 wacyc 1 xacyc 0
+BEST_B2_WU102_NM143_29fbf969.json KM_MODE spec ctrl 0 tau3 0 kp 0 kpn 0 muinc 0 muflat 0 mukappa 0 T 103 unreach 0 switches 245 hdec 0 lexdec 245 infdec 0 maxlen 24 wacyc 1 xacyc 0
+BEST_B2_WU102_NM144_8b1da682.json KM_MODE spec ctrl 0 tau3 0 kp 0 kpn 0 muinc 0 muflat 0 mukappa 0 T 103 unreach 0 switches 247 hdec 0 lexdec 247 infdec 0 maxlen 24 wacyc 1 xacyc 0
+BEST_B3_WU150_NM163_e9496519.json KM_MODE spec ctrl 0 tau3 0 kp 0 kpn 0 muinc 0 muflat 0 mukappa 0 T 151 unreach 0 switches 544 hdec 0 lexdec 544 infdec 0 maxlen 28 wacyc 1 xacyc 0
+BEST_B3_WU150_NM164_81c417de.json KM_MODE spec ctrl 0 tau3 0 kp 0 kpn 0 muinc 0 muflat 0 mukappa 0 T 151 unreach 0 switches 545 hdec 0 lexdec 545 infdec 0 maxlen 28 wacyc 1 xacyc 0
+BEST_B3_WU150_NM165_cecf16c0.json KM_MODE spec ctrl 0 tau3 0 kp 0 kpn 0 muinc 0 muflat 0 mukappa 0 T 151 unreach 0 switches 545 hdec 0 lexdec 545 infdec 0 maxlen 28 wacyc 1 xacyc 0
+BEST_B3_WU150_NM166_5d9b4634.json KM_MODE spec ctrl 0 tau3 0 kp 0 kpn 0 muinc 0 muflat 0 mukappa 0 T 151 unreach 0 switches 545 hdec 0 lexdec 545 infdec 0 maxlen 28 wacyc 1 xacyc 0
+BEST_B3_WU150_NM167_9b4bdeb2.json KM_MODE spec ctrl 0 tau3 0 kp 0 kpn 0 muinc 0 muflat 0 mukappa 0 T 151 unreach 0 switches 545 hdec 0 lexdec 545 infdec 0 maxlen 28 wacyc 1 xacyc 0
+BEST_B3_WU150_NM168_eac47d2e.json KM_MODE spec ctrl 0 tau3 0 kp 0 kpn 0 muinc 0 muflat 0 mukappa 0 T 151 unreach 0 switches 545 hdec 0 lexdec 545 infdec 0 maxlen 28 wacyc 1 xacyc 0
+BEST_B3_WU150_NM169_cc60f7ea.json KM_MODE spec ctrl 0 tau3 0 kp 0 kpn 0 muinc 0 muflat 0 mukappa 0 T 151 unreach 0 switches 547 hdec 0 lexdec 547 infdec 0 maxlen 28 wacyc 1 xacyc 0
+BEST_B3_WU151_NM164_5fdc0426.json KM_MODE spec ctrl 0 tau3 0 kp 0 kpn 0 muinc 0 muflat 0 mukappa 0 T 151 unreach 0 switches 537 hdec 0 lexdec 537 infdec 0 maxlen 28 wacyc 1 xacyc 0
+BEST_E3_WE0_NM168_1a6a70fd.json KM_MODE spec ctrl 0 tau3 0 kp 0 kpn 0 muinc 0 muflat 0 mukappa 0 T 299 unreach 0 switches 1107 hdec 0 lexdec 1107 infdec 0 maxlen 28 wacyc 1 xacyc 0
+BEST_E3_WE0_NM169_565e77d9.json KM_MODE spec ctrl 0 tau3 0 kp 0 kpn 0 muinc 0 muflat 0 mukappa 0 T 153 unreach 0 switches 547 hdec 0 lexdec 547 infdec 0 maxlen 28 wacyc 1 xacyc 0
+BEST_E3_WE4_NM173_673afdbb.json KM_MODE spec ctrl 0 tau3 0 kp 0 kpn 0 muinc 0 muflat 0 mukappa 0 T 5 unreach 0 switches 26 hdec 0 lexdec 26 infdec 0 maxlen 28 wacyc 1 xacyc 0
