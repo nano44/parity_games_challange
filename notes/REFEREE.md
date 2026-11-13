@@ -1,6 +1,51 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## HANDOVER NOTE (successor 34), written 2026-11-13T02:36Z by date -u; parking on the Lead's 02:36Z park order
+- DONE (reports in docs/referee/; every commit below on origin, each push VERIFY PASS with Lean / Oink NOT RUN as usual):
+  | item | report, section | commit of record | verdict |
+  | --- | --- | --- | --- |
+  | handover check | docs/agents/handover-checks/REFEREE.md | fe434cd5 | «go» 20:04Z |
+  | A0: P-N5-GATE fixes entry 5 + L-5 (R128) | R-P-N5-GATE.md §L | 16e8dcb0 | entry 5 CORRECT; **L-5 MATCHES** (459fd88d); note N-L1 (lamch columns) |
+  | B: FIRST REVIEW of P-N5-LEVEL (l-new 1e6df499) | R-P-N5-LEVEL.md §0-§7 | b251a0ed, 044580e2, 4c8d6c4f, 3f3c813d | every statement SIGN, no gap; L-1 needed LT-1..LT-3; erratum (typed header time) in 99df2458 |
+  | B: P-N5-LEVEL fixes entry 1 + L-2 (l-new 366a38ab) | R-P-N5-LEVEL.md §8 | 98cdc7aa + 28b95151 | **L-2 MATCHES** (d18125ed); note N-L2 |
+  | D: FIRST REVIEW of P-N5-WRAP (l-si e01447e7) | R-P-N5-WRAP.md §0-§7 | ef4d3bd1, c6fcf2b6, 99df2458 | every statement SIGN, no gap; Claim NT signed as this lane's claim (L41); XI-EXP SIGN AS CONDITIONAL; L-1 needed LW-1 |
+  | D: P-N5-WRAP fixes entry 1 + L-2 (l-si faf0c8ff) | R-P-N5-WRAP.md §8 | 32d61d60 | **L-2 MATCHES** (dbd5f0e8); note N-W2 |
+  | C: CHECKER items on R128 | — | — | none arrived |
+- OPEN optional notes (no change asked; for a successor or CHECKER to know):
+  - N-L1 (R-P-N5-GATE §L): L-5's «lamch 0» is backed by mx_lam_pe = mx_lam_pb = 0, columns not named in the clause.
+  - N-L2 (R-P-N5-LEVEL §8): L-2's «through DOM with CN2 in (K5) and in PLATEAU's H0»: H0 uses CN2 only, not DOM (descriptive tail).
+  - N-W2 (R-P-N5-WRAP §8): L-2's R-2 sentence (WRAP's six counters on §9's sets) follows the cited-replays list; it is the lane's own
+    §9 DATA, not a cited replay.
+  - R-P-N5-LEVEL notes N-1..N-5 and R-P-N5-WRAP note N-1 («Γ3(G)» for R118-R126 / box 208 should read «Γ(G) / Γ3(G)»): recorded in the
+    lanes' fixes entries; no line change.
+- NEXT for successor 35 (the Lead's order): a new full review, or a CHECKER item routed back on R128 / R129 (P-N5-LEVEL) / R130
+  (P-N5-WRAP). For a CHECKER re-run of a line: my byte-test scripts rebuild every line from the reports by git objects.
+- Tools added this session (docs/referee/scratch/):
+  - gate_l5.py (C142 §4 pairs + tenth pair → L-5), gate_l5_data.py (E-1 / E-2 numbers by column name, both engines).
+  - level_quotes.py ([Q X] quotes by tagged source), level_data.py (box208 frozen outputs: 16 / 6 / 49 counters, maxima),
+    level_l1fix.py (LT-1..LT-3 → 389645a2), level_l2test.py (L-2 rebuild → d18125ed); logs level_logs/.
+  - box208_logs/s34_run.sh + s34_*.out (box208_replay.py on 10,982 genomes, new seeds; 36 counters 0).
+  - pwrap_quotes.py (30 quotes), pwrap_f11.py (G_n from Table 4 / Figure 4; injectivity, Fact 6.1 counts, |W| formula, Lemma 6.7 graph),
+    pwrap_l1fix.py (LW-1 → be7da8f3), pwrap_l2test.py (L-2 rebuild → dbd5f0e8); logs pwrap_logs/.
+  - wrap_logs/s34_run.sh + s34_*.out (wrap_replay.py on 22,000 wrapped games, new seeds; wrap_f11.py n ≤ 10, cmp-equal to s33).
+- The PDF of arXiv 1106.0778v2 is NOT in the repository (fetched to the scratchpad, sha256 46c96f44…; re-fetch from arxiv.org/pdf/1106.0778v2).
+  Pages used: 3 (injective Ω), 6 (I^loc), 8 (1-sink, Lemma 5.1), 15 (Table 4, Fact 6.1), 16 (Figure 4), 17-18 (Lemma 6.7; the two-top-bits
+  restriction), 23 (Theorem 6.14). Lemmas 6.2-6.13 not read.
+- Lessons / traps (s34; keep):
+  - PARALLEL-SHA SLIP: I sent the Lead a SHA (4e2fd393, nonexistent) in the same tool batch as the commit; the commit was 32d61d60.
+    Corrected within a minute. Rule: never put send_message in the same batch as a git commit; read the SHA from git output first.
+  - RESTART-KILLED PUSH: a container restart killed push.sh (98cdc7aa + 28b95151); the harness said «stopped», origin stayed behind and
+    the Lead had to find it by ls-remote. After any restart: `git rev-parse HEAD origin/claude/referee` and `git ls-remote`, re-push at
+    once, tell the Lead.
+  - TYPED TIMES: two header times (21:05Z, 21:06Z) were typed, not from date -u (erratum in R-P-N5-LEVEL.md). Insert times by
+    command substitution only.
+  - SHELL QUOTING: an unquoted heredoc ran a backticked `cmp` as a command and dropped the word (98cdc7aa; fixed in 28b95151). Use
+    quoted heredocs ('EOF') and insert dates by a separate substitution step.
+  - TOTALS: «10,682» in a status line was a head sum; the command says 10,982. Totals only from a command (s33's lesson, again).
+  - The «go» can be conditional on a push landing: wait for it.
+  - R2's strings can stop applying once mine rewrote a clause (P-N5-WRAP R-2): test the lane's adaptation element by element.
+
 ## Resume point (successor 34), written about 21:04Z (typed, NOT from date -u; erratum in R-P-N5-LEVEL.md); «go» from the Lead 20:04Z (A0 → B → C)
 - Handover check: docs/agents/handover-checks/REFEREE.md (fe434cd5, pushed, VERIFY PASS); trunk merged 434be444 (normal merge, trailer).
 - A0 DONE: R-P-N5-GATE.md §L (16e8dcb0): fixes entry 5 CORRECT, **L-5 MATCHES** (sha1 459fd88d…; my parse of C142 §4 at 269effb3, nine
