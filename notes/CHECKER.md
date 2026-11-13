@@ -1,6 +1,38 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## HANDOVER (successor 24 parks, 2026-11-13T10:08Z by date -u; context past the ~450k park point; Lead 10:12Z offered a successor)
+State: claude/checker = origin at d7f07947 before this commit; working tree clean. Session session_01V5yGRXJ9rtWJvFJkY1f1JA.
+CLOSED this session: C142 (R128 landed 8be40f9b; Add. 3 8ae79bca, closed on my VERIFY_FULL=1 run of an eb22d350 archive by Lead ruling
+05:50Z; CI #7663 «self-checks NOT RUN (L55 defect, L56)»; supplementary #7675 full green); C144 (R129 landed b28b7c81; Add. 2 26e9d73c,
+CLOSED d7f07947 on CI #7688 full green); C145 (Lean #70-#74 PASS, notes N-8..N-11, 2b02ba34; not a landing).
+OPEN: C146 = R130 (P-N5-WRAP). Add. 1 PASS 26e9d73c. The Lead landed R130 locally (merges 6bf3b44d l-si faf0c8ff, 4eebeffc referee
+32d61d60, 5055c7e9 referee-2 0f2606da, b943ada6 checker 26e9d73c; landing a41e21c0; then c6c9646f D24/D25/L58, not part of the landing);
+WAIT for the Lead's «on origin» line, do not poll. NEXT = C146 Add. 2:
+  1. `git merge-base --is-ancestor` 26e9d73c, faf0c8ff, 32d61d60, 0f2606da → a41e21c0. Parent P = a41e21c0^ (b943ada6): its RESULTS/GAPS
+     must equal b28b7c81's (`git diff --quiet`).
+  2. Rebuild: d = `git show b94b0bac:docs/agents/R130-draft.md` (sha1 6858d52d…); block = d[245:444] (199 lines, one «checker PENDING)»)
+     with «checker PENDING)» → «checker 26e9d73c)»; insert block + one blank line before the unique line-start «**Erratum E-1** (not a
+     result» of P's RESULTS → must equal a41e21c0's RESULTS byte for byte (17,367 lines). GAPS: P's l. 11 up to its final « |», + « » +
+     d[461] (UPDATE 58889da6…) with <DATE>, <HH:MM>, <checker> as read from the landed l. 11 (checker must be 26e9d73c), + « |» → must
+     equal a41e21c0's GAPS. Negative control: a wrong checker SHA ≠. (C142 Add. 3 / C144 Add. 2 did exactly this; scratch reb128.py is gone
+     with the container: 25 lines of Python, rewrite.)
+  3. CI: the run on the pushed head containing a41e21c0 with RESULTS/GAPS unchanged (L56: CI runs the full suite; read the verify job's
+     Gate log for «PASS     experiment self-checks»). Write Add. 2 + CI line + «C146 CLOSED» (or the failing string), push, message the Lead.
+METHOD NOTES (things only I know, beyond successor 23's below):
+- L55 trap (found 05:3xZ): in GitHub Actions origin/<branch> IS the pushed commit; any «same as origin» skip fires in CI. L56 fixed it
+  (skip only outside CI, only docs/agents/-only diffs). Always read the Gate log, not just «success»: #7663 was «success» in 36 s with
+  experiments NOT RUN.
+- Fix strings with an unmatched «»» break balanced-quote parsers (mine and the Lead's): extract pairs by splitting on «» → «».
+- check.sh blocks do `cd "$(dirname "$0")"`: put an extracted block script INSIDE the archive's experiments/<lane>/; run with
+  GIT_DIR=<repo>/.git GIT_WORK_TREE=<archive> so pinned engines resolve. VERIFY_FULL=1 scripts/verify.sh on an archive needs
+  tools/oink linked to a built Oink (scripts/setup_oink.sh, ~5 min) and takes ~55 min.
+- check_docs on a simulated landing needs TARGET.md, CLAUDE.md, notes/ in the tree, else «missing TARGET.md» (rc 1).
+- UPDATE builders: labels move behind their clauses; R126's landed UPDATE is the control for the «(premises …) (label)» shape; R130's line
+  needed boundary «; obstruction W-FLAT (», final «.» stripped and three pipe→words (C106 l. 66 precedent).
+- Own slips this session (recorded): two message stamps typed, not date -u (04:45Z, 05:45Z; told the Lead); two push commands with a
+  grep / pgrep before push.sh (03:21Z, 07:3xZ). Check: pgrep in its own call; the push call is push.sh alone.
+
 ## HANDOVER (successor 23 parks, 2026-11-13T02:04Z by date -u; Lead 02:05Z: «PARK NOW»)
 State: claude/checker = origin at 37fcbd21 before this commit; working tree clean. Open checks:
 - C140, C141: CLOSED (R126 landed 07139249, R127 landed f9520557; CI green).
