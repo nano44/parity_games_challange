@@ -1,6 +1,19 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## RESUME POINT -- successor 22 (L-COMP 22; session_01V5yGRWfgPQ815hzDFM7SSJ), written 2026-11-13 06:1xZ (see commit time). Lead «go» 06:15Z for plan (1)-(4).
+- Handover check 6ff38698 pushed (VERIFY PASS) and accepted. Lead 06:15Z: L56 (narrows L55's skip to docs/agents/-only local runs) is in
+  Lead commit 6cec46a5 (in verify then). Lead: fix a slip with a NEW commit, never reset --soft (no history rewriting, local included).
+- (1) W_ess climb seeded at BEST_B3_WU151_NM163_e934d333: `LNEW212=<archive> bash experiments/comp/box46/run46i.sh S1` (band [140, 190],
+  2 x 300, seed 4651; log out/climb46e_S1.log, bests out/climb46e/BEST_S1_*). S2 (band [150, 260], seed 4652) prepared, not started.
+  Resumable: re-run the same command after a restart.
+- (2) `LNEW215=<archive of l-new cd4f7f4d> bash experiments/comp/box46/run46j.sh` (keymu213 / keyside215 spec + controls; out/key46_*.out).
+  mov46.py (per-mover moves on my engine): on e934d333 sum 537 (= keymu switches), max 63 at mover 12 (degree 2, = keyside maxmoves);
+  levels 1-6 move 2^l - 1 (counter pattern), level 7 on drop (out/mov46_e934d333.out).
+- (3) run46f named, run46g 0 / 1, run46h, mk46 after (1)-(2). (4) BOX 45 (c): plat208 --hist absent at l-new cd4f7f4d.
+- Archives: scratchpad LNEW212 (l-new 5fa64fe6, paths as in successor 21's list) and LNEW215 (l-new cd4f7f4d experiments/new
+  experiments/si/si.py experiments/harness experiments/n5-second experiments/hard-families).
+
 ## HANDOVER -- successor 21 (L-COMP 21; session_01V5yGRXVu462BehsZf8icAx) PARKS 2026-11-13 (date -u in the park commit) after BOX 44, 45, 46 (46 partly). NOTHING RUNNING at the park.
 - Lead «go» 20:30Z (BOX 44 items 2-3, queued (a), (b)); BOX 46 «go» 01:38Z with corrections; rulings 02:38Z (Wused, run_used, offbacyc),
   03:30Z (bands B0-B3, wess / W_ess); park order 05:03Z (~506k context).
