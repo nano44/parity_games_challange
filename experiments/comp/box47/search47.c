@@ -3,7 +3,8 @@
    its first fallback / stop, or -1 on an error; sw[x] = the number of steps at which mover x switches).
    Objectives (env SCORE): T (default): T, ties smaller N + M. K: the ENUMERATION DEPTH k(G) (Lead 09:15Z, L-NEW box 217 §5 track A) = the largest
    k such that a level-(k − 1) mover x makes sw(x) = |K(x)| − 1 switches, |K(x)| = the number of W-paths from x to level 0 (= its keys; saturating
-   at 2^62); score (k, kfront, T) with kfront = the largest sw of a level-k mover (the next level; a gradient toward k + 1), ties smaller N + M. Every best line logs T, k, the depth d = max level + 1, N, M. Moves: gen47.h gmutate (wt, xt kept acyclic, gate order, β rank, β parity, start, e-numbering
+   at 2^62); SCORE=KD: the same with kfront = max over level-k movers of sw − (|K| − 1) (the deficit to a full enumeration, 0 = full),
+   stored + 2^19 (BEST lines show it so offset). score (k, kfront, T) with kfront = the largest sw of a level-k mover (the next level; a gradient toward k + 1), ties smaller N + M. Every best line logs T, k, the depth d = max level + 1, N, M. Moves: gen47.h gmutate (wt, xt kept acyclic, gate order, β rank, β parity, start, e-numbering
    (transpositions, short rotations), add / remove option), 1-3 moves per proposal. Size: N fixed by the seed (lanes lift N beforehand),
    N + M <= CAP. Score: T (larger better; ties: smaller N + M). Annealing: accept a worse proposal with prob exp(-(T - T')/temp), temp
    from TEMP0 to 0 linearly within each unit of UNIT proposals; every unit restarts from the lane's best.
@@ -27,26 +28,26 @@ static int kdepth(const Gen *g, const long *sw) {   /* enumeration depth k(G); l
   for (int l = 0; l <= maxl; l++) for (int x = 0; x < g->N; x++) if (g->lev[x] == l) { long p = 0;
     for (int i = g->first[x]; i < g->first[x + 1]; i++) { long a = l ? P[g->wt[i]] : 1; p = (p > (1L << 62) - a) ? (1L << 62) : p + a; }
     P[x] = p; if (sw[x] == p - 1 && l + 1 > k) k = l + 1; }
-  kfront = 0; khalf = -1; for (int x = 0; x < g->N; x++) { if (g->lev[x] == k && sw[x] > kfront) kfront = sw[x]; if (P[x] >= 2 && sw[x] >= P[x] / 2 - 1 && g->lev[x] > khalf) khalf = g->lev[x]; }
+  kfront = KMODE == 2 ? -(1L << 40) : 0; khalf = -1; for (int x = 0; x < g->N; x++) { if (g->lev[x] == k) { long f = KMODE == 2 ? sw[x] - (P[x] - 1) : sw[x]; if (f > kfront) kfront = f; } if (P[x] >= 2 && sw[x] >= P[x] / 2 - 1 && g->lev[x] > khalf) khalf = g->lev[x]; }
   return k; }
 static int depth(const Gen *g) { int m = 0; for (int x = 0; x < g->N; x++) if (g->lev[x] > m) m = g->lev[x]; return m + 1; }
 /* score of a run: T mode: T. K mode: (k, kfront, T) packed as k << 40 | min(kfront, 2^20 - 1) << 20 | min(T, 2^20 - 1) */
 #define KF(sc) (((sc) >> 20) & ((1L << 20) - 1))
 #define KT(sc) ((sc) & ((1L << 20) - 1))
-static long score(const Gen *g, long T) { if (!KMODE) return T; long k = kdepth(g, SW), f = kfront < (1L << 20) ? kfront : (1L << 20) - 1, t = T < (1L << 20) ? T : (1L << 20) - 1;
+static long score(const Gen *g, long T) { if (!KMODE) return T; long k = kdepth(g, SW), f = KMODE == 2 ? kfront + (1L << 19) : kfront; f = f < 0 ? 0 : f < (1L << 20) ? f : (1L << 20) - 1; long t = T < (1L << 20) ? T : (1L << 20) - 1;
   return (k << 40) | (f << 20) | t; }
 int main(int argc, char **argv) {
   if (argc < 6) { fprintf(stderr, "usage\n"); return 2; }
   const char *out = argv[2]; int CAP = atoi(argv[3]); long ITERS = atol(argv[4]); unsigned long long SEED = strtoull(argv[5], 0, 10);
   double TEMP0 = argc > 6 ? atof(argv[6]) : 2.0; long UNIT = argc > 7 ? atol(argv[7]) : 20000; long CAPT = 1L << 40;
   char sp[4096], lp[4096]; snprintf(sp, sizeof sp, "%s.state", out); snprintf(lp, sizeof lp, "%s.log", out);
-  KMODE = getenv("SCORE") && !strcmp(getenv("SCORE"), "K");
+  KMODE = !getenv("SCORE") ? 0 : !strcmp(getenv("SCORE"), "K") ? 1 : !strcmp(getenv("SCORE"), "KD") ? 2 : 0;
   long it = 0; long tc, tb; FILE *f = fopen(sp, "r");
   if (f) { if (fscanf(f, "%ld %llu %ld %ld", &it, &grs, &tc, &tb) != 4 || !gread(&cur, f) || !gread(&best, f)) { fprintf(stderr, "bad state\n"); return 2; } fclose(f); }
   else { f = fopen(argv[1], "r"); if (!f || !gread(&cur, f)) { fprintf(stderr, "bad seed\n"); return 2; } fclose(f);
          if (!gvalid(&cur)) { fprintf(stderr, "seed invalid (structure or Ξ-cyclic)\n"); return 2; }
          grs = SEED * 2654435761ULL + 12345; if (!grs) grs = 1; { long T0 = run1p(&cur, CAPT, SW); tc = tb = score(&cur, T0); } best = cur;
-         FILE *L = fopen(lp, "a"); fprintf(L, "START seed %s N %d M %d N+M %d d %d score %ld (k %ld T %ld) SCORE %s CAP %d ITERS %ld SEED %llu TEMP0 %g UNIT %ld\n", argv[1], cur.N, cur.M, cur.N + cur.M, depth(&cur), tc, KMODE ? tc >> 40 : -1L, KMODE ? KT(tc) : tc, KMODE ? "K" : "T", CAP, ITERS, SEED, TEMP0, UNIT); fclose(L); }
+         FILE *L = fopen(lp, "a"); fprintf(L, "START seed %s N %d M %d N+M %d d %d score %ld (k %ld T %ld) SCORE %s CAP %d ITERS %ld SEED %llu TEMP0 %g UNIT %ld\n", argv[1], cur.N, cur.M, cur.N + cur.M, depth(&cur), tc, KMODE ? tc >> 40 : -1L, KMODE ? KT(tc) : tc, KMODE == 2 ? "KD" : KMODE ? "K" : "T", CAP, ITERS, SEED, TEMP0, UNIT); fclose(L); }
   time_t t0 = time(0), tsave = t0; long errs = 0, acc = 0;
   for (; it < ITERS; it++) {
     if (it % UNIT == 0 && it) { cur = best; tc = tb; }

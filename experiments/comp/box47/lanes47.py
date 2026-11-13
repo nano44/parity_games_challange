@@ -20,8 +20,9 @@ print("| --- | --- | --- | --- | --- | --- | --- | --- | --- |")
 for L in lanes:
     st = open(os.path.join(H, "out", "lanes", L + ".state")).read().split("\n"); it, rs, tc, tb = st[0].split()
     w = " ".join(st[1:]).split(); N0, M0 = int(w[0]), int(w[1]); n0 = 2 + N0 + 7 * M0 + N0; best = " ".join(w[n0:])
-    tb = int(tb); log = os.path.join(H, "out", "lanes", L + ".log"); kmode = "SCORE K" in open(log).readline()
+    tb = int(tb); log = os.path.join(H, "out", "lanes", L + ".log"); l0 = open(log).readline(); kmode = "SCORE K" in l0; kd = "SCORE KD" in l0
     k, f, t = (tb >> 40, (tb >> 20) & ((1 << 20) - 1), tb & ((1 << 20) - 1)) if kmode else (-1, -1, tb)
+    if kd: f = "%d (deficit)" % (f - (1 << 19))
     bt = os.path.join(H, "out", "lanes", L + "_cur_best.txt"); open(bt, "w").write(best + "\n"); G = gen47.t2j(best)
     json.dump(G, open(bt[:-4] + ".json", "w"), sort_keys=True)
     o = subprocess.run([os.path.join(H, "bin", "one47"), bt, "key", "--states"], capture_output=True, text=True).stdout
