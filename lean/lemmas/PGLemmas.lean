@@ -55,3 +55,5 @@ import PGLemmas.Gamma3
 import PGLemmas.Gamma3Statement
 import PGLemmas.Gamma3Pad
 import PGLemmas.Gamma3Basic
+import PGLemmas.Gamma3LiftStatement
+import PGLemmas.Gamma3Lift

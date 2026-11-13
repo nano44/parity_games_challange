@@ -228,6 +228,11 @@ Allowed axioms: propext, Classical.choice, Quot.sound. No sorry, no admit, no ne
                             `prio3_pad_le`, `top3_ge`.
 - PGLemmas/Gamma3Basic.lean `Genome.gamma3_card`, `Genome.gamma3_old`; `card_vertex` (N + 3M + 6), `card_vertex3`, `idx_lt`,
                             `idx3_lt`, `idx3_injective`, `prio3_r104_old` (Γ3(G)'s priorities on Γ's vertices are Γ's).
+- PGLemmas/Gamma3LiftStatement.lean  DEFINITIONS AND STATEMENTS, accepted by the Lead 00:00Z: the transport Γ → Γ3 (`padAt`,
+                            `padSucc`, `lift3`, `npad`), `PadValueStatement` (R117 Lemma PAD (c)), `LiftStartStatement`.
+- PGLemmas/Gamma3Lift.lean  `Genome.pad_value`, `Genome.lift_start`; `pr3_lt_iff`, `pr3_injective`, `pr3_old_lt_iff` (p′ of Γ3 orders
+                            Γ's vertices as p′ of Γ), `lift3_legal`, `iterate_f` (lift3^[n + npad n] (old v) = old (s^[n] v)),
+                            `cover`, `onCycle_old_iff`, `lam_old`, `plen_old`, `pset_old`, `pad_step`, `setLt_image_iff`.
 - PGLemmas.lean             the library root (imports).
 - Axioms.lean               `#print axioms` of every theorem above.
 - INDEX.md                  lane text ↔ Lean statement ↔ Lean theorem, with the premise each statement keeps.

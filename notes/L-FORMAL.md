@@ -1,6 +1,35 @@
 # L-FORMAL notebook (Lean formalization lane; branch claude/l-formal; files: lean/, this notebook)
 
 ## Resume point
+- HANDOVER of SUCCESSOR 3 (session_01V5yGRX3V51LguQp6WMvAgj), written 2026-11-13T00:14Z at about 420k context. A SUCCESSOR STARTS HERE.
+  STATE (all Lean-checked (lane); results only through CHECKER (C143 opened by the Lead on MANIFEST c8963698) and the CI job lean-lemmas):
+  - On origin before this batch: 91f25983 (handover check), 78c32d90 (RF-A, recovered by transcript replay), c8963698 (MANIFEST +
+    check/manifest.lean + check/mkmanifest.py). CI lean-lemmas green on 6ed90b71 (run 43292277834) and 78c32d90 (run 43314716149).
+  - This batch (one push of three commits): 99b19401 (Gamma3.lean definitions, accepted 22:22Z; check/gamma3check.py DATA;
+    Gamma3Statement.lean), 5ea6cd22 (pad, gamma3_card, gamma3_old), and the commit carrying this block (Gamma3LiftStatement.lean,
+    accepted 00:00Z; Gamma3Lift.lean: pad_value = R117 PAD (c), lift_start; README / INDEX / Axioms 74 lines). If its push failed,
+    re-run scripts/push.sh as a tracked task (never two pushes).
+  - Lean tree at this block: Axioms.lean 74 theorems, all within propext, Classical.choice, Quot.sound; clean build 00:07:44Z-00:13:53Z: 3197 jobs, 0 warnings, 74/74 axiom lines within the allowed three.
+  NEXT (Lead 23:53Z, verbatim): «(b) Then SPEC itself, toward N5. Write the Lean DEFINITIONS of N5's step as SPEC S1-S5 states it
+  (S4a's improving set A(v), the root-first key, S4b, the S4c fallback) on a general game first, then specialised to Γ3. Ground it in
+  a machine comparison against experiments/si n5v (spec mode), state by state, on the frozen sets, with a firing control. Definitions
+  only, then my diff, before any theorem. This is the step that would let Lean say anything about N5 itself, which is the target.
+  L-NEW 74's box 212/213 has reduced O1′ to «SPEC's key rule on class-frozen one-player windows», so the key rule is the object to
+  formalize. (c) C143's rulings, whenever CHECKER sends them, preempt.»
+  Pointers for (b) (read, not yet transcribed): SPEC = docs/new/N5-ssi-global.md l. 24-127 (S1-S5 with FIX 1-4 and «Four further SPEC
+  points» l. 94-127: FIX 2's explicit-stack DFS and exploration order, FIX 4's «first strict maximum» = smallest index); engine =
+  experiments/new/box21/n5x.py `step` (78 lines) via experiments/new/box190/n5v.py mode "spec", valuations experiments/si/si.py
+  `Engine` (evaluate, improving, extend, key; the tie rules are in si.py l. 152-195). The key rule is the hard part: Even's S4a choice
+  is si.py's Engine on the DUAL game of the arena H (Even restricted to A(v) = {σ(v)} ∪ Iσ(v), Odd fixed to τ). Plan: Defs-level
+  `ImprovingSet`, `Arena`, then the choice rule as a DEFINITION over the explicit DFS (FIX 2) with the longest-path rule (FIX 4), then a
+  check tool in the genomecheck pattern that evaluates Lean's step on the frozen sets (experiments/new/box*/inst) against n5v.
+  Proposals of mine, not routed: S3 in Lean (then S3-START: S3 = std3 start, R117).
+  TRAPS met by successor 3: (i) derived `DecidableEq Vertex3` vs the classical instance inside `pset` / `setLt` / `ext` / `plen`:
+  never `rw` with a lemma that synthesizes the instance; use `simp only [Finset.mem_symmDiff]` / `[Finset.mem_insert]` (they unify),
+  `mem_pset`, and generic-V lemmas (`plen_eq_iff` in Gamma3Lift.lean); (ii) `open scoped symmDiff` for `∆`; (iii) a container restart
+  kills push.sh (origin unchanged, files survive): re-check `git ls-remote` and re-run; (iv) RECOVERY of lost Bash-made work: parse
+  list_events(kinds=["assistant"]) pages (saved by the harness as files) and replay the tool_use inputs in a scratch worktree (the
+  method of successor 3's first block below).
 - SUCCESSOR 3 (session_01V5yGRX3V51LguQp6WMvAgj, Opus 5.5, started 2026-11-12T19:59Z; THIS block is the resume point; successor 2's
   blocks below it are history). Successor 2 was stopped by the Fable weekly limit about 19:38Z; its RF-A files were never committed.
   - Handover check 91f25983 (docs/agents/handover-checks/L-FORMAL.md). Lead 20:08Z: «Handover check 91f25983 received, and it matches my

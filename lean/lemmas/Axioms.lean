@@ -76,3 +76,5 @@ import PGLemmas
 #print axioms PG.Genome.pad
 #print axioms PG.Genome.gamma3_card
 #print axioms PG.Genome.gamma3_old
+#print axioms PG.Genome.pad_value
+#print axioms PG.Genome.lift_start

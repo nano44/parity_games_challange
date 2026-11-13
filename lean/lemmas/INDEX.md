@@ -60,6 +60,8 @@ CONDITIONAL on F1 = landed RESULTS R15 (a).
 | Γ3(G) of RESULTS R117 (P-N5-REACH §3) and Γ3*(G*) of L-SI box 104 §4: DEFINITIONS, accepted by the Lead 22:22Z with deviations (a)-(e) | Gamma3.lean (definitions) | (none) | |
 | R117 Lemma PAD (a), (b): no pad is a cycle node or in a P-set; the cycle node has Ω ≥ 3 unless it is c_X; STRONGER than R117 (every legal successor map; carriers Ω ≥ 3 only; Lead 22:56Z); PAD (c), the value transport, is NOT stated | PadStatement (Gamma3Statement); accepted 22:56Z | Genome.pad (Gamma3Pad) | none |
 | Γ inside Γ3 (indices, priorities, owners unchanged; pads on edges) | Gamma3OldStatement (Gamma3Statement); accepted 22:56Z | Genome.gamma3_old (Gamma3Basic) | none |
+| R117 Lemma PAD (c), the value transport Γ → Γ3 (`lift3`): (c1) cycle node old c, P-set old P, length ℓ + npad; (c2) a pad takes its successor's value with length + 1; (c3) values whose (Λ, Π) differ compare as in Γ (when they agree no claim: the padded lengths decide, so the Γ3 order may differ there; Lead 00:00Z) | PadValueStatement (Gamma3LiftStatement); accepted 00:00Z | Genome.pad_value (Gamma3Lift) | none (G.WF) |
+| the lift of Γ's start is Γ3's standard start (R117: «R104's stated start transported through the pads») | LiftStartStatement (Gamma3LiftStatement); accepted 00:00Z | Genome.lift_start (Gamma3Lift) | none |
 | n = N + 7M + 10; idx3 a bijection onto 0..n − 1 under WF | Gamma3CardStatement (Gamma3Statement); accepted 22:56Z | Genome.gamma3_card (Gamma3Basic) | none (WF for the bijection) |
 
 DATA beside the Γ3 rows (check/gamma3check.py; unit: vertex): against experiments/new/box189/gamma3.py, the 14 genomes of
