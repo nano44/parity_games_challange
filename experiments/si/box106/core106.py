@@ -39,6 +39,8 @@ def image(core, g):
         out.append((T, g[(x, 0)][0], b))
     return sorted(out)
 
+BUDGET = int(os.environ.get("BUDGET", "200000"))   # conflicts per deletion test in the core minimisation
+
 def av_cnf(states):
     return C.build(None, states=sorted(set(tuple(s) for s in states)), run=False)
 
@@ -83,7 +85,8 @@ def main():
         for l in list(core):
             if l not in cur: continue
             trial = [x for x in cur if x != l]
-            if not sv.solve(assumptions=trial): cur = [x for x in sv.get_core() if x in trial] or trial
+            sv.conf_budget(BUDGET)          # a deletion test that runs out of budget keeps the literal (the core stays UNSAT, just longer)
+            if sv.solve_limited(assumptions=trial) is False: cur = [x for x in sv.get_core() if x in trial] or trial
         sv.delete()
         cr = sorted([(list(inv[abs(l)][1]), inv[abs(l)][2], int(l > 0)) for l in cur])
         known = set(json.dumps(sorted(map(tuple, c))) for c in cores); new = []
