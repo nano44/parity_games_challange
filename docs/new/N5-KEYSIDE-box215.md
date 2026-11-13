@@ -77,3 +77,25 @@ Numbers from out/summ215.txt (summ215.py; outputs pinned in out/SHA1SUMS). Must-
   (instance named) and restricts the lemma to Ξ-acyclic genomes again. A kflip > 0 would also contradict KEY-TAU (i).
 - Not claimed: any bound on flips, F(l), T; anything after the first fallback; MERGE, RETURN, RENEW on Ξ-cyclic genomes. Not M3, not M4.
   **G-N5-TIME stays OPEN.**
+
+## Addendum A (L-NEW successor 76, written 2026-11-13 08:40Z by date -u; Lead 08:40Z: «Box 215 Addendum A (append-only): restate KEYSIDE-ALL with e-index keys, cite R241 and credit L-RED 69 (L41), and keep the gate-key form as history labelled «depends on numbering (R241)».»)
+- **Finding (L-RED 69, R241; credit under L41).** [Q docs/red/R241-keytau.md@df801a6f] «box 215 KEYSIDE-ALL, as stated (gate-index keys of
+  P-IDEAL-KEYS) | **DEPENDS ON NUMBERING**» and [Q docs/red/R241-keytau.md@df801a6f] «box 215 with e-index keys (the numbering-free form) |
+  **SURVIVES** | every *_e counter 0 under every numbering, incl. the 14 instances». The 14 instances are experiments/red/r241/inst/NUMB_*
+  on claude/l-red df801a6f (each 0 on box 189's numbering, firing when renumbered; n5v xdiff 0). The cause is §1's identification of the
+  e-index key with the gate-index key, which holds only for box 189's numbering (e-vertices in gate order): [Q docs/red/R241-keytau.md@df801a6f]
+  «that identification is the only place the numbering enters, exactly R240's pattern for FLAT-IDX.»
+- **History.** §0-§5 above (gate-index keys g(x, k)) stand as written, labelled: **depends on numbering (R241)**. They are correct for
+  Γ3(G) numbered as box 189 numbers it, and only there; keyside215.py computes gate-index keys and so tests that numbering only.
+- **KEYSIDE-ALL, restated (CONDITIONAL on KEY-TAU (i), as before; numbering-free).** In every statement of §2 ([M], LOCAL-KP (a), (b),
+  PAIR-KF (a), (b), KEYFLIP′ and «moves(x) ≤ 1 + KF_x», PAIR-MOVES, CASCADE (a), (b), F ≤ T, LADDER) read P-IDEAL-KEYS's key with g(x, k)
+  replaced by ε(x, k), the vertex index of e_(x,k) in the game on which N5 is run: key_s(x, k) := (ε(x, k)) at level 0 (or wt < 0), else
+  key_s(wt(x, k), s(wt(x, k))) followed by ε(x, k). KP, KF, flips and 𝓛^R_d are defined from these keys. No proof changes:
+  [Q docs/red/R241-keytau.md@df801a6f] «The proofs of box 215 §2 use nothing about g but that it is an injective index per option, so the e-index
+  form needs no new proof.» (my reading agrees: §2's proofs compare keys as tuples of distinct per-option indices and never use their values
+  otherwise). This is box 213's KEY-TAU key («the tuple of its e-vertices' indices read from c_W»), so [M] is KEY-TAU (i) restated.
+- **DATA for the restated form.** L-RED 69's own engine (n5s237, R237) with e-index twins *_e: 0 under the numberings none / e / all on
+  8,047 runs, including the 14 NUMB instances (R241 §0, §4, as cited above; not re-run here). L-NEW's keyside215.py data (§4) are DATA for
+  the restated form on box 189's numbering only, where ε and g order the options identically (R241's eord 0).
+- Consequence for box 217: its one-player model 1P(G) uses the same keys; it is switched to ε (box 217 §1 note) and its climb searches
+  over the e-order (the adversary chooses the numbering).

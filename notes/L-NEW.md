@@ -23,6 +23,18 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   the committed files restored by git checkout).
 - DATA complete (§7 of the doc, summ216.txt): every must-0 0 on 88 frozen + RAND; HOW items f5best/dom fire for N5, 0 for Howard.
   KEY FINDING: towers = one quiet sub-window (Q 0, no flip, ΣD 0): N5 Wq = Tk = 30/67/136/209/299, Howard 9/9/9/12/8.
+- ed65bb8a pushed (VERIFY PASS ~09:10Z): box 216 DATA (vi) + L-RED-B null2 replay.
+- BOX 217 (Lead APPROVED 08:34Z; re-framed 08:31Z): docs/new/N5-QUIETKEY-box217.md; experiments/new/box217 one217.py (1P model, e-index
+  keys after R241; --check vs N5 on Γ3; --numb L-RED NUMB_*; --renum own renumberings), climb217.py (+ lift = TOP-ADD), run217.sh (plain
+  climbs w2 D2 d4-16 × 4 seeds: best T 10..43, ~linear), runL217.sh (tower lifts to N 64-80, running since 09:05Z).
+  Faithfulness: towers mism 0 (T 30/67/136/209/299); renumbered towers (e, all; seeds 11, 12) mism 0; L-RED's 3 acyclic NUMB pgsame 1 mism 0;
+  random acyc mism 0; control permuted keys fires.
+- Box 215 Addendum A written (Lead 08:40Z, R241: gate keys depend on numbering; e-index form survives; credit L-RED 69); quotes215A.out 22/22.
+- OWNER via Lead 09:08Z: «So put everything into trying solving it today»; fleet converges on box 217; track A (proof) + B (search).
+  Track A statement §5 (A1 MONO-1P, A2 SWITCH-BOUND (poly if every mover is log-deep in W OR in Ξ), A3 PAIR-1P, A4 HEREDITY, A5 towers:
+  full key enumeration at levels 0..k−1 (HIT7 127 = |K| − 1 at level 6), A6: open = enumeration depth k(G) = O(log N) (ENUM-LOG)).
+- My typed-stamp slips today: 06:58Z (was 06:52), 08:40Z (was 08:33), 08:37Z (was 08:36), Addendum A «~08:45Z» (fixed to 08:40Z before
+  commit). Rule: copy the stamp from the date -u output of the same command.
 - d50ec578 pushed (VERIFY PASS 08:30Z), reported to the Lead 08:30Z with box 217 QUIET-KEY proposal. DATA (vi) (seq: towers Wq ≤ 23, CT27 35; idx uninformative) and L-RED-B null2 replay (xmove 0) folded in the next commit.
 - First DATA: DBL4_d20_F30 (tower): N5's key run has Q = 0 and one quiet window Wq = 30 = Tk (no class (Λ, E) change at all); f5best 238,
   dom 210 (N5 is not Howard there). CFI3_n48: spec key run Tk = 2 (xi: 24).
