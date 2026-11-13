@@ -1,57 +1,57 @@
-# L-SI handover check (successor 55, Fable 5.2 xhigh; written 2026-11-13T10:33:26Z (date -u); this session = session_01V5yGRXxumMiQqqDcnP9eDr; successor 54 = session_01V5yGRZnPJdkB4KaoEZZtig; Lead session_014FBi6o334DvwT5Uw2kDfoN)
+# L-SI handover check (successor 56, effort xhigh; written 2026-11-13T13:50:34Z (date -u); this session = session_01V5yGRWzAPTWfgNSJqHbXjx; successor 55 = session_01V5yGRXxumMiQqqDcnP9eDr; Lead session_014FBi6o334DvwT5Uw2kDfoN)
 
-Clock: `date -u` printed Fri Nov 13 10:31:56 UTC 2026 in the same second as the `Date:` header of a raw.githubusercontent.com
-response (Fri, 13 Nov 2026 10:31:56 GMT): skew 0 s. get_session on myself (10:3xZ): model claude-fable-5-2, effort_level xhigh,
-last_served_model claude-fable-5-2; rate_limit_info = {isUsingOverage false, rateLimitType five_hour, resetsAt 1794577200, status allowed}.
+Clock: `date -u` printed Fri Nov 13 12:55:03 UTC 2026 in the same second as the `Date:` header of a raw.githubusercontent.com
+response (Fri, 13 Nov 2026 12:55:03 GMT): skew 0 s. get_session on myself: effort_level xhigh, configured model = session model = last served model (named in
+my first message to the Lead, not here); rate_limit_info at 12:54Z = {isUsingOverage false, rateLimitType five_hour, resetsAt 1794577200,
+status allowed_warning}; at 13:50Z = {isUsingOverage false, rateLimitType seven_day, resetsAt 1795035600 (= 2026-11-18T21:00:00Z), status
+allowed_warning}. The worker process restarted once (between 13:08Z and 13:46Z); scratch files and the branch state survived.
 
-1. Branch claude/l-si. Trap check run as in the brief (fetch --unshallow, fetch of claude/l-si and trunk, ff-only): this container was
-   NOT stale this time. `git branch --show-current` = claude/l-si; HEAD = origin/claude/l-si =
-   4346fbc11d0febbeea8e250ee0e32e4d93029094 (successor 54's handover commit). Versus trunk claude/vibrant-johnson-nxvvxo
-   56d5be585e7c6125ccbd4bc80017a0ae9bcfdb4e (trunk commit 2026-11-13T08:44:37Z; re-fetched before this commit, unchanged): 23 ahead / 229 behind
-   (git rev-list --left-right --count trunk...HEAD printed «229 23»); merge-base 7b0a58ae59c070b83c21b1861be093d2537dc045. Trunk not
-   merged (truth docs read from the trunk ref with `git show`; the branch copies of docs/NOW.md and docs/DECISIONS-INDEX.md are older).
-   No push running (pgrep -f "bash scripts/push.sh" printed nothing, exit 1) before this commit.
-2. Open work (the Lead's brief for successor 55; all after «go», except paper reading on item 0 while this push is in verify):
-   (0) TOP, theory, statement first: the TIMING structure of full enumeration on L-NEW's 1P(G) (box 217, claude/l-new
-       docs/new/N5-QUIETKEY-box217.md, experiments/new/box217/one217.py; QUIET-KEY-1P = O1; open part ENUM-LOG: is the enumeration
-       depth k(G) = O(log N)?). (a) prove or refute ABANDON (a mover x of level j + 1 with sw(x) = |K(x)| − 1: a W-target of x changes
-       its key only while x does not point at it) and derive the forced order of events on a 2-per-level ladder (the Lead's odometer
-       reading is unproved) or the weaker general statement; (b) what the Ξ side must deliver per level under Ξ-acyclicity (cost of a
-       signal that goes up by key and comes back by value); (c) either a lemma «k full levels need ≥ f(k) movers / levels / relay
-       switches» (f exponential = ENUM-LOG) or an explicit family with k(G_k) = k on poly(k) movers (kills QUIET-KEY-1P, O1 and N5's
-       polynomial bound on Ξ-acyclic genomes). Tools to quote: R120 PULSE-NEST, R113; counting cannot do it (box 217 A7′). Exact minimal
-       instances for k = 2, 3 (4 if feasible) by SAT. I am the proof side; I do NOT read L-RED-B 5's B6 / L-RED 69's R243 files before my
-       own statement is committed. Next step: read box 217 + one217.py, write the statement of (a), send it to the Lead at once.
-   (1) SECOND: L*_max(d) for d = 3, 4 on my KEY model: generalise mg106.py's evaluator to d levels from key105's semantics, audit against
-       key105.key_run with a firing control, climb (known search lower bounds 9 at d = 3, 14 at d = 4; adversarial ceiling 22 at d = 3),
-       then the SAT query «L* ≥ m» at d = 3. Every number labelled «search lower bound» or «SAT exact (uncertified)». State whether
-       KEY(G*) is the same rule as 1P(G) and what the growth says about ENUM-LOG.
-   (2) Box 106 certification, resumable (`bash experiments/si/box106/run106.sh certcores 4`): coverage certified (cover6 UNSAT, both
-       checkers VERIFIED); 42 of 116 small cores certified at park time; images by renaming ONLY with the constructive variable bijection
-       (assert clause-set equality, else re-solve); §3e NOT YET WRITTEN, wording «certified MODULO the listed uncertified cores».
-       KEY2-5 (L*_max(2) = 5) stays a CONJECTURE.
-   (3) Duty: R130 (P-N5-WRAP) only if CHECKER routes an item: fixes entry 2 + L-3 by the fix1 pattern
-       (experiments/si/pwrap/fix1/mkL2.py; never edit the packet, L-1, L-2). R128 (P-N5-GATE) standby as in the notebook.
-3. GAPS rows: L-SI owns none. Trunk 56d5be58 docs/GAPS.md open rows: GAP-A, GAP-C (L-ALG; L-RED attacks), G-S5-6 (L-ALG), G-NEST (L-RED),
-   G-N1-LB (L-NEW), G-N5-TIME (l. 11; owner «L-NEW (L-LIT T22; referees later)», status open). Closed: G-N5-TERM. This lane works under
-   G-N5-TIME (item 0 = ENUM-LOG / QUIET-KEY-1P, the open part of N5's running time on one-player games; boxes 104-106).
-4. Rulings (verbatim from trunk 56d5be58 docs/DECISIONS.md; status from trunk docs/DECISIONS-INDEX.md):
-   - D18 (DECISIONS.md l. 333; index: active): «Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting
-     ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed,
-     state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.»
-   - D1 (l. 7; index: active): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim,
-     including the fleet's own, as wrong until it passes the gauntlet below.»
-   - D23 (l. 527; index: active; with D21 l. 452 active and Lead reading L57 active): «I reset the fable weekly limit, please conitnue on
-     high effort, we already used a day, w still have 160% of usage left until tomorrow night». D21's relayed text: «Okay, I want maximum
-     effort. I want to use 200% usage in 3 days. There is fable 5.2 as well, use that too in dpeth everywhere where it seems fitting, use
-     fable 5.2 at hard or xhigh. SO yes, 200% uage under 2 days.»
-   - From the brief only (NOT in trunk's DECISIONS.md / index at 56d5be58, so no index status to report): D24 (owner): «do xhigh»;
-     the owner directly to the Lead (2026-11-13): «So put everything into trying solving it today»; Lead readings L51, L58 of D21
-     (L51 is in the index, active: maximum effort to 2026-11-14 10:05Z; L58 is not in my trunk view).
-5. Trap: the container starts on a stale / detached / shallow local branch (successor 54: 1569 behind): push.sh would fail after VERIFY
-   PASS («invalid refspec») or push old work. Check: the brief's fetch + ff-only block, then `git branch --show-current` = claude/l-si and
-   HEAD = origin/claude/l-si before work and before every push (done above; values copied from command output). Second trap (successor
-   50): a message sent in the same tool batch as the commit it quotes carried invented SHAs; check: every SHA / sha1 / time is copied
-   from the output of an EARLIER step, and `pgrep -f "bash scripts/push.sh"` runs before every commit and push (one push at a time, no
-   commit while a push runs). Third (successor 54, box 106): python-sat's cadical153 proofs end without a refutation and pipes into tail
-   hide exit codes: certify only with Glucose 4 DRUP + drup.c + ref_rup.c, and redirect long jobs to a log file, then print $?.
+1. Branch claude/l-si. Trap check run as in the brief (fetch --unshallow, fetch of claude/l-si and trunk, ff-only): the container
+   started 3 commits behind (local 4346fbc1), fast-forwarded to 06f072f1 at 12:54:56Z, and after the EARLY START wait (ls-remote showed
+   0f784e08 at 13:49:22Z) to HEAD = origin/claude/l-si = 0f784e08827b52d57676b3a7f7fb3d8d76ff78d2 (successor 55's handover commit);
+   `git branch --show-current` = claude/l-si. Nothing was committed before 0f784e08 landed. Versus trunk
+   claude/vibrant-johnson-nxvvxo 6eaf460475effc5f27d6d2a02d3d80ffe7f0714f (trunk commit 2026-11-13T11:54:45+00:00): 18 ahead / 244
+   behind (git rev-list --left-right --count trunk...HEAD printed «244 18»); merge-base faf0c8ff87aad0bda8441f3b9b3f7f53e8775755. Trunk
+   not merged (truth docs read from the trunk ref with `git show`). No push running before this commit (pgrep printed nothing).
+2. Open work (the Lead's brief for successor 56):
+   (1) TOP: an INDEPENDENT PROOF that L(G_k) = 2^k − 2 for every k ≥ 3 on RESULTS R104's IDEAL model (or the exact k and step at
+       which the rule breaks), from the Lead's written rule and R104's definition of the IDEAL step only; claude/l-red-b, docs/referee*/
+       on G_k and docs/red/R245 are NOT read before my proof is committed. State when this file is written (scratch, nothing committed):
+       own builder reproduces the four sha1 (G_3, G_4, G_8, G_10); own IDEAL simulator and one217.OneP (claude/l-new a143d4060) give
+       the same state sequences, L = 2^k − 2 for k = 3..12; the invariant is found (every mover is a two-input latch; each level j
+       exports one bit X_j = [u_j ≠ v_j] upward and E(j) downward; closed form by nested phases τ_1 = t, τ_(i+1) = τ_i mod H_i,
+       H_i = 2^(k−i+1) − 1; level i walks a 12-position cycle, the top a 6-position cycle) and script-checked on k = 3..12 with 14
+       firing controls. Next step: write docs/si/box108-gk-proof.md (statement, static lemmas with every ε / rank / start use named,
+       the transition tables, the induction on t), move the tools to experiments/si/box108/, add the block to experiments/si/check.sh,
+       commit, push, send the SHA. The statement and the invariant go to the Lead with this file's SHA.
+   (2) On the Lead's word only: a step-for-step comparison of the two proofs for the referee of record.
+   (3) Secondary, not before (1) is committed: k = 4 at d = 8 on LEVEL-RANKED upward ladders (`python3 up107.py 8 18 full:6 --out
+       out/up_k4_d8.json` from experiments/si/box107 with ONE = a temp dir holding one217.py of claude/l-new a143d4060; no answer in 55
+       min at T 18; then the free-rank class); L*_max(d) for d = 3, 4; box 106 certification (`bash experiments/si/box106/run106.sh
+       certcores 4`, resumable). Duty R130 only if routed.
+3. GAPS rows: L-SI owns none. Trunk 6eaf4604 docs/GAPS.md open rows: GAP-A, GAP-C (L-ALG; L-RED attacks), G-S5-6 (L-ALG), G-NEST (L-RED),
+   G-N1-LB (L-NEW), G-N5-TIME (l. 11; owner «L-NEW (L-LIT T22; referees later)», status open). Closed: G-N5-TERM, G1, G-FDL, G-Bthr,
+   G-K5, G-STR, G-DOM. This lane works under G-N5-TIME: item (1) is the proof side of a KILL CANDIDATE for N5's polynomial bound on
+   Ξ-acyclic genomes (the transfer to N5 is the landed R117, not my work).
+4. Rulings (verbatim from trunk 6eaf4604 docs/DECISIONS.md; status from trunk docs/DECISIONS-INDEX.md):
+   - D18 (DECISIONS.md l. 333; index l. 32: active): «Focus on N5 and work toward proving it. Explore novel approaches, especially by
+     connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
+     where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
+     open problems.»
+   - D1 (l. 7; index l. 5: active): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim,
+     including the fleet's own, as wrong until it passes the gauntlet below.» Applied here in mirror form: the kill candidate is
+     treated as unproved until a second derivation and two referees agree.
+   - D25 (l. 541; index l. 57: active; owner, direct, 2026-11-13): «So put everything into trying solving it today». With D24 (l. 538;
+     index l. 56: active): «do xhigh»; D23 (l. 527; index l. 54: active): «I reset the fable weekly limit, please conitnue on high
+     effort, we already used a day, w still have 160% of usage left until tomorrow night»; D21 (index l. 46: active) and the Lead
+     readings L51 (index l. 48: active: maximum effort to 2026-11-14 10:05Z), L58 (index l. 58: active), L56 (index l. 53: active: the
+     verify self-check skip applies only when every changed path is under docs/agents/; this commit is such a commit, later ones run in full).
+5. Trap: the container starts on a stale / detached / shallow local branch (this time 3 behind; successor 54: 1569 behind), and today
+   also BEFORE the predecessor's handover push had landed: a commit made then would have forked the branch. Check: the brief's fetch +
+   ff-only block; `git branch --show-current` = claude/l-si and HEAD = origin/claude/l-si before work and before every push; no commit
+   until `git ls-remote origin` showed 0f784e08 (done above; values copied from command output). Second trap (successor 50): invented
+   SHAs in a message sent in the same batch as the commit; check: every SHA / sha1 / time is copied from the output of an EARLIER step,
+   and `pgrep -f "bash scripts/push.sh"` runs before every commit and push (one push at a time, no commit and no edit of tracked files
+   while a push runs: successor 55's verify once ran on a dirty tree). Third (this session): a firing control that mutates an order
+   nothing reads does not fire on the run (dl of the TOP block pair: P_(k−1) has no reader); a control must be aimed at an order the
+   proof uses, and the run-level counters (RUN, CLOSED) are read separately from the formula-level one (STATIC).
