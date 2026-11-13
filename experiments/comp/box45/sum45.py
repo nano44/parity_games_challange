@@ -24,7 +24,7 @@ def locate(b):
 
 
 def part_a():
-    sets = [("mine", "deep45_mine.out", "box40/inst ∪ box39/inst ∪ box41/inst"), ("lnew", "deep45_lnew.out", "L-NEW's 25 records + 53 corpus (311bbf81; 76 distinct names)"),
+    sets = [("mine", "deep45_mine.out", "box40/inst ∪ box39/inst ∪ box41/inst"), ("lnew", "deep45_lnew.out", "L-NEW's 25 records (MWR8_2, MWR16_2 run in «mine») + CWRQ4_n, CWRQ16_n + its 53 corpus (311bbf81)"),
             ("fam", "deep45_fam.out", "box42 CL0/8/16/30, box43 D18_k4/8/16, D10_k16, D80_k16, DHIB26_k0, TMWR4/8/16, TC6G8, TREC, TDHIB26, box45 TRWX"),
             ("big", "deep45_big.out", "box42 CL45, CL90; box43 D10_k32/k64, D18_k32, D80_k32/k64, TMWR32"), ("rand", "deep45_rand.out", "random genomes, rand43.rgen (rand45.py)")]
     print("| set | contents | genome runs | flips | Λ-quiet flips | max depth100 (genome) | deep100 (> 3) | Int100 | max depthNS | deepNS (> 3) | IntNS | max depthMID | unm | pimis |")

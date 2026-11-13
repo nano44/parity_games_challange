@@ -23,7 +23,7 @@ frozen)
   per deep45_mine.out ../box40/inst/*.json ../box39/inst/*.json ../box41/inst/*.json
   per deep45_lnew.out $N/box203/inst/MWR4_2.json $N/box206/inst/CW*_n.json $N/box203/inst/K1F21_n48.json $N/box204/inst/K1F34_n84.json $N/box206/inst/K1L7_n48.json \
      $N/box206/inst/K1L10_n48.json $N/box206/inst/K1D4_n48.json $N/box206/inst/BLKX2*_n48.json $N/box207/inst/CFI3_n48.json $N/box207/inst/RINT_n48.json \
-     $N/box202/k1fail_202.json $N/box205/inst/naive_k1_s71.json $N/box203/inst/ST4_k1.json $N/box203/inst/ST8_k1.json $N/box202/inst/*.json
+     $N/box202/k1fail_202.json $N/box205/inst/naive_k1_s71.json $N/box203/inst/ST4_k1.json $N/box203/inst/ST8_k1.json $N/box202/inst/*.json $N/box203/inst/K1C16_n400.json $N/box204/inst/B400_r32_a13d9661.json
   per deep45_fam.out ../box42/inst/CL0.json ../box42/inst/CL8.json ../box42/inst/CL16.json ../box42/inst/CL30.json $B43/D18_k4.json $B43/D18_k8.json $B43/D18_k16.json \
      $B43/D10_k16.json $B43/D80_k16.json $B43/DHIB26_k0.json $B43/TMWR4.json $B43/TMWR8.json $B43/TMWR16.json $B43/TC6G8.json $B43/TREC.json $B43/TDHIB26.json inst/TRWX.json ;;
 big)

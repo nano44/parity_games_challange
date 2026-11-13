@@ -1,0 +1,20 @@
+| band | seeds (QP at N + M) | best (QP = text-engine qmax, N + M, ratio) | T3 | evals | file |
+| --- | --- | --- | --- | --- | --- |
+| 1 | seed_MWR_3.json 7 at 116; seed_gen37_3.json 14 at 116 | 15, 109, 0.1376 | 16 | 1477 | out/climb45/BEST_B1_T15_NM109_d4cf0e34.json |
+| 2 | seed_MWR_6.json 13 at 203; seed_gen37_6.json 26 at 203 | 29, 192, 0.1510 | 31 | 1508 | out/climb45/BEST_B2_T29_NM192_cf2a32c9.json |
+| 3 | seed_MWR_9.json 19 at 290; seed_gen37_9.json 38 at 290 | 38, 275, 0.1382 | 43 | 1518 | out/climb45/BEST_B3_T38_NM275_703bb6b4.json |
+
+Second engine (qsec45.py on L-RED 65's HOW3, out/qsec45.out): (qmax, T3) equal to mine on 48 of 48 genomes.
+
+| family member | N + M | qmax (HOW3) | max flips of one gate | T3 | mine (qmax, T3) |
+| --- | --- | --- | --- | --- | --- |
+| CW4_n.json | 157 | 11 | 11 | 30 | (11, 30) |
+| CW8_n.json | 303 | 37 | 37 | 59 | (37, 59) |
+| CW16_n.json | 643 | 91 | 91 | 114 | (91, 114) |
+| MWR4_2.json | 145 | 9 | 9 | 30 | (9, 30) |
+| MWR8_2.json | 261 | 17 | 17 | 54 | (17, 54) |
+| MWR16_2.json | 493 | 33 | 33 | 102 | (33, 102) |
+| MW4_2.json | 145 | 18 | 18 | 31 | (18, 31) |
+| MW8_2.json | 261 | 34 | 34 | 55 | (34, 55) |
+| MW16_2.json | 493 | 66 | 66 | 103 | (66, 103) |
+| MW32_2.json | 957 | 130 | 130 | 199 | (130, 199) |

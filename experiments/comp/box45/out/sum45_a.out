@@ -1,0 +1,14 @@
+| set | contents | genome runs | flips | Λ-quiet flips | max depth100 (genome) | deep100 (> 3) | Int100 | max depthNS | deepNS (> 3) | IntNS | max depthMID | unm | pimis |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| mine | box40/inst ∪ box39/inst ∪ box41/inst | 61 | 4377 | 3716 | 32 (CW32_own.json) | 1262 | 1206 | 1 | 0 | 0 | 1 | 0 | 0 |
+| lnew | L-NEW's 25 records (MWR8_2, MWR16_2 run in «mine») + CWRQ4_n, CWRQ16_n + its 53 corpus (311bbf81) | 78 | 3369 | 2859 | 18 (CW16_n.json) | 591 | 404 | 2 | 0 | 0 | 2 | 0 | 0 |
+| fam | box42 CL0/8/16/30, box43 D18_k4/8/16, D10_k16, D80_k16, DHIB26_k0, TMWR4/8/16, TC6G8, TREC, TDHIB26, box45 TRWX | 17 | 4172 | 3947 | 12 (TREC.json) | 1447 | 1386 | 1 | 0 | 0 | 1 | 0 | 0 |
+| big | box42 CL45, CL90; box43 D10_k32/k64, D18_k32, D80_k32/k64, TMWR32 | 8 | 6654 | 6549 | 6 (D10_k32.json) | 2281 | 2249 | 0 | 0 | 0 | 0 | 0 | 0 |
+| rand | random genomes, rand43.rgen (rand45.py) | 1100 | 3940 | 1328 | 7 (rand_s4512_nm160_px0.3_64) | 14 | 12 | 1 | 0 | 0 | 1 | 0 | 0 |
+
+Total over the sets above: 1264 genome runs, 22512 flips.
+
+Genome runs with max depthNS = 1: 13 (fam: TRWX.json; lnew: C7_NM105_4438ea3e.json, DHIB18_2805.json, DSALT6_n108.json, DSALT7_n108.json, DWT20_2803.json, ROUTELOW_n21.json, RWX_n95.json; mine: DHIB18_2805.json, DWT20_2803.json, RWX_n95.json; rand: rand_s4511_nm60_px0.3_46, rand_s4512_nm160_px0.3_2).
+
+Genomes with max depthNS = 2 (none higher):
+- DSALT9_n416.json (set lnew, N + M 1217): claude/l-new 311bbf81 experiments/new/box202/inst/DSALT9_n416.json, sha1 da3308b524e2b00861a880e8f9bfdc2cd652555f; depth100 max 6, T3 30

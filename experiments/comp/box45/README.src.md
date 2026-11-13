@@ -52,5 +52,5 @@ DHIB18_2805, DWT20_2803, C7_NM105»; that list came from a grep matching dmaxNS 
 deep45.py (item (a) counters; --tail mode), rand45.py, run45a.sh (tail | frozen | big | rand); climb45.py (copy of box44/climb44.py with the
 QP score and deep45 re-measurement), run45b.sh (bands 1-3), qsec45.py + run45c.sh (second engine); sum45.py (tables), mk45.py (this README).
 inst/: TRWX.json (TAIL_2(RWX_n95)), seeds; out/: every output, out/climb45/ every global best, out/SHA1SUMS.
-Slips: run45a.sh was edited (rand phase added) while an instance ran (one stray log line, no row lost or duplicated); two message timestamps
+Slips: run45a.sh was edited (rand phase added) while an instance ran (the old instance read the new file's tail: one syntax error after its frozen phase had finished (phase exit 2), no row lost or duplicated; the tail phase's closing echo prints the last pair's file because the loop's «set --» overwrites $1, cosmetic); two message timestamps
 «00:5xZ» were not from date -u; the two wrong readings above.
