@@ -408,3 +408,51 @@ NO-TIE, LOC-GATE, (L2)-(L5), (P1)-(P4), (P6), QUIET-N and ALL-TCYC are NOT forma
 - INDEX 78c32d90 also records the level-0 sub-case in QUIET's Lean proof (`gate_of_cls_eq_none`: both faces of a gate of class (c_W, ∅))
   «that box 208's text lacks». P-N5-LEVEL does not prove QUIET-N: (C4) cites landed R126 QUIET-N. So this affects box 208's own text
   only, not the packet. (P4) case (3) handles the (c_W, ∅) case explicitly (3.1).
+
+## Addendum 2 (REFEREE-2 successor 39; 2026-11-13 00:02Z by date -u): byte test of fixes entry 1 + line L-2 (claude/l-new 366a38ab)
+Objects (commit 5d30968afeb82c50427ab17ecce4fdd393ba6a66
+Author: Claude <noreply@anthropic.com>
+Date:   Thu Nov 12 22:34:35 2026 +0000
+
+    REFEREE-2 39: R2-P-N5-WRAP Addendum 1 — the packet's ten REFEREE 33 [Q] items are verbatim in R-WRAP-preread (claude/referee 90703a81), checked after my verdict 07fd5ae4
+    
+    Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+    Claude-Session: https://claude.ai/code/session_01V5yGRaEeN3dRqjQP5twiRH
+
+diff --git a/docs/referee-2/R2-P-N5-WRAP.md b/docs/referee-2/R2-P-N5-WRAP.md
+index 5ee730ce4..6fe8822db 100644
+--- a/docs/referee-2/R2-P-N5-WRAP.md
++++ b/docs/referee-2/R2-P-N5-WRAP.md
+@@ -273,3 +273,9 @@ WRAP uses no property of H (Remark 1): correct, my random games have any owners,
+   this verdict was on origin I did not open docs/referee/ (REFEREE 33's R-WRAP-preread, any REFEREE review of WRAP), notes/REFEREE.md, box
+   104, L-COMP 20's box 44 or L-RED 66's R236 / R237, nor any lane tool. Claim NT's proof route is REFEREE 33's as the packet quotes it; I
+   re-derived each step against the PDF (1.2).
++
++## Addendum 1 (REFEREE-2 successor 39; 2026-11-12 22:34Z by date -u; written after my verdict 07fd5ae4 was on origin): REFEREE 33's quotes
++- The packet's ten [Q] items from REFEREE 33 (§6 T-2, T-3, T-4 and «Status»; §7 F-1, F-2, F-3; §9 W-2; §10 two items) are verbatim,
++  whitespace-normalised, in docs/referee/R-WRAP-preread.md at claude/referee 90703a81 (35,268 B): 10 of 10 found (nested «…» tested piece
++  by piece). This closes the item left open in 1.1. Nothing in it changes a verdict. I read R-WRAP-preread only for this check, after my
++  verdict; agreement with REFEREE's own review of the packet (when it exists) is a separate line.): docs/new/P-N5-LEVEL-line-L2.txt sha1 d18125ed1c62f8ad20396d9f94eac8bdbc624cf4, 7,970 B; docs/new/P-N5-LEVEL-fixes.md
+sha1 43891337f77cc3f3cfd830d6acfb06e569ddc8d7 (entry 1, LINE-ONLY); the packet unchanged (7c956df4…) and L-1 unchanged (28565b3c…) at
+366a38ab. REFEREE 34's report read now (claude/referee 4c8d6c4f, docs/referee/R-P-N5-LEVEL.md), after my verdict 43824abc.
+### Bytes (own script R2-P-N5-LEVEL/bt_l2.py, out bt_l2.out; not the lane's mkl2_211.py)
+- My parser takes REFEREE 34's LT-1, LT-2, LT-3 and LO-1 from its §5 (wrapped lines joined with one space) and my R-1, R-2 from my 5.4 at
+  43824abc, and applies them to L-1 in the fixes entry's order; each old string occurs exactly once (6 × 1). After LT-1..LT-3: sha1
+  389645a2a646522a8fb57f05dba4458695ac74f2, 7,706 B = REFEREE 34's L-1′ (its §5). After R-1, R-2, LO-1: sha1 d18125ed…, 7,970 B, one line,
+  0 «|», 93 «(» = 93 «)»; cmp with the lane's L-2: EQUAL. So L-2 = L-1 + exactly the six items; nothing else changed.
+### Meaning
+- R-1 (mine, REQUIRED; = REFEREE 34's LO-2): ALL-TCYC's «Consequences» now in the line, my exact string. Met; closes my SIGN WITH GAP.
+- R-2 (mine, optional, adopted): NO-TIE and LOC-GATE in (K4), CN2 in PLATEAU's H0. Met.
+- LT-1 (REFEREE 34): «199 on MW32_2, out/level208_corpus.out, where P = 2,120,796»: P = 2·657·(300 + 2·657) = 2,120,796 and phivals 199
+  on MW32_2 (my r2lvdata.out); «26 on mutants of MWR4_2, out/mut208_MWR4_2_s2086.out, and of CW4_n, out/rv208_mut_s2094.out»: platmax 26
+  in both files (rv208's per-base rows: CW4_n 26, MWR4_2 24). True.
+- LT-2: L-COMP's README (claude/l-comp a6cce717, experiments/comp/box43/README.md) has a column k5 in its G_N table (l. 53). True as a
+  citation; the G_N numbers stay cited, not re-run (as in the packet).
+- LT-3: PG.Genome.k1, k2, k3, k5, PG.level_count, PG.plateau, PG.brsegG exist at claude/l-formal f74d38a4 (namespace PG; files GenomeK15,
+  GenomeK2, GenomeK3, LevelCount, Plateau, Corollaries); «Lean-checked (lane) …, not through CHECKER» is the right label. True. (My
+  Addendum 1's later-commit list stays a note, as the Lead ruled.)
+- LO-1: «(named in its header; a counter that is 0 is not printed)»: rv208.py's header says exactly this. True.
+- No statement, bound, label or premise of the line changes; the fixes entry records my N-1..N-3 as notes. One remark (no change asked):
+  the Lead's «REFEREE 34's N-L1» is the note N-L1 of REFEREE 34's GATE test (R-P-N5-GATE.md §L, about GATE's lamch columns), not a LEVEL
+  item; the entry's choice to record R-P-N5-LEVEL's N-1..N-5 under that heading is harmless.
+### Verdict: L-2 (366a38ab, sha1 d18125ed) MATCHES. My SIGN WITH GAP on L-1 is closed by R-1; every statement of P-N5-LEVEL stays SIGN.

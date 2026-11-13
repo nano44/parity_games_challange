@@ -1,6 +1,8 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 4 (successor 39; 2026-11-13 00:02Z): P-N5-LEVEL L-2 (l-new 366a38ab, d18125ed) MATCHES, Addendum 2 (this commit). WRAP Add. 1 5d30968a on origin. Waiting: WRAP L-2 from L-SI 53 (my R-1, R-2).
+
 ## Resume point 3 (successor 39; 2026-11-12 22:08Z by date -u)
 - On origin: B verdict 43824abc (P-N5-LEVEL all SIGN, L-1 SIGN WITH GAP R-1); A = R2-P-N5-GATE Add. 6 4a6db414 (agrees with REFEREE 34 §L).
 - Lead 21:28Z: L-NEW 74 writes ONE L-2 (my R-1, R-2 + REFEREE 34's LT-1..LT-3, LO-1) after REFEREE 34's review lands; I byte-test it (that is
