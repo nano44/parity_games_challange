@@ -2,7 +2,8 @@
 """L-COMP box 46 item (2): win46.measure on random Ξ-CYCLIC genomes by this lane's law (box43/rand43.rgen: N + M <= NMMAX, Ξ-target X
 with probability PX, else a uniform mover), drawn until COUNT genomes with a Ξ-cycle (the graph x -> Ξ-target(x) has a cycle) are found;
 the acyclic draws are skipped and counted. One line per genome appended to OUT; resumable (the generator is replayed, finished names
-skipped). Usage: rand46.py SEED COUNT NMMAX PX OUT [--write DIR]   (env W46_CTRL / LV46_CTRL as win46)"""
+skipped). With --acyclic the Ξ-ACYCLIC draws are kept instead (names arand_...).
+Usage: rand46.py SEED COUNT NMMAX PX OUT [--write DIR] [--acyclic]   (env W46_CTRL / LV46_CTRL as win46)"""
 import sys, os, json, random
 H = os.path.dirname(os.path.abspath(__file__)); sys.path[:0] = [H, os.path.join(H, "..", "box43")]
 import win46, rand43
@@ -23,12 +24,12 @@ def xcyclic(G):
 
 if __name__ == "__main__":
     a = [x for x in sys.argv[1:] if not x.startswith("--")]; seed, cnt, nm, px, out = int(a[0]), int(a[1]), int(a[2]), float(a[3]), a[4]
-    wdir = sys.argv[sys.argv.index("--write") + 1] if "--write" in sys.argv else None
+    wdir = sys.argv[sys.argv.index("--write") + 1] if "--write" in sys.argv else None; ACYC = "--acyclic" in sys.argv
     have = {l.split()[0] for l in open(out)} if os.path.exists(out) else set(); r = random.Random(seed); found = skipped = 0
     while found < cnt:
         G = rand43.rgen(r, nm, px)
-        if not xcyclic(G): skipped += 1; continue
-        name = "xrand_s%d_nm%d_px%s_%d" % (seed, nm, a[3], found); found += 1
+        if xcyclic(G) == ACYC: skipped += 1; continue
+        name = "%srand_s%d_nm%d_px%s_%d" % ("a" if ACYC else "x", seed, nm, a[3], found); found += 1
         if wdir: json.dump(G, open(os.path.join(wdir, name + ".json"), "w"), sort_keys=True)
         if name in have: continue
         try:

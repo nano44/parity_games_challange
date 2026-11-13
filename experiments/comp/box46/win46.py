@@ -21,6 +21,13 @@ MUST-0 (unit; scope):
    s_u, its successor at the window's first state u; Lead correction (c), 01:38Z).
  Descriptive: plat_at_b = maximal constant-Φ intervals reaching b (RF-B requires v < b; Lead correction (a)); wout_wclos = wout events,
    each of which is also a wclos event at s + 1 (P2) — the overlap of the two counters.
+ Ξ-cycle use (Lead 02:38Z): offbeta [(gate, state ≤ T_key)]: σ̄ on the e-face (Ω(pe) ◁ Ω(pB)); cycopt [(mover, state)]: σ_t(x) is an
+   option whose Ξ-edge lies on a Ξ-cycle; run_used = 1 iff offbeta + cycopt > 0; a window is USED iff offbeta or cycopt > 0 at one of its
+   states [u, v]; nwin_used, Wused = the longest USED window (the climb's objective). Must-0 offbacyc [genome]: offbeta > 0 on a
+   Ξ-acyclic genome (R122 BETA-ACYC, docs/RESULTS.md l. 14744 at trunk f5a237ce: «for every genome G whose Ξ-graph is acyclic, on Γ(G) or
+   Γ3(G), and every Even strategy that agrees with the stated start off the movers (transported through the pads on Γ3), every optimal
+   counterstrategy of Odd takes the β-face at every gate»; the states before the first fallback are standard, counter nonstd). Control
+   W5: the comparison reversed (counts the β-face): offbacyc fires on every Ξ-acyclic genome with a gate.
  Ξ-cyclic: xcyc = the number of movers on a cycle of R104's Ξ-graph («the Ξ-graph has an edge x → xt(x, k) for every option with a
    mover as Ξ-target», docs/RESULTS.md R104 l. 9864; «Ξ-graph is ACYCLIC (self-loops count as cycles).», l. 9910; R122 (a) «the Ξ-graph
    has no directed cycle», l. 14853; line numbers at trunk f5a237ce); Ξ-cyclic iff xcyc > 0.
@@ -36,14 +43,14 @@ sys.path[:0] = [os.path.join(HERE, "..", "box44")]
 import own34, n5xi44, val44
 EVEN, ODD = 0, 1
 CTRL = os.environ.get("LV46_CTRL", "0"); BREF = "T"; WC = os.environ.get("W46_CTRL", "")
-PREM = ("s3fail", "nonstd", "f1", "cn23", "notie3", "locgate3", "k2r", "bonly3", "odd2", "edom3", "imp3", "imp3e")
+PREM = ("s3fail", "nonstd", "f1", "cn23", "notie3", "locgate3", "k2r", "bonly3", "odd2", "edom3", "imp3", "imp3e", "offbacyc")
 K = ("k0a", "k0b", "k0c", "k2", "mono", "k3a", "k3b", "k3c", "k3d", "k3e", "k4")
 LV = ("l1sub", "l1phi", "phifall", "l2", "l3", "l3val", "qfail", "c2")
 PL = ("p1", "p2", "p4", "wcls", "wclos", "wodd", "wout", "wimp", "hyval")
 END = ("wrong", "stratbad")
 HOW = ("nohoward", "dom", "k5", "l4", "p3", "p6", "p7", "plat", "tail", "t1", "fbwrong", "n5xig3", "t3all")
 KEYS = PREM + K + LV + PL + END + HOW
-DESC = ("Tkey", "nwin", "Wkey", "inwin", "stalls", "tail_len", "plateaus", "platmax", "phivals", "q", "bprime", "Ttot", "F", "xcyc", "plat_at_b", "wout_wclos")
+DESC = ("Tkey", "nwin", "Wkey", "inwin", "stalls", "tail_len", "plateaus", "platmax", "phivals", "q", "bprime", "Ttot", "F", "xcyc", "plat_at_b", "wout_wclos", "run_used", "nwin_used", "Wused", "offbeta", "cycopt")
 
 
 def kindof(V, n):
@@ -84,7 +91,18 @@ def measure(G, elev=True, dump=None):
         for v in range(N):
             if v not in idx: sc(v)
         return out
-    xcyc = len(xcycset())
+    xcs = xcycset(); xcyc = len(xcs)
+    import collections as _c
+    _adj = {x: set(xadj[x]) for x in range(N)}
+    def _reach(a, b):                                    # is b reachable from a in the Ξ-graph
+        seen, st_ = {a}, [a]
+        while st_:
+            u_ = st_.pop()
+            if u_ == b: return True
+            for w_ in _adj[u_]:
+                if w_ not in seen: seen.add(w_); st_.append(w_)
+        return False
+    cpad = {V[("m", (x0, k0))] for x0 in range(N) for k0, o in enumerate(G["opts"][x0]) if o[1] >= 0 and (o[1] == x0 or _reach(o[1], x0))}
     assert nE3 == sum(1 for v in range(n) if owner[v] == EVEN), "n_E3 is not the number of Even vertices"
     if CTRL == "3": P3, nE3 = 1, 0
     bT = P3 * (nE3 + 1) + nE3
@@ -94,7 +112,7 @@ def measure(G, elev=True, dump=None):
         if k not in first: first[k] = (t, info)
     for v in range(n):                                   # (E-DOM3), a structural clause
         if rel(v) > emin and not (kind[v] == "e" or v in (cW, K0, K3)): fail("edom3", -1, nm[v])
-    cls = []; nxt = []; st = dict(prev=None, pnxt=None, T3h=None); impbad = set(); vals = []
+    cls = []; nxt = []; st = dict(prev=None, pnxt=None, T3h=None); impbad = set(); vals = []; obs = []; cos = []
     def clsof(val):
         L, Pi, _ = val; E = 0
         for u in Pi:
@@ -160,6 +178,12 @@ def measure(G, elev=True, dump=None):
                     if (cv >= 0 if WC == "W3" else cv <= 0): fail("imp3", t - 1, "%s: %s -> %s" % (nm[x], nm[psig[x]], nm[sigma[x]])); impbad.add((t - 1, x))
             if not moved: fail("imp3e", t - 1, "no mover changes")
         vals.append(vs)
+        ob = 0
+        for x0 in range(N):
+            for k0 in range(len(G["opts"][x0])):
+                cv = val44.cmpval(g, vs[V[("pe", (x0, k0))]], vs[V[("pB", (x0, k0))]])
+                if (cv > 0 if WC == "W5" else cv < 0): ob += 1
+        obs.append(ob); cos.append(sum(1 for x0 in range(N) if sigma[mv[x0]] in cpad))
         if st["T3h"] is None and all(sigma[x] in val44.bestset(g, vs, x) for x in mv): st["T3h"] = t
         st["prev"] = vs; st["psig"] = list(sigma); cls.append(ct); nxt.append(nx)
 
@@ -172,6 +196,7 @@ def measure(G, elev=True, dump=None):
     if r["first"] is None or T3h is None or r["first"] != T3h + 1 + sh: fail("fbwrong", -1, "first fallback %s, T3h %s" % (r["first"], T3h))
     if r["F"] != 1 or r["Ttot"] != T + 3 + sh: fail("n5xig3", -1, "fallbacks %d iterations %d T3 %d" % (r["F"], r["Ttot"], T))
     if T > bT: fail("t3all", -1, "T3 %d > %d" % (T, bT))
+    if xcyc == 0 and sum(obs): fail("offbacyc", -1, "%d (gate, state) pairs off the β-face on a Ξ-acyclic genome" % sum(obs))
     if r["win"] != zielonka.solve(g): fail("wrong", -1, "regions differ from Zielonka")
     if verify.check(g, r["win"], r["strat"]): fail("stratbad", -1, "verify.check rejects")
     if dump:    # the run in L-NEW's level208.py --hist format (its own counter code can then be run on MY builder's run)
@@ -214,7 +239,7 @@ def measure(G, elev=True, dump=None):
     elif BREF.startswith("k:"):
         j = int(BREF[2:]); refs = sorted({T} | {round(i * T / (j + 1)) for i in range(1, j + 1)} - {0}) or [0]
     else: refs = [T]
-    d = dict(Tkey=T, Ttot=r["Ttot"], F=r["F"], q=0, phivals=0, stalls=0, plateaus=0, platmax=0, bprime=0, tail_len=0, nwin=0, Wkey=0, inwin=0, xcyc=xcyc, wout_wclos=0, plat_at_b=0)
+    d = dict(Tkey=T, Ttot=r["Ttot"], F=r["F"], q=0, phivals=0, stalls=0, plateaus=0, platmax=0, bprime=0, tail_len=0, nwin=0, Wkey=0, inwin=0, xcyc=xcyc, wout_wclos=0, plat_at_b=0, nwin_used=0, Wused=0, run_used=0, offbeta=0, cycopt=0)
     Odd = [v for v in range(n) if owner[v] == ODD]
     for b in refs:
         fin = cls[b]
@@ -327,6 +352,9 @@ def measure(G, elev=True, dump=None):
                                 if (s, x) in impbad: fail("wimp", s, "window [%d, %d], %s" % (u, v, nm[x]))
             lens = [v - u for u, v, _, _, _ in W]
             d.update(nwin=len(W), Wkey=max(lens, default=0), inwin=sum(lens), wout_wclos=ovl[0])
+            used = [any(obs[s_] or cos[s_] for s_ in range(u, v + 1)) for u, v, _, _, _ in W]
+            d.update(nwin_used=sum(used), Wused=max([v - u for (u, v, _, _, _), us in zip(W, used) if us], default=0),
+                     run_used=int(any(obs[t_] or cos[t_] for t_ in range(T + 1))), offbeta=sum(obs), cycopt=sum(cos))
             # (a) RF-B's v < b: maximal constant-Φ intervals over the states t <= b at which Φ is defined, ending at b (Φ is undefined at b,
             # LAG_b = ∅ with b = T_key, so this is 0 by construction; counted, not assumed)
             ph = [fr[t] and (fr[t][1], -len(fr[t][2])) for t in range(b + 1)]; pab = 0; t = 0
