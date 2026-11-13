@@ -1,0 +1,28 @@
+MWR4_2                 N  48 M  97 n  345 T  30 k 1 ties 0
+MWR8_2                 N  84 M 177 n  621 T  54 k 1 ties 0
+MWR16_2                N 156 M 337 n 1173 T 102 k 1 ties 0
+CW4_n                  N  51 M 106 n  375 T  30 k 1 ties 0
+CW8_n                  N  91 M 212 n  733 T  59 k 1 ties 0
+CW16_n                 N 171 M 472 n 1593 T 114 k 1 ties 0
+CWRR4_n                N  51 M 109 n  384 T  28 k 1 ties 0
+CWRR8_n                N  91 M 219 n  754 T  52 k 1 ties 0
+CWRR16_n               N 171 M 487 n 1638 T 100 k 1 ties 0
+CWRQ8_n                N  91 M 219 n  754 T  52 k 1 ties 0
+K1F21_n48              N  48 M  97 n  345 T  31 k 1 ties 0
+K1F34_n84              N  84 M 177 n  621 T  52 k 1 ties 0
+K1C16_n400             N 113 M 287 n  980 T  51 k 1 ties 0
+K1L7_n48               N  48 M  97 n  345 T  37 k 1 ties 0
+K1L10_n48              N  48 M  97 n  345 T  31 k 1 ties 0
+K1D4_n48               N  48 M  97 n  345 T  23 k 1 ties 0
+BLKX23_n48             N  48 M  97 n  345 T  28 k 1 ties 0
+BLKX26_n48             N  48 M  97 n  345 T  33 k 1 ties 0
+B400_r32_a13d9661      N  91 M 184 n  649 T  49 k 1 ties 0
+CFI3_n48               N  48 M  97 n  345 T  24 k 1 ties 0
+RINT_n48               N  48 M  97 n  345 T  24 k 1 ties 0
+k1fail_202             N  15 M  45 n  156 T   4 k 1 ties 0
+naive_k1_s71           N   9 M  18 n   69 T   3 k 1 ties 0
+ST4_k1                 N   9 M   9 n   42 T   0 k 1 ties 0
+ST8_k1                 N  17 M  17 n   74 T   0 k 1 ties 0
+MUST-0:  k1 0  k2 0  k3a 0  k3c 0  k3d 0  k3e 0  k4 0  k5 0  l1 0  l2 0  l3 0  l3v 0  l4 0  l5 0  c4 0  w1 0  w2 0  w3 0  w3v 0  w4 0  w5 0  w_stall 0  w_beta 0  w_len 0  w_quiet 0  rh 0  p1 0  p2 0  p3 0  p4 0  p5v 0  p5h 0  p6 0  p7 0  p7s 0  tb 0
+RECORDS: genomes 25  states 1036  maxT 114  k=0 0  k=1 25  k=2 0  k=>2 0  maxPhi 114  stalls 31  stallloud 0  plateaus 32  maxplat 9  maxplat_pct_movers 18  intervals 556  maxwinlen 91  c_k4 249543  c_k5 5005  ch1 282  ch2 783  ch3 783  ch3v 0  ch4 832  ch5 783  c_S 31  c_Y 602
+exit 0

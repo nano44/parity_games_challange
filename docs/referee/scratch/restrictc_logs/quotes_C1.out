@@ -1,0 +1,11 @@
+OK   R118(body)               «Ω_t(z_0) ⊵ val(π) along a simple path π of the fixed-σ̄ graph to a fixed cycle node, once t − a ≥ μ(π) (Bellman-Ford induction).»
+OK   R118(body)               «If Λ and σ̄ are constant on the states a, a+1, …, a+j+1 and the step a+j → a+j+1 changes σ, then j ≤ N − 1. Hence every maximal run of consecutive …»
+OK   R118(body)               «H0: every step t → t+1 switches some Even x with Λ_t(x) ≠ x and Λ_(t+1)(x) ≠ x.»
+OK   R118(body)               «(a) every maximal run of p-steps has at most n_E steps;»
+OK   R118(body)               «(b) C ≤ n(n − 1);»
+OK   R118(body)               «(c) T ≤ C + R + (C + R + 1)·n_E.»
+OK   R118(body)               «T3 ≤ C + R + (C + R + 1)·N, with C ≤ n3·(2M + 2) and n3 = N + 7M + 10;»
+OK   R118(body)               «N5′-xi's FL run on Γ3(G) is polynomial in N + M for every genome»
+OK   R118(body)               «R is polynomial along these Howard runs»
+OK   R118(title)              «σ̄(K2) = r proved for every genome»
+quotes 10, missing 0

@@ -1,0 +1,5 @@
+sha1 52067442125b7ca7aa2a4a0e3f2e4fb900dc82f8
+mover 20 lev 0 options [W-target, Xi-target, id]: [[-1, -1, 25]]
+T3 17 |V_R| 17 movers in V_R [20]
+Lambda and the whole strategy (sigma and sbar) constant on V_R over states 0..T3: True
+so the maximal run of states >= t0 = 0 with sbar and Lambda constant on V_R has 17 steps; N' = |Reach(C)| = 1

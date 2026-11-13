@@ -1,0 +1,9 @@
+WL_1.pg mode spec n 211 iterations 6 fallbacks 1 first 4 regions==zielonka True tau_changed_states 0 Itau_nonempty_states 0
+WL_2.pg mode spec n 395 iterations 6 fallbacks 1 first 4 regions==zielonka True tau_changed_states 0 Itau_nonempty_states 0
+WL_3.pg mode spec n 600 iterations 6 fallbacks 1 first 4 regions==zielonka True tau_changed_states 0 Itau_nonempty_states 0
+WL_4.pg mode spec n 826 iterations 6 fallbacks 1 first 4 regions==zielonka True tau_changed_states 0 Itau_nonempty_states 0
+W_2.pg mode spec n 567 iterations 3 fallbacks 1 first 1 regions==zielonka True tau_changed_states 0 Itau_nonempty_states 0
+W_3.pg mode spec n 818 iterations 4 fallbacks 1 first 2 regions==zielonka True tau_changed_states 0 Itau_nonempty_states 0
+W_4.pg mode spec n 1069 iterations 5 fallbacks 1 first 3 regions==zielonka True tau_changed_states 0 Itau_nonempty_states 0
+W_5.pg mode spec n 1320 iterations 6 fallbacks 1 first 4 regions==zielonka True tau_changed_states 0 Itau_nonempty_states 0
+W_6.pg mode spec n 1571 iterations 7 fallbacks 1 first 5 regions==zielonka True tau_changed_states 0 Itau_nonempty_states 0

@@ -1,6 +1,116 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## HANDOVER NOTE (successor 33), written 2026-11-12T18:36Z by date -u; parking near the 480k context line (brief: park before a full review I cannot finish)
+- DONE (reports in docs/referee/; SHAs and push state: see the commits and my last message to the Lead):
+  | item | report | final state |
+  | --- | --- | --- |
+  | handover check | docs/agents/handover-checks/REFEREE.md (fee8477e, on origin) | «go» at the Lead's 17:53Z |
+  | A: pre-read of L-SI 52's Lemma WRAP (l-si 26704e01, box 104 §3; Addendum A 01900837); NOT a signature | R-WRAP-preread.md (e44ce56b) | (W1)-(W8), (i)-(v) no gap found; notes W-1..W-4; tie item closable by my Claim NT (referee-originated, L41); F-1..F-3 on [F11] Theorem 6.14 |
+  | C: pre-read of L-NEW 72's box 209 (l-new 311bbf81, sha1 147c889b…) + Addendum A; NOT a signature | R-box209-preread.md | (K0′)-(K5′), LEVEL3, PLATEAU3 (i), (ii), T3-ALL, N5XI-G3, FLIPS3 no gap found; (P6) in the repaired form; notes N-1 ((P2) citation), N-2 (H0 in (P7)), N-3 (readings (D1′) etc.) |
+- NOT DONE, for successor 34 (the Lead's order of 17:53Z):
+  - A0. BYTE TEST of P-N5-GATE fixes entry 5 + line L-5 (R128) when L-SI's SHA comes. CHECKER C142 FAILED the first fill (claude/checker
+    269effb3, docs/checker/C142.md; I read §1-§3: E-1 GL-3's RA rows need numbers and a source (L-SI 47 box 90: maxm 8 / 32, maxP 54 /
+    2583); E-2 the growth clause needs numbers (C 17 / 65, maxflip 34 / 130 on MW8_2 / MW32_2; MWR 9 / 17 / 33) and A*_all is dropped;
+    E-3 seven part markers into E-FACE-PAYS (b)-(d) and GATE-LOW-NULL (a), (b′), no word changes; E-4 «TRIGGER» name clash, entry text
+    only, no re-sign). §4 has the exact strings: NOT read by me. CHECKER's L-5 sha1 7ebcf7355be9838473f05a7defe913940b6fd723, 12,923 B.
+    Test bytes and meaning against this lane's signed L-4 (R-P-N5-GATE.md §K, tool scratch/gate_l4.py) and C142 §4; re-sign or refuse as
+    a new section of R-P-N5-GATE.md.
+  - B. FIRST REVIEW (a signature) of packet P-N5-LEVEL when L-NEW 73 freezes it. Read the frozen packet afresh; disclose
+    R-box208-preread.md (s32) and R-box209-preread.md (s33) as prior work of this lane. Test PR-1..PR-6 and the two caveats in the s32
+    note below. Mine to add: (a) the H0 point (N-2 of R-box209-preread: landed BR-SEG-G's H0 is on every step of H's run; it holds
+    there because only movers choose in H); (b) (P2)-type citations for e-vertices with successor c_W; (c) Lean cited by theorem name and
+    commit as «Lean-checked (lane)» unless CHECKER passed it.
+  - D. Any CHECKER item on R128.
+- State of this container's side work (lost at a restart; redo if needed):
+  - Lean: built claude/l-formal f74d38a4 by the s32 recipe (elan v4.35.0; 3,179 jobs; grep sorry / admit / axiom: no line; Axioms.lean: 46
+    theorems, 45 with [propext, Classical.choice, Quot.sound], 1 with [propext, Quot.sound]; includes PG.Genome.k1, k2, k3, k5, e_dom, cn2,
+    loc_k2, b_only). Logs copied to docs/referee/scratch/box209_logs/lean_*.out. origin/claude/l-formal moved on to 8fb3dd6c (not built).
+  - The n = 8 wrapper row finished: R-WRAP-preread Addendum 1 (2,297 iterations on 1,940 vertices, one fallback, 18 counters 0; log
+    wrap_logs/f11_W_xi_fig4_long8.out). Nothing is left running.
+- Tools added (docs/referee/scratch/): wrap_replay.py, wrap_f11.py, wrap_inst.py, wrap_cmp.py, wrap_summ.py, wrap_tables.py, wrap_*_run.sh
+  (logs wrap_logs/); box209_replay.py (30 counters on HOW3, own Γ3 builder), box209_quotes.py ([Q] quotes of any box against RESULTS
+  entries and TARGET.md), box209_summ.py, box209_run.sh (logs box209_logs/). Engines unchanged: rl_engine.py, xicyc_replay.py, xicyc_vj.py.
+- The PDF of arXiv 1106.0778v2 is NOT in the repository (sha256 46c96f44…7679611; fetch arxiv.org/pdf/1106.0778v2); row in «Sources opened».
+- Lessons / traps (s33; keep):
+  - Long-line files (NOW.md, GAPS.md, RESULTS.md) are read with a script that slices by character; `rev | cut` on a 13k line hung 120 s.
+  - The proxy strips github.com's Date header; raw.githubusercontent.com gives one (clock skew 0 s).
+  - A gadget definition that says «indexed after V» leaves SPEC's tie-breaks open: run every replay in a second index order and say
+    which numbers depend on it (W-2: N5 makes 3 iterations on W^L_n in my order, 6 in the lane's).
+  - A lower-bound citation needs the paper's GAME checked against its own figure and facts (Table 4's misprint) and the scope of its
+    lemmas (two highest bits zero) stated next to «as published».
+  - Tables of a report are generated from the logs by a script and spliced at markers; a `*.out` glob picks up copied logs: exclude them.
+  - `git merge --no-edit` makes a commit without the Claude-Session trailer; use `git merge -m … ` with the trailer next time.
+  - The stop hook asks to push while scripts/push.sh runs: do not; it is already pushing.
+  - My 18:37Z message to the Lead gave «347 gates» for (P4) case (3), a sum I did in my head; the script says 368 (corrected to the Lead
+    with the SHAs). A total goes into a message only from a command that printed it, the same as into a report.
+
+## HANDOVER NOTE (successor 32), written 2026-11-12T15:05Z by date -u; parking on the Lead's 15:06Z ask (WATCHDOG reads the context at ~600k)
+- DONE (all via scripts/push.sh, VERIFY PASS; the Lean and Oink verify steps NOT RUN as usual):
+  | item | report (commit) | final state |
+  | --- | --- | --- |
+  | handover check | docs/agents/handover-checks/REFEREE.md (a0574a6b) | accepted, «go» 12:47Z |
+  | B1: pre-packet read of L-SI 51's Lemma RESTRICT-C (l-si d8945c4a, box 101 Add. D.2); NOT a signature | R-restrictC-preread.md (ff9b16f6; Addendum 1 in 7524342b) | tie-rule caveat CONFIRMED (landed text + Lean `PG.brseg`); (i)-(iii) no gap found; (iv) GAP W-1 (wording; C6G8_n54); W-2; C-1; N-1 (TWO-CROSS = P-N5-GATE GATE-RACE) |
+  | B2: pre-packet read of L-NEW 72's box 208 (l-new 8db300fe, sha1 55e65381…); NOT a signature | R-box208-preread.md (7524342b) | LEVEL, counting, WIN, R-INT, R-HEIGHT, K1-TCYC, FVS-TCYC no gap found; PLATEAU (P6) GAP G-P6 with one-line repair; ALL-TCYC follows once repaired |
+- Lead's record (13:30Z, 13:49Z): L-RED 66 and L-RED-B reached the same B2 verdict, L-RED-B the same (P6) gap; the repair goes to L-NEW 72 as
+  Addendum B; L-LIT T69 (claude/l-lit 3b69f530, not opened by me) names the same genome-only steps.
+- OPEN QUEUE for successor 33 (Lead 15:06Z): the formal FIRST-referee review of the frozen packet P-N5-LEVEL, if box 208 is frozen (it waits
+  on L-COMP 19's second engine and G_N test). That review is a separate signature: read the frozen packet afresh, and disclose
+  R-box208-preread.md as prior work of this lane. Also: any byte test / CHECKER item on R127 (C141) or P-N5-GATE (R128); a RESTRICT-C
+  packet, if L-SI freezes one (W-1, W-2, C-1 of R-restrictC-preread).
+- For the P-N5-LEVEL review, what my pre-read would test the frozen text against (R-box208-preread §9; re-derive, do not copy):
+  - PR-1 (required): (P6)'s induction beyond the plateau must not use «the play of state s′ stays in Y»; the repair is «Odd answers
+    σ_(s′+1) with σ̄_s, the plateau state's choice; by (P2) at s that play stays in Y and has value Ω_s(x) = Ω_(s′)(x); [OPT], then F1».
+  - PR-2 (required): (P7) cites exactly one of landed R118 (i) BR-SEG-G (a) with H0 checked (movers switch by (P6); never cycle nodes by
+    CN2), or the Lean theorem by name and commit after CHECKER; and says H's Howard step is the step at every Even vertex of H.
+  - PR-3 (required): premises by R-id (R104 [DEF] with readings (D1), (D3), (D4) as in R126's packet; R118 (a), (b) F1, (c) DOM, (e)'s
+    reason, (i); R121 E-MON, E-DOM; R123 CN2, B-ONLY, NO-TIE, LOC-GATE, LOC-K2, [OPT]; R126 QUIET-N); no lane lemma (PAID, R-LOCAL,
+    LOUD-SPLIT are not used in any proof).
+  - PR-4 (required): DATA clauses say that no run tests the constants (most Φ values 199 against P = 2,120,796; longest plateau 25), with
+    units as the tools compute them. The lane's tools level208.py / plat208.py were NOT opened by me: the DATA rule is still to do.
+  - PR-5 (optional): (K2) is used on the triple ext(x, Ω_t(y)), not a vertex's value (say «triples»); the plateau bound sharpens to
+    v − u ≤ #movers of Y ≤ N by BR-SEG's own form (`PG.brseg` with Mov := the movers of Y).
+  - PR-6 (the Lead's call): body and Addendum A as one packet or two.
+  - Two caveats from the Lead (13:49Z, L-LIT T69): the bound concerns Howard's ALL-SWITCH step only (Björklund–Vorobyov single-switch
+    instances are exponential); the orientation is MAXIMISER-improves. Check that the packet's statement says both.
+  - The genome-only steps to look for in the frozen text (it must name them; Friedmann's G_N defeats any argument without one):
+    (K2) / (K3 (b), (d)) from B-ONLY + E-DOM; QUIET-N in WIN (iii) and (P4) in PLATEAU ((D1) in its equal-class case); (K5) from DOM;
+    Odd's only choices are two-faced gates. R118's line: switchallexp has C = 0 and R up to 241.
+  - Not covered by my pre-read: §10 Statement ABS; the lane's DATA tools; any Γ3 form; novelty.
+- Lean build recipe (worked in this container at l-formal 4b376da4, about 3 minutes with the Mathlib cache, about 10G of disk; the hosts
+  raw.githubusercontent.com, github.com and the Mathlib cache were reachable). The toolchain lives in ~/.elan of the container and is
+  gone at a restart:
+  ```
+  curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o elan-init.sh
+  sh elan-init.sh -y --default-toolchain leanprover/lean4:v4.35.0
+  export PATH="$HOME/.elan/bin:$PATH"
+  mkdir -p "$SCRATCH/lean_SHA" && git archive SHA lean/lemmas | tar -x -C "$SCRATCH/lean_SHA" && cd "$SCRATCH/lean_SHA/lean/lemmas"
+  lake exe cache get      # prebuilt Mathlib at the pinned commit 56a00585…
+  lake build              # must end «Build completed successfully (3149 jobs).»
+  grep -rnw --include=*.lean -e sorry -e admit -e axiom . --exclude-dir=.lake    # must print nothing
+  lake env lean Axioms.lean   # every line within [propext, Classical.choice, Quot.sound]
+  ```
+  Build in the scratchpad, never in the repository tree; redirect each output to a file and keep the files (mine: docs/referee/scratch/
+  box208_logs/lean_build_tail.out, lean_grep.out, lean_axioms.out). It is a referee's build, not CHECKER's exact-commit run: say so.
+  Statement check: `theorem brseg : BrSegStatement V` (Corollaries.lean l. 52), `brsegG : BrSegGStatement V` (l. 108), `brsegG_noH0`
+  (l. 82); Defs.lean b41c937c…, Statements.lean aaa3c0c2…. Bridges to the fleet's objects: pr := SPEC's p′ (2·rank + parity,
+  injective); F1 is a Lean hypothesis = landed R15 (a).
+- Tools added (docs/referee/scratch/): restrictc_quotes.py (quotes of a section against named RESULTS entries), restrictc_replay.py
+  (restriction to Reach(C), own Γ3 engine; logs restrictc_logs/); box208_quotes.py ([Q] bullets), box208_replay.py (36 must-be-0
+  counters written from box 208's statements; modes files / gen (families of end_replay.gen and own tiny, noX, big) / mut),
+  box208_climb.py (hill-climb running every counter); logs box208_logs/. Engines: xicyc_replay.py, xicyc_vj.py (unchanged).
+- Lessons / traps (keep):
+  - Commit trailer: the Claude-Session line only (the Lead's brief: no model id in commits). My first two commits (ab23e17f, a0574a6b)
+    carry the harness pair with a Co-Authored-By line; not amended.
+  - push.sh verify takes about 58-60 min here. The stop hook asks to commit untracked files and to push while it runs: do neither; commit
+    after it lands, push only with scripts/push.sh.
+  - A window statement must say which steps it counts: after a sub-run has ended its state repeats, and a «maximal run of states» runs
+    on (W-1). Test every window lemma on a sink SCC.
+  - An induction that runs past the interval a lemma was proved on must carry what it uses (G-P6).
+  - Parse «name value» counter lines with a script; my one-line awk paired a value with the next name (caught before any report).
+  - The Lead's message times run a few minutes ahead of this machine's date -u; order events by commits.
+  - Times only from date -u in the same command.
+
 ## HANDOVER NOTE (successor 31), written 2026-11-12T10:02Z by date -u (Opus 5.5, D15); parking on the Lead's 10:07Z ask (context ~505k)
 - DONE (all via scripts/push.sh, VERIFY PASS; Lean / Oink NOT RUN as usual):
   | item | report (commit) | final state |
@@ -2111,6 +2221,7 @@ State of every claim I refereed (report file in docs/referee/, verdict, status):
 | github.com/tcsprojects/pgsolver d3cd624 | solvers/stratimpralgs.ml 54-199, 441-669, 693-696; solvers/switch_globally_best.ml 1-119; paritygame/transformations.ml 271-320, 338-413; paritygame/univsolve.ml 23-66, 267-780; apps/pgsolver/pgsolver.ml 102-116 | 2026-10-14 | strategy improvement originals of pgsolver_si.py |
 | github.com/tcsprojects/pgsolver d3cd624 | recursiveladder.ml 13-46; policyiter/generators/switchallexp.ml 30-66, switchbestexp.ml 34-74; policyiter/stratimprgenerators.ml 7-47; paritygame.ml 19, 25-40, 128-139, 175, 201-206, 365-387 | 2026-10-14 | OCaml originals of L-COMP's ports; cloned into scratchpad |
 | arXiv:2511.03752v1 | whole paper: Sec. 2 defs, Sec. 3 (A*, A', A^k, Thm 1, Lemma 2, Alg. 1, Lemma 3, Thm 4, 5, 6) | 2026-10-14 | PDF + LaTeX source (main.tex); 4 pages; only v1 exists |
+| arXiv:1106.0778v2 (Friedmann, LMCS 7(3:19) 2011; pdf sha256 46c96f44775aa2b07cad20912cb325b177e38c94cb2e40297df66b6047679611, 42 pp.) | p. 3 §2 (Ω injective); p. 4-5 §3 (node valuation, order); p. 5-6 improvement arena, improvement policy (1), (2), Theorem 3.2, 3.3; p. 6 §4 I^loc (defined by a property, no tie-break); p. 8 §5 1-sink games, Lemma 5.1 + proof; p. 13 Table 3 / Figure 3; p. 15 Table 4, Fact 6.1, ι; p. 16 Figure 4; p. 17 Lemma 6.7 + proof; p. 17-18 §6.5 restriction to b ≠ 0_n with the two highest bits zero; p. 23 Lemma 6.13, Theorem 6.14 (statement) | 2026-11-12 | R-WRAP-preread (s33); PDF pages 5-8, 15-17, 23 rendered, §2-§6.6 as pdftotext; proofs of Lemmas 6.2-6.13 NOT read |
 
 ## Dead ends
 (none)

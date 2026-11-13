@@ -1,0 +1,25 @@
+2d0344d3 box90/out/mw90.out own MW8_2.json C=17 maxm=8
+2d0344d3 box90/out/mw90.out own MW32_2.json C=65 maxm=32
+2d0344d3 box90/out/mw90.out g3 MW8_2.json C=17 maxm=8
+2d0344d3 box90/out/mw90.out g3 MW32_2.json C=65 maxm=32
+4ded1e8d box90/out/fw90.out own FW8_2.json C=3 maxP=54 depth=8
+4ded1e8d box90/out/fw90.out own FW16_2.json C=3 maxP=2583 depth=16
+4ded1e8d box90/out/fw90.out g3 FW8_2.json C=3 maxP=54 depth=8
+4ded1e8d box90/out/fw90.out g3 FW16_2.json C=3 maxP=2583 depth=16
+2051a0ee box91/out/own91.out own MW8_2.json C=17 maxflip=34 maxa=9
+2051a0ee box91/out/own91.out own MW32_2.json C=65 maxflip=130 maxa=33
+2051a0ee box91/out/g391.out g3 MW8_2.json C=17 maxflip=34 maxa=9
+2051a0ee box91/out/g391.out g3 MW32_2.json C=65 maxflip=130 maxa=33
+2051a0ee box93/out/mwr93_own.out own MWR4_2.json mx_flips=9 mx_ch_D=4 mx_ch_pe=4 mx_ch_pb=9 mx_lam_pe=0 mx_lam_pb=0 dfail=0
+2051a0ee box93/out/mwr93_own.out own MWR8_2.json mx_flips=17 mx_ch_D=8 mx_ch_pe=8 mx_ch_pb=17 mx_lam_pe=0 mx_lam_pb=0 dfail=0
+2051a0ee box93/out/mwr93_own.out own MWR16_2.json mx_flips=33 mx_ch_D=16 mx_ch_pe=16 mx_ch_pb=33 mx_lam_pe=0 mx_lam_pb=0 dfail=0
+2051a0ee box93/out/mwr93_g3.out g3 MWR4_2.json mx_flips=9 mx_ch_D=4 mx_ch_pe=4 mx_ch_pb=9 mx_lam_pe=0 mx_lam_pb=0 dfail=0
+2051a0ee box93/out/mwr93_g3.out g3 MWR8_2.json mx_flips=17 mx_ch_D=8 mx_ch_pe=8 mx_ch_pb=17 mx_lam_pe=0 mx_lam_pb=0 dfail=0
+2051a0ee box93/out/mwr93_g3.out g3 MWR16_2.json mx_flips=33 mx_ch_D=16 mx_ch_pe=16 mx_ch_pb=33 mx_lam_pe=0 mx_lam_pb=0 dfail=0
+unchanged to 2051a0ee box90/out/mw90.out True
+unchanged to 2051a0ee box90/out/fw90.out True
+unchanged to 2051a0ee box91/out/own91.out True
+unchanged to 2051a0ee box91/out/g391.out True
+unchanged to 2051a0ee box93/out/mwr93_own.out True
+unchanged to 2051a0ee box93/out/mwr93_g3.out True
+F_10 - 1 = 54  F_18 - 1 = 2583

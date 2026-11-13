@@ -1,0 +1,14 @@
+| log | genomes | states | max T3 | sum of the 30 must-0 counters | stalls (reference T3) | plateaus checked, three references | longest tail | (P4) case (3) gates | states with (α) / (β), three references | controls |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| files_box202.out | 53 | 1,699 | 199 | 0 | 48 | 33 (longest 13) | 0 | 3 | 3477 / 64 | c_k4 567,683, c_k5 5,858, ch1 612, ch2 3,144, ch3 1,572, ch4 2,870, ch4c 1,245, ch5 1,572, c_Y 264 |
+| files_other.out | 37 | 1,352 | 114 | 0 | 87 | 63 (longest 9) | 4 | 14 | 2397 / 179 | c_k4 306,588, c_k5 5,420, ch1 297, ch2 1,936, ch3 968, ch4 1,697, ch4c 761, ch5 968, c_Y 660, c_l3v 2,397 |
+| gen_acyc.out | 400 | 829 | 4 | 0 | 0 | 0 (longest 0) | 4 | 0 | 0 / 0 | c_k4 8,823, c_k5 0, ch1 0, ch2 0, ch3 0, ch4 0, ch4c 0, ch5 0, c_Y 0 |
+| gen_big.out | 1,500 | 9,221 | 13 | 0 | 324 | 413 (longest 4) | 7 | 9 | 3349 / 11494 | c_k4 334,797, c_k5 24,920, ch1 570, ch2 12,738, ch3 6,369, ch4 2,773, ch4c 1,408, ch5 6,369, c_Y 486 |
+| gen_deep.out | 400 | 1,407 | 8 | 0 | 57 | 80 (longest 3) | 3 | 3 | 875 / 1003 | c_k4 23,365, c_k5 1,303, ch1 67, ch2 1,682, ch3 841, ch4 316, ch4c 157, ch5 841, c_Y 120 |
+| gen_noX.out | 3,000 | 7,416 | 9 | 0 | 166 | 302 (longest 3) | 3 | 4 | 1446 / 6515 | c_k4 79,260, c_k5 3,135, ch1 255, ch2 6,442, ch3 3,221, ch4 985, ch4c 501, ch5 3,221, c_Y 152 |
+| gen_rand.out | 400 | 1,016 | 7 | 0 | 25 | 41 (longest 2) | 3 | 4 | 546 / 557 | c_k4 10,940, c_k5 581, ch1 35, ch2 870, ch3 435, ch4 150, ch4c 78, ch5 435, c_Y 52 |
+| gen_selfl.out | 400 | 1,026 | 8 | 0 | 30 | 50 (longest 3) | 2 | 0 | 608 / 605 | c_k4 10,865, c_k5 710, ch1 55, ch2 934, ch3 467, ch4 152, ch4c 79, ch5 467, c_Y 56 |
+| gen_tiny.out | 20,000 | 34,649 | 5 | 0 | 569 | 1071 (longest 2) | 3 | 0 | 9265 / 10577 | c_k4 145,810, c_k5 6,951, ch1 359, ch2 12,304, ch3 6,152, ch4 1,626, ch4c 846, ch5 6,152, c_Y 1,188 |
+| gen_wide.out | 400 | 1,063 | 7 | 0 | 33 | 60 (longest 2) | 2 | 1 | 619 / 571 | c_k4 12,542, c_k5 671, ch1 51, ch2 748, ch3 374, ch4 171, ch4c 93, ch5 374, c_Y 81 |
+| mut_fixed.out | 1,200 | 29,888 | 33 | 0 | 3125 | 2733 (longest 20) | 26 | 330 | 55629 / 651 | c_k4 2,914,845, c_k5 53,066, ch1 9,180, ch2 47,792, ch3 23,896, ch4 46,447, ch4c 20,884, ch5 23,896, c_Y 50,961 |
+| all | 27,790 | 89,566 | | 0 | | | | | | |
