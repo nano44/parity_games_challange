@@ -1,0 +1,21 @@
+mut4703_DBL4_d20_F30_0 N 40 M 80 eperm 0 T_key 2 (one217 8, n5v 8) T_howard 9 T_seq 9 | mism_k1 1 mism_h1 0 mism_s1 1 mism_kn 1 | ctrl 1
+mut4703_DBL4_d20_F30_1 N 40 M 80 eperm 0 T_key 1 (one217 7, n5v 7) T_howard 9 T_seq 7 | mism_k1 1 mism_h1 0 mism_s1 1 mism_kn 1 | ctrl 1
+mut4703_DBL4_d20_F30_2 N 40 M 80 eperm 0 T_key 2 (one217 12, n5v 12) T_howard 10 T_seq 8 | mism_k1 1 mism_h1 0 mism_s1 1 mism_kn 1 | ctrl 1
+mut4703_DBL4_d20_F30_3 N 40 M 80 eperm 1 T_key 2 (one217 9, n5v 9) T_howard 9 T_seq 7 | mism_k1 1 mism_h1 0 mism_s1 1 mism_kn 1 | ctrl 1
+mut4703_H5_d20_F62_0 N 40 M 80 eperm 0 T_key 3 (one217 16, n5v 16) T_howard 9 T_seq 14 | mism_k1 1 mism_h1 0 mism_s1 1 mism_kn 1 | ctrl 1
+mut4703_H5_d20_F62_1 N 40 M 80 eperm 0 T_key 3 (one217 136, n5v 136) T_howard 9 T_seq 13 | mism_k1 1 mism_h1 0 mism_s1 1 mism_kn 1 | ctrl 1
+mut4703_H5_d20_F62_2 N 40 M 80 eperm 0 T_key 3 (one217 4, n5v 4) T_howard 10 T_seq 13 | mism_k1 1 mism_h1 0 mism_s1 1 mism_kn 1 | ctrl 1
+mut4703_H5_d20_F62_3 N 40 M 80 eperm 1 T_key 3 (one217 2, n5v 2) T_howard 9 T_seq 11 | mism_k1 1 mism_h1 0 mism_s1 1 mism_kn 1 | ctrl 1
+mut4703_H6_d24_F126_0 N 48 M 96 eperm 0 T_key 5 (one217 209, n5v 209) T_howard 12 T_seq 19 | mism_k1 1 mism_h1 0 mism_s1 1 mism_kn 1 | ctrl 1
+mut4703_H6_d24_F126_1 N 48 M 96 eperm 0 T_key 5 (one217 209, n5v 209) T_howard 12 T_seq 19 | mism_k1 1 mism_h1 0 mism_s1 1 mism_kn 1 | ctrl 1
+mut4703_H6_d24_F126_2 N 48 M 96 eperm 0 T_key 5 (one217 209, n5v 209) T_howard 12 T_seq 19 | mism_k1 1 mism_h1 0 mism_s1 1 mism_kn 1 | ctrl 1
+mut4703_H6_d24_F126_3 N 48 M 96 eperm 1 T_key 5 (one217 156, n5v 156) T_howard 12 T_seq 19 | mism_k1 1 mism_h1 0 mism_s1 1 mism_kn 1 | ctrl 1
+mut4703_HIT7_d28_F254_0 N 56 M 112 eperm 0 T_key 3 (one217 299, n5v 299) T_howard 8 T_seq 15 | mism_k1 1 mism_h1 0 mism_s1 1 mism_kn 1 | ctrl 1
+mut4703_HIT7_d28_F254_1 N 56 M 112 eperm 0 T_key 3 (one217 299, n5v 299) T_howard 8 T_seq 17 | mism_k1 1 mism_h1 0 mism_s1 1 mism_kn 1 | ctrl 1
+mut4703_HIT7_d28_F254_2 N 56 M 112 eperm 0 T_key 3 (one217 13, n5v 13) T_howard 10 T_seq 17 | mism_k1 1 mism_h1 0 mism_s1 1 mism_kn 1 | ctrl 1
+mut4703_HIT7_d28_F254_3 N 56 M 112 eperm 1 T_key 3 (one217 22, n5v 22) T_howard 8 T_seq 17 | mism_k1 1 mism_h1 0 mism_s1 1 mism_kn 1 | ctrl 1
+mut4703_RECF4_d20_F60_0 N 40 M 80 eperm 0 T_key 3 (one217 8, n5v 8) T_howard 9 T_seq 19 | mism_k1 1 mism_h1 0 mism_s1 1 mism_kn 1 | ctrl 1
+mut4703_RECF4_d20_F60_1 N 40 M 80 eperm 0 T_key 2 (one217 10, n5v 10) T_howard 9 T_seq 19 | mism_k1 1 mism_h1 0 mism_s1 1 mism_kn 1 | ctrl 1
+mut4703_RECF4_d20_F60_2 N 40 M 80 eperm 0 T_key 2 (one217 3, n5v 3) T_howard 9 T_seq 15 | mism_k1 1 mism_h1 0 mism_s1 1 mism_kn 1 | ctrl 1
+mut4703_RECF4_d20_F60_3 N 40 M 80 eperm 1 T_key 2 (one217 2, n5v 2) T_howard 9 T_seq 13 | mism_k1 1 mism_h1 0 mism_s1 1 mism_kn 1 | ctrl 1
+TOTAL genomes 20 maxT 5 mism_h1 0 mism_k1 20 mism_kn 20 mism_s1 20 ctrl 1

@@ -1,0 +1,6 @@
+DBL4_d20_F30.json N 40 M 80 eperm 0 T_key 2 (one217 30, n5v 30) T_howard 9 T_seq 8 | mism_k1 1 mism_h1 0 mism_s1 1 mism_kn 1 | ctrl 1
+H5_d20_F62.json N 40 M 80 eperm 0 T_key 3 (one217 136, n5v 136) T_howard 9 T_seq 13 | mism_k1 1 mism_h1 0 mism_s1 1 mism_kn 1 | ctrl 1
+H6_d24_F126.json N 48 M 96 eperm 0 T_key 5 (one217 209, n5v 209) T_howard 12 T_seq 19 | mism_k1 1 mism_h1 0 mism_s1 1 mism_kn 1 | ctrl 1
+HIT7_d28_F254.json N 56 M 112 eperm 0 T_key 3 (one217 299, n5v 299) T_howard 8 T_seq 17 | mism_k1 1 mism_h1 0 mism_s1 1 mism_kn 1 | ctrl 1
+RECF4_d20_F60.json N 40 M 80 eperm 0 T_key 2 (one217 67, n5v 67) T_howard 9 T_seq 15 | mism_k1 1 mism_h1 0 mism_s1 1 mism_kn 1 | ctrl 1
+TOTAL genomes 5 maxT 5 mism_h1 0 mism_k1 5 mism_kn 5 mism_s1 5 ctrl 1
