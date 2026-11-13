@@ -15,7 +15,7 @@ for x in sorted(range(N), key=lambda x: lev[x]):
     K[x] = len(opts[x]) if lev[x] == 0 else sum(K[o[0]] for o in opts[x])
 full = [x for x in range(N) if sw[x] == K[x] - 1]
 kG = max([lev[x] + 1 for x in full], default=0)
-out = f"REP {os.path.basename(a[0])} N {N} M {M} N+M {N + M} d {max(lev) + 1} T_key {T} k(G) {kG} sw/|K|-1 by level " + \
+out = f"REP {os.path.basename(a[0])} N {N} M {M} N+M {N + M} d {max(lev) + 1} T_key {T} k(G) {kG} max_sw {max(sw)} (degree 2) sw/|K|-1 by level " + \
       ' '.join(f"L{l}:{max(sw[x] for x in range(N) if lev[x] == l)}/{max(K[x] for x in range(N) if lev[x] == l) - 1}" for l in range(max(lev) + 1))
 if len(a) > 1:
     enc = [tuple(int(c) for c in l.strip()) for l in open(a[1]) if l.strip()]

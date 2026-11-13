@@ -51,6 +51,12 @@
   gt = sign of the max-rank beta of the symmetric difference. val19 bad 0 (90 genomes); LEN W 2,2 L 5 UNSAT 3.1 s (was 55 s).
 - DRUP: enc19 2,2 5 len VERIFIED (cnf eaac86cf, 14,110 clauses, 109,408 lemmas). T(4) = 4 on all 8 profiles of N 4 (tlad19.py; each L 5
   solver UNSAT < 4 s; each max decode replayed = one217). Running (ro): R_K3 W 2,2,2,2,2 L 16 and W 2,2,2,2 L 10 (cap 3,000; $SP/l19/batch.log).
+- Lead 12:13Z: (b) bi-ladder check, (a) upward ladders k 3 at d 5, 6, k 4 at d 7, 8 (+/- BRANK). Lead 12:08Z (REFEREE-2 41): say «degree 2»,
+  print max_sw and T with every ENUM SAT. enc19 env LADDER / XUP=one|strict / BRANK=lev added; rep19 prints max_sw.
+- (b) DONE 12:11Z: bi-ladder d 4 (LADDER=1 XUP=one, W 2,2,2,2): L 7 SAT 11.4 s ($SP/l19/bi4_L7.json; one217 key 7, n5 7 mism 0, class re-checked);
+  L 8 UNSAT 71 s, L 9 UNSAT 79 s (solver) → T_max 7 in that class at d 4 (L-SI said 6). Sent to the Lead with the genome.
+- (a) RUNNING 12:14Z: $SP/l19/cbatch.sh c1.txt (U3d5, U3d6, U3d5b, U3d6b, U4d7b, U4d8b; cap 3,000 each; log $SP/l19/cbatch.log; resumable).
+  General k 3 N 8 / 9 batch stopped (slot); R_K3 W 2,2,2,2,2 L 16 still running.
 
 ## Successor 15 HANDOVER (-> successor 16; written 2026-11-12 22:0xZ, date -u; context ~430k)
 ### DONE (claude/l-lower; products docs/lower/L17-around.md (closed §3), docs/lower/L18-horizon.md (open); tools l17/, l18/)

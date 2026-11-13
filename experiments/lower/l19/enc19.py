@@ -85,11 +85,31 @@ def build(W, L, mode, K=None, fixg=None):
             for j in range(1, N):
                 E.add([-H[x][j]] + [E.AND(v, H[y][j - 1]) for k in (0, 1) for y, v in XT[(x, k)][1].items()])
     TO = H
+    # class restrictions (Lead 12:13Z, L-SI 55's classes): env LADDER=1: the two options of every mover above level 0 have different
+    # W-targets; env XUP=one: both Xi-targets exactly one level up, the top level to the exit; XUP=strict: Xi-targets on a strictly
+    # higher level or the exit (top level: exit); env BRANK=lev: beta ranks increase with the level (applied with the rank order below).
+    CL = dict(LADDER=os.environ.get('LADDER', '0') == '1', XUP=os.environ.get('XUP', ''), BRANK=os.environ.get('BRANK', ''))
+    for x in range(N):
+        if CL['LADDER'] and lev[x] > 0:
+            for y in WT[(x, 0)]: E.add([-WT[(x, 0)][y], -WT[(x, 1)][y]])
+        for k in (0, 1):
+            ex, vs = XT[(x, k)]; top = lev[x] == len(W) - 1
+            if CL['XUP'] == 'one':
+                for y, v in vs.items():
+                    if lev[y] != lev[x] + 1: E.add([-v])
+                if not top: E.add([-ex])
+            elif CL['XUP'] == 'strict':
+                for y, v in vs.items():
+                    if lev[y] <= lev[x]: E.add([-v])
     if VALRO:   # RO[(a, b)] = «rank(beta a) < rank(beta b)» (strict total order), SG[b] = beta b has an even priority (+)
         P = {}
         for a in range(M):
             for b in range(a + 1, M): v = E.new(); P[(a, b)] = v; P[(b, a)] = -v
         for a, b, c in itertools.permutations(range(M), 3): E.add([-P[(a, b)], -P[(b, c)], P[(a, c)]])
+        if CL['BRANK'] == 'lev':
+            for a in range(M):
+                for b in range(M):
+                    if lev[a // 2] < lev[b // 2]: E.add([P[(a, b)]])
     else:
         P = [[E.new() for r in range(M)] for o in range(M)]
         for o in range(M): E.onehot(P[o])
@@ -170,7 +190,7 @@ def build(W, L, mode, K=None, fixg=None):
                         v = E.OR(*terms)
                     KO[(y1, y2)] = v; KO[(y2, y1)] = -v
         S.append(ns)
-    info = dict(N=N, M=M, d=len(W), L=L)
+    info = dict(N=N, M=M, d=len(W), L=L, cls={k: v for k, v in CL.items() if v})
     if mode == 'enum':
         X = bylev[K - 1][0]; diffs = [E.XOR(S[t][X], S[t + 1][X]) for t in range(L)]
         need = 2 ** K - 1
