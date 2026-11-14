@@ -6,6 +6,8 @@ Subcommands (one line per k; `ctrl` rows are firing controls):
               br = the rank of (Ξ-depth key, β-id) WITHOUT the rule's local δ, in its four readings (a smaller or a larger depth
               outranks; ties by increasing or decreasing β-id; a wire counts as depth 2k + 5 as in the rule), against rule R
               (rank of the triple (−depth, local δ, β-id), fixes entry 5.1): membership in IDEAL-ACYC and the IDEAL run.
+  gloss2 k..  the corrected gloss of line L-5 (depth-major, inside a depth the rule's local δ, the remaining ties by β-id) in
+              every reading its words leave open (the direction of the β-id tie-break; the place of the wires): all give G_k's run.
   r3 k.. [--ctrl 1]   fixes entry 7.1 (F-1): clause (R3) of LEMMA′ with the range t − 1 ≤ τ < last at every response window of
               the recursion with j ≥ 2 (r3in, r3move, r3rest must 0); literal = windows where the clause WITHOUT a lower end is
               false (s_τ(E(j)) ≠ a for some τ < t − 1): expected 2^(k−1) − k. Control 1: the range one step too long.
@@ -49,6 +51,41 @@ def cmd_gloss(args):
             out.append(f"{name} L {len(S) - 1}")
         print(f"gloss k {k} rule_R_is_the_rank_of_the_triple {ruleok} L {len(S0) - 1} Lform {int(len(S0) - 1 != 2 ** k - 2)} | the gloss as written, br = rank of "
               f"(depth, β-id) without the local δ: " + "; ".join(out) + f" | member_viol (all four) {viol} runs equal to rule R's {eq} of 4", flush=True)
+
+
+def cmd_gloss2(args):
+    """The corrected gloss (line L-5): «β-ranks depth-major (a smaller Ξ-depth outranks a larger one), inside a Ξ-depth by the rule's
+    local δ, the remaining ties (wire options only) by β-id». What the words leave open is the direction of the β-id tie-break and
+    the place of the wires (the rule: «a wire counting as depth 2k + 5»; read from the Ξ-graph alone a wire, whose Ξ-target is X,
+    would stand at depth 0, the lane's variant wire0). Every reading must give G_k's run."""
+    for k in map(int, args):
+        G, meta = gkx.rule(k)
+        rows, N = meta["rows"], G["N"]
+        S0, w0 = gkx.run(G)
+        variants = {}
+        for wname, wd in (("wires_last_as_in_the_rule", 2 * k + 5), ("wires_first", -1), ("wires_in_the_middle", k + 0.5),
+                          ("wires_at_depth_0_their_target_being_X", 0)):
+            for bname, sg in (("bid_up", 1), ("bid_down", -1)):
+                key = {}
+                for i, (n, lev, W, X, st, eps, dep, dl) in enumerate(rows):
+                    d = dep if dep is not None else wd
+                    for o in range(2):
+                        b = 2 * i + o
+                        key[b] = (-d, dl[o], sg * b)
+                variants[f"{wname},{bname}"] = key
+        same = eq = viol = 0
+        for name, key in variants.items():
+            H = dict(G)
+            br = [0] * (2 * N)
+            for r, b in enumerate(sorted(key, key=lambda b: key[b])):
+                br[b] = r
+            H["br"] = br
+            same += int(br == G["br"])
+            viol += sum(gkx.member(H))
+            S, w = gkx.run(H)
+            eq += int(S == S0 and w == w0)
+        print(f"gloss2 k {k} readings {len(variants)} genome_equal_to_G_k {same} member_viol {viol} run_equal_to_G_k {eq} L {len(S0) - 1} "
+              f"Lform {int(len(S0) - 1 != 2 ** k - 2)}", flush=True)
 
 
 def cmd_r3(args):
@@ -101,4 +138,4 @@ def cmd_xt(args):
 
 
 if __name__ == "__main__":
-    {"gloss": cmd_gloss, "r3": cmd_r3, "xt": cmd_xt}[sys.argv[1]](sys.argv[2:])
+    {"gloss": cmd_gloss, "gloss2": cmd_gloss2, "r3": cmd_r3, "xt": cmd_xt}[sys.argv[1]](sys.argv[2:])

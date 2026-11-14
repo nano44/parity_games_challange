@@ -23,8 +23,9 @@ def span(ks):
 def blocks(D):
     B = {}
     for name, f in (("E7QUOTES", "s37_e7_quotes.out"), ("E7PINS", "s37_e7_pins.out"), ("E7FACTS", "s37_e7_facts.out"), ("LINEDATA", "s37_linedata.out"),
-                    ("LINE3", "s37_line_L3.out"), ("LINE4", "s37_line_L4.out"), ("E9QUOTES", "s37_e9_quotes.out"), ("E9PINS", "s37_e9_pins.out"),
-                    ("LINEDATA4", "s37_linedata_L4.out")):
+                    ("LINE3", "s37_line_L3.out"), ("LINE6", "s37_line_L6.out"), ("E9QUOTES", "s37_e9_quotes.out"), ("E9PINS", "s37_e9_pins.out"),
+                    ("E9FACTS", "s37_e9_facts.out"), ("LINECHAIN", "s37_linechain.out"), ("LINEDATA6", "s37_linedata_L6.out"),
+                    ("TERMXI", "s37_termxi.out")):
         ls = rd(D, f)
         if ls is not None:
             B[name] = ls
@@ -44,6 +45,13 @@ def blocks(D):
                        "gloss, the line's words as written (br = the rank of (Ξ-depth, β-id), no local δ; a wire at depth 2k + 5 as in the rule), L for every k: " +
                        "; ".join(f"{n.replace('_', ' ').replace(',', ', ').replace('bid up', 'ties by increasing β-id').replace('bid down', 'ties by decreasing β-id')}: L {' or '.join(sorted(v))}" for n, v in per.items()) +
                        f"; member_viol sum {viol} (each variant is in IDEAL-ACYC); runs equal to rule R's: {eq} of {4 * len(ks)}"]
+    g2 = rd(D, "s37_gloss2.out")
+    if g2 is not None:
+        rows = [kv(l) for l in g2]
+        B["GLOSS2"] = [f"gloss2 (the corrected wording, every reading its words leave open: ties by increasing or decreasing β-id; the wires last as in the rule, first, "
+                       f"in the middle, or at depth 0): k {span(x['k'] for x in rows)}; readings per k {'/'.join(sorted(set(x['readings'] for x in rows)))}; member_viol "
+                       f"{sum(int(x['member_viol']) for x in rows)}; runs equal to G_k's {sum(int(x['run_equal_to_G_k']) for x in rows)} of "
+                       f"{sum(int(x['readings']) for x in rows)}; Lform {sum(int(x['Lform']) for x in rows)}"]
     r = rd(D, "s37_r3.out")
     if r is not None:
         rows = [kv(l) for l in r]

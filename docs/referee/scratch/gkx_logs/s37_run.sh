@@ -45,4 +45,15 @@ st s37_e7_pins && $Q6 pins > "$HERE/s37_e7_pins.tmp" && mv "$HERE/s37_e7_pins.tm
 st s37_e7_facts && $Q6 facts > "$HERE/s37_e7_facts.tmp" && mv "$HERE/s37_e7_facts.tmp" "$HERE/s37_e7_facts.out"
 st s37_linedata && $Q6 linedata > "$HERE/s37_linedata.tmp" && mv "$HERE/s37_linedata.tmp" "$HERE/s37_linedata.out"
 st s37_line_L3 && $Q6 line L3 > "$HERE/s37_line_L3.tmp" && mv "$HERE/s37_line_L3.tmp" "$HERE/s37_line_L3.out"
+# ---- stage 5b part (ii) (section 15): lines L-4, L-5, L-6 and fixes entries 9, 10, 11 at claude/l-red-b 91d30d95
+C7=91d30d95a
+O7="--commit $C7 --from 1181 --labels REF1E=9ec40ff968ddc4a1c7f41a95d20aa6db6dbe40c3:docs/referee/R-P-N5-EXP.md,R104=5d7aab0f:docs/RESULTS.md --chain 35f14318a:1271,abde91635:1368,91d30d95a:1443 --pinfiles SHA1SUMS_b6b_fixes6,SHA1SUMS_b6b_fixes7,SHA1SUMS_b6b_fixes8"
+st s37_gloss2 && $P6 gloss2 3 4 5 6 7 8 9 10 11 12 > "$HERE/s37_gloss2.tmp" && mv "$HERE/s37_gloss2.tmp" "$HERE/s37_gloss2.out"
+st s37_e9_quotes && { $Q6 $O7 entries; $Q6 $O7 spoil | tail -n 1; } > "$HERE/s37_e9_quotes.tmp" && mv "$HERE/s37_e9_quotes.tmp" "$HERE/s37_e9_quotes.out"
+st s37_e9_pins && $Q6 $O7 pins > "$HERE/s37_e9_pins.tmp" && mv "$HERE/s37_e9_pins.tmp" "$HERE/s37_e9_pins.out"
+st s37_e9_facts && $Q6 --commit $C7 facts9 > "$HERE/s37_e9_facts.tmp" && mv "$HERE/s37_e9_facts.tmp" "$HERE/s37_e9_facts.out"
+st s37_linechain && $Q6 --commit $C7 linechain L3 L4 L5 L6 > "$HERE/s37_linechain.tmp" && mv "$HERE/s37_linechain.tmp" "$HERE/s37_linechain.out"
+st s37_line_L6 && $Q6 --commit $C7 line L6 > "$HERE/s37_line_L6.tmp" && mv "$HERE/s37_line_L6.tmp" "$HERE/s37_line_L6.out"
+st s37_linedata_L6 && $Q6 --commit $C7 linedata > "$HERE/s37_linedata_L6.tmp" && mv "$HERE/s37_linedata_L6.tmp" "$HERE/s37_linedata_L6.out"
+st s37_termxi && $Q6 --commit aeb90ac199aff97b7189666965d7fd7d7119cf29 termxi > "$HERE/s37_termxi.tmp" && mv "$HERE/s37_termxi.tmp" "$HERE/s37_termxi.out"
 echo done

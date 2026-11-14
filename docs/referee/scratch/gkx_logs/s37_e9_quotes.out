@@ -1,0 +1,17 @@
+fixes file at 91d30d95a: lines 1443 sha1 214967a10752ac9b90981d01628bec13473da404; packet there sha1 c0449b17193f19619f33b366096762dfde27d542 (frozen c0449b17193f19619f33b366096762dfde27d542: 1)
+append-only: 06d399c2 125 lines (stated 125: 1) sha1 4c692ab2… a byte prefix of the file at 91d30d95a: 1
+append-only: 24f4d436 829 lines (stated 829: 1) sha1 9dc9179f… a byte prefix of the file at 91d30d95a: 1
+append-only: 0c8fdf9e 881 lines (stated 881: 1) sha1 43a941eb… a byte prefix of the file at 91d30d95a: 1
+append-only: b1a93700 1147 lines (stated 1147: 1) sha1 abb6b968… a byte prefix of the file at 91d30d95a: 1
+append-only: 10dfedb6 1180 lines (stated 1180: 1) sha1 01329088… a byte prefix of the file at 91d30d95a: 1
+append-only: 35f14318 1271 lines (stated 1271: 1) sha1 b0b84757… a byte prefix of the file at 91d30d95a: 1
+append-only: abde9163 1368 lines (stated 1368: 1) sha1 c87fcbe8… a byte prefix of the file at 91d30d95a: 1
+append-only: 91d30d95 1443 lines (stated 1443: 1) sha1 214967a1… a byte prefix of the file at 91d30d95a: 1
+0c8fdf9e -> 91d30d95a: the packet, gk.py, data/b6b/G, raw, pg and the pin files of the frozen packet and of entries 1-6: changed 0; under docs/red-b, experiments/red-b: added 46, modified P-N5-EXP-fixes.md b6fixquote.py check.sh run_b6fix.sh, deleted 0; data files of entries 1-6 modified 0
+entries by their headings: entry 9 l. 1182-1271; entry 10 l. 1273-1368; entry 11 l. 1370-1443
+quotes, entry 9 (l. 1182-1271): FIX5 2 of 2 in the cited lines; REF1E 7 of 7 in the cited lines
+quotes, entry 10 (l. 1273-1368): FROZEN 1 of 1 in the cited lines; R104 1 of 1 in the cited lines; R104P 1 of 1 in the cited lines; R117 1 of 1 in the cited lines
+quotes, entry 11 (l. 1370-1443): R124 4 of 4 in the cited lines; REF1 1 of 1 in the cited lines
+quotes, together: quotes 18 in the cited lines 18
+source FIX5 = 24f4d436:docs/red-b/P-N5-EXP-fixes.md: lines 829 sha1 9dc9179fb08063cd59de25c5d3e16b0f8c693fbd
+quotes control (first letter spoiled), together: quotes 18 in the cited lines 0

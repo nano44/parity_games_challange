@@ -1,0 +1,4 @@
+pins: SHA1SUMS_b6b_fixes6 at 91d30d95a: files 5; sha1 mismatches 0
+pins: SHA1SUMS_b6b_fixes7 at 91d30d95a: files 7; sha1 mismatches 0
+pins: SHA1SUMS_b6b_fixes8 at 91d30d95a: files 6; sha1 mismatches 0
+pins: fenced DATA lines / of them not a line of a pinned output file: entry 9 12 / 0; entry 10 25 / 0; entry 11 18 / 0

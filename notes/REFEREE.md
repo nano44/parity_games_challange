@@ -1,6 +1,25 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## STATE NOTE 3 (successor 37), written 2026-11-14T15:33Z by date -u; not parked: P-N5-EXP is finished on this lane's side; next only what the Lead asks
+- STAGE 5b part (ii) = R-P-N5-EXP.md §15 (see the commit of this note): fixes entries 9, 10, 11 (l-red-b 91d30d95, file sha1
+  214967a1…, 1,443 lines) right sentence by sentence; lines L-4, L-5, L-6 rebuilt from L-3 by the recorded replacements; L-6 (sha1
+  1e0ff12d51da7a4ee1aad12ed0fd9119a097896b, 7,755 bytes) = L-3 with seven replaced texts in six clauses, each agreeing with its
+  source: F-L3-1 closed (the gloss is §14.3's wording; own test gloss2: eight readings, all with G_k's run), N-5e closed, L-n1 and
+  L-n3 taken up. The report's last line: «P-N5-EXP: SIGNED with fixes entries 1-11; line L-6 (sha1 1e0ff12d…) SIGNED as the
+  RESULTS line.»
+- Answered in §15.6: ENDGAME-3-N5 NEEDS TERM-XI and so RESULTS R15 (c) (R124's packet docs/new/P-N5-END.md l. 171-187: TERM-XI «By
+  [TERM] (c)», ENDGAME-3 «By TERM-XI the run stops», ENDGAME-3-N5 «Proof: identical»; RESULTS l. 15371 lists R15 (c) for TERM-XI).
+- §15.5: this lane CONFIRMS the tail's sentence on STABLE (step form stated in E-5 of the first review, c881709b l. 257-261, no
+  proof of its own; CAUSAL and LEMMA′ stated and proved there). Notes N-7a, N-7b, N-7c; L-n2 stands as a remark.
+- Not checked, by independence: what entry 11 says of REFEREE-2 42's Addendum 4; the Lead's messages to L-RED-B. docs/referee-2/
+  is still NOT read by me.
+- Tools added for §15: gkx6.py gloss2; gkx6_quotes.py options --labels / --chain / --pinfiles / --scriptonly and modes facts9,
+  linechain, termxi; gkx6_summ.py blocks LINE6, E9QUOTES, E9PINS, E9FACTS, LINECHAIN, LINEDATA6, TERMXI, GLOSS2;
+  gkx_report_stage7.md (stamp frozen). After a fill the first 1,011 lines must keep sha1 fedd674b….
+- NEXT, only if the Lead asks: the agreement note with the second referee; K-1 / K-2 of P-N5-KEY1P. Park with a HANDOVER NOTE
+  near 450k context, never with a push or a job running.
+
 ## STATE NOTE 2 (successor 37), written 2026-11-14T13:55Z by date -u; not parked: stage 5b part (ii) (line L-4, fixes entry 9) is next
 - Stage 5a landed 2026-11-13 20:16Z (9ec40ff9 on origin, VERIFY PASS). The fleet stopped on the weekly limit at about 19:25Z and
   was woken on 2026-11-14 13:41Z.
@@ -2150,6 +2169,7 @@ Local branch was stale at start (5ed56c5, 1947 behind): fetch, then check HEAD =
   Lesson: multiply out every constant I tick.
 
 ## Sources opened (append)
+- s37 (2026-11-14, stage 5b part (ii) of R-P-N5-EXP.md): fleet sources opened, no external one: trunk aeb90ac1 docs/new/P-N5-END.md (sha1 5cae845b…) premise [TERM] l. 71, §6 l. 171-187 (Lemma TERM-XI, Theorems ENDGAME-3 and ENDGAME-3-N5, Corollary EXACT-L); docs/RESULTS.md (sha1 eecbd798…) R124 l. 15371 (its premise list), R104 l. 9967, R117 l. 13455; docs/red/P-N5-REALIZE.md l. 224; claude/l-red-b 91d30d95 fixes entries 9-11 and the line files L1-L6.
 - s37 (2026-11-13, stage 5a of R-P-N5-EXP.md): fleet sources opened: trunk aeb90ac1 docs/RESULTS.md (sha1 eecbd798…) R117 title line l. 13362, item (f) l. 13445 / l. 13475, R124 title line l. 15371 (EXACT-L, ENDGAME-3-N5, premises), R57 (b) l. 2893, 2914-2916; claude/l-red-b 0c8fdf9e docs/red-b/P-N5-EXP-fixes.md (881 lines, sha1 43a941eb…) and experiments/red-b/b6n5ck.py; claude/l-new 44775605 docs/new/P-N5-KEY1P.md §1-§3, §9; claude/l-comp dc6d831f experiments/comp/box48/README.md; claude/l-red c7ed9b8b docs/red/R245-kill-Gk.md (the last two only for the numbers entry 5.8 repeats). No external literature opened.
 - (successor 36, 2026-11-13T14:56Z by date -u) No external source opened. Repository premises read: docs/red/P-N5-REALIZE.md at trunk 5d7aab0f (sha1
   067f06b6…) §1, §2, §3.1; docs/RESULTS.md at trunk 6eaf4604: R117 l. 13362-13470, R124 l. 15371, R57 l. 2893-2916, R104 l. 9864, R105 l.

@@ -9,6 +9,10 @@ Usage: python3 -I gkx6_quotes.py [--commit C] [--from N] MODE
   pins     the pin files added since entry 6, the sha1 values written in those entries, the pasted DATA blocks
   facts    single sentences of those entries against the files they speak of; the lane's e7_*.out against this lane's logs
   linedata the DATA clauses of the line against the pinned output files they name
+  facts9   sentences of entries 9, 10, 11; the lane's gloss.out against this lane's gloss / gloss2 logs; the builder's records
+  linechain L3 L4 ..   the word-level changes between consecutive line files of the commit, and the net change
+  termxi   (with --commit = a trunk commit) where R124's packet and RESULTS R124 put TERM-XI, R15 (c), ENDGAME-3-N5, EXACT-L
+  (options: --labels LABEL=commit:path,..  --chain commit:lines,..  --pinfiles f1,f2  --scriptonly LABEL,..)
   line L   byte tests of the line file docs/red-b/P-N5-EXP-line-L.txt at the commit (L = L3, L4, ...), its difference from the
            previous lines, its quotations at the commits the line names, the commit ids it names"""
 import sys, os, re, subprocess, difflib
@@ -25,7 +29,8 @@ SRC.update({
     "REF1D": ("78515253a74a353a829b435d53f4987a8552989a", "docs/referee/R-P-N5-EXP.md"),
     "FIX5": ("24f4d436a0fea1f62ae736f20f78ff9e84333a90", FIXP),
 })
-SCRIPT_ONLY = ("REF2", "REF2B")
+SCRIPT_ONLY = ["REF2", "REF2B"]
+PINFILES = ["SHA1SUMS_b6b_fixes4", "SHA1SUMS_b6b_fixes5"]
 CHAIN = [("06d399c2", 125), ("24f4d436", 829), ("0c8fdf9ea", 881), ("b1a937004", 1147), ("10dfedb65", 1180)]
 
 
@@ -116,7 +121,7 @@ def entries_mode(C, start, spoil):
 def pins_mode(C, start):
     fix = show(C, FIXP)
     outs = {}
-    for pf in ("SHA1SUMS_b6b_fixes4", "SHA1SUMS_b6b_fixes5"):
+    for pf in PINFILES:
         rows = [l.split() for l in show(C, D + pf).split("\n") if l.strip()]
         mism = 0
         for want, rel in rows:
@@ -150,6 +155,8 @@ def pins_mode(C, start):
             ("350d84eb:" + PKT, "c0449b17193f19619f33b366096762dfde27d542", None),
             (f"{C}:docs/red-b/P-N5-EXP-line-L2.txt", "6e047c676e582484fe8eb87891764e8c1a7d9a18", 1),
             (f"{C}:docs/red-b/P-N5-EXP-line-L3.txt", "fd9074a3b9961f59a1b64d5acdaa28529306ede9", 1)]
+    if start != 882:
+        return
     bad = absent = nl = 0
     for obj, w, n in want:
         c, path = obj.split(":")
@@ -387,7 +394,7 @@ def line_mode(C, L):
         print(f"line {L} id {m}: " + ("a commit in the object store" if rc == 0 else "not a commit (a sha1 prefix of a file: " +
               str([p for p, s in (("the fixes file at 24f4d436", sha1(show('24f4d436', FIXP))),) if s.startswith(m)]) + ")"))
     # difference from the earlier lines of the same commit
-    prev = {"L3": "L2", "L4": "L3", "L5": "L4"}.get(L)
+    prev = {"L3": "L2", "L4": "L3", "L5": "L4", "L6": "L5", "L7": "L6"}.get(L)
     if prev:
         try:
             p = show(C, f"docs/red-b/P-N5-EXP-line-{prev}.txt")
@@ -405,10 +412,151 @@ def line_mode(C, L):
             print(f"line {L} against {prev}: word-level changes {n}; {prev} sha1 {sha1(p)}")
 
 
+def facts9_mode(C):
+    """Single sentences of entries 9, 10, 11 against the files they speak of; the lane's gloss.out against this lane's counters."""
+    r = show("9ec40ff968ddc4a1c7f41a95d20aa6db6dbe40c3", "docs/referee/R-P-N5-EXP.md")
+    rl = r.split("\n")
+    h13 = [i + 1 for i, l in enumerate(rl) if l.startswith("## 13.")]
+    h133 = [i + 1 for i, l in enumerate(rl) if l.startswith("### 13.3")] + [i + 1 for i, l in enumerate(rl) if l.startswith("### 13.4")]
+    r542 = "\n".join(rl[:542]) + "\n"
+    print(f"facts9 REF1E = this report at 9ec40ff9: lines {r.count(chr(10))} sha1 {sha1(r)}; §13 begins at l. {h13}; its first 542 lines are the file at 78515253: "
+          f"{int(r542 == show('78515253', 'docs/referee/R-P-N5-EXP.md'))}; l. 659-665 lie inside §13.3 (l. {h133[0]}-{h133[1] - 1}): {int(h133[0] <= 659 and 665 < h133[1])}; "
+          f"the labels N-5e / F-L3-1 occur in that file {r.count('N-5e')} / {r.count('F-L3-1')} times, in this report at 38d11668 "
+          f"{show('38d1166805fefea1e837855879ce2e44a935f61f', 'docs/referee/R-P-N5-EXP.md').count('N-5e')} / "
+          f"{show('38d1166805fefea1e837855879ce2e44a935f61f', 'docs/referee/R-P-N5-EXP.md').count('F-L3-1')} times")
+    # the lane's gloss.out against this lane's s37_gloss.out and s37_gloss2.out
+    mine = {}
+    for l in open(os.path.join(HERE, "s37_gloss.out"), encoding="utf-8"):
+        w = l.split()
+        mine[w[2]] = {"L": w[w.index("L") + 1], "up": re.search(r"small_depth_first,bid_up L (\d+)", l).group(1),
+                      "down": re.search(r"small_depth_first,bid_down L (\d+)", l).group(1)}
+    g2 = {l.split()[2]: l for l in open(os.path.join(HERE, "s37_gloss2.out"), encoding="utf-8") if l.startswith("gloss2 k")}
+    n = bad = 0
+    ks = []
+    for l in show(C, D + "out/gloss.out").split("\n"):
+        if not l.startswith("G_"):
+            continue
+        w = l.split()
+        k = w[0][2:]
+        ks.append(k)
+        v = {w[i]: w[i + 1] for i in range(1, len(w) - 1)}
+        for a, b in ((v["rulediff"], "0"), (v["Ldiff"], "0"), (v["wire0diff"], "0"), (v["Lrule"], mine[k]["L"]), (v["Lrule"], str(2 ** int(k) - 2)),
+                     (v["Loldinc"], mine[k]["up"]), (v["Lolddec"], mine[k]["down"]), (v["member"], "1"), (v["oldfires"], "2"), (v["Lwire0"], str(2 ** int(k) - 2))):
+            n += 1
+            bad += int(a != b)
+    nread = sorted(set(g2[k].split()[g2[k].split().index("readings") + 1] for k in g2))
+    g2ok = sum(int(f" run_equal_to_G_k {nread[0]} " in g2[k] and " member_viol 0 " in g2[k]) for k in g2)
+    print(f"facts9 entry 10: the lane's gloss.out k {ks[0]}..{ks[-1]} (rulediff, Ldiff, wire0diff 0; Lrule = 2^k − 2 = mine; Loldinc, Lolddec = this lane's L for the old "
+          f"gloss; member 1; oldfires 2; Lwire0 = 2^k − 2): compared {n} different {bad}; this lane's gloss2 (the corrected wording, {'/'.join(nread)} readings): run equal to G_k's and "
+          f"in IDEAL-ACYC for {g2ok} of {len(g2)} k ({min(map(int, g2))}..{max(map(int, g2))})")
+    # the builder's records of L-4, L-5, L-6: each replacement at its stated character gives the next line
+    res = []
+    for prev, cur in (("L3", "L4"), ("L4", "L5"), ("L5", "L6")):
+        a, b = show(C, f"docs/red-b/P-N5-EXP-line-{prev}.txt"), show(C, f"docs/red-b/P-N5-EXP-line-{cur}.txt")
+        rec = show(C, D + f"out/line_{cur}_build.out").split("\n")
+        pairs = []
+        for i, l in enumerate(rec):
+            if l.startswith("--- "):
+                pairs.append((int(re.search(r"at character (\d+)", l).group(1)), rec[i + 1][2:], rec[i + 2][2:]))
+        at = sum(int(a[pos:pos + len(old)] == old) for pos, old, _ in pairs)
+        once = sum(int(a.count(old) == 1) for _, old, _ in pairs)
+        built = a
+        for pos, old, new in sorted(pairs, key=lambda x: -x[0]):
+            built = built[:pos] + new + built[pos + len(old):]
+        res.append(f"{prev} -> {cur}: {len(pairs)} recorded replacements, old text at the stated character {at}, occurring once in {prev} {once}, applied they give {cur} byte for byte {int(built == b)}")
+    print("facts9 lines: " + "; ".join(res))
+    qf = [show(C, D + f"out/quote_fixes{n}.out").strip().split("\n")[-1] for n in (9, 10, 11)]
+    qc = [show(C, D + f"out/quote_fixes{n}_ctrl.out").strip().split("\n")[-1] for n in (9, 10, 11)]
+    print(f"facts9 quote counts: quote_fixes9 / 10 / 11.out end «{'» «'.join(qf)}»; their controls «{'» «'.join(qc)}»")
+    l6 = show(C, "docs/red-b/P-N5-EXP-line-L6.txt")
+    want = ["β-ranks depth-major (a smaller Ξ-depth outranks a larger one), inside a Ξ-depth by the rule's local δ, the remaining ties (wire options only) by β-id",
+            "so IDEAL-ACYC-POLY (named in RESULTS R104 and R117; in the words of R104's packet docs/red/P-N5-REALIZE.md: «there is a polynomial q such that L(G) ≤ q(N + M) for every G ∈ IDEAL-ACYC») is FALSE",
+            "PROVED-CONDITIONAL on RESULTS R124's Corollary EXACT-L and Theorem ENDGAME-3-N5 as landed (with R124's premises as landed, all under the standing SPEC premise 1E-N3, among them RESULTS R117 (f) for EXACT-L, SPEC's S1 tie-breaks through REACH3's [RULE] choice, and RESULTS R15 (c) for Lemma TERM-XI)",
+            "DATA for k ≤ 13, k = 13 on one engine: winners = Zielonka's",
+            "STABLE's step form, CAUSAL and LEMMA′ of fixes entry 4 (4.2, 4.3, 4.4) are referee-originated, stated by REFEREE 36, which also proved CAUSAL and LEMMA′, the proof of STABLE being the frozen one read in step form (claude/referee c881709b, docs/referee/R-P-N5-EXP.md §5.3;",
+            "with fixes entries 1-11, docs/red-b/P-N5-EXP-fixes.md; L-RED-B successors 5-7)."]
+    old = ["β-ranks by Ξ-depth with ties broken by β-id", "so R104's IDEAL-ACYC-POLY", "Corollary EXACT-L as landed", "DATA for k ≤ 12:", "stated and proved by REFEREE 36", "with fixes entries 1-7"]
+    print(f"facts9 L-6 holds each of the {len(want)} new clauses exactly once: {sum(int(l6.count(x) == 1) for x in want)} of {len(want)}; "
+          f"the {len(old)} old wordings still in L-6: {sum(int(x in l6) for x in old)}")
+    ns = [l.split("\t") for l in git("diff", "--name-status", "10dfedb6574c9291011a5a7fbbdff261fe312d91", C, "--", "docs/red-b", "experiments/red-b").split("\n") if l.strip()]
+    print(f"facts9 10dfedb6 (the object of §14) -> {C[:8]}, under docs/red-b and experiments/red-b: added {sum(int(x[0] == 'A') for x in ns)}, modified "
+          f"{' '.join(sorted(os.path.basename(x[1]) for x in ns if x[0] == 'M'))}, deleted or renamed {sum(int(x[0] not in ('A', 'M')) for x in ns)}; of the modified, "
+          f"under data/: {sum(int(x[0] == 'M' and '/data/' in x[1]) for x in ns)}")
+    og = "β-ranks by Ξ-depth with ties broken by β-id"
+    print("facts9 the old gloss «" + og + "» occurs in the line files L1..L6 at the commit: " +
+          " ".join(str(show(C, f"docs/red-b/P-N5-EXP-line-L{i}.txt").count(og)) for i in range(1, 7)) + " times")
+    res = show("aeb90ac199aff97b7189666965d7fd7d7119cf29", "docs/RESULTS.md").split("\n")
+    def entry_of(n):
+        heads = [(i + 1, l[4:9].split()[0]) for i, l in enumerate(res) if l.startswith("### ")]
+        return [h for h in heads if h[0] <= n][-1][1]
+    hits = [i + 1 for i, l in enumerate(res) if "IDEAL-ACYC-POLY" in l]
+    print(f"facts9 «named in RESULTS R104 and R117»: lines of docs/RESULTS.md with the name: {' '.join(f'{n} ({entry_of(n)})' for n in hits)}; "
+          f"the quoted sentence in docs/RESULTS.md: {int('there is a polynomial q such that L(G) ≤ q(N + M) for every G ∈ IDEAL-ACYC' in norm(chr(10).join(res)))}")
+
+
+def termxi_mode(C):
+    """Does R124's Theorem ENDGAME-3-N5 rest on Lemma TERM-XI, and TERM-XI on RESULTS R15 (c)? The proof of record is R124's packet
+    docs/new/P-N5-END.md (section 6); the landed text is docs/RESULTS.md R124. Sentences located by line, at the trunk commit C."""
+    for path, needles in (("docs/new/P-N5-END.md", [
+            "- [TERM] RESULTS R15:",
+            "**Lemma TERM-XI (PROVED).** The N5′-xi run and the N5 run from S3 on Γ3(G) terminate.",
+            "By [TERM] (c), σ goes strictly up in ≺ at every iteration, so no σ repeats; there are finitely many σ.",
+            "**Theorem ENDGAME-3 (PROVED).** For every genome G, N5′-xi from S3 on Γ3(G) has exactly one fallback, at an iteration F ≥ 1, and makes",
+            "Proof. By TERM-XI the run stops;",
+            "**Theorem ENDGAME-3-N5 (PROVED).** The same for N5 (SPEC S4a). Proof: identical; (H) holds for N5, every other step is SPEC text.",
+            "**Corollary EXACT-L (PROVED; premises landed).**",
+            "fallback is F = L(G) + 1, and ENDGAME-3-N5 gives F + 2 = L(G) + 3."]),
+                          ("docs/RESULTS.md", [
+            "(Lemma TERM-XI) both runs terminate",
+            "RESULTS R15 (c) («every non-empty switch of improvements goes strictly up in ≺») for TERM-XI; RESULTS R117 (f) for EXACT-L only",
+            "premise RESULTS R117 (f); it uses SPEC's S1 tie-breaks, through REACH3's [RULE] choice",
+            "premises, all under the standing SPEC premise 1E-N3 of RESULTS R57 / R104 / R117",
+            "makes exactly L(G) + 3 iterations",
+            "exactly one fallback, at an iteration F ≥ 1, and exactly F + 2 iterations"])):
+        t = show(C, path)
+        ls = t.split("\n")
+        print(f"termxi {path} at trunk {C[:8]}: lines {t.count(chr(10))} sha1 {sha1(t)}; the same file in this branch's tree: "
+              f"{int(git('rev-parse', C + ':' + path) == git('rev-parse', 'HEAD:' + path))}")
+        for nd in needles:
+            hit = [i + 1 for i, l in enumerate(ls) if nd in l]
+            print(f"termxi   l. {','.join(map(str, hit)) if hit else 'NOT FOUND'}: «{nd if len(nd) <= 150 else nd[:147] + '…'}»")
+
+
+def linechain_mode(C, names):
+    """Word-level changes between consecutive lines, and the net change first -> last."""
+    txt = {n: show(C, f"docs/red-b/P-N5-EXP-line-{n}.txt") for n in names}
+    def changes(a, b):
+        sm = difflib.SequenceMatcher(None, txt[a].split(), txt[b].split(), autojunk=False)
+        out = []
+        for tag, i1, i2, j1, j2 in sm.get_opcodes():
+            if tag != "equal":
+                out.append((" ".join(txt[a].split()[max(0, i1 - 4):i1]), " ".join(txt[a].split()[i1:i2]), " ".join(txt[b].split()[j1:j2])))
+        return out
+    for a, b in zip(names, names[1:]):
+        ch = changes(a, b)
+        print(f"linechain {a} -> {b}: sha1 {sha1(txt[a])[:8]}… -> {sha1(txt[b])[:8]}…; bytes {len(txt[a].encode('utf-8'))} -> {len(txt[b].encode('utf-8'))}; word-level changes {len(ch)}")
+        for n, (ctx, old, new) in enumerate(ch, 1):
+            print(f"linechain {a} -> {b} change {n} after «…{ctx}»: «{old}» -> «{new}»")
+    if len(names) > 2:
+        ch = changes(names[0], names[-1])
+        print(f"linechain net {names[0]} -> {names[-1]}: word-level changes {len(ch)}")
+        for n, (ctx, old, new) in enumerate(ch, 1):
+            print(f"linechain net change {n} after «…{ctx}»: «{old}» -> «{new}»")
+
+
 if __name__ == "__main__":
     args = sys.argv[1:]
     C = opt(args, "--commit", "10dfedb65")
     start = int(opt(args, "--from", "882"))
+    for item in filter(None, opt(args, "--labels", "").split(",")):          # LABEL=commit:path
+        lab, rest = item.split("=")
+        SRC[lab] = tuple(rest.split(":"))
+    for item in filter(None, opt(args, "--chain", "").split(",")):           # commit:lines, later landed stages of the fixes file
+        c, n = item.split(":")
+        CHAIN.append((c, int(n)))
+    PINFILES[:] = opt(args, "--pinfiles", ",".join(PINFILES)).split(",")
+    for lab in filter(None, opt(args, "--scriptonly", "").split(",")):
+        SCRIPT_ONLY.append(lab)
     mode = args[0]
     if mode == "entries":
         entries_mode(C, start, False)
@@ -420,5 +568,11 @@ if __name__ == "__main__":
         facts_mode(C)
     elif mode == "linedata":
         linedata_mode(C)
+    elif mode == "facts9":
+        facts9_mode(C)
+    elif mode == "termxi":
+        termxi_mode(C)
+    elif mode == "linechain":
+        linechain_mode(C, args[1:])
     elif mode == "line":
         line_mode(C, args[1])

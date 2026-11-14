@@ -1,0 +1,28 @@
+line L6 at 91d30d95a docs/red-b/P-N5-EXP-line-L6.txt: bytes 7755 chars 7568 sha1 1e0ff12d51da7a4ee1aad12ed0fd9119a097896b
+line L6 byte tests: newlines 1 (must 1), ends with a newline 1, pipes 0 (must 0), tabs 0, carriage returns 0, double spaces 0 (must 0 each), brackets balanced and properly nested 1: ( 82 ) 82 [ 1 ] 1 { 0 } 0 « 6 » 6; begins with a heading marker 0 (L41: must 0)
+line L6 quote «stuck» (5 chars): RESULTS at trunk l. 3851 (and 11 more places); R104's packet docs/red/P-N5-REALIZE.md at trunk l. 75 (and 3 more places); claude/referee c881709b docs/referee/R-P-N5-EXP.md l. 178 (and 2 more places); claude/referee 78515253 docs/referee/R-P-N5-EXP.md l. 178 (and 3 more places); claude/referee-2 f17a2708 docs/referee-2/R2-P-N5-EXP.md (by script only) l. 149 (and 3 more places); the frozen packet l. 29 (and 15 more places)
+line L6 quote «there is a polynomial q such that L(G) ≤ q(N + M) for every G ∈ …» (74 chars): R104's packet docs/red/P-N5-REALIZE.md at trunk l. 224
+line L6 quote «with R104's premises as landed (1E-N3 = RESULTS R57 (b) in its t…» (253 chars): RESULTS at trunk l. 13362; claude/referee c881709b docs/referee/R-P-N5-EXP.md l. 55-57; claude/referee 78515253 docs/referee/R-P-N5-EXP.md l. 55-57
+line L6 quote «NOT SIGNED AS WRITTEN; SIGNED in the form LEMMA′ of §5.3 below» (62 chars): claude/referee c881709b docs/referee/R-P-N5-EXP.md l. 17; claude/referee 78515253 docs/referee/R-P-N5-EXP.md l. 17
+line L6 quote «RESPONSE LEMMA SIGNED as restated in fixes entry 4 (= LEMMA′ of …» (106 chars): claude/referee 78515253 docs/referee/R-P-N5-EXP.md l. 522-523
+line L6 quote «REFEREE-2 signs 4.1 (S1)-(S4), 4.2 STABLE, 4.3 CAUSAL, 4.4 LEMMA…» (241 chars): claude/referee-2 f17a2708 docs/referee-2/R2-P-N5-EXP.md (by script only) l. 464-465
+line L6 id 06ac891d: a commit in the object store
+line L6 id 24f4d436: a commit in the object store
+line L6 id 33ff0e98: a commit in the object store
+line L6 id 350d84eb: a commit in the object store
+line L6 id 78515253: a commit in the object store
+line L6 id 9dc9179f: not a commit (a sha1 prefix of a file: ['the fixes file at 24f4d436'])
+line L6 id c7ed9b8b: a commit in the object store
+line L6 id c881709b: a commit in the object store
+line L6 id dc6d831f: a commit in the object store
+line L6 id f17a2708: a commit in the object store
+line L6 against L5, change 1: «(premise» -> «(with R124's premises as landed, all under the standing SPEC premise 1E-N3, among them RESULTS»
+line L6 against L5, change 2: «(f), under» -> «(f) for EXACT-L,»
+line L6 against L5, change 3: «tie-breaks, same standing premises):» -> «tie-breaks through REACH3's [RULE] choice, and RESULTS R15 (c) for Lemma TERM-XI):»
+line L6 against L5, change 4: «12:» -> «13, k = 13 on one engine:»
+line L6 against L5, change 5: «» -> «STABLE's step form,»
+line L6 against L5, change 6: «(4.3,» -> «(4.2, 4.3,»
+line L6 against L5, change 7: «and proved» -> «»
+line L6 against L5, change 8: «36» -> «36, which also proved CAUSAL and LEMMA′, the proof of STABLE being the frozen one read in step form»
+line L6 against L5, change 9: «1-10,» -> «1-11,»
+line L6 against L5: word-level changes 9; L5 sha1 fbd857b08befb397e03e71c554cccb4542be3820

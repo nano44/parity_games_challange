@@ -1,0 +1,16 @@
+termxi docs/new/P-N5-END.md at trunk aeb90ac1: lines 228 sha1 5cae845b1da1a1c40b52e73da6edae3d6aadbf29; the same file in this branch's tree: 1
+termxi   l. 71: «- [TERM] RESULTS R15:»
+termxi   l. 171: «**Lemma TERM-XI (PROVED).** The N5′-xi run and the N5 run from S3 on Γ3(G) terminate.»
+termxi   l. 175: «By [TERM] (c), σ goes strictly up in ≺ at every iteration, so no σ repeats; there are finitely many σ.»
+termxi   l. 177: «**Theorem ENDGAME-3 (PROVED).** For every genome G, N5′-xi from S3 on Γ3(G) has exactly one fallback, at an iteration F ≥ 1, and makes»
+termxi   l. 179: «Proof. By TERM-XI the run stops;»
+termxi   l. 182: «**Theorem ENDGAME-3-N5 (PROVED).** The same for N5 (SPEC S4a). Proof: identical; (H) holds for N5, every other step is SPEC text.»
+termxi   l. 184: «**Corollary EXACT-L (PROVED; premises landed).**»
+termxi   l. 187: «fallback is F = L(G) + 1, and ENDGAME-3-N5 gives F + 2 = L(G) + 3.»
+termxi docs/RESULTS.md at trunk aeb90ac1: lines 17367 sha1 eecbd798b81ad431d1b753f5a7f92f3c63e56da1; the same file in this branch's tree: 1
+termxi   l. 15371: «(Lemma TERM-XI) both runs terminate»
+termxi   l. 15371: «RESULTS R15 (c) («every non-empty switch of improvements goes strictly up in ≺») for TERM-XI; RESULTS R117 (f) for EXACT-L only»
+termxi   l. 15371: «premise RESULTS R117 (f); it uses SPEC's S1 tie-breaks, through REACH3's [RULE] choice»
+termxi   l. 15371: «premises, all under the standing SPEC premise 1E-N3 of RESULTS R57 / R104 / R117»
+termxi   l. 15371,15457: «makes exactly L(G) + 3 iterations»
+termxi   l. 15371: «exactly one fallback, at an iteration F ≥ 1, and exactly F + 2 iterations»

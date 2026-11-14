@@ -1,0 +1,36 @@
+linechain L3 -> L4: sha1 fd9074a3… -> 668fd1b8…; bytes 7267 -> 7292; word-level changes 2
+linechain L3 -> L4 change 1 after «…RESULTS R124's Corollary EXACT-L»: «» -> «and Theorem ENDGAME-3-N5»
+linechain L3 -> L4 change 2 after «…docs/red-b/P-N5-EXP.md, with fixes entries»: «1-7,» -> «1-9,»
+linechain L4 -> L5: sha1 668fd1b8… -> fbd857b0…; bytes 7292 -> 7482; word-level changes 6
+linechain L4 -> L5 change 1 after «…all parities even, β-ranks»: «» -> «depth-major (a smaller Ξ-depth outranks a larger one), inside a Ξ-depth»
+linechain L4 -> L5 change 2 after «…parities even, β-ranks by»: «Ξ-depth with» -> «the rule's local δ, the remaining»
+linechain L4 -> L5 change 3 after «…by Ξ-depth with ties»: «broken» -> «(wire options only)»
+linechain L4 -> L5 change 4 after «…changes in all); so»: «» -> «IDEAL-ACYC-POLY (named in RESULTS R104 and R117; in the words of»
+linechain L4 -> L5 change 5 after «…in all); so R104's»: «IDEAL-ACYC-POLY («there» -> «packet docs/red/P-N5-REALIZE.md: «there»
+linechain L4 -> L5 change 6 after «…docs/red-b/P-N5-EXP.md, with fixes entries»: «1-9,» -> «1-10,»
+linechain L5 -> L6: sha1 fbd857b0… -> 1e0ff12d…; bytes 7482 -> 7755; word-level changes 9
+linechain L5 -> L6 change 1 after «…Theorem ENDGAME-3-N5 as landed»: «(premise» -> «(with R124's premises as landed, all under the standing SPEC premise 1E-N3, among them RESULTS»
+linechain L5 -> L6 change 2 after «…as landed (premise R117»: «(f), under» -> «(f) for EXACT-L,»
+linechain L5 -> L6 change 3 after «…(f), under SPEC's S1»: «tie-breaks, same standing premises):» -> «tie-breaks through REACH3's [RULE] choice, and RESULTS R15 (c) for Lemma TERM-XI):»
+linechain L5 -> L6 change 4 after «…DATA for k ≤»: «12:» -> «13, k = 13 on one engine:»
+linechain L5 -> L6 change 5 after «…tail (Lead reading L41):»: «» -> «STABLE's step form,»
+linechain L5 -> L6 change 6 after «…of fixes entry 4»: «(4.3,» -> «(4.2, 4.3,»
+linechain L5 -> L6 change 7 after «…4.4) are referee-originated, stated»: «and proved» -> «»
+linechain L5 -> L6 change 8 after «…and proved by REFEREE»: «36» -> «36, which also proved CAUSAL and LEMMA′, the proof of STABLE being the frozen one read in step form»
+linechain L5 -> L6 change 9 after «…docs/red-b/P-N5-EXP.md, with fixes entries»: «1-10,» -> «1-11,»
+linechain net L3 -> L6: word-level changes 15
+linechain net change 1 after «…all parities even, β-ranks»: «» -> «depth-major (a smaller Ξ-depth outranks a larger one), inside a Ξ-depth»
+linechain net change 2 after «…parities even, β-ranks by»: «Ξ-depth with» -> «the rule's local δ, the remaining»
+linechain net change 3 after «…by Ξ-depth with ties»: «broken» -> «(wire options only)»
+linechain net change 4 after «…changes in all); so»: «» -> «IDEAL-ACYC-POLY (named in RESULTS R104 and R117; in the words of»
+linechain net change 5 after «…in all); so R104's»: «IDEAL-ACYC-POLY («there» -> «packet docs/red/P-N5-REALIZE.md: «there»
+linechain net change 6 after «…RESULTS R124's Corollary EXACT-L»: «» -> «and Theorem ENDGAME-3-N5»
+linechain net change 7 after «…Corollary EXACT-L as landed»: «(premise» -> «(with R124's premises as landed, all under the standing SPEC premise 1E-N3, among them RESULTS»
+linechain net change 8 after «…as landed (premise R117»: «(f), under» -> «(f) for EXACT-L,»
+linechain net change 9 after «…(f), under SPEC's S1»: «tie-breaks, same standing premises):» -> «tie-breaks through REACH3's [RULE] choice, and RESULTS R15 (c) for Lemma TERM-XI):»
+linechain net change 10 after «…DATA for k ≤»: «12:» -> «13, k = 13 on one engine:»
+linechain net change 11 after «…tail (Lead reading L41):»: «» -> «STABLE's step form,»
+linechain net change 12 after «…of fixes entry 4»: «(4.3,» -> «(4.2, 4.3,»
+linechain net change 13 after «…4.4) are referee-originated, stated»: «and proved» -> «»
+linechain net change 14 after «…and proved by REFEREE»: «36» -> «36, which also proved CAUSAL and LEMMA′, the proof of STABLE being the frozen one read in step form»
+linechain net change 15 after «…docs/red-b/P-N5-EXP.md, with fixes entries»: «1-7,» -> «1-11,»
