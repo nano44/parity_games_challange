@@ -64,7 +64,20 @@ by the fleet's 5-hour limit from about 17:37Z to 19:04Z; handover check, line L-
   guillemet group without a letter in its second half (one quote of entry 9 slipped through the old control: found 1 of 113).
   NEXT NUMBERS: an L-5 from L-4, entry 10, fixes7, a seventh guard stage. Fleet pauses: the 5-hour limit (17:37Z-19:04Z on
   11-13) and the weekly limit (about 19:25Z on 11-13 to 13:41Z on 11-14) each stopped this session; nothing was lost.
-- (e) IN FLIGHT: nothing but the push of the third commit (this note is in it); before it: the push of the second commit (scripts/push.sh as a tracked task, about 50 minutes in the gate). No CPU job.
+- (a‴) ADDED 2026-11-14T13:59Z, a FOURTH commit on top of 35f14318 (whose push was stopped in its gate on the Lead's order of
+  13:55Z; nothing had reached origin): REFEREE 37's F-L3-1 (relayed by the Lead; its §14 was not on origin): the lines L-1 to L-4
+  glossed rule R's rank clause as «β-ranks by Ξ-depth with ties broken by β-id», which drops the local δ and describes ANOTHER
+  genome (L = 3 with ties by increasing β-id, L = 1 decreasing, k = 3..12: b6gloss.py reproduces it; rule R itself and gk.py
+  are right, rulediff 0). LINE L-5 = L-4 with the Lead's wording of the rank clause, the IDEAL-ACYC-POLY sentence attributed to
+  R104's packet (docs/red/P-N5-REALIZE.md l. 224), and «with fixes entries 1-10» (b6line.py build5;
+  docs/red-b/P-N5-EXP-line-L5.txt, 7,482 bytes, sha1 fbd857b08befb397e03e71c554cccb4542be3820, brackets ( 81 ) 81 « 6 » 6).
+  L-5 IS THE LINE OF RECORD. Fixes entry 10 (l. 1272-1368; the file has 1,368 lines, sha1
+  c87fcbe8156d2b83a68ea6c505dab5cad071bbcf). b6guard.py: seven stages, pins L-2..L-5 («of 7»); pins SHA1SUMS_b6b_fixes7;
+  b6fixquote.py label R104. LESSON: a parenthesis in the line that abbreviates the rule IS a statement about the genome; a
+  successor who touches the line's gloss must run b6gloss.py-style controls (build the genome the words describe, run it).
+  A successor should also add the quotation of F-L3-1 by commit and line once REFEREE 37's §14 is on origin (an entry 11).
+  NEXT NUMBERS: an L-6 from L-5, entry 11, fixes8, an eighth guard stage.
+- (e) IN FLIGHT: nothing but the push of the fourth commit (this note is in it); before it: the pushes of the second and third (scripts/push.sh as a tracked task, about 50 minutes in the gate). No CPU job.
 - NEXT for a successor 8 (only if the Lead creates one): the trap check; `git ls-remote origin claude/l-red-b` must show this
   commit; read the referees' and CHECKER's items on L-2 / entry 7 by commit; answer in entry 8 (append-only, b6fixquote.py with a
   new label per new report, a new pin file SHA1SUMS_b6b_fixes5, a new stage in b6guard.py); an L-3 only by script from L-2.

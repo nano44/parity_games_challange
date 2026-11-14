@@ -1,0 +1,10 @@
+G_3 mode gloss N 11 expected 6 rulediff 0 Lrule 6 Ldiff 0 Lwire0 6 wire0diff 0 Loldinc 3 Lolddec 1 member 1 oldfires 2
+G_4 mode gloss N 20 expected 14 rulediff 0 Lrule 14 Ldiff 0 Lwire0 14 wire0diff 0 Loldinc 3 Lolddec 1 member 1 oldfires 2
+G_5 mode gloss N 29 expected 30 rulediff 0 Lrule 30 Ldiff 0 Lwire0 30 wire0diff 0 Loldinc 3 Lolddec 1 member 1 oldfires 2
+G_6 mode gloss N 38 expected 62 rulediff 0 Lrule 62 Ldiff 0 Lwire0 62 wire0diff 0 Loldinc 3 Lolddec 1 member 1 oldfires 2
+G_7 mode gloss N 47 expected 126 rulediff 0 Lrule 126 Ldiff 0 Lwire0 126 wire0diff 0 Loldinc 3 Lolddec 1 member 1 oldfires 2
+G_8 mode gloss N 56 expected 254 rulediff 0 Lrule 254 Ldiff 0 Lwire0 254 wire0diff 0 Loldinc 3 Lolddec 1 member 1 oldfires 2
+G_9 mode gloss N 65 expected 510 rulediff 0 Lrule 510 Ldiff 0 Lwire0 510 wire0diff 0 Loldinc 3 Lolddec 1 member 1 oldfires 2
+G_10 mode gloss N 74 expected 1022 rulediff 0 Lrule 1022 Ldiff 0 Lwire0 1022 wire0diff 0 Loldinc 3 Lolddec 1 member 1 oldfires 2
+G_11 mode gloss N 83 expected 2046 rulediff 0 Lrule 2046 Ldiff 0 Lwire0 2046 wire0diff 0 Loldinc 3 Lolddec 1 member 1 oldfires 2
+G_12 mode gloss N 92 expected 4094 rulediff 0 Lrule 4094 Ldiff 0 Lwire0 4094 wire0diff 0 Loldinc 3 Lolddec 1 member 1 oldfires 2

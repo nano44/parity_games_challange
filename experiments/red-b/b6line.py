@@ -12,20 +12,24 @@ L-3 = docs/red-b/P-N5-EXP-line-L3.txt = L-2 with the replacements of CHANGES3 an
 back. L-2 stays in the repository as history; L-3 was the line of record of fixes entry 8.
 L-4 = docs/red-b/P-N5-EXP-line-L4.txt = L-3 with the replacements of CHANGES4 and nothing else (fixes entry 9: item N-5e, the
 label of Corollary EXP-N5' names both statements of RESULTS R124; the closing parenthesis names fixes entries 1-9), by the same
-rules. L-3 stays as history; L-4 IS THE LINE OF RECORD.
+rules. L-3 stays as history; L-4 was the line of record of fixes entry 9.
+L-5 = docs/red-b/P-N5-EXP-line-L5.txt = L-4 with the replacements of CHANGES5 and nothing else (fixes entry 10: REFEREE 37's
+F-L3-1, the rank clause of rule R with its local delta; the source of the IDEAL-ACYC-POLY sentence named; the closing
+parenthesis names fixes entries 1-10), by the same rules. L-4 stays as history; L-5 IS THE LINE OF RECORD.
 
 Usage (from anywhere; no other lane's file is needed for build / check):
   b6line.py build    write L-2; print the diff (per change: item, position in L-1, the old text, the new text, each cut down to
                      the part that differs), then the checks
   b6line.py build3   the same for L-3 from L-2 (the committed L-2 must be the rebuilt one); prints the diff against L-2
-  b6line.py build4   the same for L-4 from L-3
-  b6line.py check    rebuild L-2, L-3 and L-4 in memory and compare each with its committed file; exit 1 on any difference or
+  b6line.py build4   the same for L-4 from L-3;  b6line.py build5   the same for L-5 from L-4
+  b6line.py check    rebuild L-2, L-3, L-4 and L-5 in memory and compare each with its committed file; exit 1 on any difference or
                      failed check (check.sh); the last line of each block is «L-n rebuilt-vs-committed diff 0»
   b6line.py quotes   check every quotation of QUOTES verbatim (white space normalised on both sides, nothing else) against its
                      source, read with `git show COMMIT:PATH` (the commits must be in the clone: fetch claude/referee,
                      claude/referee-2 and trunk first); prints the source's sha1 and the line numbers of each quotation;
-                     `quotes` reads L-2, `quotes3` L-3, `quotes4` L-4 (the same quotations: CHANGES3 and CHANGES4 touch none)
-Checks on L-2, L-3 and L-4: exactly one line (one newline, the last byte); no pipe character; the brackets ( ) [ ] { } « » balanced and
+                     `quotes` reads L-2, `quotes3` L-3, `quotes4` L-4, `quotes5` L-5 (CHANGES3-5 touch no quotation;
+                     the IDEAL-ACYC-POLY sentence, in every line since L-1, is checked against R104's packet from L-5 on)
+Checks on L-2, L-3, L-4 and L-5: exactly one line (one newline, the last byte); no pipe character; the brackets ( ) [ ] { } « » balanced and
 properly nested (counts printed); sha1 and byte count printed.
 Control B6LINE_CTRL=1 (build / check): one unbalanced bracket is put into the result; the bracket check must fire (exit 1,
 nothing is written).  Control B6LINE_CTRL=2 (quotes): one letter of every quotation is changed; each must be NOT-FOUND (exit 1)."""
@@ -37,6 +41,8 @@ L1 = os.path.join(TOP, "docs", "red-b", "P-N5-EXP-line-L1.txt")
 L2 = os.path.join(TOP, "docs", "red-b", "P-N5-EXP-line-L2.txt")
 L3 = os.path.join(TOP, "docs", "red-b", "P-N5-EXP-line-L3.txt")
 L4 = os.path.join(TOP, "docs", "red-b", "P-N5-EXP-line-L4.txt")
+L5 = os.path.join(TOP, "docs", "red-b", "P-N5-EXP-line-L5.txt")
+POLY = "there is a polynomial q such that L(G) ≤ q(N + M) for every G ∈ IDEAL-ACYC"
 L1_SHA1 = "59c5309377eda882ba436ffe7eb03fbff598c7c8"
 CTRL = os.environ.get("B6LINE_CTRL", "0")
 
@@ -90,12 +96,25 @@ CHANGES4 = [
     ("L-g", "with fixes entries 1-7", "with fixes entries 1-9"),
 ]
 
+# L-5 from L-4 (REFEREE 37's F-L3-1, relayed by the Lead 2026-11-14 13:55Z; item L-h: the parenthesis)
+CHANGES5 = [
+    ("F-L3-1 (1)", "β-ranks by Ξ-depth with ties broken by β-id",
+     "β-ranks depth-major (a smaller Ξ-depth outranks a larger one), inside a Ξ-depth by the rule's local δ, the remaining ties "
+     "(wire options only) by β-id"),
+    ("F-L3-1 (2)", "so R104's IDEAL-ACYC-POLY («",
+     "so IDEAL-ACYC-POLY (named in RESULTS R104 and R117; in the words of R104's packet docs/red/P-N5-REALIZE.md: «"),
+    ("L-h", "with fixes entries 1-9", "with fixes entries 1-10"),
+]
+
 # (item, quotation, commit, path, restrict-to-entry head or None)
 QUOTES = [
     ("L-b", R117_TITLE, "dba11145c222c9034144db821057485698232d44", "docs/RESULTS.md", "### R117 "),
     ("L-c", REF1_SIGN, "c881709b78d8e4b2debb72baf2c487156413416f", "docs/referee/R-P-N5-EXP.md", None),
     ("L-c", REF1_SIGN4, "78515253a74a353a829b435d53f4987a8552989a", "docs/referee/R-P-N5-EXP.md", None),
     ("L-c", REF2_SIGN, "f17a2708de653b306eaedf878f6120d2d0b31e06", "docs/referee-2/R2-P-N5-EXP.md", None),
+]
+QUOTES5 = [   # checked from L-5 on: the sentence that L-5 attributes to R104's packet (trunk 5d7aab0f, l. 224)
+    ("F-L3-1 (2)", POLY, "5d7aab0f19f664034567c3bf4f41bcf9e1684d20", "docs/red/P-N5-REALIZE.md", None),
 ]
 
 
@@ -186,6 +205,12 @@ def build4():
     return l3, res, spans
 
 
+def build5():
+    _, l4, _ = build4()
+    res, spans = apply(l4, CHANGES5, "L-4")
+    return l4, res, spans
+
+
 def report(res, counts, ok, bad, name="L-2"):
     b = res.encode("utf-8")
     print("%s bytes %d (with its newline) lines %d pipes %d sha1 %s" % (name, len(b), res.count("\n"), res.count("|"), sha1(b)))
@@ -233,13 +258,10 @@ def restrict(text, head):
 
 def quotes(path=L2):
     res = open(path, encoding="utf-8").read()
-    news = {}
-    for item, _, new in CHANGES:
-        news[item] = news.get(item, "") + new
     n = found = 0
-    for item, q, commit, path, head in QUOTES:
+    for item, q, commit, path, head in QUOTES + (QUOTES5 if path == L5 else []):
         n += 1
-        if ("«" + q + "»") not in news[item] or ("«" + q + "»") not in res:
+        if ("«" + q + "»") not in res:
             print(f"{item} NOT-IN-LINE «{q[:60]}»")
             continue
         r = subprocess.run(["git", "show", f"{commit}:{path}"], cwd=TOP, capture_output=True)
@@ -264,11 +286,28 @@ def quotes(path=L2):
 
 if __name__ == "__main__":
     mode = sys.argv[1] if len(sys.argv) > 1 else ""
-    if mode not in ("build", "build3", "build4", "check", "quotes", "quotes3", "quotes4"):
+    if mode not in ("build", "build3", "build4", "build5", "check", "quotes", "quotes3", "quotes4", "quotes5"):
         print(__doc__)
         sys.exit(2)
-    if mode in ("quotes", "quotes3", "quotes4"):
-        sys.exit(quotes({"quotes": L2, "quotes3": L3, "quotes4": L4}[mode]))
+    if mode in ("quotes", "quotes3", "quotes4", "quotes5"):
+        sys.exit(quotes({"quotes": L2, "quotes3": L3, "quotes4": L4, "quotes5": L5}[mode]))
+    if mode == "build5":
+        l4, res, spans = build5()
+        if open(L4, encoding="utf-8").read() != l4:
+            raise SystemExit("b6line: the committed L-4 is not the L-4 rebuilt from L-1")
+        counts, ok, bad = checks(res)
+        print("L-4 bytes %d sha1 %s" % (len(l4.encode("utf-8")), sha1(l4.encode("utf-8"))))
+        for a, b, item, old, new in spans:
+            print(f"--- {item}: at character {a} of L-4, {len(old.encode('utf-8'))} bytes removed, {len(new.encode('utf-8'))} bytes put in")
+            print(f"- {old}")
+            print(f"+ {new}")
+        print("changes %d; characters of L-4 kept unchanged %d of %d" % (len(spans), len(l4) - sum(len(trim(o, w)[1]) for _, _, _, o, w in spans), len(l4)))
+        report(res, counts, ok, bad, "L-5")
+        if bad:
+            sys.exit(1)
+        open(L5, "w", encoding="utf-8").write(res)
+        print("written " + os.path.relpath(L5, TOP))
+        sys.exit(0)
     if mode == "build4":
         l3, res, spans = build4()
         if open(L3, encoding="utf-8").read() != l3:
@@ -336,4 +375,10 @@ if __name__ == "__main__":
     cur4 = open(L4, encoding="utf-8").read() if os.path.exists(L4) else None
     diff4 = 0 if cur4 == res4 else 1
     print("L-4 rebuilt-vs-committed diff %d" % diff4)
-    sys.exit(1 if (bad or diff or bad3 or diff3 or bad4 or diff4) else 0)
+    _, res5, _ = build5()
+    counts5, ok5, bad5 = checks(res5)
+    report(res5, counts5, ok5, bad5, "L-5")
+    cur5 = open(L5, encoding="utf-8").read() if os.path.exists(L5) else None
+    diff5 = 0 if cur5 == res5 else 1
+    print("L-5 rebuilt-vs-committed diff %d" % diff5)
+    sys.exit(1 if (bad or diff or bad3 or diff3 or bad4 or diff4 or bad5 or diff5) else 0)

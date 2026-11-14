@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""L-RED-B packet P-N5-EXP: quote check for the FIXES file docs/red-b/P-N5-EXP-fixes.md (entries 1-9).
+"""L-RED-B packet P-N5-EXP: quote check for the FIXES file docs/red-b/P-N5-EXP-fixes.md (entries 1-10).
 
 Every guillemet quote that follows a Q-tag [Q LABEL ...] in the fixes file is checked verbatim by b6quote.py (same convention as
 the packet). This wrapper only fetches the sources: each LABEL is a file at a NAMED COMMIT, read with `git show COMMIT:PATH` (the
@@ -10,7 +10,7 @@ and the line numbers printed are the file's own).
   REF2    claude/referee-2 33ff0e98  docs/referee-2/R2-P-N5-EXP.md          (REFEREE-2 41's second review)
   PRE     claude/referee   06ac891d  docs/referee/R-GK-precheck.md          (REFEREE 35's pre-check)
   REF1    claude/referee   c881709b  docs/referee/R-P-N5-EXP.md            (REFEREE 36's first review)
-  R117, R124, R57          trunk 5d7aab0f docs/RESULTS.md, restricted to the entry
+  R117, R124, R57, R104    trunk 5d7aab0f docs/RESULTS.md, restricted to the entry (R104: entry 10's tag)
   R104P   trunk 5d7aab0f   docs/red/P-N5-REALIZE.md
   KEY1P   claude/l-new 44775605  docs/new/P-N5-KEY1P.md
   LNEW    claude/l-new aa29064d  docs/new/P-N5-KEY1P-after-EXP-draft.md
@@ -31,6 +31,7 @@ SRC = {
     "PRE": ("06ac891df6f6212bac74259863da3105e7fe4341", "docs/referee/R-GK-precheck.md", None),
     "REF1": ("c881709b78d8e4b2debb72baf2c487156413416f", "docs/referee/R-P-N5-EXP.md", None),
     "R117": ("5d7aab0f19f664034567c3bf4f41bcf9e1684d20", "docs/RESULTS.md", "### R117 "),
+    "R104": ("5d7aab0f19f664034567c3bf4f41bcf9e1684d20", "docs/RESULTS.md", "### R104 "),
     "R124": ("5d7aab0f19f664034567c3bf4f41bcf9e1684d20", "docs/RESULTS.md", "### R124 "),
     "R57": ("5d7aab0f19f664034567c3bf4f41bcf9e1684d20", "docs/RESULTS.md", "### R57 "),
     "R104P": ("5d7aab0f19f664034567c3bf4f41bcf9e1684d20", "docs/red/P-N5-REALIZE.md", None),

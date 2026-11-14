@@ -1269,3 +1269,100 @@ written docs/red-b/P-N5-EXP-line-L4.txt
 - Guards and pins: b6guard.py has a sixth stage (entries 1-9) and pins L-4: «guard frozen 0 prefix 0 of 6 l1 0 l2 0 l3 0 l4 0»,
   its control gives «prefix 6 of 6». check.sh tests both and that L-2, L-3 and L-4 are the builder's output. The new files are
   pinned in data/b6b/SHA1SUMS_b6b_fixes6; the older pin files, the frozen packet and entries 1-8 are unchanged.
+
+## Entry 10 (L-RED-B successor 7, session_01V5yGRVmUNMkUXGRuVH63B8; 2026-11-14, written 13:58Z by date -u): REFEREE 37's F-L3-1, a failing clause of the LINE (in L-1 to L-4 alike) — the line's gloss of rule R's rank clause dropped the local δ; the source of the IDEAL-ACYC-POLY sentence is named; line L-5; no statement, proof, hypothesis or number of the packet changes
+F-L3-1 was not on origin when this entry was written (the referee's §14 was not committed). It is quoted here from the Lead's
+relay (the Lead's message of 2026-11-14 13:55Z, relaying REFEREE 37's message of 13:42Z), in the words relayed:
+
+> «all parities even, β-ranks by Ξ-depth with ties broken by β-id» drops the local δ. «Rule R's rank clause (packet l. 98-99 read
+> as fixes entry 5.1) is: br = the rank of the TRIPLE (−depth, local δ, β-id): depth-major, INSIDE a depth the rule's local δ
+> decides, and the β-id breaks only the ties of that pair (wire options, 4k − 14 of them). … Read as written (rank by Ξ-depth,
+> ties by β-id) it describes a DIFFERENT genome, which is still in IDEAL-ACYC … and whose IDEAL run has L = 3 for every k = 3..10
+> with ties by increasing β-id, and L = 1 with decreasing β-id … So for the genome the gloss describes, the line's «L(G_k) = 2^k −
+> 2» is false.»
+
+Its second note, as relayed: the sentence «there is a polynomial q such that L(G) ≤ q(N + M) for every G ∈ IDEAL-ACYC» is verbatim
+in R104's PACKET (docs/red/P-N5-REALIZE.md l. 224 at trunk 5d7aab0f), not in the landed text of RESULTS R104, which has the NAME
+only. A successor adds the quotation by commit and line once the referee's §14 is on origin.
+
+**10.1 Accepted: the gloss in the lines was wrong; rule R, the genome and the theorem are not.** The packet's rank clause is
+
+[Q FROZEN l. 98-99] «br of the β of (x, o) := the rank, among all options, of the pair (−depth(x), local δ of (x, o)), a wire
+counting as depth 2k + 5: a β of smaller Ξ-depth outranks every β of larger Ξ-depth («depth-major»); inside one depth the local δ
+decides.»
+
+(with the ties of that pair, on wire options only, broken by β-id: entry 5.1). The lines L-1 to L-4 shortened this, in a
+parenthesis, to «β-ranks by Ξ-depth with ties broken by β-id», which leaves the local δ out and so describes another genome.
+Theorem EXP-IDEAL is about the genome G_k that rule R defines and gk.py builds (the theorem names both); every proof and every
+DATA line of the packet and of entries 1-9 is about that genome. So no statement, proof, hypothesis or number changes; the LINE
+changes (10.3).
+
+DATA, the referee's finding reproduced and the corrected wording tested (experiments/red-b/b6gloss.py → data/b6b/out/gloss.out;
+no archive needed). Unit: a genome, k = 3..12; each variant is gk.build(k) with br replaced, L = the length of its IDEAL run. The
+depths and local δ are transcribed in the tool from the packet's table, not taken from gk.py. Must 0: rulediff = [the ranks of
+the triple (−depth, local δ, β-id) from that transcription differ from gk.py's br]; Ldiff = [Lrule ≠ 2^k − 2]; wire0diff =
+[Lwire0 ≠ 2^k − 2], where wire0 is rule R with the wires counted at Ξ-depth 0 (their Ξ-target is X) in place of 2k + 5. The
+firing control is THE OLD GLOSS: Loldinc = the run length with ranks by (−depth, β-id) alone, ties by increasing β-id, Lolddec the
+same with decreasing β-id; member = [that br is still a bijection onto 0..M − 1]; oldfires = how many of the two differ from
+2^k − 2 (it must be 2). On every line: the old gloss gives L = 3, resp. L = 1, as the referee reports.
+```
+G_3 mode gloss N 11 expected 6 rulediff 0 Lrule 6 Ldiff 0 Lwire0 6 wire0diff 0 Loldinc 3 Lolddec 1 member 1 oldfires 2
+G_4 mode gloss N 20 expected 14 rulediff 0 Lrule 14 Ldiff 0 Lwire0 14 wire0diff 0 Loldinc 3 Lolddec 1 member 1 oldfires 2
+G_5 mode gloss N 29 expected 30 rulediff 0 Lrule 30 Ldiff 0 Lwire0 30 wire0diff 0 Loldinc 3 Lolddec 1 member 1 oldfires 2
+G_6 mode gloss N 38 expected 62 rulediff 0 Lrule 62 Ldiff 0 Lwire0 62 wire0diff 0 Loldinc 3 Lolddec 1 member 1 oldfires 2
+G_7 mode gloss N 47 expected 126 rulediff 0 Lrule 126 Ldiff 0 Lwire0 126 wire0diff 0 Loldinc 3 Lolddec 1 member 1 oldfires 2
+G_8 mode gloss N 56 expected 254 rulediff 0 Lrule 254 Ldiff 0 Lwire0 254 wire0diff 0 Loldinc 3 Lolddec 1 member 1 oldfires 2
+G_9 mode gloss N 65 expected 510 rulediff 0 Lrule 510 Ldiff 0 Lwire0 510 wire0diff 0 Loldinc 3 Lolddec 1 member 1 oldfires 2
+G_10 mode gloss N 74 expected 1022 rulediff 0 Lrule 1022 Ldiff 0 Lwire0 1022 wire0diff 0 Loldinc 3 Lolddec 1 member 1 oldfires 2
+G_11 mode gloss N 83 expected 2046 rulediff 0 Lrule 2046 Ldiff 0 Lwire0 2046 wire0diff 0 Loldinc 3 Lolddec 1 member 1 oldfires 2
+G_12 mode gloss N 92 expected 4094 rulediff 0 Lrule 4094 Ldiff 0 Lwire0 4094 wire0diff 0 Loldinc 3 Lolddec 1 member 1 oldfires 2
+```
+
+**10.2 The source of the IDEAL-ACYC-POLY sentence.** The sentence the lines quote is in R104's packet, where entry 2 (a′) already
+cites it from:
+
+[Q R104P l. 224] «Let IDEAL-ACYC-POLY mean: there is a polynomial q such that L(G) ≤ q(N + M) for every G ∈ IDEAL-ACYC.»
+
+RESULTS has the name, in R104 and in R117:
+
+[Q R104 l. 9967] «FL-POLY ⇒ IDEAL-ACYC-POLY, with q(t) := p(3t + 6)»
+
+[Q R117 l. 13455] «FL-S3-POLY ⇒ IDEAL-ACYC-POLY»
+
+Accepted: the lines said «R104's» of a sentence that RESULTS R104 does not print. L-5 names the packet as its source.
+
+**10.3 Line L-5, quote check, guards, pins (records).**
+- LINE L-5: docs/red-b/P-N5-EXP-line-L5.txt = line L-4 with three named replacements made by experiments/red-b/b6line.py build5,
+  each old text occurring exactly once in L-4, and nothing else (the Lead's ruling of 13:55Z). (1) The rank gloss becomes the
+  Lead's wording. I checked it against gk.py and the frozen l. 98-99, as asked: it is rule R, the «Ξ-depth» of a wire being the
+  table's «last» (2k + 5); and the variant wire0 above shows that the other reading of a wire's depth gives the same run, so the
+  wording cannot be misread into another run. (2) The words «so R104's IDEAL-ACYC-POLY» before the quoted sentence become «so
+  IDEAL-ACYC-POLY (named in RESULTS R104 and R117; in the words of R104's packet docs/red/P-N5-REALIZE.md:», the sentence itself
+  is untouched. (3) «with fixes entries 1-9» becomes «with fixes entries 1-10», because this entry changes what the line says of
+  rule R. Undoing the three gives L-4 back byte for byte. L-5 IS THE LINE OF RECORD; L-1 to L-4 are not edited and stay as
+  history (each carries the old gloss). The builder's record (data/b6b/out/line_L5_build.out; line_L5_quotes.out: the five
+  quotations inside L-5, now with the IDEAL-ACYC-POLY sentence, found verbatim at their commits; controls line_L5_ctrl.out,
+  line_L5_quotes_ctrl.out fire):
+```
+L-4 bytes 7292 sha1 668fd1b88ea4ae28690f0b931d84b27a85928ca8
+--- F-L3-1 (1): at character 861 of L-4, 46 bytes removed, 154 bytes put in
+- β-ranks by Ξ-depth with ties broken by β-id
++ β-ranks depth-major (a smaller Ξ-depth outranks a larger one), inside a Ξ-depth by the rule's local δ, the remaining ties (wire options only) by β-id
+--- F-L3-1 (2): at character 1276 of L-4, 29 bytes removed, 110 bytes put in
+- so R104's IDEAL-ACYC-POLY («
++ so IDEAL-ACYC-POLY (named in RESULTS R104 and R117; in the words of R104's packet docs/red/P-N5-REALIZE.md: «
+--- L-h: at character 7030 of L-4, 22 bytes removed, 23 bytes put in
+- with fixes entries 1-9
++ with fixes entries 1-10
+changes 3; characters of L-4 kept unchanged 7054 of 7109
+L-5 bytes 7482 (with its newline) lines 1 pipes 0 sha1 fbd857b08befb397e03e71c554cccb4542be3820
+L-5 brackets ( 81 ) 81 [ 0 ] 0 { 0 } 0 « 6 » 6 balanced 1
+L-5 checks failed 0
+written docs/red-b/P-N5-EXP-line-L5.txt
+```
+- Quote check of the whole file: b6fixquote.py → data/b6b/out/quote_fixes10.out (the 113 quotes of entries 1-9 and the 4 of
+  this entry: «quotes 117 found 117 notfound 0»; control quote_fixes10_ctrl.out: «quotes 117 found 0 notfound 117»).
+- Guards and pins: b6guard.py has a seventh stage (entries 1-10) and pins L-5: «guard frozen 0 prefix 0 of 7 l1 0 l2 0 l3 0 l4 0
+  l5 0», its control gives «prefix 7 of 7». check.sh tests both, that L-2 to L-5 are the builder's output, and now runs b6gloss.py
+  on k = 6 (rule R: 62 steps; the old gloss: 3 and 1). The new files are pinned in data/b6b/SHA1SUMS_b6b_fixes7; the older pin
+  files, the frozen packet and entries 1-9 are unchanged.

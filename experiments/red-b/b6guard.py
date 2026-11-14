@@ -5,10 +5,11 @@
   prefix   the number of landed stages of docs/red-b/P-N5-EXP-fixes.md whose text is no longer a byte prefix of the file:
            the first 125 lines (entry 1, claude/l-red-b 06d399c2), the first 829 (entries 1-5, 24f4d436), the first 881
            (entries 1-6, 0c8fdf9e), the first 1147 (entries 1-7, b1a93700), the first 1180 (entries 1-8, 10dfedb6), the first 1271
-           (entries 1-9, the commit of entry 9), each with the sha1 the whole file had there
+           (entries 1-9, 35f14318), the first 1368 (entries 1-10, the commit of entry 10), each with the sha1 the whole file
+           had there
   l1       [docs/red-b/P-N5-EXP-line-L1.txt does not have its sha1 (line L-1 is never edited; L-2 is built from it by b6line.py)]
-  l2, l3, l4   the same for the lines L-2, L-3 (history) and L-4 (the line of record, fixes entry 9)
-Prints one line «guard frozen F prefix P of S l1 L l2 L l3 L l4 L»; exit 1 unless all are 0.
+  l2 .. l5     the same for the lines L-2, L-3, L-4 (history) and L-5 (the line of record, fixes entry 10)
+Prints one line «guard frozen F prefix P of S l1 L l2 L l3 L l4 L l5 L»; exit 1 unless all are 0.
 Control B6G_CTRL=1: one character of entry 1 is changed in memory; prefix must fire at every stage."""
 import sys, os, hashlib
 
@@ -19,9 +20,11 @@ L1 = "59c5309377eda882ba436ffe7eb03fbff598c7c8"
 L2 = "6e047c676e582484fe8eb87891764e8c1a7d9a18"
 L3 = "fd9074a3b9961f59a1b64d5acdaa28529306ede9"
 L4 = "668fd1b88ea4ae28690f0b931d84b27a85928ca8"
+L5 = "fbd857b08befb397e03e71c554cccb4542be3820"
 STAGES = [(125, "4c692ab2a092708d206719759f966a0ae4f98e5a"), (829, "9dc9179fb08063cd59de25c5d3e16b0f8c693fbd"),
           (881, "43a941eb6249f0278e342438f92293b7f7a4449e"), (1147, "abb6b96869d627c7aba23226feb18f847298a8f1"),
-          (1180, "013290889e9e08f58ae162baa0c2eb5082f4b135"), (1271, "b0b8475794ead69c1e8b57d0bb26a82ff18d77c9")]
+          (1180, "013290889e9e08f58ae162baa0c2eb5082f4b135"), (1271, "b0b8475794ead69c1e8b57d0bb26a82ff18d77c9"),
+          (1368, "c87fcbe8156d2b83a68ea6c505dab5cad071bbcf")]
 sha1 = lambda b: hashlib.sha1(b).hexdigest()
 
 if __name__ == "__main__":
@@ -30,6 +33,7 @@ if __name__ == "__main__":
     l2 = int(sha1(open(os.path.join(D, "P-N5-EXP-line-L2.txt"), "rb").read()) != L2)
     l3 = int(sha1(open(os.path.join(D, "P-N5-EXP-line-L3.txt"), "rb").read()) != L3)
     l4 = int(sha1(open(os.path.join(D, "P-N5-EXP-line-L4.txt"), "rb").read()) != L4)
+    l5 = int(sha1(open(os.path.join(D, "P-N5-EXP-line-L5.txt"), "rb").read()) != L5)
     fx = open(os.path.join(D, "P-N5-EXP-fixes.md"), "rb").read()
     if os.environ.get("B6G_CTRL") == "1":
         i = fx.index(b"Entry 1")
@@ -38,5 +42,5 @@ if __name__ == "__main__":
     prefix = 0
     for n, h in STAGES:
         prefix += int(len(lines) <= n or sha1(b"\n".join(lines[:n]) + b"\n") != h)
-    print(f"guard frozen {frozen} prefix {prefix} of {len(STAGES)} l1 {l1} l2 {l2} l3 {l3} l4 {l4}")
-    sys.exit(1 if (frozen or prefix or l1 or l2 or l3 or l4) else 0)
+    print(f"guard frozen {frozen} prefix {prefix} of {len(STAGES)} l1 {l1} l2 {l2} l3 {l3} l4 {l4} l5 {l5}")
+    sys.exit(1 if (frozen or prefix or l1 or l2 or l3 or l4 or l5) else 0)

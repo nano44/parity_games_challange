@@ -1,0 +1,15 @@
+L-4 bytes 7292 sha1 668fd1b88ea4ae28690f0b931d84b27a85928ca8
+--- F-L3-1 (1): at character 861 of L-4, 46 bytes removed, 154 bytes put in
+- β-ranks by Ξ-depth with ties broken by β-id
++ β-ranks depth-major (a smaller Ξ-depth outranks a larger one), inside a Ξ-depth by the rule's local δ, the remaining ties (wire options only) by β-id
+--- F-L3-1 (2): at character 1276 of L-4, 29 bytes removed, 110 bytes put in
+- so R104's IDEAL-ACYC-POLY («
++ so IDEAL-ACYC-POLY (named in RESULTS R104 and R117; in the words of R104's packet docs/red/P-N5-REALIZE.md: «
+--- L-h: at character 7030 of L-4, 22 bytes removed, 23 bytes put in
+- with fixes entries 1-9
++ with fixes entries 1-10
+changes 3; characters of L-4 kept unchanged 7054 of 7109
+L-5 bytes 7482 (with its newline) lines 1 pipes 0 sha1 fbd857b08befb397e03e71c554cccb4542be3820
+L-5 brackets ( 81 ) 81 [ 0 ] 0 { 0 } 0 « 6 » 6 balanced 1
+L-5 checks failed 0
+written docs/red-b/P-N5-EXP-line-L5.txt
