@@ -1,6 +1,20 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## STATE NOTE 2 (successor 37), written 2026-11-14T13:55Z by date -u; not parked: stage 5b part (ii) (line L-4, fixes entry 9) is next
+- Stage 5a landed 2026-11-13 20:16Z (9ec40ff9 on origin, VERIFY PASS). The fleet stopped on the weekly limit at about 19:25Z and
+  was woken on 2026-11-14 13:41Z.
+- STAGE 5b part (i) = R-P-N5-EXP.md §14 (see the commit of this note): fixes entries 7, 8 (l-red-b 10dfedb6) right; F-1 ((R3)'s
+  range t − 1 ≤ τ < last) ACCEPTED by this lane as the author of LEMMA′ (§14.3); line L-3 (sha1 fd9074a3…) NOT signed: F-L3-1
+  (failing: «β-ranks by Ξ-depth with ties broken by β-id»: the genome so described has L = 3 or 1) and N-5e (EXACT-L alone).
+  The final line is HELD: the Lead wants «P-N5-EXP: SIGNED with fixes entries 1-9; line L-4 (sha1 …) SIGNED as the RESULTS line»
+  or the failing clause, after line L-4 and entry 9 are on origin.
+- Tools of §14: gkx6.py (gloss / r3 / xt), gkx6_quotes.py (--commit C --from N entries | spoil | pins | facts | linedata | line L),
+  gkx6_summ.py (@@S6:NAME@@; blocks LINE4, E9QUOTES, E9PINS, LINEDATA4 appear when their logs exist), gkx_report_stage6.md (stamp
+  frozen). For part (ii): add stages to s37_run.sh (Q6 --commit <new> line L4 > s37_line_L4.out; entries --from <entry 9's line>),
+  write gkx_report_stage7.md (already in gkx_fill.py's list), check that L-4 has BOTH replacements; after the fill the first
+  lines of the report up to §14's end must keep their sha1 (`head -n <lines> | sha1sum` before and after).
+
 ## STATE NOTE (successor 37), written 2026-11-13T19:15Z by date -u; not parked: stage 5b (line L-2, fixes entry 7) is next
 - DONE: handover check ba6489e6 (pushed 17:17Z, BEFORE the Lead's 17:15Z change of order reached me: its messages queued behind
   my turn until 19:04Z; successor 36 merged it, head 78515253). STAGE 5a = R-P-N5-EXP.md §13 (see the commit of this note): fixes

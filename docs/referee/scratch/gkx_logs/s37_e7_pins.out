@@ -1,0 +1,6 @@
+pins: SHA1SUMS_b6b_fixes4 at 10dfedb65: files 10; sha1 mismatches 0
+pins: SHA1SUMS_b6b_fixes5 at 10dfedb65: files 3; sha1 mismatches 0
+pins: fenced DATA lines / of them not a line of a pinned output file: entry 7 57 / 0; entry 8 12 / 0
+pins: sha1 values written in the entries (REF2B's file by script, REF1D, FIX5, the packet, L-2, L-3): 6; not in the fixes file 0; different from the git object 0; stated line counts wrong 0
+pins: REF1D's first 496 lines equal the report at 7ca9c2b4 byte for byte: 1; Addendum 2 «is its l. 321-549» (by script: the first line with «Addendum 2» in a heading of REF2B): [321]
+pins: runfix.out E lines 11: sha1 = the pin of SHA1SUMS_b6b_fixes2, cmp-with-data 0, sha1-equals-pin 1: lines failing 0; those 11 pinned files and the pin file changed since 24f4d436: 0; last line «b6fixtest failed 0»

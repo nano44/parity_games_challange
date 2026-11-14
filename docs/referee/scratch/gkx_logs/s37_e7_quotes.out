@@ -1,0 +1,15 @@
+fixes file at 10dfedb65: lines 1180 sha1 013290889e9e08f58ae162baa0c2eb5082f4b135; packet there sha1 c0449b17193f19619f33b366096762dfde27d542 (frozen c0449b17193f19619f33b366096762dfde27d542: 1)
+append-only: 06d399c2 125 lines (stated 125: 1) sha1 4c692ab2… a byte prefix of the file at 10dfedb65: 1
+append-only: 24f4d436 829 lines (stated 829: 1) sha1 9dc9179f… a byte prefix of the file at 10dfedb65: 1
+append-only: 0c8fdf9e 881 lines (stated 881: 1) sha1 43a941eb… a byte prefix of the file at 10dfedb65: 1
+append-only: b1a93700 1147 lines (stated 1147: 1) sha1 abb6b968… a byte prefix of the file at 10dfedb65: 1
+append-only: 10dfedb6 1180 lines (stated 1180: 1) sha1 01329088… a byte prefix of the file at 10dfedb65: 1
+0c8fdf9e -> 10dfedb65: the packet, gk.py, data/b6b/G, raw, pg and the pin files of the frozen packet and of entries 1-6: changed 0; under docs/red-b, experiments/red-b: added 21, modified P-N5-EXP-fixes.md b6fixquote.py check.sh run_b6fix.sh, deleted 0; data files of entries 1-6 modified 0
+entries by their headings: entry 7 l. 883-1147; entry 8 l. 1149-1180
+quotes, entry 7 (l. 883-1147): FIX5 4 of 4 in the cited lines; FROZEN 5 of 5 in the cited lines; REF1D 2 of 2 in the cited lines; REF2B (by script only) 13 of 13 in the cited lines
+quotes, entry 8 (l. 1149-1180): no tagged quote
+quotes, together: quotes 24 in the cited lines 24
+source REF2B = f17a2708:docs/referee-2/R2-P-N5-EXP.md: lines 549 sha1 7128d83e76c675609af3f74c73cb0015c9de2ef3
+source REF1D = 78515253:docs/referee/R-P-N5-EXP.md: lines 542 sha1 0ec7d605ffd23b31114cdc328d792261a108ced9
+source FIX5 = 24f4d436:docs/red-b/P-N5-EXP-fixes.md: lines 829 sha1 9dc9179fb08063cd59de25c5d3e16b0f8c693fbd
+quotes control (first letter spoiled), together: quotes 24 in the cited lines 0

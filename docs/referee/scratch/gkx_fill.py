@@ -8,6 +8,7 @@ import sys, os, io, contextlib
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import gkx_summ
 import gkx5_summ
+import gkx6_summ
 
 PREFIX = {"GEN": ("packet sha1", "gen:"), "MEMBER": ("member:", "member control"), "FACTS": ("facts, ",), "FACTSCTRL": ("facts control",),
           "CAUSAL": ("causal",), "ABS": ("abs",), "RESP": ("resp",), "RUN": ("run:",), "SIZES": ("sizes files", "first k"),
@@ -27,7 +28,9 @@ def main():
     prev = ""
     tmpl = open(os.path.join(here, "gkx_report_tmpl.md"), encoding="utf-8").read()
     b5 = gkx5_summ.blocks(gkx_summ.D)          # stage 5a (successor 37): blocks of the s37_*.out logs, placeholders @@S5:NAME@@
-    for extra in ("gkx_report_stage2.md", "gkx_report_stage3.md", "gkx_report_stage4.md", "gkx_report_stage5.md"):   # later stages are appended, never merged into stage 1
+    b6 = gkx6_summ.blocks(gkx_summ.D)          # stage 5b (successor 37): placeholders @@S6:NAME@@
+    for extra in ("gkx_report_stage2.md", "gkx_report_stage3.md", "gkx_report_stage4.md", "gkx_report_stage5.md",
+                  "gkx_report_stage6.md", "gkx_report_stage7.md"):   # later stages are appended, never merged into stage 1
         p = os.path.join(here, extra)
         if os.path.exists(p):
             tmpl = tmpl.rstrip("\n") + "\n\n" + open(p, encoding="utf-8").read()
@@ -38,6 +41,9 @@ def main():
             block = [l for l in summ if l.startswith(PREFIX[s[2:-2]])]
             assert block, f"no log lines for {s}"
             out += [ind + l for l in block]
+        elif s.startswith("@@S6:") and s.endswith("@@"):
+            ind = prev[:len(prev) - len(prev.lstrip())]
+            out += [ind + l for l in b6[s[5:-2]]]
         elif s.startswith("@@S5:") and s.endswith("@@"):
             ind = prev[:len(prev) - len(prev.lstrip())]
             out += [ind + l for l in b5[s[5:-2]]]

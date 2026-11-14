@@ -1,0 +1,14 @@
+r3 k 3 ctrl 0 L 6 windows 3 windows2 2 r3in 0 r3move 0 r3rest 0 literal 1 expected 1 litdiff 0
+r3 k 4 ctrl 0 L 14 windows 7 windows2 6 r3in 0 r3move 0 r3rest 0 literal 4 expected 4 litdiff 0
+r3 k 5 ctrl 0 L 30 windows 15 windows2 14 r3in 0 r3move 0 r3rest 0 literal 11 expected 11 litdiff 0
+r3 k 6 ctrl 0 L 62 windows 31 windows2 30 r3in 0 r3move 0 r3rest 0 literal 26 expected 26 litdiff 0
+r3 k 7 ctrl 0 L 126 windows 63 windows2 62 r3in 0 r3move 0 r3rest 0 literal 57 expected 57 litdiff 0
+r3 k 8 ctrl 0 L 254 windows 127 windows2 126 r3in 0 r3move 0 r3rest 0 literal 120 expected 120 litdiff 0
+r3 k 9 ctrl 0 L 510 windows 255 windows2 254 r3in 0 r3move 0 r3rest 0 literal 247 expected 247 litdiff 0
+r3 k 10 ctrl 0 L 1022 windows 511 windows2 510 r3in 0 r3move 0 r3rest 0 literal 502 expected 502 litdiff 0
+r3 k 11 ctrl 0 L 2046 windows 1023 windows2 1022 r3in 0 r3move 0 r3rest 0 literal 1013 expected 1013 litdiff 0
+r3 k 12 ctrl 0 L 4094 windows 2047 windows2 2046 r3in 0 r3move 0 r3rest 0 literal 2036 expected 2036 litdiff 0
+r3 k 13 ctrl 0 L 8190 windows 4095 windows2 4094 r3in 0 r3move 0 r3rest 0 literal 4083 expected 4083 litdiff 0
+r3 k 14 ctrl 0 L 16382 windows 8191 windows2 8190 r3in 0 r3move 0 r3rest 0 literal 8178 expected 8178 litdiff 0
+r3 k 5 ctrl 1 L 30 windows 15 windows2 14 r3in 14 r3move 0 r3rest 0 literal 11 expected 11 litdiff 0
+r3 k 6 ctrl 1 L 62 windows 31 windows2 30 r3in 30 r3move 0 r3rest 0 literal 26 expected 26 litdiff 0

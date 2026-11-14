@@ -1,0 +1,8 @@
+linedata member.out: k 3..14 (12 lines) viol sum 0; clauses c1..c8 present 1; member 1 on 12
+linedata sim.out: k 3..14 ideq sum 0; T = TB = TC = 2^k − 2 fails on 0; stop stuck on 12 of 12; howard max 4
+linedata lemma.out: k 3..14 kfact, vfact, sched, tlen, rest, swk sum 0
+linedata prefix_*.out: run k 3..14 windows 16,368 h1 0 h2 0 psched 0; all k 3..12 aviol 0; exh k 3..4 pviol 0 loc 0 stviol 0 c0e0 0; off pviol 0; drive dviol 0; loc 0; stable stviol 0; u0 c0e0 0; the frozen wording (control 5) k 3..8: fails = k − 1 on 6 of 6 lines
+linedata n5.out + n5_k12.out: k 3..12; its = its2 = 2^k + 1, fb = fb2 = 1, F = 2^k − 2 fails on 0; mism, wrong, wrong2, nonmover, engdiff, gdiff sum 0; n 175 … 1255 for k 3 … 11, iterations 9 … 2049
+linedata n5_k13.out: its 8193 n 1525 F 8190 (fallback at iteration 8191) fb 1; mism, wrong, nonmover, gdiff sum 0; has a second engine's columns 0
+linedata at 350d84eb: pg/G_k_g3.pg for k 3..11 (9 files); G/G_k.json for k 3..14 (12 files); G_13_g3.pg at 10dfedb65: 1
+linedata this lane's sizes.out (stage 1): first k with 2^k-1 > (n)^2: k 23 size 2875 lhs 8388607 rhs 8265625 hol; first k with 2^k-1 > (n)^3: k 37 size 4765 lhs 137438953471 rhs 108190; first k with 2^k-1 > (n)^4: k 51 size 6655 lhs 2251799813685247 rhs 19

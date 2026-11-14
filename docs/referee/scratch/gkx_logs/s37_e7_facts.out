@@ -1,0 +1,7 @@
+facts 7.1: e7_r3.out k 3..14 (8 columns) and the 2 r3 control lines of e7_ctrl.out (r3in) against this lane's own r3 counters: compared 98 different 0; windows2 total 16,356, literal total 16,278
+facts 7.3: e7_xt.out k 3..14 and the xt control lines of e7_ctrl.out (kinds, N, wiretgt, etgt, yptgt, expected, ypdiff, outside) against this lane's own Ξ-target counters: compared 116 different 0
+facts 7.2: the packet's l. 191-204 and l. 258 begin / end as the table's rows say: checks 14 failed 0
+facts conventions: quote_fixes7.out ends «quotes 104 found 104 notfound 0», its control «quotes 104 found 0 notfound 104»; REF1D's §12 heading at l. [498] of 542; commits 577e8df9, 4cf6e1ff ancestors of 78515253: 1
+facts 7.5 and the tail: L-1, L-2, L-3 name QUIET-KEY-1P, SW-POLY or P-N5-KEY1P: 0 times; in REF2B the last heading at or above l. 464 is at l. 408 and names A2.3: 1; a heading with «Addendum 2» at l. [321]
+facts 7.6: line_L2_build.out records 5 replacements (L-a, L-b, L-d (1), L-d (2), L-c); L-1 has the recorded old text at the stated character for 5 of 5; L-1 with them applied at those characters is L-2 byte for byte: 1; L-1 characters outside the recorded old texts 5144 (the record: 5144 of 5463)
+facts entry 8: L-2 -> L-3: same length 1; characters that differ 2 at [7026, 7080]: '5'->'7' '6'->'7'; «with fixes entries 1-5» once in L-2 1, «L-RED-B successors 5-6» once in L-2 1; L-3 = L-2 with the two replacements 1

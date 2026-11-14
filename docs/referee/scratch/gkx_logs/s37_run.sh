@@ -2,7 +2,7 @@
 # REFEREE successor 37: reproduces docs/referee/scratch/gkx_logs/s37_*.out (stage 5a of R-P-N5-EXP.md, section 13: the lane's fixes
 # entries 2, 3, 5, 6 at claude/l-red-b 0c8fdf9e; supplementary direct tests of entry 4).
 # Run from the repository root: bash docs/referee/scratch/gkx_logs/s37_run.sh
-# Resumable: a stage with its .out present is skipped. About 4 minutes. Needs the commits named in gkx5_quotes.py in the object
+# Resumable: a stage with its .out present is skipped. About 5 minutes (stage 5a's logs and, below, stage 5b's). Needs the commits named in gkx5_quotes.py in the object
 # store (git fetch origin claude/l-red-b claude/l-new claude/l-comp claude/l-red claude/referee-2 claude/vibrant-johnson-nxvvxo).
 set -u
 HERE="$(cd "$(dirname "$0")" && pwd)"
@@ -34,4 +34,15 @@ st s37_rerun && {
   rm -rf "$W"
 } > "$HERE/s37_rerun.tmp" && mv "$HERE/s37_rerun.tmp" "$HERE/s37_rerun.out"
 st s37_lanecmp && $Q5 --lanecmp > "$HERE/s37_lanecmp.tmp" && mv "$HERE/s37_lanecmp.tmp" "$HERE/s37_lanecmp.out"
+# ---- stage 5b (section 14): line L-3 and fixes entries 7, 8 at claude/l-red-b 10dfedb6 (needs claude/referee-2 f17a2708 in the object store)
+P6="python3 -I $T/gkx6.py"
+Q6="python3 -I $T/gkx6_quotes.py"
+st s37_gloss && $P6 gloss 3 4 5 6 7 8 9 10 11 12 > "$HERE/s37_gloss.tmp" && mv "$HERE/s37_gloss.tmp" "$HERE/s37_gloss.out"
+st s37_r3 && { $P6 r3 3 4 5 6 7 8 9 10 11 12 13 14; $P6 r3 5 6 --ctrl 1; } > "$HERE/s37_r3.tmp" && mv "$HERE/s37_r3.tmp" "$HERE/s37_r3.out"
+st s37_xt && $P6 xt 3 4 5 6 7 8 9 10 11 12 13 14 > "$HERE/s37_xt.tmp" && mv "$HERE/s37_xt.tmp" "$HERE/s37_xt.out"
+st s37_e7_quotes && { $Q6 entries; $Q6 spoil | tail -n 1; } > "$HERE/s37_e7_quotes.tmp" && mv "$HERE/s37_e7_quotes.tmp" "$HERE/s37_e7_quotes.out"
+st s37_e7_pins && $Q6 pins > "$HERE/s37_e7_pins.tmp" && mv "$HERE/s37_e7_pins.tmp" "$HERE/s37_e7_pins.out"
+st s37_e7_facts && $Q6 facts > "$HERE/s37_e7_facts.tmp" && mv "$HERE/s37_e7_facts.tmp" "$HERE/s37_e7_facts.out"
+st s37_linedata && $Q6 linedata > "$HERE/s37_linedata.tmp" && mv "$HERE/s37_linedata.tmp" "$HERE/s37_linedata.out"
+st s37_line_L3 && $Q6 line L3 > "$HERE/s37_line_L3.tmp" && mv "$HERE/s37_line_L3.tmp" "$HERE/s37_line_L3.out"
 echo done

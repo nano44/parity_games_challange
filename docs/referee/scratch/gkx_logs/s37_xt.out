@@ -1,0 +1,12 @@
+xt k 3 N 11 kinds u v y yb wiretgt 0 etgt 0 yptgt 0 expected 0 ypdiff 0 outside_the_list_of_5.1_as_written 0
+xt k 4 N 20 kinds u v y yb yp ypb wiretgt 0 etgt 0 yptgt 2 expected 2 ypdiff 0 outside_the_list_of_5.1_as_written 2
+xt k 5 N 29 kinds u v y yb yp ypb wiretgt 0 etgt 0 yptgt 4 expected 4 ypdiff 0 outside_the_list_of_5.1_as_written 4
+xt k 6 N 38 kinds u v y yb yp ypb wiretgt 0 etgt 0 yptgt 6 expected 6 ypdiff 0 outside_the_list_of_5.1_as_written 6
+xt k 7 N 47 kinds u v y yb yp ypb wiretgt 0 etgt 0 yptgt 8 expected 8 ypdiff 0 outside_the_list_of_5.1_as_written 8
+xt k 8 N 56 kinds u v y yb yp ypb wiretgt 0 etgt 0 yptgt 10 expected 10 ypdiff 0 outside_the_list_of_5.1_as_written 10
+xt k 9 N 65 kinds u v y yb yp ypb wiretgt 0 etgt 0 yptgt 12 expected 12 ypdiff 0 outside_the_list_of_5.1_as_written 12
+xt k 10 N 74 kinds u v y yb yp ypb wiretgt 0 etgt 0 yptgt 14 expected 14 ypdiff 0 outside_the_list_of_5.1_as_written 14
+xt k 11 N 83 kinds u v y yb yp ypb wiretgt 0 etgt 0 yptgt 16 expected 16 ypdiff 0 outside_the_list_of_5.1_as_written 16
+xt k 12 N 92 kinds u v y yb yp ypb wiretgt 0 etgt 0 yptgt 18 expected 18 ypdiff 0 outside_the_list_of_5.1_as_written 18
+xt k 13 N 101 kinds u v y yb yp ypb wiretgt 0 etgt 0 yptgt 20 expected 20 ypdiff 0 outside_the_list_of_5.1_as_written 20
+xt k 14 N 110 kinds u v y yb yp ypb wiretgt 0 etgt 0 yptgt 22 expected 22 ypdiff 0 outside_the_list_of_5.1_as_written 22
