@@ -1,0 +1,9 @@
+k 3 N 11 T_rule 6 T_w0 6 target 6 w0samebr 0 w0rundiff 0 nonwire_ties 2
+k 4 N 20 T_rule 14 T_w0 14 target 14 w0samebr 0 w0rundiff 0 nonwire_ties 4
+k 5 N 29 T_rule 30 T_w0 30 target 30 w0samebr 0 w0rundiff 0 nonwire_ties 4
+k 6 N 38 T_rule 62 T_w0 62 target 62 w0samebr 0 w0rundiff 0 nonwire_ties 4
+k 7 N 47 T_rule 126 T_w0 126 target 126 w0samebr 0 w0rundiff 0 nonwire_ties 4
+k 8 N 56 T_rule 254 T_w0 254 target 254 w0samebr 0 w0rundiff 0 nonwire_ties 4
+k 9 N 65 T_rule 510 T_w0 510 target 510 w0samebr 0 w0rundiff 0 nonwire_ties 4
+k 10 N 74 T_rule 1022 T_w0 1022 target 1022 w0samebr 0 w0rundiff 0 nonwire_ties 4
+exit 0

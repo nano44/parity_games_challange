@@ -729,3 +729,76 @@ FINDINGS: entries 6-8 accepted, F-1 … F-5 closed; L-3 has one failing clause, 
 genome it describes runs 3 steps), and L3-2 (k ≤ 12 → 13), L3-3 (R124's premises), L3-4 (the quotation is from R104's packet),
 L3-5 (optional); L-a, L-b, L-c done.
 NEEDS: Lead: L3-1 as a named replacement in the next line (and L3-2 … L3-4 if taken); then I check only the replacements.
+
+## Addendum 5 (REFEREE-2 successor 42; 2026-11-14T15:21:29Z by date -u): fixes entries 9, 10, 11 and the line of record L-6 — the final line
+Asked by the Lead (messages of 2026-11-14 13:56Z part (ii), 14:14Z, 14:26Z): check the replacements of L-4, L-5, L-6 against L-3,
+which Addendum 4 read word by word; entries 9, 10, 11; then the final line.
+- Object: claude/l-red-b 91d30d95a3875950b5290b8fc63f1e2c3ad05238 (on origin at 15:18Z), docs/red-b/P-N5-EXP-fixes.md, 1,443
+  lines, 133,301 B, sha1 214967a10752ac9b90981d01628bec13473da404 (entry 9 l. 1182-1272, entry 10 l. 1273-1369, entry 11 l.
+  1370-1443: read in full); docs/red-b/P-N5-EXP-line-L6.txt, 7,755 B, sha1 1e0ff12d51da7a4ee1aad12ed0fd9119a097896b; L-4 (sha1
+  668fd1b8…) and L-5 (fbd857b0…) as steps.
+- Guards: the packet's sha1 is c0449b17… at 91d30d95; the fixes file at 10dfedb6 (110,406 B) is a byte prefix of the file at
+  91d30d95; L-3 is unchanged; the nine pin files of data/b6b (112 files) pass `sha1sum -c` in a copy of the tree.
+- docs/referee/ was not opened beyond the sentences the entries quote (REF1E = docs/referee/R-P-N5-EXP.md at claude/referee
+  9ec40ff9, by my quote tool only): what entries 9 and 10 report of REFEREE 37's stage 5a beyond those sentences is not checked.
+
+### A5.0 Verdict
+| object | verdict |
+| --- | --- |
+| entry 9 (EXP-N5′'s label names both statements of R124; notes N-5a … N-5d; line L-4) | **accepted.** The label is right: the count rests on Corollary EXACT-L, the clause «one fallback, at iteration 2^k − 1» on Theorem ENDGAME-3-N5 with EXACT-L (my §A2.2 derived F = L + 1 from exactly these two). N-5a is right about my own file (the quoted sentence begins on l. 247 of this report at 33ff0e98) |
+| entry 10 (the rank gloss; the source of the IDEAL-ACYC-POLY sentence; line L-5) | **accepted; L3-1 and L3-4 closed.** Its gloss.out agrees with my own runs: the old wording's genome runs 3 steps, the new wording is rule R's br |
+| entry 11 (L3-2, L3-3, L3-5; line L-6) | **accepted; L3-2, L3-3, L3-5 closed.** The two wordings the author changed are right (§A5.1) |
+| line L-6 | **SIGNED as the RESULTS line** |
+
+**P-N5-EXP: SIGNED with fixes entries 1-11; line L-6 (sha1 1e0ff12d51da7a4ee1aad12ed0fd9119a097896b) SIGNED as the RESULTS line.**
+
+### A5.1 The nine replacements (r2line.py → line6.out, line6_ctrl.out)
+L-6 is L-3 with nine named replacements and nothing else: rebuilt by me from L-3, each old text occurring exactly once in the
+line it is applied to, the result equal to the files L-4, L-5, L-6 byte for byte (control: with the old rank gloss kept, L-5
+and L-6 are not reproduced). Each new text, against its source:
+| step | old → new | verdict |
+| --- | --- | --- |
+| L-4, N-5e | «RESULTS R124's Corollary EXACT-L as landed» → «… Corollary EXACT-L and Theorem ENDGAME-3-N5 as landed» | right: both statements are in R124 as landed, and the fallback clause needs the second |
+| L-4, L-5, L-6 | «with fixes entries 1-7» → «1-9» → «1-10» → «1-11» | right: entries 1-11 are the ones checked in Addenda 2, 4, 5 |
+| L-5, my L3-1 | «β-ranks by Ξ-depth with ties broken by β-id» → «β-ranks depth-major (a smaller Ξ-depth outranks a larger one), inside a Ξ-depth by the rule's local δ, the remaining ties (wire options only) by β-id» | right: this is rule R's clause (frozen l. 98-99 with entry 5.1) and gk.py l. 157-160; read as a definition it gives G_k's br exactly (add4_gloss.out, rulediff 0). Note N-1 below |
+| L-5, my L3-4 | «so R104's IDEAL-ACYC-POLY («» → «so IDEAL-ACYC-POLY (named in RESULTS R104 and R117; in the words of R104's packet docs/red/P-N5-REALIZE.md: «» | right: the name is in both landed entries, the sentence is the packet's l. 224 |
+| L-6, my L3-3 | «(premise R117 (f), under SPEC's S1 tie-breaks, same standing premises)» → «(with R124's premises as landed, all under the standing SPEC premise 1E-N3, among them RESULTS R117 (f) for EXACT-L, SPEC's S1 tie-breaks through REACH3's [RULE] choice, and RESULTS R15 (c) for Lemma TERM-XI)» | right: every phrase is R124's at RESULTS l. 15371 (line6.out lists them); «among them» is honest, R124's own list is longer |
+| L-6, my L3-2 | «DATA for k ≤ 12» → «DATA for k ≤ 13, k = 13 on one engine» | right (entry 6: wrong 0 at k = 13 on engine 1) |
+| L-6, my L3-5 | «CAUSAL and LEMMA′ of fixes entry 4 (4.3, 4.4) are referee-originated, stated and proved by REFEREE 36 (» → «STABLE's step form, CAUSAL and LEMMA′ of fixes entry 4 (4.2, 4.3, 4.4) are referee-originated, stated by REFEREE 36, which also proved CAUSAL and LEMMA′, the proof of STABLE being the frozen one read in step form (» | right, and more exact than my proposal: REFEREE 36 stated all three (its E-5 for STABLE) and proved the two; 4.2's proof is the frozen l. 258-262 read with the key bit of the step, plus the lane's two lines for its «hence» and «consequently» clauses |
+The six quotations inside L-6 are verbatim in their sources (line6.out); brackets 82 / 82, 1 / 1, guillemets 6 / 6.
+- **N-1 (a note, not a condition).** The new gloss speaks of «Ξ-depth» and does not restate rule R's convention [Q FROZEN l. 98]
+  «a wire counting as depth 2k + 5». With it, the gloss is G_k. Without it (a wire at the depth its own chain gives, 0) the
+  numbering is another one and «(wire options only)» is not literal (2 non-wire options at k = 3, 4 for k ≥ 4 then tie with wire
+  options), but the IDEAL run is the same state by state for k = 3..10 (add5_gloss2.out: w0rundiff 0; the lane's wire0 column in
+  entry 10 says the same for k = 3..12). So the line's statement is true under either reading; nothing to change.
+
+### A5.2 Entries 9, 10, 11
+Quotes: 18 tagged in entries 9-11 (the lane's count: 9 + 4 + 5), 18 verbatim at the commits named (REF1E 7, R124 4, FIX5 2,
+FROZEN, R104, R104P, R117, REF1 one each; control 18 missing; qfix_e911.out); REF1E's sha1 d5017ab5… and 784 lines are those of
+the file at 9ec40ff9. Entry 9: 9.1 as in the table; N-5b is my F-3; N-5c and N-5d are records (N-5d: for j = 1 the frozen (H2)
+also reached s_(last+1): true, and LEMMA′ asks for less). Entry 10: its two relayed findings are my L3-1 and L3-4, found
+independently by REFEREE 37, the Lead says; its test of the corrected wording is the test I ran. Entry 11: 11.1-11.3 as in the
+table; its READ of the premise lists of entry 3 and 9.1 (completed by RESULTS R15 (c) for Lemma TERM-XI; R117 (f) a premise of
+EXACT-L only) is R124's own list.
+
+### A5.3 What this signature of the line covers
+Covered: every clause of L-6 (L-3's 40 clauses read word by word in Addendum 4; the nine replacements here) against rule R and
+gk.py, the theorem and corollaries I signed, RESULTS at trunk aeb90ac1, and the quoted sources. Not covered: the status phrases
+«CONDITIONAL until two referees sign» and «PROVED lane», which the Lead replaces at landing; any edit the Lead makes to the line
+in the RESULTS draft (it announced a cost-model clause of TARGET.md §3 and the house status phrase): those words I have not
+seen; the replay numbers of L-COMP and L-RED, cited in the line as their DATA; the lane's N5 runs (entries 1 and 6), which I
+did not re-run (my own engine: k ≤ 11, §3.4; the k = 13 game file is my builder's game, §A4.2).
+
+### A5.4 Reproduction (from the repository root)
+`python3 -B docs/referee-2/R2-P-N5-EXP/r2line.py 91d30d95 aeb90ac1` → line6.out (with --ctrl: its «rebuilt» and TOTAL lines →
+line6_ctrl.out); `git show 91d30d95:docs/red-b/P-N5-EXP-fixes.md > FIX91`, then `python3 -B docs/referee-2/R2-P-N5-EXP/r2qfix.py
+FIX91 --from 1182 FROZEN=350d84eb:docs/red-b/P-N5-EXP.md FIX5=24f4d436:docs/red-b/P-N5-EXP-fixes.md
+REF1=c881709b:docs/referee/R-P-N5-EXP.md REF1E=9ec40ff9:docs/referee/R-P-N5-EXP.md R104P=5d7aab0f:docs/red/P-N5-REALIZE.md
+R104=5d7aab0f:docs/RESULTS.md#R104 R117=5d7aab0f:docs/RESULTS.md#R117 R124=5d7aab0f:docs/RESULTS.md#R124` → qfix_e911.out (with
+--ctrl: its last line → qfix_e911_ctrl.out); `python3 -B docs/referee-2/R2-P-N5-EXP/r2add4.py gloss2 3 … 10` → add5_gloss2.out.
+
+DONE: entries 9, 10, 11 and line L-6 checked; the final line given.
+FINDINGS: L3-1 … L3-5 closed; the two wordings the author changed are right; note N-1 (the gloss relies on rule R's wire
+depth; harmless: the run is the same either way). P-N5-EXP: SIGNED with fixes entries 1-11; line L-6 (sha1 1e0ff12d…) SIGNED as
+the RESULTS line.
+NEEDS: Lead: if the RESULTS draft changes any word of L-6 beyond the status phrase, send the changed words for a check.

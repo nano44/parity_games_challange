@@ -1,0 +1,20 @@
+REF1E FOUND «**P-N5-EXP: SIGNED with fixes entries 1-6.**»
+REF1E FOUND «**Entry 3**: the statement of Corollary EXP-N5′ and its PROOF are righ»
+FIX5 FOUND «PROVED-CONDITIONAL on RESULTS R124's Corollary EXACT-L AS LANDED [refe»
+FIX5 FOUND «R124's Corollary EXACT-L and its Theorem ENDGAME-3-N5 say:»
+REF1E FOUND «N-5a (entry 2 (d), fixes l. 224): the tag»
+REF1E FOUND «should read l. 247-249: the quote begins one line earlier in the file »
+REF1E FOUND «N-5b (entry 5.1, fixes l. 670): «(table: every Ξ-target is a u, v, y, »
+REF1E FOUND «N-5c (conventions, l. 134): «75 in entries 2-5» includes two quotes wi»
+REF1E FOUND «N-5d (entry 4.4, Remark 2; seen while reading, entry 4 is not re-revie»
+FROZEN FOUND «br of the β of (x, o) := the rank, among all options, of the pair (−de»
+R104P FOUND «Let IDEAL-ACYC-POLY mean: there is a polynomial q such that L(G) ≤ q(N»
+R104 FOUND «FL-POLY ⇒ IDEAL-ACYC-POLY, with q(t) := p(3t + 6)»
+R117 FOUND «FL-S3-POLY ⇒ IDEAL-ACYC-POLY»
+R124 FOUND «premise RESULTS R117 (f); it uses SPEC's S1 tie-breaks, through REACH3»
+R124 FOUND «(Lemma TERM-XI) both runs terminate»
+R124 FOUND «premises, all under the standing SPEC premise 1E-N3 of RESULTS R57 / R»
+R124 FOUND «RESULTS R15 (c) («every non-empty switch of improvements goes strictly»
+REF1 FOUND «Correct form: «if unit i is at rest b under s, E_(i−1)(s) = b and C_(i»
+PER LABEL (tagged, found) FIX5 2 2 FROZEN 1 1 R104 1 1 R104P 1 1 R117 1 1 R124 4 4 REF1 1 1 REF1E 7 7
+TOTAL tagged 18 checked 18 found 18 missing 0 deferred 0 nosource 0 ctrl 0

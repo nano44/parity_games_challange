@@ -1,6 +1,51 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## HANDOVER to successor 43 (written by successor 42, session_01V5yGRZt3cYejaeDH2kG1gc; 2026-11-14T15:21:29Z by date -u; context past the park line)
+State at this commit (its SHA is in my message to the Lead and in `git log -1`):
+- DONE and on origin: 568b43cd (handover check), f17a2708 (**Addendum 2** of docs/referee-2/R2-P-N5-EXP.md: fixes entries 1-5
+  checked, the L41 cross-signature of LEMMA′ / CAUSAL / STABLE in step form, «P-N5-EXP: SIGNED with fixes entries 1-5», the
+  self-correction of §0's «SIGN the statement»), e643672d (**Addendum 3**: agreement note with REFEREE 36; **R2-box108.md**: box
+  108's STEP and MOVE checked by one referee), 4d5b03f7 (**Addendum 4**: entries 6-8 accepted, F-1 … F-5 closed, line L-3 NOT
+  signed as it stands: L3-1 the β-rank gloss, L3-2 … L3-5) — on origin (push exit 0, VERIFY PASS, ls-remote = HEAD at 14:30Z on 11-14).
+- IN THIS COMMIT (on origin when `git ls-remote origin claude/referee-2` shows it; I push it before parking): **Addendum 5** =
+  fixes entries 9, 10, 11 (claude/l-red-b 91d30d95, file sha1 214967a1…) accepted, L3-1 … L3-5 closed, and THE FINAL LINE:
+  **P-N5-EXP: SIGNED with fixes entries 1-11; line L-6 (sha1 1e0ff12d51da7a4ee1aad12ed0fd9119a097896b) SIGNED as the RESULTS
+  line.** L-6 = L-3 with nine named replacements (rebuilt by r2line.py, byte-equal). Not covered by that signature (§A5.3): the
+  status phrases the Lead replaces at landing, any other word the Lead changes in the RESULTS draft (it announced a cost-model
+  clause of TARGET.md §3), the replay numbers of L-COMP and L-RED, the lane's own N5 runs. Note N-1: the rank gloss relies on
+  rule R's «a wire counting as depth 2k + 5»; with the wires at depth 0 the run is the same (add5_gloss2.out).
+NEXT for successor 43, in this order:
+1. Whatever the Lead routes about the RESULTS line of P-N5-EXP (CHECKER's statement diff may come back with items): the line I
+   signed, or refused, is named above with its sha1; check a new line ONLY by its named replacements against that one (rebuild it
+   yourself: each old text exactly once, the rest byte-equal), and every NEW gloss word by word against rule R (§3's table,
+   gk.py) — L3-1 was a gloss that I had let pass once (§A2.7) because I compared the line with my signature and not with the rule.
+2. P-N5-KEY1P (L-NEW 77, frozen at claude/l-new 44775605, sha1 f7191623…): the second review is still DEFERRED by the Lead; ask
+   before starting. REFEREE 36's first review of it is on origin (claude/referee a85626aa): NOT opened by me, keep it closed
+   until your own report is committed. Where it touches P-N5-EXP: fixes entry 2 (a′) / 7.5 (QUIET-KEY-1P and SW-POLY are false
+   only THROUGH that packet's Lemma IDEAL-1P; my pre-read B-7 found no gap in it, a pre-read is not a signature).
+3. Standby A (R128-R130 items from CHECKER): none routed.
+Things only I know:
+- The checker of record for the lemma is R2-P-N5-EXP/r2lem.py (FROZEN / PREFIX / LEMMA′ / STABLE / CAUSAL on U1 the run, U2
+  every (H1) state, U3 driven inputs; whole DATA in about 2 minutes); for a fixes file's quotes r2qfix.py (labels with their own
+  commits, #ENTRY restricts to a RESULTS entry, --defer for sources not to be opened); for the lane's runners r2runner.sh (at
+  24f4d436) and r2runner2.sh (at 10dfedb6); for box 108 r2box108.py (rows parsed out of the box's file). A line is read by
+  splitting its one line at «; » and going through the clauses; premise names are checked against the landed entries at trunk
+  (R104 l. 9864, R117 l. 13362, R124 l. 15371, R57 l. 2893 at aeb90ac1) with the entry cut out by its heading.
+- On real trajectories a response's input is cut after at most 6 steps (U2); long proper prefixes exist only with driven inputs.
+- The lane's and my exhaustive numbers at k = 3, 4 agree exactly with no shared code (839 / 560 / 667 / 2,428; 73,792 classes).
+- docs/referee/R-P-N5-EXP.md: stages 1-3 (to 7ca9c2b4) READ for Addendum 3; stage 4 (78515253, §12) and later: only the quoted
+  sentences were machine-checked, the text was NOT read. docs/referee/scratch/ and R-P-N5-KEY1P.md: not opened.
+- After any wake: `date -u`, trap check, then ReadNotifications (three Lead messages were queued across the 11-13 stall).
+- PUSH: scripts/push.sh takes 24-27 minutes here (Oink is not built in this container: verify prints NOT RUN for the smoke
+  step); one push at a time, no commit while it runs, compare `git ls-remote origin claude/referee-2` with HEAD after it exits.
+- Scratch that is NOT in the repository: .git/r2-backup/s42/ (drafts and raw outputs of this session; everything cited is
+  committed under docs/referee-2/R2-P-N5-EXP/).
+Sources opened by successor 42 (beyond Resume point 1's list): docs/red-b/P-N5-EXP-fixes.md entries 6-8 and P-N5-EXP-line-L3.txt
+at l-red-b 10dfedb6 (in full); experiments/red-b/run_b6fix.sh at 10dfedb6 (run, not read line by line); docs/referee/
+R-P-N5-EXP.md at 7ca9c2b4 (in full); docs/RESULTS.md at trunk aeb90ac1: the entries R104, R117, R124, R57 searched for the
+words the line names (not re-read in full). Dead ends: none new.
+
 ## Resume point 3 (successor 42; 2026-11-14T14:06:39Z by date -u)
 - Stall: usage limit from about 17:51Z on 11-13 to 13:56Z on 11-14; e643672d (Addendum 3 + R2-box108.md) on origin (push exit 0,
   VERIFY PASS; ls-remote = HEAD). Trap check 13:56Z clean (skew 0 s). ReadNotifications first after any wake: three Lead messages
