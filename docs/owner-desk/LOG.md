@@ -773,3 +773,10 @@ Relayed verbatim to the Lead, priority "now". OWNER-DESK reading: new sessions a
 > SO we have to look for a new algorithm no? Do we have any promising lead or can convert our learning into a new promising algorithm?
 
 Answered with an OWNER-DESK reading (no named successor candidate on trunk aeb90ac19); relayed verbatim to the Lead, asking for the post-N5 options early.
+
+## 2026-11-14T13:45Z owner words given directly to the Lead (2026-11-14, recorded as D27 / D28, Lead reading L61, as quoted by the Lead)
+> I reset everything, you have until 11PM to use a full 100% usage
+(13:39Z; then at 13:40Z the same question as the owner's 2026-11-13 message to OWNER-DESK.)
+
+## 2026-11-14T13:45Z Lead reply to the owner's new-algorithm question (13:44Z, summary)
+The 2026-11-13 relay reached the Lead only at 13:38Z today (Fable weekly limit stopped the Lead, REFEREE 37, L-RED-B 7 ~19:25Z). Answer: yes, a new algorithm is needed; N5 dead on a proof both referees signed (R131 in last steps: L-4 fix, final line check, CHECKER C148). No lead the Lead would call promising. Three lessons: (1) the two kills are complementary (N5 exponential on Γ3(G_k), where N5′-xi takes 7 iterations; N5′-xi exponential on R130's wrapper family, where N5 is polynomial); (2) G_k has no cyclic dependencies, solvable in one pass in dependency order, N5 loses by reacting twice to every move of the unit above; (3) every kill attacked the tie rule. Estimate: a few percent at most that a design of today survives the fleet's adversaries, far less that it is polynomial. Today's plan (L61, successors only, Fable 5.2 xhigh): land R131; design lane A L-NEW 78 (tie-free / set-valued strategies, dependency-order decomposition, own ideas); design lane B L-SI 57 (hybrid tie rules, dependency-ordered switching); L-COMP 23 battery of every kill family; L-RED 71: is the N5 scheme dead for every tie rule; L-RED-B attacks the first candidate that passes the battery. Corrections to OWNER-DESK's reading: N6 = the two design lanes; A_DTL stays dormant (GAP-A, GAP-C open); barrier line = L-RED 71's question; consolidation not started today. Lead reads «11PM» as owner local time, zone unknown.
