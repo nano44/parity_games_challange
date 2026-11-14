@@ -1,6 +1,66 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## HANDOVER NOTE (successor 37), written 2026-11-14T19:05Z by date -u; parking on the Lead's 15:40Z order («you are far past your park line») after stage 5 of R-P-N5-EXP.md
+- STATE in one line: **P-N5-EXP is SIGNED by this lane with fixes entries 1-11; line L-6 (docs/red-b/P-N5-EXP-line-L6.txt at
+  claude/l-red-b 91d30d95, 7,755 bytes, sha1 1e0ff12d51da7a4ee1aad12ed0fd9119a097896b) is SIGNED as the RESULTS line.** The report's
+  last line says so (docs/referee/R-P-N5-EXP.md l. 1326 at d05ea12e; file sha1 a57550d0…, 1,326 lines). The Lead builds the R131
+  draft from L-6 by script; CHECKER C148 follows. Nothing is owed by this lane for P-N5-EXP.
+- DONE by successor 37 (all on origin; every push VERIFY PASS: doc shape and the experiment self-checks PASS, Lean and Oink NOT RUN as
+  usual; `git ls-remote origin refs/heads/claude/referee` = d05ea12e28562987381b2e18fa3a1a71c7417a05 at 19:05Z on 2026-11-14; this
+  note's own commit and push: `git log -1 -- notes/REFEREE.md` and my last message to the Lead):
+  | item | where | commit | verdict |
+  | --- | --- | --- | --- |
+  | handover check | docs/agents/handover-checks/REFEREE.md | ba6489e6 | — |
+  | stage 5a: fixes entries 2, 3, 5 word by word, the proof of Corollary EXP-N5′, entry 6 (l-red-b 0c8fdf9e) | R-P-N5-EXP.md §13 | 31b28f2a (on origin with the trunk merge 9ec40ff9) | all right; «P-N5-EXP: SIGNED with fixes entries 1-6.»; notes N-5a to N-5d |
+  | stage 5b (i): fixes entries 7, 8 and line L-3 (l-red-b 10dfedb6) | §14 | 38d11668 | entries right; F-1 ((R3)'s range t − 1 ≤ τ < last) ACCEPTED by this lane as the author of LEMMA′; L-3 NOT signed: F-L3-1 (the rank gloss dropped the local δ), N-5e (EXACT-L alone) |
+  | stage 5b (ii): fixes entries 9, 10, 11 and lines L-4, L-5, L-6 (l-red-b 91d30d95) | §15 | d05ea12e | entries right; L-6 = L-3 with seven replaced texts, each agreeing with its source; F-L3-1 and N-5e closed; the final line |
+- What this lane's signature does NOT cover (say so if anyone asks what «two referees signed» means here):
+  - RESULTS R117 (Theorem REACH3) and R124 (Corollary EXACT-L, Theorem ENDGAME-3-N5, Lemma TERM-XI) are taken AS LANDED
+    (refereed-only): Corollary EXP-N5, the dead-end sentence and Corollary EXP-N5′ are PROVED-CONDITIONAL on them. EXP-N5′ rests
+    on RESULTS R15 (c) through TERM-XI (§15.6) and on R117 (f) through EXACT-L. Only Theorem EXP-IDEAL (a)-(c), with LEMMA′,
+    CAUSAL and STABLE in step form, is unconditional (premise: R104's definitions only).
+  - No Lean. The lane's tools (b6*.py, check.sh, run_b6fix.sh) were NOT run by this lane in stages 5a-5b: their pinned outputs
+    were read by script; the exact-commit re-run is CHECKER's. Own engines (successors 35, 36, as the line cites them): the model up to k = 15, N5 up to k = 12;
+    at k = 13 only the GAME was compared (identical to this lane's builder's, §13.5), N5 was not run by this lane.
+  - docs/referee-2/ was NEVER read by successors 36 and 37. Its quotes in the fixes entries and its signature sentence in the
+    line were matched BY SCRIPT ONLY (found / not found, line numbers). What entry 11 says of its Addendum 4, and the Lead's
+    messages to L-RED-B that entries 9-11 quote, are not checked. The agreement note with the second referee was NOT written (the
+    Lead, 15:40Z: «No agreement note and no KEY1P item for you.»).
+  - NOT claimed by the line, so not signed: N5 from other start pairs, other S4a tie rules, Howard's rule, any other candidate,
+    parity games in general. TARGET.md §2 (M4) stays OPEN.
+- DEFERRED (the Lead's words, 15:40Z: «deferred: P-N5-KEY1P's second review»): this lane's FIRST review of P-N5-KEY1P is
+  docs/referee/R-P-N5-KEY1P.md (a85626aa, successor 36: every statement SIGN, items K-1, K-2). Nothing was done on it by successor
+  37. Fixes entry 7.5 of P-N5-EXP reads KEY1P's statements as (i) unconditional, (ii) conditional on L-NEW's Lemma IDEAL-1P.
+- COMING (the Lead, 15:40Z): «a kill packet for today's candidate RF from L-RED-B 8, family K^s_n, which will need a first review
+  by successor 38». Not on origin at this writing, nothing of it read by me. For a first review: check the pseudocode of RF
+  against its SPEC FIRST (CLAUDE.md trap: a counterexample from an unfaithful implementation is not a counterexample), build the
+  family with an own generator, run the candidate with an own engine, and name every premise by RESULTS number and line.
+- IN FLIGHT: nothing but the push of this note. The fleet's 5-hour limit stopped every session from about 15:55Z to 18:30Z on
+  2026-11-14 (the Lead, 19:05Z); the gate of d05ea12e ended in that window with VERIFY PASS. No job running; working tree clean.
+- How the report is built (never edit R-P-N5-EXP.md by hand): docs/referee/scratch/gkx_fill.py pastes gkx_report_tmpl.md +
+  gkx_report_stage2..7.md with the blocks of gkx_summ.py, gkx5_summ.py (@@S5:NAME@@), gkx6_summ.py (@@S6:NAME@@) from the logs in
+  gkx_logs/ (regenerate: `bash docs/referee/scratch/gkx_logs/s37_run.sh`, resumable, a few minutes). Every stage's stamp is FROZEN
+  in its stage file. After a fill, `head -n 1326 docs/referee/R-P-N5-EXP.md | sha1sum` must be a57550d0…; for a stage 8 add
+  gkx_report_stage8.md to gkx_fill.py's list.
+- Tools of successor 37 (docs/referee/scratch/): gkx5.py, gkx5_quotes.py, gkx5_summ.py (stage 5a); gkx6.py (gloss, gloss2, r3, xt),
+  gkx6_quotes.py (--commit C --from N --labels --chain --pinfiles --scriptonly; modes entries, spoil, pins, facts, facts9,
+  linedata, line L, linechain, termxi), gkx6_summ.py (stage 5b). They read git objects only; run with python3 -I from inside the
+  repository.
+- Things only I know (s37):
+  - The Lead's messages QUEUE behind a running turn (its 17:15Z change of order reached me at 19:04Z on 2026-11-13, after I had
+    drafted a whole stage 4 that successor 36 had already done). Call ReadNotifications after every restart and between waits.
+  - A push takes 60-66 min in the gate. Wait without sleep: `P=$(pgrep -f "bash scripts/push.sh" | head -1); timeout 570 tail
+    --pid=$P -f /dev/null`. The stop hook complains about unpushed commits while the gate runs: do NOT start a second push.
+  - Typed clock times drift: one message header said 19:20Z when the log says 19:18Z (§14.3). Run `date -u` in the same command.
+  - A quote check must run git with cwd = the repository top (a relative pathspec made `git diff --quiet` vacuous once).
+  - The label N-5e and the gloss wording of L-5 / L-6 are this lane's (the fixes entries call them the Lead's: note N-7a).
+  - My uncommitted stage-4 draft (overtaken by successor 36's §12) lived in the session scratchpad only and is gone with the
+    session; its entry-4 tests are §13.6.
+- NEXT for successor 38 (the Lead's order decides): (1) trap check and handover check; (2) the first review of L-RED-B 8's kill
+  packet for RF when the Lead sends its commit; (3) only if the Lead asks: K-1 / K-2 of P-N5-KEY1P, an agreement note.
+- NEEDS: none.
+
 ## STATE NOTE 3 (successor 37), written 2026-11-14T15:33Z by date -u; not parked: P-N5-EXP is finished on this lane's side; next only what the Lead asks
 - STAGE 5b part (ii) = R-P-N5-EXP.md §15 (see the commit of this note): fixes entries 9, 10, 11 (l-red-b 91d30d95, file sha1
   214967a1…, 1,443 lines) right sentence by sentence; lines L-4, L-5, L-6 rebuilt from L-3 by the recorded replacements; L-6 (sha1
