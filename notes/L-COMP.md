@@ -1,6 +1,38 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## HANDOVER -- successor 23 (L-COMP 23; session_01V5yGRYgGAhamJ5yUQXcJFH) PARKS 2026-11-14 (written 19:0xZ by date -u in the park commit; Lead 19:04Z: commit, push, park at ~450k). NOTHING RUNNING after the park push.
+- ON ORIGIN: v1 dd9ba4ac, v2 1eddbb56, v3 05c9a5a5 (each checked by git ls-remote). v4 = the park commit (see git log): engines/rf_lred247.py,
+  records rf_lred247_ab / rf_lred247_cde / howard_lred247_abc, README sentence «a BATTERY PASS is compatible with an exponential candidate» (RF).
+- State of the battery: experiments/battery/README.md is the record. Sets a b c d e + x_control; self-test quick 15 checks (check.sh), full 19.
+- THE QUEUE (Lead messages of 14:25Z, 14:53Z, 15:03Z, 15:32Z, 15:47Z, 19:04Z; all read 19:04Z after the fleet's 5-hour stop; NONE STARTED):
+  1. Standing adversarial set (every kill family of the fleet goes in). FIRST: K^s_n from the RULE TEXT in the Lead's 15:32Z message with MY OWN
+     generator (check: Ks_3.pg sha1 3be06bfc84af6ceac7b166f9f4ccbcb745135f28; vertex order x, R, per gate C d e f h in L order, then per bit
+     i >= 2 the s(i,c) and g_i; |V| = 3n² + 3n + 1; |E| = 32, 65, 110, 167, 236, 317, 410, 515 at n = 2..9; L-RED-B's own files: claude/l-red-b
+     18509d94 experiments/red-b/b7/inst/), start σ_0 (gates open on the escape d → below, R → x, g_i → s(i,x)) in a sidecar «<game>.start»
+     that reaches the engine (interface extension: optional sidecar; an engine may ignore it; say so in the README). Wanted row = the third
+     independent count: RF from σ_0, n = 1..10: 2, 7, 19, 45, 99, 209, 431, 877, 1771, 3561 (= 7·2^(n−1) − 2n − 3); Howard 2, 4, 6, 8, 8, 9, 10
+     (n = 1..7); Odd wins every vertex; if fast, n = 19 in the background with checkpoints (expected 1,834,967 on |V| = 1,141). Engines: L-RED's
+     (scratch archive of l-red 821d63e3; si247.SI.run(rule, start_dict)) AND my own RF written from L-SI's pseudocode (Lead 14:53Z / 15:32Z, quoted
+     there) on n5-second's SpecSI valuation code = a fourth independent implementation; test vectors: Friedmann G_n from ι 5, 9, 12, 15, 18, 21,
+     24, 27; Γ3(G_k) 6, 6, 8, 8, 10, 10, 12, 12, 14, 14; W(G_n, ι) 8; H_n (1106.0778v2 Table 7, ι_{H_n}) 10, 37, 83, 143, 217, 305, 407, 523.
+     Then: Γ3^top(G_k) k 3..10 (l-red 71894473 experiments/red/r246/pg/G_k_top.pg + SHA1SUMS_top; row N5 = N5′-xi = 2^k + 2), L-RED's climbs
+     (l-red f0ad3cca experiments/red/r247/out/climbs/best_*.pg), RC_n (rc247.py dump), L-SI's dsae_N / dfr_n when its addendum lands.
+  2. Wrapper for N13 «SEESAW» (L-NEW 78; potential method, measure = jumps) when the Lead sends branch + SHA + command; BEFORE that: optional JSON
+     field «bits» (largest bit length of a number the engine held), reported per family (TARGET.md §3), and the report header names the measure.
+  3. Sets: b2 = L-SI's rand300.json wrapper games (box44/wrap44.py builds them; pin); f = Friedmann's G_n from ι, n 1..8 (l-si experiments/si/;
+     Howard's row 8, 26, 62, 134, 278, 566 as self-test); g = Γ3^top (as above); h = H_n n 1..8 (own transcription of Table 7; Howard 2^(n+1) + 1
+     by L-LIT's run); p = padded copies of each M1 family at three sizes: (p1) +50 pendants (Odd, priority 1, one edge to the top-priority
+     vertex, no predecessor), (p2) one such pendant per even-priority vertex, (p3) disjoint union with the dual; regions known from the original.
+  N12 is withdrawn (no wrapper). «The frozen 300» = BOTH (harness tiny games, as built, AND rand300 as b2).
+- RF through the battery (L-RED's engine, unrouted, read-only; Lead: fine): PASS on all five sets, polynomial-looking on 17 families, max
+  iterations / n = 1.0 (three tiny random games), counter_rob 1523 at n 3331 (= 6k² − k + 3, N = 2k). RF IS DEAD on K^s_n all the same.
+- Things only I know: scratchpad (LOST on a new container): dev/ = development copy of experiments/battery (same as the tree at the park),
+  lred/ = l-red 821d63e3 experiments/red/{r247,r246,r237}, lredb/, lsi/, bat/ (archive of v1), bat2/ (archive of v2), run_rf/. The verify gate
+  takes ~30 minutes per push: develop in a scratch copy, long jobs from a frozen archive, copy into the tree only when no push runs.
+  Commit trailer: «Co-Authored-By: Claude <noreply@anthropic.com>» + the Claude-Session line, set BEFORE the first commit (Lead 14:25Z).
+  Cross-session messages can queue for hours behind a long turn: call ReadNotifications at every milestone (five Lead messages waited 3-4 h).
+
 ## RESUME POINT -- successor 23 (L-COMP 23; session_01V5yGRYgGAhamJ5yUQXcJFH), THE BATTERY (Lead brief 2026-11-14 13:44Z; DESIGN DAY, L61). Overwritten at the park.
 - Handover check: commit 5c4d20f9, pushed by scripts/push.sh (VERIFY PASS, 29 minutes); origin = 5c4d20f9 by git ls-remote 14:18Z. «go» was given in advance.
 - TASK: experiments/battery/ = gauntlet step 2 as a ten-minute run for any candidate engine (README.md there is the record; DATA only).

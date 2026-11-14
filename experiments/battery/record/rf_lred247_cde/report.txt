@@ -1,0 +1,284 @@
+== battery: engine `python3 -B /tmp/claude-0/-home-user-parity-games-challange/57706035-4aa0-5500-b6a5-207ac2006e7f/scratchpad/run_rf/experiments/battery/engines/rf_lred247.py` | sets c_hard d_harness e_random | timeout 60 s per instance | jobs 1 | 2026-11-14T15:43:38Z (date -u)
+
+== set c_hard, family tc (13 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     2      22      36    11           5            5     0.046  OK
+     4      68     128    19          17           34     0.045  OK
+     6     138     276    27          26          107      0.08  OK
+     8     232     480    35          40          198     0.198  OK
+    10     350     740    43          60          257     0.618  OK
+    12     492    1056    51         104          652     2.033  OK
+    14     658    1428    59         120          846     5.979  OK
+    16     848    1856    67         106          726     5.179  OK
+    18    1062    2340    75         109          684     8.491  OK
+    20    1300    2880    83          91          963    14.393  OK
+    24    1848    4128    99         121         1350    29.133  OK
+    28    2492    5600   115           -            -    60.061  TIMEOUT (> 60 s)
+    32       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+growth (measure: iterations; 11 sizes answered): ratios over the last three steps 1.028 0.835 1.330 | power law: exponent in n 0.604, constant -5.0, err 0.572 (in param: exponent 1.088, err 0.482) | exponential: x1.3629 per size step, constant 4.7, err 11.1 (in param: x1.3354 per step, err 5.33) | READING: polynomial-looking
+
+== set c_hard, family tc+ (13 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     2      24      38    15           4            4     0.047  OK
+     4     104     196    27          16           44     0.079  OK
+     6     288     570    39          38          127     0.234  OK
+     8     624    1256    51          60          285     1.153  OK
+    10    1160    2350    63          85          513     3.427  OK
+    12    1944    3948    75         114          841    10.574  OK
+    14    3024    6146    87         147         1285    28.668  OK
+    16    4448    9040    99           -            -    60.063  TIMEOUT (> 60 s)
+    18       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    20       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    24       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    28       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    32       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+growth (measure: iterations; 7 sizes answered): ratios over the last three steps 1.417 1.341 1.289 | power law: exponent in n 0.609, constant -4.0, err 0.0275 (in param: exponent 1.65, err 0.0108) | exponential: x2.0871 per size step, constant 3.84, err 6.2 (in param: x1.5974 per step, err 1.3) | READING: polynomial-looking
+
+== set c_hard, family counter_symsi (14 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     2      22      48    21           8           12     0.032  OK
+     4      42      92    41          17           29     0.063  OK
+     6      62     136    61          22           41     0.065  OK
+     8      82     180    81          27           53     0.108  OK
+    10     102     224   101          32           65     0.106  OK
+    12     122     268   121          37           77     0.173  OK
+    14     142     312   141          42           89     0.199  OK
+    16     162     356   161          47          101     0.283  OK
+    18     182     400   181          52          113     0.372  OK
+    20     202     444   201          57          125     0.547  OK
+    24     242     532   241          67          149     0.767  OK
+    28     282     620   281          77          173     1.328  OK
+    32     322     708   321          87          197     1.927  OK
+    40     402     884   401         107          245     3.653  OK
+growth (measure: iterations; 14 sizes answered): ratios over the last three steps 1.149 1.130 1.230 | power law: exponent in n 0.801, constant -1.76, err 0.0207 (in param: exponent 0.807, err 0.0203) | exponential: x1.0979 per size step, constant -8.0, err 1.51 (in param: x1.0979 per step, err 1.51) | READING: polynomial-looking
+
+== set c_hard, family counter_rr (14 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     2       8      16     4           2            3     0.031  OK
+     4      16      32     8           4            6     0.032  OK
+     6      24      48    12           6            9     0.033  OK
+     8      32      64    16           8           12     0.034  OK
+    10      40      80    20          10           15     0.036  OK
+    12      48      96    24          12           18     0.045  OK
+    14      56     112    28          14           21     0.044  OK
+    16      64     128    32          16           24     0.048  OK
+    18      72     144    36          18           27     0.051  OK
+    20      80     160    40          20           30     0.058  OK
+    24      96     192    48          24           36     0.071  OK
+    28     112     224    56          28           42     0.093  OK
+    32     128     256    64          32           48      0.16  OK
+    40     160     320    80          40           60     0.273  OK
+growth (measure: iterations; 14 sizes answered): ratios over the last three steps 1.167 1.143 1.250 | power law: exponent in n 1.0, constant 0.0, err 5.65e-30 (in param: exponent 1.0, err 2.66e-31) | exponential: x1.122 per size step, constant -2.0, err 2.28 (in param: x1.122 per step, err 2.28) | READING: polynomial-looking
+
+== set c_hard, family counter_dp (14 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     2      12      19     6           2            2     0.032  OK
+     4      20      33     8           4            4     0.043  OK
+     6      28      47    10           6            6     0.035  OK
+     8      36      61    12           8            8     0.032  OK
+    10      44      75    14          10           10     0.038  OK
+    12      52      89    16          12           12     0.036  OK
+    14      60     103    18          14           14     0.042  OK
+    16      68     117    20          16           16     0.044  OK
+    18      76     131    22          18           18     0.038  OK
+    20      84     145    24          20           20     0.043  OK
+    24     100     173    28          24           24     0.059  OK
+    28     116     201    32          28           28     0.067  OK
+    32     132     229    36          32           32     0.067  OK
+    40     164     285    44          40           40     0.061  OK
+growth (measure: iterations; 14 sizes answered): ratios over the last three steps 1.167 1.143 1.250 | power law: exponent in n 1.0, constant -1.0, err 5.58e-30 (in param: exponent 1.0, err 2.66e-31) | exponential: x1.122 per size step, constant -2.0, err 2.28 (in param: x1.122 per step, err 2.28) | READING: polynomial-looking
+
+== set c_hard, family counter_m (16 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     2       9      15     5           1            1     0.031  OK
+     4      15      27     7           1            2      0.03  OK
+     6      21      39     9           1            3      0.03  OK
+     8      27      51    11           1            4     0.031  OK
+    10      33      63    13           1            5     0.031  OK
+    12      39      75    15           1            6     0.032  OK
+    14      45      87    17           1            7      0.03  OK
+    16      51      99    19           1            8      0.03  OK
+    18      57     111    21           1            9     0.031  OK
+    20      63     123    23           1           10     0.033  OK
+    24      75     147    27           1           12      0.04  OK
+    28      87     171    31           1           14     0.035  OK
+    32      99     195    35           1           16     0.047  OK
+    40     123     243    43           1           20      0.04  OK
+    41     126     249    44          41           80     0.072  OK
+    42     129     255    45           1           21     0.034  OK
+growth (measure: iterations; 16 sizes answered): ratios over the last three steps 1.000 41.000 0.024 | power law: exponent in n 0.772, constant 0.98, err 0.958 (in param: exponent 0.666, err 0.957) | exponential: x1.1273 per size step, constant 0.98, err 0.97 (in param: x1.1273 per step, err 0.97) | READING: polynomial-looking
+
+== set c_hard, family counter_core (14 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     2      15      28    10           4            4     0.046  OK
+     4      27      52    18           8            8      0.04  OK
+     6      39      76    26          12           12     0.046  OK
+     8      51     100    34          16           16     0.037  OK
+    10      63     124    42          20           20     0.049  OK
+    12      75     148    50          24           24     0.052  OK
+    14      87     172    58          28           28     0.056  OK
+    16      99     196    66          32           32     0.051  OK
+    18     111     220    74          36           36     0.068  OK
+    20     123     244    82          40           40     0.056  OK
+    24     147     292    98          48           48     0.084  OK
+    28     171     340   114          56           56      0.08  OK
+    32     195     388   130          64           64     0.089  OK
+    40     243     484   162          80           80     0.124  OK
+growth (measure: iterations; 14 sizes answered): ratios over the last three steps 1.167 1.143 1.250 | power law: exponent in n 0.998, constant -1.04, err 1.05e-05 (in param: exponent 1.0, err 2.79e-30) | exponential: x1.122 per size step, constant -4.0, err 2.28 (in param: x1.122 per step, err 2.28) | READING: polynomial-looking
+
+== set c_hard, family counter_rob (13 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     2      31      80    10           8           12     0.033  OK
+     4      83     236    18          25           46     0.043  OK
+     6     159     472    26          54          104     0.078  OK
+     8     259     788    34          95          186     0.181  OK
+    10     383    1184    42         148          292     0.384  OK
+    12     531    1660    50         213          422     0.676  OK
+    14     703    2216    58         290          576     1.159  OK
+    16     899    2852    66         379          754     2.029  OK
+    18    1119    3568    74         480          956     3.361  OK
+    20    1363    4364    82         593         1182     4.644  OK
+    24    1923    6196    98         855         1706    10.807  OK
+    28    2579    8348   114        1165         2326    19.328  OK
+    32    3331   10820   130        1523         3042    34.207  OK
+growth (measure: iterations; 13 sizes answered): ratios over the last three steps 1.442 1.363 1.307 | power law: exponent in n 1.095, constant -1.44, err 0.00498 (in param: exponent 2.023, err 9.67e-05) | exponential: x1.3735 per size step, constant 7.84, err 25.4 (in param: x1.4234 per step, err 7.82) | READING: polynomial-looking
+
+== set c_hard, family counter_ortl (14 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     2      11      17     8           3            4     0.032  OK
+     4      21      33    14           5            8     0.036  OK
+     6      31      49    20           7           12     0.032  OK
+     8      41      65    26           9           16     0.035  OK
+    10      51      81    32          11           20     0.038  OK
+    12      61      97    38          13           24     0.038  OK
+    14      71     113    44          15           28     0.056  OK
+    16      81     129    50          17           32     0.061  OK
+    18      91     145    56          19           36     0.065  OK
+    20     101     161    62          21           40     0.064  OK
+    24     121     193    74          25           48     0.062  OK
+    28     141     225    86          29           56     0.102  OK
+    32     161     257    98          33           64     0.118  OK
+    40     201     321   122          41           80     0.146  OK
+growth (measure: iterations; 14 sizes answered): ratios over the last three steps 1.160 1.138 1.242 | power law: exponent in n 0.997, constant 0.78, err 8.1e-06 (in param: exponent 1.003, err 9.61e-06) | exponential: x1.1054 per size step, constant -3.0, err 1.07 (in param: x1.1054 per step, err 1.07) | READING: polynomial-looking
+
+== set c_hard, family counter_qpt (17 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     2       4       5     4           1            1      0.03  OK
+     4       8      11     8           1            3     0.031  OK
+     6      12      17    12           1            5     0.046  OK
+     8      16      23    16           1            7     0.031  OK
+    10      20      29    20           1            9     0.032  OK
+    12      24      35    24           1           11      0.03  OK
+    14      28      41    28           1           13     0.031  OK
+    16      32      47    32           1           15     0.031  OK
+    18      36      53    36           1           17      0.03  OK
+    20      40      59    40           1           19     0.033  OK
+    22      44      65    44           1           21     0.031  OK
+    24      48      71    48           1           23     0.032  OK
+    26      52      77    52           1           25     0.033  OK
+    28      56      83    56           1           27     0.032  OK
+    32      64      95    64           1           31     0.032  OK
+    64     128     191   128           1           63     0.035  OK
+   128     256     383   256           1          127      0.05  OK
+growth (measure: iterations; 17 sizes answered): ratios over the last three steps 1.000 1.000 1.000 | power law: exponent in n 0.0, constant 0.0, err 0.0 (in param: exponent 0.0, err 0.0) | exponential: x1.0 per size step, constant 0.0, err 0.0 (in param: x1.0 per step, err 0.0) | READING: polynomial-looking
+
+== set c_hard, family recursiveladder (17 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     2      10      19     8           0            0     0.031  OK
+     4      20      41    14           0            0      0.03  OK
+     6      30      63    20           0            0     0.033  OK
+     8      40      85    26           0            0     0.031  OK
+    10      50     107    32           0            0     0.046  OK
+    12      60     129    38           0            0     0.031  OK
+    14      70     151    44           0            0     0.044  OK
+    16      80     173    50           0            0      0.03  OK
+    18      90     195    56           0            0     0.045  OK
+    20     100     217    62           0            0     0.032  OK
+    22     110     239    68           0            0     0.033  OK
+    24     120     261    74           0            0     0.032  OK
+    26     130     283    80           0            0     0.031  OK
+    28     140     305    86           0            0     0.031  OK
+    30     150     327    92           0            0     0.031  OK
+    34     170     371   104           0            0     0.033  OK
+    38     190     415   116           0            0      0.04  OK
+growth (measure: seconds; 17 sizes answered): ratios over the last three steps 1.000 1.065 1.212 | power law: exponent in n 0.118, constant 0.026, err 0.286 (in param: exponent 0.118, err 0.286) | exponential: x1.0119 per size step, constant 0.026, err 0.288 (in param: x1.0119 per step, err 0.288) | READING: polynomial-looking
+
+== set c_hard, family switchallexp (7 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     1      21      41    21          10           20     0.035  OK
+     2      35      75    35          21           56     0.046  OK
+     4      63     143    63          27          103     0.082  OK
+     8     119     279   119          65          266     0.413  OK
+    16     231     551   231          79          482     1.422  OK
+    32     455    1095   455         181          937    12.942  OK
+    64     903    2183   903           -            -     60.06  TIMEOUT (> 60 s)
+growth (measure: iterations; 6 sizes answered): ratios over the last three steps 2.407 1.215 2.291 | power law: exponent in n 0.89, constant 0.0, err 0.131 (in param: exponent 0.797, err 0.124) | exponential: x1.3764 per size step, constant 0.0, err 1.25 (in param: x1.3764 per step, err 1.25) | READING: polynomial-looking
+
+== set c_hard, family switchbestexp (7 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     1      35      70    34          17           37     0.039  OK
+     2      60     130    60          38          102      0.09  OK
+     4     110     250   110          69          264     0.307  OK
+     8     210     490   210         106          602     1.817  OK
+    16     410     970   410         210         1610    12.271  OK
+    32     810    1930   810           -            -    60.059  TIMEOUT (> 60 s)
+    64       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+growth (measure: iterations; 5 sizes answered): ratios over the last three steps 1.816 1.536 1.981 | power law: exponent in n 0.976, constant 0.0, err 0.063 (in param: exponent 0.873, err 0.0354) | exponential: x1.781 per size step, constant 0.0, err 0.791 (in param: x1.781 per step, err 0.791) | READING: polynomial-looking
+
+== set d_harness, family tiny300 (300 games, agreement only: no growth reading)
+      n   games      OK  not-OK   TIMEOUT   max sec      sum sec     max iter
+      1      38      38       0         0     0.057          1.4            0
+      2      46      46       0         0     0.053          1.6            0
+      3      56      56       0         0     0.045          2.0            1
+      4      47      47       0         0     0.045          1.7            2
+      5      33      33       0         0     0.045          1.2            2
+      6      33      33       0         0     0.058          1.2            1
+      7      47      47       0         0     0.048          1.8            2
+
+== set d_harness, family regressions (5 games, agreement only: no growth reading)
+      n   games      OK  not-OK   TIMEOUT   max sec      sum sec     max iter
+     41       1       1       0         0     0.045          0.0            4
+     45       1       1       0         0     0.042          0.0            2
+     77       1       1       0         0     0.046          0.0            5
+    103       1       1       0         0     0.040          0.0            8
+    115       1       1       0         0     0.044          0.0            3
+
+== set d_harness, family bench (3 games, agreement only: no growth reading)
+      n   games      OK  not-OK   TIMEOUT   max sec      sum sec     max iter
+      3       1       1       0         0     0.031          0.0            0
+      5       1       1       0         0     0.044          0.0            0
+      8       1       1       0         0     0.043          0.0            0
+
+== set e_random, family random (10000 games, agreement only: no growth reading)
+      n   games      OK  not-OK   TIMEOUT   max sec      sum sec     max iter
+      8    1200    1200       0         0     0.073         42.2            8
+     12    1200    1200       0         0     0.080         42.8           12
+     16    1200    1200       0         0     0.059         43.0           14
+     24    1200    1200       0         0     0.070         44.0           14
+     32    1000    1000       0         0     0.066         38.1           16
+     48    1000    1000       0         0     0.067         38.7           25
+     64     900     900       0         0     0.075         35.2           32
+    100     800     800       0         0     0.086         34.5           36
+    150     600     600       0         0     0.160         32.4           34
+    200     500     500       0         0     0.282         32.9           39
+    300     250     250       0         0     0.389         24.7           41
+    500     150     150       0         0     1.411         35.9           64
+
+== readings, one line per family (DATA; a reading is never a claim; read the tables above)
+set        family            answered    param        n     measure     last value  ratios (last three)    READING
+c_hard     tc                   11/13       24     1848  iterations            121  1.028 0.835 1.330      polynomial-looking
+c_hard     tc+                   7/13       14     3024  iterations            147  1.417 1.341 1.289      polynomial-looking
+c_hard     counter_symsi        14/14       40      402  iterations            107  1.149 1.130 1.230      polynomial-looking
+c_hard     counter_rr           14/14       40      160  iterations             40  1.167 1.143 1.250      polynomial-looking
+c_hard     counter_dp           14/14       40      164  iterations             40  1.167 1.143 1.250      polynomial-looking
+c_hard     counter_m            16/16       42      129  iterations              1  1.000 41.000 0.024     polynomial-looking
+c_hard     counter_core         14/14       40      243  iterations             80  1.167 1.143 1.250      polynomial-looking
+c_hard     counter_rob          13/13       32     3331  iterations           1523  1.442 1.363 1.307      polynomial-looking
+c_hard     counter_ortl         14/14       40      201  iterations             41  1.160 1.138 1.242      polynomial-looking
+c_hard     counter_qpt          17/17      128      256  iterations              1  1.000 1.000 1.000      polynomial-looking
+c_hard     recursiveladder      17/17       38      190     seconds           0.04  1.000 1.065 1.212      polynomial-looking
+c_hard     switchallexp           6/7       32      455  iterations            181  2.407 1.215 2.291      polynomial-looking
+c_hard     switchbestexp          5/7       16      410  iterations            210  1.816 1.536 1.981      polynomial-looking
+
+== summary: 10481 instances: OK 10470, SKIPPED 7, TIMEOUT 4 | wall 936 s
+BATTERY PASS: no wrong winner, no bad strategy on 10470 answered instances (4 timeouts, 7 skipped after a timeout)

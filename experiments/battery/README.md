@@ -1,5 +1,9 @@
 # THE BATTERY (L-COMP): gauntlet step 2 for any candidate engine
 Everything here is DATA. A growth line is a READING of data, never a claim (D1; TARGET.md section 5 step 2; D2 change 5).
+A BATTERY PASS with «polynomial-looking» on every family is compatible with an exponential candidate: RF (L-SI 57) passed all
+five sets (record/rf_lred247_*: 10,499 answered instances, 17 families) and is dead on L-RED-B 8's family K^s_n
+(7·2^(n−1) − 2n − 3 iterations on 3n² + 3n + 1 vertices). The fixed sets are families hard for OTHER rules; they cannot find a
+candidate's own worst case. Standing rule (Lead 15:47Z): every kill family of the fleet goes into the battery when it exists.
 Needs: python3, g++, Oink built (`scripts/setup_oink.sh`), and from this repo `experiments/battery` + `experiments/harness`
 (the N5 self-test engines also read `experiments/comp/box44`, `experiments/n5-second`, `experiments/hard-families`).
 
@@ -16,7 +20,9 @@ $ printf 'parity 2;\n0 1 0 0,1;\n1 2 0 1;\n' > /tmp/g.pg ; python3 engines/zielo
 Engines here: `engines/oink_zlk.py` (reference: Oink zlk wrapped), `engines/zielonka.py` (recursive algorithm, self-contained),
 `engines/n5.py --mode spec|xi` (N5 and N5'-xi, both dead, kept for their KNOWN rows), `engines/control.py` (wrong on purpose),
 `engines/sol_adapter.py [--iter REGEX] [--steps REGEX] '<solver command with {in} {out}>'` (any solver that writes an Oink /
-PGSolver solution file `v winner [strategy];` becomes an engine; the regex pulls the count out of the solver's output).
+PGSolver solution file `v winner [strategy];` becomes an engine; the regex pulls the count out of the solver's output),
+`engines/rf_lred247.py [--rule rf|howard]` (candidate RF of L-SI 57 through L-RED's implementation, claude/l-red 821d63e3
+experiments/red/r247, unmodified, from an archive named by env LRED; NOT the designer's own engine).
 
 ## Run
 `experiments/battery/run_battery.sh '<engine command>' [set ...]` (sets: a b c d e; default all). Never pipe it (exit code).
@@ -49,4 +55,6 @@ winners compared, strategies NOT verified, last line says so; not a step-2 pass)
 ## Self-test (rows that must come out as known; if one does not, the battery is wrong)
 `python3 -B selftest.py quick` (1 minute; run by check.sh) or `full OUTDIR`. Known rows and sources: selftest.py's header. Records: record/ (experiments/*/out/ is gitignored, so nothing of record lives in out/);
 record/selftest_full* is the full run of the battery at commit dd9ba4ac (19 checks), record/zielonka_c the Zielonka engine on set c,
-record/n5spec_e and record/n5spec_c N5 (SPEC) on sets e (10,000 of 10,000 OK) and c (161 OK, 4 timeouts at 60 s, 8 skipped).
+record/n5spec_e and record/n5spec_c N5 (SPEC) on sets e (10,000 of 10,000 OK) and c (161 OK, 4 timeouts at 60 s, 8 skipped),
+record/rf_lred247_ab, rf_lred247_cde RF by L-RED's engine (l-red 821d63e3) on all five sets, record/howard_lred247_abc Howard
+(same engine) on a, b, c: exponential-looking on switchallexp (10, 30, 150, 2486 at N = 1, 2, 4, 8).

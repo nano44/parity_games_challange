@@ -1,0 +1,56 @@
+== battery: engine `python3 -B engines/rf_lred247.py` | sets a_gamma3 b_wrapper | timeout 60 s per instance | jobs 1 | 2026-11-14T15:27:50Z (date -u)
+
+== set a_gamma3, family gamma3_Gk (11 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     3     175     228    52           6           21     0.047  OK
+     4     310     404    88           6           35     0.064  OK
+     5     445     580   124           8           51     0.093  OK
+     6     580     756   160           8           65     0.126  OK
+     7     715     932   196          10           81     0.187  OK
+     8     850    1108   232          10           95     0.289  OK
+     9     985    1284   268          12          111     0.444  OK
+    10    1120    1460   304          12          125     0.463  OK
+    11    1255    1636   340          14          141     0.595  OK
+    12    1390    1812   376          14          155     0.825  OK
+    13    1525    1988   412          16          171     1.004  OK
+growth (measure: iterations; 11 sizes answered): ratios over the last three steps 1.167 1.000 1.143 | power law: exponent in n 1.219, constant 5.04, err 0.0307 (in param: exponent 1.244, err 0.0309) | exponential: x1.0634 per size step, constant -6.0, err 0.0341 (in param: x1.0634 per step, err 0.0341) | READING: polynomial-looking
+
+== set b_wrapper, family wrapper_WL (4 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     1     211     281    22           8           30      0.04  OK
+     2     395     529    32           8           55     0.047  OK
+     3     600     807    42           8           83     0.106  OK
+     4     826    1115    52           8          114     0.081  OK
+growth (measure: iterations; 4 sizes answered): ratios over the last three steps 1.000 1.000 1.000 | power law: exponent in n 0.0, constant 0.0, err 1.97e-31 (in param: exponent 0.0, err 1.97e-31) | exponential: x1.0 per size step, constant 0.0, err 1.97e-31 (in param: x1.0 per step, err 1.97e-31) | READING: polynomial-looking
+
+== set b_wrapper, family wrapper_W (7 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     2     567     759    43          11           78     0.067  OK
+     3     818    1097    57          11          112      0.09  OK
+     4    1069    1435    71          11          146     0.127  OK
+     5    1320    1773    85          11          180     0.146  OK
+     6    1571    2111    99          11          214     0.188  OK
+     7    1822    2449   113          11          248     0.218  OK
+     8    2073    2787   127          11          282     0.309  OK
+growth (measure: iterations; 7 sizes answered): ratios over the last three steps 1.000 1.000 1.000 | power law: exponent in n -0.0, constant 0.0, err 7.3e-31 (in param: exponent 0.0, err 7.3e-31) | exponential: x1.0 per size step, constant 0.0, err 7.3e-31 (in param: x1.0 per step, err 7.3e-31) | READING: polynomial-looking
+
+== set b_wrapper, family wrapper_F (7 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     2     708     929   192          12           90     0.113  OK
+     3    1017    1338   274          12          130      0.16  OK
+     4    1326    1747   356          12          170     0.219  OK
+     5    1635    2156   438          12          210     0.288  OK
+     6    1944    2565   520          12          250     0.459  OK
+     7    2253    2974   602          12          290     0.597  OK
+     8    2562    3383   684          12          330     0.742  OK
+growth (measure: iterations; 7 sizes answered): ratios over the last three steps 1.000 1.000 1.000 | power law: exponent in n 0.0, constant 0.0, err 0.0 (in param: exponent 0.0, err 0.0) | exponential: x1.0 per size step, constant 0.0, err 0.0 (in param: x1.0 per step, err 0.0) | READING: polynomial-looking
+
+== readings, one line per family (DATA; a reading is never a claim; read the tables above)
+set        family            answered    param        n     measure     last value  ratios (last three)    READING
+a_gamma3   gamma3_Gk            11/11       13     1525  iterations             16  1.167 1.000 1.143      polynomial-looking
+b_wrapper  wrapper_WL             4/4        4      826  iterations              8  1.000 1.000 1.000      polynomial-looking
+b_wrapper  wrapper_W              7/7        8     2073  iterations             11  1.000 1.000 1.000      polynomial-looking
+b_wrapper  wrapper_F              7/7        8     2562  iterations             12  1.000 1.000 1.000      polynomial-looking
+
+== summary: 29 instances: OK 29 | wall 8 s
+BATTERY PASS: no wrong winner, no bad strategy on 29 answered instances (0 timeouts, 0 skipped after a timeout)

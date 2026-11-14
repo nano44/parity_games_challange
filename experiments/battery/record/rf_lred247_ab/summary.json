@@ -1,0 +1,415 @@
+{
+ "engine": "python3 -B engines/rf_lred247.py",
+ "sets": [
+  "a_gamma3",
+  "b_wrapper"
+ ],
+ "timeout": 60.0,
+ "jobs": 1,
+ "families": [
+  {
+   "set": "a_gamma3",
+   "family": "gamma3_Gk",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 11,
+    "ratios": [
+     1.167,
+     1.0,
+     1.143
+    ],
+    "exponent": 1.219,
+    "err_power": 0.0307,
+    "c0_power": 5.04,
+    "exponent_param": 1.244,
+    "err_power_param": 0.0309,
+    "factor_param": 1.0634,
+    "err_exp_param": 0.0341,
+    "factor": 1.0634,
+    "err_exp": 0.0341,
+    "c0_exp": -6.0,
+    "reading": "polynomial-looking"
+   },
+   "rows": [
+    {
+     "param": 3,
+     "n": 175,
+     "m": 228,
+     "d": 52,
+     "iterations": 6,
+     "steps": 21,
+     "seconds": 0.047,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 310,
+     "m": 404,
+     "d": 88,
+     "iterations": 6,
+     "steps": 35,
+     "seconds": 0.064,
+     "status": "OK"
+    },
+    {
+     "param": 5,
+     "n": 445,
+     "m": 580,
+     "d": 124,
+     "iterations": 8,
+     "steps": 51,
+     "seconds": 0.093,
+     "status": "OK"
+    },
+    {
+     "param": 6,
+     "n": 580,
+     "m": 756,
+     "d": 160,
+     "iterations": 8,
+     "steps": 65,
+     "seconds": 0.126,
+     "status": "OK"
+    },
+    {
+     "param": 7,
+     "n": 715,
+     "m": 932,
+     "d": 196,
+     "iterations": 10,
+     "steps": 81,
+     "seconds": 0.187,
+     "status": "OK"
+    },
+    {
+     "param": 8,
+     "n": 850,
+     "m": 1108,
+     "d": 232,
+     "iterations": 10,
+     "steps": 95,
+     "seconds": 0.289,
+     "status": "OK"
+    },
+    {
+     "param": 9,
+     "n": 985,
+     "m": 1284,
+     "d": 268,
+     "iterations": 12,
+     "steps": 111,
+     "seconds": 0.444,
+     "status": "OK"
+    },
+    {
+     "param": 10,
+     "n": 1120,
+     "m": 1460,
+     "d": 304,
+     "iterations": 12,
+     "steps": 125,
+     "seconds": 0.463,
+     "status": "OK"
+    },
+    {
+     "param": 11,
+     "n": 1255,
+     "m": 1636,
+     "d": 340,
+     "iterations": 14,
+     "steps": 141,
+     "seconds": 0.595,
+     "status": "OK"
+    },
+    {
+     "param": 12,
+     "n": 1390,
+     "m": 1812,
+     "d": 376,
+     "iterations": 14,
+     "steps": 155,
+     "seconds": 0.825,
+     "status": "OK"
+    },
+    {
+     "param": 13,
+     "n": 1525,
+     "m": 1988,
+     "d": 412,
+     "iterations": 16,
+     "steps": 171,
+     "seconds": 1.004,
+     "status": "OK"
+    }
+   ]
+  },
+  {
+   "set": "b_wrapper",
+   "family": "wrapper_WL",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 4,
+    "ratios": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "exponent": 0.0,
+    "err_power": 1.97e-31,
+    "c0_power": 0.0,
+    "exponent_param": 0.0,
+    "err_power_param": 1.97e-31,
+    "factor_param": 1.0,
+    "err_exp_param": 1.97e-31,
+    "factor": 1.0,
+    "err_exp": 1.97e-31,
+    "c0_exp": 0.0,
+    "reading": "polynomial-looking"
+   },
+   "rows": [
+    {
+     "param": 1,
+     "n": 211,
+     "m": 281,
+     "d": 22,
+     "iterations": 8,
+     "steps": 30,
+     "seconds": 0.04,
+     "status": "OK"
+    },
+    {
+     "param": 2,
+     "n": 395,
+     "m": 529,
+     "d": 32,
+     "iterations": 8,
+     "steps": 55,
+     "seconds": 0.047,
+     "status": "OK"
+    },
+    {
+     "param": 3,
+     "n": 600,
+     "m": 807,
+     "d": 42,
+     "iterations": 8,
+     "steps": 83,
+     "seconds": 0.106,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 826,
+     "m": 1115,
+     "d": 52,
+     "iterations": 8,
+     "steps": 114,
+     "seconds": 0.081,
+     "status": "OK"
+    }
+   ]
+  },
+  {
+   "set": "b_wrapper",
+   "family": "wrapper_W",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 7,
+    "ratios": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "exponent": -0.0,
+    "err_power": 7.3e-31,
+    "c0_power": 0.0,
+    "exponent_param": 0.0,
+    "err_power_param": 7.3e-31,
+    "factor_param": 1.0,
+    "err_exp_param": 7.3e-31,
+    "factor": 1.0,
+    "err_exp": 7.3e-31,
+    "c0_exp": 0.0,
+    "reading": "polynomial-looking"
+   },
+   "rows": [
+    {
+     "param": 2,
+     "n": 567,
+     "m": 759,
+     "d": 43,
+     "iterations": 11,
+     "steps": 78,
+     "seconds": 0.067,
+     "status": "OK"
+    },
+    {
+     "param": 3,
+     "n": 818,
+     "m": 1097,
+     "d": 57,
+     "iterations": 11,
+     "steps": 112,
+     "seconds": 0.09,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 1069,
+     "m": 1435,
+     "d": 71,
+     "iterations": 11,
+     "steps": 146,
+     "seconds": 0.127,
+     "status": "OK"
+    },
+    {
+     "param": 5,
+     "n": 1320,
+     "m": 1773,
+     "d": 85,
+     "iterations": 11,
+     "steps": 180,
+     "seconds": 0.146,
+     "status": "OK"
+    },
+    {
+     "param": 6,
+     "n": 1571,
+     "m": 2111,
+     "d": 99,
+     "iterations": 11,
+     "steps": 214,
+     "seconds": 0.188,
+     "status": "OK"
+    },
+    {
+     "param": 7,
+     "n": 1822,
+     "m": 2449,
+     "d": 113,
+     "iterations": 11,
+     "steps": 248,
+     "seconds": 0.218,
+     "status": "OK"
+    },
+    {
+     "param": 8,
+     "n": 2073,
+     "m": 2787,
+     "d": 127,
+     "iterations": 11,
+     "steps": 282,
+     "seconds": 0.309,
+     "status": "OK"
+    }
+   ]
+  },
+  {
+   "set": "b_wrapper",
+   "family": "wrapper_F",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 7,
+    "ratios": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "exponent": 0.0,
+    "err_power": 0.0,
+    "c0_power": 0.0,
+    "exponent_param": 0.0,
+    "err_power_param": 0.0,
+    "factor_param": 1.0,
+    "err_exp_param": 0.0,
+    "factor": 1.0,
+    "err_exp": 0.0,
+    "c0_exp": 0.0,
+    "reading": "polynomial-looking"
+   },
+   "rows": [
+    {
+     "param": 2,
+     "n": 708,
+     "m": 929,
+     "d": 192,
+     "iterations": 12,
+     "steps": 90,
+     "seconds": 0.113,
+     "status": "OK"
+    },
+    {
+     "param": 3,
+     "n": 1017,
+     "m": 1338,
+     "d": 274,
+     "iterations": 12,
+     "steps": 130,
+     "seconds": 0.16,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 1326,
+     "m": 1747,
+     "d": 356,
+     "iterations": 12,
+     "steps": 170,
+     "seconds": 0.219,
+     "status": "OK"
+    },
+    {
+     "param": 5,
+     "n": 1635,
+     "m": 2156,
+     "d": 438,
+     "iterations": 12,
+     "steps": 210,
+     "seconds": 0.288,
+     "status": "OK"
+    },
+    {
+     "param": 6,
+     "n": 1944,
+     "m": 2565,
+     "d": 520,
+     "iterations": 12,
+     "steps": 250,
+     "seconds": 0.459,
+     "status": "OK"
+    },
+    {
+     "param": 7,
+     "n": 2253,
+     "m": 2974,
+     "d": 602,
+     "iterations": 12,
+     "steps": 290,
+     "seconds": 0.597,
+     "status": "OK"
+    },
+    {
+     "param": 8,
+     "n": 2562,
+     "m": 3383,
+     "d": 684,
+     "iterations": 12,
+     "steps": 330,
+     "seconds": 0.742,
+     "status": "OK"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "OK": 29
+ },
+ "failures": [],
+ "exit": 0,
+ "winner_only": false
+}
