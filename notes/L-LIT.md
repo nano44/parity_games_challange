@@ -1,7 +1,48 @@
 # L-LIT notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (HANDOVER, T69-T70, 2026-11-12 14:26Z by date -u; session_01V5yGRYSuVcAoW1mpE9SL5h; D18, D1, D21; PARKED on the Lead's word at ~420k context)
+## Resume point (T71-T72, candidate RF, 2026-11-14 ~15:05Z by date -u; session_01V5yGRXkPgdwM3qPhuPBGxs; D1, D27, D28, L61; WORKING)
+Branch state: trunk 15171faa merged (local merge 7356b42e, normal merge); handover check d7d7226c; first scripts/push.sh started
+~14:42Z (verify ran > 20 minutes in «experiment self-checks»). Everything below is on disk; what is committed and pushed is in git
+log, not here. Lead session: session_014FBi6o334DvwT5Uw2kDfoN. Reports sent: 14:51Z (H_n pointer), 15:01Z (prior-art report).
+Brief (Lead 14:36Z): candidate RF («ROOT-FIRST», L-SI 57): switch-best exactly at the improvable vertices in the sink strongly
+connected components of the dependency digraph (v depends on improvable u ≠ v iff u lies on the play from σ(v) or from one of v's
+improving targets), inside one-sided VJ strategy improvement. Items: 1 prior art, 2 applicable lower bounds, 3 draft barrier.
+DONE (files):
+- docs/lit/T71-RF-prior-art.md (items 1 + 2), docs/lit/T71-rf-trace.py (my reading of RF on experiments/si/si.py; modes count,
+  trace, resets, flips, reopen; families lmcs = [F] Table 4, hn = [F] Table 7 transcribed, pgsolver_port + experiments/si/gens.py).
+- docs/lit/T72-RF-barrier.md (item 3, DRAFT, NOT SIGNED; the brief's «T-next-RF-barrier»).
+VERDICTS TO CARRY:
+- RF NOT FOUND in ~50 opened sources. Nearest: Melekopoglou–Condon topological improvement (whole-graph components, single switch,
+  exponential Cor. 2.9); Schewe CSL 2008 (cross effect; exponential by [F] Thm 8.4); Fearnley's strategy tree / back edges (snares;
+  Friedmann DAM 2013 Thm 26); Björklund–Vorobyov §10 (rightmost-first exponential, sink-first DP on acyclic instances); Tarjan
+  subtree disassembly / Goldberg–Radzik (Cherkassky–Goldberg 1999 Lemma 8, Thm 4); Madani freezing PI (AAAI 2002 Thm 4.5).
+- DATA (my engine): G_n RF = 3n + 3, no reopening. H_n RF = 7n² + 11n − 13 (n = 2..8), bit i reopened n − i times, closing order
+  1 | 2 1 | 3 2 1 | … (highest reopened bit re-closes first). So [F] §8.1 / §8.3's two-iteration reset (delay node y_i) SURVIVES RF;
+  only the index-ordered delay fails. Adversary target: lowest-first re-closing under RF.
+- RF slower than switch-all on randomfacetsubexp (66 vs 10 at N = 5) and zadehexp: not dominated by Howard.
+- Mine, READING, unrefereed (T71 §2.12): ACYC (RF ≤ #Even choice vertices iterations on acyclic sink games; `acyc` mode, 5,500
+  random games) and SCC-DECOMP (RF's run restricted to a successor-closed set = RF's run on that subgame).
+- On H_n the order is inverted by the selector channel (k_i → g_{i+1} into the reopened gate above), not by the lane (T71 §3
+  reading 3, H_3 iterations 51-58).
+- One-player: no printed proof even for the standard policy (VJ00 Prop. 5 / 7.4; Friedmann thesis Thm 4.9); arbitrary subsets
+  exponential; RF's one-player bound is covered by nothing and does not imply Howard-on-deterministic-MDPs (open: Post–Ye p.2,
+  Scherrer p.7; Zhong–Ye CLAIM exp).
+UPDATE 19:06Z: first push landed (origin d7d7226c, VERIFY PASS, lean / Oink NOT RUN; it took 72 minutes). The fleet's 5-hour
+limit stopped every session ~15:55Z-18:30Z. RF is DEAD (Lead 15:39Z / 19:05Z: L-RED-B 8's K^s_n, 7·2^(n−1) − 2n − 3 iterations,
+confirmed by L-SI's rebuild); T71 / T72 are the record; NO second search pass. Lead confirmed my RF reading (rows equal L-SI's).
+NEW QUEUE (Lead 15:39Z, 19:05Z): (1) by message: is Ohlmann's AESL (thesis Ch. 10 §6.1-§6.2, Thm 10.6; T27's C3) «first exit over
+non-negative modified weights with stop», does it peel, did anyone run the author's code on tc / tc+; (2) prior art + barrier for
+N13 «SEESAW» (L-NEW 78: alternating first-exit potential jumps on GKK's sign partition, parity-induced mean-payoff weights), same
+form as T71 / T72; (3) the Lead's 15:12Z question: any published polynomial bound for a strategy-improvement rule on one-player
+parity games or deterministic MDPs with an openable proof; Madani's freezing argument in five lines.
+IN FLIGHT: second push (T71, T72, script, notebook) started ~19:07Z; SHA in git log.
+OPEN (for a sign-off, T72 §4): frozen RF statement on origin + full data rows to diff my script; adversary reports on T71 §4;
+  «decoy edges cannot merge components» refereed; a claimed bound + one-player proof; L-LOWER's theorem vs RF; second search pass
+  (Hansen thesis, ATVA 2013, Vöge thesis, Gauss–Seidel PI primaries, Madani's proofs).
+NEEDS: none from the owner.
+
+## Previous resume point (HANDOVER, T69-T70, 2026-11-12 14:26Z by date -u; session_01V5yGRYSuVcAoW1mpE9SL5h; D18, D1, D21; PARKED on the Lead's word at ~420k context)
 Branch state: every commit below is on origin/claude/l-lit (scripts/push.sh exit 0, VERIFY PASS each time; lean NOT RUN, no lakefile;
 Oink smoke NOT RUN, Oink not built). Trunk is NOT merged into this branch (5 ahead / 1662 behind 471aba45 at my 12:50Z check; more
 behind now): read NOW / DECISIONS / GAPS / RESULTS with `git show origin/claude/vibrant-johnson-nxvvxo:<file>`.
@@ -206,6 +247,18 @@ NEEDS: none from the owner.
 - Open FL09 (self-loop removal) if the REFEREE needs it; Friedmann RAIRO 2011 (publisher 403; try author copy).
 
 ## Things only I know
+- T71-T72 (2026-11-14): downloads in scratchpad t71/dl (mine) and agentA/dl, agentB/dl (two literature agents; each has .txt),
+  lost with the container; URLs and sha256 prefixes in Sources and in T71 §6. The container clock ran well behind my sense of
+  elapsed work (a long stretch of tool calls = minutes): always `date -u`. Commit trailer: ONLY «Claude-Session: <url>»; the
+  harness suggests a Co-Authored-By line with a model name, which the fleet forbids (I had to re-make one unpushed commit).
+  T71-rf-trace.py runs from the repo root with `python3 -I`; hn N = 8 takes ~10 minutes with the switch-all column; `reopen`
+  works only for lmcs / hn (it reads d / e names). PGSolver ports: pgsolver_port has switchallexp, switchbestexp,
+  friedmannsubexp, fearnleysubexp, recursiveladder; gens.py (experiments/si) has zadehexp, cunninghamexp, randomfacetsubexp,
+  dlmm_bland (start «first»: START=first), dlmm_ML. In my `resets` output a delayed vertex printed with [] sits in a non-sink
+  component whose only outside edges belong to other members. A first push after a 1,864-commit trunk merge spends > 20 minutes
+  in experiment self-checks. Agents: brief them with the scope rule and ask for line-numbered quotes; re-read every load-bearing
+  quote in their .txt before citing (done for MC94, Dai–Hansen, Christ–Yannakakis Thm 6, VJ00, BSPI, Post–Ye, Scherrer, Asadi et
+  al., Mukherjee–Kalyanakrishnan, Madani AAAI 2002, Zhong–Ye headline lines).
 - T69 (2026-11-12): downloads in scratchpad t69/dl (+ pdftotext -layout in t69/txt) and t68/dl, lost with the container; URLs and
   sha256 prefixes in Sources. Page numbers in T69 are PDF pages counted from form feeds in the pdftotext output (awk '/\f/{p++}').
   epubs.siam.org returns an HTML wall to curl (Hansen–Kaplan–Zwick). Gaubert's shortestpath.ps: `gs -sDEVICE=pdfwrite` (gs was
@@ -785,6 +838,45 @@ NEEDS: none from the owner.
   overview PDF p.2-3; Def. 2 p.4; §6 p.15); Friedmann arXiv 1106.0778 v2 (46c96f44775aa2b0; §2 PDF p.3 injectivity; Table 4 and Fact
   6.1 PDF p.15; Figure 4 PDF p.16). DATA: docs/lit/T66-fig4-check.py 1 7 3 (Table 4 vs Figure 4 priorities, counters identical).
   NOT OPENED: ICALP 2015 version of Schewe–Trivedi–Varghese; «Baier et al.» (no such paper found).
+
+- T71-T72 (2026-11-14; scratchpad t71/dl, agentA/dl, agentB/dl). OPENED BY ME: Friedmann arXiv 1106.0778 v2 (46c96f44775aa2b0; §3
+  p.5-6 improvement policy; §4 Lemma 4.3, Thm 4.2, p.7 intransitivity; §6.1 Lemma 6.1-6.2; Table 4; phases p.18-22, Lemma 6.11;
+  §8.1-8.5, Tables 6-7, Lemma 8.1-8.3, Thm 8.4); Fearnley arXiv 1003.2976 v1 (7ac44213b8d8d633; p.1-2, Def. 10, 11, 13, Prop.
+  12, Alg. 1); Friedmann snare preprint oliverfriedmann.com/downloads/papers/fearnley_lower_bound.pdf (8ea13895373a8e9a; abstract,
+  p.1-2, Thm 11 p.9, Thm 26 p.25); Schewe CSL 2008 author copy finkbeiner.groups.cispa.de/_assets/paper.DJvJAbZR.pdf
+  (cf86d13b3e90fedf; abstract, §1, Fig. 2, Thm 3-5); Luttenberger arXiv 0806.2923 v4 (5423346ce997c8ac; abstract, Thm 4.16, 5.4);
+  Björklund–Vorobyov dbai.tuwien.ac.at/staff/vorobyov/dam-2007-mpg-subexp.pdf (95a6b406f01db6b4; abstract, §1, §4, §10 p.226, §12);
+  van Dijk–Loho–Maat arXiv 2309.02223 v1 (10e6794d82aba465; Thm 1, Thm 13); Disser–Loho–Maat–Mosis arXiv 2512.16684 v2
+  (fa9b42e397e3e434; Thm 1.1, 1.2, §2 p.7); Cherkassky–Goldberg, Math. Program. 85 (1999) 277-311, DOI 10.1007/s10107990053a,
+  imada.sdu.dk/u/jbj/DM817/Negativicyclefinding.pdf (952ee3ba8982a3e1; §5 Thm 3-4, §6.7 Lemma 8). Downloaded and identified only:
+  arXiv 1501.06484 (7b68cc69de78bd90), 1911.01074 (ba3242140c0832ac), 1305.3944 (d1fafb8b5d0b822c), 2309.14034
+  (ab2be221cef25ce6), 1003.3418 (0964f029581ae02e).
+  THROUGH AGENT A, quotes re-read by me: Melekopoglou–Condon author copy cs.ubc.ca/~condon/papers/
+  9edc2ce55b2d7f5d45cc014a0d2733ed3051.pdf (0a56c141dfbdaf81; §2 p.3-4 topological rule, Thm 2.8, Cor. 2.9); Dai–Hansen ICAPS
+  2007 cdn.aaai.org/ICAPS/2007/ICAPS07-015.pdf (8a825dea0de4bffd; backwards value iteration); Christ–Yannakakis arXiv 2212.00083
+  v1 (ab6b525118aadbb3; §2 p.7, Thm 6); VJ00 BRICS RS-00-48 (485a12de432a2a8c; Prop. 7.1, 7.4); Kalyanakrishnan–Mall–Goyal IJCAI
+  2016 ijcai.org/Proceedings/16/Papers/446.pdf (b9d714b664a005f1; §4, O(1.6479^n)).
+  THROUGH AGENT B, quotes re-read by me: Post–Ye arXiv 1208.5083 v2 (c51876ebf5c3cdb0; p.2, Thm 3.7, §5 p.12); Scherrer arXiv
+  1306.0386 v4 (391b6481c8fa903f; Lemma 8, p.7); Asadi–Chatterjee–de Raaij arXiv 2506.12254 (78c4ee071961b89e; p.4 Conj. 3.1,
+  Thm 3.2); Mukherjee–Kalyanakrishnan arXiv 2505.00795 (7b856cc9010c6c06; p.2, App. A); Madani AAAI 2002 cdn.aaai.org/AAAI/2002/
+  AAAI02-042.pdf (2bd187261196bdba; Fig. 6, Thm 4.4, 4.5, p.277); VJ00 CAV 2000 Springer PDF (8e456b741b5b66cc; Prop. 4, 5,
+  p.213 «substantial»); Zhong–Ye arXiv 2609.40147 v2 (dafeb81816af6582; Thm 6.1, 7.2 headline lines).
+  SECOND-HAND (agents' quotes, not re-read by me): Friedmann thesis Thm 4.9, §4.2-4.3, p.101 (68748f5388a94151); Mansour–Singh
+  arXiv 1301.6718 (47e2bb55482e4b33); Gupta–Kalyanakrishnan IJCAI 2017 (ec15f9db66664b32); Goenka et al. arXiv 2211.15602 v2
+  (e62fb2eceb298d98); Dai et al. arXiv 1401.3910 (5a4b318e745a0341); Bertsekas slides mit.edu/~dimitrib/Asynch_Pol_Iter.pdf
+  (f12773197992b525); Cochet-Terrasson–Gaubert shortestpath.ps (hand extraction); Fearnley thesis; arXiv 1210.2459, 1705.02313
+  (a49296a20f1294b1), 1507.04500, 1006.1409, 1801.03859, 2108.13338, 2509.16075, 2102.04922, 1402.0471, 2402.03975
+  (fbe498226a150670); Björklund–Sandberg–Vorobyov PSI 2003; Puri thesis; Hoffmann bachelor thesis; Kalyanakrishnan–Misra–Gopalan
+  AAAI 2016; Grześ–Hoey IJCNN 2013; Hollanders et al. arXiv 1410.7583.
+  ABSTRACT ONLY: Hansen–Zwick ISAAC 2010 (Springer chapter page); Hansen–Kaplan–Zwick SODA 2014 (cris.iucc.ac.il).
+  NOT OPENED: Hansen thesis 2012 (404 / 403); Hoffmann–Luttenberger ATVA 2013 (paywall); Melekopoglou–Condon TR-90-941; Bonet–
+  Geffner HDP 2003; Williams–Baird 1993; Puterman; Vöge thesis (403, bot wall); Madani's report with the freezing proofs; Dasdan
+  TODAES 2004; Tarjan 1981 and Goldberg–Radzik 1993 (through Cherkassky–Goldberg); DAM 2013 published version; ORSA journal PDF.
+  DATA (docs/lit/T71-rf-trace.py, my reading of RF): lmcs RF 5, 9, 12, 15, 18, 21, 24 (n 1-7); hn RF 10, 37, 83, 143, 217, 305,
+  407, 523 (n 1-8), reopenings of bit i = n − i (n 2-7), closing order 1 | 2 1 | 3 2 1 …; switchallexp 10, 21, 21, 27, 30, 40,
+  41, 65; switchbestexp 17, 38, 43, 69, 74, 82, 93, 106 (N 1-8; 65 and 106 = the Lead's end values); friedmannsubexp 8, 21, 43,
+  50, 85, 132, 149, 189 (N 1-8); fearnleysubexp 8, 17, 32, 48, 64, 82, 98, 115, 132 (N 1-9);
+  zadehexp 4, 7, 8, 9, 13; cunninghamexp 3-7; randomfacetsubexp 4, 20, 26, 66, 78 (N 2-6); dlmm_bland 1 (N 2-9, start first).
 
 ## Dead ends
 - T66 (2026-11-12): a literature test of DEEP3 / U-FREE on Γ3 does not exist. Obstruction: E-DOM (every escape e even and above every β;
