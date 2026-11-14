@@ -1,0 +1,10 @@
+C109 mode rf N 6 seed 7 restarts 8 steps 30000: BEST iterations 16 (ratio to N 2.67); the same game under howard 5
+C109 mode rf N 7 seed 7 restarts 8 steps 30000: BEST iterations 25 (ratio to N 3.57); the same game under howard 8
+C109 mode rf N 8 seed 7 restarts 8 steps 30000: BEST iterations 22 (ratio to N 2.75); the same game under howard 4
+C109 mode rf N 9 seed 7 restarts 8 steps 30000: BEST iterations 27 (ratio to N 3.00); the same game under howard 5
+C109 mode rf N 10 seed 7 restarts 8 steps 30000: BEST iterations 40 (ratio to N 4.00); the same game under howard 7
+C109 mode rf N 12 seed 7 restarts 8 steps 30000: BEST iterations 41 (ratio to N 3.42); the same game under howard 6
+C109 mode rf N 16 seed 1 restarts 6 steps 4000: BEST iterations 39 (ratio to N 2.44); the same game under howard 13
+C109 mode rf N 8 seed 7 ONEP restarts 8 steps 30000: BEST iterations 24 (ratio to N 3.00); the same game under howard 4
+C109 mode rf N 12 seed 7 ONEP restarts 8 steps 30000: BEST iterations 33 (ratio to N 2.75); the same game under howard 8
+C109 mode howard N 12 seed 1 restarts 6 steps 4000: BEST iterations 20 (ratio to N 1.67); the same game under howard 20

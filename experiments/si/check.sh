@@ -1317,3 +1317,5 @@ bash box106/check106.sh
 bash box107/check107.sh
 # box 108 (Theorem GK: L(G_k) = 2^k - 2 on R104's IDEAL model by a closed form; latch tables vs the doc, R104 quotes, 19 controls, one217 replay; docs/si/box108-gk-proof.md)
 bash box108/check108.sh
+# box 109 (design day: hybrids h1-h4 against both kill families, candidate S8 = RF (ROOT-FIRST); frozen tables vs the doc, fresh small rows, rf109.py vs n6.py, 300 random games, controls; docs/si/box109-design.md)
+bash box109/check109.sh

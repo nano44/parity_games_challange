@@ -1,6 +1,52 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Successor 57 RESUME POINT (design day 2026-11-14; session_01V5yGRZzMPHfvDam83kize6; Lead session_014FBi6o334DvwT5Uw2kDfoN; Lead brief 13:42Z: DESIGN DAY, design lane B = INSIDE the strategy-improvement scheme; owner D27 «SO we have to look for a new algorithm no? Do we have any promising lead or can convert our learning into a new promising algorithm?», D28 «I reset everything, you have until 11PM to use a full 100% usage»)
+### State (CHECK FIRST: `git fetch origin claude/l-si`, ff-only, `git log origin/claude/l-si..HEAD`, `pgrep -f "bash scripts/push.sh"`)
+- Commits of this session: 4c1eaaf4 (handover check; push 1 started 13:50Z) and the box 109 commit that carries this text (push 2).
+  If `git ls-remote origin claude/l-si` is behind `git log`, re-run `scripts/push.sh` (tracked background task, output to a file,
+  `echo exit $?`, never piped) and send the Lead the SHA.
+- BOX 109 (docs/si/box109-design.md; tools experiments/si/box109; check109.sh pinned in experiments/si/check.sh):
+  - STALL (Lemma STALL-W, PROVED lane from P-N5-WRAP §4.8): on W(H, s0) every core-fair rule stops after exactly 3 iterations; DATA:
+    the same on Γ3(G_k) (k = 3..12) and on the unions. The two kill families bind a new rule very little; the classical counters
+    (G_n from ι, switchallexp, switchbestexp) are the binding ones.
+  - Hybrids: h2 DEAD on DU_a = Γ3(G_a) ⊔ W(G_a, ι); h3, h4 DEAD on switchallexp from S3 and G_n from ι (Howard's counts); my NH
+    (no-hold N5) DEAD on switchbestexp (20, 58, …, 2414 at N = 1..7). h1 (alternate N5 / N5′-xi) NOT killed in the box (9 / 11 / 11 and
+    = N5 on the classical families); its killer would be a DE-TIED Γ3(G_k) (Fact SHAPE; OPEN, sketch in §3.3).
+  - CANDIDATE S8 = RF (ROOT-FIRST), exact pseudocode below; implementation experiments/si/box109/rf109.py (regions AND positional
+    strategies; `python3 experiments/si/box109/rf109.py GAME.pg OUT.sol [--trace]`). PROVED lane: a strategy-improvement run
+    (terminates, correct); Lemma ACYC (≤ |V_E| iterations when the only cycles are self-loops of one-successor vertices). DATA: Γ3(G_k)
+    2⌊(k − 1)/2⌋ + 4 (k = 3..12); W(G_n, ι) 8 (n = 1..8); G_n from ι 3n + 3 (n = 2..16); switchallexp ≤ 79 (N ≤ 16); switchbestexp ≤ 184
+    (N ≤ 14); 10,000 random games wrong 0 / badstrat 0. Own attack: hill-climb reaches 16, 25, 22, 27, 40, 41 iterations at n = 6, 7, 8, 9, 10, 12
+    (RF is single-switch-like; superlinear growth NOT excluded). NO bound proved on strongly connected games.
+### Exact pseudocode of the candidate S8 = RF (gauntlet step 1; S1, S2, S3, S5 are SPEC's, docs/new/N5-ssi-global.md)
+```
+sigma := S3's Even strategy (or a given one)
+loop:
+  1. (Xi, sbar) := S1(sigma); I := S2(sigma, Xi); if I is empty: stop
+  2. Imp := { v : (v, w) in I for some w };  T(v) := { w : (v, w) in I }
+  3. nxt(x) := sigma(x) if x is Even's, sbar(x) if x is Odd's;  pi(x) := the vertex set of the play x, nxt(x), nxt(nxt(x)), ...
+  4. for v in Imp: D(v) := ( pi(sigma(v)) ∪ ⋃_{w in T(v)} pi(w) ) ∩ Imp \ {v};  Delta := (Imp, { v -> u : u in D(v) })
+  5. S := the union of the strongly connected components of Delta with no edge into another component
+  6. for v in S: sigma(v) := the w in T(v) maximising (Xi(w), w)
+output (S5): Even wins v iff the cycle node of Xi(v) has even priority; strategies: sigma on Even's region, sbar on Odd's
+```
+### NEXT (in this order)
+1. Deliverable 2 leftovers: the Oink-generated M1 families (counter_*, tc, tc+, recursiveladder; `scripts/setup_oink.sh` first, NOT
+   while a push is in verify) and L-COMP 23's battery when the Lead sends its commit; a growth table per family for rf109.py.
+2. Attack RF before anyone else does (D1): (a) stronger search (climb109.py with ONEP=1 and with two-player games at n = 12..20; fit
+   the best counts against n and n²); (b) a counter with the LEAST significant unset bit as the dependency sink (every counter on
+   hand has the opposite orientation, which is why RF sets the high bits first: 3n + 3 on G_n); (c) dependency collapse through Odd
+   mirror gates. A doubling table for RF is today's second-best outcome and goes to the Lead at once with the instance.
+3. The de-tied Γ3(G_k) of §3.3 (kills h1 and every tie rule if it exists): check R104's [DEF] priorities before trying.
+### Things only I know
+- The engine's «iterations» for one-sided rules count Even's improvement steps; for two-sided rules N5's iterations. Do not compare
+  them across the two kinds without saying so.
+- n6.py's mode h3 runs n5v.step first and then overrides Even's choices: its Odd side is SPEC's S4b on the OLD σ, as in SPEC.
+- The families fr / wl / du need L-LIT's T66 file (claude/l-lit 5c53efbd; `git fetch origin claude/l-lit` first); check109.sh uses
+  only families that need no external tree.
+- 4 cores here: four climbs plus run109.sh plus a push in verify slow each other; nothing else was harmed.
+
 ## Successor 56 HANDOVER (effort xhigh; session_01V5yGRWzAPTWfgNSJqHbXjx; Lead session_014FBi6o334DvwT5Uw2kDfoN; written 2026-11-13T14:30:22Z by date -u; clock skew 0 s at 12:55:03Z; PARKING at the context line, ~470k)
 ### Resume point (successor 57 starts here; CHECK FIRST: trap check as in the brief; `git log origin/claude/l-si..HEAD`; `pgrep -f "bash scripts/push.sh"`)
 - Commits of this session, pushed TOGETHER in one verify on the Lead's 14:30Z word («STOP push 1 now and push both commits in one

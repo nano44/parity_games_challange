@@ -724,3 +724,19 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   I_τ ≠ ∅. Instances: experiments/n5-exhaustive/instances/n3all_maxph_0 (n 3, state 0, I_τ = {(2, 1)}, τ kept, σ moves);
   experiments/red/h3/instances/lcount2_n23 (+ start; W-run transition 1: deviation 22 → 3 with (22, 3) ∈ I_τ, τ kept). Corpus: 3,768 of
   17,841 stretch transitions, 2,647 W-run transitions. n5b identical, Oink zlk OK, strategies verified.
+
+## Box 109 hybrids (design day 2026-11-14; docs/si/box109-design.md §3; engine experiments/si/box109/n6.py; all DATA unless stated; L43: no asymptotic «DEAD» without a refereed proof, the numbers are the record)
+- **h2 (run N5 and N5′-xi side by side, stop with the first).** Killer: DU_a = Γ3(G_a) ⊔ W(G_a, ι) (fam109.py family du), n = 775, 1136,
+  1518, 1921, 2345 at a = 3..7. Iterations: N5 9, 17, 33, 65, 129 (= 2^a + 1); N5′-xi 65, 137, 281, 569, 1145 (= 9·2^a − 7); h2 = twice the
+  smaller. Obstruction: in a disjoint union each part runs as alone and S4c fires only when both parts stall; each rule has its own
+  exponential part (RIPPLE on Γ3(G_a), packet P-N5-EXP; W-FLAT on W(G_a, ι), RESULTS R130).
+- **h3 (Ξσ-best first, root-first key only among Ξσ-ties) and h4 (dependency-ordered Howard on the static components of the game
+  graph).** Killer: PGSolver switchallexp_N from S3: 10, 30, 70, 150, 310, 630, 1243, 2486 at N = 1..8 (both; identical to Howard's
+  rule); Friedmann's G_n from ι: 8, 26, 62, 134, 278, 566, 1142, 2294 at n = 1..8 (= 9·2^n − 10; [F11] Theorem 6.14 with P-N5-WRAP
+  Claim NT for the absence of ties). Obstruction: without Ξσ-ties h3 is Howard's rule; the counters are one strongly connected
+  component for h4. NOT killed by the two kill families: 3 and 5 / 8 iterations on Γ3(G_k) and W(G_n, ι) (Lemma STALL-W).
+- **NH (no-hold N5: S4a's / S4b's choice where it moves, the best improving edge at every improvable vertex it holds).** Killer:
+  PGSolver switchbestexp_N from S3: 20, 58, 134, 286, 590, 1198, 2414 at N = 1..7 (Howard 21, 61, 141, 301, 621, 1261, 2541; N5 20,
+  32, 41, 47, 55, 62, 68). Linear on switchallexp (6N + 1, N ≤ 16) and on G_n from ι (≤ 73 at n = 16). Obstruction: «never hold»
+  makes the rule a switch-all rule; switchbestexp's counter runs on the vertices N5 holds.
+- Not killed in box 109: h1 (alternate N5 / N5′-xi), RF (candidate S8), RF2. See the box file for what I expect to kill them.

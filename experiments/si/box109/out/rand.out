@@ -1,0 +1,7 @@
+R109 mode rf seed 109 games 10000 n<=40: wrong 0 badstrat 0 capped 0 | max iterations 21 (at n = 39) total iterations 26052
+R109 mode rf2 seed 109 games 10000 n<=40: wrong 0 badstrat 0 capped 0 | max iterations 11 (at n = 36) total iterations 18405
+R109 mode nh seed 109 games 10000 n<=40: wrong 0 badstrat 0 capped 0 | max iterations 10 (at n = 38) total iterations 22863
+R109 mode h3 seed 109 games 10000 n<=40: wrong 0 badstrat 0 capped 0 | max iterations 10 (at n = 40) total iterations 22520
+R109 mode h4 seed 109 games 10000 n<=40: wrong 0 badstrat 0 capped 0 | max iterations 12 (at n = 38) total iterations 20881
+R109 mode h1 seed 109 games 10000 n<=40: wrong 0 badstrat 0 capped 0 | max iterations 11 (at n = 30) total iterations 22255
+R109 mode howard seed 109 games 10000 n<=40: wrong 0 badstrat 0 capped 0 | max iterations 12 (at n = 38) total iterations 18306
