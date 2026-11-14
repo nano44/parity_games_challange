@@ -14,7 +14,9 @@ $ printf 'parity 2;\n0 1 0 0,1;\n1 2 0 1;\n' > /tmp/g.pg ; python3 engines/zielo
 {"winner": [0, 0], "strategy": {"0": 1, "1": 1}, "iterations": 1, "steps": 3}
 ```
 Engines here: `engines/oink_zlk.py` (reference: Oink zlk wrapped), `engines/zielonka.py` (recursive algorithm, self-contained),
-`engines/n5.py --mode spec|xi` (N5 and N5'-xi, both dead, kept for their KNOWN rows), `engines/control.py` (wrong on purpose).
+`engines/n5.py --mode spec|xi` (N5 and N5'-xi, both dead, kept for their KNOWN rows), `engines/control.py` (wrong on purpose),
+`engines/sol_adapter.py [--iter REGEX] [--steps REGEX] '<solver command with {in} {out}>'` (any solver that writes an Oink /
+PGSolver solution file `v winner [strategy];` becomes an engine; the regex pulls the count out of the solver's output).
 
 ## Run
 `experiments/battery/run_battery.sh '<engine command>' [set ...]` (sets: a b c d e; default all). Never pipe it (exit code).
@@ -46,4 +48,5 @@ winners compared, strategies NOT verified, last line says so; not a step-2 pass)
 
 ## Self-test (rows that must come out as known; if one does not, the battery is wrong)
 `python3 -B selftest.py quick` (1 minute; run by check.sh) or `full OUTDIR`. Known rows and sources: selftest.py's header. Records: record/ (experiments/*/out/ is gitignored, so nothing of record lives in out/);
-record/selftest_full* is the full run of the battery at commit dd9ba4ac (19 checks), record/zielonka_c the Zielonka engine on set c.
+record/selftest_full* is the full run of the battery at commit dd9ba4ac (19 checks), record/zielonka_c the Zielonka engine on set c,
+record/n5spec_e and record/n5spec_c N5 (SPEC) on sets e (10,000 of 10,000 OK) and c (161 OK, 4 timeouts at 60 s, 8 skipped).

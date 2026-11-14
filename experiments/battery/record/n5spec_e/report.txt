@@ -1,0 +1,19 @@
+== battery: engine `python3 -B /tmp/claude-0/-home-user-parity-games-challange/57706035-4aa0-5500-b6a5-207ac2006e7f/scratchpad/bat/experiments/battery/engines/n5.py --mode spec` | sets e_random | timeout 60 s per instance | jobs 1 | 2026-11-14T14:58:03Z (date -u)
+
+== set e_random, family random (10000 games, agreement only: no growth reading)
+      n   games      OK  not-OK   TIMEOUT   max sec      sum sec     max iter
+      8    1200    1200       0         0     0.086         55.0            5
+     12    1200    1200       0         0     0.084         56.2            7
+     16    1200    1200       0         0     0.079         58.6            7
+     24    1200    1200       0         0     0.097         61.1            9
+     32    1000    1000       0         0     0.079         48.9            8
+     48    1000    1000       0         0     0.104         55.8           13
+     64     900     900       0         0     0.104         53.4           13
+    100     800     800       0         0     0.239         60.9           12
+    150     600     600       0         0     0.222         58.9           15
+    200     500     500       0         0     0.334         65.9           18
+    300     250     250       0         0     1.106         60.4           22
+    500     150     150       0         0     1.905         81.2           24
+
+== summary: 10000 instances: OK 10000 | wall 724 s
+BATTERY PASS: no wrong winner, no bad strategy on 10000 answered instances (0 timeouts, 0 skipped after a timeout)

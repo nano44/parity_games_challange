@@ -174,9 +174,9 @@ def run_task(task):
             rows.append(dict(set=inst["set"], family=inst["family"], param=inst["param"], file=inst["file"], kind=inst["kind"], n=None, m=None, d=None,
                              iterations=None, steps=None, seconds=None, status="SKIPPED", detail="a smaller size of this family timed out", ref="")); continue
         try: row = run_instance(engine, inst)
-        except BatteryError as e:
+        except Exception as e:  # BatteryError or any internal failure: never an engine result
             row = dict(set=inst["set"], family=inst["family"], param=inst["param"], file=inst["file"], kind=inst["kind"], n=None, m=None, d=None,
-                       iterations=None, steps=None, seconds=None, status="BATTERY-ERROR", detail=str(e)[:300], ref="")
+                       iterations=None, steps=None, seconds=None, status="BATTERY-ERROR", detail=("%s: %s" % (type(e).__name__, e))[:300], ref="")
         rows.append(row)
         if sequential and row["status"] == "TIMEOUT" and not NOSKIP: stopped = True
     return rows
@@ -286,6 +286,14 @@ def main():
                 secs = [r["seconds"] for r in rs if r["seconds"] is not None]; its = [r["iterations"] for r in rs if r["iterations"] is not None]
                 rep.append("%7s %7d %7d %7d %9d %9s %12s %12s" % (fmt(n), len(rs), ok, len(rs) - ok - to, to, "%.3f" % max(secs) if secs else "-", "%.1f" % sum(secs) if secs else "-", max(its) if its else "-"))
             summary["families"].append(dict(set=s, family=fam, kind="agree", games=len(fr), ok=sum(1 for r in fr if r["status"] == "OK")))
+    fits = [f for f in summary["families"] if f["kind"] == "fit"]
+    if fits:
+        rep.append("\n== readings, one line per family (DATA; a reading is never a claim; read the tables above)")
+        rep.append("%-10s %-16s %9s %8s %8s %11s %14s  %-22s %s" % ("set", "family", "answered", "param", "n", "measure", "last value", "ratios (last three)", "READING"))
+        for f in fits:
+            ok = [r for r in f["rows"] if r["status"] == "OK"]; gr = f["growth"]; last = ok[-1] if ok else None
+            rep.append("%-10s %-16s %9s %8s %8s %11s %14s  %-22s %s" % (f["set"], f["family"], "%d/%d" % (len(ok), len(f["rows"])), fmt(last and last["param"]), fmt(last and last["n"]), fmt(gr["measure"]),
+                                                                    fmt(last and gr["measure"] and last[gr["measure"]]), " ".join("%.3f" % x for x in gr["ratios"]) or "-", gr["reading"]))
     counts = {}
     for r in rows: counts[r["status"]] = counts.get(r["status"], 0) + 1
     summary["counts"] = counts
@@ -312,4 +320,7 @@ def main():
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    try: code = main()
+    except Exception:  # a crash of the battery must not exit 1 (= wrong winner / bad strategy)
+        import traceback; traceback.print_exc(); print("BATTERY BROKEN: internal error (traceback on stderr); nothing here is an engine result"); code = 3
+    sys.exit(code)

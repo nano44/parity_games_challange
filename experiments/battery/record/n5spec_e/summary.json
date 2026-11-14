@@ -1,0 +1,22 @@
+{
+ "engine": "python3 -B /tmp/claude-0/-home-user-parity-games-challange/57706035-4aa0-5500-b6a5-207ac2006e7f/scratchpad/bat/experiments/battery/engines/n5.py --mode spec",
+ "sets": [
+  "e_random"
+ ],
+ "timeout": 60.0,
+ "jobs": 1,
+ "families": [
+  {
+   "set": "e_random",
+   "family": "random",
+   "kind": "agree",
+   "games": 10000,
+   "ok": 10000
+  }
+ ],
+ "counts": {
+  "OK": 10000
+ },
+ "failures": [],
+ "exit": 0
+}

@@ -1,0 +1,2099 @@
+{
+ "engine": "python3 -B /tmp/claude-0/-home-user-parity-games-challange/57706035-4aa0-5500-b6a5-207ac2006e7f/scratchpad/bat2/experiments/battery/engines/n5.py --mode spec",
+ "sets": [
+  "c_hard"
+ ],
+ "timeout": 60.0,
+ "jobs": 1,
+ "families": [
+  {
+   "set": "c_hard",
+   "family": "tc",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 11,
+    "ratios": [
+     1.265,
+     1.161,
+     0.903
+    ],
+    "exponent": 0.475,
+    "err_power": 0.4,
+    "c0_power": -4.0,
+    "exponent_param": 0.855,
+    "err_power_param": 0.342,
+    "factor_param": 1.2988,
+    "err_exp_param": 2.87,
+    "factor": 1.3173,
+    "err_exp": 6.44,
+    "c0_exp": 3.68,
+    "reading": "polynomial-looking"
+   },
+   "rows": [
+    {
+     "param": 2,
+     "n": 22,
+     "m": 36,
+     "d": 11,
+     "iterations": 4,
+     "steps": null,
+     "seconds": 0.068,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 68,
+     "m": 128,
+     "d": 19,
+     "iterations": 16,
+     "steps": null,
+     "seconds": 0.136,
+     "status": "OK"
+    },
+    {
+     "param": 6,
+     "n": 138,
+     "m": 276,
+     "d": 27,
+     "iterations": 18,
+     "steps": null,
+     "seconds": 0.176,
+     "status": "OK"
+    },
+    {
+     "param": 8,
+     "n": 232,
+     "m": 480,
+     "d": 35,
+     "iterations": 30,
+     "steps": null,
+     "seconds": 0.744,
+     "status": "OK"
+    },
+    {
+     "param": 10,
+     "n": 350,
+     "m": 740,
+     "d": 43,
+     "iterations": 27,
+     "steps": null,
+     "seconds": 1.074,
+     "status": "OK"
+    },
+    {
+     "param": 12,
+     "n": 492,
+     "m": 1056,
+     "d": 51,
+     "iterations": 37,
+     "steps": null,
+     "seconds": 1.975,
+     "status": "OK"
+    },
+    {
+     "param": 14,
+     "n": 658,
+     "m": 1428,
+     "d": 59,
+     "iterations": 32,
+     "steps": null,
+     "seconds": 4.279,
+     "status": "OK"
+    },
+    {
+     "param": 16,
+     "n": 848,
+     "m": 1856,
+     "d": 67,
+     "iterations": 49,
+     "steps": null,
+     "seconds": 6.342,
+     "status": "OK"
+    },
+    {
+     "param": 18,
+     "n": 1062,
+     "m": 2340,
+     "d": 75,
+     "iterations": 62,
+     "steps": null,
+     "seconds": 10.61,
+     "status": "OK"
+    },
+    {
+     "param": 20,
+     "n": 1300,
+     "m": 2880,
+     "d": 83,
+     "iterations": 72,
+     "steps": null,
+     "seconds": 20.021,
+     "status": "OK"
+    },
+    {
+     "param": 24,
+     "n": 1848,
+     "m": 4128,
+     "d": 99,
+     "iterations": 65,
+     "steps": null,
+     "seconds": 32.78,
+     "status": "OK"
+    },
+    {
+     "param": 28,
+     "n": 2492,
+     "m": 5600,
+     "d": 115,
+     "iterations": null,
+     "steps": null,
+     "seconds": 60.063,
+     "status": "TIMEOUT"
+    },
+    {
+     "param": 32,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    }
+   ]
+  },
+  {
+   "set": "c_hard",
+   "family": "tc+",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 6,
+    "ratios": [
+     1.154,
+     1.233,
+     2.649
+    ],
+    "exponent": 0.711,
+    "err_power": 0.356,
+    "c0_power": 0.0,
+    "exponent_param": 1.758,
+    "err_power_param": 0.312,
+    "factor_param": 1.8333,
+    "err_exp_param": 0.704,
+    "factor": 1.5848,
+    "err_exp": 3.89,
+    "c0_exp": 0.0,
+    "reading": "polynomial-looking"
+   },
+   "rows": [
+    {
+     "param": 2,
+     "n": 24,
+     "m": 38,
+     "d": 15,
+     "iterations": 3,
+     "steps": null,
+     "seconds": 0.045,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 104,
+     "m": 196,
+     "d": 27,
+     "iterations": 11,
+     "steps": null,
+     "seconds": 0.095,
+     "status": "OK"
+    },
+    {
+     "param": 6,
+     "n": 288,
+     "m": 570,
+     "d": 39,
+     "iterations": 26,
+     "steps": null,
+     "seconds": 0.607,
+     "status": "OK"
+    },
+    {
+     "param": 8,
+     "n": 624,
+     "m": 1256,
+     "d": 51,
+     "iterations": 30,
+     "steps": null,
+     "seconds": 2.175,
+     "status": "OK"
+    },
+    {
+     "param": 10,
+     "n": 1160,
+     "m": 2350,
+     "d": 63,
+     "iterations": 37,
+     "steps": null,
+     "seconds": 6.44,
+     "status": "OK"
+    },
+    {
+     "param": 12,
+     "n": 1944,
+     "m": 3948,
+     "d": 75,
+     "iterations": 98,
+     "steps": null,
+     "seconds": 38.275,
+     "status": "OK"
+    },
+    {
+     "param": 14,
+     "n": 3024,
+     "m": 6146,
+     "d": 87,
+     "iterations": null,
+     "steps": null,
+     "seconds": 60.064,
+     "status": "TIMEOUT"
+    },
+    {
+     "param": 16,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 18,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 20,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 24,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 28,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 32,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    }
+   ]
+  },
+  {
+   "set": "c_hard",
+   "family": "counter_symsi",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 14,
+    "ratios": [
+     1.151,
+     1.115,
+     1.206
+    ],
+    "exponent": 0.746,
+    "err_power": 0.0248,
+    "c0_power": -6.5,
+    "exponent_param": 0.754,
+    "err_power_param": 0.0249,
+    "factor_param": 1.0955,
+    "err_exp_param": 1.87,
+    "factor": 1.0955,
+    "err_exp": 1.87,
+    "c0_exp": -13.0,
+    "reading": "polynomial-looking"
+   },
+   "rows": [
+    {
+     "param": 2,
+     "n": 22,
+     "m": 48,
+     "d": 21,
+     "iterations": 13,
+     "steps": null,
+     "seconds": 0.051,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 42,
+     "m": 92,
+     "d": 41,
+     "iterations": 22,
+     "steps": null,
+     "seconds": 0.077,
+     "status": "OK"
+    },
+    {
+     "param": 6,
+     "n": 62,
+     "m": 136,
+     "d": 61,
+     "iterations": 37,
+     "steps": null,
+     "seconds": 0.15,
+     "status": "OK"
+    },
+    {
+     "param": 8,
+     "n": 82,
+     "m": 180,
+     "d": 81,
+     "iterations": 48,
+     "steps": null,
+     "seconds": 0.272,
+     "status": "OK"
+    },
+    {
+     "param": 10,
+     "n": 102,
+     "m": 224,
+     "d": 101,
+     "iterations": 55,
+     "steps": null,
+     "seconds": 0.474,
+     "status": "OK"
+    },
+    {
+     "param": 12,
+     "n": 122,
+     "m": 268,
+     "d": 121,
+     "iterations": 64,
+     "steps": null,
+     "seconds": 0.626,
+     "status": "OK"
+    },
+    {
+     "param": 14,
+     "n": 142,
+     "m": 312,
+     "d": 141,
+     "iterations": 69,
+     "steps": null,
+     "seconds": 0.896,
+     "status": "OK"
+    },
+    {
+     "param": 16,
+     "n": 162,
+     "m": 356,
+     "d": 161,
+     "iterations": 78,
+     "steps": null,
+     "seconds": 1.1,
+     "status": "OK"
+    },
+    {
+     "param": 18,
+     "n": 182,
+     "m": 400,
+     "d": 181,
+     "iterations": 85,
+     "steps": null,
+     "seconds": 1.59,
+     "status": "OK"
+    },
+    {
+     "param": 20,
+     "n": 202,
+     "m": 444,
+     "d": 201,
+     "iterations": 94,
+     "steps": null,
+     "seconds": 1.908,
+     "status": "OK"
+    },
+    {
+     "param": 24,
+     "n": 242,
+     "m": 532,
+     "d": 241,
+     "iterations": 106,
+     "steps": null,
+     "seconds": 3.166,
+     "status": "OK"
+    },
+    {
+     "param": 28,
+     "n": 282,
+     "m": 620,
+     "d": 281,
+     "iterations": 122,
+     "steps": null,
+     "seconds": 5.248,
+     "status": "OK"
+    },
+    {
+     "param": 32,
+     "n": 322,
+     "m": 708,
+     "d": 321,
+     "iterations": 136,
+     "steps": null,
+     "seconds": 7.058,
+     "status": "OK"
+    },
+    {
+     "param": 40,
+     "n": 402,
+     "m": 884,
+     "d": 401,
+     "iterations": 164,
+     "steps": null,
+     "seconds": 14.245,
+     "status": "OK"
+    }
+   ]
+  },
+  {
+   "set": "c_hard",
+   "family": "counter_rr",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 14,
+    "ratios": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "exponent": 0.222,
+    "err_power": 0.317,
+    "c0_power": 0.5,
+    "exponent_param": 0.222,
+    "err_power_param": 0.317,
+    "factor_param": 1.039,
+    "err_exp_param": 0.555,
+    "factor": 1.039,
+    "err_exp": 0.555,
+    "c0_exp": 0.86,
+    "reading": "polynomial-looking"
+   },
+   "rows": [
+    {
+     "param": 2,
+     "n": 8,
+     "m": 16,
+     "d": 4,
+     "iterations": 1,
+     "steps": null,
+     "seconds": 0.056,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 16,
+     "m": 32,
+     "d": 8,
+     "iterations": 2,
+     "steps": null,
+     "seconds": 0.043,
+     "status": "OK"
+    },
+    {
+     "param": 6,
+     "n": 24,
+     "m": 48,
+     "d": 12,
+     "iterations": 2,
+     "steps": null,
+     "seconds": 0.059,
+     "status": "OK"
+    },
+    {
+     "param": 8,
+     "n": 32,
+     "m": 64,
+     "d": 16,
+     "iterations": 2,
+     "steps": null,
+     "seconds": 0.049,
+     "status": "OK"
+    },
+    {
+     "param": 10,
+     "n": 40,
+     "m": 80,
+     "d": 20,
+     "iterations": 2,
+     "steps": null,
+     "seconds": 0.062,
+     "status": "OK"
+    },
+    {
+     "param": 12,
+     "n": 48,
+     "m": 96,
+     "d": 24,
+     "iterations": 2,
+     "steps": null,
+     "seconds": 0.058,
+     "status": "OK"
+    },
+    {
+     "param": 14,
+     "n": 56,
+     "m": 112,
+     "d": 28,
+     "iterations": 2,
+     "steps": null,
+     "seconds": 0.076,
+     "status": "OK"
+    },
+    {
+     "param": 16,
+     "n": 64,
+     "m": 128,
+     "d": 32,
+     "iterations": 2,
+     "steps": null,
+     "seconds": 0.068,
+     "status": "OK"
+    },
+    {
+     "param": 18,
+     "n": 72,
+     "m": 144,
+     "d": 36,
+     "iterations": 2,
+     "steps": null,
+     "seconds": 0.074,
+     "status": "OK"
+    },
+    {
+     "param": 20,
+     "n": 80,
+     "m": 160,
+     "d": 40,
+     "iterations": 2,
+     "steps": null,
+     "seconds": 0.064,
+     "status": "OK"
+    },
+    {
+     "param": 24,
+     "n": 96,
+     "m": 192,
+     "d": 48,
+     "iterations": 2,
+     "steps": null,
+     "seconds": 0.09,
+     "status": "OK"
+    },
+    {
+     "param": 28,
+     "n": 112,
+     "m": 224,
+     "d": 56,
+     "iterations": 2,
+     "steps": null,
+     "seconds": 0.094,
+     "status": "OK"
+    },
+    {
+     "param": 32,
+     "n": 128,
+     "m": 256,
+     "d": 64,
+     "iterations": 2,
+     "steps": null,
+     "seconds": 0.073,
+     "status": "OK"
+    },
+    {
+     "param": 40,
+     "n": 160,
+     "m": 320,
+     "d": 80,
+     "iterations": 2,
+     "steps": null,
+     "seconds": 0.113,
+     "status": "OK"
+    }
+   ]
+  },
+  {
+   "set": "c_hard",
+   "family": "counter_dp",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 14,
+    "ratios": [
+     1.167,
+     1.143,
+     1.25
+    ],
+    "exponent": 1.0,
+    "err_power": 5.58e-30,
+    "c0_power": -1.0,
+    "exponent_param": 1.0,
+    "err_power_param": 2.66e-31,
+    "factor_param": 1.122,
+    "err_exp_param": 2.28,
+    "factor": 1.122,
+    "err_exp": 2.28,
+    "c0_exp": -2.0,
+    "reading": "polynomial-looking"
+   },
+   "rows": [
+    {
+     "param": 2,
+     "n": 12,
+     "m": 19,
+     "d": 6,
+     "iterations": 2,
+     "steps": null,
+     "seconds": 0.057,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 20,
+     "m": 33,
+     "d": 8,
+     "iterations": 4,
+     "steps": null,
+     "seconds": 0.058,
+     "status": "OK"
+    },
+    {
+     "param": 6,
+     "n": 28,
+     "m": 47,
+     "d": 10,
+     "iterations": 6,
+     "steps": null,
+     "seconds": 0.055,
+     "status": "OK"
+    },
+    {
+     "param": 8,
+     "n": 36,
+     "m": 61,
+     "d": 12,
+     "iterations": 8,
+     "steps": null,
+     "seconds": 0.069,
+     "status": "OK"
+    },
+    {
+     "param": 10,
+     "n": 44,
+     "m": 75,
+     "d": 14,
+     "iterations": 10,
+     "steps": null,
+     "seconds": 0.057,
+     "status": "OK"
+    },
+    {
+     "param": 12,
+     "n": 52,
+     "m": 89,
+     "d": 16,
+     "iterations": 12,
+     "steps": null,
+     "seconds": 0.077,
+     "status": "OK"
+    },
+    {
+     "param": 14,
+     "n": 60,
+     "m": 103,
+     "d": 18,
+     "iterations": 14,
+     "steps": null,
+     "seconds": 0.059,
+     "status": "OK"
+    },
+    {
+     "param": 16,
+     "n": 68,
+     "m": 117,
+     "d": 20,
+     "iterations": 16,
+     "steps": null,
+     "seconds": 0.079,
+     "status": "OK"
+    },
+    {
+     "param": 18,
+     "n": 76,
+     "m": 131,
+     "d": 22,
+     "iterations": 18,
+     "steps": null,
+     "seconds": 0.069,
+     "status": "OK"
+    },
+    {
+     "param": 20,
+     "n": 84,
+     "m": 145,
+     "d": 24,
+     "iterations": 20,
+     "steps": null,
+     "seconds": 0.111,
+     "status": "OK"
+    },
+    {
+     "param": 24,
+     "n": 100,
+     "m": 173,
+     "d": 28,
+     "iterations": 24,
+     "steps": null,
+     "seconds": 0.122,
+     "status": "OK"
+    },
+    {
+     "param": 28,
+     "n": 116,
+     "m": 201,
+     "d": 32,
+     "iterations": 28,
+     "steps": null,
+     "seconds": 0.119,
+     "status": "OK"
+    },
+    {
+     "param": 32,
+     "n": 132,
+     "m": 229,
+     "d": 36,
+     "iterations": 32,
+     "steps": null,
+     "seconds": 0.188,
+     "status": "OK"
+    },
+    {
+     "param": 40,
+     "n": 164,
+     "m": 285,
+     "d": 44,
+     "iterations": 40,
+     "steps": null,
+     "seconds": 0.175,
+     "status": "OK"
+    }
+   ]
+  },
+  {
+   "set": "c_hard",
+   "family": "counter_m",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 16,
+    "ratios": [
+     1.235,
+     1.0,
+     1.048
+    ],
+    "exponent": 0.994,
+    "err_power": 0.000438,
+    "c0_power": 0.48,
+    "exponent_param": 0.998,
+    "err_power_param": 0.000469,
+    "factor_param": 1.0842,
+    "err_exp_param": 0.846,
+    "factor": 1.0842,
+    "err_exp": 0.846,
+    "c0_exp": -2.0,
+    "reading": "polynomial-looking"
+   },
+   "rows": [
+    {
+     "param": 2,
+     "n": 9,
+     "m": 15,
+     "d": 5,
+     "iterations": 2,
+     "steps": null,
+     "seconds": 0.04,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 15,
+     "m": 27,
+     "d": 7,
+     "iterations": 3,
+     "steps": null,
+     "seconds": 0.059,
+     "status": "OK"
+    },
+    {
+     "param": 6,
+     "n": 21,
+     "m": 39,
+     "d": 9,
+     "iterations": 4,
+     "steps": null,
+     "seconds": 0.043,
+     "status": "OK"
+    },
+    {
+     "param": 8,
+     "n": 27,
+     "m": 51,
+     "d": 11,
+     "iterations": 5,
+     "steps": null,
+     "seconds": 0.044,
+     "status": "OK"
+    },
+    {
+     "param": 10,
+     "n": 33,
+     "m": 63,
+     "d": 13,
+     "iterations": 6,
+     "steps": null,
+     "seconds": 0.047,
+     "status": "OK"
+    },
+    {
+     "param": 12,
+     "n": 39,
+     "m": 75,
+     "d": 15,
+     "iterations": 7,
+     "steps": null,
+     "seconds": 0.048,
+     "status": "OK"
+    },
+    {
+     "param": 14,
+     "n": 45,
+     "m": 87,
+     "d": 17,
+     "iterations": 8,
+     "steps": null,
+     "seconds": 0.051,
+     "status": "OK"
+    },
+    {
+     "param": 16,
+     "n": 51,
+     "m": 99,
+     "d": 19,
+     "iterations": 9,
+     "steps": null,
+     "seconds": 0.053,
+     "status": "OK"
+    },
+    {
+     "param": 18,
+     "n": 57,
+     "m": 111,
+     "d": 21,
+     "iterations": 10,
+     "steps": null,
+     "seconds": 0.084,
+     "status": "OK"
+    },
+    {
+     "param": 20,
+     "n": 63,
+     "m": 123,
+     "d": 23,
+     "iterations": 11,
+     "steps": null,
+     "seconds": 0.061,
+     "status": "OK"
+    },
+    {
+     "param": 24,
+     "n": 75,
+     "m": 147,
+     "d": 27,
+     "iterations": 13,
+     "steps": null,
+     "seconds": 0.071,
+     "status": "OK"
+    },
+    {
+     "param": 28,
+     "n": 87,
+     "m": 171,
+     "d": 31,
+     "iterations": 15,
+     "steps": null,
+     "seconds": 0.083,
+     "status": "OK"
+    },
+    {
+     "param": 32,
+     "n": 99,
+     "m": 195,
+     "d": 35,
+     "iterations": 17,
+     "steps": null,
+     "seconds": 0.09,
+     "status": "OK"
+    },
+    {
+     "param": 40,
+     "n": 123,
+     "m": 243,
+     "d": 43,
+     "iterations": 21,
+     "steps": null,
+     "seconds": 0.177,
+     "status": "OK"
+    },
+    {
+     "param": 41,
+     "n": 126,
+     "m": 249,
+     "d": 44,
+     "iterations": 21,
+     "steps": null,
+     "seconds": 0.127,
+     "status": "OK"
+    },
+    {
+     "param": 42,
+     "n": 129,
+     "m": 255,
+     "d": 45,
+     "iterations": 22,
+     "steps": null,
+     "seconds": 0.128,
+     "status": "OK"
+    }
+   ]
+  },
+  {
+   "set": "c_hard",
+   "family": "counter_core",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 14,
+    "ratios": [
+     1.167,
+     1.143,
+     1.25
+    ],
+    "exponent": 0.998,
+    "err_power": 1.05e-05,
+    "c0_power": -1.04,
+    "exponent_param": 1.0,
+    "err_power_param": 2.79e-30,
+    "factor_param": 1.122,
+    "err_exp_param": 2.28,
+    "factor": 1.122,
+    "err_exp": 2.28,
+    "c0_exp": -4.0,
+    "reading": "polynomial-looking"
+   },
+   "rows": [
+    {
+     "param": 2,
+     "n": 15,
+     "m": 28,
+     "d": 10,
+     "iterations": 4,
+     "steps": null,
+     "seconds": 0.046,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 27,
+     "m": 52,
+     "d": 18,
+     "iterations": 8,
+     "steps": null,
+     "seconds": 0.052,
+     "status": "OK"
+    },
+    {
+     "param": 6,
+     "n": 39,
+     "m": 76,
+     "d": 26,
+     "iterations": 12,
+     "steps": null,
+     "seconds": 0.05,
+     "status": "OK"
+    },
+    {
+     "param": 8,
+     "n": 51,
+     "m": 100,
+     "d": 34,
+     "iterations": 16,
+     "steps": null,
+     "seconds": 0.059,
+     "status": "OK"
+    },
+    {
+     "param": 10,
+     "n": 63,
+     "m": 124,
+     "d": 42,
+     "iterations": 20,
+     "steps": null,
+     "seconds": 0.073,
+     "status": "OK"
+    },
+    {
+     "param": 12,
+     "n": 75,
+     "m": 148,
+     "d": 50,
+     "iterations": 24,
+     "steps": null,
+     "seconds": 0.086,
+     "status": "OK"
+    },
+    {
+     "param": 14,
+     "n": 87,
+     "m": 172,
+     "d": 58,
+     "iterations": 28,
+     "steps": null,
+     "seconds": 0.101,
+     "status": "OK"
+    },
+    {
+     "param": 16,
+     "n": 99,
+     "m": 196,
+     "d": 66,
+     "iterations": 32,
+     "steps": null,
+     "seconds": 0.191,
+     "status": "OK"
+    },
+    {
+     "param": 18,
+     "n": 111,
+     "m": 220,
+     "d": 74,
+     "iterations": 36,
+     "steps": null,
+     "seconds": 0.184,
+     "status": "OK"
+    },
+    {
+     "param": 20,
+     "n": 123,
+     "m": 244,
+     "d": 82,
+     "iterations": 40,
+     "steps": null,
+     "seconds": 0.193,
+     "status": "OK"
+    },
+    {
+     "param": 24,
+     "n": 147,
+     "m": 292,
+     "d": 98,
+     "iterations": 48,
+     "steps": null,
+     "seconds": 0.303,
+     "status": "OK"
+    },
+    {
+     "param": 28,
+     "n": 171,
+     "m": 340,
+     "d": 114,
+     "iterations": 56,
+     "steps": null,
+     "seconds": 0.599,
+     "status": "OK"
+    },
+    {
+     "param": 32,
+     "n": 195,
+     "m": 388,
+     "d": 130,
+     "iterations": 64,
+     "steps": null,
+     "seconds": 0.501,
+     "status": "OK"
+    },
+    {
+     "param": 40,
+     "n": 243,
+     "m": 484,
+     "d": 162,
+     "iterations": 80,
+     "steps": null,
+     "seconds": 1.132,
+     "status": "OK"
+    }
+   ]
+  },
+  {
+   "set": "c_hard",
+   "family": "counter_rob",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 13,
+    "ratios": [
+     1.207,
+     1.171,
+     1.146
+    ],
+    "exponent": 0.541,
+    "err_power": 0.0033,
+    "c0_power": -2.9,
+    "exponent_param": 1.061,
+    "err_power_param": 0.00265,
+    "factor_param": 1.1525,
+    "err_exp_param": 1.81,
+    "factor": 1.2076,
+    "err_exp": 5.95,
+    "c0_exp": 4.6,
+    "reading": "polynomial-looking"
+   },
+   "rows": [
+    {
+     "param": 2,
+     "n": 31,
+     "m": 80,
+     "d": 10,
+     "iterations": 5,
+     "steps": null,
+     "seconds": 0.047,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 83,
+     "m": 236,
+     "d": 18,
+     "iterations": 10,
+     "steps": null,
+     "seconds": 0.068,
+     "status": "OK"
+    },
+    {
+     "param": 6,
+     "n": 159,
+     "m": 472,
+     "d": 26,
+     "iterations": 16,
+     "steps": null,
+     "seconds": 0.137,
+     "status": "OK"
+    },
+    {
+     "param": 8,
+     "n": 259,
+     "m": 788,
+     "d": 34,
+     "iterations": 22,
+     "steps": null,
+     "seconds": 0.236,
+     "status": "OK"
+    },
+    {
+     "param": 10,
+     "n": 383,
+     "m": 1184,
+     "d": 42,
+     "iterations": 28,
+     "steps": null,
+     "seconds": 0.375,
+     "status": "OK"
+    },
+    {
+     "param": 12,
+     "n": 531,
+     "m": 1660,
+     "d": 50,
+     "iterations": 34,
+     "steps": null,
+     "seconds": 0.751,
+     "status": "OK"
+    },
+    {
+     "param": 14,
+     "n": 703,
+     "m": 2216,
+     "d": 58,
+     "iterations": 40,
+     "steps": null,
+     "seconds": 0.787,
+     "status": "OK"
+    },
+    {
+     "param": 16,
+     "n": 899,
+     "m": 2852,
+     "d": 66,
+     "iterations": 46,
+     "steps": null,
+     "seconds": 1.268,
+     "status": "OK"
+    },
+    {
+     "param": 18,
+     "n": 1119,
+     "m": 3568,
+     "d": 74,
+     "iterations": 52,
+     "steps": null,
+     "seconds": 1.772,
+     "status": "OK"
+    },
+    {
+     "param": 20,
+     "n": 1363,
+     "m": 4364,
+     "d": 82,
+     "iterations": 58,
+     "steps": null,
+     "seconds": 2.449,
+     "status": "OK"
+    },
+    {
+     "param": 24,
+     "n": 1923,
+     "m": 6196,
+     "d": 98,
+     "iterations": 70,
+     "steps": null,
+     "seconds": 4.271,
+     "status": "OK"
+    },
+    {
+     "param": 28,
+     "n": 2579,
+     "m": 8348,
+     "d": 114,
+     "iterations": 82,
+     "steps": null,
+     "seconds": 7.265,
+     "status": "OK"
+    },
+    {
+     "param": 32,
+     "n": 3331,
+     "m": 10820,
+     "d": 130,
+     "iterations": 94,
+     "steps": null,
+     "seconds": 11.845,
+     "status": "OK"
+    }
+   ]
+  },
+  {
+   "set": "c_hard",
+   "family": "counter_ortl",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 14,
+    "ratios": [
+     1.16,
+     1.138,
+     1.242
+    ],
+    "exponent": 0.997,
+    "err_power": 8.1e-06,
+    "c0_power": 0.78,
+    "exponent_param": 1.003,
+    "err_power_param": 9.61e-06,
+    "factor_param": 1.1054,
+    "err_exp_param": 1.07,
+    "factor": 1.1054,
+    "err_exp": 1.07,
+    "c0_exp": -3.0,
+    "reading": "polynomial-looking"
+   },
+   "rows": [
+    {
+     "param": 2,
+     "n": 11,
+     "m": 17,
+     "d": 8,
+     "iterations": 3,
+     "steps": null,
+     "seconds": 0.041,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 21,
+     "m": 33,
+     "d": 14,
+     "iterations": 5,
+     "steps": null,
+     "seconds": 0.063,
+     "status": "OK"
+    },
+    {
+     "param": 6,
+     "n": 31,
+     "m": 49,
+     "d": 20,
+     "iterations": 7,
+     "steps": null,
+     "seconds": 0.057,
+     "status": "OK"
+    },
+    {
+     "param": 8,
+     "n": 41,
+     "m": 65,
+     "d": 26,
+     "iterations": 9,
+     "steps": null,
+     "seconds": 0.07,
+     "status": "OK"
+    },
+    {
+     "param": 10,
+     "n": 51,
+     "m": 81,
+     "d": 32,
+     "iterations": 11,
+     "steps": null,
+     "seconds": 0.067,
+     "status": "OK"
+    },
+    {
+     "param": 12,
+     "n": 61,
+     "m": 97,
+     "d": 38,
+     "iterations": 13,
+     "steps": null,
+     "seconds": 0.097,
+     "status": "OK"
+    },
+    {
+     "param": 14,
+     "n": 71,
+     "m": 113,
+     "d": 44,
+     "iterations": 15,
+     "steps": null,
+     "seconds": 0.116,
+     "status": "OK"
+    },
+    {
+     "param": 16,
+     "n": 81,
+     "m": 129,
+     "d": 50,
+     "iterations": 17,
+     "steps": null,
+     "seconds": 0.136,
+     "status": "OK"
+    },
+    {
+     "param": 18,
+     "n": 91,
+     "m": 145,
+     "d": 56,
+     "iterations": 19,
+     "steps": null,
+     "seconds": 0.159,
+     "status": "OK"
+    },
+    {
+     "param": 20,
+     "n": 101,
+     "m": 161,
+     "d": 62,
+     "iterations": 21,
+     "steps": null,
+     "seconds": 0.121,
+     "status": "OK"
+    },
+    {
+     "param": 24,
+     "n": 121,
+     "m": 193,
+     "d": 74,
+     "iterations": 25,
+     "steps": null,
+     "seconds": 0.167,
+     "status": "OK"
+    },
+    {
+     "param": 28,
+     "n": 141,
+     "m": 225,
+     "d": 86,
+     "iterations": 29,
+     "steps": null,
+     "seconds": 0.237,
+     "status": "OK"
+    },
+    {
+     "param": 32,
+     "n": 161,
+     "m": 257,
+     "d": 98,
+     "iterations": 33,
+     "steps": null,
+     "seconds": 0.362,
+     "status": "OK"
+    },
+    {
+     "param": 40,
+     "n": 201,
+     "m": 321,
+     "d": 122,
+     "iterations": 41,
+     "steps": null,
+     "seconds": 0.554,
+     "status": "OK"
+    }
+   ]
+  },
+  {
+   "set": "c_hard",
+   "family": "counter_qpt",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 17,
+    "ratios": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "exponent": 0.0,
+    "err_power": 0.0,
+    "c0_power": 0.0,
+    "exponent_param": 0.0,
+    "err_power_param": 0.0,
+    "factor_param": 1.0,
+    "err_exp_param": 0.0,
+    "factor": 1.0,
+    "err_exp": 0.0,
+    "c0_exp": 0.0,
+    "reading": "polynomial-looking"
+   },
+   "rows": [
+    {
+     "param": 2,
+     "n": 4,
+     "m": 5,
+     "d": 4,
+     "iterations": 1,
+     "steps": null,
+     "seconds": 0.039,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 8,
+     "m": 11,
+     "d": 8,
+     "iterations": 1,
+     "steps": null,
+     "seconds": 0.04,
+     "status": "OK"
+    },
+    {
+     "param": 6,
+     "n": 12,
+     "m": 17,
+     "d": 12,
+     "iterations": 1,
+     "steps": null,
+     "seconds": 0.056,
+     "status": "OK"
+    },
+    {
+     "param": 8,
+     "n": 16,
+     "m": 23,
+     "d": 16,
+     "iterations": 1,
+     "steps": null,
+     "seconds": 0.042,
+     "status": "OK"
+    },
+    {
+     "param": 10,
+     "n": 20,
+     "m": 29,
+     "d": 20,
+     "iterations": 1,
+     "steps": null,
+     "seconds": 0.048,
+     "status": "OK"
+    },
+    {
+     "param": 12,
+     "n": 24,
+     "m": 35,
+     "d": 24,
+     "iterations": 1,
+     "steps": null,
+     "seconds": 0.039,
+     "status": "OK"
+    },
+    {
+     "param": 14,
+     "n": 28,
+     "m": 41,
+     "d": 28,
+     "iterations": 1,
+     "steps": null,
+     "seconds": 0.042,
+     "status": "OK"
+    },
+    {
+     "param": 16,
+     "n": 32,
+     "m": 47,
+     "d": 32,
+     "iterations": 1,
+     "steps": null,
+     "seconds": 0.048,
+     "status": "OK"
+    },
+    {
+     "param": 18,
+     "n": 36,
+     "m": 53,
+     "d": 36,
+     "iterations": 1,
+     "steps": null,
+     "seconds": 0.047,
+     "status": "OK"
+    },
+    {
+     "param": 20,
+     "n": 40,
+     "m": 59,
+     "d": 40,
+     "iterations": 1,
+     "steps": null,
+     "seconds": 0.049,
+     "status": "OK"
+    },
+    {
+     "param": 22,
+     "n": 44,
+     "m": 65,
+     "d": 44,
+     "iterations": 1,
+     "steps": null,
+     "seconds": 0.045,
+     "status": "OK"
+    },
+    {
+     "param": 24,
+     "n": 48,
+     "m": 71,
+     "d": 48,
+     "iterations": 1,
+     "steps": null,
+     "seconds": 0.05,
+     "status": "OK"
+    },
+    {
+     "param": 26,
+     "n": 52,
+     "m": 77,
+     "d": 52,
+     "iterations": 1,
+     "steps": null,
+     "seconds": 0.043,
+     "status": "OK"
+    },
+    {
+     "param": 28,
+     "n": 56,
+     "m": 83,
+     "d": 56,
+     "iterations": 1,
+     "steps": null,
+     "seconds": 0.043,
+     "status": "OK"
+    },
+    {
+     "param": 32,
+     "n": 64,
+     "m": 95,
+     "d": 64,
+     "iterations": 1,
+     "steps": null,
+     "seconds": 0.042,
+     "status": "OK"
+    },
+    {
+     "param": 64,
+     "n": 128,
+     "m": 191,
+     "d": 128,
+     "iterations": 1,
+     "steps": null,
+     "seconds": 0.048,
+     "status": "OK"
+    },
+    {
+     "param": 128,
+     "n": 256,
+     "m": 383,
+     "d": 256,
+     "iterations": 1,
+     "steps": null,
+     "seconds": 0.07,
+     "status": "OK"
+    }
+   ]
+  },
+  {
+   "set": "c_hard",
+   "family": "recursiveladder",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 17,
+    "ratios": [
+     1.071,
+     1.133,
+     1.118
+    ],
+    "exponent": 1.0,
+    "err_power": 1.61e-30,
+    "c0_power": 0.0,
+    "exponent_param": 1.0,
+    "err_power_param": 4.04e-31,
+    "factor_param": 1.1237,
+    "err_exp_param": 2.24,
+    "factor": 1.1237,
+    "err_exp": 2.24,
+    "c0_exp": -2.0,
+    "reading": "polynomial-looking"
+   },
+   "rows": [
+    {
+     "param": 2,
+     "n": 10,
+     "m": 19,
+     "d": 8,
+     "iterations": 2,
+     "steps": null,
+     "seconds": 0.042,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 20,
+     "m": 41,
+     "d": 14,
+     "iterations": 4,
+     "steps": null,
+     "seconds": 0.053,
+     "status": "OK"
+    },
+    {
+     "param": 6,
+     "n": 30,
+     "m": 63,
+     "d": 20,
+     "iterations": 6,
+     "steps": null,
+     "seconds": 0.051,
+     "status": "OK"
+    },
+    {
+     "param": 8,
+     "n": 40,
+     "m": 85,
+     "d": 26,
+     "iterations": 8,
+     "steps": null,
+     "seconds": 0.056,
+     "status": "OK"
+    },
+    {
+     "param": 10,
+     "n": 50,
+     "m": 107,
+     "d": 32,
+     "iterations": 10,
+     "steps": null,
+     "seconds": 0.067,
+     "status": "OK"
+    },
+    {
+     "param": 12,
+     "n": 60,
+     "m": 129,
+     "d": 38,
+     "iterations": 12,
+     "steps": null,
+     "seconds": 0.055,
+     "status": "OK"
+    },
+    {
+     "param": 14,
+     "n": 70,
+     "m": 151,
+     "d": 44,
+     "iterations": 14,
+     "steps": null,
+     "seconds": 0.076,
+     "status": "OK"
+    },
+    {
+     "param": 16,
+     "n": 80,
+     "m": 173,
+     "d": 50,
+     "iterations": 16,
+     "steps": null,
+     "seconds": 0.065,
+     "status": "OK"
+    },
+    {
+     "param": 18,
+     "n": 90,
+     "m": 195,
+     "d": 56,
+     "iterations": 18,
+     "steps": null,
+     "seconds": 0.078,
+     "status": "OK"
+    },
+    {
+     "param": 20,
+     "n": 100,
+     "m": 217,
+     "d": 62,
+     "iterations": 20,
+     "steps": null,
+     "seconds": 0.084,
+     "status": "OK"
+    },
+    {
+     "param": 22,
+     "n": 110,
+     "m": 239,
+     "d": 68,
+     "iterations": 22,
+     "steps": null,
+     "seconds": 0.098,
+     "status": "OK"
+    },
+    {
+     "param": 24,
+     "n": 120,
+     "m": 261,
+     "d": 74,
+     "iterations": 24,
+     "steps": null,
+     "seconds": 0.108,
+     "status": "OK"
+    },
+    {
+     "param": 26,
+     "n": 130,
+     "m": 283,
+     "d": 80,
+     "iterations": 26,
+     "steps": null,
+     "seconds": 0.12,
+     "status": "OK"
+    },
+    {
+     "param": 28,
+     "n": 140,
+     "m": 305,
+     "d": 86,
+     "iterations": 28,
+     "steps": null,
+     "seconds": 0.15,
+     "status": "OK"
+    },
+    {
+     "param": 30,
+     "n": 150,
+     "m": 327,
+     "d": 92,
+     "iterations": 30,
+     "steps": null,
+     "seconds": 0.166,
+     "status": "OK"
+    },
+    {
+     "param": 34,
+     "n": 170,
+     "m": 371,
+     "d": 104,
+     "iterations": 34,
+     "steps": null,
+     "seconds": 0.237,
+     "status": "OK"
+    },
+    {
+     "param": 38,
+     "n": 190,
+     "m": 415,
+     "d": 116,
+     "iterations": 38,
+     "steps": null,
+     "seconds": 0.229,
+     "status": "OK"
+    }
+   ]
+  },
+  {
+   "set": "c_hard",
+   "family": "switchallexp",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 6,
+    "ratios": [
+     2.0,
+     2.0,
+     2.0
+    ],
+    "exponent": 0.818,
+    "err_power": 0.212,
+    "c0_power": 0.0,
+    "exponent_param": 0.725,
+    "err_power_param": 0.305,
+    "factor_param": 1.3676,
+    "err_exp_param": 0.381,
+    "factor": 1.3676,
+    "err_exp": 0.381,
+    "c0_exp": 0.0,
+    "reading": "polynomial-looking"
+   },
+   "rows": [
+    {
+     "param": 1,
+     "n": 21,
+     "m": 41,
+     "d": 21,
+     "iterations": 5,
+     "steps": null,
+     "seconds": 0.046,
+     "status": "OK"
+    },
+    {
+     "param": 2,
+     "n": 35,
+     "m": 75,
+     "d": 35,
+     "iterations": 8,
+     "steps": null,
+     "seconds": 0.076,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 63,
+     "m": 143,
+     "d": 63,
+     "iterations": 8,
+     "steps": null,
+     "seconds": 0.084,
+     "status": "OK"
+    },
+    {
+     "param": 8,
+     "n": 119,
+     "m": 279,
+     "d": 119,
+     "iterations": 16,
+     "steps": null,
+     "seconds": 0.274,
+     "status": "OK"
+    },
+    {
+     "param": 16,
+     "n": 231,
+     "m": 551,
+     "d": 231,
+     "iterations": 32,
+     "steps": null,
+     "seconds": 1.368,
+     "status": "OK"
+    },
+    {
+     "param": 32,
+     "n": 455,
+     "m": 1095,
+     "d": 455,
+     "iterations": 64,
+     "steps": null,
+     "seconds": 10.196,
+     "status": "OK"
+    },
+    {
+     "param": 64,
+     "n": 903,
+     "m": 2183,
+     "d": 903,
+     "iterations": null,
+     "steps": null,
+     "seconds": 60.067,
+     "status": "TIMEOUT"
+    }
+   ]
+  },
+  {
+   "set": "c_hard",
+   "family": "switchbestexp",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 5,
+    "ratios": [
+     1.469,
+     1.638,
+     1.675
+    ],
+    "exponent": 0.746,
+    "err_power": 0.00315,
+    "c0_power": 0.0,
+    "exponent_param": 0.665,
+    "err_power_param": 0.00529,
+    "factor_param": 1.5726,
+    "err_exp_param": 0.246,
+    "factor": 1.5726,
+    "err_exp": 0.246,
+    "c0_exp": 0.0,
+    "reading": "polynomial-looking"
+   },
+   "rows": [
+    {
+     "param": 1,
+     "n": 35,
+     "m": 70,
+     "d": 34,
+     "iterations": 20,
+     "steps": null,
+     "seconds": 0.077,
+     "status": "OK"
+    },
+    {
+     "param": 2,
+     "n": 60,
+     "m": 130,
+     "d": 60,
+     "iterations": 32,
+     "steps": null,
+     "seconds": 0.15,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 110,
+     "m": 250,
+     "d": 110,
+     "iterations": 47,
+     "steps": null,
+     "seconds": 0.481,
+     "status": "OK"
+    },
+    {
+     "param": 8,
+     "n": 210,
+     "m": 490,
+     "d": 210,
+     "iterations": 77,
+     "steps": null,
+     "seconds": 2.394,
+     "status": "OK"
+    },
+    {
+     "param": 16,
+     "n": 410,
+     "m": 970,
+     "d": 410,
+     "iterations": 129,
+     "steps": null,
+     "seconds": 14.299,
+     "status": "OK"
+    },
+    {
+     "param": 32,
+     "n": 810,
+     "m": 1930,
+     "d": 810,
+     "iterations": null,
+     "steps": null,
+     "seconds": 60.064,
+     "status": "TIMEOUT"
+    },
+    {
+     "param": 64,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "OK": 161,
+  "TIMEOUT": 4,
+  "SKIPPED": 8
+ },
+ "failures": [],
+ "exit": 0,
+ "winner_only": false
+}

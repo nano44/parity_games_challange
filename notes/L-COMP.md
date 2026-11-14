@@ -26,6 +26,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   BATTERY_OINK, BATTERY_WINNER_ONLY; selftest K6 (Zielonka on recursiveladder = Oink uzlk's M1 counts); records: record/selftest_full*
   (full run of v1: 19 checks, 0 failed, 1033 s), record/zielonka_c (Zielonka engine on set c, 20 s timeout: OK 109, TIMEOUT 11, SKIPPED
   53; exponential-looking on 11 families, polynomial-looking on counter_qpt and switchallexp).
+- v2 = 1eddbb56, ON ORIGIN 15:25Z (ls-remote). v3 (this commit): engines/sol_adapter.py (any solution-file solver becomes an engine),
+  a one-line-per-family readings table at the end of the report, internal battery failures exit 3 (a Python crash used to exit 1 =
+  «wrong winner»), records record/n5spec_e (N5 SPEC on all 10,000 of e: OK 10,000, 724 s at 1 job, max 24 iterations) and
+  record/n5spec_c (N5 SPEC on set c, 60 s: OK 161, TIMEOUT 4, SKIPPED 8; polynomial-looking on all 13 families).
 - Working method that the 30-minute gate forces: develop in a scratch copy (git archive HEAD experiments/battery + symlinks to the repo's
   harness / comp / n5-second / hard-families / tools; BATTERY_CACHE = the repo's .cache), copy into the tree only when no push runs; long
   jobs run from a frozen archive of the commit, never from the tree being edited.
