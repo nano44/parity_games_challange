@@ -1,30 +1,30 @@
-# Draft RESULTS R131 (Lead; SECOND FILL by script (subagent) on P-N5-EXP line L-6, docs/red-b/P-N5-EXP-line-L6.txt, claude/l-red-b 91d30d95, sha1 1e0ff12d51da7a4ee1aad12ed0fd9119a097896b) — to CHECKER C148 — NOT LANDED; goes after R130 (RESULTS l. 16525 at trunk 15171faa), directly before the line-start «**Erratum E-1** (not a result» (l. 16725); its GAPS UPDATE on the row G-N5-TIME (GAPS l. 11), which then moves under «## Closed»
-SECOND FILL (this text). Built by script in docs/agents/tools/r131/ (cfg.json: every input that can move; fetch.sh: the only network step;
+# Draft RESULTS R131 (Lead; THIRD FILL by script (the subagent's tool; this run by the Lead, with four changes to fill131.py, each marked with the comment words Lead, third run) on P-N5-EXP line L-6, docs/red-b/P-N5-EXP-line-L6.txt, claude/l-red-b 91d30d95, sha1 1e0ff12d51da7a4ee1aad12ed0fd9119a097896b) — to CHECKER C148 — NOT LANDED; goes after R130 (RESULTS l. 16525 at trunk 37009aba), directly before the line-start «**Erratum E-1** (not a result» (l. 16725); its GAPS UPDATE on the row G-N5-TIME (GAPS l. 11), which then moves under «## Closed»
+THIRD FILL (this text). Built by script in docs/agents/tools/r131/ (cfg.json: every input that can move; fetch.sh: the only network step;
   fill131.py; tools/*.py, tools/lanecheck.sh; build.sh; land131.py); nothing in the repository was added, committed, merged or pushed by the
   builder, and scripts/push.sh and scripts/verify.sh were not run. Read by git show at the heads of the fetch that fetch.txt records (Sat
-  Nov 14 15:24:36 UTC 2026, by date -u; git ls-remote lines in the Addendum): claude/l-red-b 91d30d95a3875950b5290b8fc63f1e2c3ad05238,
-  claude/referee 38d1166805fefea1e837855879ce2e44a935f61f, claude/referee-2 4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21, claude/l-si
+  Nov 14 19:05:23 UTC 2026, by date -u; git ls-remote lines in the Addendum): claude/l-red-b 18509d949ef8ac09fde743c886720a5c64c9f0a5,
+  claude/referee d05ea12e28562987381b2e18fa3a1a71c7417a05, claude/referee-2 66720c598722b6216451b77938547486cef15796, claude/l-si
   8c06291418616eca059c9239bdf8d59aad4f320f, claude/l-comp dc6d831f7c56943a03070a9d268df2388565b438, claude/l-red
-  c7ed9b8b6af43c4ae94a5fa15571193bc923eedc, trunk claude/vibrant-johnson-nxvvxo 15171faa822983e7c6118bb3c4be25b47469a387.
-TRUNK: 15171faa (2026-11-14T14:29:13Z). docs/RESULTS.md sha1 eecbd798b81ad431d1b753f5a7f92f3c63e56da1, 17,367 lines, 130 entries, last
+  c7ed9b8b6af43c4ae94a5fa15571193bc923eedc, trunk claude/vibrant-johnson-nxvvxo 37009aba5e898d4a9c54fa9af22d28c4a4a50e3c.
+TRUNK: 37009aba (2026-11-14T15:39:46Z). docs/RESULTS.md sha1 eecbd798b81ad431d1b753f5a7f92f3c63e56da1, 17,367 lines, 130 entries, last
   heading R130 at l. 16525, Erratum anchor l. 16725; docs/GAPS.md sha1 3fa61e1cf9ce48ab16ee6102c3ee145a7d7e0491, 23 lines, row G-N5-TIME l.
   11 (status open), Closed heading l. 13; TARGET.md sha1 a41d5e1a3d251b1e7c345c159651c08d76ad8165. land131.py works on the working tree and
   checks these anchors, not these sha1s.
 LINE: L-6, docs/red-b/P-N5-EXP-line-L6.txt at claude/l-red-b 91d30d95 (2026-11-14T14:18:58Z; L-RED-B successor 7: line L-6 (the line of
   record) and fixes entry 11 …), sha1 1e0ff12d51da7a4ee1aad12ed0fd9119a097896b, 7,755 bytes, one line, parentheses 82 / 82, pipes 0.
 PACKET: docs/red-b/P-N5-EXP.md FROZEN at 350d84eb (2026-11-13T12:55:07Z), sha1 c0449b17193f19619f33b366096762dfde27d542, 569 lines, 57,511
-  bytes; byte-equal at 91d30d95. FIXES: docs/red-b/P-N5-EXP-fixes.md at 91d30d95, 1,443 lines, sha1
+  bytes; byte-equal at 18509d94. FIXES: docs/red-b/P-N5-EXP-fixes.md at 18509d94, 1,443 lines, sha1
   214967a10752ac9b90981d01628bec13473da404, entries 1-11.
-REFEREES (git blame at the heads). REFEREE docs/referee/R-P-N5-EXP.md at 38d11668 (1,011 lines): stage 1 l. 1-397 (c881709b
+REFEREES (git blame at the heads). REFEREE docs/referee/R-P-N5-EXP.md at d05ea12e (1,326 lines): stage 1 l. 1-397 (c881709b
   2026-11-13T14:57:16Z), stage 2 l. 398-456 (ea09ae2e 2026-11-13T15:41:26Z), stage 3 l. 457-496 (7ca9c2b4 2026-11-13T15:44:37Z), stage 4 l.
   497-536 (577e8df9 2026-11-13T17:17:17Z), stage 4 addendum l. 537-542 (4cf6e1ff 2026-11-13T17:28:19Z), stage 5a l. 543-784 (31b28f2a
-  2026-11-13T19:16:17Z), stage 5b (i) l. 785-1011 (38d11668 2026-11-14T13:55:42Z). REFEREE-2 docs/referee-2/R2-P-N5-EXP.md at 4d5b03f7 (731
-  lines): report l. 1-284 (33ff0e98 2026-11-13T14:17:17Z), Addendum 1 l. 285-320 (da20a307 2026-11-13T14:40:07Z), Addendum 2 l. 321-549
-  (f17a2708 2026-11-13T17:02:13Z), Addendum 3 l. 550-633 (e643672d 2026-11-13T17:27:09Z), Addendum 4 l. 634-731 (4d5b03f7
-  2026-11-14T14:06:39Z); docs/referee-2/R2-box108.md (145 lines). Box 108: docs/si/box108-gk-proof.md at claude/l-si 8c062914.
-OPEN SLOTS: REFEREE stage 5b (ii) (PENDING): its check of lines L-4 to L-6 and fixes entries 9-11, and its FINAL line; REFEREE-2 Addendum 5
-  (PENDING): its final line; and the checker token of the title. land131.py refuses to land while the draft holds the open-slot word
-  anywhere but in that token.
+  2026-11-13T19:16:17Z), stage 5b (i) l. 785-1011 (38d11668 2026-11-14T13:55:42Z), stage 5b (ii) l. 1012-1326 (d05ea12e
+  2026-11-14T15:33:54Z). REFEREE-2 docs/referee-2/R2-P-N5-EXP.md at 66720c59 (804 lines): report l. 1-284 (33ff0e98 2026-11-13T14:17:17Z),
+  Addendum 1 l. 285-320 (da20a307 2026-11-13T14:40:07Z), Addendum 2 l. 321-549 (f17a2708 2026-11-13T17:02:13Z), Addendum 3 l. 550-633
+  (e643672d 2026-11-13T17:27:09Z), Addendum 4 l. 634-731 (4d5b03f7 2026-11-14T14:06:39Z), Addendum 5 l. 732-804 (66720c59
+  2026-11-14T15:21:29Z); docs/referee-2/R2-box108.md (145 lines). Box 108: docs/si/box108-gk-proof.md at claude/l-si 8c062914.
+OPEN SLOTS: none but the checker token of the title. land131.py refuses to land while the draft holds the open-slot word anywhere but in
+  that token.
 CHECKS RUN AT THIS FILL (outputs verbatim in the Addendum): [lane] the lane's check.sh in a git archive with a negative control; [upd] the
   UPDATE builder with controls R128-R130 and five negative controls; [data] 34 DATA checks from the pinned outputs with a negative control;
   [prem] the premise entries at trunk; [shape] title, block, UPDATE, pipes, brackets, open-slot tokens, check_docs on a copy with a negative
@@ -34,19 +34,19 @@ CHECKS RUN AT THIS FILL (outputs verbatim in the Addendum): [lane] the lane's ch
 FLAGS FIRST (the builder's reading; nothing in the line or in any quoted text was changed; full list in REPORT.txt). G-SLOTS: no referee has
   yet checked the lines L-4 to L-6 or fixes entries 9 to 11; REFEREE's signature line names entries 1-6 (its stage 5b (i) finds 7 and 8
   right), REFEREE-2's names 1-8, the line's closing parenthesis names 1-11. G-RELAY: fixes entries 10 and 11 quote the referees' items from
-  the Lead's relay, written before the reports were on origin; this draft cites the reports. G-ITEMS: 51 referee items in the Note, 4 of
-  them without a closing text in the fixes file or a line replacement (L-n2, N-6a, N-6b, A2.1: notes and one self-correction, no change
-  asked). G-R245 (note): the line gives L-RED 70's engine for k = 3 … 8; R245 also carries k = 9, 10. G-STATUS (note): the line keeps its
-  status phrase about two referees (Lead ruling, the form of R130). G-U: the UPDATE moves three labels, drops one scope string and keeps
-  everything else, the obstruction clause and the L41 scope tail included. G-S: the Closed table of GAPS has an empty line inside it; the
-  row is appended after its last row. G-NOW: land131.py changes one counter of docs/NOW.md (the Lead rewrites NOW at landing). G-1E-N3: the
-  N5 half is conditional on R117 (and R124) as landed and on SPEC's standing premise. Closed since the first build: G-LINE (L-6 is the line
-  of record), G-K12 (the line now says k ≤ 13), G-5E (N-5e and F-L3-1 are named in REFEREE's §14).
+  the Lead's relay, written before the reports were on origin; this draft cites the reports. G-ITEMS: 54 referee items in the Note, 7 of
+  them without a closing text in the fixes file or a line replacement (L-n2, N-6a, N-6b, N-7a, N-7b, N-7c, A2.1: notes and one
+  self-correction, no change asked). G-R245 (note): the line gives L-RED 70's engine for k = 3 … 8; R245 also carries k = 9, 10. G-STATUS
+  (note): the line keeps its status phrase about two referees (Lead ruling, the form of R130). G-U: the UPDATE moves three labels, drops one
+  scope string and keeps everything else, the obstruction clause and the L41 scope tail included. G-S: the Closed table of GAPS has an empty
+  line inside it; the row is appended after its last row. G-NOW: land131.py changes one counter of docs/NOW.md (the Lead rewrites NOW at
+  landing). G-1E-N3: the N5 half is conditional on R117 (and R124) as landed and on SPEC's standing premise. Closed since the first build:
+  G-LINE (L-6 is the line of record), G-K12 (the line now says k ≤ 13), G-5E (N-5e and F-L3-1 are named in REFEREE's §14).
 
 ### R131 [refereed-only] DEAD-END packet for the candidate N5 (SPEC S1-S5 with FIX 1-4, from its default start S3), CONDITIONAL until two referees sign, in three parts: (1) UNCONDITIONAL (premise: RESULTS R104's definitions of the genome, IDEAL-ACYC, the X-chain order, the IDEAL step and L(G) only; no theorem of R104 used): (Theorem EXP-IDEAL, PROVED lane; its RESPONSE LEMMA in the prefix form LEMMA′ of fixes entry 4, with CAUSAL and STABLE in step form) for every k ≥ 3 the genome G_k of rule R (levels 0..k; unit j, 1 ≤ j ≤ k − 1, is a block pair u_j, v_j with an observer pair Y_j = (y_j, ȳ_j) and, for 2 ≤ j ≤ k − 2 only, an end-follower e_j and a second observer pair Y′_j = (y′_j, ȳ′_j), so the units 1 and k − 1 have four movers and the others seven; outside the units, the level-0 pair u_0, v_0 and the wires wv_j, 1 ≤ j ≤ k − 2, and wu_j, 2 ≤ j ≤ k − 2; all parities even, β-ranks depth-major (a smaller Ξ-depth outranks a larger one), inside a Ξ-depth by the rule's local δ, the remaining ties (wire options only) by β-id; generator experiments/red-b/gk.py) is in IDEAL-ACYC with N = 9k − 16 movers, M = 18k − 32 options (every mover has two) and k + 1 levels, its IDEAL run has exactly L(G_k) = 2^k − 2 steps and stops «stuck», and in it every mover of unit j (1 ≤ j ≤ k − 1) changes its option exactly 2^(j−1) times, v_0 once, u_0 and the wires never (11·2^(k−2) − 9 option changes in all); so IDEAL-ACYC-POLY (named in RESULTS R104 and R117; in the words of R104's packet docs/red/P-N5-REALIZE.md: «there is a polynomial q such that L(G) ≤ q(N + M) for every G ∈ IDEAL-ACYC») is FALSE, already for genomes of degree 2 (N + M = 27k − 48); (2) PROVED-CONDITIONAL on RESULTS R117's Theorem REACH3 as landed (refereed-only; R117's standing premises, in the words of its title line: «with R104's premises as landed (1E-N3 = RESULTS R57 (b) in its two forms; RESULTS R24 (a) Lemma R and R24 (b)'s choice rule with RESULTS R103's bridge B and (R1) ruling; RESULTS R36 (c) Lemma P1 on the dual game) and RESULTS R15 (d) for termination only»): (Corollary EXP-N5) the N5 run of Γ3(G_k) from S3 (n = 135k − 230 vertices, m = 176k − 300 edges) has one FL run of length exactly 2^k − 2 and makes at least 2^k − 1 iterations, so no polynomial in n or in n + m = 311k − 530 bounds the number of iterations of N5 from S3; hence, through R117, N5 (SPEC S1-S5, default start S3) does not run in polynomial time, cannot pass gauntlet step 4 (TARGET.md §5), is a DEAD END as an M4 candidate, and G-N5-TIME is answered NO for N5 from S3; and, PROVED-CONDITIONAL on RESULTS R124's Corollary EXACT-L and Theorem ENDGAME-3-N5 as landed (with R124's premises as landed, all under the standing SPEC premise 1E-N3, among them RESULTS R117 (f) for EXACT-L, SPEC's S1 tie-breaks through REACH3's [RULE] choice, and RESULTS R15 (c) for Lemma TERM-XI): (Corollary EXP-N5′) N5 from S3 on Γ3(G_k) makes exactly 2^k + 1 iterations, with one fallback, at iteration 2^k − 1; obstruction RIPPLE (S4a's root-first key rule refuses an improving switch until the key order allows it, and on Γ3(G_k) this makes unit j + 1 respond twice in every response of unit j); (3) DATA (measured; every measured run is below n²: the largest, k = 13 (fixes entry 6, one engine), makes 8,193 iterations on n = 1,525 vertices, and 2^k − 1 > n² first at k = 23, n = 2,875, > n³ at k = 37, > n⁴ at k = 51, by arithmetic, not run; so the dead end rests on the proof of (1) and (2) and not on the DATA) (unit: one genome G_k, resp. one game Γ3(G_k); every counter named is a must-0 counter and is 0, every control fires): R104's eight membership clauses on G_3 … G_14 (b6member.py, member.out: viol 0); the IDEAL run equal state by state on three simulators, T = 2^k − 2, for k = 3 … 14 (b6sim.py, sim.out: ideq 0); the proof's facts and schedule against the run at every state and step for k = 3 … 14 (b6lemma.py, lemma.out: kfact, vfact, sched, tlen, rest, swk 0), and LEMMA′, CAUSAL and STABLE of fixes entry 4 at the 16,368 response windows of the runs for k = 3 … 14, at every triple (j, a, t) for k = 3 … 12, at every state of G_3 and G_4, and off the run (b6prefix.py, prefix_*.out: h1, h2, psched, aviol, pviol, dviol, loc, stviol, c0e0 0; the frozen wording of the lemma, as a control, fails at exactly k − 1 triples per k); N5 itself on Γ3(G_k), two engines and two Γ3 builders, for k = 3 … 12 (b6n5.py, n5.out and n5_k12.out: 2^k + 1 iterations, one fallback at iteration 2^k − 1, mover states equal to the model's; mism, wrong, wrong2, nonmover, engdiff, gdiff 0; winners equal to Zielonka's), and at k = 13 on one engine, the two Γ3 builders agreeing (fixes entry 6: b6n5ck.py, n5_k13.out: 8,193 = 2^13 + 1 iterations on n = 1,525 vertices, one fallback at iteration 8,191, mover states equal to the model's; mism, wrong, nonmover, gdiff 0; winners equal to Zielonka's; game experiments/red-b/data/b6b/pg/G_13_g3.pg), all files in experiments/red-b/data/b6b/out/; frozen instances Γ3(G_k) = experiments/red-b/data/b6b/pg/G_k_g3.pg, k = 3, …, 11 (175 to 1,255 vertices, 9 to 2,049 iterations), genomes of record experiments/red-b/data/b6b/G/G_k.json, k = 3, …, 14, at claude/l-red-b 350d84eb; independent replays, their counters in their own pinned outputs, cited, not re-run: L-COMP 22 BOX 48 (claude/l-comp dc6d831f: own generator, the model T = 2^k − 2 for k = 3 … 20, n5b on its own Γ3 builder 2^k + 1 iterations for k = 3 … 12, winners verified by Oink --tl and --zlk), L-RED 70 R245 (claude/l-red c7ed9b8b: own generator, the model for k = 3 … 12, its engine n5s237 for k = 3 … 8, verdict SURVIVES), REFEREE 35's pre-check (claude/referee 06ac891d: own simulator k = 3 … 15, own Γ3 builder and engine k = 3 … 12), REFEREE 36's first review (claude/referee c881709b: own generator and model k = 3 … 14, N5 on that lane's builder and engine for k = 3 … 9, games identical to this lane's files), REFEREE-2 41 (claude/referee-2 33ff0e98: own generator and model k = 3 … 16, own engine k = 3 … 11 with four solvers for the winners); NOT claimed: anything about N5 from other start pairs, about other S4a tie rules (DATA: N5′-xi makes 7 iterations on Γ3(G_4) and Γ3(G_6)) or about Howard's rule (DATA: at most 4 steps on the model), about any other candidate, or about parity games in general; N5's output on these games is correct (RESULTS R57 (b), Lemma OUT-G, under 1E-N3; DATA for k ≤ 13, k = 13 on one engine: winners = Zielonka's); TARGET.md §2 (M4) stays OPEN; not M3 or M4, not a TARGET.md claim; scope tail (Lead reading L41): STABLE's step form, CAUSAL and LEMMA′ of fixes entry 4 (4.2, 4.3, 4.4) are referee-originated, stated by REFEREE 36, which also proved CAUSAL and LEMMA′, the proof of STABLE being the frozen one read in step form (claude/referee c881709b, docs/referee/R-P-N5-EXP.md §5.3; its verdict on the RESPONSE LEMMA: «NOT SIGNED AS WRITTEN; SIGNED in the form LEMMA′ of §5.3 below»; after fixes entry 4, its stage 4, claude/referee 78515253, the same file §12: «RESPONSE LEMMA SIGNED as restated in fixes entry 4 (= LEMMA′ of §5.3 with CAUSAL and STABLE in step form).»), and are signed independently by REFEREE-2 42, in the form its signature sentence gives (claude/referee-2 f17a2708, docs/referee-2/R2-P-N5-EXP.md, Addendum 2 §A2.3: «REFEREE-2 signs 4.1 (S1)-(S4), 4.2 STABLE, 4.3 CAUSAL, 4.4 LEMMA′ with their proofs (4.2, 4.3, 4.5) and 4.6, as printed in docs/red-b/P-N5-EXP-fixes.md at claude/l-red-b 24f4d436 (sha1 9dc9179f…), (R3)'s range read as t − 1 ≤ τ < last (F-1).») (P-N5-EXP, docs/red-b/P-N5-EXP.md, with fixes entries 1-11, docs/red-b/P-N5-EXP-fixes.md; L-RED-B successors 5-7)., CHECKER PASS (docs/checker/C148.md, checker PENDING)
 - Object (L-RED-B successor 5, D1 / D18 / D22 / D25, B6 attempt 2; frozen, unchanged during review): packet P-N5-EXP,
   docs/red-b/P-N5-EXP.md, sha1 c0449b17193f19619f33b366096762dfde27d542, 569 lines, 57,511 bytes (claude/l-red-b 350d84eb,
-  2026-11-13T12:55:07Z, the file's only commit; identical at 91d30d95). Both referees measured it (REFEREE «claude/l-red-b 350d84eb,
+  2026-11-13T12:55:07Z, the file's only commit; identical at 18509d94). Both referees measured it (REFEREE «claude/l-red-b 350d84eb,
   docs/red-b/P-N5-EXP.md sha1 c0449b17193f19619f33b366096762dfde27d542, 569 lines» (l. 1); REFEREE-2 «docs/red-b/P-N5-EXP.md, sha1
   c0449b17193f19619f33b366096762dfde27d542, 569 lines, 57,511 B» (l. 3-4)). Its own status: «Status: a kill candidate; lane DATA + a lane
   proof. Nothing here is a result until both referees sign and CHECKER passes it (D1).» (l. 4). «To sign: §2 (Theorem EXP-IDEAL, Corollary
@@ -58,7 +58,7 @@ FLAGS FIRST (the builder's reading; nothing in the line or in any quoted text wa
   5222f555f9572e5c92119a2bc1e16d02008a96c5 (192 lines, read in full)» (l. 4-5)). The claim attacked is the GAPS row G-N5-TIME, «N5
   SSI-GLOBAL makes polynomially many iterations (gauntlet step 4, running time)» (l. 11).
 - Fixes: docs/red-b/P-N5-EXP-fixes.md, append-only («append-only; the packet docs/red-b/P-N5-EXP.md is never edited after its freeze commit
-  350d84eb» (l. 1)), at claude/l-red-b 91d30d95: 1,443 lines, 133,301 bytes, sha1 214967a10752ac9b90981d01628bec13473da404, entries 1-11 by
+  350d84eb» (l. 1)), at claude/l-red-b 18509d94: 1,443 lines, 133,301 bytes, sha1 214967a10752ac9b90981d01628bec13473da404, entries 1-11 by
   their headings (git blame: entry 1 l. 1-125 06d399c2 2026-11-13T14:03:12Z; entries 2-5 l. 126-829 24f4d436 2026-11-13T15:53:00Z; entry 6
   l. 830-881 0c8fdf9e 2026-11-13T16:43:45Z; entry 7 l. 882-1147 b1a93700 2026-11-13T19:11:57Z; entry 8 l. 1148-1180 10dfedb6
   2026-11-13T19:17:36Z; entry 9 l. 1181-1271 35f14318 2026-11-14T13:45:31Z; entry 10 l. 1272-1368 abde9163 2026-11-14T13:59:43Z; entry 11 l.
@@ -142,83 +142,84 @@ FLAGS FIRST (the builder's reading; nothing in the line or in any quoted text wa
   L-5 with four: REFEREE-2's L3-3 (R124's premises in R124's words), L3-2 (the correctness DATA to k = 13), L3-5 (STABLE's step form in the
   L41 tail) and L-i; fixes 11.4: «L-6 bytes 7755 (with its newline) lines 1 pipes 0 sha1 1e0ff12d51da7a4ee1aad12ed0fd9119a097896b» (l.
   1434).
-- Claims signed (REFEREE successors 36 and 37, docs/referee/R-P-N5-EXP.md at claude/referee 38d11668: stage 1 l. 1-397 c881709b, stage 2 l.
+- Claims signed (REFEREE successors 36 and 37, docs/referee/R-P-N5-EXP.md at claude/referee d05ea12e: stage 1 l. 1-397 c881709b, stage 2 l.
   398-456 ea09ae2e, stage 3 l. 457-496 7ca9c2b4, stage 4 l. 497-536 577e8df9, stage 4 addendum l. 537-542 4cf6e1ff, stage 5a l. 543-784
-  31b28f2a, stage 5b (i) l. 785-1011 38d11668; REFEREE-2 successors 41 and 42, docs/referee-2/R2-P-N5-EXP.md at claude/referee-2 4d5b03f7:
-  report l. 1-284 33ff0e98, Addendum 1 l. 285-320 da20a307, Addendum 2 l. 321-549 f17a2708, Addendum 3 l. 550-633 e643672d, Addendum 4 l.
-  634-731 4d5b03f7). REFEREE's first table (§0, stage 1), row by row as the report prints it: Lemma MEMBER (§4) = Theorem EXP-IDEAL (a) →
-  **SIGN** with E-3 [unconditional (R104's definitions only); E-3: §3's rank key is not injective on wire options for k ≥ 4; the generator's
-  tie rule must be in rule R] (l. 13); Lemma MOVE-2 (§5) → **SIGN**, no gap [unconditional; none] (l. 14); V0-V4, K1-K4 (§5) → **SIGN** with
-  E-4 [unconditional; E-4: the standing assumption must include «u_0 at option 0» (K1's C_0, V1's E_0)] (l. 15); Lemma WIRE (§5) → **SIGN**,
-  no gap [unconditional; none] (l. 16); RESPONSE LEMMA (§6) → **NOT SIGNED AS WRITTEN; SIGNED in the form LEMMA′ of §5.3 below**
-  [unconditional; E-1: (H2) is vacuous when the run has stopped and the lemma is then false (instance, every k); E-2: the induction applies
-  the lemma for j + 1 before its (H2) is known. One restatement repairs both; every line of the packet's case analysis is correct and is the
-  proof of LEMMA′] (l. 17); STABLE (§6) → **SIGN** with E-5 [unconditional; E-5: «its input is (b, b)» must read the key bit under s′ (as
-  written it contradicts step t of the RESPONSE LEMMA)] (l. 18); Theorem EXP-IDEAL (b), (c) (§7) → **SIGN** (through LEMMA′) [unconditional:
-  a statement about R104's IDEAL model; proof to cite LEMMA′ (E-1, E-2)] (l. 19); Corollary EXP-N5 (§2, §7) → **SIGN AS CONDITIONAL**
-  [conditional on R117's premises as landed; P-1 (this lane's pre-check): the statement must carry R117's premises in R117's words] (l. 20);
-  Dead end wording (§2) → **SIGN AS CONDITIONAL**, with P-1 and E-7 [conditional on R117's premises (and R57 (b) for «CORRECT»); P-1; E-7:
-  «N5 is CORRECT on these games» is DATA for k ≤ 11 and landed R57 (b) for every k] (l. 21); §8 (where the start and the orders are used) →
-  **CHECKED**, correct [a statement about the proof; none (O-2: a weaker rank condition suffices)] (l. 22); §9 DATA → reproduced on own
-  tools: model side §3-§5, §8; N5 side §7 (same games as the lane's, vertex by vertex) [measured; E-6: §9.7 holds the unfilled placeholder
-  `QUOTESUMMARY`] (l. 23); Quotes → 27 of 27 verbatim by own script; 4 untagged citations verbatim [—; N-1] (l. 24); then «No statement is
-  REFUSED. Nothing found changes L(G_k) = 2^k − 2, the counts of (c), or the Corollary's numbers.» (l. 25). After the fixes, REFEREE's table
-  of what its signature covers (§13.0, stage 5a), row by row: Theorem EXP-IDEAL (a), (b), (c), with MEMBER, MOVE-2, V0-V4, K1-K4, WIRE
-  (packet §2-§7; rule R read as entry 5.1; standing assumption entry 4.1 (S1); §7 read as entry 4.6) → **SIGNED** (§0, §12) [unconditional:
-  R104's definitions only] (l. 584); RESPONSE LEMMA = LEMMA′, with CAUSAL; STABLE in step form (entry 4 (4.2-4.5) = this report §5.3) →
-  **SIGNED** (§12; referee-originated, L41: it also needs REFEREE-2's independent signature) [unconditional] (l. 585); «IDEAL-ACYC-POLY is
-  false» (entry 2 (a′), its sentences on R104's model) → **SIGNED** [unconditional ((a)-(c) put into R104's definition of L)] (l. 586);
-  Corollary EXP-N5 (at least 2^k − 1 iterations) (packet §2, §7 with entry 2 (b)) → **SIGNED as PROVED-CONDITIONAL** on RESULTS R117's
-  Theorem REACH3 as landed [conditional: R117's standing premises, in R117's words] (l. 587); Corollary EXP-N5′ (exactly 2^k + 1 iterations,
-  exactly one fallback, at iteration 2^k − 1) (entry 3) → **SIGNED as PROVED-CONDITIONAL** on RESULTS R124 (EXACT-L, ENDGAME-3-N5) and R117
-  (f) as landed [conditional: R117's premises and R124's own] (l. 588); Dead-end paragraph (packet l. 61-71 read as entry 2 (c), (e)) →
-  **SIGNED AS CONDITIONAL** on R117's premises, «for N5 from S3»; its arithmetic is unconditional; «CORRECT» is RESULTS R57 (b) for every k
-  (under 1E-N3) and DATA for k ≤ 13 [conditional] (l. 589); DATA (packet §9; entries 1, 4.7, 5, 6) → MEASURED [premise-free; N5 itself: k ≤
-  12 on two engines of the lane, k = 13 on one] (l. 590); its signature line: «**P-N5-EXP: SIGNED with fixes entries 1-6.** What the
-  signature covers, by kind» (l. 580). REFEREE-2's table (§0 of its report), row by row: Theorem EXP-IDEAL (a) = Lemma MEMBER (§4) →
-  **SIGN** [M-1 (the rank clause of rule R needs its tie-break in the text)] (l. 21); Lemma MOVE-2 (§5) → **SIGN** [—] (l. 22); V0, V1, V2,
-  V3, V4 (§5) → **SIGN** [—] (l. 23); K1, K2, K3, K4, WIRE (§5) → **SIGN** [—] (l. 24); RESPONSE LEMMA (§6) → **SIGN the statement**; its
-  proof has gap G-1, closed in §2.4 of this report by the PREFIX form [G-1, W-1] (l. 25); STABLE (§6) → **SIGN** [—] (l. 26); Theorem
-  EXP-IDEAL (b), (c) (§7) → **SIGN** (through the RESPONSE LEMMA with G-1 closed) [G-1] (l. 27); Corollary EXP-N5 (§2, §7) → **SIGN as
-  PROVED-CONDITIONAL on RESULTS R117, Theorem REACH3, as landed** (refereed-only, with R117's standing premises); the sizes n = 135k − 230
-  and m = 176k − 300 SIGN outright [W-2] (l. 28); «Dead end» paragraph (§2) → follows from the Corollary, so it carries the same condition;
-  the wording must say so [W-2] (l. 29); §8 (where the start and the orders are used) → checked against the proofs of K1-K4 and V1-V4: every
-  order listed is used where §8 says. The sentence «Nothing else … is free» was tested only as far as §3.1 goes (gate renumbering, the rank
-  tie-break) [—] (l. 30); §9 DATA → reproduced on my own code, §3 (same numbers at every point I ran) [D-1] (l. 31); §10 → NOT run as
-  written (the lane's script and archives); CHECKER's exact-commit re-run covers it [—] (l. 32); §11 → READING, not signed [—] (l. 33); then
-  «No error was found in the mathematics. No counter-instance, no failing counter. The two listed items change no number.» (l. 35). Its
-  table on the fixes file (Addendum 2, §A2.0), row by row: 1 (extra DATA, pointer correction, §10 erratum) (Addendum 1 A1.2) → **closed**
-  for the runner A1.2 named: run_b6b.sh at 24f4d436 takes a relative root and exits 1 when a stage fails (tests T1-T3, §A2.5). No statement,
-  proof or hypothesis changes. New item F-4 (the NEW runner) (l. 337); 2 (unconditional / conditional / measured) (W-2, §4) → **closed**:
-  (b) and (c) carry «PROVED-CONDITIONAL on RESULTS R117's Theorem REACH3 AS LANDED [refereed-only]» with R117's standing premises quoted
-  from its title line; the dead-end sentences are to be read through R117's Theorem REACH3, and the NO is for N5 from S3 only. Note F-5 (l.
-  338); 3 (Corollary EXP-N5′) (Addendum 1 A1.1) → **closed**: the exact count is a SEPARATE labelled corollary under R124 EXACT-L (premise
-  R117 (f), SPEC's FIX 1-4 tie-breaks); the frozen lower bound through R117 alone is kept (l. 339); 4 (LEMMA′, CAUSAL, STABLE in step form)
-  (G-1 (and W-1 in (S2))) → G-1 **closed**. L41: **I SIGN** 4.1 (S1)-(S4), 4.2, 4.3, 4.4 and the proofs 4.2, 4.3, 4.5, 4.6 as printed, with
-  the reading F-1; the concordance claim «PREFIX FORM = LEMMA′ at τ_0 = T» is **correct** (§A2.4). Wording F-1, F-2 (l. 340); 5 (wording and
-  records) (M-1, W-1, D-1) → **closed** (5.1, 5.2, 5.3); wording F-3. 5.4-5.9 answer other referees' items: read; where they quote this
-  lane's report the quotes are verbatim; nothing in them contradicts it (l. 341); frozen guard (—) → **holds**: the packet's sha1 is
-  c0449b17193f19619f33b366096762dfde27d542 at 350d84eb and at 24f4d436; the fixes file at 06d399c2 (entry 1; sha1 4c692ab2…, 12,551 B) is a
-  byte prefix of the file at 24f4d436 (`cmp -n 12551`) (l. 342); its signature: «**P-N5-EXP: SIGNED with fixes entries 1-5.** The signature
-  is §0's, with one correction (§A2.1): the statement of the RESPONSE LEMMA that I sign is entry 4's 4.4 (LEMMA′), not the frozen l.
-  192-204; STABLE is signed in 4.2's step form. Every other row of §0 stands as written. Items F-1 to F-5 are wording and tooling; none of
-  them is a condition of the signature except the reading F-1.» (l. 344-346). REFEREE-2 on the two reviews together (Addendum 3): «No
-  verdict differs after the fixes, and no number differs anywhere» (l. 582). On fixes entries 7, 8 and line L-3, REFEREE (stage 5b (i),
-  §14.0): «**Entry 7**: right, sentence by sentence. **F-1 is ACCEPTED by this lane, as the lane that wrote LEMMA′** (§14.3): clause (R3) is
-  to be read with the range t − 1 ≤ τ < last, as entry 7.1 restates it.» (l. 805-806); «**Entry 8**: right. L-3 is L-2 with exactly the two
-  named replacements.» (l. 808); «So **L-3 is NOT signed as the RESULTS line**: the failing clause is F-L3-1 (and N-5e's premise is to be
-  named). Nothing in entries 7 and 8 fails.» (l. 816-817). REFEREE-2 (Addendum 4, §A4.0), row by row: entry 6 (N5 at k = 13, one engine) →
-  **accepted** as DATA; no statement changes. The game file is my builder's game (pg13.out); the run itself not re-run by me (l. 650); entry
-  7 (answers to F-1 … F-5) → **F-1, F-2, F-3, F-4, F-5 closed.** 7.1's clause (R3) is my reading word for word; the repaired runner passes
-  my own tests (l. 651); entry 8 (record of L-3) → **accepted** as a record: L-3 is L-2 with the two named replacements and nothing else (l.
-  652); line L-3 → **NOT signed as it stands: one failing clause, L3-1 (the gloss of the β-ranks).** L3-2 a stale number, L3-3 and L3-4
-  exactness of a premise clause and of a quotation's source, L3-5 optional. L-a, L-b, L-c are done as asked. Every other clause, number,
-  premise name and quotation: checked, right (l. 653); then «P-N5-EXP stays SIGNED, now with fixes entries 1-8 (the signature is about the
-  packet and its fixes; L3-1 is a defect of the LINE's gloss, not of the rule, the theorem or any proof).» (l. 654-655). So REFEREE finds
-  fixes entries 7 and 8 right (its signature line still names entries 1-6; its last line is held for part (ii)), REFEREE-2's signature now
-  names entries 1-8, and neither signed line L-3; the lines L-4 to L-6 and fixes entries 9-11 answer what they found, and their check of
-  these is the open slots (Signatures). No statement of the packet is REFUSED by either referee. The frozen statement of the RESPONSE LEMMA
-  is signed by neither: both sign it in the restated form LEMMA′ of fixes entry 4 (L41, below). The item-by-item map is in the Note bullet.
+  31b28f2a, stage 5b (i) l. 785-1011 38d11668, stage 5b (ii) l. 1012-1326 d05ea12e; REFEREE-2 successors 41 and 42,
+  docs/referee-2/R2-P-N5-EXP.md at claude/referee-2 66720c59: report l. 1-284 33ff0e98, Addendum 1 l. 285-320 da20a307, Addendum 2 l.
+  321-549 f17a2708, Addendum 3 l. 550-633 e643672d, Addendum 4 l. 634-731 4d5b03f7, Addendum 5 l. 732-804 66720c59). REFEREE's first table
+  (§0, stage 1), row by row as the report prints it: Lemma MEMBER (§4) = Theorem EXP-IDEAL (a) → **SIGN** with E-3 [unconditional (R104's
+  definitions only); E-3: §3's rank key is not injective on wire options for k ≥ 4; the generator's tie rule must be in rule R] (l. 13);
+  Lemma MOVE-2 (§5) → **SIGN**, no gap [unconditional; none] (l. 14); V0-V4, K1-K4 (§5) → **SIGN** with E-4 [unconditional; E-4: the
+  standing assumption must include «u_0 at option 0» (K1's C_0, V1's E_0)] (l. 15); Lemma WIRE (§5) → **SIGN**, no gap [unconditional; none]
+  (l. 16); RESPONSE LEMMA (§6) → **NOT SIGNED AS WRITTEN; SIGNED in the form LEMMA′ of §5.3 below** [unconditional; E-1: (H2) is vacuous
+  when the run has stopped and the lemma is then false (instance, every k); E-2: the induction applies the lemma for j + 1 before its (H2)
+  is known. One restatement repairs both; every line of the packet's case analysis is correct and is the proof of LEMMA′] (l. 17); STABLE
+  (§6) → **SIGN** with E-5 [unconditional; E-5: «its input is (b, b)» must read the key bit under s′ (as written it contradicts step t of
+  the RESPONSE LEMMA)] (l. 18); Theorem EXP-IDEAL (b), (c) (§7) → **SIGN** (through LEMMA′) [unconditional: a statement about R104's IDEAL
+  model; proof to cite LEMMA′ (E-1, E-2)] (l. 19); Corollary EXP-N5 (§2, §7) → **SIGN AS CONDITIONAL** [conditional on R117's premises as
+  landed; P-1 (this lane's pre-check): the statement must carry R117's premises in R117's words] (l. 20); Dead end wording (§2) → **SIGN AS
+  CONDITIONAL**, with P-1 and E-7 [conditional on R117's premises (and R57 (b) for «CORRECT»); P-1; E-7: «N5 is CORRECT on these games» is
+  DATA for k ≤ 11 and landed R57 (b) for every k] (l. 21); §8 (where the start and the orders are used) → **CHECKED**, correct [a statement
+  about the proof; none (O-2: a weaker rank condition suffices)] (l. 22); §9 DATA → reproduced on own tools: model side §3-§5, §8; N5 side
+  §7 (same games as the lane's, vertex by vertex) [measured; E-6: §9.7 holds the unfilled placeholder `QUOTESUMMARY`] (l. 23); Quotes → 27
+  of 27 verbatim by own script; 4 untagged citations verbatim [—; N-1] (l. 24); then «No statement is REFUSED. Nothing found changes L(G_k)
+  = 2^k − 2, the counts of (c), or the Corollary's numbers.» (l. 25). After the fixes, REFEREE's table of what its signature covers (§13.0,
+  stage 5a), row by row: Theorem EXP-IDEAL (a), (b), (c), with MEMBER, MOVE-2, V0-V4, K1-K4, WIRE (packet §2-§7; rule R read as entry 5.1;
+  standing assumption entry 4.1 (S1); §7 read as entry 4.6) → **SIGNED** (§0, §12) [unconditional: R104's definitions only] (l. 584);
+  RESPONSE LEMMA = LEMMA′, with CAUSAL; STABLE in step form (entry 4 (4.2-4.5) = this report §5.3) → **SIGNED** (§12; referee-originated,
+  L41: it also needs REFEREE-2's independent signature) [unconditional] (l. 585); «IDEAL-ACYC-POLY is false» (entry 2 (a′), its sentences on
+  R104's model) → **SIGNED** [unconditional ((a)-(c) put into R104's definition of L)] (l. 586); Corollary EXP-N5 (at least 2^k − 1
+  iterations) (packet §2, §7 with entry 2 (b)) → **SIGNED as PROVED-CONDITIONAL** on RESULTS R117's Theorem REACH3 as landed [conditional:
+  R117's standing premises, in R117's words] (l. 587); Corollary EXP-N5′ (exactly 2^k + 1 iterations, exactly one fallback, at iteration 2^k
+  − 1) (entry 3) → **SIGNED as PROVED-CONDITIONAL** on RESULTS R124 (EXACT-L, ENDGAME-3-N5) and R117 (f) as landed [conditional: R117's
+  premises and R124's own] (l. 588); Dead-end paragraph (packet l. 61-71 read as entry 2 (c), (e)) → **SIGNED AS CONDITIONAL** on R117's
+  premises, «for N5 from S3»; its arithmetic is unconditional; «CORRECT» is RESULTS R57 (b) for every k (under 1E-N3) and DATA for k ≤ 13
+  [conditional] (l. 589); DATA (packet §9; entries 1, 4.7, 5, 6) → MEASURED [premise-free; N5 itself: k ≤ 12 on two engines of the lane, k =
+  13 on one] (l. 590); its signature line: «**P-N5-EXP: SIGNED with fixes entries 1-6.** What the signature covers, by kind» (l. 580).
+  REFEREE-2's table (§0 of its report), row by row: Theorem EXP-IDEAL (a) = Lemma MEMBER (§4) → **SIGN** [M-1 (the rank clause of rule R
+  needs its tie-break in the text)] (l. 21); Lemma MOVE-2 (§5) → **SIGN** [—] (l. 22); V0, V1, V2, V3, V4 (§5) → **SIGN** [—] (l. 23); K1,
+  K2, K3, K4, WIRE (§5) → **SIGN** [—] (l. 24); RESPONSE LEMMA (§6) → **SIGN the statement**; its proof has gap G-1, closed in §2.4 of this
+  report by the PREFIX form [G-1, W-1] (l. 25); STABLE (§6) → **SIGN** [—] (l. 26); Theorem EXP-IDEAL (b), (c) (§7) → **SIGN** (through the
+  RESPONSE LEMMA with G-1 closed) [G-1] (l. 27); Corollary EXP-N5 (§2, §7) → **SIGN as PROVED-CONDITIONAL on RESULTS R117, Theorem REACH3,
+  as landed** (refereed-only, with R117's standing premises); the sizes n = 135k − 230 and m = 176k − 300 SIGN outright [W-2] (l. 28); «Dead
+  end» paragraph (§2) → follows from the Corollary, so it carries the same condition; the wording must say so [W-2] (l. 29); §8 (where the
+  start and the orders are used) → checked against the proofs of K1-K4 and V1-V4: every order listed is used where §8 says. The sentence
+  «Nothing else … is free» was tested only as far as §3.1 goes (gate renumbering, the rank tie-break) [—] (l. 30); §9 DATA → reproduced on
+  my own code, §3 (same numbers at every point I ran) [D-1] (l. 31); §10 → NOT run as written (the lane's script and archives); CHECKER's
+  exact-commit re-run covers it [—] (l. 32); §11 → READING, not signed [—] (l. 33); then «No error was found in the mathematics. No
+  counter-instance, no failing counter. The two listed items change no number.» (l. 35). Its table on the fixes file (Addendum 2, §A2.0),
+  row by row: 1 (extra DATA, pointer correction, §10 erratum) (Addendum 1 A1.2) → **closed** for the runner A1.2 named: run_b6b.sh at
+  24f4d436 takes a relative root and exits 1 when a stage fails (tests T1-T3, §A2.5). No statement, proof or hypothesis changes. New item
+  F-4 (the NEW runner) (l. 337); 2 (unconditional / conditional / measured) (W-2, §4) → **closed**: (b) and (c) carry «PROVED-CONDITIONAL on
+  RESULTS R117's Theorem REACH3 AS LANDED [refereed-only]» with R117's standing premises quoted from its title line; the dead-end sentences
+  are to be read through R117's Theorem REACH3, and the NO is for N5 from S3 only. Note F-5 (l. 338); 3 (Corollary EXP-N5′) (Addendum 1
+  A1.1) → **closed**: the exact count is a SEPARATE labelled corollary under R124 EXACT-L (premise R117 (f), SPEC's FIX 1-4 tie-breaks); the
+  frozen lower bound through R117 alone is kept (l. 339); 4 (LEMMA′, CAUSAL, STABLE in step form) (G-1 (and W-1 in (S2))) → G-1 **closed**.
+  L41: **I SIGN** 4.1 (S1)-(S4), 4.2, 4.3, 4.4 and the proofs 4.2, 4.3, 4.5, 4.6 as printed, with the reading F-1; the concordance claim
+  «PREFIX FORM = LEMMA′ at τ_0 = T» is **correct** (§A2.4). Wording F-1, F-2 (l. 340); 5 (wording and records) (M-1, W-1, D-1) → **closed**
+  (5.1, 5.2, 5.3); wording F-3. 5.4-5.9 answer other referees' items: read; where they quote this lane's report the quotes are verbatim;
+  nothing in them contradicts it (l. 341); frozen guard (—) → **holds**: the packet's sha1 is c0449b17193f19619f33b366096762dfde27d542 at
+  350d84eb and at 24f4d436; the fixes file at 06d399c2 (entry 1; sha1 4c692ab2…, 12,551 B) is a byte prefix of the file at 24f4d436 (`cmp -n
+  12551`) (l. 342); its signature: «**P-N5-EXP: SIGNED with fixes entries 1-5.** The signature is §0's, with one correction (§A2.1): the
+  statement of the RESPONSE LEMMA that I sign is entry 4's 4.4 (LEMMA′), not the frozen l. 192-204; STABLE is signed in 4.2's step form.
+  Every other row of §0 stands as written. Items F-1 to F-5 are wording and tooling; none of them is a condition of the signature except the
+  reading F-1.» (l. 344-346). REFEREE-2 on the two reviews together (Addendum 3): «No verdict differs after the fixes, and no number differs
+  anywhere» (l. 582). On fixes entries 7, 8 and line L-3, REFEREE (stage 5b (i), §14.0): «**Entry 7**: right, sentence by sentence. **F-1 is
+  ACCEPTED by this lane, as the lane that wrote LEMMA′** (§14.3): clause (R3) is to be read with the range t − 1 ≤ τ < last, as entry 7.1
+  restates it.» (l. 805-806); «**Entry 8**: right. L-3 is L-2 with exactly the two named replacements.» (l. 808); «So **L-3 is NOT signed as
+  the RESULTS line**: the failing clause is F-L3-1 (and N-5e's premise is to be named). Nothing in entries 7 and 8 fails.» (l. 816-817).
+  REFEREE-2 (Addendum 4, §A4.0), row by row: entry 6 (N5 at k = 13, one engine) → **accepted** as DATA; no statement changes. The game file
+  is my builder's game (pg13.out); the run itself not re-run by me (l. 650); entry 7 (answers to F-1 … F-5) → **F-1, F-2, F-3, F-4, F-5
+  closed.** 7.1's clause (R3) is my reading word for word; the repaired runner passes my own tests (l. 651); entry 8 (record of L-3) →
+  **accepted** as a record: L-3 is L-2 with the two named replacements and nothing else (l. 652); line L-3 → **NOT signed as it stands: one
+  failing clause, L3-1 (the gloss of the β-ranks).** L3-2 a stale number, L3-3 and L3-4 exactness of a premise clause and of a quotation's
+  source, L3-5 optional. L-a, L-b, L-c are done as asked. Every other clause, number, premise name and quotation: checked, right (l. 653);
+  then «P-N5-EXP stays SIGNED, now with fixes entries 1-8 (the signature is about the packet and its fixes; L3-1 is a defect of the LINE's
+  gloss, not of the rule, the theorem or any proof).» (l. 654-655). So REFEREE finds fixes entries 7 and 8 right (its signature line still
+  names entries 1-6; its last line is held for part (ii)), REFEREE-2's signature now names entries 1-8, and neither signed line L-3; the
+  lines L-4 to L-6 and fixes entries 9-11 answer what they found, and their check of these is the open slots (Signatures). No statement of
+  the packet is REFUSED by either referee. The frozen statement of the RESPONSE LEMMA is signed by neither: both sign it in the restated
+  form LEMMA′ of fixes entry 4 (L41, below). The item-by-item map is in the Note bullet.
 - Setting and scope, as both referees sign it. The objects are R104's IDEAL model on the genomes G_k (k ≥ 3), the games Γ3(G_k) of RESULTS
   R117, and N5 (SPEC S1-S5 with FIX 1-4) from its default start S3. Statements as signed (the packet with its fixes entries, as each
   referee's signature names them under Signatures), by standing:
@@ -253,7 +254,7 @@ FLAGS FIRST (the builder's reading; nothing in the line or in any quoted text wa
     entry 3, «**Addendum 1 A1.1 → entry 3: closed.**» (l. 375).
   (e) MEASURED (DATA, premise-free): the runs of the model and of N5 itself (Data, below). They test every step of the proof and the
     predictions of R117 and R124; they kill nothing by themselves (L43, below).
-- Premise (landed RESULTS entries only; heading lines at trunk 15171faa by script; none is later than R130). For (a), (b): RESULTS R104 (l.
+- Premise (landed RESULTS entries only; heading lines at trunk 37009aba by script; none is later than R130). For (a), (b): RESULTS R104 (l.
   9864), DEFINITIONS ONLY (the genome, IDEAL-ACYC, the X-chain order, the IDEAL step, L(G)): packet «**R104, DEFINITIONS ONLY** (no theorem
   of R104 is used).» (l. 15); REFEREE «So «DEFINITIONS ONLY (no theorem of R104 is used)» is right; MEMBER c8 (acyclic) comes first and
   makes the X-chains finite. No circularity.» (l. 53-54). For (c): RESULTS R117 (l. 13362), Theorem REACH3 as landed, with its standing
@@ -322,7 +323,7 @@ FLAGS FIRST (the builder's reading; nothing in the line or in any quoted text wa
   (§1.1) only.» (l. 14)), by a closed form of the run and a 32-row table, with no response lemma. It was compared with the packet by REFEREE
   (stage 3: «Result of stage 3: no conflict between the two proofs; the verdicts of §0 stand.» (l. 496); «NOT refereed here: it is not my
   packet; its STEP table (32 transition classes) was not checked row by row.» (l. 465)) and checked by REFEREE-2 only
-  (docs/referee-2/R2-box108.md at claude/referee-2 4d5b03f7: «It is ONE referee's check of a lane proof. It is not a second signature on box
+  (docs/referee-2/R2-box108.md at claude/referee-2 66720c59: «It is ONE referee's check of a lane proof. It is not a second signature on box
   108» (l. 13); «No gap was found in Lemma STEP or in Lemma MOVE. Three wording items (§1), none of them changes a statement.» (l. 43)). So
   it has ONE referee's check and is not a two-referee result: supporting evidence for (a), not a premise of anything here. (iii) Each
   referee rebuilt the family and re-ran the model and N5 with its own code (DATA counters for the cited replays, below); REFEREE stage 2
@@ -342,7 +343,7 @@ FLAGS FIRST (the builder's reading; nothing in the line or in any quoted text wa
   the local δ, and that gloss describes another genome, whose IDEAL run has 3 steps or 1 (both referees; the lane's gloss.out); rule R,
   gk.py, the theorem and every proof and DATA line were about the right genome throughout, and line L-5 corrected the gloss. (ix) No
   algorithm and no bound is claimed, and no novelty against the literature (not M3).
-- Data (DATA, not proof; every clause names its counter and unit, L43): experiments/red-b/ at claude/l-red-b 91d30d95, outputs in
+- Data (DATA, not proof; every clause names its counter and unit, L43): experiments/red-b/ at claude/l-red-b 18509d94, outputs in
   data/b6b/out/, pinned in 9 pin files (SHA1SUMS_b6b, SHA1SUMS_b6b_fixes1, SHA1SUMS_b6b_fixes2, SHA1SUMS_b6b_fixes3, SHA1SUMS_b6b_fixes4,
   SHA1SUMS_b6b_fixes5, SHA1SUMS_b6b_fixes6, SHA1SUMS_b6b_fixes7, SHA1SUMS_b6b_fixes8; 112 files, 0 sha1 mismatches against the git objects,
   by script) and checked by experiments/red-b/check.sh. Numbers below are read by script from the pinned outputs (tools/data.py, 34 checks).
@@ -365,7 +366,7 @@ FLAGS FIRST (the builder's reading; nothing in the line or in any quoted text wa
   gives L = 3 and L = 1. Also 0: venab, kenab, movd (enab.out, k = 3..12), keep on 7,050 gate relabelings (perm.out), startdiff, padcyc,
   padp, fbpos (reach.out, R117's side lemmas on these games, k = 3..8). Frozen instances: data/b6b/pg/G_k_g3.pg, k = 3..11 at 350d84eb
   (smallest: 175 vertices, 228 edges, 9 iterations), and k = 12, 13 from fixes entries 1 and 6; genomes of record data/b6b/G/G_k.json, k =
-  3..14. Re-run by the drafter in a git archive of 91d30d95: experiments/red-b/check.sh exit 0, «red-b check PASS»; with one byte appended
+  3..14. Re-run by the drafter in a git archive of 18509d94: experiments/red-b/check.sh exit 0, «red-b check PASS»; with one byte appended
   to the pinned n5_k13.out it prints «red-b: data/b6b fixes3 SHA1SUMS mismatch» and «red-b check FAILED» (negative control; restored).
 - DATA counters for the replays the line cites, named here from their own reports (L43; cited, not re-run). L-COMP 22 BOX 48
   (experiments/comp/box48/README.md at claude/l-comp dc6d831f): the model, «C port: T_key = 2^k − 2 exactly for k = 3..20 (1,048,574 at k =
@@ -410,66 +411,70 @@ FLAGS FIRST (the builder's reading; nothing in the line or in any quoted text wa
   is unchanged on this point and this entry quotes the acceptance (L41, above); L-n3 (the correctness clause said k ≤ 12; l. 996) → the
   clause of REFEREE-2's L3-2: fixes 11.1 and line L-6, replacement L3-2 (fixes l. 1377, fixes l. 1424); its check by REFEREE: stage 5b (ii);
   N-6a (a loose phrase of fixes 7.6; l. 997) → no fixes entry answers it; the referee asks for nothing; «A loose phrase, nothing wrong.» (l.
-  998); N-6b (the builder's own measure of unchanged characters; l. 999) → no fixes entry answers it; a remark on a record. REFEREE 35's
-  pre-check (its §7; not a signature): P-1 (the premises of the corollary; l. 322) → REFEREE 36's P-1: fixes entry 2 (fixes l. 150); P-2
-  (the level width; l. 327) → fixes 5.4 (fixes l. 724); M-1 (the genome of record and the raw files; l. 330) → fixes 5.5 (fixes l. 749); M-2
-  (the mover order; l. 334) → fixes 5.6 (fixes l. 774); M-3 (the JSON fields; l. 336) → fixes 5.7 (fixes l. 789); «the pre-check items P-2,
-  M-1, M-2, M-3 are answered with the right numbers» (l. 574); P-3 (the scope of a kill: N5 as specified; l. 338) → the packet's Not claimed
-  paragraph and the DATA of fixes 9.13 (REFEREE stage 2) (fixes l. 87, REFEREE l. 435); P-4 (L43: the kill needs the proof for every k; l.
-  341) → a requirement, met by Theorem EXP-IDEAL as both referees sign it (matched by content: REFEREE's L43 sentence does not name P-4)
-  (REFEREE l. 26). REFEREE-2 41, its report (§1) and Addendum 1: G-1 (the gap of E-2, found independently; l. 38) → fixes 4.4, 4.5 (fixes l.
-  321); «G-1 **closed**.» (l. 340); M-1 (= E-3; l. 46) → fixes 5.1 (fixes l. 652); «**M-1 → 5.1: closed.**» (l. 381); W-1 (the word step t
-  was never defined; l. 54) → fixes 5.2 and 4.1 (S2) (fixes l. 696); «**W-1 → 5.2 and 4.1 (S2): closed.**» (l. 386); W-2 (= P-1; l. 55) →
-  fixes entry 2 (fixes l. 206); «**W-2 and §4 → entry 2: closed.**» (l. 361); D-1 (= E-6; l. 60) → fixes 5.3 (fixes l. 702); «**D-1 → 5.3:
-  closed.**» (l. 387); O-1 (its own Γ3 builder numbers the β block in gate order; l. 61) → about its own tool, no lane action; fixes 5.6
-  quotes its comparison of the game files (fixes l. 774); A1.1 (the exact count through R124; l. 288) → fixes entry 3 (fixes l. 245);
-  «**Addendum 1 A1.1 → entry 3: closed.**» (l. 375); A1.2 (the runner erratum; l. 305) → fixes entry 1, 10.E (fixes l. 105); «**Addendum 1
-  A1.2 → entry 1, 10.E: closed**» (l. 392). REFEREE-2 42, Addendum 2 (on fixes entries 1-5 and line L-1): A2.1 (its own correction: the
-  statement it signs is fixes 4.4, not the frozen one; l. 348) → no lane action; «That row was wrong about the STATEMENT.» (l. 349); F-1 (a
-  reading: the range of clause (R3), the one condition of its signature; l. 442) → fixes 7.1 (fixes l. 923); «**F-1 is ACCEPTED by this
-  lane, as the lane that wrote LEMMA′**» (l. 805); F-2 (which frozen lines stay as definitions; l. 445) → fixes 7.2 (fixes l. 979); «7.2's
-  table of the frozen lines is right.» (l. 806); F-3 (= N-5b; l. 384) → fixes 7.3 (fixes l. 1009); F-4 (the new runner exits 0 on a failing
-  stage; l. 395) → fixes 7.4: the runner repaired, no DATA changes (fixes l. 1046); F-5 (a label inside entry 2 (a′); no change asked; l.
-  368) → fixes 7.5 (fixes l. 1097); «**F-1, F-2, F-3, F-4, F-5 closed.**» (l. 651); L-a (the line's gloss of the units; l. 522) → line L-2,
-  replacement L-a (fixes 7.6) (fixes l. 1131); «**L-a: done.**»; L-b (R117's premises paraphrased; l. 525) → line L-2, replacement L-b
-  (fixes l. 1133); «**L-b: done.**»; L-c (the L41 scope tail; l. 526) → line L-2, replacement L-c (fixes l. 1134); «**L-c: done.**» (l.
-  687). REFEREE-2 42, Addendum 4 (on line L-3 and fixes entries 6-8): L3-1 (FAILING CLAUSE of the line, the clause of F-L3-1, found
-  independently; l. 658) → fixes entry 10 and line L-5, replacement F-L3-1 (1) (fixes l. 1373, fixes l. 1348); its check by REFEREE-2:
-  Addendum 5; L3-2 (the correctness clause said k ≤ 12; l. 666) → fixes 11.1 and line L-6, replacement L3-2 (fixes l. 1377, fixes l. 1424);
-  its check by REFEREE-2: Addendum 5; L3-3 (the premise clause of Corollary EXP-N5′ was not exact; l. 668) → fixes 11.2 and line L-6,
-  replacement L3-3 (fixes l. 1382, fixes l. 1421); its check by REFEREE-2: Addendum 5; L3-4 (= L-n1, the source of a quotation; l. 675) →
-  fixes 10.2 and line L-5, replacement F-L3-1 (2) (fixes l. 1374, fixes l. 1351); its check by REFEREE-2: Addendum 5; L3-5 (optional:
-  STABLE's step form in the L41 tail; l. 679) → fixes 11.3 and line L-6, replacement L3-5 (fixes l. 1400, fixes l. 1427); its check by
-  REFEREE-2: Addendum 5. Without a closing text in the fixes file or in a line replacement: L-n2, N-6a, N-6b, A2.1 (three notes and
-  REFEREE-2's own correction; none asks the lane for a change). The Lead's own line items: L-d (k = 13 into part (3), line L-2) and the
-  entries named in the closing parenthesis (L-f, L-g, L-h, L-i). Agreement of the two reviews on the packet (REFEREE-2, Addendum 3): «the
-  same gap (E-2 = G-1) and the same rank tie (E-3 = M-1), placeholder (E-6 = D-1) and condition (P-1 = W-2) were found independently; E-1,
-  E-4, E-5, E-7 are REFEREE 36's alone» (l. 629-631); on what was open between them: «Nothing that touches a statement.» (l. 623). Both
-  referees failed the rank gloss of the line independently (F-L3-1 and L3-1) and both name the packet as the source of the quoted sentence
-  (L-n1 and L3-4). REFEREE-2's three wording items S-1, S-2, S-3 concern L-SI's box 108, which is not part of this entry.
-- Signatures: REFEREE docs/referee/R-P-N5-EXP.md at claude/referee 38d11668 (1,011 lines, sha1 fedd674bf4eac8e95c5be3bc499631b606cbc79f):
+  998); N-6b (the builder's own measure of unchanged characters; l. 999) → no fixes entry answers it; a remark on a record; N-7a (who worded
+  the label N-5e and the new rank gloss; l. 1296) → no fixes entry answers it; a remark on two attributions in entries 9.1 and 10.3; N-7b (a
+  loose phrase of fixes 11.2; l. 1300) → no fixes entry answers it; the referee asks for nothing; N-7c (what else fixes 4.2 holds besides
+  STABLE's step form; l. 1303) → no fixes entry answers it; the tail is true as worded. REFEREE 35's pre-check (its §7; not a signature):
+  P-1 (the premises of the corollary; l. 322) → REFEREE 36's P-1: fixes entry 2 (fixes l. 150); P-2 (the level width; l. 327) → fixes 5.4
+  (fixes l. 724); M-1 (the genome of record and the raw files; l. 330) → fixes 5.5 (fixes l. 749); M-2 (the mover order; l. 334) → fixes 5.6
+  (fixes l. 774); M-3 (the JSON fields; l. 336) → fixes 5.7 (fixes l. 789); «the pre-check items P-2, M-1, M-2, M-3 are answered with the
+  right numbers» (l. 574); P-3 (the scope of a kill: N5 as specified; l. 338) → the packet's Not claimed paragraph and the DATA of fixes
+  9.13 (REFEREE stage 2) (fixes l. 87, REFEREE l. 435); P-4 (L43: the kill needs the proof for every k; l. 341) → a requirement, met by
+  Theorem EXP-IDEAL as both referees sign it (matched by content: REFEREE's L43 sentence does not name P-4) (REFEREE l. 26). REFEREE-2 41,
+  its report (§1) and Addendum 1: G-1 (the gap of E-2, found independently; l. 38) → fixes 4.4, 4.5 (fixes l. 321); «G-1 **closed**.» (l.
+  340); M-1 (= E-3; l. 46) → fixes 5.1 (fixes l. 652); «**M-1 → 5.1: closed.**» (l. 381); W-1 (the word step t was never defined; l. 54) →
+  fixes 5.2 and 4.1 (S2) (fixes l. 696); «**W-1 → 5.2 and 4.1 (S2): closed.**» (l. 386); W-2 (= P-1; l. 55) → fixes entry 2 (fixes l. 206);
+  «**W-2 and §4 → entry 2: closed.**» (l. 361); D-1 (= E-6; l. 60) → fixes 5.3 (fixes l. 702); «**D-1 → 5.3: closed.**» (l. 387); O-1 (its
+  own Γ3 builder numbers the β block in gate order; l. 61) → about its own tool, no lane action; fixes 5.6 quotes its comparison of the game
+  files (fixes l. 774); A1.1 (the exact count through R124; l. 288) → fixes entry 3 (fixes l. 245); «**Addendum 1 A1.1 → entry 3: closed.**»
+  (l. 375); A1.2 (the runner erratum; l. 305) → fixes entry 1, 10.E (fixes l. 105); «**Addendum 1 A1.2 → entry 1, 10.E: closed**» (l. 392).
+  REFEREE-2 42, Addendum 2 (on fixes entries 1-5 and line L-1): A2.1 (its own correction: the statement it signs is fixes 4.4, not the
+  frozen one; l. 348) → no lane action; «That row was wrong about the STATEMENT.» (l. 349); F-1 (a reading: the range of clause (R3), the
+  one condition of its signature; l. 442) → fixes 7.1 (fixes l. 923); «**F-1 is ACCEPTED by this lane, as the lane that wrote LEMMA′**» (l.
+  805); F-2 (which frozen lines stay as definitions; l. 445) → fixes 7.2 (fixes l. 979); «7.2's table of the frozen lines is right.» (l.
+  806); F-3 (= N-5b; l. 384) → fixes 7.3 (fixes l. 1009); F-4 (the new runner exits 0 on a failing stage; l. 395) → fixes 7.4: the runner
+  repaired, no DATA changes (fixes l. 1046); F-5 (a label inside entry 2 (a′); no change asked; l. 368) → fixes 7.5 (fixes l. 1097); «**F-1,
+  F-2, F-3, F-4, F-5 closed.**» (l. 651); L-a (the line's gloss of the units; l. 522) → line L-2, replacement L-a (fixes 7.6) (fixes l.
+  1131); «**L-a: done.**»; L-b (R117's premises paraphrased; l. 525) → line L-2, replacement L-b (fixes l. 1133); «**L-b: done.**»; L-c (the
+  L41 scope tail; l. 526) → line L-2, replacement L-c (fixes l. 1134); «**L-c: done.**» (l. 687). REFEREE-2 42, Addendum 4 (on line L-3 and
+  fixes entries 6-8): L3-1 (FAILING CLAUSE of the line, the clause of F-L3-1, found independently; l. 658) → fixes entry 10 and line L-5,
+  replacement F-L3-1 (1) (fixes l. 1373, fixes l. 1348); its check by REFEREE-2: Addendum 5; L3-2 (the correctness clause said k ≤ 12; l.
+  666) → fixes 11.1 and line L-6, replacement L3-2 (fixes l. 1377, fixes l. 1424); its check by REFEREE-2: Addendum 5; L3-3 (the premise
+  clause of Corollary EXP-N5′ was not exact; l. 668) → fixes 11.2 and line L-6, replacement L3-3 (fixes l. 1382, fixes l. 1421); its check
+  by REFEREE-2: Addendum 5; L3-4 (= L-n1, the source of a quotation; l. 675) → fixes 10.2 and line L-5, replacement F-L3-1 (2) (fixes l.
+  1374, fixes l. 1351); its check by REFEREE-2: Addendum 5; L3-5 (optional: STABLE's step form in the L41 tail; l. 679) → fixes 11.3 and
+  line L-6, replacement L3-5 (fixes l. 1400, fixes l. 1427); its check by REFEREE-2: Addendum 5. Without a closing text in the fixes file or
+  in a line replacement: L-n2, N-6a, N-6b, N-7a, N-7b, N-7c, A2.1 (three notes and REFEREE-2's own correction; none asks the lane for a
+  change). The Lead's own line items: L-d (k = 13 into part (3), line L-2) and the entries named in the closing parenthesis (L-f, L-g, L-h,
+  L-i). Agreement of the two reviews on the packet (REFEREE-2, Addendum 3): «the same gap (E-2 = G-1) and the same rank tie (E-3 = M-1),
+  placeholder (E-6 = D-1) and condition (P-1 = W-2) were found independently; E-1, E-4, E-5, E-7 are REFEREE 36's alone» (l. 629-631); on
+  what was open between them: «Nothing that touches a statement.» (l. 623). Both referees failed the rank gloss of the line independently
+  (F-L3-1 and L3-1) and both name the packet as the source of the quoted sentence (L-n1 and L3-4). REFEREE-2's three wording items S-1, S-2,
+  S-3 concern L-SI's box 108, which is not part of this entry.
+- Signatures: REFEREE docs/referee/R-P-N5-EXP.md at claude/referee d05ea12e (1,326 lines, sha1 a57550d091590fdc77db6064ed3675fbb8c6e81c):
   successor 36 wrote stages 1-4, successor 37 stages 5a and 5b: stage 1 l. 1-397 (c881709b 2026-11-13T14:57:16Z), stage 2 l. 398-456
   (ea09ae2e 2026-11-13T15:41:26Z), stage 3 l. 457-496 (7ca9c2b4 2026-11-13T15:44:37Z), stage 4 l. 497-536 (577e8df9 2026-11-13T17:17:17Z),
   stage 4 addendum l. 537-542 (4cf6e1ff 2026-11-13T17:28:19Z), stage 5a l. 543-784 (31b28f2a 2026-11-13T19:16:17Z), stage 5b (i) l. 785-1011
-  (38d11668 2026-11-14T13:55:42Z); the pre-check docs/referee/R-GK-precheck.md is successor 35's (06ac891d; not a signature). Its signature
-  line so far (stage 5a): «**P-N5-EXP: SIGNED with fixes entries 1-6.**» (l. 784); on the restated lemma «**SIGNED** (§12;
-  referee-originated, L41: it also needs REFEREE-2's independent signature)» (l. 585), and as its author on the reading of (R3) «**This lane
-  signs LEMMA′ with clause (R3) read as fixes entry 7.1 restates it**» (l. 934); stage 5b (i) on fixes entries 7, 8: «Nothing in entries 7
-  and 8 fails.» (l. 816-817), and on line L-3: «So **L-3 is NOT signed as the RESULTS line**: the failing clause is F-L3-1 (and N-5e's
-  premise is to be named).» (l. 816). REFEREE stage 5b (ii) PENDING (the lines L-4 to L-6 and fixes entries 9 to 11, and its FINAL line
-  naming the line of record by its sha1; part (i) ends «then part (ii) and the final line.» (l. 1011)). REFEREE-2
-  docs/referee-2/R2-P-N5-EXP.md at claude/referee-2 4d5b03f7 (731 lines, sha1 8f2a9ba9cdf947a6fe9180166305f1f56415aa09): successor 41 wrote
-  the report and Addendum 1, successor 42 Addenda 2 to 4: report l. 1-284 (33ff0e98 2026-11-13T14:17:17Z), Addendum 1 l. 285-320 (da20a307
-  2026-11-13T14:40:07Z), Addendum 2 l. 321-549 (f17a2708 2026-11-13T17:02:13Z), Addendum 3 l. 550-633 (e643672d 2026-11-13T17:27:09Z),
-  Addendum 4 l. 634-731 (4d5b03f7 2026-11-14T14:06:39Z). Its signature: «P-N5-EXP: SIGNED with fixes entries 1-5.» (l. 548) (Addendum 2),
-  with the L41 signature quoted above (l. 463), on the first referee's text «LEMMA′ and CAUSAL in entry 4 are REFEREE 36's text word for
-  word: L41 is met.» (l. 632), and after fixes entries 6-8 «P-N5-EXP stays SIGNED, now with fixes entries 1-8 (the signature is about the
-  packet and its fixes; L3-1 is a defect of the LINE's gloss, not of the rule, the theorem or any proof).» (l. 654-655). REFEREE-2 Addendum
-  5 PENDING (its check of the replacements made after L-3, of fixes entries 9 to 11, and its final line naming the line of record; Addendum
-  4 ends «then I check only the replacements.» (l. 731)). Lane (claude/l-red-b): L-RED-B successor 5 (350d84eb packet FROZEN; 06d399c2 fixes
-  entry 1), successor 6 (24f4d436 entries 2-5 and line L-1; 0c8fdf9e entry 6), successor 7 (b1a93700 entry 7 and line L-2; 10dfedb6 entry 8
-  and line L-3; 35f14318 entry 9 and line L-4; abde9163 entry 10 and line L-5; 91d30d95 entry 11 and line L-6). CHECKER: C148, the token in
-  the title.
+  (38d11668 2026-11-14T13:55:42Z), stage 5b (ii) l. 1012-1326 (d05ea12e 2026-11-14T15:33:54Z); the pre-check docs/referee/R-GK-precheck.md
+  is successor 35's (06ac891d; not a signature). Its signature line so far (stage 5a): «**P-N5-EXP: SIGNED with fixes entries 1-6.**» (l.
+  784); on the restated lemma «**SIGNED** (§12; referee-originated, L41: it also needs REFEREE-2's independent signature)» (l. 585), and as
+  its author on the reading of (R3) «**This lane signs LEMMA′ with clause (R3) read as fixes entry 7.1 restates it**» (l. 934); stage 5b (i)
+  on fixes entries 7, 8: «Nothing in entries 7 and 8 fails.» (l. 816-817), and on line L-3: «So **L-3 is NOT signed as the RESULTS line**:
+  the failing clause is F-L3-1 (and N-5e's premise is to be named).» (l. 816). REFEREE stage 5b (ii) (successor 37, §15): «No failing clause
+  is left; the notes of §15.7 change no statement.» (l. 1054) its final line: «P-N5-EXP: SIGNED with fixes entries 1-11; line L-6 (sha1
+  1e0ff12d51da7a4ee1aad12ed0fd9119a097896b) SIGNED as the RESULTS line.» (l. 1326) REFEREE-2 docs/referee-2/R2-P-N5-EXP.md at
+  claude/referee-2 66720c59 (804 lines, sha1 53c7bfae85fc2a331ecffb2ba4e59e8c6c61908e): successor 41 wrote the report and Addendum 1,
+  successor 42 Addenda 2 to 4: report l. 1-284 (33ff0e98 2026-11-13T14:17:17Z), Addendum 1 l. 285-320 (da20a307 2026-11-13T14:40:07Z),
+  Addendum 2 l. 321-549 (f17a2708 2026-11-13T17:02:13Z), Addendum 3 l. 550-633 (e643672d 2026-11-13T17:27:09Z), Addendum 4 l. 634-731
+  (4d5b03f7 2026-11-14T14:06:39Z), Addendum 5 l. 732-804 (66720c59 2026-11-14T15:21:29Z). Its signature: «P-N5-EXP: SIGNED with fixes
+  entries 1-5.» (l. 548) (Addendum 2), with the L41 signature quoted above (l. 463), on the first referee's text «LEMMA′ and CAUSAL in entry
+  4 are REFEREE 36's text word for word: L41 is met.» (l. 632), and after fixes entries 6-8 «P-N5-EXP stays SIGNED, now with fixes entries
+  1-8 (the signature is about the packet and its fixes; L3-1 is a defect of the LINE's gloss, not of the rule, the theorem or any proof).»
+  (l. 654-655). REFEREE-2 Addendum 5 (successor 42, §A5.0): «The two wordings the author changed are right (§A5.1)» (l. 750) its final line:
+  «P-N5-EXP: SIGNED with fixes entries 1-11; line L-6 (sha1 1e0ff12d51da7a4ee1aad12ed0fd9119a097896b) SIGNED as the RESULTS line.» (l. 753)
+  Lane (claude/l-red-b): L-RED-B successor 5 (350d84eb packet FROZEN; 06d399c2 fixes entry 1), successor 6 (24f4d436 entries 2-5 and line
+  L-1; 0c8fdf9e entry 6), successor 7 (b1a93700 entry 7 and line L-2; 10dfedb6 entry 8 and line L-3; 35f14318 entry 9 and line L-4; abde9163
+  entry 10 and line L-5; 91d30d95 entry 11 and line L-6). CHECKER: C148, the token in the title.
 - INDEPENDENCE: each referee wrote its verdict without reading the other's. REFEREE: «Independence: REFEREE-2's reports and L-SI's box 108
   (an independent proof of L(G_k) = 2^k − 2) were NOT read before §0-§9 were committed.» (l. 6-7); stage 4 «NOT read: docs/referee-2/ (the
   strings entry 4 quotes from it were matched by script only)» (l. 499-500); stage 5a «Independence: docs/referee-2/ was NOT read. The 18
@@ -511,10 +516,9 @@ FLAGS FIRST (the builder's reading; nothing in the line or in any quoted text wa
   files for k = 3..13; the smallest has 175 vertices, 228 edges and 9 iterations); no single measured game exceeds n². GAPS G-N5-TIME is
   answered NO for N5 from S3 (through RESULTS R117 as landed, refereed-only): at landing its row takes this entry's UPDATE, its status
   becomes "closed" and it moves under the Closed table (Lead rulings G-U, G-S). No landed entry is changed: R117 and R124 are used as
-  landed. Open slots of this fill, each marked by its word above: REFEREE's stage 5b (ii), REFEREE-2's Addendum 5; and the checker token in
-  the title.
+  landed.
 
-Proposed GAPS G-N5-TIME UPDATE (append-only), to go AFTER the last UPDATE on the row G-N5-TIME (GAPS l. 11 at trunk 15171faa; its last
+Proposed GAPS G-N5-TIME UPDATE (append-only), to go AFTER the last UPDATE on the row G-N5-TIME (GAPS l. 11 at trunk 37009aba; its last
 UPDATE is R130's, «UPDATE 2026-11-13 10:06Z: RESULTS R130 (P-N5-WRAP; CHECKER C146 26e9d73c) [refereed-only] LANDED:» (l. 11)), as a pure
 insertion with one separating space before the row's closing pipe. BUILT FROM THE LINE L-6 by tools/upd.py (updlib.build, the landed
 procedure made generic: the same function rebuilds the landed UPDATEs of R128, R129, R130 byte for byte from their landed titles; four
@@ -530,8 +534,8 @@ gap's question is answered NO)»; land131.py therefore sets the status cell of t
 CHECKER commit of the PASS (C148), all filled at landing:
 UPDATE <DATE> <HH:MM>Z: RESULTS R131 (P-N5-EXP; CHECKER C148 <checker>) [refereed-only] LANDED: DEAD-END packet for the candidate N5 (SPEC S1-S5 with FIX 1-4, from its default start S3), CONDITIONAL until two referees sign, in three parts: (1) UNCONDITIONAL (premise: RESULTS R104's definitions of the genome, IDEAL-ACYC, the X-chain order, the IDEAL step and L(G) only; no theorem of R104 used): for every k ≥ 3 the genome G_k of rule R (levels 0..k; unit j, 1 ≤ j ≤ k − 1, is a block pair u_j, v_j with an observer pair Y_j = (y_j, ȳ_j) and, for 2 ≤ j ≤ k − 2 only, an end-follower e_j and a second observer pair Y′_j = (y′_j, ȳ′_j), so the units 1 and k − 1 have four movers and the others seven; outside the units, the level-0 pair u_0, v_0 and the wires wv_j, 1 ≤ j ≤ k − 2, and wu_j, 2 ≤ j ≤ k − 2; all parities even, β-ranks depth-major (a smaller Ξ-depth outranks a larger one), inside a Ξ-depth by the rule's local δ, the remaining ties (wire options only) by β-id; generator experiments/red-b/gk.py) is in IDEAL-ACYC with N = 9k − 16 movers, M = 18k − 32 options (every mover has two) and k + 1 levels, its IDEAL run has exactly L(G_k) = 2^k − 2 steps and stops «stuck», and in it every mover of unit j (1 ≤ j ≤ k − 1) changes its option exactly 2^(j−1) times, v_0 once, u_0 and the wires never (11·2^(k−2) − 9 option changes in all); so IDEAL-ACYC-POLY (named in RESULTS R104 and R117; in the words of R104's packet docs/red/P-N5-REALIZE.md: «there is a polynomial q such that L(G) ≤ q(N + M) for every G ∈ IDEAL-ACYC») is FALSE, already for genomes of degree 2 (N + M = 27k − 48) (Theorem EXP-IDEAL, PROVED lane; its RESPONSE LEMMA in the prefix form LEMMA′ of fixes entry 4, with CAUSAL and STABLE in step form); (2) PROVED-CONDITIONAL on RESULTS R117's Theorem REACH3 as landed (refereed-only; R117's standing premises, in the words of its title line: «with R104's premises as landed (1E-N3 = RESULTS R57 (b) in its two forms; RESULTS R24 (a) Lemma R and R24 (b)'s choice rule with RESULTS R103's bridge B and (R1) ruling; RESULTS R36 (c) Lemma P1 on the dual game) and RESULTS R15 (d) for termination only»): the N5 run of Γ3(G_k) from S3 (n = 135k − 230 vertices, m = 176k − 300 edges) has one FL run of length exactly 2^k − 2 and makes at least 2^k − 1 iterations, so no polynomial in n or in n + m = 311k − 530 bounds the number of iterations of N5 from S3; hence, through R117, N5 (SPEC S1-S5, default start S3) does not run in polynomial time, cannot pass gauntlet step 4 (TARGET.md §5), is a DEAD END as an M4 candidate, and G-N5-TIME is answered NO for N5 from S3 (Corollary EXP-N5); and, PROVED-CONDITIONAL on RESULTS R124's Corollary EXACT-L and Theorem ENDGAME-3-N5 as landed (with R124's premises as landed, all under the standing SPEC premise 1E-N3, among them RESULTS R117 (f) for EXACT-L, SPEC's S1 tie-breaks through REACH3's [RULE] choice, and RESULTS R15 (c) for Lemma TERM-XI): N5 from S3 on Γ3(G_k) makes exactly 2^k + 1 iterations, with one fallback, at iteration 2^k − 1 (Corollary EXP-N5′); obstruction RIPPLE (S4a's root-first key rule refuses an improving switch until the key order allows it, and on Γ3(G_k) this makes unit j + 1 respond twice in every response of unit j); (3) DATA (measured; every measured run is below n²: the largest, k = 13 (fixes entry 6, one engine), makes 8,193 iterations on n = 1,525 vertices, and 2^k − 1 > n² first at k = 23, n = 2,875, > n³ at k = 37, > n⁴ at k = 51, by arithmetic, not run; so the dead end rests on the proof of (1) and (2) and not on the DATA) (unit: one genome G_k, resp. one game Γ3(G_k); every counter named is a must-0 counter and is 0, every control fires): R104's eight membership clauses on G_3 … G_14 (b6member.py, member.out: viol 0); the IDEAL run equal state by state on three simulators, T = 2^k − 2, for k = 3 … 14 (b6sim.py, sim.out: ideq 0); the proof's facts and schedule against the run at every state and step for k = 3 … 14 (b6lemma.py, lemma.out: kfact, vfact, sched, tlen, rest, swk 0), and LEMMA′, CAUSAL and STABLE of fixes entry 4 at the 16,368 response windows of the runs for k = 3 … 14, at every triple (j, a, t) for k = 3 … 12, at every state of G_3 and G_4, and off the run (b6prefix.py, prefix_*.out: h1, h2, psched, aviol, pviol, dviol, loc, stviol, c0e0 0; the frozen wording of the lemma, as a control, fails at exactly k − 1 triples per k); N5 itself on Γ3(G_k), two engines and two Γ3 builders, for k = 3 … 12 (b6n5.py, n5.out and n5_k12.out: 2^k + 1 iterations, one fallback at iteration 2^k − 1, mover states equal to the model's; mism, wrong, wrong2, nonmover, engdiff, gdiff 0; winners equal to Zielonka's), and at k = 13 on one engine, the two Γ3 builders agreeing (fixes entry 6: b6n5ck.py, n5_k13.out: 8,193 = 2^13 + 1 iterations on n = 1,525 vertices, one fallback at iteration 8,191, mover states equal to the model's; mism, wrong, nonmover, gdiff 0; winners equal to Zielonka's; game experiments/red-b/data/b6b/pg/G_13_g3.pg), all files in experiments/red-b/data/b6b/out/; frozen instances Γ3(G_k) = experiments/red-b/data/b6b/pg/G_k_g3.pg, k = 3, …, 11 (175 to 1,255 vertices, 9 to 2,049 iterations), genomes of record experiments/red-b/data/b6b/G/G_k.json, k = 3, …, 14, at claude/l-red-b 350d84eb; independent replays, their counters in their own pinned outputs, cited, not re-run: L-COMP 22 BOX 48 (claude/l-comp dc6d831f: own generator, the model T = 2^k − 2 for k = 3 … 20, n5b on its own Γ3 builder 2^k + 1 iterations for k = 3 … 12, winners verified by Oink --tl and --zlk), L-RED 70 R245 (claude/l-red c7ed9b8b: own generator, the model for k = 3 … 12, its engine n5s237 for k = 3 … 8, verdict SURVIVES), REFEREE 35's pre-check (claude/referee 06ac891d: own simulator k = 3 … 15, own Γ3 builder and engine k = 3 … 12), REFEREE 36's first review (claude/referee c881709b: own generator and model k = 3 … 14, N5 on that lane's builder and engine for k = 3 … 9, games identical to this lane's files), REFEREE-2 41 (claude/referee-2 33ff0e98: own generator and model k = 3 … 16, own engine k = 3 … 11 with four solvers for the winners); NOT claimed: anything about N5 from other start pairs, about other S4a tie rules (DATA: N5′-xi makes 7 iterations on Γ3(G_4) and Γ3(G_6)) or about Howard's rule (DATA: at most 4 steps on the model), about any other candidate, or about parity games in general; N5's output on these games is correct (RESULTS R57 (b), Lemma OUT-G, under 1E-N3; DATA for k ≤ 13, k = 13 on one engine: winners = Zielonka's); TARGET.md §2 (M4) stays OPEN; scope tail (Lead reading L41): STABLE's step form, CAUSAL and LEMMA′ of fixes entry 4 (4.2, 4.3, 4.4) are referee-originated, stated by REFEREE 36, which also proved CAUSAL and LEMMA′, the proof of STABLE being the frozen one read in step form (claude/referee c881709b, docs/referee/R-P-N5-EXP.md §5.3; its verdict on the RESPONSE LEMMA: «NOT SIGNED AS WRITTEN; SIGNED in the form LEMMA′ of §5.3 below»; after fixes entry 4, its stage 4, claude/referee 78515253, the same file §12: «RESPONSE LEMMA SIGNED as restated in fixes entry 4 (= LEMMA′ of §5.3 with CAUSAL and STABLE in step form).»), and are signed independently by REFEREE-2 42, in the form its signature sentence gives (claude/referee-2 f17a2708, docs/referee-2/R2-P-N5-EXP.md, Addendum 2 §A2.3: «REFEREE-2 signs 4.1 (S1)-(S4), 4.2 STABLE, 4.3 CAUSAL, 4.4 LEMMA′ with their proofs (4.2, 4.3, 4.5) and 4.6, as printed in docs/red-b/P-N5-EXP-fixes.md at claude/l-red-b 24f4d436 (sha1 9dc9179f…), (R3)'s range read as t − 1 ≤ τ < last (F-1).») (P-N5-EXP, docs/red-b/P-N5-EXP.md, with fixes entries 1-11, docs/red-b/P-N5-EXP-fixes.md; L-RED-B successors 5-7). G-N5-TIME is answered NO for N5 from S3 (through RESULTS R117 as landed, refereed-only).
 
-Addendum (second fill) (built by script; for the Lead and CHECKER; does not land). The checks ran on the pass-1 draft
-  docs/agents/tools/r131/out/draft.p1.md (sha1 bdd8561a34be683fad84708ec6bf5d9c34021cea, 531 lines), which equals this file without this Addendum
+Addendum (third fill) (built by script; for the Lead and CHECKER; does not land). The checks ran on the pass-1 draft
+  docs/agents/tools/r131/out/draft.p1.md (sha1 72d8337a70cb31a293b2a2d6ad5f05b1f6bf931b, 535 lines), which equals this file without this Addendum
   and its empty line (asserted by tools/mkadd.py). Outputs verbatim below, each line tagged with its file: [fetch] the record of fetch.sh (date
   -u, fetched heads, git ls-remote lines); [lane] tools/lanecheck.sh: the lane's check.sh in a git archive, with a negative control; [fill]
   fill131.py; [upd] tools/upd.py: the UPDATE and its controls; [data] tools/data.py: the DATA numbers from the pinned outputs; [prem]
@@ -541,33 +545,33 @@ Addendum (second fill) (built by script; for the Lead and CHECKER; does not land
   bar and a guillemet as a single angle mark; lines are wrapped at 150 columns (continuation lines are indented under their tag). After this file
   was written, tools/shape.py, tools/lp.py, tools/sweep.py and tools/landtest.py ran again on it (out/post_*.out; results in REPORT.txt). Not run:
   scripts/verify.sh, scripts/push.sh, the referees' own replays, Oink, Lean, any N5 engine.
-  [fetch] date Sat Nov 14 15:24:36 UTC 2026
-  [fetch] fetch claude/l-red-b rc 0 head 91d30d95a3875950b5290b8fc63f1e2c3ad05238
-  [fetch] fetch claude/referee rc 0 head 38d1166805fefea1e837855879ce2e44a935f61f
-  [fetch] fetch claude/referee-2 rc 0 head 4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21
-  [fetch] fetch claude/l-si rc 0 head 4c1eaaf40531ea20cc61f246e9f4c232176316a3
-  [fetch] fetch claude/l-comp rc 0 head dd9ba4acbbe04c9793ce22c5735f85c2bd363b5d
-  [fetch] fetch claude/l-red rc 0 head 821d63e335717fca48df35e1517fbe1416b6ba86
+  [fetch] date Sat Nov 14 19:05:23 UTC 2026
+  [fetch] fetch claude/l-red-b rc 0 head 18509d949ef8ac09fde743c886720a5c64c9f0a5
+  [fetch] fetch claude/referee rc 0 head d05ea12e28562987381b2e18fa3a1a71c7417a05
+  [fetch] fetch claude/referee-2 rc 0 head 66720c598722b6216451b77938547486cef15796
+  [fetch] fetch claude/l-si rc 0 head c236bca94942e4fca7dd71729f0452e876030380
+  [fetch] fetch claude/l-comp rc 0 head 05c9a5a5196349ef4c34a93ff3c95144eb135645
+  [fetch] fetch claude/l-red rc 0 head f0ad3cca4e3085b6973a91b1aaeba78be340662c
   [fetch] fetch claude/checker rc 0 head 628b1e2cee43b6746a9a31fd233ebee5ee0ebb32
-  [fetch] fetch claude/vibrant-johnson-nxvvxo rc 0 head 15171faa822983e7c6118bb3c4be25b47469a387
-  [fetch] local HEAD 15171faa822983e7c6118bb3c4be25b47469a387 branch claude/vibrant-johnson-nxvvxo
+  [fetch] fetch claude/vibrant-johnson-nxvvxo rc 0 head 37009aba5e898d4a9c54fa9af22d28c4a4a50e3c
+  [fetch] local HEAD 37009aba5e898d4a9c54fa9af22d28c4a4a50e3c branch claude/vibrant-johnson-nxvvxo
   [fetch] ls-remote rc 0
-  [fetch] ls-remote 91d30d95a3875950b5290b8fc63f1e2c3ad05238 refs/heads/claude/l-red-b
-  [fetch] ls-remote 38d1166805fefea1e837855879ce2e44a935f61f refs/heads/claude/referee
-  [fetch] ls-remote 4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21 refs/heads/claude/referee-2
-  [fetch] ls-remote 4c1eaaf40531ea20cc61f246e9f4c232176316a3 refs/heads/claude/l-si
-  [fetch] ls-remote dd9ba4acbbe04c9793ce22c5735f85c2bd363b5d refs/heads/claude/l-comp
-  [fetch] ls-remote 821d63e335717fca48df35e1517fbe1416b6ba86 refs/heads/claude/l-red
+  [fetch] ls-remote 18509d949ef8ac09fde743c886720a5c64c9f0a5 refs/heads/claude/l-red-b
+  [fetch] ls-remote d05ea12e28562987381b2e18fa3a1a71c7417a05 refs/heads/claude/referee
+  [fetch] ls-remote 66720c598722b6216451b77938547486cef15796 refs/heads/claude/referee-2
+  [fetch] ls-remote c236bca94942e4fca7dd71729f0452e876030380 refs/heads/claude/l-si
+  [fetch] ls-remote 05c9a5a5196349ef4c34a93ff3c95144eb135645 refs/heads/claude/l-comp
+  [fetch] ls-remote f0ad3cca4e3085b6973a91b1aaeba78be340662c refs/heads/claude/l-red
   [fetch] ls-remote 628b1e2cee43b6746a9a31fd233ebee5ee0ebb32 refs/heads/claude/checker
-  [fetch] ls-remote 15171faa822983e7c6118bb3c4be25b47469a387 refs/heads/claude/vibrant-johnson-nxvvxo
+  [fetch] ls-remote 37009aba5e898d4a9c54fa9af22d28c4a4a50e3c refs/heads/claude/vibrant-johnson-nxvvxo
   [fetch] rc 0
-  [lane] archive of claude/l-red-b 91d30d95: experiments/red-b, docs/red-b, experiments/new/box203/inst: 631 files
+  [lane] archive of claude/l-red-b 18509d94: experiments/red-b, docs/red-b, experiments/new/box203/inst: 688 files
   [lane] check.sh: rc 0 ; last line: red-b check PASS
   [lane] negative control (one byte appended to data/b6b/out/n5_k13.out): rc 1 ; mismatch line printed 1 ; last line: red-b check FAILED
   [lane] restored: rc 0 ; last line: red-b check PASS
   [lane] lanecheck: PASS
-  [fill] fill131: pass-1 draft 532 lines; block 470 lines (sha1 26433f850182a4f6812f4644ff64186a1fcd5ab8); UPDATE sha1
-  [fill]     eea7651c11064d496181e10bac1e7ddaebafa2d3; quotations 206, located passages 251, line-internal 18; open-slot tokens in the block 3
+  [fill] fill131: pass-1 draft 536 lines; block 474 lines (sha1 e2c76548a3a78fe1f74f4e6fbb6de0c030c10255); UPDATE sha1
+  [fill]     eea7651c11064d496181e10bac1e7ddaebafa2d3; quotations 208, located passages 254, line-internal 18; open-slot tokens in the block 1
   [upd] UPDATE of R131 built from line L-6 (docs/red-b/P-N5-EXP-line-L6.txt @ 91d30d95): 7715 characters, 7902 bytes, sha1
   [upd]     eea7651c11064d496181e10bac1e7ddaebafa2d3 (without newline, unfilled)
   [upd]   pipes 0 ; parentheses 84 / 84 ; fill tokens <DATE> 1 <HH:MM> 1 <checker> 1
@@ -631,7 +635,7 @@ Addendum (second fill) (built by script; for the Lead and CHECKER; does not land
   [data] OK   genomes: G_3..G_14 (JSON): N = 9k - 16, deg 2, levels 0..k, all parities 0
   [data] negative control (its 8193 read as 8194 in n5_k13.out): failing checks ['n5_k13.out', 'pins']: fires True
   [data] data: 34 checks, 0 failed; PASS
-  [prem] RESULTS at trunk 15171faa: 17367 lines, 130 entry headings, the last R130 at l. 16525
+  [prem] RESULTS at trunk 37009aba: 17367 lines, 130 entry headings, the last R130 at l. 16525
   [prem] OK   R104 [refereed-only] heading l. 9864, entry l. 9864-10154; item 'definitions only': its words 'IDEAL' in the entry: True
   [prem] OK   R117 [refereed-only] heading l. 13362, entry l. 13362-13606; item 'Theorem REACH3': its words 'Theorem REACH3' in the entry: True
   [prem] OK   R57 [refereed-only] heading l. 2893, entry l. 2893-2958; item '(b)': its words '(b)' in the entry: True
@@ -657,7 +661,7 @@ Addendum (second fill) (built by script; for the Lead and CHECKER; does not land
   [prem] OK   R124's title line has 'premise RESULTS R117 (f)': True
   [prem] OK   R124's title line has 'makes exactly L(G) + 3 iterations': True
   [prem] prem: PASS
-  [items] items: 51 rows in the Note's table, 48 distinct labels (P-1, M-1 and O-1 are labels of two reports each)
+  [items] items: 54 rows in the Note's table, 51 distinct labels (P-1, M-1 and O-1 are labels of two reports each)
   [items]   REFEREE 36, stage 1 (the table of its §9)
   [items]     E-1     raised l. 377      closing texts 1; confirmation quoted
   [items]     E-2     raised l. 378      closing texts 1; confirmation quoted
@@ -683,6 +687,9 @@ Addendum (second fill) (built by script; for the Lead and CHECKER; does not land
   [items]     L-n3    raised l. 996      closing texts 2; confirmation REFEREE's stage 5b (ii) (open slot)
   [items]     N-6a    raised l. 997      closing texts 0; confirmation quoted
   [items]     N-6b    raised l. 999      closing texts 0; confirmation none quoted
+  [items]     N-7a    raised l. 1296     closing texts 0; confirmation none quoted
+  [items]     N-7b    raised l. 1300     closing texts 0; confirmation none quoted
+  [items]     N-7c    raised l. 1303     closing texts 0; confirmation none quoted
   [items]   REFEREE 35's pre-check (its §7; not a signature)
   [items]     P-1     raised l. 322      closing texts 1; confirmation none quoted
   [items]     P-2     raised l. 327      closing texts 1; confirmation none quoted
@@ -716,13 +723,13 @@ Addendum (second fill) (built by script; for the Lead and CHECKER; does not land
   [items]     L3-3    raised l. 668      closing texts 2; confirmation REFEREE-2's Addendum 5 (open slot)
   [items]     L3-4    raised l. 675      closing texts 2; confirmation REFEREE-2's Addendum 5 (open slot)
   [items]     L3-5    raised l. 679      closing texts 2; confirmation REFEREE-2's Addendum 5 (open slot)
-  [items] scan REFEREE's report (docs/referee/R-P-N5-EXP.md @ 38d11668, 1011 lines): 41 labels; in the table 35; section numbers 1; names of lines 4;
+  [items] scan REFEREE's report (docs/referee/R-P-N5-EXP.md @ d05ea12e, 1326 lines): 48 labels; in the table 40; section numbers 1; names of lines 6;
   [items]     not items of this packet 1 (L-d); UNLISTED 0 []
-  [items] scan REFEREE-2's report (docs/referee-2/R2-P-N5-EXP.md @ 4d5b03f7, 731 lines): 55 labels; in the table 32; section numbers 18; names of
-  [items]     lines 3; not items of this packet 2 (B-7 S-1); UNLISTED 0 []
-  [items] scan the pre-check (docs/referee/R-GK-precheck.md @ 38d11668, 371 lines): 11 labels; in the table 7; section numbers 0; names of lines 0;
+  [items] scan REFEREE-2's report (docs/referee-2/R2-P-N5-EXP.md @ 66720c59, 804 lines): 68 labels; in the table 37; section numbers 23; names of
+  [items]     lines 6; not items of this packet 2 (B-7 S-1); UNLISTED 0 []
+  [items] scan the pre-check (docs/referee/R-GK-precheck.md @ d05ea12e, 371 lines): 11 labels; in the table 7; section numbers 0; names of lines 0;
   [items]     not items of this packet 4 (N-3 R-1 R-2 R-3); UNLISTED 0 []
-  [items] scan REFEREE-2's review of box 108 (docs/referee-2/R2-box108.md @ 4d5b03f7, 145 lines): 4 labels; in the table 1; section numbers 0; names
+  [items] scan REFEREE-2's review of box 108 (docs/referee-2/R2-box108.md @ 66720c59, 145 lines): 4 labels; in the table 1; section numbers 0; names
   [items]     of lines 0; not items of this packet 3 (S-1 S-2 S-3); UNLISTED 0 []
   [items]   not an item: B-7: an item of REFEREE-2's pre-read of another packet (R2-key-preread)
   [items]   not an item: L-d: the Lead's line item (k = 13 into part (3)); in the line's history
@@ -737,7 +744,7 @@ Addendum (second fill) (built by script; for the Lead and CHECKER; does not land
   [items]   not an item: S-1: a wording item on L-SI's box 108 (R2-box108.md), not part of this entry
   [items]   not an item: S-2: as S-1
   [items]   not an item: S-3: as S-1
-  [items] items without a closing text in the fixes file or a line replacement (flags, not guesses): L-n2, N-6a, N-6b, A2.1
+  [items] items without a closing text in the fixes file or a line replacement (flags, not guesses): L-n2, N-6a, N-6b, N-7a, N-7b, N-7c, A2.1
   [items] items: PASS
   [shape] OK   title = heading + the line (git bytes, 7755 bytes, sha1 1e0ff12d51da7a4ee1aad12ed0fd9119a097896b) + the checker token: line L-6 of
   [shape]     docs/red-b/P-N5-EXP-line-L6.txt @ 91d30d95
@@ -745,59 +752,62 @@ Addendum (second fill) (built by script; for the Lead and CHECKER; does not land
   [shape] OK   title: parentheses 83 / 83, square brackets 2 / 2, guillemets 6 / 6
   [shape] OK   title passes the label rule of scripts/check_docs.py
   [shape] OK   negative control: the title without its label fails that rule
-  [shape] OK   block: 470 lines (title + 469), no empty line, every line a bullet or a continuation, widest 140
+  [shape] OK   block: 474 lines (title + 473), no empty line, every line a bullet or a continuation, widest 140
   [shape]      bullets: Object; Fixes; The RESULTS line is L-6, 1e0; Claims signed; Setting and scope, as both r; Premise; L41 and L43. The packet's
   [shape]     pr; Not signed; Referee strengthening and su; Honest limits; Data; DATA counters for the replay; Note; Signatures; INDEPENDENCE;
   [shape]     TARGET.md diff; Status
   [shape] OK   block: pipe characters 0, tabs 0
-  [shape] OK   open-slot tokens: block 3 (the title's checker token 1, other 2); whole draft 5
-  [shape]      landable by this count: no (open slots)
+  [shape] OK   open-slot tokens: block 1 (the title's checker token 1, other 0); whole draft 1
+  [shape]      landable by this count: yes
   [shape] OK   UPDATE line = updlib.r131_update(the line): 7902 bytes, sha1 eea7651c11064d496181e10bac1e7ddaebafa2d3
   [shape] OK   UPDATE: pipes 0, parentheses 84 / 84, fill tokens 1 1 1, ends with the ruled sentence
-  [shape] OK   recorded hashes (out/hashes.json): block sha1 26433f850182a4f6812f4644ff64186a1fcd5ab8 (470 lines), UPDATE sha1
+  [shape] OK   recorded hashes (out/hashes.json): block sha1 e2c76548a3a78fe1f74f4e6fbb6de0c030c10255 (474 lines), UPDATE sha1
   [shape]     eea7651c11064d496181e10bac1e7ddaebafa2d3
   [shape] OK   first line starts '# Draft RESULTS R131 ' and is not marked landed
-  [shape] OK   layout: block at lines 46-515, empty line 516, proposal 517-530, UPDATE line 531
+  [shape] OK   layout: block at lines 46-519, empty line 520, proposal 521-534, UPDATE line 535
   [shape] shape: PASS
-  [lp] lp (1) ledger: 475 entries (quotations with lines 161, quotations without 45, located passages 251, quotations inside the line 18); recorded
+  [lp] lp (1) ledger: 480 entries (quotations with lines 163, quotations without 45, located passages 254, quotations inside the line 18); recorded
   [lp]     line range not among the matches of the second search: 0
-  [lp]   15171faa CLAUDE.md 1
-  [lp]   15171faa TARGET.md 3
-  [lp]   15171faa docs/DECISIONS.md 2
-  [lp]   15171faa docs/GAPS.md 4
-  [lp]   15171faa docs/RESULTS.md 10
-  [lp]   15171faa docs/agents/LEAD-STATE.md 3
-  [lp]   15171faa docs/red/P-N5-REALIZE.md 4
+  [lp]   18509d94 docs/red-b/P-N5-EXP-fixes.md 96
+  [lp]   18509d94 experiments/red-b/check.sh 3
   [lp]   350d84eb docs/red-b/P-N5-EXP.md 9
-  [lp]   38d11668 docs/referee/R-GK-precheck.md 9
-  [lp]   38d11668 docs/referee/R-P-N5-EXP.md 168
-  [lp]   4d5b03f7 docs/referee-2/R2-P-N5-EXP.md 135
-  [lp]   4d5b03f7 docs/referee-2/R2-box108.md 2
+  [lp]   37009aba CLAUDE.md 1
+  [lp]   37009aba TARGET.md 3
+  [lp]   37009aba docs/DECISIONS.md 2
+  [lp]   37009aba docs/GAPS.md 4
+  [lp]   37009aba docs/RESULTS.md 10
+  [lp]   37009aba docs/agents/LEAD-STATE.md 3
+  [lp]   37009aba docs/red/P-N5-REALIZE.md 4
+  [lp]   66720c59 docs/referee-2/R2-P-N5-EXP.md 136
+  [lp]   66720c59 docs/referee-2/R2-box108.md 2
   [lp]   8c062914 docs/si/box108-gk-proof.md 2
-  [lp]   91d30d95 docs/red-b/P-N5-EXP-fixes.md 96
   [lp]   91d30d95 docs/red-b/P-N5-EXP-line-L6.txt 18
-  [lp]   91d30d95 experiments/red-b/check.sh 3
   [lp]   c7ed9b8b docs/red/R245-kill-Gk.md 2
+  [lp]   d05ea12e docs/referee/R-GK-precheck.md 9
+  [lp]   d05ea12e docs/referee/R-P-N5-EXP.md 172
   [lp]   dc6d831f experiments/comp/box48/README.md 4
-  [lp] lp (2) draft: 206 quotations outside the title and UPDATE lines, 12 in them; in the draft but not in the ledger 0; in the ledger but not in the
+  [lp] lp (2) draft: 208 quotations outside the title and UPDATE lines, 12 in them; in the draft but not in the ledger 0; in the ledger but not in the
   [lp]      draft 0; 'q' entries not followed by their line numbers 0; title / UPDATE quotations not in the line 0
   [lp] negative control 1 (one ledger entry moved by one line): caught True
   [lp] negative control 2 (one letter of one quotation changed in a copy of the draft): caught True
   [lp] lp: PASS
   [sweep] sweep header: 2 quotations, 0 not found; control (one letter changed): 2 of 2 not found: ok
   [sweep] sweep title line: 6 quotations, 0 not found; control (one letter changed): 6 of 6 not found: ok
-  [sweep] sweep entry block below the title: 196 quotations, 0 not found; control (one letter changed): 196 of 196 not found: ok
+  [sweep] sweep entry block below the title: 198 quotations, 0 not found; control (one letter changed): 198 of 198 not found: ok
   [sweep] sweep proposal and UPDATE: 14 quotations, 0 not found; control (one letter changed): 14 of 14 not found: ok
   [sweep] sweep Addendum: 0 quotations, 0 not found; control (one letter changed): 0 of 0 not found: ok
-  [sweep] sweep whole file: 218 quotations, 0 not found; control (one letter changed): 218 of 218 not found: ok
+  [sweep] sweep whole file: 220 quotations, 0 not found; control (one letter changed): 220 of 220 not found: ok
   [sweep] sweep: sources 19 (PKT FIX LINE REF1 PRE REF2 R2B B108 BOX48 R245 RES GAPS TARGET CLAUDE DEC LEAD R104P R130D CHK)
   [sweep] sweep: PASS
-  [land] T1 the draft as it is (4 open-slot tokens besides the checker token; stand-in line False): rc 2, refused: as expected
-  [land]    T1 land131: REFUSED: the draft holds the open-slot word 5 times; only the title's checker token may carry it (other lines: [25, 26, 459,
-  [land]     468])
-  [land] T2 satisfied copy (4 tokens replaced; hashes recomputed for the copy): rc 0
+  [land] T1 the draft as it is (0 open-slot tokens besides the checker token; stand-in line False): rc 0, ran: as expected
+  [land]    T1 land131: DRYRUN into dry1, stamp 2099-01-13 00:00Z, checker 5555555
+  [land]    T1   RESULTS: 17367 -> 17842 lines (+475 = block 474 + 1 empty); R131 at l. 16725-17198, the Erratum line moves l. 16725 -> l. 17200;
+  [land]     pipes 1483 -> 1483 (title 0)
+  [land]    T1   GAPS: 23 -> 23 lines; row G-N5-TIME l. 11 -> l. 23 (status open -> closed, under the closed table); row pipes 76 -> 76; file pipes
+  [land]     198 -> 198; UPDATE 7902 bytes
+  [land] T2 satisfied copy (0 tokens replaced; hashes recomputed for the copy): rc 0
   [land]    T2 land131: DRYRUN into dry2, stamp 2099-01-13 00:00Z, checker 5555555
-  [land]    T2   RESULTS: 17367 -> 17838 lines (+471 = block 470 + 1 empty); R131 at l. 16725-17194, the Erratum line moves l. 16725 -> l. 17196;
+  [land]    T2   RESULTS: 17367 -> 17842 lines (+475 = block 474 + 1 empty); R131 at l. 16725-17198, the Erratum line moves l. 16725 -> l. 17200;
   [land]     pipes 1483 -> 1483 (title 0)
   [land]    T2   GAPS: 23 -> 23 lines; row G-N5-TIME l. 11 -> l. 23 (status open -> closed, under the closed table); row pipes 76 -> 76; file pipes
   [land]     198 -> 198; UPDATE 7902 bytes
@@ -807,10 +817,10 @@ Addendum (second fill) (built by script; for the Lead and CHECKER; does not land
   [land]    T2   NOW: R17-R130 -> R17-R131 (1 place)
   [land]    T2   scripts/check_docs.py on the copies: rc 0
   [land]    T2 land131: DRYRUN done (nothing in the repository was written)
-  [land]    T2 sha1 of the results: RESULTS 12c6d61890663fe7beb9efba4e58993a443b8b0b GAPS abeff430f83ac35fd0aa92f3ec72d09b33f6aa10 NOW
+  [land]    T2 sha1 of the results: RESULTS 473a04454748c361bd6021db33cc12d70bff94be GAPS abeff430f83ac35fd0aa92f3ec72d09b33f6aa10 NOW
   [land]     ad30d9d4b40a52310c50872174e8b9d2426db016
-  [land]    T2 OK   RESULTS: one R131 heading at l. 16725, block l. 16725-17194, empty l. 17195, Erratum line l. 17196
-  [land]    T2 OK   RESULTS: pure insertion (the 16724 lines before and the 644 lines after are unchanged), 17367 -> 17838 lines
+  [land]    T2 OK   RESULTS: one R131 heading at l. 16725, block l. 16725-17198, empty l. 17199, Erratum line l. 17200
+  [land]    T2 OK   RESULTS: pure insertion (the 16724 lines before and the 644 lines after are unchanged), 17367 -> 17842 lines
   [land]    T2 OK   RESULTS: the inserted block is the copy's block with the checker token filled (checker 5555555) once, no open-slot word, no fill
   [land]     token)
   [land]    T2 OK   RESULTS: headings 131, the last two R130 R131; pipes 1483 -> 1483
@@ -824,8 +834,8 @@ Addendum (second fill) (built by script; for the Lead and CHECKER; does not land
   [land]    T2 OK   scripts/check_docs.py on the copies: rc 0
   [land]    T2 OK   negative control (the landed title without its label): check_docs rc 1, message names the entry True
   [land] T3 the copy with one letter of the block changed, T2's hashes: rc 2: land131: REFUSED: the draft's entry block (sha1
-  [land]     d2d3edade0ce4d0222660e38e7615dcfe857a4dd, 470 lines) is not the block build.sh recorded (sha1 0d1b57fa9031057ed6b946527f1933a0e2def152,
-  [land]     470 lines)
+  [land]     af49bf206b975175b55d84db965d06a7c03d2cb9, 474 lines) is not the block build.sh recorded (sha1 e2c76548a3a78fe1f74f4e6fbb6de0c030c10255,
+  [land]     474 lines)
   [land] T4 the copy with one more open-slot word in its header: rc 2: land131: REFUSED: the draft holds the open-slot word 2 times; only the title's
   [land]     checker token may carry it (other lines: [2])
   [land] landtest: PASS

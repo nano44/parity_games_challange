@@ -2,7 +2,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "claude/l-red-b 350d84eb, docs/red-b/P-N5-EXP.md sha1 c0449b17193f19619f33b366096762dfde27d542, 569 lines",
   "first": 1,
@@ -13,7 +13,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "docs/red-b/P-N5-EXP.md, sha1 c0449b17193f19619f33b366096762dfde27d542, 569 lines, 57,511 B",
   "first": 3,
@@ -57,7 +57,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "generator experiments/red-b/gk.py, sha1 5222f555f9572e5c92119a2bc1e16d02008a96c5 (192 lines, read in full)",
   "first": 4,
@@ -68,7 +68,7 @@
  {
   "form": "q",
   "key": "GAPS",
-  "commit": "15171faa822983e7c6118bb3c4be25b47469a387",
+  "commit": "37009aba5e898d4a9c54fa9af22d28c4a4a50e3c",
   "path": "docs/GAPS.md",
   "text": "N5 SSI-GLOBAL makes polynomially many iterations (gauntlet step 4, running time)",
   "first": 11,
@@ -79,7 +79,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "append-only; the packet docs/red-b/P-N5-EXP.md is never edited after its freeze commit 350d84eb",
   "first": 1,
@@ -90,7 +90,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "extra DATA, no change to any statement, proof or hypothesis",
   "first": 5,
@@ -101,7 +101,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "What changes: the STATEMENTS of the RESPONSE LEMMA and of STABLE are replaced by the forms of entry 4 (the mathematics and every number stay); the LABELS of Corollary EXP-N5 and of the dead-end paragraph are fixed by entry 2; entry 3 adds a corollary; entry 5 is wording and records. Theorem EXP-IDEAL (a)-(c) is unchanged.",
   "first": 130,
@@ -112,7 +112,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "Let IDEAL-ACYC-POLY mean: there is a polynomial q such that L(G) ≤ q(N + M) for every G ∈ IDEAL-ACYC.",
   "first": 181,
@@ -123,7 +123,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "PROVED-CONDITIONAL on RESULTS R117's Theorem REACH3 AS LANDED [refereed-only].",
   "first": 190,
@@ -134,7 +134,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "it inherits R117's standing premises and adds none",
   "first": 191,
@@ -145,7 +145,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "under R117's Theorem REACH3 as landed, N5 (SPEC S1-S5) from its default start S3 makes at least 2^k − 1 iterations on Γ3(G_k), a game with n = 135k − 230 vertices and n + m = 311k − 530 vertices and edges; so N5 from S3 does not run in polynomial time, cannot pass gauntlet step 4, and G-N5-TIME is answered NO for N5 from S3.",
   "first": 211,
@@ -156,7 +156,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "So no measured run lies beyond an explicit polynomial bound of degree 2 or more, and the kill rests on the PROOF: (a) with R117 (and R124 for the exact count, entry 3).",
   "first": 221,
@@ -167,7 +167,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "For every k ≥ 3, N5 (SPEC S1-S5 with its FIX 1-4 tie-breaks) from S3 on Γ3(G_k) makes EXACTLY L(G_k) + 3 = 2^k + 1 iterations, with exactly one fallback, at iteration 2^k − 1.",
   "first": 256,
@@ -178,7 +178,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "The frozen Corollary EXP-N5 (at least 2^k − 1 iterations, by R117 alone) stays as frozen and is all the dead end needs.",
   "first": 273,
@@ -189,7 +189,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "The frozen STATEMENT of the RESPONSE LEMMA (l. 192-204) is REPLACED by 4.4 and the frozen statement of STABLE (l. 258) by 4.2; the frozen PROOF text (l. 205-257, 258-262) stays and is read as 4.5 says; Theorem EXP-IDEAL, its proof (§7, read as 4.6) and every other statement are unchanged.",
   "first": 314,
@@ -200,7 +200,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "It does not write a third form: 4.3 and 4.4 ADOPT REFEREE 36's two statements word for word, 4.4 shows that REFEREE-2's PREFIX FORM is the same statement, and 4.5 gives the proof in the order both referees give.",
   "first": 318,
@@ -211,7 +211,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "No statement changes. Each item: the referee's words, then the reading that completes or replaces the frozen words.",
   "first": 650,
@@ -222,7 +222,7 @@
  {
   "form": "qn",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "step τ",
   "first": 293,
@@ -233,7 +233,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "N5 itself at k = 13 on one engine — extra DATA, no change to any statement, proof or hypothesis",
   "first": 831,
@@ -244,7 +244,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "two readings of entry 4, one of entry 5, the runner run_b6fix.sh repaired, one label, line L-2; no statement, proof, hypothesis or number changes",
   "first": 883,
@@ -255,7 +255,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "Accepted. Neither wording names the lower end of the range. Clause (R3) of 4.4 is to be READ, there and wherever it is cited:",
   "first": 935,
@@ -266,7 +266,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "(R3) For T = last: if j ≥ 2, then s_τ(E(j)) = a for every τ with t − 1 ≤ τ < last, and E(j) moves to c at step last",
   "first": 937,
@@ -277,7 +277,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "READ the parenthesis as: (table: every Ξ-target is a u, v, y, ȳ, y′, ȳ′ or X).",
   "first": 1015,
@@ -288,7 +288,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "every failure is counted, the last line ends «failures N», and the runner exits 1 if N > 0",
   "first": 1059,
@@ -299,7 +299,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "b6fixtest failed 0",
   "first": 1089,
@@ -310,7 +310,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "The lines L-1 and L-2 carry (i) only; neither names QUIET-KEY-1P, SW-POLY or P-N5-KEY1P.",
   "first": 1112,
@@ -321,7 +321,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "a record of the line only, no statement, proof, hypothesis or number changes",
   "first": 1149,
@@ -332,7 +332,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "the label of Corollary EXP-N5′ names both statements of R124 (the Lead's item N-5e), the notes N-5a to N-5d recorded, line L-4; no statement, proof, hypothesis or number changes",
   "first": 1182,
@@ -343,7 +343,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "READ the label of Corollary EXP-N5′, in entry 3 and wherever it is cited, as: PROVED-CONDITIONAL on RESULTS R124's Corollary EXACT-L and Theorem ENDGAME-3-N5 AS LANDED [refereed-only]",
   "first": 1206,
@@ -354,7 +354,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "a failing clause of the LINE (in L-1 to L-4 alike) — the line's gloss of rule R's rank clause dropped the local δ; the source of the IDEAL-ACYC-POLY sentence is named; line L-5; no statement, proof, hypothesis or number of the packet changes",
   "first": 1273,
@@ -365,7 +365,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "**10.1 Accepted: the gloss in the lines was wrong; rule R, the genome and the theorem are not.**",
   "first": 1288,
@@ -376,7 +376,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "Theorem EXP-IDEAL is about the genome G_k that rule R defines and gk.py builds (the theorem names both); every proof and every DATA line of the packet and of entries 1-9 is about that genome.",
   "first": 1296,
@@ -387,7 +387,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "the correctness DATA up to k = 13, the premises of Corollary EXP-N5′ in R124's words, STABLE's step form in the L41 scope tail; line L-6; no statement, proof, hypothesis or number changes",
   "first": 1370,
@@ -398,7 +398,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "the premise lists written in entry 3 and in 9.1 are completed by RESULTS R15 (c) for Lemma TERM-XI, and RESULTS R117 (f) is a premise of EXACT-L only. No proof changes: entry 3's proof uses the two statements of R124 as landed, whatever their premises are.",
   "first": 1396,
@@ -409,7 +409,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "REFEREE 36 stated STABLE's step form (its E-5, inside its §5.3) and gave no new proof of it; the proof in 4.2 is the frozen one (l. 258-262) read with the key bit of the step.",
   "first": 1408,
@@ -420,7 +420,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "F-L3-1 was not on origin when this entry was written (the referee's §14 was not committed).",
   "first": 1274,
@@ -431,7 +431,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "REFEREE-2 42's Addendum 4 was not on origin when this entry was written",
   "first": 1371,
@@ -442,7 +442,7 @@
  {
   "form": "line",
   "key": "R104P",
-  "commit": "15171faa822983e7c6118bb3c4be25b47469a387",
+  "commit": "37009aba5e898d4a9c54fa9af22d28c4a4a50e3c",
   "path": "docs/red/P-N5-REALIZE.md",
   "text": "stuck",
   "first": 75,
@@ -453,7 +453,7 @@
  {
   "form": "line",
   "key": "R104P",
-  "commit": "15171faa822983e7c6118bb3c4be25b47469a387",
+  "commit": "37009aba5e898d4a9c54fa9af22d28c4a4a50e3c",
   "path": "docs/red/P-N5-REALIZE.md",
   "text": "there is a polynomial q such that L(G) ≤ q(N + M) for every G ∈ IDEAL-ACYC",
   "first": 224,
@@ -464,7 +464,7 @@
  {
   "form": "line",
   "key": "RES",
-  "commit": "15171faa822983e7c6118bb3c4be25b47469a387",
+  "commit": "37009aba5e898d4a9c54fa9af22d28c4a4a50e3c",
   "path": "docs/RESULTS.md",
   "text": "with R104's premises as landed (1E-N3 = RESULTS R57 (b) in its two forms; RESULTS R24 (a) Lemma R and R24 (b)'s choice rule with RESULTS R103's bridge B and (R1) ruling; RESULTS R36 (c) Lemma P1 on the dual game) and RESULTS R15 (d) for termination only",
   "first": 13362,
@@ -475,7 +475,7 @@
  {
   "form": "line",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "NOT SIGNED AS WRITTEN; SIGNED in the form LEMMA′ of §5.3 below",
   "first": 17,
@@ -486,7 +486,7 @@
  {
   "form": "line",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "RESPONSE LEMMA SIGNED as restated in fixes entry 4 (= LEMMA′ of §5.3 with CAUSAL and STABLE in step form).",
   "first": 522,
@@ -497,7 +497,7 @@
  {
   "form": "line",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "REFEREE-2 signs 4.1 (S1)-(S4), 4.2 STABLE, 4.3 CAUSAL, 4.4 LEMMA′ with their proofs (4.2, 4.3, 4.5) and 4.6, as printed in docs/red-b/P-N5-EXP-fixes.md at claude/l-red-b 24f4d436 (sha1 9dc9179f…), (R3)'s range read as t − 1 ≤ τ < last (F-1).",
   "first": 464,
@@ -508,7 +508,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "Every clause that comes from this lane's review agrees with it",
   "first": 517,
@@ -519,7 +519,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "L-2 bytes 7267 (with its newline) lines 1 pipes 0 sha1 6e047c676e582484fe8eb87891764e8c1a7d9a18",
   "first": 1141,
@@ -530,7 +530,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "the line of record must say what is true at landing, so it becomes «with fixes entries 1-7» and «L-RED-B successors 5-7»",
   "first": 1151,
@@ -541,7 +541,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "L-4 bytes 7292 (with its newline) lines 1 pipes 0 sha1 668fd1b88ea4ae28690f0b931d84b27a85928ca8",
   "first": 1259,
@@ -552,7 +552,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "L-5 bytes 7482 (with its newline) lines 1 pipes 0 sha1 fbd857b08befb397e03e71c554cccb4542be3820",
   "first": 1358,
@@ -563,7 +563,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "all parities even, β-ranks depth-major (a smaller Ξ-depth outranks a larger one), inside a Ξ-depth by the rule's local δ, the remaining ties (wire options only) by β-id",
   "first": 926,
@@ -574,7 +574,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "L-6 bytes 7755 (with its newline) lines 1 pipes 0 sha1 1e0ff12d51da7a4ee1aad12ed0fd9119a097896b",
   "first": 1434,
@@ -585,7 +585,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "Lemma MEMBER (§4) = Theorem EXP-IDEAL (a)",
   "first": 13,
@@ -596,7 +596,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**SIGN** with E-3",
   "first": 13,
@@ -607,7 +607,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "unconditional (R104's definitions only)",
   "first": 13,
@@ -618,7 +618,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "E-3: §3's rank key is not injective on wire options for k ≥ 4; the generator's tie rule must be in rule R",
   "first": 13,
@@ -629,7 +629,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "Lemma MOVE-2 (§5)",
   "first": 14,
@@ -640,7 +640,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**SIGN**, no gap",
   "first": 14,
@@ -651,7 +651,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "unconditional",
   "first": 13,
@@ -662,7 +662,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "none",
   "first": 14,
@@ -673,7 +673,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "V0-V4, K1-K4 (§5)",
   "first": 15,
@@ -684,7 +684,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**SIGN** with E-4",
   "first": 15,
@@ -695,7 +695,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "unconditional",
   "first": 13,
@@ -706,7 +706,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "E-4: the standing assumption must include «u_0 at option 0» (K1's C_0, V1's E_0)",
   "first": 15,
@@ -717,7 +717,7 @@
  {
   "form": "qn",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "u_0 at option 0",
   "first": 15,
@@ -728,7 +728,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "Lemma WIRE (§5)",
   "first": 16,
@@ -739,7 +739,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**SIGN**, no gap",
   "first": 14,
@@ -750,7 +750,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "unconditional",
   "first": 13,
@@ -761,7 +761,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "none",
   "first": 14,
@@ -772,7 +772,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "RESPONSE LEMMA (§6)",
   "first": 17,
@@ -783,7 +783,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**NOT SIGNED AS WRITTEN; SIGNED in the form LEMMA′ of §5.3 below**",
   "first": 17,
@@ -794,7 +794,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "unconditional",
   "first": 13,
@@ -805,7 +805,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "E-1: (H2) is vacuous when the run has stopped and the lemma is then false (instance, every k); E-2: the induction applies the lemma for j + 1 before its (H2) is known. One restatement repairs both; every line of the packet's case analysis is correct and is the proof of LEMMA′",
   "first": 17,
@@ -816,7 +816,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "STABLE (§6)",
   "first": 18,
@@ -827,7 +827,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**SIGN** with E-5",
   "first": 18,
@@ -838,7 +838,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "unconditional",
   "first": 13,
@@ -849,7 +849,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "E-5: «its input is (b, b)» must read the key bit under s′ (as written it contradicts step t of the RESPONSE LEMMA)",
   "first": 18,
@@ -860,7 +860,7 @@
  {
   "form": "qn",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "its input is (b, b)",
   "first": 18,
@@ -871,7 +871,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "Theorem EXP-IDEAL (b), (c) (§7)",
   "first": 19,
@@ -882,7 +882,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**SIGN** (through LEMMA′)",
   "first": 19,
@@ -893,7 +893,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "unconditional: a statement about R104's IDEAL model",
   "first": 19,
@@ -904,7 +904,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "proof to cite LEMMA′ (E-1, E-2)",
   "first": 19,
@@ -915,7 +915,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "Corollary EXP-N5 (§2, §7)",
   "first": 20,
@@ -926,7 +926,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**SIGN AS CONDITIONAL**",
   "first": 20,
@@ -937,7 +937,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "conditional on R117's premises as landed",
   "first": 20,
@@ -948,7 +948,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "P-1 (this lane's pre-check): the statement must carry R117's premises in R117's words",
   "first": 20,
@@ -959,7 +959,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "Dead end wording (§2)",
   "first": 21,
@@ -970,7 +970,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**SIGN AS CONDITIONAL**, with P-1 and E-7",
   "first": 21,
@@ -981,7 +981,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "conditional on R117's premises (and R57 (b) for «CORRECT»)",
   "first": 21,
@@ -992,7 +992,7 @@
  {
   "form": "qn",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "CORRECT",
   "first": 21,
@@ -1003,7 +1003,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "P-1; E-7: «N5 is CORRECT on these games» is DATA for k ≤ 11 and landed R57 (b) for every k",
   "first": 21,
@@ -1014,7 +1014,7 @@
  {
   "form": "qn",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "N5 is CORRECT on these games",
   "first": 21,
@@ -1025,7 +1025,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "§8 (where the start and the orders are used)",
   "first": 22,
@@ -1036,7 +1036,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**CHECKED**, correct",
   "first": 22,
@@ -1047,7 +1047,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "a statement about the proof",
   "first": 22,
@@ -1058,7 +1058,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "none (O-2: a weaker rank condition suffices)",
   "first": 22,
@@ -1069,7 +1069,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "§9 DATA",
   "first": 23,
@@ -1080,7 +1080,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "reproduced on own tools: model side §3-§5, §8; N5 side §7 (same games as the lane's, vertex by vertex)",
   "first": 23,
@@ -1091,7 +1091,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "measured",
   "first": 23,
@@ -1102,7 +1102,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "E-6: §9.7 holds the unfilled placeholder `QUOTESUMMARY`",
   "first": 23,
@@ -1113,7 +1113,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "Quotes",
   "first": 24,
@@ -1124,7 +1124,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "27 of 27 verbatim by own script; 4 untagged citations verbatim",
   "first": 24,
@@ -1135,7 +1135,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "N-1",
   "first": 24,
@@ -1146,7 +1146,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "Theorem EXP-IDEAL (a), (b), (c), with MEMBER, MOVE-2, V0-V4, K1-K4, WIRE",
   "first": 584,
@@ -1157,7 +1157,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "packet §2-§7; rule R read as entry 5.1; standing assumption entry 4.1 (S1); §7 read as entry 4.6",
   "first": 584,
@@ -1168,7 +1168,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**SIGNED** (§0, §12)",
   "first": 584,
@@ -1179,7 +1179,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "unconditional: R104's definitions only",
   "first": 584,
@@ -1190,7 +1190,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "RESPONSE LEMMA = LEMMA′, with CAUSAL; STABLE in step form",
   "first": 585,
@@ -1201,7 +1201,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "entry 4 (4.2-4.5) = this report §5.3",
   "first": 585,
@@ -1212,7 +1212,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**SIGNED** (§12; referee-originated, L41: it also needs REFEREE-2's independent signature)",
   "first": 585,
@@ -1223,7 +1223,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "unconditional",
   "first": 13,
@@ -1234,7 +1234,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "«IDEAL-ACYC-POLY is false»",
   "first": 586,
@@ -1245,7 +1245,7 @@
  {
   "form": "qn",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "IDEAL-ACYC-POLY is false",
   "first": 586,
@@ -1256,7 +1256,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "entry 2 (a′), its sentences on R104's model",
   "first": 586,
@@ -1267,7 +1267,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**SIGNED**",
   "first": 584,
@@ -1278,7 +1278,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "unconditional ((a)-(c) put into R104's definition of L)",
   "first": 586,
@@ -1289,7 +1289,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "Corollary EXP-N5 (at least 2^k − 1 iterations)",
   "first": 587,
@@ -1300,7 +1300,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "packet §2, §7 with entry 2 (b)",
   "first": 587,
@@ -1311,7 +1311,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**SIGNED as PROVED-CONDITIONAL** on RESULTS R117's Theorem REACH3 as landed",
   "first": 587,
@@ -1322,7 +1322,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "conditional: R117's standing premises, in R117's words",
   "first": 587,
@@ -1333,7 +1333,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "Corollary EXP-N5′ (exactly 2^k + 1 iterations, exactly one fallback, at iteration 2^k − 1)",
   "first": 588,
@@ -1344,7 +1344,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "entry 3",
   "first": 529,
@@ -1355,7 +1355,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**SIGNED as PROVED-CONDITIONAL** on RESULTS R124 (EXACT-L, ENDGAME-3-N5) and R117 (f) as landed",
   "first": 588,
@@ -1366,7 +1366,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "conditional: R117's premises and R124's own",
   "first": 588,
@@ -1377,7 +1377,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "Dead-end paragraph",
   "first": 589,
@@ -1388,7 +1388,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "packet l. 61-71 read as entry 2 (c), (e)",
   "first": 589,
@@ -1399,7 +1399,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**SIGNED AS CONDITIONAL** on R117's premises, «for N5 from S3»; its arithmetic is unconditional; «CORRECT» is RESULTS R57 (b) for every k (under 1E-N3) and DATA for k ≤ 13",
   "first": 589,
@@ -1410,7 +1410,7 @@
  {
   "form": "qn",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "for N5 from S3",
   "first": 589,
@@ -1421,7 +1421,7 @@
  {
   "form": "qn",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "CORRECT",
   "first": 21,
@@ -1432,7 +1432,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "conditional",
   "first": 13,
@@ -1443,7 +1443,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "DATA (packet §9; entries 1, 4.7, 5, 6)",
   "first": 590,
@@ -1454,7 +1454,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "MEASURED",
   "first": 63,
@@ -1465,7 +1465,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "premise-free; N5 itself: k ≤ 12 on two engines of the lane, k = 13 on one",
   "first": 590,
@@ -1476,7 +1476,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "Theorem EXP-IDEAL (a) = Lemma MEMBER (§4)",
   "first": 21,
@@ -1487,7 +1487,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**SIGN**",
   "first": 21,
@@ -1498,7 +1498,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "M-1 (the rank clause of rule R needs its tie-break in the text)",
   "first": 21,
@@ -1509,7 +1509,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "Lemma MOVE-2 (§5)",
   "first": 22,
@@ -1520,7 +1520,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**SIGN**",
   "first": 21,
@@ -1531,7 +1531,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "V0, V1, V2, V3, V4 (§5)",
   "first": 23,
@@ -1542,7 +1542,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**SIGN**",
   "first": 21,
@@ -1553,7 +1553,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "K1, K2, K3, K4, WIRE (§5)",
   "first": 24,
@@ -1564,7 +1564,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**SIGN**",
   "first": 21,
@@ -1575,7 +1575,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "RESPONSE LEMMA (§6)",
   "first": 25,
@@ -1586,7 +1586,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**SIGN the statement**; its proof has gap G-1, closed in §2.4 of this report by the PREFIX form",
   "first": 25,
@@ -1597,7 +1597,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "G-1, W-1",
   "first": 25,
@@ -1608,7 +1608,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "STABLE (§6)",
   "first": 26,
@@ -1619,7 +1619,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**SIGN**",
   "first": 21,
@@ -1630,7 +1630,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "Theorem EXP-IDEAL (b), (c) (§7)",
   "first": 27,
@@ -1641,7 +1641,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**SIGN** (through the RESPONSE LEMMA with G-1 closed)",
   "first": 27,
@@ -1652,7 +1652,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "G-1",
   "first": 25,
@@ -1663,7 +1663,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "Corollary EXP-N5 (§2, §7)",
   "first": 28,
@@ -1674,7 +1674,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**SIGN as PROVED-CONDITIONAL on RESULTS R117, Theorem REACH3, as landed** (refereed-only, with R117's standing premises); the sizes n = 135k − 230 and m = 176k − 300 SIGN outright",
   "first": 28,
@@ -1685,7 +1685,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "W-2",
   "first": 28,
@@ -1696,7 +1696,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "«Dead end» paragraph (§2)",
   "first": 29,
@@ -1707,7 +1707,7 @@
  {
   "form": "qn",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "Dead end",
   "first": 29,
@@ -1718,7 +1718,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "follows from the Corollary, so it carries the same condition; the wording must say so",
   "first": 29,
@@ -1729,7 +1729,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "W-2",
   "first": 28,
@@ -1740,7 +1740,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "§8 (where the start and the orders are used)",
   "first": 30,
@@ -1751,7 +1751,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "checked against the proofs of K1-K4 and V1-V4: every order listed is used where §8 says. The sentence «Nothing else … is free» was tested only as far as §3.1 goes (gate renumbering, the rank tie-break)",
   "first": 30,
@@ -1762,7 +1762,7 @@
  {
   "form": "qn",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "Nothing else … is free",
   "first": 30,
@@ -1773,7 +1773,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "§9 DATA",
   "first": 31,
@@ -1784,7 +1784,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "reproduced on my own code, §3 (same numbers at every point I ran)",
   "first": 31,
@@ -1795,7 +1795,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "D-1",
   "first": 31,
@@ -1806,7 +1806,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "§10",
   "first": 32,
@@ -1817,7 +1817,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "NOT run as written (the lane's script and archives); CHECKER's exact-commit re-run covers it",
   "first": 32,
@@ -1828,7 +1828,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "§11",
   "first": 33,
@@ -1839,7 +1839,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "READING, not signed",
   "first": 33,
@@ -1850,7 +1850,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "1 (extra DATA, pointer correction, §10 erratum)",
   "first": 337,
@@ -1861,7 +1861,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "Addendum 1 A1.2",
   "first": 337,
@@ -1872,7 +1872,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**closed** for the runner A1.2 named: run_b6b.sh at 24f4d436 takes a relative root and exits 1 when a stage fails (tests T1-T3, §A2.5). No statement, proof or hypothesis changes. New item F-4 (the NEW runner)",
   "first": 337,
@@ -1883,7 +1883,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "2 (unconditional / conditional / measured)",
   "first": 338,
@@ -1894,7 +1894,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "W-2, §4",
   "first": 338,
@@ -1905,7 +1905,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**closed**: (b) and (c) carry «PROVED-CONDITIONAL on RESULTS R117's Theorem REACH3 AS LANDED [refereed-only]» with R117's standing premises quoted from its title line; the dead-end sentences are to be read through R117's Theorem REACH3, and the NO is for N5 from S3 only. Note F-5",
   "first": 338,
@@ -1916,7 +1916,7 @@
  {
   "form": "qn",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "PROVED-CONDITIONAL on RESULTS R117's Theorem REACH3 AS LANDED [refereed-only]",
   "first": 338,
@@ -1927,7 +1927,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "3 (Corollary EXP-N5′)",
   "first": 339,
@@ -1938,7 +1938,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "Addendum 1 A1.1",
   "first": 339,
@@ -1949,7 +1949,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**closed**: the exact count is a SEPARATE labelled corollary under R124 EXACT-L (premise R117 (f), SPEC's FIX 1-4 tie-breaks); the frozen lower bound through R117 alone is kept",
   "first": 339,
@@ -1960,7 +1960,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "4 (LEMMA′, CAUSAL, STABLE in step form)",
   "first": 340,
@@ -1971,7 +1971,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "G-1 (and W-1 in (S2))",
   "first": 340,
@@ -1982,7 +1982,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "G-1 **closed**. L41: **I SIGN** 4.1 (S1)-(S4), 4.2, 4.3, 4.4 and the proofs 4.2, 4.3, 4.5, 4.6 as printed, with the reading F-1; the concordance claim «PREFIX FORM = LEMMA′ at τ_0 = T» is **correct** (§A2.4). Wording F-1, F-2",
   "first": 340,
@@ -1993,7 +1993,7 @@
  {
   "form": "qn",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "PREFIX FORM = LEMMA′ at τ_0 = T",
   "first": 340,
@@ -2004,7 +2004,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "5 (wording and records)",
   "first": 341,
@@ -2015,7 +2015,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "M-1, W-1, D-1",
   "first": 341,
@@ -2026,7 +2026,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**closed** (5.1, 5.2, 5.3); wording F-3. 5.4-5.9 answer other referees' items: read; where they quote this lane's report the quotes are verbatim; nothing in them contradicts it",
   "first": 341,
@@ -2037,7 +2037,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "frozen guard",
   "first": 323,
@@ -2048,7 +2048,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**holds**: the packet's sha1 is c0449b17193f19619f33b366096762dfde27d542 at 350d84eb and at 24f4d436; the fixes file at 06d399c2 (entry 1; sha1 4c692ab2…, 12,551 B) is a byte prefix of the file at 24f4d436 (`cmp -n 12551`)",
   "first": 342,
@@ -2059,7 +2059,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "entry 6 (N5 at k = 13, one engine)",
   "first": 650,
@@ -2070,7 +2070,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**accepted** as DATA; no statement changes. The game file is my builder's game (pg13.out); the run itself not re-run by me",
   "first": 650,
@@ -2081,7 +2081,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "entry 7 (answers to F-1 … F-5)",
   "first": 651,
@@ -2092,7 +2092,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**F-1, F-2, F-3, F-4, F-5 closed.** 7.1's clause (R3) is my reading word for word; the repaired runner passes my own tests",
   "first": 651,
@@ -2103,7 +2103,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "entry 8 (record of L-3)",
   "first": 652,
@@ -2114,7 +2114,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**accepted** as a record: L-3 is L-2 with the two named replacements and nothing else",
   "first": 652,
@@ -2125,7 +2125,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "line L-3",
   "first": 635,
@@ -2136,7 +2136,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**NOT signed as it stands: one failing clause, L3-1 (the gloss of the β-ranks).** L3-2 a stale number, L3-3 and L3-4 exactness of a premise clause and of a quotation's source, L3-5 optional. L-a, L-b, L-c are done as asked. Every other clause, number, premise name and quotation: checked, right",
   "first": 653,
@@ -2147,7 +2147,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "No statement is REFUSED. Nothing found changes L(G_k) = 2^k − 2, the counts of (c), or the Corollary's numbers.",
   "first": 25,
@@ -2158,7 +2158,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**P-N5-EXP: SIGNED with fixes entries 1-6.** What the signature covers, by kind",
   "first": 580,
@@ -2169,7 +2169,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "No error was found in the mathematics. No counter-instance, no failing counter. The two listed items change no number.",
   "first": 35,
@@ -2180,7 +2180,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**P-N5-EXP: SIGNED with fixes entries 1-5.** The signature is §0's, with one correction (§A2.1): the statement of the RESPONSE LEMMA that I sign is entry 4's 4.4 (LEMMA′), not the frozen l. 192-204; STABLE is signed in 4.2's step form. Every other row of §0 stands as written. Items F-1 to F-5 are wording and tooling; none of them is a condition of the signature except the reading F-1.",
   "first": 344,
@@ -2191,7 +2191,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "No verdict differs after the fixes, and no number differs anywhere",
   "first": 582,
@@ -2202,7 +2202,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**Entry 7**: right, sentence by sentence. **F-1 is ACCEPTED by this lane, as the lane that wrote LEMMA′** (§14.3): clause (R3) is to be read with the range t − 1 ≤ τ < last, as entry 7.1 restates it.",
   "first": 805,
@@ -2213,7 +2213,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**Entry 8**: right. L-3 is L-2 with exactly the two named replacements.",
   "first": 808,
@@ -2224,7 +2224,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "So **L-3 is NOT signed as the RESULTS line**: the failing clause is F-L3-1 (and N-5e's premise is to be named). Nothing in entries 7 and 8 fails.",
   "first": 816,
@@ -2235,7 +2235,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "P-N5-EXP stays SIGNED, now with fixes entries 1-8 (the signature is about the packet and its fixes; L3-1 is a defect of the LINE's gloss, not of the rule, the theorem or any proof).",
   "first": 654,
@@ -2246,7 +2246,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "(1) Theorem EXP-IDEAL (a)-(c) SIGNED (unconditional), (b), (c) through LEMMA′",
   "first": 392,
@@ -2257,7 +2257,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "| Theorem EXP-IDEAL (a), (b), (c), with MEMBER, MOVE-2, V0-V4, K1-K4, WIRE |",
   "first": 584,
@@ -2268,7 +2268,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "| RESPONSE LEMMA = LEMMA′, with CAUSAL; STABLE in step form |",
   "first": 585,
@@ -2279,7 +2279,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "UNCONDITIONAL (mathematics about R104's DEFINITIONS, no theorem used): Theorem EXP-IDEAL (a), (b), (c) with its lemmas.",
   "first": 239,
@@ -2290,7 +2290,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "| Theorem EXP-IDEAL (b), (c) (§7) | **SIGN** (through the RESPONSE LEMMA with G-1 closed) | G-1 |",
   "first": 27,
@@ -2301,7 +2301,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**REFEREE-2 signs 4.1 (S1)-(S4), 4.2 STABLE, 4.3 CAUSAL, 4.4 LEMMA′",
   "first": 464,
@@ -2312,7 +2312,7 @@
  {
   "form": "qn",
   "key": "R104P",
-  "commit": "15171faa822983e7c6118bb3c4be25b47469a387",
+  "commit": "37009aba5e898d4a9c54fa9af22d28c4a4a50e3c",
   "path": "docs/red/P-N5-REALIZE.md",
   "text": "stuck",
   "first": 75,
@@ -2323,7 +2323,7 @@
  {
   "form": "q",
   "key": "R104P",
-  "commit": "15171faa822983e7c6118bb3c4be25b47469a387",
+  "commit": "37009aba5e898d4a9c54fa9af22d28c4a4a50e3c",
   "path": "docs/red/P-N5-REALIZE.md",
   "text": "Let IDEAL-ACYC-POLY mean: there is a polynomial q such that L(G) ≤ q(N + M) for every G ∈ IDEAL-ACYC.",
   "first": 224,
@@ -2334,7 +2334,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "| «IDEAL-ACYC-POLY is false» | entry 2 (a′), its sentences on R104's model | **SIGNED** |",
   "first": 586,
@@ -2345,7 +2345,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "That IDEAL-ACYC-POLY is false follows from Theorem EXP-IDEAL (b) alone (L(G_k) = 2^k − 2 against N + M = 27k − 48): unconditional.",
   "first": 368,
@@ -2356,7 +2356,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "| Corollary EXP-N5 (at least 2^k − 1 iterations) | packet §2, §7 with entry 2 (b) |",
   "first": 587,
@@ -2367,7 +2367,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "| Dead-end paragraph | packet l. 61-71 read as entry 2 (c), (e) |",
   "first": 589,
@@ -2378,7 +2378,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "PROVED-CONDITIONAL on RESULTS R117 as landed: Corollary EXP-N5's iteration bound, and with it the Dead-end paragraph",
   "first": 241,
@@ -2389,7 +2389,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "entry 3's **Corollary EXP-N5′, the STATEMENT, is SIGNED AS PROVED-CONDITIONAL on RESULTS R124 and R117 as landed**",
   "first": 537,
@@ -2400,7 +2400,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "I SIGN the corollary as PROVED-CONDITIONAL on RESULTS R124 (Corollary EXACT-L, Theorem ENDGAME-3-N5) and RESULTS R117 (f) as landed",
   "first": 570,
@@ -2411,7 +2411,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "Status of the exact form: PROVED-CONDITIONAL on R124 and R117 as landed; no new premise beyond those two entries.",
   "first": 304,
@@ -2422,7 +2422,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**Addendum 1 A1.1 → entry 3: closed.**",
   "first": 375,
@@ -2444,7 +2444,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "So «DEFINITIONS ONLY (no theorem of R104 is used)» is right; MEMBER c8 (acyclic) comes first and makes the X-chains finite. No circularity.",
   "first": 53,
@@ -2455,7 +2455,7 @@
  {
   "form": "qn",
   "key": "RES",
-  "commit": "15171faa822983e7c6118bb3c4be25b47469a387",
+  "commit": "37009aba5e898d4a9c54fa9af22d28c4a4a50e3c",
   "path": "docs/RESULTS.md",
   "text": "with R104's premises as landed (1E-N3 = RESULTS R57 (b) in its two forms; RESULTS R24 (a) Lemma R and R24 (b)'s choice rule with RESULTS R103's bridge B and (R1) ruling; RESULTS R36 (c) Lemma P1 on the dual game) and RESULTS R15 (d) for termination only",
   "first": 13362,
@@ -2466,7 +2466,7 @@
  {
   "form": "q",
   "key": "RES",
-  "commit": "15171faa822983e7c6118bb3c4be25b47469a387",
+  "commit": "37009aba5e898d4a9c54fa9af22d28c4a4a50e3c",
   "path": "docs/RESULTS.md",
   "text": "Premises [1E-N3], [RULE], [VJ-LOC] as landed in R104: the correctness of S1's procedure stays SPEC's requirement, and the code's match to SPEC is DATA (R57 (b))",
   "first": 13543,
@@ -2477,7 +2477,7 @@
  {
   "form": "qn",
   "key": "RES",
-  "commit": "15171faa822983e7c6118bb3c4be25b47469a387",
+  "commit": "37009aba5e898d4a9c54fa9af22d28c4a4a50e3c",
   "path": "docs/RESULTS.md",
   "text": "for every G with an ACYCLIC Ξ-graph",
   "first": 13362,
@@ -2488,7 +2488,7 @@
  {
   "form": "qn",
   "key": "RES",
-  "commit": "15171faa822983e7c6118bb3c4be25b47469a387",
+  "commit": "37009aba5e898d4a9c54fa9af22d28c4a4a50e3c",
   "path": "docs/RESULTS.md",
   "text": "so if L(G) ≥ 1, [0, L(G)] is one FL run of length exactly L(G) and the run makes at least L(G) + 1 iterations",
   "first": 13362,
@@ -2499,7 +2499,7 @@
  {
   "form": "qn",
   "key": "RES",
-  "commit": "15171faa822983e7c6118bb3c4be25b47469a387",
+  "commit": "37009aba5e898d4a9c54fa9af22d28c4a4a50e3c",
   "path": "docs/RESULTS.md",
   "text": "premise RESULTS R117 (f); it uses SPEC's S1 tie-breaks, through REACH3's [RULE] choice: with another pointwise-optimal S4a choice the identity can fail",
   "first": 15371,
@@ -2510,7 +2510,7 @@
  {
   "form": "qn",
   "key": "RES",
-  "commit": "15171faa822983e7c6118bb3c4be25b47469a387",
+  "commit": "37009aba5e898d4a9c54fa9af22d28c4a4a50e3c",
   "path": "docs/RESULTS.md",
   "text": "premises, all under the standing SPEC premise 1E-N3 of RESULTS R57 / R104 / R117",
   "first": 15371,
@@ -2521,7 +2521,7 @@
  {
   "form": "qn",
   "key": "RES",
-  "commit": "15171faa822983e7c6118bb3c4be25b47469a387",
+  "commit": "37009aba5e898d4a9c54fa9af22d28c4a4a50e3c",
   "path": "docs/RESULTS.md",
   "text": "RESULTS R15 (c) («every non-empty switch of improvements goes strictly up in ≺») for TERM-XI; RESULTS R117 (f) for EXACT-L only",
   "first": 15371,
@@ -2532,7 +2532,7 @@
  {
   "form": "q",
   "key": "RES",
-  "commit": "15171faa822983e7c6118bb3c4be25b47469a387",
+  "commit": "37009aba5e898d4a9c54fa9af22d28c4a4a50e3c",
   "path": "docs/RESULTS.md",
   "text": "In particular, on every game N5 stops (R15 (d)) and SPEC S5's output there is correct. Standing premise, as in R51 (d): OUT-G concerns SPEC's Ξσ and σ̄; that S1's procedure realises an optimal σ̄ is VJ00 §6 plus SPEC conformance, and the code's match to SPEC is DATA (R15 G-N5T-1) (1E-N3 = N-1E-1).",
   "first": 2914,
@@ -2543,7 +2543,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "1E-N3 is the standing SPEC premise of every landed N5 result since R57",
   "first": 61,
@@ -2565,7 +2565,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "### 5.3 The repair (referee-originated, L41): CAUSAL and LEMMA′",
   "first": 199,
@@ -2576,7 +2576,7 @@
  {
   "form": "q",
   "key": "DEC",
-  "commit": "15171faa822983e7c6118bb3c4be25b47469a387",
+  "commit": "37009aba5e898d4a9c54fa9af22d28c4a4a50e3c",
   "path": "docs/DECISIONS.md",
   "text": "A proof written by one referee counts toward \"two referees signed it with its gaps listed\" (CLAUDE.md) when the author referee signs it in its report and the OTHER referee independently checks and signs it",
   "first": 356,
@@ -2587,7 +2587,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**NOT SIGNED AS WRITTEN; SIGNED in the form LEMMA′ of §5.3 below**",
   "first": 17,
@@ -2598,7 +2598,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**Verdict on entry 4: it closes E-1, E-2, E-4, E-5. RESPONSE LEMMA SIGNED as restated in fixes entry 4 (= LEMMA′ of §5.3 with CAUSAL and STABLE in step form).**",
   "first": 522,
@@ -2609,7 +2609,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**REFEREE-2 signs 4.1 (S1)-(S4), 4.2 STABLE, 4.3 CAUSAL, 4.4 LEMMA′ with their proofs (4.2, 4.3, 4.5) and 4.6, as printed in docs/red-b/P-N5-EXP-fixes.md at claude/l-red-b 24f4d436 (sha1 9dc9179f…), (R3)'s range read as t − 1 ≤ τ < last (F-1).**",
   "first": 464,
@@ -2620,7 +2620,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "So the text I signed in §A2.3 IS the referee-originated text, and L41's two signatures are on the same statements",
   "first": 564,
@@ -2631,7 +2631,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "fixes4: my §5.3 inside entry 4, white space normalised, the bold labels dropped: standing paragraph 1, CAUSAL 1, LEMMA′ 1 (1 = verbatim)",
   "first": 507,
@@ -2642,7 +2642,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**This lane signs LEMMA′ with clause (R3) read as fixes entry 7.1 restates it**",
   "first": 934,
@@ -2653,7 +2653,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "With this, the author's signature and the second referee's (in the words the line quotes) are on one statement in one reading, which is what L41 asks.",
   "first": 936,
@@ -2664,7 +2664,7 @@
  {
   "form": "q",
   "key": "DEC",
-  "commit": "15171faa822983e7c6118bb3c4be25b47469a387",
+  "commit": "37009aba5e898d4a9c54fa9af22d28c4a4a50e3c",
   "path": "docs/DECISIONS.md",
   "text": "«DEAD» in a landing line needs a refereed proof, or one instance exceeding an EXPLICIT bound",
   "first": 371,
@@ -2675,7 +2675,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "L43 («DEAD» needs a refereed proof or an instance beyond an explicit bound): the growth is PROVED for every k ≥ 3 (Theorem EXP-IDEAL (b), unconditional; this report signs it through LEMMA′); the DEAD of «N5 runs in polynomial time» then holds under R117's premises.",
   "first": 26,
@@ -2686,7 +2686,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "They are far below every explicit polynomial bound (2^k − 1 < n² until k = 23, where a run would take 8.4 million iterations on 2,875 vertices): no measured instance «beyond an explicit bound» exists or is in reach of these engines. The kill rests on the proof.",
   "first": 247,
@@ -2697,7 +2697,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "NOT run as written (the lane's script and archives); CHECKER's exact-commit re-run covers it",
   "first": 32,
@@ -2708,7 +2708,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "the lane's run_b6b.sh and its simulators / engines (onep, one217, r187, n5v, n5b) were not run: my tools replace them",
   "first": 40,
@@ -2730,7 +2730,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "A RESULTS line may carry the first sentence as unconditional and not the second; line L-1 does exactly that.",
   "first": 373,
@@ -2741,7 +2741,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "The sentence of entry 2 (a′) on L-NEW's packet (QUIET-KEY-1P and SW-POLY are false) is right as worded: it holds THROUGH L-NEW's Lemma IDEAL-1P (T_key(G) = L(G); packet P-N5-KEY1P, a frozen lane packet, signed by this lane in R-P-N5-KEY1P.md §2; not a landed result) and is not a statement of this packet.",
   "first": 591,
@@ -2752,7 +2752,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "R117's proofs were not re-refereed here (landed; successor 35 read them against G_k's features, §7)",
   "first": 40,
@@ -2774,7 +2774,7 @@
  {
   "form": "q",
   "key": "PRE",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-GK-precheck.md",
   "text": "no hypothesis of R104's class or of R117's proofs is violated by G_k",
   "first": 369,
@@ -2807,7 +2807,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "Result of stage 3: no conflict between the two proofs; the verdicts of §0 stand.",
   "first": 496,
@@ -2818,7 +2818,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "NOT refereed here: it is not my packet; its STEP table (32 transition classes) was not checked row by row.",
   "first": 465,
@@ -2829,7 +2829,7 @@
  {
   "form": "q",
   "key": "R2B",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-box108.md",
   "text": "It is ONE referee's check of a lane proof. It is not a second signature on box 108",
   "first": 13,
@@ -2840,7 +2840,7 @@
  {
   "form": "q",
   "key": "R2B",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-box108.md",
   "text": "No gap was found in Lemma STEP or in Lemma MOVE. Three wording items (§1), none of them changes a statement.",
   "first": 43,
@@ -2851,7 +2851,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "pg13: G_13 pgonly N 101 M 202 n 1525 m 1988 maxprio 817 L 8190 PG 0 GEN35 0",
   "first": 712,
@@ -2873,18 +2873,18 @@
  {
   "form": "qn",
   "key": "CHK",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "experiments/red-b/check.sh",
   "text": "red-b check PASS",
-  "first": 72,
-  "last": 72,
+  "first": 85,
+  "last": 85,
   "occurrences": 1,
   "part": "block"
  },
  {
   "form": "qn",
   "key": "CHK",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "experiments/red-b/check.sh",
   "text": "red-b: data/b6b fixes3 SHA1SUMS mismatch",
   "first": 46,
@@ -2895,11 +2895,11 @@
  {
   "form": "qn",
   "key": "CHK",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "experiments/red-b/check.sh",
   "text": "red-b check FAILED",
-  "first": 72,
-  "last": 72,
+  "first": 85,
+  "last": 85,
   "occurrences": 1,
   "part": "block"
  },
@@ -2972,7 +2972,7 @@
  {
   "form": "q",
   "key": "PRE",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-GK-precheck.md",
   "text": "every k run (§4's table: k = 3..9 and the long runs listed there): 2^k + 1 iterations, exactly one fallback, at transition 2^k − 1; states 0..L are the standard states of the IDEAL run; every winner equals Zielonka's; 7 named counters 0; firing control for STD and FLFB",
   "first": 16,
@@ -2983,7 +2983,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "run: k 3..14; L 6 14 30 62 126 254 510 1022 2046 4094 8190 16382; Lform 0 stopform 0 swk 0 maxform 0 sumform 0 nochange 0",
   "first": 267,
@@ -2994,7 +2994,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "n5: G_3 G_4 G_5 G_6 G_7 G_8 G_9; iterations 9 17 33 65 129 257 513; S3START 0 STD 0 FLFB 0 FLTAU 0 FLSIG 0 LASTFB 0 WIN 0 EXACT 0 PG 0; PG compared on 7 games",
   "first": 301,
@@ -3005,7 +3005,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "So on k = 3..11: the first fallback is transition 2^k − 1 (as REACH3 says: L(G) + 1), N5 makes 2^k + 1 iterations, and its answer is right.",
   "first": 206,
@@ -3016,7 +3016,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "| E-1 | §6 l. 194, 196 |",
   "first": 377,
@@ -3027,7 +3027,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "- E-1: the frozen (H2) is quantified over the τ",
   "first": 324,
@@ -3038,7 +3038,7 @@
  {
   "form": "qn",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**E-1 CLOSED.**",
   "first": 512,
@@ -3049,7 +3049,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "| E-2 | §6 l. 225-229 |",
   "first": 378,
@@ -3060,7 +3060,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "- G-1 / E-2: the frozen proof applies the lemma to unit j + 1",
   "first": 321,
@@ -3071,7 +3071,7 @@
  {
   "form": "qn",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**E-2 CLOSED.**",
   "first": 520,
@@ -3082,7 +3082,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "| E-3 | §3 l. 98-99, §4 l. 114-115 |",
   "first": 379,
@@ -3093,7 +3093,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "**5.1 The rank clause and its tie-break (REFEREE-2 M-1; REFEREE 36 E-3).**",
   "first": 652,
@@ -3104,7 +3104,7 @@
  {
   "form": "qn",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**E-3 closed.**",
   "first": 686,
@@ -3115,7 +3115,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "| E-4 | §5 l. 139 |",
   "first": 380,
@@ -3126,7 +3126,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "- E-4: 4.1 (S1) adds u_0 to the standing assumption.",
   "first": 328,
@@ -3137,7 +3137,7 @@
  {
   "form": "qn",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**E-4 CLOSED.**",
   "first": 510,
@@ -3148,7 +3148,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "| E-5 | §6 l. 258 |",
   "first": 381,
@@ -3159,7 +3159,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "- E-5: 4.2 states STABLE for a step, the key bit under s⁺.",
   "first": 329,
@@ -3170,7 +3170,7 @@
  {
   "form": "qn",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**E-5 CLOSED.**",
   "first": 514,
@@ -3181,7 +3181,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "| E-6 | §9.7 l. 530 |",
   "first": 382,
@@ -3192,7 +3192,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "**5.3 §9.7's placeholder (REFEREE-2 D-1; REFEREE 36 E-6).**",
   "first": 702,
@@ -3203,7 +3203,7 @@
  {
   "form": "qn",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**E-6 closed.**",
   "first": 688,
@@ -3214,7 +3214,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "| E-7 | §2 l. 65-66 |",
   "first": 383,
@@ -3225,7 +3225,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "**(e) The sentence on correctness (frozen l. 65-66) [E-7].**",
   "first": 231,
@@ -3236,7 +3236,7 @@
  {
   "form": "qn",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**E-7 closed.**",
   "first": 654,
@@ -3247,7 +3247,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "| P-1 | §2 l. 54-66, title |",
   "first": 384,
@@ -3258,7 +3258,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "**(b) PROVED-CONDITIONAL on RESULTS R117's Theorem REACH3 AS LANDED [refereed-only].**",
   "first": 190,
@@ -3269,7 +3269,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "**(c) The dead-end paragraph (frozen l. 61-71) carries the condition of (b) [W-2].**",
   "first": 206,
@@ -3280,7 +3280,7 @@
  {
   "form": "qn",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**P-1 closed.**",
   "first": 646,
@@ -3291,7 +3291,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "| O-1 | §2 |",
   "first": 385,
@@ -3302,7 +3302,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "## Entry 3 (L-RED-B successor 6, 2026-11-13): Corollary EXP-N5′, the EXACT count, by landed R124",
   "first": 245,
@@ -3313,7 +3313,7 @@
  {
   "form": "qn",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**O-1 closed.**",
   "first": 670,
@@ -3324,7 +3324,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "| O-2 | §8 |",
   "first": 386,
@@ -3335,7 +3335,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "(O-2.) The frozen §8 lists orders that SUFFICE for the proof",
   "first": 822,
@@ -3346,7 +3346,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "| N-1 | §1 |",
   "first": 387,
@@ -3357,7 +3357,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "(N-1.) The order that the frozen §1 quotes from R104's packet",
   "first": 828,
@@ -3368,7 +3368,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "5.9: O-2 and N-1 are recorded as this report states them",
   "first": 697,
@@ -3379,7 +3379,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "- N-5a (entry 2 (d), fixes l. 224):",
   "first": 765,
@@ -3390,7 +3390,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "Accepted: READ the line range of that tag of entry 2 (d) as 247-249.",
   "first": 1219,
@@ -3401,7 +3401,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "- N-5b (entry 5.1, fixes l. 670):",
   "first": 767,
@@ -3412,7 +3412,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "**7.3 The parenthesis of 5.1 (F-3; wording).**",
   "first": 1009,
@@ -3423,7 +3423,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "Already read so in entry 7, 7.3 (REFEREE-2 42's F-3 is the same finding)",
   "first": 1225,
@@ -3434,7 +3434,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "7.3 is this lane's N-5b, closed.",
   "first": 806,
@@ -3445,7 +3445,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "- N-5c (conventions, l. 134):",
   "first": 769,
@@ -3456,7 +3456,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "Recorded. The count is the quote checker's",
   "first": 1230,
@@ -3467,7 +3467,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "- N-5d (entry 4.4, Remark 2;",
   "first": 770,
@@ -3478,7 +3478,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "Recorded: Remark 2 of 4.4 is exact for j ≥ 2; for j = 1 READ it with this addition.",
   "first": 1238,
@@ -3489,7 +3489,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "- **F-L3-1 (FAILING CLAUSE, new):",
   "first": 811,
@@ -3500,7 +3500,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "**10.1 Accepted: the gloss in the lines was wrong; rule R, the genome and the theorem are not.**",
   "first": 1288,
@@ -3511,7 +3511,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "--- F-L3-1 (1): at character 861 of L-4",
   "first": 1348,
@@ -3522,7 +3522,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "- **N-5e (known since stage 5a; ruled by the Lead: line L-4):**",
   "first": 814,
@@ -3533,7 +3533,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "**9.1 The label of Corollary EXP-N5′ (item N-5e:",
   "first": 1189,
@@ -3544,7 +3544,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "--- N-5e: at character 2350 of L-3",
   "first": 1252,
@@ -3555,7 +3555,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "- L-n1 (line, clause 9):",
   "first": 990,
@@ -3566,7 +3566,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "**10.2 The source of the IDEAL-ACYC-POLY sentence.**",
   "first": 1321,
@@ -3577,7 +3577,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "--- F-L3-1 (2): at character 1276 of L-4",
   "first": 1351,
@@ -3588,7 +3588,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "- L-n2 (line, clause 22):",
   "first": 994,
@@ -3599,7 +3599,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "- L-n3 (line, clause 20):",
   "first": 996,
@@ -3610,7 +3610,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "**11.1 L3-2: the correctness DATA reach k = 13.**",
   "first": 1377,
@@ -3621,7 +3621,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "--- L3-2: at character 6184 of L-5",
   "first": 1424,
@@ -3632,7 +3632,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "- N-6a (entry 7.6, l. 1135-1136):",
   "first": 997,
@@ -3643,7 +3643,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "A loose phrase, nothing wrong.",
   "first": 998,
@@ -3654,7 +3654,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "- N-6b (entry 8, the pasted record):",
   "first": 999,
@@ -3664,8 +3664,41 @@
  },
  {
   "form": "l",
+  "key": "REF1",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
+  "path": "docs/referee/R-P-N5-EXP.md",
+  "text": "- N-7a (entries 9.1 and 10.3):",
+  "first": 1296,
+  "last": 1296,
+  "occurrences": 1,
+  "part": "block"
+ },
+ {
+  "form": "l",
+  "key": "REF1",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
+  "path": "docs/referee/R-P-N5-EXP.md",
+  "text": "- N-7b (entry 11.2):",
+  "first": 1300,
+  "last": 1300,
+  "occurrences": 1,
+  "part": "block"
+ },
+ {
+  "form": "l",
+  "key": "REF1",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
+  "path": "docs/referee/R-P-N5-EXP.md",
+  "text": "- N-7c (entry 11.3 and the tail):",
+  "first": 1303,
+  "last": 1303,
+  "occurrences": 1,
+  "part": "block"
+ },
+ {
+  "form": "l",
   "key": "PRE",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-GK-precheck.md",
   "text": "- P-1 (premises; wording of Corollary EXP-N5).",
   "first": 322,
@@ -3676,7 +3709,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "## Entry 2 (L-RED-B successor 6, 2026-11-13): what is unconditional, what is conditional, what is measured",
   "first": 150,
@@ -3687,7 +3720,7 @@
  {
   "form": "l",
   "key": "PRE",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-GK-precheck.md",
   "text": "- P-2 (the brief's «up to 8 movers on a level»):",
   "first": 327,
@@ -3698,7 +3731,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "**5.4 Level width (REFEREE 35 P-2).**",
   "first": 724,
@@ -3709,7 +3742,7 @@
  {
   "form": "l",
   "key": "PRE",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-GK-precheck.md",
   "text": "- M-1 (Lemma MEMBER).",
   "first": 330,
@@ -3720,7 +3753,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "**5.5 Which genome is the member, and which sha1 pins are of which file (REFEREE 35 M-1).**",
   "first": 749,
@@ -3731,7 +3764,7 @@
  {
   "form": "l",
   "key": "PRE",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-GK-precheck.md",
   "text": "- M-2. The file's mover order",
   "first": 334,
@@ -3742,7 +3775,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "**5.6 The mover order the games use (REFEREE 35 M-2).**",
   "first": 774,
@@ -3753,7 +3786,7 @@
  {
   "form": "l",
   "key": "PRE",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-GK-precheck.md",
   "text": "- M-3. «deg» is the scalar 2",
   "first": 336,
@@ -3764,7 +3797,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "**5.7 The JSON fields (REFEREE 35 M-3).**",
   "first": 789,
@@ -3775,7 +3808,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "the pre-check items P-2, M-1, M-2, M-3 are answered with the right numbers",
   "first": 574,
@@ -3786,7 +3819,7 @@
  {
   "form": "l",
   "key": "PRE",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-GK-precheck.md",
   "text": "- P-3 (scope of a kill).",
   "first": 338,
@@ -3797,7 +3830,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "### 9.13 Other tie rules of engine 1 on the same games",
   "first": 87,
@@ -3808,7 +3841,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "successor 35's P-3 (the kill is of N5 as specified)",
   "first": 435,
@@ -3819,7 +3852,7 @@
  {
   "form": "l",
   "key": "PRE",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-GK-precheck.md",
   "text": "- P-4 (L43).",
   "first": 341,
@@ -3830,7 +3863,7 @@
  {
   "form": "l",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "the growth is PROVED for every k ≥ 3 (Theorem EXP-IDEAL",
   "first": 26,
@@ -3841,7 +3874,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "- **G-1 (gap in the proof of the RESPONSE LEMMA; closed here; the statement is right).**",
   "first": 38,
@@ -3852,7 +3885,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "- G-1 / E-2: the frozen proof applies the lemma to unit j + 1",
   "first": 321,
@@ -3863,7 +3896,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "G-1 **closed**.",
   "first": 340,
@@ -3874,7 +3907,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "- **M-1 (rule R, rank clause; harmless for the run).**",
   "first": 46,
@@ -3885,7 +3918,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "**5.1 The rank clause and its tie-break (REFEREE-2 M-1; REFEREE 36 E-3).**",
   "first": 652,
@@ -3896,7 +3929,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**M-1 → 5.1: closed.**",
   "first": 381,
@@ -3907,7 +3940,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "- **W-1 (wording).**",
   "first": 54,
@@ -3918,7 +3951,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "**5.2 «Step t» (REFEREE-2 W-1).**",
   "first": 696,
@@ -3929,7 +3962,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**W-1 → 5.2 and 4.1 (S2): closed.**",
   "first": 386,
@@ -3940,7 +3973,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "- **W-2 (status label of the kill).**",
   "first": 55,
@@ -3951,7 +3984,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "**(c) The dead-end paragraph (frozen l. 61-71) carries the condition of (b) [W-2].**",
   "first": 206,
@@ -3962,7 +3995,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**W-2 and §4 → entry 2: closed.**",
   "first": 361,
@@ -3973,7 +4006,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "- **D-1 (defect of the frozen file).**",
   "first": 60,
@@ -3984,7 +4017,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "**5.3 §9.7's placeholder (REFEREE-2 D-1; REFEREE 36 E-6).**",
   "first": 702,
@@ -3995,7 +4028,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**D-1 → 5.3: closed.**",
   "first": 387,
@@ -4006,7 +4039,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "- **O-1 (my own tool, not the packet).**",
   "first": 61,
@@ -4017,7 +4050,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "**5.6 The mover order the games use (REFEREE 35 M-2).**",
   "first": 774,
@@ -4028,7 +4061,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "### A1.1 The exact count (R124, Corollary EXACT-L): should a fixes entry add it, and under which premises?",
   "first": 288,
@@ -4039,7 +4072,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "## Entry 3 (L-RED-B successor 6, 2026-11-13): Corollary EXP-N5′, the EXACT count, by landed R124",
   "first": 245,
@@ -4050,7 +4083,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**Addendum 1 A1.1 → entry 3: closed.**",
   "first": 375,
@@ -4061,7 +4094,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "### A1.2 The reproduction erratum",
   "first": 305,
@@ -4072,7 +4105,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "### 10.E Reproduction erratum for §10: at 350d84eb the runner needs an ABSOLUTE ROOT",
   "first": 105,
@@ -4083,7 +4116,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**Addendum 1 A1.2 → entry 1, 10.E: closed**",
   "first": 392,
@@ -4094,7 +4127,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "### A2.1 Self-correction:",
   "first": 348,
@@ -4105,7 +4138,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "That row was wrong about the STATEMENT.",
   "first": 349,
@@ -4116,7 +4149,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**F-1 (reading; inherited from the frozen l. 203).**",
   "first": 442,
@@ -4127,7 +4160,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "**7.1 Clause (R3) of LEMMA′ with its range (F-1; a READING of entry 4.4, the one condition of the second signature).**",
   "first": 923,
@@ -4138,7 +4171,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**F-1 is ACCEPTED by this lane, as the lane that wrote LEMMA′**",
   "first": 805,
@@ -4149,7 +4182,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**F-2 (wording).**",
   "first": 445,
@@ -4160,7 +4193,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "**7.2 Which frozen lines of §6's statement stay in force (F-2; wording of 4.0).**",
   "first": 979,
@@ -4171,7 +4204,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "7.2's table of the frozen lines is right.",
   "first": 806,
@@ -4182,7 +4215,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**F-3 (wording).**",
   "first": 384,
@@ -4193,7 +4226,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "**7.3 The parenthesis of 5.1 (F-3; wording).**",
   "first": 1009,
@@ -4204,7 +4237,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**F-4 (tooling; the same defect in the NEW runner).**",
   "first": 395,
@@ -4215,7 +4248,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "**7.4 The runner run_b6fix.sh (F-4; tooling; no DATA changes).**",
   "first": 1046,
@@ -4226,7 +4259,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**F-5 (label inside (a′); no change asked).**",
   "first": 368,
@@ -4237,7 +4270,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "**7.5 The two sentences of entry 2 (a′) (F-5; a remark, no change asked).**",
   "first": 1097,
@@ -4248,7 +4281,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**F-1, F-2, F-3, F-4, F-5 closed.**",
   "first": 651,
@@ -4259,7 +4292,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "(L-a) the gloss",
   "first": 522,
@@ -4270,7 +4303,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "L-a: the gloss now says",
   "first": 1131,
@@ -4281,7 +4314,7 @@
  {
   "form": "qn",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**L-a: done.**",
   "first": 685,
@@ -4292,7 +4325,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "(L-b) R117's premises are paraphrased",
   "first": 525,
@@ -4303,7 +4336,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "L-b: R117's premises in the words of its title line",
   "first": 1133,
@@ -4314,7 +4347,7 @@
  {
   "form": "qn",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**L-b: done.**",
   "first": 686,
@@ -4325,7 +4358,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "(L-c) L41 asks for a scope tail",
   "first": 526,
@@ -4336,7 +4369,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "L-c: the L41 scope tail with REFEREE 36's two verdict sentences",
   "first": 1134,
@@ -4347,7 +4380,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "**L-c: done.**",
   "first": 687,
@@ -4358,7 +4391,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "- **L3-1 (failing clause; the rule misdescribed).**",
   "first": 658,
@@ -4369,7 +4402,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "this referee found the failing clause of entry 10 independently (its L3-1, with its own measured",
   "first": 1373,
@@ -4380,7 +4413,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "--- F-L3-1 (1): at character 861 of L-4",
   "first": 1348,
@@ -4391,7 +4424,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "- **L3-2 (a number that the line's own part (3) has overtaken).**",
   "first": 666,
@@ -4402,7 +4435,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "**11.1 L3-2: the correctness DATA reach k = 13.**",
   "first": 1377,
@@ -4413,7 +4446,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "--- L3-2: at character 6184 of L-5",
   "first": 1424,
@@ -4424,7 +4457,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "- **L3-3 (premise clause of Corollary EXP-N5′, not exact).**",
   "first": 668,
@@ -4435,7 +4468,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "**11.2 L3-3: the premises of Corollary EXP-N5′, in R124's words.**",
   "first": 1382,
@@ -4446,7 +4479,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "--- L3-3: at character 2605 of L-5",
   "first": 1421,
@@ -4457,7 +4490,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "- **L3-4 (source of a quotation).**",
   "first": 675,
@@ -4468,7 +4501,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "the packet attribution (its L3-4); both are done in L-5 and are unchanged in L-6",
   "first": 1374,
@@ -4479,7 +4512,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "--- F-L3-1 (2): at character 1276 of L-4",
   "first": 1351,
@@ -4490,7 +4523,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "- **L3-5 (optional, on L-c).**",
   "first": 679,
@@ -4501,7 +4534,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "**11.3 L3-5: STABLE's step form belongs in the L41 scope tail.**",
   "first": 1400,
@@ -4512,7 +4545,7 @@
  {
   "form": "l",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "--- L3-5: at character 6322 of L-5",
   "first": 1427,
@@ -4523,7 +4556,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "the same gap (E-2 = G-1) and the same rank tie (E-3 = M-1), placeholder (E-6 = D-1) and condition (P-1 = W-2) were found independently; E-1, E-4, E-5, E-7 are REFEREE 36's alone",
   "first": 629,
@@ -4534,7 +4567,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "Nothing that touches a statement.",
   "first": 623,
@@ -4545,7 +4578,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**P-N5-EXP: SIGNED with fixes entries 1-6.**",
   "first": 784,
@@ -4556,7 +4589,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**SIGNED** (§12; referee-originated, L41: it also needs REFEREE-2's independent signature)",
   "first": 585,
@@ -4567,7 +4600,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "**This lane signs LEMMA′ with clause (R3) read as fixes entry 7.1 restates it**",
   "first": 934,
@@ -4578,7 +4611,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "Nothing in entries 7 and 8 fails.",
   "first": 816,
@@ -4589,7 +4622,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "So **L-3 is NOT signed as the RESULTS line**: the failing clause is F-L3-1 (and N-5e's premise is to be named).",
   "first": 816,
@@ -4600,18 +4633,29 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
-  "text": "then part (ii) and the final line.",
-  "first": 1011,
-  "last": 1011,
+  "text": "No failing clause is left; the notes of §15.7 change no statement.",
+  "first": 1054,
+  "last": 1054,
   "occurrences": 1,
   "part": "block"
  },
  {
   "form": "q",
+  "key": "REF1",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
+  "path": "docs/referee/R-P-N5-EXP.md",
+  "text": "P-N5-EXP: SIGNED with fixes entries 1-11; line L-6 (sha1 1e0ff12d51da7a4ee1aad12ed0fd9119a097896b) SIGNED as the RESULTS line.",
+  "first": 1326,
+  "last": 1326,
+  "occurrences": 2,
+  "part": "block"
+ },
+ {
+  "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "P-N5-EXP: SIGNED with fixes entries 1-5.",
   "first": 548,
@@ -4622,7 +4666,7 @@
  {
   "form": "l",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "Signature (L41: the statements 4.3 and 4.4 are referee-originated, REFEREE 36's; this is the independent second signature):",
   "first": 463,
@@ -4633,7 +4677,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "LEMMA′ and CAUSAL in entry 4 are REFEREE 36's text word for word: L41 is met.",
   "first": 632,
@@ -4644,7 +4688,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "P-N5-EXP stays SIGNED, now with fixes entries 1-8 (the signature is about the packet and its fixes; L3-1 is a defect of the LINE's gloss, not of the rule, the theorem or any proof).",
   "first": 654,
@@ -4655,18 +4699,29 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
-  "text": "then I check only the replacements.",
-  "first": 731,
-  "last": 731,
+  "text": "The two wordings the author changed are right (§A5.1)",
+  "first": 750,
+  "last": 750,
+  "occurrences": 1,
+  "part": "block"
+ },
+ {
+  "form": "q",
+  "key": "REF2",
+  "commit": "66720c598722b6216451b77938547486cef15796",
+  "path": "docs/referee-2/R2-P-N5-EXP.md",
+  "text": "P-N5-EXP: SIGNED with fixes entries 1-11; line L-6 (sha1 1e0ff12d51da7a4ee1aad12ed0fd9119a097896b) SIGNED as the RESULTS line.",
+  "first": 753,
+  "last": 753,
   "occurrences": 1,
   "part": "block"
  },
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "Independence: REFEREE-2's reports and L-SI's box 108 (an independent proof of L(G_k) = 2^k − 2) were NOT read before §0-§9 were committed.",
   "first": 6,
@@ -4677,7 +4732,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "NOT read: docs/referee-2/ (the strings entry 4 quotes from it were matched by script only)",
   "first": 499,
@@ -4688,7 +4743,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "Independence: docs/referee-2/ was NOT read. The 18 quotes that entries 2-5 take from it (label REF2) were matched BY SCRIPT ONLY",
   "first": 556,
@@ -4699,7 +4754,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "Independence: docs/referee-2/ was NOT read. The 13 quotes that entry 7 takes from it (label REF2B, claude/referee-2 f17a2708) and the signature sentence that the line quotes from it were matched BY SCRIPT ONLY",
   "first": 795,
@@ -4710,7 +4765,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "Independence: docs/referee/ and notes/REFEREE.md were NOT read on this object",
   "first": 9,
@@ -4721,7 +4776,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "Independence: docs/referee/R-P-N5-EXP.md and docs/referee/R-GK-precheck.md were NOT opened before this addendum was committed.",
   "first": 328,
@@ -4732,7 +4787,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "Written after Addendum 2 was committed (f17a2708, 17:02:13Z) and its SHA sent to the Lead (17:03Z); only then were the first referee's files opened.",
   "first": 552,
@@ -4743,7 +4798,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "neither report cites the other",
   "first": 559,
@@ -4754,7 +4809,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "docs/referee/ was not opened beyond the sentences the entries and the line quote: those were checked by my quote tool only",
   "first": 643,
@@ -4765,7 +4820,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "the SAME gap, found independently, with the same repair (LEMMA′ / PREFIX FORM; §A2.4: one lemma)",
   "first": 589,
@@ -4776,7 +4831,7 @@
  {
   "form": "q",
   "key": "FIX",
-  "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+  "commit": "18509d949ef8ac09fde743c886720a5c64c9f0a5",
   "path": "docs/red-b/P-N5-EXP-fixes.md",
   "text": "The Lead also relays that this referee found the failing clause of entry 10 independently (its L3-1, with its own measured L = 3)",
   "first": 1373,
@@ -4787,7 +4842,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "The clause is already in L-1, and my §A2.7 did not flag it: that reading compared the line with my signature, not word by word with the rule.",
   "first": 664,
@@ -4798,7 +4853,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "This lane's pre-check (successor 35, docs/referee/R-GK-precheck.md at 06ac891d) is prior work of this lane; it had not read the packet.",
   "first": 7,
@@ -4809,7 +4864,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "What I know of the first referee's report is what entries 2-5 quote from it (22 tagged quotes; 5 of the pre-check).",
   "first": 329,
@@ -4820,7 +4875,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "the lane's gk.py, onep.py, b6*.py are not imported",
   "first": 33,
@@ -4831,7 +4886,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "No lane tool was imported by my checkers",
   "first": 9,
@@ -4842,7 +4897,7 @@
  {
   "form": "q",
   "key": "TARGET",
-  "commit": "15171faa822983e7c6118bb3c4be25b47469a387",
+  "commit": "37009aba5e898d4a9c54fa9af22d28c4a4a50e3c",
   "path": "TARGET.md",
   "text": "There is a deterministic algorithm A and a polynomial p such that for every parity game G, A on input G halts within p(n + m) steps and outputs the pair (W_E(G), W_O(G)).",
   "first": 20,
@@ -4853,7 +4908,7 @@
  {
   "form": "q",
   "key": "TARGET",
-  "commit": "15171faa822983e7c6118bb3c4be25b47469a387",
+  "commit": "37009aba5e898d4a9c54fa9af22d28c4a4a50e3c",
   "path": "TARGET.md",
   "text": "4. Written correctness and running-time proofs, double-refereed with every gap listed.",
   "first": 45,
@@ -4864,7 +4919,7 @@
  {
   "form": "q",
   "key": "CLAUDE",
-  "commit": "15171faa822983e7c6118bb3c4be25b47469a387",
+  "commit": "37009aba5e898d4a9c54fa9af22d28c4a4a50e3c",
   "path": "CLAUDE.md",
   "text": "Every algorithm claim runs the gauntlet in TARGET.md section 5. Failing any step makes it a dead end.",
   "first": 12,
@@ -4875,7 +4930,7 @@
  {
   "form": "q",
   "key": "TARGET",
-  "commit": "15171faa822983e7c6118bb3c4be25b47469a387",
+  "commit": "37009aba5e898d4a9c54fa9af22d28c4a4a50e3c",
   "path": "TARGET.md",
   "text": "Word RAM with words of O(log(n + m)) bits",
   "first": 24,
@@ -4897,7 +4952,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "it needs no bit-cost argument because it is a LOWER bound on steps",
   "first": 261,
@@ -4908,7 +4963,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "The Corollary's games are TARGET §1 games as they stand",
   "first": 44,
@@ -4919,7 +4974,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "so no parameter is being held small",
   "first": 263,
@@ -4930,7 +4985,7 @@
  {
   "form": "q",
   "key": "REF1",
-  "commit": "38d1166805fefea1e837855879ce2e44a935f61f",
+  "commit": "d05ea12e28562987381b2e18fa3a1a71c7417a05",
   "path": "docs/referee/R-P-N5-EXP.md",
   "text": "«Not claimed» matches TARGET §2: the target stays open.",
   "first": 48,
@@ -4941,7 +4996,7 @@
  {
   "form": "q",
   "key": "REF2",
-  "commit": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21",
+  "commit": "66720c598722b6216451b77938547486cef15796",
   "path": "docs/referee-2/R2-P-N5-EXP.md",
   "text": "No statement of the packet goes beyond TARGET.md.",
   "first": 263,
@@ -5106,7 +5161,7 @@
  {
   "form": "q",
   "key": "GAPS",
-  "commit": "15171faa822983e7c6118bb3c4be25b47469a387",
+  "commit": "37009aba5e898d4a9c54fa9af22d28c4a4a50e3c",
   "path": "docs/GAPS.md",
   "text": "UPDATE 2026-11-13 10:06Z: RESULTS R130 (P-N5-WRAP; CHECKER C146 26e9d73c) [refereed-only] LANDED:",
   "first": 11,
@@ -5161,7 +5216,7 @@
  {
   "form": "l",
   "key": "LEAD",
-  "commit": "15171faa822983e7c6118bb3c4be25b47469a387",
+  "commit": "37009aba5e898d4a9c54fa9af22d28c4a4a50e3c",
   "path": "docs/agents/LEAD-STATE.md",
   "text": "LEAD RULINGS for the landing: G-S:",
   "first": 3720,
@@ -5172,7 +5227,7 @@
  {
   "form": "qn",
   "key": "LEAD",
-  "commit": "15171faa822983e7c6118bb3c4be25b47469a387",
+  "commit": "37009aba5e898d4a9c54fa9af22d28c4a4a50e3c",
   "path": "docs/agents/LEAD-STATE.md",
   "text": "G-N5-TIME is answered NO for N5 from S3 (through RESULTS R117 as landed, refereed-only).",
   "first": 3720,
@@ -5183,7 +5238,7 @@
  {
   "form": "qn",
   "key": "LEAD",
-  "commit": "15171faa822983e7c6118bb3c4be25b47469a387",
+  "commit": "37009aba5e898d4a9c54fa9af22d28c4a4a50e3c",
   "path": "docs/agents/LEAD-STATE.md",
   "text": "the status cell of GAPS G-N5-TIME becomes «closed» and the row moves to «## Closed» (check_docs accepts only open / in-progress / closed; the gap's question is answered NO)",
   "first": 3720,
@@ -5194,7 +5249,7 @@
  {
   "form": "qn",
   "key": "GAPS",
-  "commit": "15171faa822983e7c6118bb3c4be25b47469a387",
+  "commit": "37009aba5e898d4a9c54fa9af22d28c4a4a50e3c",
   "path": "docs/GAPS.md",
   "text": "## Closed",
   "first": 13,
@@ -5205,7 +5260,7 @@
  {
   "form": "qn",
   "key": "RES",
-  "commit": "15171faa822983e7c6118bb3c4be25b47469a387",
+  "commit": "37009aba5e898d4a9c54fa9af22d28c4a4a50e3c",
   "path": "docs/RESULTS.md",
   "text": "**Erratum E-1** (not a result",
   "first": 16725,
@@ -5216,7 +5271,7 @@
  {
   "form": "qn",
   "key": "GAPS",
-  "commit": "15171faa822983e7c6118bb3c4be25b47469a387",
+  "commit": "37009aba5e898d4a9c54fa9af22d28c4a4a50e3c",
   "path": "docs/GAPS.md",
   "text": "## Closed",
   "first": 13,

@@ -1,5 +1,5 @@
 lanecheck rc 0 lanecheck: PASS
-fill rc 0 fill131: pass-1 draft 532 lines; block 470 lines (sha1 26433f850182a4f6812f4644ff64186a1fcd5ab8); UPDATE sha1 eea7651c11064d496181e10bac1e7ddaebafa2d3
+fill rc 0 fill131: pass-1 draft 536 lines; block 474 lines (sha1 e2c76548a3a78fe1f74f4e6fbb6de0c030c10255); UPDATE sha1 eea7651c11064d496181e10bac1e7ddaebafa2d3
 upd rc 0 upd: PASS
 data rc 0 data: 34 checks, 0 failed; PASS
 prem rc 0 prem: PASS
@@ -8,7 +8,7 @@ shape rc 0 shape: PASS
 lp rc 0 lp: PASS
 sweep rc 0 sweep: PASS
 landtest rc 0 landtest: PASS
-mkadd rc 0 mkadd: wrote docs/agents/R131-draft.md: 831 lines, sha1 6c985bf0f749f6fa32cf2d6ac2a1dc7440f4d931; Addendum 299 lines from line 533
+mkadd rc 0 mkadd: wrote docs/agents/R131-draft.md: 841 lines, sha1 f7f0e53082da4116fe9c70a07cef6b2f7eaf1b90; Addendum 305 lines from line 537
 post_shape rc 0 shape: PASS
 post_lp rc 0 lp: PASS
 post_sweep rc 0 sweep: PASS

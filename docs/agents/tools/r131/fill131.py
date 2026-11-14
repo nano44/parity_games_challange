@@ -29,6 +29,8 @@ class Fill:
             except ValueError as e:
                 ERR.append("guillemets do not balance in a quotation of %s: %s" % (key, e))
         o = self.S[key].find(text, whole)
+        if not o and not whole:          # Lead, third run: text after the described part (a later stage of a report)
+            o = self.S[key].find(text, True)
         if not o:
             ERR.append("NOT FOUND in %s (%s @ %s): %r" % (key, self.S[key].path, short(self.S[key].commit), text[:110]))
             return (0, 0), 0
@@ -73,10 +75,16 @@ class Fill:
         return norm(text), fl
 
 
-def table_rows(src, header_cells):
-    """the rows of the markdown table whose header row has these cells: [(line_no, [cells])]."""
+def table_rows(src, header_cells, occ=None, total=None):
+    """the rows of the markdown table whose header row has these cells: [(line_no, [cells])].
+    occ / total (Lead, third run): when the header occurs `total` times, take occurrence `occ` (1-based)."""
     hdr = "| " + " | ".join(header_cells) + " |"
     idx = [i for i, l in enumerate(src.lines) if norm(l) == hdr]
+    if occ is not None:
+        if len(idx) != total:
+            ERR.append("table header %r found %d times in %s, expected %d" % (hdr[:60], len(idx), src.key, total))
+            return []
+        idx = [idx[occ - 1]]
     if len(idx) != 1:
         ERR.append("table header %r found %d times in %s" % (hdr[:60], len(idx), src.key))
         return []
@@ -185,6 +193,8 @@ def main():
     def slot(name, open_text):
         s = slots[name]
         if s["open"]:
+            if callable(open_text):      # Lead, third run: lazy, so that a closed slot records no quotation of its open text
+                open_text = open_text()
             assert OPEN_WORD in open_text
             return open_text
         out = []
@@ -385,9 +395,9 @@ def main():
            (" Line of record %s %s: this fill stands on %s as a stand-in." % (LN["of_record_name"], OPEN_WORD, LN["name"])) if LN["stand_in"] else ""))
 
     # ---- Claims signed
-    def rows1(src_key, header, fmt):
+    def rows1(src_key, header, fmt, occ=None, total=None):
         out = []
-        for ln, cells in table_rows(S[src_key], header):
+        for ln, cells in table_rows(S[src_key], header, occ, total):
             cs = [raw(src_key, c)[0] if c not in ("", "—") else c for c in cells]
             out.append(fmt(cs) + " (l. %d)" % ln)
         return "; ".join(out)
@@ -398,7 +408,9 @@ def main():
                 lambda c: "%s%s → %s [%s]" % (c[0], (" (" + c[1] + ")") if c[1] else "", c[2], c[3]))
     t20 = rows1("REF2", ["statement (packet §)", "verdict", "items"], lambda c: "%s → %s [%s]" % (c[0], c[1], c[2]))
     t2a = rows1("REF2", ["entry", "this lane's items", "verdict"], lambda c: "%s (%s) → %s" % (c[0], c[1], c[2]))
-    t2d = rows1("REF2", ["object", "verdict"], lambda c: "%s → %s" % (c[0], c[1]))
+    # Lead, third run: REF2's Addendum 5 (§A5.0) repeats Addendum 4's header; t2d stays Addendum 4's table (the first of two),
+    # Addendum 5's verdict is quoted in the slot r2_add5.
+    t2d = rows1("REF2", ["object", "verdict"], lambda c: "%s → %s" % (c[0], c[1]), 1, 2)
     st1 = ", ".join("%s %s %s" % (n, rng(r1bl, c), c8(c)) for n, c in cfg["referee"]["stages"])
     st2 = ", ".join("%s %s %s" % (n, rng(r2bl, c), c8(c)) for n, c in cfg["referee2"]["stages"])
     bullet(
@@ -739,6 +751,13 @@ def main():
              [], [("q", "REF1", "A loose phrase, nothing wrong.")]),
             ("N-6b", "the builder's own measure of unchanged characters", ("REF1", "- N-6b (entry 8, the pasted record):"),
              "no fixes entry answers it; a remark on a record", [], None),
+            # Lead, third run: the notes of the first referee's stage 5b (ii), §15.7 (they change no statement)
+            ("N-7a", "who worded the label N-5e and the new rank gloss", ("REF1", "- N-7a (entries 9.1 and 10.3):"),
+             "no fixes entry answers it; a remark on two attributions in entries 9.1 and 10.3", [], None),
+            ("N-7b", "a loose phrase of fixes 11.2", ("REF1", "- N-7b (entry 11.2):"),
+             "no fixes entry answers it; the referee asks for nothing", [], None),
+            ("N-7c", "what else fixes 4.2 holds besides STABLE's step form", ("REF1", "- N-7c (entry 11.3 and the tail):"),
+             "no fixes entry answers it; the tail is true as worded", [], None),
         ]),
         ("REFEREE 35's pre-check (its §7; not a signature)", [
             ("P-1", "the premises of the corollary", ("PRE", "- P-1 (premises; wording of Corollary EXP-N5)."), "REFEREE 36's P-1: fixes entry 2",
@@ -874,7 +893,7 @@ def main():
            q("REF1", "**This lane signs LEMMA′ with clause (R3) read as fixes entry 7.1 restates it**"),
            q("REF1", "Nothing in entries 7 and 8 fails."),
            q("REF1", "So **L-3 is NOT signed as the RESULTS line**: the failing clause is F-L3-1 (and N-5e's premise is to be named)."),
-           slot("stage5b_ii", "REFEREE stage 5b (ii) %s (the lines L-4 to L-6 and fixes entries 9 to 11, and its FINAL line naming the line of "
+           slot("stage5b_ii", lambda: "REFEREE stage 5b (ii) %s (the lines L-4 to L-6 and fixes entries 9 to 11, and its FINAL line naming the line of "
                               "record by its sha1; part (i) ends %s)." % (OPEN_WORD, q("REF1", "then part (ii) and the final line."))),
            cfg["referee2"]["path"], c8(H["referee-2"]), num(len(ref2.lines)), ref2.sha1, stg(r2bl, cfg["referee2"]["stages"]),
            q("REF2", "P-N5-EXP: SIGNED with fixes entries 1-5.", 2),
@@ -882,7 +901,7 @@ def main():
            q("REF2", "LEMMA′ and CAUSAL in entry 4 are REFEREE 36's text word for word: L41 is met."),
            q("REF2", "P-N5-EXP stays SIGNED, now with fixes entries 1-8 (the signature is about the packet and its fixes; L3-1 is a defect of the "
                      "LINE's gloss, not of the rule, the theorem or any proof)."),
-           slot("r2_add5", "REFEREE-2 Addendum 5 %s (its check of the replacements made after L-3, of fixes entries 9 to 11, and its final line "
+           slot("r2_add5", lambda: "REFEREE-2 Addendum 5 %s (its check of the replacements made after L-3, of fixes entries 9 to 11, and its final line "
                            "naming the line of record; Addendum 4 ends %s)." % (OPEN_WORD, q("REF2", "then I check only the replacements."))),
            c8(FZ), c8(fstage["entry 1"][0]), c8(fstage["entries 2-5"][0]), c8(fstage["entry 6"][0]), c8(fstage["entry 7"][0]),
            c8(fstage["entry 8"][0]), c8(fstage["entry 9"][0]), c8(fstage["entry 10"][0]), c8(fstage["entry 11"][0]), CN))
@@ -1001,7 +1020,7 @@ def main():
         Hd.extend(wrap(text.replace("@@FILL@@", cfg["fill"].upper()), "", "  ", 140))
 
     line1 = (
-        "# Draft RESULTS %s (Lead; @@FILL@@ FILL by script (subagent) on %s line %s%s, %s, claude/l-red-b %s, sha1 %s) — to CHECKER %s — NOT LANDED; "
+        "# Draft RESULTS %s (Lead; @@FILL@@ FILL by script (the subagent's tool; this run by the Lead, with four changes to fill131.py, each marked with the comment words Lead, third run) on %s line %s%s, %s, claude/l-red-b %s, sha1 %s) — to CHECKER %s — NOT LANDED; "
         "goes after %s (RESULTS l. %d at trunk %s), directly before the line-start %s (l. %d); its GAPS UPDATE on the row %s (GAPS l. %d), which "
         "then moves under %s"
         % (E, PK, LN["name"], (" (a STAND-IN for the line of record %s)" % LN["of_record_name"]) if LN["stand_in"] else "", LN["path"],

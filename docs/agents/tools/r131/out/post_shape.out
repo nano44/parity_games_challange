@@ -3,14 +3,14 @@ OK   title: pipe characters 0
 OK   title: parentheses 83 / 83, square brackets 2 / 2, guillemets 6 / 6
 OK   title passes the label rule of scripts/check_docs.py
 OK   negative control: the title without its label fails that rule
-OK   block: 470 lines (title + 469), no empty line, every line a bullet or a continuation, widest 140
+OK   block: 474 lines (title + 473), no empty line, every line a bullet or a continuation, widest 140
      bullets: Object; Fixes; The RESULTS line is L-6, 1e0; Claims signed; Setting and scope, as both r; Premise; L41 and L43. The packet's pr; Not signed; Referee strengthening and su; Honest limits; Data; DATA counters for the replay; Note; Signatures; INDEPENDENCE; TARGET.md diff; Status
 OK   block: pipe characters 0, tabs 0
-OK   open-slot tokens: block 3 (the title's checker token 1, other 2); whole draft 5
-     landable by this count: no (open slots)
+OK   open-slot tokens: block 1 (the title's checker token 1, other 0); whole draft 1
+     landable by this count: yes
 OK   UPDATE line = updlib.r131_update(the line): 7902 bytes, sha1 eea7651c11064d496181e10bac1e7ddaebafa2d3
 OK   UPDATE: pipes 0, parentheses 84 / 84, fill tokens 1 1 1, ends with the ruled sentence
-OK   recorded hashes (out/hashes.json): block sha1 26433f850182a4f6812f4644ff64186a1fcd5ab8 (470 lines), UPDATE sha1 eea7651c11064d496181e10bac1e7ddaebafa2d3
+OK   recorded hashes (out/hashes.json): block sha1 e2c76548a3a78fe1f74f4e6fbb6de0c030c10255 (474 lines), UPDATE sha1 eea7651c11064d496181e10bac1e7ddaebafa2d3
 OK   first line starts '# Draft RESULTS R131 ' and is not marked landed
-OK   layout: block at lines 46-515, empty line 516, proposal 517-530, UPDATE line 531
+OK   layout: block at lines 46-519, empty line 520, proposal 521-534, UPDATE line 535
 shape: PASS

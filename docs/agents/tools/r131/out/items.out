@@ -1,4 +1,4 @@
-items: 51 rows in the Note's table, 48 distinct labels (P-1, M-1 and O-1 are labels of two reports each)
+items: 54 rows in the Note's table, 51 distinct labels (P-1, M-1 and O-1 are labels of two reports each)
   REFEREE 36, stage 1 (the table of its §9)
     E-1     raised l. 377      closing texts 1; confirmation quoted
     E-2     raised l. 378      closing texts 1; confirmation quoted
@@ -24,6 +24,9 @@ items: 51 rows in the Note's table, 48 distinct labels (P-1, M-1 and O-1 are lab
     L-n3    raised l. 996      closing texts 2; confirmation REFEREE's stage 5b (ii) (open slot)
     N-6a    raised l. 997      closing texts 0; confirmation quoted
     N-6b    raised l. 999      closing texts 0; confirmation none quoted
+    N-7a    raised l. 1296     closing texts 0; confirmation none quoted
+    N-7b    raised l. 1300     closing texts 0; confirmation none quoted
+    N-7c    raised l. 1303     closing texts 0; confirmation none quoted
   REFEREE 35's pre-check (its §7; not a signature)
     P-1     raised l. 322      closing texts 1; confirmation none quoted
     P-2     raised l. 327      closing texts 1; confirmation none quoted
@@ -57,10 +60,10 @@ items: 51 rows in the Note's table, 48 distinct labels (P-1, M-1 and O-1 are lab
     L3-3    raised l. 668      closing texts 2; confirmation REFEREE-2's Addendum 5 (open slot)
     L3-4    raised l. 675      closing texts 2; confirmation REFEREE-2's Addendum 5 (open slot)
     L3-5    raised l. 679      closing texts 2; confirmation REFEREE-2's Addendum 5 (open slot)
-scan REFEREE's report (docs/referee/R-P-N5-EXP.md @ 38d11668, 1011 lines): 41 labels; in the table 35; section numbers 1; names of lines 4; not items of this packet 1 (L-d); UNLISTED 0 []
-scan REFEREE-2's report (docs/referee-2/R2-P-N5-EXP.md @ 4d5b03f7, 731 lines): 55 labels; in the table 32; section numbers 18; names of lines 3; not items of this packet 2 (B-7 S-1); UNLISTED 0 []
-scan the pre-check (docs/referee/R-GK-precheck.md @ 38d11668, 371 lines): 11 labels; in the table 7; section numbers 0; names of lines 0; not items of this packet 4 (N-3 R-1 R-2 R-3); UNLISTED 0 []
-scan REFEREE-2's review of box 108 (docs/referee-2/R2-box108.md @ 4d5b03f7, 145 lines): 4 labels; in the table 1; section numbers 0; names of lines 0; not items of this packet 3 (S-1 S-2 S-3); UNLISTED 0 []
+scan REFEREE's report (docs/referee/R-P-N5-EXP.md @ d05ea12e, 1326 lines): 48 labels; in the table 40; section numbers 1; names of lines 6; not items of this packet 1 (L-d); UNLISTED 0 []
+scan REFEREE-2's report (docs/referee-2/R2-P-N5-EXP.md @ 66720c59, 804 lines): 68 labels; in the table 37; section numbers 23; names of lines 6; not items of this packet 2 (B-7 S-1); UNLISTED 0 []
+scan the pre-check (docs/referee/R-GK-precheck.md @ d05ea12e, 371 lines): 11 labels; in the table 7; section numbers 0; names of lines 0; not items of this packet 4 (N-3 R-1 R-2 R-3); UNLISTED 0 []
+scan REFEREE-2's review of box 108 (docs/referee-2/R2-box108.md @ 66720c59, 145 lines): 4 labels; in the table 1; section numbers 0; names of lines 0; not items of this packet 3 (S-1 S-2 S-3); UNLISTED 0 []
   not an item: B-7: an item of REFEREE-2's pre-read of another packet (R2-key-preread)
   not an item: L-d: the Lead's line item (k = 13 into part (3)); in the line's history
   not an item: L-f: the builder's name of a line replacement (the Lead's ruling)
@@ -74,5 +77,5 @@ scan REFEREE-2's review of box 108 (docs/referee-2/R2-box108.md @ 4d5b03f7, 145 
   not an item: S-1: a wording item on L-SI's box 108 (R2-box108.md), not part of this entry
   not an item: S-2: as S-1
   not an item: S-3: as S-1
-items without a closing text in the fixes file or a line replacement (flags, not guesses): L-n2, N-6a, N-6b, A2.1
+items without a closing text in the fixes file or a line replacement (flags, not guesses): L-n2, N-6a, N-6b, N-7a, N-7b, N-7c, A2.1
 items: PASS

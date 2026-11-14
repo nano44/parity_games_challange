@@ -155,6 +155,27 @@
    "confirm": "none"
   },
   {
+   "group": "REFEREE 37, stage 5b (i) (its §14, on line L-3 and fixes entries 7, 8)",
+   "id": "N-7a",
+   "raised": "l. 1296",
+   "closing_texts": 0,
+   "confirm": "none"
+  },
+  {
+   "group": "REFEREE 37, stage 5b (i) (its §14, on line L-3 and fixes entries 7, 8)",
+   "id": "N-7b",
+   "raised": "l. 1300",
+   "closing_texts": 0,
+   "confirm": "none"
+  },
+  {
+   "group": "REFEREE 37, stage 5b (i) (its §14, on line L-3 and fixes entries 7, 8)",
+   "id": "N-7c",
+   "raised": "l. 1303",
+   "closing_texts": 0,
+   "confirm": "none"
+  },
+  {
    "group": "REFEREE 35's pre-check (its §7; not a signature)",
    "id": "P-1",
    "raised": "l. 322",
@@ -362,6 +383,9 @@
   "L-n2",
   "N-6a",
   "N-6b",
+  "N-7a",
+  "N-7b",
+  "N-7c",
   "A2.1"
  ]
 }
