@@ -1,0 +1,14 @@
+B7 rf lmcs fig4 n 1 |V| 14: RF tie-high 5 tie-low 5 3n+3 6
+B7 rf lmcs fig4 n 2 |V| 24: RF tie-high 9 tie-low 9 3n+3 9
+B7 rf lmcs fig4 n 3 |V| 34: RF tie-high 12 tie-low 12 3n+3 12
+B7 rf lmcs fig4 n 4 |V| 44: RF tie-high 15 tie-low 15 3n+3 15
+B7 rf lmcs fig4 n 5 |V| 54: RF tie-high 18 tie-low 18 3n+3 18
+B7 rf lmcs fig4 n 6 |V| 64: RF tie-high 21 tie-low 21 3n+3 21
+B7 rf lmcs fig4 n 7 |V| 74: RF tie-high 24 tie-low 24 3n+3 24
+B7 rf lmcs table4 n 1 |V| 14: RF tie-high 5 tie-low 5 3n+3 6
+B7 rf lmcs table4 n 2 |V| 24: RF tie-high 9 tie-low 9 3n+3 9
+B7 rf lmcs table4 n 3 |V| 34: RF tie-high 12 tie-low 12 3n+3 12
+B7 rf lmcs table4 n 4 |V| 44: RF tie-high 15 tie-low 15 3n+3 15
+B7 rf lmcs table4 n 5 |V| 54: RF tie-high 18 tie-low 18 3n+3 18
+B7 rf lmcs table4 n 6 |V| 64: RF tie-high 21 tie-low 21 3n+3 21
+B7 rf lmcs table4 n 7 |V| 74: RF tie-high 24 tie-low 24 3n+3 24

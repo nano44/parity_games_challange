@@ -1,0 +1,11 @@
+B7 xoink lmcs fig4 n 1: howard 8 rf 5 | rz 0 rt 0 ov 0 hv 0
+B7 xoink lmcs fig4 n 2: howard 26 rf 9 | rz 0 rt 0 ov 0 hv 0
+B7 xoink lmcs fig4 n 3: howard 62 rf 12 | rz 0 rt 0 ov 0 hv 0
+B7 xoink lmcs fig4 n 4: howard 134 rf 15 | rz 0 rt 0 ov 0 hv 0
+B7 xoink lmcs fig4 n 5: howard 278 rf 18 | rz 0 rt 0 ov 0 hv 0
+B7 xoink lmcs table4 n 1: howard 8 rf 5 | rz 0 rt 0 ov 0 hv 0
+B7 xoink lmcs table4 n 2: howard 26 rf 9 | rz 0 rt 0 ov 0 hv 0
+B7 xoink lmcs table4 n 3: howard 62 rf 12 | rz 0 rt 0 ov 0 hv 0
+B7 xoink lmcs table4 n 4: howard 134 rf 15 | rz 0 rt 0 ov 0 hv 0
+B7 xoink lmcs table4 n 5: howard 278 rf 18 | rz 0 rt 0 ov 0 hv 0
+B7 xoink lmcs games 10 ctrl 0: rz 0 rt 0 ov 0 hv 0

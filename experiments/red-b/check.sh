@@ -69,5 +69,18 @@ if [ -f data/b6b/SHA1SUMS_b6b_fixes6 ]; then (cd data/b6b && sha1sum -c --quiet 
 g6=$(python3 b6gloss.py 6 | tail -n 1); case "$g6" in *"expected 62 rulediff 0 Lrule 62 Ldiff 0 Lwire0 62 wire0diff 0 Loldinc 3 Lolddec 1 member 1 oldfires 2") ;; *) echo "red-b: b6gloss 6 FAILED (or the old-gloss control did not fire): $g6"; fail=1;; esac
 if [ -f data/b6b/SHA1SUMS_b6b_fixes7 ]; then (cd data/b6b && sha1sum -c --quiet SHA1SUMS_b6b_fixes7) || { echo "red-b: data/b6b fixes7 SHA1SUMS mismatch"; fail=1; }; fi
 if [ -f data/b6b/SHA1SUMS_b6b_fixes8 ]; then (cd data/b6b && sha1sum -c --quiet SHA1SUMS_b6b_fixes8) || { echo "red-b: data/b6b fixes8 SHA1SUMS mismatch"; fail=1; }; fi
+# B7 (candidate RF, successor 8): own VJ engine against the definition (brute force over Odd's strategies) with its control,
+# Howard = 9*2^n - 10 on Friedmann's G_n (n <= 4), RF on K^s_n = 7*2^(n-1) - 2n - 3 (n <= 6) and on K_n = (n^3 + 3n)/2
+# (n <= 5), and the pins of the instances and outputs (4 s)
+b7=$(cd b7 && python3 st7.py bf 1 300 6 | tail -n 1); case "$b7" in "B7 st7 bf "*"bfval 0 bfmin 0") ;; *) echo "red-b: B7 st7 bf FAILED: $b7"; fail=1;; esac
+b7c=$(cd b7 && B7_CTRL=1 python3 st7.py bf 1 100 6 | tail -n 1); case "$b7c" in "B7 st7 bf "*"bfval 0 bfmin 0") echo "red-b: B7 st7 control did not fire"; fail=1;; "B7 st7 bf "*) ;; *) echo "red-b: B7 st7 control gave no line"; fail=1;; esac
+b7h=$(cd b7 && python3 st7.py howard 4 fig4 | grep -c "iterations tie-low \([0-9]*\) tie-high \1 formula 9\*2^n-10 \1 regions+strategies ok 1")
+[ "$b7h" = "4" ] || { echo "red-b: B7 Howard on G_n FAILED ($b7h of 4 lines)"; fail=1; }
+b7k=$(cd b7 && python3 runks.py 1 2 3 4 5 6 | grep -c "^B7 Ks n [1-6] .* diff 0 ")
+[ "$b7k" = "6" ] || { echo "red-b: B7 K^s_n law FAILED ($b7k of 6 lines)"; fail=1; }
+b7n=$(cd b7 && for n in 1 2 3 4 5; do python3 rfc2.py $n; done | sed 's/^K n \([0-9]*\):.* RF \([0-9]*\) Howard.*$/\1:\2/' | tr '\n' ' ')
+[ "$b7n" = "1:2 2:7 3:18 4:38 5:70 " ] || { echo "red-b: B7 K_n (no skip) counts changed: $b7n"; fail=1; }
+(cd b7/inst && sha1sum -c --quiet SHA1SUMS) || { echo "red-b: b7/inst SHA1SUMS mismatch"; fail=1; }
+(cd b7/out && sha1sum -c --quiet SHA1SUMS_b7) || { echo "red-b: b7/out SHA1SUMS_b7 mismatch"; fail=1; }
 [ $fail -eq 0 ] && echo "red-b check PASS" || echo "red-b check FAILED"
 exit $fail

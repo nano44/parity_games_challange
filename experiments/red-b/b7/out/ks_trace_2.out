@@ -1,0 +1,8 @@
+   0 [- -] switch d1.x>e1.x | wait d2.x
+   1 [- x] switch R>f1.x | wait d2.x
+   2 [- x] switch d2.x>e2.x | wait 
+   3 [x x] switch R>f2.x g2>f2.x | wait 
+   4 [x x] switch d1.2>e1.2 | wait d1.x
+   5 [x x,2] switch R>f1.2 | wait d1.x
+   6 [x x,2] switch d1.x>C1.2 | wait 
+7 x 2 DONE

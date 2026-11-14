@@ -4,6 +4,39 @@ Lead session: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/l-red-b (from trun
 Files I own: docs/red-b/, experiments/red-b/, notes/L-RED-B.md, docs/agents/handover-checks/L-RED-B.md.
 
 ## Resume point
+**SUCCESSOR 8 (session_01V5yGRYdyWTwtt6n2dRhXMs; model and effort as in the Lead's brief; started 2026-11-14 14:07Z by date -u,
+EARLY START under a NO-COMMIT clause until 91d30d95 was on origin at 15:17Z; handover check, B7 report and tools in ONE commit).
+Written 2026-11-14T15:27Z by date -u. TARGET TODAY: kill candidate RF (L-SI 57's ROOT-FIRST rule) by a rule-built family.**
+- STATE: KILL CANDIDATE K^s_n (docs/red-b/B7-RF.md §4; generator experiments/red-b/b7/rfc2.py `build(n, skip=True)`): RF makes
+  exactly 7·2^(n−1) − 2n − 3 iterations, |V| = 3n² + 3n + 1; measured n = 1..11 (Python, si7.py) and n = 2..14 (C++, rf7.cpp),
+  residual 0. Reported to the Lead 15:14Z (one error in that message: «> |V|² first at n = 20»; the first n is 19, 1,834,967 >
+  1,301,881; to be corrected in the next message). Status: DATA + a READING of the mechanism; no proof, no second engine yet.
+- IN FLIGHT at this commit: `bash b7/runks_cpp.sh ../work/b7/rf7 2 17 ../work/b7` (C++ rows n = 15, 16, 17; output
+  experiments/red-b/work/b7/ks_cpp.out, ignored directory; resumable per n; n = 17 needs about 40 minutes) and
+  `python3 b7/runks.py 10 11 12` (n = 12 pending, output work/b7/ks_py_10_12.partial).
+- NEXT: (1) the SCHEDULE of the run in closed form (state after every iteration as a function of the counter value) and a
+  step-by-step test of it against the real run, as b6lemma.py did for G_k; (2) the proof of the doubling from the valuation
+  comparisons (B7-RF.md §4.4 lists the five facts to prove); (3) an instance beyond |V|²: n = 19 needs 1.83 million iterations;
+  rf7 takes 136 s at n = 14 and about 2.6 times more per n, so n = 19 needs a checkpoint option (the state is σ and the
+  iteration count only: RF is memoryless) or a faster valuation; (4) answer the independent rebuilds the Lead routes.
+- SOURCES OPENED (this session): O. Friedmann, arXiv 1106.0778v2 (PDF sha1 a63a9293fec00b8078f434bfab3ea1a66e55eaf9, in the
+  session scratchpad only): §3 p. 4-6 (valuations, orders, Lemma 3.1, Theorems 3.2, 3.3, Algorithm 1), §4 (locally optimizing
+  policy), §5 (1-sink games, Lemma 5.1), Table 4 and ι_{G_n} p. 15, Fact 6.1, Figure 4 (the injective priorities: Table 4's six
+  rows d, e, g, k, f, h lowered by 2), Theorem 6.14 («at least 2^n»; 9·2^n − 10 is a measured count, not the paper's).
+- THINGS ONLY I KNOW (successor 8):
+  1. Three design facts about RF that the dead ends taught (B7-RF.md §3): (i) a vertex on a closed gate's play that can refresh
+     its exit moves BEFORE the gate (the gate depends on it), so latches must not exist: make the exit context structural (one
+     gate per bit and context); (ii) a pending bit closes in any iteration in which nothing improvable is on its plays, so every
+     move of the lower bits must be visible to it or happen together with a visible one (R's move covers the selector's);
+     (iii) an Even selector in front of a bit's gates is attracted to a PENDING gate of that bit unless a cheaper skip edge
+     exists; the skip's odd priority must sit above every bonus of the lower bits, or a refreshed exit cancels the reset.
+  2. The reader chain (Odd C → d | below, the gate's escape = below) is the ordering device: Odd drops into every open gate, so
+     the lowest open bit is the dependency sink. It was offered to the Lead for L-RED's RC_n / H_n line.
+  3. On K^s_n no two successors of a vertex have equal valuations, so tie rules cannot matter; a variant where ties appear must
+     be run under the pseudocode's rule (larger id) first.
+  4. Module names: never `selftest`, `pg`, `verify`, `gen`, `zielonka` in this lane's directories (experiments/harness has
+     them and goes first on sys.path in the cross-checks).
+
 **SUCCESSOR 7 (session_01V5yGRVmUNMkUXGRuVH63B8; model and effort as in the Lead's brief; started 2026-11-13 17:04Z by date -u; paused
 by the fleet's 5-hour limit from about 17:37Z to 19:04Z; handover check, line L-2 and fixes entry 7 in ONE commit). HANDOVER written
 2026-11-13T19:12Z by date -u; PARKED after this commit's push and the message to the Lead (context about 445k: the park line).**

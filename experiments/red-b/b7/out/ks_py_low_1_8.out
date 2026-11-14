@@ -1,0 +1,8 @@
+B7 Ks n 1 |V| 7 |E| 11 RF tie-low iterations 2 law 2 diff 0 odd-won 7 final [x] secs 0
+B7 Ks n 2 |V| 19 |E| 32 RF tie-low iterations 7 law 7 diff 0 odd-won 19 final [x 2] secs 0
+B7 Ks n 3 |V| 37 |E| 65 RF tie-low iterations 19 law 19 diff 0 odd-won 37 final [x 3 2] secs 0
+B7 Ks n 4 |V| 61 |E| 110 RF tie-low iterations 45 law 45 diff 0 odd-won 61 final [x 4 3 2] secs 0
+B7 Ks n 5 |V| 91 |E| 167 RF tie-low iterations 99 law 99 diff 0 odd-won 91 final [x 5 4 3 2] secs 0
+B7 Ks n 6 |V| 127 |E| 236 RF tie-low iterations 209 law 209 diff 0 odd-won 127 final [x 6 5 4 3 2] secs 1
+B7 Ks n 7 |V| 169 |E| 317 RF tie-low iterations 431 law 431 diff 0 odd-won 169 final [x 7 6 5 4 3 2] secs 2
+B7 Ks n 8 |V| 217 |E| 410 RF tie-low iterations 877 law 877 diff 0 odd-won 217 final [x 8 7 6 5 4 3 2] secs 7

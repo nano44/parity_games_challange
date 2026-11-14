@@ -1,0 +1,6 @@
+B7 st7 howard lmcs fig4 n 1 |V| 14 |E| 27: iterations tie-low 8 tie-high 8 formula 9*2^n-10 8 regions+strategies ok 1
+B7 st7 howard lmcs fig4 n 2 |V| 24 |E| 52: iterations tie-low 26 tie-high 26 formula 9*2^n-10 26 regions+strategies ok 1
+B7 st7 howard lmcs fig4 n 3 |V| 34 |E| 80: iterations tie-low 62 tie-high 62 formula 9*2^n-10 62 regions+strategies ok 1
+B7 st7 howard lmcs fig4 n 4 |V| 44 |E| 111: iterations tie-low 134 tie-high 134 formula 9*2^n-10 134 regions+strategies ok 1
+B7 st7 howard lmcs fig4 n 5 |V| 54 |E| 145: iterations tie-low 278 tie-high 278 formula 9*2^n-10 278 regions+strategies ok 1
+B7 st7 howard lmcs fig4 n 6 |V| 64 |E| 182: iterations tie-low 566 tie-high 566 formula 9*2^n-10 566 regions+strategies ok 1

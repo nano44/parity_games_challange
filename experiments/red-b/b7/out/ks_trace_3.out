@@ -1,0 +1,20 @@
+   0 [- - -] switch d1.x>e1.x | wait d3.x d2.x
+   1 [- - x] switch R>f1.x | wait d3.x d2.x
+   2 [- - x] switch d2.x>e2.x | wait d3.x
+   3 [- x x] switch R>f2.x g2>f2.x | wait d3.x
+   4 [- x x] switch d1.2>e1.2 | wait d3.x d1.x
+   5 [- x x,2] switch R>f1.2 | wait d3.x d1.x
+   6 [- x x,2] switch d1.x>C1.3 | wait d3.x
+   7 [- x 2] switch d3.x>e3.x | wait 
+   8 [x x 2] switch R>f3.x g3>f3.x | wait 
+   9 [x x 2] switch g2>s2.3 | wait d2.3 d1.3 d1.2
+  10 [x x 2] switch d1.2>R | wait d2.x d2.3 d1.3
+  11 [x x -] switch d1.3>e1.3 | wait d2.x d2.3
+  12 [x x 3] switch R>f1.3 | wait d2.x d2.3
+  13 [x x 3] switch d2.3>e2.3 | wait d2.x
+  14 [x x,3 3] switch R>f2.3 g2>f2.3 | wait d2.x
+  15 [x x,3 3] switch d1.2>e1.2 | wait d2.x d1.3
+  16 [x x,3 3,2] switch R>f1.2 | wait d2.x d1.3
+  17 [x x,3 3,2] switch d1.3>C1.2 | wait d2.x
+  18 [x x,3 2] switch d2.x>C2.3 | wait 
+19 x 3 2 DONE
