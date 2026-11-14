@@ -1,0 +1,34 @@
+OK   member.out: G_3..G_14: member 1, viol and c1..c8 0, N = 9k - 16, M = 18k - 32, d = k + 1 on 12 lines
+OK   member_ctrl.out: 8 damaged copies of G_5, each member 0 and viol >= 1
+OK   sim.out: k = 3..14: T = TB = TC = 2^k - 2, ideq 0, stop stuck, maxsw 2^(k-2), sumsw 11*2^(k-2) - 9
+OK   sim.out howard: Howard's rule on the model: at most 4 steps
+OK   lemma.out: k = 3..14: kfact, vfact, sched, tlen, rest, swk 0; T = 2^k - 2; moves 11*2^(k-2) - 9
+OK   lemma_ctrl.out: control 1 sched 19, control 2 kfact 25 (both fire)
+OK   n5.out: k = 3..11: n = 135k - 230, T1p = F = 2^k - 2, its = its2 = 2^k + 1, fb = fb2 = 1, mism, wrong, nonmover, wrong2, engdiff, gdiff 0, pg_sha1 = sha1 of the pinned game file
+OK   n5_k12.out: k = 12: its = its2 = 4097 on n = 1390, one fallback, the six counters 0
+OK   n5_k13.out: k = 13, engine 1 only: its 8193 on n = 1525, fb 1, F 8190, mism, wrong, nonmover, gdiff 0
+OK   n5ck_check.out: the checkpointed driver on k = 3..8: the frozen values
+OK   size.out sizes: nine .pg files: n = 135k - 230, m = 176k - 300, sizediff 0
+OK   size.out bounds: the six 'first k' lines equal exact-integer recomputation: k = 23, 37, 51, 26, 41, 57
+OK   size_k13.out: k = 13: n 1525, m 1988, sizediff 0; control fires
+OK   prefix_run.out: k = 3..14: h1, h2, h2last, psched, empty 0 at 16368 windows, 376836 (window, step) pairs
+OK   prefix_all.out: k = 3..12: aviol 0, windows = expected = 2^(k-1) - 1, 163970 triples
+OK   prefix_ctrl.out: control 5 (the lemma as frozen), k = 3..8: fails at exactly k - 1 triples per k: 2 3 4 5 6 7
+OK   prefix_off.out: pviol 0 on 42902 windows (1089 proper), 346644 steps
+OK   prefix_drive.out: dviol 0 on 28000 driven windows (16423 proper), 190500 steps
+OK   prefix_loc.out: loc 0 on 81000 states (78534 repeated triples)
+OK   prefix_stable.out: stviol 0 on 14698 cases
+OK   prefix_u0.out: c0e0 0 on 8,000 states per k, k = 3..6; with u_0 free the count is positive
+OK   prefix_exh.out: every state of G_3 (512) and G_4 (65,536) with the wires and u_0 at 0: c0e0, loc, stviol, pviol 0
+OK   strat.out, n5_clean.out: badstrat 0 for k = 3..8 (strat.out) and k = 3..10 (n5_clean.out)
+OK   enab.out: k = 3..12: venab, kenab, movd 0
+OK   perm.out: keep 0 on 7050 relabelings
+OK   reach.out: k = 3..8: startdiff, padcyc, padp, fbpos 0
+OK   pins: 94 pinned files of 6 pin files (SHA1SUMS_b6b, SHA1SUMS_b6b_fixes1, SHA1SUMS_b6b_fixes2, SHA1SUMS_b6b_fixes3, SHA1SUMS_b6b_fixes4, SHA1SUMS_b6b_fixes5): 0 mismatches
+OK   e7_r3.out: k = 3..14: r3in, r3move, r3rest, litdiff 0 at 16368 windows (16356 with j >= 2)
+OK   frozen pins: SHA1SUMS_b6b byte-equal at the freeze commit and at the head
+OK   below n^2: N5 itself, k = 3..13: 2^k + 1 < n^2 at every k (k = 13: 8193 < 2325625); the model's k = 20: 1048574 < 6100900; 2^k - 1 > n^2 first at k = 23 (n = 2875: 8388607 > 8265625)
+OK   above n, n + m: 2^k + 1 > n from k = 11 and > n + m from k = 12
+OK   genomes: G_3..G_14 (JSON): N = 9k - 16, deg 2, levels 0..k, all parities 0
+negative control (its 8193 read as 8194 in n5_k13.out): failing checks ['n5_k13.out', 'pins']: fires True
+data: 32 checks, 0 failed; PASS

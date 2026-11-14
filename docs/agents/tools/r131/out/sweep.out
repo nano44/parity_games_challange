@@ -1,0 +1,8 @@
+sweep header: 2 quotations, 0 not found; control (one letter changed): 2 of 2 not found: ok
+sweep title line: 6 quotations, 0 not found; control (one letter changed): 6 of 6 not found: ok
+sweep entry block below the title: 161 quotations, 0 not found; control (one letter changed): 161 of 161 not found: ok
+sweep proposal and UPDATE: 14 quotations, 0 not found; control (one letter changed): 14 of 14 not found: ok
+sweep Addendum: 0 quotations, 0 not found; control (one letter changed): 0 of 0 not found: ok
+sweep whole file: 183 quotations, 0 not found; control (one letter changed): 183 of 183 not found: ok
+sweep: sources 19 (PKT FIX LINE REF1 PRE REF2 R2B B108 BOX48 R245 RES GAPS TARGET CLAUDE DEC LEAD R104P R130D CHK)
+sweep: PASS

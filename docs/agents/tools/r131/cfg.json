@@ -1,0 +1,225 @@
+{
+  "_comment": [
+    "Every input of the R131 build that can move. build.sh reads ONLY this file (and fetch.txt, the record fetch.sh wrote).",
+    "Second run (the line of record, new heads, the open slots): see REPORT.txt, section 7, CFG CHANGES FOR THE SECOND RUN.",
+    "All SHAs are full 40-hex names copied from git output (git ls-remote / git rev-parse), never typed."
+  ],
+  "entry": "R131",
+  "prev_entry": "R130",
+  "packet_name": "P-N5-EXP",
+  "checker_number": "C148",
+  "lane_role": "L-RED-B",
+  "lane_successors": "5-7",
+  "trunk": {
+    "branch": "claude/vibrant-johnson-nxvvxo",
+    "commit": "aeb90ac199aff97b7189666965d7fd7d7119cf29"
+  },
+  "heads": {
+    "l-red-b": "10dfedb6574c9291011a5a7fbbdff261fe312d91",
+    "referee": "9ec40ff968ddc4a1c7f41a95d20aa6db6dbe40c3",
+    "referee-2": "e643672d1343d414d9670066ec5564df78588beb",
+    "l-si": "8c06291418616eca059c9239bdf8d59aad4f320f",
+    "l-comp": "dc6d831f7c56943a03070a9d268df2388565b438",
+    "l-red": "c7ed9b8b6af43c4ae94a5fa15571193bc923eedc"
+  },
+  "packet": {
+    "path": "docs/red-b/P-N5-EXP.md",
+    "freeze_commit": "350d84eb6602003172d0d3dd67e0ef2d0c72d2f8",
+    "expect_sha1": "c0449b17193f19619f33b366096762dfde27d542",
+    "expect_lines": 569
+  },
+  "fixes": {
+    "path": "docs/red-b/P-N5-EXP-fixes.md",
+    "expected_entries": 8,
+    "entry1_commit": "06d399c25599590a91c636ee3dd91f51866b1524",
+    "entries2_5_commit": "24f4d436a0fea1f62ae736f20f78ff9e84333a90",
+    "entries2_5_expect_sha1": "9dc9179fb08063cd59de25c5d3e16b0f8c693fbd",
+    "entries2_5_expect_lines": 829,
+    "entry6_commit": "0c8fdf9eaf370cbd2d18d13eb55d91dad3ca905f",
+    "entry7_commit": "b1a937004ba95c1b953e9b04f512eb5a4ca7b76a",
+    "entry8_commit": "10dfedb6574c9291011a5a7fbbdff261fe312d91",
+    "expect_sha1": "013290889e9e08f58ae162baa0c2eb5082f4b135",
+    "expect_lines": 1180
+  },
+  "line": {
+    "name": "L-3",
+    "path": "docs/red-b/P-N5-EXP-line-L3.txt",
+    "commit": "10dfedb6574c9291011a5a7fbbdff261fe312d91",
+    "stand_in": true,
+    "of_record_name": "L-4",
+    "expect_sha1": "fd9074a3b9961f59a1b64d5acdaa28529306ede9",
+    "expect_bytes": 7267
+  },
+  "referee": {
+    "path": "docs/referee/R-P-N5-EXP.md",
+    "precheck_path": "docs/referee/R-GK-precheck.md",
+    "precheck_commit": "06ac891df6f6212bac74259863da3105e7fe4341",
+    "stages": [
+      [
+        "stage 1",
+        "c881709b78d8e4b2debb72baf2c487156413416f"
+      ],
+      [
+        "stage 2",
+        "ea09ae2ef258f9ab06e436c27302843dbf69f2bf"
+      ],
+      [
+        "stage 3",
+        "7ca9c2b4596eb5185976aca9303696287a6e52e6"
+      ],
+      [
+        "stage 4",
+        "577e8df93a4898e422e57ea5869a3a8a015d4b2d"
+      ],
+      [
+        "stage 4 addendum",
+        "4cf6e1ff75aa91d40dd60c71b84ea34ac1775561"
+      ],
+      [
+        "stage 5a",
+        "31b28f2a02b0cef5524252515cba9bbad577718b"
+      ]
+    ]
+  },
+  "referee2": {
+    "path": "docs/referee-2/R2-P-N5-EXP.md",
+    "box108_path": "docs/referee-2/R2-box108.md",
+    "stages": [
+      [
+        "report",
+        "33ff0e98911544cb18545541e4acbe71de84c6e0"
+      ],
+      [
+        "Addendum 1",
+        "da20a3078877f89b5459ae805faee4244451d244"
+      ],
+      [
+        "Addendum 2",
+        "f17a2708de653b306eaedf878f6120d2d0b31e06"
+      ],
+      [
+        "Addendum 3",
+        "e643672d1343d414d9670066ec5564df78588beb"
+      ]
+    ]
+  },
+  "box108": {
+    "path": "docs/si/box108-gk-proof.md",
+    "commit": "8c06291418616eca059c9239bdf8d59aad4f320f"
+  },
+  "replays": {
+    "box48_path": "experiments/comp/box48/README.md",
+    "r245_path": "docs/red/R245-kill-Gk.md"
+  },
+  "premises": [
+    [
+      "R104",
+      "definitions only"
+    ],
+    [
+      "R117",
+      "Theorem REACH3"
+    ],
+    [
+      "R57",
+      "(b)"
+    ],
+    [
+      "R24",
+      "(a)"
+    ],
+    [
+      "R24",
+      "(b)"
+    ],
+    [
+      "R103",
+      "bridge B"
+    ],
+    [
+      "R36",
+      "(c)"
+    ],
+    [
+      "R15",
+      "(d)"
+    ],
+    [
+      "R124",
+      "Corollary EXACT-L"
+    ]
+  ],
+  "slots": {
+    "_comment": [
+      "open = true: the block carries the slot's open-slot words and land131.py refuses to land.",
+      "open = false: those words are replaced by the slot's fill list, joined with single spaces. Each fill item is",
+      "  {\"text\": \"<Lead text>\"}  or  {\"src\": \"<source key>\", \"quote\": \"<verbatim string>\"}  (rendered as a guillemet",
+      "  quotation followed by its line numbers, located by script in that source at the commit cfg names; the build fails",
+      "  if the string is not found exactly once; add \"occ\": <n> to pick the n-th occurrence).",
+      "Source keys: REF1 (first referee's report), REF2 (second referee's report), FIX (fixes file), LINE (the line), PKT, PRE,",
+      "  R2B, B108, RES, GAPS, TARGET, DEC.",
+      "stage5b: the first referee's section 14 (the line word by word, fixes entries 7-9, final signature line naming the line).",
+      "r2_line: the second referee's check of the line of record.",
+      "entry9: fixes entry 9 (and any later entry); also raise fixes.expected_entries.",
+      "The line itself: set line.name / path / commit / expect_* and line.stand_in = false."
+    ],
+    "stage5b": {
+      "open": true,
+      "fill": []
+    },
+    "r2_line": {
+      "open": true,
+      "fill": []
+    },
+    "entry9": {
+      "open": true,
+      "fill": []
+    }
+  },
+  "update": {
+    "labels": [
+      {
+        "label": "(Theorem EXP-IDEAL, PROVED lane; its RESPONSE LEMMA in the prefix form LEMMA′ of fixes entry 4, with CAUSAL and STABLE in step form)",
+        "clause_end": "; (2) PROVED-CONDITIONAL on RESULTS R117's Theorem REACH3 as landed"
+      },
+      {
+        "label": "(Corollary EXP-N5)",
+        "clause_end": "; and, PROVED-CONDITIONAL on RESULTS R124's Corollary EXACT-L"
+      },
+      {
+        "label": "(Corollary EXP-N5′)",
+        "clause_end": "; obstruction RIPPLE ("
+      }
+    ],
+    "drops": [
+      "; not M3 or M4, not a TARGET.md claim"
+    ],
+    "pipe_pairs": [],
+    "source_prefix": "(P-N5-EXP, docs/red-b/P-N5-EXP.md",
+    "ending": "G-N5-TIME is answered NO for N5 from S3 (through RESULTS R117 as landed, refereed-only)."
+  },
+  "gaps": {
+    "row_id": "G-N5-TIME",
+    "status_from": "open",
+    "status_to": "closed",
+    "closed_heading": "## Closed",
+    "closed_position": "end_of_section"
+  },
+  "now": {
+    "replacements": [
+      [
+        "R17-R130",
+        "R17-R131",
+        1
+      ]
+    ]
+  },
+  "results": {
+    "insert_before_prefix": "**Erratum E-1** (not a result"
+  },
+  "dryrun": {
+    "date": "2099-01-13",
+    "time": "00:00",
+    "checker": "5555555"
+  }
+}
