@@ -1,0 +1,26 @@
+REF2B FOUND «**P-N5-EXP: SIGNED with fixes entries 1-5.** The signature is §0's, wi»
+REF1D FOUND «**Verdict on entry 4: it closes E-1, E-2, E-4, E-5. RESPONSE LEMMA SIG»
+REF1D FOUND «entry 3's **Corollary EXP-N5′, the STATEMENT, is SIGNED AS PROVED-COND»
+REF2B FOUND «Signature (L41: the statements 4.3 and 4.4 are referee-originated, REF»
+REF2B FOUND «**F-1 (reading; inherited from the frozen l. 203).** (R3) says»
+REF2B FOUND «with no lower end. Read: for t − 1 ≤ τ < last. Without the lower end i»
+FIX5 FOUND «For T = last this includes: s_τ(E(j)) = a for τ < last and E(j) moves »
+FROZEN FOUND «for j ≥ 2, s_τ(E(j)) = a for τ < t + P_j − 1 and E(j) moves to c at st»
+FROZEN FOUND «with s(E(j + 1)) = 0 before step t_1»
+FROZEN FOUND «with s(E(j + 1)) = 1 before step t_2»
+REF2B FOUND «**F-2 (wording).** 4.0 says the frozen statement l. 192-204 is REPLACE»
+REF2B FOUND «which are frozen l. 195 and l. 197-202 (and P_j, l. 191). So those lin»
+FIX5 FOUND «The frozen STATEMENT of the RESPONSE LEMMA (l. 192-204) is REPLACED by»
+FROZEN FOUND «Let F be the observer of Y_j that is on forward under s_(t−1) and B th»
+REF2B FOUND «**F-3 (wording).** The reason given,»
+REF2B FOUND «omits y′_j and ȳ′_j, the Ξ-targets of e_j. The claim it supports, that»
+FIX5 FOUND «No Ξ-edge ends at a wire (table: every Ξ-target is a u, v, y, ȳ or X)»
+FROZEN FOUND «| e_j | j | 2 ≤ j ≤ k − 2 | u_(j−1) / v_(j−1) | ȳ′_j / y′_j |»
+REF2B FOUND «**F-4 (tooling; the same defect in the NEW runner).** experiments/red-»
+REF2B FOUND «Ask: the two lines of run_b6b.sh in run_b6fix.sh; CHECKER should compa»
+REF2B FOUND «**F-5 (label inside (a′); no change asked).** (a′) has two sentences o»
+REF2B FOUND «A RESULTS line may carry the first sentence as unconditional and not t»
+FIX5 FOUND «when T_key and sw are read in R104's IDEAL model, as that packet's Lem»
+REF2B FOUND «(L-a) the gloss «per unit j a block pair u_j, v_j, an end-follower e_j»
+PER LABEL (tagged, found) FIX5 4 4 FROZEN 5 5 REF1D 2 2 REF2B 13 13
+TOTAL tagged 24 checked 24 found 24 missing 0 deferred 0 nosource 0 ctrl 0

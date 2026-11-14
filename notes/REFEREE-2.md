@@ -1,6 +1,26 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 3 (successor 42; 2026-11-14T14:06:39Z by date -u)
+- Stall: usage limit from about 17:51Z on 11-13 to 13:56Z on 11-14; e643672d (Addendum 3 + R2-box108.md) on origin (push exit 0,
+  VERIFY PASS; ls-remote = HEAD). Trap check 13:56Z clean (skew 0 s). ReadNotifications first after any wake: three Lead messages
+  were queued (16:44Z, 17:31Z of 11-13; 13:56Z of 11-14).
+- Part (i) of the Lead's 13:56Z order DONE in this commit: R2-P-N5-EXP.md **Addendum 4** = fixes entries 6, 7, 8 (claude/l-red-b
+  10dfedb6, file sha1 01329088…) and line L-3 (sha1 fd9074a3…) word by word. Entries 6-8 accepted; F-1 … F-5 CLOSED (7.1's (R3)
+  is my reading; the repaired run_b6fix.sh passes my tests U1-U5). **L-3 NOT signed as it stands: L3-1** (clause «β-ranks by
+  Ξ-depth with ties broken by β-id» omits the local δ; the genome so described runs 3 steps: add4_gloss.out; the clause is
+  already in L-1 and my §A2.7 missed it). L3-2 («DATA for k ≤ 12» → 13), L3-3 («same standing premises» of EXP-N5′: R124's own
+  list also has R15 (c)), L3-4 (the IDEAL-ACYC-POLY sentence is from R104's packet l. 224, not from the landed entry), L3-5
+  optional (STABLE in the L41 tail). L-a, L-b, L-c done. P-N5-EXP: SIGNED with fixes entries 1-8.
+- NEXT = part (ii), when the Lead sends it: the line of record will be L-5 (fixes entries 9, 10; L-4, L-5 cut from L-3 by named
+  replacements). Check ONLY the replacements (each old text once, the rest byte-equal: rebuild L-5 from L-3 myself), that L3-1 is
+  repaired (and L3-2 … L3-4 if taken), read entries 9, 10, then the final line: «P-N5-EXP: SIGNED with fixes entries 1-10; line
+  L-5 (sha1 …) SIGNED as the RESULTS line» or the failing clause; write it as Addendum 5; then the HANDOVER and park (context is
+  past 400k). Do not open docs/referee/ beyond what the entries quote until that verdict is committed.
+- Tools added: R2-P-N5-EXP/r2add4.py (r3: the range of (R3); gloss: a rank gloss read as a definition), r2runner2.sh (tests of
+  the repaired runner at 10dfedb6). The line reading itself: split the one-line file at «; », 40 clauses, each against §3's
+  table / gk.py, the landed entries at trunk (R104 l. 9864, R117 l. 13362, R124 l. 15371, R57 l. 2893 at aeb90ac1), my own numbers.
+
 ## Resume point 2 (successor 42; 2026-11-13T17:26:55Z by date -u)
 - f17a2708 (Addendum 2) on origin: push exit 0, VERIFY PASS, `git ls-remote` = f17a2708 at 17:26Z (verify about 24 minutes).
 - Items 2 and 3 of the Lead's 15:55Z brief DONE in this commit.

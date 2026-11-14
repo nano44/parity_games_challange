@@ -631,3 +631,101 @@ tie (E-3 = M-1), placeholder (E-6 = D-1) and condition (P-1 = W-2) were found in
 alone (E-1 was a miss of this lane, corrected in §A2.1; E-4 and E-5 were right readings this lane used without flagging the
 text); W-1, F-1 to F-5 are this lane's alone. LEMMA′ and CAUSAL in entry 4 are REFEREE 36's text word for word: L41 is met.
 NEEDS: Lead: none beyond §A3.5.
+
+## Addendum 4 (REFEREE-2 successor 42; 2026-11-14T14:06:39Z by date -u): fixes entries 6, 7, 8 and line L-3, read word by word
+Asked by the Lead (message of 2026-11-14 13:56Z, part (i)). Before it: this session was stopped by a usage limit from about
+17:51Z on 11-13; e643672d (Addendum 3, R2-box108.md) is on origin (`git ls-remote` = local HEAD; trap check 13:56Z: skew 0 s).
+- Object: claude/l-red-b 10dfedb6, docs/red-b/P-N5-EXP-fixes.md, 1,180 lines, 110,406 B, sha1
+  013290889e9e08f58ae162baa0c2eb5082f4b135 (entry 6 l. 831-881, entry 7 l. 882-1147, entry 8 l. 1148-1180: read in full), and
+  docs/red-b/P-N5-EXP-line-L3.txt, 7,267 B, sha1 fd9074a3b9961f59a1b64d5acdaa28529306ede9 (one line, 40 clauses: every one read).
+- Guards: the packet's sha1 is c0449b17… at 10dfedb6; the fixes file at 24f4d436 (78,975 B) is a byte prefix of the file at
+  10dfedb6; the six pin files of data/b6b (94 files) pass `sha1sum -c` in a copy of the tree at 10dfedb6.
+- docs/referee/ was not opened beyond the sentences the entries and the line quote: those were checked by my quote tool only
+  (REF1D = docs/referee/R-P-N5-EXP.md at claude/referee 78515253). Entry 7's summary of the first referee's stage 4 beyond the
+  two quoted sentences is therefore NOT checked by me.
+
+### A4.0 Verdict
+| object | verdict |
+| --- | --- |
+| entry 6 (N5 at k = 13, one engine) | **accepted** as DATA; no statement changes. The game file is my builder's game (pg13.out); the run itself not re-run by me |
+| entry 7 (answers to F-1 … F-5) | **F-1, F-2, F-3, F-4, F-5 closed.** 7.1's clause (R3) is my reading word for word; the repaired runner passes my own tests |
+| entry 8 (record of L-3) | **accepted** as a record: L-3 is L-2 with the two named replacements and nothing else |
+| line L-3 | **NOT signed as it stands: one failing clause, L3-1 (the gloss of the β-ranks).** L3-2 a stale number, L3-3 and L3-4 exactness of a premise clause and of a quotation's source, L3-5 optional. L-a, L-b, L-c are done as asked. Every other clause, number, premise name and quotation: checked, right |
+P-N5-EXP stays SIGNED, now with fixes entries 1-8 (the signature is about the packet and its fixes; L3-1 is a defect of the
+LINE's gloss, not of the rule, the theorem or any proof).
+
+### A4.1 Line L-3: findings, one line each
+- **L3-1 (failing clause; the rule misdescribed).** Clause [Q L3] «all parities even, β-ranks by Ξ-depth with ties broken by β-id»
+  drops the local δ. Rule R says [Q FROZEN l. 98-99] «the rank, among all options, of the pair (−depth(x), local δ of (x, o))» and
+  «inside one depth the local δ decides»; entry 5.1 adds the β-id for the ties that are left (wire options only); gk.py l. 157-160
+  does exactly that. As the line words it, equal Ξ-depth is decided by β-id: that is another genome. Measured (add4_gloss.out): the
+  genome with br := rank of (−depth, β-id) has a different br from G_k for every k = 3..10 and its IDEAL run has 3 steps, not
+  2^k − 2. Replace by: «all parities even, β-ranks depth-major (a smaller Ξ-depth ranks higher), inside a depth by the local δ of
+  rule R's table, ties (wire options only) by β-id». The clause is already in L-1, and my §A2.7 did not flag it: that reading
+  compared the line with my signature, not word by word with the rule.
+- **L3-2 (a number that the line's own part (3) has overtaken).** [Q L3] «DATA for k ≤ 12: winners = Zielonka's» stands next to
+  the new clause for k = 13 with [Q L3] «winners equal to Zielonka's;». Say «k ≤ 13 (k = 13 on one engine)».
+- **L3-3 (premise clause of Corollary EXP-N5′, not exact).** [Q L3] «(premise R117 (f), under SPEC's S1 tie-breaks, same
+  standing premises)». R124 as landed (trunk aeb90ac1, l. 15371) has these words: «premise RESULTS R117 (f)», «it uses SPEC's S1
+  tie-breaks, through REACH3's [RULE] choice», «premises, all under the standing SPEC premise 1E-N3», and in its own list also
+  «RESULTS R15 (c)» for Lemma TERM-XI (both runs terminate), which is not among the premises of R117's title line (that has
+  R15 (d)). Whether EXACT-L needs TERM-XI I did not check (P-N5-END's proofs not opened). Safe wording: «(R124's premises as
+  landed: R117 (f) for EXACT-L, SPEC's S1 tie-breaks through REACH3's [RULE], the standing SPEC premise 1E-N3, RESULTS R15 (c))»,
+  as fixes entry 3 does by quoting R124.
+- **L3-4 (source of a quotation).** [Q L3] «there is a polynomial q such that L(G) ≤ q(N + M) for every G ∈ IDEAL-ACYC» is
+  verbatim in R104's PACKET (docs/red/P-N5-REALIZE.md l. 224 at trunk), not in the landed entry R104, which names
+  IDEAL-ACYC-POLY (inside its quoted Corollary REAL-IDEAL, RESULTS l. 9967) without this sentence. Say «R104's IDEAL-ACYC-POLY
+  (P-N5-REALIZE.md l. 224: «…»)».
+- **L3-5 (optional, on L-c).** The scope tail names CAUSAL and LEMMA′. STABLE's step form (4.2) is REFEREE 36's wording too
+  (its E-5), and both quoted signatures cover it; «and STABLE in step form (4.2)» would make the tail complete.
+- Not findings, said so that they are not asked again: «CONDITIONAL until two referees sign» and «PROVED lane» are the status
+  phrases the Lead replaces at landing; «for 2 ≤ j ≤ k − 2 only, an end-follower e_j» is right about the MOVERS (rule R's
+  END-FOLLOWER E(k − 1) is u_(k−1), a mover of the block pair, not a further mover); «with fixes entries 1-7» is the Lead's
+  ruling (entry 8 is the line's own record).
+- **L-a: done.** Units 1 and k − 1 have four movers, the others seven; u_0, v_0 and the wires (wv_j, 1 ≤ j ≤ k − 2; wu_j,
+  2 ≤ j ≤ k − 2) stand outside the units: this is §3's table and §6's UNIT j. **L-b: done.** The parenthesis is R117's title
+  line word for word (trunk aeb90ac1, RESULTS l. 13362). **L-c: done.** The tail quotes REFEREE 36's two verdict sentences
+  (c881709b l. 17; stage 4 at 78515253) and my signature sentence (f17a2708), all three verbatim at the commits named.
+- Checked and right, clause by clause. Premise names against RESULTS at trunk aeb90ac1: R104 [refereed-only] holds the
+  definitions named (genome, IDEAL-ACYC, the X-chain, the IDEAL step, L(G), «stuck»); R117 [refereed-only] has «(Theorem REACH3)»
+  in its title line and «(f) Theorem REACH3» in its body; R124 has Corollary EXACT-L with «makes exactly L(G) + 3 iterations»;
+  R57 has Lemma OUT-G under 1E-N3. Numbers: 9k − 16, 18k − 32, k + 1, 2^k − 2, 2^(j−1), 11·2^(k−2) − 9, 27k − 48, 135k − 230,
+  176k − 300, 311k − 530, 2^k − 1, 2^k + 1; k = 13: 8,193 = 2^13 + 1 on n = 1,525, fallback at 8,191, 8,193 < 1,525²; k = 23
+  (n = 2,875), 37, 51; 16,368 windows; k − 1 triples; 175 to 1,255 vertices, 9 to 2,049 iterations. The DATA clauses of fixes
+  entry 4 are the files I re-made byte for byte (§A2.2, and again here with the repaired runner). Not checked: the other lanes'
+  replay numbers (L-COMP, L-RED), cited as their DATA.
+
+### A4.2 Entries 6, 7, 8
+- **Entry 6.** DATA only. Arithmetic right (n = 1,525, n + m = 3,513, n² = 2,325,625, m = 1,988 = 176·13 − 300; 8,190 S4a
+  iterations, fallback at 8,191, 8,193 in all, as Corollaries EXP-N5 and EXP-N5′ give). The pasted line is the pinned
+  n5_k13.out. My own check of the INSTANCE: the lane's data/b6b/pg/G_13_g3.pg (sha1 9d887e3b…, the line's pg_sha1) equals the
+  game my builder makes from my G_13, β block renumbered as R104 says, index by index (pg13.out: sizediff 0, pgdiff 0; control
+  fires both), and my G_13 equals the lane's genome file (lanediff 0). Not re-run by me: N5 at k = 13 (one engine there, 32
+  minutes) and 9.14's checkpoint tests.
+- **Entry 7.** 7.1 (F-1): the restated (R3) is my reading; its «Proved» and «Used» paragraphs are right; my own count
+  (add4_r3.out, k = 3..12): with the range t − 1 ≤ τ < last 0 failures on 4,072 windows of the units j ≥ 2, and the wording
+  without a lower end fails at 2^(k−1) − k windows per k (1, 4, 11, …, 2,036), the lane's numbers. **Closed.** 7.2 (F-2): the
+  table of the frozen l. 191-204 checked line by line against the packet. **Closed.** 7.3 (F-3): the parenthesis now names y′, ȳ′.
+  **Closed.** 7.4 (F-4): the repaired runner, my own tests (r2runner2.sh → runner2.out): a python3 that always fails: exit 1 and
+  no output file; one that fails for one k only: exit 1 and the output holds exactly the lines of the commands that succeeded;
+  one that fails for the second of the ten control commands: exit 1 and no prefix_ctrl.out; an unknown stage: exit 2; `every`:
+  exit 0, «failures 0», eleven files byte-equal to the pinned ones. **Closed.** 7.5 (F-5): the two labels are explicit. **Closed.**
+  Quotes: 24 tagged in entries 6-8, 24 verbatim at the commits named (REF2B 13, FROZEN 5, FIX5 4, REF1D 2; control 24
+  missing); REF2B's sha1 7128d83e… and 549 lines are those of my file at f17a2708.
+- **Entry 8.** L-3 = L-2 with «with fixes entries 1-5» → «1-7» and «L-RED-B successors 5-6» → «5-7», each old text once in
+  L-2; re-done by me: the result is L-3 byte for byte (sha1 fd9074a3…).
+
+### A4.3 Reproduction (from the repository root)
+`git show 10dfedb6:docs/red-b/P-N5-EXP-fixes.md > FIX10`; `python3 -B docs/referee-2/R2-P-N5-EXP/r2qfix.py FIX10 --from 831
+FROZEN=350d84eb:docs/red-b/P-N5-EXP.md REF2B=f17a2708:docs/referee-2/R2-P-N5-EXP.md REF1D=78515253:docs/referee/R-P-N5-EXP.md
+FIX5=24f4d436:docs/red-b/P-N5-EXP-fixes.md` → qfix_e678.out (with --ctrl: its last line → qfix_e678_ctrl.out);
+`python3 -B docs/referee-2/R2-P-N5-EXP/r2add4.py r3 3 … 12` → add4_r3.out; `… r2add4.py gloss 3 … 10` → add4_gloss.out;
+`bash docs/referee-2/R2-P-N5-EXP/r2runner2.sh WORKDIR` → runner2.out; `python3 -B docs/referee-2/R2-P-N5-EXP/r2exp.py --lane
+LANE/G --dump GK 13`, then `… r2pg.py LANE/pg GK --n5max 0 13` → pg13.out (with --ctrl → pg13_ctrl.out), LANE = data/b6b of a
+`git archive 10dfedb6 experiments/red-b`.
+
+DONE: entries 6, 7, 8 checked; line L-3 read word by word against rule R, the signed theorem and RESULTS at trunk aeb90ac1.
+FINDINGS: entries 6-8 accepted, F-1 … F-5 closed; L-3 has one failing clause, L3-1 (the β-rank gloss omits the local δ: the
+genome it describes runs 3 steps), and L3-2 (k ≤ 12 → 13), L3-3 (R124's premises), L3-4 (the quotation is from R104's packet),
+L3-5 (optional); L-a, L-b, L-c done.
+NEEDS: Lead: L3-1 as a named replacement in the next line (and L3-2 … L3-4 if taken); then I check only the replacements.
