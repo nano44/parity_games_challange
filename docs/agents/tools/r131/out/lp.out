@@ -1,23 +1,23 @@
-lp (1) ledger: 328 entries (quotations with lines 126, quotations without 45, located passages 139, quotations inside the line 18); recorded line range not among the matches of the second search: 0
-  10dfedb6 docs/red-b/P-N5-EXP-fixes.md 25
-  10dfedb6 docs/red-b/P-N5-EXP-line-L3.txt 18
-  10dfedb6 experiments/red-b/check.sh 3
+lp (1) ledger: 475 entries (quotations with lines 161, quotations without 45, located passages 251, quotations inside the line 18); recorded line range not among the matches of the second search: 0
+  15171faa CLAUDE.md 1
+  15171faa TARGET.md 3
+  15171faa docs/DECISIONS.md 2
+  15171faa docs/GAPS.md 4
+  15171faa docs/RESULTS.md 10
+  15171faa docs/agents/LEAD-STATE.md 3
+  15171faa docs/red/P-N5-REALIZE.md 4
   350d84eb docs/red-b/P-N5-EXP.md 9
+  38d11668 docs/referee/R-GK-precheck.md 9
+  38d11668 docs/referee/R-P-N5-EXP.md 168
+  4d5b03f7 docs/referee-2/R2-P-N5-EXP.md 135
+  4d5b03f7 docs/referee-2/R2-box108.md 2
   8c062914 docs/si/box108-gk-proof.md 2
-  9ec40ff9 docs/referee/R-GK-precheck.md 2
-  9ec40ff9 docs/referee/R-P-N5-EXP.md 138
-  aeb90ac1 CLAUDE.md 1
-  aeb90ac1 TARGET.md 3
-  aeb90ac1 docs/DECISIONS.md 2
-  aeb90ac1 docs/GAPS.md 4
-  aeb90ac1 docs/RESULTS.md 9
-  aeb90ac1 docs/agents/LEAD-STATE.md 3
-  aeb90ac1 docs/red/P-N5-REALIZE.md 4
+  91d30d95 docs/red-b/P-N5-EXP-fixes.md 96
+  91d30d95 docs/red-b/P-N5-EXP-line-L6.txt 18
+  91d30d95 experiments/red-b/check.sh 3
   c7ed9b8b docs/red/R245-kill-Gk.md 2
   dc6d831f experiments/comp/box48/README.md 4
-  e643672d docs/referee-2/R2-P-N5-EXP.md 97
-  e643672d docs/referee-2/R2-box108.md 2
-lp (2) draft: 171 quotations outside the title and UPDATE lines, 12 in them; in the draft but not in the ledger 0; in the ledger but not in the draft 0; 'q' entries not followed by their line numbers 0; title / UPDATE quotations not in the line 0
+lp (2) draft: 206 quotations outside the title and UPDATE lines, 12 in them; in the draft but not in the ledger 0; in the ledger but not in the draft 0; 'q' entries not followed by their line numbers 0; title / UPDATE quotations not in the line 0
 negative control 1 (one ledger entry moved by one line): caught True
 negative control 2 (one letter of one quotation changed in a copy of the draft): caught True
 lp: PASS

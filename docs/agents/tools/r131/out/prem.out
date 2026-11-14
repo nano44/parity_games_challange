@@ -1,4 +1,4 @@
-RESULTS at trunk aeb90ac1: 17367 lines, 130 entry headings, the last R130 at l. 16525
+RESULTS at trunk 15171faa: 17367 lines, 130 entry headings, the last R130 at l. 16525
 OK   R104 [refereed-only] heading l. 9864, entry l. 9864-10154; item 'definitions only': its words 'IDEAL' in the entry: True
 OK   R117 [refereed-only] heading l. 13362, entry l. 13362-13606; item 'Theorem REACH3': its words 'Theorem REACH3' in the entry: True
 OK   R57 [refereed-only] heading l. 2893, entry l. 2893-2958; item '(b)': its words '(b)' in the entry: True
@@ -8,6 +8,8 @@ OK   R103 [refereed-only] heading l. 9641, entry l. 9641-9863; item 'bridge B': 
 OK   R36 [refereed-only] heading l. 1717, entry l. 1717-1751; item '(c)': its words '(c)' in the entry: True
 OK   R15 [refereed-only] heading l. 624, entry l. 624-673; item '(d)': its words '(d)' in the entry: True
 OK   R124 [refereed-only] heading l. 15371, entry l. 15371-15594; item 'Corollary EXACT-L': its words 'Corollary EXACT-L' in the entry: True
+OK   R124 [refereed-only] heading l. 15371, entry l. 15371-15594; item 'ENDGAME-3-N5': its words 'ENDGAME-3-N5' in the entry: True
+OK   R15 [refereed-only] heading l. 624, entry l. 624-673; item '(c)': its words '(c)' in the entry: True
 OK   R131 absent, R130 is the last entry heading
 OK   entries the line names as 'RESULTS R<n>': R15 R24 R36 R57 R103 R104 R117 R124; not landed: []; later than R130: []
 OK   other R-tokens of the line: R1 = R103's (R1) ruling, inside the quotation of R117's title line; R2 = the file name R2-P-N5-EXP.md of REFEREE-2's report; R3 = clause (R3) of LEMMA', inside REFEREE-2's signature sentence; R245 = L-RED 70's report R245, not a RESULTS entry; unexplained: []

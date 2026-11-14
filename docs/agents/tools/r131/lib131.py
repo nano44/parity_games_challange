@@ -118,8 +118,9 @@ class Source:
     sides, nothing else. A quotation never crosses an empty line.
     """
 
-    def __init__(self, key, commit, path, what):
+    def __init__(self, key, commit, path, what, limit=None):
         self.key, self.commit, self.path, self.what = key, commit, path, what
+        self.limit = limit            # quotations written in fill131.py are searched in the first `limit` lines only
         self.raw = show(commit, path)
         self.sha1 = sha1(self.raw)
         self.text = self.raw.decode("utf-8")
@@ -135,19 +136,28 @@ class Source:
         self.norm = "".join(parts)
         self.pos2line = pos2line
 
-    def find(self, q):
-        """[(first_line, last_line)] of every occurrence of q (white space normalised)."""
+    def find(self, q, whole=False):
+        """[(first_line, last_line)] of every occurrence of q (white space normalised); unless `whole`, only those
+        that end within the described part of the file (the first `limit` lines)."""
         nq = norm(q)
         res, i = [], self.norm.find(nq)
         while i >= 0:
-            res.append((self.pos2line[i], self.pos2line[i + len(nq) - 1]))
+            fl = (self.pos2line[i], self.pos2line[i + len(nq) - 1])
+            if whole or self.limit is None or fl[1] <= self.limit:
+                res.append(fl)
             i = self.norm.find(nq, i + 1)
         return res
+
+    def prefix_sha1(self, n):
+        """sha1 of the first n lines (with their newlines)."""
+        return sha1("".join(l + "\n" for l in self.lines[:n]).encode("utf-8"))
 
 
 def sources(cfg):
     """key -> Source: every file a quotation of the draft may come from, at the commit cfg names."""
-    h, t = cfg["heads"], cfg["trunk"]["commit"]
+    h, t = dict(cfg["heads"]), cfg["trunk"]["commit"]
+    h.update({k: v for k, v in cfg.get("pins", {}).items() if not k.startswith("_")})
+    lim = {"FIX": cfg["fixes"].get("described_lines"), "REF1": cfg["referee"].get("described_lines"), "REF2": cfg["referee2"].get("described_lines")}
     spec = [
         ("PKT", cfg["packet"]["freeze_commit"], cfg["packet"]["path"], "the frozen packet"),
         ("FIX", h["l-red-b"], cfg["fixes"]["path"], "the fixes file"),
@@ -168,7 +178,7 @@ def sources(cfg):
         ("R104P", t, "docs/red/P-N5-REALIZE.md", "R104's packet"),
         ("R130D", t, "docs/agents/R130-draft.md", "the R130 draft"),
     ]
-    return {k: Source(k, c, p, w) for k, c, p, w in spec}
+    return {k: Source(k, c, p, w, lim.get(k)) for k, c, p, w in spec}
 
 
 def gspans(s):

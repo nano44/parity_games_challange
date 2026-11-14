@@ -24,11 +24,13 @@ OK   strat.out, n5_clean.out: badstrat 0 for k = 3..8 (strat.out) and k = 3..10 
 OK   enab.out: k = 3..12: venab, kenab, movd 0
 OK   perm.out: keep 0 on 7050 relabelings
 OK   reach.out: k = 3..8: startdiff, padcyc, padp, fbpos 0
-OK   pins: 94 pinned files of 6 pin files (SHA1SUMS_b6b, SHA1SUMS_b6b_fixes1, SHA1SUMS_b6b_fixes2, SHA1SUMS_b6b_fixes3, SHA1SUMS_b6b_fixes4, SHA1SUMS_b6b_fixes5): 0 mismatches
+OK   pins: 112 pinned files of 9 pin files (SHA1SUMS_b6b, SHA1SUMS_b6b_fixes1, SHA1SUMS_b6b_fixes2, SHA1SUMS_b6b_fixes3, SHA1SUMS_b6b_fixes4, SHA1SUMS_b6b_fixes5, SHA1SUMS_b6b_fixes6, SHA1SUMS_b6b_fixes7, SHA1SUMS_b6b_fixes8): 0 mismatches
 OK   e7_r3.out: k = 3..14: r3in, r3move, r3rest, litdiff 0 at 16368 windows (16356 with j >= 2)
+OK   gloss.out: k = 3..12: rulediff, Ldiff, wire0diff 0 (rule R: L = 2^k - 2); the old gloss of the lines gives L = 3 and L = 1 on every k (control fires)
+OK   line chain: each line is the one before it with the named replacements of the lane's build record applied at their recorded characters, byte for byte: L-1 -> L-2: 5 (L-a, L-b, L-d (1), L-d (2), L-c); L-2 -> L-3: 2 (L-f (1), L-f (2)); L-3 -> L-4: 2 (N-5e, L-g); L-4 -> L-5: 3 (F-L3-1 (1), F-L3-1 (2), L-h); L-5 -> L-6: 4 (L3-3, L3-2, L3-5, L-i)
 OK   frozen pins: SHA1SUMS_b6b byte-equal at the freeze commit and at the head
 OK   below n^2: N5 itself, k = 3..13: 2^k + 1 < n^2 at every k (k = 13: 8193 < 2325625); the model's k = 20: 1048574 < 6100900; 2^k - 1 > n^2 first at k = 23 (n = 2875: 8388607 > 8265625)
 OK   above n, n + m: 2^k + 1 > n from k = 11 and > n + m from k = 12
 OK   genomes: G_3..G_14 (JSON): N = 9k - 16, deg 2, levels 0..k, all parities 0
 negative control (its 8193 read as 8194 in n5_k13.out): failing checks ['n5_k13.out', 'pins']: fires True
-data: 32 checks, 0 failed; PASS
+data: 34 checks, 0 failed; PASS

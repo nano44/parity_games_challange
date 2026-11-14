@@ -1,0 +1,367 @@
+{
+ "items": [
+  {
+   "group": "REFEREE 36, stage 1 (the table of its §9)",
+   "id": "E-1",
+   "raised": "l. 377",
+   "closing_texts": 1,
+   "confirm": "quoted"
+  },
+  {
+   "group": "REFEREE 36, stage 1 (the table of its §9)",
+   "id": "E-2",
+   "raised": "l. 378",
+   "closing_texts": 1,
+   "confirm": "quoted"
+  },
+  {
+   "group": "REFEREE 36, stage 1 (the table of its §9)",
+   "id": "E-3",
+   "raised": "l. 379",
+   "closing_texts": 1,
+   "confirm": "quoted"
+  },
+  {
+   "group": "REFEREE 36, stage 1 (the table of its §9)",
+   "id": "E-4",
+   "raised": "l. 380",
+   "closing_texts": 1,
+   "confirm": "quoted"
+  },
+  {
+   "group": "REFEREE 36, stage 1 (the table of its §9)",
+   "id": "E-5",
+   "raised": "l. 381",
+   "closing_texts": 1,
+   "confirm": "quoted"
+  },
+  {
+   "group": "REFEREE 36, stage 1 (the table of its §9)",
+   "id": "E-6",
+   "raised": "l. 382",
+   "closing_texts": 1,
+   "confirm": "quoted"
+  },
+  {
+   "group": "REFEREE 36, stage 1 (the table of its §9)",
+   "id": "E-7",
+   "raised": "l. 383",
+   "closing_texts": 1,
+   "confirm": "quoted"
+  },
+  {
+   "group": "REFEREE 36, stage 1 (the table of its §9)",
+   "id": "P-1",
+   "raised": "l. 384",
+   "closing_texts": 2,
+   "confirm": "quoted"
+  },
+  {
+   "group": "REFEREE 36, stage 1 (the table of its §9)",
+   "id": "O-1",
+   "raised": "l. 385",
+   "closing_texts": 1,
+   "confirm": "quoted"
+  },
+  {
+   "group": "REFEREE 36, stage 1 (the table of its §9)",
+   "id": "O-2",
+   "raised": "l. 386",
+   "closing_texts": 1,
+   "confirm": "none"
+  },
+  {
+   "group": "REFEREE 36, stage 1 (the table of its §9)",
+   "id": "N-1",
+   "raised": "l. 387",
+   "closing_texts": 1,
+   "confirm": "quoted"
+  },
+  {
+   "group": "REFEREE 37, stage 5a (its §13.7)",
+   "id": "N-5a",
+   "raised": "l. 765",
+   "closing_texts": 1,
+   "confirm": "S5B"
+  },
+  {
+   "group": "REFEREE 37, stage 5a (its §13.7)",
+   "id": "N-5b",
+   "raised": "l. 767",
+   "closing_texts": 2,
+   "confirm": "quoted"
+  },
+  {
+   "group": "REFEREE 37, stage 5a (its §13.7)",
+   "id": "N-5c",
+   "raised": "l. 769",
+   "closing_texts": 1,
+   "confirm": "S5B"
+  },
+  {
+   "group": "REFEREE 37, stage 5a (its §13.7)",
+   "id": "N-5d",
+   "raised": "l. 770",
+   "closing_texts": 1,
+   "confirm": "S5B"
+  },
+  {
+   "group": "REFEREE 37, stage 5b (i) (its §14, on line L-3 and fixes entries 7, 8)",
+   "id": "F-L3-1",
+   "raised": "l. 811",
+   "closing_texts": 2,
+   "confirm": "S5B"
+  },
+  {
+   "group": "REFEREE 37, stage 5b (i) (its §14, on line L-3 and fixes entries 7, 8)",
+   "id": "N-5e",
+   "raised": "l. 814",
+   "closing_texts": 2,
+   "confirm": "S5B"
+  },
+  {
+   "group": "REFEREE 37, stage 5b (i) (its §14, on line L-3 and fixes entries 7, 8)",
+   "id": "L-n1",
+   "raised": "l. 990",
+   "closing_texts": 2,
+   "confirm": "S5B"
+  },
+  {
+   "group": "REFEREE 37, stage 5b (i) (its §14, on line L-3 and fixes entries 7, 8)",
+   "id": "L-n2",
+   "raised": "l. 994",
+   "closing_texts": 0,
+   "confirm": "none"
+  },
+  {
+   "group": "REFEREE 37, stage 5b (i) (its §14, on line L-3 and fixes entries 7, 8)",
+   "id": "L-n3",
+   "raised": "l. 996",
+   "closing_texts": 2,
+   "confirm": "S5B"
+  },
+  {
+   "group": "REFEREE 37, stage 5b (i) (its §14, on line L-3 and fixes entries 7, 8)",
+   "id": "N-6a",
+   "raised": "l. 997",
+   "closing_texts": 0,
+   "confirm": "quoted"
+  },
+  {
+   "group": "REFEREE 37, stage 5b (i) (its §14, on line L-3 and fixes entries 7, 8)",
+   "id": "N-6b",
+   "raised": "l. 999",
+   "closing_texts": 0,
+   "confirm": "none"
+  },
+  {
+   "group": "REFEREE 35's pre-check (its §7; not a signature)",
+   "id": "P-1",
+   "raised": "l. 322",
+   "closing_texts": 1,
+   "confirm": "none"
+  },
+  {
+   "group": "REFEREE 35's pre-check (its §7; not a signature)",
+   "id": "P-2",
+   "raised": "l. 327",
+   "closing_texts": 1,
+   "confirm": "none"
+  },
+  {
+   "group": "REFEREE 35's pre-check (its §7; not a signature)",
+   "id": "M-1",
+   "raised": "l. 330",
+   "closing_texts": 1,
+   "confirm": "none"
+  },
+  {
+   "group": "REFEREE 35's pre-check (its §7; not a signature)",
+   "id": "M-2",
+   "raised": "l. 334",
+   "closing_texts": 1,
+   "confirm": "none"
+  },
+  {
+   "group": "REFEREE 35's pre-check (its §7; not a signature)",
+   "id": "M-3",
+   "raised": "l. 336",
+   "closing_texts": 1,
+   "confirm": "quoted"
+  },
+  {
+   "group": "REFEREE 35's pre-check (its §7; not a signature)",
+   "id": "P-3",
+   "raised": "l. 338",
+   "closing_texts": 2,
+   "confirm": "none"
+  },
+  {
+   "group": "REFEREE 35's pre-check (its §7; not a signature)",
+   "id": "P-4",
+   "raised": "l. 341",
+   "closing_texts": 1,
+   "confirm": "none"
+  },
+  {
+   "group": "REFEREE-2 41, its report (§1) and Addendum 1",
+   "id": "G-1",
+   "raised": "l. 38",
+   "closing_texts": 1,
+   "confirm": "quoted"
+  },
+  {
+   "group": "REFEREE-2 41, its report (§1) and Addendum 1",
+   "id": "M-1",
+   "raised": "l. 46",
+   "closing_texts": 1,
+   "confirm": "quoted"
+  },
+  {
+   "group": "REFEREE-2 41, its report (§1) and Addendum 1",
+   "id": "W-1",
+   "raised": "l. 54",
+   "closing_texts": 1,
+   "confirm": "quoted"
+  },
+  {
+   "group": "REFEREE-2 41, its report (§1) and Addendum 1",
+   "id": "W-2",
+   "raised": "l. 55",
+   "closing_texts": 1,
+   "confirm": "quoted"
+  },
+  {
+   "group": "REFEREE-2 41, its report (§1) and Addendum 1",
+   "id": "D-1",
+   "raised": "l. 60",
+   "closing_texts": 1,
+   "confirm": "quoted"
+  },
+  {
+   "group": "REFEREE-2 41, its report (§1) and Addendum 1",
+   "id": "O-1",
+   "raised": "l. 61",
+   "closing_texts": 1,
+   "confirm": "none"
+  },
+  {
+   "group": "REFEREE-2 41, its report (§1) and Addendum 1",
+   "id": "A1.1",
+   "raised": "l. 288",
+   "closing_texts": 1,
+   "confirm": "quoted"
+  },
+  {
+   "group": "REFEREE-2 41, its report (§1) and Addendum 1",
+   "id": "A1.2",
+   "raised": "l. 305",
+   "closing_texts": 1,
+   "confirm": "quoted"
+  },
+  {
+   "group": "REFEREE-2 42, Addendum 2 (on fixes entries 1-5 and line L-1)",
+   "id": "A2.1",
+   "raised": "l. 348",
+   "closing_texts": 0,
+   "confirm": "quoted"
+  },
+  {
+   "group": "REFEREE-2 42, Addendum 2 (on fixes entries 1-5 and line L-1)",
+   "id": "F-1",
+   "raised": "l. 442",
+   "closing_texts": 1,
+   "confirm": "quoted"
+  },
+  {
+   "group": "REFEREE-2 42, Addendum 2 (on fixes entries 1-5 and line L-1)",
+   "id": "F-2",
+   "raised": "l. 445",
+   "closing_texts": 1,
+   "confirm": "quoted"
+  },
+  {
+   "group": "REFEREE-2 42, Addendum 2 (on fixes entries 1-5 and line L-1)",
+   "id": "F-3",
+   "raised": "l. 384",
+   "closing_texts": 1,
+   "confirm": "none"
+  },
+  {
+   "group": "REFEREE-2 42, Addendum 2 (on fixes entries 1-5 and line L-1)",
+   "id": "F-4",
+   "raised": "l. 395",
+   "closing_texts": 1,
+   "confirm": "none"
+  },
+  {
+   "group": "REFEREE-2 42, Addendum 2 (on fixes entries 1-5 and line L-1)",
+   "id": "F-5",
+   "raised": "l. 368",
+   "closing_texts": 1,
+   "confirm": "quoted"
+  },
+  {
+   "group": "REFEREE-2 42, Addendum 2 (on fixes entries 1-5 and line L-1)",
+   "id": "L-a",
+   "raised": "l. 522",
+   "closing_texts": 1,
+   "confirm": "quoted"
+  },
+  {
+   "group": "REFEREE-2 42, Addendum 2 (on fixes entries 1-5 and line L-1)",
+   "id": "L-b",
+   "raised": "l. 525",
+   "closing_texts": 1,
+   "confirm": "quoted"
+  },
+  {
+   "group": "REFEREE-2 42, Addendum 2 (on fixes entries 1-5 and line L-1)",
+   "id": "L-c",
+   "raised": "l. 526",
+   "closing_texts": 1,
+   "confirm": "quoted"
+  },
+  {
+   "group": "REFEREE-2 42, Addendum 4 (on line L-3 and fixes entries 6-8)",
+   "id": "L3-1",
+   "raised": "l. 658",
+   "closing_texts": 2,
+   "confirm": "ADD5"
+  },
+  {
+   "group": "REFEREE-2 42, Addendum 4 (on line L-3 and fixes entries 6-8)",
+   "id": "L3-2",
+   "raised": "l. 666",
+   "closing_texts": 2,
+   "confirm": "ADD5"
+  },
+  {
+   "group": "REFEREE-2 42, Addendum 4 (on line L-3 and fixes entries 6-8)",
+   "id": "L3-3",
+   "raised": "l. 668",
+   "closing_texts": 2,
+   "confirm": "ADD5"
+  },
+  {
+   "group": "REFEREE-2 42, Addendum 4 (on line L-3 and fixes entries 6-8)",
+   "id": "L3-4",
+   "raised": "l. 675",
+   "closing_texts": 2,
+   "confirm": "ADD5"
+  },
+  {
+   "group": "REFEREE-2 42, Addendum 4 (on line L-3 and fixes entries 6-8)",
+   "id": "L3-5",
+   "raised": "l. 679",
+   "closing_texts": 2,
+   "confirm": "ADD5"
+  }
+ ],
+ "unmatched": [
+  "L-n2",
+  "N-6a",
+  "N-6b",
+  "A2.1"
+ ]
+}

@@ -1,10 +1,11 @@
 {
   "_comment": [
     "Every input of the R131 build that can move. build.sh reads ONLY this file (and fetch.txt, the record fetch.sh wrote).",
-    "Second run (the line of record, new heads, the open slots): see REPORT.txt, section 7, CFG CHANGES FOR THE SECOND RUN.",
+    "Third run (the two final referee lines): see REPORT.txt, section 7, CFG CHANGES FOR THE THIRD RUN.",
     "All SHAs are full 40-hex names copied from git output (git ls-remote / git rev-parse), never typed."
   ],
   "entry": "R131",
+  "fill": "second",
   "prev_entry": "R130",
   "packet_name": "P-N5-EXP",
   "checker_number": "C148",
@@ -12,15 +13,12 @@
   "lane_successors": "5-7",
   "trunk": {
     "branch": "claude/vibrant-johnson-nxvvxo",
-    "commit": "aeb90ac199aff97b7189666965d7fd7d7119cf29"
+    "commit": "15171faa822983e7c6118bb3c4be25b47469a387"
   },
   "heads": {
-    "l-red-b": "10dfedb6574c9291011a5a7fbbdff261fe312d91",
-    "referee": "9ec40ff968ddc4a1c7f41a95d20aa6db6dbe40c3",
-    "referee-2": "e643672d1343d414d9670066ec5564df78588beb",
-    "l-si": "8c06291418616eca059c9239bdf8d59aad4f320f",
-    "l-comp": "dc6d831f7c56943a03070a9d268df2388565b438",
-    "l-red": "c7ed9b8b6af43c4ae94a5fa15571193bc923eedc"
+    "l-red-b": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+    "referee": "38d1166805fefea1e837855879ce2e44a935f61f",
+    "referee-2": "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21"
   },
   "packet": {
     "path": "docs/red-b/P-N5-EXP.md",
@@ -30,25 +28,58 @@
   },
   "fixes": {
     "path": "docs/red-b/P-N5-EXP-fixes.md",
-    "expected_entries": 8,
-    "entry1_commit": "06d399c25599590a91c636ee3dd91f51866b1524",
-    "entries2_5_commit": "24f4d436a0fea1f62ae736f20f78ff9e84333a90",
+    "_comment": "described_*: the part of the file that fill131.py describes (entries 1-11). If the file grows, keep these, raise expected_entries, append the new stage and give extra_fill (text / quote items for the new entries).",
+    "expected_entries": 11,
+    "described_entries": 11,
+    "described_lines": 1443,
+    "described_sha1": "214967a10752ac9b90981d01628bec13473da404",
+    "stages": [
+      [
+        "entry 1",
+        "06d399c25599590a91c636ee3dd91f51866b1524"
+      ],
+      [
+        "entries 2-5",
+        "24f4d436a0fea1f62ae736f20f78ff9e84333a90"
+      ],
+      [
+        "entry 6",
+        "0c8fdf9eaf370cbd2d18d13eb55d91dad3ca905f"
+      ],
+      [
+        "entry 7",
+        "b1a937004ba95c1b953e9b04f512eb5a4ca7b76a"
+      ],
+      [
+        "entry 8",
+        "10dfedb6574c9291011a5a7fbbdff261fe312d91"
+      ],
+      [
+        "entry 9",
+        "35f14318a88b902168362e38aecf2e17f9480514"
+      ],
+      [
+        "entry 10",
+        "abde916353463affafafe5d779f332bb2a7aeee5"
+      ],
+      [
+        "entry 11",
+        "91d30d95a3875950b5290b8fc63f1e2c3ad05238"
+      ]
+    ],
     "entries2_5_expect_sha1": "9dc9179fb08063cd59de25c5d3e16b0f8c693fbd",
     "entries2_5_expect_lines": 829,
-    "entry6_commit": "0c8fdf9eaf370cbd2d18d13eb55d91dad3ca905f",
-    "entry7_commit": "b1a937004ba95c1b953e9b04f512eb5a4ca7b76a",
-    "entry8_commit": "10dfedb6574c9291011a5a7fbbdff261fe312d91",
-    "expect_sha1": "013290889e9e08f58ae162baa0c2eb5082f4b135",
-    "expect_lines": 1180
+    "extra_fill": []
   },
   "line": {
-    "name": "L-3",
-    "path": "docs/red-b/P-N5-EXP-line-L3.txt",
-    "commit": "10dfedb6574c9291011a5a7fbbdff261fe312d91",
-    "stand_in": true,
-    "of_record_name": "L-4",
-    "expect_sha1": "fd9074a3b9961f59a1b64d5acdaa28529306ede9",
-    "expect_bytes": 7267
+    "name": "L-6",
+    "path": "docs/red-b/P-N5-EXP-line-L6.txt",
+    "commit": "91d30d95a3875950b5290b8fc63f1e2c3ad05238",
+    "stand_in": false,
+    "of_record_name": "L-6",
+    "expect_sha1": "1e0ff12d51da7a4ee1aad12ed0fd9119a097896b",
+    "expect_bytes": 7755,
+    "history": []
   },
   "referee": {
     "path": "docs/referee/R-P-N5-EXP.md",
@@ -78,8 +109,15 @@
       [
         "stage 5a",
         "31b28f2a02b0cef5524252515cba9bbad577718b"
+      ],
+      [
+        "stage 5b (i)",
+        "38d1166805fefea1e837855879ce2e44a935f61f"
       ]
-    ]
+    ],
+    "described_lines": 1011,
+    "described_sha1": "fedd674bf4eac8e95c5be3bc499631b606cbc79f",
+    "_comment": "described_*: the first lines of the report that fill131.py quotes from (append-only prefix, checked). A later stage: append [name, commit] to stages and fill slots.stage5b_ii."
   },
   "referee2": {
     "path": "docs/referee-2/R2-P-N5-EXP.md",
@@ -100,8 +138,15 @@
       [
         "Addendum 3",
         "e643672d1343d414d9670066ec5564df78588beb"
+      ],
+      [
+        "Addendum 4",
+        "4d5b03f73c2ddb327bc2c3e3dcb0b342bda09e21"
       ]
-    ]
+    ],
+    "described_lines": 731,
+    "described_sha1": "8f2a9ba9cdf947a6fe9180166305f1f56415aa09",
+    "_comment": "as for referee; a later addendum: append [name, commit] to stages and fill slots.r2_add5."
   },
   "box108": {
     "path": "docs/si/box108-gk-proof.md",
@@ -147,31 +192,32 @@
     [
       "R124",
       "Corollary EXACT-L"
+    ],
+    [
+      "R124",
+      "ENDGAME-3-N5"
+    ],
+    [
+      "R15",
+      "(c)"
     ]
   ],
   "slots": {
     "_comment": [
       "open = true: the block carries the slot's open-slot words and land131.py refuses to land.",
       "open = false: those words are replaced by the slot's fill list, joined with single spaces. Each fill item is",
-      "  {\"text\": \"<Lead text>\"}  or  {\"src\": \"<source key>\", \"quote\": \"<verbatim string>\"}  (rendered as a guillemet",
-      "  quotation followed by its line numbers, located by script in that source at the commit cfg names; the build fails",
-      "  if the string is not found exactly once; add \"occ\": <n> to pick the n-th occurrence).",
-      "Source keys: REF1 (first referee's report), REF2 (second referee's report), FIX (fixes file), LINE (the line), PKT, PRE,",
-      "  R2B, B108, RES, GAPS, TARGET, DEC.",
-      "stage5b: the first referee's section 14 (the line word by word, fixes entries 7-9, final signature line naming the line).",
-      "r2_line: the second referee's check of the line of record.",
-      "entry9: fixes entry 9 (and any later entry); also raise fixes.expected_entries.",
-      "The line itself: set line.name / path / commit / expect_* and line.stand_in = false."
+      "  {\"text\": \"<Lead text>\"}  or  {\"src\": \"<source key>\", \"quote\": \"<verbatim string>\"}  (rendered as a guillemet quotation",
+      "  followed by its line numbers, located by script in the WHOLE file of that source at the commit cfg names; the build fails if",
+      "  the string is not found, or found more than once without \"occ\": <n>).",
+      "Source keys: REF1 (first referee's report), REF2 (second referee's report), FIX (fixes file), LINE (the line), PKT, PRE, R2B, B108, RES.",
+      "stage5b_ii: the first referee's stage 5b part (ii): lines L-4 to L-6, fixes entries 9-11, its FINAL line naming L-6 by sha1.",
+      "r2_add5: the second referee's Addendum 5: its final line naming L-6."
     ],
-    "stage5b": {
+    "stage5b_ii": {
       "open": true,
       "fill": []
     },
-    "r2_line": {
-      "open": true,
-      "fill": []
-    },
-    "entry9": {
+    "r2_add5": {
       "open": true,
       "fill": []
     }
@@ -221,5 +267,11 @@
     "date": "2099-01-13",
     "time": "00:00",
     "checker": "5555555"
+  },
+  "pins": {
+    "_comment": "commits the line itself names; fetch.sh fetches their branches, the build checks they are still ancestors of the fetched heads",
+    "l-si": "8c06291418616eca059c9239bdf8d59aad4f320f",
+    "l-comp": "dc6d831f7c56943a03070a9d268df2388565b438",
+    "l-red": "c7ed9b8b6af43c4ae94a5fa15571193bc923eedc"
   }
 }

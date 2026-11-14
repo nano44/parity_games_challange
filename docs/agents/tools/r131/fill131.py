@@ -12,7 +12,7 @@ import sys
 
 import datafacts
 import updlib
-from lib131 import (HERE, OPEN_WORD, OUT, Source, blame_ranges, block_sha1, cdate, csubject, gspans, line_sha1, load_cfg,
+from lib131 import (HERE, OPEN_WORD, OUT, Source, blame_ranges, gitrc, block_sha1, cdate, csubject, gspans, line_sha1, load_cfg,
                     loc, norm, num, sha1, short, show, sources, wrap)
 
 ERR = []
@@ -22,12 +22,13 @@ class Fill:
     def __init__(self, S):
         self.S, self.ledger, self.part = S, [], "header"
 
-    def _find(self, key, text, occ):
-        try:
-            gspans(text)
-        except ValueError as e:
-            ERR.append("guillemets do not balance in a quotation of %s: %s" % (key, e))
-        o = self.S[key].find(text)
+    def _find(self, key, text, occ, whole=False, check=True):
+        if check:
+            try:
+                gspans(text)
+            except ValueError as e:
+                ERR.append("guillemets do not balance in a quotation of %s: %s" % (key, e))
+        o = self.S[key].find(text, whole)
         if not o:
             ERR.append("NOT FOUND in %s (%s @ %s): %r" % (key, self.S[key].path, short(self.S[key].commit), text[:110]))
             return (0, 0), 0
@@ -43,9 +44,9 @@ class Fill:
         self.ledger.append({"form": form, "key": key, "commit": s.commit, "path": s.path, "text": norm(text),
                             "first": fl[0], "last": fl[1], "occurrences": n, "part": self.part})
 
-    def q(self, key, text, occ=None):
+    def q(self, key, text, occ=None, whole=False):
         """a quotation followed by its line numbers."""
-        fl, n = self._find(key, text, occ)
+        fl, n = self._find(key, text, occ, whole)
         self._add("q", key, text, fl, n)
         return "«%s» (%s)" % (norm(text), loc(*fl))
 
@@ -57,7 +58,7 @@ class Fill:
 
     def l(self, key, text, occ=None):
         """the line numbers of a passage, located by script; nothing is quoted."""
-        fl, n = self._find(key, text, occ)
+        fl, n = self._find(key, text, occ, check=False)
         self._add("l", key, text, fl, n)
         return loc(*fl)
 
@@ -93,7 +94,9 @@ def main():
     S["CHK"] = Source("CHK", cfg["heads"]["l-red-b"], "experiments/red-b/check.sh", "the lane's check.sh")
     F = Fill(S)
     q, qn, l, raw = F.q, F.qn, F.l, F.raw
-    H = cfg["heads"]
+    H = dict(cfg["heads"])
+    PINS = {k: v for k, v in cfg.get("pins", {}).items() if not k.startswith("_")}
+    H.update(PINS)
     T = cfg["trunk"]["commit"]
     E, PREV, CN, PK = cfg["entry"], cfg["prev_entry"], cfg["checker_number"], cfg["packet_name"]
     FZ = cfg["packet"]["freeze_commit"]
@@ -109,21 +112,23 @@ def main():
     must(show(LB, cfg["packet"]["path"]) == pkt.raw, "the packet at the l-red-b head differs from the freeze commit")
     must(blame_ranges(LB, cfg["packet"]["path"]) == [(short(FZ), 1, len(pkt.lines))], "the packet has more than its freeze commit")
     fix = S["FIX"]
-    must(fix.sha1 == cfg["fixes"]["expect_sha1"] and len(fix.lines) == cfg["fixes"]["expect_lines"], "fixes file sha1 / lines differ from cfg")
+    fxc = cfg["fixes"]
+    must(len(fix.lines) >= fxc["described_lines"] and fix.prefix_sha1(fxc["described_lines"]) == fxc["described_sha1"],
+         "the first %d lines of the fixes file are not the text fill131.py describes (cfg fixes.described_sha1)" % fxc["described_lines"])
     ents = [(int(m.group(1)), i + 1) for i, x in enumerate(fix.lines) for m in [re.match(r"## Entry (\d+) ", x)] if m]
-    nent = cfg["fixes"]["expected_entries"]
+    nent = fxc["expected_entries"]
     must([e for e, _ in ents] == list(range(1, nent + 1)), "fixes entries by heading are %s, cfg expects 1..%d" % ([e for e, _ in ents], nent))
-    fbl = blame_ranges(LB, cfg["fixes"]["path"])
-    must(nent == 8 or not cfg["slots"]["entry9"]["open"], "the fixes file has %d entries: close slots.entry9 with a fill list for the entries after 8" % nent)
-    f25 = show(cfg["fixes"]["entries2_5_commit"], cfg["fixes"]["path"])
-    must(sha1(f25) == cfg["fixes"]["entries2_5_expect_sha1"] and f25.count(b"\n") == cfg["fixes"]["entries2_5_expect_lines"], "fixes file at the entries 2-5 commit")
-    chain = [cfg["fixes"]["entry1_commit"], cfg["fixes"]["entries2_5_commit"], cfg["fixes"]["entry6_commit"], cfg["fixes"]["entry7_commit"], cfg["fixes"]["entry8_commit"], LB]
-    prev = b""
-    for c in chain:
-        cur = show(c, cfg["fixes"]["path"])
-        must(cur.startswith(prev), "fixes file at %s is not an extension of the previous stage (append-only broken)" % short(c))
+    must(nent == fxc["described_entries"] or fxc.get("extra_fill"), "the fixes file has %d entries, fill131.py describes %d: give fixes.extra_fill" % (nent, fxc["described_entries"]))
+    fbl = blame_ranges(LB, fxc["path"])
+    must([c for c, _, _ in fbl] == [short(c) for _, c in fxc["stages"]], "fixes file: blame %s differs from cfg.fixes.stages" % [c for c, _, _ in fbl])
+    prev, fstage = b"", {}
+    for name, c in fxc["stages"]:
+        cur = show(c, fxc["path"])
+        must(cur.startswith(prev) and len(cur) > len(prev), "fixes file at %s is not an extension of the previous stage (append-only broken)" % short(c))
+        fstage[name] = (c, sha1(cur), cur.count(b"\n"))
         prev = cur
-    f6 = show(cfg["fixes"]["entry6_commit"], cfg["fixes"]["path"])
+    must(fix.raw.startswith(prev), "the fixes file at the head is not an extension of its last stage")
+    must(fstage["entries 2-5"][1] == fxc["entries2_5_expect_sha1"] and fstage["entries 2-5"][2] == fxc["entries2_5_expect_lines"], "fixes file at the entries 2-5 commit")
     line_raw = S["LINE"].raw
     LN = cfg["line"]
     must(sha1(line_raw) == LN["expect_sha1"] and len(line_raw) == LN["expect_bytes"], "line sha1 / bytes differ from cfg")
@@ -139,6 +144,9 @@ def main():
     must(lm_e and lm_s, "the line's closing parenthesis has no 'with fixes entries a-b' / 'L-RED-B successors a-b'")
     line_entries, line_succ = (lm_e.group(1) if lm_e else "?"), (lm_s.group(1) if lm_s else "?")
     ref1, ref2 = S["REF1"], S["REF2"]
+    for nm, src, cf in (("REFEREE's", ref1, cfg["referee"]), ("REFEREE-2's", ref2, cfg["referee2"])):
+        must(len(src.lines) >= cf["described_lines"] and src.prefix_sha1(cf["described_lines"]) == cf["described_sha1"],
+             "%s report: its first %d lines are not the text fill131.py quotes from (cfg described_sha1)" % (nm, cf["described_lines"]))
     r1bl = blame_ranges(H["referee"], cfg["referee"]["path"])
     r2bl = blame_ranges(H["referee-2"], cfg["referee2"]["path"])
     must([c for c, _, _ in r1bl] == [short(c) for _, c in cfg["referee"]["stages"]], "REFEREE's report: blame %s differs from cfg.referee.stages" % [c for c, _, _ in r1bl])
@@ -165,8 +173,11 @@ def main():
     fetch = open(os.path.join(HERE, "fetch.txt"), encoding="utf-8").read().split("\n")
     fdate = fetch[0][5:] if fetch and fetch[0].startswith("date ") else "?"
     fheads = dict((x.split()[1].split("/")[-1], x.split()[5]) for x in fetch if x.startswith("fetch "))
-    for lane, c in H.items():
+    for lane, c in cfg["heads"].items():
         must(fheads.get(lane) == c, "cfg head of %s (%s) is not the head fetch.txt records (%s)" % (lane, short(c), short(fheads.get(lane, "?"))))
+    for lane, c in PINS.items():
+        rc_, _ = gitrc("merge-base", "--is-ancestor", c, fheads.get(lane, "HEAD"))
+        must(rc_ == 0, "pin %s of %s is not an ancestor of the fetched head %s" % (short(c), lane, short(fheads.get(lane, "?"))))
     must(fheads.get(cfg["trunk"]["branch"].split("/")[-1]) == T, "cfg trunk commit is not the trunk head fetch.txt records")
     b2, b3, b4 = D["beyond"]["n^2"], D["beyond"]["n^3"], D["beyond"]["n^4"]
     slots = cfg["slots"]
@@ -178,12 +189,12 @@ def main():
             return open_text
         out = []
         for it in s["fill"]:
-            out.append(it["text"] if "text" in it else q(it["src"], it["quote"], it.get("occ")))
+            out.append(it["text"] if "text" in it else q(it["src"], it["quote"], it.get("occ"), True))
         must(out, "slot %s is closed but its fill list is empty" % name)
         return " ".join(out)
 
     def anyopen():
-        return [n for n in ("stage5b", "r2_line", "entry9") if slots[n]["open"]] + (["line"] if LN["stand_in"] else [])
+        return [n for n in ("stage5b_ii", "r2_add5") if slots[n]["open"]] + (["line"] if LN["stand_in"] else [])
 
     def rng(bl, c):
         r = [(a, b) for cc, a, b in bl if cc == short(c)]
@@ -233,15 +244,15 @@ def main():
     must(gk_sha == "5222f555f9572e5c92119a2bc1e16d02008a96c5", "gk.py sha1 at the freeze commit")
 
     # ---- Fixes
-    def fr(c):
-        r = [(a, b) for cc, a, b in fbl if cc == short(c)]
-        return "l. %d-%d %s %s" % (r[0][0], r[0][1], short(c), cdate(c))
-
     fx = cfg["fixes"]
+    stage_txt = "; ".join("%s l. %d-%d %s %s" % (n, a, b, cc, cdate(c)) for (n, c), (cc, a, b) in zip(fx["stages"], fbl))
+    o25, o6, o8 = fstage["entries 2-5"], fstage["entry 6"], fstage["entry 8"]
+    extra = " ".join((it["text"] if "text" in it else q(it["src"], it["quote"], it.get("occ"), True)) for it in fx.get("extra_fill", []))
     bullet(
-        "- Fixes: %s, append-only (%s), at claude/l-red-b %s: %s lines, %s bytes, sha1 %s, entries 1-%d by their headings (git blame: entry 1 %s; "
-        "entries 2-5 %s; entry 6 %s; entry 7 %s; entry 8 %s); each stage of the file is a byte prefix of the next (asserted by script). At %s it is the "
-        "object of REFEREE-2's signature (829 lines, sha1 %s), at %s the object of REFEREE's (881 lines, sha1 %s). "
+        "- Fixes: %s, append-only (%s), at claude/l-red-b %s: %s lines, %s bytes, sha1 %s, entries 1-%d by their headings (git blame: %s); each "
+        "stage of the file is a byte prefix of the next (asserted by script). The referees' objects: at %s (829 lines, sha1 %s) REFEREE-2's Addendum "
+        "2 and REFEREE's stage 4; at %s (881 lines, sha1 %s) REFEREE's stage 5a; at %s (%s lines, sha1 %s) REFEREE's stage 5b (i) and REFEREE-2's "
+        "Addendum 4. "
         "Entry 1 (L-RED-B 5): %s; six DATA subsections 9.8-9.13, a pointer correction and the reproduction erratum 10.E (at the freeze commit the "
         "runner needs an absolute root; from entry 1 on it counts a failing stage and exits 1). "
         "Entries 2-5 (L-RED-B 6) answer the referees item by item: %s. "
@@ -257,15 +268,20 @@ def main():
         "Entry 7 (L-RED-B 7): REFEREE-2's F-1 to F-5 and REFEREE's stage 4, %s: 7.1 %s %s; 7.2 which frozen lines of §6 stay in force as "
         "definitions (a table of the frozen l. 191-204); 7.3 %s; 7.4 the runner run_b6fix.sh repaired (%s; its test file ends %s); 7.5 the two "
         "sentences of entry 2 (a′) labelled, %s; 7.6 guards, line L-2, pins. "
-        "Entry 8: the line L-3 from L-2, %s. %s"
+        "Entry 8: the line L-3 from L-2, %s. "
+        "Entry 9: %s; 9.1 %s; 9.2 the four notes of stage 5a recorded; 9.3 line L-4. "
+        "Entry 10: %s; %s, and %s; 10.2 the quoted sentence is R104's packet's, RESULTS has the name; 10.3 line L-5. "
+        "Entry 11: %s; 11.1 the correctness DATA named up to k = 13; 11.2 %s; 11.3 %s; 11.4 line L-6. "
+        "Entries 10 and 11 took the referees' items from the Lead's relay, before the reports were on origin (%s; %s); this entry cites the "
+        "reports themselves (Note).%s"
         % (fx["path"], q("FIX", "append-only; the packet docs/red-b/P-N5-EXP.md is never edited after its freeze commit 350d84eb"), c8(LB),
-           num(len(fix.lines)), num(len(fix.raw)), fix.sha1, nent, fr(fx["entry1_commit"]), fr(fx["entries2_5_commit"]), fr(fx["entry6_commit"]),
-           fr(fx["entry7_commit"]), fr(fx["entry8_commit"]), c8(fx["entries2_5_commit"]), sha1(f25), c8(fx["entry6_commit"]), sha1(f6),
+           num(len(fix.lines)), num(len(fix.raw)), fix.sha1, nent, stage_txt,
+           c8(o25[0]), o25[1], c8(o6[0]), o6[1], c8(o8[0]), num(o8[2]), o8[1],
            q("FIX", "extra DATA, no change to any statement, proof or hypothesis", 1),
            q("FIX", "What changes: the STATEMENTS of the RESPONSE LEMMA and of STABLE are replaced by the forms of entry 4 (the mathematics and every "
                     "number stay); the LABELS of Corollary EXP-N5 and of the dead-end paragraph are fixed by entry 2; entry 3 adds a corollary; entry 5 "
                     "is wording and records. Theorem EXP-IDEAL (a)-(c) is unchanged."),
-           q("FIX", "Let IDEAL-ACYC-POLY mean: there is a polynomial q such that L(G) ≤ q(N + M) for every G ∈ IDEAL-ACYC."),
+           q("FIX", "Let IDEAL-ACYC-POLY mean: there is a polynomial q such that L(G) ≤ q(N + M) for every G ∈ IDEAL-ACYC.", 1),
            q("FIX", "PROVED-CONDITIONAL on RESULTS R117's Theorem REACH3 AS LANDED [refereed-only].", 1),
            q("FIX", "it inherits R117's standing premises and adds none"),
            q("FIX", "under R117's Theorem REACH3 as landed, N5 (SPEC S1-S5) from its default start S3 makes at least 2^k − 1 iterations on Γ3(G_k), a "
@@ -293,7 +309,25 @@ def main():
            q("FIX", "b6fixtest failed 0", 2),
            q("FIX", "The lines L-1 and L-2 carry (i) only; neither names QUIET-KEY-1P, SW-POLY or P-N5-KEY1P."),
            q("FIX", "a record of the line only, no statement, proof, hypothesis or number changes"),
-           slot("entry9", "Fixes entry 9 %s (the entry that records the line of record %s; no referee has read it)." % (OPEN_WORD, LN["of_record_name"]))))
+           q("FIX", "the label of Corollary EXP-N5′ names both statements of R124 (the Lead's item N-5e), the notes N-5a to N-5d recorded, line L-4; no "
+                    "statement, proof, hypothesis or number changes"),
+           q("FIX", "READ the label of Corollary EXP-N5′, in entry 3 and wherever it is cited, as: PROVED-CONDITIONAL on RESULTS R124's Corollary "
+                    "EXACT-L and Theorem ENDGAME-3-N5 AS LANDED [refereed-only]"),
+           q("FIX", "a failing clause of the LINE (in L-1 to L-4 alike) — the line's gloss of rule R's rank clause dropped the local δ; the source of "
+                    "the IDEAL-ACYC-POLY sentence is named; line L-5; no statement, proof, hypothesis or number of the packet changes"),
+           q("FIX", "**10.1 Accepted: the gloss in the lines was wrong; rule R, the genome and the theorem are not.**"),
+           q("FIX", "Theorem EXP-IDEAL is about the genome G_k that rule R defines and gk.py builds (the theorem names both); every proof and every "
+                    "DATA line of the packet and of entries 1-9 is about that genome."),
+           q("FIX", "the correctness DATA up to k = 13, the premises of Corollary EXP-N5′ in R124's words, STABLE's step form in the L41 scope tail; "
+                    "line L-6; no statement, proof, hypothesis or number changes"),
+           q("FIX", "the premise lists written in entry 3 and in 9.1 are completed by RESULTS R15 (c) for Lemma TERM-XI, and RESULTS R117 (f) is a "
+                    "premise of EXACT-L only. No proof changes: entry 3's proof uses the two statements of R124 as landed, whatever their premises "
+                    "are."),
+           q("FIX", "REFEREE 36 stated STABLE's step form (its E-5, inside its §5.3) and gave no new proof of it; the proof in 4.2 is the frozen one "
+                    "(l. 258-262) read with the key bit of the step."),
+           q("FIX", "F-L3-1 was not on origin when this entry was written (the referee's §14 was not committed)."),
+           q("FIX", "REFEREE-2 42's Addendum 4 was not on origin when this entry was written"),
+           (" " + extra) if extra else ""))
 
     # ---- The RESULTS line
     order = ["R104P", "RES", "REF1", "REF2", "PKT", "FIX"]
@@ -309,27 +343,46 @@ def main():
         if hit:
             F._add("line", hit[0], inner, hit[1], hit[2])
             found.append("(%d) %s %s" % (i, S[hit[0]].what, loc(*hit[1])))
-    hist = " ".join((it["text"] if "text" in it else q(it["src"], it["quote"], it.get("occ"))) for it in LN.get("history", []))
+    hist = " ".join((it["text"] if "text" in it else q(it["src"], it["quote"], it.get("occ"), True)) for it in LN.get("history", []))
+    LNS, LNM = D["lines"], D["line_names"]
+    GLOSS = ("all parities even, β-ranks depth-major (a smaller Ξ-depth outranks a larger one), inside a Ξ-depth by the rule's local δ, the "
+             "remaining ties (wire options only) by β-id")
+    must(line.count(GLOSS) == 1, "the line does not carry the rank gloss that REFEREE's §14.3 words")
+    lastn = int(LN["name"].split("-")[1])
+    must(lastn == 6 or hist, "the line is %s: the history sentence of fill131.py ends at L-6; give line.history (text / quote items) for the later lines" % LN["name"])
+    must(LNM.get(2) == ["L-a", "L-b", "L-d (1)", "L-d (2)", "L-c"] and LNM.get(3) == ["L-f (1)", "L-f (2)"] and LNM.get(4) == ["N-5e", "L-g"]
+         and LNM.get(5) == ["F-L3-1 (1)", "F-L3-1 (2)", "L-h"] and LNM.get(6) == ["L3-3", "L3-2", "L3-5", "L-i"], "the lane's build records name other replacements than the history sentence")
     bullet(
-        "- The RESULTS line is %s, %s (%s, claude/l-red-b %s, %s; %s bytes, one line with its newline; %d opening and %d closing parentheses, no "
-        "square bracket, no pipe character, %d guillemet quotations). The title is the line verbatim, with nothing inserted and nothing stripped (it "
-        "has no date parenthesis and no dash separator; its status phrase, scope tail, source note and final full stop are the line's own: the landed "
-        "form of %s). Its quotations are found verbatim by script: %s. Its closing parenthesis names fixes entries %s and L-RED-B successors %s. "
-        "History of the line (the lane's builder experiments/red-b/b6line.py, named replacements, each old text exactly once): L-1 (%s, 5,585 bytes, "
-        "claude/l-red-b %s) was read by REFEREE-2 (Addendum 2 §A2.7: %s, with three notes); L-2 = L-1 with REFEREE-2's L-a (the gloss of the units), "
-        "L-b (R117's premises in the words of its title line), L-c (the L41 scope tail) and the Lead's L-d (k = 13 from entry 6), fixes 7.6: %s; "
-        "L-3 = L-2 with two replacements in the closing parenthesis, fixes entry 8: %s.%s%s"
+        "- The RESULTS line is %s, %s (%s, claude/l-red-b %s, %s; %s bytes, one line with its newline; %d opening and %d closing parentheses, %d "
+        "pair of square brackets, no pipe character, %d guillemet quotations). The title is the line verbatim, with nothing inserted and nothing "
+        "stripped (it has no date parenthesis and no dash separator; its status phrase, scope tail, source note and final full stop are the line's "
+        "own: the landed form of %s). Its quotations are found verbatim by script: %s. Its closing parenthesis names fixes entries %s and L-RED-B "
+        "successors %s. History: five rounds of named replacements by the lane's builder experiments/red-b/b6line.py, each old text occurring "
+        "exactly once; by script, each line is the one before it with the replacements of the lane's build record applied, byte for byte "
+        "(tools/data.py, line chain). L-1 (sha1 %s, %s bytes, %s) was read by REFEREE-2 (Addendum 2 §A2.7: %s, with three notes). "
+        "L-2 (sha1 %s) = L-1 with five replacements: REFEREE-2's L-a (the gloss of the units), L-b (R117's premises in the words of its title "
+        "line), L-c (the L41 scope tail), and the Lead's L-d, twice (k = 13 from fixes entry 6); fixes 7.6: %s. "
+        "L-3 (sha1 %s) = L-2 with two (L-f), the Lead's ruling quoted in fixes entry 8: %s. Both referees read L-3 word by word and did not sign it "
+        "(Claims signed). "
+        "L-4 (sha1 %s) = L-3 with two: N-5e (the Lead's item after REFEREE's stage 5a: Theorem ENDGAME-3-N5 named beside Corollary EXACT-L) and L-g "
+        "(the entries named); fixes 9.3: %s. "
+        "L-5 (sha1 %s) = L-4 with three: F-L3-1 twice (REFEREE's failing clause, the rank gloss, found independently by REFEREE-2 as L3-1; and the "
+        "source of the quoted sentence, REFEREE's note L-n1 and REFEREE-2's L3-4) and L-h; fixes 10.3: %s; the new gloss is, word for word, the "
+        "wording REFEREE's §14.3 says it would sign, %s. "
+        "L-6 (sha1 %s) = L-5 with four: REFEREE-2's L3-3 (R124's premises in R124's words), L3-2 (the correctness DATA to k = 13), L3-5 (STABLE's "
+        "step form in the L41 tail) and L-i; fixes 11.4: %s.%s%s"
         % (LN["name"], sha1(line_raw), LN["path"], c8(LN["commit"]), cdate(LN["commit"]), num(len(line_raw)), line.count("("), line.count(")"),
-           len(lspans), PREV, "; ".join(found), line_entries, line_succ,
-           sha1(show(fx["entries2_5_commit"], "docs/red-b/P-N5-EXP-line-L1.txt")), c8(fx["entries2_5_commit"]),
+           line.count("["), len(lspans), PREV, "; ".join(found), line_entries, line_succ,
+           LNS[1][0], num(LNS[1][1]), c8(fstage["entries 2-5"][0]),
            q("REF2", "Every clause that comes from this lane's review agrees with it"),
-           q("FIX", "L-2 bytes 7267 (with its newline) lines 1 pipes 0 sha1 6e047c676e582484fe8eb87891764e8c1a7d9a18"),
-           q("FIX", "L-3 bytes 7267 (with its newline) lines 1 pipes 0 sha1 fd9074a3b9961f59a1b64d5acdaa28529306ede9"),
+           LNS[2][0], q("FIX", "L-2 bytes 7267 (with its newline) lines 1 pipes 0 sha1 6e047c676e582484fe8eb87891764e8c1a7d9a18"),
+           LNS[3][0], q("FIX", "the line of record must say what is true at landing, so it becomes «with fixes entries 1-7» and «L-RED-B successors 5-7»"),
+           LNS[4][0], q("FIX", "L-4 bytes 7292 (with its newline) lines 1 pipes 0 sha1 668fd1b88ea4ae28690f0b931d84b27a85928ca8"),
+           LNS[5][0], q("FIX", "L-5 bytes 7482 (with its newline) lines 1 pipes 0 sha1 fbd857b08befb397e03e71c554cccb4542be3820"),
+           q("REF1", GLOSS),
+           LNS[6][0], q("FIX", "L-6 bytes 7755 (with its newline) lines 1 pipes 0 sha1 1e0ff12d51da7a4ee1aad12ed0fd9119a097896b"),
            (" " + hist) if hist else "",
-           (" Line of record %s %s: this fill stands on %s as a stand-in; %s is to be %s with one clause changed (R124's Theorem ENDGAME-3-N5 named "
-            "beside Corollary EXACT-L) and comes with fixes entry 9; no referee has read it." % (LN["of_record_name"], OPEN_WORD, LN["name"],
-                                                                                                 LN["of_record_name"], LN["name"])) if LN["stand_in"] else ""))
-    must(sha1(show(fx["entries2_5_commit"], "docs/red-b/P-N5-EXP-line-L1.txt")) == "59c5309377eda882ba436ffe7eb03fbff598c7c8", "L-1 sha1")
+           (" Line of record %s %s: this fill stands on %s as a stand-in." % (LN["of_record_name"], OPEN_WORD, LN["name"])) if LN["stand_in"] else ""))
 
     # ---- Claims signed
     def rows1(src_key, header, fmt):
@@ -345,6 +398,7 @@ def main():
                 lambda c: "%s%s → %s [%s]" % (c[0], (" (" + c[1] + ")") if c[1] else "", c[2], c[3]))
     t20 = rows1("REF2", ["statement (packet §)", "verdict", "items"], lambda c: "%s → %s [%s]" % (c[0], c[1], c[2]))
     t2a = rows1("REF2", ["entry", "this lane's items", "verdict"], lambda c: "%s (%s) → %s" % (c[0], c[1], c[2]))
+    t2d = rows1("REF2", ["object", "verdict"], lambda c: "%s → %s" % (c[0], c[1]))
     st1 = ", ".join("%s %s %s" % (n, rng(r1bl, c), c8(c)) for n, c in cfg["referee"]["stages"])
     st2 = ", ".join("%s %s %s" % (n, rng(r2bl, c), c8(c)) for n, c in cfg["referee2"]["stages"])
     bullet(
@@ -352,10 +406,12 @@ def main():
         "REFEREE's first table (§0, stage 1), row by row as the report prints it: %s; then %s. After the fixes, REFEREE's table of what its signature "
         "covers (§13.0, stage 5a), row by row: %s; its signature line: %s. "
         "REFEREE-2's table (§0 of its report), row by row: %s; then %s. Its table on the fixes file (Addendum 2, §A2.0), row by row: %s; its "
-        "signature: %s. REFEREE-2 on the two reviews together (Addendum 3): %s. No statement is REFUSED by either referee. The frozen statement of "
-        "the RESPONSE LEMMA is signed by neither: both sign it in the restated form LEMMA′ of fixes entry 4 (L41, below). The joint gap map is in "
-        "the Note bullet: every required item is closed by a fixes entry that the referee who raised it has checked, except what the open slots "
-        "name (Signatures)."
+        "signature: %s. REFEREE-2 on the two reviews together (Addendum 3): %s. On fixes entries 7, 8 and line L-3, REFEREE (stage 5b (i), "
+        "§14.0): %s; %s; %s. REFEREE-2 (Addendum 4, §A4.0), row by row: %s; then %s. So REFEREE finds fixes entries 7 and 8 right (its signature line "
+        "still names entries 1-6; its last line is held for part (ii)), REFEREE-2's signature now names entries 1-8, and neither signed line L-3; "
+        "the lines L-4 to L-6 and fixes entries 9-11 answer what they found, and their check of these is the open slots (Signatures). No "
+        "statement of the packet is REFUSED by either referee. The frozen statement of the RESPONSE LEMMA is signed by neither: both sign it in the "
+        "restated form LEMMA′ of fixes entry 4 (L41, below). The item-by-item map is in the Note bullet."
         % (cfg["referee"]["path"], c8(H["referee"]), st1, cfg["referee2"]["path"], c8(H["referee-2"]), st2,
            t10, q("REF1", "No statement is REFUSED. Nothing found changes L(G_k) = 2^k − 2, the counts of (c), or the Corollary's numbers."),
            t13, q("REF1", "**P-N5-EXP: SIGNED with fixes entries 1-6.** What the signature covers, by kind"),
@@ -365,16 +421,24 @@ def main():
                      "LEMMA that I sign is entry 4's 4.4 (LEMMA′), not the frozen l. 192-204; STABLE is signed in 4.2's step form. Every other row "
                      "of §0 stands as written. Items F-1 to F-5 are wording and tooling; none of them is a condition of the signature except the "
                      "reading F-1."),
-           q("REF2", "No verdict differs after the fixes, and no number differs anywhere")))
+           q("REF2", "No verdict differs after the fixes, and no number differs anywhere"),
+           q("REF1", "**Entry 7**: right, sentence by sentence. **F-1 is ACCEPTED by this lane, as the lane that wrote LEMMA′** (§14.3): clause "
+                     "(R3) is to be read with the range t − 1 ≤ τ < last, as entry 7.1 restates it."),
+           q("REF1", "**Entry 8**: right. L-3 is L-2 with exactly the two named replacements."),
+           q("REF1", "So **L-3 is NOT signed as the RESULTS line**: the failing clause is F-L3-1 (and N-5e's premise is to be named). Nothing in "
+                     "entries 7 and 8 fails."),
+           t2d,
+           q("REF2", "P-N5-EXP stays SIGNED, now with fixes entries 1-8 (the signature is about the packet and its fixes; L3-1 is a defect of the "
+                     "LINE's gloss, not of the rule, the theorem or any proof).")))
 
     # ---- Statements as signed, by standing
     bullet(
         "- Setting and scope, as both referees sign it. The objects are R104's IDEAL model on the genomes G_k (k ≥ 3), the games Γ3(G_k) of RESULTS "
-        "R117, and N5 (SPEC S1-S5 with FIX 1-4) from its default start S3. Statements as signed (the packet with fixes entries 1-5 for both "
-        "referees, entry 6 for REFEREE), by standing:")
+        "R117, and N5 (SPEC S1-S5 with FIX 1-4) from its default start S3. Statements as signed (the packet with its fixes entries, as each "
+        "referee's signature names them under Signatures), by standing:")
     sub("(a) UNCONDITIONAL (R104's definitions only; no theorem, no SPEC premise, nothing about N5). Theorem EXP-IDEAL (a) = Lemma MEMBER: G_k is a "
         "genome of R104's class in IDEAL-ACYC with N = 9k − 16 movers, M = 18k − 32 options and k + 1 levels, the rank clause read with its "
-        "tie-break by β-id (fixes 5.1). MOVE-2, V0-V4, K1-K4, WIRE under the standing assumption of fixes 4.1 (S1), every wire and u_0 at option 0. "
+        "tie-break by β-id (fixes 5.1: the rank of the triple of depth, local δ and β-id; the line's gloss of it is the corrected one of L-5). MOVE-2, V0-V4, K1-K4, WIRE under the standing assumption of fixes 4.1 (S1), every wire and u_0 at option 0. "
         "The RESPONSE LEMMA as LEMMA′ (fixes 4.4) with CAUSAL (4.3) and STABLE in step form (4.2). Theorem EXP-IDEAL (b): L(G_k) = 2^k − 2 and the "
         "run stops @@STUCK@@; (c): every mover of unit j changes its option exactly 2^(j−1) times, v_0 once, u_0 and the wires never, 11·2^(k−2) − 9 "
         "changes in all. REFEREE %s (%s; %s); REFEREE-2 %s (%s; %s)."
@@ -400,8 +464,9 @@ def main():
            l("REF1", "| Dead-end paragraph | packet l. 61-71 read as entry 2 (c), (e) |"),
            q("REF2", "PROVED-CONDITIONAL on RESULTS R117 as landed: Corollary EXP-N5's iteration bound, and with it the Dead-end paragraph"),
            S["REF2"].find("the sizes n = 135k − 230 and m = 176k − 300 SIGN outright")[0][0]))
-    sub("(d) PROVED-CONDITIONAL on RESULTS R124's Corollary EXACT-L and Theorem ENDGAME-3-N5 as landed [refereed-only] (premise R117 (f) = Theorem "
-        "REACH3, so the premises of (c), with R124's own). Corollary EXP-N5′ (fixes entry 3): N5 from S3 on Γ3(G_k) makes exactly 2^k + 1 iterations, "
+    sub("(d) PROVED-CONDITIONAL on RESULTS R124's Corollary EXACT-L and Theorem ENDGAME-3-N5 as landed [refereed-only], with R124's premises as landed "
+        "(Premise, below; the label as fixes 9.1 and 11.2 read it: the count rests on EXACT-L, the fallback clause on ENDGAME-3-N5 with EXACT-L). "
+        "Corollary EXP-N5′ (fixes entry 3): N5 from S3 on Γ3(G_k) makes exactly 2^k + 1 iterations, "
         "with exactly one fallback, at iteration 2^k − 1. An addition: the dead end needs (c) only. REFEREE: statement %s, statement and proof %s; "
         "REFEREE-2 %s and, on entry 3, %s."
         % (q("REF1", "entry 3's **Corollary EXP-N5′, the STATEMENT, is SIGNED AS PROVED-CONDITIONAL on RESULTS R124 and R117 as landed**"),
@@ -422,7 +487,8 @@ def main():
         "standing premises in R117's own words, its title line: %s (RESULTS l. %d); these are 1E-N3 = %s (b), %s (a) and (b) with %s's bridge B, "
         "%s (c) and %s (d), each a landed [refereed-only] entry; in R117's entry they are called [1E-N3], [RULE], [VJ-LOC], [TERM], and %s. REACH3's "
         "one hypothesis on the genome is %s, met by Lemma MEMBER; its clause used is %s (both in RESULTS l. %d). For (d): %s, as landed, its title "
-        "line: %s and %s. For the correctness sentence: %s (b), Lemma OUT-G: %s. The premise 1E-N3 is SPEC's standing requirement, not a theorem of "
+        "line: %s, %s and, for its Lemma TERM-XI, %s (%s (c), a landed entry; not the R15 (d) of R117's title line). For the correctness "
+        "sentence: %s (b), Lemma OUT-G: %s. The premise 1E-N3 is SPEC's standing requirement, not a theorem of "
         "the fleet: REFEREE %s. Not used: %s; no theorem of R104; nothing of R125-%s. L-SI's box 108 is supporting evidence, not a premise (Referee "
         "strengthening)."
         % (c8(T), PREV, hl("R104"), q("PKT", "**R104, DEFINITIONS ONLY** (no theorem of R104 is used)."),
@@ -440,6 +506,8 @@ def main():
            qn("RES", "premise RESULTS R117 (f); it uses SPEC's S1 tie-breaks, through REACH3's [RULE] choice: with another pointwise-optimal S4a choice "
                      "the identity can fail"),
            qn("RES", "premises, all under the standing SPEC premise 1E-N3 of RESULTS R57 / R104 / R117"),
+           qn("RES", "RESULTS R15 (c) («every non-empty switch of improvements goes strictly up in ≺») for TERM-XI; RESULTS R117 (f) for EXACT-L only"),
+           hl("R15"),
            hl("R57"),
            q("RES", "In particular, on every game N5 stops (R15 (d)) and SPEC S5's output there is correct. Standing premise, as in R51 (d): OUT-G "
                     "concerns SPEC's Ξσ and σ̄; that S1's procedure realises an optimal σ̄ is VJ00 §6 plus SPEC conformance, and the code's match to "
@@ -448,7 +516,7 @@ def main():
            q("PKT", "NOT used: R105, R113, R120."), PREV))
     for s_ in ("with R104's premises as landed (1E-N3", "for every G with an ACYCLIC Ξ-graph", "so if L(G) ≥ 1, [0, L(G)] is one FL run"):
         must(S["RES"].find(s_) and S["RES"].find(s_)[0][0] == heads["R117"], "an R117 quotation is not in R117's title line")
-    for s_ in ("premise RESULTS R117 (f); it uses SPEC's S1 tie-breaks", "premises, all under the standing SPEC premise 1E-N3"):
+    for s_ in ("premise RESULTS R117 (f); it uses SPEC's S1 tie-breaks", "premises, all under the standing SPEC premise 1E-N3", "RESULTS R15 (c) («every non-empty switch"):
         must(S["RES"].find(s_) and S["RES"].find(s_)[0][0] == heads["R124"], "an R124 quotation is not in R124's title line")
 
     # ---- L41 and L43
@@ -456,8 +524,9 @@ def main():
         "- L41 and L43. The packet's proofs are L-RED-B successor 5's, with one referee-originated restatement: CAUSAL and LEMMA′ (and the standing "
         "paragraph and STABLE's step form) are REFEREE 36's (its §5.3, from %s, in stage 1), adopted word for word in fixes entry 4. Under L41 (%s) the author signs "
         "and the other referee signs independently: REFEREE %s, and after the fixes entry %s; REFEREE-2 %s, on the same text: %s (REFEREE's own "
-        "script: %s). The one condition of the second signature is the reading F-1 of clause (R3), which the lane takes over in fixes 7.1; its "
-        "confirmation by the statement's author is part of the open slot of REFEREE (Signatures). The line names both signatures in its scope tail. "
+        "script: %s). The one condition of the second signature is the reading F-1 of clause (R3), which the lane takes over in fixes 7.1 and "
+        "which the statement's author accepts (stage 5b (i), §14.3): %s; %s. STABLE's step form is REFEREE 36's wording too (its E-5); its proof "
+        "is the frozen one read in step form, as fixes 11.3 and the line's scope tail say. The line names the signatures in its scope tail. "
         "L43 (%s): the DEAD rests on a PROOF, not on an instance: REFEREE %s; REFEREE-2 %s. By script from the pinned outputs: every measured run "
         "lies below n², n the number of vertices of Γ3(G_k): N5 itself for k = 3..13 (the largest, k = 13: %s iterations on n = 1,525, n² = %s) and "
         "the model alone to k = 20 (L-COMP 22: T = %s, where Γ3(G_20) would have n = 2,470, n² = %s); 2^k − 1 exceeds n² first at k = %d (n = %s: "
@@ -474,6 +543,9 @@ def main():
            q("REF2", "So the text I signed in §A2.3 IS the referee-originated text, and L41's two signatures are on the same statements"),
            q("REF1", "fixes4: my §5.3 inside entry 4, white space normalised, the bold labels dropped: standing paragraph 1, CAUSAL 1, LEMMA′ 1 (1 = "
                      "verbatim)"),
+           q("REF1", "**This lane signs LEMMA′ with clause (R3) read as fixes entry 7.1 restates it**"),
+           q("REF1", "With this, the author's signature and the second referee's (in the words the line quotes) are on one statement in one reading, "
+                     "which is what L41 asks."),
            q("DEC", "«DEAD» in a landing line needs a refereed proof, or one instance exceeding an EXPLICIT bound"),
            q("REF1", "L43 («DEAD» needs a refereed proof or an instance beyond an explicit bound): the growth is PROVED for every k ≥ 3 (Theorem "
                      "EXP-IDEAL (b), unconditional; this report signs it through LEMMA′); the DEAD of «N5 runs in polynomial time» then holds under "
@@ -534,7 +606,10 @@ def main():
         "iterations, above n + m = 3,513 and below n² = %s. (iv) N5's ANSWER on these games is right: %s (b), Lemma OUT-G, for every k (under "
         "1E-N3), and DATA for the k that were run (winners equal to Zielonka's for k ≤ 12 on two engines and at k = 13 on one); what fails is the "
         "polynomial bound, not the answer. (v) The growth is exponential in k and n = 135k − 230, so the bound is %s: a small base, a true "
-        "exponential in n. (vi) The lane's tools were written by the lane; at k = 13 one engine ran, not two. (vii) No Lean. (viii) No algorithm "
+        "exponential in n. (vi) The lane's tools were written by the lane; at k = 13 one engine ran, not two. (vii) No Lean. (viii) The LINE needed five "
+        "rounds: the lines L-1 to L-4 glossed rule R's rank clause without the local δ, and that gloss describes another genome, whose IDEAL run has "
+        "3 steps or 1 (both referees; the lane's gloss.out); rule R, gk.py, the theorem and every proof and DATA line were about the right genome "
+        "throughout, and line L-5 corrected the gloss. (ix) No algorithm "
         "and no bound is claimed, and no novelty against the literature (not M3)."
         % (D["howard_max"], num(1525 ** 2), hl("R57"), qn("PKT", "at least 2^k − 1 = 2^((n + 230)/135) − 1 iterations")))
 
@@ -558,7 +633,9 @@ def main():
         "iterations %s, …, %s, %s = 2^k + 1 on n = 175, …, 1,255, 1,390 vertices, one fallback each; k = 13 on engine 1 only (n5_k13.out): %s "
         "iterations on n = 1,525, one fallback after 8,190 S4a iterations. Sizes (size.out, size_k13.out): must-0 counter sizediff, n = 135k − 230 "
         "and m = 176k − 300 on the game files, k = 3..11 and 13. Strategies (TARGET.md §5, D2 change 5): must-0 counter badstrat (harness verifier) "
-        "0 for k = 3..10. Also 0: venab, kenab, movd (enab.out, k = 3..12), keep on %s gate relabelings (perm.out), startdiff, padcyc, padp, fbpos "
+        "0 for k = 3..10. The rank clause against the old gloss of the lines (gloss.out, unit: one genome, k = 3..12): must-0 counters rulediff, "
+        "Ldiff, wire0diff 0, and the old gloss, as the firing control, gives L = 3 and L = 1. Also 0: venab, kenab, movd (enab.out, k = 3..12), keep "
+        "on %s gate relabelings (perm.out), startdiff, padcyc, padp, fbpos "
         "(reach.out, R117's side lemmas on these games, k = 3..8). Frozen instances: data/b6b/pg/G_k_g3.pg, k = 3..11 at %s (smallest: %d vertices, "
         "%d edges, 9 iterations), and k = 12, 13 from fixes entries 1 and 6; genomes of record data/b6b/G/G_k.json, k = 3..14. Re-run by the drafter "
         "in a git archive of %s: experiments/red-b/check.sh exit 0, %s; with one byte appended to the pinned n5_k13.out it prints %s and %s "
@@ -600,36 +677,178 @@ def main():
                      "answer is right.")))
 
     # ---- Note: every item of both referees
+    S5B, ADD5 = "S5B", "ADD5"
+    FX51 = ("FIX", "**5.1 The rank clause and its tie-break (REFEREE-2 M-1; REFEREE 36 E-3).**")
+    FX53 = ("FIX", "**5.3 §9.7's placeholder (REFEREE-2 D-1; REFEREE 36 E-6).**")
+    FXG1 = ("FIX", "- G-1 / E-2: the frozen proof applies the lemma to unit j + 1")
+    FXC = ("FIX", "**(c) The dead-end paragraph (frozen l. 61-71) carries the condition of (b) [W-2].**")
+    FXE3 = ("FIX", "## Entry 3 (L-RED-B successor 6, 2026-11-13): Corollary EXP-N5′, the EXACT count, by landed R124")
+    ITEMS = [
+        ("REFEREE 36, stage 1 (the table of its §9)", [
+            ("E-1", "(H2) vacuous after the stop", ("REF1", "| E-1 | §6 l. 194, 196 |"), "fixes 4.4 with 4.1 (S2)",
+             [("FIX", "- E-1: the frozen (H2) is quantified over the τ")], [("qn", "REF1", "**E-1 CLOSED.**")]),
+            ("E-2", "the induction uses the lemma before its hypothesis holds", ("REF1", "| E-2 | §6 l. 225-229 |"), "fixes 4.4, 4.5",
+             [FXG1], [("qn", "REF1", "**E-2 CLOSED.**")]),
+            ("E-3", "the rank key is not injective on wire options", ("REF1", "| E-3 | §3 l. 98-99, §4 l. 114-115 |"), "fixes 5.1",
+             [FX51], [("qn", "REF1", "**E-3 closed.**")]),
+            ("E-4", "u_0 at option 0 in the standing assumption", ("REF1", "| E-4 | §5 l. 139 |"), "fixes 4.1 (S1)",
+             [("FIX", "- E-4: 4.1 (S1) adds u_0 to the standing assumption.")], [("qn", "REF1", "**E-4 CLOSED.**")]),
+            ("E-5", "STABLE: the key bit of the step", ("REF1", "| E-5 | §6 l. 258 |"), "fixes 4.2",
+             [("FIX", "- E-5: 4.2 states STABLE for a step, the key bit under s⁺.")], [("qn", "REF1", "**E-5 CLOSED.**")]),
+            ("E-6", "the placeholder of §9.7", ("REF1", "| E-6 | §9.7 l. 530 |"), "fixes 5.3", [FX53], [("qn", "REF1", "**E-6 closed.**")]),
+            ("E-7", "the correctness sentence: DATA or R57 (b)", ("REF1", "| E-7 | §2 l. 65-66 |"), "fixes entry 2 (e)",
+             [("FIX", "**(e) The sentence on correctness (frozen l. 65-66) [E-7].**")], [("qn", "REF1", "**E-7 closed.**")]),
+            ("P-1", "R117's premises in the Corollary and the dead-end sentence", ("REF1", "| P-1 | §2 l. 54-66, title |"), "fixes entry 2 (b), (c)",
+             [("FIX", "**(b) PROVED-CONDITIONAL on RESULTS R117's Theorem REACH3 AS LANDED [refereed-only].**"), FXC], [("qn", "REF1", "**P-1 closed.**")]),
+            ("O-1", "optional: R124 for the exact count", ("REF1", "| O-1 | §2 |"), "fixes entry 3", [FXE3], [("qn", "REF1", "**O-1 closed.**")]),
+            ("O-2", "a note: a weaker rank condition suffices", ("REF1", "| O-2 | §8 |"), "recorded in fixes 5.9",
+             [("FIX", "(O-2.) The frozen §8 lists orders that SUFFICE for the proof")], None),
+            ("N-1", "a note: the label DEFINITIONS ONLY is right", ("REF1", "| N-1 | §1 |"), "recorded in fixes 5.9",
+             [("FIX", "(N-1.) The order that the frozen §1 quotes from R104's packet")],
+             [("q", "REF1", "5.9: O-2 and N-1 are recorded as this report states them")]),
+        ]),
+        ("REFEREE 37, stage 5a (its §13.7)", [
+            ("N-5a", "a line range of fixes entry 2 (d) off by one", ("REF1", "- N-5a (entry 2 (d), fixes l. 224):"), "read in fixes 9.2",
+             [("FIX", "Accepted: READ the line range of that tag of entry 2 (d) as 247-249.")], S5B),
+            ("N-5b", "the parenthesis of 5.1 omits two movers", ("REF1", "- N-5b (entry 5.1, fixes l. 670):"), "read in fixes 7.3 (REFEREE-2's F-3 is the same finding) and 9.2",
+             [("FIX", "**7.3 The parenthesis of 5.1 (F-3; wording).**"), ("FIX", "Already read so in entry 7, 7.3 (REFEREE-2 42's F-3 is the same finding)")],
+             [("q", "REF1", "7.3 is this lane's N-5b, closed.")]),
+            ("N-5c", "a count of quotes", ("REF1", "- N-5c (conventions, l. 134):"), "recorded in fixes 9.2",
+             [("FIX", "Recorded. The count is the quote checker's")], S5B),
+            ("N-5d", "a remark on Remark 2 of 4.4", ("REF1", "- N-5d (entry 4.4, Remark 2;"), "recorded in fixes 9.2",
+             [("FIX", "Recorded: Remark 2 of 4.4 is exact for j ≥ 2; for j = 1 READ it with this addition.")], S5B),
+        ]),
+        ("REFEREE 37, stage 5b (i) (its §14, on line L-3 and fixes entries 7, 8)", [
+            ("F-L3-1", "FAILING CLAUSE of the line: its gloss of the rank clause drops the local δ", ("REF1", "- **F-L3-1 (FAILING CLAUSE, new):"),
+             "fixes 10.1 and line L-5, replacement F-L3-1 (1)",
+             [("FIX", "**10.1 Accepted: the gloss in the lines was wrong; rule R, the genome and the theorem are not.**"),
+              ("FIX", "--- F-L3-1 (1): at character 861 of L-4")], S5B),
+            ("N-5e", "the fallback clause rests on R124's Theorem ENDGAME-3-N5, which the line did not name",
+             ("REF1", "- **N-5e (known since stage 5a; ruled by the Lead: line L-4):**"), "fixes 9.1 and line L-4, replacement N-5e",
+             [("FIX", "**9.1 The label of Corollary EXP-N5′ (item N-5e:"), ("FIX", "--- N-5e: at character 2350 of L-3")], S5B),
+            ("L-n1", "the quoted sentence is in R104's packet, not in RESULTS", ("REF1", "- L-n1 (line, clause 9):"),
+             "fixes 10.2 and line L-5, replacement F-L3-1 (2)",
+             [("FIX", "**10.2 The source of the IDEAL-ACYC-POLY sentence.**"), ("FIX", "--- F-L3-1 (2): at character 1276 of L-4")], S5B),
+            ("L-n2", "the scope tail may cite the author's acceptance of F-1; the Lead's call", ("REF1", "- L-n2 (line, clause 22):"),
+             "no fixes entry and no line replacement answers it; the tail is unchanged on this point and this entry quotes the acceptance (L41, above)",
+             [], None),
+            ("L-n3", "the correctness clause said k ≤ 12", ("REF1", "- L-n3 (line, clause 20):"),
+             "the clause of REFEREE-2's L3-2: fixes 11.1 and line L-6, replacement L3-2",
+             [("FIX", "**11.1 L3-2: the correctness DATA reach k = 13.**"), ("FIX", "--- L3-2: at character 6184 of L-5")], S5B),
+            ("N-6a", "a loose phrase of fixes 7.6", ("REF1", "- N-6a (entry 7.6, l. 1135-1136):"), "no fixes entry answers it; the referee asks for nothing",
+             [], [("q", "REF1", "A loose phrase, nothing wrong.")]),
+            ("N-6b", "the builder's own measure of unchanged characters", ("REF1", "- N-6b (entry 8, the pasted record):"),
+             "no fixes entry answers it; a remark on a record", [], None),
+        ]),
+        ("REFEREE 35's pre-check (its §7; not a signature)", [
+            ("P-1", "the premises of the corollary", ("PRE", "- P-1 (premises; wording of Corollary EXP-N5)."), "REFEREE 36's P-1: fixes entry 2",
+             [("FIX", "## Entry 2 (L-RED-B successor 6, 2026-11-13): what is unconditional, what is conditional, what is measured")], None),
+            ("P-2", "the level width", ("PRE", "- P-2 (the brief's «up to 8 movers on a level»):"), "fixes 5.4",
+             [("FIX", "**5.4 Level width (REFEREE 35 P-2).**")], None),
+            ("M-1", "the genome of record and the raw files", ("PRE", "- M-1 (Lemma MEMBER)."), "fixes 5.5",
+             [("FIX", "**5.5 Which genome is the member, and which sha1 pins are of which file (REFEREE 35 M-1).**")], None),
+            ("M-2", "the mover order", ("PRE", "- M-2. The file's mover order"), "fixes 5.6",
+             [("FIX", "**5.6 The mover order the games use (REFEREE 35 M-2).**")], None),
+            ("M-3", "the JSON fields", ("PRE", "- M-3. «deg» is the scalar 2"), "fixes 5.7", [("FIX", "**5.7 The JSON fields (REFEREE 35 M-3).**")],
+             [("q", "REF1", "the pre-check items P-2, M-1, M-2, M-3 are answered with the right numbers")]),
+            ("P-3", "the scope of a kill: N5 as specified", ("PRE", "- P-3 (scope of a kill)."),
+             "the packet's Not claimed paragraph and the DATA of fixes 9.13 (REFEREE stage 2)",
+             [("FIX", "### 9.13 Other tie rules of engine 1 on the same games"), ("REF1", "successor 35's P-3 (the kill is of N5 as specified)")], None),
+            ("P-4", "L43: the kill needs the proof for every k", ("PRE", "- P-4 (L43)."),
+             "a requirement, met by Theorem EXP-IDEAL as both referees sign it (matched by content: REFEREE's L43 sentence does not name P-4)",
+             [("REF1", "the growth is PROVED for every k ≥ 3 (Theorem EXP-IDEAL")], None),
+        ]),
+        ("REFEREE-2 41, its report (§1) and Addendum 1", [
+            ("G-1", "the gap of E-2, found independently", ("REF2", "- **G-1 (gap in the proof of the RESPONSE LEMMA; closed here; the statement is right).**"),
+             "fixes 4.4, 4.5", [FXG1], [("q", "REF2", "G-1 **closed**.")]),
+            ("M-1", "= E-3", ("REF2", "- **M-1 (rule R, rank clause; harmless for the run).**"), "fixes 5.1", [FX51], [("q", "REF2", "**M-1 → 5.1: closed.**")]),
+            ("W-1", "the word step t was never defined", ("REF2", "- **W-1 (wording).**"), "fixes 5.2 and 4.1 (S2)",
+             [("FIX", "**5.2 «Step t» (REFEREE-2 W-1).**")], [("q", "REF2", "**W-1 → 5.2 and 4.1 (S2): closed.**")]),
+            ("W-2", "= P-1", ("REF2", "- **W-2 (status label of the kill).**"), "fixes entry 2", [FXC], [("q", "REF2", "**W-2 and §4 → entry 2: closed.**")]),
+            ("D-1", "= E-6", ("REF2", "- **D-1 (defect of the frozen file).**"), "fixes 5.3", [FX53], [("q", "REF2", "**D-1 → 5.3: closed.**")]),
+            ("O-1", "its own Γ3 builder numbers the β block in gate order", ("REF2", "- **O-1 (my own tool, not the packet).**"),
+             "about its own tool, no lane action; fixes 5.6 quotes its comparison of the game files",
+             [("FIX", "**5.6 The mover order the games use (REFEREE 35 M-2).**")], None),
+            ("A1.1", "the exact count through R124", ("REF2", "### A1.1 The exact count (R124, Corollary EXACT-L): should a fixes entry add it, and under which premises?"),
+             "fixes entry 3", [FXE3], [("q", "REF2", "**Addendum 1 A1.1 → entry 3: closed.**")]),
+            ("A1.2", "the runner erratum", ("REF2", "### A1.2 The reproduction erratum"), "fixes entry 1, 10.E",
+             [("FIX", "### 10.E Reproduction erratum for §10: at 350d84eb the runner needs an ABSOLUTE ROOT")],
+             [("q", "REF2", "**Addendum 1 A1.2 → entry 1, 10.E: closed**")]),
+        ]),
+        ("REFEREE-2 42, Addendum 2 (on fixes entries 1-5 and line L-1)", [
+            ("A2.1", "its own correction: the statement it signs is fixes 4.4, not the frozen one", ("REF2", "### A2.1 Self-correction:"),
+             "no lane action", [], [("q", "REF2", "That row was wrong about the STATEMENT.")]),
+            ("F-1", "a reading: the range of clause (R3), the one condition of its signature", ("REF2", "**F-1 (reading; inherited from the frozen l. 203).**"),
+             "fixes 7.1", [("FIX", "**7.1 Clause (R3) of LEMMA′ with its range (F-1; a READING of entry 4.4, the one condition of the second signature).**")],
+             [("q", "REF1", "**F-1 is ACCEPTED by this lane, as the lane that wrote LEMMA′**")]),
+            ("F-2", "which frozen lines stay as definitions", ("REF2", "**F-2 (wording).**"), "fixes 7.2",
+             [("FIX", "**7.2 Which frozen lines of §6's statement stay in force (F-2; wording of 4.0).**")],
+             [("q", "REF1", "7.2's table of the frozen lines is right.")]),
+            ("F-3", "= N-5b", ("REF2", "**F-3 (wording).**"), "fixes 7.3", [("FIX", "**7.3 The parenthesis of 5.1 (F-3; wording).**")], None),
+            ("F-4", "the new runner exits 0 on a failing stage", ("REF2", "**F-4 (tooling; the same defect in the NEW runner).**"),
+             "fixes 7.4: the runner repaired, no DATA changes", [("FIX", "**7.4 The runner run_b6fix.sh (F-4; tooling; no DATA changes).**")], None),
+            ("F-5", "a label inside entry 2 (a′); no change asked", ("REF2", "**F-5 (label inside (a′); no change asked).**"), "fixes 7.5",
+             [("FIX", "**7.5 The two sentences of entry 2 (a′) (F-5; a remark, no change asked).**")],
+             [("q", "REF2", "**F-1, F-2, F-3, F-4, F-5 closed.**")]),
+            ("L-a", "the line's gloss of the units", ("REF2", "(L-a) the gloss"), "line L-2, replacement L-a (fixes 7.6)",
+             [("FIX", "L-a: the gloss now says")], [("qn", "REF2", "**L-a: done.**")]),
+            ("L-b", "R117's premises paraphrased", ("REF2", "(L-b) R117's premises are paraphrased"), "line L-2, replacement L-b",
+             [("FIX", "L-b: R117's premises in the words of its title line")], [("qn", "REF2", "**L-b: done.**")]),
+            ("L-c", "the L41 scope tail", ("REF2", "(L-c) L41 asks for a scope tail"), "line L-2, replacement L-c",
+             [("FIX", "L-c: the L41 scope tail with REFEREE 36's two verdict sentences")], [("q", "REF2", "**L-c: done.**")]),
+        ]),
+        ("REFEREE-2 42, Addendum 4 (on line L-3 and fixes entries 6-8)", [
+            ("L3-1", "FAILING CLAUSE of the line, the clause of F-L3-1, found independently", ("REF2", "- **L3-1 (failing clause; the rule misdescribed).**"),
+             "fixes entry 10 and line L-5, replacement F-L3-1 (1)",
+             [("FIX", "this referee found the failing clause of entry 10 independently (its L3-1, with its own measured"),
+              ("FIX", "--- F-L3-1 (1): at character 861 of L-4")], ADD5),
+            ("L3-2", "the correctness clause said k ≤ 12", ("REF2", "- **L3-2 (a number that the line's own part (3) has overtaken).**"),
+             "fixes 11.1 and line L-6, replacement L3-2",
+             [("FIX", "**11.1 L3-2: the correctness DATA reach k = 13.**"), ("FIX", "--- L3-2: at character 6184 of L-5")], ADD5),
+            ("L3-3", "the premise clause of Corollary EXP-N5′ was not exact", ("REF2", "- **L3-3 (premise clause of Corollary EXP-N5′, not exact).**"),
+             "fixes 11.2 and line L-6, replacement L3-3",
+             [("FIX", "**11.2 L3-3: the premises of Corollary EXP-N5′, in R124's words.**"), ("FIX", "--- L3-3: at character 2605 of L-5")], ADD5),
+            ("L3-4", "= L-n1, the source of a quotation", ("REF2", "- **L3-4 (source of a quotation).**"),
+             "fixes 10.2 and line L-5, replacement F-L3-1 (2)",
+             [("FIX", "the packet attribution (its L3-4); both are done in L-5 and are unchanged in L-6"), ("FIX", "--- F-L3-1 (2): at character 1276 of L-4")], ADD5),
+            ("L3-5", "optional: STABLE's step form in the L41 tail", ("REF2", "- **L3-5 (optional, on L-c).**"),
+             "fixes 11.3 and line L-6, replacement L3-5",
+             [("FIX", "**11.3 L3-5: STABLE's step form belongs in the L41 scope tail.**"), ("FIX", "--- L3-5: at character 6322 of L-5")], ADD5),
+        ]),
+    ]
+    SRCN = {"FIX": "fixes", "REF1": "REFEREE", "REF2": "REFEREE-2", "PRE": "pre-check"}
+    item_rec, unmatched, parts = [], [], []
+    for group, its in ITEMS:
+        seg = []
+        for iid, desc, (rk, rs), closure, closes, conf in its:
+            raised = l(rk, rs)
+            cl = ", ".join("%s %s" % (SRCN[k], l(k, s_)) for k, s_ in closes)
+            if not closes:
+                unmatched.append(iid)
+            if conf == S5B:
+                ct = "; its check by REFEREE: stage 5b (ii)"
+            elif conf == ADD5:
+                ct = "; its check by REFEREE-2: Addendum 5"
+            elif conf:
+                ct = "; " + ", ".join((qn(c[1], c[2]) if c[0] == "qn" else q(c[1], c[2])) for c in conf)
+            else:
+                ct = ""
+            seg.append("%s (%s; %s) → %s%s%s" % (iid, desc, raised, closure, (" (" + cl + ")") if cl else "", ct))
+            item_rec.append({"group": group, "id": iid, "raised": raised, "closing_texts": len(closes),
+                             "confirm": conf if isinstance(conf, str) else ("quoted" if conf else "none")})
+        parts.append(group + ": " + "; ".join(seg) + ".")
+    with open(os.path.join(OUT, "items.json"), "w", encoding="utf-8") as f:
+        json.dump({"items": item_rec, "unmatched": unmatched}, f, ensure_ascii=False, indent=1)
     bullet(
-        "- Note (every item of both referees and of the pre-check, and how each was closed). REFEREE 36's items (its §9 table, %s): E-1 ((H2) "
-        "vacuous after the stop; the frozen lemma false at (j, a, t) = (1, 1, 2^k − 1)), E-2 (the induction uses the lemma for j + 1 before its "
-        "hypothesis holds), E-4 (the standing assumption needs u_0 at option 0), E-5 (STABLE: key bit of the step) → fixes entry 4; REFEREE stage "
-        "4: %s, %s, %s, %s. E-3 (rank key not injective on wire options; tie rule by β-id) → 5.1, E-6 (the placeholder of §9.7) → 5.3, E-7 "
-        "(@@CORRECT@@: DATA or R57 (b)) and P-1 (R117's premises in the Corollary and the dead-end sentence) → entry 2, O-1 (optional: R124 for the "
-        "exact count) → entry 3; REFEREE stage 5a: %s, %s, %s, %s. O-2 and N-1 (notes) → recorded in 5.9, no change. Stage 5a's own notes N-5a "
-        "(a line range in fixes entry 2 (d) off by one), N-5b (the parenthesis of 5.1; the same point as REFEREE-2's F-3, read in fixes 7.3), N-5c "
-        "(a count of quotes), N-5d (a remark on Remark 2): %s. The pre-check's items (REFEREE 35): P-1 as above; P-2 (level width) → 5.4, M-1 "
-        "(genome of record and raw files) → 5.5, M-2 (mover order) → 5.6, M-3 (JSON fields) → 5.7 (%s); P-3 (scope of a kill: N5 as specified) and "
-        "P-4 (L43: the proof for every k) are met by the packet's @@NOTCLAIMED@@ and by Theorem EXP-IDEAL. REFEREE-2's items: G-1 (= E-2) → entry 4, "
-        "%s; M-1 (= E-3) %s; W-1 (@@STEPT@@) %s; W-2 (= P-1) %s; D-1 (= E-6) %s; O-1 (its own Γ3 builder numbers the β block in gate order: about "
-        "its tool, not the packet); Addendum 1 A1.1 (the exact count) → entry 3 and A1.2 (the runner erratum) %s; its self-correction §A2.1 (%s). "
-        "Its items on the fixes file, F-1 (a reading: (R3)'s range, the one condition of its signature), F-2 and F-3 (wording), F-4 (the new "
-        "runner exits 0 on a failing stage; %s), F-5 (a label inside (a′); no change asked) → fixes entry 7 (7.1-7.5), which neither referee has "
-        "checked yet. Its line notes L-a, L-b, L-c on L-1 → line L-2 (fixes 7.6). Agreement of the two reviews (REFEREE-2 Addendum 3): %s; on "
-        "what was open between them: %s. Its three wording items S-1, S-2, S-3 concern box 108, which is not part of this entry."
-        % (l("REF1", "| E-1 | §6 l. 194, 196 |") + " to " + l("REF1", "| N-1 | §1 |").replace("l. ", ""),
-           qn("REF1", "**E-1 CLOSED.**"), qn("REF1", "**E-2 CLOSED.**"), qn("REF1", "**E-4 CLOSED.**"),
-           qn("REF1", "**E-5 CLOSED.**") + " (" + l("REF1", "**E-4 CLOSED.**") + " to " + l("REF1", "**E-2 CLOSED.**").replace("l. ", "") + ")",
-           qn("REF1", "**E-3 closed.**"), qn("REF1", "**E-6 closed.**"), qn("REF1", "**P-1 closed.**") + ", " + qn("REF1", "**E-7 closed.**"),
-           qn("REF1", "**O-1 closed.**") + " (" + l("REF1", "### 13.2 Entry 2 (l. 150-244), paragraph by paragraph") + " to "
-           + l("REF1", "**E-6 closed.**").replace("l. ", "") + ")",
-           q("REF1", "### 13.7 Notes (no statement affected; the lane may take them into a later entry)"),
-           q("REF1", "the pre-check items P-2, M-1, M-2, M-3 are answered with the right numbers"),
-           q("REF2", "G-1 **closed**."),
-           q("REF2", "**M-1 → 5.1: closed.**"), q("REF2", "**W-1 → 5.2 and 4.1 (S2): closed.**"), q("REF2", "**W-2 and §4 → entry 2: closed.**"),
-           q("REF2", "**D-1 → 5.3: closed.**"), q("REF2", "**Addendum 1 A1.2 → entry 1, 10.E: closed**"),
-           q("REF2", "That row was wrong about the STATEMENT."),
-           q("REF2", "No DATA is affected"),
+        "- Note (EVERY item of both referees and of the pre-check through these stages, with the text that closes it; built by script from the "
+        "reports and the fixes file, tools/items.py; \"l.\" after an item is its line in the report that raised it, the lines after the arrow are "
+        "those of the closing text). %s Without a closing text in the fixes file or in a line replacement: %s (three notes and REFEREE-2's own "
+        "correction; none asks the lane for a change). "
+        "The Lead's own line items: L-d (k = 13 into part (3), line L-2) and the entries named in the closing parenthesis (L-f, L-g, L-h, L-i). "
+        "Agreement of the two reviews on the packet (REFEREE-2, Addendum 3): %s; on what was open between them: %s. Both referees failed the "
+        "rank gloss of the line independently (F-L3-1 and L3-1) and both name the packet as the source of the quoted sentence (L-n1 and L3-4). "
+        "REFEREE-2's three wording items S-1, S-2, S-3 concern L-SI's box 108, which is not part of this entry."
+        % (" ".join(parts), ", ".join(unmatched),
            q("REF2", "the same gap (E-2 = G-1) and the same rank tie (E-3 = M-1), placeholder (E-6 = D-1) and condition (P-1 = W-2) were found "
                      "independently; E-1, E-4, E-5, E-7 are REFEREE 36's alone"),
            q("REF2", "Nothing that touches a statement.")))
@@ -639,44 +858,60 @@ def main():
         return ", ".join("%s %s (%s %s)" % (n, rng(bl, c), c8(c), cdate(c)) for n, c in stages)
 
     bullet(
-        "- Signatures: REFEREE %s at claude/referee %s (%s lines, sha1 %s): successor 36 wrote stages 1-4, successor 37 stage 5a: %s; the pre-check "
-        "%s is successor 35's (%s; not a signature). Its signature, the last line of the file: %s; on the restated lemma %s. %s "
-        "REFEREE-2 %s at claude/referee-2 %s (%s lines, sha1 %s): successor 41 wrote the report and Addendum 1, successor 42 Addenda 2 and 3: %s. "
-        "Its signature: %s, with the L41 signature quoted above (%s), and on the first referee's text %s. %s "
+        "- Signatures: REFEREE %s at claude/referee %s (%s lines, sha1 %s): successor 36 wrote stages 1-4, successor 37 stages 5a and 5b: %s; the "
+        "pre-check %s is successor 35's (%s; not a signature). Its signature line so far (stage 5a): %s; on the restated lemma %s, and as its "
+        "author on the reading of (R3) %s; stage 5b (i) on fixes entries 7, 8: %s, and on line L-3: %s. %s "
+        "REFEREE-2 %s at claude/referee-2 %s (%s lines, sha1 %s): successor 41 wrote the report and Addendum 1, successor 42 Addenda 2 to 4: %s. "
+        "Its signature: %s (Addendum 2), with the L41 signature quoted above (%s), on the first referee's text %s, and after fixes entries 6-8 "
+        "%s. %s "
         "Lane (claude/l-red-b): L-RED-B successor 5 (%s packet FROZEN; %s fixes entry 1), successor 6 (%s entries 2-5 and line L-1; %s entry 6), "
-        "successor 7 (%s entry 7 and line L-2; %s entry 8 and line L-3). CHECKER: %s, the token in the title."
+        "successor 7 (%s entry 7 and line L-2; %s entry 8 and line L-3; %s entry 9 and line L-4; %s entry 10 and line L-5; %s entry 11 and line "
+        "L-6). CHECKER: %s, the token in the title."
         % (cfg["referee"]["path"], c8(H["referee"]), num(len(ref1.lines)), ref1.sha1, stg(r1bl, cfg["referee"]["stages"]),
            cfg["referee"]["precheck_path"], c8(cfg["referee"]["precheck_commit"]),
            q("REF1", "**P-N5-EXP: SIGNED with fixes entries 1-6.**", 2),
            q("REF1", "**SIGNED** (§12; referee-originated, L41: it also needs REFEREE-2's independent signature)"),
-           slot("stage5b", "REFEREE stage 5b %s (its §14: the line of record word by word, fixes entries 7 to 9, and its final signature line "
-                           "naming the line by its sha1; stage 5a ends %s)." % (OPEN_WORD, q("REF1", "Stage 5b (line L-2, entry 7) waits for the commit."))),
+           q("REF1", "**This lane signs LEMMA′ with clause (R3) read as fixes entry 7.1 restates it**"),
+           q("REF1", "Nothing in entries 7 and 8 fails."),
+           q("REF1", "So **L-3 is NOT signed as the RESULTS line**: the failing clause is F-L3-1 (and N-5e's premise is to be named)."),
+           slot("stage5b_ii", "REFEREE stage 5b (ii) %s (the lines L-4 to L-6 and fixes entries 9 to 11, and its FINAL line naming the line of "
+                              "record by its sha1; part (i) ends %s)." % (OPEN_WORD, q("REF1", "then part (ii) and the final line."))),
            cfg["referee2"]["path"], c8(H["referee-2"]), num(len(ref2.lines)), ref2.sha1, stg(r2bl, cfg["referee2"]["stages"]),
            q("REF2", "P-N5-EXP: SIGNED with fixes entries 1-5.", 2),
            l("REF2", "Signature (L41: the statements 4.3 and 4.4 are referee-originated, REFEREE 36's; this is the independent second signature):"),
            q("REF2", "LEMMA′ and CAUSAL in entry 4 are REFEREE 36's text word for word: L41 is met."),
-           slot("r2_line", "REFEREE-2 line check %s (its check of the line of record; its signature stands on fixes entries 1-5, and entries 6 to "
-                           "%d and the lines after L-1 are later than its Addendum 3)." % (OPEN_WORD, nent)),
-           c8(FZ), c8(fx["entry1_commit"]), c8(fx["entries2_5_commit"]), c8(fx["entry6_commit"]), c8(fx["entry7_commit"]), c8(fx["entry8_commit"]),
-           CN))
+           q("REF2", "P-N5-EXP stays SIGNED, now with fixes entries 1-8 (the signature is about the packet and its fixes; L3-1 is a defect of the "
+                     "LINE's gloss, not of the rule, the theorem or any proof)."),
+           slot("r2_add5", "REFEREE-2 Addendum 5 %s (its check of the replacements made after L-3, of fixes entries 9 to 11, and its final line "
+                           "naming the line of record; Addendum 4 ends %s)." % (OPEN_WORD, q("REF2", "then I check only the replacements."))),
+           c8(FZ), c8(fstage["entry 1"][0]), c8(fstage["entries 2-5"][0]), c8(fstage["entry 6"][0]), c8(fstage["entry 7"][0]),
+           c8(fstage["entry 8"][0]), c8(fstage["entry 9"][0]), c8(fstage["entry 10"][0]), c8(fstage["entry 11"][0]), CN))
 
     # ---- INDEPENDENCE
     bullet(
-        "- INDEPENDENCE: each referee wrote its verdict without reading the other's. REFEREE: %s; stage 4 %s; stage 5a %s. REFEREE-2: %s; "
-        "Addendum 2 %s; it opened the first referee's files only for Addendum 3: %s, and %s. The same gap was found twice: %s. Disclosed: the "
+        "- INDEPENDENCE: each referee wrote its verdict without reading the other's. REFEREE: %s; stage 4 %s; stage 5a %s; stage 5b (i) %s. "
+        "REFEREE-2: %s; Addendum 2 %s; it opened the first referee's files only for Addendum 3: %s, and %s; Addendum 4 %s. The same gap was found "
+        "twice: %s. The failing clause of line L-3 was also found twice, by each referee on its own reading of the line (F-L3-1 and L3-1; the "
+        "lane's record: %s; REFEREE-2 on its earlier reading of L-1: %s). Disclosed: the "
         "first referee's lane wrote the pre-check (%s); the restated lemma is the first referee's own text, signed by its author and, "
         "independently, by REFEREE-2 (L41, above); when REFEREE-2 signed it, what it knew of the first report was what the fixes file quotes (%s). "
         "Each referee used its own generator, model and N5 engine: REFEREE %s; REFEREE-2 %s."
         % (q("REF1", "Independence: REFEREE-2's reports and L-SI's box 108 (an independent proof of L(G_k) = 2^k − 2) were NOT read before §0-§9 "
                      "were committed."),
            q("REF1", "NOT read: docs/referee-2/ (the strings entry 4 quotes from it were matched by script only)"),
-           q("REF1", "Independence: docs/referee-2/ was NOT read."),
+           q("REF1", "Independence: docs/referee-2/ was NOT read. The 18 quotes that entries 2-5 take from it (label REF2) were matched BY SCRIPT ONLY"),
+           q("REF1", "Independence: docs/referee-2/ was NOT read. The 13 quotes that entry 7 takes from it (label REF2B, claude/referee-2 f17a2708) "
+                     "and the signature sentence that the line quotes from it were matched BY SCRIPT ONLY"),
            q("REF2", "Independence: docs/referee/ and notes/REFEREE.md were NOT read on this object"),
            q("REF2", "Independence: docs/referee/R-P-N5-EXP.md and docs/referee/R-GK-precheck.md were NOT opened before this addendum was committed."),
            q("REF2", "Written after Addendum 2 was committed (f17a2708, 17:02:13Z) and its SHA sent to the Lead (17:03Z); only then were the first "
                      "referee's files opened."),
            q("REF2", "neither report cites the other"),
+           q("REF2", "docs/referee/ was not opened beyond the sentences the entries and the line quote: those were checked by my quote tool only"),
            q("REF2", "the SAME gap, found independently, with the same repair (LEMMA′ / PREFIX FORM; §A2.4: one lemma)"),
+           q("FIX", "The Lead also relays that this referee found the failing clause of entry 10 independently (its L3-1, with its own measured L = 3)"),
+           q("REF2", "The clause is already in L-1, and my §A2.7 did not flag it: that reading compared the line with my signature, not word by word "
+                     "with the rule."),
            q("REF1", "This lane's pre-check (successor 35, docs/referee/R-GK-precheck.md at 06ac891d) is prior work of this lane; it had not read "
                      "the packet."),
            q("REF2", "What I know of the first referee's report is what entries 2-5 quote from it (22 tagged quotes; 5 of the pre-check)."),
@@ -718,7 +953,7 @@ def main():
                       "makes unit j + 1 respond twice in every response of unit j)"),
            D["smallest"][0], D["smallest"][1],
            (" Open slots of this fill, each marked by its word above: %s; and the checker token in the title." % ", ".join(
-               {"stage5b": "REFEREE stage 5b", "r2_line": "REFEREE-2's line check", "entry9": "fixes entry 9", "line": "the line of record " + LN["of_record_name"]}[x]
+               {"stage5b_ii": "REFEREE's stage 5b (ii)", "r2_add5": "REFEREE-2's Addendum 5", "line": "the line of record " + LN["of_record_name"]}[x]
                for x in op)) if op else ""))
 
     block = [title]
@@ -763,17 +998,17 @@ def main():
     Hd = []
 
     def hp(text):
-        Hd.extend(wrap(text, "", "  ", 140))
+        Hd.extend(wrap(text.replace("@@FILL@@", cfg["fill"].upper()), "", "  ", 140))
 
     line1 = (
-        "# Draft RESULTS %s (Lead; FIRST FILL by script (subagent) on %s line %s%s, %s, claude/l-red-b %s, sha1 %s) — to CHECKER %s — NOT LANDED; "
+        "# Draft RESULTS %s (Lead; @@FILL@@ FILL by script (subagent) on %s line %s%s, %s, claude/l-red-b %s, sha1 %s) — to CHECKER %s — NOT LANDED; "
         "goes after %s (RESULTS l. %d at trunk %s), directly before the line-start %s (l. %d); its GAPS UPDATE on the row %s (GAPS l. %d), which "
         "then moves under %s"
         % (E, PK, LN["name"], (" (a STAND-IN for the line of record %s)" % LN["of_record_name"]) if LN["stand_in"] else "", LN["path"],
            c8(LN["commit"]), sha1(line_raw), CN, PREV, heads[PREV], c8(T), qn("RES", cfg["results"]["insert_before_prefix"]), err_lines[0],
            cfg["gaps"]["row_id"], grow[0], qn("GAPS", "## Closed", 1)))
-    hp("FIRST FILL (this text). Built by script in docs/agents/tools/r131/ (cfg.json: every input that can move; fetch.sh: the only network step; "
-       "fill131.py; tools/*.py, tools/lanecheck.sh; build.sh; land131.py), untracked; nothing in the repository was added, committed, merged or "
+    hp("@@FILL@@ FILL (this text). Built by script in docs/agents/tools/r131/ (cfg.json: every input that can move; fetch.sh: the only "
+       "network step; fill131.py; tools/*.py, tools/lanecheck.sh; build.sh; land131.py); nothing in the repository was added, committed, merged or "
        "pushed by the builder, and scripts/push.sh and scripts/verify.sh were not run. Read by git show at the heads of the fetch that fetch.txt "
        "records (%s, by date -u; git ls-remote lines in the Addendum): claude/l-red-b %s, claude/referee %s, claude/referee-2 %s, claude/l-si %s, "
        "claude/l-comp %s, claude/l-red %s, trunk %s %s."
@@ -799,12 +1034,10 @@ def main():
     op_txt = []
     if LN["stand_in"]:
         op_txt.append("the line of record %s (%s: stand-in %s)" % (LN["of_record_name"], OPEN_WORD, LN["name"]))
-    if slots["entry9"]["open"]:
-        op_txt.append("fixes entry 9 (%s)" % OPEN_WORD)
-    if slots["stage5b"]["open"]:
-        op_txt.append("REFEREE stage 5b (%s)" % OPEN_WORD)
-    if slots["r2_line"]["open"]:
-        op_txt.append("REFEREE-2's line check (%s)" % OPEN_WORD)
+    if slots["stage5b_ii"]["open"]:
+        op_txt.append("REFEREE stage 5b (ii) (%s): its check of lines L-4 to L-6 and fixes entries 9-11, and its FINAL line" % OPEN_WORD)
+    if slots["r2_add5"]["open"]:
+        op_txt.append("REFEREE-2 Addendum 5 (%s): its final line" % OPEN_WORD)
     hp("OPEN SLOTS: %s the checker token of the title. land131.py refuses to land while the draft holds the open-slot word anywhere but in that "
        "token." % (("; ".join(op_txt) + "; and") if op_txt else "none but"))
     hp("CHECKS RUN AT THIS FILL (outputs verbatim in the Addendum): [lane] the lane's check.sh in a git archive with a negative control; [upd] "
@@ -813,17 +1046,20 @@ def main():
        "negative control; [lp] every quotation at its commit, file and lines, by a second implementation, with two negative controls; [sweep] "
        "every guillemet quotation of the file against the sources, with a negative control; [land] land131.py: refusal on this draft, refusal on a "
        "changed block, DRYRUN on a copy." % len(checks))
-    hp("FLAGS FIRST (the builder's reading; nothing in the line or in any quoted text was changed; full list in REPORT.txt). G-LINE: the title "
-       "stands on %s%s. G-SLOTS: no referee has yet checked fixes entries 7 and 8 or any line after L-1; REFEREE-2's signature names entries 1-5, "
-       "REFEREE's 1-6, the line's closing parenthesis names %s. G-K12 (wording inside the line): its correctness clause says \"DATA for k ≤ 12\" "
-       "while its part (3) and REFEREE's table (stage 5a) have k = 13. G-R245 (note): the line gives L-RED 70's engine for k = 3 … 8; R245 also "
-       "carries k = 9, 10. G-STATUS (note): the line keeps its status phrase about two referees (Lead ruling, the form of %s). G-U: the UPDATE "
-       "moves three labels, drops one scope string and keeps everything else, the obstruction clause and the L41 scope tail included. G-S: the "
-       "Closed table of GAPS has an empty line inside it; the row is appended after its last row. G-NOW: land131.py changes one counter of "
-       "docs/NOW.md; %s's landing changed two. G-1E-N3: the N5 half is conditional on R117 as landed and on SPEC's standing premise. G-5E: the "
-       "first referee's stage 5a has four notes, N-5a to N-5d."
-       % (LN["name"], (", a stand-in for %s" % LN["of_record_name"]) if LN["stand_in"] else "", line_entries, PREV, PREV))
+    hp("FLAGS FIRST (the builder's reading; nothing in the line or in any quoted text was changed; full list in REPORT.txt). G-SLOTS: no "
+       "referee has yet checked the lines L-4 to L-6 or fixes entries 9 to 11; REFEREE's signature line names entries 1-6 (its stage 5b (i) finds "
+       "7 and 8 right), REFEREE-2's names 1-8, the line's closing parenthesis names %s. G-RELAY: fixes entries 10 and 11 quote the referees' items "
+       "from the Lead's relay, written before the reports were on origin; this draft cites the reports. G-ITEMS: %d referee items in the Note, %d "
+       "of them without a closing text in the fixes file or a line replacement (%s: notes and one self-correction, no change asked). G-R245 (note): the line gives L-RED "
+       "70's engine for k = 3 … 8; R245 also carries k = 9, 10. G-STATUS (note): the line keeps its status phrase about two referees (Lead ruling, "
+       "the form of %s). G-U: the UPDATE moves three labels, drops one scope string and keeps everything else, the obstruction clause and the L41 "
+       "scope tail included. G-S: the Closed table of GAPS has an empty line inside it; the row is appended after its last row. G-NOW: land131.py "
+       "changes one counter of docs/NOW.md (the Lead rewrites NOW at landing). G-1E-N3: the N5 half is conditional on R117 (and R124) as landed "
+       "and on SPEC's standing premise. Closed since the first build: G-LINE (%s is the line of record), G-K12 (the line now says k ≤ 13), G-5E "
+       "(N-5e and F-L3-1 are named in REFEREE's §14)."
+       % (line_entries, len(item_rec), len(unmatched), ", ".join(unmatched), PREV, LN["name"]))
 
+    line1 = line1.replace("@@FILL@@", cfg["fill"].upper())
     # ================================================================ assemble pass 1
     draft = [line1] + Hd + [""] + block + [""] + prop_lines + [upd] + [""]
     text = "\n".join(draft)

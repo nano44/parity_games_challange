@@ -16,6 +16,7 @@ FILES = [("fetch", "fetch.txt", "the record of fetch.sh (date -u, fetched heads,
          ("upd", "out/upd.out", "tools/upd.py: the UPDATE and its controls"),
          ("data", "out/data.out", "tools/data.py: the DATA numbers from the pinned outputs"),
          ("prem", "out/prem.out", "tools/prem.py: the premises at trunk"),
+         ("items", "out/items.out", "tools/items.py: the referees' items of the Note, with a completeness scan of the reports"),
          ("shape", "out/shape.out", "tools/shape.py"),
          ("lp", "out/lp.out", "tools/lp.py: every quotation at its commit, file and lines"),
          ("sweep", "out/sweep.out", "tools/sweep.py: every guillemet quotation against the sources"),
@@ -27,7 +28,7 @@ def main():
     p1 = open(os.path.join(HERE, "out", "draft.p1.md"), encoding="utf-8").read()
     assert p1.endswith("\n")
     n1 = p1.count("\n")
-    head = ("Addendum (first fill) (built by script; for the Lead and CHECKER; does not land). The checks ran on the pass-1 draft "
+    head = ("Addendum (" + cfg["fill"] + " fill) (built by script; for the Lead and CHECKER; does not land). The checks ran on the pass-1 draft "
             "docs/agents/tools/r131/out/draft.p1.md (sha1 %s, %d lines), which equals this file without this Addendum and its empty line (asserted "
             "by tools/mkadd.py). Outputs verbatim below, each line tagged with its file: %s. In them a pipe character is printed as a broken bar "
             "and a guillemet as a single angle mark; lines are wrapped at 150 columns (continuation lines are indented under their tag). After "

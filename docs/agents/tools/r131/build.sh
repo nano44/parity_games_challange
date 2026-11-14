@@ -37,6 +37,7 @@ fi
 step upd python3 -B tools/upd.py
 step data python3 -B tools/data.py
 step prem python3 -B tools/prem.py
+step items python3 -B tools/items.py
 step shape python3 -B tools/shape.py out/draft.p1.md
 step lp python3 -B tools/lp.py out/draft.p1.md
 step sweep python3 -B tools/sweep.py out/draft.p1.md

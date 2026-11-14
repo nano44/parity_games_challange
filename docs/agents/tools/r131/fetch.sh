@@ -3,7 +3,7 @@
 # this script writes. Run it by hand (or `bash build.sh --fetch`) when a lane head has moved, then copy the new
 # heads from fetch.txt into cfg.json ("heads", "trunk.commit", "line", ...): fetch.sh does NOT edit cfg.json.
 #
-# It runs, for every lane branch named in cfg.json "heads" and for the trunk branch:
+# It runs, for every lane branch named in cfg.json "heads" and "pins", for claude/checker and for the trunk branch:
 #   git fetch origin +refs/heads/claude/<lane>:refs/remotes/origin/claude/<lane>     (plain fetch, no --depth)
 # and records `date -u`, each fetch's exit code, the fetched heads and the `git ls-remote` lines into fetch.txt.
 # It changes nothing but remote-tracking refs: no merge, no checkout, no commit, no push.
@@ -15,7 +15,7 @@ TMPF="$HERE/fetch.txt.new"
 LANES="$(python3 -B -c "
 import json,sys
 c=json.load(open(sys.argv[1],encoding='utf-8'))
-print(' '.join(list(c['heads'].keys())+['checker']))
+print(' '.join(list(c['heads'].keys())+[k for k in c.get('pins',{}) if not k.startswith('_')]+['checker']))
 " "$HERE/cfg.json")"
 TRUNK="$(python3 -B -c "
 import json,sys

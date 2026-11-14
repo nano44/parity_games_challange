@@ -1,21 +1,21 @@
-T1 the draft as it is (8 open-slot tokens besides the checker token; stand-in line True): rc 2, refused: as expected
-   T1 land131: REFUSED: the draft holds the open-slot word 9 times; only the title's checker token may carry it (other lines: [26, 27, 98, 112, 362, 368])
-T2 satisfied copy (8 tokens replaced; hashes recomputed for the copy): rc 0
+T1 the draft as it is (4 open-slot tokens besides the checker token; stand-in line False): rc 2, refused: as expected
+   T1 land131: REFUSED: the draft holds the open-slot word 5 times; only the title's checker token may carry it (other lines: [25, 26, 459, 468])
+T2 satisfied copy (4 tokens replaced; hashes recomputed for the copy): rc 0
    T2 land131: DRYRUN into dry2, stamp 2099-01-13 00:00Z, checker 5555555
-   T2   RESULTS: 17367 -> 17731 lines (+364 = block 363 + 1 empty); R131 at l. 16725-17087, the Erratum line moves l. 16725 -> l. 17089; pipes 1483 -> 1483 (title 0)
-   T2   GAPS: 23 -> 23 lines; row G-N5-TIME l. 11 -> l. 23 (status open -> closed, under the closed table); row pipes 76 -> 76; file pipes 198 -> 198; UPDATE 7414 bytes
+   T2   RESULTS: 17367 -> 17838 lines (+471 = block 470 + 1 empty); R131 at l. 16725-17194, the Erratum line moves l. 16725 -> l. 17196; pipes 1483 -> 1483 (title 0)
+   T2   GAPS: 23 -> 23 lines; row G-N5-TIME l. 11 -> l. 23 (status open -> closed, under the closed table); row pipes 76 -> 76; file pipes 198 -> 198; UPDATE 7902 bytes
    T2   GAPS row starts '| G-N5-TIME | major | L-NEW (L-LIT T22; referees later) | closed | N5 '
    T2   GAPS UPDATE starts 'UPDATE 2099-01-13 00:00Z: RESULTS R131 (P-N5-EXP; CHECKER C148 5555555) [refereed-only] LANDED:'
    T2   GAPS row ends '-B successors 5-7). G-N5-TIME is answered NO for N5 from S3 (through RESULTS R117 as landed, refereed-only). |'
    T2   NOW: R17-R130 -> R17-R131 (1 place)
    T2   scripts/check_docs.py on the copies: rc 0
    T2 land131: DRYRUN done (nothing in the repository was written)
-   T2 sha1 of the results: RESULTS 9ed60ce103dda557ee261d8053057db5cf30324b GAPS 927ccf69eae28c0b49fe3f6b07c1e2178a64b962 NOW ad30d9d4b40a52310c50872174e8b9d2426db016
-   T2 OK   RESULTS: one R131 heading at l. 16725, block l. 16725-17087, empty l. 17088, Erratum line l. 17089
-   T2 OK   RESULTS: pure insertion (the 16724 lines before and the 644 lines after are unchanged), 17367 -> 17731 lines
+   T2 sha1 of the results: RESULTS 12c6d61890663fe7beb9efba4e58993a443b8b0b GAPS abeff430f83ac35fd0aa92f3ec72d09b33f6aa10 NOW ad30d9d4b40a52310c50872174e8b9d2426db016
+   T2 OK   RESULTS: one R131 heading at l. 16725, block l. 16725-17194, empty l. 17195, Erratum line l. 17196
+   T2 OK   RESULTS: pure insertion (the 16724 lines before and the 644 lines after are unchanged), 17367 -> 17838 lines
    T2 OK   RESULTS: the inserted block is the copy's block with the checker token filled (checker 5555555) once, no open-slot word, no fill token)
    T2 OK   RESULTS: headings 131, the last two R130 R131; pipes 1483 -> 1483
-   T2 OK   GAPS: the row is the old row with status closed and ' ' + UPDATE + ' ¦' appended, nothing else (239722 -> 246956 characters)
+   T2 OK   GAPS: the row is the old row with status closed and ' ' + UPDATE + ' ¦' appended, nothing else (239722 -> 247440 characters)
    T2 OK   GAPS: row l. 11 -> l. 23, below the closed heading (l. 12), the last table row of the file; every other line unchanged; 23 -> 23 lines
    T2 OK   GAPS: check_docs cells of the row: id G-N5-TIME, severity major, owner present True, status closed; row pipes 76 -> 76
    T2 OK   GAPS: RESULTS UPDATEs on the row 60 -> 61, the last three R129 R130 R131
@@ -23,6 +23,6 @@ T2 satisfied copy (8 tokens replaced; hashes recomputed for the copy): rc 0
    T2 OK   draft copy: first line ends with the landing note, the rest unchanged
    T2 OK   scripts/check_docs.py on the copies: rc 0
    T2 OK   negative control (the landed title without its label): check_docs rc 1, message names the entry True
-T3 the copy with one letter of the block changed, T2's hashes: rc 2: land131: REFUSED: the draft's entry block (sha1 00ed6a32fb56df73378ca83f9ed3cadf42f47009, 363 lines) is not the block build.sh recorded (sha1 1c4a2ae5422b6821cd77efc0e49397547f456ee8, 363 lines)
+T3 the copy with one letter of the block changed, T2's hashes: rc 2: land131: REFUSED: the draft's entry block (sha1 d2d3edade0ce4d0222660e38e7615dcfe857a4dd, 470 lines) is not the block build.sh recorded (sha1 0d1b57fa9031057ed6b946527f1933a0e2def152, 470 lines)
 T4 the copy with one more open-slot word in its header: rc 2: land131: REFUSED: the draft holds the open-slot word 2 times; only the title's checker token may carry it (other lines: [2])
 landtest: PASS

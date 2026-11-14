@@ -1,16 +1,16 @@
-OK   title = heading + the line (git bytes, 7267 bytes, sha1 fd9074a3b9961f59a1b64d5acdaa28529306ede9) + the checker token: line L-3 of docs/red-b/P-N5-EXP-line-L3.txt @ 10dfedb6
+OK   title = heading + the line (git bytes, 7755 bytes, sha1 1e0ff12d51da7a4ee1aad12ed0fd9119a097896b) + the checker token: line L-6 of docs/red-b/P-N5-EXP-line-L6.txt @ 91d30d95
 OK   title: pipe characters 0
-OK   title: parentheses 80 / 80, square brackets 1 / 1, guillemets 6 / 6
+OK   title: parentheses 83 / 83, square brackets 2 / 2, guillemets 6 / 6
 OK   title passes the label rule of scripts/check_docs.py
 OK   negative control: the title without its label fails that rule
-OK   block: 363 lines (title + 362), no empty line, every line a bullet or a continuation, widest 140
-     bullets: Object; Fixes; The RESULTS line is L-3, fd9; Claims signed; Setting and scope, as both r; Premise; L41 and L43. The packet's pr; Not signed; Referee strengthening and su; Honest limits; Data; DATA counters for the replay; Note; Signatures; INDEPENDENCE; TARGET.md diff; Status
+OK   block: 470 lines (title + 469), no empty line, every line a bullet or a continuation, widest 140
+     bullets: Object; Fixes; The RESULTS line is L-6, 1e0; Claims signed; Setting and scope, as both r; Premise; L41 and L43. The packet's pr; Not signed; Referee strengthening and su; Honest limits; Data; DATA counters for the replay; Note; Signatures; INDEPENDENCE; TARGET.md diff; Status
 OK   block: pipe characters 0, tabs 0
-OK   open-slot tokens: block 5 (the title's checker token 1, other 4); whole draft 9
+OK   open-slot tokens: block 3 (the title's checker token 1, other 2); whole draft 5
      landable by this count: no (open slots)
-OK   UPDATE line = updlib.r131_update(the line): 7414 bytes, sha1 0eeeafed601596b4076c8760fe72f61bf776a81b
-OK   UPDATE: pipes 0, parentheses 81 / 81, fill tokens 1 1 1, ends with the ruled sentence
-OK   recorded hashes (out/hashes.json): block sha1 17b216c93c1f06b5dabc02e966c9135b040a1e9e (363 lines), UPDATE sha1 0eeeafed601596b4076c8760fe72f61bf776a81b
+OK   UPDATE line = updlib.r131_update(the line): 7902 bytes, sha1 eea7651c11064d496181e10bac1e7ddaebafa2d3
+OK   UPDATE: pipes 0, parentheses 84 / 84, fill tokens 1 1 1, ends with the ruled sentence
+OK   recorded hashes (out/hashes.json): block sha1 26433f850182a4f6812f4644ff64186a1fcd5ab8 (470 lines), UPDATE sha1 eea7651c11064d496181e10bac1e7ddaebafa2d3
 OK   first line starts '# Draft RESULTS R131 ' and is not marked landed
-OK   layout: block at lines 45-407, empty line 408, proposal 409-422, UPDATE line 423
+OK   layout: block at lines 46-515, empty line 516, proposal 517-530, UPDATE line 531
 shape: PASS

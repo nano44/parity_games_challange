@@ -1,0 +1,78 @@
+items: 51 rows in the Note's table, 48 distinct labels (P-1, M-1 and O-1 are labels of two reports each)
+  REFEREE 36, stage 1 (the table of its §9)
+    E-1     raised l. 377      closing texts 1; confirmation quoted
+    E-2     raised l. 378      closing texts 1; confirmation quoted
+    E-3     raised l. 379      closing texts 1; confirmation quoted
+    E-4     raised l. 380      closing texts 1; confirmation quoted
+    E-5     raised l. 381      closing texts 1; confirmation quoted
+    E-6     raised l. 382      closing texts 1; confirmation quoted
+    E-7     raised l. 383      closing texts 1; confirmation quoted
+    P-1     raised l. 384      closing texts 2; confirmation quoted
+    O-1     raised l. 385      closing texts 1; confirmation quoted
+    O-2     raised l. 386      closing texts 1; confirmation none quoted
+    N-1     raised l. 387      closing texts 1; confirmation quoted
+  REFEREE 37, stage 5a (its §13.7)
+    N-5a    raised l. 765      closing texts 1; confirmation REFEREE's stage 5b (ii) (open slot)
+    N-5b    raised l. 767      closing texts 2; confirmation quoted
+    N-5c    raised l. 769      closing texts 1; confirmation REFEREE's stage 5b (ii) (open slot)
+    N-5d    raised l. 770      closing texts 1; confirmation REFEREE's stage 5b (ii) (open slot)
+  REFEREE 37, stage 5b (i) (its §14, on line L-3 and fixes entries 7, 8)
+    F-L3-1  raised l. 811      closing texts 2; confirmation REFEREE's stage 5b (ii) (open slot)
+    N-5e    raised l. 814      closing texts 2; confirmation REFEREE's stage 5b (ii) (open slot)
+    L-n1    raised l. 990      closing texts 2; confirmation REFEREE's stage 5b (ii) (open slot)
+    L-n2    raised l. 994      closing texts 0; confirmation none quoted
+    L-n3    raised l. 996      closing texts 2; confirmation REFEREE's stage 5b (ii) (open slot)
+    N-6a    raised l. 997      closing texts 0; confirmation quoted
+    N-6b    raised l. 999      closing texts 0; confirmation none quoted
+  REFEREE 35's pre-check (its §7; not a signature)
+    P-1     raised l. 322      closing texts 1; confirmation none quoted
+    P-2     raised l. 327      closing texts 1; confirmation none quoted
+    M-1     raised l. 330      closing texts 1; confirmation none quoted
+    M-2     raised l. 334      closing texts 1; confirmation none quoted
+    M-3     raised l. 336      closing texts 1; confirmation quoted
+    P-3     raised l. 338      closing texts 2; confirmation none quoted
+    P-4     raised l. 341      closing texts 1; confirmation none quoted
+  REFEREE-2 41, its report (§1) and Addendum 1
+    G-1     raised l. 38       closing texts 1; confirmation quoted
+    M-1     raised l. 46       closing texts 1; confirmation quoted
+    W-1     raised l. 54       closing texts 1; confirmation quoted
+    W-2     raised l. 55       closing texts 1; confirmation quoted
+    D-1     raised l. 60       closing texts 1; confirmation quoted
+    O-1     raised l. 61       closing texts 1; confirmation none quoted
+    A1.1    raised l. 288      closing texts 1; confirmation quoted
+    A1.2    raised l. 305      closing texts 1; confirmation quoted
+  REFEREE-2 42, Addendum 2 (on fixes entries 1-5 and line L-1)
+    A2.1    raised l. 348      closing texts 0; confirmation quoted
+    F-1     raised l. 442      closing texts 1; confirmation quoted
+    F-2     raised l. 445      closing texts 1; confirmation quoted
+    F-3     raised l. 384      closing texts 1; confirmation none quoted
+    F-4     raised l. 395      closing texts 1; confirmation none quoted
+    F-5     raised l. 368      closing texts 1; confirmation quoted
+    L-a     raised l. 522      closing texts 1; confirmation quoted
+    L-b     raised l. 525      closing texts 1; confirmation quoted
+    L-c     raised l. 526      closing texts 1; confirmation quoted
+  REFEREE-2 42, Addendum 4 (on line L-3 and fixes entries 6-8)
+    L3-1    raised l. 658      closing texts 2; confirmation REFEREE-2's Addendum 5 (open slot)
+    L3-2    raised l. 666      closing texts 2; confirmation REFEREE-2's Addendum 5 (open slot)
+    L3-3    raised l. 668      closing texts 2; confirmation REFEREE-2's Addendum 5 (open slot)
+    L3-4    raised l. 675      closing texts 2; confirmation REFEREE-2's Addendum 5 (open slot)
+    L3-5    raised l. 679      closing texts 2; confirmation REFEREE-2's Addendum 5 (open slot)
+scan REFEREE's report (docs/referee/R-P-N5-EXP.md @ 38d11668, 1011 lines): 41 labels; in the table 35; section numbers 1; names of lines 4; not items of this packet 1 (L-d); UNLISTED 0 []
+scan REFEREE-2's report (docs/referee-2/R2-P-N5-EXP.md @ 4d5b03f7, 731 lines): 55 labels; in the table 32; section numbers 18; names of lines 3; not items of this packet 2 (B-7 S-1); UNLISTED 0 []
+scan the pre-check (docs/referee/R-GK-precheck.md @ 38d11668, 371 lines): 11 labels; in the table 7; section numbers 0; names of lines 0; not items of this packet 4 (N-3 R-1 R-2 R-3); UNLISTED 0 []
+scan REFEREE-2's review of box 108 (docs/referee-2/R2-box108.md @ 4d5b03f7, 145 lines): 4 labels; in the table 1; section numbers 0; names of lines 0; not items of this packet 3 (S-1 S-2 S-3); UNLISTED 0 []
+  not an item: B-7: an item of REFEREE-2's pre-read of another packet (R2-key-preread)
+  not an item: L-d: the Lead's line item (k = 13 into part (3)); in the line's history
+  not an item: L-f: the builder's name of a line replacement (the Lead's ruling)
+  not an item: L-g: as L-f
+  not an item: L-h: as L-f
+  not an item: L-i: as L-f
+  not an item: N-3: a note of P-N5-REACH's fixes entry 1, cited by the pre-check
+  not an item: R-1: a numbered remark of the pre-check's reading of R117 (its §5), a result, not a request
+  not an item: R-2: as R-1
+  not an item: R-3: as R-1
+  not an item: S-1: a wording item on L-SI's box 108 (R2-box108.md), not part of this entry
+  not an item: S-2: as S-1
+  not an item: S-3: as S-1
+items without a closing text in the fixes file or a line replacement (flags, not guesses): L-n2, N-6a, N-6b, A2.1
+items: PASS

@@ -1,8 +1,8 @@
-UPDATE of R131 built from line L-3 (docs/red-b/P-N5-EXP-line-L3.txt @ 10dfedb6): 7231 characters, 7414 bytes, sha1 0eeeafed601596b4076c8760fe72f61bf776a81b (without newline, unfilled)
-  pipes 0 ; parentheses 81 / 81 ; fill tokens <DATE> 1 <HH:MM> 1 <checker> 1
+UPDATE of R131 built from line L-6 (docs/red-b/P-N5-EXP-line-L6.txt @ 91d30d95): 7715 characters, 7902 bytes, sha1 eea7651c11064d496181e10bac1e7ddaebafa2d3 (without newline, unfilled)
+  pipes 0 ; parentheses 84 / 84 ; fill tokens <DATE> 1 <HH:MM> 1 <checker> 1
   labels moved behind their clauses: 3 ; drops 1 ; pipe pairs 0
   starts 'UPDATE <DATE> <HH:MM>Z: RESULTS R131 (P-N5-EXP; CHECKER C148 <checker>) [refereed-only] LANDED: DEAD-END packet for the '
-  ends   's 1-7, docs/red-b/P-N5-EXP-fixes.md; L-RED-B successors 5-7). G-N5-TIME is answered NO for N5 from S3 (through RESULTS R117 as landed, refereed-only).'
+  ends   ' 1-11, docs/red-b/P-N5-EXP-fixes.md; L-RED-B successors 5-7). G-N5-TIME is answered NO for N5 from S3 (through RESULTS R117 as landed, refereed-only).'
   ends with the ruled sentence, one checker token, 0 pipes, every label directly before its clause end: True
   the body is a rearrangement of the line minus the drops (same multiset of non-space characters): True
 control R128: landed UPDATE rebuilt from its landed title by updlib.build: byte-equal True (labels 12, 12692 characters, sha1 18ac1ef32797f2505380357a2f59b52b703dd382)

@@ -203,6 +203,41 @@ def facts(cfg):
         chk("e7_r3.out", [gk(n) for n, _ in r] == list(range(3, 15)) and all(z(d, ["r3in", "r3move", "r3rest", "litdiff"]) for _, d in r) and a == (16368, 16356),
             "k = 3..14: r3in, r3move, r3rest, litdiff 0 at %d windows (%d with j >= 2)" % a)
         F["r3"] = a
+    # fixes entry 10: the rank gloss (rule R against the old wording of the lines)
+    if exists(H, O + "gloss.out"):
+        r = rows(H, O + "gloss.out")
+        chk("gloss.out", [gk(n) for n, _ in r] == list(range(3, 13)) and all(
+            z(d, ["rulediff", "Ldiff", "wire0diff"]) and int(d["Lrule"]) == 2 ** gk(n) - 2 and d["Loldinc"] == "3" and d["Lolddec"] == "1"
+            and d["oldfires"] == "2" and d["member"] == "1" for n, d in r),
+            "k = 3..12: rulediff, Ldiff, wire0diff 0 (rule R: L = 2^k - 2); the old gloss of the lines gives L = 3 and L = 1 on every k (control fires)")
+        F["gloss"] = True
+    # the chain of lines L-1 -> ... -> the line of cfg.json, by the lane's own build records
+    import re as _re
+    last = int(cfg["line"]["name"].split("-")[1])
+    P = "docs/red-b/P-N5-EXP-line-L%d.txt"
+    prev = show(H, P % 1).decode("utf-8")
+    names, okc, det = {}, True, []
+    F["lines"] = {1: (sha1(show(H, P % 1)), len(show(H, P % 1)))}
+    for i in range(2, last + 1):
+        rec = show(H, O + "line_L%d_build.out" % i).decode("utf-8").split("\n")
+        items = []
+        for j, l in enumerate(rec):
+            m = _re.match(r"--- (.+): at character (\d+) of L-%d, " % (i - 1), l)
+            if m:
+                items.append((int(m.group(2)), m.group(1), rec[j + 1][2:], rec[j + 2][2:]))
+        cur = prev[:-1]
+        for pos, name, old, new in sorted(items, reverse=True):
+            okc = okc and cur[pos:pos + len(old)] == old and cur.count(old) >= 1
+            cur = cur[:pos] + new + cur[pos + len(old):]
+        nxt = show(H, P % i).decode("utf-8")
+        okc = okc and cur + "\n" == nxt and len(items) >= 1
+        names[i] = [n for _, n, _, _ in sorted(items)]
+        det.append("L-%d -> L-%d: %d (%s)" % (i - 1, i, len(items), ", ".join(names[i])))
+        F["lines"][i] = (sha1(nxt.encode("utf-8")), len(nxt.encode("utf-8")))
+        prev = nxt
+    chk("line chain", okc and F["lines"][last][0] == cfg["line"]["expect_sha1"],
+        "each line is the one before it with the named replacements of the lane's build record applied at their recorded characters, byte for byte: " + "; ".join(det))
+    F["line_names"] = names
     chk("frozen pins", show(H, D + "SHA1SUMS_b6b") == show(FZ, D + "SHA1SUMS_b6b"), "SHA1SUMS_b6b byte-equal at the freeze commit and at the head")
     # D23 arithmetic: every measured run is below n^2
     below = all(F["n5_its"][k] < (135 * k - 230) ** 2 for k in F["n5_its"])
