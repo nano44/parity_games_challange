@@ -1178,3 +1178,94 @@ written docs/red-b/P-N5-EXP-line-L3.txt
   lines) and at this entry's commit; its line is «guard frozen 0 prefix 0 of 5 l1 0 l2 0 l3 0», its control gives «prefix 5 of 5».
   check.sh tests both, and that L-2 and L-3 are the builder's output. The new files are pinned in data/b6b/SHA1SUMS_b6b_fixes5;
   the older pin files, the frozen packet and entries 1-7 are unchanged.
+
+## Entry 9 (L-RED-B successor 7, session_01V5yGRVmUNMkUXGRuVH63B8; 2026-11-14, written 13:44Z by date -u): REFEREE 37's stage 5a — the label of Corollary EXP-N5′ names both statements of R124 (the Lead's item N-5e), the notes N-5a to N-5d recorded, line L-4; no statement, proof, hypothesis or number changes
+New label: REF1E = REFEREE 37's stage 5a (entries 2, 3, 5 word by word, the proof of EXP-N5′, entry 6), claude/referee
+9ec40ff968ddc4a1c7f41a95d20aa6db6dbe40c3, docs/referee/R-P-N5-EXP.md (sha1 d5017ab5f382685cb9941273b893c31b2174c8a2, 784 lines;
+stage 5a is its §13, l. 544-784; its first 542 lines are the file at 78515253 byte for byte). Its verdict:
+
+[Q REF1E l. 580] «**P-N5-EXP: SIGNED with fixes entries 1-6.**»
+
+**9.1 The label of Corollary EXP-N5′ (item N-5e: the Lead's name for it, in its message of 2026-11-14 13:41Z; the label N-5e is
+not in the referee's file at 9ec40ff9).** The referee signs entry 3 with BOTH statements of R124 named:
+
+[Q REF1E l. 570-572] «**Entry 3**: the statement of Corollary EXP-N5′ and its PROOF are right. I SIGN the corollary as
+PROVED-CONDITIONAL on RESULTS R124 (Corollary EXACT-L, Theorem ENDGAME-3-N5) and RESULTS R117 (f) as landed, as successor 36 signed
+the statement (§12 addendum). O-1 is closed.»
+
+Entry 3's label names one of the two, its proof both:
+
+[Q FIX5 l. 255] «PROVED-CONDITIONAL on RESULTS R124's Corollary EXACT-L AS LANDED [refereed-only]»
+
+[Q FIX5 l. 261] «R124's Corollary EXACT-L and its Theorem ENDGAME-3-N5 say:»
+
+The Lead's item, in its words: «EXACT-L as landed states only the count («makes exactly L(G) + 3 iterations», RESULTS l. 15371);
+«one fallback, at iteration 2^k − 1» needs R124's Theorem ENDGAME-3-N5 («exactly one fallback, at an iteration F ≥ 1, and exactly
+F + 2 iterations») together with EXACT-L. Entry 3's proof quotes both; its label and the line name EXACT-L alone.»
+
+Accepted. READ the label of Corollary EXP-N5′, in entry 3 and wherever it is cited, as: PROVED-CONDITIONAL on RESULTS R124's
+Corollary EXACT-L and Theorem ENDGAME-3-N5 AS LANDED [refereed-only], with the premises entry 3 states (R117 (f) = Theorem REACH3,
+1E-N3, SPEC's S1 tie-breaks through REACH3's [RULE]). Which clause rests on which statement: the count, exactly 2^k + 1
+iterations, on EXACT-L (exactly L(G) + 3 iterations for G ∈ IDEAL-ACYC); the fallback clause, exactly one fallback and at
+iteration 2^k − 1, on ENDGAME-3-N5 (exactly one fallback, at an iteration F, and exactly F + 2 iterations) together with EXACT-L
+(F + 2 = L(G_k) + 3, so F = L(G_k) + 1). The PROOF of entry 3 is unchanged: it quotes both statements (FIX5 l. 262-264), and the
+referee checked it step by step (REF1E l. 659-665).
+
+**9.2 The notes N-5a to N-5d of stage 5a, recorded (the referee: no statement affected).**
+
+[Q REF1E l. 765-766] «N-5a (entry 2 (d), fixes l. 224): the tag» «should read l. 247-249: the quote begins one line earlier in the
+file the fixes file names (found by script; the lane's own quote_fixes.out prints «l. 247-249» for it). The quote is verbatim.»
+
+Accepted: READ the line range of that tag of entry 2 (d) as 247-249. The quote under it (REFEREE-2 41's sentence that begins
+«They are far below every explicit polynomial bound») is verbatim there; only the first line number was one too high.
+
+[Q REF1E l. 767-768] «N-5b (entry 5.1, fixes l. 670): «(table: every Ξ-target is a u, v, y, ȳ or X)» omits y′_j and ȳ′_j, the
+Ξ-targets of e_j (table, row e_j). What the sentence uses, «no Ξ-edge ends at a wire», is right by the table.»
+
+Already read so in entry 7, 7.3 (REFEREE-2 42's F-3 is the same finding), with its test (b6e7.py xt).
+
+[Q REF1E l. 769] «N-5c (conventions, l. 134): «75 in entries 2-5» includes two quotes without a tag of their own (§13.1). Nothing
+is misquoted.»
+
+Recorded. The count is the quote checker's: every guillemet group after a tag, up to the next tag or the next blank line, is one
+quote. The two the referee names are the frozen packet's words in the E-1 bullet of 4.0; they follow the tag of the bullet before
+them and are checked against the frozen packet like every other quote.
+
+[Q REF1E l. 770-771] «N-5d (entry 4.4, Remark 2; seen while reading, entry 4 is not re-reviewed): for j = 1 the frozen (H2) ranged
+over τ ≤ t + P_1 − 1 = last + 1, so it also asked for both bits under s_(last+1); a remark about what LEMMA′ drops, LEMMA′ being
+the stronger form.»
+
+Recorded: Remark 2 of 4.4 is exact for j ≥ 2; for j = 1 READ it with this addition. In both cases LEMMA′ asks for less than the
+frozen (H2), so nothing that is proved changes.
+
+**9.3 Line L-4, quote check, guards, pins (records).**
+- LINE L-4: docs/red-b/P-N5-EXP-line-L4.txt = line L-3 with two named replacements made by experiments/red-b/b6line.py build4, each
+  old text occurring exactly once in L-3, and nothing else: «RESULTS R124's Corollary EXACT-L as landed» becomes «RESULTS R124's
+  Corollary EXACT-L and Theorem ENDGAME-3-N5 as landed» (9.1; the Lead's ruling), and «with fixes entries 1-7» becomes «with fixes
+  entries 1-9», because this entry changes how a statement is labelled (9.1) and the line must therefore cite it; entry 8 lies
+  inside that range and is a record of the line only. Undoing the two gives L-3 back byte for byte. L-4 IS THE LINE OF RECORD;
+  L-1, L-2 and L-3 are not edited and stay as history. The builder's record (data/b6b/out/line_L4_build.out; line_L4_quotes.out:
+  the four quotations inside L-4 found verbatim at their commits; control line_L4_ctrl.out: the bracket check fires on all three
+  built lines):
+```
+L-3 bytes 7267 sha1 fd9074a3b9961f59a1b64d5acdaa28529306ede9
+--- N-5e: at character 2350 of L-3, 42 bytes removed, 67 bytes put in
+- RESULTS R124's Corollary EXACT-L as landed
++ RESULTS R124's Corollary EXACT-L and Theorem ENDGAME-3-N5 as landed
+--- L-g: at character 7005 of L-3, 22 bytes removed, 22 bytes put in
+- with fixes entries 1-7
++ with fixes entries 1-9
+changes 2; characters of L-3 kept unchanged 7079 of 7084
+L-4 bytes 7292 (with its newline) lines 1 pipes 0 sha1 668fd1b88ea4ae28690f0b931d84b27a85928ca8
+L-4 brackets ( 79 ) 79 [ 0 ] 0 { 0 } 0 « 6 » 6 balanced 1
+L-4 checks failed 0
+written docs/red-b/P-N5-EXP-line-L4.txt
+```
+- Quote check of the whole file: b6fixquote.py → data/b6b/out/quote_fixes9.out (the 104 quotes of entries 1-7 and the 9 of
+  this entry: «quotes 113 found 113 notfound 0»; control, every quote spoiled by one character, quote_fixes9_ctrl.out: «quotes 113 found 0 notfound 113»). The control's
+  spoiler in b6fixquote.py is extended in this commit: where the second half of a guillemet group holds no letter it now changes
+  a letter of the first half, or a digit. Before that, the second piece of N-5a above, whose inner group is «l. 247-249», stayed
+  unspoiled and the control found 1 of the 113; the 104 older quotes are spoiled exactly as before.
+- Guards and pins: b6guard.py has a sixth stage (entries 1-9) and pins L-4: «guard frozen 0 prefix 0 of 6 l1 0 l2 0 l3 0 l4 0»,
+  its control gives «prefix 6 of 6». check.sh tests both and that L-2, L-3 and L-4 are the builder's output. The new files are
+  pinned in data/b6b/SHA1SUMS_b6b_fixes6; the older pin files, the frozen packet and entries 1-8 are unchanged.

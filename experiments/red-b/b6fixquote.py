@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""L-RED-B packet P-N5-EXP: quote check for the FIXES file docs/red-b/P-N5-EXP-fixes.md (entries 1-7).
+"""L-RED-B packet P-N5-EXP: quote check for the FIXES file docs/red-b/P-N5-EXP-fixes.md (entries 1-9).
 
 Every guillemet quote that follows a Q-tag [Q LABEL ...] in the fixes file is checked verbatim by b6quote.py (same convention as
 the packet). This wrapper only fetches the sources: each LABEL is a file at a NAMED COMMIT, read with `git show COMMIT:PATH` (the
@@ -18,6 +18,7 @@ and the line numbers printed are the file's own).
   REF2B   claude/referee-2 f17a2708  docs/referee-2/R2-P-N5-EXP.md          (REFEREE-2 42's Addendum 2; entry 7's tag)
   REF1D   claude/referee   78515253  docs/referee/R-P-N5-EXP.md            (REFEREE 36's report with its stage 4; entry 7's tag)
   FIX5    claude/l-red-b   24f4d436  docs/red-b/P-N5-EXP-fixes.md           (this file as the referees read it: entries 1-5)
+  REF1E   claude/referee   9ec40ff9  docs/referee/R-P-N5-EXP.md            (REFEREE 37's stage 5a, par. 13; entry 9's tag)
 Usage (from anywhere inside the repository): b6fixquote.py WORKDIR [FIXESFILE]
   WORKDIR receives the source copies (WORKDIR/src/); the output is b6quote.py's (one line per quote, then «quotes N found F
   notfound K»); exit 1 if a source is missing or a quote is not found.
@@ -39,6 +40,7 @@ SRC = {
     "REF2B": ("f17a2708de653b306eaedf878f6120d2d0b31e06", "docs/referee-2/R2-P-N5-EXP.md", None),
     "REF1D": ("78515253a74a353a829b435d53f4987a8552989a", "docs/referee/R-P-N5-EXP.md", None),
     "FIX5": ("24f4d436a0fea1f62ae736f20f78ff9e84333a90", "docs/red-b/P-N5-EXP-fixes.md", None),
+    "REF1E": ("9ec40ff968ddc4a1c7f41a95d20aa6db6dbe40c3", "docs/referee/R-P-N5-EXP.md", None),
 }
 FROZEN_SHA1 = "c0449b17193f19619f33b366096762dfde27d542"
 
@@ -79,9 +81,12 @@ if __name__ == "__main__":
 
         def spoil(m):
             q = m.group(0)
-            for i in range(len(q) // 2, len(q)):
+            for i in list(range(len(q) // 2, len(q))) + list(range(1, len(q) // 2)):
                 if q[i].isalpha():
                     return q[:i] + ("x" if q[i] != "x" else "y") + q[i + 1:]
+            for i in range(1, len(q) - 1):      # a group without a letter (fixes entry 9): change a digit
+                if q[i].isdigit():
+                    return q[:i] + ("7" if q[i] != "7" else "8") + q[i + 1:]
             return q
         # change one letter inside every top-level quote that follows a Q-tag (whole paragraphs that contain a tag)
         pars = re.split(r"(\n\s*\n)", t)

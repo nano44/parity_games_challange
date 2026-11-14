@@ -53,7 +53,18 @@ by the fleet's 5-hour limit from about 17:37Z to 19:04Z; handover check, line L-
   sha1 013290889e9e08f58ae162baa0c2eb5082f4b135) records only this. b6guard.py has five stages and pins L-2 and L-3 («of 5»);
   pins data/b6b/SHA1SUMS_b6b_fixes5. So wherever (a)-(d) say L-2, an L-4 would start from L-3, the next entry is 9, the next pin
   file fixes6, the next guard stage the sixth.
-- (e) IN FLIGHT: nothing but the push of the second commit (scripts/push.sh as a tracked task, about 50 minutes in the gate). No CPU job.
+- (a″) ADDED 2026-11-14T13:45Z (the Lead's item of 13:41Z after REFEREE 37's stage 5a, claude/referee 9ec40ff9 §13: «P-N5-EXP: SIGNED
+  with fixes entries 1-6»; b1a93700 and 10dfedb6 were on origin since 2026-11-13 20:08Z, push exit 0, VERIFY PASS): a THIRD commit.
+  LINE L-4 = L-3 with «RESULTS R124's Corollary EXACT-L and Theorem ENDGAME-3-N5 as landed» and «with fixes entries 1-9»
+  (b6line.py build4; docs/red-b/P-N5-EXP-line-L4.txt, 7,292 bytes, sha1 668fd1b88ea4ae28690f0b931d84b27a85928ca8). L-4 IS THE
+  LINE OF RECORD; L-1, L-2, L-3 stay as history. Fixes entry 9 (l. 1181-1271; the file has 1,271 lines, sha1
+  b0b8475794ead69c1e8b57d0bb26a82ff18d77c9): 9.1 the label of Corollary EXP-N5′ names both R124 statements (the Lead calls it
+  N-5e; that label is NOT in the referee's file), 9.2 notes N-5a to N-5d recorded, 9.3 records. b6guard.py: six stages, pins
+  L-2, L-3, L-4 («of 6»); pins data/b6b/SHA1SUMS_b6b_fixes6; b6fixquote.py: label REF1E, and its control now also spoils a
+  guillemet group without a letter in its second half (one quote of entry 9 slipped through the old control: found 1 of 113).
+  NEXT NUMBERS: an L-5 from L-4, entry 10, fixes7, a seventh guard stage. Fleet pauses: the 5-hour limit (17:37Z-19:04Z on
+  11-13) and the weekly limit (about 19:25Z on 11-13 to 13:41Z on 11-14) each stopped this session; nothing was lost.
+- (e) IN FLIGHT: nothing but the push of the third commit (this note is in it); before it: the push of the second commit (scripts/push.sh as a tracked task, about 50 minutes in the gate). No CPU job.
 - NEXT for a successor 8 (only if the Lead creates one): the trap check; `git ls-remote origin claude/l-red-b` must show this
   commit; read the referees' and CHECKER's items on L-2 / entry 7 by commit; answer in entry 8 (append-only, b6fixquote.py with a
   new label per new report, a new pin file SHA1SUMS_b6b_fixes5, a new stage in b6guard.py); an L-3 only by script from L-2.

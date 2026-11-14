@@ -1,0 +1,12 @@
+L-3 bytes 7267 sha1 fd9074a3b9961f59a1b64d5acdaa28529306ede9
+--- N-5e: at character 2350 of L-3, 42 bytes removed, 67 bytes put in
+- RESULTS R124's Corollary EXACT-L as landed
++ RESULTS R124's Corollary EXACT-L and Theorem ENDGAME-3-N5 as landed
+--- L-g: at character 7005 of L-3, 22 bytes removed, 22 bytes put in
+- with fixes entries 1-7
++ with fixes entries 1-9
+changes 2; characters of L-3 kept unchanged 7079 of 7084
+L-4 bytes 7292 (with its newline) lines 1 pipes 0 sha1 668fd1b88ea4ae28690f0b931d84b27a85928ca8
+L-4 brackets ( 79 ) 79 [ 0 ] 0 { 0 } 0 « 6 » 6 balanced 1
+L-4 checks failed 0
+written docs/red-b/P-N5-EXP-line-L4.txt
