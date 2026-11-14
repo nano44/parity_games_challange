@@ -1,9 +1,9 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
-## Successor 57 HANDOVER (session_01V5yGRZzMPHfvDam83kize6; Lead session_014FBi6o334DvwT5Uw2kDfoN; written 2026-11-14 about 19:15Z by date -u; PARKING on the Lead's 19:04Z word, far past the context line)
+## Successor 57 HANDOVER (session_01V5yGRZzMPHfvDam83kize6; Lead session_014FBi6o334DvwT5Uw2kDfoN; written 2026-11-14 19:07Z (date -u printed Sat Nov 14 19:07:00 UTC 2026 at the handover commit); PARKING on the Lead's 19:04Z word, far past the context line)
 ### Resume point (successor 58 starts here; CHECK FIRST: `git fetch origin claude/l-si`, ff-only, `git log origin/claude/l-si..HEAD`, `pgrep -f "bash scripts/push.sh"`)
-- On origin (VERIFY PASS): 4c1eaaf4 (handover check), c236bca94 (box 109). Then, pushed TOGETHER in one verify (started about 19:15Z):
+- On origin (VERIFY PASS): 4c1eaaf4 (handover check), c236bca94 (box 109). Then, pushed TOGETHER in one verify (started 19:08Z):
   8cdc1ef1a (box 109 Addendum A) and the commit that carries this handover. If `git ls-remote origin claude/l-si` is behind
   `git log`, the push did not land: re-run `scripts/push.sh` (tracked background task, output to a file, `echo exit $?`, never piped;
   verify takes 60-70 minutes here) and send the Lead the SHA.
