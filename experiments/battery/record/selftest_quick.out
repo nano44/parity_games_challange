@@ -1,0 +1,24 @@
+ran n5spec_a     exit 0 (5 s): python3 -B /home/user/parity_games_challange/experiments/battery/engines/n5.py --mode spec a
+PASS K1 N5 on Gamma3(G_k): iterations = 2^k + 1: k -> iterations {3: 9, 4: 17, 5: 33, 6: 65}
+PASS K1 N5 on Gamma3(G_k): reading: exponential-looking (ratios [1.889, 1.941, 1.97], power exponent 1.613, factor per step 1.9338)
+ran n5xi_b       exit 0 (35 s): python3 -B /home/user/parity_games_challange/experiments/battery/engines/n5.py --mode xi b
+PASS K4 N5'-xi on wrapper_WL: known iterations: n -> iterations {1: 11, 2: 29, 3: 65, 4: 137}
+PASS K4 N5'-xi on wrapper_WL: reading: exponential-looking (ratios [2.636, 2.241, 2.108])
+PASS K4 N5'-xi on wrapper_W: known iterations: n -> iterations {2: 33, 3: 73, 4: 153}
+PASS K4 N5'-xi on wrapper_F: known iterations: n -> iterations {2: 33, 3: 73, 4: 153}
+ran zielonka     exit 0 (9 s): python3 -B /home/user/parity_games_challange/experiments/battery/engines/zielonka.py a b e
+PASS K5 Zielonka on sets a, b, e: all OK: counts {'OK': 279} (want OK 279)
+ran ctl_C1       exit 1 (0 s): python3 -B /home/user/parity_games_challange/experiments/battery/engines/control.py --flip-winner x_control
+PASS C1 control --flip-winner: exit 1 (want 1), report names WRONG-WINNER: True
+ran ctl_C2       exit 1 (0 s): python3 -B /home/user/parity_games_challange/experiments/battery/engines/control.py --drop-strategy x_control
+PASS C2 control --drop-strategy: exit 1 (want 1), report names BAD-STRATEGY: True
+ran ctl_C3       exit 1 (0 s): python3 -B /home/user/parity_games_challange/experiments/battery/engines/control.py --odd-cycle x_control
+PASS C3 control --odd-cycle: exit 1 (want 1), report names BAD-STRATEGY: True
+ran ctl_C4       exit 2 (0 s): python3 -B /home/user/parity_games_challange/experiments/battery/engines/control.py --garbage x_control
+PASS C4 control --garbage: exit 2 (want 2), report names ERROR: True
+ran ctl_C5       exit 2 (2 s): python3 -B /home/user/parity_games_challange/experiments/battery/engines/control.py --sleep x_control
+PASS C5 control --sleep: exit 2 (want 2), report names NO ANSWER: True
+ran ctl_C1a      exit 1 (0 s): python3 -B /home/user/parity_games_challange/experiments/battery/engines/control.py --flip-winner a
+PASS C1 control --flip-winner on set a: exit 1 (want 1)
+self-test quick: 13 checks, 0 failed, 51 s
+SELF-TEST PASS: every known row came out

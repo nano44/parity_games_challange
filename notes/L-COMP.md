@@ -1,6 +1,36 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## RESUME POINT -- successor 23 (L-COMP 23; session_01V5yGRYgGAhamJ5yUQXcJFH), THE BATTERY (Lead brief 2026-11-14 13:44Z; DESIGN DAY, L61). Overwritten at the park.
+- Handover check: commit 5c4d20f9, pushed by scripts/push.sh (VERIFY PASS, 29 minutes); origin = 5c4d20f9 by git ls-remote 14:18Z. «go» was given in advance.
+- TASK: experiments/battery/ = gauntlet step 2 as a ten-minute run for any candidate engine (README.md there is the record; DATA only).
+  * Interface: engine = command + PGSolver path -> last stdout line is JSON {winner, strategy, iterations, steps}.
+  * battery.py / run_battery.sh '<engine command>' [set ...]; env BATTERY_TIMEOUT / JOBS / OUT / MAXPARAM / LIMIT_E / NOSKIP / CACHE.
+    Winner vs Oink zlk (tl where zlk fails or the manifest says tl), strategy by experiments/harness/verify.py, growth READING per family.
+    Exit 0 pass, 1 wrong winner / bad strategy, 2 engine error / no answer, 3 battery broken (pin, reference).
+  * Sets (sets/<set>/MANIFEST.tsv, every file sha1-pinned): a = Γ3(G_k) k 3..13 (l-red-b 10dfedb6, byte-equal to box48/inst k 3..12);
+    b = WL_1..4, W_2..8, F_2..8 (l-si 8c062914 box104/inst); e = 10,000 seeded random games (rngame_seeded.cpp = Oink rngame.cpp +
+    a seed argument: Oink's rngame seeds from std::random_device, NOT reproducible; the Lead's brief assumed seeds exist);
+    d = harness instances (300 tiny games of selftest.py step 2, 5 regressions, 3 hkp; Lead reading of «the frozen 300» to confirm:
+    harness tiny games, or L-SI's rand300.json wrapper games); x_control (self-test only). c (13 M1 families, mk_manifest.py written, manifest
+    not generated yet) = second version.
+  * Engines: engines/zielonka.py (self-contained), oink_zlk.py, n5.py --mode spec|xi (through box44/n5xi44.run), control.py.
+  * Self-test: selftest.py quick (51 s; check.sh) | full OUTDIR. Known rows that came out (first runs, scratch reports): N5 spec on a =
+    9, 17, 33, 65, 129, 257, 513 (k 3..9; k 10 over 120 s) exponential-looking; N5 spec on b: WL 6,6,6,6; W 3..9; F 5,5,5,5,6,6,6
+    polynomial-looking; N5′-xi on a: 6, 7 × 10 polynomial-looking; N5′-xi on b: WL 11, 29, 65, 137; W 33, 73, 153, 313, 633, 1246;
+    F 33, 73, 153, 313 exponential-looking; Zielonka = Oink zlk on a, b and all 10,000 of e, every strategy verified; 5 controls fire.
+- Growth reading (battery.py growth; a READING, never a claim): four fits y = c0 + exp(a + b x) (power law in n and in the size parameter,
+  exponential in both), c0 free from 7 answered sizes; exponential-looking iff the better exponential beats the better power law AND y
+  doubles first -> last. Measured limits (synthetic grid): >= 7 sizes: only 1.2^k over 7 sizes misread; 4-6 sizes: polynomial + large
+  constant can read exponential-looking, 2^k + k^3 can read polynomial-looking. First version (c0 = 0, n only) misread 3k + 10 on set
+  a's sizes as exponential: that is why the constant and the parameter fits exist.
+- Things only I know: n5b.py --mode xi is NOT N5′-xi (any mode other than spec = «orig» readings; 5 iterations on Γ3, 6 on WL): the
+  N5′-xi engine is box44/n5xi44.py --mode xi. This branch's verify gate takes about 30+ minutes (other lanes' old check.sh copies, red's
+  is 808 lines): plan pushes sparingly, never commit while one runs. A commit trailer with a model name was made locally at the
+  handover check (attribution default) and redone before any push (5c4d20f9 carries «Co-Authored-By: Claude»): disclosed to the Lead.
+- Scratch (LOST on a new container): scratchpad/lredb (l-red-b 10dfedb6 experiments/red-b/data/b6b), scratchpad/lsi (l-si 8c062914
+  experiments/si/box104); battery .cache/ (references, generated games, rngame_seeded binary; all rebuilt on demand).
+
 ## HANDOVER -- successor 22 (L-COMP 22; session_01V5yGRWfgPQ815hzDFM7SSJ) PARKS (written 2026-11-13T13:48Z by date -u; Lead 13:50Z: finish BOX 48, stop the lanes, hand over, park). NOTHING RUNNING.
 - Handover check 6ff38698 (accepted 06:15Z). Lead rulings this session: 06:15Z «go» (plan 1-4); fix slips with a NEW commit, never reset --soft;
   09:08Z BOX 47 (owner: «So put everything into trying solving it today»); 10:03Z k_A6 + khalf; 12:08Z degree-2 rule (REFEREE-2 41); 12:28Z BOX 48

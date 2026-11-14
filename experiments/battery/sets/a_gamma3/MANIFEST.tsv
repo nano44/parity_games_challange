@@ -1,0 +1,13 @@
+# set a: Gamma3(G_k), k = 3..13 (n = 135k - 230). Copied byte for byte from claude/l-red-b 10dfedb6574c9291011a5a7fbbdff261fe312d91 experiments/red-b/data/b6b/pg/ (sha1 = that lane's SHA1SUMS_b6b*; also = L-COMP box48/inst for k 3..12).
+# family	param	file	sha1	kind	ref	gen
+gamma3_Gk	3	G_3_g3.pg	fca7a52c49e095d297458c2264664b846c442f8b	fit	zlk	-
+gamma3_Gk	4	G_4_g3.pg	4a2e89c57ec82362c128074c8be3344fb3c0da61	fit	zlk	-
+gamma3_Gk	5	G_5_g3.pg	f145a99c548d3f5489c0aca1552ed6eb96deafc3	fit	zlk	-
+gamma3_Gk	6	G_6_g3.pg	b9fea1092df47c2abfefef85bf18511346da7d71	fit	zlk	-
+gamma3_Gk	7	G_7_g3.pg	daa0f243aefaaf8cbdd205283f5fc7ce2f3d0f56	fit	zlk	-
+gamma3_Gk	8	G_8_g3.pg	924239d911a4c32a32397a7ed5ab2efdacf02fee	fit	zlk	-
+gamma3_Gk	9	G_9_g3.pg	9cece8a782b6212e06a177c0899422ebac6e3b0b	fit	zlk	-
+gamma3_Gk	10	G_10_g3.pg	615292907463d55cb3156d14914af2a916e5b27e	fit	zlk	-
+gamma3_Gk	11	G_11_g3.pg	9616b4f07e144c84c31f56475ead8c04f0a2dbdc	fit	zlk	-
+gamma3_Gk	12	G_12_g3.pg	abca645247b284b74b535cb0bb196813e66ce81c	fit	zlk	-
+gamma3_Gk	13	G_13_g3.pg	9d887e3bf2e1fa4912c32ee0a1ec4ed14327bf71	fit	zlk	-

@@ -1,0 +1,3 @@
+# set x: control instances for the self-test only (not a default set). loop2: Even wins both vertices; the move 0 -> 0 is a legal edge inside Even's region but closes an odd cycle.
+# family	param	file	sha1	kind	ref	gen
+control	2	loop2.pg	3cd535dd47f20afabe7ecb00c69fef38d3c81413	agree	zlk	-
