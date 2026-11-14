@@ -577,3 +577,34 @@ Lead reading L60 (2026-11-13 13:47Z by date -u; on D26, L52):
     commit (L-COMP 22: a push that printed «RPC failed; HTTP 503» had exited 0). Lane branches carry the old copy until they merge trunk:
     every lane compares ls-remote with its SHA after a push.
 
+
+D27 (owner; first relayed by OWNER-DESK, its message queued 2026-11-13 20:27Z and read by the Lead 2026-11-14 13:38Z after the Fable
+weekly limit had stopped the Lead; then repeated by the owner as a direct message to the Lead, received 2026-11-14 13:40Z by date -u):
+«SO we have to look for a new algorithm no? Do we have any promising lead or can convert our learning into a new promising algorithm?»
+
+D28 (owner, direct message to the Lead, received 2026-11-14 13:39Z by date -u):
+«I reset everything, you have until 11PM to use a full 100% usage»
+
+Lead reading L61 (2026-11-14 13:41Z by date -u; on D27, D28, D18, D14, D1):
+(1) Facts: the Fable 5.2 weekly limit rejected every Fable session from about 19:25Z on 2026-11-13 (Lead, REFEREE 37, L-RED-B 7, the
+    Lead's subagent; «You've hit your Fable limit · resets Nov 18, 9pm (UTC)»); no overage (isUsingOverage false on every record read).
+    At 13:38Z on 2026-11-14 the Lead's record reads five_hour, «allowed», window reset 18:30Z. Candidate N5 is dead on the signed proof
+    of packet P-N5-EXP (both referees; landing as RESULTS R131 is in its last steps). D18's direction («Focus on N5 and work toward
+    proving it.») has no object left.
+(2) The Lead's answer to D27, given to the owner in the session at about 13:41Z: yes, a new algorithm is needed; there is no lead the Lead
+    would call promising; three design lessons exist (the two kills are complementary: N5 is exponential on Γ3(G_k) where N5′-xi makes
+    7 iterations, and N5′-xi is exponential on the wrapper family of R130 where N5 is polynomial; G_k is Ξ-acyclic, so its answer is
+    computable in one pass in dependency order, and N5 loses by reacting twice to each move of the unit above; every kill attacked the
+    tie rule). The Lead's estimate, labelled as an estimate: a few percent at most that a design of today survives the fleet's own
+    adversaries, far less that it is polynomial.
+(3) Reading of D27 + D28 with D18 («Make reasonable assumptions where needed, state them briefly, and proceed without asking me
+    questions.») and D14 («You know it can also test prveiously not tested approaches, it can come up with it own as well»): today's
+    usage goes to (a) landing R131; (b) a DESIGN DAY for a new candidate built on the three lessons: two design lanes (L-NEW, L-SI:
+    successors of existing lanes), a test battery of every kill family (L-COMP), the two approved adversary lanes (L-RED, L-RED-B:
+    D2, D22) on the first candidate that passes the battery, and a barrier lane (L-LOWER) that tries to turn the three kills into one
+    theorem naming the rules that cannot work. No new lane is created (D1: «Spawn no attack lane before I approve it.»): each is the
+    successor of an existing lane. New sessions on Fable 5.2 at xhigh (D24). D1's standard is unchanged: «Treat every such claim,
+    including the fleet's own, as wrong until it passes the gauntlet below.»; nothing is called a result before the gauntlet.
+(4) «11PM» is read as the owner's local time; the zone is not known to the Lead. The Lead works until the limit records say stop
+    (overage, or a limit that still rejects after its reset: L52) and reports at the end of the day what was designed, what was killed
+    and what is left.

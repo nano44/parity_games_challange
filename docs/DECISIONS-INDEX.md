@@ -59,3 +59,6 @@
 | L59 | 2026-11-13 | Lead reading, amending L58: the exact open statement is SW-POLY (ENUM-LOG necessary only); today's Fable 5.2 xhigh successors listed; early start of successors with a no-commit clause | active | docs/DECISIONS.md#d21 |
 | D26 | 2026-11-13 | Owner (direct): usage limit hit and reset; «Please continue from where you left off.» | active | docs/DECISIONS.md#d21 |
 | L60 | 2026-11-13 | Lead reading of D26 / L52: fleet woken after the 5-hour limit; load lowered (search lanes park; no L-FORMAL 6 / L-RED 71 until the kill packet's referee round); push.sh checks ls-remote after git push | active | docs/DECISIONS.md#d21 |
+| D27 | 2026-11-14 | Owner (relayed 2026-11-13, then direct): «SO we have to look for a new algorithm no? Do we have any promising lead or can convert our learning into a new promising algorithm?» | active | docs/DECISIONS.md#d21 |
+| D28 | 2026-11-14 | Owner (direct): «I reset everything, you have until 11PM to use a full 100% usage» | active | docs/DECISIONS.md#d21 |
+| L61 | 2026-11-14 | Lead reading of D27 / D28 with D18, D14: N5 is dead; no promising lead (estimate stated); today = land R131 + a design day (L-NEW, L-SI design; L-COMP battery; L-RED, L-RED-B adversaries; L-LOWER barrier), successors of existing lanes only, Fable 5.2 xhigh, D1's standard unchanged | active | docs/DECISIONS.md#d21 |
