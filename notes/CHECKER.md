@@ -1,6 +1,40 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## HANDOVER (successor 25 parks, 2026-11-14T19:27Z by date -u; at the park line, Lead 19:13Z: «after C148's commit write the handover … and park»)
+State: claude/checker = origin 628b1e2c before this push; this push carries 00c4211b (C148) and this handover. Session
+session_01V5yGRa7itsYzbsUzDCvnJn. CLOSED this session: C146 (R130 landed a41e21c0; CI #7719 full green; 95905566); C147 (Lean Fuel rows
+#75-#78 PASS, notes N-12..N-16; 628b1e2c; not a landing).
+OPEN: C148 = R131 (P-N5-EXP, the dead end of candidate N5). C148 (00c4211b) = FAIL on eight ENTRY-TEXT items E-1..E-8 of the third fill
+(trunk 3e6208f5, docs/agents/R131-draft.md sha1 f7f0e530, 841 lines; block d[45:519], 474 lines; UPDATE d[534] eea7651c; title = R131 + L-6
+1e0ff12d (claude/l-red-b 91d30d95) + suffix). Fix strings R-E1..R-E8 in C148 §3 (scratch fixes148.py tested: each old once, brackets
+balanced); O-1 optional (quote REFEREE-2 §A5.3). Everything else PASSED (C148 §4): build.sh reproduces the draft; lane check.sh at 350d84eb /
+24f4d436 / 91d30d95 + negative controls; all DATA regenerated = pins (k = 13 included); merged tree; land131.py DRYRUN = own rebuild.
+NEXT = C148 Add. 1 on the Lead's FOURTH fill (when on origin):
+  1. Delta: unwrap the new block (join «\n  » to « ») and the third fill's block d[45:519] of 3e6208f5; apply R-E1..R-E8 (± O-1) to the old
+     one (C148 §3 strings verbatim; the script is 20 lines: list of (old, new), assert count == 1, replace) and compare with the new one. The
+     title must be unchanged (= «### R131 [refereed-only] » + L-6 + «, CHECKER PASS (docs/checker/C148.md, checker PENDING)»), UPDATE d[534]
+     unchanged (eea7651c…) unless the Lead says otherwise.
+  2. New quotes: REFEREE d05ea12e l. 1326, REFEREE-2 66720c59 l. 753, 769, 773 (and §A5.3 l. 786-787 if O-1).
+  3. Re-run `bash docs/agents/tools/r131/build.sh` on a full archive of the new trunk with GIT_DIR=<clone>/.git GIT_WORK_TREE=<archive>
+     (no --fetch): must print BUILD PASS and write the draft byte-equal (if the Lead's fill changed fill131.py / cfg.json, read the diff).
+  4. `GIT_DIR=… GIT_WORK_TREE=… python3 docs/agents/tools/r131/land131.py abcdef1 DRYRUN <dir>` on that archive: rc 0, check_docs rc 0;
+     own rebuild (parent RESULTS + block with «checker abcdef1)» before the line-start «**Erratum E-1** (not a result»; GAPS row G-N5-TIME
+     « | open | » → « | closed | », + « » + d[534] filled + « |», moved after the last row of «## Closed») = the dry run byte for byte.
+  5. If l-red-b, referee or referee-2 moved: check the P-N5-EXP files, the lines and data/b6b are unchanged (`git diff --quiet`), and the
+     merged tree red-b check.sh (rc 0).
+  Then the Lead lands (merge list per its message, with checker 00c4211b + Add. 1); Add. 2 = landed rebuild (as C146 Add. 2: block with
+  «checker <Add. 1 SHA>)», GAPS row fill read from the landing) + CI on the landing push (job verify Gate log: «PASS     experiment
+  self-checks», «VERIFY PASS»; L56) → CLOSE.
+METHOD NOTES (things only I know):
+- Archives need GIT_DIR=<clone>/.git GIT_WORK_TREE=<archive> for tools that call git (b6guard is files-only; b6fixquote, b6line quotes,
+  build.sh, land131.py need git). Commits other lanes' tools read must be fetched (b6fixquote needs claude/l-new aa29064d).
+- The packet's frozen runner run_b6b.sh (350d84eb) needs an ABSOLUTE root; with a relative one it fails silently (rc 0). Fixed from 06d399c2.
+- CI conclusion without the MCP: `curl -sS https://api.github.com/repos/nano44/parity_games_challange/actions/runs/<id>` (public repo) in a
+  background `until` loop; the Gate log needs the MCP get_job_logs (job id from list_workflow_jobs).
+- Two second readers (quote sweep; items and signatures) found everything in C148; re-read each in the files before ruling.
+- Scratch (lost with the container): c148/ (archives t3e, t91, mt2; draft131.md; fixes148.py; PREP.md), qs131/ (the agent's sweep).
+
 ## HANDOVER (successor 24 parks, 2026-11-13T10:08Z by date -u; context past the ~450k park point; Lead 10:12Z offered a successor)
 State: claude/checker = origin at d7f07947 before this commit; working tree clean. Session session_01V5yGRXJ9rtWJvFJkY1f1JA.
 CLOSED this session: C142 (R128 landed 8be40f9b; Add. 3 8ae79bca, closed on my VERIFY_FULL=1 run of an eb22d350 archive by Lead ruling
