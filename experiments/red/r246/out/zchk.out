@@ -1,0 +1,12 @@
+ZCHK246 G_3_top.pg n 175 mode spec its 10 fb 1 even_wins 174 wrong_zlk 0 oink_verified 1 wrong_tl 0 oink_verified 1
+ZCHK246 G_3_top.pg n 175 mode xi its 10 fb 1 even_wins 174 wrong_zlk 0 oink_verified 1 wrong_tl 0 oink_verified 1
+ZCHK246 G_4_top.pg n 310 mode spec its 18 fb 1 even_wins 309 wrong_zlk 0 oink_verified 1 wrong_tl 0 oink_verified 1
+ZCHK246 G_4_top.pg n 310 mode xi its 18 fb 1 even_wins 309 wrong_zlk 0 oink_verified 1 wrong_tl 0 oink_verified 1
+ZCHK246 G_5_top.pg n 445 mode spec its 34 fb 1 even_wins 444 wrong_zlk 0 oink_verified 1 wrong_tl 0 oink_verified 1
+ZCHK246 G_5_top.pg n 445 mode xi its 34 fb 1 even_wins 444 wrong_zlk 0 oink_verified 1 wrong_tl 0 oink_verified 1
+ZCHK246 G_6_top.pg n 580 mode spec its 66 fb 1 even_wins 579 wrong_zlk 0 oink_verified 1 wrong_tl 0 oink_verified 1
+ZCHK246 G_6_top.pg n 580 mode xi its 66 fb 1 even_wins 579 wrong_zlk 0 oink_verified 1 wrong_tl 0 oink_verified 1
+ZCHK246 G_7_top.pg n 715 mode spec its 130 fb 1 even_wins 714 wrong_zlk 0 oink_verified 1 wrong_tl 0 oink_verified 1
+ZCHK246 G_7_top.pg n 715 mode xi its 130 fb 1 even_wins 714 wrong_zlk 0 oink_verified 1 wrong_tl 0 oink_verified 1
+ZCHK246 G_3_top.pg n 175 mode spec its 10 fb 1 even_wins 174 wrong_zlk 1 oink_verified 1 wrong_tl 1 oink_verified 1
+JOB END zchk 2026-11-14T14:07:17Z

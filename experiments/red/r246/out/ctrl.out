@@ -1,0 +1,4 @@
+TIE246 G_3_top.pg n 175 eng s mode spec ctrl 1 its 10 fb 1 a_steps 10 choice 56 tie 31 ptie 31 ctie 0 tie_mov 31 tie_its 10 tie_max 5 refuse 21 refuse_strict 7 b_steps 0 bchoice 0 btie 0 fbtie 0 opt_bad 0
+TIE246 G_4_top.pg n 310 eng s mode spec ctrl 1 its 18 fb 1 a_steps 18 choice 134 tie 87 ptie 87 ctie 0 tie_mov 87 tie_its 18 tie_max 6 refuse 60 refuse_strict 15 b_steps 0 bchoice 0 btie 0 fbtie 0 opt_bad 0
+TIE246 G_5_top.pg n 445 eng s mode spec ctrl 1 its 34 fb 1 a_steps 34 choice 297 tie 220 ptie 220 ctie 0 tie_mov 220 tie_its 34 tie_max 8 refuse 162 refuse_strict 31 b_steps 0 bchoice 0 btie 0 fbtie 0 opt_bad 0
+JOB END ctrl 2026-11-14T14:04:40Z

@@ -1,0 +1,12 @@
+N5B G_3_top.pg mode spec n5b iterations 10 fallbacks 1 evals 43
+N5B G_4_top.pg mode spec n5b iterations 18 fallbacks 1 evals 75
+N5B G_5_top.pg mode spec n5b iterations 34 fallbacks 1 evals 139
+N5B G_6_top.pg mode spec n5b iterations 66 fallbacks 1 evals 267
+N5B G_7_top.pg mode spec n5b iterations 130 fallbacks 1 evals 523
+N5B G_8_top.pg mode spec n5b iterations 258 fallbacks 1 evals 1035
+N5B G_9_top.pg mode spec n5b iterations 514 fallbacks 1 evals 2059
+N5B G_3_r104.pg mode spec n5b iterations 9 fallbacks 1 evals 39
+N5B G_4_r104.pg mode spec n5b iterations 17 fallbacks 1 evals 71
+N5B G_5_r104.pg mode spec n5b iterations 33 fallbacks 1 evals 135
+N5B G_6_r104.pg mode spec n5b iterations 65 fallbacks 1 evals 263
+JOB END n5b 2026-11-14T14:06:55Z

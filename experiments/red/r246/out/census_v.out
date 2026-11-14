@@ -1,0 +1,16 @@
+TIE246 G_3_r104.pg n 175 eng v mode spec ctrl 0 its 9 fb 1 a_steps 9 choice 53 tie 28 ptie 28 ctie 0 tie_mov 28 tie_its 9 tie_max 4 refuse 19 refuse_strict 7 b_steps 0 bchoice 0 btie 0 fbtie 0 opt_bad 0
+TIE246 G_3_top.pg n 175 eng v mode spec ctrl 0 its 10 fb 1 a_steps 10 choice 56 tie 0 ptie 0 ctie 0 tie_mov 0 tie_its 0 tie_max 0 refuse 21 refuse_strict 21 b_steps 0 bchoice 0 btie 0 fbtie 0 opt_bad 0
+TIE246 G_3_top.pg n 175 eng v mode xi ctrl 0 its 10 fb 1 a_steps 10 choice 56 tie 0 ptie 0 ctie 0 tie_mov 0 tie_its 0 tie_max 0 refuse 21 refuse_strict 21 b_steps 0 bchoice 0 btie 0 fbtie 0 opt_bad 0
+TIE246 G_4_r104.pg n 310 eng v mode spec ctrl 0 its 17 fb 1 a_steps 17 choice 128 tie 81 ptie 81 ctie 0 tie_mov 81 tie_its 17 tie_max 6 refuse 57 refuse_strict 15 b_steps 0 bchoice 0 btie 0 fbtie 0 opt_bad 0
+TIE246 G_4_top.pg n 310 eng v mode spec ctrl 0 its 18 fb 1 a_steps 18 choice 134 tie 0 ptie 0 ctie 0 tie_mov 0 tie_its 0 tie_max 0 refuse 60 refuse_strict 60 b_steps 0 bchoice 0 btie 0 fbtie 0 opt_bad 0
+TIE246 G_4_top.pg n 310 eng v mode xi ctrl 0 its 18 fb 1 a_steps 18 choice 134 tie 0 ptie 0 ctie 0 tie_mov 0 tie_its 0 tie_max 0 refuse 60 refuse_strict 60 b_steps 0 bchoice 0 btie 0 fbtie 0 opt_bad 0
+TIE246 G_5_r104.pg n 445 eng v mode spec ctrl 0 its 33 fb 1 a_steps 33 choice 289 tie 212 ptie 212 ctie 0 tie_mov 212 tie_its 33 tie_max 8 refuse 159 refuse_strict 31 b_steps 0 bchoice 0 btie 0 fbtie 0 opt_bad 0
+TIE246 G_5_top.pg n 445 eng v mode spec ctrl 0 its 34 fb 1 a_steps 34 choice 297 tie 0 ptie 0 ctie 0 tie_mov 0 tie_its 0 tie_max 0 refuse 162 refuse_strict 162 b_steps 0 bchoice 0 btie 0 fbtie 0 opt_bad 0
+TIE246 G_5_top.pg n 445 eng v mode xi ctrl 0 its 34 fb 1 a_steps 34 choice 297 tie 0 ptie 0 ctie 0 tie_mov 0 tie_its 0 tie_max 0 refuse 162 refuse_strict 162 b_steps 0 bchoice 0 btie 0 fbtie 0 opt_bad 0
+TIE246 G_6_r104.pg n 580 eng v mode spec ctrl 0 its 65 fb 1 a_steps 65 choice 642 tie 519 ptie 519 ctie 0 tie_mov 519 tie_its 65 tie_max 10 refuse 409 refuse_strict 63 b_steps 0 bchoice 0 btie 0 fbtie 0 opt_bad 0
+TIE246 G_6_top.pg n 580 eng v mode spec ctrl 0 its 66 fb 1 a_steps 66 choice 652 tie 0 ptie 0 ctie 0 tie_mov 0 tie_its 0 tie_max 0 refuse 412 refuse_strict 412 b_steps 0 bchoice 0 btie 0 fbtie 0 opt_bad 0
+TIE246 G_6_top.pg n 580 eng v mode xi ctrl 0 its 66 fb 1 a_steps 66 choice 652 tie 0 ptie 0 ctie 0 tie_mov 0 tie_its 0 tie_max 0 refuse 412 refuse_strict 412 b_steps 0 bchoice 0 btie 0 fbtie 0 opt_bad 0
+TIE246 G_7_r104.pg n 715 eng v mode spec ctrl 0 its 129 fb 1 a_steps 129 choice 1427 tie 1226 ptie 1226 ctie 0 tie_mov 1226 tie_its 129 tie_max 12 refuse 1003 refuse_strict 127 b_steps 0 bchoice 0 btie 0 fbtie 0 opt_bad 0
+TIE246 G_7_top.pg n 715 eng v mode spec ctrl 0 its 130 fb 1 a_steps 130 choice 1439 tie 0 ptie 0 ctie 0 tie_mov 0 tie_its 0 tie_max 0 refuse 1006 refuse_strict 1006 b_steps 0 bchoice 0 btie 0 fbtie 0 opt_bad 0
+TIE246 G_7_top.pg n 715 eng v mode xi ctrl 0 its 130 fb 1 a_steps 130 choice 1439 tie 0 ptie 0 ctie 0 tie_mov 0 tie_its 0 tie_max 0 refuse 1006 refuse_strict 1006 b_steps 0 bchoice 0 btie 0 fbtie 0 opt_bad 0
+JOB END census_v 2026-11-14T14:07:41Z

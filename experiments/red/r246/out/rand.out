@@ -1,0 +1,9 @@
+RAND246 seed 1 nmax 6 dmax 3 degmax 3 lmin 1 ctrl 0 genomes 300 tried 494 sumL 309 maxL 2 mism 0 earlyfb 0 tie_pre 0 tie_post 0 xidiff 0 r104tie 947 r104mism 0 its_top 1289 its_r104 1209
+RAND246 seed 2 nmax 8 dmax 4 degmax 3 lmin 1 ctrl 0 genomes 300 tried 463 sumL 316 maxL 2 mism 0 earlyfb 0 tie_pre 0 tie_post 0 xidiff 0 r104tie 1109 r104mism 0 its_top 1304 its_r104 1216
+RAND246 seed 3 nmax 10 dmax 4 degmax 2 lmin 2 ctrl 0 genomes 200 tried 8678 sumL 404 maxL 3 mism 0 earlyfb 0 tie_pre 0 tie_post 0 xidiff 0 r104tie 1065 r104mism 0 its_top 1049 its_r104 1004
+RAND246 seed files nmax 0 dmax 0 degmax 0 lmin 0 ctrl 0 genomes 6 tried 6 sumL 262 maxL 136 mism 0 earlyfb 0 tie_pre 0 tie_post 0 xidiff 0 r104tie 2678 r104mism 0 its_top 288 its_r104 280
+RAND246 seed perm7 nmax 0 dmax 0 degmax 0 lmin 4 ctrl 0 genomes 100 tried 353 sumL 1080 maxL 14 mism 0 earlyfb 0 tie_pre 0 tie_post 0 xidiff 0 r104tie 6106 r104mism 0 its_top 1522 its_r104 1380
+RAND246 seed perm8 nmax 0 dmax 0 degmax 0 lmin 6 ctrl 0 genomes 60 tried 196 sumL 1378 maxL 30 mism 0 earlyfb 0 tie_pre 0 tie_post 0 xidiff 0 r104tie 9545 r104mism 0 its_top 1637 its_r104 1558
+RAND246 seed 1 nmax 6 dmax 3 degmax 3 lmin 1 ctrl 1 genomes 300 tried 494 sumL 309 maxL 2 mism 214 earlyfb 128 tie_pre 0 tie_post 0 xidiff 0 r104tie 947 r104mism 0 its_top 1176 its_r104 1209
+RAND246 seed perm7 nmax 0 dmax 0 degmax 0 lmin 4 ctrl 1 genomes 100 tried 353 sumL 1080 maxL 14 mism 100 earlyfb 100 tie_pre 0 tie_post 0 xidiff 0 r104tie 6106 r104mism 0 its_top 818 its_r104 1380
+JOB END rand 2026-11-14T14:12:35Z

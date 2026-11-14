@@ -1,3 +1,4 @@
+Successor 71 (D1/D27/D28) started 2026-11-14 13:44Z (date -u); handover check 19aad1905 (VERIFY PASS, on origin 14:05Z); «go» in advance; R246 (R246-scheme-tie.md: T1 YES, family Γ3^top(G_k)); R247 = candidate RF (L-SI 57); see «Successor 71».
 Successor 64 (Opus 5.5, D1/D18/D14) started 2026-11-09 09:10Z (date -u); handover check 98d73defd (Lead 5/5); GO 09:27Z; R230 (R230-bonly3.md): B-ONLY3 SURVIVES, G1-G5; see «Successor 64».
 Successor 63 (Opus 5.5, D1/D18/D14) started 2026-11-09 03:12Z (date -u); handover check 8c69e76e (Lead 5/5); GO 03:33Z; R229 (R229-box92, -box202, -box93, -box203, -box94, -minh); HANDOVER 08:32Z (Lead park order 08:32Z); see «Successor 63 HANDOVER».
 Successor 62 (Opus 5.5, D1/D18/D14) started 2026-11-08 20:3xZ (date -u); handover check 25a47520 (Lead score 5); GO 21:01Z; R228 (R228-fw, -box199, -box91, -box200); HANDOVER ~01:5xZ, PARKED ~03:1xZ (Lead park order 02:43Z); see «Successor 62 HANDOVER».
@@ -3649,3 +3650,29 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
   for it anyway: wait for the push task's notification, then commit; (4) do not edit tracked files while verify runs (I edited lad244.c one minute into a
   verify: the verified tree then differed from the commit by that file; say so in the report, as I did); (5) rate limit seen at 12:04Z: seven_day
   allowed_warning, isUsingOverage false.
+
+## Successor 71 (from 2026-11-14 13:44Z, date -u) — R246 SCHEME-TIE, then R247 (candidate RF)
+- Trap check: local 208 behind (acd1a2fdb), ff to c7ed9b8b; skew 0 s; Oink built (setup_oink.sh, 8fbf0a7). Handover check 19aad1905, pushed 14:05Z
+  (ls-remote equal). Lead brief 13:44Z («go» in advance): question SCHEME-TIE (T1 tie-free family / T2 adversarial-tie family).
+- R246 (docs/red/R246-scheme-tie.md): T1 YES. Γ3^top(G) := Γ3(G) with c_W at eb and every e EVEN, ABOVE c_W, root-major (lower level outranks; inside a
+  level the smaller gate outranks); K0 / K3 above every e. S4a's arena then prefers the key-least option STRICTLY (P-set order = root-first key order):
+  «S4a ties met» 0, N5 and N5′-xi both 2^k + 2 iterations on Γ3^top(G_k), k = 3..9 (engines: own n5s237 both modes; L-NEW n5v both modes k 3..7; n5b spec
+  k 3..9); winners = Oink zlk / tl; states = the IDEAL key run. Tie census of Γ3(G_k): 28, 81, 212, 519, 1226, 2829, 6416 (k = 3..9), a tie at every
+  iteration, all at movers; model count equal. Theorem TOP = a lane proof by transfer of P-N5-REACH §4-§7, ONE PASS, not re-read (Lead 14:06Z: the proof
+  re-read is a later item; the family is carried as DATA today).
+- Tools experiments/red/r246: g3_246.py (OWN Γ3 builder from the packets' texts; EMODE r104 byte-equal to L-RED-B's G_k_g3.pg at k = 3..10; EMODE top),
+  tie246.py (tie census, engines s = n5s237 / v = L-NEW si.Engine; TIE246_CTRL=1), zchk246.py (Oink winners), trace246.py (states vs ideal.traj, model
+  tie count), rand246.py (Lemma TOP on random / frozen / permuted genomes; RAND246_CTRL=1), run246.sh JOB, summ246.py (doc tables from out/).
+- Envs (scratchpad, rebuilt per container): LNEW = git archive a143d406 experiments/new experiments/si/si.py experiments/harness experiments/hard-families
+  experiments/n5-second; TRUNK = git archive origin/claude/vibrant-johnson-nxvvxo experiments/n5-second experiments/harness
+  experiments/hard-families/pgsolver_si.py; redb = git archive origin/claude/l-red-b docs/red-b experiments/red-b.
+- Lead 14:06Z: design lane B (L-SI 57) told of T1; NEW TARGET = candidate RF («ROOT-FIRST»: in the play graph of (σ, σ̄) an improvable Even v DEPENDS on an
+  improvable u ≠ v iff u lies on the play from σ(v) or from one of v's improving targets; switch-best exactly at the improvable vertices in the SINK
+  strongly connected components of the dependency digraph). Pseudocode to be relayed.
+- R247 tools experiments/red/r247: si247.py (own one-sided VJ strategy improvement, pluggable rule; values by n5s237.vjproc; Howard on Friedmann's G_n
+  from ι = 8, 26, 62, 134, 278, 566 = 9·2^n − 10 at n = 1..6: engine check PASSED), rf247.py (RF from the Lead's sentence, plain reading: reproduces
+  L-SI's counts 5, 9, 12, 15, 18, 21, 24 on G_n (n = 1..7) and 6, 6, 8, 8, 10, 10 on Γ3(G_k) (k = 3..8); on Γ3^top(G_k): 10, 12, 14 at k = 3..5).
+- Sources opened this session: trunk docs/red/P-N5-REALIZE.md §1-§4; trunk docs/new/P-N5-REACH.md §3-§7 (l. 122-258); claude/l-red-b 10dfedb6
+  docs/red-b/P-N5-EXP.md l. 1-200; trunk docs/new/N5-ssi-global.md l. 46-64 (S2-S5); Friedmann LMCS 7 (3:19), arXiv 1106.0778 §6.4 as coded in
+  gens_red.py friedmann_Gn (earlier successors' source; not re-opened today).
+- RESUME POINT (updated at each push): see the last lines of this section.
