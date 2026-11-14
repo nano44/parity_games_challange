@@ -9,20 +9,23 @@ seconds are recorded. Output: one table per family, a growth line per family (a 
 Exit: 0 no wrong winner / bad strategy (timeouts are listed, not failures); 1 a wrong winner or a bad strategy (instances
 printed); 2 an engine error (crash, malformed output) or no instance answered, and nothing worse; 3 the battery itself failed (pin, reference).
 Environment: BATTERY_TIMEOUT seconds per instance (60); BATTERY_JOBS parallel families (2); BATTERY_OUT directory for
-rows.tsv, report.txt, summary.json (none); BATTERY_MAXPARAM skip sizes above it (none); BATTERY_LIMIT_E first N games of
-set e (all); BATTERY_NOSKIP=1 keeps running a family after its first timeout; BATTERY_CACHE cache directory (.cache here)."""
+rows.tsv, report.txt, summary.json (none); BATTERY_MAXPARAM skip sizes above it (none); BATTERY_FAMILY comma-separated
+family names (all); BATTERY_LIMIT_E first N games of each agreement-only family (all); BATTERY_NOSKIP=1 keeps running a
+family after its first timeout; BATTERY_CACHE cache directory (.cache here); BATTERY_OINK path of the oink binary
+(tools/oink/build/oink of the tree this file is in); BATTERY_WINNER_ONLY=1 for a prototype without strategies: winners are
+compared, strategies are NOT verified, and the last line says so (not a gauntlet step 2 pass)."""
 import sys, os, json, time, shlex, subprocess, hashlib, math, signal, tempfile, multiprocessing
 
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 sys.path.insert(0, os.path.join(ROOT, "experiments", "harness"))
 import pg, verify  # L-COMP's parser and independent strategy verifier
 
-OINK = os.path.join(ROOT, "tools", "oink", "build", "oink")
+OINK = os.environ.get("BATTERY_OINK", os.path.join(ROOT, "tools", "oink", "build", "oink"))
 CACHE = os.environ.get("BATTERY_CACHE", os.path.join(HERE, ".cache"))
 SETS = {"a": "a_gamma3", "b": "b_wrapper", "c": "c_hard", "d": "d_harness", "e": "e_random"}
 TIMEOUT = float(os.environ.get("BATTERY_TIMEOUT", "60")); JOBS = int(os.environ.get("BATTERY_JOBS", "2"))
 OUT = os.environ.get("BATTERY_OUT"); MAXPARAM = os.environ.get("BATTERY_MAXPARAM"); LIMIT_E = os.environ.get("BATTERY_LIMIT_E")
-NOSKIP = os.environ.get("BATTERY_NOSKIP") == "1"; REFTIMEOUT = float(os.environ.get("BATTERY_REFTIMEOUT", "600"))
+NOSKIP = os.environ.get("BATTERY_NOSKIP") == "1"; FAMILY = os.environ.get("BATTERY_FAMILY"); WINNER_ONLY = os.environ.get("BATTERY_WINNER_ONLY") == "1"; REFTIMEOUT = float(os.environ.get("BATTERY_REFTIMEOUT", "600"))
 CHUNK = 250  # games of an agreement-only family per task
 FREE_AT = 7  # answered sizes from which the growth fits get a free additive constant
 
@@ -107,14 +110,16 @@ def parse_sol(text, n):
 
 
 def reference(path, inst, n):
-    """Winner per vertex by Oink (pinned 8fbf0a7): zlk, or tl where the manifest says so or zlk fails. Cached by the game's sha1."""
+    """Winner per vertex by Oink (pinned 8fbf0a7), run with -v ("solution verified" required): the manifest's solver (zlk by
+    default; tl / psi / rtl where zlk aborts or blows up, e.g. counter_m 41, 42 and the families built against zlk); when the
+    manifest says zlk and zlk fails, tl, psi, rtl are tried in turn. Cached by the game's sha1."""
     cf = os.path.join(CACHE, "ref", inst["sha1"] + ".json")
     if os.path.exists(cf):
         c = json.load(open(cf))
         if len(c["win"]) == n: return c["win"], c["solver"]
     if not os.access(OINK, os.X_OK): raise BatteryError("Oink is not built: run scripts/setup_oink.sh")
     os.makedirs(os.path.dirname(cf), exist_ok=True); win = solver = None; why = ""
-    for s in (["tl"] if inst["ref"] == "tl" else ["zlk", "tl"]):
+    for s in [inst["ref"]] + [x for x in ("zlk", "tl", "psi", "rtl") if x != inst["ref"] and inst["ref"] == "zlk"]:
         fd, sol = tempfile.mkstemp(suffix=".sol", dir=CACHE); os.close(fd)
         rc, out, err, _ = run_cmd([OINK, "--" + s, "-v", path, sol], REFTIMEOUT)
         ok = rc == 0 and "solution verified" in (out + err)
@@ -156,6 +161,7 @@ def run_instance(engine, inst):
     wrong = [v for v in range(g.n) if win[v] != ref[v]]
     if wrong:
         row["status"] = "WRONG-WINNER"; row["detail"] = "%d of %d vertices differ from Oink %s, first v%d (engine %d, Oink %d)" % (len(wrong), g.n, row["ref"], wrong[0], win[wrong[0]], ref[wrong[0]]); return row
+    if WINNER_ONLY: row["status"] = "OK"; row["detail"] = "winner only"; return row
     errs = verify.check(g, win, strat)
     if errs: row["status"] = "BAD-STRATEGY"; row["detail"] = "%d verifier errors, first: %s" % (len(errs), errs[0]); return row
     row["status"] = "OK"; return row
@@ -240,6 +246,7 @@ def main():
             if MAXPARAM and inst["kind"] == "fit" and inst["param"] > int(MAXPARAM): continue
             fams.setdefault(inst["family"], []).append(inst)
         for fam, insts in fams.items():
+            if FAMILY and fam not in FAMILY.split(","): continue
             order.append((s, fam))
             if insts[0]["kind"] == "fit":
                 tasks.append((engine, sorted(insts, key=lambda i: i["param"]), True))
@@ -252,8 +259,8 @@ def main():
         for part in pool.imap_unordered(run_task, tasks):
             rows += part; done += len(part)
             print("battery: %d of %d instances done (%.0f s)" % (done, total, time.time() - t0), file=sys.stderr, flush=True)
-    head = "== battery: engine `%s` | sets %s | timeout %g s per instance | jobs %d | %s (date -u)" % (
-        a[0], " ".join(sets), TIMEOUT, JOBS, time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()))
+    head = "== battery: engine `%s` | sets %s | timeout %g s per instance | jobs %d | %s%s (date -u)" % (
+        a[0], " ".join(sets), TIMEOUT, JOBS, "WINNER ONLY, strategies not verified | " if WINNER_ONLY else "", time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()))
     rep = [head]; summary = dict(engine=a[0], sets=sets, timeout=TIMEOUT, jobs=JOBS, families=[], counts={}, failures=[])
     for s, fam in order:
         fr = sorted([r for r in rows if r["set"] == s and r["family"] == fam], key=lambda r: (r["param"], r["file"]))
@@ -291,8 +298,9 @@ def main():
     elif bad: code = 1; rep.append("BATTERY FAIL: %d instances with a wrong winner or a bad strategy (listed above)" % len(bad))
     elif errs: code = 2; rep.append("BATTERY ENGINE ERROR: %d instances with an engine crash or malformed output (listed above); no wrong winner, no bad strategy" % len(errs))
     elif not counts.get("OK"): code = 2; rep.append("BATTERY NO ANSWER: the engine answered no instance (%d timeouts); nothing was checked" % counts.get("TIMEOUT", 0))
+    elif WINNER_ONLY: code = 0; rep.append("BATTERY WINNERS AGREE (BATTERY_WINNER_ONLY=1: strategies NOT verified, so this is NOT gauntlet step 2, D2 change 5): no wrong winner on %d answered instances (%d timeouts, %d skipped after a timeout)" % (counts.get("OK", 0), counts.get("TIMEOUT", 0), counts.get("SKIPPED", 0)))
     else: code = 0; rep.append("BATTERY PASS: no wrong winner, no bad strategy on %d answered instances (%d timeouts, %d skipped after a timeout)" % (counts.get("OK", 0), counts.get("TIMEOUT", 0), counts.get("SKIPPED", 0)))
-    summary["exit"] = code; text = "\n".join(rep) + "\n"; sys.stdout.write(text)
+    summary["exit"] = code; summary["winner_only"] = WINNER_ONLY; text = "\n".join(rep) + "\n"; sys.stdout.write(text)
     if OUT:
         os.makedirs(OUT, exist_ok=True); open(os.path.join(OUT, "report.txt"), "w").write(text)
         json.dump(summary, open(os.path.join(OUT, "summary.json"), "w"), indent=1)

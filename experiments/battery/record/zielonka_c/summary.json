@@ -1,0 +1,2099 @@
+{
+ "engine": "python3 -B engines/zielonka.py",
+ "sets": [
+  "c_hard"
+ ],
+ "timeout": 20.0,
+ "jobs": 2,
+ "families": [
+  {
+   "set": "c_hard",
+   "family": "tc",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 7,
+    "ratios": [
+     3.524,
+     3.781,
+     3.915
+    ],
+    "exponent": 3.167,
+    "err_power": 0.713,
+    "c0_power": 42.14,
+    "exponent_param": 5.553,
+    "err_power_param": 0.845,
+    "factor_param": 3.5313,
+    "err_exp_param": 0.0391,
+    "factor": 3.5459,
+    "err_exp": 1.86,
+    "c0_exp": -43.0,
+    "reading": "exponential-looking"
+   },
+   "rows": [
+    {
+     "param": 2,
+     "n": 22,
+     "m": 36,
+     "d": 11,
+     "iterations": 43,
+     "steps": 445,
+     "seconds": 0.035,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 68,
+     "m": 128,
+     "d": 19,
+     "iterations": 175,
+     "steps": 4633,
+     "seconds": 0.04,
+     "status": "OK"
+    },
+    {
+     "param": 6,
+     "n": 138,
+     "m": 276,
+     "d": 27,
+     "iterations": 545,
+     "steps": 25149,
+     "seconds": 0.047,
+     "status": "OK"
+    },
+    {
+     "param": 8,
+     "n": 232,
+     "m": 480,
+     "d": 35,
+     "iterations": 1747,
+     "steps": 114677,
+     "seconds": 0.11,
+     "status": "OK"
+    },
+    {
+     "param": 10,
+     "n": 350,
+     "m": 740,
+     "d": 43,
+     "iterations": 6157,
+     "steps": 511881,
+     "seconds": 0.277,
+     "status": "OK"
+    },
+    {
+     "param": 12,
+     "n": 492,
+     "m": 1056,
+     "d": 51,
+     "iterations": 23279,
+     "steps": 2314353,
+     "seconds": 1.36,
+     "status": "OK"
+    },
+    {
+     "param": 14,
+     "n": 658,
+     "m": 1428,
+     "d": 59,
+     "iterations": 91129,
+     "steps": 10528101,
+     "seconds": 4.807,
+     "status": "OK"
+    },
+    {
+     "param": 16,
+     "n": 848,
+     "m": 1856,
+     "d": 67,
+     "iterations": null,
+     "steps": null,
+     "seconds": 20.022,
+     "status": "TIMEOUT"
+    },
+    {
+     "param": 18,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 20,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 24,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 28,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 32,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    }
+   ]
+  },
+  {
+   "set": "c_hard",
+   "family": "tc+",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 7,
+    "ratios": [
+     3.756,
+     3.86,
+     3.934
+    ],
+    "exponent": 2.147,
+    "err_power": 0.542,
+    "c0_power": 54.28,
+    "exponent_param": 5.987,
+    "err_power_param": 0.734,
+    "factor_param": 3.766,
+    "err_exp_param": 0.00407,
+    "factor": 4.9222,
+    "err_exp": 16.2,
+    "c0_exp": 56.64,
+    "reading": "exponential-looking"
+   },
+   "rows": [
+    {
+     "param": 2,
+     "n": 24,
+     "m": 38,
+     "d": 15,
+     "iterations": 59,
+     "steps": 530,
+     "seconds": 0.026,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 104,
+     "m": 196,
+     "d": 27,
+     "iterations": 339,
+     "steps": 8070,
+     "seconds": 0.033,
+     "status": "OK"
+    },
+    {
+     "param": 6,
+     "n": 288,
+     "m": 570,
+     "d": 39,
+     "iterations": 1357,
+     "steps": 57478,
+     "seconds": 0.067,
+     "status": "OK"
+    },
+    {
+     "param": 8,
+     "n": 624,
+     "m": 1256,
+     "d": 51,
+     "iterations": 5033,
+     "steps": 312494,
+     "seconds": 0.195,
+     "status": "OK"
+    },
+    {
+     "param": 10,
+     "n": 1160,
+     "m": 2350,
+     "d": 63,
+     "iterations": 18903,
+     "steps": 1543442,
+     "seconds": 0.869,
+     "status": "OK"
+    },
+    {
+     "param": 12,
+     "n": 1944,
+     "m": 3948,
+     "d": 75,
+     "iterations": 72967,
+     "steps": 7367654,
+     "seconds": 4.373,
+     "status": "OK"
+    },
+    {
+     "param": 14,
+     "n": 3024,
+     "m": 6146,
+     "d": 87,
+     "iterations": 287081,
+     "steps": 34555550,
+     "seconds": 17.765,
+     "status": "OK"
+    },
+    {
+     "param": 16,
+     "n": 4448,
+     "m": 9040,
+     "d": 99,
+     "iterations": null,
+     "steps": null,
+     "seconds": 20.022,
+     "status": "TIMEOUT"
+    },
+    {
+     "param": 18,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 20,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 24,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 28,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 32,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    }
+   ]
+  },
+  {
+   "set": "c_hard",
+   "family": "counter_symsi",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 5,
+    "ratios": [
+     9.965,
+     9.198,
+     9.0
+    ],
+    "exponent": 5.853,
+    "err_power": 2.48,
+    "c0_power": 0.0,
+    "exponent_param": 5.567,
+    "err_power_param": 2.83,
+    "factor_param": 9.8389,
+    "err_exp_param": 0.0281,
+    "factor": 9.8389,
+    "err_exp": 0.0281,
+    "c0_exp": 0.0,
+    "reading": "exponential-looking"
+   },
+   "rows": [
+    {
+     "param": 2,
+     "n": 22,
+     "m": 48,
+     "d": 21,
+     "iterations": 52,
+     "steps": 437,
+     "seconds": 0.036,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 42,
+     "m": 92,
+     "d": 41,
+     "iterations": 607,
+     "steps": 5772,
+     "seconds": 0.038,
+     "status": "OK"
+    },
+    {
+     "param": 6,
+     "n": 62,
+     "m": 136,
+     "d": 61,
+     "iterations": 6049,
+     "steps": 60576,
+     "seconds": 0.08,
+     "status": "OK"
+    },
+    {
+     "param": 8,
+     "n": 82,
+     "m": 180,
+     "d": 81,
+     "iterations": 55639,
+     "steps": 575226,
+     "seconds": 0.308,
+     "status": "OK"
+    },
+    {
+     "param": 10,
+     "n": 102,
+     "m": 224,
+     "d": 101,
+     "iterations": 500769,
+     "steps": 5282418,
+     "seconds": 2.48,
+     "status": "OK"
+    },
+    {
+     "param": 12,
+     "n": 122,
+     "m": 268,
+     "d": 121,
+     "iterations": null,
+     "steps": null,
+     "seconds": 20.022,
+     "status": "TIMEOUT"
+    },
+    {
+     "param": 14,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 16,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 18,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 20,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 24,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 28,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 32,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 40,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    }
+   ]
+  },
+  {
+   "set": "c_hard",
+   "family": "counter_rr",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 10,
+    "ratios": [
+     3.645,
+     3.638,
+     3.634
+    ],
+    "exponent": 6.549,
+    "err_power": 4.56,
+    "c0_power": 4.9,
+    "exponent_param": 6.549,
+    "err_power_param": 4.56,
+    "factor_param": 3.6816,
+    "err_exp_param": 0.00306,
+    "factor": 3.6816,
+    "err_exp": 0.00306,
+    "c0_exp": -2.8,
+    "reading": "exponential-looking"
+   },
+   "rows": [
+    {
+     "param": 2,
+     "n": 8,
+     "m": 16,
+     "d": 4,
+     "iterations": 5,
+     "steps": 36,
+     "seconds": 0.024,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 16,
+     "m": 32,
+     "d": 8,
+     "iterations": 25,
+     "steps": 180,
+     "seconds": 0.024,
+     "status": "OK"
+    },
+    {
+     "param": 6,
+     "n": 24,
+     "m": 48,
+     "d": 12,
+     "iterations": 102,
+     "steps": 744,
+     "seconds": 0.025,
+     "status": "OK"
+    },
+    {
+     "param": 8,
+     "n": 32,
+     "m": 64,
+     "d": 16,
+     "iterations": 391,
+     "steps": 2876,
+     "seconds": 0.026,
+     "status": "OK"
+    },
+    {
+     "param": 10,
+     "n": 40,
+     "m": 80,
+     "d": 20,
+     "iterations": 1459,
+     "steps": 10780,
+     "seconds": 0.031,
+     "status": "OK"
+    },
+    {
+     "param": 12,
+     "n": 48,
+     "m": 96,
+     "d": 24,
+     "iterations": 5373,
+     "steps": 39796,
+     "seconds": 0.041,
+     "status": "OK"
+    },
+    {
+     "param": 14,
+     "n": 56,
+     "m": 112,
+     "d": 28,
+     "iterations": 19654,
+     "steps": 145768,
+     "seconds": 0.086,
+     "status": "OK"
+    },
+    {
+     "param": 16,
+     "n": 64,
+     "m": 128,
+     "d": 32,
+     "iterations": 71638,
+     "steps": 531720,
+     "seconds": 0.271,
+     "status": "OK"
+    },
+    {
+     "param": 18,
+     "n": 72,
+     "m": 144,
+     "d": 36,
+     "iterations": 260620,
+     "steps": 1935216,
+     "seconds": 0.869,
+     "status": "OK"
+    },
+    {
+     "param": 20,
+     "n": 80,
+     "m": 160,
+     "d": 40,
+     "iterations": 947156,
+     "steps": 7034672,
+     "seconds": 3.656,
+     "status": "OK"
+    },
+    {
+     "param": 24,
+     "n": 96,
+     "m": 192,
+     "d": 48,
+     "iterations": null,
+     "steps": null,
+     "seconds": 20.021,
+     "status": "TIMEOUT"
+    },
+    {
+     "param": 28,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 32,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 40,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    }
+   ]
+  },
+  {
+   "set": "c_hard",
+   "family": "counter_dp",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 10,
+    "ratios": [
+     3.383,
+     3.383,
+     3.383
+    ],
+    "exponent": 7.191,
+    "err_power": 2.46,
+    "c0_power": 13.72,
+    "exponent_param": 6.144,
+    "err_power_param": 3.91,
+    "factor_param": 3.3927,
+    "err_exp_param": 0.00091,
+    "factor": 3.3927,
+    "err_exp": 0.00091,
+    "c0_exp": -2.52,
+    "reading": "exponential-looking"
+   },
+   "rows": [
+    {
+     "param": 2,
+     "n": 12,
+     "m": 19,
+     "d": 6,
+     "iterations": 14,
+     "steps": 97,
+     "seconds": 0.025,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 20,
+     "m": 33,
+     "d": 8,
+     "iterations": 52,
+     "steps": 398,
+     "seconds": 0.029,
+     "status": "OK"
+    },
+    {
+     "param": 6,
+     "n": 28,
+     "m": 47,
+     "d": 10,
+     "iterations": 188,
+     "steps": 1489,
+     "seconds": 0.027,
+     "status": "OK"
+    },
+    {
+     "param": 8,
+     "n": 36,
+     "m": 61,
+     "d": 12,
+     "iterations": 646,
+     "steps": 5192,
+     "seconds": 0.031,
+     "status": "OK"
+    },
+    {
+     "param": 10,
+     "n": 44,
+     "m": 75,
+     "d": 14,
+     "iterations": 2194,
+     "steps": 17749,
+     "seconds": 0.037,
+     "status": "OK"
+    },
+    {
+     "param": 12,
+     "n": 52,
+     "m": 89,
+     "d": 16,
+     "iterations": 7432,
+     "steps": 60270,
+     "seconds": 0.068,
+     "status": "OK"
+    },
+    {
+     "param": 14,
+     "n": 60,
+     "m": 103,
+     "d": 18,
+     "iterations": 25152,
+     "steps": 204149,
+     "seconds": 0.127,
+     "status": "OK"
+    },
+    {
+     "param": 16,
+     "n": 68,
+     "m": 117,
+     "d": 20,
+     "iterations": 85098,
+     "steps": 690920,
+     "seconds": 0.376,
+     "status": "OK"
+    },
+    {
+     "param": 18,
+     "n": 76,
+     "m": 131,
+     "d": 22,
+     "iterations": 287894,
+     "steps": 2337689,
+     "seconds": 1.155,
+     "status": "OK"
+    },
+    {
+     "param": 20,
+     "n": 84,
+     "m": 145,
+     "d": 24,
+     "iterations": 973948,
+     "steps": 7908702,
+     "seconds": 4.041,
+     "status": "OK"
+    },
+    {
+     "param": 24,
+     "n": 100,
+     "m": 173,
+     "d": 28,
+     "iterations": null,
+     "steps": null,
+     "seconds": 20.018,
+     "status": "TIMEOUT"
+    },
+    {
+     "param": 28,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 32,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 40,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    }
+   ]
+  },
+  {
+   "set": "c_hard",
+   "family": "counter_m",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 11,
+    "ratios": [
+     2.631,
+     2.628,
+     6.887
+    ],
+    "exponent": 6.388,
+    "err_power": 2.57,
+    "c0_power": 9.8,
+    "exponent_param": 5.51,
+    "err_power_param": 3.78,
+    "factor_param": 2.6393,
+    "err_exp_param": 0.000709,
+    "factor": 2.6393,
+    "err_exp": 0.000709,
+    "c0_exp": -4.4,
+    "reading": "exponential-looking"
+   },
+   "rows": [
+    {
+     "param": 2,
+     "n": 9,
+     "m": 15,
+     "d": 5,
+     "iterations": 10,
+     "steps": 71,
+     "seconds": 0.028,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 15,
+     "m": 27,
+     "d": 7,
+     "iterations": 33,
+     "steps": 296,
+     "seconds": 0.035,
+     "status": "OK"
+    },
+    {
+     "param": 6,
+     "n": 21,
+     "m": 39,
+     "d": 9,
+     "iterations": 95,
+     "steps": 982,
+     "seconds": 0.026,
+     "status": "OK"
+    },
+    {
+     "param": 8,
+     "n": 27,
+     "m": 51,
+     "d": 11,
+     "iterations": 260,
+     "steps": 2974,
+     "seconds": 0.028,
+     "status": "OK"
+    },
+    {
+     "param": 10,
+     "n": 33,
+     "m": 63,
+     "d": 13,
+     "iterations": 697,
+     "steps": 8590,
+     "seconds": 0.031,
+     "status": "OK"
+    },
+    {
+     "param": 12,
+     "n": 39,
+     "m": 75,
+     "d": 15,
+     "iterations": 1851,
+     "steps": 24114,
+     "seconds": 0.039,
+     "status": "OK"
+    },
+    {
+     "param": 14,
+     "n": 45,
+     "m": 87,
+     "d": 17,
+     "iterations": 4892,
+     "steps": 66438,
+     "seconds": 0.086,
+     "status": "OK"
+    },
+    {
+     "param": 16,
+     "n": 51,
+     "m": 99,
+     "d": 19,
+     "iterations": 12893,
+     "steps": 180686,
+     "seconds": 0.116,
+     "status": "OK"
+    },
+    {
+     "param": 18,
+     "n": 57,
+     "m": 111,
+     "d": 21,
+     "iterations": 33919,
+     "steps": 486834,
+     "seconds": 0.254,
+     "status": "OK"
+    },
+    {
+     "param": 20,
+     "n": 63,
+     "m": 123,
+     "d": 23,
+     "iterations": 89124,
+     "steps": 1302742,
+     "seconds": 0.712,
+     "status": "OK"
+    },
+    {
+     "param": 24,
+     "n": 75,
+     "m": 147,
+     "d": 27,
+     "iterations": 613811,
+     "steps": 9197778,
+     "seconds": 4.58,
+     "status": "OK"
+    },
+    {
+     "param": 28,
+     "n": 87,
+     "m": 171,
+     "d": 31,
+     "iterations": null,
+     "steps": null,
+     "seconds": 20.023,
+     "status": "TIMEOUT"
+    },
+    {
+     "param": 32,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 40,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 41,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 42,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    }
+   ]
+  },
+  {
+   "set": "c_hard",
+   "family": "counter_core",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 5,
+    "ratios": [
+     13.805,
+     13.385,
+     13.246
+    ],
+    "exponent": 7.199,
+    "err_power": 3.39,
+    "c0_power": 0.0,
+    "exponent_param": 6.386,
+    "err_power_param": 4.67,
+    "factor_param": 13.8716,
+    "err_exp_param": 0.00928,
+    "factor": 13.8716,
+    "err_exp": 0.00928,
+    "c0_exp": 0.0,
+    "reading": "exponential-looking"
+   },
+   "rows": [
+    {
+     "param": 2,
+     "n": 15,
+     "m": 28,
+     "d": 10,
+     "iterations": 64,
+     "steps": 374,
+     "seconds": 0.026,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 27,
+     "m": 52,
+     "d": 18,
+     "iterations": 988,
+     "steps": 5744,
+     "seconds": 0.029,
+     "status": "OK"
+    },
+    {
+     "param": 6,
+     "n": 39,
+     "m": 76,
+     "d": 26,
+     "iterations": 13639,
+     "steps": 78841,
+     "seconds": 0.08,
+     "status": "OK"
+    },
+    {
+     "param": 8,
+     "n": 51,
+     "m": 100,
+     "d": 34,
+     "iterations": 182557,
+     "steps": 1052351,
+     "seconds": 0.636,
+     "status": "OK"
+    },
+    {
+     "param": 10,
+     "n": 63,
+     "m": 124,
+     "d": 42,
+     "iterations": 2418216,
+     "steps": 13923541,
+     "seconds": 8.718,
+     "status": "OK"
+    },
+    {
+     "param": 12,
+     "n": 75,
+     "m": 148,
+     "d": 50,
+     "iterations": null,
+     "steps": null,
+     "seconds": 20.021,
+     "status": "TIMEOUT"
+    },
+    {
+     "param": 14,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 16,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 18,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 20,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 24,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 28,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 32,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 40,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    }
+   ]
+  },
+  {
+   "set": "c_hard",
+   "family": "counter_rob",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 4,
+    "ratios": [
+     15.538,
+     13.843,
+     13.395
+    ],
+    "exponent": 3.692,
+    "err_power": 0.87,
+    "c0_power": 0.0,
+    "exponent_param": 5.598,
+    "err_power_param": 1.58,
+    "factor_param": 14.1903,
+    "err_exp_param": 0.00583,
+    "factor": 13.4112,
+    "err_exp": 0.948,
+    "c0_exp": 0.0,
+    "reading": "exponential-looking"
+   },
+   "rows": [
+    {
+     "param": 2,
+     "n": 31,
+     "m": 80,
+     "d": 10,
+     "iterations": 65,
+     "steps": 1290,
+     "seconds": 0.034,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 83,
+     "m": 236,
+     "d": 18,
+     "iterations": 1010,
+     "steps": 34662,
+     "seconds": 0.055,
+     "status": "OK"
+    },
+    {
+     "param": 6,
+     "n": 159,
+     "m": 472,
+     "d": 26,
+     "iterations": 13981,
+     "steps": 674113,
+     "seconds": 0.354,
+     "status": "OK"
+    },
+    {
+     "param": 8,
+     "n": 259,
+     "m": 788,
+     "d": 34,
+     "iterations": 187274,
+     "steps": 11552723,
+     "seconds": 4.28,
+     "status": "OK"
+    },
+    {
+     "param": 10,
+     "n": 383,
+     "m": 1184,
+     "d": 42,
+     "iterations": null,
+     "steps": null,
+     "seconds": 20.024,
+     "status": "TIMEOUT"
+    },
+    {
+     "param": 12,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 14,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 16,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 18,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 20,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 24,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 28,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 32,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    }
+   ]
+  },
+  {
+   "set": "c_hard",
+   "family": "counter_ortl",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 8,
+    "ratios": [
+     4.947,
+     4.853,
+     4.775
+    ],
+    "exponent": 7.326,
+    "err_power": 1.98,
+    "c0_power": 20.58,
+    "exponent_param": 7.046,
+    "err_power_param": 2.23,
+    "factor_param": 4.9957,
+    "err_exp_param": 0.00794,
+    "factor": 4.9957,
+    "err_exp": 0.00794,
+    "c0_exp": -8.4,
+    "reading": "exponential-looking"
+   },
+   "rows": [
+    {
+     "param": 2,
+     "n": 11,
+     "m": 17,
+     "d": 8,
+     "iterations": 21,
+     "steps": 121,
+     "seconds": 0.038,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 21,
+     "m": 33,
+     "d": 14,
+     "iterations": 131,
+     "steps": 898,
+     "seconds": 0.037,
+     "status": "OK"
+    },
+    {
+     "param": 6,
+     "n": 31,
+     "m": 49,
+     "d": 20,
+     "iterations": 717,
+     "steps": 5086,
+     "seconds": 0.042,
+     "status": "OK"
+    },
+    {
+     "param": 8,
+     "n": 41,
+     "m": 65,
+     "d": 26,
+     "iterations": 3741,
+     "steps": 26482,
+     "seconds": 0.052,
+     "status": "OK"
+    },
+    {
+     "param": 10,
+     "n": 51,
+     "m": 81,
+     "d": 32,
+     "iterations": 18941,
+     "steps": 132694,
+     "seconds": 0.121,
+     "status": "OK"
+    },
+    {
+     "param": 12,
+     "n": 61,
+     "m": 97,
+     "d": 38,
+     "iterations": 93693,
+     "steps": 649018,
+     "seconds": 0.425,
+     "status": "OK"
+    },
+    {
+     "param": 14,
+     "n": 71,
+     "m": 113,
+     "d": 44,
+     "iterations": 454653,
+     "steps": 3116830,
+     "seconds": 1.993,
+     "status": "OK"
+    },
+    {
+     "param": 16,
+     "n": 81,
+     "m": 129,
+     "d": 50,
+     "iterations": 2170877,
+     "steps": 14745346,
+     "seconds": 9.486,
+     "status": "OK"
+    },
+    {
+     "param": 18,
+     "n": 91,
+     "m": 145,
+     "d": 56,
+     "iterations": null,
+     "steps": null,
+     "seconds": 20.021,
+     "status": "TIMEOUT"
+    },
+    {
+     "param": 20,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 24,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 28,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 32,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 40,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    }
+   ]
+  },
+  {
+   "set": "c_hard",
+   "family": "counter_qpt",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 17,
+    "ratios": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "exponent": 0.0,
+    "err_power": 0.0,
+    "c0_power": 0.0,
+    "exponent_param": 0.0,
+    "err_power_param": 0.0,
+    "factor_param": 1.0,
+    "err_exp_param": 0.0,
+    "factor": 1.0,
+    "err_exp": 0.0,
+    "c0_exp": 0.0,
+    "reading": "polynomial-looking"
+   },
+   "rows": [
+    {
+     "param": 2,
+     "n": 4,
+     "m": 5,
+     "d": 4,
+     "iterations": 1,
+     "steps": 5,
+     "seconds": 0.026,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 8,
+     "m": 11,
+     "d": 8,
+     "iterations": 1,
+     "steps": 11,
+     "seconds": 0.025,
+     "status": "OK"
+    },
+    {
+     "param": 6,
+     "n": 12,
+     "m": 17,
+     "d": 12,
+     "iterations": 1,
+     "steps": 17,
+     "seconds": 0.027,
+     "status": "OK"
+    },
+    {
+     "param": 8,
+     "n": 16,
+     "m": 23,
+     "d": 16,
+     "iterations": 1,
+     "steps": 23,
+     "seconds": 0.038,
+     "status": "OK"
+    },
+    {
+     "param": 10,
+     "n": 20,
+     "m": 29,
+     "d": 20,
+     "iterations": 1,
+     "steps": 29,
+     "seconds": 0.034,
+     "status": "OK"
+    },
+    {
+     "param": 12,
+     "n": 24,
+     "m": 35,
+     "d": 24,
+     "iterations": 1,
+     "steps": 35,
+     "seconds": 0.024,
+     "status": "OK"
+    },
+    {
+     "param": 14,
+     "n": 28,
+     "m": 41,
+     "d": 28,
+     "iterations": 1,
+     "steps": 41,
+     "seconds": 0.028,
+     "status": "OK"
+    },
+    {
+     "param": 16,
+     "n": 32,
+     "m": 47,
+     "d": 32,
+     "iterations": 1,
+     "steps": 47,
+     "seconds": 0.034,
+     "status": "OK"
+    },
+    {
+     "param": 18,
+     "n": 36,
+     "m": 53,
+     "d": 36,
+     "iterations": 1,
+     "steps": 53,
+     "seconds": 0.033,
+     "status": "OK"
+    },
+    {
+     "param": 20,
+     "n": 40,
+     "m": 59,
+     "d": 40,
+     "iterations": 1,
+     "steps": 59,
+     "seconds": 0.034,
+     "status": "OK"
+    },
+    {
+     "param": 22,
+     "n": 44,
+     "m": 65,
+     "d": 44,
+     "iterations": 1,
+     "steps": 65,
+     "seconds": 0.033,
+     "status": "OK"
+    },
+    {
+     "param": 24,
+     "n": 48,
+     "m": 71,
+     "d": 48,
+     "iterations": 1,
+     "steps": 71,
+     "seconds": 0.029,
+     "status": "OK"
+    },
+    {
+     "param": 26,
+     "n": 52,
+     "m": 77,
+     "d": 52,
+     "iterations": 1,
+     "steps": 77,
+     "seconds": 0.027,
+     "status": "OK"
+    },
+    {
+     "param": 28,
+     "n": 56,
+     "m": 83,
+     "d": 56,
+     "iterations": 1,
+     "steps": 83,
+     "seconds": 0.025,
+     "status": "OK"
+    },
+    {
+     "param": 32,
+     "n": 64,
+     "m": 95,
+     "d": 64,
+     "iterations": 1,
+     "steps": 95,
+     "seconds": 0.028,
+     "status": "OK"
+    },
+    {
+     "param": 64,
+     "n": 128,
+     "m": 191,
+     "d": 128,
+     "iterations": 1,
+     "steps": 191,
+     "seconds": 0.026,
+     "status": "OK"
+    },
+    {
+     "param": 128,
+     "n": 256,
+     "m": 383,
+     "d": 256,
+     "iterations": 1,
+     "steps": 383,
+     "seconds": 0.027,
+     "status": "OK"
+    }
+   ]
+  },
+  {
+   "set": "c_hard",
+   "family": "recursiveladder",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 13,
+    "ratios": [
+     2.618,
+     2.618,
+     2.618
+    ],
+    "exponent": 5.822,
+    "err_power": 8.01,
+    "c0_power": 4.9,
+    "exponent_param": 5.822,
+    "err_power_param": 8.01,
+    "factor_param": 2.6174,
+    "err_exp_param": 2.97e-05,
+    "factor": 2.6174,
+    "err_exp": 2.97e-05,
+    "c0_exp": -4.2,
+    "reading": "exponential-looking"
+   },
+   "rows": [
+    {
+     "param": 2,
+     "n": 10,
+     "m": 19,
+     "d": 8,
+     "iterations": 5,
+     "steps": 65,
+     "seconds": 0.024,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 20,
+     "m": 41,
+     "d": 14,
+     "iterations": 20,
+     "steps": 329,
+     "seconds": 0.033,
+     "status": "OK"
+    },
+    {
+     "param": 6,
+     "n": 30,
+     "m": 63,
+     "d": 20,
+     "iterations": 59,
+     "steps": 1091,
+     "seconds": 0.031,
+     "status": "OK"
+    },
+    {
+     "param": 8,
+     "n": 40,
+     "m": 85,
+     "d": 26,
+     "iterations": 161,
+     "steps": 3157,
+     "seconds": 0.031,
+     "status": "OK"
+    },
+    {
+     "param": 10,
+     "n": 50,
+     "m": 107,
+     "d": 32,
+     "iterations": 428,
+     "steps": 8637,
+     "seconds": 0.032,
+     "status": "OK"
+    },
+    {
+     "param": 12,
+     "n": 60,
+     "m": 129,
+     "d": 38,
+     "iterations": 1127,
+     "steps": 23055,
+     "seconds": 0.04,
+     "status": "OK"
+    },
+    {
+     "param": 14,
+     "n": 70,
+     "m": 151,
+     "d": 44,
+     "iterations": 2957,
+     "steps": 60873,
+     "seconds": 0.065,
+     "status": "OK"
+    },
+    {
+     "param": 16,
+     "n": 80,
+     "m": 173,
+     "d": 50,
+     "iterations": 7748,
+     "steps": 159953,
+     "seconds": 0.117,
+     "status": "OK"
+    },
+    {
+     "param": 18,
+     "n": 90,
+     "m": 195,
+     "d": 56,
+     "iterations": 20291,
+     "steps": 419419,
+     "seconds": 0.195,
+     "status": "OK"
+    },
+    {
+     "param": 20,
+     "n": 100,
+     "m": 217,
+     "d": 62,
+     "iterations": 53129,
+     "steps": 1098781,
+     "seconds": 0.609,
+     "status": "OK"
+    },
+    {
+     "param": 22,
+     "n": 110,
+     "m": 239,
+     "d": 68,
+     "iterations": 139100,
+     "steps": 2877445,
+     "seconds": 1.516,
+     "status": "OK"
+    },
+    {
+     "param": 24,
+     "n": 120,
+     "m": 261,
+     "d": 74,
+     "iterations": 364175,
+     "steps": 7534119,
+     "seconds": 3.284,
+     "status": "OK"
+    },
+    {
+     "param": 26,
+     "n": 130,
+     "m": 283,
+     "d": 80,
+     "iterations": 953429,
+     "steps": 19725521,
+     "seconds": 8.103,
+     "status": "OK"
+    },
+    {
+     "param": 28,
+     "n": 140,
+     "m": 305,
+     "d": 86,
+     "iterations": null,
+     "steps": null,
+     "seconds": 20.024,
+     "status": "TIMEOUT"
+    },
+    {
+     "param": 30,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 34,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 38,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    }
+   ]
+  },
+  {
+   "set": "c_hard",
+   "family": "switchallexp",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 7,
+    "ratios": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "exponent": 0.0,
+    "err_power": 0.0,
+    "c0_power": 0.0,
+    "exponent_param": 0.0,
+    "err_power_param": 0.0,
+    "factor_param": 1.0,
+    "err_exp_param": 0.0,
+    "factor": 1.0,
+    "err_exp": 0.0,
+    "c0_exp": 0.0,
+    "reading": "polynomial-looking"
+   },
+   "rows": [
+    {
+     "param": 1,
+     "n": 21,
+     "m": 41,
+     "d": 21,
+     "iterations": 4,
+     "steps": 104,
+     "seconds": 0.024,
+     "status": "OK"
+    },
+    {
+     "param": 2,
+     "n": 35,
+     "m": 75,
+     "d": 35,
+     "iterations": 4,
+     "steps": 189,
+     "seconds": 0.053,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 63,
+     "m": 143,
+     "d": 63,
+     "iterations": 4,
+     "steps": 359,
+     "seconds": 0.034,
+     "status": "OK"
+    },
+    {
+     "param": 8,
+     "n": 119,
+     "m": 279,
+     "d": 119,
+     "iterations": 4,
+     "steps": 699,
+     "seconds": 0.035,
+     "status": "OK"
+    },
+    {
+     "param": 16,
+     "n": 231,
+     "m": 551,
+     "d": 231,
+     "iterations": 4,
+     "steps": 1379,
+     "seconds": 0.037,
+     "status": "OK"
+    },
+    {
+     "param": 32,
+     "n": 455,
+     "m": 1095,
+     "d": 455,
+     "iterations": 4,
+     "steps": 2739,
+     "seconds": 0.028,
+     "status": "OK"
+    },
+    {
+     "param": 64,
+     "n": 903,
+     "m": 2183,
+     "d": 903,
+     "iterations": 4,
+     "steps": 5459,
+     "seconds": 0.034,
+     "status": "OK"
+    }
+   ]
+  },
+  {
+   "set": "c_hard",
+   "family": "switchbestexp",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 5,
+    "ratios": [
+     3.0,
+     5.121,
+     17.308
+    ],
+    "exponent": 2.597,
+    "err_power": 1.13,
+    "c0_power": 0.0,
+    "exponent_param": 2.297,
+    "err_power_param": 1.56,
+    "factor_param": 5.3627,
+    "err_exp_param": 0.651,
+    "factor": 5.3627,
+    "err_exp": 0.651,
+    "c0_exp": 0.0,
+    "reading": "exponential-looking"
+   },
+   "rows": [
+    {
+     "param": 1,
+     "n": 35,
+     "m": 70,
+     "d": 34,
+     "iterations": 4,
+     "steps": 185,
+     "seconds": 0.032,
+     "status": "OK"
+    },
+    {
+     "param": 2,
+     "n": 60,
+     "m": 130,
+     "d": 60,
+     "iterations": 11,
+     "steps": 696,
+     "seconds": 0.025,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 110,
+     "m": 250,
+     "d": 110,
+     "iterations": 33,
+     "steps": 3268,
+     "seconds": 0.056,
+     "status": "OK"
+    },
+    {
+     "param": 8,
+     "n": 210,
+     "m": 490,
+     "d": 210,
+     "iterations": 169,
+     "steps": 28750,
+     "seconds": 0.047,
+     "status": "OK"
+    },
+    {
+     "param": 16,
+     "n": 410,
+     "m": 970,
+     "d": 410,
+     "iterations": 2925,
+     "steps": 926038,
+     "seconds": 0.473,
+     "status": "OK"
+    },
+    {
+     "param": 32,
+     "n": 810,
+     "m": 1930,
+     "d": 810,
+     "iterations": null,
+     "steps": null,
+     "seconds": 20.021,
+     "status": "TIMEOUT"
+    },
+    {
+     "param": 64,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "OK": 109,
+  "TIMEOUT": 11,
+  "SKIPPED": 53
+ },
+ "failures": [],
+ "exit": 0,
+ "winner_only": false
+}

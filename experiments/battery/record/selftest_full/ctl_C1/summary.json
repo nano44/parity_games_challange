@@ -1,0 +1,31 @@
+{
+ "engine": "python3 -B /home/user/parity_games_challange/experiments/battery/engines/control.py --flip-winner",
+ "sets": [
+  "x_control"
+ ],
+ "timeout": 2.0,
+ "jobs": 1,
+ "families": [
+  {
+   "set": "x_control",
+   "family": "control",
+   "kind": "agree",
+   "games": 1,
+   "ok": 0
+  }
+ ],
+ "counts": {
+  "WRONG-WINNER": 1
+ },
+ "failures": [
+  {
+   "status": "WRONG-WINNER",
+   "set": "x_control",
+   "family": "control",
+   "param": 2,
+   "file": "loop2.pg",
+   "detail": "1 of 2 vertices differ from Oink zlk, first v0 (engine 1, Oink 0)"
+  }
+ ],
+ "exit": 1
+}

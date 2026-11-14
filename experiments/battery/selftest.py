@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Self-test of THE BATTERY: rows that must come out as KNOWN. If one does not, the battery is wrong (not the engine).
-Usage: selftest.py quick | full [OUTDIR]     (quick: about 1 minute, run by check.sh; full: about 20 minutes, the record in out/selftest_full.out)
+Usage: selftest.py quick | full [OUTDIR]     (quick: about 1 minute, run by check.sh; full: about 20 minutes, the record in record/selftest_full*)
 Known rows (sources):
  K1 N5 (SPEC, from S3) on set a: iterations = 2^k + 1 on Gamma3(G_k) (P-N5-EXP; L-COMP box48 out/run48b.out, k 3..12); reading exponential-looking.
  K2 N5 (SPEC) on set b: polynomial-looking on WL, W, F (R130's family is hard for N5'-xi, not for N5).
@@ -8,7 +8,9 @@ Known rows (sources):
  K4 N5'-xi on set b: iterations WL_n = 11, 29, 65, 137 (n 1..4); W_n = F_n = 33, 73, 153, 313, 633, 1246, 2489 (n 2..8)
     (R130; L-SI box 104; L-COMP box44 README); reading exponential-looking on every family with at least 4 answered sizes.
  K5 Zielonka (engines/zielonka.py) on sets a, b (and e in full): every winner = Oink zlk, every strategy verified.
- K6 (set c present) Zielonka on its M1 family: exponential-looking.
+ K6 Zielonka on its M1 family recursiveladder (set c): iterations (recursive calls on a non-empty subgame) = the iteration
+    counts of Oink uzlk in M1 (experiments/hard-families/results/recursiveladder.csv, oink-uzlk-raw: 5, 20, 59, 161, ... at
+    N = 2, 4, 6, 8, ...; growth 1.618 per +1 in N); reading exponential-looking.
  C1-C5 controls: a flipped winner, a dropped strategy entry and an odd cycle inside a region give exit 1 with the instance
     printed; garbage output gives exit 2; an engine that never answers gives exit 2 (no answer)."""
 import sys, os, json, subprocess, tempfile, shutil, time
@@ -17,6 +19,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 mode = sys.argv[1] if len(sys.argv) > 1 else "quick"; keep = sys.argv[2] if len(sys.argv) > 2 else None
 tmp = keep or tempfile.mkdtemp(prefix="battery_selftest_"); os.makedirs(tmp, exist_ok=True)
 XI_W = {2: 33, 3: 73, 4: 153, 5: 313, 6: 633, 7: 1246, 8: 2489}; XI_WL = {1: 11, 2: 29, 3: 65, 4: 137}
+RL = {2: 5, 4: 20, 6: 59, 8: 161, 10: 428, 12: 1127, 14: 2957, 16: 7748, 18: 20291, 20: 53129, 22: 139100, 24: 364175, 26: 953429, 28: 2496116, 30: 6534923, 34: 44791052}
 results = []; t00 = time.time()
 
 
@@ -66,8 +69,10 @@ sets = ["a", "b", "e"]; rc, s, _ = run("zielonka", ZIE, sets, BATTERY_TIMEOUT=60
 want = 29 + (250 if q else 10000)
 check("K5 Zielonka on sets a, b, e: all OK", rc == 0 and s["counts"] == {"OK": want}, "counts %s (want OK %d)" % (s["counts"], want))
 # K6
-if os.path.exists(os.path.join(HERE, "sets", "c_hard", "MANIFEST.tsv")) and os.path.exists(os.path.join(HERE, "selftest_c.py")):
-    import selftest_c; selftest_c.run(run, fam, answered, check, q, ZIE, jobs)
+rc, s, _ = run("zielonka_rl", ZIE, ["c"], BATTERY_TIMEOUT=20 if q else 60, BATTERY_JOBS=jobs, BATTERY_FAMILY="recursiveladder", **({"BATTERY_MAXPARAM": 14} if q else {}))
+f = fam(s, "recursiveladder"); it = answered(f)
+check("K6 Zielonka on recursiveladder: iterations = Oink uzlk's M1 counts", rc == 0 and len(it) >= 7 and all(RL[k] == v for k, v in it.items()), "N -> iterations %s" % it)
+check("K6 Zielonka on recursiveladder: reading", f["growth"]["reading"] == "exponential-looking", "%s (ratios %s per +2 in N; M1: 1.618 per +1 = 2.618 per +2)" % (f["growth"]["reading"], f["growth"]["ratios"]))
 # controls
 for tag, flag, want_rc, word in (("C1", "--flip-winner", 1, "WRONG-WINNER"), ("C2", "--drop-strategy", 1, "BAD-STRATEGY"), ("C3", "--odd-cycle", 1, "BAD-STRATEGY"), ("C4", "--garbage", 2, "ERROR"), ("C5", "--sleep", 2, "NO ANSWER")):
     rc, s, out = run("ctl_" + tag, CTL + flag, ["x_control"], BATTERY_TIMEOUT=2, BATTERY_JOBS=1)

@@ -1,0 +1,19 @@
+set	family	param	file	n	m	d	iterations	steps	seconds	status	ref	detail
+b_wrapper	wrapper_F	2	F_2.pg	708	929	192	33	-	1.071	OK	zlk	
+b_wrapper	wrapper_F	3	F_3.pg	1017	1338	274	73	-	4.883	OK	zlk	
+b_wrapper	wrapper_F	4	F_4.pg	1326	1747	356	153	-	18.171	OK	zlk	
+b_wrapper	wrapper_F	5	F_5.pg	1635	2156	438	313	-	48.141	OK	zlk	
+b_wrapper	wrapper_F	6	F_6.pg	1944	2565	520	-	-	120.111	TIMEOUT	zlk	> 120 s
+b_wrapper	wrapper_F	7	F_7.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+b_wrapper	wrapper_F	8	F_8.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+b_wrapper	wrapper_W	2	W_2.pg	567	759	43	33	-	0.589	OK	zlk	
+b_wrapper	wrapper_W	3	W_3.pg	818	1097	57	73	-	1.722	OK	zlk	
+b_wrapper	wrapper_W	4	W_4.pg	1069	1435	71	153	-	5.453	OK	zlk	
+b_wrapper	wrapper_W	5	W_5.pg	1320	1773	85	313	-	15.699	OK	zlk	
+b_wrapper	wrapper_W	6	W_6.pg	1571	2111	99	633	-	43.199	OK	zlk	
+b_wrapper	wrapper_W	7	W_7.pg	1822	2449	113	1246	-	100.131	OK	zlk	
+b_wrapper	wrapper_W	8	W_8.pg	2073	2787	127	-	-	120.052	TIMEOUT	zlk	> 120 s
+b_wrapper	wrapper_WL	1	WL_1.pg	211	281	22	11	-	0.083	OK	zlk	
+b_wrapper	wrapper_WL	2	WL_2.pg	395	529	32	29	-	0.293	OK	zlk	
+b_wrapper	wrapper_WL	3	WL_3.pg	600	807	42	65	-	1.064	OK	zlk	
+b_wrapper	wrapper_WL	4	WL_4.pg	826	1115	52	137	-	3.278	OK	zlk	

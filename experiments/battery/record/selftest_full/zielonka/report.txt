@@ -1,0 +1,64 @@
+== battery: engine `python3 -B /home/user/parity_games_challange/experiments/battery/engines/zielonka.py` | sets a_gamma3 b_wrapper e_random | timeout 60 s per instance | jobs 1 | 2026-11-14T14:30:14Z (date -u)
+
+== set a_gamma3, family gamma3_Gk (11 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     3     175     228    52          12          815     0.037  OK
+     4     310     404    88          12         1447     0.034  OK
+     5     445     580   124          12         2079     0.035  OK
+     6     580     756   160          12         2711     0.038  OK
+     7     715     932   196          12         3343     0.039  OK
+     8     850    1108   232          12         3975     0.039  OK
+     9     985    1284   268          12         4607      0.03  OK
+    10    1120    1460   304          12         5239     0.042  OK
+    11    1255    1636   340          12         5871     0.044  OK
+    12    1390    1812   376          12         6503     0.041  OK
+    13    1525    1988   412          12         7135     0.042  OK
+growth (measure: iterations; 11 sizes answered): ratios over the last three steps 1.000 1.000 1.000 | power law: exponent in n 0.0, constant 0.0, err 0.0 (in param: exponent 0.0, err 0.0) | exponential: x1.0 per size step, constant 0.0, err 0.0 (in param: x1.0 per step, err 0.0) | READING: polynomial-looking
+
+== set b_wrapper, family wrapper_WL (4 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     1     211     281    22           8          990     0.029  OK
+     2     395     529    32           8         1870     0.029  OK
+     3     600     807    42           8         2858     0.035  OK
+     4     826    1115    52           8         3954     0.029  OK
+growth (measure: iterations; 4 sizes answered): ratios over the last three steps 1.000 1.000 1.000 | power law: exponent in n 0.0, constant 0.0, err 1.97e-31 (in param: exponent 0.0, err 1.97e-31) | exponential: x1.0 per size step, constant 0.0, err 1.97e-31 (in param: x1.0 per step, err 1.97e-31) | READING: polynomial-looking
+
+== set b_wrapper, family wrapper_W (7 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     2     567     759    43           8         2696     0.038  OK
+     3     818    1097    57           8         3900     0.041  OK
+     4    1069    1435    71           8         5104     0.033  OK
+     5    1320    1773    85           8         6308     0.034  OK
+     6    1571    2111    99           8         7512     0.034  OK
+     7    1822    2449   113           8         8716     0.034  OK
+     8    2073    2787   127           8         9920     0.037  OK
+growth (measure: iterations; 7 sizes answered): ratios over the last three steps 1.000 1.000 1.000 | power law: exponent in n 0.0, constant 0.0, err 3.45e-31 (in param: exponent 0.0, err 3.45e-31) | exponential: x1.0 per size step, constant 0.0, err 3.45e-31 (in param: x1.0 per step, err 3.45e-31) | READING: polynomial-looking
+
+== set b_wrapper, family wrapper_F (7 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     2     708     929   192          12         3339     0.037  OK
+     3    1017    1338   274          12         4811     0.039  OK
+     4    1326    1747   356          12         6283     0.038  OK
+     5    1635    2156   438          12         7755     0.041  OK
+     6    1944    2565   520          12         9227     0.042  OK
+     7    2253    2974   602          12        10699      0.04  OK
+     8    2562    3383   684          12        12171     0.053  OK
+growth (measure: iterations; 7 sizes answered): ratios over the last three steps 1.000 1.000 1.000 | power law: exponent in n 0.0, constant 0.0, err 0.0 (in param: exponent 0.0, err 0.0) | exponential: x1.0 per size step, constant 0.0, err 0.0 (in param: x1.0 per step, err 0.0) | READING: polynomial-looking
+
+== set e_random, family random (10000 games, agreement only: no growth reading)
+      n   games      OK  not-OK   TIMEOUT   max sec      sum sec     max iter
+      8    1200    1200       0         0     0.067         31.7           15
+     12    1200    1200       0         0     0.045         31.3           25
+     16    1200    1200       0         0     0.041         32.5           27
+     24    1200    1200       0         0     0.048         35.5           50
+     32    1000    1000       0         0     0.070         28.8           60
+     48    1000    1000       0         0     0.056         28.8          103
+     64     900     900       0         0     0.049         24.8          120
+    100     800     800       0         0     0.053         22.7          205
+    150     600     600       0         0     0.048         16.6          422
+    200     500     500       0         0     0.044         14.0          291
+    300     250     250       0         0     0.079          7.7         1099
+    500     150     150       0         0     0.081          4.9         1079
+
+== summary: 10029 instances: OK 10029 | wall 289 s
+BATTERY PASS: no wrong winner, no bad strategy on 10029 answered instances (0 timeouts, 0 skipped after a timeout)

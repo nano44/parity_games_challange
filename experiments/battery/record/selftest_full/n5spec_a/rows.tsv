@@ -1,0 +1,12 @@
+set	family	param	file	n	m	d	iterations	steps	seconds	status	ref	detail
+a_gamma3	gamma3_Gk	3	G_3_g3.pg	175	228	52	9	-	0.079	OK	zlk	
+a_gamma3	gamma3_Gk	4	G_4_g3.pg	310	404	88	17	-	0.308	OK	zlk	
+a_gamma3	gamma3_Gk	5	G_5_g3.pg	445	580	124	33	-	1.068	OK	zlk	
+a_gamma3	gamma3_Gk	6	G_6_g3.pg	580	756	160	65	-	3.287	OK	zlk	
+a_gamma3	gamma3_Gk	7	G_7_g3.pg	715	932	196	129	-	10.076	OK	zlk	
+a_gamma3	gamma3_Gk	8	G_8_g3.pg	850	1108	232	257	-	28.371	OK	zlk	
+a_gamma3	gamma3_Gk	9	G_9_g3.pg	985	1284	268	513	-	73.836	OK	zlk	
+a_gamma3	gamma3_Gk	10	G_10_g3.pg	1120	1460	304	-	-	120.102	TIMEOUT	zlk	> 120 s
+a_gamma3	gamma3_Gk	11	G_11_g3.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+a_gamma3	gamma3_Gk	12	G_12_g3.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+a_gamma3	gamma3_Gk	13	G_13_g3.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out

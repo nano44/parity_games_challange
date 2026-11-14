@@ -1,0 +1,22 @@
+{
+ "engine": "python3 -B /home/user/parity_games_challange/experiments/battery/engines/control.py --sleep",
+ "sets": [
+  "x_control"
+ ],
+ "timeout": 2.0,
+ "jobs": 1,
+ "families": [
+  {
+   "set": "x_control",
+   "family": "control",
+   "kind": "agree",
+   "games": 1,
+   "ok": 0
+  }
+ ],
+ "counts": {
+  "TIMEOUT": 1
+ },
+ "failures": [],
+ "exit": 2
+}

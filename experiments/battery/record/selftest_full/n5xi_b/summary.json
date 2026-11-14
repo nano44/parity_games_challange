@@ -1,0 +1,278 @@
+{
+ "engine": "python3 -B /home/user/parity_games_challange/experiments/battery/engines/n5.py --mode xi",
+ "sets": [
+  "b_wrapper"
+ ],
+ "timeout": 120.0,
+ "jobs": 1,
+ "families": [
+  {
+   "set": "b_wrapper",
+   "family": "wrapper_WL",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 4,
+    "ratios": [
+     2.636,
+     2.241,
+     2.108
+    ],
+    "exponent": 1.83,
+    "err_power": 0.0302,
+    "c0_power": 0.0,
+    "exponent_param": 1.784,
+    "err_power_param": 0.0688,
+    "factor_param": 2.3102,
+    "err_exp_param": 0.013,
+    "factor": 2.3009,
+    "err_exp": 0.0397,
+    "c0_exp": 0.0,
+    "reading": "exponential-looking"
+   },
+   "rows": [
+    {
+     "param": 1,
+     "n": 211,
+     "m": 281,
+     "d": 22,
+     "iterations": 11,
+     "steps": null,
+     "seconds": 0.083,
+     "status": "OK"
+    },
+    {
+     "param": 2,
+     "n": 395,
+     "m": 529,
+     "d": 32,
+     "iterations": 29,
+     "steps": null,
+     "seconds": 0.293,
+     "status": "OK"
+    },
+    {
+     "param": 3,
+     "n": 600,
+     "m": 807,
+     "d": 42,
+     "iterations": 65,
+     "steps": null,
+     "seconds": 1.064,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 826,
+     "m": 1115,
+     "d": 52,
+     "iterations": 137,
+     "steps": null,
+     "seconds": 3.278,
+     "status": "OK"
+    }
+   ]
+  },
+  {
+   "set": "b_wrapper",
+   "family": "wrapper_W",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 6,
+    "ratios": [
+     2.046,
+     2.022,
+     1.968
+    ],
+    "exponent": 3.091,
+    "err_power": 0.179,
+    "c0_power": 0.0,
+    "exponent_param": 2.878,
+    "err_power_param": 0.211,
+    "factor_param": 2.0634,
+    "err_exp_param": 0.00664,
+    "factor": 2.0634,
+    "err_exp": 0.00664,
+    "c0_exp": 0.0,
+    "reading": "exponential-looking"
+   },
+   "rows": [
+    {
+     "param": 2,
+     "n": 567,
+     "m": 759,
+     "d": 43,
+     "iterations": 33,
+     "steps": null,
+     "seconds": 0.589,
+     "status": "OK"
+    },
+    {
+     "param": 3,
+     "n": 818,
+     "m": 1097,
+     "d": 57,
+     "iterations": 73,
+     "steps": null,
+     "seconds": 1.722,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 1069,
+     "m": 1435,
+     "d": 71,
+     "iterations": 153,
+     "steps": null,
+     "seconds": 5.453,
+     "status": "OK"
+    },
+    {
+     "param": 5,
+     "n": 1320,
+     "m": 1773,
+     "d": 85,
+     "iterations": 313,
+     "steps": null,
+     "seconds": 15.699,
+     "status": "OK"
+    },
+    {
+     "param": 6,
+     "n": 1571,
+     "m": 2111,
+     "d": 99,
+     "iterations": 633,
+     "steps": null,
+     "seconds": 43.199,
+     "status": "OK"
+    },
+    {
+     "param": 7,
+     "n": 1822,
+     "m": 2449,
+     "d": 113,
+     "iterations": 1246,
+     "steps": null,
+     "seconds": 100.131,
+     "status": "OK"
+    },
+    {
+     "param": 8,
+     "n": 2073,
+     "m": 2787,
+     "d": 127,
+     "iterations": null,
+     "steps": null,
+     "seconds": 120.052,
+     "status": "TIMEOUT"
+    }
+   ]
+  },
+  {
+   "set": "b_wrapper",
+   "family": "wrapper_F",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 4,
+    "ratios": [
+     2.212,
+     2.096,
+     2.046
+    ],
+    "exponent": 2.665,
+    "err_power": 0.028,
+    "c0_power": 0.0,
+    "exponent_param": 2.43,
+    "err_power_param": 0.0347,
+    "factor_param": 2.1147,
+    "err_exp_param": 0.00157,
+    "factor": 2.1147,
+    "err_exp": 0.00157,
+    "c0_exp": 0.0,
+    "reading": "exponential-looking"
+   },
+   "rows": [
+    {
+     "param": 2,
+     "n": 708,
+     "m": 929,
+     "d": 192,
+     "iterations": 33,
+     "steps": null,
+     "seconds": 1.071,
+     "status": "OK"
+    },
+    {
+     "param": 3,
+     "n": 1017,
+     "m": 1338,
+     "d": 274,
+     "iterations": 73,
+     "steps": null,
+     "seconds": 4.883,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 1326,
+     "m": 1747,
+     "d": 356,
+     "iterations": 153,
+     "steps": null,
+     "seconds": 18.171,
+     "status": "OK"
+    },
+    {
+     "param": 5,
+     "n": 1635,
+     "m": 2156,
+     "d": 438,
+     "iterations": 313,
+     "steps": null,
+     "seconds": 48.141,
+     "status": "OK"
+    },
+    {
+     "param": 6,
+     "n": 1944,
+     "m": 2565,
+     "d": 520,
+     "iterations": null,
+     "steps": null,
+     "seconds": 120.111,
+     "status": "TIMEOUT"
+    },
+    {
+     "param": 7,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    },
+    {
+     "param": 8,
+     "n": null,
+     "m": null,
+     "d": null,
+     "iterations": null,
+     "steps": null,
+     "seconds": null,
+     "status": "SKIPPED"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "OK": 14,
+  "TIMEOUT": 2,
+  "SKIPPED": 2
+ },
+ "failures": [],
+ "exit": 0
+}

@@ -1,0 +1,174 @@
+set	family	param	file	n	m	d	iterations	steps	seconds	status	ref	detail
+c_hard	counter_core	2	counter_core_2.pg	15	28	10	64	374	0.026	OK	zlk	
+c_hard	counter_core	4	counter_core_4.pg	27	52	18	988	5744	0.029	OK	zlk	
+c_hard	counter_core	6	counter_core_6.pg	39	76	26	13639	78841	0.08	OK	zlk	
+c_hard	counter_core	8	counter_core_8.pg	51	100	34	182557	1052351	0.636	OK	zlk	
+c_hard	counter_core	10	counter_core_10.pg	63	124	42	2418216	13923541	8.718	OK	zlk	
+c_hard	counter_core	12	counter_core_12.pg	75	148	50	-	-	20.021	TIMEOUT	zlk	> 20 s
+c_hard	counter_core	14	counter_core_14.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_core	16	counter_core_16.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_core	18	counter_core_18.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_core	20	counter_core_20.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_core	24	counter_core_24.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_core	28	counter_core_28.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_core	32	counter_core_32.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_core	40	counter_core_40.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_dp	2	counter_dp_2.pg	12	19	6	14	97	0.025	OK	zlk	
+c_hard	counter_dp	4	counter_dp_4.pg	20	33	8	52	398	0.029	OK	zlk	
+c_hard	counter_dp	6	counter_dp_6.pg	28	47	10	188	1489	0.027	OK	zlk	
+c_hard	counter_dp	8	counter_dp_8.pg	36	61	12	646	5192	0.031	OK	zlk	
+c_hard	counter_dp	10	counter_dp_10.pg	44	75	14	2194	17749	0.037	OK	zlk	
+c_hard	counter_dp	12	counter_dp_12.pg	52	89	16	7432	60270	0.068	OK	zlk	
+c_hard	counter_dp	14	counter_dp_14.pg	60	103	18	25152	204149	0.127	OK	zlk	
+c_hard	counter_dp	16	counter_dp_16.pg	68	117	20	85098	690920	0.376	OK	zlk	
+c_hard	counter_dp	18	counter_dp_18.pg	76	131	22	287894	2337689	1.155	OK	zlk	
+c_hard	counter_dp	20	counter_dp_20.pg	84	145	24	973948	7908702	4.041	OK	zlk	
+c_hard	counter_dp	24	counter_dp_24.pg	100	173	28	-	-	20.018	TIMEOUT	zlk	> 20 s
+c_hard	counter_dp	28	counter_dp_28.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_dp	32	counter_dp_32.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_dp	40	counter_dp_40.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_m	2	counter_m_2.pg	9	15	5	10	71	0.028	OK	zlk	
+c_hard	counter_m	4	counter_m_4.pg	15	27	7	33	296	0.035	OK	zlk	
+c_hard	counter_m	6	counter_m_6.pg	21	39	9	95	982	0.026	OK	zlk	
+c_hard	counter_m	8	counter_m_8.pg	27	51	11	260	2974	0.028	OK	zlk	
+c_hard	counter_m	10	counter_m_10.pg	33	63	13	697	8590	0.031	OK	zlk	
+c_hard	counter_m	12	counter_m_12.pg	39	75	15	1851	24114	0.039	OK	zlk	
+c_hard	counter_m	14	counter_m_14.pg	45	87	17	4892	66438	0.086	OK	zlk	
+c_hard	counter_m	16	counter_m_16.pg	51	99	19	12893	180686	0.116	OK	zlk	
+c_hard	counter_m	18	counter_m_18.pg	57	111	21	33919	486834	0.254	OK	zlk	
+c_hard	counter_m	20	counter_m_20.pg	63	123	23	89124	1302742	0.712	OK	zlk	
+c_hard	counter_m	24	counter_m_24.pg	75	147	27	613811	9197778	4.58	OK	zlk	
+c_hard	counter_m	28	counter_m_28.pg	87	171	31	-	-	20.023	TIMEOUT	zlk	> 20 s
+c_hard	counter_m	32	counter_m_32.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_m	40	counter_m_40.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_m	41	counter_m_41.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_m	42	counter_m_42.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_ortl	2	counter_ortl_2.pg	11	17	8	21	121	0.038	OK	zlk	
+c_hard	counter_ortl	4	counter_ortl_4.pg	21	33	14	131	898	0.037	OK	zlk	
+c_hard	counter_ortl	6	counter_ortl_6.pg	31	49	20	717	5086	0.042	OK	zlk	
+c_hard	counter_ortl	8	counter_ortl_8.pg	41	65	26	3741	26482	0.052	OK	zlk	
+c_hard	counter_ortl	10	counter_ortl_10.pg	51	81	32	18941	132694	0.121	OK	zlk	
+c_hard	counter_ortl	12	counter_ortl_12.pg	61	97	38	93693	649018	0.425	OK	zlk	
+c_hard	counter_ortl	14	counter_ortl_14.pg	71	113	44	454653	3116830	1.993	OK	zlk	
+c_hard	counter_ortl	16	counter_ortl_16.pg	81	129	50	2170877	14745346	9.486	OK	zlk	
+c_hard	counter_ortl	18	counter_ortl_18.pg	91	145	56	-	-	20.021	TIMEOUT	zlk	> 20 s
+c_hard	counter_ortl	20	counter_ortl_20.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_ortl	24	counter_ortl_24.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_ortl	28	counter_ortl_28.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_ortl	32	counter_ortl_32.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_ortl	40	counter_ortl_40.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_qpt	2	counter_qpt_2.pg	4	5	4	1	5	0.026	OK	zlk	
+c_hard	counter_qpt	4	counter_qpt_4.pg	8	11	8	1	11	0.025	OK	zlk	
+c_hard	counter_qpt	6	counter_qpt_6.pg	12	17	12	1	17	0.027	OK	zlk	
+c_hard	counter_qpt	8	counter_qpt_8.pg	16	23	16	1	23	0.038	OK	zlk	
+c_hard	counter_qpt	10	counter_qpt_10.pg	20	29	20	1	29	0.034	OK	zlk	
+c_hard	counter_qpt	12	counter_qpt_12.pg	24	35	24	1	35	0.024	OK	zlk	
+c_hard	counter_qpt	14	counter_qpt_14.pg	28	41	28	1	41	0.028	OK	zlk	
+c_hard	counter_qpt	16	counter_qpt_16.pg	32	47	32	1	47	0.034	OK	zlk	
+c_hard	counter_qpt	18	counter_qpt_18.pg	36	53	36	1	53	0.033	OK	zlk	
+c_hard	counter_qpt	20	counter_qpt_20.pg	40	59	40	1	59	0.034	OK	zlk	
+c_hard	counter_qpt	22	counter_qpt_22.pg	44	65	44	1	65	0.033	OK	zlk	
+c_hard	counter_qpt	24	counter_qpt_24.pg	48	71	48	1	71	0.029	OK	zlk	
+c_hard	counter_qpt	26	counter_qpt_26.pg	52	77	52	1	77	0.027	OK	zlk	
+c_hard	counter_qpt	28	counter_qpt_28.pg	56	83	56	1	83	0.025	OK	zlk	
+c_hard	counter_qpt	32	counter_qpt_32.pg	64	95	64	1	95	0.028	OK	zlk	
+c_hard	counter_qpt	64	counter_qpt_64.pg	128	191	128	1	191	0.026	OK	zlk	
+c_hard	counter_qpt	128	counter_qpt_128.pg	256	383	256	1	383	0.027	OK	zlk	
+c_hard	counter_rob	2	counter_rob_2.pg	31	80	10	65	1290	0.034	OK	zlk	
+c_hard	counter_rob	4	counter_rob_4.pg	83	236	18	1010	34662	0.055	OK	zlk	
+c_hard	counter_rob	6	counter_rob_6.pg	159	472	26	13981	674113	0.354	OK	zlk	
+c_hard	counter_rob	8	counter_rob_8.pg	259	788	34	187274	11552723	4.28	OK	zlk	
+c_hard	counter_rob	10	counter_rob_10.pg	383	1184	42	-	-	20.024	TIMEOUT	zlk	> 20 s
+c_hard	counter_rob	12	counter_rob_12.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_rob	14	counter_rob_14.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_rob	16	counter_rob_16.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_rob	18	counter_rob_18.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_rob	20	counter_rob_20.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_rob	24	counter_rob_24.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_rob	28	counter_rob_28.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_rob	32	counter_rob_32.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_rr	2	counter_rr_2.pg	8	16	4	5	36	0.024	OK	zlk	
+c_hard	counter_rr	4	counter_rr_4.pg	16	32	8	25	180	0.024	OK	zlk	
+c_hard	counter_rr	6	counter_rr_6.pg	24	48	12	102	744	0.025	OK	zlk	
+c_hard	counter_rr	8	counter_rr_8.pg	32	64	16	391	2876	0.026	OK	zlk	
+c_hard	counter_rr	10	counter_rr_10.pg	40	80	20	1459	10780	0.031	OK	zlk	
+c_hard	counter_rr	12	counter_rr_12.pg	48	96	24	5373	39796	0.041	OK	zlk	
+c_hard	counter_rr	14	counter_rr_14.pg	56	112	28	19654	145768	0.086	OK	zlk	
+c_hard	counter_rr	16	counter_rr_16.pg	64	128	32	71638	531720	0.271	OK	zlk	
+c_hard	counter_rr	18	counter_rr_18.pg	72	144	36	260620	1935216	0.869	OK	zlk	
+c_hard	counter_rr	20	counter_rr_20.pg	80	160	40	947156	7034672	3.656	OK	zlk	
+c_hard	counter_rr	24	counter_rr_24.pg	96	192	48	-	-	20.021	TIMEOUT	zlk	> 20 s
+c_hard	counter_rr	28	counter_rr_28.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_rr	32	counter_rr_32.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_rr	40	counter_rr_40.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_symsi	2	counter_symsi_2.pg	22	48	21	52	437	0.036	OK	zlk	
+c_hard	counter_symsi	4	counter_symsi_4.pg	42	92	41	607	5772	0.038	OK	zlk	
+c_hard	counter_symsi	6	counter_symsi_6.pg	62	136	61	6049	60576	0.08	OK	zlk	
+c_hard	counter_symsi	8	counter_symsi_8.pg	82	180	81	55639	575226	0.308	OK	zlk	
+c_hard	counter_symsi	10	counter_symsi_10.pg	102	224	101	500769	5282418	2.48	OK	zlk	
+c_hard	counter_symsi	12	counter_symsi_12.pg	122	268	121	-	-	20.022	TIMEOUT	zlk	> 20 s
+c_hard	counter_symsi	14	counter_symsi_14.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_symsi	16	counter_symsi_16.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_symsi	18	counter_symsi_18.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_symsi	20	counter_symsi_20.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_symsi	24	counter_symsi_24.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_symsi	28	counter_symsi_28.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_symsi	32	counter_symsi_32.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	counter_symsi	40	counter_symsi_40.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	recursiveladder	2	recursiveladder_2.pg	10	19	8	5	65	0.024	OK	zlk	
+c_hard	recursiveladder	4	recursiveladder_4.pg	20	41	14	20	329	0.033	OK	zlk	
+c_hard	recursiveladder	6	recursiveladder_6.pg	30	63	20	59	1091	0.031	OK	zlk	
+c_hard	recursiveladder	8	recursiveladder_8.pg	40	85	26	161	3157	0.031	OK	zlk	
+c_hard	recursiveladder	10	recursiveladder_10.pg	50	107	32	428	8637	0.032	OK	zlk	
+c_hard	recursiveladder	12	recursiveladder_12.pg	60	129	38	1127	23055	0.04	OK	zlk	
+c_hard	recursiveladder	14	recursiveladder_14.pg	70	151	44	2957	60873	0.065	OK	zlk	
+c_hard	recursiveladder	16	recursiveladder_16.pg	80	173	50	7748	159953	0.117	OK	zlk	
+c_hard	recursiveladder	18	recursiveladder_18.pg	90	195	56	20291	419419	0.195	OK	zlk	
+c_hard	recursiveladder	20	recursiveladder_20.pg	100	217	62	53129	1098781	0.609	OK	zlk	
+c_hard	recursiveladder	22	recursiveladder_22.pg	110	239	68	139100	2877445	1.516	OK	zlk	
+c_hard	recursiveladder	24	recursiveladder_24.pg	120	261	74	364175	7534119	3.284	OK	zlk	
+c_hard	recursiveladder	26	recursiveladder_26.pg	130	283	80	953429	19725521	8.103	OK	zlk	
+c_hard	recursiveladder	28	recursiveladder_28.pg	140	305	86	-	-	20.024	TIMEOUT	zlk	> 20 s
+c_hard	recursiveladder	30	recursiveladder_30.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	recursiveladder	34	recursiveladder_34.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	recursiveladder	38	recursiveladder_38.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	switchallexp	1	switchallexp_1.pg	21	41	21	4	104	0.024	OK	zlk	
+c_hard	switchallexp	2	switchallexp_2.pg	35	75	35	4	189	0.053	OK	zlk	
+c_hard	switchallexp	4	switchallexp_4.pg	63	143	63	4	359	0.034	OK	zlk	
+c_hard	switchallexp	8	switchallexp_8.pg	119	279	119	4	699	0.035	OK	zlk	
+c_hard	switchallexp	16	switchallexp_16.pg	231	551	231	4	1379	0.037	OK	zlk	
+c_hard	switchallexp	32	switchallexp_32.pg	455	1095	455	4	2739	0.028	OK	zlk	
+c_hard	switchallexp	64	switchallexp_64.pg	903	2183	903	4	5459	0.034	OK	zlk	
+c_hard	switchbestexp	1	switchbestexp_1.pg	35	70	34	4	185	0.032	OK	zlk	
+c_hard	switchbestexp	2	switchbestexp_2.pg	60	130	60	11	696	0.025	OK	zlk	
+c_hard	switchbestexp	4	switchbestexp_4.pg	110	250	110	33	3268	0.056	OK	zlk	
+c_hard	switchbestexp	8	switchbestexp_8.pg	210	490	210	169	28750	0.047	OK	zlk	
+c_hard	switchbestexp	16	switchbestexp_16.pg	410	970	410	2925	926038	0.473	OK	zlk	
+c_hard	switchbestexp	32	switchbestexp_32.pg	810	1930	810	-	-	20.021	TIMEOUT	zlk	> 20 s
+c_hard	switchbestexp	64	switchbestexp_64.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	tc	2	tc_2.pg	22	36	11	43	445	0.035	OK	zlk	
+c_hard	tc	4	tc_4.pg	68	128	19	175	4633	0.04	OK	zlk	
+c_hard	tc	6	tc_6.pg	138	276	27	545	25149	0.047	OK	zlk	
+c_hard	tc	8	tc_8.pg	232	480	35	1747	114677	0.11	OK	zlk	
+c_hard	tc	10	tc_10.pg	350	740	43	6157	511881	0.277	OK	zlk	
+c_hard	tc	12	tc_12.pg	492	1056	51	23279	2314353	1.36	OK	zlk	
+c_hard	tc	14	tc_14.pg	658	1428	59	91129	10528101	4.807	OK	zlk	
+c_hard	tc	16	tc_16.pg	848	1856	67	-	-	20.022	TIMEOUT	zlk	> 20 s
+c_hard	tc	18	tc_18.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	tc	20	tc_20.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	tc	24	tc_24.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	tc	28	tc_28.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	tc	32	tc_32.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	tc+	2	tc+_2.pg	24	38	15	59	530	0.026	OK	zlk	
+c_hard	tc+	4	tc+_4.pg	104	196	27	339	8070	0.033	OK	zlk	
+c_hard	tc+	6	tc+_6.pg	288	570	39	1357	57478	0.067	OK	zlk	
+c_hard	tc+	8	tc+_8.pg	624	1256	51	5033	312494	0.195	OK	zlk	
+c_hard	tc+	10	tc+_10.pg	1160	2350	63	18903	1543442	0.869	OK	zlk	
+c_hard	tc+	12	tc+_12.pg	1944	3948	75	72967	7367654	4.373	OK	zlk	
+c_hard	tc+	14	tc+_14.pg	3024	6146	87	287081	34555550	17.765	OK	zlk	
+c_hard	tc+	16	tc+_16.pg	4448	9040	99	-	-	20.022	TIMEOUT	zlk	> 20 s
+c_hard	tc+	18	tc+_18.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	tc+	20	tc+_20.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	tc+	24	tc+_24.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	tc+	28	tc+_28.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out
+c_hard	tc+	32	tc+_32.pg	-	-	-	-	-	-	SKIPPED		a smaller size of this family timed out

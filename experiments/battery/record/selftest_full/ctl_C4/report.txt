@@ -1,0 +1,9 @@
+== battery: engine `python3 -B /home/user/parity_games_challange/experiments/battery/engines/control.py --garbage` | sets x_control | timeout 2 s per instance | jobs 1 | 2026-11-14T14:30:14Z (date -u)
+
+== set x_control, family control (1 games, agreement only: no growth reading)
+      n   games      OK  not-OK   TIMEOUT   max sec      sum sec     max iter
+      2       1       0       1         0     0.028          0.0            -
+
+== summary: 1 instances: ERROR 1 | wall 0 s
+ERROR: set x_control family control param 2 file loop2.pg: Expecting value: line 1 column 1 (char 0)
+BATTERY ENGINE ERROR: 1 instances with an engine crash or malformed output (listed above); no wrong winner, no bad strategy

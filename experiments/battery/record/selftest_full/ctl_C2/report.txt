@@ -1,0 +1,9 @@
+== battery: engine `python3 -B /home/user/parity_games_challange/experiments/battery/engines/control.py --drop-strategy` | sets x_control | timeout 2 s per instance | jobs 1 | 2026-11-14T14:30:14Z (date -u)
+
+== set x_control, family control (1 games, agreement only: no growth reading)
+      n   games      OK  not-OK   TIMEOUT   max sec      sum sec     max iter
+      2       1       0       1         0     0.054          0.1            1
+
+== summary: 1 instances: BAD-STRATEGY 1 | wall 0 s
+BAD-STRATEGY: set x_control family control param 2 file loop2.pg: 1 verifier errors, first: v0: winner 0 owns it but no strategy
+BATTERY FAIL: 1 instances with a wrong winner or a bad strategy (listed above)

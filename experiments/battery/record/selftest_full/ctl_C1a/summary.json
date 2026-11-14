@@ -1,0 +1,75 @@
+{
+ "engine": "python3 -B /home/user/parity_games_challange/experiments/battery/engines/control.py --flip-winner",
+ "sets": [
+  "a_gamma3"
+ ],
+ "timeout": 20.0,
+ "jobs": 1,
+ "families": [
+  {
+   "set": "a_gamma3",
+   "family": "gamma3_Gk",
+   "kind": "fit",
+   "growth": {
+    "measure": null,
+    "points": 0,
+    "ratios": [],
+    "exponent": null,
+    "err_power": null,
+    "c0_power": null,
+    "exponent_param": null,
+    "err_power_param": null,
+    "factor_param": null,
+    "err_exp_param": null,
+    "factor": null,
+    "err_exp": null,
+    "c0_exp": null,
+    "reading": "too few points"
+   },
+   "rows": [
+    {
+     "param": 3,
+     "n": 175,
+     "m": 228,
+     "d": 52,
+     "iterations": 12,
+     "steps": 815,
+     "seconds": 0.065,
+     "status": "WRONG-WINNER"
+    },
+    {
+     "param": 4,
+     "n": 310,
+     "m": 404,
+     "d": 88,
+     "iterations": 12,
+     "steps": 1447,
+     "seconds": 0.056,
+     "status": "WRONG-WINNER"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "WRONG-WINNER": 2
+ },
+ "failures": [
+  {
+   "status": "WRONG-WINNER",
+   "set": "a_gamma3",
+   "family": "gamma3_Gk",
+   "param": 3,
+   "file": "G_3_g3.pg",
+   "detail": "1 of 175 vertices differ from Oink zlk, first v0 (engine 1, Oink 0)"
+  },
+  {
+   "status": "WRONG-WINNER",
+   "set": "a_gamma3",
+   "family": "gamma3_Gk",
+   "param": 4,
+   "file": "G_4_g3.pg",
+   "detail": "1 of 310 vertices differ from Oink zlk, first v0 (engine 1, Oink 0)"
+  }
+ ],
+ "exit": 1
+}

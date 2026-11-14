@@ -1,0 +1,35 @@
+ran n5spec_a     exit 0 (237 s): python3 -B /home/user/parity_games_challange/experiments/battery/engines/n5.py --mode spec a
+PASS K1 N5 on Gamma3(G_k): iterations = 2^k + 1: k -> iterations {3: 9, 4: 17, 5: 33, 6: 65, 7: 129, 8: 257, 9: 513}
+PASS K1 N5 on Gamma3(G_k): reading: exponential-looking (ratios [1.985, 1.992, 1.996], power exponent 3.642, factor per step 2.0029)
+ran n5xi_b       exit 0 (484 s): python3 -B /home/user/parity_games_challange/experiments/battery/engines/n5.py --mode xi b
+PASS K4 N5'-xi on wrapper_WL: known iterations: n -> iterations {1: 11, 2: 29, 3: 65, 4: 137}
+PASS K4 N5'-xi on wrapper_WL: reading: exponential-looking (ratios [2.636, 2.241, 2.108])
+PASS K4 N5'-xi on wrapper_W: known iterations: n -> iterations {2: 33, 3: 73, 4: 153, 5: 313, 6: 633, 7: 1246}
+PASS K4 N5'-xi on wrapper_W: reading: exponential-looking (ratios [2.046, 2.022, 1.968])
+PASS K4 N5'-xi on wrapper_F: known iterations: n -> iterations {2: 33, 3: 73, 4: 153, 5: 313}
+PASS K4 N5'-xi on wrapper_F: reading: exponential-looking (ratios [2.212, 2.096, 2.046])
+ran n5spec_b     exit 0 (10 s): python3 -B /home/user/parity_games_challange/experiments/battery/engines/n5.py --mode spec b
+PASS K2 N5 on wrapper_WL: reading: polynomial-looking; n -> iterations {1: 6, 2: 6, 3: 6, 4: 6}
+PASS K2 N5 on wrapper_W: reading: polynomial-looking; n -> iterations {2: 3, 3: 4, 4: 5, 5: 6, 6: 7, 7: 8, 8: 9}
+PASS K2 N5 on wrapper_F: reading: polynomial-looking; n -> iterations {2: 5, 3: 5, 4: 5, 5: 5, 6: 6, 7: 6, 8: 6}
+ran n5xi_a       exit 0 (11 s): python3 -B /home/user/parity_games_challange/experiments/battery/engines/n5.py --mode xi a
+PASS K3 N5'-xi on Gamma3(G_k): reading: polynomial-looking; k -> iterations {3: 6, 4: 7, 5: 7, 6: 7, 7: 7, 8: 7, 9: 7, 10: 7, 11: 7, 12: 7, 13: 7}
+ran zielonka     exit 0 (289 s): python3 -B /home/user/parity_games_challange/experiments/battery/engines/zielonka.py a b e
+PASS K5 Zielonka on sets a, b, e: all OK: counts {'OK': 10029} (want OK 10029)
+ran ctl_C1       exit 1 (0 s): python3 -B /home/user/parity_games_challange/experiments/battery/engines/control.py --flip-winner x_control
+PASS C1 control --flip-winner: exit 1 (want 1), report names WRONG-WINNER: True
+ran ctl_C2       exit 1 (0 s): python3 -B /home/user/parity_games_challange/experiments/battery/engines/control.py --drop-strategy x_control
+PASS C2 control --drop-strategy: exit 1 (want 1), report names BAD-STRATEGY: True
+ran ctl_C3       exit 1 (0 s): python3 -B /home/user/parity_games_challange/experiments/battery/engines/control.py --odd-cycle x_control
+PASS C3 control --odd-cycle: exit 1 (want 1), report names BAD-STRATEGY: True
+ran ctl_C4       exit 2 (0 s): python3 -B /home/user/parity_games_challange/experiments/battery/engines/control.py --garbage x_control
+PASS C4 control --garbage: exit 2 (want 2), report names ERROR: True
+ran ctl_C5       exit 2 (2 s): python3 -B /home/user/parity_games_challange/experiments/battery/engines/control.py --sleep x_control
+PASS C5 control --sleep: exit 2 (want 2), report names NO ANSWER: True
+ran ctl_C1a      exit 1 (0 s): python3 -B /home/user/parity_games_challange/experiments/battery/engines/control.py --flip-winner a
+PASS C1 control --flip-winner on set a: exit 1 (want 1)
+
+self-test full: 19 checks, 0 failed, 1033 s
+SELF-TEST PASS: every known row came out
+exit 0
+Sat Nov 14 14:30:17 UTC 2026

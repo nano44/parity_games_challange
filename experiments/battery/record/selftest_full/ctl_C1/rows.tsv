@@ -1,0 +1,2 @@
+set	family	param	file	n	m	d	iterations	steps	seconds	status	ref	detail
+x_control	control	2	loop2.pg	2	3	2	1	3	0.054	WRONG-WINNER	zlk	1 of 2 vertices differ from Oink zlk, first v0 (engine 1, Oink 0)

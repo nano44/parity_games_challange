@@ -1,0 +1,12 @@
+set	family	param	file	n	m	d	iterations	steps	seconds	status	ref	detail
+a_gamma3	gamma3_Gk	3	G_3_g3.pg	175	228	52	6	-	0.07	OK	zlk	
+a_gamma3	gamma3_Gk	4	G_4_g3.pg	310	404	88	7	-	0.186	OK	zlk	
+a_gamma3	gamma3_Gk	5	G_5_g3.pg	445	580	124	7	-	0.369	OK	zlk	
+a_gamma3	gamma3_Gk	6	G_6_g3.pg	580	756	160	7	-	0.385	OK	zlk	
+a_gamma3	gamma3_Gk	7	G_7_g3.pg	715	932	196	7	-	0.554	OK	zlk	
+a_gamma3	gamma3_Gk	8	G_8_g3.pg	850	1108	232	7	-	0.83	OK	zlk	
+a_gamma3	gamma3_Gk	9	G_9_g3.pg	985	1284	268	7	-	1.01	OK	zlk	
+a_gamma3	gamma3_Gk	10	G_10_g3.pg	1120	1460	304	7	-	1.32	OK	zlk	
+a_gamma3	gamma3_Gk	11	G_11_g3.pg	1255	1636	340	7	-	1.628	OK	zlk	
+a_gamma3	gamma3_Gk	12	G_12_g3.pg	1390	1812	376	7	-	1.929	OK	zlk	
+a_gamma3	gamma3_Gk	13	G_13_g3.pg	1525	1988	412	7	-	2.454	OK	zlk	

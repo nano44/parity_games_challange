@@ -1,0 +1,31 @@
+{
+ "engine": "python3 -B /home/user/parity_games_challange/experiments/battery/engines/control.py --garbage",
+ "sets": [
+  "x_control"
+ ],
+ "timeout": 2.0,
+ "jobs": 1,
+ "families": [
+  {
+   "set": "x_control",
+   "family": "control",
+   "kind": "agree",
+   "games": 1,
+   "ok": 0
+  }
+ ],
+ "counts": {
+  "ERROR": 1
+ },
+ "failures": [
+  {
+   "status": "ERROR",
+   "set": "x_control",
+   "family": "control",
+   "param": 2,
+   "file": "loop2.pg",
+   "detail": "Expecting value: line 1 column 1 (char 0)"
+  }
+ ],
+ "exit": 2
+}

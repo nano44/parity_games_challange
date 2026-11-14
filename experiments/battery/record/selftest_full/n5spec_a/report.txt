@@ -1,0 +1,19 @@
+== battery: engine `python3 -B /home/user/parity_games_challange/experiments/battery/engines/n5.py --mode spec` | sets a_gamma3 | timeout 120 s per instance | jobs 1 | 2026-11-14T14:17:00Z (date -u)
+
+== set a_gamma3, family gamma3_Gk (11 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     3     175     228    52           9            -     0.079  OK
+     4     310     404    88          17            -     0.308  OK
+     5     445     580   124          33            -     1.068  OK
+     6     580     756   160          65            -     3.287  OK
+     7     715     932   196         129            -    10.076  OK
+     8     850    1108   232         257            -    28.371  OK
+     9     985    1284   268         513            -    73.836  OK
+    10    1120    1460   304           -            -   120.102  TIMEOUT (> 120 s)
+    11       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    12       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    13       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+growth (measure: iterations; 7 sizes answered): ratios over the last three steps 1.985 1.992 1.996 | power law: exponent in n 3.642, constant 8.28, err 0.0635 (in param: exponent 4.97, err 0.0287) | exponential: x2.0029 per size step, constant 1.08, err 1.58e-05 (in param: x2.0029 per step, err 1.58e-05) | READING: exponential-looking
+
+== summary: 11 instances: OK 7, SKIPPED 3, TIMEOUT 1 | wall 237 s
+BATTERY PASS: no wrong winner, no bad strategy on 7 answered instances (1 timeouts, 3 skipped after a timeout)

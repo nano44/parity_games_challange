@@ -1,0 +1,34 @@
+== battery: engine `python3 -B /home/user/parity_games_challange/experiments/battery/engines/n5.py --mode spec` | sets b_wrapper | timeout 120 s per instance | jobs 1 | 2026-11-14T14:25:14Z (date -u)
+
+== set b_wrapper, family wrapper_WL (4 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     1     211     281    22           6            -     0.049  OK
+     2     395     529    32           6            -     0.072  OK
+     3     600     807    42           6            -     0.103  OK
+     4     826    1115    52           6            -     0.138  OK
+growth (measure: iterations; 4 sizes answered): ratios over the last three steps 1.000 1.000 1.000 | power law: exponent in n 0.0, constant 0.0, err 0.0 (in param: exponent 0.0, err 0.0) | exponential: x1.0 per size step, constant 0.0, err 0.0 (in param: x1.0 per step, err 0.0) | READING: polynomial-looking
+
+== set b_wrapper, family wrapper_W (7 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     2     567     759    43           3            -     0.106  OK
+     3     818    1097    57           4            -     0.139  OK
+     4    1069    1435    71           5            -     0.173  OK
+     5    1320    1773    85           6            -     0.258  OK
+     6    1571    2111    99           7            -     0.359  OK
+     7    1822    2449   113           8            -     0.538  OK
+     8    2073    2787   127           9            -     0.721  OK
+growth (measure: iterations; 7 sizes answered): ratios over the last three steps 1.167 1.143 1.125 | power law: exponent in n 0.995, constant 0.72, err 8.23e-07 (in param: exponent 1.005, err 1.02e-06) | exponential: x1.1213 per size step, constant -3.0, err 0.0104 (in param: x1.1213 per step, err 0.0104) | READING: polynomial-looking
+
+== set b_wrapper, family wrapper_F (7 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     2     708     929   192           5            -     0.175  OK
+     3    1017    1338   274           5            -     0.273  OK
+     4    1326    1747   356           5            -      0.48  OK
+     5    1635    2156   438           5            -     0.645  OK
+     6    1944    2565   520           6            -     1.398  OK
+     7    2253    2974   602           6            -     1.826  OK
+     8    2562    3383   684           6            -     2.195  OK
+growth (measure: iterations; 7 sizes answered): ratios over the last three steps 1.200 1.000 1.000 | power law: exponent in n 1.39, constant 4.7, err 0.0161 (in param: exponent 1.282, err 0.0165) | exponential: x1.2339 per size step, constant 4.4, err 0.013 (in param: x1.2339 per step, err 0.013) | READING: polynomial-looking
+
+== summary: 18 instances: OK 18 | wall 10 s
+BATTERY PASS: no wrong winner, no bad strategy on 18 answered instances (0 timeouts, 0 skipped after a timeout)

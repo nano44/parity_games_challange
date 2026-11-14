@@ -19,6 +19,16 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
     9, 17, 33, 65, 129, 257, 513 (k 3..9; k 10 over 120 s) exponential-looking; N5 spec on b: WL 6,6,6,6; W 3..9; F 5,5,5,5,6,6,6
     polynomial-looking; N5′-xi on a: 6, 7 × 10 polynomial-looking; N5′-xi on b: WL 11, 29, 65, 137; W 33, 73, 153, 313, 633, 1246;
     F 33, 73, 153, 313 exponential-looking; Zielonka = Oink zlk on a, b and all 10,000 of e, every strategy verified; 5 controls fire.
+- v1 = dd9ba4ac, ON ORIGIN 14:51Z (ls-remote). Lanes' command: git archive dd9ba4ac experiments/battery experiments/harness experiments/comp/box44
+  experiments/n5-second experiments/hard-families into a scratch dir + `ln -s <repo>/tools` there (v2: BATTERY_OINK instead of the symlink).
+- v2 (this commit): set c = 13 M1 families at run_all.sh's sizes + counter_m 41, 42 (173 instances, generated at run time with sha1 pins;
+  ref solver per instance zlk / tl / psi, chosen by sets/c_hard/mk_manifest.py: 15 minutes, mostly 20 s zlk timeouts); BATTERY_FAMILY,
+  BATTERY_OINK, BATTERY_WINNER_ONLY; selftest K6 (Zielonka on recursiveladder = Oink uzlk's M1 counts); records: record/selftest_full*
+  (full run of v1: 19 checks, 0 failed, 1033 s), record/zielonka_c (Zielonka engine on set c, 20 s timeout: OK 109, TIMEOUT 11, SKIPPED
+  53; exponential-looking on 11 families, polynomial-looking on counter_qpt and switchallexp).
+- Working method that the 30-minute gate forces: develop in a scratch copy (git archive HEAD experiments/battery + symlinks to the repo's
+  harness / comp / n5-second / hard-families / tools; BATTERY_CACHE = the repo's .cache), copy into the tree only when no push runs; long
+  jobs run from a frozen archive of the commit, never from the tree being edited.
 - Growth reading (battery.py growth; a READING, never a claim): four fits y = c0 + exp(a + b x) (power law in n and in the size parameter,
   exponential in both), c0 free from 7 answered sizes; exponential-looking iff the better exponential beats the better power law AND y
   doubles first -> last. Measured limits (synthetic grid): >= 7 sizes: only 1.2^k over 7 sizes misread; 4-6 sizes: polynomial + large

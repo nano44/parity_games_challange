@@ -1,0 +1,152 @@
+{
+ "engine": "python3 -B /home/user/parity_games_challange/experiments/battery/engines/n5.py --mode xi",
+ "sets": [
+  "a_gamma3"
+ ],
+ "timeout": 120.0,
+ "jobs": 1,
+ "families": [
+  {
+   "set": "a_gamma3",
+   "family": "gamma3_Gk",
+   "kind": "fit",
+   "growth": {
+    "measure": "iterations",
+    "points": 11,
+    "ratios": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "exponent": 0.024,
+    "err_power": 0.0116,
+    "c0_power": -6.0,
+    "exponent_param": 0.032,
+    "err_power_param": 0.0136,
+    "factor_param": 1.0078,
+    "err_exp_param": 0.0173,
+    "factor": 1.0078,
+    "err_exp": 0.0173,
+    "c0_exp": 0.6,
+    "reading": "polynomial-looking"
+   },
+   "rows": [
+    {
+     "param": 3,
+     "n": 175,
+     "m": 228,
+     "d": 52,
+     "iterations": 6,
+     "steps": null,
+     "seconds": 0.07,
+     "status": "OK"
+    },
+    {
+     "param": 4,
+     "n": 310,
+     "m": 404,
+     "d": 88,
+     "iterations": 7,
+     "steps": null,
+     "seconds": 0.186,
+     "status": "OK"
+    },
+    {
+     "param": 5,
+     "n": 445,
+     "m": 580,
+     "d": 124,
+     "iterations": 7,
+     "steps": null,
+     "seconds": 0.369,
+     "status": "OK"
+    },
+    {
+     "param": 6,
+     "n": 580,
+     "m": 756,
+     "d": 160,
+     "iterations": 7,
+     "steps": null,
+     "seconds": 0.385,
+     "status": "OK"
+    },
+    {
+     "param": 7,
+     "n": 715,
+     "m": 932,
+     "d": 196,
+     "iterations": 7,
+     "steps": null,
+     "seconds": 0.554,
+     "status": "OK"
+    },
+    {
+     "param": 8,
+     "n": 850,
+     "m": 1108,
+     "d": 232,
+     "iterations": 7,
+     "steps": null,
+     "seconds": 0.83,
+     "status": "OK"
+    },
+    {
+     "param": 9,
+     "n": 985,
+     "m": 1284,
+     "d": 268,
+     "iterations": 7,
+     "steps": null,
+     "seconds": 1.01,
+     "status": "OK"
+    },
+    {
+     "param": 10,
+     "n": 1120,
+     "m": 1460,
+     "d": 304,
+     "iterations": 7,
+     "steps": null,
+     "seconds": 1.32,
+     "status": "OK"
+    },
+    {
+     "param": 11,
+     "n": 1255,
+     "m": 1636,
+     "d": 340,
+     "iterations": 7,
+     "steps": null,
+     "seconds": 1.628,
+     "status": "OK"
+    },
+    {
+     "param": 12,
+     "n": 1390,
+     "m": 1812,
+     "d": 376,
+     "iterations": 7,
+     "steps": null,
+     "seconds": 1.929,
+     "status": "OK"
+    },
+    {
+     "param": 13,
+     "n": 1525,
+     "m": 1988,
+     "d": 412,
+     "iterations": 7,
+     "steps": null,
+     "seconds": 2.454,
+     "status": "OK"
+    }
+   ]
+  }
+ ],
+ "counts": {
+  "OK": 11
+ },
+ "failures": [],
+ "exit": 0
+}

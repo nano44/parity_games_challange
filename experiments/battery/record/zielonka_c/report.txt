@@ -1,0 +1,229 @@
+== battery: engine `python3 -B engines/zielonka.py` | sets c_hard | timeout 20 s per instance | jobs 2 | 2026-11-14T14:45:41Z (date -u)
+
+== set c_hard, family tc (13 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     2      22      36    11          43          445     0.035  OK
+     4      68     128    19         175         4633      0.04  OK
+     6     138     276    27         545        25149     0.047  OK
+     8     232     480    35        1747       114677      0.11  OK
+    10     350     740    43        6157       511881     0.277  OK
+    12     492    1056    51       23279      2314353      1.36  OK
+    14     658    1428    59       91129     10528101     4.807  OK
+    16     848    1856    67           -            -    20.022  TIMEOUT (> 20 s)
+    18       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    20       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    24       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    28       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    32       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+growth (measure: iterations; 7 sizes answered): ratios over the last three steps 3.524 3.781 3.915 | power law: exponent in n 3.167, constant 42.14, err 0.713 (in param: exponent 5.553, err 0.845) | exponential: x3.5459 per size step, constant -43.0, err 1.86 (in param: x3.5313 per step, err 0.0391) | READING: exponential-looking
+
+== set c_hard, family tc+ (13 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     2      24      38    15          59          530     0.026  OK
+     4     104     196    27         339         8070     0.033  OK
+     6     288     570    39        1357        57478     0.067  OK
+     8     624    1256    51        5033       312494     0.195  OK
+    10    1160    2350    63       18903      1543442     0.869  OK
+    12    1944    3948    75       72967      7367654     4.373  OK
+    14    3024    6146    87      287081     34555550    17.765  OK
+    16    4448    9040    99           -            -    20.022  TIMEOUT (> 20 s)
+    18       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    20       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    24       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    28       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    32       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+growth (measure: iterations; 7 sizes answered): ratios over the last three steps 3.756 3.860 3.934 | power law: exponent in n 2.147, constant 54.28, err 0.542 (in param: exponent 5.987, err 0.734) | exponential: x4.9222 per size step, constant 56.64, err 16.2 (in param: x3.766 per step, err 0.00407) | READING: exponential-looking
+
+== set c_hard, family counter_symsi (14 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     2      22      48    21          52          437     0.036  OK
+     4      42      92    41         607         5772     0.038  OK
+     6      62     136    61        6049        60576      0.08  OK
+     8      82     180    81       55639       575226     0.308  OK
+    10     102     224   101      500769      5282418      2.48  OK
+    12     122     268   121           -            -    20.022  TIMEOUT (> 20 s)
+    14       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    16       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    18       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    20       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    24       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    28       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    32       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    40       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+growth (measure: iterations; 5 sizes answered): ratios over the last three steps 9.965 9.198 9.000 | power law: exponent in n 5.853, constant 0.0, err 2.48 (in param: exponent 5.567, err 2.83) | exponential: x9.8389 per size step, constant 0.0, err 0.0281 (in param: x9.8389 per step, err 0.0281) | READING: exponential-looking
+
+== set c_hard, family counter_rr (14 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     2       8      16     4           5           36     0.024  OK
+     4      16      32     8          25          180     0.024  OK
+     6      24      48    12         102          744     0.025  OK
+     8      32      64    16         391         2876     0.026  OK
+    10      40      80    20        1459        10780     0.031  OK
+    12      48      96    24        5373        39796     0.041  OK
+    14      56     112    28       19654       145768     0.086  OK
+    16      64     128    32       71638       531720     0.271  OK
+    18      72     144    36      260620      1935216     0.869  OK
+    20      80     160    40      947156      7034672     3.656  OK
+    24      96     192    48           -            -    20.021  TIMEOUT (> 20 s)
+    28       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    32       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    40       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+growth (measure: iterations; 10 sizes answered): ratios over the last three steps 3.645 3.638 3.634 | power law: exponent in n 6.549, constant 4.9, err 4.56 (in param: exponent 6.549, err 4.56) | exponential: x3.6816 per size step, constant -2.8, err 0.00306 (in param: x3.6816 per step, err 0.00306) | READING: exponential-looking
+
+== set c_hard, family counter_dp (14 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     2      12      19     6          14           97     0.025  OK
+     4      20      33     8          52          398     0.029  OK
+     6      28      47    10         188         1489     0.027  OK
+     8      36      61    12         646         5192     0.031  OK
+    10      44      75    14        2194        17749     0.037  OK
+    12      52      89    16        7432        60270     0.068  OK
+    14      60     103    18       25152       204149     0.127  OK
+    16      68     117    20       85098       690920     0.376  OK
+    18      76     131    22      287894      2337689     1.155  OK
+    20      84     145    24      973948      7908702     4.041  OK
+    24     100     173    28           -            -    20.018  TIMEOUT (> 20 s)
+    28       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    32       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    40       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+growth (measure: iterations; 10 sizes answered): ratios over the last three steps 3.383 3.383 3.383 | power law: exponent in n 7.191, constant 13.72, err 2.46 (in param: exponent 6.144, err 3.91) | exponential: x3.3927 per size step, constant -2.52, err 0.00091 (in param: x3.3927 per step, err 0.00091) | READING: exponential-looking
+
+== set c_hard, family counter_m (16 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     2       9      15     5          10           71     0.028  OK
+     4      15      27     7          33          296     0.035  OK
+     6      21      39     9          95          982     0.026  OK
+     8      27      51    11         260         2974     0.028  OK
+    10      33      63    13         697         8590     0.031  OK
+    12      39      75    15        1851        24114     0.039  OK
+    14      45      87    17        4892        66438     0.086  OK
+    16      51      99    19       12893       180686     0.116  OK
+    18      57     111    21       33919       486834     0.254  OK
+    20      63     123    23       89124      1302742     0.712  OK
+    24      75     147    27      613811      9197778      4.58  OK
+    28      87     171    31           -            -    20.023  TIMEOUT (> 20 s)
+    32       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    40       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    41       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    42       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+growth (measure: iterations; 11 sizes answered): ratios over the last three steps 2.631 2.628 6.887 | power law: exponent in n 6.388, constant 9.8, err 2.57 (in param: exponent 5.51, err 3.78) | exponential: x2.6393 per size step, constant -4.4, err 0.000709 (in param: x2.6393 per step, err 0.000709) | READING: exponential-looking
+
+== set c_hard, family counter_core (14 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     2      15      28    10          64          374     0.026  OK
+     4      27      52    18         988         5744     0.029  OK
+     6      39      76    26       13639        78841      0.08  OK
+     8      51     100    34      182557      1052351     0.636  OK
+    10      63     124    42     2418216     13923541     8.718  OK
+    12      75     148    50           -            -    20.021  TIMEOUT (> 20 s)
+    14       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    16       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    18       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    20       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    24       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    28       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    32       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    40       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+growth (measure: iterations; 5 sizes answered): ratios over the last three steps 13.805 13.385 13.246 | power law: exponent in n 7.199, constant 0.0, err 3.39 (in param: exponent 6.386, err 4.67) | exponential: x13.8716 per size step, constant 0.0, err 0.00928 (in param: x13.8716 per step, err 0.00928) | READING: exponential-looking
+
+== set c_hard, family counter_rob (13 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     2      31      80    10          65         1290     0.034  OK
+     4      83     236    18        1010        34662     0.055  OK
+     6     159     472    26       13981       674113     0.354  OK
+     8     259     788    34      187274     11552723      4.28  OK
+    10     383    1184    42           -            -    20.024  TIMEOUT (> 20 s)
+    12       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    14       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    16       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    18       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    20       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    24       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    28       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    32       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+growth (measure: iterations; 4 sizes answered): ratios over the last three steps 15.538 13.843 13.395 | power law: exponent in n 3.692, constant 0.0, err 0.87 (in param: exponent 5.598, err 1.58) | exponential: x13.4112 per size step, constant 0.0, err 0.948 (in param: x14.1903 per step, err 0.00583) | READING: exponential-looking
+
+== set c_hard, family counter_ortl (14 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     2      11      17     8          21          121     0.038  OK
+     4      21      33    14         131          898     0.037  OK
+     6      31      49    20         717         5086     0.042  OK
+     8      41      65    26        3741        26482     0.052  OK
+    10      51      81    32       18941       132694     0.121  OK
+    12      61      97    38       93693       649018     0.425  OK
+    14      71     113    44      454653      3116830     1.993  OK
+    16      81     129    50     2170877     14745346     9.486  OK
+    18      91     145    56           -            -    20.021  TIMEOUT (> 20 s)
+    20       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    24       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    28       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    32       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    40       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+growth (measure: iterations; 8 sizes answered): ratios over the last three steps 4.947 4.853 4.775 | power law: exponent in n 7.326, constant 20.58, err 1.98 (in param: exponent 7.046, err 2.23) | exponential: x4.9957 per size step, constant -8.4, err 0.00794 (in param: x4.9957 per step, err 0.00794) | READING: exponential-looking
+
+== set c_hard, family counter_qpt (17 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     2       4       5     4           1            5     0.026  OK
+     4       8      11     8           1           11     0.025  OK
+     6      12      17    12           1           17     0.027  OK
+     8      16      23    16           1           23     0.038  OK
+    10      20      29    20           1           29     0.034  OK
+    12      24      35    24           1           35     0.024  OK
+    14      28      41    28           1           41     0.028  OK
+    16      32      47    32           1           47     0.034  OK
+    18      36      53    36           1           53     0.033  OK
+    20      40      59    40           1           59     0.034  OK
+    22      44      65    44           1           65     0.033  OK
+    24      48      71    48           1           71     0.029  OK
+    26      52      77    52           1           77     0.027  OK
+    28      56      83    56           1           83     0.025  OK
+    32      64      95    64           1           95     0.028  OK
+    64     128     191   128           1          191     0.026  OK
+   128     256     383   256           1          383     0.027  OK
+growth (measure: iterations; 17 sizes answered): ratios over the last three steps 1.000 1.000 1.000 | power law: exponent in n 0.0, constant 0.0, err 0.0 (in param: exponent 0.0, err 0.0) | exponential: x1.0 per size step, constant 0.0, err 0.0 (in param: x1.0 per step, err 0.0) | READING: polynomial-looking
+
+== set c_hard, family recursiveladder (17 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     2      10      19     8           5           65     0.024  OK
+     4      20      41    14          20          329     0.033  OK
+     6      30      63    20          59         1091     0.031  OK
+     8      40      85    26         161         3157     0.031  OK
+    10      50     107    32         428         8637     0.032  OK
+    12      60     129    38        1127        23055      0.04  OK
+    14      70     151    44        2957        60873     0.065  OK
+    16      80     173    50        7748       159953     0.117  OK
+    18      90     195    56       20291       419419     0.195  OK
+    20     100     217    62       53129      1098781     0.609  OK
+    22     110     239    68      139100      2877445     1.516  OK
+    24     120     261    74      364175      7534119     3.284  OK
+    26     130     283    80      953429     19725521     8.103  OK
+    28     140     305    86           -            -    20.024  TIMEOUT (> 20 s)
+    30       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    34       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+    38       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+growth (measure: iterations; 13 sizes answered): ratios over the last three steps 2.618 2.618 2.618 | power law: exponent in n 5.822, constant 4.9, err 8.01 (in param: exponent 5.822, err 8.01) | exponential: x2.6174 per size step, constant -4.2, err 2.97e-05 (in param: x2.6174 per step, err 2.97e-05) | READING: exponential-looking
+
+== set c_hard, family switchallexp (7 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     1      21      41    21           4          104     0.024  OK
+     2      35      75    35           4          189     0.053  OK
+     4      63     143    63           4          359     0.034  OK
+     8     119     279   119           4          699     0.035  OK
+    16     231     551   231           4         1379     0.037  OK
+    32     455    1095   455           4         2739     0.028  OK
+    64     903    2183   903           4         5459     0.034  OK
+growth (measure: iterations; 7 sizes answered): ratios over the last three steps 1.000 1.000 1.000 | power law: exponent in n 0.0, constant 0.0, err 0.0 (in param: exponent 0.0, err 0.0) | exponential: x1.0 per size step, constant 0.0, err 0.0 (in param: x1.0 per step, err 0.0) | READING: polynomial-looking
+
+== set c_hard, family switchbestexp (7 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     1      35      70    34           4          185     0.032  OK
+     2      60     130    60          11          696     0.025  OK
+     4     110     250   110          33         3268     0.056  OK
+     8     210     490   210         169        28750     0.047  OK
+    16     410     970   410        2925       926038     0.473  OK
+    32     810    1930   810           -            -    20.021  TIMEOUT (> 20 s)
+    64       -       -     -           -            -         -  SKIPPED (a smaller size of this family timed out)
+growth (measure: iterations; 5 sizes answered): ratios over the last three steps 3.000 5.121 17.308 | power law: exponent in n 2.597, constant 0.0, err 1.13 (in param: exponent 2.297, err 1.56) | exponential: x5.3627 per size step, constant 0.0, err 0.651 (in param: x5.3627 per step, err 0.651) | READING: exponential-looking
+
+== summary: 173 instances: OK 109, SKIPPED 53, TIMEOUT 11 | wall 160 s
+BATTERY PASS: no wrong winner, no bad strategy on 109 answered instances (11 timeouts, 53 skipped after a timeout)

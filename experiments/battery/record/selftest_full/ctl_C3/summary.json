@@ -1,0 +1,31 @@
+{
+ "engine": "python3 -B /home/user/parity_games_challange/experiments/battery/engines/control.py --odd-cycle",
+ "sets": [
+  "x_control"
+ ],
+ "timeout": 2.0,
+ "jobs": 1,
+ "families": [
+  {
+   "set": "x_control",
+   "family": "control",
+   "kind": "agree",
+   "games": 1,
+   "ok": 0
+  }
+ ],
+ "counts": {
+  "BAD-STRATEGY": 1
+ },
+ "failures": [
+  {
+   "status": "BAD-STRATEGY",
+   "set": "x_control",
+   "family": "control",
+   "param": 2,
+   "file": "loop2.pg",
+   "detail": "1 verifier errors, first: region of 0: opponent cycle with top priority 1 through v0"
+  }
+ ],
+ "exit": 1
+}

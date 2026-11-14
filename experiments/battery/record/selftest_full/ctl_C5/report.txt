@@ -1,0 +1,8 @@
+== battery: engine `python3 -B /home/user/parity_games_challange/experiments/battery/engines/control.py --sleep` | sets x_control | timeout 2 s per instance | jobs 1 | 2026-11-14T14:30:16Z (date -u)
+
+== set x_control, family control (1 games, agreement only: no growth reading)
+      n   games      OK  not-OK   TIMEOUT   max sec      sum sec     max iter
+      2       1       0       0         1     2.004          2.0            -
+
+== summary: 1 instances: TIMEOUT 1 | wall 2 s
+BATTERY NO ANSWER: the engine answered no instance (1 timeouts); nothing was checked

@@ -1,0 +1,12 @@
+== battery: engine `python3 -B /home/user/parity_games_challange/experiments/battery/engines/control.py --flip-winner` | sets a_gamma3 | timeout 20 s per instance | jobs 1 | 2026-11-14T14:30:17Z (date -u)
+
+== set a_gamma3, family gamma3_Gk (2 sizes)
+ param       n       m     d  iterations        steps   seconds  status
+     3     175     228    52          12          815     0.065  WRONG-WINNER (1 of 175 vertices differ from Oink zlk, first v0 (engine 1, Oink 0))
+     4     310     404    88          12         1447     0.056  WRONG-WINNER (1 of 310 vertices differ from Oink zlk, first v0 (engine 1, Oink 0))
+growth (measure: None; 0 sizes answered): ratios over the last three steps - | power law: exponent in n -, constant -, err - (in param: exponent -, err -) | exponential: x- per size step, constant -, err - (in param: x- per step, err -) | READING: too few points
+
+== summary: 2 instances: WRONG-WINNER 2 | wall 0 s
+WRONG-WINNER: set a_gamma3 family gamma3_Gk param 3 file G_3_g3.pg: 1 of 175 vertices differ from Oink zlk, first v0 (engine 1, Oink 0)
+WRONG-WINNER: set a_gamma3 family gamma3_Gk param 4 file G_4_g3.pg: 1 of 310 vertices differ from Oink zlk, first v0 (engine 1, Oink 0)
+BATTERY FAIL: 2 instances with a wrong winner or a bad strategy (listed above)
