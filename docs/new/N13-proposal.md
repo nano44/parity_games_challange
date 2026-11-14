@@ -1,5 +1,5 @@
 # N13 SEESAW: alternating exact first-exit jumps of a potential, with reduced-trap peeling (proposal; LIVE candidate, unattacked)
-L-NEW successor 78, 2026-11-14 (design day; D14, D18, D1). Written 19:15Z by date -u, after the fleet's pause (15:55Z-18:30Z).
+L-NEW successor 78, 2026-11-14 (design day; D14, D18, D1). Written 19:09Z by date -u, after the fleet's pause (15:55Z-18:30Z).
 One implementation: experiments/new/n13/n13.py, sha1 35d77db8f03abf0b331e0f5cbe4fc8d30266df99 (Python, exact integers), mode alt+.
 Nothing here is a result (CLAUDE.md hard rule 1). Labels: PROVED (lane, unrefereed, argument given), SOURCE (in the opened paper, not
 refereed by the fleet), DATA (a committed run), CONJECTURE, READING, NOT KNOWN. **No polynomial bound is claimed: termination itself
@@ -58,7 +58,8 @@ Controls in the engine: alt- (N* jumps first), plus / minus (always the same zon
   every jump changes φ on a non-empty zone. PROVED: a P*-jump alone is positively safe in SOURCE's sense (0 ≤ g+ ≤ En+ of the
   current game: Max realises the sum), an N*-jump negatively safe. The sum over both kinds is NOT known to be safe.
 - Cost of one jump: O(m) arithmetic operations plus O(m log n) heap steps. Bits (PROVED, coarse): each jump multiplies the largest
-  |c| by at most 2n + 1, so potentials have at most wbits + jumps·⌈log2(2n + 1)⌉ bits; DATA: at most wbits + 1 on every run.
+  |c| by at most 2n + 1, so potentials have at most wbits + jumps·⌈log2(2n + 1)⌉ bits; DATA: maxbits ≤ wbits on the 634 family runs and
+  ≤ wbits + 4 on the 10,000 random games (columns maxbits, wbits).
 - NOT KNOWN: termination of alt+ / alt−; any bound on jumps. DATA against a naive hope: mode «both» oscillates (cap of 20,000 jumps
   hit on 100 of 200 random games in check_n13.out; 730 of 1,500 in a scratch run), so the alternation is what makes the runs end. CONJECTURE (weak, data only): the alternation
   always terminates, with polynomially many jumps. The one-sided modes are sums of positively safe potentials (SOURCE Lemma 4), which

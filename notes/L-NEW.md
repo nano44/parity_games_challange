@@ -1,7 +1,7 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## HANDOVER (successor 78, PARKING; written 2026-11-14 19:20Z by date -u; Lead 19:04Z: «SAVE N13 … HANDOVER … and park»; context far past the park line)
+## HANDOVER (successor 78, PARKING; written 2026-11-14 19:09Z by date -u; Lead 19:04Z: «SAVE N13 … HANDOVER … and park»; context far past the park line)
 ### FIRST LINES
 - **N13 SEESAW is the lane's LIVE candidate (and, by the Lead's 19:04Z message, the only live one of the day).** Read
   docs/new/N13-proposal.md first (pseudocode §2, proved / not known §3, data §4, kill guesses §6). Engine experiments/new/n13/n13.py
@@ -33,6 +33,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   potentials); they are slower on the zoo (83 / 59 jumps at most). Mode both oscillates: it is the check's firing control.
 - Peeling at φ = 0 already solves switchallexp / switchbestexp / counter_m / counter_ortl (an even-only or odd-only dominion); padded
   copies without such a dominion are untested.
+- Correction to my 19:08Z pseudocode message: it says «largest |φ| seen ≤ weights + 1 bit on every run»; the measured maximum is
+  + 4 bits (10,000 random games), ≤ 0 on the family tables. Reported to the Lead with the commit SHA.
 - The Lead's messages of 14:08Z-15:39Z reached me only at 19:04Z (queued during the pause): its request for N12's pseudocode message
   is moot (N12 died first); its N13 pseudocode request was answered at 19:08Z.
 - RF (lane B's candidate) is dead by K^s_n (L-RED-B 8), per the Lead 19:04Z; not my lane's record.
