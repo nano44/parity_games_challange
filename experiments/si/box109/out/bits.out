@@ -1,0 +1,7 @@
+BITS109 fr 2: iterations 9 sets 2 resets 0 all bits set at the end True max switches per vertex by class d:2 g:1 k:1 r:1 s:3 t:1
+BITS109 fr 3: iterations 12 sets 3 resets 0 all bits set at the end True max switches per vertex by class d:2 g:1 k:1 r:1 s:5 t:1
+BITS109 fr 4: iterations 15 sets 4 resets 0 all bits set at the end True max switches per vertex by class d:2 g:1 k:1 r:1 s:7 t:1
+BITS109 fr 6: iterations 21 sets 6 resets 0 all bits set at the end True max switches per vertex by class d:2 g:1 k:1 r:1 s:11 t:1
+BITS109 fr 8: iterations 27 sets 8 resets 0 all bits set at the end True max switches per vertex by class d:2 g:1 k:1 r:1 s:15 t:1
+BITS109 fr 12: iterations 39 sets 12 resets 0 all bits set at the end True max switches per vertex by class d:2 g:1 k:1 r:1 s:23 t:1
+BITS109 fr 16: iterations 51 sets 16 resets 0 all bits set at the end True max switches per vertex by class d:2 g:1 k:1 r:1 s:31 t:1

@@ -4,7 +4,8 @@
 # 2. fresh runs on the families that need no external tree (gk, sae, sbe, ports) reproduce the frozen lines: N5's 2^k + 1 on
 #    Gamma3(G_3), Gamma3(G_4); RF, Howard, NH, h1 on small sizes; a control (a wrong frozen count must be reported);
 # 3. RF (rf109.py's own run) equals n6.py's mode rf on those games, and its .sol passes harness verify on one game;
-# 4. 300 random games: RF's regions equal harness Zielonka's, strategies verified; control: a flipped winner is reported on every game.
+# 4. 300 random games: RF's regions equal harness Zielonka's, strategies verified; control: a flipped winner is reported on every game;
+# 5. Addendum A: K^s_n (n = 1..6) and the decoyed switchallexp (N = 1, 2): fresh lines equal the frozen ones; RF's closed form; RFA = Howard.
 set -eu
 cd "$(dirname "$0")"; export PYTHONDONTWRITEBYTECODE=1
 T=$(mktemp -d); trap 'rm -rf "$T"' EXIT
@@ -32,4 +33,16 @@ grep -q "^T109 sae 4 mode rf n 63 m 143 iterations 27 fallbacks 0 switches 103 c
 python3 "$TOP/experiments/harness/verify.py" "$T/s4.pg" "$T/s4.sol" > "$T/v.out" 2>&1 || { cat "$T/v.out"; exit 1; }
 o=$(python3 rand109.py 7 300 16 rf); grep -q "^R109 mode rf seed 7 games 300 n<=16: wrong 0 badstrat 0 capped 0 " <<<"$o"
 o=$(CTRL=1 python3 rand109.py 7 300 16 rf); grep -q "^R109 mode rf seed 7 games 300 n<=16 CTRL 1: wrong 300 " <<<"$o"
+# Addendum A: the kill family K^s_n (rebuilt), n = 1..6: RF's count is 7 * 2^(n-1) - 2n - 3, RFA's is polynomial; fresh lines = frozen lines
+python3 ks109.py 1 2 3 4 5 6 -- rf rfa howard > "$T/ks"
+[ "$(wc -l < "$T/ks")" = 18 ]
+while IFS= read -r line; do grep -qxF -- "$line" out/ks.out || { echo "fresh K^s line not in out/ks.out: $line"; exit 1; }; done < "$T/ks"
+for n in 1 2 3 4 5 6; do grep -q "^KS109 n $n mode rf .* iterations $((7 * 2 ** (n - 1) - 2 * n - 3)) switches .* wrong 0 badstrat 0 " "$T/ks"; done
+grep -q "^KS109 n 6 mode rfa |V| 127 |E| 236 iterations 25 " "$T/ks"
+# Addendum A: decoyed switchallexp: RFA's count equals Howard's, RF's does not
+python3 fam109.py table dsae 1 2 -- howard rfa rf --check | strip > "$T/dec"
+[ "$(wc -l < "$T/dec")" = 6 ]
+while IFS= read -r line; do grep -qxF -- "$line" out/decoy.out || { echo "fresh decoy line not in out/decoy.out: $line"; exit 1; }; done < "$T/dec"
+grep -q "^T109 dsae 2 mode howard n 497 m [0-9]* iterations 30 " "$T/dec"; grep -q "^T109 dsae 2 mode rfa n 497 m [0-9]* iterations 30 " "$T/dec"
+grep -q "^T109 dsae 2 mode rf n 497 m [0-9]* iterations 21 " "$T/dec"
 echo "CHECK109 PASS"

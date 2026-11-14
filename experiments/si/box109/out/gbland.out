@@ -1,0 +1,6 @@
+GB109 gate(G_3) n 17 (MSF: 2^N - 1 = 7 switches, experiments/si/instances/pinned.txt): labels revBland start a->a: RF 1 | labels revBland start a->b: RF 2 | labels Bland start a->a: RF 1 | labels Bland start a->b: RF 2
+GB109 gate(G_4) n 22 (MSF: 2^N - 1 = 15 switches, experiments/si/instances/pinned.txt): labels revBland start a->a: RF 1 | labels revBland start a->b: RF 3 | labels Bland start a->a: RF 1 | labels Bland start a->b: RF 3
+GB109 gate(G_5) n 27 (MSF: 2^N - 1 = 31 switches, experiments/si/instances/pinned.txt): labels revBland start a->a: RF 1 | labels revBland start a->b: RF 4 | labels Bland start a->a: RF 1 | labels Bland start a->b: RF 4
+GB109 gate(G_6) n 32 (MSF: 2^N - 1 = 63 switches, experiments/si/instances/pinned.txt): labels revBland start a->a: RF 1 | labels revBland start a->b: RF 5 | labels Bland start a->a: RF 1 | labels Bland start a->b: RF 5
+GB109 gate(G_8) n 42 (MSF: 2^N - 1 = 255 switches, experiments/si/instances/pinned.txt): labels revBland start a->a: RF 1 | labels revBland start a->b: RF 7 | labels Bland start a->a: RF 1 | labels Bland start a->b: RF 7
+GB109 gate(G_10) n 52 (MSF: 2^N - 1 = 1023 switches, experiments/si/instances/pinned.txt): labels revBland start a->a: RF 1 | labels revBland start a->b: RF 9 | labels Bland start a->a: RF 1 | labels Bland start a->b: RF 9

@@ -353,3 +353,165 @@ run109.sh (regenerates the tables of out/; the climbs, the random starts and the
 commands are in its last comment lines), check109.sh (about 10 s: the frozen rows of §3.2 are in this file line by line; N5's,
 RF's, Howard's, NH's and h1's rows on small sizes are re-run and compared with out/, with a control; rf109.py against n6.py's
 mode rf and harness verify.py on one game; 300 random games with a control; pinned in experiments/si/check.sh).
+
+## Addendum A (2026-11-14, after commit c236bca94; append-only): RF IS DEAD on L-RED-B 8's family K^s_n (rebuilt here); the variants that wait for more options die on DECOYED counters; no rule of this shape survives
+Labels as above. **SCOPE LINE: nothing here is a TARGET.md claim. This addendum records a dead end of the lane's own candidate, with its
+instances, and two lane lemmas. Where §0-§7 say «not killed in this box» of RF, read «DEAD in DATA, Addendum A». §4.2-§4.4 stay as the
+frozen statement of the rule that was attacked (the pseudocode three engines read alike, by the Lead's relay).**
+Sources of this addendum: the Lead's messages of 2026-11-14 14:06Z-15:19Z (relaying L-RED 71, L-RED-B 8, L-LIT; quoted where used; none
+of their files was opened by me) and my own runs (experiments/si/box109, outputs out/ks.out, out/stale.out, out/decoy.out,
+out/variants.out, out/rand_variants.out, out/m1.out, out/gate.out, out/gbland.out, out/bits.out).
+
+### A.1 The kill: K^s_n (L-RED-B 8's family; INDEPENDENT REBUILD here, `ks109.py`, written from the rule text below only)
+The rule, L-RED-B 8's words as relayed by the Lead (15:19Z): «Bits i = 1..n. ctx(i) := the list (x, n, n−1, …, i+1). One cycle gate
+(i, c) per bit i and c ∈ ctx(i); gate list L := (n, ctx(n)), (n−1, ctx(n−1)), …, (1, ctx(1)) in that order; below(i, c) := the reader C
+of the next gate of L, and R after the last gate. Vertices and edges (owner): x (Odd) → x. R (Even) → x | f(i,c) for every gate. Per
+gate: C(i,c) (Odd) → d(i,c) | below(i,c); d(i,c) (Even) → e(i,c) | below(i,c); e(i,c) (Odd) → d(i,c) | h(i,c); f(i,c) (Odd) → e(i,c);
+h(i,c) (Odd) → x if c = x, else g_c. Per bit i ≥ 2: g_i (Even) → f(i,c) and s(i,c) for every c ∈ ctx(i); s(i,c) (Odd) → x if c = x,
+else g_c. Priorities (all distinct): x 1; R 3; then p := 5 and for each gate in L order: C = p, d = p + 2, e = p + 3, p += 4; then g_2,
+…, g_n = p, p + 2, …; then p made even, and for i = 1..n with K = n − i + 1 and q = position of c in ctx(i) (from 0): s(i,c) = p + 1 +
+2q, then p += 2K + 2; f(i,c) = p + 2q + 1; h(i,c) = p + 2K + 2q + 2; p += 4K + 2. … Start σ_0: every gate open on its escape (d(i,c) →
+below(i,c)), R → x, g_i → s(i,x). Sizes: |V| = 3n² + 3n + 1» (my reading of the one unstated step: p advances by 2 per g_i).
+DATA (out/ks.out; engine: rf109.rf_select through n6.py; start σ_0; wrong = vertices whose winner differs from harness Zielonka,
+badstrat = complaints of verify.check, both 0 on every line):
+| n | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| \|V\| = 3n² + 3n + 1 | 7 | 19 | 37 | 61 | 91 | 127 | 169 | 217 |
+| \|E\| | 11 | 32 | 65 | 110 | 167 | 236 | 317 | 410 |
+| RF iterations | 2 | 7 | 19 | 45 | 99 | 209 | 431 | 877 |
+| 7·2^(n−1) − 2n − 3 | 2 | 7 | 19 | 45 | 99 | 209 | 431 | 877 |
+| Howard iterations | 2 | 4 | 6 | 8 | 8 | 9 | 10 | 11 |
+The counts equal L-RED-B 8's (2, 7, 19, 45, 99, 209, 431, 877, 1771 at n = 1..9 on its engine) at every n rebuilt; its |E| row agrees.
+CAVEAT (DATA, out/union.out): the doubling is from the start σ_0. From the rule's OWN start S3, RF makes 3, 6, 10, 15, 21 iterations on
+K^s_n (n = 2..6; = n(n + 1)/2). So what is dead is «RF from a given start» (SPEC allows a start pair); a kill of «RF from S3» needs K^s_n with
+σ_0 forced as the S3 start, which I have not built and have not seen.
+Two independent generators and two independent RF engines give the same doubling: **RF as defined in §4.2 is DEAD in DATA** (L43: a
+refereed proof for all n does not exist yet; the closed form has residual 0 on n = 1..8 here). Credit: L-RED-B 8.
+Mechanism, measured (`stale109.py`, out/stale.out; a switched vertex is STALE-BLIND when an improvable vertex lies on the play from
+one of its successors that is neither σ(v) nor an improving target, so RF did not wait for it): blind switches 2, 7, 18, 41, 88, 183
+of 8, 22, 52, 114, 240, 494 switches at n = 2..7, and EVERY blind vertex switches again later (counter «again» = «blind» at every n).
+This is the loophole L-RED named (as relayed): «RF waits only for improvable vertices on the plays of the CURRENT and the IMPROVING
+targets. Pending improvements below a currently NON-improving option are not waited for». It is the guess 3 of my status 3 and the
+gap between Lemma ACYC's proof (which needs every successor closed-final) and the rule (which inspects only some successors).
+
+### A.2 Variants (n6.py modes; each a Vöge-Jurdziński improvement rule: sink components of a dependency digraph on Imp, switch-best)
+| mode | D(v) = Imp ∩ (…) ∖ {v} |
+| --- | --- |
+| rf | plays from σ(v) and from the improving targets (§4.2) |
+| rfp (RF⁺) | the same, with each improving target's play and value RE-EVALUATED after the single switch (one S1 per improving edge) |
+| rfa (RFA) | plays from ALL successors of v |
+| rfa1, rfa2 | RFA plus the plays from all successors of the Even vertices on those plays, to depth 1, 2 |
+| rfr (RFR) | everything reachable from v's successors when Even keeps all edges and Odd keeps σ̄ (the fixed point of the closure) |
+| rfd (RFD) | plays from σ(v) and from every successor w that is NOT DOMINATED: U(w) ▷ Ξσ(σ(v)), U := Even's one-player optimum against the fixed σ̄ (computed as S4a computes W*, with A(·) = all edges). U(w) bounds every later value of w, and Ξ(σ(v)) only rises, so a dominated successor can never become an improving target (PROVED, two lines); improving targets are never dominated |
+DATA (iterations; out/ks.out, out/decoy.out, out/variants.out; wrong 0 / badstrat 0 throughout; 10,000 random games of §4.5 for rfa,
+rfr, rfd: out/rand_variants.out):
+| family | rf | rfp | rfa | rfr | rfd | howard |
+| --- | --- | --- | --- | --- | --- | --- |
+| K^s_n, n = 2..8 | 7, 19, 45, 99, 209, 431, 877 | the same | 6, 10, 14, 19, 25, 32, 40 | 5, 9, 13, 18, 24, 31, 39 | 6, 10, 14, 19, 25, 32, 40 | 4, 6, 8, 8, 9, 10, 11 |
+| dsae_N, N = 1..5 (decoyed switchallexp, n = 177, 497, 979, 1623, 2429) | 10, 21, 21, 27, 30 | | 10, 30, 70, 150, 310 | 10, 30, 70, 150, 310 | 9, 22, 42, 82 (N ≤ 4) | 10, 30, 70, 150, 310 |
+| dfr_n, n = 1..4 (decoyed G_n from ι, n = 56, 156, 306, 506) | 5, 9, 12, 15 | | 8, 26, 62, 134 | 8, 26, 62, 134 | 5, 15, 33, 69, 141 (n ≤ 5) | 8, 26, 62, 134 |
+| G_n from ι, n = 1..8 | 3n + 3 (n ≥ 2) | 3n + 2 (n ≥ 2) | 3n + 3 (n ≥ 2) | 5, 14, 25, 38, 53, 70, 89, 110 | | 9·2^n − 10 |
+| switchallexp, N = 1..8 | 10, 21, 21, 27, 30, 40, 41, 65 | 9, 18, 20, 23, 25, 46, 51, 52 | 10, 19, 19, 24, 28, 32, 36, 40 | 8, 18, 32, 46, 62, 80, 100, 122 | | doubling |
+| switchbestexp, N = 1..6 | 17, 38, 43, 69, 74, 82 | 17, 34, 55, 59, 70, 81 | 15, 29, 57, 92, 133, 180 | 14, 34, 62, 94, 132, 176 | | doubling |
+| Γ3(G_k), k = 3..8, 10, 12 | 6, 6, 8, 8, 10, 10, 12, 14 | | the same as rf | 5, 8, 11, 14, 17, 20, 26, 32 | | 3 |
+| W(G_n, ι), n = 1, 2, 4, 8 | 8 | | 8 | 7, 9, 9, 9 | | 3 |
+(Cells are read from out/ks.out, out/decoy.out, out/variants.out and §3.2; where a cell is empty the pair was not run. K^s_n without
+its skip edges (`ks109.py --noskip`): RF 7, 18, 38, 70, 117 at n = 2..6 = (n³ + 3n)/2, L-RED-B 8's polynomial control.)
+- **RF⁺ dies with RF** (the same counts on K^s_n): re-evaluating the improving targets does not see a non-improving option either.
+- **RFA and every closure are polynomial on K^s_n and on every table of §3.2, and DEAD on the decoyed counters** (A.3).
+- **RFD is DEAD on the same decoyed counters** (DATA: doubling). Reason (READING): against a FIXED σ̄ Even closes any open cycle gate
+  and wins its cycle, so U has the top reward at every vertex that reaches a gate and nothing is dominated; the one polynomial
+  upper bound on an option's future value that I have is vacuous exactly on the gadget every counter is built from.
+
+### A.3 Proposition DECOY (PROVED, lane; premises: [F11] Theorem 6.14 and, for (1S), [F11] Lemma 5.1 / Lemma 6.7 as cited in P-N5-WRAP §6; P-N5-WRAP Claim NT for the absence of ties)
+For a parity game H let U_H := the Even vertices with ≥ 2 successors, and D(H) := H plus, for every ordered pair (v, u) of distinct
+vertices of U_H, a PAD pad(v, u) (Even, one successor u, a fresh odd priority above every priority of H and of the earlier pads) and
+the edge v → pad(v, u). |D(H)| = |H| + |U_H|(|U_H| − 1).
+(a) Let σ be an Even strategy of D(H) that uses no pad edge at a vertex of U_H, and assume (1S): every Ξσ-value in H has the same
+cycle node x. Then no pad edge is improving at σ, and Ξσ on H's vertices is the same in D(H) as in H.
+*Proof.* No play of (σ, σ̄) from a vertex of H visits a pad (σ uses no pad edge; Odd has no new edge), so the plays and values on H's
+vertices are H's. Ξσ(pad(v, u)) = (x, P_u ∪ {pad}, ℓ_u + 1) and Ξσ(σ(v)) = (x, P′, ℓ′) with pad ∉ P′; the most relevant vertex of the
+symmetric difference is the pad (it is more relevant than every vertex of H), it is odd and lies in the pad's set: the pad's value
+is strictly worse. ∎
+(b) At such a σ, RFA's switching set is Imp(σ): for improvable v ≠ u the pad(v, u) is a successor of v and u lies on the play from
+it, so u ∈ D(v); the dependency digraph is complete, its only component is a sink. The same holds for rfa1, rfa2, rfr, whose D(v)
+contain RFA's. Each v ∈ Imp moves to its Ξσ-best improving target, which is a successor in H by (a): a Howard step of H.
+(c) Hence, from a start without pad edges and as long as (1S) holds along the run, the runs of RFA, rfa1, rfa2 and rfr on D(H) are
+Howard's run on H. For H = G_n and the start ι, (1S) holds along the whole improvement run ([F11] Lemma 5.1 with Lemma 6.7 (2), as
+P-N5-WRAP §6 uses them) and no tie occurs (Claim NT), so the run is the I^loc run: **at least 2^n iterations on D(G_n), a game with
+10n + 4 + (5n + 2)(5n + 1) vertices** ([F11] Theorem 6.14; |U_(G_n)| = 5n + 2 is DATA from the sizes 56, 156, 306, 506). ∎
+DATA: rfa = rfa1 = rfr = Howard on dfr_1..4 (8, 26, 62, 134) and, from S3, on dsae_1..5 (10, 30, 70, 150, 310); S3 picks no pad (FIX 1:
+the highest even priority, else the LOWEST odd one). RF itself ignores the pads (they are never improving): 5, 9, 12, 15 and 10, 21,
+21, 27, 30. This is the other side of the fact L-RED found for RF (as relayed): «a decoy cannot be insignificant» for a rule that
+waits only for improving targets; for a rule that waits for all targets a decoy costs nothing.
+
+### A.4 What this box now says about the shape (the Lead's «second-best outcome»)
+SHAPE: «at every iteration switch to the Ξσ-best improving target exactly the improvable vertices in the sink strongly connected
+components of a digraph Δ on Imp, where v → u iff u lies on the play, in the play graph of (σ, σ̄), from a successor in a set Opt(v)».
+| Opt(v) | rule | dies on | obstruction |
+| --- | --- | --- | --- |
+| σ(v) and the improving targets | RF, RF⁺ | K^s_n (7·2^(n−1) − 2n − 3; DATA n ≤ 8 here, n ≤ 9 at L-RED-B) | STALE OPTION: an option that is not improving now and will be |
+| all successors, with or without closure | RFA, rfa1, rfa2, RFR | D(G_n) from ι (PROVED: Howard's run, ≥ 2^n), dsae_N from S3 (DATA) | DECOY: an option that never will be |
+| successors not dominated under σ̄-optimism | RFD | dsae_N, dfr_n (DATA: doubling) | the optimism is vacuous on cycle gates, so the decoys stay |
+READING. The set Opt(v) a correct rule would need is «the successors that become improving targets later in this run», which is
+the run. An under-approximation leaves a stale option (K^s_n is built from one), an over-approximation admits a decoy. To separate
+the two a rule needs an upper bound on an option's FUTURE value that is tighter than the one-player optimum against σ̄, i.e.
+two-player information it does not have before it has solved the game. I have no such bound and name no further candidate. What
+is NOT shown: that no polynomial rule of the wider form «Howard on a subset chosen from (σ, σ̄, Ξσ)» exists; only the six rules
+above are dead, each on its instance.
+The classical neighbour (L-LIT's prior-art report, as relayed; NOT opened by me): Melekopoglou-Condon's Topological Policy
+Improvement, components of the whole graph fixed once, exponential on a one-component example. RF's components are dynamic and
+play-based, which is why it passes G_n; the decoy family is the same warning in RF's terms.
+
+### A.5 Lemma FREEZE (PROVED, lane; any improvement rule; premises R15 (a) and [1E-N3] P1)
+For a strategy σ let G_σ̄ be the graph in which Even's vertices keep all their edges and Odd's vertices keep only σ̄(·), and R(x) the
+set of vertices reachable from x in it (x included). If no vertex of R(x) is improvable at σ, then along EVERY continuation of the
+improvement run (any non-empty sets of improving switches, any rule) σ and Ξ are unchanged on R(x).
+*Proof.* Induction on the steps, with the set R := R(x) and the Odd strategy τ_R := σ̄ restricted to R fixed once. Invariant: no
+vertex of R is improvable, σ on R is the original one, and Ξ on R is the original one. A step σ₁ → σ₂ = Switch_J(σ₁), J ⊆ I_(σ₁),
+leaves σ on R unchanged (no vertex of R is improvable). Ξ_(σ₂) ⊵ Ξ_(σ₁) everywhere (R15 (a)). Conversely, from y ∈ R the play of σ₂
+against τ_R stays in R (every successor of an Even vertex of R is in R, and τ_R maps R into R) and is the original play, so its
+value is the original Ξ(y); Odd's optimal reply does at least as well for Odd (P1): Ξ_(σ₂)(y) ⊴ Ξ(y). So Ξ is unchanged on R, and an
+Even vertex of R, whose successors all lie in R, is still not improvable. ∎
+Use. Under RFR a vertex v all of whose successors w have R(w) free of improvable vertices moves to its final choice and never moves
+again; at most |V_E| switches of a run are of this kind, and the whole length of a run sits in the non-singleton sink components,
+where the rule is Howard's. Proposition DECOY hits exactly there. FREEZE itself is rule-independent and stays usable (for instance
+as a sound «this region is solved against σ̄» test inside any improvement loop).
+
+### A.6 DATA collected on RF before the kill (kept as the record of what the candidate passed; none of it is evidence for RF now)
+- Oink M1 families (`m1_109.py`, out/m1.out; Oink 8fbf0a7 generators; NA = harness Zielonka not finished within the time limit, the
+  strategies are verified in every line): counter_core 2N (N = 2..40, n = 6N + 3); counter_dp N for even N and 0 for odd N; counter_m 1 for even N
+  and N for odd N; counter_ortl N + 1; counter_qpt 1; counter_rr ≤ N; recursiveladder 0 for even N and N − 1 for odd N (all at N = 2, 3, 4,
+  5, 6, 8, 10, 15, 20, 30, 40); counter_rob 8, 15, 25, 38, 54, 73, 95, 148, 213 at N = 2..8, 10, 12 (n = 31 … 531); counter_symsi 8, 14, 17, 19,
+  22, 24, 27, 32, 37; tc 5, 9, 17, 22, 26, 35, 40, 60, 104 (n = 22 … 492); tc+ 4, 10, 16, 24, 38, 49, 60, 85, 114 (n = 24 … 1944). No doubling.
+- L-RED's gate transform (`gate109.py`, out/gate.out; labels as experiments/si/gated.py): gated switchallexp 12, 18, 24, 30 (N = 2, 4,
+  6, 8); gated zadehexp 6, 10, 12, 14; gated switchbestexp 18, 46, 78, 120, 169, 225, 288, 358 at N = 1..8 (519 at N = 10): QUADRATIC
+  (second differences 4, 10, 7, 7, 7, 7) where the ungated family is linear; the same counts after a second gating; 20, 18, 21 at N = 2, 3, 4 with
+  the label order reversed. READING: behind a gate the play from an improving target returns to the vertex (Odd goes back while the
+  target is better), so RF's D(v) sees only the CURRENT play, and the improving gates are ranked by their LABEL: the Gate Lemma's
+  lever works on RF's edge choice. RF⁺ on the same games: 19, 36, 57, 61 at N = 1..4.
+- L-RED's gated Bland counter gate(G_N) (MSF: 2^N − 1 switches) from its designed starts (`gate109.py bland`, out/gbland.out): RF 1
+  iteration from a_i → a_(i+1) and N − 1 from a_i → b_(i+1), N = 3..10: downstream-first is backward induction on that counter.
+- Bits of G_n under RF (`bits109.py`, out/bits.out): n sets, 0 resets, every vertex ≤ 2 switches except s (2n − 1), n = 2..16. This is
+  a statement about G_n ONLY: on L-RED 71's RC_n (n² + 3n − 2 iterations) and on Friedmann's H_n as L-LIT transcribed it (7n² + 11n − 13)
+  RF does reset bits (the Lead's relay); on K^s_n the resets are genuine and the count doubles.
+
+### A.7 Files added with this addendum
+experiments/si/box109/: ks109.py (K^s_n), stale109.py, m1_109.py, gate109.py, bits109.py; n6.py (modes rfp, rfa, rfa1, rfa2, rfr, rfd
+added; the modes of §3.1 unchanged); fam109.py (families dsae, dsbe, dfr; subcommands unchanged); out/ks.out, out/stale.out,
+out/decoy.out, out/variants.out, out/rand_variants.out, out/m1.out, out/gate.out, out/gbland.out, out/bits.out; check109.sh (new
+lines: K^s_n n = 1..6 under rf, rfa and howard against the closed form and out/ks.out; dsae_1, dsae_2 under howard, rfa and rf against
+out/decoy.out, with rfa = howard).
+
+### A.8 What is left inside one-sided improvement (the Lead's question of 15:46Z; READING, one paragraph)
+Howard is fast on K^s_n (≤ 11 iterations at n ≤ 8) and exponential on G_n; RF is fast on G_n (3n + 3) and exponential on K^s_n from σ_0.
+Taking «the better of the two» by running both does not survive: both rules act on a disjoint union part by part (a one-sided rule has
+no fallback to couple the parts, and RF's sink components of a union are the sink components of the parts), so on K^s_n ⊔ G_n with the
+starts (σ_0, ι) RF makes 9, 19, 45, 99, 209 and Howard 26, 62, 134, 278, 566 iterations at n = 2..6 (DATA, out/union.out): the dovetailing
+dies exactly as h2 did. A rule that chooses per component of the game graph would survive that union and would need the two
+counters interleaved in one component, which I have not tried. Beyond that I have nothing inside one-sided improvement that I
+would bet on: Lemma FREEZE marks where a dependency rule's information ends (a region is settled only when it is closed under
+Even's moves and Odd's current reply), everything short of that is a guess about which options will matter, and the two
+obstructions of A.4 punish the guess in both directions. The one asset of this box that is not a rule is FREEZE itself, as a sound
+«solved against σ̄» test that any improvement loop (or lane A's potential-jump scheme) can use to stop working on a region.
+

@@ -10,6 +10,8 @@ Families (name ARG):
   fr n      G_n itself; start: iota for Even, S3 for Odd
   sae n     PGSolver switchallexp_n (experiments/hard-families/pgsolver_port.py); start S3
   sbe n     PGSolver switchbestexp_n; start S3
+  dsae N | dsbe N | dfr n   the family sae / sbe / fr with DECOYS: for every ordered pair (v, u) of distinct Even vertices with >= 2
+            successors a pad (Even, successor u, a fresh odd priority above all others) and the edge v -> pad; never improving
   ws n      W(switchallexp_n, best-reward start) (box 104's frozen W_n); start S3
   rfs n | zad n | cun n | dlb n | dml n    experiments/si/gens.py: randomfacetsubexp, zadehexp, cunninghamexp, dlmm_bland, dlmm_ML; S3
 Env: LLIT (a tree holding claude/l-lit 5c53efbd's docs/lit/T66-depth-check.py; needed by wl, fr, du only); REDB (a tree holding
@@ -87,6 +89,16 @@ def family(name, a):
     if name == "fr":
         H, s0 = lmcs_game(a); E, Ed = n6.Engine(H), n6.Engine(n6.dual(H)); sg, tau = n5x.start_pair(H, E, Ed, None)
         sg = [s0[v] if H.owner[v] == 0 else sg[v] for v in range(H.n)]; return H, (sg, tau)
+    if name in ("dsae", "dsbe", "dfr"):   # DECOYS: for every ordered pair (v, u) of distinct Even vertices with >= 2 successors, a pad
+        # (Even, one successor u, a fresh odd priority above every priority of the game) and the edge v -> pad
+        H, sp = family(name[1:], a); prio = list(H.prio); owner = list(H.owner); succ = [list(s) for s in H.succ]
+        U = [v for v in range(H.n) if owner[v] == 0 and len(set(succ[v])) >= 2]; p = max(prio) + 1; p += 1 - p % 2
+        for v in U:
+            for u in U:
+                if u != v: prio.append(p); owner.append(0); succ.append([u]); succ[v].append(len(prio) - 1); p += 2
+        g = pg.Game(prio, owner, [sorted(s) for s in succ])
+        if sp is not None: sp = (list(sp[0]) + [g.succ[x][0] for x in range(H.n, g.n)], list(sp[1]) + [-1] * (g.n - H.n))
+        return g, sp
     if name in ("sae", "sbe", "ws"):
         import pgsolver_port as P
         H = pg.parse(P.GENS["switchbestexp" if name == "sbe" else "switchallexp"](a))

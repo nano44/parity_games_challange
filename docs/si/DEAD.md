@@ -740,3 +740,19 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   32, 41, 47, 55, 62, 68). Linear on switchallexp (6N + 1, N ≤ 16) and on G_n from ι (≤ 73 at n = 16). Obstruction: «never hold»
   makes the rule a switch-all rule; switchbestexp's counter runs on the vertices N5 holds.
 - Not killed in box 109: h1 (alternate N5 / N5′-xi), RF (candidate S8), RF2. See the box file for what I expect to kill them.
+- **S8 = RF (ROOT-FIRST; box 109 §4.2) and RF⁺ (re-evaluated improving targets): DEAD in DATA, 2026-11-14.** Killer: L-RED-B 8's family
+  K^s_n (rule text in docs/si/box109-design.md Addendum A.1; rebuilt independently by this lane, experiments/si/box109/ks109.py),
+  |V| = 3n² + 3n + 1, start σ_0: RF and RF⁺ make 2, 7, 19, 45, 99, 209, 431, 877 iterations at n = 1..8 = 7·2^(n−1) − 2n − 3 (Howard 2, 4, 6,
+  8, 8, 9, 10, 11); the same counts on L-RED-B 8's own engine up to n = 9 (the Lead's relay). Obstruction STALE OPTION: RF waits only for
+  improvable vertices on the plays of the current and the improving targets; a successor that is not improving yet but has a pending
+  improvement below it is not waited for (out/stale.out: 183 of 494 switches at n = 7 are of this kind, and every one of those
+  vertices switches again). L43: no refereed proof for all n yet.
+- **RFA (wait for the plays of ALL successors) and its closures rfa1, rfa2, RFR: DEAD, 2026-11-14.** Killer (this lane): the DECOYED
+  counters D(H) = H plus a pad (Even, fresh top odd priority) from every Even vertex with ≥ 2 successors to every other one. PROVED
+  (lane, Proposition DECOY, Addendum A.3): from ι on D(G_n) each of these rules IS Howard's rule, ≥ 2^n iterations by [F11] Theorem
+  6.14, on 10n + 4 + (5n + 2)(5n + 1) vertices. DATA: = Howard on dfr_1..4 (8, 26, 62, 134) and on dsae_1..5 from S3 (10, 30, 70, 150, 310).
+  Obstruction DECOY: an option that never becomes improving makes every improvable vertex depend on every other one.
+- **RFD (wait only for successors not dominated under the one-player optimum against σ̄): DEAD in DATA, 2026-11-14.** The same decoyed
+  families: dsae_1..4 9, 22, 42, 82; dfr_1..5 5, 15, 33, 69, 141. Obstruction: against a fixed σ̄ Even wins every open cycle gate, so nothing
+  is dominated and the decoys stay.
+- Shape statement and what is not shown: Addendum A.4. Lemma FREEZE (Addendum A.5) outlives the candidates.

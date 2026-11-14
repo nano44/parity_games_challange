@@ -32,3 +32,8 @@ echo DONE
 #   ONEP=1 python3 climb109.py rf 8 7 8 30000;  ONEP=1 python3 climb109.py rf 12 7 8 30000;  python3 climb109.py howard 12 1 6 4000
 #   python3 starts109.py fr 6 200 5;  python3 starts109.py sae 6 200 5;  python3 starts109.py sbe 4 200 5        (need LLIT for fr)
 #   python3 famrf109.py --G 4 --K 6 --restarts 12 --steps 1200 --seed 1;  python3 famrf109.py --G 3 --K 7 --restarts 16 --steps 1500 --seed 2 --desc
+# Addendum A (frozen in out/ks.out, stale.out, decoy.out, variants.out, rand_variants.out, m1.out, gate.out, gbland.out, bits.out, union.out):
+#   python3 ks109.py 1 2 3 4 5 6 7 8 -- rf howard rfp rfa rfa1 rfr rfd spec nh; python3 ks109.py 9 10 12 -- rfa rfr; python3 ks109.py 2 3 4 5 6 --noskip -- rf
+#   python3 stale109.py 2 3 4 5 6 7;  python3 fam109.py table dsae 1 2 3 4 5 -- howard rf rfa rfa1 rfr --check  (rfd: 1..4);  dfr 1..4 the same (rfd: 1..5)
+#   python3 fam109.py table {gk,wl,fr,sae,sbe} .. -- rfa rfr [rfp] --check;  python3 rand109.py 109 10000 40 rfa rfr rfd
+#   python3 m1_109.py FAMILY N.. -- rf --secs 200 (Oink built);  python3 gate109.py FAMILY N DEPTH MODE [--order ..];  python3 gate109.py bland N..;  python3 bits109.py n..
