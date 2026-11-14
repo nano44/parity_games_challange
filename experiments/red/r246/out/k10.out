@@ -1,0 +1,3 @@
+TIE246 G_10_top.pg n 1120 eng s mode spec ctrl 0 its 1026 fb 1 a_steps 1026 choice 15512 tie 0 ptie 0 ctie 0 tie_mov 0 tie_its 0 tie_max 0 refuse 12564 refuse_strict 12564 b_steps 0 bchoice 0 btie 0 fbtie 0 opt_bad 0
+N5B G_10_top.pg mode spec n5b iterations 1026 fallbacks 1 evals 4107
+JOB END k10 2026-11-14T14:16:40Z

@@ -1,0 +1,19 @@
+DECOY247 friedmann_G2 decoy none n 24 rule howard iterations 26 even_wins 0
+DECOY247 friedmann_G2 decoy none n 24 rule rf iterations 9 even_wins 0
+DECOY247 friedmann_G2 decoy all n 26 rule howard iterations 8 even_wins 25
+DECOY247 friedmann_G2 decoy all n 26 rule rf iterations 11 even_wins 25
+DECOY247 friedmann_G2 decoy 1 n 25 rule howard iterations 5 even_wins 19
+DECOY247 friedmann_G2 decoy 1 n 25 rule rf iterations 6 even_wins 19
+DECOY247 friedmann_G3 decoy none n 34 rule howard iterations 62 even_wins 0
+DECOY247 friedmann_G3 decoy none n 34 rule rf iterations 12 even_wins 0
+DECOY247 friedmann_G3 decoy all n 37 rule howard iterations 10 even_wins 36
+DECOY247 friedmann_G3 decoy all n 37 rule rf iterations 15 even_wins 36
+DECOY247 friedmann_G3 decoy 1 n 35 rule howard iterations 6 even_wins 24
+DECOY247 friedmann_G3 decoy 1 n 35 rule rf iterations 7 even_wins 24
+DECOY247 friedmann_G4 decoy none n 44 rule howard iterations 134 even_wins 0
+DECOY247 friedmann_G4 decoy none n 44 rule rf iterations 15 even_wins 0
+DECOY247 friedmann_G4 decoy all n 48 rule howard iterations 12 even_wins 47
+DECOY247 friedmann_G4 decoy all n 48 rule rf iterations 19 even_wins 47
+DECOY247 friedmann_G4 decoy 1 n 45 rule howard iterations 8 even_wins 29
+DECOY247 friedmann_G4 decoy 1 n 45 rule rf iterations 9 even_wins 29
+JOB END decoy 2026-11-14T14:50:34Z

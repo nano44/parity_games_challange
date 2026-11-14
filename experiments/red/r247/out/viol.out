@@ -1,0 +1,81 @@
+== friedmann_G2
+howard iterations 26 steps with a blocked vertex 10 of 26
+  blocked t by t 18
+  blocked d by t 15
+  blocked t by c 15
+  blocked t by r 12
+  blocked t by k 4
+  blocked c by r 3
+  blocked d by r 1
+  blocked d by c 1
+  blocked r by k 1
+  blocked c by k 1
+  blocked d by k 1
+  blocked g by d 1
+== friedmann_G3
+it 1: switch t2->t1 d1->a1 d2->a1 d3->a1 | BLOCKED under RF: d1[t2] d2[t2] d3[t2]
+it 2: switch t3->t2 d1->a2 d2->a2 d3->a2 | BLOCKED under RF: 
+it 3: switch t4->t3 d1->e1 d2->a3 d3->a3 | BLOCKED under RF: 
+it 4: switch s->f1 t5->t4 g1->f1 d2->a4 d3->a4 | BLOCKED under RF: 
+it 5: switch r->g1 c->s t1->s t2->s t3->s t4->s t5->s t6->s d2->s d3->s | BLOCKED under RF: c[r] t1[r,c] t2[r,c,t1] t3[r,c,t1,t2] t4[r,c,t1,t2,t3] t5[r,c,t1,t2,t3,t4] t6[r,c,t1,t2,t3,t4,t5] d2[r,c,t1,t2,t3,t4] d3[r,c,t1,t2,t3,t4,t5]
+it 6: switch c->r t1->r t2->r t3->r t4->r t5->r t6->r d2->r d3->r | BLOCKED under RF: t1[c] d2[t1,t2,t3,t4] d3[t1,t2,t3,t4,t5,t6]
+it 7: switch t1->c d2->a4 d3->a6 | BLOCKED under RF: d2[t1] d3[t1]
+it 8: switch t2->t1 d2->a1 d3->a1 | BLOCKED under RF: 
+it 9: switch t3->t2 d2->a2 d3->a2 | BLOCKED under RF: 
+it 10: switch t4->t3 d2->a3 d3->a3 | BLOCKED under RF: 
+it 11: switch t5->t4 d2->a4 d3->a4 | BLOCKED under RF: 
+it 12: switch t6->t5 d2->e2 d3->a5 | BLOCKED under RF: 
+it 13: switch s->f2 g2->f2 d3->a6 | BLOCKED under RF: 
+it 14: switch r->g2 c->s t1->s t2->s t3->s t4->s t5->s t6->s d1->s k1->g2 d3->s | BLOCKED under RF: r[k1] c[r,k1] t1[r,c,k1] t2[r,c,t1,k1] t3[r,c,t1,t2,k1] t4[r,c,t1,t2,t3,k1] t5[r,c,t1,t2,t3,t4,k1] t6[r,c,t1,t2,t3,t4,t5,k1] d1[k1] d3[r,c,t1,t2,t3,t4,t5,t6,k1]
+it 15: switch c->r t1->r t2->r t3->r t4->r t5->r t6->r d1->r g1->k1 d3->r | BLOCKED under RF: t1[c] d1[t1,t2] g1[d1] d3[t1,t2,t3,t4,t5,t6]
+it 16: switch t1->c d1->a2 d3->a6 | BLOCKED under RF: d1[t1] d3[t1]
+howard iterations 62 steps with a blocked vertex 24 of 62
+  blocked t by t 105
+  blocked d by t 75
+  blocked t by c 49
+  blocked t by r 42
+  blocked t by k 24
+  blocked c by r 7
+  blocked d by k 6
+  blocked d by r 5
+  blocked d by c 5
+  blocked r by k 4
+  blocked c by k 4
+  blocked g by d 4
+  blocked k by k 1
+== friedmann_G4
+howard iterations 134 steps with a blocked vertex 52 of 134
+  blocked t by t 316
+  blocked d by t 269
+  blocked t by r 120
+  blocked t by c 119
+  blocked t by k 88
+  blocked d by k 22
+  blocked d by r 17
+  blocked d by c 17
+  blocked c by r 15
+  blocked r by k 11
+  blocked c by k 11
+  blocked g by d 11
+  blocked k by k 5
+== RF trace on friedmann_G2
+it 1: improvable t2->t1* d1->a1 d2->a1
+      deps: d1:{t2}; d2:{t2}
+it 2: improvable t3->t2* d1->a2* d2->a2
+      deps: d2:{t3}
+it 3: improvable t4->t3* d1->e1* d2->a3
+      deps: d2:{t4}
+it 4: improvable s->f1* g1->f1* d2->a4*
+      deps: 
+it 5: improvable r->g1* c->s t1->s t2->s t3->s t4->s d2->s
+      deps: c:{r}; t1:{r,c}; t2:{r,c,t1}; t3:{r,c,t1,t2}; t4:{r,c,t1,t2,t3}; d2:{r,c,t1,t2,t3,t4}
+it 6: improvable d2->e2*
+      deps: 
+it 7: improvable s->f2* g2->f2*
+      deps: 
+it 8: improvable r->g2 c->s t1->s t2->s t3->s t4->s d1->s k1->g2*
+      deps: r:{k1}; c:{r,k1}; t1:{r,c,k1}; t2:{r,c,t1,k1}; t3:{r,c,t1,t2,k1}; t4:{r,c,t1,t2,t3,k1}; d1:{k1}
+it 9: improvable s->f1*
+      deps: 
+iterations 9
+JOB END viol 2026-11-14T14:50:34Z

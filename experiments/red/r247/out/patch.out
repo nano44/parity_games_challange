@@ -1,0 +1,26 @@
+PATCH247 opts [] n 1 iterations 5 rule iterations 8
+PATCH247 opts [] n 2 iterations 9 rule iterations 26
+PATCH247 opts [] n 3 iterations 12 rule iterations 62
+PATCH247 opts [] n 4 iterations 15 rule iterations 134
+PATCH247 opts [] n 5 iterations 18 rule iterations 278
+PATCH247 opts [buf=1] n 1 iterations 5 rule iterations 8
+PATCH247 opts [buf=1] n 2 iterations 9 rule iterations 26
+PATCH247 opts [buf=1] n 3 iterations 12 rule iterations 62
+PATCH247 opts [buf=1] n 4 iterations 15 rule iterations 134
+PATCH247 opts [buf=1] n 5 iterations 18 rule iterations 278
+PATCH247 opts [buf=2] n 1 iterations 5 rule iterations 8
+PATCH247 opts [buf=2] n 2 iterations 9 rule iterations 26
+PATCH247 opts [buf=2] n 3 iterations 12 rule iterations 62
+PATCH247 opts [buf=2] n 4 iterations 15 rule iterations 134
+PATCH247 opts [buf=2] n 5 iterations 18 rule iterations 278
+PATCH247 opts [noCS] n 1 iterations 5 rule iterations 7
+PATCH247 opts [noCS] n 2 iterations 9 rule iterations 23
+PATCH247 opts [noCS] n 3 iterations 12 rule iterations 55
+PATCH247 opts [noCS] n 4 iterations 15 rule iterations 119
+PATCH247 opts [noCS] n 5 iterations 18 rule iterations 247
+PATCH247 opts [buf=2 noCS] n 1 iterations 5 rule iterations 7
+PATCH247 opts [buf=2 noCS] n 2 iterations 9 rule iterations 23
+PATCH247 opts [buf=2 noCS] n 3 iterations 12 rule iterations 55
+PATCH247 opts [buf=2 noCS] n 4 iterations 15 rule iterations 119
+PATCH247 opts [buf=2 noCS] n 5 iterations 18 rule iterations 247
+JOB END patch 2026-11-14T14:50:37Z

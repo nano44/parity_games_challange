@@ -3675,4 +3675,14 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
 - Sources opened this session: trunk docs/red/P-N5-REALIZE.md §1-§4; trunk docs/new/P-N5-REACH.md §3-§7 (l. 122-258); claude/l-red-b 10dfedb6
   docs/red-b/P-N5-EXP.md l. 1-200; trunk docs/new/N5-ssi-global.md l. 46-64 (S2-S5); Friedmann LMCS 7 (3:19), arXiv 1106.0778 §6.4 as coded in
   gens_red.py friedmann_Gn (earlier successors' source; not re-opened today).
-- RESUME POINT (updated at each push): see the last lines of this section.
+- 2026-11-14T14:55Z: push 2 = 71894473 on origin (14:32Z). R247 (docs/red/R247-rf.md): NO KILL of RF yet. Facts: RF = Howard on 38 of the 62 steps of
+  Howard's run on G_3 and cancels the reset steps (d_i → s blocked by k_i on its current play; lane reset blocked by c, r); Fact DECOY (a decoy from a sink v
+  to a u blocked through its CURRENT play returns to v: it is improving iff it closes a cycle good for Even: winning move or real cycle gate; DATA: k_i → z_i →
+  d_i makes Even win 25 / 36 / 47 vertices of G_2..4 and Howard drop to 8 / 10 / 12); buffers and «c without s» change nothing (RF 5, 9, 12, 15, 18);
+  PGSolver switchbestexp / switchallexp from S3 to N 16: RF 210 / 79 (linear / flat); Γ3^top(G_k): RF 2k + 4; exact maxima 1, 4, 8 at n = 2, 3, 4 (witnesses
+  one-player); climbs 8, 11, 16, 18, 21, 22, 29 (n ≤ 4..10), 31, 33, 35, 46 (n ≤ 12, 14, 16, 20). Γ3^top(G_10): 1026 iterations (own engine + n5b; r246/out/k10.out).
+- Open routes against RF (R247 §4): LOOPHOLE (pending improvements below a non-improving option are not waited for), BLOCKS (mutual dependency through
+  improving targets = Howard inside; best_r8.pg leapfrogs), GENUINE RESETS (not found). Things only I know: a bit whose exit sees higher bits never
+  resets under RF; with static exits it never re-sets; a chain of exits going DOWN through lower set bits keeps their markers through Odd's e_i → h_i even
+  after d_i leaves (no reset either).
+- RESUME POINT: push 3 (R247) pending; next = a designed gadget for LOOPHOLE / BLOCKS, or the next candidate the Lead routes.

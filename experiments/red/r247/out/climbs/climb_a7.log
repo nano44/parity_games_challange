@@ -1,0 +1,27 @@
+BEST evals 12 n 6 m 10 rf_its 2 switches 2 howard_its 2 secs 0
+BEST evals 25 n 6 m 12 rf_its 3 switches 3 howard_its 2 secs 0
+BEST evals 55 n 6 m 11 rf_its 3 switches 4 howard_its 3 secs 0
+BEST evals 72 n 6 m 15 rf_its 4 switches 4 howard_its 3 secs 0
+BEST evals 108 n 7 m 16 rf_its 4 switches 5 howard_its 4 secs 0
+BEST evals 145 n 7 m 17 rf_its 5 switches 7 howard_its 4 secs 0
+BEST evals 228 n 7 m 18 rf_its 6 switches 8 howard_its 3 secs 0
+BEST evals 261 n 7 m 20 rf_its 7 switches 9 howard_its 2 secs 0
+BEST evals 289 n 7 m 21 rf_its 7 switches 10 howard_its 3 secs 0
+BEST evals 448 n 7 m 21 rf_its 8 switches 11 howard_its 3 secs 0
+BEST evals 450 n 7 m 21 rf_its 8 switches 14 howard_its 3 secs 0
+BEST evals 519 n 7 m 20 rf_its 8 switches 15 howard_its 3 secs 0
+BEST evals 631 n 7 m 18 rf_its 9 switches 15 howard_its 3 secs 0
+BEST evals 736 n 7 m 18 rf_its 9 switches 16 howard_its 3 secs 0
+BEST evals 742 n 7 m 17 rf_its 10 switches 15 howard_its 4 secs 0
+BEST evals 747 n 7 m 18 rf_its 10 switches 17 howard_its 3 secs 0
+BEST evals 770 n 7 m 18 rf_its 11 switches 14 howard_its 3 secs 0
+BEST evals 796 n 7 m 20 rf_its 12 switches 15 howard_its 6 secs 0
+BEST evals 941 n 7 m 19 rf_its 14 switches 16 howard_its 6 secs 0
+BEST evals 1237 n 7 m 19 rf_its 14 switches 17 howard_its 5 secs 0
+BEST evals 2191 n 7 m 20 rf_its 14 switches 18 howard_its 5 secs 1
+BEST evals 2297 n 7 m 20 rf_its 15 switches 18 howard_its 6 secs 1
+BEST evals 32206 n 7 m 20 rf_its 16 switches 18 howard_its 5 secs 12
+BEST evals 47851 n 7 m 20 rf_its 17 switches 18 howard_its 8 secs 18
+BEST evals 64943 n 7 m 19 rf_its 18 switches 18 howard_its 5 secs 25
+BEST evals 82161 n 7 m 20 rf_its 18 switches 19 howard_its 8 secs 32
+END evals 385263 best (18, 19) n 7 secs 150

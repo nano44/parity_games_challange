@@ -1,0 +1,3 @@
+EXH247 n 3 D 3 mode two rule rf part 0/1 games 2401 runs 6516 max_its 4 attained_by 1 howard_its_on_witness 3 secs 0
+EXH247 histogram of per-game maxima: 0:661 1:1320 2:387 3:32 4:1
+EXH247 witness: parity 2; 0 0 0 0,1; 1 1 0 0,1,2; 2 2 0 0,1,2; % start 0:0 1:1 2:1

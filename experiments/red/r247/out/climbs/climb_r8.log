@@ -1,0 +1,25 @@
+BEST evals 9 n 5 m 10 score ret rf (0, 0, 2) howard (0, 0, 1) secs 0
+BEST evals 15 n 6 m 13 score ret rf (1, 1, 2) howard (1, 1, 2) secs 0
+BEST evals 17 n 6 m 13 score ret rf (1, 1, 3) howard (1, 1, 2) secs 0
+BEST evals 36 n 6 m 15 score ret rf (2, 3, 4) howard (2, 3, 3) secs 0
+BEST evals 152 n 7 m 18 score ret rf (2, 5, 5) howard (1, 2, 3) secs 0
+BEST evals 159 n 8 m 22 score ret rf (2, 5, 6) howard (1, 2, 3) secs 0
+BEST evals 171 n 8 m 22 score ret rf (3, 7, 7) howard (1, 3, 3) secs 0
+BEST evals 1071 n 8 m 24 score ret rf (4, 11, 7) howard (2, 4, 3) secs 0
+BEST evals 1121 n 8 m 24 score ret rf (4, 11, 8) howard (2, 4, 3) secs 0
+BEST evals 1289 n 8 m 21 score ret rf (4, 11, 9) howard (2, 4, 4) secs 0
+BEST evals 1535 n 8 m 20 score ret rf (4, 11, 10) howard (2, 4, 3) secs 0
+BEST evals 1698 n 8 m 23 score ret rf (4, 12, 10) howard (1, 2, 3) secs 1
+BEST evals 2183 n 8 m 21 score ret rf (4, 12, 11) howard (1, 2, 3) secs 1
+BEST evals 5864 n 7 m 18 score ret rf (4, 15, 9) howard (4, 13, 6) secs 2
+BEST evals 11405 n 8 m 24 score ret rf (4, 15, 14) howard (3, 15, 6) secs 4
+BEST evals 22261 n 8 m 23 score ret rf (4, 18, 7) howard (4, 19, 7) secs 9
+BEST evals 22290 n 8 m 22 score ret rf (5, 19, 7) howard (5, 20, 7) secs 9
+BEST evals 22569 n 8 m 19 score ret rf (5, 22, 7) howard (5, 21, 7) secs 9
+BEST evals 63402 n 8 m 22 score ret rf (6, 19, 9) howard (6, 20, 8) secs 26
+BEST evals 63671 n 8 m 22 score ret rf (6, 19, 10) howard (6, 22, 8) secs 26
+BEST evals 77430 n 8 m 21 score ret rf (6, 19, 11) howard (6, 19, 9) secs 32
+BEST evals 78000 n 8 m 24 score ret rf (6, 20, 11) howard (6, 21, 9) secs 32
+BEST evals 78903 n 8 m 23 score ret rf (6, 21, 11) howard (6, 20, 8) secs 33
+BEST evals 79215 n 8 m 23 score ret rf (6, 21, 13) howard (6, 21, 9) secs 33
+END evals 99051 best (6, 21, 13) n 8 secs 40
