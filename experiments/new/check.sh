@@ -1253,4 +1253,12 @@ if (cd box218/out && sha1sum -c --quiet SHA1SUMS) && (cd box218/inst && sha1sum 
 else
   echo "BOX 218 / G_k replay pins: FAILED"; exit 1
 fi
+# N12 SETTLE (L-NEW successor 78; docs/new/N12-proposal.md, a DEAD-END record): Ohlmann's ReduceGame (arXiv 2603.07555v1) on parity weights with the lane's repaired reduced test, reduced-trap peeling and side rules; instances and outputs pinned, a 20 s live run (kill instance U_7, the 4-vertex witness of the unsound literal test as a firing control, 150 random games against harness Zielonka + verify.py).
+r12=0; run12=$(cd n12 && bash check_n12.sh 2>&1) || r12=$?
+d12=$(diff <(printf '%s\n' "$run12") n12/check_n12.out 2>&1) || true
+if [ "$r12" -eq 0 ] && [ -z "$d12" ] && grep -q '^ctrl  lit_witness_n4   calls 2 WE 2$' n12/check_n12.out && grep -q '^sound lit_witness_n4   calls 4 WE 0$' n12/check_n12.out && grep -q "'Sbig': 0, 'topx': 0, 'duet': 0, 'small+literal+nopeel+n61+n62+n64': 1}" n12/check_n12.out && grep -q '^Sbig  symsi_u50T0_7    calls 728 ' n12/check_n12.out && grep -q '^topx  symsi_u50T0_7    calls 1812 ' n12/check_n12.out; then
+  echo "N12 SETTLE (dead-end record): instances and outputs pinned, live counts equal the pinned ones (kill instance U_7: Sbig 728, topx 1812 calls; unpadded 302, 300), 150 random games 0 failures for Sbig / topx / duet, literal-Reduced control fires (witness and 1 random game): PASS"
+else
+  echo "N12 SETTLE check: FAILED (exit $r12)"; echo "$d12" | head -30; echo "$run12" | tail -15; exit 1
+fi
 rm -rf "$tmp"

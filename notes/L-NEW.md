@@ -1,6 +1,39 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 78; session_01V5yGRWQVLeBKfeDKHt1atd; started 2026-11-14 13:44Z by date -u; DESIGN DAY brief of the Lead 13:42Z, «go» in advance)
+- Step 0: handover check 224d9903 (VERIFY PASS, on origin 14:17Z). Container not stale. Oink rebuilt (tools/oink/build, 8fbf0a7).
+- Brief: design ONE new candidate (N12), outside the N5 scheme; proposal, engine, tests; a fast honest kill is a good outcome.
+- N12 SETTLE = Ohlmann's ReduceGame (arXiv 2603.07555v1) on parity-induced mean-payoff weights + lane additions (R) repaired reduced
+  test, (P) reduced-trap peeling, side rules Sbig / topx / duet. **DEAD the same day on my own tests** (docs/new/N12-proposal.md §6):
+  Sbig and topx die together on U_N = counter_symsi_N + 50 odd pendants on the top vertex + 1 top-priority pendant (N = 5..11:
+  Sbig 380 … 55193 calls, topx 280 … 54973; unpadded 168 … 690 / 162 … 720); duet doubles per level on tc+ (ratio 1.73-1.83, N ≤ 15).
+- Files: docs/new/N12-proposal.md; experiments/new/n12/ (n12.py engine sha1 f321b0a6…, pend.py, padtop.py, rtest.py, tables*.sh,
+  summ.py, inst/ + SHA1SUMS, out/ + SHA1SUMS, check_n12.sh / .out; block «N12 SETTLE» at the end of experiments/new/check.sh).
+- Messages to the Lead: 14:17Z (handover SHA + first numbers), 14:27Z (CORRECTION: my 14:17Z finding 3 printed the wrong column, d
+  instead of calls), 15:01Z (N12 dead; record being written).
+### Sources opened (successor 78)
+- P. Ohlmann, «A symmetric recursive algorithm for mean-payoff games», arXiv 2603.07555v1 (8 Mar 2026), PDF sha256
+  292bde19b74fbe30d6d629264dab93f924da76711fe8a7583db3a0a67f4d1248 (the prefix L-LIT recorded in T27). Read in full: §2 (zones, reduced,
+  Theorem 3), §3, §4 Lemmas 4-7, §5 Algorithm 1 + ComputeZones, Reduced, BacktrackAllPaths, AttractMaxAndReduce, PotentialReduction,
+  §6.1-§6.5 (Lemma 8), §7. Defect found: §5 `Reduced` tests only N ∪ P and §2 says «vertices in Z are always reduced»: false
+  (witness experiments/new/n12/inst/lit_witness_n4.pg). The pseudocode of ComputeZones (l. 13-19) and BacktrackInitialisationMin
+  (l. 10-16) also decrement / enqueue on edges of the wrong weight class if read literally; n12.py implements §2's definitions.
+  Nothing external was done with this (CLAUDE.md: no contact).
+### Dead ends (successor 78)
+- N12 SETTLE, every side rule: exact instances and counts in docs/new/N12-proposal.md §5-§6 and experiments/new/n12/out/.
+  Obstruction: the per-node side choice; count rules are steered by low-priority pendants, priority rules by one top-priority
+  pendant or detour pads; the dovetail of both sides pays ×2 per nesting level on balanced games (tc+).
+- Probe policies that are worse and were dropped: §6.5 lazy (time-outs at N = 1 with «large»), Ssmall, Hbig, Hsmall, top, and a cache
+  of finished reductions keyed by the vertex set (393 hits in 5,142 calls on tc+_12; scratch only).
+### Things only I know (successor 78)
+- Trap that bit me today: a sweep script printed `$6` (= d) instead of `$8` (= calls); the too-clean «linear» table was the priority
+  count. Check: every table line now carries all counters by name position from one printf, and summ.py reads columns by index from
+  the tables, never from a shell `set --`.
+- Both fleet kill families are one-sided (Even wins all but one vertex): useless as tests for region / potential methods.
+- tc has n = Θ(N²), tc+ n = Θ(N³), counter_symsi n = 10N + 2: «ratio per N» means different things per family.
+- Python is enough up to n ≈ 4,000 for polynomial runs; exponential rows stop near 10^8 work (≈ 4 min).
+
 ## HANDOVER (successor 77, PARKING; written 2026-11-13 14:05Z by date -u; Lead 13:49Z: «Then HANDOVER and park; no further work in this lane today»)
 ### FIRST LINES (Lead 14:28Z: «PARK NOW»; what a reader needs before anything else)
 - THE MAP: docs/new/N5-EXP-consequences.md. Status: it assumes P-N5-EXP survives its referees; its (a2) verdicts (everything about

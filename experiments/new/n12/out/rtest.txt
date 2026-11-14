@@ -1,0 +1,21 @@
+FAIL small+literal+nopeel+n61+n62+n64 162
+FAIL small+literal+nopeel+n61+n62+n64 338
+FAIL small+literal+nopeel+n61+n62+n64 452
+FAIL small+literal+nopeel+n61+n62+n64 570
+FAIL small+literal+nopeel+n61+n62+n64 1177
+FAIL small+literal+nopeel+n61+n62+n64 1265
+FAIL small+literal+nopeel+n61+n62+n64 1275
+FAIL small+literal+nopeel+n61+n62+n64 1284
+FAIL small+literal+nopeel+n61+n62+n64 1394
+FAIL small+literal+nopeel+n61+n62+n64 1572
+FAIL small+literal+nopeel+n61+n62+n64 1576
+FAIL small+literal+nopeel+n61+n62+n64 1816
+FAIL small+literal+nopeel+n61+n62+n64 2170
+FAIL small+literal+nopeel+n61+n62+n64 2277
+FAIL small+literal+nopeel+n61+n62+n64 2361
+FAIL small+literal+nopeel+n61+n62+n64 2609
+FAIL small+literal+nopeel+n61+n62+n64 2667
+FAIL small+literal+nopeel+n61+n62+n64 2819
+games 3000 bad {'Sbig': 0, 'duet': 0, 'small': 0, 'large': 0, 'sup': 0, 'inf': 0, 'small+n61+n62+n64+nopeel': 0, 'small+literal+nopeel+n61+n62+n64': 18}
+{'Sbig': (5317, 15, 888865), 'duet': (5182, 20, 821965), 'small': (6733, 61, 898206), 'large': (5356, 16, 762803), 'sup': (5969, 25, 793977), 'inf': (5828, 38, 833160), 'small+n61+n62+n64+nopeel': (18086, 326, 1364558), 'small+literal+nopeel+n61+n62+n64': (17797, 317, 1215264)}
+exit 0

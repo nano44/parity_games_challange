@@ -1,0 +1,3 @@
+duet tc+ 13 n 2444 m 4966 d 81 calls 9374 settles 6501 settled 281783 rounds 1668 cuts 19 peels 2955 depth 13 work 99152623 maxbits 924 wbits 923 WE 1222
+duet tc+ 14 n 3024 m 6146 d 87 calls 16679 settles 11655 settled 548161 rounds 2649 cuts 46 peels 5296 depth 15 work 215011617 maxbits 1019 wbits 1018 WE 1512
+duet tc+ 15 n 3690 m 7500 d 93 calls 30517 settles 21650 settled 1100584 rounds 4569 cuts 104 peels 9507 depth 16 work 464085899 maxbits 1115 wbits 1114 WE 1845

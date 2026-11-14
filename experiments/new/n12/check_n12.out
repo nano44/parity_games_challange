@@ -1,0 +1,12 @@
+inst pinned
+out pinned
+Sbig  counter_symsi_7  calls 302 WE 72
+topx  counter_symsi_7  calls 300 WE 72
+Sbig  symsi_u50T0_7    calls 728 WE 123
+topx  symsi_u50T0_7    calls 1812 WE 123
+duet  symsi_u50T0_7    calls 1530 WE 123
+topx  symsi_T0_7       calls 1812 WE 73
+Sbig  symsi_u50_8      calls 1652 WE 132
+sound lit_witness_n4   calls 4 WE 0
+ctrl  lit_witness_n4   calls 2 WE 2
+games 150 bad {'Sbig': 0, 'topx': 0, 'duet': 0, 'small+literal+nopeel+n61+n62+n64': 1}
