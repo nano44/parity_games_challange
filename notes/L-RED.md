@@ -1,3 +1,4 @@
+Successor 71 HANDOVER written 2026-11-14 15:10Z (date -u), see «HANDOVER (successor 71 -> 72)» at the end; R247 §8 RC_n (RF quadratic).
 Successor 71 (D1/D27/D28) started 2026-11-14 13:44Z (date -u); handover check 19aad1905 (VERIFY PASS, on origin 14:05Z); «go» in advance; R246 (R246-scheme-tie.md: T1 YES, family Γ3^top(G_k)); R247 = candidate RF (L-SI 57); see «Successor 71».
 Successor 64 (Opus 5.5, D1/D18/D14) started 2026-11-09 09:10Z (date -u); handover check 98d73defd (Lead 5/5); GO 09:27Z; R230 (R230-bonly3.md): B-ONLY3 SURVIVES, G1-G5; see «Successor 64».
 Successor 63 (Opus 5.5, D1/D18/D14) started 2026-11-09 03:12Z (date -u); handover check 8c69e76e (Lead 5/5); GO 03:33Z; R229 (R229-box92, -box202, -box93, -box203, -box94, -minh); HANDOVER 08:32Z (Lead park order 08:32Z); see «Successor 63 HANDOVER».
@@ -3686,3 +3687,27 @@ PARKED after box 24 (2026-10-23 ~15:45Z, date -u). Wake only on a new named targ
   resets under RF; with static exits it never re-sets; a chain of exits going DOWN through lower set bits keeps their markers through Odd's e_i → h_i even
   after d_i leaves (no reset either).
 - RESUME POINT: push 3 (R247) pending; next = a designed gadget for LOOPHOLE / BLOCKS, or the next candidate the Lead routes.
+
+## HANDOVER (successor 71 -> 72), 2026-11-14T15:10Z (date -u)
+- DONE and on origin: handover check 19aad190; R246 71894473 (T1 YES: Γ3^top(G_k) tie-free, 2^k + 2 iterations for N5 and N5′-xi, k 3..9; Theorem TOP = one-pass
+  lane proof, re-read is a later item per the Lead). In push 3 (821d63e3, on origin 15:11Z): R247 (RF: no kill; trace,
+  Fact DECOY, families, exact maxima, climbs). In the commit after it: R247 §8 (RC_n quadratic family) + this handover.
+- STATE OF THE RF ATTACK (the Lead's current target for this lane): no kill. Best result: RC_n (rc247.py; N = 9n + 3): RF n² + 3n − 2 iterations, Howard 5n − 3,
+  two valuation engines, Oink winners. The exact open step is in R247 §8 last bullets: after a multi-bit reset the exits relink top-down and the reset bits
+  (resting at s, not at their scan) close highest first. A kill needs «reset bit back at its scan rest before its exit is fresh» or «all lower exits fresh at
+  once, bottom-up». Ideas not yet tried: (a) reset INTO the scan by giving the scan's side door hh_i its own stale-proof value (a third root that sees the new
+  bit at T + 1, like s); (b) a second root s′ used only by the scan's bottom so that the scan value is high at reset time; (c) exits that end at s-like
+  per-level roots R_j with armed layers at every level (bottom-up freshness); (d) the family-level climb: mutate rc247's edge rules and priorities, score RF at
+  n = 3, 4, 5 against 2^n.
+- Things only I know: (1) si247.SI.run(rule, start, hook=...) is the engine; rf247.dep / sinks give the dependency digraph; hooks get (it, sigma, val, sbar, I, ch).
+  (2) scratch/r247/rc.py has extra options (klow = k_i of priority 0; chain; layers) used for the failed variants; rc247.py keeps chain / viaE / layers / hi /
+  rest / sc0 / hh as options with sc0 = hh = 1 by default. (3) RF waits only for improvable vertices on plays of the CURRENT and IMPROVING targets; a target
+  whose play passes a low (stale) region is itself low, hence not improving, hence invisible: that is why «reset into the scan» fails as built. (4) Buffers
+  must have an ODD priority above the sink's, or they chain up by the length rule. (5) fv2.py (scratch) = Friedmann's G_n with armed layers and «noCS»: RF
+  8, 19, 39, 65, 97, 111, 119, 122 at n = 1..8 (counts for a while, then the lane's timing breaks); not committed.
+- Envs (scratchpad, rebuilt per container): LNEW = git archive a143d406 experiments/new experiments/si/si.py experiments/harness experiments/hard-families
+  experiments/n5-second; TRUNK = git archive origin/claude/vibrant-johnson-nxvvxo experiments/n5-second experiments/harness experiments/hard-families;
+  redb = git archive origin/claude/l-red-b docs/red-b experiments/red-b; Oink: scripts/setup_oink.sh (2 minutes).
+- Lessons this session: (1) pushes take 13-17 minutes; never edit tracked files or commit while one runs (pgrep first); new untracked files are safe;
+  (2) a background job that also runs Howard on an exponential family never ends: cap it; (3) patch scripts inside heredocs lose backslashes: write the
+  patch to a file; (4) stamp messages from date -u.

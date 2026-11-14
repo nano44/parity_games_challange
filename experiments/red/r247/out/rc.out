@@ -1,0 +1,64 @@
+RC n 1 N 12 layers 1: rf 3 (sets 1, resets 0, even_wins 0); howard 3 (sets 1, resets 0, even_wins 0)
+RC n 2 N 21 layers 1: rf 8 (sets 3, resets 1, even_wins 0); howard 7 (sets 3, resets 1, even_wins 0)
+RC n 3 N 30 layers 1: rf 16 (sets 6, resets 3, even_wins 0); howard 12 (sets 6, resets 3, even_wins 0)
+RC n 4 N 39 layers 1: rf 26 (sets 10, resets 6, even_wins 0); howard 17 (sets 10, resets 6, even_wins 0)
+RC n 5 N 48 layers 1: rf 38 (sets 15, resets 10, even_wins 0); howard 22 (sets 15, resets 10, even_wins 0)
+RC n 6 N 57 layers 1: rf 52 (sets 21, resets 15, even_wins 0); howard 27 (sets 21, resets 15, even_wins 0)
+RC n 7 N 66 layers 1: rf 68 (sets 28, resets 21, even_wins 0); howard 32 (sets 28, resets 21, even_wins 0)
+RC n 8 N 75 layers 1: rf 86 (sets 36, resets 28, even_wins 0); howard 37 (sets 36, resets 28, even_wins 0)
+RC n 9 N 84 layers 1: rf 106 (sets 45, resets 36, even_wins 0); howard 42 (sets 45, resets 36, even_wins 0)
+RC n 10 N 93 layers 1: rf 128 (sets 55, resets 45, even_wins 0); howard 47 (sets 55, resets 45, even_wins 0)
+RC n 11 N 102 layers 1: rf 152 (sets 66, resets 55, even_wins 0); howard 52 (sets 66, resets 55, even_wins 0)
+RC n 12 N 111 layers 1: rf 178 (sets 78, resets 66, even_wins 0); howard 57 (sets 78, resets 66, even_wins 0)
+RC n 16 N 147 layers 1: rf 302 (sets 136, resets 120, even_wins 0); howard 77 (sets 136, resets 120, even_wins 0)
+RC n 20 N 183 layers 1: rf 458 (sets 210, resets 190, even_wins 0); howard 97 (sets 210, resets 190, even_wins 0)
+RC n 30 N 273 layers 1: rf 988 (sets 465, resets 435, even_wins 0); howard 147 (sets 465, resets 435, even_wins 0)
+    1:+1 3:+2 5:-1(sc0) 7:+1 9:+3 11:-1(sc0) 11:-2(s) 13:+2 15:+1
+RC n 3 N 30 layers 1: rf 16 (sets 6, resets 3, even_wins 0); howard 12 (sets 6, resets 3, even_wins 0)
+    1:+1 3:+2 5:-1(sc0) 7:+1 9:+3 11:-1(sc0) 11:-2(s) 13:+2 15:+1 17:+4 19:-1(sc0) 19:-2(s) 19:-3(s) 21:+3 23:+2 25:+1
+RC n 4 N 39 layers 1: rf 26 (sets 10, resets 6, even_wins 0); howard 17 (sets 10, resets 6, even_wins 0)
+RC247 dump (engine 2 input) n 2 N 21 sha1 0c0ce2877937a2d5b675551e7a2035da46747bdd
+RFV247 RC_2 n 21 rule rf start file iterations 8
+RFV247 RC_2 n 21 rule howard start file iterations 7
+RC247 dump (engine 2 input) n 3 N 30 sha1 79758875272e845f624c4e781d8363007a85fa47
+RFV247 RC_3 n 30 rule rf start file iterations 16
+RFV247 RC_3 n 30 rule howard start file iterations 12
+RC247 dump (engine 2 input) n 4 N 39 sha1 7978000948d797acd9153c16c19d8eb900734288
+RFV247 RC_4 n 39 rule rf start file iterations 26
+RFV247 RC_4 n 39 rule howard start file iterations 17
+RC247 dump (engine 2 input) n 5 N 48 sha1 ad463b8dec5260f318219532b2dd8d8eb8435740
+RFV247 RC_5 n 48 rule rf start file iterations 38
+RFV247 RC_5 n 48 rule howard start file iterations 22
+RC247 dump (engine 2 input) n 6 N 57 sha1 8472a7313325e1e9fbf6f9476c67719f2ac0a801
+RFV247 RC_6 n 57 rule rf start file iterations 52
+RFV247 RC_6 n 57 rule howard start file iterations 27
+RC247 dump (engine 2 input) n 7 N 66 sha1 f6823fd7d8052fbf44f5e4c2c9efeb99b2c5e280
+RFV247 RC_7 n 66 rule rf start file iterations 68
+RFV247 RC_7 n 66 rule howard start file iterations 32
+RC247 dump (engine 2 input) n 8 N 75 sha1 81e6235b1bd6f46b02f35f394d4dde8ae6d46837
+RFV247 RC_8 n 75 rule rf start file iterations 86
+RFV247 RC_8 n 75 rule howard start file iterations 37
+RC247 dump (engine 2 input) n 9 N 84 sha1 9dba17ae97708f68d85ba7c37bceb32168b68d15
+RFV247 RC_9 n 84 rule rf start file iterations 106
+RFV247 RC_9 n 84 rule howard start file iterations 42
+RC247 dump (engine 2 input) n 10 N 93 sha1 fb461b65a68cfd9c07cdf559c5fe5468b4efe06b
+RFV247 RC_10 n 93 rule rf start file iterations 128
+RFV247 RC_10 n 93 rule howard start file iterations 47
+OINK RC_4 zlk verified 1 odd_wins 39
+OINK RC_4 tl verified 1 odd_wins 39
+OINK RC_8 zlk verified 1 odd_wins 75
+OINK RC_8 tl verified 1 odd_wins 75
+variants (each breaks the count):
+RC n 3 N 30 layers 1: rf 9 (sets 3, resets 0, even_wins 0); howard 10 (sets 3, resets 0, even_wins 0)
+RC n 5 N 48 layers 1: rf 17 (sets 5, resets 0, even_wins 0); howard 16 (sets 5, resets 0, even_wins 0)
+RC n 7 N 66 layers 1: rf 25 (sets 7, resets 0, even_wins 0); howard 22 (sets 7, resets 0, even_wins 0)
+RC n 3 N 30 layers 1: rf 8 (sets 5, resets 2, even_wins 0); howard 12 (sets 6, resets 3, even_wins 0)
+RC n 5 N 48 layers 1: rf 12 (sets 9, resets 4, even_wins 0); howard 22 (sets 15, resets 10, even_wins 0)
+RC n 7 N 66 layers 1: rf 16 (sets 13, resets 6, even_wins 0); howard 32 (sets 28, resets 21, even_wins 0)
+RC n 3 N 27 layers 1: rf 13 (sets 5, resets 2, even_wins 0); howard 11 (sets 6, resets 3, even_wins 0)
+RC n 5 N 43 layers 1: rf 23 (sets 9, resets 4, even_wins 0); howard 19 (sets 15, resets 10, even_wins 0)
+RC n 7 N 59 layers 1: rf 33 (sets 13, resets 6, even_wins 0); howard 27 (sets 28, resets 21, even_wins 0)
+RC n 3 N 33 layers 2: rf 15 (sets 5, resets 2, even_wins 0); howard 15 (sets 6, resets 3, even_wins 0)
+RC n 5 N 53 layers 2: rf 24 (sets 9, resets 4, even_wins 0); howard 27 (sets 15, resets 10, even_wins 0)
+RC n 7 N 73 layers 2: rf 34 (sets 13, resets 6, even_wins 0); howard 39 (sets 28, resets 21, even_wins 0)
+JOB END rc 2026-11-14T15:06:22Z
