@@ -1,6 +1,42 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## HANDOVER (successor 78, PARKING; written 2026-11-14 19:20Z by date -u; Lead 19:04Z: «SAVE N13 … HANDOVER … and park»; context far past the park line)
+### FIRST LINES
+- **N13 SEESAW is the lane's LIVE candidate (and, by the Lead's 19:04Z message, the only live one of the day).** Read
+  docs/new/N13-proposal.md first (pseudocode §2, proved / not known §3, data §4, kill guesses §6). Engine experiments/new/n13/n13.py
+  (sha1 35d77db8…): `python3 n13.py [--mode alt+|alt-|plus|minus|both] [--cap K] [--sol FILE] game.pg`; frozen mode alt+.
+- **Termination is NOT proved and no bound on jumps exists.** Do not let any message call it polynomial (D1).
+- N12 SETTLE is a dead end, recorded and on origin (b4a9ae47): docs/new/N12-proposal.md, experiments/new/n12/.
+### DONE (SHAs from git output)
+- 224d9903 handover check (on origin 14:17Z). b4a9ae47 N12 dead-end record (on origin; Lead confirmed 19:04Z).
+- This commit: N13 proposal, experiments/new/n13/ (n13.py, gkk_plain.py, rtest13.py, g10k.py, zoo13.py, climb13.py, tables13.sh,
+  summ13.py, inst/ + SHA1SUMS, out/ + SHA1SUMS, check_n13.sh / .out), block «N13 SEESAW» at the end of experiments/new/check.sh,
+  README row N13. The exact pseudocode and test vectors went to the Lead by message at 19:08Z (for the adversary lanes).
+### NEXT THREE STEPS (mine, undone; in this order)
+1. NON-TERMINATION HUNT (the Lead's 15:39Z request; the adversaries take long runs): (a) exhaustive n = 4 with priorities 0..3 and
+   n = 3 with all priorities, cap + cycle detection (compare φ modulo an additive constant and the zone pair across jumps);
+   (b) the same step on ARBITRARY small integer edge weights (it is a mean-payoff algorithm; make every cycle non-zero by w := (n+1)w
+   − 1 or reject zero cycles): if it cycles there, find what parity weights prevent; (c) random games with many equal priorities.
+   n13.solve() takes a `trace` list; add φ snapshots there. Harness: experiments/harness/exhaustive.py iter_games(n, P).
+2. L-COMP's battery on the engine: claude/l-comp 1eddbb56, experiments/battery/run_battery.sh (the Lead's 15:39Z message has the
+   command; the engine must print as its LAST stdout line a JSON {"winner": [...], "strategy": {...}, "iterations": jumps,
+   "steps": work}: write a thin wrapper around n13.solve, do not change n13.py's own output, its sha1 is pinned).
+3. Proof side: (a) a termination argument or a 2-cycle; first lemma to try: after a P*-jump every vertex of P* with finite value has
+   an optimal edge of c = 0, and what the next N*-jump can undo; (b) the relation to AESL once L-LIT answers (asked 15:37Z through
+   the Lead; thesis sha256 a5c909cb… per T27, NOT opened by me); (c) larger tc+ (N ≥ 28 needs a faster engine; Python did N = 24).
+### Things only I know
+- Scratch (lost with the container): alt.py (first probe, same counts as n13.py), exh.py (the exhaustive runs of §4, not pinned),
+  the 10,000-game corpus (regenerate: `cd experiments/harness && python3 gen.py corpus DIR 10000 20261114 --nmax 200`; sha1 of the
+  concatenated sorted .pg files d0b2ec69…), climbs' logs.
+- The one-sided modes (plus / minus) are correct everywhere too and have a pseudo-polynomial handle (sums of positively safe
+  potentials); they are slower on the zoo (83 / 59 jumps at most). Mode both oscillates: it is the check's firing control.
+- Peeling at φ = 0 already solves switchallexp / switchbestexp / counter_m / counter_ortl (an even-only or odd-only dominion); padded
+  copies without such a dominion are untested.
+- The Lead's messages of 14:08Z-15:39Z reached me only at 19:04Z (queued during the pause): its request for N12's pseudocode message
+  is moot (N12 died first); its N13 pseudocode request was answered at 19:08Z.
+- RF (lane B's candidate) is dead by K^s_n (L-RED-B 8), per the Lead 19:04Z; not my lane's record.
+
 ## Resume point (successor 78; session_01V5yGRWQVLeBKfeDKHt1atd; started 2026-11-14 13:44Z by date -u; DESIGN DAY brief of the Lead 13:42Z, «go» in advance)
 - Step 0: handover check 224d9903 (VERIFY PASS, on origin 14:17Z). Container not stale. Oink rebuilt (tools/oink/build, 8fbf0a7).
 - Brief: design ONE new candidate (N12), outside the N5 scheme; proposal, engine, tests; a fast honest kill is a good outcome.

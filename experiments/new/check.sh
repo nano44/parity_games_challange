@@ -1261,4 +1261,12 @@ if [ "$r12" -eq 0 ] && [ -z "$d12" ] && grep -q '^ctrl  lit_witness_n4   calls 2
 else
   echo "N12 SETTLE check: FAILED (exit $r12)"; echo "$d12" | head -30; echo "$run12" | tail -15; exit 1
 fi
+# N13 SEESAW (L-NEW successor 78; docs/new/N13-proposal.md, a LIVE candidate, termination NOT proved): alternating first-exit jumps of a potential with reduced-trap peeling; instances and outputs pinned (10,000 random games against Oink --uzlk with strategies, the 2,843-file zoo against Oink --tl, family tables), a 15 s live run (climbed instances, an N12 killer, 200 random games against harness Zielonka + verify.py, mode both as the oscillation control).
+r13=0; run13=$(cd n13 && bash check_n13.sh 2>&1) || r13=$?
+d13=$(diff <(printf '%s\n' "$run13") n13/check_n13.out 2>&1) || true
+if [ "$r13" -eq 0 ] && [ -z "$d13" ] && grep -q "^alt+ {'wrong': 0, 'badstrat': 0, 'cap': 0," n13/check_n13.out && grep -q "^both {'wrong': 0, 'badstrat': 0, 'cap': 100," n13/check_n13.out && grep -q '^ctrl  both cap 500    jumps 500 peels 0 WE 0 CAP$' n13/check_n13.out && grep -q '^SUMMARY games 10000 OK 10000 ' n13/out/g10k_altp.txt && grep -q '^SUMMARY mode alt+ files 2844 OK 2843 PARSEERR 1 total jumps 3876 max jumps 15 ' n13/out/zoo_altp.txt; then
+  echo "N13 SEESAW (live candidate): instances and outputs pinned (10,000 random games OK, zoo 2,843 OK, at most 15 jumps), live counts equal the pinned ones, 200 random games 0 failures in alt+ / alt-, oscillation control (mode both) fires: PASS"
+else
+  echo "N13 SEESAW check: FAILED (exit $r13)"; echo "$d13" | head -30; echo "$run13" | tail -15; exit 1
+fi
 rm -rf "$tmp"

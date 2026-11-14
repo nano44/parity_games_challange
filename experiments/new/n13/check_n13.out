@@ -1,0 +1,14 @@
+inst pinned
+out pinned
+alt+  c13_n6_d8_s46_altp  jumps 6 peels 1 WE 6 done
+alt+  c13_n8_d8_s48_altp  jumps 9 peels 1 WE 0 done
+alt+  c13_n10_d8_s410_altp  jumps 13 peels 1 WE 0 done
+alt+  c13_n12_d8_s31_altp  jumps 15 peels 2 WE 12 done
+alt+  c13_n18_d10_s32_altp  jumps 20 peels 1 WE 0 done
+alt+  symsi_u50T0_9   jumps 8 peels 1 WE 143 done
+alt-  symsi_u50T0_9   jumps 7 peels 1 WE 143 done
+plus  counter_symsi_9 jumps 19 peels 1 WE 92 done
+ctrl  both cap 500    jumps 500 peels 0 WE 0 CAP
+alt+ {'wrong': 0, 'badstrat': 0, 'cap': 0, 'jumps': 135, 'maxj': 4}
+alt- {'wrong': 0, 'badstrat': 0, 'cap': 0, 'jumps': 147, 'maxj': 4}
+both {'wrong': 0, 'badstrat': 0, 'cap': 100, 'jumps': 14, 'maxj': 5}
