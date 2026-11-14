@@ -11,3 +11,6 @@ B7 Ks-cpp n 11 law 7143 | rf tie high n 397 m 761 iterations 7143 evals 7144 swi
 B7 Ks-cpp n 12 law 14309 | rf tie high n 469 m 902 iterations 14309 evals 14310 switches 16356 maximp 22 odd-won 469 sigmahash 9d8a612b8e553875 | pg sha1 bd9e878a807e30aae1d4b83dfbd2316836e82e36 secs 18
 B7 Ks-cpp n 13 law 28643 | rf tie high n 547 m 1055 iterations 28643 evals 28644 switches 32738 maximp 24 odd-won 547 sigmahash 2ec9e010ff024ae6 | pg sha1 41b6baadd6166dea2357d1bc5459fd732bedf284 secs 52
 B7 Ks-cpp n 14 law 57313 | rf tie high n 631 m 1220 iterations 57313 evals 57314 switches 65504 maximp 26 odd-won 631 sigmahash 69fffa9b3d449fe8 | pg sha1 aefb5f56525cd5d04d3c7efab179c529dd9a24ed secs 136
+B7 Ks-cpp n 15 law 114655 | rf tie high n 721 m 1397 iterations 114655 evals 114656 switches 131038 maximp 28 odd-won 721 sigmahash 4f7dc67f60f80f42 | pg sha1 9078d5383e82c7803724bdb1fe8b51deb991198e secs 319
+B7 Ks-cpp n 16 law 229341 | rf tie high n 817 m 1586 iterations 229341 evals 229342 switches 262108 maximp 30 odd-won 817 sigmahash 4db57e1cbd321a2e | pg sha1 ffbb8b3dad60c810eac0923217fbc33c18790cd0 secs 792
+B7 Ks-cpp n 17 law 458715 | rf tie high n 919 m 1787 iterations 458715 evals 458716 switches 524250 maximp 32 odd-won 919 sigmahash 2619bb31f56b6e2d | pg sha1 edaa3fa61487184ed8eb050d495b19cb2d48e541 secs 2010

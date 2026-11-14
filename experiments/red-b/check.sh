@@ -80,6 +80,12 @@ b7k=$(cd b7 && python3 runks.py 1 2 3 4 5 6 | grep -c "^B7 Ks n [1-6] .* diff 0 
 [ "$b7k" = "6" ] || { echo "red-b: B7 K^s_n law FAILED ($b7k of 6 lines)"; fail=1; }
 b7n=$(cd b7 && for n in 1 2 3 4 5; do python3 rfc2.py $n; done | sed 's/^K n \([0-9]*\):.* RF \([0-9]*\) Howard.*$/\1:\2/' | tr '\n' ' ')
 [ "$b7n" = "1:2 2:7 3:18 4:38 5:70 " ] || { echo "red-b: B7 K_n (no skip) counts changed: $b7n"; fail=1; }
+b7s=$(cd b7 && python3 b7sched.py 1 6 | grep -c "sdiff 0 ldiff 0 first -1$")
+[ "$b7s" = "6" ] || { echo "red-b: B7 schedule test FAILED ($b7s of 6 lines)"; fail=1; }
+b7sc=$(cd b7 && B7S_CTRL=1 python3 b7sched.py 3 4 | grep -c "sdiff 0 ldiff 0"); [ "$b7sc" = "0" ] || { echo "red-b: B7 schedule control did not fire"; fail=1; }
+b7f=$(cd b7 && python3 b7facts.py 1 5 | grep -c "sink 0 eqval 0 test 0 zclosed 0 zsel 0 zimp 0 zsink 0$")
+[ "$b7f" = "5" ] || { echo "red-b: B7 fact counters FAILED ($b7f of 5 lines)"; fail=1; }
+b7fc=$(cd b7 && B7F_CTRL=1 python3 b7facts.py 3 3 | grep -c " zimp 0 "); [ "$b7fc" = "0" ] || { echo "red-b: B7 facts control did not fire"; fail=1; }
 (cd b7/inst && sha1sum -c --quiet SHA1SUMS) || { echo "red-b: b7/inst SHA1SUMS mismatch"; fail=1; }
 (cd b7/out && sha1sum -c --quiet SHA1SUMS_b7) || { echo "red-b: b7/out SHA1SUMS_b7 mismatch"; fail=1; }
 [ $fail -eq 0 ] && echo "red-b check PASS" || echo "red-b check FAILED"

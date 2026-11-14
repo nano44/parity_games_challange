@@ -1,0 +1,8 @@
+B7 repair A ks n 1 |V| 7: iterations 2 (RF 2; law 2) odd-won 7
+B7 repair A ks n 2 |V| 19: iterations 7 (RF 7; law 7) odd-won 19
+B7 repair A ks n 3 |V| 37: iterations 19 (RF 19; law 19) odd-won 37
+B7 repair A ks n 4 |V| 61: iterations 45 (RF 45; law 45) odd-won 61
+B7 repair A ks n 5 |V| 91: iterations 99 (RF 99; law 99) odd-won 91
+B7 repair A ks n 6 |V| 127: iterations 209 (RF 209; law 209) odd-won 127
+B7 repair A ks n 7 |V| 169: iterations 431 (RF 431; law 431) odd-won 169
+B7 repair A ks n 8 |V| 217: iterations 877 (RF 877; law 877) odd-won 217

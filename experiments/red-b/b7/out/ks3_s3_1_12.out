@@ -1,0 +1,12 @@
+B7 Ks3-S3 n 1 law 2 | rf tie high n 9 m 13 iterations 2 evals 3 switches 2 maximp 1 odd-won 9 sigmahash 79cf36738ea98b77
+B7 Ks3-S3 n 2 law 7 | rf tie high n 25 m 38 iterations 7 evals 8 switches 8 maximp 2 odd-won 25 sigmahash 6b7b5e8b68b22c1c
+B7 Ks3-S3 n 3 law 19 | rf tie high n 49 m 77 iterations 19 evals 20 switches 22 maximp 4 odd-won 49 sigmahash bd308d2baf9a8f5a
+B7 Ks3-S3 n 4 law 45 | rf tie high n 81 m 130 iterations 45 evals 46 switches 52 maximp 6 odd-won 81 sigmahash 1e012483f081edc7
+B7 Ks3-S3 n 5 law 99 | rf tie high n 121 m 197 iterations 99 evals 100 switches 114 maximp 8 odd-won 121 sigmahash 844a4c300241681e
+B7 Ks3-S3 n 6 law 209 | rf tie high n 169 m 278 iterations 209 evals 210 switches 240 maximp 10 odd-won 169 sigmahash b30d473186312e77
+B7 Ks3-S3 n 7 law 431 | rf tie high n 225 m 373 iterations 431 evals 432 switches 494 maximp 12 odd-won 225 sigmahash 35a14eba6ee7f5d9
+B7 Ks3-S3 n 8 law 877 | rf tie high n 289 m 482 iterations 877 evals 878 switches 1004 maximp 14 odd-won 289 sigmahash 1beb3fd32ddf8b4a
+B7 Ks3-S3 n 9 law 1771 | rf tie high n 361 m 605 iterations 1771 evals 1772 switches 2026 maximp 16 odd-won 361 sigmahash 658698d337f4f6af
+B7 Ks3-S3 n 10 law 3561 | rf tie high n 441 m 742 iterations 3561 evals 3562 switches 4072 maximp 18 odd-won 441 sigmahash 64d43f902df81020
+B7 Ks3-S3 n 11 law 7143 | rf tie high n 529 m 893 iterations 7143 evals 7144 switches 8166 maximp 20 odd-won 529 sigmahash 1357321d6d5c5472
+B7 Ks3-S3 n 12 law 14309 | rf tie high n 625 m 1058 iterations 14309 evals 14310 switches 16356 maximp 22 odd-won 625 sigmahash 896836af6b874023

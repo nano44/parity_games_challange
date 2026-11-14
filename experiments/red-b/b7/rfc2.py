@@ -19,7 +19,8 @@ into every open gate on the way (its d is odd), and into a closed gate whose val
 Start: every gate open (d -> below), R -> x, g_i -> f(i,x).
 Priorities: 1 (x), 3 (R), then per gate a low block (C odd, d odd, e even), g_i odd low; then per bit i a high band: the
 f(i,c) (odd), then the h(i,c) (even); the band of bit i + 1 lies above the band of bit i.
-Usage: rfc2.py N [--skip] [--trace] [--pg OUT.pg OUT.start [--pgonly]]"""
+K^s3_n (build(n, True, pads=True); option --pads): K^s_n with two one-successor pads per gate so that S3 = sigma_0.
+Usage: rfc2.py N [--skip] [--pads] [--trace] [--pg OUT.pg OUT.start [--pgonly]]"""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 from si7 import Game, Engine, howard, root_first, rf_dependency, sccs, dump_pg
@@ -29,7 +30,7 @@ def ctx(i, n):
     return ["x"] + [str(j) for j in range(n, i, -1)]
 
 
-def build(n, skip=False):
+def build(n, skip=False, pads=False):
     V = {}; order = []
     def add(name, owner, prio, succ):
         assert name not in V
@@ -45,7 +46,7 @@ def build(n, skip=False):
     p = 5
     low = {}
     for (i, c) in gates:
-        low[(i, c)] = p; p += 4                    # C = p (odd), d = p + 2 (odd), e = p + 3 (even)
+        low[(i, c)] = p; p += (8 if pads else 4)   # C = p (odd), d = p + 2 (odd), e = p + 3 (even) [pads: y = p + 5, z = p + 7, even]
     gpr = {}
     for i in range(2, n + 1):
         gpr[i] = p; p += 2                          # odd
@@ -57,8 +58,14 @@ def build(n, skip=False):
         band[i] = p; p += 4 * K + 2
     for (i, c) in gates:
         q = ctx(i, n).index(c); K = len(ctx(i, n))
-        add(nm("C", i, c), 1, low[(i, c)], [nm("d", i, c), below[(i, c)]])
-        add(nm("d", i, c), 0, low[(i, c)] + 2, [nm("e", i, c), below[(i, c)]])
+        # pads (K^s3_n): y on the escape edge and z on the reader's continue edge, one successor each, even, e < y < z. Then the
+        # SPEC's default start S3 (best-reward successor) is sigma_0: d prefers y to e. Odd still drops into an open gate
+        # ({d, y} + B against {z} + B: top z).
+        esc = nm("y", i, c) if pads else below[(i, c)]; cont = nm("z", i, c) if pads else below[(i, c)]
+        if pads:
+            add(nm("y", i, c), 1, low[(i, c)] + 5, [below[(i, c)]]); add(nm("z", i, c), 1, low[(i, c)] + 7, [below[(i, c)]])
+        add(nm("C", i, c), 1, low[(i, c)], [nm("d", i, c), cont])
+        add(nm("d", i, c), 0, low[(i, c)] + 2, [nm("e", i, c), esc])
         add(nm("e", i, c), 1, low[(i, c)] + 3, [nm("d", i, c), nm("h", i, c)])
         add(nm("f", i, c), 1, band[i] + 2 * q + 1, [nm("e", i, c)])
         add(nm("h", i, c), 1, band[i] + 2 * K + 2 * q + 2, ["x" if c == "x" else f"g{c}"])
@@ -73,7 +80,7 @@ def build(n, skip=False):
     assert len(set(g.prio)) == g.n
     start = {"R": "x"}
     for (i, c) in gates:
-        start[nm("d", i, c)] = below[(i, c)]
+        start[nm("d", i, c)] = nm("y", i, c) if pads else below[(i, c)]
     for i in range(2, n + 1):
         start[f"g{i}"] = nm("s", i, "x") if skip else nm("f", i, "x")
     s0 = [idx[start[order[v]]] if g.owner[v] == 0 else -1 for v in range(g.n)]
@@ -91,8 +98,9 @@ def state(g, sigma, n):
 
 
 if __name__ == "__main__":
-    a = sys.argv[1:]; n = int(a[0]); SK = "--skip" in a
-    g, s0 = build(n, SK); E = Engine(g); nmv = g.names
+    a = sys.argv[1:]; n = int(a[0]); SK = "--skip" in a; PD = "--pads" in a
+    g, s0 = build(n, SK, PD); E = Engine(g); nmv = g.names
+    if PD: assert s0 == E.initial("best"), "S3 is not sigma_0"
     if "--pg" in a:
         import gens7
         k = a.index("--pg"); open(a[k + 1], "w").write(dump_pg(g)); gens7.write_start(a[k + 2], g, s0)

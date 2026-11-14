@@ -2,7 +2,9 @@
 // howard and rf (ROOT-FIRST, L-SI 57's pseudocode as relayed by the Lead 2026-11-14 14:52Z).
 // Cross-checked against si7.py by cmp7.py (iterations and the final strategy must be equal).
 // Path sets are bit vectors over relevance ranks; comparison = the paper's set order (most relevant differing vertex).
-// Usage: rf7 RULE game.pg start|best [--tie high|low] [--sigma] [--max N] [--prog K]
+// Usage: rf7 RULE game.pg start|best [--tie high|low] [--sigma] [--max N] [--prog K] [--ckpt FILE K]
+// --ckpt FILE K: every K iterations the state (iteration count, switch count, sigma) is written to FILE; a run started with an
+// existing FILE resumes from it (RF and Howard are memoryless: the state is sigma). evals then counts this process only.
 #include <bits/stdc++.h>
 using namespace std;
 typedef vector<uint64_t> Bits;
@@ -69,6 +71,11 @@ static void evaluate(const vector<int>& sigma, vector<Val>& val, vector<int>& ta
         auto confine = [&](int q) { for (int e : hs[q]) if (ealive[e] && !inS[ev[e]]) ealive[e] = 0; };
         for (int u : hi) {
             int ru = rnk[u];
+            bool hasin = false;                 // shortcut: no predecessor inside R. Then (even u) everybody else reaches w
+            for (int e : hp[u]) if (ealive[e] && inR[eu[e]] && eu[e] != u) { hasin = true; break; }   // without u, (odd u) only u reaches u
+            if (!hasin) { val[u].p[ru >> 6] |= 1ULL << (ru & 63);
+                if (par[u] == 0) for (int e : hs[u]) if (ealive[e] && ev[e] == u) ealive[e] = 0;
+                continue; }
             if (par[u] == 0) {
                 back(w, u);
                 for (int q : R) if (!inS[q]) val[q].p[ru >> 6] |= 1ULL << (ru & 63);
@@ -111,12 +118,13 @@ static void evaluate(const vector<int>& sigma, vector<Val>& val, vector<int>& ta
 
 int main(int argc, char** argv) {
     if (argc < 4) { fprintf(stderr, "usage\n"); return 2; }
-    string rule = argv[1]; bool tiehigh = true, showsigma = false; long maxit = LONG_MAX, prog = 0;
+    string rule = argv[1]; bool tiehigh = true, showsigma = false; long maxit = LONG_MAX, prog = 0; string ckpt; long ckevery = 0;
     for (int i = 4; i < argc; ++i) { string a = argv[i];
         if (a == "--tie") tiehigh = string(argv[++i]) == "high";
         else if (a == "--sigma") showsigma = true;
         else if (a == "--max") maxit = atol(argv[++i]);
-        else if (a == "--prog") prog = atol(argv[++i]); }
+        else if (a == "--prog") prog = atol(argv[++i]);
+        else if (a == "--ckpt") { ckpt = argv[++i]; ckevery = atol(argv[++i]); } }
     // parse pg
     { ifstream in(argv[2]); string all((istreambuf_iterator<char>(in)), istreambuf_iterator<char>());
       map<int, tuple<int, int, vector<int>, string>> rows; size_t pos = 0;
@@ -141,6 +149,9 @@ int main(int argc, char** argv) {
     else { ifstream in(argv[3]); int a, b; while (in >> a >> b) sigma[a] = b; }
     for (int v = 0; v < n; ++v) if (owner_[v] == 0 && find(succ[v].begin(), succ[v].end(), sigma[v]) == succ[v].end()) { fprintf(stderr, "bad start at %d\n", v); return 2; }
     vector<Val> val; vector<int> tau; long its = 0; long switches = 0, maximp = 0;
+    if (!ckpt.empty()) { ifstream ck(ckpt); if (ck) { long a0, b0, m0; ck >> a0 >> b0 >> m0; vector<int> sg(n); bool ok = true;
+            for (int v = 0; v < n; ++v) if (!(ck >> sg[v])) ok = false;
+            if (ok) { its = a0; switches = b0; maximp = m0; sigma = sg; fprintf(stderr, "resumed at iteration %ld\n", its); } } }
     while (true) {
         evaluate(sigma, val, tau);
         // improving targets
@@ -194,6 +205,8 @@ int main(int argc, char** argv) {
         for (int v : sw) sigma[v] = bestt[v];
         switches += sw.size(); ++its;
         if (prog && its % prog == 0) { fprintf(stderr, "... %ld iterations\n", its); }
+        if (ckevery && its % ckevery == 0) { string tmp = ckpt + ".tmp"; { ofstream o(tmp); o << its << " " << switches << " " << maximp << "\n";
+                for (int v = 0; v < n; ++v) o << sigma[v] << (v + 1 < n ? ' ' : '\n'); } rename(tmp.c_str(), ckpt.c_str()); }
     }
     int oddwon = 0; for (int v = 0; v < n; ++v) oddwon += par[val[v].w];
     // FNV-1a of the final strategy

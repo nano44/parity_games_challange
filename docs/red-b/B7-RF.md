@@ -6,10 +6,16 @@ ESTABLISHED.
 
 ## 0. Verdict so far
 - **KILL CANDIDATE (DATA).** On the rule-built family K^s_n (§4; |V| = 3n² + 3n + 1) RF from the stated start makes exactly
-  **7·2^(n−1) − 2n − 3** iterations for every n measured: n = 1..9 on the Python engine under both tie rules, n = 10, 11 on the
-  Python engine, n = 2..14 on the C++ port (residual 0 everywhere; n = 15..17 were still running at this commit). Howard
+  **7·2^(n−1) − 2n − 3** iterations for every n measured: n = 1..9 on the Python engine under both tie rules, n = 10, 11, 12 on
+  the Python engine, n = 2..17 on the C++ port (residual 0 everywhere). The run equals a CLOSED-FORM SCHEDULE iteration by
+  iteration for n ≤ 9, and the law is arithmetic on that schedule (docs/red-b/B7-RF-sched.md §1-§2). Howard
   (switch-best everywhere) needs at most 10 iterations on the same games (n ≤ 7).
-- NOT ESTABLISHED: a proof of the law (the mechanism of §4.4 is a READING of the traces); an instance beyond an explicit
+- K^s_n also survives, with the same count, two repairs of RF's dependency that wait for more vertices (B7-RF-sched.md §8).
+- START. K^s_n is a kill of RF from σ_0 only: from the SPEC's default start S3 (every gate closed) RF needs n(n + 1)/2
+  iterations on K^s_n (n ≤ 13). The padded family K^s3_n (two one-successor pads per gate; |V| = (2n + 1)²) has S3 = σ_0, and
+  RF from S3 makes 7·2^(n−1) − 2n − 3 iterations on it for n = 1..12 (B7-RF-sched.md §9): the kill candidate OF THE SPEC.
+- NOT ESTABLISHED: a refereed proof (a lane proof SKETCH with its gaps G1-G5 is in B7-RF-sched.md §3-§6; seven must-0
+  counters of its facts are 0 on the real runs for n ≤ 8, §7 there); an instance beyond an explicit
   polynomial (by the law the first n with more iterations than |V|² is n = 19: 1,834,967 > 1,301,881; not run); a second,
   independent engine (asked of the Lead 15:14Z).
 - SURVIVALS on the way (DATA, §3): a single-gate counter with a latch and a delay line: 5n − 2 iterations; the family K_n
@@ -108,10 +114,13 @@ the source: DATA, every run ends with all cycle nodes = x).
 | 9 | 271 | 515 | 1,771 | 1,771 | py (larger id), C++ |
 | 10 | 331 | 632 | 3,561 | 3,561 | py (larger id), C++ |
 | 11 | 397 | 761 | 7,143 | 7,143 | py (larger id), C++ |
-| 12 | 469 | 902 | 14,309 | 14,309 | C++ |
+| 12 | 469 | 902 | 14,309 | 14,309 | py (larger id), C++ |
 | 13 | 547 | 1,055 | 28,643 | 28,643 | C++ |
 | 14 | 631 | 1,220 | 57,313 | 57,313 | C++ |
-Files: out/ks_py_1_9.out, out/ks_py_low_1_8.out, out/ks_py_10_11.out, out/ks_cpp_2_14.out (each line carries the sha1 of its
+| 15 | 721 | 1,397 | 114,655 | 114,655 | C++ |
+| 16 | 817 | 1,586 | 229,341 | 229,341 | C++ |
+| 17 | 919 | 1,787 | 458,715 | 458,715 | C++ |
+Files: out/ks_py_1_9.out, out/ks_py_low_1_8.out, out/ks_py_10_12.out, out/ks_cpp_2_17.out (each line carries the sha1 of its
 .pg file); instances inst/Ks_n.pg and .start for n = 2..12 with inst/SHA1SUMS. Howard on K^s_n: 2, 4, 6, 8, 8, 9, 10 iterations
 at n = 1..7 (RF is exponentially slower than the rule it restricts). Regions and both strategies of the RF runs on K^s_3,
 K^s_5, K^s_7: equal to Oink's, verified (out/ks_xoink.out).
@@ -121,7 +130,7 @@ Against explicit bounds, by the law (exact integers; NOT run beyond n = 14): ite
 n = 2, seven iterations: close (1, x) | R → f(1, x) | close (2, x) | R → f(2, x) and g_2 → f(2, x) | close (1, 2) | R →
 f(1, 2) | reset (1, x). The closings of n = 3 in order: (1,x), (2,x), (1,2), (3,x), (1,3), (2,3), (1,2): the 2³ − 1 increments
 of a binary counter, bit i closing in the gate whose context is the lowest set bit above i.
-### 4.4 Mechanism (READING of the traces; the proof is the next step)
+### 4.4 Mechanism (READING of the traces; schedule, proof sketch, counters and the repaired rule: docs/red-b/B7-RF-sched.md)
 1. ORDER. An open gate rests on its escape, which runs down the reader chain; at C(i′, c′) Odd drops into every open gate (its d
    is odd, so the drop is cheaper for Odd) and into a closed gate whose value is below the rest of the chain. So a gate that
    could close depends on every improvable gate later in L, and RF closes the gate of the LOWEST open bit first: the least
@@ -145,5 +154,7 @@ law is a fit with residual 0, not a theorem. The target (TARGET.md §2) is untou
 ## 6. Reproduce
 `bash experiments/red-b/b7/run_b7.sh OUT` regenerates every out/*.out except the long rows (needs Oink for the xoink stages and
 g++ for cmp7; about 3 minutes); `python3 experiments/red-b/b7/runks.py 10 11` (4 minutes) and
-`bash experiments/red-b/b7/runks_cpp.sh RF7BIN 2 14 OUTDIR` (C++; 4 minutes for n ≤ 14, 136 s of it at n = 14) give the long rows.
+`bash experiments/red-b/b7/runks_cpp.sh RF7BIN 2 14 OUTDIR` (C++; 4 minutes for n ≤ 14, 136 s of it at n = 14) give the long rows;
+rf7 has `--ckpt FILE K` for a resumable run (state = σ and the iteration count). `python3 experiments/red-b/b7/b7sched.py 1 9`,
+`b7facts.py 1 8` and `rfrep.py A|B ks 1 8` give the schedule test, the fact counters and the repaired rule's rows.
 `python3 experiments/red-b/b7/rfc2.py N --skip --trace` prints a run with the switching and the waiting vertices per iteration.

@@ -1,0 +1,9 @@
+B7 sched n 1: schedule 2 iterations, real 2, law 2 ctrl 0: sdiff 0 ldiff 0 first -1
+B7 sched n 2: schedule 7 iterations, real 7, law 7 ctrl 0: sdiff 0 ldiff 0 first -1
+B7 sched n 3: schedule 19 iterations, real 19, law 19 ctrl 0: sdiff 0 ldiff 0 first -1
+B7 sched n 4: schedule 45 iterations, real 45, law 45 ctrl 0: sdiff 0 ldiff 0 first -1
+B7 sched n 5: schedule 99 iterations, real 99, law 99 ctrl 0: sdiff 0 ldiff 0 first -1
+B7 sched n 6: schedule 209 iterations, real 209, law 209 ctrl 0: sdiff 0 ldiff 0 first -1
+B7 sched n 7: schedule 431 iterations, real 431, law 431 ctrl 0: sdiff 0 ldiff 0 first -1
+B7 sched n 8: schedule 877 iterations, real 877, law 877 ctrl 0: sdiff 0 ldiff 0 first -1
+B7 sched n 9: schedule 1771 iterations, real 1771, law 1771 ctrl 0: sdiff 0 ldiff 0 first -1

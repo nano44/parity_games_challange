@@ -1,0 +1,3 @@
+B7 facts n 2: iterations 7 stable states 3 (2^n - 1 = 3) ctrl 2: sink 0 eqval 0 test 0 zclosed 1 zsel 0 zimp 1 zsink 0
+B7 facts n 3: iterations 19 stable states 7 (2^n - 1 = 7) ctrl 2: sink 0 eqval 0 test 0 zclosed 3 zsel 0 zimp 3 zsink 0
+B7 facts n 4: iterations 45 stable states 15 (2^n - 1 = 15) ctrl 2: sink 0 eqval 0 test 0 zclosed 8 zsel 0 zimp 8 zsink 0

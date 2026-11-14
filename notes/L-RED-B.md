@@ -11,14 +11,34 @@ Written 2026-11-14T15:27Z by date -u. TARGET TODAY: kill candidate RF (L-SI 57's
   exactly 7·2^(n−1) − 2n − 3 iterations, |V| = 3n² + 3n + 1; measured n = 1..11 (Python, si7.py) and n = 2..14 (C++, rf7.cpp),
   residual 0. Reported to the Lead 15:14Z (one error in that message: «> |V|² first at n = 20»; the first n is 19, 1,834,967 >
   1,301,881; to be corrected in the next message). Status: DATA + a READING of the mechanism; no proof, no second engine yet.
-- IN FLIGHT at this commit: `bash b7/runks_cpp.sh ../work/b7/rf7 2 17 ../work/b7` (C++ rows n = 15, 16, 17; output
-  experiments/red-b/work/b7/ks_cpp.out, ignored directory; resumable per n; n = 17 needs about 40 minutes) and
-  `python3 b7/runks.py 10 11 12` (n = 12 pending, output work/b7/ks_py_10_12.partial).
-- NEXT: (1) the SCHEDULE of the run in closed form (state after every iteration as a function of the counter value) and a
-  step-by-step test of it against the real run, as b6lemma.py did for G_k; (2) the proof of the doubling from the valuation
-  comparisons (B7-RF.md §4.4 lists the five facts to prove); (3) an instance beyond |V|²: n = 19 needs 1.83 million iterations;
-  rf7 takes 136 s at n = 14 and about 2.6 times more per n, so n = 19 needs a checkpoint option (the state is σ and the
-  iteration count only: RF is memoryless) or a faster valuation; (4) answer the independent rebuilds the Lead routes.
+- HANDOVER (written at the SECOND commit of this session, by stage2.py; successor 8 parks near its context line after it).
+  ON ORIGIN after the first push: 18509d94 (handover check, B7 report, engines, K^s_n with DATA to n = 14). SECOND COMMIT (its
+  SHA is in `git log` and in the Lead's messages; compare `git ls-remote` before quoting it as on origin): the closed-form
+  SCHEDULE of the run and its test (b7/b7sched.py: sdiff 0 ldiff 0 for n = 1..9), the proof SKETCH with gaps G1-G5
+  (docs/red-b/B7-RF-sched.md), seven must-0 fact counters (b7/b7facts.py, 0 for n ≤ 8, two controls), the REPAIRED dependency
+  rule in two readings (b7/rfrep.py: K^s_n keeps the same count under both), C++ rows to n = 17, rf7.cpp with `--ckpt` and a
+  valuation shortcut (equal to si7.py on cmp7's runs), b7/runks_big.sh.
+- IN FLIGHT when this was written: the run of n = 19 (first size beyond |V|²: law 1,834,967 > 1,301,881) as a background task of
+  THIS session's container: `bash experiments/red-b/work/b7/run_big.sh 19` (work/ is ignored and dies with the container),
+  checkpoint work/b7/big/ck_19.txt every 20,000 iterations, about 250 iterations per second (about 2 hours from 15:32Z). If
+  this session is alive when it ends, its line goes into b7/out/ks_big.out in a third commit. A NEW container must start it
+  (State 2026-11-14T19:06Z: the fleet's 5-hour limit and the 2-hour task limit stopped it at iteration 1,060,000 of 1,834,967;
+  resumed from the checkpoint at 19:06Z in the same container, about 1.5 hours to go.)
+  again: `g++ -O2 -std=c++17 -o /tmp/rf7 experiments/red-b/b7/rf7.cpp; bash experiments/red-b/b7/runks_big.sh /tmp/rf7 19 OUTDIR`
+  (same command again after a restart resumes from OUTDIR/ck_19.txt). n = 17 of runks_cpp.sh may also still run (40 minutes).
+- START S3 (Lead 15:46Z): K^s_n from the SPEC's start S3 is only n(n + 1)/2 iterations; the kill of the SPEC is the PADDED
+  family K^s3_n (rfc2.py --pads; S3 = σ_0; same law, n ≤ 12; B7-RF-sched.md §9). The frozen statement must name K^s3_n and S3;
+  b7sched.py / b7facts.py still take K^s_n only (extend them with a pads flag: two more low vertices per gate, nothing else).
+- NEXT for whoever continues (in this order): (1) the answers to the independent rebuilds (L-SI 57 rf109.py, L-RED 72 rf248.py,
+  L-COMP 23: the Lead relays their counts; the rule text is B7-RF.md §4.1, the numbering of vertices is stated there);
+  (2) the PROOF PACKET from the sketch: close G1 (Lemma SINK), G2 and G3 (values of stale and wrong-context gates in every
+  intermediate state of a step: write the state after each iteration kind 1-4 as in B7-RF-sched.md §4 and extend b7facts.py
+  with counters for ROOT, SKIP, RESET), G4, G5; freeze it under the name the Lead gives; (3) the n = 19 line; (4) only on the
+  Lead's word: other starts, other families, the one-player question (L-LIT: no published bound covers RF there).
+- What the referees will ask first (my guesses): why Odd never drops into a CURRENT gate (V2: the route through R carries the
+  gate's own f unpaid); why a selector never rests on an open gate's entry (s < f in every band); why stale gates do not open
+  at once (their escape passes a pending gate: the qualification rule), and that this delay is harmless (they are worth less
+  than the route through R, so Odd's drops into them only LOWER escape values of gates above, which are blocked anyway).
 - SOURCES OPENED (this session): O. Friedmann, arXiv 1106.0778v2 (PDF sha1 a63a9293fec00b8078f434bfab3ea1a66e55eaf9, in the
   session scratchpad only): §3 p. 4-6 (valuations, orders, Lemma 3.1, Theorems 3.2, 3.3, Algorithm 1), §4 (locally optimizing
   policy), §5 (1-sink games, Lemma 5.1), Table 4 and ι_{G_n} p. 15, Fact 6.1, Figure 4 (the injective priorities: Table 4's six

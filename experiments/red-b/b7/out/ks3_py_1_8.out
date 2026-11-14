@@ -1,0 +1,8 @@
+B7 Ks3 n 1 |V| 9 |E| 13: S3 == sigma_0 1 RF from S3 2 law 2 diff 0 | plain K^s_n from S3: 1 n(n+1)/2 1
+B7 Ks3 n 2 |V| 25 |E| 38: S3 == sigma_0 1 RF from S3 7 law 7 diff 0 | plain K^s_n from S3: 3 n(n+1)/2 3
+B7 Ks3 n 3 |V| 49 |E| 77: S3 == sigma_0 1 RF from S3 19 law 19 diff 0 | plain K^s_n from S3: 6 n(n+1)/2 6
+B7 Ks3 n 4 |V| 81 |E| 130: S3 == sigma_0 1 RF from S3 45 law 45 diff 0 | plain K^s_n from S3: 10 n(n+1)/2 10
+B7 Ks3 n 5 |V| 121 |E| 197: S3 == sigma_0 1 RF from S3 99 law 99 diff 0 | plain K^s_n from S3: 15 n(n+1)/2 15
+B7 Ks3 n 6 |V| 169 |E| 278: S3 == sigma_0 1 RF from S3 209 law 209 diff 0 | plain K^s_n from S3: 21 n(n+1)/2 21
+B7 Ks3 n 7 |V| 225 |E| 373: S3 == sigma_0 1 RF from S3 431 law 431 diff 0 | plain K^s_n from S3: 28 n(n+1)/2 28
+B7 Ks3 n 8 |V| 289 |E| 482: S3 == sigma_0 1 RF from S3 877 law 877 diff 0 | plain K^s_n from S3: 36 n(n+1)/2 36

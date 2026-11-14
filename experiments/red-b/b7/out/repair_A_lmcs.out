@@ -1,0 +1,6 @@
+B7 repair A lmcs n 1 |V| 14: iterations 5 (RF 5; law 6) odd-won 14
+B7 repair A lmcs n 2 |V| 24: iterations 9 (RF 9; law 9) odd-won 24
+B7 repair A lmcs n 3 |V| 34: iterations 12 (RF 12; law 12) odd-won 34
+B7 repair A lmcs n 4 |V| 44: iterations 15 (RF 15; law 15) odd-won 44
+B7 repair A lmcs n 5 |V| 54: iterations 18 (RF 18; law 18) odd-won 54
+B7 repair A lmcs n 6 |V| 64: iterations 21 (RF 21; law 21) odd-won 64
